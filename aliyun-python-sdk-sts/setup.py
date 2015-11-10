@@ -60,7 +60,7 @@ setup(
     platforms="any",
     install_requires=["aliyun-python-sdk-core>=2.0.2"],
     classifiers=(
-                "Development Status :: 4 - Beta",
+                "Development Status :: 5 - Production/Stable",
                 "Intended Audience :: Developers",
                 "License :: OSI Approved :: Apache Software License",
                 "Programming Language :: Python",

@@ -22,20 +22,13 @@ class AssumeRoleRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Sts', '2015-04-01', 'AssumeRole')
-		self.set_protocol_type(self, 'https');
-		self.set_method('POST')
+		self.set_protocol_type('https');
 
 	def get_DurationSeconds(self):
 		return self.get_query_params().get('DurationSeconds')
 
 	def set_DurationSeconds(self,DurationSeconds):
 		self.add_query_param('DurationSeconds',DurationSeconds)
-
-	def get_ExternalId(self):
-		return self.get_query_params().get('ExternalId')
-
-	def set_ExternalId(self,ExternalId):
-		self.add_query_param('ExternalId',ExternalId)
 
 	def get_Policy(self):
 		return self.get_query_params().get('Policy')
@@ -54,15 +47,3 @@ class AssumeRoleRequest(RpcRequest):
 
 	def set_RoleSessionName(self,RoleSessionName):
 		self.add_query_param('RoleSessionName',RoleSessionName)
-
-	def get_SerialNumber(self):
-		return self.get_query_params().get('SerialNumber')
-
-	def set_SerialNumber(self,SerialNumber):
-		self.add_query_param('SerialNumber',SerialNumber)
-
-	def get_TokenCode(self):
-		return self.get_query_params().get('TokenCode')
-
-	def set_TokenCode(self,TokenCode):
-		self.add_query_param('TokenCode',TokenCode)
