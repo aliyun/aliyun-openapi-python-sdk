@@ -22,13 +22,7 @@ class SetPasswordPolicyRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ram', '2015-05-01', 'SetPasswordPolicy')
-		self.set_protocol_type(self, 'https');
-
-	def get_ResourceOwnerId(self):
-		return self.get_query_params().get('ResourceOwnerId')
-
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+		self.set_protocol_type('https');
 
 	def get_MinimumPasswordLength(self):
 		return self.get_query_params().get('MinimumPasswordLength')
