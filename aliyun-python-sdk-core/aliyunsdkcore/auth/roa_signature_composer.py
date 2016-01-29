@@ -79,9 +79,10 @@ def compose_string_to_sign(method, queries, uri_pattern=None, headers=None, path
 
 def replace_occupied_parameters(uri_pattern, paths):
     result = uri_pattern
-    for (key, value) in paths.items():
-        target = "[" + key + "]"
-        result = result.replace(target, value)
+    if paths is not None:
+        for (key, value) in paths.items():
+            target = "[" + key + "]"
+            result = result.replace(target, value)
     return result
 
 # change the give headerBegin to the lower() which in the headers
@@ -113,7 +114,7 @@ def __build_query_string(uri, queries):
         query_builder += k
         if v is not None:
             query_builder += "="
-            query_builder += v
+            query_builder += str(v)
         query_builder += QUERY_SEPARATOR
     if query_builder.endswith(QUERY_SEPARATOR):
         query_builder = query_builder[0:(len(query_builder)-1)]
@@ -139,4 +140,3 @@ def get_url(uri_pattern, queries, path_parameters):
     if url.endswith("?"):
         url = url[0:(len(url)-1)]
     return url
-

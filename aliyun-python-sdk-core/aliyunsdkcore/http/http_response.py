@@ -24,7 +24,7 @@ import protocol_type as PT
 
 
 class HttpResponse(HttpRequest):
-	def __init__(self,host="",url="/",method="GET",headers={},protocol=PT.HTTP,port=None,key_file=None,cert_file=None):
+	def __init__(self,host="",url="/",method="GET",headers={},protocol=PT.HTTP,content= None, port=None,key_file=None,cert_file=None):
 		HttpRequest.__init__(self,host=host,url=url,method=method,headers=headers)
 		self.__ssl_enable=False
 		if protocol is PT.HTTPS:
@@ -33,6 +33,7 @@ class HttpResponse(HttpRequest):
 		self.__cert_file=cert_file
 		self.__port=port
 		self.__connection=None
+		self.set_body(content)
 
 	def set_ssl_enable(self,enable):
 		self.__ssl_enable=enable
@@ -45,6 +46,14 @@ class HttpResponse(HttpRequest):
 			return self.get_https_response()
 		else:
 			return self.get_http_response()
+
+
+	def get_response_object(self):
+		if self.get_ssl_enabled():
+			return self.get_https_response_object()
+		else:
+			return self.get_http_response_object()
+
 
 	def get_http_response(self):
 		if self.__port is None or self.__port == "":
@@ -61,10 +70,28 @@ class HttpResponse(HttpRequest):
 		finally:
 			self.__close_connection()
 
+
+	def get_http_response_object(self):
+		if self.__port is None or self.__port == "":
+			self.__port = 80
+		try:
+			self.__connection=httplib.HTTPConnection(self.get_host(),self.__port)
+			self.__connection.connect()
+			self.__connection.request(method=self.get_method(),url=self.get_url(),body=self.get_body(),
+			                          headers=self.get_headers())
+			response=self.__connection.getresponse()
+			return response.status,response.getheaders(),response.read()
+		except Exception as e:
+			return None, None
+		finally:
+			self.__close_connection()
+
+
 	def get_https_response(self):
 		if self.__port is None or self.__port == "":
 			self.__port = 443
 		try:
+			self.__port = 443
 			self.__connection=httplib.HTTPSConnection(self.get_host(),self.__port,cert_file=self.__cert_file,
 			                                          key_file=self.__key_file)
 			self.__connection.connect()
@@ -76,6 +103,25 @@ class HttpResponse(HttpRequest):
 			return None, None
 		finally:
 			self.__close_connection()
+
+
+	def get_https_response_object(self):
+		if self.__port is None or self.__port == "":
+			self.__port = 443
+		try:
+			self.__port = 443
+			self.__connection=httplib.HTTPSConnection(self.get_host(),self.__port,cert_file=self.__cert_file,
+			                                          key_file=self.__key_file)
+			self.__connection.connect()
+			self.__connection.request(method=self.get_method(),url=self.get_url(),body=self.get_body(),
+			                          headers=self.get_headers())
+			response=self.__connection.getresponse()
+			return response.status,response.getheaders(),response.read()
+		except Exception as e:
+			return None, None
+		finally:
+			self.__close_connection()
+
 
 	def __close_connection(self):
 		try:

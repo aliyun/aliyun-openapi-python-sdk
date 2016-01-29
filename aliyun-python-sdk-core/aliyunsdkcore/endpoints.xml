@@ -9,10 +9,19 @@
         	<RegionId>cn-shanghai-et2-b01</RegionId>
         	<RegionId>cn-shanghai</RegionId>
         	<RegionId>us-west-1</RegionId>
-			<RegionId>cn-shanghai-et2-test01</RegionId>
-			<RegionId>cn-shenzhen</RegionId>
+        	<RegionId>cn-shanghai-et2-test01</RegionId>
+        	<RegionId>cn-shenzhen</RegionId>
+        	<RegionId>ap-southeast-1</RegionId>
         </RegionIds>
 	    <Products>
+            <Product>
+	            <ProductName>ROS</ProductName>
+	            <DomainName>ros.aliyuncs.com</DomainName>
+	        </Product>
+	        <Product>
+	            <ProductName>Mts</ProductName>
+	            <DomainName>mts.cn-hangzhou.aliyuncs.com</DomainName>
+	        </Product>
 	   		<Product>
 	            <ProductName>BatchCompute</ProductName>
 	            <DomainName>batchCompute.aliyuncs.com</DomainName>
@@ -22,9 +31,17 @@
 	            <DomainName>bss.aliyuncs.com</DomainName>
 	        </Product>
 	        <Product>
+                    <ProductName>Cdn</ProductName>
+                    <DomainName>cdn.aliyuncs.com</DomainName>
+                </Product>
+		<Product>
 	            <ProductName>Ecs</ProductName>
 	            <DomainName>ecs.aliyuncs.com</DomainName>
 	        </Product>
+		<Product>
+                    <ProductName>Ess</ProductName>
+                    <DomainName>ess.aliyuncs.com</DomainName>
+                </Product>
 	        <Product>
 	            <ProductName>Oms</ProductName>
 	            <DomainName>oms.aliyuncs.com</DomainName>
@@ -79,7 +96,7 @@
 	        </Product>
 	        <Product>
 	            <ProductName>Ocs</ProductName>
-	            <DomainName>ocs.aliyuncs.com</DomainName>
+	            <DomainName>m-kvstore.aliyuncs.com</DomainName>
 	        </Product>
 	        <Product>
 	            <ProductName>Ots</ProductName>
@@ -88,6 +105,18 @@
 	        <Product>
 	            <ProductName>Dqs</ProductName>
 	            <DomainName>dqs.aliyuncs.com</DomainName>
+	        </Product>
+            <Product>
+	            <ProductName>Acs</ProductName>
+	            <DomainName>acs.aliyun-inc.com</DomainName>
+	        </Product>
+            <Product>
+	            <ProductName>Ace-ops</ProductName>
+	            <DomainName>ace-ops.cn-hangzhou.aliyuncs.com</DomainName>
+	        </Product>
+	        <Product>
+	            <ProductName>CS</ProductName>
+	            <DomainName>cs.aliyuncs.com</DomainName>
 	        </Product>
 	    </Products>
     </Endpoint>

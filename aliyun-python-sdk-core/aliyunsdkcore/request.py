@@ -30,7 +30,9 @@ from .http import format_type as FT
 from .auth import rpc_signature_composer as rpc_signer
 from .auth import roa_signature_composer as roa_signer
 from .auth import oss_signature_composer as oss_signer
+from .auth import md5_tool
 import abc
+import base64
 
 """
 Acs request model.
@@ -78,6 +80,7 @@ class AcsRequest:
 		self.__domain_pattern = None
 		self.__uri_pattern = None
 		self.__uri_params = None
+		self.__content = None
 
 	def add_query_param(self, k, v):
 		if self.__params is None:
@@ -122,6 +125,12 @@ class AcsRequest:
 	def get_method(self):
 		return self.__method
 
+	def set_uri_pattern(self,pattern):
+		self.__uri_pattern = pattern
+
+	def set_uri_params(self, params):
+		self.__uri_params = params
+
 	def set_method(self, method):
 		self.__method = method
 
@@ -145,6 +154,21 @@ class AcsRequest:
 
 	def set_query_params(self, params):
 		self.__params = params
+
+	def set_content(self, content):
+		"""
+
+		:param content: ByteArray
+		:return:
+		"""
+		self.__content = content
+
+	def get_content(self):
+		"""
+
+		:return: ByteArray
+		"""
+		return self.__content
 
 	def get_headers(self):
 		"""
@@ -245,14 +269,8 @@ class RoaRequest(AcsRequest):
 		"""
 		return self.__style
 
-	def get_uri_pattern(self):
-		return self.__uri_pattern
-
 	def get_path_params(self):
 		return self.__path_params
-
-	def set_uri_pattern(self, uri_pattern):
-		self.__uri_pattern = uri_pattern
 
 	def set_path_params(self, path_params):
 		self.__path_params = path_params
@@ -280,13 +298,17 @@ class RoaRequest(AcsRequest):
 		:return: Dict
 		"""
 		sign_params = self.get_query_params()
+		if (self.get_content() is not None):
+			md5_str = md5_tool.get_md5_base64_str(self.get_content())
+			self.add_header('Content-MD5', md5_str)
 		if 'RegionId' not in sign_params.keys():
 			sign_params['RegionId'] = region_id
-		signed_headers =  roa_signer.get_signature_headers(sign_params, ak, secret,
+		signed_headers = roa_signer.get_signature_headers(sign_params, ak, secret,
 		                                        self.get_accept_format(),
 		                                        self.get_headers(),
 		                                        self.get_uri_pattern(),
-		                                        self.get_path_params())
+		                                        self.get_path_params(),
+		                                        self.get_method())
 		return signed_headers
 
 	def get_url(self, region_id, ak=None, secret=None):
@@ -330,13 +352,6 @@ class OssRequest(AcsRequest):
 	def get_style(self):
 		return self.__style
 
-	def get_uri_pattern(self):
-		"""
-
-		:return: String
-		"""
-		return self.__uri_pattern
-
 	def get_path_params(self):
 		"""
 
@@ -351,14 +366,6 @@ class OssRequest(AcsRequest):
 		if self.__path_params is None:
 			self.__path_params = {}
 		self.__path_params[k] = v
-
-	def set_uri_pattern(self, uri_pattern):
-		"""
-
-		:param uri_pattern: String
-		:return:
-		"""
-		self.__uri_pattern = uri_pattern
 
 	def __get_sign_params(self):
 		req_params = self.get_query_params()
@@ -381,7 +388,7 @@ class OssRequest(AcsRequest):
 		if 'RegionId' not in sign_params.keys():
 			sign_params['RegionId'] = region_id
 		signed_headers = oss_signer.get_signature_headers(sign_params, ak, secret, self.get_accept_format(), self.get_headers(),
-		                                        self.get_uri_pattern(), self.get_path_params())
+		                                        self.get_uri_pattern(), self.get_path_params(),self.get_method(),self.__bucket)
 		return signed_headers
 
 	def get_url(self, region_id, ak=None, secret=None):
