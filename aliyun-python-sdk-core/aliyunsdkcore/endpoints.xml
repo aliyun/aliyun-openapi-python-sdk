@@ -12,6 +12,7 @@
         	<RegionId>cn-shanghai-et2-test01</RegionId>
         	<RegionId>cn-shenzhen</RegionId>
         	<RegionId>ap-southeast-1</RegionId>
+        	<RegionId>us-east-1</RegionId>
         </RegionIds>
 	    <Products>
             <Product>
