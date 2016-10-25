@@ -47,11 +47,35 @@ class PushRequest(RpcRequest):
 	def set_Type(self,Type):
 		self.add_query_param('Type',Type)
 
+	def get_DeviceType(self):
+		return self.get_query_params().get('DeviceType')
+
+	def set_DeviceType(self,DeviceType):
+		self.add_query_param('DeviceType',DeviceType)
+
 	def get_Title(self):
 		return self.get_query_params().get('Title')
 
 	def set_Title(self,Title):
 		self.add_query_param('Title',Title)
+
+	def get_Body(self):
+		return self.get_query_params().get('Body')
+
+	def set_Body(self,Body):
+		self.add_query_param('Body',Body)
+
+	def get_Summary(self):
+		return self.get_query_params().get('Summary')
+
+	def set_Summary(self,Summary):
+		self.add_query_param('Summary',Summary)
+
+	def get_TimeOut(self):
+		return self.get_query_params().get('TimeOut')
+
+	def set_TimeOut(self,TimeOut):
+		self.add_query_param('TimeOut',TimeOut)
 
 	def get_Remind(self):
 		return self.get_query_params().get('Remind')
@@ -65,35 +89,17 @@ class PushRequest(RpcRequest):
 	def set_StoreOffline(self,StoreOffline):
 		self.add_query_param('StoreOffline',StoreOffline)
 
-	def get_Body(self):
-		return self.get_query_params().get('Body')
-
-	def set_Body(self,Body):
-		self.add_query_param('Body',Body)
-
-	def get_DeviceType(self):
-		return self.get_query_params().get('DeviceType')
-
-	def set_DeviceType(self,DeviceType):
-		self.add_query_param('DeviceType',DeviceType)
-
-	def get_TimeOut(self):
-		return self.get_query_params().get('TimeOut')
-
-	def set_TimeOut(self,TimeOut):
-		self.add_query_param('TimeOut',TimeOut)
-
-	def get_Summary(self):
-		return self.get_query_params().get('Summary')
-
-	def set_Summary(self,Summary):
-		self.add_query_param('Summary',Summary)
-
 	def get_AndroidActivity(self):
 		return self.get_query_params().get('AndroidActivity')
 
 	def set_AndroidActivity(self,AndroidActivity):
 		self.add_query_param('AndroidActivity',AndroidActivity)
+
+	def get_XiaomiActivity(self):
+		return self.get_query_params().get('XiaomiActivity')
+
+	def set_XiaomiActivity(self,XiaomiActivity):
+		self.add_query_param('XiaomiActivity',XiaomiActivity)
 
 	def get_AndroidOpenUrl(self):
 		return self.get_query_params().get('AndroidOpenUrl')
@@ -136,6 +142,30 @@ class PushRequest(RpcRequest):
 
 	def set_iOSBadge(self,iOSBadge):
 		self.add_query_param('iOSBadge',iOSBadge)
+
+	def get_iOSTitle(self):
+		return self.get_query_params().get('iOSTitle')
+
+	def set_iOSTitle(self,iOSTitle):
+		self.add_query_param('iOSTitle',iOSTitle)
+
+	def get_iOSSubtitle(self):
+		return self.get_query_params().get('iOSSubtitle')
+
+	def set_iOSSubtitle(self,iOSSubtitle):
+		self.add_query_param('iOSSubtitle',iOSSubtitle)
+
+	def get_iOSNotificationCategory(self):
+		return self.get_query_params().get('iOSNotificationCategory')
+
+	def set_iOSNotificationCategory(self,iOSNotificationCategory):
+		self.add_query_param('iOSNotificationCategory',iOSNotificationCategory)
+
+	def get_iOSMutableContent(self):
+		return self.get_query_params().get('iOSMutableContent')
+
+	def set_iOSMutableContent(self,iOSMutableContent):
+		self.add_query_param('iOSMutableContent',iOSMutableContent)
 
 	def get_iOSExtParameters(self):
 		return self.get_query_params().get('iOSExtParameters')

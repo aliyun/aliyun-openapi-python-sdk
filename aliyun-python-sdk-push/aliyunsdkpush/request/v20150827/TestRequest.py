@@ -18,10 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class UnbindTagRequest(RpcRequest):
+class TestRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Push', '2015-08-27', 'UnbindTag')
+		RpcRequest.__init__(self, 'Push', '2015-08-27', 'Test')
 
 	def get_AppKey(self):
 		return self.get_query_params().get('AppKey')
@@ -29,20 +29,26 @@ class UnbindTagRequest(RpcRequest):
 	def set_AppKey(self,AppKey):
 		self.add_query_param('AppKey',AppKey)
 
-	def get_ClientKey(self):
-		return self.get_query_params().get('ClientKey')
+	def get_Target(self):
+		return self.get_query_params().get('Target')
 
-	def set_ClientKey(self,ClientKey):
-		self.add_query_param('ClientKey',ClientKey)
+	def set_Target(self,Target):
+		self.add_query_param('Target',Target)
 
-	def get_KeyType(self):
-		return self.get_query_params().get('KeyType')
+	def get_TargetValue(self):
+		return self.get_query_params().get('TargetValue')
 
-	def set_KeyType(self,KeyType):
-		self.add_query_param('KeyType',KeyType)
+	def set_TargetValue(self,TargetValue):
+		self.add_query_param('TargetValue',TargetValue)
 
-	def get_TagName(self):
-		return self.get_query_params().get('TagName')
+	def get_my_name(self):
+		return self.get_query_params().get('my_name')
 
-	def set_TagName(self,TagName):
-		self.add_query_param('TagName',TagName)
+	def set_my_name(self,my_name):
+		self.add_query_param('my_name',my_name)
+
+	def get_my_age(self):
+		return self.get_query_params().get('my_age')
+
+	def set_my_age(self,my_age):
+		self.add_query_param('my_age',my_age)

@@ -18,10 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class UnbindTagRequest(RpcRequest):
+class QueryAppPushStatRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Push', '2015-08-27', 'UnbindTag')
+		RpcRequest.__init__(self, 'Push', '2015-08-27', 'QueryAppPushStat')
 
 	def get_AppKey(self):
 		return self.get_query_params().get('AppKey')
@@ -29,20 +29,20 @@ class UnbindTagRequest(RpcRequest):
 	def set_AppKey(self,AppKey):
 		self.add_query_param('AppKey',AppKey)
 
-	def get_ClientKey(self):
-		return self.get_query_params().get('ClientKey')
+	def get_StartTime(self):
+		return self.get_query_params().get('StartTime')
 
-	def set_ClientKey(self,ClientKey):
-		self.add_query_param('ClientKey',ClientKey)
+	def set_StartTime(self,StartTime):
+		self.add_query_param('StartTime',StartTime)
 
-	def get_KeyType(self):
-		return self.get_query_params().get('KeyType')
+	def get_EndTime(self):
+		return self.get_query_params().get('EndTime')
 
-	def set_KeyType(self,KeyType):
-		self.add_query_param('KeyType',KeyType)
+	def set_EndTime(self,EndTime):
+		self.add_query_param('EndTime',EndTime)
 
-	def get_TagName(self):
-		return self.get_query_params().get('TagName')
+	def get_Granularity(self):
+		return self.get_query_params().get('Granularity')
 
-	def set_TagName(self,TagName):
-		self.add_query_param('TagName',TagName)
+	def set_Granularity(self,Granularity):
+		self.add_query_param('Granularity',Granularity)

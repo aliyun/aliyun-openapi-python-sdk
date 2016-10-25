@@ -18,31 +18,13 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class UnbindTagRequest(RpcRequest):
+class PopTestRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Push', '2015-08-27', 'UnbindTag')
+		RpcRequest.__init__(self, 'Push', '2015-08-27', 'PopTest')
 
 	def get_AppKey(self):
 		return self.get_query_params().get('AppKey')
 
 	def set_AppKey(self,AppKey):
 		self.add_query_param('AppKey',AppKey)
-
-	def get_ClientKey(self):
-		return self.get_query_params().get('ClientKey')
-
-	def set_ClientKey(self,ClientKey):
-		self.add_query_param('ClientKey',ClientKey)
-
-	def get_KeyType(self):
-		return self.get_query_params().get('KeyType')
-
-	def set_KeyType(self,KeyType):
-		self.add_query_param('KeyType',KeyType)
-
-	def get_TagName(self):
-		return self.get_query_params().get('TagName')
-
-	def set_TagName(self,TagName):
-		self.add_query_param('TagName',TagName)

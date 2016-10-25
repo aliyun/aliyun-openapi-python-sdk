@@ -18,10 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class UnbindTagRequest(RpcRequest):
+class ListDevicePushRecordsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Push', '2015-08-27', 'UnbindTag')
+		RpcRequest.__init__(self, 'Push', '2015-08-27', 'ListDevicePushRecords')
 
 	def get_AppKey(self):
 		return self.get_query_params().get('AppKey')
@@ -29,20 +29,20 @@ class UnbindTagRequest(RpcRequest):
 	def set_AppKey(self,AppKey):
 		self.add_query_param('AppKey',AppKey)
 
-	def get_ClientKey(self):
-		return self.get_query_params().get('ClientKey')
+	def get_DeviceId(self):
+		return self.get_query_params().get('DeviceId')
 
-	def set_ClientKey(self,ClientKey):
-		self.add_query_param('ClientKey',ClientKey)
+	def set_DeviceId(self,DeviceId):
+		self.add_query_param('DeviceId',DeviceId)
 
-	def get_KeyType(self):
-		return self.get_query_params().get('KeyType')
+	def get_Page(self):
+		return self.get_query_params().get('Page')
 
-	def set_KeyType(self,KeyType):
-		self.add_query_param('KeyType',KeyType)
+	def set_Page(self,Page):
+		self.add_query_param('Page',Page)
 
-	def get_TagName(self):
-		return self.get_query_params().get('TagName')
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
 
-	def set_TagName(self,TagName):
-		self.add_query_param('TagName',TagName)
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
