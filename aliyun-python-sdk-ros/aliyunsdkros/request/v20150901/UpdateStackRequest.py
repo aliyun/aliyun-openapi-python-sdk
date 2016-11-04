@@ -18,12 +18,12 @@
 # under the License.
 
 from aliyunsdkcore.request import RoaRequest
-class DescribeResourcesRequest(RoaRequest):
+class UpdateStackRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'ROS', '2015-09-01', 'DescribeResources')
-		self.set_uri_pattern('/stacks/[StackName]/[StackId]/resources')
-		self.set_method('GET')
+		RoaRequest.__init__(self, 'ROS', '2015-09-01', 'UpdateStack')
+		self.set_uri_pattern('/stacks/[StackName]/[StackId]')
+		self.set_method('PUT')
 
 	def get_StackName(self):
 		return self.get_path_params().get('StackName')
