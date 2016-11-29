@@ -118,6 +118,10 @@
 	            <ProductName>CS</ProductName>
 	            <DomainName>cs.aliyuncs.com</DomainName>
 	        </Product>
+	        <Product>
+	            <ProductName>Emr</ProductName>
+	            <DomainName>emr.aliyuncs.com</DomainName>
+	        </Product>
 	    </Products>
     </Endpoint>
 </Endpoints>
