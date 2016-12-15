@@ -16,7 +16,7 @@
 # under the License.
 
 #coding=utf-8
-__author__='xixi.xxx'
+__author__='alex jiang'
 import httplib
 
 from http_request import HttpRequest

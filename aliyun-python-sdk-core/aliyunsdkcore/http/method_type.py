@@ -17,11 +17,11 @@
 
  #coding=utf-8
 
-__author__ = 'xixi.xxx'
+__author__ = 'alex jiang'
 
 GET = "GET"
 PUT = "PUT"
-POST = "POSt"
+POST = "POST"
 DELETE = "DELETE"
 HEAD = "HEAD"
 OPTIONS = "OPTIONS"

@@ -17,7 +17,7 @@
 
  #coding=utf-8
 
-__author__ = 'xixi.xxx'
+__author__ = 'alex jiang'
 
 HTTP = "http"
 HTTPS = "https"

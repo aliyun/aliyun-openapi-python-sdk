@@ -24,7 +24,7 @@ Acs error message module.
 
 Created on 6/15/2015
 
-@author: alex
+@author: alex jiang
 """
 
 __dict = dict(SDK_INVALID_REGION_ID='Can not find endpoint to access.',

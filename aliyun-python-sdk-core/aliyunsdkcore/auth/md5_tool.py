@@ -22,7 +22,7 @@ MD5 tools module.
 
 Created on 9/28/2015
 
-@author: alex
+@author: alex jiang
 """
 
 import hashlib

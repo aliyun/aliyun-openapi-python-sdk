@@ -24,7 +24,7 @@ Acs ERROR CODE module.
 
 Created on 6/15/2015
 
-@author: alex
+@author: alex jiang
 """
 
 SDK_INVALID_REGION_ID = 'SDK.InvalidRegionId'
