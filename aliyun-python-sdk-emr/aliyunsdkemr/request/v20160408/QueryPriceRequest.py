@@ -125,6 +125,12 @@ class QueryPriceRequest(RpcRequest):
 	def set_ChargeType(self,ChargeType):
 		self.add_query_param('ChargeType',ChargeType)
 
+	def get_NetType(self):
+		return self.get_query_params().get('NetType')
+
+	def set_NetType(self,NetType):
+		self.add_query_param('NetType',NetType)
+
 	def get_Period(self):
 		return self.get_query_params().get('Period')
 

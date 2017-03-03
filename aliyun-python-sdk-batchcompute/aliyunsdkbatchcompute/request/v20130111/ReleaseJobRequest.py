@@ -22,8 +22,8 @@ class ReleaseJobRequest(RoaRequest):
 
 	def __init__(self):
 		RoaRequest.__init__(self, 'BatchCompute', '2013-01-11', 'ReleaseJob')
-		self.set_uri_pattern(self, '/jobs/[ResourceName]')
-		self.set_method(self, 'DELETE')
+		self.set_uri_pattern('/jobs/[ResourceName]')
+		self.set_method('DELETE')
 
 	def get_ResourceName(self):
 		return self.get_path_params().get('ResourceName')

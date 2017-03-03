@@ -23,6 +23,12 @@ class CreateRouteEntryRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'CreateRouteEntry')
 
+	def get_NextHopList(self):
+		return self.get_query_params().get('NextHopList')
+
+	def set_NextHopList(self,NextHopList):
+		self.add_query_param('NextHopList',NextHopList)
+
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 

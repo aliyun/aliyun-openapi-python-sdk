@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class CreateDBInstanceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'CreateDBInstance')
+		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'CreateDBInstance','rds')
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
@@ -40,12 +40,6 @@ class CreateDBInstanceRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_ClientToken(self):
-		return self.get_query_params().get('ClientToken')
-
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
 
 	def get_Engine(self):
 		return self.get_query_params().get('Engine')
@@ -95,6 +89,12 @@ class CreateDBInstanceRequest(RpcRequest):
 	def set_SecurityIPList(self,SecurityIPList):
 		self.add_query_param('SecurityIPList',SecurityIPList)
 
+	def get_ClientToken(self):
+		return self.get_query_params().get('ClientToken')
+
+	def set_ClientToken(self,ClientToken):
+		self.add_query_param('ClientToken',ClientToken)
+
 	def get_PayType(self):
 		return self.get_query_params().get('PayType')
 
@@ -142,3 +142,15 @@ class CreateDBInstanceRequest(RpcRequest):
 
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
+
+	def get_UsedTime(self):
+		return self.get_query_params().get('UsedTime')
+
+	def set_UsedTime(self,UsedTime):
+		self.add_query_param('UsedTime',UsedTime)
+
+	def get_Period(self):
+		return self.get_query_params().get('Period')
+
+	def set_Period(self,Period):
+		self.add_query_param('Period',Period)

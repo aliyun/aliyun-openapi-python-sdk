@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class DescribeKeyRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Kms', '2016-01-20', 'DescribeKey')
+		RpcRequest.__init__(self, 'Kms', '2016-01-20', 'DescribeKey','kms')
 
 	def get_KeyId(self):
 		return self.get_query_params().get('KeyId')

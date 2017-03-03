@@ -52,3 +52,9 @@ class ReInitDiskRequest(RpcRequest):
 
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
+
+	def get_Password(self):
+		return self.get_query_params().get('Password')
+
+	def set_Password(self,Password):
+		self.add_query_param('Password',Password)

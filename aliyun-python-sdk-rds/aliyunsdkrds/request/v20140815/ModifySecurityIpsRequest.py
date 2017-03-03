@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class ModifySecurityIpsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'ModifySecurityIps')
+		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'ModifySecurityIps','rds')
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
@@ -58,6 +58,18 @@ class ModifySecurityIpsRequest(RpcRequest):
 
 	def set_SecurityIps(self,SecurityIps):
 		self.add_query_param('SecurityIps',SecurityIps)
+
+	def get_DBInstanceIPArrayName(self):
+		return self.get_query_params().get('DBInstanceIPArrayName')
+
+	def set_DBInstanceIPArrayName(self,DBInstanceIPArrayName):
+		self.add_query_param('DBInstanceIPArrayName',DBInstanceIPArrayName)
+
+	def get_DBInstanceIPArrayAttribute(self):
+		return self.get_query_params().get('DBInstanceIPArrayAttribute')
+
+	def set_DBInstanceIPArrayAttribute(self,DBInstanceIPArrayAttribute):
+		self.add_query_param('DBInstanceIPArrayAttribute',DBInstanceIPArrayAttribute)
 
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')

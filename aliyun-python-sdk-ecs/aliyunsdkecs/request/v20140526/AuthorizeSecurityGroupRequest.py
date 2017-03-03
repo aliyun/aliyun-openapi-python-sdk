@@ -65,6 +65,12 @@ class AuthorizeSecurityGroupRequest(RpcRequest):
 	def set_SourceGroupId(self,SourceGroupId):
 		self.add_query_param('SourceGroupId',SourceGroupId)
 
+	def get_SourceGroupOwnerId(self):
+		return self.get_query_params().get('SourceGroupOwnerId')
+
+	def set_SourceGroupOwnerId(self,SourceGroupOwnerId):
+		self.add_query_param('SourceGroupOwnerId',SourceGroupOwnerId)
+
 	def get_SourceGroupOwnerAccount(self):
 		return self.get_query_params().get('SourceGroupOwnerAccount')
 

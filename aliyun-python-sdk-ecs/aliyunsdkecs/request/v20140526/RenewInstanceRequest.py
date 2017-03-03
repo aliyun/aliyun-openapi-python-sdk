@@ -53,56 +53,8 @@ class RenewInstanceRequest(RpcRequest):
 	def set_InstanceId(self,InstanceId):
 		self.add_query_param('InstanceId',InstanceId)
 
-	def get_InstanceType(self):
-		return self.get_query_params().get('InstanceType')
-
-	def set_InstanceType(self,InstanceType):
-		self.add_query_param('InstanceType',InstanceType)
-
-	def get_InternetMaxBandwidthOut(self):
-		return self.get_query_params().get('InternetMaxBandwidthOut')
-
-	def set_InternetMaxBandwidthOut(self,InternetMaxBandwidthOut):
-		self.add_query_param('InternetMaxBandwidthOut',InternetMaxBandwidthOut)
-
-	def get_InternetChargeType(self):
-		return self.get_query_params().get('InternetChargeType')
-
-	def set_InternetChargeType(self,InternetChargeType):
-		self.add_query_param('InternetChargeType',InternetChargeType)
-
 	def get_Period(self):
 		return self.get_query_params().get('Period')
 
 	def set_Period(self,Period):
 		self.add_query_param('Period',Period)
-
-	def get_RebootTime(self):
-		return self.get_query_params().get('RebootTime')
-
-	def set_RebootTime(self,RebootTime):
-		self.add_query_param('RebootTime',RebootTime)
-
-	def get_CovertDiskPortable1DiskId(self):
-		return self.get_query_params().get('CovertDiskPortable1DiskId')
-
-	def set_CovertDiskPortable1DiskId(self,CovertDiskPortable1DiskId):
-		self.add_query_param('CovertDiskPortable1DiskId',CovertDiskPortable1DiskId)
-
-	def get_CovertDiskPortable2DiskId(self):
-		return self.get_query_params().get('CovertDiskPortable2DiskId')
-
-	def set_CovertDiskPortable2DiskId(self,CovertDiskPortable2DiskId):
-		self.add_query_param('CovertDiskPortable2DiskId',CovertDiskPortable2DiskId)
-
-	def get_CovertDiskPortable3DiskId(self):
-		return self.get_query_params().get('CovertDiskPortable3DiskId')
-
-	def set_CovertDiskPortable3DiskId(self,CovertDiskPortable3DiskId):
-		self.add_query_param('CovertDiskPortable3DiskId',CovertDiskPortable3DiskId)
-
-	def get_CovertDiskPortable4DiskId(self):
-		return self.get_query_params().get('CovertDiskPortable4DiskId')
-
-	def set_CovertDiskPortable4DiskId(self,CovertDiskPortable4DiskId):
-		self.add_query_param('CovertDiskPortable4DiskId',CovertDiskPortable4DiskId)

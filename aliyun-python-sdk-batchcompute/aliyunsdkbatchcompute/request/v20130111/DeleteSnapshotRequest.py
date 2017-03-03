@@ -22,8 +22,8 @@ class DeleteSnapshotRequest(RoaRequest):
 
 	def __init__(self):
 		RoaRequest.__init__(self, 'BatchCompute', '2013-01-11', 'DeleteSnapshot')
-		self.set_uri_pattern(self, '/snapshots/[ResourceName]')
-		self.set_method(self, 'DELETE')
+		self.set_uri_pattern('/snapshots/[ResourceName]')
+		self.set_method('DELETE')
 
 	def get_ResourceName(self):
 		return self.get_path_params().get('ResourceName')

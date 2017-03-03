@@ -76,3 +76,9 @@ class ModifyInstanceAttributeRequest(RpcRequest):
 
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
+
+	def get_UserData(self):
+		return self.get_query_params().get('UserData')
+
+	def set_UserData(self,UserData):
+		self.add_query_param('UserData',UserData)

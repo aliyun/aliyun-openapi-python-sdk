@@ -48,16 +48,16 @@ class ModifyImageShareGroupPermissionRequest(RpcRequest):
 		self.add_query_param('ImageId',ImageId)
 
 	def get_AddGroup1(self):
-		return self.get_query_params().get('AddGroup1')
+		return self.get_query_params().get('AddGroup.1')
 
 	def set_AddGroup1(self,AddGroup1):
-		self.add_query_param('AddGroup1',AddGroup1)
+		self.add_query_param('AddGroup.1',AddGroup1)
 
 	def get_RemoveGroup1(self):
-		return self.get_query_params().get('RemoveGroup1')
+		return self.get_query_params().get('RemoveGroup.1')
 
 	def set_RemoveGroup1(self,RemoveGroup1):
-		self.add_query_param('RemoveGroup1',RemoveGroup1)
+		self.add_query_param('RemoveGroup.1',RemoveGroup1)
 
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')

@@ -52,3 +52,9 @@ class DeleteInstanceRequest(RpcRequest):
 
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
+
+	def get_Force(self):
+		return self.get_query_params().get('Force')
+
+	def set_Force(self,Force):
+		self.add_query_param('Force',Force)

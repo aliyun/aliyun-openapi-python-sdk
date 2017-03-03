@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class ModifyBackupPolicyRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'ModifyBackupPolicy')
+		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'ModifyBackupPolicy','rds')
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
@@ -58,6 +58,24 @@ class ModifyBackupPolicyRequest(RpcRequest):
 
 	def set_PreferredBackupPeriod(self,PreferredBackupPeriod):
 		self.add_query_param('PreferredBackupPeriod',PreferredBackupPeriod)
+
+	def get_BackupRetentionPeriod(self):
+		return self.get_query_params().get('BackupRetentionPeriod')
+
+	def set_BackupRetentionPeriod(self,BackupRetentionPeriod):
+		self.add_query_param('BackupRetentionPeriod',BackupRetentionPeriod)
+
+	def get_BackupLog(self):
+		return self.get_query_params().get('BackupLog')
+
+	def set_BackupLog(self,BackupLog):
+		self.add_query_param('BackupLog',BackupLog)
+
+	def get_LogBackupRetentionPeriod(self):
+		return self.get_query_params().get('LogBackupRetentionPeriod')
+
+	def set_LogBackupRetentionPeriod(self,LogBackupRetentionPeriod):
+		self.add_query_param('LogBackupRetentionPeriod',LogBackupRetentionPeriod)
 
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')

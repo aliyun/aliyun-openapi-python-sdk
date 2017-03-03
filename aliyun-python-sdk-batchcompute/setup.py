@@ -58,7 +58,7 @@ setup(
     packages=find_packages(exclude=["tests*"]),
     include_package_data=True,
     platforms="any",
-    install_requires=["aliyun-python-sdk-core>=2.0.2"],
+    install_requires=["aliyun-python-sdk-core>=2.0.3"],
     classifiers=(
                 "Development Status :: 4 - Beta",
                 "Intended Audience :: Developers",

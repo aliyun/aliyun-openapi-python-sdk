@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class CreateAccountRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'CreateAccount')
+		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'CreateAccount','rds')
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
@@ -64,6 +64,12 @@ class CreateAccountRequest(RpcRequest):
 
 	def set_AccountDescription(self,AccountDescription):
 		self.add_query_param('AccountDescription',AccountDescription)
+
+	def get_AccountType(self):
+		return self.get_query_params().get('AccountType')
+
+	def set_AccountType(self,AccountType):
+		self.add_query_param('AccountType',AccountType)
 
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')

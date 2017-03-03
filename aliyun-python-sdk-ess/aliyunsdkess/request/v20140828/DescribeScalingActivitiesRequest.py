@@ -66,124 +66,124 @@ class DescribeScalingActivitiesRequest(RpcRequest):
 		self.add_query_param('StatusCode',StatusCode)
 
 	def get_ScalingActivityId1(self):
-		return self.get_query_params().get('ScalingActivityId1')
+		return self.get_query_params().get('ScalingActivityId.1')
 
 	def set_ScalingActivityId1(self,ScalingActivityId1):
-		self.add_query_param('ScalingActivityId1',ScalingActivityId1)
+		self.add_query_param('ScalingActivityId.1',ScalingActivityId1)
 
 	def get_ScalingActivityId2(self):
-		return self.get_query_params().get('ScalingActivityId2')
+		return self.get_query_params().get('ScalingActivityId.2')
 
 	def set_ScalingActivityId2(self,ScalingActivityId2):
-		self.add_query_param('ScalingActivityId2',ScalingActivityId2)
+		self.add_query_param('ScalingActivityId.2',ScalingActivityId2)
 
 	def get_ScalingActivityId3(self):
-		return self.get_query_params().get('ScalingActivityId3')
+		return self.get_query_params().get('ScalingActivityId.3')
 
 	def set_ScalingActivityId3(self,ScalingActivityId3):
-		self.add_query_param('ScalingActivityId3',ScalingActivityId3)
+		self.add_query_param('ScalingActivityId.3',ScalingActivityId3)
 
 	def get_ScalingActivityId4(self):
-		return self.get_query_params().get('ScalingActivityId4')
+		return self.get_query_params().get('ScalingActivityId.4')
 
 	def set_ScalingActivityId4(self,ScalingActivityId4):
-		self.add_query_param('ScalingActivityId4',ScalingActivityId4)
+		self.add_query_param('ScalingActivityId.4',ScalingActivityId4)
 
 	def get_ScalingActivityId5(self):
-		return self.get_query_params().get('ScalingActivityId5')
+		return self.get_query_params().get('ScalingActivityId.5')
 
 	def set_ScalingActivityId5(self,ScalingActivityId5):
-		self.add_query_param('ScalingActivityId5',ScalingActivityId5)
+		self.add_query_param('ScalingActivityId.5',ScalingActivityId5)
 
 	def get_ScalingActivityId6(self):
-		return self.get_query_params().get('ScalingActivityId6')
+		return self.get_query_params().get('ScalingActivityId.6')
 
 	def set_ScalingActivityId6(self,ScalingActivityId6):
-		self.add_query_param('ScalingActivityId6',ScalingActivityId6)
+		self.add_query_param('ScalingActivityId.6',ScalingActivityId6)
 
 	def get_ScalingActivityId7(self):
-		return self.get_query_params().get('ScalingActivityId7')
+		return self.get_query_params().get('ScalingActivityId.7')
 
 	def set_ScalingActivityId7(self,ScalingActivityId7):
-		self.add_query_param('ScalingActivityId7',ScalingActivityId7)
+		self.add_query_param('ScalingActivityId.7',ScalingActivityId7)
 
 	def get_ScalingActivityId8(self):
-		return self.get_query_params().get('ScalingActivityId8')
+		return self.get_query_params().get('ScalingActivityId.8')
 
 	def set_ScalingActivityId8(self,ScalingActivityId8):
-		self.add_query_param('ScalingActivityId8',ScalingActivityId8)
+		self.add_query_param('ScalingActivityId.8',ScalingActivityId8)
 
 	def get_ScalingActivityId9(self):
-		return self.get_query_params().get('ScalingActivityId9')
+		return self.get_query_params().get('ScalingActivityId.9')
 
 	def set_ScalingActivityId9(self,ScalingActivityId9):
-		self.add_query_param('ScalingActivityId9',ScalingActivityId9)
+		self.add_query_param('ScalingActivityId.9',ScalingActivityId9)
 
 	def get_ScalingActivityId10(self):
-		return self.get_query_params().get('ScalingActivityId10')
+		return self.get_query_params().get('ScalingActivityId.10')
 
 	def set_ScalingActivityId10(self,ScalingActivityId10):
-		self.add_query_param('ScalingActivityId10',ScalingActivityId10)
+		self.add_query_param('ScalingActivityId.10',ScalingActivityId10)
 
 	def get_ScalingActivityId11(self):
-		return self.get_query_params().get('ScalingActivityId11')
+		return self.get_query_params().get('ScalingActivityId.11')
 
 	def set_ScalingActivityId11(self,ScalingActivityId11):
-		self.add_query_param('ScalingActivityId11',ScalingActivityId11)
+		self.add_query_param('ScalingActivityId.11',ScalingActivityId11)
 
 	def get_ScalingActivityId12(self):
-		return self.get_query_params().get('ScalingActivityId12')
+		return self.get_query_params().get('ScalingActivityId.12')
 
 	def set_ScalingActivityId12(self,ScalingActivityId12):
-		self.add_query_param('ScalingActivityId12',ScalingActivityId12)
+		self.add_query_param('ScalingActivityId.12',ScalingActivityId12)
 
 	def get_ScalingActivityId13(self):
-		return self.get_query_params().get('ScalingActivityId13')
+		return self.get_query_params().get('ScalingActivityId.13')
 
 	def set_ScalingActivityId13(self,ScalingActivityId13):
-		self.add_query_param('ScalingActivityId13',ScalingActivityId13)
+		self.add_query_param('ScalingActivityId.13',ScalingActivityId13)
 
 	def get_ScalingActivityId14(self):
-		return self.get_query_params().get('ScalingActivityId14')
+		return self.get_query_params().get('ScalingActivityId.14')
 
 	def set_ScalingActivityId14(self,ScalingActivityId14):
-		self.add_query_param('ScalingActivityId14',ScalingActivityId14)
+		self.add_query_param('ScalingActivityId.14',ScalingActivityId14)
 
 	def get_ScalingActivityId15(self):
-		return self.get_query_params().get('ScalingActivityId15')
+		return self.get_query_params().get('ScalingActivityId.15')
 
 	def set_ScalingActivityId15(self,ScalingActivityId15):
-		self.add_query_param('ScalingActivityId15',ScalingActivityId15)
+		self.add_query_param('ScalingActivityId.15',ScalingActivityId15)
 
 	def get_ScalingActivityId16(self):
-		return self.get_query_params().get('ScalingActivityId16')
+		return self.get_query_params().get('ScalingActivityId.16')
 
 	def set_ScalingActivityId16(self,ScalingActivityId16):
-		self.add_query_param('ScalingActivityId16',ScalingActivityId16)
+		self.add_query_param('ScalingActivityId.16',ScalingActivityId16)
 
 	def get_ScalingActivityId17(self):
-		return self.get_query_params().get('ScalingActivityId17')
+		return self.get_query_params().get('ScalingActivityId.17')
 
 	def set_ScalingActivityId17(self,ScalingActivityId17):
-		self.add_query_param('ScalingActivityId17',ScalingActivityId17)
+		self.add_query_param('ScalingActivityId.17',ScalingActivityId17)
 
 	def get_ScalingActivityId18(self):
-		return self.get_query_params().get('ScalingActivityId18')
+		return self.get_query_params().get('ScalingActivityId.18')
 
 	def set_ScalingActivityId18(self,ScalingActivityId18):
-		self.add_query_param('ScalingActivityId18',ScalingActivityId18)
+		self.add_query_param('ScalingActivityId.18',ScalingActivityId18)
 
 	def get_ScalingActivityId19(self):
-		return self.get_query_params().get('ScalingActivityId19')
+		return self.get_query_params().get('ScalingActivityId.19')
 
 	def set_ScalingActivityId19(self,ScalingActivityId19):
-		self.add_query_param('ScalingActivityId19',ScalingActivityId19)
+		self.add_query_param('ScalingActivityId.19',ScalingActivityId19)
 
 	def get_ScalingActivityId20(self):
-		return self.get_query_params().get('ScalingActivityId20')
+		return self.get_query_params().get('ScalingActivityId.20')
 
 	def set_ScalingActivityId20(self,ScalingActivityId20):
-		self.add_query_param('ScalingActivityId20',ScalingActivityId20)
+		self.add_query_param('ScalingActivityId.20',ScalingActivityId20)
 
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
