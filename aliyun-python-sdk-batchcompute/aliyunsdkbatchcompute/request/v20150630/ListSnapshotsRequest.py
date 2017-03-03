@@ -22,5 +22,5 @@ class ListSnapshotsRequest(RoaRequest):
 
 	def __init__(self):
 		RoaRequest.__init__(self, 'BatchCompute', '2015-06-30', 'ListSnapshots')
-		self.set_uri_pattern(self, '/snapshots')
-		self.set_method(self, 'GET')
+		self.set_uri_pattern('/snapshots')
+		self.set_method('GET')

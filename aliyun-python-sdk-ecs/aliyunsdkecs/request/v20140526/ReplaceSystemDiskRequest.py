@@ -53,6 +53,12 @@ class ReplaceSystemDiskRequest(RpcRequest):
 	def set_ImageId(self,ImageId):
 		self.add_query_param('ImageId',ImageId)
 
+	def get_SystemDiskSize(self):
+		return self.get_query_params().get('SystemDisk.Size')
+
+	def set_SystemDiskSize(self,SystemDiskSize):
+		self.add_query_param('SystemDisk.Size',SystemDiskSize)
+
 	def get_ClientToken(self):
 		return self.get_query_params().get('ClientToken')
 
@@ -64,3 +70,15 @@ class ReplaceSystemDiskRequest(RpcRequest):
 
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
+
+	def get_UseAdditionalService(self):
+		return self.get_query_params().get('UseAdditionalService')
+
+	def set_UseAdditionalService(self,UseAdditionalService):
+		self.add_query_param('UseAdditionalService',UseAdditionalService)
+
+	def get_Password(self):
+		return self.get_query_params().get('Password')
+
+	def set_Password(self,Password):
+		self.add_query_param('Password',Password)

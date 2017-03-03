@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class DescribeOptimizeAdviceOnBigTableRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'DescribeOptimizeAdviceOnBigTable')
+		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'DescribeOptimizeAdviceOnBigTable','rds')
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')

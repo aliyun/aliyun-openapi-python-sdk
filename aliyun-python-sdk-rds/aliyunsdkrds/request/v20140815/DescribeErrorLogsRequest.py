@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class DescribeErrorLogsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'DescribeErrorLogs')
+		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'DescribeErrorLogs','rds')
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')

@@ -22,8 +22,8 @@ class GetJobDescriptionRequest(RoaRequest):
 
 	def __init__(self):
 		RoaRequest.__init__(self, 'BatchCompute', '2013-01-11', 'GetJobDescription')
-		self.set_uri_pattern(self, '/jobs/[ResourceName]/description')
-		self.set_method(self, 'GET')
+		self.set_uri_pattern('/jobs/[ResourceName]/description')
+		self.set_method('GET')
 
 	def get_ResourceName(self):
 		return self.get_path_params().get('ResourceName')

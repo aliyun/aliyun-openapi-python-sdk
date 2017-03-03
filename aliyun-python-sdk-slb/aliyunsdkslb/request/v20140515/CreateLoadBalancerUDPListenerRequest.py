@@ -107,8 +107,44 @@ class CreateLoadBalancerUDPListenerRequest(RpcRequest):
 	def set_healthCheckInterval(self,healthCheckInterval):
 		self.add_query_param('healthCheckInterval',healthCheckInterval)
 
+	def get_healthCheckReq(self):
+		return self.get_query_params().get('healthCheckReq')
+
+	def set_healthCheckReq(self,healthCheckReq):
+		self.add_query_param('healthCheckReq',healthCheckReq)
+
+	def get_healthCheckExp(self):
+		return self.get_query_params().get('healthCheckExp')
+
+	def set_healthCheckExp(self,healthCheckExp):
+		self.add_query_param('healthCheckExp',healthCheckExp)
+
+	def get_MaxConnection(self):
+		return self.get_query_params().get('MaxConnection')
+
+	def set_MaxConnection(self,MaxConnection):
+		self.add_query_param('MaxConnection',MaxConnection)
+
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
 
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
+
+	def get_access_key_id(self):
+		return self.get_query_params().get('access_key_id')
+
+	def set_access_key_id(self,access_key_id):
+		self.add_query_param('access_key_id',access_key_id)
+
+	def get_VServerGroupId(self):
+		return self.get_query_params().get('VServerGroupId')
+
+	def set_VServerGroupId(self,VServerGroupId):
+		self.add_query_param('VServerGroupId',VServerGroupId)
+
+	def get_Tags(self):
+		return self.get_query_params().get('Tags')
+
+	def set_Tags(self,Tags):
+		self.add_query_param('Tags',Tags)

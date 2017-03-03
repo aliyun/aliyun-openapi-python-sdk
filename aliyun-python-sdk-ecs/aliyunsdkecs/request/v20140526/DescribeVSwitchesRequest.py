@@ -59,6 +59,12 @@ class DescribeVSwitchesRequest(RpcRequest):
 	def set_ZoneId(self,ZoneId):
 		self.add_query_param('ZoneId',ZoneId)
 
+	def get_IsDefault(self):
+		return self.get_query_params().get('IsDefault')
+
+	def set_IsDefault(self,IsDefault):
+		self.add_query_param('IsDefault',IsDefault)
+
 	def get_PageNumber(self):
 		return self.get_query_params().get('PageNumber')
 

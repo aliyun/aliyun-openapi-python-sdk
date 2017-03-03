@@ -58,3 +58,9 @@ class AssociateEipAddressRequest(RpcRequest):
 
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
+
+	def get_InstanceType(self):
+		return self.get_query_params().get('InstanceType')
+
+	def set_InstanceType(self,InstanceType):
+		self.add_query_param('InstanceType',InstanceType)

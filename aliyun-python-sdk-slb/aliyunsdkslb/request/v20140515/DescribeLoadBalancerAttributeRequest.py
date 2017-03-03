@@ -52,3 +52,15 @@ class DescribeLoadBalancerAttributeRequest(RpcRequest):
 
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
+
+	def get_access_key_id(self):
+		return self.get_query_params().get('access_key_id')
+
+	def set_access_key_id(self,access_key_id):
+		self.add_query_param('access_key_id',access_key_id)
+
+	def get_Tags(self):
+		return self.get_query_params().get('Tags')
+
+	def set_Tags(self,Tags):
+		self.add_query_param('Tags',Tags)

@@ -53,6 +53,18 @@ class DescribeRouteTablesRequest(RpcRequest):
 	def set_RouteTableId(self,RouteTableId):
 		self.add_query_param('RouteTableId',RouteTableId)
 
+	def get_RouterType(self):
+		return self.get_query_params().get('RouterType')
+
+	def set_RouterType(self,RouterType):
+		self.add_query_param('RouterType',RouterType)
+
+	def get_RouterId(self):
+		return self.get_query_params().get('RouterId')
+
+	def set_RouterId(self,RouterId):
+		self.add_query_param('RouterId',RouterId)
+
 	def get_PageNumber(self):
 		return self.get_query_params().get('PageNumber')
 

@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class DescribeSQLLogReportsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'DescribeSQLLogReports')
+		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'DescribeSQLLogReports','rds')
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
@@ -41,12 +41,6 @@ class DescribeSQLLogReportsRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_ClientToken(self):
-		return self.get_query_params().get('ClientToken')
-
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
-
 	def get_DBInstanceId(self):
 		return self.get_query_params().get('DBInstanceId')
 
@@ -64,12 +58,6 @@ class DescribeSQLLogReportsRequest(RpcRequest):
 
 	def set_EndTime(self,EndTime):
 		self.add_query_param('EndTime',EndTime)
-
-	def get_ReportType(self):
-		return self.get_query_params().get('ReportType')
-
-	def set_ReportType(self,ReportType):
-		self.add_query_param('ReportType',ReportType)
 
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')

@@ -21,10 +21,16 @@ from aliyunsdkcore.request import RpcRequest
 class DisableKeyRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Kms', '2016-01-20', 'DisableKey')
+		RpcRequest.__init__(self, 'Kms', '2016-01-20', 'DisableKey','kms')
 
 	def get_KeyId(self):
 		return self.get_query_params().get('KeyId')
 
 	def set_KeyId(self,KeyId):
 		self.add_query_param('KeyId',KeyId)
+
+	def get_STSToken(self):
+		return self.get_query_params().get('STSToken')
+
+	def set_STSToken(self,STSToken):
+		self.add_query_param('STSToken',STSToken)

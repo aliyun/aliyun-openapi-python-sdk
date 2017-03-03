@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class RestoreDBInstanceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'RestoreDBInstance')
+		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'RestoreDBInstance','rds')
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')

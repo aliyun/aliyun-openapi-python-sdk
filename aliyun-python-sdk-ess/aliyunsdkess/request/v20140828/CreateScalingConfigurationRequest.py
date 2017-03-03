@@ -84,10 +84,10 @@ class CreateScalingConfigurationRequest(RpcRequest):
 		self.add_query_param('InternetMaxBandwidthOut',InternetMaxBandwidthOut)
 
 	def get_SystemDiskCategory(self):
-		return self.get_query_params().get('SystemDiskCategory')
+		return self.get_query_params().get('SystemDisk.Category')
 
 	def set_SystemDiskCategory(self,SystemDiskCategory):
-		self.add_query_param('SystemDiskCategory',SystemDiskCategory)
+		self.add_query_param('SystemDisk.Category',SystemDiskCategory)
 
 	def get_ScalingConfigurationName(self):
 		return self.get_query_params().get('ScalingConfigurationName')
@@ -96,124 +96,124 @@ class CreateScalingConfigurationRequest(RpcRequest):
 		self.add_query_param('ScalingConfigurationName',ScalingConfigurationName)
 
 	def get_DataDisk1Size(self):
-		return self.get_query_params().get('DataDisk1Size')
+		return self.get_query_params().get('DataDisk.1.Size')
 
 	def set_DataDisk1Size(self,DataDisk1Size):
-		self.add_query_param('DataDisk1Size',DataDisk1Size)
+		self.add_query_param('DataDisk.1.Size',DataDisk1Size)
 
 	def get_DataDisk2Size(self):
-		return self.get_query_params().get('DataDisk2Size')
+		return self.get_query_params().get('DataDisk.2.Size')
 
 	def set_DataDisk2Size(self,DataDisk2Size):
-		self.add_query_param('DataDisk2Size',DataDisk2Size)
+		self.add_query_param('DataDisk.2.Size',DataDisk2Size)
 
 	def get_DataDisk3Size(self):
-		return self.get_query_params().get('DataDisk3Size')
+		return self.get_query_params().get('DataDisk.3.Size')
 
 	def set_DataDisk3Size(self,DataDisk3Size):
-		self.add_query_param('DataDisk3Size',DataDisk3Size)
+		self.add_query_param('DataDisk.3.Size',DataDisk3Size)
 
 	def get_DataDisk4Size(self):
-		return self.get_query_params().get('DataDisk4Size')
+		return self.get_query_params().get('DataDisk.4.Size')
 
 	def set_DataDisk4Size(self,DataDisk4Size):
-		self.add_query_param('DataDisk4Size',DataDisk4Size)
+		self.add_query_param('DataDisk.4.Size',DataDisk4Size)
 
 	def get_DataDisk1Category(self):
-		return self.get_query_params().get('DataDisk1Category')
+		return self.get_query_params().get('DataDisk.1.Category')
 
 	def set_DataDisk1Category(self,DataDisk1Category):
-		self.add_query_param('DataDisk1Category',DataDisk1Category)
+		self.add_query_param('DataDisk.1.Category',DataDisk1Category)
 
 	def get_DataDisk2Category(self):
-		return self.get_query_params().get('DataDisk2Category')
+		return self.get_query_params().get('DataDisk.2.Category')
 
 	def set_DataDisk2Category(self,DataDisk2Category):
-		self.add_query_param('DataDisk2Category',DataDisk2Category)
+		self.add_query_param('DataDisk.2.Category',DataDisk2Category)
 
 	def get_DataDisk3Category(self):
-		return self.get_query_params().get('DataDisk3Category')
+		return self.get_query_params().get('DataDisk.3.Category')
 
 	def set_DataDisk3Category(self,DataDisk3Category):
-		self.add_query_param('DataDisk3Category',DataDisk3Category)
+		self.add_query_param('DataDisk.3.Category',DataDisk3Category)
 
 	def get_DataDisk4Category(self):
-		return self.get_query_params().get('DataDisk4Category')
+		return self.get_query_params().get('DataDisk.4.Category')
 
 	def set_DataDisk4Category(self,DataDisk4Category):
-		self.add_query_param('DataDisk4Category',DataDisk4Category)
+		self.add_query_param('DataDisk.4.Category',DataDisk4Category)
 
 	def get_DataDisk1SnapshotId(self):
-		return self.get_query_params().get('DataDisk1SnapshotId')
+		return self.get_query_params().get('DataDisk.1.SnapshotId')
 
 	def set_DataDisk1SnapshotId(self,DataDisk1SnapshotId):
-		self.add_query_param('DataDisk1SnapshotId',DataDisk1SnapshotId)
+		self.add_query_param('DataDisk.1.SnapshotId',DataDisk1SnapshotId)
 
 	def get_DataDisk2SnapshotId(self):
-		return self.get_query_params().get('DataDisk2SnapshotId')
+		return self.get_query_params().get('DataDisk.2.SnapshotId')
 
 	def set_DataDisk2SnapshotId(self,DataDisk2SnapshotId):
-		self.add_query_param('DataDisk2SnapshotId',DataDisk2SnapshotId)
+		self.add_query_param('DataDisk.2.SnapshotId',DataDisk2SnapshotId)
 
 	def get_DataDisk3SnapshotId(self):
-		return self.get_query_params().get('DataDisk3SnapshotId')
+		return self.get_query_params().get('DataDisk.3.SnapshotId')
 
 	def set_DataDisk3SnapshotId(self,DataDisk3SnapshotId):
-		self.add_query_param('DataDisk3SnapshotId',DataDisk3SnapshotId)
+		self.add_query_param('DataDisk.3.SnapshotId',DataDisk3SnapshotId)
 
 	def get_DataDisk4SnapshotId(self):
-		return self.get_query_params().get('DataDisk4SnapshotId')
+		return self.get_query_params().get('DataDisk.4.SnapshotId')
 
 	def set_DataDisk4SnapshotId(self,DataDisk4SnapshotId):
-		self.add_query_param('DataDisk4SnapshotId',DataDisk4SnapshotId)
+		self.add_query_param('DataDisk.4.SnapshotId',DataDisk4SnapshotId)
 
 	def get_DataDisk1Device(self):
-		return self.get_query_params().get('DataDisk1Device')
+		return self.get_query_params().get('DataDisk.1.Device')
 
 	def set_DataDisk1Device(self,DataDisk1Device):
-		self.add_query_param('DataDisk1Device',DataDisk1Device)
+		self.add_query_param('DataDisk.1.Device',DataDisk1Device)
 
 	def get_DataDisk2Device(self):
-		return self.get_query_params().get('DataDisk2Device')
+		return self.get_query_params().get('DataDisk.2.Device')
 
 	def set_DataDisk2Device(self,DataDisk2Device):
-		self.add_query_param('DataDisk2Device',DataDisk2Device)
+		self.add_query_param('DataDisk.2.Device',DataDisk2Device)
 
 	def get_DataDisk3Device(self):
-		return self.get_query_params().get('DataDisk3Device')
+		return self.get_query_params().get('DataDisk.3.Device')
 
 	def set_DataDisk3Device(self,DataDisk3Device):
-		self.add_query_param('DataDisk3Device',DataDisk3Device)
+		self.add_query_param('DataDisk.3.Device',DataDisk3Device)
 
 	def get_DataDisk4Device(self):
-		return self.get_query_params().get('DataDisk4Device')
+		return self.get_query_params().get('DataDisk.4.Device')
 
 	def set_DataDisk4Device(self,DataDisk4Device):
-		self.add_query_param('DataDisk4Device',DataDisk4Device)
+		self.add_query_param('DataDisk.4.Device',DataDisk4Device)
 
 	def get_DataDisk1DeleteWithInstance(self):
-		return self.get_query_params().get('DataDisk1DeleteWithInstance')
+		return self.get_query_params().get('DataDisk.1.DeleteWithInstance')
 
 	def set_DataDisk1DeleteWithInstance(self,DataDisk1DeleteWithInstance):
-		self.add_query_param('DataDisk1DeleteWithInstance',DataDisk1DeleteWithInstance)
+		self.add_query_param('DataDisk.1.DeleteWithInstance',DataDisk1DeleteWithInstance)
 
 	def get_DataDisk2DeleteWithInstance(self):
-		return self.get_query_params().get('DataDisk2DeleteWithInstance')
+		return self.get_query_params().get('DataDisk.2.DeleteWithInstance')
 
 	def set_DataDisk2DeleteWithInstance(self,DataDisk2DeleteWithInstance):
-		self.add_query_param('DataDisk2DeleteWithInstance',DataDisk2DeleteWithInstance)
+		self.add_query_param('DataDisk.2.DeleteWithInstance',DataDisk2DeleteWithInstance)
 
 	def get_DataDisk3DeleteWithInstance(self):
-		return self.get_query_params().get('DataDisk3DeleteWithInstance')
+		return self.get_query_params().get('DataDisk.3.DeleteWithInstance')
 
 	def set_DataDisk3DeleteWithInstance(self,DataDisk3DeleteWithInstance):
-		self.add_query_param('DataDisk3DeleteWithInstance',DataDisk3DeleteWithInstance)
+		self.add_query_param('DataDisk.3.DeleteWithInstance',DataDisk3DeleteWithInstance)
 
 	def get_DataDisk4DeleteWithInstance(self):
-		return self.get_query_params().get('DataDisk4DeleteWithInstance')
+		return self.get_query_params().get('DataDisk.4.DeleteWithInstance')
 
 	def set_DataDisk4DeleteWithInstance(self,DataDisk4DeleteWithInstance):
-		self.add_query_param('DataDisk4DeleteWithInstance',DataDisk4DeleteWithInstance)
+		self.add_query_param('DataDisk.4.DeleteWithInstance',DataDisk4DeleteWithInstance)
 
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')

@@ -161,6 +161,12 @@ class CreateClusterRequest(RpcRequest):
 	def set_Configurations(self,Configurations):
 		self.add_query_param('Configurations',Configurations)
 
+	def get_OptionSoftWareList(self):
+		return self.get_query_params().get('OptionSoftWareList')
+
+	def set_OptionSoftWareList(self,OptionSoftWareList):
+		self.add_query_param('OptionSoftWareList',OptionSoftWareList)
+
 	def get_EcsOrder(self):
 		return self.get_query_params().get('EcsOrder')
 

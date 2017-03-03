@@ -53,6 +53,12 @@ class DescribeImagesRequest(RpcRequest):
 	def set_ImageId(self,ImageId):
 		self.add_query_param('ImageId',ImageId)
 
+	def get_ShowExpired(self):
+		return self.get_query_params().get('ShowExpired')
+
+	def set_ShowExpired(self,ShowExpired):
+		self.add_query_param('ShowExpired',ShowExpired)
+
 	def get_SnapshotId(self):
 		return self.get_query_params().get('SnapshotId')
 
@@ -70,6 +76,30 @@ class DescribeImagesRequest(RpcRequest):
 
 	def set_ImageOwnerAlias(self,ImageOwnerAlias):
 		self.add_query_param('ImageOwnerAlias',ImageOwnerAlias)
+
+	def get_InstanceType(self):
+		return self.get_query_params().get('InstanceType')
+
+	def set_InstanceType(self,InstanceType):
+		self.add_query_param('InstanceType',InstanceType)
+
+	def get_IsSupportIoOptimized(self):
+		return self.get_query_params().get('IsSupportIoOptimized')
+
+	def set_IsSupportIoOptimized(self,IsSupportIoOptimized):
+		self.add_query_param('IsSupportIoOptimized',IsSupportIoOptimized)
+
+	def get_OSType(self):
+		return self.get_query_params().get('OSType')
+
+	def set_OSType(self,OSType):
+		self.add_query_param('OSType',OSType)
+
+	def get_Architecture(self):
+		return self.get_query_params().get('Architecture')
+
+	def set_Architecture(self,Architecture):
+		self.add_query_param('Architecture',Architecture)
 
 	def get_PageNumber(self):
 		return self.get_query_params().get('PageNumber')
@@ -90,31 +120,91 @@ class DescribeImagesRequest(RpcRequest):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
 	def get_Filter1Key(self):
-		return self.get_query_params().get('Filter1Key')
+		return self.get_query_params().get('Filter.1.Key')
 
 	def set_Filter1Key(self,Filter1Key):
-		self.add_query_param('Filter1Key',Filter1Key)
+		self.add_query_param('Filter.1.Key',Filter1Key)
 
 	def get_Filter2Key(self):
-		return self.get_query_params().get('Filter2Key')
+		return self.get_query_params().get('Filter.2.Key')
 
 	def set_Filter2Key(self,Filter2Key):
-		self.add_query_param('Filter2Key',Filter2Key)
+		self.add_query_param('Filter.2.Key',Filter2Key)
 
 	def get_Filter1Value(self):
-		return self.get_query_params().get('Filter1Value')
+		return self.get_query_params().get('Filter.1.Value')
 
 	def set_Filter1Value(self,Filter1Value):
-		self.add_query_param('Filter1Value',Filter1Value)
+		self.add_query_param('Filter.1.Value',Filter1Value)
 
 	def get_Filter2Value(self):
-		return self.get_query_params().get('Filter2Value')
+		return self.get_query_params().get('Filter.2.Value')
 
 	def set_Filter2Value(self,Filter2Value):
-		self.add_query_param('Filter2Value',Filter2Value)
+		self.add_query_param('Filter.2.Value',Filter2Value)
 
 	def get_Usage(self):
 		return self.get_query_params().get('Usage')
 
 	def set_Usage(self,Usage):
 		self.add_query_param('Usage',Usage)
+
+	def get_Tag1Key(self):
+		return self.get_query_params().get('Tag.1.Key')
+
+	def set_Tag1Key(self,Tag1Key):
+		self.add_query_param('Tag.1.Key',Tag1Key)
+
+	def get_Tag2Key(self):
+		return self.get_query_params().get('Tag.2.Key')
+
+	def set_Tag2Key(self,Tag2Key):
+		self.add_query_param('Tag.2.Key',Tag2Key)
+
+	def get_Tag3Key(self):
+		return self.get_query_params().get('Tag.3.Key')
+
+	def set_Tag3Key(self,Tag3Key):
+		self.add_query_param('Tag.3.Key',Tag3Key)
+
+	def get_Tag4Key(self):
+		return self.get_query_params().get('Tag.4.Key')
+
+	def set_Tag4Key(self,Tag4Key):
+		self.add_query_param('Tag.4.Key',Tag4Key)
+
+	def get_Tag5Key(self):
+		return self.get_query_params().get('Tag.5.Key')
+
+	def set_Tag5Key(self,Tag5Key):
+		self.add_query_param('Tag.5.Key',Tag5Key)
+
+	def get_Tag1Value(self):
+		return self.get_query_params().get('Tag.1.Value')
+
+	def set_Tag1Value(self,Tag1Value):
+		self.add_query_param('Tag.1.Value',Tag1Value)
+
+	def get_Tag2Value(self):
+		return self.get_query_params().get('Tag.2.Value')
+
+	def set_Tag2Value(self,Tag2Value):
+		self.add_query_param('Tag.2.Value',Tag2Value)
+
+	def get_Tag3Value(self):
+		return self.get_query_params().get('Tag.3.Value')
+
+	def set_Tag3Value(self,Tag3Value):
+		self.add_query_param('Tag.3.Value',Tag3Value)
+
+	def get_Tag4Value(self):
+		return self.get_query_params().get('Tag.4.Value')
+
+	def set_Tag4Value(self,Tag4Value):
+		self.add_query_param('Tag.4.Value',Tag4Value)
+
+	def get_Tag5Value(self):
+		return self.get_query_params().get('Tag.5.Value')
+
+	def set_Tag5Value(self,Tag5Value):
+		self.add_query_param('Tag.5.Value',Tag5Value)
