@@ -28,7 +28,7 @@ Created on 6/15/2015
 """
 
 __dict = dict(SDK_INVALID_REGION_ID='Can not find endpoint to access.',
-              SDK_SERVER_UNREACHABLE='Specified endpoint or uri is not valid.',
+              SDK_SERVER_UNREACHABLE='Unable to connect server',
               SDK_INVALID_REQUEST='The request is not a valid AcsRequest.',
               SDK_MISSING_ENDPOINTS_FILER='Internal endpoints info is missing.')
 

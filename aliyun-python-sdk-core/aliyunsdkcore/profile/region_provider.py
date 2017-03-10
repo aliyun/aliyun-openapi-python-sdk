@@ -62,7 +62,7 @@ try:
 
         __endpoints[endpoint.getAttribute('name')] = dict(regions=region_list, products=product_list)
 
-except Exception:
+except Exception, ex:
     raise ClientException(error_code.SDK_MISSING_ENDPOINTS_FILER, error_msg.get_msg('SDK_MISSING_ENDPOINTS_FILER'))
 
 
