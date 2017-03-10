@@ -18,10 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class AddLiveAppRecordConfigRequest(RpcRequest):
+class DescribeLiveStreamsPublishListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'live', '2016-11-01', 'AddLiveAppRecordConfig','live')
+		RpcRequest.__init__(self, 'live', '2016-11-01', 'DescribeLiveStreamsPublishList','live')
 
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
@@ -47,20 +47,32 @@ class AddLiveAppRecordConfigRequest(RpcRequest):
 	def set_AppName(self,AppName):
 		self.add_query_param('AppName',AppName)
 
-	def get_OssEndpoint(self):
-		return self.get_query_params().get('OssEndpoint')
+	def get_StreamName(self):
+		return self.get_query_params().get('StreamName')
 
-	def set_OssEndpoint(self,OssEndpoint):
-		self.add_query_param('OssEndpoint',OssEndpoint)
+	def set_StreamName(self,StreamName):
+		self.add_query_param('StreamName',StreamName)
 
-	def get_OssBucket(self):
-		return self.get_query_params().get('OssBucket')
+	def get_StartTime(self):
+		return self.get_query_params().get('StartTime')
 
-	def set_OssBucket(self,OssBucket):
-		self.add_query_param('OssBucket',OssBucket)
+	def set_StartTime(self,StartTime):
+		self.add_query_param('StartTime',StartTime)
 
-	def get_RecordFormat(self):
-		return self.get_query_params().get('RecordFormat')
+	def get_EndTime(self):
+		return self.get_query_params().get('EndTime')
 
-	def set_RecordFormat(self,RecordFormat):
-		self.add_query_param('RecordFormat',RecordFormat)
+	def set_EndTime(self,EndTime):
+		self.add_query_param('EndTime',EndTime)
+
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
+
+	def get_PageNumber(self):
+		return self.get_query_params().get('PageNumber')
+
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)

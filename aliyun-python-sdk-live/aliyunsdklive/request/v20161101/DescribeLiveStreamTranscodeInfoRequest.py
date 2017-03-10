@@ -18,10 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class AddLiveAppRecordConfigRequest(RpcRequest):
+class DescribeLiveStreamTranscodeInfoRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'live', '2016-11-01', 'AddLiveAppRecordConfig','live')
+		RpcRequest.__init__(self, 'live', '2016-11-01', 'DescribeLiveStreamTranscodeInfo','live')
 
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
@@ -35,32 +35,8 @@ class AddLiveAppRecordConfigRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_DomainName(self):
-		return self.get_query_params().get('DomainName')
+	def get_DomainTranscodeName(self):
+		return self.get_query_params().get('DomainTranscodeName')
 
-	def set_DomainName(self,DomainName):
-		self.add_query_param('DomainName',DomainName)
-
-	def get_AppName(self):
-		return self.get_query_params().get('AppName')
-
-	def set_AppName(self,AppName):
-		self.add_query_param('AppName',AppName)
-
-	def get_OssEndpoint(self):
-		return self.get_query_params().get('OssEndpoint')
-
-	def set_OssEndpoint(self,OssEndpoint):
-		self.add_query_param('OssEndpoint',OssEndpoint)
-
-	def get_OssBucket(self):
-		return self.get_query_params().get('OssBucket')
-
-	def set_OssBucket(self,OssBucket):
-		self.add_query_param('OssBucket',OssBucket)
-
-	def get_RecordFormat(self):
-		return self.get_query_params().get('RecordFormat')
-
-	def set_RecordFormat(self,RecordFormat):
-		self.add_query_param('RecordFormat',RecordFormat)
+	def set_DomainTranscodeName(self,DomainTranscodeName):
+		self.add_query_param('DomainTranscodeName',DomainTranscodeName)
