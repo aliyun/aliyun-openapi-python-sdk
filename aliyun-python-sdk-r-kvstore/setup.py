@@ -29,7 +29,7 @@ Created on 7/3/2015
 @author: alex
 """
 
-PACKAGE = "aliyunsdkr-kvstore"
+PACKAGE = "aliyunsdkr_kvstore"
 NAME = "aliyun-python-sdk-r-kvstore"
 DESCRIPTION = "The r-kvstore module of Aliyun Python sdk."
 AUTHOR = "Aliyun"
