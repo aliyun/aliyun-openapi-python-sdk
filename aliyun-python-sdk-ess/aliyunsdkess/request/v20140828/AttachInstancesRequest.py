@@ -48,124 +48,124 @@ class AttachInstancesRequest(RpcRequest):
 		self.add_query_param('ScalingGroupId',ScalingGroupId)
 
 	def get_InstanceId1(self):
-		return self.get_query_params().get('InstanceId1')
+		return self.get_query_params().get('InstanceId.1')
 
 	def set_InstanceId1(self,InstanceId1):
-		self.add_query_param('InstanceId1',InstanceId1)
+		self.add_query_param('InstanceId.1',InstanceId1)
 
 	def get_InstanceId2(self):
-		return self.get_query_params().get('InstanceId2')
+		return self.get_query_params().get('InstanceId.2')
 
 	def set_InstanceId2(self,InstanceId2):
-		self.add_query_param('InstanceId2',InstanceId2)
+		self.add_query_param('InstanceId.2',InstanceId2)
 
 	def get_InstanceId3(self):
-		return self.get_query_params().get('InstanceId3')
+		return self.get_query_params().get('InstanceId.3')
 
 	def set_InstanceId3(self,InstanceId3):
-		self.add_query_param('InstanceId3',InstanceId3)
+		self.add_query_param('InstanceId.3',InstanceId3)
 
 	def get_InstanceId4(self):
-		return self.get_query_params().get('InstanceId4')
+		return self.get_query_params().get('InstanceId.4')
 
 	def set_InstanceId4(self,InstanceId4):
-		self.add_query_param('InstanceId4',InstanceId4)
+		self.add_query_param('InstanceId.4',InstanceId4)
 
 	def get_InstanceId5(self):
-		return self.get_query_params().get('InstanceId5')
+		return self.get_query_params().get('InstanceId.5')
 
 	def set_InstanceId5(self,InstanceId5):
-		self.add_query_param('InstanceId5',InstanceId5)
+		self.add_query_param('InstanceId.5',InstanceId5)
 
 	def get_InstanceId6(self):
-		return self.get_query_params().get('InstanceId6')
+		return self.get_query_params().get('InstanceId.6')
 
 	def set_InstanceId6(self,InstanceId6):
-		self.add_query_param('InstanceId6',InstanceId6)
+		self.add_query_param('InstanceId.6',InstanceId6)
 
 	def get_InstanceId7(self):
-		return self.get_query_params().get('InstanceId7')
+		return self.get_query_params().get('InstanceId.7')
 
 	def set_InstanceId7(self,InstanceId7):
-		self.add_query_param('InstanceId7',InstanceId7)
+		self.add_query_param('InstanceId.7',InstanceId7)
 
 	def get_InstanceId8(self):
-		return self.get_query_params().get('InstanceId8')
+		return self.get_query_params().get('InstanceId.8')
 
 	def set_InstanceId8(self,InstanceId8):
-		self.add_query_param('InstanceId8',InstanceId8)
+		self.add_query_param('InstanceId.8',InstanceId8)
 
 	def get_InstanceId9(self):
-		return self.get_query_params().get('InstanceId9')
+		return self.get_query_params().get('InstanceId.9')
 
 	def set_InstanceId9(self,InstanceId9):
-		self.add_query_param('InstanceId9',InstanceId9)
+		self.add_query_param('InstanceId.9',InstanceId9)
 
 	def get_InstanceId10(self):
-		return self.get_query_params().get('InstanceId10')
+		return self.get_query_params().get('InstanceId.10')
 
 	def set_InstanceId10(self,InstanceId10):
-		self.add_query_param('InstanceId10',InstanceId10)
+		self.add_query_param('InstanceId.10',InstanceId10)
 
 	def get_InstanceId11(self):
-		return self.get_query_params().get('InstanceId11')
+		return self.get_query_params().get('InstanceId.11')
 
 	def set_InstanceId11(self,InstanceId11):
-		self.add_query_param('InstanceId11',InstanceId11)
+		self.add_query_param('InstanceId.11',InstanceId11)
 
 	def get_InstanceId12(self):
-		return self.get_query_params().get('InstanceId12')
+		return self.get_query_params().get('InstanceId.12')
 
 	def set_InstanceId12(self,InstanceId12):
-		self.add_query_param('InstanceId12',InstanceId12)
+		self.add_query_param('InstanceId.12',InstanceId12)
 
 	def get_InstanceId13(self):
-		return self.get_query_params().get('InstanceId13')
+		return self.get_query_params().get('InstanceId.13')
 
 	def set_InstanceId13(self,InstanceId13):
-		self.add_query_param('InstanceId13',InstanceId13)
+		self.add_query_param('InstanceId.13',InstanceId13)
 
 	def get_InstanceId14(self):
-		return self.get_query_params().get('InstanceId14')
+		return self.get_query_params().get('InstanceId.14')
 
 	def set_InstanceId14(self,InstanceId14):
-		self.add_query_param('InstanceId14',InstanceId14)
+		self.add_query_param('InstanceId.14',InstanceId14)
 
 	def get_InstanceId15(self):
-		return self.get_query_params().get('InstanceId15')
+		return self.get_query_params().get('InstanceId.15')
 
 	def set_InstanceId15(self,InstanceId15):
-		self.add_query_param('InstanceId15',InstanceId15)
+		self.add_query_param('InstanceId.15',InstanceId15)
 
 	def get_InstanceId16(self):
-		return self.get_query_params().get('InstanceId16')
+		return self.get_query_params().get('InstanceId.16')
 
 	def set_InstanceId16(self,InstanceId16):
-		self.add_query_param('InstanceId16',InstanceId16)
+		self.add_query_param('InstanceId.16',InstanceId16)
 
 	def get_InstanceId17(self):
-		return self.get_query_params().get('InstanceId17')
+		return self.get_query_params().get('InstanceId.17')
 
 	def set_InstanceId17(self,InstanceId17):
-		self.add_query_param('InstanceId17',InstanceId17)
+		self.add_query_param('InstanceId.17',InstanceId17)
 
 	def get_InstanceId18(self):
-		return self.get_query_params().get('InstanceId18')
+		return self.get_query_params().get('InstanceId.18')
 
 	def set_InstanceId18(self,InstanceId18):
-		self.add_query_param('InstanceId18',InstanceId18)
+		self.add_query_param('InstanceId.18',InstanceId18)
 
 	def get_InstanceId19(self):
-		return self.get_query_params().get('InstanceId19')
+		return self.get_query_params().get('InstanceId.19')
 
 	def set_InstanceId19(self,InstanceId19):
-		self.add_query_param('InstanceId19',InstanceId19)
+		self.add_query_param('InstanceId.19',InstanceId19)
 
 	def get_InstanceId20(self):
-		return self.get_query_params().get('InstanceId20')
+		return self.get_query_params().get('InstanceId.20')
 
 	def set_InstanceId20(self,InstanceId20):
-		self.add_query_param('InstanceId20',InstanceId20)
+		self.add_query_param('InstanceId.20',InstanceId20)
 
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')

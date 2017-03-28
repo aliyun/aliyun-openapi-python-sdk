@@ -47,6 +47,12 @@ class StopInstanceRequest(RpcRequest):
 	def set_InstanceId(self,InstanceId):
 		self.add_query_param('InstanceId',InstanceId)
 
+	def get_ConfirmStop(self):
+		return self.get_query_params().get('ConfirmStop')
+
+	def set_ConfirmStop(self,ConfirmStop):
+		self.add_query_param('ConfirmStop',ConfirmStop)
+
 	def get_ForceStop(self):
 		return self.get_query_params().get('ForceStop')
 

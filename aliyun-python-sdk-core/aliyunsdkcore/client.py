@@ -59,6 +59,7 @@ class AcsClient:
         self.__user_agent = user_agent
         self.__port = port
         self.__location_service = LocationService(self)
+        self._url_test_flag = False # if true, do_action() will throw a ClientException that contains URL
 
     def get_region_id(self):
         """
@@ -159,6 +160,10 @@ class AcsClient:
             protocol = acs_request.get_protocol_type()
             prefix = self.__replace_occupied_params(acs_request.get_domain_pattern(), acs_request.get_domain_params())
             url = acs_request.get_url(self.get_region_id(), self.get_access_key(), self.get_access_secret())
+
+            if self._url_test_flag:
+                raise exs.ClientException("URLTestFlagIsSet", url)
+
             if prefix is None:
                 response = HttpResponse(ep, url, method, {} if header is None else header, protocol, content,
                                         self.__port)
@@ -169,8 +174,8 @@ class AcsClient:
             # if _body is None:
             # 	raise exs.ClientException(error_code.SDK_SERVER_UNREACHABLE, error_msg.get_msg('SDK_SERVER_UNREACHABLE'))
             return _body
-        except IOError:
-            raise exs.ClientException(error_code.SDK_SERVER_UNREACHABLE, error_msg.get_msg('SDK_SERVER_UNREACHABLE'))
+        except IOError, e:
+            raise exs.ClientException(error_code.SDK_SERVER_UNREACHABLE, error_msg.get_msg('SDK_SERVER_UNREACHABLE') + ': ' + str(e))
         except AttributeError:
             raise exs.ClientException(error_code.SDK_INVALID_REQUEST, error_msg.get_msg('SDK_INVALID_REQUEST'))
 
@@ -204,8 +209,8 @@ class AcsClient:
                                          content, self.__port)
             return _response.get_response_object()
 
-        except IOError:
-            raise exs.ClientException(error_code.SDK_SERVER_UNREACHABLE, error_msg.get_msg('SDK_SERVER_UNREACHABLE'))
+        except IOError, e:
+            raise exs.ClientException(error_code.SDK_SERVER_UNREACHABLE, error_msg.get_msg('SDK_SERVER_UNREACHABLE') + ': ' + str(e))
         except AttributeError:
             raise exs.ClientException(error_code.SDK_INVALID_REQUEST, error_msg.get_msg('SDK_INVALID_REQUEST'))
 

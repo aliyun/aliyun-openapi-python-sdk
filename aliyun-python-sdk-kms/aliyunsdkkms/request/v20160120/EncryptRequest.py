@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class EncryptRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Kms', '2016-01-20', 'Encrypt')
+		RpcRequest.__init__(self, 'Kms', '2016-01-20', 'Encrypt','kms')
 
 	def get_KeyId(self):
 		return self.get_query_params().get('KeyId')
@@ -40,3 +40,9 @@ class EncryptRequest(RpcRequest):
 
 	def set_STSToken(self,STSToken):
 		self.add_query_param('STSToken',STSToken)
+
+	def get_EncryptionContext(self):
+		return self.get_query_params().get('EncryptionContext')
+
+	def set_EncryptionContext(self,EncryptionContext):
+		self.add_query_param('EncryptionContext',EncryptionContext)

@@ -72,16 +72,16 @@ class ModifyScalingGroupRequest(RpcRequest):
 		self.add_query_param('DefaultCooldown',DefaultCooldown)
 
 	def get_RemovalPolicy1(self):
-		return self.get_query_params().get('RemovalPolicy1')
+		return self.get_query_params().get('RemovalPolicy.1')
 
 	def set_RemovalPolicy1(self,RemovalPolicy1):
-		self.add_query_param('RemovalPolicy1',RemovalPolicy1)
+		self.add_query_param('RemovalPolicy.1',RemovalPolicy1)
 
 	def get_RemovalPolicy2(self):
-		return self.get_query_params().get('RemovalPolicy2')
+		return self.get_query_params().get('RemovalPolicy.2')
 
 	def set_RemovalPolicy2(self,RemovalPolicy2):
-		self.add_query_param('RemovalPolicy2',RemovalPolicy2)
+		self.add_query_param('RemovalPolicy.2',RemovalPolicy2)
 
 	def get_ActiveScalingConfigurationId(self):
 		return self.get_query_params().get('ActiveScalingConfigurationId')

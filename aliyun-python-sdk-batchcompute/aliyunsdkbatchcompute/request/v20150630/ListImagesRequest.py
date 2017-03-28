@@ -22,5 +22,5 @@ class ListImagesRequest(RoaRequest):
 
 	def __init__(self):
 		RoaRequest.__init__(self, 'BatchCompute', '2015-06-30', 'ListImages')
-		self.set_uri_pattern(self, '/images')
-		self.set_method(self, 'GET')
+		self.set_uri_pattern('/images')
+		self.set_method('GET')

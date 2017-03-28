@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class DescribeDBInstancesByExpireTimeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'DescribeDBInstancesByExpireTime')
+		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'DescribeDBInstancesByExpireTime','rds')
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
@@ -70,6 +70,12 @@ class DescribeDBInstancesByExpireTimeRequest(RpcRequest):
 
 	def set_PageNumber(self,PageNumber):
 		self.add_query_param('PageNumber',PageNumber)
+
+	def get_Tags(self):
+		return self.get_query_params().get('Tags')
+
+	def set_Tags(self,Tags):
+		self.add_query_param('Tags',Tags)
 
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')

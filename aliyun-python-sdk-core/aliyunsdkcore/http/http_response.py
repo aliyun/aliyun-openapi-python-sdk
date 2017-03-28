@@ -65,8 +65,6 @@ class HttpResponse(HttpRequest):
 			                          headers=self.get_headers())
 			response=self.__connection.getresponse()
 			return response.getheaders(),response.read()
-		except Exception as e:
-			return None, None
 		finally:
 			self.__close_connection()
 
@@ -81,8 +79,6 @@ class HttpResponse(HttpRequest):
 			                          headers=self.get_headers())
 			response=self.__connection.getresponse()
 			return response.status,response.getheaders(),response.read()
-		except Exception as e:
-			return None, None
 		finally:
 			self.__close_connection()
 
@@ -99,8 +95,6 @@ class HttpResponse(HttpRequest):
 			                          headers=self.get_headers())
 			response=self.__connection.getresponse()
 			return response.getheaders(),response.read()
-		except Exception as e:
-			return None, None
 		finally:
 			self.__close_connection()
 
@@ -117,17 +111,13 @@ class HttpResponse(HttpRequest):
 			                          headers=self.get_headers())
 			response=self.__connection.getresponse()
 			return response.status,response.getheaders(),response.read()
-		except Exception as e:
-			return None, None
 		finally:
 			self.__close_connection()
 
 
 	def __close_connection(self):
-		try:
-			if self.__connection is not None:
-				self.__connection.close()
-		except Exception as e:
-			pass
+		if self.__connection is not None:
+		    self.__connection.close()
+		    self.__connection = None
 
 

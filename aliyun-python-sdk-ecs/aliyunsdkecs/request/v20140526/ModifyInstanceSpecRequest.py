@@ -72,19 +72,25 @@ class ModifyInstanceSpecRequest(RpcRequest):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
 	def get_TemporaryStartTime(self):
-		return self.get_query_params().get('TemporaryStartTime')
+		return self.get_query_params().get('Temporary.StartTime')
 
 	def set_TemporaryStartTime(self,TemporaryStartTime):
-		self.add_query_param('TemporaryStartTime',TemporaryStartTime)
+		self.add_query_param('Temporary.StartTime',TemporaryStartTime)
 
 	def get_TemporaryEndTime(self):
-		return self.get_query_params().get('TemporaryEndTime')
+		return self.get_query_params().get('Temporary.EndTime')
 
 	def set_TemporaryEndTime(self,TemporaryEndTime):
-		self.add_query_param('TemporaryEndTime',TemporaryEndTime)
+		self.add_query_param('Temporary.EndTime',TemporaryEndTime)
 
 	def get_TemporaryInternetMaxBandwidthOut(self):
-		return self.get_query_params().get('TemporaryInternetMaxBandwidthOut')
+		return self.get_query_params().get('Temporary.InternetMaxBandwidthOut')
 
 	def set_TemporaryInternetMaxBandwidthOut(self,TemporaryInternetMaxBandwidthOut):
-		self.add_query_param('TemporaryInternetMaxBandwidthOut',TemporaryInternetMaxBandwidthOut)
+		self.add_query_param('Temporary.InternetMaxBandwidthOut',TemporaryInternetMaxBandwidthOut)
+
+	def get_Async(self):
+		return self.get_query_params().get('Async')
+
+	def set_Async(self,Async):
+		self.add_query_param('Async',Async)

@@ -65,44 +65,38 @@ class CreateScalingGroupRequest(RpcRequest):
 	def set_DefaultCooldown(self,DefaultCooldown):
 		self.add_query_param('DefaultCooldown',DefaultCooldown)
 
-	def get_LoadBalancerId(self):
-		return self.get_query_params().get('LoadBalancerId')
+	def get_LoadBalancerIds(self):
+		return self.get_query_params().get('LoadBalancerIds')
 
-	def set_LoadBalancerId(self,LoadBalancerId):
-		self.add_query_param('LoadBalancerId',LoadBalancerId)
+	def set_LoadBalancerIds(self,LoadBalancerIds):
+		self.add_query_param('LoadBalancerIds',LoadBalancerIds)
 
-	def get_DBInstanceId1(self):
-		return self.get_query_params().get('DBInstanceId1')
+	def get_DBInstanceIds(self):
+		return self.get_query_params().get('DBInstanceIds')
 
-	def set_DBInstanceId1(self,DBInstanceId1):
-		self.add_query_param('DBInstanceId1',DBInstanceId1)
-
-	def get_DBInstanceId2(self):
-		return self.get_query_params().get('DBInstanceId2')
-
-	def set_DBInstanceId2(self,DBInstanceId2):
-		self.add_query_param('DBInstanceId2',DBInstanceId2)
-
-	def get_DBInstanceId3(self):
-		return self.get_query_params().get('DBInstanceId3')
-
-	def set_DBInstanceId3(self,DBInstanceId3):
-		self.add_query_param('DBInstanceId3',DBInstanceId3)
+	def set_DBInstanceIds(self,DBInstanceIds):
+		self.add_query_param('DBInstanceIds',DBInstanceIds)
 
 	def get_RemovalPolicy1(self):
-		return self.get_query_params().get('RemovalPolicy1')
+		return self.get_query_params().get('RemovalPolicy.1')
 
 	def set_RemovalPolicy1(self,RemovalPolicy1):
-		self.add_query_param('RemovalPolicy1',RemovalPolicy1)
+		self.add_query_param('RemovalPolicy.1',RemovalPolicy1)
 
 	def get_RemovalPolicy2(self):
-		return self.get_query_params().get('RemovalPolicy2')
+		return self.get_query_params().get('RemovalPolicy.2')
 
 	def set_RemovalPolicy2(self,RemovalPolicy2):
-		self.add_query_param('RemovalPolicy2',RemovalPolicy2)
+		self.add_query_param('RemovalPolicy.2',RemovalPolicy2)
 
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
 
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
+
+	def get_VSwitchId(self):
+		return self.get_query_params().get('VSwitchId')
+
+	def set_VSwitchId(self,VSwitchId):
+		self.add_query_param('VSwitchId',VSwitchId)

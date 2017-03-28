@@ -125,11 +125,23 @@ class DescribeDisksRequest(RpcRequest):
 	def set_DiskName(self,DiskName):
 		self.add_query_param('DiskName',DiskName)
 
+	def get_AutoSnapshotPolicyId(self):
+		return self.get_query_params().get('AutoSnapshotPolicyId')
+
+	def set_AutoSnapshotPolicyId(self,AutoSnapshotPolicyId):
+		self.add_query_param('AutoSnapshotPolicyId',AutoSnapshotPolicyId)
+
 	def get_EnableAutoSnapshot(self):
 		return self.get_query_params().get('EnableAutoSnapshot')
 
 	def set_EnableAutoSnapshot(self,EnableAutoSnapshot):
 		self.add_query_param('EnableAutoSnapshot',EnableAutoSnapshot)
+
+	def get_EnableAutomatedSnapshotPolicy(self):
+		return self.get_query_params().get('EnableAutomatedSnapshotPolicy')
+
+	def set_EnableAutomatedSnapshotPolicy(self,EnableAutomatedSnapshotPolicy):
+		self.add_query_param('EnableAutomatedSnapshotPolicy',EnableAutomatedSnapshotPolicy)
 
 	def get_DiskChargeType(self):
 		return self.get_query_params().get('DiskChargeType')
@@ -144,28 +156,28 @@ class DescribeDisksRequest(RpcRequest):
 		self.add_query_param('LockReason',LockReason)
 
 	def get_Filter1Key(self):
-		return self.get_query_params().get('Filter1Key')
+		return self.get_query_params().get('Filter.1.Key')
 
 	def set_Filter1Key(self,Filter1Key):
-		self.add_query_param('Filter1Key',Filter1Key)
+		self.add_query_param('Filter.1.Key',Filter1Key)
 
 	def get_Filter2Key(self):
-		return self.get_query_params().get('Filter2Key')
+		return self.get_query_params().get('Filter.2.Key')
 
 	def set_Filter2Key(self,Filter2Key):
-		self.add_query_param('Filter2Key',Filter2Key)
+		self.add_query_param('Filter.2.Key',Filter2Key)
 
 	def get_Filter1Value(self):
-		return self.get_query_params().get('Filter1Value')
+		return self.get_query_params().get('Filter.1.Value')
 
 	def set_Filter1Value(self,Filter1Value):
-		self.add_query_param('Filter1Value',Filter1Value)
+		self.add_query_param('Filter.1.Value',Filter1Value)
 
 	def get_Filter2Value(self):
-		return self.get_query_params().get('Filter2Value')
+		return self.get_query_params().get('Filter.2.Value')
 
 	def set_Filter2Value(self,Filter2Value):
-		self.add_query_param('Filter2Value',Filter2Value)
+		self.add_query_param('Filter.2.Value',Filter2Value)
 
 	def get_Tag1Key(self):
 		return self.get_query_params().get('Tag.1.Key')

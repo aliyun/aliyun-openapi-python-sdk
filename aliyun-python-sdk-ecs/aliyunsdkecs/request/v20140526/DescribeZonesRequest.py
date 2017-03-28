@@ -46,3 +46,9 @@ class DescribeZonesRequest(RpcRequest):
 
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
+
+	def get_Verbose(self):
+		return self.get_query_params().get('Verbose')
+
+	def set_Verbose(self,Verbose):
+		self.add_query_param('Verbose',Verbose)

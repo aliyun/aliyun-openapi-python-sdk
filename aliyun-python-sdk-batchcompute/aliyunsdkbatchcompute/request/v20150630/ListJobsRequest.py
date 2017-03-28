@@ -22,5 +22,5 @@ class ListJobsRequest(RoaRequest):
 
 	def __init__(self):
 		RoaRequest.__init__(self, 'BatchCompute', '2015-06-30', 'ListJobs')
-		self.set_uri_pattern(self, '/jobs')
-		self.set_method(self, 'GET')
+		self.set_uri_pattern('/jobs')
+		self.set_method('GET')

@@ -65,6 +65,12 @@ class AuthorizeSecurityGroupEgressRequest(RpcRequest):
 	def set_DestGroupId(self,DestGroupId):
 		self.add_query_param('DestGroupId',DestGroupId)
 
+	def get_DestGroupOwnerId(self):
+		return self.get_query_params().get('DestGroupOwnerId')
+
+	def set_DestGroupOwnerId(self,DestGroupOwnerId):
+		self.add_query_param('DestGroupOwnerId',DestGroupOwnerId)
+
 	def get_DestGroupOwnerAccount(self):
 		return self.get_query_params().get('DestGroupOwnerAccount')
 

@@ -51,15 +51,19 @@ def __refresh_sign_parameters(parameters, access_key_id, accept_format="JSON", s
     return parameters
 
 
-# this method will given the
-#
+def __pop_standard_urlencode(query):
+    ret = urllib.urlencode(query)
+    ret = ret.replace('+', '%20')
+    ret = ret.replace('*', '%2A')
+    ret = ret.replace('%7E', '~')
+    return ret
+
+
 def __compose_string_to_sign(method, queries):
     canonicalized_query_string = ""
     sorted_parameters = sorted(queries.items(), key=lambda queries: queries[0])
-    for (k, v) in sorted_parameters:
-        canonicalized_query_string += '&' + helper.percent_encode(k) + '=' + helper.percent_encode(v)
-    sign_to_string = method + "&%2F&" + helper.percent_encode(canonicalized_query_string[1:])
-    return sign_to_string
+    string_to_sign = method + "&%2F&" + urllib.pathname2url(__pop_standard_urlencode(sorted_parameters))
+    return string_to_sign
 
 
 def __get_signature(string_to_sign, secret, signer=mac1):
@@ -71,6 +75,6 @@ def get_signed_url(params, ak, secret, accept_format, method, signer=mac1):
     string_to_sign = __compose_string_to_sign(method, sign_params)
     signature = __get_signature(string_to_sign, secret, signer)
     sign_params['Signature'] = signature
-    url = '/?' + urllib.urlencode(sign_params)
+    url = '/?' + __pop_standard_urlencode(sign_params)
     return url
 

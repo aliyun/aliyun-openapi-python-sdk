@@ -29,6 +29,12 @@ class PubRequest(RpcRequest):
 	def set_ProductKey(self,ProductKey):
 		self.add_query_param('ProductKey',ProductKey)
 
+	def get_Qos(self):
+		return self.get_query_params().get('Qos')
+
+	def set_Qos(self,Qos):
+		self.add_query_param('Qos',Qos)
+
 	def get_TopicFullName(self):
 		return self.get_query_params().get('TopicFullName')
 

@@ -137,6 +137,12 @@ class ModifyExecutionPlanRequest(RpcRequest):
 	def set_Id(self,Id):
 		self.add_query_param('Id',Id)
 
+	def get_ExecutionPlanVersion(self):
+		return self.get_query_params().get('ExecutionPlanVersion')
+
+	def set_ExecutionPlanVersion(self,ExecutionPlanVersion):
+		self.add_query_param('ExecutionPlanVersion',ExecutionPlanVersion)
+
 	def get_Name(self):
 		return self.get_query_params().get('Name')
 
@@ -166,6 +172,12 @@ class ModifyExecutionPlanRequest(RpcRequest):
 
 	def set_TimeUnit(self,TimeUnit):
 		self.add_query_param('TimeUnit',TimeUnit)
+
+	def get_OptionSoftWareList(self):
+		return self.get_query_params().get('OptionSoftWareList')
+
+	def set_OptionSoftWareList(self,OptionSoftWareList):
+		self.add_query_param('OptionSoftWareList',OptionSoftWareList)
 
 	def get_EcsOrder(self):
 		return self.get_query_params().get('EcsOrder')

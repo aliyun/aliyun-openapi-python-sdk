@@ -23,14 +23,14 @@ class RegistDeviceRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Iot', '2016-05-30', 'RegistDevice')
 
-	def get_ProductKey(self):
-		return self.get_query_params().get('ProductKey')
-
-	def set_ProductKey(self,ProductKey):
-		self.add_query_param('ProductKey',ProductKey)
-
 	def get_DeviceName(self):
 		return self.get_query_params().get('DeviceName')
 
 	def set_DeviceName(self,DeviceName):
 		self.add_query_param('DeviceName',DeviceName)
+
+	def get_ProductKey(self):
+		return self.get_query_params().get('ProductKey')
+
+	def set_ProductKey(self,ProductKey):
+		self.add_query_param('ProductKey',ProductKey)

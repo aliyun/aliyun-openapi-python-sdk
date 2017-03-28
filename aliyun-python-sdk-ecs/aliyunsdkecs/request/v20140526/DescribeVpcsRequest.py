@@ -47,6 +47,12 @@ class DescribeVpcsRequest(RpcRequest):
 	def set_VpcId(self,VpcId):
 		self.add_query_param('VpcId',VpcId)
 
+	def get_IsDefault(self):
+		return self.get_query_params().get('IsDefault')
+
+	def set_IsDefault(self,IsDefault):
+		self.add_query_param('IsDefault',IsDefault)
+
 	def get_PageNumber(self):
 		return self.get_query_params().get('PageNumber')
 

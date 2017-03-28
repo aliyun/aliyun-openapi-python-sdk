@@ -46,3 +46,9 @@ class DescribeInstanceTypesRequest(RpcRequest):
 
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
+
+	def get_InstanceTypeFamily(self):
+		return self.get_query_params().get('InstanceTypeFamily')
+
+	def set_InstanceTypeFamily(self,InstanceTypeFamily):
+		self.add_query_param('InstanceTypeFamily',InstanceTypeFamily)

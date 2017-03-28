@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class PurgeDBInstanceLogRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'PurgeDBInstanceLog')
+		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'PurgeDBInstanceLog','rds')
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')

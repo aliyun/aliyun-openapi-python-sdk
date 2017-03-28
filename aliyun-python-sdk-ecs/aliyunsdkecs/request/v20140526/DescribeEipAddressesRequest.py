@@ -78,31 +78,43 @@ class DescribeEipAddressesRequest(RpcRequest):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
 	def get_Filter1Key(self):
-		return self.get_query_params().get('Filter1Key')
+		return self.get_query_params().get('Filter.1.Key')
 
 	def set_Filter1Key(self,Filter1Key):
-		self.add_query_param('Filter1Key',Filter1Key)
+		self.add_query_param('Filter.1.Key',Filter1Key)
 
 	def get_Filter2Key(self):
-		return self.get_query_params().get('Filter2Key')
+		return self.get_query_params().get('Filter.2.Key')
 
 	def set_Filter2Key(self,Filter2Key):
-		self.add_query_param('Filter2Key',Filter2Key)
+		self.add_query_param('Filter.2.Key',Filter2Key)
 
 	def get_Filter1Value(self):
-		return self.get_query_params().get('Filter1Value')
+		return self.get_query_params().get('Filter.1.Value')
 
 	def set_Filter1Value(self,Filter1Value):
-		self.add_query_param('Filter1Value',Filter1Value)
+		self.add_query_param('Filter.1.Value',Filter1Value)
 
 	def get_Filter2Value(self):
-		return self.get_query_params().get('Filter2Value')
+		return self.get_query_params().get('Filter.2.Value')
 
 	def set_Filter2Value(self,Filter2Value):
-		self.add_query_param('Filter2Value',Filter2Value)
+		self.add_query_param('Filter.2.Value',Filter2Value)
 
 	def get_LockReason(self):
 		return self.get_query_params().get('LockReason')
 
 	def set_LockReason(self,LockReason):
 		self.add_query_param('LockReason',LockReason)
+
+	def get_AssociatedInstanceType(self):
+		return self.get_query_params().get('AssociatedInstanceType')
+
+	def set_AssociatedInstanceType(self,AssociatedInstanceType):
+		self.add_query_param('AssociatedInstanceType',AssociatedInstanceType)
+
+	def get_AssociatedInstanceId(self):
+		return self.get_query_params().get('AssociatedInstanceId')
+
+	def set_AssociatedInstanceId(self,AssociatedInstanceId):
+		self.add_query_param('AssociatedInstanceId',AssociatedInstanceId)

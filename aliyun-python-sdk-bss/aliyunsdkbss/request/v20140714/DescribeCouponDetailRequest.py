@@ -22,7 +22,7 @@ class DescribeCouponDetailRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Bss', '2014-07-14', 'DescribeCouponDetail')
-		self.set_protocol_type(self, 'https');
+		self.set_protocol_type('https');
 
 	def get_CouponNumber(self):
 		return self.get_query_params().get('CouponNumber')

@@ -22,4 +22,4 @@ class DescribeCashDetailRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Bss', '2014-07-14', 'DescribeCashDetail')
-		self.set_protocol_type(self, 'https');
+		self.set_protocol_type('https');

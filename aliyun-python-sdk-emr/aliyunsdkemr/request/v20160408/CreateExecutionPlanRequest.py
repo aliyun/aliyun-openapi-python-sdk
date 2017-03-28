@@ -167,6 +167,12 @@ class CreateExecutionPlanRequest(RpcRequest):
 	def set_JobIdList(self,JobIdList):
 		self.add_query_param('JobIdList',JobIdList)
 
+	def get_OptionSoftWareList(self):
+		return self.get_query_params().get('OptionSoftWareList')
+
+	def set_OptionSoftWareList(self,OptionSoftWareList):
+		self.add_query_param('OptionSoftWareList',OptionSoftWareList)
+
 	def get_EcsOrder(self):
 		return self.get_query_params().get('EcsOrder')
 
