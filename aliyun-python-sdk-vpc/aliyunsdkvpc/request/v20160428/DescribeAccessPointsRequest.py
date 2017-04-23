@@ -53,6 +53,18 @@ class DescribeAccessPointsRequest(RpcRequest):
 	def set_Type(self,Type):
 		self.add_query_param('Type',Type)
 
+	def get_Name(self):
+		return self.get_query_params().get('Name')
+
+	def set_Name(self,Name):
+		self.add_query_param('Name',Name)
+
+	def get_HostOperator(self):
+		return self.get_query_params().get('HostOperator')
+
+	def set_HostOperator(self,HostOperator):
+		self.add_query_param('HostOperator',HostOperator)
+
 	def get_PageNumber(self):
 		return self.get_query_params().get('PageNumber')
 

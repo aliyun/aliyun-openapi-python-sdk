@@ -23,12 +23,6 @@ class DescribeRouterInterfacesRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'DescribeRouterInterfaces','vpc')
 
-	def get_Filter(self):
-		return self.get_query_params().get('Filter')
-
-	def set_Filter(self,Filter):
-		self.add_query_param('Filter',Filter)
-
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
@@ -58,3 +52,124 @@ class DescribeRouterInterfacesRequest(RpcRequest):
 
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
+
+	def  set_Filter_1_Key(self, Filter_1_Key):
+		self.add_query_param('Filter.1.Key', Filter_1_Key)
+
+	def  get_Filter_1_Key(self):
+		self.get_query_params().get('Filter.1.Key')
+
+	def  set_Filter_2_Key(self, Filter_2_Key):
+		self.add_query_param('Filter.2.Key', Filter_2_Key)
+
+	def  get_Filter_2_Key(self):
+		self.get_query_params().get('Filter.2.Key')
+
+	def  set_Filter_3_Key(self, Filter_3_Key):
+		self.add_query_param('Filter.3.Key', Filter_3_Key)
+
+	def  get_Filter_3_Key(self):
+		self.get_query_params().get('Filter.3.Key')
+
+	def  set_Filter_4_Key(self, Filter_4_Key):
+		self.add_query_param('Filter.4.Key', Filter_4_Key)
+
+	def  get_Filter_4_Key(self):
+		self.get_query_params().get('Filter.4.Key')
+
+	def  set_Filter_1_Value_1(self, Filter_1_Value_1):
+		self.add_query_param('Filter.1.Value.1', Filter_1_Value_1)
+
+	def  get_Filter_1_Value_1(self):
+		self.get_query_params().get('Filter.1.Value.1')
+
+	def  set_Filter_1_Value_2(self, Filter_1_Value_2):
+		self.add_query_param('Filter.1.Value.2', Filter_1_Value_2)
+
+	def  get_Filter_1_Value_2(self):
+		self.get_query_params().get('Filter.1.Value.2')
+
+	def  set_Filter_1_Value_3(self, Filter_1_Value_3):
+		self.add_query_param('Filter.1.Value.3', Filter_1_Value_3)
+
+	def  get_Filter_1_Value_3(self):
+		self.get_query_params().get('Filter.1.Value.3')
+
+	def  set_Filter_1_Value_4(self, Filter_1_Value_4):
+		self.add_query_param('Filter.1.Value.4', Filter_1_Value_4)
+
+	def  get_Filter_1_Value_4(self):
+		self.get_query_params().get('Filter.1.Value.4')
+
+	def  set_Filter_2_Value_1(self, Filter_2_Value_1):
+		self.add_query_param('Filter.2.Value.1', Filter_2_Value_1)
+
+	def  get_Filter_2_Value_1(self):
+		self.get_query_params().get('Filter.2.Value.1')
+
+	def  set_Filter_2_Value_2(self, Filter_2_Value_2):
+		self.add_query_param('Filter.2.Value.2', Filter_2_Value_2)
+
+	def  get_Filter_2_Value_2(self):
+		self.get_query_params().get('Filter.2.Value.2')
+
+	def  set_Filter_2_Value_3(self, Filter_2_Value_3):
+		self.add_query_param('Filter.2.Value.3', Filter_2_Value_3)
+
+	def  get_Filter_2_Value_3(self):
+		self.get_query_params().get('Filter.2.Value.3')
+
+	def  set_Filter_2_Value_4(self, Filter_2_Value_4):
+		self.add_query_param('Filter.2.Value.4', Filter_2_Value_4)
+
+	def  get_Filter_2_Value_4(self):
+		self.get_query_params().get('Filter.2.Value.4')
+
+	def  set_Filter_3_Value_1(self, Filter_3_Value_1):
+		self.add_query_param('Filter.3.Value.1', Filter_3_Value_1)
+
+	def  get_Filter_3_Value_1(self):
+		self.get_query_params().get('Filter.3.Value.1')
+
+	def  set_Filter_3_Value_2(self, Filter_3_Value_2):
+		self.add_query_param('Filter.3.Value.2', Filter_3_Value_2)
+
+	def  get_Filter_3_Value_2(self):
+		self.get_query_params().get('Filter.3.Value.2')
+
+	def  set_Filter_3_Value_3(self, Filter_3_Value_3):
+		self.add_query_param('Filter.3.Value.3', Filter_3_Value_3)
+
+	def  get_Filter_3_Value_3(self):
+		self.get_query_params().get('Filter.3.Value.3')
+
+	def  set_Filter_3_Value_4(self, Filter_3_Value_4):
+		self.add_query_param('Filter.3.Value.4', Filter_3_Value_4)
+
+	def  get_Filter_3_Value_4(self):
+		self.get_query_params().get('Filter.3.Value.4')
+
+	def  set_Filter_4_Value_1(self, Filter_4_Value_1):
+		self.add_query_param('Filter.4.Value.1', Filter_4_Value_1)
+
+	def  get_Filter_4_Value_1(self):
+		self.get_query_params().get('Filter.4.Value.1')
+
+	def  set_Filter_4_Value_2(self, Filter_4_Value_2):
+		self.add_query_param('Filter.4.Value.2', Filter_4_Value_2)
+
+	def  get_Filter_4_Value_2(self):
+		self.get_query_params().get('Filter.4.Value.2')
+
+	def  set_Filter_4_Value_3(self, Filter_4_Value_3):
+		self.add_query_param('Filter.4.Value.3', Filter_4_Value_3)
+
+	def  get_Filter_4_Value_3(self):
+		self.get_query_params().get('Filter.4.Value.3')
+
+	def  set_Filter_4_Value_4(self, Filter_4_Value_4):
+		self.add_query_param('Filter.4.Value.4', Filter_4_Value_4)
+
+	def  get_Filter_4_Value_4(self):
+		self.get_query_params().get('Filter.4.Value.4')
+

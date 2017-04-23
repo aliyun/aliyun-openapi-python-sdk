@@ -17,18 +17,14 @@
 # specific language governing permissions and limitations
 # under the License.
 
-#coding=utf-8
+from aliyunsdkcore.request import RpcRequest
+class NodeProcessesRequest(RpcRequest):
 
-"""
-Acs ERROR CODE module.
+	def __init__(self):
+		RpcRequest.__init__(self, 'Cms', '2017-03-01', 'NodeProcesses','cms')
 
-Created on 6/15/2015
+	def get_InstanceId(self):
+		return self.get_query_params().get('InstanceId')
 
-@author: alex jiang
-"""
-
-SDK_INVALID_REGION_ID = 'SDK.InvalidRegionId'
-SDK_SERVER_UNREACHABLE = 'SDK.ServerUnreachable'
-SDK_INVALID_REQUEST = 'SDK.InvalidRequest'
-SDK_MISSING_ENDPOINTS_FILER = 'SDK.MissingEndpointsFiler'
-SDK_UNKNOWN_SERVER_ERROR = 'SDK.UnknownServerError'
+	def set_InstanceId(self,InstanceId):
+		self.add_query_param('InstanceId',InstanceId)

@@ -22,15 +22,16 @@ from setuptools import setup, find_packages
 import os
 
 """
-setup module for core.
+setup module for vod.
 
-Created on 6/24/2015
+Created on 7/3/2015
 
 @author: alex
 """
-PACKAGE = "aliyunsdkcore"
-NAME = "aliyun-python-sdk-core"
-DESCRIPTION = "The core module of Aliyun Python SDK."
+
+PACKAGE = "aliyunsdkvod"
+NAME = "aliyun-python-sdk-vod"
+DESCRIPTION = "The vod module of Aliyun Python sdk."
 AUTHOR = "Aliyun"
 AUTHOR_EMAIL = "aliyun-developers-efficiency@list.alibaba-inc.com"
 URL = "http://develop.aliyun.com/sdk/python"
@@ -53,19 +54,20 @@ setup(
     author_email=AUTHOR_EMAIL,
     license="Apache",
     url=URL,
-    keywords=["aliyun","sdk","core"],
+    keywords=["aliyun","sdk","vod"],
     packages=find_packages(exclude=["tests*"]),
     include_package_data=True,
-    platforms='any',
+    platforms="any",
+    install_requires=["aliyun-python-sdk-core>=2.0.2"],
     classifiers=(
-                'Development Status :: 5 - Production/Stable',
-                'Intended Audience :: Developers',
-                'License :: OSI Approved :: Apache Software License',
-                'Programming Language :: Python',
-                'Programming Language :: Python :: 2.6',
-                'Programming Language :: Python :: 2.7',
-                'Programming Language :: Python :: 3',
-                'Programming Language :: Python :: 3.3',
-                'Topic :: Software Development',
+                "Development Status :: 4 - Beta",
+                "Intended Audience :: Developers",
+                "License :: OSI Approved :: Apache Software License",
+                "Programming Language :: Python",
+                "Programming Language :: Python :: 2.6",
+                "Programming Language :: Python :: 2.7",
+                "Programming Language :: Python :: 3",
+                "Programming Language :: Python :: 3.3",
+                "Topic :: Software Development",
               )
 )

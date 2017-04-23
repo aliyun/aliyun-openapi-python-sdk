@@ -79,8 +79,6 @@ class AcsRequest:
         self.__params = {}
         self.__method = method
         self.__header = {}
-        self.__domain_params = None
-        self.__domain_pattern = None
         self.__uri_pattern = None
         self.__uri_params = None
         self.__content = None
@@ -91,22 +89,11 @@ class AcsRequest:
             self.__params = {}
         self.__params[k] = v
 
-    def add_domain_param(self, k, v):
-        if self.__domain_params is None:
-            self.__domain_params = {}
-        self.__domain_params[k] = v
-
     def get_uri_pattern(self):
         return self.__uri_pattern
 
     def get_uri_params(self):
         return self.__uri_params
-
-    def get_domain_pattern(self):
-        return self.__domain_pattern
-
-    def get_domain_params(self):
-        return self.__domain_params
 
     def get_product(self):
         return self.__product
@@ -143,9 +130,6 @@ class AcsRequest:
 
     def set_version(self, version):
         self.__version = version
-
-    def set_domain_param(self, param):
-        self.__domain_params = param
 
     def set_action_name(self, action_name):
         self.__action_name = action_name

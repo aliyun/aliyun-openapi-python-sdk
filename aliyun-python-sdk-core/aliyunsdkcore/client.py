@@ -20,13 +20,19 @@
 # coding=utf-8
 import os
 import sys
+import httplib
+import warnings
+warnings.filterwarnings("once", category=DeprecationWarning)
 
-parent_dir = os.path.dirname(os.path.abspath(__file__))
-sys.path.insert(0, parent_dir)
+try:
+    import json
+except ImportError:
+    import simplejson as json
 
 from .profile import region_provider
 from .profile.location_service import LocationService
-from .acs_exception import exceptions as exs
+from .acs_exception.exceptions import ClientException
+from .acs_exception.exceptions import ServerException
 from .acs_exception import error_code, error_msg
 from .http.http_response import HttpResponse
 from .request import AcsRequest
@@ -57,8 +63,8 @@ class AcsClient:
         self.__secret = secret
         self.__region_id = region_id
         self.__user_agent = user_agent
-        self.__port = port
-        self.__location_service = LocationService(self)
+        self._port = port
+        self._location_service = LocationService(self)
         self._url_test_flag = False # if true, do_action() will throw a ClientException that contains URL
 
     def get_region_id(self):
@@ -133,93 +139,97 @@ class AcsClient:
         self.__user_agent = agent
 
     def get_location_service(self):
-        return self.__location_service
+        return self._location_service
 
     def get_port(self):
-        return self.__port
+        return self._port
+
+    def _resolve_endpoint(self, request):
+        endpoint = None
+        if request.get_location_service_code() is not None:
+            endpoint = self._location_service.find_product_domain(self.get_region_id(), request.get_location_service_code())
+        if endpoint is None:
+            endpoint = region_provider.find_product_domain(self.get_region_id(), request.get_product())
+            if endpoint is None:
+                raise ClientException(error_code.SDK_INVALID_REGION_ID, error_msg.get_msg('SDK_INVALID_REGION_ID'))
+            if not isinstance(request, AcsRequest):
+                raise ClientException(error_code.SDK_INVALID_REQUEST, error_msg.get_msg('SDK_INVALID_REQUEST'))
+        return endpoint
+
+    def _make_http_response(self, endpoint, request):
+        content = request.get_content()
+        method = request.get_method()
+        header = request.get_signed_header(self.get_region_id(), self.get_access_key(),
+                                               self.get_access_secret())
+        if self.get_user_agent() is not None:
+            header['User-Agent'] = self.get_user_agent()
+            header['x-sdk-client'] = 'python/2.0.0'
+        if header is None:
+            header = {}
+
+        protocol = request.get_protocol_type()
+        url = request.get_url(self.get_region_id(), self.get_access_key(), self.get_access_secret())
+        response = HttpResponse(endpoint, url, method, header, protocol, content,
+                                self._port)
+        return response
+
+    def _implementation_of_do_action(self, request):
+        endpoint = self._resolve_endpoint(request)
+        http_response = self._make_http_response(endpoint, request)
+        if self._url_test_flag:
+            raise ClientException("URLTestFlagIsSet", http_response.get_url())
+
+        # Do the actual network thing
+        try:
+            status, headers, body = http_response.get_response_object()
+            return status, headers, body
+        except IOError, e:
+            raise ClientException(error_code.SDK_SERVER_UNREACHABLE, error_msg.get_msg('SDK_SERVER_UNREACHABLE') + ': ' + str(e))
+        except AttributeError:
+            raise ClientException(error_code.SDK_INVALID_REQUEST, error_msg.get_msg('SDK_INVALID_REQUEST'))
+
+    def _parse_error_info_from_response_body(self, response_body):
+        try:
+            body_obj = json.loads(response_body)
+            if 'Code' in body_obj and 'Message' in body_obj:
+                return (body_obj['Code'], body_obj['Message'])
+            else:
+                return (error_code.SDK_UNKNOWN_SERVER_ERROR, error_msg.get_msg('SDK_UNKNOWN_SERVER_ERROR'))
+        except ValueError:
+            # failed to parse body as json format
+            return (error_code.SDK_UNKNOWN_SERVER_ERROR, error_msg.get_msg('SDK_UNKNOWN_SERVER_ERROR'))
+
+    def do_action_with_exception(self, acs_request):
+
+        # set server response format as json, because thie function will
+        # parse the response so which format doesn't matter
+        acs_request.set_accept_format('json')
+
+        status, headers, body = self._implementation_of_do_action(acs_request)
+
+        request_id = None
+        ret = body
+
+        try:
+            body_obj = json.loads(body)
+            request_id = body_obj.get('RequestId')
+            ret = body_obj
+        except ValueError:
+            # in case the response body is not a json string, return the raw data instead
+            pass
+
+        if status != httplib.OK:
+            server_error_code, server_error_message = self._parse_error_info_from_response_body(body)
+            raise ServerException(server_error_code, server_error_message, http_status=status, request_id=request_id)
+
+        return body
 
     def do_action(self, acs_request):
-        ep = None
-        if acs_request.get_location_service_code() is not None:
-            ep = self.__location_service.find_product_domain(self.get_region_id(), acs_request.get_location_service_code())
-        if ep is None:
-            ep = region_provider.find_product_domain(self.get_region_id(), acs_request.get_product())
-            if ep is None:
-                raise exs.ClientException(error_code.SDK_INVALID_REGION_ID, error_msg.get_msg('SDK_INVALID_REGION_ID'))
-            if not isinstance(acs_request, AcsRequest):
-                raise exs.ClientException(error_code.SDK_INVALID_REQUEST, error_msg.get_msg('SDK_INVALID_REQUEST'))
-        try:
-            # style = acs_request.get_style()
-            content = acs_request.get_content()
-            method = acs_request.get_method()
-            header = acs_request.get_signed_header(self.get_region_id(), self.get_access_key(),
-                                                   self.get_access_secret())
-            if self.get_user_agent() is not None:
-                header['User-Agent'] = self.get_user_agent()
-                header['x-sdk-client'] = 'python/2.0.0'
-            protocol = acs_request.get_protocol_type()
-            prefix = self.__replace_occupied_params(acs_request.get_domain_pattern(), acs_request.get_domain_params())
-            url = acs_request.get_url(self.get_region_id(), self.get_access_key(), self.get_access_secret())
-
-            if self._url_test_flag:
-                raise exs.ClientException("URLTestFlagIsSet", url)
-
-            if prefix is None:
-                response = HttpResponse(ep, url, method, {} if header is None else header, protocol, content,
-                                        self.__port)
-            else:
-                response = HttpResponse(prefix + ',' + ep, url, method, {} if header is None else header, protocol,
-                                        content, self.__port)
-            _header, _body = response.get_response()
-            # if _body is None:
-            # 	raise exs.ClientException(error_code.SDK_SERVER_UNREACHABLE, error_msg.get_msg('SDK_SERVER_UNREACHABLE'))
-            return _body
-        except IOError, e:
-            raise exs.ClientException(error_code.SDK_SERVER_UNREACHABLE, error_msg.get_msg('SDK_SERVER_UNREACHABLE') + ': ' + str(e))
-        except AttributeError:
-            raise exs.ClientException(error_code.SDK_INVALID_REQUEST, error_msg.get_msg('SDK_INVALID_REQUEST'))
+        warnings.warn("do_action() method is deprecated, please use do_action_with_exception() instead.", DeprecationWarning)
+        status, headers, body = self._implementation_of_do_action(acs_request)
+        return body
 
     def get_response(self, acs_request):
-        ep = None
-        if acs_request.get_location_service_code() is not None:
-            ep = self.__location_service.find_product_domain(self.get_region_id(), acs_request.get_location_service_code())
-        if ep is None:
-            ep = region_provider.find_product_domain(self.get_region_id(), acs_request.get_product())
-            if ep is None:
-                raise exs.ClientException(error_code.SDK_INVALID_REGION_ID, error_msg.get_msg('SDK_INVALID_REGION_ID'))
-            if not isinstance(acs_request, AcsRequest):
-                raise exs.ClientException(error_code.SDK_INVALID_REQUEST, error_msg.get_msg('SDK_INVALID_REQUEST'))
-        try:
-            # style = acs_request.get_style()
-            content = acs_request.get_content()
-            method = acs_request.get_method()
-            header = acs_request.get_signed_header(self.get_region_id(), self.get_access_key(),
-                                                   self.get_access_secret())
-            if self.get_user_agent() is not None:
-                header['User-Agent'] = self.get_user_agent()
-                header['x-sdk-client'] = 'python/2.0.0'
-            protocol = acs_request.get_protocol_type()
-            prefix = self.__replace_occupied_params(acs_request.get_domain_pattern(), acs_request.get_domain_params())
-            url = acs_request.get_url(self.get_region_id(), self.get_access_key(), self.get_access_secret())
-            if prefix is None:
-                _response = HttpResponse(ep, url, method, {} if header is None else header, protocol, content,
-                                         self.__port)
-            else:
-                _response = HttpResponse(prefix + ',' + ep, url, method, {} if header is None else header, protocol,
-                                         content, self.__port)
-            return _response.get_response_object()
+        warnings.warn("get_response() method is deprecated, please use do_action_with_exception() instead.", DeprecationWarning)
+        return self._implementation_of_do_action(acs_request)
 
-        except IOError, e:
-            raise exs.ClientException(error_code.SDK_SERVER_UNREACHABLE, error_msg.get_msg('SDK_SERVER_UNREACHABLE') + ': ' + str(e))
-        except AttributeError:
-            raise exs.ClientException(error_code.SDK_INVALID_REQUEST, error_msg.get_msg('SDK_INVALID_REQUEST'))
-
-    def __replace_occupied_params(self, pattern, params):
-        if pattern is None:
-            return None
-        if params is None:
-            return pattern
-        for (k, v) in params.items():
-            target = '[' + k + ']'
-            pattern.replace(target, v)
-        return pattern

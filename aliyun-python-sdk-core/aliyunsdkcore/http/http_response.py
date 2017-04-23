@@ -64,7 +64,7 @@ class HttpResponse(HttpRequest):
 			self.__connection.request(method=self.get_method(),url=self.get_url(),body=self.get_body(),
 			                          headers=self.get_headers())
 			response=self.__connection.getresponse()
-			return response.getheaders(),response.read()
+			return response.getheaders(), response.read()
 		finally:
 			self.__close_connection()
 
@@ -78,7 +78,7 @@ class HttpResponse(HttpRequest):
 			self.__connection.request(method=self.get_method(),url=self.get_url(),body=self.get_body(),
 			                          headers=self.get_headers())
 			response=self.__connection.getresponse()
-			return response.status,response.getheaders(),response.read()
+			return response.status, response.getheaders(), response.read()
 		finally:
 			self.__close_connection()
 
@@ -94,7 +94,7 @@ class HttpResponse(HttpRequest):
 			self.__connection.request(method=self.get_method(),url=self.get_url(),body=self.get_body(),
 			                          headers=self.get_headers())
 			response=self.__connection.getresponse()
-			return response.getheaders(),response.read()
+			return response.getheaders(), response.read()
 		finally:
 			self.__close_connection()
 
@@ -110,7 +110,7 @@ class HttpResponse(HttpRequest):
 			self.__connection.request(method=self.get_method(),url=self.get_url(),body=self.get_body(),
 			                          headers=self.get_headers())
 			response=self.__connection.getresponse()
-			return response.status,response.getheaders(),response.read()
+			return response.status, response.getheaders(), response.read()
 		finally:
 			self.__close_connection()
 
