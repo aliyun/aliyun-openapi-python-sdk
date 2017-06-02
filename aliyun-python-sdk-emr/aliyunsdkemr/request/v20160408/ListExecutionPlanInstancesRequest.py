@@ -29,11 +29,25 @@ class ListExecutionPlanInstancesRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_ExecutionPlanIdLists(self):
+		return self.get_query_params().get('ExecutionPlanIdLists')
+
+	def set_ExecutionPlanIdLists(self,ExecutionPlanIdLists):
+		for i in range(len(ExecutionPlanIdLists)):	
+			self.add_query_param('ExecutionPlanIdList.' + bytes(i + 1) , ExecutionPlanIdLists[i]);
+
 	def get_OnlyLastInstance(self):
 		return self.get_query_params().get('OnlyLastInstance')
 
 	def set_OnlyLastInstance(self,OnlyLastInstance):
 		self.add_query_param('OnlyLastInstance',OnlyLastInstance)
+
+	def get_StatusLists(self):
+		return self.get_query_params().get('StatusLists')
+
+	def set_StatusLists(self,StatusLists):
+		for i in range(len(StatusLists)):	
+			self.add_query_param('StatusList.' + bytes(i + 1) , StatusLists[i]);
 
 	def get_IsDesc(self):
 		return self.get_query_params().get('IsDesc')
@@ -52,15 +66,3 @@ class ListExecutionPlanInstancesRequest(RpcRequest):
 
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
-
-	def get_ExecutionPlanIdList(self):
-		return self.get_query_params().get('ExecutionPlanIdList')
-
-	def set_ExecutionPlanIdList(self,ExecutionPlanIdList):
-		self.add_query_param('ExecutionPlanIdList',ExecutionPlanIdList)
-
-	def get_StatusList(self):
-		return self.get_query_params().get('StatusList')
-
-	def set_StatusList(self,StatusList):
-		self.add_query_param('StatusList',StatusList)

@@ -76,3 +76,15 @@ class CreateUploadVideoRequest(RpcRequest):
 
 	def set_Title(self,Title):
 		self.add_query_param('Title',Title)
+
+	def get_CateId(self):
+		return self.get_query_params().get('CateId')
+
+	def set_CateId(self,CateId):
+		self.add_query_param('CateId',CateId)
+
+	def get_Tags(self):
+		return self.get_query_params().get('Tags')
+
+	def set_Tags(self,Tags):
+		self.add_query_param('Tags',Tags)

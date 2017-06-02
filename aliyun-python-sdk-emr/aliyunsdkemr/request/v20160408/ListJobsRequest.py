@@ -46,3 +46,15 @@ class ListJobsRequest(RpcRequest):
 
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
+
+	def get_QueryType(self):
+		return self.get_query_params().get('QueryType')
+
+	def set_QueryType(self,QueryType):
+		self.add_query_param('QueryType',QueryType)
+
+	def get_QueryString(self):
+		return self.get_query_params().get('QueryString')
+
+	def set_QueryString(self,QueryString):
+		self.add_query_param('QueryString',QueryString)

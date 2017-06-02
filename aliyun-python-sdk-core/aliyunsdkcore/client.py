@@ -47,7 +47,15 @@ Created on 6/15/2015
 
 
 class AcsClient:
-    def __init__(self, ak, secret, region_id, auto_retry=True, max_retry_time=3, user_agent=None, port=80):
+    def __init__(
+            self,
+            ak,
+            secret,
+            region_id,
+            auto_retry=True,
+            max_retry_time=3,
+            user_agent=None,
+            port=80):
         """
         constructor for AcsClient
         :param ak: String, access key id
@@ -65,7 +73,8 @@ class AcsClient:
         self.__user_agent = user_agent
         self._port = port
         self._location_service = LocationService(self)
-        self._url_test_flag = False # if true, do_action() will throw a ClientException that contains URL
+        # if true, do_action() will throw a ClientException that contains URL
+        self._url_test_flag = False
 
     def get_region_id(self):
         """
@@ -147,20 +156,28 @@ class AcsClient:
     def _resolve_endpoint(self, request):
         endpoint = None
         if request.get_location_service_code() is not None:
-            endpoint = self._location_service.find_product_domain(self.get_region_id(), request.get_location_service_code())
+            endpoint = self._location_service.find_product_domain(
+                self.get_region_id(), request.get_location_service_code())
         if endpoint is None:
-            endpoint = region_provider.find_product_domain(self.get_region_id(), request.get_product())
+            endpoint = region_provider.find_product_domain(
+                self.get_region_id(), request.get_product())
             if endpoint is None:
-                raise ClientException(error_code.SDK_INVALID_REGION_ID, error_msg.get_msg('SDK_INVALID_REGION_ID'))
+                raise ClientException(
+                    error_code.SDK_INVALID_REGION_ID,
+                    error_msg.get_msg('SDK_INVALID_REGION_ID'))
             if not isinstance(request, AcsRequest):
-                raise ClientException(error_code.SDK_INVALID_REQUEST, error_msg.get_msg('SDK_INVALID_REQUEST'))
+                raise ClientException(
+                    error_code.SDK_INVALID_REQUEST,
+                    error_msg.get_msg('SDK_INVALID_REQUEST'))
         return endpoint
 
     def _make_http_response(self, endpoint, request):
         content = request.get_content()
         method = request.get_method()
-        header = request.get_signed_header(self.get_region_id(), self.get_access_key(),
-                                               self.get_access_secret())
+        header = request.get_signed_header(
+            self.get_region_id(),
+            self.get_access_key(),
+            self.get_access_secret())
         if self.get_user_agent() is not None:
             header['User-Agent'] = self.get_user_agent()
             header['x-sdk-client'] = 'python/2.0.0'
@@ -168,9 +185,18 @@ class AcsClient:
             header = {}
 
         protocol = request.get_protocol_type()
-        url = request.get_url(self.get_region_id(), self.get_access_key(), self.get_access_secret())
-        response = HttpResponse(endpoint, url, method, header, protocol, content,
-                                self._port)
+        url = request.get_url(
+            self.get_region_id(),
+            self.get_access_key(),
+            self.get_access_secret())
+        response = HttpResponse(
+            endpoint,
+            url,
+            method,
+            header,
+            protocol,
+            content,
+            self._port)
         return response
 
     def _implementation_of_do_action(self, request):
@@ -183,10 +209,14 @@ class AcsClient:
         try:
             status, headers, body = http_response.get_response_object()
             return status, headers, body
-        except IOError, e:
-            raise ClientException(error_code.SDK_SERVER_UNREACHABLE, error_msg.get_msg('SDK_SERVER_UNREACHABLE') + ': ' + str(e))
+        except IOError as e:
+            raise ClientException(
+                error_code.SDK_SERVER_UNREACHABLE,
+                error_msg.get_msg('SDK_SERVER_UNREACHABLE') + ': ' + str(e))
         except AttributeError:
-            raise ClientException(error_code.SDK_INVALID_REQUEST, error_msg.get_msg('SDK_INVALID_REQUEST'))
+            raise ClientException(
+                error_code.SDK_INVALID_REQUEST,
+                error_msg.get_msg('SDK_INVALID_REQUEST'))
 
     def _parse_error_info_from_response_body(self, response_body):
         try:
@@ -194,10 +224,13 @@ class AcsClient:
             if 'Code' in body_obj and 'Message' in body_obj:
                 return (body_obj['Code'], body_obj['Message'])
             else:
-                return (error_code.SDK_UNKNOWN_SERVER_ERROR, error_msg.get_msg('SDK_UNKNOWN_SERVER_ERROR'))
+                return (
+                    error_code.SDK_UNKNOWN_SERVER_ERROR,
+                    error_msg.get_msg('SDK_UNKNOWN_SERVER_ERROR'))
         except ValueError:
             # failed to parse body as json format
-            return (error_code.SDK_UNKNOWN_SERVER_ERROR, error_msg.get_msg('SDK_UNKNOWN_SERVER_ERROR'))
+            return (error_code.SDK_UNKNOWN_SERVER_ERROR,
+                    error_msg.get_msg('SDK_UNKNOWN_SERVER_ERROR'))
 
     def do_action_with_exception(self, acs_request):
 
@@ -215,21 +248,30 @@ class AcsClient:
             request_id = body_obj.get('RequestId')
             ret = body_obj
         except ValueError:
-            # in case the response body is not a json string, return the raw data instead
+            # in case the response body is not a json string, return the raw
+            # data instead
             pass
 
         if status != httplib.OK:
-            server_error_code, server_error_message = self._parse_error_info_from_response_body(body)
-            raise ServerException(server_error_code, server_error_message, http_status=status, request_id=request_id)
+            server_error_code, server_error_message = self._parse_error_info_from_response_body(
+                body)
+            raise ServerException(
+                server_error_code,
+                server_error_message,
+                http_status=status,
+                request_id=request_id)
 
         return body
 
     def do_action(self, acs_request):
-        warnings.warn("do_action() method is deprecated, please use do_action_with_exception() instead.", DeprecationWarning)
+        warnings.warn(
+            "do_action() method is deprecated, please use do_action_with_exception() instead.",
+            DeprecationWarning)
         status, headers, body = self._implementation_of_do_action(acs_request)
         return body
 
     def get_response(self, acs_request):
-        warnings.warn("get_response() method is deprecated, please use do_action_with_exception() instead.", DeprecationWarning)
+        warnings.warn(
+            "get_response() method is deprecated, please use do_action_with_exception() instead.",
+            DeprecationWarning)
         return self._implementation_of_do_action(acs_request)
-

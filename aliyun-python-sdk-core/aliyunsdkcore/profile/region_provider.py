@@ -17,7 +17,7 @@
 # specific language governing permissions and limitations
 # under the License.
 
-#coding=utf-8
+# coding=utf-8
 
 import os
 import sys
@@ -37,10 +37,10 @@ Created on 6/12/2015
 @author: alex
 """
 
-#endpoint list
+# endpoint list
 __endpoints = dict()
 
-#load endpoints info from endpoints.xml file and parse to dict.
+# load endpoints info from endpoints.xml file and parse to dict.
 __endpoints_file = os.path.join(parent_dir, 'endpoints.xml')
 try:
     DOMTree = parse(__endpoints_file)
@@ -60,20 +60,23 @@ try:
             domain = domain_node.childNodes[0].nodeValue
             product_list.append({name: domain})
 
-        __endpoints[endpoint.getAttribute('name')] = dict(regions=region_list, products=product_list)
+        __endpoints[endpoint.getAttribute('name')] = dict(
+            regions=region_list, products=product_list)
 
-except Exception, ex:
-    raise ClientException(error_code.SDK_MISSING_ENDPOINTS_FILER, error_msg.get_msg('SDK_MISSING_ENDPOINTS_FILER'))
+except Exception as ex:
+    raise ClientException(
+        error_code.SDK_MISSING_ENDPOINTS_FILER,
+        error_msg.get_msg('SDK_MISSING_ENDPOINTS_FILER'))
 
 
 def find_product_domain(regionid, prod_name):
     """
-	Fetch endpoint url with given region id, product name and endpoint list
-	:param regionid: region id
-	:param product: product name
-	:param endpoints: product list
-	:return: endpoint url
-	"""
+        Fetch endpoint url with given region id, product name and endpoint list
+        :param regionid: region id
+        :param product: product name
+        :param endpoints: product list
+        :return: endpoint url
+        """
     if regionid is not None and product is not None:
         for point in __endpoints:
             point_info = __endpoints.get(point)
@@ -83,6 +86,7 @@ def find_product_domain(regionid, prod_name):
                     if prod_name in prod:
                         return prod.get(prod_name)
     return None
+
 
 def modify_point(product_name, region_id, end_point):
     for point in __endpoints:
@@ -110,6 +114,7 @@ def modify_point(product_name, region_id, end_point):
         __endpoints[point] = __mdict
         convert_dict_to_endpointsxml(__endpoints)
 
+
 def convert_dict_to_endpointsxml(mdict):
     regions = list()
     products = list()
@@ -123,16 +128,16 @@ def convert_dict_to_endpointsxml(mdict):
     content += prefix
     content += '<RegionIds>\n'
     for item in regions:
-        content += '<RegionId>'+item+'</RegionId>\n'
-    content += '</RegionIds>\n'+'<Products>\n'
+        content += '<RegionId>' + item + '</RegionId>\n'
+    content += '</RegionIds>\n' + '<Products>\n'
     for item in products:
         content += '<Product>\n'
-        content += '<ProductName>'+item.keys()[0]+'</ProductName>\n'
-        content += '<DomainName>'+item[item.keys()[0]]+'</DomainName>\n'
+        content += '<ProductName>' + item.keys()[0] + '</ProductName>\n'
+        content += '<DomainName>' + item[item.keys()[0]] + '</DomainName>\n'
         content += '</Product>\n'
     content += '</Products>'
     content += endfix
-    #print content
+    # print content
     if not os.path.isfile(__endpoints_file):
         _createFile(__endpoints_file)
     f = open(__endpoints_file, 'w')
@@ -144,6 +149,7 @@ def convert_dict_to_endpointsxml(mdict):
     finally:
         f.close()
 
+
 def _createFile(filename):
     namePath = os.path.split(filename)[0]
     if not os.path.isdir(namePath):
@@ -151,6 +157,7 @@ def _createFile(filename):
         with os.fdopen(os.open(filename,
                                os.O_WRONLY | os.O_CREAT, 0o600), 'w'):
             pass
+
 
 if __name__ == '__main__':
     print find_product_domain('cn-hangzhou', 'Rds')

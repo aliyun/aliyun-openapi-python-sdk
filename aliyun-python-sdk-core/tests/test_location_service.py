@@ -33,21 +33,27 @@ location_service = client.get_location_service()
 location_service.set_location_service_attr(region='cn-beijing',
                                            product_name="Location",
                                            domain="location.aliyuncs.com")
-domain = location_service.find_product_domain(client.get_region_id(), 'oss');
+domain = location_service.find_product_domain(client.get_region_id(), 'oss')
 print domain
-domain = location_service.find_product_domain(client.get_region_id(), 'oss');
+domain = location_service.find_product_domain(client.get_region_id(), 'oss')
 print domain
 
 
 class DescribeRegionsRequest(RpcRequest):
 
-    def __init__(self, OwnerId = None, ResourceOwnerAccount = None,
-                 ResourceOwnerId = None, OwnerAccount = None):
-        RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'DescribeRegions', 'oss')
-        self.add_query_param('OwnerId',OwnerId)
-        self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-        self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-        self.add_query_param('OwnerAccount',OwnerAccount)
+    def __init__(self, OwnerId=None, ResourceOwnerAccount=None,
+                 ResourceOwnerId=None, OwnerAccount=None):
+        RpcRequest.__init__(
+            self,
+            'Ecs',
+            '2014-05-26',
+            'DescribeRegions',
+            'oss')
+        self.add_query_param('OwnerId', OwnerId)
+        self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+        self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+        self.add_query_param('OwnerAccount', OwnerAccount)
+
 
 request = DescribeRegionsRequest()
 status, headers, body = client.get_response(request)

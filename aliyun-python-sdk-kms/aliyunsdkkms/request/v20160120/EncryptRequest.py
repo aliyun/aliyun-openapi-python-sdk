@@ -22,6 +22,7 @@ class EncryptRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Kms', '2016-01-20', 'Encrypt','kms')
+		self.set_protocol_type('https');
 
 	def get_KeyId(self):
 		return self.get_query_params().get('KeyId')

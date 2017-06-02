@@ -47,6 +47,13 @@ class ListExecutionPlansRequest(RpcRequest):
 	def set_Strategy(self,Strategy):
 		self.add_query_param('Strategy',Strategy)
 
+	def get_StatusLists(self):
+		return self.get_query_params().get('StatusLists')
+
+	def set_StatusLists(self,StatusLists):
+		for i in range(len(StatusLists)):	
+			self.add_query_param('StatusList.' + bytes(i + 1) , StatusLists[i]);
+
 	def get_IsDesc(self):
 		return self.get_query_params().get('IsDesc')
 
@@ -65,8 +72,14 @@ class ListExecutionPlansRequest(RpcRequest):
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
 
-	def get_StatusList(self):
-		return self.get_query_params().get('StatusList')
+	def get_QueryType(self):
+		return self.get_query_params().get('QueryType')
 
-	def set_StatusList(self,StatusList):
-		self.add_query_param('StatusList',StatusList)
+	def set_QueryType(self,QueryType):
+		self.add_query_param('QueryType',QueryType)
+
+	def get_QueryString(self):
+		return self.get_query_params().get('QueryString')
+
+	def set_QueryString(self,QueryString):
+		self.add_query_param('QueryString',QueryString)

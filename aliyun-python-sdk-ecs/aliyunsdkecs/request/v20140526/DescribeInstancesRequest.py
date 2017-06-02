@@ -280,3 +280,9 @@ class DescribeInstancesRequest(RpcRequest):
 
 	def set_InstanceTypeFamily(self,InstanceTypeFamily):
 		self.add_query_param('InstanceTypeFamily',InstanceTypeFamily)
+
+	def get_KeyPairName(self):
+		return self.get_query_params().get('KeyPairName')
+
+	def set_KeyPairName(self,KeyPairName):
+		self.add_query_param('KeyPairName',KeyPairName)

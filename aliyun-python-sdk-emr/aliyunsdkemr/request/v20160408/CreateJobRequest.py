@@ -52,3 +52,15 @@ class CreateJobRequest(RpcRequest):
 
 	def set_FailAct(self,FailAct):
 		self.add_query_param('FailAct',FailAct)
+
+	def get_MaxRetry(self):
+		return self.get_query_params().get('MaxRetry')
+
+	def set_MaxRetry(self,MaxRetry):
+		self.add_query_param('MaxRetry',MaxRetry)
+
+	def get_RetryInterval(self):
+		return self.get_query_params().get('RetryInterval')
+
+	def set_RetryInterval(self,RetryInterval):
+		self.add_query_param('RetryInterval',RetryInterval)

@@ -29,20 +29,17 @@ class RenewClusterRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_Id(self):
-		return self.get_query_params().get('Id')
+	def get_ClusterId(self):
+		return self.get_query_params().get('ClusterId')
 
-	def set_Id(self,Id):
-		self.add_query_param('Id',Id)
+	def set_ClusterId(self,ClusterId):
+		self.add_query_param('ClusterId',ClusterId)
 
-	def get_ECSIds(self):
-		return self.get_query_params().get('ECSIds')
+	def get_RenewEcsDos(self):
+		return self.get_query_params().get('RenewEcsDos')
 
-	def set_ECSIds(self,ECSIds):
-		self.add_query_param('ECSIds',ECSIds)
-
-	def get_Period(self):
-		return self.get_query_params().get('Period')
-
-	def set_Period(self,Period):
-		self.add_query_param('Period',Period)
+	def set_RenewEcsDos(self,RenewEcsDos):
+		for i in range(len(RenewEcsDos)):	
+			self.add_query_param('RenewEcsDo.' + bytes(i + 1) + '.EcsId' , RenewEcsDos[i].get('EcsId'))
+			self.add_query_param('RenewEcsDo.' + bytes(i + 1) + '.EcsPeriod' , RenewEcsDos[i].get('EcsPeriod'))
+			self.add_query_param('RenewEcsDo.' + bytes(i + 1) + '.EmrPeriod' , RenewEcsDos[i].get('EmrPeriod'))

@@ -59,8 +59,12 @@ class AddLiveAppRecordConfigRequest(RpcRequest):
 	def set_OssBucket(self,OssBucket):
 		self.add_query_param('OssBucket',OssBucket)
 
-	def get_RecordFormat(self):
-		return self.get_query_params().get('RecordFormat')
+	def get_RecordFormats(self):
+		return self.get_query_params().get('RecordFormats')
 
-	def set_RecordFormat(self,RecordFormat):
-		self.add_query_param('RecordFormat',RecordFormat)
+	def set_RecordFormats(self,RecordFormats):
+		for i in range(len(RecordFormats)):	
+			self.add_query_param('RecordFormat.' + bytes(i + 1) + '.Format' , RecordFormats[i].get('Format'))
+			self.add_query_param('RecordFormat.' + bytes(i + 1) + '.OssObjectPrefix' , RecordFormats[i].get('OssObjectPrefix'))
+			self.add_query_param('RecordFormat.' + bytes(i + 1) + '.SliceOssObjectPrefix' , RecordFormats[i].get('SliceOssObjectPrefix'))
+			self.add_query_param('RecordFormat.' + bytes(i + 1) + '.CycleDuration' , RecordFormats[i].get('CycleDuration'))

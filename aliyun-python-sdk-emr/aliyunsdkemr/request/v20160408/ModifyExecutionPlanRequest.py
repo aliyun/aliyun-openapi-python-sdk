@@ -83,6 +83,13 @@ class ModifyExecutionPlanRequest(RpcRequest):
 	def set_EmrVer(self,EmrVer):
 		self.add_query_param('EmrVer',EmrVer)
 
+	def get_OptionSoftWareLists(self):
+		return self.get_query_params().get('OptionSoftWareLists')
+
+	def set_OptionSoftWareLists(self,OptionSoftWareLists):
+		for i in range(len(OptionSoftWareLists)):	
+			self.add_query_param('OptionSoftWareList.' + bytes(i + 1) , OptionSoftWareLists[i]);
+
 	def get_ClusterType(self):
 		return self.get_query_params().get('ClusterType')
 
@@ -113,6 +120,12 @@ class ModifyExecutionPlanRequest(RpcRequest):
 	def set_NetType(self,NetType):
 		self.add_query_param('NetType',NetType)
 
+	def get_UserDefinedEmrEcsRole(self):
+		return self.get_query_params().get('UserDefinedEmrEcsRole')
+
+	def set_UserDefinedEmrEcsRole(self,UserDefinedEmrEcsRole):
+		self.add_query_param('UserDefinedEmrEcsRole',UserDefinedEmrEcsRole)
+
 	def get_IoOptimized(self):
 		return self.get_query_params().get('IoOptimized')
 
@@ -124,6 +137,30 @@ class ModifyExecutionPlanRequest(RpcRequest):
 
 	def set_InstanceGeneration(self,InstanceGeneration):
 		self.add_query_param('InstanceGeneration',InstanceGeneration)
+
+	def get_EcsOrders(self):
+		return self.get_query_params().get('EcsOrders')
+
+	def set_EcsOrders(self,EcsOrders):
+		for i in range(len(EcsOrders)):	
+			self.add_query_param('EcsOrder.' + bytes(i + 1) + '.Index' , EcsOrders[i].get('Index'))
+			self.add_query_param('EcsOrder.' + bytes(i + 1) + '.NodeCount' , EcsOrders[i].get('NodeCount'))
+			self.add_query_param('EcsOrder.' + bytes(i + 1) + '.InstanceType' , EcsOrders[i].get('InstanceType'))
+			self.add_query_param('EcsOrder.' + bytes(i + 1) + '.DiskType' , EcsOrders[i].get('DiskType'))
+			self.add_query_param('EcsOrder.' + bytes(i + 1) + '.DiskCapacity' , EcsOrders[i].get('DiskCapacity'))
+			self.add_query_param('EcsOrder.' + bytes(i + 1) + '.NodeType' , EcsOrders[i].get('NodeType'))
+			self.add_query_param('EcsOrder.' + bytes(i + 1) + '.DiskCount' , EcsOrders[i].get('DiskCount'))
+
+
+	def get_BootstrapActions(self):
+		return self.get_query_params().get('BootstrapActions')
+
+	def set_BootstrapActions(self,BootstrapActions):
+		for i in range(len(BootstrapActions)):	
+			self.add_query_param('BootstrapAction.' + bytes(i + 1) + '.Name' , BootstrapActions[i].get('Name'))
+			self.add_query_param('BootstrapAction.' + bytes(i + 1) + '.Path' , BootstrapActions[i].get('Path'))
+			self.add_query_param('BootstrapAction.' + bytes(i + 1) + '.Arg' , BootstrapActions[i].get('Arg'))
+
 
 	def get_Configurations(self):
 		return self.get_query_params().get('Configurations')
@@ -173,26 +210,21 @@ class ModifyExecutionPlanRequest(RpcRequest):
 	def set_TimeUnit(self,TimeUnit):
 		self.add_query_param('TimeUnit',TimeUnit)
 
-	def get_OptionSoftWareList(self):
-		return self.get_query_params().get('OptionSoftWareList')
+	def get_DayOfWeek(self):
+		return self.get_query_params().get('DayOfWeek')
 
-	def set_OptionSoftWareList(self,OptionSoftWareList):
-		self.add_query_param('OptionSoftWareList',OptionSoftWareList)
+	def set_DayOfWeek(self,DayOfWeek):
+		self.add_query_param('DayOfWeek',DayOfWeek)
 
-	def get_EcsOrder(self):
-		return self.get_query_params().get('EcsOrder')
+	def get_DayOfMonth(self):
+		return self.get_query_params().get('DayOfMonth')
 
-	def set_EcsOrder(self,EcsOrder):
-		self.add_query_param('EcsOrder',EcsOrder)
+	def set_DayOfMonth(self,DayOfMonth):
+		self.add_query_param('DayOfMonth',DayOfMonth)
 
-	def get_BootstrapAction(self):
-		return self.get_query_params().get('BootstrapAction')
+	def get_JobIdLists(self):
+		return self.get_query_params().get('JobIdLists')
 
-	def set_BootstrapAction(self,BootstrapAction):
-		self.add_query_param('BootstrapAction',BootstrapAction)
-
-	def get_JobIdList(self):
-		return self.get_query_params().get('JobIdList')
-
-	def set_JobIdList(self,JobIdList):
-		self.add_query_param('JobIdList',JobIdList)
+	def set_JobIdLists(self,JobIdLists):
+		for i in range(len(JobIdLists)):	
+			self.add_query_param('JobIdList.' + bytes(i + 1) , JobIdLists[i]);

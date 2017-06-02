@@ -40,9 +40,9 @@ VERSION = __import__(PACKAGE).__version__
 
 desc_file = open("README.rst")
 try:
-	LONG_DESCRIPTION = desc_file.read()
+    LONG_DESCRIPTION = desc_file.read()
 finally:
-	desc_file.close()
+    desc_file.close()
 
 setup(
     name=NAME,
@@ -53,19 +53,19 @@ setup(
     author_email=AUTHOR_EMAIL,
     license="Apache",
     url=URL,
-    keywords=["aliyun","sdk","core"],
+    keywords=["aliyun", "sdk", "core"],
     packages=find_packages(exclude=["tests*"]),
     include_package_data=True,
     platforms='any',
     classifiers=(
-                'Development Status :: 5 - Production/Stable',
-                'Intended Audience :: Developers',
-                'License :: OSI Approved :: Apache Software License',
-                'Programming Language :: Python',
-                'Programming Language :: Python :: 2.6',
-                'Programming Language :: Python :: 2.7',
-                'Programming Language :: Python :: 3',
-                'Programming Language :: Python :: 3.3',
-                'Topic :: Software Development',
-              )
+        'Development Status :: 5 - Production/Stable',
+        'Intended Audience :: Developers',
+        'License :: OSI Approved :: Apache Software License',
+        'Programming Language :: Python',
+        'Programming Language :: Python :: 2.6',
+        'Programming Language :: Python :: 2.7',
+        'Programming Language :: Python :: 3',
+        'Programming Language :: Python :: 3.3',
+        'Topic :: Software Development',
+    )
 )

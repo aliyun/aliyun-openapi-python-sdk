@@ -89,12 +89,6 @@ class CreateClusterRequest(RpcRequest):
 	def set_AutoRenew(self,AutoRenew):
 		self.add_query_param('AutoRenew',AutoRenew)
 
-	def get_AutoRenewPeriod(self):
-		return self.get_query_params().get('AutoRenewPeriod')
-
-	def set_AutoRenewPeriod(self,AutoRenewPeriod):
-		self.add_query_param('AutoRenewPeriod',AutoRenewPeriod)
-
 	def get_VpcId(self):
 		return self.get_query_params().get('VpcId')
 
@@ -113,11 +107,24 @@ class CreateClusterRequest(RpcRequest):
 	def set_NetType(self,NetType):
 		self.add_query_param('NetType',NetType)
 
+	def get_UserDefinedEmrEcsRole(self):
+		return self.get_query_params().get('UserDefinedEmrEcsRole')
+
+	def set_UserDefinedEmrEcsRole(self,UserDefinedEmrEcsRole):
+		self.add_query_param('UserDefinedEmrEcsRole',UserDefinedEmrEcsRole)
+
 	def get_EmrVer(self):
 		return self.get_query_params().get('EmrVer')
 
 	def set_EmrVer(self,EmrVer):
 		self.add_query_param('EmrVer',EmrVer)
+
+	def get_OptionSoftWareLists(self):
+		return self.get_query_params().get('OptionSoftWareLists')
+
+	def set_OptionSoftWareLists(self,OptionSoftWareLists):
+		for i in range(len(OptionSoftWareLists)):	
+			self.add_query_param('OptionSoftWareList.' + bytes(i + 1) , OptionSoftWareLists[i]);
 
 	def get_ClusterType(self):
 		return self.get_query_params().get('ClusterType')
@@ -155,26 +162,32 @@ class CreateClusterRequest(RpcRequest):
 	def set_MasterPwd(self,MasterPwd):
 		self.add_query_param('MasterPwd',MasterPwd)
 
+	def get_EcsOrders(self):
+		return self.get_query_params().get('EcsOrders')
+
+	def set_EcsOrders(self,EcsOrders):
+		for i in range(len(EcsOrders)):	
+			self.add_query_param('EcsOrder.' + bytes(i + 1) + '.Index' , EcsOrders[i].get('Index'))
+			self.add_query_param('EcsOrder.' + bytes(i + 1) + '.NodeCount' , EcsOrders[i].get('NodeCount'))
+			self.add_query_param('EcsOrder.' + bytes(i + 1) + '.NodeType' , EcsOrders[i].get('NodeType'))
+			self.add_query_param('EcsOrder.' + bytes(i + 1) + '.InstanceType' , EcsOrders[i].get('InstanceType'))
+			self.add_query_param('EcsOrder.' + bytes(i + 1) + '.DiskType' , EcsOrders[i].get('DiskType'))
+			self.add_query_param('EcsOrder.' + bytes(i + 1) + '.DiskCapacity' , EcsOrders[i].get('DiskCapacity'))
+			self.add_query_param('EcsOrder.' + bytes(i + 1) + '.DiskCount' , EcsOrders[i].get('DiskCount'))
+
+
+	def get_BootstrapActions(self):
+		return self.get_query_params().get('BootstrapActions')
+
+	def set_BootstrapActions(self,BootstrapActions):
+		for i in range(len(BootstrapActions)):	
+			self.add_query_param('BootstrapAction.' + bytes(i + 1) + '.Name' , BootstrapActions[i].get('Name'))
+			self.add_query_param('BootstrapAction.' + bytes(i + 1) + '.Path' , BootstrapActions[i].get('Path'))
+			self.add_query_param('BootstrapAction.' + bytes(i + 1) + '.Arg' , BootstrapActions[i].get('Arg'))
+
+
 	def get_Configurations(self):
 		return self.get_query_params().get('Configurations')
 
 	def set_Configurations(self,Configurations):
 		self.add_query_param('Configurations',Configurations)
-
-	def get_OptionSoftWareList(self):
-		return self.get_query_params().get('OptionSoftWareList')
-
-	def set_OptionSoftWareList(self,OptionSoftWareList):
-		self.add_query_param('OptionSoftWareList',OptionSoftWareList)
-
-	def get_EcsOrder(self):
-		return self.get_query_params().get('EcsOrder')
-
-	def set_EcsOrder(self,EcsOrder):
-		self.add_query_param('EcsOrder',EcsOrder)
-
-	def get_BootstrapAction(self):
-		return self.get_query_params().get('BootstrapAction')
-
-	def set_BootstrapAction(self,BootstrapAction):
-		self.add_query_param('BootstrapAction',BootstrapAction)

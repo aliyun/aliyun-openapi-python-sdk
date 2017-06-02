@@ -206,8 +206,23 @@ class RpcRequest(AcsRequest):
     Class to compose an RPC style request with.
     """
 
-    def __init__(self, product, version, action_name, location_service_code=None, format=None, protocol=None):
-        AcsRequest.__init__(self, product, version, action_name, location_service_code, format, protocol, MT.GET)
+    def __init__(
+            self,
+            product,
+            version,
+            action_name,
+            location_service_code=None,
+            format=None,
+            protocol=None):
+        AcsRequest.__init__(
+            self,
+            product,
+            version,
+            action_name,
+            location_service_code,
+            format,
+            protocol,
+            MT.GET)
         self.__style = STYLE_RPC
 
     def get_style(self):
@@ -226,7 +241,12 @@ class RpcRequest(AcsRequest):
         sign_params = self.__get_sign_params()
         if 'RegionId' not in sign_params.keys():
             sign_params['RegionId'] = region_id
-        url = rpc_signer.get_signed_url(sign_params, ak, secret, self.get_accept_format(), self.get_method())
+        url = rpc_signer.get_signed_url(
+            sign_params,
+            ak,
+            secret,
+            self.get_accept_format(),
+            self.get_method())
         return url
 
     def get_signed_header(self, region_id=None, ak=None, secret=None):
@@ -238,8 +258,17 @@ class RoaRequest(AcsRequest):
     Class to compose an ROA style request with.
     """
 
-    def __init__(self, product, version, action_name, location_service_code=None, method=None, headers=None, uri_pattern=None, path_params=None,
-                 protocol=None):
+    def __init__(
+            self,
+            product,
+            version,
+            action_name,
+            location_service_code=None,
+            method=None,
+            headers=None,
+            uri_pattern=None,
+            path_params=None,
+            protocol=None):
         """
 
         :param product: String, mandatory
@@ -252,7 +281,15 @@ class RoaRequest(AcsRequest):
         :param protocol: String
         :return:
         """
-        AcsRequest.__init__(self, product, version, action_name, location_service_code, FT.RAW, protocol, method)
+        AcsRequest.__init__(
+            self,
+            product,
+            version,
+            action_name,
+            location_service_code,
+            FT.RAW,
+            protocol,
+            method)
         self.__style = STYLE_ROA
         self.__method = method
         self.__header = headers
@@ -300,12 +337,15 @@ class RoaRequest(AcsRequest):
             self.add_header('Content-MD5', md5_str)
         if 'RegionId' not in sign_params.keys():
             sign_params['RegionId'] = region_id
-        signed_headers = roa_signer.get_signature_headers(sign_params, ak, secret,
-                                                          self.get_accept_format(),
-                                                          self.get_headers(),
-                                                          self.get_uri_pattern(),
-                                                          self.get_path_params(),
-                                                          self.get_method())
+        signed_headers = roa_signer.get_signature_headers(
+            sign_params,
+            ak,
+            secret,
+            self.get_accept_format(),
+            self.get_headers(),
+            self.get_uri_pattern(),
+            self.get_path_params(),
+            self.get_method())
         return signed_headers
 
     def get_url(self, region_id, ak=None, secret=None):
@@ -317,13 +357,26 @@ class RoaRequest(AcsRequest):
         sign_params = self.get_query_params()
         if region_id not in sign_params.keys():
             sign_params['RegionId'] = region_id
-        url = roa_signer.get_url(self.get_uri_pattern(), sign_params, self.get_path_params())
+        url = roa_signer.get_url(
+            self.get_uri_pattern(),
+            sign_params,
+            self.get_path_params())
         return url
 
 
 class OssRequest(AcsRequest):
-    def __init__(self, product, version, action_name, location_service_code, bucket=None, method=None,
-                 headers=None, uri_pattern=None, path_params=None, protocol=None):
+    def __init__(
+            self,
+            product,
+            version,
+            action_name,
+            location_service_code,
+            bucket=None,
+            method=None,
+            headers=None,
+            uri_pattern=None,
+            path_params=None,
+            protocol=None):
         """
 
         :param product: String, mandatory
@@ -337,7 +390,15 @@ class OssRequest(AcsRequest):
         :param protocol: String
         :return:
         """
-        AcsRequest.__init__(self, product, version, action_name, location_service_code, FT.XML, protocol, method)
+        AcsRequest.__init__(
+            self,
+            product,
+            version,
+            action_name,
+            location_service_code,
+            FT.XML,
+            protocol,
+            method)
         self.__style = STYLE_OSS
         self.__bucket = bucket
         self.__method = method
@@ -383,10 +444,16 @@ class OssRequest(AcsRequest):
         sign_params = self.get_query_params()
         if 'RegionId' not in sign_params.keys():
             sign_params['RegionId'] = region_id
-        signed_headers = oss_signer.get_signature_headers(sign_params, ak, secret, self.get_accept_format(),
-                                                          self.get_headers(),
-                                                          self.get_uri_pattern(), self.get_path_params(),
-                                                          self.get_method(), self.__bucket)
+        signed_headers = oss_signer.get_signature_headers(
+            sign_params,
+            ak,
+            secret,
+            self.get_accept_format(),
+            self.get_headers(),
+            self.get_uri_pattern(),
+            self.get_path_params(),
+            self.get_method(),
+            self.__bucket)
         return signed_headers
 
     def get_url(self, region_id, ak=None, secret=None):
@@ -398,5 +465,8 @@ class OssRequest(AcsRequest):
         sign_params = self.get_query_params()
         if 'RegionId' not in sign_params.keys():
             sign_params['RegionId'] = region_id
-        url = oss_signer.get_url(sign_params, self.get_uri_pattern(), self.get_path_params())
+        url = oss_signer.get_url(
+            sign_params,
+            self.get_uri_pattern(),
+            self.get_path_params())
         return url

@@ -29,11 +29,25 @@ class ListClustersRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_ClusterTypeLists(self):
+		return self.get_query_params().get('ClusterTypeLists')
+
+	def set_ClusterTypeLists(self,ClusterTypeLists):
+		for i in range(len(ClusterTypeLists)):	
+			self.add_query_param('ClusterTypeList.' + bytes(i + 1) , ClusterTypeLists[i]);
+
 	def get_CreateType(self):
 		return self.get_query_params().get('CreateType')
 
 	def set_CreateType(self,CreateType):
 		self.add_query_param('CreateType',CreateType)
+
+	def get_StatusLists(self):
+		return self.get_query_params().get('StatusLists')
+
+	def set_StatusLists(self,StatusLists):
+		for i in range(len(StatusLists)):	
+			self.add_query_param('StatusList.' + bytes(i + 1) , StatusLists[i]);
 
 	def get_IsDesc(self):
 		return self.get_query_params().get('IsDesc')
@@ -58,15 +72,3 @@ class ListClustersRequest(RpcRequest):
 
 	def set_DefaultStatus(self,DefaultStatus):
 		self.add_query_param('DefaultStatus',DefaultStatus)
-
-	def get_ClusterTypeList(self):
-		return self.get_query_params().get('ClusterTypeList')
-
-	def set_ClusterTypeList(self,ClusterTypeList):
-		self.add_query_param('ClusterTypeList',ClusterTypeList)
-
-	def get_StatusList(self):
-		return self.get_query_params().get('StatusList')
-
-	def set_StatusList(self,StatusList):
-		self.add_query_param('StatusList',StatusList)

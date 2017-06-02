@@ -23,7 +23,7 @@ class AbandonStackRequest(RoaRequest):
 	def __init__(self):
 		RoaRequest.__init__(self, 'ROS', '2015-09-01', 'AbandonStack')
 		self.set_uri_pattern('/stacks/[StackName]/[StackId]/abandon')
-		self.set_method('POST')
+		self.set_method('DELETE')
 
 	def get_StackName(self):
 		return self.get_path_params().get('StackName')

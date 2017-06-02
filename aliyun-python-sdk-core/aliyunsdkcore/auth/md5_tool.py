@@ -15,7 +15,7 @@
 # specific language governing permissions and limitations
 # under the License.
 
-#coding=utf-8
+# coding=utf-8
 
 """
 MD5 tools module.
@@ -29,11 +29,11 @@ import hashlib
 import base64
 
 
-
 def _get_md5(content):
     m = hashlib.md5()
     m.update(buffer(content))
     return m.digest()
 
+
 def get_md5_base64_str(content):
-	return base64.encodestring(_get_md5(content)).strip()
+    return base64.encodestring(_get_md5(content)).strip()
