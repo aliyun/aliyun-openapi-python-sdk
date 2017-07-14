@@ -1,0 +1,20 @@
+Metadata-Version: 1.0
+Name: aliyun-python-sdk-release-test
+Version: 2.2.11
+Summary: A release test module for Aliyun SDK, please don't use it
+Home-page: http://develop.aliyun.com/sdk/python
+Author: Aliyun
+Author-email: aliyun-developers-efficiency@list.alibaba-inc.com
+License: Apache
+Description: aliyun-python-sdk-ecs
+        This is the ecs module of Aliyun Python SDK.
+        
+        Aliyun Python SDK is the official software development kit. It makes things easy to integrate your Python application, library, or script with Aliyun services.
+        
+        This module works on Python versions:
+        
+        2.6.5 and greater
+        Documentation:
+        
+        Please visit http://develop.aliyun.com/sdk/python
+Platform: any
