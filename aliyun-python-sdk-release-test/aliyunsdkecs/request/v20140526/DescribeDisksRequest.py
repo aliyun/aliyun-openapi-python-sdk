@@ -89,6 +89,12 @@ class DescribeDisksRequest(RpcRequest):
 	def set_DeleteAutoSnapshot(self,DeleteAutoSnapshot):
 		self.add_query_param('DeleteAutoSnapshot',DeleteAutoSnapshot)
 
+	def get_ResourceGroupId(self):
+		return self.get_query_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self,ResourceGroupId):
+		self.add_query_param('ResourceGroupId',ResourceGroupId)
+
 	def get_DiskChargeType(self):
 		return self.get_query_params().get('DiskChargeType')
 

@@ -138,6 +138,7 @@ aliyunsdkecs/request/v20140526/EnablePhysicalConnectionRequest.py
 aliyunsdkecs/request/v20140526/ExportImageRequest.py
 aliyunsdkecs/request/v20140526/ImportImageRequest.py
 aliyunsdkecs/request/v20140526/ImportKeyPairRequest.py
+aliyunsdkecs/request/v20140526/JoinResourceGroupRequest.py
 aliyunsdkecs/request/v20140526/JoinSecurityGroupRequest.py
 aliyunsdkecs/request/v20140526/LeaveSecurityGroupRequest.py
 aliyunsdkecs/request/v20140526/ModifyAutoSnapshotPolicyExRequest.py

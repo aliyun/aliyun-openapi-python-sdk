@@ -113,6 +113,12 @@ class DescribeInstancesRequest(RpcRequest):
 	def set_Tag1Value(self,Tag1Value):
 		self.add_query_param('Tag.1.Value',Tag1Value)
 
+	def get_ResourceGroupId(self):
+		return self.get_query_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self,ResourceGroupId):
+		self.add_query_param('ResourceGroupId',ResourceGroupId)
+
 	def get_LockReason(self):
 		return self.get_query_params().get('LockReason')
 
