@@ -1,1 +1,1 @@
-aliyunsdkecs
+aliyunsdkcore
