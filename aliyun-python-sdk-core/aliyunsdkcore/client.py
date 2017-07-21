@@ -252,7 +252,7 @@ class AcsClient:
             # data instead
             pass
 
-        if status != httplib.OK:
+        if status < httplib.OK or status >= httplib.MULTIPLE_CHOICES:
             server_error_code, server_error_message = self._parse_error_info_from_response_body(
                 body)
             raise ServerException(
