@@ -23,12 +23,12 @@ class BatchGetDeviceStateRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Iot', '2017-04-20', 'BatchGetDeviceState','None')
 
-	def get_DeviceName(self):
+	def get_DeviceNames(self):
 		return self.get_query_params().get('DeviceNames')
 
-	def set_DeviceName(self,DeviceName):
-		for i in range(len(DeviceName)):	
-			self.add_query_param('DeviceName.' + bytes(i + 1) , DeviceName[i]);
+	def set_DeviceNames(self,DeviceNames):
+		for i in range(len(DeviceNames)):	
+			self.add_query_param('DeviceName.' + bytes(i + 1) , DeviceNames[i]);
 
 	def get_ProductKey(self):
 		return self.get_query_params().get('ProductKey')
