@@ -18,19 +18,19 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class ListDevicePermitsRequest(RpcRequest):
+class QueryDeviceByNameRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Iot', '2016-01-04', 'ListDevicePermits')
+		RpcRequest.__init__(self, 'Iot', '2017-04-20', 'QueryDeviceByName','None')
 
-	def get_AppKey(self):
-		return self.get_query_params().get('AppKey')
+	def get_DeviceName(self):
+		return self.get_query_params().get('DeviceName')
 
-	def set_AppKey(self,AppKey):
-		self.add_query_param('AppKey',AppKey)
+	def set_DeviceName(self,DeviceName):
+		self.add_query_param('DeviceName',DeviceName)
 
-	def get_DeviceId(self):
-		return self.get_query_params().get('DeviceId')
+	def get_ProductKey(self):
+		return self.get_query_params().get('ProductKey')
 
-	def set_DeviceId(self,DeviceId):
-		self.add_query_param('DeviceId',DeviceId)
+	def set_ProductKey(self,ProductKey):
+		self.add_query_param('ProductKey',ProductKey)

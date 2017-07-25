@@ -18,31 +18,20 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class RevertRpcRequest(RpcRequest):
+class BatchGetDeviceStateRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Iot', '2016-01-04', 'RevertRpc')
+		RpcRequest.__init__(self, 'Iot', '2017-04-20', 'BatchGetDeviceState','None')
 
-	def get_AppKey(self):
-		return self.get_query_params().get('AppKey')
+	def get_DeviceName(self):
+		return self.get_query_params().get('DeviceNames')
 
-	def set_AppKey(self,AppKey):
-		self.add_query_param('AppKey',AppKey)
+	def set_DeviceName(self,DeviceName):
+		for i in range(len(DeviceName)):	
+			self.add_query_param('DeviceName.' + bytes(i + 1) , DeviceName[i]);
 
-	def get_DeviceId(self):
-		return self.get_query_params().get('DeviceId')
+	def get_ProductKey(self):
+		return self.get_query_params().get('ProductKey')
 
-	def set_DeviceId(self,DeviceId):
-		self.add_query_param('DeviceId',DeviceId)
-
-	def get_RpcContent(self):
-		return self.get_query_params().get('RpcContent')
-
-	def set_RpcContent(self,RpcContent):
-		self.add_query_param('RpcContent',RpcContent)
-
-	def get_TimeOut(self):
-		return self.get_query_params().get('TimeOut')
-
-	def set_TimeOut(self,TimeOut):
-		self.add_query_param('TimeOut',TimeOut)
+	def set_ProductKey(self,ProductKey):
+		self.add_query_param('ProductKey',ProductKey)

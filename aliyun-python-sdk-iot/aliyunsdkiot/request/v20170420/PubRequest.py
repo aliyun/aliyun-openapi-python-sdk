@@ -18,31 +18,31 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class SubRequest(RpcRequest):
+class PubRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Iot', '2016-01-04', 'Sub')
+		RpcRequest.__init__(self, 'Iot', '2017-04-20', 'Pub','None')
 
-	def get_Topic(self):
-		return self.get_query_params().get('Topic')
+	def get_TopicFullName(self):
+		return self.get_query_params().get('TopicFullName')
 
-	def set_Topic(self,Topic):
-		self.add_query_param('Topic',Topic)
+	def set_TopicFullName(self,TopicFullName):
+		self.add_query_param('TopicFullName',TopicFullName)
 
-	def get_AppKey(self):
-		return self.get_query_params().get('AppKey')
+	def get_Qos(self):
+		return self.get_query_params().get('Qos')
 
-	def set_AppKey(self,AppKey):
-		self.add_query_param('AppKey',AppKey)
+	def set_Qos(self,Qos):
+		self.add_query_param('Qos',Qos)
 
-	def get_SubCallback(self):
-		return self.get_query_params().get('SubCallback')
+	def get_MessageContent(self):
+		return self.get_query_params().get('MessageContent')
 
-	def set_SubCallback(self,SubCallback):
-		self.add_query_param('SubCallback',SubCallback)
+	def set_MessageContent(self,MessageContent):
+		self.add_query_param('MessageContent',MessageContent)
 
-	def get_TopicList(self):
-		return self.get_query_params().get('TopicList')
+	def get_ProductKey(self):
+		return self.get_query_params().get('ProductKey')
 
-	def set_TopicList(self,TopicList):
-		self.add_query_param('TopicList',TopicList)
+	def set_ProductKey(self,ProductKey):
+		self.add_query_param('ProductKey',ProductKey)

@@ -18,28 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class DevicePermitModifyRequest(RpcRequest):
+class PubBroadcastRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Iot', '2016-01-04', 'DevicePermitModify')
-
-	def get_AppKey(self):
-		return self.get_query_params().get('AppKey')
-
-	def set_AppKey(self,AppKey):
-		self.add_query_param('AppKey',AppKey)
-
-	def get_RuleId(self):
-		return self.get_query_params().get('RuleId')
-
-	def set_RuleId(self,RuleId):
-		self.add_query_param('RuleId',RuleId)
-
-	def get_DeviceId(self):
-		return self.get_query_params().get('DeviceId')
-
-	def set_DeviceId(self,DeviceId):
-		self.add_query_param('DeviceId',DeviceId)
+		RpcRequest.__init__(self, 'Iot', '2017-04-20', 'PubBroadcast','None')
 
 	def get_TopicFullName(self):
 		return self.get_query_params().get('TopicFullName')
@@ -47,8 +29,14 @@ class DevicePermitModifyRequest(RpcRequest):
 	def set_TopicFullName(self,TopicFullName):
 		self.add_query_param('TopicFullName',TopicFullName)
 
-	def get_GrantType(self):
-		return self.get_query_params().get('GrantType')
+	def get_MessageContent(self):
+		return self.get_query_params().get('MessageContent')
 
-	def set_GrantType(self,GrantType):
-		self.add_query_param('GrantType',GrantType)
+	def set_MessageContent(self,MessageContent):
+		self.add_query_param('MessageContent',MessageContent)
+
+	def get_ProductKey(self):
+		return self.get_query_params().get('ProductKey')
+
+	def set_ProductKey(self,ProductKey):
+		self.add_query_param('ProductKey',ProductKey)

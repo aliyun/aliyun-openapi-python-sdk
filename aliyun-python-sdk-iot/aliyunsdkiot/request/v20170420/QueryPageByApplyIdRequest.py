@@ -18,25 +18,25 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class PubRequest(RpcRequest):
+class QueryPageByApplyIdRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Iot', '2016-01-04', 'Pub')
+		RpcRequest.__init__(self, 'Iot', '2017-04-20', 'QueryPageByApplyId','None')
 
-	def get_AppKey(self):
-		return self.get_query_params().get('AppKey')
+	def get_ApplyId(self):
+		return self.get_query_params().get('ApplyId')
 
-	def set_AppKey(self,AppKey):
-		self.add_query_param('AppKey',AppKey)
+	def set_ApplyId(self,ApplyId):
+		self.add_query_param('ApplyId',ApplyId)
 
-	def get_TopicFullName(self):
-		return self.get_query_params().get('TopicFullName')
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
 
-	def set_TopicFullName(self,TopicFullName):
-		self.add_query_param('TopicFullName',TopicFullName)
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
 
-	def get_MessageContent(self):
-		return self.get_query_params().get('MessageContent')
+	def get_CurrentPage(self):
+		return self.get_query_params().get('CurrentPage')
 
-	def set_MessageContent(self,MessageContent):
-		self.add_query_param('MessageContent',MessageContent)
+	def set_CurrentPage(self,CurrentPage):
+		self.add_query_param('CurrentPage',CurrentPage)

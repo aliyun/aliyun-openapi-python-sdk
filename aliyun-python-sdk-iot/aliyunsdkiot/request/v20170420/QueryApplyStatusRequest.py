@@ -18,25 +18,13 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class UnSubRequest(RpcRequest):
+class QueryApplyStatusRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Iot', '2016-01-04', 'UnSub')
+		RpcRequest.__init__(self, 'Iot', '2017-04-20', 'QueryApplyStatus','None')
 
-	def get_Topic(self):
-		return self.get_query_params().get('Topic')
+	def get_ApplyId(self):
+		return self.get_query_params().get('ApplyId')
 
-	def set_Topic(self,Topic):
-		self.add_query_param('Topic',Topic)
-
-	def get_AppKey(self):
-		return self.get_query_params().get('AppKey')
-
-	def set_AppKey(self,AppKey):
-		self.add_query_param('AppKey',AppKey)
-
-	def get_TopicList(self):
-		return self.get_query_params().get('TopicList')
-
-	def set_TopicList(self,TopicList):
-		self.add_query_param('TopicList',TopicList)
+	def set_ApplyId(self,ApplyId):
+		self.add_query_param('ApplyId',ApplyId)

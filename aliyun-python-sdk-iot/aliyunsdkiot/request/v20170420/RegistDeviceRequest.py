@@ -18,31 +18,19 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class DeviceGrantRequest(RpcRequest):
+class RegistDeviceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Iot', '2016-01-04', 'DeviceGrant')
+		RpcRequest.__init__(self, 'Iot', '2017-04-20', 'RegistDevice','None')
 
-	def get_AppKey(self):
-		return self.get_query_params().get('AppKey')
+	def get_DeviceName(self):
+		return self.get_query_params().get('DeviceName')
 
-	def set_AppKey(self,AppKey):
-		self.add_query_param('AppKey',AppKey)
+	def set_DeviceName(self,DeviceName):
+		self.add_query_param('DeviceName',DeviceName)
 
-	def get_TopicFullName(self):
-		return self.get_query_params().get('TopicFullName')
+	def get_ProductKey(self):
+		return self.get_query_params().get('ProductKey')
 
-	def set_TopicFullName(self,TopicFullName):
-		self.add_query_param('TopicFullName',TopicFullName)
-
-	def get_DeviceId(self):
-		return self.get_query_params().get('DeviceId')
-
-	def set_DeviceId(self,DeviceId):
-		self.add_query_param('DeviceId',DeviceId)
-
-	def get_GrantType(self):
-		return self.get_query_params().get('GrantType')
-
-	def set_GrantType(self,GrantType):
-		self.add_query_param('GrantType',GrantType)
+	def set_ProductKey(self,ProductKey):
+		self.add_query_param('ProductKey',ProductKey)

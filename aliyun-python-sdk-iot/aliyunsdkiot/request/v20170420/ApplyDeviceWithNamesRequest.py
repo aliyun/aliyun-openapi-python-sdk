@@ -18,25 +18,20 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class DeviceRevokeByIdRequest(RpcRequest):
+class ApplyDeviceWithNamesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Iot', '2016-01-04', 'DeviceRevokeById')
+		RpcRequest.__init__(self, 'Iot', '2017-04-20', 'ApplyDeviceWithNames','None')
 
-	def get_AppKey(self):
-		return self.get_query_params().get('AppKey')
+	def get_DeviceName(self):
+		return self.get_query_params().get('DeviceNames')
 
-	def set_AppKey(self,AppKey):
-		self.add_query_param('AppKey',AppKey)
+	def set_DeviceName(self,DeviceName):
+		for i in range(len(DeviceName)):	
+			self.add_query_param('DeviceName.' + bytes(i + 1) , DeviceName[i]);
 
-	def get_RuleId(self):
-		return self.get_query_params().get('RuleId')
+	def get_ProductKey(self):
+		return self.get_query_params().get('ProductKey')
 
-	def set_RuleId(self,RuleId):
-		self.add_query_param('RuleId',RuleId)
-
-	def get_DeviceId(self):
-		return self.get_query_params().get('DeviceId')
-
-	def set_DeviceId(self,DeviceId):
-		self.add_query_param('DeviceId',DeviceId)
+	def set_ProductKey(self,ProductKey):
+		self.add_query_param('ProductKey',ProductKey)

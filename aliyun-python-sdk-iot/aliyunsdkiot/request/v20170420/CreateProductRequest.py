@@ -18,25 +18,37 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class PushByteMessageRequest(RpcRequest):
+class CreateProductRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Iot', '2016-01-04', 'PushByteMessage')
+		RpcRequest.__init__(self, 'Iot', '2017-04-20', 'CreateProduct','None')
 
-	def get_AppKey(self):
-		return self.get_query_params().get('AppKey')
+	def get_CatId(self):
+		return self.get_query_params().get('CatId')
 
-	def set_AppKey(self,AppKey):
-		self.add_query_param('AppKey',AppKey)
+	def set_CatId(self,CatId):
+		self.add_query_param('CatId',CatId)
 
-	def get_DeviceIds(self):
-		return self.get_query_params().get('DeviceIds')
+	def get_Name(self):
+		return self.get_query_params().get('Name')
 
-	def set_DeviceIds(self,DeviceIds):
-		self.add_query_param('DeviceIds',DeviceIds)
+	def set_Name(self,Name):
+		self.add_query_param('Name',Name)
 
-	def get_PushContent(self):
-		return self.get_query_params().get('PushContent')
+	def get_ExtProps(self):
+		return self.get_query_params().get('ExtProps')
 
-	def set_PushContent(self,PushContent):
-		self.add_query_param('PushContent',PushContent)
+	def set_ExtProps(self,ExtProps):
+		self.add_query_param('ExtProps',ExtProps)
+
+	def get_SecurityPolicy(self):
+		return self.get_query_params().get('SecurityPolicy')
+
+	def set_SecurityPolicy(self,SecurityPolicy):
+		self.add_query_param('SecurityPolicy',SecurityPolicy)
+
+	def get_Desc(self):
+		return self.get_query_params().get('Desc')
+
+	def set_Desc(self,Desc):
+		self.add_query_param('Desc',Desc)
