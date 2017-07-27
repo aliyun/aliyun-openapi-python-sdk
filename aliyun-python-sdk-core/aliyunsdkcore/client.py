@@ -147,17 +147,17 @@ class AcsClient:
         """
         self.__user_agent = agent
 
-    def get_location_service(self):
-        return self._location_service
-
     def get_port(self):
         return self._port
+
+    def get_location_service(self):
+        return self._location_service
 
     def _resolve_endpoint(self, request):
         endpoint = None
         if request.get_location_service_code() is not None:
             endpoint = self._location_service.find_product_domain(
-                self.get_region_id(), request.get_location_service_code())
+                self.get_region_id(), request.get_location_service_code(), request.get_product(), request.get_location_endpoint_type())
         if endpoint is None:
             endpoint = region_provider.find_product_domain(
                 self.get_region_id(), request.get_product())

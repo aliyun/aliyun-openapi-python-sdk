@@ -19,9 +19,11 @@
 
 # coding=utf-8
 
+import datetime
+import json
 import os
 import sys
-import json
+
 parent_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, parent_dir)
 
@@ -33,9 +35,14 @@ from ..acs_exception import error_code, error_msg
 LOCATION_SERVICE_PRODUCT_NAME = "Location"
 LOCATION_SERVICE_DOMAIN = "location.aliyuncs.com"
 LOCATION_SERVICE_VERSION = "2015-06-12"
-LOCATION_SERVICE_DESCRIBE_ENDPOINT_ACTION = "DescribeEndpoint"
+LOCATION_SERVICE_DESCRIBE_ENDPOINT_ACTION = "DescribeEndpoints"
 LOCATION_SERVICE_REGION = "cn-hangzhou"
+LOCATION_CACHE_EXPIRE_TIME = 3600  # Seconds
 
+# location endpoint list
+__location_endpoints = dict()
+__last_cache_clear_time_per_product = dict()
+__location_service_domain = 'location.aliyuncs.com'
 
 class DescribeEndpointRequest(RpcRequest):
 
@@ -45,11 +52,13 @@ class DescribeEndpointRequest(RpcRequest):
             version,
             action_name,
             region_id,
-            service_code):
-        RpcRequest.__init__(self, product_name, version, action_name, 'hhh')
+            service_code,
+            endpoint_type):
+        RpcRequest.__init__(self, product_name, version, action_name)
 
         self.add_query_param("Id", region_id)
         self.add_query_param("ServiceCode", service_code)
+        self.add_query_param("Type", endpoint_type)
         self.set_accept_format("JSON")
 
 
@@ -57,12 +66,14 @@ class LocationService:
 
     def __init__(self, client):
         self.__clinetRef = client
-        self.__cache = {}
+        self.__cache = get_location_endpoints()
         self.__service_product_name = LOCATION_SERVICE_PRODUCT_NAME
-        self.__service_domain = LOCATION_SERVICE_DOMAIN
+        self.__service_domain = get_location_service_domain()
         self.__service_version = LOCATION_SERVICE_VERSION
         self.__service_region = LOCATION_SERVICE_REGION
         self.__service_action = LOCATION_SERVICE_DESCRIBE_ENDPOINT_ACTION
+        self.__cache_expire_time = LOCATION_CACHE_EXPIRE_TIME
+        self.__last_cache_clear_time_per_product = get_last_cache_clear_time_per_product()
 
     def set_location_service_attr(
             self,
@@ -72,31 +83,47 @@ class LocationService:
         if region is not None:
             self.__service_region = region
 
+        if domain is not None:            
+            self.__service_domain = domain
+
         if product_name is not None:
             self.__service_product_name = product_name
 
-        if domain is not None:
-            self.__service_domain = domain
-
-    def find_product_domain(self, region_id, service_code):
-        key = "%s_&_%s" % (region_id, service_code)
+    def find_product_domain(self, region_id, service_code, product_name, endpoint_type):
+        key = "%s_&_%s" % (region_id, product_name)
         domain = self.__cache.get(key)
-        if domain is None:
+        if domain is None or self.check_endpoint_cache_is_expire(key) is True:
             domain = self.find_product_domain_from_location_service(
-                region_id, service_code)
+                region_id, service_code, endpoint_type)
             if domain is not None:
                 self.__cache[key] = domain
 
         return domain
 
+    def check_endpoint_cache_is_expire(self, key):
+        last_clear_time = self.__last_cache_clear_time_per_product.get(key)
+        if last_clear_time is None:
+            last_clear_time = datetime.datetime.now()
+            self.__last_cache_clear_time_per_product[key] = last_clear_time
+
+        now = datetime.datetime.now()
+        elapsed_time = now - last_clear_time
+        if now > last_clear_time and elapsed_time.seconds > self.__cache_expire_time:
+            last_clear_time = datetime.datetime.now()
+            self.__last_cache_clear_time_per_product[key] = last_clear_time
+            return True
+
+        return False
+
     def find_product_domain_from_location_service(
-            self, region_id, service_code):
+            self, region_id, service_code, endpoint_type):
 
         request = DescribeEndpointRequest(self.__service_product_name,
                                           self.__service_version,
                                           self.__service_action,
                                           region_id,
-                                          service_code)
+                                          service_code,
+                                          endpoint_type)
         try:
             content = request.get_content()
             method = request.get_method()
@@ -124,7 +151,11 @@ class LocationService:
             status, header, body = response.get_response_object()
             result = json.loads(body)
             if status == 200:
-                return result.get('Endpoint')
+                endpoint = result.get('Endpoints').get('Endpoint')
+                if (len(endpoint) <= 0):
+                    return None
+                else:
+                    return endpoint[0].get('Endpoint')
             elif status >= 400 and status < 500:
                 # print "serviceCode=" + service_code + " get location error!
                 # code=" + result.get('Code') +", message =" +
@@ -144,3 +175,23 @@ class LocationService:
             raise exs.ClientException(
                 error_code.SDK_INVALID_REQUEST,
                 error_msg.get_msg('SDK_INVALID_REQUEST'))
+
+def set_cache(product, region_id, domain):
+    if region_id is not None and product is not None and domain is not None:
+        key = "%s_&_%s" % (region_id, product)
+        __location_endpoints[key] = domain
+        __last_cache_clear_time_per_product[key] = datetime.datetime.strptime('2999-01-01 00:00:00',
+                                                                              '%Y-%m-%d %H:%M:%S')
+def get_location_endpoints():
+    return __location_endpoints
+
+def get_last_cache_clear_time_per_product():
+    return __last_cache_clear_time_per_product
+
+def set_location_service_domain(domain):
+    global __location_service_domain
+    if domain is not None:
+       __location_service_domain = domain
+
+def get_location_service_domain():
+    return __location_service_domain

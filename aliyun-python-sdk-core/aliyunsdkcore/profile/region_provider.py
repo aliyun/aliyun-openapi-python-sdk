@@ -27,7 +27,7 @@ sys.path.insert(0, parent_dir)
 from acs_exception import error_code, error_msg
 from acs_exception.exceptions import ClientException
 from xml.dom.minidom import parse
-
+from ..profile import location_service
 
 """
 Region&Endpoint provider module.
@@ -68,7 +68,6 @@ except Exception as ex:
         error_code.SDK_MISSING_ENDPOINTS_FILER,
         error_msg.get_msg('SDK_MISSING_ENDPOINTS_FILER'))
 
-
 def find_product_domain(regionid, prod_name):
     """
         Fetch endpoint url with given region id, product name and endpoint list
@@ -87,32 +86,47 @@ def find_product_domain(regionid, prod_name):
                         return prod.get(prod_name)
     return None
 
+def add_endpoint(product_name, region_id, end_point):
+    modify_point(product_name, region_id, end_point)
+    location_service.set_cache(product_name, region_id, end_point)
 
 def modify_point(product_name, region_id, end_point):
     for point in __endpoints:
-        point_info = __endpoints.get(point)
-        region_list = point_info.get('regions')
-        products = point_info.get('products')
+        if point == region_id:
+            point_info = __endpoints.get(point)
+            region_list = point_info.get('regions')
+            products = point_info.get('products')
 
-        if region_id is not None and region_id not in region_list:
-            region_list.append(region_id)
+            if region_id is not None and region_id not in region_list:
+                region_list.append(region_id)
 
-        if end_point is not None:
-            product_exit = 0
-            for prod in products:
-                if product_name in prod:
-                    prod[product_name] = end_point
-                    product_exit = 1
-            if product_exit == 0:
-                item = dict()
-                item[product_name] = end_point
-                products.append(item)
+            if end_point is not None:
+                product_exit = 0
+                for prod in products:
+                    if product_name in prod:
+                        prod[product_name] = end_point
+                        product_exit = 1
+                if product_exit == 0:
+                    item = dict()
+                    item[product_name] = end_point
+                    products.append(item)
 
-        __mdict = dict()
-        __mdict['regions'] = region_list
-        __mdict['products'] = products
-        __endpoints[point] = __mdict
-        convert_dict_to_endpointsxml(__endpoints)
+            __mdict = dict()
+            __mdict['regions'] = region_list
+            __mdict['products'] = products
+            __endpoints[point] = __mdict
+            return
+
+    region_list = []
+    products = []
+    region_list.append(region_id)
+    item = dict()
+    item[product_name] = end_point
+    products.append(item)
+    __mdict = dict()
+    __mdict['regions'] = region_list
+    __mdict['products'] = products
+    __endpoints[region_id] = __mdict
 
 
 def convert_dict_to_endpointsxml(mdict):

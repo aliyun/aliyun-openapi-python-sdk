@@ -57,6 +57,7 @@ class AcsRequest:
     def __init__(self, product, version=None,
                  action_name=None,
                  location_service_code=None,
+                 location_endpoint_type='openAPI',
                  accept_format=None,
                  protocol_type=PT.HTTP,
                  method=None):
@@ -83,6 +84,7 @@ class AcsRequest:
         self.__uri_params = None
         self.__content = None
         self.__location_service_code = location_service_code
+        self.__location_endpoint_type = location_endpoint_type
 
     def add_query_param(self, k, v):
         if self.__params is None:
@@ -188,6 +190,9 @@ class AcsRequest:
     def get_location_service_code(self):
         return self.__location_service_code
 
+    def get_location_endpoint_type(self):
+        return self.__location_endpoint_type
+
     @abc.abstractmethod
     def get_style(self):
         pass
@@ -212,6 +217,7 @@ class RpcRequest(AcsRequest):
             version,
             action_name,
             location_service_code=None,
+            location_endpoint_type='openAPI',
             format=None,
             protocol=None):
         AcsRequest.__init__(
@@ -220,6 +226,7 @@ class RpcRequest(AcsRequest):
             version,
             action_name,
             location_service_code,
+            location_endpoint_type,
             format,
             protocol,
             MT.GET)
@@ -264,6 +271,7 @@ class RoaRequest(AcsRequest):
             version,
             action_name,
             location_service_code=None,
+            location_endpoint_type='openAPI',
             method=None,
             headers=None,
             uri_pattern=None,
@@ -287,6 +295,7 @@ class RoaRequest(AcsRequest):
             version,
             action_name,
             location_service_code,
+            location_endpoint_type,
             FT.RAW,
             protocol,
             method)
@@ -396,6 +405,7 @@ class OssRequest(AcsRequest):
             version,
             action_name,
             location_service_code,
+            'openAPI',
             FT.XML,
             protocol,
             method)

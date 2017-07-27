@@ -1,3 +1,7 @@
+2017-07-27 Version: 2.3.5
+1, 支持自动寻址，自动寻址endpoint缓存失效时间为1小时
+2, 增加新方法add_endpoint：允许手工添加endpoint，优先级高于自动寻址
+
 2017-07-21 Version: 2.3.3
 1, 解决了 do_action_with_exception 不能处理非200的2XX状态码的bug。
 
