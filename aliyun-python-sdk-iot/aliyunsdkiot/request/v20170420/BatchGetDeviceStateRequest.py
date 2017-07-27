@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class BatchGetDeviceStateRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Iot', '2017-04-20', 'BatchGetDeviceState','None')
+		RpcRequest.__init__(self, 'Iot', '2017-04-20', 'BatchGetDeviceState','iot')
 
 	def get_DeviceNames(self):
 		return self.get_query_params().get('DeviceNames')

@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class UpdateDeviceShadowRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Iot', '2017-04-20', 'UpdateDeviceShadow','None')
+		RpcRequest.__init__(self, 'Iot', '2017-04-20', 'UpdateDeviceShadow','iot')
 
 	def get_ShadowMessage(self):
 		return self.get_query_params().get('ShadowMessage')

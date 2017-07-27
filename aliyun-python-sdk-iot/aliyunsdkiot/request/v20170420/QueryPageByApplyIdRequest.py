@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class QueryPageByApplyIdRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Iot', '2017-04-20', 'QueryPageByApplyId','None')
+		RpcRequest.__init__(self, 'Iot', '2017-04-20', 'QueryPageByApplyId','iot')
 
 	def get_ApplyId(self):
 		return self.get_query_params().get('ApplyId')

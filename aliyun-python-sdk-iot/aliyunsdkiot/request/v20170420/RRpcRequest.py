@@ -18,16 +18,16 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class GetDeviceShadowRequest(RpcRequest):
+class RRpcRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Iot', '2017-04-20', 'GetDeviceShadow','iot')
+		RpcRequest.__init__(self, 'Iot', '2017-04-20', 'RRpc','iot')
 
-	def get_ShadowMessage(self):
-		return self.get_query_params().get('ShadowMessage')
+	def get_RequestBase64Byte(self):
+		return self.get_query_params().get('RequestBase64Byte')
 
-	def set_ShadowMessage(self,ShadowMessage):
-		self.add_query_param('ShadowMessage',ShadowMessage)
+	def set_RequestBase64Byte(self,RequestBase64Byte):
+		self.add_query_param('RequestBase64Byte',RequestBase64Byte)
 
 	def get_DeviceName(self):
 		return self.get_query_params().get('DeviceName')
@@ -40,3 +40,9 @@ class GetDeviceShadowRequest(RpcRequest):
 
 	def set_ProductKey(self,ProductKey):
 		self.add_query_param('ProductKey',ProductKey)
+
+	def get_Timeout(self):
+		return self.get_query_params().get('Timeout')
+
+	def set_Timeout(self,Timeout):
+		self.add_query_param('Timeout',Timeout)

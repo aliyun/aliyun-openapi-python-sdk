@@ -18,6 +18,7 @@ aliyunsdkiot/request/v20170420/QueryApplyStatusRequest.py
 aliyunsdkiot/request/v20170420/QueryDeviceByNameRequest.py
 aliyunsdkiot/request/v20170420/QueryDeviceRequest.py
 aliyunsdkiot/request/v20170420/QueryPageByApplyIdRequest.py
+aliyunsdkiot/request/v20170420/RRpcRequest.py
 aliyunsdkiot/request/v20170420/RegistDeviceRequest.py
 aliyunsdkiot/request/v20170420/UpdateDeviceShadowRequest.py
 aliyunsdkiot/request/v20170420/UpdateProductRequest.py
