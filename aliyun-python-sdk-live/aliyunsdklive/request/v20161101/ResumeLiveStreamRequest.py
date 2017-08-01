@@ -21,7 +21,13 @@ from aliyunsdkcore.request import RpcRequest
 class ResumeLiveStreamRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'live', '2016-11-01', 'ResumeLiveStream','live')
+		RpcRequest.__init__(self, 'live', '2016-11-01', 'ResumeLiveStream','None')
+
+	def get_AppName(self):
+		return self.get_query_params().get('AppName')
+
+	def set_AppName(self,AppName):
+		self.add_query_param('AppName',AppName)
 
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
@@ -29,11 +35,11 @@ class ResumeLiveStreamRequest(RpcRequest):
 	def set_SecurityToken(self,SecurityToken):
 		self.add_query_param('SecurityToken',SecurityToken)
 
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
+	def get_LiveStreamType(self):
+		return self.get_query_params().get('LiveStreamType')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
+	def set_LiveStreamType(self,LiveStreamType):
+		self.add_query_param('LiveStreamType',LiveStreamType)
 
 	def get_DomainName(self):
 		return self.get_query_params().get('DomainName')
@@ -41,17 +47,11 @@ class ResumeLiveStreamRequest(RpcRequest):
 	def set_DomainName(self,DomainName):
 		self.add_query_param('DomainName',DomainName)
 
-	def get_LiveStreamType(self):
-		return self.get_query_params().get('LiveStreamType')
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
 
-	def set_LiveStreamType(self,LiveStreamType):
-		self.add_query_param('LiveStreamType',LiveStreamType)
-
-	def get_AppName(self):
-		return self.get_query_params().get('AppName')
-
-	def set_AppName(self,AppName):
-		self.add_query_param('AppName',AppName)
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
 
 	def get_StreamName(self):
 		return self.get_query_params().get('StreamName')

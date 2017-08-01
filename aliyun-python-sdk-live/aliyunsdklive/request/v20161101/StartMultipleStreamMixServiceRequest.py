@@ -21,25 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class StartMultipleStreamMixServiceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'live', '2016-11-01', 'StartMultipleStreamMixService','live')
-
-	def get_SecurityToken(self):
-		return self.get_query_params().get('SecurityToken')
-
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)
-
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_DomainName(self):
-		return self.get_query_params().get('DomainName')
-
-	def set_DomainName(self,DomainName):
-		self.add_query_param('DomainName',DomainName)
+		RpcRequest.__init__(self, 'live', '2016-11-01', 'StartMultipleStreamMixService','None')
 
 	def get_AppName(self):
 		return self.get_query_params().get('AppName')
@@ -47,14 +29,32 @@ class StartMultipleStreamMixServiceRequest(RpcRequest):
 	def set_AppName(self,AppName):
 		self.add_query_param('AppName',AppName)
 
-	def get_StreamName(self):
-		return self.get_query_params().get('StreamName')
+	def get_SecurityToken(self):
+		return self.get_query_params().get('SecurityToken')
 
-	def set_StreamName(self,StreamName):
-		self.add_query_param('StreamName',StreamName)
+	def set_SecurityToken(self,SecurityToken):
+		self.add_query_param('SecurityToken',SecurityToken)
+
+	def get_DomainName(self):
+		return self.get_query_params().get('DomainName')
+
+	def set_DomainName(self,DomainName):
+		self.add_query_param('DomainName',DomainName)
 
 	def get_MixTemplate(self):
 		return self.get_query_params().get('MixTemplate')
 
 	def set_MixTemplate(self,MixTemplate):
 		self.add_query_param('MixTemplate',MixTemplate)
+
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
+
+	def get_StreamName(self):
+		return self.get_query_params().get('StreamName')
+
+	def set_StreamName(self,StreamName):
+		self.add_query_param('StreamName',StreamName)

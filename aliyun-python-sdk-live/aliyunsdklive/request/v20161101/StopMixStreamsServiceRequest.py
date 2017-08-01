@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class StopMixStreamsServiceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'live', '2016-11-01', 'StopMixStreamsService','live')
+		RpcRequest.__init__(self, 'live', '2016-11-01', 'StopMixStreamsService','None')
 
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
@@ -29,29 +29,17 @@ class StopMixStreamsServiceRequest(RpcRequest):
 	def set_SecurityToken(self,SecurityToken):
 		self.add_query_param('SecurityToken',SecurityToken)
 
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
 	def get_MainDomainName(self):
 		return self.get_query_params().get('MainDomainName')
 
 	def set_MainDomainName(self,MainDomainName):
 		self.add_query_param('MainDomainName',MainDomainName)
 
-	def get_MainAppName(self):
-		return self.get_query_params().get('MainAppName')
+	def get_MixStreamName(self):
+		return self.get_query_params().get('MixStreamName')
 
-	def set_MainAppName(self,MainAppName):
-		self.add_query_param('MainAppName',MainAppName)
-
-	def get_MainStreamName(self):
-		return self.get_query_params().get('MainStreamName')
-
-	def set_MainStreamName(self,MainStreamName):
-		self.add_query_param('MainStreamName',MainStreamName)
+	def set_MixStreamName(self,MixStreamName):
+		self.add_query_param('MixStreamName',MixStreamName)
 
 	def get_MixDomainName(self):
 		return self.get_query_params().get('MixDomainName')
@@ -59,14 +47,26 @@ class StopMixStreamsServiceRequest(RpcRequest):
 	def set_MixDomainName(self,MixDomainName):
 		self.add_query_param('MixDomainName',MixDomainName)
 
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
+
+	def get_MainAppName(self):
+		return self.get_query_params().get('MainAppName')
+
+	def set_MainAppName(self,MainAppName):
+		self.add_query_param('MainAppName',MainAppName)
+
 	def get_MixAppName(self):
 		return self.get_query_params().get('MixAppName')
 
 	def set_MixAppName(self,MixAppName):
 		self.add_query_param('MixAppName',MixAppName)
 
-	def get_MixStreamName(self):
-		return self.get_query_params().get('MixStreamName')
+	def get_MainStreamName(self):
+		return self.get_query_params().get('MainStreamName')
 
-	def set_MixStreamName(self,MixStreamName):
-		self.add_query_param('MixStreamName',MixStreamName)
+	def set_MainStreamName(self,MainStreamName):
+		self.add_query_param('MainStreamName',MainStreamName)

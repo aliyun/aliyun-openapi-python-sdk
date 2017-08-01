@@ -21,7 +21,13 @@ from aliyunsdkcore.request import RpcRequest
 class DeleteLiveAppRecordConfigRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'live', '2016-11-01', 'DeleteLiveAppRecordConfig','live')
+		RpcRequest.__init__(self, 'live', '2016-11-01', 'DeleteLiveAppRecordConfig','None')
+
+	def get_AppName(self):
+		return self.get_query_params().get('AppName')
+
+	def set_AppName(self,AppName):
+		self.add_query_param('AppName',AppName)
 
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
@@ -29,20 +35,14 @@ class DeleteLiveAppRecordConfigRequest(RpcRequest):
 	def set_SecurityToken(self,SecurityToken):
 		self.add_query_param('SecurityToken',SecurityToken)
 
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
 	def get_DomainName(self):
 		return self.get_query_params().get('DomainName')
 
 	def set_DomainName(self,DomainName):
 		self.add_query_param('DomainName',DomainName)
 
-	def get_AppName(self):
-		return self.get_query_params().get('AppName')
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
 
-	def set_AppName(self,AppName):
-		self.add_query_param('AppName',AppName)
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)

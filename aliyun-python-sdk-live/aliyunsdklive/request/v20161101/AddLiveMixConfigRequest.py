@@ -21,25 +21,13 @@ from aliyunsdkcore.request import RpcRequest
 class AddLiveMixConfigRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'live', '2016-11-01', 'AddLiveMixConfig','live')
+		RpcRequest.__init__(self, 'live', '2016-11-01', 'AddLiveMixConfig','None')
 
-	def get_SecurityToken(self):
-		return self.get_query_params().get('SecurityToken')
+	def get_Template(self):
+		return self.get_query_params().get('Template')
 
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)
-
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_DomainName(self):
-		return self.get_query_params().get('DomainName')
-
-	def set_DomainName(self,DomainName):
-		self.add_query_param('DomainName',DomainName)
+	def set_Template(self,Template):
+		self.add_query_param('Template',Template)
 
 	def get_AppName(self):
 		return self.get_query_params().get('AppName')
@@ -47,8 +35,20 @@ class AddLiveMixConfigRequest(RpcRequest):
 	def set_AppName(self,AppName):
 		self.add_query_param('AppName',AppName)
 
-	def get_Template(self):
-		return self.get_query_params().get('Template')
+	def get_SecurityToken(self):
+		return self.get_query_params().get('SecurityToken')
 
-	def set_Template(self,Template):
-		self.add_query_param('Template',Template)
+	def set_SecurityToken(self,SecurityToken):
+		self.add_query_param('SecurityToken',SecurityToken)
+
+	def get_DomainName(self):
+		return self.get_query_params().get('DomainName')
+
+	def set_DomainName(self,DomainName):
+		self.add_query_param('DomainName',DomainName)
+
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)

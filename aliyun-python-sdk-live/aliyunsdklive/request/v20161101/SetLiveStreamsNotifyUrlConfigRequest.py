@@ -21,19 +21,13 @@ from aliyunsdkcore.request import RpcRequest
 class SetLiveStreamsNotifyUrlConfigRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'live', '2016-11-01', 'SetLiveStreamsNotifyUrlConfig','live')
+		RpcRequest.__init__(self, 'live', '2016-11-01', 'SetLiveStreamsNotifyUrlConfig','None')
 
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
 
 	def set_SecurityToken(self,SecurityToken):
 		self.add_query_param('SecurityToken',SecurityToken)
-
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
 
 	def get_DomainName(self):
 		return self.get_query_params().get('DomainName')
@@ -46,3 +40,9 @@ class SetLiveStreamsNotifyUrlConfigRequest(RpcRequest):
 
 	def set_NotifyUrl(self,NotifyUrl):
 		self.add_query_param('NotifyUrl',NotifyUrl)
+
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)

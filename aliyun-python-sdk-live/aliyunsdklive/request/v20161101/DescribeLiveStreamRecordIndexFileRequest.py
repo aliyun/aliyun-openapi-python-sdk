@@ -21,25 +21,13 @@ from aliyunsdkcore.request import RpcRequest
 class DescribeLiveStreamRecordIndexFileRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'live', '2016-11-01', 'DescribeLiveStreamRecordIndexFile','live')
+		RpcRequest.__init__(self, 'live', '2016-11-01', 'DescribeLiveStreamRecordIndexFile','None')
 
-	def get_SecurityToken(self):
-		return self.get_query_params().get('SecurityToken')
+	def get_RecordId(self):
+		return self.get_query_params().get('RecordId')
 
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)
-
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_DomainName(self):
-		return self.get_query_params().get('DomainName')
-
-	def set_DomainName(self,DomainName):
-		self.add_query_param('DomainName',DomainName)
+	def set_RecordId(self,RecordId):
+		self.add_query_param('RecordId',RecordId)
 
 	def get_AppName(self):
 		return self.get_query_params().get('AppName')
@@ -47,14 +35,26 @@ class DescribeLiveStreamRecordIndexFileRequest(RpcRequest):
 	def set_AppName(self,AppName):
 		self.add_query_param('AppName',AppName)
 
+	def get_SecurityToken(self):
+		return self.get_query_params().get('SecurityToken')
+
+	def set_SecurityToken(self,SecurityToken):
+		self.add_query_param('SecurityToken',SecurityToken)
+
+	def get_DomainName(self):
+		return self.get_query_params().get('DomainName')
+
+	def set_DomainName(self,DomainName):
+		self.add_query_param('DomainName',DomainName)
+
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
+
 	def get_StreamName(self):
 		return self.get_query_params().get('StreamName')
 
 	def set_StreamName(self,StreamName):
 		self.add_query_param('StreamName',StreamName)
-
-	def get_RecordId(self):
-		return self.get_query_params().get('RecordId')
-
-	def set_RecordId(self,RecordId):
-		self.add_query_param('RecordId',RecordId)

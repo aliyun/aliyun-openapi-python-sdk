@@ -21,25 +21,13 @@ from aliyunsdkcore.request import RpcRequest
 class AddLiveAppRecordConfigRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'live', '2016-11-01', 'AddLiveAppRecordConfig','live')
+		RpcRequest.__init__(self, 'live', '2016-11-01', 'AddLiveAppRecordConfig','None')
 
-	def get_SecurityToken(self):
-		return self.get_query_params().get('SecurityToken')
+	def get_OssBucket(self):
+		return self.get_query_params().get('OssBucket')
 
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)
-
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_DomainName(self):
-		return self.get_query_params().get('DomainName')
-
-	def set_DomainName(self,DomainName):
-		self.add_query_param('DomainName',DomainName)
+	def set_OssBucket(self,OssBucket):
+		self.add_query_param('OssBucket',OssBucket)
 
 	def get_AppName(self):
 		return self.get_query_params().get('AppName')
@@ -47,17 +35,11 @@ class AddLiveAppRecordConfigRequest(RpcRequest):
 	def set_AppName(self,AppName):
 		self.add_query_param('AppName',AppName)
 
-	def get_OssEndpoint(self):
-		return self.get_query_params().get('OssEndpoint')
+	def get_SecurityToken(self):
+		return self.get_query_params().get('SecurityToken')
 
-	def set_OssEndpoint(self,OssEndpoint):
-		self.add_query_param('OssEndpoint',OssEndpoint)
-
-	def get_OssBucket(self):
-		return self.get_query_params().get('OssBucket')
-
-	def set_OssBucket(self,OssBucket):
-		self.add_query_param('OssBucket',OssBucket)
+	def set_SecurityToken(self,SecurityToken):
+		self.add_query_param('SecurityToken',SecurityToken)
 
 	def get_RecordFormats(self):
 		return self.get_query_params().get('RecordFormats')
@@ -68,3 +50,22 @@ class AddLiveAppRecordConfigRequest(RpcRequest):
 			self.add_query_param('RecordFormat.' + bytes(i + 1) + '.OssObjectPrefix' , RecordFormats[i].get('OssObjectPrefix'))
 			self.add_query_param('RecordFormat.' + bytes(i + 1) + '.SliceOssObjectPrefix' , RecordFormats[i].get('SliceOssObjectPrefix'))
 			self.add_query_param('RecordFormat.' + bytes(i + 1) + '.CycleDuration' , RecordFormats[i].get('CycleDuration'))
+
+
+	def get_DomainName(self):
+		return self.get_query_params().get('DomainName')
+
+	def set_DomainName(self,DomainName):
+		self.add_query_param('DomainName',DomainName)
+
+	def get_OssEndpoint(self):
+		return self.get_query_params().get('OssEndpoint')
+
+	def set_OssEndpoint(self,OssEndpoint):
+		self.add_query_param('OssEndpoint',OssEndpoint)
+
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)

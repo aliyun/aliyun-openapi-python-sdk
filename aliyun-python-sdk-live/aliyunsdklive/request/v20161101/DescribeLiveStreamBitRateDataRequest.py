@@ -18,22 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class UpdateLiveAppSnapshotConfigRequest(RpcRequest):
+class DescribeLiveStreamBitRateDataRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'live', '2016-11-01', 'UpdateLiveAppSnapshotConfig','None')
-
-	def get_TimeInterval(self):
-		return self.get_query_params().get('TimeInterval')
-
-	def set_TimeInterval(self,TimeInterval):
-		self.add_query_param('TimeInterval',TimeInterval)
-
-	def get_OssBucket(self):
-		return self.get_query_params().get('OssBucket')
-
-	def set_OssBucket(self,OssBucket):
-		self.add_query_param('OssBucket',OssBucket)
+		RpcRequest.__init__(self, 'live', '2016-11-01', 'DescribeLiveStreamBitRateData','None')
 
 	def get_AppName(self):
 		return self.get_query_params().get('AppName')
@@ -53,26 +41,26 @@ class UpdateLiveAppSnapshotConfigRequest(RpcRequest):
 	def set_DomainName(self,DomainName):
 		self.add_query_param('DomainName',DomainName)
 
-	def get_OssEndpoint(self):
-		return self.get_query_params().get('OssEndpoint')
+	def get_EndTime(self):
+		return self.get_query_params().get('EndTime')
 
-	def set_OssEndpoint(self,OssEndpoint):
-		self.add_query_param('OssEndpoint',OssEndpoint)
+	def set_EndTime(self,EndTime):
+		self.add_query_param('EndTime',EndTime)
 
-	def get_SequenceOssObject(self):
-		return self.get_query_params().get('SequenceOssObject')
+	def get_StartTime(self):
+		return self.get_query_params().get('StartTime')
 
-	def set_SequenceOssObject(self,SequenceOssObject):
-		self.add_query_param('SequenceOssObject',SequenceOssObject)
-
-	def get_OverwriteOssObject(self):
-		return self.get_query_params().get('OverwriteOssObject')
-
-	def set_OverwriteOssObject(self,OverwriteOssObject):
-		self.add_query_param('OverwriteOssObject',OverwriteOssObject)
+	def set_StartTime(self,StartTime):
+		self.add_query_param('StartTime',StartTime)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_StreamName(self):
+		return self.get_query_params().get('StreamName')
+
+	def set_StreamName(self,StreamName):
+		self.add_query_param('StreamName',StreamName)

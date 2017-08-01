@@ -18,16 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class UpdateLiveAppSnapshotConfigRequest(RpcRequest):
+class AddLiveSnapshotDetectPornConfigRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'live', '2016-11-01', 'UpdateLiveAppSnapshotConfig','None')
-
-	def get_TimeInterval(self):
-		return self.get_query_params().get('TimeInterval')
-
-	def set_TimeInterval(self,TimeInterval):
-		self.add_query_param('TimeInterval',TimeInterval)
+		RpcRequest.__init__(self, 'live', '2016-11-01', 'AddLiveSnapshotDetectPornConfig','None')
 
 	def get_OssBucket(self):
 		return self.get_query_params().get('OssBucket')
@@ -59,20 +53,20 @@ class UpdateLiveAppSnapshotConfigRequest(RpcRequest):
 	def set_OssEndpoint(self,OssEndpoint):
 		self.add_query_param('OssEndpoint',OssEndpoint)
 
-	def get_SequenceOssObject(self):
-		return self.get_query_params().get('SequenceOssObject')
+	def get_Interval(self):
+		return self.get_query_params().get('Interval')
 
-	def set_SequenceOssObject(self,SequenceOssObject):
-		self.add_query_param('SequenceOssObject',SequenceOssObject)
-
-	def get_OverwriteOssObject(self):
-		return self.get_query_params().get('OverwriteOssObject')
-
-	def set_OverwriteOssObject(self,OverwriteOssObject):
-		self.add_query_param('OverwriteOssObject',OverwriteOssObject)
+	def set_Interval(self,Interval):
+		self.add_query_param('Interval',Interval)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_OssObject(self):
+		return self.get_query_params().get('OssObject')
+
+	def set_OssObject(self,OssObject):
+		self.add_query_param('OssObject',OssObject)

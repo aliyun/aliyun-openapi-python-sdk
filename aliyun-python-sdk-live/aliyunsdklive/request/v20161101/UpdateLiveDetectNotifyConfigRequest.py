@@ -18,28 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class UpdateLiveAppSnapshotConfigRequest(RpcRequest):
+class UpdateLiveDetectNotifyConfigRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'live', '2016-11-01', 'UpdateLiveAppSnapshotConfig','None')
-
-	def get_TimeInterval(self):
-		return self.get_query_params().get('TimeInterval')
-
-	def set_TimeInterval(self,TimeInterval):
-		self.add_query_param('TimeInterval',TimeInterval)
-
-	def get_OssBucket(self):
-		return self.get_query_params().get('OssBucket')
-
-	def set_OssBucket(self,OssBucket):
-		self.add_query_param('OssBucket',OssBucket)
-
-	def get_AppName(self):
-		return self.get_query_params().get('AppName')
-
-	def set_AppName(self,AppName):
-		self.add_query_param('AppName',AppName)
+		RpcRequest.__init__(self, 'live', '2016-11-01', 'UpdateLiveDetectNotifyConfig','None')
 
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
@@ -53,23 +35,11 @@ class UpdateLiveAppSnapshotConfigRequest(RpcRequest):
 	def set_DomainName(self,DomainName):
 		self.add_query_param('DomainName',DomainName)
 
-	def get_OssEndpoint(self):
-		return self.get_query_params().get('OssEndpoint')
+	def get_NotifyUrl(self):
+		return self.get_query_params().get('NotifyUrl')
 
-	def set_OssEndpoint(self,OssEndpoint):
-		self.add_query_param('OssEndpoint',OssEndpoint)
-
-	def get_SequenceOssObject(self):
-		return self.get_query_params().get('SequenceOssObject')
-
-	def set_SequenceOssObject(self,SequenceOssObject):
-		self.add_query_param('SequenceOssObject',SequenceOssObject)
-
-	def get_OverwriteOssObject(self):
-		return self.get_query_params().get('OverwriteOssObject')
-
-	def set_OverwriteOssObject(self,OverwriteOssObject):
-		self.add_query_param('OverwriteOssObject',OverwriteOssObject)
+	def set_NotifyUrl(self,NotifyUrl):
+		self.add_query_param('NotifyUrl',NotifyUrl)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
