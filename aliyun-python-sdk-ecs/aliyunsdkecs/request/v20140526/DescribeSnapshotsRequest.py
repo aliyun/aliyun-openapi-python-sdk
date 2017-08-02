@@ -53,12 +53,6 @@ class DescribeSnapshotsRequest(RpcRequest):
 	def set_DiskId(self,DiskId):
 		self.add_query_param('DiskId',DiskId)
 
-	def get_SnapshotLinkId(self):
-		return self.get_query_params().get('SnapshotLinkId')
-
-	def set_SnapshotLinkId(self,SnapshotLinkId):
-		self.add_query_param('SnapshotLinkId',SnapshotLinkId)
-
 	def get_SnapshotIds(self):
 		return self.get_query_params().get('SnapshotIds')
 
@@ -102,28 +96,28 @@ class DescribeSnapshotsRequest(RpcRequest):
 		self.add_query_param('SnapshotType',SnapshotType)
 
 	def get_Filter1Key(self):
-		return self.get_query_params().get('Filter.1.Key')
+		return self.get_query_params().get('Filter1Key')
 
 	def set_Filter1Key(self,Filter1Key):
-		self.add_query_param('Filter.1.Key',Filter1Key)
+		self.add_query_param('Filter1Key',Filter1Key)
 
 	def get_Filter2Key(self):
-		return self.get_query_params().get('Filter.2.Key')
+		return self.get_query_params().get('Filter2Key')
 
 	def set_Filter2Key(self,Filter2Key):
-		self.add_query_param('Filter.2.Key',Filter2Key)
+		self.add_query_param('Filter2Key',Filter2Key)
 
 	def get_Filter1Value(self):
-		return self.get_query_params().get('Filter.1.Value')
+		return self.get_query_params().get('Filter1Value')
 
 	def set_Filter1Value(self,Filter1Value):
-		self.add_query_param('Filter.1.Value',Filter1Value)
+		self.add_query_param('Filter1Value',Filter1Value)
 
 	def get_Filter2Value(self):
-		return self.get_query_params().get('Filter.2.Value')
+		return self.get_query_params().get('Filter2Value')
 
 	def set_Filter2Value(self,Filter2Value):
-		self.add_query_param('Filter.2.Value',Filter2Value)
+		self.add_query_param('Filter2Value',Filter2Value)
 
 	def get_Usage(self):
 		return self.get_query_params().get('Usage')
