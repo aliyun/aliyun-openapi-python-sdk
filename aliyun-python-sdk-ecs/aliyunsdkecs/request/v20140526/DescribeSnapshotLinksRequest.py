@@ -23,17 +23,35 @@ class DescribeSnapshotLinksRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'DescribeSnapshotLinks')
 
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
+
+	def get_DiskIds(self):
+		return self.get_query_params().get('DiskIds')
+
+	def set_DiskIds(self,DiskIds):
+		self.add_query_param('DiskIds',DiskIds)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+
+	def get_PageNumber(self):
+		return self.get_query_params().get('PageNumber')
+
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)
+
+	def get_SnapshotLinkIds(self):
+		return self.get_query_params().get('SnapshotLinkIds')
+
+	def set_SnapshotLinkIds(self,SnapshotLinkIds):
+		self.add_query_param('SnapshotLinkIds',SnapshotLinkIds)
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -47,26 +65,14 @@ class DescribeSnapshotLinksRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
-	def get_DiskIds(self):
-		return self.get_query_params().get('DiskIds')
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
 
-	def set_DiskIds(self,DiskIds):
-		self.add_query_param('DiskIds',DiskIds)
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
 
-	def get_SnapshotLinkIds(self):
-		return self.get_query_params().get('SnapshotLinkIds')
+	def get_InstanceId(self):
+		return self.get_query_params().get('InstanceId')
 
-	def set_SnapshotLinkIds(self,SnapshotLinkIds):
-		self.add_query_param('SnapshotLinkIds',SnapshotLinkIds)
-
-	def get_PageNumber(self):
-		return self.get_query_params().get('PageNumber')
-
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
-
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
+	def set_InstanceId(self,InstanceId):
+		self.add_query_param('InstanceId',InstanceId)

@@ -23,11 +23,17 @@ class DescribeInstanceMonitorDataRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'DescribeInstanceMonitorData')
 
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
+	def get_EndTime(self):
+		return self.get_query_params().get('EndTime')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
+	def set_EndTime(self,EndTime):
+		self.add_query_param('EndTime',EndTime)
+
+	def get_StartTime(self):
+		return self.get_query_params().get('StartTime')
+
+	def set_StartTime(self,StartTime):
+		self.add_query_param('StartTime',StartTime)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -41,23 +47,11 @@ class DescribeInstanceMonitorDataRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_InstanceId(self):
-		return self.get_query_params().get('InstanceId')
+	def get_OwnerAccount(self):
+		return self.get_query_params().get('OwnerAccount')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
-
-	def get_StartTime(self):
-		return self.get_query_params().get('StartTime')
-
-	def set_StartTime(self,StartTime):
-		self.add_query_param('StartTime',StartTime)
-
-	def get_EndTime(self):
-		return self.get_query_params().get('EndTime')
-
-	def set_EndTime(self,EndTime):
-		self.add_query_param('EndTime',EndTime)
+	def set_OwnerAccount(self,OwnerAccount):
+		self.add_query_param('OwnerAccount',OwnerAccount)
 
 	def get_Period(self):
 		return self.get_query_params().get('Period')
@@ -65,8 +59,14 @@ class DescribeInstanceMonitorDataRequest(RpcRequest):
 	def set_Period(self,Period):
 		self.add_query_param('Period',Period)
 
-	def get_OwnerAccount(self):
-		return self.get_query_params().get('OwnerAccount')
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
+
+	def get_InstanceId(self):
+		return self.get_query_params().get('InstanceId')
+
+	def set_InstanceId(self,InstanceId):
+		self.add_query_param('InstanceId',InstanceId)

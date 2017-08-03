@@ -23,11 +23,11 @@ class DescribeInstanceTypesRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'DescribeInstanceTypes')
 
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
+	def get_InstanceTypeFamily(self):
+		return self.get_query_params().get('InstanceTypeFamily')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
+	def set_InstanceTypeFamily(self,InstanceTypeFamily):
+		self.add_query_param('InstanceTypeFamily',InstanceTypeFamily)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -47,8 +47,8 @@ class DescribeInstanceTypesRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
-	def get_InstanceTypeFamily(self):
-		return self.get_query_params().get('InstanceTypeFamily')
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
 
-	def set_InstanceTypeFamily(self,InstanceTypeFamily):
-		self.add_query_param('InstanceTypeFamily',InstanceTypeFamily)
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)

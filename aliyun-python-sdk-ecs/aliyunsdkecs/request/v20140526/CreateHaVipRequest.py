@@ -23,29 +23,11 @@ class CreateHaVipRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'CreateHaVip')
 
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
+	def get_VSwitchId(self):
+		return self.get_query_params().get('VSwitchId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
-
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_ResourceOwnerId(self):
-		return self.get_query_params().get('ResourceOwnerId')
-
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_OwnerAccount(self):
-		return self.get_query_params().get('OwnerAccount')
-
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
+	def set_VSwitchId(self,VSwitchId):
+		self.add_query_param('VSwitchId',VSwitchId)
 
 	def get_ClientToken(self):
 		return self.get_query_params().get('ClientToken')
@@ -53,11 +35,23 @@ class CreateHaVipRequest(RpcRequest):
 	def set_ClientToken(self,ClientToken):
 		self.add_query_param('ClientToken',ClientToken)
 
-	def get_VSwitchId(self):
-		return self.get_query_params().get('VSwitchId')
+	def get_ResourceOwnerAccount(self):
+		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_VSwitchId(self,VSwitchId):
-		self.add_query_param('VSwitchId',VSwitchId)
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+
+	def get_Description(self):
+		return self.get_query_params().get('Description')
+
+	def set_Description(self,Description):
+		self.add_query_param('Description',Description)
+
+	def get_ResourceOwnerId(self):
+		return self.get_query_params().get('ResourceOwnerId')
+
+	def set_ResourceOwnerId(self,ResourceOwnerId):
+		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
 	def get_IpAddress(self):
 		return self.get_query_params().get('IpAddress')
@@ -65,8 +59,14 @@ class CreateHaVipRequest(RpcRequest):
 	def set_IpAddress(self,IpAddress):
 		self.add_query_param('IpAddress',IpAddress)
 
-	def get_Description(self):
-		return self.get_query_params().get('Description')
+	def get_OwnerAccount(self):
+		return self.get_query_params().get('OwnerAccount')
 
-	def set_Description(self,Description):
-		self.add_query_param('Description',Description)
+	def set_OwnerAccount(self,OwnerAccount):
+		self.add_query_param('OwnerAccount',OwnerAccount)
+
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)

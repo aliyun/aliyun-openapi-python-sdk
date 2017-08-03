@@ -23,11 +23,17 @@ class AllocateEipAddressRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'AllocateEipAddress')
 
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
+	def get_ClientToken(self):
+		return self.get_query_params().get('ClientToken')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
+	def set_ClientToken(self,ClientToken):
+		self.add_query_param('ClientToken',ClientToken)
+
+	def get_InternetChargeType(self):
+		return self.get_query_params().get('InternetChargeType')
+
+	def set_InternetChargeType(self,InternetChargeType):
+		self.add_query_param('InternetChargeType',InternetChargeType)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -41,26 +47,20 @@ class AllocateEipAddressRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_Bandwidth(self):
-		return self.get_query_params().get('Bandwidth')
-
-	def set_Bandwidth(self,Bandwidth):
-		self.add_query_param('Bandwidth',Bandwidth)
-
-	def get_InternetChargeType(self):
-		return self.get_query_params().get('InternetChargeType')
-
-	def set_InternetChargeType(self,InternetChargeType):
-		self.add_query_param('InternetChargeType',InternetChargeType)
-
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
 
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
-	def get_ClientToken(self):
-		return self.get_query_params().get('ClientToken')
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
 
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
+
+	def get_Bandwidth(self):
+		return self.get_query_params().get('Bandwidth')
+
+	def set_Bandwidth(self,Bandwidth):
+		self.add_query_param('Bandwidth',Bandwidth)

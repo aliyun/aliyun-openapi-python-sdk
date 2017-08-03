@@ -23,35 +23,23 @@ class CopyImageRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'CopyImage')
 
+	def get_DestinationRegionId(self):
+		return self.get_query_params().get('DestinationRegionId')
+
+	def set_DestinationRegionId(self,DestinationRegionId):
+		self.add_query_param('DestinationRegionId',DestinationRegionId)
+
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
+	def get_Tag5Key(self):
+		return self.get_query_params().get('Tag.5.Key')
 
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_ResourceOwnerId(self):
-		return self.get_query_params().get('ResourceOwnerId')
-
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_DestinationImageName(self):
-		return self.get_query_params().get('DestinationImageName')
-
-	def set_DestinationImageName(self,DestinationImageName):
-		self.add_query_param('DestinationImageName',DestinationImageName)
-
-	def get_DestinationDescription(self):
-		return self.get_query_params().get('DestinationDescription')
-
-	def set_DestinationDescription(self,DestinationDescription):
-		self.add_query_param('DestinationDescription',DestinationDescription)
+	def set_Tag5Key(self,Tag5Key):
+		self.add_query_param('Tag.5.Key',Tag5Key)
 
 	def get_ImageId(self):
 		return self.get_query_params().get('ImageId')
@@ -59,17 +47,29 @@ class CopyImageRequest(RpcRequest):
 	def set_ImageId(self,ImageId):
 		self.add_query_param('ImageId',ImageId)
 
-	def get_DestinationRegionId(self):
-		return self.get_query_params().get('DestinationRegionId')
+	def get_Tag5Value(self):
+		return self.get_query_params().get('Tag.5.Value')
 
-	def set_DestinationRegionId(self,DestinationRegionId):
-		self.add_query_param('DestinationRegionId',DestinationRegionId)
+	def set_Tag5Value(self,Tag5Value):
+		self.add_query_param('Tag.5.Value',Tag5Value)
 
-	def get_OwnerAccount(self):
-		return self.get_query_params().get('OwnerAccount')
+	def get_Tag3Key(self):
+		return self.get_query_params().get('Tag.3.Key')
 
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
+	def set_Tag3Key(self,Tag3Key):
+		self.add_query_param('Tag.3.Key',Tag3Key)
+
+	def get_DestinationImageName(self):
+		return self.get_query_params().get('DestinationImageName')
+
+	def set_DestinationImageName(self,DestinationImageName):
+		self.add_query_param('DestinationImageName',DestinationImageName)
+
+	def get_ResourceOwnerAccount(self):
+		return self.get_query_params().get('ResourceOwnerAccount')
+
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
 	def get_Tag1Key(self):
 		return self.get_query_params().get('Tag.1.Key')
@@ -83,41 +83,17 @@ class CopyImageRequest(RpcRequest):
 	def set_Tag2Key(self,Tag2Key):
 		self.add_query_param('Tag.2.Key',Tag2Key)
 
-	def get_Tag3Key(self):
-		return self.get_query_params().get('Tag.3.Key')
-
-	def set_Tag3Key(self,Tag3Key):
-		self.add_query_param('Tag.3.Key',Tag3Key)
-
-	def get_Tag4Key(self):
-		return self.get_query_params().get('Tag.4.Key')
-
-	def set_Tag4Key(self,Tag4Key):
-		self.add_query_param('Tag.4.Key',Tag4Key)
-
-	def get_Tag5Key(self):
-		return self.get_query_params().get('Tag.5.Key')
-
-	def set_Tag5Key(self,Tag5Key):
-		self.add_query_param('Tag.5.Key',Tag5Key)
-
 	def get_Tag1Value(self):
 		return self.get_query_params().get('Tag.1.Value')
 
 	def set_Tag1Value(self,Tag1Value):
 		self.add_query_param('Tag.1.Value',Tag1Value)
 
-	def get_Tag2Value(self):
-		return self.get_query_params().get('Tag.2.Value')
+	def get_ResourceOwnerId(self):
+		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_Tag2Value(self,Tag2Value):
-		self.add_query_param('Tag.2.Value',Tag2Value)
-
-	def get_Tag3Value(self):
-		return self.get_query_params().get('Tag.3.Value')
-
-	def set_Tag3Value(self,Tag3Value):
-		self.add_query_param('Tag.3.Value',Tag3Value)
+	def set_ResourceOwnerId(self,ResourceOwnerId):
+		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
 	def get_Tag4Value(self):
 		return self.get_query_params().get('Tag.4.Value')
@@ -125,8 +101,32 @@ class CopyImageRequest(RpcRequest):
 	def set_Tag4Value(self,Tag4Value):
 		self.add_query_param('Tag.4.Value',Tag4Value)
 
-	def get_Tag5Value(self):
-		return self.get_query_params().get('Tag.5.Value')
+	def get_OwnerAccount(self):
+		return self.get_query_params().get('OwnerAccount')
 
-	def set_Tag5Value(self,Tag5Value):
-		self.add_query_param('Tag.5.Value',Tag5Value)
+	def set_OwnerAccount(self,OwnerAccount):
+		self.add_query_param('OwnerAccount',OwnerAccount)
+
+	def get_Tag3Value(self):
+		return self.get_query_params().get('Tag.3.Value')
+
+	def set_Tag3Value(self,Tag3Value):
+		self.add_query_param('Tag.3.Value',Tag3Value)
+
+	def get_DestinationDescription(self):
+		return self.get_query_params().get('DestinationDescription')
+
+	def set_DestinationDescription(self,DestinationDescription):
+		self.add_query_param('DestinationDescription',DestinationDescription)
+
+	def get_Tag2Value(self):
+		return self.get_query_params().get('Tag.2.Value')
+
+	def set_Tag2Value(self,Tag2Value):
+		self.add_query_param('Tag.2.Value',Tag2Value)
+
+	def get_Tag4Key(self):
+		return self.get_query_params().get('Tag.4.Key')
+
+	def set_Tag4Key(self,Tag4Key):
+		self.add_query_param('Tag.4.Key',Tag4Key)

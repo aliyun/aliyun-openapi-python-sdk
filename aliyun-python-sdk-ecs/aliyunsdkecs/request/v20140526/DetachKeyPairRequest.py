@@ -23,23 +23,17 @@ class DetachKeyPairRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'DetachKeyPair')
 
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
-	def get_ResourceOwnerId(self):
-		return self.get_query_params().get('ResourceOwnerId')
+	def get_InstanceIds(self):
+		return self.get_query_params().get('InstanceIds')
 
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+	def set_InstanceIds(self,InstanceIds):
+		self.add_query_param('InstanceIds',InstanceIds)
 
 	def get_KeyPairName(self):
 		return self.get_query_params().get('KeyPairName')
@@ -47,8 +41,14 @@ class DetachKeyPairRequest(RpcRequest):
 	def set_KeyPairName(self,KeyPairName):
 		self.add_query_param('KeyPairName',KeyPairName)
 
-	def get_InstanceIds(self):
-		return self.get_query_params().get('InstanceIds')
+	def get_ResourceOwnerId(self):
+		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_InstanceIds(self,InstanceIds):
-		self.add_query_param('InstanceIds',InstanceIds)
+	def set_ResourceOwnerId(self,ResourceOwnerId):
+		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)

@@ -23,59 +23,17 @@ class ModifyInstanceSpecRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'ModifyInstanceSpec')
 
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
-
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_ResourceOwnerId(self):
-		return self.get_query_params().get('ResourceOwnerId')
-
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_InstanceId(self):
-		return self.get_query_params().get('InstanceId')
-
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
-
-	def get_InstanceType(self):
-		return self.get_query_params().get('InstanceType')
-
-	def set_InstanceType(self,InstanceType):
-		self.add_query_param('InstanceType',InstanceType)
-
 	def get_InternetMaxBandwidthOut(self):
 		return self.get_query_params().get('InternetMaxBandwidthOut')
 
 	def set_InternetMaxBandwidthOut(self,InternetMaxBandwidthOut):
 		self.add_query_param('InternetMaxBandwidthOut',InternetMaxBandwidthOut)
 
-	def get_InternetMaxBandwidthIn(self):
-		return self.get_query_params().get('InternetMaxBandwidthIn')
+	def get_ClientToken(self):
+		return self.get_query_params().get('ClientToken')
 
-	def set_InternetMaxBandwidthIn(self,InternetMaxBandwidthIn):
-		self.add_query_param('InternetMaxBandwidthIn',InternetMaxBandwidthIn)
-
-	def get_OwnerAccount(self):
-		return self.get_query_params().get('OwnerAccount')
-
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
-
-	def get_TemporaryStartTime(self):
-		return self.get_query_params().get('Temporary.StartTime')
-
-	def set_TemporaryStartTime(self,TemporaryStartTime):
-		self.add_query_param('Temporary.StartTime',TemporaryStartTime)
+	def set_ClientToken(self,ClientToken):
+		self.add_query_param('ClientToken',ClientToken)
 
 	def get_TemporaryEndTime(self):
 		return self.get_query_params().get('Temporary.EndTime')
@@ -83,14 +41,62 @@ class ModifyInstanceSpecRequest(RpcRequest):
 	def set_TemporaryEndTime(self,TemporaryEndTime):
 		self.add_query_param('Temporary.EndTime',TemporaryEndTime)
 
-	def get_TemporaryInternetMaxBandwidthOut(self):
-		return self.get_query_params().get('Temporary.InternetMaxBandwidthOut')
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
 
-	def set_TemporaryInternetMaxBandwidthOut(self,TemporaryInternetMaxBandwidthOut):
-		self.add_query_param('Temporary.InternetMaxBandwidthOut',TemporaryInternetMaxBandwidthOut)
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
 
 	def get_Async(self):
 		return self.get_query_params().get('Async')
 
 	def set_Async(self,Async):
 		self.add_query_param('Async',Async)
+
+	def get_InstanceType(self):
+		return self.get_query_params().get('InstanceType')
+
+	def set_InstanceType(self,InstanceType):
+		self.add_query_param('InstanceType',InstanceType)
+
+	def get_ResourceOwnerAccount(self):
+		return self.get_query_params().get('ResourceOwnerAccount')
+
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+
+	def get_TemporaryStartTime(self):
+		return self.get_query_params().get('Temporary.StartTime')
+
+	def set_TemporaryStartTime(self,TemporaryStartTime):
+		self.add_query_param('Temporary.StartTime',TemporaryStartTime)
+
+	def get_InternetMaxBandwidthIn(self):
+		return self.get_query_params().get('InternetMaxBandwidthIn')
+
+	def set_InternetMaxBandwidthIn(self,InternetMaxBandwidthIn):
+		self.add_query_param('InternetMaxBandwidthIn',InternetMaxBandwidthIn)
+
+	def get_ResourceOwnerId(self):
+		return self.get_query_params().get('ResourceOwnerId')
+
+	def set_ResourceOwnerId(self,ResourceOwnerId):
+		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+
+	def get_OwnerAccount(self):
+		return self.get_query_params().get('OwnerAccount')
+
+	def set_OwnerAccount(self,OwnerAccount):
+		self.add_query_param('OwnerAccount',OwnerAccount)
+
+	def get_TemporaryInternetMaxBandwidthOut(self):
+		return self.get_query_params().get('Temporary.InternetMaxBandwidthOut')
+
+	def set_TemporaryInternetMaxBandwidthOut(self,TemporaryInternetMaxBandwidthOut):
+		self.add_query_param('Temporary.InternetMaxBandwidthOut',TemporaryInternetMaxBandwidthOut)
+
+	def get_InstanceId(self):
+		return self.get_query_params().get('InstanceId')
+
+	def set_InstanceId(self,InstanceId):
+		self.add_query_param('InstanceId',InstanceId)

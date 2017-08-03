@@ -23,54 +23,6 @@ class ImportImageRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'ImportImage')
 
-	def get_DiskDeviceMapping(self):
-		return self.get_query_params().get('DiskDeviceMapping')
-
-	def set_DiskDeviceMapping(self,DiskDeviceMapping):
-		self.add_query_param('DiskDeviceMapping',DiskDeviceMapping)
-
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
-
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_ResourceOwnerId(self):
-		return self.get_query_params().get('ResourceOwnerId')
-
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_ImageName(self):
-		return self.get_query_params().get('ImageName')
-
-	def set_ImageName(self,ImageName):
-		self.add_query_param('ImageName',ImageName)
-
-	def get_Description(self):
-		return self.get_query_params().get('Description')
-
-	def set_Description(self,Description):
-		self.add_query_param('Description',Description)
-
-	def get_Architecture(self):
-		return self.get_query_params().get('Architecture')
-
-	def set_Architecture(self,Architecture):
-		self.add_query_param('Architecture',Architecture)
-
-	def get_OSType(self):
-		return self.get_query_params().get('OSType')
-
-	def set_OSType(self,OSType):
-		self.add_query_param('OSType',OSType)
-
 	def get_Platform(self):
 		return self.get_query_params().get('Platform')
 
@@ -82,3 +34,58 @@ class ImportImageRequest(RpcRequest):
 
 	def set_RoleName(self,RoleName):
 		self.add_query_param('RoleName',RoleName)
+
+	def get_ResourceOwnerAccount(self):
+		return self.get_query_params().get('ResourceOwnerAccount')
+
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+
+	def get_OSType(self):
+		return self.get_query_params().get('OSType')
+
+	def set_OSType(self,OSType):
+		self.add_query_param('OSType',OSType)
+
+	def get_Description(self):
+		return self.get_query_params().get('Description')
+
+	def set_Description(self,Description):
+		self.add_query_param('Description',Description)
+
+	def get_DiskDeviceMapping(self):
+		return self.get_query_params().get('DiskDeviceMappings')
+
+	def set_DiskDeviceMapping(self,DiskDeviceMapping):
+		for i in range(len(DiskDeviceMapping)):	
+			self.add_query_param('DiskDeviceMapping.' + bytes(i + 1) + '.Format' , DiskDeviceMapping[i].get('Format'))
+			self.add_query_param('DiskDeviceMapping.' + bytes(i + 1) + '.OSSBucket' , DiskDeviceMapping[i].get('OSSBucket'))
+			self.add_query_param('DiskDeviceMapping.' + bytes(i + 1) + '.OSSObject' , DiskDeviceMapping[i].get('OSSObject'))
+			self.add_query_param('DiskDeviceMapping.' + bytes(i + 1) + '.DiskImSize' , DiskDeviceMapping[i].get('DiskImSize'))
+			self.add_query_param('DiskDeviceMapping.' + bytes(i + 1) + '.DiskImageSize' , DiskDeviceMapping[i].get('DiskImageSize'))
+			self.add_query_param('DiskDeviceMapping.' + bytes(i + 1) + '.Device' , DiskDeviceMapping[i].get('Device'))
+
+
+	def get_Architecture(self):
+		return self.get_query_params().get('Architecture')
+
+	def set_Architecture(self,Architecture):
+		self.add_query_param('Architecture',Architecture)
+
+	def get_ResourceOwnerId(self):
+		return self.get_query_params().get('ResourceOwnerId')
+
+	def set_ResourceOwnerId(self,ResourceOwnerId):
+		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
+
+	def get_ImageName(self):
+		return self.get_query_params().get('ImageName')
+
+	def set_ImageName(self,ImageName):
+		self.add_query_param('ImageName',ImageName)

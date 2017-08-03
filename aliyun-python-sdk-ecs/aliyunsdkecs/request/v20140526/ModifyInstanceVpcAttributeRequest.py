@@ -23,11 +23,17 @@ class ModifyInstanceVpcAttributeRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'ModifyInstanceVpcAttribute')
 
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
+	def get_VSwitchId(self):
+		return self.get_query_params().get('VSwitchId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
+	def set_VSwitchId(self,VSwitchId):
+		self.add_query_param('VSwitchId',VSwitchId)
+
+	def get_PrivateIpAddress(self):
+		return self.get_query_params().get('PrivateIpAddress')
+
+	def set_PrivateIpAddress(self,PrivateIpAddress):
+		self.add_query_param('PrivateIpAddress',PrivateIpAddress)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -41,26 +47,20 @@ class ModifyInstanceVpcAttributeRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_InstanceId(self):
-		return self.get_query_params().get('InstanceId')
-
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
-
-	def get_VSwitchId(self):
-		return self.get_query_params().get('VSwitchId')
-
-	def set_VSwitchId(self,VSwitchId):
-		self.add_query_param('VSwitchId',VSwitchId)
-
-	def get_PrivateIpAddress(self):
-		return self.get_query_params().get('PrivateIpAddress')
-
-	def set_PrivateIpAddress(self,PrivateIpAddress):
-		self.add_query_param('PrivateIpAddress',PrivateIpAddress)
-
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
 
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
+
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
+
+	def get_InstanceId(self):
+		return self.get_query_params().get('InstanceId')
+
+	def set_InstanceId(self,InstanceId):
+		self.add_query_param('InstanceId',InstanceId)

@@ -23,29 +23,11 @@ class DescribeVSwitchesRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'DescribeVSwitches')
 
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
-
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_ResourceOwnerId(self):
-		return self.get_query_params().get('ResourceOwnerId')
-
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_VpcId(self):
-		return self.get_query_params().get('VpcId')
-
-	def set_VpcId(self,VpcId):
-		self.add_query_param('VpcId',VpcId)
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
 
 	def get_VSwitchId(self):
 		return self.get_query_params().get('VSwitchId')
@@ -53,17 +35,17 @@ class DescribeVSwitchesRequest(RpcRequest):
 	def set_VSwitchId(self,VSwitchId):
 		self.add_query_param('VSwitchId',VSwitchId)
 
-	def get_ZoneId(self):
-		return self.get_query_params().get('ZoneId')
-
-	def set_ZoneId(self,ZoneId):
-		self.add_query_param('ZoneId',ZoneId)
-
 	def get_IsDefault(self):
 		return self.get_query_params().get('IsDefault')
 
 	def set_IsDefault(self,IsDefault):
 		self.add_query_param('IsDefault',IsDefault)
+
+	def get_ResourceOwnerAccount(self):
+		return self.get_query_params().get('ResourceOwnerAccount')
+
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
 	def get_PageNumber(self):
 		return self.get_query_params().get('PageNumber')
@@ -71,14 +53,32 @@ class DescribeVSwitchesRequest(RpcRequest):
 	def set_PageNumber(self,PageNumber):
 		self.add_query_param('PageNumber',PageNumber)
 
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
+	def get_ZoneId(self):
+		return self.get_query_params().get('ZoneId')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
+	def set_ZoneId(self,ZoneId):
+		self.add_query_param('ZoneId',ZoneId)
+
+	def get_ResourceOwnerId(self):
+		return self.get_query_params().get('ResourceOwnerId')
+
+	def set_ResourceOwnerId(self,ResourceOwnerId):
+		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
 
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
+
+	def get_VpcId(self):
+		return self.get_query_params().get('VpcId')
+
+	def set_VpcId(self,VpcId):
+		self.add_query_param('VpcId',VpcId)
+
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)

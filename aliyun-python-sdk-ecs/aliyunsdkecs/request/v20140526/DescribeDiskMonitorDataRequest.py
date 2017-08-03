@@ -23,29 +23,11 @@ class DescribeDiskMonitorDataRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'DescribeDiskMonitorData')
 
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
+	def get_EndTime(self):
+		return self.get_query_params().get('EndTime')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
-
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_ResourceOwnerId(self):
-		return self.get_query_params().get('ResourceOwnerId')
-
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_DiskId(self):
-		return self.get_query_params().get('DiskId')
-
-	def set_DiskId(self,DiskId):
-		self.add_query_param('DiskId',DiskId)
+	def set_EndTime(self,EndTime):
+		self.add_query_param('EndTime',EndTime)
 
 	def get_StartTime(self):
 		return self.get_query_params().get('StartTime')
@@ -53,11 +35,29 @@ class DescribeDiskMonitorDataRequest(RpcRequest):
 	def set_StartTime(self,StartTime):
 		self.add_query_param('StartTime',StartTime)
 
-	def get_EndTime(self):
-		return self.get_query_params().get('EndTime')
+	def get_ResourceOwnerAccount(self):
+		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_EndTime(self,EndTime):
-		self.add_query_param('EndTime',EndTime)
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+
+	def get_DiskId(self):
+		return self.get_query_params().get('DiskId')
+
+	def set_DiskId(self,DiskId):
+		self.add_query_param('DiskId',DiskId)
+
+	def get_ResourceOwnerId(self):
+		return self.get_query_params().get('ResourceOwnerId')
+
+	def set_ResourceOwnerId(self,ResourceOwnerId):
+		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+
+	def get_OwnerAccount(self):
+		return self.get_query_params().get('OwnerAccount')
+
+	def set_OwnerAccount(self,OwnerAccount):
+		self.add_query_param('OwnerAccount',OwnerAccount)
 
 	def get_Period(self):
 		return self.get_query_params().get('Period')
@@ -65,8 +65,8 @@ class DescribeDiskMonitorDataRequest(RpcRequest):
 	def set_Period(self,Period):
 		self.add_query_param('Period',Period)
 
-	def get_OwnerAccount(self):
-		return self.get_query_params().get('OwnerAccount')
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)

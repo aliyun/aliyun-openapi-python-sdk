@@ -23,17 +23,23 @@ class UnassociateHaVipRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'UnassociateHaVip')
 
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
+	def get_ClientToken(self):
+		return self.get_query_params().get('ClientToken')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
+	def set_ClientToken(self,ClientToken):
+		self.add_query_param('ClientToken',ClientToken)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+
+	def get_Force(self):
+		return self.get_query_params().get('Force')
+
+	def set_Force(self,Force):
+		self.add_query_param('Force',Force)
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -47,17 +53,11 @@ class UnassociateHaVipRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
-	def get_ClientToken(self):
-		return self.get_query_params().get('ClientToken')
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
 
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
-
-	def get_HaVipId(self):
-		return self.get_query_params().get('HaVipId')
-
-	def set_HaVipId(self,HaVipId):
-		self.add_query_param('HaVipId',HaVipId)
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
 
 	def get_InstanceId(self):
 		return self.get_query_params().get('InstanceId')
@@ -65,8 +65,8 @@ class UnassociateHaVipRequest(RpcRequest):
 	def set_InstanceId(self,InstanceId):
 		self.add_query_param('InstanceId',InstanceId)
 
-	def get_Force(self):
-		return self.get_query_params().get('Force')
+	def get_HaVipId(self):
+		return self.get_query_params().get('HaVipId')
 
-	def set_Force(self,Force):
-		self.add_query_param('Force',Force)
+	def set_HaVipId(self,HaVipId):
+		self.add_query_param('HaVipId',HaVipId)

@@ -23,11 +23,11 @@ class CheckDiskEnableAutoSnapshotValidationRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'CheckDiskEnableAutoSnapshotValidation')
 
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
+	def get_DiskIds(self):
+		return self.get_query_params().get('DiskIds')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
+	def set_DiskIds(self,DiskIds):
+		self.add_query_param('DiskIds',DiskIds)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -47,8 +47,8 @@ class CheckDiskEnableAutoSnapshotValidationRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
-	def get_DiskIds(self):
-		return self.get_query_params().get('DiskIds')
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
 
-	def set_DiskIds(self,DiskIds):
-		self.add_query_param('DiskIds',DiskIds)
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)

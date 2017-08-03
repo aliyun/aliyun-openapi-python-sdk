@@ -23,23 +23,11 @@ class ModifyVSwitchAttributeRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'ModifyVSwitchAttribute')
 
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
+	def get_VSwitchName(self):
+		return self.get_query_params().get('VSwitchName')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
-
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_ResourceOwnerId(self):
-		return self.get_query_params().get('ResourceOwnerId')
-
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+	def set_VSwitchName(self,VSwitchName):
+		self.add_query_param('VSwitchName',VSwitchName)
 
 	def get_VSwitchId(self):
 		return self.get_query_params().get('VSwitchId')
@@ -47,11 +35,11 @@ class ModifyVSwitchAttributeRequest(RpcRequest):
 	def set_VSwitchId(self,VSwitchId):
 		self.add_query_param('VSwitchId',VSwitchId)
 
-	def get_VSwitchName(self):
-		return self.get_query_params().get('VSwitchName')
+	def get_ResourceOwnerAccount(self):
+		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_VSwitchName(self,VSwitchName):
-		self.add_query_param('VSwitchName',VSwitchName)
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
 	def get_Description(self):
 		return self.get_query_params().get('Description')
@@ -59,8 +47,20 @@ class ModifyVSwitchAttributeRequest(RpcRequest):
 	def set_Description(self,Description):
 		self.add_query_param('Description',Description)
 
+	def get_ResourceOwnerId(self):
+		return self.get_query_params().get('ResourceOwnerId')
+
+	def set_ResourceOwnerId(self,ResourceOwnerId):
+		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
 
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
+
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)

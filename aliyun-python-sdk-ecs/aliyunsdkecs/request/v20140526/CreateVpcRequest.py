@@ -23,11 +23,11 @@ class CreateVpcRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'CreateVpc')
 
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
+	def get_ClientToken(self):
+		return self.get_query_params().get('ClientToken')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
+	def set_ClientToken(self,ClientToken):
+		self.add_query_param('ClientToken',ClientToken)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -35,17 +35,11 @@ class CreateVpcRequest(RpcRequest):
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
-	def get_ResourceOwnerId(self):
-		return self.get_query_params().get('ResourceOwnerId')
+	def get_Description(self):
+		return self.get_query_params().get('Description')
 
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_CidrBlock(self):
-		return self.get_query_params().get('CidrBlock')
-
-	def set_CidrBlock(self,CidrBlock):
-		self.add_query_param('CidrBlock',CidrBlock)
+	def set_Description(self,Description):
+		self.add_query_param('Description',Description)
 
 	def get_VpcName(self):
 		return self.get_query_params().get('VpcName')
@@ -53,17 +47,17 @@ class CreateVpcRequest(RpcRequest):
 	def set_VpcName(self,VpcName):
 		self.add_query_param('VpcName',VpcName)
 
-	def get_Description(self):
-		return self.get_query_params().get('Description')
+	def get_UserCidr(self):
+		return self.get_query_params().get('UserCidr')
 
-	def set_Description(self,Description):
-		self.add_query_param('Description',Description)
+	def set_UserCidr(self,UserCidr):
+		self.add_query_param('UserCidr',UserCidr)
 
-	def get_ClientToken(self):
-		return self.get_query_params().get('ClientToken')
+	def get_ResourceOwnerId(self):
+		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
+	def set_ResourceOwnerId(self,ResourceOwnerId):
+		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
@@ -71,8 +65,14 @@ class CreateVpcRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
-	def get_UserCidr(self):
-		return self.get_query_params().get('UserCidr')
+	def get_CidrBlock(self):
+		return self.get_query_params().get('CidrBlock')
 
-	def set_UserCidr(self,UserCidr):
-		self.add_query_param('UserCidr',UserCidr)
+	def set_CidrBlock(self,CidrBlock):
+		self.add_query_param('CidrBlock',CidrBlock)
+
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)

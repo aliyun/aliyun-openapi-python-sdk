@@ -23,11 +23,11 @@ class DeleteHaVipRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'DeleteHaVip')
 
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
+	def get_ClientToken(self):
+		return self.get_query_params().get('ClientToken')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
+	def set_ClientToken(self,ClientToken):
+		self.add_query_param('ClientToken',ClientToken)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -47,11 +47,11 @@ class DeleteHaVipRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
-	def get_ClientToken(self):
-		return self.get_query_params().get('ClientToken')
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
 
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
 
 	def get_HaVipId(self):
 		return self.get_query_params().get('HaVipId')

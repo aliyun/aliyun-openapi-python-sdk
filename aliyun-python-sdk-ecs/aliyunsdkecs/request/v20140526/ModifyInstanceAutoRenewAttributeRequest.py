@@ -23,11 +23,11 @@ class ModifyInstanceAutoRenewAttributeRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'ModifyInstanceAutoRenewAttribute')
 
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
+	def get_Duration(self):
+		return self.get_query_params().get('Duration')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
+	def set_Duration(self,Duration):
+		self.add_query_param('Duration',Duration)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -41,26 +41,26 @@ class ModifyInstanceAutoRenewAttributeRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_AutoRenew(self):
+		return self.get_query_params().get('AutoRenew')
+
+	def set_AutoRenew(self,AutoRenew):
+		self.add_query_param('AutoRenew',AutoRenew)
+
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
 
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
+
 	def get_InstanceId(self):
 		return self.get_query_params().get('InstanceId')
 
 	def set_InstanceId(self,InstanceId):
 		self.add_query_param('InstanceId',InstanceId)
-
-	def get_Duration(self):
-		return self.get_query_params().get('Duration')
-
-	def set_Duration(self,Duration):
-		self.add_query_param('Duration',Duration)
-
-	def get_AutoRenew(self):
-		return self.get_query_params().get('AutoRenew')
-
-	def set_AutoRenew(self,AutoRenew):
-		self.add_query_param('AutoRenew',AutoRenew)
