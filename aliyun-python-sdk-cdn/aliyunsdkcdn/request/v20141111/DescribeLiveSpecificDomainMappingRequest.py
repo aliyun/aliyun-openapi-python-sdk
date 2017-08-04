@@ -21,13 +21,13 @@ from aliyunsdkcore.request import RpcRequest
 class DescribeLiveSpecificDomainMappingRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'DescribeLiveSpecificDomainMapping')
+		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'DescribeLiveSpecificDomainMapping','None')
 
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
+	def get_PullDomain(self):
+		return self.get_query_params().get('PullDomain')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
+	def set_PullDomain(self,PullDomain):
+		self.add_query_param('PullDomain',PullDomain)
 
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
@@ -41,8 +41,8 @@ class DescribeLiveSpecificDomainMappingRequest(RpcRequest):
 	def set_PushDomain(self,PushDomain):
 		self.add_query_param('PushDomain',PushDomain)
 
-	def get_PullDomain(self):
-		return self.get_query_params().get('PullDomain')
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
 
-	def set_PullDomain(self,PullDomain):
-		self.add_query_param('PullDomain',PullDomain)
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)

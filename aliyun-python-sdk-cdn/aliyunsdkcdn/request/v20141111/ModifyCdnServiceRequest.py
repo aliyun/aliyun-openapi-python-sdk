@@ -21,13 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class ModifyCdnServiceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'ModifyCdnService')
-
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
+		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'ModifyCdnService','None')
 
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
@@ -40,3 +34,9 @@ class ModifyCdnServiceRequest(RpcRequest):
 
 	def set_InternetChargeType(self,InternetChargeType):
 		self.add_query_param('InternetChargeType',InternetChargeType)
+
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)

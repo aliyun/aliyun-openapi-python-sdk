@@ -21,31 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class SetReqAuthConfigRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'SetReqAuthConfig')
-
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_SecurityToken(self):
-		return self.get_query_params().get('SecurityToken')
-
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)
-
-	def get_DomainName(self):
-		return self.get_query_params().get('DomainName')
-
-	def set_DomainName(self,DomainName):
-		self.add_query_param('DomainName',DomainName)
-
-	def get_AuthType(self):
-		return self.get_query_params().get('AuthType')
-
-	def set_AuthType(self,AuthType):
-		self.add_query_param('AuthType',AuthType)
+		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'SetReqAuthConfig','None')
 
 	def get_Key1(self):
 		return self.get_query_params().get('Key1')
@@ -59,8 +35,32 @@ class SetReqAuthConfigRequest(RpcRequest):
 	def set_Key2(self,Key2):
 		self.add_query_param('Key2',Key2)
 
+	def get_SecurityToken(self):
+		return self.get_query_params().get('SecurityToken')
+
+	def set_SecurityToken(self,SecurityToken):
+		self.add_query_param('SecurityToken',SecurityToken)
+
+	def get_DomainName(self):
+		return self.get_query_params().get('DomainName')
+
+	def set_DomainName(self,DomainName):
+		self.add_query_param('DomainName',DomainName)
+
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
+
 	def get_TimeOut(self):
 		return self.get_query_params().get('TimeOut')
 
 	def set_TimeOut(self,TimeOut):
 		self.add_query_param('TimeOut',TimeOut)
+
+	def get_AuthType(self):
+		return self.get_query_params().get('AuthType')
+
+	def set_AuthType(self,AuthType):
+		self.add_query_param('AuthType',AuthType)

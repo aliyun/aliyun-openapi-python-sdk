@@ -18,16 +18,16 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class SetPathCacheExpiredConfigRequest(RpcRequest):
+class DescribeLiveStreamHlsOnlineUserNumByDomainRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'SetPathCacheExpiredConfig')
+		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'DescribeLiveStreamHlsOnlineUserNumByDomain','None')
 
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
+	def get_AppName(self):
+		return self.get_query_params().get('AppName')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
+	def set_AppName(self,AppName):
+		self.add_query_param('AppName',AppName)
 
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
@@ -35,26 +35,32 @@ class SetPathCacheExpiredConfigRequest(RpcRequest):
 	def set_SecurityToken(self,SecurityToken):
 		self.add_query_param('SecurityToken',SecurityToken)
 
+	def get_HlsSwitch(self):
+		return self.get_query_params().get('HlsSwitch')
+
+	def set_HlsSwitch(self,HlsSwitch):
+		self.add_query_param('HlsSwitch',HlsSwitch)
+
 	def get_DomainName(self):
 		return self.get_query_params().get('DomainName')
 
 	def set_DomainName(self,DomainName):
 		self.add_query_param('DomainName',DomainName)
 
-	def get_CacheContent(self):
-		return self.get_query_params().get('CacheContent')
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
 
-	def set_CacheContent(self,CacheContent):
-		self.add_query_param('CacheContent',CacheContent)
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
 
-	def get_TTL(self):
-		return self.get_query_params().get('TTL')
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
 
-	def set_TTL(self,TTL):
-		self.add_query_param('TTL',TTL)
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
 
-	def get_Weight(self):
-		return self.get_query_params().get('Weight')
+	def get_PageNumber(self):
+		return self.get_query_params().get('PageNumber')
 
-	def set_Weight(self,Weight):
-		self.add_query_param('Weight',Weight)
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)

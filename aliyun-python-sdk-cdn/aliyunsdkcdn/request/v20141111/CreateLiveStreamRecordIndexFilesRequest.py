@@ -21,13 +21,19 @@ from aliyunsdkcore.request import RpcRequest
 class CreateLiveStreamRecordIndexFilesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'CreateLiveStreamRecordIndexFiles')
+		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'CreateLiveStreamRecordIndexFiles','None')
 
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
+	def get_OssBucket(self):
+		return self.get_query_params().get('OssBucket')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
+	def set_OssBucket(self,OssBucket):
+		self.add_query_param('OssBucket',OssBucket)
+
+	def get_AppName(self):
+		return self.get_query_params().get('AppName')
+
+	def set_AppName(self,AppName):
+		self.add_query_param('AppName',AppName)
 
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
@@ -41,35 +47,17 @@ class CreateLiveStreamRecordIndexFilesRequest(RpcRequest):
 	def set_DomainName(self,DomainName):
 		self.add_query_param('DomainName',DomainName)
 
-	def get_AppName(self):
-		return self.get_query_params().get('AppName')
-
-	def set_AppName(self,AppName):
-		self.add_query_param('AppName',AppName)
-
-	def get_StreamName(self):
-		return self.get_query_params().get('StreamName')
-
-	def set_StreamName(self,StreamName):
-		self.add_query_param('StreamName',StreamName)
-
 	def get_OssEndpoint(self):
 		return self.get_query_params().get('OssEndpoint')
 
 	def set_OssEndpoint(self,OssEndpoint):
 		self.add_query_param('OssEndpoint',OssEndpoint)
 
-	def get_OssBucket(self):
-		return self.get_query_params().get('OssBucket')
+	def get_EndTime(self):
+		return self.get_query_params().get('EndTime')
 
-	def set_OssBucket(self,OssBucket):
-		self.add_query_param('OssBucket',OssBucket)
-
-	def get_OssObject(self):
-		return self.get_query_params().get('OssObject')
-
-	def set_OssObject(self,OssObject):
-		self.add_query_param('OssObject',OssObject)
+	def set_EndTime(self,EndTime):
+		self.add_query_param('EndTime',EndTime)
 
 	def get_StartTime(self):
 		return self.get_query_params().get('StartTime')
@@ -77,8 +65,20 @@ class CreateLiveStreamRecordIndexFilesRequest(RpcRequest):
 	def set_StartTime(self,StartTime):
 		self.add_query_param('StartTime',StartTime)
 
-	def get_EndTime(self):
-		return self.get_query_params().get('EndTime')
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
 
-	def set_EndTime(self,EndTime):
-		self.add_query_param('EndTime',EndTime)
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
+
+	def get_StreamName(self):
+		return self.get_query_params().get('StreamName')
+
+	def set_StreamName(self,StreamName):
+		self.add_query_param('StreamName',StreamName)
+
+	def get_OssObject(self):
+		return self.get_query_params().get('OssObject')
+
+	def set_OssObject(self,OssObject):
+		self.add_query_param('OssObject',OssObject)

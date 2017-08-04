@@ -18,10 +18,22 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class DescribeCurrentCharge95InfoRequest(RpcRequest):
+class SetIpBlackListConfigRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'DescribeCurrentCharge95Info')
+		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'SetIpBlackListConfig','None')
+
+	def get_SecurityToken(self):
+		return self.get_query_params().get('SecurityToken')
+
+	def set_SecurityToken(self,SecurityToken):
+		self.add_query_param('SecurityToken',SecurityToken)
+
+	def get_DomainName(self):
+		return self.get_query_params().get('DomainName')
+
+	def set_DomainName(self,DomainName):
+		self.add_query_param('DomainName',DomainName)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
@@ -29,8 +41,8 @@ class DescribeCurrentCharge95InfoRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_SecurityToken(self):
-		return self.get_query_params().get('SecurityToken')
+	def get_BlockIps(self):
+		return self.get_query_params().get('BlockIps')
 
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)
+	def set_BlockIps(self,BlockIps):
+		self.add_query_param('BlockIps',BlockIps)

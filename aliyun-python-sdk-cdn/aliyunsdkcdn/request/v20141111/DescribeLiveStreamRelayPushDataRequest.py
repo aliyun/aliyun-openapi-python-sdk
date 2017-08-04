@@ -21,25 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class DescribeLiveStreamRelayPushDataRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'DescribeLiveStreamRelayPushData')
-
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_SecurityToken(self):
-		return self.get_query_params().get('SecurityToken')
-
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)
-
-	def get_DomainName(self):
-		return self.get_query_params().get('DomainName')
-
-	def set_DomainName(self,DomainName):
-		self.add_query_param('DomainName',DomainName)
+		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'DescribeLiveStreamRelayPushData','None')
 
 	def get_RelayDomain(self):
 		return self.get_query_params().get('RelayDomain')
@@ -47,17 +29,17 @@ class DescribeLiveStreamRelayPushDataRequest(RpcRequest):
 	def set_RelayDomain(self,RelayDomain):
 		self.add_query_param('RelayDomain',RelayDomain)
 
-	def get_AppName(self):
-		return self.get_query_params().get('AppName')
+	def get_SecurityToken(self):
+		return self.get_query_params().get('SecurityToken')
 
-	def set_AppName(self,AppName):
-		self.add_query_param('AppName',AppName)
+	def set_SecurityToken(self,SecurityToken):
+		self.add_query_param('SecurityToken',SecurityToken)
 
-	def get_StreamName(self):
-		return self.get_query_params().get('StreamName')
+	def get_EndTime(self):
+		return self.get_query_params().get('EndTime')
 
-	def set_StreamName(self,StreamName):
-		self.add_query_param('StreamName',StreamName)
+	def set_EndTime(self,EndTime):
+		self.add_query_param('EndTime',EndTime)
 
 	def get_StartTime(self):
 		return self.get_query_params().get('StartTime')
@@ -65,8 +47,8 @@ class DescribeLiveStreamRelayPushDataRequest(RpcRequest):
 	def set_StartTime(self,StartTime):
 		self.add_query_param('StartTime',StartTime)
 
-	def get_EndTime(self):
-		return self.get_query_params().get('EndTime')
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
 
-	def set_EndTime(self,EndTime):
-		self.add_query_param('EndTime',EndTime)
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)

@@ -21,31 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class DeleteLiveStreamTranscodeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'DeleteLiveStreamTranscode')
-
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_OwnerAccount(self):
-		return self.get_query_params().get('OwnerAccount')
-
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
-
-	def get_SecurityToken(self):
-		return self.get_query_params().get('SecurityToken')
-
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)
-
-	def get_Domain(self):
-		return self.get_query_params().get('Domain')
-
-	def set_Domain(self,Domain):
-		self.add_query_param('Domain',Domain)
+		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'DeleteLiveStreamTranscode','None')
 
 	def get_Template(self):
 		return self.get_query_params().get('Template')
@@ -58,3 +34,27 @@ class DeleteLiveStreamTranscodeRequest(RpcRequest):
 
 	def set_App(self,App):
 		self.add_query_param('App',App)
+
+	def get_SecurityToken(self):
+		return self.get_query_params().get('SecurityToken')
+
+	def set_SecurityToken(self,SecurityToken):
+		self.add_query_param('SecurityToken',SecurityToken)
+
+	def get_OwnerAccount(self):
+		return self.get_query_params().get('OwnerAccount')
+
+	def set_OwnerAccount(self,OwnerAccount):
+		self.add_query_param('OwnerAccount',OwnerAccount)
+
+	def get_Domain(self):
+		return self.get_query_params().get('Domain')
+
+	def set_Domain(self,Domain):
+		self.add_query_param('Domain',Domain)
+
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)

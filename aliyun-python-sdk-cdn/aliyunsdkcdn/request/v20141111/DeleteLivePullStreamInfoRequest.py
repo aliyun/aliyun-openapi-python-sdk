@@ -21,13 +21,13 @@ from aliyunsdkcore.request import RpcRequest
 class DeleteLivePullStreamInfoRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'DeleteLivePullStreamInfo')
+		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'DeleteLivePullStreamInfo','None')
 
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
+	def get_AppName(self):
+		return self.get_query_params().get('AppName')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
+	def set_AppName(self,AppName):
+		self.add_query_param('AppName',AppName)
 
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
@@ -41,11 +41,11 @@ class DeleteLivePullStreamInfoRequest(RpcRequest):
 	def set_DomainName(self,DomainName):
 		self.add_query_param('DomainName',DomainName)
 
-	def get_AppName(self):
-		return self.get_query_params().get('AppName')
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
 
-	def set_AppName(self,AppName):
-		self.add_query_param('AppName',AppName)
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
 
 	def get_StreamName(self):
 		return self.get_query_params().get('StreamName')

@@ -21,13 +21,13 @@ from aliyunsdkcore.request import RpcRequest
 class ClearUserBlackListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'ClearUserBlackList')
+		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'ClearUserBlackList','None')
 
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
+	def get_SecurityToken(self):
+		return self.get_query_params().get('SecurityToken')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
+	def set_SecurityToken(self,SecurityToken):
+		self.add_query_param('SecurityToken',SecurityToken)
 
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
@@ -35,8 +35,8 @@ class ClearUserBlackListRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
-	def get_SecurityToken(self):
-		return self.get_query_params().get('SecurityToken')
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
 
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)

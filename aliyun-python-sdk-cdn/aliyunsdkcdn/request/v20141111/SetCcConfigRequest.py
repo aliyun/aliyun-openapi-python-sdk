@@ -21,13 +21,13 @@ from aliyunsdkcore.request import RpcRequest
 class SetCcConfigRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'SetCcConfig')
+		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'SetCcConfig','None')
 
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
+	def get_AllowIps(self):
+		return self.get_query_params().get('AllowIps')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
+	def set_AllowIps(self,AllowIps):
+		self.add_query_param('AllowIps',AllowIps)
 
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
@@ -41,17 +41,11 @@ class SetCcConfigRequest(RpcRequest):
 	def set_DomainName(self,DomainName):
 		self.add_query_param('DomainName',DomainName)
 
-	def get_Enable(self):
-		return self.get_query_params().get('Enable')
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
 
-	def set_Enable(self,Enable):
-		self.add_query_param('Enable',Enable)
-
-	def get_AllowIps(self):
-		return self.get_query_params().get('AllowIps')
-
-	def set_AllowIps(self,AllowIps):
-		self.add_query_param('AllowIps',AllowIps)
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
 
 	def get_BlockIps(self):
 		return self.get_query_params().get('BlockIps')

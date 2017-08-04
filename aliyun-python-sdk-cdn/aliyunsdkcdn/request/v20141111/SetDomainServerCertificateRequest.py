@@ -21,31 +21,13 @@ from aliyunsdkcore.request import RpcRequest
 class SetDomainServerCertificateRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'SetDomainServerCertificate')
+		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'SetDomainServerCertificate','None')
 
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
+	def get_PrivateKey(self):
+		return self.get_query_params().get('PrivateKey')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_SecurityToken(self):
-		return self.get_query_params().get('SecurityToken')
-
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)
-
-	def get_DomainName(self):
-		return self.get_query_params().get('DomainName')
-
-	def set_DomainName(self,DomainName):
-		self.add_query_param('DomainName',DomainName)
-
-	def get_CertName(self):
-		return self.get_query_params().get('CertName')
-
-	def set_CertName(self,CertName):
-		self.add_query_param('CertName',CertName)
+	def set_PrivateKey(self,PrivateKey):
+		self.add_query_param('PrivateKey',PrivateKey)
 
 	def get_ServerCertificateStatus(self):
 		return self.get_query_params().get('ServerCertificateStatus')
@@ -59,11 +41,29 @@ class SetDomainServerCertificateRequest(RpcRequest):
 	def set_ServerCertificate(self,ServerCertificate):
 		self.add_query_param('ServerCertificate',ServerCertificate)
 
-	def get_PrivateKey(self):
-		return self.get_query_params().get('PrivateKey')
+	def get_SecurityToken(self):
+		return self.get_query_params().get('SecurityToken')
 
-	def set_PrivateKey(self,PrivateKey):
-		self.add_query_param('PrivateKey',PrivateKey)
+	def set_SecurityToken(self,SecurityToken):
+		self.add_query_param('SecurityToken',SecurityToken)
+
+	def get_CertName(self):
+		return self.get_query_params().get('CertName')
+
+	def set_CertName(self,CertName):
+		self.add_query_param('CertName',CertName)
+
+	def get_DomainName(self):
+		return self.get_query_params().get('DomainName')
+
+	def set_DomainName(self,DomainName):
+		self.add_query_param('DomainName',DomainName)
+
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
 
 	def get_Region(self):
 		return self.get_query_params().get('Region')

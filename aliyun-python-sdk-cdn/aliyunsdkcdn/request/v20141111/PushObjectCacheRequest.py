@@ -21,13 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class PushObjectCacheRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'PushObjectCache')
-
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
+		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'PushObjectCache','None')
 
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
@@ -40,3 +34,9 @@ class PushObjectCacheRequest(RpcRequest):
 
 	def set_ObjectPath(self,ObjectPath):
 		self.add_query_param('ObjectPath',ObjectPath)
+
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)

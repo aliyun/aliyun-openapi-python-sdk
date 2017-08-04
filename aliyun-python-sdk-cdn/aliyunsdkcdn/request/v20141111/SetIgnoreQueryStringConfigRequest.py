@@ -21,13 +21,19 @@ from aliyunsdkcore.request import RpcRequest
 class SetIgnoreQueryStringConfigRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'SetIgnoreQueryStringConfig')
+		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'SetIgnoreQueryStringConfig','None')
 
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
+	def get_KeepOssArgs(self):
+		return self.get_query_params().get('KeepOssArgs')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
+	def set_KeepOssArgs(self,KeepOssArgs):
+		self.add_query_param('KeepOssArgs',KeepOssArgs)
+
+	def get_HashKeyArgs(self):
+		return self.get_query_params().get('HashKeyArgs')
+
+	def set_HashKeyArgs(self,HashKeyArgs):
+		self.add_query_param('HashKeyArgs',HashKeyArgs)
 
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
@@ -35,20 +41,20 @@ class SetIgnoreQueryStringConfigRequest(RpcRequest):
 	def set_SecurityToken(self,SecurityToken):
 		self.add_query_param('SecurityToken',SecurityToken)
 
-	def get_DomainName(self):
-		return self.get_query_params().get('DomainName')
-
-	def set_DomainName(self,DomainName):
-		self.add_query_param('DomainName',DomainName)
-
 	def get_Enable(self):
 		return self.get_query_params().get('Enable')
 
 	def set_Enable(self,Enable):
 		self.add_query_param('Enable',Enable)
 
-	def get_HashKeyArgs(self):
-		return self.get_query_params().get('HashKeyArgs')
+	def get_DomainName(self):
+		return self.get_query_params().get('DomainName')
 
-	def set_HashKeyArgs(self,HashKeyArgs):
-		self.add_query_param('HashKeyArgs',HashKeyArgs)
+	def set_DomainName(self,DomainName):
+		self.add_query_param('DomainName',DomainName)
+
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)

@@ -21,13 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class DeleteHttpHeaderConfigRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'DeleteHttpHeaderConfig')
-
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
+		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'DeleteHttpHeaderConfig','None')
 
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
@@ -35,14 +29,20 @@ class DeleteHttpHeaderConfigRequest(RpcRequest):
 	def set_SecurityToken(self,SecurityToken):
 		self.add_query_param('SecurityToken',SecurityToken)
 
+	def get_ConfigID(self):
+		return self.get_query_params().get('ConfigID')
+
+	def set_ConfigID(self,ConfigID):
+		self.add_query_param('ConfigID',ConfigID)
+
 	def get_DomainName(self):
 		return self.get_query_params().get('DomainName')
 
 	def set_DomainName(self,DomainName):
 		self.add_query_param('DomainName',DomainName)
 
-	def get_ConfigID(self):
-		return self.get_query_params().get('ConfigID')
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
 
-	def set_ConfigID(self,ConfigID):
-		self.add_query_param('ConfigID',ConfigID)
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)

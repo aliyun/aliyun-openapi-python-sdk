@@ -21,31 +21,13 @@ from aliyunsdkcore.request import RpcRequest
 class ForbidLiveStreamRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'ForbidLiveStream')
+		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'ForbidLiveStream','None')
 
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
+	def get_ResumeTime(self):
+		return self.get_query_params().get('ResumeTime')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_SecurityToken(self):
-		return self.get_query_params().get('SecurityToken')
-
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)
-
-	def get_DomainName(self):
-		return self.get_query_params().get('DomainName')
-
-	def set_DomainName(self,DomainName):
-		self.add_query_param('DomainName',DomainName)
-
-	def get_LiveStreamType(self):
-		return self.get_query_params().get('LiveStreamType')
-
-	def set_LiveStreamType(self,LiveStreamType):
-		self.add_query_param('LiveStreamType',LiveStreamType)
+	def set_ResumeTime(self,ResumeTime):
+		self.add_query_param('ResumeTime',ResumeTime)
 
 	def get_AppName(self):
 		return self.get_query_params().get('AppName')
@@ -53,14 +35,32 @@ class ForbidLiveStreamRequest(RpcRequest):
 	def set_AppName(self,AppName):
 		self.add_query_param('AppName',AppName)
 
+	def get_SecurityToken(self):
+		return self.get_query_params().get('SecurityToken')
+
+	def set_SecurityToken(self,SecurityToken):
+		self.add_query_param('SecurityToken',SecurityToken)
+
+	def get_LiveStreamType(self):
+		return self.get_query_params().get('LiveStreamType')
+
+	def set_LiveStreamType(self,LiveStreamType):
+		self.add_query_param('LiveStreamType',LiveStreamType)
+
+	def get_DomainName(self):
+		return self.get_query_params().get('DomainName')
+
+	def set_DomainName(self,DomainName):
+		self.add_query_param('DomainName',DomainName)
+
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
+
 	def get_StreamName(self):
 		return self.get_query_params().get('StreamName')
 
 	def set_StreamName(self,StreamName):
 		self.add_query_param('StreamName',StreamName)
-
-	def get_ResumeTime(self):
-		return self.get_query_params().get('ResumeTime')
-
-	def set_ResumeTime(self,ResumeTime):
-		self.add_query_param('ResumeTime',ResumeTime)

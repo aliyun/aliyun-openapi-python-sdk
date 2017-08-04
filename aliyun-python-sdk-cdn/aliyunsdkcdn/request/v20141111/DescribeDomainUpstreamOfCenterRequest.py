@@ -18,16 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class DescribeDomainWafAttackInfoRequest(RpcRequest):
+class DescribeDomainUpstreamOfCenterRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'DescribeDomainWafAttackInfo')
-
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
+		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'DescribeDomainUpstreamOfCenter','None')
 
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
@@ -41,26 +35,20 @@ class DescribeDomainWafAttackInfoRequest(RpcRequest):
 	def set_DomainName(self,DomainName):
 		self.add_query_param('DomainName',DomainName)
 
-	def get_StartTime(self):
-		return self.get_query_params().get('StartTime')
-
-	def set_StartTime(self,StartTime):
-		self.add_query_param('StartTime',StartTime)
-
 	def get_EndTime(self):
 		return self.get_query_params().get('EndTime')
 
 	def set_EndTime(self,EndTime):
 		self.add_query_param('EndTime',EndTime)
 
-	def get_PageNumber(self):
-		return self.get_query_params().get('PageNumber')
+	def get_StartTime(self):
+		return self.get_query_params().get('StartTime')
 
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
+	def set_StartTime(self,StartTime):
+		self.add_query_param('StartTime',StartTime)
 
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)

@@ -18,25 +18,25 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class IsGreyUserRequest(RpcRequest):
+class DescribeLivePullStreamConfigRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'IsGreyUser')
-
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_OwnerAccount(self):
-		return self.get_query_params().get('OwnerAccount')
-
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
+		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'DescribeLivePullStreamConfig','None')
 
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
 
 	def set_SecurityToken(self,SecurityToken):
 		self.add_query_param('SecurityToken',SecurityToken)
+
+	def get_DomainName(self):
+		return self.get_query_params().get('DomainName')
+
+	def set_DomainName(self,DomainName):
+		self.add_query_param('DomainName',DomainName)
+
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)

@@ -21,13 +21,13 @@ from aliyunsdkcore.request import RpcRequest
 class DescribeRangeDataByLocateAndIspServiceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'DescribeRangeDataByLocateAndIspService')
+		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'DescribeRangeDataByLocateAndIspService','None')
 
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
+	def get_IspNames(self):
+		return self.get_query_params().get('IspNames')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
+	def set_IspNames(self,IspNames):
+		self.add_query_param('IspNames',IspNames)
 
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
@@ -47,11 +47,11 @@ class DescribeRangeDataByLocateAndIspServiceRequest(RpcRequest):
 	def set_LocationNames(self,LocationNames):
 		self.add_query_param('LocationNames',LocationNames)
 
-	def get_IspNames(self):
-		return self.get_query_params().get('IspNames')
+	def get_EndTime(self):
+		return self.get_query_params().get('EndTime')
 
-	def set_IspNames(self,IspNames):
-		self.add_query_param('IspNames',IspNames)
+	def set_EndTime(self,EndTime):
+		self.add_query_param('EndTime',EndTime)
 
 	def get_startTime(self):
 		return self.get_query_params().get('startTime')
@@ -59,8 +59,8 @@ class DescribeRangeDataByLocateAndIspServiceRequest(RpcRequest):
 	def set_startTime(self,startTime):
 		self.add_query_param('startTime',startTime)
 
-	def get_EndTime(self):
-		return self.get_query_params().get('EndTime')
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
 
-	def set_EndTime(self,EndTime):
-		self.add_query_param('EndTime',EndTime)
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)

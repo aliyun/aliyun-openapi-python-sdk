@@ -21,13 +21,13 @@ from aliyunsdkcore.request import RpcRequest
 class DescribeDomainBpsDataByTimeStampRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'DescribeDomainBpsDataByTimeStamp')
+		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'DescribeDomainBpsDataByTimeStamp','None')
 
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
+	def get_IspNames(self):
+		return self.get_query_params().get('IspNames')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
+	def set_IspNames(self,IspNames):
+		self.add_query_param('IspNames',IspNames)
 
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
@@ -35,23 +35,23 @@ class DescribeDomainBpsDataByTimeStampRequest(RpcRequest):
 	def set_SecurityToken(self,SecurityToken):
 		self.add_query_param('SecurityToken',SecurityToken)
 
-	def get_DomainName(self):
-		return self.get_query_params().get('DomainName')
-
-	def set_DomainName(self,DomainName):
-		self.add_query_param('DomainName',DomainName)
-
 	def get_LocationNames(self):
 		return self.get_query_params().get('LocationNames')
 
 	def set_LocationNames(self,LocationNames):
 		self.add_query_param('LocationNames',LocationNames)
 
-	def get_IspNames(self):
-		return self.get_query_params().get('IspNames')
+	def get_DomainName(self):
+		return self.get_query_params().get('DomainName')
 
-	def set_IspNames(self,IspNames):
-		self.add_query_param('IspNames',IspNames)
+	def set_DomainName(self,DomainName):
+		self.add_query_param('DomainName',DomainName)
+
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
 
 	def get_TimePoint(self):
 		return self.get_query_params().get('TimePoint')

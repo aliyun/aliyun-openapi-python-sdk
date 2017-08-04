@@ -21,13 +21,13 @@ from aliyunsdkcore.request import RpcRequest
 class SetOssLogConfigRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'SetOssLogConfig')
+		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'SetOssLogConfig','None')
 
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
+	def get_Bucket(self):
+		return self.get_query_params().get('Bucket')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
+	def set_Bucket(self,Bucket):
+		self.add_query_param('Bucket',Bucket)
 
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
@@ -41,14 +41,14 @@ class SetOssLogConfigRequest(RpcRequest):
 	def set_Enable(self,Enable):
 		self.add_query_param('Enable',Enable)
 
-	def get_Bucket(self):
-		return self.get_query_params().get('Bucket')
-
-	def set_Bucket(self,Bucket):
-		self.add_query_param('Bucket',Bucket)
-
 	def get_Prefix(self):
 		return self.get_query_params().get('Prefix')
 
 	def set_Prefix(self,Prefix):
 		self.add_query_param('Prefix',Prefix)
+
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)

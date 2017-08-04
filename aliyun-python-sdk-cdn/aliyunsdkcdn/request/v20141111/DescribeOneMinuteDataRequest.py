@@ -21,19 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class DescribeOneMinuteDataRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'DescribeOneMinuteData')
-
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
-
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'DescribeOneMinuteData','None')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -41,14 +29,26 @@ class DescribeOneMinuteDataRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_DomainName(self):
-		return self.get_query_params().get('DomainName')
+	def get_ResourceOwnerAccount(self):
+		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_DomainName(self,DomainName):
-		self.add_query_param('DomainName',DomainName)
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
 	def get_DataTime(self):
 		return self.get_query_params().get('DataTime')
 
 	def set_DataTime(self,DataTime):
 		self.add_query_param('DataTime',DataTime)
+
+	def get_DomainName(self):
+		return self.get_query_params().get('DomainName')
+
+	def set_DomainName(self,DomainName):
+		self.add_query_param('DomainName',DomainName)
+
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)

@@ -21,13 +21,31 @@ from aliyunsdkcore.request import RpcRequest
 class ModifyCdnDomainRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'ModifyCdnDomain')
+		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'ModifyCdnDomain','None')
 
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
+	def get_SourcePort(self):
+		return self.get_query_params().get('SourcePort')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
+	def set_SourcePort(self,SourcePort):
+		self.add_query_param('SourcePort',SourcePort)
+
+	def get_ResourceGroupId(self):
+		return self.get_query_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self,ResourceGroupId):
+		self.add_query_param('ResourceGroupId',ResourceGroupId)
+
+	def get_Priorities(self):
+		return self.get_query_params().get('Priorities')
+
+	def set_Priorities(self,Priorities):
+		self.add_query_param('Priorities',Priorities)
+
+	def get_Sources(self):
+		return self.get_query_params().get('Sources')
+
+	def set_Sources(self,Sources):
+		self.add_query_param('Sources',Sources)
 
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
@@ -47,14 +65,8 @@ class ModifyCdnDomainRequest(RpcRequest):
 	def set_SourceType(self,SourceType):
 		self.add_query_param('SourceType',SourceType)
 
-	def get_SourcePort(self):
-		return self.get_query_params().get('SourcePort')
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
 
-	def set_SourcePort(self,SourcePort):
-		self.add_query_param('SourcePort',SourcePort)
-
-	def get_Sources(self):
-		return self.get_query_params().get('Sources')
-
-	def set_Sources(self,Sources):
-		self.add_query_param('Sources',Sources)
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)

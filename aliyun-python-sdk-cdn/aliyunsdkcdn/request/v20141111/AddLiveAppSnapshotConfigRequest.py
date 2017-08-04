@@ -21,13 +21,25 @@ from aliyunsdkcore.request import RpcRequest
 class AddLiveAppSnapshotConfigRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'AddLiveAppSnapshotConfig')
+		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'AddLiveAppSnapshotConfig','None')
 
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
+	def get_TimeInterval(self):
+		return self.get_query_params().get('TimeInterval')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
+	def set_TimeInterval(self,TimeInterval):
+		self.add_query_param('TimeInterval',TimeInterval)
+
+	def get_OssBucket(self):
+		return self.get_query_params().get('OssBucket')
+
+	def set_OssBucket(self,OssBucket):
+		self.add_query_param('OssBucket',OssBucket)
+
+	def get_AppName(self):
+		return self.get_query_params().get('AppName')
+
+	def set_AppName(self,AppName):
+		self.add_query_param('AppName',AppName)
 
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
@@ -41,29 +53,17 @@ class AddLiveAppSnapshotConfigRequest(RpcRequest):
 	def set_DomainName(self,DomainName):
 		self.add_query_param('DomainName',DomainName)
 
-	def get_AppName(self):
-		return self.get_query_params().get('AppName')
-
-	def set_AppName(self,AppName):
-		self.add_query_param('AppName',AppName)
-
-	def get_TimeInterval(self):
-		return self.get_query_params().get('TimeInterval')
-
-	def set_TimeInterval(self,TimeInterval):
-		self.add_query_param('TimeInterval',TimeInterval)
-
 	def get_OssEndpoint(self):
 		return self.get_query_params().get('OssEndpoint')
 
 	def set_OssEndpoint(self,OssEndpoint):
 		self.add_query_param('OssEndpoint',OssEndpoint)
 
-	def get_OssBucket(self):
-		return self.get_query_params().get('OssBucket')
+	def get_SequenceOssObject(self):
+		return self.get_query_params().get('SequenceOssObject')
 
-	def set_OssBucket(self,OssBucket):
-		self.add_query_param('OssBucket',OssBucket)
+	def set_SequenceOssObject(self,SequenceOssObject):
+		self.add_query_param('SequenceOssObject',SequenceOssObject)
 
 	def get_OverwriteOssObject(self):
 		return self.get_query_params().get('OverwriteOssObject')
@@ -71,8 +71,8 @@ class AddLiveAppSnapshotConfigRequest(RpcRequest):
 	def set_OverwriteOssObject(self,OverwriteOssObject):
 		self.add_query_param('OverwriteOssObject',OverwriteOssObject)
 
-	def get_SequenceOssObject(self):
-		return self.get_query_params().get('SequenceOssObject')
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
 
-	def set_SequenceOssObject(self,SequenceOssObject):
-		self.add_query_param('SequenceOssObject',SequenceOssObject)
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)

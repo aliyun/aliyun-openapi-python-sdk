@@ -18,16 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class DescribeDomainsUsageByDayRequest(RpcRequest):
+class DescribeExtensiveDomainDataRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'DescribeDomainsUsageByDay')
-
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
+		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'DescribeExtensiveDomainData','None')
 
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
@@ -35,11 +29,23 @@ class DescribeDomainsUsageByDayRequest(RpcRequest):
 	def set_SecurityToken(self,SecurityToken):
 		self.add_query_param('SecurityToken',SecurityToken)
 
-	def get_DomainName(self):
-		return self.get_query_params().get('DomainName')
+	def get_ExtensiveDomain(self):
+		return self.get_query_params().get('ExtensiveDomain')
 
-	def set_DomainName(self,DomainName):
-		self.add_query_param('DomainName',DomainName)
+	def set_ExtensiveDomain(self,ExtensiveDomain):
+		self.add_query_param('ExtensiveDomain',ExtensiveDomain)
+
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
+
+	def get_EndTime(self):
+		return self.get_query_params().get('EndTime')
+
+	def set_EndTime(self,EndTime):
+		self.add_query_param('EndTime',EndTime)
 
 	def get_StartTime(self):
 		return self.get_query_params().get('StartTime')
@@ -47,8 +53,14 @@ class DescribeDomainsUsageByDayRequest(RpcRequest):
 	def set_StartTime(self,StartTime):
 		self.add_query_param('StartTime',StartTime)
 
-	def get_EndTime(self):
-		return self.get_query_params().get('EndTime')
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
 
-	def set_EndTime(self,EndTime):
-		self.add_query_param('EndTime',EndTime)
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
+
+	def get_PageNumber(self):
+		return self.get_query_params().get('PageNumber')
+
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)

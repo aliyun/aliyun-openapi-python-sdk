@@ -18,16 +18,16 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class PreloadObjectCachesRequest(RpcRequest):
+class DescribeLiveStreamRelayPushBitRateRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'PreloadObjectCaches')
+		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'DescribeLiveStreamRelayPushBitRate','None')
 
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
+	def get_AppName(self):
+		return self.get_query_params().get('AppName')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
+	def set_AppName(self,AppName):
+		self.add_query_param('AppName',AppName)
 
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
@@ -41,8 +41,14 @@ class PreloadObjectCachesRequest(RpcRequest):
 	def set_DomainName(self,DomainName):
 		self.add_query_param('DomainName',DomainName)
 
-	def get_ObjectPath(self):
-		return self.get_query_params().get('ObjectPath')
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
 
-	def set_ObjectPath(self,ObjectPath):
-		self.add_query_param('ObjectPath',ObjectPath)
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
+
+	def get_StreamName(self):
+		return self.get_query_params().get('StreamName')
+
+	def set_StreamName(self,StreamName):
+		self.add_query_param('StreamName',StreamName)

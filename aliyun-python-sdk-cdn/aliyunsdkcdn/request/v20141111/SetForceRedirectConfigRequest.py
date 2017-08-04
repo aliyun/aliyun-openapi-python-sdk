@@ -21,13 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class SetForceRedirectConfigRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'SetForceRedirectConfig')
-
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
+		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'SetForceRedirectConfig','None')
 
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
@@ -46,3 +40,9 @@ class SetForceRedirectConfigRequest(RpcRequest):
 
 	def set_RedirectType(self,RedirectType):
 		self.add_query_param('RedirectType',RedirectType)
+
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)

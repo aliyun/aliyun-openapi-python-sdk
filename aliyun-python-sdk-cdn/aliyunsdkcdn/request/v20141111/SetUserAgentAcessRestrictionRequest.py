@@ -21,13 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class SetUserAgentAcessRestrictionRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'SetUserAgentAcessRestriction')
-
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
+		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'SetUserAgentAcessRestriction','None')
 
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
@@ -46,6 +40,12 @@ class SetUserAgentAcessRestrictionRequest(RpcRequest):
 
 	def set_UserAgent(self,UserAgent):
 		self.add_query_param('UserAgent',UserAgent)
+
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
 
 	def get_Type(self):
 		return self.get_query_params().get('Type')

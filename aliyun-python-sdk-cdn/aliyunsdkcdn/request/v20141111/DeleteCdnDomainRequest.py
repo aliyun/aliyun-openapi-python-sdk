@@ -21,13 +21,13 @@ from aliyunsdkcore.request import RpcRequest
 class DeleteCdnDomainRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'DeleteCdnDomain')
+		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'DeleteCdnDomain','None')
 
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
+	def get_ResourceGroupId(self):
+		return self.get_query_params().get('ResourceGroupId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
+	def set_ResourceGroupId(self,ResourceGroupId):
+		self.add_query_param('ResourceGroupId',ResourceGroupId)
 
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
@@ -40,3 +40,9 @@ class DeleteCdnDomainRequest(RpcRequest):
 
 	def set_DomainName(self,DomainName):
 		self.add_query_param('DomainName',DomainName)
+
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)

@@ -21,13 +21,19 @@ from aliyunsdkcore.request import RpcRequest
 class SetForwardSchemeConfigRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'SetForwardSchemeConfig')
+		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'SetForwardSchemeConfig','None')
 
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
+	def get_SchemeOrigin(self):
+		return self.get_query_params().get('SchemeOrigin')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
+	def set_SchemeOrigin(self,SchemeOrigin):
+		self.add_query_param('SchemeOrigin',SchemeOrigin)
+
+	def get_SchemeOriginPort(self):
+		return self.get_query_params().get('SchemeOriginPort')
+
+	def set_SchemeOriginPort(self,SchemeOriginPort):
+		self.add_query_param('SchemeOriginPort',SchemeOriginPort)
 
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
@@ -47,14 +53,8 @@ class SetForwardSchemeConfigRequest(RpcRequest):
 	def set_DomainName(self,DomainName):
 		self.add_query_param('DomainName',DomainName)
 
-	def get_SchemeOrigin(self):
-		return self.get_query_params().get('SchemeOrigin')
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
 
-	def set_SchemeOrigin(self,SchemeOrigin):
-		self.add_query_param('SchemeOrigin',SchemeOrigin)
-
-	def get_SchemeOriginPort(self):
-		return self.get_query_params().get('SchemeOriginPort')
-
-	def set_SchemeOriginPort(self,SchemeOriginPort):
-		self.add_query_param('SchemeOriginPort',SchemeOriginPort)
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)

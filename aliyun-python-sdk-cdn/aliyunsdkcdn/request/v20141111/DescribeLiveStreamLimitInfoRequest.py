@@ -21,19 +21,19 @@ from aliyunsdkcore.request import RpcRequest
 class DescribeLiveStreamLimitInfoRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'DescribeLiveStreamLimitInfo')
-
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
+		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'DescribeLiveStreamLimitInfo','None')
 
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
 
 	def set_SecurityToken(self,SecurityToken):
 		self.add_query_param('SecurityToken',SecurityToken)
+
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
 
 	def get_LimitDomain(self):
 		return self.get_query_params().get('LimitDomain')

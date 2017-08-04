@@ -21,13 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class SetHttpErrorPageConfigRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'SetHttpErrorPageConfig')
-
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
+		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'SetHttpErrorPageConfig','None')
 
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
@@ -46,6 +40,12 @@ class SetHttpErrorPageConfigRequest(RpcRequest):
 
 	def set_PageUrl(self,PageUrl):
 		self.add_query_param('PageUrl',PageUrl)
+
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
 
 	def get_ErrorCode(self):
 		return self.get_query_params().get('ErrorCode')

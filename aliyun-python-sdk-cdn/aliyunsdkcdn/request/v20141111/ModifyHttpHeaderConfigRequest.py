@@ -21,19 +21,25 @@ from aliyunsdkcore.request import RpcRequest
 class ModifyHttpHeaderConfigRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'ModifyHttpHeaderConfig')
+		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'ModifyHttpHeaderConfig','None')
 
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
+	def get_HeaderValue(self):
+		return self.get_query_params().get('HeaderValue')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
+	def set_HeaderValue(self,HeaderValue):
+		self.add_query_param('HeaderValue',HeaderValue)
 
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
 
 	def set_SecurityToken(self,SecurityToken):
 		self.add_query_param('SecurityToken',SecurityToken)
+
+	def get_ConfigID(self):
+		return self.get_query_params().get('ConfigID')
+
+	def set_ConfigID(self,ConfigID):
+		self.add_query_param('ConfigID',ConfigID)
 
 	def get_DomainName(self):
 		return self.get_query_params().get('DomainName')
@@ -47,14 +53,8 @@ class ModifyHttpHeaderConfigRequest(RpcRequest):
 	def set_HeaderKey(self,HeaderKey):
 		self.add_query_param('HeaderKey',HeaderKey)
 
-	def get_HeaderValue(self):
-		return self.get_query_params().get('HeaderValue')
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
 
-	def set_HeaderValue(self,HeaderValue):
-		self.add_query_param('HeaderValue',HeaderValue)
-
-	def get_ConfigID(self):
-		return self.get_query_params().get('ConfigID')
-
-	def set_ConfigID(self,ConfigID):
-		self.add_query_param('ConfigID',ConfigID)
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)

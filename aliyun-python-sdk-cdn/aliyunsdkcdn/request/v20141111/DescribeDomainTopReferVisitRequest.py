@@ -21,13 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class DescribeDomainTopReferVisitRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'DescribeDomainTopReferVisit')
-
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
+		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'DescribeDomainTopReferVisit','None')
 
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
@@ -41,8 +35,20 @@ class DescribeDomainTopReferVisitRequest(RpcRequest):
 	def set_DomainName(self,DomainName):
 		self.add_query_param('DomainName',DomainName)
 
+	def get_SortBy(self):
+		return self.get_query_params().get('SortBy')
+
+	def set_SortBy(self,SortBy):
+		self.add_query_param('SortBy',SortBy)
+
 	def get_StartTime(self):
 		return self.get_query_params().get('StartTime')
 
 	def set_StartTime(self,StartTime):
 		self.add_query_param('StartTime',StartTime)
+
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)

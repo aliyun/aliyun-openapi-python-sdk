@@ -18,16 +18,16 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class SetFileCacheExpiredConfigRequest(RpcRequest):
+class DescribeLiveStreamTranscodeStreamNumRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'SetFileCacheExpiredConfig')
+		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'DescribeLiveStreamTranscodeStreamNum','None')
 
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
+	def get_PullDomain(self):
+		return self.get_query_params().get('PullDomain')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
+	def set_PullDomain(self,PullDomain):
+		self.add_query_param('PullDomain',PullDomain)
 
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
@@ -35,26 +35,14 @@ class SetFileCacheExpiredConfigRequest(RpcRequest):
 	def set_SecurityToken(self,SecurityToken):
 		self.add_query_param('SecurityToken',SecurityToken)
 
-	def get_DomainName(self):
-		return self.get_query_params().get('DomainName')
+	def get_PushDomain(self):
+		return self.get_query_params().get('PushDomain')
 
-	def set_DomainName(self,DomainName):
-		self.add_query_param('DomainName',DomainName)
+	def set_PushDomain(self,PushDomain):
+		self.add_query_param('PushDomain',PushDomain)
 
-	def get_CacheContent(self):
-		return self.get_query_params().get('CacheContent')
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
 
-	def set_CacheContent(self,CacheContent):
-		self.add_query_param('CacheContent',CacheContent)
-
-	def get_TTL(self):
-		return self.get_query_params().get('TTL')
-
-	def set_TTL(self,TTL):
-		self.add_query_param('TTL',TTL)
-
-	def get_Weight(self):
-		return self.get_query_params().get('Weight')
-
-	def set_Weight(self,Weight):
-		self.add_query_param('Weight',Weight)
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)

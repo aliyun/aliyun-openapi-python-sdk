@@ -21,13 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class SetPageCompressConfigRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'SetPageCompressConfig')
-
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
+		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'SetPageCompressConfig','None')
 
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
@@ -35,14 +29,20 @@ class SetPageCompressConfigRequest(RpcRequest):
 	def set_SecurityToken(self,SecurityToken):
 		self.add_query_param('SecurityToken',SecurityToken)
 
+	def get_Enable(self):
+		return self.get_query_params().get('Enable')
+
+	def set_Enable(self,Enable):
+		self.add_query_param('Enable',Enable)
+
 	def get_DomainName(self):
 		return self.get_query_params().get('DomainName')
 
 	def set_DomainName(self,DomainName):
 		self.add_query_param('DomainName',DomainName)
 
-	def get_Enable(self):
-		return self.get_query_params().get('Enable')
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
 
-	def set_Enable(self,Enable):
-		self.add_query_param('Enable',Enable)
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)

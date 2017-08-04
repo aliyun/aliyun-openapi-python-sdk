@@ -21,13 +21,13 @@ from aliyunsdkcore.request import RpcRequest
 class DescribeLiveSnapshotConfigRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'DescribeLiveSnapshotConfig')
+		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'DescribeLiveSnapshotConfig','None')
 
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
+	def get_AppName(self):
+		return self.get_query_params().get('AppName')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
+	def set_AppName(self,AppName):
+		self.add_query_param('AppName',AppName)
 
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
@@ -41,17 +41,17 @@ class DescribeLiveSnapshotConfigRequest(RpcRequest):
 	def set_DomainName(self,DomainName):
 		self.add_query_param('DomainName',DomainName)
 
-	def get_AppName(self):
-		return self.get_query_params().get('AppName')
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
 
-	def set_AppName(self,AppName):
-		self.add_query_param('AppName',AppName)
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
 
-	def get_StreamName(self):
-		return self.get_query_params().get('StreamName')
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
 
-	def set_StreamName(self,StreamName):
-		self.add_query_param('StreamName',StreamName)
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
 
 	def get_PageNum(self):
 		return self.get_query_params().get('PageNum')
@@ -59,11 +59,11 @@ class DescribeLiveSnapshotConfigRequest(RpcRequest):
 	def set_PageNum(self,PageNum):
 		self.add_query_param('PageNum',PageNum)
 
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
+	def get_StreamName(self):
+		return self.get_query_params().get('StreamName')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
+	def set_StreamName(self,StreamName):
+		self.add_query_param('StreamName',StreamName)
 
 	def get_Order(self):
 		return self.get_query_params().get('Order')

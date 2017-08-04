@@ -18,16 +18,16 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class ModifyFileCacheExpiredConfigRequest(RpcRequest):
+class DescribeLiveStreamFrameLossRatioRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'ModifyFileCacheExpiredConfig')
+		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'DescribeLiveStreamFrameLossRatio','None')
 
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
+	def get_AppName(self):
+		return self.get_query_params().get('AppName')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
+	def set_AppName(self,AppName):
+		self.add_query_param('AppName',AppName)
 
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
@@ -41,26 +41,26 @@ class ModifyFileCacheExpiredConfigRequest(RpcRequest):
 	def set_DomainName(self,DomainName):
 		self.add_query_param('DomainName',DomainName)
 
-	def get_ConfigID(self):
-		return self.get_query_params().get('ConfigID')
+	def get_EndTime(self):
+		return self.get_query_params().get('EndTime')
 
-	def set_ConfigID(self,ConfigID):
-		self.add_query_param('ConfigID',ConfigID)
+	def set_EndTime(self,EndTime):
+		self.add_query_param('EndTime',EndTime)
 
-	def get_CacheContent(self):
-		return self.get_query_params().get('CacheContent')
+	def get_StartTime(self):
+		return self.get_query_params().get('StartTime')
 
-	def set_CacheContent(self,CacheContent):
-		self.add_query_param('CacheContent',CacheContent)
+	def set_StartTime(self,StartTime):
+		self.add_query_param('StartTime',StartTime)
 
-	def get_TTL(self):
-		return self.get_query_params().get('TTL')
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
 
-	def set_TTL(self,TTL):
-		self.add_query_param('TTL',TTL)
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
 
-	def get_Weight(self):
-		return self.get_query_params().get('Weight')
+	def get_StreamName(self):
+		return self.get_query_params().get('StreamName')
 
-	def set_Weight(self,Weight):
-		self.add_query_param('Weight',Weight)
+	def set_StreamName(self,StreamName):
+		self.add_query_param('StreamName',StreamName)

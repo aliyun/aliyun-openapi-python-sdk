@@ -21,13 +21,13 @@ from aliyunsdkcore.request import RpcRequest
 class SetRefererConfigRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'SetRefererConfig')
+		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'SetRefererConfig','None')
 
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
+	def get_ReferList(self):
+		return self.get_query_params().get('ReferList')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
+	def set_ReferList(self,ReferList):
+		self.add_query_param('ReferList',ReferList)
 
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
@@ -47,11 +47,17 @@ class SetRefererConfigRequest(RpcRequest):
 	def set_ReferType(self,ReferType):
 		self.add_query_param('ReferType',ReferType)
 
-	def get_ReferList(self):
-		return self.get_query_params().get('ReferList')
+	def get_DisableAst(self):
+		return self.get_query_params().get('DisableAst')
 
-	def set_ReferList(self,ReferList):
-		self.add_query_param('ReferList',ReferList)
+	def set_DisableAst(self,DisableAst):
+		self.add_query_param('DisableAst',DisableAst)
+
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
 
 	def get_AllowEmpty(self):
 		return self.get_query_params().get('AllowEmpty')

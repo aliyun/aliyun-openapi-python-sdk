@@ -21,13 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class SetLocationAccessRestrictionRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'SetLocationAccessRestriction')
-
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
+		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'SetLocationAccessRestriction','None')
 
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
@@ -46,6 +40,12 @@ class SetLocationAccessRestrictionRequest(RpcRequest):
 
 	def set_Location(self,Location):
 		self.add_query_param('Location',Location)
+
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
 
 	def get_Type(self):
 		return self.get_query_params().get('Type')

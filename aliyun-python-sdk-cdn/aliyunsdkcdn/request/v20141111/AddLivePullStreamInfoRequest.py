@@ -21,37 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class AddLivePullStreamInfoRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'AddLivePullStreamInfo')
-
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_SecurityToken(self):
-		return self.get_query_params().get('SecurityToken')
-
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)
-
-	def get_DomainName(self):
-		return self.get_query_params().get('DomainName')
-
-	def set_DomainName(self,DomainName):
-		self.add_query_param('DomainName',DomainName)
-
-	def get_AppName(self):
-		return self.get_query_params().get('AppName')
-
-	def set_AppName(self,AppName):
-		self.add_query_param('AppName',AppName)
-
-	def get_StreamName(self):
-		return self.get_query_params().get('StreamName')
-
-	def set_StreamName(self,StreamName):
-		self.add_query_param('StreamName',StreamName)
+		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'AddLivePullStreamInfo','None')
 
 	def get_SourceUrl(self):
 		return self.get_query_params().get('SourceUrl')
@@ -65,14 +35,44 @@ class AddLivePullStreamInfoRequest(RpcRequest):
 	def set_Always(self,Always):
 		self.add_query_param('Always',Always)
 
-	def get_StartTime(self):
-		return self.get_query_params().get('StartTime')
+	def get_AppName(self):
+		return self.get_query_params().get('AppName')
 
-	def set_StartTime(self,StartTime):
-		self.add_query_param('StartTime',StartTime)
+	def set_AppName(self,AppName):
+		self.add_query_param('AppName',AppName)
+
+	def get_SecurityToken(self):
+		return self.get_query_params().get('SecurityToken')
+
+	def set_SecurityToken(self,SecurityToken):
+		self.add_query_param('SecurityToken',SecurityToken)
+
+	def get_DomainName(self):
+		return self.get_query_params().get('DomainName')
+
+	def set_DomainName(self,DomainName):
+		self.add_query_param('DomainName',DomainName)
 
 	def get_EndTime(self):
 		return self.get_query_params().get('EndTime')
 
 	def set_EndTime(self,EndTime):
 		self.add_query_param('EndTime',EndTime)
+
+	def get_StartTime(self):
+		return self.get_query_params().get('StartTime')
+
+	def set_StartTime(self,StartTime):
+		self.add_query_param('StartTime',StartTime)
+
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
+
+	def get_StreamName(self):
+		return self.get_query_params().get('StreamName')
+
+	def set_StreamName(self,StreamName):
+		self.add_query_param('StreamName',StreamName)

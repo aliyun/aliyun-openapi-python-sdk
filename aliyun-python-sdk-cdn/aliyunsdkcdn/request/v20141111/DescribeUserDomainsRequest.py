@@ -21,7 +21,19 @@ from aliyunsdkcore.request import RpcRequest
 class DescribeUserDomainsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'DescribeUserDomains')
+		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'DescribeUserDomains','None')
+
+	def get_Sources(self):
+		return self.get_query_params().get('Sources')
+
+	def set_Sources(self,Sources):
+		self.add_query_param('Sources',Sources)
+
+	def get_DomainName(self):
+		return self.get_query_params().get('DomainName')
+
+	def set_DomainName(self,DomainName):
+		self.add_query_param('DomainName',DomainName)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
@@ -29,29 +41,11 @@ class DescribeUserDomainsRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_SecurityToken(self):
-		return self.get_query_params().get('SecurityToken')
-
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)
-
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
 	def get_PageNumber(self):
 		return self.get_query_params().get('PageNumber')
 
 	def set_PageNumber(self,PageNumber):
 		self.add_query_param('PageNumber',PageNumber)
-
-	def get_DomainName(self):
-		return self.get_query_params().get('DomainName')
-
-	def set_DomainName(self,DomainName):
-		self.add_query_param('DomainName',DomainName)
 
 	def get_DomainStatus(self):
 		return self.get_query_params().get('DomainStatus')
@@ -65,14 +59,32 @@ class DescribeUserDomainsRequest(RpcRequest):
 	def set_DomainSearchType(self,DomainSearchType):
 		self.add_query_param('DomainSearchType',DomainSearchType)
 
-	def get_Sources(self):
-		return self.get_query_params().get('Sources')
+	def get_CheckDomainShow(self):
+		return self.get_query_params().get('CheckDomainShow')
 
-	def set_Sources(self,Sources):
-		self.add_query_param('Sources',Sources)
+	def set_CheckDomainShow(self,CheckDomainShow):
+		self.add_query_param('CheckDomainShow',CheckDomainShow)
+
+	def get_ResourceGroupId(self):
+		return self.get_query_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self,ResourceGroupId):
+		self.add_query_param('ResourceGroupId',ResourceGroupId)
+
+	def get_SecurityToken(self):
+		return self.get_query_params().get('SecurityToken')
+
+	def set_SecurityToken(self,SecurityToken):
+		self.add_query_param('SecurityToken',SecurityToken)
 
 	def get_CdnType(self):
 		return self.get_query_params().get('CdnType')
 
 	def set_CdnType(self,CdnType):
 		self.add_query_param('CdnType',CdnType)
+
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)

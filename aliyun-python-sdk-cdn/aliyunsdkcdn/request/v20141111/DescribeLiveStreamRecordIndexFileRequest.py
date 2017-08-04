@@ -21,13 +21,19 @@ from aliyunsdkcore.request import RpcRequest
 class DescribeLiveStreamRecordIndexFileRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'DescribeLiveStreamRecordIndexFile')
+		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'DescribeLiveStreamRecordIndexFile','None')
 
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
+	def get_RecordId(self):
+		return self.get_query_params().get('RecordId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
+	def set_RecordId(self,RecordId):
+		self.add_query_param('RecordId',RecordId)
+
+	def get_AppName(self):
+		return self.get_query_params().get('AppName')
+
+	def set_AppName(self,AppName):
+		self.add_query_param('AppName',AppName)
 
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
@@ -41,20 +47,14 @@ class DescribeLiveStreamRecordIndexFileRequest(RpcRequest):
 	def set_DomainName(self,DomainName):
 		self.add_query_param('DomainName',DomainName)
 
-	def get_AppName(self):
-		return self.get_query_params().get('AppName')
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
 
-	def set_AppName(self,AppName):
-		self.add_query_param('AppName',AppName)
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
 
 	def get_StreamName(self):
 		return self.get_query_params().get('StreamName')
 
 	def set_StreamName(self,StreamName):
 		self.add_query_param('StreamName',StreamName)
-
-	def get_RecordId(self):
-		return self.get_query_params().get('RecordId')
-
-	def set_RecordId(self,RecordId):
-		self.add_query_param('RecordId',RecordId)
