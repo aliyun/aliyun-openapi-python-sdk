@@ -21,7 +21,19 @@ from aliyunsdkcore.request import RpcRequest
 class QueryPushStatByAppRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Push', '2016-08-01', 'QueryPushStatByApp')
+		RpcRequest.__init__(self, 'Push', '2016-08-01', 'QueryPushStatByApp','None')
+
+	def get_Granularity(self):
+		return self.get_query_params().get('Granularity')
+
+	def set_Granularity(self,Granularity):
+		self.add_query_param('Granularity',Granularity)
+
+	def get_EndTime(self):
+		return self.get_query_params().get('EndTime')
+
+	def set_EndTime(self,EndTime):
+		self.add_query_param('EndTime',EndTime)
 
 	def get_AppKey(self):
 		return self.get_query_params().get('AppKey')
@@ -34,15 +46,3 @@ class QueryPushStatByAppRequest(RpcRequest):
 
 	def set_StartTime(self,StartTime):
 		self.add_query_param('StartTime',StartTime)
-
-	def get_EndTime(self):
-		return self.get_query_params().get('EndTime')
-
-	def set_EndTime(self,EndTime):
-		self.add_query_param('EndTime',EndTime)
-
-	def get_Granularity(self):
-		return self.get_query_params().get('Granularity')
-
-	def set_Granularity(self,Granularity):
-		self.add_query_param('Granularity',Granularity)

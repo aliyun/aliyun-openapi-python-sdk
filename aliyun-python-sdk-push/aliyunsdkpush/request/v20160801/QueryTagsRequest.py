@@ -21,19 +21,19 @@ from aliyunsdkcore.request import RpcRequest
 class QueryTagsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Push', '2016-08-01', 'QueryTags')
-
-	def get_AppKey(self):
-		return self.get_query_params().get('AppKey')
-
-	def set_AppKey(self,AppKey):
-		self.add_query_param('AppKey',AppKey)
+		RpcRequest.__init__(self, 'Push', '2016-08-01', 'QueryTags','None')
 
 	def get_ClientKey(self):
 		return self.get_query_params().get('ClientKey')
 
 	def set_ClientKey(self,ClientKey):
 		self.add_query_param('ClientKey',ClientKey)
+
+	def get_AppKey(self):
+		return self.get_query_params().get('AppKey')
+
+	def set_AppKey(self,AppKey):
+		self.add_query_param('AppKey',AppKey)
 
 	def get_KeyType(self):
 		return self.get_query_params().get('KeyType')

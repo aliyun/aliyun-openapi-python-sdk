@@ -18,37 +18,19 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class QueryDeviceStatRequest(RpcRequest):
+class RemoveTagRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Push', '2016-08-01', 'QueryDeviceStat','None')
+		RpcRequest.__init__(self, 'Push', '2016-08-01', 'RemoveTag','None')
 
-	def get_EndTime(self):
-		return self.get_query_params().get('EndTime')
+	def get_TagName(self):
+		return self.get_query_params().get('TagName')
 
-	def set_EndTime(self,EndTime):
-		self.add_query_param('EndTime',EndTime)
+	def set_TagName(self,TagName):
+		self.add_query_param('TagName',TagName)
 
 	def get_AppKey(self):
 		return self.get_query_params().get('AppKey')
 
 	def set_AppKey(self,AppKey):
 		self.add_query_param('AppKey',AppKey)
-
-	def get_StartTime(self):
-		return self.get_query_params().get('StartTime')
-
-	def set_StartTime(self,StartTime):
-		self.add_query_param('StartTime',StartTime)
-
-	def get_DeviceType(self):
-		return self.get_query_params().get('DeviceType')
-
-	def set_DeviceType(self,DeviceType):
-		self.add_query_param('DeviceType',DeviceType)
-
-	def get_QueryType(self):
-		return self.get_query_params().get('QueryType')
-
-	def set_QueryType(self,QueryType):
-		self.add_query_param('QueryType',QueryType)

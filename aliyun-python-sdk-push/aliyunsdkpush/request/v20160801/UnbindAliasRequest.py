@@ -21,13 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class UnbindAliasRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Push', '2016-08-01', 'UnbindAlias')
-
-	def get_AppKey(self):
-		return self.get_query_params().get('AppKey')
-
-	def set_AppKey(self,AppKey):
-		self.add_query_param('AppKey',AppKey)
+		RpcRequest.__init__(self, 'Push', '2016-08-01', 'UnbindAlias','None')
 
 	def get_AliasName(self):
 		return self.get_query_params().get('AliasName')
@@ -35,8 +29,20 @@ class UnbindAliasRequest(RpcRequest):
 	def set_AliasName(self,AliasName):
 		self.add_query_param('AliasName',AliasName)
 
+	def get_AppKey(self):
+		return self.get_query_params().get('AppKey')
+
+	def set_AppKey(self,AppKey):
+		self.add_query_param('AppKey',AppKey)
+
 	def get_DeviceId(self):
 		return self.get_query_params().get('DeviceId')
 
 	def set_DeviceId(self,DeviceId):
 		self.add_query_param('DeviceId',DeviceId)
+
+	def get_UnbindAll(self):
+		return self.get_query_params().get('UnbindAll')
+
+	def set_UnbindAll(self,UnbindAll):
+		self.add_query_param('UnbindAll',UnbindAll)

@@ -21,19 +21,19 @@ from aliyunsdkcore.request import RpcRequest
 class BindAliasRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Push', '2016-08-01', 'BindAlias')
-
-	def get_AppKey(self):
-		return self.get_query_params().get('AppKey')
-
-	def set_AppKey(self,AppKey):
-		self.add_query_param('AppKey',AppKey)
+		RpcRequest.__init__(self, 'Push', '2016-08-01', 'BindAlias','None')
 
 	def get_AliasName(self):
 		return self.get_query_params().get('AliasName')
 
 	def set_AliasName(self,AliasName):
 		self.add_query_param('AliasName',AliasName)
+
+	def get_AppKey(self):
+		return self.get_query_params().get('AppKey')
+
+	def set_AppKey(self,AppKey):
+		self.add_query_param('AppKey',AppKey)
 
 	def get_DeviceId(self):
 		return self.get_query_params().get('DeviceId')

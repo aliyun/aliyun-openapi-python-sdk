@@ -21,25 +21,13 @@ from aliyunsdkcore.request import RpcRequest
 class ListPushRecordsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Push', '2016-08-01', 'ListPushRecords')
+		RpcRequest.__init__(self, 'Push', '2016-08-01', 'ListPushRecords','None')
 
-	def get_AppKey(self):
-		return self.get_query_params().get('AppKey')
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
 
-	def set_AppKey(self,AppKey):
-		self.add_query_param('AppKey',AppKey)
-
-	def get_PushType(self):
-		return self.get_query_params().get('PushType')
-
-	def set_PushType(self,PushType):
-		self.add_query_param('PushType',PushType)
-
-	def get_StartTime(self):
-		return self.get_query_params().get('StartTime')
-
-	def set_StartTime(self,StartTime):
-		self.add_query_param('StartTime',StartTime)
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
 
 	def get_EndTime(self):
 		return self.get_query_params().get('EndTime')
@@ -47,14 +35,26 @@ class ListPushRecordsRequest(RpcRequest):
 	def set_EndTime(self,EndTime):
 		self.add_query_param('EndTime',EndTime)
 
+	def get_AppKey(self):
+		return self.get_query_params().get('AppKey')
+
+	def set_AppKey(self,AppKey):
+		self.add_query_param('AppKey',AppKey)
+
+	def get_StartTime(self):
+		return self.get_query_params().get('StartTime')
+
+	def set_StartTime(self,StartTime):
+		self.add_query_param('StartTime',StartTime)
+
 	def get_Page(self):
 		return self.get_query_params().get('Page')
 
 	def set_Page(self,Page):
 		self.add_query_param('Page',Page)
 
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
+	def get_PushType(self):
+		return self.get_query_params().get('PushType')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
+	def set_PushType(self,PushType):
+		self.add_query_param('PushType',PushType)

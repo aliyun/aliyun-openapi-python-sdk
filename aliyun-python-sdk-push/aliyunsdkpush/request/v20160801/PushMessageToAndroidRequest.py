@@ -21,19 +21,13 @@ from aliyunsdkcore.request import RpcRequest
 class PushMessageToAndroidRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Push', '2016-08-01', 'PushMessageToAndroid')
+		RpcRequest.__init__(self, 'Push', '2016-08-01', 'PushMessageToAndroid','None')
 
 	def get_AppKey(self):
 		return self.get_query_params().get('AppKey')
 
 	def set_AppKey(self,AppKey):
 		self.add_query_param('AppKey',AppKey)
-
-	def get_Target(self):
-		return self.get_query_params().get('Target')
-
-	def set_Target(self,Target):
-		self.add_query_param('Target',Target)
 
 	def get_TargetValue(self):
 		return self.get_query_params().get('TargetValue')
@@ -52,3 +46,15 @@ class PushMessageToAndroidRequest(RpcRequest):
 
 	def set_Body(self,Body):
 		self.add_query_param('Body',Body)
+
+	def get_JobKey(self):
+		return self.get_query_params().get('JobKey')
+
+	def set_JobKey(self,JobKey):
+		self.add_query_param('JobKey',JobKey)
+
+	def get_Target(self):
+		return self.get_query_params().get('Target')
+
+	def set_Target(self,Target):
+		self.add_query_param('Target',Target)
