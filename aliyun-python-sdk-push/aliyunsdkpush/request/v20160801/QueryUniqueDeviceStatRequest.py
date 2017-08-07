@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class QueryUniqueDeviceStatRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Push', '2016-08-01', 'QueryUniqueDeviceStat','None')
+		RpcRequest.__init__(self, 'Push', '2016-08-01', 'QueryUniqueDeviceStat')
 
 	def get_Granularity(self):
 		return self.get_query_params().get('Granularity')

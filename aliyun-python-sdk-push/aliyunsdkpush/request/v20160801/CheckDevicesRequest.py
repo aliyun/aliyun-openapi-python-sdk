@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class CheckDevicesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Push', '2016-08-01', 'CheckDevices','None')
+		RpcRequest.__init__(self, 'Push', '2016-08-01', 'CheckDevices')
 
 	def get_DeviceIds(self):
 		return self.get_query_params().get('DeviceIds')

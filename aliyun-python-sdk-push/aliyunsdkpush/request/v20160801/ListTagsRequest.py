@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class ListTagsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Push', '2016-08-01', 'ListTags','None')
+		RpcRequest.__init__(self, 'Push', '2016-08-01', 'ListTags')
 
 	def get_AppKey(self):
 		return self.get_query_params().get('AppKey')

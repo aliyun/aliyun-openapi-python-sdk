@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class QueryAliasesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Push', '2016-08-01', 'QueryAliases','None')
+		RpcRequest.__init__(self, 'Push', '2016-08-01', 'QueryAliases')
 
 	def get_AppKey(self):
 		return self.get_query_params().get('AppKey')

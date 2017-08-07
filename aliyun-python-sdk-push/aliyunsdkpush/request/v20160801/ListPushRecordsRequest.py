@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class ListPushRecordsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Push', '2016-08-01', 'ListPushRecords','None')
+		RpcRequest.__init__(self, 'Push', '2016-08-01', 'ListPushRecords')
 
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')

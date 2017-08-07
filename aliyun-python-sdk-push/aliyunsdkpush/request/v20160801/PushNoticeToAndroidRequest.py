@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class PushNoticeToAndroidRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Push', '2016-08-01', 'PushNoticeToAndroid','None')
+		RpcRequest.__init__(self, 'Push', '2016-08-01', 'PushNoticeToAndroid')
 
 	def get_ExtParameters(self):
 		return self.get_query_params().get('ExtParameters')

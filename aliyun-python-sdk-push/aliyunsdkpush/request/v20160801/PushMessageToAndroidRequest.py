@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class PushMessageToAndroidRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Push', '2016-08-01', 'PushMessageToAndroid','None')
+		RpcRequest.__init__(self, 'Push', '2016-08-01', 'PushMessageToAndroid')
 
 	def get_AppKey(self):
 		return self.get_query_params().get('AppKey')

@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class RemoveTagRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Push', '2016-08-01', 'RemoveTag','None')
+		RpcRequest.__init__(self, 'Push', '2016-08-01', 'RemoveTag')
 
 	def get_TagName(self):
 		return self.get_query_params().get('TagName')

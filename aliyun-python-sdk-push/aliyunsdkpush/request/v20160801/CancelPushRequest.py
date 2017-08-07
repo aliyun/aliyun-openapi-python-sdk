@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class CancelPushRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Push', '2016-08-01', 'CancelPush','None')
+		RpcRequest.__init__(self, 'Push', '2016-08-01', 'CancelPush')
 
 	def get_MessageId(self):
 		return self.get_query_params().get('MessageId')

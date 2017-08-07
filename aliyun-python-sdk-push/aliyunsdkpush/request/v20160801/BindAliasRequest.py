@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class BindAliasRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Push', '2016-08-01', 'BindAlias','None')
+		RpcRequest.__init__(self, 'Push', '2016-08-01', 'BindAlias')
 
 	def get_AliasName(self):
 		return self.get_query_params().get('AliasName')

@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class QueryPushStatByMsgRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Push', '2016-08-01', 'QueryPushStatByMsg','None')
+		RpcRequest.__init__(self, 'Push', '2016-08-01', 'QueryPushStatByMsg')
 
 	def get_MessageId(self):
 		return self.get_query_params().get('MessageId')

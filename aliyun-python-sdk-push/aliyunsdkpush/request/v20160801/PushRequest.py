@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class PushRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Push', '2016-08-01', 'Push','None')
+		RpcRequest.__init__(self, 'Push', '2016-08-01', 'Push')
 
 	def get_AndroidNotificationBarType(self):
 		return self.get_query_params().get('AndroidNotificationBarType')
