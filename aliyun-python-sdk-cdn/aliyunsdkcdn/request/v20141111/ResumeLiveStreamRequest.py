@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class ResumeLiveStreamRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'ResumeLiveStream','None')
+		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'ResumeLiveStream')
 
 	def get_AppName(self):
 		return self.get_query_params().get('AppName')

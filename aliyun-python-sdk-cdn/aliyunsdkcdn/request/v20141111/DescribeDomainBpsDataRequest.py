@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class DescribeDomainBpsDataRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'DescribeDomainBpsData','None')
+		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'DescribeDomainBpsData')
 
 	def get_DomainType(self):
 		return self.get_query_params().get('DomainType')

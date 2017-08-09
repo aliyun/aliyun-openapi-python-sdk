@@ -21,7 +21,13 @@ from aliyunsdkcore.request import RpcRequest
 class ModifyCdnDomainRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'ModifyCdnDomain','None')
+		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'ModifyCdnDomain')
+
+	def get_TopLevelDomain(self):
+		return self.get_query_params().get('TopLevelDomain')
+
+	def set_TopLevelDomain(self,TopLevelDomain):
+		self.add_query_param('TopLevelDomain',TopLevelDomain)
 
 	def get_SourcePort(self):
 		return self.get_query_params().get('SourcePort')

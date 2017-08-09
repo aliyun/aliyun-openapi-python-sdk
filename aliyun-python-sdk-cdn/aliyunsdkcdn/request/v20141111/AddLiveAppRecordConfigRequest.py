@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class AddLiveAppRecordConfigRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'AddLiveAppRecordConfig','None')
+		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'AddLiveAppRecordConfig')
 
 	def get_OssBucket(self):
 		return self.get_query_params().get('OssBucket')

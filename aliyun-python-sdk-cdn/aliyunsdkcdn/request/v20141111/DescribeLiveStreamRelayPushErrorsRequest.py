@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class DescribeLiveStreamRelayPushErrorsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'DescribeLiveStreamRelayPushErrors','None')
+		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'DescribeLiveStreamRelayPushErrors')
 
 	def get_RelayDomain(self):
 		return self.get_query_params().get('RelayDomain')

@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class SetHttpHeaderConfigRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'SetHttpHeaderConfig','None')
+		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'SetHttpHeaderConfig')
 
 	def get_HeaderValue(self):
 		return self.get_query_params().get('HeaderValue')

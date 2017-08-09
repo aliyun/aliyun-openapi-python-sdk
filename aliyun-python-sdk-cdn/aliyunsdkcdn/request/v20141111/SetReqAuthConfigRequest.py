@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class SetReqAuthConfigRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'SetReqAuthConfig','None')
+		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'SetReqAuthConfig')
 
 	def get_Key1(self):
 		return self.get_query_params().get('Key1')

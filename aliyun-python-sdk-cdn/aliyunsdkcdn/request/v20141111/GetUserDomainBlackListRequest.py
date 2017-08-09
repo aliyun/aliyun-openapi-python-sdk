@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class GetUserDomainBlackListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'GetUserDomainBlackList','None')
+		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'GetUserDomainBlackList')
 
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')

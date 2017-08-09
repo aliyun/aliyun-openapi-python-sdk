@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class DescribeUserCustomerLabelsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'DescribeUserCustomerLabels','None')
+		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'DescribeUserCustomerLabels')
 
 	def get_Uid(self):
 		return self.get_query_params().get('Uid')

@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class SetRemoteReqAuthConfigRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'SetRemoteReqAuthConfig','None')
+		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'SetRemoteReqAuthConfig')
 
 	def get_AuthPath(self):
 		return self.get_query_params().get('AuthPath')

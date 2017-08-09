@@ -18,10 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class SetUserAgentAcessRestrictionRequest(RpcRequest):
+class DescribeDomainMonthBillingBpsDataRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'SetUserAgentAcessRestriction')
+		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'DescribeDomainMonthBillingBpsData')
 
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
@@ -29,26 +29,32 @@ class SetUserAgentAcessRestrictionRequest(RpcRequest):
 	def set_SecurityToken(self,SecurityToken):
 		self.add_query_param('SecurityToken',SecurityToken)
 
+	def get_InternetChargeType(self):
+		return self.get_query_params().get('InternetChargeType')
+
+	def set_InternetChargeType(self,InternetChargeType):
+		self.add_query_param('InternetChargeType',InternetChargeType)
+
 	def get_DomainName(self):
 		return self.get_query_params().get('DomainName')
 
 	def set_DomainName(self,DomainName):
 		self.add_query_param('DomainName',DomainName)
 
-	def get_UserAgent(self):
-		return self.get_query_params().get('UserAgent')
+	def get_EndTime(self):
+		return self.get_query_params().get('EndTime')
 
-	def set_UserAgent(self,UserAgent):
-		self.add_query_param('UserAgent',UserAgent)
+	def set_EndTime(self,EndTime):
+		self.add_query_param('EndTime',EndTime)
+
+	def get_StartTime(self):
+		return self.get_query_params().get('StartTime')
+
+	def set_StartTime(self,StartTime):
+		self.add_query_param('StartTime',StartTime)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
-
-	def get_Type(self):
-		return self.get_query_params().get('Type')
-
-	def set_Type(self,Type):
-		self.add_query_param('Type',Type)

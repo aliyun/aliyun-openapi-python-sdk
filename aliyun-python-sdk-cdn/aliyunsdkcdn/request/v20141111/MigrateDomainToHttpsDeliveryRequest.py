@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class MigrateDomainToHttpsDeliveryRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'MigrateDomainToHttpsDelivery','None')
+		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'MigrateDomainToHttpsDelivery')
 
 	def get_PrivateKey(self):
 		return self.get_query_params().get('PrivateKey')

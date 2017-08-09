@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class DeleteLiveDomainMappingRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'DeleteLiveDomainMapping','None')
+		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'DeleteLiveDomainMapping')
 
 	def get_PullDomain(self):
 		return self.get_query_params().get('PullDomain')

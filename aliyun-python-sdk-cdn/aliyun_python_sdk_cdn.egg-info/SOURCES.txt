@@ -45,6 +45,7 @@ aliyunsdkcdn/request/v20141111/DescribeDomainHttpCodeDataRequest.py
 aliyunsdkcdn/request/v20141111/DescribeDomainHttpsDataRequest.py
 aliyunsdkcdn/request/v20141111/DescribeDomainISPDataRequest.py
 aliyunsdkcdn/request/v20141111/DescribeDomainMax95BpsDataRequest.py
+aliyunsdkcdn/request/v20141111/DescribeDomainMonthBillingBpsDataRequest.py
 aliyunsdkcdn/request/v20141111/DescribeDomainOnlineUserNumberRequest.py
 aliyunsdkcdn/request/v20141111/DescribeDomainPathDataRequest.py
 aliyunsdkcdn/request/v20141111/DescribeDomainPvDataRequest.py
