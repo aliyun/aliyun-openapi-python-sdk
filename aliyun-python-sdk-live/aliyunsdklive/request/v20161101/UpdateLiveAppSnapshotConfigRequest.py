@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class UpdateLiveAppSnapshotConfigRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'live', '2016-11-01', 'UpdateLiveAppSnapshotConfig','None')
+		RpcRequest.__init__(self, 'live', '2016-11-01', 'UpdateLiveAppSnapshotConfig')
 
 	def get_TimeInterval(self):
 		return self.get_query_params().get('TimeInterval')

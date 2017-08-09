@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class ImagePornDetectionRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'live', '2016-11-01', 'ImagePornDetection','None')
+		RpcRequest.__init__(self, 'live', '2016-11-01', 'ImagePornDetection')
 
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')

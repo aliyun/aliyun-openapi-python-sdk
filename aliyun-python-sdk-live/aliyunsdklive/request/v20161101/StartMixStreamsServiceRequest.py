@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class StartMixStreamsServiceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'live', '2016-11-01', 'StartMixStreamsService','None')
+		RpcRequest.__init__(self, 'live', '2016-11-01', 'StartMixStreamsService')
 
 	def get_MixType(self):
 		return self.get_query_params().get('MixType')
