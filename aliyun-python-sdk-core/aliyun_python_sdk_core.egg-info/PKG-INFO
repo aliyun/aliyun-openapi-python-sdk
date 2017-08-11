@@ -1,6 +1,6 @@
-Metadata-Version: 1.1
+Metadata-Version: 1.2
 Name: aliyun-python-sdk-core
-Version: 2.3.5
+Version: 2.3.6
 Summary: The core module of Aliyun Python SDK.
 Home-page: http://develop.aliyun.com/sdk/python
 Author: Aliyun
@@ -35,3 +35,4 @@ Classifier: Programming Language :: Python :: 2.7
 Classifier: Programming Language :: Python :: 3
 Classifier: Programming Language :: Python :: 3.3
 Classifier: Topic :: Software Development
+Requires-Python: <3

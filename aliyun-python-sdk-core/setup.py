@@ -56,6 +56,7 @@ setup(
     keywords=["aliyun", "sdk", "core"],
     packages=find_packages(exclude=["tests*"]),
     include_package_data=True,
+    python_requires='<3',
     platforms='any',
     classifiers=(
         'Development Status :: 5 - Production/Stable',

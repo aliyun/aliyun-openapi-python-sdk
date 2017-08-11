@@ -22,6 +22,8 @@ import os
 import sys
 import httplib
 import warnings
+import urllib
+
 warnings.filterwarnings("once", category=DeprecationWarning)
 
 try:
@@ -36,6 +38,7 @@ from .acs_exception.exceptions import ServerException
 from .acs_exception import error_code, error_msg
 from .http.http_response import HttpResponse
 from .request import AcsRequest
+from .http import format_type
 
 """
 Acs default client module.
@@ -172,6 +175,10 @@ class AcsClient:
         return endpoint
 
     def _make_http_response(self, endpoint, request):
+        if request.get_body_params() is not None:
+            body = urllib.urlencode(request.get_body_params())
+            request.set_content(body)
+            request.set_content_type(format_type.APPLICATION_FORM)
         content = request.get_content()
         method = request.get_method()
         header = request.get_signed_header(
@@ -197,6 +204,9 @@ class AcsClient:
             protocol,
             content,
             self._port)
+        if request.get_body_params() is not None:
+            body = urllib.urlencode(request.get_body_params())
+            response.set_content(body, "utf-8", format_type.APPLICATION_FORM)
         return response
 
     def _implementation_of_do_action(self, request):
