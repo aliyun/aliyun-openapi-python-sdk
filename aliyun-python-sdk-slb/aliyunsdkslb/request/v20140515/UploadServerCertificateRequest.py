@@ -21,19 +21,13 @@ from aliyunsdkcore.request import RpcRequest
 class UploadServerCertificateRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Slb', '2014-05-15', 'UploadServerCertificate')
+		RpcRequest.__init__(self, 'Slb', '2014-05-15', 'UploadServerCertificate','slb')
 
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
+	def get_access_key_id(self):
+		return self.get_query_params().get('access_key_id')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
-
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+	def set_access_key_id(self,access_key_id):
+		self.add_query_param('access_key_id',access_key_id)
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -47,17 +41,11 @@ class UploadServerCertificateRequest(RpcRequest):
 	def set_ServerCertificate(self,ServerCertificate):
 		self.add_query_param('ServerCertificate',ServerCertificate)
 
-	def get_PrivateKey(self):
-		return self.get_query_params().get('PrivateKey')
+	def get_ResourceOwnerAccount(self):
+		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_PrivateKey(self,PrivateKey):
-		self.add_query_param('PrivateKey',PrivateKey)
-
-	def get_ServerCertificateName(self):
-		return self.get_query_params().get('ServerCertificateName')
-
-	def set_ServerCertificateName(self,ServerCertificateName):
-		self.add_query_param('ServerCertificateName',ServerCertificateName)
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
@@ -65,14 +53,44 @@ class UploadServerCertificateRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
-	def get_access_key_id(self):
-		return self.get_query_params().get('access_key_id')
+	def get_AliCloudCertificateName(self):
+		return self.get_query_params().get('AliCloudCertificateName')
 
-	def set_access_key_id(self,access_key_id):
-		self.add_query_param('access_key_id',access_key_id)
+	def set_AliCloudCertificateName(self,AliCloudCertificateName):
+		self.add_query_param('AliCloudCertificateName',AliCloudCertificateName)
+
+	def get_AliCloudCertificateId(self):
+		return self.get_query_params().get('AliCloudCertificateId')
+
+	def set_AliCloudCertificateId(self,AliCloudCertificateId):
+		self.add_query_param('AliCloudCertificateId',AliCloudCertificateId)
+
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
 
 	def get_Tags(self):
 		return self.get_query_params().get('Tags')
 
 	def set_Tags(self,Tags):
 		self.add_query_param('Tags',Tags)
+
+	def get_PrivateKey(self):
+		return self.get_query_params().get('PrivateKey')
+
+	def set_PrivateKey(self,PrivateKey):
+		self.add_query_param('PrivateKey',PrivateKey)
+
+	def get_ResourceGroupId(self):
+		return self.get_query_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self,ResourceGroupId):
+		self.add_query_param('ResourceGroupId',ResourceGroupId)
+
+	def get_ServerCertificateName(self):
+		return self.get_query_params().get('ServerCertificateName')
+
+	def set_ServerCertificateName(self,ServerCertificateName):
+		self.add_query_param('ServerCertificateName',ServerCertificateName)

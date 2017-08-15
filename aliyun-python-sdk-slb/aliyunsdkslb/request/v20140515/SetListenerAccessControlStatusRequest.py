@@ -21,19 +21,13 @@ from aliyunsdkcore.request import RpcRequest
 class SetListenerAccessControlStatusRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Slb', '2014-05-15', 'SetListenerAccessControlStatus')
+		RpcRequest.__init__(self, 'Slb', '2014-05-15', 'SetListenerAccessControlStatus','slb')
 
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
+	def get_access_key_id(self):
+		return self.get_query_params().get('access_key_id')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
-
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+	def set_access_key_id(self,access_key_id):
+		self.add_query_param('access_key_id',access_key_id)
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -41,23 +35,23 @@ class SetListenerAccessControlStatusRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_LoadBalancerId(self):
-		return self.get_query_params().get('LoadBalancerId')
-
-	def set_LoadBalancerId(self,LoadBalancerId):
-		self.add_query_param('LoadBalancerId',LoadBalancerId)
-
 	def get_ListenerPort(self):
 		return self.get_query_params().get('ListenerPort')
 
 	def set_ListenerPort(self,ListenerPort):
 		self.add_query_param('ListenerPort',ListenerPort)
 
-	def get_AccessControlStatus(self):
-		return self.get_query_params().get('AccessControlStatus')
+	def get_LoadBalancerId(self):
+		return self.get_query_params().get('LoadBalancerId')
 
-	def set_AccessControlStatus(self,AccessControlStatus):
-		self.add_query_param('AccessControlStatus',AccessControlStatus)
+	def set_LoadBalancerId(self,LoadBalancerId):
+		self.add_query_param('LoadBalancerId',LoadBalancerId)
+
+	def get_ResourceOwnerAccount(self):
+		return self.get_query_params().get('ResourceOwnerAccount')
+
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
@@ -65,11 +59,17 @@ class SetListenerAccessControlStatusRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
-	def get_access_key_id(self):
-		return self.get_query_params().get('access_key_id')
+	def get_AccessControlStatus(self):
+		return self.get_query_params().get('AccessControlStatus')
 
-	def set_access_key_id(self,access_key_id):
-		self.add_query_param('access_key_id',access_key_id)
+	def set_AccessControlStatus(self,AccessControlStatus):
+		self.add_query_param('AccessControlStatus',AccessControlStatus)
+
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
 
 	def get_Tags(self):
 		return self.get_query_params().get('Tags')
