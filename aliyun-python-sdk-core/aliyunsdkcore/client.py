@@ -187,9 +187,9 @@ class AcsClient:
             self.get_access_secret())
         if self.get_user_agent() is not None:
             header['User-Agent'] = self.get_user_agent()
-            header['x-sdk-client'] = 'python/2.0.0'
         if header is None:
             header = {}
+        header['x-sdk-client'] = 'python/2.0.0'
 
         protocol = request.get_protocol_type()
         url = request.get_url(
