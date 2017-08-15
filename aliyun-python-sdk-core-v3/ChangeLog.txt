@@ -1,3 +1,6 @@
+2017-08-15 Version: 2.3.7
+1, 修正某些场景下x-sdk-client未生效的bug
+
 2017-08-15 Version: 2.3.6
 1, 修正某些场景下x-sdk-client未生效的bug
 
