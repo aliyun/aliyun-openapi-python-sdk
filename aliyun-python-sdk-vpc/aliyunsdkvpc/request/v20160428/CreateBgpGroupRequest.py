@@ -18,34 +18,28 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class FillBandwidthPackageParamRequest(RpcRequest):
+class CreateBgpGroupRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'FillBandwidthPackageParam','vpc')
+		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'CreateBgpGroup','vpc')
 
-	def get_data(self):
-		return self.get_query_params().get('data')
+	def get_AuthKey(self):
+		return self.get_query_params().get('AuthKey')
 
-	def set_data(self,data):
-		self.add_query_param('data',data)
-
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
-
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+	def set_AuthKey(self,AuthKey):
+		self.add_query_param('AuthKey',AuthKey)
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+
+	def get_ResourceOwnerAccount(self):
+		return self.get_query_params().get('ResourceOwnerAccount')
+
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
 	def get_ClientToken(self):
 		return self.get_query_params().get('ClientToken')
@@ -59,8 +53,38 @@ class FillBandwidthPackageParamRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
-	def get_UserCidr(self):
-		return self.get_query_params().get('UserCidr')
+	def get_Description(self):
+		return self.get_query_params().get('Description')
 
-	def set_UserCidr(self,UserCidr):
-		self.add_query_param('UserCidr',UserCidr)
+	def set_Description(self,Description):
+		self.add_query_param('Description',Description)
+
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
+
+	def get_PeerAsn(self):
+		return self.get_query_params().get('PeerAsn')
+
+	def set_PeerAsn(self,PeerAsn):
+		self.add_query_param('PeerAsn',PeerAsn)
+
+	def get_IsFakeAsn(self):
+		return self.get_query_params().get('IsFakeAsn')
+
+	def set_IsFakeAsn(self,IsFakeAsn):
+		self.add_query_param('IsFakeAsn',IsFakeAsn)
+
+	def get_RouterId(self):
+		return self.get_query_params().get('RouterId')
+
+	def set_RouterId(self,RouterId):
+		self.add_query_param('RouterId',RouterId)
+
+	def get_Name(self):
+		return self.get_query_params().get('Name')
+
+	def set_Name(self,Name):
+		self.add_query_param('Name',Name)

@@ -23,17 +23,11 @@ class ModifyRouterInterfaceAttributeRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'ModifyRouterInterfaceAttribute','vpc')
 
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
+	def get_OppositeRouterId(self):
+		return self.get_query_params().get('OppositeRouterId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
-
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+	def set_OppositeRouterId(self,OppositeRouterId):
+		self.add_query_param('OppositeRouterId',OppositeRouterId)
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -41,17 +35,11 @@ class ModifyRouterInterfaceAttributeRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_RouterInterfaceId(self):
-		return self.get_query_params().get('RouterInterfaceId')
+	def get_ResourceOwnerAccount(self):
+		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_RouterInterfaceId(self,RouterInterfaceId):
-		self.add_query_param('RouterInterfaceId',RouterInterfaceId)
-
-	def get_Name(self):
-		return self.get_query_params().get('Name')
-
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
 	def get_Description(self):
 		return self.get_query_params().get('Description')
@@ -59,23 +47,23 @@ class ModifyRouterInterfaceAttributeRequest(RpcRequest):
 	def set_Description(self,Description):
 		self.add_query_param('Description',Description)
 
-	def get_OppositeInterfaceId(self):
-		return self.get_query_params().get('OppositeInterfaceId')
+	def get_HealthCheckTargetIp(self):
+		return self.get_query_params().get('HealthCheckTargetIp')
 
-	def set_OppositeInterfaceId(self,OppositeInterfaceId):
-		self.add_query_param('OppositeInterfaceId',OppositeInterfaceId)
+	def set_HealthCheckTargetIp(self,HealthCheckTargetIp):
+		self.add_query_param('HealthCheckTargetIp',HealthCheckTargetIp)
 
-	def get_OppositeRouterId(self):
-		return self.get_query_params().get('OppositeRouterId')
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
 
-	def set_OppositeRouterId(self,OppositeRouterId):
-		self.add_query_param('OppositeRouterId',OppositeRouterId)
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
 
-	def get_OppositeRouterType(self):
-		return self.get_query_params().get('OppositeRouterType')
+	def get_RouterInterfaceId(self):
+		return self.get_query_params().get('RouterInterfaceId')
 
-	def set_OppositeRouterType(self,OppositeRouterType):
-		self.add_query_param('OppositeRouterType',OppositeRouterType)
+	def set_RouterInterfaceId(self,RouterInterfaceId):
+		self.add_query_param('RouterInterfaceId',RouterInterfaceId)
 
 	def get_OppositeInterfaceOwnerId(self):
 		return self.get_query_params().get('OppositeInterfaceOwnerId')
@@ -89,8 +77,20 @@ class ModifyRouterInterfaceAttributeRequest(RpcRequest):
 	def set_HealthCheckSourceIp(self,HealthCheckSourceIp):
 		self.add_query_param('HealthCheckSourceIp',HealthCheckSourceIp)
 
-	def get_HealthCheckTargetIp(self):
-		return self.get_query_params().get('HealthCheckTargetIp')
+	def get_Name(self):
+		return self.get_query_params().get('Name')
 
-	def set_HealthCheckTargetIp(self,HealthCheckTargetIp):
-		self.add_query_param('HealthCheckTargetIp',HealthCheckTargetIp)
+	def set_Name(self,Name):
+		self.add_query_param('Name',Name)
+
+	def get_OppositeRouterType(self):
+		return self.get_query_params().get('OppositeRouterType')
+
+	def set_OppositeRouterType(self,OppositeRouterType):
+		self.add_query_param('OppositeRouterType',OppositeRouterType)
+
+	def get_OppositeInterfaceId(self):
+		return self.get_query_params().get('OppositeInterfaceId')
+
+	def set_OppositeInterfaceId(self,OppositeInterfaceId):
+		self.add_query_param('OppositeInterfaceId',OppositeInterfaceId)

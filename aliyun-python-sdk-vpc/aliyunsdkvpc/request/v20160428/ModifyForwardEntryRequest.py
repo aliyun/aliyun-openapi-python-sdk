@@ -23,11 +23,11 @@ class ModifyForwardEntryRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'ModifyForwardEntry','vpc')
 
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
+	def get_ResourceOwnerId(self):
+		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
+	def set_ResourceOwnerId(self,ResourceOwnerId):
+		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -35,11 +35,11 @@ class ModifyForwardEntryRequest(RpcRequest):
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
-	def get_ResourceOwnerId(self):
-		return self.get_query_params().get('ResourceOwnerId')
+	def get_IpProtocol(self):
+		return self.get_query_params().get('IpProtocol')
 
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+	def set_IpProtocol(self,IpProtocol):
+		self.add_query_param('IpProtocol',IpProtocol)
 
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
@@ -53,11 +53,29 @@ class ModifyForwardEntryRequest(RpcRequest):
 	def set_ForwardTableId(self,ForwardTableId):
 		self.add_query_param('ForwardTableId',ForwardTableId)
 
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
+
+	def get_InternalIp(self):
+		return self.get_query_params().get('InternalIp')
+
+	def set_InternalIp(self,InternalIp):
+		self.add_query_param('InternalIp',InternalIp)
+
 	def get_ForwardEntryId(self):
 		return self.get_query_params().get('ForwardEntryId')
 
 	def set_ForwardEntryId(self,ForwardEntryId):
 		self.add_query_param('ForwardEntryId',ForwardEntryId)
+
+	def get_InternalPort(self):
+		return self.get_query_params().get('InternalPort')
+
+	def set_InternalPort(self,InternalPort):
+		self.add_query_param('InternalPort',InternalPort)
 
 	def get_ExternalIp(self):
 		return self.get_query_params().get('ExternalIp')
@@ -70,21 +88,3 @@ class ModifyForwardEntryRequest(RpcRequest):
 
 	def set_ExternalPort(self,ExternalPort):
 		self.add_query_param('ExternalPort',ExternalPort)
-
-	def get_InternalIp(self):
-		return self.get_query_params().get('InternalIp')
-
-	def set_InternalIp(self,InternalIp):
-		self.add_query_param('InternalIp',InternalIp)
-
-	def get_InternalPort(self):
-		return self.get_query_params().get('InternalPort')
-
-	def set_InternalPort(self,InternalPort):
-		self.add_query_param('InternalPort',InternalPort)
-
-	def get_IpProtocol(self):
-		return self.get_query_params().get('IpProtocol')
-
-	def set_IpProtocol(self,IpProtocol):
-		self.add_query_param('IpProtocol',IpProtocol)

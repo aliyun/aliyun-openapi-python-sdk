@@ -23,17 +23,11 @@ class EnablePhysicalConnectionRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'EnablePhysicalConnection','vpc')
 
-	def get_PhysicalConnectionId(self):
-		return self.get_query_params().get('PhysicalConnectionId')
+	def get_ResourceOwnerId(self):
+		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_PhysicalConnectionId(self,PhysicalConnectionId):
-		self.add_query_param('PhysicalConnectionId',PhysicalConnectionId)
-
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
+	def set_ResourceOwnerId(self,ResourceOwnerId):
+		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -41,17 +35,17 @@ class EnablePhysicalConnectionRequest(RpcRequest):
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
-	def get_ResourceOwnerId(self):
-		return self.get_query_params().get('ResourceOwnerId')
-
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
 	def get_ClientToken(self):
 		return self.get_query_params().get('ClientToken')
 
 	def set_ClientToken(self,ClientToken):
 		self.add_query_param('ClientToken',ClientToken)
+
+	def get_PhysicalConnectionId(self):
+		return self.get_query_params().get('PhysicalConnectionId')
+
+	def set_PhysicalConnectionId(self,PhysicalConnectionId):
+		self.add_query_param('PhysicalConnectionId',PhysicalConnectionId)
 
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
@@ -64,3 +58,9 @@ class EnablePhysicalConnectionRequest(RpcRequest):
 
 	def set_UserCidr(self,UserCidr):
 		self.add_query_param('UserCidr',UserCidr)
+
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)

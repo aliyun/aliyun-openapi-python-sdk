@@ -23,11 +23,17 @@ class DeleteBandwidthPackageRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'DeleteBandwidthPackage','vpc')
 
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
+	def get_ResourceOwnerId(self):
+		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
+	def set_ResourceOwnerId(self,ResourceOwnerId):
+		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+
+	def get_BandwidthPackageId(self):
+		return self.get_query_params().get('BandwidthPackageId')
+
+	def set_BandwidthPackageId(self,BandwidthPackageId):
+		self.add_query_param('BandwidthPackageId',BandwidthPackageId)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -35,20 +41,20 @@ class DeleteBandwidthPackageRequest(RpcRequest):
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
-	def get_ResourceOwnerId(self):
-		return self.get_query_params().get('ResourceOwnerId')
-
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
 
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
-	def get_BandwidthPackageId(self):
-		return self.get_query_params().get('BandwidthPackageId')
+	def get_Force(self):
+		return self.get_query_params().get('Force')
 
-	def set_BandwidthPackageId(self,BandwidthPackageId):
-		self.add_query_param('BandwidthPackageId',BandwidthPackageId)
+	def set_Force(self,Force):
+		self.add_query_param('Force',Force)
+
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)

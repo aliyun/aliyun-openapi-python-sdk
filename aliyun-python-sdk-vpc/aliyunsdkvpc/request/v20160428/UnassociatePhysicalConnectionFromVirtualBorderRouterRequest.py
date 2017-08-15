@@ -18,28 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class FillBandwidthPackageInstanceIdRequest(RpcRequest):
+class UnassociatePhysicalConnectionFromVirtualBorderRouterRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'FillBandwidthPackageInstanceId','vpc')
-
-	def get_data(self):
-		return self.get_query_params().get('data')
-
-	def set_data(self,data):
-		self.add_query_param('data',data)
-
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
-
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'UnassociatePhysicalConnectionFromVirtualBorderRouter','vpc')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -47,11 +29,23 @@ class FillBandwidthPackageInstanceIdRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_ResourceOwnerAccount(self):
+		return self.get_query_params().get('ResourceOwnerAccount')
+
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+
 	def get_ClientToken(self):
 		return self.get_query_params().get('ClientToken')
 
 	def set_ClientToken(self,ClientToken):
 		self.add_query_param('ClientToken',ClientToken)
+
+	def get_PhysicalConnectionId(self):
+		return self.get_query_params().get('PhysicalConnectionId')
+
+	def set_PhysicalConnectionId(self,PhysicalConnectionId):
+		self.add_query_param('PhysicalConnectionId',PhysicalConnectionId)
 
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
@@ -64,3 +58,15 @@ class FillBandwidthPackageInstanceIdRequest(RpcRequest):
 
 	def set_UserCidr(self,UserCidr):
 		self.add_query_param('UserCidr',UserCidr)
+
+	def get_VbrId(self):
+		return self.get_query_params().get('VbrId')
+
+	def set_VbrId(self,VbrId):
+		self.add_query_param('VbrId',VbrId)
+
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)

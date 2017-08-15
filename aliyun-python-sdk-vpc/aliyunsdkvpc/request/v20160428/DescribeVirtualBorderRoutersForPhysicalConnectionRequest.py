@@ -23,23 +23,15 @@ class DescribeVirtualBorderRoutersForPhysicalConnectionRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'DescribeVirtualBorderRoutersForPhysicalConnection','vpc')
 
-	def get_Filter(self):
-		return self.get_query_params().get('Filter')
+	def get_Filters(self):
+		return self.get_query_params().get('Filters')
 
-	def set_Filter(self,Filter):
-		self.add_query_param('Filter',Filter)
+	def set_Filters(self,Filters):
+		for i in range(len(Filters)):	
+			self.add_query_param('Filter.' + bytes(i + 1) + '.Key' , Filters[i].get('Key'))
+			for j in range(len(Filters[i].get('Values'))):
+					self.add_query_param('Filter.' + bytes(i + 1) + '.Value.'+bytes(j + 1), Filters[i].get('Values')[j])
 
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
-
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -47,20 +39,32 @@ class DescribeVirtualBorderRoutersForPhysicalConnectionRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_ResourceOwnerAccount(self):
+		return self.get_query_params().get('ResourceOwnerAccount')
+
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+
 	def get_PhysicalConnectionId(self):
 		return self.get_query_params().get('PhysicalConnectionId')
 
 	def set_PhysicalConnectionId(self,PhysicalConnectionId):
 		self.add_query_param('PhysicalConnectionId',PhysicalConnectionId)
 
-	def get_PageNumber(self):
-		return self.get_query_params().get('PageNumber')
-
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
-
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
 
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
+
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
+
+	def get_PageNumber(self):
+		return self.get_query_params().get('PageNumber')
+
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)

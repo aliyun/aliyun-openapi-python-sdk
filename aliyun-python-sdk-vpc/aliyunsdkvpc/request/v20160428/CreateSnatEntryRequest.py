@@ -23,11 +23,17 @@ class CreateSnatEntryRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'CreateSnatEntry','vpc')
 
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
+	def get_ResourceOwnerId(self):
+		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
+	def set_ResourceOwnerId(self,ResourceOwnerId):
+		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+
+	def get_SourceVSwitchId(self):
+		return self.get_query_params().get('SourceVSwitchId')
+
+	def set_SourceVSwitchId(self,SourceVSwitchId):
+		self.add_query_param('SourceVSwitchId',SourceVSwitchId)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -35,17 +41,17 @@ class CreateSnatEntryRequest(RpcRequest):
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
-	def get_ResourceOwnerId(self):
-		return self.get_query_params().get('ResourceOwnerId')
-
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
 
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
+
+	def get_SourceCIDR(self):
+		return self.get_query_params().get('SourceCIDR')
+
+	def set_SourceCIDR(self,SourceCIDR):
+		self.add_query_param('SourceCIDR',SourceCIDR)
 
 	def get_SnatTableId(self):
 		return self.get_query_params().get('SnatTableId')
@@ -53,11 +59,11 @@ class CreateSnatEntryRequest(RpcRequest):
 	def set_SnatTableId(self,SnatTableId):
 		self.add_query_param('SnatTableId',SnatTableId)
 
-	def get_SourceVSwitchId(self):
-		return self.get_query_params().get('SourceVSwitchId')
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
 
-	def set_SourceVSwitchId(self,SourceVSwitchId):
-		self.add_query_param('SourceVSwitchId',SourceVSwitchId)
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
 
 	def get_SnatIp(self):
 		return self.get_query_params().get('SnatIp')
