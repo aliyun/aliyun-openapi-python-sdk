@@ -23,17 +23,17 @@ class QueryContactRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Domain', '2016-05-11', 'QueryContact')
 
+	def get_ContactType(self):
+		return self.get_query_params().get('ContactType')
+
+	def set_ContactType(self,ContactType):
+		self.add_query_param('ContactType',ContactType)
+
 	def get_UserClientIp(self):
 		return self.get_query_params().get('UserClientIp')
 
 	def set_UserClientIp(self,UserClientIp):
 		self.add_query_param('UserClientIp',UserClientIp)
-
-	def get_Lang(self):
-		return self.get_query_params().get('Lang')
-
-	def set_Lang(self,Lang):
-		self.add_query_param('Lang',Lang)
 
 	def get_DomainName(self):
 		return self.get_query_params().get('DomainName')
@@ -41,8 +41,8 @@ class QueryContactRequest(RpcRequest):
 	def set_DomainName(self,DomainName):
 		self.add_query_param('DomainName',DomainName)
 
-	def get_ContactType(self):
-		return self.get_query_params().get('ContactType')
+	def get_Lang(self):
+		return self.get_query_params().get('Lang')
 
-	def set_ContactType(self,ContactType):
-		self.add_query_param('ContactType',ContactType)
+	def set_Lang(self,Lang):
+		self.add_query_param('Lang',Lang)

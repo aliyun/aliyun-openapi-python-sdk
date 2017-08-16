@@ -24,51 +24,12 @@ class CreateOrderRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Domain', '2016-05-11', 'CreateOrder')
 
 	def get_SubOrderParams(self):
-		return self._subOrderParams
+		return self.get_query_params().get('SubOrderParams')
 
-	def set_SubOrderParams(self, SubOrderParams):
-		self._subOrderParams = SubOrderParams;
-		for i in range(len(SubOrderParams)):
-			self.add_query_param("SubOrderParam.%d.SaleID" %(i+1), SubOrderParams[i].get_SaleID());
-			self.add_query_param("SubOrderParam.%d.RelatedName" % (i+1), SubOrderParams[i].get_RelatedName());
-			self.add_query_param("SubOrderParam.%d.Action" % (i+1) , SubOrderParams[i].get_Action());
-			self.add_query_param("SubOrderParam.%d.Period" % (i+1), SubOrderParams[i].get_Period());
-			self.add_query_param("SubOrderParam.%d.DomainTemplateID" % (i+1), SubOrderParams[i].get_DomainTemplateID());
-
-class SubOrderParam(object):
-	def __init__(self):
-		self._SaleID = ''
-		self._RelatedName = ''
-		self._Action = ''
-		self._Period = 0
-		self._DomainTemplateID = ''
-
-	def get_SaleID(self):
-		return self._SaleID
-
-	def set_SaleID(self, SaleID):
-		self._SaleID = SaleID
-
-	def get_RelatedName(self):
-		return self._RelatedName
-
-	def set_RelatedName(self, RelatedName):
-		self._RelatedName = RelatedName
-
-	def get_Action(self):
-		return self._Action
-
-	def set_Action(self, Action):
-		self._Action = Action
-
-	def get_Period(self):
-		return self._Period
-
-	def set_Period(self, Period):
-		self._Period = Period
-
-	def get_DomainTemplateID(self):
-		return self._DomainTemplateID
-
-	def set_DomainTemplateID(self, DomainTemplateID):
-		self._DomainTemplateID = DomainTemplateID
+	def set_SubOrderParams(self,SubOrderParams):
+		for i in range(len(SubOrderParams)):	
+			self.add_query_param('SubOrderParam.' + bytes(i + 1) + '.SaleID' , SubOrderParams[i].get('SaleID'))
+			self.add_query_param('SubOrderParam.' + bytes(i + 1) + '.RelatedName' , SubOrderParams[i].get('RelatedName'))
+			self.add_query_param('SubOrderParam.' + bytes(i + 1) + '.Action' , SubOrderParams[i].get('Action'))
+			self.add_query_param('SubOrderParam.' + bytes(i + 1) + '.Period' , SubOrderParams[i].get('Period'))
+			self.add_query_param('SubOrderParam.' + bytes(i + 1) + '.DomainTemplateID' , SubOrderParams[i].get('DomainTemplateID'))

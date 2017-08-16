@@ -18,16 +18,16 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class QueryBatchTaskDetailListRequest(RpcRequest):
+class SaveTaskForSubmittingDomainNameCredentialRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Domain', '2016-05-11', 'QueryBatchTaskDetailList')
+		RpcRequest.__init__(self, 'Domain', '2016-05-11', 'SaveTaskForSubmittingDomainNameCredential')
 
-	def get_TaskStatus(self):
-		return self.get_query_params().get('TaskStatus')
+	def get_CredentialNo(self):
+		return self.get_query_params().get('CredentialNo')
 
-	def set_TaskStatus(self,TaskStatus):
-		self.add_query_param('TaskStatus',TaskStatus)
+	def set_CredentialNo(self,CredentialNo):
+		self.add_query_param('CredentialNo',CredentialNo)
 
 	def get_SaleId(self):
 		return self.get_query_params().get('SaleId')
@@ -35,17 +35,17 @@ class QueryBatchTaskDetailListRequest(RpcRequest):
 	def set_SaleId(self,SaleId):
 		self.add_query_param('SaleId',SaleId)
 
+	def get_Credential(self):
+		return self.get_query_params().get('Credential')
+
+	def set_Credential(self,Credential):
+		self.add_query_param('Credential',Credential)
+
 	def get_UserClientIp(self):
 		return self.get_query_params().get('UserClientIp')
 
 	def set_UserClientIp(self,UserClientIp):
 		self.add_query_param('UserClientIp',UserClientIp)
-
-	def get_TaskNo(self):
-		return self.get_query_params().get('TaskNo')
-
-	def set_TaskNo(self,TaskNo):
-		self.add_query_param('TaskNo',TaskNo)
 
 	def get_DomainName(self):
 		return self.get_query_params().get('DomainName')
@@ -53,20 +53,8 @@ class QueryBatchTaskDetailListRequest(RpcRequest):
 	def set_DomainName(self,DomainName):
 		self.add_query_param('DomainName',DomainName)
 
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
 	def get_Lang(self):
 		return self.get_query_params().get('Lang')
 
 	def set_Lang(self,Lang):
 		self.add_query_param('Lang',Lang)
-
-	def get_PageNum(self):
-		return self.get_query_params().get('PageNum')
-
-	def set_PageNum(self,PageNum):
-		self.add_query_param('PageNum',PageNum)

@@ -23,6 +23,12 @@ class QueryDomainBySaleIdRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Domain', '2016-05-11', 'QueryDomainBySaleId')
 
+	def get_SaleId(self):
+		return self.get_query_params().get('SaleId')
+
+	def set_SaleId(self,SaleId):
+		self.add_query_param('SaleId',SaleId)
+
 	def get_UserClientIp(self):
 		return self.get_query_params().get('UserClientIp')
 
@@ -34,9 +40,3 @@ class QueryDomainBySaleIdRequest(RpcRequest):
 
 	def set_Lang(self,Lang):
 		self.add_query_param('Lang',Lang)
-
-	def get_SaleId(self):
-		return self.get_query_params().get('SaleId')
-
-	def set_SaleId(self,SaleId):
-		self.add_query_param('SaleId',SaleId)

@@ -23,17 +23,11 @@ class WhoisProtectionRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Domain', '2016-05-11', 'WhoisProtection')
 
-	def get_UserClientIp(self):
-		return self.get_query_params().get('UserClientIp')
+	def get_WhoisProtect(self):
+		return self.get_query_params().get('WhoisProtect')
 
-	def set_UserClientIp(self,UserClientIp):
-		self.add_query_param('UserClientIp',UserClientIp)
-
-	def get_Lang(self):
-		return self.get_query_params().get('Lang')
-
-	def set_Lang(self,Lang):
-		self.add_query_param('Lang',Lang)
+	def set_WhoisProtect(self,WhoisProtect):
+		self.add_query_param('WhoisProtect',WhoisProtect)
 
 	def get_DataSource(self):
 		return self.get_query_params().get('DataSource')
@@ -41,14 +35,20 @@ class WhoisProtectionRequest(RpcRequest):
 	def set_DataSource(self,DataSource):
 		self.add_query_param('DataSource',DataSource)
 
+	def get_UserClientIp(self):
+		return self.get_query_params().get('UserClientIp')
+
+	def set_UserClientIp(self,UserClientIp):
+		self.add_query_param('UserClientIp',UserClientIp)
+
 	def get_DataContent(self):
 		return self.get_query_params().get('DataContent')
 
 	def set_DataContent(self,DataContent):
 		self.add_query_param('DataContent',DataContent)
 
-	def get_WhoisProtect(self):
-		return self.get_query_params().get('WhoisProtect')
+	def get_Lang(self):
+		return self.get_query_params().get('Lang')
 
-	def set_WhoisProtect(self,WhoisProtect):
-		self.add_query_param('WhoisProtect',WhoisProtect)
+	def set_Lang(self,Lang):
+		self.add_query_param('Lang',Lang)

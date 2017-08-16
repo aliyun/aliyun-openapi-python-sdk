@@ -18,25 +18,37 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class DeleteContactTemplateRequest(RpcRequest):
+class OSuborderDomainRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Domain', '2016-05-11', 'DeleteContactTemplate')
+		RpcRequest.__init__(self, 'Domain', '2016-05-11', 'OSuborderDomain')
 
-	def get_UserClientIp(self):
-		return self.get_query_params().get('UserClientIp')
+	def get_endDate(self):
+		return self.get_query_params().get('endDate')
 
-	def set_UserClientIp(self,UserClientIp):
-		self.add_query_param('UserClientIp',UserClientIp)
+	def set_endDate(self,endDate):
+		self.add_query_param('endDate',endDate)
 
-	def get_Lang(self):
-		return self.get_query_params().get('Lang')
+	def get_pageSize(self):
+		return self.get_query_params().get('pageSize')
 
-	def set_Lang(self,Lang):
-		self.add_query_param('Lang',Lang)
+	def set_pageSize(self,pageSize):
+		self.add_query_param('pageSize',pageSize)
 
-	def get_ContactTemplateId(self):
-		return self.get_query_params().get('ContactTemplateId')
+	def get_type(self):
+		return self.get_query_params().get('type')
 
-	def set_ContactTemplateId(self,ContactTemplateId):
-		self.add_query_param('ContactTemplateId',ContactTemplateId)
+	def set_type(self,type):
+		self.add_query_param('type',type)
+
+	def get_startDate(self):
+		return self.get_query_params().get('startDate')
+
+	def set_startDate(self,startDate):
+		self.add_query_param('startDate',startDate)
+
+	def get_pageNum(self):
+		return self.get_query_params().get('pageNum')
+
+	def set_pageNum(self,pageNum):
+		self.add_query_param('pageNum',pageNum)

@@ -23,11 +23,41 @@ class QueryContactTemplateRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Domain', '2016-05-11', 'QueryContactTemplate')
 
+	def get_CCompany(self):
+		return self.get_query_params().get('CCompany')
+
+	def set_CCompany(self,CCompany):
+		self.add_query_param('CCompany',CCompany)
+
+	def get_AuditStatus(self):
+		return self.get_query_params().get('AuditStatus')
+
+	def set_AuditStatus(self,AuditStatus):
+		self.add_query_param('AuditStatus',AuditStatus)
+
+	def get_DefaultTemplate(self):
+		return self.get_query_params().get('DefaultTemplate')
+
+	def set_DefaultTemplate(self,DefaultTemplate):
+		self.add_query_param('DefaultTemplate',DefaultTemplate)
+
+	def get_ECompany(self):
+		return self.get_query_params().get('ECompany')
+
+	def set_ECompany(self,ECompany):
+		self.add_query_param('ECompany',ECompany)
+
 	def get_UserClientIp(self):
 		return self.get_query_params().get('UserClientIp')
 
 	def set_UserClientIp(self,UserClientIp):
 		self.add_query_param('UserClientIp',UserClientIp)
+
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
 
 	def get_Lang(self):
 		return self.get_query_params().get('Lang')
@@ -35,14 +65,20 @@ class QueryContactTemplateRequest(RpcRequest):
 	def set_Lang(self,Lang):
 		self.add_query_param('Lang',Lang)
 
-	def get_CCompany(self):
-		return self.get_query_params().get('CCompany')
+	def get_PageNum(self):
+		return self.get_query_params().get('PageNum')
 
-	def set_CCompany(self,CCompany):
-		self.add_query_param('CCompany',CCompany)
+	def set_PageNum(self,PageNum):
+		self.add_query_param('PageNum',PageNum)
 
-	def get_ECompany(self):
-		return self.get_query_params().get('ECompany')
+	def get_ContactTemplateId(self):
+		return self.get_query_params().get('ContactTemplateId')
 
-	def set_ECompany(self,ECompany):
-		self.add_query_param('ECompany',ECompany)
+	def set_ContactTemplateId(self,ContactTemplateId):
+		self.add_query_param('ContactTemplateId',ContactTemplateId)
+
+	def get_RegType(self):
+		return self.get_query_params().get('RegType')
+
+	def set_RegType(self,RegType):
+		self.add_query_param('RegType',RegType)
