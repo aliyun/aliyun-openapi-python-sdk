@@ -105,7 +105,7 @@ class HttpRequest:
         str_md5 = self.md5_sum(content)
         content_length = len(content)
         content_type = format_type.RAW
-        if format is not None:
+        if format is None:
             content_type = format
         self.__headers[self.content_md5] = str_md5
         self.__headers[self.content_length] = content_length

@@ -80,7 +80,6 @@ class AcsRequest:
         self.__params = {}
         self.__method = method
         self.__header = {}
-        self.__body_params = {}
         self.__uri_pattern = None
         self.__uri_params = None
         self.__content = None
@@ -91,14 +90,6 @@ class AcsRequest:
         if self.__params is None:
             self.__params = {}
         self.__params[k] = v
-
-    def add_body_params(self, k, v):
-        if self.__body_params is None:
-            self.__body_params = {}
-        self.__body_params[k] = v
-
-    def get_body_params(self):
-        return self.__body_params
 
     def get_uri_pattern(self):
         return self.__uri_pattern
@@ -199,8 +190,8 @@ class AcsRequest:
     def get_location_service_code(self):
         return self.__location_service_code
 
-    def set_content_type(self, content_type):
-        self.add_header("Content-Type", content_type)
+    def get_location_endpoint_type(self):
+        return self.__location_endpoint_type
 
     @abc.abstractmethod
     def get_style(self):
@@ -251,7 +242,6 @@ class RpcRequest(AcsRequest):
         req_params['Version'] = self.get_version()
         req_params['Action'] = self.get_action_name()
         req_params['Format'] = self.get_accept_format()
-
         return req_params
 
     def get_url(self, region_id, ak, secret):
@@ -263,8 +253,7 @@ class RpcRequest(AcsRequest):
             ak,
             secret,
             self.get_accept_format(),
-            self.get_method(),
-            self.get_body_params())
+            self.get_method())
         return url
 
     def get_signed_header(self, region_id=None, ak=None, secret=None):
