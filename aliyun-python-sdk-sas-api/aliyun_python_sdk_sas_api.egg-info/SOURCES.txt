@@ -1,0 +1,14 @@
+MANIFEST.in
+README.rst
+setup.py
+aliyun_python_sdk_sas_api.egg-info/PKG-INFO
+aliyun_python_sdk_sas_api.egg-info/SOURCES.txt
+aliyun_python_sdk_sas_api.egg-info/dependency_links.txt
+aliyun_python_sdk_sas_api.egg-info/requires.txt
+aliyun_python_sdk_sas_api.egg-info/top_level.txt
+aliyunsdksas_api/__init__.py
+aliyunsdksas_api/request/__init__.py
+aliyunsdksas_api/request/v20170705/GetInstanceCountRequest.py
+aliyunsdksas_api/request/v20170705/GetIpProfileRequest.py
+aliyunsdksas_api/request/v20170705/GetPhoneProfileRequest.py
+aliyunsdksas_api/request/v20170705/__init__.py
