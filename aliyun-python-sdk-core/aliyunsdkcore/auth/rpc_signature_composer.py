@@ -74,12 +74,10 @@ def __get_signature(string_to_sign, secret, signer=mac1):
     return signer.get_sign_string(string_to_sign, secret + '&')
 
 
-def get_signed_url(params, ak, secret, accept_format, method, body_params, signer=mac1):
-    url_params = __refresh_sign_parameters(params, ak, accept_format, signer)
-    sign_params = dict(url_params)
-    sign_params.update(body_params)
+def get_signed_url(params, ak, secret, accept_format, method, signer=mac1):
+    sign_params = __refresh_sign_parameters(params, ak, accept_format, signer)
     string_to_sign = __compose_string_to_sign(method, sign_params)
     signature = __get_signature(string_to_sign, secret, signer)
-    url_params['Signature'] = signature
-    url = '/?' + __pop_standard_urlencode(url_params)
+    sign_params['Signature'] = signature
+    url = '/?' + __pop_standard_urlencode(sign_params)
     return url
