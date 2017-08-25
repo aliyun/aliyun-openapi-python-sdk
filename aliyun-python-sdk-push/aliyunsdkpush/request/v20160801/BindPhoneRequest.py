@@ -18,22 +18,16 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class UnbindTagRequest(RpcRequest):
+class BindPhoneRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Push', '2016-08-01', 'UnbindTag')
+		RpcRequest.__init__(self, 'Push', '2016-08-01', 'BindPhone')
 
-	def get_TagName(self):
-		return self.get_query_params().get('TagName')
+	def get_PhoneNumber(self):
+		return self.get_query_params().get('PhoneNumber')
 
-	def set_TagName(self,TagName):
-		self.add_query_param('TagName',TagName)
-
-	def get_ClientKey(self):
-		return self.get_query_params().get('ClientKey')
-
-	def set_ClientKey(self,ClientKey):
-		self.add_query_param('ClientKey',ClientKey)
+	def set_PhoneNumber(self,PhoneNumber):
+		self.add_query_param('PhoneNumber',PhoneNumber)
 
 	def get_AppKey(self):
 		return self.get_query_params().get('AppKey')
@@ -41,8 +35,8 @@ class UnbindTagRequest(RpcRequest):
 	def set_AppKey(self,AppKey):
 		self.add_query_param('AppKey',AppKey)
 
-	def get_KeyType(self):
-		return self.get_query_params().get('KeyType')
+	def get_DeviceId(self):
+		return self.get_query_params().get('DeviceId')
 
-	def set_KeyType(self,KeyType):
-		self.add_query_param('KeyType',KeyType)
+	def set_DeviceId(self,DeviceId):
+		self.add_query_param('DeviceId',DeviceId)

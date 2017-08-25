@@ -9,6 +9,7 @@ aliyun_python_sdk_push.egg-info/top_level.txt
 aliyunsdkpush/__init__.py
 aliyunsdkpush/request/__init__.py
 aliyunsdkpush/request/v20160801/BindAliasRequest.py
+aliyunsdkpush/request/v20160801/BindPhoneRequest.py
 aliyunsdkpush/request/v20160801/BindTagRequest.py
 aliyunsdkpush/request/v20160801/CancelPushRequest.py
 aliyunsdkpush/request/v20160801/CheckDeviceRequest.py
@@ -31,5 +32,6 @@ aliyunsdkpush/request/v20160801/QueryTagsRequest.py
 aliyunsdkpush/request/v20160801/QueryUniqueDeviceStatRequest.py
 aliyunsdkpush/request/v20160801/RemoveTagRequest.py
 aliyunsdkpush/request/v20160801/UnbindAliasRequest.py
+aliyunsdkpush/request/v20160801/UnbindPhoneRequest.py
 aliyunsdkpush/request/v20160801/UnbindTagRequest.py
 aliyunsdkpush/request/v20160801/__init__.py
