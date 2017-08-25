@@ -1334,6 +1334,7 @@
             <Product><ProductName>Kms</ProductName><DomainName>kms.eu-central-1.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Cms</ProductName><DomainName>metrics.cn-hangzhou.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Slb</ProductName><DomainName>slb.eu-central-1.aliyuncs.com</DomainName></Product>
+	    <Product><ProductName>Emr</ProductName><DomainName>emr.eu-central-1.aliyuncs.com</DomainName></Product>
         </Products>
     </Endpoint>
     <Endpoint name="cn-zhangjiakou">
@@ -1344,6 +1345,7 @@
             <Product><ProductName>Vpc</ProductName><DomainName>vpc.cn-zhangjiakou.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Cms</ProductName><DomainName>metrics.cn-hangzhou.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Slb</ProductName><DomainName>slb.cn-zhangjiakou.aliyuncs.com</DomainName></Product>
+	    <Product><ProductName>Emr</ProductName><DomainName>emr.cn-zhangjiakou.aliyuncs.com</DomainName></Product>
         </Products>
     </Endpoint>
 </Endpoints>
