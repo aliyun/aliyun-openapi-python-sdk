@@ -61,6 +61,7 @@ aliyunsdkcdn/request/v20141111/DescribeDomainUpstreamBpsOfEdgeRequest.py
 aliyunsdkcdn/request/v20141111/DescribeDomainUpstreamOfCenterRequest.py
 aliyunsdkcdn/request/v20141111/DescribeDomainUvDataRequest.py
 aliyunsdkcdn/request/v20141111/DescribeDomainsBySourceRequest.py
+aliyunsdkcdn/request/v20141111/DescribeDomainsUsageByDayRequest.py
 aliyunsdkcdn/request/v20141111/DescribeExtensiveDomainDataRequest.py
 aliyunsdkcdn/request/v20141111/DescribeIpInfoRequest.py
 aliyunsdkcdn/request/v20141111/DescribeL2VipsByDomainRequest.py
@@ -104,6 +105,7 @@ aliyunsdkcdn/request/v20141111/DescribeOneMinuteDataRequest.py
 aliyunsdkcdn/request/v20141111/DescribeRangeDataByLocateAndIspServiceRequest.py
 aliyunsdkcdn/request/v20141111/DescribeRefreshQuotaRequest.py
 aliyunsdkcdn/request/v20141111/DescribeRefreshTasksRequest.py
+aliyunsdkcdn/request/v20141111/DescribeTopDomainsByFlowRequest.py
 aliyunsdkcdn/request/v20141111/DescribeUserConfigsRequest.py
 aliyunsdkcdn/request/v20141111/DescribeUserCustomerLabelsRequest.py
 aliyunsdkcdn/request/v20141111/DescribeUserDomainsRequest.py

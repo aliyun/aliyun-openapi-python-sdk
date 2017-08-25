@@ -29,6 +29,12 @@ class DescribeDomainHttpsDataRequest(RpcRequest):
 	def set_DomainType(self,DomainType):
 		self.add_query_param('DomainType',DomainType)
 
+	def get_FixTimeGap(self):
+		return self.get_query_params().get('FixTimeGap')
+
+	def set_FixTimeGap(self,FixTimeGap):
+		self.add_query_param('FixTimeGap',FixTimeGap)
+
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
 

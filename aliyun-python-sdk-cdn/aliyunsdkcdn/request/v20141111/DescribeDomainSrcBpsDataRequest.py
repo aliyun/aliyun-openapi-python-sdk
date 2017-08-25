@@ -23,6 +23,12 @@ class DescribeDomainSrcBpsDataRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'DescribeDomainSrcBpsData')
 
+	def get_FixTimeGap(self):
+		return self.get_query_params().get('FixTimeGap')
+
+	def set_FixTimeGap(self,FixTimeGap):
+		self.add_query_param('FixTimeGap',FixTimeGap)
+
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
 

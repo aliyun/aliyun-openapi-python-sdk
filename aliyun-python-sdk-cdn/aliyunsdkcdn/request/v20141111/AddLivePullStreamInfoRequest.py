@@ -29,12 +29,6 @@ class AddLivePullStreamInfoRequest(RpcRequest):
 	def set_SourceUrl(self,SourceUrl):
 		self.add_query_param('SourceUrl',SourceUrl)
 
-	def get_Always(self):
-		return self.get_query_params().get('Always')
-
-	def set_Always(self,Always):
-		self.add_query_param('Always',Always)
-
 	def get_AppName(self):
 		return self.get_query_params().get('AppName')
 

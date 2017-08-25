@@ -18,10 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class DescribeDomainRegionDataRequest(RpcRequest):
+class DescribeTopDomainsByFlowRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'DescribeDomainRegionData')
+		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'DescribeTopDomainsByFlow')
 
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
@@ -29,11 +29,11 @@ class DescribeDomainRegionDataRequest(RpcRequest):
 	def set_SecurityToken(self,SecurityToken):
 		self.add_query_param('SecurityToken',SecurityToken)
 
-	def get_DomainName(self):
-		return self.get_query_params().get('DomainName')
+	def get_Limit(self):
+		return self.get_query_params().get('Limit')
 
-	def set_DomainName(self,DomainName):
-		self.add_query_param('DomainName',DomainName)
+	def set_Limit(self,Limit):
+		self.add_query_param('Limit',Limit)
 
 	def get_EndTime(self):
 		return self.get_query_params().get('EndTime')
