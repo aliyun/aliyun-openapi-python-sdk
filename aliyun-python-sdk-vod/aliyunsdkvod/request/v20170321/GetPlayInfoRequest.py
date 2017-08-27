@@ -18,10 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class GetOSSStatisRequest(RpcRequest):
+class GetPlayInfoRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'vod', '2017-03-21', 'GetOSSStatis','vod')
+		RpcRequest.__init__(self, 'vod', '2017-03-21', 'GetPlayInfo','vod')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -29,11 +29,11 @@ class GetOSSStatisRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_StartStatisTime(self):
-		return self.get_query_params().get('StartStatisTime')
+	def get_Formats(self):
+		return self.get_query_params().get('Formats')
 
-	def set_StartStatisTime(self,StartStatisTime):
-		self.add_query_param('StartStatisTime',StartStatisTime)
+	def set_Formats(self,Formats):
+		self.add_query_param('Formats',Formats)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -41,17 +41,11 @@ class GetOSSStatisRequest(RpcRequest):
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
-	def get_Level(self):
-		return self.get_query_params().get('Level')
+	def get_VideoId(self):
+		return self.get_query_params().get('VideoId')
 
-	def set_Level(self,Level):
-		self.add_query_param('Level',Level)
-
-	def get_OwnerAccount(self):
-		return self.get_query_params().get('OwnerAccount')
-
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
+	def set_VideoId(self,VideoId):
+		self.add_query_param('VideoId',VideoId)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
@@ -59,8 +53,8 @@ class GetOSSStatisRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_EndStatisTime(self):
-		return self.get_query_params().get('EndStatisTime')
+	def get_AuthTimeout(self):
+		return self.get_query_params().get('AuthTimeout')
 
-	def set_EndStatisTime(self,EndStatisTime):
-		self.add_query_param('EndStatisTime',EndStatisTime)
+	def set_AuthTimeout(self,AuthTimeout):
+		self.add_query_param('AuthTimeout',AuthTimeout)

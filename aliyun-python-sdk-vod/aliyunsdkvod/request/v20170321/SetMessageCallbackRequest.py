@@ -21,19 +21,25 @@ from aliyunsdkcore.request import RpcRequest
 class SetMessageCallbackRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'vod', '2017-03-21', 'SetMessageCallback')
+		RpcRequest.__init__(self, 'vod', '2017-03-21', 'SetMessageCallback','vod')
 
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
+	def get_CallbackType(self):
+		return self.get_query_params().get('CallbackType')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
+	def set_CallbackType(self,CallbackType):
+		self.add_query_param('CallbackType',CallbackType)
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+
+	def get_CallbackSwitch(self):
+		return self.get_query_params().get('CallbackSwitch')
+
+	def set_CallbackSwitch(self,CallbackSwitch):
+		self.add_query_param('CallbackSwitch',CallbackSwitch)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -47,20 +53,20 @@ class SetMessageCallbackRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
-	def get_CallbackSwitch(self):
-		return self.get_query_params().get('CallbackSwitch')
+	def get_EventTypeList(self):
+		return self.get_query_params().get('EventTypeList')
 
-	def set_CallbackSwitch(self,CallbackSwitch):
-		self.add_query_param('CallbackSwitch',CallbackSwitch)
-
-	def get_CallbackType(self):
-		return self.get_query_params().get('CallbackType')
-
-	def set_CallbackType(self,CallbackType):
-		self.add_query_param('CallbackType',CallbackType)
+	def set_EventTypeList(self,EventTypeList):
+		self.add_query_param('EventTypeList',EventTypeList)
 
 	def get_CallbackURL(self):
 		return self.get_query_params().get('CallbackURL')
 
 	def set_CallbackURL(self,CallbackURL):
 		self.add_query_param('CallbackURL',CallbackURL)
+
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)

@@ -18,10 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class GetOSSStatisRequest(RpcRequest):
+class UpdateCategoryRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'vod', '2017-03-21', 'GetOSSStatis','vod')
+		RpcRequest.__init__(self, 'vod', '2017-03-21', 'UpdateCategory','vod')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -29,23 +29,17 @@ class GetOSSStatisRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_StartStatisTime(self):
-		return self.get_query_params().get('StartStatisTime')
-
-	def set_StartStatisTime(self,StartStatisTime):
-		self.add_query_param('StartStatisTime',StartStatisTime)
-
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
-	def get_Level(self):
-		return self.get_query_params().get('Level')
+	def get_CateId(self):
+		return self.get_query_params().get('CateId')
 
-	def set_Level(self,Level):
-		self.add_query_param('Level',Level)
+	def set_CateId(self,CateId):
+		self.add_query_param('CateId',CateId)
 
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
@@ -59,8 +53,8 @@ class GetOSSStatisRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_EndStatisTime(self):
-		return self.get_query_params().get('EndStatisTime')
+	def get_CateName(self):
+		return self.get_query_params().get('CateName')
 
-	def set_EndStatisTime(self,EndStatisTime):
-		self.add_query_param('EndStatisTime',EndStatisTime)
+	def set_CateName(self,CateName):
+		self.add_query_param('CateName',CateName)

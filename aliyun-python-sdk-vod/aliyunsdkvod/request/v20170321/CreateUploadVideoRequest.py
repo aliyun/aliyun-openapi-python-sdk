@@ -21,19 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class CreateUploadVideoRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'vod', '2017-03-21', 'CreateUploadVideo')
-
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
-
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+		RpcRequest.__init__(self, 'vod', '2017-03-21', 'CreateUploadVideo','vod')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -41,29 +29,17 @@ class CreateUploadVideoRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_CoverURL(self):
-		return self.get_query_params().get('CoverURL')
+	def get_ResourceOwnerAccount(self):
+		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_CoverURL(self,CoverURL):
-		self.add_query_param('CoverURL',CoverURL)
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
-	def get_Description(self):
-		return self.get_query_params().get('Description')
+	def get_TranscodeMode(self):
+		return self.get_query_params().get('TranscodeMode')
 
-	def set_Description(self,Description):
-		self.add_query_param('Description',Description)
-
-	def get_FileName(self):
-		return self.get_query_params().get('FileName')
-
-	def set_FileName(self,FileName):
-		self.add_query_param('FileName',FileName)
-
-	def get_FileSize(self):
-		return self.get_query_params().get('FileSize')
-
-	def set_FileSize(self,FileSize):
-		self.add_query_param('FileSize',FileSize)
+	def set_TranscodeMode(self,TranscodeMode):
+		self.add_query_param('TranscodeMode',TranscodeMode)
 
 	def get_IP(self):
 		return self.get_query_params().get('IP')
@@ -71,20 +47,56 @@ class CreateUploadVideoRequest(RpcRequest):
 	def set_IP(self,IP):
 		self.add_query_param('IP',IP)
 
+	def get_Description(self):
+		return self.get_query_params().get('Description')
+
+	def set_Description(self,Description):
+		self.add_query_param('Description',Description)
+
+	def get_FileSize(self):
+		return self.get_query_params().get('FileSize')
+
+	def set_FileSize(self,FileSize):
+		self.add_query_param('FileSize',FileSize)
+
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
+
 	def get_Title(self):
 		return self.get_query_params().get('Title')
 
 	def set_Title(self,Title):
 		self.add_query_param('Title',Title)
 
-	def get_CateId(self):
-		return self.get_query_params().get('CateId')
-
-	def set_CateId(self,CateId):
-		self.add_query_param('CateId',CateId)
-
 	def get_Tags(self):
 		return self.get_query_params().get('Tags')
 
 	def set_Tags(self,Tags):
 		self.add_query_param('Tags',Tags)
+
+	def get_CoverURL(self):
+		return self.get_query_params().get('CoverURL')
+
+	def set_CoverURL(self,CoverURL):
+		self.add_query_param('CoverURL',CoverURL)
+
+	def get_UserData(self):
+		return self.get_query_params().get('UserData')
+
+	def set_UserData(self,UserData):
+		self.add_query_param('UserData',UserData)
+
+	def get_FileName(self):
+		return self.get_query_params().get('FileName')
+
+	def set_FileName(self,FileName):
+		self.add_query_param('FileName',FileName)
+
+	def get_CateId(self):
+		return self.get_query_params().get('CateId')
+
+	def set_CateId(self,CateId):
+		self.add_query_param('CateId',CateId)
