@@ -48,6 +48,7 @@ aliyunsdkcdn/request/v20141111/DescribeDomainMax95BpsDataRequest.py
 aliyunsdkcdn/request/v20141111/DescribeDomainMonthBillingBpsDataRequest.py
 aliyunsdkcdn/request/v20141111/DescribeDomainOnlineUserNumberRequest.py
 aliyunsdkcdn/request/v20141111/DescribeDomainPathDataRequest.py
+aliyunsdkcdn/request/v20141111/DescribeDomainPnoDataRequest.py
 aliyunsdkcdn/request/v20141111/DescribeDomainPvDataRequest.py
 aliyunsdkcdn/request/v20141111/DescribeDomainQpsDataRequest.py
 aliyunsdkcdn/request/v20141111/DescribeDomainRealTimeDataRequest.py
@@ -130,6 +131,7 @@ aliyunsdkcdn/request/v20141111/SetHttpErrorPageConfigRequest.py
 aliyunsdkcdn/request/v20141111/SetHttpHeaderConfigRequest.py
 aliyunsdkcdn/request/v20141111/SetIgnoreQueryStringConfigRequest.py
 aliyunsdkcdn/request/v20141111/SetIpBlackListConfigRequest.py
+aliyunsdkcdn/request/v20141111/SetL2OssKeyConfigRequest.py
 aliyunsdkcdn/request/v20141111/SetLiveStreamsNotifyUrlConfigRequest.py
 aliyunsdkcdn/request/v20141111/SetLocationAccessRestrictionRequest.py
 aliyunsdkcdn/request/v20141111/SetOptimizeConfigRequest.py
