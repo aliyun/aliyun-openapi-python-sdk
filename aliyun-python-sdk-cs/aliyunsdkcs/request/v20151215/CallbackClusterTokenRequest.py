@@ -25,14 +25,14 @@ class CallbackClusterTokenRequest(RoaRequest):
 		self.set_uri_pattern('/token/[Token]/req_once/[ReqOnce]/callback')
 		self.set_method('POST')
 
-	def get_Token(self):
-		return self.get_path_params().get('Token')
-
-	def set_Token(self,Token):
-		self.add_path_param('Token',Token)
-
 	def get_ReqOnce(self):
 		return self.get_path_params().get('ReqOnce')
 
 	def set_ReqOnce(self,ReqOnce):
 		self.add_path_param('ReqOnce',ReqOnce)
+
+	def get_Token(self):
+		return self.get_path_params().get('Token')
+
+	def set_Token(self,Token):
+		self.add_path_param('Token',Token)

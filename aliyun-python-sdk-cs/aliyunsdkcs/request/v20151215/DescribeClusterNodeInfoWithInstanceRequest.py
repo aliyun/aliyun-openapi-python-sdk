@@ -25,14 +25,14 @@ class DescribeClusterNodeInfoWithInstanceRequest(RoaRequest):
 		self.set_uri_pattern('/token/[Token]/instance/[InstanceId]/node_info')
 		self.set_method('GET')
 
-	def get_Token(self):
-		return self.get_path_params().get('Token')
-
-	def set_Token(self,Token):
-		self.add_path_param('Token',Token)
-
 	def get_InstanceId(self):
 		return self.get_path_params().get('InstanceId')
 
 	def set_InstanceId(self,InstanceId):
 		self.add_path_param('InstanceId',InstanceId)
+
+	def get_Token(self):
+		return self.get_path_params().get('Token')
+
+	def set_Token(self,Token):
+		self.add_path_param('Token',Token)

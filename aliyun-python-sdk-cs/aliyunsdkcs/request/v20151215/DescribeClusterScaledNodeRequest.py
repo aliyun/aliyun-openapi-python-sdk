@@ -18,11 +18,11 @@
 # under the License.
 
 from aliyunsdkcore.request import RoaRequest
-class DescribeClusterTokensRequest(RoaRequest):
+class DescribeClusterScaledNodeRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'CS', '2015-12-15', 'DescribeClusterTokens')
-		self.set_uri_pattern('/clusters/[ClusterId]/tokens')
+		RoaRequest.__init__(self, 'CS', '2015-12-15', 'DescribeClusterScaledNode')
+		self.set_uri_pattern('/clusters/[ClusterId]/scaled_nodes/')
 		self.set_method('GET')
 
 	def get_ClusterId(self):

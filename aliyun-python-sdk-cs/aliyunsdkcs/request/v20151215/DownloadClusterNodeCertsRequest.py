@@ -25,14 +25,14 @@ class DownloadClusterNodeCertsRequest(RoaRequest):
 		self.set_uri_pattern('/token/[Token]/nodes/[NodeId]/certs')
 		self.set_method('GET')
 
-	def get_Token(self):
-		return self.get_path_params().get('Token')
-
-	def set_Token(self,Token):
-		self.add_path_param('Token',Token)
-
 	def get_NodeId(self):
 		return self.get_path_params().get('NodeId')
 
 	def set_NodeId(self,NodeId):
 		self.add_path_param('NodeId',NodeId)
+
+	def get_Token(self):
+		return self.get_path_params().get('Token')
+
+	def set_Token(self,Token):
+		self.add_path_param('Token',Token)

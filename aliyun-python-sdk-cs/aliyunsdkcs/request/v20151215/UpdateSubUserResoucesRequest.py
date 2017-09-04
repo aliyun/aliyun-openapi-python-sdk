@@ -18,15 +18,9 @@
 # under the License.
 
 from aliyunsdkcore.request import RoaRequest
-class DescribeClusterTokensRequest(RoaRequest):
+class UpdateSubUserResoucesRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'CS', '2015-12-15', 'DescribeClusterTokens')
-		self.set_uri_pattern('/clusters/[ClusterId]/tokens')
-		self.set_method('GET')
-
-	def get_ClusterId(self):
-		return self.get_path_params().get('ClusterId')
-
-	def set_ClusterId(self,ClusterId):
-		self.add_path_param('ClusterId',ClusterId)
+		RoaRequest.__init__(self, 'CS', '2015-12-15', 'UpdateSubUserResouces')
+		self.set_uri_pattern('/ram/resources')
+		self.set_method('POST')

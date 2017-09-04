@@ -18,15 +18,21 @@
 # under the License.
 
 from aliyunsdkcore.request import RoaRequest
-class DescribeClusterTokensRequest(RoaRequest):
+class CallBackAgilityClusterRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'CS', '2015-12-15', 'DescribeClusterTokens')
-		self.set_uri_pattern('/clusters/[ClusterId]/tokens')
-		self.set_method('GET')
+		RoaRequest.__init__(self, 'CS', '2015-12-15', 'CallBackAgilityCluster')
+		self.set_uri_pattern('/agility/token/[Token]/req_once/[ReqOnce]/callback')
+		self.set_method('POST')
 
-	def get_ClusterId(self):
-		return self.get_path_params().get('ClusterId')
+	def get_ReqOnce(self):
+		return self.get_path_params().get('ReqOnce')
 
-	def set_ClusterId(self,ClusterId):
-		self.add_path_param('ClusterId',ClusterId)
+	def set_ReqOnce(self,ReqOnce):
+		self.add_path_param('ReqOnce',ReqOnce)
+
+	def get_Token(self):
+		return self.get_path_params().get('Token')
+
+	def set_Token(self,Token):
+		self.add_path_param('Token',Token)
