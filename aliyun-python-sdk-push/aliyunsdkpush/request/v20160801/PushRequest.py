@@ -47,6 +47,12 @@ class PushRequest(RpcRequest):
 	def set_iOSBadge(self,iOSBadge):
 		self.add_query_param('iOSBadge',iOSBadge)
 
+	def get_iOSBadgeAutoIncrement(self):
+		return self.get_query_params().get('iOSBadgeAutoIncrement')
+
+	def set_iOSBadgeAutoIncrement(self,iOSBadgeAutoIncrement):
+		self.add_query_param('iOSBadgeAutoIncrement',iOSBadgeAutoIncrement)
+
 	def get_AndroidOpenType(self):
 		return self.get_query_params().get('AndroidOpenType')
 
