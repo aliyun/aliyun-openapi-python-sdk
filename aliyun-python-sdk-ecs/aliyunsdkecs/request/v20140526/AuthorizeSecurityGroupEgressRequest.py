@@ -23,11 +23,23 @@ class AuthorizeSecurityGroupEgressRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'AuthorizeSecurityGroupEgress')
 
-	def get_DestGroupId(self):
-		return self.get_query_params().get('DestGroupId')
+	def get_NicType(self):
+		return self.get_query_params().get('NicType')
 
-	def set_DestGroupId(self,DestGroupId):
-		self.add_query_param('DestGroupId',DestGroupId)
+	def set_NicType(self,NicType):
+		self.add_query_param('NicType',NicType)
+
+	def get_ResourceOwnerId(self):
+		return self.get_query_params().get('ResourceOwnerId')
+
+	def set_ResourceOwnerId(self,ResourceOwnerId):
+		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+
+	def get_SourcePortRange(self):
+		return self.get_query_params().get('SourcePortRange')
+
+	def set_SourcePortRange(self,SourcePortRange):
+		self.add_query_param('SourcePortRange',SourcePortRange)
 
 	def get_ClientToken(self):
 		return self.get_query_params().get('ClientToken')
@@ -41,23 +53,35 @@ class AuthorizeSecurityGroupEgressRequest(RpcRequest):
 	def set_SecurityGroupId(self,SecurityGroupId):
 		self.add_query_param('SecurityGroupId',SecurityGroupId)
 
+	def get_Description(self):
+		return self.get_query_params().get('Description')
+
+	def set_Description(self,Description):
+		self.add_query_param('Description',Description)
+
+	def get_callerUid(self):
+		return self.get_query_params().get('callerUid')
+
+	def set_callerUid(self,callerUid):
+		self.add_query_param('callerUid',callerUid)
+
+	def get_Policy(self):
+		return self.get_query_params().get('Policy')
+
+	def set_Policy(self,Policy):
+		self.add_query_param('Policy',Policy)
+
 	def get_PortRange(self):
 		return self.get_query_params().get('PortRange')
 
 	def set_PortRange(self,PortRange):
 		self.add_query_param('PortRange',PortRange)
 
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
+	def get_ResourceOwnerAccount(self):
+		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_DestCidrIp(self):
-		return self.get_query_params().get('DestCidrIp')
-
-	def set_DestCidrIp(self,DestCidrIp):
-		self.add_query_param('DestCidrIp',DestCidrIp)
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
 	def get_IpProtocol(self):
 		return self.get_query_params().get('IpProtocol')
@@ -65,11 +89,35 @@ class AuthorizeSecurityGroupEgressRequest(RpcRequest):
 	def set_IpProtocol(self,IpProtocol):
 		self.add_query_param('IpProtocol',IpProtocol)
 
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
+	def get_OwnerAccount(self):
+		return self.get_query_params().get('OwnerAccount')
 
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+	def set_OwnerAccount(self,OwnerAccount):
+		self.add_query_param('OwnerAccount',OwnerAccount)
+
+	def get_SourceCidrIp(self):
+		return self.get_query_params().get('SourceCidrIp')
+
+	def set_SourceCidrIp(self,SourceCidrIp):
+		self.add_query_param('SourceCidrIp',SourceCidrIp)
+
+	def get_callerBid(self):
+		return self.get_query_params().get('callerBid')
+
+	def set_callerBid(self,callerBid):
+		self.add_query_param('callerBid',callerBid)
+
+	def get_DestGroupId(self):
+		return self.get_query_params().get('DestGroupId')
+
+	def set_DestGroupId(self,DestGroupId):
+		self.add_query_param('DestGroupId',DestGroupId)
+
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
 
 	def get_DestGroupOwnerAccount(self):
 		return self.get_query_params().get('DestGroupOwnerAccount')
@@ -83,32 +131,14 @@ class AuthorizeSecurityGroupEgressRequest(RpcRequest):
 	def set_Priority(self,Priority):
 		self.add_query_param('Priority',Priority)
 
+	def get_DestCidrIp(self):
+		return self.get_query_params().get('DestCidrIp')
+
+	def set_DestCidrIp(self,DestCidrIp):
+		self.add_query_param('DestCidrIp',DestCidrIp)
+
 	def get_DestGroupOwnerId(self):
 		return self.get_query_params().get('DestGroupOwnerId')
 
 	def set_DestGroupOwnerId(self,DestGroupOwnerId):
 		self.add_query_param('DestGroupOwnerId',DestGroupOwnerId)
-
-	def get_NicType(self):
-		return self.get_query_params().get('NicType')
-
-	def set_NicType(self,NicType):
-		self.add_query_param('NicType',NicType)
-
-	def get_Policy(self):
-		return self.get_query_params().get('Policy')
-
-	def set_Policy(self,Policy):
-		self.add_query_param('Policy',Policy)
-
-	def get_ResourceOwnerId(self):
-		return self.get_query_params().get('ResourceOwnerId')
-
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_OwnerAccount(self):
-		return self.get_query_params().get('OwnerAccount')
-
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)

@@ -23,23 +23,11 @@ class ModifyInstanceChargeTypeRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'ModifyInstanceChargeType')
 
-	def get_ClientToken(self):
-		return self.get_query_params().get('ClientToken')
+	def get_ResourceOwnerId(self):
+		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
-
-	def get_InstanceIds(self):
-		return self.get_query_params().get('InstanceIds')
-
-	def set_InstanceIds(self,InstanceIds):
-		self.add_query_param('InstanceIds',InstanceIds)
-
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
+	def set_ResourceOwnerId(self,ResourceOwnerId):
+		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
 	def get_Period(self):
 		return self.get_query_params().get('Period')
@@ -47,17 +35,11 @@ class ModifyInstanceChargeTypeRequest(RpcRequest):
 	def set_Period(self,Period):
 		self.add_query_param('Period',Period)
 
-	def get_PeriodUnit(self):
-		return self.get_query_params().get('PeriodUnit')
+	def get_DryRun(self):
+		return self.get_query_params().get('DryRun')
 
-	def set_PeriodUnit(self,PeriodUnit):
-		self.add_query_param('PeriodUnit',PeriodUnit)
-
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
-
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+	def set_DryRun(self,DryRun):
+		self.add_query_param('DryRun',DryRun)
 
 	def get_AutoPay(self):
 		return self.get_query_params().get('AutoPay')
@@ -71,11 +53,17 @@ class ModifyInstanceChargeTypeRequest(RpcRequest):
 	def set_IncludeDataDisks(self,IncludeDataDisks):
 		self.add_query_param('IncludeDataDisks',IncludeDataDisks)
 
-	def get_ResourceOwnerId(self):
-		return self.get_query_params().get('ResourceOwnerId')
+	def get_ResourceOwnerAccount(self):
+		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+
+	def get_ClientToken(self):
+		return self.get_query_params().get('ClientToken')
+
+	def set_ClientToken(self,ClientToken):
+		self.add_query_param('ClientToken',ClientToken)
 
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
@@ -83,8 +71,20 @@ class ModifyInstanceChargeTypeRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
-	def get_DryRun(self):
-		return self.get_query_params().get('DryRun')
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
 
-	def set_DryRun(self,DryRun):
-		self.add_query_param('DryRun',DryRun)
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
+
+	def get_PeriodUnit(self):
+		return self.get_query_params().get('PeriodUnit')
+
+	def set_PeriodUnit(self,PeriodUnit):
+		self.add_query_param('PeriodUnit',PeriodUnit)
+
+	def get_InstanceIds(self):
+		return self.get_query_params().get('InstanceIds')
+
+	def set_InstanceIds(self,InstanceIds):
+		self.add_query_param('InstanceIds',InstanceIds)

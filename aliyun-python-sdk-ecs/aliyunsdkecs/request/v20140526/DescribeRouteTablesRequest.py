@@ -23,47 +23,11 @@ class DescribeRouteTablesRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'DescribeRouteTables')
 
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
-
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_PageNumber(self):
-		return self.get_query_params().get('PageNumber')
-
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
-
-	def get_VRouterId(self):
-		return self.get_query_params().get('VRouterId')
-
-	def set_VRouterId(self,VRouterId):
-		self.add_query_param('VRouterId',VRouterId)
-
-	def get_RouterId(self):
-		return self.get_query_params().get('RouterId')
-
-	def set_RouterId(self,RouterId):
-		self.add_query_param('RouterId',RouterId)
-
 	def get_RouterType(self):
 		return self.get_query_params().get('RouterType')
 
 	def set_RouterType(self,RouterType):
 		self.add_query_param('RouterType',RouterType)
-
-	def get_RouteTableId(self):
-		return self.get_query_params().get('RouteTableId')
-
-	def set_RouteTableId(self,RouteTableId):
-		self.add_query_param('RouteTableId',RouteTableId)
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -71,14 +35,50 @@ class DescribeRouteTablesRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_VRouterId(self):
+		return self.get_query_params().get('VRouterId')
+
+	def set_VRouterId(self,VRouterId):
+		self.add_query_param('VRouterId',VRouterId)
+
+	def get_ResourceOwnerAccount(self):
+		return self.get_query_params().get('ResourceOwnerAccount')
+
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+
+	def get_RouterId(self):
+		return self.get_query_params().get('RouterId')
+
+	def set_RouterId(self,RouterId):
+		self.add_query_param('RouterId',RouterId)
+
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
 
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
+
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_PageNumber(self):
+		return self.get_query_params().get('PageNumber')
+
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)
+
+	def get_RouteTableId(self):
+		return self.get_query_params().get('RouteTableId')
+
+	def set_RouteTableId(self,RouteTableId):
+		self.add_query_param('RouteTableId',RouteTableId)

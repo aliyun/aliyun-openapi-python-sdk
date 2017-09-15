@@ -23,23 +23,15 @@ class DescribeHaVipsRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'DescribeHaVips')
 
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
+	def get_Filters(self):
+		return self.get_query_params().get('Filters')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
+	def set_Filters(self,Filters):
+		for i in range(len(Filters)):	
+			self.add_query_param('Filter.' + bytes(i + 1) + '.Key' , Filters[i].get('Key'))
+			for j in range(len(Filters[i].get('Values'))):
+					self.add_query_param('Filter.' + bytes(i + 1) + '.Value.'+bytes(j + 1), Filters[i].get('Values')[j])
 
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
-
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_PageNumber(self):
-		return self.get_query_params().get('PageNumber')
-
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -47,11 +39,23 @@ class DescribeHaVipsRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_ResourceOwnerAccount(self):
+		return self.get_query_params().get('ResourceOwnerAccount')
+
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
 
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
+
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
@@ -59,11 +63,8 @@ class DescribeHaVipsRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_Filter(self):
-		return self.get_query_params().get('Filters')
+	def get_PageNumber(self):
+		return self.get_query_params().get('PageNumber')
 
-	def set_Filter(self,Filter):
-		for i in range(len(Filter)):	
-			self.add_query_param('Filter.' + bytes(i + 1) + '.Key' , Filter[i].get('Key'))
-			for j in range(len(Filter[i].get('Values'))):
-					self.add_query_param('Filter.' + bytes(i + 1) + '.Value.'+bytes(j + 1), Filter[i].get('Values')[j])
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)

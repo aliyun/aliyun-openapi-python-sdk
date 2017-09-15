@@ -23,6 +23,18 @@ class DescribeDeploymentSetTopologyRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'DescribeDeploymentSetTopology')
 
+	def get_DeploymentSetId(self):
+		return self.get_query_params().get('DeploymentSetId')
+
+	def set_DeploymentSetId(self,DeploymentSetId):
+		self.add_query_param('DeploymentSetId',DeploymentSetId)
+
+	def get_ResourceOwnerId(self):
+		return self.get_query_params().get('ResourceOwnerId')
+
+	def set_ResourceOwnerId(self,ResourceOwnerId):
+		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -41,11 +53,11 @@ class DescribeDeploymentSetTopologyRequest(RpcRequest):
 	def set_Domain(self,Domain):
 		self.add_query_param('Domain',Domain)
 
-	def get_Strategy(self):
-		return self.get_query_params().get('Strategy')
+	def get_NetworkType(self):
+		return self.get_query_params().get('NetworkType')
 
-	def set_Strategy(self,Strategy):
-		self.add_query_param('Strategy',Strategy)
+	def set_NetworkType(self,NetworkType):
+		self.add_query_param('NetworkType',NetworkType)
 
 	def get_DeploymentSetName(self):
 		return self.get_query_params().get('DeploymentSetName')
@@ -53,26 +65,14 @@ class DescribeDeploymentSetTopologyRequest(RpcRequest):
 	def set_DeploymentSetName(self,DeploymentSetName):
 		self.add_query_param('DeploymentSetName',DeploymentSetName)
 
-	def get_DeploymentSetId(self):
-		return self.get_query_params().get('DeploymentSetId')
-
-	def set_DeploymentSetId(self,DeploymentSetId):
-		self.add_query_param('DeploymentSetId',DeploymentSetId)
-
-	def get_ResourceOwnerId(self):
-		return self.get_query_params().get('ResourceOwnerId')
-
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_NetworkType(self):
-		return self.get_query_params().get('NetworkType')
-
-	def set_NetworkType(self,NetworkType):
-		self.add_query_param('NetworkType',NetworkType)
-
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_Strategy(self):
+		return self.get_query_params().get('Strategy')
+
+	def set_Strategy(self,Strategy):
+		self.add_query_param('Strategy',Strategy)

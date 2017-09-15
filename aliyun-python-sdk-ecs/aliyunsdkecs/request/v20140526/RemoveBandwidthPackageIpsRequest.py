@@ -23,18 +23,24 @@ class RemoveBandwidthPackageIpsRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'RemoveBandwidthPackageIps')
 
-	def get_RemovedIpAddresses(self):
+	def get_RemovedIpAddressess(self):
 		return self.get_query_params().get('RemovedIpAddressess')
 
-	def set_RemovedIpAddresses(self,RemovedIpAddresses):
-		for i in range(len(RemovedIpAddresses)):	
-			self.add_query_param('RemovedIpAddresses.' + bytes(i + 1) , RemovedIpAddresses[i]);
+	def set_RemovedIpAddressess(self,RemovedIpAddressess):
+		for i in range(len(RemovedIpAddressess)):	
+			self.add_query_param('RemovedIpAddresses.' + bytes(i + 1) , RemovedIpAddressess[i]);
 
-	def get_ClientToken(self):
-		return self.get_query_params().get('ClientToken')
+	def get_ResourceOwnerId(self):
+		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
+	def set_ResourceOwnerId(self,ResourceOwnerId):
+		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+
+	def get_BandwidthPackageId(self):
+		return self.get_query_params().get('BandwidthPackageId')
+
+	def set_BandwidthPackageId(self,BandwidthPackageId):
+		self.add_query_param('BandwidthPackageId',BandwidthPackageId)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -42,11 +48,11 @@ class RemoveBandwidthPackageIpsRequest(RpcRequest):
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
-	def get_ResourceOwnerId(self):
-		return self.get_query_params().get('ResourceOwnerId')
+	def get_ClientToken(self):
+		return self.get_query_params().get('ClientToken')
 
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+	def set_ClientToken(self,ClientToken):
+		self.add_query_param('ClientToken',ClientToken)
 
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
@@ -59,9 +65,3 @@ class RemoveBandwidthPackageIpsRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
-
-	def get_BandwidthPackageId(self):
-		return self.get_query_params().get('BandwidthPackageId')
-
-	def set_BandwidthPackageId(self,BandwidthPackageId):
-		self.add_query_param('BandwidthPackageId',BandwidthPackageId)

@@ -23,38 +23,23 @@ class DeleteRouteEntryRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'DeleteRouteEntry')
 
+	def get_ResourceOwnerId(self):
+		return self.get_query_params().get('ResourceOwnerId')
+
+	def set_ResourceOwnerId(self,ResourceOwnerId):
+		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
-	def get_NextHopList(self):
-		return self.get_query_params().get('NextHopLists')
+	def get_DestinationCidrBlock(self):
+		return self.get_query_params().get('DestinationCidrBlock')
 
-	def set_NextHopList(self,NextHopList):
-		for i in range(len(NextHopList)):	
-			self.add_query_param('NextHopList.' + bytes(i + 1) + '.NextHopType' , NextHopList[i].get('NextHopType'))
-			self.add_query_param('NextHopList.' + bytes(i + 1) + '.NextHopId' , NextHopList[i].get('NextHopId'))
-
-
-	def get_NextHopId(self):
-		return self.get_query_params().get('NextHopId')
-
-	def set_NextHopId(self,NextHopId):
-		self.add_query_param('NextHopId',NextHopId)
-
-	def get_RouteTableId(self):
-		return self.get_query_params().get('RouteTableId')
-
-	def set_RouteTableId(self,RouteTableId):
-		self.add_query_param('RouteTableId',RouteTableId)
-
-	def get_ResourceOwnerId(self):
-		return self.get_query_params().get('ResourceOwnerId')
-
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+	def set_DestinationCidrBlock(self,DestinationCidrBlock):
+		self.add_query_param('DestinationCidrBlock',DestinationCidrBlock)
 
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
@@ -62,14 +47,29 @@ class DeleteRouteEntryRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
+	def get_NextHopId(self):
+		return self.get_query_params().get('NextHopId')
+
+	def set_NextHopId(self,NextHopId):
+		self.add_query_param('NextHopId',NextHopId)
+
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_DestinationCidrBlock(self):
-		return self.get_query_params().get('DestinationCidrBlock')
+	def get_NextHopLists(self):
+		return self.get_query_params().get('NextHopLists')
 
-	def set_DestinationCidrBlock(self,DestinationCidrBlock):
-		self.add_query_param('DestinationCidrBlock',DestinationCidrBlock)
+	def set_NextHopLists(self,NextHopLists):
+		for i in range(len(NextHopLists)):	
+			self.add_query_param('NextHopList.' + bytes(i + 1) + '.NextHopType' , NextHopLists[i].get('NextHopType'))
+			self.add_query_param('NextHopList.' + bytes(i + 1) + '.NextHopId' , NextHopLists[i].get('NextHopId'))
+
+
+	def get_RouteTableId(self):
+		return self.get_query_params().get('RouteTableId')
+
+	def set_RouteTableId(self,RouteTableId):
+		self.add_query_param('RouteTableId',RouteTableId)

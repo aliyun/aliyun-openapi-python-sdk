@@ -23,17 +23,11 @@ class AddIpRangeRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'AddIpRange')
 
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
+	def get_IpAddress(self):
+		return self.get_query_params().get('IpAddress')
 
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_ZoneId(self):
-		return self.get_query_params().get('ZoneId')
-
-	def set_ZoneId(self,ZoneId):
-		self.add_query_param('ZoneId',ZoneId)
+	def set_IpAddress(self,IpAddress):
+		self.add_query_param('IpAddress',IpAddress)
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -41,17 +35,23 @@ class AddIpRangeRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_ResourceOwnerAccount(self):
+		return self.get_query_params().get('ResourceOwnerAccount')
+
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
 
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
-	def get_IpAddress(self):
-		return self.get_query_params().get('IpAddress')
+	def get_ZoneId(self):
+		return self.get_query_params().get('ZoneId')
 
-	def set_IpAddress(self,IpAddress):
-		self.add_query_param('IpAddress',IpAddress)
+	def set_ZoneId(self,ZoneId):
+		self.add_query_param('ZoneId',ZoneId)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')

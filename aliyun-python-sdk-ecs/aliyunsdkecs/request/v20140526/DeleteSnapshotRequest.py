@@ -23,11 +23,11 @@ class DeleteSnapshotRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'DeleteSnapshot')
 
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
+	def get_ResourceOwnerId(self):
+		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+	def set_ResourceOwnerId(self,ResourceOwnerId):
+		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
 	def get_SnapshotId(self):
 		return self.get_query_params().get('SnapshotId')
@@ -35,23 +35,23 @@ class DeleteSnapshotRequest(RpcRequest):
 	def set_SnapshotId(self,SnapshotId):
 		self.add_query_param('SnapshotId',SnapshotId)
 
-	def get_Force(self):
-		return self.get_query_params().get('Force')
+	def get_ResourceOwnerAccount(self):
+		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_Force(self,Force):
-		self.add_query_param('Force',Force)
-
-	def get_ResourceOwnerId(self):
-		return self.get_query_params().get('ResourceOwnerId')
-
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
 
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
+
+	def get_Force(self):
+		return self.get_query_params().get('Force')
+
+	def set_Force(self,Force):
+		self.add_query_param('Force',Force)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')

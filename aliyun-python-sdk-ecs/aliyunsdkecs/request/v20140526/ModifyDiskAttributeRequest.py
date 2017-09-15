@@ -29,6 +29,18 @@ class ModifyDiskAttributeRequest(RpcRequest):
 	def set_DiskName(self,DiskName):
 		self.add_query_param('DiskName',DiskName)
 
+	def get_DeleteAutoSnapshot(self):
+		return self.get_query_params().get('DeleteAutoSnapshot')
+
+	def set_DeleteAutoSnapshot(self,DeleteAutoSnapshot):
+		self.add_query_param('DeleteAutoSnapshot',DeleteAutoSnapshot)
+
+	def get_ResourceOwnerId(self):
+		return self.get_query_params().get('ResourceOwnerId')
+
+	def set_ResourceOwnerId(self,ResourceOwnerId):
+		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+
 	def get_EnableAutoSnapshot(self):
 		return self.get_query_params().get('EnableAutoSnapshot')
 
@@ -40,6 +52,12 @@ class ModifyDiskAttributeRequest(RpcRequest):
 
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+
+	def get_OwnerAccount(self):
+		return self.get_query_params().get('OwnerAccount')
+
+	def set_OwnerAccount(self,OwnerAccount):
+		self.add_query_param('OwnerAccount',OwnerAccount)
 
 	def get_Description(self):
 		return self.get_query_params().get('Description')
@@ -53,32 +71,14 @@ class ModifyDiskAttributeRequest(RpcRequest):
 	def set_DiskId(self,DiskId):
 		self.add_query_param('DiskId',DiskId)
 
-	def get_DeleteWithInstance(self):
-		return self.get_query_params().get('DeleteWithInstance')
-
-	def set_DeleteWithInstance(self,DeleteWithInstance):
-		self.add_query_param('DeleteWithInstance',DeleteWithInstance)
-
-	def get_ResourceOwnerId(self):
-		return self.get_query_params().get('ResourceOwnerId')
-
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_OwnerAccount(self):
-		return self.get_query_params().get('OwnerAccount')
-
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
-
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_DeleteAutoSnapshot(self):
-		return self.get_query_params().get('DeleteAutoSnapshot')
+	def get_DeleteWithInstance(self):
+		return self.get_query_params().get('DeleteWithInstance')
 
-	def set_DeleteAutoSnapshot(self,DeleteAutoSnapshot):
-		self.add_query_param('DeleteAutoSnapshot',DeleteAutoSnapshot)
+	def set_DeleteWithInstance(self,DeleteWithInstance):
+		self.add_query_param('DeleteWithInstance',DeleteWithInstance)

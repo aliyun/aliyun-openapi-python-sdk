@@ -1,3 +1,7 @@
+2017-09-15 Version: 4.1.0
+1, 增加新的ECS弹性能力接口
+2, 安全组授权接口增加描述
+
 2017-08-03 Version: 4.0.0
 1, 修改sdk中对空参数的处理
 2, 增加ClassicLinkVpc相关接口，提供ClassicLinkVpc相关功能

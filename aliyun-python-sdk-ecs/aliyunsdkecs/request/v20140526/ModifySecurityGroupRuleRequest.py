@@ -23,11 +23,23 @@ class ModifySecurityGroupRuleRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'ModifySecurityGroupRule')
 
-	def get_SourceGroupOwnerAccount(self):
-		return self.get_query_params().get('SourceGroupOwnerAccount')
+	def get_NicType(self):
+		return self.get_query_params().get('NicType')
 
-	def set_SourceGroupOwnerAccount(self,SourceGroupOwnerAccount):
-		self.add_query_param('SourceGroupOwnerAccount',SourceGroupOwnerAccount)
+	def set_NicType(self,NicType):
+		self.add_query_param('NicType',NicType)
+
+	def get_ResourceOwnerId(self):
+		return self.get_query_params().get('ResourceOwnerId')
+
+	def set_ResourceOwnerId(self,ResourceOwnerId):
+		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+
+	def get_SourcePortRange(self):
+		return self.get_query_params().get('SourcePortRange')
+
+	def set_SourcePortRange(self,SourcePortRange):
+		self.add_query_param('SourcePortRange',SourcePortRange)
 
 	def get_ClientToken(self):
 		return self.get_query_params().get('ClientToken')
@@ -41,47 +53,29 @@ class ModifySecurityGroupRuleRequest(RpcRequest):
 	def set_SecurityGroupId(self,SecurityGroupId):
 		self.add_query_param('SecurityGroupId',SecurityGroupId)
 
-	def get_PortRange(self):
-		return self.get_query_params().get('PortRange')
+	def get_Description(self):
+		return self.get_query_params().get('Description')
 
-	def set_PortRange(self,PortRange):
-		self.add_query_param('PortRange',PortRange)
+	def set_Description(self,Description):
+		self.add_query_param('Description',Description)
 
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
+	def get_SourceGroupOwnerId(self):
+		return self.get_query_params().get('SourceGroupOwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
+	def set_SourceGroupOwnerId(self,SourceGroupOwnerId):
+		self.add_query_param('SourceGroupOwnerId',SourceGroupOwnerId)
 
-	def get_IpProtocol(self):
-		return self.get_query_params().get('IpProtocol')
+	def get_SourceGroupOwnerAccount(self):
+		return self.get_query_params().get('SourceGroupOwnerAccount')
 
-	def set_IpProtocol(self,IpProtocol):
-		self.add_query_param('IpProtocol',IpProtocol)
+	def set_SourceGroupOwnerAccount(self,SourceGroupOwnerAccount):
+		self.add_query_param('SourceGroupOwnerAccount',SourceGroupOwnerAccount)
 
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
+	def get_callerUid(self):
+		return self.get_query_params().get('callerUid')
 
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_Priority(self):
-		return self.get_query_params().get('Priority')
-
-	def set_Priority(self,Priority):
-		self.add_query_param('Priority',Priority)
-
-	def get_SourceGroupId(self):
-		return self.get_query_params().get('SourceGroupId')
-
-	def set_SourceGroupId(self,SourceGroupId):
-		self.add_query_param('SourceGroupId',SourceGroupId)
-
-	def get_NicType(self):
-		return self.get_query_params().get('NicType')
-
-	def set_NicType(self,NicType):
-		self.add_query_param('NicType',NicType)
+	def set_callerUid(self,callerUid):
+		self.add_query_param('callerUid',callerUid)
 
 	def get_Policy(self):
 		return self.get_query_params().get('Policy')
@@ -89,11 +83,23 @@ class ModifySecurityGroupRuleRequest(RpcRequest):
 	def set_Policy(self,Policy):
 		self.add_query_param('Policy',Policy)
 
-	def get_ResourceOwnerId(self):
-		return self.get_query_params().get('ResourceOwnerId')
+	def get_PortRange(self):
+		return self.get_query_params().get('PortRange')
 
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+	def set_PortRange(self,PortRange):
+		self.add_query_param('PortRange',PortRange)
+
+	def get_ResourceOwnerAccount(self):
+		return self.get_query_params().get('ResourceOwnerAccount')
+
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+
+	def get_IpProtocol(self):
+		return self.get_query_params().get('IpProtocol')
+
+	def set_IpProtocol(self,IpProtocol):
+		self.add_query_param('IpProtocol',IpProtocol)
 
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
@@ -106,3 +112,33 @@ class ModifySecurityGroupRuleRequest(RpcRequest):
 
 	def set_SourceCidrIp(self,SourceCidrIp):
 		self.add_query_param('SourceCidrIp',SourceCidrIp)
+
+	def get_callerBid(self):
+		return self.get_query_params().get('callerBid')
+
+	def set_callerBid(self,callerBid):
+		self.add_query_param('callerBid',callerBid)
+
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
+
+	def get_Priority(self):
+		return self.get_query_params().get('Priority')
+
+	def set_Priority(self,Priority):
+		self.add_query_param('Priority',Priority)
+
+	def get_DestCidrIp(self):
+		return self.get_query_params().get('DestCidrIp')
+
+	def set_DestCidrIp(self,DestCidrIp):
+		self.add_query_param('DestCidrIp',DestCidrIp)
+
+	def get_SourceGroupId(self):
+		return self.get_query_params().get('SourceGroupId')
+
+	def set_SourceGroupId(self,SourceGroupId):
+		self.add_query_param('SourceGroupId',SourceGroupId)

@@ -23,65 +23,11 @@ class DescribeVolumesRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'DescribeVolumes')
 
-	def get_EnableAutomatedSnapshotPolicy(self):
-		return self.get_query_params().get('EnableAutomatedSnapshotPolicy')
+	def get_Tag4Value(self):
+		return self.get_query_params().get('Tag.4.Value')
 
-	def set_EnableAutomatedSnapshotPolicy(self,EnableAutomatedSnapshotPolicy):
-		self.add_query_param('EnableAutomatedSnapshotPolicy',EnableAutomatedSnapshotPolicy)
-
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_ZoneId(self):
-		return self.get_query_params().get('ZoneId')
-
-	def set_ZoneId(self,ZoneId):
-		self.add_query_param('ZoneId',ZoneId)
-
-	def get_Tag5Value(self):
-		return self.get_query_params().get('Tag.5.Value')
-
-	def set_Tag5Value(self,Tag5Value):
-		self.add_query_param('Tag.5.Value',Tag5Value)
-
-	def get_Tag3Key(self):
-		return self.get_query_params().get('Tag.3.Key')
-
-	def set_Tag3Key(self,Tag3Key):
-		self.add_query_param('Tag.3.Key',Tag3Key)
-
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
-
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_SnapshotId(self):
-		return self.get_query_params().get('SnapshotId')
-
-	def set_SnapshotId(self,SnapshotId):
-		self.add_query_param('SnapshotId',SnapshotId)
-
-	def get_Tag1Key(self):
-		return self.get_query_params().get('Tag.1.Key')
-
-	def set_Tag1Key(self,Tag1Key):
-		self.add_query_param('Tag.1.Key',Tag1Key)
-
-	def get_Tag1Value(self):
-		return self.get_query_params().get('Tag.1.Value')
-
-	def set_Tag1Value(self,Tag1Value):
-		self.add_query_param('Tag.1.Value',Tag1Value)
-
-	def get_VolumeIds(self):
-		return self.get_query_params().get('VolumeIds')
-
-	def set_VolumeIds(self,VolumeIds):
-		self.add_query_param('VolumeIds',VolumeIds)
+	def set_Tag4Value(self,Tag4Value):
+		self.add_query_param('Tag.4.Value',Tag4Value)
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -89,53 +35,11 @@ class DescribeVolumesRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_Tag4Value(self):
-		return self.get_query_params().get('Tag.4.Value')
+	def get_SnapshotId(self):
+		return self.get_query_params().get('SnapshotId')
 
-	def set_Tag4Value(self,Tag4Value):
-		self.add_query_param('Tag.4.Value',Tag4Value)
-
-	def get_OwnerAccount(self):
-		return self.get_query_params().get('OwnerAccount')
-
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
-
-	def get_Status(self):
-		return self.get_query_params().get('Status')
-
-	def set_Status(self,Status):
-		self.add_query_param('Status',Status)
-
-	def get_PageNumber(self):
-		return self.get_query_params().get('PageNumber')
-
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
-
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_Tag5Key(self):
-		return self.get_query_params().get('Tag.5.Key')
-
-	def set_Tag5Key(self,Tag5Key):
-		self.add_query_param('Tag.5.Key',Tag5Key)
-
-	def get_LockReason(self):
-		return self.get_query_params().get('LockReason')
-
-	def set_LockReason(self,LockReason):
-		self.add_query_param('LockReason',LockReason)
-
-	def get_Category(self):
-		return self.get_query_params().get('Category')
-
-	def set_Category(self,Category):
-		self.add_query_param('Category',Category)
+	def set_SnapshotId(self,SnapshotId):
+		self.add_query_param('SnapshotId',SnapshotId)
 
 	def get_Tag2Key(self):
 		return self.get_query_params().get('Tag.2.Key')
@@ -149,11 +53,35 @@ class DescribeVolumesRequest(RpcRequest):
 	def set_AutoSnapshotPolicyId(self,AutoSnapshotPolicyId):
 		self.add_query_param('AutoSnapshotPolicyId',AutoSnapshotPolicyId)
 
-	def get_InstanceId(self):
-		return self.get_query_params().get('InstanceId')
+	def get_Tag3Key(self):
+		return self.get_query_params().get('Tag.3.Key')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
+	def set_Tag3Key(self,Tag3Key):
+		self.add_query_param('Tag.3.Key',Tag3Key)
+
+	def get_PageNumber(self):
+		return self.get_query_params().get('PageNumber')
+
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)
+
+	def get_Tag1Value(self):
+		return self.get_query_params().get('Tag.1.Value')
+
+	def set_Tag1Value(self,Tag1Value):
+		self.add_query_param('Tag.1.Value',Tag1Value)
+
+	def get_LockReason(self):
+		return self.get_query_params().get('LockReason')
+
+	def set_LockReason(self,LockReason):
+		self.add_query_param('LockReason',LockReason)
+
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
 
 	def get_Tag3Value(self):
 		return self.get_query_params().get('Tag.3.Value')
@@ -161,14 +89,86 @@ class DescribeVolumesRequest(RpcRequest):
 	def set_Tag3Value(self,Tag3Value):
 		self.add_query_param('Tag.3.Value',Tag3Value)
 
-	def get_Tag4Key(self):
-		return self.get_query_params().get('Tag.4.Key')
+	def get_Tag5Key(self):
+		return self.get_query_params().get('Tag.5.Key')
 
-	def set_Tag4Key(self,Tag4Key):
-		self.add_query_param('Tag.4.Key',Tag4Key)
+	def set_Tag5Key(self,Tag5Key):
+		self.add_query_param('Tag.5.Key',Tag5Key)
+
+	def get_ResourceOwnerAccount(self):
+		return self.get_query_params().get('ResourceOwnerAccount')
+
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+
+	def get_OwnerAccount(self):
+		return self.get_query_params().get('OwnerAccount')
+
+	def set_OwnerAccount(self,OwnerAccount):
+		self.add_query_param('OwnerAccount',OwnerAccount)
+
+	def get_EnableAutomatedSnapshotPolicy(self):
+		return self.get_query_params().get('EnableAutomatedSnapshotPolicy')
+
+	def set_EnableAutomatedSnapshotPolicy(self,EnableAutomatedSnapshotPolicy):
+		self.add_query_param('EnableAutomatedSnapshotPolicy',EnableAutomatedSnapshotPolicy)
+
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
+
+	def get_Tag5Value(self):
+		return self.get_query_params().get('Tag.5.Value')
+
+	def set_Tag5Value(self,Tag5Value):
+		self.add_query_param('Tag.5.Value',Tag5Value)
+
+	def get_Tag1Key(self):
+		return self.get_query_params().get('Tag.1.Key')
+
+	def set_Tag1Key(self,Tag1Key):
+		self.add_query_param('Tag.1.Key',Tag1Key)
+
+	def get_InstanceId(self):
+		return self.get_query_params().get('InstanceId')
+
+	def set_InstanceId(self,InstanceId):
+		self.add_query_param('InstanceId',InstanceId)
 
 	def get_Tag2Value(self):
 		return self.get_query_params().get('Tag.2.Value')
 
 	def set_Tag2Value(self,Tag2Value):
 		self.add_query_param('Tag.2.Value',Tag2Value)
+
+	def get_ZoneId(self):
+		return self.get_query_params().get('ZoneId')
+
+	def set_ZoneId(self,ZoneId):
+		self.add_query_param('ZoneId',ZoneId)
+
+	def get_Tag4Key(self):
+		return self.get_query_params().get('Tag.4.Key')
+
+	def set_Tag4Key(self,Tag4Key):
+		self.add_query_param('Tag.4.Key',Tag4Key)
+
+	def get_VolumeIds(self):
+		return self.get_query_params().get('VolumeIds')
+
+	def set_VolumeIds(self,VolumeIds):
+		self.add_query_param('VolumeIds',VolumeIds)
+
+	def get_Category(self):
+		return self.get_query_params().get('Category')
+
+	def set_Category(self,Category):
+		self.add_query_param('Category',Category)
+
+	def get_Status(self):
+		return self.get_query_params().get('Status')
+
+	def set_Status(self,Status):
+		self.add_query_param('Status',Status)

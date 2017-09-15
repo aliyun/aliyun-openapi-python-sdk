@@ -23,17 +23,11 @@ class ModifyRouterInterfaceSpecRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'ModifyRouterInterfaceSpec')
 
-	def get_Spec(self):
-		return self.get_query_params().get('Spec')
+	def get_ResourceOwnerId(self):
+		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_Spec(self,Spec):
-		self.add_query_param('Spec',Spec)
-
-	def get_ClientToken(self):
-		return self.get_query_params().get('ClientToken')
-
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
+	def set_ResourceOwnerId(self,ResourceOwnerId):
+		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -41,23 +35,11 @@ class ModifyRouterInterfaceSpecRequest(RpcRequest):
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
-	def get_RouterInterfaceId(self):
-		return self.get_query_params().get('RouterInterfaceId')
+	def get_ClientToken(self):
+		return self.get_query_params().get('ClientToken')
 
-	def set_RouterInterfaceId(self,RouterInterfaceId):
-		self.add_query_param('RouterInterfaceId',RouterInterfaceId)
-
-	def get_UserCidr(self):
-		return self.get_query_params().get('UserCidr')
-
-	def set_UserCidr(self,UserCidr):
-		self.add_query_param('UserCidr',UserCidr)
-
-	def get_ResourceOwnerId(self):
-		return self.get_query_params().get('ResourceOwnerId')
-
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+	def set_ClientToken(self,ClientToken):
+		self.add_query_param('ClientToken',ClientToken)
 
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
@@ -65,8 +47,26 @@ class ModifyRouterInterfaceSpecRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
+	def get_UserCidr(self):
+		return self.get_query_params().get('UserCidr')
+
+	def set_UserCidr(self,UserCidr):
+		self.add_query_param('UserCidr',UserCidr)
+
+	def get_RouterInterfaceId(self):
+		return self.get_query_params().get('RouterInterfaceId')
+
+	def set_RouterInterfaceId(self,RouterInterfaceId):
+		self.add_query_param('RouterInterfaceId',RouterInterfaceId)
+
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_Spec(self):
+		return self.get_query_params().get('Spec')
+
+	def set_Spec(self,Spec):
+		self.add_query_param('Spec',Spec)

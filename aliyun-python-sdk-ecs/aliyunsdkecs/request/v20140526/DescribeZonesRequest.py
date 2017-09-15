@@ -23,23 +23,23 @@ class DescribeZonesRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'DescribeZones')
 
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
+	def get_SpotStrategy(self):
+		return self.get_query_params().get('SpotStrategy')
 
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_Verbose(self):
-		return self.get_query_params().get('Verbose')
-
-	def set_Verbose(self,Verbose):
-		self.add_query_param('Verbose',Verbose)
+	def set_SpotStrategy(self,SpotStrategy):
+		self.add_query_param('SpotStrategy',SpotStrategy)
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+
+	def get_ResourceOwnerAccount(self):
+		return self.get_query_params().get('ResourceOwnerAccount')
+
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
@@ -52,3 +52,15 @@ class DescribeZonesRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_InstanceChargeType(self):
+		return self.get_query_params().get('InstanceChargeType')
+
+	def set_InstanceChargeType(self,InstanceChargeType):
+		self.add_query_param('InstanceChargeType',InstanceChargeType)
+
+	def get_Verbose(self):
+		return self.get_query_params().get('Verbose')
+
+	def set_Verbose(self,Verbose):
+		self.add_query_param('Verbose',Verbose)

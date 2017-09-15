@@ -23,71 +23,11 @@ class DescribeSnapshotsRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'DescribeSnapshots')
 
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
+	def get_Tag4Value(self):
+		return self.get_query_params().get('Tag.4.Value')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_SourceDiskType(self):
-		return self.get_query_params().get('SourceDiskType')
-
-	def set_SourceDiskType(self,SourceDiskType):
-		self.add_query_param('SourceDiskType',SourceDiskType)
-
-	def get_Filter2Key(self):
-		return self.get_query_params().get('Filter.2.Key')
-
-	def set_Filter2Key(self,Filter2Key):
-		self.add_query_param('Filter.2.Key',Filter2Key)
-
-	def get_Tag5Value(self):
-		return self.get_query_params().get('Tag.5.Value')
-
-	def set_Tag5Value(self,Tag5Value):
-		self.add_query_param('Tag.5.Value',Tag5Value)
-
-	def get_Filter2Value(self):
-		return self.get_query_params().get('Filter.2.Value')
-
-	def set_Filter2Value(self,Filter2Value):
-		self.add_query_param('Filter.2.Value',Filter2Value)
-
-	def get_Tag3Key(self):
-		return self.get_query_params().get('Tag.3.Key')
-
-	def set_Tag3Key(self,Tag3Key):
-		self.add_query_param('Tag.3.Key',Tag3Key)
-
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
-
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_Filter1Value(self):
-		return self.get_query_params().get('Filter.1.Value')
-
-	def set_Filter1Value(self,Filter1Value):
-		self.add_query_param('Filter.1.Value',Filter1Value)
-
-	def get_Tag1Key(self):
-		return self.get_query_params().get('Tag.1.Key')
-
-	def set_Tag1Key(self,Tag1Key):
-		self.add_query_param('Tag.1.Key',Tag1Key)
-
-	def get_Tag1Value(self):
-		return self.get_query_params().get('Tag.1.Value')
-
-	def set_Tag1Value(self,Tag1Value):
-		self.add_query_param('Tag.1.Value',Tag1Value)
-
-	def get_SnapshotType(self):
-		return self.get_query_params().get('SnapshotType')
-
-	def set_SnapshotType(self,SnapshotType):
-		self.add_query_param('SnapshotType',SnapshotType)
+	def set_Tag4Value(self,Tag4Value):
+		self.add_query_param('Tag.4.Value',Tag4Value)
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -95,23 +35,17 @@ class DescribeSnapshotsRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_Tag4Value(self):
-		return self.get_query_params().get('Tag.4.Value')
+	def get_Tag2Key(self):
+		return self.get_query_params().get('Tag.2.Key')
 
-	def set_Tag4Value(self,Tag4Value):
-		self.add_query_param('Tag.4.Value',Tag4Value)
+	def set_Tag2Key(self,Tag2Key):
+		self.add_query_param('Tag.2.Key',Tag2Key)
 
-	def get_OwnerAccount(self):
-		return self.get_query_params().get('OwnerAccount')
+	def get_Filter2Value(self):
+		return self.get_query_params().get('Filter.2.Value')
 
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
-
-	def get_PageNumber(self):
-		return self.get_query_params().get('PageNumber')
-
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
+	def set_Filter2Value(self,Filter2Value):
+		self.add_query_param('Filter.2.Value',Filter2Value)
 
 	def get_SnapshotIds(self):
 		return self.get_query_params().get('SnapshotIds')
@@ -119,29 +53,11 @@ class DescribeSnapshotsRequest(RpcRequest):
 	def set_SnapshotIds(self,SnapshotIds):
 		self.add_query_param('SnapshotIds',SnapshotIds)
 
-	def get_Status(self):
-		return self.get_query_params().get('Status')
+	def get_Usage(self):
+		return self.get_query_params().get('Usage')
 
-	def set_Status(self,Status):
-		self.add_query_param('Status',Status)
-
-	def get_SnapshotName(self):
-		return self.get_query_params().get('SnapshotName')
-
-	def set_SnapshotName(self,SnapshotName):
-		self.add_query_param('SnapshotName',SnapshotName)
-
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_Tag5Key(self):
-		return self.get_query_params().get('Tag.5.Key')
-
-	def set_Tag5Key(self,Tag5Key):
-		self.add_query_param('Tag.5.Key',Tag5Key)
+	def set_Usage(self,Usage):
+		self.add_query_param('Usage',Usage)
 
 	def get_SnapshotLinkId(self):
 		return self.get_query_params().get('SnapshotLinkId')
@@ -149,17 +65,41 @@ class DescribeSnapshotsRequest(RpcRequest):
 	def set_SnapshotLinkId(self,SnapshotLinkId):
 		self.add_query_param('SnapshotLinkId',SnapshotLinkId)
 
+	def get_SnapshotName(self):
+		return self.get_query_params().get('SnapshotName')
+
+	def set_SnapshotName(self,SnapshotName):
+		self.add_query_param('SnapshotName',SnapshotName)
+
+	def get_Tag3Key(self):
+		return self.get_query_params().get('Tag.3.Key')
+
+	def set_Tag3Key(self,Tag3Key):
+		self.add_query_param('Tag.3.Key',Tag3Key)
+
+	def get_PageNumber(self):
+		return self.get_query_params().get('PageNumber')
+
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)
+
+	def get_Tag1Value(self):
+		return self.get_query_params().get('Tag.1.Value')
+
+	def set_Tag1Value(self,Tag1Value):
+		self.add_query_param('Tag.1.Value',Tag1Value)
+
 	def get_Filter1Key(self):
 		return self.get_query_params().get('Filter.1.Key')
 
 	def set_Filter1Key(self,Filter1Key):
 		self.add_query_param('Filter.1.Key',Filter1Key)
 
-	def get_Tag2Key(self):
-		return self.get_query_params().get('Tag.2.Key')
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
 
-	def set_Tag2Key(self,Tag2Key):
-		self.add_query_param('Tag.2.Key',Tag2Key)
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
 
 	def get_DiskId(self):
 		return self.get_query_params().get('DiskId')
@@ -167,23 +107,83 @@ class DescribeSnapshotsRequest(RpcRequest):
 	def set_DiskId(self,DiskId):
 		self.add_query_param('DiskId',DiskId)
 
-	def get_Usage(self):
-		return self.get_query_params().get('Usage')
-
-	def set_Usage(self,Usage):
-		self.add_query_param('Usage',Usage)
-
 	def get_Tag3Value(self):
 		return self.get_query_params().get('Tag.3.Value')
 
 	def set_Tag3Value(self,Tag3Value):
 		self.add_query_param('Tag.3.Value',Tag3Value)
 
+	def get_Tag5Key(self):
+		return self.get_query_params().get('Tag.5.Key')
+
+	def set_Tag5Key(self,Tag5Key):
+		self.add_query_param('Tag.5.Key',Tag5Key)
+
+	def get_ResourceOwnerAccount(self):
+		return self.get_query_params().get('ResourceOwnerAccount')
+
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+
+	def get_OwnerAccount(self):
+		return self.get_query_params().get('OwnerAccount')
+
+	def set_OwnerAccount(self,OwnerAccount):
+		self.add_query_param('OwnerAccount',OwnerAccount)
+
+	def get_SourceDiskType(self):
+		return self.get_query_params().get('SourceDiskType')
+
+	def set_SourceDiskType(self,SourceDiskType):
+		self.add_query_param('SourceDiskType',SourceDiskType)
+
+	def get_Filter1Value(self):
+		return self.get_query_params().get('Filter.1.Value')
+
+	def set_Filter1Value(self,Filter1Value):
+		self.add_query_param('Filter.1.Value',Filter1Value)
+
+	def get_Filter2Key(self):
+		return self.get_query_params().get('Filter.2.Key')
+
+	def set_Filter2Key(self,Filter2Key):
+		self.add_query_param('Filter.2.Key',Filter2Key)
+
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
+
+	def get_Tag5Value(self):
+		return self.get_query_params().get('Tag.5.Value')
+
+	def set_Tag5Value(self,Tag5Value):
+		self.add_query_param('Tag.5.Value',Tag5Value)
+
+	def get_Tag1Key(self):
+		return self.get_query_params().get('Tag.1.Key')
+
+	def set_Tag1Key(self,Tag1Key):
+		self.add_query_param('Tag.1.Key',Tag1Key)
+
 	def get_InstanceId(self):
 		return self.get_query_params().get('InstanceId')
 
 	def set_InstanceId(self,InstanceId):
 		self.add_query_param('InstanceId',InstanceId)
+
+	def get_Encrypted(self):
+		return self.get_query_params().get('Encrypted')
+
+	def set_Encrypted(self,Encrypted):
+		self.add_query_param('Encrypted',Encrypted)
+
+	def get_SnapshotType(self):
+		return self.get_query_params().get('SnapshotType')
+
+	def set_SnapshotType(self,SnapshotType):
+		self.add_query_param('SnapshotType',SnapshotType)
 
 	def get_Tag2Value(self):
 		return self.get_query_params().get('Tag.2.Value')
@@ -196,3 +196,9 @@ class DescribeSnapshotsRequest(RpcRequest):
 
 	def set_Tag4Key(self,Tag4Key):
 		self.add_query_param('Tag.4.Key',Tag4Key)
+
+	def get_Status(self):
+		return self.get_query_params().get('Status')
+
+	def set_Status(self,Status):
+		self.add_query_param('Status',Status)

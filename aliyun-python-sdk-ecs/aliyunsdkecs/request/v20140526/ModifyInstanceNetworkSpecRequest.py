@@ -23,11 +23,17 @@ class ModifyInstanceNetworkSpecRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'ModifyInstanceNetworkSpec')
 
-	def get_InternetMaxBandwidthOut(self):
-		return self.get_query_params().get('InternetMaxBandwidthOut')
+	def get_ResourceOwnerId(self):
+		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_InternetMaxBandwidthOut(self,InternetMaxBandwidthOut):
-		self.add_query_param('InternetMaxBandwidthOut',InternetMaxBandwidthOut)
+	def set_ResourceOwnerId(self,ResourceOwnerId):
+		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+
+	def get_AutoPay(self):
+		return self.get_query_params().get('AutoPay')
+
+	def set_AutoPay(self,AutoPay):
+		self.add_query_param('AutoPay',AutoPay)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -35,23 +41,35 @@ class ModifyInstanceNetworkSpecRequest(RpcRequest):
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
-	def get_InternetMaxBandwidthIn(self):
-		return self.get_query_params().get('InternetMaxBandwidthIn')
+	def get_ClientToken(self):
+		return self.get_query_params().get('ClientToken')
 
-	def set_InternetMaxBandwidthIn(self,InternetMaxBandwidthIn):
-		self.add_query_param('InternetMaxBandwidthIn',InternetMaxBandwidthIn)
-
-	def get_ResourceOwnerId(self):
-		return self.get_query_params().get('ResourceOwnerId')
-
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+	def set_ClientToken(self,ClientToken):
+		self.add_query_param('ClientToken',ClientToken)
 
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
 
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
+
+	def get_InternetMaxBandwidthOut(self):
+		return self.get_query_params().get('InternetMaxBandwidthOut')
+
+	def set_InternetMaxBandwidthOut(self,InternetMaxBandwidthOut):
+		self.add_query_param('InternetMaxBandwidthOut',InternetMaxBandwidthOut)
+
+	def get_EndTime(self):
+		return self.get_query_params().get('EndTime')
+
+	def set_EndTime(self,EndTime):
+		self.add_query_param('EndTime',EndTime)
+
+	def get_StartTime(self):
+		return self.get_query_params().get('StartTime')
+
+	def set_StartTime(self,StartTime):
+		self.add_query_param('StartTime',StartTime)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
@@ -64,3 +82,15 @@ class ModifyInstanceNetworkSpecRequest(RpcRequest):
 
 	def set_InstanceId(self,InstanceId):
 		self.add_query_param('InstanceId',InstanceId)
+
+	def get_NetworkChargeType(self):
+		return self.get_query_params().get('NetworkChargeType')
+
+	def set_NetworkChargeType(self,NetworkChargeType):
+		self.add_query_param('NetworkChargeType',NetworkChargeType)
+
+	def get_InternetMaxBandwidthIn(self):
+		return self.get_query_params().get('InternetMaxBandwidthIn')
+
+	def set_InternetMaxBandwidthIn(self,InternetMaxBandwidthIn):
+		self.add_query_param('InternetMaxBandwidthIn',InternetMaxBandwidthIn)

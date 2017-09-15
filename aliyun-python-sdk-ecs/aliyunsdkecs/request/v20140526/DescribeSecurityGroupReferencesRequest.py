@@ -23,9 +23,33 @@ class DescribeSecurityGroupReferencesRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'DescribeSecurityGroupReferences')
 
-	def get_SecurityGroupId(self):
+	def get_ResourceOwnerId(self):
+		return self.get_query_params().get('ResourceOwnerId')
+
+	def set_ResourceOwnerId(self,ResourceOwnerId):
+		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+
+	def get_ResourceOwnerAccount(self):
+		return self.get_query_params().get('ResourceOwnerAccount')
+
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+
+	def get_OwnerAccount(self):
+		return self.get_query_params().get('OwnerAccount')
+
+	def set_OwnerAccount(self,OwnerAccount):
+		self.add_query_param('OwnerAccount',OwnerAccount)
+
+	def get_SecurityGroupIds(self):
 		return self.get_query_params().get('SecurityGroupIds')
 
-	def set_SecurityGroupId(self,SecurityGroupId):
-		for i in range(len(SecurityGroupId)):	
-			self.add_query_param('SecurityGroupId.' + bytes(i + 1) , SecurityGroupId[i]);
+	def set_SecurityGroupIds(self,SecurityGroupIds):
+		for i in range(len(SecurityGroupIds)):	
+			self.add_query_param('SecurityGroupId.' + bytes(i + 1) , SecurityGroupIds[i]);
+
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
