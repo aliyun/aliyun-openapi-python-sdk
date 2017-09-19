@@ -181,6 +181,8 @@ class AcsClient:
         if self.get_user_agent() is not None:
             header['User-Agent'] = self.get_user_agent()
             header['x-sdk-client'] = 'python/2.0.0'
+            if self.get_business_profile() is not None:
+                header['x-sdk-client'] = 'python/2.0.0/' + str(self.get_business_profile())
         if header is None:
             header = {}
 

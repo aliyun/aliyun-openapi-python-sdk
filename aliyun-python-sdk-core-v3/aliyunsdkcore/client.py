@@ -55,7 +55,8 @@ class AcsClient:
             auto_retry=True,
             max_retry_time=3,
             user_agent=None,
-            port=80):
+            port=80,
+            business_profile=None):
         """
         constructor for AcsClient
         :param ak: String, access key id
@@ -63,6 +64,7 @@ class AcsClient:
         :param region_id: String, region id
         :param auto_retry: Boolean
         :param max_retry_time: Number
+        :param business_profile: String, the name or other profile of business who invokes the current SDK
         :return:
         """
         self.__max_retry_num = max_retry_time
@@ -71,6 +73,7 @@ class AcsClient:
         self.__secret = secret
         self.__region_id = region_id
         self.__user_agent = user_agent
+        self.__business_profile = business_profile
         self._port = port
         self._location_service = LocationService(self)
         # if true, do_action() will throw a ClientException that contains URL
@@ -114,6 +117,9 @@ class AcsClient:
     def get_user_agent(self):
         return self.__user_agent
 
+    def get_business_profile(self):
+        return self.__business_profile
+
     def set_region_id(self, region):
         self.__region_id = region
 
@@ -146,6 +152,14 @@ class AcsClient:
         :return:
         """
         self.__user_agent = agent
+
+    def set_business_profile(self, profile):
+        """
+        Business profile set to client will overwrite the request setting.
+        :param profile:
+        :return:
+        """
+        self.__business_profile = profile
 
     def get_port(self):
         return self._port
@@ -187,6 +201,8 @@ class AcsClient:
         if header is None:
             header = {}
         header['x-sdk-client'] = 'python/3.0.0'
+        if self.get_business_profile() is not None:
+            header['x-sdk-client'] = 'python/3.0.0/' + str(self.get_business_profile())
 
         protocol = request.get_protocol_type()
         url = request.get_url(

@@ -107,6 +107,8 @@ class LocationService:
             if self.__clinetRef.get_user_agent() is not None:
                 header['User-Agent'] = self.__clinetRef.get_user_agent()
                 header['x-sdk-client'] = 'python/2.0.0'
+                if self.get_business_profile() is not None:
+                    header['x-sdk-client'] = 'python/2.0.0/' + str(self.get_business_profile())
             protocol = request.get_protocol_type()
             url = request.get_url(
                 self.__service_region,
