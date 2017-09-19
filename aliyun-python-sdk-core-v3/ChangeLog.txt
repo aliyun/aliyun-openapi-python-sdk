@@ -1,3 +1,6 @@
+2017-09-19 Version: 2.4.0
+1, 增加对Ak2.0(sts session token)验证模式的支持。
+
 2017-08-15 Version: 2.3.7
 1, 修正某些场景下x-sdk-client未生效的bug
 

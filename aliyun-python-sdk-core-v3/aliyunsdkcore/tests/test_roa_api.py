@@ -20,13 +20,15 @@
 # coding=utf-8
 
 import os
+import sys
 import json
 import configparser
 
 from aliyunsdkcore.client import AcsClient
-from aliyunsdkft.request.v20160101 import TestRpcApiRequest
 from aliyunsdkcore.profile import region_provider
+from .ft import TestRoaApiRequest
 
+headerParam = "hdParam"
 queryParam = "queryParam"
 bodyParam = "bodyContent"
 
@@ -38,64 +40,71 @@ region_provider.modify_point('Ft', 'cn-hangzhou', 'ft.aliyuncs.com')
 client = AcsClient(cf.get("daily_access_key", "id"), cf.get("daily_access_key", "secret"), 'cn-hangzhou')
 assert client
 
+request = TestRoaApiRequest.TestRoaApiRequest()
+request.set_header_param(headerParam)
+request.set_query_param(queryParam)
+request.set_body_param(bodyParam)
+request.add_header('Content-Type', "text/plain")
 
-class TestRpcApi(object):
 
-    def get_base_request(self):
-        request = TestRpcApiRequest.TestRpcApiRequest()
-        request.set_QueryParam(queryParam)
-        return request
+class TestRoaApi(object):
+    
+    acs_client = client
+
+    def set_client(self, acs_client=client):
+        self.acs_client = acs_client
 
     def test_get(self):
-        request = self.get_base_request()
         request.set_method("GET")
-        body = client.do_action_with_exception(request)
+        body = self.acs_client.do_action_with_exception(request)
         assert body
 
         response = json.loads(body)
         assert response
 
+        assert response.get("Params").get("RegionId") == 'cn-hangzhou'
         assert response.get("Params").get("QueryParam") == queryParam
+        assert response.get("Headers").get("HeaderParam") == headerParam
 
     def test_post(self):
-        request = self.get_base_request()
         request.set_method("POST")
-        request.set_BodyParam(bodyParam)
-        body = client.do_action_with_exception(request)
+        body = self.acs_client.do_action_with_exception(request)
         assert body
 
         response = json.loads(body)
         assert response
 
+        assert response.get("Params").get("RegionId") == 'cn-hangzhou'
         assert response.get("Params").get("QueryParam") == queryParam
+        assert response.get("Headers").get("HeaderParam") == headerParam
         assert response.get("Params").get("BodyParam") == bodyParam
 
     def test_head(self):
-        request = self.get_base_request()
         request.set_method("HEAD")
-        body = client.do_action_with_exception(request)
-        assert body == b''
+        body = self.acs_client.do_action_with_exception(request)
+        assert len(body) == 0
 
     def test_put(self):
-        request = self.get_base_request()
         request.set_method("PUT")
-        request.set_BodyParam(bodyParam)
-        body = client.do_action_with_exception(request)
+        body = self.acs_client.do_action_with_exception(request)
         assert body
 
         response = json.loads(body)
         assert response
 
+        assert response.get("Params").get("RegionId") == 'cn-hangzhou'
         assert response.get("Params").get("QueryParam") == queryParam
+        assert response.get("Headers").get("HeaderParam") == headerParam
         assert response.get("Params").get("BodyParam") == bodyParam
 
     def test_delete(self):
-        request = self.get_base_request()
         request.set_method("DELETE")
-        body = client.do_action_with_exception(request)
+        body = self.acs_client.do_action_with_exception(request)
         assert body
 
         response = json.loads(body)
         assert response
 
+        assert response.get("Params").get("RegionId") == 'cn-hangzhou'
         assert response.get("Params").get("QueryParam") == queryParam
+        assert response.get("Headers").get("HeaderParam") == headerParam

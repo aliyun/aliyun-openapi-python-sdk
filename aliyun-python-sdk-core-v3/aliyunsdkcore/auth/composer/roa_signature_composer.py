@@ -17,10 +17,11 @@
 
 # coding=utf-8
 
-from . import sha_hmac1 as mac1
-from ..utils import parameter_helper as helper
-from ..http import format_type as FormatType
 import urllib
+
+from aliyunsdkcore.auth.algorithm import sha_hmac1 as mac1
+from aliyunsdkcore.http import format_type as FormatType
+from aliyunsdkcore.utils import parameter_helper as helper
 
 ACCEPT = "Accept"
 CONTENT_MD5 = "Content-MD5"
@@ -149,7 +150,7 @@ def get_signature(
         headers=headers,
         uri_pattern=uri_pattern,
         paths=paths)
-    signature = signer.get_sign_string(sign_to_string, secret)
+    signature = signer.get_sign_string(sign_to_string, secret=secret)
     return signature
 
 

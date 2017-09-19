@@ -17,22 +17,34 @@
 
 # coding=utf-8
 
-import hmac
-import hashlib
 import base64
+from Crypto.Signature import PKCS1_v1_5
+from Crypto.Hash import SHA256
+from Crypto.PublicKey import RSA
 
 
-class ShaHmac256:
-    def __init__(self):
-        pass
+def get_sign_string(source, access_secret):
+    if isinstance(access_secret, str):
+        access_secret = bytearray(access_secret, "utf-8")
+    secret = base64.decodebytes(access_secret)
+    key = RSA.importKey(secret)
+    if isinstance(source, str):
+        source = bytearray(source, "utf-8")
+    h = SHA256.new(source)
+    signer = PKCS1_v1_5.new(key)
+    signed_bytes = signer.sign(h)
+    signed_base64 = base64.encodebytes(signed_bytes)
+    signature = str(signed_base64, "utf-8").replace('\n', '')
+    return signature
 
-    def get_sign_string(self, source, accessSecret):
-        h = hmac.new(bytearray(accessSecret, "utf-8"), bytearray(source, "utf-8"), hashlib.sha256)
-        signature = str(base64.encodebytes(h.digest()).strip(), "utf-8")
-        return signature
 
-    def get_signer_name(self):
-        return "HMAC-SHA256"
+def get_signer_name():
+    return "SHA256withRSA"
 
-    def get_singer_version(self):
-        return "1.0"
+
+def get_singer_version():
+    return "1.0"
+
+
+def get_signer_type():
+    return "PRIVATEKEY"

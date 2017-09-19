@@ -22,10 +22,11 @@
 from .http import protocol_type
 from .http import method_type
 from .http import format_type
-from .auth import rpc_signature_composer as rpc_signer
-from .auth import roa_signature_composer as roa_signer
-from .auth import oss_signature_composer as oss_signer
-from .auth import md5_tool
+from .auth.composer import rpc_signature_composer as rpc_signer
+from .auth.composer import roa_signature_composer as roa_signer
+from .auth.composer import oss_signature_composer as oss_signer
+from .auth.algorithm import sha_hmac1
+from .auth.utils import md5_tool
 import abc
 
 """
@@ -191,11 +192,11 @@ class AcsRequest(metaclass=abc.ABCMeta):
     def get_location_service_code(self):
         return self.__location_service_code
 
-    def set_content_type(self, content_type):
-        self.add_header("Content-Type", content_type)
-
     def get_location_endpoint_type(self):
         return self.__location_endpoint_type
+
+    def set_content_type(self, content_type):
+        self.add_header("Content-Type", content_type)
 
     @abc.abstractmethod
     def get_style(self):
@@ -223,7 +224,8 @@ class RpcRequest(AcsRequest):
             location_service_code=None,
             location_endpoint_type='openAPI',
             format=None,
-            protocol=None):
+            protocol=None,
+            signer=sha_hmac1):
         AcsRequest.__init__(
             self,
             product,
@@ -235,6 +237,7 @@ class RpcRequest(AcsRequest):
             protocol,
             method_type.GET)
         self.__style = STYLE_RPC
+        self.__signer = signer
 
     def get_style(self):
         return self.__style
@@ -246,6 +249,7 @@ class RpcRequest(AcsRequest):
         req_params['Version'] = self.get_version()
         req_params['Action'] = self.get_action_name()
         req_params['Format'] = self.get_accept_format()
+
         return req_params
 
     def get_url(self, region_id, ak, secret):
@@ -258,7 +262,8 @@ class RpcRequest(AcsRequest):
             secret,
             self.get_accept_format(),
             self.get_method(),
-            self.get_body_params())
+            self.get_body_params(),
+            self.__signer)
         return url
 
     def get_signed_header(self, region_id=None, ak=None, secret=None):
@@ -345,8 +350,8 @@ class RoaRequest(AcsRequest):
         :param secret: String
         :return: Dict
         """
-        sign_params = self.get_query_params()
-        if (self.get_content() is not None):
+        sign_params = self.__get_sign_params()
+        if self.get_content() is not None:
             md5_str = md5_tool.get_md5_base64_str(self.get_content())
             self.add_header('Content-MD5', md5_str)
         if 'RegionId' not in list(sign_params.keys()):

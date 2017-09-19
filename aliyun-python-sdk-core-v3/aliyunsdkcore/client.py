@@ -29,13 +29,13 @@ from .acs_exception import error_code, error_msg
 from .http.http_response import HttpResponse
 from .request import AcsRequest
 from .http import format_type
-
-warnings.filterwarnings("once", category=DeprecationWarning)
-
+from .auth.Signer import Signer
 try:
     import json
 except ImportError:
     import simplejson as json
+
+warnings.filterwarnings("once", category=DeprecationWarning)
 
 """
 Acs default client module.
@@ -47,15 +47,20 @@ Created on 6/15/2015
 
 
 class AcsClient:
+
     def __init__(
             self,
-            ak,
-            secret,
-            region_id,
+            ak=None,
+            secret=None,
+            region_id="cn-hangzhou",
             auto_retry=True,
             max_retry_time=3,
             user_agent=None,
-            port=80):
+            port=80,
+            public_key_id=None,
+            private_key=None,
+            session_period=3600,
+            debug=False):
         """
         constructor for AcsClient
         :param ak: String, access key id
@@ -65,6 +70,7 @@ class AcsClient:
         :param max_retry_time: Number
         :return:
         """
+
         self.__max_retry_num = max_retry_time
         self.__auto_retry = auto_retry
         self.__ak = ak
@@ -75,6 +81,15 @@ class AcsClient:
         self._location_service = LocationService(self)
         # if true, do_action() will throw a ClientException that contains URL
         self._url_test_flag = False
+        credential = {
+            'ak': ak,
+            'secret': secret,
+            'public_key_id': public_key_id,
+            'private_key': private_key,
+            'session_period': session_period,
+            'region_id': region_id
+        }
+        self._signer = Signer.get_signer(credential, debug)
 
     def get_region_id(self):
         """
@@ -117,12 +132,6 @@ class AcsClient:
     def set_region_id(self, region):
         self.__region_id = region
 
-    def set_access_key(self, ak):
-        self.__ak = ak
-
-    def set_access_secret(self, secret):
-        self.__secret = secret
-
     def set_max_retry_num(self, num):
         """
         set auto retry number
@@ -157,7 +166,8 @@ class AcsClient:
         endpoint = None
         if request.get_location_service_code() is not None:
             endpoint = self._location_service.find_product_domain(
-                self.get_region_id(), request.get_location_service_code(), request.get_product(), request.get_location_endpoint_type())
+                self.get_region_id(), request.get_location_service_code(), request.get_product(),
+                request.get_location_endpoint_type())
         if endpoint is None:
             endpoint = region_provider.find_product_domain(
                 self.get_region_id(), request.get_product())
@@ -178,10 +188,8 @@ class AcsClient:
             request.set_content_type(format_type.APPLICATION_FORM)
         content = request.get_content()
         method = request.get_method()
-        header = request.get_signed_header(
-            self.get_region_id(),
-            self.get_access_key(),
-            self.get_access_secret())
+        header, url = self._signer.sign(self.__region_id, request)
+
         if self.get_user_agent() is not None:
             header['User-Agent'] = self.get_user_agent()
         if header is None:
@@ -189,10 +197,6 @@ class AcsClient:
         header['x-sdk-client'] = 'python/3.0.0'
 
         protocol = request.get_protocol_type()
-        url = request.get_url(
-            self.get_region_id(),
-            self.get_access_key(),
-            self.get_access_secret())
         response = HttpResponse(
             endpoint,
             url,
@@ -243,7 +247,7 @@ class AcsClient:
 
         # set server response format as json, because thie function will
         # parse the response so which format doesn't matter
-        acs_request.set_accept_format('JSON')
+        acs_request.set_accept_format('json')
 
         status, headers, body = self._implementation_of_do_action(acs_request)
 

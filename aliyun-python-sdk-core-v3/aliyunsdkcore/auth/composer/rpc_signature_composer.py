@@ -17,11 +17,12 @@
 
 # coding=utf-8
 
-from . import sha_hmac1 as mac1
+import urllib.parse
 import urllib.request
 import urllib.response
-import urllib.parse
-from ..utils import parameter_helper as helper
+
+from aliyunsdkcore.auth.algorithm import sha_hmac1 as mac1
+from aliyunsdkcore.utils import parameter_helper as helper
 
 
 def __init__():
@@ -42,6 +43,7 @@ def __refresh_sign_parameters(
         parameters = dict()
     parameters["Timestamp"] = helper.get_iso_8061_date()
     parameters["SignatureMethod"] = signer.get_signer_name()
+    parameters["SignatureType"] = signer.get_signer_type()
     parameters["SignatureVersion"] = signer.get_singer_version()
     parameters["SignatureNonce"] = helper.get_uuid()
     parameters["AccessKeyId"] = access_key_id

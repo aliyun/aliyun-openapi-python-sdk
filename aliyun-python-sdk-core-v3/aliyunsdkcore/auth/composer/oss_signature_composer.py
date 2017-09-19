@@ -17,10 +17,11 @@
 
 # coding=utf-8
 
-from . import roa_signature_composer
-from . import sha_hmac1 as mac1
-from ..utils import parameter_helper as helper
 import urllib
+
+from aliyunsdkcore.auth.algorithm import sha_hmac1 as mac1
+from aliyunsdkcore.auth.composer import roa_signature_composer
+from aliyunsdkcore.utils import parameter_helper as helper
 
 ACCEPT = "Accept"
 CONTENT_MD5 = "Content-MD5"

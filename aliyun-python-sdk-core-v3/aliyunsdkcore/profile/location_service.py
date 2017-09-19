@@ -122,18 +122,13 @@ class LocationService:
         try:
             content = request.get_content()
             method = request.get_method()
-            header = request.get_signed_header(
-                self.__service_region,
-                self.__clinetRef.get_access_key(),
-                self.__clinetRef.get_access_secret())
+
+            signer = getattr(self.__clinetRef, '_signer')
+            header, url = signer.sign(self.__service_region, request)
             if self.__clinetRef.get_user_agent() is not None:
                 header['User-Agent'] = self.__clinetRef.get_user_agent()
                 header['x-sdk-client'] = 'python/2.0.0'
             protocol = request.get_protocol_type()
-            url = request.get_url(
-                self.__service_region,
-                self.__clinetRef.get_access_key(),
-                self.__clinetRef.get_access_secret())
             response = HttpResponse(
                 self.__service_domain,
                 url,
@@ -144,14 +139,15 @@ class LocationService:
                 self.__clinetRef.get_port())
 
             status, header, body = response.get_response_object()
+
             result = json.loads(body)
             if status == 200:
                 endpoint = result.get('Endpoints').get('Endpoint')
-                if (len(endpoint) <= 0):
+                if len(endpoint) <= 0:
                     return None
                 else:
                     return endpoint[0].get('Endpoint')
-            elif status >= 400 and status < 500:
+            elif 400 <= status < 500:
                 # print "serviceCode=" + service_code + " get location error!
                 # code=" + result.get('Code') +", message =" +
                 # result.get('Message')
@@ -171,22 +167,28 @@ class LocationService:
                 error_code.SDK_INVALID_REQUEST,
                 error_msg.get_msg('SDK_INVALID_REQUEST'))
 
+
 def set_cache(product, region_id, domain):
     if region_id is not None and product is not None and domain is not None:
         key = "%s_&_%s" % (region_id, product)
         __location_endpoints[key] = domain
         __last_cache_clear_time_per_product[key] = datetime.datetime.strptime('2999-01-01 00:00:00',
                                                                               '%Y-%m-%d %H:%M:%S')
+
+
 def get_location_endpoints():
     return __location_endpoints
+
 
 def get_last_cache_clear_time_per_product():
     return __last_cache_clear_time_per_product
 
+
 def set_location_service_domain(domain):
     global __location_service_domain
     if domain is not None:
-       __location_service_domain = domain
+        __location_service_domain = domain
+
 
 def get_location_service_domain():
     return __location_service_domain
