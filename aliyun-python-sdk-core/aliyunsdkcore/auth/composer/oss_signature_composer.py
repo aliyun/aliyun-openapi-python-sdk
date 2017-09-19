@@ -24,8 +24,8 @@ import sys
 parentdir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, parentdir)
 import roa_signature_composer
-import sha_hmac1 as mac1
-from ..utils import parameter_helper as helper
+from aliyunsdkcore.auth.algorithm import sha_hmac1 as mac1
+from aliyunsdkcore.utils import parameter_helper as helper
 import urllib
 
 ACCEPT = "Accept"

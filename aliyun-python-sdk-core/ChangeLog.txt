@@ -1,3 +1,7 @@
+2017-09-19 Version: 2.4.0
+1, 增加对Ak2.0(sts session token)验证模式的支持
+
+
 2017-08-25 Version: 2.3.9
 1,  EMR增加德国和张北region的SDK endpoint
 

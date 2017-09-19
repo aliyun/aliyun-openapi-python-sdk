@@ -25,8 +25,8 @@ import json
 import ConfigParser
 
 from aliyunsdkcore.client import AcsClient
-from aliyunsdkft.request.v20160101 import TestRpcApiRequest
 from aliyunsdkcore.profile import region_provider
+from .ft import TestRpcApiRequest
 
 parent_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, parent_dir)
@@ -45,15 +45,20 @@ assert client
 
 class TestRpcApi(object):
 
+    acs_client = client
+
+    def set_client(self, acs_client=client):
+        self.acs_client = acs_client
+
     def get_base_request(self):
         request = TestRpcApiRequest.TestRpcApiRequest()
-        request.set_QueryParam(queryParam)
+        request.set_query_param(queryParam)
         return request
 
     def test_get(self):
         request = self.get_base_request()
         request.set_method("GET")
-        body = client.do_action_with_exception(request)
+        body = self.acs_client.do_action_with_exception(request)
         print body
         assert body
 
@@ -65,8 +70,8 @@ class TestRpcApi(object):
     def test_post(self):
         request = self.get_base_request()
         request.set_method("POST")
-        request.set_BodyParam(bodyParam)
-        body = client.do_action_with_exception(request)
+        request.set_body_param(bodyParam)
+        body = self.acs_client.do_action_with_exception(request)
         assert body
 
         response = json.loads(body)
@@ -78,14 +83,14 @@ class TestRpcApi(object):
     def test_head(self):
         request = self.get_base_request()
         request.set_method("HEAD")
-        body = client.do_action_with_exception(request)
+        body = self.acs_client.do_action_with_exception(request)
         assert body == ''
 
     def test_put(self):
         request = self.get_base_request()
         request.set_method("PUT")
-        request.set_BodyParam(bodyParam)
-        body = client.do_action_with_exception(request)
+        request.set_body_param(bodyParam)
+        body = self.acs_client.do_action_with_exception(request)
         assert body
 
         response = json.loads(body)
@@ -97,14 +102,10 @@ class TestRpcApi(object):
     def test_delete(self):
         request = self.get_base_request()
         request.set_method("DELETE")
-        body = client.do_action_with_exception(request)
+        body = self.acs_client.do_action_with_exception(request)
         assert body
 
         response = json.loads(body)
         assert response
 
         assert response.get("Params").get("QueryParam") == queryParam
-
-
-
-

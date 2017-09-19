@@ -25,13 +25,14 @@ import sys
 parent_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, parent_dir)
 
-from .http import protocol_type as PT
-from .http import method_type as MT
-from .http import format_type as FT
-from .auth import rpc_signature_composer as rpc_signer
-from .auth import roa_signature_composer as roa_signer
-from .auth import oss_signature_composer as oss_signer
-from .auth import md5_tool
+from .http import protocol_type as pt
+from .http import method_type as mt
+from .http import format_type as ft
+from .auth.composer import rpc_signature_composer as rpc_signer
+from .auth.composer import roa_signature_composer as roa_signer
+from .auth.composer import oss_signature_composer as oss_signer
+from .auth.utils import md5_tool
+from aliyunsdkcore.auth.algorithm import sha_hmac1
 import abc
 import base64
 
@@ -59,7 +60,7 @@ class AcsRequest:
                  location_service_code=None,
                  location_endpoint_type='openAPI',
                  accept_format=None,
-                 protocol_type=PT.HTTP,
+                 protocol_type=pt.HTTP,
                  method=None):
         """
 
@@ -199,12 +200,15 @@ class AcsRequest:
     def get_location_service_code(self):
         return self.__location_service_code
 
-    def set_content_type(self, content_type):
-        self.add_header("Content-Type", content_type)
-        
     def get_location_endpoint_type(self):
         return self.__location_endpoint_type
-        
+
+    def set_content_type(self, content_type):
+        self.add_header("Content-Type", content_type)
+
+    def get_location_endpoint_type(self):
+        return self.__location_endpoint_type
+
     @abc.abstractmethod
     def get_style(self):
         pass
@@ -231,7 +235,8 @@ class RpcRequest(AcsRequest):
             location_service_code=None,
             location_endpoint_type='openAPI',
             format=None,
-            protocol=None):
+            protocol=None,
+            signer=sha_hmac1):
         AcsRequest.__init__(
             self,
             product,
@@ -241,8 +246,9 @@ class RpcRequest(AcsRequest):
             location_endpoint_type,
             format,
             protocol,
-            MT.GET)
+            mt.GET)
         self.__style = STYLE_RPC
+        self.__signer = signer
 
     def get_style(self):
         return self.__style
@@ -267,7 +273,8 @@ class RpcRequest(AcsRequest):
             secret,
             self.get_accept_format(),
             self.get_method(),
-            self.get_body_params())
+            self.get_body_params(),
+            self.__signer)
         return url
 
     def get_signed_header(self, region_id=None, ak=None, secret=None):
@@ -310,7 +317,7 @@ class RoaRequest(AcsRequest):
             action_name,
             location_service_code,
             location_endpoint_type,
-            FT.RAW,
+            ft.RAW,
             protocol,
             method)
         self.__style = STYLE_ROA
@@ -354,8 +361,8 @@ class RoaRequest(AcsRequest):
         :param secret: String
         :return: Dict
         """
-        sign_params = self.get_query_params()
-        if (self.get_content() is not None):
+        sign_params = self.__get_sign_params()
+        if self.get_content() is not None:
             md5_str = md5_tool.get_md5_base64_str(self.get_content())
             self.add_header('Content-MD5', md5_str)
         if 'RegionId' not in sign_params.keys():
@@ -420,7 +427,7 @@ class OssRequest(AcsRequest):
             action_name,
             location_service_code,
             'openAPI',
-            FT.XML,
+            ft.XML,
             protocol,
             method)
         self.__style = STYLE_OSS

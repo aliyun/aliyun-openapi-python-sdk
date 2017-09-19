@@ -19,22 +19,26 @@
 
 __author__ = 'alex jiang'
 
-import hmac
 import hashlib
+import hmac
 import base64
 
 
-class ShaHmac256:
-    def __init__(self):
-        pass
+def get_sign_string(source, secret):
+    if isinstance(secret, unicode):
+        secret = str(secret)
+    h = hmac.new(secret, source, hashlib.sha1)
+    signature = base64.encodestring(h.digest()).strip()
+    return signature
 
-    def get_sign_string(self, source, accessSecret):
-        h = hmac.new(accessSecret, source, hashlib.sha256)
-        signature = base64.encodestring(h.digest()).strip()
-        return signature
 
-    def get_signer_name(self):
-        return "HMAC-SHA256"
+def get_signer_name():
+    return "HMAC-SHA1"
 
-    def get_singer_version(self):
-        return "1.0"
+
+def get_singer_version():
+    return "1.0"
+
+
+def get_signer_type():
+    return ""

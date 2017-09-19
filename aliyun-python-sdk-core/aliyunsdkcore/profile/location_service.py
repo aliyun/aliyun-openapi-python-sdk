@@ -44,8 +44,8 @@ __location_endpoints = dict()
 __last_cache_clear_time_per_product = dict()
 __location_service_domain = 'location.aliyuncs.com'
 
-class DescribeEndpointRequest(RpcRequest):
 
+class DescribeEndpointRequest(RpcRequest):
     def __init__(
             self,
             product_name,
@@ -63,8 +63,7 @@ class DescribeEndpointRequest(RpcRequest):
 
 
 class LocationService:
-
-    def __init__(self, client):
+    def __init__(self, client, timeout=None):
         self.__clinetRef = client
         self.__cache = get_location_endpoints()
         self.__service_product_name = LOCATION_SERVICE_PRODUCT_NAME
@@ -74,6 +73,8 @@ class LocationService:
         self.__service_action = LOCATION_SERVICE_DESCRIBE_ENDPOINT_ACTION
         self.__cache_expire_time = LOCATION_CACHE_EXPIRE_TIME
         self.__last_cache_clear_time_per_product = get_last_cache_clear_time_per_product()
+        self._timeout = timeout
+        self._location_access_count = 0
 
     def set_location_service_attr(
             self,
@@ -83,7 +84,7 @@ class LocationService:
         if region is not None:
             self.__service_region = region
 
-        if domain is not None:            
+        if domain is not None:
             self.__service_domain = domain
 
         if product_name is not None:
@@ -95,22 +96,30 @@ class LocationService:
         if domain is None or self.check_endpoint_cache_is_expire(key) is True:
             domain = self.find_product_domain_from_location_service(
                 region_id, service_code, endpoint_type)
-            if domain is not None:
+            if domain is None:
+                # set domain as <DomainNotFound> to avoid repeat access to location service
+                # when location fetch miss
+                self.__cache[key] = '<DomainNotFound>'
+            else:
                 self.__cache[key] = domain
+            self.set_endpoint_cache_update_time(key)
 
+        if domain == '<DomainNotFound>':
+            return None
         return domain
+
+    def set_endpoint_cache_update_time(self, key):
+        now = datetime.datetime.now()
+        self.__last_cache_clear_time_per_product[key] = now
 
     def check_endpoint_cache_is_expire(self, key):
         last_clear_time = self.__last_cache_clear_time_per_product.get(key)
         if last_clear_time is None:
-            last_clear_time = datetime.datetime.now()
-            self.__last_cache_clear_time_per_product[key] = last_clear_time
+            return False
 
         now = datetime.datetime.now()
         elapsed_time = now - last_clear_time
         if now > last_clear_time and elapsed_time.seconds > self.__cache_expire_time:
-            last_clear_time = datetime.datetime.now()
-            self.__last_cache_clear_time_per_product[key] = last_clear_time
             return True
 
         return False
@@ -124,21 +133,17 @@ class LocationService:
                                           region_id,
                                           service_code,
                                           endpoint_type)
+        self._location_access_count += 1
         try:
             content = request.get_content()
             method = request.get_method()
-            header = request.get_signed_header(
-                self.__service_region,
-                self.__clinetRef.get_access_key(),
-                self.__clinetRef.get_access_secret())
+
+            signer = getattr(self.__clinetRef, '_signer')
+            header, url = signer.sign(self.__service_region, request)
             if self.__clinetRef.get_user_agent() is not None:
                 header['User-Agent'] = self.__clinetRef.get_user_agent()
                 header['x-sdk-client'] = 'python/2.0.0'
             protocol = request.get_protocol_type()
-            url = request.get_url(
-                self.__service_region,
-                self.__clinetRef.get_access_key(),
-                self.__clinetRef.get_access_secret())
             response = HttpResponse(
                 self.__service_domain,
                 url,
@@ -146,35 +151,41 @@ class LocationService:
                 {} if header is None else header,
                 protocol,
                 content,
-                self.__clinetRef.get_port())
+                self.__clinetRef.get_port(),
+                timeout=self._timeout)
 
             status, header, body = response.get_response_object()
+
             result = json.loads(body)
             if status == 200:
                 endpoint = result.get('Endpoints').get('Endpoint')
-                if (len(endpoint) <= 0):
+                if len(endpoint) <= 0:
                     return None
                 else:
                     return endpoint[0].get('Endpoint')
-            elif status >= 400 and status < 500:
+            elif 400 <= status < 500:
                 # print "serviceCode=" + service_code + " get location error!
                 # code=" + result.get('Code') +", message =" +
                 # result.get('Message')
                 return None
             elif status >= 500:
-                raise exs.ServerException(
-                    result.get('Code'), result.get('Message'))
+                # return None instead of throw an exception
+                # in case of location service failure
+                # SDK still has to work for robustness
+                return None
             else:
                 raise exs.ClientException(
                     result.get('Code'), result.get('Message'))
         except IOError:
-            raise exs.ClientException(
-                error_code.SDK_SERVER_UNREACHABLE,
-                error_msg.get_msg('SDK_SERVER_UNREACHABLE'))
+            # return None instead of throw an exception
+            # in case of location service unreachable,
+            # SDK still has to work for robustness
+            return None
         except AttributeError:
             raise exs.ClientException(
                 error_code.SDK_INVALID_REQUEST,
                 error_msg.get_msg('SDK_INVALID_REQUEST'))
+
 
 def set_cache(product, region_id, domain):
     if region_id is not None and product is not None and domain is not None:
@@ -182,16 +193,21 @@ def set_cache(product, region_id, domain):
         __location_endpoints[key] = domain
         __last_cache_clear_time_per_product[key] = datetime.datetime.strptime('2999-01-01 00:00:00',
                                                                               '%Y-%m-%d %H:%M:%S')
+
+
 def get_location_endpoints():
     return __location_endpoints
+
 
 def get_last_cache_clear_time_per_product():
     return __last_cache_clear_time_per_product
 
+
 def set_location_service_domain(domain):
     global __location_service_domain
     if domain is not None:
-       __location_service_domain = domain
+        __location_service_domain = domain
+
 
 def get_location_service_domain():
     return __location_service_domain

@@ -25,8 +25,8 @@ import json
 import ConfigParser
 
 from aliyunsdkcore.client import AcsClient
-from aliyunsdkft.request.v20160102 import TestRoaApiRequest
 from aliyunsdkcore.profile import region_provider
+from .ft import TestRoaApiRequest
 
 parent_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, parent_dir)
@@ -44,17 +44,22 @@ client = AcsClient(cf.get("daily_access_key", "id"), cf.get("daily_access_key", 
 assert client
 
 request = TestRoaApiRequest.TestRoaApiRequest()
-request.set_HeaderParam(headerParam)
-request.set_QueryParam(queryParam)
-request.set_BodyParam(bodyParam)
+request.set_header_param(headerParam)
+request.set_query_param(queryParam)
+request.set_body_param(bodyParam)
 request.add_header('Content-Type', "text/plain")
 
 
 class TestRoaApi(object):
+    
+    acs_client = client
+
+    def set_client(self, acs_client=client):
+        self.acs_client = acs_client
 
     def test_get(self):
         request.set_method("GET")
-        body = client.do_action_with_exception(request)
+        body = self.acs_client.do_action_with_exception(request)
         assert body
 
         response = json.loads(body)
@@ -66,7 +71,7 @@ class TestRoaApi(object):
 
     def test_post(self):
         request.set_method("POST")
-        body = client.do_action_with_exception(request)
+        body = self.acs_client.do_action_with_exception(request)
         assert body
 
         response = json.loads(body)
@@ -79,12 +84,12 @@ class TestRoaApi(object):
 
     def test_head(self):
         request.set_method("HEAD")
-        body = client.do_action_with_exception(request)
+        body = self.acs_client.do_action_with_exception(request)
         assert body == ''
 
     def test_put(self):
         request.set_method("PUT")
-        body = client.do_action_with_exception(request)
+        body = self.acs_client.do_action_with_exception(request)
         assert body
 
         response = json.loads(body)
@@ -97,7 +102,7 @@ class TestRoaApi(object):
 
     def test_delete(self):
         request.set_method("DELETE")
-        body = client.do_action_with_exception(request)
+        body = self.acs_client.do_action_with_exception(request)
         assert body
 
         response = json.loads(body)
@@ -106,6 +111,3 @@ class TestRoaApi(object):
         assert response.get("Params").get("RegionId") == 'cn-hangzhou'
         assert response.get("Params").get("QueryParam") == queryParam
         assert response.get("Headers").get("HeaderParam") == headerParam
-
-
-
