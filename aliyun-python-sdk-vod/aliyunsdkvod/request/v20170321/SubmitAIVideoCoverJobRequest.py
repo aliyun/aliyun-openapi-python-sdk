@@ -23,11 +23,11 @@ class SubmitAIVideoCoverJobRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'vod', '2017-03-21', 'SubmitAIVideoCoverJob','vod')
 
-	def get_Input(self):
-		return self.get_query_params().get('Input')
+	def get_UserData(self):
+		return self.get_query_params().get('UserData')
 
-	def set_Input(self,Input):
-		self.add_query_param('Input',Input)
+	def set_UserData(self,UserData):
+		self.add_query_param('UserData',UserData)
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -52,6 +52,12 @@ class SubmitAIVideoCoverJobRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_MediaId(self):
+		return self.get_query_params().get('MediaId')
+
+	def set_MediaId(self,MediaId):
+		self.add_query_param('MediaId',MediaId)
 
 	def get_AIVideoCoverConfig(self):
 		return self.get_query_params().get('AIVideoCoverConfig')

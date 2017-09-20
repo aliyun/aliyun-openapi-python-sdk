@@ -47,12 +47,6 @@ class SubmitAIVideoPornRecogJobRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
-	def get_VideoId(self):
-		return self.get_query_params().get('VideoId')
-
-	def set_VideoId(self,VideoId):
-		self.add_query_param('VideoId',VideoId)
-
 	def get_AIVideoPornRecogConfig(self):
 		return self.get_query_params().get('AIVideoPornRecogConfig')
 
@@ -64,3 +58,9 @@ class SubmitAIVideoPornRecogJobRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_MediaId(self):
+		return self.get_query_params().get('MediaId')
+
+	def set_MediaId(self,MediaId):
+		self.add_query_param('MediaId',MediaId)

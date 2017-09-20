@@ -18,10 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class AddCategoryRequest(RpcRequest):
+class GetMezzanineInfoRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'vod', '2017-03-21', 'AddCategory','vod')
+		RpcRequest.__init__(self, 'vod', '2017-03-21', 'GetMezzanineInfo','vod')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -35,11 +35,11 @@ class AddCategoryRequest(RpcRequest):
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
-	def get_OwnerAccount(self):
-		return self.get_query_params().get('OwnerAccount')
+	def get_VideoId(self):
+		return self.get_query_params().get('VideoId')
 
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
+	def set_VideoId(self,VideoId):
+		self.add_query_param('VideoId',VideoId)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
@@ -47,14 +47,8 @@ class AddCategoryRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_ParentId(self):
-		return self.get_query_params().get('ParentId')
+	def get_AuthTimeout(self):
+		return self.get_query_params().get('AuthTimeout')
 
-	def set_ParentId(self,ParentId):
-		self.add_query_param('ParentId',ParentId)
-
-	def get_CateName(self):
-		return self.get_query_params().get('CateName')
-
-	def set_CateName(self,CateName):
-		self.add_query_param('CateName',CateName)
+	def set_AuthTimeout(self,AuthTimeout):
+		self.add_query_param('AuthTimeout',AuthTimeout)

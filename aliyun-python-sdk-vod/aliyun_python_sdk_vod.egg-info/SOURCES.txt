@@ -16,6 +16,7 @@ aliyunsdkvod/request/v20170321/DeleteVideoRequest.py
 aliyunsdkvod/request/v20170321/GetCDNStatisSumRequest.py
 aliyunsdkvod/request/v20170321/GetCategoriesRequest.py
 aliyunsdkvod/request/v20170321/GetMessageCallbackRequest.py
+aliyunsdkvod/request/v20170321/GetMezzanineInfoRequest.py
 aliyunsdkvod/request/v20170321/GetOSSStatisRequest.py
 aliyunsdkvod/request/v20170321/GetPlayInfoRequest.py
 aliyunsdkvod/request/v20170321/GetVideoConfigRequest.py
