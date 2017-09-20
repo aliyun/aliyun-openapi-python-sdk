@@ -1,1 +1,1 @@
-pycrypto
+pycrypto>=2.6.1
