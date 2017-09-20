@@ -42,6 +42,12 @@ class ListTagPhotosRequest(RpcRequest):
 	def set_TagId(self,TagId):
 		self.add_query_param('TagId',TagId)
 
+	def get_LibraryId(self):
+		return self.get_query_params().get('LibraryId')
+
+	def set_LibraryId(self,LibraryId):
+		self.add_query_param('LibraryId',LibraryId)
+
 	def get_StoreName(self):
 		return self.get_query_params().get('StoreName')
 

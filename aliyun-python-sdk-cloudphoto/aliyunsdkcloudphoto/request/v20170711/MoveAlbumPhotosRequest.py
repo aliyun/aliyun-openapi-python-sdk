@@ -36,6 +36,12 @@ class MoveAlbumPhotosRequest(RpcRequest):
 	def set_TargetAlbumId(self,TargetAlbumId):
 		self.add_query_param('TargetAlbumId',TargetAlbumId)
 
+	def get_LibraryId(self):
+		return self.get_query_params().get('LibraryId')
+
+	def set_LibraryId(self,LibraryId):
+		self.add_query_param('LibraryId',LibraryId)
+
 	def get_PhotoIds(self):
 		return self.get_query_params().get('PhotoIds')
 

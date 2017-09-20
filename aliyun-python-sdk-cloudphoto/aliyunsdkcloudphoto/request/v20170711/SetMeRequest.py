@@ -24,6 +24,12 @@ class SetMeRequest(RpcRequest):
 		RpcRequest.__init__(self, 'CloudPhoto', '2017-07-11', 'SetMe','cloudphoto')
 		self.set_protocol_type('https');
 
+	def get_LibraryId(self):
+		return self.get_query_params().get('LibraryId')
+
+	def set_LibraryId(self,LibraryId):
+		self.add_query_param('LibraryId',LibraryId)
+
 	def get_StoreName(self):
 		return self.get_query_params().get('StoreName')
 

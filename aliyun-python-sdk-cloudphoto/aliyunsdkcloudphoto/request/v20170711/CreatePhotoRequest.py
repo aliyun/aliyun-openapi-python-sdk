@@ -30,6 +30,12 @@ class CreatePhotoRequest(RpcRequest):
 	def set_PhotoTitle(self,PhotoTitle):
 		self.add_query_param('PhotoTitle',PhotoTitle)
 
+	def get_LibraryId(self):
+		return self.get_query_params().get('LibraryId')
+
+	def set_LibraryId(self,LibraryId):
+		self.add_query_param('LibraryId',LibraryId)
+
 	def get_StoreName(self):
 		return self.get_query_params().get('StoreName')
 

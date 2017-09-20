@@ -30,6 +30,12 @@ class RenameAlbumRequest(RpcRequest):
 	def set_AlbumName(self,AlbumName):
 		self.add_query_param('AlbumName',AlbumName)
 
+	def get_LibraryId(self):
+		return self.get_query_params().get('LibraryId')
+
+	def set_LibraryId(self,LibraryId):
+		self.add_query_param('LibraryId',LibraryId)
+
 	def get_AlbumId(self):
 		return self.get_query_params().get('AlbumId')
 

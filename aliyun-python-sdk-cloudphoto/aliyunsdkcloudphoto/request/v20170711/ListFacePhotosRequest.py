@@ -36,6 +36,12 @@ class ListFacePhotosRequest(RpcRequest):
 	def set_Size(self,Size):
 		self.add_query_param('Size',Size)
 
+	def get_LibraryId(self):
+		return self.get_query_params().get('LibraryId')
+
+	def set_LibraryId(self,LibraryId):
+		self.add_query_param('LibraryId',LibraryId)
+
 	def get_StoreName(self):
 		return self.get_query_params().get('StoreName')
 
