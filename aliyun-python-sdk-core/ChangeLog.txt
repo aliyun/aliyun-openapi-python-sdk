@@ -1,3 +1,6 @@
+2017-09-20 Version: 2.4.1
+1, 修正在某些情况下会导致"No module named Signature"的问题
+
 2017-09-19 Version: 2.4.0
 1, 增加对Ak2.0(sts session token)验证模式的支持
 
