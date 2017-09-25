@@ -66,6 +66,25 @@ class TestRoaApi(object):
         assert response.get("Params").get("QueryParam") == queryParam
         assert response.get("Headers").get("HeaderParam") == headerParam
 
+    def test_post_with_stream(self):
+
+        request2 = TestRoaApiRequest.TestRoaApiRequest()
+        request2.set_header_param(headerParam)
+        request2.set_query_param(queryParam)
+        request2.set_method("POST")
+        request2.set_content("test_content")
+
+        body = self.acs_client.do_action_with_exception(request2)
+        assert body
+
+        response = json.loads(body)
+        assert response
+
+        assert response.get("Params").get("RegionId") == 'cn-hangzhou'
+        assert response.get("Params").get("QueryParam") == queryParam
+        assert response.get("Headers").get("HeaderParam") == headerParam
+        assert response.get("Body") == 'test_content'
+
     def test_post(self):
         request.set_method("POST")
         body = self.acs_client.do_action_with_exception(request)

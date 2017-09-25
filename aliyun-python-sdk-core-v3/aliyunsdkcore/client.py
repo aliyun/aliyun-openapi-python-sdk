@@ -182,10 +182,13 @@ class AcsClient:
         return endpoint
 
     def _make_http_response(self, endpoint, request):
-        if request.get_body_params() is not None:
+        body_params = request.get_body_params()
+        if body_params:
             body = urllib.parse.urlencode(request.get_body_params())
             request.set_content(body)
             request.set_content_type(format_type.APPLICATION_FORM)
+        elif request.get_content():
+            request.set_content_type(format_type.APPLICATION_OCTET_STREAM)
         content = request.get_content()
         method = request.get_method()
         header, url = self._signer.sign(self.__region_id, request)
@@ -205,7 +208,7 @@ class AcsClient:
             protocol,
             content,
             self._port)
-        if request.get_body_params() is not None:
+        if body_params:
             body = urllib.parse.urlencode(request.get_body_params())
             response.set_content(body, "utf-8", format_type.APPLICATION_FORM)
         return response
