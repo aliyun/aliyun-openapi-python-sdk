@@ -1,3 +1,6 @@
+2017-09-25 Version: 2.4.2
+1, 修复roa请求中，会丢失stream body的bug
+
 2017-09-20 Version: 2.4.1
 1, 修正在某些情况下会导致"No module named Signature"的问题
 
