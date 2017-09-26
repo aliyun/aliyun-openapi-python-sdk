@@ -187,7 +187,7 @@ class AcsClient:
             body = urllib.parse.urlencode(request.get_body_params())
             request.set_content(body)
             request.set_content_type(format_type.APPLICATION_FORM)
-        elif request.get_content():
+        elif request.get_content() and "Content-Type" not in request.get_headers():
             request.set_content_type(format_type.APPLICATION_OCTET_STREAM)
         content = request.get_content()
         method = request.get_method()
@@ -241,7 +241,7 @@ class AcsClient:
                 return (
                     error_code.SDK_UNKNOWN_SERVER_ERROR,
                     error_msg.get_msg('SDK_UNKNOWN_SERVER_ERROR'))
-        except ValueError:
+        except ValueError or TypeError:
             # failed to parse body as json format
             return (error_code.SDK_UNKNOWN_SERVER_ERROR,
                     error_msg.get_msg('SDK_UNKNOWN_SERVER_ERROR'))
@@ -259,7 +259,7 @@ class AcsClient:
         try:
             body_obj = json.loads(body)
             request_id = body_obj.get('RequestId')
-        except ValueError:
+        except ValueError or TypeError:
             # in case the response body is not a json string, return the raw
             # data instead
             pass

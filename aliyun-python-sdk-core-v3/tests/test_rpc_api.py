@@ -19,10 +19,10 @@
 
 # coding=utf-8
 
+import configparser
+import json
 import os
 import sys
-import json
-import configparser
 
 from aliyunsdkcore.client import AcsClient
 from aliyunsdkcore.profile import region_provider

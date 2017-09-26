@@ -19,12 +19,12 @@
 
 # coding=utf-8
 
-import os
-import sys
-import json
 import configparser
+import json
+import os
 
 from aliyunsdkcore.client import AcsClient
+from aliyunsdkcore.http import format_type
 from aliyunsdkcore.profile import region_provider
 from .ft import TestRoaApiRequest
 
@@ -84,6 +84,27 @@ class TestRoaApi(object):
         assert response.get("Params").get("QueryParam") == queryParam
         assert response.get("Headers").get("HeaderParam") == headerParam
         assert response.get("Body") == 'test_content'
+
+    def test_post_with_json(self):
+        request2 = TestRoaApiRequest.TestRoaApiRequest()
+        request2.set_header_param(headerParam)
+        request2.set_query_param(queryParam)
+        request2.set_method("POST")
+        dict_data = {'data': 1}
+        request2.set_content(json.dumps(dict_data))
+        request2.set_content_type(format_type.APPLICATION_JSON)
+
+        body = self.acs_client.do_action_with_exception(request2)
+        assert body
+
+        response = json.loads(body)
+        assert response
+
+        assert response.get("Params").get("RegionId") == 'cn-hangzhou'
+        assert response.get("Params").get("QueryParam") == queryParam
+        assert response.get("Headers").get("HeaderParam") == headerParam
+        assert response.get("Headers").get("Content-Type") == 'application/json'
+        assert response.get("Body") == '{"data": 1}'
 
     def test_post(self):
         request.set_method("POST")

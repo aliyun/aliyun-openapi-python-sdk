@@ -36,13 +36,5 @@ aliyunsdkcore/http/protocol_type.py
 aliyunsdkcore/profile/__init__.py
 aliyunsdkcore/profile/location_service.py
 aliyunsdkcore/profile/region_provider.py
-aliyunsdkcore/tests/__init__.py
-aliyunsdkcore/tests/test_endpoint.py
-aliyunsdkcore/tests/test_roa_api.py
-aliyunsdkcore/tests/test_rpc_api.py
-aliyunsdkcore/tests/test_signer_v2.py
-aliyunsdkcore/tests/ft/TestRoaApiRequest.py
-aliyunsdkcore/tests/ft/TestRpcApiRequest.py
-aliyunsdkcore/tests/ft/__init__.py
 aliyunsdkcore/utils/__init__.py
 aliyunsdkcore/utils/parameter_helper.py
