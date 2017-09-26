@@ -19,7 +19,7 @@
 '''
 
 from setuptools import setup, find_packages
-import os
+import os, sys
 
 """
 setup module for sts.
@@ -58,7 +58,7 @@ setup(
     packages=find_packages(exclude=["tests*"]),
     include_package_data=True,
     platforms="any",
-    install_requires=["aliyun-python-sdk-core>=2.0.2"],
+    install_requires=["aliyun-python-sdk-core-v3>=2.3.5"] if sys.version >= '3' else ["aliyun-python-sdk-core>=2.0.2"],
     classifiers=(
                 "Development Status :: 5 - Production/Stable",
                 "Intended Audience :: Developers",
