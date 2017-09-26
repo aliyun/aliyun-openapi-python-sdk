@@ -1,3 +1,7 @@
+2017-09-26 Version: 2.4.3
+1, 修正在某些情况下，解析应答时会出现TypeError的bug
+2, 修正在某些情况下，请求的content-type会被修改为application/octet-stream 的bug
+
 2017-09-25 Version: 2.4.2
 1, 修复roa请求中，会丢失stream body的bug
 

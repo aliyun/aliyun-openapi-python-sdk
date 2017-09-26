@@ -193,7 +193,7 @@ class AcsClient:
             body = urllib.urlencode(body_params)
             request.set_content(body)
             request.set_content_type(format_type.APPLICATION_FORM)
-        elif request.get_content():
+        elif request.get_content() and "Content-Type" not in request.get_headers():
             request.set_content_type(format_type.APPLICATION_OCTET_STREAM)
         method = request.get_method()
         header, url = self._signer.sign(self.__region_id, request)
@@ -261,13 +261,11 @@ class AcsClient:
         status, headers, body = self._implementation_of_do_action(acs_request)
 
         request_id = None
-        ret = body
 
         try:
             body_obj = json.loads(body)
             request_id = body_obj.get('RequestId')
-            ret = body_obj
-        except ValueError:
+        except ValueError, TypeError:
             # in case the response body is not a json string, return the raw
             # data instead
             pass
