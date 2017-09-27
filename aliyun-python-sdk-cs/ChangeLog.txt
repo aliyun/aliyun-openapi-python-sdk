@@ -1,3 +1,6 @@
+2017-09-27 Version: 2.2.1
+1, upgrade setup.py to support python3
+
 2017-09-04 Version: 2.2.0
 1, 增加了DescribeClusterScaledNodeRequest的接口。
 2, 可以通过该接口查询容器集群中通过弹性节点伸缩触发器创建的ECS信息。

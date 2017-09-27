@@ -1,3 +1,6 @@
+2017-09-27 Version: 3.2.1
+1, upgrade setup.py to support python3
+
 2017-08-15 Version: 3.2.0
 1, SLB接入业务location支持单元化region的自动路由
 2, 补齐RegionId参数，所有的接口的都支持RegionId入参
