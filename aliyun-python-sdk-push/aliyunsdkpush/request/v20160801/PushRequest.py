@@ -89,6 +89,12 @@ class PushRequest(RpcRequest):
 	def set_SmsDelaySecs(self,SmsDelaySecs):
 		self.add_query_param('SmsDelaySecs',SmsDelaySecs)
 
+	def get_SendSpeed(self):
+		return self.get_query_params().get('SendSpeed')
+
+	def set_SendSpeed(self,SendSpeed):
+		self.add_query_param('SendSpeed',SendSpeed)
+
 	def get_AndroidPopupActivity(self):
 		return self.get_query_params().get('AndroidPopupActivity')
 
