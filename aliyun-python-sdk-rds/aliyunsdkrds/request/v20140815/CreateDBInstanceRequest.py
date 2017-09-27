@@ -23,41 +23,17 @@ class CreateDBInstanceRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'CreateDBInstance','rds')
 
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
+	def get_ConnectionMode(self):
+		return self.get_query_params().get('ConnectionMode')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
-
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+	def set_ConnectionMode(self,ConnectionMode):
+		self.add_query_param('ConnectionMode',ConnectionMode)
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_Engine(self):
-		return self.get_query_params().get('Engine')
-
-	def set_Engine(self,Engine):
-		self.add_query_param('Engine',Engine)
-
-	def get_EngineVersion(self):
-		return self.get_query_params().get('EngineVersion')
-
-	def set_EngineVersion(self,EngineVersion):
-		self.add_query_param('EngineVersion',EngineVersion)
-
-	def get_DBInstanceClass(self):
-		return self.get_query_params().get('DBInstanceClass')
-
-	def set_DBInstanceClass(self,DBInstanceClass):
-		self.add_query_param('DBInstanceClass',DBInstanceClass)
 
 	def get_DBInstanceStorage(self):
 		return self.get_query_params().get('DBInstanceStorage')
@@ -71,11 +47,29 @@ class CreateDBInstanceRequest(RpcRequest):
 	def set_SystemDBCharset(self,SystemDBCharset):
 		self.add_query_param('SystemDBCharset',SystemDBCharset)
 
-	def get_DBInstanceNetType(self):
-		return self.get_query_params().get('DBInstanceNetType')
+	def get_ClientToken(self):
+		return self.get_query_params().get('ClientToken')
 
-	def set_DBInstanceNetType(self,DBInstanceNetType):
-		self.add_query_param('DBInstanceNetType',DBInstanceNetType)
+	def set_ClientToken(self,ClientToken):
+		self.add_query_param('ClientToken',ClientToken)
+
+	def get_EngineVersion(self):
+		return self.get_query_params().get('EngineVersion')
+
+	def set_EngineVersion(self,EngineVersion):
+		self.add_query_param('EngineVersion',EngineVersion)
+
+	def get_ResourceGroupId(self):
+		return self.get_query_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self,ResourceGroupId):
+		self.add_query_param('ResourceGroupId',ResourceGroupId)
+
+	def get_Engine(self):
+		return self.get_query_params().get('Engine')
+
+	def set_Engine(self,Engine):
+		self.add_query_param('Engine',Engine)
 
 	def get_DBInstanceDescription(self):
 		return self.get_query_params().get('DBInstanceDescription')
@@ -83,47 +77,53 @@ class CreateDBInstanceRequest(RpcRequest):
 	def set_DBInstanceDescription(self,DBInstanceDescription):
 		self.add_query_param('DBInstanceDescription',DBInstanceDescription)
 
+	def get_DBInstanceNetType(self):
+		return self.get_query_params().get('DBInstanceNetType')
+
+	def set_DBInstanceNetType(self,DBInstanceNetType):
+		self.add_query_param('DBInstanceNetType',DBInstanceNetType)
+
+	def get_Period(self):
+		return self.get_query_params().get('Period')
+
+	def set_Period(self,Period):
+		self.add_query_param('Period',Period)
+
+	def get_ResourceOwnerAccount(self):
+		return self.get_query_params().get('ResourceOwnerAccount')
+
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+
+	def get_OwnerAccount(self):
+		return self.get_query_params().get('OwnerAccount')
+
+	def set_OwnerAccount(self,OwnerAccount):
+		self.add_query_param('OwnerAccount',OwnerAccount)
+
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
+
+	def get_UsedTime(self):
+		return self.get_query_params().get('UsedTime')
+
+	def set_UsedTime(self,UsedTime):
+		self.add_query_param('UsedTime',UsedTime)
+
+	def get_DBInstanceClass(self):
+		return self.get_query_params().get('DBInstanceClass')
+
+	def set_DBInstanceClass(self,DBInstanceClass):
+		self.add_query_param('DBInstanceClass',DBInstanceClass)
+
 	def get_SecurityIPList(self):
 		return self.get_query_params().get('SecurityIPList')
 
 	def set_SecurityIPList(self,SecurityIPList):
 		self.add_query_param('SecurityIPList',SecurityIPList)
-
-	def get_ClientToken(self):
-		return self.get_query_params().get('ClientToken')
-
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
-
-	def get_PayType(self):
-		return self.get_query_params().get('PayType')
-
-	def set_PayType(self,PayType):
-		self.add_query_param('PayType',PayType)
-
-	def get_ZoneId(self):
-		return self.get_query_params().get('ZoneId')
-
-	def set_ZoneId(self,ZoneId):
-		self.add_query_param('ZoneId',ZoneId)
-
-	def get_InstanceNetworkType(self):
-		return self.get_query_params().get('InstanceNetworkType')
-
-	def set_InstanceNetworkType(self,InstanceNetworkType):
-		self.add_query_param('InstanceNetworkType',InstanceNetworkType)
-
-	def get_ConnectionMode(self):
-		return self.get_query_params().get('ConnectionMode')
-
-	def set_ConnectionMode(self,ConnectionMode):
-		self.add_query_param('ConnectionMode',ConnectionMode)
-
-	def get_VPCId(self):
-		return self.get_query_params().get('VPCId')
-
-	def set_VPCId(self,VPCId):
-		self.add_query_param('VPCId',VPCId)
 
 	def get_VSwitchId(self):
 		return self.get_query_params().get('VSwitchId')
@@ -137,20 +137,26 @@ class CreateDBInstanceRequest(RpcRequest):
 	def set_PrivateIpAddress(self,PrivateIpAddress):
 		self.add_query_param('PrivateIpAddress',PrivateIpAddress)
 
-	def get_OwnerAccount(self):
-		return self.get_query_params().get('OwnerAccount')
+	def get_VPCId(self):
+		return self.get_query_params().get('VPCId')
 
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
+	def set_VPCId(self,VPCId):
+		self.add_query_param('VPCId',VPCId)
 
-	def get_UsedTime(self):
-		return self.get_query_params().get('UsedTime')
+	def get_ZoneId(self):
+		return self.get_query_params().get('ZoneId')
 
-	def set_UsedTime(self,UsedTime):
-		self.add_query_param('UsedTime',UsedTime)
+	def set_ZoneId(self,ZoneId):
+		self.add_query_param('ZoneId',ZoneId)
 
-	def get_Period(self):
-		return self.get_query_params().get('Period')
+	def get_PayType(self):
+		return self.get_query_params().get('PayType')
 
-	def set_Period(self,Period):
-		self.add_query_param('Period',Period)
+	def set_PayType(self,PayType):
+		self.add_query_param('PayType',PayType)
+
+	def get_InstanceNetworkType(self):
+		return self.get_query_params().get('InstanceNetworkType')
+
+	def set_InstanceNetworkType(self,InstanceNetworkType):
+		self.add_query_param('InstanceNetworkType',InstanceNetworkType)

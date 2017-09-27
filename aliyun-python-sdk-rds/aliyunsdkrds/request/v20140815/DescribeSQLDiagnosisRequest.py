@@ -23,14 +23,14 @@ class DescribeSQLDiagnosisRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'DescribeSQLDiagnosis','rds')
 
-	def get_DBInstanceId(self):
-		return self.get_query_params().get('DBInstanceId')
-
-	def set_DBInstanceId(self,DBInstanceId):
-		self.add_query_param('DBInstanceId',DBInstanceId)
-
 	def get_SQLDiagId(self):
 		return self.get_query_params().get('SQLDiagId')
 
 	def set_SQLDiagId(self,SQLDiagId):
 		self.add_query_param('SQLDiagId',SQLDiagId)
+
+	def get_DBInstanceId(self):
+		return self.get_query_params().get('DBInstanceId')
+
+	def set_DBInstanceId(self,DBInstanceId):
+		self.add_query_param('DBInstanceId',DBInstanceId)

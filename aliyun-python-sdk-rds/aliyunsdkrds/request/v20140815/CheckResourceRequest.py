@@ -23,11 +23,11 @@ class CheckResourceRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'CheckResource','rds')
 
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
+	def get_ResourceOwnerId(self):
+		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
+	def set_ResourceOwnerId(self,ResourceOwnerId):
+		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -35,23 +35,17 @@ class CheckResourceRequest(RpcRequest):
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
-	def get_ResourceOwnerId(self):
-		return self.get_query_params().get('ResourceOwnerId')
+	def get_OwnerAccount(self):
+		return self.get_query_params().get('OwnerAccount')
 
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+	def set_OwnerAccount(self,OwnerAccount):
+		self.add_query_param('OwnerAccount',OwnerAccount)
 
-	def get_Engine(self):
-		return self.get_query_params().get('Engine')
+	def get_SpecifyCount(self):
+		return self.get_query_params().get('SpecifyCount')
 
-	def set_Engine(self,Engine):
-		self.add_query_param('Engine',Engine)
-
-	def get_DBInstanceId(self):
-		return self.get_query_params().get('DBInstanceId')
-
-	def set_DBInstanceId(self,DBInstanceId):
-		self.add_query_param('DBInstanceId',DBInstanceId)
+	def set_SpecifyCount(self,SpecifyCount):
+		self.add_query_param('SpecifyCount',SpecifyCount)
 
 	def get_EngineVersion(self):
 		return self.get_query_params().get('EngineVersion')
@@ -59,11 +53,23 @@ class CheckResourceRequest(RpcRequest):
 	def set_EngineVersion(self,EngineVersion):
 		self.add_query_param('EngineVersion',EngineVersion)
 
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
+
 	def get_DBInstanceClass(self):
 		return self.get_query_params().get('DBInstanceClass')
 
 	def set_DBInstanceClass(self,DBInstanceClass):
 		self.add_query_param('DBInstanceClass',DBInstanceClass)
+
+	def get_Engine(self):
+		return self.get_query_params().get('Engine')
+
+	def set_Engine(self,Engine):
+		self.add_query_param('Engine',Engine)
 
 	def get_ZoneId(self):
 		return self.get_query_params().get('ZoneId')
@@ -77,14 +83,8 @@ class CheckResourceRequest(RpcRequest):
 	def set_DBInstanceUseType(self,DBInstanceUseType):
 		self.add_query_param('DBInstanceUseType',DBInstanceUseType)
 
-	def get_SpecifyCount(self):
-		return self.get_query_params().get('SpecifyCount')
+	def get_DBInstanceId(self):
+		return self.get_query_params().get('DBInstanceId')
 
-	def set_SpecifyCount(self,SpecifyCount):
-		self.add_query_param('SpecifyCount',SpecifyCount)
-
-	def get_OwnerAccount(self):
-		return self.get_query_params().get('OwnerAccount')
-
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
+	def set_DBInstanceId(self,DBInstanceId):
+		self.add_query_param('DBInstanceId',DBInstanceId)

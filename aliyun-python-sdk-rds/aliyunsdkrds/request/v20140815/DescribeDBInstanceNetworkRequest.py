@@ -23,6 +23,12 @@ class DescribeDBInstanceNetworkRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'DescribeDBInstanceNetwork','rds')
 
+	def get_EndTime(self):
+		return self.get_query_params().get('EndTime')
+
+	def set_EndTime(self,EndTime):
+		self.add_query_param('EndTime',EndTime)
+
 	def get_DBInstanceId(self):
 		return self.get_query_params().get('DBInstanceId')
 
@@ -34,9 +40,3 @@ class DescribeDBInstanceNetworkRequest(RpcRequest):
 
 	def set_StartTime(self,StartTime):
 		self.add_query_param('StartTime',StartTime)
-
-	def get_EndTime(self):
-		return self.get_query_params().get('EndTime')
-
-	def set_EndTime(self,EndTime):
-		self.add_query_param('EndTime',EndTime)

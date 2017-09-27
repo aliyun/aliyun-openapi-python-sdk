@@ -23,35 +23,11 @@ class CreateAccountRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'CreateAccount','rds')
 
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
-
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_DBInstanceId(self):
-		return self.get_query_params().get('DBInstanceId')
-
-	def set_DBInstanceId(self,DBInstanceId):
-		self.add_query_param('DBInstanceId',DBInstanceId)
-
-	def get_AccountName(self):
-		return self.get_query_params().get('AccountName')
-
-	def set_AccountName(self,AccountName):
-		self.add_query_param('AccountName',AccountName)
 
 	def get_AccountPassword(self):
 		return self.get_query_params().get('AccountPassword')
@@ -59,11 +35,23 @@ class CreateAccountRequest(RpcRequest):
 	def set_AccountPassword(self,AccountPassword):
 		self.add_query_param('AccountPassword',AccountPassword)
 
-	def get_AccountDescription(self):
-		return self.get_query_params().get('AccountDescription')
+	def get_AccountName(self):
+		return self.get_query_params().get('AccountName')
 
-	def set_AccountDescription(self,AccountDescription):
-		self.add_query_param('AccountDescription',AccountDescription)
+	def set_AccountName(self,AccountName):
+		self.add_query_param('AccountName',AccountName)
+
+	def get_ResourceOwnerAccount(self):
+		return self.get_query_params().get('ResourceOwnerAccount')
+
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+
+	def get_OwnerAccount(self):
+		return self.get_query_params().get('OwnerAccount')
+
+	def set_OwnerAccount(self,OwnerAccount):
+		self.add_query_param('OwnerAccount',OwnerAccount)
 
 	def get_AccountType(self):
 		return self.get_query_params().get('AccountType')
@@ -71,8 +59,20 @@ class CreateAccountRequest(RpcRequest):
 	def set_AccountType(self,AccountType):
 		self.add_query_param('AccountType',AccountType)
 
-	def get_OwnerAccount(self):
-		return self.get_query_params().get('OwnerAccount')
+	def get_DBInstanceId(self):
+		return self.get_query_params().get('DBInstanceId')
 
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
+	def set_DBInstanceId(self,DBInstanceId):
+		self.add_query_param('DBInstanceId',DBInstanceId)
+
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
+
+	def get_AccountDescription(self):
+		return self.get_query_params().get('AccountDescription')
+
+	def set_AccountDescription(self,AccountDescription):
+		self.add_query_param('AccountDescription',AccountDescription)

@@ -23,17 +23,11 @@ class GrantOperatorPermissionRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'GrantOperatorPermission','rds')
 
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
+	def get_Privileges(self):
+		return self.get_query_params().get('Privileges')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
-
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+	def set_Privileges(self,Privileges):
+		self.add_query_param('Privileges',Privileges)
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -41,11 +35,17 @@ class GrantOperatorPermissionRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_DBInstanceId(self):
-		return self.get_query_params().get('DBInstanceId')
+	def get_ResourceOwnerAccount(self):
+		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_DBInstanceId(self,DBInstanceId):
-		self.add_query_param('DBInstanceId',DBInstanceId)
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+
+	def get_OwnerAccount(self):
+		return self.get_query_params().get('OwnerAccount')
+
+	def set_OwnerAccount(self,OwnerAccount):
+		self.add_query_param('OwnerAccount',OwnerAccount)
 
 	def get_ExpiredTime(self):
 		return self.get_query_params().get('ExpiredTime')
@@ -53,14 +53,14 @@ class GrantOperatorPermissionRequest(RpcRequest):
 	def set_ExpiredTime(self,ExpiredTime):
 		self.add_query_param('ExpiredTime',ExpiredTime)
 
-	def get_Privileges(self):
-		return self.get_query_params().get('Privileges')
+	def get_DBInstanceId(self):
+		return self.get_query_params().get('DBInstanceId')
 
-	def set_Privileges(self,Privileges):
-		self.add_query_param('Privileges',Privileges)
+	def set_DBInstanceId(self,DBInstanceId):
+		self.add_query_param('DBInstanceId',DBInstanceId)
 
-	def get_OwnerAccount(self):
-		return self.get_query_params().get('OwnerAccount')
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)

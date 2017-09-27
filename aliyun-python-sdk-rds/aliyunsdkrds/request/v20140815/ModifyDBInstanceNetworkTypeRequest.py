@@ -23,11 +23,11 @@ class ModifyDBInstanceNetworkTypeRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'ModifyDBInstanceNetworkType','rds')
 
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
+	def get_ResourceOwnerId(self):
+		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
+	def set_ResourceOwnerId(self,ResourceOwnerId):
+		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -35,29 +35,17 @@ class ModifyDBInstanceNetworkTypeRequest(RpcRequest):
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
-	def get_ResourceOwnerId(self):
-		return self.get_query_params().get('ResourceOwnerId')
+	def get_OwnerAccount(self):
+		return self.get_query_params().get('OwnerAccount')
 
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+	def set_OwnerAccount(self,OwnerAccount):
+		self.add_query_param('OwnerAccount',OwnerAccount)
 
-	def get_DBInstanceId(self):
-		return self.get_query_params().get('DBInstanceId')
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
 
-	def set_DBInstanceId(self,DBInstanceId):
-		self.add_query_param('DBInstanceId',DBInstanceId)
-
-	def get_InstanceNetworkType(self):
-		return self.get_query_params().get('InstanceNetworkType')
-
-	def set_InstanceNetworkType(self,InstanceNetworkType):
-		self.add_query_param('InstanceNetworkType',InstanceNetworkType)
-
-	def get_VPCId(self):
-		return self.get_query_params().get('VPCId')
-
-	def set_VPCId(self,VPCId):
-		self.add_query_param('VPCId',VPCId)
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
 
 	def get_VSwitchId(self):
 		return self.get_query_params().get('VSwitchId')
@@ -71,8 +59,44 @@ class ModifyDBInstanceNetworkTypeRequest(RpcRequest):
 	def set_PrivateIpAddress(self,PrivateIpAddress):
 		self.add_query_param('PrivateIpAddress',PrivateIpAddress)
 
-	def get_OwnerAccount(self):
-		return self.get_query_params().get('OwnerAccount')
+	def get_RetainClassic(self):
+		return self.get_query_params().get('RetainClassic')
 
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
+	def set_RetainClassic(self,RetainClassic):
+		self.add_query_param('RetainClassic',RetainClassic)
+
+	def get_ClassicExpiredDays(self):
+		return self.get_query_params().get('ClassicExpiredDays')
+
+	def set_ClassicExpiredDays(self,ClassicExpiredDays):
+		self.add_query_param('ClassicExpiredDays',ClassicExpiredDays)
+
+	def get_VPCId(self):
+		return self.get_query_params().get('VPCId')
+
+	def set_VPCId(self,VPCId):
+		self.add_query_param('VPCId',VPCId)
+
+	def get_DBInstanceId(self):
+		return self.get_query_params().get('DBInstanceId')
+
+	def set_DBInstanceId(self,DBInstanceId):
+		self.add_query_param('DBInstanceId',DBInstanceId)
+
+	def get_ReadWriteSplittingPrivateIpAddress(self):
+		return self.get_query_params().get('ReadWriteSplittingPrivateIpAddress')
+
+	def set_ReadWriteSplittingPrivateIpAddress(self,ReadWriteSplittingPrivateIpAddress):
+		self.add_query_param('ReadWriteSplittingPrivateIpAddress',ReadWriteSplittingPrivateIpAddress)
+
+	def get_InstanceNetworkType(self):
+		return self.get_query_params().get('InstanceNetworkType')
+
+	def set_InstanceNetworkType(self,InstanceNetworkType):
+		self.add_query_param('InstanceNetworkType',InstanceNetworkType)
+
+	def get_ReadWriteSplittingClassicExpiredDays(self):
+		return self.get_query_params().get('ReadWriteSplittingClassicExpiredDays')
+
+	def set_ReadWriteSplittingClassicExpiredDays(self,ReadWriteSplittingClassicExpiredDays):
+		self.add_query_param('ReadWriteSplittingClassicExpiredDays',ReadWriteSplittingClassicExpiredDays)

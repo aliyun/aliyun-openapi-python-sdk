@@ -23,30 +23,6 @@ class ModifyBackupPolicyRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'ModifyBackupPolicy','rds')
 
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
-
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_ResourceOwnerId(self):
-		return self.get_query_params().get('ResourceOwnerId')
-
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_DBInstanceId(self):
-		return self.get_query_params().get('DBInstanceId')
-
-	def set_DBInstanceId(self,DBInstanceId):
-		self.add_query_param('DBInstanceId',DBInstanceId)
-
 	def get_PreferredBackupTime(self):
 		return self.get_query_params().get('PreferredBackupTime')
 
@@ -65,20 +41,44 @@ class ModifyBackupPolicyRequest(RpcRequest):
 	def set_BackupRetentionPeriod(self,BackupRetentionPeriod):
 		self.add_query_param('BackupRetentionPeriod',BackupRetentionPeriod)
 
-	def get_BackupLog(self):
-		return self.get_query_params().get('BackupLog')
+	def get_ResourceOwnerId(self):
+		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_BackupLog(self,BackupLog):
-		self.add_query_param('BackupLog',BackupLog)
+	def set_ResourceOwnerId(self,ResourceOwnerId):
+		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_LogBackupRetentionPeriod(self):
-		return self.get_query_params().get('LogBackupRetentionPeriod')
+	def get_ResourceOwnerAccount(self):
+		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_LogBackupRetentionPeriod(self,LogBackupRetentionPeriod):
-		self.add_query_param('LogBackupRetentionPeriod',LogBackupRetentionPeriod)
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
 
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
+
+	def get_DBInstanceId(self):
+		return self.get_query_params().get('DBInstanceId')
+
+	def set_DBInstanceId(self,DBInstanceId):
+		self.add_query_param('DBInstanceId',DBInstanceId)
+
+	def get_BackupLog(self):
+		return self.get_query_params().get('BackupLog')
+
+	def set_BackupLog(self,BackupLog):
+		self.add_query_param('BackupLog',BackupLog)
+
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
+
+	def get_LogBackupRetentionPeriod(self):
+		return self.get_query_params().get('LogBackupRetentionPeriod')
+
+	def set_LogBackupRetentionPeriod(self,LogBackupRetentionPeriod):
+		self.add_query_param('LogBackupRetentionPeriod',LogBackupRetentionPeriod)
