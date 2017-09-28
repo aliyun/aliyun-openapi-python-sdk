@@ -250,7 +250,7 @@ class AcsClient:
 
         # set server response format as json, because thie function will
         # parse the response so which format doesn't matter
-        acs_request.set_accept_format('json')
+        acs_request.set_accept_format('JSON')
 
         status, headers, body = self._implementation_of_do_action(acs_request)
 
