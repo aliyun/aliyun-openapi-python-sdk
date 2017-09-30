@@ -256,6 +256,9 @@ class AcsClient:
 
         request_id = None
 
+        if isinstance(body, bytes):
+            body = body.decode('utf-8', 'ignore')
+
         try:
             body_obj = json.loads(body)
             request_id = body_obj.get('RequestId')
