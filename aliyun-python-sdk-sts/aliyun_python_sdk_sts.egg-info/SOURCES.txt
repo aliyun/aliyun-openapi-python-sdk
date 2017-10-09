@@ -1,0 +1,14 @@
+MANIFEST.in
+README.rst
+setup.py
+aliyun_python_sdk_sts.egg-info/PKG-INFO
+aliyun_python_sdk_sts.egg-info/SOURCES.txt
+aliyun_python_sdk_sts.egg-info/dependency_links.txt
+aliyun_python_sdk_sts.egg-info/requires.txt
+aliyun_python_sdk_sts.egg-info/top_level.txt
+aliyunsdksts/__init__.py
+aliyunsdksts/request/__init__.py
+aliyunsdksts/request/v20150401/AssumeRoleRequest.py
+aliyunsdksts/request/v20150401/GenerateSessionAccessKeyRequest.py
+aliyunsdksts/request/v20150401/GetCallerIdentityRequest.py
+aliyunsdksts/request/v20150401/__init__.py

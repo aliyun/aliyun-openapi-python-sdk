@@ -25,9 +25,9 @@ import sys
 """
 setup module for sts.
 
-Created on 27/9/2017
+Created on 7/3/2015
 
-@author: wenyang
+@author: alex
 """
 
 PACKAGE = "aliyunsdksts"

@@ -18,32 +18,14 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class AssumeRoleRequest(RpcRequest):
+class GenerateSessionAccessKeyRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sts', '2015-04-01', 'AssumeRole')
+		RpcRequest.__init__(self, 'Sts', '2015-04-01', 'GenerateSessionAccessKey')
 		self.set_protocol_type('https');
-
-	def get_RoleArn(self):
-		return self.get_query_params().get('RoleArn')
-
-	def set_RoleArn(self,RoleArn):
-		self.add_query_param('RoleArn',RoleArn)
-
-	def get_RoleSessionName(self):
-		return self.get_query_params().get('RoleSessionName')
-
-	def set_RoleSessionName(self,RoleSessionName):
-		self.add_query_param('RoleSessionName',RoleSessionName)
 
 	def get_DurationSeconds(self):
 		return self.get_query_params().get('DurationSeconds')
 
 	def set_DurationSeconds(self,DurationSeconds):
 		self.add_query_param('DurationSeconds',DurationSeconds)
-
-	def get_Policy(self):
-		return self.get_query_params().get('Policy')
-
-	def set_Policy(self,Policy):
-		self.add_query_param('Policy',Policy)
