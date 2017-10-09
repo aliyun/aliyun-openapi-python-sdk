@@ -24,12 +24,6 @@ class UpdateUserRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Ram', '2015-05-01', 'UpdateUser')
 		self.set_protocol_type('https');
 
-	def get_UserName(self):
-		return self.get_query_params().get('UserName')
-
-	def set_UserName(self,UserName):
-		self.add_query_param('UserName',UserName)
-
 	def get_NewUserName(self):
 		return self.get_query_params().get('NewUserName')
 
@@ -48,14 +42,20 @@ class UpdateUserRequest(RpcRequest):
 	def set_NewMobilePhone(self,NewMobilePhone):
 		self.add_query_param('NewMobilePhone',NewMobilePhone)
 
+	def get_NewComments(self):
+		return self.get_query_params().get('NewComments')
+
+	def set_NewComments(self,NewComments):
+		self.add_query_param('NewComments',NewComments)
+
 	def get_NewEmail(self):
 		return self.get_query_params().get('NewEmail')
 
 	def set_NewEmail(self,NewEmail):
 		self.add_query_param('NewEmail',NewEmail)
 
-	def get_NewComments(self):
-		return self.get_query_params().get('NewComments')
+	def get_UserName(self):
+		return self.get_query_params().get('UserName')
 
-	def set_NewComments(self,NewComments):
-		self.add_query_param('NewComments',NewComments)
+	def set_UserName(self,UserName):
+		self.add_query_param('UserName',UserName)

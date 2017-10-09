@@ -24,6 +24,12 @@ class CreatePolicyVersionRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Ram', '2015-05-01', 'CreatePolicyVersion')
 		self.set_protocol_type('https');
 
+	def get_SetAsDefault(self):
+		return self.get_query_params().get('SetAsDefault')
+
+	def set_SetAsDefault(self,SetAsDefault):
+		self.add_query_param('SetAsDefault',SetAsDefault)
+
 	def get_PolicyName(self):
 		return self.get_query_params().get('PolicyName')
 
@@ -35,9 +41,3 @@ class CreatePolicyVersionRequest(RpcRequest):
 
 	def set_PolicyDocument(self,PolicyDocument):
 		self.add_query_param('PolicyDocument',PolicyDocument)
-
-	def get_SetAsDefault(self):
-		return self.get_query_params().get('SetAsDefault')
-
-	def set_SetAsDefault(self,SetAsDefault):
-		self.add_query_param('SetAsDefault',SetAsDefault)

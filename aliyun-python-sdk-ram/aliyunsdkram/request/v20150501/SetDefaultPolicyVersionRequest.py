@@ -24,14 +24,14 @@ class SetDefaultPolicyVersionRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Ram', '2015-05-01', 'SetDefaultPolicyVersion')
 		self.set_protocol_type('https');
 
-	def get_PolicyName(self):
-		return self.get_query_params().get('PolicyName')
-
-	def set_PolicyName(self,PolicyName):
-		self.add_query_param('PolicyName',PolicyName)
-
 	def get_VersionId(self):
 		return self.get_query_params().get('VersionId')
 
 	def set_VersionId(self,VersionId):
 		self.add_query_param('VersionId',VersionId)
+
+	def get_PolicyName(self):
+		return self.get_query_params().get('PolicyName')
+
+	def set_PolicyName(self,PolicyName):
+		self.add_query_param('PolicyName',PolicyName)

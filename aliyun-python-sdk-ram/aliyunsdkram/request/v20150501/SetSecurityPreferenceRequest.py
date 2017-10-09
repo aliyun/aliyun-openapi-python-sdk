@@ -24,8 +24,32 @@ class SetSecurityPreferenceRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Ram', '2015-05-01', 'SetSecurityPreference')
 		self.set_protocol_type('https');
 
+	def get_AllowUserToManageAccessKeys(self):
+		return self.get_query_params().get('AllowUserToManageAccessKeys')
+
+	def set_AllowUserToManageAccessKeys(self,AllowUserToManageAccessKeys):
+		self.add_query_param('AllowUserToManageAccessKeys',AllowUserToManageAccessKeys)
+
+	def get_AllowUserToManageMFADevices(self):
+		return self.get_query_params().get('AllowUserToManageMFADevices')
+
+	def set_AllowUserToManageMFADevices(self,AllowUserToManageMFADevices):
+		self.add_query_param('AllowUserToManageMFADevices',AllowUserToManageMFADevices)
+
+	def get_AllowUserToManagePublicKeys(self):
+		return self.get_query_params().get('AllowUserToManagePublicKeys')
+
+	def set_AllowUserToManagePublicKeys(self,AllowUserToManagePublicKeys):
+		self.add_query_param('AllowUserToManagePublicKeys',AllowUserToManagePublicKeys)
+
 	def get_EnableSaveMFATicket(self):
 		return self.get_query_params().get('EnableSaveMFATicket')
 
 	def set_EnableSaveMFATicket(self,EnableSaveMFATicket):
 		self.add_query_param('EnableSaveMFATicket',EnableSaveMFATicket)
+
+	def get_AllowUserToChangePassword(self):
+		return self.get_query_params().get('AllowUserToChangePassword')
+
+	def set_AllowUserToChangePassword(self,AllowUserToChangePassword):
+		self.add_query_param('AllowUserToChangePassword',AllowUserToChangePassword)

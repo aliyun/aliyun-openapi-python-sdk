@@ -24,14 +24,14 @@ class UpdateRoleRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Ram', '2015-05-01', 'UpdateRole')
 		self.set_protocol_type('https');
 
-	def get_RoleName(self):
-		return self.get_query_params().get('RoleName')
-
-	def set_RoleName(self,RoleName):
-		self.add_query_param('RoleName',RoleName)
-
 	def get_NewAssumeRolePolicyDocument(self):
 		return self.get_query_params().get('NewAssumeRolePolicyDocument')
 
 	def set_NewAssumeRolePolicyDocument(self,NewAssumeRolePolicyDocument):
 		self.add_query_param('NewAssumeRolePolicyDocument',NewAssumeRolePolicyDocument)
+
+	def get_RoleName(self):
+		return self.get_query_params().get('RoleName')
+
+	def set_RoleName(self,RoleName):
+		self.add_query_param('RoleName',RoleName)

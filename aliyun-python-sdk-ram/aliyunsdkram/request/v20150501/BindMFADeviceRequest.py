@@ -30,11 +30,11 @@ class BindMFADeviceRequest(RpcRequest):
 	def set_SerialNumber(self,SerialNumber):
 		self.add_query_param('SerialNumber',SerialNumber)
 
-	def get_UserName(self):
-		return self.get_query_params().get('UserName')
+	def get_AuthenticationCode2(self):
+		return self.get_query_params().get('AuthenticationCode2')
 
-	def set_UserName(self,UserName):
-		self.add_query_param('UserName',UserName)
+	def set_AuthenticationCode2(self,AuthenticationCode2):
+		self.add_query_param('AuthenticationCode2',AuthenticationCode2)
 
 	def get_AuthenticationCode1(self):
 		return self.get_query_params().get('AuthenticationCode1')
@@ -42,8 +42,8 @@ class BindMFADeviceRequest(RpcRequest):
 	def set_AuthenticationCode1(self,AuthenticationCode1):
 		self.add_query_param('AuthenticationCode1',AuthenticationCode1)
 
-	def get_AuthenticationCode2(self):
-		return self.get_query_params().get('AuthenticationCode2')
+	def get_UserName(self):
+		return self.get_query_params().get('UserName')
 
-	def set_AuthenticationCode2(self,AuthenticationCode2):
-		self.add_query_param('AuthenticationCode2',AuthenticationCode2)
+	def set_UserName(self,UserName):
+		self.add_query_param('UserName',UserName)

@@ -24,6 +24,42 @@ class SetPasswordPolicyRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Ram', '2015-05-01', 'SetPasswordPolicy')
 		self.set_protocol_type('https');
 
+	def get_RequireNumbers(self):
+		return self.get_query_params().get('RequireNumbers')
+
+	def set_RequireNumbers(self,RequireNumbers):
+		self.add_query_param('RequireNumbers',RequireNumbers)
+
+	def get_PasswordReusePrevention(self):
+		return self.get_query_params().get('PasswordReusePrevention')
+
+	def set_PasswordReusePrevention(self,PasswordReusePrevention):
+		self.add_query_param('PasswordReusePrevention',PasswordReusePrevention)
+
+	def get_RequireUppercaseCharacters(self):
+		return self.get_query_params().get('RequireUppercaseCharacters')
+
+	def set_RequireUppercaseCharacters(self,RequireUppercaseCharacters):
+		self.add_query_param('RequireUppercaseCharacters',RequireUppercaseCharacters)
+
+	def get_MaxPasswordAge(self):
+		return self.get_query_params().get('MaxPasswordAge')
+
+	def set_MaxPasswordAge(self,MaxPasswordAge):
+		self.add_query_param('MaxPasswordAge',MaxPasswordAge)
+
+	def get_MaxLoginAttemps(self):
+		return self.get_query_params().get('MaxLoginAttemps')
+
+	def set_MaxLoginAttemps(self,MaxLoginAttemps):
+		self.add_query_param('MaxLoginAttemps',MaxLoginAttemps)
+
+	def get_HardExpiry(self):
+		return self.get_query_params().get('HardExpiry')
+
+	def set_HardExpiry(self,HardExpiry):
+		self.add_query_param('HardExpiry',HardExpiry)
+
 	def get_MinimumPasswordLength(self):
 		return self.get_query_params().get('MinimumPasswordLength')
 
@@ -35,18 +71,6 @@ class SetPasswordPolicyRequest(RpcRequest):
 
 	def set_RequireLowercaseCharacters(self,RequireLowercaseCharacters):
 		self.add_query_param('RequireLowercaseCharacters',RequireLowercaseCharacters)
-
-	def get_RequireUppercaseCharacters(self):
-		return self.get_query_params().get('RequireUppercaseCharacters')
-
-	def set_RequireUppercaseCharacters(self,RequireUppercaseCharacters):
-		self.add_query_param('RequireUppercaseCharacters',RequireUppercaseCharacters)
-
-	def get_RequireNumbers(self):
-		return self.get_query_params().get('RequireNumbers')
-
-	def set_RequireNumbers(self,RequireNumbers):
-		self.add_query_param('RequireNumbers',RequireNumbers)
 
 	def get_RequireSymbols(self):
 		return self.get_query_params().get('RequireSymbols')

@@ -24,14 +24,14 @@ class RemoveUserFromGroupRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Ram', '2015-05-01', 'RemoveUserFromGroup')
 		self.set_protocol_type('https');
 
-	def get_UserName(self):
-		return self.get_query_params().get('UserName')
-
-	def set_UserName(self,UserName):
-		self.add_query_param('UserName',UserName)
-
 	def get_GroupName(self):
 		return self.get_query_params().get('GroupName')
 
 	def set_GroupName(self,GroupName):
 		self.add_query_param('GroupName',GroupName)
+
+	def get_UserName(self):
+		return self.get_query_params().get('UserName')
+
+	def set_UserName(self,UserName):
+		self.add_query_param('UserName',UserName)

@@ -24,17 +24,17 @@ class UpdateAccessKeyRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Ram', '2015-05-01', 'UpdateAccessKey')
 		self.set_protocol_type('https');
 
-	def get_UserName(self):
-		return self.get_query_params().get('UserName')
-
-	def set_UserName(self,UserName):
-		self.add_query_param('UserName',UserName)
-
 	def get_UserAccessKeyId(self):
 		return self.get_query_params().get('UserAccessKeyId')
 
 	def set_UserAccessKeyId(self,UserAccessKeyId):
 		self.add_query_param('UserAccessKeyId',UserAccessKeyId)
+
+	def get_UserName(self):
+		return self.get_query_params().get('UserName')
+
+	def set_UserName(self,UserName):
+		self.add_query_param('UserName',UserName)
 
 	def get_Status(self):
 		return self.get_query_params().get('Status')

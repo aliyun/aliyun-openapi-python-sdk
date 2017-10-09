@@ -24,11 +24,11 @@ class CreateUserRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Ram', '2015-05-01', 'CreateUser')
 		self.set_protocol_type('https');
 
-	def get_UserName(self):
-		return self.get_query_params().get('UserName')
+	def get_Comments(self):
+		return self.get_query_params().get('Comments')
 
-	def set_UserName(self,UserName):
-		self.add_query_param('UserName',UserName)
+	def set_Comments(self,Comments):
+		self.add_query_param('Comments',Comments)
 
 	def get_DisplayName(self):
 		return self.get_query_params().get('DisplayName')
@@ -48,8 +48,8 @@ class CreateUserRequest(RpcRequest):
 	def set_Email(self,Email):
 		self.add_query_param('Email',Email)
 
-	def get_Comments(self):
-		return self.get_query_params().get('Comments')
+	def get_UserName(self):
+		return self.get_query_params().get('UserName')
 
-	def set_Comments(self,Comments):
-		self.add_query_param('Comments',Comments)
+	def set_UserName(self,UserName):
+		self.add_query_param('UserName',UserName)

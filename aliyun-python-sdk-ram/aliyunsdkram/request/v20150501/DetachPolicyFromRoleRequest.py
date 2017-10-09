@@ -30,14 +30,14 @@ class DetachPolicyFromRoleRequest(RpcRequest):
 	def set_PolicyType(self,PolicyType):
 		self.add_query_param('PolicyType',PolicyType)
 
-	def get_PolicyName(self):
-		return self.get_query_params().get('PolicyName')
-
-	def set_PolicyName(self,PolicyName):
-		self.add_query_param('PolicyName',PolicyName)
-
 	def get_RoleName(self):
 		return self.get_query_params().get('RoleName')
 
 	def set_RoleName(self,RoleName):
 		self.add_query_param('RoleName',RoleName)
+
+	def get_PolicyName(self):
+		return self.get_query_params().get('PolicyName')
+
+	def set_PolicyName(self,PolicyName):
+		self.add_query_param('PolicyName',PolicyName)

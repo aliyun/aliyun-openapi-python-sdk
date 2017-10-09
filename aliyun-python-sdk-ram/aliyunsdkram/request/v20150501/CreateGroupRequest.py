@@ -24,14 +24,14 @@ class CreateGroupRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Ram', '2015-05-01', 'CreateGroup')
 		self.set_protocol_type('https');
 
-	def get_GroupName(self):
-		return self.get_query_params().get('GroupName')
-
-	def set_GroupName(self,GroupName):
-		self.add_query_param('GroupName',GroupName)
-
 	def get_Comments(self):
 		return self.get_query_params().get('Comments')
 
 	def set_Comments(self,Comments):
 		self.add_query_param('Comments',Comments)
+
+	def get_GroupName(self):
+		return self.get_query_params().get('GroupName')
+
+	def set_GroupName(self,GroupName):
+		self.add_query_param('GroupName',GroupName)

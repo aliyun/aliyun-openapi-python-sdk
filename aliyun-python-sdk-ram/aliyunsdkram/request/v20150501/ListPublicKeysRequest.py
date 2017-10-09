@@ -18,29 +18,11 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class UpdateLoginProfileRequest(RpcRequest):
+class ListPublicKeysRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ram', '2015-05-01', 'UpdateLoginProfile')
+		RpcRequest.__init__(self, 'Ram', '2015-05-01', 'ListPublicKeys')
 		self.set_protocol_type('https');
-
-	def get_Password(self):
-		return self.get_query_params().get('Password')
-
-	def set_Password(self,Password):
-		self.add_query_param('Password',Password)
-
-	def get_PasswordResetRequired(self):
-		return self.get_query_params().get('PasswordResetRequired')
-
-	def set_PasswordResetRequired(self,PasswordResetRequired):
-		self.add_query_param('PasswordResetRequired',PasswordResetRequired)
-
-	def get_MFABindRequired(self):
-		return self.get_query_params().get('MFABindRequired')
-
-	def set_MFABindRequired(self,MFABindRequired):
-		self.add_query_param('MFABindRequired',MFABindRequired)
 
 	def get_UserName(self):
 		return self.get_query_params().get('UserName')
