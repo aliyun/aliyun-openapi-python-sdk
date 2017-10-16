@@ -653,6 +653,7 @@
             <Product><ProductName>Dds</ProductName><DomainName>mongodb.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Sts</ProductName><DomainName>sts.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Sms</ProductName><DomainName>sms.aliyuncs.com</DomainName></Product>
+            <Product><ProductName>Dysmsapi</ProductName><DomainName>dysmsapi.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Msg</ProductName><DomainName>msg-inner.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Jaq</ProductName><DomainName>jaq.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Push</ProductName><DomainName>cloudpush.aliyuncs.com</DomainName></Product>
