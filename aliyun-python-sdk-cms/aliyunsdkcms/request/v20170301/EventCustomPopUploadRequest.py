@@ -18,25 +18,13 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class NodeInstallRequest(RpcRequest):
+class EventCustomPopUploadRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cms', '2017-03-01', 'NodeInstall','cms')
+		RpcRequest.__init__(self, 'Cms', '2017-03-01', 'EventCustomPopUpload')
 
-	def get_UserId(self):
-		return self.get_query_params().get('UserId')
+	def get_EventInfo(self):
+		return self.get_query_params().get('EventInfo')
 
-	def set_UserId(self,UserId):
-		self.add_query_param('UserId',UserId)
-
-	def get_InstanceId(self):
-		return self.get_query_params().get('InstanceId')
-
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
-
-	def get_Force(self):
-		return self.get_query_params().get('Force')
-
-	def set_Force(self,Force):
-		self.add_query_param('Force',Force)
+	def set_EventInfo(self,EventInfo):
+		self.add_query_param('EventInfo',EventInfo)

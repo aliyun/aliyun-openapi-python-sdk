@@ -1,0 +1,6 @@
+2017-10-17 Version: 5.0.2
+1, 增加了EventCustomPopUpload接口。
+2, 支持事件上报功能。
+3, 目前支持RegionId：cn-hangzhou。
+4, 目前仅支持python sdk，可以支持java、php sdk的扩展，有需要可以联系云监控support。
+
