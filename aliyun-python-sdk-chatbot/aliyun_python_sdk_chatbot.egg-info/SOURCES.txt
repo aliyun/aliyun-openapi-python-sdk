@@ -1,0 +1,12 @@
+MANIFEST.in
+README.rst
+setup.py
+aliyun_python_sdk_chatbot.egg-info/PKG-INFO
+aliyun_python_sdk_chatbot.egg-info/SOURCES.txt
+aliyun_python_sdk_chatbot.egg-info/dependency_links.txt
+aliyun_python_sdk_chatbot.egg-info/requires.txt
+aliyun_python_sdk_chatbot.egg-info/top_level.txt
+aliyunsdkchatbot/__init__.py
+aliyunsdkchatbot/request/__init__.py
+aliyunsdkchatbot/request/v20171011/ChatRequest.py
+aliyunsdkchatbot/request/v20171011/__init__.py
