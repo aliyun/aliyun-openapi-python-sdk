@@ -720,6 +720,7 @@
             <Product><ProductName>Ons</ProductName><DomainName>ons.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Oss</ProductName><DomainName>oss-cn-hangzhou.aliyuncs.com</DomainName></Product>
             <Product><ProductName>YundunDdos</ProductName><DomainName>inner-yundun-ddos.cn-hangzhou.aliyuncs.com</DomainName></Product>
+            <Product><ProductName>Dysmsapi</ProductName><DomainName>dysmsapi.aliyuncs.com</DomainName></Product>
         </Products>
     </Endpoint>
     <Endpoint name="cn-beijing-inner">

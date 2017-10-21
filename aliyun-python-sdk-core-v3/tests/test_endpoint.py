@@ -76,3 +76,11 @@ class TestEndpoint(object):
         endpoint = self.acs_client._resolve_endpoint(request)
         print(endpoint)
         assert endpoint == 'ecs.cn-zhangjiakou123.aliyuncs.com'
+
+    def test_resolve_endpoint6(self):
+        self.acs_client = client.AcsClient(ak='xxxxx', secret='xxxxxxx')
+        request = RpcRequest(product='Dysmsapi', version='2017-05-25', action_name='SendSms')
+        request.set_accept_format('JSON')
+        endpoint = self.acs_client._resolve_endpoint(request)
+        print(endpoint)
+        assert endpoint == 'ecs.cn-zhangjiakou123.aliyuncs.com'
