@@ -18,10 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class DeletePhotosRequest(RpcRequest):
+class EditPhotosRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'CloudPhoto', '2017-07-11', 'DeletePhotos','cloudphoto')
+		RpcRequest.__init__(self, 'CloudPhoto', '2017-07-11', 'EditPhotos','cloudphoto')
 		self.set_protocol_type('https');
 
 	def get_LibraryId(self):
@@ -29,6 +29,12 @@ class DeletePhotosRequest(RpcRequest):
 
 	def set_LibraryId(self,LibraryId):
 		self.add_query_param('LibraryId',LibraryId)
+
+	def get_ShareExpireTime(self):
+		return self.get_query_params().get('ShareExpireTime')
+
+	def set_ShareExpireTime(self,ShareExpireTime):
+		self.add_query_param('ShareExpireTime',ShareExpireTime)
 
 	def get_PhotoIds(self):
 		return self.get_query_params().get('PhotoIds')
@@ -43,3 +49,15 @@ class DeletePhotosRequest(RpcRequest):
 
 	def set_StoreName(self,StoreName):
 		self.add_query_param('StoreName',StoreName)
+
+	def get_Remark(self):
+		return self.get_query_params().get('Remark')
+
+	def set_Remark(self,Remark):
+		self.add_query_param('Remark',Remark)
+
+	def get_Title(self):
+		return self.get_query_params().get('Title')
+
+	def set_Title(self,Title):
+		self.add_query_param('Title',Title)

@@ -18,10 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class DeletePhotosRequest(RpcRequest):
+class ActivatePhotosRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'CloudPhoto', '2017-07-11', 'DeletePhotos','cloudphoto')
+		RpcRequest.__init__(self, 'CloudPhoto', '2017-07-11', 'ActivatePhotos','cloudphoto')
 		self.set_protocol_type('https');
 
 	def get_LibraryId(self):

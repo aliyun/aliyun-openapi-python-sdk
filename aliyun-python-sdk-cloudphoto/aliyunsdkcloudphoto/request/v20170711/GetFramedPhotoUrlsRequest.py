@@ -18,11 +18,17 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class DeletePhotosRequest(RpcRequest):
+class GetFramedPhotoUrlsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'CloudPhoto', '2017-07-11', 'DeletePhotos','cloudphoto')
+		RpcRequest.__init__(self, 'CloudPhoto', '2017-07-11', 'GetFramedPhotoUrls','cloudphoto')
 		self.set_protocol_type('https');
+
+	def get_FrameId(self):
+		return self.get_query_params().get('FrameId')
+
+	def set_FrameId(self,FrameId):
+		self.add_query_param('FrameId',FrameId)
 
 	def get_LibraryId(self):
 		return self.get_query_params().get('LibraryId')

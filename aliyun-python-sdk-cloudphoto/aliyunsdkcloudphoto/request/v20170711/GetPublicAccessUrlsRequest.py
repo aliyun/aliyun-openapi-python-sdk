@@ -18,11 +18,17 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class DeletePhotosRequest(RpcRequest):
+class GetPublicAccessUrlsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'CloudPhoto', '2017-07-11', 'DeletePhotos','cloudphoto')
+		RpcRequest.__init__(self, 'CloudPhoto', '2017-07-11', 'GetPublicAccessUrls','cloudphoto')
 		self.set_protocol_type('https');
+
+	def get_DomainType(self):
+		return self.get_query_params().get('DomainType')
+
+	def set_DomainType(self,DomainType):
+		self.add_query_param('DomainType',DomainType)
 
 	def get_LibraryId(self):
 		return self.get_query_params().get('LibraryId')
@@ -43,3 +49,9 @@ class DeletePhotosRequest(RpcRequest):
 
 	def set_StoreName(self,StoreName):
 		self.add_query_param('StoreName',StoreName)
+
+	def get_ZoomType(self):
+		return self.get_query_params().get('ZoomType')
+
+	def set_ZoomType(self,ZoomType):
+		self.add_query_param('ZoomType',ZoomType)

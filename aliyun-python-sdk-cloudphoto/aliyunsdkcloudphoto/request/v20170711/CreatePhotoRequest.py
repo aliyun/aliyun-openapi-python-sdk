@@ -36,6 +36,12 @@ class CreatePhotoRequest(RpcRequest):
 	def set_LibraryId(self,LibraryId):
 		self.add_query_param('LibraryId',LibraryId)
 
+	def get_ShareExpireTime(self):
+		return self.get_query_params().get('ShareExpireTime')
+
+	def set_ShareExpireTime(self,ShareExpireTime):
+		self.add_query_param('ShareExpireTime',ShareExpireTime)
+
 	def get_StoreName(self):
 		return self.get_query_params().get('StoreName')
 
@@ -59,6 +65,12 @@ class CreatePhotoRequest(RpcRequest):
 
 	def set_SessionId(self,SessionId):
 		self.add_query_param('SessionId',SessionId)
+
+	def get_Staging(self):
+		return self.get_query_params().get('Staging')
+
+	def set_Staging(self,Staging):
+		self.add_query_param('Staging',Staging)
 
 	def get_FileId(self):
 		return self.get_query_params().get('FileId')

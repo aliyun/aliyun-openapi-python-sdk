@@ -18,11 +18,17 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class GetThumbnailsRequest(RpcRequest):
+class ListTimeLinePhotosRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'CloudPhoto', '2017-07-11', 'GetThumbnails','cloudphoto')
+		RpcRequest.__init__(self, 'CloudPhoto', '2017-07-11', 'ListTimeLinePhotos','cloudphoto')
 		self.set_protocol_type('https');
+
+	def get_Size(self):
+		return self.get_query_params().get('Size')
+
+	def set_Size(self,Size):
+		self.add_query_param('Size',Size)
 
 	def get_LibraryId(self):
 		return self.get_query_params().get('LibraryId')
@@ -30,13 +36,11 @@ class GetThumbnailsRequest(RpcRequest):
 	def set_LibraryId(self,LibraryId):
 		self.add_query_param('LibraryId',LibraryId)
 
-	def get_PhotoIds(self):
-		return self.get_query_params().get('PhotoIds')
+	def get_EndTime(self):
+		return self.get_query_params().get('EndTime')
 
-	def set_PhotoIds(self,PhotoIds):
-		for i in range(len(PhotoIds)):	
-			if PhotoIds[i] is not None:
-				self.add_query_param('PhotoId.' + bytes(i + 1) , PhotoIds[i]);
+	def set_EndTime(self,EndTime):
+		self.add_query_param('EndTime',EndTime)
 
 	def get_StoreName(self):
 		return self.get_query_params().get('StoreName')
@@ -44,8 +48,32 @@ class GetThumbnailsRequest(RpcRequest):
 	def set_StoreName(self,StoreName):
 		self.add_query_param('StoreName',StoreName)
 
-	def get_ZoomType(self):
-		return self.get_query_params().get('ZoomType')
+	def get_Page(self):
+		return self.get_query_params().get('Page')
 
-	def set_ZoomType(self,ZoomType):
-		self.add_query_param('ZoomType',ZoomType)
+	def set_Page(self,Page):
+		self.add_query_param('Page',Page)
+
+	def get_StartTime(self):
+		return self.get_query_params().get('StartTime')
+
+	def set_StartTime(self,StartTime):
+		self.add_query_param('StartTime',StartTime)
+
+	def get_FilterBy(self):
+		return self.get_query_params().get('FilterBy')
+
+	def set_FilterBy(self,FilterBy):
+		self.add_query_param('FilterBy',FilterBy)
+
+	def get_Direction(self):
+		return self.get_query_params().get('Direction')
+
+	def set_Direction(self,Direction):
+		self.add_query_param('Direction',Direction)
+
+	def get_Order(self):
+		return self.get_query_params().get('Order')
+
+	def set_Order(self,Order):
+		self.add_query_param('Order',Order)

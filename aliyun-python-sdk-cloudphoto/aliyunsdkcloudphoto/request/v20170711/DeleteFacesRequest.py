@@ -41,4 +41,5 @@ class DeleteFacesRequest(RpcRequest):
 
 	def set_FaceIds(self,FaceIds):
 		for i in range(len(FaceIds)):	
-			self.add_query_param('FaceId.' + bytes(i + 1) , FaceIds[i]);
+			if FaceIds[i] is not None:
+				self.add_query_param('FaceId.' + bytes(i + 1) , FaceIds[i]);

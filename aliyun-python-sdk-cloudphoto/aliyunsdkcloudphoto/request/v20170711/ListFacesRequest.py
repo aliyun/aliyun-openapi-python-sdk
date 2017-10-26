@@ -30,6 +30,12 @@ class ListFacesRequest(RpcRequest):
 	def set_Cursor(self,Cursor):
 		self.add_query_param('Cursor',Cursor)
 
+	def get_HasFaceName(self):
+		return self.get_query_params().get('HasFaceName')
+
+	def set_HasFaceName(self,HasFaceName):
+		self.add_query_param('HasFaceName',HasFaceName)
+
 	def get_Size(self):
 		return self.get_query_params().get('Size')
 

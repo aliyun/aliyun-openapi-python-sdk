@@ -18,10 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class DeletePhotosRequest(RpcRequest):
+class GetPhotosByMd5sRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'CloudPhoto', '2017-07-11', 'DeletePhotos','cloudphoto')
+		RpcRequest.__init__(self, 'CloudPhoto', '2017-07-11', 'GetPhotosByMd5s','cloudphoto')
 		self.set_protocol_type('https');
 
 	def get_LibraryId(self):
@@ -30,16 +30,22 @@ class DeletePhotosRequest(RpcRequest):
 	def set_LibraryId(self,LibraryId):
 		self.add_query_param('LibraryId',LibraryId)
 
-	def get_PhotoIds(self):
-		return self.get_query_params().get('PhotoIds')
-
-	def set_PhotoIds(self,PhotoIds):
-		for i in range(len(PhotoIds)):	
-			if PhotoIds[i] is not None:
-				self.add_query_param('PhotoId.' + bytes(i + 1) , PhotoIds[i]);
-
 	def get_StoreName(self):
 		return self.get_query_params().get('StoreName')
 
 	def set_StoreName(self,StoreName):
 		self.add_query_param('StoreName',StoreName)
+
+	def get_State(self):
+		return self.get_query_params().get('State')
+
+	def set_State(self,State):
+		self.add_query_param('State',State)
+
+	def get_Md5s(self):
+		return self.get_query_params().get('Md5s')
+
+	def set_Md5s(self,Md5s):
+		for i in range(len(Md5s)):	
+			if Md5s[i] is not None:
+				self.add_query_param('Md5.' + bytes(i + 1) , Md5s[i]);
