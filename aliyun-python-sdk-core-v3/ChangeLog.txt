@@ -1,3 +1,6 @@
+2017-10-26 Version: 2.5.1
+1, 精简sdk自带参数
+
 2017-10-26 Version: 2.5.0
 1, 支持common API的泛化调用接口
 2, 修复了python3环境下，有时会出现typeError的bug

@@ -334,9 +334,10 @@ class RoaRequest(AcsRequest):
         req_params = self.get_query_params()
         if req_params is None:
             req_params = {}
-        req_params['Version'] = self.get_version()
-        req_params['Action'] = self.get_action_name()
-        req_params['Format'] = self.get_accept_format()
+        self.add_header("x-acs-version", self.get_version())
+        # req_params['Version'] = self.get_version()
+        # req_params['Action'] = self.get_action_name()
+        # req_params['Format'] = self.get_accept_format()
         return req_params
 
     def get_signed_header(self, region_id, ak, secret):
