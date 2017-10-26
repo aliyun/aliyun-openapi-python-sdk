@@ -30,6 +30,8 @@ from .http.http_response import HttpResponse
 from .request import AcsRequest
 from .http import format_type
 from .auth.Signer import Signer
+from .request import CommonRequest
+
 try:
     import json
 except ImportError:
@@ -163,6 +165,10 @@ class AcsClient:
         return self._location_service
 
     def _resolve_endpoint(self, request):
+
+        if isinstance(request, CommonRequest) and request.get_domain():
+            return request.get_domain()
+
         endpoint = None
         if request.get_location_service_code() is not None:
             endpoint = self._location_service.find_product_domain(
@@ -214,6 +220,14 @@ class AcsClient:
         return response
 
     def _implementation_of_do_action(self, request):
+
+        # add core version
+        core_version = __import__('aliyunsdkcore').__version__
+        request.add_header('x-sdk-core-version', core_version)
+
+        if isinstance(request, CommonRequest):
+            request.trans_to_acs_request()
+
         endpoint = self._resolve_endpoint(request)
         http_response = self._make_http_response(endpoint, request)
         if self._url_test_flag:
@@ -234,7 +248,7 @@ class AcsClient:
 
     def _parse_error_info_from_response_body(self, response_body):
         try:
-            body_obj = json.loads(response_body)
+            body_obj = json.loads(response_body.decode("utf-8"))
             if 'Code' in body_obj and 'Message' in body_obj:
                 return (body_obj['Code'], body_obj['Message'])
             else:
@@ -257,7 +271,7 @@ class AcsClient:
         request_id = None
 
         try:
-            body_obj = json.loads(body)
+            body_obj = json.loads(body.decode("utf-8"))
             request_id = body_obj.get('RequestId')
         except ValueError or TypeError:
             # in case the response body is not a json string, return the raw
