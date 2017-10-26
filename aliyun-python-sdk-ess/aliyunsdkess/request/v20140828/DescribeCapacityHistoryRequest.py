@@ -21,13 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class DescribeCapacityHistoryRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ess', '2014-08-28', 'DescribeCapacityHistory')
-
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
+		RpcRequest.__init__(self, 'Ess', '2014-08-28', 'DescribeCapacityHistory','ess')
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -35,23 +29,17 @@ class DescribeCapacityHistoryRequest(RpcRequest):
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
-	def get_ResourceOwnerId(self):
-		return self.get_query_params().get('ResourceOwnerId')
-
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
 	def get_ScalingGroupId(self):
 		return self.get_query_params().get('ScalingGroupId')
 
 	def set_ScalingGroupId(self,ScalingGroupId):
 		self.add_query_param('ScalingGroupId',ScalingGroupId)
 
-	def get_StartTime(self):
-		return self.get_query_params().get('StartTime')
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
 
-	def set_StartTime(self,StartTime):
-		self.add_query_param('StartTime',StartTime)
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
 
 	def get_EndTime(self):
 		return self.get_query_params().get('EndTime')
@@ -59,14 +47,20 @@ class DescribeCapacityHistoryRequest(RpcRequest):
 	def set_EndTime(self,EndTime):
 		self.add_query_param('EndTime',EndTime)
 
+	def get_StartTime(self):
+		return self.get_query_params().get('StartTime')
+
+	def set_StartTime(self,StartTime):
+		self.add_query_param('StartTime',StartTime)
+
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
+
 	def get_PageNumber(self):
 		return self.get_query_params().get('PageNumber')
 
 	def set_PageNumber(self,PageNumber):
 		self.add_query_param('PageNumber',PageNumber)
-
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)

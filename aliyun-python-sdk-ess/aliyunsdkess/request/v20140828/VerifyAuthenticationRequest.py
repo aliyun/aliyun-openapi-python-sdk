@@ -18,10 +18,16 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class DisableScalingGroupRequest(RpcRequest):
+class VerifyAuthenticationRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ess', '2014-08-28', 'DisableScalingGroup','ess')
+		RpcRequest.__init__(self, 'Ess', '2014-08-28', 'VerifyAuthentication','ess')
+
+	def get_Uid(self):
+		return self.get_query_params().get('Uid')
+
+	def set_Uid(self,Uid):
+		self.add_query_param('Uid',Uid)
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -34,18 +40,6 @@ class DisableScalingGroupRequest(RpcRequest):
 
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_ScalingGroupId(self):
-		return self.get_query_params().get('ScalingGroupId')
-
-	def set_ScalingGroupId(self,ScalingGroupId):
-		self.add_query_param('ScalingGroupId',ScalingGroupId)
-
-	def get_OwnerAccount(self):
-		return self.get_query_params().get('OwnerAccount')
-
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')

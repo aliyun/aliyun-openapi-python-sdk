@@ -21,13 +21,13 @@ from aliyunsdkcore.request import RpcRequest
 class CreateScalingRuleRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ess', '2014-08-28', 'CreateScalingRule')
+		RpcRequest.__init__(self, 'Ess', '2014-08-28', 'CreateScalingRule','ess')
 
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
+	def get_ScalingRuleName(self):
+		return self.get_query_params().get('ScalingRuleName')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
+	def set_ScalingRuleName(self,ScalingRuleName):
+		self.add_query_param('ScalingRuleName',ScalingRuleName)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -35,11 +35,11 @@ class CreateScalingRuleRequest(RpcRequest):
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
-	def get_ResourceOwnerId(self):
-		return self.get_query_params().get('ResourceOwnerId')
+	def get_AdjustmentValue(self):
+		return self.get_query_params().get('AdjustmentValue')
 
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+	def set_AdjustmentValue(self,AdjustmentValue):
+		self.add_query_param('AdjustmentValue',AdjustmentValue)
 
 	def get_ScalingGroupId(self):
 		return self.get_query_params().get('ScalingGroupId')
@@ -47,11 +47,11 @@ class CreateScalingRuleRequest(RpcRequest):
 	def set_ScalingGroupId(self,ScalingGroupId):
 		self.add_query_param('ScalingGroupId',ScalingGroupId)
 
-	def get_ScalingRuleName(self):
-		return self.get_query_params().get('ScalingRuleName')
+	def get_OwnerAccount(self):
+		return self.get_query_params().get('OwnerAccount')
 
-	def set_ScalingRuleName(self,ScalingRuleName):
-		self.add_query_param('ScalingRuleName',ScalingRuleName)
+	def set_OwnerAccount(self,OwnerAccount):
+		self.add_query_param('OwnerAccount',OwnerAccount)
 
 	def get_Cooldown(self):
 		return self.get_query_params().get('Cooldown')
@@ -65,14 +65,8 @@ class CreateScalingRuleRequest(RpcRequest):
 	def set_AdjustmentType(self,AdjustmentType):
 		self.add_query_param('AdjustmentType',AdjustmentType)
 
-	def get_AdjustmentValue(self):
-		return self.get_query_params().get('AdjustmentValue')
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
 
-	def set_AdjustmentValue(self,AdjustmentValue):
-		self.add_query_param('AdjustmentValue',AdjustmentValue)
-
-	def get_OwnerAccount(self):
-		return self.get_query_params().get('OwnerAccount')
-
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)

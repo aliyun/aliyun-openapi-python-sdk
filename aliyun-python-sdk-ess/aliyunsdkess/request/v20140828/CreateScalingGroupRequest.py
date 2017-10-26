@@ -21,13 +21,19 @@ from aliyunsdkcore.request import RpcRequest
 class CreateScalingGroupRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ess', '2014-08-28', 'CreateScalingGroup')
+		RpcRequest.__init__(self, 'Ess', '2014-08-28', 'CreateScalingGroup','ess')
 
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
+	def get_DBInstanceIds(self):
+		return self.get_query_params().get('DBInstanceIds')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
+	def set_DBInstanceIds(self,DBInstanceIds):
+		self.add_query_param('DBInstanceIds',DBInstanceIds)
+
+	def get_LoadBalancerIds(self):
+		return self.get_query_params().get('LoadBalancerIds')
+
+	def set_LoadBalancerIds(self,LoadBalancerIds):
+		self.add_query_param('LoadBalancerIds',LoadBalancerIds)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -35,23 +41,35 @@ class CreateScalingGroupRequest(RpcRequest):
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
-	def get_ResourceOwnerId(self):
-		return self.get_query_params().get('ResourceOwnerId')
-
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
 	def get_ScalingGroupName(self):
 		return self.get_query_params().get('ScalingGroupName')
 
 	def set_ScalingGroupName(self,ScalingGroupName):
 		self.add_query_param('ScalingGroupName',ScalingGroupName)
 
+	def get_OwnerAccount(self):
+		return self.get_query_params().get('OwnerAccount')
+
+	def set_OwnerAccount(self,OwnerAccount):
+		self.add_query_param('OwnerAccount',OwnerAccount)
+
 	def get_MinSize(self):
 		return self.get_query_params().get('MinSize')
 
 	def set_MinSize(self,MinSize):
 		self.add_query_param('MinSize',MinSize)
+
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
+
+	def get_VSwitchId(self):
+		return self.get_query_params().get('VSwitchId')
+
+	def set_VSwitchId(self,VSwitchId):
+		self.add_query_param('VSwitchId',VSwitchId)
 
 	def get_MaxSize(self):
 		return self.get_query_params().get('MaxSize')
@@ -65,18 +83,6 @@ class CreateScalingGroupRequest(RpcRequest):
 	def set_DefaultCooldown(self,DefaultCooldown):
 		self.add_query_param('DefaultCooldown',DefaultCooldown)
 
-	def get_LoadBalancerIds(self):
-		return self.get_query_params().get('LoadBalancerIds')
-
-	def set_LoadBalancerIds(self,LoadBalancerIds):
-		self.add_query_param('LoadBalancerIds',LoadBalancerIds)
-
-	def get_DBInstanceIds(self):
-		return self.get_query_params().get('DBInstanceIds')
-
-	def set_DBInstanceIds(self,DBInstanceIds):
-		self.add_query_param('DBInstanceIds',DBInstanceIds)
-
 	def get_RemovalPolicy1(self):
 		return self.get_query_params().get('RemovalPolicy.1')
 
@@ -88,15 +94,3 @@ class CreateScalingGroupRequest(RpcRequest):
 
 	def set_RemovalPolicy2(self,RemovalPolicy2):
 		self.add_query_param('RemovalPolicy.2',RemovalPolicy2)
-
-	def get_OwnerAccount(self):
-		return self.get_query_params().get('OwnerAccount')
-
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
-
-	def get_VSwitchId(self):
-		return self.get_query_params().get('VSwitchId')
-
-	def set_VSwitchId(self,VSwitchId):
-		self.add_query_param('VSwitchId',VSwitchId)

@@ -21,19 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class ModifyScalingGroupRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ess', '2014-08-28', 'ModifyScalingGroup')
-
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
-
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+		RpcRequest.__init__(self, 'Ess', '2014-08-28', 'ModifyScalingGroup','ess')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -41,11 +29,11 @@ class ModifyScalingGroupRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_ScalingGroupId(self):
-		return self.get_query_params().get('ScalingGroupId')
+	def get_ResourceOwnerAccount(self):
+		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_ScalingGroupId(self,ScalingGroupId):
-		self.add_query_param('ScalingGroupId',ScalingGroupId)
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
 	def get_ScalingGroupName(self):
 		return self.get_query_params().get('ScalingGroupName')
@@ -53,11 +41,35 @@ class ModifyScalingGroupRequest(RpcRequest):
 	def set_ScalingGroupName(self,ScalingGroupName):
 		self.add_query_param('ScalingGroupName',ScalingGroupName)
 
+	def get_ScalingGroupId(self):
+		return self.get_query_params().get('ScalingGroupId')
+
+	def set_ScalingGroupId(self,ScalingGroupId):
+		self.add_query_param('ScalingGroupId',ScalingGroupId)
+
+	def get_OwnerAccount(self):
+		return self.get_query_params().get('OwnerAccount')
+
+	def set_OwnerAccount(self,OwnerAccount):
+		self.add_query_param('OwnerAccount',OwnerAccount)
+
+	def get_ActiveScalingConfigurationId(self):
+		return self.get_query_params().get('ActiveScalingConfigurationId')
+
+	def set_ActiveScalingConfigurationId(self,ActiveScalingConfigurationId):
+		self.add_query_param('ActiveScalingConfigurationId',ActiveScalingConfigurationId)
+
 	def get_MinSize(self):
 		return self.get_query_params().get('MinSize')
 
 	def set_MinSize(self,MinSize):
 		self.add_query_param('MinSize',MinSize)
+
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
 
 	def get_MaxSize(self):
 		return self.get_query_params().get('MaxSize')
@@ -82,15 +94,3 @@ class ModifyScalingGroupRequest(RpcRequest):
 
 	def set_RemovalPolicy2(self,RemovalPolicy2):
 		self.add_query_param('RemovalPolicy.2',RemovalPolicy2)
-
-	def get_ActiveScalingConfigurationId(self):
-		return self.get_query_params().get('ActiveScalingConfigurationId')
-
-	def set_ActiveScalingConfigurationId(self,ActiveScalingConfigurationId):
-		self.add_query_param('ActiveScalingConfigurationId',ActiveScalingConfigurationId)
-
-	def get_OwnerAccount(self):
-		return self.get_query_params().get('OwnerAccount')
-
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
