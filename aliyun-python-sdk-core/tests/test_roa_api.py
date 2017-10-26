@@ -44,12 +44,6 @@ region_provider.modify_point('Ft', 'cn-hangzhou', 'ft.aliyuncs.com')
 client = AcsClient(cf.get("daily_access_key", "id"), cf.get("daily_access_key", "secret"), 'cn-hangzhou')
 assert client
 
-request = TestRoaApiRequest.TestRoaApiRequest()
-request.set_header_param(headerParam)
-request.set_query_param(queryParam)
-request.set_body_param(bodyParam)
-request.add_header('Content-Type', "text/plain")
-
 
 class TestRoaApi(object):
     acs_client = client
@@ -57,7 +51,15 @@ class TestRoaApi(object):
     def set_client(self, acs_client=client):
         self.acs_client = acs_client
 
+    @staticmethod
+    def get_base_request():
+        request = TestRoaApiRequest.TestRoaApiRequest()
+        request.set_header_param(headerParam)
+        request.set_query_param(queryParam)
+        return request
+
     def test_get(self):
+        request = TestRoaApi.get_base_request()
         request.set_method("GET")
         body = self.acs_client.do_action_with_exception(request)
         assert body
@@ -65,81 +67,80 @@ class TestRoaApi(object):
         response = json.loads(body)
         assert response
 
-        assert response.get("Params").get("RegionId") == 'cn-hangzhou'
         assert response.get("Params").get("QueryParam") == queryParam
         assert response.get("Headers").get("HeaderParam") == headerParam
 
     def test_post(self):
+        request = TestRoaApi.get_base_request()
         request.set_method("POST")
+        request.set_body_param(bodyParam)
+        request.set_content_type(format_type.APPLICATION_FORM)
         body = self.acs_client.do_action_with_exception(request)
         assert body
 
         response = json.loads(body)
         assert response
 
-        assert response.get("Params").get("RegionId") == 'cn-hangzhou'
         assert response.get("Params").get("QueryParam") == queryParam
         assert response.get("Headers").get("HeaderParam") == headerParam
         assert response.get("Params").get("BodyParam") == bodyParam
 
     def test_post_with_stream(self):
-        request2 = TestRoaApiRequest.TestRoaApiRequest()
-        request2.set_header_param(headerParam)
-        request2.set_query_param(queryParam)
-        request2.set_method("POST")
-        request2.set_content("test_content")
+        request = TestRoaApi.get_base_request()
+        request.set_method("POST")
+        request.set_content("test_content")
+        request.set_content_type(format_type.APPLICATION_OCTET_STREAM)
 
-        body = self.acs_client.do_action_with_exception(request2)
+        body = self.acs_client.do_action_with_exception(request)
         assert body
 
         response = json.loads(body)
         assert response
 
-        assert response.get("Params").get("RegionId") == 'cn-hangzhou'
         assert response.get("Params").get("QueryParam") == queryParam
         assert response.get("Headers").get("HeaderParam") == headerParam
         assert response.get("Body") == 'test_content'
 
     def test_post_with_json(self):
-        request2 = TestRoaApiRequest.TestRoaApiRequest()
-        request2.set_header_param(headerParam)
-        request2.set_query_param(queryParam)
-        request2.set_method("POST")
+        request = TestRoaApi.get_base_request()
+        request.set_method("POST")
         dict_data = {'data': 1}
-        request2.set_content(json.dumps(dict_data))
-        request2.set_content_type(format_type.APPLICATION_JSON)
+        request.set_content(json.dumps(dict_data))
+        request.set_content_type(format_type.APPLICATION_JSON)
 
-        body = self.acs_client.do_action_with_exception(request2)
+        body = self.acs_client.do_action_with_exception(request)
         assert body
 
         response = json.loads(body)
         assert response
 
-        assert response.get("Params").get("RegionId") == 'cn-hangzhou'
         assert response.get("Params").get("QueryParam") == queryParam
         assert response.get("Headers").get("HeaderParam") == headerParam
         assert response.get("Headers").get("Content-Type") == 'application/json'
         assert response.get("Body") == '{"data": 1}'
 
     def test_head(self):
+        request = TestRoaApi.get_base_request()
         request.set_method("HEAD")
         body = self.acs_client.do_action_with_exception(request)
         assert body == ''
 
     def test_put(self):
+        request = TestRoaApi.get_base_request()
         request.set_method("PUT")
+        request.set_body_param(bodyParam)
         body = self.acs_client.do_action_with_exception(request)
         assert body
 
         response = json.loads(body)
         assert response
 
-        assert response.get("Params").get("RegionId") == 'cn-hangzhou'
         assert response.get("Params").get("QueryParam") == queryParam
         assert response.get("Headers").get("HeaderParam") == headerParam
         assert response.get("Params").get("BodyParam") == bodyParam
 
     def test_delete(self):
+        request = TestRoaApi.get_base_request()
         request.set_method("DELETE")
         body = self.acs_client.do_action_with_exception(request)
         assert body
@@ -147,6 +148,5 @@ class TestRoaApi(object):
         response = json.loads(body)
         assert response
 
-        assert response.get("Params").get("RegionId") == 'cn-hangzhou'
         assert response.get("Params").get("QueryParam") == queryParam
         assert response.get("Headers").get("HeaderParam") == headerParam
