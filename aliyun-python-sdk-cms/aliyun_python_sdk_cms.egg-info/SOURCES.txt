@@ -32,7 +32,6 @@ aliyunsdkcms/request/v20170301/CreateAlarmRequest.py
 aliyunsdkcms/request/v20170301/DeleteAlarmRequest.py
 aliyunsdkcms/request/v20170301/DisableAlarmRequest.py
 aliyunsdkcms/request/v20170301/EnableAlarmRequest.py
-aliyunsdkcms/request/v20170301/EventCustomPopUploadRequest.py
 aliyunsdkcms/request/v20170301/ListAlarmHistoryRequest.py
 aliyunsdkcms/request/v20170301/ListAlarmRequest.py
 aliyunsdkcms/request/v20170301/ListContactGroupRequest.py
@@ -46,6 +45,7 @@ aliyunsdkcms/request/v20170301/NodeStatusRequest.py
 aliyunsdkcms/request/v20170301/NodeUninstallRequest.py
 aliyunsdkcms/request/v20170301/ProfileGetRequest.py
 aliyunsdkcms/request/v20170301/ProfileSetRequest.py
+aliyunsdkcms/request/v20170301/PutEventRequest.py
 aliyunsdkcms/request/v20170301/PutMetricDataRequest.py
 aliyunsdkcms/request/v20170301/QueryMetricLastRequest.py
 aliyunsdkcms/request/v20170301/QueryMetricListRequest.py

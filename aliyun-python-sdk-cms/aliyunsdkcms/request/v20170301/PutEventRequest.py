@@ -18,10 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class EventCustomPopUploadRequest(RpcRequest):
+class PutEventRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cms', '2017-03-01', 'EventCustomPopUpload')
+		RpcRequest.__init__(self, 'Cms', '2017-03-01', 'PutEvent')
 
 	def get_EventInfo(self):
 		return self.get_query_params().get('EventInfo')
