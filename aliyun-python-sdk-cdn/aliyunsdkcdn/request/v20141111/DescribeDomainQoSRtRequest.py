@@ -18,16 +18,16 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class DescribeRefreshTasksRequest(RpcRequest):
+class DescribeDomainQoSRtRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'DescribeRefreshTasks')
+		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'DescribeDomainQoSRt')
 
-	def get_ObjectPath(self):
-		return self.get_query_params().get('ObjectPath')
+	def get_Ip(self):
+		return self.get_query_params().get('Ip')
 
-	def set_ObjectPath(self,ObjectPath):
-		self.add_query_param('ObjectPath',ObjectPath)
+	def set_Ip(self,Ip):
+		self.add_query_param('Ip',Ip)
 
 	def get_DomainName(self):
 		return self.get_query_params().get('DomainName')
@@ -53,44 +53,14 @@ class DescribeRefreshTasksRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_PageNumber(self):
-		return self.get_query_params().get('PageNumber')
+	def get_Version(self):
+		return self.get_query_params().get('Version')
 
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
-
-	def get_ResourceGroupId(self):
-		return self.get_query_params().get('ResourceGroupId')
-
-	def set_ResourceGroupId(self,ResourceGroupId):
-		self.add_query_param('ResourceGroupId',ResourceGroupId)
+	def set_Version(self,Version):
+		self.add_query_param('Version',Version)
 
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
 
 	def set_SecurityToken(self,SecurityToken):
 		self.add_query_param('SecurityToken',SecurityToken)
-
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_ObjectType(self):
-		return self.get_query_params().get('ObjectType')
-
-	def set_ObjectType(self,ObjectType):
-		self.add_query_param('ObjectType',ObjectType)
-
-	def get_TaskId(self):
-		return self.get_query_params().get('TaskId')
-
-	def set_TaskId(self,TaskId):
-		self.add_query_param('TaskId',TaskId)
-
-	def get_Status(self):
-		return self.get_query_params().get('Status')
-
-	def set_Status(self,Status):
-		self.add_query_param('Status',Status)

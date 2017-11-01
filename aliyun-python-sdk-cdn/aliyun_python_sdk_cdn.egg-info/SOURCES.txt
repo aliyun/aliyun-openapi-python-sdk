@@ -14,6 +14,7 @@ aliyunsdkcdn/request/v20141111/AddLiveAppSnapshotConfigRequest.py
 aliyunsdkcdn/request/v20141111/AddLiveDomainMappingRequest.py
 aliyunsdkcdn/request/v20141111/AddLivePullStreamInfoRequest.py
 aliyunsdkcdn/request/v20141111/AddLiveStreamTranscodeRequest.py
+aliyunsdkcdn/request/v20141111/BatchDescribeDomainBpsDataRequest.py
 aliyunsdkcdn/request/v20141111/ClearUserBlackListRequest.py
 aliyunsdkcdn/request/v20141111/ClearUserDomainBlackListRequest.py
 aliyunsdkcdn/request/v20141111/CreateLiveStreamRecordIndexFilesRequest.py
@@ -48,8 +49,8 @@ aliyunsdkcdn/request/v20141111/DescribeDomainMax95BpsDataRequest.py
 aliyunsdkcdn/request/v20141111/DescribeDomainMonthBillingBpsDataRequest.py
 aliyunsdkcdn/request/v20141111/DescribeDomainOnlineUserNumberRequest.py
 aliyunsdkcdn/request/v20141111/DescribeDomainPathDataRequest.py
-aliyunsdkcdn/request/v20141111/DescribeDomainPnoDataRequest.py
 aliyunsdkcdn/request/v20141111/DescribeDomainPvDataRequest.py
+aliyunsdkcdn/request/v20141111/DescribeDomainQoSRtRequest.py
 aliyunsdkcdn/request/v20141111/DescribeDomainQpsDataRequest.py
 aliyunsdkcdn/request/v20141111/DescribeDomainRealTimeDataRequest.py
 aliyunsdkcdn/request/v20141111/DescribeDomainRegionDataRequest.py
@@ -129,6 +130,7 @@ aliyunsdkcdn/request/v20141111/SetForceRedirectConfigRequest.py
 aliyunsdkcdn/request/v20141111/SetForwardSchemeConfigRequest.py
 aliyunsdkcdn/request/v20141111/SetHttpErrorPageConfigRequest.py
 aliyunsdkcdn/request/v20141111/SetHttpHeaderConfigRequest.py
+aliyunsdkcdn/request/v20141111/SetHttpsOptionConfigRequest.py
 aliyunsdkcdn/request/v20141111/SetIgnoreQueryStringConfigRequest.py
 aliyunsdkcdn/request/v20141111/SetIpBlackListConfigRequest.py
 aliyunsdkcdn/request/v20141111/SetL2OssKeyConfigRequest.py
