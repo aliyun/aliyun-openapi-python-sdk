@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class ModifyPhysicalConnectionAttributeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'ModifyPhysicalConnectionAttribute')
+		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'ModifyPhysicalConnectionAttribute','ecs')
 
 	def get_RedundantPhysicalConnectionId(self):
 		return self.get_query_params().get('RedundantPhysicalConnectionId')

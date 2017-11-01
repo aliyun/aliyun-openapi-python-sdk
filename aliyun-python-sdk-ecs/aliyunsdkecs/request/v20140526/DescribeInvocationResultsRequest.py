@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class DescribeInvocationResultsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'DescribeInvocationResults')
+		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'DescribeInvocationResults','ecs')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -41,12 +41,6 @@ class DescribeInvocationResultsRequest(RpcRequest):
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
 
-	def get_callerUid(self):
-		return self.get_query_params().get('callerUid')
-
-	def set_callerUid(self,callerUid):
-		self.add_query_param('callerUid',callerUid)
-
 	def get_InvokeId(self):
 		return self.get_query_params().get('InvokeId')
 
@@ -64,12 +58,6 @@ class DescribeInvocationResultsRequest(RpcRequest):
 
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
-
-	def get_callerBid(self):
-		return self.get_query_params().get('callerBid')
-
-	def set_callerBid(self,callerBid):
-		self.add_query_param('callerBid',callerBid)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')

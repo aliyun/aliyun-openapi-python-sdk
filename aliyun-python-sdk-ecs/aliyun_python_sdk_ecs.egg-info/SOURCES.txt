@@ -26,6 +26,7 @@ aliyunsdkecs/request/v20140526/AttachVolumeRequest.py
 aliyunsdkecs/request/v20140526/AuthorizeSecurityGroupEgressRequest.py
 aliyunsdkecs/request/v20140526/AuthorizeSecurityGroupRequest.py
 aliyunsdkecs/request/v20140526/BindIpRangeRequest.py
+aliyunsdkecs/request/v20140526/CancelAgreementRequest.py
 aliyunsdkecs/request/v20140526/CancelAutoSnapshotPolicyRequest.py
 aliyunsdkecs/request/v20140526/CancelCopyImageRequest.py
 aliyunsdkecs/request/v20140526/CancelPhysicalConnectionRequest.py
@@ -33,6 +34,7 @@ aliyunsdkecs/request/v20140526/CancelTaskRequest.py
 aliyunsdkecs/request/v20140526/CheckAutoSnapshotPolicyRequest.py
 aliyunsdkecs/request/v20140526/CheckDiskEnableAutoSnapshotValidationRequest.py
 aliyunsdkecs/request/v20140526/ConnectRouterInterfaceRequest.py
+aliyunsdkecs/request/v20140526/ConvertNatPublicIpToEipRequest.py
 aliyunsdkecs/request/v20140526/CopyImageRequest.py
 aliyunsdkecs/request/v20140526/CreateAutoSnapshotPolicyRequest.py
 aliyunsdkecs/request/v20140526/CreateCommandRequest.py
@@ -40,6 +42,7 @@ aliyunsdkecs/request/v20140526/CreateDeploymentSetRequest.py
 aliyunsdkecs/request/v20140526/CreateDiskRequest.py
 aliyunsdkecs/request/v20140526/CreateForwardEntryRequest.py
 aliyunsdkecs/request/v20140526/CreateHaVipRequest.py
+aliyunsdkecs/request/v20140526/CreateHpcClusterRequest.py
 aliyunsdkecs/request/v20140526/CreateImageRequest.py
 aliyunsdkecs/request/v20140526/CreateInstanceRequest.py
 aliyunsdkecs/request/v20140526/CreateKeyPairRequest.py
@@ -62,12 +65,14 @@ aliyunsdkecs/request/v20140526/DeleteDeploymentSetRequest.py
 aliyunsdkecs/request/v20140526/DeleteDiskRequest.py
 aliyunsdkecs/request/v20140526/DeleteForwardEntryRequest.py
 aliyunsdkecs/request/v20140526/DeleteHaVipRequest.py
+aliyunsdkecs/request/v20140526/DeleteHpcClusterRequest.py
 aliyunsdkecs/request/v20140526/DeleteImageRequest.py
 aliyunsdkecs/request/v20140526/DeleteInstanceRequest.py
 aliyunsdkecs/request/v20140526/DeleteKeyPairsRequest.py
 aliyunsdkecs/request/v20140526/DeleteNatGatewayRequest.py
 aliyunsdkecs/request/v20140526/DeleteNetworkInterfaceRequest.py
 aliyunsdkecs/request/v20140526/DeletePhysicalConnectionRequest.py
+aliyunsdkecs/request/v20140526/DeleteRecycleBinRequest.py
 aliyunsdkecs/request/v20140526/DeleteRouteEntryRequest.py
 aliyunsdkecs/request/v20140526/DeleteRouterInterfaceRequest.py
 aliyunsdkecs/request/v20140526/DeleteSecurityGroupRequest.py
@@ -91,6 +96,7 @@ aliyunsdkecs/request/v20140526/DescribeEipAddressesRequest.py
 aliyunsdkecs/request/v20140526/DescribeEipMonitorDataRequest.py
 aliyunsdkecs/request/v20140526/DescribeForwardTableEntriesRequest.py
 aliyunsdkecs/request/v20140526/DescribeHaVipsRequest.py
+aliyunsdkecs/request/v20140526/DescribeHpcClustersRequest.py
 aliyunsdkecs/request/v20140526/DescribeImageSharePermissionRequest.py
 aliyunsdkecs/request/v20140526/DescribeImageSupportInstanceTypesRequest.py
 aliyunsdkecs/request/v20140526/DescribeImagesRequest.py
@@ -117,6 +123,7 @@ aliyunsdkecs/request/v20140526/DescribeNewProjectEipMonitorDataRequest.py
 aliyunsdkecs/request/v20140526/DescribePhysicalConnectionsRequest.py
 aliyunsdkecs/request/v20140526/DescribePriceRequest.py
 aliyunsdkecs/request/v20140526/DescribeRecommendInstanceTypeRequest.py
+aliyunsdkecs/request/v20140526/DescribeRecycleBinRequest.py
 aliyunsdkecs/request/v20140526/DescribeRegionsRequest.py
 aliyunsdkecs/request/v20140526/DescribeRenewalPriceRequest.py
 aliyunsdkecs/request/v20140526/DescribeResourceByTagsRequest.py
@@ -129,6 +136,8 @@ aliyunsdkecs/request/v20140526/DescribeSnapshotLinksRequest.py
 aliyunsdkecs/request/v20140526/DescribeSnapshotMonitorDataRequest.py
 aliyunsdkecs/request/v20140526/DescribeSnapshotPackageRequest.py
 aliyunsdkecs/request/v20140526/DescribeSnapshotsRequest.py
+aliyunsdkecs/request/v20140526/DescribeSnapshotsUsageRequest.py
+aliyunsdkecs/request/v20140526/DescribeSpotPriceHistoryRequest.py
 aliyunsdkecs/request/v20140526/DescribeTagKeysRequest.py
 aliyunsdkecs/request/v20140526/DescribeTagsRequest.py
 aliyunsdkecs/request/v20140526/DescribeTaskAttributeRequest.py
@@ -168,6 +177,7 @@ aliyunsdkecs/request/v20140526/ModifyDiskChargeTypeRequest.py
 aliyunsdkecs/request/v20140526/ModifyEipAddressAttributeRequest.py
 aliyunsdkecs/request/v20140526/ModifyForwardEntryRequest.py
 aliyunsdkecs/request/v20140526/ModifyHaVipAttributeRequest.py
+aliyunsdkecs/request/v20140526/ModifyHpcClusterAttributeRequest.py
 aliyunsdkecs/request/v20140526/ModifyImageAttributeRequest.py
 aliyunsdkecs/request/v20140526/ModifyImageShareGroupPermissionRequest.py
 aliyunsdkecs/request/v20140526/ModifyImageSharePermissionRequest.py
@@ -211,6 +221,7 @@ aliyunsdkecs/request/v20140526/ResizeVolumeRequest.py
 aliyunsdkecs/request/v20140526/RevokeSecurityGroupEgressRequest.py
 aliyunsdkecs/request/v20140526/RevokeSecurityGroupRequest.py
 aliyunsdkecs/request/v20140526/RollbackVolumeRequest.py
+aliyunsdkecs/request/v20140526/SignAgreementRequest.py
 aliyunsdkecs/request/v20140526/StartInstanceRequest.py
 aliyunsdkecs/request/v20140526/StopInstanceRequest.py
 aliyunsdkecs/request/v20140526/StopInvocationRequest.py

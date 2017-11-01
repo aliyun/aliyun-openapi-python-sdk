@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class ModifyInstanceSpecRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'ModifyInstanceSpec')
+		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'ModifyInstanceSpec','ecs')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -40,6 +40,12 @@ class ModifyInstanceSpecRequest(RpcRequest):
 
 	def set_ClientToken(self,ClientToken):
 		self.add_query_param('ClientToken',ClientToken)
+
+	def get_AllowMigrateAcrossZone(self):
+		return self.get_query_params().get('AllowMigrateAcrossZone')
+
+	def set_AllowMigrateAcrossZone(self,AllowMigrateAcrossZone):
+		self.add_query_param('AllowMigrateAcrossZone',AllowMigrateAcrossZone)
 
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
@@ -64,6 +70,12 @@ class ModifyInstanceSpecRequest(RpcRequest):
 
 	def set_TemporaryInternetMaxBandwidthOut(self,TemporaryInternetMaxBandwidthOut):
 		self.add_query_param('Temporary.InternetMaxBandwidthOut',TemporaryInternetMaxBandwidthOut)
+
+	def get_SystemDiskCategory(self):
+		return self.get_query_params().get('SystemDisk.Category')
+
+	def set_SystemDiskCategory(self,SystemDiskCategory):
+		self.add_query_param('SystemDisk.Category',SystemDiskCategory)
 
 	def get_TemporaryStartTime(self):
 		return self.get_query_params().get('Temporary.StartTime')

@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class CreateInstanceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'CreateInstance')
+		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'CreateInstance','ecs')
 
 	def get_Tag4Value(self):
 		return self.get_query_params().get('Tag.4.Value')
@@ -40,6 +40,12 @@ class CreateInstanceRequest(RpcRequest):
 
 	def set_Tag2Key(self,Tag2Key):
 		self.add_query_param('Tag.2.Key',Tag2Key)
+
+	def get_HpcClusterId(self):
+		return self.get_query_params().get('HpcClusterId')
+
+	def set_HpcClusterId(self,HpcClusterId):
+		self.add_query_param('HpcClusterId',HpcClusterId)
 
 	def get_Tag3Key(self):
 		return self.get_query_params().get('Tag.3.Key')
@@ -298,14 +304,22 @@ class CreateInstanceRequest(RpcRequest):
 
 	def set_DataDisks(self,DataDisks):
 		for i in range(len(DataDisks)):	
-			self.add_query_param('DataDisk.' + bytes(i + 1) + '.Size' , DataDisks[i].get('Size'))
-			self.add_query_param('DataDisk.' + bytes(i + 1) + '.SnapshotId' , DataDisks[i].get('SnapshotId'))
-			self.add_query_param('DataDisk.' + bytes(i + 1) + '.Category' , DataDisks[i].get('Category'))
-			self.add_query_param('DataDisk.' + bytes(i + 1) + '.DiskName' , DataDisks[i].get('DiskName'))
-			self.add_query_param('DataDisk.' + bytes(i + 1) + '.Description' , DataDisks[i].get('Description'))
-			self.add_query_param('DataDisk.' + bytes(i + 1) + '.Device' , DataDisks[i].get('Device'))
-			self.add_query_param('DataDisk.' + bytes(i + 1) + '.DeleteWithInstance' , DataDisks[i].get('DeleteWithInstance'))
-			self.add_query_param('DataDisk.' + bytes(i + 1) + '.Encrypted' , DataDisks[i].get('Encrypted'))
+			if DataDisks[i].get('Size') is not None:
+				self.add_query_param('DataDisk.' + bytes(i + 1) + '.Size' , DataDisks[i].get('Size'))
+			if DataDisks[i].get('SnapshotId') is not None:
+				self.add_query_param('DataDisk.' + bytes(i + 1) + '.SnapshotId' , DataDisks[i].get('SnapshotId'))
+			if DataDisks[i].get('Category') is not None:
+				self.add_query_param('DataDisk.' + bytes(i + 1) + '.Category' , DataDisks[i].get('Category'))
+			if DataDisks[i].get('DiskName') is not None:
+				self.add_query_param('DataDisk.' + bytes(i + 1) + '.DiskName' , DataDisks[i].get('DiskName'))
+			if DataDisks[i].get('Description') is not None:
+				self.add_query_param('DataDisk.' + bytes(i + 1) + '.Description' , DataDisks[i].get('Description'))
+			if DataDisks[i].get('Device') is not None:
+				self.add_query_param('DataDisk.' + bytes(i + 1) + '.Device' , DataDisks[i].get('Device'))
+			if DataDisks[i].get('DeleteWithInstance') is not None:
+				self.add_query_param('DataDisk.' + bytes(i + 1) + '.DeleteWithInstance' , DataDisks[i].get('DeleteWithInstance'))
+			if DataDisks[i].get('Encrypted') is not None:
+				self.add_query_param('DataDisk.' + bytes(i + 1) + '.Encrypted' , DataDisks[i].get('Encrypted'))
 
 
 	def get_Tag5Value(self):

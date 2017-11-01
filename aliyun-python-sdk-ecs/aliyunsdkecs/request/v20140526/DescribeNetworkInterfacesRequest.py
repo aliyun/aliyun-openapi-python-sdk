@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class DescribeNetworkInterfacesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'DescribeNetworkInterfaces')
+		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'DescribeNetworkInterfaces','ecs')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -59,12 +59,6 @@ class DescribeNetworkInterfacesRequest(RpcRequest):
 	def set_NetworkInterfaceName(self,NetworkInterfaceName):
 		self.add_query_param('NetworkInterfaceName',NetworkInterfaceName)
 
-	def get_callerUid(self):
-		return self.get_query_params().get('callerUid')
-
-	def set_callerUid(self,callerUid):
-		self.add_query_param('callerUid',callerUid)
-
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -76,12 +70,6 @@ class DescribeNetworkInterfacesRequest(RpcRequest):
 
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
-
-	def get_callerBid(self):
-		return self.get_query_params().get('callerBid')
-
-	def set_callerBid(self,callerBid):
-		self.add_query_param('callerBid',callerBid)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
@@ -112,4 +100,5 @@ class DescribeNetworkInterfacesRequest(RpcRequest):
 
 	def set_NetworkInterfaceIds(self,NetworkInterfaceIds):
 		for i in range(len(NetworkInterfaceIds)):	
-			self.add_query_param('NetworkInterfaceId.' + bytes(i + 1) , NetworkInterfaceIds[i]);
+			if NetworkInterfaceIds[i] is not None:
+				self.add_query_param('NetworkInterfaceId.' + bytes(i + 1) , NetworkInterfaceIds[i]);

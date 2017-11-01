@@ -21,19 +21,13 @@ from aliyunsdkcore.request import RpcRequest
 class DeleteNetworkInterfaceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'DeleteNetworkInterface')
+		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'DeleteNetworkInterface','ecs')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_callerUid(self):
-		return self.get_query_params().get('callerUid')
-
-	def set_callerUid(self,callerUid):
-		self.add_query_param('callerUid',callerUid)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -46,12 +40,6 @@ class DeleteNetworkInterfaceRequest(RpcRequest):
 
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
-
-	def get_callerBid(self):
-		return self.get_query_params().get('callerBid')
-
-	def set_callerBid(self,callerBid):
-		self.add_query_param('callerBid',callerBid)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')

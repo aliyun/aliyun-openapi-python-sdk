@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class ModifyDiskAttributeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'ModifyDiskAttribute')
+		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'ModifyDiskAttribute','ecs')
 
 	def get_DiskName(self):
 		return self.get_query_params().get('DiskName')

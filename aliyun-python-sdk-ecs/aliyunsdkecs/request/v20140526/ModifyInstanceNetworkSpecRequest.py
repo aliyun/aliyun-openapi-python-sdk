@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class ModifyInstanceNetworkSpecRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'ModifyInstanceNetworkSpec')
+		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'ModifyInstanceNetworkSpec','ecs')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -94,3 +94,9 @@ class ModifyInstanceNetworkSpecRequest(RpcRequest):
 
 	def set_InternetMaxBandwidthIn(self,InternetMaxBandwidthIn):
 		self.add_query_param('InternetMaxBandwidthIn',InternetMaxBandwidthIn)
+
+	def get_AllocatePublicIp(self):
+		return self.get_query_params().get('AllocatePublicIp')
+
+	def set_AllocatePublicIp(self,AllocatePublicIp):
+		self.add_query_param('AllocatePublicIp',AllocatePublicIp)

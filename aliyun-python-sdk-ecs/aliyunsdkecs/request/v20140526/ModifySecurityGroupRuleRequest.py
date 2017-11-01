@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class ModifySecurityGroupRuleRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'ModifySecurityGroupRule')
+		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'ModifySecurityGroupRule','ecs')
 
 	def get_NicType(self):
 		return self.get_query_params().get('NicType')
@@ -71,12 +71,6 @@ class ModifySecurityGroupRuleRequest(RpcRequest):
 	def set_SourceGroupOwnerAccount(self,SourceGroupOwnerAccount):
 		self.add_query_param('SourceGroupOwnerAccount',SourceGroupOwnerAccount)
 
-	def get_callerUid(self):
-		return self.get_query_params().get('callerUid')
-
-	def set_callerUid(self,callerUid):
-		self.add_query_param('callerUid',callerUid)
-
 	def get_Policy(self):
 		return self.get_query_params().get('Policy')
 
@@ -112,12 +106,6 @@ class ModifySecurityGroupRuleRequest(RpcRequest):
 
 	def set_SourceCidrIp(self,SourceCidrIp):
 		self.add_query_param('SourceCidrIp',SourceCidrIp)
-
-	def get_callerBid(self):
-		return self.get_query_params().get('callerBid')
-
-	def set_callerBid(self,callerBid):
-		self.add_query_param('callerBid',callerBid)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')

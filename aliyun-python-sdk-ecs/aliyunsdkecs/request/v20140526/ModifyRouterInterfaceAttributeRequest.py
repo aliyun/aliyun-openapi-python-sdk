@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class ModifyRouterInterfaceAttributeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'ModifyRouterInterfaceAttribute')
+		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'ModifyRouterInterfaceAttribute','ecs')
 
 	def get_OppositeRouterId(self):
 		return self.get_query_params().get('OppositeRouterId')

@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class CreateNatGatewayRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'CreateNatGateway')
+		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'CreateNatGateway','ecs')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -76,6 +76,9 @@ class CreateNatGatewayRequest(RpcRequest):
 
 	def set_BandwidthPackages(self,BandwidthPackages):
 		for i in range(len(BandwidthPackages)):	
-			self.add_query_param('BandwidthPackage.' + bytes(i + 1) + '.IpCount' , BandwidthPackages[i].get('IpCount'))
-			self.add_query_param('BandwidthPackage.' + bytes(i + 1) + '.Bandwidth' , BandwidthPackages[i].get('Bandwidth'))
-			self.add_query_param('BandwidthPackage.' + bytes(i + 1) + '.Zone' , BandwidthPackages[i].get('Zone'))
+			if BandwidthPackages[i].get('IpCount') is not None:
+				self.add_query_param('BandwidthPackage.' + bytes(i + 1) + '.IpCount' , BandwidthPackages[i].get('IpCount'))
+			if BandwidthPackages[i].get('Bandwidth') is not None:
+				self.add_query_param('BandwidthPackage.' + bytes(i + 1) + '.Bandwidth' , BandwidthPackages[i].get('Bandwidth'))
+			if BandwidthPackages[i].get('Zone') is not None:
+				self.add_query_param('BandwidthPackage.' + bytes(i + 1) + '.Zone' , BandwidthPackages[i].get('Zone'))

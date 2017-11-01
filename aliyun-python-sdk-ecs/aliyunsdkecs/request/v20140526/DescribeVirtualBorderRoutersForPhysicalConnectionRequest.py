@@ -21,15 +21,17 @@ from aliyunsdkcore.request import RpcRequest
 class DescribeVirtualBorderRoutersForPhysicalConnectionRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'DescribeVirtualBorderRoutersForPhysicalConnection')
+		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'DescribeVirtualBorderRoutersForPhysicalConnection','ecs')
 
 	def get_Filters(self):
 		return self.get_query_params().get('Filters')
 
 	def set_Filters(self,Filters):
 		for i in range(len(Filters)):	
-			self.add_query_param('Filter.' + bytes(i + 1) + '.Key' , Filters[i].get('Key'))
+			if Filters[i].get('Key') is not None:
+				self.add_query_param('Filter.' + bytes(i + 1) + '.Key' , Filters[i].get('Key'))
 			for j in range(len(Filters[i].get('Values'))):
+				if Filters[i].get('Values')[j] is not None:
 					self.add_query_param('Filter.' + bytes(i + 1) + '.Value.'+bytes(j + 1), Filters[i].get('Values')[j])
 
 

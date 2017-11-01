@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class InvokeCommandRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'InvokeCommand')
+		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'InvokeCommand','ecs')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -41,12 +41,6 @@ class InvokeCommandRequest(RpcRequest):
 	def set_Frequency(self,Frequency):
 		self.add_query_param('Frequency',Frequency)
 
-	def get_callerUid(self):
-		return self.get_query_params().get('callerUid')
-
-	def set_callerUid(self,callerUid):
-		self.add_query_param('callerUid',callerUid)
-
 	def get_Timed(self):
 		return self.get_query_params().get('Timed')
 
@@ -65,12 +59,6 @@ class InvokeCommandRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
-	def get_callerBid(self):
-		return self.get_query_params().get('callerBid')
-
-	def set_callerBid(self,callerBid):
-		self.add_query_param('callerBid',callerBid)
-
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
@@ -82,4 +70,5 @@ class InvokeCommandRequest(RpcRequest):
 
 	def set_InstanceIds(self,InstanceIds):
 		for i in range(len(InstanceIds)):	
-			self.add_query_param('InstanceId.' + bytes(i + 1) , InstanceIds[i]);
+			if InstanceIds[i] is not None:
+				self.add_query_param('InstanceId.' + bytes(i + 1) , InstanceIds[i]);

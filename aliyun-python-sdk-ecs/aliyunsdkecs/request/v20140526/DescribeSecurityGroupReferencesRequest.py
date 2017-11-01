@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class DescribeSecurityGroupReferencesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'DescribeSecurityGroupReferences')
+		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'DescribeSecurityGroupReferences','ecs')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -46,7 +46,8 @@ class DescribeSecurityGroupReferencesRequest(RpcRequest):
 
 	def set_SecurityGroupIds(self,SecurityGroupIds):
 		for i in range(len(SecurityGroupIds)):	
-			self.add_query_param('SecurityGroupId.' + bytes(i + 1) , SecurityGroupIds[i]);
+			if SecurityGroupIds[i] is not None:
+				self.add_query_param('SecurityGroupId.' + bytes(i + 1) , SecurityGroupIds[i]);
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')

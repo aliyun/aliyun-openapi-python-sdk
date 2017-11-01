@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class DescribeInstancesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'DescribeInstances')
+		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'DescribeInstances','ecs')
 
 	def get_Tag4Value(self):
 		return self.get_query_params().get('Tag.4.Value')
@@ -41,12 +41,6 @@ class DescribeInstancesRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_ImageId(self):
-		return self.get_query_params().get('ImageId')
-
-	def set_ImageId(self,ImageId):
-		self.add_query_param('ImageId',ImageId)
-
 	def get_Tag2Key(self):
 		return self.get_query_params().get('Tag.2.Key')
 
@@ -59,29 +53,17 @@ class DescribeInstancesRequest(RpcRequest):
 	def set_PrivateIpAddresses(self,PrivateIpAddresses):
 		self.add_query_param('PrivateIpAddresses',PrivateIpAddresses)
 
+	def get_HpcClusterId(self):
+		return self.get_query_params().get('HpcClusterId')
+
+	def set_HpcClusterId(self,HpcClusterId):
+		self.add_query_param('HpcClusterId',HpcClusterId)
+
 	def get_Filter2Value(self):
 		return self.get_query_params().get('Filter.2.Value')
 
 	def set_Filter2Value(self,Filter2Value):
 		self.add_query_param('Filter.2.Value',Filter2Value)
-
-	def get_Filter4Value(self):
-		return self.get_query_params().get('Filter.4.Value')
-
-	def set_Filter4Value(self,Filter4Value):
-		self.add_query_param('Filter.4.Value',Filter4Value)
-
-	def get_IoOptimized(self):
-		return self.get_query_params().get('IoOptimized')
-
-	def set_IoOptimized(self,IoOptimized):
-		self.add_query_param('IoOptimized',IoOptimized)
-
-	def get_SecurityGroupId(self):
-		return self.get_query_params().get('SecurityGroupId')
-
-	def set_SecurityGroupId(self,SecurityGroupId):
-		self.add_query_param('SecurityGroupId',SecurityGroupId)
 
 	def get_Tag3Key(self):
 		return self.get_query_params().get('Tag.3.Key')
@@ -94,18 +76,6 @@ class DescribeInstancesRequest(RpcRequest):
 
 	def set_KeyPairName(self,KeyPairName):
 		self.add_query_param('KeyPairName',KeyPairName)
-
-	def get_Filter4Key(self):
-		return self.get_query_params().get('Filter.4.Key')
-
-	def set_Filter4Key(self,Filter4Key):
-		self.add_query_param('Filter.4.Key',Filter4Key)
-
-	def get_PageNumber(self):
-		return self.get_query_params().get('PageNumber')
-
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
 
 	def get_Tag1Value(self):
 		return self.get_query_params().get('Tag.1.Value')
@@ -137,6 +107,120 @@ class DescribeInstancesRequest(RpcRequest):
 	def set_DeviceAvailable(self,DeviceAvailable):
 		self.add_query_param('DeviceAvailable',DeviceAvailable)
 
+	def get_Filter3Value(self):
+		return self.get_query_params().get('Filter.3.Value')
+
+	def set_Filter3Value(self,Filter3Value):
+		self.add_query_param('Filter.3.Value',Filter3Value)
+
+	def get_Tag5Key(self):
+		return self.get_query_params().get('Tag.5.Key')
+
+	def set_Tag5Key(self,Tag5Key):
+		self.add_query_param('Tag.5.Key',Tag5Key)
+
+	def get_Filter1Value(self):
+		return self.get_query_params().get('Filter.1.Value')
+
+	def set_Filter1Value(self,Filter1Value):
+		self.add_query_param('Filter.1.Value',Filter1Value)
+
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
+
+	def get_VSwitchId(self):
+		return self.get_query_params().get('VSwitchId')
+
+	def set_VSwitchId(self,VSwitchId):
+		self.add_query_param('VSwitchId',VSwitchId)
+
+	def get_InstanceName(self):
+		return self.get_query_params().get('InstanceName')
+
+	def set_InstanceName(self,InstanceName):
+		self.add_query_param('InstanceName',InstanceName)
+
+	def get_InstanceIds(self):
+		return self.get_query_params().get('InstanceIds')
+
+	def set_InstanceIds(self,InstanceIds):
+		self.add_query_param('InstanceIds',InstanceIds)
+
+	def get_InternetChargeType(self):
+		return self.get_query_params().get('InternetChargeType')
+
+	def set_InternetChargeType(self,InternetChargeType):
+		self.add_query_param('InternetChargeType',InternetChargeType)
+
+	def get_ZoneId(self):
+		return self.get_query_params().get('ZoneId')
+
+	def set_ZoneId(self,ZoneId):
+		self.add_query_param('ZoneId',ZoneId)
+
+	def get_Tag4Key(self):
+		return self.get_query_params().get('Tag.4.Key')
+
+	def set_Tag4Key(self,Tag4Key):
+		self.add_query_param('Tag.4.Key',Tag4Key)
+
+	def get_InstanceNetworkType(self):
+		return self.get_query_params().get('InstanceNetworkType')
+
+	def set_InstanceNetworkType(self,InstanceNetworkType):
+		self.add_query_param('InstanceNetworkType',InstanceNetworkType)
+
+	def get_Status(self):
+		return self.get_query_params().get('Status')
+
+	def set_Status(self,Status):
+		self.add_query_param('Status',Status)
+
+	def get_ImageId(self):
+		return self.get_query_params().get('ImageId')
+
+	def set_ImageId(self,ImageId):
+		self.add_query_param('ImageId',ImageId)
+
+	def get_Filter4Value(self):
+		return self.get_query_params().get('Filter.4.Value')
+
+	def set_Filter4Value(self,Filter4Value):
+		self.add_query_param('Filter.4.Value',Filter4Value)
+
+	def get_IoOptimized(self):
+		return self.get_query_params().get('IoOptimized')
+
+	def set_IoOptimized(self,IoOptimized):
+		self.add_query_param('IoOptimized',IoOptimized)
+
+	def get_SecurityGroupId(self):
+		return self.get_query_params().get('SecurityGroupId')
+
+	def set_SecurityGroupId(self,SecurityGroupId):
+		self.add_query_param('SecurityGroupId',SecurityGroupId)
+
+	def get_Filter4Key(self):
+		return self.get_query_params().get('Filter.4.Key')
+
+	def set_Filter4Key(self,Filter4Key):
+		self.add_query_param('Filter.4.Key',Filter4Key)
+
+	def get_PageNumber(self):
+		return self.get_query_params().get('PageNumber')
+
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)
+
+	def get_RdmaIpAddresses(self):
+		return self.get_query_params().get('RdmaIpAddresses')
+
+	def set_RdmaIpAddresses(self,RdmaIpAddresses):
+		self.add_query_param('RdmaIpAddresses',RdmaIpAddresses)
+
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
 
@@ -167,18 +251,6 @@ class DescribeInstancesRequest(RpcRequest):
 	def set_Tag3Value(self,Tag3Value):
 		self.add_query_param('Tag.3.Value',Tag3Value)
 
-	def get_Filter3Value(self):
-		return self.get_query_params().get('Filter.3.Value')
-
-	def set_Filter3Value(self,Filter3Value):
-		self.add_query_param('Filter.3.Value',Filter3Value)
-
-	def get_Tag5Key(self):
-		return self.get_query_params().get('Tag.5.Key')
-
-	def set_Tag5Key(self,Tag5Key):
-		self.add_query_param('Tag.5.Key',Tag5Key)
-
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -197,35 +269,17 @@ class DescribeInstancesRequest(RpcRequest):
 	def set_InstanceTypeFamily(self,InstanceTypeFamily):
 		self.add_query_param('InstanceTypeFamily',InstanceTypeFamily)
 
-	def get_Filter1Value(self):
-		return self.get_query_params().get('Filter.1.Value')
-
-	def set_Filter1Value(self,Filter1Value):
-		self.add_query_param('Filter.1.Value',Filter1Value)
-
 	def get_Filter2Key(self):
 		return self.get_query_params().get('Filter.2.Key')
 
 	def set_Filter2Key(self,Filter2Key):
 		self.add_query_param('Filter.2.Key',Filter2Key)
 
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
 	def get_Tag5Value(self):
 		return self.get_query_params().get('Tag.5.Value')
 
 	def set_Tag5Value(self,Tag5Value):
 		self.add_query_param('Tag.5.Value',Tag5Value)
-
-	def get_VSwitchId(self):
-		return self.get_query_params().get('VSwitchId')
-
-	def set_VSwitchId(self,VSwitchId):
-		self.add_query_param('VSwitchId',VSwitchId)
 
 	def get_Tag1Key(self):
 		return self.get_query_params().get('Tag.1.Key')
@@ -239,24 +293,6 @@ class DescribeInstancesRequest(RpcRequest):
 	def set_EipAddresses(self,EipAddresses):
 		self.add_query_param('EipAddresses',EipAddresses)
 
-	def get_InstanceName(self):
-		return self.get_query_params().get('InstanceName')
-
-	def set_InstanceName(self,InstanceName):
-		self.add_query_param('InstanceName',InstanceName)
-
-	def get_InstanceIds(self):
-		return self.get_query_params().get('InstanceIds')
-
-	def set_InstanceIds(self,InstanceIds):
-		self.add_query_param('InstanceIds',InstanceIds)
-
-	def get_InternetChargeType(self):
-		return self.get_query_params().get('InternetChargeType')
-
-	def set_InternetChargeType(self,InternetChargeType):
-		self.add_query_param('InternetChargeType',InternetChargeType)
-
 	def get_VpcId(self):
 		return self.get_query_params().get('VpcId')
 
@@ -269,32 +305,8 @@ class DescribeInstancesRequest(RpcRequest):
 	def set_Tag2Value(self,Tag2Value):
 		self.add_query_param('Tag.2.Value',Tag2Value)
 
-	def get_ZoneId(self):
-		return self.get_query_params().get('ZoneId')
-
-	def set_ZoneId(self,ZoneId):
-		self.add_query_param('ZoneId',ZoneId)
-
-	def get_Tag4Key(self):
-		return self.get_query_params().get('Tag.4.Key')
-
-	def set_Tag4Key(self,Tag4Key):
-		self.add_query_param('Tag.4.Key',Tag4Key)
-
 	def get_Filter3Key(self):
 		return self.get_query_params().get('Filter.3.Key')
 
 	def set_Filter3Key(self,Filter3Key):
 		self.add_query_param('Filter.3.Key',Filter3Key)
-
-	def get_InstanceNetworkType(self):
-		return self.get_query_params().get('InstanceNetworkType')
-
-	def set_InstanceNetworkType(self,InstanceNetworkType):
-		self.add_query_param('InstanceNetworkType',InstanceNetworkType)
-
-	def get_Status(self):
-		return self.get_query_params().get('Status')
-
-	def set_Status(self,Status):
-		self.add_query_param('Status',Status)

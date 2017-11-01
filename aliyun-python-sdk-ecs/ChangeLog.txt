@@ -1,3 +1,7 @@
+2017-11-01 Version: 4.4.0
+1, Python C# PHP sdk支持location路由（动态endpoint）
+2, 清除sdk中无用参数
+
 2017-09-15 Version: 4.1.0
 1, 增加新的ECS弹性能力接口
 2, 安全组授权接口增加描述

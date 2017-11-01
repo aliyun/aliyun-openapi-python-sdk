@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class ModifySecurityGroupEgressRuleRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'ModifySecurityGroupEgressRule')
+		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'ModifySecurityGroupEgressRule','ecs')
 
 	def get_NicType(self):
 		return self.get_query_params().get('NicType')
@@ -59,12 +59,6 @@ class ModifySecurityGroupEgressRuleRequest(RpcRequest):
 	def set_Description(self,Description):
 		self.add_query_param('Description',Description)
 
-	def get_callerUid(self):
-		return self.get_query_params().get('callerUid')
-
-	def set_callerUid(self,callerUid):
-		self.add_query_param('callerUid',callerUid)
-
 	def get_Policy(self):
 		return self.get_query_params().get('Policy')
 
@@ -100,12 +94,6 @@ class ModifySecurityGroupEgressRuleRequest(RpcRequest):
 
 	def set_SourceCidrIp(self,SourceCidrIp):
 		self.add_query_param('SourceCidrIp',SourceCidrIp)
-
-	def get_callerBid(self):
-		return self.get_query_params().get('callerBid')
-
-	def set_callerBid(self,callerBid):
-		self.add_query_param('callerBid',callerBid)
 
 	def get_DestGroupId(self):
 		return self.get_query_params().get('DestGroupId')

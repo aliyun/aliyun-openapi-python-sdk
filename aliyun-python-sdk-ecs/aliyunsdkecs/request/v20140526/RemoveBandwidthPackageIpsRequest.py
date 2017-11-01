@@ -21,14 +21,15 @@ from aliyunsdkcore.request import RpcRequest
 class RemoveBandwidthPackageIpsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'RemoveBandwidthPackageIps')
+		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'RemoveBandwidthPackageIps','ecs')
 
 	def get_RemovedIpAddressess(self):
 		return self.get_query_params().get('RemovedIpAddressess')
 
 	def set_RemovedIpAddressess(self,RemovedIpAddressess):
 		for i in range(len(RemovedIpAddressess)):	
-			self.add_query_param('RemovedIpAddresses.' + bytes(i + 1) , RemovedIpAddressess[i]);
+			if RemovedIpAddressess[i] is not None:
+				self.add_query_param('RemovedIpAddresses.' + bytes(i + 1) , RemovedIpAddressess[i]);
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')

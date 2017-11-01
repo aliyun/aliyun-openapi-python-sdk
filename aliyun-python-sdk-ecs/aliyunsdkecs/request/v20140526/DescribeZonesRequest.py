@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class DescribeZonesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'DescribeZones')
+		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'DescribeZones','ecs')
 
 	def get_SpotStrategy(self):
 		return self.get_query_params().get('SpotStrategy')

@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class ModifyInstanceAttributeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'ModifyInstanceAttribute')
+		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'ModifyInstanceAttribute','ecs')
 
 	def get_UserData(self):
 		return self.get_query_params().get('UserData')
@@ -64,6 +64,12 @@ class ModifyInstanceAttributeRequest(RpcRequest):
 
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+
+	def get_Recyclable(self):
+		return self.get_query_params().get('Recyclable')
+
+	def set_Recyclable(self,Recyclable):
+		self.add_query_param('Recyclable',Recyclable)
 
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
