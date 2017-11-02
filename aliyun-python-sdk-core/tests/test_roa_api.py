@@ -69,6 +69,7 @@ class TestRoaApi(object):
 
         assert response.get("Params").get("QueryParam") == queryParam
         assert response.get("Headers").get("HeaderParam") == headerParam
+        assert response.get("Headers").get("x-sdk-invoke-type") == 'normal'
 
     def test_post(self):
         request = TestRoaApi.get_base_request()

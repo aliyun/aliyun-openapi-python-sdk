@@ -89,6 +89,7 @@ class AcsRequest:
         self._content = None
         self._location_service_code = location_service_code
         self._location_endpoint_type = location_endpoint_type
+        self.add_header('x-sdk-invoke-type', 'normal')
 
     def add_query_param(self, k, v):
         self._params[k] = v
