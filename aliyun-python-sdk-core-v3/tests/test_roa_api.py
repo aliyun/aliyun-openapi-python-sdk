@@ -65,6 +65,7 @@ class TestRoaApi(object):
         assert response.get("Params").get("RegionId") == 'cn-hangzhou'
         assert response.get("Params").get("QueryParam") == queryParam
         assert response.get("Headers").get("HeaderParam") == headerParam
+        assert response.get("Headers").get("x-sdk-invoke-type") == 'normal'
 
     def test_post_with_stream(self):
 

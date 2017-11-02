@@ -53,8 +53,7 @@ def __refresh_sign_parameters(
 
 
 def __pop_standard_urlencode(query):
-    ret = urllib.parse.urlencode(query)
-    ret = ret.replace('+', '%20')
+    ret = query.replace('+', '%20')
     ret = ret.replace('*', '%2A')
     ret = ret.replace('%7E', '~')
     return ret
@@ -62,8 +61,9 @@ def __pop_standard_urlencode(query):
 
 def __compose_string_to_sign(method, queries):
     sorted_parameters = sorted(list(queries.items()), key=lambda queries: queries[0])
-    string_to_sign = method + "&%2F&" + \
-        urllib.request.pathname2url(__pop_standard_urlencode(sorted_parameters))
+    sorted_query_string = __pop_standard_urlencode(urllib.parse.urlencode(sorted_parameters))
+    canonicalized_query_string = __pop_standard_urlencode(urllib.request.pathname2url(sorted_query_string))
+    string_to_sign = method + "&%2F&" + canonicalized_query_string
     return string_to_sign
 
 
@@ -78,5 +78,5 @@ def get_signed_url(params, ak, secret, accept_format, method, body_params, signe
     string_to_sign = __compose_string_to_sign(method, sign_params)
     signature = __get_signature(string_to_sign, secret, signer)
     url_params['Signature'] = signature
-    url = '/?' + __pop_standard_urlencode(url_params)
+    url = '/?' + __pop_standard_urlencode(urllib.parse.urlencode(url_params))
     return url

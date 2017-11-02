@@ -59,6 +59,7 @@ class TestCommonApi(object):
         assert response.get("Params").get("QueryParam") == 'queryValue'
         assert response.get("Headers").get("HeaderParam") == 'headerValue'
         assert response.get("Params").get("BodyParam") == 'bodyValue'
+        assert response.get("Headers").get("x-sdk-invoke-type") == 'common'
 
     def test_roa_form_with_setup(self):
         request = CommonRequest()
