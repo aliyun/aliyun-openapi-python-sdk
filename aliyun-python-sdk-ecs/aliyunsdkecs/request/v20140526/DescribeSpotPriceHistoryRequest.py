@@ -77,6 +77,12 @@ class DescribeSpotPriceHistoryRequest(RpcRequest):
 	def set_EndTime(self,EndTime):
 		self.add_query_param('EndTime',EndTime)
 
+	def get_OSType(self):
+		return self.get_query_params().get('OSType')
+
+	def set_OSType(self,OSType):
+		self.add_query_param('OSType',OSType)
+
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 

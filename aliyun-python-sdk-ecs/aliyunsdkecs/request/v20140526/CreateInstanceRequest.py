@@ -143,6 +143,12 @@ class CreateInstanceRequest(RpcRequest):
 	def set_SpotStrategy(self,SpotStrategy):
 		self.add_query_param('SpotStrategy',SpotStrategy)
 
+	def get_PeriodUnit(self):
+		return self.get_query_params().get('PeriodUnit')
+
+	def set_PeriodUnit(self,PeriodUnit):
+		self.add_query_param('PeriodUnit',PeriodUnit)
+
 	def get_InstanceName(self):
 		return self.get_query_params().get('InstanceName')
 
