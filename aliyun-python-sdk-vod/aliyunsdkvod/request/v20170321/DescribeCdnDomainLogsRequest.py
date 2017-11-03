@@ -18,10 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class GetVideoConfigRequest(RpcRequest):
+class DescribeCdnDomainLogsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'vod', '2017-03-21', 'GetVideoConfig','vod')
+		RpcRequest.__init__(self, 'vod', '2017-03-21', 'DescribeCdnDomainLogs','vod')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -35,11 +35,41 @@ class GetVideoConfigRequest(RpcRequest):
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
-	def get_VideoId(self):
-		return self.get_query_params().get('VideoId')
+	def get_PageNo(self):
+		return self.get_query_params().get('PageNo')
 
-	def set_VideoId(self,VideoId):
-		self.add_query_param('VideoId',VideoId)
+	def set_PageNo(self,PageNo):
+		self.add_query_param('PageNo',PageNo)
+
+	def get_OwnerAccount(self):
+		return self.get_query_params().get('OwnerAccount')
+
+	def set_OwnerAccount(self,OwnerAccount):
+		self.add_query_param('OwnerAccount',OwnerAccount)
+
+	def get_DomainName(self):
+		return self.get_query_params().get('DomainName')
+
+	def set_DomainName(self,DomainName):
+		self.add_query_param('DomainName',DomainName)
+
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
+
+	def get_EndTime(self):
+		return self.get_query_params().get('EndTime')
+
+	def set_EndTime(self,EndTime):
+		self.add_query_param('EndTime',EndTime)
+
+	def get_StartTime(self):
+		return self.get_query_params().get('StartTime')
+
+	def set_StartTime(self,StartTime):
+		self.add_query_param('StartTime',StartTime)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
@@ -47,8 +77,8 @@ class GetVideoConfigRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_AuthInfo(self):
-		return self.get_query_params().get('AuthInfo')
+	def get_LogDay(self):
+		return self.get_query_params().get('LogDay')
 
-	def set_AuthInfo(self,AuthInfo):
-		self.add_query_param('AuthInfo',AuthInfo)
+	def set_LogDay(self,LogDay):
+		self.add_query_param('LogDay',LogDay)

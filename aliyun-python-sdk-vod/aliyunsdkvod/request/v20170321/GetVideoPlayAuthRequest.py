@@ -35,6 +35,18 @@ class GetVideoPlayAuthRequest(RpcRequest):
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
+	def get_ReAuthInfo(self):
+		return self.get_query_params().get('ReAuthInfo')
+
+	def set_ReAuthInfo(self,ReAuthInfo):
+		self.add_query_param('ReAuthInfo',ReAuthInfo)
+
+	def get_AuthInfoTimeout(self):
+		return self.get_query_params().get('AuthInfoTimeout')
+
+	def set_AuthInfoTimeout(self,AuthInfoTimeout):
+		self.add_query_param('AuthInfoTimeout',AuthInfoTimeout)
+
 	def get_VideoId(self):
 		return self.get_query_params().get('VideoId')
 

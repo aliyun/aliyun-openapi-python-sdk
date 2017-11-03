@@ -18,10 +18,16 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class GetVideoConfigRequest(RpcRequest):
+class ProduceEditingProjectVideoRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'vod', '2017-03-21', 'GetVideoConfig','vod')
+		RpcRequest.__init__(self, 'vod', '2017-03-21', 'ProduceEditingProjectVideo','vod')
+
+	def get_CoverURL(self):
+		return self.get_query_params().get('CoverURL')
+
+	def set_CoverURL(self,CoverURL):
+		self.add_query_param('CoverURL',CoverURL)
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -35,11 +41,17 @@ class GetVideoConfigRequest(RpcRequest):
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
-	def get_VideoId(self):
-		return self.get_query_params().get('VideoId')
+	def get_Timeline(self):
+		return self.get_query_params().get('Timeline')
 
-	def set_VideoId(self,VideoId):
-		self.add_query_param('VideoId',VideoId)
+	def set_Timeline(self,Timeline):
+		self.add_query_param('Timeline',Timeline)
+
+	def get_Description(self):
+		return self.get_query_params().get('Description')
+
+	def set_Description(self,Description):
+		self.add_query_param('Description',Description)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
@@ -47,8 +59,14 @@ class GetVideoConfigRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_AuthInfo(self):
-		return self.get_query_params().get('AuthInfo')
+	def get_Title(self):
+		return self.get_query_params().get('Title')
 
-	def set_AuthInfo(self,AuthInfo):
-		self.add_query_param('AuthInfo',AuthInfo)
+	def set_Title(self,Title):
+		self.add_query_param('Title',Title)
+
+	def get_ProjectId(self):
+		return self.get_query_params().get('ProjectId')
+
+	def set_ProjectId(self,ProjectId):
+		self.add_query_param('ProjectId',ProjectId)
