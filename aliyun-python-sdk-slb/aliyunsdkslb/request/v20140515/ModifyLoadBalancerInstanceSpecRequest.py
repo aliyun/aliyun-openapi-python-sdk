@@ -47,6 +47,12 @@ class ModifyLoadBalancerInstanceSpecRequest(RpcRequest):
 	def set_LoadBalancerId(self,LoadBalancerId):
 		self.add_query_param('LoadBalancerId',LoadBalancerId)
 
+	def get_AutoPay(self):
+		return self.get_query_params().get('AutoPay')
+
+	def set_AutoPay(self,AutoPay):
+		self.add_query_param('AutoPay',AutoPay)
+
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 

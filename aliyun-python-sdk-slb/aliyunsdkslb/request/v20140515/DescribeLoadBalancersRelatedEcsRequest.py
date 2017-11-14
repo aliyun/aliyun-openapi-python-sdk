@@ -18,10 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class AddListenerWhiteListItemRequest(RpcRequest):
+class DescribeLoadBalancersRelatedEcsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Slb', '2014-05-15', 'AddListenerWhiteListItem','slb')
+		RpcRequest.__init__(self, 'Slb', '2014-05-15', 'DescribeLoadBalancersRelatedEcs','slb')
 
 	def get_access_key_id(self):
 		return self.get_query_params().get('access_key_id')
@@ -35,23 +35,11 @@ class AddListenerWhiteListItemRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_ListenerPort(self):
-		return self.get_query_params().get('ListenerPort')
-
-	def set_ListenerPort(self,ListenerPort):
-		self.add_query_param('ListenerPort',ListenerPort)
-
 	def get_LoadBalancerId(self):
 		return self.get_query_params().get('LoadBalancerId')
 
 	def set_LoadBalancerId(self,LoadBalancerId):
 		self.add_query_param('LoadBalancerId',LoadBalancerId)
-
-	def get_SourceItems(self):
-		return self.get_query_params().get('SourceItems')
-
-	def set_SourceItems(self,SourceItems):
-		self.add_query_param('SourceItems',SourceItems)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
