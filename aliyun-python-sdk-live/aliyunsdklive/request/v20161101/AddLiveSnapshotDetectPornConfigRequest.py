@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class AddLiveSnapshotDetectPornConfigRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'live', '2016-11-01', 'AddLiveSnapshotDetectPornConfig','live')
+		RpcRequest.__init__(self, 'live', '2016-11-01', 'AddLiveSnapshotDetectPornConfig')
 
 	def get_OssBucket(self):
 		return self.get_query_params().get('OssBucket')
@@ -70,3 +70,11 @@ class AddLiveSnapshotDetectPornConfigRequest(RpcRequest):
 
 	def set_OssObject(self,OssObject):
 		self.add_query_param('OssObject',OssObject)
+
+	def get_Scenes(self):
+		return self.get_query_params().get('Scenes')
+
+	def set_Scenes(self,Scenes):
+		for i in range(len(Scenes)):	
+			if Scenes[i] is not None:
+				self.add_query_param('Scene.' + bytes(i + 1) , Scenes[i]);

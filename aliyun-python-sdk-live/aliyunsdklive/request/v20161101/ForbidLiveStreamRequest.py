@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class ForbidLiveStreamRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'live', '2016-11-01', 'ForbidLiveStream','live')
+		RpcRequest.__init__(self, 'live', '2016-11-01', 'ForbidLiveStream')
 
 	def get_ResumeTime(self):
 		return self.get_query_params().get('ResumeTime')

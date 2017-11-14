@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class AddLiveAppRecordConfigRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'live', '2016-11-01', 'AddLiveAppRecordConfig','live')
+		RpcRequest.__init__(self, 'live', '2016-11-01', 'AddLiveAppRecordConfig')
 
 	def get_OssBucket(self):
 		return self.get_query_params().get('OssBucket')
@@ -46,10 +46,14 @@ class AddLiveAppRecordConfigRequest(RpcRequest):
 
 	def set_RecordFormats(self,RecordFormats):
 		for i in range(len(RecordFormats)):	
-			self.add_query_param('RecordFormat.' + bytes(i + 1) + '.Format' , RecordFormats[i].get('Format'))
-			self.add_query_param('RecordFormat.' + bytes(i + 1) + '.OssObjectPrefix' , RecordFormats[i].get('OssObjectPrefix'))
-			self.add_query_param('RecordFormat.' + bytes(i + 1) + '.SliceOssObjectPrefix' , RecordFormats[i].get('SliceOssObjectPrefix'))
-			self.add_query_param('RecordFormat.' + bytes(i + 1) + '.CycleDuration' , RecordFormats[i].get('CycleDuration'))
+			if RecordFormats[i].get('Format') is not None:
+				self.add_query_param('RecordFormat.' + bytes(i + 1) + '.Format' , RecordFormats[i].get('Format'))
+			if RecordFormats[i].get('OssObjectPrefix') is not None:
+				self.add_query_param('RecordFormat.' + bytes(i + 1) + '.OssObjectPrefix' , RecordFormats[i].get('OssObjectPrefix'))
+			if RecordFormats[i].get('SliceOssObjectPrefix') is not None:
+				self.add_query_param('RecordFormat.' + bytes(i + 1) + '.SliceOssObjectPrefix' , RecordFormats[i].get('SliceOssObjectPrefix'))
+			if RecordFormats[i].get('CycleDuration') is not None:
+				self.add_query_param('RecordFormat.' + bytes(i + 1) + '.CycleDuration' , RecordFormats[i].get('CycleDuration'))
 
 
 	def get_DomainName(self):

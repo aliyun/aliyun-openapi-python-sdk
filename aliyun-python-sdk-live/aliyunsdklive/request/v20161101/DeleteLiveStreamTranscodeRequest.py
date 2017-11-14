@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class DeleteLiveStreamTranscodeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'live', '2016-11-01', 'DeleteLiveStreamTranscode','live')
+		RpcRequest.__init__(self, 'live', '2016-11-01', 'DeleteLiveStreamTranscode')
 
 	def get_App(self):
 		return self.get_query_params().get('App')
