@@ -23,6 +23,7 @@ aliyunsdkess/request/v20140828/DescribeAlertConfigRequest.py
 aliyunsdkess/request/v20140828/DescribeCapacityHistoryRequest.py
 aliyunsdkess/request/v20140828/DescribeLimitationRequest.py
 aliyunsdkess/request/v20140828/DescribeRegionsRequest.py
+aliyunsdkess/request/v20140828/DescribeScalingActivitiesRequest.py
 aliyunsdkess/request/v20140828/DescribeScalingActivityDetailRequest.py
 aliyunsdkess/request/v20140828/DescribeScalingConfigurationsRequest.py
 aliyunsdkess/request/v20140828/DescribeScalingGroupsRequest.py
