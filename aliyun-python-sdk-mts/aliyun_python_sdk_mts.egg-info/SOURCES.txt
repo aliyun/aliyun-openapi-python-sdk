@@ -103,7 +103,6 @@ aliyunsdkmts/request/v20140618/SubmitPornJobRequest.py
 aliyunsdkmts/request/v20140618/SubmitSnapshotJobRequest.py
 aliyunsdkmts/request/v20140618/SubmitTagJobRequest.py
 aliyunsdkmts/request/v20140618/SubmitTerrorismJobRequest.py
-aliyunsdkmts/request/v20140618/SubmitVideoSummaryJobRequest.py
 aliyunsdkmts/request/v20140618/UnbindInputBucketRequest.py
 aliyunsdkmts/request/v20140618/UnbindOutputBucketRequest.py
 aliyunsdkmts/request/v20140618/UpdateAsrPipelineRequest.py
