@@ -23,11 +23,17 @@ class SetAuthConfigRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Mts', '2014-06-18', 'SetAuthConfig')
 
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
+	def get_Key1(self):
+		return self.get_query_params().get('Key1')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
+	def set_Key1(self,Key1):
+		self.add_query_param('Key1',Key1)
+
+	def get_Key2(self):
+		return self.get_query_params().get('Key2')
+
+	def set_Key2(self,Key2):
+		self.add_query_param('Key2',Key2)
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -47,14 +53,8 @@ class SetAuthConfigRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
-	def get_Key1(self):
-		return self.get_query_params().get('Key1')
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
 
-	def set_Key1(self,Key1):
-		self.add_query_param('Key1',Key1)
-
-	def get_Key2(self):
-		return self.get_query_params().get('Key2')
-
-	def set_Key2(self,Key2):
-		self.add_query_param('Key2',Key2)
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)

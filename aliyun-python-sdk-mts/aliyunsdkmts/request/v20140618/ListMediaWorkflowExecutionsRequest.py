@@ -23,35 +23,17 @@ class ListMediaWorkflowExecutionsRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Mts', '2014-06-18', 'ListMediaWorkflowExecutions')
 
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
-
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_MediaWorkflowId(self):
-		return self.get_query_params().get('MediaWorkflowId')
+	def get_ResourceOwnerAccount(self):
+		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_MediaWorkflowId(self,MediaWorkflowId):
-		self.add_query_param('MediaWorkflowId',MediaWorkflowId)
-
-	def get_MediaWorkflowName(self):
-		return self.get_query_params().get('MediaWorkflowName')
-
-	def set_MediaWorkflowName(self,MediaWorkflowName):
-		self.add_query_param('MediaWorkflowName',MediaWorkflowName)
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
 	def get_InputFileURL(self):
 		return self.get_query_params().get('InputFileURL')
@@ -65,14 +47,32 @@ class ListMediaWorkflowExecutionsRequest(RpcRequest):
 	def set_NextPageToken(self,NextPageToken):
 		self.add_query_param('NextPageToken',NextPageToken)
 
+	def get_OwnerAccount(self):
+		return self.get_query_params().get('OwnerAccount')
+
+	def set_OwnerAccount(self,OwnerAccount):
+		self.add_query_param('OwnerAccount',OwnerAccount)
+
 	def get_MaximumPageSize(self):
 		return self.get_query_params().get('MaximumPageSize')
 
 	def set_MaximumPageSize(self,MaximumPageSize):
 		self.add_query_param('MaximumPageSize',MaximumPageSize)
 
-	def get_OwnerAccount(self):
-		return self.get_query_params().get('OwnerAccount')
+	def get_MediaWorkflowId(self):
+		return self.get_query_params().get('MediaWorkflowId')
 
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
+	def set_MediaWorkflowId(self,MediaWorkflowId):
+		self.add_query_param('MediaWorkflowId',MediaWorkflowId)
+
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
+
+	def get_MediaWorkflowName(self):
+		return self.get_query_params().get('MediaWorkflowName')
+
+	def set_MediaWorkflowName(self,MediaWorkflowName):
+		self.add_query_param('MediaWorkflowName',MediaWorkflowName)

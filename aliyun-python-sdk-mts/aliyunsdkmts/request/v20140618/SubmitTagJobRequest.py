@@ -18,22 +18,22 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class QueryMediaWorkflowListByNameRequest(RpcRequest):
+class SubmitTagJobRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Mts', '2014-06-18', 'QueryMediaWorkflowListByName')
+		RpcRequest.__init__(self, 'Mts', '2014-06-18', 'SubmitTagJob')
 
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
+	def get_Input(self):
+		return self.get_query_params().get('Input')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
+	def set_Input(self,Input):
+		self.add_query_param('Input',Input)
 
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
+	def get_UserData(self):
+		return self.get_query_params().get('UserData')
 
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+	def set_UserData(self,UserData):
+		self.add_query_param('UserData',UserData)
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -41,14 +41,32 @@ class QueryMediaWorkflowListByNameRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_Names(self):
-		return self.get_query_params().get('Names')
+	def get_ResourceOwnerAccount(self):
+		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_Names(self,Names):
-		self.add_query_param('Names',Names)
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
 
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
+
+	def get_TagConfig(self):
+		return self.get_query_params().get('TagConfig')
+
+	def set_TagConfig(self,TagConfig):
+		self.add_query_param('TagConfig',TagConfig)
+
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
+
+	def get_PipelineId(self):
+		return self.get_query_params().get('PipelineId')
+
+	def set_PipelineId(self,PipelineId):
+		self.add_query_param('PipelineId',PipelineId)

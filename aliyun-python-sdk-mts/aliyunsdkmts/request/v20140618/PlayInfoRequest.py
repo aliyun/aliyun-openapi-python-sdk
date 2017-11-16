@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class PlayInfoRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Mts', '2014-06-18', 'PlayInfo','mts')
+		RpcRequest.__init__(self, 'Mts', '2014-06-18', 'PlayInfo')
 
 	def get_PlayDomain(self):
 		return self.get_query_params().get('PlayDomain')

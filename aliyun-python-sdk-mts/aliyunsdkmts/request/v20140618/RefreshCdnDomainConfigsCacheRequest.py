@@ -23,12 +23,6 @@ class RefreshCdnDomainConfigsCacheRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Mts', '2014-06-18', 'RefreshCdnDomainConfigsCache')
 
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
@@ -52,3 +46,9 @@ class RefreshCdnDomainConfigsCacheRequest(RpcRequest):
 
 	def set_Domains(self,Domains):
 		self.add_query_param('Domains',Domains)
+
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
