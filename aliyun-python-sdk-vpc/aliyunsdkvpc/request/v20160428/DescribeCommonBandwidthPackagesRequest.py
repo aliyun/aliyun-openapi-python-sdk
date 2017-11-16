@@ -47,6 +47,12 @@ class DescribeCommonBandwidthPackagesRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
+	def get_Name(self):
+		return self.get_query_params().get('Name')
+
+	def set_Name(self,Name):
+		self.add_query_param('Name',Name)
+
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
 

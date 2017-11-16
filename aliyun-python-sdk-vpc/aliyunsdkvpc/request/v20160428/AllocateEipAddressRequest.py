@@ -35,6 +35,12 @@ class AllocateEipAddressRequest(RpcRequest):
 	def set_Period(self,Period):
 		self.add_query_param('Period',Period)
 
+	def get_AutoPay(self):
+		return self.get_query_params().get('AutoPay')
+
+	def set_AutoPay(self,AutoPay):
+		self.add_query_param('AutoPay',AutoPay)
+
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -53,11 +59,11 @@ class AllocateEipAddressRequest(RpcRequest):
 	def set_ClientToken(self,ClientToken):
 		self.add_query_param('ClientToken',ClientToken)
 
-	def get_InternetChargeType(self):
-		return self.get_query_params().get('InternetChargeType')
+	def get_ISP(self):
+		return self.get_query_params().get('ISP')
 
-	def set_InternetChargeType(self,InternetChargeType):
-		self.add_query_param('InternetChargeType',InternetChargeType)
+	def set_ISP(self,ISP):
+		self.add_query_param('ISP',ISP)
 
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
@@ -70,6 +76,24 @@ class AllocateEipAddressRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_InternetChargeType(self):
+		return self.get_query_params().get('InternetChargeType')
+
+	def set_InternetChargeType(self,InternetChargeType):
+		self.add_query_param('InternetChargeType',InternetChargeType)
+
+	def get_Netmode(self):
+		return self.get_query_params().get('Netmode')
+
+	def set_Netmode(self,Netmode):
+		self.add_query_param('Netmode',Netmode)
+
+	def get_PricingCycle(self):
+		return self.get_query_params().get('PricingCycle')
+
+	def set_PricingCycle(self,PricingCycle):
+		self.add_query_param('PricingCycle',PricingCycle)
 
 	def get_InstanceChargeType(self):
 		return self.get_query_params().get('InstanceChargeType')

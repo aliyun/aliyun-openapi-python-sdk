@@ -18,10 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class DescribeVSwitchesRequest(RpcRequest):
+class DescribeRouteTableListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'DescribeVSwitches','vpc')
+		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'DescribeRouteTableList','vpc')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -34,6 +34,12 @@ class DescribeVSwitchesRequest(RpcRequest):
 
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+
+	def get_Bandwidth(self):
+		return self.get_query_params().get('Bandwidth')
+
+	def set_Bandwidth(self,Bandwidth):
+		self.add_query_param('Bandwidth',Bandwidth)
 
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
@@ -53,11 +59,29 @@ class DescribeVSwitchesRequest(RpcRequest):
 	def set_PageNumber(self,PageNumber):
 		self.add_query_param('PageNumber',PageNumber)
 
-	def get_VSwitchId(self):
-		return self.get_query_params().get('VSwitchId')
+	def get_RouterType(self):
+		return self.get_query_params().get('RouterType')
 
-	def set_VSwitchId(self,VSwitchId):
-		self.add_query_param('VSwitchId',VSwitchId)
+	def set_RouterType(self,RouterType):
+		self.add_query_param('RouterType',RouterType)
+
+	def get_KbpsBandwidth(self):
+		return self.get_query_params().get('KbpsBandwidth')
+
+	def set_KbpsBandwidth(self,KbpsBandwidth):
+		self.add_query_param('KbpsBandwidth',KbpsBandwidth)
+
+	def get_RouteTableName(self):
+		return self.get_query_params().get('RouteTableName')
+
+	def set_RouteTableName(self,RouteTableName):
+		self.add_query_param('RouteTableName',RouteTableName)
+
+	def get_RouterId(self):
+		return self.get_query_params().get('RouterId')
+
+	def set_RouterId(self,RouterId):
+		self.add_query_param('RouterId',RouterId)
 
 	def get_VpcId(self):
 		return self.get_query_params().get('VpcId')
@@ -65,11 +89,11 @@ class DescribeVSwitchesRequest(RpcRequest):
 	def set_VpcId(self,VpcId):
 		self.add_query_param('VpcId',VpcId)
 
-	def get_Name(self):
-		return self.get_query_params().get('Name')
+	def get_ResourceUid(self):
+		return self.get_query_params().get('ResourceUid')
 
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)
+	def set_ResourceUid(self,ResourceUid):
+		self.add_query_param('ResourceUid',ResourceUid)
 
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
@@ -77,14 +101,14 @@ class DescribeVSwitchesRequest(RpcRequest):
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
 
-	def get_ZoneId(self):
-		return self.get_query_params().get('ZoneId')
+	def get_ResourceBid(self):
+		return self.get_query_params().get('ResourceBid')
 
-	def set_ZoneId(self,ZoneId):
-		self.add_query_param('ZoneId',ZoneId)
+	def set_ResourceBid(self,ResourceBid):
+		self.add_query_param('ResourceBid',ResourceBid)
 
-	def get_IsDefault(self):
-		return self.get_query_params().get('IsDefault')
+	def get_RouteTableId(self):
+		return self.get_query_params().get('RouteTableId')
 
-	def set_IsDefault(self,IsDefault):
-		self.add_query_param('IsDefault',IsDefault)
+	def set_RouteTableId(self,RouteTableId):
+		self.add_query_param('RouteTableId',RouteTableId)

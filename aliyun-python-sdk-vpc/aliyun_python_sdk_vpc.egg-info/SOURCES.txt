@@ -60,7 +60,6 @@ aliyunsdkvpc/request/v20160428/DeleteVpcRequest.py
 aliyunsdkvpc/request/v20160428/DeleteVpnConnectionRequest.py
 aliyunsdkvpc/request/v20160428/DeleteVpnGatewayRequest.py
 aliyunsdkvpc/request/v20160428/DescribeAccessPointsRequest.py
-aliyunsdkvpc/request/v20160428/DescribeBandwidthPackageMonitorDataRequest.py
 aliyunsdkvpc/request/v20160428/DescribeBandwidthPackagePublicIpMonitorDataRequest.py
 aliyunsdkvpc/request/v20160428/DescribeBandwidthPackagesRequest.py
 aliyunsdkvpc/request/v20160428/DescribeBgpGroupsRequest.py
@@ -79,7 +78,9 @@ aliyunsdkvpc/request/v20160428/DescribeNewProjectEipMonitorDataRequest.py
 aliyunsdkvpc/request/v20160428/DescribeNqasRequest.py
 aliyunsdkvpc/request/v20160428/DescribePhysicalConnectionsRequest.py
 aliyunsdkvpc/request/v20160428/DescribeRegionsRequest.py
+aliyunsdkvpc/request/v20160428/DescribeRouteTableListRequest.py
 aliyunsdkvpc/request/v20160428/DescribeRouteTablesRequest.py
+aliyunsdkvpc/request/v20160428/DescribeRouterInterfacesForGlobalRequest.py
 aliyunsdkvpc/request/v20160428/DescribeRouterInterfacesRequest.py
 aliyunsdkvpc/request/v20160428/DescribeServerRelatedGlobalAccelerationInstancesRequest.py
 aliyunsdkvpc/request/v20160428/DescribeSnatTableEntriesRequest.py
@@ -103,6 +104,7 @@ aliyunsdkvpc/request/v20160428/ModifyBandwidthPackageAttributeRequest.py
 aliyunsdkvpc/request/v20160428/ModifyBandwidthPackageSpecRequest.py
 aliyunsdkvpc/request/v20160428/ModifyBgpGroupAttributeRequest.py
 aliyunsdkvpc/request/v20160428/ModifyCommonBandwidthPackageAttributeRequest.py
+aliyunsdkvpc/request/v20160428/ModifyCommonBandwidthPackagePayTypeRequest.py
 aliyunsdkvpc/request/v20160428/ModifyCommonBandwidthPackageSpecRequest.py
 aliyunsdkvpc/request/v20160428/ModifyCustomerGatewayAttributeRequest.py
 aliyunsdkvpc/request/v20160428/ModifyEipAddressAttributeRequest.py
@@ -114,6 +116,7 @@ aliyunsdkvpc/request/v20160428/ModifyNatGatewayAttributeRequest.py
 aliyunsdkvpc/request/v20160428/ModifyNatGatewaySpecRequest.py
 aliyunsdkvpc/request/v20160428/ModifyNqaRequest.py
 aliyunsdkvpc/request/v20160428/ModifyPhysicalConnectionAttributeRequest.py
+aliyunsdkvpc/request/v20160428/ModifyRouteTableAttributesRequest.py
 aliyunsdkvpc/request/v20160428/ModifyRouterInterfaceAttributeRequest.py
 aliyunsdkvpc/request/v20160428/ModifyRouterInterfaceSpecRequest.py
 aliyunsdkvpc/request/v20160428/ModifySnatEntryRequest.py

@@ -28,7 +28,8 @@ class RemoveBandwidthPackageIpsRequest(RpcRequest):
 
 	def set_RemovedIpAddressess(self,RemovedIpAddressess):
 		for i in range(len(RemovedIpAddressess)):	
-			self.add_query_param('RemovedIpAddresses.' + bytes(i + 1) , RemovedIpAddressess[i]);
+			if RemovedIpAddressess[i] is not None:
+				self.add_query_param('RemovedIpAddresses.' + bytes(i + 1) , RemovedIpAddressess[i]);
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
