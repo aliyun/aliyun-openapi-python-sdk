@@ -25,7 +25,7 @@ import sys
 parent_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, parent_dir)
 
-from .http import protocol_type as pt
+from .http import protocol_type
 from .http import method_type as mt
 from .http import format_type as ft
 from .auth.composer import rpc_signature_composer as rpc_signer
@@ -50,6 +50,23 @@ STYLE_RPC = 'RPC'
 STYLE_ROA = 'ROA'
 STYLE_OSS = 'OSS'
 
+_default_protocol_type = protocol_type.HTTP
+
+def set_default_protocol_type(user_protocol_type):
+    global _default_protocol_type
+
+    if user_protocol_type == protocol_type.HTTP or user_protocol_type == protocol_type.HTTPS:
+        _default_protocol_type = user_protocol_type
+    else:
+        raise exceptions.ClientException(
+            error_code.SDK_INVALID_PARAMS, 
+            "Invalid 'protocol_type', should be 'http' or 'https'"
+        )
+
+
+def get_default_protocol_type():
+    return _default_protocol_type
+
 
 class AcsRequest:
     """
@@ -62,7 +79,7 @@ class AcsRequest:
                  location_service_code=None,
                  location_endpoint_type='openAPI',
                  accept_format=None,
-                 protocol_type=pt.HTTP,
+                 protocol_type=None,
                  method=None):
         """
 
@@ -79,6 +96,9 @@ class AcsRequest:
         self._product = product
         self._action_name = action_name
         self._protocol_type = protocol_type
+        if self._protocol_type is None:
+            self._protocol_type = _default_protocol_type
+
         self._accept_format = accept_format
         self._params = {}
         self._method = method

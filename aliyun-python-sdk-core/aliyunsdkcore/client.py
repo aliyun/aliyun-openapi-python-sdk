@@ -225,6 +225,12 @@ class AcsClient:
         return response
 
     def _implementation_of_do_action(self, request):
+        if not isinstance(request, AcsRequest):
+            raise ClientException(
+                error_code.SDK_INVALID_REQUEST,
+                error_msg.get_msg('SDK_INVALID_REQUEST'))
+
+
         # add core version
         core_version = __import__('aliyunsdkcore').__version__
         request.add_header('x-sdk-core-version', core_version)
@@ -245,10 +251,7 @@ class AcsClient:
             raise ClientException(
                 error_code.SDK_SERVER_UNREACHABLE,
                 error_msg.get_msg('SDK_SERVER_UNREACHABLE') + ': ' + str(e))
-        except AttributeError:
-            raise ClientException(
-                error_code.SDK_INVALID_REQUEST,
-                error_msg.get_msg('SDK_INVALID_REQUEST'))
+
 
     def _parse_error_info_from_response_body(self, response_body):
         try:
