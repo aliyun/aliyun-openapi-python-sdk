@@ -18,25 +18,17 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class GetPrivateAccessUrlsRequest(RpcRequest):
+class EditPhotoStoreRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'CloudPhoto', '2017-07-11', 'GetPrivateAccessUrls','cloudphoto')
+		RpcRequest.__init__(self, 'CloudPhoto', '2017-07-11', 'EditPhotoStore','cloudphoto')
 		self.set_protocol_type('https');
 
-	def get_LibraryId(self):
-		return self.get_query_params().get('LibraryId')
+	def get_AutoCleanEnabled(self):
+		return self.get_query_params().get('AutoCleanEnabled')
 
-	def set_LibraryId(self,LibraryId):
-		self.add_query_param('LibraryId',LibraryId)
-
-	def get_PhotoIds(self):
-		return self.get_query_params().get('PhotoIds')
-
-	def set_PhotoIds(self,PhotoIds):
-		for i in range(len(PhotoIds)):	
-			if PhotoIds[i] is not None:
-				self.add_query_param('PhotoId.' + bytes(i + 1) , PhotoIds[i]);
+	def set_AutoCleanEnabled(self,AutoCleanEnabled):
+		self.add_query_param('AutoCleanEnabled',AutoCleanEnabled)
 
 	def get_StoreName(self):
 		return self.get_query_params().get('StoreName')
@@ -44,8 +36,20 @@ class GetPrivateAccessUrlsRequest(RpcRequest):
 	def set_StoreName(self,StoreName):
 		self.add_query_param('StoreName',StoreName)
 
-	def get_ZoomType(self):
-		return self.get_query_params().get('ZoomType')
+	def get_Remark(self):
+		return self.get_query_params().get('Remark')
 
-	def set_ZoomType(self,ZoomType):
-		self.add_query_param('ZoomType',ZoomType)
+	def set_Remark(self,Remark):
+		self.add_query_param('Remark',Remark)
+
+	def get_DefaultQuota(self):
+		return self.get_query_params().get('DefaultQuota')
+
+	def set_DefaultQuota(self,DefaultQuota):
+		self.add_query_param('DefaultQuota',DefaultQuota)
+
+	def get_AutoCleanDays(self):
+		return self.get_query_params().get('AutoCleanDays')
+
+	def set_AutoCleanDays(self,AutoCleanDays):
+		self.add_query_param('AutoCleanDays',AutoCleanDays)

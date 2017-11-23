@@ -18,10 +18,12 @@ aliyunsdkcloudphoto/request/v20170711/DeleteAlbumsRequest.py
 aliyunsdkcloudphoto/request/v20170711/DeleteFacesRequest.py
 aliyunsdkcloudphoto/request/v20170711/DeletePhotoStoreRequest.py
 aliyunsdkcloudphoto/request/v20170711/DeletePhotosRequest.py
+aliyunsdkcloudphoto/request/v20170711/EditPhotoStoreRequest.py
 aliyunsdkcloudphoto/request/v20170711/EditPhotosRequest.py
 aliyunsdkcloudphoto/request/v20170711/GetDownloadUrlRequest.py
 aliyunsdkcloudphoto/request/v20170711/GetDownloadUrlsRequest.py
 aliyunsdkcloudphoto/request/v20170711/GetFramedPhotoUrlsRequest.py
+aliyunsdkcloudphoto/request/v20170711/GetLibraryRequest.py
 aliyunsdkcloudphoto/request/v20170711/GetPhotoStoreRequest.py
 aliyunsdkcloudphoto/request/v20170711/GetPhotosByMd5sRequest.py
 aliyunsdkcloudphoto/request/v20170711/GetPhotosRequest.py
@@ -46,6 +48,7 @@ aliyunsdkcloudphoto/request/v20170711/ListPhotosRequest.py
 aliyunsdkcloudphoto/request/v20170711/ListTagPhotosRequest.py
 aliyunsdkcloudphoto/request/v20170711/ListTagsRequest.py
 aliyunsdkcloudphoto/request/v20170711/ListTimeLinePhotosRequest.py
+aliyunsdkcloudphoto/request/v20170711/ListTimeLinesRequest.py
 aliyunsdkcloudphoto/request/v20170711/MergeFacesRequest.py
 aliyunsdkcloudphoto/request/v20170711/MoveAlbumPhotosRequest.py
 aliyunsdkcloudphoto/request/v20170711/MoveFacePhotosRequest.py
@@ -59,4 +62,5 @@ aliyunsdkcloudphoto/request/v20170711/SetAlbumCoverRequest.py
 aliyunsdkcloudphoto/request/v20170711/SetFaceCoverRequest.py
 aliyunsdkcloudphoto/request/v20170711/SetMeRequest.py
 aliyunsdkcloudphoto/request/v20170711/SetQuotaRequest.py
+aliyunsdkcloudphoto/request/v20170711/ToggleFeaturesRequest.py
 aliyunsdkcloudphoto/request/v20170711/__init__.py

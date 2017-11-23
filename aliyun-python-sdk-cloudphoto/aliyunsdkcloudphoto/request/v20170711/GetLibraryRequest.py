@@ -18,10 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class GetPrivateAccessUrlsRequest(RpcRequest):
+class GetLibraryRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'CloudPhoto', '2017-07-11', 'GetPrivateAccessUrls','cloudphoto')
+		RpcRequest.__init__(self, 'CloudPhoto', '2017-07-11', 'GetLibrary','cloudphoto')
 		self.set_protocol_type('https');
 
 	def get_LibraryId(self):
@@ -30,22 +30,8 @@ class GetPrivateAccessUrlsRequest(RpcRequest):
 	def set_LibraryId(self,LibraryId):
 		self.add_query_param('LibraryId',LibraryId)
 
-	def get_PhotoIds(self):
-		return self.get_query_params().get('PhotoIds')
-
-	def set_PhotoIds(self,PhotoIds):
-		for i in range(len(PhotoIds)):	
-			if PhotoIds[i] is not None:
-				self.add_query_param('PhotoId.' + bytes(i + 1) , PhotoIds[i]);
-
 	def get_StoreName(self):
 		return self.get_query_params().get('StoreName')
 
 	def set_StoreName(self,StoreName):
 		self.add_query_param('StoreName',StoreName)
-
-	def get_ZoomType(self):
-		return self.get_query_params().get('ZoomType')
-
-	def set_ZoomType(self,ZoomType):
-		self.add_query_param('ZoomType',ZoomType)
