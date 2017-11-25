@@ -18,6 +18,7 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+import ast
 class CreateInstanceRequest(RpcRequest):
 
 	def __init__(self):
@@ -309,6 +310,7 @@ class CreateInstanceRequest(RpcRequest):
 		return self.get_query_params().get('DataDisks')
 
 	def set_DataDisks(self,DataDisks):
+		DataDisks = ast.literal_eval(DataDisks)
 		for i in range(len(DataDisks)):	
 			if DataDisks[i].get('Size') is not None:
 				self.add_query_param('DataDisk.' + bytes(i + 1) + '.Size' , DataDisks[i].get('Size'))
