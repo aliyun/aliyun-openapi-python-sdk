@@ -23,6 +23,14 @@ class SetCasterSceneConfigRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'live', '2016-11-01', 'SetCasterSceneConfig')
 
+	def get_ComponentIds(self):
+		return self.get_query_params().get('ComponentIds')
+
+	def set_ComponentIds(self,ComponentIds):
+		for i in range(len(ComponentIds)):	
+			if ComponentIds[i] is not None:
+				self.add_query_param('ComponentId.' + bytes(i + 1) , ComponentIds[i]);
+
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
 

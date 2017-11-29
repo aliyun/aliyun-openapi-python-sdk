@@ -8,6 +8,7 @@ aliyun_python_sdk_live.egg-info/requires.txt
 aliyun_python_sdk_live.egg-info/top_level.txt
 aliyunsdklive/__init__.py
 aliyunsdklive/request/__init__.py
+aliyunsdklive/request/v20161101/AddCasterComponentRequest.py
 aliyunsdklive/request/v20161101/AddCasterLayoutRequest.py
 aliyunsdklive/request/v20161101/AddCasterVideoResourceRequest.py
 aliyunsdklive/request/v20161101/AddLiveAppRecordConfigRequest.py
@@ -24,6 +25,7 @@ aliyunsdklive/request/v20161101/CopyCasterRequest.py
 aliyunsdklive/request/v20161101/CopyCasterSceneConfigRequest.py
 aliyunsdklive/request/v20161101/CreateCasterRequest.py
 aliyunsdklive/request/v20161101/CreateLiveStreamRecordIndexFilesRequest.py
+aliyunsdklive/request/v20161101/DeleteCasterComponentRequest.py
 aliyunsdklive/request/v20161101/DeleteCasterLayoutRequest.py
 aliyunsdklive/request/v20161101/DeleteCasterRequest.py
 aliyunsdklive/request/v20161101/DeleteCasterVideoResourceRequest.py
@@ -37,6 +39,7 @@ aliyunsdklive/request/v20161101/DeleteLiveRecordNotifyConfigRequest.py
 aliyunsdklive/request/v20161101/DeleteLiveSnapshotDetectPornConfigRequest.py
 aliyunsdklive/request/v20161101/DeleteLiveStreamTranscodeRequest.py
 aliyunsdklive/request/v20161101/DeleteLiveStreamsNotifyUrlConfigRequest.py
+aliyunsdklive/request/v20161101/DescribeCasterComponentsRequest.py
 aliyunsdklive/request/v20161101/DescribeCasterConfigRequest.py
 aliyunsdklive/request/v20161101/DescribeCasterLayoutsRequest.py
 aliyunsdklive/request/v20161101/DescribeCasterScenesRequest.py
@@ -69,6 +72,7 @@ aliyunsdklive/request/v20161101/EffectCasterUrgentRequest.py
 aliyunsdklive/request/v20161101/EffectCasterVideoResourceRequest.py
 aliyunsdklive/request/v20161101/ForbidLiveStreamRequest.py
 aliyunsdklive/request/v20161101/ImagePornDetectionRequest.py
+aliyunsdklive/request/v20161101/ModifyCasterComponentRequest.py
 aliyunsdklive/request/v20161101/ModifyCasterLayoutRequest.py
 aliyunsdklive/request/v20161101/ModifyCasterVideoResourceRequest.py
 aliyunsdklive/request/v20161101/RemoveMultipleStreamMixServiceRequest.py
