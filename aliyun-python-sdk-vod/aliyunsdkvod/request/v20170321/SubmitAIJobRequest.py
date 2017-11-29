@@ -18,10 +18,16 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class GetVideoInfoRequest(RpcRequest):
+class SubmitAIJobRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'vod', '2017-03-21', 'GetVideoInfo','vod')
+		RpcRequest.__init__(self, 'vod', '2017-03-21', 'SubmitAIJob','vod')
+
+	def get_UserData(self):
+		return self.get_query_params().get('UserData')
+
+	def set_UserData(self,UserData):
+		self.add_query_param('UserData',UserData)
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -29,26 +35,38 @@ class GetVideoInfoRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_Types(self):
+		return self.get_query_params().get('Types')
+
+	def set_Types(self,Types):
+		self.add_query_param('Types',Types)
+
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
-	def get_VideoId(self):
-		return self.get_query_params().get('VideoId')
+	def get_OwnerAccount(self):
+		return self.get_query_params().get('OwnerAccount')
 
-	def set_VideoId(self,VideoId):
-		self.add_query_param('VideoId',VideoId)
-
-	def get_ResultTypes(self):
-		return self.get_query_params().get('ResultTypes')
-
-	def set_ResultTypes(self,ResultTypes):
-		self.add_query_param('ResultTypes',ResultTypes)
+	def set_OwnerAccount(self,OwnerAccount):
+		self.add_query_param('OwnerAccount',OwnerAccount)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_MediaId(self):
+		return self.get_query_params().get('MediaId')
+
+	def set_MediaId(self,MediaId):
+		self.add_query_param('MediaId',MediaId)
+
+	def get_Config(self):
+		return self.get_query_params().get('Config')
+
+	def set_Config(self,Config):
+		self.add_query_param('Config',Config)

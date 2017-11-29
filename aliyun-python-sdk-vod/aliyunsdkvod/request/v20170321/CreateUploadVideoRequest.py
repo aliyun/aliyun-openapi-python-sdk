@@ -95,6 +95,12 @@ class CreateUploadVideoRequest(RpcRequest):
 	def set_FileName(self,FileName):
 		self.add_query_param('FileName',FileName)
 
+	def get_TemplateGroupId(self):
+		return self.get_query_params().get('TemplateGroupId')
+
+	def set_TemplateGroupId(self,TemplateGroupId):
+		self.add_query_param('TemplateGroupId',TemplateGroupId)
+
 	def get_CateId(self):
 		return self.get_query_params().get('CateId')
 

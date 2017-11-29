@@ -35,6 +35,12 @@ class CreateUploadImageRequest(RpcRequest):
 	def set_ImageType(self,ImageType):
 		self.add_query_param('ImageType',ImageType)
 
+	def get_OriginalFileName(self):
+		return self.get_query_params().get('OriginalFileName')
+
+	def set_OriginalFileName(self,OriginalFileName):
+		self.add_query_param('OriginalFileName',OriginalFileName)
+
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -47,14 +53,20 @@ class CreateUploadImageRequest(RpcRequest):
 	def set_ImageExt(self,ImageExt):
 		self.add_query_param('ImageExt',ImageExt)
 
-	def get_OwnerAccount(self):
-		return self.get_query_params().get('OwnerAccount')
-
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
-
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_Title(self):
+		return self.get_query_params().get('Title')
+
+	def set_Title(self,Title):
+		self.add_query_param('Title',Title)
+
+	def get_Tags(self):
+		return self.get_query_params().get('Tags')
+
+	def set_Tags(self,Tags):
+		self.add_query_param('Tags',Tags)

@@ -10,6 +10,7 @@ aliyunsdkvod/__init__.py
 aliyunsdkvod/request/__init__.py
 aliyunsdkvod/request/v20170321/AddCategoryRequest.py
 aliyunsdkvod/request/v20170321/AddEditingProjectRequest.py
+aliyunsdkvod/request/v20170321/CreateOrderRequest.py
 aliyunsdkvod/request/v20170321/CreateUploadImageRequest.py
 aliyunsdkvod/request/v20170321/CreateUploadVideoRequest.py
 aliyunsdkvod/request/v20170321/DeleteCategoryRequest.py
@@ -23,6 +24,7 @@ aliyunsdkvod/request/v20170321/GetCDNStatisSumRequest.py
 aliyunsdkvod/request/v20170321/GetCategoriesRequest.py
 aliyunsdkvod/request/v20170321/GetEditingProjectMaterialsRequest.py
 aliyunsdkvod/request/v20170321/GetEditingProjectRequest.py
+aliyunsdkvod/request/v20170321/GetImageInfoRequest.py
 aliyunsdkvod/request/v20170321/GetMessageCallbackRequest.py
 aliyunsdkvod/request/v20170321/GetMezzanineInfoRequest.py
 aliyunsdkvod/request/v20170321/GetOSSStatisRequest.py
@@ -33,17 +35,21 @@ aliyunsdkvod/request/v20170321/GetVideoListRequest.py
 aliyunsdkvod/request/v20170321/GetVideoPlayAuthRequest.py
 aliyunsdkvod/request/v20170321/GetVideoPlayInfoRequest.py
 aliyunsdkvod/request/v20170321/ListAIASRJobRequest.py
+aliyunsdkvod/request/v20170321/ListAIVideoCategoryJobRequest.py
 aliyunsdkvod/request/v20170321/ListAIVideoCensorJobRequest.py
 aliyunsdkvod/request/v20170321/ListAIVideoCoverJobRequest.py
 aliyunsdkvod/request/v20170321/ListAIVideoPornRecogJobRequest.py
 aliyunsdkvod/request/v20170321/ListAIVideoSummaryJobRequest.py
 aliyunsdkvod/request/v20170321/ListAIVideoTerrorismRecogJobRequest.py
+aliyunsdkvod/request/v20170321/OpenVodServiceRequest.py
 aliyunsdkvod/request/v20170321/ProduceEditingProjectVideoRequest.py
 aliyunsdkvod/request/v20170321/RefreshUploadVideoRequest.py
 aliyunsdkvod/request/v20170321/SearchEditingProjectRequest.py
 aliyunsdkvod/request/v20170321/SetEditingProjectMaterialsRequest.py
 aliyunsdkvod/request/v20170321/SetMessageCallbackRequest.py
 aliyunsdkvod/request/v20170321/SubmitAIASRJobRequest.py
+aliyunsdkvod/request/v20170321/SubmitAIJobRequest.py
+aliyunsdkvod/request/v20170321/SubmitAIVideoCategoryJobRequest.py
 aliyunsdkvod/request/v20170321/SubmitAIVideoCensorJobRequest.py
 aliyunsdkvod/request/v20170321/SubmitAIVideoCoverJobRequest.py
 aliyunsdkvod/request/v20170321/SubmitAIVideoPornRecogJobRequest.py
