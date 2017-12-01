@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class QueryDeviceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Iot', '2017-04-20', 'QueryDevice','iot')
+		RpcRequest.__init__(self, 'Iot', '2017-04-20', 'QueryDevice')
 
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')

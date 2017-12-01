@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class UpdateProductRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Iot', '2017-04-20', 'UpdateProduct','iot')
+		RpcRequest.__init__(self, 'Iot', '2017-04-20', 'UpdateProduct')
 
 	def get_CatId(self):
 		return self.get_query_params().get('CatId')

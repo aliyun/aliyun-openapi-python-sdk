@@ -18,21 +18,25 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class ApplyDeviceWithNamesRequest(RpcRequest):
+class DeleteDevicePropRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Iot', '2017-04-20', 'ApplyDeviceWithNames')
+		RpcRequest.__init__(self, 'Iot', '2017-04-20', 'DeleteDeviceProp')
 
-	def get_DeviceNames(self):
-		return self.get_query_params().get('DeviceNames')
+	def get_DeviceName(self):
+		return self.get_query_params().get('DeviceName')
 
-	def set_DeviceNames(self,DeviceNames):
-		for i in range(len(DeviceNames)):	
-			if DeviceNames[i] is not None:
-				self.add_query_param('DeviceName.' + bytes(i + 1) , DeviceNames[i]);
+	def set_DeviceName(self,DeviceName):
+		self.add_query_param('DeviceName',DeviceName)
 
 	def get_ProductKey(self):
 		return self.get_query_params().get('ProductKey')
 
 	def set_ProductKey(self,ProductKey):
 		self.add_query_param('ProductKey',ProductKey)
+
+	def get_PropKey(self):
+		return self.get_query_params().get('PropKey')
+
+	def set_PropKey(self,PropKey):
+		self.add_query_param('PropKey',PropKey)
