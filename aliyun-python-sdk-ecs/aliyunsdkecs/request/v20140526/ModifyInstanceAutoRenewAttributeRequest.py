@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class ModifyInstanceAutoRenewAttributeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'ModifyInstanceAutoRenewAttribute','ecs')
+		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'ModifyInstanceAutoRenewAttribute')
 
 	def get_Duration(self):
 		return self.get_query_params().get('Duration')
@@ -58,6 +58,12 @@ class ModifyInstanceAutoRenewAttributeRequest(RpcRequest):
 
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
+
+	def get_RenewalStatus(self):
+		return self.get_query_params().get('RenewalStatus')
+
+	def set_RenewalStatus(self,RenewalStatus):
+		self.add_query_param('RenewalStatus',RenewalStatus)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')

@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class DescribePriceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'DescribePrice','ecs')
+		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'DescribePrice')
 
 	def get_DataDisk3Size(self):
 		return self.get_query_params().get('DataDisk.3.Size')

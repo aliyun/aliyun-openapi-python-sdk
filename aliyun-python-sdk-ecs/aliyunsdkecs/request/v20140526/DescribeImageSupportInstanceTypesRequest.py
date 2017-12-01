@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class DescribeImageSupportInstanceTypesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'DescribeImageSupportInstanceTypes','ecs')
+		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'DescribeImageSupportInstanceTypes')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')

@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class ModifyVRouterAttributeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'ModifyVRouterAttribute','ecs')
+		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'ModifyVRouterAttribute')
 
 	def get_VRouterName(self):
 		return self.get_query_params().get('VRouterName')

@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class CreateRouterInterfaceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'CreateRouterInterface','ecs')
+		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'CreateRouterInterface')
 
 	def get_AccessPointId(self):
 		return self.get_query_params().get('AccessPointId')

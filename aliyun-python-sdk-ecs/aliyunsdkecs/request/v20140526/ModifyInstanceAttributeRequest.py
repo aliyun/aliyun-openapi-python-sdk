@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class ModifyInstanceAttributeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'ModifyInstanceAttribute','ecs')
+		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'ModifyInstanceAttribute')
 
 	def get_UserData(self):
 		return self.get_query_params().get('UserData')

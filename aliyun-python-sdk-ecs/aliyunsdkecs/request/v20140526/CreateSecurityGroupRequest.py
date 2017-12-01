@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class CreateSecurityGroupRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'CreateSecurityGroup','ecs')
+		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'CreateSecurityGroup')
 
 	def get_Tag4Value(self):
 		return self.get_query_params().get('Tag.4.Value')

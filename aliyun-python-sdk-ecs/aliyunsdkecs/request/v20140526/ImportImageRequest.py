@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class ImportImageRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'ImportImage','ecs')
+		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'ImportImage')
 
 	def get_DiskDeviceMappings(self):
 		return self.get_query_params().get('DiskDeviceMappings')

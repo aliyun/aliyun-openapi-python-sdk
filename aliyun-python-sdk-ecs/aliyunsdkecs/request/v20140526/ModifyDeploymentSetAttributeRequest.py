@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class ModifyDeploymentSetAttributeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'ModifyDeploymentSetAttribute','ecs')
+		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'ModifyDeploymentSetAttribute')
 
 	def get_DeploymentSetId(self):
 		return self.get_query_params().get('DeploymentSetId')

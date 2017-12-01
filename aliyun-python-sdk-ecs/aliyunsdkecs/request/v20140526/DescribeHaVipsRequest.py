@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class DescribeHaVipsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'DescribeHaVips','ecs')
+		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'DescribeHaVips')
 
 	def get_Filters(self):
 		return self.get_query_params().get('Filters')

@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class DescribeRouteTablesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'DescribeRouteTables','ecs')
+		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'DescribeRouteTables')
 
 	def get_RouterType(self):
 		return self.get_query_params().get('RouterType')
@@ -34,6 +34,12 @@ class DescribeRouteTablesRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+
+	def get_RouteTableName(self):
+		return self.get_query_params().get('RouteTableName')
+
+	def set_RouteTableName(self,RouteTableName):
+		self.add_query_param('RouteTableName',RouteTableName)
 
 	def get_VRouterId(self):
 		return self.get_query_params().get('VRouterId')

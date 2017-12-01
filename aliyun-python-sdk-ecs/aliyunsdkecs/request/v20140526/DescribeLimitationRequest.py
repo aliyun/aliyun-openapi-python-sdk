@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class DescribeLimitationRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'DescribeLimitation','ecs')
+		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'DescribeLimitation')
 
 	def get_Limitation(self):
 		return self.get_query_params().get('Limitation')

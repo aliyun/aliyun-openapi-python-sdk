@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class DescribeDisksRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'DescribeDisks','ecs')
+		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'DescribeDisks')
 
 	def get_Tag4Value(self):
 		return self.get_query_params().get('Tag.4.Value')
@@ -208,6 +208,14 @@ class DescribeDisksRequest(RpcRequest):
 
 	def set_Tag1Key(self,Tag1Key):
 		self.add_query_param('Tag.1.Key',Tag1Key)
+
+	def get_AdditionalAttributess(self):
+		return self.get_query_params().get('AdditionalAttributess')
+
+	def set_AdditionalAttributess(self,AdditionalAttributess):
+		for i in range(len(AdditionalAttributess)):	
+			if AdditionalAttributess[i] is not None:
+				self.add_query_param('AdditionalAttributes.' + bytes(i + 1) , AdditionalAttributess[i]);
 
 	def get_EnableShared(self):
 		return self.get_query_params().get('EnableShared')

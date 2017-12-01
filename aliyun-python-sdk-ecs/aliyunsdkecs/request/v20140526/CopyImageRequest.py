@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class CopyImageRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'CopyImage','ecs')
+		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'CopyImage')
 
 	def get_Tag4Value(self):
 		return self.get_query_params().get('Tag.4.Value')
@@ -106,6 +106,12 @@ class CopyImageRequest(RpcRequest):
 
 	def set_Tag1Value(self,Tag1Value):
 		self.add_query_param('Tag.1.Value',Tag1Value)
+
+	def get_Encrypted(self):
+		return self.get_query_params().get('Encrypted')
+
+	def set_Encrypted(self,Encrypted):
+		self.add_query_param('Encrypted',Encrypted)
 
 	def get_Tag2Value(self):
 		return self.get_query_params().get('Tag.2.Value')

@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class ModifyVSwitchAttributeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'ModifyVSwitchAttribute','ecs')
+		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'ModifyVSwitchAttribute')
 
 	def get_VSwitchId(self):
 		return self.get_query_params().get('VSwitchId')

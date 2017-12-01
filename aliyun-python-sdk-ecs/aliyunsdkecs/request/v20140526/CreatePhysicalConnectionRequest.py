@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class CreatePhysicalConnectionRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'CreatePhysicalConnection','ecs')
+		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'CreatePhysicalConnection')
 
 	def get_AccessPointId(self):
 		return self.get_query_params().get('AccessPointId')

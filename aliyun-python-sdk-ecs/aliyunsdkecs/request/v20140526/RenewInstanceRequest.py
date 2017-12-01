@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class RenewInstanceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'RenewInstance','ecs')
+		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'RenewInstance')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -34,6 +34,12 @@ class RenewInstanceRequest(RpcRequest):
 
 	def set_Period(self,Period):
 		self.add_query_param('Period',Period)
+
+	def get_PeriodUnit(self):
+		return self.get_query_params().get('PeriodUnit')
+
+	def set_PeriodUnit(self,PeriodUnit):
+		self.add_query_param('PeriodUnit',PeriodUnit)
 
 	def get_InstanceId(self):
 		return self.get_query_params().get('InstanceId')
