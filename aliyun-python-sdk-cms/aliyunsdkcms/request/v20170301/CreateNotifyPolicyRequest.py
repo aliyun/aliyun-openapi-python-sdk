@@ -18,28 +18,22 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class ListAlarmHistoryRequest(RpcRequest):
+class CreateNotifyPolicyRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cms', '2017-03-01', 'ListAlarmHistory','cms')
+		RpcRequest.__init__(self, 'Cms', '2017-03-01', 'CreateNotifyPolicy','cms')
 
-	def get_Cursor(self):
-		return self.get_query_params().get('Cursor')
+	def get_PolicyType(self):
+		return self.get_query_params().get('PolicyType')
 
-	def set_Cursor(self,Cursor):
-		self.add_query_param('Cursor',Cursor)
+	def set_PolicyType(self,PolicyType):
+		self.add_query_param('PolicyType',PolicyType)
 
-	def get_callby_cms_owner(self):
-		return self.get_query_params().get('callby_cms_owner')
+	def get_AlertName(self):
+		return self.get_query_params().get('AlertName')
 
-	def set_callby_cms_owner(self,callby_cms_owner):
-		self.add_query_param('callby_cms_owner',callby_cms_owner)
-
-	def get_Size(self):
-		return self.get_query_params().get('Size')
-
-	def set_Size(self,Size):
-		self.add_query_param('Size',Size)
+	def set_AlertName(self,AlertName):
+		self.add_query_param('AlertName',AlertName)
 
 	def get_EndTime(self):
 		return self.get_query_params().get('EndTime')
@@ -47,14 +41,14 @@ class ListAlarmHistoryRequest(RpcRequest):
 	def set_EndTime(self,EndTime):
 		self.add_query_param('EndTime',EndTime)
 
-	def get_Id(self):
-		return self.get_query_params().get('Id')
-
-	def set_Id(self,Id):
-		self.add_query_param('Id',Id)
-
 	def get_StartTime(self):
 		return self.get_query_params().get('StartTime')
 
 	def set_StartTime(self,StartTime):
 		self.add_query_param('StartTime',StartTime)
+
+	def get_Dimensions(self):
+		return self.get_query_params().get('Dimensions')
+
+	def set_Dimensions(self,Dimensions):
+		self.add_query_param('Dimensions',Dimensions)

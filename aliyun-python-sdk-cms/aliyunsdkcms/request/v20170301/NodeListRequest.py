@@ -23,17 +23,23 @@ class NodeListRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Cms', '2017-03-01', 'NodeList','cms')
 
-	def get_UserId(self):
-		return self.get_query_params().get('UserId')
-
-	def set_UserId(self,UserId):
-		self.add_query_param('UserId',UserId)
-
 	def get_HostName(self):
 		return self.get_query_params().get('HostName')
 
 	def set_HostName(self,HostName):
 		self.add_query_param('HostName',HostName)
+
+	def get_InstanceIds(self):
+		return self.get_query_params().get('InstanceIds')
+
+	def set_InstanceIds(self,InstanceIds):
+		self.add_query_param('InstanceIds',InstanceIds)
+
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
 
 	def get_KeyWord(self):
 		return self.get_query_params().get('KeyWord')
@@ -41,11 +47,11 @@ class NodeListRequest(RpcRequest):
 	def set_KeyWord(self,KeyWord):
 		self.add_query_param('KeyWord',KeyWord)
 
-	def get_InstanceIds(self):
-		return self.get_query_params().get('InstanceIds')
+	def get_UserId(self):
+		return self.get_query_params().get('UserId')
 
-	def set_InstanceIds(self,InstanceIds):
-		self.add_query_param('InstanceIds',InstanceIds)
+	def set_UserId(self,UserId):
+		self.add_query_param('UserId',UserId)
 
 	def get_SerialNumbers(self):
 		return self.get_query_params().get('SerialNumbers')
@@ -58,12 +64,6 @@ class NodeListRequest(RpcRequest):
 
 	def set_PageNumber(self,PageNumber):
 		self.add_query_param('PageNumber',PageNumber)
-
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
 
 	def get_Status(self):
 		return self.get_query_params().get('Status')

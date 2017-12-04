@@ -23,11 +23,11 @@ class QueryMetricListRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Cms', '2017-03-01', 'QueryMetricList','cms')
 
-	def get_ResourceOwnerId(self):
-		return self.get_query_params().get('ResourceOwnerId')
+	def get_Cursor(self):
+		return self.get_query_params().get('Cursor')
 
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+	def set_Cursor(self,Cursor):
+		self.add_query_param('Cursor',Cursor)
 
 	def get_callby_cms_owner(self):
 		return self.get_query_params().get('callby_cms_owner')
@@ -35,17 +35,11 @@ class QueryMetricListRequest(RpcRequest):
 	def set_callby_cms_owner(self,callby_cms_owner):
 		self.add_query_param('callby_cms_owner',callby_cms_owner)
 
-	def get_Project(self):
-		return self.get_query_params().get('Project')
+	def get_ResourceOwnerId(self):
+		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_Project(self,Project):
-		self.add_query_param('Project',Project)
-
-	def get_Metric(self):
-		return self.get_query_params().get('Metric')
-
-	def set_Metric(self,Metric):
-		self.add_query_param('Metric',Metric)
+	def set_ResourceOwnerId(self,ResourceOwnerId):
+		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
 	def get_Period(self):
 		return self.get_query_params().get('Period')
@@ -53,11 +47,17 @@ class QueryMetricListRequest(RpcRequest):
 	def set_Period(self,Period):
 		self.add_query_param('Period',Period)
 
-	def get_StartTime(self):
-		return self.get_query_params().get('StartTime')
+	def get_Length(self):
+		return self.get_query_params().get('Length')
 
-	def set_StartTime(self,StartTime):
-		self.add_query_param('StartTime',StartTime)
+	def set_Length(self,Length):
+		self.add_query_param('Length',Length)
+
+	def get_Project(self):
+		return self.get_query_params().get('Project')
+
+	def set_Project(self,Project):
+		self.add_query_param('Project',Project)
 
 	def get_EndTime(self):
 		return self.get_query_params().get('EndTime')
@@ -65,11 +65,23 @@ class QueryMetricListRequest(RpcRequest):
 	def set_EndTime(self,EndTime):
 		self.add_query_param('EndTime',EndTime)
 
-	def get_Dimensions(self):
-		return self.get_query_params().get('Dimensions')
+	def get_Express(self):
+		return self.get_query_params().get('Express')
 
-	def set_Dimensions(self,Dimensions):
-		self.add_query_param('Dimensions',Dimensions)
+	def set_Express(self,Express):
+		self.add_query_param('Express',Express)
+
+	def get_StartTime(self):
+		return self.get_query_params().get('StartTime')
+
+	def set_StartTime(self,StartTime):
+		self.add_query_param('StartTime',StartTime)
+
+	def get_Metric(self):
+		return self.get_query_params().get('Metric')
+
+	def set_Metric(self,Metric):
+		self.add_query_param('Metric',Metric)
 
 	def get_Page(self):
 		return self.get_query_params().get('Page')
@@ -77,20 +89,8 @@ class QueryMetricListRequest(RpcRequest):
 	def set_Page(self,Page):
 		self.add_query_param('Page',Page)
 
-	def get_Cursor(self):
-		return self.get_query_params().get('Cursor')
+	def get_Dimensions(self):
+		return self.get_query_params().get('Dimensions')
 
-	def set_Cursor(self,Cursor):
-		self.add_query_param('Cursor',Cursor)
-
-	def get_Length(self):
-		return self.get_query_params().get('Length')
-
-	def set_Length(self,Length):
-		self.add_query_param('Length',Length)
-
-	def get_Express(self):
-		return self.get_query_params().get('Express')
-
-	def set_Express(self,Express):
-		self.add_query_param('Express',Express)
+	def set_Dimensions(self,Dimensions):
+		self.add_query_param('Dimensions',Dimensions)

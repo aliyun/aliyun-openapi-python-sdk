@@ -29,17 +29,17 @@ class NodeProcessCreateRequest(RpcRequest):
 	def set_InstanceId(self,InstanceId):
 		self.add_query_param('InstanceId',InstanceId)
 
-	def get_Name(self):
-		return self.get_query_params().get('Name')
-
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)
-
 	def get_ProcessName(self):
 		return self.get_query_params().get('ProcessName')
 
 	def set_ProcessName(self,ProcessName):
 		self.add_query_param('ProcessName',ProcessName)
+
+	def get_Name(self):
+		return self.get_query_params().get('Name')
+
+	def set_Name(self,Name):
+		self.add_query_param('Name',Name)
 
 	def get_ProcessUser(self):
 		return self.get_query_params().get('ProcessUser')

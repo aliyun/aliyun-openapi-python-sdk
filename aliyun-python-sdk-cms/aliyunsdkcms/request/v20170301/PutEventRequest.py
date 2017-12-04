@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class PutEventRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cms', '2017-03-01', 'PutEvent')
+		RpcRequest.__init__(self, 'Cms', '2017-03-01', 'PutEvent','cms')
 
 	def get_EventInfo(self):
 		return self.get_query_params().get('EventInfo')

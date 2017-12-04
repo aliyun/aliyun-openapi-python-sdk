@@ -23,17 +23,17 @@ class ListAlarmRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Cms', '2017-03-01', 'ListAlarm','cms')
 
+	def get_IsEnable(self):
+		return self.get_query_params().get('IsEnable')
+
+	def set_IsEnable(self,IsEnable):
+		self.add_query_param('IsEnable',IsEnable)
+
 	def get_callby_cms_owner(self):
 		return self.get_query_params().get('callby_cms_owner')
 
 	def set_callby_cms_owner(self,callby_cms_owner):
 		self.add_query_param('callby_cms_owner',callby_cms_owner)
-
-	def get_Id(self):
-		return self.get_query_params().get('Id')
-
-	def set_Id(self,Id):
-		self.add_query_param('Id',Id)
 
 	def get_Name(self):
 		return self.get_query_params().get('Name')
@@ -47,11 +47,17 @@ class ListAlarmRequest(RpcRequest):
 	def set_Namespace(self,Namespace):
 		self.add_query_param('Namespace',Namespace)
 
-	def get_Dimension(self):
-		return self.get_query_params().get('Dimension')
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
 
-	def set_Dimension(self,Dimension):
-		self.add_query_param('Dimension',Dimension)
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
+
+	def get_Id(self):
+		return self.get_query_params().get('Id')
+
+	def set_Id(self,Id):
+		self.add_query_param('Id',Id)
 
 	def get_State(self):
 		return self.get_query_params().get('State')
@@ -59,20 +65,14 @@ class ListAlarmRequest(RpcRequest):
 	def set_State(self,State):
 		self.add_query_param('State',State)
 
-	def get_IsEnable(self):
-		return self.get_query_params().get('IsEnable')
+	def get_Dimension(self):
+		return self.get_query_params().get('Dimension')
 
-	def set_IsEnable(self,IsEnable):
-		self.add_query_param('IsEnable',IsEnable)
+	def set_Dimension(self,Dimension):
+		self.add_query_param('Dimension',Dimension)
 
 	def get_PageNumber(self):
 		return self.get_query_params().get('PageNumber')
 
 	def set_PageNumber(self,PageNumber):
 		self.add_query_param('PageNumber',PageNumber)
-
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)

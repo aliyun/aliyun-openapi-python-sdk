@@ -23,12 +23,6 @@ class NodeInstallRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Cms', '2017-03-01', 'NodeInstall','cms')
 
-	def get_UserId(self):
-		return self.get_query_params().get('UserId')
-
-	def set_UserId(self,UserId):
-		self.add_query_param('UserId',UserId)
-
 	def get_InstanceId(self):
 		return self.get_query_params().get('InstanceId')
 
@@ -40,3 +34,9 @@ class NodeInstallRequest(RpcRequest):
 
 	def set_Force(self,Force):
 		self.add_query_param('Force',Force)
+
+	def get_UserId(self):
+		return self.get_query_params().get('UserId')
+
+	def set_UserId(self,UserId):
+		self.add_query_param('UserId',UserId)
