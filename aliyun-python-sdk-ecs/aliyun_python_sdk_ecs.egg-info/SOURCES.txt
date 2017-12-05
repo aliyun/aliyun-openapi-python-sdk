@@ -25,6 +25,7 @@ aliyunsdkecs/request/v20140526/AttachNetworkInterfaceRequest.py
 aliyunsdkecs/request/v20140526/AttachVolumeRequest.py
 aliyunsdkecs/request/v20140526/AuthorizeSecurityGroupEgressRequest.py
 aliyunsdkecs/request/v20140526/AuthorizeSecurityGroupRequest.py
+aliyunsdkecs/request/v20140526/BindIpRangeRequest.py
 aliyunsdkecs/request/v20140526/CancelAgreementRequest.py
 aliyunsdkecs/request/v20140526/CancelAutoSnapshotPolicyRequest.py
 aliyunsdkecs/request/v20140526/CancelCopyImageRequest.py
@@ -85,6 +86,7 @@ aliyunsdkecs/request/v20140526/DescribeAutoSnapshotPolicyExRequest.py
 aliyunsdkecs/request/v20140526/DescribeAutoSnapshotPolicyRequest.py
 aliyunsdkecs/request/v20140526/DescribeBandwidthPackagesRequest.py
 aliyunsdkecs/request/v20140526/DescribeClassicLinkInstancesRequest.py
+aliyunsdkecs/request/v20140526/DescribeClustersRequest.py
 aliyunsdkecs/request/v20140526/DescribeCommandsRequest.py
 aliyunsdkecs/request/v20140526/DescribeDeploymentSetTopologyRequest.py
 aliyunsdkecs/request/v20140526/DescribeDeploymentSetsRequest.py
@@ -101,6 +103,7 @@ aliyunsdkecs/request/v20140526/DescribeImagesRequest.py
 aliyunsdkecs/request/v20140526/DescribeInstanceAttributeRequest.py
 aliyunsdkecs/request/v20140526/DescribeInstanceAutoRenewAttributeRequest.py
 aliyunsdkecs/request/v20140526/DescribeInstanceMonitorDataRequest.py
+aliyunsdkecs/request/v20140526/DescribeInstancePhysicalAttributeRequest.py
 aliyunsdkecs/request/v20140526/DescribeInstanceRamRoleRequest.py
 aliyunsdkecs/request/v20140526/DescribeInstanceStatusRequest.py
 aliyunsdkecs/request/v20140526/DescribeInstanceTypeFamiliesRequest.py
@@ -108,8 +111,10 @@ aliyunsdkecs/request/v20140526/DescribeInstanceTypesRequest.py
 aliyunsdkecs/request/v20140526/DescribeInstanceVncPasswdRequest.py
 aliyunsdkecs/request/v20140526/DescribeInstanceVncUrlRequest.py
 aliyunsdkecs/request/v20140526/DescribeInstancesRequest.py
+aliyunsdkecs/request/v20140526/DescribeIntranetAttributeKbRequest.py
 aliyunsdkecs/request/v20140526/DescribeInvocationResultsRequest.py
 aliyunsdkecs/request/v20140526/DescribeInvocationsRequest.py
+aliyunsdkecs/request/v20140526/DescribeIpRangesRequest.py
 aliyunsdkecs/request/v20140526/DescribeKeyPairsRequest.py
 aliyunsdkecs/request/v20140526/DescribeLimitationRequest.py
 aliyunsdkecs/request/v20140526/DescribeNatGatewaysRequest.py
@@ -184,6 +189,7 @@ aliyunsdkecs/request/v20140526/ModifyInstanceNetworkSpecRequest.py
 aliyunsdkecs/request/v20140526/ModifyInstanceSpecRequest.py
 aliyunsdkecs/request/v20140526/ModifyInstanceVncPasswdRequest.py
 aliyunsdkecs/request/v20140526/ModifyInstanceVpcAttributeRequest.py
+aliyunsdkecs/request/v20140526/ModifyIntranetBandwidthKbRequest.py
 aliyunsdkecs/request/v20140526/ModifyNetworkInterfaceAttributeRequest.py
 aliyunsdkecs/request/v20140526/ModifyPhysicalConnectionAttributeRequest.py
 aliyunsdkecs/request/v20140526/ModifyPrepayInstanceSpecRequest.py
@@ -204,6 +210,7 @@ aliyunsdkecs/request/v20140526/ReInitVolumeRequest.py
 aliyunsdkecs/request/v20140526/RebootInstanceRequest.py
 aliyunsdkecs/request/v20140526/RecoverVirtualBorderRouterRequest.py
 aliyunsdkecs/request/v20140526/ReleaseEipAddressRequest.py
+aliyunsdkecs/request/v20140526/ReleasePublicIpAddressRequest.py
 aliyunsdkecs/request/v20140526/RemoveBandwidthPackageIpsRequest.py
 aliyunsdkecs/request/v20140526/RemoveTagsRequest.py
 aliyunsdkecs/request/v20140526/RenewInstanceRequest.py
@@ -214,6 +221,7 @@ aliyunsdkecs/request/v20140526/ResizeVolumeRequest.py
 aliyunsdkecs/request/v20140526/RevokeSecurityGroupEgressRequest.py
 aliyunsdkecs/request/v20140526/RevokeSecurityGroupRequest.py
 aliyunsdkecs/request/v20140526/RollbackVolumeRequest.py
+aliyunsdkecs/request/v20140526/RunInstancesRequest.py
 aliyunsdkecs/request/v20140526/SignAgreementRequest.py
 aliyunsdkecs/request/v20140526/StartInstanceRequest.py
 aliyunsdkecs/request/v20140526/StopInstanceRequest.py
@@ -222,4 +230,5 @@ aliyunsdkecs/request/v20140526/TerminatePhysicalConnectionRequest.py
 aliyunsdkecs/request/v20140526/TerminateVirtualBorderRouterRequest.py
 aliyunsdkecs/request/v20140526/UnassociateEipAddressRequest.py
 aliyunsdkecs/request/v20140526/UnassociateHaVipRequest.py
+aliyunsdkecs/request/v20140526/UnbindIpRangeRequest.py
 aliyunsdkecs/request/v20140526/__init__.py

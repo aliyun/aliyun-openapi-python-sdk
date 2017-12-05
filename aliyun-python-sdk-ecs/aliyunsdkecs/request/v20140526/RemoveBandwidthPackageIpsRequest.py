@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class RemoveBandwidthPackageIpsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'RemoveBandwidthPackageIps')
+		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'RemoveBandwidthPackageIps','ecs')
 
 	def get_RemovedIpAddressess(self):
 		return self.get_query_params().get('RemovedIpAddressess')

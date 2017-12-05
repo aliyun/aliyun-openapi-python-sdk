@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class CreateDiskRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'CreateDisk')
+		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'CreateDisk','ecs')
 
 	def get_Tag4Value(self):
 		return self.get_query_params().get('Tag.4.Value')

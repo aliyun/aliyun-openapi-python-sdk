@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class CreateVpcRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'CreateVpc')
+		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'CreateVpc','ecs')
 
 	def get_VpcName(self):
 		return self.get_query_params().get('VpcName')

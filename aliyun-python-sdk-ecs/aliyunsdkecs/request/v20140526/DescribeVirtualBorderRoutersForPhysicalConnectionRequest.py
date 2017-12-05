@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class DescribeVirtualBorderRoutersForPhysicalConnectionRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'DescribeVirtualBorderRoutersForPhysicalConnection')
+		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'DescribeVirtualBorderRoutersForPhysicalConnection','ecs')
 
 	def get_Filters(self):
 		return self.get_query_params().get('Filters')

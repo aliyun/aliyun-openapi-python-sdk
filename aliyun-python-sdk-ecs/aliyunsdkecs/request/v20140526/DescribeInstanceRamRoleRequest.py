@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class DescribeInstanceRamRoleRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'DescribeInstanceRamRole')
+		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'DescribeInstanceRamRole','ecs')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -41,8 +41,26 @@ class DescribeInstanceRamRoleRequest(RpcRequest):
 	def set_InstanceIds(self,InstanceIds):
 		self.add_query_param('InstanceIds',InstanceIds)
 
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
+
+	def get_RamRoleName(self):
+		return self.get_query_params().get('RamRoleName')
+
+	def set_RamRoleName(self,RamRoleName):
+		self.add_query_param('RamRoleName',RamRoleName)
+
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_PageNumber(self):
+		return self.get_query_params().get('PageNumber')
+
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)

@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class RollbackVolumeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'RollbackVolume')
+		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'RollbackVolume','ecs')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')

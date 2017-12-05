@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class RevokeSecurityGroupRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'RevokeSecurityGroup')
+		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'RevokeSecurityGroup','ecs')
 
 	def get_NicType(self):
 		return self.get_query_params().get('NicType')

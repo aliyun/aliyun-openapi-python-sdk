@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class CheckAutoSnapshotPolicyRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'CheckAutoSnapshotPolicy')
+		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'CheckAutoSnapshotPolicy','ecs')
 
 	def get_DataDiskPolicyEnabled(self):
 		return self.get_query_params().get('DataDiskPolicyEnabled')

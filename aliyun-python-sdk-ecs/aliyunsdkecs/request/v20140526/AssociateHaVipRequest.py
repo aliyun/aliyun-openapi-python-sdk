@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class AssociateHaVipRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'AssociateHaVip')
+		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'AssociateHaVip','ecs')
 
 	def get_HaVipId(self):
 		return self.get_query_params().get('HaVipId')

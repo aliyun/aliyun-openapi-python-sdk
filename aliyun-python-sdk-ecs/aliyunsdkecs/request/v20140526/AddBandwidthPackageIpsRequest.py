@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class AddBandwidthPackageIpsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'AddBandwidthPackageIps')
+		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'AddBandwidthPackageIps','ecs')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')

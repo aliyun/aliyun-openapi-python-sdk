@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class CreateHaVipRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'CreateHaVip')
+		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'CreateHaVip','ecs')
 
 	def get_VSwitchId(self):
 		return self.get_query_params().get('VSwitchId')

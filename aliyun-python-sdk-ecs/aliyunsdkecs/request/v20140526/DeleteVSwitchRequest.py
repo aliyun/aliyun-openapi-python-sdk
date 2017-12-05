@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class DeleteVSwitchRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'DeleteVSwitch')
+		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'DeleteVSwitch','ecs')
 
 	def get_VSwitchId(self):
 		return self.get_query_params().get('VSwitchId')
