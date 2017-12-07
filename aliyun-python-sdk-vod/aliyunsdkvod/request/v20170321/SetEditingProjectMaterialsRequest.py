@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class SetEditingProjectMaterialsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'vod', '2017-03-21', 'SetEditingProjectMaterials','vod')
+		RpcRequest.__init__(self, 'vod', '2017-03-21', 'SetEditingProjectMaterials')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
