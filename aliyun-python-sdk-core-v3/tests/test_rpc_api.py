@@ -22,14 +22,10 @@
 import configparser
 import json
 import os
-import sys
 
 from aliyunsdkcore.client import AcsClient
 from aliyunsdkcore.profile import region_provider
 from .ft import TestRpcApiRequest
-
-parent_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-sys.path.insert(0, parent_dir)
 
 queryParam = "queryParam"
 bodyParam = "bodyContent"

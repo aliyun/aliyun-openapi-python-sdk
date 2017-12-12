@@ -264,7 +264,11 @@ class RpcRequest(AcsRequest):
         return url
 
     def get_signed_header(self, region_id=None, ak=None, secret=None):
-        return {}
+        headers = {}
+        for headerKey, headerValue in self.get_headers().items():
+            if headerKey.startswith("x-acs-") or headerKey.startswith("x-sdk-"):
+                headers[headerKey] = headerValue
+        return headers
 
 
 class RoaRequest(AcsRequest):

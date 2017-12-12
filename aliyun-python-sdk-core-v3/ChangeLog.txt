@@ -1,3 +1,7 @@
+2017-12-12 Version: 2.5.3
+1, remove bad smell codes
+2, bugfix: the invoke-type metric will lost while send rpc request with common api
+
 2017-11-02 Version: 2.5.2
 1, 修复了某些情况下会出现签名异常的bug
 
