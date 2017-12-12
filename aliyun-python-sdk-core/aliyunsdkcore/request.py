@@ -22,9 +22,6 @@
 import os
 import sys
 
-parent_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-sys.path.insert(0, parent_dir)
-
 from .http import protocol_type
 from .http import method_type as mt
 from .http import format_type as ft
@@ -36,7 +33,6 @@ from aliyunsdkcore.auth.algorithm import sha_hmac1
 from aliyunsdkcore.acs_exception import exceptions
 from aliyunsdkcore.acs_exception import error_code
 import abc
-import base64
 
 """
 Acs request model.
@@ -294,7 +290,11 @@ class RpcRequest(AcsRequest):
         return url
 
     def get_signed_header(self, region_id=None, ak=None, secret=None):
-        return {}
+        headers = {}
+        for headerKey, headerValue in self.get_headers().items():
+            if headerKey.startswith("x-acs-") or headerKey.startswith("x-sdk-"):
+                headers[headerKey] = headerValue
+        return headers
 
 
 class RoaRequest(AcsRequest):

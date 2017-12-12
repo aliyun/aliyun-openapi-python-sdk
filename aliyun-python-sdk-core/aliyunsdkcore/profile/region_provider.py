@@ -20,12 +20,9 @@
 # coding=utf-8
 
 import os
-import sys
 
-parent_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-sys.path.insert(0, parent_dir)
-from acs_exception import error_code, error_msg
-from acs_exception.exceptions import ClientException
+from aliyunsdkcore.acs_exception import error_code, error_msg
+from aliyunsdkcore.acs_exception.exceptions import ClientException
 from xml.dom.minidom import parse
 from ..profile import location_service
 
@@ -41,6 +38,7 @@ Created on 6/12/2015
 __endpoints = dict()
 
 # load endpoints info from endpoints.xml file and parse to dict.
+parent_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 __endpoints_file = os.path.join(parent_dir, 'endpoints.xml')
 try:
     DOMTree = parse(__endpoints_file)

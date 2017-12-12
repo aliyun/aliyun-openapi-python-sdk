@@ -29,9 +29,6 @@ from aliyunsdkcore.profile import region_provider
 from aliyunsdkcore.http import format_type
 from .ft import TestRoaApiRequest
 
-parent_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-sys.path.insert(0, parent_dir)
-
 headerParam = "hdParam"
 queryParam = "queryParam"
 bodyParam = "bodyContent"

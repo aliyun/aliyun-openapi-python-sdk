@@ -17,12 +17,6 @@
 
 # coding=utf-8
 
-__author__ = 'alex jiang'
-import os
-import sys
-
-parentdir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-sys.path.insert(0, parentdir)
 from aliyunsdkcore.auth.algorithm import sha_hmac1 as mac1
 import urllib
 from aliyunsdkcore.utils import parameter_helper as helper

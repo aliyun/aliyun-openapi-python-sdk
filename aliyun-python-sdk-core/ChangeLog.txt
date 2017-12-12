@@ -1,3 +1,7 @@
+2017-12-12 Version: 2.6.1
+1, remove bad smell codes
+2, bugfix: the invoke-type metric will lost while send rpc request with common api
+
 2017-11-18 Version: 2.6.0
 1, 修正了一处不规范的try-catch语句。
 2, 增加了HTTP/HTTPS协议的全局默认设置接口。

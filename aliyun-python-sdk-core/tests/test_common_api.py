@@ -20,7 +20,6 @@
 # coding=utf-8
 
 import os
-import sys
 import json
 import ConfigParser
 
@@ -29,9 +28,6 @@ from aliyunsdkcore.profile import region_provider
 from aliyunsdkcore.http import format_type
 from aliyunsdkcore.request import CommonRequest
 from aliyunsdkcore.acs_exception import exceptions
-
-parent_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-sys.path.insert(0, parent_dir)
 
 cf = ConfigParser.ConfigParser()
 config_file = os.path.expanduser('~') + "/aliyun-sdk.ini"
