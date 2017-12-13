@@ -35,6 +35,12 @@ class UpdateAlarmRequest(RpcRequest):
 	def set_Period(self,Period):
 		self.add_query_param('Period',Period)
 
+	def get_Webhook(self):
+		return self.get_query_params().get('Webhook')
+
+	def set_Webhook(self,Webhook):
+		self.add_query_param('Webhook',Webhook)
+
 	def get_ContactGroups(self):
 		return self.get_query_params().get('ContactGroups')
 

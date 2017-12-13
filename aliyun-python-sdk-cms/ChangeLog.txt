@@ -1,3 +1,7 @@
+2017-12-13 Version: 5.0.7
+1, Add DescribeHistory API
+2, Add Webhook for Alarm's API
+
 2017-12-04 Version: 5.0.5
 1, Add webhook
 2, Include CreateAlarm,UpdateAlarm,ListAlarm
