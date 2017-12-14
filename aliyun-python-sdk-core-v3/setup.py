@@ -59,7 +59,7 @@ setup(
     python_requires='>=3',
     platforms='any',
     install_requires=[
-        'pycrypto>=2.6.1'
+        'pycryptodome>=3.4.7'
     ],
     classifiers=(
         'Development Status :: 5 - Production/Stable',
