@@ -68,9 +68,7 @@ setup(
     include_package_data=True,
     python_requires='>=3',
     platforms='any',
-    install_requires=[
-        'pycrypto>=2.6.1'
-    ],
+    install_requires=requires,
     classifiers=(
         'Development Status :: 5 - Production/Stable',
         'Intended Audience :: Developers',
