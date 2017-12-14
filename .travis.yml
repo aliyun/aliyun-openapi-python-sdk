@@ -14,4 +14,3 @@ python:
 script:
   - if [[ $TRAVIS_PYTHON_VERSION == 2.6 ]]; then cd aliyun-python-sdk-core; else cd aliyun-python-sdk-core-v3; fi
   - python setup.py install
-  - pytest tests
