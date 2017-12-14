@@ -1,3 +1,7 @@
+2017-12-14 Version: 5.0.8
+1, Fixed DescribeAlarmHistory subuser access probelm
+2, Add both api, PutSystemEvent and PutCustomMetric
+
 2017-12-13 Version: 5.0.7
 1, Add DescribeHistory API
 2, Add Webhook for Alarm's API

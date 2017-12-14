@@ -18,19 +18,13 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class ProfileSetRequest(RpcRequest):
+class PutSystemEventRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cms', '2017-03-01', 'ProfileSet','cms')
+		RpcRequest.__init__(self, 'Cms', '2017-03-01', 'PutSystemEvent','cms')
 
-	def get_AutoInstall(self):
-		return self.get_query_params().get('AutoInstall')
+	def get_EventInfo(self):
+		return self.get_query_params().get('EventInfo')
 
-	def set_AutoInstall(self,AutoInstall):
-		self.add_query_param('AutoInstall',AutoInstall)
-
-	def get_UserId(self):
-		return self.get_query_params().get('UserId')
-
-	def set_UserId(self,UserId):
-		self.add_query_param('UserId',UserId)
+	def set_EventInfo(self,EventInfo):
+		self.add_query_param('EventInfo',EventInfo)

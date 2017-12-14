@@ -18,31 +18,31 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class DeleteNotifyPolicyRequest(RpcRequest):
+class DeleteCustomMetricRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cms', '2017-03-01', 'DeleteNotifyPolicy','cms')
+		RpcRequest.__init__(self, 'Cms', '2017-03-01', 'DeleteCustomMetric','cms')
 
-	def get_PolicyType(self):
-		return self.get_query_params().get('PolicyType')
+	def get_GroupId(self):
+		return self.get_query_params().get('GroupId')
 
-	def set_PolicyType(self,PolicyType):
-		self.add_query_param('PolicyType',PolicyType)
+	def set_GroupId(self,GroupId):
+		self.add_query_param('GroupId',GroupId)
 
-	def get_AlertName(self):
-		return self.get_query_params().get('AlertName')
+	def get_MetricName(self):
+		return self.get_query_params().get('MetricName')
 
-	def set_AlertName(self,AlertName):
-		self.add_query_param('AlertName',AlertName)
+	def set_MetricName(self,MetricName):
+		self.add_query_param('MetricName',MetricName)
 
-	def get_Id(self):
-		return self.get_query_params().get('Id')
+	def get_UUID(self):
+		return self.get_query_params().get('UUID')
 
-	def set_Id(self,Id):
-		self.add_query_param('Id',Id)
+	def set_UUID(self,UUID):
+		self.add_query_param('UUID',UUID)
 
-	def get_Dimensions(self):
-		return self.get_query_params().get('Dimensions')
+	def get_Md5(self):
+		return self.get_query_params().get('Md5')
 
-	def set_Dimensions(self,Dimensions):
-		self.add_query_param('Dimensions',Dimensions)
+	def set_Md5(self,Md5):
+		self.add_query_param('Md5',Md5)

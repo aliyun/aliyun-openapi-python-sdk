@@ -23,12 +23,6 @@ class DescribeAlarmHistoryRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Cms', '2017-03-01', 'DescribeAlarmHistory','cms')
 
-	def get_callby_cms_owner(self):
-		return self.get_query_params().get('callby_cms_owner')
-
-	def set_callby_cms_owner(self,callby_cms_owner):
-		self.add_query_param('callby_cms_owner',callby_cms_owner)
-
 	def get_AlertName(self):
 		return self.get_query_params().get('AlertName')
 
@@ -83,35 +77,23 @@ class DescribeAlarmHistoryRequest(RpcRequest):
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
 
-	def get_Id(self):
-		return self.get_query_params().get('Id')
-
-	def set_Id(self,Id):
-		self.add_query_param('Id',Id)
-
 	def get_State(self):
 		return self.get_query_params().get('State')
 
 	def set_State(self,State):
 		self.add_query_param('State',State)
 
-	def get_page(self):
-		return self.get_query_params().get('page')
+	def get_Page(self):
+		return self.get_query_params().get('Page')
 
-	def set_page(self,page):
-		self.add_query_param('page',page)
+	def set_Page(self,Page):
+		self.add_query_param('Page',Page)
 
 	def get_MetricName(self):
 		return self.get_query_params().get('MetricName')
 
 	def set_MetricName(self,MetricName):
 		self.add_query_param('MetricName',MetricName)
-
-	def get_Dimensions(self):
-		return self.get_query_params().get('Dimensions')
-
-	def set_Dimensions(self,Dimensions):
-		self.add_query_param('Dimensions',Dimensions)
 
 	def get_Status(self):
 		return self.get_query_params().get('Status')
