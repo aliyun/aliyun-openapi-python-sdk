@@ -1,3 +1,6 @@
+2017-12-14 Version: 2.6.2
+1, disable [publicKeyId] auth type in Windows because 'pycrypto' is not supported
+
 2017-12-12 Version: 2.6.1
 1, remove bad smell codes
 2, bugfix: the invoke-type metric will lost while send rpc request with common api

@@ -17,21 +17,29 @@
 
 # coding=utf-8
 
-import urllib
 import base64
-from Crypto.Signature import PKCS1_v1_5
-from Crypto.Hash import SHA256
-from Crypto.PublicKey import RSA
+import platform
+from aliyunsdkcore.acs_exception import exceptions
+from aliyunsdkcore.acs_exception import error_code
 
 
 def get_sign_string(source, access_secret):
-    secret = base64.decodestring(access_secret)
-    key = RSA.importKey(secret)
-    h = SHA256.new(source)
-    signer = PKCS1_v1_5.new(key)
-    signed_bytes = signer.sign(h)
-    signature = base64.encodestring(signed_bytes).replace('\n', '')
-    return signature
+    if platform.system() != "Windows":
+        from Crypto.Signature import PKCS1_v1_5
+        from Crypto.Hash import SHA256
+        from Crypto.PublicKey import RSA
+
+        secret = base64.decodestring(access_secret)
+        key = RSA.importKey(secret)
+        h = SHA256.new(source)
+        signer = PKCS1_v1_5.new(key)
+        signed_bytes = signer.sign(h)
+        signature = base64.encodestring(signed_bytes).replace('\n', '')
+        return signature
+    else:
+        message = "uth type [publicKeyId] is disabled in Windows because 'pycrypto' is not supported," \
+                  " we will resolve this soon"
+        raise exceptions.ClientException(error_code.SDK_NOT_SUPPORT, message)
 
 
 def get_signer_name():

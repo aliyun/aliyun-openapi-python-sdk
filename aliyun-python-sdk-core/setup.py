@@ -20,6 +20,8 @@
 
 from setuptools import setup, find_packages
 import os
+import platform
+import logging
 
 """
 setup module for core.
@@ -44,6 +46,13 @@ try:
 finally:
     desc_file.close()
 
+requires = []
+if platform.system() != "Windows":
+    requires.append("pycrypto>=2.6.1")
+else:
+    logging.warning(
+        "auth type [publicKeyId] is disabled because 'pycrypto' not support windows, we will resolve this soon")
+
 setup(
     name=NAME,
     version=VERSION,
@@ -58,9 +67,7 @@ setup(
     include_package_data=True,
     python_requires='<3',
     platforms='any',
-    install_requires=[
-        'pycrypto>=2.6.1'
-    ],
+    install_requires=requires,
     classifiers=(
         'Development Status :: 5 - Production/Stable',
         'Intended Audience :: Developers',
