@@ -47,6 +47,12 @@ class DeleteInstanceRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
+	def get_TerminateSubscription(self):
+		return self.get_query_params().get('TerminateSubscription')
+
+	def set_TerminateSubscription(self,TerminateSubscription):
+		self.add_query_param('TerminateSubscription',TerminateSubscription)
+
 	def get_Force(self):
 		return self.get_query_params().get('Force')
 
