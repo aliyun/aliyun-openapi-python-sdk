@@ -40,3 +40,9 @@ class GetUserInfoRequest(RpcRequest):
 
 	def set_User(self,User):
 		self.add_query_param('User',User)
+
+	def get_Status(self):
+		return self.get_query_params().get('Status')
+
+	def set_Status(self,Status):
+		self.add_query_param('Status',Status)
