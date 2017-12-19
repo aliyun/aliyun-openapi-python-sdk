@@ -43,3 +43,9 @@ class InactivatePhotosRequest(RpcRequest):
 
 	def set_StoreName(self,StoreName):
 		self.add_query_param('StoreName',StoreName)
+
+	def get_InactiveTime(self):
+		return self.get_query_params().get('InactiveTime')
+
+	def set_InactiveTime(self,InactiveTime):
+		self.add_query_param('InactiveTime',InactiveTime)

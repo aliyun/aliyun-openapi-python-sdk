@@ -18,17 +18,11 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class ListTagsRequest(RpcRequest):
+class ListRegisteredTagsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'CloudPhoto', '2017-07-11', 'ListTags','cloudphoto')
+		RpcRequest.__init__(self, 'CloudPhoto', '2017-07-11', 'ListRegisteredTags','cloudphoto')
 		self.set_protocol_type('https');
-
-	def get_LibraryId(self):
-		return self.get_query_params().get('LibraryId')
-
-	def set_LibraryId(self,LibraryId):
-		self.add_query_param('LibraryId',LibraryId)
 
 	def get_StoreName(self):
 		return self.get_query_params().get('StoreName')
@@ -36,8 +30,10 @@ class ListTagsRequest(RpcRequest):
 	def set_StoreName(self,StoreName):
 		self.add_query_param('StoreName',StoreName)
 
-	def get_Lang(self):
-		return self.get_query_params().get('Lang')
+	def get_Langs(self):
+		return self.get_query_params().get('Langs')
 
-	def set_Lang(self,Lang):
-		self.add_query_param('Lang',Lang)
+	def set_Langs(self,Langs):
+		for i in range(len(Langs)):	
+			if Langs[i] is not None:
+				self.add_query_param('Lang.' + bytes(i + 1) , Langs[i]);

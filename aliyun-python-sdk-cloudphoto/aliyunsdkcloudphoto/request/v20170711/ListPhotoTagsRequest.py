@@ -41,3 +41,9 @@ class ListPhotoTagsRequest(RpcRequest):
 
 	def set_StoreName(self,StoreName):
 		self.add_query_param('StoreName',StoreName)
+
+	def get_Lang(self):
+		return self.get_query_params().get('Lang')
+
+	def set_Lang(self,Lang):
+		self.add_query_param('Lang',Lang)

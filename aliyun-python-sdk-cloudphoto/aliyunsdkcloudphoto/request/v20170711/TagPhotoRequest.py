@@ -18,10 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class ListTagsRequest(RpcRequest):
+class TagPhotoRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'CloudPhoto', '2017-07-11', 'ListTags','cloudphoto')
+		RpcRequest.__init__(self, 'CloudPhoto', '2017-07-11', 'TagPhoto','cloudphoto')
 		self.set_protocol_type('https');
 
 	def get_LibraryId(self):
@@ -30,14 +30,30 @@ class ListTagsRequest(RpcRequest):
 	def set_LibraryId(self,LibraryId):
 		self.add_query_param('LibraryId',LibraryId)
 
+	def get_Confidences(self):
+		return self.get_query_params().get('Confidences')
+
+	def set_Confidences(self,Confidences):
+		for i in range(len(Confidences)):	
+			if Confidences[i] is not None:
+				self.add_query_param('Confidence.' + bytes(i + 1) , Confidences[i]);
+
 	def get_StoreName(self):
 		return self.get_query_params().get('StoreName')
 
 	def set_StoreName(self,StoreName):
 		self.add_query_param('StoreName',StoreName)
 
-	def get_Lang(self):
-		return self.get_query_params().get('Lang')
+	def get_PhotoId(self):
+		return self.get_query_params().get('PhotoId')
 
-	def set_Lang(self,Lang):
-		self.add_query_param('Lang',Lang)
+	def set_PhotoId(self,PhotoId):
+		self.add_query_param('PhotoId',PhotoId)
+
+	def get_TagKeys(self):
+		return self.get_query_params().get('TagKeys')
+
+	def set_TagKeys(self,TagKeys):
+		for i in range(len(TagKeys)):	
+			if TagKeys[i] is not None:
+				self.add_query_param('TagKey.' + bytes(i + 1) , TagKeys[i]);

@@ -18,23 +18,29 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class ListTagsRequest(RpcRequest):
+class RegisterTagRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'CloudPhoto', '2017-07-11', 'ListTags','cloudphoto')
+		RpcRequest.__init__(self, 'CloudPhoto', '2017-07-11', 'RegisterTag','cloudphoto')
 		self.set_protocol_type('https');
-
-	def get_LibraryId(self):
-		return self.get_query_params().get('LibraryId')
-
-	def set_LibraryId(self,LibraryId):
-		self.add_query_param('LibraryId',LibraryId)
 
 	def get_StoreName(self):
 		return self.get_query_params().get('StoreName')
 
 	def set_StoreName(self,StoreName):
 		self.add_query_param('StoreName',StoreName)
+
+	def get_Text(self):
+		return self.get_query_params().get('Text')
+
+	def set_Text(self,Text):
+		self.add_query_param('Text',Text)
+
+	def get_TagKey(self):
+		return self.get_query_params().get('TagKey')
+
+	def set_TagKey(self,TagKey):
+		self.add_query_param('TagKey',TagKey)
 
 	def get_Lang(self):
 		return self.get_query_params().get('Lang')
