@@ -18,10 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class DescribeDomainFlowDataRequest(RpcRequest):
+class ListLiveRecordVideoRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'vod', '2017-03-21', 'DescribeDomainFlowData','vod')
+		RpcRequest.__init__(self, 'vod', '2017-03-21', 'ListLiveRecordVideo','vod')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -35,18 +35,6 @@ class DescribeDomainFlowDataRequest(RpcRequest):
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
-	def get_TimeMerge(self):
-		return self.get_query_params().get('TimeMerge')
-
-	def set_TimeMerge(self,TimeMerge):
-		self.add_query_param('TimeMerge',TimeMerge)
-
-	def get_OwnerAccount(self):
-		return self.get_query_params().get('OwnerAccount')
-
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
-
 	def get_DomainName(self):
 		return self.get_query_params().get('DomainName')
 
@@ -59,23 +47,11 @@ class DescribeDomainFlowDataRequest(RpcRequest):
 	def set_EndTime(self,EndTime):
 		self.add_query_param('EndTime',EndTime)
 
-	def get_LocationNameEn(self):
-		return self.get_query_params().get('LocationNameEn')
-
-	def set_LocationNameEn(self,LocationNameEn):
-		self.add_query_param('LocationNameEn',LocationNameEn)
-
 	def get_StartTime(self):
 		return self.get_query_params().get('StartTime')
 
 	def set_StartTime(self,StartTime):
 		self.add_query_param('StartTime',StartTime)
-
-	def get_IspNameEn(self):
-		return self.get_query_params().get('IspNameEn')
-
-	def set_IspNameEn(self,IspNameEn):
-		self.add_query_param('IspNameEn',IspNameEn)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
@@ -83,8 +59,38 @@ class DescribeDomainFlowDataRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_Interval(self):
-		return self.get_query_params().get('Interval')
+	def get_AppName(self):
+		return self.get_query_params().get('AppName')
 
-	def set_Interval(self,Interval):
-		self.add_query_param('Interval',Interval)
+	def set_AppName(self,AppName):
+		self.add_query_param('AppName',AppName)
+
+	def get_PageNo(self):
+		return self.get_query_params().get('PageNo')
+
+	def set_PageNo(self,PageNo):
+		self.add_query_param('PageNo',PageNo)
+
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
+
+	def get_SortBy(self):
+		return self.get_query_params().get('SortBy')
+
+	def set_SortBy(self,SortBy):
+		self.add_query_param('SortBy',SortBy)
+
+	def get_StreamName(self):
+		return self.get_query_params().get('StreamName')
+
+	def set_StreamName(self,StreamName):
+		self.add_query_param('StreamName',StreamName)
+
+	def get_QueryType(self):
+		return self.get_query_params().get('QueryType')
+
+	def set_QueryType(self,QueryType):
+		self.add_query_param('QueryType',QueryType)

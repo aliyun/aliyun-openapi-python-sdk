@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class DeleteCategoryRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'vod', '2017-03-21', 'DeleteCategory')
+		RpcRequest.__init__(self, 'vod', '2017-03-21', 'DeleteCategory','vod')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -40,12 +40,6 @@ class DeleteCategoryRequest(RpcRequest):
 
 	def set_CateId(self,CateId):
 		self.add_query_param('CateId',CateId)
-
-	def get_OwnerAccount(self):
-		return self.get_query_params().get('OwnerAccount')
-
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')

@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class ProduceEditingProjectVideoRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'vod', '2017-03-21', 'ProduceEditingProjectVideo')
+		RpcRequest.__init__(self, 'vod', '2017-03-21', 'ProduceEditingProjectVideo','vod')
 
 	def get_CoverURL(self):
 		return self.get_query_params().get('CoverURL')
