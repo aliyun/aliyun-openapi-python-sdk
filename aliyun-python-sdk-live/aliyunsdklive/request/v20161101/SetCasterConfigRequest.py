@@ -23,35 +23,11 @@ class SetCasterConfigRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'live', '2016-11-01', 'SetCasterConfig')
 
-	def get_UrgentMaterialId(self):
-		return self.get_query_params().get('UrgentMaterialId')
+	def get_SideOutputUrl(self):
+		return self.get_query_params().get('SideOutputUrl')
 
-	def set_UrgentMaterialId(self,UrgentMaterialId):
-		self.add_query_param('UrgentMaterialId',UrgentMaterialId)
-
-	def get_TranscodeConfig(self):
-		return self.get_query_params().get('TranscodeConfig')
-
-	def set_TranscodeConfig(self,TranscodeConfig):
-		self.add_query_param('TranscodeConfig',TranscodeConfig)
-
-	def get_Delay(self):
-		return self.get_query_params().get('Delay')
-
-	def set_Delay(self,Delay):
-		self.add_query_param('Delay',Delay)
-
-	def get_SecurityToken(self):
-		return self.get_query_params().get('SecurityToken')
-
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)
-
-	def get_CasterName(self):
-		return self.get_query_params().get('CasterName')
-
-	def set_CasterName(self,CasterName):
-		self.add_query_param('CasterName',CasterName)
+	def set_SideOutputUrl(self,SideOutputUrl):
+		self.add_query_param('SideOutputUrl',SideOutputUrl)
 
 	def get_CasterId(self):
 		return self.get_query_params().get('CasterId')
@@ -82,3 +58,39 @@ class SetCasterConfigRequest(RpcRequest):
 
 	def set_RecordConfig(self,RecordConfig):
 		self.add_query_param('RecordConfig',RecordConfig)
+
+	def get_UrgentMaterialId(self):
+		return self.get_query_params().get('UrgentMaterialId')
+
+	def set_UrgentMaterialId(self,UrgentMaterialId):
+		self.add_query_param('UrgentMaterialId',UrgentMaterialId)
+
+	def get_TranscodeConfig(self):
+		return self.get_query_params().get('TranscodeConfig')
+
+	def set_TranscodeConfig(self,TranscodeConfig):
+		self.add_query_param('TranscodeConfig',TranscodeConfig)
+
+	def get_Delay(self):
+		return self.get_query_params().get('Delay')
+
+	def set_Delay(self,Delay):
+		self.add_query_param('Delay',Delay)
+
+	def get_SecurityToken(self):
+		return self.get_query_params().get('SecurityToken')
+
+	def set_SecurityToken(self,SecurityToken):
+		self.add_query_param('SecurityToken',SecurityToken)
+
+	def get_CasterName(self):
+		return self.get_query_params().get('CasterName')
+
+	def set_CasterName(self,CasterName):
+		self.add_query_param('CasterName',CasterName)
+
+	def get_CallbackUrl(self):
+		return self.get_query_params().get('CallbackUrl')
+
+	def set_CallbackUrl(self,CallbackUrl):
+		self.add_query_param('CallbackUrl',CallbackUrl)
