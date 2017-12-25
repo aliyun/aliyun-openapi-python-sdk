@@ -143,6 +143,12 @@ class DescribeDisksRequest(RpcRequest):
 	def set_EnableAutoSnapshot(self,EnableAutoSnapshot):
 		self.add_query_param('EnableAutoSnapshot',EnableAutoSnapshot)
 
+	def get_DryRun(self):
+		return self.get_query_params().get('DryRun')
+
+	def set_DryRun(self,DryRun):
+		self.add_query_param('DryRun',DryRun)
+
 	def get_Tag5Key(self):
 		return self.get_query_params().get('Tag.5.Key')
 

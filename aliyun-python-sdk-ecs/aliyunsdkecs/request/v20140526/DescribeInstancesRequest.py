@@ -113,6 +113,12 @@ class DescribeInstancesRequest(RpcRequest):
 	def set_Filter3Value(self,Filter3Value):
 		self.add_query_param('Filter.3.Value',Filter3Value)
 
+	def get_DryRun(self):
+		return self.get_query_params().get('DryRun')
+
+	def set_DryRun(self,DryRun):
+		self.add_query_param('DryRun',DryRun)
+
 	def get_Tag5Key(self):
 		return self.get_query_params().get('Tag.5.Key')
 
