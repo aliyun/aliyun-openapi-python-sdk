@@ -18,18 +18,18 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class DeleteServiceRequest(RpcRequest):
+class UpdateServiceQPSRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'CSB', '2017-11-18', 'DeleteService','CSB')
+		RpcRequest.__init__(self, 'CSB', '2017-11-18', 'UpdateServiceQPS','CSB')
 		self.set_protocol_type('https');
 		self.set_method('POST')
 
-	def get_ServiceName(self):
-		return self.get_query_params().get('ServiceName')
+	def get_Qps(self):
+		return self.get_query_params().get('Qps')
 
-	def set_ServiceName(self,ServiceName):
-		self.add_query_param('ServiceName',ServiceName)
+	def set_Qps(self,Qps):
+		self.add_query_param('Qps',Qps)
 
 	def get_ServiceId(self):
 		return self.get_query_params().get('ServiceId')

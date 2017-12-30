@@ -22,6 +22,7 @@ class CreateServiceRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'CSB', '2017-11-18', 'CreateService','CSB')
+		self.set_protocol_type('https');
 		self.set_method('POST')
 
 	def get_Data(self):

@@ -18,21 +18,21 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class DeleteServiceRequest(RpcRequest):
+class UpdateServiceListStatusRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'CSB', '2017-11-18', 'DeleteService','CSB')
+		RpcRequest.__init__(self, 'CSB', '2017-11-18', 'UpdateServiceListStatus','CSB')
 		self.set_protocol_type('https');
 		self.set_method('POST')
 
-	def get_ServiceName(self):
-		return self.get_query_params().get('ServiceName')
+	def get_Data(self):
+		return self.get_body_params().get('Data')
 
-	def set_ServiceName(self,ServiceName):
-		self.add_query_param('ServiceName',ServiceName)
+	def set_Data(self,Data):
+		self.add_body_params('Data', Data)
 
-	def get_ServiceId(self):
-		return self.get_query_params().get('ServiceId')
+	def get_CsbId(self):
+		return self.get_query_params().get('CsbId')
 
-	def set_ServiceId(self,ServiceId):
-		self.add_query_param('ServiceId',ServiceId)
+	def set_CsbId(self,CsbId):
+		self.add_query_param('CsbId',CsbId)
