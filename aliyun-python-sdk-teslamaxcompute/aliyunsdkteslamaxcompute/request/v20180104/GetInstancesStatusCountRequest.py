@@ -18,31 +18,19 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class GetUserInstanceRequest(RpcRequest):
+class GetInstancesStatusCountRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'TeslaMaxCompute', '2017-11-30', 'GetUserInstance')
+		RpcRequest.__init__(self, 'TeslaMaxCompute', '2018-01-04', 'GetInstancesStatusCount')
 
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
+	def get_Cluster(self):
+		return self.get_query_params().get('Cluster')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
+	def set_Cluster(self,Cluster):
+		self.add_query_param('Cluster',Cluster)
 
-	def get_PageNum(self):
-		return self.get_query_params().get('PageNum')
+	def get_Region(self):
+		return self.get_query_params().get('Region')
 
-	def set_PageNum(self,PageNum):
-		self.add_query_param('PageNum',PageNum)
-
-	def get_User(self):
-		return self.get_query_params().get('User')
-
-	def set_User(self,User):
-		self.add_query_param('User',User)
-
-	def get_Status(self):
-		return self.get_query_params().get('Status')
-
-	def set_Status(self,Status):
-		self.add_query_param('Status',Status)
+	def set_Region(self,Region):
+		self.add_query_param('Region',Region)

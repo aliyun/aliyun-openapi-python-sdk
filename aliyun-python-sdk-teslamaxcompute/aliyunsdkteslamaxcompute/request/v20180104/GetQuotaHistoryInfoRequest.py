@@ -18,10 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class GetQuotaInfoRequest(RpcRequest):
+class GetQuotaHistoryInfoRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'TeslaMaxCompute', '2017-11-30', 'GetQuotaInfo')
+		RpcRequest.__init__(self, 'TeslaMaxCompute', '2018-01-04', 'GetQuotaHistoryInfo')
 
 	def get_Cluster(self):
 		return self.get_query_params().get('Cluster')
@@ -29,26 +29,26 @@ class GetQuotaInfoRequest(RpcRequest):
 	def set_Cluster(self,Cluster):
 		self.add_query_param('Cluster',Cluster)
 
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
+	def get_EndTime(self):
+		return self.get_query_params().get('EndTime')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
+	def set_EndTime(self,EndTime):
+		self.add_query_param('EndTime',EndTime)
 
-	def get_QuotaId(self):
-		return self.get_query_params().get('QuotaId')
+	def get_StartTime(self):
+		return self.get_query_params().get('StartTime')
 
-	def set_QuotaId(self,QuotaId):
-		self.add_query_param('QuotaId',QuotaId)
+	def set_StartTime(self,StartTime):
+		self.add_query_param('StartTime',StartTime)
 
-	def get_PageNum(self):
-		return self.get_query_params().get('PageNum')
+	def get_Region(self):
+		return self.get_query_params().get('Region')
 
-	def set_PageNum(self,PageNum):
-		self.add_query_param('PageNum',PageNum)
+	def set_Region(self,Region):
+		self.add_query_param('Region',Region)
 
-	def get_Status(self):
-		return self.get_query_params().get('Status')
+	def get_QuotaName(self):
+		return self.get_query_params().get('QuotaName')
 
-	def set_Status(self,Status):
-		self.add_query_param('Status',Status)
+	def set_QuotaName(self,QuotaName):
+		self.add_query_param('QuotaName',QuotaName)

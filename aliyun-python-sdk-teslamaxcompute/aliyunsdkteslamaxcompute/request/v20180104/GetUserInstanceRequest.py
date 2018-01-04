@@ -18,10 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class GetProjectInstanceRequest(RpcRequest):
+class GetUserInstanceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'TeslaMaxCompute', '2017-11-30', 'GetProjectInstance')
+		RpcRequest.__init__(self, 'TeslaMaxCompute', '2018-01-04', 'GetUserInstance')
 
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
@@ -29,17 +29,23 @@ class GetProjectInstanceRequest(RpcRequest):
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
 
-	def get_Project(self):
-		return self.get_query_params().get('Project')
-
-	def set_Project(self,Project):
-		self.add_query_param('Project',Project)
-
 	def get_PageNum(self):
 		return self.get_query_params().get('PageNum')
 
 	def set_PageNum(self,PageNum):
 		self.add_query_param('PageNum',PageNum)
+
+	def get_Region(self):
+		return self.get_query_params().get('Region')
+
+	def set_Region(self,Region):
+		self.add_query_param('Region',Region)
+
+	def get_User(self):
+		return self.get_query_params().get('User')
+
+	def set_User(self,User):
+		self.add_query_param('User',User)
 
 	def get_Status(self):
 		return self.get_query_params().get('Status')

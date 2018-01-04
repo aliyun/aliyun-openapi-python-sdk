@@ -18,10 +18,16 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class GetProjectInfoRequest(RpcRequest):
+class GetQuotaInstanceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'TeslaMaxCompute', '2017-11-30', 'GetProjectInfo')
+		RpcRequest.__init__(self, 'TeslaMaxCompute', '2018-01-04', 'GetQuotaInstance')
+
+	def get_Cluster(self):
+		return self.get_query_params().get('Cluster')
+
+	def set_Cluster(self,Cluster):
+		self.add_query_param('Cluster',Cluster)
 
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
@@ -29,11 +35,11 @@ class GetProjectInfoRequest(RpcRequest):
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
 
-	def get_Project(self):
-		return self.get_query_params().get('Project')
+	def get_QuotaId(self):
+		return self.get_query_params().get('QuotaId')
 
-	def set_Project(self,Project):
-		self.add_query_param('Project',Project)
+	def set_QuotaId(self,QuotaId):
+		self.add_query_param('QuotaId',QuotaId)
 
 	def get_PageNum(self):
 		return self.get_query_params().get('PageNum')
