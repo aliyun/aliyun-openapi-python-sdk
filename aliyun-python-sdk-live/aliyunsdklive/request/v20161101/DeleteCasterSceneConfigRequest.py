@@ -18,16 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class DeleteLiveAppRecordConfigRequest(RpcRequest):
+class DeleteCasterSceneConfigRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'live', '2016-11-01', 'DeleteLiveAppRecordConfig','live')
-
-	def get_AppName(self):
-		return self.get_query_params().get('AppName')
-
-	def set_AppName(self,AppName):
-		self.add_query_param('AppName',AppName)
+		RpcRequest.__init__(self, 'live', '2016-11-01', 'DeleteCasterSceneConfig','live')
 
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
@@ -35,14 +29,32 @@ class DeleteLiveAppRecordConfigRequest(RpcRequest):
 	def set_SecurityToken(self,SecurityToken):
 		self.add_query_param('SecurityToken',SecurityToken)
 
-	def get_DomainName(self):
-		return self.get_query_params().get('DomainName')
+	def get_CasterId(self):
+		return self.get_query_params().get('CasterId')
 
-	def set_DomainName(self,DomainName):
-		self.add_query_param('DomainName',DomainName)
+	def set_CasterId(self,CasterId):
+		self.add_query_param('CasterId',CasterId)
+
+	def get_SceneId(self):
+		return self.get_query_params().get('SceneId')
+
+	def set_SceneId(self,SceneId):
+		self.add_query_param('SceneId',SceneId)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_Type(self):
+		return self.get_query_params().get('Type')
+
+	def set_Type(self,Type):
+		self.add_query_param('Type',Type)
+
+	def get_Version(self):
+		return self.get_query_params().get('Version')
+
+	def set_Version(self,Version):
+		self.add_query_param('Version',Version)

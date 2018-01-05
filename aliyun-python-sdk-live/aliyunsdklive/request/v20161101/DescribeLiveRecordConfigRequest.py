@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class DescribeLiveRecordConfigRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'live', '2016-11-01', 'DescribeLiveRecordConfig')
+		RpcRequest.__init__(self, 'live', '2016-11-01', 'DescribeLiveRecordConfig','live')
 
 	def get_AppName(self):
 		return self.get_query_params().get('AppName')
