@@ -352,7 +352,7 @@
             <Product><ProductName>oceanbase</ProductName><DomainName>oceanbase.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Workorder</ProductName><DomainName>workorder.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Yundunhsm</ProductName><DomainName>yundunhsm.aliyuncs.com</DomainName></Product>
-            <Product><ProductName>Iot</ProductName><DomainName>iot.cn-shanghai.aliyuncs.com</DomainName></Product>
+            <Product><ProductName>Iot</ProductName><DomainName>iot.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Bss</ProductName><DomainName>bss.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Oms</ProductName><DomainName>oms.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Ubsms</ProductName><DomainName>ubsms.aliyuncs.com</DomainName></Product>
@@ -720,6 +720,10 @@
             <Product><ProductName>Ons</ProductName><DomainName>ons.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Oss</ProductName><DomainName>oss-cn-hangzhou.aliyuncs.com</DomainName></Product>
             <Product><ProductName>YundunDdos</ProductName><DomainName>inner-yundun-ddos.cn-hangzhou.aliyuncs.com</DomainName></Product>
+            <Product><ProductName>Dycdpapi</ProductName><DomainName>dycdpapi.aliyuncs.com</DomainName></Product>
+            <Product><ProductName>Dyvmsapi</ProductName><DomainName>dyvmsapi.aliyuncs.com</DomainName></Product>
+            <Product><ProductName>Dysmsapi</ProductName><DomainName>dysmsapi.aliyuncs.com</DomainName></Product>
+            <Product><ProductName>Dybaseapi</ProductName><DomainName>dybaseapi.aliyuncs.com</DomainName></Product>
         </Products>
     </Endpoint>
     <Endpoint name="cn-beijing-inner">
@@ -1346,4 +1350,5 @@
             <Product><ProductName>Slb</ProductName><DomainName>slb.cn-zhangjiakou.aliyuncs.com</DomainName></Product>
         </Products>
     </Endpoint>
+
 </Endpoints>
