@@ -18,25 +18,19 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class ProfileSetRequest(RpcRequest):
+class AddMyGroupInstancesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cms', '2017-03-01', 'ProfileSet','cms')
+		RpcRequest.__init__(self, 'Cms', '2017-03-01', 'AddMyGroupInstances','cms')
 
-	def get_EnableInstallAgentNewECS(self):
-		return self.get_query_params().get('EnableInstallAgentNewECS')
+	def get_Instances(self):
+		return self.get_query_params().get('Instances')
 
-	def set_EnableInstallAgentNewECS(self,EnableInstallAgentNewECS):
-		self.add_query_param('EnableInstallAgentNewECS',EnableInstallAgentNewECS)
+	def set_Instances(self,Instances):
+		self.add_query_param('Instances',Instances)
 
-	def get_AutoInstall(self):
-		return self.get_query_params().get('AutoInstall')
+	def get_GroupId(self):
+		return self.get_query_params().get('GroupId')
 
-	def set_AutoInstall(self,AutoInstall):
-		self.add_query_param('AutoInstall',AutoInstall)
-
-	def get_UserId(self):
-		return self.get_query_params().get('UserId')
-
-	def set_UserId(self,UserId):
-		self.add_query_param('UserId',UserId)
+	def set_GroupId(self,GroupId):
+		self.add_query_param('GroupId',GroupId)

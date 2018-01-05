@@ -18,25 +18,31 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class ProfileSetRequest(RpcRequest):
+class GetNotifyPolicyRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cms', '2017-03-01', 'ProfileSet','cms')
+		RpcRequest.__init__(self, 'Cms', '2017-03-01', 'GetNotifyPolicy','cms')
 
-	def get_EnableInstallAgentNewECS(self):
-		return self.get_query_params().get('EnableInstallAgentNewECS')
+	def get_PolicyType(self):
+		return self.get_query_params().get('PolicyType')
 
-	def set_EnableInstallAgentNewECS(self,EnableInstallAgentNewECS):
-		self.add_query_param('EnableInstallAgentNewECS',EnableInstallAgentNewECS)
+	def set_PolicyType(self,PolicyType):
+		self.add_query_param('PolicyType',PolicyType)
 
-	def get_AutoInstall(self):
-		return self.get_query_params().get('AutoInstall')
+	def get_AlertName(self):
+		return self.get_query_params().get('AlertName')
 
-	def set_AutoInstall(self,AutoInstall):
-		self.add_query_param('AutoInstall',AutoInstall)
+	def set_AlertName(self,AlertName):
+		self.add_query_param('AlertName',AlertName)
 
-	def get_UserId(self):
-		return self.get_query_params().get('UserId')
+	def get_Id(self):
+		return self.get_query_params().get('Id')
 
-	def set_UserId(self,UserId):
-		self.add_query_param('UserId',UserId)
+	def set_Id(self,Id):
+		self.add_query_param('Id',Id)
+
+	def get_Dimensions(self):
+		return self.get_query_params().get('Dimensions')
+
+	def set_Dimensions(self,Dimensions):
+		self.add_query_param('Dimensions',Dimensions)
