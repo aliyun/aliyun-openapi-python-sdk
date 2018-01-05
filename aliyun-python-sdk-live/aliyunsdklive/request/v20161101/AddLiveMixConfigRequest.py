@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class AddLiveMixConfigRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'live', '2016-11-01', 'AddLiveMixConfig')
+		RpcRequest.__init__(self, 'live', '2016-11-01', 'AddLiveMixConfig','live')
 
 	def get_Template(self):
 		return self.get_query_params().get('Template')

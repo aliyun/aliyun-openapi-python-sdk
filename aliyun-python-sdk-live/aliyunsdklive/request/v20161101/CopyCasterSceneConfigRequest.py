@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class CopyCasterSceneConfigRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'live', '2016-11-01', 'CopyCasterSceneConfig')
+		RpcRequest.__init__(self, 'live', '2016-11-01', 'CopyCasterSceneConfig','live')
 
 	def get_FromSceneId(self):
 		return self.get_query_params().get('FromSceneId')

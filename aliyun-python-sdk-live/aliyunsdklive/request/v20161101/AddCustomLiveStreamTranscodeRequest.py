@@ -18,10 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class AddLiveStreamTranscodeRequest(RpcRequest):
+class AddCustomLiveStreamTranscodeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'live', '2016-11-01', 'AddLiveStreamTranscode','live')
+		RpcRequest.__init__(self, 'live', '2016-11-01', 'AddCustomLiveStreamTranscode','live')
 
 	def get_App(self):
 		return self.get_query_params().get('App')
@@ -35,11 +35,35 @@ class AddLiveStreamTranscodeRequest(RpcRequest):
 	def set_Template(self,Template):
 		self.add_query_param('Template',Template)
 
+	def get_FPS(self):
+		return self.get_query_params().get('FPS')
+
+	def set_FPS(self,FPS):
+		self.add_query_param('FPS',FPS)
+
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
+
+	def get_Version(self):
+		return self.get_query_params().get('Version')
+
+	def set_Version(self,Version):
+		self.add_query_param('Version',Version)
+
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
 
 	def set_SecurityToken(self,SecurityToken):
 		self.add_query_param('SecurityToken',SecurityToken)
+
+	def get_TemplateType(self):
+		return self.get_query_params().get('TemplateType')
+
+	def set_TemplateType(self,TemplateType):
+		self.add_query_param('TemplateType',TemplateType)
 
 	def get_Domain(self):
 		return self.get_query_params().get('Domain')
@@ -47,8 +71,20 @@ class AddLiveStreamTranscodeRequest(RpcRequest):
 	def set_Domain(self,Domain):
 		self.add_query_param('Domain',Domain)
 
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
+	def get_Width(self):
+		return self.get_query_params().get('Width')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
+	def set_Width(self,Width):
+		self.add_query_param('Width',Width)
+
+	def get_VideoBitrate(self):
+		return self.get_query_params().get('VideoBitrate')
+
+	def set_VideoBitrate(self,VideoBitrate):
+		self.add_query_param('VideoBitrate',VideoBitrate)
+
+	def get_Height(self):
+		return self.get_query_params().get('Height')
+
+	def set_Height(self,Height):
+		self.add_query_param('Height',Height)

@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class AddLiveRecordVodConfigRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'live', '2016-11-01', 'AddLiveRecordVodConfig')
+		RpcRequest.__init__(self, 'live', '2016-11-01', 'AddLiveRecordVodConfig','live')
 
 	def get_AppName(self):
 		return self.get_query_params().get('AppName')
@@ -58,6 +58,12 @@ class AddLiveRecordVodConfigRequest(RpcRequest):
 
 	def set_Version(self,Version):
 		self.add_query_param('Version',Version)
+
+	def get_StreamName(self):
+		return self.get_query_params().get('StreamName')
+
+	def set_StreamName(self,StreamName):
+		self.add_query_param('StreamName',StreamName)
 
 	def get_VodTranscodeGroupId(self):
 		return self.get_query_params().get('VodTranscodeGroupId')

@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class CreateCasterRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'live', '2016-11-01', 'CreateCaster')
+		RpcRequest.__init__(self, 'live', '2016-11-01', 'CreateCaster','live')
 
 	def get_CasterTemplate(self):
 		return self.get_query_params().get('CasterTemplate')
