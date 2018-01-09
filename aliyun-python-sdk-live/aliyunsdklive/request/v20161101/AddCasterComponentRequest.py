@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class AddCasterComponentRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'live', '2016-11-01', 'AddCasterComponent','live')
+		RpcRequest.__init__(self, 'live', '2016-11-01', 'AddCasterComponent')
 
 	def get_ImageLayerContent(self):
 		return self.get_query_params().get('ImageLayerContent')

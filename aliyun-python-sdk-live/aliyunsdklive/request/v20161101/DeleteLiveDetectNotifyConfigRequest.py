@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class DeleteLiveDetectNotifyConfigRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'live', '2016-11-01', 'DeleteLiveDetectNotifyConfig','live')
+		RpcRequest.__init__(self, 'live', '2016-11-01', 'DeleteLiveDetectNotifyConfig')
 
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')

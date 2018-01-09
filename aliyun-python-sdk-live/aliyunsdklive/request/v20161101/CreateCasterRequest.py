@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class CreateCasterRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'live', '2016-11-01', 'CreateCaster','live')
+		RpcRequest.__init__(self, 'live', '2016-11-01', 'CreateCaster')
 
 	def get_CasterTemplate(self):
 		return self.get_query_params().get('CasterTemplate')
@@ -29,17 +29,17 @@ class CreateCasterRequest(RpcRequest):
 	def set_CasterTemplate(self,CasterTemplate):
 		self.add_query_param('CasterTemplate',CasterTemplate)
 
+	def get_ExpireTime(self):
+		return self.get_query_params().get('ExpireTime')
+
+	def set_ExpireTime(self,ExpireTime):
+		self.add_query_param('ExpireTime',ExpireTime)
+
 	def get_NormType(self):
 		return self.get_query_params().get('NormType')
 
 	def set_NormType(self,NormType):
 		self.add_query_param('NormType',NormType)
-
-	def get_Period(self):
-		return self.get_query_params().get('Period')
-
-	def set_Period(self,Period):
-		self.add_query_param('Period',Period)
 
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
@@ -70,6 +70,12 @@ class CreateCasterRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_PurchaseTime(self):
+		return self.get_query_params().get('PurchaseTime')
+
+	def set_PurchaseTime(self,PurchaseTime):
+		self.add_query_param('PurchaseTime',PurchaseTime)
 
 	def get_Version(self):
 		return self.get_query_params().get('Version')
