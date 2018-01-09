@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class StopCasterRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'live', '2016-11-01', 'StopCaster','live')
+		RpcRequest.__init__(self, 'live', '2016-11-01', 'StopCaster')
 
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')

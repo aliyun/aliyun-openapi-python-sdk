@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class SetLiveStreamsNotifyUrlConfigRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'live', '2016-11-01', 'SetLiveStreamsNotifyUrlConfig','live')
+		RpcRequest.__init__(self, 'live', '2016-11-01', 'SetLiveStreamsNotifyUrlConfig')
 
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')

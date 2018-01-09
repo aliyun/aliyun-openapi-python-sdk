@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class ModifyCasterComponentRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'live', '2016-11-01', 'ModifyCasterComponent','live')
+		RpcRequest.__init__(self, 'live', '2016-11-01', 'ModifyCasterComponent')
 
 	def get_ComponentId(self):
 		return self.get_query_params().get('ComponentId')

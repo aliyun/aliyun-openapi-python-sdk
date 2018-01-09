@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class EffectCasterVideoResourceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'live', '2016-11-01', 'EffectCasterVideoResource','live')
+		RpcRequest.__init__(self, 'live', '2016-11-01', 'EffectCasterVideoResource')
 
 	def get_ResourceId(self):
 		return self.get_query_params().get('ResourceId')

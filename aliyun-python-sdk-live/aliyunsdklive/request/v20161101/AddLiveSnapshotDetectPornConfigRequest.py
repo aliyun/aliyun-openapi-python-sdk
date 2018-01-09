@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class AddLiveSnapshotDetectPornConfigRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'live', '2016-11-01', 'AddLiveSnapshotDetectPornConfig','live')
+		RpcRequest.__init__(self, 'live', '2016-11-01', 'AddLiveSnapshotDetectPornConfig')
 
 	def get_OssBucket(self):
 		return self.get_query_params().get('OssBucket')
