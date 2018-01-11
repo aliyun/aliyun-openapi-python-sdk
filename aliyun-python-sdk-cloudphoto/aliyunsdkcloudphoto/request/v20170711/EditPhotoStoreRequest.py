@@ -30,6 +30,12 @@ class EditPhotoStoreRequest(RpcRequest):
 	def set_AutoCleanEnabled(self,AutoCleanEnabled):
 		self.add_query_param('AutoCleanEnabled',AutoCleanEnabled)
 
+	def get_DefaultTrashQuota(self):
+		return self.get_query_params().get('DefaultTrashQuota')
+
+	def set_DefaultTrashQuota(self,DefaultTrashQuota):
+		self.add_query_param('DefaultTrashQuota',DefaultTrashQuota)
+
 	def get_StoreName(self):
 		return self.get_query_params().get('StoreName')
 
