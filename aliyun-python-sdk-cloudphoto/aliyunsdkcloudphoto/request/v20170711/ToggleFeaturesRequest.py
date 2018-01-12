@@ -30,7 +30,7 @@ class ToggleFeaturesRequest(RpcRequest):
 	def set_DisabledFeaturess(self,DisabledFeaturess):
 		for i in range(len(DisabledFeaturess)):	
 			if DisabledFeaturess[i] is not None:
-				self.add_query_param('DisabledFeatures.' + bytes(i + 1) , DisabledFeaturess[i]);
+				self.add_query_param('DisabledFeatures.' + str(i + 1) , DisabledFeaturess[i]);
 
 	def get_StoreName(self):
 		return self.get_query_params().get('StoreName')
@@ -44,4 +44,4 @@ class ToggleFeaturesRequest(RpcRequest):
 	def set_EnabledFeaturess(self,EnabledFeaturess):
 		for i in range(len(EnabledFeaturess)):	
 			if EnabledFeaturess[i] is not None:
-				self.add_query_param('EnabledFeatures.' + bytes(i + 1) , EnabledFeaturess[i]);
+				self.add_query_param('EnabledFeatures.' + str(i + 1) , EnabledFeaturess[i]);

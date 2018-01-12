@@ -34,7 +34,7 @@ class ListExecutionPlanInstancesRequest(RpcRequest):
 
 	def set_ExecutionPlanIdLists(self,ExecutionPlanIdLists):
 		for i in range(len(ExecutionPlanIdLists)):	
-			self.add_query_param('ExecutionPlanIdList.' + bytes(i + 1) , ExecutionPlanIdLists[i]);
+			self.add_query_param('ExecutionPlanIdList.' + str(i + 1) , ExecutionPlanIdLists[i]);
 
 	def get_OnlyLastInstance(self):
 		return self.get_query_params().get('OnlyLastInstance')
@@ -47,7 +47,7 @@ class ListExecutionPlanInstancesRequest(RpcRequest):
 
 	def set_StatusLists(self,StatusLists):
 		for i in range(len(StatusLists)):	
-			self.add_query_param('StatusList.' + bytes(i + 1) , StatusLists[i]);
+			self.add_query_param('StatusList.' + str(i + 1) , StatusLists[i]);
 
 	def get_IsDesc(self):
 		return self.get_query_params().get('IsDesc')

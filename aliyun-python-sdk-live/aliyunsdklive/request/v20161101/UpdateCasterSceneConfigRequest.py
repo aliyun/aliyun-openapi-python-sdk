@@ -29,7 +29,7 @@ class UpdateCasterSceneConfigRequest(RpcRequest):
 	def set_ComponentIds(self,ComponentIds):
 		for i in range(len(ComponentIds)):	
 			if ComponentIds[i] is not None:
-				self.add_query_param('ComponentId.' + bytes(i + 1) , ComponentIds[i]);
+				self.add_query_param('ComponentId.' + str(i + 1) , ComponentIds[i]);
 
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')

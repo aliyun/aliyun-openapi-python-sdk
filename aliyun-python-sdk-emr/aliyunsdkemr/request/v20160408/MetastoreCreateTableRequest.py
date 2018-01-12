@@ -58,6 +58,6 @@ class MetastoreCreateTableRequest(RpcRequest):
 
 	def set_Columns(self,Columns):
 		for i in range(len(Columns)):	
-			self.add_query_param('Column.' + bytes(i + 1) + '.Name' , Columns[i].get('Name'))
-			self.add_query_param('Column.' + bytes(i + 1) + '.Type' , Columns[i].get('Type'))
-			self.add_query_param('Column.' + bytes(i + 1) + '.Comment' , Columns[i].get('Comment'))
+			self.add_query_param('Column.' + str(i + 1) + '.Name' , Columns[i].get('Name'))
+			self.add_query_param('Column.' + str(i + 1) + '.Type' , Columns[i].get('Type'))
+			self.add_query_param('Column.' + str(i + 1) + '.Comment' , Columns[i].get('Comment'))

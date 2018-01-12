@@ -28,8 +28,8 @@ class CreateOrderRequest(RpcRequest):
 
 	def set_SubOrderParams(self,SubOrderParams):
 		for i in range(len(SubOrderParams)):	
-			self.add_query_param('SubOrderParam.' + bytes(i + 1) + '.SaleID' , SubOrderParams[i].get('SaleID'))
-			self.add_query_param('SubOrderParam.' + bytes(i + 1) + '.RelatedName' , SubOrderParams[i].get('RelatedName'))
-			self.add_query_param('SubOrderParam.' + bytes(i + 1) + '.Action' , SubOrderParams[i].get('Action'))
-			self.add_query_param('SubOrderParam.' + bytes(i + 1) + '.Period' , SubOrderParams[i].get('Period'))
-			self.add_query_param('SubOrderParam.' + bytes(i + 1) + '.DomainTemplateID' , SubOrderParams[i].get('DomainTemplateID'))
+			self.add_query_param('SubOrderParam.' + str(i + 1) + '.SaleID' , SubOrderParams[i].get('SaleID'))
+			self.add_query_param('SubOrderParam.' + str(i + 1) + '.RelatedName' , SubOrderParams[i].get('RelatedName'))
+			self.add_query_param('SubOrderParam.' + str(i + 1) + '.Action' , SubOrderParams[i].get('Action'))
+			self.add_query_param('SubOrderParam.' + str(i + 1) + '.Period' , SubOrderParams[i].get('Period'))
+			self.add_query_param('SubOrderParam.' + str(i + 1) + '.DomainTemplateID' , SubOrderParams[i].get('DomainTemplateID'))

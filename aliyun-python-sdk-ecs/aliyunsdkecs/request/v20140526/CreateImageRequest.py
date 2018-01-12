@@ -29,13 +29,13 @@ class CreateImageRequest(RpcRequest):
 	def set_DiskDeviceMappings(self,DiskDeviceMappings):
 		for i in range(len(DiskDeviceMappings)):	
 			if DiskDeviceMappings[i].get('Size') is not None:
-				self.add_query_param('DiskDeviceMapping.' + bytes(i + 1) + '.Size' , DiskDeviceMappings[i].get('Size'))
+				self.add_query_param('DiskDeviceMapping.' + str(i + 1) + '.Size' , DiskDeviceMappings[i].get('Size'))
 			if DiskDeviceMappings[i].get('SnapshotId') is not None:
-				self.add_query_param('DiskDeviceMapping.' + bytes(i + 1) + '.SnapshotId' , DiskDeviceMappings[i].get('SnapshotId'))
+				self.add_query_param('DiskDeviceMapping.' + str(i + 1) + '.SnapshotId' , DiskDeviceMappings[i].get('SnapshotId'))
 			if DiskDeviceMappings[i].get('Device') is not None:
-				self.add_query_param('DiskDeviceMapping.' + bytes(i + 1) + '.Device' , DiskDeviceMappings[i].get('Device'))
+				self.add_query_param('DiskDeviceMapping.' + str(i + 1) + '.Device' , DiskDeviceMappings[i].get('Device'))
 			if DiskDeviceMappings[i].get('DiskType') is not None:
-				self.add_query_param('DiskDeviceMapping.' + bytes(i + 1) + '.DiskType' , DiskDeviceMappings[i].get('DiskType'))
+				self.add_query_param('DiskDeviceMapping.' + str(i + 1) + '.DiskType' , DiskDeviceMappings[i].get('DiskType'))
 
 
 	def get_Tag4Value(self):

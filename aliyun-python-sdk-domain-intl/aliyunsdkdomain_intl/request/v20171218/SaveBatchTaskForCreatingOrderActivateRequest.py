@@ -29,15 +29,15 @@ class SaveBatchTaskForCreatingOrderActivateRequest(RpcRequest):
 	def set_OrderActivateParams(self,OrderActivateParams):
 		for i in range(len(OrderActivateParams)):	
 			if OrderActivateParams[i].get('DomainName') is not None:
-				self.add_query_param('OrderActivateParam.' + bytes(i + 1) + '.DomainName' , OrderActivateParams[i].get('DomainName'))
+				self.add_query_param('OrderActivateParam.' + str(i + 1) + '.DomainName' , OrderActivateParams[i].get('DomainName'))
 			if OrderActivateParams[i].get('SubscriptionDuration') is not None:
-				self.add_query_param('OrderActivateParam.' + bytes(i + 1) + '.SubscriptionDuration' , OrderActivateParams[i].get('SubscriptionDuration'))
+				self.add_query_param('OrderActivateParam.' + str(i + 1) + '.SubscriptionDuration' , OrderActivateParams[i].get('SubscriptionDuration'))
 			if OrderActivateParams[i].get('RegistrantProfileId') is not None:
-				self.add_query_param('OrderActivateParam.' + bytes(i + 1) + '.RegistrantProfileId' , OrderActivateParams[i].get('RegistrantProfileId'))
+				self.add_query_param('OrderActivateParam.' + str(i + 1) + '.RegistrantProfileId' , OrderActivateParams[i].get('RegistrantProfileId'))
 			if OrderActivateParams[i].get('EnableDomainProxy') is not None:
-				self.add_query_param('OrderActivateParam.' + bytes(i + 1) + '.EnableDomainProxy' , OrderActivateParams[i].get('EnableDomainProxy'))
+				self.add_query_param('OrderActivateParam.' + str(i + 1) + '.EnableDomainProxy' , OrderActivateParams[i].get('EnableDomainProxy'))
 			if OrderActivateParams[i].get('PermitPremiumActivation') is not None:
-				self.add_query_param('OrderActivateParam.' + bytes(i + 1) + '.PermitPremiumActivation' , OrderActivateParams[i].get('PermitPremiumActivation'))
+				self.add_query_param('OrderActivateParam.' + str(i + 1) + '.PermitPremiumActivation' , OrderActivateParams[i].get('PermitPremiumActivation'))
 
 
 	def get_UserClientIp(self):

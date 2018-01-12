@@ -29,7 +29,7 @@ class ModifySkillGroupRequest(RpcRequest):
 	def set_SkillLevels(self,SkillLevels):
 		for i in range(len(SkillLevels)):	
 			if SkillLevels[i] is not None:
-				self.add_query_param('SkillLevel.' + bytes(i + 1) , SkillLevels[i]);
+				self.add_query_param('SkillLevel.' + str(i + 1) , SkillLevels[i]);
 
 	def get_InstanceId(self):
 		return self.get_query_params().get('InstanceId')
@@ -43,7 +43,7 @@ class ModifySkillGroupRequest(RpcRequest):
 	def set_OutboundPhoneNumberIds(self,OutboundPhoneNumberIds):
 		for i in range(len(OutboundPhoneNumberIds)):	
 			if OutboundPhoneNumberIds[i] is not None:
-				self.add_query_param('OutboundPhoneNumberId.' + bytes(i + 1) , OutboundPhoneNumberIds[i]);
+				self.add_query_param('OutboundPhoneNumberId.' + str(i + 1) , OutboundPhoneNumberIds[i]);
 
 	def get_SkillGroupId(self):
 		return self.get_query_params().get('SkillGroupId')
@@ -69,4 +69,4 @@ class ModifySkillGroupRequest(RpcRequest):
 	def set_UserIds(self,UserIds):
 		for i in range(len(UserIds)):	
 			if UserIds[i] is not None:
-				self.add_query_param('UserId.' + bytes(i + 1) , UserIds[i]);
+				self.add_query_param('UserId.' + str(i + 1) , UserIds[i]);
