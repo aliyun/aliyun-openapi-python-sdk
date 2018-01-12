@@ -77,9 +77,9 @@ class CreateRouteEntryRequest(RpcRequest):
 	def set_NextHopLists(self,NextHopLists):
 		for i in range(len(NextHopLists)):	
 			if NextHopLists[i].get('NextHopType') is not None:
-				self.add_query_param('NextHopList.' + bytes(i + 1) + '.NextHopType' , NextHopLists[i].get('NextHopType'))
+				self.add_query_param('NextHopList.' + str(i + 1) + '.NextHopType' , NextHopLists[i].get('NextHopType'))
 			if NextHopLists[i].get('NextHopId') is not None:
-				self.add_query_param('NextHopList.' + bytes(i + 1) + '.NextHopId' , NextHopLists[i].get('NextHopId'))
+				self.add_query_param('NextHopList.' + str(i + 1) + '.NextHopId' , NextHopLists[i].get('NextHopId'))
 
 
 	def get_RouteTableId(self):

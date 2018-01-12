@@ -76,7 +76,7 @@ class CreateExecutionPlanRequest(RpcRequest):
 
 	def set_JobIdLists(self,JobIdLists):
 		for i in range(len(JobIdLists)):	
-			self.add_query_param('JobIdList.' + bytes(i + 1) , JobIdLists[i]);
+			self.add_query_param('JobIdList.' + str(i + 1) , JobIdLists[i]);
 
 	def get_ClusterId(self):
 		return self.get_query_params().get('ClusterId')
@@ -137,7 +137,7 @@ class CreateExecutionPlanRequest(RpcRequest):
 
 	def set_OptionSoftWareLists(self,OptionSoftWareLists):
 		for i in range(len(OptionSoftWareLists)):	
-			self.add_query_param('OptionSoftWareList.' + bytes(i + 1) , OptionSoftWareLists[i]);
+			self.add_query_param('OptionSoftWareList.' + str(i + 1) , OptionSoftWareLists[i]);
 
 	def get_ClusterType(self):
 		return self.get_query_params().get('ClusterType')
@@ -192,13 +192,13 @@ class CreateExecutionPlanRequest(RpcRequest):
 
 	def set_EcsOrders(self,EcsOrders):
 		for i in range(len(EcsOrders)):	
-			self.add_query_param('EcsOrder.' + bytes(i + 1) + '.Index' , EcsOrders[i].get('Index'))
-			self.add_query_param('EcsOrder.' + bytes(i + 1) + '.NodeCount' , EcsOrders[i].get('NodeCount'))
-			self.add_query_param('EcsOrder.' + bytes(i + 1) + '.NodeType' , EcsOrders[i].get('NodeType'))
-			self.add_query_param('EcsOrder.' + bytes(i + 1) + '.InstanceType' , EcsOrders[i].get('InstanceType'))
-			self.add_query_param('EcsOrder.' + bytes(i + 1) + '.DiskType' , EcsOrders[i].get('DiskType'))
-			self.add_query_param('EcsOrder.' + bytes(i + 1) + '.DiskCapacity' , EcsOrders[i].get('DiskCapacity'))
-			self.add_query_param('EcsOrder.' + bytes(i + 1) + '.DiskCount' , EcsOrders[i].get('DiskCount'))
+			self.add_query_param('EcsOrder.' + str(i + 1) + '.Index' , EcsOrders[i].get('Index'))
+			self.add_query_param('EcsOrder.' + str(i + 1) + '.NodeCount' , EcsOrders[i].get('NodeCount'))
+			self.add_query_param('EcsOrder.' + str(i + 1) + '.NodeType' , EcsOrders[i].get('NodeType'))
+			self.add_query_param('EcsOrder.' + str(i + 1) + '.InstanceType' , EcsOrders[i].get('InstanceType'))
+			self.add_query_param('EcsOrder.' + str(i + 1) + '.DiskType' , EcsOrders[i].get('DiskType'))
+			self.add_query_param('EcsOrder.' + str(i + 1) + '.DiskCapacity' , EcsOrders[i].get('DiskCapacity'))
+			self.add_query_param('EcsOrder.' + str(i + 1) + '.DiskCount' , EcsOrders[i].get('DiskCount'))
 
 
 	def get_BootstrapActions(self):
@@ -206,9 +206,9 @@ class CreateExecutionPlanRequest(RpcRequest):
 
 	def set_BootstrapActions(self,BootstrapActions):
 		for i in range(len(BootstrapActions)):	
-			self.add_query_param('BootstrapAction.' + bytes(i + 1) + '.Name' , BootstrapActions[i].get('Name'))
-			self.add_query_param('BootstrapAction.' + bytes(i + 1) + '.Path' , BootstrapActions[i].get('Path'))
-			self.add_query_param('BootstrapAction.' + bytes(i + 1) + '.Arg' , BootstrapActions[i].get('Arg'))
+			self.add_query_param('BootstrapAction.' + str(i + 1) + '.Name' , BootstrapActions[i].get('Name'))
+			self.add_query_param('BootstrapAction.' + str(i + 1) + '.Path' , BootstrapActions[i].get('Path'))
+			self.add_query_param('BootstrapAction.' + str(i + 1) + '.Arg' , BootstrapActions[i].get('Arg'))
 
 
 	def get_Configurations(self):

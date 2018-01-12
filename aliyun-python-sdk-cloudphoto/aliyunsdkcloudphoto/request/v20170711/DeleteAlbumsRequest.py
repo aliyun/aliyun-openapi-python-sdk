@@ -36,7 +36,7 @@ class DeleteAlbumsRequest(RpcRequest):
 	def set_AlbumIds(self,AlbumIds):
 		for i in range(len(AlbumIds)):	
 			if AlbumIds[i] is not None:
-				self.add_query_param('AlbumId.' + bytes(i + 1) , AlbumIds[i]);
+				self.add_query_param('AlbumId.' + str(i + 1) , AlbumIds[i]);
 
 	def get_StoreName(self):
 		return self.get_query_params().get('StoreName')

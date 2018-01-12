@@ -36,9 +36,9 @@ class SubmitMaterialsRequest(RpcRequest):
 	def set_Materials(self,Materials):
 		for i in range(len(Materials)):	
 			if Materials[i].get('MaterialType') is not None:
-				self.add_query_param('Material.' + bytes(i + 1) + '.MaterialType' , Materials[i].get('MaterialType'))
+				self.add_query_param('Material.' + str(i + 1) + '.MaterialType' , Materials[i].get('MaterialType'))
 			if Materials[i].get('Value') is not None:
-				self.add_query_param('Material.' + bytes(i + 1) + '.Value' , Materials[i].get('Value'))
+				self.add_query_param('Material.' + str(i + 1) + '.Value' , Materials[i].get('Value'))
 
 
 	def get_VerifyToken(self):

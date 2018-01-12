@@ -65,9 +65,9 @@ class RunInstancesRequest(RpcRequest):
 	def set_Tags(self,Tags):
 		for i in range(len(Tags)):	
 			if Tags[i].get('Key') is not None:
-				self.add_query_param('Tag.' + bytes(i + 1) + '.Key' , Tags[i].get('Key'))
+				self.add_query_param('Tag.' + str(i + 1) + '.Key' , Tags[i].get('Key'))
 			if Tags[i].get('Value') is not None:
-				self.add_query_param('Tag.' + bytes(i + 1) + '.Value' , Tags[i].get('Value'))
+				self.add_query_param('Tag.' + str(i + 1) + '.Value' , Tags[i].get('Value'))
 
 
 	def get_OwnerId(self):
@@ -172,15 +172,15 @@ class RunInstancesRequest(RpcRequest):
 	def set_NetworkInterfaces(self,NetworkInterfaces):
 		for i in range(len(NetworkInterfaces)):	
 			if NetworkInterfaces[i].get('PrimaryIpAddress') is not None:
-				self.add_query_param('NetworkInterface.' + bytes(i + 1) + '.PrimaryIpAddress' , NetworkInterfaces[i].get('PrimaryIpAddress'))
+				self.add_query_param('NetworkInterface.' + str(i + 1) + '.PrimaryIpAddress' , NetworkInterfaces[i].get('PrimaryIpAddress'))
 			if NetworkInterfaces[i].get('VSwitchId') is not None:
-				self.add_query_param('NetworkInterface.' + bytes(i + 1) + '.VSwitchId' , NetworkInterfaces[i].get('VSwitchId'))
+				self.add_query_param('NetworkInterface.' + str(i + 1) + '.VSwitchId' , NetworkInterfaces[i].get('VSwitchId'))
 			if NetworkInterfaces[i].get('SecurityGroupId') is not None:
-				self.add_query_param('NetworkInterface.' + bytes(i + 1) + '.SecurityGroupId' , NetworkInterfaces[i].get('SecurityGroupId'))
+				self.add_query_param('NetworkInterface.' + str(i + 1) + '.SecurityGroupId' , NetworkInterfaces[i].get('SecurityGroupId'))
 			if NetworkInterfaces[i].get('NetworkInterfaceName') is not None:
-				self.add_query_param('NetworkInterface.' + bytes(i + 1) + '.NetworkInterfaceName' , NetworkInterfaces[i].get('NetworkInterfaceName'))
+				self.add_query_param('NetworkInterface.' + str(i + 1) + '.NetworkInterfaceName' , NetworkInterfaces[i].get('NetworkInterfaceName'))
 			if NetworkInterfaces[i].get('Description') is not None:
-				self.add_query_param('NetworkInterface.' + bytes(i + 1) + '.Description' , NetworkInterfaces[i].get('Description'))
+				self.add_query_param('NetworkInterface.' + str(i + 1) + '.Description' , NetworkInterfaces[i].get('Description'))
 
 
 	def get_Amount(self):
@@ -225,19 +225,19 @@ class RunInstancesRequest(RpcRequest):
 	def set_DataDisks(self,DataDisks):
 		for i in range(len(DataDisks)):	
 			if DataDisks[i].get('Size') is not None:
-				self.add_query_param('DataDisk.' + bytes(i + 1) + '.Size' , DataDisks[i].get('Size'))
+				self.add_query_param('DataDisk.' + str(i + 1) + '.Size' , DataDisks[i].get('Size'))
 			if DataDisks[i].get('SnapshotId') is not None:
-				self.add_query_param('DataDisk.' + bytes(i + 1) + '.SnapshotId' , DataDisks[i].get('SnapshotId'))
+				self.add_query_param('DataDisk.' + str(i + 1) + '.SnapshotId' , DataDisks[i].get('SnapshotId'))
 			if DataDisks[i].get('Category') is not None:
-				self.add_query_param('DataDisk.' + bytes(i + 1) + '.Category' , DataDisks[i].get('Category'))
+				self.add_query_param('DataDisk.' + str(i + 1) + '.Category' , DataDisks[i].get('Category'))
 			if DataDisks[i].get('Encrypted') is not None:
-				self.add_query_param('DataDisk.' + bytes(i + 1) + '.Encrypted' , DataDisks[i].get('Encrypted'))
+				self.add_query_param('DataDisk.' + str(i + 1) + '.Encrypted' , DataDisks[i].get('Encrypted'))
 			if DataDisks[i].get('DiskName') is not None:
-				self.add_query_param('DataDisk.' + bytes(i + 1) + '.DiskName' , DataDisks[i].get('DiskName'))
+				self.add_query_param('DataDisk.' + str(i + 1) + '.DiskName' , DataDisks[i].get('DiskName'))
 			if DataDisks[i].get('Description') is not None:
-				self.add_query_param('DataDisk.' + bytes(i + 1) + '.Description' , DataDisks[i].get('Description'))
+				self.add_query_param('DataDisk.' + str(i + 1) + '.Description' , DataDisks[i].get('Description'))
 			if DataDisks[i].get('DeleteWithInstance') is not None:
-				self.add_query_param('DataDisk.' + bytes(i + 1) + '.DeleteWithInstance' , DataDisks[i].get('DeleteWithInstance'))
+				self.add_query_param('DataDisk.' + str(i + 1) + '.DeleteWithInstance' , DataDisks[i].get('DeleteWithInstance'))
 
 
 	def get_SystemDiskSize(self):

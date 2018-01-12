@@ -47,7 +47,7 @@ class SaveBatchTaskForUpdatingContactInfoRequest(RpcRequest):
 	def set_DomainNames(self,DomainNames):
 		for i in range(len(DomainNames)):	
 			if DomainNames[i] is not None:
-				self.add_query_param('DomainName.' + bytes(i + 1) , DomainNames[i]);
+				self.add_query_param('DomainName.' + str(i + 1) , DomainNames[i]);
 
 	def get_AddTransferLock(self):
 		return self.get_query_params().get('AddTransferLock')

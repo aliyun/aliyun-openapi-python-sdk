@@ -36,4 +36,4 @@ class ListRegisteredTagsRequest(RpcRequest):
 	def set_Langs(self,Langs):
 		for i in range(len(Langs)):	
 			if Langs[i] is not None:
-				self.add_query_param('Lang.' + bytes(i + 1) , Langs[i]);
+				self.add_query_param('Lang.' + str(i + 1) , Langs[i]);

@@ -29,7 +29,7 @@ class BatchGetDeviceStateRequest(RpcRequest):
 	def set_DeviceNames(self,DeviceNames):
 		for i in range(len(DeviceNames)):	
 			if DeviceNames[i] is not None:
-				self.add_query_param('DeviceName.' + bytes(i + 1) , DeviceNames[i]);
+				self.add_query_param('DeviceName.' + str(i + 1) , DeviceNames[i]);
 
 	def get_ProductKey(self):
 		return self.get_query_params().get('ProductKey')

@@ -1,3 +1,6 @@
+2018-01-12 Version: 1.1.2
+1, fix the TypeError while building the repeat params
+
 2017-12-05 Version: 1.1.1
 1, Added a field auditConclusions in GetStatus API which provided detail information about the verification request
 

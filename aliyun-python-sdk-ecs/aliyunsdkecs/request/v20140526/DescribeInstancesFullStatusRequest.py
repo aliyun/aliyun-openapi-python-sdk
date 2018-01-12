@@ -29,7 +29,7 @@ class DescribeInstancesFullStatusRequest(RpcRequest):
 	def set_EventIds(self,EventIds):
 		for i in range(len(EventIds)):	
 			if EventIds[i] is not None:
-				self.add_query_param('EventId.' + bytes(i + 1) , EventIds[i]);
+				self.add_query_param('EventId.' + str(i + 1) , EventIds[i]);
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -91,7 +91,7 @@ class DescribeInstancesFullStatusRequest(RpcRequest):
 	def set_InstanceIds(self,InstanceIds):
 		for i in range(len(InstanceIds)):	
 			if InstanceIds[i] is not None:
-				self.add_query_param('InstanceId.' + bytes(i + 1) , InstanceIds[i]);
+				self.add_query_param('InstanceId.' + str(i + 1) , InstanceIds[i]);
 
 	def get_NotBeforeEnd(self):
 		return self.get_query_params().get('NotBefore.End')

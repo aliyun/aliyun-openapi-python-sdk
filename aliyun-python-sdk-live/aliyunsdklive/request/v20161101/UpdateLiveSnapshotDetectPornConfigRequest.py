@@ -77,4 +77,4 @@ class UpdateLiveSnapshotDetectPornConfigRequest(RpcRequest):
 	def set_Scenes(self,Scenes):
 		for i in range(len(Scenes)):	
 			if Scenes[i] is not None:
-				self.add_query_param('Scene.' + bytes(i + 1) , Scenes[i]);
+				self.add_query_param('Scene.' + str(i + 1) , Scenes[i]);
