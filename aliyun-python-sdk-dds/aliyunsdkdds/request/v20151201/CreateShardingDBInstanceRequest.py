@@ -53,9 +53,9 @@ class CreateShardingDBInstanceRequest(RpcRequest):
 	def set_ReplicaSets(self,ReplicaSets):
 		for i in range(len(ReplicaSets)):	
 			if ReplicaSets[i].get('Class') is not None:
-				self.add_query_param('ReplicaSet.' + bytes(i + 1) + '.Class' , ReplicaSets[i].get('Class'))
+				self.add_query_param('ReplicaSet.' + str(i + 1) + '.Class' , ReplicaSets[i].get('Class'))
 			if ReplicaSets[i].get('Storage') is not None:
-				self.add_query_param('ReplicaSet.' + bytes(i + 1) + '.Storage' , ReplicaSets[i].get('Storage'))
+				self.add_query_param('ReplicaSet.' + str(i + 1) + '.Storage' , ReplicaSets[i].get('Storage'))
 
 
 	def get_StorageEngine(self):
@@ -118,9 +118,9 @@ class CreateShardingDBInstanceRequest(RpcRequest):
 	def set_ConfigServers(self,ConfigServers):
 		for i in range(len(ConfigServers)):	
 			if ConfigServers[i].get('Class') is not None:
-				self.add_query_param('ConfigServer.' + bytes(i + 1) + '.Class' , ConfigServers[i].get('Class'))
+				self.add_query_param('ConfigServer.' + str(i + 1) + '.Class' , ConfigServers[i].get('Class'))
 			if ConfigServers[i].get('Storage') is not None:
-				self.add_query_param('ConfigServer.' + bytes(i + 1) + '.Storage' , ConfigServers[i].get('Storage'))
+				self.add_query_param('ConfigServer.' + str(i + 1) + '.Storage' , ConfigServers[i].get('Storage'))
 
 
 	def get_OwnerId(self):
@@ -135,7 +135,7 @@ class CreateShardingDBInstanceRequest(RpcRequest):
 	def set_Mongoss(self,Mongoss):
 		for i in range(len(Mongoss)):	
 			if Mongoss[i].get('Class') is not None:
-				self.add_query_param('Mongos.' + bytes(i + 1) + '.Class' , Mongoss[i].get('Class'))
+				self.add_query_param('Mongos.' + str(i + 1) + '.Class' , Mongoss[i].get('Class'))
 
 
 	def get_SecurityIPList(self):

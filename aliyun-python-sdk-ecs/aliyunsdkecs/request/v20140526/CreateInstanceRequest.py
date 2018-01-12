@@ -311,21 +311,21 @@ class CreateInstanceRequest(RpcRequest):
 	def set_DataDisks(self,DataDisks):
 		for i in range(len(DataDisks)):	
 			if DataDisks[i].get('Size') is not None:
-				self.add_query_param('DataDisk.' + bytes(i + 1) + '.Size' , DataDisks[i].get('Size'))
+				self.add_query_param('DataDisk.' + str(i + 1) + '.Size' , DataDisks[i].get('Size'))
 			if DataDisks[i].get('SnapshotId') is not None:
-				self.add_query_param('DataDisk.' + bytes(i + 1) + '.SnapshotId' , DataDisks[i].get('SnapshotId'))
+				self.add_query_param('DataDisk.' + str(i + 1) + '.SnapshotId' , DataDisks[i].get('SnapshotId'))
 			if DataDisks[i].get('Category') is not None:
-				self.add_query_param('DataDisk.' + bytes(i + 1) + '.Category' , DataDisks[i].get('Category'))
+				self.add_query_param('DataDisk.' + str(i + 1) + '.Category' , DataDisks[i].get('Category'))
 			if DataDisks[i].get('DiskName') is not None:
-				self.add_query_param('DataDisk.' + bytes(i + 1) + '.DiskName' , DataDisks[i].get('DiskName'))
+				self.add_query_param('DataDisk.' + str(i + 1) + '.DiskName' , DataDisks[i].get('DiskName'))
 			if DataDisks[i].get('Description') is not None:
-				self.add_query_param('DataDisk.' + bytes(i + 1) + '.Description' , DataDisks[i].get('Description'))
+				self.add_query_param('DataDisk.' + str(i + 1) + '.Description' , DataDisks[i].get('Description'))
 			if DataDisks[i].get('Device') is not None:
-				self.add_query_param('DataDisk.' + bytes(i + 1) + '.Device' , DataDisks[i].get('Device'))
+				self.add_query_param('DataDisk.' + str(i + 1) + '.Device' , DataDisks[i].get('Device'))
 			if DataDisks[i].get('DeleteWithInstance') is not None:
-				self.add_query_param('DataDisk.' + bytes(i + 1) + '.DeleteWithInstance' , DataDisks[i].get('DeleteWithInstance'))
+				self.add_query_param('DataDisk.' + str(i + 1) + '.DeleteWithInstance' , DataDisks[i].get('DeleteWithInstance'))
 			if DataDisks[i].get('Encrypted') is not None:
-				self.add_query_param('DataDisk.' + bytes(i + 1) + '.Encrypted' , DataDisks[i].get('Encrypted'))
+				self.add_query_param('DataDisk.' + str(i + 1) + '.Encrypted' , DataDisks[i].get('Encrypted'))
 
 
 	def get_Tag5Value(self):

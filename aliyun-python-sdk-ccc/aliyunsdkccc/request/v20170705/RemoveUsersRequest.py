@@ -35,4 +35,4 @@ class RemoveUsersRequest(RpcRequest):
 	def set_UserIds(self,UserIds):
 		for i in range(len(UserIds)):	
 			if UserIds[i] is not None:
-				self.add_query_param('UserId.' + bytes(i + 1) , UserIds[i]);
+				self.add_query_param('UserId.' + str(i + 1) , UserIds[i]);

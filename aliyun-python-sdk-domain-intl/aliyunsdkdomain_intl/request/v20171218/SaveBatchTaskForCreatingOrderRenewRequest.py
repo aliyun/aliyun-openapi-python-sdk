@@ -35,11 +35,11 @@ class SaveBatchTaskForCreatingOrderRenewRequest(RpcRequest):
 	def set_OrderRenewParams(self,OrderRenewParams):
 		for i in range(len(OrderRenewParams)):	
 			if OrderRenewParams[i].get('DomainName') is not None:
-				self.add_query_param('OrderRenewParam.' + bytes(i + 1) + '.DomainName' , OrderRenewParams[i].get('DomainName'))
+				self.add_query_param('OrderRenewParam.' + str(i + 1) + '.DomainName' , OrderRenewParams[i].get('DomainName'))
 			if OrderRenewParams[i].get('CurrentExpirationDate') is not None:
-				self.add_query_param('OrderRenewParam.' + bytes(i + 1) + '.CurrentExpirationDate' , OrderRenewParams[i].get('CurrentExpirationDate'))
+				self.add_query_param('OrderRenewParam.' + str(i + 1) + '.CurrentExpirationDate' , OrderRenewParams[i].get('CurrentExpirationDate'))
 			if OrderRenewParams[i].get('SubscriptionDuration') is not None:
-				self.add_query_param('OrderRenewParam.' + bytes(i + 1) + '.SubscriptionDuration' , OrderRenewParams[i].get('SubscriptionDuration'))
+				self.add_query_param('OrderRenewParam.' + str(i + 1) + '.SubscriptionDuration' , OrderRenewParams[i].get('SubscriptionDuration'))
 
 
 	def get_Lang(self):

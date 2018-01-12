@@ -29,7 +29,7 @@ class ARMSQueryDataSetRequest(RpcRequest):
 	def set_Measuress(self,Measuress):
 		for i in range(len(Measuress)):	
 			if Measuress[i] is not None:
-				self.add_query_param('Measures.' + bytes(i + 1) , Measuress[i]);
+				self.add_query_param('Measures.' + str(i + 1) , Measuress[i]);
 
 	def get_IntervalInSec(self):
 		return self.get_query_params().get('IntervalInSec')
@@ -73,6 +73,6 @@ class ARMSQueryDataSetRequest(RpcRequest):
 	def set_Dimensionss(self,Dimensionss):
 		for i in range(len(Dimensionss)):	
 			if Dimensionss[i].get('Key') is not None:
-				self.add_query_param('Dimensions.' + bytes(i + 1) + '.Key' , Dimensionss[i].get('Key'))
+				self.add_query_param('Dimensions.' + str(i + 1) + '.Key' , Dimensionss[i].get('Key'))
 			if Dimensionss[i].get('Value') is not None:
-				self.add_query_param('Dimensions.' + bytes(i + 1) + '.Value' , Dimensionss[i].get('Value'))
+				self.add_query_param('Dimensions.' + str(i + 1) + '.Value' , Dimensionss[i].get('Value'))

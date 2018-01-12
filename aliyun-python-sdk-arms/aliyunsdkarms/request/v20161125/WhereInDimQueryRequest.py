@@ -59,7 +59,7 @@ class WhereInDimQueryRequest(RpcRequest):
 	def set_Measuress(self,Measuress):
 		for i in range(len(Measuress)):	
 			if Measuress[i] is not None:
-				self.add_query_param('Measures.' + bytes(i + 1) , Measuress[i]);
+				self.add_query_param('Measures.' + str(i + 1) , Measuress[i]);
 
 	def get_IntervalInSec(self):
 		return self.get_query_params().get('IntervalInSec')
@@ -97,7 +97,7 @@ class WhereInDimQueryRequest(RpcRequest):
 	def set_WhereInValuess(self,WhereInValuess):
 		for i in range(len(WhereInValuess)):	
 			if WhereInValuess[i] is not None:
-				self.add_query_param('WhereInValues.' + bytes(i + 1) , WhereInValuess[i]);
+				self.add_query_param('WhereInValues.' + str(i + 1) , WhereInValuess[i]);
 
 	def get_Dimensionss(self):
 		return self.get_query_params().get('Dimensionss')
@@ -105,8 +105,8 @@ class WhereInDimQueryRequest(RpcRequest):
 	def set_Dimensionss(self,Dimensionss):
 		for i in range(len(Dimensionss)):	
 			if Dimensionss[i].get('Key') is not None:
-				self.add_query_param('Dimensions.' + bytes(i + 1) + '.Key' , Dimensionss[i].get('Key'))
+				self.add_query_param('Dimensions.' + str(i + 1) + '.Key' , Dimensionss[i].get('Key'))
 			if Dimensionss[i].get('Value') is not None:
-				self.add_query_param('Dimensions.' + bytes(i + 1) + '.Value' , Dimensionss[i].get('Value'))
+				self.add_query_param('Dimensions.' + str(i + 1) + '.Value' , Dimensionss[i].get('Value'))
 			if Dimensionss[i].get('Type') is not None:
-				self.add_query_param('Dimensions.' + bytes(i + 1) + '.Type' , Dimensionss[i].get('Type'))
+				self.add_query_param('Dimensions.' + str(i + 1) + '.Type' , Dimensionss[i].get('Type'))

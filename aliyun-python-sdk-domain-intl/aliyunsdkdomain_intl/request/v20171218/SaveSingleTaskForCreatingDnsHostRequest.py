@@ -35,7 +35,7 @@ class SaveSingleTaskForCreatingDnsHostRequest(RpcRequest):
 	def set_Ips(self,Ips):
 		for i in range(len(Ips)):	
 			if Ips[i] is not None:
-				self.add_query_param('Ip.' + bytes(i + 1) , Ips[i]);
+				self.add_query_param('Ip.' + str(i + 1) , Ips[i]);
 
 	def get_DnsName(self):
 		return self.get_query_params().get('DnsName')

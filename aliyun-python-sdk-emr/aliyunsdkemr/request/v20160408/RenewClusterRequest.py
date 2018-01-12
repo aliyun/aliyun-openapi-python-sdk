@@ -40,6 +40,6 @@ class RenewClusterRequest(RpcRequest):
 
 	def set_RenewEcsDos(self,RenewEcsDos):
 		for i in range(len(RenewEcsDos)):	
-			self.add_query_param('RenewEcsDo.' + bytes(i + 1) + '.EcsId' , RenewEcsDos[i].get('EcsId'))
-			self.add_query_param('RenewEcsDo.' + bytes(i + 1) + '.EcsPeriod' , RenewEcsDos[i].get('EcsPeriod'))
-			self.add_query_param('RenewEcsDo.' + bytes(i + 1) + '.EmrPeriod' , RenewEcsDos[i].get('EmrPeriod'))
+			self.add_query_param('RenewEcsDo.' + str(i + 1) + '.EcsId' , RenewEcsDos[i].get('EcsId'))
+			self.add_query_param('RenewEcsDo.' + str(i + 1) + '.EcsPeriod' , RenewEcsDos[i].get('EcsPeriod'))
+			self.add_query_param('RenewEcsDo.' + str(i + 1) + '.EmrPeriod' , RenewEcsDos[i].get('EmrPeriod'))
