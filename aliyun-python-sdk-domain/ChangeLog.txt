@@ -1,5 +1,5 @@
-2017-09-27 Version: 2.3.1
-1, upgrade setup.py to support python3
+2018-01-12 Version: 2.3.2
+1, fix the TypeError while building the repeat params
 
 2017-08-16 Version: 2.3.0
 1, 增加了提交图片进行域名/信息模板实名认证的接口。

@@ -34,7 +34,7 @@ class ListClustersRequest(RpcRequest):
 
 	def set_ClusterTypeLists(self,ClusterTypeLists):
 		for i in range(len(ClusterTypeLists)):	
-			self.add_query_param('ClusterTypeList.' + bytes(i + 1) , ClusterTypeLists[i]);
+			self.add_query_param('ClusterTypeList.' + str(i + 1) , ClusterTypeLists[i]);
 
 	def get_CreateType(self):
 		return self.get_query_params().get('CreateType')
@@ -47,7 +47,7 @@ class ListClustersRequest(RpcRequest):
 
 	def set_StatusLists(self,StatusLists):
 		for i in range(len(StatusLists)):	
-			self.add_query_param('StatusList.' + bytes(i + 1) , StatusLists[i]);
+			self.add_query_param('StatusList.' + str(i + 1) , StatusLists[i]);
 
 	def get_IsDesc(self):
 		return self.get_query_params().get('IsDesc')

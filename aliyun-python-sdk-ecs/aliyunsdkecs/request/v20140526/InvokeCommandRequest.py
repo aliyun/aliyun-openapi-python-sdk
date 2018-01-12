@@ -71,4 +71,4 @@ class InvokeCommandRequest(RpcRequest):
 	def set_InstanceIds(self,InstanceIds):
 		for i in range(len(InstanceIds)):	
 			if InstanceIds[i] is not None:
-				self.add_query_param('InstanceId.' + bytes(i + 1) , InstanceIds[i]);
+				self.add_query_param('InstanceId.' + str(i + 1) , InstanceIds[i]);

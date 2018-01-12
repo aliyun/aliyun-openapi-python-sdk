@@ -47,6 +47,14 @@ class CreateScalingGroupRequest(RpcRequest):
 	def set_ScalingGroupName(self,ScalingGroupName):
 		self.add_query_param('ScalingGroupName',ScalingGroupName)
 
+	def get_VSwitchIds(self):
+		return self.get_query_params().get('VSwitchIds')
+
+	def set_VSwitchIds(self,VSwitchIds):
+		for i in range(len(VSwitchIds)):	
+			if VSwitchIds[i] is not None:
+				self.add_query_param('VSwitchIds.' + str(i + 1) , VSwitchIds[i]);
+
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
 

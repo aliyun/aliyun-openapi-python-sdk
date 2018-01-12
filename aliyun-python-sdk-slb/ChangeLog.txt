@@ -2,8 +2,9 @@
 1, 发布新版SDK，与open API同步
 
 
-2017-09-27 Version: 3.2.1
-1, upgrade setup.py to support python3
+2017-11-14 Version: 3.2.1
+1, 发布新版SDK，与open API同步
+
 
 2017-08-15 Version: 3.2.0
 1, SLB接入业务location支持单元化region的自动路由

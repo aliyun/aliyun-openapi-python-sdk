@@ -280,7 +280,7 @@ class AcsClient:
         try:
             body_obj = json.loads(body)
             request_id = body_obj.get('RequestId')
-        except ValueError or TypeError or AttributeError:
+        except ValueError or TypeError:
             # in case the response body is not a json string, return the raw
             # data instead
             pass

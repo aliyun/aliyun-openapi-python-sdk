@@ -47,7 +47,7 @@ class DescribeSecurityGroupReferencesRequest(RpcRequest):
 	def set_SecurityGroupIds(self,SecurityGroupIds):
 		for i in range(len(SecurityGroupIds)):	
 			if SecurityGroupIds[i] is not None:
-				self.add_query_param('SecurityGroupId.' + bytes(i + 1) , SecurityGroupIds[i]);
+				self.add_query_param('SecurityGroupId.' + str(i + 1) , SecurityGroupIds[i]);
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')

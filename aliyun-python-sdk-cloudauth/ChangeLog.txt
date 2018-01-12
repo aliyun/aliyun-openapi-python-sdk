@@ -1,3 +1,22 @@
+2018-01-12 Version: 1.1.2
+1, fix the TypeError while building the repeat params
+
 2017-12-05 Version: 1.1.1
 1, Added a field auditConclusions in GetStatus API which provided detail information about the verification request
+
+2017-12-05 Version: 1.1.1
+1, Added a field auditConclusions in GetStatus API which provided detail information about the verification request
+
+2017-10-19 Version: 1.1.0
+1, 所有接口增加子帐号权限控制
+
+2017-09-20 Version: 1.0.1
+1, GetMaterials 接口增强为HTTPS
+
+2017-09-14 Version: 1.0.0
+1, 人脸比对服务 CompareFaces 首次发布. 输入两张人脸照片给出相似度分值
+2, 认证接口 GetStatus 首次发布, 可以查询认证状态
+3, 认证接口 GetVerifyToken 首次发布, 可以获取认证会话Token, 可以用于客户端发起认证流程
+4, 认证接口 SubmitMaterials 首次发布, 用于纯服务端接入场景提交认证材料
+5, 认证接口 GetMaterials 首次发布, 可以查询客户端提交的认证材料
 

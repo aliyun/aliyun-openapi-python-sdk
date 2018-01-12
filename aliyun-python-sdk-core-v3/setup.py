@@ -48,7 +48,7 @@ finally:
 
 requires = []
 if platform.system() != "Windows":
-    requires.append("pycrypto>=2.6.1")
+    requires.append("pycryptodome>=3.4.7")
 else:
     logging.warning(
         "auth type [publicKeyId] is disabled because 'pycrypto' not support windows, we will resolve this soon")

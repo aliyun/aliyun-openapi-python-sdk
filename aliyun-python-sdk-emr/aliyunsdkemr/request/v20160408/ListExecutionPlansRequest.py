@@ -52,7 +52,7 @@ class ListExecutionPlansRequest(RpcRequest):
 
 	def set_StatusLists(self,StatusLists):
 		for i in range(len(StatusLists)):	
-			self.add_query_param('StatusList.' + bytes(i + 1) , StatusLists[i]);
+			self.add_query_param('StatusList.' + str(i + 1) , StatusLists[i]);
 
 	def get_IsDesc(self):
 		return self.get_query_params().get('IsDesc')

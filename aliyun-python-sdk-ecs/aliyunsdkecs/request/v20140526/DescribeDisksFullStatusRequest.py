@@ -29,7 +29,7 @@ class DescribeDisksFullStatusRequest(RpcRequest):
 	def set_EventIds(self,EventIds):
 		for i in range(len(EventIds)):	
 			if EventIds[i] is not None:
-				self.add_query_param('EventId.' + bytes(i + 1) , EventIds[i]);
+				self.add_query_param('EventId.' + str(i + 1) , EventIds[i]);
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -61,7 +61,7 @@ class DescribeDisksFullStatusRequest(RpcRequest):
 	def set_DiskIds(self,DiskIds):
 		for i in range(len(DiskIds)):	
 			if DiskIds[i] is not None:
-				self.add_query_param('DiskId.' + bytes(i + 1) , DiskIds[i]);
+				self.add_query_param('DiskId.' + str(i + 1) , DiskIds[i]);
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')

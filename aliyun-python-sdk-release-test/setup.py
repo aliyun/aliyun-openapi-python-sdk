@@ -29,7 +29,7 @@ Created on 7/3/2015
 @author: alex
 """
 
-PACKAGE = "aliyunsdkcore"
+PACKAGE = "aliyunsdkecs"
 NAME = "aliyun-python-sdk-release-test"
 DESCRIPTION = "A release test module for Aliyun SDK, please don't use it"
 AUTHOR = "Aliyun"

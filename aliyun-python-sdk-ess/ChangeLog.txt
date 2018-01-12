@@ -1,3 +1,14 @@
+2018-01-12 Version: 2.1.4
+1, fix the TypeError while building the repeat params
+
+2017-11-30 Version: 2.1.3
+1, Add multi zones in scaling group.
+2, Add multi instance types in scaling configuration.
+
+2017-11-30 Version: 2.1.2
+1, Add multi zones in scalingGroup.
+2, Add multi instanceTypes in scalingConfiguration.
+
 2017-11-14 Version: 2.1.1
 1, 重新开放DescribeScalingActivities接口。
 

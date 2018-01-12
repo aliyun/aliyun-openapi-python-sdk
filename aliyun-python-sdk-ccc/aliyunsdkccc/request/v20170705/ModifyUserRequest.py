@@ -29,7 +29,7 @@ class ModifyUserRequest(RpcRequest):
 	def set_SkillLevels(self,SkillLevels):
 		for i in range(len(SkillLevels)):	
 			if SkillLevels[i] is not None:
-				self.add_query_param('SkillLevel.' + bytes(i + 1) , SkillLevels[i]);
+				self.add_query_param('SkillLevel.' + str(i + 1) , SkillLevels[i]);
 
 	def get_InstanceId(self):
 		return self.get_query_params().get('InstanceId')
@@ -49,7 +49,7 @@ class ModifyUserRequest(RpcRequest):
 	def set_RoleIds(self,RoleIds):
 		for i in range(len(RoleIds)):	
 			if RoleIds[i] is not None:
-				self.add_query_param('RoleId.' + bytes(i + 1) , RoleIds[i]);
+				self.add_query_param('RoleId.' + str(i + 1) , RoleIds[i]);
 
 	def get_DisplayName(self):
 		return self.get_query_params().get('DisplayName')
@@ -63,7 +63,7 @@ class ModifyUserRequest(RpcRequest):
 	def set_SkillGroupIds(self,SkillGroupIds):
 		for i in range(len(SkillGroupIds)):	
 			if SkillGroupIds[i] is not None:
-				self.add_query_param('SkillGroupId.' + bytes(i + 1) , SkillGroupIds[i]);
+				self.add_query_param('SkillGroupId.' + str(i + 1) , SkillGroupIds[i]);
 
 	def get_UserId(self):
 		return self.get_query_params().get('UserId')
