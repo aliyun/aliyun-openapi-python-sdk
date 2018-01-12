@@ -1,15 +1,15 @@
-2017-11-16 Version: 3.0.1
-1, 修改了一些方法的访问次数。
-2, 新增了错误码。
-
+2018-01-12 Version: 3.0.2
+1, fix the TypeError while building the repeat params
 
 2017-11-16 Version: 3.0.1
 1, 修改了一些方法的访问次数。
 2, 新增了错误码。
 
 
-2017-09-27 Version: 2.1.1
-1, upgrade setup.py to support python3
+2017-11-16 Version: 3.0.1
+1, 修改了一些方法的访问次数。
+2, 新增了错误码。
+
 
 2017-08-15 Version: 2.1.0
 1, 新增支持全球加速功能。

@@ -29,7 +29,7 @@ class DescribeInstanceHistoryEventsRequest(RpcRequest):
 	def set_EventIds(self,EventIds):
 		for i in range(len(EventIds)):	
 			if EventIds[i] is not None:
-				self.add_query_param('EventId.' + bytes(i + 1) , EventIds[i]);
+				self.add_query_param('EventId.' + str(i + 1) , EventIds[i]);
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')

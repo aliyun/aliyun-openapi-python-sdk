@@ -25,9 +25,9 @@ import sys
 """
 setup module for rds.
 
-Created on 7/3/2015
+Created on 27/9/2017
 
-@author: alex
+@author: wenyang
 """
 
 PACKAGE = "aliyunsdkrds"

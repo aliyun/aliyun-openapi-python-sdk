@@ -34,7 +34,30 @@
 7, 新增视频暴恐涉政鉴别(AI)相关接口，提交视频暴恐涉政鉴别作业SubmitAIVideoTerrorismRecogJob、查询视频暴恐涉政鉴别作业ListAIVideoTerrorismRecogJob。
 8, 新增视频内容审核(AI)相关接口，提交视频内容审核作业SubmitAIVideoCensorJob、查询视频内容审核作业ListAIVideoCensorJob​​。
 
-2017-10-15 Version: 2.5.0
+2017-11-03 Version: 2.5.1
+1, 获取视频播放地址接口GetPlayInfo，增加二次鉴权参数，返回结构体PlayInfo中增加JobId。
+2, 获取视频播放凭证接口GetVideoPlayAuth，增加二次鉴权参数，支持用户自定义AuthInfo过期时间。
+3, 新增删除流信息接口DeleteStream，根据JobId删除某一路媒体流文件及信息。
+4, 新增提交截图作业接口SubmitSnapshotJob。
+5, 新增云剪辑工程及视频合成相关接口，创建云剪辑工程AddEditingProject、修改云剪辑工程UpdateEditingProject、合成成品视频ProduceEditingProjectVideo、设置云剪辑工程素材  SetEditingProjectMaterials、获取云剪辑工程素材GetEditingProjectMaterials、获取单个云剪辑工程GetEditingProject、搜索云剪辑工程SearchEditingProject、删除云剪辑工程DeleteEditingProject。
+6, 新增点播cdn资源监控及日志下载相关接口，日志信息－下载域名日志​DescribeCdnDomainLogs、资源监控－查询网络带宽DescribeDomainBpsData、资源监控－查询流量数据DescribeDomainFlowData。
+7, 新增视频暴恐涉政鉴别(AI)相关接口，提交视频暴恐涉政鉴别作业SubmitAIVideoTerrorismRecogJob、查询视频暴恐涉政鉴别作业ListAIVideoTerrorismRecogJob。
+8, 新增视频内容审核(AI)相关接口，提交视频内容审核作业SubmitAIVideoCensorJob、查询视频内容审核作业ListAIVideoCensorJob​​。
+9, 新增素材管理相关接口，获取素材上传地址与凭证CreateUploadMaterial、刷新素材上传凭证RefreshUploadMaterialToken、从媒体库同步素材SyncMaterial、获取素材信息GetMaterial、搜索素材SearchMaterial、修改素材信息UpdateMaterial、删除素材DeleteMaterial。
+
+2017-10-13 Version: 2.5.0
+1, 新增语音识别文本相关接口，包括提交语音识别作业SubmitAIASRJob、查询语音识别作业ListAIASRJob
+2, 新增视频摘要相关接口，包括提交视频摘要作业SubmitAIVideoSummaryJob、查询视频摘要作业ListAIVideoSummaryJob
+3, 视频AI智能首图和视频鉴黄相关接口SubmitAIVideoCoverJob、ListAIVideoCoverJob、SubmitAIVideoPornRecogJob、ListAIVideoPornRecogJob, 返回结构体Job中，将Id字段重命名为JobId。
+4, 获取视频播放地址接口GetPlayInfo，返回结构体PlayInfo中, 增加流类型StreamType, 如果输出为视频流, 取值: video, 输出为音频流, 取值: audio。
+
+2017-10-13 Version: 2.5.0
+1, 新增语音识别文本相关接口，包括提交语音识别作业SubmitAIASRJob、查询语音识别作业ListAIASRJob
+2, 新增视频摘要相关接口，包括提交视频摘要作业SubmitAIVideoSummaryJob、查询视频摘要作业ListAIVideoSummaryJob
+3, 视频AI智能首图和视频鉴黄相关接口SubmitAIVideoCoverJob、ListAIVideoCoverJob、SubmitAIVideoPornRecogJob、ListAIVideoPornRecogJob, 返回结构体Job中，将Id字段重命名为JobId。
+4, 获取视频播放地址接口GetPlayInfo，返回结构体PlayInfo中, 增加流类型StreamType, 如果输出为视频流, 取值: video, 输出为音频流, 取值: audio。
+
+2017-10-13 Version: 2.5.0
 1, 新增语音识别文本相关接口，包括提交语音识别作业SubmitAIASRJob、查询语音识别作业ListAIASRJob
 2, 新增视频摘要相关接口，包括提交视频摘要作业SubmitAIVideoSummaryJob、查询视频摘要作业ListAIVideoSummaryJob
 3, 视频AI智能首图和视频鉴黄相关接口SubmitAIVideoCoverJob、ListAIVideoCoverJob、SubmitAIVideoPornRecogJob、ListAIVideoPornRecogJob, 返回结构体Job中，将Id字段重命名为JobId。

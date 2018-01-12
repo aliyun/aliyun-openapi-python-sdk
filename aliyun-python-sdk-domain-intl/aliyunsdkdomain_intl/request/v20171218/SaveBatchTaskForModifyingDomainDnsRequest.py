@@ -35,7 +35,7 @@ class SaveBatchTaskForModifyingDomainDnsRequest(RpcRequest):
 	def set_DomainNames(self,DomainNames):
 		for i in range(len(DomainNames)):	
 			if DomainNames[i] is not None:
-				self.add_query_param('DomainName.' + bytes(i + 1) , DomainNames[i]);
+				self.add_query_param('DomainName.' + str(i + 1) , DomainNames[i]);
 
 	def get_DomainNameServers(self):
 		return self.get_query_params().get('DomainNameServers')
@@ -43,7 +43,7 @@ class SaveBatchTaskForModifyingDomainDnsRequest(RpcRequest):
 	def set_DomainNameServers(self,DomainNameServers):
 		for i in range(len(DomainNameServers)):	
 			if DomainNameServers[i] is not None:
-				self.add_query_param('DomainNameServer.' + bytes(i + 1) , DomainNameServers[i]);
+				self.add_query_param('DomainNameServer.' + str(i + 1) , DomainNameServers[i]);
 
 	def get_Lang(self):
 		return self.get_query_params().get('Lang')

@@ -101,4 +101,4 @@ class DescribeNetworkInterfacesRequest(RpcRequest):
 	def set_NetworkInterfaceIds(self,NetworkInterfaceIds):
 		for i in range(len(NetworkInterfaceIds)):	
 			if NetworkInterfaceIds[i] is not None:
-				self.add_query_param('NetworkInterfaceId.' + bytes(i + 1) , NetworkInterfaceIds[i]);
+				self.add_query_param('NetworkInterfaceId.' + str(i + 1) , NetworkInterfaceIds[i]);

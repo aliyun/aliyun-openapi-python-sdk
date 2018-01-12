@@ -221,7 +221,7 @@ class DescribeDisksRequest(RpcRequest):
 	def set_AdditionalAttributess(self,AdditionalAttributess):
 		for i in range(len(AdditionalAttributess)):	
 			if AdditionalAttributess[i] is not None:
-				self.add_query_param('AdditionalAttributes.' + bytes(i + 1) , AdditionalAttributess[i]);
+				self.add_query_param('AdditionalAttributes.' + str(i + 1) , AdditionalAttributess[i]);
 
 	def get_EnableShared(self):
 		return self.get_query_params().get('EnableShared')

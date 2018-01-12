@@ -65,6 +65,14 @@ class CreateScalingConfigurationRequest(RpcRequest):
 	def set_DataDisk2Device(self,DataDisk2Device):
 		self.add_query_param('DataDisk.2.Device',DataDisk2Device)
 
+	def get_InstanceTypes(self):
+		return self.get_query_params().get('InstanceTypes')
+
+	def set_InstanceTypes(self,InstanceTypes):
+		for i in range(len(InstanceTypes)):	
+			if InstanceTypes[i] is not None:
+				self.add_query_param('InstanceTypes.' + str(i + 1) , InstanceTypes[i]);
+
 	def get_IoOptimized(self):
 		return self.get_query_params().get('IoOptimized')
 
@@ -214,6 +222,12 @@ class CreateScalingConfigurationRequest(RpcRequest):
 
 	def set_LoadBalancerWeight(self,LoadBalancerWeight):
 		self.add_query_param('LoadBalancerWeight',LoadBalancerWeight)
+
+	def get_InstanceName(self):
+		return self.get_query_params().get('InstanceName')
+
+	def set_InstanceName(self,InstanceName):
+		self.add_query_param('InstanceName',InstanceName)
 
 	def get_SystemDiskSize(self):
 		return self.get_query_params().get('SystemDisk.Size')

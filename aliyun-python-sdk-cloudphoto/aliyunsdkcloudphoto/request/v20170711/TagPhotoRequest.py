@@ -36,7 +36,7 @@ class TagPhotoRequest(RpcRequest):
 	def set_Confidences(self,Confidences):
 		for i in range(len(Confidences)):	
 			if Confidences[i] is not None:
-				self.add_query_param('Confidence.' + bytes(i + 1) , Confidences[i]);
+				self.add_query_param('Confidence.' + str(i + 1) , Confidences[i]);
 
 	def get_StoreName(self):
 		return self.get_query_params().get('StoreName')
@@ -56,4 +56,4 @@ class TagPhotoRequest(RpcRequest):
 	def set_TagKeys(self,TagKeys):
 		for i in range(len(TagKeys)):	
 			if TagKeys[i] is not None:
-				self.add_query_param('TagKey.' + bytes(i + 1) , TagKeys[i]);
+				self.add_query_param('TagKey.' + str(i + 1) , TagKeys[i]);

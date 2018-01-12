@@ -1,3 +1,6 @@
+2018-01-12 Version: 3.3.2
+1, fix the TypeError while building the repeat params
+
 2018-01-09 Version: 3.3.1
 1, Add caster transcode template for vertical screen
 2, Add PurchaseTime and ExpireTime for CreateCaster and DescribeCasters
@@ -25,9 +28,6 @@
 2, 增加查询流历史在线人数接口DescribeLiveStreamHistoryUserNum
 3, 修改添加鉴黄配置接口AddLiveSnapshotDetectPornConfig，增加scenes参数
 4, 修改更新鉴黄配置接口UpdateLiveSnapshotDetectPornConfig，增加scenes参数
-
-2017-09-27 Version: 2.7.1
-1, upgrade setup.py to support python3
 
 2017-09-06 Version: 2.7.0
 1, 增加拉流配置接口AddLivePullStreamInfoConfig。

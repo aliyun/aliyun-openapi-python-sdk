@@ -58,4 +58,4 @@ class SaveTaskForModifyingDomainDnsRequest(RpcRequest):
 
 	def set_DnsLists(self,DnsLists):
 		for i in range(len(DnsLists)):	
-			self.add_query_param('DnsList.' + bytes(i + 1) , DnsLists[i]);
+			self.add_query_param('DnsList.' + str(i + 1) , DnsLists[i]);

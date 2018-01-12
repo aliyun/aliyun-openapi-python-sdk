@@ -48,4 +48,4 @@ class GetPhotosByMd5sRequest(RpcRequest):
 	def set_Md5s(self,Md5s):
 		for i in range(len(Md5s)):	
 			if Md5s[i] is not None:
-				self.add_query_param('Md5.' + bytes(i + 1) , Md5s[i]);
+				self.add_query_param('Md5.' + str(i + 1) , Md5s[i]);

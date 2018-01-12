@@ -20,13 +20,14 @@
 
 from setuptools import setup, find_packages
 import os
+import sys
 
 """
 setup module for ft.
 
-Created on 7/3/2015
+Created on 27/9/2017
 
-@author: alex
+@author: wenyang
 """
 
 PACKAGE = "aliyunsdkft"
@@ -45,6 +46,13 @@ try:
 finally:
 	desc_file.close()
 
+requires = []
+
+if sys.version_info < (3, 3):
+    requires.append("aliyun-python-sdk-core>=2.0.2")
+else:
+    requires.append("aliyun-python-sdk-core-v3>=2.3.5")
+
 setup(
     name=NAME,
     version=VERSION,
@@ -58,7 +66,7 @@ setup(
     packages=find_packages(exclude=["tests*"]),
     include_package_data=True,
     platforms="any",
-    install_requires=["aliyun-python-sdk-core>=2.0.2"],
+    install_requires=requires,
     classifiers=(
                 "Development Status :: 4 - Beta",
                 "Intended Audience :: Developers",
@@ -68,6 +76,10 @@ setup(
                 "Programming Language :: Python :: 2.7",
                 "Programming Language :: Python :: 3",
                 "Programming Language :: Python :: 3.3",
+                "Programming Language :: Python :: 3.4",
+                "Programming Language :: Python :: 3.5",
+                "Programming Language :: Python :: 3.6",
                 "Topic :: Software Development",
               )
+
 )
