@@ -53,11 +53,11 @@ class ARMSQueryDataSetRequest(RpcRequest):
 	def set_OptionalDimss(self,OptionalDimss):
 		for i in range(len(OptionalDimss)):	
 			if OptionalDimss[i].get('Key') is not None:
-				self.add_query_param('OptionalDims.' + bytes(i + 1) + '.Key' , OptionalDimss[i].get('Key'))
+				self.add_query_param('OptionalDims.' + str(i + 1) + '.Key' , OptionalDimss[i].get('Key'))
 			if OptionalDimss[i].get('Value') is not None:
-				self.add_query_param('OptionalDims.' + bytes(i + 1) + '.Value' , OptionalDimss[i].get('Value'))
+				self.add_query_param('OptionalDims.' + str(i + 1) + '.Value' , OptionalDimss[i].get('Value'))
 			if OptionalDimss[i].get('Type') is not None:
-				self.add_query_param('OptionalDims.' + bytes(i + 1) + '.Type' , OptionalDimss[i].get('Type'))
+				self.add_query_param('OptionalDims.' + str(i + 1) + '.Type' , OptionalDimss[i].get('Type'))
 
 
 	def get_Measuress(self):
@@ -66,7 +66,7 @@ class ARMSQueryDataSetRequest(RpcRequest):
 	def set_Measuress(self,Measuress):
 		for i in range(len(Measuress)):	
 			if Measuress[i] is not None:
-				self.add_query_param('Measures.' + bytes(i + 1) , Measuress[i]);
+				self.add_query_param('Measures.' + str(i + 1) , Measuress[i]);
 
 	def get_IntervalInSec(self):
 		return self.get_query_params().get('IntervalInSec')
@@ -110,11 +110,11 @@ class ARMSQueryDataSetRequest(RpcRequest):
 	def set_RequiredDimss(self,RequiredDimss):
 		for i in range(len(RequiredDimss)):	
 			if RequiredDimss[i].get('Key') is not None:
-				self.add_query_param('RequiredDims.' + bytes(i + 1) + '.Key' , RequiredDimss[i].get('Key'))
+				self.add_query_param('RequiredDims.' + str(i + 1) + '.Key' , RequiredDimss[i].get('Key'))
 			if RequiredDimss[i].get('Value') is not None:
-				self.add_query_param('RequiredDims.' + bytes(i + 1) + '.Value' , RequiredDimss[i].get('Value'))
+				self.add_query_param('RequiredDims.' + str(i + 1) + '.Value' , RequiredDimss[i].get('Value'))
 			if RequiredDimss[i].get('Type') is not None:
-				self.add_query_param('RequiredDims.' + bytes(i + 1) + '.Type' , RequiredDimss[i].get('Type'))
+				self.add_query_param('RequiredDims.' + str(i + 1) + '.Type' , RequiredDimss[i].get('Type'))
 
 
 	def get_Dimensionss(self):
@@ -123,8 +123,8 @@ class ARMSQueryDataSetRequest(RpcRequest):
 	def set_Dimensionss(self,Dimensionss):
 		for i in range(len(Dimensionss)):	
 			if Dimensionss[i].get('Key') is not None:
-				self.add_query_param('Dimensions.' + bytes(i + 1) + '.Key' , Dimensionss[i].get('Key'))
+				self.add_query_param('Dimensions.' + str(i + 1) + '.Key' , Dimensionss[i].get('Key'))
 			if Dimensionss[i].get('Value') is not None:
-				self.add_query_param('Dimensions.' + bytes(i + 1) + '.Value' , Dimensionss[i].get('Value'))
+				self.add_query_param('Dimensions.' + str(i + 1) + '.Value' , Dimensionss[i].get('Value'))
 			if Dimensionss[i].get('Type') is not None:
-				self.add_query_param('Dimensions.' + bytes(i + 1) + '.Type' , Dimensionss[i].get('Type'))
+				self.add_query_param('Dimensions.' + str(i + 1) + '.Type' , Dimensionss[i].get('Type'))

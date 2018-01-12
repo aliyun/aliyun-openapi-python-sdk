@@ -40,8 +40,8 @@ class ResetAutoRenewalRequest(RpcRequest):
 
 	def set_EcsResetAutoRenewDos(self,EcsResetAutoRenewDos):
 		for i in range(len(EcsResetAutoRenewDos)):	
-			self.add_query_param('EcsResetAutoRenewDo.' + bytes(i + 1) + '.EcsId' , EcsResetAutoRenewDos[i].get('EcsId'))
-			self.add_query_param('EcsResetAutoRenewDo.' + bytes(i + 1) + '.EcsAutoRenew' , EcsResetAutoRenewDos[i].get('EcsAutoRenew'))
-			self.add_query_param('EcsResetAutoRenewDo.' + bytes(i + 1) + '.EcsAutoRenewDuration' , EcsResetAutoRenewDos[i].get('EcsAutoRenewDuration'))
-			self.add_query_param('EcsResetAutoRenewDo.' + bytes(i + 1) + '.EmrAutoRenew' , EcsResetAutoRenewDos[i].get('EmrAutoRenew'))
-			self.add_query_param('EcsResetAutoRenewDo.' + bytes(i + 1) + '.EmrAutoRenewDuration' , EcsResetAutoRenewDos[i].get('EmrAutoRenewDuration'))
+			self.add_query_param('EcsResetAutoRenewDo.' + str(i + 1) + '.EcsId' , EcsResetAutoRenewDos[i].get('EcsId'))
+			self.add_query_param('EcsResetAutoRenewDo.' + str(i + 1) + '.EcsAutoRenew' , EcsResetAutoRenewDos[i].get('EcsAutoRenew'))
+			self.add_query_param('EcsResetAutoRenewDo.' + str(i + 1) + '.EcsAutoRenewDuration' , EcsResetAutoRenewDos[i].get('EcsAutoRenewDuration'))
+			self.add_query_param('EcsResetAutoRenewDo.' + str(i + 1) + '.EmrAutoRenew' , EcsResetAutoRenewDos[i].get('EmrAutoRenew'))
+			self.add_query_param('EcsResetAutoRenewDo.' + str(i + 1) + '.EmrAutoRenewDuration' , EcsResetAutoRenewDos[i].get('EmrAutoRenewDuration'))

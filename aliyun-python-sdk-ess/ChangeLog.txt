@@ -1,3 +1,6 @@
+2018-01-12 Version: 2.1.4
+1, fix the TypeError while building the repeat params
+
 2017-11-14 Version: 2.1.1
 1, 重新开放DescribeScalingActivities接口。
 

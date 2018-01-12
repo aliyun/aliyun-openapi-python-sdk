@@ -1,3 +1,6 @@
+2018-01-12 Version: 1.1.9
+1, fix the TypeError while building the repeat params
+
 2018-01-11 Version: 1.1.8
 1, replace photo tag 2000 upgrade to 5000
 2, add TrashQuota

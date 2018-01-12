@@ -36,7 +36,7 @@ class InactivatePhotosRequest(RpcRequest):
 	def set_PhotoIds(self,PhotoIds):
 		for i in range(len(PhotoIds)):	
 			if PhotoIds[i] is not None:
-				self.add_query_param('PhotoId.' + bytes(i + 1) , PhotoIds[i]);
+				self.add_query_param('PhotoId.' + str(i + 1) , PhotoIds[i]);
 
 	def get_StoreName(self):
 		return self.get_query_params().get('StoreName')
