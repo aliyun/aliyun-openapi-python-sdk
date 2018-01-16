@@ -29,6 +29,12 @@ class DescribeInvocationResultsRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_CommandId(self):
+		return self.get_query_params().get('CommandId')
+
+	def set_CommandId(self,CommandId):
+		self.add_query_param('CommandId',CommandId)
+
 	def get_PageNumber(self):
 		return self.get_query_params().get('PageNumber')
 
@@ -70,3 +76,9 @@ class DescribeInvocationResultsRequest(RpcRequest):
 
 	def set_InstanceId(self,InstanceId):
 		self.add_query_param('InstanceId',InstanceId)
+
+	def get_InvokeRecordStatus(self):
+		return self.get_query_params().get('InvokeRecordStatus')
+
+	def set_InvokeRecordStatus(self,InvokeRecordStatus):
+		self.add_query_param('InvokeRecordStatus',InvokeRecordStatus)
