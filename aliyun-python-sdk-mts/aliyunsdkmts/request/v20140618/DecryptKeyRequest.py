@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class DecryptKeyRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Mts', '2014-06-18', 'DecryptKey')
+		RpcRequest.__init__(self, 'Mts', '2014-06-18', 'DecryptKey','mts')
 
 	def get_Rand(self):
 		return self.get_query_params().get('Rand')

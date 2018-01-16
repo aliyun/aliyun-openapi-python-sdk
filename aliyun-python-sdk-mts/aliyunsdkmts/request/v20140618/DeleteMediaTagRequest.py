@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class DeleteMediaTagRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Mts', '2014-06-18', 'DeleteMediaTag')
+		RpcRequest.__init__(self, 'Mts', '2014-06-18', 'DeleteMediaTag','mts')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')

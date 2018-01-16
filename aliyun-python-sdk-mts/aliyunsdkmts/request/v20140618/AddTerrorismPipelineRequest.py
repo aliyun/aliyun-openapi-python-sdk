@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class AddTerrorismPipelineRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Mts', '2014-06-18', 'AddTerrorismPipeline')
+		RpcRequest.__init__(self, 'Mts', '2014-06-18', 'AddTerrorismPipeline','mts')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')

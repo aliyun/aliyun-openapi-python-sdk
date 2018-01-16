@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class UpdateMediaRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Mts', '2014-06-18', 'UpdateMedia')
+		RpcRequest.__init__(self, 'Mts', '2014-06-18', 'UpdateMedia','mts')
 
 	def get_CoverURL(self):
 		return self.get_query_params().get('CoverURL')

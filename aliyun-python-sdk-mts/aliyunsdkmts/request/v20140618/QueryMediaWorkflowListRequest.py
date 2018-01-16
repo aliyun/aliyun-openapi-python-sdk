@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class QueryMediaWorkflowListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Mts', '2014-06-18', 'QueryMediaWorkflowList')
+		RpcRequest.__init__(self, 'Mts', '2014-06-18', 'QueryMediaWorkflowList','mts')
 
 	def get_MediaWorkflowIds(self):
 		return self.get_query_params().get('MediaWorkflowIds')

@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class ReportTagJobResultRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Mts', '2014-06-18', 'ReportTagJobResult')
+		RpcRequest.__init__(self, 'Mts', '2014-06-18', 'ReportTagJobResult','mts')
 
 	def get_Result(self):
 		return self.get_query_params().get('Result')

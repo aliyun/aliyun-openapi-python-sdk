@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class ListMediaRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Mts', '2014-06-18', 'ListMedia')
+		RpcRequest.__init__(self, 'Mts', '2014-06-18', 'ListMedia','mts')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')

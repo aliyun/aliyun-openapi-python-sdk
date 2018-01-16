@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class BindInputBucketRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Mts', '2014-06-18', 'BindInputBucket')
+		RpcRequest.__init__(self, 'Mts', '2014-06-18', 'BindInputBucket','mts')
 
 	def get_Bucket(self):
 		return self.get_query_params().get('Bucket')
