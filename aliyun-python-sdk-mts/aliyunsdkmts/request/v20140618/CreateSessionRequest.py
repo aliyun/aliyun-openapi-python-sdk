@@ -18,16 +18,22 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class ListPornPipelineRequest(RpcRequest):
+class CreateSessionRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Mts', '2014-06-18', 'ListPornPipeline','mts')
+		RpcRequest.__init__(self, 'Mts', '2014-06-18', 'CreateSession','mts')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+
+	def get_SessionTime(self):
+		return self.get_query_params().get('SessionTime')
+
+	def set_SessionTime(self,SessionTime):
+		self.add_query_param('SessionTime',SessionTime)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -41,26 +47,14 @@ class ListPornPipelineRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
+	def get_EndUserId(self):
+		return self.get_query_params().get('EndUserId')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_State(self):
-		return self.get_query_params().get('State')
-
-	def set_State(self,State):
-		self.add_query_param('State',State)
+	def set_EndUserId(self,EndUserId):
+		self.add_query_param('EndUserId',EndUserId)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
-
-	def get_PageNumber(self):
-		return self.get_query_params().get('PageNumber')
-
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)

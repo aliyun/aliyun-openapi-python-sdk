@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class AddTemplateRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Mts', '2014-06-18', 'AddTemplate')
+		RpcRequest.__init__(self, 'Mts', '2014-06-18', 'AddTemplate','mts')
 
 	def get_Container(self):
 		return self.get_query_params().get('Container')

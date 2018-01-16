@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class SubmitAsrJobRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Mts', '2014-06-18', 'SubmitAsrJob')
+		RpcRequest.__init__(self, 'Mts', '2014-06-18', 'SubmitAsrJob','mts')
 
 	def get_Input(self):
 		return self.get_query_params().get('Input')

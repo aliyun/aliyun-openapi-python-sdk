@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class SubmitVideoSplitJobRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Mts', '2014-06-18', 'SubmitVideoSplitJob')
+		RpcRequest.__init__(self, 'Mts', '2014-06-18', 'SubmitVideoSplitJob','mts')
 
 	def get_Input(self):
 		return self.get_query_params().get('Input')

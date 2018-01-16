@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class ReportCensorJobResultRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Mts', '2014-06-18', 'ReportCensorJobResult')
+		RpcRequest.__init__(self, 'Mts', '2014-06-18', 'ReportCensorJobResult','mts')
 
 	def get_JobId(self):
 		return self.get_query_params().get('JobId')

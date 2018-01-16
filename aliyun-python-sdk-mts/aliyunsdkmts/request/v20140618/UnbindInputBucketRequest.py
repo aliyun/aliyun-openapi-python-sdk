@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class UnbindInputBucketRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Mts', '2014-06-18', 'UnbindInputBucket')
+		RpcRequest.__init__(self, 'Mts', '2014-06-18', 'UnbindInputBucket','mts')
 
 	def get_Bucket(self):
 		return self.get_query_params().get('Bucket')

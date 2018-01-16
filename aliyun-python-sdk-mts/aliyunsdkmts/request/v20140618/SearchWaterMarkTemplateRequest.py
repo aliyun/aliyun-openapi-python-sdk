@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class SearchWaterMarkTemplateRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Mts', '2014-06-18', 'SearchWaterMarkTemplate')
+		RpcRequest.__init__(self, 'Mts', '2014-06-18', 'SearchWaterMarkTemplate','mts')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')

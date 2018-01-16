@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class AddCensorPipelineRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Mts', '2014-06-18', 'AddCensorPipeline')
+		RpcRequest.__init__(self, 'Mts', '2014-06-18', 'AddCensorPipeline','mts')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')

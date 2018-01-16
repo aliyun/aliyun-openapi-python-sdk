@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class AddMediaWorkflowRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Mts', '2014-06-18', 'AddMediaWorkflow')
+		RpcRequest.__init__(self, 'Mts', '2014-06-18', 'AddMediaWorkflow','mts')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -58,3 +58,9 @@ class AddMediaWorkflowRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_TriggerMode(self):
+		return self.get_query_params().get('TriggerMode')
+
+	def set_TriggerMode(self,TriggerMode):
+		self.add_query_param('TriggerMode',TriggerMode)

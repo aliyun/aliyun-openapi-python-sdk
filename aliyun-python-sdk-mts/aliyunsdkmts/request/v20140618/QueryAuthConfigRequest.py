@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class QueryAuthConfigRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Mts', '2014-06-18', 'QueryAuthConfig')
+		RpcRequest.__init__(self, 'Mts', '2014-06-18', 'QueryAuthConfig','mts')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')

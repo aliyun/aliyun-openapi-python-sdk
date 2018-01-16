@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class ReportFacerecogJobResultRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Mts', '2014-06-18', 'ReportFacerecogJobResult')
+		RpcRequest.__init__(self, 'Mts', '2014-06-18', 'ReportFacerecogJobResult','mts')
 
 	def get_JobId(self):
 		return self.get_query_params().get('JobId')

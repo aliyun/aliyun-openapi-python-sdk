@@ -18,10 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class ListPornPipelineRequest(RpcRequest):
+class UpdateMediaWorkflowTriggerModeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Mts', '2014-06-18', 'ListPornPipeline','mts')
+		RpcRequest.__init__(self, 'Mts', '2014-06-18', 'UpdateMediaWorkflowTriggerMode','mts')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -41,17 +41,11 @@ class ListPornPipelineRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
+	def get_MediaWorkflowId(self):
+		return self.get_query_params().get('MediaWorkflowId')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_State(self):
-		return self.get_query_params().get('State')
-
-	def set_State(self,State):
-		self.add_query_param('State',State)
+	def set_MediaWorkflowId(self,MediaWorkflowId):
+		self.add_query_param('MediaWorkflowId',MediaWorkflowId)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
@@ -59,8 +53,8 @@ class ListPornPipelineRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_PageNumber(self):
-		return self.get_query_params().get('PageNumber')
+	def get_TriggerMode(self):
+		return self.get_query_params().get('TriggerMode')
 
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
+	def set_TriggerMode(self,TriggerMode):
+		self.add_query_param('TriggerMode',TriggerMode)
