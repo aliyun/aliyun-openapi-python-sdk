@@ -59,12 +59,6 @@ class DescribeLiveRecordVodConfigsRequest(RpcRequest):
 	def set_PageNum(self,PageNum):
 		self.add_query_param('PageNum',PageNum)
 
-	def get_Version(self):
-		return self.get_query_params().get('Version')
-
-	def set_Version(self,Version):
-		self.add_query_param('Version',Version)
-
 	def get_StreamName(self):
 		return self.get_query_params().get('StreamName')
 

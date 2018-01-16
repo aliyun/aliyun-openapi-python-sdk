@@ -61,7 +61,7 @@ class AddCasterLayoutRequest(RpcRequest):
 				self.add_query_param('VideoLayer.' + str(i + 1) + '.PositionRefer' , VideoLayers[i].get('PositionRefer'))
 			for j in range(len(VideoLayers[i].get('PositionNormalizeds'))):
 				if VideoLayers[i].get('PositionNormalizeds')[j] is not None:
-					self.add_query_param('VideoLayer.' + str(i + 1) + '.PositionNormalized.'+bytes(j + 1), VideoLayers[i].get('PositionNormalizeds')[j])
+					self.add_query_param('VideoLayer.' + str(i + 1) + '.PositionNormalized.'+str(j + 1), VideoLayers[i].get('PositionNormalizeds')[j])
 
 
 	def get_CasterId(self):
