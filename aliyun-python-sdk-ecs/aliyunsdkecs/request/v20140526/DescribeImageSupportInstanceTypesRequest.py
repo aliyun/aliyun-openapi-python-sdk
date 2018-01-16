@@ -23,6 +23,23 @@ class DescribeImageSupportInstanceTypesRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'DescribeImageSupportInstanceTypes','ecs')
 
+	def get_ActionType(self):
+		return self.get_query_params().get('ActionType')
+
+	def set_ActionType(self,ActionType):
+		self.add_query_param('ActionType',ActionType)
+
+	def get_Filters(self):
+		return self.get_query_params().get('Filters')
+
+	def set_Filters(self,Filters):
+		for i in range(len(Filters)):	
+			if Filters[i].get('Key') is not None:
+				self.add_query_param('Filter.' + str(i + 1) + '.Key' , Filters[i].get('Key'))
+			if Filters[i].get('Value') is not None:
+				self.add_query_param('Filter.' + str(i + 1) + '.Value' , Filters[i].get('Value'))
+
+
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 

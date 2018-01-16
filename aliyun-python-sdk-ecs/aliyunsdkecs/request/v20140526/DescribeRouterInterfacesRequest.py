@@ -32,7 +32,7 @@ class DescribeRouterInterfacesRequest(RpcRequest):
 				self.add_query_param('Filter.' + str(i + 1) + '.Key' , Filters[i].get('Key'))
 			for j in range(len(Filters[i].get('Values'))):
 				if Filters[i].get('Values')[j] is not None:
-					self.add_query_param('Filter.' + str(i + 1) + '.Value.'+bytes(j + 1), Filters[i].get('Values')[j])
+					self.add_query_param('Filter.' + str(i + 1) + '.Value.'+str(j + 1), Filters[i].get('Values')[j])
 
 
 	def get_ResourceOwnerId(self):
