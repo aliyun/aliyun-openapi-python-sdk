@@ -23,6 +23,12 @@ class CreateApiStageVariableRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'CloudAPI', '2016-07-14', 'CreateApiStageVariable','apigateway')
 
+	def get_SupportRoute(self):
+		return self.get_query_params().get('SupportRoute')
+
+	def set_SupportRoute(self,SupportRoute):
+		self.add_query_param('SupportRoute',SupportRoute)
+
 	def get_VariableName(self):
 		return self.get_query_params().get('VariableName')
 
@@ -40,6 +46,12 @@ class CreateApiStageVariableRequest(RpcRequest):
 
 	def set_GroupId(self,GroupId):
 		self.add_query_param('GroupId',GroupId)
+
+	def get_StageRouteModel(self):
+		return self.get_query_params().get('StageRouteModel')
+
+	def set_StageRouteModel(self,StageRouteModel):
+		self.add_query_param('StageRouteModel',StageRouteModel)
 
 	def get_StageId(self):
 		return self.get_query_params().get('StageId')
