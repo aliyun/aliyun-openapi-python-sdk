@@ -18,10 +18,28 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class SaveBatchTaskForCreatingOrderRenewRequest(RpcRequest):
+class QueryTaskInfoHistoryRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Domain-intl', '2017-12-18', 'SaveBatchTaskForCreatingOrderRenew','domain')
+		RpcRequest.__init__(self, 'Domain-intl', '2017-12-18', 'QueryTaskInfoHistory','domain')
+
+	def get_BeginCreateTime(self):
+		return self.get_query_params().get('BeginCreateTime')
+
+	def set_BeginCreateTime(self,BeginCreateTime):
+		self.add_query_param('BeginCreateTime',BeginCreateTime)
+
+	def get_EndCreateTime(self):
+		return self.get_query_params().get('EndCreateTime')
+
+	def set_EndCreateTime(self,EndCreateTime):
+		self.add_query_param('EndCreateTime',EndCreateTime)
+
+	def get_TaskNoCursor(self):
+		return self.get_query_params().get('TaskNoCursor')
+
+	def set_TaskNoCursor(self,TaskNoCursor):
+		self.add_query_param('TaskNoCursor',TaskNoCursor)
 
 	def get_UserClientIp(self):
 		return self.get_query_params().get('UserClientIp')
@@ -29,21 +47,20 @@ class SaveBatchTaskForCreatingOrderRenewRequest(RpcRequest):
 	def set_UserClientIp(self,UserClientIp):
 		self.add_query_param('UserClientIp',UserClientIp)
 
-	def get_OrderRenewParams(self):
-		return self.get_query_params().get('OrderRenewParams')
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
 
-	def set_OrderRenewParams(self,OrderRenewParams):
-		for i in range(len(OrderRenewParams)):	
-			if OrderRenewParams[i].get('DomainName') is not None:
-				self.add_query_param('OrderRenewParam.' + str(i + 1) + '.DomainName' , OrderRenewParams[i].get('DomainName'))
-			if OrderRenewParams[i].get('CurrentExpirationDate') is not None:
-				self.add_query_param('OrderRenewParam.' + str(i + 1) + '.CurrentExpirationDate' , OrderRenewParams[i].get('CurrentExpirationDate'))
-			if OrderRenewParams[i].get('SubscriptionDuration') is not None:
-				self.add_query_param('OrderRenewParam.' + str(i + 1) + '.SubscriptionDuration' , OrderRenewParams[i].get('SubscriptionDuration'))
-
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
 
 	def get_Lang(self):
 		return self.get_query_params().get('Lang')
 
 	def set_Lang(self,Lang):
 		self.add_query_param('Lang',Lang)
+
+	def get_CreateTimeCursor(self):
+		return self.get_query_params().get('CreateTimeCursor')
+
+	def set_CreateTimeCursor(self,CreateTimeCursor):
+		self.add_query_param('CreateTimeCursor',CreateTimeCursor)
