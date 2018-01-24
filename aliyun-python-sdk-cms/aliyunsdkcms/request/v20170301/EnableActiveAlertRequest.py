@@ -18,31 +18,19 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class GetNotifyPolicyRequest(RpcRequest):
+class EnableActiveAlertRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cms', '2017-03-01', 'GetNotifyPolicy','cms')
+		RpcRequest.__init__(self, 'Cms', '2017-03-01', 'EnableActiveAlert','cms')
 
-	def get_PolicyType(self):
-		return self.get_query_params().get('PolicyType')
+	def get_Product(self):
+		return self.get_query_params().get('Product')
 
-	def set_PolicyType(self,PolicyType):
-		self.add_query_param('PolicyType',PolicyType)
+	def set_Product(self,Product):
+		self.add_query_param('Product',Product)
 
-	def get_AlertName(self):
-		return self.get_query_params().get('AlertName')
+	def get_UserId(self):
+		return self.get_query_params().get('UserId')
 
-	def set_AlertName(self,AlertName):
-		self.add_query_param('AlertName',AlertName)
-
-	def get_Id(self):
-		return self.get_query_params().get('Id')
-
-	def set_Id(self,Id):
-		self.add_query_param('Id',Id)
-
-	def get_Dimensions(self):
-		return self.get_query_params().get('Dimensions')
-
-	def set_Dimensions(self,Dimensions):
-		self.add_query_param('Dimensions',Dimensions)
+	def set_UserId(self,UserId):
+		self.add_query_param('UserId',UserId)
