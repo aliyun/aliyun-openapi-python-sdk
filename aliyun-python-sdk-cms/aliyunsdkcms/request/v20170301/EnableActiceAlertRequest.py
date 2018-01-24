@@ -18,28 +18,16 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class ProfileSetRequest(RpcRequest):
+class EnableActiceAlertRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cms', '2017-03-01', 'ProfileSet','cms')
+		RpcRequest.__init__(self, 'Cms', '2017-03-01', 'EnableActiceAlert','cms')
 
-	def get_EnableInstallAgentNewECS(self):
-		return self.get_query_params().get('EnableInstallAgentNewECS')
+	def get_Product(self):
+		return self.get_query_params().get('Product')
 
-	def set_EnableInstallAgentNewECS(self,EnableInstallAgentNewECS):
-		self.add_query_param('EnableInstallAgentNewECS',EnableInstallAgentNewECS)
-
-	def get_EnableActiveAlert(self):
-		return self.get_query_params().get('EnableActiveAlert')
-
-	def set_EnableActiveAlert(self,EnableActiveAlert):
-		self.add_query_param('EnableActiveAlert',EnableActiveAlert)
-
-	def get_AutoInstall(self):
-		return self.get_query_params().get('AutoInstall')
-
-	def set_AutoInstall(self,AutoInstall):
-		self.add_query_param('AutoInstall',AutoInstall)
+	def set_Product(self,Product):
+		self.add_query_param('Product',Product)
 
 	def get_UserId(self):
 		return self.get_query_params().get('UserId')
