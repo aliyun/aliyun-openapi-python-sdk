@@ -70,6 +70,12 @@ class RunInstancesRequest(RpcRequest):
 				self.add_query_param('Tag.' + str(i + 1) + '.Value' , Tags[i].get('Value'))
 
 
+	def get_DryRun(self):
+		return self.get_query_params().get('DryRun')
+
+	def set_DryRun(self,DryRun):
+		self.add_query_param('DryRun',DryRun)
+
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
