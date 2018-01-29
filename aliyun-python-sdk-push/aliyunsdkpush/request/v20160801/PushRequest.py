@@ -215,6 +215,12 @@ class PushRequest(RpcRequest):
 	def set_AndroidOpenUrl(self,AndroidOpenUrl):
 		self.add_query_param('AndroidOpenUrl',AndroidOpenUrl)
 
+	def get_AndroidNotificationChannel(self):
+		return self.get_query_params().get('AndroidNotificationChannel')
+
+	def set_AndroidNotificationChannel(self,AndroidNotificationChannel):
+		self.add_query_param('AndroidNotificationChannel',AndroidNotificationChannel)
+
 	def get_AndroidRemind(self):
 		return self.get_query_params().get('AndroidRemind')
 
