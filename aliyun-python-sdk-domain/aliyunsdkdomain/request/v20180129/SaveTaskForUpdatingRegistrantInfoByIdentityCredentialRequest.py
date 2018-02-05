@@ -22,6 +22,7 @@ class SaveTaskForUpdatingRegistrantInfoByIdentityCredentialRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Domain', '2018-01-29', 'SaveTaskForUpdatingRegistrantInfoByIdentityCredential')
+		self.set_method('POST')
 
 	def get_Country(self):
 		return self.get_query_params().get('Country')
@@ -74,10 +75,10 @@ class SaveTaskForUpdatingRegistrantInfoByIdentityCredentialRequest(RpcRequest):
 				self.add_query_param('DomainName.' + str(i + 1) , DomainNames[i]);
 
 	def get_IdentityCredential(self):
-		return self.get_query_params().get('IdentityCredential')
+		return self.get_body_params().get('IdentityCredential')
 
 	def set_IdentityCredential(self,IdentityCredential):
-		self.add_query_param('IdentityCredential',IdentityCredential)
+		self.add_body_params('IdentityCredential', IdentityCredential)
 
 	def get_Telephone(self):
 		return self.get_query_params().get('Telephone')
