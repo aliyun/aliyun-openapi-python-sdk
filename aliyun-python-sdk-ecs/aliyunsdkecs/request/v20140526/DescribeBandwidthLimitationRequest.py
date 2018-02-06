@@ -18,10 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class ModifyPrepayInstanceSpecRequest(RpcRequest):
+class DescribeBandwidthLimitationRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'ModifyPrepayInstanceSpec','ecs')
+		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'DescribeBandwidthLimitation','ecs')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -29,17 +29,23 @@ class ModifyPrepayInstanceSpecRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_InstanceId(self):
-		return self.get_query_params().get('InstanceId')
+	def get_InstanceType(self):
+		return self.get_query_params().get('InstanceType')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
+	def set_InstanceType(self,InstanceType):
+		self.add_query_param('InstanceType',InstanceType)
 
-	def get_AutoPay(self):
-		return self.get_query_params().get('AutoPay')
+	def get_InstanceChargeType(self):
+		return self.get_query_params().get('InstanceChargeType')
 
-	def set_AutoPay(self,AutoPay):
-		self.add_query_param('AutoPay',AutoPay)
+	def set_InstanceChargeType(self,InstanceChargeType):
+		self.add_query_param('InstanceChargeType',InstanceChargeType)
+
+	def get_ResourceId(self):
+		return self.get_query_params().get('ResourceId')
+
+	def set_ResourceId(self,ResourceId):
+		self.add_query_param('ResourceId',ResourceId)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -47,23 +53,17 @@ class ModifyPrepayInstanceSpecRequest(RpcRequest):
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
-	def get_ClientToken(self):
-		return self.get_query_params().get('ClientToken')
-
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
-
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
 
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
-	def get_InstanceType(self):
-		return self.get_query_params().get('InstanceType')
+	def get_OperationType(self):
+		return self.get_query_params().get('OperationType')
 
-	def set_InstanceType(self,InstanceType):
-		self.add_query_param('InstanceType',InstanceType)
+	def set_OperationType(self,OperationType):
+		self.add_query_param('OperationType',OperationType)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
@@ -71,8 +71,8 @@ class ModifyPrepayInstanceSpecRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_OperatorType(self):
-		return self.get_query_params().get('OperatorType')
+	def get_SpotStrategy(self):
+		return self.get_query_params().get('SpotStrategy')
 
-	def set_OperatorType(self,OperatorType):
-		self.add_query_param('OperatorType',OperatorType)
+	def set_SpotStrategy(self,SpotStrategy):
+		self.add_query_param('SpotStrategy',SpotStrategy)

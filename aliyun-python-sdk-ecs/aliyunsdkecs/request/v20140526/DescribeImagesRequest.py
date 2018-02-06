@@ -29,6 +29,12 @@ class DescribeImagesRequest(RpcRequest):
 	def set_Tag4Value(self,Tag4Value):
 		self.add_query_param('Tag.4.Value',Tag4Value)
 
+	def get_ActionType(self):
+		return self.get_query_params().get('ActionType')
+
+	def set_ActionType(self,ActionType):
+		self.add_query_param('ActionType',ActionType)
+
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
@@ -52,12 +58,6 @@ class DescribeImagesRequest(RpcRequest):
 
 	def set_Tag2Key(self,Tag2Key):
 		self.add_query_param('Tag.2.Key',Tag2Key)
-
-	def get_Filter2Value(self):
-		return self.get_query_params().get('Filter.2.Value')
-
-	def set_Filter2Value(self,Filter2Value):
-		self.add_query_param('Filter.2.Value',Filter2Value)
 
 	def get_Usage(self):
 		return self.get_query_params().get('Usage')
@@ -94,12 +94,6 @@ class DescribeImagesRequest(RpcRequest):
 
 	def set_IsSupportIoOptimized(self,IsSupportIoOptimized):
 		self.add_query_param('IsSupportIoOptimized',IsSupportIoOptimized)
-
-	def get_Filter1Key(self):
-		return self.get_query_params().get('Filter.1.Key')
-
-	def set_Filter1Key(self,Filter1Key):
-		self.add_query_param('Filter.1.Key',Filter1Key)
 
 	def get_ImageName(self):
 		return self.get_query_params().get('ImageName')
@@ -167,23 +161,11 @@ class DescribeImagesRequest(RpcRequest):
 	def set_ShowExpired(self,ShowExpired):
 		self.add_query_param('ShowExpired',ShowExpired)
 
-	def get_Filter1Value(self):
-		return self.get_query_params().get('Filter.1.Value')
-
-	def set_Filter1Value(self,Filter1Value):
-		self.add_query_param('Filter.1.Value',Filter1Value)
-
 	def get_OSType(self):
 		return self.get_query_params().get('OSType')
 
 	def set_OSType(self,OSType):
 		self.add_query_param('OSType',OSType)
-
-	def get_Filter2Key(self):
-		return self.get_query_params().get('Filter.2.Key')
-
-	def set_Filter2Key(self,Filter2Key):
-		self.add_query_param('Filter.2.Key',Filter2Key)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
@@ -202,6 +184,17 @@ class DescribeImagesRequest(RpcRequest):
 
 	def set_Tag1Key(self,Tag1Key):
 		self.add_query_param('Tag.1.Key',Tag1Key)
+
+	def get_Filters(self):
+		return self.get_query_params().get('Filters')
+
+	def set_Filters(self,Filters):
+		for i in range(len(Filters)):	
+			if Filters[i].get('Key') is not None:
+				self.add_query_param('Filter.' + str(i + 1) + '.Key' , Filters[i].get('Key'))
+			if Filters[i].get('Value') is not None:
+				self.add_query_param('Filter.' + str(i + 1) + '.Value' , Filters[i].get('Value'))
+
 
 	def get_Tag2Value(self):
 		return self.get_query_params().get('Tag.2.Value')
