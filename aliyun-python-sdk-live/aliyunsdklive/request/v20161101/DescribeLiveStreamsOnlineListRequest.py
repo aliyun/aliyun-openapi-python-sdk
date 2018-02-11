@@ -21,7 +21,13 @@ from aliyunsdkcore.request import RpcRequest
 class DescribeLiveStreamsOnlineListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'live', '2016-11-01', 'DescribeLiveStreamsOnlineList')
+		RpcRequest.__init__(self, 'live', '2016-11-01', 'DescribeLiveStreamsOnlineList','live')
+
+	def get_StreamType(self):
+		return self.get_query_params().get('StreamType')
+
+	def set_StreamType(self,StreamType):
+		self.add_query_param('StreamType',StreamType)
 
 	def get_AppName(self):
 		return self.get_query_params().get('AppName')
@@ -41,8 +47,20 @@ class DescribeLiveStreamsOnlineListRequest(RpcRequest):
 	def set_DomainName(self,DomainName):
 		self.add_query_param('DomainName',DomainName)
 
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
+
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_PageNum(self):
+		return self.get_query_params().get('PageNum')
+
+	def set_PageNum(self,PageNum):
+		self.add_query_param('PageNum',PageNum)

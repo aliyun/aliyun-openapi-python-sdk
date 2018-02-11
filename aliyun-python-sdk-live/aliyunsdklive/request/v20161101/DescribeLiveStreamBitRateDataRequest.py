@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class DescribeLiveStreamBitRateDataRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'live', '2016-11-01', 'DescribeLiveStreamBitRateData')
+		RpcRequest.__init__(self, 'live', '2016-11-01', 'DescribeLiveStreamBitRateData','live')
 
 	def get_AppName(self):
 		return self.get_query_params().get('AppName')
