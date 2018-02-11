@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class AddCustomLiveStreamTranscodeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'live', '2016-11-01', 'AddCustomLiveStreamTranscode')
+		RpcRequest.__init__(self, 'live', '2016-11-01', 'AddCustomLiveStreamTranscode','live')
 
 	def get_App(self):
 		return self.get_query_params().get('App')

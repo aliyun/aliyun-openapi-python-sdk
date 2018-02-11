@@ -18,28 +18,46 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class DeleteLiveAppRecordConfigRequest(RpcRequest):
+class DescribeLiveDomainBpsDataRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'live', '2016-11-01', 'DeleteLiveAppRecordConfig','live')
-
-	def get_AppName(self):
-		return self.get_query_params().get('AppName')
-
-	def set_AppName(self,AppName):
-		self.add_query_param('AppName',AppName)
-
-	def get_SecurityToken(self):
-		return self.get_query_params().get('SecurityToken')
-
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)
+		RpcRequest.__init__(self, 'live', '2016-11-01', 'DescribeLiveDomainBpsData','live')
 
 	def get_DomainName(self):
 		return self.get_query_params().get('DomainName')
 
 	def set_DomainName(self,DomainName):
 		self.add_query_param('DomainName',DomainName)
+
+	def get_EndTime(self):
+		return self.get_query_params().get('EndTime')
+
+	def set_EndTime(self,EndTime):
+		self.add_query_param('EndTime',EndTime)
+
+	def get_Interval(self):
+		return self.get_query_params().get('Interval')
+
+	def set_Interval(self,Interval):
+		self.add_query_param('Interval',Interval)
+
+	def get_LocationNameEn(self):
+		return self.get_query_params().get('LocationNameEn')
+
+	def set_LocationNameEn(self,LocationNameEn):
+		self.add_query_param('LocationNameEn',LocationNameEn)
+
+	def get_StartTime(self):
+		return self.get_query_params().get('StartTime')
+
+	def set_StartTime(self,StartTime):
+		self.add_query_param('StartTime',StartTime)
+
+	def get_IspNameEn(self):
+		return self.get_query_params().get('IspNameEn')
+
+	def set_IspNameEn(self,IspNameEn):
+		self.add_query_param('IspNameEn',IspNameEn)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
