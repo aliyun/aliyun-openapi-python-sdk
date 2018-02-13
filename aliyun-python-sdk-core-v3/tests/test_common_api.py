@@ -29,18 +29,18 @@ from aliyunsdkcore.http import format_type
 from aliyunsdkcore.request import CommonRequest
 from aliyunsdkcore.acs_exception import exceptions
 
+cf = configparser.ConfigParser()
+config_file = os.path.expanduser('~') + "/aliyun-sdk.ini"
+cf.read(config_file)
+
+client = AcsClient(cf.get("daily_access_key", "id"), cf.get("daily_access_key", "secret"), 'cn-hangzhou')
+assert client
+
 
 class TestCommonApi(object):
-    acs_client = None
+    acs_client = client
 
-    @classmethod
-    def setup_class(cls):
-        cf = configparser.ConfigParser()
-        config_file = os.path.expanduser('~') + "/aliyun-sdk.ini"
-        cf.read(config_file)
-        cls.acs_client = AcsClient(cf.get("daily_access_key", "id"), cf.get("daily_access_key", "secret"), 'cn-hangzhou')
-
-    def set_client(self, acs_client):
+    def set_client(self, acs_client=client):
         self.acs_client = acs_client
 
     def test_roa_form_with_init(self):
@@ -148,7 +148,6 @@ class TestCommonApi(object):
         response = json.loads(body)
         assert response
 
-        assert response.get("Params").get("RegionId") == 'cn-hangzhou'
         assert response.get("Params").get("QueryParam") == 'queryValue'
         assert response.get("Headers").get("HeaderParam") == 'headerValue'
         assert response.get("Headers").get("Content-Type") == 'application/json'

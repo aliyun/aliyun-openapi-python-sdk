@@ -19,17 +19,19 @@
 
 # coding=utf-8
 
+import os
+import sys
+
 from .http import protocol_type
-from .http import method_type
-from .http import format_type
+from .http import method_type as mt
+from .http import format_type as ft
 from .auth.composer import rpc_signature_composer as rpc_signer
 from .auth.composer import roa_signature_composer as roa_signer
 from .auth.composer import oss_signature_composer as oss_signer
-from .auth.algorithm import sha_hmac1
 from .auth.utils import md5_tool
+from aliyunsdkcore.auth.algorithm import sha_hmac1
 from aliyunsdkcore.acs_exception import exceptions
 from aliyunsdkcore.acs_exception import error_code
-
 import abc
 
 """
@@ -44,6 +46,23 @@ STYLE_RPC = 'RPC'
 STYLE_ROA = 'ROA'
 STYLE_OSS = 'OSS'
 
+_default_protocol_type = protocol_type.HTTP
+
+def set_default_protocol_type(user_protocol_type):
+    global _default_protocol_type
+
+    if user_protocol_type == protocol_type.HTTP or user_protocol_type == protocol_type.HTTPS:
+        _default_protocol_type = user_protocol_type
+    else:
+        raise exceptions.ClientException(
+            error_code.SDK_INVALID_PARAMS, 
+            "Invalid 'protocol_type', should be 'http' or 'https'"
+        )
+
+
+def get_default_protocol_type():
+    return _default_protocol_type
+
 
 class AcsRequest(metaclass=abc.ABCMeta):
     """
@@ -55,7 +74,7 @@ class AcsRequest(metaclass=abc.ABCMeta):
                  location_service_code=None,
                  location_endpoint_type='openAPI',
                  accept_format=None,
-                 protocol_type=protocol_type.HTTP,
+                 protocol_type=None,
                  method=None):
         """
 
@@ -72,6 +91,9 @@ class AcsRequest(metaclass=abc.ABCMeta):
         self._product = product
         self._action_name = action_name
         self._protocol_type = protocol_type
+        if self._protocol_type is None:
+            self._protocol_type = _default_protocol_type
+
         self._accept_format = accept_format
         self._params = {}
         self._method = method
@@ -195,6 +217,9 @@ class AcsRequest(metaclass=abc.ABCMeta):
     def set_content_type(self, content_type):
         self.add_header("Content-Type", content_type)
 
+    def get_location_endpoint_type(self):
+        return self._location_endpoint_type
+
     @abc.abstractmethod
     def get_style(self):
         pass
@@ -232,7 +257,7 @@ class RpcRequest(AcsRequest):
             location_endpoint_type,
             format,
             protocol,
-            method_type.GET)
+            mt.GET)
         self._style = STYLE_RPC
         self._signer = signer
 
@@ -265,7 +290,7 @@ class RpcRequest(AcsRequest):
 
     def get_signed_header(self, region_id=None, ak=None, secret=None):
         headers = {}
-        for headerKey, headerValue in self.get_headers().items():
+        for headerKey, headerValue in list(self.get_headers().items()):
             if headerKey.startswith("x-acs-") or headerKey.startswith("x-sdk-"):
                 headers[headerKey] = headerValue
         return headers
@@ -307,7 +332,7 @@ class RoaRequest(AcsRequest):
             action_name,
             location_service_code,
             location_endpoint_type,
-            format_type.RAW,
+            ft.RAW,
             protocol,
             method)
         self._style = STYLE_ROA
@@ -357,8 +382,8 @@ class RoaRequest(AcsRequest):
         if self.get_content() is not None:
             md5_str = md5_tool.get_md5_base64_str(self.get_content())
             self.add_header('Content-MD5', md5_str)
-        if 'RegionId' not in list(sign_params.keys()):
-            sign_params['RegionId'] = region_id
+        # if 'RegionId' not in sign_params.keys():
+        #     sign_params['RegionId'] = region_id
         signed_headers = roa_signer.get_signature_headers(
             sign_params,
             ak,
@@ -377,8 +402,8 @@ class RoaRequest(AcsRequest):
         :return: String
         """
         sign_params = self.get_query_params()
-        if region_id not in list(sign_params.keys()):
-            sign_params['RegionId'] = region_id
+        # if region_id not in sign_params.keys():
+        #     sign_params['RegionId'] = region_id
         url = roa_signer.get_url(
             self.get_uri_pattern(),
             sign_params,
@@ -419,7 +444,7 @@ class OssRequest(AcsRequest):
             action_name,
             location_service_code,
             'openAPI',
-            format_type.XML,
+            ft.XML,
             protocol,
             method)
         self.__style = STYLE_OSS

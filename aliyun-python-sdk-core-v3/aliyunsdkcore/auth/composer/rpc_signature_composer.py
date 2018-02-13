@@ -17,11 +17,8 @@
 
 # coding=utf-8
 
-import urllib.parse
-import urllib.request
-import urllib.response
-
 from aliyunsdkcore.auth.algorithm import sha_hmac1 as mac1
+import urllib.request, urllib.parse, urllib.error
 from aliyunsdkcore.utils import parameter_helper as helper
 
 
@@ -29,9 +26,9 @@ def __init__():
     pass
 
 
-# this function will append the necessary parameters for signer process.
+# this function will append the necessary parameters for signers process.
 # parameters: the orignal parameters
-# signer: sha_hmac1 or sha_hmac256
+# signers: sha_hmac1 or sha_hmac256
 # accessKeyId: this is aliyun_access_key_id
 # format: XML or JSON
 def __refresh_sign_parameters(
