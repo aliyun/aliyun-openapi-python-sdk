@@ -41,6 +41,8 @@ def __refresh_sign_parameters(
         signer=mac1):
     if parameters is None or not isinstance(parameters, dict):
         parameters = dict()
+    if 'Signature' in parameters:
+        del parameters['Signature']
     parameters["Timestamp"] = helper.get_iso_8061_date()
     parameters["SignatureMethod"] = signer.get_signer_name()
     parameters["SignatureType"] = signer.get_signer_type()

@@ -76,6 +76,29 @@ class TestRpcApi(object):
         assert response.get("Params").get("QueryParam") == queryParam
         assert response.get("Params").get("BodyParam") == bodyParam
 
+    def test_post_reuse(self):
+        request = self.get_base_request()
+        request.set_method("POST")
+        request.set_body_param(bodyParam)
+        body = self.acs_client.do_action_with_exception(request)
+        assert body
+
+        response = json.loads(body)
+        assert response
+
+        assert response.get("Params").get("QueryParam") == queryParam
+        assert response.get("Params").get("BodyParam") == bodyParam
+
+        request.set_body_param(bodyParam + "1")
+        body = self.acs_client.do_action_with_exception(request)
+        assert body
+
+        response = json.loads(body)
+        assert response
+
+        assert response.get("Params").get("QueryParam") == queryParam
+        assert response.get("Params").get("BodyParam") == bodyParam + "1"
+
     def test_head(self):
         request = self.get_base_request()
         request.set_method("HEAD")
