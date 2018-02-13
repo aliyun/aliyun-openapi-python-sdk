@@ -83,6 +83,33 @@ class TestRoaApi(object):
         assert response.get("Headers").get("HeaderParam") == headerParam
         assert response.get("Params").get("BodyParam") == bodyParam
 
+    def test_post_reuse(self):
+        request = TestRoaApi.get_base_request()
+        request.set_method("POST")
+        request.set_body_param(bodyParam)
+        request.set_content_type(format_type.APPLICATION_FORM)
+        body = self.acs_client.do_action_with_exception(request)
+        assert body
+
+        response = json.loads(body)
+        assert response
+
+        assert response.get("Params").get("QueryParam") == queryParam
+        assert response.get("Headers").get("HeaderParam") == headerParam
+        assert response.get("Params").get("BodyParam") == bodyParam
+
+        request.set_body_param(bodyParam + "1")
+        request.set_content_type(format_type.APPLICATION_FORM)
+        body = self.acs_client.do_action_with_exception(request)
+        assert body
+
+        response = json.loads(body)
+        assert response
+
+        assert response.get("Params").get("QueryParam") == queryParam
+        assert response.get("Headers").get("HeaderParam") == headerParam
+        assert response.get("Params").get("BodyParam") == bodyParam + "1"
+
     def test_post_with_stream(self):
         request = TestRoaApi.get_base_request()
         request.set_method("POST")

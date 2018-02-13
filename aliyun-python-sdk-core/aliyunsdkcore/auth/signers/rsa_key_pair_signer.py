@@ -19,71 +19,42 @@
 # specific language governing permissions and limitations
 # under the License.
 
-
-import logging
+import sched
 import time
 import threading
-import sched
 import json
-import httplib
+import logging
 import socket
-from abc import ABCMeta, abstractmethod
+
+from aliyunsdkcore.auth.signers.signer import Signer
+from aliyunsdkcore.acs_exception import error_code
+from aliyunsdkcore.acs_exception import error_msg
+from aliyunsdkcore.acs_exception import exceptions
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcore.auth.algorithm import sha_hmac256
-from aliyunsdkcore.acs_exception import error_msg
-from aliyunsdkcore.acs_exception import error_code
-from aliyunsdkcore.acs_exception import exceptions
 
 
-class Signer(object):
-    __metaclass__ = ABCMeta
-
-    @abstractmethod
-    def sign(self, region_id, request):
-        pass
-
-    @staticmethod
-    def get_signer(credential, debug=False):
-        if credential['ak'] is not None and credential['secret'] is not None:
-            return SignerV1(credential['ak'], credential['secret'])
-        elif credential['public_key_id'] is not None and credential['private_key'] is not None:
-            return SignerV2(credential['public_key_id'], credential['private_key'], credential['session_period'],
-                            credential['region_id'], debug)
-        else:
-            raise exceptions.ClientException(error_code.SDK_INVALID_CREDENTIAL,
-                                             error_msg.get_msg('SDK_INVALID_CREDENTIAL'))
-
-
-class SignerV1(Signer):
-    def __init__(self, access_key, access_secret):
-        self._access_key = access_key
-        self._access_secret = access_secret
-
-    def sign(self, region_id, request):
-        header = request.get_signed_header(region_id, self._access_key, self._access_secret)
-        url = request.get_url(region_id, self._access_key, self._access_secret)
-        return header, url
-
-
-class SignerV2(Signer):
+class RsaKeyPairSigner(Signer):
     _MIN_SESSION_PERIOD = 900
     _MAX_SESSION_PERIOD = 3600
     _RETRY_DELAY_FAST = 3
     _PRIORITY = 1
 
-    def __init__(self, public_key_id, private_key, session_period, region_id, debug=False):
-        if not debug and session_period < self._MIN_SESSION_PERIOD or session_period > self._MAX_SESSION_PERIOD:
+    def __init__(self, rsa_key_pair_credential, region_id, debug=False):
+        if not debug and rsa_key_pair_credential.session_period < self._MIN_SESSION_PERIOD \
+                or rsa_key_pair_credential.session_period > self._MAX_SESSION_PERIOD:
             raise exceptions.ClientException(
                 error_code.SDK_INVALID_SESSION_EXPIRATION,
                 error_msg.get_msg('SDK_INVALID_SESSION_EXPIRATION').format(self._MIN_SESSION_PERIOD,
                                                                            self._MAX_SESSION_PERIOD))
-
-        self._public_key_id = public_key_id
-        self._private_key = private_key
-        self._session_period = session_period
-        self._schedule_interval = session_period if debug else max(session_period * 0.8, 5)
+        rsa_key_pair_credential.region_id = region_id
+        self._public_key_id = rsa_key_pair_credential.public_key_id
+        self._private_key = rsa_key_pair_credential.private_key
+        self._session_period = rsa_key_pair_credential.session_period
+        self._schedule_interval = rsa_key_pair_credential.session_period if debug \
+            else max(rsa_key_pair_credential.session_period * 0.8, 5)
         from aliyunsdkcore.client import AcsClient
-        self._sts_client = AcsClient(self._public_key_id, self._private_key, region_id)
+        self._sts_client = AcsClient(self._public_key_id, self._private_key, rsa_key_pair_credential.region_id)
         self._session_credential = None
         self._get_session_ak_and_sk()
         self._scheduler = sched.scheduler(time.time, time.sleep)
@@ -156,3 +127,4 @@ class GetSessionAkRequest(RpcRequest):
 
     def set_public_key_id(self, public_key_id):
         self.add_query_param('PublicKeyId', public_key_id)
+

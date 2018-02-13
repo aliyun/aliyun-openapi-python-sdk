@@ -31,6 +31,7 @@ from aliyunsdkcore.acs_exception.exceptions import ClientException
 from .test_roa_api import TestRoaApi
 from .test_rpc_api import TestRpcApi
 from .test_endpoint import TestEndpoint
+from aliyunsdkcore.auth.credentials import RsaKeyPairCredential
 
 headerParam = "hdParam"
 queryParam = "queryParam"
@@ -59,14 +60,17 @@ class TestSignerV2(object):
         region_provider.modify_point('Sts', 'cn-hangzhou', 'sts.aliyuncs.com')
         cls.public_key_id = public_key_id
         cls.private_key = private_key
-        cls.acs_client = AcsClient(region_id='cn-hangzhou', public_key_id=public_key_id, private_key=private_key)
+        credential = RsaKeyPairCredential(public_key_id, private_key, 3600)
+        cls.acs_client = AcsClient(region_id='cn-hangzhou', credential=credential)
         assert cls.acs_client
 
     def test_session_period_check(self):
         with pytest.raises(ClientException):
-            AcsClient(region_id='cn-hangzhou', public_key_id="", private_key="", session_period=899)
+            credential = RsaKeyPairCredential("", "", 899)
+            AcsClient(region_id='cn-hangzhou', credential=credential)
         with pytest.raises(ClientException):
-            AcsClient(region_id='cn-hangzhou', public_key_id="", private_key="", session_period=3601)
+            credential = RsaKeyPairCredential("", "", 3601)
+            AcsClient(region_id='cn-hangzhou', credential=credential)
 
     def test_credential_check(self):
         with pytest.raises(ClientException):
@@ -80,15 +84,12 @@ class TestSignerV2(object):
         with pytest.raises(ClientException):
             AcsClient(region_id='cn-hangzhou', secret="")
         with pytest.raises(ClientException):
-            AcsClient(region_id='cn-hangzhou', public_key_id=self.public_key_id + "1", private_key=self.private_key)
-        assert AcsClient(region_id='cn-hangzhou', ak="ak", secret="secret")
+            credential = RsaKeyPairCredential(self.public_key_id + "1", self.private_key, 3601)
+            AcsClient(region_id='cn-hangzhou', credential=credential)
 
     def test_schedule_task(self):
-        test_client = AcsClient(region_id='cn-hangzhou',
-                                public_key_id=self.public_key_id,
-                                private_key=self.private_key,
-                                session_period=1,
-                                debug=True)
+        credential = RsaKeyPairCredential(self.public_key_id, self.private_key, 1)
+        test_client = AcsClient(region_id='cn-hangzhou', credential=credential, debug=True)
         signer = getattr(test_client, '_signer')
         session_credential_before = None
         for i in range(3):
@@ -98,16 +99,15 @@ class TestSignerV2(object):
             session_credential_before = session_credential_now
 
     def test_retry(self, capsys):
-        test_client = AcsClient(region_id='cn-hangzhou',
-                                public_key_id=self.public_key_id,
-                                private_key=self.private_key,
-                                session_period=1,
-                                debug=True)
+        credential = RsaKeyPairCredential(self.public_key_id, self.private_key, 1)
+        test_client = AcsClient(region_id='cn-hangzhou', credential=credential, debug=True)
         signer = getattr(test_client, '_signer')
         setattr(signer, '_RETRY_DELAY_FAST', 1)
 
-        inner_signer = getattr(getattr(signer, '_sts_client'), '_signer')
-        setattr(inner_signer, '_access_key', 'wrong_access_key')
+        inner_client = getattr(signer, '_sts_client')
+        inner_signer = getattr(inner_client, '_signer')
+        inner_signer_credential = getattr(inner_signer, '_credential')
+        setattr(inner_signer_credential, 'access_key_id', 'wrong_access_key')
 
         time.sleep(10)
         out, err = capsys.readouterr()

@@ -22,23 +22,21 @@ import httplib
 import warnings
 import urllib
 
-warnings.filterwarnings("once", category=DeprecationWarning)
-
 try:
     import json
 except ImportError:
     import simplejson as json
 
-from .profile import region_provider
-from .profile.location_service import LocationService
-from .acs_exception.exceptions import ClientException
-from .acs_exception.exceptions import ServerException
-from .acs_exception import error_code, error_msg
-from .http.http_response import HttpResponse
-from .request import AcsRequest
-from .http import format_type
-from .auth.Signer import Signer
-from .request import CommonRequest
+from aliyunsdkcore.profile import region_provider
+from aliyunsdkcore.profile.location_service import LocationService
+from aliyunsdkcore.acs_exception.exceptions import ClientException
+from aliyunsdkcore.acs_exception.exceptions import ServerException
+from aliyunsdkcore.acs_exception import error_code, error_msg
+from aliyunsdkcore.http.http_response import HttpResponse
+from aliyunsdkcore.request import AcsRequest
+from aliyunsdkcore.http import format_type
+from aliyunsdkcore.auth.signers.signer_factory import SignerFactory
+from aliyunsdkcore.request import CommonRequest
 
 """
 Acs default client module.
@@ -66,6 +64,7 @@ class AcsClient:
             public_key_id=None,
             private_key=None,
             session_period=3600,
+            credential=None,
             debug=False):
         """
         constructor for AcsClient
@@ -94,9 +93,9 @@ class AcsClient:
             'public_key_id': public_key_id,
             'private_key': private_key,
             'session_period': session_period,
-            'region_id': region_id
+            'credential': credential,
         }
-        self._signer = Signer.get_signer(credential, debug)
+        self._signer = SignerFactory.get_signer(credential, region_id, self.implementation_of_do_action, debug)
 
     def get_region_id(self):
         """
@@ -192,7 +191,7 @@ class AcsClient:
                     error_msg.get_msg('SDK_INVALID_REQUEST'))
         return endpoint
 
-    def _make_http_response(self, endpoint, request):
+    def _make_http_response(self, endpoint, request, specific_signer=None):
         body_params = request.get_body_params()
         if body_params:
             body = urllib.urlencode(body_params)
@@ -201,7 +200,9 @@ class AcsClient:
         elif request.get_content() and "Content-Type" not in request.get_headers():
             request.set_content_type(format_type.APPLICATION_OCTET_STREAM)
         method = request.get_method()
-        header, url = self._signer.sign(self.__region_id, request)
+
+        signer = self._signer if specific_signer is None else specific_signer
+        header, url = signer.sign(self.__region_id, request)
 
         if self.get_user_agent() is not None:
             header['User-Agent'] = self.get_user_agent()
@@ -224,7 +225,7 @@ class AcsClient:
             response.set_content(body, "utf-8", format_type.APPLICATION_FORM)
         return response
 
-    def _implementation_of_do_action(self, request):
+    def implementation_of_do_action(self, request, signer=None):
         if not isinstance(request, AcsRequest):
             raise ClientException(
                 error_code.SDK_INVALID_REQUEST,
@@ -239,7 +240,7 @@ class AcsClient:
             request.trans_to_acs_request()
 
         endpoint = self._resolve_endpoint(request)
-        http_response = self._make_http_response(endpoint, request)
+        http_response = self._make_http_response(endpoint, request, signer)
         if self._url_test_flag:
             raise ClientException("URLTestFlagIsSet", http_response.get_url())
 
@@ -252,12 +253,12 @@ class AcsClient:
                 error_code.SDK_SERVER_UNREACHABLE,
                 error_msg.get_msg('SDK_SERVER_UNREACHABLE') + ': ' + str(e))
 
-
-    def _parse_error_info_from_response_body(self, response_body):
+    @staticmethod
+    def _parse_error_info_from_response_body(response_body):
         try:
             body_obj = json.loads(response_body)
             if 'Code' in body_obj and 'Message' in body_obj:
-                return (body_obj['Code'], body_obj['Message'])
+                return body_obj['Code'], body_obj['Message']
             else:
                 return (
                     error_code.SDK_UNKNOWN_SERVER_ERROR,
@@ -273,7 +274,7 @@ class AcsClient:
         # parse the response so which format doesn't matter
         acs_request.set_accept_format('JSON')
 
-        status, headers, body = self._implementation_of_do_action(acs_request)
+        status, headers, body = self.implementation_of_do_action(acs_request)
 
         request_id = None
 
@@ -300,9 +301,9 @@ class AcsClient:
         warnings.warn(
             "do_action() method is deprecated, please use do_action_with_exception() instead.",
             DeprecationWarning)
-        status, headers, body = self._implementation_of_do_action(acs_request)
+        status, headers, body = self.implementation_of_do_action(acs_request)
         return body
 
     def get_response(self, acs_request):
-        return self._implementation_of_do_action(acs_request)
+        return self.implementation_of_do_action(acs_request)
 
