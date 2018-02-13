@@ -1,3 +1,6 @@
+2018-02-13 Version: 2.7.0
+1, add integration tests
+
 2017-12-14 Version: 2.6.2
 1, disable [publicKeyId] auth type in Windows because 'pycrypto' is not supported
 
