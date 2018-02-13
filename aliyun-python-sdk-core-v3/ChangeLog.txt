@@ -1,3 +1,6 @@
+2018-02-13 Version: 2.8.2
+1, skip used version
+
 2018-02-13 Version: 2.8.0
 1, Supported Sts Token / RamRoleArn / EcsRamRole verify
 
