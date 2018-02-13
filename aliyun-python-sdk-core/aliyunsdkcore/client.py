@@ -280,7 +280,7 @@ class AcsClient:
         try:
             body_obj = json.loads(body)
             request_id = body_obj.get('RequestId')
-        except ValueError or TypeError or AttributeError:
+        except ValueError or TypeError:
             # in case the response body is not a json string, return the raw
             # data instead
             pass
@@ -304,8 +304,5 @@ class AcsClient:
         return body
 
     def get_response(self, acs_request):
-        warnings.warn(
-            "get_response() method is deprecated, please use do_action_with_exception() instead.",
-            DeprecationWarning)
         return self._implementation_of_do_action(acs_request)
 
