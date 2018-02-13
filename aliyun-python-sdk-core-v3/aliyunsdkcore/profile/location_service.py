@@ -151,7 +151,7 @@ class LocationService:
 
             status, header, body = response.get_response_object()
 
-            result = json.loads(str(body))
+            result = json.loads(body.decode('utf-8'))
             if status == 200:
                 endpoint = result.get('Endpoints').get('Endpoint')
                 if len(endpoint) <= 0:
