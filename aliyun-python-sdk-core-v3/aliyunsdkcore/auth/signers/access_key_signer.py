@@ -1,3 +1,5 @@
+# coding:utf-8
+
 # Licensed to the Apache Software Foundation (ASF) under one
 # or more contributor license agreements.  See the NOTICE file
 # distributed with this work for additional information
@@ -17,34 +19,16 @@
 # specific language governing permissions and limitations
 # under the License.
 
-# coding=utf-8
-import urllib.request, urllib.parse, urllib.error
-import sys
-
-"""
-Acs url encoder module.
-
-Created on 6/16/2015
-
-@author: alex
-"""
+from aliyunsdkcore.auth.signers.signer import Signer
 
 
-def get_encode_str(params):
-    """
-    transforms parameters to encoded string
-    :param params: dict parameters
-    :return: string
-    """
-    list_params = sorted(iter(params.items()), key=lambda d: d[0])
-    encode_str = urllib.parse.urlencode(list_params)
-    if sys.stdin.encoding is None:
-        res = urllib.parse.quote(encode_str.decode('cp936').encode('utf8'), '')
-    else:
-        res = urllib.parse.quote(
-            encode_str.decode(
-                sys.stdin.encoding).encode('utf8'), '')
-    res = res.replace("+", "%20")
-    res = res.replace("*", "%2A")
-    res = res.replace("%7E", "~")
-    return res
+class AccessKeySigner(Signer):
+    def __init__(self, access_key_credential):
+        self._credential = access_key_credential
+
+    def sign(self, region_id, request):
+        cred = self._credential
+        header = request.get_signed_header(region_id, cred.access_key_id, cred.access_key_secret)
+        url = request.get_url(region_id, cred.access_key_id, cred.access_key_secret)
+        return header, url
+

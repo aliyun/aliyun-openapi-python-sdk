@@ -1,3 +1,5 @@
+# coding:utf-8
+
 # Licensed to the Apache Software Foundation (ASF) under one
 # or more contributor license agreements.  See the NOTICE file
 # distributed with this work for additional information
@@ -17,34 +19,12 @@
 # specific language governing permissions and limitations
 # under the License.
 
-# coding=utf-8
-import urllib.request, urllib.parse, urllib.error
-import sys
 
-"""
-Acs url encoder module.
-
-Created on 6/16/2015
-
-@author: alex
-"""
+from abc import ABCMeta, abstractmethod
 
 
-def get_encode_str(params):
-    """
-    transforms parameters to encoded string
-    :param params: dict parameters
-    :return: string
-    """
-    list_params = sorted(iter(params.items()), key=lambda d: d[0])
-    encode_str = urllib.parse.urlencode(list_params)
-    if sys.stdin.encoding is None:
-        res = urllib.parse.quote(encode_str.decode('cp936').encode('utf8'), '')
-    else:
-        res = urllib.parse.quote(
-            encode_str.decode(
-                sys.stdin.encoding).encode('utf8'), '')
-    res = res.replace("+", "%20")
-    res = res.replace("*", "%2A")
-    res = res.replace("%7E", "~")
-    return res
+class Signer(object, metaclass=ABCMeta):
+    @abstractmethod
+    def sign(self, region_id, request):
+        pass
+

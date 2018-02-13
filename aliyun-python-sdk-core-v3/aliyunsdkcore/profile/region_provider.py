@@ -20,12 +20,11 @@
 # coding=utf-8
 
 import os
-import sys
 
 from aliyunsdkcore.acs_exception import error_code, error_msg
 from aliyunsdkcore.acs_exception.exceptions import ClientException
 from xml.dom.minidom import parse
-from aliyunsdkcore.profile import location_service
+from ..profile import location_service
 
 """
 Region&Endpoint provider module.
@@ -67,7 +66,6 @@ except Exception as ex:
         error_code.SDK_MISSING_ENDPOINTS_FILER,
         error_msg.get_msg('SDK_MISSING_ENDPOINTS_FILER'))
 
-
 def find_product_domain(regionid, prod_name):
     """
         Fetch endpoint url with given region id, product name and endpoint list
@@ -86,11 +84,9 @@ def find_product_domain(regionid, prod_name):
                         return prod.get(prod_name)
     return None
 
-
 def add_endpoint(product_name, region_id, end_point):
     modify_point(product_name, region_id, end_point)
     location_service.set_cache(product_name, region_id, end_point)
-
 
 def modify_point(product_name, region_id, end_point):
     for point in __endpoints:

@@ -33,7 +33,7 @@ def get_sign_string(source, access_secret):
             access_secret = bytearray(access_secret, "utf-8")
         secret = base64.decodebytes(access_secret)
         key = RSA.importKey(secret)
-        if not isinstance(source, bytes):
+        if isinstance(source, str):
             source = bytes(source, "utf-8")
         h = SHA256.new(source)
         signer = PKCS1_v1_5.new(key)

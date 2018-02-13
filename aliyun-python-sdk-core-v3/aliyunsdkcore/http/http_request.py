@@ -20,7 +20,6 @@
 from . import format_type
 from ..utils import parameter_helper as helper
 
-
 class HttpRequest:
 
     content_md5 = "Content-MD5"
@@ -87,6 +86,7 @@ class HttpRequest:
         return helper.md5_sum(content)
 
     def set_content(self, content, encoding, format):
+        tmp = dict()
         if content is None:
             self.__headers.pop(self.content_md5)
             self.__headers.pop(self.content_length)

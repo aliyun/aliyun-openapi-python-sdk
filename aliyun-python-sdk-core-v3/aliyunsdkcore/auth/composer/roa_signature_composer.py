@@ -17,11 +17,10 @@
 
 # coding=utf-8
 
-import urllib
-
 from aliyunsdkcore.auth.algorithm import sha_hmac1 as mac1
-from aliyunsdkcore.http import format_type as FormatType
 from aliyunsdkcore.utils import parameter_helper as helper
+from aliyunsdkcore.http import format_type as FormatType
+import urllib.request, urllib.parse, urllib.error
 
 ACCEPT = "Accept"
 CONTENT_MD5 = "Content-MD5"
@@ -34,9 +33,9 @@ HEADER_SEPARATOR = "\n"
 def __init__():
     pass
 
-# this function will append the necessary parameters for signer process.
+# this function will append the necessary parameters for signers process.
 # parameters: the orignal parameters
-# signer: sha_hmac1 or sha_hmac256
+# signers: sha_hmac1 or sha_hmac256
 # accessKeyId: this is aliyun_access_key_id
 # format: XML or JSON
 # input parameters is headers
