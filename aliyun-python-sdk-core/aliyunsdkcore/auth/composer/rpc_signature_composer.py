@@ -26,9 +26,9 @@ def __init__():
     pass
 
 
-# this function will append the necessary parameters for signer process.
+# this function will append the necessary parameters for signers process.
 # parameters: the orignal parameters
-# signer: sha_hmac1 or sha_hmac256
+# signers: sha_hmac1 or sha_hmac256
 # accessKeyId: this is aliyun_access_key_id
 # format: XML or JSON
 def __refresh_sign_parameters(
@@ -38,7 +38,7 @@ def __refresh_sign_parameters(
         signer=mac1):
     if parameters is None or not isinstance(parameters, dict):
         parameters = dict()
-    if 'Signature'in parameters:
+    if 'Signature' in parameters:
         del parameters['Signature']
     parameters["Timestamp"] = helper.get_iso_8061_date()
     parameters["SignatureMethod"] = signer.get_signer_name()
