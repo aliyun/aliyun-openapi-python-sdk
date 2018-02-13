@@ -288,3 +288,7 @@ class AcsClient:
                 request_id=request_id)
 
         return body
+
+    def get_response(self, acs_request):
+        status, headers, body = self._implementation_of_do_action(acs_request)
+        return status, headers, body
