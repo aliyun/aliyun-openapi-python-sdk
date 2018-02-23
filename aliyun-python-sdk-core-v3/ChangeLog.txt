@@ -1,3 +1,6 @@
+2018-02-23 Version: 2.8.5
+1, add 'remove all test instances' feature to ecs integration test
+
 2018-02-13 Version: 2.8.4
 1, fix json TypeError between python3.2 and 3.5
 
