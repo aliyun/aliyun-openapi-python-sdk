@@ -30,6 +30,7 @@ from aliyunsdkecs.request.v20140526 import CreateInstanceRequest
 from aliyunsdkecs.request.v20140526 import StartInstanceRequest
 from aliyunsdkecs.request.v20140526 import StopInstanceRequest
 from aliyunsdkecs.request.v20140526 import DeleteInstanceRequest
+from aliyunsdkecs.request.v20140526 import DescribeInstancesRequest
 
 
 logging.basicConfig(level=logging.DEBUG)
@@ -74,6 +75,9 @@ class TestEcsIntegration(object):
 
         # wait
         TestEcsIntegration.wait_for_instance(client, instance_id, 'Deleted')
+
+        # delete all test instances
+        TestEcsIntegration.delete_all_test_ecs_instance(client)
 
     @staticmethod
     def get_demo_ecs_attributes(client):
@@ -157,6 +161,33 @@ class TestEcsIntegration(object):
                 mylogger.info("ecs instance(%s) status is %s, wait for changing to %s" % (instance_id, status, target_status))
                 time.sleep(10)
 
-
-
+    @staticmethod
+    def delete_all_test_ecs_instance(client):
+        mylogger.info("list all ecs instances")
+        request = DescribeInstancesRequest.DescribeInstancesRequest()
+        request.set_PageNumber(1)
+        request.set_PageSize(30)
+        content = client.do_action_with_exception(request)
+        response = json.loads(content)
+        mylogger.info("success! TotalCount = %s", response.get('TotalCount'))
+        instances = response.get('Instances').get('Instance')
+        for instance in instances:
+            instance_name = instance.get('InstanceName')
+            if instance_name.startswith('SdkIntegrationTestInstance'):
+                create_time = int(instance_name[26:len(instance_name)])
+                current_time = int(time.time())
+                if create_time - current_time < 3600:
+                    mylogger.info("found undeleted ecs instance(%s) but created in 60 minutes, try to delete next time"
+                                  % instance_name)
+                else:
+                    mylogger.info("found undeleted ecs instance(%s), status=%s, try to delete it."
+                                  % instance_name, instance['Status'])
+                    if instance['Status'] == "Running":
+                        # running -> stopped
+                        TestEcsIntegration.stop_instance(client, instance['InstanceId'])
+                    if instance['Status'] == "Stopped":
+                        # stopped -> deleted
+                        TestEcsIntegration.delete_instance(client, instance['InstanceId'])
+                        # wait
+                        TestEcsIntegration.wait_for_instance(client, instance['InstanceId'], 'Deleted')
 
