@@ -83,7 +83,7 @@ class TestEcsIntegration(object):
         request.set_accept_format("JSON")
         request.set_InstanceId(demo_instance_id)
         content = client.do_action_with_exception(request)
-        response = json.loads(content)
+        response = json.loads(content.decode('utf-8'))
         mylogger.info("success")
         return response.get('ImageId'), response.get('SecurityGroupIds').get('SecurityGroupId')[0]
 
@@ -97,7 +97,7 @@ class TestEcsIntegration(object):
         request.set_SecurityGroupId(security_group_id)
         request.set_InstanceType('ecs.t1.small')
         content = client.do_action_with_exception(request)
-        response = json.loads(content)
+        response = json.loads(content.decode('utf-8'))
         mylogger.info("success")
         return response.get('InstanceId')
 
@@ -108,7 +108,7 @@ class TestEcsIntegration(object):
         request.set_accept_format("JSON")
         request.set_InstanceId(instance_id)
         content = client.do_action_with_exception(request)
-        response = json.loads(content)
+        response = json.loads(content.decode('utf-8'))
         mylogger.info("success")
         return response.get('InstanceId')
 
@@ -119,7 +119,7 @@ class TestEcsIntegration(object):
         request.set_accept_format("JSON")
         request.set_InstanceId(instance_id)
         content = client.do_action_with_exception(request)
-        response = json.loads(content)
+        response = json.loads(content.decode('utf-8'))
         mylogger.info("success")
         return response.get('InstanceId')
 
@@ -130,7 +130,7 @@ class TestEcsIntegration(object):
         request.set_accept_format("JSON")
         request.set_InstanceId(instance_id)
         content = client.do_action_with_exception(request)
-        response = json.loads(content)
+        response = json.loads(content.decode('utf-8'))
         mylogger.info("success")
         return response.get('InstanceId')
 
