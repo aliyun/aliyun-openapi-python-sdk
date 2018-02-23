@@ -148,7 +148,7 @@ class TestEcsIntegration(object):
                 mylogger.error("Failed to describe ecs instance, statusCode=%s, message=%s" % (status, body))
                 break
 
-            status = json.loads(body).get('Status')
+            status = json.loads(body.decode('utf-8')).get('Status')
             if status == target_status:
                 mylogger.info("ecs instance(%s) status has changed to %s, wait 20 seconds" % (instance_id, target_status))
                 time.sleep(20)
