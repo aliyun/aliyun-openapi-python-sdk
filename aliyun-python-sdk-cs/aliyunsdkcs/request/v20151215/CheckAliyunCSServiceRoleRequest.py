@@ -18,21 +18,9 @@
 # under the License.
 
 from aliyunsdkcore.request import RoaRequest
-class DescribeClustersRequest(RoaRequest):
+class CheckAliyunCSServiceRoleRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'CS', '2015-12-15', 'DescribeClusters')
-		self.set_uri_pattern('/clusters')
+		RoaRequest.__init__(self, 'CS', '2015-12-15', 'CheckAliyunCSServiceRole')
+		self.set_uri_pattern('/aliyuncsrole/status')
 		self.set_method('GET')
-
-	def get_clusterType(self):
-		return self.get_query_params().get('clusterType')
-
-	def set_clusterType(self,clusterType):
-		self.add_query_param('clusterType',clusterType)
-
-	def get_Name(self):
-		return self.get_query_params().get('Name')
-
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)

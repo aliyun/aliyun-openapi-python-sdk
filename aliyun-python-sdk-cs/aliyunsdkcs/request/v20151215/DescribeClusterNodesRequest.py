@@ -18,21 +18,27 @@
 # under the License.
 
 from aliyunsdkcore.request import RoaRequest
-class DescribeClustersRequest(RoaRequest):
+class DescribeClusterNodesRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'CS', '2015-12-15', 'DescribeClusters')
-		self.set_uri_pattern('/clusters')
+		RoaRequest.__init__(self, 'CS', '2015-12-15', 'DescribeClusterNodes')
+		self.set_uri_pattern('/clusters/[ClusterId]/nodes')
 		self.set_method('GET')
 
-	def get_clusterType(self):
-		return self.get_query_params().get('clusterType')
+	def get_pageSize(self):
+		return self.get_query_params().get('pageSize')
 
-	def set_clusterType(self,clusterType):
-		self.add_query_param('clusterType',clusterType)
+	def set_pageSize(self,pageSize):
+		self.add_query_param('pageSize',pageSize)
 
-	def get_Name(self):
-		return self.get_query_params().get('Name')
+	def get_ClusterId(self):
+		return self.get_path_params().get('ClusterId')
 
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)
+	def set_ClusterId(self,ClusterId):
+		self.add_path_param('ClusterId',ClusterId)
+
+	def get_pageNumber(self):
+		return self.get_query_params().get('pageNumber')
+
+	def set_pageNumber(self,pageNumber):
+		self.add_query_param('pageNumber',pageNumber)

@@ -25,17 +25,23 @@ class DeleteClusterNodeRequest(RoaRequest):
 		self.set_uri_pattern('/clusters/[ClusterId]/ip/[Ip]')
 		self.set_method('DELETE')
 
+	def get_releaseInstance(self):
+		return self.get_query_params().get('releaseInstance')
+
+	def set_releaseInstance(self,releaseInstance):
+		self.add_query_param('releaseInstance',releaseInstance)
+
 	def get_Ip(self):
 		return self.get_path_params().get('Ip')
 
 	def set_Ip(self,Ip):
 		self.add_path_param('Ip',Ip)
 
-	def get_Force(self):
-		return self.get_query_params().get('Force')
+	def get_force(self):
+		return self.get_query_params().get('force')
 
-	def set_Force(self,Force):
-		self.add_query_param('Force',Force)
+	def set_force(self,force):
+		self.add_query_param('force',force)
 
 	def get_ClusterId(self):
 		return self.get_path_params().get('ClusterId')

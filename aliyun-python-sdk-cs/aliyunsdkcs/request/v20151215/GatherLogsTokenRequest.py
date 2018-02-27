@@ -18,21 +18,15 @@
 # under the License.
 
 from aliyunsdkcore.request import RoaRequest
-class DescribeClustersRequest(RoaRequest):
+class GatherLogsTokenRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'CS', '2015-12-15', 'DescribeClusters')
-		self.set_uri_pattern('/clusters')
-		self.set_method('GET')
+		RoaRequest.__init__(self, 'CS', '2015-12-15', 'GatherLogsToken')
+		self.set_uri_pattern('/token/[Token]/gather_logs')
+		self.set_method('POST')
 
-	def get_clusterType(self):
-		return self.get_query_params().get('clusterType')
+	def get_Token(self):
+		return self.get_path_params().get('Token')
 
-	def set_clusterType(self,clusterType):
-		self.add_query_param('clusterType',clusterType)
-
-	def get_Name(self):
-		return self.get_query_params().get('Name')
-
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)
+	def set_Token(self,Token):
+		self.add_path_param('Token',Token)
