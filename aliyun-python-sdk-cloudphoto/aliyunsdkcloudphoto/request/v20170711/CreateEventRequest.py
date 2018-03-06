@@ -18,11 +18,35 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class EditPhotosRequest(RpcRequest):
+class CreateEventRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'CloudPhoto', '2017-07-11', 'EditPhotos','cloudphoto')
+		RpcRequest.__init__(self, 'CloudPhoto', '2017-07-11', 'CreateEvent','cloudphoto')
 		self.set_protocol_type('https');
+
+	def get_BannerPhotoId(self):
+		return self.get_query_params().get('BannerPhotoId')
+
+	def set_BannerPhotoId(self,BannerPhotoId):
+		self.add_query_param('BannerPhotoId',BannerPhotoId)
+
+	def get_WatermarkPhotoId(self):
+		return self.get_query_params().get('WatermarkPhotoId')
+
+	def set_WatermarkPhotoId(self,WatermarkPhotoId):
+		self.add_query_param('WatermarkPhotoId',WatermarkPhotoId)
+
+	def get_Identity(self):
+		return self.get_query_params().get('Identity')
+
+	def set_Identity(self,Identity):
+		self.add_query_param('Identity',Identity)
+
+	def get_SplashPhotoId(self):
+		return self.get_query_params().get('SplashPhotoId')
+
+	def set_SplashPhotoId(self,SplashPhotoId):
+		self.add_query_param('SplashPhotoId',SplashPhotoId)
 
 	def get_LibraryId(self):
 		return self.get_query_params().get('LibraryId')
@@ -30,19 +54,11 @@ class EditPhotosRequest(RpcRequest):
 	def set_LibraryId(self,LibraryId):
 		self.add_query_param('LibraryId',LibraryId)
 
-	def get_ShareExpireTime(self):
-		return self.get_query_params().get('ShareExpireTime')
+	def get_WeixinTitle(self):
+		return self.get_query_params().get('WeixinTitle')
 
-	def set_ShareExpireTime(self,ShareExpireTime):
-		self.add_query_param('ShareExpireTime',ShareExpireTime)
-
-	def get_PhotoIds(self):
-		return self.get_query_params().get('PhotoIds')
-
-	def set_PhotoIds(self,PhotoIds):
-		for i in range(len(PhotoIds)):	
-			if PhotoIds[i] is not None:
-				self.add_query_param('PhotoId.' + str(i + 1) , PhotoIds[i]);
+	def set_WeixinTitle(self,WeixinTitle):
+		self.add_query_param('WeixinTitle',WeixinTitle)
 
 	def get_StoreName(self):
 		return self.get_query_params().get('StoreName')
@@ -61,3 +77,15 @@ class EditPhotosRequest(RpcRequest):
 
 	def set_Title(self,Title):
 		self.add_query_param('Title',Title)
+
+	def get_EndAt(self):
+		return self.get_query_params().get('EndAt')
+
+	def set_EndAt(self,EndAt):
+		self.add_query_param('EndAt',EndAt)
+
+	def get_StartAt(self):
+		return self.get_query_params().get('StartAt')
+
+	def set_StartAt(self,StartAt):
+		self.add_query_param('StartAt',StartAt)

@@ -18,17 +18,23 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class DeletePhotosRequest(RpcRequest):
+class ListEventsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'CloudPhoto', '2017-07-11', 'DeletePhotos','cloudphoto')
+		RpcRequest.__init__(self, 'CloudPhoto', '2017-07-11', 'ListEvents','cloudphoto')
 		self.set_protocol_type('https');
 
-	def get_LibraryId(self):
-		return self.get_query_params().get('LibraryId')
+	def get_Cursor(self):
+		return self.get_query_params().get('Cursor')
 
-	def set_LibraryId(self,LibraryId):
-		self.add_query_param('LibraryId',LibraryId)
+	def set_Cursor(self,Cursor):
+		self.add_query_param('Cursor',Cursor)
+
+	def get_Size(self):
+		return self.get_query_params().get('Size')
+
+	def set_Size(self,Size):
+		self.add_query_param('Size',Size)
 
 	def get_StoreName(self):
 		return self.get_query_params().get('StoreName')
@@ -36,10 +42,14 @@ class DeletePhotosRequest(RpcRequest):
 	def set_StoreName(self,StoreName):
 		self.add_query_param('StoreName',StoreName)
 
-	def get_PhotoIds(self):
-		return self.get_query_params().get('PhotoIds')
+	def get_State(self):
+		return self.get_query_params().get('State')
 
-	def set_PhotoIds(self,PhotoIds):
-		for i in range(len(PhotoIds)):	
-			if PhotoIds[i] is not None:
-				self.add_query_param('PhotoId.' + str(i + 1) , PhotoIds[i]);
+	def set_State(self,State):
+		self.add_query_param('State',State)
+
+	def get_Direction(self):
+		return self.get_query_params().get('Direction')
+
+	def set_Direction(self,Direction):
+		self.add_query_param('Direction',Direction)
