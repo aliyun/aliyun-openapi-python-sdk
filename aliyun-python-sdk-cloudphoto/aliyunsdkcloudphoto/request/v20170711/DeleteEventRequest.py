@@ -18,11 +18,17 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class DeletePhotosRequest(RpcRequest):
+class DeleteEventRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'CloudPhoto', '2017-07-11', 'DeletePhotos','cloudphoto')
+		RpcRequest.__init__(self, 'CloudPhoto', '2017-07-11', 'DeleteEvent','cloudphoto')
 		self.set_protocol_type('https');
+
+	def get_EventId(self):
+		return self.get_query_params().get('EventId')
+
+	def set_EventId(self,EventId):
+		self.add_query_param('EventId',EventId)
 
 	def get_LibraryId(self):
 		return self.get_query_params().get('LibraryId')
@@ -35,11 +41,3 @@ class DeletePhotosRequest(RpcRequest):
 
 	def set_StoreName(self,StoreName):
 		self.add_query_param('StoreName',StoreName)
-
-	def get_PhotoIds(self):
-		return self.get_query_params().get('PhotoIds')
-
-	def set_PhotoIds(self,PhotoIds):
-		for i in range(len(PhotoIds)):	
-			if PhotoIds[i] is not None:
-				self.add_query_param('PhotoId.' + str(i + 1) , PhotoIds[i]);
