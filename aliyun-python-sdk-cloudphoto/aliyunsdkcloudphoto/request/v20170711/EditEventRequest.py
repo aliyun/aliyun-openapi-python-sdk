@@ -42,6 +42,12 @@ class EditEventRequest(RpcRequest):
 	def set_WatermarkPhotoId(self,WatermarkPhotoId):
 		self.add_query_param('WatermarkPhotoId',WatermarkPhotoId)
 
+	def get_Identity(self):
+		return self.get_query_params().get('Identity')
+
+	def set_Identity(self,Identity):
+		self.add_query_param('Identity',Identity)
+
 	def get_SplashPhotoId(self):
 		return self.get_query_params().get('SplashPhotoId')
 
