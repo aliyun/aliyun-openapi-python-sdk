@@ -18,16 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class AddBuDBInstanceRelationRequest(RpcRequest):
+class UpgradeDBInstanceNetworkRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'AddBuDBInstanceRelation','rds')
-
-	def get_BusinessUnit(self):
-		return self.get_query_params().get('BusinessUnit')
-
-	def set_BusinessUnit(self,BusinessUnit):
-		self.add_query_param('BusinessUnit',BusinessUnit)
+		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'UpgradeDBInstanceNetwork','rds')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -40,6 +34,18 @@ class AddBuDBInstanceRelationRequest(RpcRequest):
 
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+
+	def get_ConnectionString(self):
+		return self.get_query_params().get('ConnectionString')
+
+	def set_ConnectionString(self,ConnectionString):
+		self.add_query_param('ConnectionString',ConnectionString)
+
+	def get_OwnerAccount(self):
+		return self.get_query_params().get('OwnerAccount')
+
+	def set_OwnerAccount(self,OwnerAccount):
+		self.add_query_param('OwnerAccount',OwnerAccount)
 
 	def get_DBInstanceId(self):
 		return self.get_query_params().get('DBInstanceId')

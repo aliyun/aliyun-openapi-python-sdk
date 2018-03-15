@@ -29,6 +29,12 @@ class DescribeDBInstanceIPArrayListRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_WhitelistNetworkType(self):
+		return self.get_query_params().get('WhitelistNetworkType')
+
+	def set_WhitelistNetworkType(self,WhitelistNetworkType):
+		self.add_query_param('WhitelistNetworkType',WhitelistNetworkType)
+
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 

@@ -18,10 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class ModifySQLCollectorPolicyRequest(RpcRequest):
+class CreateMigrateTaskForSQLServerRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'ModifySQLCollectorPolicy','rds')
+		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'CreateMigrateTaskForSQLServer','rds')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -29,11 +29,17 @@ class ModifySQLCollectorPolicyRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_StoragePeriod(self):
-		return self.get_query_params().get('StoragePeriod')
+	def get_TaskType(self):
+		return self.get_query_params().get('TaskType')
 
-	def set_StoragePeriod(self,StoragePeriod):
-		self.add_query_param('StoragePeriod',StoragePeriod)
+	def set_TaskType(self,TaskType):
+		self.add_query_param('TaskType',TaskType)
+
+	def get_DBName(self):
+		return self.get_query_params().get('DBName')
+
+	def set_DBName(self,DBName):
+		self.add_query_param('DBName',DBName)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -41,23 +47,11 @@ class ModifySQLCollectorPolicyRequest(RpcRequest):
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
-	def get_ClientToken(self):
-		return self.get_query_params().get('ClientToken')
+	def get_IsOnlineDB(self):
+		return self.get_query_params().get('IsOnlineDB')
 
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
-
-	def get_SQLCollectorStatus(self):
-		return self.get_query_params().get('SQLCollectorStatus')
-
-	def set_SQLCollectorStatus(self,SQLCollectorStatus):
-		self.add_query_param('SQLCollectorStatus',SQLCollectorStatus)
-
-	def get_OwnerAccount(self):
-		return self.get_query_params().get('OwnerAccount')
-
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
+	def set_IsOnlineDB(self,IsOnlineDB):
+		self.add_query_param('IsOnlineDB',IsOnlineDB)
 
 	def get_DBInstanceId(self):
 		return self.get_query_params().get('DBInstanceId')
@@ -70,3 +64,9 @@ class ModifySQLCollectorPolicyRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_OSSUrls(self):
+		return self.get_query_params().get('OSSUrls')
+
+	def set_OSSUrls(self,OSSUrls):
+		self.add_query_param('OSSUrls',OSSUrls)

@@ -18,10 +18,16 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class ModifySQLCollectorPolicyRequest(RpcRequest):
+class ModifyGuardDomainModeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'ModifySQLCollectorPolicy','rds')
+		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'ModifyGuardDomainMode','rds')
+
+	def get_DomainMode(self):
+		return self.get_query_params().get('DomainMode')
+
+	def set_DomainMode(self,DomainMode):
+		self.add_query_param('DomainMode',DomainMode)
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -29,11 +35,11 @@ class ModifySQLCollectorPolicyRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_StoragePeriod(self):
-		return self.get_query_params().get('StoragePeriod')
+	def get_SecurityToken(self):
+		return self.get_query_params().get('SecurityToken')
 
-	def set_StoragePeriod(self,StoragePeriod):
-		self.add_query_param('StoragePeriod',StoragePeriod)
+	def set_SecurityToken(self,SecurityToken):
+		self.add_query_param('SecurityToken',SecurityToken)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -41,29 +47,17 @@ class ModifySQLCollectorPolicyRequest(RpcRequest):
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
-	def get_ClientToken(self):
-		return self.get_query_params().get('ClientToken')
-
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
-
-	def get_SQLCollectorStatus(self):
-		return self.get_query_params().get('SQLCollectorStatus')
-
-	def set_SQLCollectorStatus(self,SQLCollectorStatus):
-		self.add_query_param('SQLCollectorStatus',SQLCollectorStatus)
-
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
 
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
-	def get_DBInstanceId(self):
-		return self.get_query_params().get('DBInstanceId')
+	def get_ReplicaId(self):
+		return self.get_query_params().get('ReplicaId')
 
-	def set_DBInstanceId(self,DBInstanceId):
-		self.add_query_param('DBInstanceId',DBInstanceId)
+	def set_ReplicaId(self,ReplicaId):
+		self.add_query_param('ReplicaId',ReplicaId)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')

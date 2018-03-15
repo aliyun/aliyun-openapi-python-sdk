@@ -18,16 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class ModifyInstanceAutoRenewAttributeRequest(RpcRequest):
+class ResetAccountRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'ModifyInstanceAutoRenewAttribute','rds')
-
-	def get_Duration(self):
-		return self.get_query_params().get('Duration')
-
-	def set_Duration(self,Duration):
-		self.add_query_param('Duration',Duration)
+		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'ResetAccount','rds')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -35,23 +29,23 @@ class ModifyInstanceAutoRenewAttributeRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_AutoRenew(self):
-		return self.get_query_params().get('AutoRenew')
+	def get_AccountPassword(self):
+		return self.get_query_params().get('AccountPassword')
 
-	def set_AutoRenew(self,AutoRenew):
-		self.add_query_param('AutoRenew',AutoRenew)
+	def set_AccountPassword(self,AccountPassword):
+		self.add_query_param('AccountPassword',AccountPassword)
+
+	def get_AccountName(self):
+		return self.get_query_params().get('AccountName')
+
+	def set_AccountName(self,AccountName):
+		self.add_query_param('AccountName',AccountName)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_ClientToken(self):
-		return self.get_query_params().get('ClientToken')
-
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
 
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')

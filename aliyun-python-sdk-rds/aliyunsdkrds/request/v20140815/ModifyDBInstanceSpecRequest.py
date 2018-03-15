@@ -47,6 +47,12 @@ class ModifyDBInstanceSpecRequest(RpcRequest):
 	def set_ClientToken(self,ClientToken):
 		self.add_query_param('ClientToken',ClientToken)
 
+	def get_EffectiveTime(self):
+		return self.get_query_params().get('EffectiveTime')
+
+	def set_EffectiveTime(self,EffectiveTime):
+		self.add_query_param('EffectiveTime',EffectiveTime)
+
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
 

@@ -18,16 +18,28 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class DescribeDBInstanceNetworkRequest(RpcRequest):
+class ModifySecurityGroupConfigurationRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'DescribeDBInstanceNetwork','rds')
+		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'ModifySecurityGroupConfiguration','rds')
 
-	def get_EndTime(self):
-		return self.get_query_params().get('EndTime')
+	def get_ResourceOwnerId(self):
+		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_EndTime(self,EndTime):
-		self.add_query_param('EndTime',EndTime)
+	def set_ResourceOwnerId(self,ResourceOwnerId):
+		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+
+	def get_ResourceOwnerAccount(self):
+		return self.get_query_params().get('ResourceOwnerAccount')
+
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+
+	def get_SecurityGroupId(self):
+		return self.get_query_params().get('SecurityGroupId')
+
+	def set_SecurityGroupId(self,SecurityGroupId):
+		self.add_query_param('SecurityGroupId',SecurityGroupId)
 
 	def get_DBInstanceId(self):
 		return self.get_query_params().get('DBInstanceId')
@@ -35,8 +47,8 @@ class DescribeDBInstanceNetworkRequest(RpcRequest):
 	def set_DBInstanceId(self,DBInstanceId):
 		self.add_query_param('DBInstanceId',DBInstanceId)
 
-	def get_StartTime(self):
-		return self.get_query_params().get('StartTime')
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
 
-	def set_StartTime(self,StartTime):
-		self.add_query_param('StartTime',StartTime)
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
