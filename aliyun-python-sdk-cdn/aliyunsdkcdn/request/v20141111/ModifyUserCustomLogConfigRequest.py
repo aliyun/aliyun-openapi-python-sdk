@@ -18,10 +18,22 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class SetReqHeaderConfigRequest(RpcRequest):
+class ModifyUserCustomLogConfigRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'SetReqHeaderConfig')
+		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'ModifyUserCustomLogConfig')
+
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
+
+	def get_Version(self):
+		return self.get_query_params().get('Version')
+
+	def set_Version(self,Version):
+		self.add_query_param('Version',Version)
 
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
@@ -35,26 +47,8 @@ class SetReqHeaderConfigRequest(RpcRequest):
 	def set_ConfigId(self,ConfigId):
 		self.add_query_param('ConfigId',ConfigId)
 
-	def get_DomainName(self):
-		return self.get_query_params().get('DomainName')
+	def get_Tag(self):
+		return self.get_query_params().get('Tag')
 
-	def set_DomainName(self,DomainName):
-		self.add_query_param('DomainName',DomainName)
-
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_Value(self):
-		return self.get_query_params().get('Value')
-
-	def set_Value(self,Value):
-		self.add_query_param('Value',Value)
-
-	def get_Key(self):
-		return self.get_query_params().get('Key')
-
-	def set_Key(self,Key):
-		self.add_query_param('Key',Key)
+	def set_Tag(self,Tag):
+		self.add_query_param('Tag',Tag)

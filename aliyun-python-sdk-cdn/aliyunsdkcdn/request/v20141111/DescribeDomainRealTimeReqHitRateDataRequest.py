@@ -18,28 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class DescribeDomainSrcFlowDataRequest(RpcRequest):
+class DescribeDomainRealTimeReqHitRateDataRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'DescribeDomainSrcFlowData')
-
-	def get_StartTime(self):
-		return self.get_query_params().get('StartTime')
-
-	def set_StartTime(self,StartTime):
-		self.add_query_param('StartTime',StartTime)
-
-	def get_FixTimeGap(self):
-		return self.get_query_params().get('FixTimeGap')
-
-	def set_FixTimeGap(self,FixTimeGap):
-		self.add_query_param('FixTimeGap',FixTimeGap)
-
-	def get_TimeMerge(self):
-		return self.get_query_params().get('TimeMerge')
-
-	def set_TimeMerge(self,TimeMerge):
-		self.add_query_param('TimeMerge',TimeMerge)
+		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'DescribeDomainRealTimeReqHitRateData')
 
 	def get_DomainName(self):
 		return self.get_query_params().get('DomainName')
@@ -53,14 +35,14 @@ class DescribeDomainSrcFlowDataRequest(RpcRequest):
 	def set_EndTime(self,EndTime):
 		self.add_query_param('EndTime',EndTime)
 
+	def get_StartTime(self):
+		return self.get_query_params().get('StartTime')
+
+	def set_StartTime(self,StartTime):
+		self.add_query_param('StartTime',StartTime)
+
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
-
-	def get_Interval(self):
-		return self.get_query_params().get('Interval')
-
-	def set_Interval(self,Interval):
-		self.add_query_param('Interval',Interval)

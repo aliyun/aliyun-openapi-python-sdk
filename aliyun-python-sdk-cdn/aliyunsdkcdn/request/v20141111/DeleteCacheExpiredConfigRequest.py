@@ -18,28 +18,28 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class DescribeDomainSrcFlowDataRequest(RpcRequest):
+class DeleteCacheExpiredConfigRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'DescribeDomainSrcFlowData')
+		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'DeleteCacheExpiredConfig')
 
-	def get_StartTime(self):
-		return self.get_query_params().get('StartTime')
+	def get_CacheType(self):
+		return self.get_query_params().get('CacheType')
 
-	def set_StartTime(self,StartTime):
-		self.add_query_param('StartTime',StartTime)
+	def set_CacheType(self,CacheType):
+		self.add_query_param('CacheType',CacheType)
 
-	def get_FixTimeGap(self):
-		return self.get_query_params().get('FixTimeGap')
+	def get_SecurityToken(self):
+		return self.get_query_params().get('SecurityToken')
 
-	def set_FixTimeGap(self,FixTimeGap):
-		self.add_query_param('FixTimeGap',FixTimeGap)
+	def set_SecurityToken(self,SecurityToken):
+		self.add_query_param('SecurityToken',SecurityToken)
 
-	def get_TimeMerge(self):
-		return self.get_query_params().get('TimeMerge')
+	def get_ConfigID(self):
+		return self.get_query_params().get('ConfigID')
 
-	def set_TimeMerge(self,TimeMerge):
-		self.add_query_param('TimeMerge',TimeMerge)
+	def set_ConfigID(self,ConfigID):
+		self.add_query_param('ConfigID',ConfigID)
 
 	def get_DomainName(self):
 		return self.get_query_params().get('DomainName')
@@ -47,20 +47,8 @@ class DescribeDomainSrcFlowDataRequest(RpcRequest):
 	def set_DomainName(self,DomainName):
 		self.add_query_param('DomainName',DomainName)
 
-	def get_EndTime(self):
-		return self.get_query_params().get('EndTime')
-
-	def set_EndTime(self,EndTime):
-		self.add_query_param('EndTime',EndTime)
-
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
-
-	def get_Interval(self):
-		return self.get_query_params().get('Interval')
-
-	def set_Interval(self,Interval):
-		self.add_query_param('Interval',Interval)
