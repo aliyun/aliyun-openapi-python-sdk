@@ -18,10 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class DescribeVSwitchesRequest(RpcRequest):
+class DescribeSslVpnClientCertRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'DescribeVSwitches','vpc')
+		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'DescribeSslVpnClientCert','vpc')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -47,44 +47,8 @@ class DescribeVSwitchesRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_PageNumber(self):
-		return self.get_query_params().get('PageNumber')
+	def get_SslVpnClientCertId(self):
+		return self.get_query_params().get('SslVpnClientCertId')
 
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
-
-	def get_VSwitchId(self):
-		return self.get_query_params().get('VSwitchId')
-
-	def set_VSwitchId(self,VSwitchId):
-		self.add_query_param('VSwitchId',VSwitchId)
-
-	def get_VpcId(self):
-		return self.get_query_params().get('VpcId')
-
-	def set_VpcId(self,VpcId):
-		self.add_query_param('VpcId',VpcId)
-
-	def get_VSwitchName(self):
-		return self.get_query_params().get('VSwitchName')
-
-	def set_VSwitchName(self,VSwitchName):
-		self.add_query_param('VSwitchName',VSwitchName)
-
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_ZoneId(self):
-		return self.get_query_params().get('ZoneId')
-
-	def set_ZoneId(self,ZoneId):
-		self.add_query_param('ZoneId',ZoneId)
-
-	def get_IsDefault(self):
-		return self.get_query_params().get('IsDefault')
-
-	def set_IsDefault(self,IsDefault):
-		self.add_query_param('IsDefault',IsDefault)
+	def set_SslVpnClientCertId(self,SslVpnClientCertId):
+		self.add_query_param('SslVpnClientCertId',SslVpnClientCertId)

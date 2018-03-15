@@ -47,6 +47,12 @@ class DescribeNatGatewaysRequest(RpcRequest):
 	def set_VpcId(self,VpcId):
 		self.add_query_param('VpcId',VpcId)
 
+	def get_Name(self):
+		return self.get_query_params().get('Name')
+
+	def set_Name(self,Name):
+		self.add_query_param('Name',Name)
+
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
 

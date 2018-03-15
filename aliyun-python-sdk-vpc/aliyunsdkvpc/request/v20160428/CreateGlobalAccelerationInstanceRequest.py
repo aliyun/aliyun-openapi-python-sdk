@@ -29,6 +29,12 @@ class CreateGlobalAccelerationInstanceRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_BandwidthType(self):
+		return self.get_query_params().get('BandwidthType')
+
+	def set_BandwidthType(self,BandwidthType):
+		self.add_query_param('BandwidthType',BandwidthType)
+
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -53,23 +59,11 @@ class CreateGlobalAccelerationInstanceRequest(RpcRequest):
 	def set_ClientToken(self,ClientToken):
 		self.add_query_param('ClientToken',ClientToken)
 
-	def get_InternetChargeType(self):
-		return self.get_query_params().get('InternetChargeType')
-
-	def set_InternetChargeType(self,InternetChargeType):
-		self.add_query_param('InternetChargeType',InternetChargeType)
-
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
 
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
-
-	def get_Name(self):
-		return self.get_query_params().get('Name')
-
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)
 
 	def get_Description(self):
 		return self.get_query_params().get('Description')
@@ -82,3 +76,15 @@ class CreateGlobalAccelerationInstanceRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_InternetChargeType(self):
+		return self.get_query_params().get('InternetChargeType')
+
+	def set_InternetChargeType(self,InternetChargeType):
+		self.add_query_param('InternetChargeType',InternetChargeType)
+
+	def get_Name(self):
+		return self.get_query_params().get('Name')
+
+	def set_Name(self,Name):
+		self.add_query_param('Name',Name)

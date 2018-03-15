@@ -41,6 +41,12 @@ class AssociateEipAddressRequest(RpcRequest):
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
+	def get_InstanceRegionId(self):
+		return self.get_query_params().get('InstanceRegionId')
+
+	def set_InstanceRegionId(self,InstanceRegionId):
+		self.add_query_param('InstanceRegionId',InstanceRegionId)
+
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
 

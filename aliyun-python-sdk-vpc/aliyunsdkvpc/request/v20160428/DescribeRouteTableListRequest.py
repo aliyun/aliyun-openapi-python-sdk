@@ -35,12 +35,6 @@ class DescribeRouteTableListRequest(RpcRequest):
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
-	def get_Bandwidth(self):
-		return self.get_query_params().get('Bandwidth')
-
-	def set_Bandwidth(self,Bandwidth):
-		self.add_query_param('Bandwidth',Bandwidth)
-
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
 
@@ -65,12 +59,6 @@ class DescribeRouteTableListRequest(RpcRequest):
 	def set_RouterType(self,RouterType):
 		self.add_query_param('RouterType',RouterType)
 
-	def get_KbpsBandwidth(self):
-		return self.get_query_params().get('KbpsBandwidth')
-
-	def set_KbpsBandwidth(self,KbpsBandwidth):
-		self.add_query_param('KbpsBandwidth',KbpsBandwidth)
-
 	def get_RouteTableName(self):
 		return self.get_query_params().get('RouteTableName')
 
@@ -89,23 +77,11 @@ class DescribeRouteTableListRequest(RpcRequest):
 	def set_VpcId(self,VpcId):
 		self.add_query_param('VpcId',VpcId)
 
-	def get_ResourceUid(self):
-		return self.get_query_params().get('ResourceUid')
-
-	def set_ResourceUid(self,ResourceUid):
-		self.add_query_param('ResourceUid',ResourceUid)
-
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
 
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
-
-	def get_ResourceBid(self):
-		return self.get_query_params().get('ResourceBid')
-
-	def set_ResourceBid(self,ResourceBid):
-		self.add_query_param('ResourceBid',ResourceBid)
 
 	def get_RouteTableId(self):
 		return self.get_query_params().get('RouteTableId')

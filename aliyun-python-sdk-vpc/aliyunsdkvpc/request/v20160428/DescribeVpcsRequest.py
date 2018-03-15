@@ -23,6 +23,18 @@ class DescribeVpcsRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'DescribeVpcs','vpc')
 
+	def get_VpcName(self):
+		return self.get_query_params().get('VpcName')
+
+	def set_VpcName(self,VpcName):
+		self.add_query_param('VpcName',VpcName)
+
+	def get_ResourceGroupId(self):
+		return self.get_query_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self,ResourceGroupId):
+		self.add_query_param('ResourceGroupId',ResourceGroupId)
+
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
@@ -46,12 +58,6 @@ class DescribeVpcsRequest(RpcRequest):
 
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
-
-	def get_Name(self):
-		return self.get_query_params().get('Name')
-
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)
 
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')

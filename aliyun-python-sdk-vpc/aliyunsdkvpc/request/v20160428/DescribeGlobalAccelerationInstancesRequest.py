@@ -35,6 +35,12 @@ class DescribeGlobalAccelerationInstancesRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_BandwidthType(self):
+		return self.get_query_params().get('BandwidthType')
+
+	def set_BandwidthType(self,BandwidthType):
+		self.add_query_param('BandwidthType',BandwidthType)
+
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
