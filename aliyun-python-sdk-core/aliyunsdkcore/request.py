@@ -218,9 +218,6 @@ class AcsRequest:
     def set_content_type(self, content_type):
         self.add_header("Content-Type", content_type)
 
-    def get_location_endpoint_type(self):
-        return self._location_endpoint_type
-
     @abc.abstractmethod
     def get_style(self):
         pass

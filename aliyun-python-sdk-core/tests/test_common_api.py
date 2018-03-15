@@ -110,6 +110,7 @@ class TestCommonApi(object):
         request.set_version('2014-05-26')
         request.set_action_name('DescribeRegions')
         request.set_method('GET')
+        request.set_domain('ecs-cn-hangzhou.aliyuncs.com')
 
         try:
             self.acs_client.do_action_with_exception(request)
