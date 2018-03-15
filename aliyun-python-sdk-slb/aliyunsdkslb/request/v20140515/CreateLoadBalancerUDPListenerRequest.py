@@ -29,6 +29,12 @@ class CreateLoadBalancerUDPListenerRequest(RpcRequest):
 	def set_access_key_id(self,access_key_id):
 		self.add_query_param('access_key_id',access_key_id)
 
+	def get_VServerGroupId(self):
+		return self.get_query_params().get('VServerGroupId')
+
+	def set_VServerGroupId(self,VServerGroupId):
+		self.add_query_param('VServerGroupId',VServerGroupId)
+
 	def get_HealthCheckConnectTimeout(self):
 		return self.get_query_params().get('HealthCheckConnectTimeout')
 
@@ -40,42 +46,6 @@ class CreateLoadBalancerUDPListenerRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_UnhealthyThreshold(self):
-		return self.get_query_params().get('UnhealthyThreshold')
-
-	def set_UnhealthyThreshold(self,UnhealthyThreshold):
-		self.add_query_param('UnhealthyThreshold',UnhealthyThreshold)
-
-	def get_HealthyThreshold(self):
-		return self.get_query_params().get('HealthyThreshold')
-
-	def set_HealthyThreshold(self,HealthyThreshold):
-		self.add_query_param('HealthyThreshold',HealthyThreshold)
-
-	def get_Scheduler(self):
-		return self.get_query_params().get('Scheduler')
-
-	def set_Scheduler(self,Scheduler):
-		self.add_query_param('Scheduler',Scheduler)
-
-	def get_MaxConnection(self):
-		return self.get_query_params().get('MaxConnection')
-
-	def set_MaxConnection(self,MaxConnection):
-		self.add_query_param('MaxConnection',MaxConnection)
-
-	def get_PersistenceTimeout(self):
-		return self.get_query_params().get('PersistenceTimeout')
-
-	def set_PersistenceTimeout(self,PersistenceTimeout):
-		self.add_query_param('PersistenceTimeout',PersistenceTimeout)
-
-	def get_VServerGroupId(self):
-		return self.get_query_params().get('VServerGroupId')
-
-	def set_VServerGroupId(self,VServerGroupId):
-		self.add_query_param('VServerGroupId',VServerGroupId)
 
 	def get_ListenerPort(self):
 		return self.get_query_params().get('ListenerPort')
@@ -101,11 +71,23 @@ class CreateLoadBalancerUDPListenerRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
+	def get_UnhealthyThreshold(self):
+		return self.get_query_params().get('UnhealthyThreshold')
+
+	def set_UnhealthyThreshold(self,UnhealthyThreshold):
+		self.add_query_param('UnhealthyThreshold',UnhealthyThreshold)
+
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_HealthyThreshold(self):
+		return self.get_query_params().get('HealthyThreshold')
+
+	def set_HealthyThreshold(self,HealthyThreshold):
+		self.add_query_param('HealthyThreshold',HealthyThreshold)
 
 	def get_Tags(self):
 		return self.get_query_params().get('Tags')
@@ -113,11 +95,23 @@ class CreateLoadBalancerUDPListenerRequest(RpcRequest):
 	def set_Tags(self,Tags):
 		self.add_query_param('Tags',Tags)
 
+	def get_Scheduler(self):
+		return self.get_query_params().get('Scheduler')
+
+	def set_Scheduler(self,Scheduler):
+		self.add_query_param('Scheduler',Scheduler)
+
 	def get_LoadBalancerId(self):
 		return self.get_query_params().get('LoadBalancerId')
 
 	def set_LoadBalancerId(self,LoadBalancerId):
 		self.add_query_param('LoadBalancerId',LoadBalancerId)
+
+	def get_MaxConnection(self):
+		return self.get_query_params().get('MaxConnection')
+
+	def set_MaxConnection(self,MaxConnection):
+		self.add_query_param('MaxConnection',MaxConnection)
 
 	def get_MasterSlaveServerGroupId(self):
 		return self.get_query_params().get('MasterSlaveServerGroupId')
@@ -142,6 +136,12 @@ class CreateLoadBalancerUDPListenerRequest(RpcRequest):
 
 	def set_healthCheckInterval(self,healthCheckInterval):
 		self.add_query_param('healthCheckInterval',healthCheckInterval)
+
+	def get_PersistenceTimeout(self):
+		return self.get_query_params().get('PersistenceTimeout')
+
+	def set_PersistenceTimeout(self,PersistenceTimeout):
+		self.add_query_param('PersistenceTimeout',PersistenceTimeout)
 
 	def get_healthCheckExp(self):
 		return self.get_query_params().get('healthCheckExp')

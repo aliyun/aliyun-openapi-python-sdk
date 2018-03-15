@@ -29,59 +29,17 @@ class CreateLoadBalancerRequest(RpcRequest):
 	def set_access_key_id(self,access_key_id):
 		self.add_query_param('access_key_id',access_key_id)
 
-	def get_ResourceOwnerId(self):
-		return self.get_query_params().get('ResourceOwnerId')
-
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_ClientToken(self):
-		return self.get_query_params().get('ClientToken')
-
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
-
-	def get_MasterZoneId(self):
-		return self.get_query_params().get('MasterZoneId')
-
-	def set_MasterZoneId(self,MasterZoneId):
-		self.add_query_param('MasterZoneId',MasterZoneId)
-
-	def get_Duration(self):
-		return self.get_query_params().get('Duration')
-
-	def set_Duration(self,Duration):
-		self.add_query_param('Duration',Duration)
-
-	def get_ResourceGroupId(self):
-		return self.get_query_params().get('ResourceGroupId')
-
-	def set_ResourceGroupId(self,ResourceGroupId):
-		self.add_query_param('ResourceGroupId',ResourceGroupId)
-
-	def get_LoadBalancerName(self):
-		return self.get_query_params().get('LoadBalancerName')
-
-	def set_LoadBalancerName(self,LoadBalancerName):
-		self.add_query_param('LoadBalancerName',LoadBalancerName)
-
-	def get_AddressType(self):
-		return self.get_query_params().get('AddressType')
-
-	def set_AddressType(self,AddressType):
-		self.add_query_param('AddressType',AddressType)
-
-	def get_SlaveZoneId(self):
-		return self.get_query_params().get('SlaveZoneId')
-
-	def set_SlaveZoneId(self,SlaveZoneId):
-		self.add_query_param('SlaveZoneId',SlaveZoneId)
-
 	def get_LoadBalancerSpec(self):
 		return self.get_query_params().get('LoadBalancerSpec')
 
 	def set_LoadBalancerSpec(self,LoadBalancerSpec):
 		self.add_query_param('LoadBalancerSpec',LoadBalancerSpec)
+
+	def get_ResourceOwnerId(self):
+		return self.get_query_params().get('ResourceOwnerId')
+
+	def set_ResourceOwnerId(self,ResourceOwnerId):
+		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
 	def get_AutoPay(self):
 		return self.get_query_params().get('AutoPay')
@@ -101,6 +59,12 @@ class CreateLoadBalancerRequest(RpcRequest):
 	def set_Bandwidth(self,Bandwidth):
 		self.add_query_param('Bandwidth',Bandwidth)
 
+	def get_ClientToken(self):
+		return self.get_query_params().get('ClientToken')
+
+	def set_ClientToken(self,ClientToken):
+		self.add_query_param('ClientToken',ClientToken)
+
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
 
@@ -113,6 +77,12 @@ class CreateLoadBalancerRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
+	def get_MasterZoneId(self):
+		return self.get_query_params().get('MasterZoneId')
+
+	def set_MasterZoneId(self,MasterZoneId):
+		self.add_query_param('MasterZoneId',MasterZoneId)
+
 	def get_Tags(self):
 		return self.get_query_params().get('Tags')
 
@@ -124,6 +94,24 @@ class CreateLoadBalancerRequest(RpcRequest):
 
 	def set_VSwitchId(self,VSwitchId):
 		self.add_query_param('VSwitchId',VSwitchId)
+
+	def get_Duration(self):
+		return self.get_query_params().get('Duration')
+
+	def set_Duration(self,Duration):
+		self.add_query_param('Duration',Duration)
+
+	def get_ResourceGroupId(self):
+		return self.get_query_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self,ResourceGroupId):
+		self.add_query_param('ResourceGroupId',ResourceGroupId)
+
+	def get_LoadBalancerName(self):
+		return self.get_query_params().get('LoadBalancerName')
+
+	def set_LoadBalancerName(self,LoadBalancerName):
+		self.add_query_param('LoadBalancerName',LoadBalancerName)
 
 	def get_EnableVpcVipFlow(self):
 		return self.get_query_params().get('EnableVpcVipFlow')
@@ -142,6 +130,18 @@ class CreateLoadBalancerRequest(RpcRequest):
 
 	def set_VpcId(self,VpcId):
 		self.add_query_param('VpcId',VpcId)
+
+	def get_AddressType(self):
+		return self.get_query_params().get('AddressType')
+
+	def set_AddressType(self,AddressType):
+		self.add_query_param('AddressType',AddressType)
+
+	def get_SlaveZoneId(self):
+		return self.get_query_params().get('SlaveZoneId')
+
+	def set_SlaveZoneId(self,SlaveZoneId):
+		self.add_query_param('SlaveZoneId',SlaveZoneId)
 
 	def get_PayType(self):
 		return self.get_query_params().get('PayType')
