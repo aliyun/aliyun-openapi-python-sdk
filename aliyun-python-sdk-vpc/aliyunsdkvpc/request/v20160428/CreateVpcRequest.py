@@ -29,6 +29,12 @@ class CreateVpcRequest(RpcRequest):
 	def set_VpcName(self,VpcName):
 		self.add_query_param('VpcName',VpcName)
 
+	def get_ResourceGroupId(self):
+		return self.get_query_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self,ResourceGroupId):
+		self.add_query_param('ResourceGroupId',ResourceGroupId)
+
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 

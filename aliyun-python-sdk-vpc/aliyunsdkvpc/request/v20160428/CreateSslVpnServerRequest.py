@@ -18,16 +18,28 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class CreateRouteEntryRequest(RpcRequest):
+class CreateSslVpnServerRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'CreateRouteEntry','vpc')
+		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'CreateSslVpnServer','vpc')
+
+	def get_Cipher(self):
+		return self.get_query_params().get('Cipher')
+
+	def set_Cipher(self,Cipher):
+		self.add_query_param('Cipher',Cipher)
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+
+	def get_ClientIpPool(self):
+		return self.get_query_params().get('ClientIpPool')
+
+	def set_ClientIpPool(self,ClientIpPool):
+		self.add_query_param('ClientIpPool',ClientIpPool)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -41,11 +53,11 @@ class CreateRouteEntryRequest(RpcRequest):
 	def set_ClientToken(self,ClientToken):
 		self.add_query_param('ClientToken',ClientToken)
 
-	def get_DestinationCidrBlock(self):
-		return self.get_query_params().get('DestinationCidrBlock')
+	def get_Compress(self):
+		return self.get_query_params().get('Compress')
 
-	def set_DestinationCidrBlock(self,DestinationCidrBlock):
-		self.add_query_param('DestinationCidrBlock',DestinationCidrBlock)
+	def set_Compress(self,Compress):
+		self.add_query_param('Compress',Compress)
 
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
@@ -53,11 +65,11 @@ class CreateRouteEntryRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
-	def get_NextHopId(self):
-		return self.get_query_params().get('NextHopId')
+	def get_VpnGatewayId(self):
+		return self.get_query_params().get('VpnGatewayId')
 
-	def set_NextHopId(self,NextHopId):
-		self.add_query_param('NextHopId',NextHopId)
+	def set_VpnGatewayId(self,VpnGatewayId):
+		self.add_query_param('VpnGatewayId',VpnGatewayId)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
@@ -65,27 +77,26 @@ class CreateRouteEntryRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_NextHopType(self):
-		return self.get_query_params().get('NextHopType')
+	def get_LocalSubnet(self):
+		return self.get_query_params().get('LocalSubnet')
 
-	def set_NextHopType(self,NextHopType):
-		self.add_query_param('NextHopType',NextHopType)
+	def set_LocalSubnet(self,LocalSubnet):
+		self.add_query_param('LocalSubnet',LocalSubnet)
 
-	def get_NextHopLists(self):
-		return self.get_query_params().get('NextHopLists')
+	def get_Port(self):
+		return self.get_query_params().get('Port')
 
-	def set_NextHopLists(self,NextHopLists):
-		for i in range(len(NextHopLists)):	
-			if NextHopLists[i].get('NextHopType') is not None:
-				self.add_query_param('NextHopList.' + str(i + 1) + '.NextHopType' , NextHopLists[i].get('NextHopType'))
-			if NextHopLists[i].get('NextHopId') is not None:
-				self.add_query_param('NextHopList.' + str(i + 1) + '.NextHopId' , NextHopLists[i].get('NextHopId'))
-			if NextHopLists[i].get('Weight') is not None:
-				self.add_query_param('NextHopList.' + str(i + 1) + '.Weight' , NextHopLists[i].get('Weight'))
+	def set_Port(self,Port):
+		self.add_query_param('Port',Port)
 
+	def get_Proto(self):
+		return self.get_query_params().get('Proto')
 
-	def get_RouteTableId(self):
-		return self.get_query_params().get('RouteTableId')
+	def set_Proto(self,Proto):
+		self.add_query_param('Proto',Proto)
 
-	def set_RouteTableId(self,RouteTableId):
-		self.add_query_param('RouteTableId',RouteTableId)
+	def get_Name(self):
+		return self.get_query_params().get('Name')
+
+	def set_Name(self,Name):
+		self.add_query_param('Name',Name)

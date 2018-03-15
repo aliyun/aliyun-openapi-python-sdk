@@ -41,6 +41,12 @@ class ModifyRouterInterfaceAttributeRequest(RpcRequest):
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
+	def get_DeleteHealthCheckIp(self):
+		return self.get_query_params().get('DeleteHealthCheckIp')
+
+	def set_DeleteHealthCheckIp(self,DeleteHealthCheckIp):
+		self.add_query_param('DeleteHealthCheckIp',DeleteHealthCheckIp)
+
 	def get_Description(self):
 		return self.get_query_params().get('Description')
 

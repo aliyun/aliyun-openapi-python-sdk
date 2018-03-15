@@ -18,10 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class CreateRouteEntryRequest(RpcRequest):
+class ModifySslVpnClientCertRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'CreateRouteEntry','vpc')
+		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'ModifySslVpnClientCert','vpc')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -41,23 +41,17 @@ class CreateRouteEntryRequest(RpcRequest):
 	def set_ClientToken(self,ClientToken):
 		self.add_query_param('ClientToken',ClientToken)
 
-	def get_DestinationCidrBlock(self):
-		return self.get_query_params().get('DestinationCidrBlock')
-
-	def set_DestinationCidrBlock(self,DestinationCidrBlock):
-		self.add_query_param('DestinationCidrBlock',DestinationCidrBlock)
-
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
 
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
-	def get_NextHopId(self):
-		return self.get_query_params().get('NextHopId')
+	def get_Name(self):
+		return self.get_query_params().get('Name')
 
-	def set_NextHopId(self,NextHopId):
-		self.add_query_param('NextHopId',NextHopId)
+	def set_Name(self,Name):
+		self.add_query_param('Name',Name)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
@@ -65,27 +59,8 @@ class CreateRouteEntryRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_NextHopType(self):
-		return self.get_query_params().get('NextHopType')
+	def get_SslVpnClientCertId(self):
+		return self.get_query_params().get('SslVpnClientCertId')
 
-	def set_NextHopType(self,NextHopType):
-		self.add_query_param('NextHopType',NextHopType)
-
-	def get_NextHopLists(self):
-		return self.get_query_params().get('NextHopLists')
-
-	def set_NextHopLists(self,NextHopLists):
-		for i in range(len(NextHopLists)):	
-			if NextHopLists[i].get('NextHopType') is not None:
-				self.add_query_param('NextHopList.' + str(i + 1) + '.NextHopType' , NextHopLists[i].get('NextHopType'))
-			if NextHopLists[i].get('NextHopId') is not None:
-				self.add_query_param('NextHopList.' + str(i + 1) + '.NextHopId' , NextHopLists[i].get('NextHopId'))
-			if NextHopLists[i].get('Weight') is not None:
-				self.add_query_param('NextHopList.' + str(i + 1) + '.Weight' , NextHopLists[i].get('Weight'))
-
-
-	def get_RouteTableId(self):
-		return self.get_query_params().get('RouteTableId')
-
-	def set_RouteTableId(self,RouteTableId):
-		self.add_query_param('RouteTableId',RouteTableId)
+	def set_SslVpnClientCertId(self,SslVpnClientCertId):
+		self.add_query_param('SslVpnClientCertId',SslVpnClientCertId)

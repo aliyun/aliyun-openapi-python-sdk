@@ -124,9 +124,3 @@ class CreatePhysicalConnectionNewRequest(RpcRequest):
 
 	def set_DeviceName(self,DeviceName):
 		self.add_query_param('DeviceName',DeviceName)
-
-	def get_UserCidr(self):
-		return self.get_query_params().get('UserCidr')
-
-	def set_UserCidr(self,UserCidr):
-		self.add_query_param('UserCidr',UserCidr)

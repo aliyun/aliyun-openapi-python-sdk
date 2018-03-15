@@ -32,7 +32,7 @@ class DescribePhysicalConnectionsRequest(RpcRequest):
 				self.add_query_param('Filter.' + str(i + 1) + '.Key' , Filters[i].get('Key'))
 			for j in range(len(Filters[i].get('Values'))):
 				if Filters[i].get('Values')[j] is not None:
-					self.add_query_param('Filter.' + str(i + 1) + '.Value.'+bytes(j + 1), Filters[i].get('Values')[j])
+					self.add_query_param('Filter.' + str(i + 1) + '.Value.'+str(j + 1), Filters[i].get('Values')[j])
 
 
 	def get_ResourceOwnerId(self):
@@ -64,12 +64,6 @@ class DescribePhysicalConnectionsRequest(RpcRequest):
 
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
-
-	def get_UserCidr(self):
-		return self.get_query_params().get('UserCidr')
-
-	def set_UserCidr(self,UserCidr):
-		self.add_query_param('UserCidr',UserCidr)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
