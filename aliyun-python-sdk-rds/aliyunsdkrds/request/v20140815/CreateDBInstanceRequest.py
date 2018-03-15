@@ -143,6 +143,12 @@ class CreateDBInstanceRequest(RpcRequest):
 	def set_VPCId(self,VPCId):
 		self.add_query_param('VPCId',VPCId)
 
+	def get_TunnelId(self):
+		return self.get_query_params().get('TunnelId')
+
+	def set_TunnelId(self,TunnelId):
+		self.add_query_param('TunnelId',TunnelId)
+
 	def get_ZoneId(self):
 		return self.get_query_params().get('ZoneId')
 

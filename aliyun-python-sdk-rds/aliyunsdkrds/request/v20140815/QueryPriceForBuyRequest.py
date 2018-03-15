@@ -18,10 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class ModifyDBInstancePayTypeRequest(RpcRequest):
+class QueryPriceForBuyRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'ModifyDBInstancePayType','rds')
+		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'QueryPriceForBuy','rds')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -29,23 +29,17 @@ class ModifyDBInstancePayTypeRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_Period(self):
-		return self.get_query_params().get('Period')
+	def get_DBInstanceStorage(self):
+		return self.get_query_params().get('DBInstanceStorage')
 
-	def set_Period(self,Period):
-		self.add_query_param('Period',Period)
+	def set_DBInstanceStorage(self,DBInstanceStorage):
+		self.add_query_param('DBInstanceStorage',DBInstanceStorage)
 
-	def get_AgentId(self):
-		return self.get_query_params().get('AgentId')
+	def get_Quantity(self):
+		return self.get_query_params().get('Quantity')
 
-	def set_AgentId(self,AgentId):
-		self.add_query_param('AgentId',AgentId)
-
-	def get_AutoPay(self):
-		return self.get_query_params().get('AutoPay')
-
-	def set_AutoPay(self,AutoPay):
-		self.add_query_param('AutoPay',AutoPay)
+	def set_Quantity(self,Quantity):
+		self.add_query_param('Quantity',Quantity)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -59,17 +53,23 @@ class ModifyDBInstancePayTypeRequest(RpcRequest):
 	def set_ClientToken(self,ClientToken):
 		self.add_query_param('ClientToken',ClientToken)
 
-	def get_Resource(self):
-		return self.get_query_params().get('Resource')
-
-	def set_Resource(self,Resource):
-		self.add_query_param('Resource',Resource)
-
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
 
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
+
+	def get_CommodityCode(self):
+		return self.get_query_params().get('CommodityCode')
+
+	def set_CommodityCode(self,CommodityCode):
+		self.add_query_param('CommodityCode',CommodityCode)
+
+	def get_EngineVersion(self):
+		return self.get_query_params().get('EngineVersion')
+
+	def set_EngineVersion(self,EngineVersion):
+		self.add_query_param('EngineVersion',EngineVersion)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
@@ -83,11 +83,35 @@ class ModifyDBInstancePayTypeRequest(RpcRequest):
 	def set_UsedTime(self,UsedTime):
 		self.add_query_param('UsedTime',UsedTime)
 
-	def get_DBInstanceId(self):
-		return self.get_query_params().get('DBInstanceId')
+	def get_DBInstanceClass(self):
+		return self.get_query_params().get('DBInstanceClass')
 
-	def set_DBInstanceId(self,DBInstanceId):
-		self.add_query_param('DBInstanceId',DBInstanceId)
+	def set_DBInstanceClass(self,DBInstanceClass):
+		self.add_query_param('DBInstanceClass',DBInstanceClass)
+
+	def get_InstanceUsedType(self):
+		return self.get_query_params().get('InstanceUsedType')
+
+	def set_InstanceUsedType(self,InstanceUsedType):
+		self.add_query_param('InstanceUsedType',InstanceUsedType)
+
+	def get_Engine(self):
+		return self.get_query_params().get('Engine')
+
+	def set_Engine(self,Engine):
+		self.add_query_param('Engine',Engine)
+
+	def get_ZoneId(self):
+		return self.get_query_params().get('ZoneId')
+
+	def set_ZoneId(self,ZoneId):
+		self.add_query_param('ZoneId',ZoneId)
+
+	def get_TimeType(self):
+		return self.get_query_params().get('TimeType')
+
+	def set_TimeType(self,TimeType):
+		self.add_query_param('TimeType',TimeType)
 
 	def get_PayType(self):
 		return self.get_query_params().get('PayType')
@@ -95,8 +119,8 @@ class ModifyDBInstancePayTypeRequest(RpcRequest):
 	def set_PayType(self,PayType):
 		self.add_query_param('PayType',PayType)
 
-	def get_BusinessInfo(self):
-		return self.get_query_params().get('BusinessInfo')
+	def get_OrderType(self):
+		return self.get_query_params().get('OrderType')
 
-	def set_BusinessInfo(self,BusinessInfo):
-		self.add_query_param('BusinessInfo',BusinessInfo)
+	def set_OrderType(self,OrderType):
+		self.add_query_param('OrderType',OrderType)

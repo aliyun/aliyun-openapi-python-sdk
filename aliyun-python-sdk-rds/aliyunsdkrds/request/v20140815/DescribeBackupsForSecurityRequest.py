@@ -18,10 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class CloneDBInstanceForSecurityRequest(RpcRequest):
+class DescribeBackupsForSecurityRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'CloneDBInstanceForSecurity','rds')
+		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'DescribeBackupsForSecurity','rds')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -29,23 +29,11 @@ class CloneDBInstanceForSecurityRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_DBInstanceStorage(self):
-		return self.get_query_params().get('DBInstanceStorage')
-
-	def set_DBInstanceStorage(self,DBInstanceStorage):
-		self.add_query_param('DBInstanceStorage',DBInstanceStorage)
-
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_ClientToken(self):
-		return self.get_query_params().get('ClientToken')
-
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
 
 	def get_TargetAliBid(self):
 		return self.get_query_params().get('TargetAliBid')
@@ -65,23 +53,41 @@ class CloneDBInstanceForSecurityRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
+	def get_EndTime(self):
+		return self.get_query_params().get('EndTime')
+
+	def set_EndTime(self,EndTime):
+		self.add_query_param('EndTime',EndTime)
+
+	def get_StartTime(self):
+		return self.get_query_params().get('StartTime')
+
+	def set_StartTime(self,StartTime):
+		self.add_query_param('StartTime',StartTime)
+
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_DBInstanceClass(self):
-		return self.get_query_params().get('DBInstanceClass')
+	def get_PageNumber(self):
+		return self.get_query_params().get('PageNumber')
 
-	def set_DBInstanceClass(self,DBInstanceClass):
-		self.add_query_param('DBInstanceClass',DBInstanceClass)
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)
 
-	def get_ResourceGroupId(self):
-		return self.get_query_params().get('ResourceGroupId')
+	def get_BackupStatus(self):
+		return self.get_query_params().get('BackupStatus')
 
-	def set_ResourceGroupId(self,ResourceGroupId):
-		self.add_query_param('ResourceGroupId',ResourceGroupId)
+	def set_BackupStatus(self,BackupStatus):
+		self.add_query_param('BackupStatus',BackupStatus)
+
+	def get_BackupLocation(self):
+		return self.get_query_params().get('BackupLocation')
+
+	def set_BackupLocation(self,BackupLocation):
+		self.add_query_param('BackupLocation',BackupLocation)
 
 	def get_TargetAliUid(self):
 		return self.get_query_params().get('TargetAliUid')
@@ -89,14 +95,20 @@ class CloneDBInstanceForSecurityRequest(RpcRequest):
 	def set_TargetAliUid(self,TargetAliUid):
 		self.add_query_param('TargetAliUid',TargetAliUid)
 
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
+
 	def get_DBInstanceId(self):
 		return self.get_query_params().get('DBInstanceId')
 
 	def set_DBInstanceId(self,DBInstanceId):
 		self.add_query_param('DBInstanceId',DBInstanceId)
 
-	def get_PayType(self):
-		return self.get_query_params().get('PayType')
+	def get_BackupMode(self):
+		return self.get_query_params().get('BackupMode')
 
-	def set_PayType(self,PayType):
-		self.add_query_param('PayType',PayType)
+	def set_BackupMode(self,BackupMode):
+		self.add_query_param('BackupMode',BackupMode)

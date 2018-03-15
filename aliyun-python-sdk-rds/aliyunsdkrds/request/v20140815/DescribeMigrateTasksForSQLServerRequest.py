@@ -18,10 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class CompensateInstanceForChannelRequest(RpcRequest):
+class DescribeMigrateTasksForSQLServerRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'CompensateInstanceForChannel','rds')
+		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'DescribeMigrateTasksForSQLServer','rds')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -35,17 +35,17 @@ class CompensateInstanceForChannelRequest(RpcRequest):
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
-	def get_ZoneId(self):
-		return self.get_query_params().get('ZoneId')
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
 
-	def set_ZoneId(self,ZoneId):
-		self.add_query_param('ZoneId',ZoneId)
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
 
-	def get_SubDomain(self):
-		return self.get_query_params().get('SubDomain')
+	def get_EndTime(self):
+		return self.get_query_params().get('EndTime')
 
-	def set_SubDomain(self,SubDomain):
-		self.add_query_param('SubDomain',SubDomain)
+	def set_EndTime(self,EndTime):
+		self.add_query_param('EndTime',EndTime)
 
 	def get_DBInstanceId(self):
 		return self.get_query_params().get('DBInstanceId')
@@ -53,8 +53,20 @@ class CompensateInstanceForChannelRequest(RpcRequest):
 	def set_DBInstanceId(self,DBInstanceId):
 		self.add_query_param('DBInstanceId',DBInstanceId)
 
+	def get_StartTime(self):
+		return self.get_query_params().get('StartTime')
+
+	def set_StartTime(self,StartTime):
+		self.add_query_param('StartTime',StartTime)
+
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_PageNumber(self):
+		return self.get_query_params().get('PageNumber')
+
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)

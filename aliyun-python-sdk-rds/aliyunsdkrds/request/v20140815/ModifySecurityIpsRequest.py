@@ -65,6 +65,24 @@ class ModifySecurityIpsRequest(RpcRequest):
 	def set_SecurityIps(self,SecurityIps):
 		self.add_query_param('SecurityIps',SecurityIps)
 
+	def get_SecurityGroupId(self):
+		return self.get_query_params().get('SecurityGroupId')
+
+	def set_SecurityGroupId(self,SecurityGroupId):
+		self.add_query_param('SecurityGroupId',SecurityGroupId)
+
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
+
+	def get_WhitelistNetworkType(self):
+		return self.get_query_params().get('WhitelistNetworkType')
+
+	def set_WhitelistNetworkType(self,WhitelistNetworkType):
+		self.add_query_param('WhitelistNetworkType',WhitelistNetworkType)
+
 	def get_DBInstanceIPArrayAttribute(self):
 		return self.get_query_params().get('DBInstanceIPArrayAttribute')
 
@@ -76,9 +94,3 @@ class ModifySecurityIpsRequest(RpcRequest):
 
 	def set_DBInstanceId(self,DBInstanceId):
 		self.add_query_param('DBInstanceId',DBInstanceId)
-
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)

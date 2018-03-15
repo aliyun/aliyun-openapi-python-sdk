@@ -29,6 +29,12 @@ class CreateDBInstanceReplicaRequest(RpcRequest):
 	def set_ConnectionMode(self,ConnectionMode):
 		self.add_query_param('ConnectionMode',ConnectionMode)
 
+	def get_DomainMode(self):
+		return self.get_query_params().get('DomainMode')
+
+	def set_DomainMode(self,DomainMode):
+		self.add_query_param('DomainMode',DomainMode)
+
 	def get_ReplicaDescription(self):
 		return self.get_query_params().get('ReplicaDescription')
 
@@ -142,6 +148,12 @@ class CreateDBInstanceReplicaRequest(RpcRequest):
 
 	def set_SourceDBInstanceId(self,SourceDBInstanceId):
 		self.add_query_param('SourceDBInstanceId',SourceDBInstanceId)
+
+	def get_ReplicaMode(self):
+		return self.get_query_params().get('ReplicaMode')
+
+	def set_ReplicaMode(self,ReplicaMode):
+		self.add_query_param('ReplicaMode',ReplicaMode)
 
 	def get_VPCId(self):
 		return self.get_query_params().get('VPCId')
