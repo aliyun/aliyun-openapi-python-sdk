@@ -18,28 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class SetReqAuthConfigRequest(RpcRequest):
+class DescribeUserCustomLogConfigRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'SetReqAuthConfig')
-
-	def get_Key1(self):
-		return self.get_query_params().get('Key1')
-
-	def set_Key1(self,Key1):
-		self.add_query_param('Key1',Key1)
-
-	def get_Key2(self):
-		return self.get_query_params().get('Key2')
-
-	def set_Key2(self,Key2):
-		self.add_query_param('Key2',Key2)
-
-	def get_AuthRemoteDesc(self):
-		return self.get_query_params().get('AuthRemoteDesc')
-
-	def set_AuthRemoteDesc(self,AuthRemoteDesc):
-		self.add_query_param('AuthRemoteDesc',AuthRemoteDesc)
+		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'DescribeUserCustomLogConfig')
 
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
@@ -47,26 +29,14 @@ class SetReqAuthConfigRequest(RpcRequest):
 	def set_SecurityToken(self,SecurityToken):
 		self.add_query_param('SecurityToken',SecurityToken)
 
-	def get_DomainName(self):
-		return self.get_query_params().get('DomainName')
-
-	def set_DomainName(self,DomainName):
-		self.add_query_param('DomainName',DomainName)
-
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_TimeOut(self):
-		return self.get_query_params().get('TimeOut')
+	def get_Version(self):
+		return self.get_query_params().get('Version')
 
-	def set_TimeOut(self,TimeOut):
-		self.add_query_param('TimeOut',TimeOut)
-
-	def get_AuthType(self):
-		return self.get_query_params().get('AuthType')
-
-	def set_AuthType(self,AuthType):
-		self.add_query_param('AuthType',AuthType)
+	def set_Version(self,Version):
+		self.add_query_param('Version',Version)
