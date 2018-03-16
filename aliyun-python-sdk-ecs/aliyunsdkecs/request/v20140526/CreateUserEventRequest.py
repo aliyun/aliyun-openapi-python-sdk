@@ -18,10 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class ResizeVolumeRequest(RpcRequest):
+class CreateUserEventRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'ResizeVolume','ecs')
+		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'CreateUserEvent','ecs')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -29,38 +29,38 @@ class ResizeVolumeRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_PlanTime(self):
+		return self.get_query_params().get('PlanTime')
+
+	def set_PlanTime(self,PlanTime):
+		self.add_query_param('PlanTime',PlanTime)
+
+	def get_ExpireTime(self):
+		return self.get_query_params().get('ExpireTime')
+
+	def set_ExpireTime(self,ExpireTime):
+		self.add_query_param('ExpireTime',ExpireTime)
+
+	def get_ResourceId(self):
+		return self.get_query_params().get('ResourceId')
+
+	def set_ResourceId(self,ResourceId):
+		self.add_query_param('ResourceId',ResourceId)
+
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
-	def get_ClientToken(self):
-		return self.get_query_params().get('ClientToken')
-
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
-
-	def get_OwnerAccount(self):
-		return self.get_query_params().get('OwnerAccount')
-
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
-
-	def get_VolumeId(self):
-		return self.get_query_params().get('VolumeId')
-
-	def set_VolumeId(self,VolumeId):
-		self.add_query_param('VolumeId',VolumeId)
-
-	def get_NewSize(self):
-		return self.get_query_params().get('NewSize')
-
-	def set_NewSize(self,NewSize):
-		self.add_query_param('NewSize',NewSize)
-
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_EventType(self):
+		return self.get_query_params().get('EventType')
+
+	def set_EventType(self,EventType):
+		self.add_query_param('EventType',EventType)

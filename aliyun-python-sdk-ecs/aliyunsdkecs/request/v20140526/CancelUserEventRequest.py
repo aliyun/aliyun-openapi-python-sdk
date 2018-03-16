@@ -18,10 +18,16 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class ModifyVolumeAttributeRequest(RpcRequest):
+class CancelUserEventRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'ModifyVolumeAttribute','ecs')
+		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'CancelUserEvent','ecs')
+
+	def get_EventId(self):
+		return self.get_query_params().get('EventId')
+
+	def set_EventId(self,EventId):
+		self.add_query_param('EventId',EventId)
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -29,35 +35,17 @@ class ModifyVolumeAttributeRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_VolumeName(self):
-		return self.get_query_params().get('VolumeName')
+	def get_ResourceId(self):
+		return self.get_query_params().get('ResourceId')
 
-	def set_VolumeName(self,VolumeName):
-		self.add_query_param('VolumeName',VolumeName)
+	def set_ResourceId(self,ResourceId):
+		self.add_query_param('ResourceId',ResourceId)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_OwnerAccount(self):
-		return self.get_query_params().get('OwnerAccount')
-
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
-
-	def get_VolumeId(self):
-		return self.get_query_params().get('VolumeId')
-
-	def set_VolumeId(self,VolumeId):
-		self.add_query_param('VolumeId',VolumeId)
-
-	def get_Description(self):
-		return self.get_query_params().get('Description')
-
-	def set_Description(self,Description):
-		self.add_query_param('Description',Description)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
