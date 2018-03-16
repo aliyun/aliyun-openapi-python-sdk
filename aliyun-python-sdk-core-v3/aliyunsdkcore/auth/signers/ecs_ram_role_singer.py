@@ -55,7 +55,7 @@ class EcsRamRoleSigner(Signer):
         try:
             request_url = "http://100.100.100.200/latest/meta-data/ram/security-credentials/" + self._credential.role_name
             content = urllib.request.urlopen(request_url).read()
-            response = json.loads(content)
+            response = json.loads(content.deconde('utf-8'))
             if response.get("Code") != "Success":
                 logging.error('refresh Ecs sts token err, code is ' + response.get("Code"))
                 return
