@@ -37,6 +37,8 @@ from aliyunsdkcore.request import AcsRequest
 from aliyunsdkcore.http import format_type
 from aliyunsdkcore.auth.signers.signer_factory import SignerFactory
 from aliyunsdkcore.request import CommonRequest
+from aliyunsdkcore.profile.endpoint import endpoint_resolver
+
 
 """
 Acs default client module.
@@ -169,27 +171,7 @@ class AcsClient:
         return self._location_service
 
     def _resolve_endpoint(self, request):
-
-        if isinstance(request, CommonRequest) and request.get_domain():
-            return request.get_domain()
-
-        endpoint = None
-        if request.get_location_service_code() is not None:
-            endpoint = self._location_service.find_product_domain(
-                self.get_region_id(), request.get_location_service_code(), request.get_product(),
-                request.get_location_endpoint_type())
-        if endpoint is None:
-            endpoint = region_provider.find_product_domain(
-                self.get_region_id(), request.get_product())
-            if endpoint is None:
-                raise ClientException(
-                    error_code.SDK_INVALID_REGION_ID,
-                    error_msg.get_msg('SDK_INVALID_REGION_ID'))
-            if not isinstance(request, AcsRequest):
-                raise ClientException(
-                    error_code.SDK_INVALID_REQUEST,
-                    error_msg.get_msg('SDK_INVALID_REQUEST'))
-        return endpoint
+        return endpoint_resolver.resolve_endpoint(self.__region_id, request, self._location_service)
 
     def _make_http_response(self, endpoint, request, specific_signer=None):
         body_params = request.get_body_params()
@@ -256,7 +238,7 @@ class AcsClient:
     @staticmethod
     def _parse_error_info_from_response_body(response_body):
         try:
-            body_obj = json.loads(response_body)
+            body_obj = json.loads(response_body.decode('utf-8'))
             if 'Code' in body_obj and 'Message' in body_obj:
                 return body_obj['Code'], body_obj['Message']
             else:

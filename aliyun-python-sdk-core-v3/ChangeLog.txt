@@ -1,3 +1,7 @@
+2018-03-16 Version: 2.8.6
+1, Optimize endpoint resolve logic
+2, Fix json decodes bugs in python3.4~3.5
+
 2018-02-23 Version: 2.8.5
 1, add 'remove all test instances' feature to ecs integration test
 

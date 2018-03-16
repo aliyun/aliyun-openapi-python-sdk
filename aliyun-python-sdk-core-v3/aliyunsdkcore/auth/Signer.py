@@ -100,7 +100,7 @@ class SignerV2(Signer):
 
         try:
             response_str = self._sts_client.do_action_with_exception(request)
-            response = json.loads(response_str)
+            response = json.loads(response_str.decode('utf-8'))
             session_ak = str(response.get("SessionAccessKey").get("SessionAccessKeyId"))
             session_sk = str(response.get("SessionAccessKey").get("SessionAccessKeySecret"))
 
