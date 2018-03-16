@@ -18,10 +18,16 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class ReInitVolumeRequest(RpcRequest):
+class ModifyUserEventAttributeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'ReInitVolume','ecs')
+		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'ModifyUserEventAttribute','ecs')
+
+	def get_EventId(self):
+		return self.get_query_params().get('EventId')
+
+	def set_EventId(self,EventId):
+		self.add_query_param('EventId',EventId)
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -29,11 +35,11 @@ class ReInitVolumeRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_Password(self):
-		return self.get_query_params().get('Password')
+	def get_ResourceId(self):
+		return self.get_query_params().get('ResourceId')
 
-	def set_Password(self,Password):
-		self.add_query_param('Password',Password)
+	def set_ResourceId(self,ResourceId):
+		self.add_query_param('ResourceId',ResourceId)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -41,20 +47,20 @@ class ReInitVolumeRequest(RpcRequest):
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
-	def get_OwnerAccount(self):
-		return self.get_query_params().get('OwnerAccount')
+	def get_NewPlanTime(self):
+		return self.get_query_params().get('NewPlanTime')
 
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
-
-	def get_VolumeId(self):
-		return self.get_query_params().get('VolumeId')
-
-	def set_VolumeId(self,VolumeId):
-		self.add_query_param('VolumeId',VolumeId)
+	def set_NewPlanTime(self,NewPlanTime):
+		self.add_query_param('NewPlanTime',NewPlanTime)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_NewExpireTime(self):
+		return self.get_query_params().get('NewExpireTime')
+
+	def set_NewExpireTime(self,NewExpireTime):
+		self.add_query_param('NewExpireTime',NewExpireTime)
