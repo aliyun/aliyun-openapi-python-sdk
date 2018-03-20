@@ -24,6 +24,12 @@ class CreatePhotoRequest(RpcRequest):
 		RpcRequest.__init__(self, 'CloudPhoto', '2017-07-11', 'CreatePhoto','cloudphoto')
 		self.set_protocol_type('https');
 
+	def get_TakenAt(self):
+		return self.get_query_params().get('TakenAt')
+
+	def set_TakenAt(self,TakenAt):
+		self.add_query_param('TakenAt',TakenAt)
+
 	def get_PhotoTitle(self):
 		return self.get_query_params().get('PhotoTitle')
 
