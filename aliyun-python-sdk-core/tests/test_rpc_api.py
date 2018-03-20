@@ -55,7 +55,7 @@ class TestRpcApi(object):
         request = self.get_base_request()
         request.set_method("GET")
         body = self.acs_client.do_action_with_exception(request)
-        print body
+        print (body)
         assert body
 
         response = json.loads(body)

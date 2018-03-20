@@ -17,10 +17,10 @@
 
 # coding=utf-8
 __author__ = 'alex jiang'
-import httplib
+import http.client as httplib
 
-from http_request import HttpRequest
-import protocol_type as PT
+from .http_request import HttpRequest
+from . import protocol_type as PT
 
 
 class HttpResponse(HttpRequest):

@@ -18,9 +18,9 @@
 # under the License.
 
 # coding=utf-8
-import httplib
+import http.client as httplib
 import warnings
-import urllib
+from urllib.parse import urlencode
 
 try:
     import json
@@ -173,7 +173,7 @@ class AcsClient:
     def _make_http_response(self, endpoint, request, specific_signer=None):
         body_params = request.get_body_params()
         if body_params:
-            body = urllib.urlencode(body_params)
+            body = urlencode(body_params)
             request.set_content(body)
             request.set_content_type(format_type.APPLICATION_FORM)
         elif request.get_content() and "Content-Type" not in request.get_headers():
@@ -200,7 +200,7 @@ class AcsClient:
             self._port,
             timeout=self._timeout)
         if body_params:
-            body = urllib.urlencode(request.get_body_params())
+            body = urlencode(request.get_body_params())
             response.set_content(body, "utf-8", format_type.APPLICATION_FORM)
         return response
 
@@ -257,6 +257,8 @@ class AcsClient:
         request_id = None
 
         try:
+            if isinstance(body, (bytes, bytearray)):
+                body = body.decode()
             body_obj = json.loads(body)
             request_id = body_obj.get('RequestId')
         except ValueError or TypeError or AttributeError:

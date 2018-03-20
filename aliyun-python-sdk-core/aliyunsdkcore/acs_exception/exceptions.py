@@ -27,7 +27,7 @@ Created on 6/15/2015
 @author: alex jiang
 """
 
-import error_type
+from . import error_type
 
 
 class ClientException(Exception):

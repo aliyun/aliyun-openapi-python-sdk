@@ -18,7 +18,7 @@
 # under the License.
 
 # coding=utf-8
-import urllib
+from urllib.parse import urlencode, quote
 import sys
 
 """
@@ -37,11 +37,11 @@ def get_encode_str(params):
     :return: string
     """
     list_params = sorted(params.iteritems(), key=lambda d: d[0])
-    encode_str = urllib.urlencode(list_params)
+    encode_str = urlencode(list_params)
     if sys.stdin.encoding is None:
-        res = urllib.quote(encode_str.decode('cp936').encode('utf8'), '')
+        res = quote(encode_str.decode('cp936').encode('utf8'), '')
     else:
-        res = urllib.quote(
+        res = quote(
             encode_str.decode(
                 sys.stdin.encoding).encode('utf8'), '')
     res = res.replace("+", "%20")

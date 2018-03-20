@@ -137,7 +137,7 @@ class TestSignerV2(object):
         endpoint_test_cases.set_client(acs_client=TestSignerV2.acs_client)
         attributes = sorted(dir(endpoint_test_cases))
         tests = [attr for attr in attributes if attr.startswith('test_')]
-        print tests
+        print( tests)
         for test in tests:
             test_method = getattr(endpoint_test_cases, test)
             test_method()

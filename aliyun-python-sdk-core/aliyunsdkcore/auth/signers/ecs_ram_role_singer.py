@@ -21,7 +21,7 @@
 
 import time
 import json
-import urllib2
+import urllib
 import logging
 
 from aliyunsdkcore.auth.signers.signer import Signer
@@ -54,7 +54,7 @@ class EcsRamRoleSigner(Signer):
     def _refresh_session_ak_and_sk(self):
         try:
             request_url = "http://100.100.100.200/latest/meta-data/ram/security-credentials/" + self._credential.role_name
-            content = urllib2.urlopen(request_url).read()
+            content = urllib.request.urlopen(request_url).read()
             response = json.loads(content)
             if response.get("Code") != "Success":
                 logging.error('refresh Ecs sts token err, code is ' + response.get("Code"))

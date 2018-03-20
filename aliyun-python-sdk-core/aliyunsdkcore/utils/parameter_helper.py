@@ -23,7 +23,7 @@ import hashlib
 import base64
 import uuid
 import time
-import urllib
+from urllib.parse import quote
 import sys
 
 TIME_ZONE = "GMT"
@@ -50,9 +50,9 @@ def md5_sum(content):
 def percent_encode(encodeStr):
     encodeStr = str(encodeStr)
     if sys.stdin.encoding is None:
-        res = urllib.quote(encodeStr.decode('cp936').encode('utf8'), '')
+        res = quote(encodeStr.decode('cp936').encode('utf8'), '')
     else:
-        res = urllib.quote(
+        res = quote(
             encodeStr.decode(
                 sys.stdin.encoding).encode('utf8'), '')
     res = res.replace('+', '%20')
@@ -62,6 +62,6 @@ def percent_encode(encodeStr):
 
 
 if __name__ == "__main__":
-    print get_uuid()
-    print get_iso_8061_date()
-    print get_rfc_2616_date()
+    print( get_uuid())
+    print( get_iso_8061_date())
+    print( get_rfc_2616_date())

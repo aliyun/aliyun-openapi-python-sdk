@@ -25,8 +25,11 @@ import base64
 
 
 def get_sign_string(source, secret):
-    if isinstance(secret, unicode):
-        secret = str(secret)
+    if isinstance(secret, str):
+        secret = secret.encode()
+    if isinstance(source, str):
+        source = source.encode()
+
     h = hmac.new(secret, source, hashlib.sha1)
     signature = base64.encodestring(h.digest()).strip()
     return signature

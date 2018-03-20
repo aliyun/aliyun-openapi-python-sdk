@@ -17,10 +17,10 @@
 
 # coding=utf-8
 
-import roa_signature_composer
+from . import roa_signature_composer
 from aliyunsdkcore.auth.algorithm import sha_hmac1 as mac1
 from aliyunsdkcore.utils import parameter_helper as helper
-import urllib
+from urllib.parse import urlencode
 
 ACCEPT = "Accept"
 CONTENT_MD5 = "Content-MD5"
@@ -143,7 +143,7 @@ def get_url(queries, uri_pattern, path_parameters):
         uri_pattern, path_parameters)
     if not url.endswith("?"):
         url += "?"
-    url += urllib.urlencode(queries)
+    url += urlencode(queries)
     if url.endswith("?"):
         url = url[0:(len(url) - 1)]
     return url

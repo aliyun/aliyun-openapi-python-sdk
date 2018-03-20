@@ -18,7 +18,8 @@
 # coding=utf-8
 
 from aliyunsdkcore.auth.algorithm import sha_hmac1 as mac1
-import urllib
+from urllib.parse import urlencode
+from urllib.request import pathname2url
 from aliyunsdkcore.utils import parameter_helper as helper
 
 
@@ -60,8 +61,8 @@ def __pop_standard_urlencode(query):
 
 def __compose_string_to_sign(method, queries):
     sorted_parameters = sorted(queries.items(), key=lambda queries: queries[0])
-    sorted_query_string = __pop_standard_urlencode(urllib.urlencode(sorted_parameters))
-    canonicalized_query_string = __pop_standard_urlencode(urllib.pathname2url(sorted_query_string))
+    sorted_query_string = __pop_standard_urlencode(urlencode(sorted_parameters))
+    canonicalized_query_string = __pop_standard_urlencode(pathname2url(sorted_query_string))
     string_to_sign = method + "&%2F&" + canonicalized_query_string
     return string_to_sign
 
@@ -77,5 +78,5 @@ def get_signed_url(params, ak, secret, accept_format, method, body_params, signe
     string_to_sign = __compose_string_to_sign(method, sign_params)
     signature = __get_signature(string_to_sign, secret, signer)
     url_params['Signature'] = signature
-    url = '/?' + __pop_standard_urlencode(urllib.urlencode(url_params))
+    url = '/?' + __pop_standard_urlencode(urlencode(url_params))
     return url
