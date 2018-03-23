@@ -107,12 +107,6 @@ class PushRequest(RpcRequest):
 	def set_iOSRemindBody(self,iOSRemindBody):
 		self.add_query_param('iOSRemindBody',iOSRemindBody)
 
-	def get_BatchNumber(self):
-		return self.get_query_params().get('BatchNumber')
-
-	def set_BatchNumber(self,BatchNumber):
-		self.add_query_param('BatchNumber',BatchNumber)
-
 	def get_iOSExtParameters(self):
 		return self.get_query_params().get('iOSExtParameters')
 

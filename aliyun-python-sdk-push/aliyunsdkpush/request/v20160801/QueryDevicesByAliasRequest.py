@@ -18,16 +18,16 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class QueryPushDetailRequest(RpcRequest):
+class QueryDevicesByAliasRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Push', '2016-08-01', 'QueryPushDetail')
+		RpcRequest.__init__(self, 'Push', '2016-08-01', 'QueryDevicesByAlias')
 
-	def get_MessageId(self):
-		return self.get_query_params().get('MessageId')
+	def get_Alias(self):
+		return self.get_query_params().get('Alias')
 
-	def set_MessageId(self,MessageId):
-		self.add_query_param('MessageId',MessageId)
+	def set_Alias(self,Alias):
+		self.add_query_param('Alias',Alias)
 
 	def get_AppKey(self):
 		return self.get_query_params().get('AppKey')
