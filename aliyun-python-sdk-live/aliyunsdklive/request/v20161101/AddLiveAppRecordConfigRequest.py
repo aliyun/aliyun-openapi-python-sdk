@@ -29,6 +29,36 @@ class AddLiveAppRecordConfigRequest(RpcRequest):
 	def set_OssBucket(self,OssBucket):
 		self.add_query_param('OssBucket',OssBucket)
 
+	def get_DomainName(self):
+		return self.get_query_params().get('DomainName')
+
+	def set_DomainName(self,DomainName):
+		self.add_query_param('DomainName',DomainName)
+
+	def get_OssEndpoint(self):
+		return self.get_query_params().get('OssEndpoint')
+
+	def set_OssEndpoint(self,OssEndpoint):
+		self.add_query_param('OssEndpoint',OssEndpoint)
+
+	def get_EndTime(self):
+		return self.get_query_params().get('EndTime')
+
+	def set_EndTime(self,EndTime):
+		self.add_query_param('EndTime',EndTime)
+
+	def get_StartTime(self):
+		return self.get_query_params().get('StartTime')
+
+	def set_StartTime(self,StartTime):
+		self.add_query_param('StartTime',StartTime)
+
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
+
 	def get_AppName(self):
 		return self.get_query_params().get('AppName')
 
@@ -56,20 +86,14 @@ class AddLiveAppRecordConfigRequest(RpcRequest):
 				self.add_query_param('RecordFormat.' + str(i + 1) + '.CycleDuration' , RecordFormats[i].get('CycleDuration'))
 
 
-	def get_DomainName(self):
-		return self.get_query_params().get('DomainName')
+	def get_OnDemand(self):
+		return self.get_query_params().get('OnDemand')
 
-	def set_DomainName(self,DomainName):
-		self.add_query_param('DomainName',DomainName)
+	def set_OnDemand(self,OnDemand):
+		self.add_query_param('OnDemand',OnDemand)
 
-	def get_OssEndpoint(self):
-		return self.get_query_params().get('OssEndpoint')
+	def get_StreamName(self):
+		return self.get_query_params().get('StreamName')
 
-	def set_OssEndpoint(self,OssEndpoint):
-		self.add_query_param('OssEndpoint',OssEndpoint)
-
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
+	def set_StreamName(self,StreamName):
+		self.add_query_param('StreamName',StreamName)

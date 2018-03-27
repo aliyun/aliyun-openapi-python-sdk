@@ -18,25 +18,37 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class StopCasterSceneRequest(RpcRequest):
+class RealTimeRecordCommandRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'live', '2016-11-01', 'StopCasterScene','live')
+		RpcRequest.__init__(self, 'live', '2016-11-01', 'RealTimeRecordCommand','live')
 
-	def get_CasterId(self):
-		return self.get_query_params().get('CasterId')
+	def get_AppName(self):
+		return self.get_query_params().get('AppName')
 
-	def set_CasterId(self,CasterId):
-		self.add_query_param('CasterId',CasterId)
+	def set_AppName(self,AppName):
+		self.add_query_param('AppName',AppName)
 
-	def get_SceneId(self):
-		return self.get_query_params().get('SceneId')
+	def get_DomainName(self):
+		return self.get_query_params().get('DomainName')
 
-	def set_SceneId(self,SceneId):
-		self.add_query_param('SceneId',SceneId)
+	def set_DomainName(self,DomainName):
+		self.add_query_param('DomainName',DomainName)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_Command(self):
+		return self.get_query_params().get('Command')
+
+	def set_Command(self,Command):
+		self.add_query_param('Command',Command)
+
+	def get_StreamName(self):
+		return self.get_query_params().get('StreamName')
+
+	def set_StreamName(self,StreamName):
+		self.add_query_param('StreamName',StreamName)

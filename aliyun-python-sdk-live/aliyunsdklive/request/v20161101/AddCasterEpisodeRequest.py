@@ -18,10 +18,16 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class SetCasterSceneConfigRequest(RpcRequest):
+class AddCasterEpisodeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'live', '2016-11-01', 'SetCasterSceneConfig','live')
+		RpcRequest.__init__(self, 'live', '2016-11-01', 'AddCasterEpisode','live')
+
+	def get_ResourceId(self):
+		return self.get_query_params().get('ResourceId')
+
+	def set_ResourceId(self,ResourceId):
+		self.add_query_param('ResourceId',ResourceId)
 
 	def get_ComponentIds(self):
 		return self.get_query_params().get('ComponentIds')
@@ -31,26 +37,44 @@ class SetCasterSceneConfigRequest(RpcRequest):
 			if ComponentIds[i] is not None:
 				self.add_query_param('ComponentId.' + str(i + 1) , ComponentIds[i]);
 
+	def get_SwitchType(self):
+		return self.get_query_params().get('SwitchType')
+
+	def set_SwitchType(self,SwitchType):
+		self.add_query_param('SwitchType',SwitchType)
+
 	def get_CasterId(self):
 		return self.get_query_params().get('CasterId')
 
 	def set_CasterId(self,CasterId):
 		self.add_query_param('CasterId',CasterId)
 
-	def get_SceneId(self):
-		return self.get_query_params().get('SceneId')
+	def get_EpisodeType(self):
+		return self.get_query_params().get('EpisodeType')
 
-	def set_SceneId(self,SceneId):
-		self.add_query_param('SceneId',SceneId)
+	def set_EpisodeType(self,EpisodeType):
+		self.add_query_param('EpisodeType',EpisodeType)
+
+	def get_EpisodeName(self):
+		return self.get_query_params().get('EpisodeName')
+
+	def set_EpisodeName(self,EpisodeName):
+		self.add_query_param('EpisodeName',EpisodeName)
+
+	def get_EndTime(self):
+		return self.get_query_params().get('EndTime')
+
+	def set_EndTime(self,EndTime):
+		self.add_query_param('EndTime',EndTime)
+
+	def get_StartTime(self):
+		return self.get_query_params().get('StartTime')
+
+	def set_StartTime(self,StartTime):
+		self.add_query_param('StartTime',StartTime)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
-
-	def get_LayoutId(self):
-		return self.get_query_params().get('LayoutId')
-
-	def set_LayoutId(self,LayoutId):
-		self.add_query_param('LayoutId',LayoutId)

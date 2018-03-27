@@ -40,13 +40,9 @@ class ModifyCasterLayoutRequest(RpcRequest):
 				self.add_query_param('AudioLayer.' + str(i + 1) + '.VolumeRate' , AudioLayers[i].get('VolumeRate'))
 			if AudioLayers[i].get('ValidChannel') is not None:
 				self.add_query_param('AudioLayer.' + str(i + 1) + '.ValidChannel' , AudioLayers[i].get('ValidChannel'))
+			if AudioLayers[i].get('FixedDelayDuration') is not None:
+				self.add_query_param('AudioLayer.' + str(i + 1) + '.FixedDelayDuration' , AudioLayers[i].get('FixedDelayDuration'))
 
-
-	def get_SecurityToken(self):
-		return self.get_query_params().get('SecurityToken')
-
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)
 
 	def get_VideoLayers(self):
 		return self.get_query_params().get('VideoLayers')
@@ -62,6 +58,8 @@ class ModifyCasterLayoutRequest(RpcRequest):
 			for j in range(len(VideoLayers[i].get('PositionNormalizeds'))):
 				if VideoLayers[i].get('PositionNormalizeds')[j] is not None:
 					self.add_query_param('VideoLayer.' + str(i + 1) + '.PositionNormalized.'+str(j + 1), VideoLayers[i].get('PositionNormalizeds')[j])
+			if VideoLayers[i].get('FixedDelayDuration') is not None:
+				self.add_query_param('VideoLayer.' + str(i + 1) + '.FixedDelayDuration' , VideoLayers[i].get('FixedDelayDuration'))
 
 
 	def get_CasterId(self):
@@ -83,12 +81,6 @@ class ModifyCasterLayoutRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
-
-	def get_Version(self):
-		return self.get_query_params().get('Version')
-
-	def set_Version(self,Version):
-		self.add_query_param('Version',Version)
 
 	def get_LayoutId(self):
 		return self.get_query_params().get('LayoutId')

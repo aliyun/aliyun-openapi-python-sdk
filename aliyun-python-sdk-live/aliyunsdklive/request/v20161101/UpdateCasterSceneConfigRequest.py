@@ -31,12 +31,6 @@ class UpdateCasterSceneConfigRequest(RpcRequest):
 			if ComponentIds[i] is not None:
 				self.add_query_param('ComponentId.' + str(i + 1) , ComponentIds[i]);
 
-	def get_SecurityToken(self):
-		return self.get_query_params().get('SecurityToken')
-
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)
-
 	def get_CasterId(self):
 		return self.get_query_params().get('CasterId')
 
@@ -54,12 +48,6 @@ class UpdateCasterSceneConfigRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
-
-	def get_Version(self):
-		return self.get_query_params().get('Version')
-
-	def set_Version(self,Version):
-		self.add_query_param('Version',Version)
 
 	def get_LayoutId(self):
 		return self.get_query_params().get('LayoutId')

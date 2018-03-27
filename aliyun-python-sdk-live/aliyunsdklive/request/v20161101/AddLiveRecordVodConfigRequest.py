@@ -29,11 +29,11 @@ class AddLiveRecordVodConfigRequest(RpcRequest):
 	def set_AppName(self,AppName):
 		self.add_query_param('AppName',AppName)
 
-	def get_SecurityToken(self):
-		return self.get_query_params().get('SecurityToken')
+	def get_AutoCompose(self):
+		return self.get_query_params().get('AutoCompose')
 
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)
+	def set_AutoCompose(self,AutoCompose):
+		self.add_query_param('AutoCompose',AutoCompose)
 
 	def get_DomainName(self):
 		return self.get_query_params().get('DomainName')
@@ -52,6 +52,12 @@ class AddLiveRecordVodConfigRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_ComposeVodTranscodeGroupId(self):
+		return self.get_query_params().get('ComposeVodTranscodeGroupId')
+
+	def set_ComposeVodTranscodeGroupId(self,ComposeVodTranscodeGroupId):
+		self.add_query_param('ComposeVodTranscodeGroupId',ComposeVodTranscodeGroupId)
 
 	def get_StreamName(self):
 		return self.get_query_params().get('StreamName')

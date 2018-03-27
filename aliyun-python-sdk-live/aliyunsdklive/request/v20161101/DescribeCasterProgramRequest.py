@@ -18,22 +18,22 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class DescribeLiveRecordVodConfigsRequest(RpcRequest):
+class DescribeCasterProgramRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'live', '2016-11-01', 'DescribeLiveRecordVodConfigs','live')
+		RpcRequest.__init__(self, 'live', '2016-11-01', 'DescribeCasterProgram','live')
 
-	def get_AppName(self):
-		return self.get_query_params().get('AppName')
+	def get_CasterId(self):
+		return self.get_query_params().get('CasterId')
 
-	def set_AppName(self,AppName):
-		self.add_query_param('AppName',AppName)
+	def set_CasterId(self,CasterId):
+		self.add_query_param('CasterId',CasterId)
 
-	def get_DomainName(self):
-		return self.get_query_params().get('DomainName')
+	def get_EpisodeType(self):
+		return self.get_query_params().get('EpisodeType')
 
-	def set_DomainName(self,DomainName):
-		self.add_query_param('DomainName',DomainName)
+	def set_EpisodeType(self,EpisodeType):
+		self.add_query_param('EpisodeType',EpisodeType)
 
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
@@ -41,11 +41,29 @@ class DescribeLiveRecordVodConfigsRequest(RpcRequest):
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
 
+	def get_EndTime(self):
+		return self.get_query_params().get('EndTime')
+
+	def set_EndTime(self,EndTime):
+		self.add_query_param('EndTime',EndTime)
+
+	def get_StartTime(self):
+		return self.get_query_params().get('StartTime')
+
+	def set_StartTime(self,StartTime):
+		self.add_query_param('StartTime',StartTime)
+
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_EpisodeId(self):
+		return self.get_query_params().get('EpisodeId')
+
+	def set_EpisodeId(self,EpisodeId):
+		self.add_query_param('EpisodeId',EpisodeId)
 
 	def get_PageNum(self):
 		return self.get_query_params().get('PageNum')
@@ -53,8 +71,8 @@ class DescribeLiveRecordVodConfigsRequest(RpcRequest):
 	def set_PageNum(self,PageNum):
 		self.add_query_param('PageNum',PageNum)
 
-	def get_StreamName(self):
-		return self.get_query_params().get('StreamName')
+	def get_Status(self):
+		return self.get_query_params().get('Status')
 
-	def set_StreamName(self,StreamName):
-		self.add_query_param('StreamName',StreamName)
+	def set_Status(self,Status):
+		self.add_query_param('Status',Status)
