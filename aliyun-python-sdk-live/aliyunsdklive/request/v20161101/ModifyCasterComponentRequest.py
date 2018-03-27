@@ -29,6 +29,12 @@ class ModifyCasterComponentRequest(RpcRequest):
 	def set_ComponentId(self,ComponentId):
 		self.add_query_param('ComponentId',ComponentId)
 
+	def get_ComponentType(self):
+		return self.get_query_params().get('ComponentType')
+
+	def set_ComponentType(self,ComponentType):
+		self.add_query_param('ComponentType',ComponentType)
+
 	def get_ImageLayerContent(self):
 		return self.get_query_params().get('ImageLayerContent')
 
@@ -41,11 +47,23 @@ class ModifyCasterComponentRequest(RpcRequest):
 	def set_CasterId(self,CasterId):
 		self.add_query_param('CasterId',CasterId)
 
+	def get_Effect(self):
+		return self.get_query_params().get('Effect')
+
+	def set_Effect(self,Effect):
+		self.add_query_param('Effect',Effect)
+
 	def get_ComponentLayer(self):
 		return self.get_query_params().get('ComponentLayer')
 
 	def set_ComponentLayer(self,ComponentLayer):
 		self.add_query_param('ComponentLayer',ComponentLayer)
+
+	def get_CaptionLayerContent(self):
+		return self.get_query_params().get('CaptionLayerContent')
+
+	def set_CaptionLayerContent(self,CaptionLayerContent):
+		self.add_query_param('CaptionLayerContent',CaptionLayerContent)
 
 	def get_ComponentName(self):
 		return self.get_query_params().get('ComponentName')
@@ -58,30 +76,6 @@ class ModifyCasterComponentRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
-
-	def get_Version(self):
-		return self.get_query_params().get('Version')
-
-	def set_Version(self,Version):
-		self.add_query_param('Version',Version)
-
-	def get_ComponentType(self):
-		return self.get_query_params().get('ComponentType')
-
-	def set_ComponentType(self,ComponentType):
-		self.add_query_param('ComponentType',ComponentType)
-
-	def get_SecurityToken(self):
-		return self.get_query_params().get('SecurityToken')
-
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)
-
-	def get_Effect(self):
-		return self.get_query_params().get('Effect')
-
-	def set_Effect(self,Effect):
-		self.add_query_param('Effect',Effect)
 
 	def get_TextLayerContent(self):
 		return self.get_query_params().get('TextLayerContent')

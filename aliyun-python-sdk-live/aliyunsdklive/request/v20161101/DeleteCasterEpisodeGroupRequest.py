@@ -18,25 +18,19 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class StopCasterSceneRequest(RpcRequest):
+class DeleteCasterEpisodeGroupRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'live', '2016-11-01', 'StopCasterScene','live')
-
-	def get_CasterId(self):
-		return self.get_query_params().get('CasterId')
-
-	def set_CasterId(self,CasterId):
-		self.add_query_param('CasterId',CasterId)
-
-	def get_SceneId(self):
-		return self.get_query_params().get('SceneId')
-
-	def set_SceneId(self,SceneId):
-		self.add_query_param('SceneId',SceneId)
+		RpcRequest.__init__(self, 'live', '2016-11-01', 'DeleteCasterEpisodeGroup','live')
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_ProgramId(self):
+		return self.get_query_params().get('ProgramId')
+
+	def set_ProgramId(self,ProgramId):
+		self.add_query_param('ProgramId',ProgramId)

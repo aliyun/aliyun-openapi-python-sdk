@@ -59,6 +59,12 @@ class DescribeLiveRecordConfigRequest(RpcRequest):
 	def set_PageNum(self,PageNum):
 		self.add_query_param('PageNum',PageNum)
 
+	def get_StreamName(self):
+		return self.get_query_params().get('StreamName')
+
+	def set_StreamName(self,StreamName):
+		self.add_query_param('StreamName',StreamName)
+
 	def get_Order(self):
 		return self.get_query_params().get('Order')
 
