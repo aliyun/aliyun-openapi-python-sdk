@@ -24,6 +24,12 @@ class GenerateDataKeyRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Kms', '2016-01-20', 'GenerateDataKey','kms')
 		self.set_protocol_type('https');
 
+	def get_EncryptionContext(self):
+		return self.get_query_params().get('EncryptionContext')
+
+	def set_EncryptionContext(self,EncryptionContext):
+		self.add_query_param('EncryptionContext',EncryptionContext)
+
 	def get_KeyId(self):
 		return self.get_query_params().get('KeyId')
 
@@ -36,20 +42,14 @@ class GenerateDataKeyRequest(RpcRequest):
 	def set_KeySpec(self,KeySpec):
 		self.add_query_param('KeySpec',KeySpec)
 
-	def get_NumberOfBytes(self):
-		return self.get_query_params().get('NumberOfBytes')
-
-	def set_NumberOfBytes(self,NumberOfBytes):
-		self.add_query_param('NumberOfBytes',NumberOfBytes)
-
 	def get_STSToken(self):
 		return self.get_query_params().get('STSToken')
 
 	def set_STSToken(self,STSToken):
 		self.add_query_param('STSToken',STSToken)
 
-	def get_EncryptionContext(self):
-		return self.get_query_params().get('EncryptionContext')
+	def get_NumberOfBytes(self):
+		return self.get_query_params().get('NumberOfBytes')
 
-	def set_EncryptionContext(self,EncryptionContext):
-		self.add_query_param('EncryptionContext',EncryptionContext)
+	def set_NumberOfBytes(self,NumberOfBytes):
+		self.add_query_param('NumberOfBytes',NumberOfBytes)

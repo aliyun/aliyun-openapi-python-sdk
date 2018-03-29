@@ -18,10 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class ListKeysRequest(RpcRequest):
+class ListAliasesByKeyIdRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Kms', '2016-01-20', 'ListKeys','kms')
+		RpcRequest.__init__(self, 'Kms', '2016-01-20', 'ListAliasesByKeyId','kms')
 		self.set_protocol_type('https');
 
 	def get_PageSize(self):
@@ -29,6 +29,12 @@ class ListKeysRequest(RpcRequest):
 
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
+
+	def get_KeyId(self):
+		return self.get_query_params().get('KeyId')
+
+	def set_KeyId(self,KeyId):
+		self.add_query_param('KeyId',KeyId)
 
 	def get_STSToken(self):
 		return self.get_query_params().get('STSToken')
