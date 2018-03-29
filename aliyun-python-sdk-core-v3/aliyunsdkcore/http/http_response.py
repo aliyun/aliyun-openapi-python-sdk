@@ -18,6 +18,9 @@
 # coding=utf-8
 __author__ = 'alex jiang'
 import http.client
+import os
+from urllib.parse import urlparse
+import base64
 
 from .http_request import HttpRequest
 from . import protocol_type as PT
@@ -74,7 +77,7 @@ class HttpResponse(HttpRequest):
         if self.__port is None or self.__port == "":
             self.__port = 80
         try:
-            self.__connection = http.client.HTTPConnection(
+            self.__connection = self.__get_http_connection(
                 self.get_host(), self.__port, timeout=self._timeout)
             self.__connection.connect()
             self.__connection.request(
@@ -91,7 +94,7 @@ class HttpResponse(HttpRequest):
         if self.__port is None or self.__port == "":
             self.__port = 80
         try:
-            self.__connection = http.client.HTTPConnection(
+            self.__connection = self.__get_http_connection(
                 self.get_host(), self.__port, timeout=self._timeout)
             self.__connection.connect()
             self.__connection.request(
@@ -109,7 +112,7 @@ class HttpResponse(HttpRequest):
             self.__port = 443
         try:
             self.__port = 443
-            self.__connection = http.client.HTTPSConnection(
+            self.__connection = self.__get_https_connection(
                 self.get_host(),
                 self.__port,
                 cert_file=self.__cert_file,
@@ -131,7 +134,7 @@ class HttpResponse(HttpRequest):
             self.__port = 443
         try:
             self.__port = 443
-            self.__connection = http.client.HTTPSConnection(
+            self.__connection = self.__get_https_connection(
                 self.get_host(),
                 self.__port,
                 cert_file=self.__cert_file,
@@ -152,3 +155,45 @@ class HttpResponse(HttpRequest):
         if self.__connection is not None:
             self.__connection.close()
             self.__connection = None
+
+
+    def __get_http_connection(self, host, port, **kwargs):
+        """kwargs maps http.client.HTTPConnection arguments"""
+        proxy_host, proxy_port, proxy_headers = self.__get_env_proxy(is_https=False)
+        conn = None
+        if proxy_host and proxy_port:
+            conn = http.client.HTTPConnection(proxy_host, proxy_port, **kwargs)
+            conn.set_tunnel(host, port, proxy_headers)
+        else:
+            conn = http.client.HTTPConnection(host, port, **kwargs)
+        return conn
+
+    def __get_https_connection(self, host, port, **kwargs):
+        """kwargs maps http.client.HTTPConnection arguments"""
+        proxy_host, proxy_port, proxy_headers = self.__get_env_proxy(is_https=False)
+        conn = None
+        if proxy_host and proxy_port:
+            conn = http.client.HTTPSConnection(proxy_host, proxy_port, **kwargs)
+            conn.set_tunnel(host, port, proxy_headers)
+        else:
+            conn = http.client.HTTPSConnection(host, port, **kwargs)
+        return conn
+
+    def __get_env_proxy(self, is_https):
+        proxy = None
+        if is_https:
+            proxy = os.environ.get('HTTPS_PROXY', None) or os.environ.get('https_proxy', None)
+        else:
+            proxy = os.environ.get('HTTP_PROXY', None) or os.environ.get('http_proxy', None)
+
+        if proxy is not None:
+            proxy_headers = {}
+            o = urlparse(proxy)
+            proxy_host = o.hostname
+            proxy_port = o.port
+            if o.username:
+                auth = bytes('%s:%s' % (o.username or '', o.password or ''), encoding='utf-8')
+                proxy_headers['Proxy-Authorization'] = 'Basic ' + base64.b64encode(auth).decode()
+            return proxy_host, proxy_port, proxy_headers
+
+        return None, None, None
