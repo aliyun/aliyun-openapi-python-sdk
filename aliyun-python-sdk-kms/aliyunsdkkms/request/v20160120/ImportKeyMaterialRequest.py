@@ -18,26 +18,38 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class ListKeysRequest(RpcRequest):
+class ImportKeyMaterialRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Kms', '2016-01-20', 'ListKeys','kms')
+		RpcRequest.__init__(self, 'Kms', '2016-01-20', 'ImportKeyMaterial','kms')
 		self.set_protocol_type('https');
 
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
+	def get_ImportToken(self):
+		return self.get_query_params().get('ImportToken')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
+	def set_ImportToken(self,ImportToken):
+		self.add_query_param('ImportToken',ImportToken)
+
+	def get_EncryptedKeyMaterial(self):
+		return self.get_query_params().get('EncryptedKeyMaterial')
+
+	def set_EncryptedKeyMaterial(self,EncryptedKeyMaterial):
+		self.add_query_param('EncryptedKeyMaterial',EncryptedKeyMaterial)
+
+	def get_KeyMaterialExpireUnix(self):
+		return self.get_query_params().get('KeyMaterialExpireUnix')
+
+	def set_KeyMaterialExpireUnix(self,KeyMaterialExpireUnix):
+		self.add_query_param('KeyMaterialExpireUnix',KeyMaterialExpireUnix)
+
+	def get_KeyId(self):
+		return self.get_query_params().get('KeyId')
+
+	def set_KeyId(self,KeyId):
+		self.add_query_param('KeyId',KeyId)
 
 	def get_STSToken(self):
 		return self.get_query_params().get('STSToken')
 
 	def set_STSToken(self,STSToken):
 		self.add_query_param('STSToken',STSToken)
-
-	def get_PageNumber(self):
-		return self.get_query_params().get('PageNumber')
-
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)

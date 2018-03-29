@@ -18,17 +18,17 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class ListKeysRequest(RpcRequest):
+class GetParametersForImportRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Kms', '2016-01-20', 'ListKeys','kms')
+		RpcRequest.__init__(self, 'Kms', '2016-01-20', 'GetParametersForImport','kms')
 		self.set_protocol_type('https');
 
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
+	def get_KeyId(self):
+		return self.get_query_params().get('KeyId')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
+	def set_KeyId(self,KeyId):
+		self.add_query_param('KeyId',KeyId)
 
 	def get_STSToken(self):
 		return self.get_query_params().get('STSToken')
@@ -36,8 +36,14 @@ class ListKeysRequest(RpcRequest):
 	def set_STSToken(self,STSToken):
 		self.add_query_param('STSToken',STSToken)
 
-	def get_PageNumber(self):
-		return self.get_query_params().get('PageNumber')
+	def get_WrappingAlgorithm(self):
+		return self.get_query_params().get('WrappingAlgorithm')
 
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
+	def set_WrappingAlgorithm(self,WrappingAlgorithm):
+		self.add_query_param('WrappingAlgorithm',WrappingAlgorithm)
+
+	def get_WrappingKeySpec(self):
+		return self.get_query_params().get('WrappingKeySpec')
+
+	def set_WrappingKeySpec(self,WrappingKeySpec):
+		self.add_query_param('WrappingKeySpec',WrappingKeySpec)
