@@ -18,22 +18,16 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class GetMezzanineInfoRequest(RpcRequest):
+class DescribePlayVideoStatisRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'vod', '2017-03-21', 'GetMezzanineInfo','vod')
+		RpcRequest.__init__(self, 'vod', '2017-03-21', 'DescribePlayVideoStatis','vod')
 
-	def get_ResourceOwnerId(self):
-		return self.get_query_params().get('ResourceOwnerId')
+	def get_EndTime(self):
+		return self.get_query_params().get('EndTime')
 
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
-
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+	def set_EndTime(self,EndTime):
+		self.add_query_param('EndTime',EndTime)
 
 	def get_VideoId(self):
 		return self.get_query_params().get('VideoId')
@@ -41,20 +35,14 @@ class GetMezzanineInfoRequest(RpcRequest):
 	def set_VideoId(self,VideoId):
 		self.add_query_param('VideoId',VideoId)
 
-	def get_PreviewSegment(self):
-		return self.get_query_params().get('PreviewSegment')
+	def get_StartTime(self):
+		return self.get_query_params().get('StartTime')
 
-	def set_PreviewSegment(self,PreviewSegment):
-		self.add_query_param('PreviewSegment',PreviewSegment)
+	def set_StartTime(self,StartTime):
+		self.add_query_param('StartTime',StartTime)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
-
-	def get_AuthTimeout(self):
-		return self.get_query_params().get('AuthTimeout')
-
-	def set_AuthTimeout(self,AuthTimeout):
-		self.add_query_param('AuthTimeout',AuthTimeout)

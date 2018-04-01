@@ -18,16 +18,22 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class GetMezzanineInfoRequest(RpcRequest):
+class SubmitTranscodeJobsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'vod', '2017-03-21', 'GetMezzanineInfo','vod')
+		RpcRequest.__init__(self, 'vod', '2017-03-21', 'SubmitTranscodeJobs','vod')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+
+	def get_TemplateGroupId(self):
+		return self.get_query_params().get('TemplateGroupId')
+
+	def set_TemplateGroupId(self,TemplateGroupId):
+		self.add_query_param('TemplateGroupId',TemplateGroupId)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -41,20 +47,20 @@ class GetMezzanineInfoRequest(RpcRequest):
 	def set_VideoId(self,VideoId):
 		self.add_query_param('VideoId',VideoId)
 
-	def get_PreviewSegment(self):
-		return self.get_query_params().get('PreviewSegment')
-
-	def set_PreviewSegment(self,PreviewSegment):
-		self.add_query_param('PreviewSegment',PreviewSegment)
-
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_AuthTimeout(self):
-		return self.get_query_params().get('AuthTimeout')
+	def get_EncryptConfig(self):
+		return self.get_query_params().get('EncryptConfig')
 
-	def set_AuthTimeout(self,AuthTimeout):
-		self.add_query_param('AuthTimeout',AuthTimeout)
+	def set_EncryptConfig(self,EncryptConfig):
+		self.add_query_param('EncryptConfig',EncryptConfig)
+
+	def get_PipelineId(self):
+		return self.get_query_params().get('PipelineId')
+
+	def set_PipelineId(self,PipelineId):
+		self.add_query_param('PipelineId',PipelineId)

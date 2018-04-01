@@ -18,28 +18,16 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class GetCategoriesRequest(RpcRequest):
+class DescribePlayTopVideosRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'vod', '2017-03-21', 'GetCategories','vod')
+		RpcRequest.__init__(self, 'vod', '2017-03-21', 'DescribePlayTopVideos','vod')
 
-	def get_ResourceOwnerId(self):
-		return self.get_query_params().get('ResourceOwnerId')
+	def get_BizDate(self):
+		return self.get_query_params().get('BizDate')
 
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
-
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_CateId(self):
-		return self.get_query_params().get('CateId')
-
-	def set_CateId(self,CateId):
-		self.add_query_param('CateId',CateId)
+	def set_BizDate(self,BizDate):
+		self.add_query_param('BizDate',BizDate)
 
 	def get_PageNo(self):
 		return self.get_query_params().get('PageNo')

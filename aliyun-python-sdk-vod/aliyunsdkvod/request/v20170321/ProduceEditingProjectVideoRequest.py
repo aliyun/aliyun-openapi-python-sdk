@@ -35,6 +35,12 @@ class ProduceEditingProjectVideoRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_MediaMetadata(self):
+		return self.get_query_params().get('MediaMetadata')
+
+	def set_MediaMetadata(self,MediaMetadata):
+		self.add_query_param('MediaMetadata',MediaMetadata)
+
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -52,6 +58,12 @@ class ProduceEditingProjectVideoRequest(RpcRequest):
 
 	def set_Description(self,Description):
 		self.add_query_param('Description',Description)
+
+	def get_ProduceConfig(self):
+		return self.get_query_params().get('ProduceConfig')
+
+	def set_ProduceConfig(self,ProduceConfig):
+		self.add_query_param('ProduceConfig',ProduceConfig)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
