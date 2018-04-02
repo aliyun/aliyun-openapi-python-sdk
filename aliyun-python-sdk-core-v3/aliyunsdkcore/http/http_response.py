@@ -170,7 +170,7 @@ class HttpResponse(HttpRequest):
 
     def __get_https_connection(self, host, port, **kwargs):
         """kwargs maps http.client.HTTPConnection arguments"""
-        proxy_host, proxy_port, proxy_headers = self.__get_env_proxy(is_https=False)
+        proxy_host, proxy_port, proxy_headers = self.__get_env_proxy(is_https=True)
         conn = None
         if proxy_host and proxy_port:
             conn = http.client.HTTPSConnection(proxy_host, proxy_port, **kwargs)
