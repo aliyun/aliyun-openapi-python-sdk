@@ -167,17 +167,17 @@ class SaveSingleTaskForCreatingOrderActivateRequest(RpcRequest):
 	def set_RegistrantOrganization(self,RegistrantOrganization):
 		self.add_query_param('RegistrantOrganization',RegistrantOrganization)
 
-	def get_UserClientIp(self):
-		return self.get_query_params().get('UserClientIp')
-
-	def set_UserClientIp(self,UserClientIp):
-		self.add_query_param('UserClientIp',UserClientIp)
-
 	def get_EnableDomainProxy(self):
 		return self.get_query_params().get('EnableDomainProxy')
 
 	def set_EnableDomainProxy(self,EnableDomainProxy):
 		self.add_query_param('EnableDomainProxy',EnableDomainProxy)
+
+	def get_UserClientIp(self):
+		return self.get_query_params().get('UserClientIp')
+
+	def set_UserClientIp(self,UserClientIp):
+		self.add_query_param('UserClientIp',UserClientIp)
 
 	def get_RegistrantName(self):
 		return self.get_query_params().get('RegistrantName')
