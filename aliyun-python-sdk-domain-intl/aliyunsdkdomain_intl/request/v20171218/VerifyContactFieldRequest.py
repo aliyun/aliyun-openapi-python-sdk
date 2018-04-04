@@ -18,10 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class SaveSingleTaskForCreatingOrderActivateRequest(RpcRequest):
+class VerifyContactFieldRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Domain-intl', '2017-12-18', 'SaveSingleTaskForCreatingOrderActivate','domain')
+		RpcRequest.__init__(self, 'Domain-intl', '2017-12-18', 'VerifyContactField','domain')
 
 	def get_Country(self):
 		return self.get_query_params().get('Country')
@@ -29,23 +29,11 @@ class SaveSingleTaskForCreatingOrderActivateRequest(RpcRequest):
 	def set_Country(self,Country):
 		self.add_query_param('Country',Country)
 
-	def get_SubscriptionDuration(self):
-		return self.get_query_params().get('SubscriptionDuration')
-
-	def set_SubscriptionDuration(self,SubscriptionDuration):
-		self.add_query_param('SubscriptionDuration',SubscriptionDuration)
-
 	def get_Address(self):
 		return self.get_query_params().get('Address')
 
 	def set_Address(self,Address):
 		self.add_query_param('Address',Address)
-
-	def get_PermitPremiumActivation(self):
-		return self.get_query_params().get('PermitPremiumActivation')
-
-	def set_PermitPremiumActivation(self,PermitPremiumActivation):
-		self.add_query_param('PermitPremiumActivation',PermitPremiumActivation)
 
 	def get_TelArea(self):
 		return self.get_query_params().get('TelArea')
@@ -59,41 +47,11 @@ class SaveSingleTaskForCreatingOrderActivateRequest(RpcRequest):
 	def set_City(self,City):
 		self.add_query_param('City',City)
 
-	def get_Dns2(self):
-		return self.get_query_params().get('Dns2')
-
-	def set_Dns2(self,Dns2):
-		self.add_query_param('Dns2',Dns2)
-
-	def get_Dns1(self):
-		return self.get_query_params().get('Dns1')
-
-	def set_Dns1(self,Dns1):
-		self.add_query_param('Dns1',Dns1)
-
-	def get_DomainName(self):
-		return self.get_query_params().get('DomainName')
-
-	def set_DomainName(self,DomainName):
-		self.add_query_param('DomainName',DomainName)
-
-	def get_RegistrantProfileId(self):
-		return self.get_query_params().get('RegistrantProfileId')
-
-	def set_RegistrantProfileId(self,RegistrantProfileId):
-		self.add_query_param('RegistrantProfileId',RegistrantProfileId)
-
 	def get_Telephone(self):
 		return self.get_query_params().get('Telephone')
 
 	def set_Telephone(self,Telephone):
 		self.add_query_param('Telephone',Telephone)
-
-	def get_AliyunDns(self):
-		return self.get_query_params().get('AliyunDns')
-
-	def set_AliyunDns(self,AliyunDns):
-		self.add_query_param('AliyunDns',AliyunDns)
 
 	def get_RegistrantOrganization(self):
 		return self.get_query_params().get('RegistrantOrganization')
@@ -124,12 +82,6 @@ class SaveSingleTaskForCreatingOrderActivateRequest(RpcRequest):
 
 	def set_UserClientIp(self,UserClientIp):
 		self.add_query_param('UserClientIp',UserClientIp)
-
-	def get_EnableDomainProxy(self):
-		return self.get_query_params().get('EnableDomainProxy')
-
-	def set_EnableDomainProxy(self,EnableDomainProxy):
-		self.add_query_param('EnableDomainProxy',EnableDomainProxy)
 
 	def get_Lang(self):
 		return self.get_query_params().get('Lang')
