@@ -17,27 +17,16 @@
 # specific language governing permissions and limitations
 # under the License.
 
-from aliyunsdkcore.request import RpcRequest
-class PluginAntispamFeedbackRequest(RpcRequest):
+from aliyunsdkcore.request import RoaRequest
+class TextScanRequest(RoaRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Green', '2016-11-15', 'PluginAntispamFeedback','green')
+		RoaRequest.__init__(self, 'Green', '2017-08-25', 'TextScan','green')
+		self.set_uri_pattern('/green/text/scan')
 		self.set_method('POST')
 
-	def get_Ids(self):
-		return self.get_query_params().get('Ids')
+	def get_ClientInfo(self):
+		return self.get_query_params().get('ClientInfo')
 
-	def set_Ids(self,Ids):
-		self.add_query_param('Ids',Ids)
-
-	def get_ClientVersion(self):
-		return self.get_query_params().get('ClientVersion')
-
-	def set_ClientVersion(self,ClientVersion):
-		self.add_query_param('ClientVersion',ClientVersion)
-
-	def get_ActionResult(self):
-		return self.get_query_params().get('ActionResult')
-
-	def set_ActionResult(self,ActionResult):
-		self.add_query_param('ActionResult',ActionResult)
+	def set_ClientInfo(self,ClientInfo):
+		self.add_query_param('ClientInfo',ClientInfo)

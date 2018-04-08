@@ -18,11 +18,11 @@
 # under the License.
 
 from aliyunsdkcore.request import RoaRequest
-class TextFeedbackRequest(RoaRequest):
+class GetFacesRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'Green', '2017-01-12', 'TextFeedback','green')
-		self.set_uri_pattern('/green/text/feedback')
+		RoaRequest.__init__(self, 'Green', '2017-08-25', 'GetFaces','green')
+		self.set_uri_pattern('/green/sface/getFaces')
 		self.set_method('POST')
 
 	def get_ClientInfo(self):

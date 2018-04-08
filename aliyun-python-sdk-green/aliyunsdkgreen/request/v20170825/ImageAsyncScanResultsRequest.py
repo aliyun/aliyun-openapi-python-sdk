@@ -17,27 +17,16 @@
 # specific language governing permissions and limitations
 # under the License.
 
-from aliyunsdkcore.request import RpcRequest
-class TextKeywordFilterRequest(RpcRequest):
+from aliyunsdkcore.request import RoaRequest
+class ImageAsyncScanResultsRequest(RoaRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Green', '2016-12-16', 'TextKeywordFilter','green')
+		RoaRequest.__init__(self, 'Green', '2017-08-25', 'ImageAsyncScanResults','green')
+		self.set_uri_pattern('/green/image/results')
 		self.set_method('POST')
 
-	def get_CustomDict(self):
-		return self.get_query_params().get('CustomDict')
+	def get_ClientInfo(self):
+		return self.get_query_params().get('ClientInfo')
 
-	def set_CustomDict(self,CustomDict):
-		self.add_query_param('CustomDict',CustomDict)
-
-	def get_Text(self):
-		return self.get_query_params().get('Text')
-
-	def set_Text(self,Text):
-		self.add_query_param('Text',Text)
-
-	def get_UseSysDic(self):
-		return self.get_query_params().get('UseSysDic')
-
-	def set_UseSysDic(self,UseSysDic):
-		self.add_query_param('UseSysDic',UseSysDic)
+	def set_ClientInfo(self,ClientInfo):
+		self.add_query_param('ClientInfo',ClientInfo)

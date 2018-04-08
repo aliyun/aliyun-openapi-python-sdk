@@ -17,15 +17,16 @@
 # specific language governing permissions and limitations
 # under the License.
 
-from aliyunsdkcore.request import RpcRequest
-class TextWordCorrectRequest(RpcRequest):
+from aliyunsdkcore.request import RoaRequest
+class VoiceAsyncScanRequest(RoaRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Green', '2016-12-16', 'TextWordCorrect','green')
+		RoaRequest.__init__(self, 'Green', '2017-08-25', 'VoiceAsyncScan','green')
+		self.set_uri_pattern('/green/voice/asyncscan')
 		self.set_method('POST')
 
-	def get_Text(self):
-		return self.get_query_params().get('Text')
+	def get_ClientInfo(self):
+		return self.get_query_params().get('ClientInfo')
 
-	def set_Text(self,Text):
-		self.add_query_param('Text',Text)
+	def set_ClientInfo(self,ClientInfo):
+		self.add_query_param('ClientInfo',ClientInfo)

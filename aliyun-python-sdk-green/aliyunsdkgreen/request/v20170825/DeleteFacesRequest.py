@@ -17,15 +17,16 @@
 # specific language governing permissions and limitations
 # under the License.
 
-from aliyunsdkcore.request import RpcRequest
-class TextKeywordFilterRequest(RpcRequest):
+from aliyunsdkcore.request import RoaRequest
+class DeleteFacesRequest(RoaRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Green', '2016-11-15', 'TextKeywordFilter','green')
+		RoaRequest.__init__(self, 'Green', '2017-08-25', 'DeleteFaces','green')
+		self.set_uri_pattern('/green/sface/deleteFaces')
 		self.set_method('POST')
 
-	def get_Text(self):
-		return self.get_query_params().get('Text')
+	def get_ClientInfo(self):
+		return self.get_query_params().get('ClientInfo')
 
-	def set_Text(self,Text):
-		self.add_query_param('Text',Text)
+	def set_ClientInfo(self,ClientInfo):
+		self.add_query_param('ClientInfo',ClientInfo)

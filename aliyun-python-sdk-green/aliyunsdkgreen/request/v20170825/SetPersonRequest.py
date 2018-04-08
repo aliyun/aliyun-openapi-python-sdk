@@ -17,15 +17,16 @@
 # specific language governing permissions and limitations
 # under the License.
 
-from aliyunsdkcore.request import RpcRequest
-class ImageResultsRequest(RpcRequest):
+from aliyunsdkcore.request import RoaRequest
+class SetPersonRequest(RoaRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Green', '2016-12-16', 'ImageResults','green')
+		RoaRequest.__init__(self, 'Green', '2017-08-25', 'SetPerson','green')
+		self.set_uri_pattern('/green/sface/setPerson')
 		self.set_method('POST')
 
-	def get_TaskId(self):
-		return self.get_query_params().get('TaskId')
+	def get_ClientInfo(self):
+		return self.get_query_params().get('ClientInfo')
 
-	def set_TaskId(self,TaskId):
-		self.add_query_param('TaskId',TaskId)
+	def set_ClientInfo(self,ClientInfo):
+		self.add_query_param('ClientInfo',ClientInfo)
