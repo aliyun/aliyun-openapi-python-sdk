@@ -18,11 +18,11 @@
 # under the License.
 
 from aliyunsdkcore.request import RoaRequest
-class ImageAsyncScanRequest(RoaRequest):
+class SearchRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'Green', '2017-01-12', 'ImageAsyncScan','green')
-		self.set_uri_pattern('/green/image/asyncscan')
+		RoaRequest.__init__(self, 'Green', '2017-08-25', 'Search','green')
+		self.set_uri_pattern('/green/sface/search')
 		self.set_method('POST')
 
 	def get_ClientInfo(self):

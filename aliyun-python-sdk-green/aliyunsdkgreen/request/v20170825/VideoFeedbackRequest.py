@@ -18,11 +18,11 @@
 # under the License.
 
 from aliyunsdkcore.request import RoaRequest
-class ImageSyncScanRequest(RoaRequest):
+class VideoFeedbackRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'Green', '2017-01-12', 'ImageSyncScan','green')
-		self.set_uri_pattern('/green/image/scan')
+		RoaRequest.__init__(self, 'Green', '2017-08-25', 'VideoFeedback','green')
+		self.set_uri_pattern('/green/video/feedback')
 		self.set_method('POST')
 
 	def get_ClientInfo(self):

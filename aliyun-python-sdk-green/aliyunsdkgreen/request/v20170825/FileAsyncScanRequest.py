@@ -17,15 +17,16 @@
 # specific language governing permissions and limitations
 # under the License.
 
-from aliyunsdkcore.request import RpcRequest
-class AntispamResultsRequest(RpcRequest):
+from aliyunsdkcore.request import RoaRequest
+class FileAsyncScanRequest(RoaRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Green', '2016-11-15', 'AntispamResults','green')
+		RoaRequest.__init__(self, 'Green', '2017-08-25', 'FileAsyncScan','green')
+		self.set_uri_pattern('/green/file/asyncscan')
 		self.set_method('POST')
 
-	def get_DataId(self):
-		return self.get_query_params().get('DataId')
+	def get_ClientInfo(self):
+		return self.get_query_params().get('ClientInfo')
 
-	def set_DataId(self,DataId):
-		self.add_query_param('DataId',DataId)
+	def set_ClientInfo(self,ClientInfo):
+		self.add_query_param('ClientInfo',ClientInfo)

@@ -17,21 +17,16 @@
 # specific language governing permissions and limitations
 # under the License.
 
-from aliyunsdkcore.request import RpcRequest
-class TextAntispamDetectionRequest(RpcRequest):
+from aliyunsdkcore.request import RoaRequest
+class GetGroupsRequest(RoaRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Green', '2016-12-16', 'TextAntispamDetection','green')
+		RoaRequest.__init__(self, 'Green', '2017-08-25', 'GetGroups','green')
+		self.set_uri_pattern('/green/sface/getGroups')
 		self.set_method('POST')
 
-	def get_CustomDict(self):
-		return self.get_query_params().get('CustomDict')
+	def get_ClientInfo(self):
+		return self.get_query_params().get('ClientInfo')
 
-	def set_CustomDict(self,CustomDict):
-		self.add_query_param('CustomDict',CustomDict)
-
-	def get_DataItems(self):
-		return self.get_query_params().get('DataItems')
-
-	def set_DataItems(self,DataItems):
-		self.add_query_param('DataItems',DataItems)
+	def set_ClientInfo(self,ClientInfo):
+		self.add_query_param('ClientInfo',ClientInfo)
