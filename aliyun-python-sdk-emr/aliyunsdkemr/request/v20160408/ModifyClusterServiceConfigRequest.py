@@ -29,11 +29,17 @@ class ModifyClusterServiceConfigRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_ClusterId(self):
-		return self.get_query_params().get('ClusterId')
+	def get_CustomConfigParams(self):
+		return self.get_query_params().get('CustomConfigParams')
 
-	def set_ClusterId(self,ClusterId):
-		self.add_query_param('ClusterId',ClusterId)
+	def set_CustomConfigParams(self,CustomConfigParams):
+		self.add_query_param('CustomConfigParams',CustomConfigParams)
+
+	def get_GroupId(self):
+		return self.get_query_params().get('GroupId')
+
+	def set_GroupId(self,GroupId):
+		self.add_query_param('GroupId',GroupId)
 
 	def get_ServiceName(self):
 		return self.get_query_params().get('ServiceName')
@@ -46,6 +52,12 @@ class ModifyClusterServiceConfigRequest(RpcRequest):
 
 	def set_Comment(self,Comment):
 		self.add_query_param('Comment',Comment)
+
+	def get_ClusterId(self):
+		return self.get_query_params().get('ClusterId')
+
+	def set_ClusterId(self,ClusterId):
+		self.add_query_param('ClusterId',ClusterId)
 
 	def get_ConfigParams(self):
 		return self.get_query_params().get('ConfigParams')

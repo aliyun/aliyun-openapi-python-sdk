@@ -23,17 +23,23 @@ class ModifyJobRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'ModifyJob')
 
+	def get_RunParameter(self):
+		return self.get_query_params().get('RunParameter')
+
+	def set_RunParameter(self,RunParameter):
+		self.add_query_param('RunParameter',RunParameter)
+
+	def get_RetryInterval(self):
+		return self.get_query_params().get('RetryInterval')
+
+	def set_RetryInterval(self,RetryInterval):
+		self.add_query_param('RetryInterval',RetryInterval)
+
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_Id(self):
-		return self.get_query_params().get('Id')
-
-	def set_Id(self,Id):
-		self.add_query_param('Id',Id)
 
 	def get_Name(self):
 		return self.get_query_params().get('Name')
@@ -41,23 +47,17 @@ class ModifyJobRequest(RpcRequest):
 	def set_Name(self,Name):
 		self.add_query_param('Name',Name)
 
+	def get_Id(self):
+		return self.get_query_params().get('Id')
+
+	def set_Id(self,Id):
+		self.add_query_param('Id',Id)
+
 	def get_Type(self):
 		return self.get_query_params().get('Type')
 
 	def set_Type(self,Type):
 		self.add_query_param('Type',Type)
-
-	def get_RunParameter(self):
-		return self.get_query_params().get('RunParameter')
-
-	def set_RunParameter(self,RunParameter):
-		self.add_query_param('RunParameter',RunParameter)
-
-	def get_FailAct(self):
-		return self.get_query_params().get('FailAct')
-
-	def set_FailAct(self,FailAct):
-		self.add_query_param('FailAct',FailAct)
 
 	def get_MaxRetry(self):
 		return self.get_query_params().get('MaxRetry')
@@ -65,8 +65,8 @@ class ModifyJobRequest(RpcRequest):
 	def set_MaxRetry(self,MaxRetry):
 		self.add_query_param('MaxRetry',MaxRetry)
 
-	def get_RetryInterval(self):
-		return self.get_query_params().get('RetryInterval')
+	def get_FailAct(self):
+		return self.get_query_params().get('FailAct')
 
-	def set_RetryInterval(self,RetryInterval):
-		self.add_query_param('RetryInterval',RetryInterval)
+	def set_FailAct(self,FailAct):
+		self.add_query_param('FailAct',FailAct)

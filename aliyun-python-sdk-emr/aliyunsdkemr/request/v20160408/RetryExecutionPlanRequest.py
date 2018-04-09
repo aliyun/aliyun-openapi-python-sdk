@@ -29,14 +29,14 @@ class RetryExecutionPlanRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_Id(self):
-		return self.get_query_params().get('Id')
-
-	def set_Id(self,Id):
-		self.add_query_param('Id',Id)
-
 	def get_ExecutionPlanWorkNodeIds(self):
 		return self.get_query_params().get('ExecutionPlanWorkNodeIds')
 
 	def set_ExecutionPlanWorkNodeIds(self,ExecutionPlanWorkNodeIds):
 		self.add_query_param('ExecutionPlanWorkNodeIds',ExecutionPlanWorkNodeIds)
+
+	def get_Id(self):
+		return self.get_query_params().get('Id')
+
+	def set_Id(self,Id):
+		self.add_query_param('Id',Id)

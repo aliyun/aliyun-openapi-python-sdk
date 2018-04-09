@@ -29,6 +29,12 @@ class RunExecutionPlanRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_Arguments(self):
+		return self.get_query_params().get('Arguments')
+
+	def set_Arguments(self,Arguments):
+		self.add_query_param('Arguments',Arguments)
+
 	def get_Id(self):
 		return self.get_query_params().get('Id')
 

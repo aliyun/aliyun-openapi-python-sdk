@@ -29,23 +29,23 @@ class ModifyExecutionPlanScheduleInfoRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_Id(self):
-		return self.get_query_params().get('Id')
-
-	def set_Id(self,Id):
-		self.add_query_param('Id',Id)
-
-	def get_Strategy(self):
-		return self.get_query_params().get('Strategy')
-
-	def set_Strategy(self,Strategy):
-		self.add_query_param('Strategy',Strategy)
-
 	def get_TimeInterval(self):
 		return self.get_query_params().get('TimeInterval')
 
 	def set_TimeInterval(self,TimeInterval):
 		self.add_query_param('TimeInterval',TimeInterval)
+
+	def get_DayOfWeek(self):
+		return self.get_query_params().get('DayOfWeek')
+
+	def set_DayOfWeek(self,DayOfWeek):
+		self.add_query_param('DayOfWeek',DayOfWeek)
+
+	def get_Id(self):
+		return self.get_query_params().get('Id')
+
+	def set_Id(self,Id):
+		self.add_query_param('Id',Id)
 
 	def get_StartTime(self):
 		return self.get_query_params().get('StartTime')
@@ -53,17 +53,17 @@ class ModifyExecutionPlanScheduleInfoRequest(RpcRequest):
 	def set_StartTime(self,StartTime):
 		self.add_query_param('StartTime',StartTime)
 
+	def get_Strategy(self):
+		return self.get_query_params().get('Strategy')
+
+	def set_Strategy(self,Strategy):
+		self.add_query_param('Strategy',Strategy)
+
 	def get_TimeUnit(self):
 		return self.get_query_params().get('TimeUnit')
 
 	def set_TimeUnit(self,TimeUnit):
 		self.add_query_param('TimeUnit',TimeUnit)
-
-	def get_DayOfWeek(self):
-		return self.get_query_params().get('DayOfWeek')
-
-	def set_DayOfWeek(self,DayOfWeek):
-		self.add_query_param('DayOfWeek',DayOfWeek)
 
 	def get_DayOfMonth(self):
 		return self.get_query_params().get('DayOfMonth')

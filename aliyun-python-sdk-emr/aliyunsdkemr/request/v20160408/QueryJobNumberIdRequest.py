@@ -23,14 +23,14 @@ class QueryJobNumberIdRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'QueryJobNumberId')
 
-	def get_ResourceOwnerId(self):
-		return self.get_query_params().get('ResourceOwnerId')
-
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
 	def get_JobBizId(self):
 		return self.get_query_params().get('JobBizId')
 
 	def set_JobBizId(self,JobBizId):
 		self.add_query_param('JobBizId',JobBizId)
+
+	def get_ResourceOwnerId(self):
+		return self.get_query_params().get('ResourceOwnerId')
+
+	def set_ResourceOwnerId(self,ResourceOwnerId):
+		self.add_query_param('ResourceOwnerId',ResourceOwnerId)

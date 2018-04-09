@@ -29,29 +29,23 @@ class RunClusterServiceActionRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_OnlyRestartStaleConfigNodes(self):
+		return self.get_query_params().get('OnlyRestartStaleConfigNodes')
+
+	def set_OnlyRestartStaleConfigNodes(self,OnlyRestartStaleConfigNodes):
+		self.add_query_param('OnlyRestartStaleConfigNodes',OnlyRestartStaleConfigNodes)
+
+	def get_NodeCountPerBatch(self):
+		return self.get_query_params().get('NodeCountPerBatch')
+
+	def set_NodeCountPerBatch(self,NodeCountPerBatch):
+		self.add_query_param('NodeCountPerBatch',NodeCountPerBatch)
+
 	def get_ClusterId(self):
 		return self.get_query_params().get('ClusterId')
 
 	def set_ClusterId(self,ClusterId):
 		self.add_query_param('ClusterId',ClusterId)
-
-	def get_HostIdList(self):
-		return self.get_query_params().get('HostIdList')
-
-	def set_HostIdList(self,HostIdList):
-		self.add_query_param('HostIdList',HostIdList)
-
-	def get_ServiceName(self):
-		return self.get_query_params().get('ServiceName')
-
-	def set_ServiceName(self,ServiceName):
-		self.add_query_param('ServiceName',ServiceName)
-
-	def get_ServiceActionName(self):
-		return self.get_query_params().get('ServiceActionName')
-
-	def set_ServiceActionName(self,ServiceActionName):
-		self.add_query_param('ServiceActionName',ServiceActionName)
 
 	def get_CustomCommand(self):
 		return self.get_query_params().get('CustomCommand')
@@ -65,11 +59,11 @@ class RunClusterServiceActionRequest(RpcRequest):
 	def set_ComponentNameList(self,ComponentNameList):
 		self.add_query_param('ComponentNameList',ComponentNameList)
 
-	def get_Comment(self):
-		return self.get_query_params().get('Comment')
+	def get_ServiceActionName(self):
+		return self.get_query_params().get('ServiceActionName')
 
-	def set_Comment(self,Comment):
-		self.add_query_param('Comment',Comment)
+	def set_ServiceActionName(self,ServiceActionName):
+		self.add_query_param('ServiceActionName',ServiceActionName)
 
 	def get_IsRolling(self):
 		return self.get_query_params().get('IsRolling')
@@ -77,23 +71,29 @@ class RunClusterServiceActionRequest(RpcRequest):
 	def set_IsRolling(self,IsRolling):
 		self.add_query_param('IsRolling',IsRolling)
 
-	def get_NodeCountPerBatch(self):
-		return self.get_query_params().get('NodeCountPerBatch')
-
-	def set_NodeCountPerBatch(self,NodeCountPerBatch):
-		self.add_query_param('NodeCountPerBatch',NodeCountPerBatch)
-
 	def get_TotlerateFailCount(self):
 		return self.get_query_params().get('TotlerateFailCount')
 
 	def set_TotlerateFailCount(self,TotlerateFailCount):
 		self.add_query_param('TotlerateFailCount',TotlerateFailCount)
 
-	def get_OnlyRestartStaleConfigNodes(self):
-		return self.get_query_params().get('OnlyRestartStaleConfigNodes')
+	def get_ServiceName(self):
+		return self.get_query_params().get('ServiceName')
 
-	def set_OnlyRestartStaleConfigNodes(self,OnlyRestartStaleConfigNodes):
-		self.add_query_param('OnlyRestartStaleConfigNodes',OnlyRestartStaleConfigNodes)
+	def set_ServiceName(self,ServiceName):
+		self.add_query_param('ServiceName',ServiceName)
+
+	def get_Comment(self):
+		return self.get_query_params().get('Comment')
+
+	def set_Comment(self,Comment):
+		self.add_query_param('Comment',Comment)
+
+	def get_HostIdList(self):
+		return self.get_query_params().get('HostIdList')
+
+	def set_HostIdList(self,HostIdList):
+		self.add_query_param('HostIdList',HostIdList)
 
 	def get_TurnOnMaintenanceMode(self):
 		return self.get_query_params().get('TurnOnMaintenanceMode')
