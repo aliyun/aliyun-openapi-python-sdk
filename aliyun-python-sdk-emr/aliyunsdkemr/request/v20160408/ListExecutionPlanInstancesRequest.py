@@ -23,6 +23,12 @@ class ListExecutionPlanInstancesRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'ListExecutionPlanInstances')
 
+	def get_OnlyLastInstance(self):
+		return self.get_query_params().get('OnlyLastInstance')
+
+	def set_OnlyLastInstance(self,OnlyLastInstance):
+		self.add_query_param('OnlyLastInstance',OnlyLastInstance)
+
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
@@ -34,20 +40,22 @@ class ListExecutionPlanInstancesRequest(RpcRequest):
 
 	def set_ExecutionPlanIdLists(self,ExecutionPlanIdLists):
 		for i in range(len(ExecutionPlanIdLists)):	
-			self.add_query_param('ExecutionPlanIdList.' + str(i + 1) , ExecutionPlanIdLists[i]);
-
-	def get_OnlyLastInstance(self):
-		return self.get_query_params().get('OnlyLastInstance')
-
-	def set_OnlyLastInstance(self,OnlyLastInstance):
-		self.add_query_param('OnlyLastInstance',OnlyLastInstance)
+			if ExecutionPlanIdLists[i] is not None:
+				self.add_query_param('ExecutionPlanIdList.' + str(i + 1) , ExecutionPlanIdLists[i]);
 
 	def get_StatusLists(self):
 		return self.get_query_params().get('StatusLists')
 
 	def set_StatusLists(self,StatusLists):
 		for i in range(len(StatusLists)):	
-			self.add_query_param('StatusList.' + str(i + 1) , StatusLists[i]);
+			if StatusLists[i] is not None:
+				self.add_query_param('StatusList.' + str(i + 1) , StatusLists[i]);
+
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
 
 	def get_IsDesc(self):
 		return self.get_query_params().get('IsDesc')
@@ -60,9 +68,3 @@ class ListExecutionPlanInstancesRequest(RpcRequest):
 
 	def set_PageNumber(self,PageNumber):
 		self.add_query_param('PageNumber',PageNumber)
-
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)

@@ -23,6 +23,12 @@ class ResetSgPortRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'ResetSgPort')
 
+	def get_SourceIp(self):
+		return self.get_query_params().get('SourceIp')
+
+	def set_SourceIp(self,SourceIp):
+		self.add_query_param('SourceIp',SourceIp)
+
 	def get_ClusterId(self):
 		return self.get_query_params().get('ClusterId')
 
@@ -34,9 +40,3 @@ class ResetSgPortRequest(RpcRequest):
 
 	def set_OperateType(self,OperateType):
 		self.add_query_param('OperateType',OperateType)
-
-	def get_SourceIp(self):
-		return self.get_query_params().get('SourceIp')
-
-	def set_SourceIp(self,SourceIp):
-		self.add_query_param('SourceIp',SourceIp)

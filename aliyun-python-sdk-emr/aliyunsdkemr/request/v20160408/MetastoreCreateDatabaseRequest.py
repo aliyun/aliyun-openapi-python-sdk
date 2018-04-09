@@ -35,14 +35,14 @@ class MetastoreCreateDatabaseRequest(RpcRequest):
 	def set_DbName(self,DbName):
 		self.add_query_param('DbName',DbName)
 
-	def get_LocationUri(self):
-		return self.get_query_params().get('LocationUri')
-
-	def set_LocationUri(self,LocationUri):
-		self.add_query_param('LocationUri',LocationUri)
-
 	def get_Description(self):
 		return self.get_query_params().get('Description')
 
 	def set_Description(self,Description):
 		self.add_query_param('Description',Description)
+
+	def get_LocationUri(self):
+		return self.get_query_params().get('LocationUri')
+
+	def set_LocationUri(self,LocationUri):
+		self.add_query_param('LocationUri',LocationUri)

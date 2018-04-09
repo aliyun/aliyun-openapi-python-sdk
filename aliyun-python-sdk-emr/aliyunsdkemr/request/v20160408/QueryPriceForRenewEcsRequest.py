@@ -29,6 +29,18 @@ class QueryPriceForRenewEcsRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_EcsPeriod(self):
+		return self.get_query_params().get('EcsPeriod')
+
+	def set_EcsPeriod(self,EcsPeriod):
+		self.add_query_param('EcsPeriod',EcsPeriod)
+
+	def get_EmrPeriod(self):
+		return self.get_query_params().get('EmrPeriod')
+
+	def set_EmrPeriod(self,EmrPeriod):
+		self.add_query_param('EmrPeriod',EmrPeriod)
+
 	def get_ClusterId(self):
 		return self.get_query_params().get('ClusterId')
 
@@ -41,14 +53,8 @@ class QueryPriceForRenewEcsRequest(RpcRequest):
 	def set_EcsId(self,EcsId):
 		self.add_query_param('EcsId',EcsId)
 
-	def get_EcsPeriod(self):
-		return self.get_query_params().get('EcsPeriod')
+	def get_EcsIdList(self):
+		return self.get_query_params().get('EcsIdList')
 
-	def set_EcsPeriod(self,EcsPeriod):
-		self.add_query_param('EcsPeriod',EcsPeriod)
-
-	def get_EmrPeriod(self):
-		return self.get_query_params().get('EmrPeriod')
-
-	def set_EmrPeriod(self,EmrPeriod):
-		self.add_query_param('EmrPeriod',EmrPeriod)
+	def set_EcsIdList(self,EcsIdList):
+		self.add_query_param('EcsIdList',EcsIdList)

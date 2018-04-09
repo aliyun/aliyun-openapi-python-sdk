@@ -29,14 +29,14 @@ class ReleaseClusterRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_Id(self):
-		return self.get_query_params().get('Id')
-
-	def set_Id(self,Id):
-		self.add_query_param('Id',Id)
-
 	def get_ForceRelease(self):
 		return self.get_query_params().get('ForceRelease')
 
 	def set_ForceRelease(self,ForceRelease):
 		self.add_query_param('ForceRelease',ForceRelease)
+
+	def get_Id(self):
+		return self.get_query_params().get('Id')
+
+	def set_Id(self,Id):
+		self.add_query_param('Id',Id)

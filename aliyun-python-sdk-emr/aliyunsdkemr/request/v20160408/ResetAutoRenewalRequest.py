@@ -40,8 +40,13 @@ class ResetAutoRenewalRequest(RpcRequest):
 
 	def set_EcsResetAutoRenewDos(self,EcsResetAutoRenewDos):
 		for i in range(len(EcsResetAutoRenewDos)):	
-			self.add_query_param('EcsResetAutoRenewDo.' + str(i + 1) + '.EcsId' , EcsResetAutoRenewDos[i].get('EcsId'))
-			self.add_query_param('EcsResetAutoRenewDo.' + str(i + 1) + '.EcsAutoRenew' , EcsResetAutoRenewDos[i].get('EcsAutoRenew'))
-			self.add_query_param('EcsResetAutoRenewDo.' + str(i + 1) + '.EcsAutoRenewDuration' , EcsResetAutoRenewDos[i].get('EcsAutoRenewDuration'))
-			self.add_query_param('EcsResetAutoRenewDo.' + str(i + 1) + '.EmrAutoRenew' , EcsResetAutoRenewDos[i].get('EmrAutoRenew'))
-			self.add_query_param('EcsResetAutoRenewDo.' + str(i + 1) + '.EmrAutoRenewDuration' , EcsResetAutoRenewDos[i].get('EmrAutoRenewDuration'))
+			if EcsResetAutoRenewDos[i].get('EcsId') is not None:
+				self.add_query_param('EcsResetAutoRenewDo.' + str(i + 1) + '.EcsId' , EcsResetAutoRenewDos[i].get('EcsId'))
+			if EcsResetAutoRenewDos[i].get('EcsAutoRenew') is not None:
+				self.add_query_param('EcsResetAutoRenewDo.' + str(i + 1) + '.EcsAutoRenew' , EcsResetAutoRenewDos[i].get('EcsAutoRenew'))
+			if EcsResetAutoRenewDos[i].get('EcsAutoRenewDuration') is not None:
+				self.add_query_param('EcsResetAutoRenewDo.' + str(i + 1) + '.EcsAutoRenewDuration' , EcsResetAutoRenewDos[i].get('EcsAutoRenewDuration'))
+			if EcsResetAutoRenewDos[i].get('EmrAutoRenew') is not None:
+				self.add_query_param('EcsResetAutoRenewDo.' + str(i + 1) + '.EmrAutoRenew' , EcsResetAutoRenewDos[i].get('EmrAutoRenew'))
+			if EcsResetAutoRenewDos[i].get('EmrAutoRenewDuration') is not None:
+				self.add_query_param('EcsResetAutoRenewDo.' + str(i + 1) + '.EmrAutoRenewDuration' , EcsResetAutoRenewDos[i].get('EmrAutoRenewDuration'))
