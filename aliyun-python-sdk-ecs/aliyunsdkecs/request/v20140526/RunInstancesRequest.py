@@ -29,6 +29,12 @@ class RunInstancesRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_HpcClusterId(self):
+		return self.get_query_params().get('HpcClusterId')
+
+	def set_HpcClusterId(self,HpcClusterId):
+		self.add_query_param('HpcClusterId',HpcClusterId)
+
 	def get_SecurityEnhancementStrategy(self):
 		return self.get_query_params().get('SecurityEnhancementStrategy')
 
@@ -123,6 +129,12 @@ class RunInstancesRequest(RpcRequest):
 
 	def set_ImageId(self,ImageId):
 		self.add_query_param('ImageId',ImageId)
+
+	def get_SpotInterruptionBehavior(self):
+		return self.get_query_params().get('SpotInterruptionBehavior')
+
+	def set_SpotInterruptionBehavior(self,SpotInterruptionBehavior):
+		self.add_query_param('SpotInterruptionBehavior',SpotInterruptionBehavior)
 
 	def get_ClientToken(self):
 		return self.get_query_params().get('ClientToken')

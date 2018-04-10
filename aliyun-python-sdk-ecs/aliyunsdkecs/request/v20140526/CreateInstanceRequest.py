@@ -215,6 +215,12 @@ class CreateInstanceRequest(RpcRequest):
 	def set_VlanId(self,VlanId):
 		self.add_query_param('VlanId',VlanId)
 
+	def get_SpotInterruptionBehavior(self):
+		return self.get_query_params().get('SpotInterruptionBehavior')
+
+	def set_SpotInterruptionBehavior(self,SpotInterruptionBehavior):
+		self.add_query_param('SpotInterruptionBehavior',SpotInterruptionBehavior)
+
 	def get_IoOptimized(self):
 		return self.get_query_params().get('IoOptimized')
 
