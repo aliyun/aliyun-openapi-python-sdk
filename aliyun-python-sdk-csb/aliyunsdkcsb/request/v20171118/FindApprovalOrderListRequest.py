@@ -42,17 +42,17 @@ class FindApprovalOrderListRequest(RpcRequest):
 	def set_ServiceName(self,ServiceName):
 		self.add_query_param('ServiceName',ServiceName)
 
-	def get_PageNum(self):
-		return self.get_query_params().get('PageNum')
-
-	def set_PageNum(self,PageNum):
-		self.add_query_param('PageNum',PageNum)
-
 	def get_ServiceId(self):
 		return self.get_query_params().get('ServiceId')
 
 	def set_ServiceId(self,ServiceId):
 		self.add_query_param('ServiceId',ServiceId)
+
+	def get_PageNum(self):
+		return self.get_query_params().get('PageNum')
+
+	def set_PageNum(self,PageNum):
+		self.add_query_param('PageNum',PageNum)
 
 	def get_OnlyPending(self):
 		return self.get_query_params().get('OnlyPending')

@@ -30,17 +30,17 @@ class FindServiceListRequest(RpcRequest):
 	def set_ProjectName(self,ProjectName):
 		self.add_query_param('ProjectName',ProjectName)
 
-	def get_ShowDelService(self):
-		return self.get_query_params().get('ShowDelService')
-
-	def set_ShowDelService(self,ShowDelService):
-		self.add_query_param('ShowDelService',ShowDelService)
-
 	def get_CasShowType(self):
 		return self.get_query_params().get('CasShowType')
 
 	def set_CasShowType(self,CasShowType):
 		self.add_query_param('CasShowType',CasShowType)
+
+	def get_ShowDelService(self):
+		return self.get_query_params().get('ShowDelService')
+
+	def set_ShowDelService(self,ShowDelService):
+		self.add_query_param('ShowDelService',ShowDelService)
 
 	def get_CsbId(self):
 		return self.get_query_params().get('CsbId')
