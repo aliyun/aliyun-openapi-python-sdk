@@ -18,21 +18,21 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class BatchGetDeviceStateRequest(RpcRequest):
+class CreateTopicRouteTableRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Iot', '2017-04-20', 'BatchGetDeviceState')
+		RpcRequest.__init__(self, 'Iot', '2017-04-20', 'CreateTopicRouteTable')
 
-	def get_DeviceNames(self):
-		return self.get_query_params().get('DeviceNames')
+	def get_DstTopics(self):
+		return self.get_query_params().get('DstTopics')
 
-	def set_DeviceNames(self,DeviceNames):
-		for i in range(len(DeviceNames)):	
-			if DeviceNames[i] is not None:
-				self.add_query_param('DeviceName.' + str(i + 1) , DeviceNames[i]);
+	def set_DstTopics(self,DstTopics):
+		for i in range(len(DstTopics)):	
+			if DstTopics[i] is not None:
+				self.add_query_param('DstTopic.' + str(i + 1) , DstTopics[i]);
 
-	def get_ProductKey(self):
-		return self.get_query_params().get('ProductKey')
+	def get_SrcTopic(self):
+		return self.get_query_params().get('SrcTopic')
 
-	def set_ProductKey(self,ProductKey):
-		self.add_query_param('ProductKey',ProductKey)
+	def set_SrcTopic(self,SrcTopic):
+		self.add_query_param('SrcTopic',SrcTopic)

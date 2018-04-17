@@ -18,21 +18,13 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class BatchGetDeviceStateRequest(RpcRequest):
+class DeleteProductTopicRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Iot', '2017-04-20', 'BatchGetDeviceState')
+		RpcRequest.__init__(self, 'Iot', '2017-04-20', 'DeleteProductTopic')
 
-	def get_DeviceNames(self):
-		return self.get_query_params().get('DeviceNames')
+	def get_TopicId(self):
+		return self.get_query_params().get('TopicId')
 
-	def set_DeviceNames(self,DeviceNames):
-		for i in range(len(DeviceNames)):	
-			if DeviceNames[i] is not None:
-				self.add_query_param('DeviceName.' + str(i + 1) , DeviceNames[i]);
-
-	def get_ProductKey(self):
-		return self.get_query_params().get('ProductKey')
-
-	def set_ProductKey(self,ProductKey):
-		self.add_query_param('ProductKey',ProductKey)
+	def set_TopicId(self,TopicId):
+		self.add_query_param('TopicId',TopicId)

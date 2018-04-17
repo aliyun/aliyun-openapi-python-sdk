@@ -18,34 +18,40 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class UpdateProductRequest(RpcRequest):
+class CreateRuleRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Iot', '2017-04-20', 'UpdateProduct')
+		RpcRequest.__init__(self, 'Iot', '2017-04-20', 'CreateRule')
 
-	def get_CatId(self):
-		return self.get_query_params().get('CatId')
+	def get_Select(self):
+		return self.get_query_params().get('Select')
 
-	def set_CatId(self,CatId):
-		self.add_query_param('CatId',CatId)
+	def set_Select(self,Select):
+		self.add_query_param('Select',Select)
 
-	def get_NodeType(self):
-		return self.get_query_params().get('NodeType')
+	def get_RuleDesc(self):
+		return self.get_query_params().get('RuleDesc')
 
-	def set_NodeType(self,NodeType):
-		self.add_query_param('NodeType',NodeType)
+	def set_RuleDesc(self,RuleDesc):
+		self.add_query_param('RuleDesc',RuleDesc)
 
-	def get_ProductName(self):
-		return self.get_query_params().get('ProductName')
+	def get_DataType(self):
+		return self.get_query_params().get('DataType')
 
-	def set_ProductName(self,ProductName):
-		self.add_query_param('ProductName',ProductName)
+	def set_DataType(self,DataType):
+		self.add_query_param('DataType',DataType)
 
-	def get_ExtProps(self):
-		return self.get_query_params().get('ExtProps')
+	def get_Name(self):
+		return self.get_query_params().get('Name')
 
-	def set_ExtProps(self,ExtProps):
-		self.add_query_param('ExtProps',ExtProps)
+	def set_Name(self,Name):
+		self.add_query_param('Name',Name)
+
+	def get_Where(self):
+		return self.get_query_params().get('Where')
+
+	def set_Where(self,Where):
+		self.add_query_param('Where',Where)
 
 	def get_ProductKey(self):
 		return self.get_query_params().get('ProductKey')
@@ -53,8 +59,8 @@ class UpdateProductRequest(RpcRequest):
 	def set_ProductKey(self,ProductKey):
 		self.add_query_param('ProductKey',ProductKey)
 
-	def get_ProductDesc(self):
-		return self.get_query_params().get('ProductDesc')
+	def get_ShortTopic(self):
+		return self.get_query_params().get('ShortTopic')
 
-	def set_ProductDesc(self,ProductDesc):
-		self.add_query_param('ProductDesc',ProductDesc)
+	def set_ShortTopic(self,ShortTopic):
+		self.add_query_param('ShortTopic',ShortTopic)

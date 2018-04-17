@@ -18,18 +18,34 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class BatchGetDeviceStateRequest(RpcRequest):
+class GetThingTopoRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Iot', '2017-04-20', 'BatchGetDeviceState')
+		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'GetThingTopo')
 
-	def get_DeviceNames(self):
-		return self.get_query_params().get('DeviceNames')
+	def get_IotId(self):
+		return self.get_query_params().get('IotId')
 
-	def set_DeviceNames(self,DeviceNames):
-		for i in range(len(DeviceNames)):	
-			if DeviceNames[i] is not None:
-				self.add_query_param('DeviceName.' + str(i + 1) , DeviceNames[i]);
+	def set_IotId(self,IotId):
+		self.add_query_param('IotId',IotId)
+
+	def get_PageNo(self):
+		return self.get_query_params().get('PageNo')
+
+	def set_PageNo(self,PageNo):
+		self.add_query_param('PageNo',PageNo)
+
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
+
+	def get_DeviceName(self):
+		return self.get_query_params().get('DeviceName')
+
+	def set_DeviceName(self,DeviceName):
+		self.add_query_param('DeviceName',DeviceName)
 
 	def get_ProductKey(self):
 		return self.get_query_params().get('ProductKey')

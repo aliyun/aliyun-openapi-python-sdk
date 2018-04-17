@@ -18,18 +18,16 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class BatchGetDeviceStateRequest(RpcRequest):
+class BatchRegisterDeviceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Iot', '2017-04-20', 'BatchGetDeviceState')
+		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'BatchRegisterDevice')
 
-	def get_DeviceNames(self):
-		return self.get_query_params().get('DeviceNames')
+	def get_Count(self):
+		return self.get_query_params().get('Count')
 
-	def set_DeviceNames(self,DeviceNames):
-		for i in range(len(DeviceNames)):	
-			if DeviceNames[i] is not None:
-				self.add_query_param('DeviceName.' + str(i + 1) , DeviceNames[i]);
+	def set_Count(self,Count):
+		self.add_query_param('Count',Count)
 
 	def get_ProductKey(self):
 		return self.get_query_params().get('ProductKey')

@@ -18,21 +18,25 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class BatchGetDeviceStateRequest(RpcRequest):
+class UpdateRuleActionRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Iot', '2017-04-20', 'BatchGetDeviceState')
+		RpcRequest.__init__(self, 'Iot', '2017-04-20', 'UpdateRuleAction')
 
-	def get_DeviceNames(self):
-		return self.get_query_params().get('DeviceNames')
+	def get_Configuration(self):
+		return self.get_query_params().get('Configuration')
 
-	def set_DeviceNames(self,DeviceNames):
-		for i in range(len(DeviceNames)):	
-			if DeviceNames[i] is not None:
-				self.add_query_param('DeviceName.' + str(i + 1) , DeviceNames[i]);
+	def set_Configuration(self,Configuration):
+		self.add_query_param('Configuration',Configuration)
 
-	def get_ProductKey(self):
-		return self.get_query_params().get('ProductKey')
+	def get_ActionId(self):
+		return self.get_query_params().get('ActionId')
 
-	def set_ProductKey(self,ProductKey):
-		self.add_query_param('ProductKey',ProductKey)
+	def set_ActionId(self,ActionId):
+		self.add_query_param('ActionId',ActionId)
+
+	def get_Type(self):
+		return self.get_query_params().get('Type')
+
+	def set_Type(self,Type):
+		self.add_query_param('Type',Type)
