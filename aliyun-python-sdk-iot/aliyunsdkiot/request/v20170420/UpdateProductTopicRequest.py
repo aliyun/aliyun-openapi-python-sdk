@@ -18,21 +18,31 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class BatchGetDeviceStateRequest(RpcRequest):
+class UpdateProductTopicRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Iot', '2017-04-20', 'BatchGetDeviceState')
+		RpcRequest.__init__(self, 'Iot', '2017-04-20', 'UpdateProductTopic')
 
-	def get_DeviceNames(self):
-		return self.get_query_params().get('DeviceNames')
+	def get_TopicId(self):
+		return self.get_query_params().get('TopicId')
 
-	def set_DeviceNames(self,DeviceNames):
-		for i in range(len(DeviceNames)):	
-			if DeviceNames[i] is not None:
-				self.add_query_param('DeviceName.' + str(i + 1) , DeviceNames[i]);
+	def set_TopicId(self,TopicId):
+		self.add_query_param('TopicId',TopicId)
 
-	def get_ProductKey(self):
-		return self.get_query_params().get('ProductKey')
+	def get_Operation(self):
+		return self.get_query_params().get('Operation')
 
-	def set_ProductKey(self,ProductKey):
-		self.add_query_param('ProductKey',ProductKey)
+	def set_Operation(self,Operation):
+		self.add_query_param('Operation',Operation)
+
+	def get_TopicShortName(self):
+		return self.get_query_params().get('TopicShortName')
+
+	def set_TopicShortName(self,TopicShortName):
+		self.add_query_param('TopicShortName',TopicShortName)
+
+	def get_Desc(self):
+		return self.get_query_params().get('Desc')
+
+	def set_Desc(self,Desc):
+		self.add_query_param('Desc',Desc)

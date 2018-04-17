@@ -18,21 +18,31 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class BatchGetDeviceStateRequest(RpcRequest):
+class NotifyAddThingTopoRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Iot', '2017-04-20', 'BatchGetDeviceState')
+		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'NotifyAddThingTopo')
 
-	def get_DeviceNames(self):
-		return self.get_query_params().get('DeviceNames')
+	def get_GwProductKey(self):
+		return self.get_query_params().get('GwProductKey')
 
-	def set_DeviceNames(self,DeviceNames):
-		for i in range(len(DeviceNames)):	
-			if DeviceNames[i] is not None:
-				self.add_query_param('DeviceName.' + str(i + 1) , DeviceNames[i]);
+	def set_GwProductKey(self,GwProductKey):
+		self.add_query_param('GwProductKey',GwProductKey)
 
-	def get_ProductKey(self):
-		return self.get_query_params().get('ProductKey')
+	def get_GwDeviceName(self):
+		return self.get_query_params().get('GwDeviceName')
 
-	def set_ProductKey(self,ProductKey):
-		self.add_query_param('ProductKey',ProductKey)
+	def set_GwDeviceName(self,GwDeviceName):
+		self.add_query_param('GwDeviceName',GwDeviceName)
+
+	def get_GwIotId(self):
+		return self.get_query_params().get('GwIotId')
+
+	def set_GwIotId(self,GwIotId):
+		self.add_query_param('GwIotId',GwIotId)
+
+	def get_DeviceListStr(self):
+		return self.get_query_params().get('DeviceListStr')
+
+	def set_DeviceListStr(self,DeviceListStr):
+		self.add_query_param('DeviceListStr',DeviceListStr)

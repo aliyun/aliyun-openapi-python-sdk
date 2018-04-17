@@ -29,6 +29,18 @@ class CreateProductRequest(RpcRequest):
 	def set_CatId(self,CatId):
 		self.add_query_param('CatId',CatId)
 
+	def get_NodeType(self):
+		return self.get_query_params().get('NodeType')
+
+	def set_NodeType(self,NodeType):
+		self.add_query_param('NodeType',NodeType)
+
+	def get_Id2(self):
+		return self.get_query_params().get('Id2')
+
+	def set_Id2(self,Id2):
+		self.add_query_param('Id2',Id2)
+
 	def get_Name(self):
 		return self.get_query_params().get('Name')
 
@@ -46,6 +58,12 @@ class CreateProductRequest(RpcRequest):
 
 	def set_SecurityPolicy(self,SecurityPolicy):
 		self.add_query_param('SecurityPolicy',SecurityPolicy)
+
+	def get_PayType(self):
+		return self.get_query_params().get('PayType')
+
+	def set_PayType(self,PayType):
+		self.add_query_param('PayType',PayType)
 
 	def get_Desc(self):
 		return self.get_query_params().get('Desc')
