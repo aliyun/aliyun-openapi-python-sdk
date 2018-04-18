@@ -65,11 +65,23 @@ class SetLoadBalancerHTTPListenerAttributeRequest(RpcRequest):
 	def set_HealthyThreshold(self,HealthyThreshold):
 		self.add_query_param('HealthyThreshold',HealthyThreshold)
 
+	def get_AclStatus(self):
+		return self.get_query_params().get('AclStatus')
+
+	def set_AclStatus(self,AclStatus):
+		self.add_query_param('AclStatus',AclStatus)
+
 	def get_Scheduler(self):
 		return self.get_query_params().get('Scheduler')
 
 	def set_Scheduler(self,Scheduler):
 		self.add_query_param('Scheduler',Scheduler)
+
+	def get_AclType(self):
+		return self.get_query_params().get('AclType')
+
+	def set_AclType(self,AclType):
+		self.add_query_param('AclType',AclType)
 
 	def get_HealthCheck(self):
 		return self.get_query_params().get('HealthCheck')
@@ -95,11 +107,23 @@ class SetLoadBalancerHTTPListenerAttributeRequest(RpcRequest):
 	def set_StickySessionType(self,StickySessionType):
 		self.add_query_param('StickySessionType',StickySessionType)
 
+	def get_VpcIds(self):
+		return self.get_query_params().get('VpcIds')
+
+	def set_VpcIds(self,VpcIds):
+		self.add_query_param('VpcIds',VpcIds)
+
 	def get_VServerGroupId(self):
 		return self.get_query_params().get('VServerGroupId')
 
 	def set_VServerGroupId(self,VServerGroupId):
 		self.add_query_param('VServerGroupId',VServerGroupId)
+
+	def get_AclId(self):
+		return self.get_query_params().get('AclId')
+
+	def set_AclId(self,AclId):
+		self.add_query_param('AclId',AclId)
 
 	def get_ListenerPort(self):
 		return self.get_query_params().get('ListenerPort')
