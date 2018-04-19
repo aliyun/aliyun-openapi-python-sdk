@@ -161,6 +161,12 @@ class CreateLoadBalancerHTTPSListenerRequest(RpcRequest):
 	def set_HealthCheckDomain(self,HealthCheckDomain):
 		self.add_query_param('HealthCheckDomain',HealthCheckDomain)
 
+	def get_RequestTimeout(self):
+		return self.get_query_params().get('RequestTimeout')
+
+	def set_RequestTimeout(self,RequestTimeout):
+		self.add_query_param('RequestTimeout',RequestTimeout)
+
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
 
@@ -196,6 +202,12 @@ class CreateLoadBalancerHTTPSListenerRequest(RpcRequest):
 
 	def set_Tags(self,Tags):
 		self.add_query_param('Tags',Tags)
+
+	def get_IdleTimeout(self):
+		return self.get_query_params().get('IdleTimeout')
+
+	def set_IdleTimeout(self,IdleTimeout):
+		self.add_query_param('IdleTimeout',IdleTimeout)
 
 	def get_LoadBalancerId(self):
 		return self.get_query_params().get('LoadBalancerId')
