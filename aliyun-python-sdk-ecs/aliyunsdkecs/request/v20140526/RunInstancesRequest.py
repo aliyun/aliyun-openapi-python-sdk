@@ -237,6 +237,12 @@ class RunInstancesRequest(RpcRequest):
 	def set_AutoReleaseTime(self,AutoReleaseTime):
 		self.add_query_param('AutoReleaseTime',AutoReleaseTime)
 
+	def get_DedicatedHostId(self):
+		return self.get_query_params().get('DedicatedHostId')
+
+	def set_DedicatedHostId(self,DedicatedHostId):
+		self.add_query_param('DedicatedHostId',DedicatedHostId)
+
 	def get_DataDisks(self):
 		return self.get_query_params().get('DataDisks')
 
