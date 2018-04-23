@@ -311,6 +311,12 @@ class CreateInstanceRequest(RpcRequest):
 	def set_RamRoleName(self,RamRoleName):
 		self.add_query_param('RamRoleName',RamRoleName)
 
+	def get_DedicatedHostId(self):
+		return self.get_query_params().get('DedicatedHostId')
+
+	def set_DedicatedHostId(self,DedicatedHostId):
+		self.add_query_param('DedicatedHostId',DedicatedHostId)
+
 	def get_ClusterId(self):
 		return self.get_query_params().get('ClusterId')
 
