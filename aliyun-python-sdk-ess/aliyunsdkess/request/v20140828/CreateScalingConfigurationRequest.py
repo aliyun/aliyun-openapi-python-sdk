@@ -65,6 +65,14 @@ class CreateScalingConfigurationRequest(RpcRequest):
 	def set_DataDisk2Device(self,DataDisk2Device):
 		self.add_query_param('DataDisk.2.Device',DataDisk2Device)
 
+	def get_InstanceTypes(self):
+		return self.get_query_params().get('InstanceTypes')
+
+	def set_InstanceTypes(self,InstanceTypes):
+		for i in range(len(InstanceTypes)):	
+			if InstanceTypes[i] is not None:
+				self.add_query_param('InstanceTypes.' + str(i + 1) , InstanceTypes[i]);
+
 	def get_IoOptimized(self):
 		return self.get_query_params().get('IoOptimized')
 
@@ -94,6 +102,14 @@ class CreateScalingConfigurationRequest(RpcRequest):
 
 	def set_KeyPairName(self,KeyPairName):
 		self.add_query_param('KeyPairName',KeyPairName)
+
+	def get_SpotPriceLimits(self):
+		return self.get_query_params().get('SpotPriceLimits')
+
+	def set_SpotPriceLimits(self,SpotPriceLimits):
+		for i in range(len(SpotPriceLimits)):	
+			if SpotPriceLimits[i] is not None:
+				self.add_query_param('SpotPriceLimit.' + str(i + 1) , SpotPriceLimits[i]);
 
 	def get_SystemDiskCategory(self):
 		return self.get_query_params().get('SystemDisk.Category')
@@ -197,6 +213,12 @@ class CreateScalingConfigurationRequest(RpcRequest):
 	def set_DataDisk2DeleteWithInstance(self,DataDisk2DeleteWithInstance):
 		self.add_query_param('DataDisk.2.DeleteWithInstance',DataDisk2DeleteWithInstance)
 
+	def get_SpotStrategy(self):
+		return self.get_query_params().get('SpotStrategy')
+
+	def set_SpotStrategy(self,SpotStrategy):
+		self.add_query_param('SpotStrategy',SpotStrategy)
+
 	def get_DataDisk1Category(self):
 		return self.get_query_params().get('DataDisk.1.Category')
 
@@ -214,6 +236,12 @@ class CreateScalingConfigurationRequest(RpcRequest):
 
 	def set_LoadBalancerWeight(self,LoadBalancerWeight):
 		self.add_query_param('LoadBalancerWeight',LoadBalancerWeight)
+
+	def get_InstanceName(self):
+		return self.get_query_params().get('InstanceName')
+
+	def set_InstanceName(self,InstanceName):
+		self.add_query_param('InstanceName',InstanceName)
 
 	def get_SystemDiskSize(self):
 		return self.get_query_params().get('SystemDisk.Size')
