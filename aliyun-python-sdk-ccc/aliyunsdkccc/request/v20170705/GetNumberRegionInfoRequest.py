@@ -18,21 +18,19 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class RemoveUsersRequest(RpcRequest):
+class GetNumberRegionInfoRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'CCC', '2017-07-05', 'RemoveUsers','ccc')
+		RpcRequest.__init__(self, 'CCC', '2017-07-05', 'GetNumberRegionInfo','ccc')
+
+	def get_Number(self):
+		return self.get_query_params().get('Number')
+
+	def set_Number(self,Number):
+		self.add_query_param('Number',Number)
 
 	def get_InstanceId(self):
 		return self.get_query_params().get('InstanceId')
 
 	def set_InstanceId(self,InstanceId):
 		self.add_query_param('InstanceId',InstanceId)
-
-	def get_UserIds(self):
-		return self.get_query_params().get('UserIds')
-
-	def set_UserIds(self,UserIds):
-		for i in range(len(UserIds)):	
-			if UserIds[i] is not None:
-				self.add_query_param('UserId.' + str(i + 1) , UserIds[i]);

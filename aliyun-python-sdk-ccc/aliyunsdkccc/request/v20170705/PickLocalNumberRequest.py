@@ -18,10 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class RemoveUsersRequest(RpcRequest):
+class PickLocalNumberRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'CCC', '2017-07-05', 'RemoveUsers','ccc')
+		RpcRequest.__init__(self, 'CCC', '2017-07-05', 'PickLocalNumber','ccc')
 
 	def get_InstanceId(self):
 		return self.get_query_params().get('InstanceId')
@@ -29,10 +29,16 @@ class RemoveUsersRequest(RpcRequest):
 	def set_InstanceId(self,InstanceId):
 		self.add_query_param('InstanceId',InstanceId)
 
-	def get_UserIds(self):
-		return self.get_query_params().get('UserIds')
+	def get_CandidateNumbers(self):
+		return self.get_query_params().get('CandidateNumbers')
 
-	def set_UserIds(self,UserIds):
-		for i in range(len(UserIds)):	
-			if UserIds[i] is not None:
-				self.add_query_param('UserId.' + str(i + 1) , UserIds[i]);
+	def set_CandidateNumbers(self,CandidateNumbers):
+		for i in range(len(CandidateNumbers)):	
+			if CandidateNumbers[i] is not None:
+				self.add_query_param('CandidateNumber.' + str(i + 1) , CandidateNumbers[i]);
+
+	def get_CalleeNumber(self):
+		return self.get_query_params().get('CalleeNumber')
+
+	def set_CalleeNumber(self,CalleeNumber):
+		self.add_query_param('CalleeNumber',CalleeNumber)

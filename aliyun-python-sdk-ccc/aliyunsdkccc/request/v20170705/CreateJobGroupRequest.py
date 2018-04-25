@@ -18,18 +18,18 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class ModifySkillGroupRequest(RpcRequest):
+class CreateJobGroupRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'CCC', '2017-07-05', 'ModifySkillGroup','ccc')
+		RpcRequest.__init__(self, 'CCC', '2017-07-05', 'CreateJobGroup','ccc')
 
-	def get_SkillLevels(self):
-		return self.get_query_params().get('SkillLevels')
+	def get_CallingNumbers(self):
+		return self.get_query_params().get('CallingNumbers')
 
-	def set_SkillLevels(self,SkillLevels):
-		for i in range(len(SkillLevels)):	
-			if SkillLevels[i] is not None:
-				self.add_query_param('SkillLevel.' + str(i + 1) , SkillLevels[i]);
+	def set_CallingNumbers(self,CallingNumbers):
+		for i in range(len(CallingNumbers)):	
+			if CallingNumbers[i] is not None:
+				self.add_query_param('CallingNumber.' + str(i + 1) , CallingNumbers[i]);
 
 	def get_InstanceId(self):
 		return self.get_query_params().get('InstanceId')
@@ -37,19 +37,11 @@ class ModifySkillGroupRequest(RpcRequest):
 	def set_InstanceId(self,InstanceId):
 		self.add_query_param('InstanceId',InstanceId)
 
-	def get_OutboundPhoneNumberIds(self):
-		return self.get_query_params().get('OutboundPhoneNumberIds')
+	def get_StrategyJson(self):
+		return self.get_query_params().get('StrategyJson')
 
-	def set_OutboundPhoneNumberIds(self,OutboundPhoneNumberIds):
-		for i in range(len(OutboundPhoneNumberIds)):	
-			if OutboundPhoneNumberIds[i] is not None:
-				self.add_query_param('OutboundPhoneNumberId.' + str(i + 1) , OutboundPhoneNumberIds[i]);
-
-	def get_SkillGroupId(self):
-		return self.get_query_params().get('SkillGroupId')
-
-	def set_SkillGroupId(self,SkillGroupId):
-		self.add_query_param('SkillGroupId',SkillGroupId)
+	def set_StrategyJson(self,StrategyJson):
+		self.add_query_param('StrategyJson',StrategyJson)
 
 	def get_Name(self):
 		return self.get_query_params().get('Name')
@@ -63,10 +55,8 @@ class ModifySkillGroupRequest(RpcRequest):
 	def set_Description(self,Description):
 		self.add_query_param('Description',Description)
 
-	def get_UserIds(self):
-		return self.get_query_params().get('UserIds')
+	def get_ScenarioId(self):
+		return self.get_query_params().get('ScenarioId')
 
-	def set_UserIds(self,UserIds):
-		for i in range(len(UserIds)):	
-			if UserIds[i] is not None:
-				self.add_query_param('UserId.' + str(i + 1) , UserIds[i]);
+	def set_ScenarioId(self,ScenarioId):
+		self.add_query_param('ScenarioId',ScenarioId)
