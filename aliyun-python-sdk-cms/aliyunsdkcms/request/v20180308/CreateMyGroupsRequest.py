@@ -29,17 +29,23 @@ class CreateMyGroupsRequest(RpcRequest):
 	def set_ContactGroups(self,ContactGroups):
 		self.add_query_param('ContactGroups',ContactGroups)
 
-	def get_ServiceId(self):
-		return self.get_query_params().get('ServiceId')
+	def get_Options(self):
+		return self.get_query_params().get('Options')
 
-	def set_ServiceId(self,ServiceId):
-		self.add_query_param('ServiceId',ServiceId)
+	def set_Options(self,Options):
+		self.add_query_param('Options',Options)
 
 	def get_Type(self):
 		return self.get_query_params().get('Type')
 
 	def set_Type(self,Type):
 		self.add_query_param('Type',Type)
+
+	def get_ServiceId(self):
+		return self.get_query_params().get('ServiceId')
+
+	def set_ServiceId(self,ServiceId):
+		self.add_query_param('ServiceId',ServiceId)
 
 	def get_GroupName(self):
 		return self.get_query_params().get('GroupName')
