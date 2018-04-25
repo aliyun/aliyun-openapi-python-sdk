@@ -18,10 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class RemoveUsersRequest(RpcRequest):
+class DownloadRecordingRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'CCC', '2017-07-05', 'RemoveUsers','ccc')
+		RpcRequest.__init__(self, 'CCC', '2017-07-05', 'DownloadRecording','ccc')
 
 	def get_InstanceId(self):
 		return self.get_query_params().get('InstanceId')
@@ -29,10 +29,14 @@ class RemoveUsersRequest(RpcRequest):
 	def set_InstanceId(self,InstanceId):
 		self.add_query_param('InstanceId',InstanceId)
 
-	def get_UserIds(self):
-		return self.get_query_params().get('UserIds')
+	def get_FileName(self):
+		return self.get_query_params().get('FileName')
 
-	def set_UserIds(self,UserIds):
-		for i in range(len(UserIds)):	
-			if UserIds[i] is not None:
-				self.add_query_param('UserId.' + str(i + 1) , UserIds[i]);
+	def set_FileName(self,FileName):
+		self.add_query_param('FileName',FileName)
+
+	def get_Channel(self):
+		return self.get_query_params().get('Channel')
+
+	def set_Channel(self,Channel):
+		self.add_query_param('Channel',Channel)
