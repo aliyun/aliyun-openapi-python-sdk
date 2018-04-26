@@ -18,31 +18,25 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class QueryDomainGroupListRequest(RpcRequest):
+class SaveBatchDomainRemarkRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Domain', '2018-01-29', 'QueryDomainGroupList')
+		RpcRequest.__init__(self, 'Domain', '2018-01-29', 'SaveBatchDomainRemark')
 
-	def get_UserClientIp(self):
-		return self.get_query_params().get('UserClientIp')
+	def get_InstanceIds(self):
+		return self.get_query_params().get('InstanceIds')
 
-	def set_UserClientIp(self,UserClientIp):
-		self.add_query_param('UserClientIp',UserClientIp)
+	def set_InstanceIds(self,InstanceIds):
+		self.add_query_param('InstanceIds',InstanceIds)
 
-	def get_DomainGroupName(self):
-		return self.get_query_params().get('DomainGroupName')
+	def get_Remark(self):
+		return self.get_query_params().get('Remark')
 
-	def set_DomainGroupName(self,DomainGroupName):
-		self.add_query_param('DomainGroupName',DomainGroupName)
+	def set_Remark(self,Remark):
+		self.add_query_param('Remark',Remark)
 
 	def get_Lang(self):
 		return self.get_query_params().get('Lang')
 
 	def set_Lang(self,Lang):
 		self.add_query_param('Lang',Lang)
-
-	def get_ShowDeletingGroup(self):
-		return self.get_query_params().get('ShowDeletingGroup')
-
-	def set_ShowDeletingGroup(self,ShowDeletingGroup):
-		self.add_query_param('ShowDeletingGroup',ShowDeletingGroup)

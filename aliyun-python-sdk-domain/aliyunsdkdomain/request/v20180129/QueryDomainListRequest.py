@@ -65,6 +65,12 @@ class QueryDomainListRequest(RpcRequest):
 	def set_OrderByType(self,OrderByType):
 		self.add_query_param('OrderByType',OrderByType)
 
+	def get_DomainGroupId(self):
+		return self.get_query_params().get('DomainGroupId')
+
+	def set_DomainGroupId(self,DomainGroupId):
+		self.add_query_param('DomainGroupId',DomainGroupId)
+
 	def get_EndRegistrationDate(self):
 		return self.get_query_params().get('EndRegistrationDate')
 
