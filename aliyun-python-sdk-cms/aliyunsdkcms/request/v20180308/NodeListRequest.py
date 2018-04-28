@@ -35,6 +35,12 @@ class NodeListRequest(RpcRequest):
 	def set_InstanceIds(self,InstanceIds):
 		self.add_query_param('InstanceIds',InstanceIds)
 
+	def get_InstanceRegionId(self):
+		return self.get_query_params().get('InstanceRegionId')
+
+	def set_InstanceRegionId(self,InstanceRegionId):
+		self.add_query_param('InstanceRegionId',InstanceRegionId)
+
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
 
