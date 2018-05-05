@@ -37,7 +37,7 @@ You can install the Alibaba Cloud Python SDK using the following two methods. Re
 	pip install aliyun-python-sdk-ecs
 	# Install the RDS management library
 	pip install aliyun-python-sdk-rds
-```
+    ```
 >**Note:** If you are using Python 3.x, run the following command to install the core library:
 
 	>`pip install aliyun-python-sdk-core-v3`
@@ -59,13 +59,13 @@ You can install the Alibaba Cloud Python SDK using the following two methods. Re
 
 1. Import the required modules as follows:
 
-	```python
-  from aliyunsdkcore.client import AcsClient
-  from aliyunsdkcore.acs_exception.exceptions import ClientException
-  from aliyunsdkcore.acs_exception.exceptions import ServerException
-  from aliyunsdkecs.request.v20140526 import DescribeInstancesRequest
-  from aliyunsdkecs.request.v20140526 import StopInstanceRequest
-```
+    ```python
+    from aliyunsdkcore.client import AcsClient
+    from aliyunsdkcore.acs_exception.exceptions import ClientException
+    from aliyunsdkcore.acs_exception.exceptions import ServerException
+    from aliyunsdkecs.request.v20140526 import DescribeInstancesRequest
+    from aliyunsdkecs.request.v20140526 import StopInstanceRequest
+    ```
 2. Initialize the `AcsClient` instance:
 
 	```python
