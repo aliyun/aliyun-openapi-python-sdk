@@ -9,7 +9,7 @@ This document introduces how to obtain and call Alibaba Cloud Python SDK.
 
 - To use Alibaba Cloud Python SDK, you must have an Alibaba Cloud account as well as an AccessKey.
 
-	The AccessKey is required when initializing `AcsClient`. You can create an AccessKey in the Alibaba Cloud console. For more information, see [Create an AccessKey](~~53045~~).
+	The AccessKey is required when initializing `AcsClient`. You can create an AccessKey in the Alibaba Cloud console. For more information, see [Create an AccessKey](https://usercenter.console.aliyun.com/?spm=5176.doc52740.2.3.QKZk8w#/manage/ak).
 
 	>**Note:** To increase the security of your account, we recommend that you use the AccessKey of the RAM user to access Alibaba Cloud services.
 
@@ -22,7 +22,7 @@ This document introduces how to obtain and call Alibaba Cloud Python SDK.
 
 Alibaba Cloud Python SDK supports Python 2.6.x, 2.7.x, and Python 3.x. Run ``python --version`` to check your version of Python.
 
-You can install the Alibaba Cloud Python SDK using the following two methods. Regardless of which method and cloud service are used, the core library `aliyun-python-sdk-core` must be installed. You can download the product SDKs from [Python SDK resource list](~~62188~~).
+You can install the Alibaba Cloud Python SDK using the following two methods. Regardless of which method and cloud service are used, the core library `aliyun-python-sdk-core` must be installed.
 
 - **Install with pip**
 
