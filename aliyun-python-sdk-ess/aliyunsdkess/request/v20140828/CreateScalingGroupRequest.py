@@ -23,6 +23,12 @@ class CreateScalingGroupRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ess', '2014-08-28', 'CreateScalingGroup','ess')
 
+	def get_MultiAZPolicy(self):
+		return self.get_query_params().get('MultiAZPolicy')
+
+	def set_MultiAZPolicy(self,MultiAZPolicy):
+		self.add_query_param('MultiAZPolicy',MultiAZPolicy)
+
 	def get_DBInstanceIds(self):
 		return self.get_query_params().get('DBInstanceIds')
 
@@ -47,13 +53,13 @@ class CreateScalingGroupRequest(RpcRequest):
 	def set_ScalingGroupName(self,ScalingGroupName):
 		self.add_query_param('ScalingGroupName',ScalingGroupName)
 
-	def get_VSwitchIds(self):
-		return self.get_query_params().get('VSwitchIds')
+	def get_VSwitchIdss(self):
+		return self.get_query_params().get('VSwitchIdss')
 
-	def set_VSwitchIds(self,VSwitchIds):
-		for i in range(len(VSwitchIds)):	
-			if VSwitchIds[i] is not None:
-				self.add_query_param('VSwitchIds.' + str(i + 1) , VSwitchIds[i]);
+	def set_VSwitchIdss(self,VSwitchIdss):
+		for i in range(len(VSwitchIdss)):	
+			if VSwitchIdss[i] is not None:
+				self.add_query_param('VSwitchIds.' + str(i + 1) , VSwitchIdss[i]);
 
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
