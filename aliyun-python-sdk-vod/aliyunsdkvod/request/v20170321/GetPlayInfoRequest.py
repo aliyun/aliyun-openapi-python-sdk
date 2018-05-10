@@ -83,6 +83,12 @@ class GetPlayInfoRequest(RpcRequest):
 	def set_ReAuthInfo(self,ReAuthInfo):
 		self.add_query_param('ReAuthInfo',ReAuthInfo)
 
+	def get_OutputType(self):
+		return self.get_query_params().get('OutputType')
+
+	def set_OutputType(self,OutputType):
+		self.add_query_param('OutputType',OutputType)
+
 	def get_Definition(self):
 		return self.get_query_params().get('Definition')
 
