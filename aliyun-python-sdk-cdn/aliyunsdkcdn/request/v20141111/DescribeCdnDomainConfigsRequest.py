@@ -18,16 +18,16 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class SetHttpHeaderConfigRequest(RpcRequest):
+class DescribeCdnDomainConfigsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'SetHttpHeaderConfig')
+		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'DescribeCdnDomainConfigs')
 
-	def get_HeaderValue(self):
-		return self.get_query_params().get('HeaderValue')
+	def get_FunctionNames(self):
+		return self.get_query_params().get('FunctionNames')
 
-	def set_HeaderValue(self,HeaderValue):
-		self.add_query_param('HeaderValue',HeaderValue)
+	def set_FunctionNames(self,FunctionNames):
+		self.add_query_param('FunctionNames',FunctionNames)
 
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
@@ -35,23 +35,11 @@ class SetHttpHeaderConfigRequest(RpcRequest):
 	def set_SecurityToken(self,SecurityToken):
 		self.add_query_param('SecurityToken',SecurityToken)
 
-	def get_ConfigId(self):
-		return self.get_query_params().get('ConfigId')
-
-	def set_ConfigId(self,ConfigId):
-		self.add_query_param('ConfigId',ConfigId)
-
 	def get_DomainName(self):
 		return self.get_query_params().get('DomainName')
 
 	def set_DomainName(self,DomainName):
 		self.add_query_param('DomainName',DomainName)
-
-	def get_HeaderKey(self):
-		return self.get_query_params().get('HeaderKey')
-
-	def set_HeaderKey(self,HeaderKey):
-		self.add_query_param('HeaderKey',HeaderKey)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
