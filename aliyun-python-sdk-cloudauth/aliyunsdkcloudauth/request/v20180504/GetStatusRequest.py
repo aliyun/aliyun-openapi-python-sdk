@@ -18,10 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class GetMaterialsRequest(RpcRequest):
+class GetStatusRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cloudauth', '2017-11-17', 'GetMaterials','cloudauth')
+		RpcRequest.__init__(self, 'Cloudauth', '2018-05-04', 'GetStatus','cloudauth')
 		self.set_protocol_type('https');
 
 	def get_ResourceOwnerId(self):
@@ -35,6 +35,12 @@ class GetMaterialsRequest(RpcRequest):
 
 	def set_Biz(self,Biz):
 		self.add_query_param('Biz',Biz)
+
+	def get_SourceIp(self):
+		return self.get_query_params().get('SourceIp')
+
+	def set_SourceIp(self,SourceIp):
+		self.add_query_param('SourceIp',SourceIp)
 
 	def get_TicketId(self):
 		return self.get_query_params().get('TicketId')

@@ -18,17 +18,11 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class CompareFacesRequest(RpcRequest):
+class GetMaterialsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cloudauth', '2017-11-17', 'CompareFaces','cloudauth')
+		RpcRequest.__init__(self, 'Cloudauth', '2018-05-04', 'GetMaterials','cloudauth')
 		self.set_protocol_type('https');
-
-	def get_SourceImageType(self):
-		return self.get_query_params().get('SourceImageType')
-
-	def set_SourceImageType(self,SourceImageType):
-		self.add_query_param('SourceImageType',SourceImageType)
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -36,20 +30,20 @@ class CompareFacesRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_TargetImageType(self):
-		return self.get_query_params().get('TargetImageType')
+	def get_Biz(self):
+		return self.get_query_params().get('Biz')
 
-	def set_TargetImageType(self,TargetImageType):
-		self.add_query_param('TargetImageType',TargetImageType)
+	def set_Biz(self,Biz):
+		self.add_query_param('Biz',Biz)
 
-	def get_SourceImageValue(self):
-		return self.get_query_params().get('SourceImageValue')
+	def get_SourceIp(self):
+		return self.get_query_params().get('SourceIp')
 
-	def set_SourceImageValue(self,SourceImageValue):
-		self.add_query_param('SourceImageValue',SourceImageValue)
+	def set_SourceIp(self,SourceIp):
+		self.add_query_param('SourceIp',SourceIp)
 
-	def get_TargetImageValue(self):
-		return self.get_query_params().get('TargetImageValue')
+	def get_TicketId(self):
+		return self.get_query_params().get('TicketId')
 
-	def set_TargetImageValue(self,TargetImageValue):
-		self.add_query_param('TargetImageValue',TargetImageValue)
+	def set_TicketId(self,TicketId):
+		self.add_query_param('TicketId',TicketId)
