@@ -77,6 +77,18 @@ class CreateDBInstanceRequest(RpcRequest):
 	def set_DBInstanceDescription(self,DBInstanceDescription):
 		self.add_query_param('DBInstanceDescription',DBInstanceDescription)
 
+	def get_DBInstanceStorageType(self):
+		return self.get_query_params().get('DBInstanceStorageType')
+
+	def set_DBInstanceStorageType(self,DBInstanceStorageType):
+		self.add_query_param('DBInstanceStorageType',DBInstanceStorageType)
+
+	def get_BusinessInfo(self):
+		return self.get_query_params().get('BusinessInfo')
+
+	def set_BusinessInfo(self,BusinessInfo):
+		self.add_query_param('BusinessInfo',BusinessInfo)
+
 	def get_DBInstanceNetType(self):
 		return self.get_query_params().get('DBInstanceNetType')
 
