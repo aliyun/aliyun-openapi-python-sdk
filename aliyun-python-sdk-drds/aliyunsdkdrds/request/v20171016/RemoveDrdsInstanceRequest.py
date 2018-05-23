@@ -18,25 +18,13 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class CancelDDLTaskRequest(RpcRequest):
+class RemoveDrdsInstanceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Drds', '2015-04-13', 'CancelDDLTask')
+		RpcRequest.__init__(self, 'Drds', '2017-10-16', 'RemoveDrdsInstance')
 
 	def get_DrdsInstanceId(self):
 		return self.get_query_params().get('DrdsInstanceId')
 
 	def set_DrdsInstanceId(self,DrdsInstanceId):
 		self.add_query_param('DrdsInstanceId',DrdsInstanceId)
-
-	def get_DbName(self):
-		return self.get_query_params().get('DbName')
-
-	def set_DbName(self,DbName):
-		self.add_query_param('DbName',DbName)
-
-	def get_TaskId(self):
-		return self.get_query_params().get('TaskId')
-
-	def set_TaskId(self,TaskId):
-		self.add_query_param('TaskId',TaskId)

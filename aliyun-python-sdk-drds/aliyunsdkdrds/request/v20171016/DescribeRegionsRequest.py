@@ -18,19 +18,7 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class CreateDrdsInstanceRequest(RpcRequest):
+class DescribeRegionsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Drds', '2015-04-13', 'CreateDrdsInstance')
-
-	def get_Description(self):
-		return self.get_query_params().get('Description')
-
-	def set_Description(self,Description):
-		self.add_query_param('Description',Description)
-
-	def get_Type(self):
-		return self.get_query_params().get('Type')
-
-	def set_Type(self,Type):
-		self.add_query_param('Type',Type)
+		RpcRequest.__init__(self, 'Drds', '2017-10-16', 'DescribeRegions')

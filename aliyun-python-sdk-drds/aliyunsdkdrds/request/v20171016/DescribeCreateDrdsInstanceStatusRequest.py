@@ -18,10 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class DescribeDrdsInstanceRequest(RpcRequest):
+class DescribeCreateDrdsInstanceStatusRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Drds', '2015-04-13', 'DescribeDrdsInstance')
+		RpcRequest.__init__(self, 'Drds', '2017-10-16', 'DescribeCreateDrdsInstanceStatus')
 
 	def get_DrdsInstanceId(self):
 		return self.get_query_params().get('DrdsInstanceId')

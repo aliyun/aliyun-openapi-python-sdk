@@ -18,19 +18,25 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class ListUnCompleteTasksRequest(RpcRequest):
+class QueryInstanceInfoByConnRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Drds', '2015-04-13', 'ListUnCompleteTasks')
+		RpcRequest.__init__(self, 'Drds', '2017-10-16', 'QueryInstanceInfoByConn')
 
-	def get_DrdsInstanceId(self):
-		return self.get_query_params().get('DrdsInstanceId')
+	def get_Port(self):
+		return self.get_query_params().get('Port')
 
-	def set_DrdsInstanceId(self,DrdsInstanceId):
-		self.add_query_param('DrdsInstanceId',DrdsInstanceId)
+	def set_Port(self,Port):
+		self.add_query_param('Port',Port)
 
-	def get_DbName(self):
-		return self.get_query_params().get('DbName')
+	def get_Host(self):
+		return self.get_query_params().get('Host')
 
-	def set_DbName(self,DbName):
-		self.add_query_param('DbName',DbName)
+	def set_Host(self,Host):
+		self.add_query_param('Host',Host)
+
+	def get_UserName(self):
+		return self.get_query_params().get('UserName')
+
+	def set_UserName(self,UserName):
+		self.add_query_param('UserName',UserName)
