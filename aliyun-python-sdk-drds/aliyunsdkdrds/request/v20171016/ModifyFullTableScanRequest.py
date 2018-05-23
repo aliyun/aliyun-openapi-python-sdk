@@ -18,16 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class DropTablesRequest(RpcRequest):
+class ModifyFullTableScanRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Drds', '2015-04-13', 'DropTables')
-
-	def get_DrdsInstanceId(self):
-		return self.get_query_params().get('DrdsInstanceId')
-
-	def set_DrdsInstanceId(self,DrdsInstanceId):
-		self.add_query_param('DrdsInstanceId',DrdsInstanceId)
+		RpcRequest.__init__(self, 'Drds', '2017-10-16', 'ModifyFullTableScan')
 
 	def get_DbName(self):
 		return self.get_query_params().get('DbName')
@@ -35,8 +29,20 @@ class DropTablesRequest(RpcRequest):
 	def set_DbName(self,DbName):
 		self.add_query_param('DbName',DbName)
 
-	def get_Tables(self):
-		return self.get_query_params().get('Tables')
+	def get_TableNames(self):
+		return self.get_query_params().get('TableNames')
 
-	def set_Tables(self,Tables):
-		self.add_query_param('Tables',Tables)
+	def set_TableNames(self,TableNames):
+		self.add_query_param('TableNames',TableNames)
+
+	def get_DrdsInstanceId(self):
+		return self.get_query_params().get('DrdsInstanceId')
+
+	def set_DrdsInstanceId(self,DrdsInstanceId):
+		self.add_query_param('DrdsInstanceId',DrdsInstanceId)
+
+	def get_FullTableScan(self):
+		return self.get_query_params().get('FullTableScan')
+
+	def set_FullTableScan(self,FullTableScan):
+		self.add_query_param('FullTableScan',FullTableScan)

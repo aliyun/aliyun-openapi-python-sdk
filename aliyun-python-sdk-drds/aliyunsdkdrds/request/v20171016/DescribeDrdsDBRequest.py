@@ -18,16 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class DescribeDDLTaskRequest(RpcRequest):
+class DescribeDrdsDBRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Drds', '2015-04-13', 'DescribeDDLTask')
-
-	def get_DrdsInstanceId(self):
-		return self.get_query_params().get('DrdsInstanceId')
-
-	def set_DrdsInstanceId(self,DrdsInstanceId):
-		self.add_query_param('DrdsInstanceId',DrdsInstanceId)
+		RpcRequest.__init__(self, 'Drds', '2017-10-16', 'DescribeDrdsDB')
 
 	def get_DbName(self):
 		return self.get_query_params().get('DbName')
@@ -35,8 +29,8 @@ class DescribeDDLTaskRequest(RpcRequest):
 	def set_DbName(self,DbName):
 		self.add_query_param('DbName',DbName)
 
-	def get_TaskId(self):
-		return self.get_query_params().get('TaskId')
+	def get_DrdsInstanceId(self):
+		return self.get_query_params().get('DrdsInstanceId')
 
-	def set_TaskId(self,TaskId):
-		self.add_query_param('TaskId',TaskId)
+	def set_DrdsInstanceId(self,DrdsInstanceId):
+		self.add_query_param('DrdsInstanceId',DrdsInstanceId)

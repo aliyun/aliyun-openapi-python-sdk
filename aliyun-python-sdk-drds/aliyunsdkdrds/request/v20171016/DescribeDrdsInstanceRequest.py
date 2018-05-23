@@ -18,31 +18,13 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class DropIndexesRequest(RpcRequest):
+class DescribeDrdsInstanceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Drds', '2015-04-13', 'DropIndexes')
+		RpcRequest.__init__(self, 'Drds', '2017-10-16', 'DescribeDrdsInstance')
 
 	def get_DrdsInstanceId(self):
 		return self.get_query_params().get('DrdsInstanceId')
 
 	def set_DrdsInstanceId(self,DrdsInstanceId):
 		self.add_query_param('DrdsInstanceId',DrdsInstanceId)
-
-	def get_DbName(self):
-		return self.get_query_params().get('DbName')
-
-	def set_DbName(self,DbName):
-		self.add_query_param('DbName',DbName)
-
-	def get_Table(self):
-		return self.get_query_params().get('Table')
-
-	def set_Table(self,Table):
-		self.add_query_param('Table',Table)
-
-	def get_Indexes(self):
-		return self.get_query_params().get('Indexes')
-
-	def set_Indexes(self,Indexes):
-		self.add_query_param('Indexes',Indexes)

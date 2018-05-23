@@ -18,16 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class ModifyDrdsDBPasswdRequest(RpcRequest):
+class DescribeReadOnlyAccountRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Drds', '2015-04-13', 'ModifyDrdsDBPasswd')
-
-	def get_DrdsInstanceId(self):
-		return self.get_query_params().get('DrdsInstanceId')
-
-	def set_DrdsInstanceId(self,DrdsInstanceId):
-		self.add_query_param('DrdsInstanceId',DrdsInstanceId)
+		RpcRequest.__init__(self, 'Drds', '2017-10-16', 'DescribeReadOnlyAccount')
 
 	def get_DbName(self):
 		return self.get_query_params().get('DbName')
@@ -35,8 +29,8 @@ class ModifyDrdsDBPasswdRequest(RpcRequest):
 	def set_DbName(self,DbName):
 		self.add_query_param('DbName',DbName)
 
-	def get_NewPasswd(self):
-		return self.get_query_params().get('NewPasswd')
+	def get_DrdsInstanceId(self):
+		return self.get_query_params().get('DrdsInstanceId')
 
-	def set_NewPasswd(self,NewPasswd):
-		self.add_query_param('NewPasswd',NewPasswd)
+	def set_DrdsInstanceId(self,DrdsInstanceId):
+		self.add_query_param('DrdsInstanceId',DrdsInstanceId)

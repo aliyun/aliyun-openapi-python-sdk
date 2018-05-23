@@ -18,13 +18,19 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class DescribeDrdsInstancesRequest(RpcRequest):
+class DescribeShardDBsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Drds', '2015-04-13', 'DescribeDrdsInstances')
+		RpcRequest.__init__(self, 'Drds', '2017-10-16', 'DescribeShardDBs')
 
-	def get_Type(self):
-		return self.get_query_params().get('Type')
+	def get_DbName(self):
+		return self.get_query_params().get('DbName')
 
-	def set_Type(self,Type):
-		self.add_query_param('Type',Type)
+	def set_DbName(self,DbName):
+		self.add_query_param('DbName',DbName)
+
+	def get_DrdsInstanceId(self):
+		return self.get_query_params().get('DrdsInstanceId')
+
+	def set_DrdsInstanceId(self,DrdsInstanceId):
+		self.add_query_param('DrdsInstanceId',DrdsInstanceId)
