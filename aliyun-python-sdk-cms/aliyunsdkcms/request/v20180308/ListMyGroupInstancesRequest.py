@@ -29,6 +29,12 @@ class ListMyGroupInstancesRequest(RpcRequest):
 	def set_Total(self,Total):
 		self.add_query_param('Total',Total)
 
+	def get_InstanceIds(self):
+		return self.get_query_params().get('InstanceIds')
+
+	def set_InstanceIds(self,InstanceIds):
+		self.add_query_param('InstanceIds',InstanceIds)
+
 	def get_GroupId(self):
 		return self.get_query_params().get('GroupId')
 
@@ -46,6 +52,12 @@ class ListMyGroupInstancesRequest(RpcRequest):
 
 	def set_Category(self,Category):
 		self.add_query_param('Category',Category)
+
+	def get_Keyword(self):
+		return self.get_query_params().get('Keyword')
+
+	def set_Keyword(self,Keyword):
+		self.add_query_param('Keyword',Keyword)
 
 	def get_PageNumber(self):
 		return self.get_query_params().get('PageNumber')

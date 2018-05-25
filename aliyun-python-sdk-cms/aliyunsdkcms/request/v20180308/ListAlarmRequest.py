@@ -29,12 +29,6 @@ class ListAlarmRequest(RpcRequest):
 	def set_IsEnable(self,IsEnable):
 		self.add_query_param('IsEnable',IsEnable)
 
-	def get_callby_cms_owner(self):
-		return self.get_query_params().get('callby_cms_owner')
-
-	def set_callby_cms_owner(self,callby_cms_owner):
-		self.add_query_param('callby_cms_owner',callby_cms_owner)
-
 	def get_Name(self):
 		return self.get_query_params().get('Name')
 
