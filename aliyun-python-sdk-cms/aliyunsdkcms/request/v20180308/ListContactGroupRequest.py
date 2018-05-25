@@ -23,12 +23,6 @@ class ListContactGroupRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Cms', '2018-03-08', 'ListContactGroup','cms')
 
-	def get_callby_cms_owner(self):
-		return self.get_query_params().get('callby_cms_owner')
-
-	def set_callby_cms_owner(self,callby_cms_owner):
-		self.add_query_param('callby_cms_owner',callby_cms_owner)
-
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
 
