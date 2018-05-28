@@ -18,10 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class SwitchTempInstanceRequest(RpcRequest):
+class DescribeInstancesByExpireTimeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'R-kvstore', '2015-01-01', 'SwitchTempInstance','redisa')
+		RpcRequest.__init__(self, 'R-kvstore', '2015-01-01', 'DescribeInstancesByExpireTime','redisa')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -46,3 +46,39 @@ class SwitchTempInstanceRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_PageNumber(self):
+		return self.get_query_params().get('PageNumber')
+
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)
+
+	def get_SecurityToken(self):
+		return self.get_query_params().get('SecurityToken')
+
+	def set_SecurityToken(self,SecurityToken):
+		self.add_query_param('SecurityToken',SecurityToken)
+
+	def get_HasExpiredRes(self):
+		return self.get_query_params().get('HasExpiredRes')
+
+	def set_HasExpiredRes(self,HasExpiredRes):
+		self.add_query_param('HasExpiredRes',HasExpiredRes)
+
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
+
+	def get_InstanceType(self):
+		return self.get_query_params().get('InstanceType')
+
+	def set_InstanceType(self,InstanceType):
+		self.add_query_param('InstanceType',InstanceType)
+
+	def get_ExpirePeriod(self):
+		return self.get_query_params().get('ExpirePeriod')
+
+	def set_ExpirePeriod(self,ExpirePeriod):
+		self.add_query_param('ExpirePeriod',ExpirePeriod)
