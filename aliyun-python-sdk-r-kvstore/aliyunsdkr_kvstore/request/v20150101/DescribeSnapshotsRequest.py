@@ -29,12 +29,6 @@ class DescribeSnapshotsRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_InstanceId(self):
-		return self.get_domain_params().get('InstanceId')
-
-	def set_InstanceId(self,InstanceId):
-		self.add_domain_param('InstanceId',InstanceId)
-
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -46,12 +40,6 @@ class DescribeSnapshotsRequest(RpcRequest):
 
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
-
-	def get_SnapshotIds(self):
-		return self.get_domain_params().get('SnapshotIds')
-
-	def set_SnapshotIds(self,SnapshotIds):
-		self.add_domain_param('SnapshotIds',SnapshotIds)
 
 	def get_EndTime(self):
 		return self.get_query_params().get('EndTime')

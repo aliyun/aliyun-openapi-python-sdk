@@ -47,6 +47,12 @@ class CreateInstanceRequest(RpcRequest):
 	def set_NetworkType(self,NetworkType):
 		self.add_query_param('NetworkType',NetworkType)
 
+	def get_EngineVersion(self):
+		return self.get_query_params().get('EngineVersion')
+
+	def set_EngineVersion(self,EngineVersion):
+		self.add_query_param('EngineVersion',EngineVersion)
+
 	def get_InstanceClass(self):
 		return self.get_query_params().get('InstanceClass')
 

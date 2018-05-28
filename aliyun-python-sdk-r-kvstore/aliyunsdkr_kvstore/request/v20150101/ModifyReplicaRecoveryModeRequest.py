@@ -18,10 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class SwitchTempInstanceRequest(RpcRequest):
+class ModifyReplicaRecoveryModeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'R-kvstore', '2015-01-01', 'SwitchTempInstance','redisa')
+		RpcRequest.__init__(self, 'R-kvstore', '2015-01-01', 'ModifyReplicaRecoveryMode','redisa')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -29,17 +29,35 @@ class SwitchTempInstanceRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_SecurityToken(self):
+		return self.get_query_params().get('SecurityToken')
+
+	def set_SecurityToken(self,SecurityToken):
+		self.add_query_param('SecurityToken',SecurityToken)
+
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
+	def get_RecoveryMode(self):
+		return self.get_query_params().get('RecoveryMode')
+
+	def set_RecoveryMode(self,RecoveryMode):
+		self.add_query_param('RecoveryMode',RecoveryMode)
+
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
 
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
+
+	def get_ReplicaId(self):
+		return self.get_query_params().get('ReplicaId')
+
+	def set_ReplicaId(self,ReplicaId):
+		self.add_query_param('ReplicaId',ReplicaId)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
