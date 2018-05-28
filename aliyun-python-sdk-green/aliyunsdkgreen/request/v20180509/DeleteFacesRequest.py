@@ -18,11 +18,11 @@
 # under the License.
 
 from aliyunsdkcore.request import RoaRequest
-class FileAsyncScanRequest(RoaRequest):
+class DeleteFacesRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'Green', '2017-08-25', 'FileAsyncScan','green')
-		self.set_uri_pattern('/green/file/asyncscan')
+		RoaRequest.__init__(self, 'Green', '2018-05-09', 'DeleteFaces','green')
+		self.set_uri_pattern('/green/sface/face/delete')
 		self.set_method('POST')
 
 	def get_ClientInfo(self):

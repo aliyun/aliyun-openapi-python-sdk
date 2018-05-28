@@ -18,11 +18,11 @@
 # under the License.
 
 from aliyunsdkcore.request import RoaRequest
-class GetPersonsRequest(RoaRequest):
+class VideoFeedbackRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'Green', '2017-08-25', 'GetPersons','green')
-		self.set_uri_pattern('/green/sface/getPersons')
+		RoaRequest.__init__(self, 'Green', '2018-05-09', 'VideoFeedback','green')
+		self.set_uri_pattern('/green/video/feedback')
 		self.set_method('POST')
 
 	def get_ClientInfo(self):

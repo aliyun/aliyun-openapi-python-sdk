@@ -18,10 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RoaRequest
-class SearchRequest(RoaRequest):
+class SearchPersonRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'Green', '2017-08-25', 'Search','green')
+		RoaRequest.__init__(self, 'Green', '2018-05-09', 'SearchPerson','green')
 		self.set_uri_pattern('/green/sface/search')
 		self.set_method('POST')
 
