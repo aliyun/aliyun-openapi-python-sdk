@@ -18,10 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class RunInstancesRequest(RpcRequest):
+class CreateLaunchTemplateRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'RunInstances','ecs')
+		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'CreateLaunchTemplate','ecs')
 
 	def get_LaunchTemplateName(self):
 		return self.get_query_params().get('LaunchTemplateName')
@@ -35,17 +35,17 @@ class RunInstancesRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_HpcClusterId(self):
-		return self.get_query_params().get('HpcClusterId')
-
-	def set_HpcClusterId(self,HpcClusterId):
-		self.add_query_param('HpcClusterId',HpcClusterId)
-
 	def get_SecurityEnhancementStrategy(self):
 		return self.get_query_params().get('SecurityEnhancementStrategy')
 
 	def set_SecurityEnhancementStrategy(self,SecurityEnhancementStrategy):
 		self.add_query_param('SecurityEnhancementStrategy',SecurityEnhancementStrategy)
+
+	def get_NetworkType(self):
+		return self.get_query_params().get('NetworkType')
+
+	def set_NetworkType(self,NetworkType):
+		self.add_query_param('NetworkType',NetworkType)
 
 	def get_KeyPairName(self):
 		return self.get_query_params().get('KeyPairName')
@@ -59,17 +59,29 @@ class RunInstancesRequest(RpcRequest):
 	def set_SpotPriceLimit(self,SpotPriceLimit):
 		self.add_query_param('SpotPriceLimit',SpotPriceLimit)
 
+	def get_ImageOwnerAlias(self):
+		return self.get_query_params().get('ImageOwnerAlias')
+
+	def set_ImageOwnerAlias(self,ImageOwnerAlias):
+		self.add_query_param('ImageOwnerAlias',ImageOwnerAlias)
+
+	def get_ResourceGroupId(self):
+		return self.get_query_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self,ResourceGroupId):
+		self.add_query_param('ResourceGroupId',ResourceGroupId)
+
 	def get_HostName(self):
 		return self.get_query_params().get('HostName')
 
 	def set_HostName(self,HostName):
 		self.add_query_param('HostName',HostName)
 
-	def get_Password(self):
-		return self.get_query_params().get('Password')
+	def get_SystemDiskIops(self):
+		return self.get_query_params().get('SystemDisk.Iops')
 
-	def set_Password(self,Password):
-		self.add_query_param('Password',Password)
+	def set_SystemDiskIops(self,SystemDiskIops):
+		self.add_query_param('SystemDisk.Iops',SystemDiskIops)
 
 	def get_Tags(self):
 		return self.get_query_params().get('Tags')
@@ -82,17 +94,11 @@ class RunInstancesRequest(RpcRequest):
 				self.add_query_param('Tag.' + str(i + 1) + '.Value' , Tags[i].get('Value'))
 
 
-	def get_DryRun(self):
-		return self.get_query_params().get('DryRun')
+	def get_Period(self):
+		return self.get_query_params().get('Period')
 
-	def set_DryRun(self,DryRun):
-		self.add_query_param('DryRun',DryRun)
-
-	def get_LaunchTemplateId(self):
-		return self.get_query_params().get('LaunchTemplateId')
-
-	def set_LaunchTemplateId(self,LaunchTemplateId):
-		self.add_query_param('LaunchTemplateId',LaunchTemplateId)
+	def set_Period(self,Period):
+		self.add_query_param('Period',Period)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
@@ -136,23 +142,17 @@ class RunInstancesRequest(RpcRequest):
 	def set_InternetMaxBandwidthIn(self,InternetMaxBandwidthIn):
 		self.add_query_param('InternetMaxBandwidthIn',InternetMaxBandwidthIn)
 
+	def get_VersionDescription(self):
+		return self.get_query_params().get('VersionDescription')
+
+	def set_VersionDescription(self,VersionDescription):
+		self.add_query_param('VersionDescription',VersionDescription)
+
 	def get_ImageId(self):
 		return self.get_query_params().get('ImageId')
 
 	def set_ImageId(self,ImageId):
 		self.add_query_param('ImageId',ImageId)
-
-	def get_SpotInterruptionBehavior(self):
-		return self.get_query_params().get('SpotInterruptionBehavior')
-
-	def set_SpotInterruptionBehavior(self,SpotInterruptionBehavior):
-		self.add_query_param('SpotInterruptionBehavior',SpotInterruptionBehavior)
-
-	def get_ClientToken(self):
-		return self.get_query_params().get('ClientToken')
-
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
 
 	def get_IoOptimized(self):
 		return self.get_query_params().get('IoOptimized')
@@ -196,6 +196,18 @@ class RunInstancesRequest(RpcRequest):
 	def set_InstanceType(self,InstanceType):
 		self.add_query_param('InstanceType',InstanceType)
 
+	def get_InstanceChargeType(self):
+		return self.get_query_params().get('InstanceChargeType')
+
+	def set_InstanceChargeType(self,InstanceChargeType):
+		self.add_query_param('InstanceChargeType',InstanceChargeType)
+
+	def get_EnableVmOsConfig(self):
+		return self.get_query_params().get('EnableVmOsConfig')
+
+	def set_EnableVmOsConfig(self,EnableVmOsConfig):
+		self.add_query_param('EnableVmOsConfig',EnableVmOsConfig)
+
 	def get_NetworkInterfaces(self):
 		return self.get_query_params().get('NetworkInterfaces')
 
@@ -212,12 +224,6 @@ class RunInstancesRequest(RpcRequest):
 			if NetworkInterfaces[i].get('Description') is not None:
 				self.add_query_param('NetworkInterface.' + str(i + 1) + '.Description' , NetworkInterfaces[i].get('Description'))
 
-
-	def get_Amount(self):
-		return self.get_query_params().get('Amount')
-
-	def set_Amount(self,Amount):
-		self.add_query_param('Amount',Amount)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -249,11 +255,11 @@ class RunInstancesRequest(RpcRequest):
 	def set_AutoReleaseTime(self,AutoReleaseTime):
 		self.add_query_param('AutoReleaseTime',AutoReleaseTime)
 
-	def get_DedicatedHostId(self):
-		return self.get_query_params().get('DedicatedHostId')
+	def get_SpotDuration(self):
+		return self.get_query_params().get('SpotDuration')
 
-	def set_DedicatedHostId(self,DedicatedHostId):
-		self.add_query_param('DedicatedHostId',DedicatedHostId)
+	def set_SpotDuration(self,SpotDuration):
+		self.add_query_param('SpotDuration',SpotDuration)
 
 	def get_DataDisks(self):
 		return self.get_query_params().get('DataDisks')
@@ -272,23 +278,21 @@ class RunInstancesRequest(RpcRequest):
 				self.add_query_param('DataDisk.' + str(i + 1) + '.DiskName' , DataDisks[i].get('DiskName'))
 			if DataDisks[i].get('Description') is not None:
 				self.add_query_param('DataDisk.' + str(i + 1) + '.Description' , DataDisks[i].get('Description'))
-			if DataDisks[i].get('Device') is not None:
-				self.add_query_param('DataDisk.' + str(i + 1) + '.Device' , DataDisks[i].get('Device'))
 			if DataDisks[i].get('DeleteWithInstance') is not None:
 				self.add_query_param('DataDisk.' + str(i + 1) + '.DeleteWithInstance' , DataDisks[i].get('DeleteWithInstance'))
 
-
-	def get_LaunchTemplateVersion(self):
-		return self.get_query_params().get('LaunchTemplateVersion')
-
-	def set_LaunchTemplateVersion(self,LaunchTemplateVersion):
-		self.add_query_param('LaunchTemplateVersion',LaunchTemplateVersion)
 
 	def get_SystemDiskSize(self):
 		return self.get_query_params().get('SystemDisk.Size')
 
 	def set_SystemDiskSize(self,SystemDiskSize):
 		self.add_query_param('SystemDisk.Size',SystemDiskSize)
+
+	def get_VpcId(self):
+		return self.get_query_params().get('VpcId')
+
+	def set_VpcId(self,VpcId):
+		self.add_query_param('VpcId',VpcId)
 
 	def get_SystemDiskDescription(self):
 		return self.get_query_params().get('SystemDisk.Description')

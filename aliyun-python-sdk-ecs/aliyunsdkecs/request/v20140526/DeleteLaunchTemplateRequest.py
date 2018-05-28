@@ -18,10 +18,16 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class ReInitVolumeRequest(RpcRequest):
+class DeleteLaunchTemplateRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'ReInitVolume','ecs')
+		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'DeleteLaunchTemplate','ecs')
+
+	def get_LaunchTemplateName(self):
+		return self.get_query_params().get('LaunchTemplateName')
+
+	def set_LaunchTemplateName(self,LaunchTemplateName):
+		self.add_query_param('LaunchTemplateName',LaunchTemplateName)
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -29,11 +35,11 @@ class ReInitVolumeRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_Password(self):
-		return self.get_query_params().get('Password')
+	def get_LaunchTemplateId(self):
+		return self.get_query_params().get('LaunchTemplateId')
 
-	def set_Password(self,Password):
-		self.add_query_param('Password',Password)
+	def set_LaunchTemplateId(self,LaunchTemplateId):
+		self.add_query_param('LaunchTemplateId',LaunchTemplateId)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -46,12 +52,6 @@ class ReInitVolumeRequest(RpcRequest):
 
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
-
-	def get_VolumeId(self):
-		return self.get_query_params().get('VolumeId')
-
-	def set_VolumeId(self,VolumeId):
-		self.add_query_param('VolumeId',VolumeId)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
