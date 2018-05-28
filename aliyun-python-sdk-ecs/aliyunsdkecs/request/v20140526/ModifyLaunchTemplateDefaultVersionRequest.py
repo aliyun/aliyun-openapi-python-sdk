@@ -18,10 +18,16 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class ModifyVolumeAttributeRequest(RpcRequest):
+class ModifyLaunchTemplateDefaultVersionRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'ModifyVolumeAttribute','ecs')
+		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'ModifyLaunchTemplateDefaultVersion','ecs')
+
+	def get_LaunchTemplateName(self):
+		return self.get_query_params().get('LaunchTemplateName')
+
+	def set_LaunchTemplateName(self,LaunchTemplateName):
+		self.add_query_param('LaunchTemplateName',LaunchTemplateName)
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -29,11 +35,11 @@ class ModifyVolumeAttributeRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_VolumeName(self):
-		return self.get_query_params().get('VolumeName')
+	def get_LaunchTemplateId(self):
+		return self.get_query_params().get('LaunchTemplateId')
 
-	def set_VolumeName(self,VolumeName):
-		self.add_query_param('VolumeName',VolumeName)
+	def set_LaunchTemplateId(self,LaunchTemplateId):
+		self.add_query_param('LaunchTemplateId',LaunchTemplateId)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -47,20 +53,14 @@ class ModifyVolumeAttributeRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
-	def get_VolumeId(self):
-		return self.get_query_params().get('VolumeId')
-
-	def set_VolumeId(self,VolumeId):
-		self.add_query_param('VolumeId',VolumeId)
-
-	def get_Description(self):
-		return self.get_query_params().get('Description')
-
-	def set_Description(self,Description):
-		self.add_query_param('Description',Description)
-
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_DefaultVersionNumber(self):
+		return self.get_query_params().get('DefaultVersionNumber')
+
+	def set_DefaultVersionNumber(self,DefaultVersionNumber):
+		self.add_query_param('DefaultVersionNumber',DefaultVersionNumber)

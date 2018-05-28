@@ -18,16 +18,16 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class CancelUserEventRequest(RpcRequest):
+class DeleteLaunchTemplateVersionRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'CancelUserEvent','ecs')
+		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'DeleteLaunchTemplateVersion','ecs')
 
-	def get_EventId(self):
-		return self.get_query_params().get('EventId')
+	def get_LaunchTemplateName(self):
+		return self.get_query_params().get('LaunchTemplateName')
 
-	def set_EventId(self,EventId):
-		self.add_query_param('EventId',EventId)
+	def set_LaunchTemplateName(self,LaunchTemplateName):
+		self.add_query_param('LaunchTemplateName',LaunchTemplateName)
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -35,17 +35,31 @@ class CancelUserEventRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_ResourceId(self):
-		return self.get_query_params().get('ResourceId')
+	def get_DeleteVersions(self):
+		return self.get_query_params().get('DeleteVersions')
 
-	def set_ResourceId(self,ResourceId):
-		self.add_query_param('ResourceId',ResourceId)
+	def set_DeleteVersions(self,DeleteVersions):
+		for i in range(len(DeleteVersions)):	
+			if DeleteVersions[i] is not None:
+				self.add_query_param('DeleteVersion.' + str(i + 1) , DeleteVersions[i]);
+
+	def get_LaunchTemplateId(self):
+		return self.get_query_params().get('LaunchTemplateId')
+
+	def set_LaunchTemplateId(self,LaunchTemplateId):
+		self.add_query_param('LaunchTemplateId',LaunchTemplateId)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+
+	def get_OwnerAccount(self):
+		return self.get_query_params().get('OwnerAccount')
+
+	def set_OwnerAccount(self,OwnerAccount):
+		self.add_query_param('OwnerAccount',OwnerAccount)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')

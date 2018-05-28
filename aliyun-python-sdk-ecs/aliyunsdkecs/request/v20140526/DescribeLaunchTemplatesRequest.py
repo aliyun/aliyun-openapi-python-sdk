@@ -18,10 +18,18 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class ResizeVolumeRequest(RpcRequest):
+class DescribeLaunchTemplatesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'ResizeVolume','ecs')
+		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'DescribeLaunchTemplates','ecs')
+
+	def get_LaunchTemplateNames(self):
+		return self.get_query_params().get('LaunchTemplateNames')
+
+	def set_LaunchTemplateNames(self,LaunchTemplateNames):
+		for i in range(len(LaunchTemplateNames)):	
+			if LaunchTemplateNames[i] is not None:
+				self.add_query_param('LaunchTemplateName.' + str(i + 1) , LaunchTemplateNames[i]);
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -29,35 +37,37 @@ class ResizeVolumeRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_PageNumber(self):
+		return self.get_query_params().get('PageNumber')
+
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)
+
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
+
+	def get_LaunchTemplateIds(self):
+		return self.get_query_params().get('LaunchTemplateIds')
+
+	def set_LaunchTemplateIds(self,LaunchTemplateIds):
+		for i in range(len(LaunchTemplateIds)):	
+			if LaunchTemplateIds[i] is not None:
+				self.add_query_param('LaunchTemplateId.' + str(i + 1) , LaunchTemplateIds[i]);
+
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
-	def get_ClientToken(self):
-		return self.get_query_params().get('ClientToken')
-
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
-
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
 
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
-
-	def get_VolumeId(self):
-		return self.get_query_params().get('VolumeId')
-
-	def set_VolumeId(self,VolumeId):
-		self.add_query_param('VolumeId',VolumeId)
-
-	def get_NewSize(self):
-		return self.get_query_params().get('NewSize')
-
-	def set_NewSize(self,NewSize):
-		self.add_query_param('NewSize',NewSize)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
