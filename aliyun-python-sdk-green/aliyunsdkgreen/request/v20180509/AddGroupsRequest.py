@@ -18,11 +18,11 @@
 # under the License.
 
 from aliyunsdkcore.request import RoaRequest
-class AddFacesRequest(RoaRequest):
+class AddGroupsRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'Green', '2017-08-25', 'AddFaces','green')
-		self.set_uri_pattern('/green/sface/addFaces')
+		RoaRequest.__init__(self, 'Green', '2018-05-09', 'AddGroups','green')
+		self.set_uri_pattern('/green/sface/person/groups/add')
 		self.set_method('POST')
 
 	def get_ClientInfo(self):

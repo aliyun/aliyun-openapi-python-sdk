@@ -18,11 +18,11 @@
 # under the License.
 
 from aliyunsdkcore.request import RoaRequest
-class DeletePersonRequest(RoaRequest):
+class FileAsyncScanRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'Green', '2017-08-25', 'DeletePerson','green')
-		self.set_uri_pattern('/green/sface/deletePerson')
+		RoaRequest.__init__(self, 'Green', '2018-05-09', 'FileAsyncScan','green')
+		self.set_uri_pattern('/green/file/asyncscan')
 		self.set_method('POST')
 
 	def get_ClientInfo(self):
