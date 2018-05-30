@@ -18,19 +18,13 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class DeleteTasksRequest(RpcRequest):
+class GetContactsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cms', '2018-03-08', 'DeleteTasks','cms')
+		RpcRequest.__init__(self, 'Cms', '2018-03-08', 'GetContacts','cms')
 
-	def get_IsDeleteAlarms(self):
-		return self.get_query_params().get('IsDeleteAlarms')
+	def get_GroupName(self):
+		return self.get_query_params().get('GroupName')
 
-	def set_IsDeleteAlarms(self,IsDeleteAlarms):
-		self.add_query_param('IsDeleteAlarms',IsDeleteAlarms)
-
-	def get_TaskIds(self):
-		return self.get_query_params().get('TaskIds')
-
-	def set_TaskIds(self,TaskIds):
-		self.add_query_param('TaskIds',TaskIds)
+	def set_GroupName(self,GroupName):
+		self.add_query_param('GroupName',GroupName)
