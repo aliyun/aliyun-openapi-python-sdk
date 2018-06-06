@@ -518,11 +518,11 @@ class OssRequest(AcsRequest):
         return url
 
 
-class CommonRequest(RpcRequest, RoaRequest):
+class CommonRequest(AcsRequest):
     def __init__(self, domain=None, version=None, action_name=None, uri_pattern=None, product=None):
-        RoaRequest.__init__(self, product, version, action_name)
-        RpcRequest.__init__(self, product, version, action_name)
+        super(CommonRequest, self).__init__(product)
 
+        self.request = None
         self._domain = domain
         self._version = version
         self._action_name = action_name
@@ -531,6 +531,19 @@ class CommonRequest(RpcRequest, RoaRequest):
         self._location_endpoint_type = 'openAPI',
         self._signer = sha_hmac1
         self.add_header('x-sdk-invoke-type', 'common')
+        self._path_params = None
+        self._method = "GET"
+
+    def get_path_params(self):
+        return self._path_params
+
+    def set_path_params(self, path_params):
+        self._path_params = path_params
+
+    def add_path_param(self, k, v):
+        if self._path_params is None:
+            self._path_params = {}
+        self._path_params[k] = v
 
     def set_domain(self, domain):
         self._domain = domain
@@ -575,20 +588,29 @@ class CommonRequest(RpcRequest, RoaRequest):
 
         if self._uri_pattern:
             self._style = STYLE_ROA
+            self.request = RoaRequest(product=self.get_product(), version=self.get_version(),
+                                      action_name=self.get_action_name(), method=self.get_method(),
+                                      location_service_code=self.get_location_service_code(),
+                                      location_endpoint_type=self.get_location_endpoint_type(),
+                                      headers=self.get_headers(), uri_pattern=self.get_uri_pattern(),
+                                      path_params=self.get_path_params(), protocol=self.get_protocol_type()
+                                      )
         else:
             self._style = STYLE_RPC
+            self.request = RpcRequest(product=self.get_product(), version=self.get_version(),
+                                      action_name=self.get_action_name(),
+                                      location_service_code=self.get_location_service_code(),
+                                      location_endpoint_type=self.get_location_endpoint_type(),
+                                      protocol=self.get_protocol_type()
+                                      )
+            self.request.set_method(self.get_method())
+            self.request.set_uri_params(self.get_uri_params())
 
     def get_style(self):
         return self._style
 
     def get_url(self, region_id, ak, secret):
-        if self._style == STYLE_RPC:
-            return RpcRequest.get_url(self, region_id, ak, secret)
-        else:
-            return RoaRequest.get_url(self, region_id, ak, secret)
+        return self.request.get_url(region_id, ak, secret)
 
     def get_signed_header(self, region_id, ak, secret):
-        if self._style == STYLE_RPC:
-            return RpcRequest.get_signed_header(self, region_id, ak, secret)
-        else:
-            return RoaRequest.get_signed_header(self, region_id, ak, secret)
+        return self.request.get_signed_header(region_id, ak, secret)
