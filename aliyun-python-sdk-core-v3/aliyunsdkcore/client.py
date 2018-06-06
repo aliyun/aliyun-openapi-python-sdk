@@ -244,7 +244,7 @@ class AcsClient:
             else:
                 return (
                     error_code.SDK_UNKNOWN_SERVER_ERROR,
-                    error_msg.get_msg('SDK_UNKNOWN_SERVER_ERROR'))
+                    response_body)
         except ValueError:
             # failed to parse body as json format
             return (error_code.SDK_UNKNOWN_SERVER_ERROR,
