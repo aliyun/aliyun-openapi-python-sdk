@@ -1,4 +1,7 @@
 2018-06-06 Version: 2.8.3
+1, fix bug for common api
+
+2018-06-06 Version: 2.8.3
 1, Fix bug for common request.
 
 2018-03-15 Version: 2.8.2
