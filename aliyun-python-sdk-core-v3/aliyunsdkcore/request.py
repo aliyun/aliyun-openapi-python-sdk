@@ -169,6 +169,9 @@ class AcsRequest(metaclass=abc.ABCMeta):
     def set_query_params(self, params):
         self._params = params
 
+    def set_body_params(self, body_params):
+        self._body_params = body_params
+
     def set_content(self, content):
         """
 
@@ -520,7 +523,7 @@ class OssRequest(AcsRequest):
 
 
 class CommonRequest(AcsRequest):
-    def __init__(self, domain=None, version=None, action_name=None, uri_pattern=None, product=None):
+    def __init__(self, domain=None, version=None, action_name=None, uri_pattern=None, product=None, location_endpoint_type='openAPI'):
         super(CommonRequest, self).__init__(product)
 
         self.request = None
@@ -529,7 +532,7 @@ class CommonRequest(AcsRequest):
         self._action_name = action_name
         self._uri_pattern = uri_pattern
         self._product = product
-        self._location_endpoint_type = 'openAPI',
+        self._location_endpoint_type = location_endpoint_type,
         self._signer = sha_hmac1
         self.add_header('x-sdk-invoke-type', 'common')
         self._path_params = None
@@ -591,22 +594,17 @@ class CommonRequest(AcsRequest):
         if self._uri_pattern:
             self._style = STYLE_ROA
             self.request = RoaRequest(product=self.get_product(), version=self.get_version(),
-                                      action_name=self.get_action_name(), method=self.get_method(),
-                                      location_service_code=self.get_location_service_code(),
-                                      location_endpoint_type=self.get_location_endpoint_type(),
-                                      headers=self.get_headers(), uri_pattern=self.get_uri_pattern(),
-                                      path_params=self.get_path_params(), protocol=self.get_protocol_type()
+                                      action_name=self.get_action_name(),
+                                      location_endpoint_type=self.get_location_endpoint_type()
                                       )
+            self.fill_params()
         else:
             self._style = STYLE_RPC
             self.request = RpcRequest(product=self.get_product(), version=self.get_version(),
                                       action_name=self.get_action_name(),
-                                      location_service_code=self.get_location_service_code(),
                                       location_endpoint_type=self.get_location_endpoint_type(),
-                                      protocol=self.get_protocol_type()
                                       )
-            self.request.set_method(self.get_method())
-            self.request.set_uri_params(self.get_uri_params())
+            self.fill_params()
 
     def get_style(self):
         return self._style
@@ -616,3 +614,31 @@ class CommonRequest(AcsRequest):
 
     def get_signed_header(self, region_id, ak, secret):
         return self.request.get_signed_header(region_id, ak, secret)
+
+    def fill_params(self):
+
+        self.request.set_uri_pattern(self.get_uri_pattern())
+
+        self.request.set_uri_params(self.get_uri_params())
+
+        self.request.set_method(self.get_method())
+
+        self.request.set_product(self.get_product())
+
+        self.request.set_version(self.get_version())
+
+        self.request.set_action_name(self.get_action_name())
+
+        self.request.set_accept_format(self.get_accept_format())
+
+        self.request.set_protocol_type(self.get_protocol_type())
+
+        self.request.set_query_params(self.get_query_params())
+
+        self.request.set_content(self.get_content())
+
+        self.request.set_headers(self.get_headers())
+
+        self.request.set_location_service_code(self.get_location_service_code())
+
+        self.request.set_body_params(self.get_body_params())
