@@ -18,16 +18,16 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class DisableScalingGroupRequest(RpcRequest):
+class RecordLifecycleActionHeartbeatRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ess', '2014-08-28', 'DisableScalingGroup','ess')
+		RpcRequest.__init__(self, 'Ess', '2014-08-28', 'RecordLifecycleActionHeartbeat','ess')
 
-	def get_ResourceOwnerId(self):
-		return self.get_query_params().get('ResourceOwnerId')
+	def get_lifecycleActionToken(self):
+		return self.get_query_params().get('lifecycleActionToken')
 
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+	def set_lifecycleActionToken(self,lifecycleActionToken):
+		self.add_query_param('lifecycleActionToken',lifecycleActionToken)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -35,11 +35,17 @@ class DisableScalingGroupRequest(RpcRequest):
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
-	def get_ScalingGroupId(self):
-		return self.get_query_params().get('ScalingGroupId')
+	def get_heartbeatTimeout(self):
+		return self.get_query_params().get('heartbeatTimeout')
 
-	def set_ScalingGroupId(self,ScalingGroupId):
-		self.add_query_param('ScalingGroupId',ScalingGroupId)
+	def set_heartbeatTimeout(self,heartbeatTimeout):
+		self.add_query_param('heartbeatTimeout',heartbeatTimeout)
+
+	def get_lifecycleHookId(self):
+		return self.get_query_params().get('lifecycleHookId')
+
+	def set_lifecycleHookId(self,lifecycleHookId):
+		self.add_query_param('lifecycleHookId',lifecycleHookId)
 
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')

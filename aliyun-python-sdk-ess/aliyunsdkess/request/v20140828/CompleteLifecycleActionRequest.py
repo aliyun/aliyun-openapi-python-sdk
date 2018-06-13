@@ -18,16 +18,16 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class DisableScalingGroupRequest(RpcRequest):
+class CompleteLifecycleActionRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ess', '2014-08-28', 'DisableScalingGroup','ess')
+		RpcRequest.__init__(self, 'Ess', '2014-08-28', 'CompleteLifecycleAction','ess')
 
-	def get_ResourceOwnerId(self):
-		return self.get_query_params().get('ResourceOwnerId')
+	def get_LifecycleActionToken(self):
+		return self.get_query_params().get('LifecycleActionToken')
 
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+	def set_LifecycleActionToken(self,LifecycleActionToken):
+		self.add_query_param('LifecycleActionToken',LifecycleActionToken)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -35,11 +35,11 @@ class DisableScalingGroupRequest(RpcRequest):
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
-	def get_ScalingGroupId(self):
-		return self.get_query_params().get('ScalingGroupId')
+	def get_LifecycleHookId(self):
+		return self.get_query_params().get('LifecycleHookId')
 
-	def set_ScalingGroupId(self,ScalingGroupId):
-		self.add_query_param('ScalingGroupId',ScalingGroupId)
+	def set_LifecycleHookId(self,LifecycleHookId):
+		self.add_query_param('LifecycleHookId',LifecycleHookId)
 
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
@@ -52,3 +52,9 @@ class DisableScalingGroupRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_LifecycleActionResult(self):
+		return self.get_query_params().get('LifecycleActionResult')
+
+	def set_LifecycleActionResult(self,LifecycleActionResult):
+		self.add_query_param('LifecycleActionResult',LifecycleActionResult)
