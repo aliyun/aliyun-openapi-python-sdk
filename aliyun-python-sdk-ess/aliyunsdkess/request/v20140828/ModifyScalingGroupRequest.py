@@ -29,6 +29,12 @@ class ModifyScalingGroupRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_HealthCheckType(self):
+		return self.get_query_params().get('HealthCheckType')
+
+	def set_HealthCheckType(self,HealthCheckType):
+		self.add_query_param('HealthCheckType',HealthCheckType)
+
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 

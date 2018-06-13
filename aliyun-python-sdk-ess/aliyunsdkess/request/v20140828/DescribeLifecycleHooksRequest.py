@@ -18,16 +18,16 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class DisableScalingGroupRequest(RpcRequest):
+class DescribeLifecycleHooksRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ess', '2014-08-28', 'DisableScalingGroup','ess')
+		RpcRequest.__init__(self, 'Ess', '2014-08-28', 'DescribeLifecycleHooks','ess')
 
-	def get_ResourceOwnerId(self):
-		return self.get_query_params().get('ResourceOwnerId')
+	def get_LifecycleHookName(self):
+		return self.get_query_params().get('LifecycleHookName')
 
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+	def set_LifecycleHookName(self,LifecycleHookName):
+		self.add_query_param('LifecycleHookName',LifecycleHookName)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -41,14 +41,34 @@ class DisableScalingGroupRequest(RpcRequest):
 	def set_ScalingGroupId(self,ScalingGroupId):
 		self.add_query_param('ScalingGroupId',ScalingGroupId)
 
+	def get_LifecycleHookIds(self):
+		return self.get_query_params().get('LifecycleHookIds')
+
+	def set_LifecycleHookIds(self,LifecycleHookIds):
+		for i in range(len(LifecycleHookIds)):	
+			if LifecycleHookIds[i] is not None:
+				self.add_query_param('LifecycleHookId.' + str(i + 1) , LifecycleHookIds[i]);
+
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
 
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
+
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_PageNumber(self):
+		return self.get_query_params().get('PageNumber')
+
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)

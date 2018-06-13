@@ -18,34 +18,16 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class CreateScalingGroupRequest(RpcRequest):
+class CreateLifecycleHookRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ess', '2014-08-28', 'CreateScalingGroup','ess')
+		RpcRequest.__init__(self, 'Ess', '2014-08-28', 'CreateLifecycleHook','ess')
 
-	def get_MultiAZPolicy(self):
-		return self.get_query_params().get('MultiAZPolicy')
+	def get_DefaultResult(self):
+		return self.get_query_params().get('DefaultResult')
 
-	def set_MultiAZPolicy(self,MultiAZPolicy):
-		self.add_query_param('MultiAZPolicy',MultiAZPolicy)
-
-	def get_DBInstanceIds(self):
-		return self.get_query_params().get('DBInstanceIds')
-
-	def set_DBInstanceIds(self,DBInstanceIds):
-		self.add_query_param('DBInstanceIds',DBInstanceIds)
-
-	def get_LoadBalancerIds(self):
-		return self.get_query_params().get('LoadBalancerIds')
-
-	def set_LoadBalancerIds(self,LoadBalancerIds):
-		self.add_query_param('LoadBalancerIds',LoadBalancerIds)
-
-	def get_HealthCheckType(self):
-		return self.get_query_params().get('HealthCheckType')
-
-	def set_HealthCheckType(self,HealthCheckType):
-		self.add_query_param('HealthCheckType',HealthCheckType)
+	def set_DefaultResult(self,DefaultResult):
+		self.add_query_param('DefaultResult',DefaultResult)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -53,19 +35,17 @@ class CreateScalingGroupRequest(RpcRequest):
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
-	def get_ScalingGroupName(self):
-		return self.get_query_params().get('ScalingGroupName')
+	def get_HeartbeatTimeout(self):
+		return self.get_query_params().get('HeartbeatTimeout')
 
-	def set_ScalingGroupName(self,ScalingGroupName):
-		self.add_query_param('ScalingGroupName',ScalingGroupName)
+	def set_HeartbeatTimeout(self,HeartbeatTimeout):
+		self.add_query_param('HeartbeatTimeout',HeartbeatTimeout)
 
-	def get_VSwitchIds(self):
-		return self.get_query_params().get('VSwitchIds')
+	def get_ScalingGroupId(self):
+		return self.get_query_params().get('ScalingGroupId')
 
-	def set_VSwitchIds(self,VSwitchIds):
-		for i in range(len(VSwitchIds)):	
-			if VSwitchIds[i] is not None:
-				self.add_query_param('VSwitchIds.' + str(i + 1) , VSwitchIds[i]);
+	def set_ScalingGroupId(self,ScalingGroupId):
+		self.add_query_param('ScalingGroupId',ScalingGroupId)
 
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
@@ -73,11 +53,11 @@ class CreateScalingGroupRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
-	def get_MinSize(self):
-		return self.get_query_params().get('MinSize')
+	def get_NotificationMetadata(self):
+		return self.get_query_params().get('NotificationMetadata')
 
-	def set_MinSize(self,MinSize):
-		self.add_query_param('MinSize',MinSize)
+	def set_NotificationMetadata(self,NotificationMetadata):
+		self.add_query_param('NotificationMetadata',NotificationMetadata)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
@@ -85,17 +65,23 @@ class CreateScalingGroupRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_VSwitchId(self):
-		return self.get_query_params().get('VSwitchId')
+	def get_LifecycleTransition(self):
+		return self.get_query_params().get('LifecycleTransition')
 
-	def set_VSwitchId(self,VSwitchId):
-		self.add_query_param('VSwitchId',VSwitchId)
+	def set_LifecycleTransition(self,LifecycleTransition):
+		self.add_query_param('LifecycleTransition',LifecycleTransition)
 
-	def get_MaxSize(self):
-		return self.get_query_params().get('MaxSize')
+	def get_LifecycleHookName(self):
+		return self.get_query_params().get('LifecycleHookName')
 
-	def set_MaxSize(self,MaxSize):
-		self.add_query_param('MaxSize',MaxSize)
+	def set_LifecycleHookName(self,LifecycleHookName):
+		self.add_query_param('LifecycleHookName',LifecycleHookName)
+
+	def get_NotificationArn(self):
+		return self.get_query_params().get('NotificationArn')
+
+	def set_NotificationArn(self,NotificationArn):
+		self.add_query_param('NotificationArn',NotificationArn)
 
 	def get_LifecycleHooks(self):
 		return self.get_query_params().get('LifecycleHooks')
@@ -114,22 +100,3 @@ class CreateScalingGroupRequest(RpcRequest):
 				self.add_query_param('LifecycleHook.' + str(i + 1) + '.NotificationMetadata' , LifecycleHooks[i].get('NotificationMetadata'))
 			if LifecycleHooks[i].get('NotificationArn') is not None:
 				self.add_query_param('LifecycleHook.' + str(i + 1) + '.NotificationArn' , LifecycleHooks[i].get('NotificationArn'))
-
-
-	def get_DefaultCooldown(self):
-		return self.get_query_params().get('DefaultCooldown')
-
-	def set_DefaultCooldown(self,DefaultCooldown):
-		self.add_query_param('DefaultCooldown',DefaultCooldown)
-
-	def get_RemovalPolicy1(self):
-		return self.get_query_params().get('RemovalPolicy.1')
-
-	def set_RemovalPolicy1(self,RemovalPolicy1):
-		self.add_query_param('RemovalPolicy.1',RemovalPolicy1)
-
-	def get_RemovalPolicy2(self):
-		return self.get_query_params().get('RemovalPolicy.2')
-
-	def set_RemovalPolicy2(self,RemovalPolicy2):
-		self.add_query_param('RemovalPolicy.2',RemovalPolicy2)
