@@ -49,6 +49,8 @@ class ModifyCasterLayoutRequest(RpcRequest):
 
 	def set_VideoLayers(self,VideoLayers):
 		for i in range(len(VideoLayers)):	
+			if VideoLayers[i].get('FillMode') is not None:
+				self.add_query_param('VideoLayer.' + str(i + 1) + '.FillMode' , VideoLayers[i].get('FillMode'))
 			if VideoLayers[i].get('HeightNormalized') is not None:
 				self.add_query_param('VideoLayer.' + str(i + 1) + '.HeightNormalized' , VideoLayers[i].get('HeightNormalized'))
 			if VideoLayers[i].get('WidthNormalized') is not None:

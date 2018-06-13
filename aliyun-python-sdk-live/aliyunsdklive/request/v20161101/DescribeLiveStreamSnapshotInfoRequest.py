@@ -70,3 +70,9 @@ class DescribeLiveStreamSnapshotInfoRequest(RpcRequest):
 
 	def set_StreamName(self,StreamName):
 		self.add_query_param('StreamName',StreamName)
+
+	def get_Order(self):
+		return self.get_query_params().get('Order')
+
+	def set_Order(self,Order):
+		self.add_query_param('Order',Order)
