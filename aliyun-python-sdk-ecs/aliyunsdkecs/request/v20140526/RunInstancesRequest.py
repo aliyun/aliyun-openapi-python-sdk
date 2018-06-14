@@ -59,6 +59,12 @@ class RunInstancesRequest(RpcRequest):
 	def set_SpotPriceLimit(self,SpotPriceLimit):
 		self.add_query_param('SpotPriceLimit',SpotPriceLimit)
 
+	def get_ResourceGroupId(self):
+		return self.get_query_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self,ResourceGroupId):
+		self.add_query_param('ResourceGroupId',ResourceGroupId)
+
 	def get_HostName(self):
 		return self.get_query_params().get('HostName')
 
@@ -189,6 +195,12 @@ class RunInstancesRequest(RpcRequest):
 
 	def set_UserData(self,UserData):
 		self.add_query_param('UserData',UserData)
+
+	def get_PasswordInherit(self):
+		return self.get_query_params().get('PasswordInherit')
+
+	def set_PasswordInherit(self,PasswordInherit):
+		self.add_query_param('PasswordInherit',PasswordInherit)
 
 	def get_InstanceType(self):
 		return self.get_query_params().get('InstanceType')
