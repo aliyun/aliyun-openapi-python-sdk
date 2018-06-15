@@ -30,7 +30,7 @@ Created on 6/24/2015
 
 @author: alex
 """
-PACKAGE = "aliyunsdkcore"
+PACKAGE = "dd-aliyunsdkcore"
 NAME = "aliyun-python-sdk-core"
 DESCRIPTION = "The core module of Aliyun Python SDK."
 AUTHOR = "Aliyun"
