@@ -63,7 +63,7 @@ setup(
     license="Apache",
     url=URL,
     keywords=["aliyun", "sdk", "core"],
-    packages=find_packages(exclude=["tests*"]),
+    packages=find_packages(exclude=["tests*", "integration*"]),
     include_package_data=True,
     python_requires='<3',
     platforms='any',
