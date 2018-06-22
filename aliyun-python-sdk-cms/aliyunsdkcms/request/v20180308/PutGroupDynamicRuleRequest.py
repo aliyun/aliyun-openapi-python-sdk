@@ -18,25 +18,19 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class DeleteMyGroupInstancesRequest(RpcRequest):
+class PutGroupDynamicRuleRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cms', '2018-03-08', 'DeleteMyGroupInstances','cms')
-
-	def get_InstanceIds(self):
-		return self.get_query_params().get('InstanceIds')
-
-	def set_InstanceIds(self,InstanceIds):
-		self.add_query_param('InstanceIds',InstanceIds)
-
-	def get_InstanceIdList(self):
-		return self.get_query_params().get('InstanceIdList')
-
-	def set_InstanceIdList(self,InstanceIdList):
-		self.add_query_param('InstanceIdList',InstanceIdList)
+		RpcRequest.__init__(self, 'Cms', '2018-03-08', 'PutGroupDynamicRule','cms')
 
 	def get_GroupId(self):
 		return self.get_query_params().get('GroupId')
 
 	def set_GroupId(self,GroupId):
 		self.add_query_param('GroupId',GroupId)
+
+	def get_GroupRuleArrayJson(self):
+		return self.get_query_params().get('GroupRuleArrayJson')
+
+	def set_GroupRuleArrayJson(self,GroupRuleArrayJson):
+		self.add_query_param('GroupRuleArrayJson',GroupRuleArrayJson)

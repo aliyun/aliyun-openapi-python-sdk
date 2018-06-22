@@ -23,23 +23,29 @@ class CreateTaskRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Cms', '2018-03-08', 'CreateTask','cms')
 
-	def get_TaskType(self):
-		return self.get_query_params().get('TaskType')
-
-	def set_TaskType(self,TaskType):
-		self.add_query_param('TaskType',TaskType)
-
 	def get_Address(self):
 		return self.get_query_params().get('Address')
 
 	def set_Address(self,Address):
 		self.add_query_param('Address',Address)
 
+	def get_TaskType(self):
+		return self.get_query_params().get('TaskType')
+
+	def set_TaskType(self,TaskType):
+		self.add_query_param('TaskType',TaskType)
+
 	def get_IspCity(self):
 		return self.get_query_params().get('IspCity')
 
 	def set_IspCity(self,IspCity):
 		self.add_query_param('IspCity',IspCity)
+
+	def get_AlertIds(self):
+		return self.get_query_params().get('AlertIds')
+
+	def set_AlertIds(self,AlertIds):
+		self.add_query_param('AlertIds',AlertIds)
 
 	def get_Options(self):
 		return self.get_query_params().get('Options')

@@ -35,6 +35,12 @@ class ModifyTaskRequest(RpcRequest):
 	def set_IspCity(self,IspCity):
 		self.add_query_param('IspCity',IspCity)
 
+	def get_AlertIds(self):
+		return self.get_query_params().get('AlertIds')
+
+	def set_AlertIds(self,AlertIds):
+		self.add_query_param('AlertIds',AlertIds)
+
 	def get_Options(self):
 		return self.get_query_params().get('Options')
 
