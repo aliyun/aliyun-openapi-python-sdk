@@ -71,6 +71,12 @@ class GetPlayInfoRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
+	def get_ResultType(self):
+		return self.get_query_params().get('ResultType')
+
+	def set_ResultType(self,ResultType):
+		self.add_query_param('ResultType',ResultType)
+
 	def get_Rand(self):
 		return self.get_query_params().get('Rand')
 
