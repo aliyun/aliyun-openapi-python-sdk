@@ -149,6 +149,12 @@ class DescribeNetworkInterfacesRequest(RpcRequest):
 	def set_Tag2Value(self,Tag2Value):
 		self.add_query_param('Tag.2.Value',Tag2Value)
 
+	def get_VpcId(self):
+		return self.get_query_params().get('VpcId')
+
+	def set_VpcId(self,VpcId):
+		self.add_query_param('VpcId',VpcId)
+
 	def get_Tag4Key(self):
 		return self.get_query_params().get('Tag.4.Key')
 
