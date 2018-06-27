@@ -88,6 +88,18 @@ class RunInstancesRequest(RpcRequest):
 				self.add_query_param('Tag.' + str(i + 1) + '.Value' , Tags[i].get('Value'))
 
 
+	def get_AutoRenewPeriod(self):
+		return self.get_query_params().get('AutoRenewPeriod')
+
+	def set_AutoRenewPeriod(self,AutoRenewPeriod):
+		self.add_query_param('AutoRenewPeriod',AutoRenewPeriod)
+
+	def get_Period(self):
+		return self.get_query_params().get('Period')
+
+	def set_Period(self,Period):
+		self.add_query_param('Period',Period)
+
 	def get_DryRun(self):
 		return self.get_query_params().get('DryRun')
 
@@ -118,11 +130,23 @@ class RunInstancesRequest(RpcRequest):
 	def set_SpotStrategy(self,SpotStrategy):
 		self.add_query_param('SpotStrategy',SpotStrategy)
 
+	def get_PeriodUnit(self):
+		return self.get_query_params().get('PeriodUnit')
+
+	def set_PeriodUnit(self,PeriodUnit):
+		self.add_query_param('PeriodUnit',PeriodUnit)
+
 	def get_InstanceName(self):
 		return self.get_query_params().get('InstanceName')
 
 	def set_InstanceName(self,InstanceName):
 		self.add_query_param('InstanceName',InstanceName)
+
+	def get_AutoRenew(self):
+		return self.get_query_params().get('AutoRenew')
+
+	def set_AutoRenew(self,AutoRenew):
+		self.add_query_param('AutoRenew',AutoRenew)
 
 	def get_InternetChargeType(self):
 		return self.get_query_params().get('InternetChargeType')
@@ -207,6 +231,12 @@ class RunInstancesRequest(RpcRequest):
 
 	def set_InstanceType(self,InstanceType):
 		self.add_query_param('InstanceType',InstanceType)
+
+	def get_InstanceChargeType(self):
+		return self.get_query_params().get('InstanceChargeType')
+
+	def set_InstanceChargeType(self,InstanceChargeType):
+		self.add_query_param('InstanceChargeType',InstanceChargeType)
 
 	def get_NetworkInterfaces(self):
 		return self.get_query_params().get('NetworkInterfaces')
