@@ -23,6 +23,12 @@ class IndexFaceRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'imm', '2017-09-06', 'IndexFace','imm')
 
+	def get_Chain(self):
+		return self.get_query_params().get('Chain')
+
+	def set_Chain(self,Chain):
+		self.add_query_param('Chain',Chain)
+
 	def get_SrcUris(self):
 		return self.get_query_params().get('SrcUris')
 
