@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class VerifyAuthenticationRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ess', '2014-08-28', 'VerifyAuthentication','ess')
+		RpcRequest.__init__(self, 'Ess', '2014-08-28', 'VerifyAuthentication','ESS')
 
 	def get_Uid(self):
 		return self.get_query_params().get('Uid')

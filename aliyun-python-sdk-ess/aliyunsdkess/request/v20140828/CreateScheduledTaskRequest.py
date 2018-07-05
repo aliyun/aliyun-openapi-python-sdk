@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class CreateScheduledTaskRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ess', '2014-08-28', 'CreateScheduledTask','ess')
+		RpcRequest.__init__(self, 'Ess', '2014-08-28', 'CreateScheduledTask','ESS')
 
 	def get_LaunchTime(self):
 		return self.get_query_params().get('LaunchTime')

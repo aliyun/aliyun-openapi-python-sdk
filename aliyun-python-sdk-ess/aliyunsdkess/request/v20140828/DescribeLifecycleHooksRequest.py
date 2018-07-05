@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class DescribeLifecycleHooksRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ess', '2014-08-28', 'DescribeLifecycleHooks','ess')
+		RpcRequest.__init__(self, 'Ess', '2014-08-28', 'DescribeLifecycleHooks','ESS')
 
 	def get_LifecycleHookName(self):
 		return self.get_query_params().get('LifecycleHookName')
