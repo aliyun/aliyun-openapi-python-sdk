@@ -18,10 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class CreateAccessControlListRequest(RpcRequest):
+class DescribeDomainExtensionsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Slb', '2014-05-15', 'CreateAccessControlList','slb')
+		RpcRequest.__init__(self, 'Slb', '2014-05-15', 'DescribeDomainExtensions','slb')
 
 	def get_access_key_id(self):
 		return self.get_query_params().get('access_key_id')
@@ -35,11 +35,17 @@ class CreateAccessControlListRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_AclName(self):
-		return self.get_query_params().get('AclName')
+	def get_ListenerPort(self):
+		return self.get_query_params().get('ListenerPort')
 
-	def set_AclName(self,AclName):
-		self.add_query_param('AclName',AclName)
+	def set_ListenerPort(self,ListenerPort):
+		self.add_query_param('ListenerPort',ListenerPort)
+
+	def get_LoadBalancerId(self):
+		return self.get_query_params().get('LoadBalancerId')
+
+	def set_LoadBalancerId(self,LoadBalancerId):
+		self.add_query_param('LoadBalancerId',LoadBalancerId)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -59,14 +65,14 @@ class CreateAccessControlListRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_AddressIPVersion(self):
-		return self.get_query_params().get('AddressIPVersion')
-
-	def set_AddressIPVersion(self,AddressIPVersion):
-		self.add_query_param('AddressIPVersion',AddressIPVersion)
-
 	def get_Tags(self):
 		return self.get_query_params().get('Tags')
 
 	def set_Tags(self,Tags):
 		self.add_query_param('Tags',Tags)
+
+	def get_DomainExtensionId(self):
+		return self.get_query_params().get('DomainExtensionId')
+
+	def set_DomainExtensionId(self,DomainExtensionId):
+		self.add_query_param('DomainExtensionId',DomainExtensionId)

@@ -29,6 +29,12 @@ class DescribeVServerGroupsRequest(RpcRequest):
 	def set_access_key_id(self,access_key_id):
 		self.add_query_param('access_key_id',access_key_id)
 
+	def get_IncludeRule(self):
+		return self.get_query_params().get('IncludeRule')
+
+	def set_IncludeRule(self,IncludeRule):
+		self.add_query_param('IncludeRule',IncludeRule)
+
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
@@ -46,6 +52,12 @@ class DescribeVServerGroupsRequest(RpcRequest):
 
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+
+	def get_IncludeListener(self):
+		return self.get_query_params().get('IncludeListener')
+
+	def set_IncludeListener(self,IncludeListener):
+		self.add_query_param('IncludeListener',IncludeListener)
 
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')

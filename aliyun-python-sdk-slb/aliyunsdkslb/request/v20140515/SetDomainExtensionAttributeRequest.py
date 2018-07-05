@@ -18,10 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class CreateAccessControlListRequest(RpcRequest):
+class SetDomainExtensionAttributeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Slb', '2014-05-15', 'CreateAccessControlList','slb')
+		RpcRequest.__init__(self, 'Slb', '2014-05-15', 'SetDomainExtensionAttribute','slb')
 
 	def get_access_key_id(self):
 		return self.get_query_params().get('access_key_id')
@@ -34,12 +34,6 @@ class CreateAccessControlListRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_AclName(self):
-		return self.get_query_params().get('AclName')
-
-	def set_AclName(self,AclName):
-		self.add_query_param('AclName',AclName)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -59,14 +53,20 @@ class CreateAccessControlListRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_AddressIPVersion(self):
-		return self.get_query_params().get('AddressIPVersion')
+	def get_ServerCertificateId(self):
+		return self.get_query_params().get('ServerCertificateId')
 
-	def set_AddressIPVersion(self,AddressIPVersion):
-		self.add_query_param('AddressIPVersion',AddressIPVersion)
+	def set_ServerCertificateId(self,ServerCertificateId):
+		self.add_query_param('ServerCertificateId',ServerCertificateId)
 
 	def get_Tags(self):
 		return self.get_query_params().get('Tags')
 
 	def set_Tags(self,Tags):
 		self.add_query_param('Tags',Tags)
+
+	def get_DomainExtensionId(self):
+		return self.get_query_params().get('DomainExtensionId')
+
+	def set_DomainExtensionId(self,DomainExtensionId):
+		self.add_query_param('DomainExtensionId',DomainExtensionId)
