@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class DescribeScalingConfigurationsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ess', '2014-08-28', 'DescribeScalingConfigurations','ess')
+		RpcRequest.__init__(self, 'Ess', '2014-08-28', 'DescribeScalingConfigurations','ESS')
 
 	def get_ScalingConfigurationId6(self):
 		return self.get_query_params().get('ScalingConfigurationId.6')

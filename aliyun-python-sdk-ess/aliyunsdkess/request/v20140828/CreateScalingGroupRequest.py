@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class CreateScalingGroupRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ess', '2014-08-28', 'CreateScalingGroup','ess')
+		RpcRequest.__init__(self, 'Ess', '2014-08-28', 'CreateScalingGroup','ESS')
 
 	def get_MultiAZPolicy(self):
 		return self.get_query_params().get('MultiAZPolicy')

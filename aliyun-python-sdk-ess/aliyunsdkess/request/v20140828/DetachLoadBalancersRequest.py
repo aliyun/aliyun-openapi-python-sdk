@@ -18,16 +18,18 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class CompleteLifecycleActionRequest(RpcRequest):
+class DetachLoadBalancersRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ess', '2014-08-28', 'CompleteLifecycleAction','ESS')
+		RpcRequest.__init__(self, 'Ess', '2014-08-28', 'DetachLoadBalancers','ESS')
 
-	def get_LifecycleActionToken(self):
-		return self.get_query_params().get('LifecycleActionToken')
+	def get_LoadBalancers(self):
+		return self.get_query_params().get('LoadBalancers')
 
-	def set_LifecycleActionToken(self,LifecycleActionToken):
-		self.add_query_param('LifecycleActionToken',LifecycleActionToken)
+	def set_LoadBalancers(self,LoadBalancers):
+		for i in range(len(LoadBalancers)):	
+			if LoadBalancers[i] is not None:
+				self.add_query_param('LoadBalancer.' + str(i + 1) , LoadBalancers[i]);
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -35,26 +37,20 @@ class CompleteLifecycleActionRequest(RpcRequest):
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
-	def get_LifecycleHookId(self):
-		return self.get_query_params().get('LifecycleHookId')
+	def get_ScalingGroupId(self):
+		return self.get_query_params().get('ScalingGroupId')
 
-	def set_LifecycleHookId(self,LifecycleHookId):
-		self.add_query_param('LifecycleHookId',LifecycleHookId)
+	def set_ScalingGroupId(self,ScalingGroupId):
+		self.add_query_param('ScalingGroupId',ScalingGroupId)
 
-	def get_OwnerAccount(self):
-		return self.get_query_params().get('OwnerAccount')
+	def get_ForceDetach(self):
+		return self.get_query_params().get('ForceDetach')
 
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
+	def set_ForceDetach(self,ForceDetach):
+		self.add_query_param('ForceDetach',ForceDetach)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
-
-	def get_LifecycleActionResult(self):
-		return self.get_query_params().get('LifecycleActionResult')
-
-	def set_LifecycleActionResult(self,LifecycleActionResult):
-		self.add_query_param('LifecycleActionResult',LifecycleActionResult)

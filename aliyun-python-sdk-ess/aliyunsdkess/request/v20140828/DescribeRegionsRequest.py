@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class DescribeRegionsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ess', '2014-08-28', 'DescribeRegions','ess')
+		RpcRequest.__init__(self, 'Ess', '2014-08-28', 'DescribeRegions','ESS')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')

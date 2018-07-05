@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class CreateScalingConfigurationRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ess', '2014-08-28', 'CreateScalingConfiguration','ess')
+		RpcRequest.__init__(self, 'Ess', '2014-08-28', 'CreateScalingConfiguration','ESS')
 
 	def get_DataDisk3Size(self):
 		return self.get_query_params().get('DataDisk.3.Size')

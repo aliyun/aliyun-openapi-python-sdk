@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class ModifyScalingConfigurationRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ess', '2014-08-28', 'ModifyScalingConfiguration','ess')
+		RpcRequest.__init__(self, 'Ess', '2014-08-28', 'ModifyScalingConfiguration','ESS')
 
 	def get_ImageId(self):
 		return self.get_query_params().get('ImageId')
@@ -41,13 +41,13 @@ class ModifyScalingConfigurationRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
-	def get_InstanceTypess(self):
-		return self.get_query_params().get('InstanceTypess')
+	def get_InstanceTypes(self):
+		return self.get_query_params().get('InstanceTypes')
 
-	def set_InstanceTypess(self,InstanceTypess):
-		for i in range(len(InstanceTypess)):	
-			if InstanceTypess[i] is not None:
-				self.add_query_param('InstanceTypes.' + str(i + 1) , InstanceTypess[i]);
+	def set_InstanceTypes(self,InstanceTypes):
+		for i in range(len(InstanceTypes)):	
+			if InstanceTypes[i] is not None:
+				self.add_query_param('InstanceTypes.' + str(i + 1) , InstanceTypes[i]);
 
 	def get_InternetMaxBandwidthOut(self):
 		return self.get_query_params().get('InternetMaxBandwidthOut')
