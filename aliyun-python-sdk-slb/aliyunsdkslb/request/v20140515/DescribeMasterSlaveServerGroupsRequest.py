@@ -47,6 +47,12 @@ class DescribeMasterSlaveServerGroupsRequest(RpcRequest):
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
+	def get_IncludeListener(self):
+		return self.get_query_params().get('IncludeListener')
+
+	def set_IncludeListener(self,IncludeListener):
+		self.add_query_param('IncludeListener',IncludeListener)
+
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
 

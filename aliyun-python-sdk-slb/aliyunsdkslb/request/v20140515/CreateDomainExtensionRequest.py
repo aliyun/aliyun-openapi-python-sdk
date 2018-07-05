@@ -18,10 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class CreateAccessControlListRequest(RpcRequest):
+class CreateDomainExtensionRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Slb', '2014-05-15', 'CreateAccessControlList','slb')
+		RpcRequest.__init__(self, 'Slb', '2014-05-15', 'CreateDomainExtension','slb')
 
 	def get_access_key_id(self):
 		return self.get_query_params().get('access_key_id')
@@ -35,11 +35,17 @@ class CreateAccessControlListRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_AclName(self):
-		return self.get_query_params().get('AclName')
+	def get_ListenerPort(self):
+		return self.get_query_params().get('ListenerPort')
 
-	def set_AclName(self,AclName):
-		self.add_query_param('AclName',AclName)
+	def set_ListenerPort(self,ListenerPort):
+		self.add_query_param('ListenerPort',ListenerPort)
+
+	def get_LoadBalancerId(self):
+		return self.get_query_params().get('LoadBalancerId')
+
+	def set_LoadBalancerId(self,LoadBalancerId):
+		self.add_query_param('LoadBalancerId',LoadBalancerId)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -53,17 +59,23 @@ class CreateAccessControlListRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
+	def get_Domain(self):
+		return self.get_query_params().get('Domain')
+
+	def set_Domain(self,Domain):
+		self.add_query_param('Domain',Domain)
+
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_AddressIPVersion(self):
-		return self.get_query_params().get('AddressIPVersion')
+	def get_ServerCertificateId(self):
+		return self.get_query_params().get('ServerCertificateId')
 
-	def set_AddressIPVersion(self,AddressIPVersion):
-		self.add_query_param('AddressIPVersion',AddressIPVersion)
+	def set_ServerCertificateId(self,ServerCertificateId):
+		self.add_query_param('ServerCertificateId',ServerCertificateId)
 
 	def get_Tags(self):
 		return self.get_query_params().get('Tags')
