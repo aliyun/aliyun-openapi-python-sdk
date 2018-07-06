@@ -35,6 +35,12 @@ class RunInstancesRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_UniqueSuffix(self):
+		return self.get_query_params().get('UniqueSuffix')
+
+	def set_UniqueSuffix(self,UniqueSuffix):
+		self.add_query_param('UniqueSuffix',UniqueSuffix)
+
 	def get_HpcClusterId(self):
 		return self.get_query_params().get('HpcClusterId')
 
