@@ -29,6 +29,18 @@ class DescribeResourcesModificationRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_Memory(self):
+		return self.get_query_params().get('Memory')
+
+	def set_Memory(self,Memory):
+		self.add_query_param('Memory',Memory)
+
+	def get_Cores(self):
+		return self.get_query_params().get('Cores')
+
+	def set_Cores(self,Cores):
+		self.add_query_param('Cores',Cores)
+
 	def get_MigrateAcrossZone(self):
 		return self.get_query_params().get('MigrateAcrossZone')
 
