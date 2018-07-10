@@ -23,6 +23,21 @@ class PutEventTargetsRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Cms', '2018-03-08', 'PutEventTargets','cms')
 
+	def get_WebhookParameterss(self):
+		return self.get_query_params().get('WebhookParameterss')
+
+	def set_WebhookParameterss(self,WebhookParameterss):
+		for i in range(len(WebhookParameterss)):	
+			if WebhookParameterss[i].get('Id') is not None:
+				self.add_query_param('WebhookParameters.' + str(i + 1) + '.Id' , WebhookParameterss[i].get('Id'))
+			if WebhookParameterss[i].get('Protocol') is not None:
+				self.add_query_param('WebhookParameters.' + str(i + 1) + '.Protocol' , WebhookParameterss[i].get('Protocol'))
+			if WebhookParameterss[i].get('Url') is not None:
+				self.add_query_param('WebhookParameters.' + str(i + 1) + '.Url' , WebhookParameterss[i].get('Url'))
+			if WebhookParameterss[i].get('Method') is not None:
+				self.add_query_param('WebhookParameters.' + str(i + 1) + '.Method' , WebhookParameterss[i].get('Method'))
+
+
 	def get_ContactParameterss(self):
 		return self.get_query_params().get('ContactParameterss')
 
