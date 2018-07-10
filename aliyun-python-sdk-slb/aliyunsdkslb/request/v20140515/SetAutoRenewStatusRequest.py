@@ -18,10 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class ModifyLoadBalancerVPCAddressRequest(RpcRequest):
+class SetAutoRenewStatusRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Slb', '2014-05-15', 'ModifyLoadBalancerVPCAddress','slb')
+		RpcRequest.__init__(self, 'Slb', '2014-05-15', 'SetAutoRenewStatus','slb')
 
 	def get_access_key_id(self):
 		return self.get_query_params().get('access_key_id')
@@ -29,29 +29,23 @@ class ModifyLoadBalancerVPCAddressRequest(RpcRequest):
 	def set_access_key_id(self,access_key_id):
 		self.add_query_param('access_key_id',access_key_id)
 
-	def get_VSwitchId(self):
-		return self.get_query_params().get('VSwitchId')
-
-	def set_VSwitchId(self,VSwitchId):
-		self.add_query_param('VSwitchId',VSwitchId)
-
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_RenewalDuration(self):
+		return self.get_query_params().get('RenewalDuration')
+
+	def set_RenewalDuration(self,RenewalDuration):
+		self.add_query_param('RenewalDuration',RenewalDuration)
+
 	def get_LoadBalancerId(self):
 		return self.get_query_params().get('LoadBalancerId')
 
 	def set_LoadBalancerId(self,LoadBalancerId):
 		self.add_query_param('LoadBalancerId',LoadBalancerId)
-
-	def get_Address(self):
-		return self.get_query_params().get('Address')
-
-	def set_Address(self,Address):
-		self.add_query_param('Address',Address)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -64,6 +58,18 @@ class ModifyLoadBalancerVPCAddressRequest(RpcRequest):
 
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
+
+	def get_RenewalStatus(self):
+		return self.get_query_params().get('RenewalStatus')
+
+	def set_RenewalStatus(self,RenewalStatus):
+		self.add_query_param('RenewalStatus',RenewalStatus)
+
+	def get_RenewalCycUnit(self):
+		return self.get_query_params().get('RenewalCycUnit')
+
+	def set_RenewalCycUnit(self,RenewalCycUnit):
+		self.add_query_param('RenewalCycUnit',RenewalCycUnit)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
