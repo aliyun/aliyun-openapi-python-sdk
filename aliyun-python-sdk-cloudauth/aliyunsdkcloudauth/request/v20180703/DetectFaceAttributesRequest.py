@@ -18,17 +18,23 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class CompareFacesRequest(RpcRequest):
+class DetectFaceAttributesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cloudauth', '2018-05-04', 'CompareFaces','cloudauth')
+		RpcRequest.__init__(self, 'Cloudauth', '2018-07-03', 'DetectFaceAttributes','cloudauth')
 		self.set_protocol_type('https');
 
-	def get_SourceImageType(self):
-		return self.get_query_params().get('SourceImageType')
+	def get_MaxNumPhotosPerCategory(self):
+		return self.get_query_params().get('MaxNumPhotosPerCategory')
 
-	def set_SourceImageType(self,SourceImageType):
-		self.add_query_param('SourceImageType',SourceImageType)
+	def set_MaxNumPhotosPerCategory(self,MaxNumPhotosPerCategory):
+		self.add_query_param('MaxNumPhotosPerCategory',MaxNumPhotosPerCategory)
+
+	def get_MaxFaceNum(self):
+		return self.get_query_params().get('MaxFaceNum')
+
+	def set_MaxFaceNum(self,MaxFaceNum):
+		self.add_query_param('MaxFaceNum',MaxFaceNum)
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -42,20 +48,26 @@ class CompareFacesRequest(RpcRequest):
 	def set_SourceIp(self,SourceIp):
 		self.add_query_param('SourceIp',SourceIp)
 
-	def get_TargetImageType(self):
-		return self.get_query_params().get('TargetImageType')
+	def get_RetAttributes(self):
+		return self.get_query_params().get('RetAttributes')
 
-	def set_TargetImageType(self,TargetImageType):
-		self.add_query_param('TargetImageType',TargetImageType)
+	def set_RetAttributes(self,RetAttributes):
+		self.add_query_param('RetAttributes',RetAttributes)
 
-	def get_SourceImageValue(self):
-		return self.get_query_params().get('SourceImageValue')
+	def get_MaterialValue(self):
+		return self.get_query_params().get('MaterialValue')
 
-	def set_SourceImageValue(self,SourceImageValue):
-		self.add_query_param('SourceImageValue',SourceImageValue)
+	def set_MaterialValue(self,MaterialValue):
+		self.add_query_param('MaterialValue',MaterialValue)
 
-	def get_TargetImageValue(self):
-		return self.get_query_params().get('TargetImageValue')
+	def get_DontSaveDB(self):
+		return self.get_query_params().get('DontSaveDB')
 
-	def set_TargetImageValue(self,TargetImageValue):
-		self.add_query_param('TargetImageValue',TargetImageValue)
+	def set_DontSaveDB(self,DontSaveDB):
+		self.add_query_param('DontSaveDB',DontSaveDB)
+
+	def get_ClientTag(self):
+		return self.get_query_params().get('ClientTag')
+
+	def set_ClientTag(self,ClientTag):
+		self.add_query_param('ClientTag',ClientTag)
