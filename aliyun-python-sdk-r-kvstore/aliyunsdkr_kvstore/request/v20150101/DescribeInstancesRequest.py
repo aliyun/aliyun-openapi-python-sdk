@@ -47,6 +47,12 @@ class DescribeInstancesRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
+	def get_SearchKey(self):
+		return self.get_query_params().get('SearchKey')
+
+	def set_SearchKey(self,SearchKey):
+		self.add_query_param('SearchKey',SearchKey)
+
 	def get_NetworkType(self):
 		return self.get_query_params().get('NetworkType')
 

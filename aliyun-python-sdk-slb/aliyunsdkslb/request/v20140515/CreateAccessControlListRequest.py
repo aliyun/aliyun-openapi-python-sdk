@@ -59,6 +59,12 @@ class CreateAccessControlListRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
+	def get_AddressIPVersion(self):
+		return self.get_query_params().get('AddressIPVersion')
+
+	def set_AddressIPVersion(self,AddressIPVersion):
+		self.add_query_param('AddressIPVersion',AddressIPVersion)
+
 	def get_Tags(self):
 		return self.get_query_params().get('Tags')
 

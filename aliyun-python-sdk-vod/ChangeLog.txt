@@ -1,3 +1,25 @@
+2018-07-10 Version: 2.11.3
+1, Add new apis called "CreateAudit","GetAuditHistory" and "GetAuditResult" which support auditing feature.
+2, Add a new api called GetVideoInfos to bulk query video information.
+3, Add a new api called UpdateVideoInfos to update video information.
+4, Add a new api called SearchMedia to get video based on the specified filter.
+5, Add a new api called ListSnapshots to get the snapshot data.
+6, Add the field called VideoStreamList and AudioStreamList to GetMezzanineInfo api response.
+
+2018-07-03 Version: 2.11.2
+1, Add UserData as request parameter of ProduceEditingProjectVideo API
+
+2018-06-22 Version: 2.11.1
+1, Add the field named ResultType to GetPlayInfo api request.
+2, Add the field named WatermarkId to GetPlayInfo api response.
+
+2018-05-10 Version: 2.11.0
+1, Add a new api named "SubmitPreprocessJobs", which supports the user to preprocess video.
+2, Add the "CreationTime" field at the ListLiveRecordVideo api.
+3, Add the "StorageLocation" field to support the user to set the source station.
+4, Add the field named PreprocessStatus to GetMezzanineInfo, GetVideoInfo and GetPlayInfo api response.
+5, Add the field named OutputType to GetPlayInfo api request.
+
 2018-04-01 Version: 2.10.0
 1, Add the DescribePlayTopVideos  API,  to describe the top video statistics of play data.
 2, Add the DescribePlayUserAvg API, to describe the average statistics of play data.

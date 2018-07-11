@@ -53,12 +53,6 @@ class QueryCustomMetricListRequest(RpcRequest):
 	def set_Dimension(self,Dimension):
 		self.add_query_param('Dimension',Dimension)
 
-	def get_UUID(self):
-		return self.get_query_params().get('UUID')
-
-	def set_UUID(self,UUID):
-		self.add_query_param('UUID',UUID)
-
 	def get_Md5(self):
 		return self.get_query_params().get('Md5')
 

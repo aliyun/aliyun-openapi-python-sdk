@@ -23,6 +23,12 @@ class DeleteTasksRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Cms', '2018-03-08', 'DeleteTasks','cms')
 
+	def get_IsDeleteAlarms(self):
+		return self.get_query_params().get('IsDeleteAlarms')
+
+	def set_IsDeleteAlarms(self,IsDeleteAlarms):
+		self.add_query_param('IsDeleteAlarms',IsDeleteAlarms)
+
 	def get_TaskIds(self):
 		return self.get_query_params().get('TaskIds')
 

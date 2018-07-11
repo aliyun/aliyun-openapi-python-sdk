@@ -47,6 +47,14 @@ class ChatRequest(RpcRequest):
 	def set_SenderNick(self,SenderNick):
 		self.add_query_param('SenderNick',SenderNick)
 
+	def get_Perspectives(self):
+		return self.get_query_params().get('Perspectives')
+
+	def set_Perspectives(self,Perspectives):
+		for i in range(len(Perspectives)):	
+			if Perspectives[i] is not None:
+				self.add_query_param('Perspective.' + str(i + 1) , Perspectives[i]);
+
 	def get_SessionId(self):
 		return self.get_query_params().get('SessionId')
 

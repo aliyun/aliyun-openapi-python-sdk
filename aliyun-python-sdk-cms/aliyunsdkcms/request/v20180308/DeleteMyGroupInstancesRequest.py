@@ -29,6 +29,12 @@ class DeleteMyGroupInstancesRequest(RpcRequest):
 	def set_InstanceIds(self,InstanceIds):
 		self.add_query_param('InstanceIds',InstanceIds)
 
+	def get_InstanceIdList(self):
+		return self.get_query_params().get('InstanceIdList')
+
+	def set_InstanceIdList(self,InstanceIdList):
+		self.add_query_param('InstanceIdList',InstanceIdList)
+
 	def get_GroupId(self):
 		return self.get_query_params().get('GroupId')
 

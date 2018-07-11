@@ -23,11 +23,11 @@ class QueryMetricTopRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Cms', '2018-03-08', 'QueryMetricTop','cms')
 
-	def get_callby_cms_owner(self):
-		return self.get_query_params().get('callby_cms_owner')
+	def get_ResourceOwnerId(self):
+		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_callby_cms_owner(self,callby_cms_owner):
-		self.add_query_param('callby_cms_owner',callby_cms_owner)
+	def set_ResourceOwnerId(self,ResourceOwnerId):
+		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
 	def get_Period(self):
 		return self.get_query_params().get('Period')
@@ -35,11 +35,11 @@ class QueryMetricTopRequest(RpcRequest):
 	def set_Period(self,Period):
 		self.add_query_param('Period',Period)
 
-	def get_ResourceOwnerId(self):
-		return self.get_query_params().get('ResourceOwnerId')
+	def get_Metric(self):
+		return self.get_query_params().get('Metric')
 
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+	def set_Metric(self,Metric):
+		self.add_query_param('Metric',Metric)
 
 	def get_Length(self):
 		return self.get_query_params().get('Length')
@@ -77,20 +77,14 @@ class QueryMetricTopRequest(RpcRequest):
 	def set_StartTime(self,StartTime):
 		self.add_query_param('StartTime',StartTime)
 
-	def get_OrderDesc(self):
-		return self.get_query_params().get('OrderDesc')
-
-	def set_OrderDesc(self,OrderDesc):
-		self.add_query_param('OrderDesc',OrderDesc)
-
-	def get_Metric(self):
-		return self.get_query_params().get('Metric')
-
-	def set_Metric(self,Metric):
-		self.add_query_param('Metric',Metric)
-
 	def get_Dimensions(self):
 		return self.get_query_params().get('Dimensions')
 
 	def set_Dimensions(self,Dimensions):
 		self.add_query_param('Dimensions',Dimensions)
+
+	def get_OrderDesc(self):
+		return self.get_query_params().get('OrderDesc')
+
+	def set_OrderDesc(self,OrderDesc):
+		self.add_query_param('OrderDesc',OrderDesc)

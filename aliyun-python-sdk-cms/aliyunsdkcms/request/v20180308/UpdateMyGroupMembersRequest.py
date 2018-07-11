@@ -23,6 +23,12 @@ class UpdateMyGroupMembersRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Cms', '2018-03-08', 'UpdateMyGroupMembers','cms')
 
+	def get_Readers(self):
+		return self.get_query_params().get('Readers')
+
+	def set_Readers(self,Readers):
+		self.add_query_param('Readers',Readers)
+
 	def get_GroupId(self):
 		return self.get_query_params().get('GroupId')
 
