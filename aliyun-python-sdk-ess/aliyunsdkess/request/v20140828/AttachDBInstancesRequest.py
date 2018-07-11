@@ -18,16 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class DisableScalingGroupRequest(RpcRequest):
+class AttachDBInstancesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ess', '2014-08-28', 'DisableScalingGroup','ess')
-
-	def get_ResourceOwnerId(self):
-		return self.get_query_params().get('ResourceOwnerId')
-
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+		RpcRequest.__init__(self, 'Ess', '2014-08-28', 'AttachDBInstances','ess')
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -41,11 +35,19 @@ class DisableScalingGroupRequest(RpcRequest):
 	def set_ScalingGroupId(self,ScalingGroupId):
 		self.add_query_param('ScalingGroupId',ScalingGroupId)
 
-	def get_OwnerAccount(self):
-		return self.get_query_params().get('OwnerAccount')
+	def get_ForceAttach(self):
+		return self.get_query_params().get('ForceAttach')
 
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
+	def set_ForceAttach(self,ForceAttach):
+		self.add_query_param('ForceAttach',ForceAttach)
+
+	def get_DBInstances(self):
+		return self.get_query_params().get('DBInstances')
+
+	def set_DBInstances(self,DBInstances):
+		for i in range(len(DBInstances)):	
+			if DBInstances[i] is not None:
+				self.add_query_param('DBInstance.' + str(i + 1) , DBInstances[i]);
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')

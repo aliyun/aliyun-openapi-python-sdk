@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class DeleteScalingGroupRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ess', '2014-08-28', 'DeleteScalingGroup','ESS')
+		RpcRequest.__init__(self, 'Ess', '2014-08-28', 'DeleteScalingGroup','ess')
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
