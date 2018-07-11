@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class AttachLoadBalancersRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ess', '2014-08-28', 'AttachLoadBalancers','ESS')
+		RpcRequest.__init__(self, 'Ess', '2014-08-28', 'AttachLoadBalancers','ess')
 
 	def get_LoadBalancers(self):
 		return self.get_query_params().get('LoadBalancers')

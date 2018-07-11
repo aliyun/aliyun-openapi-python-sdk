@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class ModifyLifecycleHookRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ess', '2014-08-28', 'ModifyLifecycleHook','ESS')
+		RpcRequest.__init__(self, 'Ess', '2014-08-28', 'ModifyLifecycleHook','ess')
 
 	def get_DefaultResult(self):
 		return self.get_query_params().get('DefaultResult')
