@@ -29,11 +29,11 @@ class CreateMigrateTaskRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_DBName(self):
-		return self.get_query_params().get('DBName')
+	def get_MigrateTaskId(self):
+		return self.get_query_params().get('MigrateTaskId')
 
-	def set_DBName(self,DBName):
-		self.add_query_param('DBName',DBName)
+	def set_MigrateTaskId(self,MigrateTaskId):
+		self.add_query_param('MigrateTaskId',MigrateTaskId)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -47,6 +47,30 @@ class CreateMigrateTaskRequest(RpcRequest):
 	def set_IsOnlineDB(self,IsOnlineDB):
 		self.add_query_param('IsOnlineDB',IsOnlineDB)
 
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
+
+	def get_OssObjectPositions(self):
+		return self.get_query_params().get('OssObjectPositions')
+
+	def set_OssObjectPositions(self,OssObjectPositions):
+		self.add_query_param('OssObjectPositions',OssObjectPositions)
+
+	def get_OSSUrls(self):
+		return self.get_query_params().get('OSSUrls')
+
+	def set_OSSUrls(self,OSSUrls):
+		self.add_query_param('OSSUrls',OSSUrls)
+
+	def get_DBName(self):
+		return self.get_query_params().get('DBName')
+
+	def set_DBName(self,DBName):
+		self.add_query_param('DBName',DBName)
+
 	def get_DBInstanceId(self):
 		return self.get_query_params().get('DBInstanceId')
 
@@ -59,14 +83,8 @@ class CreateMigrateTaskRequest(RpcRequest):
 	def set_BackupMode(self,BackupMode):
 		self.add_query_param('BackupMode',BackupMode)
 
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
+	def get_CheckDBMode(self):
+		return self.get_query_params().get('CheckDBMode')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_OSSUrls(self):
-		return self.get_query_params().get('OSSUrls')
-
-	def set_OSSUrls(self,OSSUrls):
-		self.add_query_param('OSSUrls',OSSUrls)
+	def set_CheckDBMode(self,CheckDBMode):
+		self.add_query_param('CheckDBMode',CheckDBMode)

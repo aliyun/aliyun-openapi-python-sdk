@@ -71,6 +71,12 @@ class GetPlayInfoRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
+	def get_ResultType(self):
+		return self.get_query_params().get('ResultType')
+
+	def set_ResultType(self,ResultType):
+		self.add_query_param('ResultType',ResultType)
+
 	def get_Rand(self):
 		return self.get_query_params().get('Rand')
 
@@ -82,6 +88,12 @@ class GetPlayInfoRequest(RpcRequest):
 
 	def set_ReAuthInfo(self,ReAuthInfo):
 		self.add_query_param('ReAuthInfo',ReAuthInfo)
+
+	def get_OutputType(self):
+		return self.get_query_params().get('OutputType')
+
+	def set_OutputType(self,OutputType):
+		self.add_query_param('OutputType',OutputType)
 
 	def get_Definition(self):
 		return self.get_query_params().get('Definition')

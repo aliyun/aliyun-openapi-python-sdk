@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class CreateScalingConfigurationRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ess', '2014-08-28', 'CreateScalingConfiguration','ess')
+		RpcRequest.__init__(self, 'Ess', '2014-08-28', 'CreateScalingConfiguration','ESS')
 
 	def get_DataDisk3Size(self):
 		return self.get_query_params().get('DataDisk.3.Size')
@@ -108,8 +108,11 @@ class CreateScalingConfigurationRequest(RpcRequest):
 
 	def set_SpotPriceLimits(self,SpotPriceLimits):
 		for i in range(len(SpotPriceLimits)):	
-			if SpotPriceLimits[i] is not None:
-				self.add_query_param('SpotPriceLimit.' + str(i + 1) , SpotPriceLimits[i]);
+			if SpotPriceLimits[i].get('InstanceType') is not None:
+				self.add_query_param('SpotPriceLimit.' + str(i + 1) + '.InstanceType' , SpotPriceLimits[i].get('InstanceType'))
+			if SpotPriceLimits[i].get('PriceLimit') is not None:
+				self.add_query_param('SpotPriceLimit.' + str(i + 1) + '.PriceLimit' , SpotPriceLimits[i].get('PriceLimit'))
+
 
 	def get_SystemDiskCategory(self):
 		return self.get_query_params().get('SystemDisk.Category')
@@ -129,11 +132,23 @@ class CreateScalingConfigurationRequest(RpcRequest):
 	def set_DataDisk4Category(self,DataDisk4Category):
 		self.add_query_param('DataDisk.4.Category',DataDisk4Category)
 
+	def get_HostName(self):
+		return self.get_query_params().get('HostName')
+
+	def set_HostName(self,HostName):
+		self.add_query_param('HostName',HostName)
+
 	def get_DataDisk2SnapshotId(self):
 		return self.get_query_params().get('DataDisk.2.SnapshotId')
 
 	def set_DataDisk2SnapshotId(self,DataDisk2SnapshotId):
 		self.add_query_param('DataDisk.2.SnapshotId',DataDisk2SnapshotId)
+
+	def get_PasswordInherit(self):
+		return self.get_query_params().get('PasswordInherit')
+
+	def set_PasswordInherit(self,PasswordInherit):
+		self.add_query_param('PasswordInherit',PasswordInherit)
 
 	def get_DataDisk4Size(self):
 		return self.get_query_params().get('DataDisk.4.Size')

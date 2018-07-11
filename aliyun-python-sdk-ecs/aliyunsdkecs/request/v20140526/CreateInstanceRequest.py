@@ -257,6 +257,12 @@ class CreateInstanceRequest(RpcRequest):
 	def set_UserData(self,UserData):
 		self.add_query_param('UserData',UserData)
 
+	def get_PasswordInherit(self):
+		return self.get_query_params().get('PasswordInherit')
+
+	def set_PasswordInherit(self,PasswordInherit):
+		self.add_query_param('PasswordInherit',PasswordInherit)
+
 	def get_InstanceType(self):
 		return self.get_query_params().get('InstanceType')
 

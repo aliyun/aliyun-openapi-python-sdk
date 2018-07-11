@@ -29,6 +29,12 @@ class DescribeAvailableResourceRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_Memory(self):
+		return self.get_query_params().get('Memory')
+
+	def set_Memory(self,Memory):
+		self.add_query_param('Memory',Memory)
+
 	def get_IoOptimized(self):
 		return self.get_query_params().get('IoOptimized')
 
@@ -40,6 +46,12 @@ class DescribeAvailableResourceRequest(RpcRequest):
 
 	def set_DataDiskCategory(self,DataDiskCategory):
 		self.add_query_param('DataDiskCategory',DataDiskCategory)
+
+	def get_Cores(self):
+		return self.get_query_params().get('Cores')
+
+	def set_Cores(self,Cores):
+		self.add_query_param('Cores',Cores)
 
 	def get_SystemDiskCategory(self):
 		return self.get_query_params().get('SystemDiskCategory')

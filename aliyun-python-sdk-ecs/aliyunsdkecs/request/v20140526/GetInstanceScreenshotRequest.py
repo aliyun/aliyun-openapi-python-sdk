@@ -35,11 +35,11 @@ class GetInstanceScreenshotRequest(RpcRequest):
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
-	def get_Wakeup(self):
-		return self.get_query_params().get('Wakeup')
+	def get_WakeUp(self):
+		return self.get_query_params().get('WakeUp')
 
-	def set_Wakeup(self,Wakeup):
-		self.add_query_param('Wakeup',Wakeup)
+	def set_WakeUp(self,WakeUp):
+		self.add_query_param('WakeUp',WakeUp)
 
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')

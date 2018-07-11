@@ -77,6 +77,12 @@ class DescribeHistoryMonitorValuesRequest(RpcRequest):
 	def set_IntervalForHistory(self,IntervalForHistory):
 		self.add_query_param('IntervalForHistory',IntervalForHistory)
 
+	def get_NodeId(self):
+		return self.get_query_params().get('NodeId')
+
+	def set_NodeId(self,NodeId):
+		self.add_query_param('NodeId',NodeId)
+
 	def get_MonitorKeys(self):
 		return self.get_query_params().get('MonitorKeys')
 

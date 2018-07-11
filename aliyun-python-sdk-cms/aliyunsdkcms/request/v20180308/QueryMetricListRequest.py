@@ -29,12 +29,6 @@ class QueryMetricListRequest(RpcRequest):
 	def set_Cursor(self,Cursor):
 		self.add_query_param('Cursor',Cursor)
 
-	def get_callby_cms_owner(self):
-		return self.get_query_params().get('callby_cms_owner')
-
-	def set_callby_cms_owner(self,callby_cms_owner):
-		self.add_query_param('callby_cms_owner',callby_cms_owner)
-
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
@@ -46,6 +40,12 @@ class QueryMetricListRequest(RpcRequest):
 
 	def set_Period(self,Period):
 		self.add_query_param('Period',Period)
+
+	def get_Metric(self):
+		return self.get_query_params().get('Metric')
+
+	def set_Metric(self,Metric):
+		self.add_query_param('Metric',Metric)
 
 	def get_Length(self):
 		return self.get_query_params().get('Length')
@@ -76,18 +76,6 @@ class QueryMetricListRequest(RpcRequest):
 
 	def set_StartTime(self,StartTime):
 		self.add_query_param('StartTime',StartTime)
-
-	def get_Metric(self):
-		return self.get_query_params().get('Metric')
-
-	def set_Metric(self,Metric):
-		self.add_query_param('Metric',Metric)
-
-	def get_Page(self):
-		return self.get_query_params().get('Page')
-
-	def set_Page(self,Page):
-		self.add_query_param('Page',Page)
 
 	def get_Dimensions(self):
 		return self.get_query_params().get('Dimensions')

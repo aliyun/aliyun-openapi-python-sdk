@@ -22,3 +22,15 @@ class DescribeISPAreaCityRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Cms', '2018-03-08', 'DescribeISPAreaCity','cms')
+
+	def get_City(self):
+		return self.get_query_params().get('City')
+
+	def set_City(self,City):
+		self.add_query_param('City',City)
+
+	def get_Isp(self):
+		return self.get_query_params().get('Isp')
+
+	def set_Isp(self,Isp):
+		self.add_query_param('Isp',Isp)

@@ -29,8 +29,20 @@ class GetInstancesStatusCountRequest(RpcRequest):
 	def set_Cluster(self,Cluster):
 		self.add_query_param('Cluster',Cluster)
 
+	def get_QuotaId(self):
+		return self.get_query_params().get('QuotaId')
+
+	def set_QuotaId(self,QuotaId):
+		self.add_query_param('QuotaId',QuotaId)
+
 	def get_Region(self):
 		return self.get_query_params().get('Region')
 
 	def set_Region(self,Region):
 		self.add_query_param('Region',Region)
+
+	def get_QuotaName(self):
+		return self.get_query_params().get('QuotaName')
+
+	def set_QuotaName(self,QuotaName):
+		self.add_query_param('QuotaName',QuotaName)

@@ -29,12 +29,6 @@ class ListAlarmHistoryRequest(RpcRequest):
 	def set_Cursor(self,Cursor):
 		self.add_query_param('Cursor',Cursor)
 
-	def get_callby_cms_owner(self):
-		return self.get_query_params().get('callby_cms_owner')
-
-	def set_callby_cms_owner(self,callby_cms_owner):
-		self.add_query_param('callby_cms_owner',callby_cms_owner)
-
 	def get_Size(self):
 		return self.get_query_params().get('Size')
 

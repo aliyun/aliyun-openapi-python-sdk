@@ -95,6 +95,12 @@ class CreateLoadBalancerHTTPSListenerRequest(RpcRequest):
 	def set_MaxConnection(self,MaxConnection):
 		self.add_query_param('MaxConnection',MaxConnection)
 
+	def get_EnableHttp2(self):
+		return self.get_query_params().get('EnableHttp2')
+
+	def set_EnableHttp2(self,EnableHttp2):
+		self.add_query_param('EnableHttp2',EnableHttp2)
+
 	def get_CookieTimeout(self):
 		return self.get_query_params().get('CookieTimeout')
 
@@ -178,6 +184,12 @@ class CreateLoadBalancerHTTPSListenerRequest(RpcRequest):
 
 	def set_Gzip(self,Gzip):
 		self.add_query_param('Gzip',Gzip)
+
+	def get_TLSCipherPolicy(self):
+		return self.get_query_params().get('TLSCipherPolicy')
+
+	def set_TLSCipherPolicy(self,TLSCipherPolicy):
+		self.add_query_param('TLSCipherPolicy',TLSCipherPolicy)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')

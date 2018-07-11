@@ -47,6 +47,12 @@ class SetDomainServerCertificateRequest(RpcRequest):
 	def set_SecurityToken(self,SecurityToken):
 		self.add_query_param('SecurityToken',SecurityToken)
 
+	def get_CertType(self):
+		return self.get_query_params().get('CertType')
+
+	def set_CertType(self,CertType):
+		self.add_query_param('CertType',CertType)
+
 	def get_CertName(self):
 		return self.get_query_params().get('CertName')
 

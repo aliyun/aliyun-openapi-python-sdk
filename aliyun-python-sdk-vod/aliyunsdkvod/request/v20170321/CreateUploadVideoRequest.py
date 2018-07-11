@@ -77,6 +77,12 @@ class CreateUploadVideoRequest(RpcRequest):
 	def set_Tags(self,Tags):
 		self.add_query_param('Tags',Tags)
 
+	def get_StorageLocation(self):
+		return self.get_query_params().get('StorageLocation')
+
+	def set_StorageLocation(self,StorageLocation):
+		self.add_query_param('StorageLocation',StorageLocation)
+
 	def get_CoverURL(self):
 		return self.get_query_params().get('CoverURL')
 
