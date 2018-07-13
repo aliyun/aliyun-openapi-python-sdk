@@ -18,10 +18,25 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class AddUsersRequest(RpcRequest):
+class InvokeShellCommandRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'EHPC', '2018-04-12', 'AddUsers','ehs')
+		RpcRequest.__init__(self, 'EHPC', '2018-04-12', 'InvokeShellCommand','ehs')
+
+	def get_Instances(self):
+		return self.get_query_params().get('Instances')
+
+	def set_Instances(self,Instances):
+		for i in range(len(Instances)):	
+			if Instances[i].get('Id') is not None:
+				self.add_query_param('Instance.' + str(i + 1) + '.Id' , Instances[i].get('Id'))
+
+
+	def get_WorkingDir(self):
+		return self.get_query_params().get('WorkingDir')
+
+	def set_WorkingDir(self,WorkingDir):
+		self.add_query_param('WorkingDir',WorkingDir)
 
 	def get_ClusterId(self):
 		return self.get_query_params().get('ClusterId')
@@ -29,14 +44,14 @@ class AddUsersRequest(RpcRequest):
 	def set_ClusterId(self,ClusterId):
 		self.add_query_param('ClusterId',ClusterId)
 
-	def get_Users(self):
-		return self.get_query_params().get('Users')
+	def get_Command(self):
+		return self.get_query_params().get('Command')
 
-	def set_Users(self,Users):
-		for i in range(len(Users)):	
-			if Users[i].get('Name') is not None:
-				self.add_query_param('User.' + str(i + 1) + '.Name' , Users[i].get('Name'))
-			if Users[i].get('Group') is not None:
-				self.add_query_param('User.' + str(i + 1) + '.Group' , Users[i].get('Group'))
-			if Users[i].get('Password') is not None:
-				self.add_query_param('User.' + str(i + 1) + '.Password' , Users[i].get('Password'))
+	def set_Command(self,Command):
+		self.add_query_param('Command',Command)
+
+	def get_Timeout(self):
+		return self.get_query_params().get('Timeout')
+
+	def set_Timeout(self,Timeout):
+		self.add_query_param('Timeout',Timeout)

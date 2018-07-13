@@ -83,6 +83,12 @@ class AddNodesRequest(RpcRequest):
 	def set_EcsChargeType(self,EcsChargeType):
 		self.add_query_param('EcsChargeType',EcsChargeType)
 
+	def get_InstanceType(self):
+		return self.get_query_params().get('InstanceType')
+
+	def set_InstanceType(self,InstanceType):
+		self.add_query_param('InstanceType',InstanceType)
+
 	def get_ComputeSpotPriceLimit(self):
 		return self.get_query_params().get('ComputeSpotPriceLimit')
 

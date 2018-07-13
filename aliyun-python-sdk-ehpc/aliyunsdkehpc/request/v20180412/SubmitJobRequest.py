@@ -41,6 +41,12 @@ class SubmitJobRequest(RpcRequest):
 	def set_RunasUserPassword(self,RunasUserPassword):
 		self.add_query_param('RunasUserPassword',RunasUserPassword)
 
+	def get_PostCmdLine(self):
+		return self.get_query_params().get('PostCmdLine')
+
+	def set_PostCmdLine(self,PostCmdLine):
+		self.add_query_param('PostCmdLine',PostCmdLine)
+
 	def get_RunasUser(self):
 		return self.get_query_params().get('RunasUser')
 
@@ -77,11 +83,23 @@ class SubmitJobRequest(RpcRequest):
 	def set_ArrayRequest(self,ArrayRequest):
 		self.add_query_param('ArrayRequest',ArrayRequest)
 
+	def get_UnzipCmd(self):
+		return self.get_query_params().get('UnzipCmd')
+
+	def set_UnzipCmd(self,UnzipCmd):
+		self.add_query_param('UnzipCmd',UnzipCmd)
+
 	def get_PackagePath(self):
 		return self.get_query_params().get('PackagePath')
 
 	def set_PackagePath(self,PackagePath):
 		self.add_query_param('PackagePath',PackagePath)
+
+	def get_InputFileUrl(self):
+		return self.get_query_params().get('InputFileUrl')
+
+	def set_InputFileUrl(self,InputFileUrl):
+		self.add_query_param('InputFileUrl',InputFileUrl)
 
 	def get_Name(self):
 		return self.get_query_params().get('Name')
@@ -94,3 +112,9 @@ class SubmitJobRequest(RpcRequest):
 
 	def set_StdoutRedirectPath(self,StdoutRedirectPath):
 		self.add_query_param('StdoutRedirectPath',StdoutRedirectPath)
+
+	def get_ContainerId(self):
+		return self.get_query_params().get('ContainerId')
+
+	def set_ContainerId(self,ContainerId):
+		self.add_query_param('ContainerId',ContainerId)
