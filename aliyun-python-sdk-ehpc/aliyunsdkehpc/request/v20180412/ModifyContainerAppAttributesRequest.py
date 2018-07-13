@@ -18,25 +18,19 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class AddUsersRequest(RpcRequest):
+class ModifyContainerAppAttributesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'EHPC', '2018-04-12', 'AddUsers','ehs')
+		RpcRequest.__init__(self, 'EHPC', '2018-04-12', 'ModifyContainerAppAttributes','ehs')
 
-	def get_ClusterId(self):
-		return self.get_query_params().get('ClusterId')
+	def get_Description(self):
+		return self.get_query_params().get('Description')
 
-	def set_ClusterId(self,ClusterId):
-		self.add_query_param('ClusterId',ClusterId)
+	def set_Description(self,Description):
+		self.add_query_param('Description',Description)
 
-	def get_Users(self):
-		return self.get_query_params().get('Users')
+	def get_ContainerId(self):
+		return self.get_query_params().get('ContainerId')
 
-	def set_Users(self,Users):
-		for i in range(len(Users)):	
-			if Users[i].get('Name') is not None:
-				self.add_query_param('User.' + str(i + 1) + '.Name' , Users[i].get('Name'))
-			if Users[i].get('Group') is not None:
-				self.add_query_param('User.' + str(i + 1) + '.Group' , Users[i].get('Group'))
-			if Users[i].get('Password') is not None:
-				self.add_query_param('User.' + str(i + 1) + '.Password' , Users[i].get('Password'))
+	def set_ContainerId(self,ContainerId):
+		self.add_query_param('ContainerId',ContainerId)

@@ -18,10 +18,16 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class AddUsersRequest(RpcRequest):
+class PullImageRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'EHPC', '2018-04-12', 'AddUsers','ehs')
+		RpcRequest.__init__(self, 'EHPC', '2018-04-12', 'PullImage','ehs')
+
+	def get_ContainerType(self):
+		return self.get_query_params().get('ContainerType')
+
+	def set_ContainerType(self,ContainerType):
+		self.add_query_param('ContainerType',ContainerType)
 
 	def get_ClusterId(self):
 		return self.get_query_params().get('ClusterId')
@@ -29,14 +35,14 @@ class AddUsersRequest(RpcRequest):
 	def set_ClusterId(self,ClusterId):
 		self.add_query_param('ClusterId',ClusterId)
 
-	def get_Users(self):
-		return self.get_query_params().get('Users')
+	def get_Repository(self):
+		return self.get_query_params().get('Repository')
 
-	def set_Users(self,Users):
-		for i in range(len(Users)):	
-			if Users[i].get('Name') is not None:
-				self.add_query_param('User.' + str(i + 1) + '.Name' , Users[i].get('Name'))
-			if Users[i].get('Group') is not None:
-				self.add_query_param('User.' + str(i + 1) + '.Group' , Users[i].get('Group'))
-			if Users[i].get('Password') is not None:
-				self.add_query_param('User.' + str(i + 1) + '.Password' , Users[i].get('Password'))
+	def set_Repository(self,Repository):
+		self.add_query_param('Repository',Repository)
+
+	def get_ImageTag(self):
+		return self.get_query_params().get('ImageTag')
+
+	def set_ImageTag(self,ImageTag):
+		self.add_query_param('ImageTag',ImageTag)
