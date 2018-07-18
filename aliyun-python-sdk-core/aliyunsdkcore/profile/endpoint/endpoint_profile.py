@@ -167,6 +167,14 @@ endpoint_config_json = " { " \
                   "     \"regional_endpoint_pattern\": \"\" " \
                   "   }, " \
                   "   { " \
+                  "     \"code\": \"dyplsapi\", " \
+                  "     \"document_id\": \"28672\", " \
+                  "     \"location_service_code\": \"\", " \
+                  "     \"regional_endpoints\": [], " \
+                  "     \"global_endpoint\": \"dyplsapi.aliyuncs.com\", " \
+                  "     \"regional_endpoint_pattern\": \"\" " \
+                  "   }, " \
+                  "   { " \
                   "     \"code\": \"cr\", " \
                   "     \"document_id\": \"60716\", " \
                   "     \"location_service_code\": \"\", " \
