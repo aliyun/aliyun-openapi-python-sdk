@@ -23,23 +23,11 @@ class ModifyBackupPolicyRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'ModifyBackupPolicy','rds')
 
-	def get_PreferredBackupTime(self):
-		return self.get_query_params().get('PreferredBackupTime')
-
-	def set_PreferredBackupTime(self,PreferredBackupTime):
-		self.add_query_param('PreferredBackupTime',PreferredBackupTime)
-
 	def get_PreferredBackupPeriod(self):
 		return self.get_query_params().get('PreferredBackupPeriod')
 
 	def set_PreferredBackupPeriod(self,PreferredBackupPeriod):
 		self.add_query_param('PreferredBackupPeriod',PreferredBackupPeriod)
-
-	def get_BackupRetentionPeriod(self):
-		return self.get_query_params().get('BackupRetentionPeriod')
-
-	def set_BackupRetentionPeriod(self,BackupRetentionPeriod):
-		self.add_query_param('BackupRetentionPeriod',BackupRetentionPeriod)
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -53,17 +41,17 @@ class ModifyBackupPolicyRequest(RpcRequest):
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
+	def get_LocalLogRetentionHours(self):
+		return self.get_query_params().get('LocalLogRetentionHours')
+
+	def set_LocalLogRetentionHours(self,LocalLogRetentionHours):
+		self.add_query_param('LocalLogRetentionHours',LocalLogRetentionHours)
+
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
 
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
-
-	def get_DBInstanceId(self):
-		return self.get_query_params().get('DBInstanceId')
-
-	def set_DBInstanceId(self,DBInstanceId):
-		self.add_query_param('DBInstanceId',DBInstanceId)
 
 	def get_BackupLog(self):
 		return self.get_query_params().get('BackupLog')
@@ -71,14 +59,74 @@ class ModifyBackupPolicyRequest(RpcRequest):
 	def set_BackupLog(self,BackupLog):
 		self.add_query_param('BackupLog',BackupLog)
 
+	def get_LocalLogRetentionSpace(self):
+		return self.get_query_params().get('LocalLogRetentionSpace')
+
+	def set_LocalLogRetentionSpace(self,LocalLogRetentionSpace):
+		self.add_query_param('LocalLogRetentionSpace',LocalLogRetentionSpace)
+
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
+	def get_Duplication(self):
+		return self.get_query_params().get('Duplication')
+
+	def set_Duplication(self,Duplication):
+		self.add_query_param('Duplication',Duplication)
+
+	def get_PreferredBackupTime(self):
+		return self.get_query_params().get('PreferredBackupTime')
+
+	def set_PreferredBackupTime(self,PreferredBackupTime):
+		self.add_query_param('PreferredBackupTime',PreferredBackupTime)
+
+	def get_BackupRetentionPeriod(self):
+		return self.get_query_params().get('BackupRetentionPeriod')
+
+	def set_BackupRetentionPeriod(self,BackupRetentionPeriod):
+		self.add_query_param('BackupRetentionPeriod',BackupRetentionPeriod)
+
+	def get_DuplicationContent(self):
+		return self.get_query_params().get('DuplicationContent')
+
+	def set_DuplicationContent(self,DuplicationContent):
+		self.add_query_param('DuplicationContent',DuplicationContent)
+
+	def get_HighSpaceUsageProtection(self):
+		return self.get_query_params().get('HighSpaceUsageProtection')
+
+	def set_HighSpaceUsageProtection(self,HighSpaceUsageProtection):
+		self.add_query_param('HighSpaceUsageProtection',HighSpaceUsageProtection)
+
+	def get_DBInstanceId(self):
+		return self.get_query_params().get('DBInstanceId')
+
+	def set_DBInstanceId(self,DBInstanceId):
+		self.add_query_param('DBInstanceId',DBInstanceId)
+
+	def get_DuplicationLocation(self):
+		return self.get_query_params().get('DuplicationLocation')
+
+	def set_DuplicationLocation(self,DuplicationLocation):
+		self.add_query_param('DuplicationLocation',DuplicationLocation)
+
 	def get_LogBackupRetentionPeriod(self):
 		return self.get_query_params().get('LogBackupRetentionPeriod')
 
 	def set_LogBackupRetentionPeriod(self,LogBackupRetentionPeriod):
 		self.add_query_param('LogBackupRetentionPeriod',LogBackupRetentionPeriod)
+
+	def get_EnableBackupLog(self):
+		return self.get_query_params().get('EnableBackupLog')
+
+	def set_EnableBackupLog(self,EnableBackupLog):
+		self.add_query_param('EnableBackupLog',EnableBackupLog)
+
+	def get_BackupPolicyMode(self):
+		return self.get_query_params().get('BackupPolicyMode')
+
+	def set_BackupPolicyMode(self,BackupPolicyMode):
+		self.add_query_param('BackupPolicyMode',BackupPolicyMode)

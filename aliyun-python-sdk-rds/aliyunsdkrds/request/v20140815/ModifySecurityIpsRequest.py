@@ -77,17 +77,23 @@ class ModifySecurityIpsRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_WhitelistNetworkType(self):
-		return self.get_query_params().get('WhitelistNetworkType')
+	def get_WhitelistNetType(self):
+		return self.get_query_params().get('WhitelistNetType')
 
-	def set_WhitelistNetworkType(self,WhitelistNetworkType):
-		self.add_query_param('WhitelistNetworkType',WhitelistNetworkType)
+	def set_WhitelistNetType(self,WhitelistNetType):
+		self.add_query_param('WhitelistNetType',WhitelistNetType)
 
 	def get_DBInstanceIPArrayAttribute(self):
 		return self.get_query_params().get('DBInstanceIPArrayAttribute')
 
 	def set_DBInstanceIPArrayAttribute(self,DBInstanceIPArrayAttribute):
 		self.add_query_param('DBInstanceIPArrayAttribute',DBInstanceIPArrayAttribute)
+
+	def get_SecurityIPType(self):
+		return self.get_query_params().get('SecurityIPType')
+
+	def set_SecurityIPType(self,SecurityIPType):
+		self.add_query_param('SecurityIPType',SecurityIPType)
 
 	def get_DBInstanceId(self):
 		return self.get_query_params().get('DBInstanceId')
