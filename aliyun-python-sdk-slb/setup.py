@@ -31,7 +31,7 @@ Created on 7/3/2015
 """
 
 PACKAGE = "aliyunsdkslb"
-NAME = "aliyun-python-sdk-slb"
+NAME = "dd-aliyun-python-sdk-slb"
 DESCRIPTION = "The slb module of Aliyun Python sdk."
 AUTHOR = "Aliyun"
 AUTHOR_EMAIL = "aliyun-developers-efficiency@list.alibaba-inc.com"
