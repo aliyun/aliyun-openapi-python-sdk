@@ -55,7 +55,7 @@ def set_default_protocol_type(user_protocol_type):
         _default_protocol_type = user_protocol_type
     else:
         raise exceptions.ClientException(
-            error_code.SDK_INVALID_PARAMS, 
+            error_code.SDK_INVALID_PARAMS,
             "Invalid 'protocol_type', should be 'http' or 'https'"
         )
 
@@ -90,6 +90,7 @@ class AcsRequest:
         """
         self._version = version
         self._product = product
+        self._region_id = None
         self._action_name = action_name
         self._protocol_type = protocol_type
         if self._protocol_type is None:
@@ -128,6 +129,9 @@ class AcsRequest:
     def get_version(self):
         return self._version
 
+    def get_region_id(self):
+        return self._region_id
+
     def get_action_name(self):
         return self._action_name
 
@@ -157,6 +161,9 @@ class AcsRequest:
 
     def set_version(self, version):
         self._version = version
+
+    def set_region_id(self, region_id):
+        self._region_id = region_id
 
     def set_action_name(self, action_name):
         self._action_name = action_name
