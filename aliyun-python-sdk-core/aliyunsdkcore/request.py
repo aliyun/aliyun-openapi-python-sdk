@@ -63,6 +63,15 @@ def set_default_protocol_type(user_protocol_type):
 def get_default_protocol_type():
     return _default_protocol_type
 
+class Desc(object):
+    def __init__(self, name):
+        self.name = name
+
+    def __get__(self, instance, owner):
+        return instance.get_query_params().get(self.name)
+
+    def __set__(self, instance, value):
+        instance.add_query_param(self.name, value)
 
 class AcsRequest:
     """
@@ -295,6 +304,11 @@ class RpcRequest(AcsRequest):
             if headerKey.startswith("x-acs-") or headerKey.startswith("x-sdk-"):
                 headers[headerKey] = headerValue
         return headers
+
+    @classmethod
+    def populate_properties(cls):
+        for prop in cls.__slots__:
+            setattr(cls, prop, Desc(prop))
 
 
 class RoaRequest(AcsRequest):
