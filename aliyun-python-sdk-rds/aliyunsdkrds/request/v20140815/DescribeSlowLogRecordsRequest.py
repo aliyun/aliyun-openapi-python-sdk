@@ -41,6 +41,12 @@ class DescribeSlowLogRecordsRequest(RpcRequest):
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
+	def get_QueryTimeFormat(self):
+		return self.get_query_params().get('QueryTimeFormat')
+
+	def set_QueryTimeFormat(self,QueryTimeFormat):
+		self.add_query_param('QueryTimeFormat',QueryTimeFormat)
+
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
 
