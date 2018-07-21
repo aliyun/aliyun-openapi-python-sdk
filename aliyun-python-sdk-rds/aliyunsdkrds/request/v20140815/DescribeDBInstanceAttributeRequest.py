@@ -35,6 +35,12 @@ class DescribeDBInstanceAttributeRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_Expired(self):
+		return self.get_query_params().get('Expired')
+
+	def set_Expired(self,Expired):
+		self.add_query_param('Expired',Expired)
+
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 

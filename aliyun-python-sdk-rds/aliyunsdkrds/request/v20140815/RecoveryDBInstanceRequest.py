@@ -18,10 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class CloneDBInstanceRequest(RpcRequest):
+class RecoveryDBInstanceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'CloneDBInstance','rds')
+		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'RecoveryDBInstance','rds')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -113,17 +113,17 @@ class CloneDBInstanceRequest(RpcRequest):
 	def set_ResourceGroupId(self,ResourceGroupId):
 		self.add_query_param('ResourceGroupId',ResourceGroupId)
 
+	def get_TargetDBInstanceId(self):
+		return self.get_query_params().get('TargetDBInstanceId')
+
+	def set_TargetDBInstanceId(self,TargetDBInstanceId):
+		self.add_query_param('TargetDBInstanceId',TargetDBInstanceId)
+
 	def get_VPCId(self):
 		return self.get_query_params().get('VPCId')
 
 	def set_VPCId(self,VPCId):
 		self.add_query_param('VPCId',VPCId)
-
-	def get_ZoneId(self):
-		return self.get_query_params().get('ZoneId')
-
-	def set_ZoneId(self,ZoneId):
-		self.add_query_param('ZoneId',ZoneId)
 
 	def get_DBInstanceDescription(self):
 		return self.get_query_params().get('DBInstanceDescription')
