@@ -77,6 +77,12 @@ class CreateOfficeConversionTaskRequest(RpcRequest):
 	def set_EndPage(self,EndPage):
 		self.add_query_param('EndPage',EndPage)
 
+	def get_TgtFileSuffix(self):
+		return self.get_query_params().get('TgtFileSuffix')
+
+	def set_TgtFileSuffix(self,TgtFileSuffix):
+		self.add_query_param('TgtFileSuffix',TgtFileSuffix)
+
 	def get_SheetOnePage(self):
 		return self.get_query_params().get('SheetOnePage')
 
@@ -112,6 +118,12 @@ class CreateOfficeConversionTaskRequest(RpcRequest):
 
 	def set_NotifyEndpoint(self,NotifyEndpoint):
 		self.add_query_param('NotifyEndpoint',NotifyEndpoint)
+
+	def get_TgtFilePrefix(self):
+		return self.get_query_params().get('TgtFilePrefix')
+
+	def set_TgtFilePrefix(self,TgtFilePrefix):
+		self.add_query_param('TgtFilePrefix',TgtFilePrefix)
 
 	def get_SrcUri(self):
 		return self.get_query_params().get('SrcUri')
