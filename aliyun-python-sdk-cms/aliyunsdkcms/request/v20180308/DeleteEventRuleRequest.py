@@ -23,6 +23,14 @@ class DeleteEventRuleRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Cms', '2018-03-08', 'DeleteEventRule','cms')
 
+	def get_RuleNamess(self):
+		return self.get_query_params().get('RuleNamess')
+
+	def set_RuleNamess(self,RuleNamess):
+		for i in range(len(RuleNamess)):	
+			if RuleNamess[i] is not None:
+				self.add_query_param('RuleNames.' + str(i + 1) , RuleNamess[i]);
+
 	def get_RuleName(self):
 		return self.get_query_params().get('RuleName')
 

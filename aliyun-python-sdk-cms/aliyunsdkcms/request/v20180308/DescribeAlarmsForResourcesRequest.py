@@ -18,10 +18,16 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class ListEventRulesRequest(RpcRequest):
+class DescribeAlarmsForResourcesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cms', '2018-03-08', 'ListEventRules','cms')
+		RpcRequest.__init__(self, 'Cms', '2018-03-08', 'DescribeAlarmsForResources','cms')
+
+	def get_EnableState(self):
+		return self.get_query_params().get('EnableState')
+
+	def set_EnableState(self,EnableState):
+		self.add_query_param('EnableState',EnableState)
 
 	def get_GroupId(self):
 		return self.get_query_params().get('GroupId')
@@ -29,20 +35,38 @@ class ListEventRulesRequest(RpcRequest):
 	def set_GroupId(self,GroupId):
 		self.add_query_param('GroupId',GroupId)
 
+	def get_Namespace(self):
+		return self.get_query_params().get('Namespace')
+
+	def set_Namespace(self,Namespace):
+		self.add_query_param('Namespace',Namespace)
+
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
 
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
 
-	def get_NamePrefix(self):
-		return self.get_query_params().get('NamePrefix')
+	def get_AlertState(self):
+		return self.get_query_params().get('AlertState')
 
-	def set_NamePrefix(self,NamePrefix):
-		self.add_query_param('NamePrefix',NamePrefix)
+	def set_AlertState(self,AlertState):
+		self.add_query_param('AlertState',AlertState)
 
 	def get_Page(self):
 		return self.get_query_params().get('Page')
 
 	def set_Page(self,Page):
 		self.add_query_param('Page',Page)
+
+	def get_MetricName(self):
+		return self.get_query_params().get('MetricName')
+
+	def set_MetricName(self,MetricName):
+		self.add_query_param('MetricName',MetricName)
+
+	def get_Dimensions(self):
+		return self.get_query_params().get('Dimensions')
+
+	def set_Dimensions(self,Dimensions):
+		self.add_query_param('Dimensions',Dimensions)
