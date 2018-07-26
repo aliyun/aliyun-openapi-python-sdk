@@ -59,17 +59,17 @@ class NodeListRequest(RpcRequest):
 	def set_UserId(self,UserId):
 		self.add_query_param('UserId',UserId)
 
-	def get_PageNumber(self):
-		return self.get_query_params().get('PageNumber')
-
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
-
 	def get_SerialNumbers(self):
 		return self.get_query_params().get('SerialNumbers')
 
 	def set_SerialNumbers(self,SerialNumbers):
 		self.add_query_param('SerialNumbers',SerialNumbers)
+
+	def get_PageNumber(self):
+		return self.get_query_params().get('PageNumber')
+
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)
 
 	def get_Status(self):
 		return self.get_query_params().get('Status')

@@ -18,10 +18,16 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class ListEventRulesRequest(RpcRequest):
+class SendDryRunSystemEventRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cms', '2018-03-08', 'ListEventRules','cms')
+		RpcRequest.__init__(self, 'Cms', '2018-03-08', 'SendDryRunSystemEvent','cms')
+
+	def get_Product(self):
+		return self.get_query_params().get('Product')
+
+	def set_Product(self,Product):
+		self.add_query_param('Product',Product)
 
 	def get_GroupId(self):
 		return self.get_query_params().get('GroupId')
@@ -29,20 +35,14 @@ class ListEventRulesRequest(RpcRequest):
 	def set_GroupId(self,GroupId):
 		self.add_query_param('GroupId',GroupId)
 
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
+	def get_EventName(self):
+		return self.get_query_params().get('EventName')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
+	def set_EventName(self,EventName):
+		self.add_query_param('EventName',EventName)
 
-	def get_NamePrefix(self):
-		return self.get_query_params().get('NamePrefix')
+	def get_EventContent(self):
+		return self.get_query_params().get('EventContent')
 
-	def set_NamePrefix(self,NamePrefix):
-		self.add_query_param('NamePrefix',NamePrefix)
-
-	def get_Page(self):
-		return self.get_query_params().get('Page')
-
-	def set_Page(self,Page):
-		self.add_query_param('Page',Page)
+	def set_EventContent(self,EventContent):
+		self.add_query_param('EventContent',EventContent)

@@ -23,17 +23,17 @@ class QueryMetricTopRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Cms', '2018-03-08', 'QueryMetricTop','cms')
 
-	def get_ResourceOwnerId(self):
-		return self.get_query_params().get('ResourceOwnerId')
-
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
 	def get_Period(self):
 		return self.get_query_params().get('Period')
 
 	def set_Period(self,Period):
 		self.add_query_param('Period',Period)
+
+	def get_ResourceOwnerId(self):
+		return self.get_query_params().get('ResourceOwnerId')
+
+	def set_ResourceOwnerId(self,ResourceOwnerId):
+		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
 	def get_Metric(self):
 		return self.get_query_params().get('Metric')

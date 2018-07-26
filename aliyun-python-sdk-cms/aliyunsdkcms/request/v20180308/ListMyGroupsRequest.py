@@ -41,17 +41,17 @@ class ListMyGroupsRequest(RpcRequest):
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
 
-	def get_Type(self):
-		return self.get_query_params().get('Type')
-
-	def set_Type(self,Type):
-		self.add_query_param('Type',Type)
-
 	def get_Keyword(self):
 		return self.get_query_params().get('Keyword')
 
 	def set_Keyword(self,Keyword):
 		self.add_query_param('Keyword',Keyword)
+
+	def get_Type(self):
+		return self.get_query_params().get('Type')
+
+	def set_Type(self,Type):
+		self.add_query_param('Type',Type)
 
 	def get_GroupName(self):
 		return self.get_query_params().get('GroupName')
