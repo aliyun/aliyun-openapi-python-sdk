@@ -23,24 +23,6 @@ class CreateHybridClusterRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'EHPC', '2018-04-12', 'CreateHybridCluster','ehs')
 
-	def get_VolumeProtocol(self):
-		return self.get_query_params().get('VolumeProtocol')
-
-	def set_VolumeProtocol(self,VolumeProtocol):
-		self.add_query_param('VolumeProtocol',VolumeProtocol)
-
-	def get_OsTag(self):
-		return self.get_query_params().get('OsTag')
-
-	def set_OsTag(self,OsTag):
-		self.add_query_param('OsTag',OsTag)
-
-	def get_RemoteDirectory(self):
-		return self.get_query_params().get('RemoteDirectory')
-
-	def set_RemoteDirectory(self,RemoteDirectory):
-		self.add_query_param('RemoteDirectory',RemoteDirectory)
-
 	def get_EhpcVersion(self):
 		return self.get_query_params().get('EhpcVersion')
 
@@ -77,11 +59,11 @@ class CreateHybridClusterRequest(RpcRequest):
 	def set_EcsOrderComputeInstanceType(self,EcsOrderComputeInstanceType):
 		self.add_query_param('EcsOrder.Compute.InstanceType',EcsOrderComputeInstanceType)
 
-	def get_VSwitchId(self):
-		return self.get_query_params().get('VSwitchId')
+	def get_OnPremiseVolumeRemotePath(self):
+		return self.get_query_params().get('OnPremiseVolumeRemotePath')
 
-	def set_VSwitchId(self,VSwitchId):
-		self.add_query_param('VSwitchId',VSwitchId)
+	def set_OnPremiseVolumeRemotePath(self,OnPremiseVolumeRemotePath):
+		self.add_query_param('OnPremiseVolumeRemotePath',OnPremiseVolumeRemotePath)
 
 	def get_VolumeType(self):
 		return self.get_query_params().get('VolumeType')
@@ -94,6 +76,48 @@ class CreateHybridClusterRequest(RpcRequest):
 
 	def set_Password(self,Password):
 		self.add_query_param('Password',Password)
+
+	def get_OnPremiseVolumeMountPoint(self):
+		return self.get_query_params().get('OnPremiseVolumeMountPoint')
+
+	def set_OnPremiseVolumeMountPoint(self,OnPremiseVolumeMountPoint):
+		self.add_query_param('OnPremiseVolumeMountPoint',OnPremiseVolumeMountPoint)
+
+	def get_OnPremiseVolumeProtocol(self):
+		return self.get_query_params().get('OnPremiseVolumeProtocol')
+
+	def set_OnPremiseVolumeProtocol(self,OnPremiseVolumeProtocol):
+		self.add_query_param('OnPremiseVolumeProtocol',OnPremiseVolumeProtocol)
+
+	def get_VolumeProtocol(self):
+		return self.get_query_params().get('VolumeProtocol')
+
+	def set_VolumeProtocol(self,VolumeProtocol):
+		self.add_query_param('VolumeProtocol',VolumeProtocol)
+
+	def get_OnPremiseVolumeLocalPath(self):
+		return self.get_query_params().get('OnPremiseVolumeLocalPath')
+
+	def set_OnPremiseVolumeLocalPath(self,OnPremiseVolumeLocalPath):
+		self.add_query_param('OnPremiseVolumeLocalPath',OnPremiseVolumeLocalPath)
+
+	def get_OsTag(self):
+		return self.get_query_params().get('OsTag')
+
+	def set_OsTag(self,OsTag):
+		self.add_query_param('OsTag',OsTag)
+
+	def get_RemoteDirectory(self):
+		return self.get_query_params().get('RemoteDirectory')
+
+	def set_RemoteDirectory(self,RemoteDirectory):
+		self.add_query_param('RemoteDirectory',RemoteDirectory)
+
+	def get_VSwitchId(self):
+		return self.get_query_params().get('VSwitchId')
+
+	def set_VSwitchId(self,VSwitchId):
+		self.add_query_param('VSwitchId',VSwitchId)
 
 	def get_Nodes(self):
 		return self.get_query_params().get('Nodes')
