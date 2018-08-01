@@ -211,6 +211,12 @@ class CreateClusterRequest(RpcRequest):
 	def set_EcsChargeType(self,EcsChargeType):
 		self.add_query_param('EcsChargeType',EcsChargeType)
 
+	def get_InputFileUrl(self):
+		return self.get_query_params().get('InputFileUrl')
+
+	def set_InputFileUrl(self,InputFileUrl):
+		self.add_query_param('InputFileUrl',InputFileUrl)
+
 	def get_VpcId(self):
 		return self.get_query_params().get('VpcId')
 

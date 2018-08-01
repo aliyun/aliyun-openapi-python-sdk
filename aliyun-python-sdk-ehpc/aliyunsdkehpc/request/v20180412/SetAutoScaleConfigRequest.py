@@ -47,11 +47,23 @@ class SetAutoScaleConfigRequest(RpcRequest):
 	def set_EnableAutoGrow(self,EnableAutoGrow):
 		self.add_query_param('EnableAutoGrow',EnableAutoGrow)
 
+	def get_SpotPriceLimit(self):
+		return self.get_query_params().get('SpotPriceLimit')
+
+	def set_SpotPriceLimit(self,SpotPriceLimit):
+		self.add_query_param('SpotPriceLimit',SpotPriceLimit)
+
 	def get_EnableAutoShrink(self):
 		return self.get_query_params().get('EnableAutoShrink')
 
 	def set_EnableAutoShrink(self,EnableAutoShrink):
 		self.add_query_param('EnableAutoShrink',EnableAutoShrink)
+
+	def get_SpotStrategy(self):
+		return self.get_query_params().get('SpotStrategy')
+
+	def set_SpotStrategy(self,SpotStrategy):
+		self.add_query_param('SpotStrategy',SpotStrategy)
 
 	def get_MaxNodesInCluster(self):
 		return self.get_query_params().get('MaxNodesInCluster')
