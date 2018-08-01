@@ -35,6 +35,12 @@ class CreateNotifyPolicyRequest(RpcRequest):
 	def set_AlertName(self,AlertName):
 		self.add_query_param('AlertName',AlertName)
 
+	def get_GroupId(self):
+		return self.get_query_params().get('GroupId')
+
+	def set_GroupId(self,GroupId):
+		self.add_query_param('GroupId',GroupId)
+
 	def get_EndTime(self):
 		return self.get_query_params().get('EndTime')
 
