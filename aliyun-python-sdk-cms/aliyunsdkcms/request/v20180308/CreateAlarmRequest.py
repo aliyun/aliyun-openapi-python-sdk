@@ -35,6 +35,12 @@ class CreateAlarmRequest(RpcRequest):
 	def set_Webhook(self,Webhook):
 		self.add_query_param('Webhook',Webhook)
 
+	def get_DryRun(self):
+		return self.get_query_params().get('DryRun')
+
+	def set_DryRun(self,DryRun):
+		self.add_query_param('DryRun',DryRun)
+
 	def get_ContactGroups(self):
 		return self.get_query_params().get('ContactGroups')
 
@@ -59,17 +65,17 @@ class CreateAlarmRequest(RpcRequest):
 	def set_StartTime(self,StartTime):
 		self.add_query_param('StartTime',StartTime)
 
-	def get_Namespace(self):
-		return self.get_query_params().get('Namespace')
-
-	def set_Namespace(self,Namespace):
-		self.add_query_param('Namespace',Namespace)
-
 	def get_Name(self):
 		return self.get_query_params().get('Name')
 
 	def set_Name(self,Name):
 		self.add_query_param('Name',Name)
+
+	def get_Namespace(self):
+		return self.get_query_params().get('Namespace')
+
+	def set_Namespace(self,Namespace):
+		self.add_query_param('Namespace',Namespace)
 
 	def get_EvaluationCount(self):
 		return self.get_query_params().get('EvaluationCount')

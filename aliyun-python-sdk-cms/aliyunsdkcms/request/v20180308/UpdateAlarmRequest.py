@@ -35,6 +35,12 @@ class UpdateAlarmRequest(RpcRequest):
 	def set_Webhook(self,Webhook):
 		self.add_query_param('Webhook',Webhook)
 
+	def get_DryRun(self):
+		return self.get_query_params().get('DryRun')
+
+	def set_DryRun(self,DryRun):
+		self.add_query_param('DryRun',DryRun)
+
 	def get_ContactGroups(self):
 		return self.get_query_params().get('ContactGroups')
 
