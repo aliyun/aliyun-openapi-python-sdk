@@ -131,6 +131,12 @@ class CreateOfficeConversionTaskRequest(RpcRequest):
 	def set_SrcUri(self,SrcUri):
 		self.add_query_param('SrcUri',SrcUri)
 
+	def get_TgtFilePages(self):
+		return self.get_query_params().get('TgtFilePages')
+
+	def set_TgtFilePages(self,TgtFilePages):
+		self.add_query_param('TgtFilePages',TgtFilePages)
+
 	def get_TgtUri(self):
 		return self.get_query_params().get('TgtUri')
 
