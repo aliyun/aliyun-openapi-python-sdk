@@ -21,6 +21,7 @@
 
 
 import logging
+import os
 from aliyunsdkcore.acs_exception import error_msg
 from aliyunsdkcore.acs_exception import error_code
 from aliyunsdkcore.acs_exception import exceptions
@@ -37,6 +38,10 @@ class SignerFactory(object):
     def get_signer(cred, region_id, do_action_api, debug=False):
         if cred['ak'] is not None and cred['secret'] is not None:
             access_key_credential = credentials.AccessKeyCredential(cred['ak'], cred['secret'])
+            return access_key_signer.AccessKeySigner(access_key_credential)
+        elif os.environ.get('ALIYUN_ACCESS_KEY_ID') is not None and os.environ.get('ALIYUN_ACCESS_KEY_SECRET') is not None:
+            access_key_credential = credentials.AccessKeyCredential(os.environ.get('ALIYUN_ACCESS_KEY_ID'),
+                                                                    os.environ.get('ALIYUN_ACCESS_KEY_SECRET'))
             return access_key_signer.AccessKeySigner(access_key_credential)
         elif cred['credential'] is not None:
             credential = cred['credential']
