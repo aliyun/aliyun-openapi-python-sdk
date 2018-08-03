@@ -18,16 +18,16 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class GetHybridClusterConfigRequest(RpcRequest):
+class AddLocalNodesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'EHPC', '2018-04-12', 'GetHybridClusterConfig','ehs')
+		RpcRequest.__init__(self, 'EHPC', '2018-04-12', 'AddLocalNodes','ehs')
 
-	def get_Node(self):
-		return self.get_query_params().get('Node')
+	def get_Nodes(self):
+		return self.get_query_params().get('Nodes')
 
-	def set_Node(self,Node):
-		self.add_query_param('Node',Node)
+	def set_Nodes(self,Nodes):
+		self.add_query_param('Nodes',Nodes)
 
 	def get_ClusterId(self):
 		return self.get_query_params().get('ClusterId')

@@ -18,19 +18,31 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class GetHybridClusterConfigRequest(RpcRequest):
+class DeleteImageRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'EHPC', '2018-04-12', 'GetHybridClusterConfig','ehs')
+		RpcRequest.__init__(self, 'EHPC', '2018-04-12', 'DeleteImage','ehs')
 
-	def get_Node(self):
-		return self.get_query_params().get('Node')
+	def get_ContainerType(self):
+		return self.get_query_params().get('ContainerType')
 
-	def set_Node(self,Node):
-		self.add_query_param('Node',Node)
+	def set_ContainerType(self,ContainerType):
+		self.add_query_param('ContainerType',ContainerType)
 
 	def get_ClusterId(self):
 		return self.get_query_params().get('ClusterId')
 
 	def set_ClusterId(self,ClusterId):
 		self.add_query_param('ClusterId',ClusterId)
+
+	def get_Repository(self):
+		return self.get_query_params().get('Repository')
+
+	def set_Repository(self,Repository):
+		self.add_query_param('Repository',Repository)
+
+	def get_ImageTag(self):
+		return self.get_query_params().get('ImageTag')
+
+	def set_ImageTag(self,ImageTag):
+		self.add_query_param('ImageTag',ImageTag)
