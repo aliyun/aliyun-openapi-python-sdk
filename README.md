@@ -70,7 +70,7 @@ You can install the Alibaba Cloud Python SDK using the following two methods. Re
 
 	```python
 	  client = AcsClient(
-		  "<access-key-id>", 
+		  "<access-key-id>",
 		  "<access-key-secret>",
 		  "<region-id>"
 	  );
@@ -85,7 +85,7 @@ You can install the Alibaba Cloud Python SDK using the following two methods. Re
 
 	- `region-id` is the ID of the region where the service is called. For a list of region IDs, see [Regions and zones](~~40654~~).
 
-	>**Note:** The sequence of these parameters cannot be changed. 
+	>**Note:** The sequence of these parameters cannot be changed.
 
 3. Initialize a request and print response.
 
@@ -113,7 +113,7 @@ You can install the Alibaba Cloud Python SDK using the following two methods. Re
 
 	  # Initialize AcsClient instance
 	  client = AcsClient(
-		  "<your-access-key-id>", 
+		  "<your-access-key-id>",
 		  "<your-access-key-secret>",
 		  "<your-region-id>"
 	  );
