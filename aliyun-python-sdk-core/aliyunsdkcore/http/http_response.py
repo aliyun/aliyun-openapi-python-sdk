@@ -23,6 +23,7 @@ import os
 from urlparse import urlparse
 from http_request import HttpRequest
 import protocol_type as PT
+import base64
 
 
 class HttpResponse(HttpRequest):
@@ -175,7 +176,8 @@ class HttpResponse(HttpRequest):
             conn = httplib.HTTPSConnection(proxy_host, proxy_port, **kwargs)
             conn.set_tunnel(host, port, proxy_headers)
         else:
-            conn = http.client.HTTPSConnection(host, port, **kwargs)
+            conn = httplib.HTTPSConnection(host, port, **kwargs)
+
 
         return conn
 
