@@ -47,6 +47,12 @@ class AddMediaRequest(RpcRequest):
 	def set_Description(self,Description):
 		self.add_query_param('Description',Description)
 
+	def get_OverrideParams(self):
+		return self.get_query_params().get('OverrideParams')
+
+	def set_OverrideParams(self,OverrideParams):
+		self.add_query_param('OverrideParams',OverrideParams)
+
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
@@ -58,6 +64,12 @@ class AddMediaRequest(RpcRequest):
 
 	def set_Title(self,Title):
 		self.add_query_param('Title',Title)
+
+	def get_InputUnbind(self):
+		return self.get_query_params().get('InputUnbind')
+
+	def set_InputUnbind(self,InputUnbind):
+		self.add_query_param('InputUnbind',InputUnbind)
 
 	def get_Tags(self):
 		return self.get_query_params().get('Tags')

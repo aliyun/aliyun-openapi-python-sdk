@@ -35,6 +35,12 @@ class SubmitMediaInfoJobRequest(RpcRequest):
 	def set_UserData(self,UserData):
 		self.add_query_param('UserData',UserData)
 
+	def get_Async(self):
+		return self.get_query_params().get('Async')
+
+	def set_Async(self,Async):
+		self.add_query_param('Async',Async)
+
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 

@@ -29,6 +29,12 @@ class QueryMediaListRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_IncludeSummaryList(self):
+		return self.get_query_params().get('IncludeSummaryList')
+
+	def set_IncludeSummaryList(self,IncludeSummaryList):
+		self.add_query_param('IncludeSummaryList',IncludeSummaryList)
+
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
