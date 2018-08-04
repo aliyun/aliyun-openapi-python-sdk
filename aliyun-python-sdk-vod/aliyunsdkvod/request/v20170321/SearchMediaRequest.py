@@ -41,6 +41,12 @@ class SearchMediaRequest(RpcRequest):
 	def set_PageNo(self,PageNo):
 		self.add_query_param('PageNo',PageNo)
 
+	def get_SearchType(self):
+		return self.get_query_params().get('SearchType')
+
+	def set_SearchType(self,SearchType):
+		self.add_query_param('SearchType',SearchType)
+
 	def get_Match(self):
 		return self.get_query_params().get('Match')
 
@@ -70,12 +76,6 @@ class SearchMediaRequest(RpcRequest):
 
 	def set_Fields(self,Fields):
 		self.add_query_param('Fields',Fields)
-
-	def get_MediaType(self):
-		return self.get_query_params().get('MediaType')
-
-	def set_MediaType(self,MediaType):
-		self.add_query_param('MediaType',MediaType)
 
 	def get_ScrollToken(self):
 		return self.get_query_params().get('ScrollToken')
