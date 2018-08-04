@@ -1,3 +1,15 @@
+2018-05-08 Version: 1.5.4
+1, Add instance params.
+
+2018-03-30 Version: 1.5.3
+1, API QueryCustomerSaleInfo arguments update.
+
+2018-03-27 Version: 1.5.2
+1, Rename QueryCustomerSaleInfo to RegionName.
+
+2018-03-16 Version: 1.5.1
+1, Update GetQuotaInstance API.
+
 2018-03-15 Version: 1.5.0
 1, Add QueryCustomerSaleInfo API.
 

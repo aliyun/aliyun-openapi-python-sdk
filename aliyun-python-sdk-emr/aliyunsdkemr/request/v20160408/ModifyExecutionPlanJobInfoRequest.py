@@ -40,4 +40,5 @@ class ModifyExecutionPlanJobInfoRequest(RpcRequest):
 
 	def set_JobIdLists(self,JobIdLists):
 		for i in range(len(JobIdLists)):	
-			self.add_query_param('JobIdList.' + str(i + 1) , JobIdLists[i]);
+			if JobIdLists[i] is not None:
+				self.add_query_param('JobIdList.' + str(i + 1) , JobIdLists[i]);

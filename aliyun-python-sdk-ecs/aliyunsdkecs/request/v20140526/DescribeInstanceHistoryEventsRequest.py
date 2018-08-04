@@ -55,11 +55,27 @@ class DescribeInstanceHistoryEventsRequest(RpcRequest):
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
 
+	def get_InstanceEventCycleStatuss(self):
+		return self.get_query_params().get('InstanceEventCycleStatuss')
+
+	def set_InstanceEventCycleStatuss(self,InstanceEventCycleStatuss):
+		for i in range(len(InstanceEventCycleStatuss)):	
+			if InstanceEventCycleStatuss[i] is not None:
+				self.add_query_param('InstanceEventCycleStatus.' + str(i + 1) , InstanceEventCycleStatuss[i]);
+
 	def get_EventPublishTimeEnd(self):
 		return self.get_query_params().get('EventPublishTime.End')
 
 	def set_EventPublishTimeEnd(self,EventPublishTimeEnd):
 		self.add_query_param('EventPublishTime.End',EventPublishTimeEnd)
+
+	def get_InstanceEventTypes(self):
+		return self.get_query_params().get('InstanceEventTypes')
+
+	def set_InstanceEventTypes(self,InstanceEventTypes):
+		for i in range(len(InstanceEventTypes)):	
+			if InstanceEventTypes[i] is not None:
+				self.add_query_param('InstanceEventType.' + str(i + 1) , InstanceEventTypes[i]);
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')

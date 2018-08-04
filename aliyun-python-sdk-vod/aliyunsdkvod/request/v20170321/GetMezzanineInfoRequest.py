@@ -41,6 +41,12 @@ class GetMezzanineInfoRequest(RpcRequest):
 	def set_VideoId(self,VideoId):
 		self.add_query_param('VideoId',VideoId)
 
+	def get_PreviewSegment(self):
+		return self.get_query_params().get('PreviewSegment')
+
+	def set_PreviewSegment(self,PreviewSegment):
+		self.add_query_param('PreviewSegment',PreviewSegment)
+
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 

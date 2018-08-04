@@ -23,6 +23,12 @@ class AddLiveRecordNotifyConfigRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'live', '2016-11-01', 'AddLiveRecordNotifyConfig','live')
 
+	def get_OnDemandUrl(self):
+		return self.get_query_params().get('OnDemandUrl')
+
+	def set_OnDemandUrl(self,OnDemandUrl):
+		self.add_query_param('OnDemandUrl',OnDemandUrl)
+
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
 

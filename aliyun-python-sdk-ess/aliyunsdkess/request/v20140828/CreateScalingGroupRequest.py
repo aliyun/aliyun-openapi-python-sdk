@@ -21,7 +21,13 @@ from aliyunsdkcore.request import RpcRequest
 class CreateScalingGroupRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ess', '2014-08-28', 'CreateScalingGroup','ess')
+		RpcRequest.__init__(self, 'Ess', '2014-08-28', 'CreateScalingGroup','ESS')
+
+	def get_MultiAZPolicy(self):
+		return self.get_query_params().get('MultiAZPolicy')
+
+	def set_MultiAZPolicy(self,MultiAZPolicy):
+		self.add_query_param('MultiAZPolicy',MultiAZPolicy)
 
 	def get_DBInstanceIds(self):
 		return self.get_query_params().get('DBInstanceIds')
@@ -35,6 +41,12 @@ class CreateScalingGroupRequest(RpcRequest):
 	def set_LoadBalancerIds(self,LoadBalancerIds):
 		self.add_query_param('LoadBalancerIds',LoadBalancerIds)
 
+	def get_HealthCheckType(self):
+		return self.get_query_params().get('HealthCheckType')
+
+	def set_HealthCheckType(self,HealthCheckType):
+		self.add_query_param('HealthCheckType',HealthCheckType)
+
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -46,6 +58,14 @@ class CreateScalingGroupRequest(RpcRequest):
 
 	def set_ScalingGroupName(self,ScalingGroupName):
 		self.add_query_param('ScalingGroupName',ScalingGroupName)
+
+	def get_VSwitchIds(self):
+		return self.get_query_params().get('VSwitchIds')
+
+	def set_VSwitchIds(self,VSwitchIds):
+		for i in range(len(VSwitchIds)):	
+			if VSwitchIds[i] is not None:
+				self.add_query_param('VSwitchIds.' + str(i + 1) , VSwitchIds[i]);
 
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
@@ -76,6 +96,25 @@ class CreateScalingGroupRequest(RpcRequest):
 
 	def set_MaxSize(self,MaxSize):
 		self.add_query_param('MaxSize',MaxSize)
+
+	def get_LifecycleHooks(self):
+		return self.get_query_params().get('LifecycleHooks')
+
+	def set_LifecycleHooks(self,LifecycleHooks):
+		for i in range(len(LifecycleHooks)):	
+			if LifecycleHooks[i].get('LifecycleHookName') is not None:
+				self.add_query_param('LifecycleHook.' + str(i + 1) + '.LifecycleHookName' , LifecycleHooks[i].get('LifecycleHookName'))
+			if LifecycleHooks[i].get('LifecycleTransition') is not None:
+				self.add_query_param('LifecycleHook.' + str(i + 1) + '.LifecycleTransition' , LifecycleHooks[i].get('LifecycleTransition'))
+			if LifecycleHooks[i].get('DefaultResult') is not None:
+				self.add_query_param('LifecycleHook.' + str(i + 1) + '.DefaultResult' , LifecycleHooks[i].get('DefaultResult'))
+			if LifecycleHooks[i].get('HeartbeatTimeout') is not None:
+				self.add_query_param('LifecycleHook.' + str(i + 1) + '.HeartbeatTimeout' , LifecycleHooks[i].get('HeartbeatTimeout'))
+			if LifecycleHooks[i].get('NotificationMetadata') is not None:
+				self.add_query_param('LifecycleHook.' + str(i + 1) + '.NotificationMetadata' , LifecycleHooks[i].get('NotificationMetadata'))
+			if LifecycleHooks[i].get('NotificationArn') is not None:
+				self.add_query_param('LifecycleHook.' + str(i + 1) + '.NotificationArn' , LifecycleHooks[i].get('NotificationArn'))
+
 
 	def get_DefaultCooldown(self):
 		return self.get_query_params().get('DefaultCooldown')

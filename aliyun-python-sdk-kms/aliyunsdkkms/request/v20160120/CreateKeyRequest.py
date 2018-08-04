@@ -24,17 +24,23 @@ class CreateKeyRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Kms', '2016-01-20', 'CreateKey','kms')
 		self.set_protocol_type('https');
 
-	def get_Description(self):
-		return self.get_query_params().get('Description')
-
-	def set_Description(self,Description):
-		self.add_query_param('Description',Description)
-
 	def get_KeyUsage(self):
 		return self.get_query_params().get('KeyUsage')
 
 	def set_KeyUsage(self,KeyUsage):
 		self.add_query_param('KeyUsage',KeyUsage)
+
+	def get_Origin(self):
+		return self.get_query_params().get('Origin')
+
+	def set_Origin(self,Origin):
+		self.add_query_param('Origin',Origin)
+
+	def get_Description(self):
+		return self.get_query_params().get('Description')
+
+	def set_Description(self,Description):
+		self.add_query_param('Description',Description)
 
 	def get_STSToken(self):
 		return self.get_query_params().get('STSToken')

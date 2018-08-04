@@ -65,6 +65,12 @@ class DescribeDBInstancesRequest(RpcRequest):
 	def set_Tag3key(self,Tag3key):
 		self.add_query_param('Tag.3.key',Tag3key)
 
+	def get_EngineVersion(self):
+		return self.get_query_params().get('EngineVersion')
+
+	def set_EngineVersion(self,EngineVersion):
+		self.add_query_param('EngineVersion',EngineVersion)
+
 	def get_PageNumber(self):
 		return self.get_query_params().get('PageNumber')
 
@@ -76,6 +82,12 @@ class DescribeDBInstancesRequest(RpcRequest):
 
 	def set_Tag1value(self,Tag1value):
 		self.add_query_param('Tag.1.value',Tag1value)
+
+	def get_Expired(self):
+		return self.get_query_params().get('Expired')
+
+	def set_Expired(self,Expired):
+		self.add_query_param('Expired',Expired)
 
 	def get_Engine(self):
 		return self.get_query_params().get('Engine')
@@ -149,6 +161,12 @@ class DescribeDBInstancesRequest(RpcRequest):
 	def set_DBInstanceType(self,DBInstanceType):
 		self.add_query_param('DBInstanceType',DBInstanceType)
 
+	def get_DBInstanceClass(self):
+		return self.get_query_params().get('DBInstanceClass')
+
+	def set_DBInstanceClass(self,DBInstanceClass):
+		self.add_query_param('DBInstanceClass',DBInstanceClass)
+
 	def get_Tags(self):
 		return self.get_query_params().get('Tags')
 
@@ -179,11 +197,23 @@ class DescribeDBInstancesRequest(RpcRequest):
 	def set_Tag2value(self,Tag2value):
 		self.add_query_param('Tag.2.value',Tag2value)
 
+	def get_ZoneId(self):
+		return self.get_query_params().get('ZoneId')
+
+	def set_ZoneId(self,ZoneId):
+		self.add_query_param('ZoneId',ZoneId)
+
 	def get_Tag4key(self):
 		return self.get_query_params().get('Tag.4.key')
 
 	def set_Tag4key(self,Tag4key):
 		self.add_query_param('Tag.4.key',Tag4key)
+
+	def get_PayType(self):
+		return self.get_query_params().get('PayType')
+
+	def set_PayType(self,PayType):
+		self.add_query_param('PayType',PayType)
 
 	def get_InstanceNetworkType(self):
 		return self.get_query_params().get('InstanceNetworkType')

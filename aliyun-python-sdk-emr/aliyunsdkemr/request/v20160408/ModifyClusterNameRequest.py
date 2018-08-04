@@ -29,14 +29,14 @@ class ModifyClusterNameRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_Id(self):
-		return self.get_query_params().get('Id')
-
-	def set_Id(self,Id):
-		self.add_query_param('Id',Id)
-
 	def get_Name(self):
 		return self.get_query_params().get('Name')
 
 	def set_Name(self,Name):
 		self.add_query_param('Name',Name)
+
+	def get_Id(self):
+		return self.get_query_params().get('Id')
+
+	def set_Id(self,Id):
+		self.add_query_param('Id',Id)

@@ -52,3 +52,9 @@ class DescribeBackupPolicyRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_BackupPolicyMode(self):
+		return self.get_query_params().get('BackupPolicyMode')
+
+	def set_BackupPolicyMode(self,BackupPolicyMode):
+		self.add_query_param('BackupPolicyMode',BackupPolicyMode)

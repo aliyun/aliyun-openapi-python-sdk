@@ -29,11 +29,11 @@ class ListClusterHostComponentRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_ClusterId(self):
-		return self.get_query_params().get('ClusterId')
+	def get_HostName(self):
+		return self.get_query_params().get('HostName')
 
-	def set_ClusterId(self,ClusterId):
-		self.add_query_param('ClusterId',ClusterId)
+	def set_HostName(self,HostName):
+		self.add_query_param('HostName',HostName)
 
 	def get_HostInstanceId(self):
 		return self.get_query_params().get('HostInstanceId')
@@ -41,14 +41,32 @@ class ListClusterHostComponentRequest(RpcRequest):
 	def set_HostInstanceId(self,HostInstanceId):
 		self.add_query_param('HostInstanceId',HostInstanceId)
 
-	def get_PageNumber(self):
-		return self.get_query_params().get('PageNumber')
-
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
-
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
 
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
+
+	def get_ComponentName(self):
+		return self.get_query_params().get('ComponentName')
+
+	def set_ComponentName(self,ComponentName):
+		self.add_query_param('ComponentName',ComponentName)
+
+	def get_ServiceName(self):
+		return self.get_query_params().get('ServiceName')
+
+	def set_ServiceName(self,ServiceName):
+		self.add_query_param('ServiceName',ServiceName)
+
+	def get_ClusterId(self):
+		return self.get_query_params().get('ClusterId')
+
+	def set_ClusterId(self,ClusterId):
+		self.add_query_param('ClusterId',ClusterId)
+
+	def get_PageNumber(self):
+		return self.get_query_params().get('PageNumber')
+
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)

@@ -29,37 +29,13 @@ class ListClustersRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_ClusterTypeLists(self):
-		return self.get_query_params().get('ClusterTypeLists')
-
-	def set_ClusterTypeLists(self,ClusterTypeLists):
-		for i in range(len(ClusterTypeLists)):	
-			self.add_query_param('ClusterTypeList.' + str(i + 1) , ClusterTypeLists[i]);
-
-	def get_CreateType(self):
-		return self.get_query_params().get('CreateType')
-
-	def set_CreateType(self,CreateType):
-		self.add_query_param('CreateType',CreateType)
-
 	def get_StatusLists(self):
 		return self.get_query_params().get('StatusLists')
 
 	def set_StatusLists(self,StatusLists):
 		for i in range(len(StatusLists)):	
-			self.add_query_param('StatusList.' + str(i + 1) , StatusLists[i]);
-
-	def get_IsDesc(self):
-		return self.get_query_params().get('IsDesc')
-
-	def set_IsDesc(self,IsDesc):
-		self.add_query_param('IsDesc',IsDesc)
-
-	def get_PageNumber(self):
-		return self.get_query_params().get('PageNumber')
-
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
+			if StatusLists[i] is not None:
+				self.add_query_param('StatusList.' + str(i + 1) , StatusLists[i]);
 
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
@@ -67,8 +43,34 @@ class ListClustersRequest(RpcRequest):
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
 
+	def get_ClusterTypeLists(self):
+		return self.get_query_params().get('ClusterTypeLists')
+
+	def set_ClusterTypeLists(self,ClusterTypeLists):
+		for i in range(len(ClusterTypeLists)):	
+			if ClusterTypeLists[i] is not None:
+				self.add_query_param('ClusterTypeList.' + str(i + 1) , ClusterTypeLists[i]);
+
+	def get_IsDesc(self):
+		return self.get_query_params().get('IsDesc')
+
+	def set_IsDesc(self,IsDesc):
+		self.add_query_param('IsDesc',IsDesc)
+
+	def get_CreateType(self):
+		return self.get_query_params().get('CreateType')
+
+	def set_CreateType(self,CreateType):
+		self.add_query_param('CreateType',CreateType)
+
 	def get_DefaultStatus(self):
 		return self.get_query_params().get('DefaultStatus')
 
 	def set_DefaultStatus(self,DefaultStatus):
 		self.add_query_param('DefaultStatus',DefaultStatus)
+
+	def get_PageNumber(self):
+		return self.get_query_params().get('PageNumber')
+
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)

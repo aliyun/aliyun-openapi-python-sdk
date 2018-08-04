@@ -23,6 +23,12 @@ class ResetSoftwarePasswordRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'ResetSoftwarePassword')
 
+	def get_Password(self):
+		return self.get_query_params().get('Password')
+
+	def set_Password(self,Password):
+		self.add_query_param('Password',Password)
+
 	def get_ClusterId(self):
 		return self.get_query_params().get('ClusterId')
 
@@ -34,9 +40,3 @@ class ResetSoftwarePasswordRequest(RpcRequest):
 
 	def set_Username(self,Username):
 		self.add_query_param('Username',Username)
-
-	def get_Password(self):
-		return self.get_query_params().get('Password')
-
-	def set_Password(self,Password):
-		self.add_query_param('Password',Password)

@@ -23,6 +23,18 @@ class CreateClusterScriptRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'CreateClusterScript')
 
+	def get_Args(self):
+		return self.get_query_params().get('Args')
+
+	def set_Args(self,Args):
+		self.add_query_param('Args',Args)
+
+	def get_Path(self):
+		return self.get_query_params().get('Path')
+
+	def set_Path(self,Path):
+		self.add_query_param('Path',Path)
+
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
@@ -34,18 +46,6 @@ class CreateClusterScriptRequest(RpcRequest):
 
 	def set_Name(self,Name):
 		self.add_query_param('Name',Name)
-
-	def get_Path(self):
-		return self.get_query_params().get('Path')
-
-	def set_Path(self,Path):
-		self.add_query_param('Path',Path)
-
-	def get_Args(self):
-		return self.get_query_params().get('Args')
-
-	def set_Args(self,Args):
-		self.add_query_param('Args',Args)
 
 	def get_ClusterId(self):
 		return self.get_query_params().get('ClusterId')

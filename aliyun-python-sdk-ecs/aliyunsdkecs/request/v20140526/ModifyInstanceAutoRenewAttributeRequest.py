@@ -35,6 +35,12 @@ class ModifyInstanceAutoRenewAttributeRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_PeriodUnit(self):
+		return self.get_query_params().get('PeriodUnit')
+
+	def set_PeriodUnit(self,PeriodUnit):
+		self.add_query_param('PeriodUnit',PeriodUnit)
+
 	def get_InstanceId(self):
 		return self.get_query_params().get('InstanceId')
 

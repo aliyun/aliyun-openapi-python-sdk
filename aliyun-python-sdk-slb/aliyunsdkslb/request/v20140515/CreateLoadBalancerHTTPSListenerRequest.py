@@ -65,11 +65,23 @@ class CreateLoadBalancerHTTPSListenerRequest(RpcRequest):
 	def set_HealthyThreshold(self,HealthyThreshold):
 		self.add_query_param('HealthyThreshold',HealthyThreshold)
 
+	def get_AclStatus(self):
+		return self.get_query_params().get('AclStatus')
+
+	def set_AclStatus(self,AclStatus):
+		self.add_query_param('AclStatus',AclStatus)
+
 	def get_Scheduler(self):
 		return self.get_query_params().get('Scheduler')
 
 	def set_Scheduler(self,Scheduler):
 		self.add_query_param('Scheduler',Scheduler)
+
+	def get_AclType(self):
+		return self.get_query_params().get('AclType')
+
+	def set_AclType(self,AclType):
+		self.add_query_param('AclType',AclType)
 
 	def get_HealthCheck(self):
 		return self.get_query_params().get('HealthCheck')
@@ -83,6 +95,12 @@ class CreateLoadBalancerHTTPSListenerRequest(RpcRequest):
 	def set_MaxConnection(self,MaxConnection):
 		self.add_query_param('MaxConnection',MaxConnection)
 
+	def get_EnableHttp2(self):
+		return self.get_query_params().get('EnableHttp2')
+
+	def set_EnableHttp2(self,EnableHttp2):
+		self.add_query_param('EnableHttp2',EnableHttp2)
+
 	def get_CookieTimeout(self):
 		return self.get_query_params().get('CookieTimeout')
 
@@ -95,11 +113,23 @@ class CreateLoadBalancerHTTPSListenerRequest(RpcRequest):
 	def set_StickySessionType(self,StickySessionType):
 		self.add_query_param('StickySessionType',StickySessionType)
 
+	def get_VpcIds(self):
+		return self.get_query_params().get('VpcIds')
+
+	def set_VpcIds(self,VpcIds):
+		self.add_query_param('VpcIds',VpcIds)
+
 	def get_VServerGroupId(self):
 		return self.get_query_params().get('VServerGroupId')
 
 	def set_VServerGroupId(self,VServerGroupId):
 		self.add_query_param('VServerGroupId',VServerGroupId)
+
+	def get_AclId(self):
+		return self.get_query_params().get('AclId')
+
+	def set_AclId(self,AclId):
+		self.add_query_param('AclId',AclId)
 
 	def get_ListenerPort(self):
 		return self.get_query_params().get('ListenerPort')
@@ -137,6 +167,12 @@ class CreateLoadBalancerHTTPSListenerRequest(RpcRequest):
 	def set_HealthCheckDomain(self,HealthCheckDomain):
 		self.add_query_param('HealthCheckDomain',HealthCheckDomain)
 
+	def get_RequestTimeout(self):
+		return self.get_query_params().get('RequestTimeout')
+
+	def set_RequestTimeout(self,RequestTimeout):
+		self.add_query_param('RequestTimeout',RequestTimeout)
+
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
 
@@ -148,6 +184,12 @@ class CreateLoadBalancerHTTPSListenerRequest(RpcRequest):
 
 	def set_Gzip(self,Gzip):
 		self.add_query_param('Gzip',Gzip)
+
+	def get_TLSCipherPolicy(self):
+		return self.get_query_params().get('TLSCipherPolicy')
+
+	def set_TLSCipherPolicy(self,TLSCipherPolicy):
+		self.add_query_param('TLSCipherPolicy',TLSCipherPolicy)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
@@ -172,6 +214,12 @@ class CreateLoadBalancerHTTPSListenerRequest(RpcRequest):
 
 	def set_Tags(self,Tags):
 		self.add_query_param('Tags',Tags)
+
+	def get_IdleTimeout(self):
+		return self.get_query_params().get('IdleTimeout')
+
+	def set_IdleTimeout(self,IdleTimeout):
+		self.add_query_param('IdleTimeout',IdleTimeout)
 
 	def get_LoadBalancerId(self):
 		return self.get_query_params().get('LoadBalancerId')

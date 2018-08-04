@@ -89,6 +89,12 @@ class DescribeSecurityGroupsRequest(RpcRequest):
 	def set_Tag1Value(self,Tag1Value):
 		self.add_query_param('Tag.1.Value',Tag1Value)
 
+	def get_ResourceGroupId(self):
+		return self.get_query_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self,ResourceGroupId):
+		self.add_query_param('ResourceGroupId',ResourceGroupId)
+
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
 

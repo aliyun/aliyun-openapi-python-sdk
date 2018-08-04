@@ -23,12 +23,6 @@ class DescribeCastersRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'live', '2016-11-01', 'DescribeCasters','live')
 
-	def get_SecurityToken(self):
-		return self.get_query_params().get('SecurityToken')
-
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)
-
 	def get_CasterName(self):
 		return self.get_query_params().get('CasterName')
 
@@ -70,12 +64,6 @@ class DescribeCastersRequest(RpcRequest):
 
 	def set_PageNum(self,PageNum):
 		self.add_query_param('PageNum',PageNum)
-
-	def get_Version(self):
-		return self.get_query_params().get('Version')
-
-	def set_Version(self,Version):
-		self.add_query_param('Version',Version)
 
 	def get_Status(self):
 		return self.get_query_params().get('Status')

@@ -1,3 +1,44 @@
+2018-07-31 Version: 4.9.5
+1, Support describePrice for market image, add return detailInfo in interface describePrice
+
+2018-07-06 Version: 4.9.3
+1, The interface DescribeInstanceTypes add the parameter InstanceFamilyLevel of result data
+2, The interface DescribeAvailableResource add two filter fators , there are  cores and memory.
+3, The interface DescribeResourceModification add two filter fators , there are  cores and memory.
+
+2018-06-27 Version: 4.9.2
+1, DescribeNetworkInterfaces support query with vpcId
+
+2018-06-14 Version: 4.9.1
+1, Add passwordInherit.
+
+2018-05-28 Version: 4.9.0
+1, ValidateSecurityGroup API
+
+2018-05-02 Version: 4.8.0
+1, Add new interface InstallCloudAssistant, support Cloud Assistant client installation.
+2, Add new interface DescribeCloudAssistantStatus, support Cloud Assistant client status detection.
+
+2018-04-23 Version: 4.7.1
+1, DescribeInstanceHistoryEvents adds parameter instanceEventTypes and instanceEventCycleStatuss.
+2, InstanceId parameter is not necessary for DescribeInstanceHistoryEvents now.
+3, DescribeInstancesFullStatus adds parameter instanceEventTypes.
+
+2018-04-10 Version: 4.7.0
+1, Add three interfaces CreateNetworkInterfacePermission DeleteNetworkInterfacePermission DescribeNetworkInterfacePermissions.
+
+2018-03-23 Version: 4.6.7
+1, interface DescribeInstanceTypes output InstancePpsRx InstancePpsTx
+
+2018-03-23 Version: 4.6.7
+1, interface DescribeInstanceTypes output InstancePpsRx InstancePpsTx
+
+2018-03-23 Version: 4.6.6
+1, ModifyPrepayInstanceSpec support migrateAcrossZone.
+
+2018-03-16 Version: 4.6.5
+1, Synchronize to the latest api list
+
 2018-03-01 Version: 4.6.4
 1, DescribeInstanceTypes add eniQuantity vmBandwidthTx vmBandwidthRx attributes.
 

@@ -1,0 +1,3 @@
+2018-05-23 Version: 2.5.0
+1, Add CreateDrdsAccount API, to support creating account for all databases of a DRDS instance.
+

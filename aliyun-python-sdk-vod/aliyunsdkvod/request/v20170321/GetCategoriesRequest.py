@@ -47,12 +47,6 @@ class GetCategoriesRequest(RpcRequest):
 	def set_PageNo(self,PageNo):
 		self.add_query_param('PageNo',PageNo)
 
-	def get_OwnerAccount(self):
-		return self.get_query_params().get('OwnerAccount')
-
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
-
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
 

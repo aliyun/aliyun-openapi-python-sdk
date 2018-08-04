@@ -23,8 +23,8 @@ class QueryCustomerSaleInfoRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'TeslaMaxCompute', '2018-01-04', 'QueryCustomerSaleInfo')
 
-	def get_Region(self):
-		return self.get_query_params().get('Region')
+	def get_RegionName(self):
+		return self.get_query_params().get('RegionName')
 
-	def set_Region(self,Region):
-		self.add_query_param('Region',Region)
+	def set_RegionName(self,RegionName):
+		self.add_query_param('RegionName',RegionName)

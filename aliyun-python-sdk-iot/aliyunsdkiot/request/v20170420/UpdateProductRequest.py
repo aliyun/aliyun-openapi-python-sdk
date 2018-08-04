@@ -29,6 +29,12 @@ class UpdateProductRequest(RpcRequest):
 	def set_CatId(self,CatId):
 		self.add_query_param('CatId',CatId)
 
+	def get_NodeType(self):
+		return self.get_query_params().get('NodeType')
+
+	def set_NodeType(self,NodeType):
+		self.add_query_param('NodeType',NodeType)
+
 	def get_ProductName(self):
 		return self.get_query_params().get('ProductName')
 
