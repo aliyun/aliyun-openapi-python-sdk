@@ -18,10 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class CreateUploadImageRequest(RpcRequest):
+class UploadMediaByURLRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'vod', '2017-03-21', 'CreateUploadImage','vod')
+		RpcRequest.__init__(self, 'vod', '2017-03-21', 'UploadMediaByURL','vod')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -29,17 +29,17 @@ class CreateUploadImageRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_ImageType(self):
-		return self.get_query_params().get('ImageType')
+	def get_TemplateGroupId(self):
+		return self.get_query_params().get('TemplateGroupId')
 
-	def set_ImageType(self,ImageType):
-		self.add_query_param('ImageType',ImageType)
+	def set_TemplateGroupId(self,TemplateGroupId):
+		self.add_query_param('TemplateGroupId',TemplateGroupId)
 
-	def get_OriginalFileName(self):
-		return self.get_query_params().get('OriginalFileName')
+	def get_UploadMetadatas(self):
+		return self.get_query_params().get('UploadMetadatas')
 
-	def set_OriginalFileName(self,OriginalFileName):
-		self.add_query_param('OriginalFileName',OriginalFileName)
+	def set_UploadMetadatas(self,UploadMetadatas):
+		self.add_query_param('UploadMetadatas',UploadMetadatas)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -47,11 +47,17 @@ class CreateUploadImageRequest(RpcRequest):
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
-	def get_ImageExt(self):
-		return self.get_query_params().get('ImageExt')
+	def get_UploadURLs(self):
+		return self.get_query_params().get('UploadURLs')
 
-	def set_ImageExt(self,ImageExt):
-		self.add_query_param('ImageExt',ImageExt)
+	def set_UploadURLs(self,UploadURLs):
+		self.add_query_param('UploadURLs',UploadURLs)
+
+	def get_MessageCallback(self):
+		return self.get_query_params().get('MessageCallback')
+
+	def set_MessageCallback(self,MessageCallback):
+		self.add_query_param('MessageCallback',MessageCallback)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
@@ -59,17 +65,11 @@ class CreateUploadImageRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_Title(self):
-		return self.get_query_params().get('Title')
+	def get_Priority(self):
+		return self.get_query_params().get('Priority')
 
-	def set_Title(self,Title):
-		self.add_query_param('Title',Title)
-
-	def get_Tags(self):
-		return self.get_query_params().get('Tags')
-
-	def set_Tags(self,Tags):
-		self.add_query_param('Tags',Tags)
+	def set_Priority(self,Priority):
+		self.add_query_param('Priority',Priority)
 
 	def get_StorageLocation(self):
 		return self.get_query_params().get('StorageLocation')

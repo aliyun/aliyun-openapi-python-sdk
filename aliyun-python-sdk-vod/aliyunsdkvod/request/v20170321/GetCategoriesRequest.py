@@ -53,6 +53,12 @@ class GetCategoriesRequest(RpcRequest):
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
 
+	def get_SortBy(self):
+		return self.get_query_params().get('SortBy')
+
+	def set_SortBy(self,SortBy):
+		self.add_query_param('SortBy',SortBy)
+
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 

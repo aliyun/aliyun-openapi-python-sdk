@@ -29,6 +29,12 @@ class SetMessageCallbackRequest(RpcRequest):
 	def set_CallbackType(self,CallbackType):
 		self.add_query_param('CallbackType',CallbackType)
 
+	def get_AuthKey(self):
+		return self.get_query_params().get('AuthKey')
+
+	def set_AuthKey(self,AuthKey):
+		self.add_query_param('AuthKey',AuthKey)
+
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
@@ -58,6 +64,12 @@ class SetMessageCallbackRequest(RpcRequest):
 
 	def set_EventTypeList(self,EventTypeList):
 		self.add_query_param('EventTypeList',EventTypeList)
+
+	def get_AuthSwitch(self):
+		return self.get_query_params().get('AuthSwitch')
+
+	def set_AuthSwitch(self,AuthSwitch):
+		self.add_query_param('AuthSwitch',AuthSwitch)
 
 	def get_CallbackURL(self):
 		return self.get_query_params().get('CallbackURL')
