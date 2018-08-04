@@ -1,3 +1,20 @@
+2018-08-04 Version: 2.8.6
+1, Add http proxy
+
+
+
+2018-06-11 Version: 2.8.5
+1, Fix common req
+
+2018-06-07 Version: 2.8.4
+1, fix bug for roa region header
+
+2018-06-06 Version: 2.8.3
+1, fix bug for common api
+
+2018-06-06 Version: 2.8.3
+1, Fix bug for common request.
+
 2018-03-15 Version: 2.8.2
 1, Optimize endpoint resolve logic
 
