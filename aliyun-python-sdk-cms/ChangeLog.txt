@@ -1,3 +1,58 @@
+2018-08-02 Version: 6.0.13
+1, Add parameter(GroupId) for CreateNotifyPolicy,GetNotifyPolicy,DeleteNotifyPolicy,ListNotifyPolicy.
+
+2018-08-01 Version: 6.0.13
+1, Add parameter(GroupId) for CreateNotifyPolicy,GetNotifyPolicy,DeleteNotifyPolicy,ListNotifyPolicy.
+
+2018-08-01 Version: 6.0.12
+1, Add parameter(DryRun) for CreateAlarm and UpdateAlarm.
+
+2018-07-26 Version: 6.0.11
+1, Add new API: SendDryRunSystemEvent,PutMetricAlarm,DescribeAlarmsForDimensions,DescribeAlarms.
+
+2018-07-10 Version: 6.0.10
+1, Add new API: EnableEventRule,DisableEventRule,DeleteEventTargets,DeleteEventRule,ListEventRules.
+2, Modify the structured parameters for API: PutEventTargets,PutEventRule,DescribeEventRule.
+
+2018-07-09 Version: 6.0.9
+1, Add new API: DescribeEventRule,ListEventTargetsByRule,PutEventRule,PutEventTargets.
+2, Add return value(Id) for NodeProcessCreate.
+
+2018-06-22 Version: 6.0.8
+1, Add new API: DeleteGroupDynamicRule,ListGroupDynamicRule,ApplyTemplate,PutGroupDynamicRule.
+2, Add parameter(AlertIds) for CreateTask and ModifyTask.
+
+2018-05-30 Version: 6.0.7
+1, Add new API: DescribeContact and GetContacts.
+2, Add return value: alertRule for CreateTask.
+
+2018-05-25 Version: 6.0.6
+1, CreateAlarm,DeleteAlarm,UpdateAlarm,DisableAlarm,EnableAlarm,ListAlarm,ListAlarmHistory,ListContactGroup,PutMetricData,QueryMetricData,QueryMetricLast,QueryMetricList,QueryMetricTop remove useless parameter: callby_cms_owner. 
+2, QueryMetricList remove useless parameter: Page.
+3, UpdateMyGroupMembers add parameter: Readers.
+4, StopTasks,StartTasks,DeleteTasks add return value: Data.
+5, ModifyTask remove invalid parameter: TaskType.
+6, CreateTask fix bug: TaskName maybe duplicated.
+7, Add lost return value for CreateTask.
+8, DescribeISPAreaCity add parameter: isp and city.
+9, remove api: PutMetricData.
+
+2018-04-28 Version: 6.0.5
+1, Add api: DescribeTasks、StartTasks、StopTasks、DeleteTasks、ModifyTask、CreateTask、DescribeTaskDetail、DescribeISPAreaCity.
+
+2018-04-25 Version: 6.0.4
+1, CreateMyGroups add parameter "options"
+
+2018-04-24 Version: 6.0.3
+1, Add api:UpdateMyGroupMembers
+
+2018-04-20 Version: 6.0.2
+1, Interface DescribeAlarmHistory/ListAlarmHistory Add return value instanceName.
+
+2018-04-09 Version: 6.0.1
+1, Add api: QueryMetricData, QueryMetricTop, TaskConfigCreate, TaskConfigDelete, TaskConfigEnable, TaskConfigList, TaskConfigModify, TaskConfigUnhealthy
+2, Remove api: PutSystemEvent 
+
 2018-01-24 Version: 5.2.2
 1,  Fixed a problem that the ActiveAlert interface name is not standard
 2,  Update ActiveAlert interface : ListProductOfActiveAlert / DisableActiveAlert / EnableActiveAlert

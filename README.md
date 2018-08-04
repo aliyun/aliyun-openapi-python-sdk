@@ -1,45 +1,128 @@
-欢迎使用阿里云开发者工具套件（SDK）。阿里云Python SDK让您不用复杂编程即可访问云服务器、云监控等多个阿里云服务。这里向您介绍如何获取阿里云<span style="background-color:rgb(250, 250, 250);"><span style="color:rgb(89, 89, 89);">Python</span></span> SDK并开始调用。  
-如果您在使用SDK的过程中遇上任何问题，欢迎加入 **钉钉群: 11771185(阿里云官方SDK客户服务群)** 咨询
+# Alibaba Cloud Python Software Development Kit
+[中文文档](./README_zh.md)
 
-## 环境准备
-1. 要使用阿里云<span style="background-color:rgb(250, 250, 250);"><span style="color:rgb(89, 89, 89);">Python</span></span> SDK，您需要一个云账号以及一对`Access Key ID`和`Access Key Secret`。 请在阿里云控制台中的[AccessKey管理页面](https://usercenter.console.aliyun.com/?spm=5176.doc52740.2.3.QKZk8w#/manage/ak)上创建和查看您的Access Key，或者联系您的系统管理员
-2. 要使用阿里云SDK访问某个产品的API，您需要事先在[阿里云控制台](https://home.console.aliyun.com/?spm=5176.doc52740.2.4.QKZk8w)中开通这个产品。
+The Alibaba Cloud Python Software Development Kit (SDK) allows you to access Alibaba Cloud services such as Elastic Compute Service (ECS), Object Storage Service (OSS), and Resource Access Management (RAM).  You can access Alibaba Cloud services without the need to handle API related tasks, such as signing and constructing your requests.
 
+This document introduces how to obtain and call Alibaba Cloud Python SDK.
 
-## SDK获取和安装
-#### 使用pip安装(推荐)
-```powershell
-pip install aliyun-python-sdk-core # 安装阿里云 SDK 核心库
-# 如果您使用的是 python3.x，请将上述命令修改为 pip install aliyun-python-sdk-core-v3
-pip install aliyun-python-sdk-ecs # 安装管理 ECS SDK
-```
+## Prerequisites
 
-## 开始调用
-以下这个代码示例向您展示了调用阿里云Python SDK的3个主要步骤：
-1. 创建Client实例
-2. 创建API请求并设置参数
-3. 发起请求并处理异常
+- To use Alibaba Cloud Python SDK, you must have an Alibaba Cloud account as well as an AccessKey.
+
+	The AccessKey is required when initializing `AcsClient`. You can create an AccessKey in the Alibaba Cloud console. For more information, see [Create an AccessKey](https://usercenter.console.aliyun.com/?spm=5176.doc52740.2.3.QKZk8w#/manage/ak).
+
+	>**Note:** To increase the security of your account, we recommend that you use the AccessKey of the RAM user to access Alibaba Cloud services.
+
+- To use Alibaba Cloud Python SDK to access the APIs of a product, you must first activate the product on the [Alibaba Cloud console](https://home.console.aliyun.com/?spm=5176.doc52740.2.4.QKZk8w) if required.
+
+- Alibaba Cloud Python SDK requires 2.6.x, 2.7.x, and Python 3.x.
 
 
-```python
-# -*- coding: utf8 -*-
-from aliyunsdkcore.client import AcsClient
-from aliyunsdkcore.acs_exception.exceptions import ClientException
-from aliyunsdkcore.acs_exception.exceptions import ServerException
-from aliyunsdkecs.request.v20140526 import DescribeInstancesRequest
-from aliyunsdkecs.request.v20140526 import StopInstanceRequest
-# 创建 AcsClient 实例
-client = AcsClient(
-   "<your-access-key-id>", 
-   "<your-access-key-secret>",
-   "<your-region-id>"
-);
-# 创建 request，并设置参数
-request = DescribeInstancesRequest.DescribeInstancesRequest()
-request.set_PageSize(10)
-# 发起 API 请求并打印返回
-response = client.do_action_with_exception(request)
-print response
-```
+## Install Python SDK
 
-在创建Client实例时，您需要填写3个参数：Region ID、Access Key ID和Access Key Secret。Access Key ID和Access Key Secret可以从控制台获得；而Region ID可以从[地域列表](https://help.aliyun.com/document_detail/40654.html?spm=5176.doc52740.2.8.FogWrd)中获得
+Alibaba Cloud Python SDK supports Python 2.6.x, 2.7.x, and Python 3.x. Run ``python --version`` to check your version of Python.
+
+You can install the Alibaba Cloud Python SDK using the following two methods. Regardless of which method and cloud service are used, the core library `aliyun-python-sdk-core` must be installed.
+
+- **Install with pip**
+
+	Python SDK uses a common package management tool named `pip`. If pip is not installed, see the [pip user guide](https://pip.pypa.io/en/stable/installing/?spm=5176.doc53090.2.7.zHDiNV "pip User Guide") to install pip.
+
+	Run the following command to install the individual libraries of Alibaba Cloud services:
+
+	```python
+	# Install the core library
+	pip install aliyun-python-sdk-core
+	# Install the ECS management library
+	pip install aliyun-python-sdk-ecs
+	# Install the RDS management library
+	pip install aliyun-python-sdk-rds
+    ```
+>**Note:** If you are using Python 3.x, run the following command to install the core library:
+
+	>`pip install aliyun-python-sdk-core-v3`
+
+- **Install from GitHub**
+
+	You can clone the source code to your local folder and then run `setup.py install` to install the SDK:
+	```
+	git clone https://github.com/aliyun/aliyun-openapi-python-sdk.git
+	# Install the core library
+	cd aliyun-python-sdk-core
+	python setup.py install
+	# Install the ECS management library
+	cd aliyun-python-sdk-ecs
+	python setup.py install
+	```
+
+## Use Python SDK
+
+1. Import the required modules as follows:
+
+    ```python
+    from aliyunsdkcore.client import AcsClient
+    from aliyunsdkcore.acs_exception.exceptions import ClientException
+    from aliyunsdkcore.acs_exception.exceptions import ServerException
+    from aliyunsdkecs.request.v20140526 import DescribeInstancesRequest
+    from aliyunsdkecs.request.v20140526 import StopInstanceRequest
+    ```
+2. Initialize the `AcsClient` instance:
+
+	```python
+	  client = AcsClient(
+		  "<access-key-id>",
+		  "<access-key-secret>",
+		  "<region-id>"
+	  );
+
+	```
+
+	where:
+
+	- `access-key-id` is the Accesskey ID for your account.
+
+	- `access-key-secret` is the AccessKey secret for your account.
+
+	- `region-id` is the ID of the region where the service is called. For a list of region IDs, see [Regions and zones](~~40654~~).
+
+	>**Note:** The sequence of these parameters cannot be changed.
+
+3. Initialize a request and print response.
+
+	```python
+	  #  Initialize a request and set parameters
+	  request = DescribeInstancesRequest.DescribeInstancesRequest()
+	  request.set_PageSize(10)
+	  # Print response
+	  response = client.do_action_with_exception(request)
+	  print response
+	```
+
+	##Code example
+
+	The following example shows how to query a list of ECS instances in a specific region using [DescribeInstances](~~25506~~). Substitute the values for `your-access-key-id`, `your-access-key-secret`, and `your-region-id`.
+
+	```python
+	  # -*- coding: utf8 -*-
+
+	  from aliyunsdkcore.client import AcsClient
+	  from aliyunsdkcore.acs_exception.exceptions import ClientException
+	  from aliyunsdkcore.acs_exception.exceptions import ServerException
+	  from aliyunsdkecs.request.v20140526 import DescribeInstancesRequest
+	  from aliyunsdkecs.request.v20140526 import StopInstanceRequest
+
+	  # Initialize AcsClient instance
+	  client = AcsClient(
+		  "<your-access-key-id>",
+		  "<your-access-key-secret>",
+		  "<your-region-id>"
+	  );
+
+	  # Initialize a request and set parameters
+	  request = DescribeInstancesRequest.DescribeInstancesRequest()
+	  request.set_PageSize(10)
+
+	  # Print response
+	  response = client.do_action_with_exception(request)
+	  print response
+	```

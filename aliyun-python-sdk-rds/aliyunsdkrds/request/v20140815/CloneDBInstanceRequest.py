@@ -89,6 +89,12 @@ class CloneDBInstanceRequest(RpcRequest):
 	def set_DBInstanceClass(self,DBInstanceClass):
 		self.add_query_param('DBInstanceClass',DBInstanceClass)
 
+	def get_DbNames(self):
+		return self.get_query_params().get('DbNames')
+
+	def set_DbNames(self,DbNames):
+		self.add_query_param('DbNames',DbNames)
+
 	def get_VSwitchId(self):
 		return self.get_query_params().get('VSwitchId')
 
@@ -112,6 +118,12 @@ class CloneDBInstanceRequest(RpcRequest):
 
 	def set_VPCId(self,VPCId):
 		self.add_query_param('VPCId',VPCId)
+
+	def get_ZoneId(self):
+		return self.get_query_params().get('ZoneId')
+
+	def set_ZoneId(self,ZoneId):
+		self.add_query_param('ZoneId',ZoneId)
 
 	def get_DBInstanceDescription(self):
 		return self.get_query_params().get('DBInstanceDescription')

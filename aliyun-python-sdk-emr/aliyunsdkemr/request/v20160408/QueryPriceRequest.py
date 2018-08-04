@@ -29,23 +29,11 @@ class QueryPriceRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_ZoneId(self):
-		return self.get_query_params().get('ZoneId')
+	def get_Period(self):
+		return self.get_query_params().get('Period')
 
-	def set_ZoneId(self,ZoneId):
-		self.add_query_param('ZoneId',ZoneId)
-
-	def get_MasterInstanceType(self):
-		return self.get_query_params().get('MasterInstanceType')
-
-	def set_MasterInstanceType(self,MasterInstanceType):
-		self.add_query_param('MasterInstanceType',MasterInstanceType)
-
-	def get_CoreInstanceType(self):
-		return self.get_query_params().get('CoreInstanceType')
-
-	def set_CoreInstanceType(self,CoreInstanceType):
-		self.add_query_param('CoreInstanceType',CoreInstanceType)
+	def set_Period(self,Period):
+		self.add_query_param('Period',Period)
 
 	def get_TaskInstanceType(self):
 		return self.get_query_params().get('TaskInstanceType')
@@ -53,23 +41,17 @@ class QueryPriceRequest(RpcRequest):
 	def set_TaskInstanceType(self,TaskInstanceType):
 		self.add_query_param('TaskInstanceType',TaskInstanceType)
 
-	def get_MasterInstanceQuantity(self):
-		return self.get_query_params().get('MasterInstanceQuantity')
+	def get_TaskDiskType(self):
+		return self.get_query_params().get('TaskDiskType')
 
-	def set_MasterInstanceQuantity(self,MasterInstanceQuantity):
-		self.add_query_param('MasterInstanceQuantity',MasterInstanceQuantity)
+	def set_TaskDiskType(self,TaskDiskType):
+		self.add_query_param('TaskDiskType',TaskDiskType)
 
-	def get_CoreInstanceQuantity(self):
-		return self.get_query_params().get('CoreInstanceQuantity')
+	def get_IoOptimized(self):
+		return self.get_query_params().get('IoOptimized')
 
-	def set_CoreInstanceQuantity(self,CoreInstanceQuantity):
-		self.add_query_param('CoreInstanceQuantity',CoreInstanceQuantity)
-
-	def get_TaskInstanceQuantity(self):
-		return self.get_query_params().get('TaskInstanceQuantity')
-
-	def set_TaskInstanceQuantity(self,TaskInstanceQuantity):
-		self.add_query_param('TaskInstanceQuantity',TaskInstanceQuantity)
+	def set_IoOptimized(self,IoOptimized):
+		self.add_query_param('IoOptimized',IoOptimized)
 
 	def get_MasterDiskType(self):
 		return self.get_query_params().get('MasterDiskType')
@@ -77,17 +59,29 @@ class QueryPriceRequest(RpcRequest):
 	def set_MasterDiskType(self,MasterDiskType):
 		self.add_query_param('MasterDiskType',MasterDiskType)
 
-	def get_CoreDiskType(self):
-		return self.get_query_params().get('CoreDiskType')
+	def get_TaskInstanceQuantity(self):
+		return self.get_query_params().get('TaskInstanceQuantity')
 
-	def set_CoreDiskType(self,CoreDiskType):
-		self.add_query_param('CoreDiskType',CoreDiskType)
+	def set_TaskInstanceQuantity(self,TaskInstanceQuantity):
+		self.add_query_param('TaskInstanceQuantity',TaskInstanceQuantity)
 
-	def get_TaskDiskType(self):
-		return self.get_query_params().get('TaskDiskType')
+	def get_MasterInstanceType(self):
+		return self.get_query_params().get('MasterInstanceType')
 
-	def set_TaskDiskType(self,TaskDiskType):
-		self.add_query_param('TaskDiskType',TaskDiskType)
+	def set_MasterInstanceType(self,MasterInstanceType):
+		self.add_query_param('MasterInstanceType',MasterInstanceType)
+
+	def get_CoreInstanceQuantity(self):
+		return self.get_query_params().get('CoreInstanceQuantity')
+
+	def set_CoreInstanceQuantity(self,CoreInstanceQuantity):
+		self.add_query_param('CoreInstanceQuantity',CoreInstanceQuantity)
+
+	def get_Duration(self):
+		return self.get_query_params().get('Duration')
+
+	def set_Duration(self,Duration):
+		self.add_query_param('Duration',Duration)
 
 	def get_MasterDiskQuantity(self):
 		return self.get_query_params().get('MasterDiskQuantity')
@@ -101,29 +95,11 @@ class QueryPriceRequest(RpcRequest):
 	def set_CoreDiskQuantity(self,CoreDiskQuantity):
 		self.add_query_param('CoreDiskQuantity',CoreDiskQuantity)
 
-	def get_TaskDiskQuantity(self):
-		return self.get_query_params().get('TaskDiskQuantity')
+	def get_CoreInstanceType(self):
+		return self.get_query_params().get('CoreInstanceType')
 
-	def set_TaskDiskQuantity(self,TaskDiskQuantity):
-		self.add_query_param('TaskDiskQuantity',TaskDiskQuantity)
-
-	def get_Duration(self):
-		return self.get_query_params().get('Duration')
-
-	def set_Duration(self,Duration):
-		self.add_query_param('Duration',Duration)
-
-	def get_IoOptimized(self):
-		return self.get_query_params().get('IoOptimized')
-
-	def set_IoOptimized(self,IoOptimized):
-		self.add_query_param('IoOptimized',IoOptimized)
-
-	def get_ChargeType(self):
-		return self.get_query_params().get('ChargeType')
-
-	def set_ChargeType(self,ChargeType):
-		self.add_query_param('ChargeType',ChargeType)
+	def set_CoreInstanceType(self,CoreInstanceType):
+		self.add_query_param('CoreInstanceType',CoreInstanceType)
 
 	def get_NetType(self):
 		return self.get_query_params().get('NetType')
@@ -131,8 +107,73 @@ class QueryPriceRequest(RpcRequest):
 	def set_NetType(self,NetType):
 		self.add_query_param('NetType',NetType)
 
-	def get_Period(self):
-		return self.get_query_params().get('Period')
+	def get_HostGroups(self):
+		return self.get_query_params().get('HostGroups')
 
-	def set_Period(self,Period):
-		self.add_query_param('Period',Period)
+	def set_HostGroups(self,HostGroups):
+		for i in range(len(HostGroups)):	
+			if HostGroups[i].get('HostGroupId') is not None:
+				self.add_query_param('HostGroup.' + str(i + 1) + '.HostGroupId' , HostGroups[i].get('HostGroupId'))
+			if HostGroups[i].get('HostGroupName') is not None:
+				self.add_query_param('HostGroup.' + str(i + 1) + '.HostGroupName' , HostGroups[i].get('HostGroupName'))
+			if HostGroups[i].get('HostGroupType') is not None:
+				self.add_query_param('HostGroup.' + str(i + 1) + '.HostGroupType' , HostGroups[i].get('HostGroupType'))
+			if HostGroups[i].get('ClusterId') is not None:
+				self.add_query_param('HostGroup.' + str(i + 1) + '.ClusterId' , HostGroups[i].get('ClusterId'))
+			if HostGroups[i].get('Comment') is not None:
+				self.add_query_param('HostGroup.' + str(i + 1) + '.Comment' , HostGroups[i].get('Comment'))
+			if HostGroups[i].get('CreateType') is not None:
+				self.add_query_param('HostGroup.' + str(i + 1) + '.CreateType' , HostGroups[i].get('CreateType'))
+			if HostGroups[i].get('ChargeType') is not None:
+				self.add_query_param('HostGroup.' + str(i + 1) + '.ChargeType' , HostGroups[i].get('ChargeType'))
+			if HostGroups[i].get('Period') is not None:
+				self.add_query_param('HostGroup.' + str(i + 1) + '.Period' , HostGroups[i].get('Period'))
+			if HostGroups[i].get('NodeCount') is not None:
+				self.add_query_param('HostGroup.' + str(i + 1) + '.NodeCount' , HostGroups[i].get('NodeCount'))
+			if HostGroups[i].get('InstanceType') is not None:
+				self.add_query_param('HostGroup.' + str(i + 1) + '.InstanceType' , HostGroups[i].get('InstanceType'))
+			if HostGroups[i].get('DiskType') is not None:
+				self.add_query_param('HostGroup.' + str(i + 1) + '.DiskType' , HostGroups[i].get('DiskType'))
+			if HostGroups[i].get('DiskCapacity') is not None:
+				self.add_query_param('HostGroup.' + str(i + 1) + '.DiskCapacity' , HostGroups[i].get('DiskCapacity'))
+			if HostGroups[i].get('DiskCount') is not None:
+				self.add_query_param('HostGroup.' + str(i + 1) + '.DiskCount' , HostGroups[i].get('DiskCount'))
+			if HostGroups[i].get('SysDiskType') is not None:
+				self.add_query_param('HostGroup.' + str(i + 1) + '.SysDiskType' , HostGroups[i].get('SysDiskType'))
+			if HostGroups[i].get('SysDiskCapacity') is not None:
+				self.add_query_param('HostGroup.' + str(i + 1) + '.SysDiskCapacity' , HostGroups[i].get('SysDiskCapacity'))
+			if HostGroups[i].get('AutoRenew') is not None:
+				self.add_query_param('HostGroup.' + str(i + 1) + '.AutoRenew' , HostGroups[i].get('AutoRenew'))
+			if HostGroups[i].get('VSwitchId') is not None:
+				self.add_query_param('HostGroup.' + str(i + 1) + '.VSwitchId' , HostGroups[i].get('VSwitchId'))
+
+
+	def get_ZoneId(self):
+		return self.get_query_params().get('ZoneId')
+
+	def set_ZoneId(self,ZoneId):
+		self.add_query_param('ZoneId',ZoneId)
+
+	def get_CoreDiskType(self):
+		return self.get_query_params().get('CoreDiskType')
+
+	def set_CoreDiskType(self,CoreDiskType):
+		self.add_query_param('CoreDiskType',CoreDiskType)
+
+	def get_ChargeType(self):
+		return self.get_query_params().get('ChargeType')
+
+	def set_ChargeType(self,ChargeType):
+		self.add_query_param('ChargeType',ChargeType)
+
+	def get_MasterInstanceQuantity(self):
+		return self.get_query_params().get('MasterInstanceQuantity')
+
+	def set_MasterInstanceQuantity(self,MasterInstanceQuantity):
+		self.add_query_param('MasterInstanceQuantity',MasterInstanceQuantity)
+
+	def get_TaskDiskQuantity(self):
+		return self.get_query_params().get('TaskDiskQuantity')
+
+	def set_TaskDiskQuantity(self,TaskDiskQuantity):
+		self.add_query_param('TaskDiskQuantity',TaskDiskQuantity)

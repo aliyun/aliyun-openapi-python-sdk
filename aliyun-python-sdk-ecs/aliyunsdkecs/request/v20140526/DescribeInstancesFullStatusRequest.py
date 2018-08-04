@@ -55,6 +55,14 @@ class DescribeInstancesFullStatusRequest(RpcRequest):
 	def set_EventPublishTimeEnd(self,EventPublishTimeEnd):
 		self.add_query_param('EventPublishTime.End',EventPublishTimeEnd)
 
+	def get_InstanceEventTypes(self):
+		return self.get_query_params().get('InstanceEventTypes')
+
+	def set_InstanceEventTypes(self,InstanceEventTypes):
+		for i in range(len(InstanceEventTypes)):	
+			if InstanceEventTypes[i] is not None:
+				self.add_query_param('InstanceEventType.' + str(i + 1) , InstanceEventTypes[i]);
+
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 

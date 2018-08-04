@@ -23,17 +23,29 @@ class ResizeClusterRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'ResizeCluster')
 
-	def get_ClusterId(self):
-		return self.get_query_params().get('ClusterId')
-
-	def set_ClusterId(self,ClusterId):
-		self.add_query_param('ClusterId',ClusterId)
-
 	def get_NewMasterInstances(self):
 		return self.get_query_params().get('NewMasterInstances')
 
 	def set_NewMasterInstances(self,NewMasterInstances):
 		self.add_query_param('NewMasterInstances',NewMasterInstances)
+
+	def get_Period(self):
+		return self.get_query_params().get('Period')
+
+	def set_Period(self,Period):
+		self.add_query_param('Period',Period)
+
+	def get_AutoRenew(self):
+		return self.get_query_params().get('AutoRenew')
+
+	def set_AutoRenew(self,AutoRenew):
+		self.add_query_param('AutoRenew',AutoRenew)
+
+	def get_CoreInstanceType(self):
+		return self.get_query_params().get('CoreInstanceType')
+
+	def set_CoreInstanceType(self,CoreInstanceType):
+		self.add_query_param('CoreInstanceType',CoreInstanceType)
 
 	def get_NewCoreInstances(self):
 		return self.get_query_params().get('NewCoreInstances')
@@ -47,20 +59,14 @@ class ResizeClusterRequest(RpcRequest):
 	def set_NewTaskInstances(self,NewTaskInstances):
 		self.add_query_param('NewTaskInstances',NewTaskInstances)
 
+	def get_ClusterId(self):
+		return self.get_query_params().get('ClusterId')
+
+	def set_ClusterId(self,ClusterId):
+		self.add_query_param('ClusterId',ClusterId)
+
 	def get_ChargeType(self):
 		return self.get_query_params().get('ChargeType')
 
 	def set_ChargeType(self,ChargeType):
 		self.add_query_param('ChargeType',ChargeType)
-
-	def get_Period(self):
-		return self.get_query_params().get('Period')
-
-	def set_Period(self,Period):
-		self.add_query_param('Period',Period)
-
-	def get_AutoRenew(self):
-		return self.get_query_params().get('AutoRenew')
-
-	def set_AutoRenew(self,AutoRenew):
-		self.add_query_param('AutoRenew',AutoRenew)

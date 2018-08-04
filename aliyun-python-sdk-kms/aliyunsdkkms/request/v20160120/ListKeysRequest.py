@@ -24,12 +24,6 @@ class ListKeysRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Kms', '2016-01-20', 'ListKeys','kms')
 		self.set_protocol_type('https');
 
-	def get_PageNumber(self):
-		return self.get_query_params().get('PageNumber')
-
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
-
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
 
@@ -41,3 +35,9 @@ class ListKeysRequest(RpcRequest):
 
 	def set_STSToken(self,STSToken):
 		self.add_query_param('STSToken',STSToken)
+
+	def get_PageNumber(self):
+		return self.get_query_params().get('PageNumber')
+
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)

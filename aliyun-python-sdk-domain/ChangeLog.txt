@@ -1,3 +1,20 @@
+2018-06-27 Version: 3.6.0
+1, Modify QueryDomainRealNameVerificationInfo Api, add a return value IdentityCredentialUrl, which is domain real name verification image, you can download it via a HTTP get request,It has validity for 30 seconds.
+2, Modify QueryRegistrantProfileRealNameVerificationInfo Api, add a return value IdentityCredentialUrl, which is domain real name verification image, you can download it via a HTTP get request,It has validity for 30 seconds
+
+
+2018-05-09 Version: 3.5.0
+1, Add apis for domain broker.
+
+2018-04-26 Version: 3.4.0
+1, Add apis for domain group.
+3, Add fields for QueryDomainList.
+
+2018-04-03 Version: 3.3.0
+1, Add APIs for domain transfer in and transfer out.
+2, Add APIs for poll and acknowledge domain task.
+3, Add API for query domain group list.
+
 2018-03-01 Version: 3.2.0
 1, Add GetReserveDomainUrl interface.
 

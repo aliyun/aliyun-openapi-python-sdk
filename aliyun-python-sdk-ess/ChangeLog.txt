@@ -1,3 +1,24 @@
+2018-07-11 Version: 2.2.2
+1, new function: Attach and Detach Rds instance of scalingGroup.
+
+
+2018-07-05 Version: 2.2.1
+1, new function, attach/detach load balancer of scalingGroup
+
+2018-06-28 Version: 2.2.0
+1, ScalingConfiguration support hostName and passwordInherit
+2, ScalingConfiguration support modify
+
+2018-06-13 Version: 2.1.6
+1, Add lifecycleHook.
+
+2018-05-07 Version: 2.1.5
+1, Remove DescribeAccountAttributes.
+
+2018-04-23 Version: 2.1.4
+1, Add notificationConfiguration.
+2, Add standby status.
+
 2018-01-12 Version: 2.1.4
 1, fix the TypeError while building the repeat params
 

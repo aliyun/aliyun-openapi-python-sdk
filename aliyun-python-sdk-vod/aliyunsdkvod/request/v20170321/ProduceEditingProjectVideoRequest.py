@@ -23,29 +23,23 @@ class ProduceEditingProjectVideoRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'vod', '2017-03-21', 'ProduceEditingProjectVideo','vod')
 
-	def get_CoverURL(self):
-		return self.get_query_params().get('CoverURL')
-
-	def set_CoverURL(self,CoverURL):
-		self.add_query_param('CoverURL',CoverURL)
-
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_MediaMetadata(self):
+		return self.get_query_params().get('MediaMetadata')
+
+	def set_MediaMetadata(self,MediaMetadata):
+		self.add_query_param('MediaMetadata',MediaMetadata)
+
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_Timeline(self):
-		return self.get_query_params().get('Timeline')
-
-	def set_Timeline(self,Timeline):
-		self.add_query_param('Timeline',Timeline)
 
 	def get_Description(self):
 		return self.get_query_params().get('Description')
@@ -64,6 +58,30 @@ class ProduceEditingProjectVideoRequest(RpcRequest):
 
 	def set_Title(self,Title):
 		self.add_query_param('Title',Title)
+
+	def get_CoverURL(self):
+		return self.get_query_params().get('CoverURL')
+
+	def set_CoverURL(self,CoverURL):
+		self.add_query_param('CoverURL',CoverURL)
+
+	def get_UserData(self):
+		return self.get_query_params().get('UserData')
+
+	def set_UserData(self,UserData):
+		self.add_query_param('UserData',UserData)
+
+	def get_Timeline(self):
+		return self.get_query_params().get('Timeline')
+
+	def set_Timeline(self,Timeline):
+		self.add_query_param('Timeline',Timeline)
+
+	def get_ProduceConfig(self):
+		return self.get_query_params().get('ProduceConfig')
+
+	def set_ProduceConfig(self,ProduceConfig):
+		self.add_query_param('ProduceConfig',ProduceConfig)
 
 	def get_ProjectId(self):
 		return self.get_query_params().get('ProjectId')

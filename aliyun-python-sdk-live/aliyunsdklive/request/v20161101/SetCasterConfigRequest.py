@@ -41,17 +41,23 @@ class SetCasterConfigRequest(RpcRequest):
 	def set_DomainName(self,DomainName):
 		self.add_query_param('DomainName',DomainName)
 
+	def get_ProgramEffect(self):
+		return self.get_query_params().get('ProgramEffect')
+
+	def set_ProgramEffect(self,ProgramEffect):
+		self.add_query_param('ProgramEffect',ProgramEffect)
+
+	def get_ProgramName(self):
+		return self.get_query_params().get('ProgramName')
+
+	def set_ProgramName(self,ProgramName):
+		self.add_query_param('ProgramName',ProgramName)
+
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
-
-	def get_Version(self):
-		return self.get_query_params().get('Version')
-
-	def set_Version(self,Version):
-		self.add_query_param('Version',Version)
 
 	def get_RecordConfig(self):
 		return self.get_query_params().get('RecordConfig')
@@ -76,12 +82,6 @@ class SetCasterConfigRequest(RpcRequest):
 
 	def set_Delay(self,Delay):
 		self.add_query_param('Delay',Delay)
-
-	def get_SecurityToken(self):
-		return self.get_query_params().get('SecurityToken')
-
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)
 
 	def get_CasterName(self):
 		return self.get_query_params().get('CasterName')

@@ -29,6 +29,12 @@ class ModifyDiskChargeTypeRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_DiskChargeType(self):
+		return self.get_query_params().get('DiskChargeType')
+
+	def set_DiskChargeType(self,DiskChargeType):
+		self.add_query_param('DiskChargeType',DiskChargeType)
+
 	def get_InstanceId(self):
 		return self.get_query_params().get('InstanceId')
 

@@ -23,12 +23,6 @@ class DescribeCasterLayoutsRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'live', '2016-11-01', 'DescribeCasterLayouts','live')
 
-	def get_SecurityToken(self):
-		return self.get_query_params().get('SecurityToken')
-
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)
-
 	def get_CasterId(self):
 		return self.get_query_params().get('CasterId')
 
@@ -40,12 +34,6 @@ class DescribeCasterLayoutsRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
-
-	def get_Version(self):
-		return self.get_query_params().get('Version')
-
-	def set_Version(self,Version):
-		self.add_query_param('Version',Version)
 
 	def get_LayoutId(self):
 		return self.get_query_params().get('LayoutId')

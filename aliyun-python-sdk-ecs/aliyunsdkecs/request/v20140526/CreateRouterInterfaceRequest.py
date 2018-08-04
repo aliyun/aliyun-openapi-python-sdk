@@ -59,6 +59,54 @@ class CreateRouterInterfaceRequest(RpcRequest):
 	def set_ClientToken(self,ClientToken):
 		self.add_query_param('ClientToken',ClientToken)
 
+	def get_HealthCheckTargetIp(self):
+		return self.get_query_params().get('HealthCheckTargetIp')
+
+	def set_HealthCheckTargetIp(self,HealthCheckTargetIp):
+		self.add_query_param('HealthCheckTargetIp',HealthCheckTargetIp)
+
+	def get_Description(self):
+		return self.get_query_params().get('Description')
+
+	def set_Description(self,Description):
+		self.add_query_param('Description',Description)
+
+	def get_Spec(self):
+		return self.get_query_params().get('Spec')
+
+	def set_Spec(self,Spec):
+		self.add_query_param('Spec',Spec)
+
+	def get_UserCidr(self):
+		return self.get_query_params().get('UserCidr')
+
+	def set_UserCidr(self,UserCidr):
+		self.add_query_param('UserCidr',UserCidr)
+
+	def get_OppositeInterfaceId(self):
+		return self.get_query_params().get('OppositeInterfaceId')
+
+	def set_OppositeInterfaceId(self,OppositeInterfaceId):
+		self.add_query_param('OppositeInterfaceId',OppositeInterfaceId)
+
+	def get_InstanceChargeType(self):
+		return self.get_query_params().get('InstanceChargeType')
+
+	def set_InstanceChargeType(self,InstanceChargeType):
+		self.add_query_param('InstanceChargeType',InstanceChargeType)
+
+	def get_Period(self):
+		return self.get_query_params().get('Period')
+
+	def set_Period(self,Period):
+		self.add_query_param('Period',Period)
+
+	def get_AutoPay(self):
+		return self.get_query_params().get('AutoPay')
+
+	def set_AutoPay(self,AutoPay):
+		self.add_query_param('AutoPay',AutoPay)
+
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -77,29 +125,11 @@ class CreateRouterInterfaceRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
-	def get_HealthCheckTargetIp(self):
-		return self.get_query_params().get('HealthCheckTargetIp')
-
-	def set_HealthCheckTargetIp(self,HealthCheckTargetIp):
-		self.add_query_param('HealthCheckTargetIp',HealthCheckTargetIp)
-
-	def get_Description(self):
-		return self.get_query_params().get('Description')
-
-	def set_Description(self,Description):
-		self.add_query_param('Description',Description)
-
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
-
-	def get_Spec(self):
-		return self.get_query_params().get('Spec')
-
-	def set_Spec(self,Spec):
-		self.add_query_param('Spec',Spec)
 
 	def get_OppositeInterfaceOwnerId(self):
 		return self.get_query_params().get('OppositeInterfaceOwnerId')
@@ -137,14 +167,8 @@ class CreateRouterInterfaceRequest(RpcRequest):
 	def set_Name(self,Name):
 		self.add_query_param('Name',Name)
 
-	def get_UserCidr(self):
-		return self.get_query_params().get('UserCidr')
+	def get_PricingCycle(self):
+		return self.get_query_params().get('PricingCycle')
 
-	def set_UserCidr(self,UserCidr):
-		self.add_query_param('UserCidr',UserCidr)
-
-	def get_OppositeInterfaceId(self):
-		return self.get_query_params().get('OppositeInterfaceId')
-
-	def set_OppositeInterfaceId(self,OppositeInterfaceId):
-		self.add_query_param('OppositeInterfaceId',OppositeInterfaceId)
+	def set_PricingCycle(self,PricingCycle):
+		self.add_query_param('PricingCycle',PricingCycle)

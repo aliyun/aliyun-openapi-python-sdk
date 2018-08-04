@@ -29,12 +29,6 @@ class SetSnapshotSettingsRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_EndHour(self):
-		return self.get_domain_params().get('EndHour')
-
-	def set_EndHour(self,EndHour):
-		self.add_domain_param('EndHour',EndHour)
-
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -47,44 +41,8 @@ class SetSnapshotSettingsRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
-	def get_DayList(self):
-		return self.get_domain_params().get('DayList')
-
-	def set_DayList(self,DayList):
-		self.add_domain_param('DayList',DayList)
-
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
-
-	def get_InstanceId(self):
-		return self.get_domain_params().get('InstanceId')
-
-	def set_InstanceId(self,InstanceId):
-		self.add_domain_param('InstanceId',InstanceId)
-
-	def get_RetentionDay(self):
-		return self.get_domain_params().get('RetentionDay')
-
-	def set_RetentionDay(self,RetentionDay):
-		self.add_domain_param('RetentionDay',RetentionDay)
-
-	def get_MaxManualSnapshots(self):
-		return self.get_domain_params().get('MaxManualSnapshots')
-
-	def set_MaxManualSnapshots(self,MaxManualSnapshots):
-		self.add_domain_param('MaxManualSnapshots',MaxManualSnapshots)
-
-	def get_MaxAutoSnapshots(self):
-		return self.get_domain_params().get('MaxAutoSnapshots')
-
-	def set_MaxAutoSnapshots(self,MaxAutoSnapshots):
-		self.add_domain_param('MaxAutoSnapshots',MaxAutoSnapshots)
-
-	def get_BeginHour(self):
-		return self.get_domain_params().get('BeginHour')
-
-	def set_BeginHour(self,BeginHour):
-		self.add_domain_param('BeginHour',BeginHour)

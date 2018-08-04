@@ -47,6 +47,18 @@ class GetQuotaInstanceRequest(RpcRequest):
 	def set_PageNum(self,PageNum):
 		self.add_query_param('PageNum',PageNum)
 
+	def get_Region(self):
+		return self.get_query_params().get('Region')
+
+	def set_Region(self,Region):
+		self.add_query_param('Region',Region)
+
+	def get_QuotaName(self):
+		return self.get_query_params().get('QuotaName')
+
+	def set_QuotaName(self,QuotaName):
+		self.add_query_param('QuotaName',QuotaName)
+
 	def get_Status(self):
 		return self.get_query_params().get('Status')
 

@@ -178,6 +178,7 @@ class HttpResponse(HttpRequest):
         else:
             conn = httplib.HTTPSConnection(host, port, **kwargs)
 
+
         return conn
 
     def __get_env_proxy(self, is_https):

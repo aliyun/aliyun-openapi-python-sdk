@@ -24,11 +24,11 @@ class DecryptRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Kms', '2016-01-20', 'Decrypt','kms')
 		self.set_protocol_type('https');
 
-	def get_CiphertextBlob(self):
-		return self.get_query_params().get('CiphertextBlob')
+	def get_EncryptionContext(self):
+		return self.get_query_params().get('EncryptionContext')
 
-	def set_CiphertextBlob(self,CiphertextBlob):
-		self.add_query_param('CiphertextBlob',CiphertextBlob)
+	def set_EncryptionContext(self,EncryptionContext):
+		self.add_query_param('EncryptionContext',EncryptionContext)
 
 	def get_STSToken(self):
 		return self.get_query_params().get('STSToken')
@@ -36,8 +36,8 @@ class DecryptRequest(RpcRequest):
 	def set_STSToken(self,STSToken):
 		self.add_query_param('STSToken',STSToken)
 
-	def get_EncryptionContext(self):
-		return self.get_query_params().get('EncryptionContext')
+	def get_CiphertextBlob(self):
+		return self.get_query_params().get('CiphertextBlob')
 
-	def set_EncryptionContext(self,EncryptionContext):
-		self.add_query_param('EncryptionContext',EncryptionContext)
+	def set_CiphertextBlob(self,CiphertextBlob):
+		self.add_query_param('CiphertextBlob',CiphertextBlob)

@@ -29,20 +29,17 @@ class AddClusterServiceRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_Services(self):
+		return self.get_query_params().get('Services')
+
+	def set_Services(self,Services):
+		for i in range(len(Services)):	
+			if Services[i].get('ServiceName') is not None:
+				self.add_query_param('Service.' + str(i + 1) + '.ServiceName' , Services[i].get('ServiceName'))
+
+
 	def get_ClusterId(self):
 		return self.get_query_params().get('ClusterId')
 
 	def set_ClusterId(self,ClusterId):
 		self.add_query_param('ClusterId',ClusterId)
-
-	def get_ServiceName(self):
-		return self.get_query_params().get('ServiceName')
-
-	def set_ServiceName(self,ServiceName):
-		self.add_query_param('ServiceName',ServiceName)
-
-	def get_ServiceVersion(self):
-		return self.get_query_params().get('ServiceVersion')
-
-	def set_ServiceVersion(self,ServiceVersion):
-		self.add_query_param('ServiceVersion',ServiceVersion)

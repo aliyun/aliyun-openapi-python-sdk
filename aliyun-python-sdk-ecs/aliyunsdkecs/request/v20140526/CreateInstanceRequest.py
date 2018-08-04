@@ -215,6 +215,12 @@ class CreateInstanceRequest(RpcRequest):
 	def set_VlanId(self,VlanId):
 		self.add_query_param('VlanId',VlanId)
 
+	def get_SpotInterruptionBehavior(self):
+		return self.get_query_params().get('SpotInterruptionBehavior')
+
+	def set_SpotInterruptionBehavior(self,SpotInterruptionBehavior):
+		self.add_query_param('SpotInterruptionBehavior',SpotInterruptionBehavior)
+
 	def get_IoOptimized(self):
 		return self.get_query_params().get('IoOptimized')
 
@@ -250,6 +256,12 @@ class CreateInstanceRequest(RpcRequest):
 
 	def set_UserData(self,UserData):
 		self.add_query_param('UserData',UserData)
+
+	def get_PasswordInherit(self):
+		return self.get_query_params().get('PasswordInherit')
+
+	def set_PasswordInherit(self,PasswordInherit):
+		self.add_query_param('PasswordInherit',PasswordInherit)
 
 	def get_InstanceType(self):
 		return self.get_query_params().get('InstanceType')
@@ -304,6 +316,12 @@ class CreateInstanceRequest(RpcRequest):
 
 	def set_RamRoleName(self,RamRoleName):
 		self.add_query_param('RamRoleName',RamRoleName)
+
+	def get_DedicatedHostId(self):
+		return self.get_query_params().get('DedicatedHostId')
+
+	def set_DedicatedHostId(self,DedicatedHostId):
+		self.add_query_param('DedicatedHostId',DedicatedHostId)
 
 	def get_ClusterId(self):
 		return self.get_query_params().get('ClusterId')

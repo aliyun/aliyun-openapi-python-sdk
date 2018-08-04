@@ -29,12 +29,6 @@ class ModifyPrepayInstanceSpecRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_InstanceId(self):
-		return self.get_query_params().get('InstanceId')
-
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
-
 	def get_AutoPay(self):
 		return self.get_query_params().get('AutoPay')
 
@@ -59,12 +53,6 @@ class ModifyPrepayInstanceSpecRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
-	def get_InstanceType(self):
-		return self.get_query_params().get('InstanceType')
-
-	def set_InstanceType(self,InstanceType):
-		self.add_query_param('InstanceType',InstanceType)
-
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
@@ -76,3 +64,27 @@ class ModifyPrepayInstanceSpecRequest(RpcRequest):
 
 	def set_OperatorType(self,OperatorType):
 		self.add_query_param('OperatorType',OperatorType)
+
+	def get_SystemDiskCategory(self):
+		return self.get_query_params().get('SystemDisk.Category')
+
+	def set_SystemDiskCategory(self,SystemDiskCategory):
+		self.add_query_param('SystemDisk.Category',SystemDiskCategory)
+
+	def get_InstanceId(self):
+		return self.get_query_params().get('InstanceId')
+
+	def set_InstanceId(self,InstanceId):
+		self.add_query_param('InstanceId',InstanceId)
+
+	def get_MigrateAcrossZone(self):
+		return self.get_query_params().get('MigrateAcrossZone')
+
+	def set_MigrateAcrossZone(self,MigrateAcrossZone):
+		self.add_query_param('MigrateAcrossZone',MigrateAcrossZone)
+
+	def get_InstanceType(self):
+		return self.get_query_params().get('InstanceType')
+
+	def set_InstanceType(self,InstanceType):
+		self.add_query_param('InstanceType',InstanceType)

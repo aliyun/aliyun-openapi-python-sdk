@@ -89,6 +89,12 @@ class ReplaceSystemDiskRequest(RpcRequest):
 	def set_InstanceId(self,InstanceId):
 		self.add_query_param('InstanceId',InstanceId)
 
+	def get_PasswordInherit(self):
+		return self.get_query_params().get('PasswordInherit')
+
+	def set_PasswordInherit(self,PasswordInherit):
+		self.add_query_param('PasswordInherit',PasswordInherit)
+
 	def get_SystemDiskSize(self):
 		return self.get_query_params().get('SystemDisk.Size')
 

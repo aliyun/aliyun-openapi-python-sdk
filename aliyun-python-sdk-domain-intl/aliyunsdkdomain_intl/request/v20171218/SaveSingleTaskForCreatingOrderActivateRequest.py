@@ -23,11 +23,23 @@ class SaveSingleTaskForCreatingOrderActivateRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Domain-intl', '2017-12-18', 'SaveSingleTaskForCreatingOrderActivate','domain')
 
+	def get_Country(self):
+		return self.get_query_params().get('Country')
+
+	def set_Country(self,Country):
+		self.add_query_param('Country',Country)
+
 	def get_SubscriptionDuration(self):
 		return self.get_query_params().get('SubscriptionDuration')
 
 	def set_SubscriptionDuration(self,SubscriptionDuration):
 		self.add_query_param('SubscriptionDuration',SubscriptionDuration)
+
+	def get_Address(self):
+		return self.get_query_params().get('Address')
+
+	def set_Address(self,Address):
+		self.add_query_param('Address',Address)
 
 	def get_PermitPremiumActivation(self):
 		return self.get_query_params().get('PermitPremiumActivation')
@@ -35,11 +47,29 @@ class SaveSingleTaskForCreatingOrderActivateRequest(RpcRequest):
 	def set_PermitPremiumActivation(self,PermitPremiumActivation):
 		self.add_query_param('PermitPremiumActivation',PermitPremiumActivation)
 
-	def get_UserClientIp(self):
-		return self.get_query_params().get('UserClientIp')
+	def get_TelArea(self):
+		return self.get_query_params().get('TelArea')
 
-	def set_UserClientIp(self,UserClientIp):
-		self.add_query_param('UserClientIp',UserClientIp)
+	def set_TelArea(self,TelArea):
+		self.add_query_param('TelArea',TelArea)
+
+	def get_City(self):
+		return self.get_query_params().get('City')
+
+	def set_City(self,City):
+		self.add_query_param('City',City)
+
+	def get_Dns2(self):
+		return self.get_query_params().get('Dns2')
+
+	def set_Dns2(self,Dns2):
+		self.add_query_param('Dns2',Dns2)
+
+	def get_Dns1(self):
+		return self.get_query_params().get('Dns1')
+
+	def set_Dns1(self,Dns1):
+		self.add_query_param('Dns1',Dns1)
 
 	def get_DomainName(self):
 		return self.get_query_params().get('DomainName')
@@ -53,6 +83,48 @@ class SaveSingleTaskForCreatingOrderActivateRequest(RpcRequest):
 	def set_RegistrantProfileId(self,RegistrantProfileId):
 		self.add_query_param('RegistrantProfileId',RegistrantProfileId)
 
+	def get_Telephone(self):
+		return self.get_query_params().get('Telephone')
+
+	def set_Telephone(self,Telephone):
+		self.add_query_param('Telephone',Telephone)
+
+	def get_AliyunDns(self):
+		return self.get_query_params().get('AliyunDns')
+
+	def set_AliyunDns(self,AliyunDns):
+		self.add_query_param('AliyunDns',AliyunDns)
+
+	def get_RegistrantOrganization(self):
+		return self.get_query_params().get('RegistrantOrganization')
+
+	def set_RegistrantOrganization(self,RegistrantOrganization):
+		self.add_query_param('RegistrantOrganization',RegistrantOrganization)
+
+	def get_TelExt(self):
+		return self.get_query_params().get('TelExt')
+
+	def set_TelExt(self,TelExt):
+		self.add_query_param('TelExt',TelExt)
+
+	def get_Province(self):
+		return self.get_query_params().get('Province')
+
+	def set_Province(self,Province):
+		self.add_query_param('Province',Province)
+
+	def get_PostalCode(self):
+		return self.get_query_params().get('PostalCode')
+
+	def set_PostalCode(self,PostalCode):
+		self.add_query_param('PostalCode',PostalCode)
+
+	def get_UserClientIp(self):
+		return self.get_query_params().get('UserClientIp')
+
+	def set_UserClientIp(self,UserClientIp):
+		self.add_query_param('UserClientIp',UserClientIp)
+
 	def get_EnableDomainProxy(self):
 		return self.get_query_params().get('EnableDomainProxy')
 
@@ -64,3 +136,15 @@ class SaveSingleTaskForCreatingOrderActivateRequest(RpcRequest):
 
 	def set_Lang(self,Lang):
 		self.add_query_param('Lang',Lang)
+
+	def get_Email(self):
+		return self.get_query_params().get('Email')
+
+	def set_Email(self,Email):
+		self.add_query_param('Email',Email)
+
+	def get_RegistrantName(self):
+		return self.get_query_params().get('RegistrantName')
+
+	def set_RegistrantName(self,RegistrantName):
+		self.add_query_param('RegistrantName',RegistrantName)

@@ -24,17 +24,17 @@ class FindApproveServiceListRequest(RpcRequest):
 		RpcRequest.__init__(self, 'CSB', '2017-11-18', 'FindApproveServiceList','CSB')
 		self.set_protocol_type('https');
 
-	def get_projectName(self):
-		return self.get_query_params().get('projectName')
-
-	def set_projectName(self,projectName):
-		self.add_query_param('projectName',projectName)
-
 	def get_approveLevel(self):
 		return self.get_query_params().get('approveLevel')
 
 	def set_approveLevel(self,approveLevel):
 		self.add_query_param('approveLevel',approveLevel)
+
+	def get_projectName(self):
+		return self.get_query_params().get('projectName')
+
+	def set_projectName(self,projectName):
+		self.add_query_param('projectName',projectName)
 
 	def get_showDelService(self):
 		return self.get_query_params().get('showDelService')

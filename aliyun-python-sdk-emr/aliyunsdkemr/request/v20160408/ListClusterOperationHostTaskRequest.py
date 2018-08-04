@@ -29,11 +29,11 @@ class ListClusterOperationHostTaskRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_ClusterId(self):
-		return self.get_query_params().get('ClusterId')
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
 
-	def set_ClusterId(self,ClusterId):
-		self.add_query_param('ClusterId',ClusterId)
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
 
 	def get_OperationId(self):
 		return self.get_query_params().get('OperationId')
@@ -47,11 +47,11 @@ class ListClusterOperationHostTaskRequest(RpcRequest):
 	def set_HostId(self,HostId):
 		self.add_query_param('HostId',HostId)
 
-	def get_Status(self):
-		return self.get_query_params().get('Status')
+	def get_ClusterId(self):
+		return self.get_query_params().get('ClusterId')
 
-	def set_Status(self,Status):
-		self.add_query_param('Status',Status)
+	def set_ClusterId(self,ClusterId):
+		self.add_query_param('ClusterId',ClusterId)
 
 	def get_PageNumber(self):
 		return self.get_query_params().get('PageNumber')
@@ -59,8 +59,8 @@ class ListClusterOperationHostTaskRequest(RpcRequest):
 	def set_PageNumber(self,PageNumber):
 		self.add_query_param('PageNumber',PageNumber)
 
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
+	def get_Status(self):
+		return self.get_query_params().get('Status')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
+	def set_Status(self,Status):
+		self.add_query_param('Status',Status)

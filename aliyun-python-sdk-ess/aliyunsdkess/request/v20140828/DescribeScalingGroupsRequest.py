@@ -59,6 +59,12 @@ class DescribeScalingGroupsRequest(RpcRequest):
 	def set_ScalingGroupId15(self,ScalingGroupId15):
 		self.add_query_param('ScalingGroupId.15',ScalingGroupId15)
 
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
+
 	def get_PageNumber(self):
 		return self.get_query_params().get('PageNumber')
 
@@ -113,17 +119,17 @@ class DescribeScalingGroupsRequest(RpcRequest):
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
+	def get_ScalingGroupName(self):
+		return self.get_query_params().get('ScalingGroupName')
+
+	def set_ScalingGroupName(self,ScalingGroupName):
+		self.add_query_param('ScalingGroupName',ScalingGroupName)
+
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
 
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
-
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
 
 	def get_ScalingGroupName1(self):
 		return self.get_query_params().get('ScalingGroupName.1')

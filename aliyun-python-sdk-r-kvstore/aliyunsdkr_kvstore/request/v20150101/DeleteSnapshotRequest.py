@@ -29,18 +29,6 @@ class DeleteSnapshotRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_InstanceId(self):
-		return self.get_domain_params().get('InstanceId')
-
-	def set_InstanceId(self,InstanceId):
-		self.add_domain_param('InstanceId',InstanceId)
-
-	def get_SnapshotId(self):
-		return self.get_domain_params().get('SnapshotId')
-
-	def set_SnapshotId(self,SnapshotId):
-		self.add_domain_param('SnapshotId',SnapshotId)
-
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 

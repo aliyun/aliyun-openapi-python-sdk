@@ -29,6 +29,18 @@ class ListJobsRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
+
+	def get_QueryString(self):
+		return self.get_query_params().get('QueryString')
+
+	def set_QueryString(self,QueryString):
+		self.add_query_param('QueryString',QueryString)
+
 	def get_IsDesc(self):
 		return self.get_query_params().get('IsDesc')
 
@@ -41,20 +53,8 @@ class ListJobsRequest(RpcRequest):
 	def set_PageNumber(self,PageNumber):
 		self.add_query_param('PageNumber',PageNumber)
 
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
 	def get_QueryType(self):
 		return self.get_query_params().get('QueryType')
 
 	def set_QueryType(self,QueryType):
 		self.add_query_param('QueryType',QueryType)
-
-	def get_QueryString(self):
-		return self.get_query_params().get('QueryString')
-
-	def set_QueryString(self,QueryString):
-		self.add_query_param('QueryString',QueryString)
