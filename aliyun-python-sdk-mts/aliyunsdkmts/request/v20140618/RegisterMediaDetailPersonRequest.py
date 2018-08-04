@@ -47,6 +47,12 @@ class RegisterMediaDetailPersonRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
+	def get_PersonLib(self):
+		return self.get_query_params().get('PersonLib')
+
+	def set_PersonLib(self,PersonLib):
+		self.add_query_param('PersonLib',PersonLib)
+
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 

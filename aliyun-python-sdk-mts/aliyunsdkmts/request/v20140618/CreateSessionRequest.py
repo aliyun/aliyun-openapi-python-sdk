@@ -58,3 +58,9 @@ class CreateSessionRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_MediaId(self):
+		return self.get_query_params().get('MediaId')
+
+	def set_MediaId(self,MediaId):
+		self.add_query_param('MediaId',MediaId)

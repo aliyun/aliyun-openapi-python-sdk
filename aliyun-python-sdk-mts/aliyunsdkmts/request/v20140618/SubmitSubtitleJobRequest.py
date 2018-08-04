@@ -18,16 +18,34 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class AddVideoSummaryPipelineRequest(RpcRequest):
+class SubmitSubtitleJobRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Mts', '2014-06-18', 'AddVideoSummaryPipeline','mts')
+		RpcRequest.__init__(self, 'Mts', '2014-06-18', 'SubmitSubtitleJob','mts')
+
+	def get_UserData(self):
+		return self.get_query_params().get('UserData')
+
+	def set_UserData(self,UserData):
+		self.add_query_param('UserData',UserData)
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+
+	def get_OutputConfig(self):
+		return self.get_query_params().get('OutputConfig')
+
+	def set_OutputConfig(self,OutputConfig):
+		self.add_query_param('OutputConfig',OutputConfig)
+
+	def get_InputConfig(self):
+		return self.get_query_params().get('InputConfig')
+
+	def set_InputConfig(self,InputConfig):
+		self.add_query_param('InputConfig',InputConfig)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -41,26 +59,14 @@ class AddVideoSummaryPipelineRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
-	def get_Name(self):
-		return self.get_query_params().get('Name')
-
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)
-
-	def get_NotifyConfig(self):
-		return self.get_query_params().get('NotifyConfig')
-
-	def set_NotifyConfig(self,NotifyConfig):
-		self.add_query_param('NotifyConfig',NotifyConfig)
-
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_Priority(self):
-		return self.get_query_params().get('Priority')
+	def get_PipelineId(self):
+		return self.get_query_params().get('PipelineId')
 
-	def set_Priority(self,Priority):
-		self.add_query_param('Priority',Priority)
+	def set_PipelineId(self,PipelineId):
+		self.add_query_param('PipelineId',PipelineId)

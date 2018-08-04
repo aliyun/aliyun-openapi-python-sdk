@@ -47,11 +47,29 @@ class GetLicenseRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
+	def get_Header(self):
+		return self.get_query_params().get('Header')
+
+	def set_Header(self,Header):
+		self.add_query_param('Header',Header)
+
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_MediaId(self):
+		return self.get_query_params().get('MediaId')
+
+	def set_MediaId(self,MediaId):
+		self.add_query_param('MediaId',MediaId)
+
+	def get_Type(self):
+		return self.get_query_params().get('Type')
+
+	def set_Type(self,Type):
+		self.add_query_param('Type',Type)
 
 	def get_LicenseUrl(self):
 		return self.get_query_params().get('LicenseUrl')
