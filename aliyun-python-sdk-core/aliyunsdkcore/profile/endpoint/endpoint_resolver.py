@@ -18,7 +18,10 @@ resolvers = [
 
 def resolve_endpoint(region_id, request, location_service):
     param = dict()
-    param['regionId'] = region_id
+    if request.get_region_id():
+        param['regionId'] = request.get_region_id()
+    else:
+        param['regionId'] = region_id
     param['product'] = request.get_product()
     param['locationProduct'] = request.get_location_service_code()
     param['locationService'] = location_service
