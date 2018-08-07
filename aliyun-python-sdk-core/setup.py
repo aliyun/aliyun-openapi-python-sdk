@@ -31,7 +31,7 @@ Created on 6/24/2015
 @author: alex
 """
 PACKAGE = "aliyunsdkcore"
-NAME = "aliyun-python-sdk-core"
+NAME = "dd-aliyun-python-sdk-core"
 DESCRIPTION = "The core module of Aliyun Python SDK."
 AUTHOR = "Aliyun"
 AUTHOR_EMAIL = "aliyun-developers-efficiency@list.alibaba-inc.com"
@@ -63,7 +63,7 @@ setup(
     license="Apache",
     url=URL,
     keywords=["aliyun", "sdk", "core"],
-    packages=find_packages(exclude=["tests*"]),
+    packages=find_packages(exclude=["tests*", "integration*"]),
     include_package_data=True,
     python_requires='<3',
     platforms='any',

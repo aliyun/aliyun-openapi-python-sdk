@@ -31,7 +31,7 @@ Created on 7/3/2015
 """
 
 PACKAGE = "aliyunsdkslb"
-NAME = "aliyun-python-sdk-slb"
+NAME = "dd-aliyun-python-sdk-slb"
 DESCRIPTION = "The slb module of Aliyun Python sdk."
 AUTHOR = "Aliyun"
 AUTHOR_EMAIL = "aliyun-developers-efficiency@list.alibaba-inc.com"
@@ -49,9 +49,9 @@ finally:
 requires = []
 
 if sys.version_info < (3, 3):
-    requires.append("aliyun-python-sdk-core>=2.0.2")
+    requires.append("dd-aliyun-python-sdk-core>=2.0.2")
 else:
-    requires.append("aliyun-python-sdk-core-v3>=2.3.5")
+    requires.append("dd-aliyun-python-sdk-core-v3>=2.3.5")
 
 setup(
     name=NAME,
