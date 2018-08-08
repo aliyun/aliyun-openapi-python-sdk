@@ -29,12 +29,6 @@ class SetWaitingRoomConfigRequest(RpcRequest):
 	def set_WaitUrl(self,WaitUrl):
 		self.add_query_param('WaitUrl',WaitUrl)
 
-	def get_SecurityToken(self):
-		return self.get_query_params().get('SecurityToken')
-
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)
-
 	def get_WaitUri(self):
 		return self.get_query_params().get('WaitUri')
 
@@ -76,9 +70,3 @@ class SetWaitingRoomConfigRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
-
-	def get_Version(self):
-		return self.get_query_params().get('Version')
-
-	def set_Version(self,Version):
-		self.add_query_param('Version',Version)
