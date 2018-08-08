@@ -24,10 +24,10 @@ class UpdateFCTriggerRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'UpdateFCTrigger')
 
 	def get_Notes(self):
-		return self.get_query_params().get('Notes')
+		return self.get_body_params().get('Notes')
 
 	def set_Notes(self,Notes):
-		self.add_query_param('Notes',Notes)
+		self.add_body_params('Notes', Notes)
 
 	def get_TriggerARN(self):
 		return self.get_query_params().get('TriggerARN')
@@ -36,10 +36,10 @@ class UpdateFCTriggerRequest(RpcRequest):
 		self.add_query_param('TriggerARN',TriggerARN)
 
 	def get_SourceARN(self):
-		return self.get_query_params().get('SourceARN')
+		return self.get_body_params().get('SourceARN')
 
 	def set_SourceARN(self,SourceARN):
-		self.add_query_param('SourceARN',SourceARN)
+		self.add_body_params('SourceARN', SourceARN)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
@@ -48,7 +48,7 @@ class UpdateFCTriggerRequest(RpcRequest):
 		self.add_query_param('OwnerId',OwnerId)
 
 	def get_RoleARN(self):
-		return self.get_query_params().get('RoleARN')
+		return self.get_body_params().get('RoleARN')
 
 	def set_RoleARN(self,RoleARN):
-		self.add_query_param('RoleARN',RoleARN)
+		self.add_body_params('RoleARN', RoleARN)
