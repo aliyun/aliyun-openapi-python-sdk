@@ -36,3 +36,9 @@ class UpdateFaceRequest(RpcRequest):
 
 	def set_UserId(self,UserId):
 		self.add_body_params('UserId', UserId)
+
+	def get_UserInfo(self):
+		return self.get_body_params().get('UserInfo')
+
+	def set_UserInfo(self,UserInfo):
+		self.add_body_params('UserInfo', UserInfo)
