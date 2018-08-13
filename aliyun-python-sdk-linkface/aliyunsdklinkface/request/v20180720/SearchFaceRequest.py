@@ -18,10 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class RegisterFaceRequest(RpcRequest):
+class SearchFaceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'LinkFace', '2018-07-20', 'RegisterFace')
+		RpcRequest.__init__(self, 'LinkFace', '2018-07-20', 'SearchFace')
 		self.set_protocol_type('https');
 		self.set_method('POST')
 
@@ -36,15 +36,3 @@ class RegisterFaceRequest(RpcRequest):
 
 	def set_GroupId(self,GroupId):
 		self.add_body_params('GroupId', GroupId)
-
-	def get_UserId(self):
-		return self.get_body_params().get('UserId')
-
-	def set_UserId(self,UserId):
-		self.add_body_params('UserId', UserId)
-
-	def get_UserInfo(self):
-		return self.get_body_params().get('UserInfo')
-
-	def set_UserInfo(self,UserInfo):
-		self.add_body_params('UserInfo', UserInfo)
