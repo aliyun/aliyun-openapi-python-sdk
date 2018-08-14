@@ -18,10 +18,18 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class CreateScenarioRequest(RpcRequest):
+class CreateBatchJobsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'CCC', '2017-07-05', 'CreateScenario','ccc')
+		RpcRequest.__init__(self, 'CCC', '2017-07-05', 'CreateBatchJobs','ccc')
+
+	def get_CallingNumbers(self):
+		return self.get_query_params().get('CallingNumbers')
+
+	def set_CallingNumbers(self,CallingNumbers):
+		for i in range(len(CallingNumbers)):	
+			if CallingNumbers[i] is not None:
+				self.add_query_param('CallingNumber.' + str(i + 1) , CallingNumbers[i]);
 
 	def get_InstanceId(self):
 		return self.get_query_params().get('InstanceId')
@@ -29,13 +37,11 @@ class CreateScenarioRequest(RpcRequest):
 	def set_InstanceId(self,InstanceId):
 		self.add_query_param('InstanceId',InstanceId)
 
-	def get_SurveysJsons(self):
-		return self.get_query_params().get('SurveysJsons')
+	def get_Submitted(self):
+		return self.get_query_params().get('Submitted')
 
-	def set_SurveysJsons(self,SurveysJsons):
-		for i in range(len(SurveysJsons)):	
-			if SurveysJsons[i] is not None:
-				self.add_query_param('SurveysJson.' + str(i + 1) , SurveysJsons[i]);
+	def set_Submitted(self,Submitted):
+		self.add_query_param('Submitted',Submitted)
 
 	def get_StrategyJson(self):
 		return self.get_query_params().get('StrategyJson')
@@ -55,8 +61,14 @@ class CreateScenarioRequest(RpcRequest):
 	def set_Description(self,Description):
 		self.add_query_param('Description',Description)
 
-	def get_Type(self):
-		return self.get_query_params().get('Type')
+	def get_ScenarioId(self):
+		return self.get_query_params().get('ScenarioId')
 
-	def set_Type(self,Type):
-		self.add_query_param('Type',Type)
+	def set_ScenarioId(self,ScenarioId):
+		self.add_query_param('ScenarioId',ScenarioId)
+
+	def get_JobFilePath(self):
+		return self.get_query_params().get('JobFilePath')
+
+	def set_JobFilePath(self,JobFilePath):
+		self.add_query_param('JobFilePath',JobFilePath)

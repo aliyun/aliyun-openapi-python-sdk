@@ -18,10 +18,16 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class CreateScenarioRequest(RpcRequest):
+class DeleteSurveyRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'CCC', '2017-07-05', 'CreateScenario','ccc')
+		RpcRequest.__init__(self, 'CCC', '2017-07-05', 'DeleteSurvey','ccc')
+
+	def get_SurveyId(self):
+		return self.get_query_params().get('SurveyId')
+
+	def set_SurveyId(self,SurveyId):
+		self.add_query_param('SurveyId',SurveyId)
 
 	def get_InstanceId(self):
 		return self.get_query_params().get('InstanceId')
@@ -29,34 +35,8 @@ class CreateScenarioRequest(RpcRequest):
 	def set_InstanceId(self,InstanceId):
 		self.add_query_param('InstanceId',InstanceId)
 
-	def get_SurveysJsons(self):
-		return self.get_query_params().get('SurveysJsons')
+	def get_ScenarioId(self):
+		return self.get_query_params().get('ScenarioId')
 
-	def set_SurveysJsons(self,SurveysJsons):
-		for i in range(len(SurveysJsons)):	
-			if SurveysJsons[i] is not None:
-				self.add_query_param('SurveysJson.' + str(i + 1) , SurveysJsons[i]);
-
-	def get_StrategyJson(self):
-		return self.get_query_params().get('StrategyJson')
-
-	def set_StrategyJson(self,StrategyJson):
-		self.add_query_param('StrategyJson',StrategyJson)
-
-	def get_Name(self):
-		return self.get_query_params().get('Name')
-
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)
-
-	def get_Description(self):
-		return self.get_query_params().get('Description')
-
-	def set_Description(self,Description):
-		self.add_query_param('Description',Description)
-
-	def get_Type(self):
-		return self.get_query_params().get('Type')
-
-	def set_Type(self,Type):
-		self.add_query_param('Type',Type)
+	def set_ScenarioId(self,ScenarioId):
+		self.add_query_param('ScenarioId',ScenarioId)

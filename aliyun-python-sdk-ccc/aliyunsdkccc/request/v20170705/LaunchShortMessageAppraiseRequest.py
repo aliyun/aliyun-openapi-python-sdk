@@ -18,10 +18,16 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class CreateScenarioRequest(RpcRequest):
+class LaunchShortMessageAppraiseRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'CCC', '2017-07-05', 'CreateScenario','ccc')
+		RpcRequest.__init__(self, 'CCC', '2017-07-05', 'LaunchShortMessageAppraise','ccc')
+
+	def get_Acid(self):
+		return self.get_query_params().get('Acid')
+
+	def set_Acid(self,Acid):
+		self.add_query_param('Acid',Acid)
 
 	def get_InstanceId(self):
 		return self.get_query_params().get('InstanceId')
@@ -29,34 +35,20 @@ class CreateScenarioRequest(RpcRequest):
 	def set_InstanceId(self,InstanceId):
 		self.add_query_param('InstanceId',InstanceId)
 
-	def get_SurveysJsons(self):
-		return self.get_query_params().get('SurveysJsons')
+	def get_ContactType(self):
+		return self.get_query_params().get('ContactType')
 
-	def set_SurveysJsons(self,SurveysJsons):
-		for i in range(len(SurveysJsons)):	
-			if SurveysJsons[i] is not None:
-				self.add_query_param('SurveysJson.' + str(i + 1) , SurveysJsons[i]);
+	def set_ContactType(self,ContactType):
+		self.add_query_param('ContactType',ContactType)
 
-	def get_StrategyJson(self):
-		return self.get_query_params().get('StrategyJson')
+	def get_PhoneNumbers(self):
+		return self.get_query_params().get('PhoneNumbers')
 
-	def set_StrategyJson(self,StrategyJson):
-		self.add_query_param('StrategyJson',StrategyJson)
+	def set_PhoneNumbers(self,PhoneNumbers):
+		self.add_query_param('PhoneNumbers',PhoneNumbers)
 
-	def get_Name(self):
-		return self.get_query_params().get('Name')
+	def get_SkillGroupId(self):
+		return self.get_query_params().get('SkillGroupId')
 
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)
-
-	def get_Description(self):
-		return self.get_query_params().get('Description')
-
-	def set_Description(self,Description):
-		self.add_query_param('Description',Description)
-
-	def get_Type(self):
-		return self.get_query_params().get('Type')
-
-	def set_Type(self,Type):
-		self.add_query_param('Type',Type)
+	def set_SkillGroupId(self,SkillGroupId):
+		self.add_query_param('SkillGroupId',SkillGroupId)

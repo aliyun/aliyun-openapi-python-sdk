@@ -47,6 +47,12 @@ class DialogueRequest(RpcRequest):
 	def set_CalledNumber(self,CalledNumber):
 		self.add_query_param('CalledNumber',CalledNumber)
 
+	def get_ActionKey(self):
+		return self.get_query_params().get('ActionKey')
+
+	def set_ActionKey(self,ActionKey):
+		self.add_query_param('ActionKey',ActionKey)
+
 	def get_ActionParams(self):
 		return self.get_query_params().get('ActionParams')
 
