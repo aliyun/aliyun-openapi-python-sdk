@@ -18,10 +18,16 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class CreateScenarioRequest(RpcRequest):
+class GenerateAgentStatisticReportRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'CCC', '2017-07-05', 'CreateScenario','ccc')
+		RpcRequest.__init__(self, 'CCC', '2017-07-05', 'GenerateAgentStatisticReport','ccc')
+
+	def get_AgentId(self):
+		return self.get_query_params().get('AgentId')
+
+	def set_AgentId(self,AgentId):
+		self.add_query_param('AgentId',AgentId)
 
 	def get_InstanceId(self):
 		return self.get_query_params().get('InstanceId')
@@ -29,34 +35,26 @@ class CreateScenarioRequest(RpcRequest):
 	def set_InstanceId(self,InstanceId):
 		self.add_query_param('InstanceId',InstanceId)
 
-	def get_SurveysJsons(self):
-		return self.get_query_params().get('SurveysJsons')
+	def get_EndDate(self):
+		return self.get_query_params().get('EndDate')
 
-	def set_SurveysJsons(self,SurveysJsons):
-		for i in range(len(SurveysJsons)):	
-			if SurveysJsons[i] is not None:
-				self.add_query_param('SurveysJson.' + str(i + 1) , SurveysJsons[i]);
+	def set_EndDate(self,EndDate):
+		self.add_query_param('EndDate',EndDate)
 
-	def get_StrategyJson(self):
-		return self.get_query_params().get('StrategyJson')
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
 
-	def set_StrategyJson(self,StrategyJson):
-		self.add_query_param('StrategyJson',StrategyJson)
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
 
-	def get_Name(self):
-		return self.get_query_params().get('Name')
+	def get_StartDate(self):
+		return self.get_query_params().get('StartDate')
 
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)
+	def set_StartDate(self,StartDate):
+		self.add_query_param('StartDate',StartDate)
 
-	def get_Description(self):
-		return self.get_query_params().get('Description')
+	def get_PageNumber(self):
+		return self.get_query_params().get('PageNumber')
 
-	def set_Description(self,Description):
-		self.add_query_param('Description',Description)
-
-	def get_Type(self):
-		return self.get_query_params().get('Type')
-
-	def set_Type(self,Type):
-		self.add_query_param('Type',Type)
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)
