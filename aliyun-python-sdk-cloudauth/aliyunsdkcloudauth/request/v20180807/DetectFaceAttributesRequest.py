@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class DetectFaceAttributesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cloudauth', '2018-07-03', 'DetectFaceAttributes','cloudauth')
+		RpcRequest.__init__(self, 'Cloudauth', '2018-08-07', 'DetectFaceAttributes','cloudauth')
 		self.set_protocol_type('https');
 
 	def get_MaxNumPhotosPerCategory(self):
