@@ -34,23 +34,23 @@ class ModifyCasterProgramRequest(RpcRequest):
 
 	def set_Episodes(self,Episodes):
 		for i in range(len(Episodes)):	
-			if Episodes[i].get('EpisodeId') is not None:
-				self.add_query_param('Episode.' + str(i + 1) + '.EpisodeId' , Episodes[i].get('EpisodeId'))
-			if Episodes[i].get('EpisodeType') is not None:
-				self.add_query_param('Episode.' + str(i + 1) + '.EpisodeType' , Episodes[i].get('EpisodeType'))
-			if Episodes[i].get('EpisodeName') is not None:
-				self.add_query_param('Episode.' + str(i + 1) + '.EpisodeName' , Episodes[i].get('EpisodeName'))
 			if Episodes[i].get('ResourceId') is not None:
 				self.add_query_param('Episode.' + str(i + 1) + '.ResourceId' , Episodes[i].get('ResourceId'))
 			for j in range(len(Episodes[i].get('ComponentIds'))):
 				if Episodes[i].get('ComponentIds')[j] is not None:
 					self.add_query_param('Episode.' + str(i + 1) + '.ComponentId.'+str(j + 1), Episodes[i].get('ComponentIds')[j])
-			if Episodes[i].get('StartTime') is not None:
-				self.add_query_param('Episode.' + str(i + 1) + '.StartTime' , Episodes[i].get('StartTime'))
-			if Episodes[i].get('EndTime') is not None:
-				self.add_query_param('Episode.' + str(i + 1) + '.EndTime' , Episodes[i].get('EndTime'))
 			if Episodes[i].get('SwitchType') is not None:
 				self.add_query_param('Episode.' + str(i + 1) + '.SwitchType' , Episodes[i].get('SwitchType'))
+			if Episodes[i].get('EpisodeType') is not None:
+				self.add_query_param('Episode.' + str(i + 1) + '.EpisodeType' , Episodes[i].get('EpisodeType'))
+			if Episodes[i].get('EpisodeName') is not None:
+				self.add_query_param('Episode.' + str(i + 1) + '.EpisodeName' , Episodes[i].get('EpisodeName'))
+			if Episodes[i].get('EndTime') is not None:
+				self.add_query_param('Episode.' + str(i + 1) + '.EndTime' , Episodes[i].get('EndTime'))
+			if Episodes[i].get('StartTime') is not None:
+				self.add_query_param('Episode.' + str(i + 1) + '.StartTime' , Episodes[i].get('StartTime'))
+			if Episodes[i].get('EpisodeId') is not None:
+				self.add_query_param('Episode.' + str(i + 1) + '.EpisodeId' , Episodes[i].get('EpisodeId'))
 
 
 	def get_OwnerId(self):
