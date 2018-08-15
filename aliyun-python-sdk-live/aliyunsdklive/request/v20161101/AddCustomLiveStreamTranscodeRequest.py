@@ -35,11 +35,23 @@ class AddCustomLiveStreamTranscodeRequest(RpcRequest):
 	def set_Template(self,Template):
 		self.add_query_param('Template',Template)
 
+	def get_Profile(self):
+		return self.get_query_params().get('Profile')
+
+	def set_Profile(self,Profile):
+		self.add_query_param('Profile',Profile)
+
 	def get_FPS(self):
 		return self.get_query_params().get('FPS')
 
 	def set_FPS(self,FPS):
 		self.add_query_param('FPS',FPS)
+
+	def get_Gop(self):
+		return self.get_query_params().get('Gop')
+
+	def set_Gop(self,Gop):
+		self.add_query_param('Gop',Gop)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
@@ -47,23 +59,17 @@ class AddCustomLiveStreamTranscodeRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_Version(self):
-		return self.get_query_params().get('Version')
-
-	def set_Version(self,Version):
-		self.add_query_param('Version',Version)
-
-	def get_SecurityToken(self):
-		return self.get_query_params().get('SecurityToken')
-
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)
-
 	def get_TemplateType(self):
 		return self.get_query_params().get('TemplateType')
 
 	def set_TemplateType(self,TemplateType):
 		self.add_query_param('TemplateType',TemplateType)
+
+	def get_AudioBitrate(self):
+		return self.get_query_params().get('AudioBitrate')
+
+	def set_AudioBitrate(self,AudioBitrate):
+		self.add_query_param('AudioBitrate',AudioBitrate)
 
 	def get_Domain(self):
 		return self.get_query_params().get('Domain')

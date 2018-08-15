@@ -18,10 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class ImagePornDetectionRequest(RpcRequest):
+class AddLiveDomainRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'live', '2016-11-01', 'ImagePornDetection','live')
+		RpcRequest.__init__(self, 'live', '2016-11-01', 'AddLiveDomain','live')
 
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
@@ -29,14 +29,44 @@ class ImagePornDetectionRequest(RpcRequest):
 	def set_SecurityToken(self,SecurityToken):
 		self.add_query_param('SecurityToken',SecurityToken)
 
-	def get_ImageUrl(self):
-		return self.get_query_params().get('ImageUrl')
+	def get_OwnerAccount(self):
+		return self.get_query_params().get('OwnerAccount')
 
-	def set_ImageUrl(self,ImageUrl):
-		self.add_query_param('ImageUrl',ImageUrl)
+	def set_OwnerAccount(self,OwnerAccount):
+		self.add_query_param('OwnerAccount',OwnerAccount)
+
+	def get_Scope(self):
+		return self.get_query_params().get('Scope')
+
+	def set_Scope(self,Scope):
+		self.add_query_param('Scope',Scope)
+
+	def get_DomainName(self):
+		return self.get_query_params().get('DomainName')
+
+	def set_DomainName(self,DomainName):
+		self.add_query_param('DomainName',DomainName)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_Region(self):
+		return self.get_query_params().get('Region')
+
+	def set_Region(self,Region):
+		self.add_query_param('Region',Region)
+
+	def get_CheckUrl(self):
+		return self.get_query_params().get('CheckUrl')
+
+	def set_CheckUrl(self,CheckUrl):
+		self.add_query_param('CheckUrl',CheckUrl)
+
+	def get_LiveDomainType(self):
+		return self.get_query_params().get('LiveDomainType')
+
+	def set_LiveDomainType(self,LiveDomainType):
+		self.add_query_param('LiveDomainType',LiveDomainType)

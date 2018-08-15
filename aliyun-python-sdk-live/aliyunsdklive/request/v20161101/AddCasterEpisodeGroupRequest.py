@@ -34,10 +34,10 @@ class AddCasterEpisodeGroupRequest(RpcRequest):
 
 	def set_Items(self,Items):
 		for i in range(len(Items)):	
-			if Items[i].get('ItemName') is not None:
-				self.add_query_param('Item.' + str(i + 1) + '.ItemName' , Items[i].get('ItemName'))
 			if Items[i].get('VodUrl') is not None:
 				self.add_query_param('Item.' + str(i + 1) + '.VodUrl' , Items[i].get('VodUrl'))
+			if Items[i].get('ItemName') is not None:
+				self.add_query_param('Item.' + str(i + 1) + '.ItemName' , Items[i].get('ItemName'))
 
 
 	def get_ClientToken(self):
