@@ -18,17 +18,11 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class GetVerifyTokenRequest(RpcRequest):
+class SubmitMaterialsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cloudauth', '2018-07-03', 'GetVerifyToken','cloudauth')
+		RpcRequest.__init__(self, 'Cloudauth', '2018-08-07', 'SubmitMaterials','cloudauth')
 		self.set_protocol_type('https');
-
-	def get_UserData(self):
-		return self.get_query_params().get('UserData')
-
-	def set_UserData(self,UserData):
-		self.add_query_param('UserData',UserData)
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -36,26 +30,25 @@ class GetVerifyTokenRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_Biz(self):
-		return self.get_query_params().get('Biz')
-
-	def set_Biz(self,Biz):
-		self.add_query_param('Biz',Biz)
-
 	def get_SourceIp(self):
 		return self.get_query_params().get('SourceIp')
 
 	def set_SourceIp(self,SourceIp):
 		self.add_query_param('SourceIp',SourceIp)
 
-	def get_Binding(self):
-		return self.get_query_params().get('Binding')
+	def get_Materials(self):
+		return self.get_query_params().get('Materials')
 
-	def set_Binding(self,Binding):
-		self.add_query_param('Binding',Binding)
+	def set_Materials(self,Materials):
+		for i in range(len(Materials)):	
+			if Materials[i].get('MaterialType') is not None:
+				self.add_query_param('Material.' + str(i + 1) + '.MaterialType' , Materials[i].get('MaterialType'))
+			if Materials[i].get('Value') is not None:
+				self.add_query_param('Material.' + str(i + 1) + '.Value' , Materials[i].get('Value'))
 
-	def get_TicketId(self):
-		return self.get_query_params().get('TicketId')
 
-	def set_TicketId(self,TicketId):
-		self.add_query_param('TicketId',TicketId)
+	def get_VerifyToken(self):
+		return self.get_query_params().get('VerifyToken')
+
+	def set_VerifyToken(self,VerifyToken):
+		self.add_query_param('VerifyToken',VerifyToken)

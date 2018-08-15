@@ -18,17 +18,17 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class CompareFacesRequest(RpcRequest):
+class GetVerifyTokenRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cloudauth', '2018-07-03', 'CompareFaces','cloudauth')
+		RpcRequest.__init__(self, 'Cloudauth', '2018-08-07', 'GetVerifyToken','cloudauth')
 		self.set_protocol_type('https');
 
-	def get_SourceImageType(self):
-		return self.get_query_params().get('SourceImageType')
+	def get_UserData(self):
+		return self.get_query_params().get('UserData')
 
-	def set_SourceImageType(self,SourceImageType):
-		self.add_query_param('SourceImageType',SourceImageType)
+	def set_UserData(self,UserData):
+		self.add_query_param('UserData',UserData)
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -36,26 +36,32 @@ class CompareFacesRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_Biz(self):
+		return self.get_query_params().get('Biz')
+
+	def set_Biz(self,Biz):
+		self.add_query_param('Biz',Biz)
+
 	def get_SourceIp(self):
 		return self.get_query_params().get('SourceIp')
 
 	def set_SourceIp(self,SourceIp):
 		self.add_query_param('SourceIp',SourceIp)
 
-	def get_TargetImageType(self):
-		return self.get_query_params().get('TargetImageType')
+	def get_Binding(self):
+		return self.get_query_params().get('Binding')
 
-	def set_TargetImageType(self,TargetImageType):
-		self.add_query_param('TargetImageType',TargetImageType)
+	def set_Binding(self,Binding):
+		self.add_query_param('Binding',Binding)
 
-	def get_SourceImageValue(self):
-		return self.get_query_params().get('SourceImageValue')
+	def get_VerifyConfigs(self):
+		return self.get_query_params().get('VerifyConfigs')
 
-	def set_SourceImageValue(self,SourceImageValue):
-		self.add_query_param('SourceImageValue',SourceImageValue)
+	def set_VerifyConfigs(self,VerifyConfigs):
+		self.add_query_param('VerifyConfigs',VerifyConfigs)
 
-	def get_TargetImageValue(self):
-		return self.get_query_params().get('TargetImageValue')
+	def get_TicketId(self):
+		return self.get_query_params().get('TicketId')
 
-	def set_TargetImageValue(self,TargetImageValue):
-		self.add_query_param('TargetImageValue',TargetImageValue)
+	def set_TicketId(self,TicketId):
+		self.add_query_param('TicketId',TicketId)
