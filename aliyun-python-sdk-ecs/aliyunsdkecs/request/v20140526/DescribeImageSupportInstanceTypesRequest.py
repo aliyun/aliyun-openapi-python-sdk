@@ -34,10 +34,10 @@ class DescribeImageSupportInstanceTypesRequest(RpcRequest):
 
 	def set_Filters(self,Filters):
 		for i in range(len(Filters)):	
-			if Filters[i].get('Key') is not None:
-				self.add_query_param('Filter.' + str(i + 1) + '.Key' , Filters[i].get('Key'))
 			if Filters[i].get('Value') is not None:
 				self.add_query_param('Filter.' + str(i + 1) + '.Value' , Filters[i].get('Value'))
+			if Filters[i].get('Key') is not None:
+				self.add_query_param('Filter.' + str(i + 1) + '.Key' , Filters[i].get('Key'))
 
 
 	def get_ResourceOwnerId(self):

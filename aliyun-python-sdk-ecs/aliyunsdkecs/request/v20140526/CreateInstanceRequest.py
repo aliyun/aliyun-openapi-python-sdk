@@ -23,35 +23,17 @@ class CreateInstanceRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'CreateInstance','ecs')
 
-	def get_Tag4Value(self):
-		return self.get_query_params().get('Tag.4.Value')
-
-	def set_Tag4Value(self,Tag4Value):
-		self.add_query_param('Tag.4.Value',Tag4Value)
-
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_Tag2Key(self):
-		return self.get_query_params().get('Tag.2.Key')
-
-	def set_Tag2Key(self,Tag2Key):
-		self.add_query_param('Tag.2.Key',Tag2Key)
-
 	def get_HpcClusterId(self):
 		return self.get_query_params().get('HpcClusterId')
 
 	def set_HpcClusterId(self,HpcClusterId):
 		self.add_query_param('HpcClusterId',HpcClusterId)
-
-	def get_Tag3Key(self):
-		return self.get_query_params().get('Tag.3.Key')
-
-	def set_Tag3Key(self,Tag3Key):
-		self.add_query_param('Tag.3.Key',Tag3Key)
 
 	def get_SecurityEnhancementStrategy(self):
 		return self.get_query_params().get('SecurityEnhancementStrategy')
@@ -71,12 +53,6 @@ class CreateInstanceRequest(RpcRequest):
 	def set_SpotPriceLimit(self,SpotPriceLimit):
 		self.add_query_param('SpotPriceLimit',SpotPriceLimit)
 
-	def get_Tag1Value(self):
-		return self.get_query_params().get('Tag.1.Value')
-
-	def set_Tag1Value(self,Tag1Value):
-		self.add_query_param('Tag.1.Value',Tag1Value)
-
 	def get_ResourceGroupId(self):
 		return self.get_query_params().get('ResourceGroupId')
 
@@ -94,6 +70,17 @@ class CreateInstanceRequest(RpcRequest):
 
 	def set_Password(self,Password):
 		self.add_query_param('Password',Password)
+
+	def get_Tags(self):
+		return self.get_query_params().get('Tags')
+
+	def set_Tags(self,Tags):
+		for i in range(len(Tags)):	
+			if Tags[i].get('Value') is not None:
+				self.add_query_param('Tag.' + str(i + 1) + '.Value' , Tags[i].get('Value'))
+			if Tags[i].get('Key') is not None:
+				self.add_query_param('Tag.' + str(i + 1) + '.Key' , Tags[i].get('Key'))
+
 
 	def get_AutoRenewPeriod(self):
 		return self.get_query_params().get('AutoRenewPeriod')
@@ -118,12 +105,6 @@ class CreateInstanceRequest(RpcRequest):
 
 	def set_DryRun(self,DryRun):
 		self.add_query_param('DryRun',DryRun)
-
-	def get_Tag5Key(self):
-		return self.get_query_params().get('Tag.5.Key')
-
-	def set_Tag5Key(self,Tag5Key):
-		self.add_query_param('Tag.5.Key',Tag5Key)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
@@ -178,12 +159,6 @@ class CreateInstanceRequest(RpcRequest):
 
 	def set_ZoneId(self,ZoneId):
 		self.add_query_param('ZoneId',ZoneId)
-
-	def get_Tag4Key(self):
-		return self.get_query_params().get('Tag.4.Key')
-
-	def set_Tag4Key(self,Tag4Key):
-		self.add_query_param('Tag.4.Key',Tag4Key)
 
 	def get_InternetMaxBandwidthIn(self):
 		return self.get_query_params().get('InternetMaxBandwidthIn')
@@ -275,12 +250,6 @@ class CreateInstanceRequest(RpcRequest):
 	def set_InstanceChargeType(self,InstanceChargeType):
 		self.add_query_param('InstanceChargeType',InstanceChargeType)
 
-	def get_Tag3Value(self):
-		return self.get_query_params().get('Tag.3.Value')
-
-	def set_Tag3Value(self,Tag3Value):
-		self.add_query_param('Tag.3.Value',Tag3Value)
-
 	def get_DeploymentSetId(self):
 		return self.get_query_params().get('DeploymentSetId')
 
@@ -334,47 +303,29 @@ class CreateInstanceRequest(RpcRequest):
 
 	def set_DataDisks(self,DataDisks):
 		for i in range(len(DataDisks)):	
-			if DataDisks[i].get('Size') is not None:
-				self.add_query_param('DataDisk.' + str(i + 1) + '.Size' , DataDisks[i].get('Size'))
-			if DataDisks[i].get('SnapshotId') is not None:
-				self.add_query_param('DataDisk.' + str(i + 1) + '.SnapshotId' , DataDisks[i].get('SnapshotId'))
-			if DataDisks[i].get('Category') is not None:
-				self.add_query_param('DataDisk.' + str(i + 1) + '.Category' , DataDisks[i].get('Category'))
 			if DataDisks[i].get('DiskName') is not None:
 				self.add_query_param('DataDisk.' + str(i + 1) + '.DiskName' , DataDisks[i].get('DiskName'))
+			if DataDisks[i].get('SnapshotId') is not None:
+				self.add_query_param('DataDisk.' + str(i + 1) + '.SnapshotId' , DataDisks[i].get('SnapshotId'))
+			if DataDisks[i].get('Size') is not None:
+				self.add_query_param('DataDisk.' + str(i + 1) + '.Size' , DataDisks[i].get('Size'))
+			if DataDisks[i].get('Encrypted') is not None:
+				self.add_query_param('DataDisk.' + str(i + 1) + '.Encrypted' , DataDisks[i].get('Encrypted'))
 			if DataDisks[i].get('Description') is not None:
 				self.add_query_param('DataDisk.' + str(i + 1) + '.Description' , DataDisks[i].get('Description'))
+			if DataDisks[i].get('Category') is not None:
+				self.add_query_param('DataDisk.' + str(i + 1) + '.Category' , DataDisks[i].get('Category'))
 			if DataDisks[i].get('Device') is not None:
 				self.add_query_param('DataDisk.' + str(i + 1) + '.Device' , DataDisks[i].get('Device'))
 			if DataDisks[i].get('DeleteWithInstance') is not None:
 				self.add_query_param('DataDisk.' + str(i + 1) + '.DeleteWithInstance' , DataDisks[i].get('DeleteWithInstance'))
-			if DataDisks[i].get('Encrypted') is not None:
-				self.add_query_param('DataDisk.' + str(i + 1) + '.Encrypted' , DataDisks[i].get('Encrypted'))
 
-
-	def get_Tag5Value(self):
-		return self.get_query_params().get('Tag.5.Value')
-
-	def set_Tag5Value(self,Tag5Value):
-		self.add_query_param('Tag.5.Value',Tag5Value)
-
-	def get_Tag1Key(self):
-		return self.get_query_params().get('Tag.1.Key')
-
-	def set_Tag1Key(self,Tag1Key):
-		self.add_query_param('Tag.1.Key',Tag1Key)
 
 	def get_SystemDiskSize(self):
 		return self.get_query_params().get('SystemDisk.Size')
 
 	def set_SystemDiskSize(self,SystemDiskSize):
 		self.add_query_param('SystemDisk.Size',SystemDiskSize)
-
-	def get_Tag2Value(self):
-		return self.get_query_params().get('Tag.2.Value')
-
-	def set_Tag2Value(self,Tag2Value):
-		self.add_query_param('Tag.2.Value',Tag2Value)
 
 	def get_SystemDiskDescription(self):
 		return self.get_query_params().get('SystemDisk.Description')

@@ -23,29 +23,17 @@ class CreateSecurityGroupRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'CreateSecurityGroup','ecs')
 
-	def get_Tag4Value(self):
-		return self.get_query_params().get('Tag.4.Value')
+	def get_ResourceGroupId(self):
+		return self.get_query_params().get('ResourceGroupId')
 
-	def set_Tag4Value(self,Tag4Value):
-		self.add_query_param('Tag.4.Value',Tag4Value)
+	def set_ResourceGroupId(self,ResourceGroupId):
+		self.add_query_param('ResourceGroupId',ResourceGroupId)
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_Tag2Key(self):
-		return self.get_query_params().get('Tag.2.Key')
-
-	def set_Tag2Key(self,Tag2Key):
-		self.add_query_param('Tag.2.Key',Tag2Key)
-
-	def get_Tag5Key(self):
-		return self.get_query_params().get('Tag.5.Key')
-
-	def set_Tag5Key(self,Tag5Key):
-		self.add_query_param('Tag.5.Key',Tag5Key)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -59,6 +47,12 @@ class CreateSecurityGroupRequest(RpcRequest):
 	def set_ClientToken(self,ClientToken):
 		self.add_query_param('ClientToken',ClientToken)
 
+	def get_VpcId(self):
+		return self.get_query_params().get('VpcId')
+
+	def set_VpcId(self,VpcId):
+		self.add_query_param('VpcId',VpcId)
+
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
 
@@ -71,11 +65,16 @@ class CreateSecurityGroupRequest(RpcRequest):
 	def set_Description(self,Description):
 		self.add_query_param('Description',Description)
 
-	def get_Tag3Key(self):
-		return self.get_query_params().get('Tag.3.Key')
+	def get_Tags(self):
+		return self.get_query_params().get('Tags')
 
-	def set_Tag3Key(self,Tag3Key):
-		self.add_query_param('Tag.3.Key',Tag3Key)
+	def set_Tags(self,Tags):
+		for i in range(len(Tags)):	
+			if Tags[i].get('Value') is not None:
+				self.add_query_param('Tag.' + str(i + 1) + '.Value' , Tags[i].get('Value'))
+			if Tags[i].get('Key') is not None:
+				self.add_query_param('Tag.' + str(i + 1) + '.Key' , Tags[i].get('Key'))
+
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
@@ -88,51 +87,3 @@ class CreateSecurityGroupRequest(RpcRequest):
 
 	def set_SecurityGroupName(self,SecurityGroupName):
 		self.add_query_param('SecurityGroupName',SecurityGroupName)
-
-	def get_Tag5Value(self):
-		return self.get_query_params().get('Tag.5.Value')
-
-	def set_Tag5Value(self,Tag5Value):
-		self.add_query_param('Tag.5.Value',Tag5Value)
-
-	def get_Tag1Key(self):
-		return self.get_query_params().get('Tag.1.Key')
-
-	def set_Tag1Key(self,Tag1Key):
-		self.add_query_param('Tag.1.Key',Tag1Key)
-
-	def get_Tag1Value(self):
-		return self.get_query_params().get('Tag.1.Value')
-
-	def set_Tag1Value(self,Tag1Value):
-		self.add_query_param('Tag.1.Value',Tag1Value)
-
-	def get_ResourceGroupId(self):
-		return self.get_query_params().get('ResourceGroupId')
-
-	def set_ResourceGroupId(self,ResourceGroupId):
-		self.add_query_param('ResourceGroupId',ResourceGroupId)
-
-	def get_VpcId(self):
-		return self.get_query_params().get('VpcId')
-
-	def set_VpcId(self,VpcId):
-		self.add_query_param('VpcId',VpcId)
-
-	def get_Tag2Value(self):
-		return self.get_query_params().get('Tag.2.Value')
-
-	def set_Tag2Value(self,Tag2Value):
-		self.add_query_param('Tag.2.Value',Tag2Value)
-
-	def get_Tag4Key(self):
-		return self.get_query_params().get('Tag.4.Key')
-
-	def set_Tag4Key(self,Tag4Key):
-		self.add_query_param('Tag.4.Key',Tag4Key)
-
-	def get_Tag3Value(self):
-		return self.get_query_params().get('Tag.3.Value')
-
-	def set_Tag3Value(self,Tag3Value):
-		self.add_query_param('Tag.3.Value',Tag3Value)

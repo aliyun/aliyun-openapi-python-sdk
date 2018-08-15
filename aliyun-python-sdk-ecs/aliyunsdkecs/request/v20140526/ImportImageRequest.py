@@ -28,18 +28,18 @@ class ImportImageRequest(RpcRequest):
 
 	def set_DiskDeviceMappings(self,DiskDeviceMappings):
 		for i in range(len(DiskDeviceMappings)):	
-			if DiskDeviceMappings[i].get('Format') is not None:
-				self.add_query_param('DiskDeviceMapping.' + str(i + 1) + '.Format' , DiskDeviceMappings[i].get('Format'))
 			if DiskDeviceMappings[i].get('OSSBucket') is not None:
 				self.add_query_param('DiskDeviceMapping.' + str(i + 1) + '.OSSBucket' , DiskDeviceMappings[i].get('OSSBucket'))
-			if DiskDeviceMappings[i].get('OSSObject') is not None:
-				self.add_query_param('DiskDeviceMapping.' + str(i + 1) + '.OSSObject' , DiskDeviceMappings[i].get('OSSObject'))
 			if DiskDeviceMappings[i].get('DiskImSize') is not None:
 				self.add_query_param('DiskDeviceMapping.' + str(i + 1) + '.DiskImSize' , DiskDeviceMappings[i].get('DiskImSize'))
-			if DiskDeviceMappings[i].get('DiskImageSize') is not None:
-				self.add_query_param('DiskDeviceMapping.' + str(i + 1) + '.DiskImageSize' , DiskDeviceMappings[i].get('DiskImageSize'))
+			if DiskDeviceMappings[i].get('Format') is not None:
+				self.add_query_param('DiskDeviceMapping.' + str(i + 1) + '.Format' , DiskDeviceMappings[i].get('Format'))
 			if DiskDeviceMappings[i].get('Device') is not None:
 				self.add_query_param('DiskDeviceMapping.' + str(i + 1) + '.Device' , DiskDeviceMappings[i].get('Device'))
+			if DiskDeviceMappings[i].get('OSSObject') is not None:
+				self.add_query_param('DiskDeviceMapping.' + str(i + 1) + '.OSSObject' , DiskDeviceMappings[i].get('OSSObject'))
+			if DiskDeviceMappings[i].get('DiskImageSize') is not None:
+				self.add_query_param('DiskDeviceMapping.' + str(i + 1) + '.DiskImageSize' , DiskDeviceMappings[i].get('DiskImageSize'))
 
 
 	def get_ResourceOwnerId(self):
