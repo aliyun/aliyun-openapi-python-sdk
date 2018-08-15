@@ -35,12 +35,6 @@ class CreateLaunchTemplateRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_TemplateTag4Key(self):
-		return self.get_query_params().get('TemplateTag.4.Key')
-
-	def set_TemplateTag4Key(self,TemplateTag4Key):
-		self.add_query_param('TemplateTag.4.Key',TemplateTag4Key)
-
 	def get_SecurityEnhancementStrategy(self):
 		return self.get_query_params().get('SecurityEnhancementStrategy')
 
@@ -77,12 +71,6 @@ class CreateLaunchTemplateRequest(RpcRequest):
 	def set_ResourceGroupId(self,ResourceGroupId):
 		self.add_query_param('ResourceGroupId',ResourceGroupId)
 
-	def get_TemplateTag3Key(self):
-		return self.get_query_params().get('TemplateTag.3.Key')
-
-	def set_TemplateTag3Key(self,TemplateTag3Key):
-		self.add_query_param('TemplateTag.3.Key',TemplateTag3Key)
-
 	def get_HostName(self):
 		return self.get_query_params().get('HostName')
 
@@ -95,11 +83,16 @@ class CreateLaunchTemplateRequest(RpcRequest):
 	def set_SystemDiskIops(self,SystemDiskIops):
 		self.add_query_param('SystemDisk.Iops',SystemDiskIops)
 
-	def get_TemplateTag3Value(self):
-		return self.get_query_params().get('TemplateTag.3.Value')
+	def get_TemplateTags(self):
+		return self.get_query_params().get('TemplateTags')
 
-	def set_TemplateTag3Value(self,TemplateTag3Value):
-		self.add_query_param('TemplateTag.3.Value',TemplateTag3Value)
+	def set_TemplateTags(self,TemplateTags):
+		for i in range(len(TemplateTags)):	
+			if TemplateTags[i].get('Key') is not None:
+				self.add_query_param('TemplateTag.' + str(i + 1) + '.Key' , TemplateTags[i].get('Key'))
+			if TemplateTags[i].get('Value') is not None:
+				self.add_query_param('TemplateTag.' + str(i + 1) + '.Value' , TemplateTags[i].get('Value'))
+
 
 	def get_Tags(self):
 		return self.get_query_params().get('Tags')
@@ -123,12 +116,6 @@ class CreateLaunchTemplateRequest(RpcRequest):
 
 	def set_TemplateResourceGroupId(self,TemplateResourceGroupId):
 		self.add_query_param('TemplateResourceGroupId',TemplateResourceGroupId)
-
-	def get_TemplateTag2Value(self):
-		return self.get_query_params().get('TemplateTag.2.Value')
-
-	def set_TemplateTag2Value(self,TemplateTag2Value):
-		self.add_query_param('TemplateTag.2.Value',TemplateTag2Value)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
@@ -160,12 +147,6 @@ class CreateLaunchTemplateRequest(RpcRequest):
 	def set_InternetChargeType(self,InternetChargeType):
 		self.add_query_param('InternetChargeType',InternetChargeType)
 
-	def get_TemplateTag5Key(self):
-		return self.get_query_params().get('TemplateTag.5.Key')
-
-	def set_TemplateTag5Key(self,TemplateTag5Key):
-		self.add_query_param('TemplateTag.5.Key',TemplateTag5Key)
-
 	def get_ZoneId(self):
 		return self.get_query_params().get('ZoneId')
 
@@ -183,12 +164,6 @@ class CreateLaunchTemplateRequest(RpcRequest):
 
 	def set_VersionDescription(self,VersionDescription):
 		self.add_query_param('VersionDescription',VersionDescription)
-
-	def get_TemplateTag1Value(self):
-		return self.get_query_params().get('TemplateTag.1.Value')
-
-	def set_TemplateTag1Value(self,TemplateTag1Value):
-		self.add_query_param('TemplateTag.1.Value',TemplateTag1Value)
 
 	def get_ImageId(self):
 		return self.get_query_params().get('ImageId')
@@ -232,12 +207,6 @@ class CreateLaunchTemplateRequest(RpcRequest):
 	def set_UserData(self,UserData):
 		self.add_query_param('UserData',UserData)
 
-	def get_TemplateTag5Value(self):
-		return self.get_query_params().get('TemplateTag.5.Value')
-
-	def set_TemplateTag5Value(self,TemplateTag5Value):
-		self.add_query_param('TemplateTag.5.Value',TemplateTag5Value)
-
 	def get_InstanceType(self):
 		return self.get_query_params().get('InstanceType')
 
@@ -272,12 +241,6 @@ class CreateLaunchTemplateRequest(RpcRequest):
 			if NetworkInterfaces[i].get('Description') is not None:
 				self.add_query_param('NetworkInterface.' + str(i + 1) + '.Description' , NetworkInterfaces[i].get('Description'))
 
-
-	def get_TemplateTag2Key(self):
-		return self.get_query_params().get('TemplateTag.2.Key')
-
-	def set_TemplateTag2Key(self,TemplateTag2Key):
-		self.add_query_param('TemplateTag.2.Key',TemplateTag2Key)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -336,12 +299,6 @@ class CreateLaunchTemplateRequest(RpcRequest):
 				self.add_query_param('DataDisk.' + str(i + 1) + '.DeleteWithInstance' , DataDisks[i].get('DeleteWithInstance'))
 
 
-	def get_TemplateTag4Value(self):
-		return self.get_query_params().get('TemplateTag.4.Value')
-
-	def set_TemplateTag4Value(self,TemplateTag4Value):
-		self.add_query_param('TemplateTag.4.Value',TemplateTag4Value)
-
 	def get_SystemDiskSize(self):
 		return self.get_query_params().get('SystemDisk.Size')
 
@@ -353,12 +310,6 @@ class CreateLaunchTemplateRequest(RpcRequest):
 
 	def set_VpcId(self,VpcId):
 		self.add_query_param('VpcId',VpcId)
-
-	def get_TemplateTag1Key(self):
-		return self.get_query_params().get('TemplateTag.1.Key')
-
-	def set_TemplateTag1Key(self,TemplateTag1Key):
-		self.add_query_param('TemplateTag.1.Key',TemplateTag1Key)
 
 	def get_SystemDiskDescription(self):
 		return self.get_query_params().get('SystemDisk.Description')

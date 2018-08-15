@@ -76,9 +76,9 @@ class CreateNatGatewayRequest(RpcRequest):
 
 	def set_BandwidthPackages(self,BandwidthPackages):
 		for i in range(len(BandwidthPackages)):	
-			if BandwidthPackages[i].get('IpCount') is not None:
-				self.add_query_param('BandwidthPackage.' + str(i + 1) + '.IpCount' , BandwidthPackages[i].get('IpCount'))
 			if BandwidthPackages[i].get('Bandwidth') is not None:
 				self.add_query_param('BandwidthPackage.' + str(i + 1) + '.Bandwidth' , BandwidthPackages[i].get('Bandwidth'))
 			if BandwidthPackages[i].get('Zone') is not None:
 				self.add_query_param('BandwidthPackage.' + str(i + 1) + '.Zone' , BandwidthPackages[i].get('Zone'))
+			if BandwidthPackages[i].get('IpCount') is not None:
+				self.add_query_param('BandwidthPackage.' + str(i + 1) + '.IpCount' , BandwidthPackages[i].get('IpCount'))

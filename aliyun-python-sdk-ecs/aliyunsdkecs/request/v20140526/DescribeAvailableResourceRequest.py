@@ -101,6 +101,12 @@ class DescribeAvailableResourceRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
+	def get_ResourceType(self):
+		return self.get_query_params().get('ResourceType')
+
+	def set_ResourceType(self,ResourceType):
+		self.add_query_param('ResourceType',ResourceType)
+
 	def get_SpotStrategy(self):
 		return self.get_query_params().get('SpotStrategy')
 
