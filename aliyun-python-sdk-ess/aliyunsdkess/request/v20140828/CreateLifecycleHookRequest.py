@@ -88,15 +88,15 @@ class CreateLifecycleHookRequest(RpcRequest):
 
 	def set_LifecycleHooks(self,LifecycleHooks):
 		for i in range(len(LifecycleHooks)):	
-			if LifecycleHooks[i].get('LifecycleHookName') is not None:
-				self.add_query_param('LifecycleHook.' + str(i + 1) + '.LifecycleHookName' , LifecycleHooks[i].get('LifecycleHookName'))
-			if LifecycleHooks[i].get('LifecycleTransition') is not None:
-				self.add_query_param('LifecycleHook.' + str(i + 1) + '.LifecycleTransition' , LifecycleHooks[i].get('LifecycleTransition'))
 			if LifecycleHooks[i].get('DefaultResult') is not None:
 				self.add_query_param('LifecycleHook.' + str(i + 1) + '.DefaultResult' , LifecycleHooks[i].get('DefaultResult'))
+			if LifecycleHooks[i].get('LifecycleHookName') is not None:
+				self.add_query_param('LifecycleHook.' + str(i + 1) + '.LifecycleHookName' , LifecycleHooks[i].get('LifecycleHookName'))
 			if LifecycleHooks[i].get('HeartbeatTimeout') is not None:
 				self.add_query_param('LifecycleHook.' + str(i + 1) + '.HeartbeatTimeout' , LifecycleHooks[i].get('HeartbeatTimeout'))
-			if LifecycleHooks[i].get('NotificationMetadata') is not None:
-				self.add_query_param('LifecycleHook.' + str(i + 1) + '.NotificationMetadata' , LifecycleHooks[i].get('NotificationMetadata'))
 			if LifecycleHooks[i].get('NotificationArn') is not None:
 				self.add_query_param('LifecycleHook.' + str(i + 1) + '.NotificationArn' , LifecycleHooks[i].get('NotificationArn'))
+			if LifecycleHooks[i].get('NotificationMetadata') is not None:
+				self.add_query_param('LifecycleHook.' + str(i + 1) + '.NotificationMetadata' , LifecycleHooks[i].get('NotificationMetadata'))
+			if LifecycleHooks[i].get('LifecycleTransition') is not None:
+				self.add_query_param('LifecycleHook.' + str(i + 1) + '.LifecycleTransition' , LifecycleHooks[i].get('LifecycleTransition'))

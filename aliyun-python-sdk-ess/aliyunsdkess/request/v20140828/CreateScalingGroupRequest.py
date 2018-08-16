@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class CreateScalingGroupRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ess', '2014-08-28', 'CreateScalingGroup','ESS')
+		RpcRequest.__init__(self, 'Ess', '2014-08-28', 'CreateScalingGroup','ess')
 
 	def get_MultiAZPolicy(self):
 		return self.get_query_params().get('MultiAZPolicy')
@@ -63,7 +63,7 @@ class CreateScalingGroupRequest(RpcRequest):
 		return self.get_query_params().get('VSwitchIds')
 
 	def set_VSwitchIds(self,VSwitchIds):
-		for i in range(len(VSwitchIds)):	
+		for i in range(len(VSwitchIds)):
 			if VSwitchIds[i] is not None:
 				self.add_query_param('VSwitchIds.' + str(i + 1) , VSwitchIds[i]);
 
@@ -102,18 +102,18 @@ class CreateScalingGroupRequest(RpcRequest):
 
 	def set_LifecycleHooks(self,LifecycleHooks):
 		for i in range(len(LifecycleHooks)):	
-			if LifecycleHooks[i].get('LifecycleHookName') is not None:
-				self.add_query_param('LifecycleHook.' + str(i + 1) + '.LifecycleHookName' , LifecycleHooks[i].get('LifecycleHookName'))
-			if LifecycleHooks[i].get('LifecycleTransition') is not None:
-				self.add_query_param('LifecycleHook.' + str(i + 1) + '.LifecycleTransition' , LifecycleHooks[i].get('LifecycleTransition'))
 			if LifecycleHooks[i].get('DefaultResult') is not None:
 				self.add_query_param('LifecycleHook.' + str(i + 1) + '.DefaultResult' , LifecycleHooks[i].get('DefaultResult'))
+			if LifecycleHooks[i].get('LifecycleHookName') is not None:
+				self.add_query_param('LifecycleHook.' + str(i + 1) + '.LifecycleHookName' , LifecycleHooks[i].get('LifecycleHookName'))
 			if LifecycleHooks[i].get('HeartbeatTimeout') is not None:
 				self.add_query_param('LifecycleHook.' + str(i + 1) + '.HeartbeatTimeout' , LifecycleHooks[i].get('HeartbeatTimeout'))
-			if LifecycleHooks[i].get('NotificationMetadata') is not None:
-				self.add_query_param('LifecycleHook.' + str(i + 1) + '.NotificationMetadata' , LifecycleHooks[i].get('NotificationMetadata'))
 			if LifecycleHooks[i].get('NotificationArn') is not None:
 				self.add_query_param('LifecycleHook.' + str(i + 1) + '.NotificationArn' , LifecycleHooks[i].get('NotificationArn'))
+			if LifecycleHooks[i].get('NotificationMetadata') is not None:
+				self.add_query_param('LifecycleHook.' + str(i + 1) + '.NotificationMetadata' , LifecycleHooks[i].get('NotificationMetadata'))
+			if LifecycleHooks[i].get('LifecycleTransition') is not None:
+				self.add_query_param('LifecycleHook.' + str(i + 1) + '.LifecycleTransition' , LifecycleHooks[i].get('LifecycleTransition'))
 
 
 	def get_DefaultCooldown(self):
