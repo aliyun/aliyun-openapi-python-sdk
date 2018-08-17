@@ -18,10 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class GetMezzanineInfoRequest(RpcRequest):
+class DeleteImageRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'vod', '2017-03-21', 'GetMezzanineInfo','vod')
+		RpcRequest.__init__(self, 'vod', '2017-03-21', 'DeleteImage','vod')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -29,11 +29,23 @@ class GetMezzanineInfoRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_ImageType(self):
+		return self.get_query_params().get('ImageType')
+
+	def set_ImageType(self,ImageType):
+		self.add_query_param('ImageType',ImageType)
+
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+
+	def get_ImageURLs(self):
+		return self.get_query_params().get('ImageURLs')
+
+	def set_ImageURLs(self,ImageURLs):
+		self.add_query_param('ImageURLs',ImageURLs)
 
 	def get_VideoId(self):
 		return self.get_query_params().get('VideoId')
@@ -41,32 +53,20 @@ class GetMezzanineInfoRequest(RpcRequest):
 	def set_VideoId(self,VideoId):
 		self.add_query_param('VideoId',VideoId)
 
-	def get_PreviewSegment(self):
-		return self.get_query_params().get('PreviewSegment')
-
-	def set_PreviewSegment(self,PreviewSegment):
-		self.add_query_param('PreviewSegment',PreviewSegment)
-
-	def get_OutputType(self):
-		return self.get_query_params().get('OutputType')
-
-	def set_OutputType(self,OutputType):
-		self.add_query_param('OutputType',OutputType)
-
-	def get_AdditionType(self):
-		return self.get_query_params().get('AdditionType')
-
-	def set_AdditionType(self,AdditionType):
-		self.add_query_param('AdditionType',AdditionType)
-
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_AuthTimeout(self):
-		return self.get_query_params().get('AuthTimeout')
+	def get_DeleteImageType(self):
+		return self.get_query_params().get('DeleteImageType')
 
-	def set_AuthTimeout(self,AuthTimeout):
-		self.add_query_param('AuthTimeout',AuthTimeout)
+	def set_DeleteImageType(self,DeleteImageType):
+		self.add_query_param('DeleteImageType',DeleteImageType)
+
+	def get_ImageIds(self):
+		return self.get_query_params().get('ImageIds')
+
+	def set_ImageIds(self,ImageIds):
+		self.add_query_param('ImageIds',ImageIds)
