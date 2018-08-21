@@ -303,6 +303,12 @@ class RunInstancesRequest(RpcRequest):
 	def set_DedicatedHostId(self,DedicatedHostId):
 		self.add_query_param('DedicatedHostId',DedicatedHostId)
 
+	def get_CreditSpecification(self):
+		return self.get_query_params().get('CreditSpecification')
+
+	def set_CreditSpecification(self,CreditSpecification):
+		self.add_query_param('CreditSpecification',CreditSpecification)
+
 	def get_DataDisks(self):
 		return self.get_query_params().get('DataDisks')
 
