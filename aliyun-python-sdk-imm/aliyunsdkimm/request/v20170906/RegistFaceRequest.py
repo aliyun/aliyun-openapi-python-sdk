@@ -18,16 +18,22 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class DeleteFaceSearchImageByIdRequest(RpcRequest):
+class RegistFaceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'imm', '2017-09-06', 'DeleteFaceSearchImageById','imm')
+		RpcRequest.__init__(self, 'imm', '2017-09-06', 'RegistFace','imm')
 
-	def get_ImageId(self):
-		return self.get_query_params().get('ImageId')
+	def get_ChooseBiggestFace(self):
+		return self.get_query_params().get('ChooseBiggestFace')
 
-	def set_ImageId(self,ImageId):
-		self.add_query_param('ImageId',ImageId)
+	def set_ChooseBiggestFace(self,ChooseBiggestFace):
+		self.add_query_param('ChooseBiggestFace',ChooseBiggestFace)
+
+	def get_IsQualityLimit(self):
+		return self.get_query_params().get('IsQualityLimit')
+
+	def set_IsQualityLimit(self,IsQualityLimit):
+		self.add_query_param('IsQualityLimit',IsQualityLimit)
 
 	def get_Project(self):
 		return self.get_query_params().get('Project')
@@ -40,6 +46,12 @@ class DeleteFaceSearchImageByIdRequest(RpcRequest):
 
 	def set_SrcUri(self,SrcUri):
 		self.add_query_param('SrcUri',SrcUri)
+
+	def get_RegisterCheckLevel(self):
+		return self.get_query_params().get('RegisterCheckLevel')
+
+	def set_RegisterCheckLevel(self,RegisterCheckLevel):
+		self.add_query_param('RegisterCheckLevel',RegisterCheckLevel)
 
 	def get_GroupName(self):
 		return self.get_query_params().get('GroupName')

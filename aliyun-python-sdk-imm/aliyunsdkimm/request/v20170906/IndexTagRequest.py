@@ -29,6 +29,12 @@ class IndexTagRequest(RpcRequest):
 	def set_SrcUris(self,SrcUris):
 		self.add_query_param('SrcUris',SrcUris)
 
+	def get_ModelId(self):
+		return self.get_query_params().get('ModelId')
+
+	def set_ModelId(self,ModelId):
+		self.add_query_param('ModelId',ModelId)
+
 	def get_Project(self):
 		return self.get_query_params().get('Project')
 
