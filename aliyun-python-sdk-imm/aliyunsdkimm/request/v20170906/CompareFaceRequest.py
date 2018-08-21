@@ -18,22 +18,22 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class DetectTagRequest(RpcRequest):
+class CompareFaceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'imm', '2017-09-06', 'DetectTag','imm')
+		RpcRequest.__init__(self, 'imm', '2017-09-06', 'CompareFace','imm')
 
-	def get_SrcUris(self):
-		return self.get_query_params().get('SrcUris')
+	def get_SrcUriB(self):
+		return self.get_query_params().get('SrcUriB')
 
-	def set_SrcUris(self,SrcUris):
-		self.add_query_param('SrcUris',SrcUris)
+	def set_SrcUriB(self,SrcUriB):
+		self.add_query_param('SrcUriB',SrcUriB)
 
-	def get_ModelId(self):
-		return self.get_query_params().get('ModelId')
+	def get_SrcUriA(self):
+		return self.get_query_params().get('SrcUriA')
 
-	def set_ModelId(self,ModelId):
-		self.add_query_param('ModelId',ModelId)
+	def set_SrcUriA(self,SrcUriA):
+		self.add_query_param('SrcUriA',SrcUriA)
 
 	def get_Project(self):
 		return self.get_query_params().get('Project')
