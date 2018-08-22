@@ -18,34 +18,16 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class ModifyDBInstanceSpecRequest(RpcRequest):
+class DescribeIndexRecommendationRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dds', '2015-12-01', 'ModifyDBInstanceSpec','dds')
+		RpcRequest.__init__(self, 'Dds', '2015-12-01', 'DescribeIndexRecommendation','dds')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_DBInstanceStorage(self):
-		return self.get_query_params().get('DBInstanceStorage')
-
-	def set_DBInstanceStorage(self,DBInstanceStorage):
-		self.add_query_param('DBInstanceStorage',DBInstanceStorage)
-
-	def get_AutoPay(self):
-		return self.get_query_params().get('AutoPay')
-
-	def set_AutoPay(self,AutoPay):
-		self.add_query_param('AutoPay',AutoPay)
-
-	def get_FromApp(self):
-		return self.get_query_params().get('FromApp')
-
-	def set_FromApp(self,FromApp):
-		self.add_query_param('FromApp',FromApp)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -59,11 +41,29 @@ class ModifyDBInstanceSpecRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
-	def get_CouponNo(self):
-		return self.get_query_params().get('CouponNo')
+	def get_EndTime(self):
+		return self.get_query_params().get('EndTime')
 
-	def set_CouponNo(self,CouponNo):
-		self.add_query_param('CouponNo',CouponNo)
+	def set_EndTime(self,EndTime):
+		self.add_query_param('EndTime',EndTime)
+
+	def get_Collection(self):
+		return self.get_query_params().get('Collection')
+
+	def set_Collection(self,Collection):
+		self.add_query_param('Collection',Collection)
+
+	def get_StartTime(self):
+		return self.get_query_params().get('StartTime')
+
+	def set_StartTime(self,StartTime):
+		self.add_query_param('StartTime',StartTime)
+
+	def get_OperationType(self):
+		return self.get_query_params().get('OperationType')
+
+	def set_OperationType(self,OperationType):
+		self.add_query_param('OperationType',OperationType)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
@@ -71,11 +71,23 @@ class ModifyDBInstanceSpecRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_DBInstanceClass(self):
-		return self.get_query_params().get('DBInstanceClass')
+	def get_PageNumber(self):
+		return self.get_query_params().get('PageNumber')
 
-	def set_DBInstanceClass(self,DBInstanceClass):
-		self.add_query_param('DBInstanceClass',DBInstanceClass)
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)
+
+	def get_Database(self):
+		return self.get_query_params().get('Database')
+
+	def set_Database(self,Database):
+		self.add_query_param('Database',Database)
+
+	def get_InstanceId(self):
+		return self.get_query_params().get('InstanceId')
+
+	def set_InstanceId(self,InstanceId):
+		self.add_query_param('InstanceId',InstanceId)
 
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
@@ -83,26 +95,20 @@ class ModifyDBInstanceSpecRequest(RpcRequest):
 	def set_SecurityToken(self,SecurityToken):
 		self.add_query_param('SecurityToken',SecurityToken)
 
-	def get_EffectiveTime(self):
-		return self.get_query_params().get('EffectiveTime')
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
 
-	def set_EffectiveTime(self,EffectiveTime):
-		self.add_query_param('EffectiveTime',EffectiveTime)
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
 
-	def get_DBInstanceId(self):
-		return self.get_query_params().get('DBInstanceId')
+	def get_NodeId(self):
+		return self.get_query_params().get('NodeId')
 
-	def set_DBInstanceId(self,DBInstanceId):
-		self.add_query_param('DBInstanceId',DBInstanceId)
+	def set_NodeId(self,NodeId):
+		self.add_query_param('NodeId',NodeId)
 
-	def get_BusinessInfo(self):
-		return self.get_query_params().get('BusinessInfo')
+	def get_TaskId(self):
+		return self.get_query_params().get('TaskId')
 
-	def set_BusinessInfo(self,BusinessInfo):
-		self.add_query_param('BusinessInfo',BusinessInfo)
-
-	def get_OrderType(self):
-		return self.get_query_params().get('OrderType')
-
-	def set_OrderType(self,OrderType):
-		self.add_query_param('OrderType',OrderType)
+	def set_TaskId(self,TaskId):
+		self.add_query_param('TaskId',TaskId)

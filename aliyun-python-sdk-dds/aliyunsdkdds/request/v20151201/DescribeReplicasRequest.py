@@ -41,6 +41,12 @@ class DescribeReplicasRequest(RpcRequest):
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
+	def get_AttachDbInstanceData(self):
+		return self.get_query_params().get('AttachDbInstanceData')
+
+	def set_AttachDbInstanceData(self,AttachDbInstanceData):
+		self.add_query_param('AttachDbInstanceData',AttachDbInstanceData)
+
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
 

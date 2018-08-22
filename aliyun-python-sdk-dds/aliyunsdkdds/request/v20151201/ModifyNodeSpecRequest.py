@@ -71,6 +71,12 @@ class ModifyNodeSpecRequest(RpcRequest):
 	def set_SecurityToken(self,SecurityToken):
 		self.add_query_param('SecurityToken',SecurityToken)
 
+	def get_EffectiveTime(self):
+		return self.get_query_params().get('EffectiveTime')
+
+	def set_EffectiveTime(self,EffectiveTime):
+		self.add_query_param('EffectiveTime',EffectiveTime)
+
 	def get_DBInstanceId(self):
 		return self.get_query_params().get('DBInstanceId')
 

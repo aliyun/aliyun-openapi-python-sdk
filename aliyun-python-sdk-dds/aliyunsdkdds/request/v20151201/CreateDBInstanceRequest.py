@@ -59,6 +59,12 @@ class CreateDBInstanceRequest(RpcRequest):
 	def set_NetworkType(self,NetworkType):
 		self.add_query_param('NetworkType',NetworkType)
 
+	def get_ReplicationFactor(self):
+		return self.get_query_params().get('ReplicationFactor')
+
+	def set_ReplicationFactor(self,ReplicationFactor):
+		self.add_query_param('ReplicationFactor',ReplicationFactor)
+
 	def get_StorageEngine(self):
 		return self.get_query_params().get('StorageEngine')
 
@@ -154,6 +160,12 @@ class CreateDBInstanceRequest(RpcRequest):
 
 	def set_AccountPassword(self,AccountPassword):
 		self.add_query_param('AccountPassword',AccountPassword)
+
+	def get_AutoRenew(self):
+		return self.get_query_params().get('AutoRenew')
+
+	def set_AutoRenew(self,AutoRenew):
+		self.add_query_param('AutoRenew',AutoRenew)
 
 	def get_VpcId(self):
 		return self.get_query_params().get('VpcId')

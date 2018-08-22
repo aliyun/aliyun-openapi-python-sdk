@@ -18,16 +18,16 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class CreateBackupRequest(RpcRequest):
+class ModifyAuditLogFilterRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dds', '2015-12-01', 'CreateBackup','dds')
+		RpcRequest.__init__(self, 'Dds', '2015-12-01', 'ModifyAuditLogFilter','dds')
 
-	def get_BackupMethod(self):
-		return self.get_query_params().get('BackupMethod')
+	def get_Filter(self):
+		return self.get_query_params().get('Filter')
 
-	def set_BackupMethod(self,BackupMethod):
-		self.add_query_param('BackupMethod',BackupMethod)
+	def set_Filter(self,Filter):
+		self.add_query_param('Filter',Filter)
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -58,6 +58,12 @@ class CreateBackupRequest(RpcRequest):
 
 	def set_DBInstanceId(self,DBInstanceId):
 		self.add_query_param('DBInstanceId',DBInstanceId)
+
+	def get_RoleType(self):
+		return self.get_query_params().get('RoleType')
+
+	def set_RoleType(self,RoleType):
+		self.add_query_param('RoleType',RoleType)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
