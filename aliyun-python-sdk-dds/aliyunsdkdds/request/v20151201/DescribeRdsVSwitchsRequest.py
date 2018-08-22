@@ -18,16 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class CreateBackupRequest(RpcRequest):
+class DescribeRdsVSwitchsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dds', '2015-12-01', 'CreateBackup','dds')
-
-	def get_BackupMethod(self):
-		return self.get_query_params().get('BackupMethod')
-
-	def set_BackupMethod(self,BackupMethod):
-		self.add_query_param('BackupMethod',BackupMethod)
+		RpcRequest.__init__(self, 'Dds', '2015-12-01', 'DescribeRdsVSwitchs','dds')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -53,11 +47,17 @@ class CreateBackupRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
-	def get_DBInstanceId(self):
-		return self.get_query_params().get('DBInstanceId')
+	def get_VpcId(self):
+		return self.get_query_params().get('VpcId')
 
-	def set_DBInstanceId(self,DBInstanceId):
-		self.add_query_param('DBInstanceId',DBInstanceId)
+	def set_VpcId(self,VpcId):
+		self.add_query_param('VpcId',VpcId)
+
+	def get_ZoneId(self):
+		return self.get_query_params().get('ZoneId')
+
+	def set_ZoneId(self,ZoneId):
+		self.add_query_param('ZoneId',ZoneId)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')

@@ -18,22 +18,34 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class CreateBackupRequest(RpcRequest):
+class ModifyReplicaModeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dds', '2015-12-01', 'CreateBackup','dds')
+		RpcRequest.__init__(self, 'Dds', '2015-12-01', 'ModifyReplicaMode','dds')
 
-	def get_BackupMethod(self):
-		return self.get_query_params().get('BackupMethod')
+	def get_DomainMode(self):
+		return self.get_query_params().get('DomainMode')
 
-	def set_BackupMethod(self,BackupMethod):
-		self.add_query_param('BackupMethod',BackupMethod)
+	def set_DomainMode(self,DomainMode):
+		self.add_query_param('DomainMode',DomainMode)
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+
+	def get_PrimaryInstanceId(self):
+		return self.get_query_params().get('PrimaryInstanceId')
+
+	def set_PrimaryInstanceId(self,PrimaryInstanceId):
+		self.add_query_param('PrimaryInstanceId',PrimaryInstanceId)
+
+	def get_ReplicaMode(self):
+		return self.get_query_params().get('ReplicaMode')
+
+	def set_ReplicaMode(self,ReplicaMode):
+		self.add_query_param('ReplicaMode',ReplicaMode)
 
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
@@ -53,11 +65,11 @@ class CreateBackupRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
-	def get_DBInstanceId(self):
-		return self.get_query_params().get('DBInstanceId')
+	def get_ReplicaId(self):
+		return self.get_query_params().get('ReplicaId')
 
-	def set_DBInstanceId(self,DBInstanceId):
-		self.add_query_param('DBInstanceId',DBInstanceId)
+	def set_ReplicaId(self,ReplicaId):
+		self.add_query_param('ReplicaId',ReplicaId)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')

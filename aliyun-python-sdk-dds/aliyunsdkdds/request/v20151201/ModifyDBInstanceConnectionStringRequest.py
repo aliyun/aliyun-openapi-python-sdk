@@ -18,16 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class CreateBackupRequest(RpcRequest):
+class ModifyDBInstanceConnectionStringRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dds', '2015-12-01', 'CreateBackup','dds')
-
-	def get_BackupMethod(self):
-		return self.get_query_params().get('BackupMethod')
-
-	def set_BackupMethod(self,BackupMethod):
-		self.add_query_param('BackupMethod',BackupMethod)
+		RpcRequest.__init__(self, 'Dds', '2015-12-01', 'ModifyDBInstanceConnectionString','dds')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -59,8 +53,26 @@ class CreateBackupRequest(RpcRequest):
 	def set_DBInstanceId(self,DBInstanceId):
 		self.add_query_param('DBInstanceId',DBInstanceId)
 
+	def get_NewConnectionString(self):
+		return self.get_query_params().get('NewConnectionString')
+
+	def set_NewConnectionString(self,NewConnectionString):
+		self.add_query_param('NewConnectionString',NewConnectionString)
+
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_NodeId(self):
+		return self.get_query_params().get('NodeId')
+
+	def set_NodeId(self,NodeId):
+		self.add_query_param('NodeId',NodeId)
+
+	def get_CurrentConnectionString(self):
+		return self.get_query_params().get('CurrentConnectionString')
+
+	def set_CurrentConnectionString(self,CurrentConnectionString):
+		self.add_query_param('CurrentConnectionString',CurrentConnectionString)

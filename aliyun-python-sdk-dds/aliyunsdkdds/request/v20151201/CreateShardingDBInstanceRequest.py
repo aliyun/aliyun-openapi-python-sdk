@@ -52,10 +52,10 @@ class CreateShardingDBInstanceRequest(RpcRequest):
 
 	def set_ReplicaSets(self,ReplicaSets):
 		for i in range(len(ReplicaSets)):	
-			if ReplicaSets[i].get('Class') is not None:
-				self.add_query_param('ReplicaSet.' + str(i + 1) + '.Class' , ReplicaSets[i].get('Class'))
 			if ReplicaSets[i].get('Storage') is not None:
 				self.add_query_param('ReplicaSet.' + str(i + 1) + '.Storage' , ReplicaSets[i].get('Storage'))
+			if ReplicaSets[i].get('Class') is not None:
+				self.add_query_param('ReplicaSet.' + str(i + 1) + '.Class' , ReplicaSets[i].get('Class'))
 
 
 	def get_StorageEngine(self):
@@ -117,10 +117,10 @@ class CreateShardingDBInstanceRequest(RpcRequest):
 
 	def set_ConfigServers(self,ConfigServers):
 		for i in range(len(ConfigServers)):	
-			if ConfigServers[i].get('Class') is not None:
-				self.add_query_param('ConfigServer.' + str(i + 1) + '.Class' , ConfigServers[i].get('Class'))
 			if ConfigServers[i].get('Storage') is not None:
 				self.add_query_param('ConfigServer.' + str(i + 1) + '.Storage' , ConfigServers[i].get('Storage'))
+			if ConfigServers[i].get('Class') is not None:
+				self.add_query_param('ConfigServer.' + str(i + 1) + '.Class' , ConfigServers[i].get('Class'))
 
 
 	def get_OwnerId(self):
@@ -155,6 +155,12 @@ class CreateShardingDBInstanceRequest(RpcRequest):
 
 	def set_AccountPassword(self,AccountPassword):
 		self.add_query_param('AccountPassword',AccountPassword)
+
+	def get_AutoRenew(self):
+		return self.get_query_params().get('AutoRenew')
+
+	def set_AutoRenew(self,AutoRenew):
+		self.add_query_param('AutoRenew',AutoRenew)
 
 	def get_VpcId(self):
 		return self.get_query_params().get('VpcId')

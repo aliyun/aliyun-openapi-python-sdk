@@ -59,11 +59,23 @@ class DescribeDBInstancesRequest(RpcRequest):
 	def set_PageNumber(self,PageNumber):
 		self.add_query_param('PageNumber',PageNumber)
 
+	def get_ReplicationFactor(self):
+		return self.get_query_params().get('ReplicationFactor')
+
+	def set_ReplicationFactor(self,ReplicationFactor):
+		self.add_query_param('ReplicationFactor',ReplicationFactor)
+
 	def get_DBInstanceType(self):
 		return self.get_query_params().get('DBInstanceType')
 
 	def set_DBInstanceType(self,DBInstanceType):
 		self.add_query_param('DBInstanceType',DBInstanceType)
+
+	def get_Expired(self):
+		return self.get_query_params().get('Expired')
+
+	def set_Expired(self,Expired):
+		self.add_query_param('Expired',Expired)
 
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')

@@ -18,16 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class CreateBackupRequest(RpcRequest):
+class ModifyDBInstanceSSLRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dds', '2015-12-01', 'CreateBackup','dds')
-
-	def get_BackupMethod(self):
-		return self.get_query_params().get('BackupMethod')
-
-	def set_BackupMethod(self,BackupMethod):
-		self.add_query_param('BackupMethod',BackupMethod)
+		RpcRequest.__init__(self, 'Dds', '2015-12-01', 'ModifyDBInstanceSSL','dds')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -52,6 +46,12 @@ class CreateBackupRequest(RpcRequest):
 
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
+
+	def get_SSLAction(self):
+		return self.get_query_params().get('SSLAction')
+
+	def set_SSLAction(self,SSLAction):
+		self.add_query_param('SSLAction',SSLAction)
 
 	def get_DBInstanceId(self):
 		return self.get_query_params().get('DBInstanceId')

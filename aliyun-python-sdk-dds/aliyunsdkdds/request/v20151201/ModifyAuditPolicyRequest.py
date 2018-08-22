@@ -18,22 +18,28 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class CreateBackupRequest(RpcRequest):
+class ModifyAuditPolicyRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dds', '2015-12-01', 'CreateBackup','dds')
-
-	def get_BackupMethod(self):
-		return self.get_query_params().get('BackupMethod')
-
-	def set_BackupMethod(self,BackupMethod):
-		self.add_query_param('BackupMethod',BackupMethod)
+		RpcRequest.__init__(self, 'Dds', '2015-12-01', 'ModifyAuditPolicy','dds')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+
+	def get_AuditStatus(self):
+		return self.get_query_params().get('AuditStatus')
+
+	def set_AuditStatus(self,AuditStatus):
+		self.add_query_param('AuditStatus',AuditStatus)
+
+	def get_StoragePeriod(self):
+		return self.get_query_params().get('StoragePeriod')
+
+	def set_StoragePeriod(self,StoragePeriod):
+		self.add_query_param('StoragePeriod',StoragePeriod)
 
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
