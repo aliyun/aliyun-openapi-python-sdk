@@ -21,4 +21,4 @@ from aliyunsdkcore.request import RpcRequest
 class FtDynamicAddressHsfRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ft', '2018-07-13', 'FtDynamicAddressHsf','ft')
+		RpcRequest.__init__(self, 'Ft', '2018-07-13', 'FtDynamicAddressHsf','serviceCode')
