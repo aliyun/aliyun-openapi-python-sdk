@@ -1,3 +1,8 @@
+2018-08-27 Version: 6.1.0
+1, Add api GetGatewayBySubDevice.
+2, Modified the time related response parameters.
+3, Add messageId in response with InvokeThingService，SetDeviceProperty and NotifyAddThingTopo.
+
 2018-08-07 Version: 6.1.0
 1, Add api GetGatewayBySubDevice.
 2, Modified the time related response parameters.
