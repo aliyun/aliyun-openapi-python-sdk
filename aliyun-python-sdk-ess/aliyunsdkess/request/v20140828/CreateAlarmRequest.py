@@ -79,12 +79,6 @@ class CreateAlarmRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_ComparisionOperator(self):
-		return self.get_query_params().get('ComparisionOperator')
-
-	def set_ComparisionOperator(self,ComparisionOperator):
-		self.add_query_param('ComparisionOperator',ComparisionOperator)
-
 	def get_Name(self):
 		return self.get_query_params().get('Name')
 
@@ -102,6 +96,12 @@ class CreateAlarmRequest(RpcRequest):
 
 	def set_MetricName(self,MetricName):
 		self.add_query_param('MetricName',MetricName)
+
+	def get_ComparisonOperator(self):
+		return self.get_query_params().get('ComparisonOperator')
+
+	def set_ComparisonOperator(self,ComparisonOperator):
+		self.add_query_param('ComparisonOperator',ComparisonOperator)
 
 	def get_Dimensions(self):
 		return self.get_query_params().get('Dimensions')
