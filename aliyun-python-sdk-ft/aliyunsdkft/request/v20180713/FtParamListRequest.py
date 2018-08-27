@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class FtParamListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ft', '2018-07-13', 'FtParamList','ft')
+		RpcRequest.__init__(self, 'Ft', '2018-07-13', 'FtParamList','serviceCode')
 
 	def get_Disks(self):
 		return self.get_query_params().get('Disks')

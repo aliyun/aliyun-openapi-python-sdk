@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class FTApiAliasApiRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ft', '2018-07-13', 'FTApiAliasApi','ft')
+		RpcRequest.__init__(self, 'Ft', '2018-07-13', 'FTApiAliasApi','serviceCode')
 
 	def get_Name(self):
 		return self.get_query_params().get('Name')
