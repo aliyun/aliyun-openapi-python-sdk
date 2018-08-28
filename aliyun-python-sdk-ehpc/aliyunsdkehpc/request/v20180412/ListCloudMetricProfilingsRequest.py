@@ -18,10 +18,16 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class AddUsersRequest(RpcRequest):
+class ListCloudMetricProfilingsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'EHPC', '2018-04-12', 'AddUsers','ehs')
+		RpcRequest.__init__(self, 'EHPC', '2018-04-12', 'ListCloudMetricProfilings','ehs')
+
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
 
 	def get_ClusterId(self):
 		return self.get_query_params().get('ClusterId')
@@ -29,14 +35,8 @@ class AddUsersRequest(RpcRequest):
 	def set_ClusterId(self,ClusterId):
 		self.add_query_param('ClusterId',ClusterId)
 
-	def get_Users(self):
-		return self.get_query_params().get('Users')
+	def get_PageNumber(self):
+		return self.get_query_params().get('PageNumber')
 
-	def set_Users(self,Users):
-		for i in range(len(Users)):	
-			if Users[i].get('Password') is not None:
-				self.add_query_param('User.' + str(i + 1) + '.Password' , Users[i].get('Password'))
-			if Users[i].get('Name') is not None:
-				self.add_query_param('User.' + str(i + 1) + '.Name' , Users[i].get('Name'))
-			if Users[i].get('Group') is not None:
-				self.add_query_param('User.' + str(i + 1) + '.Group' , Users[i].get('Group'))
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)

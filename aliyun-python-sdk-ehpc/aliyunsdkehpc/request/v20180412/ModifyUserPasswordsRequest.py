@@ -34,7 +34,7 @@ class ModifyUserPasswordsRequest(RpcRequest):
 
 	def set_Users(self,Users):
 		for i in range(len(Users)):	
-			if Users[i].get('Name') is not None:
-				self.add_query_param('User.' + str(i + 1) + '.Name' , Users[i].get('Name'))
 			if Users[i].get('Password') is not None:
 				self.add_query_param('User.' + str(i + 1) + '.Password' , Users[i].get('Password'))
+			if Users[i].get('Name') is not None:
+				self.add_query_param('User.' + str(i + 1) + '.Name' , Users[i].get('Name'))

@@ -101,6 +101,12 @@ class CreateHybridClusterRequest(RpcRequest):
 	def set_OnPremiseVolumeLocalPath(self,OnPremiseVolumeLocalPath):
 		self.add_query_param('OnPremiseVolumeLocalPath',OnPremiseVolumeLocalPath)
 
+	def get_ClientVersion(self):
+		return self.get_query_params().get('ClientVersion')
+
+	def set_ClientVersion(self,ClientVersion):
+		self.add_query_param('ClientVersion',ClientVersion)
+
 	def get_OsTag(self):
 		return self.get_query_params().get('OsTag')
 

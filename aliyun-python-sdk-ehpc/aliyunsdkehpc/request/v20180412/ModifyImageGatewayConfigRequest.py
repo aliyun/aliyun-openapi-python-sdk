@@ -40,10 +40,10 @@ class ModifyImageGatewayConfigRequest(RpcRequest):
 
 	def set_Repos(self,Repos):
 		for i in range(len(Repos)):	
-			if Repos[i].get('Location') is not None:
-				self.add_query_param('Repo.' + str(i + 1) + '.Location' , Repos[i].get('Location'))
 			if Repos[i].get('Auth') is not None:
 				self.add_query_param('Repo.' + str(i + 1) + '.Auth' , Repos[i].get('Auth'))
+			if Repos[i].get('Location') is not None:
+				self.add_query_param('Repo.' + str(i + 1) + '.Location' , Repos[i].get('Location'))
 			if Repos[i].get('URL') is not None:
 				self.add_query_param('Repo.' + str(i + 1) + '.URL' , Repos[i].get('URL'))
 

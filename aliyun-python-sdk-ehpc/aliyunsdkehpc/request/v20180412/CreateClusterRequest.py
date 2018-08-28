@@ -143,6 +143,12 @@ class CreateClusterRequest(RpcRequest):
 	def set_VolumeProtocol(self,VolumeProtocol):
 		self.add_query_param('VolumeProtocol',VolumeProtocol)
 
+	def get_ClientVersion(self):
+		return self.get_query_params().get('ClientVersion')
+
+	def set_ClientVersion(self,ClientVersion):
+		self.add_query_param('ClientVersion',ClientVersion)
+
 	def get_OsTag(self):
 		return self.get_query_params().get('OsTag')
 
@@ -172,10 +178,10 @@ class CreateClusterRequest(RpcRequest):
 
 	def set_PostInstallScripts(self,PostInstallScripts):
 		for i in range(len(PostInstallScripts)):	
-			if PostInstallScripts[i].get('Url') is not None:
-				self.add_query_param('PostInstallScript.' + str(i + 1) + '.Url' , PostInstallScripts[i].get('Url'))
 			if PostInstallScripts[i].get('Args') is not None:
 				self.add_query_param('PostInstallScript.' + str(i + 1) + '.Args' , PostInstallScripts[i].get('Args'))
+			if PostInstallScripts[i].get('Url') is not None:
+				self.add_query_param('PostInstallScript.' + str(i + 1) + '.Url' , PostInstallScripts[i].get('Url'))
 
 
 	def get_VSwitchId(self):

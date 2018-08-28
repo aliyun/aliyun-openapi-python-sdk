@@ -18,25 +18,37 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class AddUsersRequest(RpcRequest):
+class RunCloudMetricProfilingRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'EHPC', '2018-04-12', 'AddUsers','ehs')
+		RpcRequest.__init__(self, 'EHPC', '2018-04-12', 'RunCloudMetricProfiling','ehs')
+
+	def get_Duration(self):
+		return self.get_query_params().get('Duration')
+
+	def set_Duration(self,Duration):
+		self.add_query_param('Duration',Duration)
+
+	def get_HostName(self):
+		return self.get_query_params().get('HostName')
+
+	def set_HostName(self,HostName):
+		self.add_query_param('HostName',HostName)
+
+	def get_ProcessId(self):
+		return self.get_query_params().get('ProcessId')
+
+	def set_ProcessId(self,ProcessId):
+		self.add_query_param('ProcessId',ProcessId)
+
+	def get_Freq(self):
+		return self.get_query_params().get('Freq')
+
+	def set_Freq(self,Freq):
+		self.add_query_param('Freq',Freq)
 
 	def get_ClusterId(self):
 		return self.get_query_params().get('ClusterId')
 
 	def set_ClusterId(self,ClusterId):
 		self.add_query_param('ClusterId',ClusterId)
-
-	def get_Users(self):
-		return self.get_query_params().get('Users')
-
-	def set_Users(self,Users):
-		for i in range(len(Users)):	
-			if Users[i].get('Password') is not None:
-				self.add_query_param('User.' + str(i + 1) + '.Password' , Users[i].get('Password'))
-			if Users[i].get('Name') is not None:
-				self.add_query_param('User.' + str(i + 1) + '.Name' , Users[i].get('Name'))
-			if Users[i].get('Group') is not None:
-				self.add_query_param('User.' + str(i + 1) + '.Group' , Users[i].get('Group'))
