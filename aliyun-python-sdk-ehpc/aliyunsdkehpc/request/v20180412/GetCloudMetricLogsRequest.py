@@ -41,12 +41,6 @@ class GetCloudMetricLogsRequest(RpcRequest):
 	def set_MetricCategories(self,MetricCategories):
 		self.add_query_param('MetricCategories',MetricCategories)
 
-	def get_Line(self):
-		return self.get_query_params().get('Line')
-
-	def set_Line(self,Line):
-		self.add_query_param('Line',Line)
-
 	def get_MetricScope(self):
 		return self.get_query_params().get('MetricScope')
 
