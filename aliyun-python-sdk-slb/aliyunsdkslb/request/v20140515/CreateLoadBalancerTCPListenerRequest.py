@@ -47,6 +47,12 @@ class CreateLoadBalancerTCPListenerRequest(RpcRequest):
 	def set_HealthCheckURI(self,HealthCheckURI):
 		self.add_query_param('HealthCheckURI',HealthCheckURI)
 
+	def get_Description(self):
+		return self.get_query_params().get('Description')
+
+	def set_Description(self,Description):
+		self.add_query_param('Description',Description)
+
 	def get_UnhealthyThreshold(self):
 		return self.get_query_params().get('UnhealthyThreshold')
 

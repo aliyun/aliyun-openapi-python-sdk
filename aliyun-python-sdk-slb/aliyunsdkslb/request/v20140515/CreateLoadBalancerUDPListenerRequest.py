@@ -41,6 +41,12 @@ class CreateLoadBalancerUDPListenerRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_Description(self):
+		return self.get_query_params().get('Description')
+
+	def set_Description(self,Description):
+		self.add_query_param('Description',Description)
+
 	def get_UnhealthyThreshold(self):
 		return self.get_query_params().get('UnhealthyThreshold')
 

@@ -18,10 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class DescribeRegionsRequest(RpcRequest):
+class DescribeSlbQuotasRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Slb', '2014-05-15', 'DescribeRegions','slb')
+		RpcRequest.__init__(self, 'Slb', '2014-05-15', 'DescribeSlbQuotas','slb')
 
 	def get_access_key_id(self):
 		return self.get_query_params().get('access_key_id')
@@ -46,12 +46,6 @@ class DescribeRegionsRequest(RpcRequest):
 
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
-
-	def get_AcceptLanguage(self):
-		return self.get_query_params().get('AcceptLanguage')
-
-	def set_AcceptLanguage(self,AcceptLanguage):
-		self.add_query_param('AcceptLanguage',AcceptLanguage)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
