@@ -28,7 +28,7 @@ from ..acs_exception import exceptions as exs
 from ..acs_exception import error_code, error_msg
 
 LOCATION_SERVICE_PRODUCT_NAME = "Location"
-LOCATION_SERVICE_DOMAIN = "location-readonly.aliyuncs.com"
+LOCATION_SERVICE_DOMAIN = "location.aliyuncs.com"
 LOCATION_SERVICE_VERSION = "2015-06-12"
 LOCATION_SERVICE_DESCRIBE_ENDPOINT_ACTION = "DescribeEndpoints"
 LOCATION_SERVICE_REGION = "cn-hangzhou"
@@ -37,7 +37,7 @@ LOCATION_CACHE_EXPIRE_TIME = 3600  # Seconds
 # location endpoint list
 __location_endpoints = dict()
 __last_cache_clear_time_per_product = dict()
-__location_service_domain = 'location-readonly.aliyuncs.com'
+__location_service_domain = 'location.aliyuncs.com'
 
 
 class DescribeEndpointRequest(RpcRequest):
