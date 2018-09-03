@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class UpdateServiceQPSRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'CSB', '2017-11-18', 'UpdateServiceQPS','CSB')
+		RpcRequest.__init__(self, 'CSB', '2017-11-18', 'UpdateServiceQPS')
 		self.set_protocol_type('https');
 		self.set_method('POST')
 

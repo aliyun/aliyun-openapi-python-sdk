@@ -18,16 +18,11 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class FindInstanceListRequest(RpcRequest):
+class FindServiceStatisticalDataRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'CSB', '2017-11-18', 'FindInstanceList')
-
-	def get_SearchTxt(self):
-		return self.get_query_params().get('SearchTxt')
-
-	def set_SearchTxt(self,SearchTxt):
-		self.add_query_param('SearchTxt',SearchTxt)
+		RpcRequest.__init__(self, 'CSB', '2017-11-18', 'FindServiceStatisticalData')
+		self.set_protocol_type('https');
 
 	def get_CsbId(self):
 		return self.get_query_params().get('CsbId')
@@ -35,14 +30,20 @@ class FindInstanceListRequest(RpcRequest):
 	def set_CsbId(self,CsbId):
 		self.add_query_param('CsbId',CsbId)
 
-	def get_PageNum(self):
-		return self.get_query_params().get('PageNum')
+	def get_EndTime(self):
+		return self.get_query_params().get('EndTime')
 
-	def set_PageNum(self,PageNum):
-		self.add_query_param('PageNum',PageNum)
+	def set_EndTime(self,EndTime):
+		self.add_query_param('EndTime',EndTime)
 
-	def get_Status(self):
-		return self.get_query_params().get('Status')
+	def get_ServiceName(self):
+		return self.get_query_params().get('ServiceName')
 
-	def set_Status(self,Status):
-		self.add_query_param('Status',Status)
+	def set_ServiceName(self,ServiceName):
+		self.add_query_param('ServiceName',ServiceName)
+
+	def get_StartTime(self):
+		return self.get_query_params().get('StartTime')
+
+	def set_StartTime(self,StartTime):
+		self.add_query_param('StartTime',StartTime)

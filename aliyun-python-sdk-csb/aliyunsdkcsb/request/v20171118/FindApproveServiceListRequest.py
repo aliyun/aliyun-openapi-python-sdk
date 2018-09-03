@@ -21,41 +21,41 @@ from aliyunsdkcore.request import RpcRequest
 class FindApproveServiceListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'CSB', '2017-11-18', 'FindApproveServiceList','CSB')
+		RpcRequest.__init__(self, 'CSB', '2017-11-18', 'FindApproveServiceList')
 		self.set_protocol_type('https');
 
-	def get_approveLevel(self):
-		return self.get_query_params().get('approveLevel')
+	def get_ProjectName(self):
+		return self.get_query_params().get('ProjectName')
 
-	def set_approveLevel(self,approveLevel):
-		self.add_query_param('approveLevel',approveLevel)
+	def set_ProjectName(self,ProjectName):
+		self.add_query_param('ProjectName',ProjectName)
 
-	def get_projectName(self):
-		return self.get_query_params().get('projectName')
+	def get_ApproveLevel(self):
+		return self.get_query_params().get('ApproveLevel')
 
-	def set_projectName(self,projectName):
-		self.add_query_param('projectName',projectName)
+	def set_ApproveLevel(self,ApproveLevel):
+		self.add_query_param('ApproveLevel',ApproveLevel)
 
-	def get_showDelService(self):
-		return self.get_query_params().get('showDelService')
+	def get_ShowDelService(self):
+		return self.get_query_params().get('ShowDelService')
 
-	def set_showDelService(self,showDelService):
-		self.add_query_param('showDelService',showDelService)
+	def set_ShowDelService(self,ShowDelService):
+		self.add_query_param('ShowDelService',ShowDelService)
 
-	def get_csbId(self):
-		return self.get_query_params().get('csbId')
+	def get_CsbId(self):
+		return self.get_query_params().get('CsbId')
 
-	def set_csbId(self,csbId):
-		self.add_query_param('csbId',csbId)
+	def set_CsbId(self,CsbId):
+		self.add_query_param('CsbId',CsbId)
 
-	def get_alias(self):
-		return self.get_query_params().get('alias')
+	def get_Alias(self):
+		return self.get_query_params().get('Alias')
 
-	def set_alias(self,alias):
-		self.add_query_param('alias',alias)
+	def set_Alias(self,Alias):
+		self.add_query_param('Alias',Alias)
 
-	def get_serviceName(self):
-		return self.get_query_params().get('serviceName')
+	def get_ServiceName(self):
+		return self.get_query_params().get('ServiceName')
 
-	def set_serviceName(self,serviceName):
-		self.add_query_param('serviceName',serviceName)
+	def set_ServiceName(self,ServiceName):
+		self.add_query_param('ServiceName',ServiceName)

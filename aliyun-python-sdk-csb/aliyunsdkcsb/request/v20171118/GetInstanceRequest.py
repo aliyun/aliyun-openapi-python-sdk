@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class GetInstanceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'CSB', '2017-11-18', 'GetInstance','CSB')
+		RpcRequest.__init__(self, 'CSB', '2017-11-18', 'GetInstance')
 
 	def get_CsbId(self):
 		return self.get_query_params().get('CsbId')
