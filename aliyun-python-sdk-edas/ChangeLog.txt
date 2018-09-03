@@ -1,0 +1,4 @@
+2018-09-03 Version: 2.16.1
+1, First release EDAS Open API in python.
+2, You can view detailed document links https://help.aliyun.com/document_detail/62122.html?spm=a2c4g.11186623.6.696.18897157qEMvpI
+
