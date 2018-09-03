@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class FindOrderableListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'CSB', '2017-11-18', 'FindOrderableList','CSB')
+		RpcRequest.__init__(self, 'CSB', '2017-11-18', 'FindOrderableList')
 		self.set_protocol_type('https');
 
 	def get_ProjectName(self):
