@@ -35,6 +35,12 @@ class ModifyScalingGroupRequest(RpcRequest):
 	def set_HealthCheckType(self,HealthCheckType):
 		self.add_query_param('HealthCheckType',HealthCheckType)
 
+	def get_LaunchTemplateId(self):
+		return self.get_query_params().get('LaunchTemplateId')
+
+	def set_LaunchTemplateId(self,LaunchTemplateId):
+		self.add_query_param('LaunchTemplateId',LaunchTemplateId)
+
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -76,6 +82,12 @@ class ModifyScalingGroupRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_LaunchTemplateVersion(self):
+		return self.get_query_params().get('LaunchTemplateVersion')
+
+	def set_LaunchTemplateVersion(self,LaunchTemplateVersion):
+		self.add_query_param('LaunchTemplateVersion',LaunchTemplateVersion)
 
 	def get_MaxSize(self):
 		return self.get_query_params().get('MaxSize')

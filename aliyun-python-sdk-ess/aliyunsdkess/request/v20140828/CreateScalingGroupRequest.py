@@ -35,6 +35,12 @@ class CreateScalingGroupRequest(RpcRequest):
 	def set_DBInstanceIds(self,DBInstanceIds):
 		self.add_query_param('DBInstanceIds',DBInstanceIds)
 
+	def get_LaunchTemplateId(self):
+		return self.get_query_params().get('LaunchTemplateId')
+
+	def set_LaunchTemplateId(self,LaunchTemplateId):
+		self.add_query_param('LaunchTemplateId',LaunchTemplateId)
+
 	def get_LoadBalancerIds(self):
 		return self.get_query_params().get('LoadBalancerIds')
 
@@ -84,6 +90,12 @@ class CreateScalingGroupRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_LaunchTemplateVersion(self):
+		return self.get_query_params().get('LaunchTemplateVersion')
+
+	def set_LaunchTemplateVersion(self,LaunchTemplateVersion):
+		self.add_query_param('LaunchTemplateVersion',LaunchTemplateVersion)
 
 	def get_VSwitchId(self):
 		return self.get_query_params().get('VSwitchId')
