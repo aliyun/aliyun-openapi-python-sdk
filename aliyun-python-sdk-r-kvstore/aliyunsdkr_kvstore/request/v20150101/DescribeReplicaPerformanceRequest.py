@@ -29,6 +29,12 @@ class DescribeReplicaPerformanceRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_DestinationDBInstanceId(self):
+		return self.get_query_params().get('DestinationDBInstanceId')
+
+	def set_DestinationDBInstanceId(self,DestinationDBInstanceId):
+		self.add_query_param('DestinationDBInstanceId',DestinationDBInstanceId)
+
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
