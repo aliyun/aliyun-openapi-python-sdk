@@ -23,12 +23,6 @@ class EnableScalingGroupRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ess', '2014-08-28', 'EnableScalingGroup','ess')
 
-	def get_InstanceId10(self):
-		return self.get_query_params().get('InstanceId.10')
-
-	def set_InstanceId10(self,InstanceId10):
-		self.add_query_param('InstanceId.10',InstanceId10)
-
 	def get_LoadBalancerWeight6(self):
 		return self.get_query_params().get('LoadBalancerWeight.6')
 
@@ -59,23 +53,11 @@ class EnableScalingGroupRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_InstanceId12(self):
-		return self.get_query_params().get('InstanceId.12')
-
-	def set_InstanceId12(self,InstanceId12):
-		self.add_query_param('InstanceId.12',InstanceId12)
-
 	def get_LoadBalancerWeight8(self):
 		return self.get_query_params().get('LoadBalancerWeight.8')
 
 	def set_LoadBalancerWeight8(self,LoadBalancerWeight8):
 		self.add_query_param('LoadBalancerWeight.8',LoadBalancerWeight8)
-
-	def get_InstanceId11(self):
-		return self.get_query_params().get('InstanceId.11')
-
-	def set_InstanceId11(self,InstanceId11):
-		self.add_query_param('InstanceId.11',InstanceId11)
 
 	def get_LoadBalancerWeight9(self):
 		return self.get_query_params().get('LoadBalancerWeight.9')
@@ -113,12 +95,6 @@ class EnableScalingGroupRequest(RpcRequest):
 	def set_LoadBalancerWeight16(self,LoadBalancerWeight16):
 		self.add_query_param('LoadBalancerWeight.16',LoadBalancerWeight16)
 
-	def get_ScalingGroupId(self):
-		return self.get_query_params().get('ScalingGroupId')
-
-	def set_ScalingGroupId(self,ScalingGroupId):
-		self.add_query_param('ScalingGroupId',ScalingGroupId)
-
 	def get_LoadBalancerWeight4(self):
 		return self.get_query_params().get('LoadBalancerWeight.4')
 
@@ -155,12 +131,6 @@ class EnableScalingGroupRequest(RpcRequest):
 	def set_LoadBalancerWeight1(self,LoadBalancerWeight1):
 		self.add_query_param('LoadBalancerWeight.1',LoadBalancerWeight1)
 
-	def get_InstanceId20(self):
-		return self.get_query_params().get('InstanceId.20')
-
-	def set_InstanceId20(self,InstanceId20):
-		self.add_query_param('InstanceId.20',InstanceId20)
-
 	def get_InstanceId1(self):
 		return self.get_query_params().get('InstanceId.1')
 
@@ -179,11 +149,11 @@ class EnableScalingGroupRequest(RpcRequest):
 	def set_InstanceId3(self,InstanceId3):
 		self.add_query_param('InstanceId.3',InstanceId3)
 
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
+	def get_LaunchTemplateId(self):
+		return self.get_query_params().get('LaunchTemplateId')
 
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+	def set_LaunchTemplateId(self,LaunchTemplateId):
+		self.add_query_param('LaunchTemplateId',LaunchTemplateId)
 
 	def get_InstanceId2(self):
 		return self.get_query_params().get('InstanceId.2')
@@ -202,12 +172,6 @@ class EnableScalingGroupRequest(RpcRequest):
 
 	def set_InstanceId4(self,InstanceId4):
 		self.add_query_param('InstanceId.4',InstanceId4)
-
-	def get_OwnerAccount(self):
-		return self.get_query_params().get('OwnerAccount')
-
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
 
 	def get_InstanceId7(self):
 		return self.get_query_params().get('InstanceId.7')
@@ -239,23 +203,11 @@ class EnableScalingGroupRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_InstanceId18(self):
-		return self.get_query_params().get('InstanceId.18')
-
-	def set_InstanceId18(self,InstanceId18):
-		self.add_query_param('InstanceId.18',InstanceId18)
-
 	def get_LoadBalancerWeight19(self):
 		return self.get_query_params().get('LoadBalancerWeight.19')
 
 	def set_LoadBalancerWeight19(self,LoadBalancerWeight19):
 		self.add_query_param('LoadBalancerWeight.19',LoadBalancerWeight19)
-
-	def get_InstanceId17(self):
-		return self.get_query_params().get('InstanceId.17')
-
-	def set_InstanceId17(self,InstanceId17):
-		self.add_query_param('InstanceId.17',InstanceId17)
 
 	def get_LoadBalancerWeight17(self):
 		return self.get_query_params().get('LoadBalancerWeight.17')
@@ -263,17 +215,77 @@ class EnableScalingGroupRequest(RpcRequest):
 	def set_LoadBalancerWeight17(self,LoadBalancerWeight17):
 		self.add_query_param('LoadBalancerWeight.17',LoadBalancerWeight17)
 
-	def get_InstanceId19(self):
-		return self.get_query_params().get('InstanceId.19')
-
-	def set_InstanceId19(self,InstanceId19):
-		self.add_query_param('InstanceId.19',InstanceId19)
-
 	def get_LoadBalancerWeight18(self):
 		return self.get_query_params().get('LoadBalancerWeight.18')
 
 	def set_LoadBalancerWeight18(self,LoadBalancerWeight18):
 		self.add_query_param('LoadBalancerWeight.18',LoadBalancerWeight18)
+
+	def get_InstanceId10(self):
+		return self.get_query_params().get('InstanceId.10')
+
+	def set_InstanceId10(self,InstanceId10):
+		self.add_query_param('InstanceId.10',InstanceId10)
+
+	def get_InstanceId12(self):
+		return self.get_query_params().get('InstanceId.12')
+
+	def set_InstanceId12(self,InstanceId12):
+		self.add_query_param('InstanceId.12',InstanceId12)
+
+	def get_InstanceId11(self):
+		return self.get_query_params().get('InstanceId.11')
+
+	def set_InstanceId11(self,InstanceId11):
+		self.add_query_param('InstanceId.11',InstanceId11)
+
+	def get_ScalingGroupId(self):
+		return self.get_query_params().get('ScalingGroupId')
+
+	def set_ScalingGroupId(self,ScalingGroupId):
+		self.add_query_param('ScalingGroupId',ScalingGroupId)
+
+	def get_InstanceId20(self):
+		return self.get_query_params().get('InstanceId.20')
+
+	def set_InstanceId20(self,InstanceId20):
+		self.add_query_param('InstanceId.20',InstanceId20)
+
+	def get_ResourceOwnerAccount(self):
+		return self.get_query_params().get('ResourceOwnerAccount')
+
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+
+	def get_OwnerAccount(self):
+		return self.get_query_params().get('OwnerAccount')
+
+	def set_OwnerAccount(self,OwnerAccount):
+		self.add_query_param('OwnerAccount',OwnerAccount)
+
+	def get_LaunchTemplateVersion(self):
+		return self.get_query_params().get('LaunchTemplateVersion')
+
+	def set_LaunchTemplateVersion(self,LaunchTemplateVersion):
+		self.add_query_param('LaunchTemplateVersion',LaunchTemplateVersion)
+
+	def get_InstanceId18(self):
+		return self.get_query_params().get('InstanceId.18')
+
+	def set_InstanceId18(self,InstanceId18):
+		self.add_query_param('InstanceId.18',InstanceId18)
+
+	def get_InstanceId17(self):
+		return self.get_query_params().get('InstanceId.17')
+
+	def set_InstanceId17(self,InstanceId17):
+		self.add_query_param('InstanceId.17',InstanceId17)
+
+	def get_InstanceId19(self):
+		return self.get_query_params().get('InstanceId.19')
+
+	def set_InstanceId19(self,InstanceId19):
+		self.add_query_param('InstanceId.19',InstanceId19)
 
 	def get_InstanceId14(self):
 		return self.get_query_params().get('InstanceId.14')
