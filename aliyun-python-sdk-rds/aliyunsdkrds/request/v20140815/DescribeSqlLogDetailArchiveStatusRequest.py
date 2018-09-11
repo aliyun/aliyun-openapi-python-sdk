@@ -18,10 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class DescribeReplicaPerformanceRequest(RpcRequest):
+class DescribeSqlLogDetailArchiveStatusRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'DescribeReplicaPerformance','rds')
+		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'DescribeSqlLogDetailArchiveStatus','rds')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -29,11 +29,11 @@ class DescribeReplicaPerformanceRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_DestinationDBInstanceId(self):
-		return self.get_query_params().get('DestinationDBInstanceId')
+	def get_SecurityToken(self):
+		return self.get_query_params().get('SecurityToken')
 
-	def set_DestinationDBInstanceId(self,DestinationDBInstanceId):
-		self.add_query_param('DestinationDBInstanceId',DestinationDBInstanceId)
+	def set_SecurityToken(self,SecurityToken):
+		self.add_query_param('SecurityToken',SecurityToken)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -47,17 +47,11 @@ class DescribeReplicaPerformanceRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
-	def get_EndTime(self):
-		return self.get_query_params().get('EndTime')
+	def get_DBInstanceId(self):
+		return self.get_query_params().get('DBInstanceId')
 
-	def set_EndTime(self,EndTime):
-		self.add_query_param('EndTime',EndTime)
-
-	def get_StartTime(self):
-		return self.get_query_params().get('StartTime')
-
-	def set_StartTime(self,StartTime):
-		self.add_query_param('StartTime',StartTime)
+	def set_DBInstanceId(self,DBInstanceId):
+		self.add_query_param('DBInstanceId',DBInstanceId)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
@@ -65,26 +59,14 @@ class DescribeReplicaPerformanceRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_SourceDBInstanceId(self):
-		return self.get_query_params().get('SourceDBInstanceId')
+	def get_ArchiveJobID(self):
+		return self.get_query_params().get('ArchiveJobID')
 
-	def set_SourceDBInstanceId(self,SourceDBInstanceId):
-		self.add_query_param('SourceDBInstanceId',SourceDBInstanceId)
+	def set_ArchiveJobID(self,ArchiveJobID):
+		self.add_query_param('ArchiveJobID',ArchiveJobID)
 
-	def get_SecurityToken(self):
-		return self.get_query_params().get('SecurityToken')
+	def get_OssTableName(self):
+		return self.get_query_params().get('OssTableName')
 
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)
-
-	def get_ReplicaId(self):
-		return self.get_query_params().get('ReplicaId')
-
-	def set_ReplicaId(self,ReplicaId):
-		self.add_query_param('ReplicaId',ReplicaId)
-
-	def get_Key(self):
-		return self.get_query_params().get('Key')
-
-	def set_Key(self,Key):
-		self.add_query_param('Key',Key)
+	def set_OssTableName(self,OssTableName):
+		self.add_query_param('OssTableName',OssTableName)

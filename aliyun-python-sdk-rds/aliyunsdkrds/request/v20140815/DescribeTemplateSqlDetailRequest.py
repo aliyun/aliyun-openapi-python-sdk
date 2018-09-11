@@ -18,16 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class ModifySecurityIpsRequest(RpcRequest):
+class DescribeTemplateSqlDetailRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'ModifySecurityIps','rds')
-
-	def get_DBInstanceIPArrayName(self):
-		return self.get_query_params().get('DBInstanceIPArrayName')
-
-	def set_DBInstanceIPArrayName(self,DBInstanceIPArrayName):
-		self.add_query_param('DBInstanceIPArrayName',DBInstanceIPArrayName)
+		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'DescribeTemplateSqlDetail','rds')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -35,23 +29,11 @@ class ModifySecurityIpsRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_ModifyMode(self):
-		return self.get_query_params().get('ModifyMode')
-
-	def set_ModifyMode(self,ModifyMode):
-		self.add_query_param('ModifyMode',ModifyMode)
-
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_ClientToken(self):
-		return self.get_query_params().get('ClientToken')
-
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
 
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
@@ -59,17 +41,23 @@ class ModifySecurityIpsRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
-	def get_SecurityIps(self):
-		return self.get_query_params().get('SecurityIps')
+	def get_MaxRecordsPerPage(self):
+		return self.get_query_params().get('MaxRecordsPerPage')
 
-	def set_SecurityIps(self,SecurityIps):
-		self.add_query_param('SecurityIps',SecurityIps)
+	def set_MaxRecordsPerPage(self,MaxRecordsPerPage):
+		self.add_query_param('MaxRecordsPerPage',MaxRecordsPerPage)
 
-	def get_SecurityGroupId(self):
-		return self.get_query_params().get('SecurityGroupId')
+	def get_EndTime(self):
+		return self.get_query_params().get('EndTime')
 
-	def set_SecurityGroupId(self,SecurityGroupId):
-		self.add_query_param('SecurityGroupId',SecurityGroupId)
+	def set_EndTime(self,EndTime):
+		self.add_query_param('EndTime',EndTime)
+
+	def get_StartTime(self):
+		return self.get_query_params().get('StartTime')
+
+	def set_StartTime(self,StartTime):
+		self.add_query_param('StartTime',StartTime)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
@@ -77,23 +65,29 @@ class ModifySecurityIpsRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_WhitelistNetworkType(self):
-		return self.get_query_params().get('WhitelistNetworkType')
+	def get_TemplateHash(self):
+		return self.get_query_params().get('TemplateHash')
 
-	def set_WhitelistNetworkType(self,WhitelistNetworkType):
-		self.add_query_param('WhitelistNetworkType',WhitelistNetworkType)
+	def set_TemplateHash(self,TemplateHash):
+		self.add_query_param('TemplateHash',TemplateHash)
 
-	def get_DBInstanceIPArrayAttribute(self):
-		return self.get_query_params().get('DBInstanceIPArrayAttribute')
+	def get_SecurityToken(self):
+		return self.get_query_params().get('SecurityToken')
 
-	def set_DBInstanceIPArrayAttribute(self,DBInstanceIPArrayAttribute):
-		self.add_query_param('DBInstanceIPArrayAttribute',DBInstanceIPArrayAttribute)
+	def set_SecurityToken(self,SecurityToken):
+		self.add_query_param('SecurityToken',SecurityToken)
 
-	def get_SecurityIPType(self):
-		return self.get_query_params().get('SecurityIPType')
+	def get_PageNumbers(self):
+		return self.get_query_params().get('PageNumbers')
 
-	def set_SecurityIPType(self,SecurityIPType):
-		self.add_query_param('SecurityIPType',SecurityIPType)
+	def set_PageNumbers(self,PageNumbers):
+		self.add_query_param('PageNumbers',PageNumbers)
+
+	def get_PagingId(self):
+		return self.get_query_params().get('PagingId')
+
+	def set_PagingId(self,PagingId):
+		self.add_query_param('PagingId',PagingId)
 
 	def get_DBInstanceId(self):
 		return self.get_query_params().get('DBInstanceId')
