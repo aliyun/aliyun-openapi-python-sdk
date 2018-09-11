@@ -53,6 +53,12 @@ class ModifyBackupPolicyRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
+	def get_LogBackupFrequency(self):
+		return self.get_query_params().get('LogBackupFrequency')
+
+	def set_LogBackupFrequency(self,LogBackupFrequency):
+		self.add_query_param('LogBackupFrequency',LogBackupFrequency)
+
 	def get_BackupLog(self):
 		return self.get_query_params().get('BackupLog')
 

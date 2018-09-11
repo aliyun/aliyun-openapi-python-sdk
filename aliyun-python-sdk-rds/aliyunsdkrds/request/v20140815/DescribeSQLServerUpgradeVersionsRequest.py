@@ -18,10 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class DescribeReplicaUsageRequest(RpcRequest):
+class DescribeSQLServerUpgradeVersionsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'DescribeReplicaUsage','rds')
+		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'DescribeSQLServerUpgradeVersions','rds')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -29,41 +29,29 @@ class DescribeReplicaUsageRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_SourceDBInstanceId(self):
-		return self.get_query_params().get('SourceDBInstanceId')
-
-	def set_SourceDBInstanceId(self,SourceDBInstanceId):
-		self.add_query_param('SourceDBInstanceId',SourceDBInstanceId)
-
-	def get_DestinationDBInstanceId(self):
-		return self.get_query_params().get('DestinationDBInstanceId')
-
-	def set_DestinationDBInstanceId(self,DestinationDBInstanceId):
-		self.add_query_param('DestinationDBInstanceId',DestinationDBInstanceId)
-
-	def get_SecurityToken(self):
-		return self.get_query_params().get('SecurityToken')
-
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)
-
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
-	def get_OwnerAccount(self):
-		return self.get_query_params().get('OwnerAccount')
+	def get_ClientToken(self):
+		return self.get_query_params().get('ClientToken')
 
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
+	def set_ClientToken(self,ClientToken):
+		self.add_query_param('ClientToken',ClientToken)
 
-	def get_ReplicaId(self):
-		return self.get_query_params().get('ReplicaId')
+	def get_DBInstanceId(self):
+		return self.get_query_params().get('DBInstanceId')
 
-	def set_ReplicaId(self,ReplicaId):
-		self.add_query_param('ReplicaId',ReplicaId)
+	def set_DBInstanceId(self,DBInstanceId):
+		self.add_query_param('DBInstanceId',DBInstanceId)
+
+	def get_EngineVersion(self):
+		return self.get_query_params().get('EngineVersion')
+
+	def set_EngineVersion(self,EngineVersion):
+		self.add_query_param('EngineVersion',EngineVersion)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')

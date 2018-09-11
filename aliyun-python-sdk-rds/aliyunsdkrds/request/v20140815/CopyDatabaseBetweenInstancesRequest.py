@@ -65,6 +65,12 @@ class CopyDatabaseBetweenInstancesRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
+	def get_SyncUserPrivilege(self):
+		return self.get_query_params().get('SyncUserPrivilege')
+
+	def set_SyncUserPrivilege(self,SyncUserPrivilege):
+		self.add_query_param('SyncUserPrivilege',SyncUserPrivilege)
+
 	def get_DbNames(self):
 		return self.get_query_params().get('DbNames')
 
