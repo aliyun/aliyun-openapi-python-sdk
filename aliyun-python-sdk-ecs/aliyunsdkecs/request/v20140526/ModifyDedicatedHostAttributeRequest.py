@@ -18,10 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class DescribeDiskMonitorDataRequest(RpcRequest):
+class ModifyDedicatedHostAttributeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'DescribeDiskMonitorData','ecs')
+		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'ModifyDedicatedHostAttribute','ecs')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -29,23 +29,23 @@ class DescribeDiskMonitorDataRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_StartTime(self):
-		return self.get_query_params().get('StartTime')
+	def get_Description(self):
+		return self.get_query_params().get('Description')
 
-	def set_StartTime(self,StartTime):
-		self.add_query_param('StartTime',StartTime)
+	def set_Description(self,Description):
+		self.add_query_param('Description',Description)
 
-	def get_DiskId(self):
-		return self.get_query_params().get('DiskId')
+	def get_ActionOnMaintenance(self):
+		return self.get_query_params().get('ActionOnMaintenance')
 
-	def set_DiskId(self,DiskId):
-		self.add_query_param('DiskId',DiskId)
+	def set_ActionOnMaintenance(self,ActionOnMaintenance):
+		self.add_query_param('ActionOnMaintenance',ActionOnMaintenance)
 
-	def get_Period(self):
-		return self.get_query_params().get('Period')
+	def get_DedicatedHostName(self):
+		return self.get_query_params().get('DedicatedHostName')
 
-	def set_Period(self,Period):
-		self.add_query_param('Period',Period)
+	def set_DedicatedHostName(self,DedicatedHostName):
+		self.add_query_param('DedicatedHostName',DedicatedHostName)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -59,14 +59,26 @@ class DescribeDiskMonitorDataRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
-	def get_EndTime(self):
-		return self.get_query_params().get('EndTime')
+	def get_DedicatedHostId(self):
+		return self.get_query_params().get('DedicatedHostId')
 
-	def set_EndTime(self,EndTime):
-		self.add_query_param('EndTime',EndTime)
+	def set_DedicatedHostId(self,DedicatedHostId):
+		self.add_query_param('DedicatedHostId',DedicatedHostId)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_NetworkAttributesSlbUdpTimeout(self):
+		return self.get_query_params().get('NetworkAttributes.SlbUdpTimeout')
+
+	def set_NetworkAttributesSlbUdpTimeout(self,NetworkAttributesSlbUdpTimeout):
+		self.add_query_param('NetworkAttributes.SlbUdpTimeout',NetworkAttributesSlbUdpTimeout)
+
+	def get_NetworkAttributesUdpTimeout(self):
+		return self.get_query_params().get('NetworkAttributes.UdpTimeout')
+
+	def set_NetworkAttributesUdpTimeout(self,NetworkAttributesUdpTimeout):
+		self.add_query_param('NetworkAttributes.UdpTimeout',NetworkAttributesUdpTimeout)
