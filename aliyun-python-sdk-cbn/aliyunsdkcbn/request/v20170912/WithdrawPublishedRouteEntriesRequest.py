@@ -18,16 +18,16 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class ModifyCenAttributeRequest(RpcRequest):
+class WithdrawPublishedRouteEntriesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cbn', '2017-09-12', 'ModifyCenAttribute','cbn')
+		RpcRequest.__init__(self, 'Cbn', '2017-09-12', 'WithdrawPublishedRouteEntries','cbn')
 
-	def get_ProtectionLevel(self):
-		return self.get_query_params().get('ProtectionLevel')
+	def get_ChildInstanceId(self):
+		return self.get_query_params().get('ChildInstanceId')
 
-	def set_ProtectionLevel(self,ProtectionLevel):
-		self.add_query_param('ProtectionLevel',ProtectionLevel)
+	def set_ChildInstanceId(self,ChildInstanceId):
+		self.add_query_param('ChildInstanceId',ChildInstanceId)
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -47,26 +47,26 @@ class ModifyCenAttributeRequest(RpcRequest):
 	def set_CenId(self,CenId):
 		self.add_query_param('CenId',CenId)
 
-	def get_OwnerAccount(self):
-		return self.get_query_params().get('OwnerAccount')
+	def get_DestinationCidrBlock(self):
+		return self.get_query_params().get('DestinationCidrBlock')
 
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
+	def set_DestinationCidrBlock(self,DestinationCidrBlock):
+		self.add_query_param('DestinationCidrBlock',DestinationCidrBlock)
 
-	def get_Name(self):
-		return self.get_query_params().get('Name')
+	def get_ChildInstanceType(self):
+		return self.get_query_params().get('ChildInstanceType')
 
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)
+	def set_ChildInstanceType(self,ChildInstanceType):
+		self.add_query_param('ChildInstanceType',ChildInstanceType)
 
-	def get_Description(self):
-		return self.get_query_params().get('Description')
+	def get_ChildInstanceRouteTableId(self):
+		return self.get_query_params().get('ChildInstanceRouteTableId')
 
-	def set_Description(self,Description):
-		self.add_query_param('Description',Description)
+	def set_ChildInstanceRouteTableId(self,ChildInstanceRouteTableId):
+		self.add_query_param('ChildInstanceRouteTableId',ChildInstanceRouteTableId)
 
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
+	def get_ChildInstanceRegionId(self):
+		return self.get_query_params().get('ChildInstanceRegionId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
+	def set_ChildInstanceRegionId(self,ChildInstanceRegionId):
+		self.add_query_param('ChildInstanceRegionId',ChildInstanceRegionId)
