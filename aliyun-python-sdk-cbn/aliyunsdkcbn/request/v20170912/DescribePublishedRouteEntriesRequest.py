@@ -18,10 +18,16 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class DescribeCenAttachedChildInstancesRequest(RpcRequest):
+class DescribePublishedRouteEntriesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cbn', '2017-09-12', 'DescribeCenAttachedChildInstances','cbn')
+		RpcRequest.__init__(self, 'Cbn', '2017-09-12', 'DescribePublishedRouteEntries','cbn')
+
+	def get_ChildInstanceId(self):
+		return self.get_query_params().get('ChildInstanceId')
+
+	def set_ChildInstanceId(self,ChildInstanceId):
+		self.add_query_param('ChildInstanceId',ChildInstanceId)
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -41,11 +47,11 @@ class DescribeCenAttachedChildInstancesRequest(RpcRequest):
 	def set_CenId(self,CenId):
 		self.add_query_param('CenId',CenId)
 
-	def get_OwnerAccount(self):
-		return self.get_query_params().get('OwnerAccount')
+	def get_DestinationCidrBlock(self):
+		return self.get_query_params().get('DestinationCidrBlock')
 
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
+	def set_DestinationCidrBlock(self,DestinationCidrBlock):
+		self.add_query_param('DestinationCidrBlock',DestinationCidrBlock)
 
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
@@ -53,20 +59,26 @@ class DescribeCenAttachedChildInstancesRequest(RpcRequest):
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
 
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
 	def get_ChildInstanceType(self):
 		return self.get_query_params().get('ChildInstanceType')
 
 	def set_ChildInstanceType(self,ChildInstanceType):
 		self.add_query_param('ChildInstanceType',ChildInstanceType)
 
+	def get_ChildInstanceRouteTableId(self):
+		return self.get_query_params().get('ChildInstanceRouteTableId')
+
+	def set_ChildInstanceRouteTableId(self,ChildInstanceRouteTableId):
+		self.add_query_param('ChildInstanceRouteTableId',ChildInstanceRouteTableId)
+
 	def get_PageNumber(self):
 		return self.get_query_params().get('PageNumber')
 
 	def set_PageNumber(self,PageNumber):
 		self.add_query_param('PageNumber',PageNumber)
+
+	def get_ChildInstanceRegionId(self):
+		return self.get_query_params().get('ChildInstanceRegionId')
+
+	def set_ChildInstanceRegionId(self,ChildInstanceRegionId):
+		self.add_query_param('ChildInstanceRegionId',ChildInstanceRegionId)
