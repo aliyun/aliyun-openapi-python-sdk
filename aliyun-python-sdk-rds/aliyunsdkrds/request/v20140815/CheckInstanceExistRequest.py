@@ -18,10 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class CheckDBInstancesRequest(RpcRequest):
+class CheckInstanceExistRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'CheckDBInstances','rds')
+		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'CheckInstanceExist','rds')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
