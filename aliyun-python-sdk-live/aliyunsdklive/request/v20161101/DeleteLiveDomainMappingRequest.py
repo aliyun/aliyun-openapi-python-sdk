@@ -18,16 +18,28 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class DescribeLiveStreamsNotifyUrlConfigRequest(RpcRequest):
+class DeleteLiveDomainMappingRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'live', '2016-11-01', 'DescribeLiveStreamsNotifyUrlConfig','live')
+		RpcRequest.__init__(self, 'live', '2016-11-01', 'DeleteLiveDomainMapping','live')
 
-	def get_DomainName(self):
-		return self.get_query_params().get('DomainName')
+	def get_PullDomain(self):
+		return self.get_query_params().get('PullDomain')
 
-	def set_DomainName(self,DomainName):
-		self.add_query_param('DomainName',DomainName)
+	def set_PullDomain(self,PullDomain):
+		self.add_query_param('PullDomain',PullDomain)
+
+	def get_SecurityToken(self):
+		return self.get_query_params().get('SecurityToken')
+
+	def set_SecurityToken(self,SecurityToken):
+		self.add_query_param('SecurityToken',SecurityToken)
+
+	def get_PushDomain(self):
+		return self.get_query_params().get('PushDomain')
+
+	def set_PushDomain(self,PushDomain):
+		self.add_query_param('PushDomain',PushDomain)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')

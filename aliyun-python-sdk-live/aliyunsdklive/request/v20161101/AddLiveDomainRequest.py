@@ -23,6 +23,12 @@ class AddLiveDomainRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'live', '2016-11-01', 'AddLiveDomain','live')
 
+	def get_TopLevelDomain(self):
+		return self.get_query_params().get('TopLevelDomain')
+
+	def set_TopLevelDomain(self,TopLevelDomain):
+		self.add_query_param('TopLevelDomain',TopLevelDomain)
+
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
 

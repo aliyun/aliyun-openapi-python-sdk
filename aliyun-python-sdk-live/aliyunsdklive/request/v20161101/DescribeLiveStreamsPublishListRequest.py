@@ -41,6 +41,12 @@ class DescribeLiveStreamsPublishListRequest(RpcRequest):
 	def set_EndTime(self,EndTime):
 		self.add_query_param('EndTime',EndTime)
 
+	def get_OrderBy(self):
+		return self.get_query_params().get('OrderBy')
+
+	def set_OrderBy(self,OrderBy):
+		self.add_query_param('OrderBy',OrderBy)
+
 	def get_StartTime(self):
 		return self.get_query_params().get('StartTime')
 
@@ -64,12 +70,6 @@ class DescribeLiveStreamsPublishListRequest(RpcRequest):
 
 	def set_AppName(self,AppName):
 		self.add_query_param('AppName',AppName)
-
-	def get_SecurityToken(self):
-		return self.get_query_params().get('SecurityToken')
-
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)
 
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')

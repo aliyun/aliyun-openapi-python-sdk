@@ -18,10 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class ForbidLiveStreamRequest(RpcRequest):
+class SetLiveLazyPullStreamInfoConfigRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'live', '2016-11-01', 'ForbidLiveStream','live')
+		RpcRequest.__init__(self, 'live', '2016-11-01', 'SetLiveLazyPullStreamInfoConfig','live')
 
 	def get_AppName(self):
 		return self.get_query_params().get('AppName')
@@ -29,29 +29,17 @@ class ForbidLiveStreamRequest(RpcRequest):
 	def set_AppName(self,AppName):
 		self.add_query_param('AppName',AppName)
 
-	def get_StreamName(self):
-		return self.get_query_params().get('StreamName')
+	def get_PullAuthKey(self):
+		return self.get_query_params().get('PullAuthKey')
 
-	def set_StreamName(self,StreamName):
-		self.add_query_param('StreamName',StreamName)
+	def set_PullAuthKey(self,PullAuthKey):
+		self.add_query_param('PullAuthKey',PullAuthKey)
 
-	def get_ControlStreamAction(self):
-		return self.get_query_params().get('ControlStreamAction')
+	def get_PullAuthType(self):
+		return self.get_query_params().get('PullAuthType')
 
-	def set_ControlStreamAction(self,ControlStreamAction):
-		self.add_query_param('ControlStreamAction',ControlStreamAction)
-
-	def get_ResumeTime(self):
-		return self.get_query_params().get('ResumeTime')
-
-	def set_ResumeTime(self,ResumeTime):
-		self.add_query_param('ResumeTime',ResumeTime)
-
-	def get_LiveStreamType(self):
-		return self.get_query_params().get('LiveStreamType')
-
-	def set_LiveStreamType(self,LiveStreamType):
-		self.add_query_param('LiveStreamType',LiveStreamType)
+	def set_PullAuthType(self,PullAuthType):
+		self.add_query_param('PullAuthType',PullAuthType)
 
 	def get_DomainName(self):
 		return self.get_query_params().get('DomainName')
@@ -59,14 +47,26 @@ class ForbidLiveStreamRequest(RpcRequest):
 	def set_DomainName(self,DomainName):
 		self.add_query_param('DomainName',DomainName)
 
+	def get_PullDomainName(self):
+		return self.get_query_params().get('PullDomainName')
+
+	def set_PullDomainName(self,PullDomainName):
+		self.add_query_param('PullDomainName',PullDomainName)
+
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_Oneshot(self):
-		return self.get_query_params().get('Oneshot')
+	def get_PullAppName(self):
+		return self.get_query_params().get('PullAppName')
 
-	def set_Oneshot(self,Oneshot):
-		self.add_query_param('Oneshot',Oneshot)
+	def set_PullAppName(self,PullAppName):
+		self.add_query_param('PullAppName',PullAppName)
+
+	def get_PullProtocol(self):
+		return self.get_query_params().get('PullProtocol')
+
+	def set_PullProtocol(self,PullProtocol):
+		self.add_query_param('PullProtocol',PullProtocol)
