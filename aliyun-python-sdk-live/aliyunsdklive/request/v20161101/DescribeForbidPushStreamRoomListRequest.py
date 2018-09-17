@@ -18,19 +18,37 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class DescribeLiveStreamsNotifyUrlConfigRequest(RpcRequest):
+class DescribeForbidPushStreamRoomListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'live', '2016-11-01', 'DescribeLiveStreamsNotifyUrlConfig','live')
+		RpcRequest.__init__(self, 'live', '2016-11-01', 'DescribeForbidPushStreamRoomList','live')
 
-	def get_DomainName(self):
-		return self.get_query_params().get('DomainName')
+	def get_PageNum(self):
+		return self.get_query_params().get('PageNum')
 
-	def set_DomainName(self,DomainName):
-		self.add_query_param('DomainName',DomainName)
+	def set_PageNum(self,PageNum):
+		self.add_query_param('PageNum',PageNum)
+
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
+
+	def get_Order(self):
+		return self.get_query_params().get('Order')
+
+	def set_Order(self,Order):
+		self.add_query_param('Order',Order)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_AppId(self):
+		return self.get_query_params().get('AppId')
+
+	def set_AppId(self,AppId):
+		self.add_query_param('AppId',AppId)

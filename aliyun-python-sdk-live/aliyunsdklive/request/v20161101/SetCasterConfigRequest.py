@@ -35,6 +35,12 @@ class SetCasterConfigRequest(RpcRequest):
 	def set_CasterId(self,CasterId):
 		self.add_query_param('CasterId',CasterId)
 
+	def get_ChannelEnable(self):
+		return self.get_query_params().get('ChannelEnable')
+
+	def set_ChannelEnable(self,ChannelEnable):
+		self.add_query_param('ChannelEnable',ChannelEnable)
+
 	def get_DomainName(self):
 		return self.get_query_params().get('DomainName')
 

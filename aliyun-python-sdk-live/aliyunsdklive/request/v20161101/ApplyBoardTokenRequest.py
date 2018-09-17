@@ -18,19 +18,31 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class DescribeLiveStreamsNotifyUrlConfigRequest(RpcRequest):
+class ApplyBoardTokenRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'live', '2016-11-01', 'DescribeLiveStreamsNotifyUrlConfig','live')
+		RpcRequest.__init__(self, 'live', '2016-11-01', 'ApplyBoardToken','live')
 
-	def get_DomainName(self):
-		return self.get_query_params().get('DomainName')
+	def get_BoardId(self):
+		return self.get_query_params().get('BoardId')
 
-	def set_DomainName(self,DomainName):
-		self.add_query_param('DomainName',DomainName)
+	def set_BoardId(self,BoardId):
+		self.add_query_param('BoardId',BoardId)
+
+	def get_AppUid(self):
+		return self.get_query_params().get('AppUid')
+
+	def set_AppUid(self,AppUid):
+		self.add_query_param('AppUid',AppUid)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_AppId(self):
+		return self.get_query_params().get('AppId')
+
+	def set_AppId(self,AppId):
+		self.add_query_param('AppId',AppId)

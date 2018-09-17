@@ -23,29 +23,11 @@ class AddCasterVideoResourceRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'live', '2016-11-01', 'AddCasterVideoResource','live')
 
-	def get_BeginOffset(self):
-		return self.get_query_params().get('BeginOffset')
-
-	def set_BeginOffset(self,BeginOffset):
-		self.add_query_param('BeginOffset',BeginOffset)
-
 	def get_VodUrl(self):
 		return self.get_query_params().get('VodUrl')
 
 	def set_VodUrl(self,VodUrl):
 		self.add_query_param('VodUrl',VodUrl)
-
-	def get_LiveStreamUrl(self):
-		return self.get_query_params().get('LiveStreamUrl')
-
-	def set_LiveStreamUrl(self,LiveStreamUrl):
-		self.add_query_param('LiveStreamUrl',LiveStreamUrl)
-
-	def get_LocationId(self):
-		return self.get_query_params().get('LocationId')
-
-	def set_LocationId(self,LocationId):
-		self.add_query_param('LocationId',LocationId)
 
 	def get_CasterId(self):
 		return self.get_query_params().get('CasterId')
@@ -59,18 +41,6 @@ class AddCasterVideoResourceRequest(RpcRequest):
 	def set_EndOffset(self,EndOffset):
 		self.add_query_param('EndOffset',EndOffset)
 
-	def get_ResourceName(self):
-		return self.get_query_params().get('ResourceName')
-
-	def set_ResourceName(self,ResourceName):
-		self.add_query_param('ResourceName',ResourceName)
-
-	def get_RepeatNum(self):
-		return self.get_query_params().get('RepeatNum')
-
-	def set_RepeatNum(self,RepeatNum):
-		self.add_query_param('RepeatNum',RepeatNum)
-
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
@@ -82,3 +52,39 @@ class AddCasterVideoResourceRequest(RpcRequest):
 
 	def set_MaterialId(self,MaterialId):
 		self.add_query_param('MaterialId',MaterialId)
+
+	def get_BeginOffset(self):
+		return self.get_query_params().get('BeginOffset')
+
+	def set_BeginOffset(self,BeginOffset):
+		self.add_query_param('BeginOffset',BeginOffset)
+
+	def get_LiveStreamUrl(self):
+		return self.get_query_params().get('LiveStreamUrl')
+
+	def set_LiveStreamUrl(self,LiveStreamUrl):
+		self.add_query_param('LiveStreamUrl',LiveStreamUrl)
+
+	def get_LocationId(self):
+		return self.get_query_params().get('LocationId')
+
+	def set_LocationId(self,LocationId):
+		self.add_query_param('LocationId',LocationId)
+
+	def get_PtsCallbackInterval(self):
+		return self.get_query_params().get('PtsCallbackInterval')
+
+	def set_PtsCallbackInterval(self,PtsCallbackInterval):
+		self.add_query_param('PtsCallbackInterval',PtsCallbackInterval)
+
+	def get_ResourceName(self):
+		return self.get_query_params().get('ResourceName')
+
+	def set_ResourceName(self,ResourceName):
+		self.add_query_param('ResourceName',ResourceName)
+
+	def get_RepeatNum(self):
+		return self.get_query_params().get('RepeatNum')
+
+	def set_RepeatNum(self,RepeatNum):
+		self.add_query_param('RepeatNum',RepeatNum)
