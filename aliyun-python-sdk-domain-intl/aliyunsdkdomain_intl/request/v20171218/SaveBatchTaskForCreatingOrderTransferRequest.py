@@ -28,14 +28,14 @@ class SaveBatchTaskForCreatingOrderTransferRequest(RpcRequest):
 
 	def set_OrderTransferParams(self,OrderTransferParams):
 		for i in range(len(OrderTransferParams)):	
-			if OrderTransferParams[i].get('DomainName') is not None:
-				self.add_query_param('OrderTransferParam.' + str(i + 1) + '.DomainName' , OrderTransferParams[i].get('DomainName'))
-			if OrderTransferParams[i].get('AuthorizationCode') is not None:
-				self.add_query_param('OrderTransferParam.' + str(i + 1) + '.AuthorizationCode' , OrderTransferParams[i].get('AuthorizationCode'))
-			if OrderTransferParams[i].get('RegistrantProfileId') is not None:
-				self.add_query_param('OrderTransferParam.' + str(i + 1) + '.RegistrantProfileId' , OrderTransferParams[i].get('RegistrantProfileId'))
 			if OrderTransferParams[i].get('PermitPremiumTransfer') is not None:
 				self.add_query_param('OrderTransferParam.' + str(i + 1) + '.PermitPremiumTransfer' , OrderTransferParams[i].get('PermitPremiumTransfer'))
+			if OrderTransferParams[i].get('AuthorizationCode') is not None:
+				self.add_query_param('OrderTransferParam.' + str(i + 1) + '.AuthorizationCode' , OrderTransferParams[i].get('AuthorizationCode'))
+			if OrderTransferParams[i].get('DomainName') is not None:
+				self.add_query_param('OrderTransferParam.' + str(i + 1) + '.DomainName' , OrderTransferParams[i].get('DomainName'))
+			if OrderTransferParams[i].get('RegistrantProfileId') is not None:
+				self.add_query_param('OrderTransferParam.' + str(i + 1) + '.RegistrantProfileId' , OrderTransferParams[i].get('RegistrantProfileId'))
 
 
 	def get_UserClientIp(self):

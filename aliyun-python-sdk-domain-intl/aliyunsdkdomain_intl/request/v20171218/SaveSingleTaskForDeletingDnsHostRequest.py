@@ -18,16 +18,30 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class CheckDomainRequest(RpcRequest):
+class SaveSingleTaskForDeletingDnsHostRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Domain-intl', '2017-12-18', 'CheckDomain','domain')
+		RpcRequest.__init__(self, 'Domain-intl', '2017-12-18', 'SaveSingleTaskForDeletingDnsHost','domain')
 
-	def get_DomainName(self):
-		return self.get_query_params().get('DomainName')
+	def get_InstanceId(self):
+		return self.get_query_params().get('InstanceId')
 
-	def set_DomainName(self,DomainName):
-		self.add_query_param('DomainName',DomainName)
+	def set_InstanceId(self,InstanceId):
+		self.add_query_param('InstanceId',InstanceId)
+
+	def get_Ips(self):
+		return self.get_query_params().get('Ips')
+
+	def set_Ips(self,Ips):
+		for i in range(len(Ips)):	
+			if Ips[i] is not None:
+				self.add_query_param('Ip.' + str(i + 1) , Ips[i]);
+
+	def get_DnsName(self):
+		return self.get_query_params().get('DnsName')
+
+	def set_DnsName(self,DnsName):
+		self.add_query_param('DnsName',DnsName)
 
 	def get_UserClientIp(self):
 		return self.get_query_params().get('UserClientIp')

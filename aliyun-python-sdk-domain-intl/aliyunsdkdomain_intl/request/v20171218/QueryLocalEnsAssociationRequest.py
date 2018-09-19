@@ -18,22 +18,22 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class CheckDomainRequest(RpcRequest):
+class QueryLocalEnsAssociationRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Domain-intl', '2017-12-18', 'CheckDomain','domain')
-
-	def get_DomainName(self):
-		return self.get_query_params().get('DomainName')
-
-	def set_DomainName(self,DomainName):
-		self.add_query_param('DomainName',DomainName)
+		RpcRequest.__init__(self, 'Domain-intl', '2017-12-18', 'QueryLocalEnsAssociation','domain')
 
 	def get_UserClientIp(self):
 		return self.get_query_params().get('UserClientIp')
 
 	def set_UserClientIp(self,UserClientIp):
 		self.add_query_param('UserClientIp',UserClientIp)
+
+	def get_DomainName(self):
+		return self.get_query_params().get('DomainName')
+
+	def set_DomainName(self,DomainName):
+		self.add_query_param('DomainName',DomainName)
 
 	def get_Lang(self):
 		return self.get_query_params().get('Lang')
