@@ -28,10 +28,10 @@ class SaveBatchTaskForCreatingOrderRedeemRequest(RpcRequest):
 
 	def set_OrderRedeemParams(self,OrderRedeemParams):
 		for i in range(len(OrderRedeemParams)):	
-			if OrderRedeemParams[i].get('DomainName') is not None:
-				self.add_query_param('OrderRedeemParam.' + str(i + 1) + '.DomainName' , OrderRedeemParams[i].get('DomainName'))
 			if OrderRedeemParams[i].get('CurrentExpirationDate') is not None:
 				self.add_query_param('OrderRedeemParam.' + str(i + 1) + '.CurrentExpirationDate' , OrderRedeemParams[i].get('CurrentExpirationDate'))
+			if OrderRedeemParams[i].get('DomainName') is not None:
+				self.add_query_param('OrderRedeemParam.' + str(i + 1) + '.DomainName' , OrderRedeemParams[i].get('DomainName'))
 
 
 	def get_UserClientIp(self):

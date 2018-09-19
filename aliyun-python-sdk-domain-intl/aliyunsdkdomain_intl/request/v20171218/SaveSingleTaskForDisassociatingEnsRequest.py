@@ -18,10 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class CheckDomainRequest(RpcRequest):
+class SaveSingleTaskForDisassociatingEnsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Domain-intl', '2017-12-18', 'CheckDomain','domain')
+		RpcRequest.__init__(self, 'Domain-intl', '2017-12-18', 'SaveSingleTaskForDisassociatingEns','domain')
 
 	def get_DomainName(self):
 		return self.get_query_params().get('DomainName')
