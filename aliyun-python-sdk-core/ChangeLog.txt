@@ -1,3 +1,6 @@
+2018-09-21 Version: 2.9.0
+1, Fix endpoint logic bug
+
 2018-08-29 Version: 2.8.7
 1, Update location service endpoint
 

@@ -17,28 +17,26 @@
 # specific language governing permissions and limitations
 # under the License.
 
-# coding=utf-8
+from aliyunsdkcore.request import RpcRequest
+class DescribeEndpointsRequest(RpcRequest):
 
-"""
-Region&Endpoint provider module.
+	def __init__(self):
+		RpcRequest.__init__(self, 'Location', '2015-06-12', 'DescribeEndpoints')
 
-Created on 6/12/2015
+	def get_ServiceCode(self):
+		return self.get_query_params().get('ServiceCode')
 
-@author: alex
+	def set_ServiceCode(self,ServiceCode):
+		self.add_query_param('ServiceCode',ServiceCode)
 
-modified by wenyang@2018-03-14:
-    reconstruction the smelly codes and keep compatibility
-"""
+	def get_Id(self):
+		return self.get_query_params().get('Id')
 
-from aliyunsdkcore.endpoint.default_endpoint_resolver import DefaultEndpointResolver
+	def set_Id(self,Id):
+		self.add_query_param('Id',Id)
 
+	def get_Type(self):
+		return self.get_query_params().get('Type')
 
-# WARNING: Deprecated Functions!
-# same as modify_point
-def add_endpoint(product_name, region_id, end_point):
-    modify_point(product_name, region_id, end_point)
-
-
-# WARNING: Deprecated Functions!
-def modify_point(product_name, region_id, end_point):
-    DefaultEndpointResolver.predefined_endpoint_resolver.put_endpoint_entry(region_id, product_name, end_point)
+	def set_Type(self,Type):
+		self.add_query_param('Type',Type)
