@@ -106,6 +106,7 @@ class AcsRequest:
         self._location_service_code = location_service_code
         self._location_endpoint_type = location_endpoint_type
         self.add_header('x-sdk-invoke-type', 'normal')
+        self.endpoint = None
 
     def add_query_param(self, k, v):
         self._params[k] = v
@@ -232,6 +233,9 @@ class AcsRequest:
     @abc.abstractmethod
     def get_signed_header(self, region_id, ak, secret):
         pass
+
+    def set_endpoint(self, endpoint):
+        self.endpoint = endpoint
 
 
 class RpcRequest(AcsRequest):
@@ -528,7 +532,7 @@ class CommonRequest(AcsRequest):
         super(CommonRequest, self).__init__(product)
 
         self.request = None
-        self._domain = domain
+        self.endpoint = domain
         self._version = version
         self._action_name = action_name
         self._uri_pattern = uri_pattern
@@ -551,10 +555,10 @@ class CommonRequest(AcsRequest):
         self._path_params[k] = v
 
     def set_domain(self, domain):
-        self._domain = domain
+        self.endpoint = domain
 
     def get_domain(self):
-        return self._domain
+        return self.endpoint
 
     def set_version(self, version):
         self._version = version
@@ -587,7 +591,7 @@ class CommonRequest(AcsRequest):
         if not self._action_name and not self._uri_pattern:
             raise exceptions.ClientException(error_code.SDK_INVALID_PARAMS,
                                              'At least one of [action] and [uri_pattern] has a value')
-        if not self._domain and not self._product:
+        if not self.endpoint and not self._product:
             raise exceptions.ClientException(error_code.SDK_INVALID_PARAMS,
                                              'At least one of [domain] and [product_name] has a value')
 
