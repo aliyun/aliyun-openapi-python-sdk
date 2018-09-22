@@ -32,7 +32,7 @@
             <Product><ProductName>Sms</ProductName><DomainName>sms.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Jaq</ProductName><DomainName>jaq.aliyuncs.com</DomainName></Product>
             <Product><ProductName>HPC</ProductName><DomainName>hpc.aliyuncs.com</DomainName></Product>
-            <Product><ProductName>Location</ProductName><DomainName>location.aliyuncs.com</DomainName></Product>
+            <Product><ProductName>Location</ProductName><DomainName>location-readonly.aliyuncs.com</DomainName></Product>
             <Product><ProductName>ChargingService</ProductName><DomainName>chargingservice.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Msg</ProductName><DomainName>msg-inner.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Commondriver</ProductName><DomainName>common.driver.aliyuncs.com</DomainName></Product>
@@ -125,7 +125,7 @@
             <Product><ProductName>Jaq</ProductName><DomainName>jaq.aliyuncs.com</DomainName></Product>
             <Product><ProductName>CS</ProductName><DomainName>cs.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Kms</ProductName><DomainName>kms.cn-hongkong.aliyuncs.com</DomainName></Product>
-            <Product><ProductName>Location</ProductName><DomainName>location.aliyuncs.com</DomainName></Product>
+            <Product><ProductName>Location</ProductName><DomainName>location-readonly.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Msg</ProductName><DomainName>msg-inner.aliyuncs.com</DomainName></Product>
             <Product><ProductName>ChargingService</ProductName><DomainName>chargingservice.aliyuncs.com</DomainName></Product>
             <Product><ProductName>R-kvstore</ProductName><DomainName>r-kvstore-cn-hangzhou.aliyuncs.com</DomainName></Product>
@@ -232,7 +232,7 @@
             <Product><ProductName>Sms</ProductName><DomainName>sms.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Drds</ProductName><DomainName>drds.aliyuncs.com</DomainName></Product>
             <Product><ProductName>HPC</ProductName><DomainName>hpc.aliyuncs.com</DomainName></Product>
-            <Product><ProductName>Location</ProductName><DomainName>location.aliyuncs.com</DomainName></Product>
+            <Product><ProductName>Location</ProductName><DomainName>location-readonly.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Msg</ProductName><DomainName>msg-inner.aliyuncs.com</DomainName></Product>
             <Product><ProductName>ChargingService</ProductName><DomainName>chargingservice.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Ocs</ProductName><DomainName>m-kvstore.aliyuncs.com</DomainName></Product>
@@ -337,7 +337,7 @@
             <Product><ProductName>Drds</ProductName><DomainName>drds.aliyuncs.com</DomainName></Product>
             <Product><ProductName>CS</ProductName><DomainName>cs.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Kms</ProductName><DomainName>kms.cn-shanghai.aliyuncs.com</DomainName></Product>
-            <Product><ProductName>Location</ProductName><DomainName>location.aliyuncs.com</DomainName></Product>
+            <Product><ProductName>Location</ProductName><DomainName>location-readonly.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Msg</ProductName><DomainName>msg-inner.aliyuncs.com</DomainName></Product>
             <Product><ProductName>ChargingService</ProductName><DomainName>chargingservice.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Ocs</ProductName><DomainName>m-kvstore.aliyuncs.com</DomainName></Product>
@@ -416,7 +416,7 @@
             <Product><ProductName>Sms</ProductName><DomainName>sms.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Sales</ProductName><DomainName>sales.cn-hangzhou.aliyuncs.com</DomainName></Product>
             <Product><ProductName>HPC</ProductName><DomainName>hpc.aliyuncs.com</DomainName></Product>
-            <Product><ProductName>Location</ProductName><DomainName>location.aliyuncs.com</DomainName></Product>
+            <Product><ProductName>Location</ProductName><DomainName>location-readonly.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Msg</ProductName><DomainName>msg-inner.aliyuncs.com</DomainName></Product>
             <Product><ProductName>ChargingService</ProductName><DomainName>chargingservice.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Ocs</ProductName><DomainName>m-kvstore.aliyuncs.com</DomainName></Product>
@@ -499,7 +499,7 @@
             <Product><ProductName>Jaq</ProductName><DomainName>jaq.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Push</ProductName><DomainName>cloudpush.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Alidns</ProductName><DomainName>alidns.aliyuncs.com</DomainName></Product>
-            <Product><ProductName>Location</ProductName><DomainName>location.aliyuncs.com</DomainName></Product>
+            <Product><ProductName>Location</ProductName><DomainName>location-readonly.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Msg</ProductName><DomainName>msg-inner.aliyuncs.com</DomainName></Product>
             <Product><ProductName>ChargingService</ProductName><DomainName>chargingservice.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Ocs</ProductName><DomainName>m-kvstore.aliyuncs.com</DomainName></Product>
@@ -572,7 +572,7 @@
             <Product><ProductName>Sms</ProductName><DomainName>sms.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Drds</ProductName><DomainName>drds.aliyuncs.com</DomainName></Product>
             <Product><ProductName>HPC</ProductName><DomainName>hpc.aliyuncs.com</DomainName></Product>
-            <Product><ProductName>Location</ProductName><DomainName>location.aliyuncs.com</DomainName></Product>
+            <Product><ProductName>Location</ProductName><DomainName>location-readonly.aliyuncs.com</DomainName></Product>
             <Product><ProductName>ChargingService</ProductName><DomainName>chargingservice.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Msg</ProductName><DomainName>msg-inner.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Commondriver</ProductName><DomainName>common.driver.aliyuncs.com</DomainName></Product>
@@ -658,7 +658,7 @@
             <Product><ProductName>Push</ProductName><DomainName>cloudpush.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Live</ProductName><DomainName>live.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Kms</ProductName><DomainName>kms.cn-hangzhou.aliyuncs.com</DomainName></Product>
-            <Product><ProductName>Location</ProductName><DomainName>location.aliyuncs.com</DomainName></Product>
+            <Product><ProductName>Location</ProductName><DomainName>location-readonly.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Hpc</ProductName><DomainName>hpc.aliyuncs.com</DomainName></Product>
             <Product><ProductName>ChargingService</ProductName><DomainName>chargingservice.aliyuncs.com</DomainName></Product>
             <Product><ProductName>R-kvstore</ProductName><DomainName>r-kvstore-cn-hangzhou.aliyuncs.com</DomainName></Product>
@@ -735,7 +735,7 @@
             <Product><ProductName>Sms</ProductName><DomainName>sms.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Drds</ProductName><DomainName>drds.aliyuncs.com</DomainName></Product>
             <Product><ProductName>CS</ProductName><DomainName>cs.aliyuncs.com</DomainName></Product>
-            <Product><ProductName>Location</ProductName><DomainName>location.aliyuncs.com</DomainName></Product>
+            <Product><ProductName>Location</ProductName><DomainName>location-readonly.aliyuncs.com</DomainName></Product>
             <Product><ProductName>ChargingService</ProductName><DomainName>chargingservice.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Msg</ProductName><DomainName>msg-inner.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Ess</ProductName><DomainName>ess.aliyuncs.com</DomainName></Product>
@@ -821,7 +821,7 @@
             <Product><ProductName>Jaq</ProductName><DomainName>jaq.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Push</ProductName><DomainName>cloudpush.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Kms</ProductName><DomainName>kms.cn-shenzhen.aliyuncs.com</DomainName></Product>
-            <Product><ProductName>Location</ProductName><DomainName>location.aliyuncs.com</DomainName></Product>
+            <Product><ProductName>Location</ProductName><DomainName>location-readonly.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Ocs</ProductName><DomainName>m-kvstore.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Alert</ProductName><DomainName>alert.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Drc</ProductName><DomainName>drc.aliyuncs.com</DomainName></Product>
@@ -899,7 +899,7 @@
             <Product><ProductName>Sms</ProductName><DomainName>sms.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Jaq</ProductName><DomainName>jaq.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Dts</ProductName><DomainName>dts.aliyuncs.com</DomainName></Product>
-            <Product><ProductName>Location</ProductName><DomainName>location.aliyuncs.com</DomainName></Product>
+            <Product><ProductName>Location</ProductName><DomainName>location-readonly.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Ess</ProductName><DomainName>ess.aliyuncs.com</DomainName></Product>
             <Product><ProductName>R-kvstore</ProductName><DomainName>r-kvstore-cn-hangzhou.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Alert</ProductName><DomainName>alert.aliyuncs.com</DomainName></Product>
@@ -1007,7 +1007,7 @@
             <Product><ProductName>Sales</ProductName><DomainName>sales.cn-hangzhou.aliyuncs.com</DomainName></Product>
             <Product><ProductName>HPC</ProductName><DomainName>hpc.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Oas</ProductName><DomainName>cn-beijing.oas.aliyuncs.com</DomainName></Product>
-            <Product><ProductName>Location</ProductName><DomainName>location.aliyuncs.com</DomainName></Product>
+            <Product><ProductName>Location</ProductName><DomainName>location-readonly.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Ons</ProductName><DomainName>ons.aliyuncs.com</DomainName></Product>
             <Product><ProductName>ChargingService</ProductName><DomainName>chargingservice.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Hpc</ProductName><DomainName>hpc.aliyuncs.com</DomainName></Product>
@@ -1084,7 +1084,7 @@
             <Product><ProductName>Sms</ProductName><DomainName>sms.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Sales</ProductName><DomainName>sales.cn-hangzhou.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Dts</ProductName><DomainName>dts.aliyuncs.com</DomainName></Product>
-            <Product><ProductName>Location</ProductName><DomainName>location.aliyuncs.com</DomainName></Product>
+            <Product><ProductName>Location</ProductName><DomainName>location-readonly.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Msg</ProductName><DomainName>msg-inner.aliyuncs.com</DomainName></Product>
             <Product><ProductName>ChargingService</ProductName><DomainName>chargingservice.aliyuncs.com</DomainName></Product>
             <Product><ProductName>R-kvstore</ProductName><DomainName>r-kvstore-cn-hangzhou.aliyuncs.com</DomainName></Product>
@@ -1170,7 +1170,7 @@
             <Product><ProductName>Sms</ProductName><DomainName>sms.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Jaq</ProductName><DomainName>jaq.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Dts</ProductName><DomainName>dts.aliyuncs.com</DomainName></Product>
-            <Product><ProductName>Location</ProductName><DomainName>location.aliyuncs.com</DomainName></Product>
+            <Product><ProductName>Location</ProductName><DomainName>location-readonly.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Msg</ProductName><DomainName>msg-inner.aliyuncs.com</DomainName></Product>
             <Product><ProductName>ChargingService</ProductName><DomainName>chargingservice.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Ocs</ProductName><DomainName>m-kvstore.aliyuncs.com</DomainName></Product>
@@ -1260,7 +1260,7 @@
             <Product><ProductName>Drds</ProductName><DomainName>drds.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Dts</ProductName><DomainName>dts.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Kms</ProductName><DomainName>kms.ap-southeast-1.aliyuncs.com</DomainName></Product>
-            <Product><ProductName>Location</ProductName><DomainName>location.aliyuncs.com</DomainName></Product>
+            <Product><ProductName>Location</ProductName><DomainName>location-readonly.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Msg</ProductName><DomainName>msg-inner.aliyuncs.com</DomainName></Product>
             <Product><ProductName>ChargingService</ProductName><DomainName>chargingservice.aliyuncs.com</DomainName></Product>
             <Product><ProductName>R-kvstore</ProductName><DomainName>r-kvstore-cn-hangzhou.aliyuncs.com</DomainName></Product>
