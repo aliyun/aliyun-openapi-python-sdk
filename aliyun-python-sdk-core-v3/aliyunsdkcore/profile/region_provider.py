@@ -19,13 +19,6 @@
 
 # coding=utf-8
 
-import os
-
-from aliyunsdkcore.acs_exception import error_code, error_msg
-from aliyunsdkcore.acs_exception.exceptions import ClientException
-from xml.dom.minidom import parse
-from ..profile import location_service
-
 """
 Region&Endpoint provider module.
 
@@ -35,19 +28,17 @@ Created on 6/12/2015
 
 modified by wenyang@2018-03-14:
     reconstruction the smelly codes and keep compatibility
-
 """
 
+from aliyunsdkcore.endpoint.default_endpoint_resolver import DefaultEndpointResolver
 
-user_config_endpoints = dict()
 
-
+# WARNING: Deprecated Functions!
+# same as modify_point
 def add_endpoint(product_name, region_id, end_point):
     modify_point(product_name, region_id, end_point)
 
 
+# WARNING: Deprecated Functions!
 def modify_point(product_name, region_id, end_point):
-    if product_name not in user_config_endpoints:
-        user_config_endpoints[product_name] = dict()
-    product_data = user_config_endpoints[product_name]
-    product_data[region_id] = end_point
+    DefaultEndpointResolver.predefined_endpoint_resolver.put_endpoint_entry(region_id, product_name, end_point)

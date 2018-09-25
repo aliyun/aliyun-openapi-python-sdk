@@ -27,8 +27,6 @@ try:
 except ImportError:
     import simplejson as json
 
-from aliyunsdkcore.profile import region_provider
-from aliyunsdkcore.profile.location_service import LocationService
 from aliyunsdkcore.acs_exception.exceptions import ClientException
 from aliyunsdkcore.acs_exception.exceptions import ServerException
 from aliyunsdkcore.acs_exception import error_code, error_msg
@@ -37,8 +35,9 @@ from aliyunsdkcore.request import AcsRequest
 from aliyunsdkcore.http import format_type
 from aliyunsdkcore.auth.signers.signer_factory import SignerFactory
 from aliyunsdkcore.request import CommonRequest
-from aliyunsdkcore.profile.endpoint import endpoint_resolver
 
+from aliyunsdkcore.endpoint.resolver_endpoint_request import ResolveEndpointRequest
+from aliyunsdkcore.endpoint.default_endpoint_resolver import DefaultEndpointResolver
 
 """
 Acs default client module.
@@ -85,7 +84,6 @@ class AcsClient:
         self.__region_id = region_id
         self.__user_agent = user_agent
         self._port = port
-        self._location_service = LocationService(self, timeout=timeout)
         self._timeout = timeout
         # if true, do_action() will throw a ClientException that contains URL
         self._url_test_flag = False
@@ -98,6 +96,7 @@ class AcsClient:
             'credential': credential,
         }
         self._signer = SignerFactory.get_signer(credential, region_id, self.implementation_of_do_action, debug)
+        self._endpoint_resolver = DefaultEndpointResolver(self)
 
     def get_region_id(self):
         """
@@ -168,10 +167,7 @@ class AcsClient:
         return self._port
 
     def get_location_service(self):
-        return self._location_service
-
-    def _resolve_endpoint(self, request):
-        return endpoint_resolver.resolve_endpoint(self.__region_id, request, self._location_service)
+        return None
 
     def _make_http_response(self, endpoint, request, specific_signer=None):
         body_params = request.get_body_params()
@@ -213,7 +209,6 @@ class AcsClient:
                 error_code.SDK_INVALID_REQUEST,
                 error_msg.get_msg('SDK_INVALID_REQUEST'))
 
-
         # add core version
         core_version = __import__('aliyunsdkcore').__version__
         request.add_header('x-sdk-core-version', core_version)
@@ -221,7 +216,11 @@ class AcsClient:
         if isinstance(request, CommonRequest):
             request.trans_to_acs_request()
 
-        endpoint = self._resolve_endpoint(request)
+        if request.endpoint:
+            endpoint = request.endpoint
+        else:
+            endpoint = self._resolve_endpoint(request)
+
         http_response = self._make_http_response(endpoint, request, signer)
         if self._url_test_flag:
             raise ClientException("URLTestFlagIsSet", http_response.get_url())
@@ -279,6 +278,20 @@ class AcsClient:
 
         return body
 
+    def _resolve_endpoint(self, request):
+        resolve_request = ResolveEndpointRequest(
+            self.__region_id, 
+            request.get_product(),
+            request.get_location_service_code(),
+            request.get_location_endpoint_type(),
+        )
+        endpoint = self._endpoint_resolver.resolve(resolve_request)
+        if endpoint.endswith("endpoint-test.exception.com"):
+            # For endpoint testability, if the endpoint is xxxx.endpoint-test.special.com
+            # throw a client exception with this endpoint
+            raise ClientException(error_code.SDK_ENDPOINT_TESTABILITY, endpoint)
+        return endpoint
+
     def do_action(self, acs_request):
         warnings.warn(
             "do_action() method is deprecated, please use do_action_with_exception() instead.",
@@ -289,3 +302,6 @@ class AcsClient:
     def get_response(self, acs_request):
         status, headers, body = self.implementation_of_do_action(acs_request)
         return status, headers, body
+    
+    def add_endpoint(self, region_id, product_code, endpoint):
+        self._endpoint_resolver.put_endpoint_entry(region_id, product_code, endpoint)
