@@ -17,17 +17,26 @@
 # specific language governing permissions and limitations
 # under the License.
 
-# coding=utf-8
+from aliyunsdkcore.request import RpcRequest
+class DescribeEndpointsRequest(RpcRequest):
 
-"""
-SDK exception error type module.
+	def __init__(self):
+		RpcRequest.__init__(self, 'Location', '2015-06-12', 'DescribeEndpoints')
 
-Created on 6/15/2015
+	def get_ServiceCode(self):
+		return self.get_query_params().get('ServiceCode')
 
-@author: alex
-"""
+	def set_ServiceCode(self,ServiceCode):
+		self.add_query_param('ServiceCode',ServiceCode)
 
-ERROR_TYPE_CLIENT = 'Client'
-ERROR_TYPE_SERVER = 'Server'
-ERROR_TYPE_THROTTLING = 'Throttling'
-ERROR_TYPE_UNKNOWN = 'Unknown'
+	def get_Id(self):
+		return self.get_query_params().get('Id')
+
+	def set_Id(self,Id):
+		self.add_query_param('Id',Id)
+
+	def get_Type(self):
+		return self.get_query_params().get('Type')
+
+	def set_Type(self,Type):
+		self.add_query_param('Type',Type)
