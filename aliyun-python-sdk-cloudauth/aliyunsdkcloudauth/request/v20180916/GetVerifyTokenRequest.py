@@ -18,11 +18,17 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class GetStatusRequest(RpcRequest):
+class GetVerifyTokenRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cloudauth', '2018-08-07', 'GetStatus','cloudauth')
+		RpcRequest.__init__(self, 'Cloudauth', '2018-09-16', 'GetVerifyToken','cloudauth')
 		self.set_protocol_type('https');
+
+	def get_UserData(self):
+		return self.get_query_params().get('UserData')
+
+	def set_UserData(self,UserData):
+		self.add_query_param('UserData',UserData)
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -41,6 +47,18 @@ class GetStatusRequest(RpcRequest):
 
 	def set_SourceIp(self,SourceIp):
 		self.add_query_param('SourceIp',SourceIp)
+
+	def get_Binding(self):
+		return self.get_body_params().get('Binding')
+
+	def set_Binding(self,Binding):
+		self.add_body_params('Binding', Binding)
+
+	def get_VerifyConfigs(self):
+		return self.get_query_params().get('VerifyConfigs')
+
+	def set_VerifyConfigs(self,VerifyConfigs):
+		self.add_query_param('VerifyConfigs',VerifyConfigs)
 
 	def get_TicketId(self):
 		return self.get_query_params().get('TicketId')

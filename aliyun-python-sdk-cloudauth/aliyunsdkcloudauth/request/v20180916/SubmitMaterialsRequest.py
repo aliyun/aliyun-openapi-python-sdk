@@ -18,17 +18,12 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class CompareFacesRequest(RpcRequest):
+class SubmitMaterialsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cloudauth', '2018-08-07', 'CompareFaces','cloudauth')
+		RpcRequest.__init__(self, 'Cloudauth', '2018-09-16', 'SubmitMaterials','cloudauth')
 		self.set_protocol_type('https');
-
-	def get_SourceImageType(self):
-		return self.get_query_params().get('SourceImageType')
-
-	def set_SourceImageType(self,SourceImageType):
-		self.add_query_param('SourceImageType',SourceImageType)
+		self.set_method('POST')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -42,20 +37,19 @@ class CompareFacesRequest(RpcRequest):
 	def set_SourceIp(self,SourceIp):
 		self.add_query_param('SourceIp',SourceIp)
 
-	def get_TargetImageType(self):
-		return self.get_query_params().get('TargetImageType')
+	def get_Materials(self):
+		return self.get_body_params().get('Materials')
 
-	def set_TargetImageType(self,TargetImageType):
-		self.add_query_param('TargetImageType',TargetImageType)
+	def set_Materials(self,Materials):
+		for i in range(len(Materials)):	
+			if Materials[i].get('MaterialType') is not None:
+				self.add_body_params('Material.' + str(i + 1) + '.MaterialType' , Materials[i].get('MaterialType'))
+			if Materials[i].get('Value') is not None:
+				self.add_body_params('Material.' + str(i + 1) + '.Value' , Materials[i].get('Value'))
 
-	def get_SourceImageValue(self):
-		return self.get_query_params().get('SourceImageValue')
 
-	def set_SourceImageValue(self,SourceImageValue):
-		self.add_query_param('SourceImageValue',SourceImageValue)
+	def get_VerifyToken(self):
+		return self.get_body_params().get('VerifyToken')
 
-	def get_TargetImageValue(self):
-		return self.get_query_params().get('TargetImageValue')
-
-	def set_TargetImageValue(self,TargetImageValue):
-		self.add_query_param('TargetImageValue',TargetImageValue)
+	def set_VerifyToken(self,VerifyToken):
+		self.add_body_params('VerifyToken', VerifyToken)
