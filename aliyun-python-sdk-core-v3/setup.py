@@ -65,6 +65,7 @@ setup(
     url=URL,
     keywords=["aliyun", "sdk", "core"],
     packages=find_packages(exclude=["tests*"]),
+    package_data={'aliyunsdkcore' : ['endpoint/*.json']},
     include_package_data=True,
     python_requires='>=3',
     platforms='any',

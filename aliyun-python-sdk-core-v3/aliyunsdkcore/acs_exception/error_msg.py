@@ -27,6 +27,18 @@ Created on 6/15/2015
 @author: alex jiang
 """
 
+SDK_ENDPOINT_MANAGEMENT_DOC_HTML = "https://www.alibabacloud.com/help/doc-detail/92074.htm"
+
+INVALID_REGION_ID = "No such region '{region_id}'. Please check your region ID."
+
+ENDPOINT_NO_REGION = "No endpoint in the region '{region_id}' for product '{product_code}'. \n" +\
+                     "You can set an endpoint for your request explicitly.{more}\n" +\
+                     "See " + SDK_ENDPOINT_MANAGEMENT_DOC_HTML + "\n"
+
+ENDPOINT_NO_PRODUCT = "No endpoint for product '{product_code}'. \n" +\
+                      "Please check the product code, or set an endpoint for your request explicitly.\n" +\
+                      "See " + SDK_ENDPOINT_MANAGEMENT_DOC_HTML + "\n"
+
 __dict = dict(
     SDK_INVALID_REGION_ID='Can not find endpoint to access.',
     SDK_SERVER_UNREACHABLE='Unable to connect server',
