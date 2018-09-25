@@ -66,7 +66,7 @@ setup(
     keywords=["aliyun", "sdk", "core"],
     packages=find_packages(exclude=["tests*"]),
     package_data={'aliyunsdkcore' : ['endpoint/*.json']},
-    include_package_data=True,
+    # include_package_data=True,   # FIXME this line must be deleted to enable package_data to take effect, why?
     python_requires='>=3',
     platforms='any',
     install_requires=requires,
