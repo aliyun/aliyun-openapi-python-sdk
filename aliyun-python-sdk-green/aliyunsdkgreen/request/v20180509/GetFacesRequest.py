@@ -22,7 +22,7 @@ class GetFacesRequest(RoaRequest):
 
 	def __init__(self):
 		RoaRequest.__init__(self, 'Green', '2018-05-09', 'GetFaces','green')
-		self.set_uri_pattern('/green/sface/getFaces')
+		self.set_uri_pattern('/green/sface/faces')
 		self.set_method('POST')
 
 	def get_ClientInfo(self):

@@ -18,11 +18,11 @@
 # under the License.
 
 from aliyunsdkcore.request import RoaRequest
-class DeleteFacesRequest(RoaRequest):
+class UploadCredentialsRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'Green', '2018-05-09', 'DeleteFaces','green')
-		self.set_uri_pattern('/green/sface/face/delete')
+		RoaRequest.__init__(self, 'Green', '2018-05-09', 'UploadCredentials','green')
+		self.set_uri_pattern('/green/credentials/uploadcredentials')
 		self.set_method('POST')
 
 	def get_ClientInfo(self):
