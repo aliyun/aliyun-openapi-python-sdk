@@ -18,11 +18,11 @@
 # under the License.
 
 from aliyunsdkcore.request import RoaRequest
-class DeleteFacesRequest(RoaRequest):
+class AddVideoDnaRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'Green', '2018-05-09', 'DeleteFaces','green')
-		self.set_uri_pattern('/green/sface/face/delete')
+		RoaRequest.__init__(self, 'Green', '2018-05-09', 'AddVideoDna','green')
+		self.set_uri_pattern('/green/video/dna/add')
 		self.set_method('POST')
 
 	def get_ClientInfo(self):
