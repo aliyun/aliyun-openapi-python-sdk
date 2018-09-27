@@ -83,6 +83,12 @@ class CreateClusterRequest(RpcRequest):
 	def set_EcsOrderComputeInstanceType(self,EcsOrderComputeInstanceType):
 		self.add_query_param('EcsOrder.Compute.InstanceType',EcsOrderComputeInstanceType)
 
+	def get_JobQueue(self):
+		return self.get_query_params().get('JobQueue')
+
+	def set_JobQueue(self,JobQueue):
+		self.add_query_param('JobQueue',JobQueue)
+
 	def get_ImageOwnerAlias(self):
 		return self.get_query_params().get('ImageOwnerAlias')
 

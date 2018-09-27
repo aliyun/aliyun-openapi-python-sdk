@@ -83,6 +83,21 @@ class SetAutoScaleConfigRequest(RpcRequest):
 	def set_ShrinkIntervalInMinutes(self,ShrinkIntervalInMinutes):
 		self.add_query_param('ShrinkIntervalInMinutes',ShrinkIntervalInMinutes)
 
+	def get_Queuess(self):
+		return self.get_query_params().get('Queuess')
+
+	def set_Queuess(self,Queuess):
+		for i in range(len(Queuess)):	
+			if Queuess[i].get('SpotStrategy') is not None:
+				self.add_query_param('Queues.' + str(i + 1) + '.SpotStrategy' , Queuess[i].get('SpotStrategy'))
+			if Queuess[i].get('QueueName') is not None:
+				self.add_query_param('Queues.' + str(i + 1) + '.QueueName' , Queuess[i].get('QueueName'))
+			if Queuess[i].get('InstanceType') is not None:
+				self.add_query_param('Queues.' + str(i + 1) + '.InstanceType' , Queuess[i].get('InstanceType'))
+			if Queuess[i].get('SpotPriceLimit') is not None:
+				self.add_query_param('Queues.' + str(i + 1) + '.SpotPriceLimit' , Queuess[i].get('SpotPriceLimit'))
+
+
 	def get_ExtraNodesGrowRatio(self):
 		return self.get_query_params().get('ExtraNodesGrowRatio')
 
