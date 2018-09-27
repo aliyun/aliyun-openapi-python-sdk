@@ -77,6 +77,12 @@ class SubmitJobRequest(RpcRequest):
 	def set_CommandLine(self,CommandLine):
 		self.add_query_param('CommandLine',CommandLine)
 
+	def get_JobQueue(self):
+		return self.get_query_params().get('JobQueue')
+
+	def set_JobQueue(self,JobQueue):
+		self.add_query_param('JobQueue',JobQueue)
+
 	def get_ArrayRequest(self):
 		return self.get_query_params().get('ArrayRequest')
 
