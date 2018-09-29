@@ -47,12 +47,6 @@ class AddCdnDomainRequest(RpcRequest):
 	def set_DomainName(self,DomainName):
 		self.add_query_param('DomainName',DomainName)
 
-	def get_LiveType(self):
-		return self.get_query_params().get('LiveType')
-
-	def set_LiveType(self,LiveType):
-		self.add_query_param('LiveType',LiveType)
-
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 

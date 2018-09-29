@@ -18,28 +18,22 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class DescribeLiveStreamTranscodeStreamNumRequest(RpcRequest):
+class SetDomainGreenManagerConfigRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'DescribeLiveStreamTranscodeStreamNum')
+		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'SetDomainGreenManagerConfig')
 
-	def get_PullDomain(self):
-		return self.get_query_params().get('PullDomain')
+	def get_Enable(self):
+		return self.get_query_params().get('Enable')
 
-	def set_PullDomain(self,PullDomain):
-		self.add_query_param('PullDomain',PullDomain)
+	def set_Enable(self,Enable):
+		self.add_query_param('Enable',Enable)
 
-	def get_SecurityToken(self):
-		return self.get_query_params().get('SecurityToken')
+	def get_DomainName(self):
+		return self.get_query_params().get('DomainName')
 
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)
-
-	def get_PushDomain(self):
-		return self.get_query_params().get('PushDomain')
-
-	def set_PushDomain(self,PushDomain):
-		self.add_query_param('PushDomain',PushDomain)
+	def set_DomainName(self,DomainName):
+		self.add_query_param('DomainName',DomainName)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
