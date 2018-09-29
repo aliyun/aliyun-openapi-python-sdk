@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class DescribeDcdnRefreshTasksRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'dcdn', '2018-01-15', 'DescribeDcdnRefreshTasks','dcdn')
+		RpcRequest.__init__(self, 'dcdn', '2018-01-15', 'DescribeDcdnRefreshTasks')
 
 	def get_ObjectPath(self):
 		return self.get_query_params().get('ObjectPath')
