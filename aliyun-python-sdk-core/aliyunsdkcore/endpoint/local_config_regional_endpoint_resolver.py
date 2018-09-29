@@ -31,12 +31,12 @@ class LocalConfigRegionalEndpointResolver(EndpointResolverBase):
         EndpointResolverBase.__init__(self)
         self._valid_region_ids = []
         self._location_code_mapping = dict()
+        self._regional_endpoint_data = dict()
         if config_json_str:
             obj = json.loads(config_json_str)
         else:
             obj = self._read_from_endpoints_json()
         self._init_local_config(obj)
-        self._regional_endpoint_data = dict()
 
     def _init_local_config(self, obj):
         self._init_regional_endpoint_data(obj)
@@ -90,7 +90,7 @@ class LocalConfigRegionalEndpointResolver(EndpointResolverBase):
         code = self._get_normalized_product_code(product_code_lower)
         if code in self._regional_endpoint_data:
             region_ids = self._regional_endpoint_data.get(code).keys()
-            return region_ids
+            return sorted(region_ids)
         return None
 
     def is_product_code_valid(self, request):
