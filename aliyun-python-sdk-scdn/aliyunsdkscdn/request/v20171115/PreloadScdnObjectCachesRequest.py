@@ -23,6 +23,12 @@ class PreloadScdnObjectCachesRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'scdn', '2017-11-15', 'PreloadScdnObjectCaches')
 
+	def get_Area(self):
+		return self.get_query_params().get('Area')
+
+	def set_Area(self,Area):
+		self.add_query_param('Area',Area)
+
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
 
