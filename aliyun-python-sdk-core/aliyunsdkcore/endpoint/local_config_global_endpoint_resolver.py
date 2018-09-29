@@ -25,6 +25,7 @@ class LocalConfigGlobalEndpointResolver(LocalConfigRegionalEndpointResolver):
     def _init_local_config(self, obj):
         self._init_global_endpoint_data(obj)
         self._init_region_ids(obj)
+        self._init_location_code_mapping(obj)
 
     def _init_global_endpoint_data(self, obj):
         if "global_endpoints" not in obj:
