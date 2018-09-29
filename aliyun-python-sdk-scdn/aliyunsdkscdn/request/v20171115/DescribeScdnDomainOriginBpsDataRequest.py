@@ -29,12 +29,6 @@ class DescribeScdnDomainOriginBpsDataRequest(RpcRequest):
 	def set_StartTime(self,StartTime):
 		self.add_query_param('StartTime',StartTime)
 
-	def get_SecurityToken(self):
-		return self.get_query_params().get('SecurityToken')
-
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)
-
 	def get_DomainName(self):
 		return self.get_query_params().get('DomainName')
 
@@ -52,12 +46,6 @@ class DescribeScdnDomainOriginBpsDataRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
-
-	def get_Version(self):
-		return self.get_query_params().get('Version')
-
-	def set_Version(self,Version):
-		self.add_query_param('Version',Version)
 
 	def get_Interval(self):
 		return self.get_query_params().get('Interval')

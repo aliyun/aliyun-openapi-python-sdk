@@ -18,10 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class DescribeScdnDomainOriginTrafficDataRequest(RpcRequest):
+class DescribeScdnDomainIspDataRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'scdn', '2017-11-15', 'DescribeScdnDomainOriginTrafficData')
+		RpcRequest.__init__(self, 'scdn', '2017-11-15', 'DescribeScdnDomainIspData')
 
 	def get_StartTime(self):
 		return self.get_query_params().get('StartTime')
@@ -46,9 +46,3 @@ class DescribeScdnDomainOriginTrafficDataRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
-
-	def get_Interval(self):
-		return self.get_query_params().get('Interval')
-
-	def set_Interval(self,Interval):
-		self.add_query_param('Interval',Interval)
