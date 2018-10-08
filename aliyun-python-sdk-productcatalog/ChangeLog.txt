@@ -1,0 +1,3 @@
+2018-10-08 Version: 1.0.0
+1, This first release of ProductCatalog
+
