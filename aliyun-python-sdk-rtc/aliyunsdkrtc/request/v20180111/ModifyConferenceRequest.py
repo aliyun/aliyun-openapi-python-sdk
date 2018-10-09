@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class ModifyConferenceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'rtc', '2018-01-11', 'ModifyConference','rtc')
+		RpcRequest.__init__(self, 'rtc', '2018-01-11', 'ModifyConference')
 
 	def get_StartTime(self):
 		return self.get_query_params().get('StartTime')

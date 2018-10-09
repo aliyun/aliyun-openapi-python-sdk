@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class CreateConferenceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'rtc', '2018-01-11', 'CreateConference','rtc')
+		RpcRequest.__init__(self, 'rtc', '2018-01-11', 'CreateConference')
 
 	def get_ClientToken(self):
 		return self.get_query_params().get('ClientToken')

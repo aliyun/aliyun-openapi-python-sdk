@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class CreateChannelRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'rtc', '2018-01-11', 'CreateChannel','rtc')
+		RpcRequest.__init__(self, 'rtc', '2018-01-11', 'CreateChannel')
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
