@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class ExecuteRequestRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'saf', '2017-03-31', 'ExecuteRequest')
+		RpcRequest.__init__(self, 'saf', '2018-09-19', 'ExecuteRequest','saf')
 		self.set_protocol_type('https');
 
 	def get_ServiceParameters(self):
