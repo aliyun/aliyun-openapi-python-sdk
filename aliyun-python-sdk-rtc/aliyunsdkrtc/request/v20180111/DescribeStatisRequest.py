@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class DescribeStatisRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'rtc', '2018-01-11', 'DescribeStatis','rtc')
+		RpcRequest.__init__(self, 'rtc', '2018-01-11', 'DescribeStatis')
 
 	def get_SortType(self):
 		return self.get_query_params().get('SortType')

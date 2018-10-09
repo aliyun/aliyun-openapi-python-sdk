@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class StartAppRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'rtc', '2018-01-11', 'StartApp','rtc')
+		RpcRequest.__init__(self, 'rtc', '2018-01-11', 'StartApp')
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')

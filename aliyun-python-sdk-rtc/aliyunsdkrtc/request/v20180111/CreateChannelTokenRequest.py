@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class CreateChannelTokenRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'rtc', '2018-01-11', 'CreateChannelToken','rtc')
+		RpcRequest.__init__(self, 'rtc', '2018-01-11', 'CreateChannelToken')
 
 	def get_SessionId(self):
 		return self.get_query_params().get('SessionId')
