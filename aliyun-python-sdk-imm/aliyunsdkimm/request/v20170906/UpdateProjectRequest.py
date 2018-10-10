@@ -18,22 +18,16 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class PutProjectRequest(RpcRequest):
+class UpdateProjectRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'imm', '2017-09-06', 'PutProject','imm')
+		RpcRequest.__init__(self, 'imm', '2017-09-06', 'UpdateProject','imm')
 
-	def get_CU(self):
-		return self.get_query_params().get('CU')
+	def get_NewServiceRole(self):
+		return self.get_query_params().get('NewServiceRole')
 
-	def set_CU(self,CU):
-		self.add_query_param('CU',CU)
-
-	def get_ServiceRole(self):
-		return self.get_query_params().get('ServiceRole')
-
-	def set_ServiceRole(self,ServiceRole):
-		self.add_query_param('ServiceRole',ServiceRole)
+	def set_NewServiceRole(self,NewServiceRole):
+		self.add_query_param('NewServiceRole',NewServiceRole)
 
 	def get_Project(self):
 		return self.get_query_params().get('Project')
@@ -41,14 +35,8 @@ class PutProjectRequest(RpcRequest):
 	def set_Project(self,Project):
 		self.add_query_param('Project',Project)
 
-	def get_BillingType(self):
-		return self.get_query_params().get('BillingType')
+	def get_NewCU(self):
+		return self.get_query_params().get('NewCU')
 
-	def set_BillingType(self,BillingType):
-		self.add_query_param('BillingType',BillingType)
-
-	def get_Type(self):
-		return self.get_query_params().get('Type')
-
-	def set_Type(self,Type):
-		self.add_query_param('Type',Type)
+	def set_NewCU(self,NewCU):
+		self.add_query_param('NewCU',NewCU)

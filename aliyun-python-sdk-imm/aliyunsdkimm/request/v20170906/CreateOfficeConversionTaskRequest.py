@@ -23,12 +23,6 @@ class CreateOfficeConversionTaskRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'imm', '2017-09-06', 'CreateOfficeConversionTask','imm')
 
-	def get_ImageSpec(self):
-		return self.get_query_params().get('ImageSpec')
-
-	def set_ImageSpec(self,ImageSpec):
-		self.add_query_param('ImageSpec',ImageSpec)
-
 	def get_SrcType(self):
 		return self.get_query_params().get('SrcType')
 
@@ -52,12 +46,6 @@ class CreateOfficeConversionTaskRequest(RpcRequest):
 
 	def set_Project(self,Project):
 		self.add_query_param('Project',Project)
-
-	def get_ExternalID(self):
-		return self.get_query_params().get('ExternalID')
-
-	def set_ExternalID(self,ExternalID):
-		self.add_query_param('ExternalID',ExternalID)
 
 	def get_MaxSheetRow(self):
 		return self.get_query_params().get('MaxSheetRow')
@@ -119,11 +107,23 @@ class CreateOfficeConversionTaskRequest(RpcRequest):
 	def set_NotifyEndpoint(self,NotifyEndpoint):
 		self.add_query_param('NotifyEndpoint',NotifyEndpoint)
 
+	def get_FitToPagesWide(self):
+		return self.get_query_params().get('FitToPagesWide')
+
+	def set_FitToPagesWide(self,FitToPagesWide):
+		self.add_query_param('FitToPagesWide',FitToPagesWide)
+
 	def get_TgtFilePrefix(self):
 		return self.get_query_params().get('TgtFilePrefix')
 
 	def set_TgtFilePrefix(self,TgtFilePrefix):
 		self.add_query_param('TgtFilePrefix',TgtFilePrefix)
+
+	def get_FitToPagesTall(self):
+		return self.get_query_params().get('FitToPagesTall')
+
+	def set_FitToPagesTall(self,FitToPagesTall):
+		self.add_query_param('FitToPagesTall',FitToPagesTall)
 
 	def get_SrcUri(self):
 		return self.get_query_params().get('SrcUri')
