@@ -18,10 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class GetAuditResultRequest(RpcRequest):
+class DeleteMezzaninesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'vod', '2017-03-21', 'GetAuditResult','vod')
+		RpcRequest.__init__(self, 'vod', '2017-03-21', 'DeleteMezzanines','vod')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -35,17 +35,11 @@ class GetAuditResultRequest(RpcRequest):
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
-	def get_OwnerAccount(self):
-		return self.get_query_params().get('OwnerAccount')
+	def get_Force(self):
+		return self.get_query_params().get('Force')
 
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
-
-	def get_VideoId(self):
-		return self.get_query_params().get('VideoId')
-
-	def set_VideoId(self,VideoId):
-		self.add_query_param('VideoId',VideoId)
+	def set_Force(self,Force):
+		self.add_query_param('Force',Force)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
@@ -53,8 +47,8 @@ class GetAuditResultRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_MediaId(self):
-		return self.get_query_params().get('MediaId')
+	def get_VideoIds(self):
+		return self.get_query_params().get('VideoIds')
 
-	def set_MediaId(self,MediaId):
-		self.add_query_param('MediaId',MediaId)
+	def set_VideoIds(self,VideoIds):
+		self.add_query_param('VideoIds',VideoIds)
