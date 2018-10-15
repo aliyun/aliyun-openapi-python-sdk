@@ -35,6 +35,12 @@ class DescribeTrafficControlsRequest(RpcRequest):
 	def set_StageName(self,StageName):
 		self.add_query_param('StageName',StageName)
 
+	def get_SecurityToken(self):
+		return self.get_query_params().get('SecurityToken')
+
+	def set_SecurityToken(self,SecurityToken):
+		self.add_query_param('SecurityToken',SecurityToken)
+
 	def get_TrafficControlName(self):
 		return self.get_query_params().get('TrafficControlName')
 

@@ -18,13 +18,25 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class ClearCatalogRelationsRequest(RpcRequest):
+class CreateIntranetDomainRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'CloudAPI', '2016-07-14', 'ClearCatalogRelations','apigateway')
+		RpcRequest.__init__(self, 'CloudAPI', '2016-07-14', 'CreateIntranetDomain','apigateway')
 
-	def get_CatalogId(self):
-		return self.get_query_params().get('CatalogId')
+	def get_DeleteInternetDomain(self):
+		return self.get_query_params().get('DeleteInternetDomain')
 
-	def set_CatalogId(self,CatalogId):
-		self.add_query_param('CatalogId',CatalogId)
+	def set_DeleteInternetDomain(self,DeleteInternetDomain):
+		self.add_query_param('DeleteInternetDomain',DeleteInternetDomain)
+
+	def get_SecurityToken(self):
+		return self.get_query_params().get('SecurityToken')
+
+	def set_SecurityToken(self,SecurityToken):
+		self.add_query_param('SecurityToken',SecurityToken)
+
+	def get_GroupId(self):
+		return self.get_query_params().get('GroupId')
+
+	def set_GroupId(self,GroupId):
+		self.add_query_param('GroupId',GroupId)

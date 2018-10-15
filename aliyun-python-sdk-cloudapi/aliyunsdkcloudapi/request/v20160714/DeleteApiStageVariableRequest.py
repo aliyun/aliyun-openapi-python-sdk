@@ -23,6 +23,12 @@ class DeleteApiStageVariableRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'CloudAPI', '2016-07-14', 'DeleteApiStageVariable','apigateway')
 
+	def get_SecurityToken(self):
+		return self.get_query_params().get('SecurityToken')
+
+	def set_SecurityToken(self,SecurityToken):
+		self.add_query_param('SecurityToken',SecurityToken)
+
 	def get_VariableName(self):
 		return self.get_query_params().get('VariableName')
 

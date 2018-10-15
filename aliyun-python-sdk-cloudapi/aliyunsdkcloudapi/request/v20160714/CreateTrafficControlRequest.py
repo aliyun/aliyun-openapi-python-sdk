@@ -29,6 +29,12 @@ class CreateTrafficControlRequest(RpcRequest):
 	def set_ApiDefault(self,ApiDefault):
 		self.add_query_param('ApiDefault',ApiDefault)
 
+	def get_SecurityToken(self):
+		return self.get_query_params().get('SecurityToken')
+
+	def set_SecurityToken(self,SecurityToken):
+		self.add_query_param('SecurityToken',SecurityToken)
+
 	def get_TrafficControlName(self):
 		return self.get_query_params().get('TrafficControlName')
 

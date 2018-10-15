@@ -23,6 +23,12 @@ class SetAppsAuthoritiesRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'CloudAPI', '2016-07-14', 'SetAppsAuthorities','apigateway')
 
+	def get_AuthVaildTime(self):
+		return self.get_query_params().get('AuthVaildTime')
+
+	def set_AuthVaildTime(self,AuthVaildTime):
+		self.add_query_param('AuthVaildTime',AuthVaildTime)
+
 	def get_StageName(self):
 		return self.get_query_params().get('StageName')
 
@@ -34,6 +40,12 @@ class SetAppsAuthoritiesRequest(RpcRequest):
 
 	def set_AppIds(self,AppIds):
 		self.add_query_param('AppIds',AppIds)
+
+	def get_SecurityToken(self):
+		return self.get_query_params().get('SecurityToken')
+
+	def set_SecurityToken(self,SecurityToken):
+		self.add_query_param('SecurityToken',SecurityToken)
 
 	def get_GroupId(self):
 		return self.get_query_params().get('GroupId')

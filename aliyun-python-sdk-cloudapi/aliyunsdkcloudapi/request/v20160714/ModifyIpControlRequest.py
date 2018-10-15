@@ -29,6 +29,12 @@ class ModifyIpControlRequest(RpcRequest):
 	def set_IpControlId(self,IpControlId):
 		self.add_query_param('IpControlId',IpControlId)
 
+	def get_SecurityToken(self):
+		return self.get_query_params().get('SecurityToken')
+
+	def set_SecurityToken(self,SecurityToken):
+		self.add_query_param('SecurityToken',SecurityToken)
+
 	def get_IpControlName(self):
 		return self.get_query_params().get('IpControlName')
 

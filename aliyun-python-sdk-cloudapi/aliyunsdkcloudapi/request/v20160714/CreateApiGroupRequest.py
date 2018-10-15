@@ -23,11 +23,23 @@ class CreateApiGroupRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'CloudAPI', '2016-07-14', 'CreateApiGroup','apigateway')
 
+	def get_SecurityToken(self):
+		return self.get_query_params().get('SecurityToken')
+
+	def set_SecurityToken(self,SecurityToken):
+		self.add_query_param('SecurityToken',SecurityToken)
+
 	def get_Description(self):
 		return self.get_query_params().get('Description')
 
 	def set_Description(self,Description):
 		self.add_query_param('Description',Description)
+
+	def get_Source(self):
+		return self.get_query_params().get('Source')
+
+	def set_Source(self,Source):
+		self.add_query_param('Source',Source)
 
 	def get_GroupName(self):
 		return self.get_query_params().get('GroupName')
