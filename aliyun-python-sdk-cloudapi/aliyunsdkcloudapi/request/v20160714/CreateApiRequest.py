@@ -29,6 +29,12 @@ class CreateApiRequest(RpcRequest):
 	def set_ResultDescriptions(self,ResultDescriptions):
 		self.add_query_param('ResultDescriptions',ResultDescriptions)
 
+	def get_WebSocketApiType(self):
+		return self.get_query_params().get('WebSocketApiType')
+
+	def set_WebSocketApiType(self,WebSocketApiType):
+		self.add_query_param('WebSocketApiType',WebSocketApiType)
+
 	def get_Visibility(self):
 		return self.get_query_params().get('Visibility')
 
@@ -118,6 +124,12 @@ class CreateApiRequest(RpcRequest):
 
 	def set_ResultSample(self,ResultSample):
 		self.add_query_param('ResultSample',ResultSample)
+
+	def get_SecurityToken(self):
+		return self.get_query_params().get('SecurityToken')
+
+	def set_SecurityToken(self,SecurityToken):
+		self.add_query_param('SecurityToken',SecurityToken)
 
 	def get_OpenIdConnectConfig(self):
 		return self.get_query_params().get('OpenIdConnectConfig')

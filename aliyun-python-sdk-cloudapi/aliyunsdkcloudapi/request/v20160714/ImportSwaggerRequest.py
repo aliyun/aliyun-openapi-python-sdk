@@ -18,13 +18,31 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class RemoveCatalogRelationsRequest(RpcRequest):
+class ImportSwaggerRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'CloudAPI', '2016-07-14', 'RemoveCatalogRelations','apigateway')
+		RpcRequest.__init__(self, 'CloudAPI', '2016-07-14', 'ImportSwagger','apigateway')
 
-	def get_CatalogId(self):
-		return self.get_query_params().get('CatalogId')
+	def get_DataFormat(self):
+		return self.get_query_params().get('DataFormat')
 
-	def set_CatalogId(self,CatalogId):
-		self.add_query_param('CatalogId',CatalogId)
+	def set_DataFormat(self,DataFormat):
+		self.add_query_param('DataFormat',DataFormat)
+
+	def get_Data(self):
+		return self.get_query_params().get('Data')
+
+	def set_Data(self,Data):
+		self.add_query_param('Data',Data)
+
+	def get_GroupId(self):
+		return self.get_query_params().get('GroupId')
+
+	def set_GroupId(self,GroupId):
+		self.add_query_param('GroupId',GroupId)
+
+	def get_Overwrite(self):
+		return self.get_query_params().get('Overwrite')
+
+	def set_Overwrite(self,Overwrite):
+		self.add_query_param('Overwrite',Overwrite)

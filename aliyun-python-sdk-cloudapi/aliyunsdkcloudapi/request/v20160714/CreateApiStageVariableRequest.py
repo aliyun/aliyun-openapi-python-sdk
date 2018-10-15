@@ -29,6 +29,12 @@ class CreateApiStageVariableRequest(RpcRequest):
 	def set_SupportRoute(self,SupportRoute):
 		self.add_query_param('SupportRoute',SupportRoute)
 
+	def get_SecurityToken(self):
+		return self.get_query_params().get('SecurityToken')
+
+	def set_SecurityToken(self,SecurityToken):
+		self.add_query_param('SecurityToken',SecurityToken)
+
 	def get_VariableName(self):
 		return self.get_query_params().get('VariableName')
 

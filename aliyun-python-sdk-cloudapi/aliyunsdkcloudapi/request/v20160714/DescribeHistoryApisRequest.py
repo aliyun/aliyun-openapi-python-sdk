@@ -35,6 +35,12 @@ class DescribeHistoryApisRequest(RpcRequest):
 	def set_ApiName(self,ApiName):
 		self.add_query_param('ApiName',ApiName)
 
+	def get_SecurityToken(self):
+		return self.get_query_params().get('SecurityToken')
+
+	def set_SecurityToken(self,SecurityToken):
+		self.add_query_param('SecurityToken',SecurityToken)
+
 	def get_GroupId(self):
 		return self.get_query_params().get('GroupId')
 

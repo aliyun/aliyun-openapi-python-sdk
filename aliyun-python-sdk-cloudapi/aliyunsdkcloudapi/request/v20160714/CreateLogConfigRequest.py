@@ -35,6 +35,12 @@ class CreateLogConfigRequest(RpcRequest):
 	def set_LogType(self,LogType):
 		self.add_query_param('LogType',LogType)
 
+	def get_SecurityToken(self):
+		return self.get_query_params().get('SecurityToken')
+
+	def set_SecurityToken(self,SecurityToken):
+		self.add_query_param('SecurityToken',SecurityToken)
+
 	def get_SlsProject(self):
 		return self.get_query_params().get('SlsProject')
 
