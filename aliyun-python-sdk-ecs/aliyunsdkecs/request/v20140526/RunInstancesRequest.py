@@ -267,6 +267,12 @@ class RunInstancesRequest(RpcRequest):
 				self.add_query_param('NetworkInterface.' + str(i + 1) + '.Description' , NetworkInterfaces[i].get('Description'))
 
 
+	def get_DeploymentSetId(self):
+		return self.get_query_params().get('DeploymentSetId')
+
+	def set_DeploymentSetId(self,DeploymentSetId):
+		self.add_query_param('DeploymentSetId',DeploymentSetId)
+
 	def get_Amount(self):
 		return self.get_query_params().get('Amount')
 

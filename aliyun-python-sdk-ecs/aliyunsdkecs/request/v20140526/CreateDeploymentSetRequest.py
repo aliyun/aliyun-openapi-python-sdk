@@ -65,6 +65,12 @@ class CreateDeploymentSetRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
+	def get_OnUnableToRedeployFailedInstance(self):
+		return self.get_query_params().get('OnUnableToRedeployFailedInstance')
+
+	def set_OnUnableToRedeployFailedInstance(self,OnUnableToRedeployFailedInstance):
+		self.add_query_param('OnUnableToRedeployFailedInstance',OnUnableToRedeployFailedInstance)
+
 	def get_Granularity(self):
 		return self.get_query_params().get('Granularity')
 
@@ -76,12 +82,6 @@ class CreateDeploymentSetRequest(RpcRequest):
 
 	def set_Domain(self,Domain):
 		self.add_query_param('Domain',Domain)
-
-	def get_ZoneId(self):
-		return self.get_query_params().get('ZoneId')
-
-	def set_ZoneId(self,ZoneId):
-		self.add_query_param('ZoneId',ZoneId)
 
 	def get_Strategy(self):
 		return self.get_query_params().get('Strategy')
