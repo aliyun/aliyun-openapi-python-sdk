@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class ARMSQueryDataSetRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ARMS', '2016-11-25', 'ARMSQueryDataSet')
+		RpcRequest.__init__(self, 'ARMS', '2018-10-15', 'ARMSQueryDataSet')
 
 	def get_DateStr(self):
 		return self.get_query_params().get('DateStr')
@@ -52,12 +52,12 @@ class ARMSQueryDataSetRequest(RpcRequest):
 
 	def set_OptionalDimss(self,OptionalDimss):
 		for i in range(len(OptionalDimss)):	
-			if OptionalDimss[i].get('Key') is not None:
-				self.add_query_param('OptionalDims.' + str(i + 1) + '.Key' , OptionalDimss[i].get('Key'))
-			if OptionalDimss[i].get('Value') is not None:
-				self.add_query_param('OptionalDims.' + str(i + 1) + '.Value' , OptionalDimss[i].get('Value'))
 			if OptionalDimss[i].get('Type') is not None:
 				self.add_query_param('OptionalDims.' + str(i + 1) + '.Type' , OptionalDimss[i].get('Type'))
+			if OptionalDimss[i].get('Value') is not None:
+				self.add_query_param('OptionalDims.' + str(i + 1) + '.Value' , OptionalDimss[i].get('Value'))
+			if OptionalDimss[i].get('Key') is not None:
+				self.add_query_param('OptionalDims.' + str(i + 1) + '.Key' , OptionalDimss[i].get('Key'))
 
 
 	def get_Measuress(self):
@@ -86,6 +86,12 @@ class ARMSQueryDataSetRequest(RpcRequest):
 	def set_HungryMode(self,HungryMode):
 		self.add_query_param('HungryMode',HungryMode)
 
+	def get_SecurityToken(self):
+		return self.get_query_params().get('SecurityToken')
+
+	def set_SecurityToken(self,SecurityToken):
+		self.add_query_param('SecurityToken',SecurityToken)
+
 	def get_OrderByKey(self):
 		return self.get_query_params().get('OrderByKey')
 
@@ -98,33 +104,33 @@ class ARMSQueryDataSetRequest(RpcRequest):
 	def set_Limit(self,Limit):
 		self.add_query_param('Limit',Limit)
 
+	def get_RequiredDimss(self):
+		return self.get_query_params().get('RequiredDimss')
+
+	def set_RequiredDimss(self,RequiredDimss):
+		for i in range(len(RequiredDimss)):	
+			if RequiredDimss[i].get('Type') is not None:
+				self.add_query_param('RequiredDims.' + str(i + 1) + '.Type' , RequiredDimss[i].get('Type'))
+			if RequiredDimss[i].get('Value') is not None:
+				self.add_query_param('RequiredDims.' + str(i + 1) + '.Value' , RequiredDimss[i].get('Value'))
+			if RequiredDimss[i].get('Key') is not None:
+				self.add_query_param('RequiredDims.' + str(i + 1) + '.Key' , RequiredDimss[i].get('Key'))
+
+
 	def get_DatasetId(self):
 		return self.get_query_params().get('DatasetId')
 
 	def set_DatasetId(self,DatasetId):
 		self.add_query_param('DatasetId',DatasetId)
 
-	def get_RequiredDimss(self):
-		return self.get_query_params().get('RequiredDimss')
-
-	def set_RequiredDimss(self,RequiredDimss):
-		for i in range(len(RequiredDimss)):	
-			if RequiredDimss[i].get('Key') is not None:
-				self.add_query_param('RequiredDims.' + str(i + 1) + '.Key' , RequiredDimss[i].get('Key'))
-			if RequiredDimss[i].get('Value') is not None:
-				self.add_query_param('RequiredDims.' + str(i + 1) + '.Value' , RequiredDimss[i].get('Value'))
-			if RequiredDimss[i].get('Type') is not None:
-				self.add_query_param('RequiredDims.' + str(i + 1) + '.Type' , RequiredDimss[i].get('Type'))
-
-
 	def get_Dimensionss(self):
 		return self.get_query_params().get('Dimensionss')
 
 	def set_Dimensionss(self,Dimensionss):
 		for i in range(len(Dimensionss)):	
-			if Dimensionss[i].get('Key') is not None:
-				self.add_query_param('Dimensions.' + str(i + 1) + '.Key' , Dimensionss[i].get('Key'))
-			if Dimensionss[i].get('Value') is not None:
-				self.add_query_param('Dimensions.' + str(i + 1) + '.Value' , Dimensionss[i].get('Value'))
 			if Dimensionss[i].get('Type') is not None:
 				self.add_query_param('Dimensions.' + str(i + 1) + '.Type' , Dimensionss[i].get('Type'))
+			if Dimensionss[i].get('Value') is not None:
+				self.add_query_param('Dimensions.' + str(i + 1) + '.Value' , Dimensionss[i].get('Value'))
+			if Dimensionss[i].get('Key') is not None:
+				self.add_query_param('Dimensions.' + str(i + 1) + '.Key' , Dimensionss[i].get('Key'))
