@@ -196,6 +196,12 @@ class DescribeInstancesRequest(RpcRequest):
 	def set_Filter1Value(self,Filter1Value):
 		self.add_query_param('Filter.1.Value',Filter1Value)
 
+	def get_NeedSaleCycle(self):
+		return self.get_query_params().get('NeedSaleCycle')
+
+	def set_NeedSaleCycle(self,NeedSaleCycle):
+		self.add_query_param('NeedSaleCycle',NeedSaleCycle)
+
 	def get_Filter2Key(self):
 		return self.get_query_params().get('Filter.2.Key')
 
