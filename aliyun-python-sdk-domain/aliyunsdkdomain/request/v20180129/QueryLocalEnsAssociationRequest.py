@@ -18,28 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class CheckDomainRequest(RpcRequest):
+class QueryLocalEnsAssociationRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Domain', '2018-01-29', 'CheckDomain')
-
-	def get_FeeCurrency(self):
-		return self.get_query_params().get('FeeCurrency')
-
-	def set_FeeCurrency(self,FeeCurrency):
-		self.add_query_param('FeeCurrency',FeeCurrency)
-
-	def get_FeePeriod(self):
-		return self.get_query_params().get('FeePeriod')
-
-	def set_FeePeriod(self,FeePeriod):
-		self.add_query_param('FeePeriod',FeePeriod)
-
-	def get_DomainName(self):
-		return self.get_query_params().get('DomainName')
-
-	def set_DomainName(self,DomainName):
-		self.add_query_param('DomainName',DomainName)
+		RpcRequest.__init__(self, 'Domain', '2018-01-29', 'QueryLocalEnsAssociation')
 
 	def get_UserClientIp(self):
 		return self.get_query_params().get('UserClientIp')
@@ -47,11 +29,11 @@ class CheckDomainRequest(RpcRequest):
 	def set_UserClientIp(self,UserClientIp):
 		self.add_query_param('UserClientIp',UserClientIp)
 
-	def get_FeeCommand(self):
-		return self.get_query_params().get('FeeCommand')
+	def get_DomainName(self):
+		return self.get_query_params().get('DomainName')
 
-	def set_FeeCommand(self,FeeCommand):
-		self.add_query_param('FeeCommand',FeeCommand)
+	def set_DomainName(self,DomainName):
+		self.add_query_param('DomainName',DomainName)
 
 	def get_Lang(self):
 		return self.get_query_params().get('Lang')

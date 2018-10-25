@@ -29,6 +29,12 @@ class SaveBatchDomainRemarkRequest(RpcRequest):
 	def set_InstanceIds(self,InstanceIds):
 		self.add_query_param('InstanceIds',InstanceIds)
 
+	def get_UserClientIp(self):
+		return self.get_query_params().get('UserClientIp')
+
+	def set_UserClientIp(self,UserClientIp):
+		self.add_query_param('UserClientIp',UserClientIp)
+
 	def get_Remark(self):
 		return self.get_query_params().get('Remark')
 
