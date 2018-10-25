@@ -50,6 +50,8 @@ class SaveBatchTaskForCreatingOrderActivateRequest(RpcRequest):
 				self.add_query_param('OrderActivateParam.' + str(i + 1) + '.RegistrantProfileId' , OrderActivateParams[i].get('RegistrantProfileId'))
 			if OrderActivateParams[i].get('Telephone') is not None:
 				self.add_query_param('OrderActivateParam.' + str(i + 1) + '.Telephone' , OrderActivateParams[i].get('Telephone'))
+			if OrderActivateParams[i].get('TrademarkDomainActivation') is not None:
+				self.add_query_param('OrderActivateParam.' + str(i + 1) + '.TrademarkDomainActivation' , OrderActivateParams[i].get('TrademarkDomainActivation'))
 			if OrderActivateParams[i].get('AliyunDns') is not None:
 				self.add_query_param('OrderActivateParam.' + str(i + 1) + '.AliyunDns' , OrderActivateParams[i].get('AliyunDns'))
 			if OrderActivateParams[i].get('RegistrantOrganization') is not None:
