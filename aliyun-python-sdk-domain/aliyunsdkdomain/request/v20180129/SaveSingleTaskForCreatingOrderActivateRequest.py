@@ -155,6 +155,12 @@ class SaveSingleTaskForCreatingOrderActivateRequest(RpcRequest):
 	def set_Telephone(self,Telephone):
 		self.add_query_param('Telephone',Telephone)
 
+	def get_TrademarkDomainActivation(self):
+		return self.get_query_params().get('TrademarkDomainActivation')
+
+	def set_TrademarkDomainActivation(self,TrademarkDomainActivation):
+		self.add_query_param('TrademarkDomainActivation',TrademarkDomainActivation)
+
 	def get_ZhProvince(self):
 		return self.get_query_params().get('ZhProvince')
 
