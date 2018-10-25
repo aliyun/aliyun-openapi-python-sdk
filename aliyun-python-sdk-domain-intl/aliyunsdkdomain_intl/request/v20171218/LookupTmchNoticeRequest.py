@@ -18,40 +18,22 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class CheckDomainRequest(RpcRequest):
+class LookupTmchNoticeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Domain-intl', '2017-12-18', 'CheckDomain','domain')
+		RpcRequest.__init__(self, 'Domain-intl', '2017-12-18', 'LookupTmchNotice','domain')
 
-	def get_FeeCurrency(self):
-		return self.get_query_params().get('FeeCurrency')
+	def get_ClaimKey(self):
+		return self.get_query_params().get('ClaimKey')
 
-	def set_FeeCurrency(self,FeeCurrency):
-		self.add_query_param('FeeCurrency',FeeCurrency)
-
-	def get_FeePeriod(self):
-		return self.get_query_params().get('FeePeriod')
-
-	def set_FeePeriod(self,FeePeriod):
-		self.add_query_param('FeePeriod',FeePeriod)
-
-	def get_DomainName(self):
-		return self.get_query_params().get('DomainName')
-
-	def set_DomainName(self,DomainName):
-		self.add_query_param('DomainName',DomainName)
+	def set_ClaimKey(self,ClaimKey):
+		self.add_query_param('ClaimKey',ClaimKey)
 
 	def get_UserClientIp(self):
 		return self.get_query_params().get('UserClientIp')
 
 	def set_UserClientIp(self,UserClientIp):
 		self.add_query_param('UserClientIp',UserClientIp)
-
-	def get_FeeCommand(self):
-		return self.get_query_params().get('FeeCommand')
-
-	def set_FeeCommand(self,FeeCommand):
-		self.add_query_param('FeeCommand',FeeCommand)
 
 	def get_Lang(self):
 		return self.get_query_params().get('Lang')
