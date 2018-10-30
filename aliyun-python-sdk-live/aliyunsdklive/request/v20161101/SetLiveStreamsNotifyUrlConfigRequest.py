@@ -23,11 +23,11 @@ class SetLiveStreamsNotifyUrlConfigRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'live', '2016-11-01', 'SetLiveStreamsNotifyUrlConfig','live')
 
-	def get_SecurityToken(self):
-		return self.get_query_params().get('SecurityToken')
+	def get_AuthKey(self):
+		return self.get_query_params().get('AuthKey')
 
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)
+	def set_AuthKey(self,AuthKey):
+		self.add_query_param('AuthKey',AuthKey)
 
 	def get_DomainName(self):
 		return self.get_query_params().get('DomainName')
@@ -46,3 +46,9 @@ class SetLiveStreamsNotifyUrlConfigRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_AuthType(self):
+		return self.get_query_params().get('AuthType')
+
+	def set_AuthType(self,AuthType):
+		self.add_query_param('AuthType',AuthType)

@@ -23,29 +23,17 @@ class ForbidLiveStreamRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'live', '2016-11-01', 'ForbidLiveStream','live')
 
-	def get_AppName(self):
-		return self.get_query_params().get('AppName')
-
-	def set_AppName(self,AppName):
-		self.add_query_param('AppName',AppName)
-
-	def get_StreamName(self):
-		return self.get_query_params().get('StreamName')
-
-	def set_StreamName(self,StreamName):
-		self.add_query_param('StreamName',StreamName)
-
-	def get_ControlStreamAction(self):
-		return self.get_query_params().get('ControlStreamAction')
-
-	def set_ControlStreamAction(self,ControlStreamAction):
-		self.add_query_param('ControlStreamAction',ControlStreamAction)
-
 	def get_ResumeTime(self):
 		return self.get_query_params().get('ResumeTime')
 
 	def set_ResumeTime(self,ResumeTime):
 		self.add_query_param('ResumeTime',ResumeTime)
+
+	def get_AppName(self):
+		return self.get_query_params().get('AppName')
+
+	def set_AppName(self,AppName):
+		self.add_query_param('AppName',AppName)
 
 	def get_LiveStreamType(self):
 		return self.get_query_params().get('LiveStreamType')
@@ -70,3 +58,15 @@ class ForbidLiveStreamRequest(RpcRequest):
 
 	def set_Oneshot(self,Oneshot):
 		self.add_query_param('Oneshot',Oneshot)
+
+	def get_StreamName(self):
+		return self.get_query_params().get('StreamName')
+
+	def set_StreamName(self,StreamName):
+		self.add_query_param('StreamName',StreamName)
+
+	def get_ControlStreamAction(self):
+		return self.get_query_params().get('ControlStreamAction')
+
+	def set_ControlStreamAction(self,ControlStreamAction):
+		self.add_query_param('ControlStreamAction',ControlStreamAction)
