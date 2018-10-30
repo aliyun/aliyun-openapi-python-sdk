@@ -23,6 +23,18 @@ class DescribeRoomListRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'live', '2016-11-01', 'DescribeRoomList','live')
 
+	def get_StartTime(self):
+		return self.get_query_params().get('StartTime')
+
+	def set_StartTime(self,StartTime):
+		self.add_query_param('StartTime',StartTime)
+
+	def get_AnchorId(self):
+		return self.get_query_params().get('AnchorId')
+
+	def set_AnchorId(self,AnchorId):
+		self.add_query_param('AnchorId',AnchorId)
+
 	def get_PageNum(self):
 		return self.get_query_params().get('PageNum')
 
@@ -47,11 +59,23 @@ class DescribeRoomListRequest(RpcRequest):
 	def set_Order(self,Order):
 		self.add_query_param('Order',Order)
 
+	def get_EndTime(self):
+		return self.get_query_params().get('EndTime')
+
+	def set_EndTime(self,EndTime):
+		self.add_query_param('EndTime',EndTime)
+
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_RoomId(self):
+		return self.get_query_params().get('RoomId')
+
+	def set_RoomId(self,RoomId):
+		self.add_query_param('RoomId',RoomId)
 
 	def get_AppId(self):
 		return self.get_query_params().get('AppId')
