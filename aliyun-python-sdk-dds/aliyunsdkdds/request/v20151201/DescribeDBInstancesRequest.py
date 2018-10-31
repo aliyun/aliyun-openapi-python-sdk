@@ -23,17 +23,17 @@ class DescribeDBInstancesRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Dds', '2015-12-01', 'DescribeDBInstances','dds')
 
+	def get_ExpireTime(self):
+		return self.get_query_params().get('ExpireTime')
+
+	def set_ExpireTime(self,ExpireTime):
+		self.add_query_param('ExpireTime',ExpireTime)
+
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_DBInstanceIds(self):
-		return self.get_query_params().get('DBInstanceIds')
-
-	def set_DBInstanceIds(self,DBInstanceIds):
-		self.add_query_param('DBInstanceIds',DBInstanceIds)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -71,6 +71,12 @@ class DescribeDBInstancesRequest(RpcRequest):
 	def set_DBInstanceType(self,DBInstanceType):
 		self.add_query_param('DBInstanceType',DBInstanceType)
 
+	def get_DBInstanceClass(self):
+		return self.get_query_params().get('DBInstanceClass')
+
+	def set_DBInstanceClass(self,DBInstanceClass):
+		self.add_query_param('DBInstanceClass',DBInstanceClass)
+
 	def get_Expired(self):
 		return self.get_query_params().get('Expired')
 
@@ -83,14 +89,32 @@ class DescribeDBInstancesRequest(RpcRequest):
 	def set_SecurityToken(self,SecurityToken):
 		self.add_query_param('SecurityToken',SecurityToken)
 
-	def get_Engine(self):
-		return self.get_query_params().get('Engine')
-
-	def set_Engine(self,Engine):
-		self.add_query_param('Engine',Engine)
-
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
 
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
+
+	def get_ZoneId(self):
+		return self.get_query_params().get('ZoneId')
+
+	def set_ZoneId(self,ZoneId):
+		self.add_query_param('ZoneId',ZoneId)
+
+	def get_DBInstanceId(self):
+		return self.get_query_params().get('DBInstanceId')
+
+	def set_DBInstanceId(self,DBInstanceId):
+		self.add_query_param('DBInstanceId',DBInstanceId)
+
+	def get_DBInstanceDescription(self):
+		return self.get_query_params().get('DBInstanceDescription')
+
+	def set_DBInstanceDescription(self,DBInstanceDescription):
+		self.add_query_param('DBInstanceDescription',DBInstanceDescription)
+
+	def get_DBInstanceStatus(self):
+		return self.get_query_params().get('DBInstanceStatus')
+
+	def set_DBInstanceStatus(self,DBInstanceStatus):
+		self.add_query_param('DBInstanceStatus',DBInstanceStatus)

@@ -18,22 +18,22 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class DescribeReplicaPerformanceRequest(RpcRequest):
+class DescribeRunningLogRecordsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dds', '2015-12-01', 'DescribeReplicaPerformance','dds')
+		RpcRequest.__init__(self, 'Dds', '2015-12-01', 'DescribeRunningLogRecords','dds')
+
+	def get_SQLId(self):
+		return self.get_query_params().get('SQLId')
+
+	def set_SQLId(self,SQLId):
+		self.add_query_param('SQLId',SQLId)
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_DestinationDBInstanceId(self):
-		return self.get_query_params().get('DestinationDBInstanceId')
-
-	def set_DestinationDBInstanceId(self,DestinationDBInstanceId):
-		self.add_query_param('DestinationDBInstanceId',DestinationDBInstanceId)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -65,11 +65,17 @@ class DescribeReplicaPerformanceRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_SourceDBInstanceId(self):
-		return self.get_query_params().get('SourceDBInstanceId')
+	def get_PageNumber(self):
+		return self.get_query_params().get('PageNumber')
 
-	def set_SourceDBInstanceId(self,SourceDBInstanceId):
-		self.add_query_param('SourceDBInstanceId',SourceDBInstanceId)
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)
+
+	def get_DBName(self):
+		return self.get_query_params().get('DBName')
+
+	def set_DBName(self,DBName):
+		self.add_query_param('DBName',DBName)
 
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
@@ -77,14 +83,26 @@ class DescribeReplicaPerformanceRequest(RpcRequest):
 	def set_SecurityToken(self,SecurityToken):
 		self.add_query_param('SecurityToken',SecurityToken)
 
-	def get_ReplicaId(self):
-		return self.get_query_params().get('ReplicaId')
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
 
-	def set_ReplicaId(self,ReplicaId):
-		self.add_query_param('ReplicaId',ReplicaId)
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
 
-	def get_Key(self):
-		return self.get_query_params().get('Key')
+	def get_DBInstanceId(self):
+		return self.get_query_params().get('DBInstanceId')
 
-	def set_Key(self,Key):
-		self.add_query_param('Key',Key)
+	def set_DBInstanceId(self,DBInstanceId):
+		self.add_query_param('DBInstanceId',DBInstanceId)
+
+	def get_RoleType(self):
+		return self.get_query_params().get('RoleType')
+
+	def set_RoleType(self,RoleType):
+		self.add_query_param('RoleType',RoleType)
+
+	def get_NodeId(self):
+		return self.get_query_params().get('NodeId')
+
+	def set_NodeId(self,NodeId):
+		self.add_query_param('NodeId',NodeId)
