@@ -18,16 +18,22 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class DescribeRangeDataByLocateAndIspServiceRequest(RpcRequest):
+class DeleteLiveStreamTranscodeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cdn', '2018-05-10', 'DescribeRangeDataByLocateAndIspService')
+		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'DeleteLiveStreamTranscode')
 
-	def get_IspNames(self):
-		return self.get_query_params().get('IspNames')
+	def get_Template(self):
+		return self.get_query_params().get('Template')
 
-	def set_IspNames(self,IspNames):
-		self.add_query_param('IspNames',IspNames)
+	def set_Template(self,Template):
+		self.add_query_param('Template',Template)
+
+	def get_App(self):
+		return self.get_query_params().get('App')
+
+	def set_App(self,App):
+		self.add_query_param('App',App)
 
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
@@ -35,29 +41,17 @@ class DescribeRangeDataByLocateAndIspServiceRequest(RpcRequest):
 	def set_SecurityToken(self,SecurityToken):
 		self.add_query_param('SecurityToken',SecurityToken)
 
-	def get_DomainNames(self):
-		return self.get_query_params().get('DomainNames')
+	def get_OwnerAccount(self):
+		return self.get_query_params().get('OwnerAccount')
 
-	def set_DomainNames(self,DomainNames):
-		self.add_query_param('DomainNames',DomainNames)
+	def set_OwnerAccount(self,OwnerAccount):
+		self.add_query_param('OwnerAccount',OwnerAccount)
 
-	def get_LocationNames(self):
-		return self.get_query_params().get('LocationNames')
+	def get_Domain(self):
+		return self.get_query_params().get('Domain')
 
-	def set_LocationNames(self,LocationNames):
-		self.add_query_param('LocationNames',LocationNames)
-
-	def get_EndTime(self):
-		return self.get_query_params().get('EndTime')
-
-	def set_EndTime(self,EndTime):
-		self.add_query_param('EndTime',EndTime)
-
-	def get_StartTime(self):
-		return self.get_query_params().get('StartTime')
-
-	def set_StartTime(self,StartTime):
-		self.add_query_param('StartTime',StartTime)
+	def set_Domain(self,Domain):
+		self.add_query_param('Domain',Domain)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')

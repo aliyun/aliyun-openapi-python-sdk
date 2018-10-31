@@ -18,16 +18,16 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class DescribeRangeDataByLocateAndIspServiceRequest(RpcRequest):
+class SetRefererConfigRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cdn', '2018-05-10', 'DescribeRangeDataByLocateAndIspService')
+		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'SetRefererConfig')
 
-	def get_IspNames(self):
-		return self.get_query_params().get('IspNames')
+	def get_ReferList(self):
+		return self.get_query_params().get('ReferList')
 
-	def set_IspNames(self,IspNames):
-		self.add_query_param('IspNames',IspNames)
+	def set_ReferList(self,ReferList):
+		self.add_query_param('ReferList',ReferList)
 
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
@@ -35,32 +35,32 @@ class DescribeRangeDataByLocateAndIspServiceRequest(RpcRequest):
 	def set_SecurityToken(self,SecurityToken):
 		self.add_query_param('SecurityToken',SecurityToken)
 
-	def get_DomainNames(self):
-		return self.get_query_params().get('DomainNames')
+	def get_DomainName(self):
+		return self.get_query_params().get('DomainName')
 
-	def set_DomainNames(self,DomainNames):
-		self.add_query_param('DomainNames',DomainNames)
+	def set_DomainName(self,DomainName):
+		self.add_query_param('DomainName',DomainName)
 
-	def get_LocationNames(self):
-		return self.get_query_params().get('LocationNames')
+	def get_ReferType(self):
+		return self.get_query_params().get('ReferType')
 
-	def set_LocationNames(self,LocationNames):
-		self.add_query_param('LocationNames',LocationNames)
+	def set_ReferType(self,ReferType):
+		self.add_query_param('ReferType',ReferType)
 
-	def get_EndTime(self):
-		return self.get_query_params().get('EndTime')
+	def get_DisableAst(self):
+		return self.get_query_params().get('DisableAst')
 
-	def set_EndTime(self,EndTime):
-		self.add_query_param('EndTime',EndTime)
-
-	def get_StartTime(self):
-		return self.get_query_params().get('StartTime')
-
-	def set_StartTime(self,StartTime):
-		self.add_query_param('StartTime',StartTime)
+	def set_DisableAst(self,DisableAst):
+		self.add_query_param('DisableAst',DisableAst)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_AllowEmpty(self):
+		return self.get_query_params().get('AllowEmpty')
+
+	def set_AllowEmpty(self,AllowEmpty):
+		self.add_query_param('AllowEmpty',AllowEmpty)

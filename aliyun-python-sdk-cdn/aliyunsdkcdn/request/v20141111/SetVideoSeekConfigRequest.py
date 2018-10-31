@@ -18,16 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class DescribeRangeDataByLocateAndIspServiceRequest(RpcRequest):
+class SetVideoSeekConfigRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cdn', '2018-05-10', 'DescribeRangeDataByLocateAndIspService')
-
-	def get_IspNames(self):
-		return self.get_query_params().get('IspNames')
-
-	def set_IspNames(self,IspNames):
-		self.add_query_param('IspNames',IspNames)
+		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'SetVideoSeekConfig')
 
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
@@ -35,29 +29,17 @@ class DescribeRangeDataByLocateAndIspServiceRequest(RpcRequest):
 	def set_SecurityToken(self,SecurityToken):
 		self.add_query_param('SecurityToken',SecurityToken)
 
-	def get_DomainNames(self):
-		return self.get_query_params().get('DomainNames')
+	def get_Enable(self):
+		return self.get_query_params().get('Enable')
 
-	def set_DomainNames(self,DomainNames):
-		self.add_query_param('DomainNames',DomainNames)
+	def set_Enable(self,Enable):
+		self.add_query_param('Enable',Enable)
 
-	def get_LocationNames(self):
-		return self.get_query_params().get('LocationNames')
+	def get_DomainName(self):
+		return self.get_query_params().get('DomainName')
 
-	def set_LocationNames(self,LocationNames):
-		self.add_query_param('LocationNames',LocationNames)
-
-	def get_EndTime(self):
-		return self.get_query_params().get('EndTime')
-
-	def set_EndTime(self,EndTime):
-		self.add_query_param('EndTime',EndTime)
-
-	def get_StartTime(self):
-		return self.get_query_params().get('StartTime')
-
-	def set_StartTime(self,StartTime):
-		self.add_query_param('StartTime',StartTime)
+	def set_DomainName(self,DomainName):
+		self.add_query_param('DomainName',DomainName)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')

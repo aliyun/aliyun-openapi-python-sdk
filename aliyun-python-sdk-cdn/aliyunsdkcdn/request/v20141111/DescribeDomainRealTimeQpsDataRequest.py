@@ -18,46 +18,40 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class DescribeRangeDataByLocateAndIspServiceRequest(RpcRequest):
+class DescribeDomainRealTimeQpsDataRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cdn', '2018-05-10', 'DescribeRangeDataByLocateAndIspService')
+		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'DescribeDomainRealTimeQpsData')
 
-	def get_IspNames(self):
-		return self.get_query_params().get('IspNames')
+	def get_LocationNameEn(self):
+		return self.get_query_params().get('LocationNameEn')
 
-	def set_IspNames(self,IspNames):
-		self.add_query_param('IspNames',IspNames)
+	def set_LocationNameEn(self,LocationNameEn):
+		self.add_query_param('LocationNameEn',LocationNameEn)
 
-	def get_SecurityToken(self):
-		return self.get_query_params().get('SecurityToken')
+	def get_IspNameEn(self):
+		return self.get_query_params().get('IspNameEn')
 
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)
-
-	def get_DomainNames(self):
-		return self.get_query_params().get('DomainNames')
-
-	def set_DomainNames(self,DomainNames):
-		self.add_query_param('DomainNames',DomainNames)
-
-	def get_LocationNames(self):
-		return self.get_query_params().get('LocationNames')
-
-	def set_LocationNames(self,LocationNames):
-		self.add_query_param('LocationNames',LocationNames)
-
-	def get_EndTime(self):
-		return self.get_query_params().get('EndTime')
-
-	def set_EndTime(self,EndTime):
-		self.add_query_param('EndTime',EndTime)
+	def set_IspNameEn(self,IspNameEn):
+		self.add_query_param('IspNameEn',IspNameEn)
 
 	def get_StartTime(self):
 		return self.get_query_params().get('StartTime')
 
 	def set_StartTime(self,StartTime):
 		self.add_query_param('StartTime',StartTime)
+
+	def get_DomainName(self):
+		return self.get_query_params().get('DomainName')
+
+	def set_DomainName(self,DomainName):
+		self.add_query_param('DomainName',DomainName)
+
+	def get_EndTime(self):
+		return self.get_query_params().get('EndTime')
+
+	def set_EndTime(self,EndTime):
+		self.add_query_param('EndTime',EndTime)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
