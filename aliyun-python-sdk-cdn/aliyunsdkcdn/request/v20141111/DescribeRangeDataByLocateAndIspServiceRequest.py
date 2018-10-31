@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class DescribeRangeDataByLocateAndIspServiceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cdn', '2018-05-10', 'DescribeRangeDataByLocateAndIspService')
+		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'DescribeRangeDataByLocateAndIspService')
 
 	def get_IspNames(self):
 		return self.get_query_params().get('IspNames')
@@ -53,11 +53,11 @@ class DescribeRangeDataByLocateAndIspServiceRequest(RpcRequest):
 	def set_EndTime(self,EndTime):
 		self.add_query_param('EndTime',EndTime)
 
-	def get_StartTime(self):
-		return self.get_query_params().get('StartTime')
+	def get_startTime(self):
+		return self.get_query_params().get('startTime')
 
-	def set_StartTime(self,StartTime):
-		self.add_query_param('StartTime',StartTime)
+	def set_startTime(self,startTime):
+		self.add_query_param('startTime',startTime)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')

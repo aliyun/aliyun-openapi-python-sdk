@@ -18,16 +18,22 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class DescribeRangeDataByLocateAndIspServiceRequest(RpcRequest):
+class SetDynamicConfigRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cdn', '2018-05-10', 'DescribeRangeDataByLocateAndIspService')
+		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'SetDynamicConfig')
 
-	def get_IspNames(self):
-		return self.get_query_params().get('IspNames')
+	def get_DynamicOrigin(self):
+		return self.get_query_params().get('DynamicOrigin')
 
-	def set_IspNames(self,IspNames):
-		self.add_query_param('IspNames',IspNames)
+	def set_DynamicOrigin(self,DynamicOrigin):
+		self.add_query_param('DynamicOrigin',DynamicOrigin)
+
+	def get_StaticType(self):
+		return self.get_query_params().get('StaticType')
+
+	def set_StaticType(self,StaticType):
+		self.add_query_param('StaticType',StaticType)
 
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
@@ -35,29 +41,29 @@ class DescribeRangeDataByLocateAndIspServiceRequest(RpcRequest):
 	def set_SecurityToken(self,SecurityToken):
 		self.add_query_param('SecurityToken',SecurityToken)
 
-	def get_DomainNames(self):
-		return self.get_query_params().get('DomainNames')
+	def get_StaticUri(self):
+		return self.get_query_params().get('StaticUri')
 
-	def set_DomainNames(self,DomainNames):
-		self.add_query_param('DomainNames',DomainNames)
+	def set_StaticUri(self,StaticUri):
+		self.add_query_param('StaticUri',StaticUri)
 
-	def get_LocationNames(self):
-		return self.get_query_params().get('LocationNames')
+	def get_DomainName(self):
+		return self.get_query_params().get('DomainName')
 
-	def set_LocationNames(self,LocationNames):
-		self.add_query_param('LocationNames',LocationNames)
+	def set_DomainName(self,DomainName):
+		self.add_query_param('DomainName',DomainName)
 
-	def get_EndTime(self):
-		return self.get_query_params().get('EndTime')
+	def get_StaticPath(self):
+		return self.get_query_params().get('StaticPath')
 
-	def set_EndTime(self,EndTime):
-		self.add_query_param('EndTime',EndTime)
+	def set_StaticPath(self,StaticPath):
+		self.add_query_param('StaticPath',StaticPath)
 
-	def get_StartTime(self):
-		return self.get_query_params().get('StartTime')
+	def get_DynamicCacheControl(self):
+		return self.get_query_params().get('DynamicCacheControl')
 
-	def set_StartTime(self,StartTime):
-		self.add_query_param('StartTime',StartTime)
+	def set_DynamicCacheControl(self,DynamicCacheControl):
+		self.add_query_param('DynamicCacheControl',DynamicCacheControl)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
