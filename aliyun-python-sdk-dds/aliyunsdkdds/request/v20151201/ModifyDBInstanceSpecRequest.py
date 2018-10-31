@@ -71,6 +71,12 @@ class ModifyDBInstanceSpecRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
+	def get_ReplicationFactor(self):
+		return self.get_query_params().get('ReplicationFactor')
+
+	def set_ReplicationFactor(self,ReplicationFactor):
+		self.add_query_param('ReplicationFactor',ReplicationFactor)
+
 	def get_DBInstanceClass(self):
 		return self.get_query_params().get('DBInstanceClass')
 

@@ -35,6 +35,12 @@ class DescribeDBInstancePerformanceRequest(RpcRequest):
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
+	def get_RoleId(self):
+		return self.get_query_params().get('RoleId')
+
+	def set_RoleId(self,RoleId):
+		self.add_query_param('RoleId',RoleId)
+
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
 

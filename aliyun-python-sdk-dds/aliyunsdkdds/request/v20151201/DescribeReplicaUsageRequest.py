@@ -35,6 +35,12 @@ class DescribeReplicaUsageRequest(RpcRequest):
 	def set_SourceDBInstanceId(self,SourceDBInstanceId):
 		self.add_query_param('SourceDBInstanceId',SourceDBInstanceId)
 
+	def get_DestinationDBInstanceId(self):
+		return self.get_query_params().get('DestinationDBInstanceId')
+
+	def set_DestinationDBInstanceId(self,DestinationDBInstanceId):
+		self.add_query_param('DestinationDBInstanceId',DestinationDBInstanceId)
+
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
 

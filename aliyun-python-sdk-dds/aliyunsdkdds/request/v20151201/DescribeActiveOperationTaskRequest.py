@@ -18,10 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class DescribeReplicaPerformanceRequest(RpcRequest):
+class DescribeActiveOperationTaskRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dds', '2015-12-01', 'DescribeReplicaPerformance','dds')
+		RpcRequest.__init__(self, 'Dds', '2015-12-01', 'DescribeActiveOperationTask','dds')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -29,11 +29,11 @@ class DescribeReplicaPerformanceRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_DestinationDBInstanceId(self):
-		return self.get_query_params().get('DestinationDBInstanceId')
+	def get_TaskType(self):
+		return self.get_query_params().get('TaskType')
 
-	def set_DestinationDBInstanceId(self,DestinationDBInstanceId):
-		self.add_query_param('DestinationDBInstanceId',DestinationDBInstanceId)
+	def set_TaskType(self,TaskType):
+		self.add_query_param('TaskType',TaskType)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -47,29 +47,23 @@ class DescribeReplicaPerformanceRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
-	def get_EndTime(self):
-		return self.get_query_params().get('EndTime')
-
-	def set_EndTime(self,EndTime):
-		self.add_query_param('EndTime',EndTime)
-
-	def get_StartTime(self):
-		return self.get_query_params().get('StartTime')
-
-	def set_StartTime(self,StartTime):
-		self.add_query_param('StartTime',StartTime)
-
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_SourceDBInstanceId(self):
-		return self.get_query_params().get('SourceDBInstanceId')
+	def get_PageNumber(self):
+		return self.get_query_params().get('PageNumber')
 
-	def set_SourceDBInstanceId(self,SourceDBInstanceId):
-		self.add_query_param('SourceDBInstanceId',SourceDBInstanceId)
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)
+
+	def get_IsHistory(self):
+		return self.get_query_params().get('IsHistory')
+
+	def set_IsHistory(self,IsHistory):
+		self.add_query_param('IsHistory',IsHistory)
 
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
@@ -77,14 +71,14 @@ class DescribeReplicaPerformanceRequest(RpcRequest):
 	def set_SecurityToken(self,SecurityToken):
 		self.add_query_param('SecurityToken',SecurityToken)
 
-	def get_ReplicaId(self):
-		return self.get_query_params().get('ReplicaId')
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
 
-	def set_ReplicaId(self,ReplicaId):
-		self.add_query_param('ReplicaId',ReplicaId)
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
 
-	def get_Key(self):
-		return self.get_query_params().get('Key')
+	def get_Region(self):
+		return self.get_query_params().get('Region')
 
-	def set_Key(self,Key):
-		self.add_query_param('Key',Key)
+	def set_Region(self,Region):
+		self.add_query_param('Region',Region)
