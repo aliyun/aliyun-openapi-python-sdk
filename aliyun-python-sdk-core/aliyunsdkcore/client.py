@@ -21,6 +21,7 @@
 import httplib
 import warnings
 import urllib
+import os
 
 try:
     import json
@@ -79,8 +80,8 @@ class AcsClient:
 
         self.__max_retry_num = max_retry_time
         self.__auto_retry = auto_retry
-        self.__ak = ak
-        self.__secret = secret
+        self.__ak = ak or os.environ.get('ACCESS_KEY_ID')
+        self.__secret = secret or os.environ.get('ACCESS_KEY_SECRET')
         self.__region_id = region_id
         self.__user_agent = user_agent
         self._port = port
