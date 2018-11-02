@@ -30,3 +30,15 @@ class QueryAddUserInfoRequest(RpcRequest):
 
 	def set_IotId(self,IotId):
 		self.add_body_params('IotId', IotId)
+
+	def get_DeviceName(self):
+		return self.get_body_params().get('DeviceName')
+
+	def set_DeviceName(self,DeviceName):
+		self.add_body_params('DeviceName', DeviceName)
+
+	def get_ProductKey(self):
+		return self.get_body_params().get('ProductKey')
+
+	def set_ProductKey(self,ProductKey):
+		self.add_body_params('ProductKey', ProductKey)
