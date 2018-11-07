@@ -1,3 +1,6 @@
+2018-11-07 Version: 2.11.0
+1, add faas endpoints
+
 2018-11-05 Version: 2.10.1
 1, bssopenapi endpoints added, version 2.10.1
 
