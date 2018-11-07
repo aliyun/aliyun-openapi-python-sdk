@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class DescribeRealTimeRecordListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'rtc', '2018-01-11', 'DescribeRealTimeRecordList')
+		RpcRequest.__init__(self, 'rtc', '2018-01-11', 'DescribeRealTimeRecordList','rtc')
 
 	def get_EndTime(self):
 		return self.get_query_params().get('EndTime')

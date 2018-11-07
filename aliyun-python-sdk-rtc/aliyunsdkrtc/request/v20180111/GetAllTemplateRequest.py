@@ -18,30 +18,16 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class UnmuteAudioRequest(RpcRequest):
+class GetAllTemplateRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'rtc', '2018-01-11', 'UnmuteAudio','rtc')
-
-	def get_ParticipantIdss(self):
-		return self.get_query_params().get('ParticipantIdss')
-
-	def set_ParticipantIdss(self,ParticipantIdss):
-		for i in range(len(ParticipantIdss)):	
-			if ParticipantIdss[i] is not None:
-				self.add_query_param('ParticipantIds.' + str(i + 1) , ParticipantIdss[i]);
+		RpcRequest.__init__(self, 'rtc', '2018-01-11', 'GetAllTemplate','rtc')
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
-
-	def get_ConferenceId(self):
-		return self.get_query_params().get('ConferenceId')
-
-	def set_ConferenceId(self,ConferenceId):
-		self.add_query_param('ConferenceId',ConferenceId)
 
 	def get_AppId(self):
 		return self.get_query_params().get('AppId')

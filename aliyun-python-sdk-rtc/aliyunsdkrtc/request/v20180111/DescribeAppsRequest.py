@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class DescribeAppsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'rtc', '2018-01-11', 'DescribeApps')
+		RpcRequest.__init__(self, 'rtc', '2018-01-11', 'DescribeApps','rtc')
 
 	def get_PageNum(self):
 		return self.get_query_params().get('PageNum')

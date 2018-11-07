@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class MuteAudioRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'rtc', '2018-01-11', 'MuteAudio')
+		RpcRequest.__init__(self, 'rtc', '2018-01-11', 'MuteAudio','rtc')
 
 	def get_ParticipantIdss(self):
 		return self.get_query_params().get('ParticipantIdss')
