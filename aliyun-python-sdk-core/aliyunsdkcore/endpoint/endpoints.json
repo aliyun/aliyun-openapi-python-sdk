@@ -752,6 +752,12 @@
       "eu-west-1": "business.ap-southeast-1.aliyuncs.com",
       "me-east-1": "business.ap-southeast-1.aliyuncs.com",
       "ap-south-1": "business.ap-southeast-1.aliyuncs.com"
+    },
+    "faas": {
+      "cn-hangzhou": "faas.cn-hangzhou.aliyuncs.com",
+      "cn-shenzhen": "faas.cn-shenzhen.aliyuncs.com",
+      "cn-shanghai": "faas.cn-shanghai.aliyuncs.com",
+      "cn-beijing": "faas.cn-beijing.aliyuncs.com"
     }
   },
   "document_id": {
