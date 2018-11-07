@@ -18,10 +18,29 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class UpdateChannelRequest(RpcRequest):
+class UpdateTaskParamRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'rtc', '2018-01-11', 'UpdateChannel','rtc')
+		RpcRequest.__init__(self, 'rtc', '2018-01-11', 'UpdateTaskParam','rtc')
+
+	def get_MixPaness(self):
+		return self.get_query_params().get('MixPaness')
+
+	def set_MixPaness(self,MixPaness):
+		for i in range(len(MixPaness)):	
+			if MixPaness[i].get('PaneId') is not None:
+				self.add_query_param('MixPanes.' + str(i + 1) + '.PaneId' , MixPaness[i].get('PaneId'))
+			if MixPaness[i].get('UserId') is not None:
+				self.add_query_param('MixPanes.' + str(i + 1) + '.UserId' , MixPaness[i].get('UserId'))
+			if MixPaness[i].get('SourceType') is not None:
+				self.add_query_param('MixPanes.' + str(i + 1) + '.SourceType' , MixPaness[i].get('SourceType'))
+
+
+	def get_TaskId(self):
+		return self.get_query_params().get('TaskId')
+
+	def set_TaskId(self,TaskId):
+		self.add_query_param('TaskId',TaskId)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
@@ -29,11 +48,11 @@ class UpdateChannelRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_Nonce(self):
-		return self.get_query_params().get('Nonce')
+	def get_TemplateId(self):
+		return self.get_query_params().get('TemplateId')
 
-	def set_Nonce(self,Nonce):
-		self.add_query_param('Nonce',Nonce)
+	def set_TemplateId(self,TemplateId):
+		self.add_query_param('TemplateId',TemplateId)
 
 	def get_AppId(self):
 		return self.get_query_params().get('AppId')
