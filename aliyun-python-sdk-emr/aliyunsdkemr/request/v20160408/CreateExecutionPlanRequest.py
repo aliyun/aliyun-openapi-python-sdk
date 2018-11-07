@@ -102,12 +102,12 @@ class CreateExecutionPlanRequest(RpcRequest):
 
 	def set_BootstrapActions(self,BootstrapActions):
 		for i in range(len(BootstrapActions)):	
-			if BootstrapActions[i].get('Name') is not None:
-				self.add_query_param('BootstrapAction.' + str(i + 1) + '.Name' , BootstrapActions[i].get('Name'))
 			if BootstrapActions[i].get('Path') is not None:
 				self.add_query_param('BootstrapAction.' + str(i + 1) + '.Path' , BootstrapActions[i].get('Path'))
 			if BootstrapActions[i].get('Arg') is not None:
 				self.add_query_param('BootstrapAction.' + str(i + 1) + '.Arg' , BootstrapActions[i].get('Arg'))
+			if BootstrapActions[i].get('Name') is not None:
+				self.add_query_param('BootstrapAction.' + str(i + 1) + '.Name' , BootstrapActions[i].get('Name'))
 
 
 	def get_UseLocalMetaDb(self):
@@ -189,20 +189,20 @@ class CreateExecutionPlanRequest(RpcRequest):
 
 	def set_EcsOrders(self,EcsOrders):
 		for i in range(len(EcsOrders)):	
-			if EcsOrders[i].get('Index') is not None:
-				self.add_query_param('EcsOrder.' + str(i + 1) + '.Index' , EcsOrders[i].get('Index'))
-			if EcsOrders[i].get('NodeCount') is not None:
-				self.add_query_param('EcsOrder.' + str(i + 1) + '.NodeCount' , EcsOrders[i].get('NodeCount'))
 			if EcsOrders[i].get('NodeType') is not None:
 				self.add_query_param('EcsOrder.' + str(i + 1) + '.NodeType' , EcsOrders[i].get('NodeType'))
+			if EcsOrders[i].get('DiskCount') is not None:
+				self.add_query_param('EcsOrder.' + str(i + 1) + '.DiskCount' , EcsOrders[i].get('DiskCount'))
+			if EcsOrders[i].get('NodeCount') is not None:
+				self.add_query_param('EcsOrder.' + str(i + 1) + '.NodeCount' , EcsOrders[i].get('NodeCount'))
+			if EcsOrders[i].get('DiskCapacity') is not None:
+				self.add_query_param('EcsOrder.' + str(i + 1) + '.DiskCapacity' , EcsOrders[i].get('DiskCapacity'))
+			if EcsOrders[i].get('Index') is not None:
+				self.add_query_param('EcsOrder.' + str(i + 1) + '.Index' , EcsOrders[i].get('Index'))
 			if EcsOrders[i].get('InstanceType') is not None:
 				self.add_query_param('EcsOrder.' + str(i + 1) + '.InstanceType' , EcsOrders[i].get('InstanceType'))
 			if EcsOrders[i].get('DiskType') is not None:
 				self.add_query_param('EcsOrder.' + str(i + 1) + '.DiskType' , EcsOrders[i].get('DiskType'))
-			if EcsOrders[i].get('DiskCapacity') is not None:
-				self.add_query_param('EcsOrder.' + str(i + 1) + '.DiskCapacity' , EcsOrders[i].get('DiskCapacity'))
-			if EcsOrders[i].get('DiskCount') is not None:
-				self.add_query_param('EcsOrder.' + str(i + 1) + '.DiskCount' , EcsOrders[i].get('DiskCount'))
 
 
 	def get_WorkflowDefinition(self):
@@ -229,17 +229,48 @@ class CreateExecutionPlanRequest(RpcRequest):
 	def set_ZoneId(self,ZoneId):
 		self.add_query_param('ZoneId',ZoneId)
 
+	def get_UseCustomHiveMetaDB(self):
+		return self.get_query_params().get('UseCustomHiveMetaDB')
+
+	def set_UseCustomHiveMetaDB(self,UseCustomHiveMetaDB):
+		self.add_query_param('UseCustomHiveMetaDB',UseCustomHiveMetaDB)
+
 	def get_Strategy(self):
 		return self.get_query_params().get('Strategy')
 
 	def set_Strategy(self,Strategy):
 		self.add_query_param('Strategy',Strategy)
 
+	def get_Configs(self):
+		return self.get_query_params().get('Configs')
+
+	def set_Configs(self,Configs):
+		for i in range(len(Configs)):	
+			if Configs[i].get('ConfigKey') is not None:
+				self.add_query_param('Config.' + str(i + 1) + '.ConfigKey' , Configs[i].get('ConfigKey'))
+			if Configs[i].get('FileName') is not None:
+				self.add_query_param('Config.' + str(i + 1) + '.FileName' , Configs[i].get('FileName'))
+			if Configs[i].get('Encrypt') is not None:
+				self.add_query_param('Config.' + str(i + 1) + '.Encrypt' , Configs[i].get('Encrypt'))
+			if Configs[i].get('Replace') is not None:
+				self.add_query_param('Config.' + str(i + 1) + '.Replace' , Configs[i].get('Replace'))
+			if Configs[i].get('ConfigValue') is not None:
+				self.add_query_param('Config.' + str(i + 1) + '.ConfigValue' , Configs[i].get('ConfigValue'))
+			if Configs[i].get('ServiceName') is not None:
+				self.add_query_param('Config.' + str(i + 1) + '.ServiceName' , Configs[i].get('ServiceName'))
+
+
 	def get_HighAvailabilityEnable(self):
 		return self.get_query_params().get('HighAvailabilityEnable')
 
 	def set_HighAvailabilityEnable(self,HighAvailabilityEnable):
 		self.add_query_param('HighAvailabilityEnable',HighAvailabilityEnable)
+
+	def get_InitCustomHiveMetaDB(self):
+		return self.get_query_params().get('InitCustomHiveMetaDB')
+
+	def set_InitCustomHiveMetaDB(self,InitCustomHiveMetaDB):
+		self.add_query_param('InitCustomHiveMetaDB',InitCustomHiveMetaDB)
 
 	def get_LogEnable(self):
 		return self.get_query_params().get('LogEnable')

@@ -29,11 +29,17 @@ class ModifyFlowForWebRequest(RpcRequest):
 	def set_CronExpr(self,CronExpr):
 		self.add_query_param('CronExpr',CronExpr)
 
-	def get_ResourceOwnerId(self):
-		return self.get_query_params().get('ResourceOwnerId')
+	def get_ParentFlowList(self):
+		return self.get_query_params().get('ParentFlowList')
 
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+	def set_ParentFlowList(self,ParentFlowList):
+		self.add_query_param('ParentFlowList',ParentFlowList)
+
+	def get_AlertDingDingGroupBizId(self):
+		return self.get_query_params().get('AlertDingDingGroupBizId')
+
+	def set_AlertDingDingGroupBizId(self,AlertDingDingGroupBizId):
+		self.add_query_param('AlertDingDingGroupBizId',AlertDingDingGroupBizId)
 
 	def get_Periodic(self):
 		return self.get_query_params().get('Periodic')
@@ -59,11 +65,23 @@ class ModifyFlowForWebRequest(RpcRequest):
 	def set_ClusterId(self,ClusterId):
 		self.add_query_param('ClusterId',ClusterId)
 
+	def get_AlertUserGroupBizId(self):
+		return self.get_query_params().get('AlertUserGroupBizId')
+
+	def set_AlertUserGroupBizId(self,AlertUserGroupBizId):
+		self.add_query_param('AlertUserGroupBizId',AlertUserGroupBizId)
+
 	def get_Graph(self):
 		return self.get_query_params().get('Graph')
 
 	def set_Graph(self,Graph):
 		self.add_query_param('Graph',Graph)
+
+	def get_HostName(self):
+		return self.get_query_params().get('HostName')
+
+	def set_HostName(self,HostName):
+		self.add_query_param('HostName',HostName)
 
 	def get_CreateCluster(self):
 		return self.get_query_params().get('CreateCluster')

@@ -23,6 +23,12 @@ class MetastoreCreateDatabaseRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'MetastoreCreateDatabase')
 
+	def get_DbSource(self):
+		return self.get_query_params().get('DbSource')
+
+	def set_DbSource(self,DbSource):
+		self.add_query_param('DbSource',DbSource)
+
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
@@ -35,14 +41,32 @@ class MetastoreCreateDatabaseRequest(RpcRequest):
 	def set_DbName(self,DbName):
 		self.add_query_param('DbName',DbName)
 
+	def get_DataSourceId(self):
+		return self.get_query_params().get('DataSourceId')
+
+	def set_DataSourceId(self,DataSourceId):
+		self.add_query_param('DataSourceId',DataSourceId)
+
 	def get_Description(self):
 		return self.get_query_params().get('Description')
 
 	def set_Description(self,Description):
 		self.add_query_param('Description',Description)
 
+	def get_Comment(self):
+		return self.get_query_params().get('Comment')
+
+	def set_Comment(self,Comment):
+		self.add_query_param('Comment',Comment)
+
 	def get_LocationUri(self):
 		return self.get_query_params().get('LocationUri')
 
 	def set_LocationUri(self,LocationUri):
 		self.add_query_param('LocationUri',LocationUri)
+
+	def get_ClusterBizId(self):
+		return self.get_query_params().get('ClusterBizId')
+
+	def set_ClusterBizId(self,ClusterBizId):
+		self.add_query_param('ClusterBizId',ClusterBizId)

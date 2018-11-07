@@ -35,12 +35,6 @@ class MetastoreCreateTableRequest(RpcRequest):
 	def set_FieldDelimiter(self,FieldDelimiter):
 		self.add_query_param('FieldDelimiter',FieldDelimiter)
 
-	def get_DbName(self):
-		return self.get_query_params().get('DbName')
-
-	def set_DbName(self,DbName):
-		self.add_query_param('DbName',DbName)
-
 	def get_Columns(self):
 		return self.get_query_params().get('Columns')
 
@@ -48,11 +42,48 @@ class MetastoreCreateTableRequest(RpcRequest):
 		for i in range(len(Columns)):	
 			if Columns[i].get('Name') is not None:
 				self.add_query_param('Column.' + str(i + 1) + '.Name' , Columns[i].get('Name'))
-			if Columns[i].get('Type') is not None:
-				self.add_query_param('Column.' + str(i + 1) + '.Type' , Columns[i].get('Type'))
 			if Columns[i].get('Comment') is not None:
 				self.add_query_param('Column.' + str(i + 1) + '.Comment' , Columns[i].get('Comment'))
+			if Columns[i].get('Type') is not None:
+				self.add_query_param('Column.' + str(i + 1) + '.Type' , Columns[i].get('Type'))
 
+
+	def get_CreateWith(self):
+		return self.get_query_params().get('CreateWith')
+
+	def set_CreateWith(self,CreateWith):
+		self.add_query_param('CreateWith',CreateWith)
+
+	def get_Partitions(self):
+		return self.get_query_params().get('Partitions')
+
+	def set_Partitions(self,Partitions):
+		for i in range(len(Partitions)):	
+			if Partitions[i].get('Name') is not None:
+				self.add_query_param('Partition.' + str(i + 1) + '.Name' , Partitions[i].get('Name'))
+			if Partitions[i].get('Comment') is not None:
+				self.add_query_param('Partition.' + str(i + 1) + '.Comment' , Partitions[i].get('Comment'))
+			if Partitions[i].get('Type') is not None:
+				self.add_query_param('Partition.' + str(i + 1) + '.Type' , Partitions[i].get('Type'))
+
+
+	def get_DbName(self):
+		return self.get_query_params().get('DbName')
+
+	def set_DbName(self,DbName):
+		self.add_query_param('DbName',DbName)
+
+	def get_CreateSql(self):
+		return self.get_query_params().get('CreateSql')
+
+	def set_CreateSql(self,CreateSql):
+		self.add_query_param('CreateSql',CreateSql)
+
+	def get_Comment(self):
+		return self.get_query_params().get('Comment')
+
+	def set_Comment(self,Comment):
+		self.add_query_param('Comment',Comment)
 
 	def get_LocationUri(self):
 		return self.get_query_params().get('LocationUri')
@@ -65,3 +96,9 @@ class MetastoreCreateTableRequest(RpcRequest):
 
 	def set_TableName(self,TableName):
 		self.add_query_param('TableName',TableName)
+
+	def get_DatabaseId(self):
+		return self.get_query_params().get('DatabaseId')
+
+	def set_DatabaseId(self,DatabaseId):
+		self.add_query_param('DatabaseId',DatabaseId)

@@ -29,17 +29,19 @@ class ListClusterHostRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_HostName(self):
-		return self.get_query_params().get('HostName')
-
-	def set_HostName(self,HostName):
-		self.add_query_param('HostName',HostName)
-
 	def get_HostInstanceId(self):
 		return self.get_query_params().get('HostInstanceId')
 
 	def set_HostInstanceId(self,HostInstanceId):
 		self.add_query_param('HostInstanceId',HostInstanceId)
+
+	def get_StatusLists(self):
+		return self.get_query_params().get('StatusLists')
+
+	def set_StatusLists(self,StatusLists):
+		for i in range(len(StatusLists)):	
+			if StatusLists[i] is not None:
+				self.add_query_param('StatusList.' + str(i + 1) , StatusLists[i]);
 
 	def get_PrivateIp(self):
 		return self.get_query_params().get('PrivateIp')
@@ -47,17 +49,17 @@ class ListClusterHostRequest(RpcRequest):
 	def set_PrivateIp(self,PrivateIp):
 		self.add_query_param('PrivateIp',PrivateIp)
 
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
 	def get_ComponentName(self):
 		return self.get_query_params().get('ComponentName')
 
 	def set_ComponentName(self,ComponentName):
 		self.add_query_param('ComponentName',ComponentName)
+
+	def get_PublicIp(self):
+		return self.get_query_params().get('PublicIp')
+
+	def set_PublicIp(self,PublicIp):
+		self.add_query_param('PublicIp',PublicIp)
 
 	def get_ClusterId(self):
 		return self.get_query_params().get('ClusterId')
@@ -70,3 +72,21 @@ class ListClusterHostRequest(RpcRequest):
 
 	def set_PageNumber(self,PageNumber):
 		self.add_query_param('PageNumber',PageNumber)
+
+	def get_HostName(self):
+		return self.get_query_params().get('HostName')
+
+	def set_HostName(self,HostName):
+		self.add_query_param('HostName',HostName)
+
+	def get_GroupType(self):
+		return self.get_query_params().get('GroupType')
+
+	def set_GroupType(self,GroupType):
+		self.add_query_param('GroupType',GroupType)
+
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)

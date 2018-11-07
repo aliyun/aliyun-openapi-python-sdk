@@ -72,9 +72,9 @@ class CreateResourceQueueRequest(RpcRequest):
 		for i in range(len(Configs)):	
 			if Configs[i].get('ConfigKey') is not None:
 				self.add_query_param('Config.' + str(i + 1) + '.ConfigKey' , Configs[i].get('ConfigKey'))
+			if Configs[i].get('Note') is not None:
+				self.add_query_param('Config.' + str(i + 1) + '.Note' , Configs[i].get('Note'))
 			if Configs[i].get('ConfigValue') is not None:
 				self.add_query_param('Config.' + str(i + 1) + '.ConfigValue' , Configs[i].get('ConfigValue'))
 			if Configs[i].get('Category') is not None:
 				self.add_query_param('Config.' + str(i + 1) + '.Category' , Configs[i].get('Category'))
-			if Configs[i].get('Note') is not None:
-				self.add_query_param('Config.' + str(i + 1) + '.Note' , Configs[i].get('Note'))

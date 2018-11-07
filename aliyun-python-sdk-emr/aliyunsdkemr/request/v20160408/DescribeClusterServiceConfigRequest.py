@@ -29,6 +29,12 @@ class DescribeClusterServiceConfigRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_HostInstanceId(self):
+		return self.get_query_params().get('HostInstanceId')
+
+	def set_HostInstanceId(self,HostInstanceId):
+		self.add_query_param('HostInstanceId',HostInstanceId)
+
 	def get_TagValue(self):
 		return self.get_query_params().get('TagValue')
 

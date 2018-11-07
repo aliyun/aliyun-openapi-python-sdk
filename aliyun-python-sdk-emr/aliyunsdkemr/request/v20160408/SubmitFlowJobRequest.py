@@ -29,12 +29,6 @@ class SubmitFlowJobRequest(RpcRequest):
 	def set_JobId(self,JobId):
 		self.add_query_param('JobId',JobId)
 
-	def get_ResourceOwnerId(self):
-		return self.get_query_params().get('ResourceOwnerId')
-
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
 	def get_HostName(self):
 		return self.get_query_params().get('HostName')
 

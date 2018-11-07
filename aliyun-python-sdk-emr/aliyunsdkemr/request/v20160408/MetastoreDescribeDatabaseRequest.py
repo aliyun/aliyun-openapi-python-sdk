@@ -34,3 +34,9 @@ class MetastoreDescribeDatabaseRequest(RpcRequest):
 
 	def set_DbName(self,DbName):
 		self.add_query_param('DbName',DbName)
+
+	def get_Id(self):
+		return self.get_query_params().get('Id')
+
+	def set_Id(self,Id):
+		self.add_query_param('Id',Id)
