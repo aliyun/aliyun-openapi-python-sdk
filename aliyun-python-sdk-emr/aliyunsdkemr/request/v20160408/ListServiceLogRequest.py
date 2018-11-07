@@ -35,11 +35,23 @@ class ListServiceLogRequest(RpcRequest):
 	def set_HostName(self,HostName):
 		self.add_query_param('HostName',HostName)
 
+	def get_MaxKeys(self):
+		return self.get_query_params().get('MaxKeys')
+
+	def set_MaxKeys(self,MaxKeys):
+		self.add_query_param('MaxKeys',MaxKeys)
+
 	def get_LogstoreName(self):
 		return self.get_query_params().get('LogstoreName')
 
 	def set_LogstoreName(self,LogstoreName):
 		self.add_query_param('LogstoreName',LogstoreName)
+
+	def get_Marker(self):
+		return self.get_query_params().get('Marker')
+
+	def set_Marker(self,Marker):
+		self.add_query_param('Marker',Marker)
 
 	def get_ClusterId(self):
 		return self.get_query_params().get('ClusterId')

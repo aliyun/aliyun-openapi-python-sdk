@@ -23,11 +23,11 @@ class DescribeFlowNodeInstanceLauncherLogRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'DescribeFlowNodeInstanceLauncherLog')
 
-	def get_ResourceOwnerId(self):
-		return self.get_query_params().get('ResourceOwnerId')
+	def get_Offset(self):
+		return self.get_query_params().get('Offset')
 
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+	def set_Offset(self,Offset):
+		self.add_query_param('Offset',Offset)
 
 	def get_Start(self):
 		return self.get_query_params().get('Start')
@@ -35,11 +35,35 @@ class DescribeFlowNodeInstanceLauncherLogRequest(RpcRequest):
 	def set_Start(self,Start):
 		self.add_query_param('Start',Start)
 
+	def get_Length(self):
+		return self.get_query_params().get('Length')
+
+	def set_Length(self,Length):
+		self.add_query_param('Length',Length)
+
+	def get_EndTime(self):
+		return self.get_query_params().get('EndTime')
+
+	def set_EndTime(self,EndTime):
+		self.add_query_param('EndTime',EndTime)
+
+	def get_StartTime(self):
+		return self.get_query_params().get('StartTime')
+
+	def set_StartTime(self,StartTime):
+		self.add_query_param('StartTime',StartTime)
+
 	def get_Lines(self):
 		return self.get_query_params().get('Lines')
 
 	def set_Lines(self,Lines):
 		self.add_query_param('Lines',Lines)
+
+	def get_Reverse(self):
+		return self.get_query_params().get('Reverse')
+
+	def set_Reverse(self,Reverse):
+		self.add_query_param('Reverse',Reverse)
 
 	def get_NodeInstanceId(self):
 		return self.get_query_params().get('NodeInstanceId')

@@ -23,20 +23,18 @@ class CreateFlowProjectUserRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'CreateFlowProjectUser')
 
-	def get_UserAccountId(self):
-		return self.get_query_params().get('UserAccountId')
-
-	def set_UserAccountId(self,UserAccountId):
-		self.add_query_param('UserAccountId',UserAccountId)
-
 	def get_ProjectId(self):
 		return self.get_query_params().get('ProjectId')
 
 	def set_ProjectId(self,ProjectId):
 		self.add_query_param('ProjectId',ProjectId)
 
-	def get_UserName(self):
-		return self.get_query_params().get('UserName')
+	def get_Users(self):
+		return self.get_query_params().get('Users')
 
-	def set_UserName(self,UserName):
-		self.add_query_param('UserName',UserName)
+	def set_Users(self,Users):
+		for i in range(len(Users)):	
+			if Users[i].get('UserId') is not None:
+				self.add_query_param('User.' + str(i + 1) + '.UserId' , Users[i].get('UserId'))
+			if Users[i].get('UserName') is not None:
+				self.add_query_param('User.' + str(i + 1) + '.UserName' , Users[i].get('UserName'))

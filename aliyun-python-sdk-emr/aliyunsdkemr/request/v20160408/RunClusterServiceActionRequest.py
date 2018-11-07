@@ -89,6 +89,12 @@ class RunClusterServiceActionRequest(RpcRequest):
 	def set_Comment(self,Comment):
 		self.add_query_param('Comment',Comment)
 
+	def get_Interval(self):
+		return self.get_query_params().get('Interval')
+
+	def set_Interval(self,Interval):
+		self.add_query_param('Interval',Interval)
+
 	def get_HostIdList(self):
 		return self.get_query_params().get('HostIdList')
 

@@ -35,6 +35,18 @@ class ModifyClusterServiceConfigRequest(RpcRequest):
 	def set_CustomConfigParams(self,CustomConfigParams):
 		self.add_query_param('CustomConfigParams',CustomConfigParams)
 
+	def get_ConfigType(self):
+		return self.get_query_params().get('ConfigType')
+
+	def set_ConfigType(self,ConfigType):
+		self.add_query_param('ConfigType',ConfigType)
+
+	def get_HostInstanceId(self):
+		return self.get_query_params().get('HostInstanceId')
+
+	def set_HostInstanceId(self,HostInstanceId):
+		self.add_query_param('HostInstanceId',HostInstanceId)
+
 	def get_GroupId(self):
 		return self.get_query_params().get('GroupId')
 

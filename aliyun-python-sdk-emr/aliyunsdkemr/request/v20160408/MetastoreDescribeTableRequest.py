@@ -35,8 +35,20 @@ class MetastoreDescribeTableRequest(RpcRequest):
 	def set_DbName(self,DbName):
 		self.add_query_param('DbName',DbName)
 
+	def get_Id(self):
+		return self.get_query_params().get('Id')
+
+	def set_Id(self,Id):
+		self.add_query_param('Id',Id)
+
 	def get_TableName(self):
 		return self.get_query_params().get('TableName')
 
 	def set_TableName(self,TableName):
 		self.add_query_param('TableName',TableName)
+
+	def get_DatabaseId(self):
+		return self.get_query_params().get('DatabaseId')
+
+	def set_DatabaseId(self,DatabaseId):
+		self.add_query_param('DatabaseId',DatabaseId)

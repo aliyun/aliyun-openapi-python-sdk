@@ -23,17 +23,17 @@ class DescribeFlowNodeInstanceContainerLogRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'DescribeFlowNodeInstanceContainerLog')
 
-	def get_ResourceOwnerId(self):
-		return self.get_query_params().get('ResourceOwnerId')
-
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
 	def get_Offset(self):
 		return self.get_query_params().get('Offset')
 
 	def set_Offset(self,Offset):
 		self.add_query_param('Offset',Offset)
+
+	def get_LogName(self):
+		return self.get_query_params().get('LogName')
+
+	def set_LogName(self,LogName):
+		self.add_query_param('LogName',LogName)
 
 	def get_AppId(self):
 		return self.get_query_params().get('AppId')

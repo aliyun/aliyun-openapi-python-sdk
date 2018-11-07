@@ -23,12 +23,6 @@ class CreateFlowJobRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'CreateFlowJob')
 
-	def get_ResourceOwnerId(self):
-		return self.get_query_params().get('ResourceOwnerId')
-
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
 	def get_RunConf(self):
 		return self.get_query_params().get('RunConf')
 
@@ -46,6 +40,12 @@ class CreateFlowJobRequest(RpcRequest):
 
 	def set_Description(self,Description):
 		self.add_query_param('Description',Description)
+
+	def get_ClusterId(self):
+		return self.get_query_params().get('ClusterId')
+
+	def set_ClusterId(self,ClusterId):
+		self.add_query_param('ClusterId',ClusterId)
 
 	def get_Type(self):
 		return self.get_query_params().get('Type')
@@ -65,6 +65,17 @@ class CreateFlowJobRequest(RpcRequest):
 	def set_ParamConf(self,ParamConf):
 		self.add_query_param('ParamConf',ParamConf)
 
+	def get_ResourceLists(self):
+		return self.get_query_params().get('ResourceLists')
+
+	def set_ResourceLists(self,ResourceLists):
+		for i in range(len(ResourceLists)):	
+			if ResourceLists[i].get('Path') is not None:
+				self.add_query_param('ResourceList.' + str(i + 1) + '.Path' , ResourceLists[i].get('Path'))
+			if ResourceLists[i].get('Alias') is not None:
+				self.add_query_param('ResourceList.' + str(i + 1) + '.Alias' , ResourceLists[i].get('Alias'))
+
+
 	def get_FailAct(self):
 		return self.get_query_params().get('FailAct')
 
@@ -83,6 +94,12 @@ class CreateFlowJobRequest(RpcRequest):
 	def set_RetryInterval(self,RetryInterval):
 		self.add_query_param('RetryInterval',RetryInterval)
 
+	def get_MonitorConf(self):
+		return self.get_query_params().get('MonitorConf')
+
+	def set_MonitorConf(self,MonitorConf):
+		self.add_query_param('MonitorConf',MonitorConf)
+
 	def get_Name(self):
 		return self.get_query_params().get('Name')
 
@@ -94,6 +111,12 @@ class CreateFlowJobRequest(RpcRequest):
 
 	def set_MaxRetry(self,MaxRetry):
 		self.add_query_param('MaxRetry',MaxRetry)
+
+	def get_Adhoc(self):
+		return self.get_query_params().get('Adhoc')
+
+	def set_Adhoc(self,Adhoc):
+		self.add_query_param('Adhoc',Adhoc)
 
 	def get_ProjectId(self):
 		return self.get_query_params().get('ProjectId')

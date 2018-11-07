@@ -76,12 +76,12 @@ class ModifyExecutionPlanClusterInfoRequest(RpcRequest):
 
 	def set_BootstrapActions(self,BootstrapActions):
 		for i in range(len(BootstrapActions)):	
-			if BootstrapActions[i].get('Name') is not None:
-				self.add_query_param('BootstrapAction.' + str(i + 1) + '.Name' , BootstrapActions[i].get('Name'))
 			if BootstrapActions[i].get('Path') is not None:
 				self.add_query_param('BootstrapAction.' + str(i + 1) + '.Path' , BootstrapActions[i].get('Path'))
 			if BootstrapActions[i].get('Arg') is not None:
 				self.add_query_param('BootstrapAction.' + str(i + 1) + '.Arg' , BootstrapActions[i].get('Arg'))
+			if BootstrapActions[i].get('Name') is not None:
+				self.add_query_param('BootstrapAction.' + str(i + 1) + '.Name' , BootstrapActions[i].get('Name'))
 
 
 	def get_UseLocalMetaDb(self):
@@ -157,20 +157,20 @@ class ModifyExecutionPlanClusterInfoRequest(RpcRequest):
 
 	def set_EcsOrders(self,EcsOrders):
 		for i in range(len(EcsOrders)):	
-			if EcsOrders[i].get('Index') is not None:
-				self.add_query_param('EcsOrder.' + str(i + 1) + '.Index' , EcsOrders[i].get('Index'))
-			if EcsOrders[i].get('NodeCount') is not None:
-				self.add_query_param('EcsOrder.' + str(i + 1) + '.NodeCount' , EcsOrders[i].get('NodeCount'))
-			if EcsOrders[i].get('InstanceType') is not None:
-				self.add_query_param('EcsOrder.' + str(i + 1) + '.InstanceType' , EcsOrders[i].get('InstanceType'))
-			if EcsOrders[i].get('DiskType') is not None:
-				self.add_query_param('EcsOrder.' + str(i + 1) + '.DiskType' , EcsOrders[i].get('DiskType'))
-			if EcsOrders[i].get('DiskCapacity') is not None:
-				self.add_query_param('EcsOrder.' + str(i + 1) + '.DiskCapacity' , EcsOrders[i].get('DiskCapacity'))
 			if EcsOrders[i].get('NodeType') is not None:
 				self.add_query_param('EcsOrder.' + str(i + 1) + '.NodeType' , EcsOrders[i].get('NodeType'))
 			if EcsOrders[i].get('DiskCount') is not None:
 				self.add_query_param('EcsOrder.' + str(i + 1) + '.DiskCount' , EcsOrders[i].get('DiskCount'))
+			if EcsOrders[i].get('NodeCount') is not None:
+				self.add_query_param('EcsOrder.' + str(i + 1) + '.NodeCount' , EcsOrders[i].get('NodeCount'))
+			if EcsOrders[i].get('DiskCapacity') is not None:
+				self.add_query_param('EcsOrder.' + str(i + 1) + '.DiskCapacity' , EcsOrders[i].get('DiskCapacity'))
+			if EcsOrders[i].get('Index') is not None:
+				self.add_query_param('EcsOrder.' + str(i + 1) + '.Index' , EcsOrders[i].get('Index'))
+			if EcsOrders[i].get('InstanceType') is not None:
+				self.add_query_param('EcsOrder.' + str(i + 1) + '.InstanceType' , EcsOrders[i].get('InstanceType'))
+			if EcsOrders[i].get('DiskType') is not None:
+				self.add_query_param('EcsOrder.' + str(i + 1) + '.DiskType' , EcsOrders[i].get('DiskType'))
 
 
 	def get_ZoneId(self):

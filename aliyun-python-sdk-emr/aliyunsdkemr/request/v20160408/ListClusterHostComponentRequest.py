@@ -65,8 +65,20 @@ class ListClusterHostComponentRequest(RpcRequest):
 	def set_ClusterId(self,ClusterId):
 		self.add_query_param('ClusterId',ClusterId)
 
+	def get_HostRole(self):
+		return self.get_query_params().get('HostRole')
+
+	def set_HostRole(self,HostRole):
+		self.add_query_param('HostRole',HostRole)
+
 	def get_PageNumber(self):
 		return self.get_query_params().get('PageNumber')
 
 	def set_PageNumber(self,PageNumber):
 		self.add_query_param('PageNumber',PageNumber)
+
+	def get_ComponentStatus(self):
+		return self.get_query_params().get('ComponentStatus')
+
+	def set_ComponentStatus(self,ComponentStatus):
+		self.add_query_param('ComponentStatus',ComponentStatus)

@@ -77,17 +77,29 @@ class CreateClusterTemplateRequest(RpcRequest):
 	def set_SecurityGroupName(self,SecurityGroupName):
 		self.add_query_param('SecurityGroupName',SecurityGroupName)
 
+	def get_DepositType(self):
+		return self.get_query_params().get('DepositType')
+
+	def set_DepositType(self,DepositType):
+		self.add_query_param('DepositType',DepositType)
+
+	def get_MachineType(self):
+		return self.get_query_params().get('MachineType')
+
+	def set_MachineType(self,MachineType):
+		self.add_query_param('MachineType',MachineType)
+
 	def get_BootstrapActions(self):
 		return self.get_query_params().get('BootstrapActions')
 
 	def set_BootstrapActions(self,BootstrapActions):
 		for i in range(len(BootstrapActions)):	
-			if BootstrapActions[i].get('Name') is not None:
-				self.add_query_param('BootstrapAction.' + str(i + 1) + '.Name' , BootstrapActions[i].get('Name'))
 			if BootstrapActions[i].get('Path') is not None:
 				self.add_query_param('BootstrapAction.' + str(i + 1) + '.Path' , BootstrapActions[i].get('Path'))
 			if BootstrapActions[i].get('Arg') is not None:
 				self.add_query_param('BootstrapAction.' + str(i + 1) + '.Arg' , BootstrapActions[i].get('Arg'))
+			if BootstrapActions[i].get('Name') is not None:
+				self.add_query_param('BootstrapAction.' + str(i + 1) + '.Name' , BootstrapActions[i].get('Name'))
 
 
 	def get_UseLocalMetaDb(self):
@@ -175,38 +187,42 @@ class CreateClusterTemplateRequest(RpcRequest):
 
 	def set_HostGroups(self,HostGroups):
 		for i in range(len(HostGroups)):	
-			if HostGroups[i].get('HostGroupId') is not None:
-				self.add_query_param('HostGroup.' + str(i + 1) + '.HostGroupId' , HostGroups[i].get('HostGroupId'))
-			if HostGroups[i].get('HostGroupName') is not None:
-				self.add_query_param('HostGroup.' + str(i + 1) + '.HostGroupName' , HostGroups[i].get('HostGroupName'))
-			if HostGroups[i].get('HostGroupType') is not None:
-				self.add_query_param('HostGroup.' + str(i + 1) + '.HostGroupType' , HostGroups[i].get('HostGroupType'))
-			if HostGroups[i].get('ClusterId') is not None:
-				self.add_query_param('HostGroup.' + str(i + 1) + '.ClusterId' , HostGroups[i].get('ClusterId'))
-			if HostGroups[i].get('Comment') is not None:
-				self.add_query_param('HostGroup.' + str(i + 1) + '.Comment' , HostGroups[i].get('Comment'))
-			if HostGroups[i].get('CreateType') is not None:
-				self.add_query_param('HostGroup.' + str(i + 1) + '.CreateType' , HostGroups[i].get('CreateType'))
-			if HostGroups[i].get('ChargeType') is not None:
-				self.add_query_param('HostGroup.' + str(i + 1) + '.ChargeType' , HostGroups[i].get('ChargeType'))
 			if HostGroups[i].get('Period') is not None:
 				self.add_query_param('HostGroup.' + str(i + 1) + '.Period' , HostGroups[i].get('Period'))
+			if HostGroups[i].get('SysDiskCapacity') is not None:
+				self.add_query_param('HostGroup.' + str(i + 1) + '.SysDiskCapacity' , HostGroups[i].get('SysDiskCapacity'))
+			if HostGroups[i].get('DiskCapacity') is not None:
+				self.add_query_param('HostGroup.' + str(i + 1) + '.DiskCapacity' , HostGroups[i].get('DiskCapacity'))
+			if HostGroups[i].get('SysDiskType') is not None:
+				self.add_query_param('HostGroup.' + str(i + 1) + '.SysDiskType' , HostGroups[i].get('SysDiskType'))
+			if HostGroups[i].get('ClusterId') is not None:
+				self.add_query_param('HostGroup.' + str(i + 1) + '.ClusterId' , HostGroups[i].get('ClusterId'))
+			if HostGroups[i].get('DiskType') is not None:
+				self.add_query_param('HostGroup.' + str(i + 1) + '.DiskType' , HostGroups[i].get('DiskType'))
+			if HostGroups[i].get('HostGroupName') is not None:
+				self.add_query_param('HostGroup.' + str(i + 1) + '.HostGroupName' , HostGroups[i].get('HostGroupName'))
+			if HostGroups[i].get('VSwitchId') is not None:
+				self.add_query_param('HostGroup.' + str(i + 1) + '.VSwitchId' , HostGroups[i].get('VSwitchId'))
+			if HostGroups[i].get('DiskCount') is not None:
+				self.add_query_param('HostGroup.' + str(i + 1) + '.DiskCount' , HostGroups[i].get('DiskCount'))
+			if HostGroups[i].get('AutoRenew') is not None:
+				self.add_query_param('HostGroup.' + str(i + 1) + '.AutoRenew' , HostGroups[i].get('AutoRenew'))
+			if HostGroups[i].get('HostGroupId') is not None:
+				self.add_query_param('HostGroup.' + str(i + 1) + '.HostGroupId' , HostGroups[i].get('HostGroupId'))
 			if HostGroups[i].get('NodeCount') is not None:
 				self.add_query_param('HostGroup.' + str(i + 1) + '.NodeCount' , HostGroups[i].get('NodeCount'))
 			if HostGroups[i].get('InstanceType') is not None:
 				self.add_query_param('HostGroup.' + str(i + 1) + '.InstanceType' , HostGroups[i].get('InstanceType'))
-			if HostGroups[i].get('DiskType') is not None:
-				self.add_query_param('HostGroup.' + str(i + 1) + '.DiskType' , HostGroups[i].get('DiskType'))
-			if HostGroups[i].get('DiskCapacity') is not None:
-				self.add_query_param('HostGroup.' + str(i + 1) + '.DiskCapacity' , HostGroups[i].get('DiskCapacity'))
-			if HostGroups[i].get('DiskCount') is not None:
-				self.add_query_param('HostGroup.' + str(i + 1) + '.DiskCount' , HostGroups[i].get('DiskCount'))
-			if HostGroups[i].get('SysDiskCapacity') is not None:
-				self.add_query_param('HostGroup.' + str(i + 1) + '.SysDiskCapacity' , HostGroups[i].get('SysDiskCapacity'))
-			if HostGroups[i].get('AutoRenew') is not None:
-				self.add_query_param('HostGroup.' + str(i + 1) + '.AutoRenew' , HostGroups[i].get('AutoRenew'))
-			if HostGroups[i].get('VSwitchId') is not None:
-				self.add_query_param('HostGroup.' + str(i + 1) + '.VSwitchId' , HostGroups[i].get('VSwitchId'))
+			if HostGroups[i].get('Comment') is not None:
+				self.add_query_param('HostGroup.' + str(i + 1) + '.Comment' , HostGroups[i].get('Comment'))
+			if HostGroups[i].get('ChargeType') is not None:
+				self.add_query_param('HostGroup.' + str(i + 1) + '.ChargeType' , HostGroups[i].get('ChargeType'))
+			if HostGroups[i].get('MultiInstanceTypes') is not None:
+				self.add_query_param('HostGroup.' + str(i + 1) + '.MultiInstanceTypes' , HostGroups[i].get('MultiInstanceTypes'))
+			if HostGroups[i].get('CreateType') is not None:
+				self.add_query_param('HostGroup.' + str(i + 1) + '.CreateType' , HostGroups[i].get('CreateType'))
+			if HostGroups[i].get('HostGroupType') is not None:
+				self.add_query_param('HostGroup.' + str(i + 1) + '.HostGroupType' , HostGroups[i].get('HostGroupType'))
 
 
 	def get_ZoneId(self):
@@ -215,8 +231,39 @@ class CreateClusterTemplateRequest(RpcRequest):
 	def set_ZoneId(self,ZoneId):
 		self.add_query_param('ZoneId',ZoneId)
 
+	def get_UseCustomHiveMetaDb(self):
+		return self.get_query_params().get('UseCustomHiveMetaDb')
+
+	def set_UseCustomHiveMetaDb(self,UseCustomHiveMetaDb):
+		self.add_query_param('UseCustomHiveMetaDb',UseCustomHiveMetaDb)
+
+	def get_Configs(self):
+		return self.get_query_params().get('Configs')
+
+	def set_Configs(self,Configs):
+		for i in range(len(Configs)):	
+			if Configs[i].get('ConfigKey') is not None:
+				self.add_query_param('Config.' + str(i + 1) + '.ConfigKey' , Configs[i].get('ConfigKey'))
+			if Configs[i].get('FileName') is not None:
+				self.add_query_param('Config.' + str(i + 1) + '.FileName' , Configs[i].get('FileName'))
+			if Configs[i].get('Encrypt') is not None:
+				self.add_query_param('Config.' + str(i + 1) + '.Encrypt' , Configs[i].get('Encrypt'))
+			if Configs[i].get('Replace') is not None:
+				self.add_query_param('Config.' + str(i + 1) + '.Replace' , Configs[i].get('Replace'))
+			if Configs[i].get('ConfigValue') is not None:
+				self.add_query_param('Config.' + str(i + 1) + '.ConfigValue' , Configs[i].get('ConfigValue'))
+			if Configs[i].get('ServiceName') is not None:
+				self.add_query_param('Config.' + str(i + 1) + '.ServiceName' , Configs[i].get('ServiceName'))
+
+
 	def get_HighAvailabilityEnable(self):
 		return self.get_query_params().get('HighAvailabilityEnable')
 
 	def set_HighAvailabilityEnable(self,HighAvailabilityEnable):
 		self.add_query_param('HighAvailabilityEnable',HighAvailabilityEnable)
+
+	def get_InitCustomHiveMetaDb(self):
+		return self.get_query_params().get('InitCustomHiveMetaDb')
+
+	def set_InitCustomHiveMetaDb(self,InitCustomHiveMetaDb):
+		self.add_query_param('InitCustomHiveMetaDb',InitCustomHiveMetaDb)

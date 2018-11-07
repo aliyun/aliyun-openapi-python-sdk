@@ -29,12 +29,6 @@ class ResumeFlowRequest(RpcRequest):
 	def set_FlowInstanceId(self,FlowInstanceId):
 		self.add_query_param('FlowInstanceId',FlowInstanceId)
 
-	def get_ResourceOwnerId(self):
-		return self.get_query_params().get('ResourceOwnerId')
-
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
 	def get_ProjectId(self):
 		return self.get_query_params().get('ProjectId')
 

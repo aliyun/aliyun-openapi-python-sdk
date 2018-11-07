@@ -38,6 +38,12 @@ class AddClusterServiceRequest(RpcRequest):
 				self.add_query_param('Service.' + str(i + 1) + '.ServiceName' , Services[i].get('ServiceName'))
 
 
+	def get_Comment(self):
+		return self.get_query_params().get('Comment')
+
+	def set_Comment(self,Comment):
+		self.add_query_param('Comment',Comment)
+
 	def get_ClusterId(self):
 		return self.get_query_params().get('ClusterId')
 
