@@ -64,3 +64,9 @@ class AddFCTriggerRequest(RpcRequest):
 
 	def set_EventMetaName(self,EventMetaName):
 		self.add_body_params('EventMetaName', EventMetaName)
+
+	def get_FunctionARN(self):
+		return self.get_body_params().get('FunctionARN')
+
+	def set_FunctionARN(self,FunctionARN):
+		self.add_body_params('FunctionARN', FunctionARN)
