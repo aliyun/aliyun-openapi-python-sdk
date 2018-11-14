@@ -65,6 +65,12 @@ class CreateHybridClusterRequest(RpcRequest):
 	def set_OnPremiseVolumeRemotePath(self,OnPremiseVolumeRemotePath):
 		self.add_query_param('OnPremiseVolumeRemotePath',OnPremiseVolumeRemotePath)
 
+	def get_JobQueue(self):
+		return self.get_query_params().get('JobQueue')
+
+	def set_JobQueue(self,JobQueue):
+		self.add_query_param('JobQueue',JobQueue)
+
 	def get_VolumeType(self):
 		return self.get_query_params().get('VolumeType')
 
@@ -118,6 +124,17 @@ class CreateHybridClusterRequest(RpcRequest):
 
 	def set_RemoteDirectory(self,RemoteDirectory):
 		self.add_query_param('RemoteDirectory',RemoteDirectory)
+
+	def get_PostInstallScripts(self):
+		return self.get_query_params().get('PostInstallScripts')
+
+	def set_PostInstallScripts(self,PostInstallScripts):
+		for i in range(len(PostInstallScripts)):	
+			if PostInstallScripts[i].get('Args') is not None:
+				self.add_query_param('PostInstallScript.' + str(i + 1) + '.Args' , PostInstallScripts[i].get('Args'))
+			if PostInstallScripts[i].get('Url') is not None:
+				self.add_query_param('PostInstallScript.' + str(i + 1) + '.Url' , PostInstallScripts[i].get('Url'))
+
 
 	def get_VSwitchId(self):
 		return self.get_query_params().get('VSwitchId')

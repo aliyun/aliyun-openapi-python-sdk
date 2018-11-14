@@ -94,8 +94,12 @@ class SetAutoScaleConfigRequest(RpcRequest):
 				self.add_query_param('Queues.' + str(i + 1) + '.QueueName' , Queuess[i].get('QueueName'))
 			if Queuess[i].get('InstanceType') is not None:
 				self.add_query_param('Queues.' + str(i + 1) + '.InstanceType' , Queuess[i].get('InstanceType'))
+			if Queuess[i].get('EnableAutoGrow') is not None:
+				self.add_query_param('Queues.' + str(i + 1) + '.EnableAutoGrow' , Queuess[i].get('EnableAutoGrow'))
 			if Queuess[i].get('SpotPriceLimit') is not None:
 				self.add_query_param('Queues.' + str(i + 1) + '.SpotPriceLimit' , Queuess[i].get('SpotPriceLimit'))
+			if Queuess[i].get('EnableAutoShrink') is not None:
+				self.add_query_param('Queues.' + str(i + 1) + '.EnableAutoShrink' , Queuess[i].get('EnableAutoShrink'))
 
 
 	def get_ExtraNodesGrowRatio(self):

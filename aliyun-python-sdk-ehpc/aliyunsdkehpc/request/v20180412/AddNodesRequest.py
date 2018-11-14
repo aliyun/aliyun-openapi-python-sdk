@@ -89,6 +89,12 @@ class AddNodesRequest(RpcRequest):
 	def set_EcsChargeType(self,EcsChargeType):
 		self.add_query_param('EcsChargeType',EcsChargeType)
 
+	def get_CreateMode(self):
+		return self.get_query_params().get('CreateMode')
+
+	def set_CreateMode(self,CreateMode):
+		self.add_query_param('CreateMode',CreateMode)
+
 	def get_InstanceType(self):
 		return self.get_query_params().get('InstanceType')
 
