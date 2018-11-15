@@ -65,6 +65,12 @@ class CreateOfficeConversionTaskRequest(RpcRequest):
 	def set_EndPage(self,EndPage):
 		self.add_query_param('EndPage',EndPage)
 
+	def get_IdempotentToken(self):
+		return self.get_query_params().get('IdempotentToken')
+
+	def set_IdempotentToken(self,IdempotentToken):
+		self.add_query_param('IdempotentToken',IdempotentToken)
+
 	def get_TgtFileSuffix(self):
 		return self.get_query_params().get('TgtFileSuffix')
 
