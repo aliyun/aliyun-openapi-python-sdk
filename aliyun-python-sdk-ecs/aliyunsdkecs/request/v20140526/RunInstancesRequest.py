@@ -118,6 +118,12 @@ class RunInstancesRequest(RpcRequest):
 	def set_LaunchTemplateId(self,LaunchTemplateId):
 		self.add_query_param('LaunchTemplateId',LaunchTemplateId)
 
+	def get_Ipv6AddressCount(self):
+		return self.get_query_params().get('Ipv6AddressCount')
+
+	def set_Ipv6AddressCount(self,Ipv6AddressCount):
+		self.add_query_param('Ipv6AddressCount',Ipv6AddressCount)
+
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
@@ -171,6 +177,14 @@ class RunInstancesRequest(RpcRequest):
 
 	def set_ZoneId(self,ZoneId):
 		self.add_query_param('ZoneId',ZoneId)
+
+	def get_Ipv6Addresss(self):
+		return self.get_query_params().get('Ipv6Addresss')
+
+	def set_Ipv6Addresss(self,Ipv6Addresss):
+		for i in range(len(Ipv6Addresss)):	
+			if Ipv6Addresss[i] is not None:
+				self.add_query_param('Ipv6Address.' + str(i + 1) , Ipv6Addresss[i]);
 
 	def get_InternetMaxBandwidthIn(self):
 		return self.get_query_params().get('InternetMaxBandwidthIn')
