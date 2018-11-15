@@ -59,6 +59,18 @@ class RevokeSecurityGroupEgressRequest(RpcRequest):
 	def set_Description(self,Description):
 		self.add_query_param('Description',Description)
 
+	def get_Ipv6DestCidrIp(self):
+		return self.get_query_params().get('Ipv6DestCidrIp')
+
+	def set_Ipv6DestCidrIp(self,Ipv6DestCidrIp):
+		self.add_query_param('Ipv6DestCidrIp',Ipv6DestCidrIp)
+
+	def get_Ipv6SourceCidrIp(self):
+		return self.get_query_params().get('Ipv6SourceCidrIp')
+
+	def set_Ipv6SourceCidrIp(self,Ipv6SourceCidrIp):
+		self.add_query_param('Ipv6SourceCidrIp',Ipv6SourceCidrIp)
+
 	def get_Policy(self):
 		return self.get_query_params().get('Policy')
 
