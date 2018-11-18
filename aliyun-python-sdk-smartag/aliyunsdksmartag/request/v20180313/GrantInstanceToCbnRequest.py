@@ -18,10 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class UpdateSmartAccessGatewayVersionRequest(RpcRequest):
+class GrantInstanceToCbnRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Smartag', '2018-03-13', 'UpdateSmartAccessGatewayVersion','smartag')
+		RpcRequest.__init__(self, 'Smartag', '2018-03-13', 'GrantInstanceToCbn','smartag')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -29,17 +29,23 @@ class UpdateSmartAccessGatewayVersionRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_SerialNumber(self):
-		return self.get_query_params().get('SerialNumber')
-
-	def set_SerialNumber(self,SerialNumber):
-		self.add_query_param('SerialNumber',SerialNumber)
-
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+
+	def get_CenUid(self):
+		return self.get_query_params().get('CenUid')
+
+	def set_CenUid(self,CenUid):
+		self.add_query_param('CenUid',CenUid)
+
+	def get_CenInstanceId(self):
+		return self.get_query_params().get('CenInstanceId')
+
+	def set_CenInstanceId(self,CenInstanceId):
+		self.add_query_param('CenInstanceId',CenInstanceId)
 
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
@@ -47,20 +53,14 @@ class UpdateSmartAccessGatewayVersionRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
-	def get_SmartAGId(self):
-		return self.get_query_params().get('SmartAGId')
+	def get_CcnInstanceId(self):
+		return self.get_query_params().get('CcnInstanceId')
 
-	def set_SmartAGId(self,SmartAGId):
-		self.add_query_param('SmartAGId',SmartAGId)
+	def set_CcnInstanceId(self,CcnInstanceId):
+		self.add_query_param('CcnInstanceId',CcnInstanceId)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
-
-	def get_VersionCode(self):
-		return self.get_query_params().get('VersionCode')
-
-	def set_VersionCode(self,VersionCode):
-		self.add_query_param('VersionCode',VersionCode)

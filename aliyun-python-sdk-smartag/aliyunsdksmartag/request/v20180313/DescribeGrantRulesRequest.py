@@ -18,22 +18,16 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class UpdateSmartAccessGatewayVersionRequest(RpcRequest):
+class DescribeGrantRulesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Smartag', '2018-03-13', 'UpdateSmartAccessGatewayVersion','smartag')
+		RpcRequest.__init__(self, 'Smartag', '2018-03-13', 'DescribeGrantRules','smartag')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_SerialNumber(self):
-		return self.get_query_params().get('SerialNumber')
-
-	def set_SerialNumber(self,SerialNumber):
-		self.add_query_param('SerialNumber',SerialNumber)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -47,11 +41,17 @@ class UpdateSmartAccessGatewayVersionRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
-	def get_SmartAGId(self):
-		return self.get_query_params().get('SmartAGId')
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
 
-	def set_SmartAGId(self,SmartAGId):
-		self.add_query_param('SmartAGId',SmartAGId)
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
+
+	def get_AssociatedCcnId(self):
+		return self.get_query_params().get('AssociatedCcnId')
+
+	def set_AssociatedCcnId(self,AssociatedCcnId):
+		self.add_query_param('AssociatedCcnId',AssociatedCcnId)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
@@ -59,8 +59,8 @@ class UpdateSmartAccessGatewayVersionRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_VersionCode(self):
-		return self.get_query_params().get('VersionCode')
+	def get_PageNumber(self):
+		return self.get_query_params().get('PageNumber')
 
-	def set_VersionCode(self,VersionCode):
-		self.add_query_param('VersionCode',VersionCode)
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)

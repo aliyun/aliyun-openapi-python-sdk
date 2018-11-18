@@ -18,22 +18,16 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class UpdateSmartAccessGatewayVersionRequest(RpcRequest):
+class DeleteSAGLinkLevelHaRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Smartag', '2018-03-13', 'UpdateSmartAccessGatewayVersion','smartag')
+		RpcRequest.__init__(self, 'Smartag', '2018-03-13', 'DeleteSAGLinkLevelHa','smartag')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_SerialNumber(self):
-		return self.get_query_params().get('SerialNumber')
-
-	def set_SerialNumber(self,SerialNumber):
-		self.add_query_param('SerialNumber',SerialNumber)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -58,9 +52,3 @@ class UpdateSmartAccessGatewayVersionRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
-
-	def get_VersionCode(self):
-		return self.get_query_params().get('VersionCode')
-
-	def set_VersionCode(self,VersionCode):
-		self.add_query_param('VersionCode',VersionCode)
