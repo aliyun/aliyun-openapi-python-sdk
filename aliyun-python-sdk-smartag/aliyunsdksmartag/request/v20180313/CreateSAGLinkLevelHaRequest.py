@@ -18,10 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class UpdateSmartAccessGatewayVersionRequest(RpcRequest):
+class CreateSAGLinkLevelHaRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Smartag', '2018-03-13', 'UpdateSmartAccessGatewayVersion','smartag')
+		RpcRequest.__init__(self, 'Smartag', '2018-03-13', 'CreateSAGLinkLevelHa','smartag')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -29,11 +29,11 @@ class UpdateSmartAccessGatewayVersionRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_SerialNumber(self):
-		return self.get_query_params().get('SerialNumber')
+	def get_BackupLinkId(self):
+		return self.get_query_params().get('BackupLinkId')
 
-	def set_SerialNumber(self,SerialNumber):
-		self.add_query_param('SerialNumber',SerialNumber)
+	def set_BackupLinkId(self,BackupLinkId):
+		self.add_query_param('BackupLinkId',BackupLinkId)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -41,11 +41,23 @@ class UpdateSmartAccessGatewayVersionRequest(RpcRequest):
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
+	def get_HaType(self):
+		return self.get_query_params().get('HaType')
+
+	def set_HaType(self,HaType):
+		self.add_query_param('HaType',HaType)
+
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
 
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
+
+	def get_MainLinkRegionId(self):
+		return self.get_query_params().get('MainLinkRegionId')
+
+	def set_MainLinkRegionId(self,MainLinkRegionId):
+		self.add_query_param('MainLinkRegionId',MainLinkRegionId)
 
 	def get_SmartAGId(self):
 		return self.get_query_params().get('SmartAGId')
@@ -59,8 +71,14 @@ class UpdateSmartAccessGatewayVersionRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_VersionCode(self):
-		return self.get_query_params().get('VersionCode')
+	def get_MainLinkId(self):
+		return self.get_query_params().get('MainLinkId')
 
-	def set_VersionCode(self,VersionCode):
-		self.add_query_param('VersionCode',VersionCode)
+	def set_MainLinkId(self,MainLinkId):
+		self.add_query_param('MainLinkId',MainLinkId)
+
+	def get_BackupLinkRegionId(self):
+		return self.get_query_params().get('BackupLinkRegionId')
+
+	def set_BackupLinkRegionId(self,BackupLinkRegionId):
+		self.add_query_param('BackupLinkRegionId',BackupLinkRegionId)

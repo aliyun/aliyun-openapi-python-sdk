@@ -18,22 +18,16 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class UpdateSmartAccessGatewayVersionRequest(RpcRequest):
+class UnicomSignConfirmRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Smartag', '2018-03-13', 'UpdateSmartAccessGatewayVersion','smartag')
+		RpcRequest.__init__(self, 'Smartag', '2018-03-13', 'UnicomSignConfirm','smartag')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_SerialNumber(self):
-		return self.get_query_params().get('SerialNumber')
-
-	def set_SerialNumber(self,SerialNumber):
-		self.add_query_param('SerialNumber',SerialNumber)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -47,20 +41,23 @@ class UpdateSmartAccessGatewayVersionRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
-	def get_SmartAGId(self):
-		return self.get_query_params().get('SmartAGId')
+	def get_TmsOrders(self):
+		return self.get_query_params().get('TmsOrders')
 
-	def set_SmartAGId(self,SmartAGId):
-		self.add_query_param('SmartAGId',SmartAGId)
+	def set_TmsOrders(self,TmsOrders):
+		for i in range(len(TmsOrders)):	
+			if TmsOrders[i].get('TmsCode') is not None:
+				self.add_query_param('TmsOrder.' + str(i + 1) + '.TmsCode' , TmsOrders[i].get('TmsCode'))
+			if TmsOrders[i].get('SigningTime') is not None:
+				self.add_query_param('TmsOrder.' + str(i + 1) + '.SigningTime' , TmsOrders[i].get('SigningTime'))
+			if TmsOrders[i].get('TmsOrderCode') is not None:
+				self.add_query_param('TmsOrder.' + str(i + 1) + '.TmsOrderCode' , TmsOrders[i].get('TmsOrderCode'))
+			if TmsOrders[i].get('TradeId') is not None:
+				self.add_query_param('TmsOrder.' + str(i + 1) + '.TradeId' , TmsOrders[i].get('TradeId'))
+
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
-
-	def get_VersionCode(self):
-		return self.get_query_params().get('VersionCode')
-
-	def set_VersionCode(self,VersionCode):
-		self.add_query_param('VersionCode',VersionCode)
