@@ -29,6 +29,18 @@ class DescribeDBClustersRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_DBClusterDescription(self):
+		return self.get_query_params().get('DBClusterDescription')
+
+	def set_DBClusterDescription(self,DBClusterDescription):
+		self.add_query_param('DBClusterDescription',DBClusterDescription)
+
+	def get_DBClusterStatus(self):
+		return self.get_query_params().get('DBClusterStatus')
+
+	def set_DBClusterStatus(self,DBClusterStatus):
+		self.add_query_param('DBClusterStatus',DBClusterStatus)
+
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -40,6 +52,18 @@ class DescribeDBClustersRequest(RpcRequest):
 
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
+
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
+
+	def get_PageNumber(self):
+		return self.get_query_params().get('PageNumber')
+
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)
 
 	def get_DBType(self):
 		return self.get_query_params().get('DBType')
@@ -53,14 +77,8 @@ class DescribeDBClustersRequest(RpcRequest):
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
 
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
+	def get_DBClusterIds(self):
+		return self.get_query_params().get('DBClusterIds')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_PageNumber(self):
-		return self.get_query_params().get('PageNumber')
-
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
+	def set_DBClusterIds(self,DBClusterIds):
+		self.add_query_param('DBClusterIds',DBClusterIds)

@@ -18,10 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class FailoverDBClusterRequest(RpcRequest):
+class DeleteAccountRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'polardb', '2017-08-01', 'FailoverDBCluster','polardb')
+		RpcRequest.__init__(self, 'polardb', '2017-08-01', 'DeleteAccount','polardb')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -29,17 +29,17 @@ class FailoverDBClusterRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_AccountName(self):
+		return self.get_query_params().get('AccountName')
+
+	def set_AccountName(self,AccountName):
+		self.add_query_param('AccountName',AccountName)
+
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_ClientToken(self):
-		return self.get_query_params().get('ClientToken')
-
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
 
 	def get_DBClusterId(self):
 		return self.get_query_params().get('DBClusterId')
@@ -52,12 +52,6 @@ class FailoverDBClusterRequest(RpcRequest):
 
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
-
-	def get_TargetDBInstanceId(self):
-		return self.get_query_params().get('TargetDBInstanceId')
-
-	def set_TargetDBInstanceId(self,TargetDBInstanceId):
-		self.add_query_param('TargetDBInstanceId',TargetDBInstanceId)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
