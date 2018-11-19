@@ -18,10 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class ModifySecurityIpsRequest(RpcRequest):
+class RestartDBNodeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'polardb', '2017-08-01', 'ModifySecurityIps','polardb')
+		RpcRequest.__init__(self, 'polardb', '2017-08-01', 'RestartDBNode','polardb')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -29,17 +29,23 @@ class ModifySecurityIpsRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_DBNodeId(self):
+		return self.get_query_params().get('DBNodeId')
+
+	def set_DBNodeId(self,DBNodeId):
+		self.add_query_param('DBNodeId',DBNodeId)
+
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
-	def get_DBClusterId(self):
-		return self.get_query_params().get('DBClusterId')
+	def get_ClientToken(self):
+		return self.get_query_params().get('ClientToken')
 
-	def set_DBClusterId(self,DBClusterId):
-		self.add_query_param('DBClusterId',DBClusterId)
+	def set_ClientToken(self,ClientToken):
+		self.add_query_param('ClientToken',ClientToken)
 
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
@@ -47,26 +53,8 @@ class ModifySecurityIpsRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
-	def get_SecurityIps(self):
-		return self.get_query_params().get('SecurityIps')
-
-	def set_SecurityIps(self,SecurityIps):
-		self.add_query_param('SecurityIps',SecurityIps)
-
-	def get_DBClusterIPArrayName(self):
-		return self.get_query_params().get('DBClusterIPArrayName')
-
-	def set_DBClusterIPArrayName(self,DBClusterIPArrayName):
-		self.add_query_param('DBClusterIPArrayName',DBClusterIPArrayName)
-
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
-
-	def get_DBClusterIPArrayAttribute(self):
-		return self.get_query_params().get('DBClusterIPArrayAttribute')
-
-	def set_DBClusterIPArrayAttribute(self,DBClusterIPArrayAttribute):
-		self.add_query_param('DBClusterIPArrayAttribute',DBClusterIPArrayAttribute)
