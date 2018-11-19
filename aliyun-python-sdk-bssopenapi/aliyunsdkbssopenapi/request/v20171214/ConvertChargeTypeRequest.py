@@ -18,10 +18,16 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class QuerySettlementBillRequest(RpcRequest):
+class ConvertChargeTypeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'QuerySettlementBill')
+		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'ConvertChargeType')
+
+	def get_Period(self):
+		return self.get_query_params().get('Period')
+
+	def set_Period(self,Period):
+		self.add_query_param('Period',Period)
 
 	def get_ProductCode(self):
 		return self.get_query_params().get('ProductCode')
@@ -29,11 +35,11 @@ class QuerySettlementBillRequest(RpcRequest):
 	def set_ProductCode(self,ProductCode):
 		self.add_query_param('ProductCode',ProductCode)
 
-	def get_IsHideZeroCharge(self):
-		return self.get_query_params().get('IsHideZeroCharge')
+	def get_InstanceId(self):
+		return self.get_query_params().get('InstanceId')
 
-	def set_IsHideZeroCharge(self,IsHideZeroCharge):
-		self.add_query_param('IsHideZeroCharge',IsHideZeroCharge)
+	def set_InstanceId(self,InstanceId):
+		self.add_query_param('InstanceId',InstanceId)
 
 	def get_SubscriptionType(self):
 		return self.get_query_params().get('SubscriptionType')
@@ -41,47 +47,11 @@ class QuerySettlementBillRequest(RpcRequest):
 	def set_SubscriptionType(self,SubscriptionType):
 		self.add_query_param('SubscriptionType',SubscriptionType)
 
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_EndTime(self):
-		return self.get_query_params().get('EndTime')
-
-	def set_EndTime(self,EndTime):
-		self.add_query_param('EndTime',EndTime)
-
-	def get_BillingCycle(self):
-		return self.get_query_params().get('BillingCycle')
-
-	def set_BillingCycle(self,BillingCycle):
-		self.add_query_param('BillingCycle',BillingCycle)
-
-	def get_StartTime(self):
-		return self.get_query_params().get('StartTime')
-
-	def set_StartTime(self,StartTime):
-		self.add_query_param('StartTime',StartTime)
-
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
-
-	def get_PageNum(self):
-		return self.get_query_params().get('PageNum')
-
-	def set_PageNum(self,PageNum):
-		self.add_query_param('PageNum',PageNum)
-
-	def get_Type(self):
-		return self.get_query_params().get('Type')
-
-	def set_Type(self,Type):
-		self.add_query_param('Type',Type)
 
 	def get_ProductType(self):
 		return self.get_query_params().get('ProductType')

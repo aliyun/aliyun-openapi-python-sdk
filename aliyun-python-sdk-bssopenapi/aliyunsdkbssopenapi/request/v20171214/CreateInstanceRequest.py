@@ -47,12 +47,6 @@ class CreateInstanceRequest(RpcRequest):
 	def set_RenewPeriod(self,RenewPeriod):
 		self.add_query_param('RenewPeriod',RenewPeriod)
 
-	def get_RenewalStatus(self):
-		return self.get_query_params().get('RenewalStatus')
-
-	def set_RenewalStatus(self,RenewalStatus):
-		self.add_query_param('RenewalStatus',RenewalStatus)
-
 	def get_Parameters(self):
 		return self.get_query_params().get('Parameters')
 
@@ -63,6 +57,12 @@ class CreateInstanceRequest(RpcRequest):
 			if Parameters[i].get('Value') is not None:
 				self.add_query_param('Parameter.' + str(i + 1) + '.Value' , Parameters[i].get('Value'))
 
+
+	def get_RenewalStatus(self):
+		return self.get_query_params().get('RenewalStatus')
+
+	def set_RenewalStatus(self,RenewalStatus):
+		self.add_query_param('RenewalStatus',RenewalStatus)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
