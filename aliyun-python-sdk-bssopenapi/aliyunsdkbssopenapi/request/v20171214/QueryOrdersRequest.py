@@ -65,6 +65,12 @@ class QueryOrdersRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
+	def get_CreateTimeEnd(self):
+		return self.get_query_params().get('CreateTimeEnd')
+
+	def set_CreateTimeEnd(self,CreateTimeEnd):
+		self.add_query_param('CreateTimeEnd',CreateTimeEnd)
+
 	def get_ProductType(self):
 		return self.get_query_params().get('ProductType')
 
@@ -76,9 +82,3 @@ class QueryOrdersRequest(RpcRequest):
 
 	def set_OrderType(self,OrderType):
 		self.add_query_param('OrderType',OrderType)
-
-	def get_CreateTimeEnd(self):
-		return self.get_query_params().get('CreateTimeEnd')
-
-	def set_CreateTimeEnd(self,CreateTimeEnd):
-		self.add_query_param('CreateTimeEnd',CreateTimeEnd)

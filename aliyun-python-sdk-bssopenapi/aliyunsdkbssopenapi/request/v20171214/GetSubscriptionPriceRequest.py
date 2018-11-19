@@ -86,14 +86,14 @@ class GetSubscriptionPriceRequest(RpcRequest):
 	def set_Region(self,Region):
 		self.add_query_param('Region',Region)
 
-	def get_ProductType(self):
-		return self.get_query_params().get('ProductType')
-
-	def set_ProductType(self,ProductType):
-		self.add_query_param('ProductType',ProductType)
-
 	def get_OrderType(self):
 		return self.get_query_params().get('OrderType')
 
 	def set_OrderType(self,OrderType):
 		self.add_query_param('OrderType',OrderType)
+
+	def get_ProductType(self):
+		return self.get_query_params().get('ProductType')
+
+	def set_ProductType(self,ProductType):
+		self.add_query_param('ProductType',ProductType)

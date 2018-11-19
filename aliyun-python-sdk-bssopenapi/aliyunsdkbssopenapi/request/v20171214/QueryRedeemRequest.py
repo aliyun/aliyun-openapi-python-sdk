@@ -18,22 +18,16 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class QueryMonthlyInstanceConsumptionRequest(RpcRequest):
+class QueryRedeemRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'QueryMonthlyInstanceConsumption')
+		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'QueryRedeem')
 
-	def get_ProductCode(self):
-		return self.get_query_params().get('ProductCode')
+	def get_ExpiryTimeEnd(self):
+		return self.get_query_params().get('ExpiryTimeEnd')
 
-	def set_ProductCode(self,ProductCode):
-		self.add_query_param('ProductCode',ProductCode)
-
-	def get_SubscriptionType(self):
-		return self.get_query_params().get('SubscriptionType')
-
-	def set_SubscriptionType(self,SubscriptionType):
-		self.add_query_param('SubscriptionType',SubscriptionType)
+	def set_ExpiryTimeEnd(self,ExpiryTimeEnd):
+		self.add_query_param('ExpiryTimeEnd',ExpiryTimeEnd)
 
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
@@ -41,17 +35,11 @@ class QueryMonthlyInstanceConsumptionRequest(RpcRequest):
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
 
-	def get_BillingCycle(self):
-		return self.get_query_params().get('BillingCycle')
+	def get_ExpiryTimeStart(self):
+		return self.get_query_params().get('ExpiryTimeStart')
 
-	def set_BillingCycle(self,BillingCycle):
-		self.add_query_param('BillingCycle',BillingCycle)
-
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
+	def set_ExpiryTimeStart(self,ExpiryTimeStart):
+		self.add_query_param('ExpiryTimeStart',ExpiryTimeStart)
 
 	def get_PageNum(self):
 		return self.get_query_params().get('PageNum')
@@ -59,8 +47,8 @@ class QueryMonthlyInstanceConsumptionRequest(RpcRequest):
 	def set_PageNum(self,PageNum):
 		self.add_query_param('PageNum',PageNum)
 
-	def get_ProductType(self):
-		return self.get_query_params().get('ProductType')
+	def get_EffectiveOrNot(self):
+		return self.get_query_params().get('EffectiveOrNot')
 
-	def set_ProductType(self,ProductType):
-		self.add_query_param('ProductType',ProductType)
+	def set_EffectiveOrNot(self,EffectiveOrNot):
+		self.add_query_param('EffectiveOrNot',EffectiveOrNot)
