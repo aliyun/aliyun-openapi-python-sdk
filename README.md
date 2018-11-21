@@ -15,7 +15,7 @@ This document introduces how to obtain and call Alibaba Cloud Python SDK.
 
 	The AccessKey is required when initializing `AcsClient`. You can create an AccessKey in the Alibaba Cloud console. For more information, see [Create an AccessKey](https://usercenter.console.aliyun.com/?spm=5176.doc52740.2.3.QKZk8w#/manage/ak).
 
-	>**Note:** To increase the security of your account, we recommend that you use the AccessKey of the RAM user to access Alibaba Cloud services.
+	> **Note:** To increase the security of your account, we recommend that you use the AccessKey of the RAM user to access Alibaba Cloud services.
 
 - To use Alibaba Cloud Python SDK to access the APIs of a product, you must first activate the product on the [Alibaba Cloud console](https://home.console.aliyun.com/?spm=5176.doc52740.2.4.QKZk8w) if required.
 
@@ -41,8 +41,9 @@ You can install the Alibaba Cloud Python SDK using the following two methods. Re
 	pip install aliyun-python-sdk-ecs
 	# Install the RDS management library
 	pip install aliyun-python-sdk-rds
-  ```
-> **Note:** If you are using Python 3.x, run the following command to install the core library:
+	```
+
+	> **Note:** If you are using Python 3.x, run the following command to install the core library:
 
 	```bash
 	pip install aliyun-python-sdk-core-v3
@@ -75,20 +76,18 @@ You can install the Alibaba Cloud Python SDK using the following two methods. Re
     ```
 2. Initialize the `AcsClient` instance:
 
-		```python
-	  client = AcsClient(
-		  "<access-key-id>",
-		  "<access-key-secret>",
-		  "<region-id>"
-	  );
-	  ```
+    ```python
+    client = AcsClient(
+        "<access-key-id>",
+        "<access-key-secret>",
+        "<region-id>"
+    );
+    ```
 
 	where:
 
 	- `access-key-id` is the Accesskey ID for your account.
-
 	- `access-key-secret` is the AccessKey secret for your account.
-
 	- `region-id` is the ID of the region where the service is called. For a list of region IDs, see [Regions and zones](~~40654~~).
 
 	> **Note:** The sequence of these parameters cannot be changed.
@@ -96,12 +95,12 @@ You can install the Alibaba Cloud Python SDK using the following two methods. Re
 3. Initialize a request and print response.
 
 	```python
-	  #  Initialize a request and set parameters
-	  request = DescribeInstancesRequest.DescribeInstancesRequest()
-	  request.set_PageSize(10)
-	  # Print response
-	  response = client.do_action_with_exception(request)
-	  print response
+	# Initialize a request and set parameters
+	request = DescribeInstancesRequest.DescribeInstancesRequest()
+	request.set_PageSize(10)
+	# Print response
+	response = client.do_action_with_exception(request)
+	print response
 	```
 
 ## Code example
