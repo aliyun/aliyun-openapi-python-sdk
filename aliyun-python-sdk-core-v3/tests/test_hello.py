@@ -1,3 +1,5 @@
+from aliyunsdkcore.client import AcsClient
+
 # placeholder
 class TestHelloWorld(object):
 
