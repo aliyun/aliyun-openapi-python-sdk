@@ -1,4 +1,8 @@
 # Alibaba Cloud Python Software Development Kit
+
+[![Build Status](https://travis-ci.org/aliyun/aliyun-openapi-python-sdk.svg?branch=master)](https://travis-ci.org/aliyun/aliyun-openapi-python-sdk)
+[![codecov](https://codecov.io/gh/aliyun/aliyun-openapi-python-sdk/branch/master/graph/badge.svg)](https://codecov.io/gh/aliyun/aliyun-openapi-python-sdk)
+
 [中文文档](./README_zh.md)
 
 The Alibaba Cloud Python Software Development Kit (SDK) allows you to access Alibaba Cloud services such as Elastic Compute Service (ECS), Object Storage Service (OSS), and Resource Access Management (RAM).  You can access Alibaba Cloud services without the need to handle API related tasks, such as signing and constructing your requests.
@@ -30,22 +34,25 @@ You can install the Alibaba Cloud Python SDK using the following two methods. Re
 
 	Run the following command to install the individual libraries of Alibaba Cloud services:
 
-	```python
+	```bash
 	# Install the core library
 	pip install aliyun-python-sdk-core
 	# Install the ECS management library
 	pip install aliyun-python-sdk-ecs
 	# Install the RDS management library
 	pip install aliyun-python-sdk-rds
-    ```
->**Note:** If you are using Python 3.x, run the following command to install the core library:
+  ```
+> **Note:** If you are using Python 3.x, run the following command to install the core library:
 
-	>`pip install aliyun-python-sdk-core-v3`
+	```bash
+	pip install aliyun-python-sdk-core-v3
+	```
 
 - **Install from GitHub**
 
 	You can clone the source code to your local folder and then run `setup.py install` to install the SDK:
-	```
+
+	```bash
 	git clone https://github.com/aliyun/aliyun-openapi-python-sdk.git
 	# Install the core library
 	cd aliyun-python-sdk-core
@@ -68,14 +75,13 @@ You can install the Alibaba Cloud Python SDK using the following two methods. Re
     ```
 2. Initialize the `AcsClient` instance:
 
-	```python
+		```python
 	  client = AcsClient(
 		  "<access-key-id>",
 		  "<access-key-secret>",
 		  "<region-id>"
 	  );
-
-	```
+	  ```
 
 	where:
 
@@ -85,7 +91,7 @@ You can install the Alibaba Cloud Python SDK using the following two methods. Re
 
 	- `region-id` is the ID of the region where the service is called. For a list of region IDs, see [Regions and zones](~~40654~~).
 
-	>**Note:** The sequence of these parameters cannot be changed.
+	> **Note:** The sequence of these parameters cannot be changed.
 
 3. Initialize a request and print response.
 
@@ -98,31 +104,31 @@ You can install the Alibaba Cloud Python SDK using the following two methods. Re
 	  print response
 	```
 
-	##Code example
+## Code example
 
-	The following example shows how to query a list of ECS instances in a specific region using [DescribeInstances](~~25506~~). Substitute the values for `your-access-key-id`, `your-access-key-secret`, and `your-region-id`.
+The following example shows how to query a list of ECS instances in a specific region using [DescribeInstances](~~25506~~). Substitute the values for `your-access-key-id`, `your-access-key-secret`, and `your-region-id`.
 
-	```python
-	  # -*- coding: utf8 -*-
+```python
+# -*- coding: utf8 -*-
 
-	  from aliyunsdkcore.client import AcsClient
-	  from aliyunsdkcore.acs_exception.exceptions import ClientException
-	  from aliyunsdkcore.acs_exception.exceptions import ServerException
-	  from aliyunsdkecs.request.v20140526 import DescribeInstancesRequest
-	  from aliyunsdkecs.request.v20140526 import StopInstanceRequest
+from aliyunsdkcore.client import AcsClient
+from aliyunsdkcore.acs_exception.exceptions import ClientException
+from aliyunsdkcore.acs_exception.exceptions import ServerException
+from aliyunsdkecs.request.v20140526 import DescribeInstancesRequest
+from aliyunsdkecs.request.v20140526 import StopInstanceRequest
 
-	  # Initialize AcsClient instance
-	  client = AcsClient(
-		  "<your-access-key-id>",
-		  "<your-access-key-secret>",
-		  "<your-region-id>"
-	  );
+# Initialize AcsClient instance
+client = AcsClient(
+  "<your-access-key-id>",
+  "<your-access-key-secret>",
+  "<your-region-id>"
+);
 
-	  # Initialize a request and set parameters
-	  request = DescribeInstancesRequest.DescribeInstancesRequest()
-	  request.set_PageSize(10)
+# Initialize a request and set parameters
+request = DescribeInstancesRequest.DescribeInstancesRequest()
+request.set_PageSize(10)
 
-	  # Print response
-	  response = client.do_action_with_exception(request)
-	  print response
-	```
+# Print response
+response = client.do_action_with_exception(request)
+print response
+```

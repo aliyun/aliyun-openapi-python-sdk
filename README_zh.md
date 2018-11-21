@@ -1,5 +1,8 @@
 # 阿里云开发者Python工具套件
 
+[![Build Status](https://travis-ci.org/aliyun/aliyun-openapi-python-sdk.svg?branch=master)](https://travis-ci.org/aliyun/aliyun-openapi-python-sdk)
+[![codecov](https://codecov.io/gh/aliyun/aliyun-openapi-python-sdk/branch/master/graph/badge.svg)](https://codecov.io/gh/aliyun/aliyun-openapi-python-sdk)
+
 欢迎使用阿里云开发者工具套件（SDK）。阿里云Python SDK让您不用复杂编程即可访问云服务器、云监控等多个阿里云服务。这里向您介绍如何获取阿里云<span style="background-color:rgb(250, 250, 250);"><span style="color:rgb(89, 89, 89);">Python</span></span> SDK并开始调用。
 如果您在使用SDK的过程中遇到任何问题，欢迎前往[阿里云SDK问答社区](https://yq.aliyun.com/tags/type_ask-tagid_23350)提问，提问前请阅读[提问引导](https://help.aliyun.com/document_detail/93957.html)。亦可在当前GitHub提交Issues。
 
@@ -10,7 +13,8 @@
 
 ## SDK获取和安装
 #### 使用pip安装(推荐)
-```powershell
+
+```bash
 pip install aliyun-python-sdk-core # 安装阿里云 SDK 核心库
 # 如果您使用的是 python3.x，请将上述命令修改为 pip install aliyun-python-sdk-core-v3
 pip install aliyun-python-sdk-ecs # 安装管理 ECS SDK
@@ -32,7 +36,7 @@ from aliyunsdkecs.request.v20140526 import DescribeInstancesRequest
 from aliyunsdkecs.request.v20140526 import StopInstanceRequest
 # 创建 AcsClient 实例
 client = AcsClient(
-   "<your-access-key-id>", 
+   "<your-access-key-id>",
    "<your-access-key-secret>",
    "<your-region-id>"
 );
