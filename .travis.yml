@@ -12,8 +12,8 @@ install:
 
 script:
   - echo $TRAVIS_PYTHON_VERSION
-  - if [[ $TRAVIS_PYTHON_VERSION < 3 ]]; then coverage run --branch -m pytest aliyun-python-sdk-core/tests/; fi
-  - if [[ $TRAVIS_PYTHON_VERSION > 3 ]]; then coverage run --branch -m pytest aliyun-python-sdk-core-v3/tests/; fi
+  - if [[ $TRAVIS_PYTHON_VERSION < 3 ]]; then coverage run --include="aliyun-python-sdk-core/aliyunsdkcore/*" --branch -m pytest aliyun-python-sdk-core/tests/; fi
+  - if [[ $TRAVIS_PYTHON_VERSION > 3 ]]; then coverage run --include="aliyun-python-sdk-core/aliyunsdkcore/*" --branch -m pytest aliyun-python-sdk-core-v3/tests/; fi
 
 notifications:
     webhooks: https://oapi.dingtalk.com/robot/send?access_token=096ed387df243a6d60835aadeccc47165f3813bc7cb81cdd0cfeadfd28e3acc1
