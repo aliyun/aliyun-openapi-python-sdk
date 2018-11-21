@@ -18,10 +18,16 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class SubmitTranscodeJobsRequest(RpcRequest):
+class GetWatermarkRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'vod', '2017-03-21', 'SubmitTranscodeJobs','vod')
+		RpcRequest.__init__(self, 'vod', '2017-03-21', 'GetWatermark','vod')
+
+	def get_WatermarkId(self):
+		return self.get_query_params().get('WatermarkId')
+
+	def set_WatermarkId(self,WatermarkId):
+		self.add_query_param('WatermarkId',WatermarkId)
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -29,44 +35,14 @@ class SubmitTranscodeJobsRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_TemplateGroupId(self):
-		return self.get_query_params().get('TemplateGroupId')
-
-	def set_TemplateGroupId(self,TemplateGroupId):
-		self.add_query_param('TemplateGroupId',TemplateGroupId)
-
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
-	def get_VideoId(self):
-		return self.get_query_params().get('VideoId')
-
-	def set_VideoId(self,VideoId):
-		self.add_query_param('VideoId',VideoId)
-
-	def get_OverrideParams(self):
-		return self.get_query_params().get('OverrideParams')
-
-	def set_OverrideParams(self,OverrideParams):
-		self.add_query_param('OverrideParams',OverrideParams)
-
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
-
-	def get_EncryptConfig(self):
-		return self.get_query_params().get('EncryptConfig')
-
-	def set_EncryptConfig(self,EncryptConfig):
-		self.add_query_param('EncryptConfig',EncryptConfig)
-
-	def get_PipelineId(self):
-		return self.get_query_params().get('PipelineId')
-
-	def set_PipelineId(self,PipelineId):
-		self.add_query_param('PipelineId',PipelineId)
