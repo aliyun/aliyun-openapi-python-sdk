@@ -46,3 +46,9 @@ class TranslateECommerceRequest(RpcRequest):
 
 	def set_TargetLanguage(self,TargetLanguage):
 		self.add_body_params('TargetLanguage', TargetLanguage)
+
+	def get_Scene(self):
+		return self.get_body_params().get('Scene')
+
+	def set_Scene(self,Scene):
+		self.add_body_params('Scene', Scene)
