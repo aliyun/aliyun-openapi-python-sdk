@@ -53,6 +53,12 @@ class CreateInstanceRequest(RpcRequest):
 	def set_SpotPriceLimit(self,SpotPriceLimit):
 		self.add_query_param('SpotPriceLimit',SpotPriceLimit)
 
+	def get_DeletionProtection(self):
+		return self.get_query_params().get('DeletionProtection')
+
+	def set_DeletionProtection(self,DeletionProtection):
+		self.add_query_param('DeletionProtection',DeletionProtection)
+
 	def get_ResourceGroupId(self):
 		return self.get_query_params().get('ResourceGroupId')
 
