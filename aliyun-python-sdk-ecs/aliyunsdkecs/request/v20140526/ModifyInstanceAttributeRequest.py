@@ -65,6 +65,12 @@ class ModifyInstanceAttributeRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
+	def get_DeletionProtection(self):
+		return self.get_query_params().get('DeletionProtection')
+
+	def set_DeletionProtection(self,DeletionProtection):
+		self.add_query_param('DeletionProtection',DeletionProtection)
+
 	def get_UserData(self):
 		return self.get_query_params().get('UserData')
 
