@@ -77,6 +77,12 @@ class QueryRegistrantProfilesRequest(RpcRequest):
 	def set_DefaultRegistrantProfile(self,DefaultRegistrantProfile):
 		self.add_query_param('DefaultRegistrantProfile',DefaultRegistrantProfile)
 
+	def get_Email(self):
+		return self.get_query_params().get('Email')
+
+	def set_Email(self,Email):
+		self.add_query_param('Email',Email)
+
 	def get_ZhRegistrantOrganization(self):
 		return self.get_query_params().get('ZhRegistrantOrganization')
 
