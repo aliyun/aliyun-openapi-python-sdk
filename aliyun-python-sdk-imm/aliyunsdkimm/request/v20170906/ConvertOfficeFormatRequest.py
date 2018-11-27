@@ -23,12 +23,6 @@ class ConvertOfficeFormatRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'imm', '2017-09-06', 'ConvertOfficeFormat','imm')
 
-	def get_ImageSpec(self):
-		return self.get_query_params().get('ImageSpec')
-
-	def set_ImageSpec(self,ImageSpec):
-		self.add_query_param('ImageSpec',ImageSpec)
-
 	def get_SrcType(self):
 		return self.get_query_params().get('SrcType')
 
@@ -47,12 +41,6 @@ class ConvertOfficeFormatRequest(RpcRequest):
 	def set_Project(self,Project):
 		self.add_query_param('Project',Project)
 
-	def get_ExternalID(self):
-		return self.get_query_params().get('ExternalID')
-
-	def set_ExternalID(self,ExternalID):
-		self.add_query_param('ExternalID',ExternalID)
-
 	def get_MaxSheetRow(self):
 		return self.get_query_params().get('MaxSheetRow')
 
@@ -70,6 +58,12 @@ class ConvertOfficeFormatRequest(RpcRequest):
 
 	def set_EndPage(self,EndPage):
 		self.add_query_param('EndPage',EndPage)
+
+	def get_TgtFileSuffix(self):
+		return self.get_query_params().get('TgtFileSuffix')
+
+	def set_TgtFileSuffix(self,TgtFileSuffix):
+		self.add_query_param('TgtFileSuffix',TgtFileSuffix)
 
 	def get_SheetOnePage(self):
 		return self.get_query_params().get('SheetOnePage')
@@ -101,11 +95,35 @@ class ConvertOfficeFormatRequest(RpcRequest):
 	def set_TgtType(self,TgtType):
 		self.add_query_param('TgtType',TgtType)
 
+	def get_FitToPagesWide(self):
+		return self.get_query_params().get('FitToPagesWide')
+
+	def set_FitToPagesWide(self,FitToPagesWide):
+		self.add_query_param('FitToPagesWide',FitToPagesWide)
+
+	def get_TgtFilePrefix(self):
+		return self.get_query_params().get('TgtFilePrefix')
+
+	def set_TgtFilePrefix(self,TgtFilePrefix):
+		self.add_query_param('TgtFilePrefix',TgtFilePrefix)
+
+	def get_FitToPagesTall(self):
+		return self.get_query_params().get('FitToPagesTall')
+
+	def set_FitToPagesTall(self,FitToPagesTall):
+		self.add_query_param('FitToPagesTall',FitToPagesTall)
+
 	def get_SrcUri(self):
 		return self.get_query_params().get('SrcUri')
 
 	def set_SrcUri(self,SrcUri):
 		self.add_query_param('SrcUri',SrcUri)
+
+	def get_TgtFilePages(self):
+		return self.get_query_params().get('TgtFilePages')
+
+	def set_TgtFilePages(self,TgtFilePages):
+		self.add_query_param('TgtFilePages',TgtFilePages)
 
 	def get_TgtUri(self):
 		return self.get_query_params().get('TgtUri')
