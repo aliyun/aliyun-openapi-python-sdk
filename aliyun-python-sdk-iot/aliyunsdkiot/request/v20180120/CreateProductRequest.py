@@ -41,6 +41,12 @@ class CreateProductRequest(RpcRequest):
 	def set_Id2(self,Id2):
 		self.add_query_param('Id2',Id2)
 
+	def get_NetType(self):
+		return self.get_query_params().get('NetType')
+
+	def set_NetType(self,NetType):
+		self.add_query_param('NetType',NetType)
+
 	def get_ProductName(self):
 		return self.get_query_params().get('ProductName')
 
