@@ -18,31 +18,27 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class CreateRuleActionRequest(RpcRequest):
+class SetDevicesPropertyRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'CreateRuleAction')
+		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'SetDevicesProperty')
 
-	def get_Configuration(self):
-		return self.get_query_params().get('Configuration')
+	def get_DeviceNames(self):
+		return self.get_query_params().get('DeviceNames')
 
-	def set_Configuration(self,Configuration):
-		self.add_query_param('Configuration',Configuration)
+	def set_DeviceNames(self,DeviceNames):
+		for i in range(len(DeviceNames)):	
+			if DeviceNames[i] is not None:
+				self.add_query_param('DeviceName.' + str(i + 1) , DeviceNames[i]);
 
-	def get_RuleId(self):
-		return self.get_query_params().get('RuleId')
+	def get_ProductKey(self):
+		return self.get_query_params().get('ProductKey')
 
-	def set_RuleId(self,RuleId):
-		self.add_query_param('RuleId',RuleId)
+	def set_ProductKey(self,ProductKey):
+		self.add_query_param('ProductKey',ProductKey)
 
-	def get_Type(self):
-		return self.get_query_params().get('Type')
+	def get_Items(self):
+		return self.get_query_params().get('Items')
 
-	def set_Type(self,Type):
-		self.add_query_param('Type',Type)
-
-	def get_ErrorActionFlag(self):
-		return self.get_query_params().get('ErrorActionFlag')
-
-	def set_ErrorActionFlag(self,ErrorActionFlag):
-		self.add_query_param('ErrorActionFlag',ErrorActionFlag)
+	def set_Items(self,Items):
+		self.add_query_param('Items',Items)

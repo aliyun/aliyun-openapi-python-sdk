@@ -18,31 +18,29 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class CreateRuleActionRequest(RpcRequest):
+class QueryDeviceByTagsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'CreateRuleAction')
+		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'QueryDeviceByTags')
 
-	def get_Configuration(self):
-		return self.get_query_params().get('Configuration')
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
 
-	def set_Configuration(self,Configuration):
-		self.add_query_param('Configuration',Configuration)
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
 
-	def get_RuleId(self):
-		return self.get_query_params().get('RuleId')
+	def get_CurrentPage(self):
+		return self.get_query_params().get('CurrentPage')
 
-	def set_RuleId(self,RuleId):
-		self.add_query_param('RuleId',RuleId)
+	def set_CurrentPage(self,CurrentPage):
+		self.add_query_param('CurrentPage',CurrentPage)
 
-	def get_Type(self):
-		return self.get_query_params().get('Type')
+	def get_Tags(self):
+		return self.get_query_params().get('Tags')
 
-	def set_Type(self,Type):
-		self.add_query_param('Type',Type)
-
-	def get_ErrorActionFlag(self):
-		return self.get_query_params().get('ErrorActionFlag')
-
-	def set_ErrorActionFlag(self,ErrorActionFlag):
-		self.add_query_param('ErrorActionFlag',ErrorActionFlag)
+	def set_Tags(self,Tags):
+		for i in range(len(Tags)):	
+			if Tags[i].get('TagValue') is not None:
+				self.add_query_param('Tag.' + str(i + 1) + '.TagValue' , Tags[i].get('TagValue'))
+			if Tags[i].get('TagKey') is not None:
+				self.add_query_param('Tag.' + str(i + 1) + '.TagKey' , Tags[i].get('TagKey'))
