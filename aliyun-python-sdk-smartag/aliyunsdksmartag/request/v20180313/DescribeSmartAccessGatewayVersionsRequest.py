@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class DescribeSmartAccessGatewayVersionsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Smartag', '2018-03-13', 'DescribeSmartAccessGatewayVersions','smartag')
+		RpcRequest.__init__(self, 'Smartag', '2018-03-13', 'DescribeSmartAccessGatewayVersions','1.4.0')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
