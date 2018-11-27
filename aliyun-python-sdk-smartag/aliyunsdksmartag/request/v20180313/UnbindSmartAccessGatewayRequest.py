@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class UnbindSmartAccessGatewayRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Smartag', '2018-03-13', 'UnbindSmartAccessGateway','smartag')
+		RpcRequest.__init__(self, 'Smartag', '2018-03-13', 'UnbindSmartAccessGateway','1.4.0')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')

@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class RevokeInstanceFromCbnRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Smartag', '2018-03-13', 'RevokeInstanceFromCbn','smartag')
+		RpcRequest.__init__(self, 'Smartag', '2018-03-13', 'RevokeInstanceFromCbn','1.4.0')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -34,6 +34,12 @@ class RevokeInstanceFromCbnRequest(RpcRequest):
 
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+
+	def get_CenInstanceId(self):
+		return self.get_query_params().get('CenInstanceId')
+
+	def set_CenInstanceId(self,CenInstanceId):
+		self.add_query_param('CenInstanceId',CenInstanceId)
 
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
