@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class ListWatermarkRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'vod', '2017-03-21', 'ListWatermark','vod')
+		RpcRequest.__init__(self, 'vod', '2017-03-21', 'ListWatermark')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')

@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class ListAIVideoCensorJobRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'vod', '2017-03-21', 'ListAIVideoCensorJob','vod')
+		RpcRequest.__init__(self, 'vod', '2017-03-21', 'ListAIVideoCensorJob')
 
 	def get_AIVideoCensorJobIds(self):
 		return self.get_query_params().get('AIVideoCensorJobIds')

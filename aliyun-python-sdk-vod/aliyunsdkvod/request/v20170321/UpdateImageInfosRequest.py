@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class UpdateImageInfosRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'vod', '2017-03-21', 'UpdateImageInfos','vod')
+		RpcRequest.__init__(self, 'vod', '2017-03-21', 'UpdateImageInfos')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')

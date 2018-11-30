@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class DescribePlayUserAvgRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'vod', '2017-03-21', 'DescribePlayUserAvg','vod')
+		RpcRequest.__init__(self, 'vod', '2017-03-21', 'DescribePlayUserAvg')
 
 	def get_EndTime(self):
 		return self.get_query_params().get('EndTime')

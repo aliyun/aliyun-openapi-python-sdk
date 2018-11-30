@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class DeleteWatermarkRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'vod', '2017-03-21', 'DeleteWatermark','vod')
+		RpcRequest.__init__(self, 'vod', '2017-03-21', 'DeleteWatermark')
 
 	def get_WatermarkId(self):
 		return self.get_query_params().get('WatermarkId')

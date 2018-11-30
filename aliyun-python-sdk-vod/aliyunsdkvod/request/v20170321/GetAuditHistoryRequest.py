@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class GetAuditHistoryRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'vod', '2017-03-21', 'GetAuditHistory','vod')
+		RpcRequest.__init__(self, 'vod', '2017-03-21', 'GetAuditHistory')
 
 	def get_PageNo(self):
 		return self.get_query_params().get('PageNo')
