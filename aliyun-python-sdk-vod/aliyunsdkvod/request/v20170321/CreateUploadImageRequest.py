@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class CreateUploadImageRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'vod', '2017-03-21', 'CreateUploadImage','vod')
+		RpcRequest.__init__(self, 'vod', '2017-03-21', 'CreateUploadImage')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -52,6 +52,12 @@ class CreateUploadImageRequest(RpcRequest):
 
 	def set_ImageExt(self,ImageExt):
 		self.add_query_param('ImageExt',ImageExt)
+
+	def get_CateId(self):
+		return self.get_query_params().get('CateId')
+
+	def set_CateId(self,CateId):
+		self.add_query_param('CateId',CateId)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')

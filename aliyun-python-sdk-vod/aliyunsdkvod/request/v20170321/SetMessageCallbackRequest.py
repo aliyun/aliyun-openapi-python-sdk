@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class SetMessageCallbackRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'vod', '2017-03-21', 'SetMessageCallback','vod')
+		RpcRequest.__init__(self, 'vod', '2017-03-21', 'SetMessageCallback')
 
 	def get_CallbackType(self):
 		return self.get_query_params().get('CallbackType')

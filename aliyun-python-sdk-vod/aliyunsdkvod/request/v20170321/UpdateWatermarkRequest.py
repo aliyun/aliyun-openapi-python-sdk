@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class UpdateWatermarkRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'vod', '2017-03-21', 'UpdateWatermark','vod')
+		RpcRequest.__init__(self, 'vod', '2017-03-21', 'UpdateWatermark')
 
 	def get_WatermarkId(self):
 		return self.get_query_params().get('WatermarkId')

@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class GetVideoConfigRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'vod', '2017-03-21', 'GetVideoConfig','vod')
+		RpcRequest.__init__(self, 'vod', '2017-03-21', 'GetVideoConfig')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')

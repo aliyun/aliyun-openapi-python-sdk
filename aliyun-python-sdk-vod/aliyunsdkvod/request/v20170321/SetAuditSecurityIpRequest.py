@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class SetAuditSecurityIpRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'vod', '2017-03-21', 'SetAuditSecurityIp','vod')
+		RpcRequest.__init__(self, 'vod', '2017-03-21', 'SetAuditSecurityIp')
 
 	def get_OperateMode(self):
 		return self.get_query_params().get('OperateMode')

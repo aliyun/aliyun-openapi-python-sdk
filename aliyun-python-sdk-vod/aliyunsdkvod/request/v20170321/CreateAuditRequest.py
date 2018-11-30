@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class CreateAuditRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'vod', '2017-03-21', 'CreateAudit','vod')
+		RpcRequest.__init__(self, 'vod', '2017-03-21', 'CreateAudit')
 
 	def get_AuditContent(self):
 		return self.get_query_params().get('AuditContent')
