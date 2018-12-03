@@ -18,34 +18,34 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class DescribeDcdnTopDomainsByFlowRequest(RpcRequest):
+class DescribeDcdnDomainTopReferVisitRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'dcdn', '2018-01-15', 'DescribeDcdnTopDomainsByFlow')
+		RpcRequest.__init__(self, 'dcdn', '2018-01-15', 'DescribeDcdnDomainTopReferVisit')
+
+	def get_SecurityToken(self):
+		return self.get_query_params().get('SecurityToken')
+
+	def set_SecurityToken(self,SecurityToken):
+		self.add_query_param('SecurityToken',SecurityToken)
+
+	def get_DomainName(self):
+		return self.get_query_params().get('DomainName')
+
+	def set_DomainName(self,DomainName):
+		self.add_query_param('DomainName',DomainName)
+
+	def get_SortBy(self):
+		return self.get_query_params().get('SortBy')
+
+	def set_SortBy(self,SortBy):
+		self.add_query_param('SortBy',SortBy)
 
 	def get_StartTime(self):
 		return self.get_query_params().get('StartTime')
 
 	def set_StartTime(self,StartTime):
 		self.add_query_param('StartTime',StartTime)
-
-	def get_Limit(self):
-		return self.get_query_params().get('Limit')
-
-	def set_Limit(self,Limit):
-		self.add_query_param('Limit',Limit)
-
-	def get_Product(self):
-		return self.get_query_params().get('Product')
-
-	def set_Product(self,Product):
-		self.add_query_param('Product',Product)
-
-	def get_EndTime(self):
-		return self.get_query_params().get('EndTime')
-
-	def set_EndTime(self,EndTime):
-		self.add_query_param('EndTime',EndTime)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
