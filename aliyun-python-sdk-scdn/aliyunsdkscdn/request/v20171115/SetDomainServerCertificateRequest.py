@@ -18,28 +18,16 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class SetScdnDomainCertificateRequest(RpcRequest):
+class SetDomainServerCertificateRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'scdn', '2017-11-15', 'SetScdnDomainCertificate')
-
-	def get_ForceSet(self):
-		return self.get_query_params().get('ForceSet')
-
-	def set_ForceSet(self,ForceSet):
-		self.add_query_param('ForceSet',ForceSet)
+		RpcRequest.__init__(self, 'scdn', '2017-11-15', 'SetDomainServerCertificate')
 
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
 
 	def set_SecurityToken(self,SecurityToken):
 		self.add_query_param('SecurityToken',SecurityToken)
-
-	def get_CertType(self):
-		return self.get_query_params().get('CertType')
-
-	def set_CertType(self,CertType):
-		self.add_query_param('CertType',CertType)
 
 	def get_SSLPub(self):
 		return self.get_query_params().get('SSLPub')
