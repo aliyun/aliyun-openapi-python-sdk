@@ -18,22 +18,34 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class SetDomainGreenManagerConfigRequest(RpcRequest):
+class BatchSetCdnDomainConfigRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'SetDomainGreenManagerConfig')
+		RpcRequest.__init__(self, 'Cdn', '2018-05-10', 'BatchSetCdnDomainConfig')
 
-	def get_Enable(self):
-		return self.get_query_params().get('Enable')
+	def get_Functions(self):
+		return self.get_query_params().get('Functions')
 
-	def set_Enable(self,Enable):
-		self.add_query_param('Enable',Enable)
+	def set_Functions(self,Functions):
+		self.add_query_param('Functions',Functions)
 
-	def get_DomainName(self):
-		return self.get_query_params().get('DomainName')
+	def get_SecurityToken(self):
+		return self.get_query_params().get('SecurityToken')
 
-	def set_DomainName(self,DomainName):
-		self.add_query_param('DomainName',DomainName)
+	def set_SecurityToken(self,SecurityToken):
+		self.add_query_param('SecurityToken',SecurityToken)
+
+	def get_DomainNames(self):
+		return self.get_query_params().get('DomainNames')
+
+	def set_DomainNames(self,DomainNames):
+		self.add_query_param('DomainNames',DomainNames)
+
+	def get_OwnerAccount(self):
+		return self.get_query_params().get('OwnerAccount')
+
+	def set_OwnerAccount(self,OwnerAccount):
+		self.add_query_param('OwnerAccount',OwnerAccount)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')

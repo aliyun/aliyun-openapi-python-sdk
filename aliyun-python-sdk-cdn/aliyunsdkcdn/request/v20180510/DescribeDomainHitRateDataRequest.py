@@ -23,23 +23,11 @@ class DescribeDomainHitRateDataRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Cdn', '2018-05-10', 'DescribeDomainHitRateData')
 
-	def get_LocationNameEn(self):
-		return self.get_query_params().get('LocationNameEn')
-
-	def set_LocationNameEn(self,LocationNameEn):
-		self.add_query_param('LocationNameEn',LocationNameEn)
-
 	def get_StartTime(self):
 		return self.get_query_params().get('StartTime')
 
 	def set_StartTime(self,StartTime):
 		self.add_query_param('StartTime',StartTime)
-
-	def get_IspNameEn(self):
-		return self.get_query_params().get('IspNameEn')
-
-	def set_IspNameEn(self,IspNameEn):
-		self.add_query_param('IspNameEn',IspNameEn)
 
 	def get_DomainName(self):
 		return self.get_query_params().get('DomainName')
