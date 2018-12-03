@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class RemoveInstancesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ess', '2014-08-28', 'RemoveInstances','ess')
+		RpcRequest.__init__(self, 'Ess', '2014-08-28', 'RemoveInstances')
 
 	def get_InstanceId10(self):
 		return self.get_query_params().get('InstanceId.10')
@@ -64,6 +64,12 @@ class RemoveInstancesRequest(RpcRequest):
 
 	def set_InstanceId1(self,InstanceId1):
 		self.add_query_param('InstanceId.1',InstanceId1)
+
+	def get_RemovePolicy(self):
+		return self.get_query_params().get('RemovePolicy')
+
+	def set_RemovePolicy(self,RemovePolicy):
+		self.add_query_param('RemovePolicy',RemovePolicy)
 
 	def get_InstanceId3(self):
 		return self.get_query_params().get('InstanceId.3')
