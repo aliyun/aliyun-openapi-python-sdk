@@ -21,13 +21,19 @@ from aliyunsdkcore.request import RpcRequest
 class CreateScalingConfigurationRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ess', '2014-08-28', 'CreateScalingConfiguration','ess')
+		RpcRequest.__init__(self, 'Ess', '2014-08-28', 'CreateScalingConfiguration')
 
 	def get_ImageId(self):
 		return self.get_query_params().get('ImageId')
 
 	def set_ImageId(self,ImageId):
 		self.add_query_param('ImageId',ImageId)
+
+	def get_Memory(self):
+		return self.get_query_params().get('Memory')
+
+	def set_Memory(self,Memory):
+		self.add_query_param('Memory',Memory)
 
 	def get_ScalingGroupId(self):
 		return self.get_query_params().get('ScalingGroupId')
@@ -39,7 +45,7 @@ class CreateScalingConfigurationRequest(RpcRequest):
 		return self.get_query_params().get('InstanceTypes')
 
 	def set_InstanceTypes(self,InstanceTypes):
-		for i in range(len(InstanceTypes)):
+		for i in range(len(InstanceTypes)):	
 			if InstanceTypes[i] is not None:
 				self.add_query_param('InstanceTypes.' + str(i + 1) , InstanceTypes[i]);
 
@@ -102,6 +108,12 @@ class CreateScalingConfigurationRequest(RpcRequest):
 	def set_HostName(self,HostName):
 		self.add_query_param('HostName',HostName)
 
+	def get_Password(self):
+		return self.get_query_params().get('Password')
+
+	def set_Password(self,Password):
+		self.add_query_param('Password',Password)
+
 	def get_PasswordInherit(self):
 		return self.get_query_params().get('PasswordInherit')
 
@@ -120,6 +132,12 @@ class CreateScalingConfigurationRequest(RpcRequest):
 	def set_InstanceType(self,InstanceType):
 		self.add_query_param('InstanceType',InstanceType)
 
+	def get_DeploymentSetId(self):
+		return self.get_query_params().get('DeploymentSetId')
+
+	def set_DeploymentSetId(self,DeploymentSetId):
+		self.add_query_param('DeploymentSetId',DeploymentSetId)
+
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -131,6 +149,12 @@ class CreateScalingConfigurationRequest(RpcRequest):
 
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
+
+	def get_Cpu(self):
+		return self.get_query_params().get('Cpu')
+
+	def set_Cpu(self,Cpu):
+		self.add_query_param('Cpu',Cpu)
 
 	def get_RamRoleName(self):
 		return self.get_query_params().get('RamRoleName')

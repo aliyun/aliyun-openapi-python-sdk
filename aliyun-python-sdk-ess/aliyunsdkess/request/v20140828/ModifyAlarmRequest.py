@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class ModifyAlarmRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ess', '2014-08-28', 'ModifyAlarm','ess')
+		RpcRequest.__init__(self, 'Ess', '2014-08-28', 'ModifyAlarm')
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')

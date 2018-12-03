@@ -21,13 +21,19 @@ from aliyunsdkcore.request import RpcRequest
 class ModifyScalingConfigurationRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ess', '2014-08-28', 'ModifyScalingConfiguration','ess')
+		RpcRequest.__init__(self, 'Ess', '2014-08-28', 'ModifyScalingConfiguration')
 
 	def get_ImageId(self):
 		return self.get_query_params().get('ImageId')
 
 	def set_ImageId(self,ImageId):
 		self.add_query_param('ImageId',ImageId)
+
+	def get_Memory(self):
+		return self.get_query_params().get('Memory')
+
+	def set_Memory(self,Memory):
+		self.add_query_param('Memory',Memory)
 
 	def get_IoOptimized(self):
 		return self.get_query_params().get('IoOptimized')
@@ -39,7 +45,7 @@ class ModifyScalingConfigurationRequest(RpcRequest):
 		return self.get_query_params().get('InstanceTypes')
 
 	def set_InstanceTypes(self,InstanceTypes):
-		for i in range(len(InstanceTypes)):
+		for i in range(len(InstanceTypes)):	
 			if InstanceTypes[i] is not None:
 				self.add_query_param('InstanceTypes.' + str(i + 1) , InstanceTypes[i]);
 
@@ -48,6 +54,12 @@ class ModifyScalingConfigurationRequest(RpcRequest):
 
 	def set_InternetMaxBandwidthOut(self,InternetMaxBandwidthOut):
 		self.add_query_param('InternetMaxBandwidthOut',InternetMaxBandwidthOut)
+
+	def get_SecurityGroupId(self):
+		return self.get_query_params().get('SecurityGroupId')
+
+	def set_SecurityGroupId(self,SecurityGroupId):
+		self.add_query_param('SecurityGroupId',SecurityGroupId)
 
 	def get_KeyPairName(self):
 		return self.get_query_params().get('KeyPairName')
@@ -96,6 +108,18 @@ class ModifyScalingConfigurationRequest(RpcRequest):
 	def set_ImageName(self,ImageName):
 		self.add_query_param('ImageName',ImageName)
 
+	def get_Override(self):
+		return self.get_query_params().get('Override')
+
+	def set_Override(self,Override):
+		self.add_query_param('Override',Override)
+
+	def get_DeploymentSetId(self):
+		return self.get_query_params().get('DeploymentSetId')
+
+	def set_DeploymentSetId(self,DeploymentSetId):
+		self.add_query_param('DeploymentSetId',DeploymentSetId)
+
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -107,6 +131,12 @@ class ModifyScalingConfigurationRequest(RpcRequest):
 
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
+
+	def get_Cpu(self):
+		return self.get_query_params().get('Cpu')
+
+	def set_Cpu(self,Cpu):
+		self.add_query_param('Cpu',Cpu)
 
 	def get_RamRoleName(self):
 		return self.get_query_params().get('RamRoleName')

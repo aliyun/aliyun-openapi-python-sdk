@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class CreateScalingGroupRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ess', '2014-08-28', 'CreateScalingGroup','ess')
+		RpcRequest.__init__(self, 'Ess', '2014-08-28', 'CreateScalingGroup')
 
 	def get_MultiAZPolicy(self):
 		return self.get_query_params().get('MultiAZPolicy')
@@ -69,7 +69,7 @@ class CreateScalingGroupRequest(RpcRequest):
 		return self.get_query_params().get('VSwitchIds')
 
 	def set_VSwitchIds(self,VSwitchIds):
-		for i in range(len(VSwitchIds)):
+		for i in range(len(VSwitchIds)):	
 			if VSwitchIds[i] is not None:
 				self.add_query_param('VSwitchIds.' + str(i + 1) , VSwitchIds[i]);
 
@@ -96,6 +96,12 @@ class CreateScalingGroupRequest(RpcRequest):
 
 	def set_LaunchTemplateVersion(self,LaunchTemplateVersion):
 		self.add_query_param('LaunchTemplateVersion',LaunchTemplateVersion)
+
+	def get_ScalingPolicy(self):
+		return self.get_query_params().get('ScalingPolicy')
+
+	def set_ScalingPolicy(self,ScalingPolicy):
+		self.add_query_param('ScalingPolicy',ScalingPolicy)
 
 	def get_VSwitchId(self):
 		return self.get_query_params().get('VSwitchId')
