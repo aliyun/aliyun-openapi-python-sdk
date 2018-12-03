@@ -23,6 +23,12 @@ class SetDcdnDomainCertificateRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'dcdn', '2018-01-15', 'SetDcdnDomainCertificate')
 
+	def get_ForceSet(self):
+		return self.get_query_params().get('ForceSet')
+
+	def set_ForceSet(self,ForceSet):
+		self.add_query_param('ForceSet',ForceSet)
+
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
 
