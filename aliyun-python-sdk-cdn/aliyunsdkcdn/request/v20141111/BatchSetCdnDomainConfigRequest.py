@@ -18,28 +18,34 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class DescribeDomainISPDataRequest(RpcRequest):
+class BatchSetCdnDomainConfigRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cdn', '2018-05-10', 'DescribeDomainISPData')
+		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'BatchSetCdnDomainConfig')
 
-	def get_StartTime(self):
-		return self.get_query_params().get('StartTime')
+	def get_Functions(self):
+		return self.get_query_params().get('Functions')
 
-	def set_StartTime(self,StartTime):
-		self.add_query_param('StartTime',StartTime)
+	def set_Functions(self,Functions):
+		self.add_query_param('Functions',Functions)
 
-	def get_DomainName(self):
-		return self.get_query_params().get('DomainName')
+	def get_SecurityToken(self):
+		return self.get_query_params().get('SecurityToken')
 
-	def set_DomainName(self,DomainName):
-		self.add_query_param('DomainName',DomainName)
+	def set_SecurityToken(self,SecurityToken):
+		self.add_query_param('SecurityToken',SecurityToken)
 
-	def get_EndTime(self):
-		return self.get_query_params().get('EndTime')
+	def get_DomainNames(self):
+		return self.get_query_params().get('DomainNames')
 
-	def set_EndTime(self,EndTime):
-		self.add_query_param('EndTime',EndTime)
+	def set_DomainNames(self,DomainNames):
+		self.add_query_param('DomainNames',DomainNames)
+
+	def get_OwnerAccount(self):
+		return self.get_query_params().get('OwnerAccount')
+
+	def set_OwnerAccount(self,OwnerAccount):
+		self.add_query_param('OwnerAccount',OwnerAccount)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')

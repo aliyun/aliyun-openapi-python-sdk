@@ -29,6 +29,12 @@ class SetDomainServerCertificateRequest(RpcRequest):
 	def set_PrivateKey(self,PrivateKey):
 		self.add_query_param('PrivateKey',PrivateKey)
 
+	def get_ForceSet(self):
+		return self.get_query_params().get('ForceSet')
+
+	def set_ForceSet(self,ForceSet):
+		self.add_query_param('ForceSet',ForceSet)
+
 	def get_ServerCertificateStatus(self):
 		return self.get_query_params().get('ServerCertificateStatus')
 
