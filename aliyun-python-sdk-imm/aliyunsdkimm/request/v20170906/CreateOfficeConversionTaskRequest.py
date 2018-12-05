@@ -29,6 +29,54 @@ class CreateOfficeConversionTaskRequest(RpcRequest):
 	def set_SrcType(self,SrcType):
 		self.add_query_param('SrcType',SrcType)
 
+	def get_Project(self):
+		return self.get_query_params().get('Project')
+
+	def set_Project(self,Project):
+		self.add_query_param('Project',Project)
+
+	def get_IdempotentToken(self):
+		return self.get_query_params().get('IdempotentToken')
+
+	def set_IdempotentToken(self,IdempotentToken):
+		self.add_query_param('IdempotentToken',IdempotentToken)
+
+	def get_PdfVector(self):
+		return self.get_query_params().get('PdfVector')
+
+	def set_PdfVector(self,PdfVector):
+		self.add_query_param('PdfVector',PdfVector)
+
+	def get_Password(self):
+		return self.get_query_params().get('Password')
+
+	def set_Password(self,Password):
+		self.add_query_param('Password',Password)
+
+	def get_StartPage(self):
+		return self.get_query_params().get('StartPage')
+
+	def set_StartPage(self,StartPage):
+		self.add_query_param('StartPage',StartPage)
+
+	def get_NotifyEndpoint(self):
+		return self.get_query_params().get('NotifyEndpoint')
+
+	def set_NotifyEndpoint(self,NotifyEndpoint):
+		self.add_query_param('NotifyEndpoint',NotifyEndpoint)
+
+	def get_FitToPagesWide(self):
+		return self.get_query_params().get('FitToPagesWide')
+
+	def set_FitToPagesWide(self,FitToPagesWide):
+		self.add_query_param('FitToPagesWide',FitToPagesWide)
+
+	def get_TgtFilePrefix(self):
+		return self.get_query_params().get('TgtFilePrefix')
+
+	def set_TgtFilePrefix(self,TgtFilePrefix):
+		self.add_query_param('TgtFilePrefix',TgtFilePrefix)
+
 	def get_NotifyTopicName(self):
 		return self.get_query_params().get('NotifyTopicName')
 
@@ -40,12 +88,6 @@ class CreateOfficeConversionTaskRequest(RpcRequest):
 
 	def set_ModelId(self,ModelId):
 		self.add_query_param('ModelId',ModelId)
-
-	def get_Project(self):
-		return self.get_query_params().get('Project')
-
-	def set_Project(self,Project):
-		self.add_query_param('Project',Project)
 
 	def get_MaxSheetRow(self):
 		return self.get_query_params().get('MaxSheetRow')
@@ -65,12 +107,6 @@ class CreateOfficeConversionTaskRequest(RpcRequest):
 	def set_EndPage(self,EndPage):
 		self.add_query_param('EndPage',EndPage)
 
-	def get_IdempotentToken(self):
-		return self.get_query_params().get('IdempotentToken')
-
-	def set_IdempotentToken(self,IdempotentToken):
-		self.add_query_param('IdempotentToken',IdempotentToken)
-
 	def get_TgtFileSuffix(self):
 		return self.get_query_params().get('TgtFileSuffix')
 
@@ -83,18 +119,6 @@ class CreateOfficeConversionTaskRequest(RpcRequest):
 	def set_SheetOnePage(self,SheetOnePage):
 		self.add_query_param('SheetOnePage',SheetOnePage)
 
-	def get_Password(self):
-		return self.get_query_params().get('Password')
-
-	def set_Password(self,Password):
-		self.add_query_param('Password',Password)
-
-	def get_StartPage(self):
-		return self.get_query_params().get('StartPage')
-
-	def set_StartPage(self,StartPage):
-		self.add_query_param('StartPage',StartPage)
-
 	def get_MaxSheetCol(self):
 		return self.get_query_params().get('MaxSheetCol')
 
@@ -106,24 +130,6 @@ class CreateOfficeConversionTaskRequest(RpcRequest):
 
 	def set_TgtType(self,TgtType):
 		self.add_query_param('TgtType',TgtType)
-
-	def get_NotifyEndpoint(self):
-		return self.get_query_params().get('NotifyEndpoint')
-
-	def set_NotifyEndpoint(self,NotifyEndpoint):
-		self.add_query_param('NotifyEndpoint',NotifyEndpoint)
-
-	def get_FitToPagesWide(self):
-		return self.get_query_params().get('FitToPagesWide')
-
-	def set_FitToPagesWide(self,FitToPagesWide):
-		self.add_query_param('FitToPagesWide',FitToPagesWide)
-
-	def get_TgtFilePrefix(self):
-		return self.get_query_params().get('TgtFilePrefix')
-
-	def set_TgtFilePrefix(self,TgtFilePrefix):
-		self.add_query_param('TgtFilePrefix',TgtFilePrefix)
 
 	def get_FitToPagesTall(self):
 		return self.get_query_params().get('FitToPagesTall')
