@@ -65,6 +65,12 @@ class ConvertOfficeFormatRequest(RpcRequest):
 	def set_TgtFileSuffix(self,TgtFileSuffix):
 		self.add_query_param('TgtFileSuffix',TgtFileSuffix)
 
+	def get_PdfVector(self):
+		return self.get_query_params().get('PdfVector')
+
+	def set_PdfVector(self,PdfVector):
+		self.add_query_param('PdfVector',PdfVector)
+
 	def get_SheetOnePage(self):
 		return self.get_query_params().get('SheetOnePage')
 
