@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class DeleteScheduledTaskRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ess', '2014-08-28', 'DeleteScheduledTask')
+		RpcRequest.__init__(self, 'Ess', '2014-08-28', 'DeleteScheduledTask','ess')
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')

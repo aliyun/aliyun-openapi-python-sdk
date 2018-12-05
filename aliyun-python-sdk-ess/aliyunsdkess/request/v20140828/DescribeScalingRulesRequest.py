@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class DescribeScalingRulesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ess', '2014-08-28', 'DescribeScalingRules')
+		RpcRequest.__init__(self, 'Ess', '2014-08-28', 'DescribeScalingRules','ess')
 
 	def get_ScalingRuleName1(self):
 		return self.get_query_params().get('ScalingRuleName.1')

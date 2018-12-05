@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class CreateScalingGroupRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ess', '2014-08-28', 'CreateScalingGroup')
+		RpcRequest.__init__(self, 'Ess', '2014-08-28', 'CreateScalingGroup','ess')
 
 	def get_MultiAZPolicy(self):
 		return self.get_query_params().get('MultiAZPolicy')
@@ -69,7 +69,7 @@ class CreateScalingGroupRequest(RpcRequest):
 		return self.get_query_params().get('VSwitchIds')
 
 	def set_VSwitchIds(self,VSwitchIds):
-		for i in range(len(VSwitchIds)):	
+		for i in range(len(VSwitchIds)):
 			if VSwitchIds[i] is not None:
 				self.add_query_param('VSwitchIds.' + str(i + 1) , VSwitchIds[i]);
 
@@ -145,6 +145,18 @@ class CreateScalingGroupRequest(RpcRequest):
 
 	def set_RemovalPolicy1(self,RemovalPolicy1):
 		self.add_query_param('RemovalPolicy.1',RemovalPolicy1)
+
+	def get_VServerGroups(self):
+		return self.get_query_params().get('VServerGroups')
+
+	def set_VServerGroups(self,VServerGroups):
+		for i in range(len(VServerGroups)):	
+			if VServerGroups[i].get('LoadBalancerId') is not None:
+				self.add_query_param('VServerGroup.' + str(i + 1) + '.LoadBalancerId' , VServerGroups[i].get('LoadBalancerId'))
+			for j in range(len(VServerGroups[i].get('VServerGroupAttributes'))):
+				if VServerGroups[i].get('VServerGroupAttributes')[j] is not None:
+					self.add_query_param('VServerGroup.' + str(i + 1) + '.VServerGroupAttribute.'+str(j + 1), VServerGroups[i].get('VServerGroupAttributes')[j])
+
 
 	def get_RemovalPolicy2(self):
 		return self.get_query_params().get('RemovalPolicy.2')

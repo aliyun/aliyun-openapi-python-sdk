@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class CompleteLifecycleActionRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ess', '2014-08-28', 'CompleteLifecycleAction')
+		RpcRequest.__init__(self, 'Ess', '2014-08-28', 'CompleteLifecycleAction','ess')
 
 	def get_LifecycleActionToken(self):
 		return self.get_query_params().get('LifecycleActionToken')

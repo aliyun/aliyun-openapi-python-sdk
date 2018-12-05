@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class DescribeScalingInstancesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ess', '2014-08-28', 'DescribeScalingInstances')
+		RpcRequest.__init__(self, 'Ess', '2014-08-28', 'DescribeScalingInstances','ess')
 
 	def get_InstanceId10(self):
 		return self.get_query_params().get('InstanceId.10')

@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class DetachDBInstancesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ess', '2014-08-28', 'DetachDBInstances')
+		RpcRequest.__init__(self, 'Ess', '2014-08-28', 'DetachDBInstances','ess')
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
