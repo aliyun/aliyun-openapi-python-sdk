@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class EnterStandbyRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ess', '2014-08-28', 'EnterStandby')
+		RpcRequest.__init__(self, 'Ess', '2014-08-28', 'EnterStandby','ess')
 
 	def get_InstanceIds(self):
 		return self.get_query_params().get('InstanceIds')

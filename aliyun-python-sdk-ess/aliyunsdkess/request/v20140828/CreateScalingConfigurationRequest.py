@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class CreateScalingConfigurationRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ess', '2014-08-28', 'CreateScalingConfiguration')
+		RpcRequest.__init__(self, 'Ess', '2014-08-28', 'CreateScalingConfiguration','ess')
 
 	def get_ImageId(self):
 		return self.get_query_params().get('ImageId')
@@ -45,7 +45,7 @@ class CreateScalingConfigurationRequest(RpcRequest):
 		return self.get_query_params().get('InstanceTypes')
 
 	def set_InstanceTypes(self,InstanceTypes):
-		for i in range(len(InstanceTypes)):	
+		for i in range(len(InstanceTypes)):
 			if InstanceTypes[i] is not None:
 				self.add_query_param('InstanceTypes.' + str(i + 1) , InstanceTypes[i]);
 

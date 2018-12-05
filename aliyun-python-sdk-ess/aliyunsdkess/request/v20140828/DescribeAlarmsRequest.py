@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class DescribeAlarmsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ess', '2014-08-28', 'DescribeAlarms')
+		RpcRequest.__init__(self, 'Ess', '2014-08-28', 'DescribeAlarms','ess')
 
 	def get_IsEnable(self):
 		return self.get_query_params().get('IsEnable')

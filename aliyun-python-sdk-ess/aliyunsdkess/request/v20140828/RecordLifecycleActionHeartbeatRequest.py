@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class RecordLifecycleActionHeartbeatRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ess', '2014-08-28', 'RecordLifecycleActionHeartbeat')
+		RpcRequest.__init__(self, 'Ess', '2014-08-28', 'RecordLifecycleActionHeartbeat','ess')
 
 	def get_lifecycleActionToken(self):
 		return self.get_query_params().get('lifecycleActionToken')

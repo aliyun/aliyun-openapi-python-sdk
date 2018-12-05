@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class EnableScalingGroupRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ess', '2014-08-28', 'EnableScalingGroup')
+		RpcRequest.__init__(self, 'Ess', '2014-08-28', 'EnableScalingGroup','ess')
 
 	def get_LoadBalancerWeight6(self):
 		return self.get_query_params().get('LoadBalancerWeight.6')

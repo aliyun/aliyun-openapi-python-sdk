@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class ModifyNotificationConfigurationRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ess', '2014-08-28', 'ModifyNotificationConfiguration')
+		RpcRequest.__init__(self, 'Ess', '2014-08-28', 'ModifyNotificationConfiguration','ess')
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')

@@ -18,10 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class ModifyAlarmRequest(RpcRequest):
+class DetachVServerGroupsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ess', '2014-08-28', 'ModifyAlarm','ess')
+		RpcRequest.__init__(self, 'Ess', '2014-08-28', 'DetachVServerGroups','ess')
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -29,25 +29,17 @@ class ModifyAlarmRequest(RpcRequest):
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
-	def get_Name(self):
-		return self.get_query_params().get('Name')
+	def get_ScalingGroupId(self):
+		return self.get_query_params().get('ScalingGroupId')
 
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)
+	def set_ScalingGroupId(self,ScalingGroupId):
+		self.add_query_param('ScalingGroupId',ScalingGroupId)
 
-	def get_Description(self):
-		return self.get_query_params().get('Description')
+	def get_ForceDetach(self):
+		return self.get_query_params().get('ForceDetach')
 
-	def set_Description(self,Description):
-		self.add_query_param('Description',Description)
-
-	def get_AlarmActions(self):
-		return self.get_query_params().get('AlarmActions')
-
-	def set_AlarmActions(self,AlarmActions):
-		for i in range(len(AlarmActions)):	
-			if AlarmActions[i] is not None:
-				self.add_query_param('AlarmAction.' + str(i + 1) , AlarmActions[i]);
+	def set_ForceDetach(self,ForceDetach):
+		self.add_query_param('ForceDetach',ForceDetach)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
@@ -55,8 +47,13 @@ class ModifyAlarmRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_AlarmTaskId(self):
-		return self.get_query_params().get('AlarmTaskId')
+	def get_VServerGroups(self):
+		return self.get_query_params().get('VServerGroups')
 
-	def set_AlarmTaskId(self,AlarmTaskId):
-		self.add_query_param('AlarmTaskId',AlarmTaskId)
+	def set_VServerGroups(self,VServerGroups):
+		for i in range(len(VServerGroups)):	
+			if VServerGroups[i].get('LoadBalancerId') is not None:
+				self.add_query_param('VServerGroup.' + str(i + 1) + '.LoadBalancerId' , VServerGroups[i].get('LoadBalancerId'))
+			for j in range(len(VServerGroups[i].get('VServerGroupAttributes'))):
+				if VServerGroups[i].get('VServerGroupAttributes')[j] is not None:
+					self.add_query_param('VServerGroup.' + str(i + 1) + '.VServerGroupAttribute.'+str(j + 1), VServerGroups[i].get('VServerGroupAttributes')[j])
