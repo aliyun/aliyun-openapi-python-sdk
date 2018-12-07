@@ -30,6 +30,12 @@ class DescribeLoadTaskStatusRequest(RpcRequest):
 	def set_InstanceId(self,InstanceId):
 		self.add_query_param('InstanceId',InstanceId)
 
+	def get_SecurityToken(self):
+		return self.get_query_params().get('SecurityToken')
+
+	def set_SecurityToken(self,SecurityToken):
+		self.add_query_param('SecurityToken',SecurityToken)
+
 	def get_RoleArn(self):
 		return self.get_query_params().get('RoleArn')
 
@@ -41,9 +47,3 @@ class DescribeLoadTaskStatusRequest(RpcRequest):
 
 	def set_FpgaUUID(self,FpgaUUID):
 		self.add_query_param('FpgaUUID',FpgaUUID)
-
-	def get_callerUid(self):
-		return self.get_query_params().get('callerUid')
-
-	def set_callerUid(self,callerUid):
-		self.add_query_param('callerUid',callerUid)
