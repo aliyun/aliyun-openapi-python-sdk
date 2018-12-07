@@ -24,18 +24,6 @@ class LoadFpgaImageTaskRequest(RpcRequest):
 		RpcRequest.__init__(self, 'faas', '2017-08-24', 'LoadFpgaImageTask')
 		self.set_method('POST')
 
-	def get_InstanceId(self):
-		return self.get_query_params().get('InstanceId')
-
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
-
-	def get_RoleArn(self):
-		return self.get_query_params().get('RoleArn')
-
-	def set_RoleArn(self,RoleArn):
-		self.add_query_param('RoleArn',RoleArn)
-
 	def get_FpgaImageType(self):
 		return self.get_query_params().get('FpgaImageType')
 
@@ -47,18 +35,6 @@ class LoadFpgaImageTaskRequest(RpcRequest):
 
 	def set_ShellUUID(self,ShellUUID):
 		self.add_query_param('ShellUUID',ShellUUID)
-
-	def get_FpgaType(self):
-		return self.get_query_params().get('FpgaType')
-
-	def set_FpgaType(self,FpgaType):
-		self.add_query_param('FpgaType',FpgaType)
-
-	def get_FpgaUUID(self):
-		return self.get_query_params().get('FpgaUUID')
-
-	def set_FpgaUUID(self,FpgaUUID):
-		self.add_query_param('FpgaUUID',FpgaUUID)
 
 	def get_OwnerAlias(self):
 		return self.get_query_params().get('OwnerAlias')
@@ -72,8 +48,38 @@ class LoadFpgaImageTaskRequest(RpcRequest):
 	def set_FpgaImageUUID(self,FpgaImageUUID):
 		self.add_query_param('FpgaImageUUID',FpgaImageUUID)
 
-	def get_callerUid(self):
-		return self.get_query_params().get('callerUid')
+	def get_InstanceId(self):
+		return self.get_query_params().get('InstanceId')
 
-	def set_callerUid(self,callerUid):
-		self.add_query_param('callerUid',callerUid)
+	def set_InstanceId(self,InstanceId):
+		self.add_query_param('InstanceId',InstanceId)
+
+	def get_SecurityToken(self):
+		return self.get_query_params().get('SecurityToken')
+
+	def set_SecurityToken(self,SecurityToken):
+		self.add_query_param('SecurityToken',SecurityToken)
+
+	def get_RoleArn(self):
+		return self.get_query_params().get('RoleArn')
+
+	def set_RoleArn(self,RoleArn):
+		self.add_query_param('RoleArn',RoleArn)
+
+	def get_FpgaType(self):
+		return self.get_query_params().get('FpgaType')
+
+	def set_FpgaType(self,FpgaType):
+		self.add_query_param('FpgaType',FpgaType)
+
+	def get_FpgaUUID(self):
+		return self.get_query_params().get('FpgaUUID')
+
+	def set_FpgaUUID(self,FpgaUUID):
+		self.add_query_param('FpgaUUID',FpgaUUID)
+
+	def get_Object(self):
+		return self.get_query_params().get('Object')
+
+	def set_Object(self,Object):
+		self.add_query_param('Object',Object)

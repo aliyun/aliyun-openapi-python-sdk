@@ -18,35 +18,23 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class UpdateCreateTaskRequest(RpcRequest):
+class DescribePublishFpgaImagesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'faas', '2017-08-24', 'UpdateCreateTask')
+		RpcRequest.__init__(self, 'faas', '2017-08-24', 'DescribePublishFpgaImages')
 		self.set_method('POST')
 
-	def get_State(self):
-		return self.get_query_params().get('State')
+	def get_ImageID(self):
+		return self.get_query_params().get('ImageID')
 
-	def set_State(self,State):
-		self.add_query_param('State',State)
+	def set_ImageID(self,ImageID):
+		self.add_query_param('ImageID',ImageID)
 
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
+	def get_SecurityToken(self):
+		return self.get_query_params().get('SecurityToken')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_FpgaImageObjectName(self):
-		return self.get_query_params().get('FpgaImageObjectName')
-
-	def set_FpgaImageObjectName(self,FpgaImageObjectName):
-		self.add_query_param('FpgaImageObjectName',FpgaImageObjectName)
-
-	def get_FpgaImageUUID(self):
-		return self.get_query_params().get('FpgaImageUUID')
-
-	def set_FpgaImageUUID(self,FpgaImageUUID):
-		self.add_query_param('FpgaImageUUID',FpgaImageUUID)
+	def set_SecurityToken(self,SecurityToken):
+		self.add_query_param('SecurityToken',SecurityToken)
 
 	def get_callerUid(self):
 		return self.get_query_params().get('callerUid')

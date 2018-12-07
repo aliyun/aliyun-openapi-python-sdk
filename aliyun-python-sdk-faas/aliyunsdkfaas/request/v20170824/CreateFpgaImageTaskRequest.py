@@ -24,12 +24,6 @@ class CreateFpgaImageTaskRequest(RpcRequest):
 		RpcRequest.__init__(self, 'faas', '2017-08-24', 'CreateFpgaImageTask')
 		self.set_method('POST')
 
-	def get_LogsStorageLocation(self):
-		return self.get_query_params().get('LogsStorageLocation')
-
-	def set_LogsStorageLocation(self,LogsStorageLocation):
-		self.add_query_param('LogsStorageLocation',LogsStorageLocation)
-
 	def get_Description(self):
 		return self.get_query_params().get('Description')
 
@@ -84,11 +78,11 @@ class CreateFpgaImageTaskRequest(RpcRequest):
 	def set_FpgaType(self,FpgaType):
 		self.add_query_param('FpgaType',FpgaType)
 
-	def get_callerUid(self):
-		return self.get_query_params().get('callerUid')
+	def get_Email(self):
+		return self.get_query_params().get('Email')
 
-	def set_callerUid(self,callerUid):
-		self.add_query_param('callerUid',callerUid)
+	def set_Email(self,Email):
+		self.add_query_param('Email',Email)
 
 	def get_Object(self):
 		return self.get_query_params().get('Object')

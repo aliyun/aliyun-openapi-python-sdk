@@ -1,3 +1,7 @@
+2018-12-07 Version: 1.1.0
+1, add a new openAPI
+2, support sts token
+
 2017-09-22 Version: 1.0.0
 1, FaaS Python SDK初始化。
 
