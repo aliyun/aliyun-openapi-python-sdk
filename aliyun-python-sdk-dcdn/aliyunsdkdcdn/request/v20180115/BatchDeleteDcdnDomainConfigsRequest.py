@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class BatchDeleteDcdnDomainConfigsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'dcdn', '2018-01-15', 'BatchDeleteDcdnDomainConfigs')
+		RpcRequest.__init__(self, 'dcdn', '2018-01-15', 'BatchDeleteDcdnDomainConfigs','dcdn')
 
 	def get_FunctionNames(self):
 		return self.get_query_params().get('FunctionNames')

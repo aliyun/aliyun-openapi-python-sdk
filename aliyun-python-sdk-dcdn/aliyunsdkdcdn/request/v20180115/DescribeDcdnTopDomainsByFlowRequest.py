@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class DescribeDcdnTopDomainsByFlowRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'dcdn', '2018-01-15', 'DescribeDcdnTopDomainsByFlow')
+		RpcRequest.__init__(self, 'dcdn', '2018-01-15', 'DescribeDcdnTopDomainsByFlow','dcdn')
 
 	def get_StartTime(self):
 		return self.get_query_params().get('StartTime')
