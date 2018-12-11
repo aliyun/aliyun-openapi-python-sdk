@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class UpdateDcdnDomainRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'dcdn', '2018-01-15', 'UpdateDcdnDomain')
+		RpcRequest.__init__(self, 'dcdn', '2018-01-15', 'UpdateDcdnDomain','dcdn')
 
 	def get_TopLevelDomain(self):
 		return self.get_query_params().get('TopLevelDomain')
