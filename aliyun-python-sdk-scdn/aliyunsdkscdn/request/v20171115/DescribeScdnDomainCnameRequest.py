@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class DescribeScdnDomainCnameRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'scdn', '2017-11-15', 'DescribeScdnDomainCname')
+		RpcRequest.__init__(self, 'scdn', '2017-11-15', 'DescribeScdnDomainCname','scdn')
 
 	def get_DomainName(self):
 		return self.get_query_params().get('DomainName')

@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class DescribeScdnUserDomainsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'scdn', '2017-11-15', 'DescribeScdnUserDomains')
+		RpcRequest.__init__(self, 'scdn', '2017-11-15', 'DescribeScdnUserDomains','scdn')
 
 	def get_FuncFilter(self):
 		return self.get_query_params().get('FuncFilter')

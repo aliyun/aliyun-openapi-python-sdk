@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class OpenScdnServiceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'scdn', '2017-11-15', 'OpenScdnService')
+		RpcRequest.__init__(self, 'scdn', '2017-11-15', 'OpenScdnService','scdn')
 
 	def get_EndDate(self):
 		return self.get_query_params().get('EndDate')

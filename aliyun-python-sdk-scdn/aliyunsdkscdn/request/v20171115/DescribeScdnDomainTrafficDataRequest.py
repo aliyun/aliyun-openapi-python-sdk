@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class DescribeScdnDomainTrafficDataRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'scdn', '2017-11-15', 'DescribeScdnDomainTrafficData')
+		RpcRequest.__init__(self, 'scdn', '2017-11-15', 'DescribeScdnDomainTrafficData','scdn')
 
 	def get_LocationNameEn(self):
 		return self.get_query_params().get('LocationNameEn')

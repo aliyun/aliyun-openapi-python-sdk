@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class DescribeScdnDomainRealTimeQpsDataRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'scdn', '2017-11-15', 'DescribeScdnDomainRealTimeQpsData')
+		RpcRequest.__init__(self, 'scdn', '2017-11-15', 'DescribeScdnDomainRealTimeQpsData','scdn')
 
 	def get_LocationNameEn(self):
 		return self.get_query_params().get('LocationNameEn')

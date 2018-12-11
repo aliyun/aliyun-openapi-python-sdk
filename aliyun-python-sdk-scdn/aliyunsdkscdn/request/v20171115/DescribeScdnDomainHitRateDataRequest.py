@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class DescribeScdnDomainHitRateDataRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'scdn', '2017-11-15', 'DescribeScdnDomainHitRateData')
+		RpcRequest.__init__(self, 'scdn', '2017-11-15', 'DescribeScdnDomainHitRateData','scdn')
 
 	def get_StartTime(self):
 		return self.get_query_params().get('StartTime')

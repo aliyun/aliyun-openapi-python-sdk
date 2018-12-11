@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class PreloadScdnObjectCachesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'scdn', '2017-11-15', 'PreloadScdnObjectCaches')
+		RpcRequest.__init__(self, 'scdn', '2017-11-15', 'PreloadScdnObjectCaches','scdn')
 
 	def get_Area(self):
 		return self.get_query_params().get('Area')
