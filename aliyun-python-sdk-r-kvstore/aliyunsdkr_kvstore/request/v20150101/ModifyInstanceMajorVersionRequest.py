@@ -18,10 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class ModifyInstanceMinorVersionRequest(RpcRequest):
+class ModifyInstanceMajorVersionRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'R-kvstore', '2015-01-01', 'ModifyInstanceMinorVersion','redisa')
+		RpcRequest.__init__(self, 'R-kvstore', '2015-01-01', 'ModifyInstanceMajorVersion','redisa')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -35,6 +35,12 @@ class ModifyInstanceMinorVersionRequest(RpcRequest):
 	def set_InstanceId(self,InstanceId):
 		self.add_query_param('InstanceId',InstanceId)
 
+	def get_MajorVersion(self):
+		return self.get_query_params().get('MajorVersion')
+
+	def set_MajorVersion(self,MajorVersion):
+		self.add_query_param('MajorVersion',MajorVersion)
+
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
 
@@ -46,12 +52,6 @@ class ModifyInstanceMinorVersionRequest(RpcRequest):
 
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_Minorversion(self):
-		return self.get_query_params().get('Minorversion')
-
-	def set_Minorversion(self,Minorversion):
-		self.add_query_param('Minorversion',Minorversion)
 
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
