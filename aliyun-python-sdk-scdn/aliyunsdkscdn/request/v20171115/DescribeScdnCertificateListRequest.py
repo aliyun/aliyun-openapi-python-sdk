@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class DescribeScdnCertificateListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'scdn', '2017-11-15', 'DescribeScdnCertificateList')
+		RpcRequest.__init__(self, 'scdn', '2017-11-15', 'DescribeScdnCertificateList','scdn')
 
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')

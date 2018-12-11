@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class AddScdnDomainRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'scdn', '2017-11-15', 'AddScdnDomain')
+		RpcRequest.__init__(self, 'scdn', '2017-11-15', 'AddScdnDomain','scdn')
 
 	def get_ResourceGroupId(self):
 		return self.get_query_params().get('ResourceGroupId')

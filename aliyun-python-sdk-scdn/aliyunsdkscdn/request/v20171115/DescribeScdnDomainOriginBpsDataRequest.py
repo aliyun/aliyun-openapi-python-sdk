@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class DescribeScdnDomainOriginBpsDataRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'scdn', '2017-11-15', 'DescribeScdnDomainOriginBpsData')
+		RpcRequest.__init__(self, 'scdn', '2017-11-15', 'DescribeScdnDomainOriginBpsData','scdn')
 
 	def get_StartTime(self):
 		return self.get_query_params().get('StartTime')

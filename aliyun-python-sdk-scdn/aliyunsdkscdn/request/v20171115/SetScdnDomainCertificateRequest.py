@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class SetScdnDomainCertificateRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'scdn', '2017-11-15', 'SetScdnDomainCertificate')
+		RpcRequest.__init__(self, 'scdn', '2017-11-15', 'SetScdnDomainCertificate','scdn')
 
 	def get_ForceSet(self):
 		return self.get_query_params().get('ForceSet')

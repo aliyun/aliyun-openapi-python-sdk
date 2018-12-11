@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class DeleteScdnDomainRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'scdn', '2017-11-15', 'DeleteScdnDomain')
+		RpcRequest.__init__(self, 'scdn', '2017-11-15', 'DeleteScdnDomain','scdn')
 
 	def get_ResourceGroupId(self):
 		return self.get_query_params().get('ResourceGroupId')

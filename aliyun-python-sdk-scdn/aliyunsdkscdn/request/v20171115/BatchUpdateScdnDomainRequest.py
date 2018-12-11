@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class BatchUpdateScdnDomainRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'scdn', '2017-11-15', 'BatchUpdateScdnDomain')
+		RpcRequest.__init__(self, 'scdn', '2017-11-15', 'BatchUpdateScdnDomain','scdn')
 
 	def get_TopLevelDomain(self):
 		return self.get_query_params().get('TopLevelDomain')
