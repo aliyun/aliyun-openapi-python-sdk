@@ -1,3 +1,7 @@
+2018-12-11 Version: 1.0.1
+1, Add ConfigFileVolume
+2, Remove the Enable of EmptyDirVolume, Name and Type is enough to build an EmptyDirVolume
+
 2018-11-07 Version: 1.0.0
 1, The beta version SDK of ECI.
 2, Only supports Java and Python.

@@ -222,15 +222,16 @@ class CreateContainerGroupRequest(RpcRequest):
 				self.add_query_param('Volume.' + str(i + 1) + '.NFSVolume.Path' , Volumes[i].get('NFSVolume.Path'))
 			if Volumes[i].get('NFSVolume.ReadOnly') is not None:
 				self.add_query_param('Volume.' + str(i + 1) + '.NFSVolume.ReadOnly' , Volumes[i].get('NFSVolume.ReadOnly'))
-			if Volumes[i].get('EmptyDirVolume.Enable') is not None:
-				self.add_query_param('Volume.' + str(i + 1) + '.EmptyDirVolume.Enable' , Volumes[i].get('EmptyDirVolume.Enable'))
 
 			if Volumes[i].get('ConfigFileVolume.ConfigFileToPaths') is not None:
 				for j in range(len(Volumes[i].get('ConfigFileVolume.ConfigFileToPaths'))):
 					if Volumes[i].get('ConfigFileVolume.ConfigFileToPaths')[j] is not None:
 						self.add_query_param(
-							'Volume.' + str(i + 1) + '.ConfigFileVolume.ConfigFileToPath.' + str(j + 1),
-							Volumes[i].get('ConfigFileVolume.ConfigFileToPaths')[j])
+							'Volume.' + str(i + 1) + '.ConfigFileVolume.ConfigFileToPath.' + str(j + 1) + '.Path',
+							Volumes[i].get('ConfigFileVolume.ConfigFileToPaths')[j].get('Path'))
+						self.add_query_param(
+							'Volume.' + str(i + 1) + '.ConfigFileVolume.ConfigFileToPath.' + str(j + 1) + '.Content',
+							Volumes[i].get('ConfigFileVolume.ConfigFileToPaths')[j].get('Content'))
 
 			if Volumes[i].get('Type') is not None:
 				self.add_query_param('Volume.' + str(i + 1) + '.Type' , Volumes[i].get('Type'))
