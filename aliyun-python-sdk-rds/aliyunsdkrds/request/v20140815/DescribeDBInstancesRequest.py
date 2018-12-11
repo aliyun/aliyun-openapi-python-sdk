@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class DescribeDBInstancesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'DescribeDBInstances','rds')
+		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'DescribeDBInstances','Rds')
 
 	def get_ConnectionMode(self):
 		return self.get_query_params().get('ConnectionMode')
@@ -82,6 +82,12 @@ class DescribeDBInstancesRequest(RpcRequest):
 
 	def set_Tag1value(self,Tag1value):
 		self.add_query_param('Tag.1.value',Tag1value)
+
+	def get_ResourceGroupId(self):
+		return self.get_query_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self,ResourceGroupId):
+		self.add_query_param('ResourceGroupId',ResourceGroupId)
 
 	def get_Expired(self):
 		return self.get_query_params().get('Expired')

@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class ModifyInstanceAutoRenewalAttributeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'ModifyInstanceAutoRenewalAttribute','rds')
+		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'ModifyInstanceAutoRenewalAttribute','Rds')
 
 	def get_Duration(self):
 		return self.get_query_params().get('Duration')

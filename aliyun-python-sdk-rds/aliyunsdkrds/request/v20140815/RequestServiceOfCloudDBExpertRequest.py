@@ -18,22 +18,16 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class DescribeCustinsKernelReleaseNotesRequest(RpcRequest):
+class RequestServiceOfCloudDBExpertRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'DescribeCustinsKernelReleaseNotes','rds')
+		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'RequestServiceOfCloudDBExpert','Rds')
 
-	def get_ResourceOwnerId(self):
-		return self.get_query_params().get('ResourceOwnerId')
+	def get_ServiceRequestParam(self):
+		return self.get_query_params().get('ServiceRequestParam')
 
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
-
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+	def set_ServiceRequestParam(self,ServiceRequestParam):
+		self.add_query_param('ServiceRequestParam',ServiceRequestParam)
 
 	def get_DBInstanceId(self):
 		return self.get_query_params().get('DBInstanceId')
@@ -41,8 +35,8 @@ class DescribeCustinsKernelReleaseNotesRequest(RpcRequest):
 	def set_DBInstanceId(self,DBInstanceId):
 		self.add_query_param('DBInstanceId',DBInstanceId)
 
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
+	def get_ServiceRequestType(self):
+		return self.get_query_params().get('ServiceRequestType')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
+	def set_ServiceRequestType(self,ServiceRequestType):
+		self.add_query_param('ServiceRequestType',ServiceRequestType)
