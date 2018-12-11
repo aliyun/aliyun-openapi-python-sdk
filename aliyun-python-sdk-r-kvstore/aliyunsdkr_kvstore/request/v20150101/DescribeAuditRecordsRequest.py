@@ -18,10 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class CreateAccountRequest(RpcRequest):
+class DescribeAuditRecordsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'R-kvstore', '2015-01-01', 'CreateAccount','redisa')
+		RpcRequest.__init__(self, 'R-kvstore', '2015-01-01', 'DescribeAuditRecords','redisa')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -41,11 +41,17 @@ class CreateAccountRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
-	def get_AccountType(self):
-		return self.get_query_params().get('AccountType')
+	def get_EndTime(self):
+		return self.get_query_params().get('EndTime')
 
-	def set_AccountType(self,AccountType):
-		self.add_query_param('AccountType',AccountType)
+	def set_EndTime(self,EndTime):
+		self.add_query_param('EndTime',EndTime)
+
+	def get_StartTime(self):
+		return self.get_query_params().get('StartTime')
+
+	def set_StartTime(self,StartTime):
+		self.add_query_param('StartTime',StartTime)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
@@ -53,23 +59,23 @@ class CreateAccountRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_AccountDescription(self):
-		return self.get_query_params().get('AccountDescription')
+	def get_QueryKeywords(self):
+		return self.get_query_params().get('QueryKeywords')
 
-	def set_AccountDescription(self,AccountDescription):
-		self.add_query_param('AccountDescription',AccountDescription)
+	def set_QueryKeywords(self,QueryKeywords):
+		self.add_query_param('QueryKeywords',QueryKeywords)
 
-	def get_AccountPrivilege(self):
-		return self.get_query_params().get('AccountPrivilege')
+	def get_PageNumber(self):
+		return self.get_query_params().get('PageNumber')
 
-	def set_AccountPrivilege(self,AccountPrivilege):
-		self.add_query_param('AccountPrivilege',AccountPrivilege)
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)
 
-	def get_AccountPassword(self):
-		return self.get_query_params().get('AccountPassword')
+	def get_HostAddress(self):
+		return self.get_query_params().get('HostAddress')
 
-	def set_AccountPassword(self,AccountPassword):
-		self.add_query_param('AccountPassword',AccountPassword)
+	def set_HostAddress(self,HostAddress):
+		self.add_query_param('HostAddress',HostAddress)
 
 	def get_InstanceId(self):
 		return self.get_query_params().get('InstanceId')
@@ -88,3 +94,21 @@ class CreateAccountRequest(RpcRequest):
 
 	def set_SecurityToken(self,SecurityToken):
 		self.add_query_param('SecurityToken',SecurityToken)
+
+	def get_DatabaseName(self):
+		return self.get_query_params().get('DatabaseName')
+
+	def set_DatabaseName(self,DatabaseName):
+		self.add_query_param('DatabaseName',DatabaseName)
+
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
+
+	def get_NodeId(self):
+		return self.get_query_params().get('NodeId')
+
+	def set_NodeId(self,NodeId):
+		self.add_query_param('NodeId',NodeId)

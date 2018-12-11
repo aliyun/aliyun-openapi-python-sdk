@@ -59,11 +59,23 @@ class DescribeInstancesRequest(RpcRequest):
 	def set_NetworkType(self,NetworkType):
 		self.add_query_param('NetworkType',NetworkType)
 
+	def get_EngineVersion(self):
+		return self.get_query_params().get('EngineVersion')
+
+	def set_EngineVersion(self,EngineVersion):
+		self.add_query_param('EngineVersion',EngineVersion)
+
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_InstanceClass(self):
+		return self.get_query_params().get('InstanceClass')
+
+	def set_InstanceClass(self,InstanceClass):
+		self.add_query_param('InstanceClass',InstanceClass)
 
 	def get_PageNumber(self):
 		return self.get_query_params().get('PageNumber')
@@ -95,6 +107,12 @@ class DescribeInstancesRequest(RpcRequest):
 	def set_InstanceIds(self,InstanceIds):
 		self.add_query_param('InstanceIds',InstanceIds)
 
+	def get_ArchitectureType(self):
+		return self.get_query_params().get('ArchitectureType')
+
+	def set_ArchitectureType(self,ArchitectureType):
+		self.add_query_param('ArchitectureType',ArchitectureType)
+
 	def get_VpcId(self):
 		return self.get_query_params().get('VpcId')
 
@@ -112,6 +130,12 @@ class DescribeInstancesRequest(RpcRequest):
 
 	def set_InstanceType(self,InstanceType):
 		self.add_query_param('InstanceType',InstanceType)
+
+	def get_ZoneId(self):
+		return self.get_query_params().get('ZoneId')
+
+	def set_ZoneId(self,ZoneId):
+		self.add_query_param('ZoneId',ZoneId)
 
 	def get_ChargeType(self):
 		return self.get_query_params().get('ChargeType')
