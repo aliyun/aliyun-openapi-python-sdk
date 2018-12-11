@@ -18,10 +18,16 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class ModifyReplicaRecoveryModeRequest(RpcRequest):
+class DescribeCloudDbExpertServiceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'ModifyReplicaRecoveryMode','rds')
+		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'DescribeCloudDbExpertService','Rds')
+
+	def get_ServiceRequestParam(self):
+		return self.get_query_params().get('ServiceRequestParam')
+
+	def set_ServiceRequestParam(self,ServiceRequestParam):
+		self.add_query_param('ServiceRequestParam',ServiceRequestParam)
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -41,26 +47,26 @@ class ModifyReplicaRecoveryModeRequest(RpcRequest):
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
-	def get_RecoveryMode(self):
-		return self.get_query_params().get('RecoveryMode')
-
-	def set_RecoveryMode(self,RecoveryMode):
-		self.add_query_param('RecoveryMode',RecoveryMode)
-
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
 
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
-	def get_ReplicaId(self):
-		return self.get_query_params().get('ReplicaId')
+	def get_DBInstanceId(self):
+		return self.get_query_params().get('DBInstanceId')
 
-	def set_ReplicaId(self,ReplicaId):
-		self.add_query_param('ReplicaId',ReplicaId)
+	def set_DBInstanceId(self,DBInstanceId):
+		self.add_query_param('DBInstanceId',DBInstanceId)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_ServiceRequestType(self):
+		return self.get_query_params().get('ServiceRequestType')
+
+	def set_ServiceRequestType(self,ServiceRequestType):
+		self.add_query_param('ServiceRequestType',ServiceRequestType)

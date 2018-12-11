@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class DescribeDBInstanceNetInfoRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'DescribeDBInstanceNetInfo','rds')
+		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'DescribeDBInstanceNetInfo','Rds')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')

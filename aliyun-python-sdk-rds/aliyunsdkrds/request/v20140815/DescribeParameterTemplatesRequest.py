@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class DescribeParameterTemplatesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'DescribeParameterTemplates','rds')
+		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'DescribeParameterTemplates','Rds')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -64,3 +64,9 @@ class DescribeParameterTemplatesRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_Category(self):
+		return self.get_query_params().get('Category')
+
+	def set_Category(self,Category):
+		self.add_query_param('Category',Category)

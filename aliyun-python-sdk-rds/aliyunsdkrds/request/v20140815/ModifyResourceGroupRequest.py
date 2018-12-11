@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class ModifyResourceGroupRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'ModifyResourceGroup','rds')
+		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'ModifyResourceGroup','Rds')
 
 	def get_ResourceGroupId(self):
 		return self.get_query_params().get('ResourceGroupId')
