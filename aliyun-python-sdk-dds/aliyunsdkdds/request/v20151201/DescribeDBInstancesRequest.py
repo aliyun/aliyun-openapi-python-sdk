@@ -47,6 +47,18 @@ class DescribeDBInstancesRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
+	def get_EngineVersion(self):
+		return self.get_query_params().get('EngineVersion')
+
+	def set_EngineVersion(self,EngineVersion):
+		self.add_query_param('EngineVersion',EngineVersion)
+
+	def get_NetworkType(self):
+		return self.get_query_params().get('NetworkType')
+
+	def set_NetworkType(self,NetworkType):
+		self.add_query_param('NetworkType',NetworkType)
+
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
@@ -77,17 +89,29 @@ class DescribeDBInstancesRequest(RpcRequest):
 	def set_DBInstanceClass(self,DBInstanceClass):
 		self.add_query_param('DBInstanceClass',DBInstanceClass)
 
-	def get_Expired(self):
-		return self.get_query_params().get('Expired')
+	def get_VSwitchId(self):
+		return self.get_query_params().get('VSwitchId')
 
-	def set_Expired(self,Expired):
-		self.add_query_param('Expired',Expired)
+	def set_VSwitchId(self,VSwitchId):
+		self.add_query_param('VSwitchId',VSwitchId)
 
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
 
 	def set_SecurityToken(self,SecurityToken):
 		self.add_query_param('SecurityToken',SecurityToken)
+
+	def get_Engine(self):
+		return self.get_query_params().get('Engine')
+
+	def set_Engine(self,Engine):
+		self.add_query_param('Engine',Engine)
+
+	def get_VpcId(self):
+		return self.get_query_params().get('VpcId')
+
+	def set_VpcId(self,VpcId):
+		self.add_query_param('VpcId',VpcId)
 
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
@@ -118,3 +142,9 @@ class DescribeDBInstancesRequest(RpcRequest):
 
 	def set_DBInstanceStatus(self,DBInstanceStatus):
 		self.add_query_param('DBInstanceStatus',DBInstanceStatus)
+
+	def get_ChargeType(self):
+		return self.get_query_params().get('ChargeType')
+
+	def set_ChargeType(self,ChargeType):
+		self.add_query_param('ChargeType',ChargeType)
