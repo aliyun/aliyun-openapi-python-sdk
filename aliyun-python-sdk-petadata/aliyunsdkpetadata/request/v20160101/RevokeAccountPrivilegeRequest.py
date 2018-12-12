@@ -18,10 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class CreateTableRequest(RpcRequest):
+class RevokeAccountPrivilegeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'PetaData', '2016-01-01', 'CreateTable','petadata')
+		RpcRequest.__init__(self, 'PetaData', '2016-01-01', 'RevokeAccountPrivilege','petadata')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -29,23 +29,17 @@ class CreateTableRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_InstanceId(self):
-		return self.get_query_params().get('InstanceId')
+	def get_AccountName(self):
+		return self.get_query_params().get('AccountName')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
+	def set_AccountName(self,AccountName):
+		self.add_query_param('AccountName',AccountName)
 
 	def get_DBName(self):
 		return self.get_query_params().get('DBName')
 
 	def set_DBName(self,DBName):
 		self.add_query_param('DBName',DBName)
-
-	def get_PartitionKey(self):
-		return self.get_query_params().get('PartitionKey')
-
-	def set_PartitionKey(self,PartitionKey):
-		self.add_query_param('PartitionKey',PartitionKey)
 
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
@@ -65,14 +59,14 @@ class CreateTableRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
+	def get_DBInstanceId(self):
+		return self.get_query_params().get('DBInstanceId')
+
+	def set_DBInstanceId(self,DBInstanceId):
+		self.add_query_param('DBInstanceId',DBInstanceId)
+
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
-
-	def get_TableDDL(self):
-		return self.get_query_params().get('TableDDL')
-
-	def set_TableDDL(self,TableDDL):
-		self.add_query_param('TableDDL',TableDDL)
