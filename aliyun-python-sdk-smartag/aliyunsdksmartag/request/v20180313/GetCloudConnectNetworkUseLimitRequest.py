@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class GetCloudConnectNetworkUseLimitRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Smartag', '2018-03-13', 'GetCloudConnectNetworkUseLimit','1.4.0')
+		RpcRequest.__init__(self, 'Smartag', '2018-03-13', 'GetCloudConnectNetworkUseLimit','smartag')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')

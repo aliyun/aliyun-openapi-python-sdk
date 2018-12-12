@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class CreateSmartAccessGatewayRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Smartag', '2018-03-13', 'CreateSmartAccessGateway','1.4.0')
+		RpcRequest.__init__(self, 'Smartag', '2018-03-13', 'CreateSmartAccessGateway','smartag')
 
 	def get_MaxBandWidth(self):
 		return self.get_query_params().get('MaxBandWidth')

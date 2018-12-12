@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class UnicomOrderConfirmRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Smartag', '2018-03-13', 'UnicomOrderConfirm','1.4.0')
+		RpcRequest.__init__(self, 'Smartag', '2018-03-13', 'UnicomOrderConfirm','smartag')
 
 	def get_TmsCode(self):
 		return self.get_query_params().get('TmsCode')
