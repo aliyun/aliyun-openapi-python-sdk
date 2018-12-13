@@ -95,6 +95,12 @@ class AddNodesRequest(RpcRequest):
 	def set_CreateMode(self,CreateMode):
 		self.add_query_param('CreateMode',CreateMode)
 
+	def get_SystemDiskSize(self):
+		return self.get_query_params().get('SystemDiskSize')
+
+	def set_SystemDiskSize(self,SystemDiskSize):
+		self.add_query_param('SystemDiskSize',SystemDiskSize)
+
 	def get_InstanceType(self):
 		return self.get_query_params().get('InstanceType')
 
