@@ -18,34 +18,28 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class RecoverClusterRequest(RpcRequest):
+class CreateJobFileRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'EHPC', '2018-04-12', 'RecoverCluster','ehs')
+		RpcRequest.__init__(self, 'EHPC', '2018-04-12', 'CreateJobFile','ehs')
 
-	def get_ImageId(self):
-		return self.get_query_params().get('ImageId')
+	def get_TargetFile(self):
+		return self.get_query_params().get('TargetFile')
 
-	def set_ImageId(self,ImageId):
-		self.add_query_param('ImageId',ImageId)
+	def set_TargetFile(self,TargetFile):
+		self.add_query_param('TargetFile',TargetFile)
 
-	def get_OsTag(self):
-		return self.get_query_params().get('OsTag')
+	def get_RunasUserPassword(self):
+		return self.get_query_params().get('RunasUserPassword')
 
-	def set_OsTag(self,OsTag):
-		self.add_query_param('OsTag',OsTag)
+	def set_RunasUserPassword(self,RunasUserPassword):
+		self.add_query_param('RunasUserPassword',RunasUserPassword)
 
-	def get_AccountType(self):
-		return self.get_query_params().get('AccountType')
+	def get_RunasUser(self):
+		return self.get_query_params().get('RunasUser')
 
-	def set_AccountType(self,AccountType):
-		self.add_query_param('AccountType',AccountType)
-
-	def get_SchedulerType(self):
-		return self.get_query_params().get('SchedulerType')
-
-	def set_SchedulerType(self,SchedulerType):
-		self.add_query_param('SchedulerType',SchedulerType)
+	def set_RunasUser(self,RunasUser):
+		self.add_query_param('RunasUser',RunasUser)
 
 	def get_ClusterId(self):
 		return self.get_query_params().get('ClusterId')
@@ -53,8 +47,8 @@ class RecoverClusterRequest(RpcRequest):
 	def set_ClusterId(self,ClusterId):
 		self.add_query_param('ClusterId',ClusterId)
 
-	def get_ImageOwnerAlias(self):
-		return self.get_query_params().get('ImageOwnerAlias')
+	def get_Content(self):
+		return self.get_query_params().get('Content')
 
-	def set_ImageOwnerAlias(self,ImageOwnerAlias):
-		self.add_query_param('ImageOwnerAlias',ImageOwnerAlias)
+	def set_Content(self,Content):
+		self.add_query_param('Content',Content)

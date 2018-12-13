@@ -125,6 +125,12 @@ class CreateClusterRequest(RpcRequest):
 	def set_EcsOrderLoginCount(self,EcsOrderLoginCount):
 		self.add_query_param('EcsOrder.Login.Count',EcsOrderLoginCount)
 
+	def get_SystemDiskSize(self):
+		return self.get_query_params().get('SystemDiskSize')
+
+	def set_SystemDiskSize(self,SystemDiskSize):
+		self.add_query_param('SystemDiskSize',SystemDiskSize)
+
 	def get_ComputeSpotPriceLimit(self):
 		return self.get_query_params().get('ComputeSpotPriceLimit')
 
