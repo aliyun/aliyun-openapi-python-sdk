@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class DescribeBackupTasksRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'DescribeBackupTasks','Rds')
+		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'DescribeBackupTasks','rds')
 
 	def get_BackupJobId(self):
 		return self.get_query_params().get('BackupJobId')
