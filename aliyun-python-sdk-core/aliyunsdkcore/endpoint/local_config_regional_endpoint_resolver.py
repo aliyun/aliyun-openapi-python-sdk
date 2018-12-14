@@ -17,10 +17,13 @@
 # under the License.
 #
 
-import json
 import os.path
-from endpoint_resolver_base import EndpointResolverBase
-from resolver_endpoint_request import ResolveEndpointRequest
+from aliyunsdkcore.vendored.six import iteritems
+
+from aliyunsdkcore.compat import json
+
+from aliyunsdkcore.endpoint.endpoint_resolver_base import EndpointResolverBase
+from aliyunsdkcore.endpoint.resolver_endpoint_request import ResolveEndpointRequest
 
 
 class LocalConfigRegionalEndpointResolver(EndpointResolverBase):
@@ -47,8 +50,8 @@ class LocalConfigRegionalEndpointResolver(EndpointResolverBase):
         if "regional_endpoints" not in obj:
             return
         self._regional_endpoint_data = obj["regional_endpoints"]
-        for code, product_data in obj["regional_endpoints"].iteritems():
-            for region_id, endpoint in product_data.iteritems():
+        for code, product_data in iteritems(obj["regional_endpoints"]):
+            for region_id, endpoint in iteritems(product_data):
                 self.put_endpoint_entry(self._make_endpoint_entry_key(code, region_id), endpoint)
 
     def _init_region_ids(self, obj):

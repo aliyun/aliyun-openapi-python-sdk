@@ -20,11 +20,13 @@
 # under the License.
 
 import time
-import json
-import urllib2
+
 import logging
+from aliyunsdkcore.vendored.six.moves.urllib.request import urlopen
 
 from aliyunsdkcore.auth.signers.signer import Signer
+
+from aliyunsdkcore.compat import json
 
 
 class EcsRamRoleSigner(Signer):
@@ -54,8 +56,8 @@ class EcsRamRoleSigner(Signer):
     def _refresh_session_ak_and_sk(self):
         try:
             request_url = "http://100.100.100.200/latest/meta-data/ram/security-credentials/" + self._credential.role_name
-            content = urllib2.urlopen(request_url).read()
-            response = json.loads(content)
+            content = urlopen(request_url).read()
+            response = json.loads(content.deconde('utf-8'))
             if response.get("Code") != "Success":
                 logging.error('refresh Ecs sts token err, code is ' + response.get("Code"))
                 return
@@ -65,4 +67,5 @@ class EcsRamRoleSigner(Signer):
             self._session_credential = session_ak, session_sk, token
             self._expiration = response.get("Expiration")
         except IOError as e:
-            logging.error('refresh Ecs sts token err', e)
+            # logging.error('refresh Ecs sts token err', e)
+            logging.error('refresh Ecs sts token err:%s', e)

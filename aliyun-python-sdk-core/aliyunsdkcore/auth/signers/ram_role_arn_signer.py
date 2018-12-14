@@ -20,7 +20,6 @@
 # under the License.
 
 import time
-import json
 
 from aliyunsdkcore.auth.signers.signer import Signer
 from aliyunsdkcore.auth.signers.access_key_signer import AccessKeySigner
@@ -29,6 +28,7 @@ from aliyunsdkcore.acs_exception import exceptions
 from aliyunsdkcore.auth.credentials import RamRoleArnCredential
 from aliyunsdkcore.auth.credentials import AccessKeyCredential
 from aliyunsdkcore.request import CommonRequest
+from aliyunsdkcore.compat import json
 
 
 class RamRoleArnSigner(Signer):
@@ -75,7 +75,7 @@ class RamRoleArnSigner(Signer):
 
         status, headers, body = self._doAction(request, signer)
         if status == 200:
-            response = json.loads(body)
+            response = json.loads(body.decode('utf-8'))
             session_ak = response.get("Credentials").get("AccessKeyId")
             session_sk = response.get("Credentials").get("AccessKeySecret")
             token = response.get("Credentials").get("SecurityToken")

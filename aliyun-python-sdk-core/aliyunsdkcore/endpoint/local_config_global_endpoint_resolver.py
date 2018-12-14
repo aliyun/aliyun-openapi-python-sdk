@@ -16,8 +16,9 @@
 # specific language governing permissions and limitations
 # under the License.
 #
+from aliyunsdkcore.vendored.six import iteritems
 
-from local_config_regional_endpoint_resolver import LocalConfigRegionalEndpointResolver
+from aliyunsdkcore.endpoint.local_config_regional_endpoint_resolver import LocalConfigRegionalEndpointResolver
 
 
 class LocalConfigGlobalEndpointResolver(LocalConfigRegionalEndpointResolver):
@@ -32,7 +33,7 @@ class LocalConfigGlobalEndpointResolver(LocalConfigRegionalEndpointResolver):
             return
 
         global_endpoints = obj["global_endpoints"]
-        for location_service_code, endpoint in global_endpoints.iteritems():
+        for location_service_code, endpoint in iteritems(global_endpoints):
             self.put_endpoint_entry(self._make_endpoint_entry_key(location_service_code), endpoint)
 
     def resolve(self, request):

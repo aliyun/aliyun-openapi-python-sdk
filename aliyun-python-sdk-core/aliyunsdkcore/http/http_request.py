@@ -17,8 +17,8 @@
 
 # coding=utf-8
 
-import format_type
-from ..utils import parameter_helper as helper
+from aliyunsdkcore.http import format_type
+from aliyunsdkcore.utils import parameter_helper as helper
 
 class HttpRequest:
 

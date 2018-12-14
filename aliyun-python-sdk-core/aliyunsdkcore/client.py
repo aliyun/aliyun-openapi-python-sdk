@@ -18,14 +18,10 @@
 # under the License.
 
 # coding=utf-8
-import httplib
+import sys
 import warnings
-import urllib
-
-try:
-    import json
-except ImportError:
-    import simplejson as json
+from aliyunsdkcore.vendored.six.moves.urllib.parse import urlencode
+from aliyunsdkcore.vendored.six.moves import http_client
 
 from aliyunsdkcore.acs_exception.exceptions import ClientException
 from aliyunsdkcore.acs_exception.exceptions import ServerException
@@ -36,8 +32,10 @@ from aliyunsdkcore.http import format_type
 from aliyunsdkcore.auth.signers.signer_factory import SignerFactory
 from aliyunsdkcore.request import CommonRequest
 
-from endpoint.resolver_endpoint_request import ResolveEndpointRequest
-from endpoint.default_endpoint_resolver import DefaultEndpointResolver
+from aliyunsdkcore.endpoint.resolver_endpoint_request import ResolveEndpointRequest
+from aliyunsdkcore.endpoint.default_endpoint_resolver import DefaultEndpointResolver
+
+from aliyunsdkcore.compat import json
 
 """
 Acs default client module.
@@ -172,7 +170,7 @@ class AcsClient:
     def _make_http_response(self, endpoint, request, specific_signer=None):
         body_params = request.get_body_params()
         if body_params:
-            body = urllib.urlencode(body_params)
+            body = urlencode(body_params)
             request.set_content(body)
             request.set_content_type(format_type.APPLICATION_FORM)
         elif request.get_content() and "Content-Type" not in request.get_headers():
@@ -199,7 +197,7 @@ class AcsClient:
             self._port,
             timeout=self._timeout)
         if body_params:
-            body = urllib.urlencode(request.get_body_params())
+            body = urlencode(request.get_body_params())
             response.set_content(body, "utf-8", format_type.APPLICATION_FORM)
         return response
 
@@ -237,6 +235,7 @@ class AcsClient:
     @staticmethod
     def _parse_error_info_from_response_body(response_body):
         try:
+
             body_obj = json.loads(response_body)
             if 'Code' in body_obj and 'Message' in body_obj:
                 return body_obj['Code'], body_obj['Message']
@@ -260,14 +259,14 @@ class AcsClient:
         request_id = None
 
         try:
-            body_obj = json.loads(body)
+            body_obj = json.loads(body.decode('utf-8'))
             request_id = body_obj.get('RequestId')
-        except ValueError or TypeError or AttributeError:
+        except (ValueError, TypeError, AttributeError):
             # in case the response body is not a json string, return the raw
             # data instead
             pass
-
-        if status < httplib.OK or status >= httplib.MULTIPLE_CHOICES:
+			
+        if status < http_client.OK or status >= http_client.MULTIPLE_CHOICES:
             server_error_code, server_error_message = self._parse_error_info_from_response_body(
                 body)
             raise ServerException(

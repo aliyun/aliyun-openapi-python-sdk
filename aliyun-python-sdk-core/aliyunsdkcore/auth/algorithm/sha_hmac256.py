@@ -17,11 +17,14 @@
 
 # coding=utf-8
 
-import base64
 import platform
 from aliyunsdkcore.acs_exception import exceptions
 from aliyunsdkcore.acs_exception import error_code
 
+from aliyunsdkcore.compat import ensure_string
+from aliyunsdkcore.compat import ensure_bytes
+from aliyunsdkcore.compat import b64_encode_bytes
+from aliyunsdkcore.compat import b64_decode_bytes
 
 def get_sign_string(source, access_secret):
     if platform.system() != "Windows":
@@ -29,12 +32,15 @@ def get_sign_string(source, access_secret):
         from Crypto.Hash import SHA256
         from Crypto.PublicKey import RSA
 
-        secret = base64.decodestring(access_secret)
+        access_secret = ensure_bytes(access_secret)
+        secret = b64_decode_bytes(access_secret)
         key = RSA.importKey(secret)
+        source = ensure_bytes(source)
         h = SHA256.new(source)
         signer = PKCS1_v1_5.new(key)
         signed_bytes = signer.sign(h)
-        signature = base64.encodestring(signed_bytes).replace('\n', '')
+        signed_base64 = b64_encode_bytes(signed_bytes)
+        signature = ensure_string(signed_base64).replace('\n', '')
         return signature
     else:
         message = "uth type [publicKeyId] is disabled in Windows because 'pycrypto' is not supported," \
