@@ -18,21 +18,23 @@
 # under the License.
 
 # coding=utf-8
+import abc
+from aliyunsdkcore.vendored.six import iterkeys
+from aliyunsdkcore.vendored.six import iteritems
+from aliyunsdkcore.vendored.six import add_metaclass
 
-import os
-import sys
-
-from .http import protocol_type
-from .http import method_type as mt
-from .http import format_type as ft
-from .auth.composer import rpc_signature_composer as rpc_signer
-from .auth.composer import roa_signature_composer as roa_signer
-from .auth.composer import oss_signature_composer as oss_signer
-from .auth.utils import md5_tool
+from aliyunsdkcore.http import protocol_type
+from aliyunsdkcore.http import method_type as mt
+from aliyunsdkcore.http import format_type as ft
+from aliyunsdkcore.auth.composer import rpc_signature_composer as rpc_signer
+from aliyunsdkcore.auth.composer import roa_signature_composer as roa_signer
+from aliyunsdkcore.auth.composer import oss_signature_composer as oss_signer
+from aliyunsdkcore.auth.utils import md5_tool
 from aliyunsdkcore.auth.algorithm import sha_hmac1
 from aliyunsdkcore.acs_exception import exceptions
 from aliyunsdkcore.acs_exception import error_code
-import abc
+
+
 
 """
 Acs request model.
@@ -64,7 +66,8 @@ def get_default_protocol_type():
     return _default_protocol_type
 
 
-class AcsRequest(metaclass=abc.ABCMeta):
+@add_metaclass(abc.ABCMeta)
+class AcsRequest:
     """
     Acs request base class. This class wraps up common parameters for a request.
     """
@@ -280,7 +283,7 @@ class RpcRequest(AcsRequest):
 
     def get_url(self, region_id, ak, secret):
         sign_params = self._get_sign_params()
-        if 'RegionId' not in list(sign_params.keys()):
+        if 'RegionId' not in iterkeys(sign_params):
             sign_params['RegionId'] = region_id
         url = rpc_signer.get_signed_url(
             sign_params,
@@ -294,7 +297,7 @@ class RpcRequest(AcsRequest):
 
     def get_signed_header(self, region_id=None, ak=None, secret=None):
         headers = {}
-        for headerKey, headerValue in list(self.get_headers().items()):
+        for headerKey, headerValue in iteritems(self.get_headers()):
             if headerKey.startswith("x-acs-") or headerKey.startswith("x-sdk-"):
                 headers[headerKey] = headerValue
         return headers
@@ -496,7 +499,7 @@ class OssRequest(AcsRequest):
         :return:
         """
         sign_params = self.get_query_params()
-        if 'RegionId' not in list(sign_params.keys()):
+        if 'RegionId' not in iterkeys(sign_params):
             sign_params['RegionId'] = region_id
         signed_headers = oss_signer.get_signature_headers(
             sign_params,
@@ -517,7 +520,7 @@ class OssRequest(AcsRequest):
         :return: String
         """
         sign_params = self.get_query_params()
-        if 'RegionId' not in list(sign_params.keys()):
+        if 'RegionId' not in iterkeys(sign_params):
             sign_params['RegionId'] = region_id
         url = oss_signer.get_url(
             sign_params,
@@ -536,7 +539,7 @@ class CommonRequest(AcsRequest):
         self._action_name = action_name
         self._uri_pattern = uri_pattern
         self._product = product
-        self._location_endpoint_type = location_endpoint_type,
+        self._location_endpoint_type = location_endpoint_type
         self._signer = sha_hmac1
         self.add_header('x-sdk-invoke-type', 'common')
         self._path_params = None

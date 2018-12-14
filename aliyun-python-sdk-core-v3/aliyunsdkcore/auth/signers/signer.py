@@ -22,8 +22,10 @@
 
 from abc import ABCMeta, abstractmethod
 
+from aliyunsdkcore.vendored.six import with_metaclass
 
-class Signer(object, metaclass=ABCMeta):
+
+class Signer(with_metaclass(ABCMeta, object)):
     @abstractmethod
     def sign(self, region_id, request):
         pass

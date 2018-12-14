@@ -18,10 +18,10 @@
 #
 
 import threading
-import json
+from aliyunsdkcore.compat import json
 from aliyunsdkcore.acs_exception.exceptions import ServerException
-from .endpoint_resolver_base import EndpointResolverBase
-from .location.DescribeEndpointsRequest import DescribeEndpointsRequest
+from aliyunsdkcore.endpoint.endpoint_resolver_base import EndpointResolverBase
+from aliyunsdkcore.endpoint.location.DescribeEndpointsRequest import DescribeEndpointsRequest
 
 DEFAULT_LOCATION_SERVICE_ENDPOINT = "location-readonly.aliyuncs.com"
 
@@ -104,7 +104,7 @@ class LocationServiceEndpointResolver(EndpointResolverBase):
         self._valid_region_ids.add(raw_request.region_id)
 
         found_flag = False
-        for item in json.loads(response)["Endpoints"]["Endpoint"]:
+        for item in json.loads(response.decode('utf-8'))["Endpoints"]["Endpoint"]:
 
             # Location return data has a typo: SerivceCode
             # We still try to expect ServiceCode in case this typo would be fixed in the future

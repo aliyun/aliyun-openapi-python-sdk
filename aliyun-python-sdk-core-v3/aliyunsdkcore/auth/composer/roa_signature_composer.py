@@ -16,11 +16,13 @@
 # under the License.
 
 # coding=utf-8
-
+from aliyunsdkcore.vendored.six import iteritems
+from aliyunsdkcore.vendored.six.moves.urllib.parse import urlencode
 from aliyunsdkcore.auth.algorithm import sha_hmac1 as mac1
 from aliyunsdkcore.utils import parameter_helper as helper
 from aliyunsdkcore.http import format_type as FormatType
-import urllib.request, urllib.parse, urllib.error
+
+
 
 ACCEPT = "Accept"
 CONTENT_MD5 = "Content-MD5"
@@ -29,9 +31,6 @@ DATE = "Date"
 QUERY_SEPARATOR = "&"
 HEADER_SEPARATOR = "\n"
 
-
-def __init__():
-    pass
 
 # this function will append the necessary parameters for signers process.
 # parameters: the orignal parameters
@@ -84,7 +83,7 @@ def compose_string_to_sign(
 def replace_occupied_parameters(uri_pattern, paths):
     result = uri_pattern
     if paths is not None:
-        for (key, value) in list(paths.items()):
+        for (key, value) in iteritems(paths):
             target = "[" + key + "]"
             result = result.replace(target, value)
     return result
@@ -96,10 +95,10 @@ def replace_occupied_parameters(uri_pattern, paths):
 def build_canonical_headers(headers, header_begin):
     result = ""
     unsort_map = dict()
-    for (key, value) in headers.items():
+    for (key, value) in iteritems(headers):
         if key.lower().find(header_begin) >= 0:
             unsort_map[key.lower()] = value
-    sort_map = sorted(iter(unsort_map.items()), key=lambda d: d[0])
+    sort_map = sorted(iteritems(unsort_map), key=lambda d: d[0])
     for (key, value) in sort_map:
         result += key + ":" + value
         result += HEADER_SEPARATOR
@@ -115,7 +114,7 @@ def __build_query_string(uri, queries):
     if len(uri_parts) > 1 and uri_parts[1] is not None:
         queries[uri_parts[1]] = None
     query_builder = uri_parts[0]
-    sorted_map = sorted(list(queries.items()), key=lambda queries: queries[0])
+    sorted_map = sorted(iteritems(queries), key=lambda queries: queries[0])
     if len(sorted_map) > 0:
         query_builder += "?"
     for (k, v) in sorted_map:
@@ -182,7 +181,7 @@ def get_url(uri_pattern, queries, path_parameters):
     url += replace_occupied_parameters(uri_pattern, path_parameters)
     if not url.endswith("?"):
         url += "?"
-    url += urllib.parse.urlencode(queries)
+    url += urlencode(queries)
     if url.endswith("?"):
         url = url[0:(len(url) - 1)]
     return url

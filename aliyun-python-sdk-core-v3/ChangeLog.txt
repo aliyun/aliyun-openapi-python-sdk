@@ -1,3 +1,7 @@
+2018-12-14 Version: 2.11.1
+1, Fixed coding inconsistency bug with core and core-v3,
+2, Fixed the except error
+
 2018-11-07 Version: 2.11.0
 1, add faas endpoints
 

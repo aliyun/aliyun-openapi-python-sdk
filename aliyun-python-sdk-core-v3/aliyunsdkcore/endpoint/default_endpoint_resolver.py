@@ -11,14 +11,12 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-
-from . import EndpointResolver
-
-from .chained_endpoint_resolver import ChainedEndpointResolver
-from .user_customized_endpoint_resolver import UserCustomizedEndpointResolver
-from .local_config_regional_endpoint_resolver import LocalConfigRegionalEndpointResolver
-from .local_config_global_endpoint_resolver import LocalConfigGlobalEndpointResolver
-from .location_service_endpoint_resolver import LocationServiceEndpointResolver
+from aliyunsdkcore.endpoint import EndpointResolver
+from aliyunsdkcore.endpoint.chained_endpoint_resolver import ChainedEndpointResolver
+from aliyunsdkcore.endpoint.user_customized_endpoint_resolver import UserCustomizedEndpointResolver
+from aliyunsdkcore.endpoint.local_config_regional_endpoint_resolver import LocalConfigRegionalEndpointResolver
+from aliyunsdkcore.endpoint.local_config_global_endpoint_resolver import LocalConfigGlobalEndpointResolver
+from aliyunsdkcore.endpoint.location_service_endpoint_resolver import LocationServiceEndpointResolver
 
 
 class DefaultEndpointResolver(EndpointResolver):

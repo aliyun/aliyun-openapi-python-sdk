@@ -26,14 +26,18 @@ Created on 9/28/2015
 """
 
 import hashlib
-import base64
+
+from aliyunsdkcore.compat import ensure_bytes
+from aliyunsdkcore.compat import ensure_string
+from aliyunsdkcore.compat import b64_encode_bytes
 
 
 def _get_md5(content):
     m = hashlib.md5()
-    m.update(bytearray(content, "utf-8"))
+    content_bytes = ensure_bytes(content)
+    m.update(bytearray(content_bytes))
     return m.digest()
 
 
 def get_md5_base64_str(content):
-    return str(base64.encodebytes(_get_md5(content)).strip(), "utf-8")
+    return ensure_string(b64_encode_bytes(_get_md5(content)).strip())

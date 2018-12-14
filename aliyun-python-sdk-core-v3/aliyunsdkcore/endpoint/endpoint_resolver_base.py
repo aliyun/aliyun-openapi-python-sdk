@@ -16,8 +16,7 @@
 # specific language governing permissions and limitations
 # under the License.
 #
-
-from . import EndpointResolver
+from aliyunsdkcore.endpoint import EndpointResolver
 
 
 class EndpointResolverBase(EndpointResolver):

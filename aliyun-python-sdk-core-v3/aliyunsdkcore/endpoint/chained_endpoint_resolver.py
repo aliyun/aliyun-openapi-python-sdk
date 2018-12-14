@@ -18,9 +18,9 @@
 #
 
 from aliyunsdkcore.acs_exception.exceptions import ClientException
-from . import EndpointResolver
 import aliyunsdkcore.acs_exception.error_code as error_code
 import aliyunsdkcore.acs_exception.error_msg as error_msg
+from aliyunsdkcore.endpoint import EndpointResolver
 
 
 class ChainedEndpointResolver(EndpointResolver):

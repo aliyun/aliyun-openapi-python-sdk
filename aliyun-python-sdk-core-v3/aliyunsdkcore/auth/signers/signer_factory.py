@@ -26,11 +26,12 @@ from aliyunsdkcore.acs_exception import error_msg
 from aliyunsdkcore.acs_exception import error_code
 from aliyunsdkcore.acs_exception import exceptions
 from aliyunsdkcore.auth import credentials
-from . import access_key_signer
-from . import sts_token_signer
-from . import ram_role_arn_signer
-from . import ecs_ram_role_singer
-from . import rsa_key_pair_signer
+from aliyunsdkcore.auth.signers import access_key_signer
+from aliyunsdkcore.auth.signers import sts_token_signer
+from aliyunsdkcore.auth.signers import ram_role_arn_signer
+from aliyunsdkcore.auth.signers import ecs_ram_role_singer
+from aliyunsdkcore.auth.signers import rsa_key_pair_signer
+
 
 
 class SignerFactory(object):

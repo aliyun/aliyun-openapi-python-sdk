@@ -8,6 +8,8 @@
 #
 #     http://www.apache.org/licenses/LICENSE-2.0
 #
+#
+#
 # Unless required by applicable law or agreed to in writing,
 # software distributed under the License is distributed on an
 # "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
@@ -15,33 +17,21 @@
 # specific language governing permissions and limitations
 # under the License.
 
-# coding=utf-8
-
-__author__ = 'alex jiang'
-
-import hashlib
-import hmac
-
-from aliyunsdkcore.compat import ensure_string
-from aliyunsdkcore.compat import ensure_bytes
-from aliyunsdkcore.compat import b64_encode_bytes
+from aliyunsdkcore.request import RpcRequest
 
 
-def get_sign_string(source, secret):
-    source = ensure_bytes(source)
-    secret = ensure_bytes(secret)
-    h = hmac.new(secret, source, hashlib.sha1)
-    signature = ensure_string(b64_encode_bytes(h.digest()).strip())
-    return signature
+class TestRpcApiRequest(RpcRequest):
+    def __init__(self):
+        RpcRequest.__init__(self, 'Ft', '2016-01-01', 'TestRpcApi')
 
+    def get_body_param(self):
+        return self.get_body_params().get('BodyParam')
 
-def get_signer_name():
-    return "HMAC-SHA1"
+    def set_body_param(self, body_param):
+        self.add_body_params('BodyParam', body_param)
 
+    def get_query_param(self):
+        return self.get_query_params().get('QueryParam')
 
-def get_singer_version():
-    return "1.0"
-
-
-def get_signer_type():
-    return ""
+    def set_query_param(self, query_param):
+        self.add_query_param('QueryParam', query_param)

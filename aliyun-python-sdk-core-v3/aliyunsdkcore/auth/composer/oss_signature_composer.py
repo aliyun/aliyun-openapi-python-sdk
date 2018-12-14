@@ -16,11 +16,12 @@
 # under the License.
 
 # coding=utf-8
-
-from . import roa_signature_composer
+from aliyunsdkcore.vendored.six import iteritems
+from aliyunsdkcore.vendored.six.moves.urllib.parse import urlencode
 from aliyunsdkcore.auth.algorithm import sha_hmac1 as mac1
 from aliyunsdkcore.utils import parameter_helper as helper
-import urllib.request, urllib.parse, urllib.error
+from aliyunsdkcore.auth.composer import roa_signature_composer
+
 
 ACCEPT = "Accept"
 CONTENT_MD5 = "Content-MD5"
@@ -28,10 +29,6 @@ CONTENT_TYPE = "Content-Type"
 DATE = "Date"
 QUERY_SEPARATOR = "&"
 HEADER_SEPARATOR = "\n"
-
-
-def __init__():
-    pass
 
 
 def refresh_sign_parameters(
@@ -44,7 +41,7 @@ def refresh_sign_parameters(
 
 
 def __build_query_string(uri, queries):
-    sorted_map = sorted(list(queries.items()), key=lambda queries: queries[0])
+    sorted_map = sorted(iteritems(queries), key=lambda queries: queries[0])
     if len(sorted_map) > 0:
         uri += "?"
         for (k, v) in sorted_map:
@@ -143,7 +140,7 @@ def get_url(queries, uri_pattern, path_parameters):
         uri_pattern, path_parameters)
     if not url.endswith("?"):
         url += "?"
-    url += urllib.parse.urlencode(queries)
+    url += urlencode(queries)
     if url.endswith("?"):
         url = url[0:(len(url) - 1)]
     return url

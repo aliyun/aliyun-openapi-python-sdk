@@ -18,8 +18,9 @@
 # under the License.
 
 # coding=utf-8
-import urllib.request, urllib.parse, urllib.error
+
 import sys
+
 
 """
 Acs url encoder module.
@@ -28,6 +29,9 @@ Created on 6/16/2015
 
 @author: alex
 """
+from aliyunsdkcore.vendored.six import iteritems
+from aliyunsdkcore.vendored.six.moves.urllib.parse import quote
+from aliyunsdkcore.vendored.six.moves.urllib.parse import urlencode
 
 
 def get_encode_str(params):
@@ -36,12 +40,12 @@ def get_encode_str(params):
     :param params: dict parameters
     :return: string
     """
-    list_params = sorted(iter(params.items()), key=lambda d: d[0])
-    encode_str = urllib.parse.urlencode(list_params)
+    list_params = sorted(iteritems(params), key=lambda d: d[0])
+    encode_str = urlencode(list_params)
     if sys.stdin.encoding is None:
-        res = urllib.parse.quote(encode_str.decode('cp936').encode('utf8'), '')
+        res = quote(encode_str.decode('cp936').encode('utf8'), '')
     else:
-        res = urllib.parse.quote(
+        res = quote(
             encode_str.decode(
                 sys.stdin.encoding).encode('utf8'), '')
     res = res.replace("+", "%20")

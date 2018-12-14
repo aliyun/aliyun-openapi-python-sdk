@@ -18,14 +18,10 @@
 # under the License.
 
 # coding=utf-8
-import http.client
+import sys
 import warnings
-import urllib.request, urllib.parse, urllib.error
-
-try:
-    import json
-except ImportError:
-    import simplejson as json
+from aliyunsdkcore.vendored.six.moves.urllib.parse import urlencode
+from aliyunsdkcore.vendored.six.moves import http_client
 
 from aliyunsdkcore.acs_exception.exceptions import ClientException
 from aliyunsdkcore.acs_exception.exceptions import ServerException
@@ -38,6 +34,8 @@ from aliyunsdkcore.request import CommonRequest
 
 from aliyunsdkcore.endpoint.resolver_endpoint_request import ResolveEndpointRequest
 from aliyunsdkcore.endpoint.default_endpoint_resolver import DefaultEndpointResolver
+
+from aliyunsdkcore.compat import json
 
 """
 Acs default client module.
@@ -172,7 +170,7 @@ class AcsClient:
     def _make_http_response(self, endpoint, request, specific_signer=None):
         body_params = request.get_body_params()
         if body_params:
-            body = urllib.parse.urlencode(body_params)
+            body = urlencode(body_params)
             request.set_content(body)
             request.set_content_type(format_type.APPLICATION_FORM)
         elif request.get_content() and "Content-Type" not in request.get_headers():
@@ -199,7 +197,7 @@ class AcsClient:
             self._port,
             timeout=self._timeout)
         if body_params:
-            body = urllib.parse.urlencode(request.get_body_params())
+            body = urlencode(request.get_body_params())
             response.set_content(body, "utf-8", format_type.APPLICATION_FORM)
         return response
 
@@ -237,7 +235,8 @@ class AcsClient:
     @staticmethod
     def _parse_error_info_from_response_body(response_body):
         try:
-            body_obj = json.loads(response_body.decode('utf-8'))
+
+            body_obj = json.loads(response_body)
             if 'Code' in body_obj and 'Message' in body_obj:
                 return body_obj['Code'], body_obj['Message']
             else:
@@ -262,12 +261,12 @@ class AcsClient:
         try:
             body_obj = json.loads(body.decode('utf-8'))
             request_id = body_obj.get('RequestId')
-        except ValueError or TypeError or AttributeError:
+        except (ValueError, TypeError, AttributeError):
             # in case the response body is not a json string, return the raw
             # data instead
             pass
-
-        if status < http.client.OK or status >= http.client.MULTIPLE_CHOICES:
+			
+        if status < http_client.OK or status >= http_client.MULTIPLE_CHOICES:
             server_error_code, server_error_message = self._parse_error_info_from_response_body(
                 body)
             raise ServerException(
@@ -300,8 +299,7 @@ class AcsClient:
         return body
 
     def get_response(self, acs_request):
-        status, headers, body = self.implementation_of_do_action(acs_request)
-        return status, headers, body
-    
+        return self.implementation_of_do_action(acs_request)
+
     def add_endpoint(self, region_id, product_code, endpoint):
         self._endpoint_resolver.put_endpoint_entry(region_id, product_code, endpoint)
