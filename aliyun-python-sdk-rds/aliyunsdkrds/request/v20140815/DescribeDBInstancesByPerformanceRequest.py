@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class DescribeDBInstancesByPerformanceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'DescribeDBInstancesByPerformance','Rds')
+		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'DescribeDBInstancesByPerformance','rds')
 
 	def get_Tag4value(self):
 		return self.get_query_params().get('Tag.4.value')
