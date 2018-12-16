@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class RefreshObjectCachesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'vod', '2017-03-21', 'RefreshObjectCaches')
+		RpcRequest.__init__(self, 'vod', '2017-03-21', 'RefreshObjectCaches','vod')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')

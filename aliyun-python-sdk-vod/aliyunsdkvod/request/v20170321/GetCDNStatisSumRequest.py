@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class GetCDNStatisSumRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'vod', '2017-03-21', 'GetCDNStatisSum')
+		RpcRequest.__init__(self, 'vod', '2017-03-21', 'GetCDNStatisSum','vod')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')

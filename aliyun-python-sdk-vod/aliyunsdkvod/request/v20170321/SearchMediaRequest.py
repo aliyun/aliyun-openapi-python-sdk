@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class SearchMediaRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'vod', '2017-03-21', 'SearchMedia')
+		RpcRequest.__init__(self, 'vod', '2017-03-21', 'SearchMedia','vod')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -64,6 +64,12 @@ class SearchMediaRequest(RpcRequest):
 
 	def set_SortBy(self,SortBy):
 		self.add_query_param('SortBy',SortBy)
+
+	def get_SessionId(self):
+		return self.get_query_params().get('SessionId')
+
+	def set_SessionId(self,SessionId):
+		self.add_query_param('SessionId',SessionId)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')

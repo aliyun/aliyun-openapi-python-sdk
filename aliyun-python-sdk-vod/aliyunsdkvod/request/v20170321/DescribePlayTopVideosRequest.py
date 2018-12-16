@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class DescribePlayTopVideosRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'vod', '2017-03-21', 'DescribePlayTopVideos')
+		RpcRequest.__init__(self, 'vod', '2017-03-21', 'DescribePlayTopVideos','vod')
 
 	def get_BizDate(self):
 		return self.get_query_params().get('BizDate')

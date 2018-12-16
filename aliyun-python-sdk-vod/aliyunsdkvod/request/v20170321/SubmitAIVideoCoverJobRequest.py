@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class SubmitAIVideoCoverJobRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'vod', '2017-03-21', 'SubmitAIVideoCoverJob')
+		RpcRequest.__init__(self, 'vod', '2017-03-21', 'SubmitAIVideoCoverJob','vod')
 
 	def get_UserData(self):
 		return self.get_query_params().get('UserData')
