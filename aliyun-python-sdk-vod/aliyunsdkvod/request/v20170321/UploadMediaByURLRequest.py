@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class UploadMediaByURLRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'vod', '2017-03-21', 'UploadMediaByURL')
+		RpcRequest.__init__(self, 'vod', '2017-03-21', 'UploadMediaByURL','vod')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')

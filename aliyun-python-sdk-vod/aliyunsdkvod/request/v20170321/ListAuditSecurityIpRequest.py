@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class ListAuditSecurityIpRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'vod', '2017-03-21', 'ListAuditSecurityIp')
+		RpcRequest.__init__(self, 'vod', '2017-03-21', 'ListAuditSecurityIp','vod')
 
 	def get_SecurityGroupName(self):
 		return self.get_query_params().get('SecurityGroupName')

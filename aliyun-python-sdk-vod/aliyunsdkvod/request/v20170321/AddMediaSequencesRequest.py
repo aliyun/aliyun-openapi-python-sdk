@@ -18,10 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class GetVideoListRequest(RpcRequest):
+class AddMediaSequencesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'vod', '2017-03-21', 'GetVideoList','vod')
+		RpcRequest.__init__(self, 'vod', '2017-03-21', 'AddMediaSequences','vod')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -29,47 +29,29 @@ class GetVideoListRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_MediaURL(self):
+		return self.get_query_params().get('MediaURL')
+
+	def set_MediaURL(self,MediaURL):
+		self.add_query_param('MediaURL',MediaURL)
+
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
-	def get_CateId(self):
-		return self.get_query_params().get('CateId')
+	def get_OwnerAccount(self):
+		return self.get_query_params().get('OwnerAccount')
 
-	def set_CateId(self,CateId):
-		self.add_query_param('CateId',CateId)
+	def set_OwnerAccount(self,OwnerAccount):
+		self.add_query_param('OwnerAccount',OwnerAccount)
 
-	def get_PageNo(self):
-		return self.get_query_params().get('PageNo')
+	def get_MediaSequences(self):
+		return self.get_query_params().get('MediaSequences')
 
-	def set_PageNo(self,PageNo):
-		self.add_query_param('PageNo',PageNo)
-
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_EndTime(self):
-		return self.get_query_params().get('EndTime')
-
-	def set_EndTime(self,EndTime):
-		self.add_query_param('EndTime',EndTime)
-
-	def get_SortBy(self):
-		return self.get_query_params().get('SortBy')
-
-	def set_SortBy(self,SortBy):
-		self.add_query_param('SortBy',SortBy)
-
-	def get_StartTime(self):
-		return self.get_query_params().get('StartTime')
-
-	def set_StartTime(self,StartTime):
-		self.add_query_param('StartTime',StartTime)
+	def set_MediaSequences(self,MediaSequences):
+		self.add_query_param('MediaSequences',MediaSequences)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
@@ -77,14 +59,14 @@ class GetVideoListRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_Status(self):
-		return self.get_query_params().get('Status')
+	def get_MediaId(self):
+		return self.get_query_params().get('MediaId')
 
-	def set_Status(self,Status):
-		self.add_query_param('Status',Status)
+	def set_MediaId(self,MediaId):
+		self.add_query_param('MediaId',MediaId)
 
-	def get_StorageLocation(self):
-		return self.get_query_params().get('StorageLocation')
+	def get_MediaType(self):
+		return self.get_query_params().get('MediaType')
 
-	def set_StorageLocation(self,StorageLocation):
-		self.add_query_param('StorageLocation',StorageLocation)
+	def set_MediaType(self,MediaType):
+		self.add_query_param('MediaType',MediaType)

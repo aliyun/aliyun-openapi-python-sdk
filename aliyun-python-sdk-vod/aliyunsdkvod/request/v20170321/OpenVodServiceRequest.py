@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class OpenVodServiceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'vod', '2017-03-21', 'OpenVodService')
+		RpcRequest.__init__(self, 'vod', '2017-03-21', 'OpenVodService','vod')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')

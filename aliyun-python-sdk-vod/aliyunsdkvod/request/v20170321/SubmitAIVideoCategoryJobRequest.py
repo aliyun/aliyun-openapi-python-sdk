@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class SubmitAIVideoCategoryJobRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'vod', '2017-03-21', 'SubmitAIVideoCategoryJob')
+		RpcRequest.__init__(self, 'vod', '2017-03-21', 'SubmitAIVideoCategoryJob','vod')
 
 	def get_AIVideoCategoryConfig(self):
 		return self.get_query_params().get('AIVideoCategoryConfig')
