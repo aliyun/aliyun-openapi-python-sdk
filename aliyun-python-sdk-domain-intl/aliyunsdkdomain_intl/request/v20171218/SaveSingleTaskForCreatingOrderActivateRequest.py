@@ -35,23 +35,11 @@ class SaveSingleTaskForCreatingOrderActivateRequest(RpcRequest):
 	def set_SubscriptionDuration(self,SubscriptionDuration):
 		self.add_query_param('SubscriptionDuration',SubscriptionDuration)
 
-	def get_Address(self):
-		return self.get_query_params().get('Address')
-
-	def set_Address(self,Address):
-		self.add_query_param('Address',Address)
-
 	def get_PermitPremiumActivation(self):
 		return self.get_query_params().get('PermitPremiumActivation')
 
 	def set_PermitPremiumActivation(self,PermitPremiumActivation):
 		self.add_query_param('PermitPremiumActivation',PermitPremiumActivation)
-
-	def get_TelArea(self):
-		return self.get_query_params().get('TelArea')
-
-	def set_TelArea(self,TelArea):
-		self.add_query_param('TelArea',TelArea)
 
 	def get_City(self):
 		return self.get_query_params().get('City')
@@ -71,41 +59,23 @@ class SaveSingleTaskForCreatingOrderActivateRequest(RpcRequest):
 	def set_Dns1(self,Dns1):
 		self.add_query_param('Dns1',Dns1)
 
-	def get_DomainName(self):
-		return self.get_query_params().get('DomainName')
-
-	def set_DomainName(self,DomainName):
-		self.add_query_param('DomainName',DomainName)
-
 	def get_RegistrantProfileId(self):
 		return self.get_query_params().get('RegistrantProfileId')
 
 	def set_RegistrantProfileId(self,RegistrantProfileId):
 		self.add_query_param('RegistrantProfileId',RegistrantProfileId)
 
-	def get_Telephone(self):
-		return self.get_query_params().get('Telephone')
+	def get_CouponNo(self):
+		return self.get_query_params().get('CouponNo')
 
-	def set_Telephone(self,Telephone):
-		self.add_query_param('Telephone',Telephone)
-
-	def get_TrademarkDomainActivation(self):
-		return self.get_query_params().get('TrademarkDomainActivation')
-
-	def set_TrademarkDomainActivation(self,TrademarkDomainActivation):
-		self.add_query_param('TrademarkDomainActivation',TrademarkDomainActivation)
+	def set_CouponNo(self,CouponNo):
+		self.add_query_param('CouponNo',CouponNo)
 
 	def get_AliyunDns(self):
 		return self.get_query_params().get('AliyunDns')
 
 	def set_AliyunDns(self,AliyunDns):
 		self.add_query_param('AliyunDns',AliyunDns)
-
-	def get_RegistrantOrganization(self):
-		return self.get_query_params().get('RegistrantOrganization')
-
-	def set_RegistrantOrganization(self,RegistrantOrganization):
-		self.add_query_param('RegistrantOrganization',RegistrantOrganization)
 
 	def get_TelExt(self):
 		return self.get_query_params().get('TelExt')
@@ -125,18 +95,6 @@ class SaveSingleTaskForCreatingOrderActivateRequest(RpcRequest):
 	def set_PostalCode(self,PostalCode):
 		self.add_query_param('PostalCode',PostalCode)
 
-	def get_UserClientIp(self):
-		return self.get_query_params().get('UserClientIp')
-
-	def set_UserClientIp(self,UserClientIp):
-		self.add_query_param('UserClientIp',UserClientIp)
-
-	def get_EnableDomainProxy(self):
-		return self.get_query_params().get('EnableDomainProxy')
-
-	def set_EnableDomainProxy(self,EnableDomainProxy):
-		self.add_query_param('EnableDomainProxy',EnableDomainProxy)
-
 	def get_Lang(self):
 		return self.get_query_params().get('Lang')
 
@@ -149,8 +107,74 @@ class SaveSingleTaskForCreatingOrderActivateRequest(RpcRequest):
 	def set_Email(self,Email):
 		self.add_query_param('Email',Email)
 
+	def get_Address(self):
+		return self.get_query_params().get('Address')
+
+	def set_Address(self,Address):
+		self.add_query_param('Address',Address)
+
+	def get_TelArea(self):
+		return self.get_query_params().get('TelArea')
+
+	def set_TelArea(self,TelArea):
+		self.add_query_param('TelArea',TelArea)
+
+	def get_DomainName(self):
+		return self.get_query_params().get('DomainName')
+
+	def set_DomainName(self,DomainName):
+		self.add_query_param('DomainName',DomainName)
+
+	def get_Telephone(self):
+		return self.get_query_params().get('Telephone')
+
+	def set_Telephone(self,Telephone):
+		self.add_query_param('Telephone',Telephone)
+
+	def get_TrademarkDomainActivation(self):
+		return self.get_query_params().get('TrademarkDomainActivation')
+
+	def set_TrademarkDomainActivation(self,TrademarkDomainActivation):
+		self.add_query_param('TrademarkDomainActivation',TrademarkDomainActivation)
+
+	def get_UseCoupon(self):
+		return self.get_query_params().get('UseCoupon')
+
+	def set_UseCoupon(self,UseCoupon):
+		self.add_query_param('UseCoupon',UseCoupon)
+
+	def get_RegistrantOrganization(self):
+		return self.get_query_params().get('RegistrantOrganization')
+
+	def set_RegistrantOrganization(self,RegistrantOrganization):
+		self.add_query_param('RegistrantOrganization',RegistrantOrganization)
+
+	def get_PromotionNo(self):
+		return self.get_query_params().get('PromotionNo')
+
+	def set_PromotionNo(self,PromotionNo):
+		self.add_query_param('PromotionNo',PromotionNo)
+
+	def get_UserClientIp(self):
+		return self.get_query_params().get('UserClientIp')
+
+	def set_UserClientIp(self,UserClientIp):
+		self.add_query_param('UserClientIp',UserClientIp)
+
+	def get_EnableDomainProxy(self):
+		return self.get_query_params().get('EnableDomainProxy')
+
+	def set_EnableDomainProxy(self,EnableDomainProxy):
+		self.add_query_param('EnableDomainProxy',EnableDomainProxy)
+
 	def get_RegistrantName(self):
 		return self.get_query_params().get('RegistrantName')
 
 	def set_RegistrantName(self,RegistrantName):
 		self.add_query_param('RegistrantName',RegistrantName)
+
+	def get_UsePromotion(self):
+		return self.get_query_params().get('UsePromotion')
+
+	def set_UsePromotion(self,UsePromotion):
+		self.add_query_param('UsePromotion',UsePromotion)

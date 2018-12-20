@@ -70,14 +70,38 @@ class SaveBatchTaskForCreatingOrderActivateRequest(RpcRequest):
 				self.add_query_param('OrderActivateParam.' + str(i + 1) + '.RegistrantName' , OrderActivateParams[i].get('RegistrantName'))
 
 
+	def get_PromotionNo(self):
+		return self.get_query_params().get('PromotionNo')
+
+	def set_PromotionNo(self,PromotionNo):
+		self.add_query_param('PromotionNo',PromotionNo)
+
 	def get_UserClientIp(self):
 		return self.get_query_params().get('UserClientIp')
 
 	def set_UserClientIp(self,UserClientIp):
 		self.add_query_param('UserClientIp',UserClientIp)
 
+	def get_CouponNo(self):
+		return self.get_query_params().get('CouponNo')
+
+	def set_CouponNo(self,CouponNo):
+		self.add_query_param('CouponNo',CouponNo)
+
+	def get_UseCoupon(self):
+		return self.get_query_params().get('UseCoupon')
+
+	def set_UseCoupon(self,UseCoupon):
+		self.add_query_param('UseCoupon',UseCoupon)
+
 	def get_Lang(self):
 		return self.get_query_params().get('Lang')
 
 	def set_Lang(self,Lang):
 		self.add_query_param('Lang',Lang)
+
+	def get_UsePromotion(self):
+		return self.get_query_params().get('UsePromotion')
+
+	def set_UsePromotion(self,UsePromotion):
+		self.add_query_param('UsePromotion',UsePromotion)
