@@ -65,6 +65,12 @@ class SaveSingleTaskForCreatingOrderActivateRequest(RpcRequest):
 	def set_RegistrantProfileId(self,RegistrantProfileId):
 		self.add_query_param('RegistrantProfileId',RegistrantProfileId)
 
+	def get_CouponNo(self):
+		return self.get_query_params().get('CouponNo')
+
+	def set_CouponNo(self,CouponNo):
+		self.add_query_param('CouponNo',CouponNo)
+
 	def get_AliyunDns(self):
 		return self.get_query_params().get('AliyunDns')
 
@@ -161,6 +167,12 @@ class SaveSingleTaskForCreatingOrderActivateRequest(RpcRequest):
 	def set_TrademarkDomainActivation(self,TrademarkDomainActivation):
 		self.add_query_param('TrademarkDomainActivation',TrademarkDomainActivation)
 
+	def get_UseCoupon(self):
+		return self.get_query_params().get('UseCoupon')
+
+	def set_UseCoupon(self,UseCoupon):
+		self.add_query_param('UseCoupon',UseCoupon)
+
 	def get_ZhProvince(self):
 		return self.get_query_params().get('ZhProvince')
 
@@ -172,6 +184,12 @@ class SaveSingleTaskForCreatingOrderActivateRequest(RpcRequest):
 
 	def set_RegistrantOrganization(self,RegistrantOrganization):
 		self.add_query_param('RegistrantOrganization',RegistrantOrganization)
+
+	def get_PromotionNo(self):
+		return self.get_query_params().get('PromotionNo')
+
+	def set_PromotionNo(self,PromotionNo):
+		self.add_query_param('PromotionNo',PromotionNo)
 
 	def get_EnableDomainProxy(self):
 		return self.get_query_params().get('EnableDomainProxy')
@@ -190,3 +208,9 @@ class SaveSingleTaskForCreatingOrderActivateRequest(RpcRequest):
 
 	def set_RegistrantName(self,RegistrantName):
 		self.add_query_param('RegistrantName',RegistrantName)
+
+	def get_UsePromotion(self):
+		return self.get_query_params().get('UsePromotion')
+
+	def set_UsePromotion(self,UsePromotion):
+		self.add_query_param('UsePromotion',UsePromotion)
