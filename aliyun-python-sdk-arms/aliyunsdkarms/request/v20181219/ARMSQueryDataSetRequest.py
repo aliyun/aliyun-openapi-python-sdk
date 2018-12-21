@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class ARMSQueryDataSetRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ARMS', '2018-10-15', 'ARMSQueryDataSet')
+		RpcRequest.__init__(self, 'ARMS', '2018-12-19', 'ARMSQueryDataSet','arms')
 
 	def get_DateStr(self):
 		return self.get_query_params().get('DateStr')

@@ -21,7 +21,36 @@ from aliyunsdkcore.request import RpcRequest
 class MetricQueryRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ARMS', '2018-10-15', 'MetricQuery')
+		RpcRequest.__init__(self, 'ARMS', '2018-12-19', 'MetricQuery','arms')
+
+	def get_EndTime(self):
+		return self.get_query_params().get('EndTime')
+
+	def set_EndTime(self,EndTime):
+		self.add_query_param('EndTime',EndTime)
+
+	def get_OrderBy(self):
+		return self.get_query_params().get('OrderBy')
+
+	def set_OrderBy(self,OrderBy):
+		self.add_query_param('OrderBy',OrderBy)
+
+	def get_Filterss(self):
+		return self.get_query_params().get('Filterss')
+
+	def set_Filterss(self,Filterss):
+		for i in range(len(Filterss)):	
+			if Filterss[i].get('Value') is not None:
+				self.add_query_param('Filters.' + str(i + 1) + '.Value' , Filterss[i].get('Value'))
+			if Filterss[i].get('Key') is not None:
+				self.add_query_param('Filters.' + str(i + 1) + '.Key' , Filterss[i].get('Key'))
+
+
+	def get_StartTime(self):
+		return self.get_query_params().get('StartTime')
+
+	def set_StartTime(self,StartTime):
+		self.add_query_param('StartTime',StartTime)
 
 	def get_IintervalInSec(self):
 		return self.get_query_params().get('IintervalInSec')
@@ -54,35 +83,6 @@ class MetricQueryRequest(RpcRequest):
 
 	def set_Limit(self,Limit):
 		self.add_query_param('Limit',Limit)
-
-	def get_EndTime(self):
-		return self.get_query_params().get('EndTime')
-
-	def set_EndTime(self,EndTime):
-		self.add_query_param('EndTime',EndTime)
-
-	def get_OrderBy(self):
-		return self.get_query_params().get('OrderBy')
-
-	def set_OrderBy(self,OrderBy):
-		self.add_query_param('OrderBy',OrderBy)
-
-	def get_StartTime(self):
-		return self.get_query_params().get('StartTime')
-
-	def set_StartTime(self,StartTime):
-		self.add_query_param('StartTime',StartTime)
-
-	def get_Filterss(self):
-		return self.get_query_params().get('Filterss')
-
-	def set_Filterss(self,Filterss):
-		for i in range(len(Filterss)):	
-			if Filterss[i].get('Value') is not None:
-				self.add_query_param('Filters.' + str(i + 1) + '.Value' , Filterss[i].get('Value'))
-			if Filterss[i].get('Key') is not None:
-				self.add_query_param('Filters.' + str(i + 1) + '.Key' , Filterss[i].get('Key'))
-
 
 	def get_Dimensionss(self):
 		return self.get_query_params().get('Dimensionss')
