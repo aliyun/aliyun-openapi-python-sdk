@@ -10,6 +10,7 @@ python:
   - "3.6"
 
 install:
+  - pip install unittest2
   - pip install coverage
 
 script:
