@@ -36,7 +36,7 @@ from aliyunsdkcore.request import CommonRequest
 from aliyunsdkcore.endpoint.resolver_endpoint_request import ResolveEndpointRequest
 from aliyunsdkcore.endpoint.default_endpoint_resolver import DefaultEndpointResolver
 
-from aliyunsdkcore.compat import json
+import json
 
 """
 Acs default client module.
