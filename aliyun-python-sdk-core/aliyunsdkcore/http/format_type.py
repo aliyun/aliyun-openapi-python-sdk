@@ -17,7 +17,6 @@
 
 # coding=utf-8
 
-__author__ = 'alex jiang'
 
 XML = 'XML'
 JSON = 'JSON'
@@ -43,4 +42,3 @@ def map_accept_to_format(accept):
     if accept.lower() == APPLICATION_JSON:
         return JSON
     return RAW
-

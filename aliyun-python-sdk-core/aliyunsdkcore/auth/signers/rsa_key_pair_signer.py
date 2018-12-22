@@ -128,4 +128,3 @@ class GetSessionAkRequest(RpcRequest):
 
     def set_public_key_id(self, public_key_id):
         self.add_query_param('PublicKeyId', public_key_id)
-

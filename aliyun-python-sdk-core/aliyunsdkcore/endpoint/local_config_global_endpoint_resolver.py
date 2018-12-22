@@ -43,7 +43,7 @@ class LocalConfigGlobalEndpointResolver(LocalConfigRegionalEndpointResolver):
             return None
 
     def get_endpoint_key_from_request(self, request):
-        return self._make_endpoint_entry_key(request.product_code_lower)
+        return self._make_endpoint_entry_key(request.product_code)
 
-    def _make_endpoint_entry_key(self, product_code_lower):
-        return self._get_normalized_product_code(product_code_lower)
+    def _make_endpoint_entry_key(self, product_code):
+        return self._get_normalized_product_code(product_code)

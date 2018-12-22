@@ -31,4 +31,3 @@ class AccessKeySigner(Signer):
         header = request.get_signed_header(region_id, cred.access_key_id, cred.access_key_secret)
         url = request.get_url(region_id, cred.access_key_id, cred.access_key_secret)
         return header, url
-

@@ -18,8 +18,9 @@
 # under the License.
 
 # coding=utf-8
-import sys
 import warnings
+
+import aliyunsdkcore
 from aliyunsdkcore.vendored.six.moves.urllib.parse import urlencode
 from aliyunsdkcore.vendored.six.moves import http_client
 
@@ -39,10 +40,6 @@ from aliyunsdkcore.compat import json
 
 """
 Acs default client module.
-
-Created on 6/15/2015
-
-@author: alex jiang
 """
 
 DEFAULT_SDK_CONNECTION_TIMEOUT_IN_SECONDS = 10
@@ -228,25 +225,32 @@ class AcsClient:
             status, headers, body = http_response.get_response_object()
             return status, headers, body
         except IOError as e:
-            raise ClientException(
-                error_code.SDK_SERVER_UNREACHABLE,
-                error_msg.get_msg('SDK_SERVER_UNREACHABLE') + ': ' + str(e))
+            error_message = str(e)
+            error_message += "\nEndpoint: " + endpoint
+            error_message += "\nProduct: " + str(request.get_product())
+            error_message += "\nSdkCoreVersion: " + aliyunsdkcore.__version__
+            error_message += "\nHttpUrl: " + str(http_response.get_url())
+            error_message += "\nHttpHeaders: " + str(http_response.get_headers())
+
+            raise ClientException(error_code.SDK_HTTP_ERROR, error_message)
 
     @staticmethod
     def _parse_error_info_from_response_body(response_body):
-        try:
+        error_code_to_return = error_code.SDK_UNKNOWN_SERVER_ERROR
+        # TODO handle if response_body is too big
+        error_message_to_return = "ServerResponseBody: " + str(response_body)
 
+        try:
             body_obj = json.loads(response_body)
-            if 'Code' in body_obj and 'Message' in body_obj:
-                return body_obj['Code'], body_obj['Message']
-            else:
-                return (
-                    error_code.SDK_UNKNOWN_SERVER_ERROR,
-                    response_body)
+            if 'Code' in body_obj:
+                error_code_to_return = body_obj['Code']
+            if 'Message' in body_obj:
+                error_message_to_return = body_obj['Message']
         except ValueError:
             # failed to parse body as json format
-            return (error_code.SDK_UNKNOWN_SERVER_ERROR,
-                    error_msg.get_msg('SDK_UNKNOWN_SERVER_ERROR'))
+            pass
+
+        return error_code_to_return, error_message_to_return
 
     def do_action_with_exception(self, acs_request):
 
@@ -265,7 +269,7 @@ class AcsClient:
             # in case the response body is not a json string, return the raw
             # data instead
             pass
-			
+
         if status < http_client.OK or status >= http_client.MULTIPLE_CHOICES:
             server_error_code, server_error_message = self._parse_error_info_from_response_body(
                 body)
@@ -279,7 +283,7 @@ class AcsClient:
 
     def _resolve_endpoint(self, request):
         resolve_request = ResolveEndpointRequest(
-            self.__region_id, 
+            self.__region_id,
             request.get_product(),
             request.get_location_service_code(),
             request.get_location_endpoint_type(),

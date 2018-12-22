@@ -26,6 +26,7 @@ from aliyunsdkcore.compat import ensure_bytes
 from aliyunsdkcore.compat import b64_encode_bytes
 from aliyunsdkcore.compat import b64_decode_bytes
 
+
 def get_sign_string(source, access_secret):
     if platform.system() != "Windows":
         from Crypto.Signature import PKCS1_v1_5

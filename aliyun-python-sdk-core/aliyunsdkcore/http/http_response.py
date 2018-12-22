@@ -17,7 +17,6 @@
 
 # coding=utf-8
 
-__author__ = 'alex jiang'
 import os
 import base64
 from aliyunsdkcore.vendored.six.moves.urllib.parse import urlparse
@@ -157,7 +156,6 @@ class HttpResponse(HttpRequest):
         if self.__connection is not None:
             self.__connection.close()
             self.__connection = None
-
 
     def __get_http_connection(self, host, port, **kwargs):
         """kwargs maps HTTPConnection arguments"""

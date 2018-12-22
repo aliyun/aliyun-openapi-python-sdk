@@ -21,10 +21,6 @@
 
 """
 Acs ERROR CODE module.
-
-Created on 6/15/2015
-
-@author: alex jiang
 """
 
 SDK_INVALID_REGION_ID = 'SDK.InvalidRegionId'
@@ -39,3 +35,4 @@ SDK_INVALID_PARAMS = 'SDK.InvalidParams'
 SDK_NOT_SUPPORT = 'SDK.NotSupport'
 SDK_ENDPOINT_RESOLVING_ERROR = 'SDK.EndpointResolvingError'
 SDK_ENDPOINT_TESTABILITY = 'SDK.EndpointTestability'
+SDK_HTTP_ERROR = 'SDK.HttpError'

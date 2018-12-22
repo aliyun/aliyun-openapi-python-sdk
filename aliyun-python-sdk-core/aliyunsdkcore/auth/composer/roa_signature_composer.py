@@ -23,7 +23,6 @@ from aliyunsdkcore.utils import parameter_helper as helper
 from aliyunsdkcore.http import format_type as FormatType
 
 
-
 ACCEPT = "Accept"
 CONTENT_MD5 = "Content-MD5"
 CONTENT_TYPE = "Content-Type"
@@ -38,13 +37,9 @@ HEADER_SEPARATOR = "\n"
 # accessKeyId: this is aliyun_access_key_id
 # format: XML or JSON
 # input parameters is headers
-
-
-def refresh_sign_parameters(parameters, access_key_id, format, signer=mac1):
+def refresh_sign_parameters(parameters, format=FormatType.RAW, signer=mac1):
     if parameters is None or not isinstance(parameters, dict):
         parameters = dict()
-    if format is None:
-        format = FormatType.RAW
     parameters["Date"] = helper.get_rfc_2616_date()
     parameters["Accept"] = FormatType.map_format_to_accept(format)
     parameters["x-acs-signature-method"] = signer.get_signer_name()
@@ -56,7 +51,7 @@ def compose_string_to_sign(
         method,
         queries,
         uri_pattern=None,
-        headers=None,
+        headers={},
         paths=None,
         signer=mac1):
     sign_to_string = ""
@@ -105,12 +100,8 @@ def build_canonical_headers(headers, header_begin):
     return result
 
 
-def split_sub_resource(uri):
-    return uri.split("?")
-
-
 def __build_query_string(uri, queries):
-    uri_parts = split_sub_resource(uri)
+    uri_parts = uri.split("?")
     if len(uri_parts) > 1 and uri_parts[1] is not None:
         queries[uri_parts[1]] = None
     query_builder = uri_parts[0]
@@ -140,7 +131,6 @@ def get_signature(
         signer=mac1):
     headers = refresh_sign_parameters(
         parameters=headers,
-        access_key_id=access_key,
         format=format)
     sign_to_string = compose_string_to_sign(
         method=method,

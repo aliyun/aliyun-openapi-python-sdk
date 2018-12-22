@@ -21,10 +21,6 @@
 
 """
 SDK exception module.
-
-Created on 6/15/2015
-
-@author: alex jiang
 """
 
 from aliyunsdkcore.acs_exception import error_type

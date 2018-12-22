@@ -18,9 +18,10 @@
 #
 
 from aliyunsdkcore.acs_exception.exceptions import ClientException
+from aliyunsdkcore.endpoint import EndpointResolver
+
 import aliyunsdkcore.acs_exception.error_code as error_code
 import aliyunsdkcore.acs_exception.error_msg as error_msg
-from aliyunsdkcore.endpoint import EndpointResolver
 
 
 class ChainedEndpointResolver(EndpointResolver):
@@ -36,7 +37,8 @@ class ChainedEndpointResolver(EndpointResolver):
 
         raise ClientException(
             error_code.SDK_ENDPOINT_RESOLVING_ERROR,
-            error_msg.ENDPOINT_NO_PRODUCT.format(product_code=request.product_code)
+            error_msg.ENDPOINT_NO_PRODUCT.format(
+                product_code=request.product_code)
         )
 
     def _check_region_id(self, request):

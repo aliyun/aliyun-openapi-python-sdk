@@ -11,6 +11,7 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+
 from aliyunsdkcore.endpoint import EndpointResolver
 from aliyunsdkcore.endpoint.chained_endpoint_resolver import ChainedEndpointResolver
 from aliyunsdkcore.endpoint.user_customized_endpoint_resolver import UserCustomizedEndpointResolver

@@ -83,14 +83,14 @@ class LocalConfigRegionalEndpointResolver(EndpointResolverBase):
     def get_endpoint_key_from_request(self, request):
         return self._make_endpoint_entry_key(request.product_code_lower, request.region_id)
 
-    def _make_endpoint_entry_key(self, product_code_lower, region_id):
-        return self._get_normalized_product_code(product_code_lower) + "." + region_id.lower()
+    def _make_endpoint_entry_key(self, product_code, region_id):
+        return self._get_normalized_product_code(product_code) + "." + region_id.lower()
 
     def is_region_id_valid(self, request):
         return request.region_id in self._valid_region_ids
 
-    def get_valid_region_ids_by_product(self, product_code_lower):
-        code = self._get_normalized_product_code(product_code_lower)
+    def get_valid_region_ids_by_product(self, product_code):
+        code = self._get_normalized_product_code(product_code)
         if code in self._regional_endpoint_data:
             region_ids = self._regional_endpoint_data.get(code).keys()
             return sorted(region_ids)
@@ -100,7 +100,7 @@ class LocalConfigRegionalEndpointResolver(EndpointResolverBase):
 
         tmp_request = ResolveEndpointRequest(
             request.region_id,
-            self._get_normalized_product_code(request.product_code_lower),
+            self._get_normalized_product_code(request.product_code),
             request.location_service_code,
             request.endpoint_type,
         )

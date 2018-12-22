@@ -70,7 +70,8 @@ class RamRoleArnSigner(Signer):
         request.add_query_param('DurationSeconds', self._SESSION_PERIOD)
         request.set_accept_format('JSON')
 
-        access_key_credential = AccessKeyCredential(self._credential.sts_access_key_id, self._credential.sts_access_key_secret)
+        access_key_credential = AccessKeyCredential(self._credential.sts_access_key_id,
+                                                    self._credential.sts_access_key_secret)
         signer = AccessKeySigner(access_key_credential)
 
         status, headers, body = self._doAction(request, signer)
@@ -87,5 +88,3 @@ class RamRoleArnSigner(Signer):
             http_status = status
 
             raise exceptions.ServerException(code, message, http_status)
-
-

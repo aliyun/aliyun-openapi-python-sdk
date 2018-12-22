@@ -19,10 +19,6 @@
 
 """
 MD5 tools module.
-
-Created on 9/28/2015
-
-@author: alex jiang
 """
 
 import hashlib
@@ -32,12 +28,8 @@ from aliyunsdkcore.compat import ensure_string
 from aliyunsdkcore.compat import b64_encode_bytes
 
 
-def _get_md5(content):
+def get_md5_base64_str(content):
     m = hashlib.md5()
     content_bytes = ensure_bytes(content)
     m.update(bytearray(content_bytes))
-    return m.digest()
-
-
-def get_md5_base64_str(content):
-    return ensure_string(b64_encode_bytes(_get_md5(content)).strip())
+    return ensure_string(b64_encode_bytes(m.digest()).strip())

@@ -29,4 +29,3 @@ class Signer(with_metaclass(ABCMeta, object)):
     @abstractmethod
     def sign(self, region_id, request):
         pass
-

@@ -17,7 +17,6 @@
 
 # coding=utf-8
 
-__author__ = 'alex jiang'
 
 import hashlib
 import hmac

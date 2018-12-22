@@ -1,3 +1,8 @@
+2018-12-22 Version: 2.11.3
+1, This is an example of release-log.
+2, Please strictly follow this format to edit in English.
+3, Format：Number + , + Space + Description
+
 2018-12-14 Version: 2.11.1
 1, Fixed coding inconsistency bug with core and core-v3,
 2, Fixed the except bug

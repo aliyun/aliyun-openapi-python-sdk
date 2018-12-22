@@ -16,7 +16,6 @@
 # under the License.
 
 # coding=utf-8
-__author__ = 'alex jiang'
 
 import hashlib
 import base64
@@ -49,14 +48,11 @@ def md5_sum(content):
     md5_bytes = hashlib.md5(content_bytes).digest()
     return base64.standard_b64encode(md5_bytes)
 
-def percent_encode(encodeStr):
-    encodeStr = str(encodeStr)
-    if sys.stdin.encoding is None:
-        res = quote(encodeStr.decode('cp936').encode('utf8'), '')
-    else:
-        res = quote(
-            encodeStr.decode(
-                sys.stdin.encoding).encode('utf8'), '')
+
+def percent_encode(encode_str):
+    encode_str = str(encode_str)
+    encoding = 'cp936' if sys.stdin.encoding is None else sys.stdin.encoding
+    res = quote(encode_str.decode(encoding).encode('utf8'), '')
     res = res.replace('+', '%20')
     res = res.replace('*', '%2A')
     res = res.replace('%7E', '~')
