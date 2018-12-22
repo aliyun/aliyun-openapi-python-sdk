@@ -1,6 +1,6 @@
 # coding=utf-8
 
-import unittest
+from tests import unittest
 
 from mock import MagicMock, patch
 from aliyunsdkcore.auth.algorithm import sha_hmac256 as hmac256

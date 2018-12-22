@@ -1,6 +1,6 @@
 # coding=utf-8
 
-import unittest
+from tests import unittest
 
 from aliyunsdkcore.auth.credentials import AccessKeyCredential
 from aliyunsdkcore.auth.signers.access_key_signer import AccessKeySigner
