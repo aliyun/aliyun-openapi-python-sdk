@@ -17,18 +17,20 @@
 
 # coding=utf-8
 
-__author__ = 'alex jiang'
 
 import hashlib
 import hmac
-import base64
+
+from aliyunsdkcore.compat import ensure_string
+from aliyunsdkcore.compat import ensure_bytes
+from aliyunsdkcore.compat import b64_encode_bytes
 
 
 def get_sign_string(source, secret):
-    if isinstance(secret, unicode):
-        secret = str(secret)
+    source = ensure_bytes(source)
+    secret = ensure_bytes(secret)
     h = hmac.new(secret, source, hashlib.sha1)
-    signature = base64.encodestring(h.digest()).strip()
+    signature = ensure_string(b64_encode_bytes(h.digest()).strip())
     return signature
 
 

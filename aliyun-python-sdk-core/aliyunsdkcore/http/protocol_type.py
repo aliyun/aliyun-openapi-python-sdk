@@ -17,7 +17,5 @@
 
 # coding=utf-8
 
-__author__ = 'alex jiang'
-
 HTTP = "http"
 HTTPS = "https"

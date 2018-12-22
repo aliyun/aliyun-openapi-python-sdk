@@ -21,10 +21,6 @@
 
 """
 Acs error message module.
-
-Created on 6/15/2015
-
-@author: alex jiang
 """
 
 SDK_ENDPOINT_MANAGEMENT_DOC_HTML = "https://www.alibabacloud.com/help/doc-detail/92074.htm"
