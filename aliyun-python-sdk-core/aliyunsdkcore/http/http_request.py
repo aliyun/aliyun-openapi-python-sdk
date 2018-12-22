@@ -17,8 +17,9 @@
 
 # coding=utf-8
 
-import format_type
-from ..utils import parameter_helper as helper
+from aliyunsdkcore.http import format_type
+from aliyunsdkcore.utils import parameter_helper as helper
+
 
 class HttpRequest:
 
@@ -26,14 +27,14 @@ class HttpRequest:
     content_length = "Content-Length"
     content_type = "Content-Type"
 
-    def __init__(self, host="", url="/", method=None, headers={}):
+    def __init__(self, host="", url="/", method=None, headers=None):
         self.__host = host
         self.__url = url
         self.__method = method
-        self.__content_type = ""
-        self.__content = ""
-        self.__encoding = ""
-        self.__headers = headers
+        self.__content_type = None
+        self.__content = None
+        self.__encoding = None
+        self.__headers = headers or {}
         self.__body = None
 
     def get_host(self):
@@ -76,35 +77,35 @@ class HttpRequest:
         return self.__content
 
     def get_header_value(self, name):
-        return self.__headers[name]
+        return self.__headers.get(name)
 
     def put_header_parameter(self, key, value):
         if key is not None and value is not None:
             self.__headers[key] = value
 
+    def remove_header_parameter(self, key):
+        if key is not None:
+            if key in self.__headers:
+                self.__headers.pop(key)
+
     def md5_sum(self, content):
         return helper.md5_sum(content)
 
-    def set_content(self, content, encoding, format):
-        tmp = dict()
-        if content is None:
-            self.__headers.pop(self.content_md5)
-            self.__headers.pop(self.content_length)
-            self.__headers.pop(self.content_type)
-            self.__content_type = None
-            self.__content = None
-            self.__encoding = None
-            return
-        str_md5 = self.md5_sum(content)
-        content_length = len(content)
-        content_type = format_type.RAW
-        if format is not None:
-            content_type = format
-        self.__headers[self.content_md5] = str_md5
-        self.__headers[self.content_length] = content_length
-        self.__headers[self.content_type] = content_type
+    def set_content(self, content, encoding, format = format_type.RAW):
         self.__content = content
-        self.__encoding = encoding
+        if content is None:
+            self.remove_header_parameter(self.content_md5)
+            self.remove_header_parameter(self.content_type)
+            self.remove_header_parameter(self.content_length)
+            self.__content_type = None
+            self.__encoding = None
+        else:
+            str_md5 = self.md5_sum(content)
+            content_length = len(content)
+            self.__headers[self.content_md5] = str_md5
+            self.__headers[self.content_length] = content_length
+            self.__headers[self.content_type] = format
+            self.__encoding = encoding
 
     def get_headers(self):
         return self.__headers

@@ -16,11 +16,12 @@
 # under the License.
 
 # coding=utf-8
-
+from aliyunsdkcore.vendored.six import iteritems
+from aliyunsdkcore.vendored.six.moves.urllib.parse import urlencode
 from aliyunsdkcore.auth.algorithm import sha_hmac1 as mac1
 from aliyunsdkcore.utils import parameter_helper as helper
 from aliyunsdkcore.http import format_type as FormatType
-import urllib
+
 
 ACCEPT = "Accept"
 CONTENT_MD5 = "Content-MD5"
@@ -30,22 +31,15 @@ QUERY_SEPARATOR = "&"
 HEADER_SEPARATOR = "\n"
 
 
-def __init__():
-    pass
-
 # this function will append the necessary parameters for signers process.
 # parameters: the orignal parameters
 # signers: sha_hmac1 or sha_hmac256
 # accessKeyId: this is aliyun_access_key_id
 # format: XML or JSON
 # input parameters is headers
-
-
-def refresh_sign_parameters(parameters, access_key_id, format, signer=mac1):
+def refresh_sign_parameters(parameters, format=FormatType.RAW, signer=mac1):
     if parameters is None or not isinstance(parameters, dict):
         parameters = dict()
-    if format is None:
-        format = FormatType.RAW
     parameters["Date"] = helper.get_rfc_2616_date()
     parameters["Accept"] = FormatType.map_format_to_accept(format)
     parameters["x-acs-signature-method"] = signer.get_signer_name()
@@ -57,7 +51,7 @@ def compose_string_to_sign(
         method,
         queries,
         uri_pattern=None,
-        headers=None,
+        headers={},
         paths=None,
         signer=mac1):
     sign_to_string = ""
@@ -84,7 +78,7 @@ def compose_string_to_sign(
 def replace_occupied_parameters(uri_pattern, paths):
     result = uri_pattern
     if paths is not None:
-        for (key, value) in paths.items():
+        for (key, value) in iteritems(paths):
             target = "[" + key + "]"
             result = result.replace(target, value)
     return result
@@ -96,26 +90,22 @@ def replace_occupied_parameters(uri_pattern, paths):
 def build_canonical_headers(headers, header_begin):
     result = ""
     unsort_map = dict()
-    for (key, value) in headers.iteritems():
+    for (key, value) in iteritems(headers):
         if key.lower().find(header_begin) >= 0:
             unsort_map[key.lower()] = value
-    sort_map = sorted(unsort_map.iteritems(), key=lambda d: d[0])
+    sort_map = sorted(iteritems(unsort_map), key=lambda d: d[0])
     for (key, value) in sort_map:
         result += key + ":" + value
         result += HEADER_SEPARATOR
     return result
 
 
-def split_sub_resource(uri):
-    return uri.split("?")
-
-
 def __build_query_string(uri, queries):
-    uri_parts = split_sub_resource(uri)
+    uri_parts = uri.split("?")
     if len(uri_parts) > 1 and uri_parts[1] is not None:
         queries[uri_parts[1]] = None
     query_builder = uri_parts[0]
-    sorted_map = sorted(queries.items(), key=lambda queries: queries[0])
+    sorted_map = sorted(iteritems(queries), key=lambda queries: queries[0])
     if len(sorted_map) > 0:
         query_builder += "?"
     for (k, v) in sorted_map:
@@ -141,7 +131,6 @@ def get_signature(
         signer=mac1):
     headers = refresh_sign_parameters(
         parameters=headers,
-        access_key_id=access_key,
         format=format)
     sign_to_string = compose_string_to_sign(
         method=method,
@@ -173,7 +162,7 @@ def get_signature_headers(
         paths,
         method,
         signer)
-    headers["Authorization"] = "acs " + access_key + ":" + signature
+    headers["Authorization"] = "acs " + access_key + ":" + str(signature)
     return headers
 
 
@@ -182,7 +171,7 @@ def get_url(uri_pattern, queries, path_parameters):
     url += replace_occupied_parameters(uri_pattern, path_parameters)
     if not url.endswith("?"):
         url += "?"
-    url += urllib.urlencode(queries)
+    url += urlencode(queries)
     if url.endswith("?"):
         url = url[0:(len(url) - 1)]
     return url

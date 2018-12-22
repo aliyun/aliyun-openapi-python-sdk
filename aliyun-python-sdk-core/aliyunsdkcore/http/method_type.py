@@ -17,8 +17,6 @@
 
 # coding=utf-8
 
-__author__ = 'alex jiang'
-
 GET = "GET"
 PUT = "PUT"
 POST = "POST"

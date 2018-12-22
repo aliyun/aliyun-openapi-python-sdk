@@ -16,14 +16,15 @@
 # under the License.
 
 # coding=utf-8
-__author__ = 'alex jiang'
-import httplib
-import os
 
-from urlparse import urlparse
-from http_request import HttpRequest
-import protocol_type as PT
+import os
 import base64
+from aliyunsdkcore.vendored.six.moves.urllib.parse import urlparse
+from aliyunsdkcore.vendored.six.moves.http_client import HTTPConnection
+from aliyunsdkcore.vendored.six.moves.http_client import HTTPSConnection
+
+from aliyunsdkcore.http.http_request import HttpRequest
+from aliyunsdkcore.http import protocol_type as PT
 
 
 class HttpResponse(HttpRequest):
@@ -157,32 +158,29 @@ class HttpResponse(HttpRequest):
             self.__connection = None
 
     def __get_http_connection(self, host, port, **kwargs):
-        """kwargs maps http.client.HTTPConnection arguments"""
+        """kwargs maps HTTPConnection arguments"""
         proxy_host, proxy_port, proxy_headers = self.__get_env_proxy(is_https=False)
         conn = None
         if proxy_host and proxy_port:
-            conn = httplib.HTTPConnection(proxy_host, proxy_port, **kwargs)
+            conn = HTTPConnection(proxy_host, proxy_port, **kwargs)
             conn.set_tunnel(host, port, proxy_headers)
         else:
-            conn = httplib.HTTPConnection(host, port, **kwargs)
+            conn = HTTPConnection(host, port, **kwargs)
         return conn
 
     def __get_https_connection(self, host, port, **kwargs):
-        """kwargs maps httplib.HTTPSConnection arguments"""
+        """kwargs maps HTTPConnection arguments"""
         proxy_host, proxy_port, proxy_headers = self.__get_env_proxy(is_https=True)
         conn = None
-
         if proxy_host and proxy_port:
-            conn = httplib.HTTPSConnection(proxy_host, proxy_port, **kwargs)
+            conn = HTTPSConnection(proxy_host, proxy_port, **kwargs)
             conn.set_tunnel(host, port, proxy_headers)
         else:
-            conn = httplib.HTTPSConnection(host, port, **kwargs)
-
+            conn = HTTPSConnection(host, port, **kwargs)
         return conn
 
     def __get_env_proxy(self, is_https):
         proxy = None
-
         if is_https:
             proxy = os.environ.get('HTTPS_PROXY', None) or os.environ.get('https_proxy', None)
         else:

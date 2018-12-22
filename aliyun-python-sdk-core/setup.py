@@ -28,8 +28,9 @@ setup module for core.
 
 Created on 6/24/2015
 
-@author: alex
+@author: Alibaba Cloud
 """
+
 PACKAGE = "aliyunsdkcore"
 NAME = "aliyun-python-sdk-core"
 DESCRIPTION = "The core module of Aliyun Python SDK."
@@ -65,7 +66,6 @@ setup(
     keywords=["aliyun", "sdk", "core"],
     packages=find_packages(exclude=["tests*"]),
     package_data={'aliyunsdkcore' : ['endpoint/*.json']},
-    python_requires='<3',
     platforms='any',
     install_requires=requires,
     classifiers=(
@@ -77,6 +77,10 @@ setup(
         'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.3',
+        'Programming Language :: Python :: 3.4',
+        'Programming Language :: Python :: 3.5',
+        'Programming Language :: Python :: 3.6',
+        'Programming Language :: Python :: 3.7',
         'Topic :: Software Development',
     )
 )

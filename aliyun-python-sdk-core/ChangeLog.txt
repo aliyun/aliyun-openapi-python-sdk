@@ -1,3 +1,7 @@
+2018-12-22 Version: 2.11.3
+1,  fix server error handling problem
+2,  fix a typo: deconde -> decode
+
 2018-11-07 Version: 2.11.0
 1, add faas endpoints
 
