@@ -1,3 +1,8 @@
+2018-12-23 Version: 2.11.4
+1,  Fix README.dst missing problem because of Python2.7 with setup.py has bug
+2,  Fix a server error handling bug
+3,  Fix a typo: deconde -> decode
+
 2018-12-22 Version: 2.11.3
 1,  fix server error handling problem
 2,  fix a typo: deconde -> decode

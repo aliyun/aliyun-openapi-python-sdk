@@ -24,7 +24,7 @@ import platform
 import logging
 
 """
-setup module for core.
+Setup module for core.
 
 Created on 6/24/2015
 
@@ -32,43 +32,43 @@ Created on 6/24/2015
 """
 
 PACKAGE = "aliyunsdkcore"
-NAME = "aliyun-python-sdk-core"
 DESCRIPTION = "The core module of Aliyun Python SDK."
-AUTHOR = "Aliyun"
-AUTHOR_EMAIL = "aliyun-developers-efficiency@list.alibaba-inc.com"
-URL = "http://develop.aliyun.com/sdk/python"
+AUTHOR = "Alibaba Cloud"
+AUTHOR_EMAIL = "alibaba-cloud-sdk-dev-team@list.alibaba-inc.com"
+URL = "https://github.com/aliyun/aliyun-openapi-python-sdk"
+
 
 TOPDIR = os.path.dirname(__file__) or "."
 VERSION = __import__(PACKAGE).__version__
 
-desc_file = open("README.rst")
-try:
-    LONG_DESCRIPTION = desc_file.read()
-finally:
-    desc_file.close()
+
+with open("README.rst") as fp:
+    LONG_DESCRIPTION = fp.read()
+
 
 requires = []
 if platform.system() != "Windows":
     requires.append("pycryptodome>=3.4.7")
 else:
     logging.warning(
-        "auth type [publicKeyId] is disabled because 'pycrypto' not support windows, we will resolve this soon")
+        "auth type [publicKeyId] is disabled because "
+        "'pycrypto' not support windows, we will resolve this soon")
 
-setup(
-    name=NAME,
-    version=VERSION,
-    description=DESCRIPTION,
-    long_description=LONG_DESCRIPTION,
-    author=AUTHOR,
-    author_email=AUTHOR_EMAIL,
-    license="Apache",
-    url=URL,
-    keywords=["aliyun", "sdk", "core"],
-    packages=find_packages(exclude=["tests*"]),
-    package_data={'aliyunsdkcore' : ['endpoint/*.json']},
-    platforms='any',
-    install_requires=requires,
-    classifiers=(
+
+setup_args = {
+    'version': VERSION,
+    'description': DESCRIPTION,
+    'long_description': LONG_DESCRIPTION,
+    'author': AUTHOR,
+    'author_email': AUTHOR_EMAIL,
+    'license': "Apache License 2.0",
+    'url': URL,
+    'keywords': ["aliyun", "sdk", "core"],
+    'packages': find_packages(exclude=["tests*"]),
+    'package_data': {'aliyunsdkcore': ['endpoint/*.json']},
+    'platforms': 'any',
+    'install_requires': requires,
+    'classifiers': (
         'Development Status :: 5 - Production/Stable',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: Apache Software License',
@@ -83,4 +83,10 @@ setup(
         'Programming Language :: Python :: 3.7',
         'Topic :: Software Development',
     )
-)
+}
+
+
+setup(name='aliyun-python-sdk-core', **setup_args)
+
+setup(name='aliyun-python-sdk-core-v3', **setup_args)
+
