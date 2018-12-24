@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class FindProjectsNameListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'CSB', '2017-11-18', 'FindProjectsNameList')
+		RpcRequest.__init__(self, 'CSB', '2017-11-18', 'FindProjectsNameList','csb')
 		self.set_protocol_type('https');
 
 	def get_OperationFlag(self):
