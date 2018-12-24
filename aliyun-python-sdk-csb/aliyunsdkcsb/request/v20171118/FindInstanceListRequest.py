@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class FindInstanceListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'CSB', '2017-11-18', 'FindInstanceList')
+		RpcRequest.__init__(self, 'CSB', '2017-11-18', 'FindInstanceList','csb')
 
 	def get_SearchTxt(self):
 		return self.get_query_params().get('SearchTxt')

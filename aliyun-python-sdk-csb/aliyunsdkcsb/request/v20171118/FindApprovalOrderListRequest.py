@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class FindApprovalOrderListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'CSB', '2017-11-18', 'FindApprovalOrderList')
+		RpcRequest.__init__(self, 'CSB', '2017-11-18', 'FindApprovalOrderList','csb')
 		self.set_protocol_type('https');
 
 	def get_ProjectName(self):
@@ -29,6 +29,12 @@ class FindApprovalOrderListRequest(RpcRequest):
 
 	def set_ProjectName(self,ProjectName):
 		self.add_query_param('ProjectName',ProjectName)
+
+	def get_CsbId(self):
+		return self.get_query_params().get('CsbId')
+
+	def set_CsbId(self,CsbId):
+		self.add_query_param('CsbId',CsbId)
 
 	def get_Alias(self):
 		return self.get_query_params().get('Alias')
@@ -42,17 +48,17 @@ class FindApprovalOrderListRequest(RpcRequest):
 	def set_ServiceName(self,ServiceName):
 		self.add_query_param('ServiceName',ServiceName)
 
-	def get_PageNum(self):
-		return self.get_query_params().get('PageNum')
-
-	def set_PageNum(self,PageNum):
-		self.add_query_param('PageNum',PageNum)
-
 	def get_ServiceId(self):
 		return self.get_query_params().get('ServiceId')
 
 	def set_ServiceId(self,ServiceId):
 		self.add_query_param('ServiceId',ServiceId)
+
+	def get_PageNum(self):
+		return self.get_query_params().get('PageNum')
+
+	def set_PageNum(self,PageNum):
+		self.add_query_param('PageNum',PageNum)
 
 	def get_OnlyPending(self):
 		return self.get_query_params().get('OnlyPending')

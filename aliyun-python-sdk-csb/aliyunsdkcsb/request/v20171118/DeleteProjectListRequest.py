@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class DeleteProjectListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'CSB', '2017-11-18', 'DeleteProjectList')
+		RpcRequest.__init__(self, 'CSB', '2017-11-18', 'DeleteProjectList','csb')
 		self.set_protocol_type('https');
 		self.set_method('POST')
 

@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class FindServiceStatisticalDataRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'CSB', '2017-11-18', 'FindServiceStatisticalData')
+		RpcRequest.__init__(self, 'CSB', '2017-11-18', 'FindServiceStatisticalData','csb')
 		self.set_protocol_type('https');
 
 	def get_CsbId(self):
