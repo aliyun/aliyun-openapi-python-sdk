@@ -18,10 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class DescribeErrorLogsRequest(RpcRequest):
+class CreateDBEndpointAddressRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'polardb', '2017-08-01', 'DescribeErrorLogs','polardb')
+		RpcRequest.__init__(self, 'polardb', '2017-08-01', 'CreateDBEndpointAddress','polardb')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -29,11 +29,11 @@ class DescribeErrorLogsRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_DBNodeId(self):
-		return self.get_query_params().get('DBNodeId')
+	def get_ConnectionStringPrefix(self):
+		return self.get_query_params().get('ConnectionStringPrefix')
 
-	def set_DBNodeId(self,DBNodeId):
-		self.add_query_param('DBNodeId',DBNodeId)
+	def set_ConnectionStringPrefix(self,ConnectionStringPrefix):
+		self.add_query_param('ConnectionStringPrefix',ConnectionStringPrefix)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -41,44 +41,32 @@ class DescribeErrorLogsRequest(RpcRequest):
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
+	def get_DBClusterId(self):
+		return self.get_query_params().get('DBClusterId')
+
+	def set_DBClusterId(self,DBClusterId):
+		self.add_query_param('DBClusterId',DBClusterId)
+
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
 
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
+	def get_NetType(self):
+		return self.get_query_params().get('NetType')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
+	def set_NetType(self,NetType):
+		self.add_query_param('NetType',NetType)
 
-	def get_EndTime(self):
-		return self.get_query_params().get('EndTime')
+	def get_DBEndpointId(self):
+		return self.get_query_params().get('DBEndpointId')
 
-	def set_EndTime(self,EndTime):
-		self.add_query_param('EndTime',EndTime)
-
-	def get_DBInstanceId(self):
-		return self.get_query_params().get('DBInstanceId')
-
-	def set_DBInstanceId(self,DBInstanceId):
-		self.add_query_param('DBInstanceId',DBInstanceId)
-
-	def get_StartTime(self):
-		return self.get_query_params().get('StartTime')
-
-	def set_StartTime(self,StartTime):
-		self.add_query_param('StartTime',StartTime)
+	def set_DBEndpointId(self,DBEndpointId):
+		self.add_query_param('DBEndpointId',DBEndpointId)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
-
-	def get_PageNumber(self):
-		return self.get_query_params().get('PageNumber')
-
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)

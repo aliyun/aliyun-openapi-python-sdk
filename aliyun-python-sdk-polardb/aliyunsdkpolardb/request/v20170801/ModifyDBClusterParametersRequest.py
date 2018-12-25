@@ -18,10 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class DescribeSQLExplorerPolicyRequest(RpcRequest):
+class ModifyDBClusterParametersRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'polardb', '2017-08-01', 'DescribeSQLExplorerPolicy','polardb')
+		RpcRequest.__init__(self, 'polardb', '2017-08-01', 'ModifyDBClusterParameters','polardb')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -29,17 +29,23 @@ class DescribeSQLExplorerPolicyRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_DBNodeId(self):
-		return self.get_query_params().get('DBNodeId')
-
-	def set_DBNodeId(self,DBNodeId):
-		self.add_query_param('DBNodeId',DBNodeId)
-
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+
+	def get_EffectiveTime(self):
+		return self.get_query_params().get('EffectiveTime')
+
+	def set_EffectiveTime(self,EffectiveTime):
+		self.add_query_param('EffectiveTime',EffectiveTime)
+
+	def get_DBClusterId(self):
+		return self.get_query_params().get('DBClusterId')
+
+	def set_DBClusterId(self,DBClusterId):
+		self.add_query_param('DBClusterId',DBClusterId)
 
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
@@ -47,14 +53,14 @@ class DescribeSQLExplorerPolicyRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
-	def get_DBInstanceId(self):
-		return self.get_query_params().get('DBInstanceId')
-
-	def set_DBInstanceId(self,DBInstanceId):
-		self.add_query_param('DBInstanceId',DBInstanceId)
-
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_Parameters(self):
+		return self.get_query_params().get('Parameters')
+
+	def set_Parameters(self,Parameters):
+		self.add_query_param('Parameters',Parameters)

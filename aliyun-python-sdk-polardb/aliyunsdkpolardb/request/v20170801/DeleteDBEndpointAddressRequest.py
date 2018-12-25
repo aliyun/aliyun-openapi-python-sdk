@@ -18,10 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class ModifySQLExplorerPolicyRequest(RpcRequest):
+class DeleteDBEndpointAddressRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'polardb', '2017-08-01', 'ModifySQLExplorerPolicy','polardb')
+		RpcRequest.__init__(self, 'polardb', '2017-08-01', 'DeleteDBEndpointAddress','polardb')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -29,23 +29,17 @@ class ModifySQLExplorerPolicyRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_DBNodeId(self):
-		return self.get_query_params().get('DBNodeId')
-
-	def set_DBNodeId(self,DBNodeId):
-		self.add_query_param('DBNodeId',DBNodeId)
-
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
-	def get_SQLCollectorStatus(self):
-		return self.get_query_params().get('SQLCollectorStatus')
+	def get_DBClusterId(self):
+		return self.get_query_params().get('DBClusterId')
 
-	def set_SQLCollectorStatus(self,SQLCollectorStatus):
-		self.add_query_param('SQLCollectorStatus',SQLCollectorStatus)
+	def set_DBClusterId(self,DBClusterId):
+		self.add_query_param('DBClusterId',DBClusterId)
 
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
@@ -53,11 +47,17 @@ class ModifySQLExplorerPolicyRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
-	def get_DBInstanceId(self):
-		return self.get_query_params().get('DBInstanceId')
+	def get_NetType(self):
+		return self.get_query_params().get('NetType')
 
-	def set_DBInstanceId(self,DBInstanceId):
-		self.add_query_param('DBInstanceId',DBInstanceId)
+	def set_NetType(self,NetType):
+		self.add_query_param('NetType',NetType)
+
+	def get_DBEndpointId(self):
+		return self.get_query_params().get('DBEndpointId')
+
+	def set_DBEndpointId(self,DBEndpointId):
+		self.add_query_param('DBEndpointId',DBEndpointId)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
