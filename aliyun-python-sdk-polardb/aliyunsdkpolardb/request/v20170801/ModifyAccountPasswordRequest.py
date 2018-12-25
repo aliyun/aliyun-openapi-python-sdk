@@ -18,10 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class DescribeDBNodePerformanceRequest(RpcRequest):
+class ModifyAccountPasswordRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'polardb', '2017-08-01', 'DescribeDBNodePerformance','polardb')
+		RpcRequest.__init__(self, 'polardb', '2017-08-01', 'ModifyAccountPassword','polardb')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -29,11 +29,17 @@ class DescribeDBNodePerformanceRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_DBNodeId(self):
-		return self.get_query_params().get('DBNodeId')
+	def get_AccountName(self):
+		return self.get_query_params().get('AccountName')
 
-	def set_DBNodeId(self,DBNodeId):
-		self.add_query_param('DBNodeId',DBNodeId)
+	def set_AccountName(self,AccountName):
+		self.add_query_param('AccountName',AccountName)
+
+	def get_NewAccountPassword(self):
+		return self.get_query_params().get('NewAccountPassword')
+
+	def set_NewAccountPassword(self,NewAccountPassword):
+		self.add_query_param('NewAccountPassword',NewAccountPassword)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -41,32 +47,20 @@ class DescribeDBNodePerformanceRequest(RpcRequest):
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
+	def get_DBClusterId(self):
+		return self.get_query_params().get('DBClusterId')
+
+	def set_DBClusterId(self,DBClusterId):
+		self.add_query_param('DBClusterId',DBClusterId)
+
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
 
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
-	def get_EndTime(self):
-		return self.get_query_params().get('EndTime')
-
-	def set_EndTime(self,EndTime):
-		self.add_query_param('EndTime',EndTime)
-
-	def get_StartTime(self):
-		return self.get_query_params().get('StartTime')
-
-	def set_StartTime(self,StartTime):
-		self.add_query_param('StartTime',StartTime)
-
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
-
-	def get_Key(self):
-		return self.get_query_params().get('Key')
-
-	def set_Key(self,Key):
-		self.add_query_param('Key',Key)

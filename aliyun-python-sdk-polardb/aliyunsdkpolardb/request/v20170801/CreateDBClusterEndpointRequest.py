@@ -18,10 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class ResetAccountPasswordRequest(RpcRequest):
+class CreateDBClusterEndpointRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'polardb', '2017-08-01', 'ResetAccountPassword','polardb')
+		RpcRequest.__init__(self, 'polardb', '2017-08-01', 'CreateDBClusterEndpoint','polardb')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -29,23 +29,29 @@ class ResetAccountPasswordRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_AccountPassword(self):
-		return self.get_query_params().get('AccountPassword')
+	def get_Nodes(self):
+		return self.get_query_params().get('Nodes')
 
-	def set_AccountPassword(self,AccountPassword):
-		self.add_query_param('AccountPassword',AccountPassword)
-
-	def get_AccountName(self):
-		return self.get_query_params().get('AccountName')
-
-	def set_AccountName(self,AccountName):
-		self.add_query_param('AccountName',AccountName)
+	def set_Nodes(self,Nodes):
+		self.add_query_param('Nodes',Nodes)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+
+	def get_EndpointType(self):
+		return self.get_query_params().get('EndpointType')
+
+	def set_EndpointType(self,EndpointType):
+		self.add_query_param('EndpointType',EndpointType)
+
+	def get_ClientToken(self):
+		return self.get_query_params().get('ClientToken')
+
+	def set_ClientToken(self,ClientToken):
+		self.add_query_param('ClientToken',ClientToken)
 
 	def get_DBClusterId(self):
 		return self.get_query_params().get('DBClusterId')
