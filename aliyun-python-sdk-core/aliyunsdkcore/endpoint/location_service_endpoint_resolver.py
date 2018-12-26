@@ -18,7 +18,7 @@
 #
 
 import threading
-from aliyunsdkcore.compat import json
+import json
 from aliyunsdkcore.acs_exception.exceptions import ServerException
 from aliyunsdkcore.endpoint.endpoint_resolver_base import EndpointResolverBase
 from aliyunsdkcore.endpoint.location.DescribeEndpointsRequest import DescribeEndpointsRequest

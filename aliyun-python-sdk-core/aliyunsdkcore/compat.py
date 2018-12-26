@@ -43,8 +43,3 @@ else:
             "Expected str or bytes or bytearray, received %s." %
             type(s))
 
-
-if sys.version_info[:2] == (2, 6):
-    import simplejson as json
-else:
-    import json

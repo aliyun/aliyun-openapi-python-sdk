@@ -1,6 +1,6 @@
 # coding=utf-8
 
-import unittest
+from tests import unittest
 from aliyunsdkcore.vendored.six import PY2
 
 from aliyunsdkcore.utils import parameter_helper as helper
