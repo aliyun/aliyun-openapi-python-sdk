@@ -83,7 +83,8 @@ class RsaKeyPairSigner(Signer):
 
             self._session_credential = session_ak, session_sk
         except exceptions.ServerException as srv_ex:
-            if srv_ex.error_code == 'InvalidAccessKeyId.NotFound' or srv_ex.error_code == 'SignatureDoesNotMatch':
+            if srv_ex.error_code == 'InvalidAccessKeyId.NotFound' \
+                    or srv_ex.error_code == 'SignatureDoesNotMatch':
                 raise exceptions.ClientException(error_code.SDK_INVALID_CREDENTIAL,
                                                  error_msg.get_msg('SDK_INVALID_CREDENTIAL'))
             else:
@@ -105,16 +106,18 @@ class RsaKeyPairSigner(Signer):
                 delay = 60 * min(10, retry_times)
             next_retry_time = retry_times + 1
             logging.warn(
-                'refresh session ak failed, auto retry after {} seconds. message = {}'.format(delay, ex))
+                'refresh session ak failed, '
+                'auto retry after {} seconds. message = {}'.format(delay, ex))
         finally:
-            self._scheduler.enter(delay, self._PRIORITY, self._refresh_session_ak_and_sk, [False, next_retry_time])
+            self._scheduler.enter(delay, self._PRIORITY, self._refresh_session_ak_and_sk,
+                                  [False, next_retry_time])
             self._scheduler.run()
 
 
 class GetSessionAkRequest(RpcRequest):
     def __init__(self):
-        RpcRequest.__init__(self, product='Sts', version='2015-04-01', action_name='GenerateSessionAccessKey',
-                            signer=sha_hmac256)
+        RpcRequest.__init__(self, product='Sts', version='2015-04-01',
+                            action_name='GenerateSessionAccessKey', signer=sha_hmac256)
         self.set_protocol_type('https')
 
     def get_duration_seconds(self):

@@ -123,15 +123,44 @@ class TestRequest(unittest.TestCase):
         url = r.get_url("regionid", "accesskeyid", "secret")
         mock_get_iso_8061_date.assert_called_once_with()
         mock_get_uuid.assert_called_once_with()
-        self.assertEqual(url, "/?SignatureVersion=1.0&Format=None&Timestamp=7e1c7d12-7551-4856-8abb-1938ccac6bcc&RegionId=regionid&AccessKeyId=accesskeyid&SignatureMethod=HMAC-SHA1&Version=version&Signature=Ej4GsaOI7FJyN00E5OpDHHCx2vk%3D&Action=action_name&SignatureNonce=2018-12-04T04%3A03%3A12Z&SignatureType=")
+        self.assertEqual(url, "/?SignatureVersion=1.0"
+                              "&Format=None"
+                              "&Timestamp=7e1c7d12-7551-4856-8abb-1938ccac6bcc"
+                              "&RegionId=regionid"
+                              "&AccessKeyId=accesskeyid"
+                              "&SignatureMethod=HMAC-SHA1&Version=version"
+                              "&Signature=Ej4GsaOI7FJyN00E5OpDHHCx2vk%3D"
+                              "&Action=action_name"
+                              "&SignatureNonce=2018-12-04T04%3A03%3A12Z"
+                              "&SignatureType=")
         # with none query params
         r.set_query_params(None)
         url = r.get_url("regionid", "accesskeyid", "secret")
-        self.assertEqual(url, "/?SignatureVersion=1.0&Format=None&Timestamp=7e1c7d12-7551-4856-8abb-1938ccac6bcc&RegionId=regionid&AccessKeyId=accesskeyid&SignatureMethod=HMAC-SHA1&Version=version&Signature=Ej4GsaOI7FJyN00E5OpDHHCx2vk%3D&Action=action_name&SignatureNonce=2018-12-04T04%3A03%3A12Z&SignatureType=")
+        self.assertEqual(url, "/?SignatureVersion=1.0"
+                              "&Format=None"
+                              "&Timestamp=7e1c7d12-7551-4856-8abb-1938ccac6bcc"
+                              "&RegionId=regionid"
+                              "&AccessKeyId=accesskeyid"
+                              "&SignatureMethod=HMAC-SHA1"
+                              "&Version=version"
+                              "&Signature=Ej4GsaOI7FJyN00E5OpDHHCx2vk%3D"
+                              "&Action=action_name"
+                              "&SignatureNonce=2018-12-04T04%3A03%3A12Z"
+                              "&SignatureType=")
         # with region id key
         r.set_query_params({'RegionId': 'regionid'})
         url = r.get_url("regionid", "accesskeyid", "secret")
-        self.assertEqual(url, "/?SignatureVersion=1.0&Format=None&Timestamp=7e1c7d12-7551-4856-8abb-1938ccac6bcc&RegionId=regionid&AccessKeyId=accesskeyid&SignatureMethod=HMAC-SHA1&Version=version&Signature=Ej4GsaOI7FJyN00E5OpDHHCx2vk%3D&Action=action_name&SignatureNonce=2018-12-04T04%3A03%3A12Z&SignatureType=")
+        self.assertEqual(url, "/?SignatureVersion=1.0"
+                              "&Format=None"
+                              "&Timestamp=7e1c7d12-7551-4856-8abb-1938ccac6bcc"
+                              "&RegionId=regionid"
+                              "&AccessKeyId=accesskeyid"
+                              "&SignatureMethod=HMAC-SHA1"
+                              "&Version=version"
+                              "&Signature=Ej4GsaOI7FJyN00E5OpDHHCx2vk%3D"
+                              "&Action=action_name"
+                              "&SignatureNonce=2018-12-04T04%3A03%3A12Z"
+                              "&SignatureType=")
 
     # def test_roa_request(self):
     #   r = RoaRequest("product", "version", "action_name")
@@ -185,7 +214,8 @@ class TestRequest(unittest.TestCase):
     #   r.add_query_param("key2", "value2")
     #   self.assertDictEqual(r.get_query_params(), {'key':'value', "key2": "value2"})
     #   # signed_header
-    #   # self.assertEqual(r.get_signed_header("region_id", "access_key_id", "access_key_secret"), {})
+    #   # self.assertEqual(r.get_signed_header("region_id", "access_key_id",
+    #                                          "access_key_secret"), {})
     #   # r.add_header("x-acs-xxx", "value")
     #   # self.assertDictEqual(r.get_signed_header(), {"x-acs-xxx": "value"})
     #   # style
@@ -374,17 +404,20 @@ class TestRequest(unittest.TestCase):
     #   with self.assertRaises(ClientException) as ex:
     #     r.trans_to_acs_request()
     #   self.assertEqual(ex.exception.error_code, "SDK.InvalidParams")
-    #   self.assertEqual(ex.exception.message, "common params [version] is required, cannot be empty")
+    #   self.assertEqual(ex.exception.message,
+    #                    "common params [version] is required, cannot be empty")
     #   r.set_version("version")
     #   with self.assertRaises(ClientException) as ex:
     #     r.trans_to_acs_request()
     #   self.assertEqual(ex.exception.error_code, "SDK.InvalidParams")
-    #   self.assertEqual(ex.exception.message, "At least one of [action] and [uri_pattern] has a value")
+    #   self.assertEqual(ex.exception.message,
+    #                    "At least one of [action] and [uri_pattern] has a value")
     #   r.set_action_name('action_name')
     #   with self.assertRaises(ClientException) as ex:
     #     r.trans_to_acs_request()
     #   self.assertEqual(ex.exception.error_code, "SDK.InvalidParams")
-    #   self.assertEqual(ex.exception.message, "At least one of [domain] and [product_name] has a value")
+    #   self.assertEqual(ex.exception.message,
+    #                    "At least one of [domain] and [product_name] has a value")
     #   r.set_product('product')
     #   r.trans_to_acs_request()
     #   self.assertEqual(r.get_style(), "RPC")
@@ -395,17 +428,20 @@ class TestRequest(unittest.TestCase):
     #   with self.assertRaises(ClientException) as ex:
     #     r.trans_to_acs_request()
     #   self.assertEqual(ex.exception.error_code, "SDK.InvalidParams")
-    #   self.assertEqual(ex.exception.message, "common params [version] is required, cannot be empty")
+    #   self.assertEqual(ex.exception.message,
+    #                    "common params [version] is required, cannot be empty")
     #   r.set_version("version")
     #   with self.assertRaises(ClientException) as ex:
     #     r.trans_to_acs_request()
     #   self.assertEqual(ex.exception.error_code, "SDK.InvalidParams")
-    #   self.assertEqual(ex.exception.message, "At least one of [action] and [uri_pattern] has a value")
+    #   self.assertEqual(ex.exception.message,
+    #                    "At least one of [action] and [uri_pattern] has a value")
     #   r.set_uri_pattern("/users/:userid")
     #   with self.assertRaises(ClientException) as ex:
     #     r.trans_to_acs_request()
     #   self.assertEqual(ex.exception.error_code, "SDK.InvalidParams")
-    #   self.assertEqual(ex.exception.message, "At least one of [domain] and [product_name] has a value")
+    #   self.assertEqual(ex.exception.message,
+    #                    "At least one of [domain] and [product_name] has a value")
     #   r.set_product('product')
     #   r.trans_to_acs_request()
     #   self.assertEqual(r.get_style(), "ROA")

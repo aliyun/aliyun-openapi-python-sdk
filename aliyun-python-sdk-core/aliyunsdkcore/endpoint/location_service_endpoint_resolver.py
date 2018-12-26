@@ -84,12 +84,14 @@ class LocationServiceEndpointResolver(EndpointResolverBase):
         try:
             response = self._client.do_action_with_exception(request)
         except ServerException as e:
-            if "InvalidRegionId" == e.get_error_code() and "The specified region does not exist." == e.get_error_msg():
+            if "InvalidRegionId" == e.get_error_code() and \
+                    "The specified region does not exist." == e.get_error_msg():
                 # No such region`
                 self._invalid_region_ids.add(raw_request.region_id)
                 self.put_endpoint_entry(key, None)
                 return
-            elif "Illegal Parameter" == e.get_error_code() and "Please check the parameters" == e.get_error_msg():
+            elif "Illegal Parameter" == e.get_error_code() and \
+                    "Please check the parameters" == e.get_error_msg():
                 # No such product
                 self._invalid_product_codes.add(raw_request.product_code_lower)
                 self.put_endpoint_entry(key, None)
@@ -134,5 +136,7 @@ class LocationServiceEndpointResolver(EndpointResolverBase):
             request.region_id, request.endpoint_type
         )
 
-    def _make_endpoint_entry_key(self, product_code, location_service_code, region_id, endpoint_type):
-        return ".".join([product_code.lower(), location_service_code, region_id.lower(), endpoint_type])
+    def _make_endpoint_entry_key(self, product_code, location_service_code,
+                                 region_id, endpoint_type):
+        return ".".join([product_code.lower(), location_service_code,
+                         region_id.lower(), endpoint_type])

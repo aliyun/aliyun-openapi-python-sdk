@@ -2,7 +2,8 @@
 
 import unittest
 
-from aliyunsdkcore.endpoint.local_config_regional_endpoint_resolver import LocalConfigRegionalEndpointResolver
+from aliyunsdkcore.endpoint.local_config_regional_endpoint_resolver \
+    import LocalConfigRegionalEndpointResolver
 from aliyunsdkcore.endpoint.resolver_endpoint_request import ResolveEndpointRequest
 
 
