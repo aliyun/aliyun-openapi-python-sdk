@@ -17,7 +17,14 @@ class TestRpcSignatureComposer(unittest.TestCase):
                              'access_key_secret', 'JSON', 'GET', {})
         mock_get_iso_8061_date.assert_called_once_with()
         mock_get_uuid.assert_called_once_with()
-        # self.assertEqual(url, '/?SignatureVersion=1.0&Format=JSON&Timestamp=7e1c7d12-7551-4856-8abb-1938ccac6bcc&AccessKeyId=access_key_id&SignatureMethod=HMAC-SHA1&SignatureType=&Signature=5AYPtZduFYvj3ETTIQlivGqL7Ic%3D&SignatureNonce=2018-12-04T04%3A03%3A12Z');
+        # self.assertEqual(url, '/?SignatureVersion=1.0'
+        #                       '&Format=JSON'
+        #                       '&Timestamp=7e1c7d12-7551-4856-8abb-1938ccac6bcc'
+        #                       '&AccessKeyId=access_key_id'
+        #                       '&SignatureMethod=HMAC-SHA1'
+        #                       '&SignatureType='
+        #                       '&Signature=5AYPtZduFYvj3ETTIQlivGqL7Ic%3D'
+        #                       '&SignatureNonce=2018-12-04T04%3A03%3A12Z')
 
     @patch("aliyunsdkcore.utils.parameter_helper.get_iso_8061_date")
     @patch("aliyunsdkcore.utils.parameter_helper.get_uuid")
@@ -28,7 +35,14 @@ class TestRpcSignatureComposer(unittest.TestCase):
                              'access_key_secret', 'JSON', 'GET', {})
         mock_get_iso_8061_date.assert_called_once_with()
         mock_get_uuid.assert_called_once_with()
-        # self.assertEqual(url, '/?SignatureVersion=1.0&Format=JSON&Timestamp=7e1c7d12-7551-4856-8abb-1938ccac6bcc&AccessKeyId=access_key_id&SignatureMethod=HMAC-SHA1&SignatureType=&Signature=5AYPtZduFYvj3ETTIQlivGqL7Ic%3D&SignatureNonce=2018-12-04T04%3A03%3A12Z');
+        # self.assertEqual(url, '/?SignatureVersion=1.0'
+        #                       '&Format=JSON'
+        #                       '&Timestamp=7e1c7d12-7551-4856-8abb-1938ccac6bcc'
+        #                       '&AccessKeyId=access_key_id'
+        #                       '&SignatureMethod=HMAC-SHA1'
+        #                       '&SignatureType='
+        #                       '&Signature=5AYPtZduFYvj3ETTIQlivGqL7Ic%3D'
+        #                       '&SignatureNonce=2018-12-04T04%3A03%3A12Z')
 
     @patch("aliyunsdkcore.utils.parameter_helper.get_iso_8061_date")
     @patch("aliyunsdkcore.utils.parameter_helper.get_uuid")
@@ -39,4 +53,11 @@ class TestRpcSignatureComposer(unittest.TestCase):
             {'Signature': 'so what'}, 'access_key_id', 'access_key_secret', 'JSON', 'GET', {})
         mock_get_iso_8061_date.assert_called_once_with()
         mock_get_uuid.assert_called_once_with()
-        # self.assertEqual(url, '/?SignatureVersion=1.0&Format=JSON&Timestamp=7e1c7d12-7551-4856-8abb-1938ccac6bcc&AccessKeyId=access_key_id&SignatureMethod=HMAC-SHA1&SignatureType=&Signature=5AYPtZduFYvj3ETTIQlivGqL7Ic%3D&SignatureNonce=2018-12-04T04%3A03%3A12Z');
+        # self.assertEqual(url, '/?SignatureVersion=1.0'
+        #                       '&Format=JSON'
+        #                       '&Timestamp=7e1c7d12-7551-4856-8abb-1938ccac6bcc'
+        #                       '&AccessKeyId=access_key_id'
+        #                       '&SignatureMethod=HMAC-SHA1'
+        #                       '&SignatureType='
+        #                       '&Signature=5AYPtZduFYvj3ETTIQlivGqL7Ic%3D'
+        #                       '&SignatureNonce=2018-12-04T04%3A03%3A12Z')
