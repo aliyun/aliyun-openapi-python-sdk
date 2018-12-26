@@ -222,7 +222,7 @@ class NewEndpointTest(SDKTestBase):
             except ClientException as e:
                 self.assertEqual(error_code.SDK_ENDPOINT_RESOLVING_ERROR, e.get_error_code())
                 self.assertTrue(e.get_error_msg().startswith(
-                    "No endpoint for product 'InvalidProductCode'. \n"
+                    "No endpoint for product 'InvalidProductCode'.\n"
                     "Please check the product code, "
                     "or set an endpoint for your request explicitly.\n"
                 ))
@@ -233,7 +233,7 @@ class NewEndpointTest(SDKTestBase):
         except ClientException as e:
             self.assertEqual(error_code.SDK_ENDPOINT_RESOLVING_ERROR, e.get_error_code())
             self.assertTrue(e.get_error_msg().startswith(
-                    "No endpoint for product 'InvalidProductCode'. \n"
+                    "No endpoint for product 'InvalidProductCode'.\n"
                     "Please check the product code, "
                     "or set an endpoint for your request explicitly.\n")
             )
@@ -259,7 +259,7 @@ class NewEndpointTest(SDKTestBase):
         except ClientException as e:
             self.assertEqual(error_code.SDK_ENDPOINT_RESOLVING_ERROR, e.get_error_code())
             self.assertTrue(e.get_error_msg().startswith(
-                    "No endpoint for product 'InvalidProductCode'. \n"
+                    "No endpoint for product 'InvalidProductCode'.\n"
                     "Please check the product code, "
                     "or set an endpoint for your request explicitly.\n")
             )

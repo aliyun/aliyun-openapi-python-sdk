@@ -51,7 +51,6 @@ class ErrorHandleTest(SDKTestBase):
         except ClientException as e:
             self.assertEqual("SDK.HttpError", e.error_code)
             head_message, attributes = self._parse_complex_error_message(e.get_error_msg())
-            self.assertTrue("getaddrinfo failed" in head_message)
             self.assertEqual("www.aliyun-hangzhou.com", attributes.get("Endpoint"))
             self.assertEqual("None", attributes.get("Product"))
             self.assertTrue("SdkCoreVersion" in attributes)

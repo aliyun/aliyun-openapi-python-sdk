@@ -20,7 +20,7 @@ class TestChainedEndpointResolver(unittest.TestCase):
             resolver.resolve(request)
         self.assertEqual(ex.exception.error_code, "SDK.EndpointResolvingError")
         self.assertEqual(ex.exception.message,
-                         "No endpoint for product 'ecs'. \n"
+                         "No endpoint for product 'ecs'.\n"
                          "Please check the product code, "
                          "or set an endpoint for your request explicitly.\n"
                          "See https://www.alibabacloud.com/help/doc-detail/92074.htm\n")
