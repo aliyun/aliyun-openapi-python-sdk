@@ -4,7 +4,9 @@ import unittest
 import os
 
 from aliyunsdkcore.auth.signers.signer_factory import SignerFactory
-from aliyunsdkcore.auth.credentials import AccessKeyCredential, StsTokenCredential, RamRoleArnCredential, RsaKeyPairCredential, EcsRamRoleCredential
+from aliyunsdkcore.auth.credentials import AccessKeyCredential, StsTokenCredential
+from aliyunsdkcore.auth.credentials import RamRoleArnCredential, RsaKeyPairCredential
+from aliyunsdkcore.auth.credentials import EcsRamRoleCredential
 from aliyunsdkcore.auth.signers.access_key_signer import AccessKeySigner
 from aliyunsdkcore.auth.signers.sts_token_signer import StsTokenSigner
 from aliyunsdkcore.auth.signers.ram_role_arn_signer import RamRoleArnSigner
