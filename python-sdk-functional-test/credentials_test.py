@@ -17,14 +17,14 @@ from base import SDKTestBase
 
 class CredentialsTest(SDKTestBase):
 
-    @staticmethod
-    def get_http_request(client, request, specific_signer=None):
+    __name__ = 'CredentialsTest'
+
+    def get_http_request(self, client, request, specific_signer=None):
         signer = client._signer if specific_signer is None else specific_signer
         _, url = signer.sign(client.get_region_id(), request)
         return url
 
-    @staticmethod
-    def get_new_client():
+    def get_new_client(self):
         sub_sdk_config_path = os.path.join(
             os.path.expanduser("~"),
             "sub_account_sdk_config.json")
@@ -90,6 +90,7 @@ class CredentialsTest(SDKTestBase):
         self.assertTrue(ret.get("Regions"))
         self.assertTrue(ret.get("RequestId"))
 
+    @unittest.skip
     def test_ecs_ram_role(self):
         # push ecs
         from aliyunsdkcore.auth.credentials import EcsRamRoleCredential

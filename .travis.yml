@@ -13,6 +13,8 @@ python:
 
 install:
   - pip install coverage
+  - pip install pycodestyle
+  - pip install mock
 
 script:
   - coverage run --include="aliyun-python-sdk-core/aliyunsdkcore/*" --branch -m pytest aliyun-python-sdk-core/tests/
