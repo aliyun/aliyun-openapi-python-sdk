@@ -27,7 +27,13 @@ class SDKTestBase(TestCase):
         TestCase.__init__(self, *args, **kwargs)
         if sys.version_info[0] == 2:
             self.assertRegex = self.assertRegexpMatches
+        self._init_env()
 
+    def test_env_available(self):
+        # To let test script know whether env is available, to continue the tests
+        self._init_env()
+
+    def _init_env(self):
         self._sdk_config = self._init_sdk_config()
         self.access_key_id = self._read_key_from_env_or_config("ACCESS_KEY_ID")
         self.access_key_secret = self._read_key_from_env_or_config("ACCESS_KEY_SECRET")
