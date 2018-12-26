@@ -1,6 +1,6 @@
 # coding=utf-8
 
-import unittest
+from tests import unittest
 
 from aliyunsdkcore.auth.utils import md5_tool
 

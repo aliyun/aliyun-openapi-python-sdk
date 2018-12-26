@@ -1,4 +1,4 @@
-import unittest
+from tests import unittest
 
 from aliyunsdkcore.acs_exception.error_msg import get_msg
 

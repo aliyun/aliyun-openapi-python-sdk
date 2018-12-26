@@ -26,7 +26,7 @@ from aliyunsdkcore.vendored.six.moves.urllib.request import urlopen
 
 from aliyunsdkcore.auth.signers.signer import Signer
 
-from aliyunsdkcore.compat import json
+import json
 
 
 class EcsRamRoleSigner(Signer):
