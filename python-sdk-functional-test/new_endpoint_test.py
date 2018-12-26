@@ -24,9 +24,12 @@ from aliyunsdkcloudapi.request.v20160714.DescribeApisRequest import DescribeApis
 import aliyunsdkcore.acs_exception.error_code as error_code
 
 from aliyunsdkcore.endpoint.user_customized_endpoint_resolver import UserCustomizedEndpointResolver
-from aliyunsdkcore.endpoint.local_config_regional_endpoint_resolver import LocalConfigRegionalEndpointResolver
-from aliyunsdkcore.endpoint.local_config_global_endpoint_resolver import LocalConfigGlobalEndpointResolver
-from aliyunsdkcore.endpoint.location_service_endpoint_resolver import LocationServiceEndpointResolver
+from aliyunsdkcore.endpoint.local_config_regional_endpoint_resolver \
+    import LocalConfigRegionalEndpointResolver
+from aliyunsdkcore.endpoint.local_config_global_endpoint_resolver \
+    import LocalConfigGlobalEndpointResolver
+from aliyunsdkcore.endpoint.location_service_endpoint_resolver \
+    import LocationServiceEndpointResolver
 from aliyunsdkcore.endpoint.chained_endpoint_resolver import ChainedEndpointResolver
 from aliyunsdkcore.endpoint.resolver_endpoint_request import ResolveEndpointRequest
 from aliyunsdkcore.endpoint.default_endpoint_resolver import DefaultEndpointResolver
@@ -42,8 +45,10 @@ class NewEndpointTest(SDKTestBase):
             self._local_config_regional_endpoint_resolver = LocalConfigRegionalEndpointResolver()
             self._local_config_global_endpoint_resolver = LocalConfigGlobalEndpointResolver()
         else:
-            self._local_config_regional_endpoint_resolver = LocalConfigRegionalEndpointResolver(test_local_config)
-            self._local_config_global_endpoint_resolver = LocalConfigGlobalEndpointResolver(test_local_config)
+            self._local_config_regional_endpoint_resolver = \
+                LocalConfigRegionalEndpointResolver(test_local_config)
+            self._local_config_global_endpoint_resolver = \
+                LocalConfigGlobalEndpointResolver(test_local_config)
         if client is not None:
             self._location_service_endpoint_resolver = LocationServiceEndpointResolver(client)
         else:
@@ -57,7 +62,8 @@ class NewEndpointTest(SDKTestBase):
         self._endpoint_resolver = ChainedEndpointResolver(resolver_chain)
 
     def resolve(self, region_id, product_code, location_service_code=None, endpoint_type=None):
-        request = ResolveEndpointRequest(region_id, product_code, location_service_code, endpoint_type)
+        request = ResolveEndpointRequest(region_id, product_code,
+                                         location_service_code, endpoint_type)
         return self._endpoint_resolver.resolve(request)
 
     def test_products_with_location_service(self):
@@ -204,7 +210,8 @@ class NewEndpointTest(SDKTestBase):
             assert False
         except ClientException as e:
             self.assertEqual(error_code.SDK_ENDPOINT_RESOLVING_ERROR, e.get_error_code())
-            self.assertEqual("No such region 'mars'. Please check your region ID.", e.get_error_msg())
+            self.assertEqual("No such region 'mars'. Please check your region ID.",
+                             e.get_error_msg())
         self.assertEqual(2, self._location_service_endpoint_resolver._location_service_call_counter)
 
         # Bad product code
@@ -216,7 +223,8 @@ class NewEndpointTest(SDKTestBase):
                 self.assertEqual(error_code.SDK_ENDPOINT_RESOLVING_ERROR, e.get_error_code())
                 self.assertTrue(e.get_error_msg().startswith(
                     "No endpoint for product 'InvalidProductCode'. \n"
-                    "Please check the product code, or set an endpoint for your request explicitly.\n"
+                    "Please check the product code, "
+                    "or set an endpoint for your request explicitly.\n"
                 ))
         # Bad product code with another region ID
         try:
@@ -226,7 +234,8 @@ class NewEndpointTest(SDKTestBase):
             self.assertEqual(error_code.SDK_ENDPOINT_RESOLVING_ERROR, e.get_error_code())
             self.assertTrue(e.get_error_msg().startswith(
                     "No endpoint for product 'InvalidProductCode'. \n"
-                    "Please check the product code, or set an endpoint for your request explicitly.\n")
+                    "Please check the product code, "
+                    "or set an endpoint for your request explicitly.\n")
             )
         self.assertEqual(3, self._location_service_endpoint_resolver._location_service_call_counter)
 
@@ -251,7 +260,8 @@ class NewEndpointTest(SDKTestBase):
             self.assertEqual(error_code.SDK_ENDPOINT_RESOLVING_ERROR, e.get_error_code())
             self.assertTrue(e.get_error_msg().startswith(
                     "No endpoint for product 'InvalidProductCode'. \n" 
-                    "Please check the product code, or set an endpoint for your request explicitly.\n")
+                    "Please check the product code, "
+                    "or set an endpoint for your request explicitly.\n")
             )
 
     def test_inner_api_endpoint(self):
@@ -294,7 +304,8 @@ class NewEndpointTest(SDKTestBase):
 
     def test_can_not_connect_location_service(self):
         self.init_env()
-        self._location_service_endpoint_resolver.set_location_service_endpoint("location-on-mars.aliyuncs.com")
+        self._location_service_endpoint_resolver.set_location_service_endpoint(
+            "location-on-mars.aliyuncs.com")
 
         try:
             self.resolve("cn-hangzhou", "Ecs", "ecs", "innerAPI")
@@ -400,11 +411,12 @@ class NewEndpointTest(SDKTestBase):
         resolver = DefaultEndpointResolver(self.client)
         request = ResolveEndpointRequest("cn-chengdu", "dts", None, None)
 
-        expected_message = """No endpoint in the region 'cn-chengdu' for product 'dts'. 
-You can set an endpoint for your request explicitly.
-Or you can use the other available regions: ap-southeast-1 cn-beijing cn-hangzhou cn-hongkong cn-huhehaote cn-qingdao cn-shanghai cn-shenzhen cn-zhangjiakou
-See https://www.alibabacloud.com/help/doc-detail/92074.htm
-"""
+        expected_message = "No endpoint in the region 'cn-chengdu' for product 'dts'.\n" \
+                           "You can set an endpoint for your request explicitly.\n" \
+                           "Or you can use the other available regions: ap-southeast-1 " \
+                           "cn-beijing cn-hangzhou cn-hongkong cn-huhehaote cn-qingdao " \
+                           "cn-shanghai cn-shenzhen cn-zhangjiakou\n" \
+                           "See https://www.alibabacloud.com/help/doc-detail/92074.htm\n"
         try:
             resolver.resolve(request)
             assert False
@@ -420,15 +432,14 @@ See https://www.alibabacloud.com/help/doc-detail/92074.htm
         request = ResolveEndpointRequest("eu-west-1", "BssOpenApi", None, None)
         self.assertEqual("business.ap-southeast-1.aliyuncs.com", resolver.resolve(request))
 
-        from aliyunsdkbssopenapi.request.v20171214.GetOrderDetailRequest import GetOrderDetailRequest
+        from aliyunsdkbssopenapi.request.v20171214.GetOrderDetailRequest \
+            import GetOrderDetailRequest
         request = GetOrderDetailRequest()
 
         request.set_OrderId("blah")
         try:
             self.client.do_action_with_exception(request)
         except ServerException as e:
-            # self.assertEqual("InvalidApi.NotFound", e.get_error_code())
-            # self.assertEqual("Specified api is not found, please check your url and method.", e.get_error_msg())
             self.assertEqual("InternalError", e.get_error_code())
             self.assertEqual(
                 "The request processing has failed due to some unknown error.",
@@ -439,7 +450,8 @@ See https://www.alibabacloud.com/help/doc-detail/92074.htm
         request = ResolveEndpointRequest("cn-hangzhou", "faas", None, None)
         self.assertEqual("faas.cn-hangzhou.aliyuncs.com", resolver.resolve(request))
 
-        from aliyunsdkfaas.request.v20170824.DescribeLoadTaskStatusRequest import DescribeLoadTaskStatusRequest
+        from aliyunsdkfaas.request.v20170824.DescribeLoadTaskStatusRequest \
+            import DescribeLoadTaskStatusRequest
         request = DescribeLoadTaskStatusRequest()
         request.set_FpgaUUID("blah")
         request.set_InstanceId("blah")
