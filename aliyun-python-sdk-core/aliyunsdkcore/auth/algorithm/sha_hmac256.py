@@ -44,7 +44,8 @@ def get_sign_string(source, access_secret):
         signature = ensure_string(signed_base64).replace('\n', '')
         return signature
     else:
-        message = "uth type [publicKeyId] is disabled in Windows because 'pycrypto' is not supported," \
+        message = "uth type [publicKeyId] is disabled in Windows " \
+                  "because 'pycrypto' is not supported," \
                   " we will resolve this soon"
         raise exceptions.ClientException(error_code.SDK_NOT_SUPPORT, message)
 

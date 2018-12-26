@@ -474,11 +474,13 @@ class CommonRequest(AcsRequest):
             raise exceptions.ClientException(error_code.SDK_INVALID_PARAMS,
                                              'common params [version] is required, cannot be empty')
         if not self._action_name and not self._uri_pattern:
-            raise exceptions.ClientException(error_code.SDK_INVALID_PARAMS,
-                                             'At least one of [action] and [uri_pattern] has a value')
+            raise exceptions.ClientException(
+                error_code.SDK_INVALID_PARAMS,
+                'At least one of [action] and [uri_pattern] has a value')
         if not self.endpoint and not self._product:
-            raise exceptions.ClientException(error_code.SDK_INVALID_PARAMS,
-                                             'At least one of [domain] and [product_name] has a value')
+            raise exceptions.ClientException(
+                error_code.SDK_INVALID_PARAMS,
+                'At least one of [domain] and [product_name] has a value')
 
         if self._uri_pattern:
             self._style = STYLE_ROA

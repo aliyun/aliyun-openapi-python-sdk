@@ -90,7 +90,8 @@ class AcsClient:
             'session_period': session_period,
             'credential': credential,
         }
-        self._signer = SignerFactory.get_signer(credential, region_id, self.implementation_of_do_action, debug)
+        self._signer = SignerFactory.get_signer(credential, region_id,
+                                                self.implementation_of_do_action, debug)
         self._endpoint_resolver = DefaultEndpointResolver(self)
 
     def get_region_id(self):

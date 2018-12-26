@@ -41,4 +41,6 @@ def add_endpoint(product_name, region_id, end_point):
 
 # WARNING: Deprecated Functions!
 def modify_point(product_name, region_id, end_point):
-    DefaultEndpointResolver.predefined_endpoint_resolver.put_endpoint_entry(region_id, product_name, end_point)
+    put_endpoint_entry = DefaultEndpointResolver.predefined_endpoint_resolver.put_endpoint_entry
+    put_endpoint_entry(region_id, product_name, end_point)
+
