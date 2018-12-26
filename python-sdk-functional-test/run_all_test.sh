@@ -6,7 +6,6 @@ for i in `ls --color=never | grep aliyun-python-sdk-`; do
 done
 
 cd -
- 
 if python -m unittest base.SDKTestBase; then
     python -m unittest discover -s . -p '*_test.py'
 else

@@ -32,7 +32,7 @@ from aliyunsdkcore.acs_exception import error_msg
 from aliyunsdkcore.acs_exception import exceptions
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcore.auth.algorithm import sha_hmac256
-from aliyunsdkcore.compat import json
+import json
 
 
 class RsaKeyPairSigner(Signer):
