@@ -3,6 +3,7 @@ sudo: false
 language: python
 
 python:
+  - "2.6"
   - "2.7"
   - "3.3"
   - "3.4"
@@ -14,6 +15,7 @@ install:
   - pip install coverage
   - pip install pycodestyle
   - pip install mock
+  - if [ "`python -c "import sys; print(sys.version_info[:2])"`" == "(2, 6)" ]; then pip install simplejson; fi
 
 script:
   - make test
