@@ -24,17 +24,6 @@ class CredentialsTest(SDKTestBase):
         _, url = signer.sign(client.get_region_id(), request)
         return url
 
-    def get_new_client(self):
-        sub_sdk_config_path = os.path.join(
-            os.path.expanduser("~"),
-            "sub_account_sdk_config.json")
-        with open(sub_sdk_config_path) as fp:
-            config = json.loads(fp.read())
-            sub_access_key_id = config["sub_access_key_id"]
-            sub_access_key_secret = config["sub_access_key_secret"]
-            region_id = config["region_id"]
-        return AcsClient(sub_access_key_id, sub_access_key_secret, region_id)
-
     def test_call_rpc_request_with_sts_token(self):
         # create AssumeRole request ,Acquire a temporary ak
         request = AssumeRoleRequest()
@@ -42,8 +31,8 @@ class CredentialsTest(SDKTestBase):
         # FIXME : the RoleArn must according to user's setting
         request.set_RoleArn("acs:ram::1988236124481530:role/testrole")
         request.set_RoleSessionName("alice_test")
-        clt = self.get_new_client()
-        response = clt.do_action_with_exception(request)
+        client = self.init_sub_client()
+        response = client.do_action_with_exception(request)
         response = self.get_dict_response(response)
         credentials = response.get("Credentials")
 
@@ -65,18 +54,11 @@ class CredentialsTest(SDKTestBase):
         self.assertTrue(ret.get("RequestId"))
 
     def test_call_roa_request_with_sts_token(self):
-        sub_sdk_config_path = os.path.join(
-            os.path.expanduser("~"),
-            "sub_account_sdk_config.json")
-        with open(sub_sdk_config_path) as fp:
-            config = json.loads(fp.read())
-            sub_access_key_id = config["sub_access_key_id"]
-            sub_access_key_secret = config["sub_access_key_secret"]
         from aliyunsdkcore.auth.credentials import RamRoleArnCredential
         # FIXME : the RoleArn must according to user's setting
         ram_role_arn_credential = RamRoleArnCredential(
-            sub_access_key_id,
-            sub_access_key_secret,
+            self.sub_access_key_id,
+            self.sub_access_key_secret,
             "acs:ram::1988236124481530:role/testrole",
             "alice_test")
         acs_client = AcsClient(
