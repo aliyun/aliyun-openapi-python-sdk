@@ -42,7 +42,8 @@ class TestShaHmac1(unittest.TestCase):
                 s,
                 '^[A-Z][a-z]{2}, [0-9]{2} [A-Z][a-z]{2} [0-9]{4} [0-9]{2}:[0-9]{2}:[0-9]{2} GMT$')
 
-    # def test_percent_encode(self):
-    #   s = helper.percent_encode("")
-    #   self.assertEqual(s, "")
-    #   self.assertEqual(helper.percent_encode("+"), "%2B")
+    @unittest.skip
+    def test_percent_encode(self):
+        s = helper.percent_encode("")
+        self.assertEqual(s, "")
+        self.assertEqual(helper.percent_encode("+"), "%2B")

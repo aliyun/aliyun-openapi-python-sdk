@@ -32,7 +32,7 @@ ENDPOINT_NO_REGION = "No endpoint in the region '{region_id}' for product '{prod
                      "See " + SDK_ENDPOINT_MANAGEMENT_DOC_HTML + "\n"
 
 ENDPOINT_NO_PRODUCT = "No endpoint for product '{product_code}'. \n" +\
-                      "Please check the product code, \n" +\
+                      "Please check the product code, " +\
                       "or set an endpoint for your request explicitly.\n" +\
                       "See " + SDK_ENDPOINT_MANAGEMENT_DOC_HTML + "\n"
 
