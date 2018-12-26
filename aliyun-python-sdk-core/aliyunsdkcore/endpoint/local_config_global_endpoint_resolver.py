@@ -18,7 +18,8 @@
 #
 from aliyunsdkcore.vendored.six import iteritems
 
-from aliyunsdkcore.endpoint.local_config_regional_endpoint_resolver import LocalConfigRegionalEndpointResolver
+from aliyunsdkcore.endpoint.local_config_regional_endpoint_resolver \
+    import LocalConfigRegionalEndpointResolver
 
 
 class LocalConfigGlobalEndpointResolver(LocalConfigRegionalEndpointResolver):
