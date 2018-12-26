@@ -2,7 +2,8 @@
 
 import unittest
 
-from aliyunsdkcore.auth.credentials import AccessKeyCredential, StsTokenCredential, RamRoleArnCredential
+from aliyunsdkcore.auth.credentials import AccessKeyCredential
+from aliyunsdkcore.auth.credentials import StsTokenCredential, RamRoleArnCredential
 from aliyunsdkcore.auth.credentials import EcsRamRoleCredential, RsaKeyPairCredential
 
 

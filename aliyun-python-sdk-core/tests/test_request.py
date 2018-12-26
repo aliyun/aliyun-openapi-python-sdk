@@ -4,7 +4,8 @@ import unittest
 
 from mock import MagicMock, patch
 
-from aliyunsdkcore.request import AcsRequest, RpcRequest, RoaRequest, CommonRequest, get_default_protocol_type, set_default_protocol_type
+from aliyunsdkcore.request import AcsRequest, RpcRequest, RoaRequest, CommonRequest
+from aliyunsdkcore.request import get_default_protocol_type, set_default_protocol_type
 from aliyunsdkcore.acs_exception.exceptions import ClientException
 
 

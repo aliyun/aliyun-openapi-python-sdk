@@ -46,8 +46,9 @@ class RsaKeyPairSigner(Signer):
                 or rsa_key_pair_credential.session_period > self._MAX_SESSION_PERIOD:
             raise exceptions.ClientException(
                 error_code.SDK_INVALID_SESSION_EXPIRATION,
-                error_msg.get_msg('SDK_INVALID_SESSION_EXPIRATION').format(self._MIN_SESSION_PERIOD,
-                                                                           self._MAX_SESSION_PERIOD))
+                error_msg.get_msg('SDK_INVALID_SESSION_EXPIRATION').format(
+                    self._MIN_SESSION_PERIOD,
+                    self._MAX_SESSION_PERIOD))
         rsa_key_pair_credential.region_id = region_id
         self._public_key_id = rsa_key_pair_credential.public_key_id
         self._private_key = rsa_key_pair_credential.private_key
@@ -55,11 +56,14 @@ class RsaKeyPairSigner(Signer):
         self._schedule_interval = rsa_key_pair_credential.session_period if debug \
             else max(rsa_key_pair_credential.session_period * 0.8, 5)
         from aliyunsdkcore.client import AcsClient
-        self._sts_client = AcsClient(self._public_key_id, self._private_key, rsa_key_pair_credential.region_id)
+        self._sts_client = AcsClient(self._public_key_id,
+                                     self._private_key,
+                                     rsa_key_pair_credential.region_id)
         self._session_credential = None
         self._get_session_ak_and_sk()
         self._scheduler = sched.scheduler(time.time, time.sleep)
-        self._daemon_thread = threading.Thread(target=self._refresh_session_ak_and_sk, args=[True, 0])
+        self._daemon_thread = threading.Thread(target=self._refresh_session_ak_and_sk,
+                                               args=[True, 0])
         self._daemon_thread.setDaemon(True)
         self._daemon_thread.start()
 
