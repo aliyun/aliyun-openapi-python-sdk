@@ -24,7 +24,7 @@ import time
 import sys
 
 from aliyunsdkcore.vendored.six.moves.urllib.parse import quote
-from aliyunsdkcore.compat import ensure_bytes
+from aliyunsdkcore.compat import ensure_bytes, ensure_string
 
 TIME_ZONE = "GMT"
 FORMAT_ISO_8601 = "%Y-%m-%dT%H:%M:%SZ"
@@ -46,14 +46,4 @@ def get_rfc_2616_date():
 def md5_sum(content):
     content_bytes = ensure_bytes(content)
     md5_bytes = hashlib.md5(content_bytes).digest()
-    return base64.standard_b64encode(md5_bytes)
-
-
-def percent_encode(encode_str):
-    encode_str = str(encode_str)
-    encoding = 'cp936' if sys.stdin.encoding is None else sys.stdin.encoding
-    res = quote(encode_str.decode(encoding).encode('utf8'), '')
-    res = res.replace('+', '%20')
-    res = res.replace('*', '%2A')
-    res = res.replace('%7E', '~')
-    return res
+    return ensure_string(base64.standard_b64encode(md5_bytes))

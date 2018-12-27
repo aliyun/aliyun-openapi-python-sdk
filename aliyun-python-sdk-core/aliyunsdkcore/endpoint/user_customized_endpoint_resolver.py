@@ -26,10 +26,8 @@ class UserCustomizedEndpointResolver(EndpointResolverBase):
         self._valid_region_ids = set()
 
     def put_endpoint_entry(self, region_id, product_code, endpoint):
-        EndpointResolverBase.put_endpoint_entry(self,
-                                                self._make_endpoint_entry_key(product_code,
-                                                                              region_id),
-                                                endpoint)
+        EndpointResolverBase.put_endpoint_entry(
+            self, self._make_endpoint_entry_key(product_code, region_id), endpoint)
         self._valid_region_ids.add(region_id)
 
     def resolve(self, request):
@@ -41,8 +39,8 @@ class UserCustomizedEndpointResolver(EndpointResolverBase):
     def _make_endpoint_entry_key(self, product_code, region_id):
         return product_code.lower() + "." + region_id.lower()
 
-    def is_region_id_valid(self, region_id):
-        return region_id in self._valid_region_ids
+    def is_region_id_valid(self, request):
+        return request.region_id in self._valid_region_ids
 
     def reset(self):
         self.endpoints_data = dict()

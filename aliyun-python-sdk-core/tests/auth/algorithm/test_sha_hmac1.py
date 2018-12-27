@@ -17,4 +17,4 @@ class TestShaHmac1(unittest.TestCase):
         self.assertEqual(result, "szlfHs3WVaO/HgY3Cg7/uyXDaRw=")
         self.assertEqual(hmac1.get_signer_name(), "HMAC-SHA1")
         self.assertEqual(hmac1.get_signer_type(), "")
-        self.assertEqual(hmac1.get_singer_version(), "1.0")
+        self.assertEqual(hmac1.get_signer_version(), "1.0")

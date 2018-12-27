@@ -37,7 +37,6 @@ class LocationServiceEndpointResolver(EndpointResolverBase):
         self._invalid_region_ids = set()
         self._valid_product_codes = set()
         self._valid_region_ids = set()
-        self._location_service_call_counter = 0  # For test use
 
     def set_location_service_endpoint(self, endpoint):
         self._location_service_endpoint = endpoint
@@ -62,16 +61,13 @@ class LocationServiceEndpointResolver(EndpointResolverBase):
             return self._get_endpoint_from_location_service(key, request)
 
     def _get_endpoint_from_location_service(self, key, request):
+        # when other thread
         if key in self.endpoints_data:
             return self.endpoints_data.get(key)
 
         self._call_location_service(key, request)
-        self._location_service_call_counter += 1
 
-        if key in self.endpoints_data:
-            return self.endpoints_data.get(key)
-
-        return None
+        return self.endpoints_data.get(key)
 
     def _call_location_service(self, key, raw_request):
         request = DescribeEndpointsRequest()
@@ -86,13 +82,13 @@ class LocationServiceEndpointResolver(EndpointResolverBase):
             response = self._client.do_action_with_exception(request)
         except ServerException as e:
             if "InvalidRegionId" == e.get_error_code() and \
-                    "The specified region does not exist." == e.get_error_msg():
+               "The specified region does not exist." == e.get_error_msg():
                 # No such region`
                 self._invalid_region_ids.add(raw_request.region_id)
                 self.put_endpoint_entry(key, None)
                 return
             elif "Illegal Parameter" == e.get_error_code() and \
-                    "Please check the parameters" == e.get_error_msg():
+                 "Please check the parameters" == e.get_error_msg():
                 # No such product
                 self._invalid_product_codes.add(raw_request.product_code_lower)
                 self.put_endpoint_entry(key, None)
@@ -107,7 +103,8 @@ class LocationServiceEndpointResolver(EndpointResolverBase):
         self._valid_region_ids.add(raw_request.region_id)
 
         found_flag = False
-        for item in json.loads(response.decode('utf-8'))["Endpoints"]["Endpoint"]:
+        body = json.loads(response.decode('utf-8'))
+        for item in body["Endpoints"]["Endpoint"]:
 
             # Location return data has a typo: SerivceCode
             # We still try to expect ServiceCode in case this typo would be fixed in the future
@@ -137,7 +134,13 @@ class LocationServiceEndpointResolver(EndpointResolverBase):
             request.region_id, request.endpoint_type
         )
 
-    def _make_endpoint_entry_key(self, product_code, location_service_code,
+    def _make_endpoint_entry_key(self,
+                                 product_code,
+                                 location_service_code,
                                  region_id, endpoint_type):
-        return ".".join([product_code.lower(), location_service_code,
-                         region_id.lower(), endpoint_type])
+        return ".".join([
+            product_code.lower(),
+            location_service_code,
+            region_id.lower(),
+            endpoint_type
+        ])
