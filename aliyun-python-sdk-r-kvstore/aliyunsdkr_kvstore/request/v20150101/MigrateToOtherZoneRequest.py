@@ -18,28 +18,22 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class ModifyInstanceAutoRenewalAttributeRequest(RpcRequest):
+class MigrateToOtherZoneRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'R-kvstore', '2015-01-01', 'ModifyInstanceAutoRenewalAttribute','redisa')
+		RpcRequest.__init__(self, 'R-kvstore', '2015-01-01', 'MigrateToOtherZone','redisa')
 
-	def get_Duration(self):
-		return self.get_query_params().get('Duration')
+	def get_VSwitchId(self):
+		return self.get_query_params().get('VSwitchId')
 
-	def set_Duration(self,Duration):
-		self.add_query_param('Duration',Duration)
+	def set_VSwitchId(self,VSwitchId):
+		self.add_query_param('VSwitchId',VSwitchId)
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_AutoRenew(self):
-		return self.get_query_params().get('AutoRenew')
-
-	def set_AutoRenew(self,AutoRenew):
-		self.add_query_param('AutoRenew',AutoRenew)
 
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
@@ -53,11 +47,23 @@ class ModifyInstanceAutoRenewalAttributeRequest(RpcRequest):
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
+	def get_EffectiveTime(self):
+		return self.get_query_params().get('EffectiveTime')
+
+	def set_EffectiveTime(self,EffectiveTime):
+		self.add_query_param('EffectiveTime',EffectiveTime)
+
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
 
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
+
+	def get_ZoneId(self):
+		return self.get_query_params().get('ZoneId')
+
+	def set_ZoneId(self,ZoneId):
+		self.add_query_param('ZoneId',ZoneId)
 
 	def get_DBInstanceId(self):
 		return self.get_query_params().get('DBInstanceId')
