@@ -71,7 +71,6 @@ class ErrorHandleTest(SDKTestBase):
     def test_server_error_with_a_bad_json(self):
         from aliyunsdkecs.request.v20140526.DeleteInstanceRequest import DeleteInstanceRequest
         from aliyunsdkcore.vendored.six.moves import http_client
-        from aliyunsdkcore.compat import ensure_bytes
 
         request = DeleteInstanceRequest()
         request.set_InstanceId("blah")
