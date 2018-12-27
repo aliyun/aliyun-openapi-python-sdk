@@ -20,8 +20,9 @@ class TestChainedEndpointResolver(unittest.TestCase):
             resolver.resolve(request)
         self.assertEqual(ex.exception.error_code, "SDK.EndpointResolvingError")
         self.assertEqual(ex.exception.message,
-                         "No endpoint for product 'ecs'. \n"
-                         "Please check the product code, or set an endpoint for your request explicitly.\n"
+                         "No endpoint for product 'ecs'.\n"
+                         "Please check the product code, "
+                         "or set an endpoint for your request explicitly.\n"
                          "See https://www.alibabacloud.com/help/doc-detail/92074.htm\n")
         user.put_endpoint_entry("cn-huhehaote", "ecs",
                                 "my-endpoint-for-cnhuhehaote-ecs")
@@ -32,11 +33,13 @@ class TestChainedEndpointResolver(unittest.TestCase):
         # # can not be resolved with cn-hangzhou
         # request = ResolveEndpointRequest("cn-hangzhou", "ecs", "", "")
         # with self.assertRaises(ClientException) as ex:
-        #   resolver.resolve(request)
+        #     resolver.resolve(request)
         # self.assertEqual(ex.exception.error_code, "SDK.EndpointResolvingError")
-        # self.assertEqual(ex.exception.message, "No such region 'cn-hangzhou'. Please check your region ID.")
+        # self.assertEqual(ex.exception.message,
+        #                  "No such region 'cn-hangzhou'. Please check your region ID.")
         # user.put_endpoint_entry("cn-hangzhou", "rds", "my-endpoint-for-cnhangzhou-rds")
         # with self.assertRaises(ClientException) as ex:
-        #   resolver.resolve(request)
+        #     resolver.resolve(request)
         # self.assertEqual(ex.exception.error_code, "SDK.EndpointResolvingError")
-        # self.assertEqual(ex.exception.message, "No such region 'cn-hangzhou'. Please check your region ID.")
+        # self.assertEqual(ex.exception.message,
+        #                  "No such region 'cn-hangzhou'. Please check your region ID.")

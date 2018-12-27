@@ -4,7 +4,9 @@ import unittest
 
 from mock import MagicMock, patch
 from aliyunsdkcore.utils import parameter_helper as helper
-from aliyunsdkcore.auth.composer.roa_signature_composer import get_url, get_signature, get_signature_headers, compose_string_to_sign, build_canonical_headers, refresh_sign_parameters
+from aliyunsdkcore.auth.composer.roa_signature_composer \
+    import get_url, get_signature, get_signature_headers, compose_string_to_sign, \
+    build_canonical_headers, refresh_sign_parameters
 
 
 class TestRoaSignatureComposer(unittest.TestCase):
@@ -25,11 +27,18 @@ class TestRoaSignatureComposer(unittest.TestCase):
         self.assertEqual(compose_string_to_sign(
             'GET', {}, "/", {'Accept': 'application/json'}, {}), "GET\napplication/json\n\n\n\n/")
         self.assertEqual(compose_string_to_sign('GET', {}, "/", {'Accept': 'application/json',
-                                                                 'Content-MD5': 'hash'}, {}), "GET\napplication/json\nhash\n\n\n/")
-        self.assertEqual(compose_string_to_sign('GET', {}, "/", {'Accept': 'application/json', 'Content-MD5': 'hash',
-                                                                 'Content-Type': 'text/plain'}, {}), "GET\napplication/json\nhash\ntext/plain\n\n/")
-        self.assertEqual(compose_string_to_sign('GET', {}, "/", {'Accept': 'application/json', 'Content-MD5': 'hash',
-                                                                 'Content-Type': 'text/plain', 'Date': 'date str'}, {}), "GET\napplication/json\nhash\ntext/plain\ndate str\n/")
+                                                                 'Content-MD5': 'hash'}, {}),
+                         "GET\napplication/json\nhash\n\n\n/")
+        self.assertEqual(compose_string_to_sign('GET', {}, "/", {'Accept': 'application/json',
+                                                                 'Content-MD5': 'hash',
+                                                                 'Content-Type': 'text/plain'},
+                                                {}),
+                         "GET\napplication/json\nhash\ntext/plain\n\n/")
+        self.assertEqual(compose_string_to_sign('GET', {}, "/", {'Accept': 'application/json',
+                                                                 'Content-MD5': 'hash',
+                                                                 'Content-Type': 'text/plain',
+                                                                 'Date': 'date str'}, {}),
+                         "GET\napplication/json\nhash\ntext/plain\ndate str\n/")
         headers = {'Accept': 'application/json', 'Content-MD5': 'hash',
                    'Content-Type': 'text/plain', 'Date': 'date str'}
         queries = {'key': 'value'}
@@ -46,7 +55,8 @@ class TestRoaSignatureComposer(unittest.TestCase):
         self.assertEqual(build_canonical_headers(
             {'key': 'value', 'x-acs-client': 'client'}, 'x-acs-'), 'x-acs-client:client\n')
         self.assertEqual(build_canonical_headers({'key': 'value', 'x-acs-client': 'client',
-                                                  'x-acs-abc': 'abc-value'}, 'x-acs-'), 'x-acs-abc:abc-value\nx-acs-client:client\n')
+                                                  'x-acs-abc': 'abc-value'}, 'x-acs-'),
+                         'x-acs-abc:abc-value\nx-acs-client:client\n')
 
     @patch("aliyunsdkcore.utils.parameter_helper.get_rfc_2616_date")
     def test_refresh_sign_parameters(self, mock_get_rfc_2616_date):

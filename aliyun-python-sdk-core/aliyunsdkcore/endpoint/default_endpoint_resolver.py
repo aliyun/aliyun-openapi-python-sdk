@@ -15,9 +15,12 @@
 from aliyunsdkcore.endpoint import EndpointResolver
 from aliyunsdkcore.endpoint.chained_endpoint_resolver import ChainedEndpointResolver
 from aliyunsdkcore.endpoint.user_customized_endpoint_resolver import UserCustomizedEndpointResolver
-from aliyunsdkcore.endpoint.local_config_regional_endpoint_resolver import LocalConfigRegionalEndpointResolver
-from aliyunsdkcore.endpoint.local_config_global_endpoint_resolver import LocalConfigGlobalEndpointResolver
-from aliyunsdkcore.endpoint.location_service_endpoint_resolver import LocationServiceEndpointResolver
+from aliyunsdkcore.endpoint.local_config_regional_endpoint_resolver \
+    import LocalConfigRegionalEndpointResolver
+from aliyunsdkcore.endpoint.local_config_global_endpoint_resolver \
+    import LocalConfigGlobalEndpointResolver
+from aliyunsdkcore.endpoint.location_service_endpoint_resolver \
+    import LocationServiceEndpointResolver
 
 
 class DefaultEndpointResolver(EndpointResolver):
@@ -44,4 +47,5 @@ class DefaultEndpointResolver(EndpointResolver):
         return self._resolver.resolve(request)
 
     def put_endpoint_entry(self, region_id, product_code, endpoint):
-        self._user_customized_endpoint_resolver.put_endpoint_entry(region_id, product_code, endpoint)
+        self._user_customized_endpoint_resolver.put_endpoint_entry(region_id, product_code,
+                                                                   endpoint)

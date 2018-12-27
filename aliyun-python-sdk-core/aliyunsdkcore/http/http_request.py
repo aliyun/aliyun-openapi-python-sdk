@@ -91,7 +91,7 @@ class HttpRequest:
     def md5_sum(self, content):
         return helper.md5_sum(content)
 
-    def set_content(self, content, encoding, format = format_type.RAW):
+    def set_content(self, content, encoding, format=format_type.RAW):
         self.__content = content
         if content is None:
             self.remove_header_parameter(self.content_md5)

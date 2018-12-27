@@ -14,18 +14,6 @@ from base import SDKTestBase
 
 class CoreLevelTest(SDKTestBase):
 
-    @staticmethod
-    def get_new_client():
-        sub_sdk_config_path = os.path.join(
-            os.path.expanduser("~"),
-            "sub_account_sdk_config.json")
-        with open(sub_sdk_config_path) as fp:
-            config = json.loads(fp.read())
-            sub_access_key_id = config["sub_access_key_id"]
-            sub_access_key_secret = config["sub_access_key_secret"]
-            region_id = config["region_id"]
-        return AcsClient(sub_access_key_id, sub_access_key_secret, region_id)
-
     def test_rpc_with_common_request(self):
         request = CommonRequest(
             domain="ecs.aliyuncs.com",
@@ -53,8 +41,8 @@ class CoreLevelTest(SDKTestBase):
         # FIXME : the RoleArn must according to user's setting
         request.set_RoleArn("acs:ram::1988236124481530:role/testrole")
         request.set_RoleSessionName("alice_test")
-        clt = self.get_new_client()
-        response = clt.do_action_with_exception(request)
+        sub_client = self.init_sub_client()
+        response = sub_client.do_action_with_exception(request)
         response = self.get_dict_response(response)
         credentials = response.get("Credentials")
 
@@ -117,3 +105,4 @@ class CoreLevelTest(SDKTestBase):
         response = self.client.do_action_with_exception(request)
         response = self.get_dict_response(response)
         self.assertTrue(response.get("RequestId"))
+

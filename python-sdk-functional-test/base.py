@@ -27,25 +27,44 @@ class SDKTestBase(TestCase):
         TestCase.__init__(self, *args, **kwargs)
         if sys.version_info[0] == 2:
             self.assertRegex = self.assertRegexpMatches
+        self._init_env()
+
+    def test_env_available(self):
+        # To let test script know whether env is available, to continue the tests
+        self._init_env()
+
+    def _init_env(self):
+        self._sdk_config = self._init_sdk_config()
+        self.access_key_id = self._read_key_from_env_or_config("ACCESS_KEY_ID")
+        self.access_key_secret = self._read_key_from_env_or_config("ACCESS_KEY_SECRET")
+        self.sub_access_key_id = self._read_key_from_env_or_config("SUB_ACCESS_KEY_ID")
+        self.sub_access_key_secret = self._read_key_from_env_or_config("SUB_ACCESS_KEY_SECRET")
+        self.region_id = self._read_key_from_env_or_config("REGION_ID")
+
+    def _init_sdk_config(self):
+        sdk_config_path = os.path.join(os.path.expanduser("~"), "aliyun_sdk_config.json")
+        if os.path.isfile(sdk_config_path):
+            with open(sdk_config_path) as fp:
+                return json.loads(fp.read())
+
+    def _read_key_from_env_or_config(self, key_name):
+        if key_name.upper() in os.environ:
+            return os.environ.get(key_name.upper())
+        if key_name.lower() in self._sdk_config:
+            return self._sdk_config[key_name.lower()]
+
+        raise Exception("Failed to find sdk config: " + key_name)
 
     def setUp(self):
-
-        if os.environ.get('ACCESS_KEY_ID') and os.environ.get('ACCESS_KEY_SECRET'):
-            self.access_key_id = os.environ.get('ACCESS_KEY_ID')
-            self.access_key_secret = os.environ.get('ACCESS_KEY_SECRET')
-        else:
-            sdk_config_path = os.path.join(os.path.expanduser("~"), "aliyun_sdk_config.json")
-            with open(sdk_config_path) as fp:
-                config = json.loads(fp.read())
-                self.access_key_id = config['access_key_id']
-                self.access_key_secret = config['access_key_secret']
-
         self.client = self.init_client()
 
     def init_client(self, region_id=None):
         if not region_id:
-            region_id = 'cn-hangzhou'
+            region_id = self.region_id
         return AcsClient(self.access_key_id, self.access_key_secret, region_id)
+
+    def init_sub_client(self):
+        return AcsClient(self.sub_access_key_id, self.sub_access_key_secret, self.region_id)
 
     @staticmethod
     def get_dict_response(string):
