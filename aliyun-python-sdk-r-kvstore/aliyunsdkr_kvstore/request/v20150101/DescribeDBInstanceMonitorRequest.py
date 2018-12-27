@@ -18,28 +18,16 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class ModifyInstanceAutoRenewalAttributeRequest(RpcRequest):
+class DescribeDBInstanceMonitorRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'R-kvstore', '2015-01-01', 'ModifyInstanceAutoRenewalAttribute','redisa')
-
-	def get_Duration(self):
-		return self.get_query_params().get('Duration')
-
-	def set_Duration(self,Duration):
-		self.add_query_param('Duration',Duration)
+		RpcRequest.__init__(self, 'R-kvstore', '2015-01-01', 'DescribeDBInstanceMonitor','redisa')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_AutoRenew(self):
-		return self.get_query_params().get('AutoRenew')
-
-	def set_AutoRenew(self,AutoRenew):
-		self.add_query_param('AutoRenew',AutoRenew)
 
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
