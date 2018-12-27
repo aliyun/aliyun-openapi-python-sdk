@@ -34,7 +34,6 @@ from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcore.auth.algorithm import sha_hmac256
 
 
-
 class RsaKeyPairSigner(Signer):
     _MIN_SESSION_PERIOD = 900
     _MAX_SESSION_PERIOD = 3600
