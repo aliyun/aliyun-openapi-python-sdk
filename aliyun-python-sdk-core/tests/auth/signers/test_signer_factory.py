@@ -1,6 +1,6 @@
 # coding=utf-8
 
-from tests import unittest
+import unittest
 import os
 
 from aliyunsdkcore.auth.signers.signer_factory import SignerFactory

@@ -71,6 +71,7 @@ class ErrorHandleTest(SDKTestBase):
     def test_server_error_with_a_bad_json(self):
         from aliyunsdkecs.request.v20140526.DeleteInstanceRequest import DeleteInstanceRequest
         from aliyunsdkcore.vendored.six.moves import http_client
+        from aliyunsdkcore.compat import ensure_bytes
 
         request = DeleteInstanceRequest()
         request.set_InstanceId("blah")
@@ -78,18 +79,19 @@ class ErrorHandleTest(SDKTestBase):
 
         # test invalid json format
         def implementation_of_do_action(request):
-            return 400, {}, "bad-json"
+            return 400, {}, b"bad-json"
         client.implementation_of_do_action = implementation_of_do_action
         try:
             client.do_action_with_exception(request)
             assert False
         except ServerException as e:
             self.assertEqual("SDK.UnknownServerError", e.get_error_code())
+            # self.assertEqual("ServerResponseBody: 'bad-json'", e.get_error_msg())
             self.assertEqual("ServerResponseBody: bad-json", e.get_error_msg())
 
         # test valid json format but no Code or Message
         def implementation_of_do_action(request):
-            return 400, {}, """{"key" : "this is a valid json string"}"""
+            return 400, {}, b"""{"key" : "this is a valid json string"}"""
         client.implementation_of_do_action = implementation_of_do_action
         try:
             client.do_action_with_exception(request)
@@ -101,7 +103,7 @@ class ErrorHandleTest(SDKTestBase):
 
         # test missing Code in response
         def implementation_of_do_action(request):
-            return 400, {}, "{\"Message\": \"Some message\"}"
+            return 400, {}, b"{\"Message\": \"Some message\"}"
         client.implementation_of_do_action = implementation_of_do_action
         try:
             client.do_action_with_exception(request)
@@ -112,7 +114,7 @@ class ErrorHandleTest(SDKTestBase):
 
         # test missing Code in response
         def implementation_of_do_action(request):
-            return 400, {}, "{\"Code\": \"YouMessedSomethingUp\"}"
+            return 400, {}, b"{\"Code\": \"YouMessedSomethingUp\"}"
         client.implementation_of_do_action = implementation_of_do_action
         try:
             client.do_action_with_exception(request)

@@ -130,7 +130,7 @@ def get_signature_headers(
         method,
         signer,
         bucket_name)
-    headers["Authorization"] = "OSS " + access_key + ":" + signature
+    headers["Authorization"] = "OSS " + str(access_key) + ":" + str(signature)
     return headers
 
 

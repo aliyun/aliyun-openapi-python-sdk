@@ -1,6 +1,6 @@
 # coding=utf-8
 
-from tests import unittest
+import unittest
 
 from aliyunsdkcore.http.http_response import HttpResponse
 

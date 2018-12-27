@@ -384,7 +384,7 @@ class RoaRequest(AcsRequest):
             self.add_header('Content-MD5', md5_str)
         if 'RegionId' not in sign_params.keys():
             sign_params['RegionId'] = region_id
-            self.add_header('x-acs-region-id', region_id)
+            self.add_header('x-acs-region-id', str(region_id))
 
         signed_headers = roa_signer.get_signature_headers(
             sign_params,

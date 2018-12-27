@@ -1,6 +1,6 @@
 # coding=utf-8
 
-from tests import unittest
+import unittest
 
 from aliyunsdkcore.endpoint.local_config_regional_endpoint_resolver \
     import LocalConfigRegionalEndpointResolver

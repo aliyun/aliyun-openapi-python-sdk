@@ -1,6 +1,6 @@
 # coding=utf-8
 
-from tests import unittest
+import unittest
 
 from mock import MagicMock, patch
 from aliyunsdkcore.auth.composer.rpc_signature_composer import get_signed_url

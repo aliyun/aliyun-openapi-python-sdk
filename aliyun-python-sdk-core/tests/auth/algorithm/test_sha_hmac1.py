@@ -1,6 +1,6 @@
 # coding=utf-8
 
-from tests import unittest
+import unittest
 
 from aliyunsdkcore.auth.algorithm import sha_hmac1 as hmac1
 from aliyunsdkcore.vendored import six

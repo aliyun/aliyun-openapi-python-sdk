@@ -1,6 +1,6 @@
 # coding=utf-8
 
-from tests import unittest
+import unittest
 
 from aliyunsdkcore.http.format_type import map_format_to_accept, map_accept_to_format
 

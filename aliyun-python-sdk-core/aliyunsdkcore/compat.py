@@ -42,4 +42,3 @@ else:
         raise ValueError(
             "Expected str or bytes or bytearray, received %s." %
             type(s))
-
