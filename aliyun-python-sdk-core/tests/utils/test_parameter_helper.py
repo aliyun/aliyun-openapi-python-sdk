@@ -13,9 +13,9 @@ class TestShaHmac1(unittest.TestCase):
         self.assertNotEqual(helper.get_uuid(), helper.get_uuid())
 
     def test_md5_sum(self):
-        self.assertEqual(b"ERIHLmRX2uZmssDdxQnnxQ==",
+        self.assertEqual("ERIHLmRX2uZmssDdxQnnxQ==",
                          helper.md5_sum("That's all folks!!"))
-        self.assertEqual(b"GsJRdI3kAbAnHo/0+3wWJw==",
+        self.assertEqual("GsJRdI3kAbAnHo/0+3wWJw==",
                          helper.md5_sum("中文也没啥问题"))
 
     def test_get_iso_8061_date(self):
@@ -41,9 +41,3 @@ class TestShaHmac1(unittest.TestCase):
             self.assertRegex(
                 s,
                 '^[A-Z][a-z]{2}, [0-9]{2} [A-Z][a-z]{2} [0-9]{4} [0-9]{2}:[0-9]{2}:[0-9]{2} GMT$')
-
-    @unittest.skip
-    def test_percent_encode(self):
-        s = helper.percent_encode("")
-        self.assertEqual(s, "")
-        self.assertEqual(helper.percent_encode("+"), "%2B")

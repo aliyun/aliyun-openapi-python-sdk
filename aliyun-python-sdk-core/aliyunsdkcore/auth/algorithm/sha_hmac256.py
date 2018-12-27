@@ -33,20 +33,17 @@ def get_sign_string(source, access_secret):
         from Crypto.Hash import SHA256
         from Crypto.PublicKey import RSA
 
-        access_secret = ensure_bytes(access_secret)
-        secret = b64_decode_bytes(access_secret)
-        key = RSA.importKey(secret)
-        source = ensure_bytes(source)
-        h = SHA256.new(source)
+        key = RSA.importKey(b64_decode_bytes(ensure_bytes(access_secret)))
+        h = SHA256.new(ensure_bytes(source))
         signer = PKCS1_v1_5.new(key)
         signed_bytes = signer.sign(h)
         signed_base64 = b64_encode_bytes(signed_bytes)
         signature = ensure_string(signed_base64).replace('\n', '')
         return signature
     else:
-        message = "uth type [publicKeyId] is disabled in Windows " \
-                  "because 'pycrypto' is not supported," \
-                  " we will resolve this soon"
+        message = "auth type [publicKeyId] is disabled in Windows " \
+                  "because 'pycrypto' is not supported, we will resolve " \
+                  "this soon"
         raise exceptions.ClientException(error_code.SDK_NOT_SUPPORT, message)
 
 
@@ -54,7 +51,7 @@ def get_signer_name():
     return "SHA256withRSA"
 
 
-def get_singer_version():
+def get_signer_version():
     return "1.0"
 
 

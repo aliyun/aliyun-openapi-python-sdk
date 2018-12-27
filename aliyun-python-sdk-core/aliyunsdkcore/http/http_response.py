@@ -63,33 +63,14 @@ class HttpResponse(HttpRequest):
         return self.__ssl_enable
 
     def get_response(self):
-        if self.get_ssl_enabled():
-            return self.get_https_response()
-        else:
-            return self.get_http_response()
+        status, headers, body = self.get_response_object()
+        return headers, body
 
     def get_response_object(self):
         if self.get_ssl_enabled():
             return self.get_https_response_object()
         else:
             return self.get_http_response_object()
-
-    def get_http_response(self):
-        if self.__port is None or self.__port == "":
-            self.__port = 80
-        try:
-            self.__connection = self.__get_http_connection(
-                self.get_host(), self.__port, timeout=self._timeout)
-            self.__connection.connect()
-            self.__connection.request(
-                method=self.get_method(),
-                url=self.get_url(),
-                body=self.get_body(),
-                headers=self.get_headers())
-            response = self.__connection.getresponse()
-            return response.getheaders(), response.read()
-        finally:
-            self.__close_connection()
 
     def get_http_response_object(self):
         if self.__port is None or self.__port == "":
@@ -105,28 +86,6 @@ class HttpResponse(HttpRequest):
                 headers=self.get_headers())
             response = self.__connection.getresponse()
             return response.status, response.getheaders(), response.read()
-        finally:
-            self.__close_connection()
-
-    def get_https_response(self):
-        if self.__port is None or self.__port == "":
-            self.__port = 443
-        try:
-            self.__port = 443
-            self.__connection = self.__get_https_connection(
-                self.get_host(),
-                self.__port,
-                cert_file=self.__cert_file,
-                key_file=self.__key_file,
-                timeout=self._timeout)
-            self.__connection.connect()
-            self.__connection.request(
-                method=self.get_method(),
-                url=self.get_url(),
-                body=self.get_body(),
-                headers=self.get_headers())
-            response = self.__connection.getresponse()
-            return response.getheaders(), response.read()
         finally:
             self.__close_connection()
 
@@ -159,7 +118,8 @@ class HttpResponse(HttpRequest):
 
     def __get_http_connection(self, host, port, **kwargs):
         """kwargs maps HTTPConnection arguments"""
-        proxy_host, proxy_port, proxy_headers = self.__get_env_proxy(is_https=False)
+        proxy_host, proxy_port, proxy_headers = self.__get_env_proxy(
+            is_https=False)
         conn = None
         if proxy_host and proxy_port:
             conn = HTTPConnection(proxy_host, proxy_port, **kwargs)
@@ -170,7 +130,8 @@ class HttpResponse(HttpRequest):
 
     def __get_https_connection(self, host, port, **kwargs):
         """kwargs maps HTTPConnection arguments"""
-        proxy_host, proxy_port, proxy_headers = self.__get_env_proxy(is_https=True)
+        proxy_host, proxy_port, proxy_headers = self.__get_env_proxy(
+            is_https=True)
         conn = None
         if proxy_host and proxy_port:
             conn = HTTPSConnection(proxy_host, proxy_port, **kwargs)
@@ -182,9 +143,11 @@ class HttpResponse(HttpRequest):
     def __get_env_proxy(self, is_https):
         proxy = None
         if is_https:
-            proxy = os.environ.get('HTTPS_PROXY', None) or os.environ.get('https_proxy', None)
+            proxy = os.environ.get('HTTPS_PROXY', None) or os.environ.get(
+                'https_proxy', None)
         else:
-            proxy = os.environ.get('HTTP_PROXY', None) or os.environ.get('http_proxy', None)
+            proxy = os.environ.get(
+                'HTTP_PROXY', None) or os.environ.get('http_proxy', None)
 
         if proxy is not None:
             proxy_headers = {}
@@ -192,8 +155,10 @@ class HttpResponse(HttpRequest):
             proxy_host = o.hostname
             proxy_port = o.port
             if o.username:
-                auth = bytes('%s:%s' % (o.username or '', o.password or ''), encoding='utf-8')
-                proxy_headers['Proxy-Authorization'] = 'Basic ' + base64.b64encode(auth).decode()
+                auth = bytes('%s:%s' % (o.username or '',
+                                        o.password or ''), encoding='utf-8')
+                proxy_headers['Proxy-Authorization'] = 'Basic ' + \
+                    base64.b64encode(auth).decode()
             return proxy_host, proxy_port, proxy_headers
 
         return None, None, None

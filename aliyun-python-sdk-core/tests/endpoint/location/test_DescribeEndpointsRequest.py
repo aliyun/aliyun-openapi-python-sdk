@@ -2,7 +2,8 @@
 
 from tests import unittest
 
-from aliyunsdkcore.endpoint.location.DescribeEndpointsRequest import DescribeEndpointsRequest
+from aliyunsdkcore.endpoint.location.DescribeEndpointsRequest \
+    import DescribeEndpointsRequest
 
 
 class TestDescribeEndpointsRequest(unittest.TestCase):
