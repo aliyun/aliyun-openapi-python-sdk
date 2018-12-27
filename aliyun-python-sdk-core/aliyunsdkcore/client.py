@@ -19,7 +19,7 @@
 
 # coding=utf-8
 import warnings
-
+import json
 import aliyunsdkcore
 from aliyunsdkcore.vendored.six.moves.urllib.parse import urlencode
 from aliyunsdkcore.vendored.six.moves import http_client
@@ -36,7 +36,6 @@ from aliyunsdkcore.request import CommonRequest
 from aliyunsdkcore.endpoint.resolver_endpoint_request import ResolveEndpointRequest
 from aliyunsdkcore.endpoint.default_endpoint_resolver import DefaultEndpointResolver
 
-import json
 
 """
 Acs default client module.
@@ -240,7 +239,6 @@ class AcsClient:
         error_code_to_return = error_code.SDK_UNKNOWN_SERVER_ERROR
         # TODO handle if response_body is too big
         error_message_to_return = "ServerResponseBody: " + str(response_body)
-
         try:
             body_obj = json.loads(response_body)
             if 'Code' in body_obj:
@@ -272,8 +270,9 @@ class AcsClient:
             pass
 
         if status < http_client.OK or status >= http_client.MULTIPLE_CHOICES:
+
             server_error_code, server_error_message = self._parse_error_info_from_response_body(
-                body)
+                body.decode('utf-8'))
             raise ServerException(
                 server_error_code,
                 server_error_message,

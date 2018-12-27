@@ -26,7 +26,6 @@ class TestSignerFactory(unittest.TestCase):
         cred = {'credential': AccessKeyCredential('access_key_id', 'access_key_secret')}
         signer = SignerFactory.get_signer(cred['credential'], 'cn-hangzhou', 'do-action-api')
         self.assertIsInstance(signer, AccessKeySigner)
-
         # sts token signer
         cred = {'credential': StsTokenCredential('sts_access_key_id', 'sts_access_key_secret',
                                                  'sts_token')}

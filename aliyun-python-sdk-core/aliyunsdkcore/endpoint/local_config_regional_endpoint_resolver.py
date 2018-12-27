@@ -18,10 +18,9 @@
 #
 
 import os.path
-from aliyunsdkcore.vendored.six import iteritems
-
 import json
 
+from aliyunsdkcore.vendored.six import iteritems
 from aliyunsdkcore.endpoint.endpoint_resolver_base import EndpointResolverBase
 from aliyunsdkcore.endpoint.resolver_endpoint_request import ResolveEndpointRequest
 
