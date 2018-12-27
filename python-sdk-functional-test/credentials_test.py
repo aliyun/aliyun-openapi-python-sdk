@@ -13,6 +13,7 @@ from aliyunsdksts.request.v20150401.AssumeRoleRequest import AssumeRoleRequest
 
 
 from base import SDKTestBase
+from base import disabled
 
 
 class CredentialsTest(SDKTestBase):
@@ -72,12 +73,12 @@ class CredentialsTest(SDKTestBase):
         self.assertTrue(ret.get("Regions"))
         self.assertTrue(ret.get("RequestId"))
 
-    # @unittest.skip
-    # def test_ecs_ram_role(self):
-    #     # push ecs
-    #     from aliyunsdkcore.auth.credentials import EcsRamRoleCredential
-    #     ecs_ram_role_credential = EcsRamRoleCredential("TestRole")
-    #     acs_client = AcsClient(region_id="cn-hangzhou", credential=ecs_ram_role_credential)
-    #     request = DescribeRegionsRequest()
-    #     response = acs_client.do_action_with_exception(request)
+    @disabled
+    def test_ecs_ram_role(self):
+        # push ecs
+        from aliyunsdkcore.auth.credentials import EcsRamRoleCredential
+        ecs_ram_role_credential = EcsRamRoleCredential("TestRole")
+        acs_client = AcsClient(region_id="cn-hangzhou", credential=ecs_ram_role_credential)
+        request = DescribeRegionsRequest()
+        response = acs_client.do_action_with_exception(request)
 

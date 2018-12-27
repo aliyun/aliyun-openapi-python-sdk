@@ -71,3 +71,10 @@ class SDKTestBase(TestCase):
         return json.loads(string.decode('utf-8'), encoding="utf-8")
 
 
+def disabled(func):
+    def _decorator():
+        pass
+    return _decorator
+
+
+
