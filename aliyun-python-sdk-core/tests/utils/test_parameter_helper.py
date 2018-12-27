@@ -7,7 +7,7 @@ from aliyunsdkcore.utils import parameter_helper as helper
 
 
 def disabled(func):
-    def _decorator():
+    def _decorator(func):
         pass
     return _decorator
 

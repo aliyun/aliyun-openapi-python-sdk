@@ -72,7 +72,7 @@ class SDKTestBase(TestCase):
 
 
 def disabled(func):
-    def _decorator():
+    def _decorator(func):
         pass
     return _decorator
 

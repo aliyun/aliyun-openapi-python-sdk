@@ -10,7 +10,7 @@ from aliyunsdkcore.acs_exception.exceptions import ClientException
 
 
 def disabled(func):
-    def _decorator():
+    def _decorator(func):
         pass
     return _decorator
 

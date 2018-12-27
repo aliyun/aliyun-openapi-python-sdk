@@ -15,7 +15,7 @@ from aliyunsdkcore.auth.signers.rsa_key_pair_signer import RsaKeyPairSigner
 
 
 def disabled(func):
-    def _decorator():
+    def _decorator(func):
         pass
     return _decorator
 
