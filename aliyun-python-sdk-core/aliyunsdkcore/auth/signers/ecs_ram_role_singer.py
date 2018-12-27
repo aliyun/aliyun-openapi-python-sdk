@@ -20,13 +20,12 @@
 # under the License.
 
 import time
+import json
 
 import logging
 from aliyunsdkcore.vendored.six.moves.urllib.request import urlopen
 
 from aliyunsdkcore.auth.signers.signer import Signer
-
-import json
 
 
 class EcsRamRoleSigner(Signer):

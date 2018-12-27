@@ -162,7 +162,7 @@ def get_signature_headers(
         paths,
         method,
         signer)
-    headers["Authorization"] = "acs " + access_key + ":" + str(signature)
+    headers["Authorization"] = "acs " + str(access_key) + ":" + str(signature)
     return headers
 
 
