@@ -43,7 +43,7 @@ __dict = dict(
     SDK_MISSING_ENDPOINTS_FILER='Internal endpoints info is missing.',
     SDK_UNKNOWN_SERVER_ERROR="Can not parse error message from server response.",
     SDK_INVALID_CREDENTIAL="Need a ak&secret pair or public_key_id&private_key pair to auth.",
-    SDK_INVALID_SESSION_EXPIRATION="Session expiration must between {} and {} seconds")
+    SDK_INVALID_SESSION_EXPIRATION="Session expiration must between {0} and {1} seconds")
 
 
 def get_msg(code):

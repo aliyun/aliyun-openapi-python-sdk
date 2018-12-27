@@ -28,10 +28,11 @@ from aliyunsdkcore.http import method_type as mt
 from aliyunsdkcore.http import format_type as ft
 from aliyunsdkcore.auth.composer import rpc_signature_composer as rpc_signer
 from aliyunsdkcore.auth.composer import roa_signature_composer as roa_signer
-from aliyunsdkcore.auth.utils import md5_tool
+from aliyunsdkcore.utils.parameter_helper import md5_sum
 from aliyunsdkcore.auth.algorithm import sha_hmac1
 from aliyunsdkcore.acs_exception import exceptions
 from aliyunsdkcore.acs_exception import error_code
+from aliyunsdkcore.compat import ensure_string
 
 """
 Acs request model.
@@ -380,8 +381,8 @@ class RoaRequest(AcsRequest):
         """
         sign_params = self._get_sign_params()
         if self.get_content() is not None:
-            md5_str = md5_tool.get_md5_base64_str(self.get_content())
-            self.add_header('Content-MD5', md5_str)
+            self.add_header(
+                'Content-MD5', md5_sum(self.get_content()))
         if 'RegionId' not in sign_params.keys():
             sign_params['RegionId'] = region_id
             self.add_header('x-acs-region-id', str(region_id))
@@ -471,8 +472,9 @@ class CommonRequest(AcsRequest):
 
     def trans_to_acs_request(self):
         if not self._version:
-            raise exceptions.ClientException(error_code.SDK_INVALID_PARAMS,
-                                             'common params [version] is required, cannot be empty')
+            raise exceptions.ClientException(
+                error_code.SDK_INVALID_PARAMS,
+                'common params [version] is required, cannot be empty')
         if not self._action_name and not self._uri_pattern:
             raise exceptions.ClientException(
                 error_code.SDK_INVALID_PARAMS,
@@ -533,6 +535,7 @@ class CommonRequest(AcsRequest):
 
         self.request.set_headers(self.get_headers())
 
-        self.request.set_location_service_code(self.get_location_service_code())
+        self.request.set_location_service_code(
+            self.get_location_service_code())
 
         self.request.set_body_params(self.get_body_params())

@@ -38,7 +38,7 @@ def get_signer_name():
     return "HMAC-SHA1"
 
 
-def get_singer_version():
+def get_signer_version():
     return "1.0"
 
 

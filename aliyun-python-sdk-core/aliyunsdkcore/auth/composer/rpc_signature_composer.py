@@ -41,7 +41,7 @@ def __refresh_sign_parameters(
     parameters["Timestamp"] = helper.get_iso_8061_date()
     parameters["SignatureMethod"] = signer.get_signer_name()
     parameters["SignatureType"] = signer.get_signer_type()
-    parameters["SignatureVersion"] = signer.get_singer_version()
+    parameters["SignatureVersion"] = signer.get_signer_version()
     parameters["SignatureNonce"] = helper.get_uuid()
     parameters["AccessKeyId"] = access_key_id
     if accept_format is not None:
