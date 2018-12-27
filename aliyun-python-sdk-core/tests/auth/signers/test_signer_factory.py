@@ -14,13 +14,19 @@ from aliyunsdkcore.auth.signers.ecs_ram_role_singer import EcsRamRoleSigner
 from aliyunsdkcore.auth.signers.rsa_key_pair_signer import RsaKeyPairSigner
 
 
+def disabled(func):
+    def _decorator():
+        pass
+    return _decorator
+
+
 class TestSignerFactory(unittest.TestCase):
     def test_ak(self):
         cred = {'ak': 'access_key_id', 'secret': 'access_key_secret'}
         signer = SignerFactory.get_signer(cred, 'cn-hangzhou', 'do-action-api')
         self.assertIsInstance(signer, AccessKeySigner)
 
-    @unittest.skip
+    @disabled
     def test_credential(self):
         # access key signer
         cred = {'credential': AccessKeyCredential('access_key_id', 'access_key_secret')}
