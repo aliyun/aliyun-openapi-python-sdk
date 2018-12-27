@@ -1,6 +1,6 @@
 # coding=utf-8
 
-import unittest
+from tests import unittest
 import os
 
 from aliyunsdkcore.auth.signers.signer_factory import SignerFactory
@@ -14,25 +14,18 @@ from aliyunsdkcore.auth.signers.ecs_ram_role_singer import EcsRamRoleSigner
 from aliyunsdkcore.auth.signers.rsa_key_pair_signer import RsaKeyPairSigner
 
 
-def disabled(func):
-    def _decorator(func):
-        pass
-    return _decorator
-
-
 class TestSignerFactory(unittest.TestCase):
     def test_ak(self):
         cred = {'ak': 'access_key_id', 'secret': 'access_key_secret'}
         signer = SignerFactory.get_signer(cred, 'cn-hangzhou', 'do-action-api')
         self.assertIsInstance(signer, AccessKeySigner)
 
-    @disabled
+    @unittest.skip
     def test_credential(self):
         # access key signer
         cred = {'credential': AccessKeyCredential('access_key_id', 'access_key_secret')}
         signer = SignerFactory.get_signer(cred['credential'], 'cn-hangzhou', 'do-action-api')
         self.assertIsInstance(signer, AccessKeySigner)
-
         # sts token signer
         cred = {'credential': StsTokenCredential('sts_access_key_id', 'sts_access_key_secret',
                                                  'sts_token')}

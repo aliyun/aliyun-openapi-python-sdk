@@ -1,18 +1,12 @@
 # coding=utf-8
 
-import unittest
+from tests import unittest
 
 from mock import MagicMock, patch
 
 from aliyunsdkcore.request import AcsRequest, RpcRequest, RoaRequest, CommonRequest
 from aliyunsdkcore.request import get_default_protocol_type, set_default_protocol_type
 from aliyunsdkcore.acs_exception.exceptions import ClientException
-
-
-def disabled(func):
-    def _decorator(func):
-        pass
-    return _decorator
 
 
 class TestRequest(unittest.TestCase):
@@ -120,7 +114,7 @@ class TestRequest(unittest.TestCase):
         r.set_endpoint('endpoint')
         self.assertEqual(r.endpoint, "endpoint")
 
-    @disabled
+    @unittest.skip
     @patch("aliyunsdkcore.utils.parameter_helper.get_iso_8061_date")
     @patch("aliyunsdkcore.utils.parameter_helper.get_uuid")
     def test_rpc_request_get_url(self, mock_get_iso_8061_date, mock_get_uuid):
@@ -169,8 +163,29 @@ class TestRequest(unittest.TestCase):
                               "&Action=action_name"
                               "&SignatureNonce=2018-12-04T04%3A03%3A12Z"
                               "&SignatureType=")
+        # self.assertEqual(url, "/?SignatureVersion=1.0&Format=None"
+        # "&Timestamp=7e1c7d12-7551-4856-8abb-1938ccac6bcc&RegionId=regionid"
+        # "&AccessKeyId=accesskeyid&SignatureMethod=HMAC-SHA1&Version=version"
+        # "&Signature=Ej4GsaOI7FJyN00E5OpDHHCx2vk%3D&Action=action_name"
+        # "&SignatureNonce=2018-12-04T04%3A03%3A12Z&SignatureType=")
+        # with none query params
+        r.set_query_params(None)
+        url = r.get_url("regionid", "accesskeyid", "secret")
+        # self.assertEqual(url, "/?SignatureVersion=1.0&Format=None" +
+        # "&Timestamp=7e1c7d12-7551-4856-8abb-1938ccac6bcc&RegionId=regionid
+        # "&AccessKeyId=accesskeyid&SignatureMethod=HMAC-SHA1&Version=version"
+        # "&Signature=Ej4GsaOI7FJyN00E5OpDHHCx2vk%3D&Action=action_name"
+        # "&SignatureNonce=2018-12-04T04%3A03%3A12Z&SignatureType=")
+        # with region id key
+        r.set_query_params({'RegionId': 'regionid'})
+        url = r.get_url("regionid", "accesskeyid", "secret")
+        # self.assertEqual(url, "/?SignatureVersion=1.0&Format=None"
+        # "&Timestamp=7e1c7d12-7551-4856-8abb-1938ccac6bcc&RegionId=regionid"
+        # "&AccessKeyId=accesskeyid&SignatureMethod=HMAC-SHA1&Version=version"
+        # "&Signature=Ej4GsaOI7FJyN00E5OpDHHCx2vk%3D&Action=action_name"
+        # "&SignatureNonce=2018-12-04T04%3A03%3A12Z&SignatureType=")
 
-    @disabled
+    @unittest.skip
     def test_roa_request(self):
         r = RoaRequest("product", "version", "action_name")
         # accept format
@@ -256,7 +271,7 @@ class TestRequest(unittest.TestCase):
         r.set_path_params({"userid": "linatian"})
         self.assertEqual(r.get_path_params(), {"userid": "linatian"})
 
-    @disabled
+    @unittest.skip
     def test_roa_request_get_url(self):
         r = RoaRequest("product", "version", "action_name")
         r.set_uri_pattern('/users/[user]')
@@ -264,7 +279,7 @@ class TestRequest(unittest.TestCase):
         url = r.get_url("regionid", "accesskeyid", "secret")
         self.assertEqual(url, "/users/jacksontian")
 
-    @disabled
+    @unittest.skip
     @patch("aliyunsdkcore.utils.parameter_helper.get_rfc_2616_date")
     def test_get_signed_header(self, mock_get_rfc_2616_date):
         r = RoaRequest("product", "version", "action_name", headers={})
@@ -322,7 +337,7 @@ class TestRequest(unittest.TestCase):
             'x-acs-version': 'version'
         })
 
-    @disabled
+    @unittest.skip
     def test_common_request(self):
         r = CommonRequest()
         # accept format
@@ -409,7 +424,7 @@ class TestRequest(unittest.TestCase):
         r.set_path_params({"userid": "linatian"})
         self.assertEqual(r.get_path_params(), {"userid": "linatian"})
 
-    @disabled
+    @unittest.skip
     def test_trans_to_acs_request_rpc(self):
         r = CommonRequest()
         # signed_header
@@ -434,7 +449,7 @@ class TestRequest(unittest.TestCase):
         r.trans_to_acs_request()
         self.assertEqual(r.get_style(), "RPC")
 
-    @disabled
+    @unittest.skip
     def test_trans_to_acs_request_to_roa(self):
         r = CommonRequest()
         # signed_header
@@ -459,7 +474,7 @@ class TestRequest(unittest.TestCase):
         r.trans_to_acs_request()
         self.assertEqual(r.get_style(), "ROA")
 
-    @disabled
+    @unittest.skip
     def test_common_request_get_url(self):
         r = CommonRequest()
         r.set_version("version")
@@ -471,7 +486,7 @@ class TestRequest(unittest.TestCase):
         url = r.get_url("regionid", "accesskeyid", "secret")
         self.assertEqual(url, "/users/jacksontian")
 
-    @disabled
+    @unittest.skip
     @patch("aliyunsdkcore.utils.parameter_helper.get_rfc_2616_date")
     def test_common_request_get_signed_header(self, mock_get_rfc_2616_date):
         r = CommonRequest()

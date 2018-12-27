@@ -1,15 +1,9 @@
 # coding=utf-8
 
-import unittest
+from tests import unittest
 from aliyunsdkcore.vendored.six import PY2
 
 from aliyunsdkcore.utils import parameter_helper as helper
-
-
-def disabled(func):
-    def _decorator(func):
-        pass
-    return _decorator
 
 
 class TestShaHmac1(unittest.TestCase):
@@ -48,7 +42,7 @@ class TestShaHmac1(unittest.TestCase):
                 s,
                 '^[A-Z][a-z]{2}, [0-9]{2} [A-Z][a-z]{2} [0-9]{4} [0-9]{2}:[0-9]{2}:[0-9]{2} GMT$')
 
-    @disabled
+    @unittest.skip
     def test_percent_encode(self):
         s = helper.percent_encode("")
         self.assertEqual(s, "")
