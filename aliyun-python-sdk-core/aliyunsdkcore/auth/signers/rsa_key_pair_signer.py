@@ -46,8 +46,9 @@ class RsaKeyPairSigner(Signer):
                 or rsa_key_pair_credential.session_period > self._MAX_SESSION_PERIOD:
             raise exceptions.ClientException(
                 error_code.SDK_INVALID_SESSION_EXPIRATION,
-                error_msg.get_msg('SDK_INVALID_SESSION_EXPIRATION').format(self._MIN_SESSION_PERIOD,
-                                                                           self._MAX_SESSION_PERIOD))
+                error_msg.get_msg('SDK_INVALID_SESSION_EXPIRATION').format(
+                    self._MIN_SESSION_PERIOD,
+                    self._MAX_SESSION_PERIOD))
         rsa_key_pair_credential.region_id = region_id
         self._public_key_id = rsa_key_pair_credential.public_key_id
         self._private_key = rsa_key_pair_credential.private_key
@@ -55,11 +56,14 @@ class RsaKeyPairSigner(Signer):
         self._schedule_interval = rsa_key_pair_credential.session_period if debug \
             else max(rsa_key_pair_credential.session_period * 0.8, 5)
         from aliyunsdkcore.client import AcsClient
-        self._sts_client = AcsClient(self._public_key_id, self._private_key, rsa_key_pair_credential.region_id)
+        self._sts_client = AcsClient(self._public_key_id,
+                                     self._private_key,
+                                     rsa_key_pair_credential.region_id)
         self._session_credential = None
         self._get_session_ak_and_sk()
         self._scheduler = sched.scheduler(time.time, time.sleep)
-        self._daemon_thread = threading.Thread(target=self._refresh_session_ak_and_sk, args=[True, 0])
+        self._daemon_thread = threading.Thread(target=self._refresh_session_ak_and_sk,
+                                               args=[True, 0])
         self._daemon_thread.setDaemon(True)
         self._daemon_thread.start()
 
@@ -83,7 +87,8 @@ class RsaKeyPairSigner(Signer):
 
             self._session_credential = session_ak, session_sk
         except exceptions.ServerException as srv_ex:
-            if srv_ex.error_code == 'InvalidAccessKeyId.NotFound' or srv_ex.error_code == 'SignatureDoesNotMatch':
+            if srv_ex.error_code == 'InvalidAccessKeyId.NotFound' \
+                    or srv_ex.error_code == 'SignatureDoesNotMatch':
                 raise exceptions.ClientException(error_code.SDK_INVALID_CREDENTIAL,
                                                  error_msg.get_msg('SDK_INVALID_CREDENTIAL'))
             else:
@@ -105,16 +110,18 @@ class RsaKeyPairSigner(Signer):
                 delay = 60 * min(10, retry_times)
             next_retry_time = retry_times + 1
             logging.warn(
-                'refresh session ak failed, auto retry after {} seconds. message = {}'.format(delay, ex))
+                'refresh session ak failed, '
+                'auto retry after {} seconds. message = {}'.format(delay, ex))
         finally:
-            self._scheduler.enter(delay, self._PRIORITY, self._refresh_session_ak_and_sk, [False, next_retry_time])
+            self._scheduler.enter(delay, self._PRIORITY, self._refresh_session_ak_and_sk,
+                                  [False, next_retry_time])
             self._scheduler.run()
 
 
 class GetSessionAkRequest(RpcRequest):
     def __init__(self):
-        RpcRequest.__init__(self, product='Sts', version='2015-04-01', action_name='GenerateSessionAccessKey',
-                            signer=sha_hmac256)
+        RpcRequest.__init__(self, product='Sts', version='2015-04-01',
+                            action_name='GenerateSessionAccessKey', signer=sha_hmac256)
         self.set_protocol_type('https')
 
     def get_duration_seconds(self):

@@ -21,7 +21,8 @@ class ErrorHandleTest(SDKTestBase):
         return head_message, obj
 
     def test_server_timeout(self):
-        acs_client = AcsClient(self.access_key_id, self.access_key_secret, "cn-hangzhou", timeout=0.001)
+        acs_client = AcsClient(self.access_key_id, self.access_key_secret,
+                               "cn-hangzhou", timeout=0.001)
         from aliyunsdkecs.request.v20140526.CreateInstanceRequest import CreateInstanceRequest
         request = CreateInstanceRequest()
         request.set_ImageId("coreos_1745_7_0_64_30G_alibase_20180705.vhd")
@@ -42,20 +43,19 @@ class ErrorHandleTest(SDKTestBase):
 
     def test_server_unreachable(self):
         from aliyunsdkcore.request import CommonRequest
-        request = CommonRequest(domain="www.aliyun-hangzhou.com", version="2014-05-26", action_name="DescribeRegions")
+        request = CommonRequest(domain="www.aliyun-hangzhou.com", version="2014-05-26",
+                                action_name="DescribeRegions")
         try:
             response = self.client.do_action_with_exception(request)
             assert False
         except ClientException as e:
             self.assertEqual("SDK.HttpError", e.error_code)
             head_message, attributes = self._parse_complex_error_message(e.get_error_msg())
-            self.assertTrue("getaddrinfo failed" in head_message)
             self.assertEqual("www.aliyun-hangzhou.com", attributes.get("Endpoint"))
             self.assertEqual("None", attributes.get("Product"))
             self.assertTrue("SdkCoreVersion" in attributes)
             self.assertTrue("HttpUrl" in attributes)
             self.assertTrue("HttpHeaders" in attributes)
-
 
     def test_server_error_normal(self):
         from aliyunsdkecs.request.v20140526.DeleteInstanceRequest import DeleteInstanceRequest
@@ -96,7 +96,8 @@ class ErrorHandleTest(SDKTestBase):
             assert False
         except ServerException as e:
             self.assertEqual("SDK.UnknownServerError", e.get_error_code())
-            self.assertEqual("""ServerResponseBody: {"key" : "this is a valid json string"}""", e.get_error_msg())
+            self.assertEqual("""ServerResponseBody: {"key" : "this is a valid json string"}""",
+                             e.get_error_msg())
 
         # test missing Code in response
         def implementation_of_do_action(request):
@@ -118,4 +119,5 @@ class ErrorHandleTest(SDKTestBase):
             assert False
         except ServerException as e:
             self.assertEqual("YouMessedSomethingUp", e.get_error_code())
-            self.assertEqual("""ServerResponseBody: {"Code": "YouMessedSomethingUp"}""", e.get_error_msg())
+            self.assertEqual("""ServerResponseBody: {"Code": "YouMessedSomethingUp"}""",
+                             e.get_error_msg())

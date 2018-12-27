@@ -12,8 +12,8 @@ class TestAcsClient(unittest.TestCase):
         with self.assertRaises(ClientException) as ex:
             AcsClient()
         self.assertEqual(ex.exception.error_code, "SDK.InvalidCredential")
-        self.assertEqual(
-            ex.exception.message, "Need a ak&secret pair or public_key_id&private_key pair to auth.")
+        self.assertEqual(ex.exception.message,
+                         "Need a ak&secret pair or public_key_id&private_key pair to auth.")
         client = AcsClient(ak="access_key_id", secret="access_key_secret")
         self.assertEqual(client.get_access_key(), "access_key_id")
         self.assertEqual(client.get_access_secret(), "access_key_secret")

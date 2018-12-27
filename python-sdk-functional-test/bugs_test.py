@@ -19,7 +19,9 @@ class BugsTest(SDKTestBase):
         region_provider.modify_point(
             'Green', 'cn-shanghai', 'green.cn-shanghai.aliyuncs.com')
         request = ImageAsyncScanRequest.ImageAsyncScanRequest()
-        image_url = 'https://gss2.bdstatic.com/-fo3dSag_xI4khGkpoWK1HF6hhy/baike/w%3D790/sign=b51ba990a68b87d65042a91637092860/6c224f4a20a446230ff0bec39f22720e0cf3d75c.jpg'
+        image_url = 'https://gss2.bdstatic.com/-fo3dSag_xI4khGkpoWK1HF6hhy/baike/w%3D790/' \
+                    'sign=b51ba990a68b87d65042a91637092860/' \
+                    '6c224f4a20a446230ff0bec39f22720e0cf3d75c.jpg'
         task1 = {"dataId": str(uuid.uuid1()),
                  "url": image_url,
                  "time": datetime.datetime.now().microsecond
@@ -37,7 +39,8 @@ class BugsTest(SDKTestBase):
         request.add_header("x-acs-signature-method", "HMAC-SHA1")
         request.add_header("x-acs-signature-nonce", uuid.uuid4().hex)
         request.add_header("x-acs-signature-version", "1.0")
-        content = '{"text":"裙子穿着很美哦，上身效果也不错，是纯棉的料子，穿着也很舒服。", "cate":"clothing"}'
+        content = '{"text":"裙子穿着很美哦，上身效果也不错，是纯棉的料子，穿着也很舒服。", ' \
+                  '"cate":"clothing"}'
         request.set_content_type("application/json;chrset=utf-8")
         request.set_accept_format("application/json;chrset=utf-8")
         if sys.version_info[0] == 2:
@@ -50,8 +53,8 @@ class BugsTest(SDKTestBase):
             response = self.client.do_action_with_exception(request)
             assert False
         except ServerException as e:
-            self.assertEqual("InvalidApi.NotPurchase",e.error_code)
-            self.assertEqual("Specified api is not purchase",e.get_error_msg())
+            self.assertEqual("InvalidApi.NotPurchase", e.error_code)
+            self.assertEqual("Specified api is not purchase", e.get_error_msg())
 
     def test_bug_with_17602976(self):
         from aliyunsdkecs.request.v20140526.DescribeRegionsRequest import DescribeRegionsRequest
@@ -64,5 +67,3 @@ class BugsTest(SDKTestBase):
             assert False
         except (ValueError, TypeError, AttributeError) as e:
             self.assertEqual("'list' object has no attribute 'get'", e.args[0])
-
-

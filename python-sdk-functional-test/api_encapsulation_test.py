@@ -29,7 +29,8 @@ class APIEncapsulateTest(SDKTestBase):
         self.assertTrue(response.get("RequestId"))
 
     def test_request_with_slb(self):
-        from aliyunsdkslb.request.v20140515.DescribeAccessControlListsRequest import DescribeAccessControlListsRequest
+        from aliyunsdkslb.request.v20140515.DescribeAccessControlListsRequest \
+            import DescribeAccessControlListsRequest
         request = DescribeAccessControlListsRequest()
         response = self.client.do_action_with_exception(request)
         response = self.get_dict_response(response)
@@ -43,7 +44,8 @@ class APIEncapsulateTest(SDKTestBase):
         self.assertTrue(response.get("AccessKeys"))
 
     def test_request_with_vpc(self):
-        from aliyunsdkvpc.request.v20160428.DescribeAccessPointsRequest import DescribeAccessPointsRequest
+        from aliyunsdkvpc.request.v20160428.DescribeAccessPointsRequest \
+            import DescribeAccessPointsRequest
         request = DescribeAccessPointsRequest()
         response = self.client.do_action_with_exception(request)
         response = self.get_dict_response(response)

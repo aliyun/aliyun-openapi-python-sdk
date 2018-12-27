@@ -32,6 +32,7 @@ class StsTokenSigner(Signer):
             request.add_query_param("SecurityToken", sts_cred.sts_token)
         else:
             request.add_header("x-acs-security-token", sts_cred.sts_token)
-        header = request.get_signed_header(region_id, sts_cred.sts_access_key_id, sts_cred.sts_access_key_secret)
+        header = request.get_signed_header(region_id, sts_cred.sts_access_key_id,
+                                           sts_cred.sts_access_key_secret)
         url = request.get_url(region_id, sts_cred.sts_access_key_id, sts_cred.sts_access_key_secret)
         return header, url
