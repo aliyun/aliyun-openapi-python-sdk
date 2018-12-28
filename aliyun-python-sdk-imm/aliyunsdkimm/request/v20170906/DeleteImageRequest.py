@@ -18,16 +18,16 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class ListTagNamesRequest(RpcRequest):
+class DeleteImageRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'imm', '2017-09-06', 'ListTagNames','imm')
+		RpcRequest.__init__(self, 'imm', '2017-09-06', 'DeleteImage','imm')
 
-	def get_Marker(self):
-		return self.get_query_params().get('Marker')
+	def get_ImageUri(self):
+		return self.get_query_params().get('ImageUri')
 
-	def set_Marker(self,Marker):
-		self.add_query_param('Marker',Marker)
+	def set_ImageUri(self,ImageUri):
+		self.add_query_param('ImageUri',ImageUri)
 
 	def get_Project(self):
 		return self.get_query_params().get('Project')

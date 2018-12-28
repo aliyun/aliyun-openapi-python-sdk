@@ -18,16 +18,22 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class ListTagNamesRequest(RpcRequest):
+class CompareImageFacesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'imm', '2017-09-06', 'ListTagNames','imm')
+		RpcRequest.__init__(self, 'imm', '2017-09-06', 'CompareImageFaces','imm')
 
-	def get_Marker(self):
-		return self.get_query_params().get('Marker')
+	def get_ImageUriB(self):
+		return self.get_query_params().get('ImageUriB')
 
-	def set_Marker(self,Marker):
-		self.add_query_param('Marker',Marker)
+	def set_ImageUriB(self,ImageUriB):
+		self.add_query_param('ImageUriB',ImageUriB)
+
+	def get_ImageUriA(self):
+		return self.get_query_params().get('ImageUriA')
+
+	def set_ImageUriA(self,ImageUriA):
+		self.add_query_param('ImageUriA',ImageUriA)
 
 	def get_Project(self):
 		return self.get_query_params().get('Project')
@@ -40,3 +46,15 @@ class ListTagNamesRequest(RpcRequest):
 
 	def set_SetId(self,SetId):
 		self.add_query_param('SetId',SetId)
+
+	def get_FaceIdA(self):
+		return self.get_query_params().get('FaceIdA')
+
+	def set_FaceIdA(self,FaceIdA):
+		self.add_query_param('FaceIdA',FaceIdA)
+
+	def get_FaceIdB(self):
+		return self.get_query_params().get('FaceIdB')
+
+	def set_FaceIdB(self,FaceIdB):
+		self.add_query_param('FaceIdB',FaceIdB)

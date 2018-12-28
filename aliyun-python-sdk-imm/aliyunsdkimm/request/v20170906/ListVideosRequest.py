@@ -18,10 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class ListTagNamesRequest(RpcRequest):
+class ListVideosRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'imm', '2017-09-06', 'ListTagNames','imm')
+		RpcRequest.__init__(self, 'imm', '2017-09-06', 'ListVideos','imm')
 
 	def get_Marker(self):
 		return self.get_query_params().get('Marker')
@@ -40,3 +40,9 @@ class ListTagNamesRequest(RpcRequest):
 
 	def set_SetId(self,SetId):
 		self.add_query_param('SetId',SetId)
+
+	def get_CreateTimeStart(self):
+		return self.get_query_params().get('CreateTimeStart')
+
+	def set_CreateTimeStart(self,CreateTimeStart):
+		self.add_query_param('CreateTimeStart',CreateTimeStart)
