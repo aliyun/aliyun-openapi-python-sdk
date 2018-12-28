@@ -1,4 +1,9 @@
 2018-12-28 Version: 1.0.2
+1, container probe.
+2, container securityContext.
+3, pod dnsConfig.
+
+2018-12-28 Version: 1.0.2
 1, probe,securityContext,dnsConfig.
 
 2018-12-28 Version: 1.0.2
