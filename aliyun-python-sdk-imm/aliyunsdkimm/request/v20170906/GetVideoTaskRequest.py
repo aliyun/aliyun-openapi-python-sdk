@@ -18,16 +18,16 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class ListTagNamesRequest(RpcRequest):
+class GetVideoTaskRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'imm', '2017-09-06', 'ListTagNames','imm')
+		RpcRequest.__init__(self, 'imm', '2017-09-06', 'GetVideoTask','imm')
 
-	def get_Marker(self):
-		return self.get_query_params().get('Marker')
+	def get_TaskType(self):
+		return self.get_query_params().get('TaskType')
 
-	def set_Marker(self,Marker):
-		self.add_query_param('Marker',Marker)
+	def set_TaskType(self,TaskType):
+		self.add_query_param('TaskType',TaskType)
 
 	def get_Project(self):
 		return self.get_query_params().get('Project')
@@ -35,8 +35,8 @@ class ListTagNamesRequest(RpcRequest):
 	def set_Project(self,Project):
 		self.add_query_param('Project',Project)
 
-	def get_SetId(self):
-		return self.get_query_params().get('SetId')
+	def get_TaskId(self):
+		return self.get_query_params().get('TaskId')
 
-	def set_SetId(self,SetId):
-		self.add_query_param('SetId',SetId)
+	def set_TaskId(self,TaskId):
+		self.add_query_param('TaskId',TaskId)

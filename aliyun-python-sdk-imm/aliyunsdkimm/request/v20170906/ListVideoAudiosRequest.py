@@ -18,10 +18,16 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class ListTagNamesRequest(RpcRequest):
+class ListVideoAudiosRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'imm', '2017-09-06', 'ListTagNames','imm')
+		RpcRequest.__init__(self, 'imm', '2017-09-06', 'ListVideoAudios','imm')
+
+	def get_VideoUri(self):
+		return self.get_query_params().get('VideoUri')
+
+	def set_VideoUri(self,VideoUri):
+		self.add_query_param('VideoUri',VideoUri)
 
 	def get_Marker(self):
 		return self.get_query_params().get('Marker')
