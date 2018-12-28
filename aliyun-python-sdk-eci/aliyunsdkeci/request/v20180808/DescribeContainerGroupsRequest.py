@@ -93,3 +93,9 @@ class DescribeContainerGroupsRequest(RpcRequest):
 
 	def set_ZoneId(self,ZoneId):
 		self.add_query_param('ZoneId',ZoneId)
+
+	def get_Status(self):
+		return self.get_query_params().get('Status')
+
+	def set_Status(self, Status):
+		self.add_query_param('Status', Status)
