@@ -71,9 +71,9 @@ class DescribeContainerGroupsRequest(RpcRequest):
 	def set_Tags(self,Tags):
 		for i in range(len(Tags)):
 			if Tags[i].get('Key') is not None:
-				self.add_query_param('Tags.' + str(i + 1) + '.Key' , Tags[i].get('Key'))
+				self.add_query_param('Tag.' + str(i + 1) + '.Key' , Tags[i].get('Key'))
 			if Tags[i].get('Value') is not None:
-				self.add_query_param('Tags.' + str(i + 1) + '.Value' , Tags[i].get('Value'))
+				self.add_query_param('Tag.' + str(i + 1) + '.Value' , Tags[i].get('Value'))
 
 
 	def get_VSwitchId(self):
