@@ -22,7 +22,7 @@ class GetProductRequest(RoaRequest):
 
 	def __init__(self):
 		RoaRequest.__init__(self, 'ProductCatalog', '2018-09-18', 'GetProduct')
-		self.set_uri_pattern('/products/v1/public/[ProductId]/')
+		self.set_uri_pattern('/products/some_tests/public/[ProductId]/')
 		self.set_method('GET')
 
 	def get_ProductId(self):

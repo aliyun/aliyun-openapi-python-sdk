@@ -22,7 +22,7 @@ class ListApisRequest(RoaRequest):
 
 	def __init__(self):
 		RoaRequest.__init__(self, 'ProductCatalog', '2018-09-18', 'ListApis')
-		self.set_uri_pattern('/products/v1/public/[ProductId]/versions/[VersionId]/apis/')
+		self.set_uri_pattern('/products/some_tests/public/[ProductId]/versions/[VersionId]/apis/')
 		self.set_method('GET')
 
 	def get_VersionId(self):

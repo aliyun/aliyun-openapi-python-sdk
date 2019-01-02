@@ -27,7 +27,7 @@ class CreateContainerGroupRequest(RpcRequest):
 		return self.get_query_params().get('Containers')
 
 	def set_Containers(self,Containers):
-		for i in range(len(Containers)):	
+		for i in range(len(Containers)):
 			if Containers[i].get('Image') is not None:
 				self.add_query_param('Container.' + str(i + 1) + '.Image' , Containers[i].get('Image'))
 			if Containers[i].get('Name') is not None:
@@ -40,6 +40,87 @@ class CreateContainerGroupRequest(RpcRequest):
 				self.add_query_param('Container.' + str(i + 1) + '.WorkingDir' , Containers[i].get('WorkingDir'))
 			if Containers[i].get('ImagePullPolicy') is not None:
 				self.add_query_param('Container.' + str(i + 1) + '.ImagePullPolicy' , Containers[i].get('ImagePullPolicy'))
+
+			#ReadinessProbe
+			if Containers[i].get('ReadinessProbe.HttpGet.Path') is not None:
+				self.add_query_param('Container.' + str(i + 1) + '.ReadinessProbe.HttpGet.Path',
+									 Containers[i].get('ReadinessProbe.HttpGet.Path'))
+			if Containers[i].get('ReadinessProbe.HttpGet.Port') is not None:
+				self.add_query_param('Container.' + str(i + 1) + '.ReadinessProbe.HttpGet.Port',
+									 Containers[i].get('ReadinessProbe.HttpGet.Port'))
+			if Containers[i].get('ReadinessProbe.HttpGet.Scheme') is not None:
+				self.add_query_param('Container.' + str(i + 1) + '.ReadinessProbe.HttpGet.Scheme',
+									 Containers[i].get('ReadinessProbe.HttpGet.Scheme'))
+			if Containers[i].get('ReadinessProbe.InitialDelaySeconds') is not None:
+				self.add_query_param('Container.' + str(i + 1) + '.ReadinessProbe.InitialDelaySeconds',
+									 Containers[i].get('ReadinessProbe.InitialDelaySeconds'))
+			if Containers[i].get('ReadinessProbe.PeriodSeconds') is not None:
+				self.add_query_param('Container.' + str(i + 1) + '.ReadinessProbe.PeriodSeconds',
+									 Containers[i].get('ReadinessProbe.PeriodSeconds'))
+			if Containers[i].get('ReadinessProbe.SuccessThreshold') is not None:
+				self.add_query_param('Container.' + str(i + 1) + '.ReadinessProbe.SuccessThreshold',
+									 Containers[i].get('ReadinessProbe.SuccessThreshold'))
+			if Containers[i].get('ReadinessProbe.FailureThreshold') is not None:
+				self.add_query_param('Container.' + str(i + 1) + '.ReadinessProbe.FailureThreshold',
+									 Containers[i].get('ReadinessProbe.FailureThreshold'))
+			if Containers[i].get('ReadinessProbe.TimeoutSeconds') is not None:
+				self.add_query_param('Container.' + str(i + 1) + '.ReadinessProbe.TimeoutSeconds',
+									 Containers[i].get('ReadinessProbe.TimeoutSeconds'))
+			if Containers[i].get('ReadinessProbe.Exec.Commands') is not None:
+				for j in range(len(Containers[i].get('ReadinessProbe.Exec.Commands'))):
+					if Containers[i].get('ReadinessProbe.Exec.Commands')[j] is not None:
+						self.add_query_param('Container.' + str(i + 1) + '.ReadinessProbe.Exec.Command.' + str(j + 1),
+											 Containers[i].get('ReadinessProbe.Exec.Commands')[j])
+			if Containers[i].get('ReadinessProbe.TcpSocket.Port') is not None:
+				self.add_query_param('Container.' + str(i + 1) + '.ReadinessProbe.TcpSocket.Port',
+									 Containers[i].get('ReadinessProbe.TcpSocket.Port'))
+
+			#LivenessProbe
+			if Containers[i].get('LivenessProbe.HttpGet.Path') is not None:
+				self.add_query_param('Container.' + str(i + 1) + '.LivenessProbe.HttpGet.Path',
+									 Containers[i].get('LivenessProbe.HttpGet.Path'))
+			if Containers[i].get('LivenessProbe.HttpGet.Port') is not None:
+				self.add_query_param('Container.' + str(i + 1) + '.LivenessProbe.HttpGet.Port',
+									 Containers[i].get('LivenessProbe.HttpGet.Port'))
+			if Containers[i].get('LivenessProbe.HttpGet.Scheme') is not None:
+				self.add_query_param('Container.' + str(i + 1) + '.LivenessProbe.HttpGet.Scheme',
+									 Containers[i].get('LivenessProbe.HttpGet.Scheme'))
+			if Containers[i].get('LivenessProbe.InitialDelaySeconds') is not None:
+				self.add_query_param('Container.' + str(i + 1) + '.LivenessProbe.InitialDelaySeconds',
+									 Containers[i].get('LivenessProbe.InitialDelaySeconds'))
+			if Containers[i].get('LivenessProbe.PeriodSeconds') is not None:
+				self.add_query_param('Container.' + str(i + 1) + '.LivenessProbe.PeriodSeconds',
+									 Containers[i].get('LivenessProbe.PeriodSeconds'))
+			if Containers[i].get('LivenessProbe.SuccessThreshold') is not None:
+				self.add_query_param('Container.' + str(i + 1) + '.LivenessProbe.SuccessThreshold',
+									 Containers[i].get('LivenessProbe.SuccessThreshold'))
+			if Containers[i].get('LivenessProbe.FailureThreshold') is not None:
+				self.add_query_param('Container.' + str(i + 1) + '.LivenessProbe.FailureThreshold',
+									 Containers[i].get('LivenessProbe.FailureThreshold'))
+			if Containers[i].get('LivenessProbe.TimeoutSeconds') is not None:
+				self.add_query_param('Container.' + str(i + 1) + '.LivenessProbe.TimeoutSeconds',
+									 Containers[i].get('LivenessProbe.TimeoutSeconds'))
+			if Containers[i].get('LivenessProbe.Exec.Commands') is not None:
+				for j in range(len(Containers[i].get('LivenessProbe.Exec.Commands'))):
+					if Containers[i].get('LivenessProbe.Exec.Commands')[j] is not None:
+						self.add_query_param('Container.' + str(i + 1) + '.LivenessProbe.Exec.Command.' + str(j + 1),
+											 Containers[i].get('LivenessProbe.Exec.Commands')[j])
+			if Containers[i].get('LivenessProbe.TcpSocket.Port') is not None:
+				self.add_query_param('Container.' + str(i + 1) + '.LivenessProbe.TcpSocket.Port',
+									 Containers[i].get('LivenessProbe.TcpSocket.Port'))
+			#SecurityContext
+			if Containers[i].get('SecurityContext.Capability.Adds') is not None:
+				for j in range(len(Containers[i].get('SecurityContext.Capability.Adds'))):
+					if Containers[i].get('SecurityContext.Capability.Adds')[j] is not None:
+						self.add_query_param(
+							'Container.' + str(i + 1) + '.SecurityContext.Capability.Add.' + str(j + 1),
+							Containers[i].get('SecurityContext.Capability.Adds')[j])
+			if Containers[i].get('SecurityContext.ReadOnlyRootFilesystem') is not None:
+				self.add_query_param('Container.' + str(i + 1) + '.SecurityContext.ReadOnlyRootFilesystem',
+									 Containers[i].get('SecurityContext.ReadOnlyRootFilesystem'))
+			if Containers[i].get('SecurityContext.RunAsUser') is not None:
+				self.add_query_param('Container.' + str(i + 1) + '.SecurityContext.RunAsUser',
+									 Containers[i].get('SecurityContext.RunAsUser'))
 
 			if Containers[i].get('Commands') is not None:
 				for j in range(len(Containers[i].get('Commands'))):
@@ -111,6 +192,20 @@ class CreateContainerGroupRequest(RpcRequest):
 				self.add_query_param('InitContainer.' + str(i + 1) + '.ImagePullPolicy',
 									 InitContainers[i].get('ImagePullPolicy'))
 
+			#SecurityContext
+			if InitContainers[i].get('SecurityContext.Capability.Adds') is not None:
+				for j in range(len(InitContainers[i].get('SecurityContext.Capability.Adds'))):
+					if InitContainers[i].get('SecurityContext.Capability.Adds')[j] is not None:
+						self.add_query_param(
+							'InitContainer.' + str(i + 1) + '.SecurityContext.Capability.Add.' + str(j + 1),
+							InitContainers[i].get('SecurityContext.Capability.Adds')[j])
+			if InitContainers[i].get('SecurityContext.ReadOnlyRootFilesystem') is not None:
+				self.add_query_param('InitContainer.' + str(i + 1) + '.SecurityContext.ReadOnlyRootFilesystem',
+									 InitContainers[i].get('SecurityContext.ReadOnlyRootFilesystem'))
+			if InitContainers[i].get('SecurityContext.RunAsUser') is not None:
+				self.add_query_param('InitContainer.' + str(i + 1) + '.SecurityContext.RunAsUser',
+									 InitContainers[i].get('SecurityContext.RunAsUser'))
+
 			if InitContainers[i].get('Commands') is not None:
 				for j in range(len(InitContainers[i].get('Commands'))):
 					if InitContainers[i].get('Commands')[j] is not None:
@@ -153,20 +248,24 @@ class CreateContainerGroupRequest(RpcRequest):
 		return self.get_query_params().get('ImageRegistryCredentials')
 
 	def set_ImageRegistryCredentials(self,ImageRegistryCredentials):
-		for i in range(len(ImageRegistryCredentials)):	
-			if ImageRegistryCredentials[i].get('Server') is not None:
-				self.add_query_param('ImageRegistryCredential.' + str(i + 1) + '.Server' , ImageRegistryCredentials[i].get('Server'))
-			if ImageRegistryCredentials[i].get('UserName') is not None:
-				self.add_query_param('ImageRegistryCredential.' + str(i + 1) + '.UserName' , ImageRegistryCredentials[i].get('UserName'))
-			if ImageRegistryCredentials[i].get('Password') is not None:
-				self.add_query_param('ImageRegistryCredential.' + str(i + 1) + '.Password' , ImageRegistryCredentials[i].get('Password'))
+		if ImageRegistryCredentials is not None:
+			for i in range(len(ImageRegistryCredentials)):
+				if ImageRegistryCredentials[i].get('Server') is not None:
+					self.add_query_param('ImageRegistryCredential.' + str(i + 1) + '.Server',
+										 ImageRegistryCredentials[i].get('Server'))
+				if ImageRegistryCredentials[i].get('UserName') is not None:
+					self.add_query_param('ImageRegistryCredential.' + str(i + 1) + '.UserName',
+										 ImageRegistryCredentials[i].get('UserName'))
+				if ImageRegistryCredentials[i].get('Password') is not None:
+					self.add_query_param('ImageRegistryCredential.' + str(i + 1) + '.Password',
+										 ImageRegistryCredentials[i].get('Password'))
 
 
 	def get_Tags(self):
 		return self.get_query_params().get('Tags')
 
 	def set_Tags(self,Tags):
-		for i in range(len(Tags)):	
+		for i in range(len(Tags)):
 			if Tags[i].get('Key') is not None:
 				self.add_query_param('Tag.' + str(i + 1) + '.Key' , Tags[i].get('Key'))
 			if Tags[i].get('Value') is not None:
@@ -213,7 +312,7 @@ class CreateContainerGroupRequest(RpcRequest):
 		return self.get_query_params().get('Volumes')
 
 	def set_Volumes(self,Volumes):
-		for i in range(len(Volumes)):	
+		for i in range(len(Volumes)):
 			if Volumes[i].get('Name') is not None:
 				self.add_query_param('Volume.' + str(i + 1) + '.Name' , Volumes[i].get('Name'))
 			if Volumes[i].get('NFSVolume.Server') is not None:
@@ -248,3 +347,30 @@ class CreateContainerGroupRequest(RpcRequest):
 
 	def set_ZoneId(self,ZoneId):
 		self.add_query_param('ZoneId',ZoneId)
+
+	#DNS config
+	def get_DnsConfigNameServers(self):
+		return self.get_query_params().get('DnsConfig.NameServers')
+
+	def set_DnsConfigNameServers(self, DnsConfigNameServers):
+		for i in range(len(DnsConfigNameServers)):
+			if DnsConfigNameServers[i] is not None:
+				self.add_query_param('DnsConfig.NameServer.' + str(i + 1), DnsConfigNameServers[i])
+
+	def get_DnsConfigOptions(self):
+		return self.get_query_params().get('DnsConfig.Options')
+
+	def set_DnsConfigOptions(self, DnsConfigOptions):
+		for i in range(len(DnsConfigOptions)):
+			if DnsConfigOptions[i].get('Name') is not None:
+				self.add_query_param('DnsConfig.Option.' + str(i + 1) + '.Name', DnsConfigOptions[i].get('Name'))
+			if DnsConfigOptions[i].get('Value') is not None:
+				self.add_query_param('DnsConfig.Option.' + str(i + 1) + '.Value', DnsConfigOptions[i].get('Value'))
+
+	def get_DnsConfigSearchs(self):
+		return self.get_query_params().get('DnsConfig.Searchs')
+	
+	def set_DnsConfigSearchs(self, DnsConfigSearchs):
+		for i in range(len(DnsConfigSearchs)):
+			if DnsConfigSearchs[i] is not None:
+				self.add_query_param('DnsConfig.Search.' + str(i + 1), DnsConfigSearchs[i])

@@ -31,7 +31,7 @@ try:
 except ImportError as e:
     import simplejson as json
 
-XMLNS = "http://mns.aliyuncs.com/doc/v1/"
+XMLNS = "http://mns.aliyuncs.com/doc/some_tests/"
 class EncoderBase:
     @staticmethod
     def insert_if_valid(item_name, item_value, invalid_value, data_dic):

@@ -22,7 +22,7 @@ class ListProductsRequest(RoaRequest):
 
 	def __init__(self):
 		RoaRequest.__init__(self, 'ProductCatalog', '2018-09-18', 'ListProducts')
-		self.set_uri_pattern('/products/v1/public/')
+		self.set_uri_pattern('/products/some_tests/public/')
 		self.set_method('GET')
 
 	def get_Limit(self):
