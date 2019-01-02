@@ -34,12 +34,13 @@ class ErrorHandleTest(SDKTestBase):
         except ClientException as e:
             self.assertEqual("SDK.HttpError", e.error_code)
             head_message, attributes = self._parse_complex_error_message(e.get_error_msg())
-            self.assertEqual("timed out", head_message)
+            self.assertTrue(head_message.startswith("HTTPConnectionPool(host='ecs-cn-hangzhou.aliyuncs.com', port=80):"))
             self.assertEqual("ecs-cn-hangzhou.aliyuncs.com", attributes.get("Endpoint"))
             self.assertEqual("Ecs", attributes.get("Product"))
             self.assertTrue("SdkCoreVersion" in attributes)
             self.assertTrue("HttpUrl" in attributes)
             self.assertTrue("HttpHeaders" in attributes)
+
 
     def test_server_unreachable(self):
         from aliyunsdkcore.request import CommonRequest
@@ -122,3 +123,4 @@ class ErrorHandleTest(SDKTestBase):
             self.assertEqual("YouMessedSomethingUp", e.get_error_code())
             self.assertEqual("""ServerResponseBody: {"Code": "YouMessedSomethingUp"}""",
                              e.get_error_msg())
+

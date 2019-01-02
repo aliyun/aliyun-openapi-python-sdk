@@ -22,7 +22,7 @@ import warnings
 import json
 import aliyunsdkcore
 from aliyunsdkcore.vendored.six.moves.urllib.parse import urlencode
-from aliyunsdkcore.vendored.six.moves import http_client
+from aliyunsdkcore.vendored.requests import codes
 
 from aliyunsdkcore.acs_exception.exceptions import ClientException
 from aliyunsdkcore.acs_exception.exceptions import ServerException
@@ -79,8 +79,6 @@ class AcsClient:
         self.__user_agent = user_agent
         self._port = port
         self._timeout = timeout
-        # if true, do_action() will throw a ClientException that contains URL
-        self._url_test_flag = False
         credential = {
             'ak': ak,
             'secret': secret,
@@ -89,8 +87,8 @@ class AcsClient:
             'session_period': session_period,
             'credential': credential,
         }
-        self._signer = SignerFactory.get_signer(credential, region_id,
-                                                self.implementation_of_do_action, debug)
+        self._signer = SignerFactory.get_signer(
+            credential, region_id, self.implementation_of_do_action, debug)
         self._endpoint_resolver = DefaultEndpointResolver(self)
 
     def get_region_id(self):
@@ -217,8 +215,6 @@ class AcsClient:
             endpoint = self._resolve_endpoint(request)
 
         http_response = self._make_http_response(endpoint, request, signer)
-        if self._url_test_flag:
-            raise ClientException("URLTestFlagIsSet", http_response.get_url())
 
         # Do the actual network thing
         try:
@@ -230,7 +226,8 @@ class AcsClient:
             error_message += "\nProduct: " + str(request.get_product())
             error_message += "\nSdkCoreVersion: " + aliyunsdkcore.__version__
             error_message += "\nHttpUrl: " + str(http_response.get_url())
-            error_message += "\nHttpHeaders: " + str(http_response.get_headers())
+            error_message += "\nHttpHeaders: " + \
+                str(http_response.get_headers())
 
             raise ClientException(error_code.SDK_HTTP_ERROR, error_message)
 
@@ -268,8 +265,7 @@ class AcsClient:
             # in case the response body is not a json string, return the raw
             # data instead
             pass
-
-        if status < http_client.OK or status >= http_client.MULTIPLE_CHOICES:
+        if status < codes.OK or status >= codes.MULTIPLE_CHOICES:
 
             server_error_code, server_error_message = self._parse_error_info_from_response_body(
                 body.decode('utf-8'))
@@ -288,12 +284,7 @@ class AcsClient:
             request.get_location_service_code(),
             request.get_location_endpoint_type(),
         )
-        endpoint = self._endpoint_resolver.resolve(resolve_request)
-        if endpoint.endswith("endpoint-test.exception.com"):
-            # For endpoint testability, if the endpoint is xxxx.endpoint-test.special.com
-            # throw a client exception with this endpoint
-            raise ClientException(error_code.SDK_ENDPOINT_TESTABILITY, endpoint)
-        return endpoint
+        return self._endpoint_resolver.resolve(resolve_request)
 
     def do_action(self, acs_request):
         warnings.warn(
@@ -306,4 +297,5 @@ class AcsClient:
         return self.implementation_of_do_action(acs_request)
 
     def add_endpoint(self, region_id, product_code, endpoint):
-        self._endpoint_resolver.put_endpoint_entry(region_id, product_code, endpoint)
+        self._endpoint_resolver.put_endpoint_entry(
+            region_id, product_code, endpoint)

@@ -17,8 +17,17 @@ import json
 import sys
 import os
 
-from unittest import TestCase
+import sys
 from aliyunsdkcore.client import AcsClient
+
+
+# The unittest module got a significant overhaul
+# in 2.7, so if we're in 2.6 we can use the backported
+# version unittest2.
+if sys.version_info[:2] == (2, 6):
+    from unittest2 import TestCase
+else:
+    from unittest import TestCase
 
 
 class SDKTestBase(TestCase):
@@ -48,10 +57,11 @@ class SDKTestBase(TestCase):
                 return json.loads(fp.read())
 
     def _read_key_from_env_or_config(self, key_name):
-        if key_name.upper() in os.environ:
-            return os.environ.get(key_name.upper())
+
         if key_name.lower() in self._sdk_config:
             return self._sdk_config[key_name.lower()]
+        if key_name.upper() in os.environ:
+            return os.environ.get(key_name.upper())
 
         raise Exception("Failed to find sdk config: " + key_name)
 

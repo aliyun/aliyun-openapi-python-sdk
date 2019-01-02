@@ -88,9 +88,6 @@ class HttpRequest:
             if key in self.__headers:
                 self.__headers.pop(key)
 
-    def md5_sum(self, content):
-        return helper.md5_sum(content)
-
     def set_content(self, content, encoding, format=format_type.RAW):
         self.__content = content
         if content is None:
@@ -100,7 +97,7 @@ class HttpRequest:
             self.__content_type = None
             self.__encoding = None
         else:
-            str_md5 = self.md5_sum(content)
+            str_md5 = helper.md5_sum(content)
             content_length = len(content)
             self.__headers[self.content_md5] = str_md5
             self.__headers[self.content_length] = content_length

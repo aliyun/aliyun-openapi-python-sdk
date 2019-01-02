@@ -43,7 +43,7 @@ def refresh_sign_parameters(parameters, format=FormatType.RAW, signer=mac1):
     parameters["Date"] = helper.get_rfc_2616_date()
     parameters["Accept"] = FormatType.map_format_to_accept(format)
     parameters["x-acs-signature-method"] = signer.get_signer_name()
-    parameters["x-acs-signature-version"] = signer.get_singer_version()
+    parameters["x-acs-signature-version"] = signer.get_signer_version()
     return parameters
 
 
