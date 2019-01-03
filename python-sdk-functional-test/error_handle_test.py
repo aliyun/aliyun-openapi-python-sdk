@@ -34,8 +34,7 @@ class ErrorHandleTest(SDKTestBase):
         except ClientException as e:
             self.assertEqual("SDK.HttpError", e.error_code)
             head_message, attributes = self._parse_complex_error_message(e.get_error_msg())
-            self.assertTrue(head_message.startswith("HTTPConnectionPool(host='ecs-cn-hangzhou.aliyuncs.com', "
-                                                    "port=80):"))
+            self.assertTrue(head_message.startswith("HTTPConnectionPool(host='ecs-cn-hangzhou.aliyuncs.com', port=80):"))
             self.assertEqual("ecs-cn-hangzhou.aliyuncs.com", attributes.get("Endpoint"))
             self.assertEqual("Ecs", attributes.get("Product"))
             self.assertTrue("SdkCoreVersion" in attributes)
@@ -71,7 +70,6 @@ class ErrorHandleTest(SDKTestBase):
 
     def test_server_error_with_a_bad_json(self):
         from aliyunsdkecs.request.v20140526.DeleteInstanceRequest import DeleteInstanceRequest
-        from aliyunsdkcore.vendored.six.moves import http_client
 
         request = DeleteInstanceRequest()
         request.set_InstanceId("blah")

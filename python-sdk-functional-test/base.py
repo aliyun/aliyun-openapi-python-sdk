@@ -14,7 +14,6 @@
 
 import os.path
 import json
-import sys
 import os
 
 import sys
