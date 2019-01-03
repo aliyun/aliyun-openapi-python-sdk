@@ -32,7 +32,6 @@ from aliyunsdkcore.utils.parameter_helper import md5_sum
 from aliyunsdkcore.auth.algorithm import sha_hmac1
 from aliyunsdkcore.acs_exception import exceptions
 from aliyunsdkcore.acs_exception import error_code
-from aliyunsdkcore.compat import ensure_string
 
 """
 Acs request model.
