@@ -38,6 +38,10 @@ from aliyunsdkcore.endpoint.default_endpoint_resolver import DefaultEndpointReso
 
 class NewEndpointTest(SDKTestBase):
 
+    def setUp(self):
+        SDKTestBase.setUp(self)
+        DefaultEndpointResolver.predefined_endpoint_resolver = UserCustomizedEndpointResolver()
+
     def init_env(self, test_local_config=None, client=None):
         resolver_chain = []
 
@@ -84,12 +88,7 @@ class NewEndpointTest(SDKTestBase):
         except ClientException as e:
             self.assertEqual(error_code.SDK_ENDPOINT_RESOLVING_ERROR, e.get_error_code())
             self.assertEqual(
-                "No endpoint in the region 'cn-ningbo' for product 'Ecs'.\n"
-                "You can set an endpoint for your request explicitly.\n"
-                "Or you can use the other available regions: ap-northeast-1 "
-                "ap-south-1 ap-southeast-2 ap-southeast-3 ap-southeast-5 cn-huhehaote "
-                "cn-zhangjiakou eu-central-1 me-east-1\n"
-                "See https://www.alibabacloud.com/help/doc-detail/92074.htm\n",
+                "No such region 'cn-ningbo'. Please check your region ID.",
                 e.get_error_msg()
             )
 
@@ -211,6 +210,7 @@ class NewEndpointTest(SDKTestBase):
             '_call_location_service',
             wraps=self._location_service_endpoint_resolver._call_location_service
         ) as monkey:
+
             self.assertEqual(0, monkey.call_count)
             # No openAPI data
             for i in range(3):
@@ -223,56 +223,45 @@ class NewEndpointTest(SDKTestBase):
                         "No endpoint in the region 'cn-hangzhou' for product 'Ram'."
                     ))
 
-        self.assertEqual(1, monkey.call_count)
+            self.assertEqual(1, monkey.call_count)
 
-        # Bad region ID
-        for i in range(3):
-            try:
-                self.resolve("mars", "Ram", "ram", "openAPI")
-                assert False
-            except ClientException as e:
-                self.assertEqual(error_code.SDK_ENDPOINT_RESOLVING_ERROR, e.get_error_code())
-                self.assertEqual(
-                    "No such region 'mars'. Please check your region ID.",
-                    e.get_error_msg()
-                )
+            # Bad region ID
+            for i in range(3):
+                try:
+                    self.resolve("mars", "Ram", "ram", "openAPI")
+                    assert False
+                except ClientException as e:
+                    self.assertEqual(error_code.SDK_ENDPOINT_RESOLVING_ERROR, e.get_error_code())
+                    self.assertEqual(
+                        "No such region 'mars'. Please check your region ID.",
+                        e.get_error_msg()
+                    )
 
-        with patch.object(
-            self._location_service_endpoint_resolver,
-            '_call_location_service',
-            wraps=self._location_service_endpoint_resolver._call_location_service
-        ) as monkey:
-            self.assertEqual(0, monkey.call_count)
+            self.assertEqual(2, monkey.call_count)
             # Bad region ID with another product
             try:
                 self.resolve("mars", "Ecs", "ecs", "openAPI")
                 assert False
             except ClientException as e:
                 self.assertEqual(error_code.SDK_ENDPOINT_RESOLVING_ERROR, e.get_error_code())
-                print(e.get_error_msg())
                 self.assertEqual("No such region 'mars'. Please check your region ID.",
                                  e.get_error_msg())
 
-        self.assertEqual(0, monkey.call_count)
+            self.assertEqual(2, monkey.call_count)
 
-        # Bad product code
-        for i in range(3):
-            try:
-                self.resolve("cn-hangzhou", "InvalidProductCode", "InvalidProductCode", "openAPI")
-                assert False
-            except ClientException as e:
-                self.assertEqual(error_code.SDK_ENDPOINT_RESOLVING_ERROR, e.get_error_code())
-                self.assertTrue(e.get_error_msg().startswith(
-                    "No endpoint for product 'InvalidProductCode'.\n"
-                    "Please check the product code, "
-                    "or set an endpoint for your request explicitly.\n"
-                ))
+            # Bad product code
+            for i in range(3):
+                try:
+                    self.resolve("cn-hangzhou", "InvalidProductCode", "InvalidProductCode", "openAPI")
+                    assert False
+                except ClientException as e:
+                    self.assertEqual(error_code.SDK_ENDPOINT_RESOLVING_ERROR, e.get_error_code())
+                    self.assertTrue(e.get_error_msg().startswith(
+                        "No endpoint for product 'InvalidProductCode'.\n"
+                        "Please check the product code, "
+                        "or set an endpoint for your request explicitly.\n"
+                    ))
 
-        with patch.object(
-            self._location_service_endpoint_resolver,
-            '_call_location_service',
-            wraps=self._location_service_endpoint_resolver._call_location_service
-        ) as monkey:
             # Bad product code with another region ID
             try:
                 self.resolve("cn-beijing", "InvalidProductCode", "InvalidProductCode", "openAPI")
@@ -284,12 +273,12 @@ class NewEndpointTest(SDKTestBase):
                         "Please check the product code, "
                         "or set an endpoint for your request explicitly.\n")
                 )
-        self.assertEqual(0, monkey.call_count)
+            self.assertEqual(3, monkey.call_count)
 
     def test_try_to_get_endpoint_with_invalid_region_id(self):
         self.init_env()
         try:
-            print(self.resolve("mars", "Ecs"))
+            self.resolve("mars", "Ecs")
             assert False
         except ClientException as e:
             self.assertEqual(error_code.SDK_ENDPOINT_RESOLVING_ERROR, e.get_error_code())

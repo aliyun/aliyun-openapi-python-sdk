@@ -29,7 +29,7 @@ class BugsTest(SDKTestBase):
         request.set_content(json.dumps({"tasks": [task1], "scenes": ["porn"]}))
         response = self.client.do_action_with_exception(request)
         response = self.get_dict_response(response)
-        self.assertTrue(response.get("code") == 200)
+        self.assertEqual(200, response.get("code"))
 
     def test_bug_with_17661113(self):
         request = CommonRequest()

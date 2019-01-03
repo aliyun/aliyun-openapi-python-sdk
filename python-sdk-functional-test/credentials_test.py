@@ -11,9 +11,8 @@ from aliyunsdkcore.auth.credentials import StsTokenCredential
 from aliyunsdkecs.request.v20140526.DescribeRegionsRequest import DescribeRegionsRequest
 from aliyunsdksts.request.v20150401.AssumeRoleRequest import AssumeRoleRequest
 
-
 from base import SDKTestBase
-from base import disabled
+from base import disabled, request_helper, find_in_response
 
 
 class CredentialsTest(SDKTestBase):
@@ -26,13 +25,12 @@ class CredentialsTest(SDKTestBase):
         return url
 
     def test_call_rpc_request_with_sts_token(self):
-        # create AssumeRole request ,Acquire a temporary ak
-        request = AssumeRoleRequest()
-        # the role must exist
-        # FIXME : the RoleArn must according to user's setting
-        request.set_RoleArn("acs:ram::1988236124481530:role/testrole")
-        request.set_RoleSessionName("alice_test")
         client = self.init_sub_client()
+        self._create_default_ram_role()
+
+        request = AssumeRoleRequest()
+        request.set_RoleArn(self.ram_role_arn)
+        request.set_RoleSessionName("alice_test")
         response = client.do_action_with_exception(request)
         response = self.get_dict_response(response)
         credentials = response.get("Credentials")
@@ -56,11 +54,15 @@ class CredentialsTest(SDKTestBase):
 
     def test_call_roa_request_with_sts_token(self):
         from aliyunsdkcore.auth.credentials import RamRoleArnCredential
-        # FIXME : the RoleArn must according to user's setting
+        self._create_default_ram_user()
+        self._attach_default_policy()
+        self._create_access_key()
+        self._create_default_ram_role()
+
         ram_role_arn_credential = RamRoleArnCredential(
-            self.sub_access_key_id,
-            self.sub_access_key_secret,
-            "acs:ram::1988236124481530:role/testrole",
+            self.ram_user_access_key_id,
+            self.ram_user_access_key_secret,
+            self.ram_role_arn,
             "alice_test")
         acs_client = AcsClient(
             region_id="cn-hangzhou",

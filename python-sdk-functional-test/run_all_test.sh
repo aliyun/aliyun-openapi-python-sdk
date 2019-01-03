@@ -6,4 +6,4 @@ for i in `ls | grep aliyun-python-sdk-`; do
 done
 
 cd -
-coverage run --branch -m pytest ./
+coverage run --branch -m unittest discover -s . -p "*_test.py"
