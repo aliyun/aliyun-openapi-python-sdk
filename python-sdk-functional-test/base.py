@@ -118,7 +118,7 @@ class SDKTestBase(TestCase):
     def init_client(self, region_id=None):
         if not region_id:
             region_id = self.region_id
-        return AcsClient(self.access_key_id, self.access_key_secret, region_id, timeout=30)
+        return AcsClient(self.access_key_id, self.access_key_secret, region_id, timeout=120)
 
     @staticmethod
     def get_dict_response(string):
@@ -175,7 +175,7 @@ class SDKTestBase(TestCase):
         self._create_access_key()
         return AcsClient(self.ram_user_access_key_id,
                          self.ram_user_access_key_secret,
-                         self.region_id, timeout=30)
+                         self.region_id, timeout=120)
 
     def _create_default_ram_role(self):
         response = request_helper(self.client, ListRolesRequest())
