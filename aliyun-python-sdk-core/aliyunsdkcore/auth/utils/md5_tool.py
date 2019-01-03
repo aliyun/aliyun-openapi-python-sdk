@@ -30,6 +30,5 @@ from aliyunsdkcore.compat import b64_encode_bytes
 
 def get_md5_base64_str(content):
     m = hashlib.md5()
-    content_bytes = ensure_bytes(content)
-    m.update(ensure_bytes(content_bytes))
+    m.update(ensure_bytes(content))
     return ensure_string(b64_encode_bytes(m.digest()).strip())

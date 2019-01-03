@@ -16,7 +16,7 @@
 from aliyunsdkcore.acs_exception.exceptions import ClientException
 from aliyunsdkcore.acs_exception.exceptions import ServerException
 from base import SDKTestBase
-from mock import MagicMock, patch
+from mock import patch
 from aliyunsdkcore.client import AcsClient
 from aliyunsdkecs.request.v20140526.DescribeRegionsRequest import DescribeRegionsRequest
 from aliyunsdkram.request.v20150501.ListAccessKeysRequest import ListAccessKeysRequest
@@ -249,7 +249,6 @@ class NewEndpointTest(SDKTestBase):
                 assert False
             except ClientException as e:
                 self.assertEqual(error_code.SDK_ENDPOINT_RESOLVING_ERROR, e.get_error_code())
-                print(e.get_error_msg())
                 self.assertEqual("No such region 'mars'. Please check your region ID.",
                                  e.get_error_msg())
 

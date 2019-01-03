@@ -1,6 +1,4 @@
 # encoding:utf-8
-import json
-import os
 
 from aliyunsdkcore.client import AcsClient
 from aliyunsdkcore.auth.credentials import StsTokenCredential
