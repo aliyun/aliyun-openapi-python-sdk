@@ -252,7 +252,8 @@ class NewEndpointTest(SDKTestBase):
             # Bad product code
             for i in range(3):
                 try:
-                    self.resolve("cn-hangzhou", "InvalidProductCode", "InvalidProductCode", "openAPI")
+                    self.resolve("cn-hangzhou", "InvalidProductCode",
+                                 "InvalidProductCode", "openAPI")
                     assert False
                 except ClientException as e:
                     self.assertEqual(error_code.SDK_ENDPOINT_RESOLVING_ERROR, e.get_error_code())
