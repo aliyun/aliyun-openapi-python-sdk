@@ -393,7 +393,8 @@ class NewEndpointTest(SDKTestBase):
 
     def test_location_service_code_not_equals_product_code2(self):
         self.init_env("{}")
-        self.client._endpoint_resolver = self._endpoint_resolver
+        client = self.init_client(region_id="cn-hangzhou")
+        client._endpoint_resolver = self._endpoint_resolver
 
         with patch.object(
             self._location_service_endpoint_resolver,
@@ -402,12 +403,12 @@ class NewEndpointTest(SDKTestBase):
         ) as monkey:
             for i in range(3):
                 request = DescribeApisRequest()
-                response = self.client.do_action_with_exception(request)
+                response = client.do_action_with_exception(request)
 
         self.assertEqual(1, monkey.call_count)
 
         self.init_env()
-        self.client._endpoint_resolver = self._endpoint_resolver
+        client._endpoint_resolver = self._endpoint_resolver
 
     def test_add_endpoint_static(self):
         from aliyunsdkcore.profile.region_provider import add_endpoint, modify_point
@@ -492,15 +493,13 @@ class NewEndpointTest(SDKTestBase):
         try:
             self.client.do_action_with_exception(request)
         except ServerException as e:
-            self.assertEqual("InternalError", e.get_error_code())
-            self.assertEqual(
-                "The request processing has failed due to some unknown error.",
-                e.get_error_msg())
+            self.assertNotEqual("SDK.EndpointResolvingError", e.get_error_code())
 
     def test_faas_resolve(self):
         resolver = DefaultEndpointResolver(self.client)
         request = ResolveEndpointRequest("cn-hangzhou", "faas", None, None)
         self.assertEqual("faas.cn-hangzhou.aliyuncs.com", resolver.resolve(request))
+        client = self.init_client(region_id="cn-hangzhou")
 
         from aliyunsdkfaas.request.v20170824.DescribeLoadTaskStatusRequest \
             import DescribeLoadTaskStatusRequest
@@ -510,7 +509,7 @@ class NewEndpointTest(SDKTestBase):
         request.set_RoleArn("blah")
 
         try:
-            self.client.do_action_with_exception(request)
+            client.do_action_with_exception(request)
             assert False
         except ServerException as e:
             self.assertNotEqual(error_code.SDK_ENDPOINT_RESOLVING_ERROR, e.get_error_code())
