@@ -30,7 +30,7 @@ class CredentialsTest(SDKTestBase):
 
         request = AssumeRoleRequest()
         request.set_RoleArn(self.ram_role_arn)
-        request.set_RoleSessionName("alice_test")
+        request.set_RoleSessionName(self.default_role_session_name)
         response = client.do_action_with_exception(request)
         response = self.get_dict_response(response)
         credentials = response.get("Credentials")

@@ -89,6 +89,10 @@ class SDKTestBase(TestCase):
         self.access_key_secret = self._read_key_from_env_or_config("ACCESS_KEY_SECRET")
         self.region_id = self._read_key_from_env_or_config("REGION_ID")
         self.user_id = self._read_key_from_env_or_config("USER_ID")
+        self.travis_job_id = os.environ.get('TRAVIS_JOB_ID') or "0"
+        self.default_ram_user_name = "RamUserForSDKCredentialsTest" + self.travis_job_id
+        self.default_ram_role_name = "RamROleForSDKTest" + self.travis_job_id
+        self.default_role_session_name = "RoleSession" + self.travis_job_id
 
     def _init_sdk_config(self):
         sdk_config_path = os.path.join(os.path.expanduser("~"), "aliyun_sdk_config.json")
@@ -119,9 +123,6 @@ class SDKTestBase(TestCase):
     @staticmethod
     def get_dict_response(string):
         return json.loads(string.decode('utf-8'), encoding="utf-8")
-
-    default_ram_user_name = "RamUserForSDKCredentialsTest"
-    default_ram_role_name = "RamROleForSDKTest"
 
     def _create_default_ram_user(self):
         response = request_helper(self.client, ListUsersRequest())
