@@ -9,6 +9,16 @@ The Alibaba Cloud Python Software Development Kit (SDK) allows you to access Ali
 
 This document introduces how to obtain and call Alibaba Cloud Python SDK.
 
+
+## Online Demo
+
+**[API Explorer](https://api.aliyun.com)** provides the ability to call the cloud product OpenAPI online, and dynamically generate SDK Example code and quick retrieval interface, which can significantly reduce the difficulty of using the cloud API. **It is highly recommended**.
+
+<a href="https://api.aliyun.com" target="api_explorer">
+  <img src="https://img.alicdn.com/tfs/TB12GX6zW6qK1RjSZFmXXX0PFXa-744-122.png" width="180" />
+</a>
+
+
 ## Prerequisites
 
 - To use Alibaba Cloud Python SDK, you must have an Alibaba Cloud account as well as an AccessKey.
