@@ -89,10 +89,18 @@ class SDKTestBase(TestCase):
         self.access_key_secret = self._read_key_from_env_or_config("ACCESS_KEY_SECRET")
         self.region_id = self._read_key_from_env_or_config("REGION_ID")
         self.user_id = self._read_key_from_env_or_config("USER_ID")
-        self.travis_job_id = os.environ.get('TRAVIS_JOB_ID') or "0"
-        self.default_ram_user_name = "RamUserForSDKCredentialsTest" + self.travis_job_id
-        self.default_ram_role_name = "RamROleForSDKTest" + self.travis_job_id
-        self.default_role_session_name = "RoleSession" + self.travis_job_id
+        if 'TRAVIS_JOB_NUMBER' in os.environ:
+            self.travis_concurrent = os.environ.get('TRAVIS_JOB_NUMBER').split(".")[-1]
+        else:
+            self.travis_concurrent = "0"
+        self.default_ram_user_name = "RamUserForSDKCredentialsTest" + self.travis_concurrent
+        self.default_ram_role_name = "RamROleForSDKTest" + self.travis_concurrent
+        self.default_role_session_name = "RoleSession" + self.travis_concurrent
+        self.ram_user_id = None
+        self.ram_policy_attched = False
+        self.ram_user_access_key_id = None
+        self.ram_user_access_key_secret = None
+        self.ram_role_arn = None
 
     def _init_sdk_config(self):
         sdk_config_path = os.path.join(os.path.expanduser("~"), "aliyun_sdk_config.json")
@@ -125,6 +133,8 @@ class SDKTestBase(TestCase):
         return json.loads(string.decode('utf-8'), encoding="utf-8")
 
     def _create_default_ram_user(self):
+        if self.ram_user_id:
+            return
         response = request_helper(self.client, ListUsersRequest())
         user_list = find_in_response(response, keys=['Users', 'User'])
         for user in user_list:
@@ -137,6 +147,8 @@ class SDKTestBase(TestCase):
         self.ram_user_id = find_in_response(response, keys=['User', 'UserId'])
 
     def _attach_default_policy(self):
+        if self.ram_policy_attched:
+            return
 
         try:
             request_helper(self.client, AttachPolicyToUserRequest(),
@@ -148,7 +160,12 @@ class SDKTestBase(TestCase):
             else:
                 raise e
 
+        self.ram_policy_attched = True
+
     def _create_access_key(self):
+        if self.ram_user_access_key_id and self.ram_user_access_key_secret:
+            return
+
         response = request_helper(self.client, ListAccessKeysRequest(),
                                   UserName=self.default_ram_user_name)
         for access_key in find_in_response(response, keys=['AccessKeys', 'AccessKey']):
@@ -178,6 +195,8 @@ class SDKTestBase(TestCase):
                          self.region_id, timeout=120)
 
     def _create_default_ram_role(self):
+        if self.ram_role_arn:
+            return
         response = request_helper(self.client, ListRolesRequest())
         for role in find_in_response(response, keys=['Roles', 'Role']):
             role_name = role['RoleName']
