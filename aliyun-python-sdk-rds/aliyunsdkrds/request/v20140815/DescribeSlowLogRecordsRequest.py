@@ -88,3 +88,9 @@ class DescribeSlowLogRecordsRequest(RpcRequest):
 
 	def set_DBInstanceId(self,DBInstanceId):
 		self.add_query_param('DBInstanceId',DBInstanceId)
+
+	def get_SQLHASH(self):
+		return self.get_query_params().get('SQLHASH')
+
+	def set_SQLHASH(self,SQLHASH):
+		self.add_query_param('SQLHASH',SQLHASH)

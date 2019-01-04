@@ -18,22 +18,16 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class AllocateReadWriteSplittingConnectionRequest(RpcRequest):
+class DescribeAvailableInstanceClassRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'AllocateReadWriteSplittingConnection','rds')
+		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'DescribeAvailableInstanceClass','rds')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_ConnectionStringPrefix(self):
-		return self.get_query_params().get('ConnectionStringPrefix')
-
-	def set_ConnectionStringPrefix(self,ConnectionStringPrefix):
-		self.add_query_param('ConnectionStringPrefix',ConnectionStringPrefix)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -47,11 +41,11 @@ class AllocateReadWriteSplittingConnectionRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
-	def get_Weight(self):
-		return self.get_query_params().get('Weight')
+	def get_EngineVersion(self):
+		return self.get_query_params().get('EngineVersion')
 
-	def set_Weight(self,Weight):
-		self.add_query_param('Weight',Weight)
+	def set_EngineVersion(self,EngineVersion):
+		self.add_query_param('EngineVersion',EngineVersion)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
@@ -59,23 +53,17 @@ class AllocateReadWriteSplittingConnectionRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_Port(self):
-		return self.get_query_params().get('Port')
+	def get_Engine(self):
+		return self.get_query_params().get('Engine')
 
-	def set_Port(self,Port):
-		self.add_query_param('Port',Port)
+	def set_Engine(self,Engine):
+		self.add_query_param('Engine',Engine)
 
-	def get_DistributionType(self):
-		return self.get_query_params().get('DistributionType')
+	def get_ZoneId(self):
+		return self.get_query_params().get('ZoneId')
 
-	def set_DistributionType(self,DistributionType):
-		self.add_query_param('DistributionType',DistributionType)
-
-	def get_NetType(self):
-		return self.get_query_params().get('NetType')
-
-	def set_NetType(self,NetType):
-		self.add_query_param('NetType',NetType)
+	def set_ZoneId(self,ZoneId):
+		self.add_query_param('ZoneId',ZoneId)
 
 	def get_DBInstanceId(self):
 		return self.get_query_params().get('DBInstanceId')
@@ -83,8 +71,14 @@ class AllocateReadWriteSplittingConnectionRequest(RpcRequest):
 	def set_DBInstanceId(self,DBInstanceId):
 		self.add_query_param('DBInstanceId',DBInstanceId)
 
-	def get_MaxDelayTime(self):
-		return self.get_query_params().get('MaxDelayTime')
+	def get_InstanceChargeType(self):
+		return self.get_query_params().get('InstanceChargeType')
 
-	def set_MaxDelayTime(self,MaxDelayTime):
-		self.add_query_param('MaxDelayTime',MaxDelayTime)
+	def set_InstanceChargeType(self,InstanceChargeType):
+		self.add_query_param('InstanceChargeType',InstanceChargeType)
+
+	def get_OrderType(self):
+		return self.get_query_params().get('OrderType')
+
+	def set_OrderType(self,OrderType):
+		self.add_query_param('OrderType',OrderType)

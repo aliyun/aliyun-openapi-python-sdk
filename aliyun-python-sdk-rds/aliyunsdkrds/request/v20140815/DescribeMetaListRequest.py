@@ -18,10 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class AllocateReadWriteSplittingConnectionRequest(RpcRequest):
+class DescribeMetaListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'AllocateReadWriteSplittingConnection','rds')
+		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'DescribeMetaList','rds')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -29,11 +29,11 @@ class AllocateReadWriteSplittingConnectionRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_ConnectionStringPrefix(self):
-		return self.get_query_params().get('ConnectionStringPrefix')
+	def get_RestoreTime(self):
+		return self.get_query_params().get('RestoreTime')
 
-	def set_ConnectionStringPrefix(self,ConnectionStringPrefix):
-		self.add_query_param('ConnectionStringPrefix',ConnectionStringPrefix)
+	def set_RestoreTime(self,RestoreTime):
+		self.add_query_param('RestoreTime',RestoreTime)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -41,17 +41,23 @@ class AllocateReadWriteSplittingConnectionRequest(RpcRequest):
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
-	def get_OwnerAccount(self):
-		return self.get_query_params().get('OwnerAccount')
+	def get_ClientToken(self):
+		return self.get_query_params().get('ClientToken')
 
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
+	def set_ClientToken(self,ClientToken):
+		self.add_query_param('ClientToken',ClientToken)
 
-	def get_Weight(self):
-		return self.get_query_params().get('Weight')
+	def get_Pattern(self):
+		return self.get_query_params().get('Pattern')
 
-	def set_Weight(self,Weight):
-		self.add_query_param('Weight',Weight)
+	def set_Pattern(self,Pattern):
+		self.add_query_param('Pattern',Pattern)
+
+	def get_BackupSetID(self):
+		return self.get_query_params().get('BackupSetID')
+
+	def set_BackupSetID(self,BackupSetID):
+		self.add_query_param('BackupSetID',BackupSetID)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
@@ -59,23 +65,23 @@ class AllocateReadWriteSplittingConnectionRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_Port(self):
-		return self.get_query_params().get('Port')
+	def get_GetDbName(self):
+		return self.get_query_params().get('GetDbName')
 
-	def set_Port(self,Port):
-		self.add_query_param('Port',Port)
+	def set_GetDbName(self,GetDbName):
+		self.add_query_param('GetDbName',GetDbName)
 
-	def get_DistributionType(self):
-		return self.get_query_params().get('DistributionType')
+	def get_RestoreType(self):
+		return self.get_query_params().get('RestoreType')
 
-	def set_DistributionType(self,DistributionType):
-		self.add_query_param('DistributionType',DistributionType)
+	def set_RestoreType(self,RestoreType):
+		self.add_query_param('RestoreType',RestoreType)
 
-	def get_NetType(self):
-		return self.get_query_params().get('NetType')
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
 
-	def set_NetType(self,NetType):
-		self.add_query_param('NetType',NetType)
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
 
 	def get_DBInstanceId(self):
 		return self.get_query_params().get('DBInstanceId')
@@ -83,8 +89,8 @@ class AllocateReadWriteSplittingConnectionRequest(RpcRequest):
 	def set_DBInstanceId(self,DBInstanceId):
 		self.add_query_param('DBInstanceId',DBInstanceId)
 
-	def get_MaxDelayTime(self):
-		return self.get_query_params().get('MaxDelayTime')
+	def get_PageIndex(self):
+		return self.get_query_params().get('PageIndex')
 
-	def set_MaxDelayTime(self,MaxDelayTime):
-		self.add_query_param('MaxDelayTime',MaxDelayTime)
+	def set_PageIndex(self,PageIndex):
+		self.add_query_param('PageIndex',PageIndex)
