@@ -19,6 +19,17 @@ import os
 
 import sys
 from aliyunsdkcore.client import AcsClient
+from aliyunsdkcore.vendored.six import iteritems
+from aliyunsdkcore.acs_exception.exceptions import ServerException
+
+from aliyunsdkram.request.v20150501.ListUsersRequest import ListUsersRequest
+from aliyunsdkram.request.v20150501.CreateUserRequest import CreateUserRequest
+from aliyunsdkram.request.v20150501.CreateAccessKeyRequest import CreateAccessKeyRequest
+from aliyunsdkram.request.v20150501.DeleteAccessKeyRequest import DeleteAccessKeyRequest
+from aliyunsdkram.request.v20150501.ListAccessKeysRequest import ListAccessKeysRequest
+from aliyunsdkram.request.v20150501.ListRolesRequest import ListRolesRequest
+from aliyunsdkram.request.v20150501.CreateRoleRequest import CreateRoleRequest
+from aliyunsdkram.request.v20150501.AttachPolicyToUserRequest import AttachPolicyToUserRequest
 
 
 # The unittest module got a significant overhaul
@@ -28,6 +39,36 @@ if sys.version_info[:2] == (2, 6):
     from unittest2 import TestCase
 else:
     from unittest import TestCase
+
+
+def request_helper(client, request, **params):
+    for key, value in iteritems(params):
+        set_name = 'set_' + key
+        if hasattr(request, set_name):
+            func = getattr(request, set_name)
+            func(value)
+        else:
+            raise Exception(
+                "{0} has no parameter named {1}.".format(request.__class__.__name__, key))
+    response = client.do_action_with_exception(request)
+    return json.loads(response.decode('utf-8'))
+
+
+def _check_server_response(obj, key):
+    if key not in obj:
+        raise Exception("No '{0}' in server response.".format(key))
+
+
+def find_in_response(response, key=None, keys=None):
+    if key:
+        _check_server_response(response, key)
+        return response[key]
+    if keys:
+        obj = response
+        for key in keys:
+            _check_server_response(obj, key)
+            obj = obj[key]
+        return obj
 
 
 class SDKTestBase(TestCase):
@@ -46,9 +87,20 @@ class SDKTestBase(TestCase):
         self._sdk_config = self._init_sdk_config()
         self.access_key_id = self._read_key_from_env_or_config("ACCESS_KEY_ID")
         self.access_key_secret = self._read_key_from_env_or_config("ACCESS_KEY_SECRET")
-        self.sub_access_key_id = self._read_key_from_env_or_config("SUB_ACCESS_KEY_ID")
-        self.sub_access_key_secret = self._read_key_from_env_or_config("SUB_ACCESS_KEY_SECRET")
         self.region_id = self._read_key_from_env_or_config("REGION_ID")
+        self.user_id = self._read_key_from_env_or_config("USER_ID")
+        if 'TRAVIS_JOB_NUMBER' in os.environ:
+            self.travis_concurrent = os.environ.get('TRAVIS_JOB_NUMBER').split(".")[-1]
+        else:
+            self.travis_concurrent = "0"
+        self.default_ram_user_name = "RamUserForSDKCredentialsTest" + self.travis_concurrent
+        self.default_ram_role_name = "RamROleForSDKTest" + self.travis_concurrent
+        self.default_role_session_name = "RoleSession" + self.travis_concurrent
+        self.ram_user_id = None
+        self.ram_policy_attched = False
+        self.ram_user_access_key_id = None
+        self.ram_user_access_key_secret = None
+        self.ram_role_arn = None
 
     def _init_sdk_config(self):
         sdk_config_path = os.path.join(os.path.expanduser("~"), "aliyun_sdk_config.json")
@@ -65,25 +117,119 @@ class SDKTestBase(TestCase):
         raise Exception("Failed to find sdk config: " + key_name)
 
     def setUp(self):
+        TestCase.setUp(self)
         self.client = self.init_client()
+
+    def tearDown(self):
+        pass
 
     def init_client(self, region_id=None):
         if not region_id:
             region_id = self.region_id
-        return AcsClient(self.access_key_id, self.access_key_secret, region_id)
-
-    def init_sub_client(self):
-        return AcsClient(self.sub_access_key_id, self.sub_access_key_secret, self.region_id)
+        return AcsClient(self.access_key_id, self.access_key_secret, region_id, timeout=120)
 
     @staticmethod
     def get_dict_response(string):
         return json.loads(string.decode('utf-8'), encoding="utf-8")
+
+    def _create_default_ram_user(self):
+        if self.ram_user_id:
+            return
+        response = request_helper(self.client, ListUsersRequest())
+        user_list = find_in_response(response, keys=['Users', 'User'])
+        for user in user_list:
+            if user['UserName'] == self.default_ram_user_name:
+                self.ram_user_id = user["UserId"]
+                return
+
+        response = request_helper(self.client, CreateUserRequest(),
+                                  UserName=self.default_ram_user_name)
+        self.ram_user_id = find_in_response(response, keys=['User', 'UserId'])
+
+    def _attach_default_policy(self):
+        if self.ram_policy_attched:
+            return
+
+        try:
+            request_helper(self.client, AttachPolicyToUserRequest(),
+                           PolicyType='System', PolicyName='AliyunSTSAssumeRoleAccess',
+                           UserName=self.default_ram_user_name)
+        except ServerException as e:
+            if e.get_error_code() == 'EntityAlreadyExists.User.Policy':
+                pass
+            else:
+                raise e
+
+        self.ram_policy_attched = True
+
+    def _create_access_key(self):
+        if self.ram_user_access_key_id and self.ram_user_access_key_secret:
+            return
+
+        response = request_helper(self.client, ListAccessKeysRequest(),
+                                  UserName=self.default_ram_user_name)
+        for access_key in find_in_response(response, keys=['AccessKeys', 'AccessKey']):
+            access_key_id = access_key['AccessKeyId']
+            request_helper(self.client, DeleteAccessKeyRequest(),
+                           UserAccessKeyId=access_key_id,
+                           UserName=self.default_ram_user_name)
+
+        response = request_helper(self.client, CreateAccessKeyRequest(),
+                                  UserName=self.default_ram_user_name)
+        self.ram_user_access_key_id = find_in_response(response, keys=['AccessKey', 'AccessKeyId'])
+        self.ram_user_access_key_secret = find_in_response(
+            response,
+            keys=['AccessKey', 'AccessKeySecret'])
+
+    def _delete_access_key(self):
+        request_helper(self.client, DeleteAccessKeyRequest(),
+                       UserName=self.default_ram_user_name,
+                       UserAccessKeyId=self.ram_user_access_key_id)
+
+    def init_sub_client(self):
+        self._create_default_ram_user()
+        self._attach_default_policy()
+        self._create_access_key()
+        return AcsClient(self.ram_user_access_key_id,
+                         self.ram_user_access_key_secret,
+                         self.region_id, timeout=120)
+
+    def _create_default_ram_role(self):
+        if self.ram_role_arn:
+            return
+        response = request_helper(self.client, ListRolesRequest())
+        for role in find_in_response(response, keys=['Roles', 'Role']):
+            role_name = role['RoleName']
+            role_arn = role['Arn']
+            if role_name == self.default_ram_role_name:
+                self.ram_role_arn = role_arn
+                return
+
+        policy_doc = """
+        {
+          "Statement": [
+            {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": {
+                "RAM": [
+                  "acs:ram::%s:root"
+                ]
+              }
+            }
+          ],
+          "Version": "1"
+        }
+        """ % self.user_id
+
+        response = request_helper(self.client, CreateRoleRequest(),
+                                  RoleName=self.default_ram_role_name,
+                                  AssumeRolePolicyDocument=policy_doc)
+        self.ram_role_arn = find_in_response(response, keys=['Role', 'Arn'])
 
 
 def disabled(func):
     def _decorator(func):
         pass
     return _decorator
-
-
 

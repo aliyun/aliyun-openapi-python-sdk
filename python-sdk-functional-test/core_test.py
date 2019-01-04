@@ -35,13 +35,13 @@ class CoreLevelTest(SDKTestBase):
         self.assertTrue(ret.get("ResourceTypes"))
 
     def test_rpc_common_request_with_sts_token(self):
-        # create AssumeRole request ,Acquire a temporary ak
-        request = AssumeRoleRequest()
-        # the role must exist
-        # FIXME : the RoleArn must according to user's setting
-        request.set_RoleArn("acs:ram::1988236124481530:role/testrole")
-        request.set_RoleSessionName("alice_test")
         sub_client = self.init_sub_client()
+        self._create_default_ram_role()
+        self._attach_default_policy()
+
+        request = AssumeRoleRequest()
+        request.set_RoleArn(self.ram_role_arn)
+        request.set_RoleSessionName(self.default_role_session_name)
         response = sub_client.do_action_with_exception(request)
         response = self.get_dict_response(response)
         credentials = response.get("Credentials")
