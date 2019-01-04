@@ -29,6 +29,7 @@ from aliyunsdkcore.acs_exception import exceptions
 from aliyunsdkcore.auth.credentials import RamRoleArnCredential
 from aliyunsdkcore.auth.credentials import AccessKeyCredential
 from aliyunsdkcore.request import CommonRequest
+from aliyunsdkcore.compat import ensure_string
 
 
 class RamRoleArnSigner(Signer):
@@ -84,7 +85,7 @@ class RamRoleArnSigner(Signer):
             self._last_update_time = int(time.time())
         else:
             code = error_code.SDK_GET_SESSION_CREDENTIAL_FAILED
-            message = "refresh session token failed, server return: " + body
+            message = "refresh session token failed, server return: " + ensure_string(body)
             http_status = status
 
             raise exceptions.ServerException(code, message, http_status)
