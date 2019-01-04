@@ -12,7 +12,7 @@ from aliyunsdkecs.request.v20140526.DescribeRegionsRequest import DescribeRegion
 from aliyunsdksts.request.v20150401.AssumeRoleRequest import AssumeRoleRequest
 
 from base import SDKTestBase
-from base import disabled, request_helper, find_in_response
+from base import disabled
 
 
 class CredentialsTest(SDKTestBase):

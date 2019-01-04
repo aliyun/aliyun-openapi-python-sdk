@@ -403,7 +403,7 @@ class NewEndpointTest(SDKTestBase):
         ) as monkey:
             for i in range(3):
                 request = DescribeApisRequest()
-                response = client.do_action_with_exception(request)
+                client.do_action_with_exception(request)
 
         self.assertEqual(1, monkey.call_count)
 
