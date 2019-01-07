@@ -1,0 +1,30 @@
+{
+  "RetryableAPIs": {
+    "ecs": {
+      "2014-09-26": [
+        "DescribeInstances"
+      ]
+    }
+  },
+  "RetryableAPIsWithClientToken": {
+     "ecs": {
+      "2014-09-26": [
+        "CreateInstance"
+      ]
+    }
+  },
+  "RetryableErrorCode": {
+    "ecs": {
+      "2014-09-26": {
+         "NormalErrors": [
+           "InternalError",
+           "UnknownError",
+           "ServiceUnavailable"
+         ],
+        "ThrottlingErrors": [
+          "Throttling"
+        ]
+      }
+    }
+  }
+}
