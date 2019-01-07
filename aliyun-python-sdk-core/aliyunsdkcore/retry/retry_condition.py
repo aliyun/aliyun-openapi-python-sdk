@@ -12,8 +12,143 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+import jmespath
+
+import aliyunsdkcore.utils
+import aliyunsdkcore.utils.validation as validation
+from aliyunsdkcore.acs_exception.exceptions import ClientException, ServerException
+import aliyunsdkcore.acs_exception.error_code as error_code
+
+
+def _find_data_in_retry_config(key_name, request, retry_config):
+    path = "{0}.{1}.{2}".format(request.get_product().lower(),
+                                request.get_version(),
+                                key_name)
+    return jmespath.search(path, retry_config)
+
 
 class RetryCondition:
 
+    BLANK_STATUS = 0
+    NO_RETRY = 1
+    SHOULD_RETRY = 2
+    SHOULD_RETRY_WITH_CLIENT_TOKEN = 4
+    SHOULD_RETRY_WITH_THROTTLING_BACKOFF = 8
+
     def should_retry(self, retry_policy_context):
-        pass
+        """Decide whether the previous request should be retried."""
+        return RetryCondition.NO_RETRY
+
+
+class NoRetryCondition(RetryCondition):
+
+    def should_retry(self, retry_policy_context):
+        return RetryCondition.NO_RETRY
+
+
+class MaxRetryTimesCondition:
+
+    def __init__(self, max_retry_times):
+        validation.assert_integer_positive(max_retry_times, "max_retry_times")
+        self.max_retry_times = max_retry_times
+
+    def should_retry(self, retry_policy_context):
+        if retry_policy_context.max_retries_attempted < self.max_retry_times:
+            return RetryCondition.SHOULD_RETRY
+        else:
+            return RetryCondition.NO_RETRY
+
+
+class RetryOnExceptionCondition:
+
+    def __init__(self, retry_config):
+        self.retry_config = retry_config
+
+    def should_retry(self, retry_policy_context):
+        request = retry_policy_context.original_request
+        exception = retry_policy_context.exception
+
+        if isinstance(exception, ClientException):
+            if exception.get_error_code() == error_code.SDK_HTTP_ERROR:
+                return RetryCondition.SHOULD_RETRY
+
+        if isinstance(exception, ServerException):
+            error_code_ = exception.get_error_code()
+            normal_errors = _find_data_in_retry_config("RetryableNormalErrors",
+                                                       request,
+                                                       self.retry_config)
+            if error_code_ in normal_errors:
+                return RetryCondition.SHOULD_RETRY
+
+            throttling_errors = _find_data_in_retry_config("RetryableThrottlingErrors",
+                                                           request,
+                                                           self.retry_config)
+            if error_code_ in throttling_errors:
+                return RetryCondition.SHOULD_RETRY | \
+                       RetryCondition.SHOULD_RETRY_WITH_THROTTLING_BACKOFF
+
+
+class RetryOnAPICondition(RetryCondition):
+
+    def __init__(self, retry_config):
+        self.retry_config = retry_config
+
+    def should_retry(self, retry_policy_context):
+        retryable = self._should_retry(retry_policy_context) | \
+                    self._should_retry_with_client_token(retry_policy_context)
+        if retryable == RetryCondition.BLANK_STATUS:
+            return RetryCondition.NO_RETRY
+        else:
+            return retryable
+
+    def _should_retry(self, retry_policy_context):
+        request = retry_policy_context.original_request
+        retryable_apis = _find_data_in_retry_config("RetryableAPIs", request, self.retry_config)
+        if request.get_action_name() in retryable_apis:
+            return RetryCondition.SHOULD_RETRY
+        else:
+            return RetryCondition.BLANK_STATUS
+
+    def _should_retry_with_client_token(self, retry_policy_context):
+        request = retry_policy_context.original_request
+        retryable_apis_with_client_token = _find_data_in_retry_config(
+            "RetryableAPIsWithClientToken", request, self.retry_config)
+        if request.get_action_name() in retryable_apis_with_client_token:
+            return RetryCondition.SHOULD_RETRY | RetryCondition.SHOULD_RETRY_WITH_THROTTLING_BACKOFF
+        else:
+            return RetryCondition.BLANK_STATUS
+
+
+class ChainedRetryCondition:
+
+    def __init__(self, retry_condition_chain):
+        self.retry_condition_chain = retry_condition_chain
+
+    def should_retry(self, retry_policy_context):
+        retryable = RetryCondition.BLANK_STATUS
+        for condition in self.retry_condition_chain:
+            retryable |= condition.should_retry(retry_policy_context)
+        return retryable
+
+
+class MixedRetryCondition:
+
+    def __init__(self, max_retry_times, retry_config):
+        self._retry_condition_chain = ChainedRetryCondition([
+            MaxRetryTimesCondition(max_retry_times),
+            RetryOnAPICondition(retry_config),
+            RetryOnExceptionCondition(retry_config),
+        ])
+
+    def should_retry(self, retry_policy_context):
+        return self._retry_condition_chain.should_retry(retry_policy_context)
+
+
+class DefaultConfigRetryCondition(MixedRetryCondition):
+
+    MAX_RETRY_TIMES = 3
+    RETRY_CONFIG_FILE = "retry_config.json"
+
+    def __init__(self):
+        retry_config = aliyunsdkcore.utils._load_json_from_data_dir(self.RETRY_CONFIG_FILE)
+        MixedRetryCondition.__init__(self, self.MAX_RETRY_TIMES, retry_config)

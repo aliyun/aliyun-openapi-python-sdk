@@ -12,14 +12,12 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from aliyunsdkcore.retry.retry_condition import RetryCondition
+from aliyunsdkcore.acs_exception.exceptions import ClientException
+import aliyunsdkcore.acs_exception.error_code as error_code
 
 
-class RetryPolicyContext:
-
-    def __init__(self, original_request, exception, retries_attempted, http_status_code):
-        self.original_request = original_request
-        self.exception = exception
-        self.retries_attempted = retries_attempted
-        self.http_status_code = http_status_code
-        self.retryable = RetryCondition.BLANK_STATUS
+def assert_integer_positive(integer, name):
+    if isinstance(integer, int) and integer > 0:
+        return
+    raise ClientException(error_code.SDK_INVALID_PARAMETER,
+                          "{0} should be a positive integer.".format(name))
