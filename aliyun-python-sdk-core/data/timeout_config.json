@@ -1,0 +1,9 @@
+{
+  "ApiTimeout": {
+    "ecs": {
+      "2014-09-26": {
+        "CreateInstance": 90
+      }
+    }
+  }
+}
