@@ -12,9 +12,21 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from aliyunsdkcore.retry.retry_condition import RetryCondition
-from aliyunsdkcore.retry.backoff_strategy import BackoffStrategy
+from aliyunsdkcore.retry.retry_condition import *
+from aliyunsdkcore.retry.backoff_strategy import *
 
 
 class RetryPolicy(BackoffStrategy, RetryCondition):
     pass
+
+
+class DefaultRetryPolicy(DefaultMixedBackoffStrategy, DefaultConfigRetryCondition):
+    pass
+
+
+class NoRetryPolicy(NoDelayStrategy, NoRetryCondition):
+    pass
+
+
+PREDEFINED_DEFAULT_RETRY_POLICY = DefaultRetryPolicy()
+NO_RETRY_POLICY = NoRetryPolicy()

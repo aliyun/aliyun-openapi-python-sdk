@@ -92,38 +92,18 @@ class AcsClient:
         self._endpoint_resolver = DefaultEndpointResolver(self)
 
     def get_region_id(self):
-        """
-
-        :return: String
-        """
         return self.__region_id
 
     def get_access_key(self):
-        """
-
-        :return: String
-        """
         return self.__ak
 
     def get_access_secret(self):
-        """
-
-        :return: String
-        """
         return self.__secret
 
     def is_auto_retry(self):
-        """
-
-        :return:Boolean
-        """
         return self.__auto_retry
 
     def get_max_retry_num(self):
-        """
-
-        :return: Number
-        """
         return self.__max_retry_num
 
     def get_user_agent(self):
@@ -133,11 +113,6 @@ class AcsClient:
         self.__region_id = region
 
     def set_max_retry_num(self, num):
-        """
-        set auto retry number
-        :param num: Numbers
-        :return: None
-        """
         self.__max_retry_num = num
 
     def set_auto_retry(self, flag):
@@ -250,7 +225,7 @@ class AcsClient:
 
     def do_action_with_exception(self, acs_request):
 
-        # set server response format as json, because thie function will
+        # set server response format as json, because this function will
         # parse the response so which format doesn't matter
         acs_request.set_accept_format('JSON')
 

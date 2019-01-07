@@ -46,7 +46,10 @@ with open("README.rst") as fp:
     LONG_DESCRIPTION = fp.read()
 
 
-requires = []
+requires = [
+    "jmespath>=0.9.3,<1.0.0"
+]
+
 if platform.system() != "Windows":
     requires.append("pycryptodome>=3.4.7")
 else:
