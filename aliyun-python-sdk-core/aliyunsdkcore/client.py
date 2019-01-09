@@ -22,6 +22,7 @@ import time
 import warnings
 import json
 import aliyunsdkcore
+import jmespath
 from aliyunsdkcore.vendored.six.moves.urllib.parse import urlencode
 from aliyunsdkcore.vendored.six.moves import http_client
 
@@ -39,12 +40,18 @@ from aliyunsdkcore.endpoint.default_endpoint_resolver import DefaultEndpointReso
 import aliyunsdkcore.retry.retry_policy as retry_policy
 from aliyunsdkcore.retry.retry_condition import RetryCondition
 from aliyunsdkcore.retry.retry_policy_context import RetryPolicyContext
+import aliyunsdkcore.utils
+import aliyunsdkcore.utils.parameter_helper
+import aliyunsdkcore.utils.validation
 
 """
 Acs default client module.
 """
 
 DEFAULT_SDK_CONNECTION_TIMEOUT_IN_SECONDS = 10
+
+# TODO: replace it with TimeoutHandler
+_api_timeout_config_data = aliyunsdkcore.utils._load_json_from_data_dir("timeout_config.json")
 
 
 class AcsClient:
@@ -105,10 +112,10 @@ class AcsClient:
         return self.__region_id
 
     def get_access_key(self):
-        return self.__ak
+        return self._ak
 
     def get_access_secret(self):
-        return self.__secret
+        return self._secret
 
     def is_auto_retry(self):
         return self.__auto_retry
@@ -147,7 +154,7 @@ class AcsClient:
     def get_location_service(self):
         return None
 
-    def _make_http_response(self, endpoint, request, specific_signer=None):
+    def _make_http_response(self, endpoint, request, timeout, specific_signer=None):
         body_params = request.get_body_params()
         if body_params:
             body = urlencode(body_params)
@@ -175,7 +182,7 @@ class AcsClient:
             protocol,
             request.get_content(),
             self._port,
-            timeout=self._timeout)
+            timeout=timeout)
         if body_params:
             body = urlencode(request.get_body_params())
             response.set_content(body, "utf-8", format_type.APPLICATION_FORM)
@@ -202,31 +209,62 @@ class AcsClient:
         return self._handle_retry_and_timeout(endpoint, request, signer)
 
     def _add_request_client_token(self, request):
-        if hasattr(request, "set_ClientToken"):
+        if hasattr(request, "set_ClientToken") and hasattr(request, "get_ClientToken"):
+            client_token = request.get_ClientToken()
+            if not client_token:
+                # ClientToken has not been set
+                client_token = aliyunsdkcore.utils.parameter_helper.get_uuid()  # up to 60 chars
+                request.set_ClientToken(client_token)
 
+    def _get_request_timeout(self, request):
+        # TODO: replace it with a timeout_handler
+        path = "{0}.{1}.{2}".format(request.get_product().lower(), request.get_version(),
+                                    request.get_action_name())
+        timeout = jmespath.search(path, _api_timeout_config_data)
+        aliyunsdkcore.utils.validation.assert_integer_positive(timeout, "timeout")
+        if timeout is None:
+            return self._timeout
+        else:
+            return max(timeout, self._timeout)
 
     def _handle_retry_and_timeout(self, endpoint, request, signer):
-        # it's a temporary implement. the long-term plan will be a group a normalized handlers
+        # TODO: replace it with a retry_handler
+        # it's a temporary implementation. the long-term plan will be a group a normalized handlers
         # which contains retry_handler and timeout_handler
+
+        # decide whether we should initialize a ClientToken for the request
+        retry_policy_context = RetryPolicyContext(request, None, None, None)
+        if self._retry_policy.should_retry(retry_policy_context) & \
+                RetryCondition.SHOULD_RETRY_WITH_CLIENT_TOKEN:
+            self._add_request_client_token(request)
+
+        request_timeout = self._get_request_timeout(request)
+
         retryable = RetryCondition.SHOULD_RETRY
         retries = 0
-        while retryable & RetryCondition.SHOULD_RETRY:
 
-            if retryable & RetryCondition.SHOULD_RETRY_WITH_CLIENT_TOKEN:
-                self._add_request_client_token(request)
+        while True:
 
             status, headers, body, exception = self._handle_single_request(endpoint,
                                                                            request,
+                                                                           request_timeout,
                                                                            signer)
             retry_policy_context = RetryPolicyContext(request, exception, retries, status)
             retryable = self._retry_policy.should_retry(retry_policy_context)
+            if not retryable & RetryCondition.SHOULD_RETRY:
+                break
             retry_policy_context.retryable = retryable
             time_to_sleep = self._retry_policy.compute_delay_before_next_retry(retry_policy_context)
             time.sleep(time_to_sleep / 1000.0)
             retries += 1
 
-    def _handle_single_request(self, endpoint, request, signer):
-        http_response = self._make_http_response(endpoint, request, signer)
+        if isinstance(exception, ClientException):
+            raise exception
+
+        return status, headers, body, exception
+
+    def _handle_single_request(self, endpoint, request, timeout, signer):
+        http_response = self._make_http_response(endpoint, request, timeout, signer)
 
         exception = None
 
