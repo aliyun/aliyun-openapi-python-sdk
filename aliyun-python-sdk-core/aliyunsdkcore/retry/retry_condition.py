@@ -13,6 +13,7 @@
 # limitations under the License.
 
 import jmespath
+from abc import ABCMeta, abstractmethod
 
 import aliyunsdkcore.utils
 import aliyunsdkcore.utils.validation as validation
@@ -27,7 +28,7 @@ def _find_data_in_retry_config(key_name, request, retry_config):
     return jmespath.search(path, retry_config)
 
 
-class RetryCondition:
+class RetryCondition(metaclass=ABCMeta):
 
     BLANK_STATUS = 0
     NO_RETRY = 1
@@ -35,9 +36,10 @@ class RetryCondition:
     SHOULD_RETRY_WITH_CLIENT_TOKEN = 4
     SHOULD_RETRY_WITH_THROTTLING_BACKOFF = 8
 
+    @abstractmethod
     def should_retry(self, retry_policy_context):
         """Decide whether the previous request should be retried."""
-        return RetryCondition.NO_RETRY
+        pass
 
 
 class NoRetryCondition(RetryCondition):
@@ -46,7 +48,7 @@ class NoRetryCondition(RetryCondition):
         return RetryCondition.NO_RETRY
 
 
-class MaxRetryTimesCondition:
+class MaxRetryTimesCondition(RetryCondition):
 
     def __init__(self, max_retry_times):
         validation.assert_integer_positive(max_retry_times, "max_retry_times")
@@ -59,7 +61,7 @@ class MaxRetryTimesCondition:
             return RetryCondition.NO_RETRY
 
 
-class RetryOnExceptionCondition:
+class RetryOnExceptionCondition(RetryCondition):
 
     def __init__(self, retry_config):
         self.retry_config = retry_config
@@ -119,7 +121,7 @@ class RetryOnAPICondition(RetryCondition):
             return RetryCondition.BLANK_STATUS
 
 
-class ChainedRetryCondition:
+class ChainedRetryCondition(RetryCondition):
 
     def __init__(self, retry_condition_chain):
         self.retry_condition_chain = retry_condition_chain
@@ -131,7 +133,7 @@ class ChainedRetryCondition:
         return retryable
 
 
-class MixedRetryCondition:
+class MixedRetryCondition(RetryCondition):
 
     def __init__(self, max_retry_times, retry_config):
         self._retry_condition_chain = ChainedRetryCondition([
@@ -148,7 +150,10 @@ class DefaultConfigRetryCondition(MixedRetryCondition):
 
     MAX_RETRY_TIMES = 3
     RETRY_CONFIG_FILE = "retry_config.json"
+    _loaded_retry_config = None
 
     def __init__(self):
-        retry_config = aliyunsdkcore.utils._load_json_from_data_dir(self.RETRY_CONFIG_FILE)
-        MixedRetryCondition.__init__(self, self.MAX_RETRY_TIMES, retry_config)
+        if not self._loaded_retry_config:
+            self._loaded_retry_config = aliyunsdkcore.utils._load_json_from_data_dir(
+                self.RETRY_CONFIG_FILE)
+        MixedRetryCondition.__init__(self, self.MAX_RETRY_TIMES, self._loaded_retry_config)

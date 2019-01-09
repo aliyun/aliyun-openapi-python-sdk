@@ -13,12 +13,14 @@
 # limitations under the License.
 
 import random
+from abc import ABCMeta, abstractmethod
 
 from aliyunsdkcore.retry.retry_condition import RetryCondition
 
 
-class BackoffStrategy:
+class BackoffStrategy(metaclass=ABCMeta):
 
+    @abstractmethod
     def compute_delay_before_next_retry(self, retry_policy_context):
         """Compute delay for request need to be retried, in milliseconds"""
         pass
