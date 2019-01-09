@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class CreateTagJobRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'imm', '2017-09-06', 'CreateTagJob','imm')
+		RpcRequest.__init__(self, 'imm', '2017-09-06', 'CreateTagJob','2017-09-06')
 
 	def get_NotifyTopicName(self):
 		return self.get_query_params().get('NotifyTopicName')

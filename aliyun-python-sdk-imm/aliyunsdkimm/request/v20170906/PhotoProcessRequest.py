@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class PhotoProcessRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'imm', '2017-09-06', 'PhotoProcess','imm')
+		RpcRequest.__init__(self, 'imm', '2017-09-06', 'PhotoProcess','2017-09-06')
 
 	def get_NotifyTopicName(self):
 		return self.get_query_params().get('NotifyTopicName')

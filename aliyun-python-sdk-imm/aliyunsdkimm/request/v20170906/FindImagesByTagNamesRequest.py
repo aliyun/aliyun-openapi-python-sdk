@@ -18,16 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class ListOfficeConversionTaskRequest(RpcRequest):
+class FindImagesByTagNamesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'imm', '2017-09-06', 'ListOfficeConversionTask','2017-09-06')
-
-	def get_MaxKeys(self):
-		return self.get_query_params().get('MaxKeys')
-
-	def set_MaxKeys(self,MaxKeys):
-		self.add_query_param('MaxKeys',MaxKeys)
+		RpcRequest.__init__(self, 'imm', '2017-09-06', 'FindImagesByTagNames','2017-09-06')
 
 	def get_Marker(self):
 		return self.get_query_params().get('Marker')
@@ -40,3 +34,15 @@ class ListOfficeConversionTaskRequest(RpcRequest):
 
 	def set_Project(self,Project):
 		self.add_query_param('Project',Project)
+
+	def get_SetId(self):
+		return self.get_query_params().get('SetId')
+
+	def set_SetId(self,SetId):
+		self.add_query_param('SetId',SetId)
+
+	def get_TagNames(self):
+		return self.get_query_params().get('TagNames')
+
+	def set_TagNames(self,TagNames):
+		self.add_query_param('TagNames',TagNames)

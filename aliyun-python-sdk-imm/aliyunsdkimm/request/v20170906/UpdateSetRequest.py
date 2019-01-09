@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class UpdateSetRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'imm', '2017-09-06', 'UpdateSet','imm')
+		RpcRequest.__init__(self, 'imm', '2017-09-06', 'UpdateSet','2017-09-06')
 
 	def get_SetName(self):
 		return self.get_query_params().get('SetName')

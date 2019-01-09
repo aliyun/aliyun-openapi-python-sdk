@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class GetFaceSearchImageRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'imm', '2017-09-06', 'GetFaceSearchImage','imm')
+		RpcRequest.__init__(self, 'imm', '2017-09-06', 'GetFaceSearchImage','2017-09-06')
 
 	def get_ImageId(self):
 		return self.get_query_params().get('ImageId')

@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class DeleteFaceSearchUserRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'imm', '2017-09-06', 'DeleteFaceSearchUser','imm')
+		RpcRequest.__init__(self, 'imm', '2017-09-06', 'DeleteFaceSearchUser','2017-09-06')
 
 	def get_Project(self):
 		return self.get_query_params().get('Project')

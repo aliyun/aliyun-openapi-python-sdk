@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class GetPornBatchDetectJobRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'imm', '2017-09-06', 'GetPornBatchDetectJob','imm')
+		RpcRequest.__init__(self, 'imm', '2017-09-06', 'GetPornBatchDetectJob','2017-09-06')
 
 	def get_JobId(self):
 		return self.get_query_params().get('JobId')
