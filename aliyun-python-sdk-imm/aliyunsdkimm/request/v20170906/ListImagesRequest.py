@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class ListImagesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'imm', '2017-09-06', 'ListImages','2017-09-06')
+		RpcRequest.__init__(self, 'imm', '2017-09-06', 'ListImages','imm')
 
 	def get_Marker(self):
 		return self.get_query_params().get('Marker')

@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class CreateIndexFaceJobRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'imm', '2017-09-06', 'CreateIndexFaceJob','2017-09-06')
+		RpcRequest.__init__(self, 'imm', '2017-09-06', 'CreateIndexFaceJob','imm')
 
 	def get_Chain(self):
 		return self.get_query_params().get('Chain')

@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class ListTagPhotosRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'imm', '2017-09-06', 'ListTagPhotos','2017-09-06')
+		RpcRequest.__init__(self, 'imm', '2017-09-06', 'ListTagPhotos','imm')
 
 	def get_TagName(self):
 		return self.get_query_params().get('TagName')

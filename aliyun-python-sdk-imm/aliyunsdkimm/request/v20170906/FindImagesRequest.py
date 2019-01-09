@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class FindImagesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'imm', '2017-09-06', 'FindImages','2017-09-06')
+		RpcRequest.__init__(self, 'imm', '2017-09-06', 'FindImages','imm')
 
 	def get_Gender(self):
 		return self.get_query_params().get('Gender')

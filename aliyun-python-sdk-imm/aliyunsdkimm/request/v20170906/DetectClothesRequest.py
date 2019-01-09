@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class DetectClothesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'imm', '2017-09-06', 'DetectClothes','2017-09-06')
+		RpcRequest.__init__(self, 'imm', '2017-09-06', 'DetectClothes','imm')
 
 	def get_SrcUris(self):
 		return self.get_query_params().get('SrcUris')

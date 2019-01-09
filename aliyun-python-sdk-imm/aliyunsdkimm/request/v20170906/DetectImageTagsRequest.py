@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class DetectImageTagsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'imm', '2017-09-06', 'DetectImageTags','2017-09-06')
+		RpcRequest.__init__(self, 'imm', '2017-09-06', 'DetectImageTags','imm')
 
 	def get_ImageUri(self):
 		return self.get_query_params().get('ImageUri')
