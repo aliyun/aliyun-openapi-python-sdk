@@ -86,5 +86,5 @@ setup_args = {
 }
 
 
-setup(name='aliyun-python-sdk-core', **setup_args)
+setup(name='aliyun-python-sdk-core-v3', **setup_args)
 
