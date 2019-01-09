@@ -19,5 +19,5 @@ release-core:
 	bash -ex release-core.sh core release
 	bash -ex release-core.sh core-v3 dist
 	bash -ex release-core.sh core-v3 test
-	bash -ex release-core.sh core-ve release
+	bash -ex release-core.sh core-v3 release
 
