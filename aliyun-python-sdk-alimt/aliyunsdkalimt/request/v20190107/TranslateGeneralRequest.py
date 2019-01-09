@@ -18,37 +18,37 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class TranslateECommerceRequest(RpcRequest):
+class TranslateGeneralRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'alimt', '2018-10-12', 'TranslateECommerce','alimt')
+		RpcRequest.__init__(self, 'alimt', '2019-01-07', 'TranslateGeneral','alimt')
 
 	def get_SourceLanguage(self):
-		return self.get_body_params().get('SourceLanguage')
+		return self.get_query_params().get('SourceLanguage')
 
 	def set_SourceLanguage(self,SourceLanguage):
-		self.add_body_params('SourceLanguage', SourceLanguage)
+		self.add_query_param('SourceLanguage',SourceLanguage)
 
 	def get_SourceText(self):
-		return self.get_body_params().get('SourceText')
+		return self.get_query_params().get('SourceText')
 
 	def set_SourceText(self,SourceText):
-		self.add_body_params('SourceText', SourceText)
+		self.add_query_param('SourceText',SourceText)
 
 	def get_FormatType(self):
-		return self.get_body_params().get('FormatType')
+		return self.get_query_params().get('FormatType')
 
 	def set_FormatType(self,FormatType):
-		self.add_body_params('FormatType', FormatType)
+		self.add_query_param('FormatType',FormatType)
 
 	def get_TargetLanguage(self):
-		return self.get_body_params().get('TargetLanguage')
+		return self.get_query_params().get('TargetLanguage')
 
 	def set_TargetLanguage(self,TargetLanguage):
-		self.add_body_params('TargetLanguage', TargetLanguage)
+		self.add_query_param('TargetLanguage',TargetLanguage)
 
 	def get_Scene(self):
-		return self.get_body_params().get('Scene')
+		return self.get_query_params().get('Scene')
 
 	def set_Scene(self,Scene):
-		self.add_body_params('Scene', Scene)
+		self.add_query_param('Scene',Scene)

@@ -42,7 +42,7 @@ class CredentialsTest(SDKTestBase):
             credentials.get("SecurityToken")
         )
         acs_client = AcsClient(
-            region_id="me-east-1",
+            region_id=self.region_id,
             credential=sts_token_credential)
         request = DescribeRegionsRequest()
         url = self.get_http_request(acs_client, request)
