@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class ListPornBatchDetectJobsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'imm', '2017-09-06', 'ListPornBatchDetectJobs','imm')
+		RpcRequest.__init__(self, 'imm', '2017-09-06', 'ListPornBatchDetectJobs','2017-09-06')
 
 	def get_MaxKeys(self):
 		return self.get_query_params().get('MaxKeys')

@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class DeleteVideoRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'imm', '2017-09-06', 'DeleteVideo','imm')
+		RpcRequest.__init__(self, 'imm', '2017-09-06', 'DeleteVideo','2017-09-06')
 
 	def get_VideoUri(self):
 		return self.get_query_params().get('VideoUri')

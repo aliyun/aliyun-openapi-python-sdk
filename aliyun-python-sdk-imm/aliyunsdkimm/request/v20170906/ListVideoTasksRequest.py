@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class ListVideoTasksRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'imm', '2017-09-06', 'ListVideoTasks','imm')
+		RpcRequest.__init__(self, 'imm', '2017-09-06', 'ListVideoTasks','2017-09-06')
 
 	def get_MaxKeys(self):
 		return self.get_query_params().get('MaxKeys')

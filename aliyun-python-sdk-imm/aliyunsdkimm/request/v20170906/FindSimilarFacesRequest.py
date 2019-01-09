@@ -18,25 +18,37 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class ListOfficeConversionTaskRequest(RpcRequest):
+class FindSimilarFacesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'imm', '2017-09-06', 'ListOfficeConversionTask','2017-09-06')
+		RpcRequest.__init__(self, 'imm', '2017-09-06', 'FindSimilarFaces','2017-09-06')
 
-	def get_MaxKeys(self):
-		return self.get_query_params().get('MaxKeys')
+	def get_ImageUri(self):
+		return self.get_query_params().get('ImageUri')
 
-	def set_MaxKeys(self,MaxKeys):
-		self.add_query_param('MaxKeys',MaxKeys)
+	def set_ImageUri(self,ImageUri):
+		self.add_query_param('ImageUri',ImageUri)
 
-	def get_Marker(self):
-		return self.get_query_params().get('Marker')
+	def get_Limit(self):
+		return self.get_query_params().get('Limit')
 
-	def set_Marker(self,Marker):
-		self.add_query_param('Marker',Marker)
+	def set_Limit(self,Limit):
+		self.add_query_param('Limit',Limit)
 
 	def get_Project(self):
 		return self.get_query_params().get('Project')
 
 	def set_Project(self,Project):
 		self.add_query_param('Project',Project)
+
+	def get_SetId(self):
+		return self.get_query_params().get('SetId')
+
+	def set_SetId(self,SetId):
+		self.add_query_param('SetId',SetId)
+
+	def get_FaceId(self):
+		return self.get_query_params().get('FaceId')
+
+	def set_FaceId(self,FaceId):
+		self.add_query_param('FaceId',FaceId)

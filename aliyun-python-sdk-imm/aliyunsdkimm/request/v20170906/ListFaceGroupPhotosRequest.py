@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class ListFaceGroupPhotosRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'imm', '2017-09-06', 'ListFaceGroupPhotos','imm')
+		RpcRequest.__init__(self, 'imm', '2017-09-06', 'ListFaceGroupPhotos','2017-09-06')
 
 	def get_MaxKeys(self):
 		return self.get_query_params().get('MaxKeys')

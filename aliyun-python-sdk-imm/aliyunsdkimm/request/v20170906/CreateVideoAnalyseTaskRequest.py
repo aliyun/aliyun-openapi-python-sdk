@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class CreateVideoAnalyseTaskRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'imm', '2017-09-06', 'CreateVideoAnalyseTask','imm')
+		RpcRequest.__init__(self, 'imm', '2017-09-06', 'CreateVideoAnalyseTask','2017-09-06')
 
 	def get_NotifyTopicName(self):
 		return self.get_query_params().get('NotifyTopicName')
