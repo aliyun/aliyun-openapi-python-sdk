@@ -12,3 +12,12 @@ test:
 
 functional-test:
 	cd python-sdk-functional-test && bash -e run_all_test.sh
+
+release-core: 
+	bash -ex release-core.sh core dist
+	bash -ex release-core.sh core test
+	bash -ex release-core.sh core release
+	bash -ex release-core.sh core-v3 dist
+	bash -ex release-core.sh core-v3 test
+	bash -ex release-core.sh core-v3 release
+
