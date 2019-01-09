@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class DeleteFaceSetRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'imm', '2017-09-06', 'DeleteFaceSet','2017-09-06')
+		RpcRequest.__init__(self, 'imm', '2017-09-06', 'DeleteFaceSet','imm')
 
 	def get_LazyMode(self):
 		return self.get_query_params().get('LazyMode')

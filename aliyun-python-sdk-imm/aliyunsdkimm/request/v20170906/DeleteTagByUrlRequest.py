@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class DeleteTagByUrlRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'imm', '2017-09-06', 'DeleteTagByUrl','2017-09-06')
+		RpcRequest.__init__(self, 'imm', '2017-09-06', 'DeleteTagByUrl','imm')
 
 	def get_Project(self):
 		return self.get_query_params().get('Project')

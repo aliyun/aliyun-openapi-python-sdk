@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class ListTagSetsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'imm', '2017-09-06', 'ListTagSets','2017-09-06')
+		RpcRequest.__init__(self, 'imm', '2017-09-06', 'ListTagSets','imm')
 
 	def get_MaxKeys(self):
 		return self.get_query_params().get('MaxKeys')

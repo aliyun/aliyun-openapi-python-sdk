@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class UpdateProjectRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'imm', '2017-09-06', 'UpdateProject','2017-09-06')
+		RpcRequest.__init__(self, 'imm', '2017-09-06', 'UpdateProject','imm')
 
 	def get_NewServiceRole(self):
 		return self.get_query_params().get('NewServiceRole')

@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class ListTagJobsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'imm', '2017-09-06', 'ListTagJobs','2017-09-06')
+		RpcRequest.__init__(self, 'imm', '2017-09-06', 'ListTagJobs','imm')
 
 	def get_Condition(self):
 		return self.get_query_params().get('Condition')

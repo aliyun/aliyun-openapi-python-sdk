@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class GetImageJobRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'imm', '2017-09-06', 'GetImageJob','2017-09-06')
+		RpcRequest.__init__(self, 'imm', '2017-09-06', 'GetImageJob','imm')
 
 	def get_JobId(self):
 		return self.get_query_params().get('JobId')

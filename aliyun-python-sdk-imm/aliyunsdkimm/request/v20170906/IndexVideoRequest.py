@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class IndexVideoRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'imm', '2017-09-06', 'IndexVideo','2017-09-06')
+		RpcRequest.__init__(self, 'imm', '2017-09-06', 'IndexVideo','imm')
 
 	def get_GrabType(self):
 		return self.get_query_params().get('GrabType')

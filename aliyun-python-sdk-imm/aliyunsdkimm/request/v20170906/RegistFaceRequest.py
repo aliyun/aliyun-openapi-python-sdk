@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class RegistFaceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'imm', '2017-09-06', 'RegistFace','2017-09-06')
+		RpcRequest.__init__(self, 'imm', '2017-09-06', 'RegistFace','imm')
 
 	def get_ChooseBiggestFace(self):
 		return self.get_query_params().get('ChooseBiggestFace')

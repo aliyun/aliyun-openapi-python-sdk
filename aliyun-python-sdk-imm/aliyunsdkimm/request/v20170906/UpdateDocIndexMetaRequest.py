@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class UpdateDocIndexMetaRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'imm', '2017-09-06', 'UpdateDocIndexMeta','2017-09-06')
+		RpcRequest.__init__(self, 'imm', '2017-09-06', 'UpdateDocIndexMeta','imm')
 
 	def get_CustomKey1(self):
 		return self.get_query_params().get('CustomKey1')
