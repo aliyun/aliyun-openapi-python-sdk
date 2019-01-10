@@ -14,10 +14,11 @@ from aliyunsdkcore.compat import ensure_bytes
 class TestRamRoleArnSigner(unittest.TestCase):
     def do_action_200(self, request, signer):
         return 200, {}, ensure_bytes('{"Credentials":{"AccessKeyId":"access_key_id",\
-            "AccessKeySecret":"access_key_secret","SecurityToken":"security_token"}}')
+            "AccessKeySecret":"access_key_secret",\
+            "SecurityToken":"security_token"}}'), None
 
     def do_action_400(self, request, signer):
-        return 400, {}, 'XXXX'
+        return 400, {}, 'XXXX', None
 
     def test_ecs_ram_role_signer(self):
         credential = RamRoleArnCredential(

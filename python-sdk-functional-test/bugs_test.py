@@ -60,7 +60,7 @@ class BugsTest(SDKTestBase):
         from aliyunsdkecs.request.v20140526.DescribeRegionsRequest import DescribeRegionsRequest
         request = DescribeRegionsRequest()
         request.set_accept_format('JSON')
-        status, headers, body = self.client.implementation_of_do_action(request)
+        status, headers, body, exception = self.client._implementation_of_do_action(request)
         try:
             body_obj = ["ecs", "rdm", "roa"]
             request_id = body_obj.get("RequestId")

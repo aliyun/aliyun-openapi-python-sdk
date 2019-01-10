@@ -27,7 +27,7 @@ class TestAcsClient(unittest.TestCase):
         client.set_auto_retry(False)
         self.assertFalse(client.is_auto_retry())
         # max retry num
-        self.assertEqual(client.get_max_retry_num(), 3)
+        self.assertEqual(client.get_max_retry_num(), None)
         client.set_max_retry_num(10)
         self.assertEqual(client.get_max_retry_num(), 10)
         # user agent
