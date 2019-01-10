@@ -60,7 +60,7 @@ class JitteredExponentialBackoffStrategy(ExponentialBackoffStrategy):
     def compute_delay_before_next_retry(self, retry_policy_context):
         delay = ExponentialBackoffStrategy.compute_delay_before_next_retry(self,
                                                                            retry_policy_context)
-        return delay / 2 + random.randint(0, delay / 2)
+        return delay / 2 + random.randint(0, int(delay / 2))
 
 
 class DefaultMixedBackoffStrategy(BackoffStrategy):

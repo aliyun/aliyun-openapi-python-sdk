@@ -3,6 +3,7 @@
 from aliyunsdkcore.acs_exception.exceptions import ClientException
 from aliyunsdkcore.acs_exception.exceptions import ServerException
 from aliyunsdkcore.client import AcsClient
+from aliyunsdkcore.http.http_response import HttpResponse
 
 from base import SDKTestBase
 
@@ -75,11 +76,12 @@ class ErrorHandleTest(SDKTestBase):
         request = DeleteInstanceRequest()
         request.set_InstanceId("blah")
         client = self.init_client()
+        original_get_response_object = HttpResponse.get_response_object
 
         # test invalid json format
-        def implementation_of_do_action(request):
+        def get_response_object(inst):
             return 400, {}, b"bad-json"
-        client.implementation_of_do_action = implementation_of_do_action
+        HttpResponse.get_response_object = get_response_object
         try:
             client.do_action_with_exception(request)
             assert False
@@ -89,9 +91,9 @@ class ErrorHandleTest(SDKTestBase):
             self.assertEqual("ServerResponseBody: bad-json", e.get_error_msg())
 
         # test valid json format but no Code or Message
-        def implementation_of_do_action(request):
+        def get_response_object(inst):
             return 400, {}, b"""{"key" : "this is a valid json string"}"""
-        client.implementation_of_do_action = implementation_of_do_action
+        HttpResponse.get_response_object = get_response_object
         try:
             client.do_action_with_exception(request)
             assert False
@@ -101,9 +103,9 @@ class ErrorHandleTest(SDKTestBase):
                              e.get_error_msg())
 
         # test missing Code in response
-        def implementation_of_do_action(request):
+        def get_response_object(inst):
             return 400, {}, b"{\"Message\": \"Some message\"}"
-        client.implementation_of_do_action = implementation_of_do_action
+        HttpResponse.get_response_object = get_response_object
         try:
             client.do_action_with_exception(request)
             assert False
@@ -112,9 +114,9 @@ class ErrorHandleTest(SDKTestBase):
             self.assertEqual("""Some message""", e.get_error_msg())
 
         # test missing Code in response
-        def implementation_of_do_action(request):
+        def get_response_object(inst):
             return 400, {}, b"{\"Code\": \"YouMessedSomethingUp\"}"
-        client.implementation_of_do_action = implementation_of_do_action
+        HttpResponse.get_response_object = get_response_object
         try:
             client.do_action_with_exception(request)
             assert False
@@ -122,3 +124,5 @@ class ErrorHandleTest(SDKTestBase):
             self.assertEqual("YouMessedSomethingUp", e.get_error_code())
             self.assertEqual("""ServerResponseBody: {"Code": "YouMessedSomethingUp"}""",
                              e.get_error_msg())
+
+        HttpResponse.get_response_object = original_get_response_object

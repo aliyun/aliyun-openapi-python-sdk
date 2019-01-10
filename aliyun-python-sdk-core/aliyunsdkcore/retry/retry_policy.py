@@ -16,17 +16,21 @@ from aliyunsdkcore.retry.retry_condition import *
 from aliyunsdkcore.retry.backoff_strategy import *
 
 
-class RetryPolicy(BackoffStrategy, RetryCondition):
-    pass
+class RetryPolicy(RetryCondition, BackoffStrategy):
+
+    def __init__(self, retry_condition, backoff_strategy):
+        self._retry_condition = retry_condition
+        self._backoff_strategy = backoff_strategy
+
+    def should_retry(self, retry_policy_context):
+        return self._retry_condition.should_retry(retry_policy_context)
+
+    def compute_delay_before_next_retry(self, retry_policy_context):
+        return self._backoff_strategy.compute_delay_before_next_retry(
+            retry_policy_context)
 
 
-class DefaultRetryPolicy(DefaultMixedBackoffStrategy, DefaultConfigRetryCondition):
-    pass
+PREDEFINED_DEFAULT_RETRY_POLICY = RetryPolicy(DefaultConfigRetryCondition(),
+                                              DefaultMixedBackoffStrategy())
+NO_RETRY_POLICY = RetryPolicy(NoRetryCondition(), NoDelayStrategy())
 
-
-class NoRetryPolicy(NoDelayStrategy, NoRetryCondition):
-    pass
-
-
-PREDEFINED_DEFAULT_RETRY_POLICY = DefaultRetryPolicy()
-NO_RETRY_POLICY = NoRetryPolicy()
