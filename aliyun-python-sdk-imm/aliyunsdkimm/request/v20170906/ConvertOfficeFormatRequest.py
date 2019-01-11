@@ -107,6 +107,12 @@ class ConvertOfficeFormatRequest(RpcRequest):
 	def set_FitToPagesWide(self,FitToPagesWide):
 		self.add_query_param('FitToPagesWide',FitToPagesWide)
 
+	def get_Hidecomments(self):
+		return self.get_query_params().get('Hidecomments')
+
+	def set_Hidecomments(self,Hidecomments):
+		self.add_query_param('Hidecomments',Hidecomments)
+
 	def get_TgtFilePrefix(self):
 		return self.get_query_params().get('TgtFilePrefix')
 
