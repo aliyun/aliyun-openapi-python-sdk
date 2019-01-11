@@ -12,13 +12,14 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-import json
-import os.path
-import aliyunsdkcore
+from aliyunsdkcore.retry.retry_condition import RetryCondition
 
 
-def _load_json_from_data_dir(basename):
-    base_dir = os.path.dirname(os.path.abspath(aliyunsdkcore.__file__))
-    json_file = os.path.join(base_dir, "data", basename)
-    with open(json_file) as fp:
-        return json.loads(fp.read())
+class RetryPolicyContext:
+
+    def __init__(self, original_request, exception, retries_attempted, http_status_code):
+        self.original_request = original_request
+        self.exception = exception
+        self.retries_attempted = retries_attempted
+        self.http_status_code = http_status_code
+        self.retryable = RetryCondition.BLANK_STATUS

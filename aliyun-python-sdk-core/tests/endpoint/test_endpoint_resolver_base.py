@@ -14,3 +14,4 @@ class TestEndpointResolverBase(unittest.TestCase):
             resolver.is_region_id_valid(None)
         with self.assertRaises(NotImplementedError):
             resolver.get_endpoint_key_from_request(None)
+

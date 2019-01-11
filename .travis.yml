@@ -16,11 +16,13 @@ install:
   - pip install coverage
   - pip install pycodestyle
   - pip install mock
+  - pip install jmespath
 
 script:
   - make lint
   - make test
   - '[[ $ACCESS_KEY_ID && $ACCESS_KEY_SECRET ]] && make functional-test'
+  - make coverage-report
 
 notifications:
     webhooks: https://oapi.dingtalk.com/robot/send?access_token=096ed387df243a6d60835aadeccc47165f3813bc7cb81cdd0cfeadfd28e3acc1

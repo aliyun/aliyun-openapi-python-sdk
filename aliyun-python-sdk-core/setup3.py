@@ -65,7 +65,7 @@ setup_args = {
     'url': URL,
     'keywords': ["aliyun", "sdk", "core"],
     'packages': find_packages(exclude=["tests*"]),
-    'package_data': {'aliyunsdkcore': ['endpoint/*.json']},
+    'package_data': {'aliyunsdkcore': ['data/*.json']},
     'platforms': 'any',
     'install_requires': requires,
     'classifiers': (

@@ -36,3 +36,4 @@ SDK_NOT_SUPPORT = 'SDK.NotSupport'
 SDK_ENDPOINT_RESOLVING_ERROR = 'SDK.EndpointResolvingError'
 SDK_ENDPOINT_TESTABILITY = 'SDK.EndpointTestability'
 SDK_HTTP_ERROR = 'SDK.HttpError'
+SDK_INVALID_PARAMETER = "SDK.InvalidParameter"
