@@ -12,13 +12,12 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-import json
-import os.path
-import aliyunsdkcore
+from aliyunsdkcore.acs_exception.exceptions import ClientException
+import aliyunsdkcore.acs_exception.error_code as error_code
 
 
-def _load_json_from_data_dir(basename):
-    base_dir = os.path.dirname(os.path.abspath(aliyunsdkcore.__file__))
-    json_file = os.path.join(base_dir, "data", basename)
-    with open(json_file) as fp:
-        return json.loads(fp.read())
+def assert_integer_positive(integer, name):
+    if isinstance(integer, int) and integer > 0:
+        return
+    raise ClientException(error_code.SDK_INVALID_PARAMETER,
+                          "{0} should be a positive integer.".format(name))

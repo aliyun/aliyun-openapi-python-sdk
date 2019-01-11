@@ -27,7 +27,8 @@ class BugsTest(SDKTestBase):
                  "time": datetime.datetime.now().microsecond
                  }
         request.set_content(json.dumps({"tasks": [task1], "scenes": ["porn"]}))
-        response = self.client.do_action_with_exception(request)
+        client = self.init_client(region_id="cn-hangzhou")
+        response = client.do_action_with_exception(request)
         response = self.get_dict_response(response)
         self.assertEqual(200, response.get("code"))
 
@@ -60,7 +61,7 @@ class BugsTest(SDKTestBase):
         from aliyunsdkecs.request.v20140526.DescribeRegionsRequest import DescribeRegionsRequest
         request = DescribeRegionsRequest()
         request.set_accept_format('JSON')
-        status, headers, body = self.client.implementation_of_do_action(request)
+        status, headers, body, exception = self.client._implementation_of_do_action(request)
         try:
             body_obj = ["ecs", "rdm", "roa"]
             request_id = body_obj.get("RequestId")

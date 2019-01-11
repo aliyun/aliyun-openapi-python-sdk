@@ -75,7 +75,7 @@ class RamRoleArnSigner(Signer):
                                                     self._credential.sts_access_key_secret)
         signer = AccessKeySigner(access_key_credential)
 
-        status, headers, body = self._doAction(request, signer)
+        status, headers, body, exception = self._doAction(request, signer)
         if status == 200:
             response = json.loads(body.decode('utf-8'))
             session_ak = response.get("Credentials").get("AccessKeyId")

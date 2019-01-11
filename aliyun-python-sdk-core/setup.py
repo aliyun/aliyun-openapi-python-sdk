@@ -46,7 +46,10 @@ with open("README.rst") as fp:
     LONG_DESCRIPTION = fp.read()
 
 
-requires = []
+requires = [
+    "jmespath>=0.9.3,<1.0.0"
+]
+
 if platform.system() != "Windows":
     requires.append("pycryptodome>=3.4.7")
 else:
@@ -65,7 +68,7 @@ setup_args = {
     'url': URL,
     'keywords': ["aliyun", "sdk", "core"],
     'packages': find_packages(exclude=["tests*"]),
-    'package_data': {'aliyunsdkcore': ['endpoint/*.json']},
+    'package_data': {'aliyunsdkcore': ['data/*.json']},
     'platforms': 'any',
     'install_requires': requires,
     'classifiers': (

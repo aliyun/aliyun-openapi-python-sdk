@@ -18,9 +18,11 @@
 # under the License.
 
 # coding=utf-8
+import time
 import warnings
 import json
 import aliyunsdkcore
+import jmespath
 from aliyunsdkcore.vendored.six.moves.urllib.parse import urlencode
 from aliyunsdkcore.vendored.six.moves import http_client
 
@@ -35,13 +37,21 @@ from aliyunsdkcore.request import CommonRequest
 
 from aliyunsdkcore.endpoint.resolver_endpoint_request import ResolveEndpointRequest
 from aliyunsdkcore.endpoint.default_endpoint_resolver import DefaultEndpointResolver
-
+import aliyunsdkcore.retry.retry_policy as retry_policy
+from aliyunsdkcore.retry.retry_condition import RetryCondition
+from aliyunsdkcore.retry.retry_policy_context import RetryPolicyContext
+import aliyunsdkcore.utils
+import aliyunsdkcore.utils.parameter_helper
+import aliyunsdkcore.utils.validation
 
 """
 Acs default client module.
 """
 
 DEFAULT_SDK_CONNECTION_TIMEOUT_IN_SECONDS = 10
+
+# TODO: replace it with TimeoutHandler
+_api_timeout_config_data = aliyunsdkcore.utils._load_json_from_data_dir("timeout_config.json")
 
 
 class AcsClient:
@@ -52,10 +62,10 @@ class AcsClient:
             secret=None,
             region_id="cn-hangzhou",
             auto_retry=True,
-            max_retry_time=3,
+            max_retry_time=None,
             user_agent=None,
             port=80,
-            timeout=DEFAULT_SDK_CONNECTION_TIMEOUT_IN_SECONDS,
+            timeout=None,
             public_key_id=None,
             private_key=None,
             session_period=3600,
@@ -71,12 +81,12 @@ class AcsClient:
         :return:
         """
 
-        self.__max_retry_num = max_retry_time
-        self.__auto_retry = auto_retry
-        self.__ak = ak
-        self.__secret = secret
-        self.__region_id = region_id
-        self.__user_agent = user_agent
+        self._max_retry_num = max_retry_time
+        self._auto_retry = auto_retry
+        self._ak = ak
+        self._secret = secret
+        self._region_id = region_id
+        self._user_agent = user_agent
         self._port = port
         self._timeout = timeout
         credential = {
@@ -88,57 +98,38 @@ class AcsClient:
             'credential': credential,
         }
         self._signer = SignerFactory.get_signer(
-            credential, region_id, self.implementation_of_do_action, debug)
+            credential, region_id, self._implementation_of_do_action, debug)
         self._endpoint_resolver = DefaultEndpointResolver(self)
 
-    def get_region_id(self):
-        """
+        if self._auto_retry:
+            self._retry_policy = retry_policy.get_default_retry_policy(
+                max_retry_times=self._max_retry_num)
+        else:
+            self._retry_policy = retry_policy.NO_RETRY_POLICY
 
-        :return: String
-        """
-        return self.__region_id
+    def get_region_id(self):
+        return self._region_id
 
     def get_access_key(self):
-        """
-
-        :return: String
-        """
-        return self.__ak
+        return self._ak
 
     def get_access_secret(self):
-        """
-
-        :return: String
-        """
-        return self.__secret
+        return self._secret
 
     def is_auto_retry(self):
-        """
-
-        :return:Boolean
-        """
-        return self.__auto_retry
+        return self._auto_retry
 
     def get_max_retry_num(self):
-        """
-
-        :return: Number
-        """
-        return self.__max_retry_num
+        return self._max_retry_num
 
     def get_user_agent(self):
-        return self.__user_agent
+        return self._user_agent
 
     def set_region_id(self, region):
-        self.__region_id = region
+        self._region_id = region
 
     def set_max_retry_num(self, num):
-        """
-        set auto retry number
-        :param num: Numbers
-        :return: None
-        """
-        self.__max_retry_num = num
+        self._max_retry_num = num
 
     def set_auto_retry(self, flag):
         """
@@ -146,7 +137,7 @@ class AcsClient:
         :param flag: Booleans
         :return: None
         """
-        self.__auto_retry = flag
+        self._auto_retry = flag
 
     def set_user_agent(self, agent):
         """
@@ -154,7 +145,7 @@ class AcsClient:
         :param agent:
         :return:
         """
-        self.__user_agent = agent
+        self._user_agent = agent
 
     def get_port(self):
         return self._port
@@ -162,7 +153,7 @@ class AcsClient:
     def get_location_service(self):
         return None
 
-    def _make_http_response(self, endpoint, request, specific_signer=None):
+    def _make_http_response(self, endpoint, request, timeout, specific_signer=None):
         body_params = request.get_body_params()
         if body_params:
             body = urlencode(body_params)
@@ -173,7 +164,7 @@ class AcsClient:
         method = request.get_method()
 
         signer = self._signer if specific_signer is None else specific_signer
-        header, url = signer.sign(self.__region_id, request)
+        header, url = signer.sign(self._region_id, request)
 
         if self.get_user_agent() is not None:
             header['User-Agent'] = self.get_user_agent()
@@ -190,13 +181,13 @@ class AcsClient:
             protocol,
             request.get_content(),
             self._port,
-            timeout=self._timeout)
+            timeout=timeout)
         if body_params:
             body = urlencode(request.get_body_params())
             response.set_content(body, "utf-8", format_type.APPLICATION_FORM)
         return response
 
-    def implementation_of_do_action(self, request, signer=None):
+    def _implementation_of_do_action(self, request, signer=None):
         if not isinstance(request, AcsRequest):
             raise ClientException(
                 error_code.SDK_INVALID_REQUEST,
@@ -214,12 +205,85 @@ class AcsClient:
         else:
             endpoint = self._resolve_endpoint(request)
 
-        http_response = self._make_http_response(endpoint, request, signer)
+        return self._handle_retry_and_timeout(endpoint, request, signer)
+
+    def implementation_of_do_action(self, request, signer=None):
+        # keep compatible
+        warnings.warn(
+            "implementation_of_do_action() method is deprecated",
+            DeprecationWarning)
+
+        status, headers, body, exception = self._implementation_of_do_action(request, signer)
+        return status, headers, body
+
+    def _add_request_client_token(self, request):
+        if hasattr(request, "set_ClientToken") and hasattr(request, "get_ClientToken"):
+            client_token = request.get_ClientToken()
+            if not client_token:
+                # ClientToken has not been set
+                client_token = aliyunsdkcore.utils.parameter_helper.get_uuid()  # up to 60 chars
+                request.set_ClientToken(client_token)
+
+    def _get_request_timeout(self, request):
+        # TODO: replace it with a timeout_handler
+        if self._timeout:
+            return self._timeout
+
+        if request.get_product() is None:
+            return DEFAULT_SDK_CONNECTION_TIMEOUT_IN_SECONDS
+        path = '"{0}"."{1}"."{2}"'.format(request.get_product().lower(), request.get_version(),
+                                          request.get_action_name())
+        timeout = jmespath.search(path, _api_timeout_config_data)
+        if timeout is None:
+            return DEFAULT_SDK_CONNECTION_TIMEOUT_IN_SECONDS
+        else:
+            aliyunsdkcore.utils.validation.assert_integer_positive(timeout, "timeout")
+            return max(timeout, DEFAULT_SDK_CONNECTION_TIMEOUT_IN_SECONDS)
+
+    def _handle_retry_and_timeout(self, endpoint, request, signer):
+        # TODO: replace it with a retry_handler
+        # it's a temporary implementation. the long-term plan will be a group a normalized handlers
+        # which contains retry_handler and timeout_handler
+
+        # decide whether we should initialize a ClientToken for the request
+        retry_policy_context = RetryPolicyContext(request, None, 0, None)
+        if self._retry_policy.should_retry(retry_policy_context) & \
+                RetryCondition.SHOULD_RETRY_WITH_CLIENT_TOKEN:
+            self._add_request_client_token(request)
+
+        request_timeout = self._get_request_timeout(request)
+
+        retryable = RetryCondition.SHOULD_RETRY
+        retries = 0
+
+        while True:
+
+            status, headers, body, exception = self._handle_single_request(endpoint,
+                                                                           request,
+                                                                           request_timeout,
+                                                                           signer)
+            retry_policy_context = RetryPolicyContext(request, exception, retries, status)
+            retryable = self._retry_policy.should_retry(retry_policy_context)
+            if retryable & RetryCondition.NO_RETRY:
+                break
+            retry_policy_context.retryable = retryable
+            time_to_sleep = self._retry_policy.compute_delay_before_next_retry(retry_policy_context)
+            time.sleep(time_to_sleep / 1000.0)
+            retries += 1
+
+        if isinstance(exception, ClientException):
+            raise exception
+
+        return status, headers, body, exception
+
+    def _handle_single_request(self, endpoint, request, timeout, signer):
+        http_response = self._make_http_response(endpoint, request, timeout, signer)
+
+        exception = None
 
         # Do the actual network thing
         try:
             status, headers, body = http_response.get_response_object()
-            return status, headers, body
         except IOError as e:
             error_message = str(e)
             error_message += "\nEndpoint: " + endpoint
@@ -229,7 +293,11 @@ class AcsClient:
             error_message += "\nHttpHeaders: " + \
                 str(http_response.get_headers())
 
-            raise ClientException(error_code.SDK_HTTP_ERROR, error_message)
+            exception = ClientException(error_code.SDK_HTTP_ERROR, error_message)
+            return None, None, None, exception
+
+        exception = self._get_server_exception(status, body)
+        return status, headers, body, exception
 
     @staticmethod
     def _parse_error_info_from_response_body(response_body):
@@ -248,39 +316,43 @@ class AcsClient:
 
         return error_code_to_return, error_message_to_return
 
-    def do_action_with_exception(self, acs_request):
-
-        # set server response format as json, because thie function will
-        # parse the response so which format doesn't matter
-        acs_request.set_accept_format('JSON')
-
-        status, headers, body = self.implementation_of_do_action(acs_request)
-
+    def _get_server_exception(self, http_status, response_body):
         request_id = None
 
         try:
-            body_obj = json.loads(body.decode('utf-8'))
+            body_obj = json.loads(response_body.decode('utf-8'))
             request_id = body_obj.get('RequestId')
         except (ValueError, TypeError, AttributeError):
             # in case the response body is not a json string, return the raw
             # data instead
             pass
 
-        if status < http_client.OK or status >= http_client.MULTIPLE_CHOICES:
+        if http_status < http_client.OK or http_status >= http_client.MULTIPLE_CHOICES:
 
             server_error_code, server_error_message = self._parse_error_info_from_response_body(
-                body.decode('utf-8'))
-            raise ServerException(
+                response_body.decode('utf-8'))
+            return ServerException(
                 server_error_code,
                 server_error_message,
-                http_status=status,
+                http_status=http_status,
                 request_id=request_id)
+
+    def do_action_with_exception(self, acs_request):
+
+        # set server response format as json, because this function will
+        # parse the response so which format doesn't matter
+        acs_request.set_accept_format('JSON')
+
+        status, headers, body, exception = self._implementation_of_do_action(acs_request)
+
+        if exception:
+            raise exception
 
         return body
 
     def _resolve_endpoint(self, request):
         resolve_request = ResolveEndpointRequest(
-            self.__region_id,
+            self._region_id,
             request.get_product(),
             request.get_location_service_code(),
             request.get_location_endpoint_type(),
@@ -291,7 +363,7 @@ class AcsClient:
         warnings.warn(
             "do_action() method is deprecated, please use do_action_with_exception() instead.",
             DeprecationWarning)
-        status, headers, body = self.implementation_of_do_action(acs_request)
+        status, headers, body, exception = self._implementation_of_do_action(acs_request)
         return body
 
     def get_response(self, acs_request):
