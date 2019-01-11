@@ -27,7 +27,8 @@ class BugsTest(SDKTestBase):
                  "time": datetime.datetime.now().microsecond
                  }
         request.set_content(json.dumps({"tasks": [task1], "scenes": ["porn"]}))
-        response = self.client.do_action_with_exception(request)
+        client = self.init_client(region_id="cn-hangzhou")
+        response = client.do_action_with_exception(request)
         response = self.get_dict_response(response)
         self.assertEqual(200, response.get("code"))
 
