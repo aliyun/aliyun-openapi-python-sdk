@@ -54,13 +54,18 @@ class MaxRetryTimesCondition(RetryCondition):
 
     def __init__(self, max_retry_times):
         validation.assert_integer_positive(max_retry_times, "max_retry_times")
-        self.max_retry_times = max_retry_times
+        self._max_retry_times = max_retry_times
 
     def should_retry(self, retry_policy_context):
-        if retry_policy_context.retries_attempted < self.max_retry_times:
+        if retry_policy_context.retries_attempted < self._max_retry_times:
             return RetryCondition.SHOULD_RETRY
         else:
             return RetryCondition.NO_RETRY
+
+    @property
+    def max_retry_times(self, value):
+        validation.assert_integer_positive(value, "max_retry_times")
+        self._max_retry_times = value
 
 
 class RetryOnExceptionCondition(RetryCondition):
@@ -153,12 +158,15 @@ class MixedRetryCondition(RetryCondition):
 
 class DefaultConfigRetryCondition(MixedRetryCondition):
 
-    MAX_RETRY_TIMES = 3
+    DEFAULT_MAX_RETRY_TIMES = 3
     RETRY_CONFIG_FILE = "retry_config.json"
     _loaded_retry_config = None
 
-    def __init__(self):
+    def __init__(self, max_retry_times=None):
         if not self._loaded_retry_config:
             self._loaded_retry_config = aliyunsdkcore.utils._load_json_from_data_dir(
                 self.RETRY_CONFIG_FILE)
-        MixedRetryCondition.__init__(self, self.MAX_RETRY_TIMES, self._loaded_retry_config)
+
+        if max_retry_times is None:
+            max_retry_times = self.DEFAULT_MAX_RETRY_TIMES
+        MixedRetryCondition.__init__(self, max_retry_times, self._loaded_retry_config)
