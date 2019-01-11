@@ -18,7 +18,9 @@ from abc import ABCMeta, abstractmethod
 from aliyunsdkcore.retry.retry_condition import RetryCondition
 
 
-class BackoffStrategy(metaclass=ABCMeta):
+class BackoffStrategy:
+
+    __metaclass__ = ABCMeta
 
     @abstractmethod
     def compute_delay_before_next_retry(self, retry_policy_context):

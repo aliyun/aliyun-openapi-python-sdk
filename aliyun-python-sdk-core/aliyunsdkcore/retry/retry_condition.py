@@ -30,7 +30,9 @@ def _find_data_in_retry_config(key_name, request, retry_config):
     return jmespath.search(path, retry_config)
 
 
-class RetryCondition(metaclass=ABCMeta):
+class RetryCondition:
+
+    __metaclass__ = ABCMeta
 
     BLANK_STATUS = 0
     NO_RETRY = 1

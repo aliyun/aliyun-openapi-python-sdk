@@ -56,7 +56,8 @@ class TimeoutTest(SDKTestBase):
         self.assertEqual(expected_timeout, _test_patch_client_timeout)
 
     def test_default_time_out(self):
-        client = AcsClient(self.access_key_id, self.access_key_secret, self.region_id)
+        client = AcsClient(self.access_key_id, self.access_key_secret, self.region_id,
+                           auto_retry=False)
         self._patch_client(client)
         self._test_timeout(client, DescribeInstancesRequest(), 10)
         self._test_timeout(client, CreateInstanceRequest(), 86)
@@ -67,7 +68,7 @@ class TimeoutTest(SDKTestBase):
 
     def test_user_set_time_out(self):
         client = AcsClient(self.access_key_id, self.access_key_secret, self.region_id,
-                           timeout=20)
+                           timeout=20, auto_retry=False)
         self._patch_client(client)
         self._test_timeout(client, DescribeInstancesRequest(), 20)
         self._test_timeout(client, CreateInstanceRequest(), 20)
