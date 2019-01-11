@@ -13,7 +13,6 @@
 # limitations under the License.
 
 import jmespath
-from abc import ABCMeta, abstractmethod
 
 import aliyunsdkcore.utils
 import aliyunsdkcore.utils.validation as validation
@@ -38,7 +37,6 @@ class RetryCondition:
     SHOULD_RETRY_WITH_CLIENT_TOKEN = 4
     SHOULD_RETRY_WITH_THROTTLING_BACKOFF = 8
 
-    @abstractmethod
     def should_retry(self, retry_policy_context):
         """Decide whether the previous request should be retried."""
         pass

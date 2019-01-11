@@ -16,11 +16,9 @@
 # under the License.
 #
 
-from abc import ABCMeta, abstractmethod
-
 
 class EndpointResolver:
 
-    @abstractmethod
     def resolve(self, request):
         pass
+
