@@ -54,18 +54,13 @@ class MaxRetryTimesCondition(RetryCondition):
 
     def __init__(self, max_retry_times):
         validation.assert_integer_positive(max_retry_times, "max_retry_times")
-        self._max_retry_times = max_retry_times
+        self.max_retry_times = max_retry_times
 
     def should_retry(self, retry_policy_context):
-        if retry_policy_context.retries_attempted < self._max_retry_times:
+        if retry_policy_context.retries_attempted < self.max_retry_times:
             return RetryCondition.SHOULD_RETRY
         else:
             return RetryCondition.NO_RETRY
-
-    @property
-    def max_retry_times(self, value):
-        validation.assert_integer_positive(value, "max_retry_times")
-        self._max_retry_times = value
 
 
 class RetryOnExceptionCondition(RetryCondition):
@@ -99,61 +94,103 @@ class RetryOnExceptionCondition(RetryCondition):
         return RetryCondition.NO_RETRY
 
 
-class RetryOnAPICondition(RetryCondition):
+class RetryOnHttpStatusCondition(RetryCondition):
+
+    DEFAULT_RETRYABLE_HTTP_STATUS_LIST = [
+        500, 502, 503, 504
+    ]
+
+    def __init__(self, retryable_http_status_list=None):
+        if retryable_http_status_list:
+            self.retryable_http_status_list = retryable_http_status_list
+        else:
+            self.retryable_http_status_list = self.DEFAULT_RETRYABLE_HTTP_STATUS_LIST
+
+    def should_retry(self, retry_policy_context):
+        if retry_policy_context.http_status_code in self.retryable_http_status_list:
+            return RetryCondition.SHOULD_RETRY
+        else:
+            return RetryCondition.NO_RETRY
+
+
+class RetryOnApiCondition(RetryCondition):
 
     def __init__(self, retry_config):
         self.retry_config = retry_config
 
     def should_retry(self, retry_policy_context):
-        retryable = self._should_retry(retry_policy_context) | \
-                    self._should_retry_with_client_token(retry_policy_context)
-        if retryable == RetryCondition.BLANK_STATUS:
-            return RetryCondition.NO_RETRY
-        else:
-            return retryable
-
-    def _should_retry(self, retry_policy_context):
         request = retry_policy_context.original_request
         retryable_apis = _find_data_in_retry_config("RetryableAPIs", request, self.retry_config)
         if isinstance(retryable_apis, list) and request.get_action_name() in retryable_apis:
             return RetryCondition.SHOULD_RETRY
         else:
-            return RetryCondition.BLANK_STATUS
+            return RetryCondition.NO_RETRY
 
-    def _should_retry_with_client_token(self, retry_policy_context):
+
+class RetryOnApiWithClientTokenCondition(RetryCondition):
+
+    def __init__(self, retry_config):
+        self.retry_config = retry_config
+
+    def should_retry(self, retry_policy_context):
         request = retry_policy_context.original_request
         retryable_apis = _find_data_in_retry_config(
             "RetryableAPIsWithClientToken", request, self.retry_config)
         if isinstance(retryable_apis, list) and request.get_action_name() in retryable_apis:
             return RetryCondition.SHOULD_RETRY | RetryCondition.SHOULD_RETRY_WITH_THROTTLING_BACKOFF
         else:
-            return RetryCondition.BLANK_STATUS
+            return RetryCondition.NO_RETRY
 
 
-class ChainedRetryCondition(RetryCondition):
+class AndRetryCondition(RetryCondition):
 
-    def __init__(self, retry_condition_chain):
-        self._retry_condition_chain = retry_condition_chain
+    def __init__(self, conditions):
+        self.conditions = conditions
 
     def should_retry(self, retry_policy_context):
         retryable = RetryCondition.BLANK_STATUS
-        for condition in self._retry_condition_chain:
+        for condition in self.conditions:
             retryable |= condition.should_retry(retry_policy_context)
         return retryable
+
+
+class OrRetryCondition(RetryCondition):
+
+    def __init__(self, conditions):
+        self.conditions = conditions
+
+    def should_retry(self, retry_policy_context):
+        retryable = RetryCondition.BLANK_STATUS
+        no_retry_flag = RetryCondition.NO_RETRY
+        mask = RetryCondition.SHOULD_RETRY
+        mask |= RetryCondition.SHOULD_RETRY_WITH_CLIENT_TOKEN
+        mask |= RetryCondition.SHOULD_RETRY_WITH_THROTTLING_BACKOFF
+
+        for condition in self.conditions:
+            ret = condition.should_retry(retry_policy_context)
+            retryable |= ret & mask
+            no_retry_flag &= ret & RetryCondition.NO_RETRY
+        return retryable | no_retry_flag
 
 
 class MixedRetryCondition(RetryCondition):
 
     def __init__(self, max_retry_times, retry_config):
         RetryCondition.__init__(self)
-        self._chained_retry_condition = ChainedRetryCondition([
+        self._inner_condition = AndRetryCondition([
             MaxRetryTimesCondition(max_retry_times),
-            RetryOnAPICondition(retry_config),
-            RetryOnExceptionCondition(retry_config),
+            OrRetryCondition([
+                RetryOnApiCondition(retry_config),
+                RetryOnApiWithClientTokenCondition(retry_config),
+            ]),
+            OrRetryCondition([
+                RetryOnExceptionCondition(retry_config),
+                RetryOnHttpStatusCondition(),
+            ]),
         ])
 
     def should_retry(self, retry_policy_context):
-        return self._chained_retry_condition.should_retry(retry_policy_context)
+        return self._inner_condition.should_retry(retry_policy_context)
 
 
 class DefaultConfigRetryCondition(MixedRetryCondition):

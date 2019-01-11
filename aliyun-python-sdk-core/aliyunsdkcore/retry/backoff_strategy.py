@@ -51,7 +51,7 @@ class ExponentialBackoffStrategy(BackoffStrategy):
 
     def compute_delay_before_next_retry(self, retry_policy_context):
         retries = min(self.MAX_RETRY_LIMIT, retry_policy_context.retries_attempted)
-        delay = min(self.max_delay_in_milliseconds, self.base_delay_in_milliseconds >> retries)
+        delay = min(self.max_delay_in_milliseconds, self.base_delay_in_milliseconds << retries)
         return delay
 
 

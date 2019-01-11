@@ -20,6 +20,7 @@
 import os.path
 import json
 
+import aliyunsdkcore
 from aliyunsdkcore.vendored.six import iteritems
 from aliyunsdkcore.endpoint.endpoint_resolver_base import EndpointResolverBase
 from aliyunsdkcore.endpoint.resolver_endpoint_request import ResolveEndpointRequest
@@ -27,7 +28,8 @@ from aliyunsdkcore.endpoint.resolver_endpoint_request import ResolveEndpointRequ
 
 class LocalConfigRegionalEndpointResolver(EndpointResolverBase):
 
-    ENDPOINT_JSON = os.path.join(os.path.dirname(__file__), "endpoints.json")
+    ENDPOINT_JSON = os.path.join(os.path.dirname(aliyunsdkcore.__file__),
+                                 "data", "endpoints.json")
 
     def __init__(self, config_json_str=None):
         EndpointResolverBase.__init__(self)

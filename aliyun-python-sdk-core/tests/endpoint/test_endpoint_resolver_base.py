@@ -9,8 +9,6 @@ from aliyunsdkcore.acs_exception.exceptions import ClientException
 
 class TestEndpointResolverBase(unittest.TestCase):
     def test_resolver(self):
-        resolver = EndpointResolverBase()
-        with self.assertRaises(NotImplementedError):
-            resolver.is_region_id_valid(None)
-        with self.assertRaises(NotImplementedError):
-            resolver.get_endpoint_key_from_request(None)
+        with self.assertRaises(TypeError):
+            resolver = EndpointResolverBase()
+

@@ -34,3 +34,8 @@ PREDEFINED_DEFAULT_RETRY_POLICY = RetryPolicy(DefaultConfigRetryCondition(),
                                               DefaultMixedBackoffStrategy())
 NO_RETRY_POLICY = RetryPolicy(NoRetryCondition(), NoDelayStrategy())
 
+
+def get_default_retry_policy(max_retry_times=None):
+    return RetryPolicy(DefaultConfigRetryCondition(max_retry_times=max_retry_times),
+                       DefaultMixedBackoffStrategy())
+

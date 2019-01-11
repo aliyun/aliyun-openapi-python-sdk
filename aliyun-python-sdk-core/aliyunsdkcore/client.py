@@ -102,9 +102,8 @@ class AcsClient:
         self._endpoint_resolver = DefaultEndpointResolver(self)
 
         if self._auto_retry:
-            self._retry_policy = retry_policy.PREDEFINED_DEFAULT_RETRY_POLICY
-            if self._max_retry_num:
-                self._retry_policy.max_retry_times = self._max_retry_num
+            self._retry_policy = retry_policy.get_default_retry_policy(
+                max_retry_times=self._max_retry_num)
         else:
             self._retry_policy = retry_policy.NO_RETRY_POLICY
 
