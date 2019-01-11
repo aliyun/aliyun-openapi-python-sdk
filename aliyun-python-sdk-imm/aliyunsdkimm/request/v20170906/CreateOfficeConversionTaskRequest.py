@@ -131,6 +131,12 @@ class CreateOfficeConversionTaskRequest(RpcRequest):
 	def set_TgtType(self,TgtType):
 		self.add_query_param('TgtType',TgtType)
 
+	def get_Hidecomments(self):
+		return self.get_query_params().get('Hidecomments')
+
+	def set_Hidecomments(self,Hidecomments):
+		self.add_query_param('Hidecomments',Hidecomments)
+
 	def get_FitToPagesTall(self):
 		return self.get_query_params().get('FitToPagesTall')
 
