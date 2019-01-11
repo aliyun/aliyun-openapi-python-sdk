@@ -9,7 +9,7 @@ test:
 	coverage run --branch -m pytest aliyun-python-sdk-core/tests/
 
 functional-test:
-	cd python-sdk-functional-test && bash -e run_all_test.sh
+	bash -e python-sdk-functional-test/run_all_test.sh
 
 coverage-report:
 	coverage report --include="aliyun-python-sdk-core/aliyunsdkcore/*" --omit="aliyun-python-sdk-core/aliyunsdkcore/vendored/*,aliyun-python-sdk-core/aliyunsdkcore/compat.py"
