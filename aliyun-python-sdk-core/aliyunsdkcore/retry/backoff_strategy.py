@@ -16,7 +16,7 @@ import random
 from aliyunsdkcore.retry.retry_condition import RetryCondition
 
 
-class BackoffStrategy:
+class BackoffStrategy(object):
 
     def compute_delay_before_next_retry(self, retry_policy_context):
         """Compute delay for request need to be retried, in milliseconds"""

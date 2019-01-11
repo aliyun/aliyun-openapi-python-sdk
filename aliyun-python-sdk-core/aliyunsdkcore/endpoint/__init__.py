@@ -17,7 +17,7 @@
 #
 
 
-class EndpointResolver:
+class EndpointResolver(object):
 
     def resolve(self, request):
         pass
