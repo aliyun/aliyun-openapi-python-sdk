@@ -15,8 +15,6 @@ coverage-report:
 	coverage report --include="aliyun-python-sdk-core/aliyunsdkcore/*" --omit="aliyun-python-sdk-core/aliyunsdkcore/vendored/*,aliyun-python-sdk-core/aliyunsdkcore/compat.py"
 	coverage html --include="aliyun-python-sdk-core/aliyunsdkcore/*" --omit="aliyun-python-sdk-core/aliyunsdkcore/vendored/*,aliyun-python-sdk-core/aliyunsdkcore/compat.py"
 
-
-
 release-core: 
 	bash -ex release-core.sh core dist
 	bash -ex release-core.sh core test
