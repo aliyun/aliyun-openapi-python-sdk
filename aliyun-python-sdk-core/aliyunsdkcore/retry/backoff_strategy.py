@@ -20,8 +20,6 @@ from aliyunsdkcore.retry.retry_condition import RetryCondition
 
 class BackoffStrategy:
 
-    __metaclass__ = ABCMeta
-
     @abstractmethod
     def compute_delay_before_next_retry(self, retry_policy_context):
         """Compute delay for request need to be retried, in milliseconds"""

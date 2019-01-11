@@ -32,8 +32,6 @@ def _find_data_in_retry_config(key_name, request, retry_config):
 
 class RetryCondition:
 
-    __metaclass__ = ABCMeta
-
     BLANK_STATUS = 0
     NO_RETRY = 1
     SHOULD_RETRY = 2

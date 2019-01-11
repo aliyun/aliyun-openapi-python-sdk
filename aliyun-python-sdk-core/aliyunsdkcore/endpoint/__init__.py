@@ -21,8 +21,6 @@ from abc import ABCMeta, abstractmethod
 
 class EndpointResolver:
 
-    __metaclass__ = ABCMeta
-
     @abstractmethod
     def resolve(self, request):
         pass
