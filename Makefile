@@ -6,20 +6,19 @@ lint:
 	pycodestyle --statistics python-sdk-functional-test/  --max-line-length=100 --ignore=W391,E121,E123,E126,E226,E24,E704,W503,W504
 
 test:
-	coverage run --branch -m pytest aliyun-python-sdk-core/tests/
+	coverage run --branch --source="./aliyun-python-sdk-core/aliyunsdkcore" -m pytest aliyun-python-sdk-core/tests/
 
 functional-test:
-	bash -e python-sdk-functional-test/run_all_test.sh
+	bash -e ./run_all_test.sh
 
 coverage-report:
 	coverage report --include="aliyun-python-sdk-core/aliyunsdkcore/*" --omit="aliyun-python-sdk-core/aliyunsdkcore/vendored/*,aliyun-python-sdk-core/aliyunsdkcore/compat.py"
 	coverage html --include="aliyun-python-sdk-core/aliyunsdkcore/*" --omit="aliyun-python-sdk-core/aliyunsdkcore/vendored/*,aliyun-python-sdk-core/aliyunsdkcore/compat.py"
 
-release-core: 
+release-core:
 	bash -ex release-core.sh core dist
 	bash -ex release-core.sh core test
 	bash -ex release-core.sh core release
 	bash -ex release-core.sh core-v3 dist
 	bash -ex release-core.sh core-v3 test
 	bash -ex release-core.sh core-v3 release
-
