@@ -53,26 +53,6 @@ You can install the Alibaba Cloud Python SDK using the following two methods. Re
 	pip install aliyun-python-sdk-rds
 	```
 
-	> **Note:** If you are using Python 3.x, run the following command to install the core library:
-
-	```bash
-	pip install aliyun-python-sdk-core-v3
-	```
-
-- **Install from GitHub**
-
-	You can clone the source code to your local folder and then run `setup.py install` to install the SDK:
-
-	```bash
-	git clone https://github.com/aliyun/aliyun-openapi-python-sdk.git
-	# Install the core library
-	cd aliyun-python-sdk-core
-	python setup.py install
-	# Install the ECS management library
-	cd aliyun-python-sdk-ecs
-	python setup.py install
-	```
-
 ## Use Python SDK
 
 1. Import the required modules as follows:
