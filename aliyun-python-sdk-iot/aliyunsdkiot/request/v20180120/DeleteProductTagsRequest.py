@@ -18,25 +18,27 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class UpdateRecordPlanRequest(RpcRequest):
+class DeleteProductTagsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'UpdateRecordPlan')
+		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'DeleteProductTags')
 
-	def get_PlanId(self):
-		return self.get_query_params().get('PlanId')
+	def get_IotInstanceId(self):
+		return self.get_query_params().get('IotInstanceId')
 
-	def set_PlanId(self,PlanId):
-		self.add_query_param('PlanId',PlanId)
+	def set_IotInstanceId(self,IotInstanceId):
+		self.add_query_param('IotInstanceId',IotInstanceId)
 
-	def get_Name(self):
-		return self.get_query_params().get('Name')
+	def get_ProductTagKeys(self):
+		return self.get_query_params().get('ProductTagKeys')
 
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)
+	def set_ProductTagKeys(self,ProductTagKeys):
+		for i in range(len(ProductTagKeys)):	
+			if ProductTagKeys[i] is not None:
+				self.add_query_param('ProductTagKey.' + str(i + 1) , ProductTagKeys[i]);
 
-	def get_TemplateId(self):
-		return self.get_query_params().get('TemplateId')
+	def get_ProductKey(self):
+		return self.get_query_params().get('ProductKey')
 
-	def set_TemplateId(self,TemplateId):
-		self.add_query_param('TemplateId',TemplateId)
+	def set_ProductKey(self,ProductKey):
+		self.add_query_param('ProductKey',ProductKey)
