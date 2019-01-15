@@ -18,10 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class DescribeVpnConnectionLogsRequest(RpcRequest):
+class DeleteIpv6GatewayRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'DescribeVpnConnectionLogs','vpc')
+		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'DeleteIpv6Gateway','vpc')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -29,23 +29,11 @@ class DescribeVpnConnectionLogsRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_MinutePeriod(self):
-		return self.get_query_params().get('MinutePeriod')
-
-	def set_MinutePeriod(self,MinutePeriod):
-		self.add_query_param('MinutePeriod',MinutePeriod)
-
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_VpnConnectionId(self):
-		return self.get_query_params().get('VpnConnectionId')
-
-	def set_VpnConnectionId(self,VpnConnectionId):
-		self.add_query_param('VpnConnectionId',VpnConnectionId)
 
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
@@ -53,32 +41,14 @@ class DescribeVpnConnectionLogsRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get__From(self):
-		return self.get_query_params().get('From')
-
-	def set__From(self,_From):
-		self.add_query_param('From',_From)
-
-	def get_To(self):
-		return self.get_query_params().get('To')
-
-	def set_To(self,To):
-		self.add_query_param('To',To)
-
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_PageNumber(self):
-		return self.get_query_params().get('PageNumber')
+	def get_Ipv6GatewayId(self):
+		return self.get_query_params().get('Ipv6GatewayId')
 
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
+	def set_Ipv6GatewayId(self,Ipv6GatewayId):
+		self.add_query_param('Ipv6GatewayId',Ipv6GatewayId)

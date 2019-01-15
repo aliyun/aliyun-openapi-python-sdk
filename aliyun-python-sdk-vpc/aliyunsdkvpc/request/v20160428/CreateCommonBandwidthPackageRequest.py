@@ -47,23 +47,17 @@ class CreateCommonBandwidthPackageRequest(RpcRequest):
 	def set_Bandwidth(self,Bandwidth):
 		self.add_query_param('Bandwidth',Bandwidth)
 
-	def get_InternetChargeType(self):
-		return self.get_query_params().get('InternetChargeType')
-
-	def set_InternetChargeType(self,InternetChargeType):
-		self.add_query_param('InternetChargeType',InternetChargeType)
-
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
 
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
-	def get_Name(self):
-		return self.get_query_params().get('Name')
+	def get_ISP(self):
+		return self.get_query_params().get('ISP')
 
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)
+	def set_ISP(self,ISP):
+		self.add_query_param('ISP',ISP)
 
 	def get_Description(self):
 		return self.get_query_params().get('Description')
@@ -76,6 +70,30 @@ class CreateCommonBandwidthPackageRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_ResourceGroupId(self):
+		return self.get_query_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self,ResourceGroupId):
+		self.add_query_param('ResourceGroupId',ResourceGroupId)
+
+	def get_Zone(self):
+		return self.get_query_params().get('Zone')
+
+	def set_Zone(self,Zone):
+		self.add_query_param('Zone',Zone)
+
+	def get_InternetChargeType(self):
+		return self.get_query_params().get('InternetChargeType')
+
+	def set_InternetChargeType(self,InternetChargeType):
+		self.add_query_param('InternetChargeType',InternetChargeType)
+
+	def get_Name(self):
+		return self.get_query_params().get('Name')
+
+	def set_Name(self,Name):
+		self.add_query_param('Name',Name)
 
 	def get_Ratio(self):
 		return self.get_query_params().get('Ratio')

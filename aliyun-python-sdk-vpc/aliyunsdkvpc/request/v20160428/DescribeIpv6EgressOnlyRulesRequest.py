@@ -18,10 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class MoveResourceGroupRequest(RpcRequest):
+class DescribeIpv6EgressOnlyRulesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'MoveResourceGroup','vpc')
+		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'DescribeIpv6EgressOnlyRules','vpc')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -29,17 +29,29 @@ class MoveResourceGroupRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_ResourceId(self):
-		return self.get_query_params().get('ResourceId')
+	def get_PageNumber(self):
+		return self.get_query_params().get('PageNumber')
 
-	def set_ResourceId(self,ResourceId):
-		self.add_query_param('ResourceId',ResourceId)
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)
 
-	def get_NewResourceGroupId(self):
-		return self.get_query_params().get('NewResourceGroupId')
+	def get_Ipv6EgressOnlyRuleId(self):
+		return self.get_query_params().get('Ipv6EgressOnlyRuleId')
 
-	def set_NewResourceGroupId(self,NewResourceGroupId):
-		self.add_query_param('NewResourceGroupId',NewResourceGroupId)
+	def set_Ipv6EgressOnlyRuleId(self,Ipv6EgressOnlyRuleId):
+		self.add_query_param('Ipv6EgressOnlyRuleId',Ipv6EgressOnlyRuleId)
+
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
+
+	def get_InstanceType(self):
+		return self.get_query_params().get('InstanceType')
+
+	def set_InstanceType(self,InstanceType):
+		self.add_query_param('InstanceType',InstanceType)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -59,8 +71,20 @@ class MoveResourceGroupRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_ResourceType(self):
-		return self.get_query_params().get('ResourceType')
+	def get_InstanceId(self):
+		return self.get_query_params().get('InstanceId')
 
-	def set_ResourceType(self,ResourceType):
-		self.add_query_param('ResourceType',ResourceType)
+	def set_InstanceId(self,InstanceId):
+		self.add_query_param('InstanceId',InstanceId)
+
+	def get_Ipv6GatewayId(self):
+		return self.get_query_params().get('Ipv6GatewayId')
+
+	def set_Ipv6GatewayId(self,Ipv6GatewayId):
+		self.add_query_param('Ipv6GatewayId',Ipv6GatewayId)
+
+	def get_Name(self):
+		return self.get_query_params().get('Name')
+
+	def set_Name(self,Name):
+		self.add_query_param('Name',Name)

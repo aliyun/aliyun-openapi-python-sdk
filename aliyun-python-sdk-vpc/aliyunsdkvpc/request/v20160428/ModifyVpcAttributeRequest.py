@@ -53,6 +53,18 @@ class ModifyVpcAttributeRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
+	def get_CidrBlock(self):
+		return self.get_query_params().get('CidrBlock')
+
+	def set_CidrBlock(self,CidrBlock):
+		self.add_query_param('CidrBlock',CidrBlock)
+
+	def get_EnableIPv6(self):
+		return self.get_query_params().get('EnableIPv6')
+
+	def set_EnableIPv6(self,EnableIPv6):
+		self.add_query_param('EnableIPv6',EnableIPv6)
+
 	def get_Description(self):
 		return self.get_query_params().get('Description')
 

@@ -23,18 +23,6 @@ class DescribeVpcsRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'DescribeVpcs','vpc')
 
-	def get_VpcName(self):
-		return self.get_query_params().get('VpcName')
-
-	def set_VpcName(self,VpcName):
-		self.add_query_param('VpcName',VpcName)
-
-	def get_ResourceGroupId(self):
-		return self.get_query_params().get('ResourceGroupId')
-
-	def set_ResourceGroupId(self,ResourceGroupId):
-		self.add_query_param('ResourceGroupId',ResourceGroupId)
-
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
@@ -47,29 +35,11 @@ class DescribeVpcsRequest(RpcRequest):
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
-	def get_VpcId(self):
-		return self.get_query_params().get('VpcId')
-
-	def set_VpcId(self,VpcId):
-		self.add_query_param('VpcId',VpcId)
-
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
 
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
-
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_IsDefault(self):
-		return self.get_query_params().get('IsDefault')
-
-	def set_IsDefault(self,IsDefault):
-		self.add_query_param('IsDefault',IsDefault)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
@@ -82,3 +52,44 @@ class DescribeVpcsRequest(RpcRequest):
 
 	def set_PageNumber(self,PageNumber):
 		self.add_query_param('PageNumber',PageNumber)
+
+	def get_VpcName(self):
+		return self.get_query_params().get('VpcName')
+
+	def set_VpcName(self,VpcName):
+		self.add_query_param('VpcName',VpcName)
+
+	def get_ResourceGroupId(self):
+		return self.get_query_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self,ResourceGroupId):
+		self.add_query_param('ResourceGroupId',ResourceGroupId)
+
+	def get_VpcId(self):
+		return self.get_query_params().get('VpcId')
+
+	def set_VpcId(self,VpcId):
+		self.add_query_param('VpcId',VpcId)
+
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
+
+	def get_Tags(self):
+		return self.get_query_params().get('Tags')
+
+	def set_Tags(self,Tags):
+		for i in range(len(Tags)):	
+			if Tags[i].get('Value') is not None:
+				self.add_query_param('Tag.' + str(i + 1) + '.Value' , Tags[i].get('Value'))
+			if Tags[i].get('Key') is not None:
+				self.add_query_param('Tag.' + str(i + 1) + '.Key' , Tags[i].get('Key'))
+
+
+	def get_IsDefault(self):
+		return self.get_query_params().get('IsDefault')
+
+	def set_IsDefault(self,IsDefault):
+		self.add_query_param('IsDefault',IsDefault)

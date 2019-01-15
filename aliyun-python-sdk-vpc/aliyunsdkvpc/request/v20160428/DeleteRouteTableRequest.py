@@ -18,16 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class UnassociateEipAddressRequest(RpcRequest):
+class DeleteRouteTableRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'UnassociateEipAddress','vpc')
-
-	def get_PrivateIpAddress(self):
-		return self.get_query_params().get('PrivateIpAddress')
-
-	def set_PrivateIpAddress(self,PrivateIpAddress):
-		self.add_query_param('PrivateIpAddress',PrivateIpAddress)
+		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'DeleteRouteTable','vpc')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -35,11 +29,11 @@ class UnassociateEipAddressRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_InstanceId(self):
-		return self.get_query_params().get('InstanceId')
+	def get_RouteTableId(self):
+		return self.get_query_params().get('RouteTableId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
+	def set_RouteTableId(self,RouteTableId):
+		self.add_query_param('RouteTableId',RouteTableId)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -52,24 +46,6 @@ class UnassociateEipAddressRequest(RpcRequest):
 
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
-
-	def get_InstanceType(self):
-		return self.get_query_params().get('InstanceType')
-
-	def set_InstanceType(self,InstanceType):
-		self.add_query_param('InstanceType',InstanceType)
-
-	def get_Force(self):
-		return self.get_query_params().get('Force')
-
-	def set_Force(self,Force):
-		self.add_query_param('Force',Force)
-
-	def get_AllocationId(self):
-		return self.get_query_params().get('AllocationId')
-
-	def set_AllocationId(self,AllocationId):
-		self.add_query_param('AllocationId',AllocationId)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')

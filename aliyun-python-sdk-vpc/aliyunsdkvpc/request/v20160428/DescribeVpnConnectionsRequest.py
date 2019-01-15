@@ -35,6 +35,12 @@ class DescribeVpnConnectionsRequest(RpcRequest):
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
+	def get_VpnConnectionId(self):
+		return self.get_query_params().get('VpnConnectionId')
+
+	def set_VpnConnectionId(self,VpnConnectionId):
+		self.add_query_param('VpnConnectionId',VpnConnectionId)
+
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
 

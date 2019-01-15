@@ -28,11 +28,11 @@ class DescribeRouterInterfacesRequest(RpcRequest):
 
 	def set_Filters(self,Filters):
 		for i in range(len(Filters)):	
-			if Filters[i].get('Key') is not None:
-				self.add_query_param('Filter.' + str(i + 1) + '.Key' , Filters[i].get('Key'))
 			for j in range(len(Filters[i].get('Values'))):
 				if Filters[i].get('Values')[j] is not None:
 					self.add_query_param('Filter.' + str(i + 1) + '.Value.'+str(j + 1), Filters[i].get('Values')[j])
+			if Filters[i].get('Key') is not None:
+				self.add_query_param('Filter.' + str(i + 1) + '.Key' , Filters[i].get('Key'))
 
 
 	def get_ResourceOwnerId(self):
@@ -58,6 +58,12 @@ class DescribeRouterInterfacesRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_IncludeReservationData(self):
+		return self.get_query_params().get('IncludeReservationData')
+
+	def set_IncludeReservationData(self,IncludeReservationData):
+		self.add_query_param('IncludeReservationData',IncludeReservationData)
 
 	def get_PageNumber(self):
 		return self.get_query_params().get('PageNumber')

@@ -29,6 +29,12 @@ class CreateRouteEntryRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_RouteEntryName(self):
+		return self.get_query_params().get('RouteEntryName')
+
+	def set_RouteEntryName(self,RouteEntryName):
+		self.add_query_param('RouteEntryName',RouteEntryName)
+
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -53,17 +59,23 @@ class CreateRouteEntryRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
-	def get_NextHopId(self):
-		return self.get_query_params().get('NextHopId')
-
-	def set_NextHopId(self,NextHopId):
-		self.add_query_param('NextHopId',NextHopId)
-
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_PrivateIpAddress(self):
+		return self.get_query_params().get('PrivateIpAddress')
+
+	def set_PrivateIpAddress(self,PrivateIpAddress):
+		self.add_query_param('PrivateIpAddress',PrivateIpAddress)
+
+	def get_NextHopId(self):
+		return self.get_query_params().get('NextHopId')
+
+	def set_NextHopId(self,NextHopId):
+		self.add_query_param('NextHopId',NextHopId)
 
 	def get_NextHopType(self):
 		return self.get_query_params().get('NextHopType')
@@ -76,12 +88,12 @@ class CreateRouteEntryRequest(RpcRequest):
 
 	def set_NextHopLists(self,NextHopLists):
 		for i in range(len(NextHopLists)):	
-			if NextHopLists[i].get('NextHopType') is not None:
-				self.add_query_param('NextHopList.' + str(i + 1) + '.NextHopType' , NextHopLists[i].get('NextHopType'))
-			if NextHopLists[i].get('NextHopId') is not None:
-				self.add_query_param('NextHopList.' + str(i + 1) + '.NextHopId' , NextHopLists[i].get('NextHopId'))
 			if NextHopLists[i].get('Weight') is not None:
 				self.add_query_param('NextHopList.' + str(i + 1) + '.Weight' , NextHopLists[i].get('Weight'))
+			if NextHopLists[i].get('NextHopId') is not None:
+				self.add_query_param('NextHopList.' + str(i + 1) + '.NextHopId' , NextHopLists[i].get('NextHopId'))
+			if NextHopLists[i].get('NextHopType') is not None:
+				self.add_query_param('NextHopList.' + str(i + 1) + '.NextHopType' , NextHopLists[i].get('NextHopType'))
 
 
 	def get_RouteTableId(self):

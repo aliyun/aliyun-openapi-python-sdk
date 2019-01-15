@@ -18,10 +18,16 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class DescribeRouteTableListRequest(RpcRequest):
+class DescribeIPv6TranslatorsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'DescribeRouteTableList','vpc')
+		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'DescribeIPv6Translators','vpc')
+
+	def get_BusinessStatus(self):
+		return self.get_query_params().get('BusinessStatus')
+
+	def set_BusinessStatus(self,BusinessStatus):
+		self.add_query_param('BusinessStatus',BusinessStatus)
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -35,11 +41,23 @@ class DescribeRouteTableListRequest(RpcRequest):
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
+	def get_AllocateIpv6Addr(self):
+		return self.get_query_params().get('AllocateIpv6Addr')
+
+	def set_AllocateIpv6Addr(self,AllocateIpv6Addr):
+		self.add_query_param('AllocateIpv6Addr',AllocateIpv6Addr)
+
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
 
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
+
+	def get_AllocateIpv4Addr(self):
+		return self.get_query_params().get('AllocateIpv4Addr')
+
+	def set_AllocateIpv4Addr(self,AllocateIpv4Addr):
+		self.add_query_param('AllocateIpv4Addr',AllocateIpv4Addr)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
@@ -47,41 +65,23 @@ class DescribeRouteTableListRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
+	def get_Spec(self):
+		return self.get_query_params().get('Spec')
+
+	def set_Spec(self,Spec):
+		self.add_query_param('Spec',Spec)
+
 	def get_PageNumber(self):
 		return self.get_query_params().get('PageNumber')
 
 	def set_PageNumber(self,PageNumber):
 		self.add_query_param('PageNumber',PageNumber)
 
-	def get_RouterType(self):
-		return self.get_query_params().get('RouterType')
+	def get_Name(self):
+		return self.get_query_params().get('Name')
 
-	def set_RouterType(self,RouterType):
-		self.add_query_param('RouterType',RouterType)
-
-	def get_ResourceGroupId(self):
-		return self.get_query_params().get('ResourceGroupId')
-
-	def set_ResourceGroupId(self,ResourceGroupId):
-		self.add_query_param('ResourceGroupId',ResourceGroupId)
-
-	def get_RouteTableName(self):
-		return self.get_query_params().get('RouteTableName')
-
-	def set_RouteTableName(self,RouteTableName):
-		self.add_query_param('RouteTableName',RouteTableName)
-
-	def get_RouterId(self):
-		return self.get_query_params().get('RouterId')
-
-	def set_RouterId(self,RouterId):
-		self.add_query_param('RouterId',RouterId)
-
-	def get_VpcId(self):
-		return self.get_query_params().get('VpcId')
-
-	def set_VpcId(self,VpcId):
-		self.add_query_param('VpcId',VpcId)
+	def set_Name(self,Name):
+		self.add_query_param('Name',Name)
 
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
@@ -89,19 +89,20 @@ class DescribeRouteTableListRequest(RpcRequest):
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
 
-	def get_Tags(self):
-		return self.get_query_params().get('Tags')
+	def get_Ipv6TranslatorId(self):
+		return self.get_query_params().get('Ipv6TranslatorId')
 
-	def set_Tags(self,Tags):
-		for i in range(len(Tags)):	
-			if Tags[i].get('Value') is not None:
-				self.add_query_param('Tag.' + str(i + 1) + '.Value' , Tags[i].get('Value'))
-			if Tags[i].get('Key') is not None:
-				self.add_query_param('Tag.' + str(i + 1) + '.Key' , Tags[i].get('Key'))
+	def set_Ipv6TranslatorId(self,Ipv6TranslatorId):
+		self.add_query_param('Ipv6TranslatorId',Ipv6TranslatorId)
 
+	def get_PayType(self):
+		return self.get_query_params().get('PayType')
 
-	def get_RouteTableId(self):
-		return self.get_query_params().get('RouteTableId')
+	def set_PayType(self,PayType):
+		self.add_query_param('PayType',PayType)
 
-	def set_RouteTableId(self,RouteTableId):
-		self.add_query_param('RouteTableId',RouteTableId)
+	def get_Status(self):
+		return self.get_query_params().get('Status')
+
+	def set_Status(self,Status):
+		self.add_query_param('Status',Status)

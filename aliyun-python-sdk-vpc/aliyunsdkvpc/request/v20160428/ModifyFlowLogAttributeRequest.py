@@ -18,22 +18,16 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class DescribeNewProjectEipMonitorDataRequest(RpcRequest):
+class ModifyFlowLogAttributeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'DescribeNewProjectEipMonitorData','vpc')
+		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'ModifyFlowLogAttribute','vpc')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_Period(self):
-		return self.get_query_params().get('Period')
-
-	def set_Period(self,Period):
-		self.add_query_param('Period',Period)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -47,26 +41,26 @@ class DescribeNewProjectEipMonitorDataRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
-	def get_EndTime(self):
-		return self.get_query_params().get('EndTime')
+	def get_Description(self):
+		return self.get_query_params().get('Description')
 
-	def set_EndTime(self,EndTime):
-		self.add_query_param('EndTime',EndTime)
-
-	def get_AllocationId(self):
-		return self.get_query_params().get('AllocationId')
-
-	def set_AllocationId(self,AllocationId):
-		self.add_query_param('AllocationId',AllocationId)
-
-	def get_StartTime(self):
-		return self.get_query_params().get('StartTime')
-
-	def set_StartTime(self,StartTime):
-		self.add_query_param('StartTime',StartTime)
+	def set_Description(self,Description):
+		self.add_query_param('Description',Description)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_FlowLogId(self):
+		return self.get_query_params().get('FlowLogId')
+
+	def set_FlowLogId(self,FlowLogId):
+		self.add_query_param('FlowLogId',FlowLogId)
+
+	def get_FlowLogName(self):
+		return self.get_query_params().get('FlowLogName')
+
+	def set_FlowLogName(self,FlowLogName):
+		self.add_query_param('FlowLogName',FlowLogName)

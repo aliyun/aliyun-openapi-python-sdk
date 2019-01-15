@@ -23,6 +23,12 @@ class AssociateEipAddressRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'AssociateEipAddress','vpc')
 
+	def get_PrivateIpAddress(self):
+		return self.get_query_params().get('PrivateIpAddress')
+
+	def set_PrivateIpAddress(self,PrivateIpAddress):
+		self.add_query_param('PrivateIpAddress',PrivateIpAddress)
+
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
