@@ -18,28 +18,22 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class DescribePlayTopVideosRequest(RpcRequest):
+class ListWorkflowRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'vod', '2017-03-21', 'DescribePlayTopVideos','vod')
+		RpcRequest.__init__(self, 'vod', '2017-03-21', 'ListWorkflow','vod')
 
-	def get_BizDate(self):
-		return self.get_query_params().get('BizDate')
+	def get_ResourceOwnerId(self):
+		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_BizDate(self,BizDate):
-		self.add_query_param('BizDate',BizDate)
+	def set_ResourceOwnerId(self,ResourceOwnerId):
+		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_PageNo(self):
-		return self.get_query_params().get('PageNo')
+	def get_ResourceOwnerAccount(self):
+		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_PageNo(self,PageNo):
-		self.add_query_param('PageNo',PageNo)
-
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')

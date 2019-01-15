@@ -18,28 +18,28 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class DescribePlayVideoStatisRequest(RpcRequest):
+class DescribeUserVvTopByDayRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'vod', '2017-03-21', 'DescribePlayVideoStatis','vod')
+		RpcRequest.__init__(self, 'vod', '2017-03-21', 'DescribeUserVvTopByDay','vod')
 
-	def get_StartTime(self):
-		return self.get_query_params().get('StartTime')
+	def get_VideoType(self):
+		return self.get_query_params().get('VideoType')
 
-	def set_StartTime(self,StartTime):
-		self.add_query_param('StartTime',StartTime)
+	def set_VideoType(self,VideoType):
+		self.add_query_param('VideoType',VideoType)
 
-	def get_EndTime(self):
-		return self.get_query_params().get('EndTime')
+	def get_Bizdate(self):
+		return self.get_query_params().get('Bizdate')
 
-	def set_EndTime(self,EndTime):
-		self.add_query_param('EndTime',EndTime)
+	def set_Bizdate(self,Bizdate):
+		self.add_query_param('Bizdate',Bizdate)
 
-	def get_VideoId(self):
-		return self.get_query_params().get('VideoId')
+	def get_SecurityToken(self):
+		return self.get_query_params().get('SecurityToken')
 
-	def set_VideoId(self,VideoId):
-		self.add_query_param('VideoId',VideoId)
+	def set_SecurityToken(self,SecurityToken):
+		self.add_query_param('SecurityToken',SecurityToken)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')

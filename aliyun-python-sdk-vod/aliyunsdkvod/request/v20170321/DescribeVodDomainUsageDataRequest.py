@@ -18,10 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class DescribePlayVideoStatisRequest(RpcRequest):
+class DescribeVodDomainUsageDataRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'vod', '2017-03-21', 'DescribePlayVideoStatis','vod')
+		RpcRequest.__init__(self, 'vod', '2017-03-21', 'DescribeVodDomainUsageData','vod')
 
 	def get_StartTime(self):
 		return self.get_query_params().get('StartTime')
@@ -29,20 +29,38 @@ class DescribePlayVideoStatisRequest(RpcRequest):
 	def set_StartTime(self,StartTime):
 		self.add_query_param('StartTime',StartTime)
 
+	def get_Type(self):
+		return self.get_query_params().get('Type')
+
+	def set_Type(self,Type):
+		self.add_query_param('Type',Type)
+
+	def get_Area(self):
+		return self.get_query_params().get('Area')
+
+	def set_Area(self,Area):
+		self.add_query_param('Area',Area)
+
+	def get_DomainName(self):
+		return self.get_query_params().get('DomainName')
+
+	def set_DomainName(self,DomainName):
+		self.add_query_param('DomainName',DomainName)
+
 	def get_EndTime(self):
 		return self.get_query_params().get('EndTime')
 
 	def set_EndTime(self,EndTime):
 		self.add_query_param('EndTime',EndTime)
 
-	def get_VideoId(self):
-		return self.get_query_params().get('VideoId')
-
-	def set_VideoId(self,VideoId):
-		self.add_query_param('VideoId',VideoId)
-
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_Field(self):
+		return self.get_query_params().get('Field')
+
+	def set_Field(self,Field):
+		self.add_query_param('Field',Field)

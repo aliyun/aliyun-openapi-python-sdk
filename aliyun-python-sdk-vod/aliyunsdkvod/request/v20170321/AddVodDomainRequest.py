@@ -18,22 +18,22 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class GetMessageCallbackRequest(RpcRequest):
+class AddVodDomainRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'vod', '2017-03-21', 'GetMessageCallback','vod')
+		RpcRequest.__init__(self, 'vod', '2017-03-21', 'AddVodDomain','vod')
 
-	def get_ResourceOwnerId(self):
-		return self.get_query_params().get('ResourceOwnerId')
+	def get_Sources(self):
+		return self.get_query_params().get('Sources')
 
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+	def set_Sources(self,Sources):
+		self.add_query_param('Sources',Sources)
 
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
+	def get_SecurityToken(self):
+		return self.get_query_params().get('SecurityToken')
 
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+	def set_SecurityToken(self,SecurityToken):
+		self.add_query_param('SecurityToken',SecurityToken)
 
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
@@ -41,14 +41,26 @@ class GetMessageCallbackRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
-	def get_ResourceRealOwnerId(self):
-		return self.get_query_params().get('ResourceRealOwnerId')
+	def get_Scope(self):
+		return self.get_query_params().get('Scope')
 
-	def set_ResourceRealOwnerId(self,ResourceRealOwnerId):
-		self.add_query_param('ResourceRealOwnerId',ResourceRealOwnerId)
+	def set_Scope(self,Scope):
+		self.add_query_param('Scope',Scope)
+
+	def get_DomainName(self):
+		return self.get_query_params().get('DomainName')
+
+	def set_DomainName(self,DomainName):
+		self.add_query_param('DomainName',DomainName)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_CheckUrl(self):
+		return self.get_query_params().get('CheckUrl')
+
+	def set_CheckUrl(self,CheckUrl):
+		self.add_query_param('CheckUrl',CheckUrl)

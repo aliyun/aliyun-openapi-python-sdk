@@ -18,10 +18,16 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class SubmitTranscodeJobsRequest(RpcRequest):
+class UpdateTranscodeTemplateGroupRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'vod', '2017-03-21', 'SubmitTranscodeJobs','vod')
+		RpcRequest.__init__(self, 'vod', '2017-03-21', 'UpdateTranscodeTemplateGroup','vod')
+
+	def get_TranscodeTemplateList(self):
+		return self.get_query_params().get('TranscodeTemplateList')
+
+	def set_TranscodeTemplateList(self,TranscodeTemplateList):
+		self.add_query_param('TranscodeTemplateList',TranscodeTemplateList)
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -29,29 +35,23 @@ class SubmitTranscodeJobsRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_TemplateGroupId(self):
-		return self.get_query_params().get('TemplateGroupId')
-
-	def set_TemplateGroupId(self,TemplateGroupId):
-		self.add_query_param('TemplateGroupId',TemplateGroupId)
-
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
-	def get_VideoId(self):
-		return self.get_query_params().get('VideoId')
+	def get_Name(self):
+		return self.get_query_params().get('Name')
 
-	def set_VideoId(self,VideoId):
-		self.add_query_param('VideoId',VideoId)
+	def set_Name(self,Name):
+		self.add_query_param('Name',Name)
 
-	def get_OverrideParams(self):
-		return self.get_query_params().get('OverrideParams')
+	def get_ResourceRealOwnerId(self):
+		return self.get_query_params().get('ResourceRealOwnerId')
 
-	def set_OverrideParams(self,OverrideParams):
-		self.add_query_param('OverrideParams',OverrideParams)
+	def set_ResourceRealOwnerId(self,ResourceRealOwnerId):
+		self.add_query_param('ResourceRealOwnerId',ResourceRealOwnerId)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
@@ -59,20 +59,14 @@ class SubmitTranscodeJobsRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_Priority(self):
-		return self.get_query_params().get('Priority')
+	def get_Locked(self):
+		return self.get_query_params().get('Locked')
 
-	def set_Priority(self,Priority):
-		self.add_query_param('Priority',Priority)
+	def set_Locked(self,Locked):
+		self.add_query_param('Locked',Locked)
 
-	def get_EncryptConfig(self):
-		return self.get_query_params().get('EncryptConfig')
+	def get_TranscodeTemplateGroupId(self):
+		return self.get_query_params().get('TranscodeTemplateGroupId')
 
-	def set_EncryptConfig(self,EncryptConfig):
-		self.add_query_param('EncryptConfig',EncryptConfig)
-
-	def get_PipelineId(self):
-		return self.get_query_params().get('PipelineId')
-
-	def set_PipelineId(self,PipelineId):
-		self.add_query_param('PipelineId',PipelineId)
+	def set_TranscodeTemplateGroupId(self,TranscodeTemplateGroupId):
+		self.add_query_param('TranscodeTemplateGroupId',TranscodeTemplateGroupId)

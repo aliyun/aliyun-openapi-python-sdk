@@ -112,3 +112,9 @@ class CreateUploadVideoRequest(RpcRequest):
 
 	def set_CateId(self,CateId):
 		self.add_query_param('CateId',CateId)
+
+	def get_WorkflowId(self):
+		return self.get_query_params().get('WorkflowId')
+
+	def set_WorkflowId(self,WorkflowId):
+		self.add_query_param('WorkflowId',WorkflowId)

@@ -18,10 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class DeleteWorkFlowRequest(RpcRequest):
+class DeleteAITemplateRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'vod', '2017-03-21', 'DeleteWorkFlow','vod')
+		RpcRequest.__init__(self, 'vod', '2017-03-21', 'DeleteAITemplate','vod')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -41,8 +41,8 @@ class DeleteWorkFlowRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_WorkFlowId(self):
-		return self.get_query_params().get('WorkFlowId')
+	def get_TemplateId(self):
+		return self.get_query_params().get('TemplateId')
 
-	def set_WorkFlowId(self,WorkFlowId):
-		self.add_query_param('WorkFlowId',WorkFlowId)
+	def set_TemplateId(self,TemplateId):
+		self.add_query_param('TemplateId',TemplateId)
