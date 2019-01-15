@@ -77,6 +77,12 @@ class CreateUploadAttachedMediaRequest(RpcRequest):
 	def set_StorageLocation(self,StorageLocation):
 		self.add_query_param('StorageLocation',StorageLocation)
 
+	def get_UserData(self):
+		return self.get_query_params().get('UserData')
+
+	def set_UserData(self,UserData):
+		self.add_query_param('UserData',UserData)
+
 	def get_MediaExt(self):
 		return self.get_query_params().get('MediaExt')
 

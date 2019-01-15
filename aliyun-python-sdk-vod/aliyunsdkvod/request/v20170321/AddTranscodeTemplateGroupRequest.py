@@ -18,10 +18,16 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class UpdateWorkFlowRequest(RpcRequest):
+class AddTranscodeTemplateGroupRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'vod', '2017-03-21', 'UpdateWorkFlow','vod')
+		RpcRequest.__init__(self, 'vod', '2017-03-21', 'AddTranscodeTemplateGroup','vod')
+
+	def get_TranscodeTemplateList(self):
+		return self.get_query_params().get('TranscodeTemplateList')
+
+	def set_TranscodeTemplateList(self,TranscodeTemplateList):
+		self.add_query_param('TranscodeTemplateList',TranscodeTemplateList)
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -41,11 +47,11 @@ class UpdateWorkFlowRequest(RpcRequest):
 	def set_Name(self,Name):
 		self.add_query_param('Name',Name)
 
-	def get_ActionList(self):
-		return self.get_query_params().get('ActionList')
+	def get_ResourceRealOwnerId(self):
+		return self.get_query_params().get('ResourceRealOwnerId')
 
-	def set_ActionList(self,ActionList):
-		self.add_query_param('ActionList',ActionList)
+	def set_ResourceRealOwnerId(self,ResourceRealOwnerId):
+		self.add_query_param('ResourceRealOwnerId',ResourceRealOwnerId)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
@@ -53,8 +59,8 @@ class UpdateWorkFlowRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_WorkFlowId(self):
-		return self.get_query_params().get('WorkFlowId')
+	def get_TranscodeTemplateGroupId(self):
+		return self.get_query_params().get('TranscodeTemplateGroupId')
 
-	def set_WorkFlowId(self,WorkFlowId):
-		self.add_query_param('WorkFlowId',WorkFlowId)
+	def set_TranscodeTemplateGroupId(self,TranscodeTemplateGroupId):
+		self.add_query_param('TranscodeTemplateGroupId',TranscodeTemplateGroupId)

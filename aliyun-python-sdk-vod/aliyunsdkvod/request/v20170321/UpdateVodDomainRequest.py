@@ -18,28 +18,40 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class DescribePlayVideoStatisRequest(RpcRequest):
+class UpdateVodDomainRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'vod', '2017-03-21', 'DescribePlayVideoStatis','vod')
+		RpcRequest.__init__(self, 'vod', '2017-03-21', 'UpdateVodDomain','vod')
 
-	def get_StartTime(self):
-		return self.get_query_params().get('StartTime')
+	def get_TopLevelDomain(self):
+		return self.get_query_params().get('TopLevelDomain')
 
-	def set_StartTime(self,StartTime):
-		self.add_query_param('StartTime',StartTime)
+	def set_TopLevelDomain(self,TopLevelDomain):
+		self.add_query_param('TopLevelDomain',TopLevelDomain)
 
-	def get_EndTime(self):
-		return self.get_query_params().get('EndTime')
+	def get_ResourceGroupId(self):
+		return self.get_query_params().get('ResourceGroupId')
 
-	def set_EndTime(self,EndTime):
-		self.add_query_param('EndTime',EndTime)
+	def set_ResourceGroupId(self,ResourceGroupId):
+		self.add_query_param('ResourceGroupId',ResourceGroupId)
 
-	def get_VideoId(self):
-		return self.get_query_params().get('VideoId')
+	def get_Sources(self):
+		return self.get_query_params().get('Sources')
 
-	def set_VideoId(self,VideoId):
-		self.add_query_param('VideoId',VideoId)
+	def set_Sources(self,Sources):
+		self.add_query_param('Sources',Sources)
+
+	def get_SecurityToken(self):
+		return self.get_query_params().get('SecurityToken')
+
+	def set_SecurityToken(self,SecurityToken):
+		self.add_query_param('SecurityToken',SecurityToken)
+
+	def get_DomainName(self):
+		return self.get_query_params().get('DomainName')
+
+	def set_DomainName(self,DomainName):
+		self.add_query_param('DomainName',DomainName)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')

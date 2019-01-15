@@ -35,12 +35,6 @@ class CreateUploadImageRequest(RpcRequest):
 	def set_ImageType(self,ImageType):
 		self.add_query_param('ImageType',ImageType)
 
-	def get_OriginalFileName(self):
-		return self.get_query_params().get('OriginalFileName')
-
-	def set_OriginalFileName(self,OriginalFileName):
-		self.add_query_param('OriginalFileName',OriginalFileName)
-
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -53,11 +47,11 @@ class CreateUploadImageRequest(RpcRequest):
 	def set_ImageExt(self,ImageExt):
 		self.add_query_param('ImageExt',ImageExt)
 
-	def get_CateId(self):
-		return self.get_query_params().get('CateId')
+	def get_Description(self):
+		return self.get_query_params().get('Description')
 
-	def set_CateId(self,CateId):
-		self.add_query_param('CateId',CateId)
+	def set_Description(self,Description):
+		self.add_query_param('Description',Description)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
@@ -82,3 +76,21 @@ class CreateUploadImageRequest(RpcRequest):
 
 	def set_StorageLocation(self,StorageLocation):
 		self.add_query_param('StorageLocation',StorageLocation)
+
+	def get_UserData(self):
+		return self.get_query_params().get('UserData')
+
+	def set_UserData(self,UserData):
+		self.add_query_param('UserData',UserData)
+
+	def get_OriginalFileName(self):
+		return self.get_query_params().get('OriginalFileName')
+
+	def set_OriginalFileName(self,OriginalFileName):
+		self.add_query_param('OriginalFileName',OriginalFileName)
+
+	def get_CateId(self):
+		return self.get_query_params().get('CateId')
+
+	def set_CateId(self,CateId):
+		self.add_query_param('CateId',CateId)

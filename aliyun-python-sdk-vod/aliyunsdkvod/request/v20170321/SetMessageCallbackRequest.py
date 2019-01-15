@@ -23,12 +23,6 @@ class SetMessageCallbackRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'vod', '2017-03-21', 'SetMessageCallback','vod')
 
-	def get_CallbackType(self):
-		return self.get_query_params().get('CallbackType')
-
-	def set_CallbackType(self,CallbackType):
-		self.add_query_param('CallbackType',CallbackType)
-
 	def get_AuthKey(self):
 		return self.get_query_params().get('AuthKey')
 
@@ -40,12 +34,6 @@ class SetMessageCallbackRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_CallbackSwitch(self):
-		return self.get_query_params().get('CallbackSwitch')
-
-	def set_CallbackSwitch(self,CallbackSwitch):
-		self.add_query_param('CallbackSwitch',CallbackSwitch)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -65,6 +53,42 @@ class SetMessageCallbackRequest(RpcRequest):
 	def set_EventTypeList(self,EventTypeList):
 		self.add_query_param('EventTypeList',EventTypeList)
 
+	def get_MnsQueueName(self):
+		return self.get_query_params().get('MnsQueueName')
+
+	def set_MnsQueueName(self,MnsQueueName):
+		self.add_query_param('MnsQueueName',MnsQueueName)
+
+	def get_ResourceRealOwnerId(self):
+		return self.get_query_params().get('ResourceRealOwnerId')
+
+	def set_ResourceRealOwnerId(self,ResourceRealOwnerId):
+		self.add_query_param('ResourceRealOwnerId',ResourceRealOwnerId)
+
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
+
+	def get_CallbackType(self):
+		return self.get_query_params().get('CallbackType')
+
+	def set_CallbackType(self,CallbackType):
+		self.add_query_param('CallbackType',CallbackType)
+
+	def get_CallbackSwitch(self):
+		return self.get_query_params().get('CallbackSwitch')
+
+	def set_CallbackSwitch(self,CallbackSwitch):
+		self.add_query_param('CallbackSwitch',CallbackSwitch)
+
+	def get_MnsEndpoint(self):
+		return self.get_query_params().get('MnsEndpoint')
+
+	def set_MnsEndpoint(self,MnsEndpoint):
+		self.add_query_param('MnsEndpoint',MnsEndpoint)
+
 	def get_AuthSwitch(self):
 		return self.get_query_params().get('AuthSwitch')
 
@@ -76,9 +100,3 @@ class SetMessageCallbackRequest(RpcRequest):
 
 	def set_CallbackURL(self,CallbackURL):
 		self.add_query_param('CallbackURL',CallbackURL)
-
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)

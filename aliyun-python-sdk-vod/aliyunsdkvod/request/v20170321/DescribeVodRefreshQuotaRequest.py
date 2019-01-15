@@ -18,34 +18,16 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class AddWorkFlowRequest(RpcRequest):
+class DescribeVodRefreshQuotaRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'vod', '2017-03-21', 'AddWorkFlow','vod')
+		RpcRequest.__init__(self, 'vod', '2017-03-21', 'DescribeVodRefreshQuota','vod')
 
-	def get_ResourceOwnerId(self):
-		return self.get_query_params().get('ResourceOwnerId')
+	def get_SecurityToken(self):
+		return self.get_query_params().get('SecurityToken')
 
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
-
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_Name(self):
-		return self.get_query_params().get('Name')
-
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)
-
-	def get_ActionList(self):
-		return self.get_query_params().get('ActionList')
-
-	def set_ActionList(self,ActionList):
-		self.add_query_param('ActionList',ActionList)
+	def set_SecurityToken(self,SecurityToken):
+		self.add_query_param('SecurityToken',SecurityToken)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
