@@ -18,16 +18,46 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class DescribeVSwitchesRequest(RpcRequest):
+class DescribeIpv6AddressesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'DescribeVSwitches','vpc')
+		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'DescribeIpv6Addresses','vpc')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+
+	def get_Ipv6InternetBandwidthId(self):
+		return self.get_query_params().get('Ipv6InternetBandwidthId')
+
+	def set_Ipv6InternetBandwidthId(self,Ipv6InternetBandwidthId):
+		self.add_query_param('Ipv6InternetBandwidthId',Ipv6InternetBandwidthId)
+
+	def get_NetworkType(self):
+		return self.get_query_params().get('NetworkType')
+
+	def set_NetworkType(self,NetworkType):
+		self.add_query_param('NetworkType',NetworkType)
+
+	def get_PageNumber(self):
+		return self.get_query_params().get('PageNumber')
+
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)
+
+	def get_AssociatedInstanceType(self):
+		return self.get_query_params().get('AssociatedInstanceType')
+
+	def set_AssociatedInstanceType(self,AssociatedInstanceType):
+		self.add_query_param('AssociatedInstanceType',AssociatedInstanceType)
+
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -47,23 +77,17 @@ class DescribeVSwitchesRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_PageNumber(self):
-		return self.get_query_params().get('PageNumber')
-
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
-
 	def get_VSwitchId(self):
 		return self.get_query_params().get('VSwitchId')
 
 	def set_VSwitchId(self,VSwitchId):
 		self.add_query_param('VSwitchId',VSwitchId)
 
-	def get_ResourceGroupId(self):
-		return self.get_query_params().get('ResourceGroupId')
+	def get_Ipv6AddressId(self):
+		return self.get_query_params().get('Ipv6AddressId')
 
-	def set_ResourceGroupId(self,ResourceGroupId):
-		self.add_query_param('ResourceGroupId',ResourceGroupId)
+	def set_Ipv6AddressId(self,Ipv6AddressId):
+		self.add_query_param('Ipv6AddressId',Ipv6AddressId)
 
 	def get_VpcId(self):
 		return self.get_query_params().get('VpcId')
@@ -71,43 +95,20 @@ class DescribeVSwitchesRequest(RpcRequest):
 	def set_VpcId(self,VpcId):
 		self.add_query_param('VpcId',VpcId)
 
-	def get_VSwitchName(self):
-		return self.get_query_params().get('VSwitchName')
+	def get_Name(self):
+		return self.get_query_params().get('Name')
 
-	def set_VSwitchName(self,VSwitchName):
-		self.add_query_param('VSwitchName',VSwitchName)
+	def set_Name(self,Name):
+		self.add_query_param('Name',Name)
 
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
+	def get_Ipv6Address(self):
+		return self.get_query_params().get('Ipv6Address')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
+	def set_Ipv6Address(self,Ipv6Address):
+		self.add_query_param('Ipv6Address',Ipv6Address)
 
-	def get_ZoneId(self):
-		return self.get_query_params().get('ZoneId')
+	def get_AssociatedInstanceId(self):
+		return self.get_query_params().get('AssociatedInstanceId')
 
-	def set_ZoneId(self,ZoneId):
-		self.add_query_param('ZoneId',ZoneId)
-
-	def get_Tags(self):
-		return self.get_query_params().get('Tags')
-
-	def set_Tags(self,Tags):
-		for i in range(len(Tags)):	
-			if Tags[i].get('Value') is not None:
-				self.add_query_param('Tag.' + str(i + 1) + '.Value' , Tags[i].get('Value'))
-			if Tags[i].get('Key') is not None:
-				self.add_query_param('Tag.' + str(i + 1) + '.Key' , Tags[i].get('Key'))
-
-
-	def get_IsDefault(self):
-		return self.get_query_params().get('IsDefault')
-
-	def set_IsDefault(self,IsDefault):
-		self.add_query_param('IsDefault',IsDefault)
-
-	def get_RouteTableId(self):
-		return self.get_query_params().get('RouteTableId')
-
-	def set_RouteTableId(self,RouteTableId):
-		self.add_query_param('RouteTableId',RouteTableId)
+	def set_AssociatedInstanceId(self,AssociatedInstanceId):
+		self.add_query_param('AssociatedInstanceId',AssociatedInstanceId)

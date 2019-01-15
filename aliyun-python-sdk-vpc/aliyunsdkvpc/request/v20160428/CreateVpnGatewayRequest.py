@@ -18,10 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class DescribeRouteTableListRequest(RpcRequest):
+class CreateVpnGatewayRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'DescribeRouteTableList','vpc')
+		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'CreateVpnGateway','vpc')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -29,11 +29,35 @@ class DescribeRouteTableListRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_Period(self):
+		return self.get_query_params().get('Period')
+
+	def set_Period(self,Period):
+		self.add_query_param('Period',Period)
+
+	def get_AutoPay(self):
+		return self.get_query_params().get('AutoPay')
+
+	def set_AutoPay(self,AutoPay):
+		self.add_query_param('AutoPay',AutoPay)
+
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+
+	def get_Bandwidth(self):
+		return self.get_query_params().get('Bandwidth')
+
+	def set_Bandwidth(self,Bandwidth):
+		self.add_query_param('Bandwidth',Bandwidth)
+
+	def get_EnableIpsec(self):
+		return self.get_query_params().get('EnableIpsec')
+
+	def set_EnableIpsec(self,EnableIpsec):
+		self.add_query_param('EnableIpsec',EnableIpsec)
 
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
@@ -47,35 +71,17 @@ class DescribeRouteTableListRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_PageNumber(self):
-		return self.get_query_params().get('PageNumber')
+	def get_EnableSsl(self):
+		return self.get_query_params().get('EnableSsl')
 
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
+	def set_EnableSsl(self,EnableSsl):
+		self.add_query_param('EnableSsl',EnableSsl)
 
-	def get_RouterType(self):
-		return self.get_query_params().get('RouterType')
+	def get_SslConnections(self):
+		return self.get_query_params().get('SslConnections')
 
-	def set_RouterType(self,RouterType):
-		self.add_query_param('RouterType',RouterType)
-
-	def get_ResourceGroupId(self):
-		return self.get_query_params().get('ResourceGroupId')
-
-	def set_ResourceGroupId(self,ResourceGroupId):
-		self.add_query_param('ResourceGroupId',ResourceGroupId)
-
-	def get_RouteTableName(self):
-		return self.get_query_params().get('RouteTableName')
-
-	def set_RouteTableName(self,RouteTableName):
-		self.add_query_param('RouteTableName',RouteTableName)
-
-	def get_RouterId(self):
-		return self.get_query_params().get('RouterId')
-
-	def set_RouterId(self,RouterId):
-		self.add_query_param('RouterId',RouterId)
+	def set_SslConnections(self,SslConnections):
+		self.add_query_param('SslConnections',SslConnections)
 
 	def get_VpcId(self):
 		return self.get_query_params().get('VpcId')
@@ -83,25 +89,14 @@ class DescribeRouteTableListRequest(RpcRequest):
 	def set_VpcId(self,VpcId):
 		self.add_query_param('VpcId',VpcId)
 
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
+	def get_Name(self):
+		return self.get_query_params().get('Name')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
+	def set_Name(self,Name):
+		self.add_query_param('Name',Name)
 
-	def get_Tags(self):
-		return self.get_query_params().get('Tags')
+	def get_InstanceChargeType(self):
+		return self.get_query_params().get('InstanceChargeType')
 
-	def set_Tags(self,Tags):
-		for i in range(len(Tags)):	
-			if Tags[i].get('Value') is not None:
-				self.add_query_param('Tag.' + str(i + 1) + '.Value' , Tags[i].get('Value'))
-			if Tags[i].get('Key') is not None:
-				self.add_query_param('Tag.' + str(i + 1) + '.Key' , Tags[i].get('Key'))
-
-
-	def get_RouteTableId(self):
-		return self.get_query_params().get('RouteTableId')
-
-	def set_RouteTableId(self,RouteTableId):
-		self.add_query_param('RouteTableId',RouteTableId)
+	def set_InstanceChargeType(self,InstanceChargeType):
+		self.add_query_param('InstanceChargeType',InstanceChargeType)

@@ -18,16 +18,34 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class DescribeRouteTableListRequest(RpcRequest):
+class DescribeFlowLogsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'DescribeRouteTableList','vpc')
+		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'DescribeFlowLogs','vpc')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+
+	def get_ResourceId(self):
+		return self.get_query_params().get('ResourceId')
+
+	def set_ResourceId(self,ResourceId):
+		self.add_query_param('ResourceId',ResourceId)
+
+	def get_ProjectName(self):
+		return self.get_query_params().get('ProjectName')
+
+	def set_ProjectName(self,ProjectName):
+		self.add_query_param('ProjectName',ProjectName)
+
+	def get_LogStoreName(self):
+		return self.get_query_params().get('LogStoreName')
+
+	def set_LogStoreName(self,LogStoreName):
+		self.add_query_param('LogStoreName',LogStoreName)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -41,11 +59,23 @@ class DescribeRouteTableListRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
+	def get_Description(self):
+		return self.get_query_params().get('Description')
+
+	def set_Description(self,Description):
+		self.add_query_param('Description',Description)
+
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_ResourceType(self):
+		return self.get_query_params().get('ResourceType')
+
+	def set_ResourceType(self,ResourceType):
+		self.add_query_param('ResourceType',ResourceType)
 
 	def get_PageNumber(self):
 		return self.get_query_params().get('PageNumber')
@@ -53,55 +83,32 @@ class DescribeRouteTableListRequest(RpcRequest):
 	def set_PageNumber(self,PageNumber):
 		self.add_query_param('PageNumber',PageNumber)
 
-	def get_RouterType(self):
-		return self.get_query_params().get('RouterType')
-
-	def set_RouterType(self,RouterType):
-		self.add_query_param('RouterType',RouterType)
-
-	def get_ResourceGroupId(self):
-		return self.get_query_params().get('ResourceGroupId')
-
-	def set_ResourceGroupId(self,ResourceGroupId):
-		self.add_query_param('ResourceGroupId',ResourceGroupId)
-
-	def get_RouteTableName(self):
-		return self.get_query_params().get('RouteTableName')
-
-	def set_RouteTableName(self,RouteTableName):
-		self.add_query_param('RouteTableName',RouteTableName)
-
-	def get_RouterId(self):
-		return self.get_query_params().get('RouterId')
-
-	def set_RouterId(self,RouterId):
-		self.add_query_param('RouterId',RouterId)
-
-	def get_VpcId(self):
-		return self.get_query_params().get('VpcId')
-
-	def set_VpcId(self,VpcId):
-		self.add_query_param('VpcId',VpcId)
-
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
 
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
 
-	def get_Tags(self):
-		return self.get_query_params().get('Tags')
+	def get_TrafficType(self):
+		return self.get_query_params().get('TrafficType')
 
-	def set_Tags(self,Tags):
-		for i in range(len(Tags)):	
-			if Tags[i].get('Value') is not None:
-				self.add_query_param('Tag.' + str(i + 1) + '.Value' , Tags[i].get('Value'))
-			if Tags[i].get('Key') is not None:
-				self.add_query_param('Tag.' + str(i + 1) + '.Key' , Tags[i].get('Key'))
+	def set_TrafficType(self,TrafficType):
+		self.add_query_param('TrafficType',TrafficType)
 
+	def get_FlowLogId(self):
+		return self.get_query_params().get('FlowLogId')
 
-	def get_RouteTableId(self):
-		return self.get_query_params().get('RouteTableId')
+	def set_FlowLogId(self,FlowLogId):
+		self.add_query_param('FlowLogId',FlowLogId)
 
-	def set_RouteTableId(self,RouteTableId):
-		self.add_query_param('RouteTableId',RouteTableId)
+	def get_FlowLogName(self):
+		return self.get_query_params().get('FlowLogName')
+
+	def set_FlowLogName(self,FlowLogName):
+		self.add_query_param('FlowLogName',FlowLogName)
+
+	def get_Status(self):
+		return self.get_query_params().get('Status')
+
+	def set_Status(self,Status):
+		self.add_query_param('Status',Status)

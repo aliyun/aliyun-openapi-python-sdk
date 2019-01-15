@@ -64,3 +64,9 @@ class ModifyVSwitchAttributeRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_Ipv6CidrBlock(self):
+		return self.get_query_params().get('Ipv6CidrBlock')
+
+	def set_Ipv6CidrBlock(self,Ipv6CidrBlock):
+		self.add_query_param('Ipv6CidrBlock',Ipv6CidrBlock)
