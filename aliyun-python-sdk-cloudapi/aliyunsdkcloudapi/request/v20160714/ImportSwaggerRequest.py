@@ -30,10 +30,10 @@ class ImportSwaggerRequest(RpcRequest):
 		self.add_query_param('DataFormat',DataFormat)
 
 	def get_Data(self):
-		return self.get_query_params().get('Data')
+		return self.get_body_params().get('Data')
 
 	def set_Data(self,Data):
-		self.add_query_param('Data',Data)
+		self.add_body_params('Data', Data)
 
 	def get_GroupId(self):
 		return self.get_query_params().get('GroupId')

@@ -18,10 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class CreateSignatureRequest(RpcRequest):
+class DescribeAppRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'CloudAPI', '2016-07-14', 'CreateSignature','apigateway')
+		RpcRequest.__init__(self, 'CloudAPI', '2016-07-14', 'DescribeApp','apigateway')
 
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
@@ -29,20 +29,8 @@ class CreateSignatureRequest(RpcRequest):
 	def set_SecurityToken(self,SecurityToken):
 		self.add_query_param('SecurityToken',SecurityToken)
 
-	def get_SignatureName(self):
-		return self.get_query_params().get('SignatureName')
+	def get_AppId(self):
+		return self.get_query_params().get('AppId')
 
-	def set_SignatureName(self,SignatureName):
-		self.add_query_param('SignatureName',SignatureName)
-
-	def get_SignatureKey(self):
-		return self.get_query_params().get('SignatureKey')
-
-	def set_SignatureKey(self,SignatureKey):
-		self.add_query_param('SignatureKey',SignatureKey)
-
-	def get_SignatureSecret(self):
-		return self.get_query_params().get('SignatureSecret')
-
-	def set_SignatureSecret(self,SignatureSecret):
-		self.add_query_param('SignatureSecret',SignatureSecret)
+	def set_AppId(self,AppId):
+		self.add_query_param('AppId',AppId)

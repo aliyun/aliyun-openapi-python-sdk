@@ -59,6 +59,12 @@ class SetApisAuthoritiesRequest(RpcRequest):
 	def set_Description(self,Description):
 		self.add_query_param('Description',Description)
 
+	def get_AuthValidTime(self):
+		return self.get_query_params().get('AuthValidTime')
+
+	def set_AuthValidTime(self,AuthValidTime):
+		self.add_query_param('AuthValidTime',AuthValidTime)
+
 	def get_ApiIds(self):
 		return self.get_query_params().get('ApiIds')
 

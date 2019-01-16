@@ -148,3 +148,9 @@ class CreateApiRequest(RpcRequest):
 
 	def set_RequestConfig(self,RequestConfig):
 		self.add_query_param('RequestConfig',RequestConfig)
+
+	def get_ResultBodyModel(self):
+		return self.get_query_params().get('ResultBodyModel')
+
+	def set_ResultBodyModel(self,ResultBodyModel):
+		self.add_query_param('ResultBodyModel',ResultBodyModel)
