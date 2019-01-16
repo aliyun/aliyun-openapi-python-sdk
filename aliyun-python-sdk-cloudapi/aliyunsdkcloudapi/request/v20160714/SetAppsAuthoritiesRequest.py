@@ -64,3 +64,9 @@ class SetAppsAuthoritiesRequest(RpcRequest):
 
 	def set_ApiId(self,ApiId):
 		self.add_query_param('ApiId',ApiId)
+
+	def get_AuthValidTime(self):
+		return self.get_query_params().get('AuthValidTime')
+
+	def set_AuthValidTime(self,AuthValidTime):
+		self.add_query_param('AuthValidTime',AuthValidTime)
