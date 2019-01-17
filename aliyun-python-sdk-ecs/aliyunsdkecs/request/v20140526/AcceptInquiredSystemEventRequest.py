@@ -18,10 +18,16 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class AllocateEipAddressRequest(RpcRequest):
+class AcceptInquiredSystemEventRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'AllocateEipAddress','ecs')
+		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'AcceptInquiredSystemEvent','ecs')
+
+	def get_EventId(self):
+		return self.get_query_params().get('EventId')
+
+	def set_EventId(self,EventId):
+		self.add_query_param('EventId',EventId)
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -34,30 +40,6 @@ class AllocateEipAddressRequest(RpcRequest):
 
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_Bandwidth(self):
-		return self.get_query_params().get('Bandwidth')
-
-	def set_Bandwidth(self,Bandwidth):
-		self.add_query_param('Bandwidth',Bandwidth)
-
-	def get_ClientToken(self):
-		return self.get_query_params().get('ClientToken')
-
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
-
-	def get_InternetChargeType(self):
-		return self.get_query_params().get('InternetChargeType')
-
-	def set_InternetChargeType(self,InternetChargeType):
-		self.add_query_param('InternetChargeType',InternetChargeType)
-
-	def get_ISP(self):
-		return self.get_query_params().get('ISP')
-
-	def set_ISP(self,ISP):
-		self.add_query_param('ISP',ISP)
 
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')

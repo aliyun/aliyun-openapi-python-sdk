@@ -216,6 +216,12 @@ class DescribeDisksRequest(RpcRequest):
 	def set_Category(self,Category):
 		self.add_query_param('Category',Category)
 
+	def get_KMSKeyId(self):
+		return self.get_query_params().get('KMSKeyId')
+
+	def set_KMSKeyId(self,KMSKeyId):
+		self.add_query_param('KMSKeyId',KMSKeyId)
+
 	def get_Status(self):
 		return self.get_query_params().get('Status')
 

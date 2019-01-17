@@ -160,6 +160,12 @@ class DescribeSnapshotsRequest(RpcRequest):
 	def set_SnapshotType(self,SnapshotType):
 		self.add_query_param('SnapshotType',SnapshotType)
 
+	def get_KMSKeyId(self):
+		return self.get_query_params().get('KMSKeyId')
+
+	def set_KMSKeyId(self,KMSKeyId):
+		self.add_query_param('KMSKeyId',KMSKeyId)
+
 	def get_Status(self):
 		return self.get_query_params().get('Status')
 
