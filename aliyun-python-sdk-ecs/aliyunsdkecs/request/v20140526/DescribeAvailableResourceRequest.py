@@ -59,6 +59,12 @@ class DescribeAvailableResourceRequest(RpcRequest):
 	def set_SystemDiskCategory(self,SystemDiskCategory):
 		self.add_query_param('SystemDiskCategory',SystemDiskCategory)
 
+	def get_Scope(self):
+		return self.get_query_params().get('Scope')
+
+	def set_Scope(self,Scope):
+		self.add_query_param('Scope',Scope)
+
 	def get_InstanceType(self):
 		return self.get_query_params().get('InstanceType')
 

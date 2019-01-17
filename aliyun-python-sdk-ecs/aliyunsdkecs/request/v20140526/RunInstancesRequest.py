@@ -59,6 +59,12 @@ class RunInstancesRequest(RpcRequest):
 	def set_KeyPairName(self,KeyPairName):
 		self.add_query_param('KeyPairName',KeyPairName)
 
+	def get_MinAmount(self):
+		return self.get_query_params().get('MinAmount')
+
+	def set_MinAmount(self,MinAmount):
+		self.add_query_param('MinAmount',MinAmount)
+
 	def get_SpotPriceLimit(self):
 		return self.get_query_params().get('SpotPriceLimit')
 
@@ -354,6 +360,8 @@ class RunInstancesRequest(RpcRequest):
 				self.add_query_param('DataDisk.' + str(i + 1) + '.Category' , DataDisks[i].get('Category'))
 			if DataDisks[i].get('Encrypted') is not None:
 				self.add_query_param('DataDisk.' + str(i + 1) + '.Encrypted' , DataDisks[i].get('Encrypted'))
+			if DataDisks[i].get('KMSKeyId') is not None:
+				self.add_query_param('DataDisk.' + str(i + 1) + '.KMSKeyId' , DataDisks[i].get('KMSKeyId'))
 			if DataDisks[i].get('DiskName') is not None:
 				self.add_query_param('DataDisk.' + str(i + 1) + '.DiskName' , DataDisks[i].get('DiskName'))
 			if DataDisks[i].get('Description') is not None:

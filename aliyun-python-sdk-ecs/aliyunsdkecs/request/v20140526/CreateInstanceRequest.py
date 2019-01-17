@@ -327,6 +327,8 @@ class CreateInstanceRequest(RpcRequest):
 				self.add_query_param('DataDisk.' + str(i + 1) + '.Description' , DataDisks[i].get('Description'))
 			if DataDisks[i].get('Category') is not None:
 				self.add_query_param('DataDisk.' + str(i + 1) + '.Category' , DataDisks[i].get('Category'))
+			if DataDisks[i].get('KMSKeyId') is not None:
+				self.add_query_param('DataDisk.' + str(i + 1) + '.KMSKeyId' , DataDisks[i].get('KMSKeyId'))
 			if DataDisks[i].get('Device') is not None:
 				self.add_query_param('DataDisk.' + str(i + 1) + '.Device' , DataDisks[i].get('Device'))
 			if DataDisks[i].get('DeleteWithInstance') is not None:

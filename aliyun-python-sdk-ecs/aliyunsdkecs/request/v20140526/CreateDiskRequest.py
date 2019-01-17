@@ -110,3 +110,10 @@ class CreateDiskRequest(RpcRequest):
 				self.add_query_param('Tag.' + str(i + 1) + '.Value' , Tags[i].get('Value'))
 			if Tags[i].get('Key') is not None:
 				self.add_query_param('Tag.' + str(i + 1) + '.Key' , Tags[i].get('Key'))
+
+
+	def get_KMSKeyId(self):
+		return self.get_query_params().get('KMSKeyId')
+
+	def set_KMSKeyId(self,KMSKeyId):
+		self.add_query_param('KMSKeyId',KMSKeyId)

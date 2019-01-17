@@ -41,6 +41,12 @@ class DescribeEipAddressesRequest(RpcRequest):
 	def set_Filter2Value(self,Filter2Value):
 		self.add_query_param('Filter.2.Value',Filter2Value)
 
+	def get_ISP(self):
+		return self.get_query_params().get('ISP')
+
+	def set_ISP(self,ISP):
+		self.add_query_param('ISP',ISP)
+
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
 

@@ -196,6 +196,12 @@ class CreateLaunchTemplateVersionRequest(RpcRequest):
 	def set_UserData(self,UserData):
 		self.add_query_param('UserData',UserData)
 
+	def get_PasswordInherit(self):
+		return self.get_query_params().get('PasswordInherit')
+
+	def set_PasswordInherit(self,PasswordInherit):
+		self.add_query_param('PasswordInherit',PasswordInherit)
+
 	def get_InstanceType(self):
 		return self.get_query_params().get('InstanceType')
 
@@ -286,6 +292,8 @@ class CreateLaunchTemplateVersionRequest(RpcRequest):
 				self.add_query_param('DataDisk.' + str(i + 1) + '.Description' , DataDisks[i].get('Description'))
 			if DataDisks[i].get('DeleteWithInstance') is not None:
 				self.add_query_param('DataDisk.' + str(i + 1) + '.DeleteWithInstance' , DataDisks[i].get('DeleteWithInstance'))
+			if DataDisks[i].get('Device') is not None:
+				self.add_query_param('DataDisk.' + str(i + 1) + '.Device' , DataDisks[i].get('Device'))
 
 
 	def get_SystemDiskSize(self):
