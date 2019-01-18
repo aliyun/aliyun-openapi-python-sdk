@@ -1,3 +1,5 @@
+version: '1.0.{build}'
+
 environment:
   matrix:
     - PYTHON: "C:\\Python27"
@@ -31,3 +33,4 @@ build: off
 
 test_script:
   - "coverage run --branch -m pytest aliyun-python-sdk-core/tests/"
+  - "coverage run --branch -m pytest python-sdk-function-test/tests/"

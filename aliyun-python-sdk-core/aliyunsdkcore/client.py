@@ -24,7 +24,7 @@ import json
 import aliyunsdkcore
 import jmespath
 from aliyunsdkcore.vendored.six.moves.urllib.parse import urlencode
-from aliyunsdkcore.vendored.six.moves import http_client
+from aliyunsdkcore.vendored.requests import codes
 
 from aliyunsdkcore.acs_exception.exceptions import ClientException
 from aliyunsdkcore.acs_exception.exceptions import ServerException
@@ -327,7 +327,7 @@ class AcsClient:
             # data instead
             pass
 
-        if http_status < http_client.OK or http_status >= http_client.MULTIPLE_CHOICES:
+        if http_status < codes.OK or http_status >= codes.MULTIPLE_CHOICES:
 
             server_error_code, server_error_message = self._parse_error_info_from_response_body(
                 response_body.decode('utf-8'))

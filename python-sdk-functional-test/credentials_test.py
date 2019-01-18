@@ -1,7 +1,6 @@
 # encoding:utf-8
 import json
 import os
-from tests import unittest
 
 from aliyunsdkcore.acs_exception.exceptions import ClientException
 from aliyunsdkcore.acs_exception.exceptions import ServerException
