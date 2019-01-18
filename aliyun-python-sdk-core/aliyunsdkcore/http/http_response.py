@@ -81,6 +81,6 @@ class HttpResponse(HttpRequest):
             }
             # ignore the warning-InsecureRequestWarning
             urllib3.disable_warnings()
-            response = s.send(prepped, proxies=proxies, timeout=(5,self._timeout), allow_redirects=False, verify= None,
-                              cert=None)
+            response = s.send(prepped, proxies=proxies, timeout=(5, self._timeout),
+                              allow_redirects=False, verify=None, cert=None)
             return response.status_code, response.headers, response.content
