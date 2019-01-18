@@ -19,6 +19,7 @@
 
 import os
 from aliyunsdkcore.vendored.requests import Request, Session
+from aliyunsdkcore.vendored.requests.packages import urllib3
 from aliyunsdkcore.http.http_request import HttpRequest
 from aliyunsdkcore.http import protocol_type as PT
 
@@ -78,7 +79,8 @@ class HttpResponse(HttpRequest):
                 "http": proxy_http,
                 "https": proxy_https,
             }
-
+            # ignore the warning-InsecureRequestWarning
+            urllib3.disable_warnings()
             response = s.send(prepped, proxies=proxies, timeout=(5,self._timeout), allow_redirects=False, verify= None,
                               cert=None)
             return response.status_code, response.headers, response.content
