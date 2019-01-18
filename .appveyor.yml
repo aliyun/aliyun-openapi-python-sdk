@@ -28,7 +28,6 @@ install:
   - "%PYTHON%\\python.exe -m pip install pycodestyle"
   - "%PYTHON%\\python.exe -m pip install mock"
   - "%PYTHON%\\python.exe -m pip install jmespath"
-  - "%PYTHON%\\python.exe -m pip install pytest"
 
 build: off
 
