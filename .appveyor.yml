@@ -1,14 +1,12 @@
 environment:
   matrix:
+    - PYTHON: "C:\\Python26"
     - PYTHON: "C:\\Python27"
-    - PYTHON: "C:\\Python33"
     - PYTHON: "C:\\Python34"
     - PYTHON: "C:\\Python35"
     - PYTHON: "C:\\Python36"
     - PYTHON: "C:\\Python37"
     - PYTHON: "C:\\Python27-x64"
-    - PYTHON: "C:\\Python33-x64"
-      DISTUTILS_USE_SDK: "1"
     - PYTHON: "C:\\Python34-x64"
       DISTUTILS_USE_SDK: "1"
     - PYTHON: "C:\\Python35-x64"
@@ -28,6 +26,7 @@ install:
   - "%PYTHON%\\python.exe -m pip install pycodestyle"
   - "%PYTHON%\\python.exe -m pip install mock"
   - "%PYTHON%\\python.exe -m pip install jmespath"
+  - "%PYTHON%\\python.exe -m pip install pytest"
 
 build: off
 
