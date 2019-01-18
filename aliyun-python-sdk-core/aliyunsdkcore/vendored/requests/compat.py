@@ -44,7 +44,7 @@ if is_py2:
     from Cookie import Morsel
     from StringIO import StringIO
 
-    from urllib3.packages.ordered_dict import OrderedDict
+    from .packages.urllib3.packages.ordered_dict import OrderedDict
 
     builtin_str = str
     bytes = str
