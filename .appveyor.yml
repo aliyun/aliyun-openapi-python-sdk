@@ -35,5 +35,6 @@ install:
 build: off
 
 test_script:
-  - "coverage run --branch -m pytest aliyun-python-sdk-core/tests/"
   - "%PYTHON%\\python.exe test_all.py"
+  - "coverage run --branch -m pytest aliyun-python-sdk-core/tests/"
+
