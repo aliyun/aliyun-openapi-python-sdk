@@ -33,5 +33,7 @@ build: off
 
 test_script:
   - "coverage run --branch -m pytest aliyun-python-sdk-core/tests/"
+  - 'coverage report --include="aliyun-python-sdk-core/aliyunsdkcore/*" --omit="aliyun-python-sdk-core/aliyunsdkcore/vendored/*,aliyun-python-sdk-core/aliyunsdkcore/compat.py"'
+  - 'coverage html --include="aliyun-python-sdk-core/aliyunsdkcore/*" --omit="aliyun-python-sdk-core/aliyunsdkcore/vendored/*,aliyun-python-sdk-core/aliyunsdkcore/compat.py"'
   - "%PYTHON%\\python.exe test_all.py"
 
