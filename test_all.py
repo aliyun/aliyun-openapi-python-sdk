@@ -1,5 +1,5 @@
 import os
-from subprocess import check_call
+from subprocess import check_call, CalledProcessError
 
 cur_path = os.path.abspath('.')
 path_list = []
@@ -15,6 +15,6 @@ try:
     check_call(
         "coverage run --branch -m pytest python-sdk-functional-test/", shell=True)
 
-except Exception as e:
+except CalledProcessError as e:
     raise
 
