@@ -1,0 +1,37 @@
+version: '1.0.{build}'
+
+environment:
+  matrix:
+    - PYTHON: "C:\\Python27"
+    - PYTHON: "C:\\Python34"
+    - PYTHON: "C:\\Python35"
+    - PYTHON: "C:\\Python36"
+    - PYTHON: "C:\\Python37"
+    - PYTHON: "C:\\Python27-x64"
+    - PYTHON: "C:\\Python34-x64"
+      DISTUTILS_USE_SDK: "1"
+    - PYTHON: "C:\\Python35-x64"
+    - PYTHON: "C:\\Python36-x64"
+    - PYTHON: "C:\\Python37-x64"
+
+skip_commits:
+  files:
+    - "*.yml"
+    - "*.rst"
+    - "LICENSE"
+
+install:
+  - "SET PATH=%PYTHON%;%PYTHON%\\Scripts;%PATH%"
+  - "%PYTHON%\\python.exe -m pip install unittest2"
+  - "%PYTHON%\\python.exe -m pip install coverage"
+  - "%PYTHON%\\python.exe -m pip install pycodestyle"
+  - "%PYTHON%\\python.exe -m pip install mock"
+  - "%PYTHON%\\python.exe -m pip install jmespath"
+  - "%PYTHON%\\python.exe -m pip install pytest==3.2.5"
+
+build: off
+
+test_script:
+  - "coverage run --branch -m pytest aliyun-python-sdk-core/tests/"
+  - "%PYTHON%\\python.exe test_all.py"
+
