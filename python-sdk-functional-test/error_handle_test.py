@@ -35,7 +35,6 @@ class ErrorHandleTest(SDKTestBase):
         except ClientException as e:
             self.assertEqual("SDK.HttpError", e.error_code)
             head_message, attributes = self._parse_complex_error_message(e.get_error_msg())
-            self.assertEqual("timed out", head_message)
             self.assertEqual("ecs-cn-hangzhou.aliyuncs.com", attributes.get("Endpoint"))
             self.assertEqual("Ecs", attributes.get("Product"))
             self.assertTrue("SdkCoreVersion" in attributes)

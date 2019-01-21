@@ -1,6 +1,7 @@
 # Alibaba Cloud Python Software Development Kit
 
 [![Build Status](https://travis-ci.org/aliyun/aliyun-openapi-python-sdk.svg?branch=master)](https://travis-ci.org/aliyun/aliyun-openapi-python-sdk)
+[![Appveyor CI Build Status](https://ci.appveyor.com/api/projects/status/qf5svj7bfu4dvhp9?svg=true)](https://ci.appveyor.com/project/aliyun/aliyun-openapi-python-sdk)
 [![codecov](https://codecov.io/gh/aliyun/aliyun-openapi-python-sdk/branch/master/graph/badge.svg)](https://codecov.io/gh/aliyun/aliyun-openapi-python-sdk)
 
 [中文文档](./README_zh.md)
