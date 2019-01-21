@@ -21,7 +21,7 @@ install:
 script:
   - make lint
   - make test
-  - '[[ $ACCESS_KEY_ID && $ACCESS_KEY_SECRET ]] && make functional-test'
+  - test -z $ACCESS_KEY_ID -a -z $ACCESS_KEY_SECRET || make functional-test
   - make coverage-report
 
 notifications:
