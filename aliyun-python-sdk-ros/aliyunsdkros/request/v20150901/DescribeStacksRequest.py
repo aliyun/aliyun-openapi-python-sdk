@@ -25,23 +25,17 @@ class DescribeStacksRequest(RoaRequest):
 		self.set_uri_pattern('/stacks')
 		self.set_method('GET')
 
-	def get_Status(self):
-		return self.get_query_params().get('Status')
+	def get_StackId(self):
+		return self.get_query_params().get('StackId')
 
-	def set_Status(self,Status):
-		self.add_query_param('Status',Status)
+	def set_StackId(self,StackId):
+		self.add_query_param('StackId',StackId)
 
 	def get_Name(self):
 		return self.get_query_params().get('Name')
 
 	def set_Name(self,Name):
 		self.add_query_param('Name',Name)
-
-	def get_StackId(self):
-		return self.get_query_params().get('StackId')
-
-	def set_StackId(self,StackId):
-		self.add_query_param('StackId',StackId)
 
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
@@ -54,3 +48,9 @@ class DescribeStacksRequest(RoaRequest):
 
 	def set_PageNumber(self,PageNumber):
 		self.add_query_param('PageNumber',PageNumber)
+
+	def get_Status(self):
+		return self.get_query_params().get('Status')
+
+	def set_Status(self,Status):
+		self.add_query_param('Status',Status)

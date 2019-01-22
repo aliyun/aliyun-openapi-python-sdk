@@ -25,17 +25,17 @@ class DescribeResourceDetailRequest(RoaRequest):
 		self.set_uri_pattern('/stacks/[StackName]/[StackId]/resources/[ResourceName]')
 		self.set_method('GET')
 
-	def get_StackName(self):
-		return self.get_path_params().get('StackName')
-
-	def set_StackName(self,StackName):
-		self.add_path_param('StackName',StackName)
-
 	def get_StackId(self):
 		return self.get_path_params().get('StackId')
 
 	def set_StackId(self,StackId):
 		self.add_path_param('StackId',StackId)
+
+	def get_StackName(self):
+		return self.get_path_params().get('StackName')
+
+	def set_StackName(self,StackName):
+		self.add_path_param('StackName',StackName)
 
 	def get_ResourceName(self):
 		return self.get_path_params().get('ResourceName')
