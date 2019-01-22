@@ -18,11 +18,11 @@
 # under the License.
 
 from aliyunsdkcore.request import RoaRequest
-class DoActionsRequest(RoaRequest):
+class ContinueCreateStackRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'ROS', '2015-09-01', 'DoActions')
-		self.set_uri_pattern('/stacks/[StackName]/[StackId]/actions')
+		RoaRequest.__init__(self, 'ROS', '2015-09-01', 'ContinueCreateStack')
+		self.set_uri_pattern('/stacks/[StackName]/[StackId]/continue')
 		self.set_method('POST')
 
 	def get_StackId(self):
