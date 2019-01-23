@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class DeleteAppRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'CloudAPI', '2016-07-14', 'DeleteApp')
+		RpcRequest.__init__(self, 'CloudAPI', '2016-07-14', 'DeleteApp','apigateway')
 
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')

@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class CreateIntranetDomainRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'CloudAPI', '2016-07-14', 'CreateIntranetDomain')
+		RpcRequest.__init__(self, 'CloudAPI', '2016-07-14', 'CreateIntranetDomain','apigateway')
 
 	def get_DeleteInternetDomain(self):
 		return self.get_query_params().get('DeleteInternetDomain')

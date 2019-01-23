@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class RemoveVpcAccessRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'CloudAPI', '2016-07-14', 'RemoveVpcAccess')
+		RpcRequest.__init__(self, 'CloudAPI', '2016-07-14', 'RemoveVpcAccess','apigateway')
 
 	def get_InstanceId(self):
 		return self.get_query_params().get('InstanceId')

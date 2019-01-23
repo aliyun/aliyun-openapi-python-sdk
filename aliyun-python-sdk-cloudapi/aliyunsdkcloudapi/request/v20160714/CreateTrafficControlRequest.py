@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class CreateTrafficControlRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'CloudAPI', '2016-07-14', 'CreateTrafficControl')
+		RpcRequest.__init__(self, 'CloudAPI', '2016-07-14', 'CreateTrafficControl','apigateway')
 
 	def get_ApiDefault(self):
 		return self.get_query_params().get('ApiDefault')

@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class DescribeLogConfigRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'CloudAPI', '2016-07-14', 'DescribeLogConfig')
+		RpcRequest.__init__(self, 'CloudAPI', '2016-07-14', 'DescribeLogConfig','apigateway')
 
 	def get_LogType(self):
 		return self.get_query_params().get('LogType')

@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class CreateAppRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'CloudAPI', '2016-07-14', 'CreateApp')
+		RpcRequest.__init__(self, 'CloudAPI', '2016-07-14', 'CreateApp','apigateway')
 
 	def get_AppName(self):
 		return self.get_query_params().get('AppName')

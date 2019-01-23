@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class DeleteTrafficControlRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'CloudAPI', '2016-07-14', 'DeleteTrafficControl')
+		RpcRequest.__init__(self, 'CloudAPI', '2016-07-14', 'DeleteTrafficControl','apigateway')
 
 	def get_TrafficControlId(self):
 		return self.get_query_params().get('TrafficControlId')
