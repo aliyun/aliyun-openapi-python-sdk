@@ -12,8 +12,8 @@ functional-test:
 	bash -e ./run_all_test.sh
 
 coverage-report:
-	coverage report --include="aliyun-python-sdk-core/aliyunsdkcore/*" --omit="aliyun-python-sdk-core/aliyunsdkcore/vendored/*,aliyun-python-sdk-core/aliyunsdkcore/compat.py"
-	coverage html --include="aliyun-python-sdk-core/aliyunsdkcore/*" --omit="aliyun-python-sdk-core/aliyunsdkcore/vendored/*,aliyun-python-sdk-core/aliyunsdkcore/compat.py"
+	coverage report --include="aliyun-python-sdk-core/aliyunsdkcore/*" --omit="aliyun-python-sdk-core/aliyunsdkcore/vendored/*,aliyun-python-sdk-core/aliyunsdkcore/compat.py,aliyun-python-sdk-core/aliyunsdkcore/data/*"
+	coverage html --include="aliyun-python-sdk-core/aliyunsdkcore/*" --omit="aliyun-python-sdk-core/aliyunsdkcore/vendored/*,aliyun-python-sdk-core/aliyunsdkcore/compat.py,aliyun-python-sdk-core/aliyunsdkcore/data/*"
 
 release-core:
 	bash -ex release-core.sh core dist
