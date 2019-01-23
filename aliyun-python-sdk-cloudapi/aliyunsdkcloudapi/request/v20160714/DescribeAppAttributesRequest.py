@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class DescribeAppAttributesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'CloudAPI', '2016-07-14', 'DescribeAppAttributes')
+		RpcRequest.__init__(self, 'CloudAPI', '2016-07-14', 'DescribeAppAttributes','apigateway')
 
 	def get_AppName(self):
 		return self.get_query_params().get('AppName')

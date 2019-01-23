@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class ModifyIpControlPolicyItemRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'CloudAPI', '2016-07-14', 'ModifyIpControlPolicyItem')
+		RpcRequest.__init__(self, 'CloudAPI', '2016-07-14', 'ModifyIpControlPolicyItem','apigateway')
 
 	def get_IpControlId(self):
 		return self.get_query_params().get('IpControlId')

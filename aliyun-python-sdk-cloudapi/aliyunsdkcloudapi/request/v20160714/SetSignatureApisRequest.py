@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class SetSignatureApisRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'CloudAPI', '2016-07-14', 'SetSignatureApis')
+		RpcRequest.__init__(self, 'CloudAPI', '2016-07-14', 'SetSignatureApis','apigateway')
 
 	def get_StageName(self):
 		return self.get_query_params().get('StageName')

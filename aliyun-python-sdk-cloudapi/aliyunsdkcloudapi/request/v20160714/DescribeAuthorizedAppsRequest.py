@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class DescribeAuthorizedAppsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'CloudAPI', '2016-07-14', 'DescribeAuthorizedApps')
+		RpcRequest.__init__(self, 'CloudAPI', '2016-07-14', 'DescribeAuthorizedApps','apigateway')
 
 	def get_StageName(self):
 		return self.get_query_params().get('StageName')

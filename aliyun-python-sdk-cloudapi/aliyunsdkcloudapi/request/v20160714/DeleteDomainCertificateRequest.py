@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class DeleteDomainCertificateRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'CloudAPI', '2016-07-14', 'DeleteDomainCertificate')
+		RpcRequest.__init__(self, 'CloudAPI', '2016-07-14', 'DeleteDomainCertificate','apigateway')
 
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')

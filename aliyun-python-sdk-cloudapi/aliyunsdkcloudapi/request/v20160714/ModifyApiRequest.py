@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class ModifyApiRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'CloudAPI', '2016-07-14', 'ModifyApi')
+		RpcRequest.__init__(self, 'CloudAPI', '2016-07-14', 'ModifyApi','apigateway')
 
 	def get_WebSocketApiType(self):
 		return self.get_query_params().get('WebSocketApiType')
