@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class DescribePurchasedApiGroupRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'CloudAPI', '2016-07-14', 'DescribePurchasedApiGroup','apigateway')
+		RpcRequest.__init__(self, 'CloudAPI', '2016-07-14', 'DescribePurchasedApiGroup')
 
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')

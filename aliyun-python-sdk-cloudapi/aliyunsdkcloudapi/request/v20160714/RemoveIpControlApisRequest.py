@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class RemoveIpControlApisRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'CloudAPI', '2016-07-14', 'RemoveIpControlApis','apigateway')
+		RpcRequest.__init__(self, 'CloudAPI', '2016-07-14', 'RemoveIpControlApis')
 
 	def get_StageName(self):
 		return self.get_query_params().get('StageName')
