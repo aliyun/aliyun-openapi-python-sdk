@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class SetApisAuthoritiesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'CloudAPI', '2016-07-14', 'SetApisAuthorities','apigateway')
+		RpcRequest.__init__(self, 'CloudAPI', '2016-07-14', 'SetApisAuthorities')
 
 	def get_AuthVaildTime(self):
 		return self.get_query_params().get('AuthVaildTime')

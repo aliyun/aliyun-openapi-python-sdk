@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class ImportSwaggerRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'CloudAPI', '2016-07-14', 'ImportSwagger','apigateway')
+		RpcRequest.__init__(self, 'CloudAPI', '2016-07-14', 'ImportSwagger')
 
 	def get_DataFormat(self):
 		return self.get_query_params().get('DataFormat')

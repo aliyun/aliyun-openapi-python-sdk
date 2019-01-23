@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class CreateApiStageVariableRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'CloudAPI', '2016-07-14', 'CreateApiStageVariable','apigateway')
+		RpcRequest.__init__(self, 'CloudAPI', '2016-07-14', 'CreateApiStageVariable')
 
 	def get_SupportRoute(self):
 		return self.get_query_params().get('SupportRoute')

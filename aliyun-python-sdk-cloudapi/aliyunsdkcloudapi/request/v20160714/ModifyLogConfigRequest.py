@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class ModifyLogConfigRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'CloudAPI', '2016-07-14', 'ModifyLogConfig','apigateway')
+		RpcRequest.__init__(self, 'CloudAPI', '2016-07-14', 'ModifyLogConfig')
 
 	def get_SlsLogStore(self):
 		return self.get_query_params().get('SlsLogStore')
