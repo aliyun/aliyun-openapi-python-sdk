@@ -11,7 +11,7 @@ API: The API of the product, for example `DescribeRegionsRequest`
 simple and free of external dependencies as you are able.
 -->
 
- * **Python Version**:
+* **Python Version**:
 * **aliyunsdkcore Version**:
 * **API**:
 

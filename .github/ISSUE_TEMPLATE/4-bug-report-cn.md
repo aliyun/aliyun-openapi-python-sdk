@@ -13,7 +13,7 @@ API: The API of the product, for example `DescribeRegionsRequest`
  如果可能，请提供一份最小问题复现代码。
  -->
 
- * **Python Version**:
+* **Python Version**:
 * **aliyunsdkcore Version**:
 * **API**:
 

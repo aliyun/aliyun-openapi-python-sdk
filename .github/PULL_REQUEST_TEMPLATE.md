@@ -8,5 +8,5 @@ the requirements below.
  ##### You need to complete
 <!-- Remove items that do not apply. For completed items, change [ ] to [x]. -->
 
- - [ ] unit tests and/or feature tests
+- [ ] unit tests and/or feature tests
 - [ ] documentation is changed or added

@@ -15,7 +15,7 @@ simple and free of external dependencies as you can.
  If build error, please provide compiler infomation: compiler and version, etc
 -->
 
- * **Product and API**:
+* **Product and API**:
 * **Platform**:
 * **Mininum Code**
 
