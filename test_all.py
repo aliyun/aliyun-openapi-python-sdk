@@ -1,5 +1,5 @@
 import os
-from subprocess import check_call, CalledProcessError
+from subprocess import check_call
 access_key_id = os.environ.get('ACCESS_KEY_ID')
 access_key_secret = os.environ.get('ACCESS_KEY_SECRET')
 if access_key_id and access_key_secret:
@@ -13,9 +13,6 @@ if access_key_id and access_key_secret:
 
     os.environ.__setitem__('PYTHONPATH', ';'.join(path_list))
 
-    try:
-        check_call(
-            'coverage run --branch --source="./aliyun-python-sdk-core/aliyunsdkcore" -m pytest python-sdk-functional-test/',
-            shell=True)
-    except CalledProcessError as e:
-        raise
+    check_call(
+        'coverage run --branch --source="./aliyun-python-sdk-core/aliyunsdkcore" -m pytest python-sdk-functional-test/',
+        shell=True)
