@@ -46,3 +46,9 @@ class QueryKnowledgesRequest(RpcRequest):
 
 	def set_PageNumber(self,PageNumber):
 		self.add_query_param('PageNumber',PageNumber)
+
+	def get_CategoryId(self):
+		return self.get_query_params().get('CategoryId')
+
+	def set_CategoryId(self,CategoryId):
+		self.add_query_param('CategoryId',CategoryId)
