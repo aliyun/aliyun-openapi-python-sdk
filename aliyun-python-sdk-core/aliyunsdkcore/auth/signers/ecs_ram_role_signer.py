@@ -69,5 +69,9 @@ class EcsRamRoleSigner(Signer):
         session_sk = response.get("AccessKeySecret")
         token = response.get("SecurityToken")
         self._session_credential = session_ak, session_sk, token
-        self._expiration = response.get("Expiration")
+        expiration = response.get("Expiration")
+        if expiration:
+            self._expiration = time.mktime(time.strptime(expiration, '%Y-%m-%dT%H:%M:%SZ'))
+        else:
+            self._expiration = expiration
         self._last_update_time = int(time.time())
