@@ -36,10 +36,6 @@ class ErrorHandleTest(SDKTestBase):
             self.assertEqual("SDK.HttpError", e.error_code)
             head_message, attributes = self._parse_complex_error_message(e.get_error_msg())
             self.assertEqual("ecs-cn-hangzhou.aliyuncs.com", attributes.get("Endpoint"))
-            self.assertEqual("Ecs", attributes.get("Product"))
-            self.assertTrue("SdkCoreVersion" in attributes)
-            self.assertTrue("HttpUrl" in attributes)
-            self.assertTrue("HttpHeaders" in attributes)
 
     def test_server_unreachable(self):
         from aliyunsdkcore.request import CommonRequest
@@ -52,10 +48,6 @@ class ErrorHandleTest(SDKTestBase):
             self.assertEqual("SDK.HttpError", e.error_code)
             head_message, attributes = self._parse_complex_error_message(e.get_error_msg())
             self.assertEqual("www.aliyun-hangzhou.com", attributes.get("Endpoint"))
-            self.assertEqual("None", attributes.get("Product"))
-            self.assertTrue("SdkCoreVersion" in attributes)
-            self.assertTrue("HttpUrl" in attributes)
-            self.assertTrue("HttpHeaders" in attributes)
 
     def test_server_error_normal(self):
         from aliyunsdkecs.request.v20140526.DeleteInstanceRequest import DeleteInstanceRequest

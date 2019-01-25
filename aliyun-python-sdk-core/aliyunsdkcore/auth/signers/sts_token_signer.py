@@ -19,7 +19,11 @@
 # specific language governing permissions and limitations
 # under the License.
 
+import logging
+
 from aliyunsdkcore.auth.signers.signer import Signer
+
+logger = logging.getLogger(__name__)
 
 
 class StsTokenSigner(Signer):
@@ -27,6 +31,7 @@ class StsTokenSigner(Signer):
         self._credential = sts_credential
 
     def sign(self, region_id, request):
+        logger.debug("Calculating signature using StsToken.")
         sts_cred = self._credential
         if request.get_style() == 'RPC':
             request.add_query_param("SecurityToken", sts_cred.sts_token)

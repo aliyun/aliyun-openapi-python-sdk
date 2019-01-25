@@ -20,14 +20,14 @@
 # under the License.
 
 import time
-
+import logging
+import json
 
 from aliyunsdkcore.vendored.six.moves.urllib.request import urlopen
-
 from aliyunsdkcore.auth.signers.signer import Signer
 from aliyunsdkcore.acs_exception.exceptions import ServerException
 
-import json
+logger = logging.getLogger(__name__)
 
 
 class EcsRamRoleSigner(Signer):
@@ -39,6 +39,7 @@ class EcsRamRoleSigner(Signer):
         self._expiration = 0
 
     def sign(self, region_id, request):
+        logger.debug("Calculating signature using EcsRamRole.")
         self._check_session_credential()
         session_ak, session_sk, token = self._session_credential
         if request.get_style() == 'RPC':

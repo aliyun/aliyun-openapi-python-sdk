@@ -11,6 +11,8 @@ from aliyunsdkcore.acs_exception import exceptions
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcore.auth.algorithm import sha_hmac256
 
+logger = logging.getLogger(__name__)
+
 
 class RsaKeyPairSigner(Signer):
     _MIN_SESSION_PERIOD = 900
@@ -37,6 +39,7 @@ class RsaKeyPairSigner(Signer):
         self._session_credential = None
 
     def sign(self, region_id, request):
+        logger.debug("Calculating signature using RsaKeyPair.")
         self._check_session_credential()
         session_ak, session_sk = self._session_credential
         header = request.get_signed_header(region_id, session_ak, session_sk)
