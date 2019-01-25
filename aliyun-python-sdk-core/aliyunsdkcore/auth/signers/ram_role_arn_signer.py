@@ -21,6 +21,7 @@
 
 import time
 import json
+import logging
 
 from aliyunsdkcore.auth.signers.signer import Signer
 from aliyunsdkcore.auth.signers.access_key_signer import AccessKeySigner
@@ -30,6 +31,8 @@ from aliyunsdkcore.auth.credentials import RamRoleArnCredential
 from aliyunsdkcore.auth.credentials import AccessKeyCredential
 from aliyunsdkcore.request import CommonRequest
 from aliyunsdkcore.compat import ensure_string
+
+logger = logging.getLogger(__name__)
 
 
 class RamRoleArnSigner(Signer):
@@ -47,6 +50,7 @@ class RamRoleArnSigner(Signer):
                 self._credential.session_role_name = "aliyun-python-sdk-" + str(time.time())
 
     def sign(self, region_id, request):
+        logger.debug("Calculating signature using RamRoleArn.")
         self._check_session_credential()
         session_ak, session_sk, token = self._session_credential
         if request.get_style() == 'RPC':
