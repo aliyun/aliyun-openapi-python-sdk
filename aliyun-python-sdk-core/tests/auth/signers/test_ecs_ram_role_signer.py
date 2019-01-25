@@ -20,7 +20,7 @@ class TestEcsRamRoleSigner(unittest.TestCase):
         request = RpcRequest("product", "version", "action_name")
         res = Mock()
         res.read.return_value = ensure_bytes('{"Code": "Success","AccessKeyId":"access_key_id",\
-            "AccessKeySecret":"access_key_secret","Expiration":3600,\
+            "AccessKeySecret":"access_key_secret","Expiration":"2019-01-25T10:45:23Z",\
             "SecurityToken": "security_token"}')
         mock_urlopen.return_value = res
         headers, url = signer.sign('cn-hangzhou', request)
