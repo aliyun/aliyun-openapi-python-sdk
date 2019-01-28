@@ -18,10 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class DescribeSlowLogRecordsRequest(RpcRequest):
+class MigrateToOtherRegionRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'DescribeSlowLogRecords','rds')
+		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'MigrateToOtherRegion','rds')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -29,11 +29,23 @@ class DescribeSlowLogRecordsRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_TargetZoneId(self):
+		return self.get_query_params().get('TargetZoneId')
+
+	def set_TargetZoneId(self,TargetZoneId):
+		self.add_query_param('TargetZoneId',TargetZoneId)
+
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+
+	def get_EffectiveTime(self):
+		return self.get_query_params().get('EffectiveTime')
+
+	def set_EffectiveTime(self,EffectiveTime):
+		self.add_query_param('EffectiveTime',EffectiveTime)
 
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
@@ -41,50 +53,26 @@ class DescribeSlowLogRecordsRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
-	def get_EndTime(self):
-		return self.get_query_params().get('EndTime')
-
-	def set_EndTime(self,EndTime):
-		self.add_query_param('EndTime',EndTime)
-
-	def get_StartTime(self):
-		return self.get_query_params().get('StartTime')
-
-	def set_StartTime(self,StartTime):
-		self.add_query_param('StartTime',StartTime)
-
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_PageNumber(self):
-		return self.get_query_params().get('PageNumber')
-
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
-
-	def get_DBName(self):
-		return self.get_query_params().get('DBName')
-
-	def set_DBName(self,DBName):
-		self.add_query_param('DBName',DBName)
-
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
 	def get_DBInstanceId(self):
 		return self.get_query_params().get('DBInstanceId')
 
 	def set_DBInstanceId(self,DBInstanceId):
 		self.add_query_param('DBInstanceId',DBInstanceId)
 
-	def get_SQLHASH(self):
-		return self.get_query_params().get('SQLHASH')
+	def get_TargetRegionId(self):
+		return self.get_query_params().get('TargetRegionId')
 
-	def set_SQLHASH(self,SQLHASH):
-		self.add_query_param('SQLHASH',SQLHASH)
+	def set_TargetRegionId(self,TargetRegionId):
+		self.add_query_param('TargetRegionId',TargetRegionId)
+
+	def get_SwitchTime(self):
+		return self.get_query_params().get('SwitchTime')
+
+	def set_SwitchTime(self,SwitchTime):
+		self.add_query_param('SwitchTime',SwitchTime)
+
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
