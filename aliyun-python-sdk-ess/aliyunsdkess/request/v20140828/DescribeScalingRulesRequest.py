@@ -107,6 +107,12 @@ class DescribeScalingRulesRequest(RpcRequest):
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
 
+	def get_ScalingRuleType(self):
+		return self.get_query_params().get('ScalingRuleType')
+
+	def set_ScalingRuleType(self,ScalingRuleType):
+		self.add_query_param('ScalingRuleType',ScalingRuleType)
+
 	def get_ScalingRuleId10(self):
 		return self.get_query_params().get('ScalingRuleId.10')
 
