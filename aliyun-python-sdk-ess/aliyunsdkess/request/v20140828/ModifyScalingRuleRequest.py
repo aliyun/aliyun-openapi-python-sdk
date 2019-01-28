@@ -23,12 +23,6 @@ class ModifyScalingRuleRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ess', '2014-08-28', 'ModifyScalingRule','ess')
 
-	def get_ScalingRuleName(self):
-		return self.get_query_params().get('ScalingRuleName')
-
-	def set_ScalingRuleName(self,ScalingRuleName):
-		self.add_query_param('ScalingRuleName',ScalingRuleName)
-
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
@@ -47,23 +41,29 @@ class ModifyScalingRuleRequest(RpcRequest):
 	def set_AdjustmentValue(self,AdjustmentValue):
 		self.add_query_param('AdjustmentValue',AdjustmentValue)
 
+	def get_EstimatedInstanceWarmup(self):
+		return self.get_query_params().get('EstimatedInstanceWarmup')
+
+	def set_EstimatedInstanceWarmup(self,EstimatedInstanceWarmup):
+		self.add_query_param('EstimatedInstanceWarmup',EstimatedInstanceWarmup)
+
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
 
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
-	def get_Cooldown(self):
-		return self.get_query_params().get('Cooldown')
-
-	def set_Cooldown(self,Cooldown):
-		self.add_query_param('Cooldown',Cooldown)
-
 	def get_AdjustmentType(self):
 		return self.get_query_params().get('AdjustmentType')
 
 	def set_AdjustmentType(self,AdjustmentType):
 		self.add_query_param('AdjustmentType',AdjustmentType)
+
+	def get_DisableScaleIn(self):
+		return self.get_query_params().get('DisableScaleIn')
+
+	def set_DisableScaleIn(self,DisableScaleIn):
+		self.add_query_param('DisableScaleIn',DisableScaleIn)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
@@ -76,3 +76,27 @@ class ModifyScalingRuleRequest(RpcRequest):
 
 	def set_ScalingRuleId(self,ScalingRuleId):
 		self.add_query_param('ScalingRuleId',ScalingRuleId)
+
+	def get_ScalingRuleName(self):
+		return self.get_query_params().get('ScalingRuleName')
+
+	def set_ScalingRuleName(self,ScalingRuleName):
+		self.add_query_param('ScalingRuleName',ScalingRuleName)
+
+	def get_Cooldown(self):
+		return self.get_query_params().get('Cooldown')
+
+	def set_Cooldown(self,Cooldown):
+		self.add_query_param('Cooldown',Cooldown)
+
+	def get_TargetValue(self):
+		return self.get_query_params().get('TargetValue')
+
+	def set_TargetValue(self,TargetValue):
+		self.add_query_param('TargetValue',TargetValue)
+
+	def get_MetricName(self):
+		return self.get_query_params().get('MetricName')
+
+	def set_MetricName(self,MetricName):
+		self.add_query_param('MetricName',MetricName)
