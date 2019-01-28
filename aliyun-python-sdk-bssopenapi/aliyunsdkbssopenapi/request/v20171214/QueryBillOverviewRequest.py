@@ -18,31 +18,31 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class QueryEnduserStatusRequest(RpcRequest):
+class QueryBillOverviewRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'QueryEnduserStatus')
+		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'QueryBillOverview')
 
-	def get_Uid(self):
-		return self.get_query_params().get('Uid')
+	def get_ProductCode(self):
+		return self.get_query_params().get('ProductCode')
 
-	def set_Uid(self,Uid):
-		self.add_query_param('Uid',Uid)
+	def set_ProductCode(self,ProductCode):
+		self.add_query_param('ProductCode',ProductCode)
 
-	def get_PrimaryAccount(self):
-		return self.get_query_params().get('PrimaryAccount')
+	def get_SubscriptionType(self):
+		return self.get_query_params().get('SubscriptionType')
 
-	def set_PrimaryAccount(self,PrimaryAccount):
-		self.add_query_param('PrimaryAccount',PrimaryAccount)
+	def set_SubscriptionType(self,SubscriptionType):
+		self.add_query_param('SubscriptionType',SubscriptionType)
 
-	def get_Status(self):
-		return self.get_query_params().get('Status')
+	def get_BillingCycle(self):
+		return self.get_query_params().get('BillingCycle')
 
-	def set_Status(self,Status):
-		self.add_query_param('Status',Status)
+	def set_BillingCycle(self,BillingCycle):
+		self.add_query_param('BillingCycle',BillingCycle)
 
-	def get_BusinessType(self):
-		return self.get_query_params().get('BusinessType')
+	def get_ProductType(self):
+		return self.get_query_params().get('ProductType')
 
-	def set_BusinessType(self,BusinessType):
-		self.add_query_param('BusinessType',BusinessType)
+	def set_ProductType(self,ProductType):
+		self.add_query_param('ProductType',ProductType)
