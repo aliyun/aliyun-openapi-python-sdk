@@ -53,6 +53,12 @@ class IndexVideoRequest(RpcRequest):
 	def set_EndTime(self,EndTime):
 		self.add_query_param('EndTime',EndTime)
 
+	def get_ExternalId(self):
+		return self.get_query_params().get('ExternalId')
+
+	def set_ExternalId(self,ExternalId):
+		self.add_query_param('ExternalId',ExternalId)
+
 	def get_StartTime(self):
 		return self.get_query_params().get('StartTime')
 
@@ -70,6 +76,18 @@ class IndexVideoRequest(RpcRequest):
 
 	def set_SaveType(self,SaveType):
 		self.add_query_param('SaveType',SaveType)
+
+	def get_RemarksD(self):
+		return self.get_query_params().get('RemarksD')
+
+	def set_RemarksD(self,RemarksD):
+		self.add_query_param('RemarksD',RemarksD)
+
+	def get_RemarksC(self):
+		return self.get_query_params().get('RemarksC')
+
+	def set_RemarksC(self,RemarksC):
+		self.add_query_param('RemarksC',RemarksC)
 
 	def get_SetId(self):
 		return self.get_query_params().get('SetId')
