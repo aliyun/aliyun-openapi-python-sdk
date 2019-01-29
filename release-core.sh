@@ -3,7 +3,7 @@
 OPERATION=$2
 PACKAGE_VERSION=$1
 PYTHON_BIN=`which python3`
-if [ $PYTHON_BIN == "" ]; then
+if [ $PYTHON_BIN = "" ]; then
     echo "Python 3.x required."
     exit 1
 fi 
@@ -17,22 +17,22 @@ UNPACK_DIR=${STAGING_DIR}/unpack
 INSTALL_DIR=${STAGING_DIR}/install
 
 
-if [ $OPERATION == "dist" ]; then
+if [ $OPERATION = "dist" ]; then
     echo "making package"
     rm ${STAGING_DIR} -rf
     mkdir -p ${COPY_DIR}
     cp -r ${SOURCE_NAME} ${COPY_DIR}/
     cd ${COPY_DIR}/${SOURCE_NAME}
 
-    if [ $PACKAGE_VERSION == "core" ]; then
+    if [ $PACKAGE_VERSION = "core" ]; then
         rm setup3.py dist *.egg-info -rf; python3 setup.py sdist
-    elif [ $PACKAGE_VERSION == "core-v3" ]; then
+    elif [ $PACKAGE_VERSION = "core-v3" ]; then
         rm setup.py dist *.egg-info -rf; mv setup3.py setup.py; python3 setup.py sdist
     fi
 
 fi
 
-if [ $OPERATION == "test" ]; then
+if [ $OPERATION = "test" ]; then
     echo "testing package"
     rm $UNPACK_DIR -rf
     rm $INSTALL_DIR -rf
@@ -53,7 +53,7 @@ if [ $OPERATION == "test" ]; then
 fi
 
 
-if [ $OPERATION == "release" ]; then
+if [ $OPERATION = "release" ]; then
     echo "releasing package"
     cd ${COPY_DIR}/${SOURCE_NAME}
     twine upload dist/*
