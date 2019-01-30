@@ -39,7 +39,6 @@ class RsaKeyPairSigner(Signer):
         self._session_credential = None
 
     def sign(self, region_id, request):
-        logger.debug("Calculating signature using RsaKeyPair.")
         self._check_session_credential()
         session_ak, session_sk = self._session_credential
         header = request.get_signed_header(region_id, session_ak, session_sk)

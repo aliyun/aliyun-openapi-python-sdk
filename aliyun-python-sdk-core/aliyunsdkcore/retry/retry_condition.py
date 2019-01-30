@@ -62,8 +62,8 @@ class MaxRetryTimesCondition(RetryCondition):
         if retry_policy_context.retries_attempted < self.max_retry_times:
             return RetryCondition.SHOULD_RETRY
         else:
-            logger.debug("Reached the maximum number of retry "
-                         "attempts: %s", retry_policy_context.retries_attempted)
+            logger.debug("Reached the maximum number of retry,Attempts:%d",
+                         retry_policy_context.retries_attempted)
             return RetryCondition.NO_RETRY
 
 
@@ -78,7 +78,7 @@ class RetryOnExceptionCondition(RetryCondition):
 
         if isinstance(exception, ClientException):
             if exception.get_error_code() == error_code.SDK_HTTP_ERROR:
-                logger.debug("Retry needed, retryable ClientException caught: %s",
+                logger.debug("Retryable ClientException occurred,ClientException:%s",
                              exception, exc_info=True)
                 return RetryCondition.SHOULD_RETRY
 
@@ -88,7 +88,7 @@ class RetryOnExceptionCondition(RetryCondition):
                                                        request,
                                                        self.retry_config)
             if isinstance(normal_errors, list) and error_code_ in normal_errors:
-                logger.debug("Retry needed, retryable ServerException caught: %s",
+                logger.debug("Retryable ServerException occurred,ServerException:%s",
                              exception, exc_info=True)
                 return RetryCondition.SHOULD_RETRY
 
@@ -96,7 +96,7 @@ class RetryOnExceptionCondition(RetryCondition):
                                                            request,
                                                            self.retry_config)
             if isinstance(throttling_errors, list) and error_code_ in throttling_errors:
-                logger.debug("Retry needed, retryable ThrottlingError caught: %s",
+                logger.debug("Retryable ThrottlingError occurred,ThrottlingError:%s",
                              exception, exc_info=True)
                 return RetryCondition.SHOULD_RETRY | \
                     RetryCondition.SHOULD_RETRY_WITH_THROTTLING_BACKOFF
@@ -119,7 +119,7 @@ class RetryOnHttpStatusCondition(RetryCondition):
     def should_retry(self, retry_policy_context):
         if retry_policy_context.http_status_code in self.retryable_http_status_list:
             logger.debug(
-                "Retry needed: retryable HTTP status code received: %s",
+                "Retryable HTTP error occurred,HTTP status code: %s",
                 retry_policy_context.http_status_code)
             return RetryCondition.SHOULD_RETRY
         else:

@@ -23,6 +23,7 @@ import warnings
 import json
 import logging
 import jmespath
+import copy
 
 import aliyunsdkcore
 from aliyunsdkcore.vendored.six.moves.urllib.parse import urlencode
@@ -59,7 +60,7 @@ logger = logging.getLogger(__name__)
 
 
 class AcsClient:
-    LOG_FORMAT = '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+    LOG_FORMAT = '%(thread)d %(asctime)s %(name)s %(levelname)s %(message)s'
 
     def __init__(
             self,
@@ -270,10 +271,10 @@ class AcsClient:
             retryable = self._retry_policy.should_retry(retry_policy_context)
             if retryable & RetryCondition.NO_RETRY:
                 break
-            logger.debug("Retry needed, request is: %s", request.get_action_name())
+            logger.debug("Retry needed Request:%s Retries :%d",
+                         request.get_action_name(), retries)
             retry_policy_context.retryable = retryable
             time_to_sleep = self._retry_policy.compute_delay_before_next_retry(retry_policy_context)
-            logger.debug('Retry %s times', retries)
             time.sleep(time_to_sleep / 1000.0)
             retries += 1
 
@@ -284,20 +285,18 @@ class AcsClient:
 
     def _handle_single_request(self, endpoint, request, timeout, signer):
         http_response = self._make_http_response(endpoint, request, timeout, signer)
-        params = request.get_query_params()
+        params = copy.deepcopy(request.get_query_params())
         params.pop('AccessKeyId', None)
-        logger.debug('The request params are %s', str(params))
+        logger.debug('Request params are %s', str(params))
 
         # Do the actual network thing
         try:
             status, headers, body = http_response.get_response_object()
         except IOError as e:
-            error_message = str(e)
-            error_message += "\nEndpoint: " + endpoint
-            logger.error('Catch a HttpError when connect to %s, current sdk version is %s',
-                         endpoint, aliyunsdkcore.__version__, exc_info=True)
+            logger.error("HttpError occurred Host:%s SDK-Version:%s",
+                         endpoint, aliyunsdkcore.__version__)
 
-            exception = ClientException(error_code.SDK_HTTP_ERROR, error_message)
+            exception = ClientException(error_code.SDK_HTTP_ERROR, str(e))
             return None, None, None, exception
 
         exception = self._get_server_exception(status, body)
@@ -316,7 +315,7 @@ class AcsClient:
                 error_message_to_return = body_obj['Message']
         except ValueError:
             # failed to parse body as json format
-            logger.warning('failed to parse response body as json format')
+            logger.warning('Failed to parse Response:%s as json format.', response_body)
 
         return error_code_to_return, error_message_to_return
 
@@ -329,7 +328,7 @@ class AcsClient:
         except (ValueError, TypeError, AttributeError):
             # in case the response body is not a json string, return the raw
             # data instead
-            logger.warning('failed to parse response body as json format')
+            logger.warning('Failed to parse Response:%s as json format.', response_body)
 
         if http_status < codes.OK or http_status >= codes.MULTIPLE_CHOICES:
 
