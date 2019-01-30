@@ -18,28 +18,34 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class DescribeVodDomainsUsageByDayRequest(RpcRequest):
+class GetURLUploadInfosRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'vod', '2017-03-21', 'DescribeVodDomainsUsageByDay','vod')
+		RpcRequest.__init__(self, 'vod', '2017-03-21', 'GetURLUploadInfos','vod')
 
-	def get_StartTime(self):
-		return self.get_query_params().get('StartTime')
+	def get_ResourceOwnerId(self):
+		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_StartTime(self,StartTime):
-		self.add_query_param('StartTime',StartTime)
+	def set_ResourceOwnerId(self,ResourceOwnerId):
+		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_DomainName(self):
-		return self.get_query_params().get('DomainName')
+	def get_ResourceOwnerAccount(self):
+		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_DomainName(self,DomainName):
-		self.add_query_param('DomainName',DomainName)
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
-	def get_EndTime(self):
-		return self.get_query_params().get('EndTime')
+	def get_JobIds(self):
+		return self.get_query_params().get('JobIds')
 
-	def set_EndTime(self,EndTime):
-		self.add_query_param('EndTime',EndTime)
+	def set_JobIds(self,JobIds):
+		self.add_query_param('JobIds',JobIds)
+
+	def get_UploadURLs(self):
+		return self.get_query_params().get('UploadURLs')
+
+	def set_UploadURLs(self,UploadURLs):
+		self.add_query_param('UploadURLs',UploadURLs)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
