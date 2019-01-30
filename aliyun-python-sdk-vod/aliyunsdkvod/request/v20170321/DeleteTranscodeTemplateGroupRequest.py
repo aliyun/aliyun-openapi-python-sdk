@@ -35,12 +35,6 @@ class DeleteTranscodeTemplateGroupRequest(RpcRequest):
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
-	def get_ResourceRealOwnerId(self):
-		return self.get_query_params().get('ResourceRealOwnerId')
-
-	def set_ResourceRealOwnerId(self,ResourceRealOwnerId):
-		self.add_query_param('ResourceRealOwnerId',ResourceRealOwnerId)
-
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
