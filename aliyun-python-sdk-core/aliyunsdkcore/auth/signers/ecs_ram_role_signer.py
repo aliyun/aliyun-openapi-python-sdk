@@ -39,7 +39,6 @@ class EcsRamRoleSigner(Signer):
         self._expiration = 0
 
     def sign(self, region_id, request):
-        logger.debug("Calculating signature using EcsRamRole.")
         self._check_session_credential()
         session_ak, session_sk, token = self._session_credential
         if request.get_style() == 'RPC':

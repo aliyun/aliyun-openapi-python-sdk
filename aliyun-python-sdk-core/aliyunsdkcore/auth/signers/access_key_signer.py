@@ -30,7 +30,6 @@ class AccessKeySigner(Signer):
         self._credential = access_key_credential
 
     def sign(self, region_id, request):
-        logger.debug("Calculating signature using AccessKey.")
         cred = self._credential
         header = request.get_signed_header(region_id, cred.access_key_id, cred.access_key_secret)
         url = request.get_url(region_id, cred.access_key_id, cred.access_key_secret)

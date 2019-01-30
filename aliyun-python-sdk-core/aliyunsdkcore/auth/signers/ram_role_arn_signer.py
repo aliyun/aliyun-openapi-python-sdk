@@ -50,7 +50,6 @@ class RamRoleArnSigner(Signer):
                 self._credential.session_role_name = "aliyun-python-sdk-" + str(time.time())
 
     def sign(self, region_id, request):
-        logger.debug("Calculating signature using RamRoleArn.")
         self._check_session_credential()
         session_ak, session_sk, token = self._session_credential
         if request.get_style() == 'RPC':
