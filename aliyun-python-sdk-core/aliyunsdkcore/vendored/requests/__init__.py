@@ -72,5 +72,6 @@ except ImportError:
             pass
 
 logging.getLogger(__name__).addHandler(NullHandler())
+logging.getLogger(__name__).setLevel(logging.CRITICAL)
 
 
