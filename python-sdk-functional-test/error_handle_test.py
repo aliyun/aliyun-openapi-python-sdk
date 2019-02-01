@@ -37,8 +37,9 @@ class ErrorHandleTest(SDKTestBase):
             assert False
         except ClientException as e:
             self.assertEqual("SDK.HttpError", e.error_code)
-            self.assertTrue(e.get_error_msg().startswith("HTTPConnectionPool(host='www.aliyun-hangzhou.com',"
-                                                         " port=80): Max retries exceeded with url:"))
+            self.assertTrue(e.get_error_msg().startswith(
+                "HTTPConnectionPool(host='www.aliyun-hangzhou.com', port=80): "
+                "Max retries exceeded with url:"))
 
     def test_server_error_normal(self):
         from aliyunsdkecs.request.v20140526.DeleteInstanceRequest import DeleteInstanceRequest
@@ -53,7 +54,6 @@ class ErrorHandleTest(SDKTestBase):
 
     def test_server_error_with_a_bad_json(self):
         from aliyunsdkecs.request.v20140526.DeleteInstanceRequest import DeleteInstanceRequest
-        from aliyunsdkcore.vendored.six.moves import http_client
 
         request = DeleteInstanceRequest()
         request.set_InstanceId("blah")
