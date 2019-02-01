@@ -21,8 +21,11 @@
 import time
 import warnings
 import json
-import aliyunsdkcore
+import logging
 import jmespath
+import copy
+
+import aliyunsdkcore
 from aliyunsdkcore.vendored.six.moves.urllib.parse import urlencode
 from aliyunsdkcore.vendored.requests import codes
 
@@ -53,8 +56,11 @@ DEFAULT_SDK_CONNECTION_TIMEOUT_IN_SECONDS = 10
 # TODO: replace it with TimeoutHandler
 _api_timeout_config_data = aliyunsdkcore.utils._load_json_from_data_dir("timeout_config.json")
 
+logger = logging.getLogger(__name__)
+
 
 class AcsClient:
+    LOG_FORMAT = '%(thread)d %(asctime)s %(name)s %(levelname)s %(message)s'
 
     def __init__(
             self,
@@ -253,7 +259,6 @@ class AcsClient:
 
         request_timeout = self._get_request_timeout(request)
 
-        retryable = RetryCondition.SHOULD_RETRY
         retries = 0
 
         while True:
@@ -266,6 +271,8 @@ class AcsClient:
             retryable = self._retry_policy.should_retry(retry_policy_context)
             if retryable & RetryCondition.NO_RETRY:
                 break
+            logger.debug("Retry needed. Request:%s Retries :%d",
+                         request.get_action_name(), retries)
             retry_policy_context.retryable = retryable
             time_to_sleep = self._retry_policy.compute_delay_before_next_retry(retry_policy_context)
             time.sleep(time_to_sleep / 1000.0)
@@ -278,25 +285,22 @@ class AcsClient:
 
     def _handle_single_request(self, endpoint, request, timeout, signer):
         http_response = self._make_http_response(endpoint, request, timeout, signer)
-
-        exception = None
+        params = copy.deepcopy(request.get_query_params())
+        params.pop('AccessKeyId', None)
+        logger.debug('Request received. Product:%s Endpoint:%s Params: %s',
+                     request.get_product(), endpoint, str(params))
 
         # Do the actual network thing
         try:
             status, headers, body = http_response.get_response_object()
         except IOError as e:
-            error_message = str(e)
-            error_message += "\nEndpoint: " + endpoint
-            error_message += "\nProduct: " + str(request.get_product())
-            error_message += "\nSdkCoreVersion: " + aliyunsdkcore.__version__
-            error_message += "\nHttpUrl: " + str(http_response.get_url())
-            error_message += "\nHttpHeaders: " + \
-                str(http_response.get_headers())
 
-            exception = ClientException(error_code.SDK_HTTP_ERROR, error_message)
+            exception = ClientException(error_code.SDK_HTTP_ERROR, str(e))
+            logger.error("HttpError occurred. Host:%s SDK-Version:%s ClientException:%s",
+                         endpoint, aliyunsdkcore.__version__, str(exception))
             return None, None, None, exception
 
-        exception = self._get_server_exception(status, body)
+        exception = self._get_server_exception(status, body, endpoint)
         return status, headers, body, exception
 
     @staticmethod
@@ -312,11 +316,11 @@ class AcsClient:
                 error_message_to_return = body_obj['Message']
         except ValueError:
             # failed to parse body as json format
-            pass
+            logger.warning('Failed to parse response as json format. Response:%s', response_body)
 
         return error_code_to_return, error_message_to_return
 
-    def _get_server_exception(self, http_status, response_body):
+    def _get_server_exception(self, http_status, response_body, endpoint):
         request_id = None
 
         try:
@@ -325,29 +329,35 @@ class AcsClient:
         except (ValueError, TypeError, AttributeError):
             # in case the response body is not a json string, return the raw
             # data instead
-            pass
+            logger.warning('Failed to parse response as json format. Response:%s', response_body)
 
         if http_status < codes.OK or http_status >= codes.MULTIPLE_CHOICES:
 
             server_error_code, server_error_message = self._parse_error_info_from_response_body(
                 response_body.decode('utf-8'))
-            return ServerException(
+
+            exception = ServerException(
                 server_error_code,
                 server_error_message,
                 http_status=http_status,
                 request_id=request_id)
+
+            logger.error("ServerException occurred. Host:%s SDK-Version:%s ServerException:%s",
+                         endpoint, aliyunsdkcore.__version__, str(exception))
+
+            return exception
 
     def do_action_with_exception(self, acs_request):
 
         # set server response format as json, because this function will
         # parse the response so which format doesn't matter
         acs_request.set_accept_format('JSON')
-
         status, headers, body, exception = self._implementation_of_do_action(acs_request)
 
         if exception:
             raise exception
-
+        logger.debug('Response received. Product:%s Response-body: %s',
+                     acs_request.get_product(), body)
         return body
 
     def _resolve_endpoint(self, request):
@@ -372,3 +382,24 @@ class AcsClient:
     def add_endpoint(self, region_id, product_code, endpoint):
         self._endpoint_resolver.put_endpoint_entry(
             region_id, product_code, endpoint)
+
+    def set_stream_logger(self, log_level=logging.DEBUG, logger_name='aliyunsdkcore', stream=None,
+                          format_string=None):
+        log = logging.getLogger(logger_name)
+        log.setLevel(log_level)
+        ch = logging.StreamHandler(stream)
+        ch.setLevel(log_level)
+        if format_string is None:
+            format_string = self.LOG_FORMAT
+        formatter = logging.Formatter(format_string)
+        ch.setFormatter(formatter)
+        log.addHandler(ch)
+
+    def set_file_logger(self, path, log_level=logging.DEBUG, logger_name='aliyunsdkcore'):
+        log = logging.getLogger(logger_name)
+        log.setLevel(log_level)
+        fh = logging.FileHandler(path)
+        fh.setLevel(log_level)
+        formatter = logging.Formatter(self.LOG_FORMAT)
+        fh.setFormatter(formatter)
+        log.addHandler(fh)

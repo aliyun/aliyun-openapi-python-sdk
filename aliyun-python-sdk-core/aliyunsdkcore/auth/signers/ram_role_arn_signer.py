@@ -21,6 +21,7 @@
 
 import time
 import json
+import logging
 
 from aliyunsdkcore.auth.signers.signer import Signer
 from aliyunsdkcore.auth.signers.access_key_signer import AccessKeySigner
@@ -30,6 +31,8 @@ from aliyunsdkcore.auth.credentials import RamRoleArnCredential
 from aliyunsdkcore.auth.credentials import AccessKeyCredential
 from aliyunsdkcore.request import CommonRequest
 from aliyunsdkcore.compat import ensure_string
+
+logger = logging.getLogger(__name__)
 
 
 class RamRoleArnSigner(Signer):

@@ -78,7 +78,7 @@ class CredentialsTest(SDKTestBase):
     def test_ecs_ram_role(self):
         # push ecs
         from aliyunsdkcore.auth.credentials import EcsRamRoleCredential
-        ecs_ram_role_credential = EcsRamRoleCredential("TestRole")
+        ecs_ram_role_credential = EcsRamRoleCredential("EcsRamRoleTest")
         acs_client = AcsClient(region_id="cn-hangzhou", credential=ecs_ram_role_credential)
         request = DescribeRegionsRequest()
         response = acs_client.do_action_with_exception(request)
