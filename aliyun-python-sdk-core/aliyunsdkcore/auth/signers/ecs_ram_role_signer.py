@@ -20,14 +20,14 @@
 # under the License.
 
 import time
-
+import logging
+import json
 
 from aliyunsdkcore.vendored.six.moves.urllib.request import urlopen
-
 from aliyunsdkcore.auth.signers.signer import Signer
 from aliyunsdkcore.acs_exception.exceptions import ServerException
 
-import json
+logger = logging.getLogger(__name__)
 
 
 class EcsRamRoleSigner(Signer):
