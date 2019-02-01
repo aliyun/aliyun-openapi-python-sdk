@@ -12,15 +12,6 @@ class ErrorHandleTest(SDKTestBase):
 
     # TODO make these test stronger with a mock server
 
-    def _parse_complex_error_message(self, error_message):
-        obj = dict()
-        lines = error_message.split('\n')
-        head_message = lines[0].strip()
-        for line in lines[1:]:
-            key, value = line.strip().split(':', 1)
-            obj[key.strip()] = value.strip()
-        return head_message, obj
-
     def test_server_timeout(self):
         acs_client = AcsClient(self.access_key_id, self.access_key_secret,
                                "cn-hangzhou", timeout=0.001)
@@ -34,8 +25,8 @@ class ErrorHandleTest(SDKTestBase):
             assert False
         except ClientException as e:
             self.assertEqual("SDK.HttpError", e.error_code)
-            head_message, attributes = self._parse_complex_error_message(e.get_error_msg())
-            self.assertEqual("ecs-cn-hangzhou.aliyuncs.com", attributes.get("Endpoint"))
+            self.assertEqual("HTTPConnectionPool(host='ecs-cn-hangzhou.aliyuncs.com',"
+                             " port=80): Read timed out. (read timeout=0.001)", e.get_error_msg())
 
     def test_server_unreachable(self):
         from aliyunsdkcore.request import CommonRequest
@@ -46,8 +37,8 @@ class ErrorHandleTest(SDKTestBase):
             assert False
         except ClientException as e:
             self.assertEqual("SDK.HttpError", e.error_code)
-            head_message, attributes = self._parse_complex_error_message(e.get_error_msg())
-            self.assertEqual("www.aliyun-hangzhou.com", attributes.get("Endpoint"))
+            self.assertTrue(e.get_error_msg().startswith("HTTPConnectionPool(host='www.aliyun-hangzhou.com',"
+                                                         " port=80): Max retries exceeded with url:"))
 
     def test_server_error_normal(self):
         from aliyunsdkecs.request.v20140526.DeleteInstanceRequest import DeleteInstanceRequest

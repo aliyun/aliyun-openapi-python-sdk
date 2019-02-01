@@ -383,7 +383,7 @@ class AcsClient:
         self._endpoint_resolver.put_endpoint_entry(
             region_id, product_code, endpoint)
 
-    def set_stream_logger(self, log_level=logging.INFO, logger_name='aliyunsdkcore', stream=None,
+    def set_stream_logger(self, log_level=logging.DEBUG, logger_name='aliyunsdkcore', stream=None,
                           format_string=None):
         log = logging.getLogger(logger_name)
         log.setLevel(log_level)
@@ -395,7 +395,7 @@ class AcsClient:
         ch.setFormatter(formatter)
         log.addHandler(ch)
 
-    def set_file_logger(self, path, log_level=logging.INFO, logger_name='aliyunsdkcore'):
+    def set_file_logger(self, path, log_level=logging.DEBUG, logger_name='aliyunsdkcore'):
         log = logging.getLogger(logger_name)
         log.setLevel(log_level)
         fh = logging.FileHandler(path)
