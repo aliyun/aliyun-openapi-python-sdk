@@ -24,7 +24,7 @@ Known Limitations:
 from __future__ import absolute_import
 
 try:
-    import socks
+    from ..packages import socks
 except ImportError:
     import warnings
     from ..exceptions import DependencyWarning
