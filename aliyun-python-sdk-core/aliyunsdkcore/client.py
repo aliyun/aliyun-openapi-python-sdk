@@ -383,23 +383,23 @@ class AcsClient:
         self._endpoint_resolver.put_endpoint_entry(
             region_id, product_code, endpoint)
 
-    def set_stream_logger(self, log_level=logging.DEBUG, logger_name='aliyunsdkcore', stream=None,
+    def set_stream_logger(self, level=logging.DEBUG, name='aliyunsdkcore', stream=None,
                           format_string=None):
-        log = logging.getLogger(logger_name)
-        log.setLevel(log_level)
+        log = logging.getLogger(name)
+        log.setLevel(level)
         ch = logging.StreamHandler(stream)
-        ch.setLevel(log_level)
+        ch.setLevel(level)
         if format_string is None:
             format_string = self.LOG_FORMAT
         formatter = logging.Formatter(format_string)
         ch.setFormatter(formatter)
         log.addHandler(ch)
 
-    def set_file_logger(self, path, log_level=logging.DEBUG, logger_name='aliyunsdkcore'):
-        log = logging.getLogger(logger_name)
-        log.setLevel(log_level)
+    def set_file_logger(self, path, level=logging.DEBUG, name='aliyunsdkcore'):
+        log = logging.getLogger(name)
+        log.setLevel(level)
         fh = logging.FileHandler(path)
-        fh.setLevel(log_level)
+        fh.setLevel(level)
         formatter = logging.Formatter(self.LOG_FORMAT)
         fh.setFormatter(formatter)
         log.addHandler(fh)
