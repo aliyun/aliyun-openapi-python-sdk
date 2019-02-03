@@ -1,7 +1,6 @@
 # encoding:utf-8
 import logging
 import os
-import shutil
 import tempfile
 
 import mock
