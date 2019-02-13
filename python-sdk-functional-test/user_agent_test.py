@@ -3,8 +3,32 @@
 from base import SDKTestBase
 from aliyunsdkecs.request.v20140526.DescribeRegionsRequest import DescribeRegionsRequest
 
+import threading
+from http.server import HTTPServer, SimpleHTTPRequestHandler
+from aliyunsdkcore.client import AcsClient
+
 
 class UserAgentTest(SDKTestBase):
+
+    def start_mock_server(self):
+
+        self.exact_headers = None
+
+        class MySimpleHttpServer(SimpleHTTPRequestHandler):
+            def do_GET(self_):
+                self.exact_headers = self_.headers
+                self_.send_response(200)
+
+        self.server = HTTPServer(("", 51352), MySimpleHttpServer)
+
+        def thread_func():
+            self.server.serve_forever()
+
+        thread = threading.Thread(target=thread_func)
+        thread.start()
+
+    def stop_mock_server(self):
+        self.server.shutdown()
 
     @staticmethod
     def joint_default_user_agent():
@@ -38,6 +62,18 @@ class UserAgentTest(SDKTestBase):
 
             header['User-Agent'] = default_user_agent
         return header
+
+    def test_user_agent_in_mock_server(self):
+        client = AcsClient(self.access_key_id, self.access_key_secret, self.region_id,
+                           timeout=120, port=51352)
+        request = DescribeRegionsRequest()
+        request.set_endpoint("localhost")
+
+        self.start_mock_server()
+        client.do_action_with_exception(request)
+        self.stop_mock_server()
+
+        print(self.exact_headers)
 
     def test_agent_append(self):
         default_user_agent = self.joint_default_user_agent()
