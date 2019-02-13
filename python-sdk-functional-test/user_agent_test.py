@@ -16,8 +16,12 @@ class UserAgentTest(SDKTestBase):
 
         class MySimpleHttpServer(SimpleHTTPRequestHandler):
             def do_GET(self_):
+                self_.protocol_version = 'HTTP/1.1'
                 self.exact_headers = self_.headers
                 self_.send_response(200)
+                self_.send_header("Content-type", "application/json")
+                self_.end_headers()
+                self_.wfile.write(b"{}")
 
         self.server = HTTPServer(("", 51352), MySimpleHttpServer)
 
@@ -27,8 +31,10 @@ class UserAgentTest(SDKTestBase):
         thread = threading.Thread(target=thread_func)
         thread.start()
 
-    def stop_mock_server(self):
-        self.server.shutdown()
+    def tearDown(self):
+        if self.server:
+            self.server.shutdown()
+            self.server = None
 
     @staticmethod
     def joint_default_user_agent():
@@ -73,7 +79,9 @@ class UserAgentTest(SDKTestBase):
         client.do_action_with_exception(request)
         self.stop_mock_server()
 
-        print(self.exact_headers)
+        self.assertTrue('User-Agent' in self.exact_headers)
+        user_agent = self.exact_headers.get('User-Agent')
+        self.assertEqual(self.joint_default_user_agent(), user_agent)
 
     def test_agent_append(self):
         default_user_agent = self.joint_default_user_agent()
