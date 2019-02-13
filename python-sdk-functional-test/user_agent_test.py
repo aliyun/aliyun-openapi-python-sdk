@@ -7,6 +7,19 @@ from aliyunsdkecs.request.v20140526.DescribeRegionsRequest import DescribeRegion
 class UserAgentTest(SDKTestBase):
 
     @staticmethod
+    def joint_default_user_agent():
+        import platform
+        base = '%s (%s %s;%s) Python/%s Core/%s python-requests/%s' \
+               % ('AlibabaCloud',
+                  platform.system(),
+                  platform.release(),
+                  platform.machine(),
+                  platform.python_version(),
+                  __import__('aliyunsdkcore').__version__,
+                  __import__('aliyunsdkcore.vendored.requests').__version__)
+        return base
+
+    @staticmethod
     def get_headers(client, request):
         header = {}
         default_user_agent = client.default_user_agent()
@@ -27,27 +40,31 @@ class UserAgentTest(SDKTestBase):
         return header
 
     def test_agent_append(self):
+        default_user_agent = self.joint_default_user_agent()
+
+        request = DescribeRegionsRequest()
+        headers = self.get_headers(self.client, request)
+        self.assertEqual(default_user_agent, headers.get('User-Agent'))
+
         self.client.append_user_agent('group', 'ali')
         request = DescribeRegionsRequest()
         request.append_user_agent('cli', '1.0.0')
         headers = self.get_headers(self.client, request)
-        self.assertTrue('cli/1.0.0' in headers.get('User-Agent'))
-        self.assertTrue('group/ali' in headers.get('User-Agent'))
+        self.assertEqual(default_user_agent + ' group/ali' + ' cli/1.0.0',
+                         headers.get('User-Agent'))
 
         request = DescribeRegionsRequest()
         request.set_user_agent('ali')
         request.append_user_agent('cli', '1.0.0')
+        self.client.append_user_agent('group', 'ali')
         headers = self.get_headers(self.client, request)
-        self.assertTrue('extra/ali' in headers.get('User-Agent'))
-        self.assertFalse('cli/1.0.0' in headers.get('User-Agent'))
-        self.assertFalse('group/ali' in headers.get('User-Agent'))
+        self.assertEqual(default_user_agent + ' extra/ali', headers.get('User-Agent'))
 
         request = DescribeRegionsRequest()
         request.set_user_agent('alicloud')
         request.append_user_agent('cli', '1.0.0')
         self.client.set_user_agent('alibaba')
+        self.client.append_user_agent('group', 'ali')
         headers = self.get_headers(self.client, request)
-        self.assertTrue('extra/alibaba' in headers.get('User-Agent'))
-        self.assertFalse('alicloud' in headers.get('User-Agent'))
-        self.assertFalse('cli/1.0.0' in headers.get('User-Agent'))
-        self.assertFalse('group/ali' in headers.get('User-Agent'))
+        self.assertEqual(default_user_agent + ' extra/alibaba', headers.get('User-Agent'))
+
