@@ -206,6 +206,9 @@ class AcsRequest:
     def set_user_agent(self, agent):
         self.add_header('User-Agent', agent)
 
+    def append_user_agent(self, key, agent):
+        self.add_header('extra', '%s/%s' % (key, agent))
+
     def set_location_service_code(self, location_service_code):
         self._location_service_code = location_service_code
 

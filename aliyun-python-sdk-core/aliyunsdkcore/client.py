@@ -24,6 +24,7 @@ import json
 import logging
 import jmespath
 import copy
+import platform
 
 import aliyunsdkcore
 from aliyunsdkcore.vendored.six.moves.urllib.parse import urlencode
@@ -95,6 +96,7 @@ class AcsClient:
         self._user_agent = user_agent
         self._port = port
         self._timeout = timeout
+        self._extra_user_agent = ''
         credential = {
             'ak': ak,
             'secret': secret,
@@ -153,6 +155,26 @@ class AcsClient:
         """
         self._user_agent = agent
 
+    def append_user_agent(self, key, value):
+        self._extra_user_agent = '%s/%s' % (key, value)
+
+    @staticmethod
+    def default_user_agent():
+        """
+        Return a string suitable for use as a User-Agent header.
+        The string will be of the form:
+        AlibabaCloud (<system-information>) <product>/<product-version> <extensions>
+        """
+        base = '%s (%s %s;%s) Python/%s Core/%s python-requests/%s' \
+               % ('AlibabaCloud',
+                   platform.system(),
+                   platform.release(),
+                   platform.machine(),
+                   platform.python_version(),
+                   __import__('aliyunsdkcore').__version__,
+                   __import__('aliyunsdkcore.vendored.requests').__version__)
+        return base
+
     def get_port(self):
         return self._port
 
@@ -172,10 +194,21 @@ class AcsClient:
         signer = self._signer if specific_signer is None else specific_signer
         header, url = signer.sign(self._region_id, request)
 
+        default_user_agent = self.default_user_agent()
+
         if self.get_user_agent() is not None:
-            header['User-Agent'] = self.get_user_agent()
-        if header is None:
-            header = {}
+            header['User-Agent'] = default_user_agent + ' extra/%s' % self.get_user_agent()
+        elif 'User-Agent' in request.get_headers():
+            header['User-Agent'] = \
+                default_user_agent + ' extra/%s' % request.get_headers().get('User-Agent')
+        else:
+            if self._extra_user_agent:
+                default_user_agent += ' %s' % self._extra_user_agent
+
+            if 'extra' in request.get_headers():
+                default_user_agent += ' %s' % request.get_headers().get('extra')
+
+            header['User-Agent'] = default_user_agent
         header['x-sdk-client'] = 'python/2.0.0'
 
         protocol = request.get_protocol_type()
