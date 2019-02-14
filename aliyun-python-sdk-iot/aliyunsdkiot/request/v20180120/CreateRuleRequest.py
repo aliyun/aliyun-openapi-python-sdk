@@ -41,6 +41,12 @@ class CreateRuleRequest(RpcRequest):
 	def set_DataType(self,DataType):
 		self.add_query_param('DataType',DataType)
 
+	def get_IotInstanceId(self):
+		return self.get_query_params().get('IotInstanceId')
+
+	def set_IotInstanceId(self,IotInstanceId):
+		self.add_query_param('IotInstanceId',IotInstanceId)
+
 	def get_Name(self):
 		return self.get_query_params().get('Name')
 

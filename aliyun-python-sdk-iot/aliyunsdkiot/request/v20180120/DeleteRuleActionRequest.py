@@ -23,6 +23,12 @@ class DeleteRuleActionRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'DeleteRuleAction')
 
+	def get_IotInstanceId(self):
+		return self.get_query_params().get('IotInstanceId')
+
+	def set_IotInstanceId(self,IotInstanceId):
+		self.add_query_param('IotInstanceId',IotInstanceId)
+
 	def get_ActionId(self):
 		return self.get_query_params().get('ActionId')
 

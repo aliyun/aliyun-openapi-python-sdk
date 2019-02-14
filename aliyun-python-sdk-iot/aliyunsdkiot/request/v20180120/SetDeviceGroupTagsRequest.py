@@ -29,6 +29,12 @@ class SetDeviceGroupTagsRequest(RpcRequest):
 	def set_TagString(self,TagString):
 		self.add_query_param('TagString',TagString)
 
+	def get_IotInstanceId(self):
+		return self.get_query_params().get('IotInstanceId')
+
+	def set_IotInstanceId(self,IotInstanceId):
+		self.add_query_param('IotInstanceId',IotInstanceId)
+
 	def get_GroupId(self):
 		return self.get_query_params().get('GroupId')
 

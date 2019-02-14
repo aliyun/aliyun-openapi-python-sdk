@@ -41,6 +41,12 @@ class CreateProductRequest(RpcRequest):
 	def set_Id2(self,Id2):
 		self.add_query_param('Id2',Id2)
 
+	def get_IotInstanceId(self):
+		return self.get_query_params().get('IotInstanceId')
+
+	def set_IotInstanceId(self,IotInstanceId):
+		self.add_query_param('IotInstanceId',IotInstanceId)
+
 	def get_NetType(self):
 		return self.get_query_params().get('NetType')
 

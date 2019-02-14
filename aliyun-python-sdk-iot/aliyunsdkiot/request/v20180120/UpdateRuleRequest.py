@@ -35,6 +35,12 @@ class UpdateRuleRequest(RpcRequest):
 	def set_RuleDesc(self,RuleDesc):
 		self.add_query_param('RuleDesc',RuleDesc)
 
+	def get_IotInstanceId(self):
+		return self.get_query_params().get('IotInstanceId')
+
+	def set_IotInstanceId(self,IotInstanceId):
+		self.add_query_param('IotInstanceId',IotInstanceId)
+
 	def get_Name(self):
 		return self.get_query_params().get('Name')
 
