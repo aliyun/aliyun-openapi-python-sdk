@@ -65,10 +65,10 @@ class HttpResponse(HttpRequest):
         with Session() as s:
             current_protocol = 'https://' if self.get_ssl_enabled() else 'http://'
 
-            if self.__port:
+            url = current_protocol + self.get_host() + self.get_url()
+
+            if self.__port != 80:
                 url = current_protocol + self.get_host() + ":" + str(self.__port) + self.get_url()
-            else:
-                url = current_protocol + self.get_host() + self.get_url()
 
             req = Request(method=self.get_method(), url=url,
                           data=self.get_body(),

@@ -47,6 +47,9 @@ from aliyunsdkcore.retry.retry_policy_context import RetryPolicyContext
 import aliyunsdkcore.utils
 import aliyunsdkcore.utils.parameter_helper
 import aliyunsdkcore.utils.validation
+from aliyunsdkcore.vendored.requests.structures import CaseInsensitiveDict
+from aliyunsdkcore.vendored.requests.structures import OrderedDict
+
 
 """
 Acs default client module.
@@ -96,7 +99,7 @@ class AcsClient:
         self._user_agent = user_agent
         self._port = port
         self._timeout = timeout
-        self._extra_user_agent = ''
+        self._extra_user_agent = {}
         credential = {
             'ak': ak,
             'secret': secret,
@@ -156,30 +159,68 @@ class AcsClient:
         self._user_agent = agent
 
     def append_user_agent(self, key, value):
-        self._extra_user_agent = '%s/%s' % (key, value)
+        self._extra_user_agent.update({key: value})
+
+    @staticmethod
+    def user_agent_header():
+        base = '%s (%s %s;%s)' \
+               % ('AlibabaCloud',
+                  platform.system(),
+                  platform.release(),
+                  platform.machine()
+                  )
+        return base
 
     @staticmethod
     def default_user_agent():
-        """
-        Return a string suitable for use as a User-Agent header.
-        The string will be of the form:
-        AlibabaCloud (<system-information>) <product>/<product-version> <extensions>
-        """
-        base = '%s (%s %s;%s) Python/%s Core/%s python-requests/%s' \
-               % ('AlibabaCloud',
-                   platform.system(),
-                   platform.release(),
-                   platform.machine(),
-                   platform.python_version(),
-                   __import__('aliyunsdkcore').__version__,
-                   __import__('aliyunsdkcore.vendored.requests').__version__)
-        return base
+        default_agent = OrderedDict()
+        default_agent['Python'] = platform.python_version()
+        default_agent['Core'] = __import__('aliyunsdkcore').__version__
+        default_agent['python-requests'] = __import__('aliyunsdkcore.vendored.requests').__version__
+        return CaseInsensitiveDict(default_agent)
+
+    def client_user_agent(self):
+        client_user_agent = {}
+        if self.get_user_agent() is not None:
+            client_user_agent.update({'client': self.get_user_agent()})
+        else:
+            client_user_agent.update(self._extra_user_agent)
+
+        return CaseInsensitiveDict(client_user_agent)
 
     def get_port(self):
         return self._port
 
     def get_location_service(self):
         return None
+
+    @staticmethod
+    def merge_user_agent(default_agent, extra_agent):
+        if default_agent is None:
+            return extra_agent
+
+        if extra_agent is None:
+            return default_agent
+        user_agent = default_agent.copy()
+        for key, value in extra_agent.items():
+            if key not in default_agent:
+                user_agent[key] = value
+        return user_agent
+
+    def handle_extra_agent(self, request):
+        client_agent = self.client_user_agent()
+        request_agent = request.request_user_agent()
+
+        if client_agent is None:
+            return request_agent
+
+        if request_agent is None:
+            return client_agent
+        for key in request_agent:
+            if key in client_agent:
+                client_agent.pop(key)
+        client_agent.update(request_agent)
+        return client_agent
 
     def _make_http_response(self, endpoint, request, timeout, specific_signer=None):
         body_params = request.get_body_params()
@@ -194,21 +235,16 @@ class AcsClient:
         signer = self._signer if specific_signer is None else specific_signer
         header, url = signer.sign(self._region_id, request)
 
-        default_user_agent = self.default_user_agent()
+        base = self.user_agent_header()
 
-        if self.get_user_agent() is not None:
-            header['User-Agent'] = default_user_agent + ' extra/%s' % self.get_user_agent()
-        elif 'User-Agent' in request.get_headers():
-            header['User-Agent'] = \
-                default_user_agent + ' extra/%s' % request.get_headers().get('User-Agent')
-        else:
-            if self._extra_user_agent:
-                default_user_agent += ' %s' % self._extra_user_agent
+        extra_agent = self.handle_extra_agent(request)
+        default_agent = self.default_user_agent()
+        user_agent = self.merge_user_agent(default_agent, extra_agent)
 
-            if 'extra' in request.get_headers():
-                default_user_agent += ' %s' % request.get_headers().get('extra')
+        for key, value in user_agent.items():
+            base += ' %s/%s' % (key, value)
+        header['User-Agent'] = base
 
-            header['User-Agent'] = default_user_agent
         header['x-sdk-client'] = 'python/2.0.0'
 
         protocol = request.get_protocol_type()
