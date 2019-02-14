@@ -35,6 +35,12 @@ class GetThingTopoRequest(RpcRequest):
 	def set_PageNo(self,PageNo):
 		self.add_query_param('PageNo',PageNo)
 
+	def get_IotInstanceId(self):
+		return self.get_query_params().get('IotInstanceId')
+
+	def set_IotInstanceId(self,IotInstanceId):
+		self.add_query_param('IotInstanceId',IotInstanceId)
+
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
 

@@ -39,6 +39,12 @@ class QueryAppDeviceListRequest(RpcRequest):
 			if CategoryKeyLists[i] is not None:
 				self.add_query_param('CategoryKeyList.' + str(i + 1) , CategoryKeyLists[i]);
 
+	def get_IotInstanceId(self):
+		return self.get_query_params().get('IotInstanceId')
+
+	def set_IotInstanceId(self,IotInstanceId):
+		self.add_query_param('IotInstanceId',IotInstanceId)
+
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
 

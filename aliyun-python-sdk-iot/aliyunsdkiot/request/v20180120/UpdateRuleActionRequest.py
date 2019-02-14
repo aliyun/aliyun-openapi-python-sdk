@@ -29,6 +29,12 @@ class UpdateRuleActionRequest(RpcRequest):
 	def set_Configuration(self,Configuration):
 		self.add_query_param('Configuration',Configuration)
 
+	def get_IotInstanceId(self):
+		return self.get_query_params().get('IotInstanceId')
+
+	def set_IotInstanceId(self,IotInstanceId):
+		self.add_query_param('IotInstanceId',IotInstanceId)
+
 	def get_ActionId(self):
 		return self.get_query_params().get('ActionId')
 
