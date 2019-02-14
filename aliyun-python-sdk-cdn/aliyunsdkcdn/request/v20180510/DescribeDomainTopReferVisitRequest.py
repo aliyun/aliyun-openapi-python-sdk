@@ -23,11 +23,17 @@ class DescribeDomainTopReferVisitRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Cdn', '2018-05-10', 'DescribeDomainTopReferVisit')
 
-	def get_SecurityToken(self):
-		return self.get_query_params().get('SecurityToken')
+	def get_StartTime(self):
+		return self.get_query_params().get('StartTime')
 
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)
+	def set_StartTime(self,StartTime):
+		self.add_query_param('StartTime',StartTime)
+
+	def get_Percent(self):
+		return self.get_query_params().get('Percent')
+
+	def set_Percent(self,Percent):
+		self.add_query_param('Percent',Percent)
 
 	def get_DomainName(self):
 		return self.get_query_params().get('DomainName')
@@ -35,20 +41,14 @@ class DescribeDomainTopReferVisitRequest(RpcRequest):
 	def set_DomainName(self,DomainName):
 		self.add_query_param('DomainName',DomainName)
 
-	def get_SortBy(self):
-		return self.get_query_params().get('SortBy')
-
-	def set_SortBy(self,SortBy):
-		self.add_query_param('SortBy',SortBy)
-
-	def get_StartTime(self):
-		return self.get_query_params().get('StartTime')
-
-	def set_StartTime(self,StartTime):
-		self.add_query_param('StartTime',StartTime)
-
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_SortBy(self):
+		return self.get_query_params().get('SortBy')
+
+	def set_SortBy(self,SortBy):
+		self.add_query_param('SortBy',SortBy)

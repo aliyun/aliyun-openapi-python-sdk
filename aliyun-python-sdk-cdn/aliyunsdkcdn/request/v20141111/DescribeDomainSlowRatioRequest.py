@@ -18,16 +18,28 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class DescribeDomainMax95BpsDataRequest(RpcRequest):
+class DescribeDomainSlowRatioRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'DescribeDomainMax95BpsData')
+		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'DescribeDomainSlowRatio')
 
 	def get_StartTime(self):
 		return self.get_query_params().get('StartTime')
 
 	def set_StartTime(self,StartTime):
 		self.add_query_param('StartTime',StartTime)
+
+	def get_PageNumber(self):
+		return self.get_query_params().get('PageNumber')
+
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)
+
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
 
 	def get_DomainName(self):
 		return self.get_query_params().get('DomainName')
