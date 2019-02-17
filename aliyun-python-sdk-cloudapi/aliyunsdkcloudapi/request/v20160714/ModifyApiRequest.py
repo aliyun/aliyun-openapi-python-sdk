@@ -41,6 +41,12 @@ class ModifyApiRequest(RpcRequest):
 	def set_Description(self,Description):
 		self.add_query_param('Description',Description)
 
+	def get_DisableInternet(self):
+		return self.get_query_params().get('DisableInternet')
+
+	def set_DisableInternet(self,DisableInternet):
+		self.add_query_param('DisableInternet',DisableInternet)
+
 	def get_ConstantParameters(self):
 		return self.get_query_params().get('ConstantParameters')
 
@@ -142,6 +148,12 @@ class ModifyApiRequest(RpcRequest):
 
 	def set_ResultSample(self,ResultSample):
 		self.add_query_param('ResultSample',ResultSample)
+
+	def get_ForceNonceCheck(self):
+		return self.get_query_params().get('ForceNonceCheck')
+
+	def set_ForceNonceCheck(self,ForceNonceCheck):
+		self.add_query_param('ForceNonceCheck',ForceNonceCheck)
 
 	def get_RequestConfig(self):
 		return self.get_query_params().get('RequestConfig')
