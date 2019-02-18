@@ -33,6 +33,7 @@ from aliyunsdkcore.auth.algorithm import sha_hmac1
 from aliyunsdkcore.acs_exception import exceptions
 from aliyunsdkcore.acs_exception import error_code
 from aliyunsdkcore.compat import ensure_string
+from aliyunsdkcore.vendored.requests.structures import CaseInsensitiveDict
 
 """
 Acs request model.
@@ -103,6 +104,7 @@ class AcsRequest:
         self._location_endpoint_type = location_endpoint_type
         self.add_header('x-sdk-invoke-type', 'normal')
         self.endpoint = None
+        self._extra_user_agent = {}
 
     def add_query_param(self, k, v):
         self._params[k] = v
@@ -205,6 +207,21 @@ class AcsRequest:
 
     def set_user_agent(self, agent):
         self.add_header('User-Agent', agent)
+
+    def append_user_agent(self, key, value):
+        self._extra_user_agent.update({key: value})
+
+    def request_user_agent(self):
+        request_user_agent = {}
+        if 'User-Agent' in self.get_headers():
+            request_user_agent.update({
+                'request': self.get_headers().get('User-Agent')
+            })
+
+        else:
+            request_user_agent.update(self._extra_user_agent)
+
+        return CaseInsensitiveDict(request_user_agent)
 
     def set_location_service_code(self, location_service_code):
         self._location_service_code = location_service_code
