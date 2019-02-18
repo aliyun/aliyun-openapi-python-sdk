@@ -18,15 +18,21 @@
 # under the License.
 
 from aliyunsdkcore.request import RoaRequest
-class ListUserDefineRegionRequest(RoaRequest):
+class DeleteServerlessApplicationRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'ListUserDefineRegion')
-		self.set_uri_pattern('/pop/v5/user_region_defs')
-		self.set_method('POST')
+		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'DeleteServerlessApplication')
+		self.set_uri_pattern('/pop/v5/k8s/pop/pop_serverless_app_delete')
+		self.set_method('DELETE')
 
-	def get_DebugEnable(self):
-		return self.get_query_params().get('DebugEnable')
+	def get_Act(self):
+		return self.get_query_params().get('Act')
 
-	def set_DebugEnable(self,DebugEnable):
-		self.add_query_param('DebugEnable',DebugEnable)
+	def set_Act(self,Act):
+		self.add_query_param('Act',Act)
+
+	def get_AppId(self):
+		return self.get_query_params().get('AppId')
+
+	def set_AppId(self,AppId):
+		self.add_query_param('AppId',AppId)

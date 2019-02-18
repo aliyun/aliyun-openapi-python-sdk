@@ -31,6 +31,12 @@ class InsertClusterRequest(RoaRequest):
 	def set_ClusterType(self,ClusterType):
 		self.add_query_param('ClusterType',ClusterType)
 
+	def get_IaasProvider(self):
+		return self.get_query_params().get('IaasProvider')
+
+	def set_IaasProvider(self,IaasProvider):
+		self.add_query_param('IaasProvider',IaasProvider)
+
 	def get_LogicalRegionId(self):
 		return self.get_query_params().get('LogicalRegionId')
 

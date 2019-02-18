@@ -31,6 +31,12 @@ class DeployK8sApplicationRequest(RoaRequest):
 	def set_MemoryRequest(self,MemoryRequest):
 		self.add_query_param('MemoryRequest',MemoryRequest)
 
+	def get_NasId(self):
+		return self.get_query_params().get('NasId')
+
+	def set_NasId(self,NasId):
+		self.add_query_param('NasId',NasId)
+
 	def get_Image(self):
 		return self.get_query_params().get('Image')
 
@@ -42,6 +48,12 @@ class DeployK8sApplicationRequest(RoaRequest):
 
 	def set_PreStop(self,PreStop):
 		self.add_query_param('PreStop',PreStop)
+
+	def get_MountDescs(self):
+		return self.get_query_params().get('MountDescs')
+
+	def set_MountDescs(self,MountDescs):
+		self.add_query_param('MountDescs',MountDescs)
 
 	def get_Readiness(self):
 		return self.get_query_params().get('Readiness')
@@ -85,11 +97,23 @@ class DeployK8sApplicationRequest(RoaRequest):
 	def set_CpuLimit(self,CpuLimit):
 		self.add_query_param('CpuLimit',CpuLimit)
 
+	def get_LocalVolume(self):
+		return self.get_query_params().get('LocalVolume')
+
+	def set_LocalVolume(self,LocalVolume):
+		self.add_query_param('LocalVolume',LocalVolume)
+
 	def get_Command(self):
 		return self.get_query_params().get('Command')
 
 	def set_Command(self,Command):
 		self.add_query_param('Command',Command)
+
+	def get_StorageType(self):
+		return self.get_query_params().get('StorageType')
+
+	def set_StorageType(self,StorageType):
+		self.add_query_param('StorageType',StorageType)
 
 	def get_Args(self):
 		return self.get_query_params().get('Args')

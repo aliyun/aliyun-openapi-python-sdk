@@ -18,15 +18,9 @@
 # under the License.
 
 from aliyunsdkcore.request import RoaRequest
-class ListUserDefineRegionRequest(RoaRequest):
+class GetPackageStorageCredentialRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'ListUserDefineRegion')
-		self.set_uri_pattern('/pop/v5/user_region_defs')
-		self.set_method('POST')
-
-	def get_DebugEnable(self):
-		return self.get_query_params().get('DebugEnable')
-
-	def set_DebugEnable(self,DebugEnable):
-		self.add_query_param('DebugEnable',DebugEnable)
+		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'GetPackageStorageCredential')
+		self.set_uri_pattern('/pop/v5/package_storage_credential')
+		self.set_method('GET')

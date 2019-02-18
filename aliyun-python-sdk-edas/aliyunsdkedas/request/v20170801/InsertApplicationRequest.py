@@ -25,6 +25,12 @@ class InsertApplicationRequest(RoaRequest):
 		self.set_uri_pattern('/pop/v5/changeorder/co_create_app')
 		self.set_method('POST')
 
+	def get_WebContainer(self):
+		return self.get_query_params().get('WebContainer')
+
+	def set_WebContainer(self,WebContainer):
+		self.add_query_param('WebContainer',WebContainer)
+
 	def get_EcuInfo(self):
 		return self.get_query_params().get('EcuInfo')
 
@@ -37,23 +43,11 @@ class InsertApplicationRequest(RoaRequest):
 	def set_BuildPackId(self,BuildPackId):
 		self.add_query_param('BuildPackId',BuildPackId)
 
-	def get_Mem(self):
-		return self.get_query_params().get('Mem')
-
-	def set_Mem(self,Mem):
-		self.add_query_param('Mem',Mem)
-
 	def get_HealthCheckURL(self):
 		return self.get_query_params().get('HealthCheckURL')
 
 	def set_HealthCheckURL(self,HealthCheckURL):
 		self.add_query_param('HealthCheckURL',HealthCheckURL)
-
-	def get_LogicalRegionId(self):
-		return self.get_query_params().get('LogicalRegionId')
-
-	def set_LogicalRegionId(self,LogicalRegionId):
-		self.add_query_param('LogicalRegionId',LogicalRegionId)
 
 	def get_ReservedPortStr(self):
 		return self.get_query_params().get('ReservedPortStr')
@@ -84,3 +78,27 @@ class InsertApplicationRequest(RoaRequest):
 
 	def set_ApplicationName(self,ApplicationName):
 		self.add_query_param('ApplicationName',ApplicationName)
+
+	def get_Jdk(self):
+		return self.get_query_params().get('Jdk')
+
+	def set_Jdk(self,Jdk):
+		self.add_query_param('Jdk',Jdk)
+
+	def get_Mem(self):
+		return self.get_query_params().get('Mem')
+
+	def set_Mem(self,Mem):
+		self.add_query_param('Mem',Mem)
+
+	def get_LogicalRegionId(self):
+		return self.get_query_params().get('LogicalRegionId')
+
+	def set_LogicalRegionId(self,LogicalRegionId):
+		self.add_query_param('LogicalRegionId',LogicalRegionId)
+
+	def get_PackageType(self):
+		return self.get_query_params().get('PackageType')
+
+	def set_PackageType(self,PackageType):
+		self.add_query_param('PackageType',PackageType)

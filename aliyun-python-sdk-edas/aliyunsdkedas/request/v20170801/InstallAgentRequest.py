@@ -18,15 +18,27 @@
 # under the License.
 
 from aliyunsdkcore.request import RoaRequest
-class ListUserDefineRegionRequest(RoaRequest):
+class InstallAgentRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'ListUserDefineRegion')
-		self.set_uri_pattern('/pop/v5/user_region_defs')
+		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'InstallAgent')
+		self.set_uri_pattern('/pop/v5/ecss/install_agent')
 		self.set_method('POST')
 
-	def get_DebugEnable(self):
-		return self.get_query_params().get('DebugEnable')
+	def get_InstanceIds(self):
+		return self.get_query_params().get('InstanceIds')
 
-	def set_DebugEnable(self,DebugEnable):
-		self.add_query_param('DebugEnable',DebugEnable)
+	def set_InstanceIds(self,InstanceIds):
+		self.add_query_param('InstanceIds',InstanceIds)
+
+	def get_DoAsync(self):
+		return self.get_query_params().get('DoAsync')
+
+	def set_DoAsync(self,DoAsync):
+		self.add_query_param('DoAsync',DoAsync)
+
+	def get_ClusterId(self):
+		return self.get_query_params().get('ClusterId')
+
+	def set_ClusterId(self,ClusterId):
+		self.add_query_param('ClusterId',ClusterId)
