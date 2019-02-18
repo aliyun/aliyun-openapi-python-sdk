@@ -18,15 +18,21 @@
 # under the License.
 
 from aliyunsdkcore.request import RoaRequest
-class ListUserDefineRegionRequest(RoaRequest):
+class ListEcsNotInClusterRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'ListUserDefineRegion')
-		self.set_uri_pattern('/pop/v5/user_region_defs')
-		self.set_method('POST')
+		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'ListEcsNotInCluster')
+		self.set_uri_pattern('/pop/v5/resource/ecs_not_in_cluster')
+		self.set_method('GET')
 
-	def get_DebugEnable(self):
-		return self.get_query_params().get('DebugEnable')
+	def get_VpcId(self):
+		return self.get_query_params().get('VpcId')
 
-	def set_DebugEnable(self,DebugEnable):
-		self.add_query_param('DebugEnable',DebugEnable)
+	def set_VpcId(self,VpcId):
+		self.add_query_param('VpcId',VpcId)
+
+	def get_NetworkMode(self):
+		return self.get_query_params().get('NetworkMode')
+
+	def set_NetworkMode(self,NetworkMode):
+		self.add_query_param('NetworkMode',NetworkMode)

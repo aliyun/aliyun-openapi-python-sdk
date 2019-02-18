@@ -18,15 +18,27 @@
 # under the License.
 
 from aliyunsdkcore.request import RoaRequest
-class ListUserDefineRegionRequest(RoaRequest):
+class BindServerlessSlbRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'ListUserDefineRegion')
-		self.set_uri_pattern('/pop/v5/user_region_defs')
+		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'BindServerlessSlb')
+		self.set_uri_pattern('/pop/v5/k8s/acs/serverless_slb_binding')
 		self.set_method('POST')
 
-	def get_DebugEnable(self):
-		return self.get_query_params().get('DebugEnable')
+	def get_Intranet(self):
+		return self.get_query_params().get('Intranet')
 
-	def set_DebugEnable(self,DebugEnable):
-		self.add_query_param('DebugEnable',DebugEnable)
+	def set_Intranet(self,Intranet):
+		self.add_query_param('Intranet',Intranet)
+
+	def get_AppId(self):
+		return self.get_query_params().get('AppId')
+
+	def set_AppId(self,AppId):
+		self.add_query_param('AppId',AppId)
+
+	def get_Internet(self):
+		return self.get_query_params().get('Internet')
+
+	def set_Internet(self,Internet):
+		self.add_query_param('Internet',Internet)

@@ -25,6 +25,18 @@ class DeployApplicationRequest(RoaRequest):
 		self.set_uri_pattern('/pop/v5/changeorder/co_deploy')
 		self.set_method('POST')
 
+	def get_BuildPackId(self):
+		return self.get_query_params().get('BuildPackId')
+
+	def set_BuildPackId(self,BuildPackId):
+		self.add_query_param('BuildPackId',BuildPackId)
+
+	def get_ComponentIds(self):
+		return self.get_query_params().get('ComponentIds')
+
+	def set_ComponentIds(self,ComponentIds):
+		self.add_query_param('ComponentIds',ComponentIds)
+
 	def get_AppId(self):
 		return self.get_query_params().get('AppId')
 

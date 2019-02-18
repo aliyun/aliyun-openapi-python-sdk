@@ -25,6 +25,12 @@ class InsertK8sApplicationRequest(RoaRequest):
 		self.set_uri_pattern('/pop/v5/k8s/acs/create_k8s_app')
 		self.set_method('POST')
 
+	def get_NasId(self):
+		return self.get_query_params().get('NasId')
+
+	def set_NasId(self,NasId):
+		self.add_query_param('NasId',NasId)
+
 	def get_RepoId(self):
 		return self.get_query_params().get('RepoId')
 
@@ -79,6 +85,12 @@ class InsertK8sApplicationRequest(RoaRequest):
 	def set_RequestsMem(self,RequestsMem):
 		self.add_query_param('RequestsMem',RequestsMem)
 
+	def get_StorageType(self):
+		return self.get_query_params().get('StorageType')
+
+	def set_StorageType(self,StorageType):
+		self.add_query_param('StorageType',StorageType)
+
 	def get_LimitMem(self):
 		return self.get_query_params().get('LimitMem')
 
@@ -97,6 +109,12 @@ class InsertK8sApplicationRequest(RoaRequest):
 	def set_InternetSlbId(self,InternetSlbId):
 		self.add_query_param('InternetSlbId',InternetSlbId)
 
+	def get_LogicalRegionId(self):
+		return self.get_query_params().get('LogicalRegionId')
+
+	def set_LogicalRegionId(self,LogicalRegionId):
+		self.add_query_param('LogicalRegionId',LogicalRegionId)
+
 	def get_InternetSlbProtocol(self):
 		return self.get_query_params().get('InternetSlbProtocol')
 
@@ -114,6 +132,12 @@ class InsertK8sApplicationRequest(RoaRequest):
 
 	def set_PreStop(self,PreStop):
 		self.add_query_param('PreStop',PreStop)
+
+	def get_MountDescs(self):
+		return self.get_query_params().get('MountDescs')
+
+	def set_MountDescs(self,MountDescs):
+		self.add_query_param('MountDescs',MountDescs)
 
 	def get_Replicas(self):
 		return self.get_query_params().get('Replicas')
@@ -139,6 +163,12 @@ class InsertK8sApplicationRequest(RoaRequest):
 	def set_IntranetTargetPort(self,IntranetTargetPort):
 		self.add_query_param('IntranetTargetPort',IntranetTargetPort)
 
+	def get_LocalVolume(self):
+		return self.get_query_params().get('LocalVolume')
+
+	def set_LocalVolume(self,LocalVolume):
+		self.add_query_param('LocalVolume',LocalVolume)
+
 	def get_Command(self):
 		return self.get_query_params().get('Command')
 
@@ -156,6 +186,12 @@ class InsertK8sApplicationRequest(RoaRequest):
 
 	def set_ImageUrl(self,ImageUrl):
 		self.add_query_param('ImageUrl',ImageUrl)
+
+	def get_Namespace(self):
+		return self.get_query_params().get('Namespace')
+
+	def set_Namespace(self,Namespace):
+		self.add_query_param('Namespace',Namespace)
 
 	def get_ApplicationDescription(self):
 		return self.get_query_params().get('ApplicationDescription')
