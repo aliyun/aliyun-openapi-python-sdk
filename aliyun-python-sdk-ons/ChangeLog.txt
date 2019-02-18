@@ -1,3 +1,8 @@
+2019-02-18 Version: 3.1.0
+1, Instantiation: adding the property of instance.
+2, Replace the "ProducerId" and "ConsumerId" properties with "GROUP_ID".
+3, Remove parameter OnsRegionId to simplified usage.
+
 2017-09-19 Version: 2.0.0
 1, 写资源接口增加访问权限控制，仅限铂金版客户使用。
 2, 修改版本号为2017-09-18。
