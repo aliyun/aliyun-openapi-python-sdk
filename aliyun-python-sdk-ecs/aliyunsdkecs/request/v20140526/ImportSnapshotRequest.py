@@ -18,16 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class StartInstanceRequest(RpcRequest):
+class ImportSnapshotRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'StartInstance','ecs')
-
-	def get_InitLocalDisk(self):
-		return self.get_query_params().get('InitLocalDisk')
-
-	def set_InitLocalDisk(self,InitLocalDisk):
-		self.add_query_param('InitLocalDisk',InitLocalDisk)
+		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'ImportSnapshot','ecs')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -35,17 +29,23 @@ class StartInstanceRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_InstanceId(self):
-		return self.get_query_params().get('InstanceId')
+	def get_SnapshotName(self):
+		return self.get_query_params().get('SnapshotName')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
+	def set_SnapshotName(self,SnapshotName):
+		self.add_query_param('SnapshotName',SnapshotName)
 
-	def get_DryRun(self):
-		return self.get_query_params().get('DryRun')
+	def get_OssObject(self):
+		return self.get_query_params().get('OssObject')
 
-	def set_DryRun(self,DryRun):
-		self.add_query_param('DryRun',DryRun)
+	def set_OssObject(self,OssObject):
+		self.add_query_param('OssObject',OssObject)
+
+	def get_OssBucket(self):
+		return self.get_query_params().get('OssBucket')
+
+	def set_OssBucket(self,OssBucket):
+		self.add_query_param('OssBucket',OssBucket)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -53,11 +53,11 @@ class StartInstanceRequest(RpcRequest):
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
-	def get_OwnerAccount(self):
-		return self.get_query_params().get('OwnerAccount')
+	def get_RoleName(self):
+		return self.get_query_params().get('RoleName')
 
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
+	def set_RoleName(self,RoleName):
+		self.add_query_param('RoleName',RoleName)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
