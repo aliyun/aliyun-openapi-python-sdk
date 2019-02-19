@@ -5,6 +5,7 @@ import sys
 import uuid
 
 from aliyunsdkcore.acs_exception.exceptions import ServerException
+from aliyunsdkcore.acs_exception.exceptions import ClientException
 from aliyunsdkcore.http import method_type
 from aliyunsdkcore.profile import region_provider
 from aliyunsdkcore.request import CommonRequest, RpcRequest
@@ -67,3 +68,20 @@ class BugsTest(SDKTestBase):
             assert False
         except (ValueError, TypeError, AttributeError) as e:
             self.assertEqual("'list' object has no attribute 'get'", e.args[0])
+
+    def test_bug_with_nlp(self):
+        # accept-encoding
+        from aliyunsdknls_cloud_meta.request.v20180518.CreateTokenRequest import CreateTokenRequest
+        request = CreateTokenRequest()
+        request.set_endpoint('nls-meta.cn-shanghai.aliyuncs.com')
+        response = self.client.do_action_with_exception(request)
+        response = self.get_dict_response(response)
+        self.assertTrue(response.get("RequestId"))
+
+    def test_bug_with_body_params(self):
+        # body_params
+        from aliyunsdkecs.request.v20140526.DescribeRegionsRequest import DescribeRegionsRequest
+        request = DescribeRegionsRequest()
+        request.add_body_params('name', 'ali')
+        response = self.client.do_action_with_exception(request)
+        self.assertTrue(response.get("RequestId"))
