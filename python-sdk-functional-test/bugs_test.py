@@ -5,7 +5,6 @@ import sys
 import uuid
 
 from aliyunsdkcore.acs_exception.exceptions import ServerException
-from aliyunsdkcore.acs_exception.exceptions import ClientException
 from aliyunsdkcore.http import method_type
 from aliyunsdkcore.profile import region_provider
 from aliyunsdkcore.request import CommonRequest, RpcRequest
