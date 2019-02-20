@@ -176,7 +176,10 @@ class AcsClient:
         default_agent = OrderedDict()
         default_agent['Python'] = platform.python_version()
         default_agent['Core'] = __import__('aliyunsdkcore').__version__
-        default_agent['python-requests'] = __import__('aliyunsdkcore.vendored.requests').__version__
+        default_agent['python-requests'] = __import__(
+            'aliyunsdkcore.vendored.requests.__version__', globals(), locals(),
+            ['vendored', 'requests', '__version__'], 0).__version__
+
         return CaseInsensitiveDict(default_agent)
 
     def client_user_agent(self):

@@ -67,7 +67,8 @@ class UserAgentTest(unittest.TestCase):
                   platform.machine(),
                   platform.python_version(),
                   __import__('aliyunsdkcore').__version__,
-                  __import__('aliyunsdkcore.vendored.requests').__version__)
+                  __import__('aliyunsdkcore.vendored.requests.__version__', globals(), locals(),
+                             ['vendored', 'requests', '__version__'], 0).__version__)
         return base
 
     @staticmethod
