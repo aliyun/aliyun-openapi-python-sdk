@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class UpdateDeviceGroupRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'UpdateDeviceGroup')
+		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'UpdateDeviceGroup','iot')
 
 	def get_GroupDesc(self):
 		return self.get_query_params().get('GroupDesc')

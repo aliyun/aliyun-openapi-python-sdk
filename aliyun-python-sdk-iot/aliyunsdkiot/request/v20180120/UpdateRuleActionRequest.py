@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class UpdateRuleActionRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'UpdateRuleAction')
+		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'UpdateRuleAction','iot')
 
 	def get_Configuration(self):
 		return self.get_query_params().get('Configuration')

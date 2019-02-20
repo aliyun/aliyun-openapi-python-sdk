@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class SetDeviceGroupTagsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'SetDeviceGroupTags')
+		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'SetDeviceGroupTags','iot')
 
 	def get_TagString(self):
 		return self.get_query_params().get('TagString')

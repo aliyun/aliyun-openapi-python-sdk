@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class NotifyAddThingTopoRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'NotifyAddThingTopo')
+		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'NotifyAddThingTopo','iot')
 
 	def get_GwProductKey(self):
 		return self.get_query_params().get('GwProductKey')
