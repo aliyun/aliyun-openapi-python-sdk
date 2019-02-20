@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class InvokeThingsServiceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'InvokeThingsService')
+		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'InvokeThingsService','iot')
 
 	def get_Args(self):
 		return self.get_query_params().get('Args')

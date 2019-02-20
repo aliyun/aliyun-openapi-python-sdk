@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class BatchRegisterDeviceWithApplyIdRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'BatchRegisterDeviceWithApplyId')
+		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'BatchRegisterDeviceWithApplyId','iot')
 
 	def get_ApplyId(self):
 		return self.get_query_params().get('ApplyId')

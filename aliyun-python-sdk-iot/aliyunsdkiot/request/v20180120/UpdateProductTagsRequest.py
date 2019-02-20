@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class UpdateProductTagsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'UpdateProductTags')
+		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'UpdateProductTags','iot')
 
 	def get_ProductTags(self):
 		return self.get_query_params().get('ProductTags')

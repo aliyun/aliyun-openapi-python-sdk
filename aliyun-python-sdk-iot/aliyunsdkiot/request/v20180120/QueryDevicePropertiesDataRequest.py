@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class QueryDevicePropertiesDataRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'QueryDevicePropertiesData')
+		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'QueryDevicePropertiesData','iot')
 
 	def get_Asc(self):
 		return self.get_query_params().get('Asc')

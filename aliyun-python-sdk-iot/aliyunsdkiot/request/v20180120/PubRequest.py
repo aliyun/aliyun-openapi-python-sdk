@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class PubRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'Pub')
+		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'Pub','iot')
 
 	def get_TopicFullName(self):
 		return self.get_query_params().get('TopicFullName')
