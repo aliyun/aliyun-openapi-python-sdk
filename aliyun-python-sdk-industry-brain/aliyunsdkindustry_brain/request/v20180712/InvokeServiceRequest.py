@@ -22,7 +22,6 @@ class InvokeServiceRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'industry-brain', '2018-07-12', 'InvokeService')
-		self.set_protocol_type('https');
 		self.set_method('POST')
 
 	def get_RequestParams(self):
