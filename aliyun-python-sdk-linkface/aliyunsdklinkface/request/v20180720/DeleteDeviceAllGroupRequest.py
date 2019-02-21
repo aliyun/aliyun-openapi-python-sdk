@@ -18,10 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class QuerySyncPicScheduleRequest(RpcRequest):
+class DeleteDeviceAllGroupRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'LinkFace', '2018-07-20', 'QuerySyncPicSchedule')
+		RpcRequest.__init__(self, 'LinkFace', '2018-07-20', 'DeleteDeviceAllGroup')
 		self.set_protocol_type('https');
 		self.set_method('POST')
 
@@ -30,12 +30,6 @@ class QuerySyncPicScheduleRequest(RpcRequest):
 
 	def set_IotId(self,IotId):
 		self.add_body_params('IotId', IotId)
-
-	def get_GroupId(self):
-		return self.get_body_params().get('GroupId')
-
-	def set_GroupId(self,GroupId):
-		self.add_body_params('GroupId', GroupId)
 
 	def get_DeviceName(self):
 		return self.get_body_params().get('DeviceName')
