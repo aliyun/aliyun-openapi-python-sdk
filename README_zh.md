@@ -61,3 +61,37 @@ print response
 ```
 
 在创建 Client 实例时，您需要填写3个参数：Region ID、Access Key ID和Access Key Secret。Access Key ID和Access Key Secret可以从控制台获得；而 Region ID 可以从[地域列表](https://help.aliyun.com/document_detail/40654.html?spm=5176.doc52740.2.8.FogWrd) 中获得
+
+## HTTP DEBUG
+要使用HTTP DEBUG 功能，需要在您的环境变量配置`DEBUG`，其对应的值可以为`sdk`或`SDK`。
+
+**HTTP DEBUG**展现如下信息，帮助您调试代码：
+
+```
+> GET /databases?RegionId=cn-hangzhou HTTP/1.1
+> Host : ads.cn-hangzhou.aliyuncs.com
+> User-Agent : AlibabaCloud (Windows 10;AMD64) Python/3.7.1 Core/2.13.1 python-requests/2.18.1
+> accept-encoding : *
+> Accept : application/json
+> Connection : keep-alive
+> x-sdk-invoke-type : normal
+> x-acs-version : 2019-01-22
+> x-acs-region-id : cn-hangzhou
+> Date : Thu, 21 Feb 2019 08:00:50 GMT
+> x-acs-signature-method : HMAC-SHA1
+> x-acs-signature-version : 1.0
+> Authorization : acs ...
+> x-sdk-client : python/2.0.0
+
+< HTTP/1.1 503 SERVICE_UNAVAILABLE
+< Date : Thu, 21 Feb 2019 08:00:50 GMT
+< Content-Type : application/json; charset=UTF-8
+< Content-Length : 297
+< Connection : keep-alive
+< Access-Control-Allow-Origin : *
+< Access-Control-Allow-Methods : POST, GET, OPTIONS
+< Access-Control-Allow-Headers : X-Requested-With, X-Sequence, _aop_secret, _aop_signature
+< Access-Control-Max-Age : 172800
+< x-acs-request-id : 670F3D09-F8E7-4144-83C3-B56C35DA35ED
+< Server : Jetty(7.2.2.v20101205)
+```
