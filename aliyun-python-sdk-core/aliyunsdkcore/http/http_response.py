@@ -18,10 +18,19 @@
 # coding=utf-8
 
 import os
+import logging
+
 from aliyunsdkcore.vendored.requests import Request, Session
 from aliyunsdkcore.vendored.requests.packages import urllib3
 from aliyunsdkcore.http.http_request import HttpRequest
 from aliyunsdkcore.http import protocol_type as PT
+
+from aliyunsdkcore.vendored.requests import status_codes
+
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.DEBUG)
+ch = logging.StreamHandler()
+logger.addHandler(ch)
 
 DEFAULT_CONNECT_TIMEOUT = 5
 
@@ -61,6 +70,24 @@ class HttpResponse(HttpRequest):
     def get_ssl_enabled(self):
         return self.__ssl_enable
 
+    @staticmethod
+    def prepare_http_debug(request, symbol):
+        base = ''
+        for key, value in request.headers.items():
+            base += '\n%s %s : %s' % (symbol, key, value)
+        return base
+
+    def do_http_debug(self, request, response):
+        # logger the request
+        request_base = '\n> %s %s HTTP/1.1' % (self.get_method().upper(), self.get_url())
+        request_base += '\n> Host : %s' % self.get_host()
+        logger.debug(request_base + self.prepare_http_debug(request, '>'))
+
+        # logger the response
+        response_base = '\n< HTTP/1.1 %s %s' % (
+            response.status_code, status_codes._codes.get(response.status_code)[0].upper())
+        logger.debug(response_base + self.prepare_http_debug(response, '<'))
+
     def get_response_object(self):
         with Session() as s:
             current_protocol = 'https://' if self.get_ssl_enabled() else 'http://'
@@ -87,7 +114,15 @@ class HttpResponse(HttpRequest):
             }
             # ignore the warning-InsecureRequestWarning
             urllib3.disable_warnings()
+
             response = s.send(prepped, proxies=proxies,
                               timeout=(DEFAULT_CONNECT_TIMEOUT, self._timeout),
                               allow_redirects=False, verify=None, cert=None)
+
+            http_debug = os.environ.get('DEBUG')
+
+            if http_debug is not None and http_debug.lower() == 'sdk':
+                # http debug information
+                self.do_http_debug(prepped, response)
+
             return response.status_code, response.headers, response.content
