@@ -1,3 +1,7 @@
+2019-02-22 Version: 1.2.0
+1, support ram authentication for sub user and  sts token
+2, add 2 new openAPIs
+
 2018-12-07 Version: 1.1.0
 1, add a new openAPI
 2, support sts token
