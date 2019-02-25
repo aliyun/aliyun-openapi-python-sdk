@@ -22,11 +22,9 @@ class GetServiceResultAsyncRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'industry-brain', '2018-07-12', 'GetServiceResultAsync')
-		self.set_protocol_type('https');
-		self.set_method('POST')
 
-	def get_ServiceId(self):
-		return self.get_query_params().get('ServiceId')
+	def get_TaskId(self):
+		return self.get_query_params().get('TaskId')
 
-	def set_ServiceId(self,ServiceId):
-		self.add_query_param('ServiceId',ServiceId)
+	def set_TaskId(self,TaskId):
+		self.add_query_param('TaskId',TaskId)
