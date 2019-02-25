@@ -1,4 +1,1 @@
-language: python 
-rvm:
- - 3.7
- - aliyun-openapi-python-sdk
+language: python
