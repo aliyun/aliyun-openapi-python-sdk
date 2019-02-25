@@ -18,13 +18,38 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class GetAsyncServiceResultRequest(RpcRequest):
+class AsyncResponsePostRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'industry-brain', '2018-07-12', 'GetAsyncServiceResult')
+		RpcRequest.__init__(self, 'industry-brain', '2018-07-12', 'AsyncResponsePost')
+		self.set_method('POST')
+
+	def get_Data(self):
+		return self.get_query_params().get('Data')
+
+	def set_Data(self,Data):
+		self.add_query_param('Data',Data)
+
+	def get_Progress(self):
+		return self.get_query_params().get('Progress')
+
+	def set_Progress(self,Progress):
+		self.add_query_param('Progress',Progress)
+
+	def get_Message(self):
+		return self.get_query_params().get('Message')
+
+	def set_Message(self,Message):
+		self.add_query_param('Message',Message)
 
 	def get_TaskId(self):
 		return self.get_query_params().get('TaskId')
 
 	def set_TaskId(self,TaskId):
 		self.add_query_param('TaskId',TaskId)
+
+	def get_Status(self):
+		return self.get_query_params().get('Status')
+
+	def set_Status(self,Status):
+		self.add_query_param('Status',Status)

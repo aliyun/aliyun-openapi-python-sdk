@@ -22,8 +22,13 @@ class InvokeServiceAsyncRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'industry-brain', '2018-07-12', 'InvokeServiceAsync')
-		self.set_protocol_type('https');
 		self.set_method('POST')
+
+	def get_IsShowInput(self):
+		return self.get_query_params().get('IsShowInput')
+
+	def set_IsShowInput(self,IsShowInput):
+		self.add_query_param('IsShowInput',IsShowInput)
 
 	def get_ServiceId(self):
 		return self.get_query_params().get('ServiceId')
@@ -32,7 +37,13 @@ class InvokeServiceAsyncRequest(RpcRequest):
 		self.add_query_param('ServiceId',ServiceId)
 
 	def get_Params(self):
-		return self.get_body_params().get('Params')
+		return self.get_query_params().get('Params')
 
 	def set_Params(self,Params):
-		self.add_body_params('Params', Params)
+		self.add_query_param('Params',Params)
+
+	def get_RequestData(self):
+		return self.get_query_params().get('RequestData')
+
+	def set_RequestData(self,RequestData):
+		self.add_query_param('RequestData',RequestData)
