@@ -271,6 +271,9 @@ class AcsClient:
                 error_code.SDK_INVALID_REQUEST,
                 error_msg.get_msg('SDK_INVALID_REQUEST'))
 
+        # modify Accept-Encoding
+        request.add_header('Accept-Encoding', 'identity')
+
         if isinstance(request, CommonRequest):
             request.trans_to_acs_request()
 
