@@ -271,10 +271,6 @@ class AcsClient:
                 error_code.SDK_INVALID_REQUEST,
                 error_msg.get_msg('SDK_INVALID_REQUEST'))
 
-        # add core version
-        core_version = __import__('aliyunsdkcore').__version__
-        request.add_header('x-sdk-core-version', core_version)
-
         if isinstance(request, CommonRequest):
             request.trans_to_acs_request()
 
