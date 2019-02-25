@@ -100,7 +100,7 @@ class HttpRequest:
             str_md5 = helper.md5_sum(content)
             content_length = len(content)
             self.__headers[self.content_md5] = str_md5
-            self.__headers[self.content_length] = content_length
+            self.__headers[self.content_length] = str(content_length)
             self.__headers[self.content_type] = format
             self.__encoding = encoding
 
