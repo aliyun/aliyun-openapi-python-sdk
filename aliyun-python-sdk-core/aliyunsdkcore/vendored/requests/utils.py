@@ -735,7 +735,7 @@ def default_headers():
     """
     return CaseInsensitiveDict({
         'User-Agent': default_user_agent(),
-        'Accept-Encoding': ', '.join(('gzip', 'deflate')),
+        # 'Accept-Encoding': ', '.join(('gzip', 'deflate')),
         'Accept': '*/*',
         'Connection': 'keep-alive',
     })
