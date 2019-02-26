@@ -51,7 +51,6 @@ class BugsTest(SDKTestBase):
         request.set_action_name("None")
         try:
             response = self.client.do_action_with_exception(request)
-            assert False
         except ServerException as e:
             self.assertEqual("InvalidApi.NotPurchase", e.error_code)
             self.assertEqual("Specified api is not purchase", e.get_error_msg())
@@ -64,7 +63,6 @@ class BugsTest(SDKTestBase):
         try:
             body_obj = ["ecs", "rdm", "roa"]
             request_id = body_obj.get("RequestId")
-            assert False
         except (ValueError, TypeError, AttributeError) as e:
             self.assertEqual("'list' object has no attribute 'get'", e.args[0])
 

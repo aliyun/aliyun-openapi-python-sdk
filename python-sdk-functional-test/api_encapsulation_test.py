@@ -50,3 +50,10 @@ class APIEncapsulateTest(SDKTestBase):
         response = self.client.do_action_with_exception(request)
         response = self.get_dict_response(response)
         self.assertTrue(response.get("AccessPointSet"))
+
+    def test_request_with_listkeys(self):
+        from aliyunsdkkms.request.v20160120.ListKeysRequest import ListKeysRequest
+        request = ListKeysRequest()
+        response = self.client.do_action_with_exception(request)
+        response = self.get_dict_response(response)
+        self.assertTrue(response.get("PageNumber"))
