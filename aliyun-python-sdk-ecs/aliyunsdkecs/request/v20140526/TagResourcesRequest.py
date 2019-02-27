@@ -18,40 +18,29 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class StartInstanceRequest(RpcRequest):
+class TagResourcesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'StartInstance','ecs')
+		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'TagResources','ecs')
 
-	def get_SourceRegionId(self):
-		return self.get_query_params().get('SourceRegionId')
+	def get_Tags(self):
+		return self.get_query_params().get('Tags')
 
-	def set_SourceRegionId(self,SourceRegionId):
-		self.add_query_param('SourceRegionId',SourceRegionId)
+	def set_Tags(self,Tags):
+		for i in range(len(Tags)):	
+			if Tags[i].get('Key') is not None:
+				self.add_query_param('Tag.' + str(i + 1) + '.Key' , Tags[i].get('Key'))
+			if Tags[i].get('Value') is not None:
+				self.add_query_param('Tag.' + str(i + 1) + '.Value' , Tags[i].get('Value'))
 
-	def get_InitLocalDisk(self):
-		return self.get_query_params().get('InitLocalDisk')
 
-	def set_InitLocalDisk(self,InitLocalDisk):
-		self.add_query_param('InitLocalDisk',InitLocalDisk)
+	def get_ResourceIds(self):
+		return self.get_query_params().get('ResourceIds')
 
-	def get_ResourceOwnerId(self):
-		return self.get_query_params().get('ResourceOwnerId')
-
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_InstanceId(self):
-		return self.get_query_params().get('InstanceId')
-
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
-
-	def get_DryRun(self):
-		return self.get_query_params().get('DryRun')
-
-	def set_DryRun(self,DryRun):
-		self.add_query_param('DryRun',DryRun)
+	def set_ResourceIds(self,ResourceIds):
+		for i in range(len(ResourceIds)):	
+			if ResourceIds[i] is not None:
+				self.add_query_param('ResourceId.' + str(i + 1) , ResourceIds[i]);
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -70,3 +59,9 @@ class StartInstanceRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_ResourceType(self):
+		return self.get_query_params().get('ResourceType')
+
+	def set_ResourceType(self,ResourceType):
+		self.add_query_param('ResourceType',ResourceType)

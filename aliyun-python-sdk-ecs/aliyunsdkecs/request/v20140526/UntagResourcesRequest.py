@@ -18,10 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class CopyImageRequest(RpcRequest):
+class UntagResourcesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'CopyImage','ecs')
+		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'UntagResources','ecs')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -29,29 +29,25 @@ class CopyImageRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_ImageId(self):
-		return self.get_query_params().get('ImageId')
+	def get_All(self):
+		return self.get_query_params().get('All')
 
-	def set_ImageId(self,ImageId):
-		self.add_query_param('ImageId',ImageId)
+	def set_All(self,All):
+		self.add_query_param('All',All)
+
+	def get_ResourceIds(self):
+		return self.get_query_params().get('ResourceIds')
+
+	def set_ResourceIds(self,ResourceIds):
+		for i in range(len(ResourceIds)):	
+			if ResourceIds[i] is not None:
+				self.add_query_param('ResourceId.' + str(i + 1) , ResourceIds[i]);
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_DestinationImageName(self):
-		return self.get_query_params().get('DestinationImageName')
-
-	def set_DestinationImageName(self,DestinationImageName):
-		self.add_query_param('DestinationImageName',DestinationImageName)
-
-	def get_DestinationRegionId(self):
-		return self.get_query_params().get('DestinationRegionId')
-
-	def set_DestinationRegionId(self,DestinationRegionId):
-		self.add_query_param('DestinationRegionId',DestinationRegionId)
 
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
@@ -65,25 +61,16 @@ class CopyImageRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_Encrypted(self):
-		return self.get_query_params().get('Encrypted')
+	def get_ResourceType(self):
+		return self.get_query_params().get('ResourceType')
 
-	def set_Encrypted(self,Encrypted):
-		self.add_query_param('Encrypted',Encrypted)
+	def set_ResourceType(self,ResourceType):
+		self.add_query_param('ResourceType',ResourceType)
 
-	def get_Tags(self):
-		return self.get_query_params().get('Tags')
+	def get_TagKeys(self):
+		return self.get_query_params().get('TagKeys')
 
-	def set_Tags(self,Tags):
-		for i in range(len(Tags)):	
-			if Tags[i].get('Value') is not None:
-				self.add_query_param('Tag.' + str(i + 1) + '.Value' , Tags[i].get('Value'))
-			if Tags[i].get('Key') is not None:
-				self.add_query_param('Tag.' + str(i + 1) + '.Key' , Tags[i].get('Key'))
-
-
-	def get_DestinationDescription(self):
-		return self.get_query_params().get('DestinationDescription')
-
-	def set_DestinationDescription(self,DestinationDescription):
-		self.add_query_param('DestinationDescription',DestinationDescription)
+	def set_TagKeys(self,TagKeys):
+		for i in range(len(TagKeys)):	
+			if TagKeys[i] is not None:
+				self.add_query_param('TagKey.' + str(i + 1) , TagKeys[i]);
