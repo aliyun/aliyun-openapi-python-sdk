@@ -49,9 +49,12 @@ class BugsTest(SDKTestBase):
             request.set_content(content.encode('utf-8'))
         request.set_version('2018-04-08')
         request.set_action_name("None")
+
+        # We have 2 possible situations here: NLP purchased or NLP purchased
+        # The test case should be passed in both situations.
         try:
             response = self.client.do_action_with_exception(request)
-            assert False
+            self.assertTrue(response)
         except ServerException as e:
             self.assertEqual("InvalidApi.NotPurchase", e.error_code)
             self.assertEqual("Specified api is not purchase", e.get_error_msg())
