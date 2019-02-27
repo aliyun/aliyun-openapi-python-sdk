@@ -4,7 +4,7 @@ import json
 import sys
 import uuid
 
-from aliyunsdkcore.acs_exception.exceptions import ServerException
+from aliyunsdkcore.acs_exception.exceptions import ServerException, ClientException
 from aliyunsdkcore.http import method_type
 from aliyunsdkcore.profile import region_provider
 from aliyunsdkcore.request import CommonRequest, RpcRequest
@@ -49,8 +49,12 @@ class BugsTest(SDKTestBase):
             request.set_content(content.encode('utf-8'))
         request.set_version('2018-04-08')
         request.set_action_name("None")
+        response = self.client.do_action_with_exception(request)
+        # We have 2 possible situations here: NLP purchased or NLP purchased
+        # The test case should be passed in both situations.
         try:
             response = self.client.do_action_with_exception(request)
+            self.assertTrue(response)
         except ServerException as e:
             self.assertEqual("InvalidApi.NotPurchase", e.error_code)
             self.assertEqual("Specified api is not purchase", e.get_error_msg())
@@ -63,6 +67,7 @@ class BugsTest(SDKTestBase):
         try:
             body_obj = ["ecs", "rdm", "roa"]
             request_id = body_obj.get("RequestId")
+            assert False
         except (ValueError, TypeError, AttributeError) as e:
             self.assertEqual("'list' object has no attribute 'get'", e.args[0])
 
