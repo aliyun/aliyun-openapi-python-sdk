@@ -17,6 +17,8 @@ import json
 import sys
 import os
 import threading
+import logging
+import time
 
 import sys
 from aliyunsdkcore.client import AcsClient
@@ -135,7 +137,9 @@ class SDKTestBase(TestCase):
     def init_client(self, region_id=None):
         if not region_id:
             region_id = self.region_id
-        return AcsClient(self.access_key_id, self.access_key_secret, region_id, timeout=120)
+        client = AcsClient(self.access_key_id, self.access_key_secret, region_id, timeout=120)
+        client.set_stream_logger()
+        return client
 
     @staticmethod
     def get_dict_response(string):
@@ -199,9 +203,10 @@ class SDKTestBase(TestCase):
         self._create_default_ram_user()
         self._attach_default_policy()
         self._create_access_key()
-        return AcsClient(self.ram_user_access_key_id,
-                         self.ram_user_access_key_secret,
-                         self.region_id, timeout=120)
+        client = AcsClient(self.ram_user_access_key_id,
+                           self.ram_user_access_key_secret,
+                           self.region_id, timeout=120)
+        return client
 
     def _create_default_ram_role(self):
         if self.ram_role_arn:
@@ -235,6 +240,9 @@ class SDKTestBase(TestCase):
                                   RoleName=self.default_ram_role_name,
                                   AssumeRolePolicyDocument=policy_doc)
         self.ram_role_arn = find_in_response(response, keys=['Role', 'Arn'])
+        # FIXME We have wait for 5 seconds after CreateRole before
+        # we can AssumeRole later
+        time.sleep(5)
 
 
 def disabled(func):
