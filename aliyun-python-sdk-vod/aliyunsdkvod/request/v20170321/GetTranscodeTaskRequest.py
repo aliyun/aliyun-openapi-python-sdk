@@ -18,10 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class DeleteTranscodeTemplateGroupRequest(RpcRequest):
+class GetTranscodeTaskRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'vod', '2017-03-21', 'DeleteTranscodeTemplateGroup','vod')
+		RpcRequest.__init__(self, 'vod', '2017-03-21', 'GetTranscodeTask','vod')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -35,26 +35,14 @@ class DeleteTranscodeTemplateGroupRequest(RpcRequest):
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
-	def get_TranscodeTemplateIds(self):
-		return self.get_query_params().get('TranscodeTemplateIds')
+	def get_TranscodeTaskId(self):
+		return self.get_query_params().get('TranscodeTaskId')
 
-	def set_TranscodeTemplateIds(self,TranscodeTemplateIds):
-		self.add_query_param('TranscodeTemplateIds',TranscodeTemplateIds)
+	def set_TranscodeTaskId(self,TranscodeTaskId):
+		self.add_query_param('TranscodeTaskId',TranscodeTaskId)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
-
-	def get_TranscodeTemplateGroupId(self):
-		return self.get_query_params().get('TranscodeTemplateGroupId')
-
-	def set_TranscodeTemplateGroupId(self,TranscodeTemplateGroupId):
-		self.add_query_param('TranscodeTemplateGroupId',TranscodeTemplateGroupId)
-
-	def get_ForceDelGroup(self):
-		return self.get_query_params().get('ForceDelGroup')
-
-	def set_ForceDelGroup(self,ForceDelGroup):
-		self.add_query_param('ForceDelGroup',ForceDelGroup)
