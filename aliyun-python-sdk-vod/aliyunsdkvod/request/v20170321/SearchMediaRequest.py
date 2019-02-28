@@ -35,35 +35,11 @@ class SearchMediaRequest(RpcRequest):
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
-	def get_PageNo(self):
-		return self.get_query_params().get('PageNo')
-
-	def set_PageNo(self,PageNo):
-		self.add_query_param('PageNo',PageNo)
-
-	def get_SearchType(self):
-		return self.get_query_params().get('SearchType')
-
-	def set_SearchType(self,SearchType):
-		self.add_query_param('SearchType',SearchType)
-
 	def get_Match(self):
 		return self.get_query_params().get('Match')
 
 	def set_Match(self,Match):
 		self.add_query_param('Match',Match)
-
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_SortBy(self):
-		return self.get_query_params().get('SortBy')
-
-	def set_SortBy(self,SortBy):
-		self.add_query_param('SortBy',SortBy)
 
 	def get_SessionId(self):
 		return self.get_query_params().get('SessionId')
@@ -77,14 +53,44 @@ class SearchMediaRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_Fields(self):
-		return self.get_query_params().get('Fields')
-
-	def set_Fields(self,Fields):
-		self.add_query_param('Fields',Fields)
-
 	def get_ScrollToken(self):
 		return self.get_query_params().get('ScrollToken')
 
 	def set_ScrollToken(self,ScrollToken):
 		self.add_query_param('ScrollToken',ScrollToken)
+
+	def get_PageNo(self):
+		return self.get_query_params().get('PageNo')
+
+	def set_PageNo(self,PageNo):
+		self.add_query_param('PageNo',PageNo)
+
+	def get_SearchType(self):
+		return self.get_query_params().get('SearchType')
+
+	def set_SearchType(self,SearchType):
+		self.add_query_param('SearchType',SearchType)
+
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
+
+	def get_SortBy(self):
+		return self.get_query_params().get('SortBy')
+
+	def set_SortBy(self,SortBy):
+		self.add_query_param('SortBy',SortBy)
+
+	def get_ResultTypes(self):
+		return self.get_query_params().get('ResultTypes')
+
+	def set_ResultTypes(self,ResultTypes):
+		self.add_query_param('ResultTypes',ResultTypes)
+
+	def get_Fields(self):
+		return self.get_query_params().get('Fields')
+
+	def set_Fields(self,Fields):
+		self.add_query_param('Fields',Fields)
