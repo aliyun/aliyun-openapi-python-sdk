@@ -18,43 +18,31 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class SetPathCacheExpiredConfigRequest(RpcRequest):
+class GetTranscodeTaskRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cdn', '2018-05-10', 'SetPathCacheExpiredConfig')
+		RpcRequest.__init__(self, 'vod', '2017-03-21', 'GetTranscodeTask','vod')
 
-	def get_DomainName(self):
-		return self.get_query_params().get('DomainName')
+	def get_ResourceOwnerId(self):
+		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_DomainName(self,DomainName):
-		self.add_query_param('DomainName',DomainName)
+	def set_ResourceOwnerId(self,ResourceOwnerId):
+		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_Weight(self):
-		return self.get_query_params().get('Weight')
+	def get_ResourceOwnerAccount(self):
+		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_Weight(self,Weight):
-		self.add_query_param('Weight',Weight)
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
-	def get_CacheContent(self):
-		return self.get_query_params().get('CacheContent')
+	def get_TranscodeTaskId(self):
+		return self.get_query_params().get('TranscodeTaskId')
 
-	def set_CacheContent(self,CacheContent):
-		self.add_query_param('CacheContent',CacheContent)
+	def set_TranscodeTaskId(self,TranscodeTaskId):
+		self.add_query_param('TranscodeTaskId',TranscodeTaskId)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
-
-	def get_TTL(self):
-		return self.get_query_params().get('TTL')
-
-	def set_TTL(self,TTL):
-		self.add_query_param('TTL',TTL)
-
-	def get_ConfigId(self):
-		return self.get_query_params().get('ConfigId')
-
-	def set_ConfigId(self,ConfigId):
-		self.add_query_param('ConfigId',ConfigId)

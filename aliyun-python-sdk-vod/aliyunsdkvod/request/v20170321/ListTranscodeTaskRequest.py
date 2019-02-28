@@ -18,10 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class SearchMediaRequest(RpcRequest):
+class ListTranscodeTaskRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'vod', '2017-03-21', 'SearchMedia','vod')
+		RpcRequest.__init__(self, 'vod', '2017-03-21', 'ListTranscodeTask','vod')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -35,41 +35,11 @@ class SearchMediaRequest(RpcRequest):
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
-	def get_Match(self):
-		return self.get_query_params().get('Match')
-
-	def set_Match(self,Match):
-		self.add_query_param('Match',Match)
-
-	def get_SessionId(self):
-		return self.get_query_params().get('SessionId')
-
-	def set_SessionId(self,SessionId):
-		self.add_query_param('SessionId',SessionId)
-
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_ScrollToken(self):
-		return self.get_query_params().get('ScrollToken')
-
-	def set_ScrollToken(self,ScrollToken):
-		self.add_query_param('ScrollToken',ScrollToken)
-
 	def get_PageNo(self):
 		return self.get_query_params().get('PageNo')
 
 	def set_PageNo(self,PageNo):
 		self.add_query_param('PageNo',PageNo)
-
-	def get_SearchType(self):
-		return self.get_query_params().get('SearchType')
-
-	def set_SearchType(self,SearchType):
-		self.add_query_param('SearchType',SearchType)
 
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
@@ -77,20 +47,26 @@ class SearchMediaRequest(RpcRequest):
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
 
-	def get_SortBy(self):
-		return self.get_query_params().get('SortBy')
+	def get_EndTime(self):
+		return self.get_query_params().get('EndTime')
 
-	def set_SortBy(self,SortBy):
-		self.add_query_param('SortBy',SortBy)
+	def set_EndTime(self,EndTime):
+		self.add_query_param('EndTime',EndTime)
 
-	def get_ResultTypes(self):
-		return self.get_query_params().get('ResultTypes')
+	def get_VideoId(self):
+		return self.get_query_params().get('VideoId')
 
-	def set_ResultTypes(self,ResultTypes):
-		self.add_query_param('ResultTypes',ResultTypes)
+	def set_VideoId(self,VideoId):
+		self.add_query_param('VideoId',VideoId)
 
-	def get_Fields(self):
-		return self.get_query_params().get('Fields')
+	def get_StartTime(self):
+		return self.get_query_params().get('StartTime')
 
-	def set_Fields(self,Fields):
-		self.add_query_param('Fields',Fields)
+	def set_StartTime(self,StartTime):
+		self.add_query_param('StartTime',StartTime)
+
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)

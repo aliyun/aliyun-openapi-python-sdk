@@ -35,6 +35,12 @@ class DeleteTranscodeTemplateGroupRequest(RpcRequest):
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
+	def get_TranscodeTemplateIds(self):
+		return self.get_query_params().get('TranscodeTemplateIds')
+
+	def set_TranscodeTemplateIds(self,TranscodeTemplateIds):
+		self.add_query_param('TranscodeTemplateIds',TranscodeTemplateIds)
+
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
@@ -46,3 +52,9 @@ class DeleteTranscodeTemplateGroupRequest(RpcRequest):
 
 	def set_TranscodeTemplateGroupId(self,TranscodeTemplateGroupId):
 		self.add_query_param('TranscodeTemplateGroupId',TranscodeTemplateGroupId)
+
+	def get_ForceDelGroup(self):
+		return self.get_query_params().get('ForceDelGroup')
+
+	def set_ForceDelGroup(self,ForceDelGroup):
+		self.add_query_param('ForceDelGroup',ForceDelGroup)

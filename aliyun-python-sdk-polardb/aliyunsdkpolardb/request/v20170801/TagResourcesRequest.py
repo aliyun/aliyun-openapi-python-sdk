@@ -18,10 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class CopyImageRequest(RpcRequest):
+class TagResourcesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'CopyImage','ecs')
+		RpcRequest.__init__(self, 'polardb', '2017-08-01', 'TagResources','polardb')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -29,11 +29,13 @@ class CopyImageRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_ImageId(self):
-		return self.get_query_params().get('ImageId')
+	def get_ResourceIds(self):
+		return self.get_query_params().get('ResourceIds')
 
-	def set_ImageId(self,ImageId):
-		self.add_query_param('ImageId',ImageId)
+	def set_ResourceIds(self,ResourceIds):
+		for i in range(len(ResourceIds)):	
+			if ResourceIds[i] is not None:
+				self.add_query_param('ResourceId.' + str(i + 1) , ResourceIds[i]);
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -41,35 +43,11 @@ class CopyImageRequest(RpcRequest):
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
-	def get_DestinationImageName(self):
-		return self.get_query_params().get('DestinationImageName')
-
-	def set_DestinationImageName(self,DestinationImageName):
-		self.add_query_param('DestinationImageName',DestinationImageName)
-
-	def get_DestinationRegionId(self):
-		return self.get_query_params().get('DestinationRegionId')
-
-	def set_DestinationRegionId(self,DestinationRegionId):
-		self.add_query_param('DestinationRegionId',DestinationRegionId)
-
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
 
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
-
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_Encrypted(self):
-		return self.get_query_params().get('Encrypted')
-
-	def set_Encrypted(self,Encrypted):
-		self.add_query_param('Encrypted',Encrypted)
 
 	def get_Tags(self):
 		return self.get_query_params().get('Tags')
@@ -82,8 +60,14 @@ class CopyImageRequest(RpcRequest):
 				self.add_query_param('Tag.' + str(i + 1) + '.Key' , Tags[i].get('Key'))
 
 
-	def get_DestinationDescription(self):
-		return self.get_query_params().get('DestinationDescription')
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
 
-	def set_DestinationDescription(self,DestinationDescription):
-		self.add_query_param('DestinationDescription',DestinationDescription)
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
+
+	def get_ResourceType(self):
+		return self.get_query_params().get('ResourceType')
+
+	def set_ResourceType(self,ResourceType):
+		self.add_query_param('ResourceType',ResourceType)

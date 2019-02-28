@@ -18,32 +18,31 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class InvokeServiceAsyncRequest(RpcRequest):
+class GetTranscodeSummaryRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'industry-brain', '2018-07-12', 'InvokeServiceAsync')
-		self.set_method('POST')
+		RpcRequest.__init__(self, 'vod', '2017-03-21', 'GetTranscodeSummary','vod')
 
-	def get_IsShowInput(self):
-		return self.get_query_params().get('IsShowInput')
+	def get_ResourceOwnerId(self):
+		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_IsShowInput(self,IsShowInput):
-		self.add_query_param('IsShowInput',IsShowInput)
+	def set_ResourceOwnerId(self,ResourceOwnerId):
+		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_ServiceId(self):
-		return self.get_query_params().get('ServiceId')
+	def get_ResourceOwnerAccount(self):
+		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_ServiceId(self,ServiceId):
-		self.add_query_param('ServiceId',ServiceId)
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
-	def get_Params(self):
-		return self.get_query_params().get('Params')
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
 
-	def set_Params(self,Params):
-		self.add_query_param('Params',Params)
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
 
-	def get_RequestData(self):
-		return self.get_query_params().get('RequestData')
+	def get_VideoIds(self):
+		return self.get_query_params().get('VideoIds')
 
-	def set_RequestData(self,RequestData):
-		self.add_query_param('RequestData',RequestData)
+	def set_VideoIds(self,VideoIds):
+		self.add_query_param('VideoIds',VideoIds)

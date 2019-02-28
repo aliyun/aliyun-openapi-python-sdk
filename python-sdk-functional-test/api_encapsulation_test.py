@@ -58,3 +58,6 @@ class APIEncapsulateTest(SDKTestBase):
         response = self.get_dict_response(response)
         self.assertTrue(response.get("PageNumber"))
 
+
+
+

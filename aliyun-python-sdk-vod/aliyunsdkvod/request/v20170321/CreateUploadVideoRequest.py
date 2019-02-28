@@ -118,3 +118,9 @@ class CreateUploadVideoRequest(RpcRequest):
 
 	def set_WorkflowId(self,WorkflowId):
 		self.add_query_param('WorkflowId',WorkflowId)
+
+	def get_CustomMediaInfo(self):
+		return self.get_query_params().get('CustomMediaInfo')
+
+	def set_CustomMediaInfo(self,CustomMediaInfo):
+		self.add_query_param('CustomMediaInfo',CustomMediaInfo)
