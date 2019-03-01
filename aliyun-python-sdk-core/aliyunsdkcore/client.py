@@ -371,7 +371,7 @@ class AcsClient:
                          endpoint, aliyunsdkcore.__version__, str(exception))
             return None, None, None, exception
 
-        exception = self._get_server_exception(status, body, endpoint)
+        exception = self._get_server_exception(status, body, endpoint, request.string_to_sign)
         return status, headers, body, exception
 
     @staticmethod
@@ -391,7 +391,7 @@ class AcsClient:
 
         return error_code_to_return, error_message_to_return
 
-    def _get_server_exception(self, http_status, response_body, endpoint):
+    def _get_server_exception(self, http_status, response_body, endpoint, string_to_sign):
         request_id = None
 
         try:
@@ -406,7 +406,11 @@ class AcsClient:
 
             server_error_code, server_error_message = self._parse_error_info_from_response_body(
                 response_body.decode('utf-8'))
-
+            if http_status == codes.BAD_REQUEST and server_error_code == 'SignatureDoesNotMatch':
+                if string_to_sign == server_error_message.split(':')[1]:
+                    server_error_code = 'InvalidAccessKeySecret'
+                    server_error_message = 'The AccessKeySecret is incorrect. ' \
+                                           'Please check your AccessKeyId and AccessKeySecret.'
             exception = ServerException(
                 server_error_code,
                 server_error_message,

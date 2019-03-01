@@ -105,6 +105,7 @@ class AcsRequest:
         self.add_header('x-sdk-invoke-type', 'normal')
         self.endpoint = None
         self._extra_user_agent = {}
+        self.string_to_sign = ''
 
     def add_query_param(self, k, v):
         self._params[k] = v
@@ -296,7 +297,7 @@ class RpcRequest(AcsRequest):
         sign_params = self._get_sign_params()
         if 'RegionId' not in iterkeys(sign_params):
             sign_params['RegionId'] = region_id
-        url = rpc_signer.get_signed_url(
+        url, string_to_sign = rpc_signer.get_signed_url(
             sign_params,
             access_key_id,
             access_key_secret,
@@ -304,6 +305,7 @@ class RpcRequest(AcsRequest):
             self.get_method(),
             self.get_body_params(),
             self._signer)
+        self.string_to_sign = string_to_sign
         return url
 
     def get_signed_header(self, region_id=None, ak=None, secret=None):
@@ -404,7 +406,7 @@ class RoaRequest(AcsRequest):
             sign_params['RegionId'] = region_id
             self.add_header('x-acs-region-id', str(region_id))
 
-        signed_headers = roa_signer.get_signature_headers(
+        signed_headers, sign_to_string = roa_signer.get_signature_headers(
             sign_params,
             ak,
             secret,
@@ -413,6 +415,7 @@ class RoaRequest(AcsRequest):
             self.get_uri_pattern(),
             self.get_path_params(),
             self.get_method())
+        self.string_to_sign = sign_to_string
         return signed_headers
 
     def get_url(self, region_id, ak=None, secret=None):
