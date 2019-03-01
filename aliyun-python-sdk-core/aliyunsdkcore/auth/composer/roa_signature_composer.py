@@ -139,7 +139,7 @@ def get_signature(
         uri_pattern=uri_pattern,
         paths=paths)
     signature = signer.get_sign_string(sign_to_string, secret=secret)
-    return signature
+    return signature, sign_to_string
 
 
 def get_signature_headers(
@@ -152,7 +152,7 @@ def get_signature_headers(
         paths,
         method,
         signer=mac1):
-    signature = get_signature(
+    signature, sign_to_string = get_signature(
         queries,
         access_key,
         secret,
@@ -163,7 +163,7 @@ def get_signature_headers(
         method,
         signer)
     headers["Authorization"] = "acs " + str(access_key) + ":" + str(signature)
-    return headers
+    return headers, sign_to_string
 
 
 def get_url(uri_pattern, queries, path_parameters):
