@@ -367,7 +367,7 @@ class NewEndpointTest(SDKTestBase):
             self.resolve("cn-hangzhou", "Ecs", "ecs", "innerAPI")
             assert False
         except ServerException as e:
-            self.assertEqual("SignatureDoesNotMatch", e.get_error_code())
+            self.assertEqual("InvalidAccessKeySecret", e.get_error_code())
 
     def test_local_clock_screw_when_call_location_service(self):
         # Not implemented

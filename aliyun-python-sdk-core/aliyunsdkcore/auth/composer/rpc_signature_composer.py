@@ -76,4 +76,4 @@ def get_signed_url(params, ak, secret, accept_format, method, body_params, signe
     signature = __get_signature(string_to_sign, secret, signer)
     url_params['Signature'] = signature
     url = '/?' + __pop_standard_urlencode(urlencode(url_params))
-    return url
+    return url, string_to_sign

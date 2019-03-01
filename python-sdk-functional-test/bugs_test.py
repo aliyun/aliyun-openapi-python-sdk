@@ -8,6 +8,7 @@ from aliyunsdkcore.acs_exception.exceptions import ServerException
 from aliyunsdkcore.http import method_type
 from aliyunsdkcore.profile import region_provider
 from aliyunsdkcore.request import CommonRequest, RpcRequest
+from aliyunsdkcore.client import AcsClient
 from base import SDKTestBase
 
 
@@ -97,3 +98,14 @@ class BugsTest(SDKTestBase):
         response = self.client.do_action_with_exception(request)
         response = self.get_dict_response(response)
         self.assertTrue(response.get("RequestId"))
+
+    def test_bug_with_not_match_sign(self):
+        from aliyunsdkcdn.request.v20180510.PushObjectCacheRequest import PushObjectCacheRequest
+        client = AcsClient(self.access_key_id, 'BadAccessKeySecret', 'cn-hangzhou')
+        request = PushObjectCacheRequest()
+        request.add_query_param('ObjectPath', 'http://lftest005.sbcicp1.net/C环境下SDK部署方式.txt')
+        try:
+            response = client.do_action_with_exception(request)
+            assert False
+        except ServerException as e:
+            self.assertEqual("InvalidAccessKeySecret", e.error_code)
