@@ -18,16 +18,16 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class QueryInstanceBillRequest(RpcRequest):
+class QueryPriceListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'QueryInstanceBill')
+		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'QueryPriceList')
 
-	def get_IsBillingItem(self):
-		return self.get_query_params().get('IsBillingItem')
+	def get_ModuleCode(self):
+		return self.get_query_params().get('ModuleCode')
 
-	def set_IsBillingItem(self,IsBillingItem):
-		self.add_query_param('IsBillingItem',IsBillingItem)
+	def set_ModuleCode(self,ModuleCode):
+		self.add_query_param('ModuleCode',ModuleCode)
 
 	def get_ProductCode(self):
 		return self.get_query_params().get('ProductCode')
@@ -35,41 +35,17 @@ class QueryInstanceBillRequest(RpcRequest):
 	def set_ProductCode(self,ProductCode):
 		self.add_query_param('ProductCode',ProductCode)
 
-	def get_IsHideZeroCharge(self):
-		return self.get_query_params().get('IsHideZeroCharge')
-
-	def set_IsHideZeroCharge(self,IsHideZeroCharge):
-		self.add_query_param('IsHideZeroCharge',IsHideZeroCharge)
-
 	def get_SubscriptionType(self):
 		return self.get_query_params().get('SubscriptionType')
 
 	def set_SubscriptionType(self,SubscriptionType):
 		self.add_query_param('SubscriptionType',SubscriptionType)
 
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_BillingCycle(self):
-		return self.get_query_params().get('BillingCycle')
-
-	def set_BillingCycle(self,BillingCycle):
-		self.add_query_param('BillingCycle',BillingCycle)
-
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
-
-	def get_PageNum(self):
-		return self.get_query_params().get('PageNum')
-
-	def set_PageNum(self,PageNum):
-		self.add_query_param('PageNum',PageNum)
 
 	def get_ProductType(self):
 		return self.get_query_params().get('ProductType')
