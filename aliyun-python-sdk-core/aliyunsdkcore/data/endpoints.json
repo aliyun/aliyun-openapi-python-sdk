@@ -953,7 +953,8 @@
       "cn-hangzhou": "faas.cn-hangzhou.aliyuncs.com",
       "cn-shenzhen": "faas.cn-shenzhen.aliyuncs.com",
       "cn-shanghai": "faas.cn-shanghai.aliyuncs.com",
-      "cn-beijing": "faas.cn-beijing.aliyuncs.com"
+      "cn-beijing": "faas.cn-beijing.aliyuncs.com",
+      "cn-zhangjiakou": "faas.cn-zhangjiakou.aliyuncs.com"
     },
     "dmsenterprise":{
       "cn-qingdao":"dms-enterprise.aliyuncs.com",
