@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class DescribeDcdnDomainWebsocketHttpCodeDataRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'dcdn', '2018-01-15', 'DescribeDcdnDomainWebsocketHttpCodeData','dcdn')
+		RpcRequest.__init__(self, 'dcdn', '2018-01-15', 'DescribeDcdnDomainWebsocketHttpCodeData')
 
 	def get_LocationNameEn(self):
 		return self.get_query_params().get('LocationNameEn')

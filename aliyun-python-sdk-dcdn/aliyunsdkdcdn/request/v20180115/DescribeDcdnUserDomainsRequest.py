@@ -21,13 +21,37 @@ from aliyunsdkcore.request import RpcRequest
 class DescribeDcdnUserDomainsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'dcdn', '2018-01-15', 'DescribeDcdnUserDomains','dcdn')
+		RpcRequest.__init__(self, 'dcdn', '2018-01-15', 'DescribeDcdnUserDomains')
 
 	def get_FuncFilter(self):
 		return self.get_query_params().get('FuncFilter')
 
 	def set_FuncFilter(self,FuncFilter):
 		self.add_query_param('FuncFilter',FuncFilter)
+
+	def get_CheckDomainShow(self):
+		return self.get_query_params().get('CheckDomainShow')
+
+	def set_CheckDomainShow(self,CheckDomainShow):
+		self.add_query_param('CheckDomainShow',CheckDomainShow)
+
+	def get_ResourceGroupId(self):
+		return self.get_query_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self,ResourceGroupId):
+		self.add_query_param('ResourceGroupId',ResourceGroupId)
+
+	def get_SecurityToken(self):
+		return self.get_query_params().get('SecurityToken')
+
+	def set_SecurityToken(self,SecurityToken):
+		self.add_query_param('SecurityToken',SecurityToken)
+
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
 
 	def get_DomainName(self):
 		return self.get_query_params().get('DomainName')
@@ -64,27 +88,3 @@ class DescribeDcdnUserDomainsRequest(RpcRequest):
 
 	def set_DomainSearchType(self,DomainSearchType):
 		self.add_query_param('DomainSearchType',DomainSearchType)
-
-	def get_CheckDomainShow(self):
-		return self.get_query_params().get('CheckDomainShow')
-
-	def set_CheckDomainShow(self,CheckDomainShow):
-		self.add_query_param('CheckDomainShow',CheckDomainShow)
-
-	def get_ResourceGroupId(self):
-		return self.get_query_params().get('ResourceGroupId')
-
-	def set_ResourceGroupId(self,ResourceGroupId):
-		self.add_query_param('ResourceGroupId',ResourceGroupId)
-
-	def get_SecurityToken(self):
-		return self.get_query_params().get('SecurityToken')
-
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)
-
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
