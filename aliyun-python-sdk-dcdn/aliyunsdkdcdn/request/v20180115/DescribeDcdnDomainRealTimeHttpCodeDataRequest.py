@@ -18,10 +18,16 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class DescribeDcdnTopDomainsByFlowRequest(RpcRequest):
+class DescribeDcdnDomainRealTimeHttpCodeDataRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'dcdn', '2018-01-15', 'DescribeDcdnTopDomainsByFlow')
+		RpcRequest.__init__(self, 'dcdn', '2018-01-15', 'DescribeDcdnDomainRealTimeHttpCodeData')
+
+	def get_LocationNameEn(self):
+		return self.get_query_params().get('LocationNameEn')
+
+	def set_LocationNameEn(self,LocationNameEn):
+		self.add_query_param('LocationNameEn',LocationNameEn)
 
 	def get_StartTime(self):
 		return self.get_query_params().get('StartTime')
@@ -29,17 +35,17 @@ class DescribeDcdnTopDomainsByFlowRequest(RpcRequest):
 	def set_StartTime(self,StartTime):
 		self.add_query_param('StartTime',StartTime)
 
-	def get_Limit(self):
-		return self.get_query_params().get('Limit')
+	def get_IspNameEn(self):
+		return self.get_query_params().get('IspNameEn')
 
-	def set_Limit(self,Limit):
-		self.add_query_param('Limit',Limit)
+	def set_IspNameEn(self,IspNameEn):
+		self.add_query_param('IspNameEn',IspNameEn)
 
-	def get_Product(self):
-		return self.get_query_params().get('Product')
+	def get_DomainName(self):
+		return self.get_query_params().get('DomainName')
 
-	def set_Product(self,Product):
-		self.add_query_param('Product',Product)
+	def set_DomainName(self,DomainName):
+		self.add_query_param('DomainName',DomainName)
 
 	def get_EndTime(self):
 		return self.get_query_params().get('EndTime')
