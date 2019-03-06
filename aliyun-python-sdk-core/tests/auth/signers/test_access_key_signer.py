@@ -2,7 +2,7 @@
 
 from tests import unittest
 
-from aliyunsdkcore.auth.credentials import AccessKeyCredential
+from aliyunsdkcore.credentials.credentials import AccessKeyCredential
 from aliyunsdkcore.auth.signers.access_key_signer import AccessKeySigner
 from aliyunsdkcore.request import RpcRequest
 

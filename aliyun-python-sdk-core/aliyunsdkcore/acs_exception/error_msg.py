@@ -42,7 +42,8 @@ __dict = dict(
     SDK_INVALID_REQUEST='The request is not a valid AcsRequest.',
     SDK_MISSING_ENDPOINTS_FILER='Internal endpoints info is missing.',
     SDK_UNKNOWN_SERVER_ERROR="Can not parse error message from server response.",
-    SDK_INVALID_CREDENTIAL="Need a ak&secret pair or public_key_id&private_key pair to auth.",
+    SDK_INVALID_CREDENTIAL="Need a ak&secret pair or public_key_id&private_key pair or "
+                           "Credentials objects to auth.",
     SDK_INVALID_SESSION_EXPIRATION="Session expiration must between {0} and {1} seconds")
 
 
