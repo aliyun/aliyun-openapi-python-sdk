@@ -1,3 +1,4 @@
+# credentials
 class AccessKeyCredential:
     def __init__(self, access_key_id, access_key_secret):
         self.access_key_id = access_key_id
@@ -22,6 +23,11 @@ class RamRoleArnCredential:
 class EcsRamRoleCredential:
     def __init__(self, role_name):
         self.role_name = role_name
+
+
+class BearTokenCredential:
+    def __init__(self, bearer_token):
+        self.bearer_token = bearer_token
 
 
 class RsaKeyPairCredential:

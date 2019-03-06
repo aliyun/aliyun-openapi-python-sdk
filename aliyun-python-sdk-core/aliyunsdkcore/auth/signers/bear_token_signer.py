@@ -30,23 +30,23 @@ from aliyunsdkcore.acs_exception.exceptions import ServerException
 logger = logging.getLogger(__name__)
 
 
-class EcsRamRoleSigner(Signer):
-    _REFRESH_SCALE = 0.8
-
-    def __init__(self, ecs_ram_role_credential, region_id=None, do_action_api=None, debug=None):
-        self._credential = ecs_ram_role_credential
-        self._last_update_time = 0
-        self._expiration = 0
+class BearTokenSigner(Signer):
+    # bear token
+    # https://help.aliyun.com/document_detail/69962.html?spm=a2c4g.11186623.2.15.5dad35f6MtkJkX
+    # TODO  not sure
+    def __init__(self, bear_token_credential, region_id=None, do_action_api=None, debug=None):
+        self._credential = bear_token_credential
 
     def sign(self, region_id, request):
         self._check_session_credential()
-        session_ak, session_sk, token = self._session_credential
+        token = self._session_credential
+        # which token
         if request.get_style() == 'RPC':
-            request.add_query_param("SecurityToken", token)
+            request.add_query_param("BearerToken", token)
         else:
-            request.add_header("x-acs-security-token", token)
-        header = request.get_signed_header(region_id, session_ak, session_sk)
-        url = request.get_url(region_id, session_ak, session_sk)
+            request.add_header("x-acs-bearer-token", token)
+        header = request.get_signed_header(region_id, None, None)
+        url = request.get_url(region_id, None, None)
         return header, url
 
     def _check_session_credential(self):
@@ -55,23 +55,20 @@ class EcsRamRoleSigner(Signer):
             self._refresh_session_ak_and_sk()
 
     def _refresh_session_ak_and_sk(self):
-        request_url = "http://100.100.100.200/latest/meta-data/ram/security-credentials/" + \
-            self._credential.role_name
-        content = urlopen(request_url).read()
-        response = json.loads(content.decode('utf-8'))
-        if response.get("Code") != "Success":
-            message = 'refresh Ecs sts token err, code is ' + \
+        import requests
+        payload = {
+            'refresh_token': self._credential.bear_token,
+            'client_id': 'client_id',  # 应用的Identifier
+            'grant_type': 'refresh_token'
+        }
+        content = requests.post("https://oauth.aliyun.com/v1/token", data=payload)
+        response = json.loads(content.text.decode('utf-8'))
+        if response.get("status_code") != "200":
+            message = 'refresh bear token err, code is ' + \
                 response.get("Code")
             raise ServerException(
                 response.get("Code"), message, None)
 
-        session_ak = response.get("AccessKeyId")
-        session_sk = response.get("AccessKeySecret")
-        token = response.get("SecurityToken")
-        self._session_credential = session_ak, session_sk, token
-        expiration = response.get("Expiration")
-        if expiration:
-            self._expiration = time.mktime(time.strptime(expiration, '%Y-%m-%dT%H:%M:%SZ'))
-        else:
-            self._expiration = expiration
+        self._session_credential = response.get("access_token")
+        self._expiration = response.get("expires_in")
         self._last_update_time = int(time.time())
