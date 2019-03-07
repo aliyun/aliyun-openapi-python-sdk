@@ -31,9 +31,11 @@ from aliyunsdkcore.acs_exception.exceptions import ServerException
 
 class TimeoutTest(SDKTestBase):
 
+    _test_patch_client_read_timeout = None
+    _test_patch_client_connect_timeout = None
+
     def setUp(self):
-        globals()['_test_patch_client_read_timeout'] = None
-        globals()['_test_patch_client_connect_timeout'] = None
+        pass
 
     def _patch_client(self, client):
 
@@ -53,6 +55,9 @@ class TimeoutTest(SDKTestBase):
 
     def _test_timeout(self, client, request, expected_read_timeout, expected_connect_timeout):
         request.set_endpoint("somewhere.you.will.never.get")
+        global _test_patch_client_read_timeout, _test_patch_client_connect_timeout
+        _test_patch_client_read_timeout = 0
+        _test_oatch_client_connect_timeout = 0
         with self.assertRaises(ClientException):
             client.do_action_with_exception(request)
         self.assertEqual(expected_read_timeout, _test_patch_client_read_timeout)
