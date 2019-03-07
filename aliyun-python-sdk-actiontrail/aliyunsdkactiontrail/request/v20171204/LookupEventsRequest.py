@@ -29,11 +29,11 @@ class LookupEventsRequest(RpcRequest):
 	def set_Request(self,Request):
 		self.add_query_param('Request',Request)
 
-	def get_Format(self):
-		return self.get_query_params().get('Format')
+	def get_EventAccessKeyId(self):
+		return self.get_query_params().get('EventAccessKeyId')
 
-	def set_Format(self,Format):
-		self.add_query_param('Format',Format)
+	def set_EventAccessKeyId(self,EventAccessKeyId):
+		self.add_query_param('EventAccessKeyId',EventAccessKeyId)
 
 	def get_EndTime(self):
 		return self.get_query_params().get('EndTime')
@@ -41,23 +41,17 @@ class LookupEventsRequest(RpcRequest):
 	def set_EndTime(self,EndTime):
 		self.add_query_param('EndTime',EndTime)
 
+	def get_EventRW(self):
+		return self.get_query_params().get('EventRW')
+
+	def set_EventRW(self,EventRW):
+		self.add_query_param('EventRW',EventRW)
+
 	def get_StartTime(self):
 		return self.get_query_params().get('StartTime')
 
 	def set_StartTime(self,StartTime):
 		self.add_query_param('StartTime',StartTime)
-
-	def get_Type(self):
-		return self.get_query_params().get('Type')
-
-	def set_Type(self,Type):
-		self.add_query_param('Type',Type)
-
-	def get_Version(self):
-		return self.get_query_params().get('Version')
-
-	def set_Version(self,Version):
-		self.add_query_param('Version',Version)
 
 	def get_ResourceType(self):
 		return self.get_query_params().get('ResourceType')
@@ -70,12 +64,6 @@ class LookupEventsRequest(RpcRequest):
 
 	def set_EventName(self,EventName):
 		self.add_query_param('EventName',EventName)
-
-	def get_Help(self):
-		return self.get_query_params().get('Help')
-
-	def set_Help(self,Help):
-		self.add_query_param('Help',Help)
 
 	def get_NextToken(self):
 		return self.get_query_params().get('NextToken')
