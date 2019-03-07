@@ -32,47 +32,74 @@ from aliyunsdkcore.acs_exception.exceptions import ServerException
 class TimeoutTest(SDKTestBase):
 
     def setUp(self):
-        globals()['_test_patch_client_timeout'] = None
+        globals()['_test_patch_client_read_timeout'] = None
+        globals()['_test_patch_client_connect_timeout'] = None
 
     def _patch_client(self, client):
 
         original_make_http_response = client._make_http_response
 
-        def _make_http_response(endpoint, request, timeout, specific_signer=None):
-            global _test_patch_client_timeout
-            _test_patch_client_timeout = timeout
-            timeout = 0.01
-            return original_make_http_response(endpoint, request, timeout,
+        def _make_http_response(endpoint, request, read_timeout, connect_timeout,
+                                specific_signer=None):
+            global _test_patch_client_read_timeout, _test_patch_client_connect_timeout
+            _test_patch_client_read_timeout = read_timeout
+            _test_patch_client_connect_timeout = connect_timeout
+            read_timeout = 0.01
+            connect_timeout = 0.01
+            return original_make_http_response(endpoint, request, read_timeout, connect_timeout,
                                                specific_signer=None)
 
         client._make_http_response = _make_http_response
 
-    def _test_timeout(self, client, request, expected_timeout):
+    def _test_timeout(self, client, request, expected_read_timeout, expected_connect_timeout):
         global _test_patch_client_timeout
         _test_patch_client_timeout = 0
         request.set_endpoint("somewhere.you.will.never.get")
         with self.assertRaises(ClientException):
             client.do_action_with_exception(request)
-        self.assertEqual(expected_timeout, _test_patch_client_timeout)
+        self.assertEqual(expected_read_timeout, _test_patch_client_read_timeout)
+        self.assertEqual(expected_connect_timeout, _test_patch_client_connect_timeout)
 
-    def test_default_time_out(self):
+    def test_request_customized_timeout(self):
+        client = AcsClient(self.access_key_id, self.access_key_secret, self.region_id,
+                           auto_retry=False)
+        descrbe_instance = DescribeInstancesRequest()
+        descrbe_instance.set_read_timeout(3)
+        descrbe_instance.set_connect_timeout(3)
+        self._patch_client(client)
+        self._test_timeout(client, descrbe_instance, 3, 3)
+
+    def test_client_customized_timeout(self):
+        client = AcsClient(self.access_key_id, self.access_key_secret, self.region_id,
+                           timeout=7, connect_timeout=7, auto_retry=False)
+        self._patch_client(client)
+        self._test_timeout(client, DescribeInstancesRequest(), 7, 7)
+
+    def test_default_request_timeout(self):
+        client = AcsClient(self.access_key_id, self.access_key_secret, self.region_id,
+                           timeout=96, connect_timeout=96, auto_retry=False)
+        self._patch_client(client)
+        self._test_timeout(client, CreateInstanceRequest(), 96, 96)
+
+    def test_default_client_timeout(self):
         client = AcsClient(self.access_key_id, self.access_key_secret, self.region_id,
                            auto_retry=False)
         self._patch_client(client)
-        self._test_timeout(client, DescribeInstancesRequest(), 10)
-        self._test_timeout(client, CreateInstanceRequest(), 86)
-        self._test_timeout(client, DescribeInstanceHistoryEventsRequest(), 19)
-        self._test_timeout(client, DescribeDisksRequest(), 19)
-        self._test_timeout(client, RunInstancesRequest(), 86)
-        self._test_timeout(client, ListUsersRequest(), 10)  # not configured, using default
+        self._test_timeout(client, DescribeInstancesRequest(), 10, 5)
 
-    def test_user_set_time_out(self):
+    def test_read_timeout_priority(self):
         client = AcsClient(self.access_key_id, self.access_key_secret, self.region_id,
-                           timeout=20, auto_retry=False)
+                           timeout=5, auto_retry=False)
         self._patch_client(client)
-        self._test_timeout(client, DescribeInstancesRequest(), 20)
-        self._test_timeout(client, CreateInstanceRequest(), 20)
-        self._test_timeout(client, DescribeInstanceHistoryEventsRequest(), 20)
-        self._test_timeout(client, DescribeDisksRequest(), 20)
-        self._test_timeout(client, RunInstancesRequest(), 20)
-        self._test_timeout(client, ListUsersRequest(), 20)
+        create_instance = CreateInstanceRequest()
+        create_instance.set_read_timeout(7)
+        self._test_timeout(client, create_instance, 7, 5)
+
+    def test_connect_timeout_priority(self):
+        client = AcsClient(self.access_key_id, self.access_key_secret, self.region_id,
+                           connect_timeout=5, auto_retry=False)
+        self._patch_client(client)
+        create_instance = CreateInstanceRequest()
+        create_instance.set_connect_timeout(7)
+        self._test_timeout(client, create_instance, 86, 7)
+

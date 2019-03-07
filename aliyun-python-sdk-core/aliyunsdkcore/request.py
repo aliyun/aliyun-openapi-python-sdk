@@ -106,6 +106,8 @@ class AcsRequest:
         self.endpoint = None
         self._extra_user_agent = {}
         self.string_to_sign = ''
+        self._request_connect_timeout = None
+        self._request_read_timeout = None
 
     def add_query_param(self, k, v):
         self._params[k] = v
@@ -250,6 +252,18 @@ class AcsRequest:
 
     def set_endpoint(self, endpoint):
         self.endpoint = endpoint
+
+    def get_connect_timeout(self):
+        return self._request_connect_timeout
+
+    def set_connect_timeout(self, connect_timeout):
+        self._request_connect_timeout = connect_timeout
+
+    def get_read_timeout(self):
+        return self._request_read_timeout
+
+    def set_read_timeout(self, read_timeout):
+        self._request_read_timeout = read_timeout
 
 
 class RpcRequest(AcsRequest):
