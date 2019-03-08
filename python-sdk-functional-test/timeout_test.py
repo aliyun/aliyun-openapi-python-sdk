@@ -41,11 +41,10 @@ class TimeoutTest(SDKTestBase):
 
         def _make_http_response(endpoint, request, read_timeout, connect_timeout,
                                 specific_signer=None):
-            global _test_patch_client_read_timeout, _test_patch_client_connect_timeout
+            global _test_patch_client_read_timeout
+            global _test_patch_client_connect_timeout
             _test_patch_client_read_timeout = read_timeout
             _test_patch_client_connect_timeout = connect_timeout
-            read_timeout = 0.01
-            connect_timeout = 0.01
             return original_make_http_response(endpoint, request, read_timeout, connect_timeout,
                                                specific_signer=None)
 
@@ -53,9 +52,6 @@ class TimeoutTest(SDKTestBase):
 
     def _test_timeout(self, client, request, expected_read_timeout, expected_connect_timeout):
         request.set_endpoint("somewhere.you.will.never.get")
-        global _test_patch_client_read_timeout, _test_patch_client_connect_timeout
-        _test_patch_client_read_timeout = 0
-        _test_oatch_client_connect_timeout = 0
         with self.assertRaises(ClientException):
             client.do_action_with_exception(request)
         self.assertEqual(expected_read_timeout, _test_patch_client_read_timeout)
