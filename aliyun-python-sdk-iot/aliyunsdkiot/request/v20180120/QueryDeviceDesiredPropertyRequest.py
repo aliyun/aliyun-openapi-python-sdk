@@ -18,18 +18,24 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class BatchGetDeviceStateRequest(RpcRequest):
+class QueryDeviceDesiredPropertyRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'BatchGetDeviceState','iot')
+		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'QueryDeviceDesiredProperty','iot')
 
-	def get_IotIds(self):
-		return self.get_query_params().get('IotIds')
+	def get_Identifiers(self):
+		return self.get_query_params().get('Identifiers')
 
-	def set_IotIds(self,IotIds):
-		for i in range(len(IotIds)):	
-			if IotIds[i] is not None:
-				self.add_query_param('IotId.' + str(i + 1) , IotIds[i]);
+	def set_Identifiers(self,Identifiers):
+		for i in range(len(Identifiers)):	
+			if Identifiers[i] is not None:
+				self.add_query_param('Identifier.' + str(i + 1) , Identifiers[i]);
+
+	def get_IotId(self):
+		return self.get_query_params().get('IotId')
+
+	def set_IotId(self,IotId):
+		self.add_query_param('IotId',IotId)
 
 	def get_IotInstanceId(self):
 		return self.get_query_params().get('IotInstanceId')
@@ -37,13 +43,11 @@ class BatchGetDeviceStateRequest(RpcRequest):
 	def set_IotInstanceId(self,IotInstanceId):
 		self.add_query_param('IotInstanceId',IotInstanceId)
 
-	def get_DeviceNames(self):
-		return self.get_query_params().get('DeviceNames')
+	def get_DeviceName(self):
+		return self.get_query_params().get('DeviceName')
 
-	def set_DeviceNames(self,DeviceNames):
-		for i in range(len(DeviceNames)):	
-			if DeviceNames[i] is not None:
-				self.add_query_param('DeviceName.' + str(i + 1) , DeviceNames[i]);
+	def set_DeviceName(self,DeviceName):
+		self.add_query_param('DeviceName',DeviceName)
 
 	def get_ProductKey(self):
 		return self.get_query_params().get('ProductKey')
