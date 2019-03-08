@@ -77,6 +77,12 @@ class CreateProductRequest(RpcRequest):
 	def set_AliyunCommodityCode(self,AliyunCommodityCode):
 		self.add_query_param('AliyunCommodityCode',AliyunCommodityCode)
 
+	def get_JoinPermissionId(self):
+		return self.get_query_params().get('JoinPermissionId')
+
+	def set_JoinPermissionId(self,JoinPermissionId):
+		self.add_query_param('JoinPermissionId',JoinPermissionId)
+
 	def get_CategoryId(self):
 		return self.get_query_params().get('CategoryId')
 
