@@ -13,49 +13,40 @@
 # limitations under the License.
 
 from base import SDKTestBase
-from mock import MagicMock, patch
 from aliyunsdkcore.client import AcsClient
-from aliyunsdkcore.http.http_response import HttpResponse
 
 from aliyunsdkecs.request.v20140526.DescribeInstancesRequest import DescribeInstancesRequest
 from aliyunsdkecs.request.v20140526.CreateInstanceRequest import CreateInstanceRequest
-from aliyunsdkecs.request.v20140526.DescribeInstanceHistoryEventsRequest import \
-    DescribeInstanceHistoryEventsRequest
-from aliyunsdkecs.request.v20140526.DescribeDisksRequest import DescribeDisksRequest
 from aliyunsdkecs.request.v20140526.RunInstancesRequest import RunInstancesRequest
 from aliyunsdkram.request.v20150501.ListUsersRequest import ListUsersRequest
 
 from aliyunsdkcore.acs_exception.exceptions import ClientException
-from aliyunsdkcore.acs_exception.exceptions import ServerException
 
 
 class TimeoutTest(SDKTestBase):
 
     def setUp(self):
-        globals()['_test_patch_client_read_timeout'] = 11
-        globals()['_test_patch_client_connect_timeout'] = 12
+        super().setUp()
+        globals()['_test_patch_client_read_timeout'] = None
+        globals()['_test_patch_client_connect_timeout'] = None
 
-    def _patch_client(self, client):
-
+    @staticmethod
+    def _patch_client(client):
         original_make_http_response = client._make_http_response
 
         def _make_http_response(endpoint, request, read_timeout, connect_timeout,
                                 specific_signer=None):
-            global _test_patch_client_read_timeout, _test_patch_client_connect_timeout
+            global _test_patch_client_read_timeout
             _test_patch_client_read_timeout = read_timeout
+            global _test_patch_client_connect_timeout
             _test_patch_client_connect_timeout = connect_timeout
-            read_timeout = 0.01
-            connect_timeout = 0.01
             return original_make_http_response(endpoint, request, read_timeout, connect_timeout,
-                                               specific_signer=None)
+                                               specific_signer=specific_signer)
 
         client._make_http_response = _make_http_response
 
     def _test_timeout(self, client, request, expected_read_timeout, expected_connect_timeout):
         request.set_endpoint("somewhere.you.will.never.get")
-        global _test_patch_client_read_timeout, _test_patch_client_connect_timeout
-        _test_patch_client_read_timeout = 0
-        _test_oatch_client_connect_timeout = 0
         with self.assertRaises(ClientException):
             client.do_action_with_exception(request)
         self.assertEqual(expected_read_timeout, _test_patch_client_read_timeout)
