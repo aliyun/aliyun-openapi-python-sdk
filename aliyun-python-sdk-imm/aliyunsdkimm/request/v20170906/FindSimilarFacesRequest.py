@@ -29,6 +29,12 @@ class FindSimilarFacesRequest(RpcRequest):
 	def set_ImageUri(self,ImageUri):
 		self.add_query_param('ImageUri',ImageUri)
 
+	def get_MinSimilarity(self):
+		return self.get_query_params().get('MinSimilarity')
+
+	def set_MinSimilarity(self,MinSimilarity):
+		self.add_query_param('MinSimilarity',MinSimilarity)
+
 	def get_Limit(self):
 		return self.get_query_params().get('Limit')
 
