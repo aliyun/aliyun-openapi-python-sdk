@@ -71,6 +71,12 @@ class FindImagesRequest(RpcRequest):
 	def set_OCRContentsMatch(self,OCRContentsMatch):
 		self.add_query_param('OCRContentsMatch',OCRContentsMatch)
 
+	def get_Limit(self):
+		return self.get_query_params().get('Limit')
+
+	def set_Limit(self,Limit):
+		self.add_query_param('Limit',Limit)
+
 	def get_RemarksDPrefix(self):
 		return self.get_query_params().get('RemarksDPrefix')
 
@@ -100,6 +106,12 @@ class FindImagesRequest(RpcRequest):
 
 	def set_RemarksAPrefix(self,RemarksAPrefix):
 		self.add_query_param('RemarksAPrefix',RemarksAPrefix)
+
+	def get_GroupId(self):
+		return self.get_query_params().get('GroupId')
+
+	def set_GroupId(self,GroupId):
+		self.add_query_param('GroupId',GroupId)
 
 	def get_OrderBy(self):
 		return self.get_query_params().get('OrderBy')
@@ -149,8 +161,8 @@ class FindImagesRequest(RpcRequest):
 	def set_SetId(self,SetId):
 		self.add_query_param('SetId',SetId)
 
-	def get_UpdateTimeRange(self):
-		return self.get_query_params().get('UpdateTimeRange')
+	def get_ModifyTimeRange(self):
+		return self.get_query_params().get('ModifyTimeRange')
 
-	def set_UpdateTimeRange(self,UpdateTimeRange):
-		self.add_query_param('UpdateTimeRange',UpdateTimeRange)
+	def set_ModifyTimeRange(self,ModifyTimeRange):
+		self.add_query_param('ModifyTimeRange',ModifyTimeRange)
