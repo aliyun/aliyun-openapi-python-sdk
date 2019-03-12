@@ -80,7 +80,7 @@ You can install the Alibaba Cloud Python SDK using the following two methods. Re
 
 	- `access-key-id` is the Accesskey ID for your account.
 	- `access-key-secret` is the AccessKey secret for your account.
-	- `region-id` is the ID of the region where the service is called. For a list of region IDs, see [Regions and zones](~~40654~~).
+	- `region-id` is the ID of the region where the service is called. For a list of region IDs, see [Regions and zones](https://www.alibabacloud.com/help/doc-detail/40654.html).
 
 	> **Note:** The sequence of these parameters cannot be changed.
 
