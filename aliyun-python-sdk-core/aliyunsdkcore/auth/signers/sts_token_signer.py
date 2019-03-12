@@ -27,7 +27,7 @@ logger = logging.getLogger(__name__)
 
 
 class StsTokenSigner(Signer):
-    def __init__(self, sts_credential):
+    def __init__(self, sts_credential, region_id=None, do_action_api=None, debug=None):
         self._credential = sts_credential
 
     def sign(self, region_id, request):
