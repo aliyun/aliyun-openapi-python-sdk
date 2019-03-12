@@ -4,7 +4,7 @@ from tests import unittest
 
 from mock import MagicMock, patch, Mock
 
-from aliyunsdkcore.auth.credentials import RamRoleArnCredential
+from aliyunsdkcore.credentials.credentials import RamRoleArnCredential
 from aliyunsdkcore.auth.signers.ram_role_arn_signer import RamRoleArnSigner
 from aliyunsdkcore.request import RpcRequest, RoaRequest
 from aliyunsdkcore.acs_exception.exceptions import ServerException
@@ -23,7 +23,7 @@ class TestRamRoleArnSigner(unittest.TestCase):
     def test_ecs_ram_role_signer(self):
         credential = RamRoleArnCredential(
             "sts_access_key_id", "sts_access_key_secret", "role_arn", "session_role_name")
-        signer = RamRoleArnSigner(credential, self.do_action_200)
+        signer = RamRoleArnSigner(credential, None, self.do_action_200)
         self.assertEqual("session_role_name",
                          signer._credential.session_role_name)
         credential = RamRoleArnCredential(
@@ -50,7 +50,7 @@ class TestRamRoleArnSigner(unittest.TestCase):
             "x-acs-security-token"), 'security_token')
 
         request = RpcRequest("product", "version", "action_name")
-        signer3 = RamRoleArnSigner(credential, self.do_action_400)
+        signer3 = RamRoleArnSigner(credential, None, self.do_action_400)
         with self.assertRaises(ServerException) as ex:
             signer3.sign('cn-hangzhou', request)
         self.assertEqual(

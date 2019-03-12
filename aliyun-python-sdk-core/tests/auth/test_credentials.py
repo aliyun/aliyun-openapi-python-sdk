@@ -2,9 +2,9 @@
 
 from tests import unittest
 
-from aliyunsdkcore.auth.credentials import AccessKeyCredential, StsTokenCredential,\
+from aliyunsdkcore.credentials.credentials import AccessKeyCredential, StsTokenCredential,\
     RamRoleArnCredential
-from aliyunsdkcore.auth.credentials import EcsRamRoleCredential, RsaKeyPairCredential
+from aliyunsdkcore.credentials.credentials import EcsRamRoleCredential, RsaKeyPairCredential
 
 
 class TestCredentials(unittest.TestCase):

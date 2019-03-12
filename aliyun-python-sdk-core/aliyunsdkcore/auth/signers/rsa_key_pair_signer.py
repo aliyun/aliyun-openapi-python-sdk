@@ -18,7 +18,7 @@ class RsaKeyPairSigner(Signer):
     _MIN_SESSION_PERIOD = 900
     _MAX_SESSION_PERIOD = 3600
 
-    def __init__(self, credential, region_id, debug=False):
+    def __init__(self, credential, region_id=None, do_action_api=None, debug=None):
         if credential.session_period < self._MIN_SESSION_PERIOD or \
            credential.session_period > self._MAX_SESSION_PERIOD:
             raise exceptions.ClientException(

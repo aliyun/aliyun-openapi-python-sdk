@@ -27,8 +27,8 @@ from aliyunsdkcore.auth.signers.signer import Signer
 from aliyunsdkcore.auth.signers.access_key_signer import AccessKeySigner
 from aliyunsdkcore.acs_exception import error_code
 from aliyunsdkcore.acs_exception import exceptions
-from aliyunsdkcore.auth.credentials import RamRoleArnCredential
-from aliyunsdkcore.auth.credentials import AccessKeyCredential
+from aliyunsdkcore.credentials.credentials import RamRoleArnCredential
+from aliyunsdkcore.credentials.credentials import AccessKeyCredential
 from aliyunsdkcore.request import CommonRequest
 from aliyunsdkcore.compat import ensure_string
 
@@ -41,7 +41,7 @@ class RamRoleArnSigner(Signer):
     _RETRY_DELAY_FAST = 3
     _PRIORITY = 1
 
-    def __init__(self, credential, do_action_api):
+    def __init__(self, credential, region_id=None, do_action_api=None, debug=None):
         if isinstance(credential, RamRoleArnCredential):
             self._credential = credential
             self._doAction = do_action_api

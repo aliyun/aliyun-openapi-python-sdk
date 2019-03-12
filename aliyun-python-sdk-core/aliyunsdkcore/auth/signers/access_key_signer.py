@@ -26,7 +26,7 @@ logger = logging.getLogger(__name__)
 
 
 class AccessKeySigner(Signer):
-    def __init__(self, access_key_credential):
+    def __init__(self, access_key_credential, region_id=None, do_action_api=None, debug=None):
         self._credential = access_key_credential
 
     def sign(self, region_id, request):
