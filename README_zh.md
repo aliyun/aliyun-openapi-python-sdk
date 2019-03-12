@@ -95,3 +95,21 @@ print response
 < x-acs-request-id : 670F3D09-F8E7-4144-83C3-B56C35DA35ED
 < Server : Jetty(7.2.2.v20101205)
 ```
+
+## 超时机制
+
+请求设置的超时优先级高于客户端设置的超时，配置文件优先级次之。当您未设置任何超时时，则默认读超时为10秒，连接超时为5秒。
+
+ ```python
+# 设置请求超时（仅对当前请求有效）
+request = ListUsersRequest()
+request.set_read_timeout(5)  # 设置请求读超时为5秒
+request.set_connect_timeout(1)  # 设置请求连接超时为1秒
+request.get_read_timeout()  # 获取请求读超时
+request.get_connect_timeout()  # 获取请求连接超时
+
+# 设置客户端超时（对所有通过该客户端发送的请求生效）
+# 设置客户端连接超时为2秒，读超时为5秒
+client = AcsClient('access_key_id', 'access_key_secret', connect_timeout=2, timeout=5)
+ ```
+ 

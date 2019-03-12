@@ -158,3 +158,21 @@ The following example shows what the `HTTP DEBUG` do, which will help you debug 
 < x-acs-request-id : 670F3D09-F8E7-4144-83C3-B56C35DA35ED
 < Server : Jetty(7.2.2.v20101205)
 ```
+
+## Timeout
+
+Request Timeout has a higher priority than client Timeout. And then the configuration timeout.
+If you don't set any timeout, the default read_timeout is 10 second, and the default connect_timeout is 5 second.
+
+ ```python
+# Set request Timeout(Only the request is effected.)
+request = ListUsersRequest()
+request.set_read_timeout(5)  # set request read_timeout 5s
+request.set_connect_timeout(1)  # set request connect_timeout 1s
+request.get_read_timeout()  # get request read_timeout
+request.get_connect_timeout()  # get request connect_timeout
+
+# Set client Timeout(For all requests which is sent by the client.)
+# set client read_timeout 5s,set client connect_timeout 2s
+client = AcsClient('access_key_id', 'access_key_secret', connect_timeout=2, timeout=5)
+ ```
