@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class DeleteTopicRouteTableRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'DeleteTopicRouteTable')
+		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'DeleteTopicRouteTable','iot')
 
 	def get_DstTopics(self):
 		return self.get_query_params().get('DstTopics')
@@ -30,6 +30,12 @@ class DeleteTopicRouteTableRequest(RpcRequest):
 		for i in range(len(DstTopics)):	
 			if DstTopics[i] is not None:
 				self.add_query_param('DstTopic.' + str(i + 1) , DstTopics[i]);
+
+	def get_IotInstanceId(self):
+		return self.get_query_params().get('IotInstanceId')
+
+	def set_IotInstanceId(self,IotInstanceId):
+		self.add_query_param('IotInstanceId',IotInstanceId)
 
 	def get_SrcTopic(self):
 		return self.get_query_params().get('SrcTopic')

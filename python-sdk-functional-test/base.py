@@ -16,6 +16,9 @@ import os.path
 import json
 import sys
 import os
+import threading
+import logging
+import time
 
 import sys
 from aliyunsdkcore.client import AcsClient
@@ -39,6 +42,14 @@ if sys.version_info[:2] == (2, 6):
     from unittest2 import TestCase
 else:
     from unittest import TestCase
+
+# the version under py3 use the different package
+if sys.version_info[0] == 3:
+    from http.server import SimpleHTTPRequestHandler
+    from http.server import HTTPServer
+else:
+    from SimpleHTTPServer import SimpleHTTPRequestHandler
+    from BaseHTTPServer import HTTPServer
 
 
 def request_helper(client, request, **params):
@@ -126,7 +137,9 @@ class SDKTestBase(TestCase):
     def init_client(self, region_id=None):
         if not region_id:
             region_id = self.region_id
-        return AcsClient(self.access_key_id, self.access_key_secret, region_id, timeout=120)
+        client = AcsClient(self.access_key_id, self.access_key_secret, region_id, timeout=120)
+        client.set_stream_logger()
+        return client
 
     @staticmethod
     def get_dict_response(string):
@@ -190,9 +203,10 @@ class SDKTestBase(TestCase):
         self._create_default_ram_user()
         self._attach_default_policy()
         self._create_access_key()
-        return AcsClient(self.ram_user_access_key_id,
-                         self.ram_user_access_key_secret,
-                         self.region_id, timeout=120)
+        client = AcsClient(self.ram_user_access_key_id,
+                           self.ram_user_access_key_secret,
+                           self.region_id, timeout=120)
+        return client
 
     def _create_default_ram_role(self):
         if self.ram_role_arn:
@@ -226,10 +240,52 @@ class SDKTestBase(TestCase):
                                   RoleName=self.default_ram_role_name,
                                   AssumeRolePolicyDocument=policy_doc)
         self.ram_role_arn = find_in_response(response, keys=['Role', 'Arn'])
+        # FIXME We have wait for 5 seconds after CreateRole before
+        # we can AssumeRole later
+        time.sleep(5)
 
 
 def disabled(func):
     def _decorator(func):
         pass
     return _decorator
+
+
+class MyServer:
+    _headers = {}
+    _url = ''
+
+    def __enter__(self):
+        class ServerHandler(SimpleHTTPRequestHandler):
+
+            def do_GET(_self):
+                _self.protocol_version = 'HTTP/1.1'
+                self._headers = _self.headers
+                self._url = _self.path
+                _self.send_response(200)
+                _self.send_header("Content-type", "application/json")
+                _self.end_headers()
+                _self.wfile.write(b"{}")
+
+        self.server = HTTPServer(("", 51352), ServerHandler)
+
+        def thread_func():
+            self.server.serve_forever()
+
+        thread = threading.Thread(target=thread_func)
+        thread.start()
+        return self
+
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        if self.server:
+            self.server.shutdown()
+            self.server = None
+
+    @property
+    def headers(self):
+        return self._headers
+
+    @property
+    def url(self):
+        return self._url
 

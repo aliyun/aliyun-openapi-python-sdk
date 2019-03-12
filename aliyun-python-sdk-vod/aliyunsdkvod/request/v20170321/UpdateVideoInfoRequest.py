@@ -23,12 +23,6 @@ class UpdateVideoInfoRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'vod', '2017-03-21', 'UpdateVideoInfo','vod')
 
-	def get_CoverURL(self):
-		return self.get_query_params().get('CoverURL')
-
-	def set_CoverURL(self,CoverURL):
-		self.add_query_param('CoverURL',CoverURL)
-
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
@@ -40,12 +34,6 @@ class UpdateVideoInfoRequest(RpcRequest):
 
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_CateId(self):
-		return self.get_query_params().get('CateId')
-
-	def set_CateId(self,CateId):
-		self.add_query_param('CateId',CateId)
 
 	def get_Description(self):
 		return self.get_query_params().get('Description')
@@ -76,3 +64,33 @@ class UpdateVideoInfoRequest(RpcRequest):
 
 	def set_Tags(self,Tags):
 		self.add_query_param('Tags',Tags)
+
+	def get_CoverURL(self):
+		return self.get_query_params().get('CoverURL')
+
+	def set_CoverURL(self,CoverURL):
+		self.add_query_param('CoverURL',CoverURL)
+
+	def get_DownloadSwitch(self):
+		return self.get_query_params().get('DownloadSwitch')
+
+	def set_DownloadSwitch(self,DownloadSwitch):
+		self.add_query_param('DownloadSwitch',DownloadSwitch)
+
+	def get_CateId(self):
+		return self.get_query_params().get('CateId')
+
+	def set_CateId(self,CateId):
+		self.add_query_param('CateId',CateId)
+
+	def get_CustomMediaInfo(self):
+		return self.get_query_params().get('CustomMediaInfo')
+
+	def set_CustomMediaInfo(self,CustomMediaInfo):
+		self.add_query_param('CustomMediaInfo',CustomMediaInfo)
+
+	def get_Status(self):
+		return self.get_query_params().get('Status')
+
+	def set_Status(self,Status):
+		self.add_query_param('Status',Status)

@@ -23,11 +23,11 @@ class DescribeDomainMax95BpsDataRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'DescribeDomainMax95BpsData')
 
-	def get_SecurityToken(self):
-		return self.get_query_params().get('SecurityToken')
+	def get_StartTime(self):
+		return self.get_query_params().get('StartTime')
 
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)
+	def set_StartTime(self,StartTime):
+		self.add_query_param('StartTime',StartTime)
 
 	def get_DomainName(self):
 		return self.get_query_params().get('DomainName')
@@ -40,12 +40,6 @@ class DescribeDomainMax95BpsDataRequest(RpcRequest):
 
 	def set_EndTime(self,EndTime):
 		self.add_query_param('EndTime',EndTime)
-
-	def get_StartTime(self):
-		return self.get_query_params().get('StartTime')
-
-	def set_StartTime(self,StartTime):
-		self.add_query_param('StartTime',StartTime)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')

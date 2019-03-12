@@ -78,15 +78,15 @@ class TestRoaSignatureComposer(unittest.TestCase):
     @patch("aliyunsdkcore.utils.parameter_helper.get_rfc_2616_date")
     def test_get_signature(self, mock_get_rfc_2616_date):
         mock_get_rfc_2616_date.return_value = "2018-12-04T03:55:31Z"
-        sign = get_signature({}, 'access_key_id',
-                             'access_key_secret', 'json', {}, '/', {}, 'GET')
+        sign, _ = get_signature({}, 'access_key_id',
+                                'access_key_secret', 'json', {}, '/', {}, 'GET')
         mock_get_rfc_2616_date.assert_called_once_with()
         self.assertEqual(sign, 'HKCpm41tJg6b3EYdtGMbNuwALZU=')
 
     @patch("aliyunsdkcore.utils.parameter_helper.get_rfc_2616_date")
     def test_get_signature_headers(self, mock_get_rfc_2616_date):
         mock_get_rfc_2616_date.return_value = "2018-12-04T03:55:31Z"
-        headers = get_signature_headers(
+        headers, _ = get_signature_headers(
             {}, 'access_key_id', 'access_key_secret', 'json', {}, '/', {}, 'GET')
         mock_get_rfc_2616_date.assert_called_once_with()
         self.assertEqual(headers.get('Authorization'),

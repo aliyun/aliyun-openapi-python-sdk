@@ -1,0 +1,49 @@
+# Licensed to the Apache Software Foundation (ASF) under one
+# or more contributor license agreements.  See the NOTICE file
+# distributed with this work for additional information
+# regarding copyright ownership.  The ASF licenses this file
+# to you under the Apache License, Version 2.0 (the
+# "License"); you may not use this file except in compliance
+# with the License.  You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+#
+#
+# Unless required by applicable law or agreed to in writing,
+# software distributed under the License is distributed on an
+# "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+# KIND, either express or implied.  See the License for the
+# specific language governing permissions and limitations
+# under the License.
+
+from aliyunsdkcore.request import RpcRequest
+class CountLabNodesRequest(RpcRequest):
+
+	def __init__(self):
+		RpcRequest.__init__(self, 'LinkWAN', '2018-12-30', 'CountLabNodes','linkwan')
+		self.set_protocol_type('https');
+
+	def get_FuzzyName(self):
+		return self.get_body_params().get('FuzzyName')
+
+	def set_FuzzyName(self,FuzzyName):
+		self.add_body_params('FuzzyName', FuzzyName)
+
+	def get_ActivationState(self):
+		return self.get_body_params().get('ActivationState')
+
+	def set_ActivationState(self,ActivationState):
+		self.add_body_params('ActivationState', ActivationState)
+
+	def get_FreqBandPlanGroupId(self):
+		return self.get_body_params().get('FreqBandPlanGroupId')
+
+	def set_FreqBandPlanGroupId(self,FreqBandPlanGroupId):
+		self.add_body_params('FreqBandPlanGroupId', FreqBandPlanGroupId)
+
+	def get_FuzzyDevEui(self):
+		return self.get_body_params().get('FuzzyDevEui')
+
+	def set_FuzzyDevEui(self,FuzzyDevEui):
+		self.add_body_params('FuzzyDevEui', FuzzyDevEui)

@@ -23,6 +23,12 @@ class StartInstanceRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'StartInstance','ecs')
 
+	def get_SourceRegionId(self):
+		return self.get_query_params().get('SourceRegionId')
+
+	def set_SourceRegionId(self,SourceRegionId):
+		self.add_query_param('SourceRegionId',SourceRegionId)
+
 	def get_InitLocalDisk(self):
 		return self.get_query_params().get('InitLocalDisk')
 
@@ -40,6 +46,12 @@ class StartInstanceRequest(RpcRequest):
 
 	def set_InstanceId(self,InstanceId):
 		self.add_query_param('InstanceId',InstanceId)
+
+	def get_DryRun(self):
+		return self.get_query_params().get('DryRun')
+
+	def set_DryRun(self,DryRun):
+		self.add_query_param('DryRun',DryRun)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')

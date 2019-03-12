@@ -31,6 +31,12 @@ class QuerySyncPicScheduleRequest(RpcRequest):
 	def set_IotId(self,IotId):
 		self.add_body_params('IotId', IotId)
 
+	def get_GroupId(self):
+		return self.get_body_params().get('GroupId')
+
+	def set_GroupId(self,GroupId):
+		self.add_body_params('GroupId', GroupId)
+
 	def get_DeviceName(self):
 		return self.get_body_params().get('DeviceName')
 

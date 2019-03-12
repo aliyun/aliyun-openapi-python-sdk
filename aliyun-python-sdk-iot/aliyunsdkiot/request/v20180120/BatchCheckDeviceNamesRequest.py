@@ -21,7 +21,13 @@ from aliyunsdkcore.request import RpcRequest
 class BatchCheckDeviceNamesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'BatchCheckDeviceNames')
+		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'BatchCheckDeviceNames','iot')
+
+	def get_IotInstanceId(self):
+		return self.get_query_params().get('IotInstanceId')
+
+	def set_IotInstanceId(self,IotInstanceId):
+		self.add_query_param('IotInstanceId',IotInstanceId)
 
 	def get_DeviceNames(self):
 		return self.get_query_params().get('DeviceNames')

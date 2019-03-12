@@ -9,7 +9,7 @@ from aliyunsdkcore.request import CommonRequest
 from aliyunsdksts.request.v20150401.AssumeRoleRequest import AssumeRoleRequest
 
 
-from base import SDKTestBase
+from base import SDKTestBase, MyServer
 
 
 class CoreLevelTest(SDKTestBase):
@@ -105,4 +105,16 @@ class CoreLevelTest(SDKTestBase):
         response = self.client.do_action_with_exception(request)
         response = self.get_dict_response(response)
         self.assertTrue(response.get("RequestId"))
+
+    def test_signer_with_unicode_specific_params_2(self):
+        from aliyunsdkcdn.request.v20180510.DescribeCdnCertificateDetailRequest import \
+            DescribeCdnCertificateDetailRequest
+        client = AcsClient(self.access_key_id, self.access_key_secret, self.region_id,
+                           timeout=120, port=51352)
+        request = DescribeCdnCertificateDetailRequest()
+        request.set_CertName("sdk&-杭&&&州-test")
+        request.set_endpoint("localhost")
+        with MyServer() as s:
+            client.do_action_with_exception(request)
+            self.assertTrue(s.url.find("CertName="))
 

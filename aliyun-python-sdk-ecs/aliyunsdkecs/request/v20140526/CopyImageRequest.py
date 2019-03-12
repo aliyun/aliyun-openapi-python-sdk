@@ -35,12 +35,6 @@ class CopyImageRequest(RpcRequest):
 	def set_ImageId(self,ImageId):
 		self.add_query_param('ImageId',ImageId)
 
-	def get_Encrypted(self):
-		return self.get_query_params().get('Encrypted')
-
-	def set_Encrypted(self,Encrypted):
-		self.add_query_param('Encrypted',Encrypted)
-
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -65,6 +59,18 @@ class CopyImageRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
+
+	def get_Encrypted(self):
+		return self.get_query_params().get('Encrypted')
+
+	def set_Encrypted(self,Encrypted):
+		self.add_query_param('Encrypted',Encrypted)
+
 	def get_Tags(self):
 		return self.get_query_params().get('Tags')
 
@@ -75,12 +81,6 @@ class CopyImageRequest(RpcRequest):
 			if Tags[i].get('Key') is not None:
 				self.add_query_param('Tag.' + str(i + 1) + '.Key' , Tags[i].get('Key'))
 
-
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
 
 	def get_DestinationDescription(self):
 		return self.get_query_params().get('DestinationDescription')

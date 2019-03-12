@@ -23,32 +23,14 @@ class DescribeTrailsRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Actiontrail', '2017-12-04', 'DescribeTrails','actiontrail')
 
-	def get_Help(self):
-		return self.get_query_params().get('Help')
-
-	def set_Help(self,Help):
-		self.add_query_param('Help',Help)
-
 	def get_NameList(self):
 		return self.get_query_params().get('NameList')
 
 	def set_NameList(self,NameList):
 		self.add_query_param('NameList',NameList)
 
-	def get_Format(self):
-		return self.get_query_params().get('Format')
+	def get_IncludeShadowTrails(self):
+		return self.get_query_params().get('IncludeShadowTrails')
 
-	def set_Format(self,Format):
-		self.add_query_param('Format',Format)
-
-	def get_Type(self):
-		return self.get_query_params().get('Type')
-
-	def set_Type(self,Type):
-		self.add_query_param('Type',Type)
-
-	def get_Version(self):
-		return self.get_query_params().get('Version')
-
-	def set_Version(self,Version):
-		self.add_query_param('Version',Version)
+	def set_IncludeShadowTrails(self,IncludeShadowTrails):
+		self.add_query_param('IncludeShadowTrails',IncludeShadowTrails)

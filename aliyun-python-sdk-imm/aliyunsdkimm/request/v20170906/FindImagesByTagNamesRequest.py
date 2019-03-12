@@ -29,6 +29,12 @@ class FindImagesByTagNamesRequest(RpcRequest):
 	def set_Marker(self,Marker):
 		self.add_query_param('Marker',Marker)
 
+	def get_Limit(self):
+		return self.get_query_params().get('Limit')
+
+	def set_Limit(self,Limit):
+		self.add_query_param('Limit',Limit)
+
 	def get_Project(self):
 		return self.get_query_params().get('Project')
 

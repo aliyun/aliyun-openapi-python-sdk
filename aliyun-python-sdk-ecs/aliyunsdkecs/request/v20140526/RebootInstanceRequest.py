@@ -35,6 +35,12 @@ class RebootInstanceRequest(RpcRequest):
 	def set_InstanceId(self,InstanceId):
 		self.add_query_param('InstanceId',InstanceId)
 
+	def get_DryRun(self):
+		return self.get_query_params().get('DryRun')
+
+	def set_DryRun(self,DryRun):
+		self.add_query_param('DryRun',DryRun)
+
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 

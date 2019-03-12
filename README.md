@@ -123,3 +123,38 @@ request.set_PageSize(10)
 response = client.do_action_with_exception(request)
 print response
 ```
+
+## HTTP DEBUG
+To use the function `HTTP DEBUG`, you must set `DEBUG` in your environment variable, the corresponding value
+may be `sdk` or `SDK`.
+
+The following example shows what the `HTTP DEBUG` do, which will help you debug your codes.
+
+```
+> GET /databases?RegionId=cn-hangzhou HTTP/1.1
+> Host : ads.cn-hangzhou.aliyuncs.com
+> User-Agent : AlibabaCloud (Windows 10;AMD64) Python/3.7.1 Core/2.13.1 python-requests/2.18.1
+> accept-encoding : *
+> Accept : application/json
+> Connection : keep-alive
+> x-sdk-invoke-type : normal
+> x-acs-version : 2019-01-22
+> x-acs-region-id : cn-hangzhou
+> Date : Thu, 21 Feb 2019 08:00:50 GMT
+> x-acs-signature-method : HMAC-SHA1
+> x-acs-signature-version : 1.0
+> Authorization : acs ...
+> x-sdk-client : python/2.0.0
+
+< HTTP/1.1 503 SERVICE_UNAVAILABLE
+< Date : Thu, 21 Feb 2019 08:00:50 GMT
+< Content-Type : application/json; charset=UTF-8
+< Content-Length : 297
+< Connection : keep-alive
+< Access-Control-Allow-Origin : *
+< Access-Control-Allow-Methods : POST, GET, OPTIONS
+< Access-Control-Allow-Headers : X-Requested-With, X-Sequence, _aop_secret, _aop_signature
+< Access-Control-Max-Age : 172800
+< x-acs-request-id : 670F3D09-F8E7-4144-83C3-B56C35DA35ED
+< Server : Jetty(7.2.2.v20101205)
+```

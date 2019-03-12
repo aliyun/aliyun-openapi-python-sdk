@@ -21,10 +21,16 @@ from aliyunsdkcore.request import RpcRequest
 class DeleteProductTopicRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'DeleteProductTopic')
+		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'DeleteProductTopic','iot')
 
 	def get_TopicId(self):
 		return self.get_query_params().get('TopicId')
 
 	def set_TopicId(self,TopicId):
 		self.add_query_param('TopicId',TopicId)
+
+	def get_IotInstanceId(self):
+		return self.get_query_params().get('IotInstanceId')
+
+	def set_IotInstanceId(self,IotInstanceId):
+		self.add_query_param('IotInstanceId',IotInstanceId)

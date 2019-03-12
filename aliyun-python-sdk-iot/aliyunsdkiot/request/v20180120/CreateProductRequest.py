@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class CreateProductRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'CreateProduct')
+		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'CreateProduct','iot')
 
 	def get_DataFormat(self):
 		return self.get_query_params().get('DataFormat')
@@ -40,6 +40,12 @@ class CreateProductRequest(RpcRequest):
 
 	def set_Id2(self,Id2):
 		self.add_query_param('Id2',Id2)
+
+	def get_IotInstanceId(self):
+		return self.get_query_params().get('IotInstanceId')
+
+	def set_IotInstanceId(self,IotInstanceId):
+		self.add_query_param('IotInstanceId',IotInstanceId)
 
 	def get_NetType(self):
 		return self.get_query_params().get('NetType')
@@ -70,6 +76,12 @@ class CreateProductRequest(RpcRequest):
 
 	def set_AliyunCommodityCode(self,AliyunCommodityCode):
 		self.add_query_param('AliyunCommodityCode',AliyunCommodityCode)
+
+	def get_JoinPermissionId(self):
+		return self.get_query_params().get('JoinPermissionId')
+
+	def set_JoinPermissionId(self,JoinPermissionId):
+		self.add_query_param('JoinPermissionId',JoinPermissionId)
 
 	def get_CategoryId(self):
 		return self.get_query_params().get('CategoryId')

@@ -28,15 +28,7 @@ class TestLocalConfigRegionalEndpointResolver(unittest.TestCase):
         self.assertEqual(resolver._get_normalized_product_code(
             "cloudapi"), "apigateway")
         self.assertEqual(resolver._get_normalized_product_code("ecs"), "ecs")
-        self.assertListEqual(resolver.get_valid_region_ids_by_product('ecs'), ['ap-northeast-1',
-                                                                               'ap-south-1',
-                                                                               'ap-southeast-2',
-                                                                               'ap-southeast-3',
-                                                                               'ap-southeast-5',
-                                                                               'cn-huhehaote',
-                                                                               'cn-zhangjiakou',
-                                                                               'eu-central-1',
-                                                                               'me-east-1'])
+        self.assertEqual(len(resolver.get_valid_region_ids_by_product('ecs')), 19)
         self.assertIsNone(resolver.get_valid_region_ids_by_product('xxx'))
         self.assertTrue(resolver.is_product_code_valid(request))
 

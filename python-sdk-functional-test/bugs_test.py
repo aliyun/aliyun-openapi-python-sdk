@@ -8,6 +8,7 @@ from aliyunsdkcore.acs_exception.exceptions import ServerException
 from aliyunsdkcore.http import method_type
 from aliyunsdkcore.profile import region_provider
 from aliyunsdkcore.request import CommonRequest, RpcRequest
+from aliyunsdkcore.client import AcsClient
 from base import SDKTestBase
 
 
@@ -49,9 +50,12 @@ class BugsTest(SDKTestBase):
             request.set_content(content.encode('utf-8'))
         request.set_version('2018-04-08')
         request.set_action_name("None")
+
+        # We have 2 possible situations here: NLP purchased or NLP purchased
+        # The test case should be passed in both situations.
         try:
             response = self.client.do_action_with_exception(request)
-            assert False
+            self.assertTrue(response)
         except ServerException as e:
             self.assertEqual("InvalidApi.NotPurchase", e.error_code)
             self.assertEqual("Specified api is not purchase", e.get_error_msg())
@@ -67,3 +71,41 @@ class BugsTest(SDKTestBase):
             assert False
         except (ValueError, TypeError, AttributeError) as e:
             self.assertEqual("'list' object has no attribute 'get'", e.args[0])
+
+    def test_bug_with_nlp(self):
+        # accept-encoding
+        from aliyunsdknls_cloud_meta.request.v20180518.CreateTokenRequest import CreateTokenRequest
+        request = CreateTokenRequest()
+        request.set_endpoint('nls-meta.cn-shanghai.aliyuncs.com')
+        response = self.client.do_action_with_exception(request)
+        response = self.get_dict_response(response)
+        self.assertTrue(response.get("RequestId"))
+
+    def test_bug_with_body_params(self):
+        # body_params
+        request = CommonRequest()
+        request.set_domain("filetrans.cn-shanghai.aliyuncs.com")
+        request.set_version("2018-08-17")
+        request.set_product("nls-filetrans")
+        request.set_action_name("SubmitTask")
+        request.set_method('POST')
+        app_key = 'qVwEQ6wIZ9Pxb36t'
+        file_link = 'https://aliyun-nls.oss-cn-hangzhou.aliyuncs.com/asr/fileASR/' \
+                    'examples/nls-sample-16k.wav'
+        task = {"app_key": app_key, "file_link": file_link}
+        task = json.dumps(task)
+        request.add_body_params("Task", task)
+        response = self.client.do_action_with_exception(request)
+        response = self.get_dict_response(response)
+        self.assertTrue(response.get("RequestId"))
+
+    def test_bug_with_not_match_sign(self):
+        from aliyunsdkcdn.request.v20180510.PushObjectCacheRequest import PushObjectCacheRequest
+        client = AcsClient(self.access_key_id, 'BadAccessKeySecret', 'cn-hangzhou')
+        request = PushObjectCacheRequest()
+        request.add_query_param('ObjectPath', 'http://lftest005.sbcicp1.net/C环境下SDK部署方式.txt')
+        try:
+            response = client.do_action_with_exception(request)
+            assert False
+        except ServerException as e:
+            self.assertEqual("InvalidAccessKeySecret", e.error_code)

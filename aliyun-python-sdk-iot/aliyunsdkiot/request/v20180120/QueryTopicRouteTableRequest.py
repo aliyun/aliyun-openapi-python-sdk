@@ -21,7 +21,13 @@ from aliyunsdkcore.request import RpcRequest
 class QueryTopicRouteTableRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'QueryTopicRouteTable')
+		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'QueryTopicRouteTable','iot')
+
+	def get_IotInstanceId(self):
+		return self.get_query_params().get('IotInstanceId')
+
+	def set_IotInstanceId(self,IotInstanceId):
+		self.add_query_param('IotInstanceId',IotInstanceId)
 
 	def get_Topic(self):
 		return self.get_query_params().get('Topic')

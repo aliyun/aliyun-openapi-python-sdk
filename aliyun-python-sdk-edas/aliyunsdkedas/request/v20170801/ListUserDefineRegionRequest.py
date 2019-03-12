@@ -24,3 +24,9 @@ class ListUserDefineRegionRequest(RoaRequest):
 		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'ListUserDefineRegion')
 		self.set_uri_pattern('/pop/v5/user_region_defs')
 		self.set_method('POST')
+
+	def get_DebugEnable(self):
+		return self.get_query_params().get('DebugEnable')
+
+	def set_DebugEnable(self,DebugEnable):
+		self.add_query_param('DebugEnable',DebugEnable)

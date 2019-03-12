@@ -23,23 +23,23 @@ class CreateTrailRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Actiontrail', '2017-12-04', 'CreateTrail','actiontrail')
 
-	def get_Help(self):
-		return self.get_query_params().get('Help')
+	def get_SlsProjectArn(self):
+		return self.get_query_params().get('SlsProjectArn')
 
-	def set_Help(self,Help):
-		self.add_query_param('Help',Help)
+	def set_SlsProjectArn(self,SlsProjectArn):
+		self.add_query_param('SlsProjectArn',SlsProjectArn)
+
+	def get_SlsWriteRoleArn(self):
+		return self.get_query_params().get('SlsWriteRoleArn')
+
+	def set_SlsWriteRoleArn(self,SlsWriteRoleArn):
+		self.add_query_param('SlsWriteRoleArn',SlsWriteRoleArn)
 
 	def get_RoleName(self):
 		return self.get_query_params().get('RoleName')
 
 	def set_RoleName(self,RoleName):
 		self.add_query_param('RoleName',RoleName)
-
-	def get_Format(self):
-		return self.get_query_params().get('Format')
-
-	def set_Format(self,Format):
-		self.add_query_param('Format',Format)
 
 	def get_Name(self):
 		return self.get_query_params().get('Name')
@@ -59,14 +59,8 @@ class CreateTrailRequest(RpcRequest):
 	def set_OssKeyPrefix(self,OssKeyPrefix):
 		self.add_query_param('OssKeyPrefix',OssKeyPrefix)
 
-	def get_Type(self):
-		return self.get_query_params().get('Type')
+	def get_EventRW(self):
+		return self.get_query_params().get('EventRW')
 
-	def set_Type(self,Type):
-		self.add_query_param('Type',Type)
-
-	def get_Version(self):
-		return self.get_query_params().get('Version')
-
-	def set_Version(self,Version):
-		self.add_query_param('Version',Version)
+	def set_EventRW(self,EventRW):
+		self.add_query_param('EventRW',EventRW)

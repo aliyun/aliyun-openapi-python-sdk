@@ -35,6 +35,12 @@ class QueryInstanceBillRequest(RpcRequest):
 	def set_ProductCode(self,ProductCode):
 		self.add_query_param('ProductCode',ProductCode)
 
+	def get_IsHideZeroCharge(self):
+		return self.get_query_params().get('IsHideZeroCharge')
+
+	def set_IsHideZeroCharge(self,IsHideZeroCharge):
+		self.add_query_param('IsHideZeroCharge',IsHideZeroCharge)
+
 	def get_SubscriptionType(self):
 		return self.get_query_params().get('SubscriptionType')
 

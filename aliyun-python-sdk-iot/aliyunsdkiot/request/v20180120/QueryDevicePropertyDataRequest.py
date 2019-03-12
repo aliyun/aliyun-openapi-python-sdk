@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class QueryDevicePropertyDataRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'QueryDevicePropertyData')
+		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'QueryDevicePropertyData','iot')
 
 	def get_Asc(self):
 		return self.get_query_params().get('Asc')
@@ -40,6 +40,12 @@ class QueryDevicePropertyDataRequest(RpcRequest):
 
 	def set_IotId(self,IotId):
 		self.add_query_param('IotId',IotId)
+
+	def get_IotInstanceId(self):
+		return self.get_query_params().get('IotInstanceId')
+
+	def set_IotInstanceId(self,IotInstanceId):
+		self.add_query_param('IotInstanceId',IotInstanceId)
 
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
