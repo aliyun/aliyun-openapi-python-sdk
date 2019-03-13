@@ -85,7 +85,6 @@ class AcsClient:
             access_key_id=None,
             access_key_secret=None,
             profile_name=None,
-            credentials_provider_chain=None
     ):
         """
         constructor for AcsClient
