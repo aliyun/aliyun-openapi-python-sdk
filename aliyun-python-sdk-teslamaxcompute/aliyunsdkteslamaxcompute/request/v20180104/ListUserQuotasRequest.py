@@ -18,7 +18,7 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class QueryTopologyRequest(RpcRequest):
+class ListUserQuotasRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'TeslaMaxCompute', '2018-01-04', 'QueryTopology','teslamaxcompute')
+		RpcRequest.__init__(self, 'TeslaMaxCompute', '2018-01-04', 'ListUserQuotas','teslamaxcompute')

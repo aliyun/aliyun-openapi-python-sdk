@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class GetProjectInstanceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'TeslaMaxCompute', '2018-01-04', 'GetProjectInstance')
+		RpcRequest.__init__(self, 'TeslaMaxCompute', '2018-01-04', 'GetProjectInstance','teslamaxcompute')
 
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')

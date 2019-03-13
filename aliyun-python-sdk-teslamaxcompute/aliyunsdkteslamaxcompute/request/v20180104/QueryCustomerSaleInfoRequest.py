@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class QueryCustomerSaleInfoRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'TeslaMaxCompute', '2018-01-04', 'QueryCustomerSaleInfo')
+		RpcRequest.__init__(self, 'TeslaMaxCompute', '2018-01-04', 'QueryCustomerSaleInfo','teslamaxcompute')
 
 	def get_RegionName(self):
 		return self.get_query_params().get('RegionName')
