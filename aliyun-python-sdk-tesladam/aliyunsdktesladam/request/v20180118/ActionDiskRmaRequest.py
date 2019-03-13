@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class ActionDiskRmaRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'TeslaDam', '2018-01-18', 'ActionDiskRma')
+		RpcRequest.__init__(self, 'TeslaDam', '2018-01-18', 'ActionDiskRma','tesladam')
 
 	def get_DiskName(self):
 		return self.get_query_params().get('DiskName')
