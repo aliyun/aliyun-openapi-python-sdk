@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class DescribePhoneInfoRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'jarvis-public', '2018-06-21', 'DescribePhoneInfo')
+		RpcRequest.__init__(self, 'jarvis-public', '2018-06-21', 'DescribePhoneInfo','jarvis-public')
 
 	def get_SourceIp(self):
 		return self.get_query_params().get('SourceIp')
