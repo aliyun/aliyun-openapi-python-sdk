@@ -118,6 +118,12 @@ class CreateInstanceRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
+	def get_CapacityReservationPreference(self):
+		return self.get_query_params().get('CapacityReservationPreference')
+
+	def set_CapacityReservationPreference(self,CapacityReservationPreference):
+		self.add_query_param('CapacityReservationPreference',CapacityReservationPreference)
+
 	def get_VSwitchId(self):
 		return self.get_query_params().get('VSwitchId')
 
@@ -231,6 +237,12 @@ class CreateInstanceRequest(RpcRequest):
 
 	def set_SystemDiskCategory(self,SystemDiskCategory):
 		self.add_query_param('SystemDisk.Category',SystemDiskCategory)
+
+	def get_CapacityReservationId(self):
+		return self.get_query_params().get('CapacityReservationId')
+
+	def set_CapacityReservationId(self,CapacityReservationId):
+		self.add_query_param('CapacityReservationId',CapacityReservationId)
 
 	def get_UserData(self):
 		return self.get_query_params().get('UserData')
