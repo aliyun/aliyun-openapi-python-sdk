@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class ActionDiskMaskRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'TeslaDam', '2018-01-18', 'ActionDiskMask')
+		RpcRequest.__init__(self, 'TeslaDam', '2018-01-18', 'ActionDiskMask','tesladam')
 
 	def get_Op(self):
 		return self.get_query_params().get('Op')

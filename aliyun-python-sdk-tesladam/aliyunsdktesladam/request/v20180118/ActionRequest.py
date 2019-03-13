@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class ActionRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'TeslaDam', '2018-01-18', 'Action')
+		RpcRequest.__init__(self, 'TeslaDam', '2018-01-18', 'Action','tesladam')
 
 	def get_OrderId(self):
 		return self.get_query_params().get('OrderId')

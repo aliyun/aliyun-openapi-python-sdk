@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class ActionDiskCheckRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'TeslaDam', '2018-01-18', 'ActionDiskCheck')
+		RpcRequest.__init__(self, 'TeslaDam', '2018-01-18', 'ActionDiskCheck','tesladam')
 
 	def get_DiskMount(self):
 		return self.get_query_params().get('DiskMount')
