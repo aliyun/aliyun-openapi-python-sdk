@@ -41,11 +41,11 @@ class DescribeSnatTableEntriesRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
+	def get_SourceCIDR(self):
+		return self.get_query_params().get('SourceCIDR')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
+	def set_SourceCIDR(self,SourceCIDR):
+		self.add_query_param('SourceCIDR',SourceCIDR)
 
 	def get_SnatTableId(self):
 		return self.get_query_params().get('SnatTableId')
@@ -53,20 +53,44 @@ class DescribeSnatTableEntriesRequest(RpcRequest):
 	def set_SnatTableId(self,SnatTableId):
 		self.add_query_param('SnatTableId',SnatTableId)
 
-	def get_SnatEntryId(self):
-		return self.get_query_params().get('SnatEntryId')
-
-	def set_SnatEntryId(self,SnatEntryId):
-		self.add_query_param('SnatEntryId',SnatEntryId)
-
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
+	def get_SnatIp(self):
+		return self.get_query_params().get('SnatIp')
+
+	def set_SnatIp(self,SnatIp):
+		self.add_query_param('SnatIp',SnatIp)
+
 	def get_PageNumber(self):
 		return self.get_query_params().get('PageNumber')
 
 	def set_PageNumber(self,PageNumber):
 		self.add_query_param('PageNumber',PageNumber)
+
+	def get_SourceVSwitchId(self):
+		return self.get_query_params().get('SourceVSwitchId')
+
+	def set_SourceVSwitchId(self,SourceVSwitchId):
+		self.add_query_param('SourceVSwitchId',SourceVSwitchId)
+
+	def get_SnatEntryName(self):
+		return self.get_query_params().get('SnatEntryName')
+
+	def set_SnatEntryName(self,SnatEntryName):
+		self.add_query_param('SnatEntryName',SnatEntryName)
+
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
+
+	def get_SnatEntryId(self):
+		return self.get_query_params().get('SnatEntryId')
+
+	def set_SnatEntryId(self,SnatEntryId):
+		self.add_query_param('SnatEntryId',SnatEntryId)
