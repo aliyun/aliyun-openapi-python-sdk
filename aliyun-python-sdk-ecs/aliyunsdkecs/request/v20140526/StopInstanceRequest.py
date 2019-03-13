@@ -71,6 +71,12 @@ class StopInstanceRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
+	def get_Hibernate(self):
+		return self.get_query_params().get('Hibernate')
+
+	def set_Hibernate(self,Hibernate):
+		self.add_query_param('Hibernate',Hibernate)
+
 	def get_ForceStop(self):
 		return self.get_query_params().get('ForceStop')
 
