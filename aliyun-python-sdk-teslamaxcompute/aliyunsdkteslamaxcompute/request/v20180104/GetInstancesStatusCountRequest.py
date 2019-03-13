@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class GetInstancesStatusCountRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'TeslaMaxCompute', '2018-01-04', 'GetInstancesStatusCount')
+		RpcRequest.__init__(self, 'TeslaMaxCompute', '2018-01-04', 'GetInstancesStatusCount','teslamaxcompute')
 
 	def get_Cluster(self):
 		return self.get_query_params().get('Cluster')

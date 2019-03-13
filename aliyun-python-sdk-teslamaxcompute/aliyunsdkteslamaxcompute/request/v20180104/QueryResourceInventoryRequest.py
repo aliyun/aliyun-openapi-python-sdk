@@ -21,4 +21,4 @@ from aliyunsdkcore.request import RpcRequest
 class QueryResourceInventoryRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'TeslaMaxCompute', '2018-01-04', 'QueryResourceInventory')
+		RpcRequest.__init__(self, 'TeslaMaxCompute', '2018-01-04', 'QueryResourceInventory','teslamaxcompute')
