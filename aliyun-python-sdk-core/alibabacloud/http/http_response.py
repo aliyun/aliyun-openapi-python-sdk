@@ -26,16 +26,54 @@ from aliyunsdkcore.http.http_request import HttpRequest
 from aliyunsdkcore.http import protocol_type as PT
 
 from aliyunsdkcore.vendored.requests import status_codes
+from aliyunsdkcore.utils import parameter_helper as helper
+
+GET = "GET"
+PUT = "PUT"
+POST = "POST"
+DELETE = "DELETE"
+HEAD = "HEAD"
+OPTIONS = "OPTIONS"
+
+HTTP = "http"
+HTTPS = "https"
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.DEBUG)
 ch = logging.StreamHandler()
 logger.addHandler(ch)
 
-DEFAULT_CONNECT_TIMEOUT = 5
+XML = 'XML'
+JSON = 'JSON'
+RAW = 'RAW'
+APPLICATION_FORM = 'application/x-www-form-urlencoded'
+APPLICATION_XML = 'application/xml'
+APPLICATION_JSON = 'application/json'
+APPLICATION_OCTET_STREAM = 'application/octet-stream'
+TEXT_XML = 'text/xml'
+
+
+def map_format_to_accept(format):
+    if format == XML:
+        return APPLICATION_XML
+    if format == JSON:
+        return APPLICATION_JSON
+    return APPLICATION_OCTET_STREAM
+
+
+def map_accept_to_format(accept):
+    if accept.lower() == APPLICATION_XML or accept.lower() == TEXT_XML:
+        return XML
+    if accept.lower() == APPLICATION_JSON:
+        return JSON
+    return RAW
 
 
 class HttpResponse(HttpRequest):
+    content_md5 = "Content-MD5"
+    content_length = "Content-Length"
+    content_type = "Content-Type"
+
     def __init__(
             self,
             host="",
@@ -47,48 +85,43 @@ class HttpResponse(HttpRequest):
             port=None,
             key_file=None,
             cert_file=None,
-            read_timeout=None,
-            connect_timeout=None):
-        HttpRequest.__init__(
-            self,
-            host=host,
-            url=url,
-            method=method,
-            headers=headers)
-        self.__ssl_enable = False
+            timeout=None):
+        self.host = host,
+        self.url = url,
+        self.method = method
+        self.headers = headers
+        self.ssl_enable = False
         if protocol is PT.HTTPS:
-            self.__ssl_enable = True
-        self.__key_file = key_file
-        self.__cert_file = cert_file
-        self.__port = port
-        self.__connection = None
-        self.__read_timeout = read_timeout
-        self.__connect_timeout = connect_timeout
-        self.set_body(content)
+            self.ssl_enable = True
+        self.key_file = key_file
+        self.cert_file = cert_file
+        self.port = port
+        self.connection = None
+        self.timeout = timeout
+        self.content = content
 
-    def set_ssl_enable(self, enable):
-        self.__ssl_enable = enable
+    def remove_header_parameter(self, key):
+        if key is not None:
+            if key in self.__headers:
+                self.__headers.pop(key)
 
-    def get_ssl_enabled(self):
-        return self.__ssl_enable
-
-    @staticmethod
-    def prepare_http_debug(request, symbol):
-        base = ''
-        for key, value in request.headers.items():
-            base += '\n%s %s : %s' % (symbol, key, value)
-        return base
-
-    def do_http_debug(self, request, response):
-        # logger the request
-        request_base = '\n> %s %s HTTP/1.1' % (self.get_method().upper(), self.get_url())
-        request_base += '\n> Host : %s' % self.get_host()
-        logger.debug(request_base + self.prepare_http_debug(request, '>'))
-
-        # logger the response
-        response_base = '\n< HTTP/1.1 %s %s' % (
-            response.status_code, status_codes._codes.get(response.status_code)[0].upper())
-        logger.debug(response_base + self.prepare_http_debug(response, '<'))
+    def set_content(self, content, encoding, format=RAW):
+        # 有body_params ，就是 urlencode 结果的值
+        # 没有，就是request的
+        self.content = content
+        if content is None:
+            self.remove_header_parameter(self.content_md5)
+            self.remove_header_parameter(self.content_type)
+            self.remove_header_parameter(self.content_length)
+            self.content_type = None
+            self.encoding = None
+        else:
+            str_md5 = helper.md5_sum(content)
+            content_length = len(content)
+            self.headers[self.content_md5] = str_md5
+            self.headers[self.content_length] = str(content_length)
+            self.headers[self.content_type] = format
+            self.encoding = encoding
 
     def get_response_object(self):
         with Session() as s:
@@ -100,7 +133,7 @@ class HttpResponse(HttpRequest):
                 url = current_protocol + self.get_host() + ":" + str(self.__port) + self.get_url()
 
             req = Request(method=self.get_method(), url=url,
-                          data=self.get_body(),
+                          data=self.content,
                           headers=self.get_headers(),
                           )
             prepped = s.prepare_request(req)
@@ -118,7 +151,7 @@ class HttpResponse(HttpRequest):
             urllib3.disable_warnings()
 
             response = s.send(prepped, proxies=proxies,
-                              timeout=(self.__connect_timeout, self.__read_timeout),
+                              timeout=self.timeout,
                               allow_redirects=False, verify=None, cert=None)
 
             http_debug = os.environ.get('DEBUG')

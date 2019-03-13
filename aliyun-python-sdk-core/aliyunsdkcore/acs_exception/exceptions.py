@@ -33,7 +33,7 @@ class ClientException(Exception):
         """
 
         :param code: error code
-        :param msg: error msg
+        :param message: error message
         :return:
         """
         Exception.__init__(self)

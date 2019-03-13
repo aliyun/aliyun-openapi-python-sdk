@@ -11,3 +11,14 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+
+from alibabacloud.handlers import RequestHandler
+
+
+class RetryHandler(RequestHandler):
+    def handle_request(self, context):
+        # retry 的逻辑
+        pass
+
+    def handle_response(self, response):
+        pass

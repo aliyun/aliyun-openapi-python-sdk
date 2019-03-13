@@ -11,3 +11,22 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+
+from alibabacloud.handlers import RequestHandler
+
+
+class HttpHandler(RequestHandler):
+    """
+    获取参数，组装成request
+    """
+    def handle_request(self, context):
+        http_request = HttpResponse(context)
+        body_params = context.request.get_body_params()
+        if body_params:
+            body = urlencode(body_params)
+            http_request.set_content(body, "utf-8", format_type.APPLICATION_FORM)
+        context.http_request = http_request
+
+    def handle_response(self, request, response):
+        pass
+

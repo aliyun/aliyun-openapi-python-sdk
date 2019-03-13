@@ -19,24 +19,13 @@
 # specific language governing permissions and limitations
 # under the License.
 
-import logging
 
-from aliyunsdkcore.auth.signers.signer import Signer
+from abc import ABCMeta, abstractmethod
 
-logger = logging.getLogger(__name__)
+from aliyunsdkcore.vendored.six import with_metaclass
 
 
-class StsTokenSigner(Signer):
-    def __init__(self, sts_credential):
-        self._credential = sts_credential
-
+class Signer(with_metaclass(ABCMeta, object)):
+    @abstractmethod
     def sign(self, region_id, request):
-        sts_cred = self._credential
-        if request.get_style() == 'RPC':
-            request.add_query_param("SecurityToken", sts_cred.sts_token)
-        else:
-            request.add_header("x-acs-security-token", sts_cred.sts_token)
-        header = request.get_signed_header(region_id, sts_cred.sts_access_key_id,
-                                           sts_cred.sts_access_key_secret)
-        url = request.get_url(region_id, sts_cred.sts_access_key_id, sts_cred.sts_access_key_secret)
-        return header, url
+        pass

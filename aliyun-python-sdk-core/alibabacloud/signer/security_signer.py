@@ -26,17 +26,17 @@ from aliyunsdkcore.auth.signers.signer import Signer
 logger = logging.getLogger(__name__)
 
 
-class StsTokenSigner(Signer):
-    def __init__(self, sts_credential):
-        self._credential = sts_credential
+class SecuritySigner(Signer):
+    def __init__(self, security_credential):
+        self._credential = security_credential
 
     def sign(self, region_id, request):
-        sts_cred = self._credential
+        security_cred = self._credential
         if request.get_style() == 'RPC':
-            request.add_query_param("SecurityToken", sts_cred.sts_token)
+            request.add_query_param("SecurityToken", security_cred.token)
         else:
-            request.add_header("x-acs-security-token", sts_cred.sts_token)
-        header = request.get_signed_header(region_id, sts_cred.sts_access_key_id,
-                                           sts_cred.sts_access_key_secret)
-        url = request.get_url(region_id, sts_cred.sts_access_key_id, sts_cred.sts_access_key_secret)
+            request.add_header("x-acs-security-token", security_cred.token)
+        header = request.get_signed_header(region_id, security_cred.access_key_id,
+                                           security_cred.access_key_secret)
+        url = request.get_url(region_id, security_cred.access_key_id, security_cred.access_key_secret)
         return header, url

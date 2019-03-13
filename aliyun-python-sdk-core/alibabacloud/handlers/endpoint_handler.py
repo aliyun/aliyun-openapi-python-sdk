@@ -11,3 +11,19 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+
+from alibabacloud.handlers import RequestHandler
+
+
+class EndpointHandler(RequestHandler):
+    """
+    region+产品，必须是request的范畴
+    """
+    def handle_request(self, context):
+        request = context.request
+        if request.endpoint is None:
+            endpoint = context.config.resolve_endpoint_cls(request)
+        context.endpoint = request.endpoint or endpoint
+
+    def handle_response(self, response):
+        pass
