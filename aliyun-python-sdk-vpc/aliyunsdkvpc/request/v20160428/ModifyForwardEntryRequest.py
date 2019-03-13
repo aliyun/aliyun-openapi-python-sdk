@@ -41,6 +41,12 @@ class ModifyForwardEntryRequest(RpcRequest):
 	def set_IpProtocol(self,IpProtocol):
 		self.add_query_param('IpProtocol',IpProtocol)
 
+	def get_ForwardEntryName(self):
+		return self.get_query_params().get('ForwardEntryName')
+
+	def set_ForwardEntryName(self,ForwardEntryName):
+		self.add_query_param('ForwardEntryName',ForwardEntryName)
+
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
 

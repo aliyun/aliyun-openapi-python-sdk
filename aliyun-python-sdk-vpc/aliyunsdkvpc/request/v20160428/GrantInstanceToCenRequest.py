@@ -18,10 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class ModifySnatEntryRequest(RpcRequest):
+class GrantInstanceToCenRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'ModifySnatEntry','vpc')
+		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'GrantInstanceToCen','vpc')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -29,11 +29,29 @@ class ModifySnatEntryRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_InstanceId(self):
+		return self.get_query_params().get('InstanceId')
+
+	def set_InstanceId(self,InstanceId):
+		self.add_query_param('InstanceId',InstanceId)
+
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+
+	def get_CenId(self):
+		return self.get_query_params().get('CenId')
+
+	def set_CenId(self,CenId):
+		self.add_query_param('CenId',CenId)
+
+	def get_ClientToken(self):
+		return self.get_query_params().get('ClientToken')
+
+	def set_ClientToken(self,ClientToken):
+		self.add_query_param('ClientToken',ClientToken)
 
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
@@ -41,32 +59,20 @@ class ModifySnatEntryRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
-	def get_SnatEntryName(self):
-		return self.get_query_params().get('SnatEntryName')
+	def get_InstanceType(self):
+		return self.get_query_params().get('InstanceType')
 
-	def set_SnatEntryName(self,SnatEntryName):
-		self.add_query_param('SnatEntryName',SnatEntryName)
+	def set_InstanceType(self,InstanceType):
+		self.add_query_param('InstanceType',InstanceType)
 
-	def get_SnatTableId(self):
-		return self.get_query_params().get('SnatTableId')
+	def get_CenOwnerId(self):
+		return self.get_query_params().get('CenOwnerId')
 
-	def set_SnatTableId(self,SnatTableId):
-		self.add_query_param('SnatTableId',SnatTableId)
-
-	def get_SnatEntryId(self):
-		return self.get_query_params().get('SnatEntryId')
-
-	def set_SnatEntryId(self,SnatEntryId):
-		self.add_query_param('SnatEntryId',SnatEntryId)
+	def set_CenOwnerId(self,CenOwnerId):
+		self.add_query_param('CenOwnerId',CenOwnerId)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
-
-	def get_SnatIp(self):
-		return self.get_query_params().get('SnatIp')
-
-	def set_SnatIp(self,SnatIp):
-		self.add_query_param('SnatIp',SnatIp)

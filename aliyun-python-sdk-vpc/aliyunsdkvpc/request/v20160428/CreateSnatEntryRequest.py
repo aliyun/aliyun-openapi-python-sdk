@@ -47,6 +47,12 @@ class CreateSnatEntryRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
+	def get_SnatEntryName(self):
+		return self.get_query_params().get('SnatEntryName')
+
+	def set_SnatEntryName(self,SnatEntryName):
+		self.add_query_param('SnatEntryName',SnatEntryName)
+
 	def get_SourceCIDR(self):
 		return self.get_query_params().get('SourceCIDR')
 

@@ -18,16 +18,22 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class ModifySnatEntryRequest(RpcRequest):
+class ModifyRouteEntryRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'ModifySnatEntry','vpc')
+		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'ModifyRouteEntry','vpc')
 
-	def get_ResourceOwnerId(self):
-		return self.get_query_params().get('ResourceOwnerId')
+	def get_RouteEntryName(self):
+		return self.get_query_params().get('RouteEntryName')
 
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+	def set_RouteEntryName(self,RouteEntryName):
+		self.add_query_param('RouteEntryName',RouteEntryName)
+
+	def get_RouteEntryId(self):
+		return self.get_query_params().get('RouteEntryId')
+
+	def set_RouteEntryId(self,RouteEntryId):
+		self.add_query_param('RouteEntryId',RouteEntryId)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -41,32 +47,8 @@ class ModifySnatEntryRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
-	def get_SnatEntryName(self):
-		return self.get_query_params().get('SnatEntryName')
-
-	def set_SnatEntryName(self,SnatEntryName):
-		self.add_query_param('SnatEntryName',SnatEntryName)
-
-	def get_SnatTableId(self):
-		return self.get_query_params().get('SnatTableId')
-
-	def set_SnatTableId(self,SnatTableId):
-		self.add_query_param('SnatTableId',SnatTableId)
-
-	def get_SnatEntryId(self):
-		return self.get_query_params().get('SnatEntryId')
-
-	def set_SnatEntryId(self,SnatEntryId):
-		self.add_query_param('SnatEntryId',SnatEntryId)
-
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
-
-	def get_SnatIp(self):
-		return self.get_query_params().get('SnatIp')
-
-	def set_SnatIp(self,SnatIp):
-		self.add_query_param('SnatIp',SnatIp)

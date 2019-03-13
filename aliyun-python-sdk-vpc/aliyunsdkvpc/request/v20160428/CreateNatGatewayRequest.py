@@ -29,6 +29,12 @@ class CreateNatGatewayRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_AutoPay(self):
+		return self.get_query_params().get('AutoPay')
+
+	def set_AutoPay(self,AutoPay):
+		self.add_query_param('AutoPay',AutoPay)
+
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -47,18 +53,6 @@ class CreateNatGatewayRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
-	def get_VpcId(self):
-		return self.get_query_params().get('VpcId')
-
-	def set_VpcId(self,VpcId):
-		self.add_query_param('VpcId',VpcId)
-
-	def get_Name(self):
-		return self.get_query_params().get('Name')
-
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)
-
 	def get_Description(self):
 		return self.get_query_params().get('Description')
 
@@ -70,6 +64,30 @@ class CreateNatGatewayRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_Spec(self):
+		return self.get_query_params().get('Spec')
+
+	def set_Spec(self,Spec):
+		self.add_query_param('Spec',Spec)
+
+	def get_Duration(self):
+		return self.get_query_params().get('Duration')
+
+	def set_Duration(self,Duration):
+		self.add_query_param('Duration',Duration)
+
+	def get_VpcId(self):
+		return self.get_query_params().get('VpcId')
+
+	def set_VpcId(self,VpcId):
+		self.add_query_param('VpcId',VpcId)
+
+	def get_Name(self):
+		return self.get_query_params().get('Name')
+
+	def set_Name(self,Name):
+		self.add_query_param('Name',Name)
 
 	def get_BandwidthPackages(self):
 		return self.get_query_params().get('BandwidthPackages')
@@ -88,8 +106,14 @@ class CreateNatGatewayRequest(RpcRequest):
 				self.add_query_param('BandwidthPackage.' + str(i + 1) + '.IpCount' , BandwidthPackages[i].get('IpCount'))
 
 
-	def get_Spec(self):
-		return self.get_query_params().get('Spec')
+	def get_InstanceChargeType(self):
+		return self.get_query_params().get('InstanceChargeType')
 
-	def set_Spec(self,Spec):
-		self.add_query_param('Spec',Spec)
+	def set_InstanceChargeType(self,InstanceChargeType):
+		self.add_query_param('InstanceChargeType',InstanceChargeType)
+
+	def get_PricingCycle(self):
+		return self.get_query_params().get('PricingCycle')
+
+	def set_PricingCycle(self,PricingCycle):
+		self.add_query_param('PricingCycle',PricingCycle)

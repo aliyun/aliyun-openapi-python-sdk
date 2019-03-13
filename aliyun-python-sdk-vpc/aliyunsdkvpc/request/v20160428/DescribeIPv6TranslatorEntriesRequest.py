@@ -29,6 +29,12 @@ class DescribeIPv6TranslatorEntriesRequest(RpcRequest):
 	def set_BackendIpv4Port(self,BackendIpv4Port):
 		self.add_query_param('BackendIpv4Port',BackendIpv4Port)
 
+	def get_AclId(self):
+		return self.get_query_params().get('AclId')
+
+	def set_AclId(self,AclId):
+		self.add_query_param('AclId',AclId)
+
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
@@ -77,11 +83,23 @@ class DescribeIPv6TranslatorEntriesRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
+	def get_AclStatus(self):
+		return self.get_query_params().get('AclStatus')
+
+	def set_AclStatus(self,AclStatus):
+		self.add_query_param('AclStatus',AclStatus)
+
 	def get_PageNumber(self):
 		return self.get_query_params().get('PageNumber')
 
 	def set_PageNumber(self,PageNumber):
 		self.add_query_param('PageNumber',PageNumber)
+
+	def get_AclType(self):
+		return self.get_query_params().get('AclType')
+
+	def set_AclType(self,AclType):
+		self.add_query_param('AclType',AclType)
 
 	def get_AllocateIpv6Port(self):
 		return self.get_query_params().get('AllocateIpv6Port')

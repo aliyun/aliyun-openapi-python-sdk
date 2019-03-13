@@ -35,6 +35,12 @@ class DeleteRouteEntryRequest(RpcRequest):
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
+	def get_RouteEntryId(self):
+		return self.get_query_params().get('RouteEntryId')
+
+	def set_RouteEntryId(self,RouteEntryId):
+		self.add_query_param('RouteEntryId',RouteEntryId)
+
 	def get_DestinationCidrBlock(self):
 		return self.get_query_params().get('DestinationCidrBlock')
 
