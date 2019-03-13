@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class DeleteUidWhiteListGroupRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'jarvis', '2018-02-06', 'DeleteUidWhiteListGroup')
+		RpcRequest.__init__(self, 'jarvis', '2018-02-06', 'DeleteUidWhiteListGroup','jarvis')
 
 	def get_GroupIdList(self):
 		return self.get_query_params().get('GroupIdList')

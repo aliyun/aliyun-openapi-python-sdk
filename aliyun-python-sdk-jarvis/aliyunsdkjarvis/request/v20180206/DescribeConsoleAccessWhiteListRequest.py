@@ -18,16 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class CreateCpmcPunishFeedBackRequest(RpcRequest):
+class DescribeConsoleAccessWhiteListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'jarvis', '2018-02-06', 'CreateCpmcPunishFeedBack','jarvis')
-
-	def get_FeedBack(self):
-		return self.get_query_params().get('FeedBack')
-
-	def set_FeedBack(self,FeedBack):
-		self.add_query_param('FeedBack',FeedBack)
+		RpcRequest.__init__(self, 'jarvis', '2018-02-06', 'DescribeConsoleAccessWhiteList','jarvis')
 
 	def get_SrcIP(self):
 		return self.get_query_params().get('SrcIP')
@@ -41,35 +35,29 @@ class CreateCpmcPunishFeedBackRequest(RpcRequest):
 	def set_SourceIp(self,SourceIp):
 		self.add_query_param('SourceIp',SourceIp)
 
-	def get_DstPort(self):
-		return self.get_query_params().get('DstPort')
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
 
-	def set_DstPort(self,DstPort):
-		self.add_query_param('DstPort',DstPort)
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
 
-	def get_ProtocolName(self):
-		return self.get_query_params().get('ProtocolName')
+	def get_queryProduct(self):
+		return self.get_query_params().get('queryProduct')
 
-	def set_ProtocolName(self,ProtocolName):
-		self.add_query_param('ProtocolName',ProtocolName)
+	def set_queryProduct(self,queryProduct):
+		self.add_query_param('queryProduct',queryProduct)
 
-	def get_SrcPort(self):
-		return self.get_query_params().get('SrcPort')
+	def get_CurrentPage(self):
+		return self.get_query_params().get('CurrentPage')
 
-	def set_SrcPort(self,SrcPort):
-		self.add_query_param('SrcPort',SrcPort)
+	def set_CurrentPage(self,CurrentPage):
+		self.add_query_param('CurrentPage',CurrentPage)
 
-	def get_PunishType(self):
-		return self.get_query_params().get('PunishType')
+	def get_WhiteListType(self):
+		return self.get_query_params().get('WhiteListType')
 
-	def set_PunishType(self,PunishType):
-		self.add_query_param('PunishType',PunishType)
-
-	def get_GmtCreate(self):
-		return self.get_query_params().get('GmtCreate')
-
-	def set_GmtCreate(self,GmtCreate):
-		self.add_query_param('GmtCreate',GmtCreate)
+	def set_WhiteListType(self,WhiteListType):
+		self.add_query_param('WhiteListType',WhiteListType)
 
 	def get_DstIP(self):
 		return self.get_query_params().get('DstIP')
@@ -82,6 +70,12 @@ class CreateCpmcPunishFeedBackRequest(RpcRequest):
 
 	def set_Lang(self,Lang):
 		self.add_query_param('Lang',Lang)
+
+	def get_Status(self):
+		return self.get_query_params().get('Status')
+
+	def set_Status(self,Status):
+		self.add_query_param('Status',Status)
 
 	def get_SourceCode(self):
 		return self.get_query_params().get('SourceCode')

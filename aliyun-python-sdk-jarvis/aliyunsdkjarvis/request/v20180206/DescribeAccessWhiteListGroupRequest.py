@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class DescribeAccessWhiteListGroupRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'jarvis', '2018-02-06', 'DescribeAccessWhiteListGroup')
+		RpcRequest.__init__(self, 'jarvis', '2018-02-06', 'DescribeAccessWhiteListGroup','jarvis')
 
 	def get_SrcIP(self):
 		return self.get_query_params().get('SrcIP')
@@ -40,6 +40,12 @@ class DescribeAccessWhiteListGroupRequest(RpcRequest):
 
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
+
+	def get_queryProduct(self):
+		return self.get_query_params().get('queryProduct')
+
+	def set_queryProduct(self,queryProduct):
+		self.add_query_param('queryProduct',queryProduct)
 
 	def get_CurrentPage(self):
 		return self.get_query_params().get('CurrentPage')
