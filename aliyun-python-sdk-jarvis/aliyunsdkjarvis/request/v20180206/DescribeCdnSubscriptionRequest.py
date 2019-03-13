@@ -18,16 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class DeleteAccessWhiteListGroupRequest(RpcRequest):
+class DescribeCdnSubscriptionRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'jarvis', '2018-02-06', 'DeleteAccessWhiteListGroup','jarvis')
-
-	def get_GroupIdList(self):
-		return self.get_query_params().get('GroupIdList')
-
-	def set_GroupIdList(self,GroupIdList):
-		self.add_query_param('GroupIdList',GroupIdList)
+		RpcRequest.__init__(self, 'jarvis', '2018-02-06', 'DescribeCdnSubscription','jarvis')
 
 	def get_SourceIp(self):
 		return self.get_query_params().get('SourceIp')
@@ -35,11 +29,35 @@ class DeleteAccessWhiteListGroupRequest(RpcRequest):
 	def set_SourceIp(self,SourceIp):
 		self.add_query_param('SourceIp',SourceIp)
 
+	def get_SubscriptionState(self):
+		return self.get_query_params().get('SubscriptionState')
+
+	def set_SubscriptionState(self,SubscriptionState):
+		self.add_query_param('SubscriptionState',SubscriptionState)
+
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
+
+	def get_CurrentPage(self):
+		return self.get_query_params().get('CurrentPage')
+
+	def set_CurrentPage(self,CurrentPage):
+		self.add_query_param('CurrentPage',CurrentPage)
+
 	def get_Lang(self):
 		return self.get_query_params().get('Lang')
 
 	def set_Lang(self,Lang):
 		self.add_query_param('Lang',Lang)
+
+	def get_VendorName(self):
+		return self.get_query_params().get('VendorName')
+
+	def set_VendorName(self,VendorName):
+		self.add_query_param('VendorName',VendorName)
 
 	def get_SourceCode(self):
 		return self.get_query_params().get('SourceCode')

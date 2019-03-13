@@ -18,22 +18,34 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class DeleteAccessWhiteListGroupRequest(RpcRequest):
+class DeleteCdnIpRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'jarvis', '2018-02-06', 'DeleteAccessWhiteListGroup','jarvis')
+		RpcRequest.__init__(self, 'jarvis', '2018-02-06', 'DeleteCdnIp','jarvis')
 
-	def get_GroupIdList(self):
-		return self.get_query_params().get('GroupIdList')
+	def get_ItemId(self):
+		return self.get_query_params().get('ItemId')
 
-	def set_GroupIdList(self,GroupIdList):
-		self.add_query_param('GroupIdList',GroupIdList)
+	def set_ItemId(self,ItemId):
+		self.add_query_param('ItemId',ItemId)
+
+	def get_ResourceOwnerId(self):
+		return self.get_query_params().get('ResourceOwnerId')
+
+	def set_ResourceOwnerId(self,ResourceOwnerId):
+		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
 	def get_SourceIp(self):
 		return self.get_query_params().get('SourceIp')
 
 	def set_SourceIp(self,SourceIp):
 		self.add_query_param('SourceIp',SourceIp)
+
+	def get_CdnIp(self):
+		return self.get_query_params().get('CdnIp')
+
+	def set_CdnIp(self,CdnIp):
+		self.add_query_param('CdnIp',CdnIp)
 
 	def get_Lang(self):
 		return self.get_query_params().get('Lang')

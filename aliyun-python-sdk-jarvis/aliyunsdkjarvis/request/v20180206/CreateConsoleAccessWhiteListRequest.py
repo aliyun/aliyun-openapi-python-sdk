@@ -18,16 +18,22 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class CreateCpmcPunishFeedBackRequest(RpcRequest):
+class CreateConsoleAccessWhiteListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'jarvis', '2018-02-06', 'CreateCpmcPunishFeedBack','jarvis')
+		RpcRequest.__init__(self, 'jarvis', '2018-02-06', 'CreateConsoleAccessWhiteList','jarvis')
 
-	def get_FeedBack(self):
-		return self.get_query_params().get('FeedBack')
+	def get_Note(self):
+		return self.get_query_params().get('Note')
 
-	def set_FeedBack(self,FeedBack):
-		self.add_query_param('FeedBack',FeedBack)
+	def set_Note(self,Note):
+		self.add_query_param('Note',Note)
+
+	def get_ResourceOwnerId(self):
+		return self.get_query_params().get('ResourceOwnerId')
+
+	def set_ResourceOwnerId(self,ResourceOwnerId):
+		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
 	def get_SrcIP(self):
 		return self.get_query_params().get('SrcIP')
@@ -47,35 +53,35 @@ class CreateCpmcPunishFeedBackRequest(RpcRequest):
 	def set_DstPort(self,DstPort):
 		self.add_query_param('DstPort',DstPort)
 
-	def get_ProtocolName(self):
-		return self.get_query_params().get('ProtocolName')
+	def get_InstanceIdList(self):
+		return self.get_query_params().get('InstanceIdList')
 
-	def set_ProtocolName(self,ProtocolName):
-		self.add_query_param('ProtocolName',ProtocolName)
+	def set_InstanceIdList(self,InstanceIdList):
+		self.add_query_param('InstanceIdList',InstanceIdList)
 
-	def get_SrcPort(self):
-		return self.get_query_params().get('SrcPort')
+	def get_LiveTime(self):
+		return self.get_query_params().get('LiveTime')
 
-	def set_SrcPort(self,SrcPort):
-		self.add_query_param('SrcPort',SrcPort)
+	def set_LiveTime(self,LiveTime):
+		self.add_query_param('LiveTime',LiveTime)
 
-	def get_PunishType(self):
-		return self.get_query_params().get('PunishType')
+	def get_ProductName(self):
+		return self.get_query_params().get('ProductName')
 
-	def set_PunishType(self,PunishType):
-		self.add_query_param('PunishType',PunishType)
+	def set_ProductName(self,ProductName):
+		self.add_query_param('ProductName',ProductName)
 
-	def get_GmtCreate(self):
-		return self.get_query_params().get('GmtCreate')
+	def get_WhiteListType(self):
+		return self.get_query_params().get('WhiteListType')
 
-	def set_GmtCreate(self,GmtCreate):
-		self.add_query_param('GmtCreate',GmtCreate)
+	def set_WhiteListType(self,WhiteListType):
+		self.add_query_param('WhiteListType',WhiteListType)
 
-	def get_DstIP(self):
-		return self.get_query_params().get('DstIP')
+	def get_InstanceInfoList(self):
+		return self.get_query_params().get('InstanceInfoList')
 
-	def set_DstIP(self,DstIP):
-		self.add_query_param('DstIP',DstIP)
+	def set_InstanceInfoList(self,InstanceInfoList):
+		self.add_query_param('InstanceInfoList',InstanceInfoList)
 
 	def get_Lang(self):
 		return self.get_query_params().get('Lang')

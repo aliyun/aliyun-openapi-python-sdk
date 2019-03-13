@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class DescribeAccessWhitelistEcsListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'jarvis', '2018-02-06', 'DescribeAccessWhitelistEcsList')
+		RpcRequest.__init__(self, 'jarvis', '2018-02-06', 'DescribeAccessWhitelistEcsList','jarvis')
 
 	def get_SourceIp(self):
 		return self.get_query_params().get('SourceIp')

@@ -18,16 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class DeleteAccessWhiteListGroupRequest(RpcRequest):
+class DescribeCdnCertifyRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'jarvis', '2018-02-06', 'DeleteAccessWhiteListGroup','jarvis')
-
-	def get_GroupIdList(self):
-		return self.get_query_params().get('GroupIdList')
-
-	def set_GroupIdList(self,GroupIdList):
-		self.add_query_param('GroupIdList',GroupIdList)
+		RpcRequest.__init__(self, 'jarvis', '2018-02-06', 'DescribeCdnCertify','jarvis')
 
 	def get_SourceIp(self):
 		return self.get_query_params().get('SourceIp')

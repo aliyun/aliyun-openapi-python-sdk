@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class ModifyAccessWhiteListAutoShareRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'jarvis', '2018-02-06', 'ModifyAccessWhiteListAutoShare')
+		RpcRequest.__init__(self, 'jarvis', '2018-02-06', 'ModifyAccessWhiteListAutoShare','jarvis')
 
 	def get_SrcIP(self):
 		return self.get_query_params().get('SrcIP')

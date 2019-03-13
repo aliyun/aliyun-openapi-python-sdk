@@ -18,28 +18,28 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class DeleteAccessWhiteListGroupRequest(RpcRequest):
+class CreateAllEcsWhiteListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'jarvis', '2018-02-06', 'DeleteAccessWhiteListGroup','jarvis')
+		RpcRequest.__init__(self, 'jarvis', '2018-02-06', 'CreateAllEcsWhiteList','jarvis')
 
-	def get_GroupIdList(self):
-		return self.get_query_params().get('GroupIdList')
+	def get_ResourceOwnerId(self):
+		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_GroupIdList(self,GroupIdList):
-		self.add_query_param('GroupIdList',GroupIdList)
+	def set_ResourceOwnerId(self,ResourceOwnerId):
+		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+
+	def get_SrcIP(self):
+		return self.get_query_params().get('SrcIP')
+
+	def set_SrcIP(self,SrcIP):
+		self.add_query_param('SrcIP',SrcIP)
 
 	def get_SourceIp(self):
 		return self.get_query_params().get('SourceIp')
 
 	def set_SourceIp(self,SourceIp):
 		self.add_query_param('SourceIp',SourceIp)
-
-	def get_Lang(self):
-		return self.get_query_params().get('Lang')
-
-	def set_Lang(self,Lang):
-		self.add_query_param('Lang',Lang)
 
 	def get_SourceCode(self):
 		return self.get_query_params().get('SourceCode')

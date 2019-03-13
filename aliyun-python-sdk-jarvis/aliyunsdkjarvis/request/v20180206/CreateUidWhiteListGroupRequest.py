@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class CreateUidWhiteListGroupRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'jarvis', '2018-02-06', 'CreateUidWhiteListGroup')
+		RpcRequest.__init__(self, 'jarvis', '2018-02-06', 'CreateUidWhiteListGroup','jarvis')
 
 	def get_Note(self):
 		return self.get_query_params().get('Note')
