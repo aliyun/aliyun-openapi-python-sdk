@@ -33,7 +33,7 @@ logger = logging.getLogger(__name__)
 class EcsRamRoleSigner(Signer):
     _REFRESH_SCALE = 0.8
 
-    def __init__(self, ecs_ram_role_credential, region_id=None, do_action_api=None, debug=None):
+    def __init__(self, ecs_ram_role_credential):
         self._credential = ecs_ram_role_credential
         self._last_update_time = 0
         self._expiration = 0

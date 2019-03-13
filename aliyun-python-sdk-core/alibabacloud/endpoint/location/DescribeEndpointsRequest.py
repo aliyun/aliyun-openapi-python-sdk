@@ -1,5 +1,3 @@
-# coding:utf-8
-
 # Licensed to the Apache Software Foundation (ASF) under one
 # or more contributor license agreements.  See the NOTICE file
 # distributed with this work for additional information
@@ -19,24 +17,26 @@
 # specific language governing permissions and limitations
 # under the License.
 
-import logging
+from aliyunsdkcore.request import RpcRequest
+class DescribeEndpointsRequest(RpcRequest):
 
-from aliyunsdkcore.auth.signers.signer import Signer
+	def __init__(self):
+		RpcRequest.__init__(self, 'Location', '2015-06-12', 'DescribeEndpoints')
 
-logger = logging.getLogger(__name__)
+	def get_ServiceCode(self):
+		return self.get_query_params().get('ServiceCode')
 
+	def set_ServiceCode(self,ServiceCode):
+		self.add_query_param('ServiceCode',ServiceCode)
 
-class StsTokenSigner(Signer):
-    def __init__(self, sts_credential):
-        self._credential = sts_credential
+	def get_Id(self):
+		return self.get_query_params().get('Id')
 
-    def sign(self, region_id, request):
-        sts_cred = self._credential
-        if request.get_style() == 'RPC':
-            request.add_query_param("SecurityToken", sts_cred.sts_token)
-        else:
-            request.add_header("x-acs-security-token", sts_cred.sts_token)
-        header = request.get_signed_header(region_id, sts_cred.sts_access_key_id,
-                                           sts_cred.sts_access_key_secret)
-        url = request.get_url(region_id, sts_cred.sts_access_key_id, sts_cred.sts_access_key_secret)
-        return header, url
+	def set_Id(self,Id):
+		self.add_query_param('Id',Id)
+
+	def get_Type(self):
+		return self.get_query_params().get('Type')
+
+	def set_Type(self,Type):
+		self.add_query_param('Type',Type)

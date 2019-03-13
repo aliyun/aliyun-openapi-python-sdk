@@ -1,3 +1,4 @@
+#
 # Licensed to the Apache Software Foundation (ASF) under one
 # or more contributor license agreements.  See the NOTICE file
 # distributed with self work for additional information
@@ -16,9 +17,24 @@
 # under the License.
 #
 
+ENDPOINT_TYPE_INNER = "innerAPI"
+ENDPOINT_TYPE_OPEN = "openAPI"
 
-class EndpointResolver(object):
 
-    def resolve(self, request):
-        pass
+class ResolveEndpointRequest(object):
 
+    def __init__(self, region_id, product_code, location_service_code, endpoint_type):
+
+        self.region_id = region_id
+        self.product_code = product_code
+        self.product_code_lower = self.product_code.lower()
+
+        if not endpoint_type:
+            self.endpoint_type = ENDPOINT_TYPE_OPEN
+        else:
+            self.endpoint_type = endpoint_type
+
+        self.location_service_code = location_service_code
+
+    def is_open_api_endpoint(self):
+        return ENDPOINT_TYPE_OPEN == self.endpoint_type

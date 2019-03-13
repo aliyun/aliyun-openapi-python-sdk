@@ -11,3 +11,15 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+
+from aliyunsdkcore.retry.retry_condition import RetryCondition
+
+
+class RetryPolicyContext:
+
+    def __init__(self, original_request, exception, retries_attempted, http_status_code):
+        self.original_request = original_request
+        self.exception = exception
+        self.retries_attempted = retries_attempted
+        self.http_status_code = http_status_code
+        self.retryable = RetryCondition.BLANK_STATUS
