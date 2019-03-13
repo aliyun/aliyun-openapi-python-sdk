@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class BatchGetJobMetricInfoRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'TeslaStream', '2018-01-15', 'BatchGetJobMetricInfo')
+		RpcRequest.__init__(self, 'TeslaStream', '2018-01-15', 'BatchGetJobMetricInfo','teslastream')
 
 	def get_JobInfos(self):
 		return self.get_query_params().get('JobInfos')
