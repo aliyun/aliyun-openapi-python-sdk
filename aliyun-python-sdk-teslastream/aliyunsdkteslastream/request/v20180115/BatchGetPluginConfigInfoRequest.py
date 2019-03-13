@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class BatchGetPluginConfigInfoRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'TeslaStream', '2018-01-15', 'BatchGetPluginConfigInfo')
+		RpcRequest.__init__(self, 'TeslaStream', '2018-01-15', 'BatchGetPluginConfigInfo','teslastream')
 
 	def get_PluginInfos(self):
 		return self.get_query_params().get('PluginInfos')
