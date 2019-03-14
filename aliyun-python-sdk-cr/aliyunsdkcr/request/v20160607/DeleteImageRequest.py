@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RoaRequest
 class DeleteImageRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'cr', '2016-06-07', 'DeleteImage')
+		RoaRequest.__init__(self, 'cr', '2016-06-07', 'DeleteImage','cr')
 		self.set_uri_pattern('/repos/[RepoNamespace]/[RepoName]/tags/[Tag]')
 		self.set_method('DELETE')
 

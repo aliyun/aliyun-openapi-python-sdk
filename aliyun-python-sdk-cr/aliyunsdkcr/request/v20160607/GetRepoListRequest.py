@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RoaRequest
 class GetRepoListRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'cr', '2016-06-07', 'GetRepoList')
+		RoaRequest.__init__(self, 'cr', '2016-06-07', 'GetRepoList','cr')
 		self.set_uri_pattern('/repos')
 		self.set_method('GET')
 

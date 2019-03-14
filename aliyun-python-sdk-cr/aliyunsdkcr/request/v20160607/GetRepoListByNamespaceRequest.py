@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RoaRequest
 class GetRepoListByNamespaceRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'cr', '2016-06-07', 'GetRepoListByNamespace')
+		RoaRequest.__init__(self, 'cr', '2016-06-07', 'GetRepoListByNamespace','cr')
 		self.set_uri_pattern('/repos/[RepoNamespace]')
 		self.set_method('GET')
 

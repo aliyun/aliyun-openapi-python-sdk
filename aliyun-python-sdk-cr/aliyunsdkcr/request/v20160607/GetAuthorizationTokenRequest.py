@@ -21,6 +21,6 @@ from aliyunsdkcore.request import RoaRequest
 class GetAuthorizationTokenRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'cr', '2016-06-07', 'GetAuthorizationToken')
+		RoaRequest.__init__(self, 'cr', '2016-06-07', 'GetAuthorizationToken','cr')
 		self.set_uri_pattern('/tokens')
 		self.set_method('GET')
