@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class MoPenAddGroupMemberRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'MoPen', '2018-02-11', 'MoPenAddGroupMember')
+		RpcRequest.__init__(self, 'MoPen', '2018-02-11', 'MoPenAddGroupMember','mopen')
 		self.set_protocol_type('https');
 		self.set_method('POST')
 
