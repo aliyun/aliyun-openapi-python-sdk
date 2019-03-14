@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class RetryCreateUserPasswordRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'RetryCreateUserPassword','emr')
+		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'RetryCreateUserPassword')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')

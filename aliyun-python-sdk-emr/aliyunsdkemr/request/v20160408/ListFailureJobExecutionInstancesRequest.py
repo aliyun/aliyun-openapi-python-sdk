@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class ListFailureJobExecutionInstancesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'ListFailureJobExecutionInstances','emr')
+		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'ListFailureJobExecutionInstances')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')

@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class MetastoreCreateDatabaseRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'MetastoreCreateDatabase','emr')
+		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'MetastoreCreateDatabase')
 
 	def get_DbSource(self):
 		return self.get_query_params().get('DbSource')

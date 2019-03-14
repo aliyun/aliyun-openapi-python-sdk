@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class DescribeETLJobStageOutputSchemaRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'DescribeETLJobStageOutputSchema','emr')
+		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'DescribeETLJobStageOutputSchema')
 
 	def get_StageName(self):
 		return self.get_query_params().get('StageName')

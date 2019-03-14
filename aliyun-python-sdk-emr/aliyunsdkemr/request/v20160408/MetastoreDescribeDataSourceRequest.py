@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class MetastoreDescribeDataSourceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'MetastoreDescribeDataSource','emr')
+		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'MetastoreDescribeDataSource')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')

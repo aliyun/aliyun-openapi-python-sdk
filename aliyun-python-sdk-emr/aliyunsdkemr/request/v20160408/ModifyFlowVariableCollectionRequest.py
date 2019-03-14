@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class ModifyFlowVariableCollectionRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'ModifyFlowVariableCollection','emr')
+		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'ModifyFlowVariableCollection')
 
 	def get_Data(self):
 		return self.get_query_params().get('Data')

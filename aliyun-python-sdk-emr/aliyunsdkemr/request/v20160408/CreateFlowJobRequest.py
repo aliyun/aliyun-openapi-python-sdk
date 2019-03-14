@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class CreateFlowJobRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'CreateFlowJob','emr')
+		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'CreateFlowJob')
 
 	def get_RunConf(self):
 		return self.get_query_params().get('RunConf')

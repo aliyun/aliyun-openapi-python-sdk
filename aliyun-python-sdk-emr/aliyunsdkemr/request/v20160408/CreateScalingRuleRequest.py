@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class CreateScalingRuleRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'CreateScalingRule','emr')
+		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'CreateScalingRule')
 
 	def get_LaunchTime(self):
 		return self.get_query_params().get('LaunchTime')

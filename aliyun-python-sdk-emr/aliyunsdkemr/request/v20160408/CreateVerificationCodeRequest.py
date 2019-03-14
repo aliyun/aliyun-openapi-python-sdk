@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class CreateVerificationCodeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'CreateVerificationCode','emr')
+		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'CreateVerificationCode')
 
 	def get_Mode(self):
 		return self.get_query_params().get('Mode')

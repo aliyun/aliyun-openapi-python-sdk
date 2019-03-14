@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class CreateResourcePoolRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'CreateResourcePool','emr')
+		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'CreateResourcePool')
 
 	def get_Note(self):
 		return self.get_query_params().get('Note')

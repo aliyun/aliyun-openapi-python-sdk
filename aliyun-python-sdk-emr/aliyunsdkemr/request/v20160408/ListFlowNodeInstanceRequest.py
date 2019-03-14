@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class ListFlowNodeInstanceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'ListFlowNodeInstance','emr')
+		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'ListFlowNodeInstance')
 
 	def get_StatusLists(self):
 		return self.get_query_params().get('StatusLists')

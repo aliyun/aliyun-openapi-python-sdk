@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class DeleteFlowRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'DeleteFlow','emr')
+		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'DeleteFlow')
 
 	def get_Id(self):
 		return self.get_query_params().get('Id')

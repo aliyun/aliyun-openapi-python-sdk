@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class ListClusterServiceCustomActionSupportConfigRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'ListClusterServiceCustomActionSupportConfig','emr')
+		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'ListClusterServiceCustomActionSupportConfig')
 
 	def get_ServiceCustomActionName(self):
 		return self.get_query_params().get('ServiceCustomActionName')

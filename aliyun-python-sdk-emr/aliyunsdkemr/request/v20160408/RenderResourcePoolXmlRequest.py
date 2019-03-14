@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class RenderResourcePoolXmlRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'RenderResourcePoolXml','emr')
+		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'RenderResourcePoolXml')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
