@@ -18,19 +18,19 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class RefundInstanceRequest(RpcRequest):
+class DescribeThreatTypeLinesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas-api', '2017-07-05', 'RefundInstance')
+		RpcRequest.__init__(self, 'Sas-api', '2017-07-05', 'DescribeThreatTypeLines','sas-api')
 
-	def get_InstanceId(self):
-		return self.get_query_params().get('InstanceId')
+	def get_SourceIp(self):
+		return self.get_query_params().get('SourceIp')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
+	def set_SourceIp(self,SourceIp):
+		self.add_query_param('SourceIp',SourceIp)
 
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
+	def get_ApiType(self):
+		return self.get_query_params().get('ApiType')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
+	def set_ApiType(self,ApiType):
+		self.add_query_param('ApiType',ApiType)
