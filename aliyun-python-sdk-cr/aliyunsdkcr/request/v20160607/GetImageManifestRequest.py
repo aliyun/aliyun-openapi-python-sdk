@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RoaRequest
 class GetImageManifestRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'cr', '2016-06-07', 'GetImageManifest')
+		RoaRequest.__init__(self, 'cr', '2016-06-07', 'GetImageManifest','cr')
 		self.set_uri_pattern('/repos/[RepoNamespace]/[RepoName]/tags/[Tag]/manifest')
 		self.set_method('GET')
 

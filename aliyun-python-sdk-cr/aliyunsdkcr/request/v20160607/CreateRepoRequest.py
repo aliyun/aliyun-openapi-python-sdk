@@ -21,6 +21,6 @@ from aliyunsdkcore.request import RoaRequest
 class CreateRepoRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'cr', '2016-06-07', 'CreateRepo')
+		RoaRequest.__init__(self, 'cr', '2016-06-07', 'CreateRepo','cr')
 		self.set_uri_pattern('/repos')
 		self.set_method('PUT')

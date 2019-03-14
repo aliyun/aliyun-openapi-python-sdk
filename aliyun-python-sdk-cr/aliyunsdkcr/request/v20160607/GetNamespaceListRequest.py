@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RoaRequest
 class GetNamespaceListRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'cr', '2016-06-07', 'GetNamespaceList')
+		RoaRequest.__init__(self, 'cr', '2016-06-07', 'GetNamespaceList','cr')
 		self.set_uri_pattern('/namespace')
 		self.set_method('GET')
 
