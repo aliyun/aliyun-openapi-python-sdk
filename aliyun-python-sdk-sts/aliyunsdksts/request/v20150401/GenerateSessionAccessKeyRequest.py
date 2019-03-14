@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class GenerateSessionAccessKeyRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sts', '2015-04-01', 'GenerateSessionAccessKey')
+		RpcRequest.__init__(self, 'Sts', '2015-04-01', 'GenerateSessionAccessKey','sts')
 		self.set_protocol_type('https');
 
 	def get_DurationSeconds(self):

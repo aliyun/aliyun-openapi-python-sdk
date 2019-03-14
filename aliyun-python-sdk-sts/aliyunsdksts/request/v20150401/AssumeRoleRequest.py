@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class AssumeRoleRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sts', '2015-04-01', 'AssumeRole')
+		RpcRequest.__init__(self, 'Sts', '2015-04-01', 'AssumeRole','sts')
 		self.set_protocol_type('https');
 
 	def get_RoleArn(self):
