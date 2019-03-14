@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class GetInstanceCountRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas-api', '2017-07-05', 'GetInstanceCount')
+		RpcRequest.__init__(self, 'Sas-api', '2017-07-05', 'GetInstanceCount','sas-api')
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')

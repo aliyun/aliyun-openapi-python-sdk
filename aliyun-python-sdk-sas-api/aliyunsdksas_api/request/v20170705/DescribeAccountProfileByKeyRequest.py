@@ -18,19 +18,19 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class GetApplicationAttackListRequest(RpcRequest):
+class DescribeAccountProfileByKeyRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas-api', '2017-07-05', 'GetApplicationAttackList')
+		RpcRequest.__init__(self, 'Sas-api', '2017-07-05', 'DescribeAccountProfileByKey','sas-api')
 
-	def get_Start(self):
-		return self.get_query_params().get('Start')
+	def get_SourceIp(self):
+		return self.get_query_params().get('SourceIp')
 
-	def set_Start(self,Start):
-		self.add_query_param('Start',Start)
+	def set_SourceIp(self,SourceIp):
+		self.add_query_param('SourceIp',SourceIp)
 
-	def get_Limit(self):
-		return self.get_query_params().get('Limit')
+	def get_Keyword(self):
+		return self.get_query_params().get('Keyword')
 
-	def set_Limit(self,Limit):
-		self.add_query_param('Limit',Limit)
+	def set_Keyword(self,Keyword):
+		self.add_query_param('Keyword',Keyword)
