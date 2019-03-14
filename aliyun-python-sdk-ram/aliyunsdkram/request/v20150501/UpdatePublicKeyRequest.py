@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class UpdatePublicKeyRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ram', '2015-05-01', 'UpdatePublicKey')
+		RpcRequest.__init__(self, 'Ram', '2015-05-01', 'UpdatePublicKey','ram')
 		self.set_protocol_type('https');
 
 	def get_UserPublicKeyId(self):

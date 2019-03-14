@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class UnbindMFADeviceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ram', '2015-05-01', 'UnbindMFADevice')
+		RpcRequest.__init__(self, 'Ram', '2015-05-01', 'UnbindMFADevice','ram')
 		self.set_protocol_type('https');
 
 	def get_UserName(self):

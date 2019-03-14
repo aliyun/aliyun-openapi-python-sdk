@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class UpdateAccessKeyRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ram', '2015-05-01', 'UpdateAccessKey')
+		RpcRequest.__init__(self, 'Ram', '2015-05-01', 'UpdateAccessKey','ram')
 		self.set_protocol_type('https');
 
 	def get_UserAccessKeyId(self):

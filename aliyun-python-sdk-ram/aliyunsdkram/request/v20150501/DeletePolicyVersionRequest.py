@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class DeletePolicyVersionRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ram', '2015-05-01', 'DeletePolicyVersion')
+		RpcRequest.__init__(self, 'Ram', '2015-05-01', 'DeletePolicyVersion','ram')
 		self.set_protocol_type('https');
 
 	def get_VersionId(self):

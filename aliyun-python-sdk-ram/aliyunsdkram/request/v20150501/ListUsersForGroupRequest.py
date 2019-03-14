@@ -21,8 +21,20 @@ from aliyunsdkcore.request import RpcRequest
 class ListUsersForGroupRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ram', '2015-05-01', 'ListUsersForGroup')
+		RpcRequest.__init__(self, 'Ram', '2015-05-01', 'ListUsersForGroup','ram')
 		self.set_protocol_type('https');
+
+	def get_Marker(self):
+		return self.get_query_params().get('Marker')
+
+	def set_Marker(self,Marker):
+		self.add_query_param('Marker',Marker)
+
+	def get_MaxItems(self):
+		return self.get_query_params().get('MaxItems')
+
+	def set_MaxItems(self,MaxItems):
+		self.add_query_param('MaxItems',MaxItems)
 
 	def get_GroupName(self):
 		return self.get_query_params().get('GroupName')

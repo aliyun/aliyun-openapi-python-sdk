@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class ChangePasswordRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ram', '2015-05-01', 'ChangePassword')
+		RpcRequest.__init__(self, 'Ram', '2015-05-01', 'ChangePassword','ram')
 		self.set_protocol_type('https');
 
 	def get_OldPassword(self):
