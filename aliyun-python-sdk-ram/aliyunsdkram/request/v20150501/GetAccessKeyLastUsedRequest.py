@@ -18,11 +18,17 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class ListGroupsForUserRequest(RpcRequest):
+class GetAccessKeyLastUsedRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ram', '2015-05-01', 'ListGroupsForUser','ram')
+		RpcRequest.__init__(self, 'Ram', '2015-05-01', 'GetAccessKeyLastUsed','ram')
 		self.set_protocol_type('https');
+
+	def get_UserAccessKeyId(self):
+		return self.get_query_params().get('UserAccessKeyId')
+
+	def set_UserAccessKeyId(self,UserAccessKeyId):
+		self.add_query_param('UserAccessKeyId',UserAccessKeyId)
 
 	def get_UserName(self):
 		return self.get_query_params().get('UserName')

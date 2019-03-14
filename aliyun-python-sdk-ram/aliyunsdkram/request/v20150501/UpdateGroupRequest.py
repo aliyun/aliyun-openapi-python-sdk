@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class UpdateGroupRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ram', '2015-05-01', 'UpdateGroup')
+		RpcRequest.__init__(self, 'Ram', '2015-05-01', 'UpdateGroup','ram')
 		self.set_protocol_type('https');
 
 	def get_NewGroupName(self):

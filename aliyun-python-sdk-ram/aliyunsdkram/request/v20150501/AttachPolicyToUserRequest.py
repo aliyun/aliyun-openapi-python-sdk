@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class AttachPolicyToUserRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ram', '2015-05-01', 'AttachPolicyToUser')
+		RpcRequest.__init__(self, 'Ram', '2015-05-01', 'AttachPolicyToUser','ram')
 		self.set_protocol_type('https');
 
 	def get_PolicyType(self):

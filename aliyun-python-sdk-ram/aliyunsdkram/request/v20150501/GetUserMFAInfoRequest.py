@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class GetUserMFAInfoRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ram', '2015-05-01', 'GetUserMFAInfo')
+		RpcRequest.__init__(self, 'Ram', '2015-05-01', 'GetUserMFAInfo','ram')
 		self.set_protocol_type('https');
 
 	def get_UserName(self):

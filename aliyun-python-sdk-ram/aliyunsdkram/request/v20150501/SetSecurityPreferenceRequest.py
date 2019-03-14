@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class SetSecurityPreferenceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ram', '2015-05-01', 'SetSecurityPreference')
+		RpcRequest.__init__(self, 'Ram', '2015-05-01', 'SetSecurityPreference','ram')
 		self.set_protocol_type('https');
 
 	def get_AllowUserToManageAccessKeys(self):
@@ -48,8 +48,20 @@ class SetSecurityPreferenceRequest(RpcRequest):
 	def set_EnableSaveMFATicket(self,EnableSaveMFATicket):
 		self.add_query_param('EnableSaveMFATicket',EnableSaveMFATicket)
 
+	def get_LoginNetworkMasks(self):
+		return self.get_query_params().get('LoginNetworkMasks')
+
+	def set_LoginNetworkMasks(self,LoginNetworkMasks):
+		self.add_query_param('LoginNetworkMasks',LoginNetworkMasks)
+
 	def get_AllowUserToChangePassword(self):
 		return self.get_query_params().get('AllowUserToChangePassword')
 
 	def set_AllowUserToChangePassword(self,AllowUserToChangePassword):
 		self.add_query_param('AllowUserToChangePassword',AllowUserToChangePassword)
+
+	def get_LoginSessionDuration(self):
+		return self.get_query_params().get('LoginSessionDuration')
+
+	def set_LoginSessionDuration(self,LoginSessionDuration):
+		self.add_query_param('LoginSessionDuration',LoginSessionDuration)
