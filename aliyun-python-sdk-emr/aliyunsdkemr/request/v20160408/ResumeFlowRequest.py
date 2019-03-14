@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class ResumeFlowRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'ResumeFlow','emr')
+		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'ResumeFlow')
 
 	def get_FlowInstanceId(self):
 		return self.get_query_params().get('FlowInstanceId')

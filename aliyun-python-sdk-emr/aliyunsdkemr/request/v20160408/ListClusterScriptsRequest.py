@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class ListClusterScriptsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'ListClusterScripts','emr')
+		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'ListClusterScripts')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')

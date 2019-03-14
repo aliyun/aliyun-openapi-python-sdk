@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class CommonApiWhiteListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'CommonApiWhiteList','emr')
+		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'CommonApiWhiteList')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')

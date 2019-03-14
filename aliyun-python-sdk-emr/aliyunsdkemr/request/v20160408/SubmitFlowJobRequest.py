@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class SubmitFlowJobRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'SubmitFlowJob','emr')
+		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'SubmitFlowJob')
 
 	def get_JobId(self):
 		return self.get_query_params().get('JobId')

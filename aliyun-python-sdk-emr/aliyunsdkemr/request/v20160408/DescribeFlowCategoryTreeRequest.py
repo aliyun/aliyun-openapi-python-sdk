@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class DescribeFlowCategoryTreeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'DescribeFlowCategoryTree','emr')
+		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'DescribeFlowCategoryTree')
 
 	def get_Type(self):
 		return self.get_query_params().get('Type')

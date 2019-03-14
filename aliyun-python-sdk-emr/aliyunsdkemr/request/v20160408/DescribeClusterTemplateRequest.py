@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class DescribeClusterTemplateRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'DescribeClusterTemplate','emr')
+		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'DescribeClusterTemplate')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')

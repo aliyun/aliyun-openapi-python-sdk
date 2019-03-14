@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class DescribeFlowVariableCollectionRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'DescribeFlowVariableCollection','emr')
+		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'DescribeFlowVariableCollection')
 
 	def get_EntityId(self):
 		return self.get_query_params().get('EntityId')

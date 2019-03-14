@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class ResizeClusterV2Request(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'ResizeClusterV2','emr')
+		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'ResizeClusterV2')
 
 	def get_VswitchId(self):
 		return self.get_query_params().get('VswitchId')

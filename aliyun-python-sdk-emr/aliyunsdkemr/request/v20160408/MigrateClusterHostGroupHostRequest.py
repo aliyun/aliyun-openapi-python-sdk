@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class MigrateClusterHostGroupHostRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'MigrateClusterHostGroupHost','emr')
+		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'MigrateClusterHostGroupHost')
 
 	def get_HostInstanceIdLists(self):
 		return self.get_query_params().get('HostInstanceIdLists')

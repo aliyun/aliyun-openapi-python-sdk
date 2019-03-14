@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class CreateClusterV2Request(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'CreateClusterV2','emr')
+		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'CreateClusterV2')
 
 	def get_AutoPayOrder(self):
 		return self.get_query_params().get('AutoPayOrder')

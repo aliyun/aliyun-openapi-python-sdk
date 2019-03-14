@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class ModifyUserStatisticsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'ModifyUserStatistics','emr')
+		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'ModifyUserStatistics')
 
 	def get_JobMigratedNum(self):
 		return self.get_query_params().get('JobMigratedNum')

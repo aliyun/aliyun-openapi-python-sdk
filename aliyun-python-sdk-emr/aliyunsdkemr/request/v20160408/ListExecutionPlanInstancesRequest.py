@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class ListExecutionPlanInstancesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'ListExecutionPlanInstances','emr')
+		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'ListExecutionPlanInstances')
 
 	def get_OnlyLastInstance(self):
 		return self.get_query_params().get('OnlyLastInstance')

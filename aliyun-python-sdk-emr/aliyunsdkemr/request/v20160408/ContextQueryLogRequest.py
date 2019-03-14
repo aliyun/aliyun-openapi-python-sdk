@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class ContextQueryLogRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'ContextQueryLog','emr')
+		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'ContextQueryLog')
 
 	def get_PackId(self):
 		return self.get_query_params().get('PackId')

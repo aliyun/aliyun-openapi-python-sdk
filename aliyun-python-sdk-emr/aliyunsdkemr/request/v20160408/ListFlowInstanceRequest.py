@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class ListFlowInstanceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'ListFlowInstance','emr')
+		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'ListFlowInstance')
 
 	def get_Owner(self):
 		return self.get_query_params().get('Owner')
