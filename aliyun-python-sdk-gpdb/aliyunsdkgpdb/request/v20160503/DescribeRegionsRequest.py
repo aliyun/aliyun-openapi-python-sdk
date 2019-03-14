@@ -22,9 +22,3 @@ class DescribeRegionsRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'gpdb', '2016-05-03', 'DescribeRegions','gpdb')
-
-	def get_ZoneId(self):
-		return self.get_query_params().get('ZoneId')
-
-	def set_ZoneId(self,ZoneId):
-		self.add_query_param('ZoneId',ZoneId)

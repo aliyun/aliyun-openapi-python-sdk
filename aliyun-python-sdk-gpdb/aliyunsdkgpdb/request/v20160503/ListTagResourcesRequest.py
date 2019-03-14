@@ -18,28 +18,42 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class DescribeDBInstancesRequest(RpcRequest):
+class ListTagResourcesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'gpdb', '2016-05-03', 'DescribeDBInstances','gpdb')
+		RpcRequest.__init__(self, 'gpdb', '2016-05-03', 'ListTagResources','gpdb')
 
-	def get_DBInstanceIds(self):
-		return self.get_query_params().get('DBInstanceIds')
+	def get_ResourceOwnerId(self):
+		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_DBInstanceIds(self,DBInstanceIds):
-		self.add_query_param('DBInstanceIds',DBInstanceIds)
+	def set_ResourceOwnerId(self,ResourceOwnerId):
+		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
+	def get_ResourceIds(self):
+		return self.get_query_params().get('ResourceIds')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
+	def set_ResourceIds(self,ResourceIds):
+		for i in range(len(ResourceIds)):	
+			if ResourceIds[i] is not None:
+				self.add_query_param('ResourceId.' + str(i + 1) , ResourceIds[i]);
 
-	def get_DBInstanceDescription(self):
-		return self.get_query_params().get('DBInstanceDescription')
+	def get_ResourceOwnerAccount(self):
+		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_DBInstanceDescription(self,DBInstanceDescription):
-		self.add_query_param('DBInstanceDescription',DBInstanceDescription)
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+
+	def get_NextToken(self):
+		return self.get_query_params().get('NextToken')
+
+	def set_NextToken(self,NextToken):
+		self.add_query_param('NextToken',NextToken)
+
+	def get_OwnerAccount(self):
+		return self.get_query_params().get('OwnerAccount')
+
+	def set_OwnerAccount(self,OwnerAccount):
+		self.add_query_param('OwnerAccount',OwnerAccount)
 
 	def get_Tags(self):
 		return self.get_query_params().get('Tags')
@@ -58,14 +72,8 @@ class DescribeDBInstancesRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_InstanceNetworkType(self):
-		return self.get_query_params().get('InstanceNetworkType')
+	def get_ResourceType(self):
+		return self.get_query_params().get('ResourceType')
 
-	def set_InstanceNetworkType(self,InstanceNetworkType):
-		self.add_query_param('InstanceNetworkType',InstanceNetworkType)
-
-	def get_PageNumber(self):
-		return self.get_query_params().get('PageNumber')
-
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
+	def set_ResourceType(self,ResourceType):
+		self.add_query_param('ResourceType',ResourceType)
