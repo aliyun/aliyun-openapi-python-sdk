@@ -18,22 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class DescribeCensRequest(RpcRequest):
+class DescribeRouteServicesInCenRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cbn', '2017-09-12', 'DescribeCens','cbn')
-
-	def get_Filters(self):
-		return self.get_query_params().get('Filters')
-
-	def set_Filters(self,Filters):
-		for i in range(len(Filters)):	
-			for j in range(len(Filters[i].get('Values'))):
-				if Filters[i].get('Values')[j] is not None:
-					self.add_query_param('Filter.' + str(i + 1) + '.Value.'+str(j + 1), Filters[i].get('Values')[j])
-			if Filters[i].get('Key') is not None:
-				self.add_query_param('Filter.' + str(i + 1) + '.Key' , Filters[i].get('Key'))
-
+		RpcRequest.__init__(self, 'Cbn', '2017-09-12', 'DescribeRouteServicesInCen','cbn')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -47,6 +35,12 @@ class DescribeCensRequest(RpcRequest):
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
+	def get_CenId(self):
+		return self.get_query_params().get('CenId')
+
+	def set_CenId(self,CenId):
+		self.add_query_param('CenId',CenId)
+
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
 
@@ -59,16 +53,23 @@ class DescribeCensRequest(RpcRequest):
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
 
-	def get_Tags(self):
-		return self.get_query_params().get('Tags')
+	def get_Host(self):
+		return self.get_query_params().get('Host')
 
-	def set_Tags(self,Tags):
-		for i in range(len(Tags)):	
-			if Tags[i].get('Value') is not None:
-				self.add_query_param('Tag.' + str(i + 1) + '.Value' , Tags[i].get('Value'))
-			if Tags[i].get('Key') is not None:
-				self.add_query_param('Tag.' + str(i + 1) + '.Key' , Tags[i].get('Key'))
+	def set_Host(self,Host):
+		self.add_query_param('Host',Host)
 
+	def get_HostRegionId(self):
+		return self.get_query_params().get('HostRegionId')
+
+	def set_HostRegionId(self,HostRegionId):
+		self.add_query_param('HostRegionId',HostRegionId)
+
+	def get_AccessRegionId(self):
+		return self.get_query_params().get('AccessRegionId')
+
+	def set_AccessRegionId(self,AccessRegionId):
+		self.add_query_param('AccessRegionId',AccessRegionId)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
