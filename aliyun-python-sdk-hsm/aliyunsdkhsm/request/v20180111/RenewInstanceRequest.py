@@ -22,7 +22,6 @@ class RenewInstanceRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'hsm', '2018-01-11', 'RenewInstance','hsm')
-		self.set_method('POST')
 
 	def get_Period(self):
 		return self.get_query_params().get('Period')
