@@ -70,3 +70,9 @@ class DescribeCenAttachedChildInstancesRequest(RpcRequest):
 
 	def set_PageNumber(self,PageNumber):
 		self.add_query_param('PageNumber',PageNumber)
+
+	def get_ChildInstanceRegionId(self):
+		return self.get_query_params().get('ChildInstanceRegionId')
+
+	def set_ChildInstanceRegionId(self,ChildInstanceRegionId):
+		self.add_query_param('ChildInstanceRegionId',ChildInstanceRegionId)

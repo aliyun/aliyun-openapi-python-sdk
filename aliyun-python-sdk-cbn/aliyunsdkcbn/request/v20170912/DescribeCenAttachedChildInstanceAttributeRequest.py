@@ -18,22 +18,16 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class DescribeCensRequest(RpcRequest):
+class DescribeCenAttachedChildInstanceAttributeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cbn', '2017-09-12', 'DescribeCens','cbn')
+		RpcRequest.__init__(self, 'Cbn', '2017-09-12', 'DescribeCenAttachedChildInstanceAttribute','cbn')
 
-	def get_Filters(self):
-		return self.get_query_params().get('Filters')
+	def get_ChildInstanceId(self):
+		return self.get_query_params().get('ChildInstanceId')
 
-	def set_Filters(self,Filters):
-		for i in range(len(Filters)):	
-			for j in range(len(Filters[i].get('Values'))):
-				if Filters[i].get('Values')[j] is not None:
-					self.add_query_param('Filter.' + str(i + 1) + '.Value.'+str(j + 1), Filters[i].get('Values')[j])
-			if Filters[i].get('Key') is not None:
-				self.add_query_param('Filter.' + str(i + 1) + '.Key' , Filters[i].get('Key'))
-
+	def set_ChildInstanceId(self,ChildInstanceId):
+		self.add_query_param('ChildInstanceId',ChildInstanceId)
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -47,28 +41,17 @@ class DescribeCensRequest(RpcRequest):
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
+	def get_CenId(self):
+		return self.get_query_params().get('CenId')
+
+	def set_CenId(self,CenId):
+		self.add_query_param('CenId',CenId)
+
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
 
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
-
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_Tags(self):
-		return self.get_query_params().get('Tags')
-
-	def set_Tags(self,Tags):
-		for i in range(len(Tags)):	
-			if Tags[i].get('Value') is not None:
-				self.add_query_param('Tag.' + str(i + 1) + '.Value' , Tags[i].get('Value'))
-			if Tags[i].get('Key') is not None:
-				self.add_query_param('Tag.' + str(i + 1) + '.Key' , Tags[i].get('Key'))
-
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
@@ -76,8 +59,14 @@ class DescribeCensRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_PageNumber(self):
-		return self.get_query_params().get('PageNumber')
+	def get_ChildInstanceType(self):
+		return self.get_query_params().get('ChildInstanceType')
 
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
+	def set_ChildInstanceType(self,ChildInstanceType):
+		self.add_query_param('ChildInstanceType',ChildInstanceType)
+
+	def get_ChildInstanceRegionId(self):
+		return self.get_query_params().get('ChildInstanceRegionId')
+
+	def set_ChildInstanceRegionId(self,ChildInstanceRegionId):
+		self.add_query_param('ChildInstanceRegionId',ChildInstanceRegionId)
