@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class MoPenSendMqttMessageRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'MoPen', '2018-02-11', 'MoPenSendMqttMessage')
+		RpcRequest.__init__(self, 'MoPen', '2018-02-11', 'MoPenSendMqttMessage','mopen')
 		self.set_protocol_type('https');
 		self.set_method('POST')
 
