@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class DescribeScalingTaskGroupRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'DescribeScalingTaskGroup')
+		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'DescribeScalingTaskGroup','emr')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')

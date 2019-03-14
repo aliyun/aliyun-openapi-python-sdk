@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class SubmitFlowRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'SubmitFlow')
+		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'SubmitFlow','emr')
 
 	def get_Conf(self):
 		return self.get_query_params().get('Conf')

@@ -18,16 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class DescribeJobMigrateInfoRequest(RpcRequest):
+class DescribeETLJobInstanceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'DescribeJobMigrateInfo')
-
-	def get_JobId(self):
-		return self.get_query_params().get('JobId')
-
-	def set_JobId(self,JobId):
-		self.add_query_param('JobId',JobId)
+		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'DescribeETLJobInstance','emr')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -35,8 +29,8 @@ class DescribeJobMigrateInfoRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_UserId(self):
-		return self.get_query_params().get('UserId')
+	def get_Id(self):
+		return self.get_query_params().get('Id')
 
-	def set_UserId(self,UserId):
-		self.add_query_param('UserId',UserId)
+	def set_Id(self,Id):
+		self.add_query_param('Id',Id)

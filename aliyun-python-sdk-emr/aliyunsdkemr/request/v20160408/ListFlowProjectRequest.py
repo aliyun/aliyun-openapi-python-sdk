@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class ListFlowProjectRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'ListFlowProject')
+		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'ListFlowProject','emr')
 
 	def get_Name(self):
 		return self.get_query_params().get('Name')

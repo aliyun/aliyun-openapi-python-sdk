@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class CreateFlowCategoryRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'CreateFlowCategory')
+		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'CreateFlowCategory','emr')
 
 	def get_Name(self):
 		return self.get_query_params().get('Name')

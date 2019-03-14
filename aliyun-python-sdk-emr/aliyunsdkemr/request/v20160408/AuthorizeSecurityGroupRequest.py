@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class AuthorizeSecurityGroupRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'AuthorizeSecurityGroup')
+		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'AuthorizeSecurityGroup','emr')
 
 	def get_BizType(self):
 		return self.get_query_params().get('BizType')

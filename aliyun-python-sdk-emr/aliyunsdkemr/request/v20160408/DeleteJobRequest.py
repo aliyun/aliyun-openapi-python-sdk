@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class DeleteJobRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'DeleteJob')
+		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'DeleteJob','emr')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')

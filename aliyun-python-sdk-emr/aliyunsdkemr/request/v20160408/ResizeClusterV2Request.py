@@ -21,13 +21,39 @@ from aliyunsdkcore.request import RpcRequest
 class ResizeClusterV2Request(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'ResizeClusterV2')
+		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'ResizeClusterV2','emr')
 
 	def get_VswitchId(self):
 		return self.get_query_params().get('VswitchId')
 
 	def set_VswitchId(self,VswitchId):
 		self.add_query_param('VswitchId',VswitchId)
+
+	def get_IsOpenPublicIp(self):
+		return self.get_query_params().get('IsOpenPublicIp')
+
+	def set_IsOpenPublicIp(self,IsOpenPublicIp):
+		self.add_query_param('IsOpenPublicIp',IsOpenPublicIp)
+
+	def get_AutoPayOrder(self):
+		return self.get_query_params().get('AutoPayOrder')
+
+	def set_AutoPayOrder(self,AutoPayOrder):
+		self.add_query_param('AutoPayOrder',AutoPayOrder)
+
+	def get_HostComponentInfos(self):
+		return self.get_query_params().get('HostComponentInfos')
+
+	def set_HostComponentInfos(self,HostComponentInfos):
+		for i in range(len(HostComponentInfos)):	
+			if HostComponentInfos[i].get('HostName') is not None:
+				self.add_query_param('HostComponentInfo.' + str(i + 1) + '.HostName' , HostComponentInfos[i].get('HostName'))
+			for j in range(len(HostComponentInfos[i].get('ComponentNameLists'))):
+				if HostComponentInfos[i].get('ComponentNameLists')[j] is not None:
+					self.add_query_param('HostComponentInfo.' + str(i + 1) + '.ComponentNameList.'+str(j + 1), HostComponentInfos[i].get('ComponentNameLists')[j])
+			if HostComponentInfos[i].get('ServiceName') is not None:
+				self.add_query_param('HostComponentInfo.' + str(i + 1) + '.ServiceName' , HostComponentInfos[i].get('ServiceName'))
+
 
 	def get_HostGroups(self):
 		return self.get_query_params().get('HostGroups')
@@ -38,6 +64,8 @@ class ResizeClusterV2Request(RpcRequest):
 				self.add_query_param('HostGroup.' + str(i + 1) + '.Period' , HostGroups[i].get('Period'))
 			if HostGroups[i].get('SysDiskCapacity') is not None:
 				self.add_query_param('HostGroup.' + str(i + 1) + '.SysDiskCapacity' , HostGroups[i].get('SysDiskCapacity'))
+			if HostGroups[i].get('HostKeyPairName') is not None:
+				self.add_query_param('HostGroup.' + str(i + 1) + '.HostKeyPairName' , HostGroups[i].get('HostKeyPairName'))
 			if HostGroups[i].get('DiskCapacity') is not None:
 				self.add_query_param('HostGroup.' + str(i + 1) + '.DiskCapacity' , HostGroups[i].get('DiskCapacity'))
 			if HostGroups[i].get('SysDiskType') is not None:
@@ -66,6 +94,8 @@ class ResizeClusterV2Request(RpcRequest):
 				self.add_query_param('HostGroup.' + str(i + 1) + '.ChargeType' , HostGroups[i].get('ChargeType'))
 			if HostGroups[i].get('CreateType') is not None:
 				self.add_query_param('HostGroup.' + str(i + 1) + '.CreateType' , HostGroups[i].get('CreateType'))
+			if HostGroups[i].get('HostPassword') is not None:
+				self.add_query_param('HostGroup.' + str(i + 1) + '.HostPassword' , HostGroups[i].get('HostPassword'))
 			if HostGroups[i].get('HostGroupType') is not None:
 				self.add_query_param('HostGroup.' + str(i + 1) + '.HostGroupType' , HostGroups[i].get('HostGroupType'))
 

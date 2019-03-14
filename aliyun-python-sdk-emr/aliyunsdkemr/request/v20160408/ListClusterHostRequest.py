@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class ListClusterHostRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'ListClusterHost')
+		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'ListClusterHost','emr')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -84,6 +84,12 @@ class ListClusterHostRequest(RpcRequest):
 
 	def set_GroupType(self,GroupType):
 		self.add_query_param('GroupType',GroupType)
+
+	def get_HostGroupId(self):
+		return self.get_query_params().get('HostGroupId')
+
+	def set_HostGroupId(self,HostGroupId):
+		self.add_query_param('HostGroupId',HostGroupId)
 
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')

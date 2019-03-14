@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class ListFlowNodeInstanceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'ListFlowNodeInstance')
+		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'ListFlowNodeInstance','emr')
 
 	def get_StatusLists(self):
 		return self.get_query_params().get('StatusLists')
@@ -31,17 +31,17 @@ class ListFlowNodeInstanceRequest(RpcRequest):
 			if StatusLists[i] is not None:
 				self.add_query_param('StatusList.' + str(i + 1) , StatusLists[i]);
 
-	def get_FromApp(self):
-		return self.get_query_params().get('FromApp')
-
-	def set_FromApp(self,FromApp):
-		self.add_query_param('FromApp',FromApp)
-
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
 
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
+
+	def get_OrderBy(self):
+		return self.get_query_params().get('OrderBy')
+
+	def set_OrderBy(self,OrderBy):
+		self.add_query_param('OrderBy',OrderBy)
 
 	def get_StartTime(self):
 		return self.get_query_params().get('StartTime')
@@ -60,3 +60,9 @@ class ListFlowNodeInstanceRequest(RpcRequest):
 
 	def set_PageNumber(self,PageNumber):
 		self.add_query_param('PageNumber',PageNumber)
+
+	def get_OrderType(self):
+		return self.get_query_params().get('OrderType')
+
+	def set_OrderType(self,OrderType):
+		self.add_query_param('OrderType',OrderType)

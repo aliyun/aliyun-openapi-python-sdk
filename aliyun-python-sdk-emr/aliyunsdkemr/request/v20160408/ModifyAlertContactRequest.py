@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class ModifyAlertContactRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'ModifyAlertContact')
+		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'ModifyAlertContact','emr')
 
 	def get_EmailVerificationCode(self):
 		return self.get_query_params().get('EmailVerificationCode')

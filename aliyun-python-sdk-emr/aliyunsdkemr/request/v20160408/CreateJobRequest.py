@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class CreateJobRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'CreateJob')
+		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'CreateJob','emr')
 
 	def get_RunParameter(self):
 		return self.get_query_params().get('RunParameter')

@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class ModifyFlowJobRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'ModifyFlowJob')
+		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'ModifyFlowJob','emr')
 
 	def get_RunConf(self):
 		return self.get_query_params().get('RunConf')
@@ -76,6 +76,12 @@ class ModifyFlowJobRequest(RpcRequest):
 	def set_FailAct(self,FailAct):
 		self.add_query_param('FailAct',FailAct)
 
+	def get_CustomVariables(self):
+		return self.get_query_params().get('CustomVariables')
+
+	def set_CustomVariables(self,CustomVariables):
+		self.add_query_param('CustomVariables',CustomVariables)
+
 	def get_Mode(self):
 		return self.get_query_params().get('Mode')
 
@@ -111,6 +117,12 @@ class ModifyFlowJobRequest(RpcRequest):
 
 	def set_MaxRetry(self,MaxRetry):
 		self.add_query_param('MaxRetry',MaxRetry)
+
+	def get_AlertConf(self):
+		return self.get_query_params().get('AlertConf')
+
+	def set_AlertConf(self,AlertConf):
+		self.add_query_param('AlertConf',AlertConf)
 
 	def get_ProjectId(self):
 		return self.get_query_params().get('ProjectId')

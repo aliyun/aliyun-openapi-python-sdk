@@ -18,16 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class ModifyPreMigrateJobsRequest(RpcRequest):
+class CreateNavNodeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'ModifyPreMigrateJobs')
-
-	def get_JobId(self):
-		return self.get_query_params().get('JobId')
-
-	def set_JobId(self,JobId):
-		self.add_query_param('JobId',JobId)
+		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'CreateNavNode','emr')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -35,14 +29,38 @@ class ModifyPreMigrateJobsRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_PremigrtateJobJson(self):
-		return self.get_query_params().get('PremigrtateJobJson')
+	def get_Name(self):
+		return self.get_query_params().get('Name')
 
-	def set_PremigrtateJobJson(self,PremigrtateJobJson):
-		self.add_query_param('PremigrtateJobJson',PremigrtateJobJson)
+	def set_Name(self,Name):
+		self.add_query_param('Name',Name)
 
-	def get_UserId(self):
-		return self.get_query_params().get('UserId')
+	def get_Type(self):
+		return self.get_query_params().get('Type')
 
-	def set_UserId(self,UserId):
-		self.add_query_param('UserId',UserId)
+	def set_Type(self,Type):
+		self.add_query_param('Type',Type)
+
+	def get_ProjectId(self):
+		return self.get_query_params().get('ProjectId')
+
+	def set_ProjectId(self,ProjectId):
+		self.add_query_param('ProjectId',ProjectId)
+
+	def get_CategoryType(self):
+		return self.get_query_params().get('CategoryType')
+
+	def set_CategoryType(self,CategoryType):
+		self.add_query_param('CategoryType',CategoryType)
+
+	def get_ObjectId(self):
+		return self.get_query_params().get('ObjectId')
+
+	def set_ObjectId(self,ObjectId):
+		self.add_query_param('ObjectId',ObjectId)
+
+	def get_ParentId(self):
+		return self.get_query_params().get('ParentId')
+
+	def set_ParentId(self,ParentId):
+		self.add_query_param('ParentId',ParentId)

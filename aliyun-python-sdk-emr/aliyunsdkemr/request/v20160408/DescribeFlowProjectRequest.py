@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class DescribeFlowProjectRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'DescribeFlowProject')
+		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'DescribeFlowProject','emr')
 
 	def get_ProjectId(self):
 		return self.get_query_params().get('ProjectId')
