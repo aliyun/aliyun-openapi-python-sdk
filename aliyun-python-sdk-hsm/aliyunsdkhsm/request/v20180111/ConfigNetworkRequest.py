@@ -22,7 +22,6 @@ class ConfigNetworkRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'hsm', '2018-01-11', 'ConfigNetwork','hsm')
-		self.set_method('POST')
 
 	def get_VSwitchId(self):
 		return self.get_query_params().get('VSwitchId')
