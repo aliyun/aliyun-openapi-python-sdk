@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class MetastoreListTaskRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'MetastoreListTask')
+		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'MetastoreListTask','emr')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -34,6 +34,12 @@ class MetastoreListTaskRequest(RpcRequest):
 
 	def set_TaskStatus(self,TaskStatus):
 		self.add_query_param('TaskStatus',TaskStatus)
+
+	def get_TaskSourceType(self):
+		return self.get_query_params().get('TaskSourceType')
+
+	def set_TaskSourceType(self,TaskSourceType):
+		self.add_query_param('TaskSourceType',TaskSourceType)
 
 	def get_TaskType(self):
 		return self.get_query_params().get('TaskType')

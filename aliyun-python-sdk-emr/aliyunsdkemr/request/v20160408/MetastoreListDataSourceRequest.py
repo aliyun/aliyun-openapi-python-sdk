@@ -21,13 +21,19 @@ from aliyunsdkcore.request import RpcRequest
 class MetastoreListDataSourceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'MetastoreListDataSource')
+		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'MetastoreListDataSource','emr')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+
+	def get_ClusterReleased(self):
+		return self.get_query_params().get('ClusterReleased')
+
+	def set_ClusterReleased(self,ClusterReleased):
+		self.add_query_param('ClusterReleased',ClusterReleased)
 
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')

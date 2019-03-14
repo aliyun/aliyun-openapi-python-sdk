@@ -18,10 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class MetastoreListPartitionRequest(RpcRequest):
+class GetJobMigrateResultRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'MetastoreListPartition')
+		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'GetJobMigrateResult','emr')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -29,26 +29,8 @@ class MetastoreListPartitionRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
+	def get_Id(self):
+		return self.get_query_params().get('Id')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_TableId(self):
-		return self.get_query_params().get('TableId')
-
-	def set_TableId(self,TableId):
-		self.add_query_param('TableId',TableId)
-
-	def get_DatabaseId(self):
-		return self.get_query_params().get('DatabaseId')
-
-	def set_DatabaseId(self,DatabaseId):
-		self.add_query_param('DatabaseId',DatabaseId)
-
-	def get_PageNumber(self):
-		return self.get_query_params().get('PageNumber')
-
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
+	def set_Id(self,Id):
+		self.add_query_param('Id',Id)

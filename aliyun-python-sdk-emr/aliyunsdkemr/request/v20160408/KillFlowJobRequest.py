@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class KillFlowJobRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'KillFlowJob')
+		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'KillFlowJob','emr')
 
 	def get_JobInstanceId(self):
 		return self.get_query_params().get('JobInstanceId')

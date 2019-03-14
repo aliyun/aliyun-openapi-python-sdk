@@ -18,10 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class PreMigrateJobsRequest(RpcRequest):
+class DescribeETLJobSqlSchemaRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'PreMigrateJobs')
+		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'DescribeETLJobSqlSchema','emr')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -29,20 +29,8 @@ class PreMigrateJobsRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_FromApp(self):
-		return self.get_query_params().get('FromApp')
+	def get_ResolveId(self):
+		return self.get_query_params().get('ResolveId')
 
-	def set_FromApp(self,FromApp):
-		self.add_query_param('FromApp',FromApp)
-
-	def get_Ids(self):
-		return self.get_query_params().get('Ids')
-
-	def set_Ids(self,Ids):
-		self.add_query_param('Ids',Ids)
-
-	def get_UserId(self):
-		return self.get_query_params().get('UserId')
-
-	def set_UserId(self,UserId):
-		self.add_query_param('UserId',UserId)
+	def set_ResolveId(self,ResolveId):
+		self.add_query_param('ResolveId',ResolveId)

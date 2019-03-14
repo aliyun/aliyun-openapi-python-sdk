@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class MetastoreListKafkaConsumerGroupRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'MetastoreListKafkaConsumerGroup')
+		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'MetastoreListKafkaConsumerGroup','emr')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -34,3 +34,15 @@ class MetastoreListKafkaConsumerGroupRequest(RpcRequest):
 
 	def set_TopicId(self,TopicId):
 		self.add_query_param('TopicId',TopicId)
+
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
+
+	def get_PageNumber(self):
+		return self.get_query_params().get('PageNumber')
+
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)

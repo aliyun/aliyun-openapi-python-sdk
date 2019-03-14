@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class DescribeFlowNodeInstanceContainerLogRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'DescribeFlowNodeInstanceContainerLog')
+		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'DescribeFlowNodeInstanceContainerLog','emr')
 
 	def get_Offset(self):
 		return self.get_query_params().get('Offset')

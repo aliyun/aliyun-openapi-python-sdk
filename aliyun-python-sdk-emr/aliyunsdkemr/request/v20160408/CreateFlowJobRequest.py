@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class CreateFlowJobRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'CreateFlowJob')
+		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'CreateFlowJob','emr')
 
 	def get_RunConf(self):
 		return self.get_query_params().get('RunConf')
@@ -117,6 +117,12 @@ class CreateFlowJobRequest(RpcRequest):
 
 	def set_Adhoc(self,Adhoc):
 		self.add_query_param('Adhoc',Adhoc)
+
+	def get_AlertConf(self):
+		return self.get_query_params().get('AlertConf')
+
+	def set_AlertConf(self,AlertConf):
+		self.add_query_param('AlertConf',AlertConf)
 
 	def get_ProjectId(self):
 		return self.get_query_params().get('ProjectId')

@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class ListClustersRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'ListClusters')
+		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'ListClusters','emr')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -62,6 +62,12 @@ class ListClustersRequest(RpcRequest):
 
 	def set_CreateType(self,CreateType):
 		self.add_query_param('CreateType',CreateType)
+
+	def get_DepositType(self):
+		return self.get_query_params().get('DepositType')
+
+	def set_DepositType(self,DepositType):
+		self.add_query_param('DepositType',DepositType)
 
 	def get_DefaultStatus(self):
 		return self.get_query_params().get('DefaultStatus')

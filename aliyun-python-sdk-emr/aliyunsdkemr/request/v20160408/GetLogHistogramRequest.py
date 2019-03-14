@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class GetLogHistogramRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'GetLogHistogram')
+		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'GetLogHistogram','emr')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -34,6 +34,12 @@ class GetLogHistogramRequest(RpcRequest):
 
 	def set_HostInnerIp(self,HostInnerIp):
 		self.add_query_param('HostInnerIp',HostInnerIp)
+
+	def get_HostName(self):
+		return self.get_query_params().get('HostName')
+
+	def set_HostName(self,HostName):
+		self.add_query_param('HostName',HostName)
 
 	def get_LogstoreName(self):
 		return self.get_query_params().get('LogstoreName')

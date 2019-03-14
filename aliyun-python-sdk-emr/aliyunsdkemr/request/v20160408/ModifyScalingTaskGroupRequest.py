@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class ModifyScalingTaskGroupRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'ModifyScalingTaskGroup')
+		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'ModifyScalingTaskGroup','emr')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -34,6 +34,12 @@ class ModifyScalingTaskGroupRequest(RpcRequest):
 
 	def set_HostGroupId(self,HostGroupId):
 		self.add_query_param('HostGroupId',HostGroupId)
+
+	def get_ActiveRuleCategory(self):
+		return self.get_query_params().get('ActiveRuleCategory')
+
+	def set_ActiveRuleCategory(self,ActiveRuleCategory):
+		self.add_query_param('ActiveRuleCategory',ActiveRuleCategory)
 
 	def get_ClusterId(self):
 		return self.get_query_params().get('ClusterId')

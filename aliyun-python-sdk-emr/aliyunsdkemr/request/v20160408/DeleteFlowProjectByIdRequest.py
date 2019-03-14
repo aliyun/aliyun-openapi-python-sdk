@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class DeleteFlowProjectByIdRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'DeleteFlowProjectById')
+		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'DeleteFlowProjectById','emr')
 
 	def get_ProjectId(self):
 		return self.get_query_params().get('ProjectId')

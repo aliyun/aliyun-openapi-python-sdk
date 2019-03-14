@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class ListRequiredServiceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'ListRequiredService')
+		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'ListRequiredService','emr')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')

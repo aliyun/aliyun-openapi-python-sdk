@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class DescribeFlowNodeInstanceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'DescribeFlowNodeInstance')
+		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'DescribeFlowNodeInstance','emr')
 
 	def get_Id(self):
 		return self.get_query_params().get('Id')

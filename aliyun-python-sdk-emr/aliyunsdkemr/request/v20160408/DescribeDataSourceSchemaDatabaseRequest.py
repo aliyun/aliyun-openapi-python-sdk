@@ -18,10 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class ListOpsOperationTask1Request(RpcRequest):
+class DescribeDataSourceSchemaDatabaseRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'ListOpsOperationTask1')
+		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'DescribeDataSourceSchemaDatabase','emr')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -29,14 +29,14 @@ class ListOpsOperationTask1Request(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_OperationId(self):
-		return self.get_query_params().get('OperationId')
+	def get_DbName(self):
+		return self.get_query_params().get('DbName')
 
-	def set_OperationId(self,OperationId):
-		self.add_query_param('OperationId',OperationId)
+	def set_DbName(self,DbName):
+		self.add_query_param('DbName',DbName)
 
-	def get_PageNumber(self):
-		return self.get_query_params().get('PageNumber')
+	def get_DataSourceId(self):
+		return self.get_query_params().get('DataSourceId')
 
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
+	def set_DataSourceId(self,DataSourceId):
+		self.add_query_param('DataSourceId',DataSourceId)

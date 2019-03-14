@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class GetQueueSubmissionStatisticInfoRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'GetQueueSubmissionStatisticInfo')
+		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'GetQueueSubmissionStatisticInfo','emr')
 
 	def get_FromDatetime(self):
 		return self.get_query_params().get('FromDatetime')

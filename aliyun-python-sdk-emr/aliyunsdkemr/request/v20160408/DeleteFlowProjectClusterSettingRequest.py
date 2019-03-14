@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class DeleteFlowProjectClusterSettingRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'DeleteFlowProjectClusterSetting')
+		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'DeleteFlowProjectClusterSetting','emr')
 
 	def get_ClusterId(self):
 		return self.get_query_params().get('ClusterId')

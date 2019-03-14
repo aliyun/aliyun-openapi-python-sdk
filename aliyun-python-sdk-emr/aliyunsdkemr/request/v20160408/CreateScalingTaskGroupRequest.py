@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class CreateScalingTaskGroupRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'CreateScalingTaskGroup')
+		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'CreateScalingTaskGroup','emr')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -81,6 +81,9 @@ class CreateScalingTaskGroupRequest(RpcRequest):
 				self.add_query_param('ScalingRule.' + str(i + 1) + '.RuleCategory' , ScalingRules[i].get('RuleCategory'))
 			if ScalingRules[i].get('AdjustmentValue') is not None:
 				self.add_query_param('ScalingRule.' + str(i + 1) + '.AdjustmentValue' , ScalingRules[i].get('AdjustmentValue'))
+			for j in range(len(ScalingRules[i].get('SchedulerTriggers'))):
+				if ScalingRules[i].get('SchedulerTriggers')[j] is not None:
+					self.add_query_param('ScalingRule.' + str(i + 1) + '.SchedulerTrigger.'+str(j + 1), ScalingRules[i].get('SchedulerTriggers')[j])
 			if ScalingRules[i].get('AdjustmentType') is not None:
 				self.add_query_param('ScalingRule.' + str(i + 1) + '.AdjustmentType' , ScalingRules[i].get('AdjustmentType'))
 			if ScalingRules[i].get('Cooldown') is not None:
@@ -93,9 +96,18 @@ class CreateScalingTaskGroupRequest(RpcRequest):
 				self.add_query_param('ScalingRule.' + str(i + 1) + '.RecurrenceValue' , ScalingRules[i].get('RecurrenceValue'))
 			if ScalingRules[i].get('RecurrenceEndTime') is not None:
 				self.add_query_param('ScalingRule.' + str(i + 1) + '.RecurrenceEndTime' , ScalingRules[i].get('RecurrenceEndTime'))
+			for j in range(len(ScalingRules[i].get('CloudWatchTriggers'))):
+				if ScalingRules[i].get('CloudWatchTriggers')[j] is not None:
+					self.add_query_param('ScalingRule.' + str(i + 1) + '.CloudWatchTrigger.'+str(j + 1), ScalingRules[i].get('CloudWatchTriggers')[j])
 			if ScalingRules[i].get('RecurrenceType') is not None:
 				self.add_query_param('ScalingRule.' + str(i + 1) + '.RecurrenceType' , ScalingRules[i].get('RecurrenceType'))
 
+
+	def get_ActiveRuleCategory(self):
+		return self.get_query_params().get('ActiveRuleCategory')
+
+	def set_ActiveRuleCategory(self,ActiveRuleCategory):
+		self.add_query_param('ActiveRuleCategory',ActiveRuleCategory)
 
 	def get_MaxSize(self):
 		return self.get_query_params().get('MaxSize')

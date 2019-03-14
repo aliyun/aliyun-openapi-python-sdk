@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class ListFlowJobHistoryRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'ListFlowJobHistory')
+		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'ListFlowJobHistory','emr')
 
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')

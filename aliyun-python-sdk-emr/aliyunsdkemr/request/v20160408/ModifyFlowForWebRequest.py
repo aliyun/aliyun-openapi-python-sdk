@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class ModifyFlowForWebRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'ModifyFlowForWeb')
+		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'ModifyFlowForWeb','emr')
 
 	def get_CronExpr(self):
 		return self.get_query_params().get('CronExpr')
@@ -106,6 +106,12 @@ class ModifyFlowForWebRequest(RpcRequest):
 
 	def set_Id(self,Id):
 		self.add_query_param('Id',Id)
+
+	def get_AlertConf(self):
+		return self.get_query_params().get('AlertConf')
+
+	def set_AlertConf(self,AlertConf):
+		self.add_query_param('AlertConf',AlertConf)
 
 	def get_ProjectId(self):
 		return self.get_query_params().get('ProjectId')

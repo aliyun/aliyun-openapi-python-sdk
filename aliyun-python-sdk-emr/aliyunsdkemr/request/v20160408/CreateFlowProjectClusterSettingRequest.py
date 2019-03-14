@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class CreateFlowProjectClusterSettingRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'CreateFlowProjectClusterSetting')
+		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'CreateFlowProjectClusterSetting','emr')
 
 	def get_UserLists(self):
 		return self.get_query_params().get('UserLists')

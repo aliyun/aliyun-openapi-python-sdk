@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class MetastoreListDatabasesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'MetastoreListDatabases')
+		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'MetastoreListDatabases','emr')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -40,6 +40,12 @@ class MetastoreListDatabasesRequest(RpcRequest):
 
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
+
+	def get_FuzzyDatabaseName(self):
+		return self.get_query_params().get('FuzzyDatabaseName')
+
+	def set_FuzzyDatabaseName(self,FuzzyDatabaseName):
+		self.add_query_param('FuzzyDatabaseName',FuzzyDatabaseName)
 
 	def get_PageNumber(self):
 		return self.get_query_params().get('PageNumber')

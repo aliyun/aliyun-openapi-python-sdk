@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class DescribeFlowJobStatisticRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'DescribeFlowJobStatistic')
+		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'DescribeFlowJobStatistic','emr')
 
 	def get_FromApp(self):
 		return self.get_query_params().get('FromApp')

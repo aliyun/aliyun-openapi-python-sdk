@@ -21,4 +21,4 @@ from aliyunsdkcore.request import RpcRequest
 class ListFlowClusterAllRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'ListFlowClusterAll')
+		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'ListFlowClusterAll','emr')

@@ -18,10 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class QueryServiceMetricDataRequest(RpcRequest):
+class CreateETLJobRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'QueryServiceMetricData')
+		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'CreateETLJob','emr')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -29,38 +29,32 @@ class QueryServiceMetricDataRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_Period(self):
-		return self.get_query_params().get('Period')
+	def get_NavParentId(self):
+		return self.get_query_params().get('NavParentId')
 
-	def set_Period(self,Period):
-		self.add_query_param('Period',Period)
+	def set_NavParentId(self,NavParentId):
+		self.add_query_param('NavParentId',NavParentId)
 
-	def get_Dims(self):
-		return self.get_query_params().get('Dims')
+	def get_Name(self):
+		return self.get_query_params().get('Name')
 
-	def set_Dims(self,Dims):
-		self.add_query_param('Dims',Dims)
+	def set_Name(self,Name):
+		self.add_query_param('Name',Name)
 
-	def get_Metric(self):
-		return self.get_query_params().get('Metric')
+	def get_Description(self):
+		return self.get_query_params().get('Description')
 
-	def set_Metric(self,Metric):
-		self.add_query_param('Metric',Metric)
+	def set_Description(self,Description):
+		self.add_query_param('Description',Description)
 
-	def get_Project(self):
-		return self.get_query_params().get('Project')
+	def get_Type(self):
+		return self.get_query_params().get('Type')
 
-	def set_Project(self,Project):
-		self.add_query_param('Project',Project)
+	def set_Type(self,Type):
+		self.add_query_param('Type',Type)
 
-	def get_StartTimeStamp(self):
-		return self.get_query_params().get('StartTimeStamp')
+	def get_ProjectId(self):
+		return self.get_query_params().get('ProjectId')
 
-	def set_StartTimeStamp(self,StartTimeStamp):
-		self.add_query_param('StartTimeStamp',StartTimeStamp)
-
-	def get_EndTimeStamp(self):
-		return self.get_query_params().get('EndTimeStamp')
-
-	def set_EndTimeStamp(self,EndTimeStamp):
-		self.add_query_param('EndTimeStamp',EndTimeStamp)
+	def set_ProjectId(self,ProjectId):
+		self.add_query_param('ProjectId',ProjectId)

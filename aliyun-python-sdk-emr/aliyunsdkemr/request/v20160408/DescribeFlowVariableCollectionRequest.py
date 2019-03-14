@@ -18,19 +18,13 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class ListClusterFullServiceQuickLinkRequest(RpcRequest):
+class DescribeFlowVariableCollectionRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'ListClusterFullServiceQuickLink')
+		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'DescribeFlowVariableCollection','emr')
 
-	def get_ResourceOwnerId(self):
-		return self.get_query_params().get('ResourceOwnerId')
+	def get_EntityId(self):
+		return self.get_query_params().get('EntityId')
 
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_ClusterId(self):
-		return self.get_query_params().get('ClusterId')
-
-	def set_ClusterId(self,ClusterId):
-		self.add_query_param('ClusterId',ClusterId)
+	def set_EntityId(self,EntityId):
+		self.add_query_param('EntityId',EntityId)

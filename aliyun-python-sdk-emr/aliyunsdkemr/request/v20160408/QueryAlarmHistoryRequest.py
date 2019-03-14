@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class QueryAlarmHistoryRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'QueryAlarmHistory')
+		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'QueryAlarmHistory','emr')
 
 	def get_Cursor(self):
 		return self.get_query_params().get('Cursor')

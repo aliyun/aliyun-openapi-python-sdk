@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class DeleteAlertContactsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'DeleteAlertContacts')
+		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'DeleteAlertContacts','emr')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
