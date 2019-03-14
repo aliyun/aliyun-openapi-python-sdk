@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class CancelCallRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dyvmsapi', '2017-05-25', 'CancelCall')
+		RpcRequest.__init__(self, 'Dyvmsapi', '2017-05-25', 'CancelCall','dyvmsapi')
 
 	def get_CallId(self):
 		return self.get_query_params().get('CallId')

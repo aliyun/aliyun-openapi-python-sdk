@@ -18,10 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class SingleCallByTtsRequest(RpcRequest):
+class GetRtcTokenRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dyvmsapi', '2017-05-25', 'SingleCallByTts','dyvmsapi')
+		RpcRequest.__init__(self, 'Dyvmsapi', '2017-05-25', 'GetRtcToken','dyvmsapi')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -35,56 +35,26 @@ class SingleCallByTtsRequest(RpcRequest):
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
-	def get_TtsCode(self):
-		return self.get_query_params().get('TtsCode')
-
-	def set_TtsCode(self,TtsCode):
-		self.add_query_param('TtsCode',TtsCode)
-
-	def get_PlayTimes(self):
-		return self.get_query_params().get('PlayTimes')
-
-	def set_PlayTimes(self,PlayTimes):
-		self.add_query_param('PlayTimes',PlayTimes)
-
-	def get_TtsParam(self):
-		return self.get_query_params().get('TtsParam')
-
-	def set_TtsParam(self,TtsParam):
-		self.add_query_param('TtsParam',TtsParam)
-
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_Speed(self):
-		return self.get_query_params().get('Speed')
+	def get_UserId(self):
+		return self.get_query_params().get('UserId')
 
-	def set_Speed(self,Speed):
-		self.add_query_param('Speed',Speed)
+	def set_UserId(self,UserId):
+		self.add_query_param('UserId',UserId)
 
-	def get_Volume(self):
-		return self.get_query_params().get('Volume')
+	def get_DeviceId(self):
+		return self.get_query_params().get('DeviceId')
 
-	def set_Volume(self,Volume):
-		self.add_query_param('Volume',Volume)
+	def set_DeviceId(self,DeviceId):
+		self.add_query_param('DeviceId',DeviceId)
 
-	def get_CalledNumber(self):
-		return self.get_query_params().get('CalledNumber')
+	def get_IsCustomAccount(self):
+		return self.get_query_params().get('IsCustomAccount')
 
-	def set_CalledNumber(self,CalledNumber):
-		self.add_query_param('CalledNumber',CalledNumber)
-
-	def get_CalledShowNumber(self):
-		return self.get_query_params().get('CalledShowNumber')
-
-	def set_CalledShowNumber(self,CalledShowNumber):
-		self.add_query_param('CalledShowNumber',CalledShowNumber)
-
-	def get_OutId(self):
-		return self.get_query_params().get('OutId')
-
-	def set_OutId(self,OutId):
-		self.add_query_param('OutId',OutId)
+	def set_IsCustomAccount(self,IsCustomAccount):
+		self.add_query_param('IsCustomAccount',IsCustomAccount)

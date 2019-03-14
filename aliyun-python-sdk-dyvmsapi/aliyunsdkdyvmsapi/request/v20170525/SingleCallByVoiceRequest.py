@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class SingleCallByVoiceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dyvmsapi', '2017-05-25', 'SingleCallByVoice')
+		RpcRequest.__init__(self, 'Dyvmsapi', '2017-05-25', 'SingleCallByVoice','dyvmsapi')
 
 	def get_Volume(self):
 		return self.get_query_params().get('Volume')

@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class VoipGetTokenRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dyvmsapi', '2017-05-25', 'VoipGetToken')
+		RpcRequest.__init__(self, 'Dyvmsapi', '2017-05-25', 'VoipGetToken','dyvmsapi')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -52,3 +52,9 @@ class VoipGetTokenRequest(RpcRequest):
 
 	def set_DeviceId(self,DeviceId):
 		self.add_query_param('DeviceId',DeviceId)
+
+	def get_IsCustomAccount(self):
+		return self.get_query_params().get('IsCustomAccount')
+
+	def set_IsCustomAccount(self,IsCustomAccount):
+		self.add_query_param('IsCustomAccount',IsCustomAccount)
