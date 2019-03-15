@@ -18,13 +18,31 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class QueryCustomerLabelRequest(RpcRequest):
+class AddLabelForBidRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Crm', '2015-04-08', 'QueryCustomerLabel','crm')
+		RpcRequest.__init__(self, 'Crm', '2015-04-08', 'AddLabelForBid','crm')
 
 	def get_LabelSeries(self):
 		return self.get_query_params().get('LabelSeries')
 
 	def set_LabelSeries(self,LabelSeries):
 		self.add_query_param('LabelSeries',LabelSeries)
+
+	def get_EndTime(self):
+		return self.get_query_params().get('EndTime')
+
+	def set_EndTime(self,EndTime):
+		self.add_query_param('EndTime',EndTime)
+
+	def get_PK(self):
+		return self.get_query_params().get('PK')
+
+	def set_PK(self,PK):
+		self.add_query_param('PK',PK)
+
+	def get_Label(self):
+		return self.get_query_params().get('Label')
+
+	def set_Label(self,Label):
+		self.add_query_param('Label',Label)

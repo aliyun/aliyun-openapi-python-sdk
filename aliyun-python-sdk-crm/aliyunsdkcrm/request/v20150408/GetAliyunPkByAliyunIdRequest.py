@@ -18,13 +18,13 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class QueryCustomerLabelRequest(RpcRequest):
+class GetAliyunPkByAliyunIdRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Crm', '2015-04-08', 'QueryCustomerLabel','crm')
+		RpcRequest.__init__(self, 'Crm', '2015-04-08', 'GetAliyunPkByAliyunId','crm')
 
-	def get_LabelSeries(self):
-		return self.get_query_params().get('LabelSeries')
+	def get_AliyunId(self):
+		return self.get_query_params().get('AliyunId')
 
-	def set_LabelSeries(self,LabelSeries):
-		self.add_query_param('LabelSeries',LabelSeries)
+	def set_AliyunId(self,AliyunId):
+		self.add_query_param('AliyunId',AliyunId)
