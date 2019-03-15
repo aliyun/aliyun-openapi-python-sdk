@@ -47,7 +47,8 @@ class HttpResponse(HttpRequest):
             port=None,
             key_file=None,
             cert_file=None,
-            timeout=None):
+            read_timeout=None,
+            connect_timeout=None):
         HttpRequest.__init__(
             self,
             host=host,
@@ -61,7 +62,8 @@ class HttpResponse(HttpRequest):
         self.__cert_file = cert_file
         self.__port = port
         self.__connection = None
-        self._timeout = timeout
+        self.__read_timeout = read_timeout
+        self.__connect_timeout = connect_timeout
         self.set_body(content)
 
     def set_ssl_enable(self, enable):
@@ -116,7 +118,7 @@ class HttpResponse(HttpRequest):
             urllib3.disable_warnings()
 
             response = s.send(prepped, proxies=proxies,
-                              timeout=(DEFAULT_CONNECT_TIMEOUT, self._timeout),
+                              timeout=(self.__connect_timeout, self.__read_timeout),
                               allow_redirects=False, verify=None, cert=None)
 
             http_debug = os.environ.get('DEBUG')
