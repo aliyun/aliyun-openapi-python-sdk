@@ -18,13 +18,19 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class FindServiceManagerRequest(RpcRequest):
+class QueryBidUserCertifiedInfoRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Crm', '2015-04-08', 'FindServiceManager')
+		RpcRequest.__init__(self, 'Crm', '2015-04-08', 'QueryBidUserCertifiedInfo','crm')
 
-	def get_UserId(self):
-		return self.get_query_params().get('UserId')
+	def get_BidType(self):
+		return self.get_query_params().get('BidType')
 
-	def set_UserId(self,UserId):
-		self.add_query_param('UserId',UserId)
+	def set_BidType(self,BidType):
+		self.add_query_param('BidType',BidType)
+
+	def get_PK(self):
+		return self.get_query_params().get('PK')
+
+	def set_PK(self,PK):
+		self.add_query_param('PK',PK)

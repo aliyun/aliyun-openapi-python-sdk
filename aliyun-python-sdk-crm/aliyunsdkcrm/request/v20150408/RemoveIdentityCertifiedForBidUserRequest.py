@@ -18,13 +18,19 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class QueryCustomerLabelRequest(RpcRequest):
+class RemoveIdentityCertifiedForBidUserRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Crm', '2015-04-08', 'QueryCustomerLabel','crm')
+		RpcRequest.__init__(self, 'Crm', '2015-04-08', 'RemoveIdentityCertifiedForBidUser','crm')
 
-	def get_LabelSeries(self):
-		return self.get_query_params().get('LabelSeries')
+	def get_BidType(self):
+		return self.get_query_params().get('BidType')
 
-	def set_LabelSeries(self,LabelSeries):
-		self.add_query_param('LabelSeries',LabelSeries)
+	def set_BidType(self,BidType):
+		self.add_query_param('BidType',BidType)
+
+	def get_PK(self):
+		return self.get_query_params().get('PK')
+
+	def set_PK(self,PK):
+		self.add_query_param('PK',PK)
