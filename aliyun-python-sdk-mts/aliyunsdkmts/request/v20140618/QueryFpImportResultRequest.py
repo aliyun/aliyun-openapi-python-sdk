@@ -18,10 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class ListAllMediaBucketRequest(RpcRequest):
+class QueryFpImportResultRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Mts', '2014-06-18', 'ListAllMediaBucket','mts')
+		RpcRequest.__init__(self, 'Mts', '2014-06-18', 'QueryFpImportResult','mts')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -35,23 +35,35 @@ class ListAllMediaBucketRequest(RpcRequest):
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
-	def get_NextPageToken(self):
-		return self.get_query_params().get('NextPageToken')
-
-	def set_NextPageToken(self,NextPageToken):
-		self.add_query_param('NextPageToken',NextPageToken)
-
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
 
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
-	def get_MaximumPageSize(self):
-		return self.get_query_params().get('MaximumPageSize')
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
 
-	def set_MaximumPageSize(self,MaximumPageSize):
-		self.add_query_param('MaximumPageSize',MaximumPageSize)
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
+
+	def get_EndTime(self):
+		return self.get_query_params().get('EndTime')
+
+	def set_EndTime(self,EndTime):
+		self.add_query_param('EndTime',EndTime)
+
+	def get_PageIndex(self):
+		return self.get_query_params().get('PageIndex')
+
+	def set_PageIndex(self,PageIndex):
+		self.add_query_param('PageIndex',PageIndex)
+
+	def get_StartTime(self):
+		return self.get_query_params().get('StartTime')
+
+	def set_StartTime(self,StartTime):
+		self.add_query_param('StartTime',StartTime)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')

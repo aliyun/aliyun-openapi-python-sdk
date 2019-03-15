@@ -18,10 +18,16 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class ListAllMediaBucketRequest(RpcRequest):
+class SubmitMediaFpDeleteJobRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Mts', '2014-06-18', 'ListAllMediaBucket','mts')
+		RpcRequest.__init__(self, 'Mts', '2014-06-18', 'SubmitMediaFpDeleteJob','mts')
+
+	def get_UserData(self):
+		return self.get_query_params().get('UserData')
+
+	def set_UserData(self,UserData):
+		self.add_query_param('UserData',UserData)
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -29,17 +35,17 @@ class ListAllMediaBucketRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_FpDBId(self):
+		return self.get_query_params().get('FpDBId')
+
+	def set_FpDBId(self,FpDBId):
+		self.add_query_param('FpDBId',FpDBId)
+
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_NextPageToken(self):
-		return self.get_query_params().get('NextPageToken')
-
-	def set_NextPageToken(self,NextPageToken):
-		self.add_query_param('NextPageToken',NextPageToken)
 
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
@@ -47,14 +53,20 @@ class ListAllMediaBucketRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
-	def get_MaximumPageSize(self):
-		return self.get_query_params().get('MaximumPageSize')
-
-	def set_MaximumPageSize(self,MaximumPageSize):
-		self.add_query_param('MaximumPageSize',MaximumPageSize)
-
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_PipelineId(self):
+		return self.get_query_params().get('PipelineId')
+
+	def set_PipelineId(self,PipelineId):
+		self.add_query_param('PipelineId',PipelineId)
+
+	def get_PrimaryKey(self):
+		return self.get_query_params().get('PrimaryKey')
+
+	def set_PrimaryKey(self,PrimaryKey):
+		self.add_query_param('PrimaryKey',PrimaryKey)

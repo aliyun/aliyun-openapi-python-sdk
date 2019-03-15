@@ -35,11 +35,17 @@ class QueryFpShotJobListRequest(RpcRequest):
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
-	def get_JobIds(self):
-		return self.get_query_params().get('JobIds')
+	def get_NextPageToken(self):
+		return self.get_query_params().get('NextPageToken')
 
-	def set_JobIds(self,JobIds):
-		self.add_query_param('JobIds',JobIds)
+	def set_NextPageToken(self,NextPageToken):
+		self.add_query_param('NextPageToken',NextPageToken)
+
+	def get_StartOfJobCreatedTimeRange(self):
+		return self.get_query_params().get('StartOfJobCreatedTimeRange')
+
+	def set_StartOfJobCreatedTimeRange(self,StartOfJobCreatedTimeRange):
+		self.add_query_param('StartOfJobCreatedTimeRange',StartOfJobCreatedTimeRange)
 
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
@@ -47,8 +53,44 @@ class QueryFpShotJobListRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
+	def get_MaximumPageSize(self):
+		return self.get_query_params().get('MaximumPageSize')
+
+	def set_MaximumPageSize(self,MaximumPageSize):
+		self.add_query_param('MaximumPageSize',MaximumPageSize)
+
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_PipelineId(self):
+		return self.get_query_params().get('PipelineId')
+
+	def set_PipelineId(self,PipelineId):
+		self.add_query_param('PipelineId',PipelineId)
+
+	def get_PrimaryKeyList(self):
+		return self.get_query_params().get('PrimaryKeyList')
+
+	def set_PrimaryKeyList(self,PrimaryKeyList):
+		self.add_query_param('PrimaryKeyList',PrimaryKeyList)
+
+	def get_JobIds(self):
+		return self.get_query_params().get('JobIds')
+
+	def set_JobIds(self,JobIds):
+		self.add_query_param('JobIds',JobIds)
+
+	def get_State(self):
+		return self.get_query_params().get('State')
+
+	def set_State(self,State):
+		self.add_query_param('State',State)
+
+	def get_EndOfJobCreatedTimeRange(self):
+		return self.get_query_params().get('EndOfJobCreatedTimeRange')
+
+	def set_EndOfJobCreatedTimeRange(self,EndOfJobCreatedTimeRange):
+		self.add_query_param('EndOfJobCreatedTimeRange',EndOfJobCreatedTimeRange)
