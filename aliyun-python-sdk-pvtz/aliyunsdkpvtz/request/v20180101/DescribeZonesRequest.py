@@ -23,6 +23,12 @@ class DescribeZonesRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'pvtz', '2018-01-01', 'DescribeZones','pvtz')
 
+	def get_QueryVpcId(self):
+		return self.get_query_params().get('QueryVpcId')
+
+	def set_QueryVpcId(self,QueryVpcId):
+		self.add_query_param('QueryVpcId',QueryVpcId)
+
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
 
@@ -34,6 +40,12 @@ class DescribeZonesRequest(RpcRequest):
 
 	def set_UserClientIp(self,UserClientIp):
 		self.add_query_param('UserClientIp',UserClientIp)
+
+	def get_SearchMode(self):
+		return self.get_query_params().get('SearchMode')
+
+	def set_SearchMode(self,SearchMode):
+		self.add_query_param('SearchMode',SearchMode)
 
 	def get_Lang(self):
 		return self.get_query_params().get('Lang')
@@ -52,3 +64,9 @@ class DescribeZonesRequest(RpcRequest):
 
 	def set_PageNumber(self,PageNumber):
 		self.add_query_param('PageNumber',PageNumber)
+
+	def get_QueryRegionId(self):
+		return self.get_query_params().get('QueryRegionId')
+
+	def set_QueryRegionId(self,QueryRegionId):
+		self.add_query_param('QueryRegionId',QueryRegionId)
