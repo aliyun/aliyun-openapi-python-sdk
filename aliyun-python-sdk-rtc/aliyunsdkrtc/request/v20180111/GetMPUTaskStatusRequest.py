@@ -18,10 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class StartAppRequest(RpcRequest):
+class GetMPUTaskStatusRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'rtc', '2018-01-11', 'StartApp','rtc')
+		RpcRequest.__init__(self, 'rtc', '2018-01-11', 'GetMPUTaskStatus','rtc')
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
@@ -34,3 +34,9 @@ class StartAppRequest(RpcRequest):
 
 	def set_AppId(self,AppId):
 		self.add_query_param('AppId',AppId)
+
+	def get_TaskId(self):
+		return self.get_query_params().get('TaskId')
+
+	def set_TaskId(self,TaskId):
+		self.add_query_param('TaskId',TaskId)
