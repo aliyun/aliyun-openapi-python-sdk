@@ -21,4 +21,4 @@ from aliyunsdkcore.request import RpcRequest
 class TodayAllkbpsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Yundun', '2015-02-27', 'TodayAllkbps')
+		RpcRequest.__init__(self, 'Yundun', '2015-02-27', 'TodayAllkbps','yundun')
