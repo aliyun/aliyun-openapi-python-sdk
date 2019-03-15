@@ -29,6 +29,12 @@ class DescribeRegionsRequest(RpcRequest):
 	def set_UserClientIp(self,UserClientIp):
 		self.add_query_param('UserClientIp',UserClientIp)
 
+	def get_AcceptLanguage(self):
+		return self.get_query_params().get('AcceptLanguage')
+
+	def set_AcceptLanguage(self,AcceptLanguage):
+		self.add_query_param('AcceptLanguage',AcceptLanguage)
+
 	def get_Lang(self):
 		return self.get_query_params().get('Lang')
 

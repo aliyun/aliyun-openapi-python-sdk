@@ -18,10 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class AddZoneRequest(RpcRequest):
+class SetProxyPatternRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'pvtz', '2018-01-01', 'AddZone','pvtz')
+		RpcRequest.__init__(self, 'pvtz', '2018-01-01', 'SetProxyPattern','pvtz')
 
 	def get_ProxyPattern(self):
 		return self.get_query_params().get('ProxyPattern')
@@ -35,14 +35,14 @@ class AddZoneRequest(RpcRequest):
 	def set_UserClientIp(self,UserClientIp):
 		self.add_query_param('UserClientIp',UserClientIp)
 
+	def get_ZoneId(self):
+		return self.get_query_params().get('ZoneId')
+
+	def set_ZoneId(self,ZoneId):
+		self.add_query_param('ZoneId',ZoneId)
+
 	def get_Lang(self):
 		return self.get_query_params().get('Lang')
 
 	def set_Lang(self,Lang):
 		self.add_query_param('Lang',Lang)
-
-	def get_ZoneName(self):
-		return self.get_query_params().get('ZoneName')
-
-	def set_ZoneName(self,ZoneName):
-		self.add_query_param('ZoneName',ZoneName)
