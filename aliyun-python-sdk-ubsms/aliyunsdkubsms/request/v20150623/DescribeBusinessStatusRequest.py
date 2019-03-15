@@ -18,31 +18,19 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class SetUserBusinessStatusRequest(RpcRequest):
+class DescribeBusinessStatusRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ubsms', '2015-06-23', 'SetUserBusinessStatus','ubsms')
+		RpcRequest.__init__(self, 'Ubsms', '2015-06-23', 'DescribeBusinessStatus','ubsms')
 
-	def get_Uid(self):
-		return self.get_query_params().get('Uid')
+	def get_Password(self):
+		return self.get_query_params().get('Password')
 
-	def set_Uid(self,Uid):
-		self.add_query_param('Uid',Uid)
+	def set_Password(self,Password):
+		self.add_query_param('Password',Password)
 
-	def get_StatusValue(self):
-		return self.get_query_params().get('StatusValue')
+	def get_callerBid(self):
+		return self.get_query_params().get('callerBid')
 
-	def set_StatusValue(self,StatusValue):
-		self.add_query_param('StatusValue',StatusValue)
-
-	def get_Service(self):
-		return self.get_query_params().get('Service')
-
-	def set_Service(self,Service):
-		self.add_query_param('Service',Service)
-
-	def get_StatusKey(self):
-		return self.get_query_params().get('StatusKey')
-
-	def set_StatusKey(self,StatusKey):
-		self.add_query_param('StatusKey',StatusKey)
+	def set_callerBid(self,callerBid):
+		self.add_query_param('callerBid',callerBid)
