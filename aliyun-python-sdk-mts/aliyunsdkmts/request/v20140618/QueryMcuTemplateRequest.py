@@ -18,10 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class ListAllMediaBucketRequest(RpcRequest):
+class QueryMcuTemplateRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Mts', '2014-06-18', 'ListAllMediaBucket','mts')
+		RpcRequest.__init__(self, 'Mts', '2014-06-18', 'QueryMcuTemplate','mts')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -35,26 +35,20 @@ class ListAllMediaBucketRequest(RpcRequest):
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
-	def get_NextPageToken(self):
-		return self.get_query_params().get('NextPageToken')
-
-	def set_NextPageToken(self,NextPageToken):
-		self.add_query_param('NextPageToken',NextPageToken)
-
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
 
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
-	def get_MaximumPageSize(self):
-		return self.get_query_params().get('MaximumPageSize')
-
-	def set_MaximumPageSize(self,MaximumPageSize):
-		self.add_query_param('MaximumPageSize',MaximumPageSize)
-
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_TemplateId(self):
+		return self.get_query_params().get('TemplateId')
+
+	def set_TemplateId(self,TemplateId):
+		self.add_query_param('TemplateId',TemplateId)
