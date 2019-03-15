@@ -21,4 +21,4 @@ from aliyunsdkcore.request import RpcRequest
 class TodayAllppsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Yundun', '2015-02-27', 'TodayAllpps')
+		RpcRequest.__init__(self, 'Yundun', '2015-02-27', 'TodayAllpps','yundun')
