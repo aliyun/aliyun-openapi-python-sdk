@@ -26,6 +26,6 @@ from aliyunsdkcore.vendored.six import with_metaclass
 
 
 class Signer(with_metaclass(ABCMeta, object)):
-    @abstractmethod
-    def sign(self, region_id, request):
+
+    def sign(self, credentials, context):
         pass

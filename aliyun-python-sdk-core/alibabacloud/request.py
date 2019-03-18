@@ -12,20 +12,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from alibabacloud.handlers import RequestHandler
-from alibabacloud.endpoint.resolver_endpoint_request import ResolveEndpointRequest
+
+class APIRequest:
+    pass
 
 
-class EndpointHandler(RequestHandler):
+class APIResponse:
+    pass
 
-    def handle_request(self, context):
-        resolve_request = ResolveEndpointRequest(
-            context.config.region_id,
-            context.client.product_code,
-            context.client.location_service_code,
-            context.client.location_service_type,
-        )
-        context.endpoint = context.client.endpoint_resolver.resolve(resolve_request)
-
-    def handle_response(self, response):
-        pass
