@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class WhereInDimQueryRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ARMS4FINANCE', '2017-11-30', 'WhereInDimQuery')
+		RpcRequest.__init__(self, 'ARMS4FINANCE', '2017-11-30', 'WhereInDimQuery','arms4finance')
 
 	def get_WhereInKey(self):
 		return self.get_query_params().get('WhereInKey')
@@ -86,7 +86,7 @@ class WhereInDimQueryRequest(RpcRequest):
 
 	def set_Dimensionss(self,Dimensionss):
 		for i in range(len(Dimensionss)):	
-			if Dimensionss[i].get('Key') is not None:
-				self.add_query_param('Dimensions.' + str(i + 1) + '.Key' , Dimensionss[i].get('Key'))
 			if Dimensionss[i].get('Value') is not None:
 				self.add_query_param('Dimensions.' + str(i + 1) + '.Value' , Dimensionss[i].get('Value'))
+			if Dimensionss[i].get('Key') is not None:
+				self.add_query_param('Dimensions.' + str(i + 1) + '.Key' , Dimensionss[i].get('Key'))
