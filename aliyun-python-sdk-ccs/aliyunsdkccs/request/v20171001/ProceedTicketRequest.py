@@ -18,10 +18,16 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class GetHotlineRecordRequest(RpcRequest):
+class ProceedTicketRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ccs', '2017-10-01', 'GetHotlineRecord','ccs')
+		RpcRequest.__init__(self, 'Ccs', '2017-10-01', 'ProceedTicket','ccs')
+
+	def get_Memo(self):
+		return self.get_query_params().get('Memo')
+
+	def set_Memo(self,Memo):
+		self.add_query_param('Memo',Memo)
 
 	def get_Id(self):
 		return self.get_query_params().get('Id')
@@ -34,3 +40,15 @@ class GetHotlineRecordRequest(RpcRequest):
 
 	def set_CcsInstanceId(self,CcsInstanceId):
 		self.add_query_param('CcsInstanceId',CcsInstanceId)
+
+	def get_Operation(self):
+		return self.get_query_params().get('Operation')
+
+	def set_Operation(self,Operation):
+		self.add_query_param('Operation',Operation)
+
+	def get_OperatorId(self):
+		return self.get_query_params().get('OperatorId')
+
+	def set_OperatorId(self,OperatorId):
+		self.add_query_param('OperatorId',OperatorId)

@@ -18,19 +18,38 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class GetHotlineRecordRequest(RpcRequest):
+class CreateTicketRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ccs', '2017-10-01', 'GetHotlineRecord','ccs')
+		RpcRequest.__init__(self, 'Ccs', '2017-10-01', 'CreateTicket','ccs')
+		self.set_method('POST')
 
-	def get_Id(self):
-		return self.get_query_params().get('Id')
+	def get_CreatorId(self):
+		return self.get_query_params().get('CreatorId')
 
-	def set_Id(self,Id):
-		self.add_query_param('Id',Id)
+	def set_CreatorId(self,CreatorId):
+		self.add_query_param('CreatorId',CreatorId)
+
+	def get_Description(self):
+		return self.get_query_params().get('Description')
+
+	def set_Description(self,Description):
+		self.add_query_param('Description',Description)
+
+	def get_Type(self):
+		return self.get_query_params().get('Type')
+
+	def set_Type(self,Type):
+		self.add_query_param('Type',Type)
 
 	def get_CcsInstanceId(self):
 		return self.get_query_params().get('CcsInstanceId')
 
 	def set_CcsInstanceId(self,CcsInstanceId):
 		self.add_query_param('CcsInstanceId',CcsInstanceId)
+
+	def get_CustomFields(self):
+		return self.get_query_params().get('CustomFields')
+
+	def set_CustomFields(self,CustomFields):
+		self.add_query_param('CustomFields',CustomFields)
