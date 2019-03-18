@@ -35,18 +35,20 @@ class RetryHandler(RequestHandler):
             self._add_request_client_token(context.api_request)
 
     def handle_response(self, context):
-        # TODO make this retry handling simpler
         api_request = context.api_request
         retry_policy_context = RetryPolicyContext(api_request,
                                                   context.exception,
                                                   0, context.http_response.status_code)
         should_retry = context.client.retry_policy.should_retry(retry_policy_context)
 
-        new_context = copy.deepcopy(context)
-        for handler in new_context.retryable_handlers:
-            handler.handle_request(new_context)
-        for handler in reversed(new_context.retryable_handlers):
-            handler.handle_response(new_context)
+        if should_retry & RetryCondition.SHOULD_RETRY:
+            context.retry_flag = True
+            context.retry_backoff = context.client.retry_policy.compute_delay_before_next_retry(
+                retry_policy_context
+            )
+        else:
+            context.retry_flag = False
+            context.retry_backoff = 0
+            if context.exception:
+                raise context.exception
 
-        # TODO copy new_context back to context
-        context.api_response = new_context.api_response
