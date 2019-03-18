@@ -19,7 +19,9 @@ from aliyunsdkcore.vendored.six.moves.urllib.parse import urlencode
 
 
 class ServerErrorHandler(RequestHandler):
-    def handle_exceptions(self, context):
+
+    def handle_response(self, context):
+
         response = context.response
         request_id = None
 
@@ -49,4 +51,4 @@ class ServerErrorHandler(RequestHandler):
             logger.error("ServerException occurred. Host:%s SDK-Version:%s ServerException:%s",
                          endpoint, aliyunsdkcore.__version__, str(exception))
 
-            return exception
+            context.exception = exception

@@ -267,9 +267,10 @@ class DefaultCredentialsProvider(object):
 
 
 class CredentialsProvider(object):
-    @staticmethod
-    def load():
-        return True
+
+    # if no credentials got, return None
+    def load(self):
+        return None
 
 
 class UserProvider(CredentialsProvider):
