@@ -15,38 +15,41 @@ import platform
 
 from alibabacloud.handlers import RequestHandler
 from alibabacloud.utils import format_type
-from aliyunsdkcore.vendored.requests.structures import CaseInsensitiveDict
-from aliyunsdkcore.vendored.requests.structures import OrderedDict
+from aliyunsdkcore.vendored.http_requests.structures import CaseInsensitiveDict
+from aliyunsdkcore.vendored.http_requests.structures import OrderedDict
 from aliyunsdkcore.vendored.six.moves.urllib.parse import urlencode
 
 
 class HttpHeaderHandler(RequestHandler):
     """
-    处理request的header的内容,便于后续
+    处理http_request的header的内容,便于后续
     """
 
-    def handle_request(self, context):
-        request = context.request
+    def handle_http_request(self, context):
+        http_request = context.http_request
+        http_request.accept_format = 'JSON'
 
-        request.accept_format = 'JSON'
-
-        if request.body_params is not None:
-            body = urlencode(request.body_params)
+        if http_request.body_params is not None:
+            body = urlencode(http_request.body_params)
             # 把这个URL编码的值赋给content，设置content-type
-            request.set_content(body)
-            request.content_type = format_type.APPLICATION_FORM
-        elif request.content and "Content-Type" not in request.headers:
-            request.content_type = format_type.APPLICATION_OCTET_STREAM
 
-        user_agent = self.modify_user_agent(context.config.user_agent, request)
-        request.headers['User-Agent'] = user_agent
-        request.headers['x-sdk-client'] = 'python/2.0.0'
-        request.headers['Accept-Encoding'] = 'identity'
+            # FIXME body is the final bytes to be sent to the server via HTTP
+            # content is an application level concept
+            http_request.body = body
+            http_request.content = content
+            http_request.content_type = format_type.APPLICATION_FORM
+        elif http_request.content and "Content-Type" not in http_request.headers:
+            http_request.content_type = format_type.APPLICATION_OCTET_STREAM
 
-        context.request = request
+        user_agent = self.modify_user_agent(context.config.user_agent, http_request)
+        http_request.headers['User-Agent'] = user_agent
+        http_request.headers['x-sdk-client'] = 'python/2.0.0'
+        http_request.headers['Accept-Encoding'] = 'identity'
 
-    def handle_response(self, context, response):
-        # context 实际是request
+        context.http_request = http_request
+
+    def handle_response(self, context):
+        # context 实际是http_request
         pass
 
     # UA 开始
@@ -65,26 +68,26 @@ class HttpHeaderHandler(RequestHandler):
         default_agent = OrderedDict()
         default_agent['Python'] = platform.python_version()
         default_agent['Core'] = __import__('aliyunsdkcore').__version__
-        default_agent['python-requests'] = __import__(
-            'aliyunsdkcore.vendored.requests.__version__', globals(), locals(),
-            ['vendored', 'requests', '__version__'], 0).__version__
+        default_agent['python-http_requests'] = __import__(
+            'aliyunsdkcore.vendored.http_requests.__version__', globals(), locals(),
+            ['vendored', 'http_requests', '__version__'], 0).__version__
 
         return CaseInsensitiveDict(default_agent)
 
     @staticmethod
-    def handle_extra_agent(client_user_agent, request):
-        request_agent = request.request_user_agent()
+    def handle_extra_agent(client_user_agent, http_request):
+        http_request_agent = http_request.http_request_user_agent()
 
         if client_user_agent is None:
-            return request_agent
+            return http_request_agent
 
-        if request_agent is None:
+        if http_request_agent is None:
             return client_user_agent
-        # request 覆盖client的设置
-        for key in request_agent:
+        # http_request 覆盖client的设置
+        for key in http_request_agent:
             if key in client_user_agent:
                 client_user_agent.pop(key)
-        client_user_agent.update(request_agent)
+        client_user_agent.update(http_request_agent)
         return client_user_agent
 
     @staticmethod
@@ -100,9 +103,9 @@ class HttpHeaderHandler(RequestHandler):
                 user_agent[key] = value
         return user_agent
 
-    def modify_user_agent(self, client_user_agent, request):
+    def _modify_user_agent(self, client_user_agent, http_request):
         base = self.user_agent_header()  # 默认的user-agent 的头部
-        extra_agent = self.handle_extra_agent(client_user_agent, request)  # client 和request的UA
+        extra_agent = self.handle_extra_agent(client_user_agent, http_request)  # client 和http_request的UA
         default_agent = self.default_user_agent()  # 默认的UA
         # 合并默认的UA 和extra_UA
         user_agent = self.merge_user_agent(default_agent, extra_agent)

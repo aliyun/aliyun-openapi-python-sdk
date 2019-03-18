@@ -12,6 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+import copy
 from alibabacloud.handlers import RequestHandler
 import aliyunsdkcore.retry.retry_policy as retry_policy
 from aliyunsdkcore.retry.retry_condition import RetryCondition
@@ -20,11 +21,32 @@ import aliyunsdkcore.utils
 import aliyunsdkcore.utils.parameter_helper
 import aliyunsdkcore.utils.validation
 
-class RetryHandler(RequestHandler):
-    def handle_request(self):
-        retry_policy_context = RetryPolicyContext(request, None, 0, None)
-        if self._retry_policy.should_retry(retry_policy_context) & \
-                RetryCondition.SHOULD_RETRY_WITH_CLIENT_TOKEN:
-            self._add_request_client_token(request)
 
-        retries = 0
+class RetryHandler(RequestHandler):
+
+    def _add_request_client_token(self, api_request):
+        # TODO implement: add a ClientToken parameter on api_request
+        pass
+
+    def handle_request(self, context):
+        retry_policy_context = RetryPolicyContext(context.api_request, None, 0, None)
+        if context.client.retry_policy.should_retry(retry_policy_context) & \
+                RetryCondition.SHOULD_RETRY_WITH_CLIENT_TOKEN:
+            self._add_request_client_token(context.api_request)
+
+    def handle_response(self, context):
+        # TODO make this retry handling simpler
+        api_request = context.api_request
+        retry_policy_context = RetryPolicyContext(api_request,
+                                                  context.exception,
+                                                  0, context.http_response.status_code)
+        should_retry = context.client.retry_policy.should_retry(retry_policy_context)
+
+        new_context = copy.deepcopy(context)
+        for handler in new_context.retryable_handlers:
+            handler.handle_request(new_context)
+        for handler in reversed(new_context.retryable_handlers):
+            handler.handle_response(new_context)
+
+        # TODO copy new_context back to context
+        context.api_response = new_context.api_response

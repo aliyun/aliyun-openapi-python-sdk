@@ -18,7 +18,10 @@ DEFAULT_CONNECTION_TIMEOUT = 5
 _api_timeout_config_data = aliyunsdkcore.utils._load_json_from_data_dir("timeout_config.json")
 
 
-class TimeoutHandler(RequestHandler):
+class TimeoutConfigReader(RequestHandler):
+
+    # TODO 把对 timeout_config.json 的读取逻辑放到 ClientConfig 那一层
+    # TODO request级别仅对读取配置进行处理，用户不设置request层级的timeout
 
     def handle_request(self, context):
         request = context.request
