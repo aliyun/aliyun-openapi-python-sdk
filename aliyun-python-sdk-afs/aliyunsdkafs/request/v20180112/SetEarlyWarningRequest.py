@@ -21,19 +21,13 @@ from aliyunsdkcore.request import RpcRequest
 class SetEarlyWarningRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'afs', '2018-01-12', 'SetEarlyWarning')
+		RpcRequest.__init__(self, 'afs', '2018-01-12', 'SetEarlyWarning','afs')
 
 	def get_TimeEnd(self):
 		return self.get_query_params().get('TimeEnd')
 
 	def set_TimeEnd(self,TimeEnd):
 		self.add_query_param('TimeEnd',TimeEnd)
-
-	def get_ResourceOwnerId(self):
-		return self.get_query_params().get('ResourceOwnerId')
-
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
 	def get_WarnOpen(self):
 		return self.get_query_params().get('WarnOpen')

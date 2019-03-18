@@ -18,13 +18,19 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class DescribePersonMachineListRequest(RpcRequest):
+class DescribeCaptchaOrderRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'afs', '2018-01-12', 'DescribePersonMachineList','afs')
+		RpcRequest.__init__(self, 'afs', '2018-01-12', 'DescribeCaptchaOrder','afs')
 
 	def get_SourceIp(self):
 		return self.get_query_params().get('SourceIp')
 
 	def set_SourceIp(self,SourceIp):
 		self.add_query_param('SourceIp',SourceIp)
+
+	def get_Lang(self):
+		return self.get_query_params().get('Lang')
+
+	def set_Lang(self,Lang):
+		self.add_query_param('Lang',Lang)
