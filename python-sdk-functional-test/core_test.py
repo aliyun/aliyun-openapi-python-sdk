@@ -3,7 +3,7 @@ import json
 import os
 
 from aliyunsdkcore.client import AcsClient
-from aliyunsdkcore.auth.credentials import StsTokenCredential
+from aliyunsdkcore.credentials.credentials import StsTokenCredential
 from aliyunsdkcore.request import CommonRequest
 
 from aliyunsdksts.request.v20150401.AssumeRoleRequest import AssumeRoleRequest

@@ -4,7 +4,7 @@ import os
 from mock import MagicMock, patch, Mock
 
 from aliyunsdkcore.acs_exception.exceptions import ClientException, ServerException
-from aliyunsdkcore.auth.credentials import RsaKeyPairCredential
+from aliyunsdkcore.credentials.credentials import RsaKeyPairCredential
 from aliyunsdkcore.auth.signers.rsa_key_pair_signer import RsaKeyPairSigner, GetSessionAkRequest
 from aliyunsdkcore.request import RpcRequest, RoaRequest
 from aliyunsdkcore.compat import ensure_bytes
@@ -75,7 +75,8 @@ class TestRsaKeyPairSigner(unittest.TestCase):
             signer.sign('cn-hangzhou', request)
         self.assertEqual("SDK.InvalidCredential", ce.exception.error_code)
         self.assertEqual(
-            "Need a ak&secret pair or public_key_id&private_key pair to auth.",
+            "Need a ak&secret pair or public_key_id&private_key pair "
+            "or Credentials objects to auth.",
             ce.exception.message)
 
     def test_rsa_key_pair_signer_other_exception(self):
