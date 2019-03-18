@@ -14,7 +14,14 @@
 
 
 class RequestContext:
-    pass
+
+    def __init__(self):
+        self.api_request = None
+        self.http_request = None
+        self.api_response = None
+        self.http_response = None
+        self.retry_flag = False
+        self.retry_backoff = 0
 
 
 class RequestHandler:

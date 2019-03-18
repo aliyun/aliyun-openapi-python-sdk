@@ -29,6 +29,6 @@ class HttpHandler(RequestHandler):
             http_request.set_content(body, "utf-8", 'application/x-www-form-urlencoded')
         context.http_request = http_request
 
-    def handle_response(self, request, response):
+    def handle_response(self, context):
         pass
 
