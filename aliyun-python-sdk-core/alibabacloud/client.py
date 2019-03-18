@@ -12,6 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 import os
+import time
 from alibabacloud.handlers import RequestContext
 
 DEFAULT_HANDLERS = [
@@ -113,38 +114,25 @@ class AlibabaCloudClient:
         self.endpoint_resolver = None  # TODO initialize
         self.logger = None  # TODO initialize
 
-    def handle_request(self, api_request):
+    def handle_request(self, api_request, request_handlers=None, context=None):
         # TODO handle different types of request
-        context = RequestContext()
-        context.api_equest = api_request
-        context.config = self.config
+        if not context:
+            context = RequestContext()
+            context.api_request = api_request
+            context.config = self.config
 
-        for handler in self.handlers:
-            # 所有的一系列handler实际是组装参数,获取endpoint等等的数据
-            handler.handle_request(context)
+        if not request_handlers:
+            request_handlers = self.handlers
 
-        # 应该返回原始的response，对error进行的处理
-        try:
-            response = http_request.get_response_object()
-        except IOError as e:
-            exception = ClientException(error_code.SDK_HTTP_ERROR, str(e))
-            return None, None, None, exception
+        for i in range(len(request_handlers)):
+            request_handlers[i].handle_request(context)
 
-        response_flag = True
-        # 对返回结果进行一层 exceptions 的校验
-        for handler in reversed(self.handlers):
-            if hasattr(handler, 'handle_exceptions'):
-                result = handler.handle_exceptions(response)
-                # TODO : result 有值，说明是ServerExceptions 下面的不走了
-                if request is not None:
-                    response_flag = False
-                    return result
+        for i in reversed(range(len(request_handlers))):
+            request_handlers[i].handle_response(context)
+            if context.retry_flag:
+                time.sleep(context.retry_backoff)
+                self.handle_request(api_request,
+                                    request_handlers=request_handlers[i:],
+                                    context=context)
 
-        # 对response 进行的一层处理,原本是response对象
-        if response_flag:
-            for handler in reversed(self.handlers):
-                if hasattr(handler, 'handle_response'):
-                    result = handler.handle_response(response)
-                    return result
-
-
+        return context.result
