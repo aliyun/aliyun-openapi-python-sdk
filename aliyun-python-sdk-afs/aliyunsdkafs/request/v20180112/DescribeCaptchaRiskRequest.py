@@ -21,13 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class DescribeCaptchaRiskRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'afs', '2018-01-12', 'DescribeCaptchaRisk')
-
-	def get_ResourceOwnerId(self):
-		return self.get_query_params().get('ResourceOwnerId')
-
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+		RpcRequest.__init__(self, 'afs', '2018-01-12', 'DescribeCaptchaRisk','afs')
 
 	def get_SourceIp(self):
 		return self.get_query_params().get('SourceIp')
@@ -40,6 +34,12 @@ class DescribeCaptchaRiskRequest(RpcRequest):
 
 	def set_ConfigName(self,ConfigName):
 		self.add_query_param('ConfigName',ConfigName)
+
+	def get_RefExtId(self):
+		return self.get_query_params().get('RefExtId')
+
+	def set_RefExtId(self,RefExtId):
+		self.add_query_param('RefExtId',RefExtId)
 
 	def get_Time(self):
 		return self.get_query_params().get('Time')

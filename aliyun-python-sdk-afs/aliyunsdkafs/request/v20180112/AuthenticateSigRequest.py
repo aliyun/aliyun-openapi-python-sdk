@@ -21,19 +21,13 @@ from aliyunsdkcore.request import RpcRequest
 class AuthenticateSigRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'afs', '2018-01-12', 'AuthenticateSig')
+		RpcRequest.__init__(self, 'afs', '2018-01-12', 'AuthenticateSig','afs')
 
 	def get_Sig(self):
 		return self.get_query_params().get('Sig')
 
 	def set_Sig(self,Sig):
 		self.add_query_param('Sig',Sig)
-
-	def get_ResourceOwnerId(self):
-		return self.get_query_params().get('ResourceOwnerId')
-
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
 	def get_RemoteIp(self):
 		return self.get_query_params().get('RemoteIp')

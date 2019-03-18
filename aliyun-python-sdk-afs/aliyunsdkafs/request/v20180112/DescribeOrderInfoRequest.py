@@ -18,10 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class DescribePersonMachineListRequest(RpcRequest):
+class DescribeOrderInfoRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'afs', '2018-01-12', 'DescribePersonMachineList','afs')
+		RpcRequest.__init__(self, 'afs', '2018-01-12', 'DescribeOrderInfo','afs')
 
 	def get_SourceIp(self):
 		return self.get_query_params().get('SourceIp')
