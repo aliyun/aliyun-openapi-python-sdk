@@ -142,27 +142,31 @@ def get_signature(
     return signature, sign_to_string
 
 
-def get_signed_signature(queries, format, headers, uri_pattern, paths, method):
-    headers = refresh_sign_parameters(
-        parameters=headers,
-        format=format)
-    sign_to_string = compose_string_to_sign(
-        method=method,
-        queries=queries,
-        headers=headers,
-        uri_pattern=uri_pattern,
-        paths=paths)
-
-    return sign_to_string
-
-
-def get_signed_headers(access_key, secret, headers, sign_to_string=None, signer=mac1):
-    signature = signer.get_sign_string(sign_to_string, secret=secret)
+def get_signature_headers(
+        queries,
+        access_key,
+        secret,
+        format,
+        headers,
+        uri_pattern,
+        paths,
+        method,
+        signer=mac1):
+    signature, sign_to_string = get_signature(
+        queries,
+        access_key,
+        secret,
+        format,
+        headers,
+        uri_pattern,
+        paths,
+        method,
+        signer)
     headers["Authorization"] = "acs " + str(access_key) + ":" + str(signature)
-    return headers
+    return headers, sign_to_string
 
 
-def get_signed_url(uri_pattern, queries, path_parameters):
+def get_url(uri_pattern, queries, path_parameters):
     url = ""
     url += replace_occupied_parameters(uri_pattern, path_parameters)
     if not url.endswith("?"):

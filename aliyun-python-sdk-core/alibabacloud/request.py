@@ -20,3 +20,24 @@ class APIRequest:
 class APIResponse:
     pass
 
+
+class HTTPRequest:
+    def __init__(self, accept_format=None, method=None, protocol=None, proxy=None,
+                 signature=None,
+                 headers=None, url=None, endpoint=None, timeout=None,
+                 body=None, enable_retry=None, max_retry_times=None, retries=0):
+
+        self.accept_format = accept_format
+        self.body = body
+        self.method = method
+        self.protocol = protocol
+        self.proxy = proxy
+        self.port = port
+        self.signature = signature
+        self.headers = headers
+        self.url = url
+        self.timeout = timeout
+        self.endpoint = endpoint
+        self.enable_retry = enable_retry
+        self.max_retry_times = max_retry_times
+        self.retries = retries

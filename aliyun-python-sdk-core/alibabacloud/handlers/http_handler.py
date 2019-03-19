@@ -21,9 +21,26 @@ class HttpHandler(RequestHandler):
     """
     获取参数，组装成request
     """
+    def set_content(self, content, encoding, format=RAW):
+        # 有body_params ，就是 urlencode 结果的值
+        # 没有，就是request的
+        self.content = content
+        if content is None:
+            self.remove_header_parameter(self.content_md5)
+            self.remove_header_parameter(self.content_type)
+            self.remove_header_parameter(self.content_length)
+            self.content_type = None
+            self.encoding = None
+        else:
+            str_md5 = helper.md5_sum(content)
+            content_length = len(content)
+            self.headers[self.content_md5] = str_md5
+            self.headers[self.content_length] = str(content_length)
+            self.headers[self.content_type] = format
+            self.encoding = encoding
     def handle_request(self, context):
         http_request = HttpResponse(context)
-        body_params = context.request.body_params
+        body_params = context.api_request.get_body_params()
         if body_params:
             body = urlencode(body_params)
             http_request.set_content(body, "utf-8", 'application/x-www-form-urlencoded')
@@ -31,4 +48,30 @@ class HttpHandler(RequestHandler):
 
     def handle_response(self, context):
         pass
+
+    @staticmethod
+    def do_request(context):
+        http_request = context.http_request
+        with Session() as s:
+            current_protocol = 'https://' if http_request.protocol.lower() == 'https' else 'http://'
+            # TODO : 最终拼接的是啥，还需要调查下
+            url = current_protocol + http_request.endpoint + http_request.url
+
+            if http_request.port != 80 or http_request.port != 443:
+                url = current_protocol + http_request.endpoint + ":" + \
+                      str(http_request.port.port) + http_request.url
+
+            req = Request(method=http_request.method, url=url,
+                          data=http_request.body,
+                          headers=http_request.headers,
+                          )
+            prepped = s.prepare_request(req)
+
+            # ignore the warning-InsecureRequestWarning
+            urllib3.disable_warnings()
+
+            response = s.send(prepped, proxies=http_request.proxy,
+                              timeout=http_request.timeout,
+                              allow_redirects=False, verify=None, cert=None)
+            context.response = response
 

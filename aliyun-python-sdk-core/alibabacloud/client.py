@@ -16,11 +16,13 @@ import time
 from alibabacloud.handlers import RequestContext
 
 DEFAULT_HANDLERS = [
-    HttpHeaderHandler,  # 获取请求头
-    EndpointHandler,  # 获取endpoint
+    PrepareHandler,
+    SignerHandler,  # 获取Signature
+    URLHandler,  # 获取url
+    HttpHeaderHandler,  # 获取签名的header
     TimeoutHandler,  # 获取timeout
+    EndpointHandler,  # 获取endpoint
     LogHandler,
-    SignerHandler,  # 获取url和签名header
     RetryHandler,
     ServerErrorHandler,
     HttpHandler
@@ -39,12 +41,16 @@ class ClientConfig:
     """
     处理client级别的所有的参数
     """
+    ENV_NAME_FOR_CONFIG_FILE = 'ALIBABA_CLOUD_CONFIG_FILE'
+    DEFAULT_NAME_FOR_CONFIG_FILE = ['/etc/.alibabacloud/config',
+                                         '~/.alibabacloud/config']
 
     def __init__(self, access_key_id=None, access_key_secret=None, region_id=None,
                  enable_retry_policy=None, max_retry_times=None, user_agent=None,
                  extra_user_agent=None, enable_https=None, http_port=None, https_port=None,
                  connection_timeout=None, read_timeout=None, enable_http_debug=None,
-                 http_proxy=None, https_proxy=None, enable_stream_logger=None):
+                 http_proxy=None, https_proxy=None, enable_stream_logger=None,
+                 profile_name=None, config_file=None):
 
         self.access_key_id = access_key_id
         self.access_key_secret = access_key_secret
@@ -58,11 +64,17 @@ class ClientConfig:
         self.https_port = https_port
         self.connection_timeout = connection_timeout
         self.read_timeout = read_timeout
-        self._timeout = (self.connection_timeout, self.read_timeout)
         self.enable_http_debug = enable_http_debug
+        # proxy provider两个： client  env
         self.http_proxy = http_proxy
         self.https_proxy = https_proxy
+        self.proxy = {
+            'http': self.http_proxy,
+            'https': self.https_proxy,
+        }
         self.enable_stream_logger = enable_stream_logger
+        self.profile_name = profile_name
+        self.config_file = config_file
 
     def read_from_env(self):
 
@@ -92,9 +104,43 @@ class ClientConfig:
 
     def read_from_profile(self):
         # TODO read from profile
-        pass
+        from alibabacloud.utils.ini_helper import load_config
+        profile = {}
+        if self.config_file is None:
+            if self.ENV_NAME_FOR_CONFIG_FILE in os.environ:
+
+                env_config_file_path = os.environ.get(self.ENV_NAME_FOR_CONFIG_FILE)
+                if env_config_file_path is None or len(env_config_file_path) == 0:
+                    # 默认配置不存在
+                    return None
+                full_path = os.path.expanduser(env_config_file_path)
+                self._loaded_config = load_config(full_path)
+                profile = self._loaded_config.get(self.profile_name, {})
+            else:
+                potential_locations = self.DEFAULT_NAME_FOR_CONFIG_FILE
+                for filename in potential_locations:
+                    try:
+                        self._loaded_config = load_config(filename)
+                        break
+                    except Exception:
+                        continue
+                profile = self._loaded_config.get(self.profile_name, {})
+        else:
+            profile = load_config(self.config_file)
+        
+        for key in dir(self):
+            if profile.get(key)is not None and getattr(self, key) is None:
+                # 不存在config当中的值 pass
+                setattr(self, key, profile.get(key))
+
+        return None
 
     def read_from_default(self):
+        # some config DEFAULT
+        # 用户实例化的时候，就进行了覆盖
+        pass
+
+    def handle_timeout(self):
         pass
 
 
@@ -107,18 +153,24 @@ def get_merged_client_config(config):
 
 class AlibabaCloudClient:
 
-    def __init__(self, client_config, credentials_provider):
+    def __init__(self, client_config, credentials_provider=DefaultCredentialsProvider):
         self.config = get_merged_client_config(client_config)
         self.credentials_provider = credentials_provider
-        self.handlers = []
-        self.endpoint_resolver = None  # TODO initialize
+        self.handlers = DEFAULT_HANDLERS
         self.logger = None  # TODO initialize
+        # endpoint_resolver阶段需要
+        self.endpoint_resolver = DefaultEndpointResolver(self)  # TODO initialize
+        self.product_code = product_code
+        self.location_service_code = location_service_code
+        self.location_service_type = location_service_type
 
     def handle_request(self, api_request, request_handlers=None, context=None):
         # TODO handle different types of request
         if not context:
             context = RequestContext()
             context.api_request = api_request
+            from .request import HTTPRequest
+            context.http_request = HTTPRequest()
             context.config = self.config
 
         if not request_handlers:

@@ -21,6 +21,7 @@ from aliyunsdkcore.vendored.six.moves.urllib.parse import urlencode
 class ServerErrorHandler(RequestHandler):
 
     def handle_response(self, context):
+        http_request = context.http_request
 
         response = context.response
         request_id = None
@@ -38,17 +39,17 @@ class ServerErrorHandler(RequestHandler):
             server_error_code, server_error_message = self._parse_error_info_from_response_body(
                 response.text.decode('utf-8'))
             if response.codes == codes.BAD_REQUEST and server_error_code == 'SignatureDoesNotMatch':
-                if string_to_sign == server_error_message.split(':')[1]:
+                if http_request.signature == server_error_message.split(':')[1]:
                     server_error_code = 'InvalidAccessKeySecret'
                     server_error_message = 'The AccessKeySecret is incorrect. ' \
                                            'Please check your AccessKeyId and AccessKeySecret.'
             exception = ServerException(
                 server_error_code,
                 server_error_message,
-                http_status=http_status,
+                http_status=response.codes,
                 request_id=request_id)
 
             logger.error("ServerException occurred. Host:%s SDK-Version:%s ServerException:%s",
-                         endpoint, aliyunsdkcore.__version__, str(exception))
+                         http_request.endpoint, aliyunsdkcore.__version__, str(exception))
 
             context.exception = exception
