@@ -49,6 +49,12 @@ class QueryEvaluateListRequest(RpcRequest):
 			if BizTypeLists[i] is not None:
 				self.add_query_param('BizTypeList.' + str(i + 1) , BizTypeLists[i]);
 
+	def get_callerBid(self):
+		return self.get_query_params().get('callerBid')
+
+	def set_callerBid(self,callerBid):
+		self.add_query_param('callerBid',callerBid)
+
 	def get_Type(self):
 		return self.get_query_params().get('Type')
 
@@ -108,3 +114,9 @@ class QueryEvaluateListRequest(RpcRequest):
 
 	def set_StartBizTime(self,StartBizTime):
 		self.add_query_param('StartBizTime',StartBizTime)
+
+	def get_callerUid(self):
+		return self.get_query_params().get('callerUid')
+
+	def set_callerUid(self,callerUid):
+		self.add_query_param('callerUid',callerUid)
