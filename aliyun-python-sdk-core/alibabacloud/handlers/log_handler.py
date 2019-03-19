@@ -18,11 +18,11 @@ from alibabacloud.handlers import RequestHandler
 class LogHandler(RequestHandler):
 
     def handle_request(self, context):
-        log_string = self._get_request_log_string(context.request)
+        # log_string = self._get_request_log_string(context.request)
         context.client.logger.debug(log_string)
 
     def handle_response(self, context):
-        log_string = self._get_response_log_string(context.response)
+        # log_string = self._get_response_log_string(context.response)
         context.client.logger.debug(log_string)
 
     def _get_request_log_string(self, request):

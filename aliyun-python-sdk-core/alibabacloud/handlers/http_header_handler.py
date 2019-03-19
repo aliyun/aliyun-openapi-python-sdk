@@ -33,7 +33,7 @@ class HttpHeaderHandler(RequestHandler):
         signed_header = api_request.get_signed_header(context.config.region_id,
                                                       context.config.access_key_id,
                                                       context.config.access_key_secret)
-        # 重新处理的header
+        # 重新处理的header, http-request 的header
         headers = signed_header
         body_params = api_request.get_body_params()
         if body_params:

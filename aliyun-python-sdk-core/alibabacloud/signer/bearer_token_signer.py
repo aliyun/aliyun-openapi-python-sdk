@@ -36,6 +36,7 @@ class BearerTokenSigner(Signer):
         # which token
         if request.get_style() == 'RPC':
             request.add_query_param("BearerToken", token)
+            request.get_url_params()
         else:
             request.add_header("x-acs-bearer-token", token)
         signature = request.get_signed_signature(region_id, None)
