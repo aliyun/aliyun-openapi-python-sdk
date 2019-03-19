@@ -21,6 +21,6 @@ from aliyunsdkcore.request import RoaRequest
 class DescribeApiVersionRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'CS', '2015-12-15', 'DescribeApiVersion')
+		RoaRequest.__init__(self, 'CS', '2015-12-15', 'DescribeApiVersion','cs')
 		self.set_uri_pattern('/version')
 		self.set_method('GET')

@@ -21,6 +21,6 @@ from aliyunsdkcore.request import RoaRequest
 class CreateClusterRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'CS', '2015-12-15', 'CreateCluster')
+		RoaRequest.__init__(self, 'CS', '2015-12-15', 'CreateCluster','cs')
 		self.set_uri_pattern('/clusters')
 		self.set_method('POST')

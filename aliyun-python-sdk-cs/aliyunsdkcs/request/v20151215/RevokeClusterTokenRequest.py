@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RoaRequest
 class RevokeClusterTokenRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'CS', '2015-12-15', 'RevokeClusterToken')
+		RoaRequest.__init__(self, 'CS', '2015-12-15', 'RevokeClusterToken','cs')
 		self.set_uri_pattern('/token/[Token]/revoke')
 		self.set_method('DELETE')
 
