@@ -29,12 +29,6 @@ class DescribeDomainUsageDataRequest(RpcRequest):
 	def set_StartTime(self,StartTime):
 		self.add_query_param('StartTime',StartTime)
 
-	def get_Type(self):
-		return self.get_query_params().get('Type')
-
-	def set_Type(self,Type):
-		self.add_query_param('Type',Type)
-
 	def get_DataProtocol(self):
 		return self.get_query_params().get('DataProtocol')
 
@@ -70,3 +64,9 @@ class DescribeDomainUsageDataRequest(RpcRequest):
 
 	def set_Field(self,Field):
 		self.add_query_param('Field',Field)
+
+	def get_Interval(self):
+		return self.get_query_params().get('Interval')
+
+	def set_Interval(self,Interval):
+		self.add_query_param('Interval',Interval)
