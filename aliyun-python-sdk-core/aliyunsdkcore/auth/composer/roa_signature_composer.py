@@ -119,29 +119,6 @@ def __build_query_string(uri, queries):
     return query_builder
 
 
-def get_signature(
-        queries,
-        access_key,
-        secret,
-        format,
-        headers,
-        uri_pattern,
-        paths,
-        method,
-        signer=mac1):
-    headers = refresh_sign_parameters(
-        parameters=headers,
-        format=format)
-    sign_to_string = compose_string_to_sign(
-        method=method,
-        queries=queries,
-        headers=headers,
-        uri_pattern=uri_pattern,
-        paths=paths)
-    signature = signer.get_sign_string(sign_to_string, secret=secret)
-    return signature, sign_to_string
-
-
 def get_signed_signature(queries, format, headers, uri_pattern, paths, method):
     headers = refresh_sign_parameters(
         parameters=headers,

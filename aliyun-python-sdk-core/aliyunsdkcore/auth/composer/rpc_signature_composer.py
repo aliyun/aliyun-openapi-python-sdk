@@ -31,7 +31,6 @@ from aliyunsdkcore.utils import parameter_helper as helper
 # format: XML or JSON
 def __refresh_sign_parameters(
         parameters,
-        access_key_id,
         accept_format="JSON",
         signer=mac1):
     if parameters is None or not isinstance(parameters, dict):
@@ -43,7 +42,6 @@ def __refresh_sign_parameters(
     parameters["SignatureType"] = signer.get_signer_type()
     parameters["SignatureVersion"] = signer.get_signer_version()
     parameters["SignatureNonce"] = helper.get_uuid()
-    parameters["AccessKeyId"] = access_key_id
     if accept_format is not None:
         parameters["Format"] = accept_format
     return parameters
@@ -68,22 +66,29 @@ def __get_signature(string_to_sign, secret, signer=mac1):
     return signer.get_sign_string(string_to_sign, secret + '&')
 
 
-def __get_url_params(params, ak, accept_format, signer=mac1):
-    url_params = __refresh_sign_parameters(params, ak, accept_format, signer)
+def get_url_params(params, accept_format, signer):
+    url_params = __refresh_sign_parameters(params, accept_format, signer)
     return url_params
 
 
-def get_signed_signature(params, ak, accept_format, method, body_params, signer=mac1):
-    url_params = __get_url_params(params, ak, accept_format, signer)
+def get_signed_signature(region_id, access_key_id, method, body_params,url_params):
     sign_params = dict(url_params)
+    if 'RegionId' not in sign_params:
+        sign_params['RegionId'] = region_id
+    sign_params["AccessKeyId"] = access_key_id
     sign_params.update(body_params)
     string_to_sign = __compose_string_to_sign(method, sign_params)
     return string_to_sign
 
 
-def get_signed_url(params, ak, secret, accept_format, signer=mac1, string_to_sign=None):
-    url_params = __get_url_params(params, ak, accept_format, signer)
+def get_signed_url(region_id, access_key_id, secret, url_params, string_to_sign, signer=mac1):
+    sign_params = dict(url_params)
+    if 'RegionId' not in sign_params:
+        sign_params['RegionId'] = region_id
+    sign_params["AccessKeyId"] = access_key_id
+
     signature = __get_signature(string_to_sign, secret, signer)
-    url_params['Signature'] = signature
-    url = '/?' + __pop_standard_urlencode(urlencode(url_params))
+    print('rpc.signature', signature)
+    sign_params['Signature'] = signature
+    url = '/?' + __pop_standard_urlencode(urlencode(sign_params))
     return url

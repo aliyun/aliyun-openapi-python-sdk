@@ -29,11 +29,11 @@ class RetryHandler(RequestHandler):
         pass
 
     def handle_request(self, context):
-        retry_policy_context = RetryPolicyContext(context.api_request, None, 0, None)
-        if context.client.retry_policy.should_retry(retry_policy_context) & \
-                RetryCondition.SHOULD_RETRY_WITH_CLIENT_TOKEN:
-            self._add_request_client_token(context.api_request)
-        context.http_request.retries = 0
+        if context.http_request.retries == 0:
+            retry_policy_context = RetryPolicyContext(context.api_request, None, 0, None)
+            if context.client.retry_policy.should_retry(retry_policy_context) & \
+                    RetryCondition.SHOULD_RETRY_WITH_CLIENT_TOKEN:
+                self._add_request_client_token(context.api_request)
 
     def handle_response(self, context):
         api_request = context.api_request
@@ -54,4 +54,3 @@ class RetryHandler(RequestHandler):
             if context.exception:
                 raise context.exception
         context.http_request.retries += 1
-

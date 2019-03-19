@@ -31,5 +31,7 @@ class AccessKeySigner(Signer):
         cred = access_key_credential
         request = context.api_request
         region_id = context.config.region_id
+        if request.get_style() == 'RPC':
+            request.get_url_params()
         signature = request.get_signed_signature(region_id, cred.access_key_id)
         return signature

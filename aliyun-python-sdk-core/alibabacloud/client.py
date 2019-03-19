@@ -68,7 +68,7 @@ class ClientConfig:
         # proxy provider两个： client  env
         self.http_proxy = http_proxy
         self.https_proxy = https_proxy
-        self.proxy = {
+        self._proxy = {
             'http': self.http_proxy,
             'https': self.https_proxy,
         }
@@ -77,6 +77,11 @@ class ClientConfig:
         self.config_file = config_file
 
     def read_from_env(self):
+        # 从环境变量读取一定量的数据
+        env_vars = ['HTTP_DEBUG', 'HTTPS_PROXY', 'HTTP_PROXY']
+        for item in env_vars:
+            if getattr(self, item.lower()) is None:
+                setattr(self, item.lower(), os.environ.get(item) or os.environ.get(item.lower()))
 
         def _set_env_to_config(config_name, env_name):
 
@@ -132,15 +137,11 @@ class ClientConfig:
             if profile.get(key)is not None and getattr(self, key) is None:
                 # 不存在config当中的值 pass
                 setattr(self, key, profile.get(key))
-
-        return None
+            print('不存在config当中的值', key)
 
     def read_from_default(self):
         # some config DEFAULT
         # 用户实例化的时候，就进行了覆盖
-        pass
-
-    def handle_timeout(self):
         pass
 
 

@@ -297,6 +297,7 @@ class RpcRequest(AcsRequest):
             mt.GET)
         self._style = STYLE_RPC
         self._signer = signer
+        self.url_params =None
 
     def get_style(self):
         return self._style
@@ -311,26 +312,25 @@ class RpcRequest(AcsRequest):
 
         return req_params
 
-    def get_url(self, region_id, access_key_id, access_key_secret):
+    def get_url_params(self):
         sign_params = self._get_sign_params()
-        if 'RegionId' not in iterkeys(sign_params):
-            sign_params['RegionId'] = region_id
-
-        url = rpc_signer.get_signed_url(sign_params, access_key_id, access_key_secret,
-                                        self.get_accept_format(), self._signer,
-                                        self.string_to_sign)
+        url_params = rpc_signer.get_url_params(sign_params,
+                                        self.get_accept_format(),
+                                        self._signer)
+        self.url_params = url_params
+        
+    def get_url(self, region_id, access_key_id, access_key_secret):
+        url = rpc_signer.get_signed_url(region_id, access_key_id, access_key_secret, self.url_params,
+                                        self.string_to_sign, self._signer)
         return url
 
     def get_signed_signature(self, region_id, access_key_id):
-        sign_params = self._get_sign_params()
-        if 'RegionId' not in iterkeys(sign_params):
-            sign_params['RegionId'] = region_id
-        string_to_sign = rpc_signer.get_signed_signature(sign_params, access_key_id,
-                                                         self.get_accept_format(),
+        string_to_sign = rpc_signer.get_signed_signature(region_id, access_key_id,
                                                          self.get_method(),
                                                          self.get_body_params(),
-                                                         self._signer)
+                                                         self.url_params)
         self.string_to_sign = string_to_sign
+        return string_to_sign
 
     def get_signed_header(self, region_id=None, ak=None, secret=None):
         headers = {}
@@ -436,7 +436,7 @@ class RoaRequest(AcsRequest):
             self.string_to_sign)
         return signed_headers
 
-    def get_signed_signature(self, region_id, ak=None):
+    def get_signed_signature(self, region_id, access_key_id):
         sign_params = self._get_sign_params()
         if self.get_content() is not None:
             self.add_header(
@@ -453,6 +453,7 @@ class RoaRequest(AcsRequest):
             self.get_path_params(),
             self.get_method())
         self.string_to_sign = sign_to_string
+        return sign_to_string
 
     def get_url(self, region_id=None, ak=None, secret=None):
         """

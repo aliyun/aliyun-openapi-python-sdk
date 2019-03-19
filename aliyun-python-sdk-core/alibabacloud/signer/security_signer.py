@@ -33,6 +33,7 @@ class SecuritySigner(Signer):
         region_id = context.config.region_id
         if request.get_style() == 'RPC':
             request.add_query_param("SecurityToken", security_credential.token)
+            request.get_url_params()
         else:
             request.add_header("x-acs-security-token", security_credential.token)
         signature = request.get_signed_signature(region_id, security_credential.access_key_id)
