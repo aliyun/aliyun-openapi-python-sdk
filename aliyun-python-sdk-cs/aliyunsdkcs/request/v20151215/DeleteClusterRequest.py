@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RoaRequest
 class DeleteClusterRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'CS', '2015-12-15', 'DeleteCluster')
+		RoaRequest.__init__(self, 'CS', '2015-12-15', 'DeleteCluster','cs')
 		self.set_uri_pattern('/clusters/[ClusterId]')
 		self.set_method('DELETE')
 

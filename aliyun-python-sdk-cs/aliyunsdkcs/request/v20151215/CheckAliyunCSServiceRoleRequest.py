@@ -21,6 +21,6 @@ from aliyunsdkcore.request import RoaRequest
 class CheckAliyunCSServiceRoleRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'CS', '2015-12-15', 'CheckAliyunCSServiceRole')
+		RoaRequest.__init__(self, 'CS', '2015-12-15', 'CheckAliyunCSServiceRole','cs')
 		self.set_uri_pattern('/aliyuncsrole/status')
 		self.set_method('GET')

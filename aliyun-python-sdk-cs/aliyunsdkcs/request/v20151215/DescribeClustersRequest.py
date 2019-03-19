@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RoaRequest
 class DescribeClustersRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'CS', '2015-12-15', 'DescribeClusters')
+		RoaRequest.__init__(self, 'CS', '2015-12-15', 'DescribeClusters','cs')
 		self.set_uri_pattern('/clusters')
 		self.set_method('GET')
 
