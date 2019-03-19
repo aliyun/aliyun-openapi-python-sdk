@@ -27,16 +27,14 @@ logger = logging.getLogger(__name__)
 
 
 class SecuritySigner(Signer):
-    def __init__(self, security_credential):
-        self._credential = security_credential
 
-    def sign(self, region_id, request):
-        security_cred = self._credential
+    def sign(self, security_credential, context):
+        request = context.api_request
+        region_id = context.config.region_id
         if request.get_style() == 'RPC':
-            request.add_query_param("SecurityToken", security_cred.token)
+            request.add_query_param("SecurityToken", security_credential.token)
         else:
-            request.add_header("x-acs-security-token", security_cred.token)
-        header = request.get_signed_header(region_id, security_cred.access_key_id,
-                                           security_cred.access_key_secret)
-        url = request.get_url(region_id, security_cred.access_key_id, security_cred.access_key_secret)
-        return header, url
+            request.add_header("x-acs-security-token", security_credential.token)
+        signature = request.get_signed_signature(region_id, security_credential.access_key_id)
+        return signature
+

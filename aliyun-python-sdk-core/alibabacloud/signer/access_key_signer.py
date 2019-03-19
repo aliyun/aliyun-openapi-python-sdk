@@ -27,11 +27,9 @@ logger = logging.getLogger(__name__)
 
 
 class AccessKeySigner(Signer):
-    def __init__(self, access_key_credential):
-        self._credential = access_key_credential
-
-    def sign(self, region_id, request):
-        cred = self._credential
-        header = request.get_signed_header(region_id, cred.access_key_id, cred.access_key_secret)
-        url = request.get_url(region_id, cred.access_key_id, cred.access_key_secret)
-        return header, url
+    def sign(self, access_key_credential, context):
+        cred = access_key_credential
+        request = context.api_request
+        region_id = context.config.region_id
+        signature = request.get_signed_signature(region_id, cred.access_key_id)
+        return signature

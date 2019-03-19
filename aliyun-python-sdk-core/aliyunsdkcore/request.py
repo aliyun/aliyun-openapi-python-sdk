@@ -250,6 +250,10 @@ class AcsRequest:
     def get_signed_header(self, region_id, ak, secret):
         pass
 
+    @abc.abstractmethod
+    def get_signed_signature(self, region_id, ak):
+        pass
+
     def set_endpoint(self, endpoint):
         self.endpoint = endpoint
 
@@ -311,22 +315,27 @@ class RpcRequest(AcsRequest):
         sign_params = self._get_sign_params()
         if 'RegionId' not in iterkeys(sign_params):
             sign_params['RegionId'] = region_id
-        url, string_to_sign = rpc_signer.get_signed_url(
-            sign_params,
-            access_key_id,
-            access_key_secret,
-            self.get_accept_format(),
-            self.get_method(),
-            self.get_body_params(),
-            self._signer)
-        self.string_to_sign = string_to_sign
+
+        url = rpc_signer.get_signed_url(sign_params, access_key_id, access_key_secret,
+                                        self.get_accept_format(), self._signer,
+                                        self.string_to_sign)
         return url
+
+    def get_signed_signature(self, region_id, access_key_id):
+        sign_params = self._get_sign_params()
+        if 'RegionId' not in iterkeys(sign_params):
+            sign_params['RegionId'] = region_id
+        string_to_sign = rpc_signer.get_signed_signature(sign_params, access_key_id,
+                                                         self.get_accept_format(),
+                                                         self.get_method(),
+                                                         self.get_body_params(),
+                                                         self._signer)
+        self.string_to_sign = string_to_sign
 
     def get_signed_header(self, region_id=None, ak=None, secret=None):
         headers = {}
         for headerKey, headerValue in iteritems(self.get_headers()):
-            if headerKey.startswith("x-acs-") or headerKey.startswith("x-sdk-"):
-                headers[headerKey] = headerValue
+            headers[headerKey] = headerValue
         return headers
 
 
@@ -420,26 +429,39 @@ class RoaRequest(AcsRequest):
             sign_params['RegionId'] = region_id
             self.add_header('x-acs-region-id', str(region_id))
 
-        signed_headers, sign_to_string = roa_signer.get_signature_headers(
-            sign_params,
+        signed_headers = roa_signer.get_signed_headers(
             ak,
             secret,
+            self.get_headers(),
+            self.string_to_sign)
+        return signed_headers
+
+    def get_signed_signature(self, region_id, ak=None):
+        sign_params = self._get_sign_params()
+        if self.get_content() is not None:
+            self.add_header(
+                'Content-MD5', md5_sum(self.get_content()))
+        if 'RegionId' not in sign_params.keys():
+            sign_params['RegionId'] = region_id
+            self.add_header('x-acs-region-id', str(region_id))
+
+        sign_to_string = roa_signer.get_signed_signature(
+            sign_params,
             self.get_accept_format(),
             self.get_headers(),
             self.get_uri_pattern(),
             self.get_path_params(),
             self.get_method())
         self.string_to_sign = sign_to_string
-        return signed_headers
 
-    def get_url(self, region_id, ak=None, secret=None):
+    def get_url(self, region_id=None, ak=None, secret=None):
         """
         Compose request url without domain
         :param region_id: String
         :return: String
         """
         sign_params = self.get_query_params()
-        url = roa_signer.get_url(
+        url = roa_signer.get_signed_url(
             self.get_uri_pattern(),
             sign_params,
             self.get_path_params())

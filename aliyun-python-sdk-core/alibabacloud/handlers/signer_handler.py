@@ -18,7 +18,7 @@ from alibabacloud.credentials.credentials import SecurityCredentials
 from alibabacloud.credentials.credentials import BearTokenCredentials
 from alibabacloud.signer.access_key_signer import AccessKeySigner
 from alibabacloud.signer.security_signer import SecuritySigner
-from alibabacloud.signer.bearer_token_signer import BearTokenSigner  # FIXME: bear -> bearer
+from alibabacloud.signer.bearer_token_signer import BearerTokenSigner  # FIXME: bear -> bearer
 
 
 class SignerHandler(RequestHandler):
@@ -26,31 +26,30 @@ class SignerHandler(RequestHandler):
     _signer_map = {
         "AccessKeyCredentials": AccessKeySigner(),
         "SecurityCredentials": SecuritySigner(),
-        "BearTokenCredentials": BearTokenSigner()
+        "BearTokenCredentials": BearerTokenSigner()
     }
 
-    # 源代码实现了获取header和url
+    # 只实现了signature
     def handle_request(self, context):
         http_request = context.http_request
+        api_request = context.api_request
+
         credentials = context.client.credentials_provider.load_credentials()
         signer = self._signer_map[credentials.__class__.__name__]
-        signature = signer.sign(credentials, context)
-        http_request.headers['Signature'] = signature
+        signature = signer.sign(credentials, api_request)
         # TODO fix other headers
+        http_request.signature = signature
 
-    def get_signer_cls(self, context):
-        # 原本AK组装的static_provider
-        # using CredentialsProvider
-        if context.config.credentials_provider_chain:
-            self.credentials = context.config.credentials_provider_chain()
-        else:
-            _credentials_provider = DefaultCredentialsProvider(_credential)
-            self.credentials = _credentials_provider.load_credentials()
-        if self.credentials is None:
+    @staticmethod
+    def get_credentials(context):
+        credentials_provider = context.client.credentials_provider({
+            'access_key_id': context.config.access_key_id,
+            'access_key_secret': context.config.access_key_secret,
+        })
+        credentials = credentials_provider.load_credentials()
+        if credentials is None:
             raise ClientException(
                 'Credentials',
                 'Unable to locate credentials.'
             )
-        return SignerFactory.get_signer(
-            credentials=self.credentials, region_id=self._region_id,
-            do_action_api=self._implementation_of_do_action, debug=self.debug)
+        return credentials

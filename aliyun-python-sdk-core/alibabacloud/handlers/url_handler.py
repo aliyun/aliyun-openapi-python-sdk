@@ -11,22 +11,24 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+import platform
 
 from alibabacloud.handlers import RequestHandler
 
 
-class LogHandler(RequestHandler):
-
+class URLHandler(RequestHandler):
+    """
+    处理http_request的url的内容,便于后续
+    """
     def handle_request(self, context):
-        log_string = self._get_request_log_string(context.request)
-        context.client.logger.debug(log_string)
+        http_request = context.http_request
+        api_request = context.api_request
+        signed_url = api_request.get_url(context.config.region_id,
+                                         context.config.access_key_id,
+                                         context.config.access_key_secret)
+        http_request.url = signed_url
+        context.http_request = http_request
 
     def handle_response(self, context):
-        log_string = self._get_response_log_string(context.response)
-        context.client.logger.debug(log_string)
-
-    def _get_request_log_string(self, request):
-        pass
-
-    def _get_response_log_string(self, response):
+        # context 实际是http_request
         pass

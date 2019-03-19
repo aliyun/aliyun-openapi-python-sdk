@@ -19,29 +19,24 @@ _api_timeout_config_data = aliyunsdkcore.utils._load_json_from_data_dir("timeout
 
 
 class TimeoutConfigReader(RequestHandler):
-
     # TODO 把对 timeout_config.json 的读取逻辑放到 ClientConfig 那一层
+    # client config 不能处理  涉及到产品的product——code
     # TODO request级别仅对读取配置进行处理，用户不设置request层级的timeout
-
     def handle_request(self, context):
-        request = context.request
-        config = context.config
-        context.timeout = (self.connection_timeout(request, config),
-                           self.read_timeout(request, config))
+        context.http_request.timeout = (self.connection_timeout(context.config),
+                                        self.read_timeout(context.api_request, context.config))
 
     def handle_response(self, request, response):
         # context 实际是request
         pass
 
     @staticmethod
-    def connection_timeout(request, config):
-        return request.connection_timeout or config.connection_timeout \
-               or DEFAULT_CONNECTION_TIMEOUT
+    def connection_timeout(config):
+        return config.connection_timeout or DEFAULT_CONNECTION_TIMEOUT
 
     @staticmethod
     def read_timeout(request, config):
         path = '"{0}"."{1}"."{2}"'.format(request.product.lower(), request.version,
                                           request.action_name)
-        file_connection_timeout = jmespath.search(path, _api_timeout_config_data)
-        return request.connection_timeout or file_connection_timeout \
-               or config.connection_timeout or DEFAULT_CONNECTION_TIMEOUT
+        file_read_timeout = jmespath.search(path, _api_timeout_config_data)
+        return file_read_timeout or config.read_timeout or DEFAULT_READ_TIMEOUT
