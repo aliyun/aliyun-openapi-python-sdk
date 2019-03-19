@@ -18,25 +18,19 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class QueryInvoicingCustomerListRequest(RpcRequest):
+class CancelOrderRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'QueryInvoicingCustomerList')
+		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'CancelOrder')
 
-	def get_callerBid(self):
-		return self.get_query_params().get('callerBid')
+	def get_OrderId(self):
+		return self.get_query_params().get('OrderId')
 
-	def set_callerBid(self,callerBid):
-		self.add_query_param('callerBid',callerBid)
+	def set_OrderId(self,OrderId):
+		self.add_query_param('OrderId',OrderId)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
-
-	def get_callerUid(self):
-		return self.get_query_params().get('callerUid')
-
-	def set_callerUid(self,callerUid):
-		self.add_query_param('callerUid',callerUid)

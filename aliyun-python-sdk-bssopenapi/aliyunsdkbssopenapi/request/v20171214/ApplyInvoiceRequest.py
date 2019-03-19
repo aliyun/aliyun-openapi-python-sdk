@@ -61,6 +61,12 @@ class ApplyInvoiceRequest(RpcRequest):
 	def set_ProcessWay(self,ProcessWay):
 		self.add_query_param('ProcessWay',ProcessWay)
 
+	def get_callerBid(self):
+		return self.get_query_params().get('callerBid')
+
+	def set_callerBid(self,callerBid):
+		self.add_query_param('callerBid',callerBid)
+
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
@@ -78,3 +84,9 @@ class ApplyInvoiceRequest(RpcRequest):
 
 	def set_AddressId(self,AddressId):
 		self.add_query_param('AddressId',AddressId)
+
+	def get_callerUid(self):
+		return self.get_query_params().get('callerUid')
+
+	def set_callerUid(self,callerUid):
+		self.add_query_param('callerUid',callerUid)
