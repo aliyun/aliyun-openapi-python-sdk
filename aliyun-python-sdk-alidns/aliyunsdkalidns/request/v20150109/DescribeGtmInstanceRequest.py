@@ -18,16 +18,16 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class ApplyForRetrievalDomainNameRequest(RpcRequest):
+class DescribeGtmInstanceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'ApplyForRetrievalDomainName')
+		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'DescribeGtmInstance','alidns')
 
-	def get_Lang(self):
-		return self.get_query_params().get('Lang')
+	def get_InstanceId(self):
+		return self.get_query_params().get('InstanceId')
 
-	def set_Lang(self,Lang):
-		self.add_query_param('Lang',Lang)
+	def set_InstanceId(self,InstanceId):
+		self.add_query_param('InstanceId',InstanceId)
 
 	def get_UserClientIp(self):
 		return self.get_query_params().get('UserClientIp')
@@ -35,8 +35,8 @@ class ApplyForRetrievalDomainNameRequest(RpcRequest):
 	def set_UserClientIp(self,UserClientIp):
 		self.add_query_param('UserClientIp',UserClientIp)
 
-	def get_DomainName(self):
-		return self.get_query_params().get('DomainName')
+	def get_Lang(self):
+		return self.get_query_params().get('Lang')
 
-	def set_DomainName(self,DomainName):
-		self.add_query_param('DomainName',DomainName)
+	def set_Lang(self,Lang):
+		self.add_query_param('Lang',Lang)

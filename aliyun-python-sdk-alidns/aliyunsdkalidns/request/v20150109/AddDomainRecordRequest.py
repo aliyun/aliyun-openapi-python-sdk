@@ -21,13 +21,19 @@ from aliyunsdkcore.request import RpcRequest
 class AddDomainRecordRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'AddDomainRecord')
+		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'AddDomainRecord','alidns')
 
-	def get_Lang(self):
-		return self.get_query_params().get('Lang')
+	def get_RR(self):
+		return self.get_query_params().get('RR')
 
-	def set_Lang(self,Lang):
-		self.add_query_param('Lang',Lang)
+	def set_RR(self,RR):
+		self.add_query_param('RR',RR)
+
+	def get_Line(self):
+		return self.get_query_params().get('Line')
+
+	def set_Line(self,Line):
+		self.add_query_param('Line',Line)
 
 	def get_UserClientIp(self):
 		return self.get_query_params().get('UserClientIp')
@@ -41,17 +47,23 @@ class AddDomainRecordRequest(RpcRequest):
 	def set_DomainName(self,DomainName):
 		self.add_query_param('DomainName',DomainName)
 
-	def get_RR(self):
-		return self.get_query_params().get('RR')
+	def get_Lang(self):
+		return self.get_query_params().get('Lang')
 
-	def set_RR(self,RR):
-		self.add_query_param('RR',RR)
+	def set_Lang(self,Lang):
+		self.add_query_param('Lang',Lang)
 
 	def get_Type(self):
 		return self.get_query_params().get('Type')
 
 	def set_Type(self,Type):
 		self.add_query_param('Type',Type)
+
+	def get_Priority(self):
+		return self.get_query_params().get('Priority')
+
+	def set_Priority(self,Priority):
+		self.add_query_param('Priority',Priority)
 
 	def get_Value(self):
 		return self.get_query_params().get('Value')
@@ -64,15 +76,3 @@ class AddDomainRecordRequest(RpcRequest):
 
 	def set_TTL(self,TTL):
 		self.add_query_param('TTL',TTL)
-
-	def get_Priority(self):
-		return self.get_query_params().get('Priority')
-
-	def set_Priority(self,Priority):
-		self.add_query_param('Priority',Priority)
-
-	def get_Line(self):
-		return self.get_query_params().get('Line')
-
-	def set_Line(self,Line):
-		self.add_query_param('Line',Line)

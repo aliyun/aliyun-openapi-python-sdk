@@ -21,13 +21,13 @@ from aliyunsdkcore.request import RpcRequest
 class SetDomainRecordStatusRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'SetDomainRecordStatus')
+		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'SetDomainRecordStatus','alidns')
 
-	def get_Lang(self):
-		return self.get_query_params().get('Lang')
+	def get_RecordId(self):
+		return self.get_query_params().get('RecordId')
 
-	def set_Lang(self,Lang):
-		self.add_query_param('Lang',Lang)
+	def set_RecordId(self,RecordId):
+		self.add_query_param('RecordId',RecordId)
 
 	def get_UserClientIp(self):
 		return self.get_query_params().get('UserClientIp')
@@ -35,11 +35,11 @@ class SetDomainRecordStatusRequest(RpcRequest):
 	def set_UserClientIp(self,UserClientIp):
 		self.add_query_param('UserClientIp',UserClientIp)
 
-	def get_RecordId(self):
-		return self.get_query_params().get('RecordId')
+	def get_Lang(self):
+		return self.get_query_params().get('Lang')
 
-	def set_RecordId(self,RecordId):
-		self.add_query_param('RecordId',RecordId)
+	def set_Lang(self,Lang):
+		self.add_query_param('Lang',Lang)
 
 	def get_Status(self):
 		return self.get_query_params().get('Status')

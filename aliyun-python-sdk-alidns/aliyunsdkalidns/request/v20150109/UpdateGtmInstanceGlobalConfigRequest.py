@@ -18,16 +18,34 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class DescribeDomainsRequest(RpcRequest):
+class UpdateGtmInstanceGlobalConfigRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'DescribeDomains','alidns')
+		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'UpdateGtmInstanceGlobalConfig','alidns')
 
-	def get_GroupId(self):
-		return self.get_query_params().get('GroupId')
+	def get_AlertGroup(self):
+		return self.get_query_params().get('AlertGroup')
 
-	def set_GroupId(self,GroupId):
-		self.add_query_param('GroupId',GroupId)
+	def set_AlertGroup(self,AlertGroup):
+		self.add_query_param('AlertGroup',AlertGroup)
+
+	def get_InstanceId(self):
+		return self.get_query_params().get('InstanceId')
+
+	def set_InstanceId(self,InstanceId):
+		self.add_query_param('InstanceId',InstanceId)
+
+	def get_InstanceName(self):
+		return self.get_query_params().get('InstanceName')
+
+	def set_InstanceName(self,InstanceName):
+		self.add_query_param('InstanceName',InstanceName)
+
+	def get_UserDomainName(self):
+		return self.get_query_params().get('UserDomainName')
+
+	def set_UserDomainName(self,UserDomainName):
+		self.add_query_param('UserDomainName',UserDomainName)
 
 	def get_UserClientIp(self):
 		return self.get_query_params().get('UserClientIp')
@@ -35,17 +53,11 @@ class DescribeDomainsRequest(RpcRequest):
 	def set_UserClientIp(self,UserClientIp):
 		self.add_query_param('UserClientIp',UserClientIp)
 
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
+	def get_LbaStrategy(self):
+		return self.get_query_params().get('LbaStrategy')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_SearchMode(self):
-		return self.get_query_params().get('SearchMode')
-
-	def set_SearchMode(self,SearchMode):
-		self.add_query_param('SearchMode',SearchMode)
+	def set_LbaStrategy(self,LbaStrategy):
+		self.add_query_param('LbaStrategy',LbaStrategy)
 
 	def get_Lang(self):
 		return self.get_query_params().get('Lang')
@@ -53,14 +65,8 @@ class DescribeDomainsRequest(RpcRequest):
 	def set_Lang(self,Lang):
 		self.add_query_param('Lang',Lang)
 
-	def get_KeyWord(self):
-		return self.get_query_params().get('KeyWord')
+	def get_Ttl(self):
+		return self.get_query_params().get('Ttl')
 
-	def set_KeyWord(self,KeyWord):
-		self.add_query_param('KeyWord',KeyWord)
-
-	def get_PageNumber(self):
-		return self.get_query_params().get('PageNumber')
-
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
+	def set_Ttl(self,Ttl):
+		self.add_query_param('Ttl',Ttl)

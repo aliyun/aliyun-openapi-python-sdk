@@ -21,19 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class UpdateDNSSLBWeightRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'UpdateDNSSLBWeight')
-
-	def get_Lang(self):
-		return self.get_query_params().get('Lang')
-
-	def set_Lang(self,Lang):
-		self.add_query_param('Lang',Lang)
-
-	def get_UserClientIp(self):
-		return self.get_query_params().get('UserClientIp')
-
-	def set_UserClientIp(self,UserClientIp):
-		self.add_query_param('UserClientIp',UserClientIp)
+		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'UpdateDNSSLBWeight','alidns')
 
 	def get_RecordId(self):
 		return self.get_query_params().get('RecordId')
@@ -41,8 +29,20 @@ class UpdateDNSSLBWeightRequest(RpcRequest):
 	def set_RecordId(self,RecordId):
 		self.add_query_param('RecordId',RecordId)
 
+	def get_UserClientIp(self):
+		return self.get_query_params().get('UserClientIp')
+
+	def set_UserClientIp(self,UserClientIp):
+		self.add_query_param('UserClientIp',UserClientIp)
+
 	def get_Weight(self):
 		return self.get_query_params().get('Weight')
 
 	def set_Weight(self,Weight):
 		self.add_query_param('Weight',Weight)
+
+	def get_Lang(self):
+		return self.get_query_params().get('Lang')
+
+	def set_Lang(self,Lang):
+		self.add_query_param('Lang',Lang)

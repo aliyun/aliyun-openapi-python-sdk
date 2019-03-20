@@ -18,16 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class AddBatchDomainRecordsRequest(RpcRequest):
+class DescribeGtmInstancesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'AddBatchDomainRecords')
-
-	def get_Lang(self):
-		return self.get_query_params().get('Lang')
-
-	def set_Lang(self,Lang):
-		self.add_query_param('Lang',Lang)
+		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'DescribeGtmInstances','alidns')
 
 	def get_UserClientIp(self):
 		return self.get_query_params().get('UserClientIp')
@@ -35,8 +29,26 @@ class AddBatchDomainRecordsRequest(RpcRequest):
 	def set_UserClientIp(self,UserClientIp):
 		self.add_query_param('UserClientIp',UserClientIp)
 
-	def get_Records(self):
-		return self.get_query_params().get('Records')
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
 
-	def set_Records(self,Records):
-		self.add_query_param('Records',Records)
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
+
+	def get_Lang(self):
+		return self.get_query_params().get('Lang')
+
+	def set_Lang(self,Lang):
+		self.add_query_param('Lang',Lang)
+
+	def get_Keyword(self):
+		return self.get_query_params().get('Keyword')
+
+	def set_Keyword(self,Keyword):
+		self.add_query_param('Keyword',Keyword)
+
+	def get_PageNumber(self):
+		return self.get_query_params().get('PageNumber')
+
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)

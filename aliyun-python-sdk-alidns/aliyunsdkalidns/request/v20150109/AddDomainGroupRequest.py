@@ -21,19 +21,19 @@ from aliyunsdkcore.request import RpcRequest
 class AddDomainGroupRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'AddDomainGroup')
-
-	def get_Lang(self):
-		return self.get_query_params().get('Lang')
-
-	def set_Lang(self,Lang):
-		self.add_query_param('Lang',Lang)
+		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'AddDomainGroup','alidns')
 
 	def get_UserClientIp(self):
 		return self.get_query_params().get('UserClientIp')
 
 	def set_UserClientIp(self,UserClientIp):
 		self.add_query_param('UserClientIp',UserClientIp)
+
+	def get_Lang(self):
+		return self.get_query_params().get('Lang')
+
+	def set_Lang(self,Lang):
+		self.add_query_param('Lang',Lang)
 
 	def get_GroupName(self):
 		return self.get_query_params().get('GroupName')

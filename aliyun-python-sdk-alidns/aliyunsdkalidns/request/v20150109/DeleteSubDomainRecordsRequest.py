@@ -21,13 +21,13 @@ from aliyunsdkcore.request import RpcRequest
 class DeleteSubDomainRecordsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'DeleteSubDomainRecords')
+		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'DeleteSubDomainRecords','alidns')
 
-	def get_Lang(self):
-		return self.get_query_params().get('Lang')
+	def get_RR(self):
+		return self.get_query_params().get('RR')
 
-	def set_Lang(self,Lang):
-		self.add_query_param('Lang',Lang)
+	def set_RR(self,RR):
+		self.add_query_param('RR',RR)
 
 	def get_UserClientIp(self):
 		return self.get_query_params().get('UserClientIp')
@@ -41,11 +41,11 @@ class DeleteSubDomainRecordsRequest(RpcRequest):
 	def set_DomainName(self,DomainName):
 		self.add_query_param('DomainName',DomainName)
 
-	def get_RR(self):
-		return self.get_query_params().get('RR')
+	def get_Lang(self):
+		return self.get_query_params().get('Lang')
 
-	def set_RR(self,RR):
-		self.add_query_param('RR',RR)
+	def set_Lang(self,Lang):
+		self.add_query_param('Lang',Lang)
 
 	def get_Type(self):
 		return self.get_query_params().get('Type')

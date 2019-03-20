@@ -18,16 +18,16 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class DescribeDomainsRequest(RpcRequest):
+class DescribeGtmLogsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'DescribeDomains','alidns')
+		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'DescribeGtmLogs','alidns')
 
-	def get_GroupId(self):
-		return self.get_query_params().get('GroupId')
+	def get_InstanceId(self):
+		return self.get_query_params().get('InstanceId')
 
-	def set_GroupId(self,GroupId):
-		self.add_query_param('GroupId',GroupId)
+	def set_InstanceId(self,InstanceId):
+		self.add_query_param('InstanceId',InstanceId)
 
 	def get_UserClientIp(self):
 		return self.get_query_params().get('UserClientIp')
@@ -41,26 +41,32 @@ class DescribeDomainsRequest(RpcRequest):
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
 
-	def get_SearchMode(self):
-		return self.get_query_params().get('SearchMode')
-
-	def set_SearchMode(self,SearchMode):
-		self.add_query_param('SearchMode',SearchMode)
-
 	def get_Lang(self):
 		return self.get_query_params().get('Lang')
 
 	def set_Lang(self,Lang):
 		self.add_query_param('Lang',Lang)
 
-	def get_KeyWord(self):
-		return self.get_query_params().get('KeyWord')
+	def get_Keyword(self):
+		return self.get_query_params().get('Keyword')
 
-	def set_KeyWord(self,KeyWord):
-		self.add_query_param('KeyWord',KeyWord)
+	def set_Keyword(self,Keyword):
+		self.add_query_param('Keyword',Keyword)
+
+	def get_StartTimestamp(self):
+		return self.get_query_params().get('StartTimestamp')
+
+	def set_StartTimestamp(self,StartTimestamp):
+		self.add_query_param('StartTimestamp',StartTimestamp)
 
 	def get_PageNumber(self):
 		return self.get_query_params().get('PageNumber')
 
 	def set_PageNumber(self,PageNumber):
 		self.add_query_param('PageNumber',PageNumber)
+
+	def get_EndTimestamp(self):
+		return self.get_query_params().get('EndTimestamp')
+
+	def set_EndTimestamp(self,EndTimestamp):
+		self.add_query_param('EndTimestamp',EndTimestamp)
