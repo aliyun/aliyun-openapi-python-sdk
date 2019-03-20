@@ -18,25 +18,25 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class CheckAccountAndPasswordRiskRequest(RpcRequest):
+class GetRiskDetailRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'jaq', '2016-11-23', 'CheckAccountAndPasswordRisk')
+		RpcRequest.__init__(self, 'jaq', '2016-04-12', 'GetRiskDetail','jaq')
 
-	def get_CallerName(self):
-		return self.get_query_params().get('CallerName')
+	def get_ItemId(self):
+		return self.get_query_params().get('ItemId')
 
-	def set_CallerName(self,CallerName):
-		self.add_query_param('CallerName',CallerName)
+	def set_ItemId(self,ItemId):
+		self.add_query_param('ItemId',ItemId)
 
-	def get_AccountName(self):
-		return self.get_query_params().get('AccountName')
+	def get_Country(self):
+		return self.get_query_params().get('Country')
 
-	def set_AccountName(self,AccountName):
-		self.add_query_param('AccountName',AccountName)
+	def set_Country(self,Country):
+		self.add_query_param('Country',Country)
 
-	def get_PasswordHash(self):
-		return self.get_query_params().get('PasswordHash')
+	def get_Language(self):
+		return self.get_query_params().get('Language')
 
-	def set_PasswordHash(self,PasswordHash):
-		self.add_query_param('PasswordHash',PasswordHash)
+	def set_Language(self,Language):
+		self.add_query_param('Language',Language)
