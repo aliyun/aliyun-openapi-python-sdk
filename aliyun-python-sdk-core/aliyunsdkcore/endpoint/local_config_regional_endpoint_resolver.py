@@ -82,10 +82,10 @@ class LocalConfigRegionalEndpointResolver(EndpointResolverBase):
             return None
 
     def get_endpoint_key_from_request(self, request):
-        return self._make_endpoint_entry_key(request.product_code_lower, request.region_id)
+        return self._make_endpoint_entry_key(request.product_code.lower(), request.region_id.lower())
 
     def _make_endpoint_entry_key(self, product_code, region_id):
-        return self._get_normalized_product_code(product_code) + "." + region_id.lower()
+        return self._get_normalized_product_code(product_code) + "." + region_id
 
     def is_region_id_valid(self, request):
         return request.region_id in self._valid_region_ids

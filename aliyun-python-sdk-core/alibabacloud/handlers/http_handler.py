@@ -13,15 +13,22 @@
 # limitations under the License.
 
 from alibabacloud.handlers import RequestHandler
-from alibabacloud.http.http_response import HttpResponse
 from aliyunsdkcore.vendored.six.moves.urllib.parse import urlencode
+import os
+import logging
 
+from aliyunsdkcore.vendored.requests import Request, Session
+from aliyunsdkcore.vendored.requests.packages import urllib3
+from aliyunsdkcore.http.http_request import HttpRequest
+from aliyunsdkcore.http import protocol_type as PT
+
+from aliyunsdkcore.vendored.requests import status_codes
 
 class HttpHandler(RequestHandler):
     """
     获取参数，组装成request
     """
-    def set_content(self, content, encoding, format=RAW):
+    def set_content(self, content, encoding, format='RAW'):
         # 有body_params ，就是 urlencode 结果的值
         # 没有，就是request的
         self.content = content
@@ -39,7 +46,7 @@ class HttpHandler(RequestHandler):
             self.headers[self.content_type] = format
             self.encoding = encoding
     def handle_request(self, context):
-        http_request = HttpResponse(context)
+        http_request = context.http_request
         body_params = context.api_request.get_body_params()
         if body_params:
             body = urlencode(body_params)
@@ -47,19 +54,20 @@ class HttpHandler(RequestHandler):
         context.http_request = http_request
 
     def handle_response(self, context):
-        pass
+        self.do_request(context)
 
     @staticmethod
     def do_request(context):
         http_request = context.http_request
         with Session() as s:
-            current_protocol = 'https://' if http_request.protocol.lower() == 'https' else 'http://'
+            current_protocol = 'http://' if http_request.protocol.lower() == 'http' else 'https://'
+
             # TODO : 最终拼接的是啥，还需要调查下
-            url = current_protocol + http_request.endpoint + http_request.url
+            url = current_protocol + context.endpoint + http_request.url
 
             if http_request.port != 80 or http_request.port != 443:
-                url = current_protocol + http_request.endpoint + ":" + \
-                      str(http_request.port.port) + http_request.url
+                url = current_protocol + context.endpoint + ":" + \
+                      str(http_request.port) + http_request.url
 
             req = Request(method=http_request.method, url=url,
                           data=http_request.body,
@@ -73,5 +81,6 @@ class HttpHandler(RequestHandler):
             response = s.send(prepped, proxies=http_request.proxy,
                               timeout=http_request.timeout,
                               allow_redirects=False, verify=None, cert=None)
+            response.status_code
             context.response = response
 

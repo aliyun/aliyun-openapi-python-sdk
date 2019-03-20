@@ -13,9 +13,10 @@
 # limitations under the License.
 import jmespath
 from alibabacloud.handlers import RequestHandler
+from alibabacloud.utils import load_json_from_data_dir
 DEFAULT_READ_TIMEOUT = 10
 DEFAULT_CONNECTION_TIMEOUT = 5
-_api_timeout_config_data = aliyunsdkcore.utils._load_json_from_data_dir("timeout_config.json")
+_api_timeout_config_data = load_json_from_data_dir._load_json_from_data_dir("timeout_config.json")
 
 
 class TimeoutConfigReader(RequestHandler):
@@ -26,7 +27,7 @@ class TimeoutConfigReader(RequestHandler):
         context.http_request.timeout = (self.connection_timeout(context.config),
                                         self.read_timeout(context.api_request, context.config))
 
-    def handle_response(self, request, response):
+    def handle_response(self, context):
         # context 实际是request
         pass
 
@@ -36,7 +37,7 @@ class TimeoutConfigReader(RequestHandler):
 
     @staticmethod
     def read_timeout(request, config):
-        path = '"{0}"."{1}"."{2}"'.format(request.product.lower(), request.version,
-                                          request.action_name)
+        path = '"{0}"."{1}"."{2}"'.format(request.get_product().lower(), request.get_version(),
+                                          request.get_action_name())
         file_read_timeout = jmespath.search(path, _api_timeout_config_data)
         return file_read_timeout or config.read_timeout or DEFAULT_READ_TIMEOUT

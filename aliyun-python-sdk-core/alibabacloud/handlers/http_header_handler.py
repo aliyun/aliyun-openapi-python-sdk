@@ -15,8 +15,8 @@ import platform
 
 from alibabacloud.handlers import RequestHandler
 from alibabacloud.utils import format_type
-from aliyunsdkcore.vendored.http_requests.structures import CaseInsensitiveDict
-from aliyunsdkcore.vendored.http_requests.structures import OrderedDict
+from aliyunsdkcore.vendored.requests.structures import CaseInsensitiveDict
+from aliyunsdkcore.vendored.requests.structures import OrderedDict
 from aliyunsdkcore.vendored.six.moves.urllib.parse import urlencode
 
 
@@ -46,7 +46,7 @@ class HttpHeaderHandler(RequestHandler):
         # context 实际是http_request
         pass
 
-    def modify_http_body(self, headers, body, encoding, format=RAW):
+    def modify_http_body(self, headers, body, encoding, format='RAW'):
         # 有body_params ，就是 urlencode 结果的值
         # 没有，就是request的
         if body is None:

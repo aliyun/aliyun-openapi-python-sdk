@@ -14,8 +14,8 @@
 import json
 
 from alibabacloud.handlers import RequestHandler
-from alibabacloud.http.http_response import HttpResponse
 from aliyunsdkcore.vendored.six.moves.urllib.parse import urlencode
+from aliyunsdkcore.vendored.requests import codes
 
 
 class ServerErrorHandler(RequestHandler):
@@ -32,13 +32,14 @@ class ServerErrorHandler(RequestHandler):
         except (ValueError, TypeError, AttributeError):
             # in case the response body is not a json string, return the raw
             # data instead
-            logger.warning('Failed to parse response as json format. Response:%s', response.text)
+            # logger.warning('Failed to parse response as json format. Response:%s', response.text)
+            pass
 
-        if response.codes < codes.OK or response.codes >= codes.MULTIPLE_CHOICES:
+        if response.status_code < codes.OK or response.status_code >= codes.MULTIPLE_CHOICES:
 
             server_error_code, server_error_message = self._parse_error_info_from_response_body(
                 response.text.decode('utf-8'))
-            if response.codes == codes.BAD_REQUEST and server_error_code == 'SignatureDoesNotMatch':
+            if response.status_code == codes.BAD_REQUEST and server_error_code == 'SignatureDoesNotMatch':
                 if http_request.signature == server_error_message.split(':')[1]:
                     server_error_code = 'InvalidAccessKeySecret'
                     server_error_message = 'The AccessKeySecret is incorrect. ' \
@@ -49,7 +50,7 @@ class ServerErrorHandler(RequestHandler):
                 http_status=response.codes,
                 request_id=request_id)
 
-            logger.error("ServerException occurred. Host:%s SDK-Version:%s ServerException:%s",
-                         http_request.endpoint, aliyunsdkcore.__version__, str(exception))
+            # logger.error("ServerException occurred. Host:%s SDK-Version:%s ServerException:%s",
+            #              http_request.endpoint, aliyunsdkcore.__version__, str(exception))
 
             context.exception = exception

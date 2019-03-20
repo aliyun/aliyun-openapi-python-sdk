@@ -429,7 +429,8 @@ class AcsClient:
 
             server_error_code, server_error_message = self._parse_error_info_from_response_body(
                 response_body.decode('utf-8'))
-            if http_status == codes.BAD_REQUEST and server_error_code == 'SignatureDoesNotMatch':
+            if http_status == codes.BAD_REQUEST and (server_error_code == 'SignatureDoesNotMatch'
+                                                     or server_error_code == 'IncompleteSignature'):
                 if string_to_sign == server_error_message.split(':')[1]:
                     server_error_code = 'InvalidAccessKeySecret'
                     server_error_message = 'The AccessKeySecret is incorrect. ' \
