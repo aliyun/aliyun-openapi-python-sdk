@@ -18,31 +18,25 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class DeleteMyGroupInstancesRequest(RpcRequest):
+class QueryProjectMetaRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cms', '2018-03-08', 'DeleteMyGroupInstances','cms')
+		RpcRequest.__init__(self, 'Cms', '2018-03-08', 'QueryProjectMeta','cms')
 
-	def get_InstanceIds(self):
-		return self.get_query_params().get('InstanceIds')
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
 
-	def set_InstanceIds(self,InstanceIds):
-		self.add_query_param('InstanceIds',InstanceIds)
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
 
-	def get_InstanceIdList(self):
-		return self.get_query_params().get('InstanceIdList')
+	def get_PageNumber(self):
+		return self.get_query_params().get('PageNumber')
 
-	def set_InstanceIdList(self,InstanceIdList):
-		self.add_query_param('InstanceIdList',InstanceIdList)
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)
 
-	def get_GroupId(self):
-		return self.get_query_params().get('GroupId')
+	def get_Labels(self):
+		return self.get_query_params().get('Labels')
 
-	def set_GroupId(self,GroupId):
-		self.add_query_param('GroupId',GroupId)
-
-	def get_Category(self):
-		return self.get_query_params().get('Category')
-
-	def set_Category(self,Category):
-		self.add_query_param('Category',Category)
+	def set_Labels(self,Labels):
+		self.add_query_param('Labels',Labels)

@@ -23,6 +23,12 @@ class CreateTaskRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Cms', '2018-03-08', 'CreateTask','cms')
 
+	def get_caller(self):
+		return self.get_query_params().get('caller')
+
+	def set_caller(self,caller):
+		self.add_query_param('caller',caller)
+
 	def get_Address(self):
 		return self.get_query_params().get('Address')
 

@@ -18,22 +18,22 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class ListMyGroupsRequest(RpcRequest):
+class ListMonitoringTemplatesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cms', '2018-03-08', 'ListMyGroups','cms')
+		RpcRequest.__init__(self, 'Cms', '2018-03-08', 'ListMonitoringTemplates','cms')
 
-	def get_SelectContactGroups(self):
-		return self.get_query_params().get('SelectContactGroups')
+	def get_Total(self):
+		return self.get_query_params().get('Total')
 
-	def set_SelectContactGroups(self,SelectContactGroups):
-		self.add_query_param('SelectContactGroups',SelectContactGroups)
+	def set_Total(self,Total):
+		self.add_query_param('Total',Total)
 
-	def get_InstanceId(self):
-		return self.get_query_params().get('InstanceId')
+	def get_Name(self):
+		return self.get_query_params().get('Name')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
+	def set_Name(self,Name):
+		self.add_query_param('Name',Name)
 
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
@@ -41,11 +41,17 @@ class ListMyGroupsRequest(RpcRequest):
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
 
-	def get_Type(self):
-		return self.get_query_params().get('Type')
+	def get_Id(self):
+		return self.get_query_params().get('Id')
 
-	def set_Type(self,Type):
-		self.add_query_param('Type',Type)
+	def set_Id(self,Id):
+		self.add_query_param('Id',Id)
+
+	def get_History(self):
+		return self.get_query_params().get('History')
+
+	def set_History(self,History):
+		self.add_query_param('History',History)
 
 	def get_Keyword(self):
 		return self.get_query_params().get('Keyword')
@@ -53,20 +59,8 @@ class ListMyGroupsRequest(RpcRequest):
 	def set_Keyword(self,Keyword):
 		self.add_query_param('Keyword',Keyword)
 
-	def get_GroupName(self):
-		return self.get_query_params().get('GroupName')
-
-	def set_GroupName(self,GroupName):
-		self.add_query_param('GroupName',GroupName)
-
 	def get_PageNumber(self):
 		return self.get_query_params().get('PageNumber')
 
 	def set_PageNumber(self,PageNumber):
 		self.add_query_param('PageNumber',PageNumber)
-
-	def get_BindUrls(self):
-		return self.get_query_params().get('BindUrls')
-
-	def set_BindUrls(self,BindUrls):
-		self.add_query_param('BindUrls',BindUrls)

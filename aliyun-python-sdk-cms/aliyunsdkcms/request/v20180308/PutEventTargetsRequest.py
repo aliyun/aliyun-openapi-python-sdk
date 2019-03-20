@@ -28,14 +28,14 @@ class PutEventTargetsRequest(RpcRequest):
 
 	def set_WebhookParameterss(self,WebhookParameterss):
 		for i in range(len(WebhookParameterss)):	
-			if WebhookParameterss[i].get('Id') is not None:
-				self.add_query_param('WebhookParameters.' + str(i + 1) + '.Id' , WebhookParameterss[i].get('Id'))
 			if WebhookParameterss[i].get('Protocol') is not None:
 				self.add_query_param('WebhookParameters.' + str(i + 1) + '.Protocol' , WebhookParameterss[i].get('Protocol'))
-			if WebhookParameterss[i].get('Url') is not None:
-				self.add_query_param('WebhookParameters.' + str(i + 1) + '.Url' , WebhookParameterss[i].get('Url'))
 			if WebhookParameterss[i].get('Method') is not None:
 				self.add_query_param('WebhookParameters.' + str(i + 1) + '.Method' , WebhookParameterss[i].get('Method'))
+			if WebhookParameterss[i].get('Id') is not None:
+				self.add_query_param('WebhookParameters.' + str(i + 1) + '.Id' , WebhookParameterss[i].get('Id'))
+			if WebhookParameterss[i].get('Url') is not None:
+				self.add_query_param('WebhookParameters.' + str(i + 1) + '.Url' , WebhookParameterss[i].get('Url'))
 
 
 	def get_ContactParameterss(self):
@@ -43,12 +43,27 @@ class PutEventTargetsRequest(RpcRequest):
 
 	def set_ContactParameterss(self,ContactParameterss):
 		for i in range(len(ContactParameterss)):	
+			if ContactParameterss[i].get('Level') is not None:
+				self.add_query_param('ContactParameters.' + str(i + 1) + '.Level' , ContactParameterss[i].get('Level'))
 			if ContactParameterss[i].get('Id') is not None:
 				self.add_query_param('ContactParameters.' + str(i + 1) + '.Id' , ContactParameterss[i].get('Id'))
 			if ContactParameterss[i].get('ContactGroupName') is not None:
 				self.add_query_param('ContactParameters.' + str(i + 1) + '.ContactGroupName' , ContactParameterss[i].get('ContactGroupName'))
-			if ContactParameterss[i].get('Level') is not None:
-				self.add_query_param('ContactParameters.' + str(i + 1) + '.Level' , ContactParameterss[i].get('Level'))
+
+
+	def get_SlsParameterss(self):
+		return self.get_query_params().get('SlsParameterss')
+
+	def set_SlsParameterss(self,SlsParameterss):
+		for i in range(len(SlsParameterss)):	
+			if SlsParameterss[i].get('Project') is not None:
+				self.add_query_param('SlsParameters.' + str(i + 1) + '.Project' , SlsParameterss[i].get('Project'))
+			if SlsParameterss[i].get('Id') is not None:
+				self.add_query_param('SlsParameters.' + str(i + 1) + '.Id' , SlsParameterss[i].get('Id'))
+			if SlsParameterss[i].get('Region') is not None:
+				self.add_query_param('SlsParameters.' + str(i + 1) + '.Region' , SlsParameterss[i].get('Region'))
+			if SlsParameterss[i].get('LogStore') is not None:
+				self.add_query_param('SlsParameters.' + str(i + 1) + '.LogStore' , SlsParameterss[i].get('LogStore'))
 
 
 	def get_FcParameterss(self):
@@ -56,14 +71,14 @@ class PutEventTargetsRequest(RpcRequest):
 
 	def set_FcParameterss(self,FcParameterss):
 		for i in range(len(FcParameterss)):	
+			if FcParameterss[i].get('FunctionName') is not None:
+				self.add_query_param('FcParameters.' + str(i + 1) + '.FunctionName' , FcParameterss[i].get('FunctionName'))
+			if FcParameterss[i].get('ServiceName') is not None:
+				self.add_query_param('FcParameters.' + str(i + 1) + '.ServiceName' , FcParameterss[i].get('ServiceName'))
 			if FcParameterss[i].get('Id') is not None:
 				self.add_query_param('FcParameters.' + str(i + 1) + '.Id' , FcParameterss[i].get('Id'))
 			if FcParameterss[i].get('Region') is not None:
 				self.add_query_param('FcParameters.' + str(i + 1) + '.Region' , FcParameterss[i].get('Region'))
-			if FcParameterss[i].get('ServiceName') is not None:
-				self.add_query_param('FcParameters.' + str(i + 1) + '.ServiceName' , FcParameterss[i].get('ServiceName'))
-			if FcParameterss[i].get('FunctionName') is not None:
-				self.add_query_param('FcParameters.' + str(i + 1) + '.FunctionName' , FcParameterss[i].get('FunctionName'))
 
 
 	def get_RuleName(self):
