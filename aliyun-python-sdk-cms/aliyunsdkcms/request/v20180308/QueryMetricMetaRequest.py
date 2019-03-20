@@ -18,22 +18,16 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class ListMyGroupsRequest(RpcRequest):
+class QueryMetricMetaRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cms', '2018-03-08', 'ListMyGroups','cms')
+		RpcRequest.__init__(self, 'Cms', '2018-03-08', 'QueryMetricMeta','cms')
 
-	def get_SelectContactGroups(self):
-		return self.get_query_params().get('SelectContactGroups')
+	def get_Metric(self):
+		return self.get_query_params().get('Metric')
 
-	def set_SelectContactGroups(self,SelectContactGroups):
-		self.add_query_param('SelectContactGroups',SelectContactGroups)
-
-	def get_InstanceId(self):
-		return self.get_query_params().get('InstanceId')
-
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
+	def set_Metric(self,Metric):
+		self.add_query_param('Metric',Metric)
 
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
@@ -41,23 +35,11 @@ class ListMyGroupsRequest(RpcRequest):
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
 
-	def get_Type(self):
-		return self.get_query_params().get('Type')
+	def get_Project(self):
+		return self.get_query_params().get('Project')
 
-	def set_Type(self,Type):
-		self.add_query_param('Type',Type)
-
-	def get_Keyword(self):
-		return self.get_query_params().get('Keyword')
-
-	def set_Keyword(self,Keyword):
-		self.add_query_param('Keyword',Keyword)
-
-	def get_GroupName(self):
-		return self.get_query_params().get('GroupName')
-
-	def set_GroupName(self,GroupName):
-		self.add_query_param('GroupName',GroupName)
+	def set_Project(self,Project):
+		self.add_query_param('Project',Project)
 
 	def get_PageNumber(self):
 		return self.get_query_params().get('PageNumber')
@@ -65,8 +47,8 @@ class ListMyGroupsRequest(RpcRequest):
 	def set_PageNumber(self,PageNumber):
 		self.add_query_param('PageNumber',PageNumber)
 
-	def get_BindUrls(self):
-		return self.get_query_params().get('BindUrls')
+	def get_Labels(self):
+		return self.get_query_params().get('Labels')
 
-	def set_BindUrls(self,BindUrls):
-		self.add_query_param('BindUrls',BindUrls)
+	def set_Labels(self,Labels):
+		self.add_query_param('Labels',Labels)

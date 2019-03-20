@@ -18,22 +18,16 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class QueryMetricLastRequest(RpcRequest):
+class QueryMonitorDataRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cms', '2018-03-08', 'QueryMetricLast','cms')
+		RpcRequest.__init__(self, 'Cms', '2018-03-08', 'QueryMonitorData','cms')
 
 	def get_Cursor(self):
 		return self.get_query_params().get('Cursor')
 
 	def set_Cursor(self,Cursor):
 		self.add_query_param('Cursor',Cursor)
-
-	def get_ResourceOwnerId(self):
-		return self.get_query_params().get('ResourceOwnerId')
-
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
 	def get_Period(self):
 		return self.get_query_params().get('Period')
@@ -47,23 +41,11 @@ class QueryMetricLastRequest(RpcRequest):
 	def set_Length(self,Length):
 		self.add_query_param('Length',Length)
 
-	def get_Project(self):
-		return self.get_query_params().get('Project')
-
-	def set_Project(self,Project):
-		self.add_query_param('Project',Project)
-
 	def get_EndTime(self):
 		return self.get_query_params().get('EndTime')
 
 	def set_EndTime(self,EndTime):
 		self.add_query_param('EndTime',EndTime)
-
-	def get_Express(self):
-		return self.get_query_params().get('Express')
-
-	def set_Express(self,Express):
-		self.add_query_param('Express',Express)
 
 	def get_StartTime(self):
 		return self.get_query_params().get('StartTime')
@@ -71,20 +53,20 @@ class QueryMetricLastRequest(RpcRequest):
 	def set_StartTime(self,StartTime):
 		self.add_query_param('StartTime',StartTime)
 
-	def get_Metric(self):
-		return self.get_query_params().get('Metric')
+	def get_Type(self):
+		return self.get_query_params().get('Type')
 
-	def set_Metric(self,Metric):
-		self.add_query_param('Metric',Metric)
+	def set_Type(self,Type):
+		self.add_query_param('Type',Type)
 
-	def get_Page(self):
-		return self.get_query_params().get('Page')
+	def get_metricName(self):
+		return self.get_query_params().get('metricName')
 
-	def set_Page(self,Page):
-		self.add_query_param('Page',Page)
+	def set_metricName(self,metricName):
+		self.add_query_param('metricName',metricName)
 
-	def get_Dimensions(self):
-		return self.get_query_params().get('Dimensions')
+	def get_TaskId(self):
+		return self.get_query_params().get('TaskId')
 
-	def set_Dimensions(self,Dimensions):
-		self.add_query_param('Dimensions',Dimensions)
+	def set_TaskId(self,TaskId):
+		self.add_query_param('TaskId',TaskId)

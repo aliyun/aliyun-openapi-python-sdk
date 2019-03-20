@@ -18,31 +18,13 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class DeleteMyGroupInstancesRequest(RpcRequest):
+class UpdateMyGroupAlertRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cms', '2018-03-08', 'DeleteMyGroupInstances','cms')
+		RpcRequest.__init__(self, 'Cms', '2018-03-08', 'UpdateMyGroupAlert','cms')
 
-	def get_InstanceIds(self):
-		return self.get_query_params().get('InstanceIds')
+	def get_GroupAlertJson(self):
+		return self.get_query_params().get('GroupAlertJson')
 
-	def set_InstanceIds(self,InstanceIds):
-		self.add_query_param('InstanceIds',InstanceIds)
-
-	def get_InstanceIdList(self):
-		return self.get_query_params().get('InstanceIdList')
-
-	def set_InstanceIdList(self,InstanceIdList):
-		self.add_query_param('InstanceIdList',InstanceIdList)
-
-	def get_GroupId(self):
-		return self.get_query_params().get('GroupId')
-
-	def set_GroupId(self,GroupId):
-		self.add_query_param('GroupId',GroupId)
-
-	def get_Category(self):
-		return self.get_query_params().get('Category')
-
-	def set_Category(self,Category):
-		self.add_query_param('Category',Category)
+	def set_GroupAlertJson(self,GroupAlertJson):
+		self.add_query_param('GroupAlertJson',GroupAlertJson)

@@ -18,31 +18,19 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class DeleteMyGroupInstancesRequest(RpcRequest):
+class GetMonitoringTemplateRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cms', '2018-03-08', 'DeleteMyGroupInstances','cms')
+		RpcRequest.__init__(self, 'Cms', '2018-03-08', 'GetMonitoringTemplate','cms')
 
-	def get_InstanceIds(self):
-		return self.get_query_params().get('InstanceIds')
+	def get_Name(self):
+		return self.get_query_params().get('Name')
 
-	def set_InstanceIds(self,InstanceIds):
-		self.add_query_param('InstanceIds',InstanceIds)
+	def set_Name(self,Name):
+		self.add_query_param('Name',Name)
 
-	def get_InstanceIdList(self):
-		return self.get_query_params().get('InstanceIdList')
+	def get_Id(self):
+		return self.get_query_params().get('Id')
 
-	def set_InstanceIdList(self,InstanceIdList):
-		self.add_query_param('InstanceIdList',InstanceIdList)
-
-	def get_GroupId(self):
-		return self.get_query_params().get('GroupId')
-
-	def set_GroupId(self,GroupId):
-		self.add_query_param('GroupId',GroupId)
-
-	def get_Category(self):
-		return self.get_query_params().get('Category')
-
-	def set_Category(self,Category):
-		self.add_query_param('Category',Category)
+	def set_Id(self,Id):
+		self.add_query_param('Id',Id)

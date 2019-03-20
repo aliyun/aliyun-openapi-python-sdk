@@ -28,17 +28,20 @@ class PutEventRuleRequest(RpcRequest):
 
 	def set_EventPatterns(self,EventPatterns):
 		for i in range(len(EventPatterns)):	
-			if EventPatterns[i].get('Product') is not None:
-				self.add_query_param('EventPattern.' + str(i + 1) + '.Product' , EventPatterns[i].get('Product'))
-			for j in range(len(EventPatterns[i].get('NameLists'))):
-				if EventPatterns[i].get('NameLists')[j] is not None:
-					self.add_query_param('EventPattern.' + str(i + 1) + '.NameList.'+str(j + 1), EventPatterns[i].get('NameLists')[j])
-			for j in range(len(EventPatterns[i].get('StatusLists'))):
-				if EventPatterns[i].get('StatusLists')[j] is not None:
-					self.add_query_param('EventPattern.' + str(i + 1) + '.StatusList.'+str(j + 1), EventPatterns[i].get('StatusLists')[j])
 			for j in range(len(EventPatterns[i].get('LevelLists'))):
 				if EventPatterns[i].get('LevelLists')[j] is not None:
 					self.add_query_param('EventPattern.' + str(i + 1) + '.LevelList.'+str(j + 1), EventPatterns[i].get('LevelLists')[j])
+			if EventPatterns[i].get('Product') is not None:
+				self.add_query_param('EventPattern.' + str(i + 1) + '.Product' , EventPatterns[i].get('Product'))
+			for j in range(len(EventPatterns[i].get('StatusLists'))):
+				if EventPatterns[i].get('StatusLists')[j] is not None:
+					self.add_query_param('EventPattern.' + str(i + 1) + '.StatusList.'+str(j + 1), EventPatterns[i].get('StatusLists')[j])
+			for j in range(len(EventPatterns[i].get('NameLists'))):
+				if EventPatterns[i].get('NameLists')[j] is not None:
+					self.add_query_param('EventPattern.' + str(i + 1) + '.NameList.'+str(j + 1), EventPatterns[i].get('NameLists')[j])
+			for j in range(len(EventPatterns[i].get('EventTypeLists'))):
+				if EventPatterns[i].get('EventTypeLists')[j] is not None:
+					self.add_query_param('EventPattern.' + str(i + 1) + '.EventTypeList.'+str(j + 1), EventPatterns[i].get('EventTypeLists')[j])
 
 
 	def get_GroupId(self):
