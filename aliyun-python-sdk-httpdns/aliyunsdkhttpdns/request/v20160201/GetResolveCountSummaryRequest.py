@@ -18,19 +18,19 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class AddDomainRequest(RpcRequest):
+class GetResolveCountSummaryRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Httpdns', '2016-02-01', 'AddDomain','httpdns')
+		RpcRequest.__init__(self, 'Httpdns', '2016-02-01', 'GetResolveCountSummary','httpdns')
 
-	def get_AccountId(self):
-		return self.get_query_params().get('AccountId')
+	def get_Granularity(self):
+		return self.get_query_params().get('Granularity')
 
-	def set_AccountId(self,AccountId):
-		self.add_query_param('AccountId',AccountId)
+	def set_Granularity(self,Granularity):
+		self.add_query_param('Granularity',Granularity)
 
-	def get_DomainName(self):
-		return self.get_query_params().get('DomainName')
+	def get_TimeSpan(self):
+		return self.get_query_params().get('TimeSpan')
 
-	def set_DomainName(self,DomainName):
-		self.add_query_param('DomainName',DomainName)
+	def set_TimeSpan(self,TimeSpan):
+		self.add_query_param('TimeSpan',TimeSpan)
