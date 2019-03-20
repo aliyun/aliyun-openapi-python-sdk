@@ -13,36 +13,24 @@
 # limitations under the License.
 
 from alibabacloud.handlers import RequestHandler
-from alibabacloud.credentials.credentials import AccessKeyCredentials
-from alibabacloud.credentials.credentials import SecurityCredentials
-from alibabacloud.credentials.credentials import BearTokenCredentials
-from alibabacloud.signer.access_key_signer import AccessKeySigner
-from alibabacloud.signer.security_signer import SecuritySigner
-from alibabacloud.signer.bearer_token_signer import BearerTokenSigner  # FIXME: bear -> bearer
+from alibabacloud.endpoint.resolver_endpoint_request import ResolveEndpointRequest
 
 
-class SignerHandler(RequestHandler):
+class CredentialsHandler(RequestHandler):
 
-    _signer_map = {
-        "AccessKeyCredentials": AccessKeySigner(),
-        "SecurityCredentials": SecuritySigner(),
-        "BearTokenCredentials": BearerTokenSigner()
-    }
-
-    # 只实现了signature
     def handle_request(self, context):
         http_request = context.http_request
         api_request = context.api_request
 
-        credentials = self.get_credentials(context)
-        signer = self._signer_map[credentials.__class__.__name__]
-        signature = signer.sign(credentials, context)
-        # TODO fix other headers
-        http_request.signature = signature
+        credentials = context.client.credentials_provider(context)
+        context.http_request.credentials = credentials
+
+    def handle_response(self, response):
+        pass
 
     @staticmethod
     def get_credentials(context):
-        credentials_provider = context.credentials_provider({
+        credentials_provider = context.client.credentials_provider({
             'access_key_id': context.config.access_key_id,
             'access_key_secret': context.config.access_key_secret,
         })

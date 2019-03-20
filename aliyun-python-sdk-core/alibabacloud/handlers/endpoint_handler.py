@@ -13,7 +13,7 @@
 # limitations under the License.
 
 from alibabacloud.handlers import RequestHandler
-from alibabacloud.endpoint.resolver_endpoint_request import ResolveEndpointRequest
+from aliyunsdkcore.endpoint.resolver_endpoint_request import ResolveEndpointRequest
 
 
 class EndpointHandler(RequestHandler):
@@ -21,11 +21,11 @@ class EndpointHandler(RequestHandler):
     def handle_request(self, context):
         resolve_request = ResolveEndpointRequest(
             context.config.region_id,
-            context.client.product_code,
-            context.client.location_service_code,
-            context.client.location_service_type,
+            context.product_code,
+            context.location_service_code,
+            context.location_endpoint_type,
         )
-        context.endpoint = context.client.endpoint_resolver.resolve(resolve_request)
+        context.endpoint = context.endpoint_resolver.resolve(resolve_request)
 
     def handle_response(self, response):
         pass

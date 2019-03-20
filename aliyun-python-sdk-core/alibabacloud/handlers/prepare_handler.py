@@ -15,10 +15,10 @@ import platform
 
 from alibabacloud.handlers import RequestHandler
 from alibabacloud.utils import format_type
-from aliyunsdkcore.vendored.http_requests.structures import CaseInsensitiveDict
-from aliyunsdkcore.vendored.http_requests.structures import OrderedDict
+from aliyunsdkcore.vendored.requests.structures import CaseInsensitiveDict
+from aliyunsdkcore.vendored.requests.structures import OrderedDict
 from aliyunsdkcore.vendored.six.moves.urllib.parse import urlencode
-
+import aliyunsdkcore
 
 # prepare header
 def user_agent_header():
@@ -34,27 +34,27 @@ def user_agent_header():
 def default_user_agent():
     default_agent = OrderedDict()
     default_agent['Python'] = platform.python_version()
-    default_agent['Core'] = __import__('aliyunsdkcore').__version__
-    default_agent['python-http_requests'] = __import__(
-        'aliyunsdkcore.vendored.http_requests.__version__', globals(), locals(),
-        ['vendored', 'http_requests', '__version__'], 0).__version__
+    # default_agent['Core'] = __import__('aliyunsdkcore').__version__
+    # default_agent['python-http_requests'] = __import__(
+    #     'aliyunsdkcore.vendored.requests.__version__', globals(), locals(),
+    #     ['vendored', 'requests', '__version__'], 0).__version__
 
     return CaseInsensitiveDict(default_agent)
 
 
-def handle_extra_agent(client_user_agent, http_request):
-    http_request_agent = http_request.http_request_user_agent()
-
-    if client_user_agent is None:
-        return http_request_agent
-
-    if http_request_agent is None:
-        return client_user_agent
-    # http_request 覆盖client的设置
-    for key in http_request_agent:
-        if key in client_user_agent:
-            client_user_agent.pop(key)
-    client_user_agent.update(http_request_agent)
+def handle_extra_agent(client_user_agent, api_request):
+    # http_request_agent = http_request.http_request_user_agent()
+    #
+    # if client_user_agent is None:
+    #     return http_request_agent
+    #
+    # if http_request_agent is None:
+    #     return client_user_agent
+    # # http_request 覆盖client的设置
+    # for key in http_request_agent:
+    #     if key in client_user_agent:
+    #         client_user_agent.pop(key)
+    # client_user_agent.update(http_request_agent)
     return client_user_agent
 
 
@@ -86,11 +86,11 @@ class PrepareHandler(RequestHandler):
     """
     准备阶段，accept_format 以及api request的头部
     """
-    def handle_http_request(self, context):
+    def handle_request(self, context):
         http_request = context.http_request
         api_request = context.api_request
 
-        http_request.accept_format = 'JSON'
+        context.http_request.accept_format = 'JSON'
         # http_request的body| api_request的content
         body_params = api_request.get_body_params()
         if body_params is not None:
@@ -100,24 +100,28 @@ class PrepareHandler(RequestHandler):
             # 把这个URL编码的值赋给content，设置content-type
             # FIXME body is the final bytes to be sent to the server via HTTP
             # content is an application level concept
-            http_request.body = body
+            context.http_request.body = body
         elif api_request.get_content() and "Content-Type" not in api_request.get_headers():
             api_request.set_content_type(format_type.APPLICATION_OCTET_STREAM)
-            http_request.body = api_request.get_content()
+            context.http_request.body = api_request.get_content()
         # api_request的ua
         user_agent = modify_user_agent(context.config.user_agent, api_request)
-        api_request.headers['User-Agent'] = user_agent
-        # api_request的extra header
-        api_request.headers['x-sdk-client'] = 'python/2.0.0'
-        api_request.headers['Accept-Encoding'] = 'identity'
+        # api_request.headers['User-Agent'] = user_agent
+        # # api_request的extra header
+        # api_request.headers['x-sdk-client'] = 'python/2.0.0'
+        # api_request.headers['Accept-Encoding'] = 'identity'
+
+        api_request.add_header('Accept-Encoding', 'identity')
+        api_request.add_header('x-sdk-client', 'python/2.0.0')
+        api_request.add_header('User-Agent', user_agent)
+
 
         # http_request的method and protocol/proxy
-        http_request.method = api_request.get_method()
-        http_request.protocol = api_request.get_protocol_type()  # http|https
-        http_request.proxy = context.config.proxy  # http|https
+        context.http_request.method = api_request.get_method()
+        context.http_request.protocol = api_request.get_protocol_type()  # http|https
+        context.http_request.proxy = context.config.proxy  # http|https
 
         context.api_request = api_request
-        context.http_request = http_request
 
     def handle_response(self, context):
         pass

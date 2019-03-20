@@ -12,23 +12,13 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from alibabacloud.handlers import RequestHandler
+import json
+import os.path
+import aliyunsdkcore
 
 
-class LogHandler(RequestHandler):
-
-    def handle_request(self, context):
-        # log_string = self._get_request_log_string(context.request)
-        # context.client.logger.debug(log_string)
-        pass
-
-    def handle_response(self, context):
-        # log_string = self._get_response_log_string(context.response)
-        # context.client.logger.debug(log_string)
-        pass
-
-    def _get_request_log_string(self, request):
-        pass
-
-    def _get_response_log_string(self, response):
-        pass
+def _load_json_from_data_dir(basename):
+    base_dir = os.path.dirname(os.path.abspath(aliyunsdkcore.__file__))
+    json_file = os.path.join(base_dir, "data", basename)
+    with open(json_file) as fp:
+        return json.loads(fp.read())

@@ -32,7 +32,7 @@ class HTTPRequest:
         self.method = method
         self.protocol = protocol
         self.proxy = proxy
-        self.port = port
+        self.port = 80
         self.signature = signature
         self.headers = headers
         self.url = url

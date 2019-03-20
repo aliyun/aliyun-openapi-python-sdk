@@ -14,16 +14,27 @@
 import os
 import time
 from alibabacloud.handlers import RequestContext
-
+from alibabacloud.handlers.prepare_handler import PrepareHandler
+from alibabacloud.handlers.signer_handler import SignerHandler
+from alibabacloud.handlers.url_handler import URLHandler
+from alibabacloud.handlers.http_header_handler import HttpHeaderHandler
+from alibabacloud.handlers.timeout_config_reader import TimeoutConfigReader
+from alibabacloud.handlers.endpoint_handler import EndpointHandler
+from alibabacloud.handlers.log_handler import LogHandler
+from alibabacloud.handlers.retry_handler import RetryHandler
+from alibabacloud.handlers.server_error_handler import ServerErrorHandler
+from alibabacloud.handlers.http_handler import HttpHandler
+from alibabacloud.credentials.credentials_provider import DefaultCredentialsProvider
+from alibabacloud.endpoint.default_endpoint_resolver import DefaultEndpointResolver
 DEFAULT_HANDLERS = [
     PrepareHandler,
     SignerHandler,  # 获取Signature
     URLHandler,  # 获取url
     HttpHeaderHandler,  # 获取签名的header
-    TimeoutHandler,  # 获取timeout
+    TimeoutConfigReader,  # 获取timeout
     EndpointHandler,  # 获取endpoint
     LogHandler,
-    RetryHandler,
+    # RetryHandler,
     ServerErrorHandler,
     HttpHandler
 ]
@@ -66,11 +77,11 @@ class ClientConfig:
         self.read_timeout = read_timeout
         self.enable_http_debug = enable_http_debug
         # proxy provider两个： client  env
-        self.http_proxy = http_proxy
-        self.https_proxy = https_proxy
-        self._proxy = {
-            'http': self.http_proxy,
-            'https': self.https_proxy,
+        # self.http_proxy = http_proxy
+        # self.https_proxy = https_proxy
+        self.proxy = {
+            'http': http_proxy,
+            'https': https_proxy,
         }
         self.enable_stream_logger = enable_stream_logger
         self.profile_name = profile_name
@@ -78,39 +89,17 @@ class ClientConfig:
 
     def read_from_env(self):
         # 从环境变量读取一定量的数据
-        env_vars = ['HTTP_DEBUG', 'HTTPS_PROXY', 'HTTP_PROXY']
-        for item in env_vars:
-            if getattr(self, item.lower()) is None:
-                setattr(self, item.lower(), os.environ.get(item) or os.environ.get(item.lower()))
-
-        def _set_env_to_config(config_name, env_name):
-
-            env_value = os.environ.get(env_name)
-            if env_value is not None:
-                setattr(self, key, os.environ.get(env_value))
-
-            if config_name == 'enable_http_debug':
-                # FIXME recursive calls will be indefinite
-                _set_env_to_config(config_name, 'HTTP_DEBUG')
-                _set_env_to_config(config_name, 'http_debug')
-            elif config_name == 'https_proxy':
-                _set_env_to_config(config_name, 'HTTPS_PROXY')
-                _set_env_to_config(config_name, 'https_proxy')
-            elif config_name == 'http_proxy':
-                _set_env_to_config(config_name, 'HTTP_PROXY')
-                _set_env_to_config(config_name, 'http_proxy')
-
-        for key in dir(self):
-            # FIXME make sure we get only configuration members here, not functions & internal
-            # variables
-            if getattr(self, key) is None:
-                env_name = 'ALIBABA_CLOUD_' + key.upper()
-                _set_env_to_config(key, env_name)
+        pass
+        # env_vars = ['HTTP_DEBUG', 'HTTPS_PROXY', 'HTTP_PROXY']
+        # for item in env_vars:
+        #     if getattr(self, item.lower()) is None:
+        #         setattr(self, item.lower(), os.environ.get(item) or os.environ.get(item.lower()))
 
     def read_from_profile(self):
         # TODO read from profile
         from alibabacloud.utils.ini_helper import load_config
         profile = {}
+        loaded_config = {}
         if self.config_file is None:
             if self.ENV_NAME_FOR_CONFIG_FILE in os.environ:
 
@@ -119,17 +108,17 @@ class ClientConfig:
                     # 默认配置不存在
                     return None
                 full_path = os.path.expanduser(env_config_file_path)
-                self._loaded_config = load_config(full_path)
-                profile = self._loaded_config.get(self.profile_name, {})
+                loaded_config = load_config(full_path)
+                profile = loaded_config.get(self.profile_name, {})
             else:
                 potential_locations = self.DEFAULT_NAME_FOR_CONFIG_FILE
                 for filename in potential_locations:
                     try:
-                        self._loaded_config = load_config(filename)
+                        loaded_config = load_config(filename)
                         break
                     except Exception:
                         continue
-                profile = self._loaded_config.get(self.profile_name, {})
+                profile = loaded_config.get(self.profile_name, {})
         else:
             profile = load_config(self.config_file)
         
@@ -137,7 +126,7 @@ class ClientConfig:
             if profile.get(key)is not None and getattr(self, key) is None:
                 # 不存在config当中的值 pass
                 setattr(self, key, profile.get(key))
-            print('不存在config当中的值', key)
+            # print('不存在config当中的值', key)
 
     def read_from_default(self):
         # some config DEFAULT
@@ -156,36 +145,45 @@ class AlibabaCloudClient:
 
     def __init__(self, client_config, credentials_provider=DefaultCredentialsProvider):
         self.config = get_merged_client_config(client_config)
-        self.credentials_provider = credentials_provider
+        self.credentials_provider = DefaultCredentialsProvider
         self.handlers = DEFAULT_HANDLERS
         self.logger = None  # TODO initialize
         # endpoint_resolver阶段需要
         self.endpoint_resolver = DefaultEndpointResolver(self)  # TODO initialize
-        self.product_code = product_code
-        self.location_service_code = location_service_code
-        self.location_service_type = location_service_type
+        self.product_code = None
+        self.location_service_code = None
+        self.location_service_type = None
+        self.location_endpoint_type = None
 
     def handle_request(self, api_request, request_handlers=None, context=None):
         # TODO handle different types of request
+        self.product_code = api_request.get_product()
+        self.location_service_code = api_request.get_location_service_code()
+        self.location_endpoint_type = api_request.get_location_endpoint_type()
         if not context:
             context = RequestContext()
             context.api_request = api_request
             from .request import HTTPRequest
             context.http_request = HTTPRequest()
             context.config = self.config
+            context.credentials_provider = self.credentials_provider
+            context.product_code = self.product_code
+            context.location_service_code = self.location_service_code
+            context.location_endpoint_type = self.location_endpoint_type
+            context.endpoint_resolver = self.endpoint_resolver
 
         if not request_handlers:
             request_handlers = self.handlers
 
         for i in range(len(request_handlers)):
-            request_handlers[i].handle_request(context)
+            request_handlers[i]().handle_request(context)
 
         for i in reversed(range(len(request_handlers))):
-            request_handlers[i].handle_response(context)
-            if context.retry_flag:
-                time.sleep(context.retry_backoff)
-                self.handle_request(api_request,
-                                    request_handlers=request_handlers[i:],
-                                    context=context)
+            request_handlers[i]().handle_response(context)
+            # if context.retry_flag:
+            #     time.sleep(context.retry_backoff)
+            #     self.handle_request(api_request,
+            #                         request_handlers=request_handlers[i:],
+            #                         context=context)
 
-        return context.result
+        return context.response.text
