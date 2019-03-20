@@ -21,13 +21,13 @@ from aliyunsdkcore.request import RpcRequest
 class DescribeRecordLogsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'DescribeRecordLogs')
+		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'DescribeRecordLogs','alidns')
 
-	def get_Lang(self):
-		return self.get_query_params().get('Lang')
+	def get_endDate(self):
+		return self.get_query_params().get('endDate')
 
-	def set_Lang(self,Lang):
-		self.add_query_param('Lang',Lang)
+	def set_endDate(self,endDate):
+		self.add_query_param('endDate',endDate)
 
 	def get_UserClientIp(self):
 		return self.get_query_params().get('UserClientIp')
@@ -41,20 +41,32 @@ class DescribeRecordLogsRequest(RpcRequest):
 	def set_DomainName(self,DomainName):
 		self.add_query_param('DomainName',DomainName)
 
-	def get_PageNumber(self):
-		return self.get_query_params().get('PageNumber')
-
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
-
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
 
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
 
+	def get_Lang(self):
+		return self.get_query_params().get('Lang')
+
+	def set_Lang(self,Lang):
+		self.add_query_param('Lang',Lang)
+
 	def get_KeyWord(self):
 		return self.get_query_params().get('KeyWord')
 
 	def set_KeyWord(self,KeyWord):
 		self.add_query_param('KeyWord',KeyWord)
+
+	def get_StartDate(self):
+		return self.get_query_params().get('StartDate')
+
+	def set_StartDate(self,StartDate):
+		self.add_query_param('StartDate',StartDate)
+
+	def get_PageNumber(self):
+		return self.get_query_params().get('PageNumber')
+
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)

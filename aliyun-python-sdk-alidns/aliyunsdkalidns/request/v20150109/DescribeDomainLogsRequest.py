@@ -21,25 +21,13 @@ from aliyunsdkcore.request import RpcRequest
 class DescribeDomainLogsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'DescribeDomainLogs')
+		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'DescribeDomainLogs','alidns')
 
-	def get_Lang(self):
-		return self.get_query_params().get('Lang')
+	def get_endDate(self):
+		return self.get_query_params().get('endDate')
 
-	def set_Lang(self,Lang):
-		self.add_query_param('Lang',Lang)
-
-	def get_UserClientIp(self):
-		return self.get_query_params().get('UserClientIp')
-
-	def set_UserClientIp(self,UserClientIp):
-		self.add_query_param('UserClientIp',UserClientIp)
-
-	def get_KeyWord(self):
-		return self.get_query_params().get('KeyWord')
-
-	def set_KeyWord(self,KeyWord):
-		self.add_query_param('KeyWord',KeyWord)
+	def set_endDate(self,endDate):
+		self.add_query_param('endDate',endDate)
 
 	def get_GroupId(self):
 		return self.get_query_params().get('GroupId')
@@ -47,14 +35,44 @@ class DescribeDomainLogsRequest(RpcRequest):
 	def set_GroupId(self,GroupId):
 		self.add_query_param('GroupId',GroupId)
 
-	def get_PageNumber(self):
-		return self.get_query_params().get('PageNumber')
+	def get_UserClientIp(self):
+		return self.get_query_params().get('UserClientIp')
 
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
+	def set_UserClientIp(self,UserClientIp):
+		self.add_query_param('UserClientIp',UserClientIp)
 
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
 
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
+
+	def get_Lang(self):
+		return self.get_query_params().get('Lang')
+
+	def set_Lang(self,Lang):
+		self.add_query_param('Lang',Lang)
+
+	def get_KeyWord(self):
+		return self.get_query_params().get('KeyWord')
+
+	def set_KeyWord(self,KeyWord):
+		self.add_query_param('KeyWord',KeyWord)
+
+	def get_StartDate(self):
+		return self.get_query_params().get('StartDate')
+
+	def set_StartDate(self,StartDate):
+		self.add_query_param('StartDate',StartDate)
+
+	def get_Type(self):
+		return self.get_query_params().get('Type')
+
+	def set_Type(self,Type):
+		self.add_query_param('Type',Type)
+
+	def get_PageNumber(self):
+		return self.get_query_params().get('PageNumber')
+
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)

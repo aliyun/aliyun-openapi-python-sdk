@@ -21,19 +21,19 @@ from aliyunsdkcore.request import RpcRequest
 class DescribeDomainRecordsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'DescribeDomainRecords')
+		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'DescribeDomainRecords','alidns')
 
-	def get_Lang(self):
-		return self.get_query_params().get('Lang')
+	def get_ValueKeyWord(self):
+		return self.get_query_params().get('ValueKeyWord')
 
-	def set_Lang(self,Lang):
-		self.add_query_param('Lang',Lang)
+	def set_ValueKeyWord(self,ValueKeyWord):
+		self.add_query_param('ValueKeyWord',ValueKeyWord)
 
-	def get_UserClientIp(self):
-		return self.get_query_params().get('UserClientIp')
+	def get_GroupId(self):
+		return self.get_query_params().get('GroupId')
 
-	def set_UserClientIp(self,UserClientIp):
-		self.add_query_param('UserClientIp',UserClientIp)
+	def set_GroupId(self,GroupId):
+		self.add_query_param('GroupId',GroupId)
 
 	def get_DomainName(self):
 		return self.get_query_params().get('DomainName')
@@ -41,11 +41,23 @@ class DescribeDomainRecordsRequest(RpcRequest):
 	def set_DomainName(self,DomainName):
 		self.add_query_param('DomainName',DomainName)
 
+	def get_OrderBy(self):
+		return self.get_query_params().get('OrderBy')
+
+	def set_OrderBy(self,OrderBy):
+		self.add_query_param('OrderBy',OrderBy)
+
 	def get_PageNumber(self):
 		return self.get_query_params().get('PageNumber')
 
 	def set_PageNumber(self,PageNumber):
 		self.add_query_param('PageNumber',PageNumber)
+
+	def get_UserClientIp(self):
+		return self.get_query_params().get('UserClientIp')
+
+	def set_UserClientIp(self,UserClientIp):
+		self.add_query_param('UserClientIp',UserClientIp)
 
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
@@ -53,11 +65,23 @@ class DescribeDomainRecordsRequest(RpcRequest):
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
 
-	def get_RRKeyWord(self):
-		return self.get_query_params().get('RRKeyWord')
+	def get_SearchMode(self):
+		return self.get_query_params().get('SearchMode')
 
-	def set_RRKeyWord(self,RRKeyWord):
-		self.add_query_param('RRKeyWord',RRKeyWord)
+	def set_SearchMode(self,SearchMode):
+		self.add_query_param('SearchMode',SearchMode)
+
+	def get_Lang(self):
+		return self.get_query_params().get('Lang')
+
+	def set_Lang(self,Lang):
+		self.add_query_param('Lang',Lang)
+
+	def get_KeyWord(self):
+		return self.get_query_params().get('KeyWord')
+
+	def set_KeyWord(self,KeyWord):
+		self.add_query_param('KeyWord',KeyWord)
 
 	def get_TypeKeyWord(self):
 		return self.get_query_params().get('TypeKeyWord')
@@ -65,8 +89,14 @@ class DescribeDomainRecordsRequest(RpcRequest):
 	def set_TypeKeyWord(self,TypeKeyWord):
 		self.add_query_param('TypeKeyWord',TypeKeyWord)
 
-	def get_ValueKeyWord(self):
-		return self.get_query_params().get('ValueKeyWord')
+	def get_RRKeyWord(self):
+		return self.get_query_params().get('RRKeyWord')
 
-	def set_ValueKeyWord(self,ValueKeyWord):
-		self.add_query_param('ValueKeyWord',ValueKeyWord)
+	def set_RRKeyWord(self,RRKeyWord):
+		self.add_query_param('RRKeyWord',RRKeyWord)
+
+	def get_Direction(self):
+		return self.get_query_params().get('Direction')
+
+	def set_Direction(self,Direction):
+		self.add_query_param('Direction',Direction)

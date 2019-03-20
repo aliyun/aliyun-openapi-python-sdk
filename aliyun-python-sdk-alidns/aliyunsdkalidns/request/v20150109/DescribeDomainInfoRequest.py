@@ -21,13 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class DescribeDomainInfoRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'DescribeDomainInfo')
-
-	def get_Lang(self):
-		return self.get_query_params().get('Lang')
-
-	def set_Lang(self,Lang):
-		self.add_query_param('Lang',Lang)
+		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'DescribeDomainInfo','alidns')
 
 	def get_UserClientIp(self):
 		return self.get_query_params().get('UserClientIp')
@@ -40,3 +34,15 @@ class DescribeDomainInfoRequest(RpcRequest):
 
 	def set_DomainName(self,DomainName):
 		self.add_query_param('DomainName',DomainName)
+
+	def get_Lang(self):
+		return self.get_query_params().get('Lang')
+
+	def set_Lang(self,Lang):
+		self.add_query_param('Lang',Lang)
+
+	def get_NeedDetailAttributes(self):
+		return self.get_query_params().get('NeedDetailAttributes')
+
+	def set_NeedDetailAttributes(self,NeedDetailAttributes):
+		self.add_query_param('NeedDetailAttributes',NeedDetailAttributes)

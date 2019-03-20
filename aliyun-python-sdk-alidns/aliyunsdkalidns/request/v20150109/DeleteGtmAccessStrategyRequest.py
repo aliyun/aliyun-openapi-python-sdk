@@ -18,16 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class DeleteBatchDomainRecordsRequest(RpcRequest):
+class DeleteGtmAccessStrategyRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'DeleteBatchDomainRecords')
-
-	def get_Lang(self):
-		return self.get_query_params().get('Lang')
-
-	def set_Lang(self,Lang):
-		self.add_query_param('Lang',Lang)
+		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'DeleteGtmAccessStrategy','alidns')
 
 	def get_UserClientIp(self):
 		return self.get_query_params().get('UserClientIp')
@@ -35,8 +29,14 @@ class DeleteBatchDomainRecordsRequest(RpcRequest):
 	def set_UserClientIp(self,UserClientIp):
 		self.add_query_param('UserClientIp',UserClientIp)
 
-	def get_Records(self):
-		return self.get_query_params().get('Records')
+	def get_StrategyId(self):
+		return self.get_query_params().get('StrategyId')
 
-	def set_Records(self,Records):
-		self.add_query_param('Records',Records)
+	def set_StrategyId(self,StrategyId):
+		self.add_query_param('StrategyId',StrategyId)
+
+	def get_Lang(self):
+		return self.get_query_params().get('Lang')
+
+	def set_Lang(self,Lang):
+		self.add_query_param('Lang',Lang)

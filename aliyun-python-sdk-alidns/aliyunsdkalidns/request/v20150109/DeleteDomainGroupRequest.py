@@ -21,13 +21,13 @@ from aliyunsdkcore.request import RpcRequest
 class DeleteDomainGroupRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'DeleteDomainGroup')
+		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'DeleteDomainGroup','alidns')
 
-	def get_Lang(self):
-		return self.get_query_params().get('Lang')
+	def get_GroupId(self):
+		return self.get_query_params().get('GroupId')
 
-	def set_Lang(self,Lang):
-		self.add_query_param('Lang',Lang)
+	def set_GroupId(self,GroupId):
+		self.add_query_param('GroupId',GroupId)
 
 	def get_UserClientIp(self):
 		return self.get_query_params().get('UserClientIp')
@@ -35,8 +35,8 @@ class DeleteDomainGroupRequest(RpcRequest):
 	def set_UserClientIp(self,UserClientIp):
 		self.add_query_param('UserClientIp',UserClientIp)
 
-	def get_GroupId(self):
-		return self.get_query_params().get('GroupId')
+	def get_Lang(self):
+		return self.get_query_params().get('Lang')
 
-	def set_GroupId(self,GroupId):
-		self.add_query_param('GroupId',GroupId)
+	def set_Lang(self,Lang):
+		self.add_query_param('Lang',Lang)

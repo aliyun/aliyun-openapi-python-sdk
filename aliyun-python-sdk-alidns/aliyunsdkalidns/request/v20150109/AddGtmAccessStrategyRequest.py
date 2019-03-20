@@ -18,10 +18,28 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class ChangeDomainOfDnsProductRequest(RpcRequest):
+class AddGtmAccessStrategyRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'ChangeDomainOfDnsProduct','alidns')
+		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'AddGtmAccessStrategy','alidns')
+
+	def get_StrategyName(self):
+		return self.get_query_params().get('StrategyName')
+
+	def set_StrategyName(self,StrategyName):
+		self.add_query_param('StrategyName',StrategyName)
+
+	def get_DefaultAddrPoolId(self):
+		return self.get_query_params().get('DefaultAddrPoolId')
+
+	def set_DefaultAddrPoolId(self,DefaultAddrPoolId):
+		self.add_query_param('DefaultAddrPoolId',DefaultAddrPoolId)
+
+	def get_AccessLines(self):
+		return self.get_query_params().get('AccessLines')
+
+	def set_AccessLines(self,AccessLines):
+		self.add_query_param('AccessLines',AccessLines)
 
 	def get_InstanceId(self):
 		return self.get_query_params().get('InstanceId')
@@ -29,23 +47,17 @@ class ChangeDomainOfDnsProductRequest(RpcRequest):
 	def set_InstanceId(self,InstanceId):
 		self.add_query_param('InstanceId',InstanceId)
 
-	def get_NewDomain(self):
-		return self.get_query_params().get('NewDomain')
+	def get_FailoverAddrPoolId(self):
+		return self.get_query_params().get('FailoverAddrPoolId')
 
-	def set_NewDomain(self,NewDomain):
-		self.add_query_param('NewDomain',NewDomain)
+	def set_FailoverAddrPoolId(self,FailoverAddrPoolId):
+		self.add_query_param('FailoverAddrPoolId',FailoverAddrPoolId)
 
 	def get_UserClientIp(self):
 		return self.get_query_params().get('UserClientIp')
 
 	def set_UserClientIp(self,UserClientIp):
 		self.add_query_param('UserClientIp',UserClientIp)
-
-	def get_Force(self):
-		return self.get_query_params().get('Force')
-
-	def set_Force(self,Force):
-		self.add_query_param('Force',Force)
 
 	def get_Lang(self):
 		return self.get_query_params().get('Lang')

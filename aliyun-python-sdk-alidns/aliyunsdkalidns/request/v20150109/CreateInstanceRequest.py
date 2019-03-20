@@ -18,16 +18,16 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class DescribeDomainWhoisInfoRequest(RpcRequest):
+class CreateInstanceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'DescribeDomainWhoisInfo')
+		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'CreateInstance','alidns')
 
-	def get_Lang(self):
-		return self.get_query_params().get('Lang')
+	def get_Month(self):
+		return self.get_query_params().get('Month')
 
-	def set_Lang(self,Lang):
-		self.add_query_param('Lang',Lang)
+	def set_Month(self,Month):
+		self.add_query_param('Month',Month)
 
 	def get_UserClientIp(self):
 		return self.get_query_params().get('UserClientIp')
@@ -41,8 +41,26 @@ class DescribeDomainWhoisInfoRequest(RpcRequest):
 	def set_DomainName(self,DomainName):
 		self.add_query_param('DomainName',DomainName)
 
-	def get_GroupId(self):
-		return self.get_query_params().get('GroupId')
+	def get_Lang(self):
+		return self.get_query_params().get('Lang')
 
-	def set_GroupId(self,GroupId):
-		self.add_query_param('GroupId',GroupId)
+	def set_Lang(self,Lang):
+		self.add_query_param('Lang',Lang)
+
+	def get_InstanceVersion(self):
+		return self.get_query_params().get('InstanceVersion')
+
+	def set_InstanceVersion(self,InstanceVersion):
+		self.add_query_param('InstanceVersion',InstanceVersion)
+
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
+
+	def get_Token(self):
+		return self.get_query_params().get('Token')
+
+	def set_Token(self,Token):
+		self.add_query_param('Token',Token)

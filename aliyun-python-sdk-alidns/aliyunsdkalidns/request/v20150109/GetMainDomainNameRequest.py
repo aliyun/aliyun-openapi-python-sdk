@@ -21,13 +21,13 @@ from aliyunsdkcore.request import RpcRequest
 class GetMainDomainNameRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'GetMainDomainName')
+		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'GetMainDomainName','alidns')
 
-	def get_Lang(self):
-		return self.get_query_params().get('Lang')
+	def get_InputString(self):
+		return self.get_query_params().get('InputString')
 
-	def set_Lang(self,Lang):
-		self.add_query_param('Lang',Lang)
+	def set_InputString(self,InputString):
+		self.add_query_param('InputString',InputString)
 
 	def get_UserClientIp(self):
 		return self.get_query_params().get('UserClientIp')
@@ -35,8 +35,8 @@ class GetMainDomainNameRequest(RpcRequest):
 	def set_UserClientIp(self,UserClientIp):
 		self.add_query_param('UserClientIp',UserClientIp)
 
-	def get_InputString(self):
-		return self.get_query_params().get('InputString')
+	def get_Lang(self):
+		return self.get_query_params().get('Lang')
 
-	def set_InputString(self,InputString):
-		self.add_query_param('InputString',InputString)
+	def set_Lang(self,Lang):
+		self.add_query_param('Lang',Lang)

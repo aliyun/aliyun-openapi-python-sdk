@@ -21,13 +21,13 @@ from aliyunsdkcore.request import RpcRequest
 class DescribeSubDomainRecordsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'DescribeSubDomainRecords')
+		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'DescribeSubDomainRecords','alidns')
 
-	def get_Lang(self):
-		return self.get_query_params().get('Lang')
+	def get_Line(self):
+		return self.get_query_params().get('Line')
 
-	def set_Lang(self,Lang):
-		self.add_query_param('Lang',Lang)
+	def set_Line(self,Line):
+		self.add_query_param('Line',Line)
 
 	def get_UserClientIp(self):
 		return self.get_query_params().get('UserClientIp')
@@ -35,26 +35,32 @@ class DescribeSubDomainRecordsRequest(RpcRequest):
 	def set_UserClientIp(self,UserClientIp):
 		self.add_query_param('UserClientIp',UserClientIp)
 
-	def get_SubDomain(self):
-		return self.get_query_params().get('SubDomain')
-
-	def set_SubDomain(self,SubDomain):
-		self.add_query_param('SubDomain',SubDomain)
-
-	def get_PageNumber(self):
-		return self.get_query_params().get('PageNumber')
-
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
-
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
 
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
 
+	def get_SubDomain(self):
+		return self.get_query_params().get('SubDomain')
+
+	def set_SubDomain(self,SubDomain):
+		self.add_query_param('SubDomain',SubDomain)
+
+	def get_Lang(self):
+		return self.get_query_params().get('Lang')
+
+	def set_Lang(self,Lang):
+		self.add_query_param('Lang',Lang)
+
 	def get_Type(self):
 		return self.get_query_params().get('Type')
 
 	def set_Type(self,Type):
 		self.add_query_param('Type',Type)
+
+	def get_PageNumber(self):
+		return self.get_query_params().get('PageNumber')
+
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)

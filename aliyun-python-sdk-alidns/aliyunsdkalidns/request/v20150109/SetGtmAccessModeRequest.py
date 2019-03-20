@@ -18,16 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class DescribeDomainsRequest(RpcRequest):
+class SetGtmAccessModeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'DescribeDomains','alidns')
-
-	def get_GroupId(self):
-		return self.get_query_params().get('GroupId')
-
-	def set_GroupId(self,GroupId):
-		self.add_query_param('GroupId',GroupId)
+		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'SetGtmAccessMode','alidns')
 
 	def get_UserClientIp(self):
 		return self.get_query_params().get('UserClientIp')
@@ -35,17 +29,11 @@ class DescribeDomainsRequest(RpcRequest):
 	def set_UserClientIp(self,UserClientIp):
 		self.add_query_param('UserClientIp',UserClientIp)
 
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
+	def get_StrategyId(self):
+		return self.get_query_params().get('StrategyId')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_SearchMode(self):
-		return self.get_query_params().get('SearchMode')
-
-	def set_SearchMode(self,SearchMode):
-		self.add_query_param('SearchMode',SearchMode)
+	def set_StrategyId(self,StrategyId):
+		self.add_query_param('StrategyId',StrategyId)
 
 	def get_Lang(self):
 		return self.get_query_params().get('Lang')
@@ -53,14 +41,8 @@ class DescribeDomainsRequest(RpcRequest):
 	def set_Lang(self,Lang):
 		self.add_query_param('Lang',Lang)
 
-	def get_KeyWord(self):
-		return self.get_query_params().get('KeyWord')
+	def get_AccessMode(self):
+		return self.get_query_params().get('AccessMode')
 
-	def set_KeyWord(self,KeyWord):
-		self.add_query_param('KeyWord',KeyWord)
-
-	def get_PageNumber(self):
-		return self.get_query_params().get('PageNumber')
-
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
+	def set_AccessMode(self,AccessMode):
+		self.add_query_param('AccessMode',AccessMode)

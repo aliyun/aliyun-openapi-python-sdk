@@ -18,16 +18,16 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class CheckDomainRecordRequest(RpcRequest):
+class UpdateGtmAddressPoolRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'CheckDomainRecord','alidns')
+		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'UpdateGtmAddressPool','alidns')
 
-	def get_RR(self):
-		return self.get_query_params().get('RR')
+	def get_AddrPoolId(self):
+		return self.get_query_params().get('AddrPoolId')
 
-	def set_RR(self,RR):
-		self.add_query_param('RR',RR)
+	def set_AddrPoolId(self,AddrPoolId):
+		self.add_query_param('AddrPoolId',AddrPoolId)
 
 	def get_UserClientIp(self):
 		return self.get_query_params().get('UserClientIp')
@@ -35,11 +35,11 @@ class CheckDomainRecordRequest(RpcRequest):
 	def set_UserClientIp(self,UserClientIp):
 		self.add_query_param('UserClientIp',UserClientIp)
 
-	def get_DomainName(self):
-		return self.get_query_params().get('DomainName')
+	def get_Name(self):
+		return self.get_query_params().get('Name')
 
-	def set_DomainName(self,DomainName):
-		self.add_query_param('DomainName',DomainName)
+	def set_Name(self,Name):
+		self.add_query_param('Name',Name)
 
 	def get_Lang(self):
 		return self.get_query_params().get('Lang')
@@ -53,8 +53,21 @@ class CheckDomainRecordRequest(RpcRequest):
 	def set_Type(self,Type):
 		self.add_query_param('Type',Type)
 
-	def get_Value(self):
-		return self.get_query_params().get('Value')
+	def get_Addrs(self):
+		return self.get_query_params().get('Addrs')
 
-	def set_Value(self,Value):
-		self.add_query_param('Value',Value)
+	def set_Addrs(self,Addrs):
+		for i in range(len(Addrs)):	
+			if Addrs[i].get('Mode') is not None:
+				self.add_query_param('Addr.' + str(i + 1) + '.Mode' , Addrs[i].get('Mode'))
+			if Addrs[i].get('LbaWeight') is not None:
+				self.add_query_param('Addr.' + str(i + 1) + '.LbaWeight' , Addrs[i].get('LbaWeight'))
+			if Addrs[i].get('Value') is not None:
+				self.add_query_param('Addr.' + str(i + 1) + '.Value' , Addrs[i].get('Value'))
+
+
+	def get_MinAvailableAddrNum(self):
+		return self.get_query_params().get('MinAvailableAddrNum')
+
+	def set_MinAvailableAddrNum(self,MinAvailableAddrNum):
+		self.add_query_param('MinAvailableAddrNum',MinAvailableAddrNum)
