@@ -21,19 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class DescribeInstancesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ocs', '2015-03-01', 'DescribeInstances')
-
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
-
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+		RpcRequest.__init__(self, 'Ocs', '2015-03-01', 'DescribeInstances','ocs')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -41,35 +29,29 @@ class DescribeInstancesRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_OwnerAccount(self):
-		return self.get_query_params().get('OwnerAccount')
-
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
-
-	def get_InstanceIds(self):
-		return self.get_query_params().get('InstanceIds')
-
-	def set_InstanceIds(self,InstanceIds):
-		self.add_query_param('InstanceIds',InstanceIds)
-
 	def get_InstanceStatus(self):
 		return self.get_query_params().get('InstanceStatus')
 
 	def set_InstanceStatus(self,InstanceStatus):
 		self.add_query_param('InstanceStatus',InstanceStatus)
 
-	def get_PageNumber(self):
-		return self.get_query_params().get('PageNumber')
+	def get_PrivateIpAddresses(self):
+		return self.get_query_params().get('PrivateIpAddresses')
 
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
+	def set_PrivateIpAddresses(self,PrivateIpAddresses):
+		self.add_query_param('PrivateIpAddresses',PrivateIpAddresses)
 
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
+	def get_ResourceOwnerAccount(self):
+		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+
+	def get_OwnerAccount(self):
+		return self.get_query_params().get('OwnerAccount')
+
+	def set_OwnerAccount(self,OwnerAccount):
+		self.add_query_param('OwnerAccount',OwnerAccount)
 
 	def get_NetworkType(self):
 		return self.get_query_params().get('NetworkType')
@@ -77,11 +59,17 @@ class DescribeInstancesRequest(RpcRequest):
 	def set_NetworkType(self,NetworkType):
 		self.add_query_param('NetworkType',NetworkType)
 
-	def get_VpcId(self):
-		return self.get_query_params().get('VpcId')
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
 
-	def set_VpcId(self,VpcId):
-		self.add_query_param('VpcId',VpcId)
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
+
+	def get_PageNumber(self):
+		return self.get_query_params().get('PageNumber')
+
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)
 
 	def get_VSwitchId(self):
 		return self.get_query_params().get('VSwitchId')
@@ -89,8 +77,26 @@ class DescribeInstancesRequest(RpcRequest):
 	def set_VSwitchId(self,VSwitchId):
 		self.add_query_param('VSwitchId',VSwitchId)
 
-	def get_PrivateIpAddresses(self):
-		return self.get_query_params().get('PrivateIpAddresses')
+	def get_SecurityToken(self):
+		return self.get_query_params().get('SecurityToken')
 
-	def set_PrivateIpAddresses(self,PrivateIpAddresses):
-		self.add_query_param('PrivateIpAddresses',PrivateIpAddresses)
+	def set_SecurityToken(self,SecurityToken):
+		self.add_query_param('SecurityToken',SecurityToken)
+
+	def get_InstanceIds(self):
+		return self.get_query_params().get('InstanceIds')
+
+	def set_InstanceIds(self,InstanceIds):
+		self.add_query_param('InstanceIds',InstanceIds)
+
+	def get_VpcId(self):
+		return self.get_query_params().get('VpcId')
+
+	def set_VpcId(self,VpcId):
+		self.add_query_param('VpcId',VpcId)
+
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
