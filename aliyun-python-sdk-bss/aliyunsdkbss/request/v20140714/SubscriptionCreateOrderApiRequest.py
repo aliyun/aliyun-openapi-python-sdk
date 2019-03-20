@@ -18,14 +18,19 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class DescribeCouponDetailRequest(RpcRequest):
+class SubscriptionCreateOrderApiRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Bss', '2014-07-14', 'DescribeCouponDetail','bss')
-		self.set_protocol_type('https');
+		RpcRequest.__init__(self, 'Bss', '2014-07-14', 'SubscriptionCreateOrderApi','bss')
 
-	def get_CouponNumber(self):
-		return self.get_query_params().get('CouponNumber')
+	def get_productCode(self):
+		return self.get_query_params().get('productCode')
 
-	def set_CouponNumber(self,CouponNumber):
-		self.add_query_param('CouponNumber',CouponNumber)
+	def set_productCode(self,productCode):
+		self.add_query_param('productCode',productCode)
+
+	def get_ownerId(self):
+		return self.get_query_params().get('ownerId')
+
+	def set_ownerId(self,ownerId):
+		self.add_query_param('ownerId',ownerId)

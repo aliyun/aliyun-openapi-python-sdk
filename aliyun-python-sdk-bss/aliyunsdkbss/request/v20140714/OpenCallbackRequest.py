@@ -18,14 +18,13 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class DescribeCouponDetailRequest(RpcRequest):
+class OpenCallbackRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Bss', '2014-07-14', 'DescribeCouponDetail','bss')
-		self.set_protocol_type('https');
+		RpcRequest.__init__(self, 'Bss', '2014-07-14', 'OpenCallback','bss')
 
-	def get_CouponNumber(self):
-		return self.get_query_params().get('CouponNumber')
+	def get_paramStr(self):
+		return self.get_query_params().get('paramStr')
 
-	def set_CouponNumber(self,CouponNumber):
-		self.add_query_param('CouponNumber',CouponNumber)
+	def set_paramStr(self,paramStr):
+		self.add_query_param('paramStr',paramStr)
