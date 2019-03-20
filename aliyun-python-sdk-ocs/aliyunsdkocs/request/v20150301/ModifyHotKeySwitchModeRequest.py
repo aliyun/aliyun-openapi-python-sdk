@@ -18,10 +18,16 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class ActivateInstanceRequest(RpcRequest):
+class ModifyHotKeySwitchModeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ocs', '2015-03-01', 'ActivateInstance','ocs')
+		RpcRequest.__init__(self, 'Ocs', '2015-03-01', 'ModifyHotKeySwitchMode','ocs')
+
+	def get_ExpireTime(self):
+		return self.get_query_params().get('ExpireTime')
+
+	def set_ExpireTime(self,ExpireTime):
+		self.add_query_param('ExpireTime',ExpireTime)
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -34,6 +40,12 @@ class ActivateInstanceRequest(RpcRequest):
 
 	def set_InstanceId(self,InstanceId):
 		self.add_query_param('InstanceId',InstanceId)
+
+	def get_KeyNumber(self):
+		return self.get_query_params().get('KeyNumber')
+
+	def set_KeyNumber(self,KeyNumber):
+		self.add_query_param('KeyNumber',KeyNumber)
 
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
@@ -58,3 +70,9 @@ class ActivateInstanceRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_SwitchMode(self):
+		return self.get_query_params().get('SwitchMode')
+
+	def set_SwitchMode(self,SwitchMode):
+		self.add_query_param('SwitchMode',SwitchMode)

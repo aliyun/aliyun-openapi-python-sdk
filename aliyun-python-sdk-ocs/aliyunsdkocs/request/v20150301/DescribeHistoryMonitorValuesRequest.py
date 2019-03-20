@@ -21,19 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class DescribeHistoryMonitorValuesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ocs', '2015-03-01', 'DescribeHistoryMonitorValues')
-
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
-
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+		RpcRequest.__init__(self, 'Ocs', '2015-03-01', 'DescribeHistoryMonitorValues','ocs')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -41,29 +29,17 @@ class DescribeHistoryMonitorValuesRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_ResourceOwnerAccount(self):
+		return self.get_query_params().get('ResourceOwnerAccount')
+
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
 
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
-
-	def get_InstanceId(self):
-		return self.get_query_params().get('InstanceId')
-
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
-
-	def get_MonitorKeys(self):
-		return self.get_query_params().get('MonitorKeys')
-
-	def set_MonitorKeys(self,MonitorKeys):
-		self.add_query_param('MonitorKeys',MonitorKeys)
-
-	def get_StartTime(self):
-		return self.get_query_params().get('StartTime')
-
-	def set_StartTime(self,StartTime):
-		self.add_query_param('StartTime',StartTime)
 
 	def get_EndTime(self):
 		return self.get_query_params().get('EndTime')
@@ -71,8 +47,38 @@ class DescribeHistoryMonitorValuesRequest(RpcRequest):
 	def set_EndTime(self,EndTime):
 		self.add_query_param('EndTime',EndTime)
 
+	def get_StartTime(self):
+		return self.get_query_params().get('StartTime')
+
+	def set_StartTime(self,StartTime):
+		self.add_query_param('StartTime',StartTime)
+
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
+
+	def get_InstanceId(self):
+		return self.get_query_params().get('InstanceId')
+
+	def set_InstanceId(self,InstanceId):
+		self.add_query_param('InstanceId',InstanceId)
+
+	def get_SecurityToken(self):
+		return self.get_query_params().get('SecurityToken')
+
+	def set_SecurityToken(self,SecurityToken):
+		self.add_query_param('SecurityToken',SecurityToken)
+
 	def get_IntervalForHistory(self):
 		return self.get_query_params().get('IntervalForHistory')
 
 	def set_IntervalForHistory(self,IntervalForHistory):
 		self.add_query_param('IntervalForHistory',IntervalForHistory)
+
+	def get_MonitorKeys(self):
+		return self.get_query_params().get('MonitorKeys')
+
+	def set_MonitorKeys(self,MonitorKeys):
+		self.add_query_param('MonitorKeys',MonitorKeys)
