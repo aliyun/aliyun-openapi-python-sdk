@@ -21,17 +21,17 @@ from aliyunsdkcore.request import RpcRequest
 class RebootInstanceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'HPC', '2016-06-03', 'RebootInstance')
+		RpcRequest.__init__(self, 'HPC', '2016-06-03', 'RebootInstance','hpc')
 		self.set_method('POST')
-
-	def get_TOKEN(self):
-		return self.get_query_params().get('TOKEN')
-
-	def set_TOKEN(self,TOKEN):
-		self.add_query_param('TOKEN',TOKEN)
 
 	def get_InstanceId(self):
 		return self.get_query_params().get('InstanceId')
 
 	def set_InstanceId(self,InstanceId):
 		self.add_query_param('InstanceId',InstanceId)
+
+	def get_TOKEN(self):
+		return self.get_query_params().get('TOKEN')
+
+	def set_TOKEN(self,TOKEN):
+		self.add_query_param('TOKEN',TOKEN)

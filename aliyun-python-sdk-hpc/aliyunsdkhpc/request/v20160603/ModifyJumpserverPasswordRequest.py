@@ -21,14 +21,8 @@ from aliyunsdkcore.request import RpcRequest
 class ModifyJumpserverPasswordRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'HPC', '2016-06-03', 'ModifyJumpserverPassword')
+		RpcRequest.__init__(self, 'HPC', '2016-06-03', 'ModifyJumpserverPassword','hpc')
 		self.set_method('POST')
-
-	def get_TOKEN(self):
-		return self.get_query_params().get('TOKEN')
-
-	def set_TOKEN(self,TOKEN):
-		self.add_query_param('TOKEN',TOKEN)
 
 	def get_InstanceId(self):
 		return self.get_query_params().get('InstanceId')
@@ -41,3 +35,9 @@ class ModifyJumpserverPasswordRequest(RpcRequest):
 
 	def set_NewPassword(self,NewPassword):
 		self.add_query_param('NewPassword',NewPassword)
+
+	def get_TOKEN(self):
+		return self.get_query_params().get('TOKEN')
+
+	def set_TOKEN(self,TOKEN):
+		self.add_query_param('TOKEN',TOKEN)

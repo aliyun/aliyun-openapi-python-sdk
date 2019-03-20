@@ -21,17 +21,17 @@ from aliyunsdkcore.request import RpcRequest
 class CreateInstanceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'HPC', '2016-06-03', 'CreateInstance')
+		RpcRequest.__init__(self, 'HPC', '2016-06-03', 'CreateInstance','hpc')
 		self.set_method('POST')
-
-	def get_TOKEN(self):
-		return self.get_query_params().get('TOKEN')
-
-	def set_TOKEN(self,TOKEN):
-		self.add_query_param('TOKEN',TOKEN)
 
 	def get_PackageId(self):
 		return self.get_query_params().get('PackageId')
 
 	def set_PackageId(self,PackageId):
 		self.add_query_param('PackageId',PackageId)
+
+	def get_TOKEN(self):
+		return self.get_query_params().get('TOKEN')
+
+	def set_TOKEN(self,TOKEN):
+		self.add_query_param('TOKEN',TOKEN)
