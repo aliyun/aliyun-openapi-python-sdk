@@ -21,5 +21,5 @@ from aliyunsdkcore.request import RpcRequest
 class DescribeCashDetailRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Bss', '2014-07-14', 'DescribeCashDetail')
+		RpcRequest.__init__(self, 'Bss', '2014-07-14', 'DescribeCashDetail','bss')
 		self.set_protocol_type('https');
