@@ -18,19 +18,7 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class AddDomainRequest(RpcRequest):
+class GetAccountInfoRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Httpdns', '2016-02-01', 'AddDomain','httpdns')
-
-	def get_AccountId(self):
-		return self.get_query_params().get('AccountId')
-
-	def set_AccountId(self,AccountId):
-		self.add_query_param('AccountId',AccountId)
-
-	def get_DomainName(self):
-		return self.get_query_params().get('DomainName')
-
-	def set_DomainName(self,DomainName):
-		self.add_query_param('DomainName',DomainName)
+		RpcRequest.__init__(self, 'Httpdns', '2016-02-01', 'GetAccountInfo','httpdns')

@@ -18,19 +18,19 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class AddDomainRequest(RpcRequest):
+class ListDomainsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Httpdns', '2016-02-01', 'AddDomain','httpdns')
+		RpcRequest.__init__(self, 'Httpdns', '2016-02-01', 'ListDomains','httpdns')
 
-	def get_AccountId(self):
-		return self.get_query_params().get('AccountId')
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
 
-	def set_AccountId(self,AccountId):
-		self.add_query_param('AccountId',AccountId)
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
 
-	def get_DomainName(self):
-		return self.get_query_params().get('DomainName')
+	def get_PageNumber(self):
+		return self.get_query_params().get('PageNumber')
 
-	def set_DomainName(self,DomainName):
-		self.add_query_param('DomainName',DomainName)
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)
