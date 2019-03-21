@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class FtGatedLaunchPolicy4Request(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ft', '2018-07-13', 'FtGatedLaunchPolicy4','serviceCode')
+		RpcRequest.__init__(self, 'Ft', '2018-07-13', 'FtGatedLaunchPolicy4','ft')
 
 	def get_IsGatedLaunch(self):
 		return self.get_query_params().get('IsGatedLaunch')
