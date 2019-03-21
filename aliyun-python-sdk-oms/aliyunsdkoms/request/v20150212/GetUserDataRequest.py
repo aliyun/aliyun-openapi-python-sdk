@@ -21,13 +21,19 @@ from aliyunsdkcore.request import RpcRequest
 class GetUserDataRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Oms', '2015-02-12', 'GetUserData')
+		RpcRequest.__init__(self, 'Oms', '2015-02-12', 'GetUserData','oms')
 
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
+	def get_DataType(self):
+		return self.get_query_params().get('DataType')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
+	def set_DataType(self,DataType):
+		self.add_query_param('DataType',DataType)
+
+	def get_NextToken(self):
+		return self.get_query_params().get('NextToken')
+
+	def set_NextToken(self,NextToken):
+		self.add_query_param('NextToken',NextToken)
 
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
@@ -41,11 +47,11 @@ class GetUserDataRequest(RpcRequest):
 	def set_ProductName(self,ProductName):
 		self.add_query_param('ProductName',ProductName)
 
-	def get_DataType(self):
-		return self.get_query_params().get('DataType')
+	def get_EndTime(self):
+		return self.get_query_params().get('EndTime')
 
-	def set_DataType(self,DataType):
-		self.add_query_param('DataType',DataType)
+	def set_EndTime(self,EndTime):
+		self.add_query_param('EndTime',EndTime)
 
 	def get_StartTime(self):
 		return self.get_query_params().get('StartTime')
@@ -53,17 +59,17 @@ class GetUserDataRequest(RpcRequest):
 	def set_StartTime(self,StartTime):
 		self.add_query_param('StartTime',StartTime)
 
-	def get_EndTime(self):
-		return self.get_query_params().get('EndTime')
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
 
-	def set_EndTime(self,EndTime):
-		self.add_query_param('EndTime',EndTime)
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
 
-	def get_NextToken(self):
-		return self.get_query_params().get('NextToken')
+	def get_TableName(self):
+		return self.get_query_params().get('TableName')
 
-	def set_NextToken(self,NextToken):
-		self.add_query_param('NextToken',NextToken)
+	def set_TableName(self,TableName):
+		self.add_query_param('TableName',TableName)
 
 	def get_MaxResult(self):
 		return self.get_query_params().get('MaxResult')
