@@ -32,24 +32,9 @@ class SignerHandler(RequestHandler):
     # 只实现了signature
     def handle_request(self, context):
         http_request = context.http_request
-        api_request = context.api_request
 
-        credentials = self.get_credentials(context)
+        credentials = context.credentials
         signer = self._signer_map[credentials.__class__.__name__]
         signature = signer.sign(credentials, context)
         # TODO fix other headers
         http_request.signature = signature
-
-    @staticmethod
-    def get_credentials(context):
-        credentials_provider = context.credentials_provider({
-            'access_key_id': context.config.access_key_id,
-            'access_key_secret': context.config.access_key_secret,
-        })
-        credentials = credentials_provider.load_credentials()
-        if credentials is None:
-            raise ClientException(
-                'Credentials',
-                'Unable to locate credentials.'
-            )
-        return credentials

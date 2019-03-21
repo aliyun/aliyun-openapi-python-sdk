@@ -44,7 +44,9 @@ def raw_config_parse(config_filename, parse_subsections=True):
             for section in cp.sections():
                 config[section] = {}
                 for option in cp.options(section):
+
                     config_value = cp.get(section, option)
+
                     if parse_subsections and config_value.startswith('\n'):
                         try:
                             config_value = _parse_nested(config_value)

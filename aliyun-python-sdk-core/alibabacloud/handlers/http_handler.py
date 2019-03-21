@@ -60,8 +60,9 @@ class HttpHandler(RequestHandler):
     def do_request(context):
         http_request = context.http_request
         with Session() as s:
+            print(111111111, http_request.protocol)
             current_protocol = 'http://' if http_request.protocol.lower() == 'http' else 'https://'
-
+            print(2222222, context.endpoint)
             # TODO : 最终拼接的是啥，还需要调查下
             url = current_protocol + context.endpoint + http_request.url
 

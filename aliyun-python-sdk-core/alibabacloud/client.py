@@ -52,11 +52,9 @@ class ClientConfig:
     """
     处理client级别的所有的参数
     """
-    ENV_NAME_FOR_CONFIG_FILE = 'ALIBABA_CLOUD_CONFIG_FILE'
-    DEFAULT_NAME_FOR_CONFIG_FILE = ['/etc/.alibabacloud/config',
-                                         '~/.alibabacloud/config']
 
-    def __init__(self, access_key_id=None, access_key_secret=None, region_id=None,
+    def __init__(self, access_key_id=None, access_key_secret=None, bearer_token=None,
+                 secret_token=None, region_id=None,
                  enable_retry_policy=None, max_retry_times=None, user_agent=None,
                  extra_user_agent=None, enable_https=None, http_port=None, https_port=None,
                  connection_timeout=None, read_timeout=None, enable_http_debug=None,
@@ -65,6 +63,9 @@ class ClientConfig:
 
         self.access_key_id = access_key_id
         self.access_key_secret = access_key_secret
+        self.secret_token = secret_token
+        self.bearer_token = bearer_token
+
         self.region_id = region_id
         self.enable_retry_policy = enable_retry_policy
         self.max_retry_times = max_retry_times
@@ -96,14 +97,17 @@ class ClientConfig:
         #         setattr(self, item.lower(), os.environ.get(item) or os.environ.get(item.lower()))
 
     def read_from_profile(self):
+        ENV_NAME_FOR_CONFIG_FILE = 'ALIBABA_CLOUD_CONFIG_FILE'
+        DEFAULT_NAME_FOR_CONFIG_FILE = ['/etc/.alibabacloud/config',
+                                        '~/.alibabacloud/config']
         # TODO read from profile
         from alibabacloud.utils.ini_helper import load_config
         profile = {}
         loaded_config = {}
         if self.config_file is None:
-            if self.ENV_NAME_FOR_CONFIG_FILE in os.environ:
+            if ENV_NAME_FOR_CONFIG_FILE in os.environ:
 
-                env_config_file_path = os.environ.get(self.ENV_NAME_FOR_CONFIG_FILE)
+                env_config_file_path = os.environ.get(ENV_NAME_FOR_CONFIG_FILE)
                 if env_config_file_path is None or len(env_config_file_path) == 0:
                     # 默认配置不存在
                     return None
@@ -111,7 +115,7 @@ class ClientConfig:
                 loaded_config = load_config(full_path)
                 profile = loaded_config.get(self.profile_name, {})
             else:
-                potential_locations = self.DEFAULT_NAME_FOR_CONFIG_FILE
+                potential_locations = DEFAULT_NAME_FOR_CONFIG_FILE
                 for filename in potential_locations:
                     try:
                         loaded_config = load_config(filename)
@@ -135,9 +139,9 @@ class ClientConfig:
 
 
 def get_merged_client_config(config):
-    config.read_from_env()
-    config.read_from_profile()
-    config.read_from_default()
+    # config.read_from_env()
+    # config.read_from_profile()
+    # config.read_from_default()
     return config
 
 
@@ -157,6 +161,9 @@ class AlibabaCloudClient:
 
     def handle_request(self, api_request, request_handlers=None, context=None):
         # TODO handle different types of request
+        from aliyunsdkcore.request import CommonRequest
+        if isinstance(api_request, CommonRequest):
+            api_request.trans_to_acs_request()
         self.product_code = api_request.get_product()
         self.location_service_code = api_request.get_location_service_code()
         self.location_endpoint_type = api_request.get_location_endpoint_type()
@@ -171,6 +178,8 @@ class AlibabaCloudClient:
             context.location_service_code = self.location_service_code
             context.location_endpoint_type = self.location_endpoint_type
             context.endpoint_resolver = self.endpoint_resolver
+            # credentials 是和请求解耦的，从请求的流程来看，不应该放在handle当中
+            context.credentials = self.get_credentials()
 
         if not request_handlers:
             request_handlers = self.handlers
@@ -186,4 +195,23 @@ class AlibabaCloudClient:
             #                         request_handlers=request_handlers[i:],
             #                         context=context)
 
-        return context.response.text
+        return context.response
+
+    def get_credentials(self):
+        credentials_provider = self.credentials_provider({
+            'access_key_id': self.config.access_key_id,
+            'access_key_secret': self.config.access_key_secret,
+            'secret_token': self.config.secret_token,
+            'bearer_token': self.config.bearer_token,
+            'profile_name': 'client5'
+        })
+        credentials = credentials_provider.load_credentials()
+        if credentials is None:
+            from aliyunsdkcore.acs_exception.exceptions import ClientException
+            raise ClientException(
+                'Credentials',
+                'Unable to locate credentials.'
+            )
+        return credentials
+
+

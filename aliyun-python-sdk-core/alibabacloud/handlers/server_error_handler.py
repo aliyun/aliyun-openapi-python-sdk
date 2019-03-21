@@ -34,23 +34,43 @@ class ServerErrorHandler(RequestHandler):
             # data instead
             # logger.warning('Failed to parse response as json format. Response:%s', response.text)
             pass
-
+        print('进入而偶然')
         if response.status_code < codes.OK or response.status_code >= codes.MULTIPLE_CHOICES:
 
             server_error_code, server_error_message = self._parse_error_info_from_response_body(
-                response.text.decode('utf-8'))
+                response.text)
             if response.status_code == codes.BAD_REQUEST and server_error_code == 'SignatureDoesNotMatch':
                 if http_request.signature == server_error_message.split(':')[1]:
                     server_error_code = 'InvalidAccessKeySecret'
                     server_error_message = 'The AccessKeySecret is incorrect. ' \
                                            'Please check your AccessKeyId and AccessKeySecret.'
+            from aliyunsdkcore.acs_exception.exceptions import ServerException
             exception = ServerException(
                 server_error_code,
                 server_error_message,
-                http_status=response.codes,
+                http_status=response.status_code,
                 request_id=request_id)
 
             # logger.error("ServerException occurred. Host:%s SDK-Version:%s ServerException:%s",
             #              http_request.endpoint, aliyunsdkcore.__version__, str(exception))
 
             context.exception = exception
+
+    @staticmethod
+    def _parse_error_info_from_response_body(response_body):
+        from aliyunsdkcore.acs_exception import error_code
+        error_code_to_return = error_code.SDK_UNKNOWN_SERVER_ERROR
+        # TODO handle if response_body is too big
+        error_message_to_return = "ServerResponseBody: " + str(response_body)
+        try:
+            body_obj = json.loads(response_body)
+            if 'Code' in body_obj:
+                error_code_to_return = body_obj['Code']
+            if 'Message' in body_obj:
+                error_message_to_return = body_obj['Message']
+        except ValueError:
+            # failed to parse body as json format
+            # logger.warning('Failed to parse response as json format. Response:%s', response_body)
+            pass
+
+        return error_code_to_return, error_message_to_return
