@@ -28,12 +28,15 @@ class HttpHeaderHandler(RequestHandler):
     content_length = "Content-Length"
     content_type = "Content-Type"
 
-    def handle_http_request(self, context):
+    def handle_request(self, context):
         api_request = context.api_request
+        access_key_id = context.credentials.access_key_id if context.credentials.access_key_id \
+            else ''
+        access_key_secret = context.credentials.access_key_secret \
+            if context.credentials.access_key_secret else ''
         signed_header = api_request.get_signed_header(context.config.region_id,
-                                                      context.config.access_key_id,
-                                                      context.config.access_key_secret)
-        # 重新处理的header, http-request 的header
+                                                      access_key_id,
+                                                      access_key_secret)
         headers = signed_header
         body_params = api_request.get_body_params()
         if body_params:

@@ -23,9 +23,12 @@ class URLHandler(RequestHandler):
     def handle_request(self, context):
         http_request = context.http_request
         api_request = context.api_request
+        access_key_id = context.credentials.access_key_id if context.credentials.access_key_id else ''
+        access_key_secret = context.credentials.access_key_secret \
+            if context.credentials.access_key_secret else ''
         signed_url = api_request.get_url(context.config.region_id,
-                                         context.config.access_key_id,
-                                         context.config.access_key_secret)
+                                         access_key_id,
+                                         access_key_secret)
         http_request.url = signed_url
         context.http_request = http_request
 

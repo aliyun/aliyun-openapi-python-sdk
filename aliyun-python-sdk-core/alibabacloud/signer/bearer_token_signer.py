@@ -30,7 +30,7 @@ class BearerTokenSigner(Signer):
     # bear token
     # https://help.aliyun.com/document_detail/69962.html?spm=a2c4g.11186623.2.15.5dad35f6MtkJkX
     def sign(self, bear_token_credential, context):
-        token = bear_token_credential
+        token = bear_token_credential.bearer_token
         request = context.api_request
         region_id = context.config.region_id
         # which token
@@ -39,5 +39,5 @@ class BearerTokenSigner(Signer):
             request.get_url_params()
         else:
             request.add_header("x-acs-bearer-token", token)
-        signature = request.get_signed_signature(region_id, None)
+        signature = request.get_signed_signature(region_id, '')
         return signature

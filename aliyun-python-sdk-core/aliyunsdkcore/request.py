@@ -320,8 +320,8 @@ class RpcRequest(AcsRequest):
         self.url_params = url_params
         
     def get_url(self, region_id, access_key_id, access_key_secret):
-        url = rpc_signer.get_signed_url(region_id, access_key_id, access_key_secret, self.url_params,
-                                        self.string_to_sign, self._signer)
+        url = rpc_signer.get_signed_url(region_id, access_key_id, access_key_secret,
+                                        self.url_params, self.string_to_sign, self._signer)
         return url
 
     def get_signed_signature(self, region_id, access_key_id):
@@ -564,6 +564,12 @@ class CommonRequest(AcsRequest):
 
     def get_signed_header(self, region_id, access_key_id, access_key_secret):
         return self.request.get_signed_header(region_id, access_key_id, access_key_secret)
+
+    def get_signed_signature(self, region_id, ak):
+        return self.request.get_signed_signature(region_id, ak)
+
+    def get_url_params(self):
+        return self.request.get_url_params()
 
     def fill_params(self):
 

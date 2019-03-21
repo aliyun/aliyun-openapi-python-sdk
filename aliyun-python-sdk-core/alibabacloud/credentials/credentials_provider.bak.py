@@ -218,32 +218,32 @@ class ProfileResolve:
     def resolve_type_of_access_key(self):
         access_key_id = self.profile.get('access_key_id')
         access_key_secret = self.profile.get('access_key_secret')
-        return AccessKeyCredential(access_key_id, access_key_secret)
+        return AccessKeyCredentials(access_key_id, access_key_secret)
 
     def resolve_type_of_ecs_ram_role(self):
         fetcher = InstanceMetadataFetcher(self.profile)
         profile = fetcher.get_profile()
-        return SecurityCredential(profile)
+        return SecurityCredentials(profile)
 
     def resolve_type_of_ram_role_arn(self):
         fetcher = RamRoleArnFetcher(self.profile)
         profile = fetcher.get_profile()
-        return SecurityCredential(profile)
+        return SecurityCredentials(profile)
 
     def resolve_type_of_rsa_key_pair(self):
         fetcher = RsaKeyPairFetcher(**self.profile)
         profile = fetcher.get_profile()
-        return AccessKeyCredential(profile)
+        return AccessKeyCredentials(profile)
 
     def resolve_type_of_bearer_token(self):
         bearer_token = self.profile.get('bearer_token')
-        return BearTokenCredential(bearer_token)
+        return BearTokenCredentials(bearer_token)
 
     def resolve_type_of_security_token(self):
         access_key_id = self.profile.get('access_key_id')
         access_key_secret = self.profile.get('access_key_secret')
         sts_token = self.profile.get('sts_token')
-        return SecurityCredential(access_key_id, access_key_secret, sts_token)
+        return SecurityCredentials(access_key_id, access_key_secret, sts_token)
 
 
 # load config
@@ -298,7 +298,7 @@ class UserProvider(CredentialsProvider):
                     raise ClientException(
                         'Credentials',
                         'Param access_key_secret can not be empty.')
-                return AccessKeyCredential(
+                return AccessKeyCredentials(
                     access_key_id=access_key_id,
                     access_key_secret=access_key_secret)
             elif public_key_id is not None and len(public_key_id) > 0:
@@ -362,7 +362,7 @@ class EnvProvider(CredentialsProvider):
                     'Environment variable %s cannot be empty.' %
                     self.ENV_NAME_FOR_ACCESS_KEY_SECRET)
 
-            credential = AccessKeyCredential(
+            credential = AccessKeyCredentials(
                 access_key_id=access_key_id,
                 access_key_secret=access_key_secret)
             return credential
@@ -441,7 +441,7 @@ class InstanceCredentialsProvider(CredentialsProvider):
             role_name = meta_data
             fetcher = InstanceMetadataFetcher(role_name)
             profile = fetcher.get_profile()
-            credentials = SecurityCredential(profile)
+            credentials = SecurityCredentials(profile)
             return credentials
         else:
             return None

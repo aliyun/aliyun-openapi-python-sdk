@@ -89,8 +89,8 @@ class PrepareHandler(RequestHandler):
     def handle_request(self, context):
         http_request = context.http_request
         api_request = context.api_request
-
-        context.http_request.accept_format = 'JSON'
+        api_request.set_accept_format('JSON')
+        # context.http_request.accept_format = 'JSON'
         # http_request的body| api_request的content
         body_params = api_request.get_body_params()
         if body_params is not None:
@@ -100,10 +100,10 @@ class PrepareHandler(RequestHandler):
             # 把这个URL编码的值赋给content，设置content-type
             # FIXME body is the final bytes to be sent to the server via HTTP
             # content is an application level concept
-            context.http_request.body = body
+            http_request.body = body
         elif api_request.get_content() and "Content-Type" not in api_request.get_headers():
             api_request.set_content_type(format_type.APPLICATION_OCTET_STREAM)
-            context.http_request.body = api_request.get_content()
+            http_request.body = api_request.get_content()
         # api_request的ua
         user_agent = modify_user_agent(context.config.user_agent, api_request)
         # api_request.headers['User-Agent'] = user_agent
@@ -115,13 +115,15 @@ class PrepareHandler(RequestHandler):
         api_request.add_header('x-sdk-client', 'python/2.0.0')
         api_request.add_header('User-Agent', user_agent)
 
-
         # http_request的method and protocol/proxy
-        context.http_request.method = api_request.get_method()
-        context.http_request.protocol = api_request.get_protocol_type()  # http|https
-        context.http_request.proxy = context.config.proxy  # http|https
+        http_request.method = api_request.get_method()
+        http_request.protocol = api_request.get_protocol_type()  # http|https
+        http_request.proxy = context.config.proxy  # http|https
+        if http_request.protocol == 'https':
+            http_request.port = 443
 
         context.api_request = api_request
+        context.http_request = http_request
 
     def handle_response(self, context):
         pass
