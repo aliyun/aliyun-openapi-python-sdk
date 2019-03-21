@@ -18,16 +18,22 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class PutBucketLimitRequest(RpcRequest):
+class CreateOssInstanceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'OssAdmin', '2013-07-12', 'PutBucketLimit','ossadmin')
+		RpcRequest.__init__(self, 'OssAdmin', '2013-07-12', 'CreateOssInstance','ossadmin')
 
-	def get_uid(self):
-		return self.get_query_params().get('uid')
+	def get_ResourceOwnerId(self):
+		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_uid(self,uid):
-		self.add_query_param('uid',uid)
+	def set_ResourceOwnerId(self,ResourceOwnerId):
+		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+
+	def get_ResourceOwnerAccount(self):
+		return self.get_query_params().get('ResourceOwnerAccount')
+
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
@@ -35,14 +41,20 @@ class PutBucketLimitRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
-	def get_bid(self):
-		return self.get_query_params().get('bid')
+	def get_aliUid(self):
+		return self.get_query_params().get('aliUid')
 
-	def set_bid(self,bid):
-		self.add_query_param('bid',bid)
+	def set_aliUid(self,aliUid):
+		self.add_query_param('aliUid',aliUid)
 
-	def get_BucketLimit(self):
-		return self.get_query_params().get('BucketLimit')
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
 
-	def set_BucketLimit(self,BucketLimit):
-		self.add_query_param('BucketLimit',BucketLimit)
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
+
+	def get_region(self):
+		return self.get_query_params().get('region')
+
+	def set_region(self,region):
+		self.add_query_param('region',region)
