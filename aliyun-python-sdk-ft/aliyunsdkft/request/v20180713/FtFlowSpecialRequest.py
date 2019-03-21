@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class FtFlowSpecialRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ft', '2018-07-13', 'FtFlowSpecial','serviceCode')
+		RpcRequest.__init__(self, 'Ft', '2018-07-13', 'FtFlowSpecial','ft')
 
 	def get_Name(self):
 		return self.get_query_params().get('Name')

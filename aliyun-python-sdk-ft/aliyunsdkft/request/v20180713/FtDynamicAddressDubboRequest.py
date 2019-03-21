@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class FtDynamicAddressDubboRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ft', '2018-07-13', 'FtDynamicAddressDubbo','serviceCode')
+		RpcRequest.__init__(self, 'Ft', '2018-07-13', 'FtDynamicAddressDubbo','ft')
 
 	def get_IntValue(self):
 		return self.get_query_params().get('IntValue')
