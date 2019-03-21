@@ -18,10 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class GetProductDefineRequest(RpcRequest):
+class GetDataOpenConfigRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Oms', '2015-02-12', 'GetProductDefine','oms')
+		RpcRequest.__init__(self, 'Oms', '2015-02-12', 'GetDataOpenConfig','oms')
 
 	def get_DataType(self):
 		return self.get_query_params().get('DataType')
@@ -35,8 +35,14 @@ class GetProductDefineRequest(RpcRequest):
 	def set_ProductName(self,ProductName):
 		self.add_query_param('ProductName',ProductName)
 
-	def get_siteBid(self):
-		return self.get_query_params().get('siteBid')
+	def get_TableName(self):
+		return self.get_query_params().get('TableName')
 
-	def set_siteBid(self,siteBid):
-		self.add_query_param('siteBid',siteBid)
+	def set_TableName(self,TableName):
+		self.add_query_param('TableName',TableName)
+
+	def get_SiteBid(self):
+		return self.get_query_params().get('SiteBid')
+
+	def set_SiteBid(self,SiteBid):
+		self.add_query_param('SiteBid',SiteBid)
