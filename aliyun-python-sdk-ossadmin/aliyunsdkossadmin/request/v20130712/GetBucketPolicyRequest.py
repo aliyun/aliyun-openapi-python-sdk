@@ -21,19 +21,13 @@ from aliyunsdkcore.request import RpcRequest
 class GetBucketPolicyRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'OssAdmin', '2013-07-12', 'GetBucketPolicy')
+		RpcRequest.__init__(self, 'OssAdmin', '2013-07-12', 'GetBucketPolicy','ossadmin')
 
 	def get_uid(self):
 		return self.get_query_params().get('uid')
 
 	def set_uid(self,uid):
 		self.add_query_param('uid',uid)
-
-	def get_bid(self):
-		return self.get_query_params().get('bid')
-
-	def set_bid(self,bid):
-		self.add_query_param('bid',bid)
 
 	def get_BucketName(self):
 		return self.get_query_params().get('BucketName')
@@ -46,3 +40,9 @@ class GetBucketPolicyRequest(RpcRequest):
 
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
+
+	def get_bid(self):
+		return self.get_query_params().get('bid')
+
+	def set_bid(self,bid):
+		self.add_query_param('bid',bid)
