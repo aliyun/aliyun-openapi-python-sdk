@@ -275,7 +275,6 @@ class StaticProvider(CredentialsProvider):
         self.profile = profile
 
     def load(self):
-        print('static')
         if self.profile:
             fetcher = self._create_credentials_fetcher()
             credentials = fetcher()
@@ -314,7 +313,6 @@ class EnvProvider(CredentialsProvider):
         self.environ = os.environ
 
     def load(self):
-        print('env')
         if self.ENV_NAME_FOR_ACCESS_KEY_ID in self.environ:
             fetcher = self._create_credentials_fetcher()
             credentials = fetcher()
@@ -356,7 +354,6 @@ class ProfileCredentialsProvider(CredentialsProvider):
         self.environ = os.environ
 
     def load(self):
-        print('profile')
         self._loaded_config = {}
 
         if self.ENV_NAME_FOR_CREDENTIALS_FILE in self.environ:

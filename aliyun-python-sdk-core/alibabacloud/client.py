@@ -59,7 +59,7 @@ class ClientConfig:
                  extra_user_agent=None, enable_https=None, http_port=None, https_port=None,
                  connection_timeout=None, read_timeout=None, enable_http_debug=None,
                  http_proxy=None, https_proxy=None, enable_stream_logger=None,
-                 profile_name=None, config_file=None):
+                 profile_name=None, config_file=None, auto_retry=True):
 
         self.access_key_id = access_key_id
         self.access_key_secret = access_key_secret
@@ -76,30 +76,38 @@ class ClientConfig:
         self.https_port = https_port
         self.connection_timeout = connection_timeout
         self.read_timeout = read_timeout
-        self.enable_http_debug = enable_http_debug
+        # self.enable_http_debug = enable_http_debug  # http-debug 只从环境变量获取
+        self.http_debug = None
         # proxy provider两个： client  env
-        # self.http_proxy = http_proxy
-        # self.https_proxy = https_proxy
-        self.proxy = {
+        self.http_proxy = http_proxy
+        self.https_proxy = https_proxy
+        self._proxy = {
             'http': http_proxy,
             'https': https_proxy,
         }
         self.enable_stream_logger = enable_stream_logger
         self.profile_name = profile_name
         self.config_file = config_file
+        # retry
+        self._auto_retry = auto_retry
+        import aliyunsdkcore.retry.retry_policy as retry_policy
+        if self._auto_retry:
+            self.retry_policy = retry_policy.get_default_retry_policy(
+                max_retry_times=self.max_retry_times)
+        else:
+            self.retry_policy = retry_policy.NO_RETRY_POLICY
 
     def read_from_env(self):
         # 从环境变量读取一定量的数据
-        pass
-        # env_vars = ['HTTP_DEBUG', 'HTTPS_PROXY', 'HTTP_PROXY']
-        # for item in env_vars:
-        #     if getattr(self, item.lower()) is None:
-        #         setattr(self, item.lower(), os.environ.get(item) or os.environ.get(item.lower()))
+        env_vars = ['HTTP_DEBUG', 'HTTPS_PROXY', 'HTTP_PROXY']
+        for item in env_vars:
+            if getattr(self, item.lower()) is None:
+                setattr(self, item.lower(), os.environ.get(item) or os.environ.get(item.lower()))
 
     def read_from_profile(self):
         ENV_NAME_FOR_CONFIG_FILE = 'ALIBABA_CLOUD_CONFIG_FILE'
         DEFAULT_NAME_FOR_CONFIG_FILE = ['/etc/.alibabacloud/config',
-                                        '~/.alibabacloud/config']
+                                        '~/alibabacloud/config']
         # TODO read from profile
         from alibabacloud.utils.ini_helper import load_config
         profile = {}
@@ -194,8 +202,10 @@ class AlibabaCloudClient:
             #     self.handle_request(api_request,
             #                         request_handlers=request_handlers[i:],
             #                         context=context)
+        if context.exception:
+            return context.exception
 
-        return context.response
+        return context.http_response
 
     def get_credentials(self):
         credentials_provider = self.credentials_provider({

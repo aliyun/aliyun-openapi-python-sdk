@@ -312,11 +312,11 @@ class RpcRequest(AcsRequest):
 
         return req_params
 
-    def get_url_params(self):
+    def get_url_params(self, signer=None):
+        if signer is not None:
+            self._signer = signer
         sign_params = self._get_sign_params()
-        url_params = rpc_signer.get_url_params(sign_params,
-                                        self.get_accept_format(),
-                                        self._signer)
+        url_params = rpc_signer.get_url_params(sign_params, self.get_accept_format(), self._signer)
         self.url_params = url_params
         
     def get_url(self, region_id, access_key_id, access_key_secret):

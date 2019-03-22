@@ -23,7 +23,7 @@ class ServerErrorHandler(RequestHandler):
     def handle_response(self, context):
         http_request = context.http_request
 
-        response = context.response
+        response = context.http_response
         request_id = None
 
         try:
@@ -34,7 +34,6 @@ class ServerErrorHandler(RequestHandler):
             # data instead
             # logger.warning('Failed to parse response as json format. Response:%s', response.text)
             pass
-        print('进入而偶然')
         if response.status_code < codes.OK or response.status_code >= codes.MULTIPLE_CHOICES:
 
             server_error_code, server_error_message = self._parse_error_info_from_response_body(
