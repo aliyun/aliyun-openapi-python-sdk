@@ -22,7 +22,7 @@
 import logging
 
 from alibabacloud.signer.signer import Signer
-
+from aliyunsdkcore.auth.algorithm import bearer_token
 logger = logging.getLogger(__name__)
 
 
@@ -36,7 +36,7 @@ class BearerTokenSigner(Signer):
         # which token
         if request.get_style() == 'RPC':
             request.add_query_param("BearerToken", token)
-            request.get_url_params()
+            request.get_url_params(signer=bearer_token)
         else:
             request.add_header("x-acs-bearer-token", token)
         signature = request.get_signed_signature(region_id, '')

@@ -118,7 +118,7 @@ class PrepareHandler(RequestHandler):
         # http_request的method and protocol/proxy
         http_request.method = api_request.get_method()
         http_request.protocol = api_request.get_protocol_type()  # http|https
-        http_request.proxy = context.config.proxy  # http|https
+        http_request.proxy = context.config._proxy  # http|https
         if http_request.protocol == 'https':
             http_request.port = 443
 

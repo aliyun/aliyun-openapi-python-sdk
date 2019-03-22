@@ -81,15 +81,12 @@ def get_signed_signature(region_id, access_key_id, method, body_params, url_para
     return string_to_sign
 
 
-def get_signed_url(region_id, access_key_id, secret, url_params, string_to_sign, signer=mac1):
+def get_signed_url(region_id, access_key_id, secret, url_params, string_to_sign, signer):
     sign_params = dict(url_params)
     if 'RegionId' not in sign_params:
         sign_params['RegionId'] = region_id
     sign_params["AccessKeyId"] = access_key_id
-    print('string_to_sign', string_to_sign)
-    print('secret', secret)
     signature = __get_signature(string_to_sign, secret, signer)
-    print('rpc.signature', signature)
     sign_params['Signature'] = signature
     url = '/?' + __pop_standard_urlencode(urlencode(sign_params))
     return url
