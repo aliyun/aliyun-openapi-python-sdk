@@ -31,7 +31,6 @@ class RetryHandler(RequestHandler):
     #     pass
 
     def handle_request(self, context):
-        print(1111111, context.http_request.retries)
         if context.http_request.retries == 0:
             retry_policy_context = RetryPolicyContext(context.api_request, None, 0, None)
             if context.config.retry_policy.should_retry(retry_policy_context) & \
@@ -39,7 +38,6 @@ class RetryHandler(RequestHandler):
                 self._add_request_client_token(context.api_request)
 
     def handle_response(self, context):
-        print('context.exception', context.exception)
         api_request = context.api_request
         retry_policy_context = RetryPolicyContext(api_request, context.exception,
                                                   context.http_request.retries,
@@ -47,22 +45,18 @@ class RetryHandler(RequestHandler):
 
         should_retry = context.config.retry_policy.should_retry(retry_policy_context)
 
-        if should_retry & RetryCondition.SHOULD_RETRY:
-            retry_policy_context.retryable = should_retry
-
-            time_to_sleep = context.config.retry_policy.compute_delay_before_next_retry(retry_policy_context)
-            time.sleep(time_to_sleep / 1000.0)
-            context.http_request.retries += 1
-
-            context.retry_flag = True
-            # context.retry_backoff = context.config.retry_policy.compute_delay_before_next_retry(
-            #     retry_policy_context
-            # )
-        else:
+        # if should_retry & RetryCondition.SHOULD_RETRY:
+        if should_retry & RetryCondition.NO_RETRY:
             context.retry_flag = False
-            # context.retry_backoff = 0
             if context.exception:
                 raise context.exception
+        else:
+            retry_policy_context.retryable = should_retry
+            context.http_request.retries += 1
+            context.retry_flag = True
+            context.retry_backoff = context.config.retry_policy.compute_delay_before_next_retry(
+                retry_policy_context
+            )
 
 
     @staticmethod

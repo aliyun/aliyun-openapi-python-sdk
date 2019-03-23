@@ -63,7 +63,6 @@ class HttpHandler(RequestHandler):
             current_protocol = 'http://' if http_request.protocol.lower() == 'http' else 'https://'
             # TODO : 最终拼接的是啥，还需要调查下
             url = current_protocol + context.endpoint + http_request.url
-
             if http_request.port != 80 or http_request.port != 443:
                 url = current_protocol + context.endpoint + ":" + \
                       str(http_request.port) + http_request.url
@@ -76,9 +75,19 @@ class HttpHandler(RequestHandler):
 
             # ignore the warning-InsecureRequestWarning
             urllib3.disable_warnings()
+            # TODO fixed the retry flag
+            context.retry_flag = False
+            try:
+                response = s.send(prepped, proxies=http_request.proxy,
+                                  timeout=http_request.timeout,
+                                  allow_redirects=False, verify=None, cert=None)
+            except IOError as e:
+                from aliyunsdkcore.acs_exception.exceptions import ClientException
+                from aliyunsdkcore.acs_exception import error_code
+                exception = ClientException(error_code.SDK_HTTP_ERROR, str(e))
 
-            response = s.send(prepped, proxies=http_request.proxy,
-                              timeout=http_request.timeout,
-                              allow_redirects=False, verify=None, cert=None)
-            context.http_response = response
-
+                context.exception = exception
+                from alibabacloud.request import HTTPResponse
+                context.http_response = HTTPResponse()
+            else:
+                context.http_response = response

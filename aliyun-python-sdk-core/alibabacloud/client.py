@@ -34,7 +34,7 @@ DEFAULT_HANDLERS = [
     TimeoutConfigReader,  # 获取timeout
     EndpointHandler,  # 获取endpoint
     LogHandler,
-    # RetryHandler,
+    RetryHandler,
     ServerErrorHandler,
     HttpHandler
 ]
@@ -76,18 +76,18 @@ class ClientConfig:
         self.https_port = https_port
         self.connection_timeout = connection_timeout
         self.read_timeout = read_timeout
+        self.enable_stream_logger = enable_stream_logger
+        self.profile_name = profile_name
+        self.config_file = config_file
         # self.enable_http_debug = enable_http_debug  # http-debug 只从环境变量获取
         self.http_debug = None
         # proxy provider两个： client  env
         self.http_proxy = http_proxy
         self.https_proxy = https_proxy
         self._proxy = {
-            'http': http_proxy,
-            'https': https_proxy,
+            'http': self.http_proxy,
+            'https': self.https_proxy,
         }
-        self.enable_stream_logger = enable_stream_logger
-        self.profile_name = profile_name
-        self.config_file = config_file
         # retry
         self._auto_retry = auto_retry
         import aliyunsdkcore.retry.retry_policy as retry_policy
@@ -191,17 +191,16 @@ class AlibabaCloudClient:
 
         if not request_handlers:
             request_handlers = self.handlers
-
         for i in range(len(request_handlers)):
             request_handlers[i]().handle_request(context)
 
         for i in reversed(range(len(request_handlers))):
             request_handlers[i]().handle_response(context)
-            # if context.retry_flag:
-            #     time.sleep(context.retry_backoff)
-            #     self.handle_request(api_request,
-            #                         request_handlers=request_handlers[i:],
-            #                         context=context)
+            if context.retry_flag:
+                time.sleep(context.retry_backoff / 1000.0)
+                self.handle_request(api_request,
+                                    request_handlers=request_handlers[i:],
+                                    context=context)
         if context.exception:
             return context.exception
 
