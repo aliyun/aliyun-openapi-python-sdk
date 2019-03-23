@@ -25,35 +25,32 @@ class ServerErrorHandler(RequestHandler):
 
         response = context.http_response
         request_id = None
+        from alibabacloud.request import HTTPResponse
+        if not isinstance(response, HTTPResponse):
+            try:
+                body_obj = json.loads(response.text.decode('utf-8'))
+                request_id = body_obj.get('RequestId')
+            except (ValueError, TypeError, AttributeError):
+                # in case the response body is not a json string, return the raw
+                # data instead
+                # logger.warning('Failed to parse response as json format. Response:%s', response.text)
+                pass
+            if response.status_code < codes.OK or response.status_code >= codes.MULTIPLE_CHOICES:
 
-        try:
-            body_obj = json.loads(response.text.decode('utf-8'))
-            request_id = body_obj.get('RequestId')
-        except (ValueError, TypeError, AttributeError):
-            # in case the response body is not a json string, return the raw
-            # data instead
-            # logger.warning('Failed to parse response as json format. Response:%s', response.text)
-            pass
-        if response.status_code < codes.OK or response.status_code >= codes.MULTIPLE_CHOICES:
-
-            server_error_code, server_error_message = self._parse_error_info_from_response_body(
-                response.text)
-            if response.status_code == codes.BAD_REQUEST and server_error_code == 'SignatureDoesNotMatch':
-                if http_request.signature == server_error_message.split(':')[1]:
-                    server_error_code = 'InvalidAccessKeySecret'
-                    server_error_message = 'The AccessKeySecret is incorrect. ' \
-                                           'Please check your AccessKeyId and AccessKeySecret.'
-            from aliyunsdkcore.acs_exception.exceptions import ServerException
-            exception = ServerException(
-                server_error_code,
-                server_error_message,
-                http_status=response.status_code,
-                request_id=request_id)
-
-            # logger.error("ServerException occurred. Host:%s SDK-Version:%s ServerException:%s",
-            #              http_request.endpoint, aliyunsdkcore.__version__, str(exception))
-
-            context.exception = exception
+                server_error_code, server_error_message = self._parse_error_info_from_response_body(
+                    response.text)
+                if response.status_code == codes.BAD_REQUEST and server_error_code == 'SignatureDoesNotMatch':
+                    if http_request.signature == server_error_message.split(':')[1]:
+                        server_error_code = 'InvalidAccessKeySecret'
+                        server_error_message = 'The AccessKeySecret is incorrect. ' \
+                                               'Please check your AccessKeyId and AccessKeySecret.'
+                from aliyunsdkcore.acs_exception.exceptions import ServerException
+                exception = ServerException(
+                    server_error_code,
+                    server_error_message,
+                    http_status=response.status_code,
+                    request_id=request_id)
+                context.exception = exception
 
     @staticmethod
     def _parse_error_info_from_response_body(response_body):

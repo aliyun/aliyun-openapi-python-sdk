@@ -41,3 +41,10 @@ class HTTPRequest:
         self.enable_retry = enable_retry
         self.max_retry_times = max_retry_times
         self.retries = retries
+
+
+class HTTPResponse:
+    def __init__(self, status_code=None, headers=None, content=None):
+        self.status_code = status_code
+        self.headers = headers
+        self.content = content
