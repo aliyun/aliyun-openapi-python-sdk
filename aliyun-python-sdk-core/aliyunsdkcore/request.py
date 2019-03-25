@@ -27,7 +27,7 @@ from aliyunsdkcore.http import protocol_type
 from aliyunsdkcore.http import method_type as mt
 from aliyunsdkcore.http import format_type as ft
 from aliyunsdkcore.auth.composer import rpc_signature_composer as rpc_signer
-from aliyunsdkcore.auth.composer import roa_signature_composer as roa_signer
+from aliyunsdkcore.auth.composer import roa_signature_composer1 as roa_signer
 from aliyunsdkcore.utils.parameter_helper import md5_sum
 from aliyunsdkcore.auth.algorithm import sha_hmac1
 from aliyunsdkcore.acs_exception import exceptions

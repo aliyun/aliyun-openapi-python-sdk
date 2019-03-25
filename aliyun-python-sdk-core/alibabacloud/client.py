@@ -35,8 +35,8 @@ DEFAULT_HANDLERS = [
     EndpointHandler,  # 获取endpoint
     LogHandler,
     RetryHandler,
-    ServerErrorHandler,
-    HttpHandler
+    HttpHandler,
+    ServerErrorHandler
 ]
 
 DEFAULT_FORMAT = 'JSON'
@@ -60,26 +60,29 @@ class ClientConfig:
                  connection_timeout=None, read_timeout=None, enable_http_debug=None,
                  http_proxy=None, https_proxy=None, enable_stream_logger=None,
                  profile_name=None, config_file=None, auto_retry=True):
-
+        # credentials部分会用到
         self.access_key_id = access_key_id
         self.access_key_secret = access_key_secret
         self.secret_token = secret_token
         self.bearer_token = bearer_token
-
         self.region_id = region_id
-        self.enable_retry_policy = enable_retry_policy
-        self.max_retry_times = max_retry_times
+
+        # user-agent
         self.user_agent = user_agent
         self.extra_user_agent = extra_user_agent
+        # https
         self.enable_https = enable_https
         self.http_port = http_port
         self.https_port = https_port
+        # timeout
         self.connection_timeout = connection_timeout
         self.read_timeout = read_timeout
+        # logger
         self.enable_stream_logger = enable_stream_logger
+        # credentials 的profile
         self.profile_name = profile_name
         self.config_file = config_file
-        # self.enable_http_debug = enable_http_debug  # http-debug 只从环境变量获取
+        # self.enable_http_debug = enable_http_debug  # http-debug 只从环境变量获取，不设置开关
         self.http_debug = None
         # proxy provider两个： client  env
         self.http_proxy = http_proxy
@@ -91,6 +94,9 @@ class ClientConfig:
         # retry
         self._auto_retry = auto_retry
         import aliyunsdkcore.retry.retry_policy as retry_policy
+        # retry
+        self.enable_retry_policy = enable_retry_policy
+        self.max_retry_times = max_retry_times
         if self._auto_retry:
             self.retry_policy = retry_policy.get_default_retry_policy(
                 max_retry_times=self.max_retry_times)
@@ -162,19 +168,17 @@ class AlibabaCloudClient:
         self.logger = None  # TODO initialize
         # endpoint_resolver阶段需要
         self.endpoint_resolver = DefaultEndpointResolver(self)  # TODO initialize
-        self.product_code = None
-        self.location_service_code = None
-        self.location_service_type = None
-        self.location_endpoint_type = None
+        # self.product_code = None
+        # self.location_service_code = None
+        # self.location_service_type = None
+        # self.location_endpoint_type = None
 
     def handle_request(self, api_request, request_handlers=None, context=None):
         # TODO handle different types of request
         from aliyunsdkcore.request import CommonRequest
         if isinstance(api_request, CommonRequest):
             api_request.trans_to_acs_request()
-        self.product_code = api_request.get_product()
-        self.location_service_code = api_request.get_location_service_code()
-        self.location_endpoint_type = api_request.get_location_endpoint_type()
+
         if not context:
             context = RequestContext()
             context.api_request = api_request
@@ -182,9 +186,9 @@ class AlibabaCloudClient:
             context.http_request = HTTPRequest()
             context.config = self.config
             context.credentials_provider = self.credentials_provider
-            context.product_code = self.product_code
-            context.location_service_code = self.location_service_code
-            context.location_endpoint_type = self.location_endpoint_type
+            context.product_code = api_request.get_product()
+            context.location_service_code = api_request.get_location_service_code()
+            context.location_endpoint_type = api_request.get_location_endpoint_type()
             context.endpoint_resolver = self.endpoint_resolver
             # credentials 是和请求解耦的，从请求的流程来看，不应该放在handle当中
             context.credentials = self.get_credentials()
@@ -204,7 +208,7 @@ class AlibabaCloudClient:
         if context.exception:
             return context.exception
 
-        return context.http_response
+        return context.http_response.content
 
     def get_credentials(self):
         credentials_provider = self.credentials_provider({

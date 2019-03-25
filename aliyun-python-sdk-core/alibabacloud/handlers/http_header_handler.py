@@ -57,6 +57,8 @@ class HttpHeaderHandler(RequestHandler):
             headers.pop(self.content_type, None)
             headers.pop(self.content_length, None)
         else:
+            from aliyunsdkcore.utils import parameter_helper as helper
+
             str_md5 = helper.md5_sum(body)
             content_length = len(body)
             headers[self.content_md5] = str_md5

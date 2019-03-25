@@ -35,6 +35,15 @@ class SignerHandler(RequestHandler):
 
         credentials = context.credentials
         signer = self._signer_map[credentials.__class__.__name__]
+
         signature = signer.sign(credentials, context)
         # TODO fix other headers
         http_request.signature = signature
+        ############
+        # parameters = signer.sign(credentials, context)
+        # # 获取请求参数parameters
+        # signature = parameters['Signature']
+        # # TODO fix other headers
+        # http_request.signature = signature
+        #
+        # context.http_request.parameters = parameters
