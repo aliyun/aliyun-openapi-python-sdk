@@ -16,12 +16,16 @@
 # under the License.
 
 # coding=utf-8
+import time
+
 from aliyunsdkcore.vendored.six import iteritems
 from aliyunsdkcore.vendored.six.moves.urllib.parse import urlencode
 from aliyunsdkcore.vendored.six.moves.urllib.request import pathname2url
 
 from aliyunsdkcore.auth.algorithm import sha_hmac1 as mac1
 from aliyunsdkcore.utils import parameter_helper as helper
+
+FORMAT_ISO_8601 = "%Y-%m-%dT%H:%M:%SZ"
 
 
 # this function will append the necessary parameters for signers process.
@@ -45,17 +49,6 @@ def __refresh_sign_parameters(
     if accept_format is not None:
         parameters["Format"] = accept_format
     return parameters
-
-
-def __pop_standard_urlencode(query):
-    # print(22222222222222222, query)
-    # ret = query.replace('+', '%20')
-    # print(444444444, ret)
-    # print(id(query),id(ret))
-    # ret = ret.replace('*', '%2A')
-    # ret = ret.replace('%7E', '~')
-    # return ret
-    return query
 
 
 def __compose_string_to_sign(method, queries):
@@ -92,5 +85,51 @@ def get_signed_url(region_id, access_key_id, secret, url_params, string_to_sign,
     sign_params["AccessKeyId"] = access_key_id
     signature = __get_signature(string_to_sign, secret, signer)
     sign_params['Signature'] = signature
-    url = '?' + __pop_standard_urlencode(urlencode(sign_params))
+    url = '?' + urlencode(sign_params)
     return url
+
+
+class RPC:
+    def __init__(self, credentials):
+        self.credentials = credentials
+
+    def calc_signature(self, request, params):
+        string_to_sign = ''
+
+        sorted_parameters = sorted(iteritems(params), key=lambda queries: queries[0])
+        sorted_query_string = urlencode(sorted_parameters)
+        canonicalized_query_string = pathname2url(sorted_query_string)
+        string_to_sign = request.get_method() + "&%2F&" + canonicalized_query_string
+
+        b64 = mac1.get_sign_string(string_to_sign, self.credentials.access_key_secret + '&')
+        return b64
+
+    def canonicalized_query_string(self, request):
+        if self.credentials is None:
+            pass
+            # raise NoCredentialsError
+        parameters = request.get_query_params()
+        if parameters is None:
+            parameters = {}
+        parameters['Version'] = request.get_version()
+        parameters['Action'] = request.get_action_name()
+        parameters['Format'] = request.get_accept_format()
+
+        parameters["Timestamp"] = time.strftime(FORMAT_ISO_8601, time.gmtime())
+        parameters["SignatureMethod"] = mac1.get_signer_name()
+        parameters["SignatureType"] = mac1.get_signer_type()
+        parameters["SignatureVersion"] = mac1.get_signer_version()
+        parameters["SignatureNonce"] = helper.get_uuid()
+        if request.get_accept_format() is not None:
+            parameters["Format"] = request.get_accept_format()
+        if 'RegionId' not in parameters:
+            parameters['RegionId'] = 'cn-hangzhou'
+        parameters["AccessKeyId"] = self.credentials.access_key_id
+        parameters.update(request.get_body_params())
+        # if self.credentials.token:
+        #     parameters['SecurityToken'] = self.credentials.token
+        # 获取签名
+        signature = self.calc_signature(request, parameters)
+        parameters['Signature'] = signature
+
+        return parameters

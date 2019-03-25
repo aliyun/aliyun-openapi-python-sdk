@@ -28,33 +28,11 @@ class HttpHandler(RequestHandler):
     """
     获取参数，组装成request
     """
-    def set_content(self, content, encoding, format='RAW'):
-        # 有body_params ，就是 urlencode 结果的值
-        # 没有，就是request的
-        self.content = content
-        if content is None:
-            self.remove_header_parameter(self.content_md5)
-            self.remove_header_parameter(self.content_type)
-            self.remove_header_parameter(self.content_length)
-            self.content_type = None
-            self.encoding = None
-        else:
-            str_md5 = helper.md5_sum(content)
-            content_length = len(content)
-            self.headers[self.content_md5] = str_md5
-            self.headers[self.content_length] = str(content_length)
-            self.headers[self.content_type] = format
-            self.encoding = encoding
     def handle_request(self, context):
-        http_request = context.http_request
-        body_params = context.api_request.get_body_params()
-        if body_params:
-            body = urlencode(body_params)
-            http_request.set_content(body, "utf-8", 'application/x-www-form-urlencoded')
-        context.http_request = http_request
+        self.do_request(context)
 
     def handle_response(self, context):
-        self.do_request(context)
+        pass
 
     @staticmethod
     def do_request(context):

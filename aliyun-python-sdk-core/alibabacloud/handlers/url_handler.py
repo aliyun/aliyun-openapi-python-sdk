@@ -21,6 +21,7 @@ class URLHandler(RequestHandler):
     处理http_request的url的内容,便于后续
     """
     def handle_request(self, context):
+        # pass
         http_request = context.http_request
         api_request = context.api_request
         access_key_id = context.credentials.access_key_id if context.credentials.access_key_id else ''
@@ -31,6 +32,10 @@ class URLHandler(RequestHandler):
                                          access_key_secret)
         http_request.url = signed_url
         context.http_request = http_request
+
+        # params = urlencode(context.http_request.parameters)
+        # url = '%s?%s' % (url, params)
+        # print(url)
 
     def handle_response(self, context):
         # context 实际是http_request

@@ -35,3 +35,8 @@ class AccessKeySigner(Signer):
             request.get_url_params()
         signature = request.get_signed_signature(region_id, cred.access_key_id)
         return signature
+        # 解耦
+        # from aliyunsdkcore.auth.composer.rpc_signature_composer1 import RPC
+        # signer = RPC(access_key_credential)
+        # parameters = signer.canonicalized_query_string(request)
+        # return parameters

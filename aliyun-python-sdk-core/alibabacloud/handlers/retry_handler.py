@@ -58,7 +58,6 @@ class RetryHandler(RequestHandler):
                 retry_policy_context
             )
 
-
     @staticmethod
     def _add_request_client_token(request):
         if hasattr(request, "set_ClientToken") and hasattr(request, "get_ClientToken"):
