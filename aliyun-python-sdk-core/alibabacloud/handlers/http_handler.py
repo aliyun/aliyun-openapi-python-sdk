@@ -53,8 +53,7 @@ class HttpHandler(RequestHandler):
 
             # ignore the warning-InsecureRequestWarning
             urllib3.disable_warnings()
-            # TODO fixed the retry flag
-            context.retry_flag = False
+
             try:
                 response = s.send(prepped, proxies=http_request.proxy,
                                   timeout=http_request.timeout,
