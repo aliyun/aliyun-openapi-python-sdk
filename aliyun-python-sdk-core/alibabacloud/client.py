@@ -24,7 +24,7 @@ from alibabacloud.handlers.log_handler import LogHandler
 from alibabacloud.handlers.retry_handler import RetryHandler
 from alibabacloud.handlers.server_error_handler import ServerErrorHandler
 from alibabacloud.handlers.http_handler import HttpHandler
-from alibabacloud.credentials.credentials_provider import DefaultCredentialsProvider
+from alibabacloud.credentials.provider import DefaultCredentialsProvider
 from alibabacloud.endpoint.default_endpoint_resolver import DefaultEndpointResolver
 DEFAULT_HANDLERS = [
     PrepareHandler,
@@ -53,19 +53,26 @@ class ClientConfig:
     处理client级别的所有的参数
     """
 
+    ENV_NAME_FOR_CONFIG_FILE = 'ALIBABA_CLOUD_CONFIG_FILE'
+    DEFAULT_NAME_FOR_CONFIG_FILE = ['~/.alibabacloud/config']
+
     def __init__(self, access_key_id=None, access_key_secret=None, bearer_token=None,
                  secret_token=None, region_id=None,
-                 enable_retry_policy=None, max_retry_times=None, user_agent=None,
+                 max_retry_times=None, user_agent=None,
                  extra_user_agent=None, enable_https=None, http_port=None, https_port=None,
                  connection_timeout=None, read_timeout=None, enable_http_debug=None,
                  http_proxy=None, https_proxy=None, enable_stream_logger=None,
-                 profile_name=None, config_file=None, auto_retry=True):
+                 profile_name=None, config_file=None, enable_retry=True, endpoint=None):
+
         # credentials部分会用到
         self.access_key_id = access_key_id
         self.access_key_secret = access_key_secret
         self.secret_token = secret_token
         self.bearer_token = bearer_token
         self.region_id = region_id
+        self.enable_retry = enable_retry
+        self.max_retry_times = max_retry_times
+        self.endpoint = endpoint
 
         # user-agent
         self.user_agent = user_agent
@@ -82,8 +89,7 @@ class ClientConfig:
         # credentials 的profile
         self.profile_name = profile_name
         self.config_file = config_file
-        # self.enable_http_debug = enable_http_debug  # http-debug 只从环境变量获取，不设置开关
-        self.http_debug = None
+        self.enable_http_debug = enable_http_debug  # http-debug 只从环境变量获取，不设置开关
         # proxy provider两个： client  env
         self.http_proxy = http_proxy
         self.https_proxy = https_proxy
@@ -91,17 +97,6 @@ class ClientConfig:
             'http': self.http_proxy,
             'https': self.https_proxy,
         }
-        # retry
-        self._auto_retry = auto_retry
-        import aliyunsdkcore.retry.retry_policy as retry_policy
-        # retry
-        self.enable_retry_policy = enable_retry_policy
-        self.max_retry_times = max_retry_times
-        if self._auto_retry:
-            self.retry_policy = retry_policy.get_default_retry_policy(
-                max_retry_times=self.max_retry_times)
-        else:
-            self.retry_policy = retry_policy.NO_RETRY_POLICY
 
     def read_from_env(self):
         # 从环境变量读取一定量的数据
@@ -111,17 +106,15 @@ class ClientConfig:
                 setattr(self, item.lower(), os.environ.get(item) or os.environ.get(item.lower()))
 
     def read_from_profile(self):
-        ENV_NAME_FOR_CONFIG_FILE = 'ALIBABA_CLOUD_CONFIG_FILE'
-        DEFAULT_NAME_FOR_CONFIG_FILE = ['/etc/.alibabacloud/config',
-                                        '~/alibabacloud/config']
+
         # TODO read from profile
         from alibabacloud.utils.ini_helper import load_config
         profile = {}
         loaded_config = {}
         if self.config_file is None:
-            if ENV_NAME_FOR_CONFIG_FILE in os.environ:
+            if self.ENV_NAME_FOR_CONFIG_FILE in os.environ:
 
-                env_config_file_path = os.environ.get(ENV_NAME_FOR_CONFIG_FILE)
+                env_config_file_path = os.environ.get(self.ENV_NAME_FOR_CONFIG_FILE)
                 if env_config_file_path is None or len(env_config_file_path) == 0:
                     # 默认配置不存在
                     return None
@@ -129,7 +122,7 @@ class ClientConfig:
                 loaded_config = load_config(full_path)
                 profile = loaded_config.get(self.profile_name, {})
             else:
-                potential_locations = DEFAULT_NAME_FOR_CONFIG_FILE
+                potential_locations = self.DEFAULT_NAME_FOR_CONFIG_FILE
                 for filename in potential_locations:
                     try:
                         loaded_config = load_config(filename)
@@ -161,54 +154,59 @@ def get_merged_client_config(config):
 
 class AlibabaCloudClient:
 
-    def __init__(self, client_config, credentials_provider=DefaultCredentialsProvider):
+    def __init__(self, client_config, credentials_provider):
         self.config = get_merged_client_config(client_config)
-        self.credentials_provider = DefaultCredentialsProvider
+        self.credentials_provider = credentials_provider
         self.handlers = DEFAULT_HANDLERS
         self.logger = None  # TODO initialize
         # endpoint_resolver阶段需要
         self.endpoint_resolver = DefaultEndpointResolver(self)  # TODO initialize
-        # self.product_code = None
-        # self.location_service_code = None
-        # self.location_service_type = None
-        # self.location_endpoint_type = None
+        self.product_code = None
+        self.location_service_code = None
+        self.location_service_type = None
+        self.location_endpoint_type = None
+        import aliyunsdkcore.retry.retry_policy as retry_policy
+        # retry
+        if self.config.enable_retry:
+            self.retry_policy = retry_policy.get_default_retry_policy(
+                max_retry_times=self.config.max_retry_times)
+        else:
+            self.retry_policy = retry_policy.NO_RETRY_POLICY
 
-    def handle_request(self, api_request, request_handlers=None, context=None):
-        # TODO handle different types of request
-        from aliyunsdkcore.request import CommonRequest
-        if isinstance(api_request, CommonRequest):
-            api_request.trans_to_acs_request()
+    def _handle_request(self, api_request, _config=None, _raise_exception=True):
 
-        if not context:
-            context = RequestContext()
-            context.api_request = api_request
-            from .request import HTTPRequest
-            context.http_request = HTTPRequest()
+        context = RequestContext()
+        context.api_request = api_request
+        from .request import HTTPRequest
+        context.http_request = HTTPRequest()
+        if _config:
+            # For backward compatibility
+            context.config = _config
+        else:
             context.config = self.config
-            context.credentials_provider = self.credentials_provider
-            context.product_code = api_request.get_product()
-            context.location_service_code = api_request.get_location_service_code()
-            context.location_endpoint_type = api_request.get_location_endpoint_type()
-            context.endpoint_resolver = self.endpoint_resolver
-            # credentials 是和请求解耦的，从请求的流程来看，不应该放在handle当中
-            context.credentials = self.get_credentials()
+        context.client = self
 
-        if not request_handlers:
-            request_handlers = self.handlers
-        for i in range(len(request_handlers)):
-            request_handlers[i]().handle_request(context)
+        handler_index = 0
 
-        for i in reversed(range(len(request_handlers))):
-            request_handlers[i]().handle_response(context)
-            if context.retry_flag:
-                time.sleep(context.retry_backoff / 1000.0)
-                self.handle_request(api_request,
-                                    request_handlers=request_handlers[i:],
-                                    context=context)
-        if context.exception:
-            return context.exception
+        while True:
 
-        return context.http_response.content
+            for i in range(len(self.handlers[handler_index:])):
+                self.handlers[i]().handle_request(context)
+
+            for i in reversed(range(len(self.handlers[handler_index:]))):
+                self.handlers[i]().handle_response(context)
+                if context.retry_flag:
+                    time.sleep(context.retry_backoff)
+                    handler_index = i
+                    context.retry_flag = False
+                    continue
+
+            break
+
+        if context.exception and _raise_exception:
+            raise context.exception
+
+        return context
 
     def get_credentials(self):
         credentials_provider = self.credentials_provider({
@@ -228,3 +226,24 @@ class AlibabaCloudClient:
         return credentials
 
 
+class ECSClient(AlibabaCloudClient):
+
+    def __init__(self):
+        self.product = 'Ecs'
+        self.location_service_code = 'ecs'
+        self.location_endpoint_type = 'OpenAPI'
+
+    def create_instance(self, **params):
+        api_request = APIRequest(**params)
+        return self._handle_request(api_request).result
+
+    def delete_instance(self, **params):
+        api_request = APIRequest(**params)
+        return self._handle_request(api_request).result
+
+
+class OTSClient(AlibabaCloudClient):
+
+    def create_table(self, **params):
+        api_request = APIRequest(**params)
+        return self._handle_request(api_request).result

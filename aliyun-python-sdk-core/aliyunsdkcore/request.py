@@ -35,6 +35,8 @@ from aliyunsdkcore.acs_exception import error_code
 from aliyunsdkcore.compat import ensure_string
 from aliyunsdkcore.vendored.requests.structures import CaseInsensitiveDict
 
+from alibabacloud.client import ClientConfig
+
 """
 Acs request model.
 """
@@ -108,6 +110,10 @@ class AcsRequest:
         self.string_to_sign = ''
         self._request_connect_timeout = None
         self._request_read_timeout = None
+
+        self._new_style_config = ClientConfig()
+        if self._protocol_type == protocol_type.HTTPS:
+            self._new_style_config.enable_https = True
 
     def add_query_param(self, k, v):
         self._params[k] = v
@@ -255,19 +261,19 @@ class AcsRequest:
         pass
 
     def set_endpoint(self, endpoint):
-        self.endpoint = endpoint
+        self._new_style_config.endpoint = endpoint
 
     def get_connect_timeout(self):
-        return self._request_connect_timeout
+        return self._new_style_config.connection_timeout
 
     def set_connect_timeout(self, connect_timeout):
-        self._request_connect_timeout = connect_timeout
+        self._new_style_config.connection_timeout = connect_timeout
 
     def get_read_timeout(self):
-        return self._request_read_timeout
+        return self._new_style_config.read_timeout
 
     def set_read_timeout(self, read_timeout):
-        self._request_read_timeout = read_timeout
+        self._new_style_config.read_timeout = read_timeout
 
 
 class RpcRequest(AcsRequest):
