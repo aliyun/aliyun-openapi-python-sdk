@@ -27,7 +27,7 @@ from aliyunsdkcore.http import protocol_type
 from aliyunsdkcore.http import method_type as mt
 from aliyunsdkcore.http import format_type as ft
 from aliyunsdkcore.auth.composer import rpc_signature_composer as rpc_signer
-from aliyunsdkcore.auth.composer import roa_signature_composer1 as roa_signer
+from aliyunsdkcore.auth.composer import composer as roa_signer
 from aliyunsdkcore.utils.parameter_helper import md5_sum
 from aliyunsdkcore.auth.algorithm import sha_hmac1
 from aliyunsdkcore.acs_exception import exceptions
@@ -426,7 +426,7 @@ class RoaRequest(AcsRequest):
             self.add_header(
                 'Content-MD5', md5_sum(self.get_content()))
         if 'RegionId' not in sign_params.keys():
-            sign_params['RegionId'] = region_id
+            # sign_params['RegionId'] = region_id
             self.add_header('x-acs-region-id', str(region_id))
 
         signed_headers = roa_signer.get_signed_headers(

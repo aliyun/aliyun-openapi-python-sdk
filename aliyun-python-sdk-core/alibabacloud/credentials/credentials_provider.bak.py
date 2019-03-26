@@ -173,9 +173,10 @@ class RamRoleArnFetcher(object):
             request.add_query_param('DurationSeconds', self._SESSION_PERIOD)
             request.set_accept_format('JSON')
 
-            access_key_credential = AccessKeyCredential(self._credential.sts_access_key_id,
+            access_key_credential = AccessKeyCredentials(self._credential.sts_access_key_id,
                                                         self._credential.sts_access_key_secret)
-            signer = AccessKeySigner(access_key_credential)
+            from alibabacloud.signer.signer import Signer
+            signer = Signer(access_key_credential)
 
             status, headers, body, exception = self._doAction(request, signer)
             if status == 200:

@@ -40,10 +40,10 @@ class HttpHandler(RequestHandler):
         with Session() as s:
             current_protocol = 'http://' if http_request.protocol.lower() == 'http' else 'https://'
             # TODO : 最终拼接的是啥，还需要调查下
-            url = current_protocol + context.endpoint + http_request.url
+            url = current_protocol + context.endpoint + http_request.params
             if http_request.port != 80 or http_request.port != 443:
                 url = current_protocol + context.endpoint + ":" + \
-                      str(http_request.port) + http_request.url
+                      str(http_request.port) + http_request.params
 
             req = Request(method=http_request.method, url=url,
                           data=http_request.body,

@@ -13,37 +13,30 @@
 # limitations under the License.
 
 from alibabacloud.handlers import RequestHandler
-from alibabacloud.credentials.credentials import AccessKeyCredentials
-from alibabacloud.credentials.credentials import SecurityCredentials
-from alibabacloud.credentials.credentials import BearTokenCredentials
-from alibabacloud.signer.access_key_signer import AccessKeySigner
-from alibabacloud.signer.security_signer import SecuritySigner
-from alibabacloud.signer.bearer_token_signer import BearerTokenSigner  # FIXME: bear -> bearer
+
+from alibabacloud.signer import Signer
 
 
 class SignerHandler(RequestHandler):
 
-    _signer_map = {
-        "AccessKeyCredentials": AccessKeySigner(),
-        "SecurityCredentials": SecuritySigner(),
-        "BearTokenCredentials": BearerTokenSigner()
-    }
+    # _signer_map = {
+    #     "AccessKeyCredentials": AccessKeySigner(),
+    #     "SecurityCredentials": SecuritySigner(),
+    #     "BearTokenCredentials": BearerTokenSigner()
+    # }
 
     # 只实现了signature
     def handle_request(self, context):
         http_request = context.http_request
 
         credentials = context.credentials
-        signer = self._signer_map[credentials.__class__.__name__]
+        # signer = self._signer_map[credentials.__class__.__name__]
 
-        signature = signer.sign(credentials, context)
+        signature, headers, params = Signer().sign(credentials, context)
         # TODO fix other headers
         http_request.signature = signature
-        ############
-        # parameters = signer.sign(credentials, context)
-        # # 获取请求参数parameters
-        # signature = parameters['Signature']
-        # # TODO fix other headers
-        # http_request.signature = signature
-        #
-        # context.http_request.parameters = parameters
+        http_request.headers = headers
+        http_request.params = params
+
+    def handle_response(self, context):
+        pass

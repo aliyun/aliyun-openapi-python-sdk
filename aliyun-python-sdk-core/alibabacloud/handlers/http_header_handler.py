@@ -30,18 +30,19 @@ class HttpHeaderHandler(RequestHandler):
 
     def handle_request(self, context):
         api_request = context.api_request
-        access_key_id = context.credentials.access_key_id if context.credentials.access_key_id \
-            else ''
-        access_key_secret = context.credentials.access_key_secret \
-            if context.credentials.access_key_secret else ''
-        signed_header = api_request.get_signed_header(context.config.region_id,
-                                                      access_key_id,
-                                                      access_key_secret)
-        headers = signed_header
+        # access_key_id = context.credentials.access_key_id if context.credentials.access_key_id \
+        #     else ''
+        # access_key_secret = context.credentials.access_key_secret \
+        #     if context.credentials.access_key_secret else ''
+        #
+        # signed_header = api_request.get_signed_header(context.config.region_id,
+        #                                               access_key_id,
+        #                                               access_key_secret)
+        headers = context.http_request.headers
         body_params = api_request.get_body_params()
         if body_params:
             body = urlencode(body_params)
-            headers = self.modify_http_body(signed_header, body, "utf-8",
+            headers = self.modify_http_body(headers, body, "utf-8",
                                             'application/x-www-form-urlencoded')
         context.http_request.headers = headers
 

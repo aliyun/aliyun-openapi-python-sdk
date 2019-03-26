@@ -29,7 +29,7 @@ from alibabacloud.endpoint.default_endpoint_resolver import DefaultEndpointResol
 DEFAULT_HANDLERS = [
     PrepareHandler,
     SignerHandler,  # 获取Signature
-    URLHandler,  # 获取url
+    # URLHandler,  # 获取url
     HttpHeaderHandler,  # 获取签名的header
     TimeoutConfigReader,  # 获取timeout
     EndpointHandler,  # 获取endpoint
@@ -216,7 +216,7 @@ class AlibabaCloudClient:
             'access_key_secret': self.config.access_key_secret,
             'secret_token': self.config.secret_token,
             'bearer_token': self.config.bearer_token,
-            'profile_name': 'client5'
+            'profile_name': 'client2'
         })
         credentials = credentials_provider.load_credentials()
         if credentials is None:
