@@ -18,43 +18,29 @@
 # under the License.
 
 # coding=utf-8
-import time
+import os
 import warnings
-import json
 import logging
-import jmespath
-import copy
 import platform
 
-import aliyunsdkcore
-from aliyunsdkcore.vendored.six.moves.urllib.parse import urlencode
-from aliyunsdkcore.vendored.requests import codes
-
-from aliyunsdkcore.acs_exception.exceptions import ClientException
-from aliyunsdkcore.acs_exception.exceptions import ServerException
-from aliyunsdkcore.acs_exception import error_code, error_msg
-from aliyunsdkcore.http.http_response import HttpResponse
-from aliyunsdkcore.request import AcsRequest
-from aliyunsdkcore.http import format_type
-from aliyunsdkcore.auth.signers.signer_factory import SignerFactory
-from aliyunsdkcore.request import CommonRequest
-
-from aliyunsdkcore.endpoint.resolver_endpoint_request import ResolveEndpointRequest
 from aliyunsdkcore.endpoint.default_endpoint_resolver import DefaultEndpointResolver
-import aliyunsdkcore.retry.retry_policy as retry_policy
-from aliyunsdkcore.retry.retry_condition import RetryCondition
-from aliyunsdkcore.retry.retry_policy_context import RetryPolicyContext
 import aliyunsdkcore.utils
-import aliyunsdkcore.utils.parameter_helper
 import aliyunsdkcore.utils.validation
 from aliyunsdkcore.vendored.requests.structures import CaseInsensitiveDict
 from aliyunsdkcore.vendored.requests.structures import OrderedDict
+from aliyunsdkcore.auth.credentials import AccessKeyCredential, StsTokenCredential
+from aliyunsdkcore.auth.credentials import RamRoleArnCredential, EcsRamRoleCredential
+from aliyunsdkcore.auth.credentials import RsaKeyPairCredential
 
 import alibabacloud.client
+from alibabacloud.exception import ClientException
 from alibabacloud.client import ClientConfig
 from alibabacloud.client import AlibabaCloudClient  # New Style Client
 from alibabacloud.endpoint.default_endpoint_resolver import DefaultEndpointResolver
-from alibabacloud.credentials import AccessKeyCredentials
+from alibabacloud.credentials import AccessKeyCredentials, SecurityCredentials
+from alibabacloud.credentials.provider import StaticCredentialsProvider
+from alibabacloud.credentials.provider import RamRoleCredentialsProvider
+from alibabacloud.credentials.provider import InstanceProfileCredentialsProvider
 
 """
 Acs default client module.
@@ -112,21 +98,46 @@ class AcsClient:
 
         self._loaded_new_clients = {}
         self._endpoint_resolver = DefaultEndpointResolver(self)
+        self._credentials_provider = self._init_credentials_provider(ak, secret, credential)
+
+    def _init_credentials_provider(self, access_key_id, access_key_secret, legacy_credentials):
 
         # get credentials provider
-        access_key_id_in_env = os.environ.get('ALIYUN_ACCESS_KEY_ID')
-        access_key_secret_in_env = os.environ.get('ALIYUN_ACCESS_KEY_SECRET')
+        access_key_id = os.environ.get('ALIYUN_ACCESS_KEY_ID') or access_key_id
+        access_key_secret = os.environ.get('ALIYUN_ACCESS_KEY_SECRET') or access_key_secret
 
-        if ak and secret:
-            credentials = AccessKeyCredentials(ak, secret)
-            self._credentials_provider = StaticCredentialsProvider(credentials)
-        elif access_key_id_in_env and access_key_secret_in_env:
-            credentials = AccessKeyCredentials(access_key_id_in_env, access_key_secret_in_env)
-            self._credentials_provider = StaticCredentialsProvider(credentials)
-        elif credential:
-            pass
+        if access_key_id and access_key_secret:
+            credentials = AccessKeyCredentials(access_key_id, access_key_secret)
+            return StaticCredentialsProvider(credentials)
 
-        self._credentials_provider = None
+        elif legacy_credentials:
+            if isinstance(legacy_credentials, AccessKeyCredential):
+                return StaticCredentialsProvider(AccessKeyCredentials(
+                    legacy_credentials.access_key_id,
+                    legacy_credentials.access_key_secret,
+                ))
+            elif isinstance(legacy_credentials, StsTokenCredential):
+                return StaticCredentialsProvider(SecurityCredentials(
+                    legacy_credentials.sts_access_key_id,
+                    legacy_credentials.sts_access_key_secret,
+                    legacy_credentials.sts_token,
+                ))
+            elif isinstance(legacy_credentials, RamRoleArnCredential):
+                return RamRoleCredentialsProvider(
+                    AccessKeyCredentials(
+                        legacy_credentials.sts_access_key_id,
+                        legacy_credentials.sts_access_key_secret,
+                    ),
+                    legacy_credentials.role_arn,
+                    legacy_credentials.session_role_name,
+                )
+            elif isinstance(legacy_credentials, EcsRamRoleCredential):
+                return InstanceProfileCredentialsProvider(legacy_credentials.role_name)
+            elif isinstance(legacy_credentials, RsaKeyPairCredential):
+                raise ClientException("Sorry, RsaKeyPairCredential are no longer supported.")
+            else:
+                raise ClientException("{0} is not a valid credentials type.".format(
+                    legacy_credentials.__class__.__name__))
 
     def get_region_id(self):
         return self._new_style_config.region_id
