@@ -21,7 +21,7 @@ from aliyunsdkcore.vendored.six.moves.urllib.parse import urlencode
 import aliyunsdkcore
 
 # prepare header
-def user_agent_header():
+def _user_agent_header():
     base = '%s (%s %s;%s)' \
            % ('AlibabaCloud',
               platform.system(),
@@ -31,7 +31,7 @@ def user_agent_header():
     return base
 
 
-def default_user_agent():
+def _default_user_agent():
     default_agent = OrderedDict()
     default_agent['Python'] = platform.python_version()
     # default_agent['Core'] = __import__('aliyunsdkcore').__version__
@@ -42,7 +42,7 @@ def default_user_agent():
     return CaseInsensitiveDict(default_agent)
 
 
-def handle_extra_agent(client_user_agent, api_request):
+def _handle_extra_agent(client_user_agent, api_request):
     # http_request_agent = http_request.http_request_user_agent()
     #
     # if client_user_agent is None:
@@ -58,7 +58,7 @@ def handle_extra_agent(client_user_agent, api_request):
     return client_user_agent
 
 
-def merge_user_agent(default_agent, extra_agent):
+def _merge_user_agent(default_agent, extra_agent):
     if default_agent is None:
         return extra_agent
 
@@ -71,12 +71,12 @@ def merge_user_agent(default_agent, extra_agent):
     return user_agent
 
 
-def modify_user_agent(client_user_agent, api_request):
-    base = user_agent_header()  # 默认的user-agent 的头部
-    extra_agent = handle_extra_agent(client_user_agent, api_request)  # client 和http_request的UA
-    default_agent = default_user_agent()  # 默认的UA
+def _modify_user_agent(client_user_agent, api_request):
+    base = _user_agent_header()  # 默认的user-agent 的头部
+    extra_agent = _handle_extra_agent(client_user_agent, api_request)  # client 和http_request的UA
+    default_agent = _default_user_agent()  # 默认的UA
     # 合并默认的UA 和extra_UA
-    user_agent = merge_user_agent(default_agent, extra_agent)
+    user_agent = _merge_user_agent(default_agent, extra_agent)
     for key, value in user_agent.items():
         base += ' %s/%s' % (key, value)
     return base
@@ -105,7 +105,7 @@ class PrepareHandler(RequestHandler):
             api_request.set_content_type(format_type.APPLICATION_OCTET_STREAM)
             http_request.body = api_request.get_content()
         # api_request的ua
-        user_agent = modify_user_agent(context.config.user_agent, api_request)
+        user_agent = _modify_user_agent(context.config.user_agent, api_request)
         # api_request.headers['User-Agent'] = user_agent
         # # api_request的extra header
         # api_request.headers['x-sdk-client'] = 'python/2.0.0'
@@ -122,8 +122,8 @@ class PrepareHandler(RequestHandler):
         if http_request.protocol == 'https':
             http_request.port = 443
 
-        context.api_request = api_request
-        context.http_request = http_request
+        # context.api_request = api_request
+        # context.http_request = http_request
 
     def handle_response(self, context):
         pass

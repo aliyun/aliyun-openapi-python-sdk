@@ -2,9 +2,8 @@
 
 from tests import unittest
 
-from mock import MagicMock, patch
-from aliyunsdkcore.utils import parameter_helper as helper
-from aliyunsdkcore.auth.composer.roa_signature_composer1 \
+from mock import patch
+from alibabacloud.signer.composer \
     import get_url, get_signature, get_signature_headers, compose_string_to_sign, \
     build_canonical_headers, refresh_sign_parameters
 

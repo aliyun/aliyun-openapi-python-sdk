@@ -16,7 +16,7 @@ import jmespath
 import logging
 
 import aliyunsdkcore.utils
-import aliyunsdkcore.utils.validation as validation
+import alibabacloud.utils.validation as validation
 from aliyunsdkcore.acs_exception.exceptions import ClientException, ServerException
 import aliyunsdkcore.acs_exception.error_code as error_code
 

@@ -1,37 +1,38 @@
 # coding=utf-8
-
-
+import abc
 import hashlib
 import hmac
 
 from aliyunsdkcore.compat import ensure_string
 from aliyunsdkcore.compat import ensure_bytes
 from aliyunsdkcore.compat import b64_encode_bytes
+from aliyunsdkcore.vendored.six import add_metaclass
 
 
-def get_sign_string(source, secret):
-    source = ensure_bytes(source)
-    secret = ensure_bytes(secret)
-    h = hmac.new(secret, source, hashlib.sha1)
-    signature = ensure_string(b64_encode_bytes(h.digest()).strip())
-    return signature
+@add_metaclass(abc.ABCMeta)
+class Algorithm:
+
+    @abc.abstractmethod
+    def sign_string(self, source, secret):
+        pass
+
+    @abc.abstractmethod
+    def signer_name(self):
+        pass
+
+    @abc.abstractmethod
+    def signer_version(self):
+        pass
+
+    @abc.abstractmethod
+    def signer_type(self):
+        pass
 
 
-def get_signer_name():
-    return "HMAC-SHA1"
-
-
-def get_signer_version():
-    return "1.0"
-
-
-def get_signer_type():
-    return ""
-
-
-class ShaHmac1:
+class ShaHmac1(Algorithm):
 
     def sign_string(self, source, secret):
+
         source = ensure_bytes(source)
         secret = ensure_bytes(secret)
         h = hmac.new(secret, source, hashlib.sha1)
@@ -51,9 +52,9 @@ class ShaHmac1:
         return ""
 
 
-class ShaHmac256:
+class ShaHmac256(Algorithm):
 
-    def get_sign_string(self, source, access_secret):
+    def sign_string(self, source, access_secret):
         if platform.system() != "Windows":
             from Crypto.Signature import PKCS1_v1_5
             from Crypto.Hash import SHA256
@@ -85,7 +86,7 @@ class ShaHmac256:
         return "PRIVATEKEY"
 
 
-class BearToken:
+class NoHandle(Algorithm):
 
     def sign_string(self, source, secret):
         return ""
@@ -95,9 +96,9 @@ class BearToken:
         return ""
 
     @property
-    def get_signer_version(self):
+    def signer_version(self):
         return "1.0"
 
     @property
-    def get_signer_type(self):
+    def signer_type(self):
         return "BEARERTOKEN"

@@ -30,6 +30,7 @@ class URLHandler(RequestHandler):
         signed_url = api_request.get_url(context.config.region_id,
                                          access_key_id,
                                          access_key_secret)
+        print(2222222222, signed_url)
         http_request.url = signed_url
         context.http_request = http_request
 

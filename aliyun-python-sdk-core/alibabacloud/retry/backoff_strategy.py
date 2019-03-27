@@ -13,7 +13,7 @@
 # limitations under the License.
 
 import random
-from aliyunsdkcore.retry.retry_condition import RetryCondition
+from alibabacloud.retry.retry_condition import RetryCondition
 
 
 class BackoffStrategy(object):
@@ -63,9 +63,9 @@ class JitteredExponentialBackoffStrategy(ExponentialBackoffStrategy):
 class DefaultMixedBackoffStrategy(BackoffStrategy):
 
     # in milliseconds
-    SDK_DEFAULT_BASE_DELAY = 100
-    SDK_DEFAULT_TROTTLED_BASE_DELAY = 500
-    SDK_DEFAULT_MAX_BACKOFF = 20 * 1000
+    SDK_DEFAULT_BASE_DELAY = 0.1
+    SDK_DEFAULT_TROTTLED_BASE_DELAY = 0.5
+    SDK_DEFAULT_MAX_BACKOFF = 20
 
     def __init__(self):
         self._default_backoff_strategy = ExponentialBackoffStrategy(

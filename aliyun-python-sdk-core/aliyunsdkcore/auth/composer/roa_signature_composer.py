@@ -1,25 +1,8 @@
-# Licensed to the Apache Software Foundation (ASF) under one
-# or more contributor license agreements.  See the NOTICE file
-# distributed with this work for additional information
-# regarding copyright ownership.  The ASF licenses this file
-# to you under the Apache License, Version 2.0 (the
-# "License"); you may not use this file except in compliance
-# with the License.  You may obtain a copy of the License at
-#
-#     http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing,
-# software distributed under the License is distributed on an
-# "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-# KIND, either express or implied.  See the License for the
-# specific language governing permissions and limitations
-# under the License.
-
 # coding=utf-8
 from aliyunsdkcore.vendored.six import iteritems
 from aliyunsdkcore.vendored.six.moves.urllib.parse import urlencode
 from aliyunsdkcore.auth.algorithm import sha_hmac1 as mac1
-from aliyunsdkcore.utils import parameter_helper as helper
+from alibabacloud.utils import parameter_helper as helper
 from aliyunsdkcore.http import format_type as FormatType
 
 
@@ -69,7 +52,9 @@ def compose_string_to_sign(
     if DATE in headers and headers[DATE] is not None:
         sign_to_string += headers[DATE]
     sign_to_string += HEADER_SEPARATOR
+
     uri = replace_occupied_parameters(uri_pattern, paths)
+
     sign_to_string += build_canonical_headers(headers, "x-acs-")
     sign_to_string += __build_query_string(uri, queries)
     return sign_to_string
@@ -119,7 +104,16 @@ def __build_query_string(uri, queries):
     return query_builder
 
 
-def get_signed_signature(queries, format, headers, uri_pattern, paths, method):
+def get_signature(
+        queries,
+        access_key,
+        secret,
+        format,
+        headers,
+        uri_pattern,
+        paths,
+        method,
+        signer=mac1):
     headers = refresh_sign_parameters(
         parameters=headers,
         format=format)
@@ -129,17 +123,35 @@ def get_signed_signature(queries, format, headers, uri_pattern, paths, method):
         headers=headers,
         uri_pattern=uri_pattern,
         paths=paths)
-
-    return sign_to_string
-
-
-def get_signed_headers(access_key, secret, headers, sign_to_string=None, signer=mac1):
     signature = signer.get_sign_string(sign_to_string, secret=secret)
+    return signature, sign_to_string
+
+
+def get_signature_headers(
+        queries,
+        access_key,
+        secret,
+        format,
+        headers,
+        uri_pattern,
+        paths,
+        method,
+        signer=mac1):
+    signature, sign_to_string = get_signature(
+        queries,
+        access_key,
+        secret,
+        format,
+        headers,
+        uri_pattern,
+        paths,
+        method,
+        signer)
     headers["Authorization"] = "acs " + str(access_key) + ":" + str(signature)
-    return headers
+    return headers, sign_to_string
 
 
-def get_signed_url(uri_pattern, queries, path_parameters):
+def get_url(uri_pattern, queries, path_parameters):
     url = ""
     url += replace_occupied_parameters(uri_pattern, path_parameters)
     if not url.endswith("?"):

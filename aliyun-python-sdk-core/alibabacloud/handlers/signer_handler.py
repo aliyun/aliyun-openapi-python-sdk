@@ -13,37 +13,56 @@
 # limitations under the License.
 
 from alibabacloud.handlers import RequestHandler
-from alibabacloud.credentials.credentials import AccessKeyCredentials
-from alibabacloud.credentials.credentials import SecurityCredentials
-from alibabacloud.credentials.credentials import BearTokenCredentials
-from alibabacloud.signer.access_key_signer import AccessKeySigner
-from alibabacloud.signer.security_signer import SecuritySigner
-from alibabacloud.signer.bearer_token_signer import BearerTokenSigner  # FIXME: bear -> bearer
+from alibabacloud.signer import Signer
+
+from alibabacloud.utils import parameter_helper as helper
+from aliyunsdkcore.vendored.six.moves.urllib.parse import urlencode
 
 
 class SignerHandler(RequestHandler):
+    content_md5 = "Content-MD5"
+    content_length = "Content-Length"
+    content_type = "Content-Type"
+    """
+    处理signature，headers,params
+    """
 
-    _signer_map = {
-        "AccessKeyCredentials": AccessKeySigner(),
-        "SecurityCredentials": SecuritySigner(),
-        "BearTokenCredentials": BearerTokenSigner()
-    }
-
-    # 只实现了signature
     def handle_request(self, context):
         http_request = context.http_request
+        api_request = context.api_request
 
-        credentials = context.credentials
-        signer = self._signer_map[credentials.__class__.__name__]
+        credentials = http_request.credentials
 
-        signature = signer.sign(credentials, context)
+        signature, headers, params = Signer().sign(credentials, context)
         # TODO fix other headers
         http_request.signature = signature
-        ############
-        # parameters = signer.sign(credentials, context)
-        # # 获取请求参数parameters
-        # signature = parameters['Signature']
-        # # TODO fix other headers
-        # http_request.signature = signature
-        #
-        # context.http_request.parameters = parameters
+        http_request.params = params
+        # modify headers
+        body_params = api_request.get_body_params()
+        if body_params:
+            body = urlencode(body_params)
+            headers = self._modify_http_body(headers, body, "utf-8",
+                                            'application/x-www-form-urlencoded')
+        context.http_request.headers = headers
+
+        http_request.headers = headers
+
+    def handle_response(self, context):
+        pass
+
+    def _modify_http_body(self, headers, body, encoding, format='RAW'):
+        # 有body_params ，就是 urlencode 结果的值
+        # 没有，就是request的
+        if body is None:
+            headers.pop(self.content_md5, None)
+            headers.pop(self.content_type, None)
+            headers.pop(self.content_length, None)
+        else:
+
+            str_md5 = helper.md5_sum(body)
+            content_length = len(body)
+            headers[self.content_md5] = str_md5
+            headers[self.content_length] = str(content_length)
+            headers[self.content_type] = format
+        return headers
+

@@ -18,38 +18,30 @@
 # under the License.
 
 # coding=utf-8
-import time
+import os
 import warnings
-import json
 import logging
-import jmespath
-import copy
 import platform
 
-import aliyunsdkcore
-from aliyunsdkcore.vendored.six.moves.urllib.parse import urlencode
-from aliyunsdkcore.vendored.requests import codes
-
-from aliyunsdkcore.acs_exception.exceptions import ClientException
-from aliyunsdkcore.acs_exception.exceptions import ServerException
-from aliyunsdkcore.acs_exception import error_code, error_msg
-from aliyunsdkcore.http.http_response import HttpResponse
-from aliyunsdkcore.request import AcsRequest
-from aliyunsdkcore.http import format_type
-from aliyunsdkcore.auth.signers.signer_factory import SignerFactory
-from aliyunsdkcore.request import CommonRequest
-
-from aliyunsdkcore.endpoint.resolver_endpoint_request import ResolveEndpointRequest
-from aliyunsdkcore.endpoint.default_endpoint_resolver import DefaultEndpointResolver
-import aliyunsdkcore.retry.retry_policy as retry_policy
-from aliyunsdkcore.retry.retry_condition import RetryCondition
-from aliyunsdkcore.retry.retry_policy_context import RetryPolicyContext
+# from aliyunsdkcore.endpoint.default_endpoint_resolver import DefaultEndpointResolver
 import aliyunsdkcore.utils
-import aliyunsdkcore.utils.parameter_helper
-import aliyunsdkcore.utils.validation
+import alibabacloud.utils.validation
 from aliyunsdkcore.vendored.requests.structures import CaseInsensitiveDict
 from aliyunsdkcore.vendored.requests.structures import OrderedDict
 
+from aliyunsdkcore.auth.credentials import AccessKeyCredential, StsTokenCredential
+from aliyunsdkcore.auth.credentials import RamRoleArnCredential, EcsRamRoleCredential
+from aliyunsdkcore.auth.credentials import RsaKeyPairCredential
+
+# from alibabacloud.exception import ClientException
+
+from alibabacloud.endpoint.default_endpoint_resolver import DefaultEndpointResolver
+from alibabacloud.credentials import AccessKeyCredentials, SecurityCredentials
+from alibabacloud.credentials.provider import StaticCredentialsProvider
+from alibabacloud.credentials.provider import RamRoleCredentialsProvider
+from alibabacloud.credentials.provider import InstanceProfileCredentialsProvider
+from alibabacloud.client import ClientConfig
+from alibabacloud.client import AlibabaCloudClient  # New Style Client
 
 """
 Acs default client module.
@@ -82,7 +74,8 @@ class AcsClient:
             private_key=None,
             session_period=3600,
             credential=None,
-            debug=False):
+            debug=False,
+            profile_name='default'):
         """
         constructor for AcsClient
         :param ak: String, access key id
@@ -93,57 +86,86 @@ class AcsClient:
         :return:
         """
 
-        self._max_retry_num = max_retry_time
-        self._auto_retry = auto_retry
-        self._ak = ak
-        self._secret = secret
-        self._region_id = region_id
-        self._user_agent = user_agent
-        self._port = port
-        self._connect_timeout = connect_timeout
-        self._read_timeout = timeout
-        self._extra_user_agent = {}
-        credential = {
-            'ak': ak,
-            'secret': secret,
-            'public_key_id': public_key_id,
-            'private_key': private_key,
-            'session_period': session_period,
-            'credential': credential,
-        }
-        self._signer = SignerFactory.get_signer(
-            credential, region_id, self._implementation_of_do_action, debug)
-        self._endpoint_resolver = DefaultEndpointResolver(self)
+        self._new_style_config = ClientConfig(
+            max_retry_times=max_retry_time,
+            enable_retry=auto_retry,
+            access_key_id=ak,
+            access_key_secret=secret,
+            region_id=region_id,
+            user_agent=user_agent,
+            http_port=port,
+            connection_timeout=connect_timeout,
+            read_timeout=timeout,
+            # add
+            profile_name=profile_name
+        )
 
-        if self._auto_retry:
-            self._retry_policy = retry_policy.get_default_retry_policy(
-                max_retry_times=self._max_retry_num)
-        else:
-            self._retry_policy = retry_policy.NO_RETRY_POLICY
+        self._loaded_new_clients = {}
+        self._endpoint_resolver = DefaultEndpointResolver(self)
+        self._credentials_provider = self._init_credentials_provider(ak, secret, credential)
+
+    def _init_credentials_provider(self, access_key_id, access_key_secret, legacy_credentials):
+
+        # get credentials provider
+        access_key_id = os.environ.get('ALIYUN_ACCESS_KEY_ID') or access_key_id
+        access_key_secret = os.environ.get('ALIYUN_ACCESS_KEY_SECRET') or access_key_secret
+
+        if access_key_id and access_key_secret:
+            credentials = AccessKeyCredentials(access_key_id, access_key_secret)
+            return StaticCredentialsProvider(credentials)
+
+        elif legacy_credentials:
+            if isinstance(legacy_credentials, AccessKeyCredential):
+                return StaticCredentialsProvider(AccessKeyCredentials(
+                    legacy_credentials.access_key_id,
+                    legacy_credentials.access_key_secret,
+                ))
+            elif isinstance(legacy_credentials, StsTokenCredential):
+                return StaticCredentialsProvider(SecurityCredentials(
+                    legacy_credentials.sts_access_key_id,
+                    legacy_credentials.sts_access_key_secret,
+                    legacy_credentials.sts_token,
+                ))
+            elif isinstance(legacy_credentials, RamRoleArnCredential):
+                return RamRoleCredentialsProvider(
+                    AccessKeyCredentials(
+                        legacy_credentials.sts_access_key_id,
+                        legacy_credentials.sts_access_key_secret,
+                    ),
+                    legacy_credentials.role_arn,
+                    legacy_credentials.session_role_name,
+                )
+            elif isinstance(legacy_credentials, EcsRamRoleCredential):
+                return InstanceProfileCredentialsProvider(legacy_credentials.role_name)
+            elif isinstance(legacy_credentials, RsaKeyPairCredential):
+                raise ClientException("Sorry, RsaKeyPairCredential are no longer supported.")
+            else:
+                raise ClientException("{0} is not a valid credentials type.".format(
+                    legacy_credentials.__class__.__name__))
 
     def get_region_id(self):
-        return self._region_id
+        return self._new_style_config.region_id
 
     def get_access_key(self):
-        return self._ak
+        return self._new_style_config.access_key_id
 
     def get_access_secret(self):
-        return self._secret
+        return self._new_style_config.access_key_secret
 
     def is_auto_retry(self):
-        return self._auto_retry
+        return self._new_style_config.enable_retry
 
     def get_max_retry_num(self):
-        return self._max_retry_num
+        return self._new_style_config.max_retry_times
 
     def get_user_agent(self):
-        return self._user_agent
+        return self._new_style_config.user_agent
 
     def set_region_id(self, region):
-        self._region_id = region
+        return self._new_style_config.region_id
 
     def set_max_retry_num(self, num):
-        self._max_retry_num = num
+        self._new_style_config.max_retry_times = num
 
     def set_auto_retry(self, flag):
         """
@@ -151,7 +173,7 @@ class AcsClient:
         :param flag: Booleans
         :return: None
         """
-        self._auto_retry = flag
+        self._new_style_config.enable_retry = flag
 
     def set_user_agent(self, agent):
         """
@@ -159,10 +181,12 @@ class AcsClient:
         :param agent:
         :return:
         """
-        self._user_agent = agent
+        self._new_style_config.user_agent = agent
 
     def append_user_agent(self, key, value):
-        self._extra_user_agent.update({key: value})
+        # TODO fix user agent
+        pass
+        # self._extra_user_agent.update({key: value})
 
     @staticmethod
     def user_agent_header():
@@ -195,7 +219,7 @@ class AcsClient:
         return CaseInsensitiveDict(client_user_agent)
 
     def get_port(self):
-        return self._port
+        return self._new_style_config.http_port
 
     def get_location_service(self):
         return None
@@ -228,252 +252,68 @@ class AcsClient:
         client_agent.update(request_agent)
         return client_agent
 
-    def _make_http_response(self, endpoint, request, read_timeout, connect_timeout,
-                            specific_signer=None):
-        body_params = request.get_body_params()
-        if body_params:
-            body = urlencode(body_params)
-            request.set_content(body)
-            request.set_content_type(format_type.APPLICATION_FORM)
-        elif request.get_content() and "Content-Type" not in request.get_headers():
-            request.set_content_type(format_type.APPLICATION_OCTET_STREAM)
-        method = request.get_method()
-
-        signer = self._signer if specific_signer is None else specific_signer
-        header, url = signer.sign(self._region_id, request)
-
-        base = self.user_agent_header()
-
-        extra_agent = self.handle_extra_agent(request)
-        default_agent = self.default_user_agent()
-        user_agent = self.merge_user_agent(default_agent, extra_agent)
-
-        for key, value in user_agent.items():
-            base += ' %s/%s' % (key, value)
-        header['User-Agent'] = base
-
-        header['x-sdk-client'] = 'python/2.0.0'
-
-        protocol = request.get_protocol_type()
-        response = HttpResponse(
-            endpoint,
-            url,
-            method,
-            header,
-            protocol,
-            request.get_content(),
-            self._port,
-            read_timeout=read_timeout,
-            connect_timeout=connect_timeout)
-        if body_params:
-            body = urlencode(request.get_body_params())
-            response.set_content(body, "utf-8", format_type.APPLICATION_FORM)
-        return response
-
-    def _implementation_of_do_action(self, request, signer=None):
-        if not isinstance(request, AcsRequest):
-            raise ClientException(
-                error_code.SDK_INVALID_REQUEST,
-                error_msg.get_msg('SDK_INVALID_REQUEST'))
-
-        # modify Accept-Encoding
-        request.add_header('Accept-Encoding', 'identity')
-
-        if isinstance(request, CommonRequest):
-            request.trans_to_acs_request()
-
-        if request.endpoint:
-            endpoint = request.endpoint
-        else:
-            endpoint = self._resolve_endpoint(request)
-
-        return self._handle_retry_and_timeout(endpoint, request, signer)
-
     def implementation_of_do_action(self, request, signer=None):
         # keep compatible
         warnings.warn(
             "implementation_of_do_action() method is deprecated",
             DeprecationWarning)
 
-        status, headers, body, exception = self._implementation_of_do_action(request, signer)
-        return status, headers, body
+        context = self._handle_request_in_new_style(request, raise_exception=False)
+        return (context.http_response.status, context.http_response.headers,
+                context.http_response.content)
 
-    def _add_request_client_token(self, request):
-        if hasattr(request, "set_ClientToken") and hasattr(request, "get_ClientToken"):
-            client_token = request.get_ClientToken()
-            if not client_token:
-                # ClientToken has not been set
-                client_token = aliyunsdkcore.utils.parameter_helper.get_uuid()  # up to 60 chars
-                request.set_ClientToken(client_token)
+    def _get_new_style_request(self, acs_request):
+        return acs_request
 
-    def _get_request_read_timeout(self, request):
-        # TODO: replace it with a timeout_handler
-        if request._request_read_timeout:
-            return request._request_read_timeout
+    def _get_new_style_config(self, acs_request):
+        self._new_style_config._update_config(acs_request._new_style_config)
 
-        # if self._timeout:
-        #     return self._timeout
-        if self._read_timeout:
-            return self._read_timeout
+        return self._new_style_config
 
-        if request.get_product() is None:
-            return DEFAULT_READ_TIMEOUT
-        path = '"{0}"."{1}"."{2}"'.format(request.get_product().lower(), request.get_version(),
-                                          request.get_action_name())
-        timeout = jmespath.search(path, _api_timeout_config_data)
-        if timeout is None:
-            return DEFAULT_READ_TIMEOUT
-        else:
-            aliyunsdkcore.utils.validation.assert_integer_positive(timeout, "timeout")
-            return max(timeout, DEFAULT_READ_TIMEOUT)
+        # return alibabacloud.client.get_merged_client_config([
+        #     self._new_style_config,
+        #     acs_request._new_style_config,
+        # ])
 
-    def _get_request_connect_timeout(self, request):
-        if request._request_connect_timeout:
-            return request._request_connect_timeout
+    def _get_new_style_client(self, acs_request):
+        key = acs_request.get_product()
+        key += '@' + acs_request.get_version()
+        key += '@' + acs_request.get_location_service_code()
+        key += '@' + acs_request.get_location_endpoint_type()
+        if key not in self._loaded_new_clients:
+            config = ClientConfig()
+            client = AlibabaCloudClient(
+                config,
+                credentials_provider=self._credentials_provider
+            )
+            client.location_service_code = acs_request.get_location_service_code()
+            client.location_endpoint_type = acs_request.get_location_service_code()
+            client.location_endpoint_type = acs_request.get_location_endpoint_type()
+            client.product_code = acs_request.get_product()
 
-        if self._connect_timeout:
-            return self._connect_timeout
+            self._loaded_new_clients[key] = client
+            self._loaded_new_clients[key].endpoint_resolver = self._endpoint_resolver
 
-        return DEFAULT_CONNECTION_TIMEOUT
+        return self._loaded_new_clients[key]
 
-    def _handle_retry_and_timeout(self, endpoint, request, signer):
-        # TODO: replace it with a retry_handler
-        # it's a temporary implementation. the long-term plan will be a group a normalized handlers
-        # which contains retry_handler and timeout_handler
-
-        # decide whether we should initialize a ClientToken for the request
-        retry_policy_context = RetryPolicyContext(request, None, 0, None)
-        if self._retry_policy.should_retry(retry_policy_context) & \
-                RetryCondition.SHOULD_RETRY_WITH_CLIENT_TOKEN:
-            self._add_request_client_token(request)
-
-        request_read_timeout = self._get_request_read_timeout(request)
-
-        request_connect_timeout = self._get_request_connect_timeout(request)
-
-        retries = 0
-
-        while True:
-
-            status, headers, body, exception = self._handle_single_request(endpoint,
-                                                                           request,
-                                                                           request_read_timeout,
-                                                                           request_connect_timeout,
-                                                                           signer)
-            retry_policy_context = RetryPolicyContext(request, exception, retries, status)
-            retryable = self._retry_policy.should_retry(retry_policy_context)
-            if retryable & RetryCondition.NO_RETRY:
-                break
-            logger.debug("Retry needed. Request:%s Retries :%d",
-                         request.get_action_name(), retries)
-            retry_policy_context.retryable = retryable
-            time_to_sleep = self._retry_policy.compute_delay_before_next_retry(retry_policy_context)
-            time.sleep(time_to_sleep / 1000.0)
-            retries += 1
-
-        if isinstance(exception, ClientException):
-            raise exception
-
-        return status, headers, body, exception
-
-    def _handle_single_request(self, endpoint, request, read_timeout, connect_timeout, signer):
-        http_response = self._make_http_response(endpoint, request, read_timeout, connect_timeout,
-                                                 signer)
-        params = copy.deepcopy(request.get_query_params())
-        params.pop('AccessKeyId', None)
-        logger.debug('Request received. Product:%s Endpoint:%s Params: %s',
-                     request.get_product(), endpoint, str(params))
-
-        # Do the actual network thing
-        try:
-            status, headers, body = http_response.get_response_object()
-        except IOError as e:
-
-            exception = ClientException(error_code.SDK_HTTP_ERROR, str(e))
-            logger.error("HttpError occurred. Host:%s SDK-Version:%s ClientException:%s",
-                         endpoint, aliyunsdkcore.__version__, str(exception))
-            return None, None, None, exception
-
-        exception = self._get_server_exception(status, body, endpoint, request.string_to_sign)
-        return status, headers, body, exception
-
-    @staticmethod
-    def _parse_error_info_from_response_body(response_body):
-        error_code_to_return = error_code.SDK_UNKNOWN_SERVER_ERROR
-        # TODO handle if response_body is too big
-        error_message_to_return = "ServerResponseBody: " + str(response_body)
-        try:
-            body_obj = json.loads(response_body)
-            if 'Code' in body_obj:
-                error_code_to_return = body_obj['Code']
-            if 'Message' in body_obj:
-                error_message_to_return = body_obj['Message']
-        except ValueError:
-            # failed to parse body as json format
-            logger.warning('Failed to parse response as json format. Response:%s', response_body)
-
-        return error_code_to_return, error_message_to_return
-
-    def _get_server_exception(self, http_status, response_body, endpoint, string_to_sign):
-        request_id = None
-
-        try:
-            body_obj = json.loads(response_body.decode('utf-8'))
-            request_id = body_obj.get('RequestId')
-        except (ValueError, TypeError, AttributeError):
-            # in case the response body is not a json string, return the raw
-            # data instead
-            logger.warning('Failed to parse response as json format. Response:%s', response_body)
-
-        if http_status < codes.OK or http_status >= codes.MULTIPLE_CHOICES:
-
-            server_error_code, server_error_message = self._parse_error_info_from_response_body(
-                response_body.decode('utf-8'))
-            if http_status == codes.BAD_REQUEST and (server_error_code == 'SignatureDoesNotMatch'
-                                                     or server_error_code == 'IncompleteSignature'):
-                if string_to_sign == server_error_message.split(':')[1]:
-                    server_error_code = 'InvalidAccessKeySecret'
-                    server_error_message = 'The AccessKeySecret is incorrect. ' \
-                                           'Please check your AccessKeyId and AccessKeySecret.'
-            exception = ServerException(
-                server_error_code,
-                server_error_message,
-                http_status=http_status,
-                request_id=request_id)
-
-            logger.error("ServerException occurred. Host:%s SDK-Version:%s ServerException:%s",
-                         endpoint, aliyunsdkcore.__version__, str(exception))
-
-            return exception
+    def _handle_request_in_new_style(self, acs_request, raise_exception=True):
+        api_request = self._get_new_style_request(acs_request)
+        config = self._get_new_style_config(acs_request)
+        new_style_client = self._get_new_style_client(acs_request)
+        context = new_style_client._handle_request(api_request, _config=config,
+                                                   _raise_exception=raise_exception)
+        return context
 
     def do_action_with_exception(self, acs_request):
-
-        # set server response format as json, because this function will
-        # parse the response so which format doesn't matter
-        acs_request.set_accept_format('JSON')
-        status, headers, body, exception = self._implementation_of_do_action(acs_request)
-
-        if exception:
-            raise exception
-        logger.debug('Response received. Product:%s Response-body: %s',
-                     acs_request.get_product(), body)
-        return body
-
-    def _resolve_endpoint(self, request):
-        resolve_request = ResolveEndpointRequest(
-            self._region_id,
-            request.get_product(),
-            request.get_location_service_code(),
-            request.get_location_endpoint_type(),
-        )
-        return self._endpoint_resolver.resolve(resolve_request)
+        context = self._handle_request_in_new_style(acs_request)
+        return context.http_response.content
 
     def do_action(self, acs_request):
         warnings.warn(
             "do_action() method is deprecated, please use do_action_with_exception() instead.",
             DeprecationWarning)
-        status, headers, body, exception = self._implementation_of_do_action(acs_request)
-        return body
+        context = self._handle_request_in_new_style(acs_request, raise_exception=False)
+        return context.http_response.content
 
     def get_response(self, acs_request):
         return self.implementation_of_do_action(acs_request)
@@ -481,24 +321,3 @@ class AcsClient:
     def add_endpoint(self, region_id, product_code, endpoint):
         self._endpoint_resolver.put_endpoint_entry(
             region_id, product_code, endpoint)
-
-    def set_stream_logger(self, log_level=logging.DEBUG, logger_name='aliyunsdkcore', stream=None,
-                          format_string=None):
-        log = logging.getLogger(logger_name)
-        log.setLevel(log_level)
-        ch = logging.StreamHandler(stream)
-        ch.setLevel(log_level)
-        if format_string is None:
-            format_string = self.LOG_FORMAT
-        formatter = logging.Formatter(format_string)
-        ch.setFormatter(formatter)
-        log.addHandler(ch)
-
-    def set_file_logger(self, path, log_level=logging.DEBUG, logger_name='aliyunsdkcore'):
-        log = logging.getLogger(logger_name)
-        log.setLevel(log_level)
-        fh = logging.FileHandler(path)
-        fh.setLevel(log_level)
-        formatter = logging.Formatter(self.LOG_FORMAT)
-        fh.setFormatter(formatter)
-        log.addHandler(fh)
