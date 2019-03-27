@@ -39,7 +39,9 @@ class ServerErrorHandler(RequestHandler):
 
                 server_error_code, server_error_message = self._parse_error_info_from_response_body(
                     response.text)
-                if response.status_code == codes.BAD_REQUEST and server_error_code == 'SignatureDoesNotMatch':
+                special_error_codes = ['IncompleteSignature', 'SignatureDoesNotMatch']
+                if response.status_code == codes.BAD_REQUEST and \
+                        server_error_code in special_error_codes:
                     if http_request.signature == server_error_message.split(':')[1]:
                         server_error_code = 'InvalidAccessKeySecret'
                         server_error_message = 'The AccessKeySecret is incorrect. ' \

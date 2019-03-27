@@ -50,3 +50,5 @@ class HTTPResponse:
         self.status_code = status_code
         self.headers = headers
         self.content = content
+
+http_request = HTTPRequest()

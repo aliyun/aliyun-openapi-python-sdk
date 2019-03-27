@@ -17,8 +17,7 @@ from alibabacloud.handlers import RequestContext
 from alibabacloud.handlers.prepare_handler import PrepareHandler
 from alibabacloud.handlers.credentials_handler import CredentialsHandler
 from alibabacloud.handlers.signer_handler import SignerHandler
-from alibabacloud.handlers.url_handler import URLHandler
-from alibabacloud.handlers.http_header_handler import HttpHeaderHandler
+
 from alibabacloud.handlers.timeout_config_reader import TimeoutConfigReader
 from alibabacloud.handlers.endpoint_handler import EndpointHandler
 from alibabacloud.handlers.log_handler import LogHandler
@@ -33,9 +32,8 @@ from alibabacloud.endpoint.default_endpoint_resolver import DefaultEndpointResol
 DEFAULT_HANDLERS = [
     PrepareHandler,
     CredentialsHandler,
-    SignerHandler,  # 获取Signature
-    # URLHandler,  # 获取url
-    HttpHeaderHandler,  # 获取签名的header
+    SignerHandler,  # 获取Signature,header,params
+    # HttpHeaderHandler,  # 获取签名的header
     TimeoutConfigReader,  # 获取timeout
     EndpointHandler,  # 获取endpoint
     LogHandler,
@@ -59,7 +57,7 @@ class ClientConfig:
     """
 
     ENV_NAME_FOR_CONFIG_FILE = 'ALIBABA_CLOUD_CONFIG_FILE'
-    DEFAULT_NAME_FOR_CONFIG_FILE = ['~/.alibabacloud/config']
+    DEFAULT_NAME_FOR_CONFIG_FILE = '~/.alibabacloud/config'
 
     def __init__(self, access_key_id=None, access_key_secret=None, bearer_token=None,
                  secret_token=None, region_id=None,
@@ -93,6 +91,7 @@ class ClientConfig:
         self.enable_stream_logger = enable_stream_logger
         # credentials 的profile
         self.profile_name = profile_name
+        # 读取配置文件
         self.config_file = config_file
         self.enable_http_debug = enable_http_debug  # http-debug 只从环境变量获取，不设置开关
         # proxy provider两个： client  env
@@ -105,36 +104,32 @@ class ClientConfig:
 
     def read_from_env(self):
         # 从环境变量读取一定量的数据
-        env_vars = ['HTTP_DEBUG', 'HTTPS_PROXY', 'HTTP_PROXY']
+        env_vars = ['HTTPS_PROXY', 'HTTP_PROXY']
         for item in env_vars:
             if getattr(self, item.lower()) is None:
                 setattr(self, item.lower(), os.environ.get(item) or os.environ.get(item.lower()))
 
-    def read_from_profile(self):
+        self.enable_http_debug = os.environ.get('DEBUG')
 
+    def read_from_profile(self):
+        profile = {}
         # TODO read from profile
         from alibabacloud.utils.ini_helper import load_config
-        profile = {}
-        loaded_config = {}
         if self.config_file is None:
+            # 没有指定file
             if self.ENV_NAME_FOR_CONFIG_FILE in os.environ:
 
                 env_config_file_path = os.environ.get(self.ENV_NAME_FOR_CONFIG_FILE)
-                if env_config_file_path is None or len(env_config_file_path) == 0:
+                if env_config_file_path is not None:
+                    full_path = os.path.expanduser(env_config_file_path)
+                    loaded_config = load_config(full_path)
+                    profile = loaded_config.get(self.profile_name, {})
+                else:
                     # 默认配置不存在
-                    return None
-                full_path = os.path.expanduser(env_config_file_path)
-                loaded_config = load_config(full_path)
-                profile = loaded_config.get(self.profile_name, {})
-            else:
-                potential_locations = self.DEFAULT_NAME_FOR_CONFIG_FILE
-                for filename in potential_locations:
-                    try:
-                        loaded_config = load_config(filename)
-                        break
-                    except Exception:
-                        continue
-                profile = loaded_config.get(self.profile_name, {})
+                    filename = self.DEFAULT_NAME_FOR_CONFIG_FILE
+                    loaded_config = load_config(filename)
+                    profile = loaded_config.get(self.profile_name, {})
+
         else:
             profile = load_config(self.config_file)
         
@@ -157,11 +152,9 @@ class ClientConfig:
 
 
 def get_merged_client_config(config):
-    # config.read_from_env()
-    # config.read_from_profile()
+    config.read_from_env()
+    config.read_from_profile()
     # config.read_from_default()
-
-    # for config in config_list:
 
     return config
 
@@ -180,10 +173,11 @@ class AlibabaCloudClient:
         # endpoint_resolver阶段需要
         self.endpoint_resolver = DefaultEndpointResolver(self)  # TODO initialize
         # TODO product_code 如何获取
-        self.product_code = 'ecs'
+        self.product_code = None
         self.location_service_code = None
-        self.location_service_type = 'ecs'
-        self.location_endpoint_type = 'openAPI'
+        self.location_service_type = None
+        self.location_endpoint_type = None
+
         import aliyunsdkcore.retry.retry_policy as retry_policy
         # retry
         if self.config.enable_retry:
@@ -193,7 +187,6 @@ class AlibabaCloudClient:
             self.retry_policy = retry_policy.NO_RETRY_POLICY
 
     def _handle_request(self, api_request, _config=None, _raise_exception=True):
-
         context = RequestContext()
         context.api_request = api_request
         from .request import HTTPRequest

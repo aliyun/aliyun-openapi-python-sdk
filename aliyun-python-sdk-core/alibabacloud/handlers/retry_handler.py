@@ -20,10 +20,6 @@ import alibabacloud.utils.parameter_helper
 
 class RetryHandler(RequestHandler):
 
-    # def _add_request_client_token(self, api_request):
-    #     # TODO implement: add a ClientToken parameter on api_request
-    #     pass
-
     def handle_request(self, context):
         if context.http_request.retries == 0:
             retry_policy_context = RetryPolicyContext(context.api_request, None, 0, None)
@@ -54,6 +50,7 @@ class RetryHandler(RequestHandler):
 
     @staticmethod
     def _add_request_client_token(request):
+        # TODO implement: add a ClientToken parameter on api_request
         if hasattr(request, "set_ClientToken") and hasattr(request, "get_ClientToken"):
             client_token = request.get_ClientToken()
             if not client_token:

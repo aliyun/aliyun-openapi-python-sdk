@@ -74,7 +74,8 @@ class AcsClient:
             private_key=None,
             session_period=3600,
             credential=None,
-            debug=False):
+            debug=False,
+            profile_name='default'):
         """
         constructor for AcsClient
         :param ak: String, access key id
@@ -95,6 +96,8 @@ class AcsClient:
             http_port=port,
             connection_timeout=connect_timeout,
             read_timeout=timeout,
+            # add
+            profile_name=profile_name
         )
 
         self._loaded_new_clients = {}
@@ -277,13 +280,18 @@ class AcsClient:
         key += '@' + acs_request.get_version()
         key += '@' + acs_request.get_location_service_code()
         key += '@' + acs_request.get_location_endpoint_type()
-
         if key not in self._loaded_new_clients:
             config = ClientConfig()
-            self._loaded_new_clients[key] = AlibabaCloudClient(
+            client = AlibabaCloudClient(
                 config,
                 credentials_provider=self._credentials_provider
             )
+            client.location_service_code = acs_request.get_location_service_code()
+            client.location_endpoint_type = acs_request.get_location_service_code()
+            client.location_endpoint_type = acs_request.get_location_endpoint_type()
+            client.product_code = acs_request.get_product()
+
+            self._loaded_new_clients[key] = client
             self._loaded_new_clients[key].endpoint_resolver = self._endpoint_resolver
 
         return self._loaded_new_clients[key]

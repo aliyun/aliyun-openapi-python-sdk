@@ -18,7 +18,6 @@
 # coding=utf-8
 import time
 
-
 from alibabacloud.utils import format_type as FormatType, parameter_helper as helper
 from alibabacloud.signer.algorithm import ShaHmac1 as mac1
 from aliyunsdkcore.vendored.six import iteritems
@@ -90,13 +89,9 @@ class ROASigner:
 
     @property
     def signature(self):
-        ########### 1.prepare 一些条件
-
-        ######### 2.parameters 就是self.request.get_headers() 的值
         headers = self._refresh_sign_parameters()
-        ######## 3.
         sign_to_string = ''
-        # Notice :interesting_headers 必须按照以下的顺序
+        # TODO :interesting_headers 必须按照以下的顺序
         interesting_headers = ['Accept', 'Content-MD5', 'Content-Type', 'Date']
         sign_to_string += self.request.get_method()
         sign_to_string += '\n'
@@ -108,10 +103,8 @@ class ROASigner:
         sign_to_string += temp
         sign_to_string += '\n'
 
-        ########## 4.
         sign_to_string += self._build_canonical_headers(headers, "x-acs-")
 
-        ########### 5.
         sign_to_string += self._build_query_string(self.uri, self.sign_params)
         return sign_to_string
 
@@ -186,7 +179,6 @@ class RPCSigner:
 
         if getattr(self.credentials, 'bearer_token') is not None:
             parameters['BearerToken'] = self.credentials.bearer_token
-        # 获取签名
         signature = self._calc_signature(self.request.get_method(), parameters)
         return signature
 

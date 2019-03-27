@@ -21,22 +21,22 @@ _api_timeout_config_data = load_json_from_data_dir._load_json_from_data_dir("tim
 
 class TimeoutConfigReader(RequestHandler):
     # TODO 把对 timeout_config.json 的读取逻辑放到 ClientConfig 那一层
-    # client config 不能处理  涉及到产品的product——code
+    # client config 不能处理  涉及到产品的product—code
     # TODO request级别仅对读取配置进行处理，用户不设置request层级的timeout
     def handle_request(self, context):
-        context.http_request.timeout = (self.connection_timeout(context.config),
-                                        self.read_timeout(context.api_request, context.config))
+        context.http_request.timeout = (self._connection_timeout(context.config),
+                                        self._read_timeout(context.api_request, context.config))
 
     def handle_response(self, context):
         # context 实际是request
         pass
 
     @staticmethod
-    def connection_timeout(config):
+    def _connection_timeout(config):
         return config.connection_timeout or DEFAULT_CONNECTION_TIMEOUT
 
     @staticmethod
-    def read_timeout(request, config):
+    def _read_timeout(request, config):
         path = '"{0}"."{1}"."{2}"'.format(request.get_product().lower(), request.get_version(),
                                           request.get_action_name())
         file_read_timeout = jmespath.search(path, _api_timeout_config_data)

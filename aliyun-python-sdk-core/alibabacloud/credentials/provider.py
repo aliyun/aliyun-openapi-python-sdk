@@ -10,7 +10,8 @@ from alibabacloud.credentials import SecurityCredentials
 # TODO remove aliyunsdkcore dependency
 from aliyunsdkcore.request import CommonRequest
 from aliyunsdkcore.request import RpcRequest
-from aliyunsdkcore.auth.algorithm import sha_hmac256
+
+from alibabacloud.signer.algorithm import ShaHmac256
 
 from alibabacloud.utils.ini_helper import load_config
 
@@ -116,7 +117,7 @@ class GetSessionAkRequest(RpcRequest):
     def __init__(self):
         RpcRequest.__init__(self, product='Sts', version='2015-04-01',
                             action_name='GenerateSessionAccessKey',
-                            signer=sha_hmac256)
+                            signer=ShaHmac256)
         self.set_protocol_type('https')
 
     def get_duration_seconds(self):
@@ -146,10 +147,8 @@ class ProfileCredentialsProvider(CredentialsProvider):
         config = load_config(full_path)
         profile = config.get(profile_name, {})
         if 'type' not in profile:
-            raise ClientException(
-                'Credentials',
-                'The Credentials file (%s) can not find the needed param "type".' % full_path
-            )
+            raise ClientException('The Credentials file (%s) can not find the needed param "type".'
+                                  % full_path)
         return profile
 
     def _get_provider_by_profile(self, profile):
