@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from aliyunsdkcore.retry.retry_condition import RetryCondition
+from alibabacloud.retry.retry_condition import RetryCondition
 
 
 class RetryPolicyContext:

@@ -36,6 +36,7 @@ class CachedCredentialsProvider(CredentialsProvider):
         self._cached_credentials = None
 
     def provide(self):
+
         return self._cached_credentials
 
 
@@ -157,6 +158,7 @@ class ProfileCredentialsProvider(CredentialsProvider):
             if key not in profile:
                 raise ClientException(
                     "{0} must be set for credentials type {1}.".format(key, type_))
+            return profile[key]
 
         type_ = profile.get('type')
         if not type_:
@@ -196,7 +198,7 @@ class ProfileCredentialsProvider(CredentialsProvider):
             raise Exception("Unexpected credentials type: " + type_)
 
     def provide(self):
-        self._inner_provider.provide()
+        return self._inner_provider.provide()
 
 
 class EnvCredentialsProvider(CachedCredentialsProvider):

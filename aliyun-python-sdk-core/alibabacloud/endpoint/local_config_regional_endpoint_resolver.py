@@ -22,8 +22,8 @@ import json
 
 import aliyunsdkcore
 from aliyunsdkcore.vendored.six import iteritems
-from aliyunsdkcore.endpoint.endpoint_resolver_base import EndpointResolverBase
-from aliyunsdkcore.endpoint.resolver_endpoint_request import ResolveEndpointRequest
+from alibabacloud.endpoint.endpoint_resolver_base import EndpointResolverBase
+from alibabacloud.endpoint.resolver_endpoint_request import ResolveEndpointRequest
 
 
 class LocalConfigRegionalEndpointResolver(EndpointResolverBase):

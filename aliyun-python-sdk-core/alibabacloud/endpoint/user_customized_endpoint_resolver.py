@@ -16,7 +16,7 @@
 # specific language governing permissions and limitations
 # under the License.
 #
-from aliyunsdkcore.endpoint.endpoint_resolver_base import EndpointResolverBase
+from alibabacloud.endpoint.endpoint_resolver_base import EndpointResolverBase
 
 
 class UserCustomizedEndpointResolver(EndpointResolverBase):

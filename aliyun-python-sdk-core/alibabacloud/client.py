@@ -15,6 +15,7 @@ import os
 import time
 from alibabacloud.handlers import RequestContext
 from alibabacloud.handlers.prepare_handler import PrepareHandler
+from alibabacloud.handlers.credentials_handler import CredentialsHandler
 from alibabacloud.handlers.signer_handler import SignerHandler
 from alibabacloud.handlers.url_handler import URLHandler
 from alibabacloud.handlers.http_header_handler import HttpHeaderHandler
@@ -24,10 +25,14 @@ from alibabacloud.handlers.log_handler import LogHandler
 from alibabacloud.handlers.retry_handler import RetryHandler
 from alibabacloud.handlers.server_error_handler import ServerErrorHandler
 from alibabacloud.handlers.http_handler import HttpHandler
-from alibabacloud.credentials.provider import DefaultCredentialsProvider
+
+from alibabacloud.credentials.provider import DefaultChainedCredentialsProvider
+
 from alibabacloud.endpoint.default_endpoint_resolver import DefaultEndpointResolver
+
 DEFAULT_HANDLERS = [
     PrepareHandler,
+    CredentialsHandler,
     SignerHandler,  # 获取Signature
     # URLHandler,  # 获取url
     HttpHeaderHandler,  # 获取签名的header
@@ -144,11 +149,20 @@ class ClientConfig:
         # 用户实例化的时候，就进行了覆盖
         pass
 
+    def _update_config(self, new_config):
+        # request 的config 更新client的config
+        request_settings = ['enable_https', 'connection_timeout', 'read_timeout']
+        for attr in request_settings:
+            setattr(self, attr, getattr(new_config, attr))
+
 
 def get_merged_client_config(config):
     # config.read_from_env()
     # config.read_from_profile()
     # config.read_from_default()
+
+    # for config in config_list:
+
     return config
 
 
@@ -156,15 +170,20 @@ class AlibabaCloudClient:
 
     def __init__(self, client_config, credentials_provider):
         self.config = get_merged_client_config(client_config)
-        self.credentials_provider = credentials_provider
+
+        if credentials_provider is not None:
+            self.credentials_provider = credentials_provider
+        else:
+            self.credentials_provider = DefaultChainedCredentialsProvider()
         self.handlers = DEFAULT_HANDLERS
         self.logger = None  # TODO initialize
         # endpoint_resolver阶段需要
         self.endpoint_resolver = DefaultEndpointResolver(self)  # TODO initialize
-        self.product_code = None
+        # TODO product_code 如何获取
+        self.product_code = 'ecs'
         self.location_service_code = None
-        self.location_service_type = None
-        self.location_endpoint_type = None
+        self.location_service_type = 'ecs'
+        self.location_endpoint_type = 'openAPI'
         import aliyunsdkcore.retry.retry_policy as retry_policy
         # retry
         if self.config.enable_retry:
@@ -207,23 +226,6 @@ class AlibabaCloudClient:
             raise context.exception
 
         return context
-
-    def get_credentials(self):
-        credentials_provider = self.credentials_provider({
-            'access_key_id': self.config.access_key_id,
-            'access_key_secret': self.config.access_key_secret,
-            'secret_token': self.config.secret_token,
-            'bearer_token': self.config.bearer_token,
-            'profile_name': 'client2'
-        })
-        credentials = credentials_provider.load_credentials()
-        if credentials is None:
-            from aliyunsdkcore.acs_exception.exceptions import ClientException
-            raise ClientException(
-                'Credentials',
-                'Unable to locate credentials.'
-            )
-        return credentials
 
 
 class ECSClient(AlibabaCloudClient):

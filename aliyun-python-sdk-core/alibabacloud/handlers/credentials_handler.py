@@ -19,25 +19,11 @@ from alibabacloud.endpoint.resolver_endpoint_request import ResolveEndpointReque
 class CredentialsHandler(RequestHandler):
 
     def handle_request(self, context):
-        http_request = context.http_request
-        api_request = context.api_request
 
-        credentials = context.client.credentials_provider(context)
+        credentials = context.client.credentials_provider.provide()
         context.http_request.credentials = credentials
 
     def handle_response(self, response):
         pass
 
-    @staticmethod
-    def get_credentials(context):
-        credentials_provider = context.client.credentials_provider({
-            'access_key_id': context.config.access_key_id,
-            'access_key_secret': context.config.access_key_secret,
-        })
-        credentials = credentials_provider.load_credentials()
-        if credentials is None:
-            raise ClientException(
-                'Credentials',
-                'Unable to locate credentials.'
-            )
-        return credentials
+

@@ -13,24 +13,15 @@
 # limitations under the License.
 
 from alibabacloud.handlers import RequestHandler
-
 from alibabacloud.signer import Signer
 
 
 class SignerHandler(RequestHandler):
 
-    # _signer_map = {
-    #     "AccessKeyCredentials": AccessKeySigner(),
-    #     "SecurityCredentials": SecuritySigner(),
-    #     "BearTokenCredentials": BearerTokenSigner()
-    # }
-
-    # 只实现了signature
     def handle_request(self, context):
         http_request = context.http_request
 
-        credentials = context.credentials
-        # signer = self._signer_map[credentials.__class__.__name__]
+        credentials = http_request.credentials
 
         signature, headers, params = Signer().sign(credentials, context)
         # TODO fix other headers

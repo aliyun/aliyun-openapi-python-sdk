@@ -12,8 +12,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from aliyunsdkcore.retry.retry_condition import *
-from aliyunsdkcore.retry.backoff_strategy import *
+from alibabacloud.retry.retry_condition import *
+from alibabacloud.retry.backoff_strategy import *
 
 
 class RetryPolicy(RetryCondition, BackoffStrategy):

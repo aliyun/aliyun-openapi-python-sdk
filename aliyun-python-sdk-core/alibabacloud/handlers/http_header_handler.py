@@ -11,12 +11,9 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-import platform
 
 from alibabacloud.handlers import RequestHandler
-from alibabacloud.utils import format_type
-from aliyunsdkcore.vendored.requests.structures import CaseInsensitiveDict
-from aliyunsdkcore.vendored.requests.structures import OrderedDict
+from alibabacloud.utils import parameter_helper as helper
 from aliyunsdkcore.vendored.six.moves.urllib.parse import urlencode
 
 
@@ -58,7 +55,6 @@ class HttpHeaderHandler(RequestHandler):
             headers.pop(self.content_type, None)
             headers.pop(self.content_length, None)
         else:
-            from aliyunsdkcore.utils import parameter_helper as helper
 
             str_md5 = helper.md5_sum(body)
             content_length = len(body)

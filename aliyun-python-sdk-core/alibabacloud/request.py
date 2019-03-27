@@ -25,7 +25,7 @@ class HTTPRequest:
     def __init__(self, accept_format=None, method=None, protocol=None, proxy=None,
                  signature=None,
                  headers=None, url=None, endpoint=None, timeout=None,
-                 body=None, enable_retry=None, max_retry_times=None, retries=0):
+                 body=None, enable_retry=None, max_retry_times=None, retries=0, credentials=None):
 
         self.accept_format = accept_format
         self.body = body
@@ -41,6 +41,8 @@ class HTTPRequest:
         self.enable_retry = enable_retry
         self.max_retry_times = max_retry_times
         self.retries = retries
+
+        self.credentials = credentials
 
 
 class HTTPResponse:

@@ -5,7 +5,6 @@ import time
 from aliyunsdkcore.acs_exception.exceptions import ClientException
 from alibabacloud.credentials import AccessKeyCredentials, BearTokenCredentials, SecurityCredentials
 
-from aliyunsdkcore.auth.signers.access_key_signer import AccessKeySigner
 from aliyunsdkcore.acs_exception import error_code
 from aliyunsdkcore.acs_exception import exceptions
 from aliyunsdkcore.request import CommonRequest

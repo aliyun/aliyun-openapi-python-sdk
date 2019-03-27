@@ -19,17 +19,13 @@
 # specific language governing permissions and limitations
 # under the License.
 
-
-from abc import ABCMeta, abstractmethod
-
-from aliyunsdkcore.vendored.six import with_metaclass
+from alibabacloud.signer.algorithm import NoHandle, ShaHmac1
 
 
 class Signer(object):
 
     @staticmethod
     def sign(credentials, context):
-        from aliyunsdkcore.auth.algorithm import NoHandle, ShaHmac1
         signer = ShaHmac1
         if getattr(credentials, 'bearer_token') is not None:
             signer = NoHandle
@@ -37,7 +33,7 @@ class Signer(object):
         request = context.api_request
         region_id = context.config.region_id
         # which token
-        from aliyunsdkcore.auth.composer.composer import SIGNER_MAP
+        from alibabacloud.signer.composer import SIGNER_MAP
         cls = SIGNER_MAP[request.get_style()]
         auth = cls(credentials, request, region_id, signer=signer)
         signature, headers, params = auth.signature, auth.headers, auth.params

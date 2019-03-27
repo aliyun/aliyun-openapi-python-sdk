@@ -23,24 +23,25 @@ import warnings
 import logging
 import platform
 
-from aliyunsdkcore.endpoint.default_endpoint_resolver import DefaultEndpointResolver
+# from aliyunsdkcore.endpoint.default_endpoint_resolver import DefaultEndpointResolver
 import aliyunsdkcore.utils
-import aliyunsdkcore.utils.validation
+import alibabacloud.utils.validation
 from aliyunsdkcore.vendored.requests.structures import CaseInsensitiveDict
 from aliyunsdkcore.vendored.requests.structures import OrderedDict
+
 from aliyunsdkcore.auth.credentials import AccessKeyCredential, StsTokenCredential
 from aliyunsdkcore.auth.credentials import RamRoleArnCredential, EcsRamRoleCredential
 from aliyunsdkcore.auth.credentials import RsaKeyPairCredential
 
-import alibabacloud.client
-from alibabacloud.exception import ClientException
-from alibabacloud.client import ClientConfig
-from alibabacloud.client import AlibabaCloudClient  # New Style Client
+# from alibabacloud.exception import ClientException
+
 from alibabacloud.endpoint.default_endpoint_resolver import DefaultEndpointResolver
 from alibabacloud.credentials import AccessKeyCredentials, SecurityCredentials
 from alibabacloud.credentials.provider import StaticCredentialsProvider
 from alibabacloud.credentials.provider import RamRoleCredentialsProvider
 from alibabacloud.credentials.provider import InstanceProfileCredentialsProvider
+from alibabacloud.client import ClientConfig
+from alibabacloud.client import AlibabaCloudClient  # New Style Client
 
 """
 Acs default client module.
@@ -181,7 +182,8 @@ class AcsClient:
 
     def append_user_agent(self, key, value):
         # TODO fix user agent
-        self._extra_user_agent.update({key: value})
+        pass
+        # self._extra_user_agent.update({key: value})
 
     @staticmethod
     def user_agent_header():
@@ -258,13 +260,17 @@ class AcsClient:
                 context.http_response.content)
 
     def _get_new_style_request(self, acs_request):
-        return None
+        return acs_request
 
     def _get_new_style_config(self, acs_request):
-        return alibabacloud.client.get_merged_client_config([
-            self._new_style_config,
-            acs_request._new_style_config,
-        ])
+        self._new_style_config._update_config(acs_request._new_style_config)
+
+        return self._new_style_config
+
+        # return alibabacloud.client.get_merged_client_config([
+        #     self._new_style_config,
+        #     acs_request._new_style_config,
+        # ])
 
     def _get_new_style_client(self, acs_request):
         key = acs_request.get_product()

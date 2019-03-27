@@ -79,7 +79,7 @@ class LocationServiceEndpointResolver(EndpointResolverBase):
         request.endpoint = self._location_service_endpoint
 
         try:
-            response = self._client.do_action_with_exception(request)
+            response = self._client._handle_request(request)
         except ServerException as e:
             if "InvalidRegionId" == e.get_error_code() and \
                "The specified region does not exist." == e.get_error_msg():

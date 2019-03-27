@@ -13,16 +13,10 @@
 # limitations under the License.
 
 from alibabacloud.handlers import RequestHandler
-from aliyunsdkcore.vendored.six.moves.urllib.parse import urlencode
-import os
-import logging
 
 from aliyunsdkcore.vendored.requests import Request, Session
 from aliyunsdkcore.vendored.requests.packages import urllib3
-from aliyunsdkcore.http.http_request import HttpRequest
-from aliyunsdkcore.http import protocol_type as PT
 
-from aliyunsdkcore.vendored.requests import status_codes
 
 class HttpHandler(RequestHandler):
     """

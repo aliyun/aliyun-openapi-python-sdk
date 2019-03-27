@@ -12,16 +12,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-import copy
-import time
-
 from alibabacloud.handlers import RequestHandler
-import aliyunsdkcore.retry.retry_policy as retry_policy
-from aliyunsdkcore.retry.retry_condition import RetryCondition
-from aliyunsdkcore.retry.retry_policy_context import RetryPolicyContext
-import aliyunsdkcore.utils
-import aliyunsdkcore.utils.parameter_helper
-import aliyunsdkcore.utils.validation
+from alibabacloud.retry.retry_condition import RetryCondition
+from alibabacloud.retry.retry_policy_context import RetryPolicyContext
+import alibabacloud.utils.parameter_helper
 
 
 class RetryHandler(RequestHandler):
@@ -33,7 +27,7 @@ class RetryHandler(RequestHandler):
     def handle_request(self, context):
         if context.http_request.retries == 0:
             retry_policy_context = RetryPolicyContext(context.api_request, None, 0, None)
-            if context.config.retry_policy.should_retry(retry_policy_context) & \
+            if context.client.retry_policy.should_retry(retry_policy_context) & \
                     RetryCondition.SHOULD_RETRY_WITH_CLIENT_TOKEN:
                 self._add_request_client_token(context.api_request)
 
@@ -43,7 +37,7 @@ class RetryHandler(RequestHandler):
                                                   context.http_request.retries,
                                                   context.http_response.status_code)
 
-        should_retry = context.config.retry_policy.should_retry(retry_policy_context)
+        should_retry = context.client.retry_policy.should_retry(retry_policy_context)
 
         # if should_retry & RetryCondition.SHOULD_RETRY:
         if should_retry & RetryCondition.NO_RETRY:
@@ -64,5 +58,5 @@ class RetryHandler(RequestHandler):
             client_token = request.get_ClientToken()
             if not client_token:
                 # ClientToken has not been set
-                client_token = aliyunsdkcore.utils.parameter_helper.get_uuid()  # up to 60 chars
+                client_token = alibabacloud.utils.parameter_helper.get_uuid()  # up to 60 chars
                 request.set_ClientToken(client_token)

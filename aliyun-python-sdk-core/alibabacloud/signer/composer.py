@@ -16,18 +16,14 @@
 # under the License.
 
 # coding=utf-8
-import hmac
 import time
 
 
-from aliyunsdkcore.http import format_type as FormatType
-
+from alibabacloud.utils import format_type as FormatType, parameter_helper as helper
+from alibabacloud.signer.algorithm import ShaHmac1 as mac1
 from aliyunsdkcore.vendored.six import iteritems
 from aliyunsdkcore.vendored.six.moves.urllib.parse import urlencode
 from aliyunsdkcore.vendored.six.moves.urllib.request import pathname2url
-
-from aliyunsdkcore.auth.algorithm import ShaHmac1 as mac1
-from aliyunsdkcore.utils import parameter_helper as helper
 
 FORMAT_ISO_8601 = "%Y-%m-%dT%H:%M:%SZ"
 
@@ -54,7 +50,7 @@ class ROASigner:
         self.uri = self._replace_occupied_parameters()
 
     def _prepare_params(self):
-        from aliyunsdkcore.utils.parameter_helper import md5_sum
+        from alibabacloud.utils.parameter_helper import md5_sum
         self.request.add_header("x-acs-version", self.request.get_version())
         sign_params = self.request.get_query_params()
         if self.request.get_content() is not None:
@@ -185,10 +181,10 @@ class RPCSigner:
     def signature(self):
         parameters = self._canonicalized_query_string()
         parameters.update(self.request.get_body_params())
-        if hasattr(self.credentials, 'security_token'):
+        if getattr(self.credentials, 'security_token') is not None:
             parameters['SecurityToken'] = self.credentials.security_token
 
-        if hasattr(self.credentials, 'bearer_token'):
+        if getattr(self.credentials, 'bearer_token') is not None:
             parameters['BearerToken'] = self.credentials.bearer_token
         # 获取签名
         signature = self._calc_signature(self.request.get_method(), parameters)
@@ -235,7 +231,7 @@ class RPCSigner:
         parameters["SignatureNonce"] = helper.get_uuid()
         if 'RegionId' not in parameters:
             parameters['RegionId'] = self.region_id
-        if self.credentials.access_key_id is not None:
+        if getattr(self.credentials, 'access_key_id') is not None:
             parameters["AccessKeyId"] = self.credentials.access_key_id
         return parameters
 

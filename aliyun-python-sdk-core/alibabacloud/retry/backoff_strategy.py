@@ -13,7 +13,7 @@
 # limitations under the License.
 
 import random
-from aliyunsdkcore.retry.retry_condition import RetryCondition
+from alibabacloud.retry.retry_condition import RetryCondition
 
 
 class BackoffStrategy(object):

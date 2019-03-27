@@ -21,7 +21,7 @@ from aliyunsdkcore.vendored.six.moves.urllib.parse import urlencode
 from aliyunsdkcore.vendored.six.moves.urllib.request import pathname2url
 
 from aliyunsdkcore.auth.algorithm import sha_hmac1 as mac1
-from aliyunsdkcore.utils import parameter_helper as helper
+from alibabacloud.utils import parameter_helper as helper
 
 
 # this function will append the necessary parameters for signers process.

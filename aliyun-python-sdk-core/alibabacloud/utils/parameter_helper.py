@@ -17,30 +17,31 @@
 
 # coding=utf-8
 
-
 import hashlib
-import hmac
+import base64
+import uuid
+import time
 
-from aliyunsdkcore.compat import ensure_string
-from aliyunsdkcore.compat import ensure_bytes
-from aliyunsdkcore.compat import b64_encode_bytes
+from aliyunsdkcore.compat import ensure_bytes, ensure_string
 
-
-def get_sign_string(source, secret):
-    source = ensure_bytes(source)
-    secret = ensure_bytes(secret)
-    h = hmac.new(secret, source, hashlib.sha1)
-    signature = ensure_string(b64_encode_bytes(h.digest()).strip())
-    return signature
+TIME_ZONE = "GMT"
+FORMAT_ISO_8601 = "%Y-%m-%dT%H:%M:%SZ"
+FORMAT_RFC_2616 = "%a, %d %b %Y %X GMT"
 
 
-def get_signer_name():
-    return "HMAC-SHA1"
+def get_uuid():
+    return str(uuid.uuid4())
 
 
-def get_signer_version():
-    return "1.0"
+def get_iso_8061_date():
+    return time.strftime(FORMAT_ISO_8601, time.gmtime())
 
 
-def get_signer_type():
-    return ""
+def get_rfc_2616_date():
+    return time.strftime(FORMAT_RFC_2616, time.gmtime())
+
+
+def md5_sum(content):
+    content_bytes = ensure_bytes(content)
+    md5_bytes = hashlib.md5(content_bytes).digest()
+    return ensure_string(base64.standard_b64encode(md5_bytes))

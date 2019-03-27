@@ -19,7 +19,7 @@
 from aliyunsdkcore.vendored.six import iteritems
 from aliyunsdkcore.vendored.six.moves.urllib.parse import urlencode
 from aliyunsdkcore.utils.algorithm import sha_hmac1 as mac1
-from aliyunsdkcore.utils import parameter_helper as helper
+from alibabacloud.utils import parameter_helper as helper
 from aliyunsdkcore.http import format_type as FormatType
 
 
