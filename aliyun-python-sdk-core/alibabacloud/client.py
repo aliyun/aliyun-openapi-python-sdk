@@ -146,9 +146,10 @@ class ClientConfig:
 
     def _update_config(self, new_config):
         # request 的config 更新client的config
-        request_settings = ['enable_https', 'connection_timeout', 'read_timeout']
+        request_settings = ['enable_https', 'connection_timeout', 'read_timeout', 'endpoint']
         for attr in request_settings:
-            setattr(self, attr, getattr(new_config, attr))
+            if getattr(new_config, attr) is not None:
+                setattr(self, attr, getattr(new_config, attr))
 
 
 def get_merged_client_config(config):
@@ -208,10 +209,10 @@ class AlibabaCloudClient:
             for i in reversed(range(len(self.handlers[handler_index:]))):
                 self.handlers[i]().handle_response(context)
                 if context.retry_flag:
-                    time.sleep(context.retry_backoff)
+                    time.sleep(context.retry_backoff / 1000)
                     handler_index = i
                     context.retry_flag = False
-                    continue
+                continue
 
             break
 

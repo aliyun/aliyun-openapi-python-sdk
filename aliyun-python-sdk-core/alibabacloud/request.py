@@ -25,9 +25,10 @@ class HTTPRequest:
     def __init__(self, accept_format=None, method=None, protocol=None, proxy=None,
                  signature=None,
                  headers=None, url=None, endpoint=None, timeout=None,
-                 body=None, enable_retry=None, max_retry_times=None, retries=0, credentials=None):
+                 body='', enable_retry=None, max_retry_times=None, retries=0, credentials=None):
 
         self.accept_format = accept_format
+        # TODO， request.body 必须是json
         self.body = body
         self.method = method
         self.protocol = protocol

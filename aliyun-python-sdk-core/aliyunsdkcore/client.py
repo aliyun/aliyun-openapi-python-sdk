@@ -96,8 +96,6 @@ class AcsClient:
             http_port=port,
             connection_timeout=connect_timeout,
             read_timeout=timeout,
-            # add
-            profile_name=profile_name
         )
 
         self._loaded_new_clients = {}
@@ -266,6 +264,11 @@ class AcsClient:
         return acs_request
 
     def _get_new_style_config(self, acs_request):
+        """
+        合并client和request的endpoint
+        :param acs_request:
+        :return:
+        """
         self._new_style_config._update_config(acs_request._new_style_config)
 
         return self._new_style_config
@@ -276,25 +279,34 @@ class AcsClient:
         # ])
 
     def _get_new_style_client(self, acs_request):
-        key = acs_request.get_product()
-        key += '@' + acs_request.get_version()
-        key += '@' + acs_request.get_location_service_code()
-        key += '@' + acs_request.get_location_endpoint_type()
-        if key not in self._loaded_new_clients:
-            config = ClientConfig()
-            client = AlibabaCloudClient(
-                config,
-                credentials_provider=self._credentials_provider
-            )
-            client.location_service_code = acs_request.get_location_service_code()
-            client.location_endpoint_type = acs_request.get_location_service_code()
-            client.location_endpoint_type = acs_request.get_location_endpoint_type()
-            client.product_code = acs_request.get_product()
+        # key = acs_request.get_product()
+        # key += '@' + acs_request.get_version()
+        # key += '@' + acs_request.get_location_service_code()
+        # key += '@' + acs_request.get_location_endpoint_type()
+        # if key not in self._loaded_new_clients:
+        #     config = ClientConfig()
+        #     client = AlibabaCloudClient(
+        #         config,
+        #         credentials_provider=self._credentials_provider
+        #     )
+        #     client.location_service_code = acs_request.get_location_service_code()
+        #     client.get_location_service_code = acs_request.get_location_service_code()
+        #     client.location_endpoint_type = acs_request.get_location_endpoint_type()
+        #     client.product_code = acs_request.get_product()
+        #
+        #     self._loaded_new_clients[key] = client
+        #     self._loaded_new_clients[key].endpoint_resolver = self._endpoint_resolver
+        # return self._loaded_new_clients[key]
 
-            self._loaded_new_clients[key] = client
-            self._loaded_new_clients[key].endpoint_resolver = self._endpoint_resolver
-
-        return self._loaded_new_clients[key]
+        config = ClientConfig()
+        client = AlibabaCloudClient(
+            config,
+            credentials_provider=self._credentials_provider)
+        client.location_service_code = acs_request.get_location_service_code()
+        client.get_location_service_code = acs_request.get_location_service_code()
+        client.location_endpoint_type = acs_request.get_location_endpoint_type()
+        client.product_code = acs_request.get_product()
+        return client
 
     def _handle_request_in_new_style(self, acs_request, raise_exception=True):
         api_request = self._get_new_style_request(acs_request)
@@ -305,6 +317,10 @@ class AcsClient:
         return context
 
     def do_action_with_exception(self, acs_request):
+        from aliyunsdkcore.request import CommonRequest
+        if isinstance(acs_request, CommonRequest):
+            acs_request.trans_to_acs_request()
+
         context = self._handle_request_in_new_style(acs_request)
         return context.http_response.content
 

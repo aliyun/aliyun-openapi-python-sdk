@@ -606,3 +606,5 @@ class CommonRequest(AcsRequest):
             self.get_location_service_code())
 
         self.request.set_body_params(self.get_body_params())
+
+        self.request.set_endpoint(self.get_domain())

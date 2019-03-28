@@ -93,7 +93,8 @@ class PrepareHandler(RequestHandler):
         # context.http_request.accept_format = 'JSON'
         # http_request的body| api_request的content
         body_params = api_request.get_body_params()
-        if body_params is not None:
+        if body_params:
+            # TODO， request.body 必须是json
             body = urlencode(body_params)
             api_request.set_content(body)
             api_request.set_content_type(format_type.APPLICATION_FORM)
@@ -104,6 +105,7 @@ class PrepareHandler(RequestHandler):
         elif api_request.get_content() and "Content-Type" not in api_request.get_headers():
             api_request.set_content_type(format_type.APPLICATION_OCTET_STREAM)
             http_request.body = api_request.get_content()
+
         # api_request的ua
         user_agent = _modify_user_agent(context.config.user_agent, api_request)
         # api_request.headers['User-Agent'] = user_agent

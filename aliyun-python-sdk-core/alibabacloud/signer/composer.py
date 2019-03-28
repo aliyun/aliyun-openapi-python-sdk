@@ -25,7 +25,7 @@ from aliyunsdkcore.vendored.six.moves.urllib.parse import urlencode
 from aliyunsdkcore.vendored.six.moves.urllib.request import pathname2url
 
 FORMAT_ISO_8601 = "%Y-%m-%dT%H:%M:%SZ"
-
+HEADER_SEPARATOR = "\n"
 
 # this function will append the necessary parameters for signers process.
 # parameters: the orignal parameters
@@ -59,6 +59,7 @@ class ROASigner:
         if 'RegionId' not in sign_params.keys():
             sign_params['RegionId'] = self.region_id
             self.request.add_header('x-acs-region-id', str(self.region_id))
+
         if getattr(self.credentials, 'security_token') is not None:
             self.request.add_header("x-acs-security-token", self.credentials.security_token)
 
@@ -94,14 +95,13 @@ class ROASigner:
         # TODO :interesting_headers 必须按照以下的顺序
         interesting_headers = ['Accept', 'Content-MD5', 'Content-Type', 'Date']
         sign_to_string += self.request.get_method()
-        sign_to_string += '\n'
+        sign_to_string += "\n"
         hoi = []
+        # TODO  这里有个坑
         for ih in interesting_headers:
             if headers.get(ih) is not None:
-                hoi.append(headers[ih].strip())
-        temp = '\n'.join(hoi)
-        sign_to_string += temp
-        sign_to_string += '\n'
+                sign_to_string += headers[ih]
+            sign_to_string += "\n"
 
         sign_to_string += self._build_canonical_headers(headers, "x-acs-")
 
@@ -110,17 +110,16 @@ class ROASigner:
 
     # change the give headerBegin to the lower() which in the headers
     # and change it to key.lower():value
-
     def _build_canonical_headers(self, headers, header_begin):
         result = ""
         unsort_map = dict()
         for (key, value) in iteritems(headers):
-            if key.lower().startswith(header_begin):
+            if key.lower().find(header_begin) >= 0:
                 unsort_map[key.lower()] = value
         sort_map = sorted(iteritems(unsort_map), key=lambda d: d[0])
         for (key, value) in sort_map:
             result += key + ":" + value
-            result += '\n'
+            result += "\n"
         return result
 
     def _build_query_string(self, uri, queries):
@@ -136,8 +135,8 @@ class ROASigner:
             if v is not None:
                 query_builder += "="
                 query_builder += str(v)
-            query_builder += '&'
-        if query_builder.endswith('&'):
+            query_builder += "&"
+        if query_builder.endswith("&"):
             query_builder = query_builder[0:(len(query_builder) - 1)]
         return query_builder
 
@@ -170,9 +169,11 @@ class RPCSigner:
         else:
             self.signer = signer()
 
+        self.parameters = self._canonicalized_query_string()
+
     @property
     def signature(self):
-        parameters = self._canonicalized_query_string()
+        parameters = self.parameters
         parameters.update(self.request.get_body_params())
         if getattr(self.credentials, 'security_token') is not None:
             parameters['SecurityToken'] = self.credentials.security_token
@@ -184,8 +185,9 @@ class RPCSigner:
 
     @property
     def params(self):
-        parameters = self._canonicalized_query_string()
-        parameters['Signature'] = self.signature
+        parameters = self.parameters
+        signature = self.signer.sign_string(self.signature, str(self.credentials.access_key_secret) + '&')
+        parameters['Signature'] = signature
         params = '?' + urlencode(parameters)
         return params
 
@@ -201,8 +203,7 @@ class RPCSigner:
         sorted_query_string = urlencode(sorted_parameters)
         canonicalized_query_string = pathname2url(sorted_query_string)
         string_to_sign = method + "&%2F&" + canonicalized_query_string
-        b64 = self.signer.sign_string(string_to_sign, str(self.credentials.access_key_secret) + '&')
-        return b64
+        return string_to_sign
 
     def _canonicalized_query_string(self):
         if self.credentials is None:

@@ -42,7 +42,9 @@ class ServerErrorHandler(RequestHandler):
                 special_error_codes = ['IncompleteSignature', 'SignatureDoesNotMatch']
                 if response.status_code == codes.BAD_REQUEST and \
                         server_error_code in special_error_codes:
-                    if http_request.signature == server_error_message.split(':')[1]:
+                    # FIXME fix 了一个bug  关于roa 返回签名带时间的问题
+
+                    if http_request.signature == server_error_message.split(':', 1)[1]:
                         server_error_code = 'InvalidAccessKeySecret'
                         server_error_message = 'The AccessKeySecret is incorrect. ' \
                                                'Please check your AccessKeyId and AccessKeySecret.'

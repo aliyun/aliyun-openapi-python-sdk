@@ -44,7 +44,7 @@ class RetryHandler(RequestHandler):
             retry_policy_context.retryable = should_retry
             context.http_request.retries += 1
             context.retry_flag = True
-            context.retry_backoff = context.config.retry_policy.compute_delay_before_next_retry(
+            context.retry_backoff = context.client.retry_policy.compute_delay_before_next_retry(
                 retry_policy_context
             )
 
