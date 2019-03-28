@@ -37,6 +37,12 @@ class InsertConfigCenterRequest(RoaRequest):
 	def set_Data(self,Data):
 		self.add_query_param('Data',Data)
 
+	def get_AppName(self):
+		return self.get_query_params().get('AppName')
+
+	def set_AppName(self,AppName):
+		self.add_query_param('AppName',AppName)
+
 	def get_LogicalRegionId(self):
 		return self.get_query_params().get('LogicalRegionId')
 

@@ -18,33 +18,15 @@
 # under the License.
 
 from aliyunsdkcore.request import RoaRequest
-class ListConfigCentersRequest(RoaRequest):
+class SynchronizeResourceRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'ListConfigCenters')
-		self.set_uri_pattern('/pop/v5/configCenters')
+		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'SynchronizeResource')
+		self.set_uri_pattern('/pop/v5/resource/pop_sync_resource')
 		self.set_method('GET')
 
-	def get_AppName(self):
-		return self.get_query_params().get('AppName')
+	def get_Type(self):
+		return self.get_query_params().get('Type')
 
-	def set_AppName(self,AppName):
-		self.add_query_param('AppName',AppName)
-
-	def get_LogicalRegionId(self):
-		return self.get_query_params().get('LogicalRegionId')
-
-	def set_LogicalRegionId(self,LogicalRegionId):
-		self.add_query_param('LogicalRegionId',LogicalRegionId)
-
-	def get_DataIdPattern(self):
-		return self.get_query_params().get('DataIdPattern')
-
-	def set_DataIdPattern(self,DataIdPattern):
-		self.add_query_param('DataIdPattern',DataIdPattern)
-
-	def get_Group(self):
-		return self.get_query_params().get('Group')
-
-	def set_Group(self,Group):
-		self.add_query_param('Group',Group)
+	def set_Type(self,Type):
+		self.add_query_param('Type',Type)

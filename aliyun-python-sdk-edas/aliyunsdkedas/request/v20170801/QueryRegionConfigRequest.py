@@ -18,21 +18,9 @@
 # under the License.
 
 from aliyunsdkcore.request import RoaRequest
-class DeleteUserDefineRegionRequest(RoaRequest):
+class QueryRegionConfigRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'DeleteUserDefineRegion')
-		self.set_uri_pattern('/pop/v5/user_region_def')
-		self.set_method('DELETE')
-
-	def get_RegionTag(self):
-		return self.get_query_params().get('RegionTag')
-
-	def set_RegionTag(self,RegionTag):
-		self.add_query_param('RegionTag',RegionTag)
-
-	def get_Id(self):
-		return self.get_query_params().get('Id')
-
-	def set_Id(self,Id):
-		self.add_query_param('Id',Id)
+		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'QueryRegionConfig')
+		self.set_uri_pattern('/pop/v5/region_config')
+		self.set_method('GET')
