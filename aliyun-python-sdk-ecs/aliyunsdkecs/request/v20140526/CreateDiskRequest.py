@@ -117,3 +117,9 @@ class CreateDiskRequest(RpcRequest):
 
 	def set_KMSKeyId(self,KMSKeyId):
 		self.add_query_param('KMSKeyId',KMSKeyId)
+
+	def get_AdvancedFeatures(self):
+		return self.get_query_params().get('AdvancedFeatures')
+
+	def set_AdvancedFeatures(self,AdvancedFeatures):
+		self.add_query_param('AdvancedFeatures',AdvancedFeatures)
