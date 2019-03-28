@@ -54,12 +54,6 @@ class ImportImageRequest(RpcRequest):
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
-	def get_ImageName(self):
-		return self.get_query_params().get('ImageName')
-
-	def set_ImageName(self,ImageName):
-		self.add_query_param('ImageName',ImageName)
-
 	def get_RoleName(self):
 		return self.get_query_params().get('RoleName')
 
@@ -89,6 +83,12 @@ class ImportImageRequest(RpcRequest):
 
 	def set_Platform(self,Platform):
 		self.add_query_param('Platform',Platform)
+
+	def get_ImageName(self):
+		return self.get_query_params().get('ImageName')
+
+	def set_ImageName(self,ImageName):
+		self.add_query_param('ImageName',ImageName)
 
 	def get_Architecture(self):
 		return self.get_query_params().get('Architecture')
