@@ -34,6 +34,7 @@ HEADER_SEPARATOR = "\n"
 # format: XML or JSON
 # input parameters is headers
 
+
 class ROASigner:
 
     def __init__(self, credentials, api_request, region_id, signer=None):
@@ -53,7 +54,6 @@ class ROASigner:
         self.request.add_header("x-acs-version", self.request.get_version())
         sign_params = self.request.get_query_params()
         if self.request.get_content() is not None:
-
             self.request.add_header(
                 'Content-MD5', md5_sum(self.request.get_content()))
         if 'RegionId' not in sign_params.keys():
@@ -94,18 +94,16 @@ class ROASigner:
         sign_to_string = ''
         # TODO :interesting_headers 必须按照以下的顺序
         interesting_headers = ['Accept', 'Content-MD5', 'Content-Type', 'Date']
-        sign_to_string += self.request.get_method()
+        sign_to_string += self.request.get_method().upper()
         sign_to_string += "\n"
-        hoi = []
         # TODO  这里有个坑
         for ih in interesting_headers:
             if headers.get(ih) is not None:
                 sign_to_string += headers[ih]
             sign_to_string += "\n"
-
         sign_to_string += self._build_canonical_headers(headers, "x-acs-")
 
-        sign_to_string += self._build_query_string(self.uri, self.sign_params)
+        sign_to_string += self._build_canonical_resource(self.uri, self.sign_params)
         return sign_to_string
 
     # change the give headerBegin to the lower() which in the headers
@@ -122,7 +120,7 @@ class ROASigner:
             result += "\n"
         return result
 
-    def _build_query_string(self, uri, queries):
+    def _build_canonical_resource(self, uri, queries):
         uri_parts = uri.split("?")
         if len(uri_parts) > 1 and uri_parts[1] is not None:
             queries[uri_parts[1]] = None

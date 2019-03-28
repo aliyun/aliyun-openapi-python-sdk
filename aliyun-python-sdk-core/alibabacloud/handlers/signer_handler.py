@@ -17,6 +17,7 @@ from alibabacloud.signer import Signer
 
 from alibabacloud.utils import parameter_helper as helper
 from aliyunsdkcore.vendored.six.moves.urllib.parse import urlencode
+from alibabacloud.utils import format_type
 
 
 class SignerHandler(RequestHandler):
@@ -39,10 +40,22 @@ class SignerHandler(RequestHandler):
         http_request.params = params
         # modify headers
         body_params = api_request.get_body_params()
+
         if body_params:
-            body = urlencode(body_params)
-            headers = self._modify_http_body(headers, body, "utf-8",
-                                            'application/x-www-form-urlencoded')
+            if api_request.get_style() == 'ROA' and api_request.get_method() == 'POST':
+                # FIXME  修正后的操作
+                import json
+                body = json.dumps(body_params)
+                api_request.set_content(body)
+                api_request.set_content_type(format_type.APPLICATION_JSON)
+            else:
+                body = urlencode(body_params)
+                api_request.set_content(body)
+                api_request.set_content_type(format_type.APPLICATION_FORM)
+
+        # 最终发送请求的body必须是json
+        http_request.body = api_request.get_content()
+
         context.http_request.headers = headers
 
         http_request.headers = headers
@@ -50,7 +63,8 @@ class SignerHandler(RequestHandler):
     def handle_response(self, context):
         pass
 
-    def _modify_http_body(self, headers, body, encoding, format='RAW'):
+    def _modify_http_body(self, headers, body, encoding, format='JSON'):
+        # {"errorCode":10014,"errorMsg":"content-type error, only json accepted"}
         # 有body_params ，就是 urlencode 结果的值
         # 没有，就是request的
         if body is None:

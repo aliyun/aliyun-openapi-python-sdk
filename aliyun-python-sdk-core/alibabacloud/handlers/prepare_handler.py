@@ -94,10 +94,22 @@ class PrepareHandler(RequestHandler):
         # http_request的body| api_request的content
         body_params = api_request.get_body_params()
         if body_params:
-            # TODO， request.body 必须是json
-            body = urlencode(body_params)
-            api_request.set_content(body)
-            api_request.set_content_type(format_type.APPLICATION_FORM)
+            # TODO， request.body 必须是json，application/x-www-form-urlencoded,原 SDK是以下的操作
+            # body = urlencode(body_params)
+            # api_request.set_content(body)
+            # api_request.set_content_type(format_type.APPLICATION_FORM)
+
+            # FIXME  修正后的操作.APPLICATION_FORM 其实本就应该是get请求的urlencode编码的形式，post还是应该采取json
+            if api_request.get_style() == 'ROA' and api_request.get_method() == 'POST':
+                import json
+                body = json.dumps(body_params)
+                api_request.set_content(body)
+                api_request.set_content_type(format_type.APPLICATION_JSON)
+            else:
+                body = urlencode(body_params)
+                api_request.set_content(body)
+                api_request.set_content_type(format_type.APPLICATION_FORM)
+
             # 把这个URL编码的值赋给content，设置content-type
             # FIXME body is the final bytes to be sent to the server via HTTP
             # content is an application level concept

@@ -43,7 +43,6 @@ class ServerErrorHandler(RequestHandler):
                 if response.status_code == codes.BAD_REQUEST and \
                         server_error_code in special_error_codes:
                     # FIXME fix 了一个bug  关于roa 返回签名带时间的问题
-
                     if http_request.signature == server_error_message.split(':', 1)[1]:
                         server_error_code = 'InvalidAccessKeySecret'
                         server_error_message = 'The AccessKeySecret is incorrect. ' \
