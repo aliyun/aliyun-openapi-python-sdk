@@ -37,6 +37,12 @@ class DeployServerlessApplicationRequest(RoaRequest):
 	def set_JarStartArgs(self,JarStartArgs):
 		self.add_query_param('JarStartArgs',JarStartArgs)
 
+	def get_BuildPackId(self):
+		return self.get_query_params().get('BuildPackId')
+
+	def set_BuildPackId(self,BuildPackId):
+		self.add_query_param('BuildPackId',BuildPackId)
+
 	def get_CommandArgs(self):
 		return self.get_query_params().get('CommandArgs')
 

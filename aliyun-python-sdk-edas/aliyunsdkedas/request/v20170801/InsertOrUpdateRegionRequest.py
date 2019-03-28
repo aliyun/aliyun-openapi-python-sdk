@@ -25,17 +25,11 @@ class InsertOrUpdateRegionRequest(RoaRequest):
 		self.set_uri_pattern('/pop/v5/user_region_def')
 		self.set_method('POST')
 
-	def get_HybridCloudEnable(self):
-		return self.get_query_params().get('HybridCloudEnable')
+	def get_DebugEnable(self):
+		return self.get_query_params().get('DebugEnable')
 
-	def set_HybridCloudEnable(self,HybridCloudEnable):
-		self.add_query_param('HybridCloudEnable',HybridCloudEnable)
-
-	def get_VpcId(self):
-		return self.get_query_params().get('VpcId')
-
-	def set_VpcId(self,VpcId):
-		self.add_query_param('VpcId',VpcId)
+	def set_DebugEnable(self,DebugEnable):
+		self.add_query_param('DebugEnable',DebugEnable)
 
 	def get_RegionTag(self):
 		return self.get_query_params().get('RegionTag')

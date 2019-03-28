@@ -43,6 +43,12 @@ class CreateServerlessApplicationRequest(RoaRequest):
 	def set_Memory(self,Memory):
 		self.add_query_param('Memory',Memory)
 
+	def get_BuildPackId(self):
+		return self.get_query_params().get('BuildPackId')
+
+	def set_BuildPackId(self,BuildPackId):
+		self.add_query_param('BuildPackId',BuildPackId)
+
 	def get_CommandArgs(self):
 		return self.get_query_params().get('CommandArgs')
 

@@ -1,3 +1,6 @@
+2019-03-28 Version: 2.43.0
+1, EDAS serverless support Pandora application deployment in war/jar mode
+
 2019-02-18 Version: 2.41.0
 1, Initialization release SDK. EDAS now supports SDK implemented by current programming language.
 
