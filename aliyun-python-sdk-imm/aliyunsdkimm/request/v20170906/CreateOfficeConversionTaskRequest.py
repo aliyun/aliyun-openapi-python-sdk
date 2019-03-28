@@ -89,6 +89,12 @@ class CreateOfficeConversionTaskRequest(RpcRequest):
 	def set_ModelId(self,ModelId):
 		self.add_query_param('ModelId',ModelId)
 
+	def get_DisplayDpi(self):
+		return self.get_query_params().get('DisplayDpi')
+
+	def set_DisplayDpi(self,DisplayDpi):
+		self.add_query_param('DisplayDpi',DisplayDpi)
+
 	def get_MaxSheetRow(self):
 		return self.get_query_params().get('MaxSheetRow')
 
