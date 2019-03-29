@@ -4,12 +4,13 @@ import os
 
 from alibabacloud.client import AlibabaCloudClient, ClientConfig
 from alibabacloud.credentials import AccessKeyCredentials, SecurityCredentials
-from alibabacloud.credentials.provider import CachedCredentialsProvider, ChainedCredentialsProvider
+from alibabacloud.credentials.provider import CachedCredentialsProvider, ChainedCredentialsProvider, AssumeRoleCaller, \
+    DefaultChainedCredentialsProvider
 from alibabacloud.handlers import RequestContext
 from alibabacloud.handlers.credentials_handler import CredentialsHandler
 from aliyunsdkcore.acs_exception.exceptions import ClientException
 from aliyunsdkcore.acs_exception.exceptions import ServerException
-from aliyunsdkcore.auth.credentials import StsTokenCredential
+from aliyunsdkcore.auth.credentials import StsTokenCredential, RamRoleArnCredential, EcsRamRoleCredential
 from aliyunsdkcore.client import AcsClient
 # from aliyunsdkcore.credentials.credentials import StsTokenCredential
 from aliyunsdkros.request.v20150901.DescribeResourceTypesRequest import DescribeResourceTypesRequest
@@ -132,13 +133,102 @@ class CredentialsTest(SDKTestBase):
         ret = self.get_dict_response(response)
         self.assertTrue(ret.get("ResourceTypes"))
 
-    # def test_call_rpc_request_with_env_ak(self):
-    #     client = AcsClient()
+    # def test_call_rpc_request_with_ram_role(self):
+    #     self._create_default_ram_user()
+    #     self._attach_default_policy()
+    #     self._create_access_key()
+    #     self._create_default_ram_role()
+    #
+    #     ram_role_arn_credential = RamRoleArnCredential(
+    #         self.ram_user_access_key_id,
+    #         self.ram_user_access_key_secret,
+    #         self.ram_role_arn,
+    #         "alice_test")
+    #     acs_client = AcsClient(
+    #         region_id="cn-hangzhou",
+    #         credential=ram_role_arn_credential)
     #     request = DescribeRegionsRequest()
-    #     response = self.client.do_action_with_exception(request)
+    #     response = acs_client.do_action_with_exception(request)
     #     ret = self.get_dict_response(response)
-    #     self.assertTrue(ret.get("Region"))
+    #     self.assertTrue(ret.get("Regions"))
     #     self.assertTrue(ret.get("RequestId"))
+
+    # def test_call_roa_request_with_ram_role(self):
+    #     self._create_default_ram_user()
+    #     self._attach_default_policy()
+    #     self._create_access_key()
+    #     self._create_default_ram_role()
+    #
+    #     ram_role_arn_credential = RamRoleArnCredential(
+    #         self.ram_user_access_key_id,
+    #         self.ram_user_access_key_secret,
+    #         self.ram_role_arn,
+    #         "alice_test")
+    #     roa_client = AcsClient(
+    #         region_id="cn-hangzhou",
+    #         credential=ram_role_arn_credential)
+    #     request = DescribeResourceTypesRequest()
+    #     response = roa_client.do_action_with_exception(request)
+    #     ret = self.get_dict_response(response)
+    #     self.assertTrue(ret.get("ResourceTypes"))
+
+
+    # def test_call_rpc_request_with_ecs_ram(self):
+    #     ecs_ram_role_credential = EcsRamRoleCredential("EcsRamRoleTest")
+    #     acs_client = AcsClient(region_id="cn-hangzhou", credential=ecs_ram_role_credential)
+    #     request = DescribeRegionsRequest()
+    #     response = acs_client.do_action_with_exception(request)
+
+    def test_call_rpc_request_with_env_ak(self):
+        os.environ["ALIBABA_CLOUD_ACCESS_KEY_ID"] = self.access_key_id
+        os.environ["ALIBABA_CLOUD_ACCESS_KEY_SECRET"] = self.access_key_secret
+        client = AcsClient()
+        request = DescribeRegionsRequest()
+        response = self.client.do_action_with_exception(request)
+        ret = self.get_dict_response(response)
+        self.assertTrue(ret.get("Regions"))
+        self.assertTrue(ret.get("RequestId"))
+
+    def test_call_roa_request_with_env_ak(self):
+        os.environ["ALIBABA_CLOUD_ACCESS_KEY_ID"] = self.access_key_id
+        os.environ["ALIBABA_CLOUD_ACCESS_KEY_SECRET"] = self.access_key_secret
+        client = AcsClient()
+        request = DescribeResourceTypesRequest()
+        response = self.client.do_action_with_exception(request)
+        ret = self.get_dict_response(response)
+        self.assertTrue(ret.get("ResourceTypes"))
+
+    def test_call_rpc_request_with_config_default(self):
+        client = AcsClient()
+        request = DescribeRegionsRequest()
+        response = client.do_action_with_exception(request)
+        ret = self.get_dict_response(response)
+        self.assertTrue(ret.get("Regions"))
+        self.assertTrue(ret.get("RequestId"))
+
+    def test_call_roa_request_with_config_default(self):
+        client = AcsClient()
+        request = DescribeResourceTypesRequest()
+        response = client.do_action_with_exception(request)
+        ret = self.get_dict_response(response)
+        self.assertTrue(ret.get("ResourceTypes"))
+
+    # def test_call_rpc_request_with_config_ram_role_arn(self):
+    #     client = AcsClient()
+    #     client._credentials_provider = DefaultChainedCredentialsProvider("ram_role_arn")
+    #     request = DescribeRegionsRequest()
+    #     response = client.do_action_with_exception(request)
+    #     ret = self.get_dict_response(response)
+    #     self.assertTrue(ret.get("Regions"))
+    #     self.assertTrue(ret.get("RequestId"))
+    #
+    # def test_call_roa_request_with_config_ram_role_arn(self):
+    #     client = AcsClient()
+    #     client._credentials_provider = DefaultChainedCredentialsProvider("ram_role_arn")
+    #     request = DescribeResourceTypesRequest()
+    #     response = client.do_action_with_exception(request)
+    #     ret = self.get_dict_response(response)
+    #     self.assertTrue(ret.get("ResourceTypes"))
 
 
 
