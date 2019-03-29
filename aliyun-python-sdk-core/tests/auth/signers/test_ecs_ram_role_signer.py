@@ -4,7 +4,7 @@ from tests import unittest
 
 from mock import MagicMock, patch, Mock
 
-from aliyunsdkcore.auth.credentials import EcsRamRoleCredential
+from aliyunsdkcore.credentials.credentials import EcsRamRoleCredential
 from aliyunsdkcore.auth.signers.ecs_ram_role_signer import EcsRamRoleSigner
 from aliyunsdkcore.request import RpcRequest, RoaRequest
 

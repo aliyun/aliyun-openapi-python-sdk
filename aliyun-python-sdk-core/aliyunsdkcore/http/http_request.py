@@ -18,7 +18,7 @@
 # coding=utf-8
 
 from aliyunsdkcore.http import format_type
-from aliyunsdkcore.utils import parameter_helper as helper
+from alibabacloud.utils import parameter_helper as helper
 
 
 class HttpRequest:

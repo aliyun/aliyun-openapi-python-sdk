@@ -31,6 +31,9 @@ class AccessKeySigner(Signer):
 
     def sign(self, region_id, request):
         cred = self._credential
+        if request.get_style() == 'RPC':
+            request.get_url_params()
+        request.get_signed_signature(region_id, cred.access_key_id)
         header = request.get_signed_header(region_id, cred.access_key_id, cred.access_key_secret)
         url = request.get_url(region_id, cred.access_key_id, cred.access_key_secret)
         return header, url

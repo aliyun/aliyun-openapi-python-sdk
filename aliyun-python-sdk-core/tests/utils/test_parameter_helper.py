@@ -3,7 +3,7 @@
 from tests import unittest
 from aliyunsdkcore.vendored.six import PY2
 
-from aliyunsdkcore.utils import parameter_helper as helper
+from alibabacloud.utils import parameter_helper as helper
 
 
 class TestShaHmac1(unittest.TestCase):
