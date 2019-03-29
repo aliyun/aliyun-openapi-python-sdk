@@ -19,21 +19,18 @@
 
 # coding=utf-8
 import abc
-from aliyunsdkcore.vendored.six import iterkeys
-from aliyunsdkcore.vendored.six import iteritems
 from aliyunsdkcore.vendored.six import add_metaclass
 
 from aliyunsdkcore.http import protocol_type
 from aliyunsdkcore.http import method_type as mt
 from aliyunsdkcore.http import format_type as ft
-from aliyunsdkcore.auth.composer import rpc_signature_composer as rpc_signer
-from aliyunsdkcore.auth.composer import roa_signature_composer as roa_signer
-from aliyunsdkcore.utils.parameter_helper import md5_sum
-from aliyunsdkcore.auth.algorithm import sha_hmac1
+# from aliyunsdkcore.auth.composer import rpc_signature_composer as rpc_signer
+# from aliyunsdkcore.auth.composer import composer as roa_signer
+# from aliyunsdkcore.auth.algorithm import sha_hmac1
 from aliyunsdkcore.acs_exception import exceptions
 from aliyunsdkcore.acs_exception import error_code
-from aliyunsdkcore.compat import ensure_string
 from aliyunsdkcore.vendored.requests.structures import CaseInsensitiveDict
+
 
 """
 Acs request model.
@@ -108,6 +105,12 @@ class AcsRequest:
         self.string_to_sign = ''
         self._request_connect_timeout = None
         self._request_read_timeout = None
+
+        from alibabacloud.client import ClientConfig
+
+        self._new_style_config = ClientConfig()
+        if self._protocol_type == 'https':
+            self._new_style_config.enable_https = True
 
     def add_query_param(self, k, v):
         self._params[k] = v
@@ -238,32 +241,37 @@ class AcsRequest:
     def set_content_type(self, content_type):
         self.add_header("Content-Type", content_type)
 
-    @abc.abstractmethod
-    def get_style(self):
-        pass
-
-    @abc.abstractmethod
-    def get_url(self, region_id, ak, secret):
-        pass
-
-    @abc.abstractmethod
-    def get_signed_header(self, region_id, ak, secret):
-        pass
+    # @abc.abstractmethod
+    # def get_style(self):
+    #     pass
+    #
+    # @abc.abstractmethod
+    # def get_url(self, region_id, ak, secret):
+    #     pass
+    #
+    # @abc.abstractmethod
+    # def get_signed_header(self, region_id, ak, secret):
+    #     pass
+    #
+    # @abc.abstractmethod
+    # def get_signed_signature(self, region_id, ak):
+    #     pass
 
     def set_endpoint(self, endpoint):
         self.endpoint = endpoint
+        self._new_style_config.endpoint = self.endpoint
 
     def get_connect_timeout(self):
-        return self._request_connect_timeout
+        return self._new_style_config.connection_timeout
 
     def set_connect_timeout(self, connect_timeout):
-        self._request_connect_timeout = connect_timeout
+        self._new_style_config.connection_timeout = connect_timeout
 
     def get_read_timeout(self):
-        return self._request_read_timeout
+        return self._new_style_config.read_timeout
 
     def set_read_timeout(self, read_timeout):
-        self._request_read_timeout = read_timeout
+        self._new_style_config.read_timeout = read_timeout
 
 
 class RpcRequest(AcsRequest):
@@ -280,7 +288,8 @@ class RpcRequest(AcsRequest):
             location_endpoint_type='openAPI',
             format=None,
             protocol=None,
-            signer=sha_hmac1):
+            # signer=sha_hmac1
+    ):
         AcsRequest.__init__(
             self,
             product,
@@ -292,7 +301,8 @@ class RpcRequest(AcsRequest):
             protocol,
             mt.GET)
         self._style = STYLE_RPC
-        self._signer = signer
+        # self._signer = signer
+        self.url_params =None
 
     def get_style(self):
         return self._style
@@ -307,27 +317,31 @@ class RpcRequest(AcsRequest):
 
         return req_params
 
-    def get_url(self, region_id, access_key_id, access_key_secret):
-        sign_params = self._get_sign_params()
-        if 'RegionId' not in iterkeys(sign_params):
-            sign_params['RegionId'] = region_id
-        url, string_to_sign = rpc_signer.get_signed_url(
-            sign_params,
-            access_key_id,
-            access_key_secret,
-            self.get_accept_format(),
-            self.get_method(),
-            self.get_body_params(),
-            self._signer)
-        self.string_to_sign = string_to_sign
-        return url
+    # def get_url_params(self, signer=None):
+    #     if signer is not None:
+    #         self._signer = signer
+    #     sign_params = self._get_sign_params()
+    #     url_params = rpc_signer.get_url_params(sign_params, self.get_accept_format(), self._signer)
+    #     self.url_params = url_params
+        
+    # def get_url(self, region_id, access_key_id, access_key_secret):
+    #     url = rpc_signer.get_signed_url(region_id, access_key_id, access_key_secret,
+    #                                     self.url_params, self.string_to_sign, self._signer)
+    #     return url
 
-    def get_signed_header(self, region_id=None, ak=None, secret=None):
-        headers = {}
-        for headerKey, headerValue in iteritems(self.get_headers()):
-            if headerKey.startswith("x-acs-") or headerKey.startswith("x-sdk-"):
-                headers[headerKey] = headerValue
-        return headers
+    # def get_signed_signature(self, region_id, access_key_id):
+    #     string_to_sign = rpc_signer.get_signed_signature(region_id, access_key_id,
+    #                                                      self.get_method(),
+    #                                                      self.get_body_params(),
+    #                                                      self.url_params)
+    #     self.string_to_sign = string_to_sign
+    #     return string_to_sign
+
+    # def get_signed_header(self, region_id=None, ak=None, secret=None):
+    #     headers = {}
+    #     for headerKey, headerValue in iteritems(self.get_headers()):
+    #         headers[headerKey] = headerValue
+    #     return headers
 
 
 class RoaRequest(AcsRequest):
@@ -404,46 +418,60 @@ class RoaRequest(AcsRequest):
         # req_params['Format'] = self.get_accept_format()
         return req_params
 
-    def get_signed_header(self, region_id, ak, secret):
-        """
-        Generate signed header
-        :param region_id: String
-        :param ak: String
-        :param secret: String
-        :return: Dict
-        """
-        sign_params = self._get_sign_params()
-        if self.get_content() is not None:
-            self.add_header(
-                'Content-MD5', md5_sum(self.get_content()))
-        if 'RegionId' not in sign_params.keys():
-            sign_params['RegionId'] = region_id
-            self.add_header('x-acs-region-id', str(region_id))
+    # def get_signed_header(self, region_id, ak, secret):
+    #     """
+    #     Generate signed header
+    #     :param region_id: String
+    #     :param ak: String
+    #     :param secret: String
+    #     :return: Dict
+    #     """
+    #     sign_params = self._get_sign_params()
+    #     if self.get_content() is not None:
+    #         self.add_header(
+    #             'Content-MD5', md5_sum(self.get_content()))
+    #     if 'RegionId' not in sign_params.keys():
+    #         # sign_params['RegionId'] = region_id
+    #         self.add_header('x-acs-region-id', str(region_id))
+    #
+    #     signed_headers = roa_signer.get_signed_headers(
+    #         ak,
+    #         secret,
+    #         self.get_headers(),
+    #         self.string_to_sign)
+    #     return signed_headers
 
-        signed_headers, sign_to_string = roa_signer.get_signature_headers(
-            sign_params,
-            ak,
-            secret,
-            self.get_accept_format(),
-            self.get_headers(),
-            self.get_uri_pattern(),
-            self.get_path_params(),
-            self.get_method())
-        self.string_to_sign = sign_to_string
-        return signed_headers
+    # def get_signed_signature(self, region_id, access_key_id):
+    #     sign_params = self._get_sign_params()
+    #     if self.get_content() is not None:
+    #         self.add_header(
+    #             'Content-MD5', md5_sum(self.get_content()))
+    #     if 'RegionId' not in sign_params.keys():
+    #         sign_params['RegionId'] = region_id
+    #         self.add_header('x-acs-region-id', str(region_id))
+    #
+    #     sign_to_string = roa_signer.get_signed_signature(
+    #         sign_params,
+    #         self.get_accept_format(),
+    #         self.get_headers(),
+    #         self.get_uri_pattern(),
+    #         self.get_path_params(),
+    #         self.get_method())
+    #     self.string_to_sign = sign_to_string
+    #     return sign_to_string
 
-    def get_url(self, region_id, ak=None, secret=None):
-        """
-        Compose request url without domain
-        :param region_id: String
-        :return: String
-        """
-        sign_params = self.get_query_params()
-        url = roa_signer.get_url(
-            self.get_uri_pattern(),
-            sign_params,
-            self.get_path_params())
-        return url
+    # def get_url(self, region_id=None, ak=None, secret=None):
+    #     """
+    #     Compose request url without domain
+    #     :param region_id: String
+    #     :return: String
+    #     """
+    #     sign_params = self.get_query_params()
+    #     url = roa_signer.get_signed_url(
+    #         self.get_uri_pattern(),
+    #         sign_params,
+    #         self.get_path_params())
+    #     return url
 
 
 class CommonRequest(AcsRequest):
@@ -458,7 +486,7 @@ class CommonRequest(AcsRequest):
         self._uri_pattern = uri_pattern
         self._product = product
         self._location_endpoint_type = location_endpoint_type
-        self._signer = sha_hmac1
+        # self._signer = sha_hmac1
         self.add_header('x-sdk-invoke-type', 'common')
         self._path_params = None
         self._method = "GET"
@@ -542,6 +570,12 @@ class CommonRequest(AcsRequest):
     def get_signed_header(self, region_id, access_key_id, access_key_secret):
         return self.request.get_signed_header(region_id, access_key_id, access_key_secret)
 
+    def get_signed_signature(self, region_id, ak):
+        return self.request.get_signed_signature(region_id, ak)
+
+    def get_url_params(self):
+        return self.request.get_url_params()
+
     def fill_params(self):
 
         self.request.set_uri_pattern(self.get_uri_pattern())
@@ -573,3 +607,5 @@ class CommonRequest(AcsRequest):
             self.get_location_service_code())
 
         self.request.set_body_params(self.get_body_params())
+
+        self.request.set_endpoint(self.get_domain())

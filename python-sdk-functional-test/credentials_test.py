@@ -5,7 +5,7 @@ import os
 from aliyunsdkcore.acs_exception.exceptions import ClientException
 from aliyunsdkcore.acs_exception.exceptions import ServerException
 from aliyunsdkcore.client import AcsClient
-from aliyunsdkcore.auth.credentials import StsTokenCredential
+from aliyunsdkcore.credentials.credentials import StsTokenCredential
 
 from aliyunsdkecs.request.v20140526.DescribeRegionsRequest import DescribeRegionsRequest
 from aliyunsdksts.request.v20150401.AssumeRoleRequest import AssumeRoleRequest
@@ -52,7 +52,7 @@ class CredentialsTest(SDKTestBase):
         self.assertTrue(ret.get("RequestId"))
 
     def test_call_roa_request_with_sts_token(self):
-        from aliyunsdkcore.auth.credentials import RamRoleArnCredential
+        from aliyunsdkcore.credentials.credentials import RamRoleArnCredential
         self._create_default_ram_user()
         self._attach_default_policy()
         self._create_access_key()
@@ -77,7 +77,7 @@ class CredentialsTest(SDKTestBase):
     @disabled
     def test_ecs_ram_role(self):
         # push ecs
-        from aliyunsdkcore.auth.credentials import EcsRamRoleCredential
+        from aliyunsdkcore.credentials.credentials import EcsRamRoleCredential
         ecs_ram_role_credential = EcsRamRoleCredential("EcsRamRoleTest")
         acs_client = AcsClient(region_id="cn-hangzhou", credential=ecs_ram_role_credential)
         request = DescribeRegionsRequest()

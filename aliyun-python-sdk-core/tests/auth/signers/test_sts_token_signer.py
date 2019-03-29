@@ -2,7 +2,7 @@
 
 from tests import unittest
 
-from aliyunsdkcore.auth.credentials import StsTokenCredential
+from aliyunsdkcore.credentials.credentials import StsTokenCredential
 from aliyunsdkcore.auth.signers.sts_token_signer import StsTokenSigner
 from aliyunsdkcore.request import RpcRequest, RoaRequest
 

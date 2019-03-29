@@ -1,25 +1,8 @@
-# Licensed to the Apache Software Foundation (ASF) under one
-# or more contributor license agreements.  See the NOTICE file
-# distributed with this work for additional information
-# regarding copyright ownership.  The ASF licenses this file
-# to you under the Apache License, Version 2.0 (the
-# "License"); you may not use this file except in compliance
-# with the License.  You may obtain a copy of the License at
-#
-#     http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing,
-# software distributed under the License is distributed on an
-# "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-# KIND, either express or implied.  See the License for the
-# specific language governing permissions and limitations
-# under the License.
-
 # coding=utf-8
 from aliyunsdkcore.vendored.six import iteritems
 from aliyunsdkcore.vendored.six.moves.urllib.parse import urlencode
 from aliyunsdkcore.auth.algorithm import sha_hmac1 as mac1
-from aliyunsdkcore.utils import parameter_helper as helper
+from alibabacloud.utils import parameter_helper as helper
 from aliyunsdkcore.http import format_type as FormatType
 
 
@@ -69,7 +52,9 @@ def compose_string_to_sign(
     if DATE in headers and headers[DATE] is not None:
         sign_to_string += headers[DATE]
     sign_to_string += HEADER_SEPARATOR
+
     uri = replace_occupied_parameters(uri_pattern, paths)
+
     sign_to_string += build_canonical_headers(headers, "x-acs-")
     sign_to_string += __build_query_string(uri, queries)
     return sign_to_string

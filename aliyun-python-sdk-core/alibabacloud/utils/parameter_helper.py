@@ -21,9 +21,7 @@ import hashlib
 import base64
 import uuid
 import time
-import sys
 
-from aliyunsdkcore.vendored.six.moves.urllib.parse import quote
 from aliyunsdkcore.compat import ensure_bytes, ensure_string
 
 TIME_ZONE = "GMT"
