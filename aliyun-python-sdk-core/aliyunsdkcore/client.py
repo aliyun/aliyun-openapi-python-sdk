@@ -126,6 +126,7 @@ class AcsClient:
                 ))
             elif isinstance(legacy_credentials, RamRoleArnCredential):
                 return RamRoleCredentialsProvider(
+                    self._new_style_config,
                     AccessKeyCredentials(
                         legacy_credentials.sts_access_key_id,
                         legacy_credentials.sts_access_key_secret,
@@ -261,6 +262,16 @@ class AcsClient:
                 context.http_response.content)
 
     def _get_new_style_request(self, acs_request):
+
+        if acs_request.get_style() == "RPC":
+            # TODO
+            pass
+        elif acs_request.get_style() == "ROA":
+            # TODO
+            pass
+        else:
+            raise AssertionError("Invalid request style: " + acs_request.get_style())
+
         return acs_request
 
     def _get_new_style_config(self, acs_request):
@@ -279,34 +290,24 @@ class AcsClient:
         # ])
 
     def _get_new_style_client(self, acs_request):
-        # key = acs_request.get_product()
-        # key += '@' + acs_request.get_version()
-        # key += '@' + acs_request.get_location_service_code()
-        # key += '@' + acs_request.get_location_endpoint_type()
-        # if key not in self._loaded_new_clients:
-        #     config = ClientConfig()
-        #     client = AlibabaCloudClient(
-        #         config,
-        #         credentials_provider=self._credentials_provider
-        #     )
-        #     client.location_service_code = acs_request.get_location_service_code()
-        #     client.get_location_service_code = acs_request.get_location_service_code()
-        #     client.location_endpoint_type = acs_request.get_location_endpoint_type()
-        #     client.product_code = acs_request.get_product()
-        #
-        #     self._loaded_new_clients[key] = client
-        #     self._loaded_new_clients[key].endpoint_resolver = self._endpoint_resolver
-        # return self._loaded_new_clients[key]
+        key = str(acs_request.get_product())
+        key += '@' + str(acs_request.get_version())
+        key += '@' + str(acs_request.get_location_service_code())
+        key += '@' + str(acs_request.get_location_endpoint_type())
+        if key not in self._loaded_new_clients:
+            config = ClientConfig()
+            client = AlibabaCloudClient(
+                config,
+                credentials_provider=self._credentials_provider
+            )
+            client.location_service_code = acs_request.get_location_service_code()
+            client.get_location_service_code = acs_request.get_location_service_code()
+            client.location_endpoint_type = acs_request.get_location_endpoint_type()
+            client.product_code = acs_request.get_product()
 
-        config = ClientConfig()
-        client = AlibabaCloudClient(
-            config,
-            credentials_provider=self._credentials_provider)
-        client.location_service_code = acs_request.get_location_service_code()
-        client.get_location_service_code = acs_request.get_location_service_code()
-        client.location_endpoint_type = acs_request.get_location_endpoint_type()
-        client.product_code = acs_request.get_product()
-        return client
+            self._loaded_new_clients[key] = client
+            self._loaded_new_clients[key].endpoint_resolver = self._endpoint_resolver
+        return self._loaded_new_clients[key]
 
     def _handle_request_in_new_style(self, acs_request, raise_exception=True):
         api_request = self._get_new_style_request(acs_request)

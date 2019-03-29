@@ -14,7 +14,15 @@
 
 
 class APIRequest:
-    pass
+
+    def __init__(self, action_name, http_method, **params):
+        self.action_name = action_name
+        self._params = params
+        self.protocol = "https"
+        self.http_method = http_method
+
+    def __getattr__(self, item):
+        return self._params[item]
 
 
 class APIResponse:
