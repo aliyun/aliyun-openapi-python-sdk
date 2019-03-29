@@ -70,8 +70,8 @@ class ClientConfig:
         # credentials部分会用到
         self.access_key_id = access_key_id
         self.access_key_secret = access_key_secret
-        self.secret_token = secret_token
-        self.bearer_token = bearer_token
+        # self.secret_token = secret_token
+        # self.bearer_token = bearer_token
         self.region_id = region_id
         self.enable_retry = enable_retry
         self.max_retry_times = max_retry_times
@@ -243,3 +243,14 @@ class OTSClient(AlibabaCloudClient):
     def create_table(self, **params):
         api_request = APIRequest(**params)
         return self._handle_request(api_request).result
+
+
+class STSClient(AlibabaCloudClient):
+    def __init__(self):
+        self.product = 'Sts'
+        self.location_service_code = 'sts'
+        self.location_endpoint_type = 'OpenAPI'
+        # AlibabaCloudClient.__init__(self)
+
+    def handle_request(self, request, config):
+        self._handle_request(request, _config=config, _raise_exception=True)

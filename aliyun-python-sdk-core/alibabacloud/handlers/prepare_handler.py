@@ -100,9 +100,12 @@ class PrepareHandler(RequestHandler):
             # api_request.set_content_type(format_type.APPLICATION_FORM)
 
             # FIXME  修正后的操作.APPLICATION_FORM 其实本就应该是get请求的urlencode编码的形式，post还是应该采取json
-            if api_request.get_style() == 'ROA' and api_request.get_method() == 'POST':
+            allow_methods = ['POST', 'PUT']
+            if api_request.get_style() == 'ROA' and api_request.get_method().upper() in allow_methods:
                 import json
                 body = json.dumps(body_params)
+                print('body', body)
+
                 api_request.set_content(body)
                 api_request.set_content_type(format_type.APPLICATION_JSON)
             else:
@@ -116,6 +119,7 @@ class PrepareHandler(RequestHandler):
             http_request.body = body
         elif api_request.get_content() and "Content-Type" not in api_request.get_headers():
             api_request.set_content_type(format_type.APPLICATION_OCTET_STREAM)
+            # api_request.set_content_type(format_type.APPLICATION_JSON)
             http_request.body = api_request.get_content()
 
         # api_request的ua

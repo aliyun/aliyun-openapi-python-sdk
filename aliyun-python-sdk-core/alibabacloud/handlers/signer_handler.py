@@ -42,7 +42,8 @@ class SignerHandler(RequestHandler):
         body_params = api_request.get_body_params()
 
         if body_params:
-            if api_request.get_style() == 'ROA' and api_request.get_method() == 'POST':
+            allow_methods = ['POST', 'PUT']
+            if api_request.get_style() == 'ROA' and api_request.get_method().upper() in allow_methods:
                 # FIXME  修正后的操作
                 import json
                 body = json.dumps(body_params)

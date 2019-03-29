@@ -258,7 +258,8 @@ class AcsRequest:
     #     pass
 
     def set_endpoint(self, endpoint):
-        self._new_style_config.endpoint = endpoint
+        self.endpoint = endpoint
+        self._new_style_config.endpoint = self.endpoint
 
     def get_connect_timeout(self):
         return self._new_style_config.connection_timeout

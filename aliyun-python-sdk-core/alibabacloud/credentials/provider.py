@@ -70,8 +70,8 @@ class RotatingCredentialsProvider(CachedCredentialsProvider):
 
 class AssumeRoleCaller:
 
-    def __init__(self):
-        self._client = None  # TODO implement
+    def __init__(self, client):
+        self._client = client  # TODO implement
 
     def fetch(self, role_arn, role_session_name, session_period):
         request = CommonRequest(product="Sts", version='2015-04-01', action_name='AssumeRole')
@@ -82,7 +82,7 @@ class AssumeRoleCaller:
         request.add_query_param('DurationSeconds', session_period)
         request.set_accept_format('JSON')
 
-        body = self._client.handle_request(request)
+        body = self._client.do_action_with_exception(request)
         response = json.loads(body)
         return response
 
@@ -96,7 +96,10 @@ class RamRoleCredentialsProvider(RotatingCredentialsProvider):
         self.access_key_credentials = access_key_credentials
         self.role_arn = role_arn
         self.role_session_name = role_session_name
-        self._fetcher = AssumeRoleCaller()
+        # FixMe add a client
+        from aliyunsdkcore.client import AcsClient
+        client = AcsClient(self.access_key_credentials.access_key_id, self.access_key_credentials.access_key_secret)
+        self._fetcher = AssumeRoleCaller(client)
         RotatingCredentialsProvider.__init__(self, self.SESSION_PERIOD, self.REFRESH_FACTOR)
 
     def rotate_credentials(self):

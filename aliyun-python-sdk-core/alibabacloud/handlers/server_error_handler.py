@@ -39,6 +39,10 @@ class ServerErrorHandler(RequestHandler):
 
                 server_error_code, server_error_message = self._parse_error_info_from_response_body(
                     response.text)
+                # with open('a', 'w')as f:
+                #     f.write(http_request.signature)
+                # with open('b', 'w')as f:
+                #     f.write(server_error_message.split(':', 1)[1])
                 special_error_codes = ['IncompleteSignature', 'SignatureDoesNotMatch']
                 if response.status_code == codes.BAD_REQUEST and \
                         server_error_code in special_error_codes:

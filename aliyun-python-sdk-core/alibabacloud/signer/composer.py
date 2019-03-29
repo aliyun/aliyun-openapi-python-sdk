@@ -196,10 +196,17 @@ class RPCSigner:
             headers[headerKey] = headerValue
         return headers
 
+    @staticmethod
+    def _pop_standard_urlencode(query):
+        ret = query.replace('+', '%20')
+        ret = ret.replace('*', '%2A')
+        ret = ret.replace('%7E', '~')
+        return ret
+
     def _calc_signature(self, method, params):
         sorted_parameters = sorted(iteritems(params), key=lambda queries: queries[0])
-        sorted_query_string = urlencode(sorted_parameters)
-        canonicalized_query_string = pathname2url(sorted_query_string)
+        sorted_query_string = self._pop_standard_urlencode(urlencode(sorted_parameters))
+        canonicalized_query_string = self._pop_standard_urlencode(pathname2url(sorted_query_string))
         string_to_sign = method + "&%2F&" + canonicalized_query_string
         return string_to_sign
 
