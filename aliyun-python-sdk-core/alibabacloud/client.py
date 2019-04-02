@@ -36,7 +36,7 @@ DEFAULT_HANDLERS = [
     TimeoutConfigReader,  # 获取timeout
     EndpointHandler,  # 获取endpoint
     LogHandler,
-    RetryHandler,
+    # RetryHandler,
     HttpHandler,
     ServerErrorHandler
 ]

@@ -39,7 +39,6 @@ class HttpHandler(RequestHandler):
                       str(http_request.port) + http_request.params
 
             http_request.url = url
-
             req = Request(method=http_request.method, url=http_request.url,
                           data=http_request.body,
                           headers=http_request.headers,

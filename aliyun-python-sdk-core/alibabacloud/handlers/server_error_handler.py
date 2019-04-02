@@ -42,7 +42,6 @@ class ServerErrorHandler(RequestHandler):
                 special_error_codes = ['IncompleteSignature', 'SignatureDoesNotMatch']
                 if response.status_code == codes.BAD_REQUEST and \
                         server_error_code in special_error_codes:
-                    print(1111111111111111111111)
                     # FIXME fix 了一个bug  关于roa 返回签名带时间的问题
                     with open('a', 'w')as f:
                         f.write(http_request.signature)

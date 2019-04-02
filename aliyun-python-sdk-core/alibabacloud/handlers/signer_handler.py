@@ -39,26 +39,24 @@ class SignerHandler(RequestHandler):
         http_request.signature = signature
         http_request.params = params
         # modify headers
-        body_params = api_request._body_params
+        body_params = api_request.body_params
 
         if body_params:
             allow_methods = ['POST', 'PUT']
-            if api_request._style == 'ROA' and api_request._method.upper() in allow_methods:
+            if api_request.method.upper() in allow_methods:
                 # FIXME  修正后的操作
                 import json
                 body = json.dumps(body_params)
                 api_request._content = body
                 headers = self._modify_http_headers(headers, body, format_type.APPLICATION_JSON)
-                # api_request.headers["Content-Type"] = format_type.APPLICATION_JSON
 
             else:
                 body = urlencode(body_params, doseq=True)
                 api_request._content = body
-                # api_request.headers["Content-Type"] = format_type.APPLICATION_FORM
                 headers = self._modify_http_headers(headers, body, format_type.APPLICATION_FORM)
 
         # 最终发送请求的body必须是json
-        http_request.body = api_request._content
+        http_request.body = api_request.content
 
         context.http_request.headers = headers
 
@@ -76,7 +74,6 @@ class SignerHandler(RequestHandler):
             headers.pop(self.content_type, None)
             headers.pop(self.content_length, None)
         else:
-
             str_md5 = helper.md5_sum(body)
             content_length = len(body)
             headers[self.content_md5] = str_md5
