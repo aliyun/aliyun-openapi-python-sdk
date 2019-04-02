@@ -34,7 +34,7 @@ class Signer(object):
         region_id = context.config.region_id
         # which token
         from alibabacloud.signer.composer import SIGNER_MAP
-        cls = SIGNER_MAP[request.get_style()]
+        cls = SIGNER_MAP[request.style]
         auth = cls(credentials, request, region_id, signer=signer)
         signature, headers, params = auth.signature, auth.headers, auth.params
         return signature, headers, params
