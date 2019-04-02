@@ -25,7 +25,6 @@ from alibabacloud.handlers.retry_handler import RetryHandler
 from alibabacloud.handlers.server_error_handler import ServerErrorHandler
 from alibabacloud.handlers.http_handler import HttpHandler
 
-from alibabacloud.credentials.provider import DefaultChainedCredentialsProvider
 
 from alibabacloud.endpoint.default_endpoint_resolver import DefaultEndpointResolver
 
@@ -37,7 +36,7 @@ DEFAULT_HANDLERS = [
     TimeoutConfigReader,  # 获取timeout
     EndpointHandler,  # 获取endpoint
     LogHandler,
-    RetryHandler,
+    # RetryHandler,
     HttpHandler,
     ServerErrorHandler
 ]
@@ -59,8 +58,7 @@ class ClientConfig:
     ENV_NAME_FOR_CONFIG_FILE = 'ALIBABA_CLOUD_CONFIG_FILE'
     DEFAULT_NAME_FOR_CONFIG_FILE = '~/.alibabacloud/config'
 
-    def __init__(self, access_key_id=None, access_key_secret=None, bearer_token=None,
-                 secret_token=None, region_id=None,
+    def __init__(self, access_key_id=None, access_key_secret=None, region_id=None,
                  max_retry_times=None, user_agent=None,
                  extra_user_agent=None, enable_https=None, http_port=None, https_port=None,
                  connection_timeout=None, read_timeout=None, enable_http_debug=None,
@@ -70,8 +68,6 @@ class ClientConfig:
         # credentials部分会用到
         self.access_key_id = access_key_id
         self.access_key_secret = access_key_secret
-        # self.secret_token = secret_token
-        # self.bearer_token = bearer_token
         self.region_id = region_id
         self.enable_retry = enable_retry
         self.max_retry_times = max_retry_times
@@ -109,7 +105,7 @@ class ClientConfig:
             if getattr(self, item.lower()) is None:
                 setattr(self, item.lower(), os.environ.get(item) or os.environ.get(item.lower()))
 
-        self.enable_http_debug = os.environ.get('DEBUG')
+        self.enable_http_debug = os.environ.get('DEBUG') == 'sdk' or 'SDK'
 
     def read_from_profile(self):
         profile = {}
@@ -168,7 +164,9 @@ class AlibabaCloudClient:
         if credentials_provider is not None:
             self.credentials_provider = credentials_provider
         else:
-            self.credentials_provider = DefaultChainedCredentialsProvider()
+            from alibabacloud.credentials.provider import DefaultChainedCredentialsProvider
+
+            self.credentials_provider = DefaultChainedCredentialsProvider(client_config)
         self.handlers = DEFAULT_HANDLERS
         self.logger = None  # TODO initialize
         # endpoint_resolver阶段需要
@@ -176,7 +174,7 @@ class AlibabaCloudClient:
         # TODO product_code 如何获取
         self.product_code = None
         self.location_service_code = None
-        self.location_service_type = None
+        self.product_version = None
         self.location_endpoint_type = None
 
         import aliyunsdkcore.retry.retry_policy as retry_policy

@@ -14,7 +14,6 @@
 import json
 
 from alibabacloud.handlers import RequestHandler
-from aliyunsdkcore.vendored.six.moves.urllib.parse import urlencode
 from aliyunsdkcore.vendored.requests import codes
 
 
@@ -39,14 +38,15 @@ class ServerErrorHandler(RequestHandler):
 
                 server_error_code, server_error_message = self._parse_error_info_from_response_body(
                     response.text)
-                # with open('a', 'w')as f:
-                #     f.write(http_request.signature)
-                # with open('b', 'w')as f:
-                #     f.write(server_error_message.split(':', 1)[1])
+
                 special_error_codes = ['IncompleteSignature', 'SignatureDoesNotMatch']
                 if response.status_code == codes.BAD_REQUEST and \
                         server_error_code in special_error_codes:
                     # FIXME fix 了一个bug  关于roa 返回签名带时间的问题
+                    with open('a', 'w')as f:
+                        f.write(http_request.signature)
+                    with open('b', 'w')as f:
+                        f.write(server_error_message.split(':', 1)[1])
                     if http_request.signature == server_error_message.split(':', 1)[1]:
                         server_error_code = 'InvalidAccessKeySecret'
                         server_error_message = 'The AccessKeySecret is incorrect. ' \

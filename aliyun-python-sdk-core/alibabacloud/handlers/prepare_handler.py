@@ -17,8 +17,8 @@ from alibabacloud.handlers import RequestHandler
 from alibabacloud.utils import format_type
 from aliyunsdkcore.vendored.requests.structures import CaseInsensitiveDict
 from aliyunsdkcore.vendored.requests.structures import OrderedDict
-from aliyunsdkcore.vendored.six.moves.urllib.parse import urlencode
-import aliyunsdkcore
+from aliyunsdkcore.compat import urlencode
+
 
 # prepare header
 def _user_agent_header():
@@ -89,59 +89,24 @@ class PrepareHandler(RequestHandler):
     def handle_request(self, context):
         http_request = context.http_request
         api_request = context.api_request
-        api_request.set_accept_format('JSON')
-        # context.http_request.accept_format = 'JSON'
-        # http_request的body| api_request的content
-        body_params = api_request.get_body_params()
-        if body_params:
-            # TODO， request.body 必须是json，application/x-www-form-urlencoded,原 SDK是以下的操作
-            # body = urlencode(body_params)
-            # api_request.set_content(body)
-            # api_request.set_content_type(format_type.APPLICATION_FORM)
-
-            # FIXME  修正后的操作.APPLICATION_FORM 其实本就应该是get请求的urlencode编码的形式，post还是应该采取json
-            allow_methods = ['POST', 'PUT']
-            if api_request.get_style() == 'ROA' and api_request.get_method().upper() in allow_methods:
-                import json
-                body = json.dumps(body_params)
-                print('body', body)
-
-                api_request.set_content(body)
-                api_request.set_content_type(format_type.APPLICATION_JSON)
-            else:
-                body = urlencode(body_params)
-                api_request.set_content(body)
-                api_request.set_content_type(format_type.APPLICATION_FORM)
-
-            # 把这个URL编码的值赋给content，设置content-type
-            # FIXME body is the final bytes to be sent to the server via HTTP
-            # content is an application level concept
-            http_request.body = body
-        elif api_request.get_content() and "Content-Type" not in api_request.get_headers():
-            api_request.set_content_type(format_type.APPLICATION_OCTET_STREAM)
-            # api_request.set_content_type(format_type.APPLICATION_JSON)
-            http_request.body = api_request.get_content()
+        http_request.accept_format = 'JSON'
 
         # api_request的ua
         user_agent = _modify_user_agent(context.config.user_agent, api_request)
-        # api_request.headers['User-Agent'] = user_agent
-        # # api_request的extra header
-        # api_request.headers['x-sdk-client'] = 'python/2.0.0'
-        # api_request.headers['Accept-Encoding'] = 'identity'
+        api_request.headers['User-Agent'] = user_agent
+        # api_request的extra header
+        api_request.headers['x-sdk-client'] = 'python/2.0.0'
+        api_request.headers['Accept-Encoding'] = 'identity'
 
-        api_request.add_header('Accept-Encoding', 'identity')
-        api_request.add_header('x-sdk-client', 'python/2.0.0')
-        api_request.add_header('User-Agent', user_agent)
+        http_request.body = api_request.content
 
         # http_request的method and protocol/proxy
-        http_request.method = api_request.get_method()
-        http_request.protocol = api_request.get_protocol_type()  # http|https
-        http_request.proxy = context.config._proxy  # http|https
+        http_request.method = api_request.method
+        http_request.protocol = api_request.protocol  # http|https
+        http_request.proxy = context.config._proxy  # {}
         if http_request.protocol == 'https':
             http_request.port = 443
 
-        # context.api_request = api_request
-        # context.http_request = http_request
 
     def handle_response(self, context):
         pass

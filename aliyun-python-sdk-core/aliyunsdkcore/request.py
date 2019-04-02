@@ -241,22 +241,6 @@ class AcsRequest:
     def set_content_type(self, content_type):
         self.add_header("Content-Type", content_type)
 
-    # @abc.abstractmethod
-    # def get_style(self):
-    #     pass
-    #
-    # @abc.abstractmethod
-    # def get_url(self, region_id, ak, secret):
-    #     pass
-    #
-    # @abc.abstractmethod
-    # def get_signed_header(self, region_id, ak, secret):
-    #     pass
-    #
-    # @abc.abstractmethod
-    # def get_signed_signature(self, region_id, ak):
-    #     pass
-
     def set_endpoint(self, endpoint):
         self.endpoint = endpoint
         self._new_style_config.endpoint = self.endpoint

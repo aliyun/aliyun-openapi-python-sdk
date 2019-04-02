@@ -21,8 +21,9 @@ import time
 from alibabacloud.utils import format_type as FormatType, parameter_helper as helper
 from alibabacloud.signer.algorithm import ShaHmac1 as mac1
 from aliyunsdkcore.vendored.six import iteritems
-from aliyunsdkcore.vendored.six.moves.urllib.parse import urlencode
 from aliyunsdkcore.vendored.six.moves.urllib.request import pathname2url
+from aliyunsdkcore.compat import urlencode
+from alibabacloud.utils.parameter_helper import md5_sum
 
 FORMAT_ISO_8601 = "%Y-%m-%dT%H:%M:%SZ"
 HEADER_SEPARATOR = "\n"
@@ -37,39 +38,41 @@ HEADER_SEPARATOR = "\n"
 
 class ROASigner:
 
-    def __init__(self, credentials, api_request, region_id, signer=None):
+    def __init__(self, credentials, api_request, region_id, version, signer=None):
         self.credentials = credentials
         self.request = api_request
         self.region_id = region_id
+        self.version = version
+
         if signer is not None:
             self.signer = signer()
         else:
             self.signer = mac1()
 
-        self.sign_params = self._prepare_params()
-        self.uri = self._replace_occupied_parameters()
+        self._prepare_params, self._prepare_headers = self._prepare_params_headers()
+        self._uri = self._replace_occupied_parameters()
 
-    def _prepare_params(self):
-        from alibabacloud.utils.parameter_helper import md5_sum
-        self.request.add_header("x-acs-version", self.request.get_version())
-        sign_params = self.request.get_query_params()
-        if self.request.get_content() is not None:
-            self.request.add_header(
-                'Content-MD5', md5_sum(self.request.get_content()))
+    def _prepare_params_headers(self):
+        headers = self.request.headers
+        headers['x-acs-version'] = self.version
+
+        sign_params = self.request.query_params
         if 'RegionId' not in sign_params.keys():
             sign_params['RegionId'] = self.region_id
-            self.request.add_header('x-acs-region-id', str(self.region_id))
+            headers['x-acs-region-id'] = str(self.region_id)
+
+        if self.request.content is not None:
+            self.request.headers['Content-MD5'] = md5_sum(self.request.content)
 
         if getattr(self.credentials, 'security_token') is not None:
-            self.request.add_header("x-acs-security-token", self.credentials.security_token)
+            self.request.headers['x-acs-security-token'] = self.credentials.security_token
 
         if getattr(self.credentials, 'bearer_token') is not None:
-            self.request.add_header("x-acs-bearer-token", self.credentials.bearer_token)
-
-        return sign_params
+            self.request.headers['x-acs-bearer-token'] = self.credentials.bearer_token
+        return sign_params, self.request.headers
 
     def _refresh_sign_parameters(self):
-        parameters = self.request.get_headers()
+        parameters = self._prepare_headers
         if parameters is None or not isinstance(parameters, dict):
             parameters = dict()
         parameters["Date"] = helper.get_rfc_2616_date()
@@ -79,8 +82,8 @@ class ROASigner:
         return parameters
 
     def _replace_occupied_parameters(self):
-        uri_pattern = self.request.get_uri_pattern()
-        paths = self.request.get_path_params()
+        uri_pattern = self.request.uri_pattern
+        paths = self.request.path_params
         result = uri_pattern
         if paths is not None:
             for (key, value) in iteritems(paths):
@@ -94,21 +97,21 @@ class ROASigner:
         sign_to_string = ''
         # TODO :interesting_headers 必须按照以下的顺序
         interesting_headers = ['Accept', 'Content-MD5', 'Content-Type', 'Date']
-        sign_to_string += self.request.get_method().upper()
+        sign_to_string += self.request.method.upper()
         sign_to_string += "\n"
-        # TODO  这里有个坑
+        # TODO  这里有个坑,无论是否有值，都有换行，猜测是按照换行符进行分割的
         for ih in interesting_headers:
             if headers.get(ih) is not None:
                 sign_to_string += headers[ih]
             sign_to_string += "\n"
         sign_to_string += self._build_canonical_headers(headers, "x-acs-")
-
-        sign_to_string += self._build_canonical_resource(self.uri, self.sign_params)
+        sign_to_string += self._build_canonical_resource(self._uri, self._prepare_params)
         return sign_to_string
 
     # change the give headerBegin to the lower() which in the headers
     # and change it to key.lower():value
-    def _build_canonical_headers(self, headers, header_begin):
+    @staticmethod
+    def _build_canonical_headers(headers, header_begin):
         result = ""
         unsort_map = dict()
         for (key, value) in iteritems(headers):
@@ -120,8 +123,9 @@ class ROASigner:
             result += "\n"
         return result
 
-    def _build_canonical_resource(self, uri, queries):
-        uri_parts = uri.split("?")
+    @staticmethod
+    def _build_canonical_resource(uri, queries):
+        uri_parts = uri.rsplit("?", 1)
         if len(uri_parts) > 1 and uri_parts[1] is not None:
             queries[uri_parts[1]] = None
         query_builder = uri_parts[0]
@@ -140,28 +144,31 @@ class ROASigner:
 
     @property
     def headers(self):
-        headers = self.request.get_headers()
+        headers = self._prepare_headers
         signature = self.signer.sign_string(self.signature, self.credentials.access_key_secret)
         headers['Authorization'] = "acs %s:%s" % (self.credentials.access_key_id, signature)
         return headers
 
     @property
     def params(self):
+
         param = ""
-        param += self.uri
+        param += self._uri
         if not param.endswith("?"):
             param += "?"
-        param += urlencode(self.sign_params)
+
+        param += urlencode(self._prepare_params)
         if param.endswith("?"):
             param = param[0:(len(param) - 1)]
         return param
 
 
 class RPCSigner:
-    def __init__(self, credentials, api_request, region_id, signer=None):
+    def __init__(self, credentials, api_request, region_id, version, signer=None):
         self.credentials = credentials
         self.request = api_request
         self.region_id = region_id
+        self.version = version
         if signer is None:
             self.signer = mac1()
         else:
@@ -172,13 +179,14 @@ class RPCSigner:
     @property
     def signature(self):
         parameters = self.parameters
-        parameters.update(self.request.get_body_params())
+        # rpc 的body_params 和query_params 一样的level
+        parameters.update(self.request.body_params)
         if getattr(self.credentials, 'security_token') is not None:
             parameters['SecurityToken'] = self.credentials.security_token
 
         if getattr(self.credentials, 'bearer_token') is not None:
             parameters['BearerToken'] = self.credentials.bearer_token
-        signature = self._calc_signature(self.request.get_method(), parameters)
+        signature = self._calc_signature(self.request.method, parameters)
         return signature
 
     @property
@@ -186,15 +194,15 @@ class RPCSigner:
         parameters = self.parameters
         signature = self.signer.sign_string(self.signature, str(self.credentials.access_key_secret) + '&')
         parameters['Signature'] = signature
-        params = '?' + urlencode(parameters)
+        params = '?' + urlencode(parameters, doseq=True)
         return params
 
     @property
     def headers(self):
-        headers = {}
-        for headerKey, headerValue in iteritems(self.request.get_headers()):
-            headers[headerKey] = headerValue
-        return headers
+        # headers = {}
+        # for headerKey, headerValue in iteritems(self.request.headers):
+        #     headers[headerKey] = headerValue
+        return self.request.headers
 
     @staticmethod
     def _pop_standard_urlencode(query):
@@ -214,12 +222,13 @@ class RPCSigner:
         if self.credentials is None:
             pass
             # raise NoCredentialsError
-        parameters = self.request.get_query_params()
+        parameters = self.request.query_params
         if parameters is None:
             parameters = {}
-        parameters['Version'] = self.request.get_version()
-        parameters['Action'] = self.request.get_action_name()
-        parameters['Format'] = self.request.get_accept_format()
+        # TODO version 是client level
+        parameters['Version'] = self.version
+        parameters['Action'] = self.request.action_name
+        parameters['Format'] = self.request.accept_format
 
         parameters["Timestamp"] = time.strftime(FORMAT_ISO_8601, time.gmtime())
         parameters["SignatureMethod"] = self.signer.signer_name
