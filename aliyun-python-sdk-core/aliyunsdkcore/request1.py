@@ -118,96 +118,6 @@ class AcsRequest:
     def add_body_params(self, k, v):
         self._body_params[k] = v
 
-    def get_body_params(self):
-        return self._body_params
-
-    def get_uri_pattern(self):
-        return self._uri_pattern
-
-    def get_uri_params(self):
-        return self._uri_params
-
-    def get_product(self):
-        return self._product
-
-    def get_version(self):
-        return self._version
-
-    def get_action_name(self):
-        return self._action_name
-
-    def get_accept_format(self):
-        return self._accept_format
-
-    def get_protocol_type(self):
-        return self._protocol_type
-
-    def get_query_params(self):
-        return self._params
-
-    def get_method(self):
-        return self._method
-
-    def set_uri_pattern(self, pattern):
-        self._uri_pattern = pattern
-
-    def set_uri_params(self, params):
-        self._uri_params = params
-
-    def set_method(self, method):
-        self._method = method
-
-    def set_product(self, product):
-        self._product = product
-
-    def set_version(self, version):
-        self._version = version
-
-    def set_action_name(self, action_name):
-        self._action_name = action_name
-
-    def set_accept_format(self, accept_format):
-        self._accept_format = accept_format
-
-    def set_protocol_type(self, protocol_type):
-        self._protocol_type = protocol_type
-
-    def set_query_params(self, params):
-        self._params = params
-
-    def set_body_params(self, body_params):
-        self._body_params = body_params
-
-    def set_content(self, content):
-        """
-
-        :param content: ByteArray
-        :return:
-        """
-        self._content = content
-
-    def get_content(self):
-        """
-
-        :return: ByteArray
-        """
-        return self._content
-
-    def get_headers(self):
-        """
-
-        :return: Dict
-        """
-        return self._header
-
-    def set_headers(self, headers):
-        """
-
-        :param headers: Dict
-        :return:
-        """
-        self._header = headers
-
     def add_header(self, k, v):
         self._header[k] = v
 
@@ -229,18 +139,6 @@ class AcsRequest:
 
         return CaseInsensitiveDict(request_user_agent)
 
-    def set_location_service_code(self, location_service_code):
-        self._location_service_code = location_service_code
-
-    def get_location_service_code(self):
-        return self._location_service_code
-
-    def get_location_endpoint_type(self):
-        return self._location_endpoint_type
-
-    def set_content_type(self, content_type):
-        self.add_header("Content-Type", content_type)
-
     def set_endpoint(self, endpoint):
         self.endpoint = endpoint
         self._new_style_config.endpoint = self.endpoint
@@ -256,6 +154,42 @@ class AcsRequest:
 
     def set_read_timeout(self, read_timeout):
         self._new_style_config.read_timeout = read_timeout
+
+    # TODO add some
+    @property
+    def version(self):
+        return self._version
+
+    @property
+    def product(self):
+        return self._product
+
+    @property
+    def action_name(self):
+        return self._action_name
+
+    @property
+    def protocol_type(self):
+        return self._protocol_type
+
+    # self._action_name = action_name
+    # self._protocol_type = protocol_type
+    # if self._protocol_type is None:
+    #     self._protocol_type = _default_protocol_type
+    #
+    # self._accept_format = accept_format
+    # self._params = {}
+    # self._method = method
+    # self._header = {}
+    # self._body_params = {}
+    # self._uri_pattern = None
+    # self._uri_params = None
+    # self._content = None
+    # self._location_service_code = location_service_code
+    # self._location_endpoint_type = location_endpoint_type
+    # self.add_header('x-sdk-invoke-type', 'normal')
+    # self.endpoint = None
+    # self._extra_user_agent = {}
 
 
 class RpcRequest(AcsRequest):
@@ -285,47 +219,6 @@ class RpcRequest(AcsRequest):
             protocol,
             mt.GET)
         self._style = STYLE_RPC
-        # self._signer = signer
-        self.url_params =None
-
-    def get_style(self):
-        return self._style
-
-    def _get_sign_params(self):
-        req_params = self.get_query_params()
-        if req_params is None:
-            req_params = {}
-        req_params['Version'] = self.get_version()
-        req_params['Action'] = self.get_action_name()
-        req_params['Format'] = self.get_accept_format()
-
-        return req_params
-
-    # def get_url_params(self, signer=None):
-    #     if signer is not None:
-    #         self._signer = signer
-    #     sign_params = self._get_sign_params()
-    #     url_params = rpc_signer.get_url_params(sign_params, self.get_accept_format(), self._signer)
-    #     self.url_params = url_params
-        
-    # def get_url(self, region_id, access_key_id, access_key_secret):
-    #     url = rpc_signer.get_signed_url(region_id, access_key_id, access_key_secret,
-    #                                     self.url_params, self.string_to_sign, self._signer)
-    #     return url
-
-    # def get_signed_signature(self, region_id, access_key_id):
-    #     string_to_sign = rpc_signer.get_signed_signature(region_id, access_key_id,
-    #                                                      self.get_method(),
-    #                                                      self.get_body_params(),
-    #                                                      self.url_params)
-    #     self.string_to_sign = string_to_sign
-    #     return string_to_sign
-
-    # def get_signed_header(self, region_id=None, ak=None, secret=None):
-    #     headers = {}
-    #     for headerKey, headerValue in iteritems(self.get_headers()):
-    #         headers[headerKey] = headerValue
-    #     return headers
 
 
 class RoaRequest(AcsRequest):
@@ -374,88 +267,10 @@ class RoaRequest(AcsRequest):
         self._uri_pattern = uri_pattern
         self._path_params = path_params
 
-    def get_style(self):
-        """
-
-        :return: String
-        """
-        return self._style
-
-    def get_path_params(self):
-        return self._path_params
-
-    def set_path_params(self, path_params):
-        self._path_params = path_params
-
     def add_path_param(self, k, v):
         if self._path_params is None:
             self._path_params = {}
         self._path_params[k] = v
-
-    def _get_sign_params(self):
-        req_params = self.get_query_params()
-        if req_params is None:
-            req_params = {}
-        self.add_header("x-acs-version", self.get_version())
-        # req_params['Version'] = self.get_version()
-        # req_params['Action'] = self.get_action_name()
-        # req_params['Format'] = self.get_accept_format()
-        return req_params
-
-    # def get_signed_header(self, region_id, ak, secret):
-    #     """
-    #     Generate signed header
-    #     :param region_id: String
-    #     :param ak: String
-    #     :param secret: String
-    #     :return: Dict
-    #     """
-    #     sign_params = self._get_sign_params()
-    #     if self.get_content() is not None:
-    #         self.add_header(
-    #             'Content-MD5', md5_sum(self.get_content()))
-    #     if 'RegionId' not in sign_params.keys():
-    #         # sign_params['RegionId'] = region_id
-    #         self.add_header('x-acs-region-id', str(region_id))
-    #
-    #     signed_headers = roa_signer.get_signed_headers(
-    #         ak,
-    #         secret,
-    #         self.get_headers(),
-    #         self.string_to_sign)
-    #     return signed_headers
-
-    # def get_signed_signature(self, region_id, access_key_id):
-    #     sign_params = self._get_sign_params()
-    #     if self.get_content() is not None:
-    #         self.add_header(
-    #             'Content-MD5', md5_sum(self.get_content()))
-    #     if 'RegionId' not in sign_params.keys():
-    #         sign_params['RegionId'] = region_id
-    #         self.add_header('x-acs-region-id', str(region_id))
-    #
-    #     sign_to_string = roa_signer.get_signed_signature(
-    #         sign_params,
-    #         self.get_accept_format(),
-    #         self.get_headers(),
-    #         self.get_uri_pattern(),
-    #         self.get_path_params(),
-    #         self.get_method())
-    #     self.string_to_sign = sign_to_string
-    #     return sign_to_string
-
-    # def get_url(self, region_id=None, ak=None, secret=None):
-    #     """
-    #     Compose request url without domain
-    #     :param region_id: String
-    #     :return: String
-    #     """
-    #     sign_params = self.get_query_params()
-    #     url = roa_signer.get_signed_url(
-    #         self.get_uri_pattern(),
-    #         sign_params,
-    #         self.get_path_params())
-    #     return url
 
 
 class CommonRequest(AcsRequest):
@@ -548,48 +363,35 @@ class CommonRequest(AcsRequest):
     def get_style(self):
         return self._style
 
-    def get_url(self, region_id, ak, secret):
-        return self.request.get_url(region_id, ak, secret)
-
-    def get_signed_header(self, region_id, access_key_id, access_key_secret):
-        return self.request.get_signed_header(region_id, access_key_id, access_key_secret)
-
-    def get_signed_signature(self, region_id, ak):
-        return self.request.get_signed_signature(region_id, ak)
-
-    def get_url_params(self):
-        return self.request.get_url_params()
-
     def fill_params(self):
 
-        self.request.set_uri_pattern(self.get_uri_pattern())
+        self.request._uri_pattern = self._uri_pattern
 
-        self.request.set_uri_params(self.get_uri_params())
+        self.request._uri_params = self._uri_params
 
         if self.get_style() == STYLE_ROA:
-            self.request.set_path_params(self.get_path_params())
+            self.request._path_params = self._path_params
 
-        self.request.set_method(self.get_method())
+        self.request._method = self._method
 
-        self.request.set_product(self.get_product())
+        self.request._product = self._product
 
-        self.request.set_version(self.get_version())
+        self.request._version = self._version
 
-        self.request.set_action_name(self.get_action_name())
+        self.request._action_name = self._action_name
 
-        self.request.set_accept_format(self.get_accept_format())
+        self.request._accept_format = self._accept_format
 
-        self.request.set_protocol_type(self.get_protocol_type())
+        self.request._protocol_type = self._protocol_type
 
-        self.request.set_query_params(self.get_query_params())
+        self.request._query_params = self._query_params
 
-        self.request.set_content(self.get_content())
+        self.request._content = self._content
 
-        self.request.set_headers(self.get_headers())
+        self.request._headers = self._headers
 
-        self.request.set_location_service_code(
-            self.get_location_service_code())
+        self.request._location_service_code = self._location_service_code
 
-        self.request.set_body_params(self.get_body_params())
+        self.request._body_params = self._body_params
 
-        self.request.set_endpoint(self.get_domain())
+        self.request._endpoint = self.endpoint

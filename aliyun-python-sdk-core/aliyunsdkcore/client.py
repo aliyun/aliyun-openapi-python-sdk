@@ -262,21 +262,22 @@ class AcsClient:
                 context.http_response.content)
 
     def _get_new_style_request(self, acs_request):
+        from alibabacloud.request import APIRequest
 
         if acs_request.get_style() == "RPC":
             # TODO
-            pass
+            return APIRequest(acs_request)
         elif acs_request.get_style() == "ROA":
             # TODO
-            pass
+            return APIRequest(acs_request)
         else:
             raise AssertionError("Invalid request style: " + acs_request.get_style())
 
-        return acs_request
+        # return acs_request
 
     def _get_new_style_config(self, acs_request):
         """
-        合并client和request的endpoint
+        合并client和request的config
         :param acs_request:
         :return:
         """
@@ -300,10 +301,10 @@ class AcsClient:
                 config,
                 credentials_provider=self._credentials_provider
             )
-            client.location_service_code = acs_request.get_location_service_code()
-            client.get_location_service_code = acs_request.get_location_service_code()
-            client.location_endpoint_type = acs_request.get_location_endpoint_type()
             client.product_code = acs_request.get_product()
+            client.product_version = acs_request.get_version()
+            client.location_service_code = acs_request.get_location_service_code()
+            client.location_endpoint_type = acs_request.get_location_endpoint_type()
 
             self._loaded_new_clients[key] = client
             self._loaded_new_clients[key].endpoint_resolver = self._endpoint_resolver

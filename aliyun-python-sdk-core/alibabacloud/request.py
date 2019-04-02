@@ -15,14 +15,26 @@
 
 class APIRequest:
 
-    def __init__(self, action_name, http_method, **params):
-        self.action_name = action_name
-        self._params = params
-        self.protocol = "https"
-        self.http_method = http_method
+    def __init__(self, request):
+        self.accept_format = 'Json'
 
-    def __getattr__(self, item):
-        return self._params[item]
+        self.style = request._style
+        self.action_name = request._action_name
+        # FIXME 新的request 直接不包含body_params 和content
+        # self.body_params = request._body_params
+        # self.content = request._content
+        self.query_params = request._params
+        self.protocol = request._protocol_type  # http|https
+        self.method = request._method
+        self.headers = request._header  # 原本为空，都是组装的
+        self.endpoint = request.endpoint
+        # Roa特有的
+        self.uri_pattern = request._uri_pattern
+        self.path_params = request._path_params
+        if request._body_params:
+            self.query_params.update(request._body_params)
+        if request._content:
+            self.query_params['Content'] = request._content
 
 
 class APIResponse:
@@ -60,4 +72,17 @@ class HTTPResponse:
         self.headers = headers
         self.content = content
 
-http_request = HTTPRequest()
+
+class _APIRequest:
+
+    def __init__(self, action_name, http_method, **params):
+        self.action_name = action_name
+        self.protocol = "https"
+        # method 和protocol 是正交的
+        # self.http_method = http_method
+        self.method = http_method
+
+        self._params = params
+
+    def __getattr__(self, item):
+        return self._params[item]
