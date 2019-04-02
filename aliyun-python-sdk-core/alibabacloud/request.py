@@ -11,10 +11,58 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+from alibabacloud.utils import format_type
+from aliyunsdkcore.compat import urlencode
 
 
 class APIRequest:
-    pass
+
+    def __init__(self, request):
+        self.accept_format = 'Json'
+
+        self.style = request._style
+        self.action_name = request._action_name
+
+        self.query_params = request._params
+        self.protocol = request._protocol_type  # http|https
+        self.method = request._method
+        self.headers = request._header  # 原本为空，都是组装的
+        self.endpoint = request.endpoint
+        self.body_params = request._body_params
+        self.content = request._content
+
+        # Roa特有的
+        if self.style == 'ROA':
+            self.uri_pattern = request._uri_pattern
+            self.path_params = request._path_params
+
+        body_params = request._body_params
+        if body_params:
+            # TODO， request.body 必须是json，application/x-www-form-urlencoded,原 SDK是以下的操作
+
+            # FIXME  修正后的操作.APPLICATION_FORM 其实本就应该是get请求的urlencode编码的形式，post还是应该采取json
+            # 这里明确几点：
+            # 1.body只对post 和put 有效
+            # 2.
+            allow_methods = ['POST', 'PUT']
+            # if self.style == 'ROA' and self.method.upper() in allow_methods:
+            if self.method.upper() in allow_methods:
+                import json
+                body = json.dumps(body_params)
+                self.content = body
+                self.headers["Content-Type"] = format_type.APPLICATION_JSON
+
+            else:
+                body = urlencode(body_params, doseq=True)
+                self.content = body
+                self.headers["Content-Type"] = format_type.APPLICATION_FORM
+
+            # 把这个URL编码的值赋给content，设置content-type
+            # FIXME body is the final bytes to be sent to the server via HTTP
+            # content is an application level concept
+        elif self.content and "Content-Type" not in self.headers:
+
+            self.headers["Content-Type"] = format_type.APPLICATION_OCTET_STREAM
 
 
 class APIResponse:
@@ -52,4 +100,17 @@ class HTTPResponse:
         self.headers = headers
         self.content = content
 
-http_request = HTTPRequest()
+
+class _APIRequest:
+
+    def __init__(self, action_name, http_method, **params):
+        self.action_name = action_name
+        self.protocol = "https"
+        # method 和protocol 是正交的
+        # self.http_method = http_method
+        self.method = http_method
+
+        self._params = params
+
+    def __getattr__(self, item):
+        return self._params[item]

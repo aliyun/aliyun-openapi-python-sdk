@@ -7,13 +7,8 @@ from alibabacloud.credentials import AccessKeyCredentials
 from alibabacloud.credentials import BearerTokenCredentials
 from alibabacloud.credentials import SecurityCredentials
 
-# TODO remove aliyunsdkcore dependency
-from aliyunsdkcore.request import CommonRequest
-from aliyunsdkcore.request import RpcRequest
-
-from alibabacloud.signer.algorithm import ShaHmac256
-
 from alibabacloud.utils.ini_helper import load_config
+from alibabacloud.credentials.assume_role_caller import AssumeRoleCaller
 
 
 class CredentialsProvider(object):
@@ -68,38 +63,19 @@ class RotatingCredentialsProvider(CachedCredentialsProvider):
         return self._cached_credentials
 
 
-class AssumeRoleCaller:
-
-    def __init__(self, client):
-        self._client = client  # TODO implement
-
-    def fetch(self, role_arn, role_session_name, session_period):
-        request = CommonRequest(product="Sts", version='2015-04-01', action_name='AssumeRole')
-        request.set_method('POST')
-        request.set_protocol_type('https')
-        request.add_query_param('RoleArn', role_arn)
-        request.add_query_param('RoleSessionName', role_session_name)
-        request.add_query_param('DurationSeconds', session_period)
-        request.set_accept_format('JSON')
-
-        body = self._client.do_action_with_exception(request)
-        response = json.loads(body)
-        return response
-
-
 class RamRoleCredentialsProvider(RotatingCredentialsProvider):
 
     SESSION_PERIOD = 3600
     REFRESH_FACTOR = 0.8
 
-    def __init__(self, access_key_credentials, role_arn, role_session_name='DefaultSessionName'):
+    def __init__(self, client_config, access_key_credentials, role_arn,
+                 role_session_name='DefaultSessionName'):
+        self.client_config = client_config
         self.access_key_credentials = access_key_credentials
         self.role_arn = role_arn
         self.role_session_name = role_session_name
-        # FixMe add a client
-        from aliyunsdkcore.client import AcsClient
-        client = AcsClient(self.access_key_credentials.access_key_id, self.access_key_credentials.access_key_secret)
-        self._fetcher = AssumeRoleCaller(client)
+        self._fetcher = AssumeRoleCaller(client_config,
+                                         StaticCredentialsProvider(access_key_credentials))
         RotatingCredentialsProvider.__init__(self, self.SESSION_PERIOD, self.REFRESH_FACTOR)
 
     def rotate_credentials(self):
@@ -114,33 +90,12 @@ class RamRoleCredentialsProvider(RotatingCredentialsProvider):
         )
 
 
-# from rsa to AccessKeyCredential
-class GetSessionAkRequest(RpcRequest):
-
-    def __init__(self):
-        RpcRequest.__init__(self, product='Sts', version='2015-04-01',
-                            action_name='GenerateSessionAccessKey',
-                            signer=ShaHmac256)
-        self.set_protocol_type('https')
-
-    def get_duration_seconds(self):
-        return self.get_query_params().get("DurationSeconds")
-
-    def set_duration_seconds(self, duration_seconds):
-        self.add_query_param('DurationSeconds', duration_seconds)
-
-    def get_public_key_id(self):
-        return self.get_query_params().get('PublicKeyId')
-
-    def set_public_key_id(self, public_key_id):
-        self.add_query_param('PublicKeyId', public_key_id)
-
-
 class ProfileCredentialsProvider(CredentialsProvider):
 
-    def __init__(self, config_file_name, profile_name):
+    def __init__(self, client_config, credentials_config_file_name, profile_name):
         self.environ = os.environ
-        profile = self._load_profile(config_file_name, profile_name)
+        profile = self._load_profile(credentials_config_file_name, profile_name)
+        self.client_config = client_config
         self._inner_provider = self._get_provider_by_profile(profile)
 
     def _load_profile(self, config_file_name, profile_name):
@@ -176,10 +131,12 @@ class ProfileCredentialsProvider(CredentialsProvider):
             return InstanceProfileCredentialsProvider(_get_value('role_name'))
 
         elif type_ == 'ram_role_arn':
-            return RamRoleCredentialsProvider(AccessKeyCredentials(
-                _get_value('access_key_id'),
-                _get_value('access_key_secret'),
-            ), _get_value('role_arn'), role_session_name=_get_value('role_session_name'))
+            return RamRoleCredentialsProvider(
+                self.client_config,
+                AccessKeyCredentials(
+                    _get_value('access_key_id'),
+                    _get_value('access_key_secret'),
+                ), _get_value('role_arn'), role_session_name=_get_value('role_session_name'))
 
         elif type_ == 'bearer_token':
             return StaticCredentialsProvider(BearerTokenCredentials(
@@ -277,10 +234,10 @@ class ChainedCredentialsProvider(CredentialsProvider):
 
 class PredefinedChainCredentialsProvider(ChainedCredentialsProvider):
 
-    def __init__(self, config_file_name, profile_name, role_name):
+    def __init__(self, client_config, credentials_config_file_name, profile_name, role_name):
         provider_chain = [
             EnvCredentialsProvider(),
-            ProfileCredentialsProvider(config_file_name, profile_name),
+            ProfileCredentialsProvider(client_config, credentials_config_file_name, profile_name),
         ]
         if role_name:
             provider_chain.append(InstanceProfileCredentialsProvider(role_name))
@@ -293,10 +250,12 @@ class DefaultChainedCredentialsProvider(PredefinedChainCredentialsProvider):
     ENV_NAME_FOR_CREDENTIALS_FILE = 'ALIBABA_CLOUD_CREDENTIALS_FILE'
     DEFAULT_NAME_FOR_CREDENTIALS_FILE = '~/.alibabacloud/credentials'
 
-    def __init__(self, profile_name='default'):
-        config_file = self._get_config_file_name()
+    def __init__(self, client_config, profile_name='default'):
+        credentials_config_file = self._get_config_file_name()
         role_name = self._get_config('role_name')
-        PredefinedChainCredentialsProvider.__init__(self, config_file, profile_name, role_name)
+        PredefinedChainCredentialsProvider.__init__(self, client_config,
+                                                    credentials_config_file, profile_name,
+                                                    role_name)
 
     def _get_config_file_name(self):
         if self.ENV_NAME_FOR_CREDENTIALS_FILE in os.environ and \

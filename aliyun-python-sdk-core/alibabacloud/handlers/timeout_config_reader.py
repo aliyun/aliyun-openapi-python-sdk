@@ -25,7 +25,7 @@ class TimeoutConfigReader(RequestHandler):
     # TODO request级别仅对读取配置进行处理，用户不设置request层级的timeout
     def handle_request(self, context):
         context.http_request.timeout = (self._connection_timeout(context.config),
-                                        self._read_timeout(context.api_request, context.config))
+                                        self._read_timeout(context))
 
     def handle_response(self, context):
         # context 实际是request
@@ -36,11 +36,14 @@ class TimeoutConfigReader(RequestHandler):
         return config.connection_timeout or DEFAULT_CONNECTION_TIMEOUT
 
     @staticmethod
-    def _read_timeout(request, config):
+    def _read_timeout(context):
         file_read_timeout = None
-        if request.get_product() is not None and request.get_version() is not None \
-                and request.get_action_name() is not None:
-            path = '"{0}"."{1}"."{2}"'.format(request.get_product().lower(), request.get_version(),
-                                              request.get_action_name())
+        product_code = context.client.product_code
+        product_version = context.client.product_version
+        action_name = context.api_request.action_name
+        if product_code is not None and product_version is not None \
+                and action_name is not None:
+            path = '"{0}"."{1}"."{2}"'.format(product_code.lower(), product_version,
+                                              action_name)
             file_read_timeout = jmespath.search(path, _api_timeout_config_data)
-        return file_read_timeout or config.read_timeout or DEFAULT_READ_TIMEOUT
+        return file_read_timeout or context.config.read_timeout or DEFAULT_READ_TIMEOUT

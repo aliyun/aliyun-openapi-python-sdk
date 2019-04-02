@@ -1,6 +1,6 @@
 import os
 
-from aliyunsdkcore.acs_exception.exceptions import ClientException
+from alibabacloud.exception import ClientException
 from aliyunsdkcore.vendored import six
 
 

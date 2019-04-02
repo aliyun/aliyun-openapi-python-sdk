@@ -24,10 +24,10 @@ logger = logging.getLogger(__name__)
 
 
 def _find_data_in_retry_config(key_name, request, retry_config):
-    if request.get_product() is None:
+    if request._product is None:
         return None
-    path = '"{0}"."{1}"."{2}"'.format(request.get_product().lower(),
-                                      request.get_version(),
+    path = '"{0}"."{1}"."{2}"'.format(request._product.lower(),
+                                      request._version,
                                       key_name)
     return jmespath.search(path, retry_config)
 
@@ -135,7 +135,7 @@ class RetryOnApiCondition(RetryCondition):
     def should_retry(self, retry_policy_context):
         request = retry_policy_context.original_request
         retryable_apis = _find_data_in_retry_config("RetryableAPIs", request, self.retry_config)
-        if isinstance(retryable_apis, list) and request.get_action_name() in retryable_apis:
+        if isinstance(retryable_apis, list) and request._action_name in retryable_apis:
             return RetryCondition.SHOULD_RETRY
         else:
             return RetryCondition.NO_RETRY
@@ -150,7 +150,7 @@ class RetryOnApiWithClientTokenCondition(RetryCondition):
         request = retry_policy_context.original_request
         retryable_apis = _find_data_in_retry_config(
             "RetryableAPIsWithClientToken", request, self.retry_config)
-        if isinstance(retryable_apis, list) and request.get_action_name() in retryable_apis:
+        if isinstance(retryable_apis, list) and request._action_name in retryable_apis:
             return RetryCondition.SHOULD_RETRY | RetryCondition.SHOULD_RETRY_WITH_THROTTLING_BACKOFF
         else:
             return RetryCondition.NO_RETRY

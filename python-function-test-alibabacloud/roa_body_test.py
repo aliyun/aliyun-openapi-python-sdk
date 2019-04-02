@@ -42,12 +42,12 @@ class ROABodyTest(SDKTestBase):
 
         from aliyunsdkros.request.v20150901.PreviewStackRequest import PreviewStackRequest
         request = PreviewStackRequest()
-        request.add_body_params('key', 'value')
+        # request.add_body_params('key', 'value')
         try:
             response = self.client.do_action_with_exception(request)
             assert False
         except ServerException as e:
-            self.assertEqual("MissingParameter", e.error_code)
+            self.assertEqual("HTTPBadRequest", e.error_code)
 
     def test_roa_content_with_get(self):
         from aliyunsdkros.request.v20150901.DescribeRegionsRequest import DescribeRegionsRequest
@@ -84,9 +84,9 @@ class ROABodyTest(SDKTestBase):
 
         from aliyunsdkros.request.v20150901.PreviewStackRequest import PreviewStackRequest
         request = PreviewStackRequest()
-        request.add_body_params('key', 'value')
+        # request.add_body_params('key', 'value')
         try:
             response = self.client.do_action_with_exception(request)
             assert False
         except ServerException as e:
-            self.assertEqual("MissingParameter", e.error_code)
+            self.assertEqual("HTTPBadRequest", e.error_code)
