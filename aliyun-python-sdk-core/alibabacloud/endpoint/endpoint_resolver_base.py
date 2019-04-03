@@ -17,7 +17,7 @@
 # under the License.
 #
 
-from aliyunsdkcore.endpoint import EndpointResolver
+from alibabacloud.endpoint import EndpointResolver
 
 
 class EndpointResolverBase(EndpointResolver):
