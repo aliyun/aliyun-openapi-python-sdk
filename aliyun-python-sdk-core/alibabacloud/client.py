@@ -36,7 +36,7 @@ DEFAULT_HANDLERS = [
     TimeoutConfigReader,  # 获取timeout
     EndpointHandler,  # 获取endpoint
     LogHandler,
-    # RetryHandler,
+    RetryHandler,
     HttpHandler,
     ServerErrorHandler
 ]
@@ -159,6 +159,7 @@ def get_merged_client_config(config):
 class AlibabaCloudClient:
 
     def __init__(self, client_config, credentials_provider):
+
         self.config = get_merged_client_config(client_config)
 
         if credentials_provider is not None:
@@ -171,7 +172,6 @@ class AlibabaCloudClient:
         self.logger = None  # TODO initialize
         # endpoint_resolver阶段需要
         self.endpoint_resolver = DefaultEndpointResolver(self)  # TODO initialize
-        # TODO product_code 如何获取
         self.product_code = None
         self.location_service_code = None
         self.product_version = None
@@ -227,8 +227,9 @@ class ECSClient(AlibabaCloudClient):
         self.location_service_code = 'ecs'
         self.location_endpoint_type = 'OpenAPI'
 
-    def create_instance(self, **params):
-        api_request = APIRequest(**params)
+    def create_instance(self, instance_name=None, instance_id=None):
+        api_request = APIRequest(action_name, method, protocol, style)
+        api_request._params['InstanceName'] = instance_name
         return self._handle_request(api_request).result
 
     def delete_instance(self, **params):

@@ -91,6 +91,34 @@ class PrepareHandler(RequestHandler):
         api_request = context.api_request
         http_request.accept_format = 'JSON'
 
+        body_params = api_request.body_params
+        if body_params:
+            # TODO， request.body 必须是json，application/x-www-form-urlencoded
+
+            # FIXME  修正后的操作.APPLICATION_FORM 其实本就应该是get请求的urlencode编码的形式，post还是应该采取json
+            # 这里明确几点：
+            # 1.body只对post 和put 有效
+            # 2.
+            allow_methods = ['POST', 'PUT']
+            # if self.style == 'ROA' and self.method.upper() in allow_methods:
+            if api_request.method.upper() in allow_methods:
+                import json
+                body = json.dumps(body_params)
+                api_request.content = body
+                api_request.headers["Content-Type"] = format_type.APPLICATION_JSON
+
+            else:
+                body = urlencode(body_params, doseq=True)
+                api_request.content = body
+                api_request.headers["Content-Type"] = format_type.APPLICATION_FORM
+
+            # 把这个URL编码的值赋给content，设置content-type
+            # FIXME body is the final bytes to be sent to the server via HTTP
+            # content is an application level concept
+        elif api_request.content and "Content-Type" not in api_request.headers:
+
+            api_request.headers["Content-Type"] = format_type.APPLICATION_OCTET_STREAM
+
         # api_request的ua
         user_agent = _modify_user_agent(context.config.user_agent, api_request)
         api_request.headers['User-Agent'] = user_agent

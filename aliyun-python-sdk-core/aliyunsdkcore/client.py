@@ -99,7 +99,7 @@ class AcsClient:
         )
 
         self._loaded_new_clients = {}
-        self._endpoint_resolver = DefaultEndpointResolver(self)
+        # self._endpoint_resolver = DefaultEndpointResolver(self._get_new_style_client(request))
         self._credentials_provider = self._init_credentials_provider(ak, secret, credential)
 
     def _init_credentials_provider(self, access_key_id, access_key_secret, legacy_credentials):
@@ -264,12 +264,11 @@ class AcsClient:
     def _get_new_style_request(self, acs_request):
         from alibabacloud.request import APIRequest
 
-        if acs_request.get_style() == "RPC":
-            # TODO
-            return APIRequest(acs_request)
-        elif acs_request.get_style() == "ROA":
-            # TODO
-            return APIRequest(acs_request)
+        if acs_request.get_style():
+            # TODO action_name', 'method', 'protocol', and 'style
+            api_request = APIRequest(acs_request._action_name, acs_request._method,
+                                     acs_request._protocol_type, acs_request._style)
+            return api_request._compat_old_request(acs_request)
         else:
             raise AssertionError("Invalid request style: " + acs_request.get_style())
 
@@ -284,11 +283,6 @@ class AcsClient:
         self._new_style_config._update_config(acs_request._new_style_config)
 
         return self._new_style_config
-
-        # return alibabacloud.client.get_merged_client_config([
-        #     self._new_style_config,
-        #     acs_request._new_style_config,
-        # ])
 
     def _get_new_style_client(self, acs_request):
         key = str(acs_request.get_product())
@@ -307,7 +301,7 @@ class AcsClient:
             client.location_endpoint_type = acs_request.get_location_endpoint_type()
 
             self._loaded_new_clients[key] = client
-            self._loaded_new_clients[key].endpoint_resolver = self._endpoint_resolver
+            # self._loaded_new_clients[key].endpoint_resolver = self._endpoint_resolver
         return self._loaded_new_clients[key]
 
     def _handle_request_in_new_style(self, acs_request, raise_exception=True):
