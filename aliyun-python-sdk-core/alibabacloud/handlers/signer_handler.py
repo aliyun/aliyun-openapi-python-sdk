@@ -55,7 +55,6 @@ class SignerHandler(RequestHandler):
                 api_request._content = body
                 headers = self._modify_http_headers(headers, body, format_type.APPLICATION_FORM)
 
-        # 最终发送请求的body必须是json
         http_request.body = api_request.content
 
         context.http_request.headers = headers

@@ -27,9 +27,9 @@ from alibabacloud.endpoint.location_endpoint_caller import DescribeEndpointCalle
 
 class LocationServiceEndpointResolver(EndpointResolverBase):
 
-    def __init__(self, client):
+    def __init__(self, config):
         EndpointResolverBase.__init__(self)
-        self._client = client
+        self.config = config
         self._invalid_product_codes = set()
         self._invalid_region_ids = set()
         self._valid_product_codes = set()
@@ -67,12 +67,12 @@ class LocationServiceEndpointResolver(EndpointResolverBase):
         return self.endpoints_data.get(key)
 
     def _call_location_service(self, key, raw_request):
-        client_caller = DescribeEndpointCaller(self._client.config, self._client.credentials_provider)
+        client_caller = DescribeEndpointCaller(self.config, None)
 
         try:
-            context = client_caller.fetch(region_id=self._client.config.region_id,
-                                          endpoint_type=self._client.location_endpoint_type,
-                                          location_service_code=self._client.location_service_code)
+            context = client_caller.fetch(region_id=self.config.region_id,
+                                          endpoint_type='openAPI',
+                                          location_service_code=None)
 
         except ServerException as e:
             if "InvalidRegionId" == e.get_error_code() and \
