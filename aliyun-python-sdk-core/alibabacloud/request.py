@@ -28,6 +28,7 @@ class APIRequest:
         self.headers = {}  # 原本为空，都是通过handler组装的
         self.endpoint = None  # 不应该给这样的一个接口，但是避免resolve解析不到
         self.content = None  # 不应该有这样的一个接口，不知道为啥有了
+        self._params = {}
 
     def _compat_old_request(self, request):
         self.headers = request._header  # 原本为空{}，都是通过handler组装的

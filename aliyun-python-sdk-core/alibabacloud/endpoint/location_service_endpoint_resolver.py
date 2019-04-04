@@ -22,33 +22,18 @@ import json
 
 from aliyunsdkcore.acs_exception.exceptions import ServerException
 from alibabacloud.endpoint.endpoint_resolver_base import EndpointResolverBase
-from alibabacloud.endpoint.location.DescribeEndpointsRequest import DescribeEndpointsRequest
-from alibabacloud.client import AlibabaCloudClient
-
-
-DEFAULT_LOCATION_SERVICE_ENDPOINT = "location-readonly.aliyuncs.com"
+from alibabacloud.endpoint.location_endpoint_caller import DescribeEndpointCaller
 
 
 class LocationServiceEndpointResolver(EndpointResolverBase):
 
     def __init__(self, client):
         EndpointResolverBase.__init__(self)
-        self._location_service_endpoint = DEFAULT_LOCATION_SERVICE_ENDPOINT
-        # self._client = client
+        self._client = client
         self._invalid_product_codes = set()
         self._invalid_region_ids = set()
         self._valid_product_codes = set()
         self._valid_region_ids = set()
-
-        class TempClient(AlibabaCloudClient):
-
-            def __init__(self):
-                super().__init__(client.config, None)
-                self.product_code = 'Location'
-                self.location_service_code = None
-                self.product_version = '2015-06-12'
-                self.location_endpoint_type = 'innerAPI'
-        self._client = TempClient()
 
     def set_location_service_endpoint(self, endpoint):
         self._location_service_endpoint = endpoint
@@ -82,21 +67,13 @@ class LocationServiceEndpointResolver(EndpointResolverBase):
         return self.endpoints_data.get(key)
 
     def _call_location_service(self, key, raw_request):
-        request = DescribeEndpointsRequest()
-        request.set_protocol_type("https")
-        request.set_accept_format("json")
-        request.set_Id(raw_request.region_id)
-        request.set_ServiceCode(raw_request.location_service_code)
-        request.set_Type(raw_request.endpoint_type)
-        request.endpoint = self._location_service_endpoint
-
-        # FIXME
-        from alibabacloud.request import APIRequest
-        api_request = APIRequest('DescribeEndpoints', 'GET', 'https', 'RPC')
-        acs_request = api_request._compat_old_request(request)
+        client_caller = DescribeEndpointCaller(self._client.config, self._client.credentials_provider)
 
         try:
-            context = self._client._handle_request(acs_request)
+            context = client_caller.fetch(region_id=self._client.config.region_id,
+                                          endpoint_type=self._client.location_endpoint_type,
+                                          location_service_code=self._client.location_service_code)
+
         except ServerException as e:
             if "InvalidRegionId" == e.get_error_code() and \
                "The specified region does not exist." == e.get_error_msg():

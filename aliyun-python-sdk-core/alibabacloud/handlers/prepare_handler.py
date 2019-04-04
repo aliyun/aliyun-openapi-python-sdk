@@ -90,6 +90,14 @@ class PrepareHandler(RequestHandler):
         http_request = context.http_request
         api_request = context.api_request
         http_request.accept_format = 'JSON'
+        allow_methods = ['POST', 'PUT']
+
+        # TODO 先组装body params 或者queryparams
+        if api_request._params:
+            if api_request.method in allow_methods:
+                api_request.body_params.update(api_request._params)
+            else:
+                api_request.query_params.update(api_request._params)
 
         body_params = api_request.body_params
         if body_params:
@@ -99,7 +107,6 @@ class PrepareHandler(RequestHandler):
             # 这里明确几点：
             # 1.body只对post 和put 有效
             # 2.
-            allow_methods = ['POST', 'PUT']
             # if self.style == 'ROA' and self.method.upper() in allow_methods:
             if api_request.method.upper() in allow_methods:
                 import json
