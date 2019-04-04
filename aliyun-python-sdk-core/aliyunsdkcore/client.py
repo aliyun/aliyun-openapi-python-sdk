@@ -284,13 +284,13 @@ class AcsClient:
 
         return self._new_style_config
 
-    def _get_new_style_client(self, acs_request):
+    def _get_new_style_client(self, acs_request, config):
         key = str(acs_request.get_product())
         key += '@' + str(acs_request.get_version())
         key += '@' + str(acs_request.get_location_service_code())
         key += '@' + str(acs_request.get_location_endpoint_type())
         if key not in self._loaded_new_clients:
-            config = ClientConfig()
+            # config = ClientConfig()
             client = AlibabaCloudClient(
                 config,
                 credentials_provider=self._credentials_provider
@@ -307,7 +307,8 @@ class AcsClient:
     def _handle_request_in_new_style(self, acs_request, raise_exception=True):
         api_request = self._get_new_style_request(acs_request)
         config = self._get_new_style_config(acs_request)
-        new_style_client = self._get_new_style_client(acs_request)
+        new_style_client = self._get_new_style_client(acs_request, config)
+        # FIXME _config 如何收起来
         context = new_style_client._handle_request(api_request, _config=config,
                                                    _raise_exception=raise_exception)
         return context
