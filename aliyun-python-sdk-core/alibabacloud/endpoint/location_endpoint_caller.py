@@ -14,31 +14,33 @@
 
 from alibabacloud.client import AlibabaCloudClient
 from alibabacloud.request import APIRequest
+DEFAULT_LOCATION_SERVICE_ENDPOINT = "location-readonly.aliyuncs.com"
 
 
-class MiniRAMClient(AlibabaCloudClient):
+class MiniLocationClient(AlibabaCloudClient):
 
     def __init__(self, client_config, credentials_provider):
-        self.product_code = "Sts"
-        self.product_version = "2015-04-01"
+        AlibabaCloudClient.__init__(self, client_config, credentials_provider)
+        self.product_code = "Location"
+        self.product_version = "2015-06-12"
         self.location_service_code = None
         self.location_endpoint_type = "openAPI"
-        AlibabaCloudClient.__init__(self, client_config, credentials_provider)
 
-    def assume_role(self, role_arn=None, role_session_name=None, duration_seconds=None):
-        api_request = APIRequest('AssumeRole', 'POST', 'https', 'RPC')
+    def describe_endpoint(self, region_id=None, endpoint_type=None, location_service_code=None):
+        api_request = APIRequest('DescribeEndpoints', 'GET', 'https', 'RPC')
         api_request._params = {
-            "RoleArn": role_arn,
-            "RoleSessionName": role_session_name,
-            "DurationSeconds": duration_seconds,
+            "Id": region_id,
+            "Type": endpoint_type,
+            "ServiceCode": location_service_code,
         }
-        return self._handle_request(api_request).result
+        api_request.endpoint = DEFAULT_LOCATION_SERVICE_ENDPOINT
+        return self._handle_request(api_request)
 
 
-class AssumeRoleCaller:
+class DescribeEndpointCaller:
 
     def __init__(self, client_config, credentials_provider):
-        self._client = MiniRAMClient(client_config, credentials_provider)
+        self._client = MiniLocationClient(client_config, credentials_provider)
 
-    def fetch(self, role_arn, role_session_name, session_period):
-        return self._client.assume_role(role_arn, role_session_name, session_period)
+    def fetch(self, region_id, endpoint_type, location_service_code):
+        return self._client.describe_endpoint(region_id, endpoint_type, location_service_code)
