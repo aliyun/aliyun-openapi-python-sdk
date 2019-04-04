@@ -158,6 +158,7 @@ def get_merged_client_config(config):
 class AlibabaCloudClient:
 
     def __init__(self, client_config, credentials_provider):
+        # client_config:传入的ClientConfig，为了兼容
 
         self.config = get_merged_client_config(client_config)
 
@@ -166,7 +167,7 @@ class AlibabaCloudClient:
         else:
             from alibabacloud.credentials.provider import DefaultChainedCredentialsProvider
 
-            self.credentials_provider = DefaultChainedCredentialsProvider(client_config)
+            self.credentials_provider = DefaultChainedCredentialsProvider(self.config)
         self.handlers = DEFAULT_HANDLERS
         self.logger = None  # TODO initialize
         # endpoint_resolver阶段需要

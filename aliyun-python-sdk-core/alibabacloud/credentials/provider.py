@@ -79,10 +79,9 @@ class RamRoleCredentialsProvider(RotatingCredentialsProvider):
         RotatingCredentialsProvider.__init__(self, self.SESSION_PERIOD, self.REFRESH_FACTOR)
 
     def rotate_credentials(self):
-
-        response = self._fetcher.fetch(self.role_arn, self.role_session_name,
-                                       self.SESSION_PERIOD)
-
+        context = self._fetcher.fetch(self.role_arn, self.role_session_name,
+                                      self.SESSION_PERIOD)
+        response = json.loads(context.http_response.text)
         return SecurityCredentials(
             response.get("Credentials").get("AccessKeyId"),
             response.get("Credentials").get("AccessKeySecret"),
