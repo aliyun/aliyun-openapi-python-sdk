@@ -26,7 +26,6 @@ from alibabacloud.handlers.server_error_handler import ServerErrorHandler
 from alibabacloud.handlers.http_handler import HttpHandler
 
 
-from alibabacloud.endpoint.default_endpoint_resolver import DefaultEndpointResolver
 
 DEFAULT_HANDLERS = [
     PrepareHandler,
@@ -171,6 +170,8 @@ class AlibabaCloudClient:
         self.handlers = DEFAULT_HANDLERS
         self.logger = None  # TODO initialize
         # endpoint_resolver阶段需要
+        from alibabacloud.endpoint.default_endpoint_resolver import DefaultEndpointResolver
+
         self.endpoint_resolver = DefaultEndpointResolver(self)  # TODO initialize
         self.product_code = None
         self.location_service_code = None
@@ -195,6 +196,7 @@ class AlibabaCloudClient:
             context.config = _config
         else:
             context.config = self.config
+
         context.client = self
 
         handler_index = 0
