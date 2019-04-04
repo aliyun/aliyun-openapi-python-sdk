@@ -19,20 +19,20 @@ from alibabacloud.request import APIRequest
 class MiniRAMClient(AlibabaCloudClient):
 
     def __init__(self, client_config, credentials_provider):
+        AlibabaCloudClient.__init__(self, client_config, credentials_provider)
         self.product_code = "Sts"
         self.product_version = "2015-04-01"
-        self.location_service_code = None
+        self.location_service_code = 'sts'
         self.location_endpoint_type = "openAPI"
-        AlibabaCloudClient.__init__(self, client_config, credentials_provider)
 
     def assume_role(self, role_arn=None, role_session_name=None, duration_seconds=None):
-        api_request = APIRequest('AssumeRole', 'POST', 'https', 'RPC')
+        api_request = APIRequest('AssumeRole', 'GET', 'https', 'RPC')
         api_request._params = {
             "RoleArn": role_arn,
             "RoleSessionName": role_session_name,
             "DurationSeconds": duration_seconds,
         }
-        return self._handle_request(api_request).result
+        return self._handle_request(api_request)
 
 
 class AssumeRoleCaller:
