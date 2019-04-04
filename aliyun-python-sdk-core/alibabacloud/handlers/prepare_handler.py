@@ -101,13 +101,6 @@ class PrepareHandler(RequestHandler):
 
         body_params = api_request.body_params
         if body_params:
-            # TODO， request.body 必须是json，application/x-www-form-urlencoded
-
-            # FIXME  修正后的操作.APPLICATION_FORM 其实本就应该是get请求的urlencode编码的形式，post还是应该采取json
-            # 这里明确几点：
-            # 1.body只对post 和put 有效
-            # 2.
-            # if self.style == 'ROA' and self.method.upper() in allow_methods:
             if api_request.method.upper() in allow_methods:
                 import json
                 body = json.dumps(body_params)
@@ -126,16 +119,13 @@ class PrepareHandler(RequestHandler):
 
             api_request.headers["Content-Type"] = format_type.APPLICATION_OCTET_STREAM
 
-        # api_request的ua
         user_agent = _modify_user_agent(context.config.user_agent, api_request)
         api_request.headers['User-Agent'] = user_agent
-        # api_request的extra header
         api_request.headers['x-sdk-client'] = 'python/2.0.0'
         api_request.headers['Accept-Encoding'] = 'identity'
 
         http_request.body = api_request.content
 
-        # http_request的method and protocol/proxy
         http_request.method = api_request.method
         http_request.protocol = api_request.protocol  # http|https
         http_request.proxy = context.config._proxy  # {}
