@@ -11,58 +11,42 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-from alibabacloud.utils import format_type
-from aliyunsdkcore.compat import urlencode
 
 
 class APIRequest:
 
-    def __init__(self, request):
+    def __init__(self, action_name, method, protocol, style):
+        # 一个请求必须具备以下的数据
+        self.action_name = action_name
+        self.protocol = protocol  # http|https
+        self.method = method
+        self.style = style
+
         self.accept_format = 'Json'
+        self.body_params = {}
+        self.query_params = {}
+        self.headers = {}  # 原本为空，都是通过handler组装的
+        self.endpoint = None  # 不应该给这样的一个接口，但是避免resolve解析不到
+        self.content = None  # 不应该有这样的一个接口，不知道为啥有了
+        self._params = {}
 
-        self.style = request._style
-        self.action_name = request._action_name
+    def _compat_old_request(self, request):
+        self.headers = request._header  # 原本为空{}，都是通过handler组装的
+        self.endpoint = request.endpoint  # 不应该给这样的一个接口，但是避免resolve解析不到
 
-        self.query_params = request._params
-        self.protocol = request._protocol_type  # http|https
-        self.method = request._method
-        self.headers = request._header  # 原本为空，都是组装的
-        self.endpoint = request.endpoint
+        # FIXME：需要兼容content的
+        self.content = request._content  # 不应该有这样的一个接口，不知道为啥有了
+
+        # FIXME：body_params和query_params才应该是未来的实例化的时候需要关注的
         self.body_params = request._body_params
-        self.content = request._content
+        self.query_params = request._params
 
+        # FIXME：是_uri_pattern决定Roa呢还是roa决定_uri_pattern
         # Roa特有的
         if self.style == 'ROA':
             self.uri_pattern = request._uri_pattern
             self.path_params = request._path_params
-
-        body_params = request._body_params
-        if body_params:
-            # TODO， request.body 必须是json，application/x-www-form-urlencoded,原 SDK是以下的操作
-
-            # FIXME  修正后的操作.APPLICATION_FORM 其实本就应该是get请求的urlencode编码的形式，post还是应该采取json
-            # 这里明确几点：
-            # 1.body只对post 和put 有效
-            # 2.
-            allow_methods = ['POST', 'PUT']
-            # if self.style == 'ROA' and self.method.upper() in allow_methods:
-            if self.method.upper() in allow_methods:
-                import json
-                body = json.dumps(body_params)
-                self.content = body
-                self.headers["Content-Type"] = format_type.APPLICATION_JSON
-
-            else:
-                body = urlencode(body_params, doseq=True)
-                self.content = body
-                self.headers["Content-Type"] = format_type.APPLICATION_FORM
-
-            # 把这个URL编码的值赋给content，设置content-type
-            # FIXME body is the final bytes to be sent to the server via HTTP
-            # content is an application level concept
-        elif self.content and "Content-Type" not in self.headers:
-
-            self.headers["Content-Type"] = format_type.APPLICATION_OCTET_STREAM
+        return self
 
 
 class APIResponse:

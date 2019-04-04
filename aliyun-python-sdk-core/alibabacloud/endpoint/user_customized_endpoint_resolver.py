@@ -37,7 +37,8 @@ class UserCustomizedEndpointResolver(EndpointResolverBase):
         return self._make_endpoint_entry_key(request.product_code, request.region_id)
 
     def _make_endpoint_entry_key(self, product_code, region_id):
-        return product_code.lower() + "." + region_id.lower()
+        ret = product_code.lower() + "." + region_id.lower()
+        return ret
 
     def is_region_id_valid(self, request):
         return request.region_id in self._valid_region_ids
