@@ -16,7 +16,6 @@
 class APIRequest:
 
     def __init__(self, action_name, method, protocol, style):
-        # 一个请求必须具备以下的数据
         self.action_name = action_name
         self.protocol = protocol  # http|https
         self.method = method
@@ -25,24 +24,21 @@ class APIRequest:
         self.accept_format = 'Json'
         self.body_params = {}
         self.query_params = {}
-        self.headers = {}  # 原本为空，都是通过handler组装的
-        self.endpoint = None  # 不应该给这样的一个接口，但是避免resolve解析不到
-        self.content = None  # 不应该有这样的一个接口，不知道为啥有了
+        self.headers = {}
+        self.endpoint = None
+        self.content = None
         self._params = {}
 
     def _compat_old_request(self, request):
-        self.headers = request._header  # 原本为空{}，都是通过handler组装的
-        self.endpoint = request.endpoint  # 不应该给这样的一个接口，但是避免resolve解析不到
+        self.headers = request._header
+        self.endpoint = request.endpoint
 
         # FIXME：需要兼容content的
-        self.content = request._content  # 不应该有这样的一个接口，不知道为啥有了
+        self.content = request._content
 
-        # FIXME：body_params和query_params才应该是未来的实例化的时候需要关注的
         self.body_params = request._body_params
         self.query_params = request._params
 
-        # FIXME：是_uri_pattern决定Roa呢还是roa决定_uri_pattern
-        # Roa特有的
         if self.style == 'ROA':
             self.uri_pattern = request._uri_pattern
             self.path_params = request._path_params
@@ -74,7 +70,6 @@ class HTTPRequest:
         self.enable_retry = enable_retry
         self.max_retry_times = max_retry_times
         self.retries = retries
-
         self.credentials = credentials
 
 
