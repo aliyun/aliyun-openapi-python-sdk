@@ -18,16 +18,16 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class ListRuleRequest(RpcRequest):
+class QueryDeviceFileRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'ListRule','iot')
+		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'QueryDeviceFile','iot')
 
-	def get_SearchName(self):
-		return self.get_query_params().get('SearchName')
+	def get_IotId(self):
+		return self.get_query_params().get('IotId')
 
-	def set_SearchName(self,SearchName):
-		self.add_query_param('SearchName',SearchName)
+	def set_IotId(self,IotId):
+		self.add_query_param('IotId',IotId)
 
 	def get_IotInstanceId(self):
 		return self.get_query_params().get('IotInstanceId')
@@ -35,14 +35,20 @@ class ListRuleRequest(RpcRequest):
 	def set_IotInstanceId(self,IotInstanceId):
 		self.add_query_param('IotInstanceId',IotInstanceId)
 
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
+	def get_DeviceName(self):
+		return self.get_query_params().get('DeviceName')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
+	def set_DeviceName(self,DeviceName):
+		self.add_query_param('DeviceName',DeviceName)
 
-	def get_CurrentPage(self):
-		return self.get_query_params().get('CurrentPage')
+	def get_ProductKey(self):
+		return self.get_query_params().get('ProductKey')
 
-	def set_CurrentPage(self,CurrentPage):
-		self.add_query_param('CurrentPage',CurrentPage)
+	def set_ProductKey(self,ProductKey):
+		self.add_query_param('ProductKey',ProductKey)
+
+	def get_FileId(self):
+		return self.get_query_params().get('FileId')
+
+	def set_FileId(self,FileId):
+		self.add_query_param('FileId',FileId)
