@@ -113,7 +113,6 @@ class ClientConfig:
         if self.config_file is None:
             # 没有指定file
             if self.ENV_NAME_FOR_CONFIG_FILE in os.environ:
-
                 env_config_file_path = os.environ.get(self.ENV_NAME_FOR_CONFIG_FILE)
                 if env_config_file_path is not None:
                     full_path = os.path.expanduser(env_config_file_path)
@@ -170,7 +169,6 @@ class AlibabaCloudClient:
             self.credentials_provider = DefaultChainedCredentialsProvider(self.config)
         self.handlers = DEFAULT_HANDLERS
         self.logger = None  # TODO initialize
-        # endpoint_resolver阶段需要
         from alibabacloud.endpoint.default_endpoint_resolver import DefaultEndpointResolver
 
         self.endpoint_resolver = DefaultEndpointResolver(self.config)  # TODO initialize
@@ -179,7 +177,7 @@ class AlibabaCloudClient:
         self.product_version = None
         self.location_endpoint_type = None
 
-        import aliyunsdkcore.retry.retry_policy as retry_policy
+        import alibabacloud.retry.retry_policy as retry_policy
         # retry
         if self.config.enable_retry:
             self.retry_policy = retry_policy.get_default_retry_policy(

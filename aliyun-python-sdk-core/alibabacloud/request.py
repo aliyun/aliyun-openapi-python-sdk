@@ -70,7 +70,6 @@ class HTTPRequest:
         self.enable_retry = enable_retry
         self.max_retry_times = max_retry_times
         self.retries = retries
-
         self.credentials = credentials
 
 

@@ -24,8 +24,6 @@ import logging
 import platform
 
 # from aliyunsdkcore.endpoint.default_endpoint_resolver import DefaultEndpointResolver
-import aliyunsdkcore.utils
-import alibabacloud.utils.validation
 from aliyunsdkcore.vendored.requests.structures import CaseInsensitiveDict
 from aliyunsdkcore.vendored.requests.structures import OrderedDict
 
@@ -51,7 +49,7 @@ DEFAULT_READ_TIMEOUT = 10
 DEFAULT_CONNECTION_TIMEOUT = 5
 
 # TODO: replace it with TimeoutHandler
-_api_timeout_config_data = aliyunsdkcore.utils._load_json_from_data_dir("timeout_config.json")
+# _api_timeout_config_data = aliyunsdkcore.utils._load_json_from_data_dir("timeout_config.json")
 
 logger = logging.getLogger(__name__)
 
