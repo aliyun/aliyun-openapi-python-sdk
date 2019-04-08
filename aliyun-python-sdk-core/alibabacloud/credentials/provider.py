@@ -97,7 +97,8 @@ class ProfileCredentialsProvider(CredentialsProvider):
         self.client_config = client_config
         self._inner_provider = self._get_provider_by_profile(profile)
 
-    def _load_profile(self, config_file_name, profile_name):
+    @staticmethod
+    def _load_profile(config_file_name, profile_name):
         full_path = os.path.expanduser(config_file_name)
         if not os.path.isfile(full_path):
             raise ClientException("Failed to find config file for SDK: " + full_path)
@@ -263,7 +264,8 @@ class DefaultChainedCredentialsProvider(PredefinedChainCredentialsProvider):
         else:
             return self.DEFAULT_NAME_FOR_CREDENTIALS_FILE
 
-    def _get_config(self, config_name):
+    @staticmethod
+    def _get_config(config_name):
         env_name = 'ALIBABA_CLOUD_' + config_name.upper()
         if env_name in os.environ:
             return os.environ.get(env_name)

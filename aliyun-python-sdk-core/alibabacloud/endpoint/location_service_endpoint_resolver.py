@@ -69,10 +69,10 @@ class LocationServiceEndpointResolver(EndpointResolverBase):
         return self.endpoints_data.get(key)
 
     def _call_location_service(self, key, raw_request):
-        client_caller = DescribeEndpointCaller(self.config, None)
+        client_caller = DescribeEndpointCaller(self.config, raw_request.credentials_provider)
 
         try:
-            context = client_caller.fetch(region_id=self.config.region_id,
+            context = client_caller.fetch(region_id=raw_request.region_id,
                                           endpoint_type=raw_request.endpoint_type,
                                           location_service_code=raw_request.location_service_code,
                                           location_endpoint=self._location_service_endpoint)
