@@ -24,8 +24,6 @@ import logging
 import platform
 
 # from aliyunsdkcore.endpoint.default_endpoint_resolver import DefaultEndpointResolver
-import aliyunsdkcore.utils
-import alibabacloud.utils.validation
 from aliyunsdkcore.vendored.requests.structures import CaseInsensitiveDict
 from aliyunsdkcore.vendored.requests.structures import OrderedDict
 
@@ -51,7 +49,7 @@ DEFAULT_READ_TIMEOUT = 10
 DEFAULT_CONNECTION_TIMEOUT = 5
 
 # TODO: replace it with TimeoutHandler
-_api_timeout_config_data = aliyunsdkcore.utils._load_json_from_data_dir("timeout_config.json")
+# _api_timeout_config_data = aliyunsdkcore.utils._load_json_from_data_dir("timeout_config.json")
 
 logger = logging.getLogger(__name__)
 
@@ -70,10 +68,10 @@ class AcsClient:
             port=80,
             connect_timeout=None,
             timeout=None,
+            credential=None,
             public_key_id=None,
             private_key=None,
             session_period=3600,
-            credential=None,
             debug=False,
             profile_name='default'):
         """
@@ -99,7 +97,8 @@ class AcsClient:
         )
 
         self._loaded_new_clients = {}
-        # self._endpoint_resolver = DefaultEndpointResolver(self._get_new_style_client(request))
+        self._endpoint_resolver = DefaultEndpointResolver(self._new_style_config)
+
         self._credentials_provider = self._init_credentials_provider(ak, secret, credential)
 
     def _init_credentials_provider(self, access_key_id, access_key_secret, legacy_credentials):
@@ -301,19 +300,22 @@ class AcsClient:
             client.location_endpoint_type = acs_request.get_location_endpoint_type()
 
             self._loaded_new_clients[key] = client
-            # self._loaded_new_clients[key].endpoint_resolver = self._endpoint_resolver
+            self._loaded_new_clients[key].endpoint_resolver = self._endpoint_resolver
         return self._loaded_new_clients[key]
 
     def _handle_request_in_new_style(self, acs_request, raise_exception=True):
+        # 新的request
         api_request = self._get_new_style_request(acs_request)
+        # 新的config
         config = self._get_new_style_config(acs_request)
         new_style_client = self._get_new_style_client(acs_request, config)
         # FIXME _config 如何收起来
-        context = new_style_client._handle_request(api_request, _config=config,
+        context = new_style_client._handle_request(api_request,
                                                    _raise_exception=raise_exception)
         return context
 
     def do_action_with_exception(self, acs_request):
+
         from aliyunsdkcore.request import CommonRequest
         if isinstance(acs_request, CommonRequest):
             acs_request.trans_to_acs_request()

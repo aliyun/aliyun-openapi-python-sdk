@@ -113,7 +113,6 @@ class ClientConfig:
         if self.config_file is None:
             # 没有指定file
             if self.ENV_NAME_FOR_CONFIG_FILE in os.environ:
-
                 env_config_file_path = os.environ.get(self.ENV_NAME_FOR_CONFIG_FILE)
                 if env_config_file_path is not None:
                     full_path = os.path.expanduser(env_config_file_path)
@@ -158,7 +157,7 @@ def get_merged_client_config(config):
 class AlibabaCloudClient:
 
     def __init__(self, client_config, credentials_provider):
-        # client_config:传入的ClientConfig，为了兼容
+        # client_config:传入的ClientConfig
 
         self.config = get_merged_client_config(client_config)
 
@@ -170,16 +169,15 @@ class AlibabaCloudClient:
             self.credentials_provider = DefaultChainedCredentialsProvider(self.config)
         self.handlers = DEFAULT_HANDLERS
         self.logger = None  # TODO initialize
-        # endpoint_resolver阶段需要
         from alibabacloud.endpoint.default_endpoint_resolver import DefaultEndpointResolver
 
-        self.endpoint_resolver = DefaultEndpointResolver(self)  # TODO initialize
+        self.endpoint_resolver = DefaultEndpointResolver(self.config)  # TODO initialize
         self.product_code = None
         self.location_service_code = None
         self.product_version = None
         self.location_endpoint_type = None
 
-        import aliyunsdkcore.retry.retry_policy as retry_policy
+        import alibabacloud.retry.retry_policy as retry_policy
         # retry
         if self.config.enable_retry:
             self.retry_policy = retry_policy.get_default_retry_policy(
@@ -187,16 +185,13 @@ class AlibabaCloudClient:
         else:
             self.retry_policy = retry_policy.NO_RETRY_POLICY
 
-    def _handle_request(self, api_request, _config=None, _raise_exception=True):
+    def _handle_request(self, api_request, _raise_exception=True):
+        # handle context
         context = RequestContext()
         context.api_request = api_request
         from .request import HTTPRequest
         context.http_request = HTTPRequest()
-        if _config:
-            # For backward compatibility
-            context.config = _config
-        else:
-            context.config = self.config
+        context.config = self.config
 
         context.client = self
 

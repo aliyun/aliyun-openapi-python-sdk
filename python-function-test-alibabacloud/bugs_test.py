@@ -5,8 +5,7 @@ import sys
 import uuid
 
 from aliyunsdkcore.acs_exception.exceptions import ServerException
-from aliyunsdkcore.http import method_type
-from aliyunsdkcore.profile import region_provider
+# from aliyunsdkcore.profile import region_provider
 from aliyunsdkcore.request import CommonRequest, RpcRequest
 from aliyunsdkcore.client import AcsClient
 from base import SDKTestBase
@@ -16,8 +15,8 @@ class BugsTest(SDKTestBase):
 
     def test_bug_with_18034796(self):
         from aliyunsdkgreen.request.v20180509 import ImageAsyncScanRequest
-        region_provider.modify_point(
-            'Green', 'cn-shanghai', 'green.cn-shanghai.aliyuncs.com')
+        # region_provider.modify_point(
+        #     'Green', 'cn-shanghai', 'green.cn-shanghai.aliyuncs.com')
         request = ImageAsyncScanRequest.ImageAsyncScanRequest()
         image_url = 'https://gss2.bdstatic.com/-fo3dSag_xI4khGkpoWK1HF6hhy/baike/w%3D790/' \
                     'sign=b51ba990a68b87d65042a91637092860/' \
@@ -36,7 +35,7 @@ class BugsTest(SDKTestBase):
         request = CommonRequest()
         request.set_domain("nlp.cn-shanghai.aliyuncs.com")
         request.set_uri_pattern("/nlp/api/reviewanalysis/ecommerce")
-        request.set_method(method_type.POST)
+        request.set_method('POST')
         request.add_header("x-acs-signature-method", "HMAC-SHA1")
         request.add_header("x-acs-signature-nonce", uuid.uuid4().hex)
         request.add_header("x-acs-signature-version", "1.0")

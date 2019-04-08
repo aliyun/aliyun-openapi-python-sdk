@@ -95,11 +95,9 @@ class ROASigner:
     def signature(self):
         headers = self._refresh_sign_parameters()
         sign_to_string = ''
-        # TODO :interesting_headers 必须按照以下的顺序
         interesting_headers = ['Accept', 'Content-MD5', 'Content-Type', 'Date']
         sign_to_string += self.request.method.upper()
         sign_to_string += "\n"
-        # TODO  这里有个坑,无论是否有值，都有换行，猜测是按照换行符进行分割的
         for ih in interesting_headers:
             if headers.get(ih) is not None:
                 sign_to_string += headers[ih]

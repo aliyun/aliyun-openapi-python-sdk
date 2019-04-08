@@ -14,27 +14,10 @@
 
 import os.path
 import json
-import sys
 import os
-import threading
-import logging
-import time
-
-import sys
-from aliyunsdkcore.client import AcsClient
-from aliyunsdkcore.vendored.six import iteritems
-from aliyunsdkcore.acs_exception.exceptions import ServerException
-
-from aliyunsdkram.request.v20150501.ListUsersRequest import ListUsersRequest
-from aliyunsdkram.request.v20150501.CreateUserRequest import CreateUserRequest
-from aliyunsdkram.request.v20150501.CreateAccessKeyRequest import CreateAccessKeyRequest
-from aliyunsdkram.request.v20150501.DeleteAccessKeyRequest import DeleteAccessKeyRequest
-from aliyunsdkram.request.v20150501.ListAccessKeysRequest import ListAccessKeysRequest
-from aliyunsdkram.request.v20150501.ListRolesRequest import ListRolesRequest
-from aliyunsdkram.request.v20150501.CreateRoleRequest import CreateRoleRequest
-from aliyunsdkram.request.v20150501.AttachPolicyToUserRequest import AttachPolicyToUserRequest
-
 from unittest import TestCase
+
+from aliyunsdkcore.client import AcsClient
 
 
 class SDKTestBase(TestCase):
