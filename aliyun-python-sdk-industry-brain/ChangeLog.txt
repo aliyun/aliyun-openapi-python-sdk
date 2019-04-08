@@ -1,3 +1,6 @@
+2019-04-08 Version: 1.0.1
+1, 1.0.1, with all APIs
+
 2019-04-08 Version: 1.0.0
 1, This is an example of release-log.
 2, v1.0.0
