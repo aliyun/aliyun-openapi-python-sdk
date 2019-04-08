@@ -23,12 +23,14 @@ import json
 from aliyunsdkcore.acs_exception.exceptions import ServerException
 from alibabacloud.endpoint.endpoint_resolver_base import EndpointResolverBase
 from alibabacloud.endpoint.location_endpoint_caller import DescribeEndpointCaller
+DEFAULT_LOCATION_SERVICE_ENDPOINT = "location-readonly.aliyuncs.com"
 
 
 class LocationServiceEndpointResolver(EndpointResolverBase):
 
     def __init__(self, config):
         EndpointResolverBase.__init__(self)
+        self._location_service_endpoint = DEFAULT_LOCATION_SERVICE_ENDPOINT
         self.config = config
         self._invalid_product_codes = set()
         self._invalid_region_ids = set()
@@ -71,8 +73,9 @@ class LocationServiceEndpointResolver(EndpointResolverBase):
 
         try:
             context = client_caller.fetch(region_id=self.config.region_id,
-                                          endpoint_type='openAPI',
-                                          location_service_code=None)
+                                          endpoint_type=raw_request.endpoint_type,
+                                          location_service_code=raw_request.location_service_code,
+                                          location_endpoint=self._location_service_endpoint)
 
         except ServerException as e:
             if "InvalidRegionId" == e.get_error_code() and \

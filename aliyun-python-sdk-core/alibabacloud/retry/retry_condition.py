@@ -15,7 +15,7 @@
 import jmespath
 import logging
 
-import aliyunsdkcore.utils
+from alibabacloud.utils.load_json_from_data_dir import _load_json_from_data_dir
 import alibabacloud.utils.validation as validation
 from aliyunsdkcore.acs_exception.exceptions import ClientException, ServerException
 import aliyunsdkcore.acs_exception.error_code as error_code
@@ -23,11 +23,11 @@ import aliyunsdkcore.acs_exception.error_code as error_code
 logger = logging.getLogger(__name__)
 
 
-def _find_data_in_retry_config(key_name, request, retry_config):
-    if request.get_product() is None:
+def _find_data_in_retry_config(key_name, client, retry_config):
+    if client.product_code is None:
         return None
-    path = '"{0}"."{1}"."{2}"'.format(request.get_product().lower(),
-                                      request.get_version(),
+    path = '"{0}"."{1}"."{2}"'.format(client.product_code.lower(),
+                                      client.product_version,
                                       key_name)
     return jmespath.search(path, retry_config)
 
@@ -73,7 +73,7 @@ class RetryOnExceptionCondition(RetryCondition):
         self.retry_config = retry_config
 
     def should_retry(self, retry_policy_context):
-        request = retry_policy_context.original_request
+        client = retry_policy_context.client
         exception = retry_policy_context.exception
 
         if isinstance(exception, ClientException):
@@ -86,7 +86,7 @@ class RetryOnExceptionCondition(RetryCondition):
         if isinstance(exception, ServerException):
             error_code_ = exception.get_error_code()
             normal_errors = _find_data_in_retry_config("RetryableNormalErrors",
-                                                       request,
+                                                       client,
                                                        self.retry_config)
             if isinstance(normal_errors, list) and error_code_ in normal_errors:
                 logger.debug("Retryable ServerException occurred. ServerException:%s",
@@ -94,7 +94,7 @@ class RetryOnExceptionCondition(RetryCondition):
                 return RetryCondition.SHOULD_RETRY
 
             throttling_errors = _find_data_in_retry_config("RetryableThrottlingErrors",
-                                                           request,
+                                                           client,
                                                            self.retry_config)
             if isinstance(throttling_errors, list) and error_code_ in throttling_errors:
                 logger.debug("Retryable ThrottlingError occurred. ThrottlingError:%s",
@@ -134,8 +134,9 @@ class RetryOnApiCondition(RetryCondition):
 
     def should_retry(self, retry_policy_context):
         request = retry_policy_context.original_request
-        retryable_apis = _find_data_in_retry_config("RetryableAPIs", request, self.retry_config)
-        if isinstance(retryable_apis, list) and request.get_action_name() in retryable_apis:
+        client = retry_policy_context.client
+        retryable_apis = _find_data_in_retry_config("RetryableAPIs", client, self.retry_config)
+        if isinstance(retryable_apis, list) and request.action_name in retryable_apis:
             return RetryCondition.SHOULD_RETRY
         else:
             return RetryCondition.NO_RETRY
@@ -148,9 +149,10 @@ class RetryOnApiWithClientTokenCondition(RetryCondition):
 
     def should_retry(self, retry_policy_context):
         request = retry_policy_context.original_request
+        client = retry_policy_context.client
         retryable_apis = _find_data_in_retry_config(
-            "RetryableAPIsWithClientToken", request, self.retry_config)
-        if isinstance(retryable_apis, list) and request.get_action_name() in retryable_apis:
+            "RetryableAPIsWithClientToken", client, self.retry_config)
+        if isinstance(retryable_apis, list) and request.action_name in retryable_apis:
             return RetryCondition.SHOULD_RETRY | RetryCondition.SHOULD_RETRY_WITH_THROTTLING_BACKOFF
         else:
             return RetryCondition.NO_RETRY
@@ -215,7 +217,7 @@ class DefaultConfigRetryCondition(MixedRetryCondition):
 
     def __init__(self, max_retry_times=None):
         if not self._loaded_retry_config:
-            self._loaded_retry_config = aliyunsdkcore.utils._load_json_from_data_dir(
+            self._loaded_retry_config = _load_json_from_data_dir(
                 self.RETRY_CONFIG_FILE)
 
         if max_retry_times is None:

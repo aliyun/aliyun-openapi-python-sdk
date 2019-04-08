@@ -92,7 +92,7 @@ class PrepareHandler(RequestHandler):
         http_request.accept_format = 'JSON'
         allow_methods = ['POST', 'PUT']
 
-        # TODO 先组装body params 或者queryparams
+        # TODO 先组装body_params 或者query_params
         if api_request._params:
             if api_request.method in allow_methods:
                 api_request.body_params.update(api_request._params)

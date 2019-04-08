@@ -21,9 +21,6 @@
 import abc
 from aliyunsdkcore.vendored.six import add_metaclass
 
-from aliyunsdkcore.http import protocol_type
-from aliyunsdkcore.http import method_type as mt
-from aliyunsdkcore.http import format_type as ft
 # from aliyunsdkcore.auth.composer import rpc_signature_composer as rpc_signer
 # from aliyunsdkcore.auth.composer import composer as roa_signer
 # from aliyunsdkcore.auth.algorithm import sha_hmac1
@@ -39,13 +36,12 @@ Acs request model.
 STYLE_RPC = 'RPC'
 STYLE_ROA = 'ROA'
 
-_default_protocol_type = protocol_type.HTTP
-
+_default_protocol_type = 'HTTP'
 
 def set_default_protocol_type(user_protocol_type):
     global _default_protocol_type
 
-    if user_protocol_type == protocol_type.HTTP or user_protocol_type == protocol_type.HTTPS:
+    if user_protocol_type == 'HTTP' or user_protocol_type == 'HTTPS':
         _default_protocol_type = user_protocol_type
     else:
         raise exceptions.ClientException(
@@ -283,7 +279,7 @@ class RpcRequest(AcsRequest):
             location_endpoint_type,
             format,
             protocol,
-            mt.GET)
+            'GET')
         self._style = STYLE_RPC
         # self._signer = signer
         self.url_params =None
@@ -364,7 +360,7 @@ class RoaRequest(AcsRequest):
             action_name,
             location_service_code,
             location_endpoint_type,
-            ft.RAW,
+            'RAW',
             protocol,
             method)
         self._style = STYLE_ROA
