@@ -18,40 +18,22 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class ModifyVpnConnectionAttributeRequest(RpcRequest):
+class DeleteVpnPbrRouteEntryRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'ModifyVpnConnectionAttribute','vpc')
+		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'DeleteVpnPbrRouteEntry','vpc')
 
-	def get_IkeConfig(self):
-		return self.get_query_params().get('IkeConfig')
+	def get_RouteSource(self):
+		return self.get_query_params().get('RouteSource')
 
-	def set_IkeConfig(self,IkeConfig):
-		self.add_query_param('IkeConfig',IkeConfig)
+	def set_RouteSource(self,RouteSource):
+		self.add_query_param('RouteSource',RouteSource)
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_RemoteSubnet(self):
-		return self.get_query_params().get('RemoteSubnet')
-
-	def set_RemoteSubnet(self,RemoteSubnet):
-		self.add_query_param('RemoteSubnet',RemoteSubnet)
-
-	def get_EffectImmediately(self):
-		return self.get_query_params().get('EffectImmediately')
-
-	def set_EffectImmediately(self,EffectImmediately):
-		self.add_query_param('EffectImmediately',EffectImmediately)
-
-	def get_AutoConfigRoute(self):
-		return self.get_query_params().get('AutoConfigRoute')
-
-	def set_AutoConfigRoute(self,AutoConfigRoute):
-		self.add_query_param('AutoConfigRoute',AutoConfigRoute)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -71,11 +53,17 @@ class ModifyVpnConnectionAttributeRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
-	def get_IpsecConfig(self):
-		return self.get_query_params().get('IpsecConfig')
+	def get_Weight(self):
+		return self.get_query_params().get('Weight')
 
-	def set_IpsecConfig(self,IpsecConfig):
-		self.add_query_param('IpsecConfig',IpsecConfig)
+	def set_Weight(self,Weight):
+		self.add_query_param('Weight',Weight)
+
+	def get_VpnGatewayId(self):
+		return self.get_query_params().get('VpnGatewayId')
+
+	def set_VpnGatewayId(self,VpnGatewayId):
+		self.add_query_param('VpnGatewayId',VpnGatewayId)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
@@ -83,26 +71,14 @@ class ModifyVpnConnectionAttributeRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_HealthCheckConfig(self):
-		return self.get_query_params().get('HealthCheckConfig')
+	def get_RouteDest(self):
+		return self.get_query_params().get('RouteDest')
 
-	def set_HealthCheckConfig(self,HealthCheckConfig):
-		self.add_query_param('HealthCheckConfig',HealthCheckConfig)
+	def set_RouteDest(self,RouteDest):
+		self.add_query_param('RouteDest',RouteDest)
 
-	def get_LocalSubnet(self):
-		return self.get_query_params().get('LocalSubnet')
+	def get_NextHop(self):
+		return self.get_query_params().get('NextHop')
 
-	def set_LocalSubnet(self,LocalSubnet):
-		self.add_query_param('LocalSubnet',LocalSubnet)
-
-	def get_VpnConnectionId(self):
-		return self.get_query_params().get('VpnConnectionId')
-
-	def set_VpnConnectionId(self,VpnConnectionId):
-		self.add_query_param('VpnConnectionId',VpnConnectionId)
-
-	def get_Name(self):
-		return self.get_query_params().get('Name')
-
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)
+	def set_NextHop(self,NextHop):
+		self.add_query_param('NextHop',NextHop)

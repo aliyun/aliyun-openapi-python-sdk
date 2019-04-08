@@ -18,28 +18,22 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class DescribePhysicalConnectionsRequest(RpcRequest):
+class DescribePhysicalConnectionLOARequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'DescribePhysicalConnections','vpc')
-
-	def get_Filters(self):
-		return self.get_query_params().get('Filters')
-
-	def set_Filters(self,Filters):
-		for i in range(len(Filters)):	
-			for j in range(len(Filters[i].get('Values'))):
-				if Filters[i].get('Values')[j] is not None:
-					self.add_query_param('Filter.' + str(i + 1) + '.Value.'+str(j + 1), Filters[i].get('Values')[j])
-			if Filters[i].get('Key') is not None:
-				self.add_query_param('Filter.' + str(i + 1) + '.Key' , Filters[i].get('Key'))
-
+		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'DescribePhysicalConnectionLOA','vpc')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+
+	def get_InstanceId(self):
+		return self.get_query_params().get('InstanceId')
+
+	def set_InstanceId(self,InstanceId):
+		self.add_query_param('InstanceId',InstanceId)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -59,26 +53,8 @@ class DescribePhysicalConnectionsRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
-
-	def get_IncludeReservationData(self):
-		return self.get_query_params().get('IncludeReservationData')
-
-	def set_IncludeReservationData(self,IncludeReservationData):
-		self.add_query_param('IncludeReservationData',IncludeReservationData)
-
-	def get_PageNumber(self):
-		return self.get_query_params().get('PageNumber')
-
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)

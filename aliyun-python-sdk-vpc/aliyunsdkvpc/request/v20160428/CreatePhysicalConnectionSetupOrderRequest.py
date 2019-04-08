@@ -18,22 +18,22 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class DescribePhysicalConnectionsRequest(RpcRequest):
+class CreatePhysicalConnectionSetupOrderRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'DescribePhysicalConnections','vpc')
+		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'CreatePhysicalConnectionSetupOrder','vpc')
 
-	def get_Filters(self):
-		return self.get_query_params().get('Filters')
+	def get_AccessPointId(self):
+		return self.get_query_params().get('AccessPointId')
 
-	def set_Filters(self,Filters):
-		for i in range(len(Filters)):	
-			for j in range(len(Filters[i].get('Values'))):
-				if Filters[i].get('Values')[j] is not None:
-					self.add_query_param('Filter.' + str(i + 1) + '.Value.'+str(j + 1), Filters[i].get('Values')[j])
-			if Filters[i].get('Key') is not None:
-				self.add_query_param('Filter.' + str(i + 1) + '.Key' , Filters[i].get('Key'))
+	def set_AccessPointId(self,AccessPointId):
+		self.add_query_param('AccessPointId',AccessPointId)
 
+	def get_RedundantPhysicalConnectionId(self):
+		return self.get_query_params().get('RedundantPhysicalConnectionId')
+
+	def set_RedundantPhysicalConnectionId(self,RedundantPhysicalConnectionId):
+		self.add_query_param('RedundantPhysicalConnectionId',RedundantPhysicalConnectionId)
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -41,11 +41,17 @@ class DescribePhysicalConnectionsRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
+	def get_PortType(self):
+		return self.get_query_params().get('PortType')
 
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+	def set_PortType(self,PortType):
+		self.add_query_param('PortType',PortType)
+
+	def get_AutoPay(self):
+		return self.get_query_params().get('AutoPay')
+
+	def set_AutoPay(self,AutoPay):
+		self.add_query_param('AutoPay',AutoPay)
 
 	def get_ClientToken(self):
 		return self.get_query_params().get('ClientToken')
@@ -53,17 +59,17 @@ class DescribePhysicalConnectionsRequest(RpcRequest):
 	def set_ClientToken(self,ClientToken):
 		self.add_query_param('ClientToken',ClientToken)
 
+	def get_ResourceOwnerAccount(self):
+		return self.get_query_params().get('ResourceOwnerAccount')
+
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
 
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
-
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
@@ -71,14 +77,8 @@ class DescribePhysicalConnectionsRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_IncludeReservationData(self):
-		return self.get_query_params().get('IncludeReservationData')
+	def get_LineOperator(self):
+		return self.get_query_params().get('LineOperator')
 
-	def set_IncludeReservationData(self,IncludeReservationData):
-		self.add_query_param('IncludeReservationData',IncludeReservationData)
-
-	def get_PageNumber(self):
-		return self.get_query_params().get('PageNumber')
-
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
+	def set_LineOperator(self,LineOperator):
+		self.add_query_param('LineOperator',LineOperator)
