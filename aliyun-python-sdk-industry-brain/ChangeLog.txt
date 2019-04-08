@@ -1,3 +1,8 @@
+2019-04-08 Version: 1.0.0
+1, This is an example of release-log.
+2, v1.0.0
+3, Format：1.0.0 with all APIs
+
 2019-02-26 Version: 1.0.0
 1, Industry brain v1.3.7 release
 2, Add asynchronous APIs
