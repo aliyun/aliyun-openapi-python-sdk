@@ -228,10 +228,29 @@ class CredentialsTest(SDKTestBase):
         ret = self.get_dict_response(response)
         self.assertTrue(ret.get("ResourceTypes"))
 
+    def test_call_rpc_request_with_env_ak(self):
+        os.environ["ALIBABA_CLOUD_ACCESS_KEY_ID"] = self.access_key_id
+        os.environ["ALIBABA_CLOUD_ACCESS_KEY_SECRET"] = self.access_key_secret
+        client = AcsClient()
+        request = DescribeRegionsRequest()
+        response = client.do_action_with_exception(request)
+        ret = self.get_dict_response(response)
+        self.assertTrue(ret.get("Regions"))
+        self.assertTrue(ret.get("RequestId"))
+
+    def test_call_roa_request_with_env_ak(self):
+        os.environ["ALIBABA_CLOUD_ACCESS_KEY_ID"] = self.access_key_id
+        os.environ["ALIBABA_CLOUD_ACCESS_KEY_SECRET"] = self.access_key_secret
+        client = AcsClient()
+        request = DescribeResourceTypesRequest()
+        response = client.do_action_with_exception(request)
+        ret = self.get_dict_response(response)
+        self.assertTrue(ret.get("ResourceTypes"))
+
     @mock.patch("alibabacloud.credentials.provider.InstanceProfileCredentialsProvider")
     def test_call_rpc_request_with_role_name(self, InstanceProfileCredentialsProvider):
         with MyServer() as f:
-            ecs_ram_role_credential = EcsRamRoleCredential("EcsRamRoleTest")
+            os.environ["ALIBABA_CLOUD_ROLE_NAME"] = self.default_ram_role_name
             InstanceProfileCredentialsProvider.rotate_credentials.return_value = \
                 requests.get(url="http://localhost:51352")
             instance_value =InstanceProfileCredentialsProvider.rotate_credentials.\
@@ -259,25 +278,6 @@ class CredentialsTest(SDKTestBase):
             response = roa_client.do_action_with_exception(request)
             ret = self.get_dict_response(response)
             self.assertTrue(ret.get("ResourceTypes"))
-
-    def test_call_rpc_request_with_env_ak(self):
-        os.environ["ALIBABA_CLOUD_ACCESS_KEY_ID"] = self.access_key_id
-        os.environ["ALIBABA_CLOUD_ACCESS_KEY_SECRET"] = self.access_key_secret
-        client = AcsClient()
-        request = DescribeRegionsRequest()
-        response = client.do_action_with_exception(request)
-        ret = self.get_dict_response(response)
-        self.assertTrue(ret.get("Regions"))
-        self.assertTrue(ret.get("RequestId"))
-
-    def test_call_roa_request_with_env_ak(self):
-        os.environ["ALIBABA_CLOUD_ACCESS_KEY_ID"] = self.access_key_id
-        os.environ["ALIBABA_CLOUD_ACCESS_KEY_SECRET"] = self.access_key_secret
-        client = AcsClient()
-        request = DescribeResourceTypesRequest()
-        response = client.do_action_with_exception(request)
-        ret = self.get_dict_response(response)
-        self.assertTrue(ret.get("ResourceTypes"))
 
     def test_call_rpc_request_with_config_default(self):
         client = AcsClient()
