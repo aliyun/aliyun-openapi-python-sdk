@@ -26,18 +26,18 @@ from alibabacloud.handlers.server_error_handler import ServerErrorHandler
 from alibabacloud.handlers.http_handler import HttpHandler
 
 
-
 DEFAULT_HANDLERS = [
     PrepareHandler,
+
     CredentialsHandler,
-    SignerHandler,  # 获取Signature,header,params
-    # HttpHeaderHandler,  # 获取签名的header
-    TimeoutConfigReader,  # 获取timeout
-    EndpointHandler,  # 获取endpoint
+    SignerHandler,
+    TimeoutConfigReader,
     LogHandler,
+    EndpointHandler,
+
     RetryHandler,
+    ServerErrorHandler,
     HttpHandler,
-    ServerErrorHandler
 ]
 
 DEFAULT_FORMAT = 'JSON'
@@ -47,6 +47,8 @@ DEFAULT_CONNECTION_TIMEOUT = 5
 DEFAULT_READ_TIMEOUT = 10
 DEFAULT_ENABLE_HTTP_DEBUG = False
 DEFAULT_ENABLE_HTTPS = False
+HTTP_PORT = 80
+HTTPS_PORT = 443
 
 
 class ClientConfig:
@@ -58,8 +60,8 @@ class ClientConfig:
     DEFAULT_NAME_FOR_CONFIG_FILE = '~/.alibabacloud/config'
 
     def __init__(self, access_key_id=None, access_key_secret=None, region_id=None,
-                 max_retry_times=None, user_agent=None,
-                 extra_user_agent=None, enable_https=None, http_port=None, https_port=None,
+                 max_retry_times=None, user_agent=None, extra_user_agent=None,
+                 enable_https=None, http_port=HTTP_PORT, https_port=HTTPS_PORT,
                  connection_timeout=None, read_timeout=None, enable_http_debug=None,
                  http_proxy=None, https_proxy=None, enable_stream_logger=None,
                  profile_name=None, config_file=None, enable_retry=True, endpoint=None):
@@ -96,6 +98,10 @@ class ClientConfig:
             'http': self.http_proxy,
             'https': self.https_proxy,
         }
+
+    @property
+    def proxy(self):
+        return self._proxy
 
     def read_from_env(self):
         # 从环境变量读取一定量的数据
@@ -198,7 +204,6 @@ class AlibabaCloudClient:
         handler_index = 0
 
         while True:
-
             for i in range(len(self.handlers[handler_index:])):
                 self.handlers[i]().handle_request(context)
 
@@ -207,10 +212,7 @@ class AlibabaCloudClient:
                 if context.retry_flag:
                     time.sleep(context.retry_backoff / 1000)
                     handler_index = i
-                    context.retry_flag = False
-                continue
-
-            break
+                    break
 
         if context.exception and _raise_exception:
             raise context.exception

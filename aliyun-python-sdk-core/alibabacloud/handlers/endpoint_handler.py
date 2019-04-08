@@ -19,15 +19,16 @@ from alibabacloud.endpoint.resolver_endpoint_request import ResolveEndpointReque
 class EndpointHandler(RequestHandler):
 
     def handle_request(self, context):
-        # FIXME
         if context.api_request.endpoint is not None:
+            print()
             context.endpoint = context.api_request.endpoint
         else:
             resolve_request = ResolveEndpointRequest(
                 context.config.region_id,
                 context.client.product_code,
                 context.client.location_service_code,
-                context.client.location_endpoint_type
+                context.client.location_endpoint_type,
+                context.client.credentials_provider,
             )
             context.endpoint = context.client.endpoint_resolver.resolve(resolve_request)
 

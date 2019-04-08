@@ -12,9 +12,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+import json
 from alibabacloud.handlers import RequestHandler
 from alibabacloud.signer import Signer
-
 from alibabacloud.utils import parameter_helper as helper
 from alibabacloud.utils import format_type
 from aliyunsdkcore.compat import urlencode
@@ -25,7 +25,7 @@ class SignerHandler(RequestHandler):
     content_length = "Content-Length"
     content_type = "Content-Type"
     """
-    处理signature，headers,params
+    handle signature，headers,params
     """
 
     def handle_request(self, context):
@@ -35,7 +35,6 @@ class SignerHandler(RequestHandler):
         credentials = http_request.credentials
 
         signature, headers, params = Signer().sign(credentials, context)
-        # TODO fix other headers
         http_request.signature = signature
         http_request.params = params
         # modify headers
@@ -44,14 +43,12 @@ class SignerHandler(RequestHandler):
         if body_params:
             allow_methods = ['POST', 'PUT']
             if api_request.method.upper() in allow_methods:
-                # FIXME  修正后的操作
-                import json
                 body = json.dumps(body_params)
                 api_request._content = body
                 headers = self._modify_http_headers(headers, body, format_type.APPLICATION_JSON)
 
             else:
-                body = urlencode(body_params, doseq=True)
+                body = urlencode(body_params)
                 api_request._content = body
                 headers = self._modify_http_headers(headers, body, format_type.APPLICATION_FORM)
 
@@ -64,10 +61,7 @@ class SignerHandler(RequestHandler):
     def handle_response(self, context):
         pass
 
-    def _modify_http_headers(self, headers, body, format='JSON'):
-        # {"errorCode":10014,"errorMsg":"content-type error, only json accepted"}
-        # 有body_params ，就是 urlencode 结果的值
-        # 没有，就是request的
+    def _modify_http_headers(self, headers, body, format_type='JSON'):
         if body is None:
             headers.pop(self.content_md5, None)
             headers.pop(self.content_type, None)
@@ -77,6 +71,6 @@ class SignerHandler(RequestHandler):
             content_length = len(body)
             headers[self.content_md5] = str_md5
             headers[self.content_length] = str(content_length)
-            headers[self.content_type] = format
+            headers[self.content_type] = format_type
         return headers
 

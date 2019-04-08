@@ -19,9 +19,9 @@ from alibabacloud.endpoint.resolver_endpoint_request import ResolveEndpointReque
 class CredentialsHandler(RequestHandler):
 
     def handle_request(self, context):
-
-        credentials = context.client.credentials_provider.provide()
-        context.http_request.credentials = credentials
+        if context.http_request.credentials is None:
+            credentials = context.client.credentials_provider.provide()
+            context.http_request.credentials = credentials
 
     def handle_response(self, response):
         pass

@@ -12,6 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 import platform
+import json
 
 from alibabacloud.handlers import RequestHandler
 from alibabacloud.utils import format_type
@@ -20,7 +21,6 @@ from aliyunsdkcore.vendored.requests.structures import OrderedDict
 from aliyunsdkcore.compat import urlencode
 
 
-# prepare header
 def _user_agent_header():
     base = '%s (%s %s;%s)' \
            % ('AlibabaCloud',
@@ -42,22 +42,6 @@ def _default_user_agent():
     return CaseInsensitiveDict(default_agent)
 
 
-def _handle_extra_agent(client_user_agent, api_request):
-    # http_request_agent = http_request.http_request_user_agent()
-    #
-    # if client_user_agent is None:
-    #     return http_request_agent
-    #
-    # if http_request_agent is None:
-    #     return client_user_agent
-    # # http_request 覆盖client的设置
-    # for key in http_request_agent:
-    #     if key in client_user_agent:
-    #         client_user_agent.pop(key)
-    # client_user_agent.update(http_request_agent)
-    return client_user_agent
-
-
 def _merge_user_agent(default_agent, extra_agent):
     if default_agent is None:
         return extra_agent
@@ -71,38 +55,34 @@ def _merge_user_agent(default_agent, extra_agent):
     return user_agent
 
 
-def _modify_user_agent(client_user_agent, api_request):
+def _modify_user_agent(client_user_agent):
     base = _user_agent_header()  # 默认的user-agent 的头部
-    extra_agent = _handle_extra_agent(client_user_agent, api_request)  # client 和http_request的UA
     default_agent = _default_user_agent()  # 默认的UA
-    # 合并默认的UA 和extra_UA
-    user_agent = _merge_user_agent(default_agent, extra_agent)
+    # 合并默认的UA 和client_UA
+    user_agent = _merge_user_agent(default_agent, client_user_agent)
     for key, value in user_agent.items():
         base += ' %s/%s' % (key, value)
     return base
 
 
 class PrepareHandler(RequestHandler):
-    """
-    准备阶段，accept_format 以及api request的头部
-    """
     def handle_request(self, context):
         http_request = context.http_request
         api_request = context.api_request
         http_request.accept_format = 'JSON'
         allow_methods = ['POST', 'PUT']
 
-        # TODO 先组装body_params 或者query_params
-        if api_request._params:
+        # handle params to body_params or query_params
+        if api_request.params:
             if api_request.method in allow_methods:
-                api_request.body_params.update(api_request._params)
+                api_request.body_params.update(api_request.params)
             else:
-                api_request.query_params.update(api_request._params)
+                api_request.query_params.update(api_request.params)
 
+        # handle headers
         body_params = api_request.body_params
         if body_params:
             if api_request.method.upper() in allow_methods:
-                import json
                 body = json.dumps(body_params)
                 api_request.content = body
                 api_request.headers["Content-Type"] = format_type.APPLICATION_JSON
@@ -112,26 +92,24 @@ class PrepareHandler(RequestHandler):
                 api_request.content = body
                 api_request.headers["Content-Type"] = format_type.APPLICATION_FORM
 
-            # 把这个URL编码的值赋给content，设置content-type
-            # FIXME body is the final bytes to be sent to the server via HTTP
-            # content is an application level concept
         elif api_request.content and "Content-Type" not in api_request.headers:
 
             api_request.headers["Content-Type"] = format_type.APPLICATION_OCTET_STREAM
 
-        user_agent = _modify_user_agent(context.config.user_agent, api_request)
+        user_agent = _modify_user_agent(context.config.user_agent)
         api_request.headers['User-Agent'] = user_agent
         api_request.headers['x-sdk-client'] = 'python/2.0.0'
         api_request.headers['Accept-Encoding'] = 'identity'
 
-        http_request.body = api_request.content
-
+        # handle other attr
         http_request.method = api_request.method
-        http_request.protocol = api_request.protocol  # http|https
-        http_request.proxy = context.config._proxy  # {}
-        if http_request.protocol == 'https':
-            http_request.port = 443
+        http_request.proxy = context.config.proxy  # {}
 
+        http_request.protocol = api_request.protocol  # http|https
+        if http_request.protocol == 'https':
+            http_request.port = context.config.https_port
+        else:
+            http_request.port = context.config.http_port
 
     def handle_response(self, context):
         pass

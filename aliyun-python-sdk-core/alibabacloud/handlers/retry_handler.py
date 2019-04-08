@@ -45,7 +45,9 @@ class RetryHandler(RequestHandler):
                 raise context.exception
         else:
             retry_policy_context.retryable = should_retry
+
             context.http_request.retries += 1
+            print('context.http_request.retries', context.http_request.retries)
             context.retry_flag = True
             context.retry_backoff = context.client.retry_policy.compute_delay_before_next_retry(
                 retry_policy_context

@@ -197,9 +197,6 @@ class RPCSigner:
 
     @property
     def headers(self):
-        # headers = {}
-        # for headerKey, headerValue in iteritems(self.request.headers):
-        #     headers[headerKey] = headerValue
         return self.request.headers
 
     @staticmethod
