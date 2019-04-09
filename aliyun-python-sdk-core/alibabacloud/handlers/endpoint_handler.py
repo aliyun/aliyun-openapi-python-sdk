@@ -20,7 +20,6 @@ class EndpointHandler(RequestHandler):
 
     def handle_request(self, context):
         if context.api_request.endpoint is not None:
-            print()
             context.endpoint = context.api_request.endpoint
         else:
             resolve_request = ResolveEndpointRequest(

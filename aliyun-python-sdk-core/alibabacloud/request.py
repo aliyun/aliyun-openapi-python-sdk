@@ -60,7 +60,6 @@ class HTTPRequest:
                  body="", enable_retry=None, max_retry_times=None, retries=0, credentials=None):
 
         self.accept_format = accept_format
-        # TODO， request.body 必须是json
         self.body = body
         self.method = method
         self.protocol = protocol
