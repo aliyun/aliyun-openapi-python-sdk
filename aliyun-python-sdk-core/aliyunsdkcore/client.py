@@ -72,8 +72,7 @@ class AcsClient:
             public_key_id=None,
             private_key=None,
             session_period=3600,
-            debug=False,
-            profile_name='default'):
+            debug=False):
         """
         constructor for AcsClient
         :param ak: String, access key id
