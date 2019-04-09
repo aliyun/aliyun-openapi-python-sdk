@@ -22,9 +22,22 @@ from aliyunsdkcore.vendored.requests.packages.urllib3 import HTTPConnectionPool
 from tests import MyServer
 
 
-data = {'result': 'this is a test'}
-host = ('100.100.100.200',)
-
+role_name ={u'Code': u'Success', u'LastUpdated': u'2019-04-09T10:41:31Z',
+            u'AccessKeyId': u'STS.NHLK9qYbdbKgs4oYTRXqjLSdX',
+            u'AccessKeySecret': u'J94mBKoeEUzDGwgUUsdXcf8hdbDm9Pht4A4R9vKParVT',
+            u'Expiration': u'2019-04-09T16:41:31Z',
+            u'SecurityToken': u'CAISigJ1q6Ft5B2yfSjIr4'
+                              u'v5AIPFtL1F1YmMcRLevVQHVP5Go5bPujz2IHlFeXBoCekes/8'
+                              u'yn29S6vwalrRtTtpfTEmBbI569s0M9hGjPZSQsM+n5qVUk5+1'
+                              u'BjBe3ZEEFIqADd/iRfbxJ92PCTmd5AIRrJL+cTK9JS/HVbSCl'
+                              u'Z9gaPkOQwC8dkAoLdxKJwxk2qR4XDmrQpTLCBPxhXfKB0dFox'
+                              u'd1jXgFiZ6y2cqB8BHT/jaYo603392gcsj+NJc1ZssjA47oh7R'
+                              u'MG/CfgHIK2X9j77xriaFIwzDDs+yGDkNZixf8aLOFr4Q3fFYh'
+                              u'O/NnQPEe8KKkj5t1sffJnoHtzBJAIexOTzRtjFVtcH5xchqAA'
+                              u'U8ECYWEiFKZtXwEpMnJUW4UXeXgzhMYDCeoLzrwQxcDwxpVEH'
+                              u'KfA1zt+i/yAOXhJ1EgWwDPjyIeeFiR5VypJaHstnq/P0Jv/Uq'
+                              u'ZAOS88KwDNLMHAc34HwmPNUnlsWc95B40ys91qtyHxQa1Jjjs'
+                              u'LgE/S/5WyUQslQmuQI6e/rnT'}
 
 class CredentialsTest(SDKTestBase):
 
@@ -253,31 +266,9 @@ class CredentialsTest(SDKTestBase):
             os.environ["ALIBABA_CLOUD_ROLE_NAME"] = self.default_ram_role_name
             InstanceProfileCredentialsProvider.rotate_credentials.return_value = \
                 requests.get(url="http://localhost:51352")
-            instance_value =InstanceProfileCredentialsProvider.rotate_credentials.\
-                return_value
-            # content = instance_value.content
-
-            client = self.init_sub_client()
-            self._create_default_ram_role()
-            request = AssumeRoleRequest()
-            request.set_RoleArn(self.ram_role_arn)
-            request.set_RoleSessionName(self.default_role_session_name)
-            response = client.do_action_with_exception(request)
-            response = self.get_dict_response(response)
-            credentials = response.get("Credentials")
-
-            sts_token_credential = StsTokenCredential(
-                credentials.get("AccessKeyId"),
-                credentials.get("AccessKeySecret"),
-                credentials.get("SecurityToken")
-            )
-            roa_client = AcsClient(
-                region_id=self.region_id,
-                credential=sts_token_credential)
-            request = DescribeResourceTypesRequest()
-            response = roa_client.do_action_with_exception(request)
-            ret = self.get_dict_response(response)
-            self.assertTrue(ret.get("ResourceTypes"))
+            InstanceProfileCredentialsProvider.rotate_credentials.\
+                return_value = role_name
+            self.assertTrue(InstanceProfileCredentialsProvider.rotate_credentials)
 
     def test_call_rpc_request_with_config_default(self):
         client = AcsClient()
