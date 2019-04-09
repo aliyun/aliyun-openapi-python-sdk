@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class GetVerifyTokenRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cloudauth', '2018-09-16', 'GetVerifyToken','CloudAuth')
+		RpcRequest.__init__(self, 'Cloudauth', '2018-09-16', 'GetVerifyToken','cloudauth')
 		self.set_protocol_type('https');
 
 	def get_UserData(self):

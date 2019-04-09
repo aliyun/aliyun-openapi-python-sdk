@@ -18,23 +18,22 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class GetStatusRequest(RpcRequest):
+class CreateAuthKeyRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cloudauth', '2018-09-16', 'GetStatus','cloudauth')
-		self.set_protocol_type('https');
+		RpcRequest.__init__(self, 'Cloudauth', '2018-09-16', 'CreateAuthKey','cloudauth')
 
-	def get_ResourceOwnerId(self):
-		return self.get_query_params().get('ResourceOwnerId')
+	def get_BizType(self):
+		return self.get_query_params().get('BizType')
 
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+	def set_BizType(self,BizType):
+		self.add_query_param('BizType',BizType)
 
-	def get_Biz(self):
-		return self.get_query_params().get('Biz')
+	def get_UserDeviceId(self):
+		return self.get_query_params().get('UserDeviceId')
 
-	def set_Biz(self,Biz):
-		self.add_query_param('Biz',Biz)
+	def set_UserDeviceId(self,UserDeviceId):
+		self.add_query_param('UserDeviceId',UserDeviceId)
 
 	def get_SourceIp(self):
 		return self.get_query_params().get('SourceIp')
@@ -42,8 +41,20 @@ class GetStatusRequest(RpcRequest):
 	def set_SourceIp(self,SourceIp):
 		self.add_query_param('SourceIp',SourceIp)
 
-	def get_TicketId(self):
-		return self.get_query_params().get('TicketId')
+	def get_Test(self):
+		return self.get_query_params().get('Test')
 
-	def set_TicketId(self,TicketId):
-		self.add_query_param('TicketId',TicketId)
+	def set_Test(self,Test):
+		self.add_query_param('Test',Test)
+
+	def get_AuthYears(self):
+		return self.get_query_params().get('AuthYears')
+
+	def set_AuthYears(self,AuthYears):
+		self.add_query_param('AuthYears',AuthYears)
+
+	def get_Lang(self):
+		return self.get_query_params().get('Lang')
+
+	def set_Lang(self,Lang):
+		self.add_query_param('Lang',Lang)
