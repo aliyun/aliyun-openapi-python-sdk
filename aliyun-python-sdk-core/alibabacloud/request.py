@@ -21,7 +21,7 @@ class APIRequest:
         self.method = method
         self.style = style
 
-        self.accept_format = 'Json'
+        self.accept_format = 'JSON'
         self.body_params = {}
         self.query_params = {}
         self.headers = {}
@@ -44,6 +44,10 @@ class APIRequest:
             self.path_params = request._path_params
         return self
 
+    @property
+    def params(self):
+        return self._params
+
 
 class APIResponse:
     pass
@@ -56,7 +60,6 @@ class HTTPRequest:
                  body="", enable_retry=None, max_retry_times=None, retries=0, credentials=None):
 
         self.accept_format = accept_format
-        # TODO， request.body 必须是json
         self.body = body
         self.method = method
         self.protocol = protocol
@@ -78,18 +81,3 @@ class HTTPResponse:
         self.status_code = status_code
         self.headers = headers
         self.content = content
-
-
-class _APIRequest:
-
-    def __init__(self, action_name, http_method, **params):
-        self.action_name = action_name
-        self.protocol = "https"
-        # method 和protocol 是正交的
-        # self.http_method = http_method
-        self.method = http_method
-
-        self._params = params
-
-    def __getattr__(self, item):
-        return self._params[item]
