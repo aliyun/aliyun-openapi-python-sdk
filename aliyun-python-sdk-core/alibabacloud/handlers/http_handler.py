@@ -27,6 +27,9 @@ class HttpHandler(RequestHandler):
 
     def _do_request(self, context):
         http_request = context.http_request
+        # modify retry flag
+        context.retry_flag = False
+
         with Session() as s:
             current_protocol = 'http://' if http_request.protocol.lower() == 'http' else 'https://'
             url = current_protocol + context.endpoint + http_request.params

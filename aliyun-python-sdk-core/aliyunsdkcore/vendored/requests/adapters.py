@@ -490,7 +490,6 @@ class HTTPAdapter(BaseAdapter):
             raise ConnectionError(err, request=request)
 
         except MaxRetryError as e:
-            print(11111111111111111, e.reason)
             if isinstance(e.reason, ConnectTimeoutError):
                 # TODO: Remove this in 3.0.0: see #2811
                 if not isinstance(e.reason, NewConnectionError):

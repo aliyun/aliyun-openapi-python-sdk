@@ -23,6 +23,7 @@ from alibabacloud.signer.algorithm import ShaHmac1 as mac1
 from aliyunsdkcore.vendored.six import iteritems
 from aliyunsdkcore.vendored.six.moves.urllib.request import pathname2url
 from aliyunsdkcore.compat import urlencode
+from aliyunsdkcore.acs_exception.exceptions import ClientException
 from alibabacloud.utils.parameter_helper import md5_sum
 
 FORMAT_ISO_8601 = "%Y-%m-%dT%H:%M:%SZ"
@@ -53,6 +54,9 @@ class ROASigner:
         self._uri = self._replace_occupied_parameters()
 
     def _prepare_params_headers(self):
+        if self.credentials is None:
+            raise ClientException('Credentials Error', 'Unable to locate credentials.')
+
         headers = self.request.headers
         headers['x-acs-version'] = self.version
 
@@ -215,8 +219,7 @@ class RPCSigner:
 
     def _canonicalized_query_string(self):
         if self.credentials is None:
-            pass
-            # raise NoCredentialsError
+            raise ClientException('Credentials Error', 'Unable to locate credentials.')
         parameters = self.request.query_params
         if parameters is None:
             parameters = {}
