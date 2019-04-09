@@ -29,9 +29,3 @@ class DeleteAliasRequest(RpcRequest):
 
 	def set_AliasName(self,AliasName):
 		self.add_query_param('AliasName',AliasName)
-
-	def get_STSToken(self):
-		return self.get_query_params().get('STSToken')
-
-	def set_STSToken(self,STSToken):
-		self.add_query_param('STSToken',STSToken)

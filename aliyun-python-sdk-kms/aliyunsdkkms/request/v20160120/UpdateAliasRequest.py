@@ -35,9 +35,3 @@ class UpdateAliasRequest(RpcRequest):
 
 	def set_KeyId(self,KeyId):
 		self.add_query_param('KeyId',KeyId)
-
-	def get_STSToken(self):
-		return self.get_query_params().get('STSToken')
-
-	def set_STSToken(self,STSToken):
-		self.add_query_param('STSToken',STSToken)

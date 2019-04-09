@@ -30,12 +30,6 @@ class DecryptRequest(RpcRequest):
 	def set_EncryptionContext(self,EncryptionContext):
 		self.add_query_param('EncryptionContext',EncryptionContext)
 
-	def get_STSToken(self):
-		return self.get_query_params().get('STSToken')
-
-	def set_STSToken(self,STSToken):
-		self.add_query_param('STSToken',STSToken)
-
 	def get_CiphertextBlob(self):
 		return self.get_query_params().get('CiphertextBlob')
 

@@ -23,9 +23,3 @@ class DescribeRegionsRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Kms', '2016-01-20', 'DescribeRegions','kms')
 		self.set_protocol_type('https');
-
-	def get_STSToken(self):
-		return self.get_query_params().get('STSToken')
-
-	def set_STSToken(self,STSToken):
-		self.add_query_param('STSToken',STSToken)
