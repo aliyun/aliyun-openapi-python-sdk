@@ -192,7 +192,7 @@ class RPCSigner:
         parameters = self.parameters
         signature = self.signer.sign_string(self.signature, str(self.credentials.access_key_secret) + '&')
         parameters['Signature'] = signature
-        params = '?' + urlencode(parameters, doseq=True)
+        params = '?' + urlencode(parameters)
         return params
 
     @property

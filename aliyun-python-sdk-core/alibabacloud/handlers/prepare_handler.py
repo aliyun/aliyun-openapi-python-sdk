@@ -56,8 +56,8 @@ def _merge_user_agent(default_agent, extra_agent):
 
 
 def _modify_user_agent(client_user_agent):
-    base = _user_agent_header()  # 默认的user-agent 的头部
-    default_agent = _default_user_agent()  # 默认的UA
+    base = _user_agent_header()
+    default_agent = _default_user_agent()
     # 合并默认的UA 和client_UA
     user_agent = _merge_user_agent(default_agent, client_user_agent)
     for key, value in user_agent.items():
@@ -88,7 +88,7 @@ class PrepareHandler(RequestHandler):
                 api_request.headers["Content-Type"] = format_type.APPLICATION_JSON
 
             else:
-                body = urlencode(body_params, doseq=True)
+                body = urlencode(body_params)
                 api_request.content = body
                 api_request.headers["Content-Type"] = format_type.APPLICATION_FORM
 

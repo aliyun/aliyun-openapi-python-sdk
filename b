@@ -1,0 +1,1 @@
+GET&%2F&AccessKeyId%3DLTAIgTHQxl9boZTV%26Action%3DDescribeInstances%26Format%3DJSON%26RegionId%3Dcn-hangzhou%26SignatureMethod%3DHMAC-SHA1%26SignatureNonce%3Dd4231ce5-5707-4713-8b21-3b8e341017f8%26SignatureType%3D%26SignatureVersion%3D1.0%26Timestamp%3D2019-04-09T01%253A45%253A31Z%26Version%3D2014-05-26

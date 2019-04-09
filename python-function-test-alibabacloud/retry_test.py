@@ -49,7 +49,7 @@ class RetryTest(SDKTestBase):
         context.client = client
         handlers = DEFAULT_HANDLERS
         # 不执行最后发请求
-        for i in range(len(handlers)-2):
+        for i in range(len(handlers)):
             handlers[i]().handle_request(context)
 
         return context
@@ -83,16 +83,41 @@ class RetryTest(SDKTestBase):
     #     new_style_client = client._get_new_style_client(request, config)
     #     context = self._mock_context(new_style_client, api_request)
     #     from alibabacloud.handlers.http_handler import HttpHandler
+    #     self.handler = HttpHandler()
     #
     #     with patch.object(time, "sleep", no_sleep):
-    #         with patch.object(HttpHandler, "handle_request",
-    #                           wraps=HttpHandler().handle_request(context)) as monkey:
+    #         with patch.object(self.handler, "_do_request",
+    #                           wraps=self.handler._do_request) as monkey:
     #             try:
+    #                 new_style_client.
     #                 client.do_action_with_exception(request)
     #                 assert False
     #             except ClientException as e:
     #                 self.assertEqual(error_code.SDK_HTTP_ERROR, e.get_error_code())
     #     self.assertEqual(4, monkey.call_count)
+
+    def test_default_retry1(self):
+        client = AcsClient(self.access_key_id, self.access_key_secret, self.region_id)
+        request = DescribeInstancesRequest()
+        request.set_endpoint("somewhere.you.will.never.get")
+
+        def no_sleep(delay):
+            pass
+
+        config = client._get_new_style_config(request)
+        api_request = client._get_new_style_request(request)
+        new_style_client = client._get_new_style_client(request, config)
+        context = self._mock_context(new_style_client, api_request)
+        from alibabacloud.handlers.http_handler import HttpHandler
+        self.handler = HttpHandler()
+
+        with patch.object(time, "sleep", no_sleep):
+            try:
+                client.do_action_with_exception(request)
+                assert False
+            except ClientException as e:
+                self.assertEqual(error_code.SDK_HTTP_ERROR, e.get_error_code())
+                self.assertTrue(e.get_error_msg().startswith("HTTPConnectionPool(host='somewhere.you.will.never.get', port=80): Max retries exceeded with url:"))
 
     # def test_default_retry_times(self):
     #
@@ -267,17 +292,21 @@ class RetryTest(SDKTestBase):
     #                 self.assertEqual(error_code.SDK_HTTP_ERROR, e.get_error_code())
     #         self.assertEqual(4, monkey.call_count)
 
-    # def test_invalid_max_retry_times(self):
-    #     try:
-    #         client = AcsClient(self.access_key_id,
-    #                            self.access_key_secret,
-    #                            self.region_id,
-    #                            max_retry_time=-1)
-    #         assert False
-    #     except ClientException as e:
-    #         self.assertEqual("SDK.InvalidParameter", e.get_error_code())
-    #         self.assertEqual("max_retry_times should be a positive integer.",
-    #                          e.get_error_msg())
+    def test_invalid_max_retry_times(self):
+        client = AcsClient(self.access_key_id,
+                           self.access_key_secret,
+                           self.region_id,
+                           max_retry_time=-1)
+        from aliyunsdkecs.request.v20140526.DescribeInstancesRequest import \
+            DescribeInstancesRequest
+        request = DescribeInstancesRequest()
+        try:
+            response = client.do_action_with_exception(request)
+            assert False
+        except ClientException as e:
+            self.assertEqual("SDK.InvalidParameter", e.get_error_code())
+            self.assertEqual("max_retry_times should be a positive integer.",
+                             e.get_error_msg())
 
     # def test_set_max_retry_times(self):
     #     client = AcsClient(self.access_key_id,
