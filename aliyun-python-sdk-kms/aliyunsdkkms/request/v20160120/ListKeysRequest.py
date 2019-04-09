@@ -30,12 +30,6 @@ class ListKeysRequest(RpcRequest):
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
 
-	def get_STSToken(self):
-		return self.get_query_params().get('STSToken')
-
-	def set_STSToken(self,STSToken):
-		self.add_query_param('STSToken',STSToken)
-
 	def get_PageNumber(self):
 		return self.get_query_params().get('PageNumber')
 
