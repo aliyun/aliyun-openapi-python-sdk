@@ -19,9 +19,6 @@ from aliyunsdkcore.vendored.requests.packages import urllib3
 
 
 class HttpHandler(RequestHandler):
-    """
-    获取参数，组装成request
-    """
     def handle_request(self, context):
         self._do_request(context)
 
@@ -30,6 +27,9 @@ class HttpHandler(RequestHandler):
 
     def _do_request(self, context):
         http_request = context.http_request
+        # modify retry flag
+        context.retry_flag = False
+
         with Session() as s:
             current_protocol = 'http://' if http_request.protocol.lower() == 'http' else 'https://'
             url = current_protocol + context.endpoint + http_request.params
@@ -51,6 +51,9 @@ class HttpHandler(RequestHandler):
                 response = s.send(prepped, proxies=http_request.proxy,
                                   timeout=http_request.timeout,
                                   allow_redirects=False, verify=None, cert=None)
+
+                from aliyunsdkcore.vendored import requests
+                # requests.adapters.DEFAULT_RETRIES = 0
             except IOError as e:
                 from aliyunsdkcore.acs_exception.exceptions import ClientException
                 from aliyunsdkcore.acs_exception import error_code

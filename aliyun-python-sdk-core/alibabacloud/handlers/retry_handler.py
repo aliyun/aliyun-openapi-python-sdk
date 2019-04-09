@@ -38,11 +38,8 @@ class RetryHandler(RequestHandler):
 
         should_retry = context.client.retry_policy.should_retry(retry_policy_context)
 
-        # if should_retry & RetryCondition.SHOULD_RETRY:
         if should_retry & RetryCondition.NO_RETRY:
             context.retry_flag = False
-            if context.exception:
-                raise context.exception
         else:
             retry_policy_context.retryable = should_retry
             context.http_request.retries += 1
@@ -54,9 +51,9 @@ class RetryHandler(RequestHandler):
     @staticmethod
     def _add_request_client_token(request):
         # TODO implement: add a ClientToken parameter on api_request
-        if hasattr(request, "set_ClientToken") and hasattr(request, "get_ClientToken"):
-            client_token = request.get_ClientToken()
-            if not client_token:
-                # ClientToken has not been set
-                client_token = alibabacloud.utils.parameter_helper.get_uuid()  # up to 60 chars
-                request.set_ClientToken(client_token)
+        # 新的接口不确定body还是query获取到ClientToken
+        client_token = request.params.get('ClientToken')
+        if not client_token:
+            # ClientToken has not been set
+            client_token = alibabacloud.utils.parameter_helper.get_uuid()  # up to 60 chars
+            request.set_ClientToken(client_token)

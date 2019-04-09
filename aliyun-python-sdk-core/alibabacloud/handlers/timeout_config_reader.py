@@ -20,7 +20,7 @@ _api_timeout_config_data = load_json_from_data_dir._load_json_from_data_dir("tim
 
 
 class TimeoutConfigReader(RequestHandler):
-    # TODO 把对 timeout_config.json 的读取逻辑放到 ClientConfig 那一层
+    # TODO 把对 timeout_config.json 的读取逻辑放到 ClientConfig 那一层 by 青塘
     # client config 不能处理  涉及到产品的product—code
     # TODO request级别仅对读取配置进行处理，用户不设置request层级的timeout
     def handle_request(self, context):
