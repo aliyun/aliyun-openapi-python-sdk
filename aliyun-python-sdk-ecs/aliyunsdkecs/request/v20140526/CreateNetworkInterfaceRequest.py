@@ -47,6 +47,12 @@ class CreateNetworkInterfaceRequest(RpcRequest):
 	def set_Description(self,Description):
 		self.add_query_param('Description',Description)
 
+	def get_BusinessType(self):
+		return self.get_query_params().get('BusinessType')
+
+	def set_BusinessType(self,BusinessType):
+		self.add_query_param('BusinessType',BusinessType)
+
 	def get_ResourceGroupId(self):
 		return self.get_query_params().get('ResourceGroupId')
 
@@ -69,6 +75,12 @@ class CreateNetworkInterfaceRequest(RpcRequest):
 
 	def set_NetworkInterfaceName(self,NetworkInterfaceName):
 		self.add_query_param('NetworkInterfaceName',NetworkInterfaceName)
+
+	def get_Visible(self):
+		return self.get_query_params().get('Visible')
+
+	def set_Visible(self,Visible):
+		self.add_query_param('Visible',Visible)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
