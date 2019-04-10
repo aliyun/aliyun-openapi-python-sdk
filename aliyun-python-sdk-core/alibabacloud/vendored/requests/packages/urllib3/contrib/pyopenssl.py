@@ -100,7 +100,7 @@ _openssl_to_stdlib_verify = dict(
 SSL_WRITE_BLOCKSIZE = 16384
 
 orig_util_HAS_SNI = util.HAS_SNI
-orig_util_SSLContext = alibabacloud.vendored.requests.packages.urllib3.util.ssl_.SSLContext
+orig_util_SSLContext = util.ssl_.SSLContext
 
 
 log = logging.getLogger(__name__)
@@ -111,21 +111,21 @@ def inject_into_urllib3():
 
     _validate_dependencies_met()
 
-    alibabacloud.vendored.requests.packages.urllib3.util.ssl_.SSLContext = PyOpenSSLContext
+    util.ssl_.SSLContext = PyOpenSSLContext
     util.HAS_SNI = HAS_SNI
-    alibabacloud.vendored.requests.packages.urllib3.util.ssl_.HAS_SNI = HAS_SNI
+    util.ssl_.HAS_SNI = HAS_SNI
     util.IS_PYOPENSSL = True
-    alibabacloud.vendored.requests.packages.urllib3.util.ssl_.IS_PYOPENSSL = True
+    util.ssl_.IS_PYOPENSSL = True
 
 
 def extract_from_urllib3():
     'Undo monkey-patching by :func:`inject_into_urllib3`.'
 
-    alibabacloud.vendored.requests.packages.urllib3.util.ssl_.SSLContext = orig_util_SSLContext
+    util.ssl_.SSLContext = orig_util_SSLContext
     util.HAS_SNI = orig_util_HAS_SNI
-    alibabacloud.vendored.requests.packages.urllib3.util.ssl_.HAS_SNI = orig_util_HAS_SNI
+    util.ssl_.HAS_SNI = orig_util_HAS_SNI
     util.IS_PYOPENSSL = False
-    alibabacloud.vendored.requests.packages.urllib3.util.ssl_.IS_PYOPENSSL = False
+    util.ssl_.IS_PYOPENSSL = False
 
 
 def _validate_dependencies_met():
