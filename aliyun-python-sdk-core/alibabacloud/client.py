@@ -26,7 +26,7 @@ from alibabacloud.handlers.server_error_handler import ServerErrorHandler
 from alibabacloud.handlers.http_handler import HttpHandler
 from alibabacloud.request import HTTPRequest
 import alibabacloud.retry.retry_policy as retry_policy
-
+from alibabacloud.utils.ini_helper import load_config
 
 DEFAULT_HANDLERS = [
     PrepareHandler(),
@@ -115,7 +115,6 @@ class ClientConfig:
     def read_from_profile(self):
         profile = {}
         # TODO read from profile
-        from alibabacloud.utils.ini_helper import load_config
         if self.config_file is None:
             # 没有指定file
             if self.ENV_NAME_FOR_CONFIG_FILE in os.environ:
