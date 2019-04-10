@@ -4,7 +4,8 @@ import json
 import sys
 import uuid
 
-from aliyunsdkcore.acs_exception.exceptions import ServerException
+from alibabacloud.exceptions import ClientException, ServerException
+
 from aliyunsdkcore.request import CommonRequest, RpcRequest
 from aliyunsdkcore.client import AcsClient
 from base import SDKTestBase

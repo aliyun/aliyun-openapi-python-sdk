@@ -2,7 +2,7 @@
 
 from aliyunsdkecs.request.v20140526.DescribeInstancesRequest import DescribeInstancesRequest
 from base import SDKTestBase
-from aliyunsdkcore.acs_exception.exceptions import ServerException
+from alibabacloud.exceptions import ClientException, ServerException
 
 
 class ROABodyTest(SDKTestBase):

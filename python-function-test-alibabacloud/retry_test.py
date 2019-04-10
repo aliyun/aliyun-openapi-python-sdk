@@ -25,8 +25,8 @@ from aliyunsdkecs.request.v20140526.DescribeDisksRequest import DescribeDisksReq
 from aliyunsdkecs.request.v20140526.AttachDiskRequest import AttachDiskRequest
 from aliyunsdkecs.request.v20140526.CreateDiskRequest import CreateDiskRequest
 from aliyunsdkecs.request.v20140526.RunInstancesRequest import RunInstancesRequest
-from aliyunsdkcore.acs_exception.exceptions import ClientException
-from aliyunsdkcore.acs_exception.exceptions import ServerException
+from alibabacloud.exceptions import ClientException, ServerException
+
 import aliyunsdkcore.acs_exception.error_code as error_code
 import alibabacloud.retry.retry_policy as retry_policy
 from alibabacloud.retry.retry_condition import RetryCondition
@@ -48,7 +48,7 @@ class RetryTest(SDKTestBase):
                 client.do_action_with_exception(request)
                 assert False
             except ClientException as e:
-                self.assertEqual(error_code.SDK_HTTP_ERROR, e.get_error_code())
+                self.assertEqual(error_code.SDK_HTTP_ERROR, e.error_code)
         self.assertEqual(1, monkey.call_count)
 
     def test_default_retry_times(self):
@@ -87,9 +87,9 @@ class RetryTest(SDKTestBase):
             response = client.do_action_with_exception(request)
             assert False
         except ClientException as e:
-            self.assertEqual("SDK.InvalidParameter", e.get_error_code())
+            self.assertEqual("SDK.InvalidParameter", e.error_code)
             self.assertEqual("max_retry_times should be a positive integer.",
-                             e.get_error_msg())
+                             e.error_message)
 
     def test_set_max_retry_times(self):
         client = AcsClient(self.access_key_id,
@@ -211,7 +211,7 @@ class RetryTest(SDKTestBase):
                 client.do_action_with_exception(request)
                 assert False
             except ClientException as e:
-                self.assertEqual(error_code.SDK_HTTP_ERROR, e.get_error_code())
+                self.assertEqual(error_code.SDK_HTTP_ERROR, e.error_code)
         # self.assertEqual(10, monkey.call_count)
         self.assertEqual([0.1, 0.2, 0.4, 0.8, 1.6, 3.2, 6.4, 12.8, 20.0, 20.0],
                          _test_compute_delay)
@@ -263,6 +263,6 @@ class RetryTest(SDKTestBase):
                     new_style_client._handle_request(api_request)
                     assert False
                 except ServerException as e:
-                    self.assertEqual("Throttling", e.get_error_code())
+                    self.assertEqual("Throttling", e.error_code)
         self.assertEqual(10, monkey.call_count)
         self.assertEqual(10, len(_test_compute_delay))

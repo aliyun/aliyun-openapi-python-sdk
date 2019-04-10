@@ -14,7 +14,7 @@
 
 from alibabacloud.handlers import RequestHandler
 
-from alibabacloud.vendored import Request, Session
+from alibabacloud.vendored.requests import Request, Session
 from alibabacloud.vendored.requests.packages import urllib3
 
 
@@ -54,7 +54,7 @@ class HttpHandler(RequestHandler):
 
                 # requests.adapters.DEFAULT_RETRIES = 0
             except IOError as e:
-                from aliyunsdkcore.acs_exception.exceptions import ClientException
+                from alibabacloud.exceptions import ClientException
                 from aliyunsdkcore.acs_exception import error_code
                 exception = ClientException(error_code.SDK_HTTP_ERROR, str(e))
 

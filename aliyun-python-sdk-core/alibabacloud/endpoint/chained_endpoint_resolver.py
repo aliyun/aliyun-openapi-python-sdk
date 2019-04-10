@@ -17,7 +17,7 @@
 # under the License.
 #
 
-from aliyunsdkcore.acs_exception.exceptions import ClientException
+from alibabacloud.exceptions import ClientException
 from alibabacloud.endpoint import EndpointResolver
 
 import aliyunsdkcore.acs_exception.error_code as error_code

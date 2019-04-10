@@ -8,7 +8,7 @@ from alibabacloud.credentials.provider import StaticCredentialsProvider, CachedC
     RotatingCredentialsProvider, CredentialsProvider, \
     ProfileCredentialsProvider, ChainedCredentialsProvider, EnvCredentialsProvider, \
     DefaultChainedCredentialsProvider
-from alibabacloud.exception import ClientException
+from alibabacloud.exceptions import ClientException
 from tests import unittest
 
 class TestProvider(unittest.TestCase):

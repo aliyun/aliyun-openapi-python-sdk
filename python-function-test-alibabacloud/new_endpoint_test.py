@@ -13,8 +13,8 @@
 # limitations under the License.
 
 
-from aliyunsdkcore.acs_exception.exceptions import ClientException
-from aliyunsdkcore.acs_exception.exceptions import ServerException
+from alibabacloud.exceptions import ClientException, ServerException
+
 from base import SDKTestBase
 from mock import MagicMock, patch
 from aliyunsdkcore.client import AcsClient
@@ -104,11 +104,10 @@ class NewEndpointTest(SDKTestBase):
             response = my_client.do_action_with_exception(request)
             assert False
         except ClientException as e:
-            self.assertEqual(error_code.SDK_ENDPOINT_RESOLVING_ERROR, e.get_error_code())
+            self.assertEqual(error_code.SDK_ENDPOINT_RESOLVING_ERROR, e.error_code)
             self.assertEqual(
                 "No such region 'cn-ningbo'. Please check your region ID.",
-                e.get_error_msg()
-            )
+                e.error_message)
 
         my_client.add_endpoint(
             "cn-ningbo",  # which does not exist at all
@@ -129,8 +128,8 @@ class NewEndpointTest(SDKTestBase):
                 response2 = my_client.do_action_with_exception(request2)
                 assert False
             except ClientException as e:
-                self.assertEqual(error_code.SDK_HTTP_ERROR, e.get_error_code())
-                self.assertEqual("abc.cn-ningbo.endpoint-test.exception.com", e.get_error_msg())
+                self.assertEqual(error_code.SDK_HTTP_ERROR, e.error_code)
+                self.assertEqual("abc.cn-ningbo.endpoint-test.exception.com", e.error_message)
 
     def test_add_existing_endpoint_manually(self):
         my_client = self.init_client("cn-hangzhou")
@@ -154,8 +153,8 @@ class NewEndpointTest(SDKTestBase):
                 response2 = my_client.do_action_with_exception(request2)
                 assert False
             except ClientException as e:
-                self.assertEqual(error_code.SDK_HTTP_ERROR, e.get_error_code())
-                self.assertEqual("abc.cn-hangzhou.endpoint-test.exception.com", e.get_error_msg())
+                self.assertEqual(error_code.SDK_HTTP_ERROR, e.error_code)
+                self.assertEqual("abc.cn-hangzhou.endpoint-test.exception.com", e.error_message)
 
     def test_regional_endpoint_comes_from_local_config(self):
         test_config = """
@@ -243,8 +242,8 @@ class NewEndpointTest(SDKTestBase):
                     self.resolve("cn-hangzhou", "Ram", "ram", "openAPI", temp_client.credentials_provider)
                     assert False
                 except ClientException as e:
-                    self.assertEqual(error_code.SDK_ENDPOINT_RESOLVING_ERROR, e.get_error_code())
-                    self.assertTrue(e.get_error_msg().startswith(
+                    self.assertEqual(error_code.SDK_ENDPOINT_RESOLVING_ERROR, e.error_code)
+                    self.assertTrue(e.error_message.startswith(
                         "No endpoint in the region 'cn-hangzhou' for product 'Ram'."
                     ))
 
@@ -256,11 +255,10 @@ class NewEndpointTest(SDKTestBase):
                     self.resolve("mars", "Ram", "ram", "openAPI", temp_client.credentials_provider)
                     assert False
                 except ClientException as e:
-                    self.assertEqual(error_code.SDK_ENDPOINT_RESOLVING_ERROR, e.get_error_code())
+                    self.assertEqual(error_code.SDK_ENDPOINT_RESOLVING_ERROR, e.error_code)
                     self.assertEqual(
                         "No such region 'mars'. Please check your region ID.",
-                        e.get_error_msg()
-                    )
+                        e.error_message)
 
             self.assertEqual(2, monkey.call_count)
             # Bad region ID with another product
@@ -268,9 +266,9 @@ class NewEndpointTest(SDKTestBase):
                 self.resolve("mars", "Ecs", "ecs", "openAPI", temp_client.credentials_provider)
                 assert False
             except ClientException as e:
-                self.assertEqual(error_code.SDK_ENDPOINT_RESOLVING_ERROR, e.get_error_code())
+                self.assertEqual(error_code.SDK_ENDPOINT_RESOLVING_ERROR, e.error_code)
                 self.assertEqual("No such region 'mars'. Please check your region ID.",
-                                 e.get_error_msg())
+                                 e.error_message)
 
             self.assertEqual(2, monkey.call_count)
 
@@ -281,8 +279,8 @@ class NewEndpointTest(SDKTestBase):
                                  "InvalidProductCode", "openAPI", temp_client.credentials_provider)
                     assert False
                 except ClientException as e:
-                    self.assertEqual(error_code.SDK_ENDPOINT_RESOLVING_ERROR, e.get_error_code())
-                    self.assertTrue(e.get_error_msg().startswith(
+                    self.assertEqual(error_code.SDK_ENDPOINT_RESOLVING_ERROR, e.error_code)
+                    self.assertTrue(e.error_message.startswith(
                         "No endpoint for product 'InvalidProductCode'.\n"
                         "Please check the product code, "
                         "or set an endpoint for your request explicitly.\n"
@@ -293,8 +291,8 @@ class NewEndpointTest(SDKTestBase):
                 self.resolve("cn-beijing", "InvalidProductCode", "InvalidProductCode", "openAPI", temp_client.credentials_provider)
                 assert False
             except ClientException as e:
-                self.assertEqual(error_code.SDK_ENDPOINT_RESOLVING_ERROR, e.get_error_code())
-                self.assertTrue(e.get_error_msg().startswith(
+                self.assertEqual(error_code.SDK_ENDPOINT_RESOLVING_ERROR, e.error_code)
+                self.assertTrue(e.error_message.startswith(
                         "No endpoint for product 'InvalidProductCode'.\n"
                         "Please check the product code, "
                         "or set an endpoint for your request explicitly.\n")
@@ -308,11 +306,10 @@ class NewEndpointTest(SDKTestBase):
             self.resolve("mars", "Ecs")
             assert False
         except ClientException as e:
-            self.assertEqual(error_code.SDK_ENDPOINT_RESOLVING_ERROR, e.get_error_code())
+            self.assertEqual(error_code.SDK_ENDPOINT_RESOLVING_ERROR, e.error_code)
             self.assertEqual(
                 "No such region 'mars'. Please check your region ID.",
-                e.get_error_msg()
-            )
+                e.error_message)
 
     def test_try_to_get_endpoint_with_invalid_product_code(self):
         temp_client = self.temp_client('InvalidProductCode')
@@ -322,8 +319,8 @@ class NewEndpointTest(SDKTestBase):
             self.resolve("cn-beijing", "InvalidProductCode")
             assert False
         except ClientException as e:
-            self.assertEqual(error_code.SDK_ENDPOINT_RESOLVING_ERROR, e.get_error_code())
-            self.assertTrue(e.get_error_msg().startswith(
+            self.assertEqual(error_code.SDK_ENDPOINT_RESOLVING_ERROR, e.error_code)
+            self.assertTrue(e.error_message.startswith(
                     "No endpoint for product 'InvalidProductCode'.\n"
                     "Please check the product code, "
                     "or set an endpoint for your request explicitly.\n")
@@ -382,7 +379,7 @@ class NewEndpointTest(SDKTestBase):
             assert False
         except ClientException as e:
             self.assertEqual("SDK.HttpError", e.error_code)
-            self.assertTrue(e.get_error_msg().startswith("HTTPSConnectionPool(host='location-on-mars.aliyuncs.com', port=443): Max retries exceeded with url"))
+            self.assertTrue(e.error_message.startswith("HTTPSConnectionPool(host='location-on-mars.aliyuncs.com', port=443): Max retries exceeded with url"))
 
     def test_invalid_access_key_id(self):
         client = AcsClient("BadAccessKeyId", self.access_key_secret, "cn-hangzhou")
@@ -392,7 +389,7 @@ class NewEndpointTest(SDKTestBase):
             self.resolve("cn-hangzhou", "Ecs", "ecs", "innerAPI", temp_client.credentials_provider)
         except ServerException as e:
             self.assertEqual(e.error_code, 'InvalidAccessKeyId.NotFound')
-            self.assertEqual(e.get_error_msg(), 'Specified access key is not found.')
+            self.assertEqual(e.error_message, 'Specified access key is not found.')
 
     def test_invalid_access_key_secret(self):
 
@@ -403,7 +400,7 @@ class NewEndpointTest(SDKTestBase):
             self.resolve("cn-hangzhou", "Ecs", "ecs", "innerAPI", temp_client.credentials_provider)
         except ServerException as e:
             self.assertEqual(e.error_code, 'InvalidAccessKeySecret')
-            self.assertEqual(e.get_error_msg(), 'The AccessKeySecret is incorrect. Please check your AccessKeyId and AccessKeySecret.')
+            self.assertEqual(e.error_message, 'The AccessKeySecret is incorrect. Please check your AccessKeyId and AccessKeySecret.')
 
     def test_local_clock_screw_when_call_location_service(self):
         # Not implemented
@@ -421,7 +418,7 @@ class NewEndpointTest(SDKTestBase):
             response = self.client.do_action_with_exception(request)
             assert False
         except ServerException as e:
-            self.assertEqual("StackNotFound", e.get_error_code())
+            self.assertEqual("StackNotFound", e.error_code)
 
     def test_location_service_code_not_equals_product_code(self):
         request = DescribeApisRequest()
@@ -457,11 +454,10 @@ class NewEndpointTest(SDKTestBase):
             response = my_client.do_action_with_exception(request)
             assert False
         except ClientException as e:
-            self.assertEqual(error_code.SDK_ENDPOINT_RESOLVING_ERROR, e.get_error_code())
+            self.assertEqual(error_code.SDK_ENDPOINT_RESOLVING_ERROR, e.error_code)
             self.assertEqual(
                 "No such region 'cn-ningbo'. Please check your region ID.",
-                e.get_error_msg()
-            )
+                e.error_message)
 
         add_endpoint(
             "Ecs",  # which does not exist at all
@@ -482,8 +478,8 @@ class NewEndpointTest(SDKTestBase):
                 response2 = my_client.do_action_with_exception(request2)
                 assert False
             except ClientException as e:
-                self.assertEqual(error_code.SDK_HTTP_ERROR, e.get_error_code())
-                self.assertEqual("abc.cn-ningbo.endpoint-test.exception.com", e.get_error_msg())
+                self.assertEqual(error_code.SDK_HTTP_ERROR, e.error_code)
+                self.assertEqual("abc.cn-ningbo.endpoint-test.exception.com", e.error_message)
 
         DefaultEndpointResolver.predefined_endpoint_resolver.reset()
 
@@ -514,8 +510,8 @@ class NewEndpointTest(SDKTestBase):
             resolver.resolve(request)
             assert False
         except ClientException as e:
-            self.assertEqual(error_code.SDK_ENDPOINT_RESOLVING_ERROR, e.get_error_code())
-            self.assertEqual(expected_message, e.get_error_msg())
+            self.assertEqual(error_code.SDK_ENDPOINT_RESOLVING_ERROR, e.error_code)
+            self.assertEqual(expected_message, e.error_message)
 
     def test_bssopenapi_resolve(self):
         temp_client = self.temp_client("BssOpenApi")
@@ -534,7 +530,7 @@ class NewEndpointTest(SDKTestBase):
         try:
             self.client.do_action_with_exception(request)
         except ServerException as e:
-            self.assertNotEqual("SDK.EndpointResolvingError", e.get_error_code())
+            self.assertNotEqual("SDK.EndpointResolvingError", e.error_code)
 
     def test_faas_resolve(self):
         temp_client = self.temp_client("faas")
@@ -554,4 +550,4 @@ class NewEndpointTest(SDKTestBase):
             client.do_action_with_exception(request)
             assert False
         except ServerException as e:
-            self.assertNotEqual(error_code.SDK_ENDPOINT_RESOLVING_ERROR, e.get_error_code())
+            self.assertNotEqual(error_code.SDK_ENDPOINT_RESOLVING_ERROR, e.error_code)
