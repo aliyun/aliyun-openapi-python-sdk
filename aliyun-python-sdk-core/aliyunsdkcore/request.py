@@ -19,15 +19,13 @@
 
 # coding=utf-8
 import abc
-from aliyunsdkcore.vendored.six import add_metaclass
+from alibabacloud.vendored.six import add_metaclass
 
 # from aliyunsdkcore.auth.composer import rpc_signature_composer as rpc_signer
 # from aliyunsdkcore.auth.composer import composer as roa_signer
 # from aliyunsdkcore.auth.algorithm import sha_hmac1
 from aliyunsdkcore.acs_exception import exceptions
 from aliyunsdkcore.acs_exception import error_code
-from aliyunsdkcore.vendored.requests.structures import CaseInsensitiveDict
-
 
 """
 Acs request model.

@@ -3,7 +3,7 @@
 from tests import unittest
 
 from aliyunsdkcore.auth.algorithm import sha_hmac1 as hmac1
-from aliyunsdkcore.vendored import six
+from alibabacloud.vendored import six
 
 
 class TestShaHmac1(unittest.TestCase):

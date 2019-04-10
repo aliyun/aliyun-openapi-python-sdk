@@ -14,7 +14,7 @@
 import json
 
 from alibabacloud.handlers import RequestHandler
-from aliyunsdkcore.vendored.requests import codes
+from alibabacloud.vendored import codes
 
 
 class ServerErrorHandler(RequestHandler):

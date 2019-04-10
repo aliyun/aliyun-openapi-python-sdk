@@ -2,12 +2,11 @@
 import sys
 from tests import unittest
 
-from mock import MagicMock, patch
+from mock import patch
 
-from aliyunsdkcore.request import AcsRequest, RpcRequest, RoaRequest, \
+from aliyunsdkcore.request import RpcRequest, RoaRequest, \
     CommonRequest, get_default_protocol_type, set_default_protocol_type
 from aliyunsdkcore.acs_exception.exceptions import ClientException
-from aliyunsdkcore.compat import ensure_string, ensure_bytes
 
 
 class TestRequest(unittest.TestCase):

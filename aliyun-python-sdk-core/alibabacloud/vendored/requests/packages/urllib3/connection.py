@@ -8,7 +8,6 @@ from socket import error as SocketError, timeout as SocketTimeout
 import warnings
 from .packages import six
 from .packages.six.moves.http_client import HTTPConnection as _HTTPConnection
-from .packages.six.moves.http_client import HTTPException  # noqa: F401
 
 try:  # Compiled with SSL?
     import ssl

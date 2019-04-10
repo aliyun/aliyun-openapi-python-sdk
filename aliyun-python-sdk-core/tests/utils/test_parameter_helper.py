@@ -1,7 +1,7 @@
 # coding=utf-8
 
 from tests import unittest
-from aliyunsdkcore.vendored.six import PY2
+from alibabacloud.vendored.six import PY2
 
 from alibabacloud.utils import parameter_helper as helper
 

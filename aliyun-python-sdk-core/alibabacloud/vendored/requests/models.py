@@ -8,12 +8,10 @@ This module contains the primary objects that power Requests.
 """
 
 import datetime
-import sys
 
 # Import encoding now, to avoid implicit import later.
 # Implicit import within threads may cause LookupError when standard library is in a ZIP,
 # such as in Embedded Python. See https://github.com/requests/requests/issues/3578.
-import encodings.idna
 
 from .packages.urllib3.fields import RequestField
 from .packages.urllib3.filepost import encode_multipart_formdata
