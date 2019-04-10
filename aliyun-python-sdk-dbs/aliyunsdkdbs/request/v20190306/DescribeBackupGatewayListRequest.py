@@ -23,6 +23,12 @@ class DescribeBackupGatewayListRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Dbs', '2019-03-06', 'DescribeBackupGatewayList','cbs')
 
+	def get_Identifier(self):
+		return self.get_query_params().get('Identifier')
+
+	def set_Identifier(self,Identifier):
+		self.add_query_param('Identifier',Identifier)
+
 	def get_ClientToken(self):
 		return self.get_query_params().get('ClientToken')
 
