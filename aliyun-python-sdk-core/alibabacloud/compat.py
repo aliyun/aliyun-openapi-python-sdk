@@ -1,5 +1,5 @@
 import sys
-from aliyunsdkcore.vendored import six
+from alibabacloud.vendored import six
 
 if six.PY2:
     from base64 import encodestring as b64_encode_bytes

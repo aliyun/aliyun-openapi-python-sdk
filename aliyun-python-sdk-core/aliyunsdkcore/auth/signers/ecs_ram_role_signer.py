@@ -23,7 +23,7 @@ import time
 import logging
 import json
 
-from aliyunsdkcore.vendored.six.moves.urllib.request import urlopen
+from alibabacloud.vendored.six import urlopen
 from aliyunsdkcore.auth.signers.signer import Signer
 from aliyunsdkcore.acs_exception.exceptions import ServerException
 

@@ -1,7 +1,7 @@
 import os
 
-from alibabacloud.exception import ClientException
-from aliyunsdkcore.vendored import six
+from alibabacloud.exceptions import ClientException
+from alibabacloud.vendored import six
 
 
 # parse ini file

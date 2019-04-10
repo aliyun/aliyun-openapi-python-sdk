@@ -14,7 +14,7 @@
 import json
 
 from alibabacloud.handlers import RequestHandler
-from aliyunsdkcore.vendored.requests import codes
+from alibabacloud.vendored.requests import codes
 
 
 class ServerErrorHandler(RequestHandler):
@@ -46,12 +46,9 @@ class ServerErrorHandler(RequestHandler):
                         server_error_code = 'InvalidAccessKeySecret'
                         server_error_message = 'The AccessKeySecret is incorrect. ' \
                                                'Please check your AccessKeyId and AccessKeySecret.'
-                from aliyunsdkcore.acs_exception.exceptions import ServerException
-                exception = ServerException(
-                    server_error_code,
-                    server_error_message,
-                    http_status=response.status_code,
-                    request_id=request_id)
+                from alibabacloud.exceptions import ServerException
+                exception = ServerException(server_error_code, server_error_message,
+                                            context.endpoint, response.status_code, request_id)
                 context.exception = exception
 
     @staticmethod

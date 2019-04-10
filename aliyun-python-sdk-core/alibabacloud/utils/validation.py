@@ -12,7 +12,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from aliyunsdkcore.acs_exception.exceptions import ClientException
+from alibabacloud.exceptions import ClientException
+
 import aliyunsdkcore.acs_exception.error_code as error_code
 
 

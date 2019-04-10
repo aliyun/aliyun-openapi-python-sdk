@@ -2,13 +2,11 @@
 
 from tests import unittest
 
-from mock import MagicMock, patch, Mock
-
 from aliyunsdkcore.credentials.credentials import RamRoleArnCredential
 from aliyunsdkcore.auth.signers.ram_role_arn_signer import RamRoleArnSigner
 from aliyunsdkcore.request import RpcRequest, RoaRequest
 from aliyunsdkcore.acs_exception.exceptions import ServerException
-from aliyunsdkcore.compat import ensure_bytes
+from alibabacloud.compat import ensure_bytes
 
 
 class TestRamRoleArnSigner(unittest.TestCase):

@@ -17,7 +17,7 @@ import logging
 
 from alibabacloud.utils.load_json_from_data_dir import _load_json_from_data_dir
 import alibabacloud.utils.validation as validation
-from aliyunsdkcore.acs_exception.exceptions import ClientException, ServerException
+from alibabacloud.exceptions import ServerException, ClientException
 import aliyunsdkcore.acs_exception.error_code as error_code
 
 logger = logging.getLogger(__name__)
@@ -77,14 +77,14 @@ class RetryOnExceptionCondition(RetryCondition):
         exception = retry_policy_context.exception
 
         if isinstance(exception, ClientException):
-            if exception.get_error_code() == error_code.SDK_HTTP_ERROR:
+            if exception.error_code == error_code.SDK_HTTP_ERROR:
 
                 logger.debug("Retryable ClientException occurred. ClientException:%s",
                              exception)
                 return RetryCondition.SHOULD_RETRY
 
         if isinstance(exception, ServerException):
-            error_code_ = exception.get_error_code()
+            error_code_ = exception.error_code
             normal_errors = _find_data_in_retry_config("RetryableNormalErrors",
                                                        client,
                                                        self.retry_config)

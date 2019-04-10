@@ -2,14 +2,14 @@
 
 from tests import unittest
 
-from mock import MagicMock, patch, Mock
+from mock import Mock
 
 from aliyunsdkcore.endpoint.location_service_endpoint_resolver \
     import LocationServiceEndpointResolver
 from aliyunsdkcore.endpoint.resolver_endpoint_request import ResolveEndpointRequest
 
 from aliyunsdkcore.acs_exception.exceptions import ServerException
-from aliyunsdkcore.compat import ensure_bytes
+from alibabacloud.compat import ensure_bytes
 
 
 class TestLocationServiceEndpointResolver(unittest.TestCase):

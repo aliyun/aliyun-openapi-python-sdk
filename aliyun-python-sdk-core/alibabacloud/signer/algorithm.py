@@ -3,10 +3,10 @@ import abc
 import hashlib
 import hmac
 
-from aliyunsdkcore.compat import ensure_string
-from aliyunsdkcore.compat import ensure_bytes
-from aliyunsdkcore.compat import b64_encode_bytes
-from aliyunsdkcore.vendored.six import add_metaclass
+from alibabacloud.compat import ensure_string
+from alibabacloud.compat import ensure_bytes
+from alibabacloud.compat import b64_encode_bytes
+from alibabacloud.vendored.six import add_metaclass
 
 
 @add_metaclass(abc.ABCMeta)

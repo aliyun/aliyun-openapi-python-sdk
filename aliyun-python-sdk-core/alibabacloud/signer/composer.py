@@ -20,10 +20,10 @@ import time
 
 from alibabacloud.utils import format_type as FormatType, parameter_helper as helper
 from alibabacloud.signer.algorithm import ShaHmac1 as mac1
-from aliyunsdkcore.vendored.six import iteritems
-from aliyunsdkcore.vendored.six.moves.urllib.request import pathname2url
-from aliyunsdkcore.compat import urlencode
-from aliyunsdkcore.acs_exception.exceptions import ClientException
+from alibabacloud.vendored.six import iteritems
+from alibabacloud.vendored.six.moves.urllib.request import pathname2url
+from alibabacloud.compat import urlencode
+from alibabacloud.exceptions import ClientException
 from alibabacloud.utils.parameter_helper import md5_sum
 
 FORMAT_ISO_8601 = "%Y-%m-%dT%H:%M:%SZ"
