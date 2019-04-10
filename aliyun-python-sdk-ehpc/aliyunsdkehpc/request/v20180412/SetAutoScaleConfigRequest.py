@@ -92,6 +92,9 @@ class SetAutoScaleConfigRequest(RpcRequest):
 				self.add_query_param('Queues.' + str(i + 1) + '.SpotStrategy' , Queuess[i].get('SpotStrategy'))
 			if Queuess[i].get('QueueName') is not None:
 				self.add_query_param('Queues.' + str(i + 1) + '.QueueName' , Queuess[i].get('QueueName'))
+			for j in range(len(Queuess[i].get('InstanceTypess'))):
+				if Queuess[i].get('InstanceTypess')[j] is not None:
+					self.add_query_param('Queues.' + str(i + 1) + '.InstanceTypes.'+str(j + 1), Queuess[i].get('InstanceTypess')[j])
 			if Queuess[i].get('InstanceType') is not None:
 				self.add_query_param('Queues.' + str(i + 1) + '.InstanceType' , Queuess[i].get('InstanceType'))
 			if Queuess[i].get('EnableAutoGrow') is not None:

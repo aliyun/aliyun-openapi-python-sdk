@@ -35,6 +35,32 @@ class CreateClusterRequest(RpcRequest):
 	def set_ImageId(self,ImageId):
 		self.add_query_param('ImageId',ImageId)
 
+	def get_AdditionalVolumess(self):
+		return self.get_query_params().get('AdditionalVolumess')
+
+	def set_AdditionalVolumess(self,AdditionalVolumess):
+		for i in range(len(AdditionalVolumess)):	
+			if AdditionalVolumess[i].get('VolumeType') is not None:
+				self.add_query_param('AdditionalVolumes.' + str(i + 1) + '.VolumeType' , AdditionalVolumess[i].get('VolumeType'))
+			if AdditionalVolumess[i].get('VolumeProtocol') is not None:
+				self.add_query_param('AdditionalVolumes.' + str(i + 1) + '.VolumeProtocol' , AdditionalVolumess[i].get('VolumeProtocol'))
+			if AdditionalVolumess[i].get('LocalDirectory') is not None:
+				self.add_query_param('AdditionalVolumes.' + str(i + 1) + '.LocalDirectory' , AdditionalVolumess[i].get('LocalDirectory'))
+			if AdditionalVolumess[i].get('RemoteDirectory') is not None:
+				self.add_query_param('AdditionalVolumes.' + str(i + 1) + '.RemoteDirectory' , AdditionalVolumess[i].get('RemoteDirectory'))
+			for j in range(len(AdditionalVolumess[i].get('Roless'))):
+				if AdditionalVolumess[i].get('Roless')[j] is not None:
+					self.add_query_param('AdditionalVolumes.' + str(i + 1) + '.Roles.'+str(j + 1), AdditionalVolumess[i].get('Roless')[j])
+			if AdditionalVolumess[i].get('VolumeId') is not None:
+				self.add_query_param('AdditionalVolumes.' + str(i + 1) + '.VolumeId' , AdditionalVolumess[i].get('VolumeId'))
+			if AdditionalVolumess[i].get('VolumeMountpoint') is not None:
+				self.add_query_param('AdditionalVolumes.' + str(i + 1) + '.VolumeMountpoint' , AdditionalVolumess[i].get('VolumeMountpoint'))
+			if AdditionalVolumess[i].get('Location') is not None:
+				self.add_query_param('AdditionalVolumes.' + str(i + 1) + '.Location' , AdditionalVolumess[i].get('Location'))
+			if AdditionalVolumess[i].get('JobQueue') is not None:
+				self.add_query_param('AdditionalVolumes.' + str(i + 1) + '.JobQueue' , AdditionalVolumess[i].get('JobQueue'))
+
+
 	def get_EcsOrderManagerInstanceType(self):
 		return self.get_query_params().get('EcsOrder.Manager.InstanceType')
 
@@ -113,6 +139,12 @@ class CreateClusterRequest(RpcRequest):
 	def set_EcsOrderManagerCount(self,EcsOrderManagerCount):
 		self.add_query_param('EcsOrder.Manager.Count',EcsOrderManagerCount)
 
+	def get_ResourceGroupId(self):
+		return self.get_query_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self,ResourceGroupId):
+		self.add_query_param('ResourceGroupId',ResourceGroupId)
+
 	def get_Password(self):
 		return self.get_query_params().get('Password')
 
@@ -124,6 +156,12 @@ class CreateClusterRequest(RpcRequest):
 
 	def set_EcsOrderLoginCount(self,EcsOrderLoginCount):
 		self.add_query_param('EcsOrder.Login.Count',EcsOrderLoginCount)
+
+	def get_RemoteVisEnable(self):
+		return self.get_query_params().get('RemoteVisEnable')
+
+	def set_RemoteVisEnable(self,RemoteVisEnable):
+		self.add_query_param('RemoteVisEnable',RemoteVisEnable)
 
 	def get_SystemDiskSize(self):
 		return self.get_query_params().get('SystemDiskSize')
