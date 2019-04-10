@@ -27,10 +27,6 @@ class TimeoutConfigReader(RequestHandler):
         context.http_request.timeout = (self._connection_timeout(context.config),
                                         self._read_timeout(context))
 
-    def handle_response(self, context):
-        # context 实际是request
-        pass
-
     @staticmethod
     def _connection_timeout(config):
         return config.connection_timeout or DEFAULT_CONNECTION_TIMEOUT
@@ -46,4 +42,4 @@ class TimeoutConfigReader(RequestHandler):
             path = '"{0}"."{1}"."{2}"'.format(product_code.lower(), product_version,
                                               action_name)
             file_read_timeout = jmespath.search(path, _api_timeout_config_data)
-        return file_read_timeout or context.config.read_timeout or DEFAULT_READ_TIMEOUT
+        return context.config.read_timeout or file_read_timeout or DEFAULT_READ_TIMEOUT
