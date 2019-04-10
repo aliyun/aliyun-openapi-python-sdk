@@ -68,7 +68,7 @@ class RetryTest(SDKTestBase):
         self.assertTrue(isinstance(context.exception, ServerException))
 
     def test_retry_with_client_token(self):
-        pass
+     pass
 
     def test_retry_with_client_token_set(self):
        pass
@@ -107,7 +107,90 @@ class RetryTest(SDKTestBase):
             self.assertEqual(8, context.http_request.retries)
 
     def test_retry_conditions(self):
-        pass
+        client = AcsClient(self.access_key_id, self.access_key_secret, self.region_id)
+
+        default_retry_policy = retry_policy.get_default_retry_policy()
+
+        def CE(code):
+            return ClientException(code, "some error")
+
+        def SE(code):
+            return ServerException(code, "some error")
+
+        def _get_retryable(*conditions):
+            context = RetryPolicyContext(*conditions)
+            return default_retry_policy.should_retry(context)
+
+        def _assert_not_retryable(*conditions):
+            retryable = _get_retryable(*conditions)
+            self.assertTrue(retryable & RetryCondition.NO_RETRY)
+
+        def _assert_retryable(*conditions):
+            retryable = _get_retryable(*conditions)
+            self.assertFalse(retryable & RetryCondition.NO_RETRY)
+
+        def _assert_retryable_with_client_token(request):
+            conditions = [request, SE("InternalError"), 0, 500]
+            retryable = _get_retryable(*conditions)
+            self.assertTrue(retryable &
+                            RetryCondition.SHOULD_RETRY_WITH_THROTTLING_BACKOFF)
+
+        def _assert_not_retryable_with_client_token(request):
+            conditions = [request, SE("InternalError"), 0, 500]
+            retryable = _get_retryable(*conditions)
+            self.assertFalse(retryable & RetryCondition.SHOULD_RETRY_WITH_THROTTLING_BACKOFF)
+        # retryable
+        acs_request = DescribeInstancesRequest()
+        retryable_request = client._get_new_style_request(acs_request)
+        config = client._get_new_style_config(acs_request)
+        retryable_client = client._get_new_style_client(acs_request, config)
+
+        timeout_exception = CE(error_code.SDK_HTTP_ERROR)
+        invalid_param_excpetion = SE("MissingParameter")
+        unknown_error = SE(error_code.SDK_UNKNOWN_SERVER_ERROR)
+        internal_error = SE("InternalError")
+
+        _assert_retryable(retryable_request, timeout_exception, 0, 500, retryable_client)
+        _assert_retryable(retryable_request, timeout_exception, 2, 500, retryable_client)
+        _assert_retryable(retryable_request, unknown_error, 0, 500, retryable_client)
+        _assert_retryable(retryable_request, unknown_error, 0, 502, retryable_client)
+        _assert_retryable(retryable_request, unknown_error, 0, 503, retryable_client)
+        _assert_retryable(retryable_request, unknown_error, 0, 504, retryable_client)
+        _assert_retryable(retryable_request, internal_error, 0, 500, retryable_client)
+        _assert_retryable(retryable_request, SE("Throttling"), 0, 400, retryable_client)
+        _assert_retryable(retryable_request, SE("ServiceUnavailable"), 0, 503, retryable_client)
+        _assert_not_retryable(retryable_request, invalid_param_excpetion, 0, 400, retryable_client)
+        _assert_not_retryable(retryable_request, timeout_exception, 3, 500, retryable_client)
+        _assert_not_retryable(retryable_request, SE("InvalidAccessKeyId.NotFound"), 0, 404, retryable_client)
+
+        acs_request = DescribeInstanceHistoryEventsRequest()
+        request1 = client._get_new_style_request(acs_request)
+
+        config = self.client._get_new_style_config(acs_request)
+        client1 = self.client._get_new_style_client(acs_request, config)
+        _assert_retryable(request1, SE("ServiceUnavailable"), 0, 503, client1)
+
+        acs_request = DescribeDisksRequest()
+        request2 = client._get_new_style_request(acs_request)
+
+        config = self.client._get_new_style_config(acs_request)
+        client2 = self.client._get_new_style_client(acs_request, config)
+        _assert_retryable(request2, SE("ServiceUnavailable"), 0, 503, client2)
+        # no_retry
+        acs_request = AttachDiskRequest()
+        no_retry_request = client._get_new_style_request(acs_request)
+        config = self.client._get_new_style_config(acs_request)
+        no_retry_client = self.client._get_new_style_client(acs_request, config)
+
+        _assert_not_retryable(no_retry_request, timeout_exception, 0, 500, no_retry_client)
+        _assert_not_retryable(no_retry_request, unknown_error, 0, 504, no_retry_client)
+        _assert_not_retryable(no_retry_request, invalid_param_excpetion, 0, 400, no_retry_client)
+
+        # _assert_retryable_with_client_token(CreateInstanceRequest())
+        # _assert_retryable_with_client_token(CreateDiskRequest())
+        # _assert_retryable_with_client_token(RunInstancesRequest())
+        # _assert_not_retryable_with_client_token(AttachDiskRequest())
+        # _assert_not_retryable_with_client_token(DescribeInstancesRequest())
 
     def test_normal_backoff(self):
         client = AcsClient(self.access_key_id,
@@ -134,4 +217,52 @@ class RetryTest(SDKTestBase):
                          _test_compute_delay)
 
     def test_throttled_backoff(self):
-        pass
+        # mock ServerErrorHandler的结果
+        def _handle_response(context):
+            context.exception = ServerException("Throttling", "some error")
+        client = AcsClient(self.access_key_id,
+                           self.access_key_secret,
+                           self.region_id,
+                           max_retry_time=10)
+        acs_request = DescribeInstancesRequest()
+        api_request = client._get_new_style_request(acs_request)
+        config = client._get_new_style_config(acs_request)
+        new_style_client = client._get_new_style_client(acs_request, config)
+        globals()["_test_compute_delay"] = []
+        def record_sleep(delay):
+            global _test_compute_delay
+            _test_compute_delay.append(delay)
+
+        from alibabacloud.handlers.prepare_handler import PrepareHandler
+        from alibabacloud.handlers.credentials_handler import CredentialsHandler
+        from alibabacloud.handlers.signer_handler import SignerHandler
+        from alibabacloud.handlers.timeout_config_reader import TimeoutConfigReader
+        from alibabacloud.handlers.endpoint_handler import EndpointHandler
+        from alibabacloud.handlers.log_handler import LogHandler
+        from alibabacloud.handlers.retry_handler import RetryHandler
+        from alibabacloud.handlers.server_error_handler import ServerErrorHandler
+        from alibabacloud.handlers.http_handler import HttpHandler
+
+        DEFAULT_HANDLERS = [
+            PrepareHandler(),
+            CredentialsHandler(),
+            SignerHandler(),
+            TimeoutConfigReader(),
+            LogHandler(),
+            EndpointHandler(),
+            RetryHandler(),
+            ServerErrorHandler(),
+            HttpHandler(),
+        ]
+
+        new_style_client.handlers = DEFAULT_HANDLERS
+
+        with patch.object(time, "sleep", wraps=record_sleep) as monkey:
+            with patch.object(ServerErrorHandler, "handle_response", wraps=_handle_response):
+                try:
+                    new_style_client._handle_request(api_request)
+                    assert False
+                except ServerException as e:
+                    self.assertEqual("Throttling", e.get_error_code())
+        self.assertEqual(10, monkey.call_count)
+        self.assertEqual(10, len(_test_compute_delay))
