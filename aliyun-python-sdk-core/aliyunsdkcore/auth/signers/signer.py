@@ -22,7 +22,7 @@
 
 from abc import ABCMeta, abstractmethod
 
-from aliyunsdkcore.vendored.six import with_metaclass
+from alibabacloud.vendored.six import with_metaclass
 
 
 class Signer(with_metaclass(ABCMeta, object)):

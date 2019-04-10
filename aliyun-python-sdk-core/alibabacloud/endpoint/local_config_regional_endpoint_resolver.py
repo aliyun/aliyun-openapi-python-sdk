@@ -20,15 +20,15 @@
 import os.path
 import json
 
-import aliyunsdkcore
-from aliyunsdkcore.vendored.six import iteritems
+import alibabacloud
+from alibabacloud.vendored.six import iteritems
 from alibabacloud.endpoint.endpoint_resolver_base import EndpointResolverBase
 from alibabacloud.endpoint.resolver_endpoint_request import ResolveEndpointRequest
 
 
 class LocalConfigRegionalEndpointResolver(EndpointResolverBase):
 
-    ENDPOINT_JSON = os.path.join(os.path.dirname(aliyunsdkcore.__file__),
+    ENDPOINT_JSON = os.path.join(os.path.dirname(alibabacloud.__file__),
                                  "data", "endpoints.json")
 
     def __init__(self, config_json_str=None):

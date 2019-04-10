@@ -1,13 +1,13 @@
 
 from tests import unittest
 import os
-from mock import MagicMock, patch, Mock
+from mock import Mock
 
 from aliyunsdkcore.acs_exception.exceptions import ClientException, ServerException
 from aliyunsdkcore.credentials.credentials import RsaKeyPairCredential
 from aliyunsdkcore.auth.signers.rsa_key_pair_signer import RsaKeyPairSigner, GetSessionAkRequest
-from aliyunsdkcore.request import RpcRequest, RoaRequest
-from aliyunsdkcore.compat import ensure_bytes
+from aliyunsdkcore.request import RpcRequest
+from alibabacloud.compat import ensure_bytes
 
 
 class TestRsaKeyPairSigner(unittest.TestCase):

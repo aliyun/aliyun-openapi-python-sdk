@@ -1,7 +1,6 @@
 # encoding:utf-8
 
-from aliyunsdkcore.acs_exception.exceptions import ClientException
-from aliyunsdkcore.acs_exception.exceptions import ServerException
+from alibabacloud.exceptions import ClientException, ServerException
 from aliyunsdkcore.client import AcsClient
 
 from base import SDKTestBase
@@ -23,11 +22,12 @@ class ErrorHandleTest(SDKTestBase):
             response = acs_client.do_action_with_exception(request)
             assert False
         except ClientException as e:
+            
             self.assertEqual("SDK.HttpError", e.error_code)
-            self.assertTrue(e.get_error_msg().startswith("HTTPConnectionPool(host='ecs-cn-hangzhou.aliyuncs.com', port=80): Max retries exceeded with url"))
-            self.assertTrue(e.get_error_msg().endswith("'Connection to ecs-cn-hangzhou.aliyuncs.com timed out. (connect timeout=0.001)'))"))
+            self.assertTrue(e.error_message.startswith("HTTPConnectionPool(host='ecs-cn-hangzhou.aliyuncs.com', port=80): Max retries exceeded with url"))
+            self.assertTrue(e.error_message.endswith("'Connection to ecs-cn-hangzhou.aliyuncs.com timed out. (connect timeout=0.001)'))"))
             # self.assertEqual("HTTPConnectionPool(host='ecs-cn-hangzhou.aliyuncs.com',"
-            #                  " port=80):  Max retries exceeded with url)", e.get_error_msg())
+            #                  " port=80):  Max retries exceeded with url)", e.error_message)
 
     def test_server_unreachable(self):
         from aliyunsdkcore.request import CommonRequest
@@ -38,7 +38,7 @@ class ErrorHandleTest(SDKTestBase):
             assert False
         except ClientException as e:
             self.assertEqual("SDK.HttpError", e.error_code)
-            self.assertTrue(e.get_error_msg().startswith(
+            self.assertTrue(e.error_message.startswith(
                 "HTTPConnectionPool(host='www.aliyun-hangzhou.com', port=80): "
                 "Max retries exceeded with url:"))
 
@@ -50,8 +50,8 @@ class ErrorHandleTest(SDKTestBase):
             response = self.client.do_action_with_exception(request)
             assert False
         except ServerException as e:
-            self.assertEqual("InvalidInstanceId.NotFound", e.get_error_code())
-            self.assertEqual("The specified InstanceId does not exist.", e.get_error_msg())
+            self.assertEqual("InvalidInstanceId.NotFound", e.error_code)
+            self.assertEqual("The specified InstanceId does not exist.", e.error_message)
 
     # def test_server_error_with_a_bad_json(self):
     #     from aliyunsdkecs.request.v20140526.DeleteInstanceRequest import DeleteInstanceRequest
@@ -69,9 +69,9 @@ class ErrorHandleTest(SDKTestBase):
     #         client.do_action_with_exception(request)
     #         assert False
     #     except ServerException as e:
-    #         self.assertEqual("SDK.UnknownServerError", e.get_error_code())
-    #         # self.assertEqual("ServerResponseBody: 'bad-json'", e.get_error_msg())
-    #         self.assertEqual("ServerResponseBody: bad-json", e.get_error_msg())
+    #         self.assertEqual("SDK.UnknownServerError", e.error_code)
+    #         # self.assertEqual("ServerResponseBody: 'bad-json'", e.error_message)
+    #         self.assertEqual("ServerResponseBody: bad-json", e.error_message)
     #
     #     # test valid json format but no Code or Message
     #     def get_response_object(inst):
@@ -81,9 +81,9 @@ class ErrorHandleTest(SDKTestBase):
     #         client.do_action_with_exception(request)
     #         assert False
     #     except ServerException as e:
-    #         self.assertEqual("SDK.UnknownServerError", e.get_error_code())
+    #         self.assertEqual("SDK.UnknownServerError", e.error_code)
     #         self.assertEqual("""ServerResponseBody: {"key" : "this is a valid json string"}""",
-    #                          e.get_error_msg())
+    #                          e.error_message)
     #
     #     # test missing Code in response
     #     def get_response_object(inst):
@@ -93,8 +93,8 @@ class ErrorHandleTest(SDKTestBase):
     #         client.do_action_with_exception(request)
     #         assert False
     #     except ServerException as e:
-    #         self.assertEqual("SDK.UnknownServerError", e.get_error_code())
-    #         self.assertEqual("""Some message""", e.get_error_msg())
+    #         self.assertEqual("SDK.UnknownServerError", e.error_code)
+    #         self.assertEqual("""Some message""", e.error_message)
     #
     #     # test missing Code in response
     #     def get_response_object(inst):
@@ -104,8 +104,8 @@ class ErrorHandleTest(SDKTestBase):
     #         client.do_action_with_exception(request)
     #         assert False
     #     except ServerException as e:
-    #         self.assertEqual("YouMessedSomethingUp", e.get_error_code())
+    #         self.assertEqual("YouMessedSomethingUp", e.error_code)
     #         self.assertEqual("""ServerResponseBody: {"Code": "YouMessedSomethingUp"}""",
-    #                          e.get_error_msg())
+    #                          e.error_message)
     #
     #     HttpResponse.get_response_object = original_get_response_object

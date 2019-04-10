@@ -14,8 +14,8 @@
 
 from alibabacloud.handlers import RequestHandler
 
-from aliyunsdkcore.vendored.requests import Request, Session
-from aliyunsdkcore.vendored.requests.packages import urllib3
+from alibabacloud.vendored.requests import Request, Session
+from alibabacloud.vendored.requests.packages import urllib3
 
 
 class HttpHandler(RequestHandler):
@@ -52,10 +52,9 @@ class HttpHandler(RequestHandler):
                                   timeout=http_request.timeout,
                                   allow_redirects=False, verify=None, cert=None)
 
-                from aliyunsdkcore.vendored import requests
                 # requests.adapters.DEFAULT_RETRIES = 0
             except IOError as e:
-                from aliyunsdkcore.acs_exception.exceptions import ClientException
+                from alibabacloud.exceptions import ClientException
                 from aliyunsdkcore.acs_exception import error_code
                 exception = ClientException(error_code.SDK_HTTP_ERROR, str(e))
 
@@ -85,7 +84,7 @@ class HttpHandler(RequestHandler):
         # logger.debug(request_base + self._prepare_http_debug(request, '>'))
 
         # logger the response
-        from aliyunsdkcore.vendored.requests import status_codes
+        from alibabacloud.vendored.requests import status_codes
         response_base = '\n< HTTP/1.1 %s %s' % (
             response.status_code, status_codes._codes.get(response.status_code)[0].upper())
         # logger.debug(response_base + self.prepare_http_debug(response, '<'))

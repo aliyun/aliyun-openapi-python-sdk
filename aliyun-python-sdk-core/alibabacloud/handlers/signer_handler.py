@@ -17,7 +17,7 @@ from alibabacloud.handlers import RequestHandler
 from alibabacloud.signer import Signer
 from alibabacloud.utils import parameter_helper as helper
 from alibabacloud.utils import format_type
-from aliyunsdkcore.compat import urlencode
+from alibabacloud.compat import urlencode
 
 
 class SignerHandler(RequestHandler):

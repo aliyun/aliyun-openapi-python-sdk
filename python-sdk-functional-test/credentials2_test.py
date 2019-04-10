@@ -1,24 +1,18 @@
 # encoding:utf-8
-import json
 import os
-from http.server import HTTPServer
 from unittest import mock
 
 import requests
 
 from aliyunsdkcore.client import AcsClient
-from aliyunsdkcore.auth.credentials import StsTokenCredential, RamRoleArnCredential, \
-    EcsRamRoleCredential, AccessKeyCredential
+from aliyunsdkcore.auth.credentials import StsTokenCredential, RamRoleArnCredential
 from aliyunsdkros.request.v20150901.DescribeResourceTypesRequest import \
     DescribeResourceTypesRequest
 from aliyunsdkecs.request.v20140526.DescribeRegionsRequest import DescribeRegionsRequest
 from aliyunsdksts.request.v20150401.AssumeRoleRequest import AssumeRoleRequest
-from aliyunsdkram.request.v20150501.CreateRoleRequest import CreateRoleRequest
 
 from base import SDKTestBase
 
-from aliyunsdkcore.vendored.requests import get
-from aliyunsdkcore.vendored.requests.packages.urllib3 import HTTPConnectionPool
 from tests import MyServer
 
 

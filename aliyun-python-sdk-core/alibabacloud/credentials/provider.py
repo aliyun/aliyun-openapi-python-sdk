@@ -2,7 +2,7 @@ import json
 import os
 import time
 
-from alibabacloud.exception import ClientException
+from alibabacloud.exceptions import ClientException
 from alibabacloud.credentials import AccessKeyCredentials
 from alibabacloud.credentials import BearerTokenCredentials
 from alibabacloud.credentials import SecurityCredentials
@@ -199,7 +199,7 @@ class InstanceProfileCredentialsProvider(RotatingCredentialsProvider):
 
     def rotate_credentials(self):
 
-        from aliyunsdkcore.vendored import requests
+        from alibabacloud.vendored import requests
         r = requests.get(url=self.URL_PATH + self.role_name)
         data = json.loads(r.text)
         if data.get("Code") != "Success":
