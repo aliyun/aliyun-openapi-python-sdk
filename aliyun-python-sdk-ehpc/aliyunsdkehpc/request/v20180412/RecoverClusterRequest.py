@@ -35,6 +35,12 @@ class RecoverClusterRequest(RpcRequest):
 	def set_OsTag(self,OsTag):
 		self.add_query_param('OsTag',OsTag)
 
+	def get_ClientVersion(self):
+		return self.get_query_params().get('ClientVersion')
+
+	def set_ClientVersion(self,ClientVersion):
+		self.add_query_param('ClientVersion',ClientVersion)
+
 	def get_AccountType(self):
 		return self.get_query_params().get('AccountType')
 

@@ -71,6 +71,12 @@ class AddNodesRequest(RpcRequest):
 	def set_ImageOwnerAlias(self,ImageOwnerAlias):
 		self.add_query_param('ImageOwnerAlias',ImageOwnerAlias)
 
+	def get_VSwitchId(self):
+		return self.get_query_params().get('VSwitchId')
+
+	def set_VSwitchId(self,VSwitchId):
+		self.add_query_param('VSwitchId',VSwitchId)
+
 	def get_PeriodUnit(self):
 		return self.get_query_params().get('PeriodUnit')
 
@@ -106,6 +112,12 @@ class AddNodesRequest(RpcRequest):
 
 	def set_InstanceType(self,InstanceType):
 		self.add_query_param('InstanceType',InstanceType)
+
+	def get_ZoneId(self):
+		return self.get_query_params().get('ZoneId')
+
+	def set_ZoneId(self,ZoneId):
+		self.add_query_param('ZoneId',ZoneId)
 
 	def get_ComputeSpotPriceLimit(self):
 		return self.get_query_params().get('ComputeSpotPriceLimit')
