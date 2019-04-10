@@ -2,7 +2,7 @@ import json
 import os
 import time
 
-from alibabacloud.exception import ClientException
+from alibabacloud.exceptions import ClientException
 from alibabacloud.credentials import AccessKeyCredentials
 from alibabacloud.credentials import BearerTokenCredentials
 from alibabacloud.credentials import SecurityCredentials

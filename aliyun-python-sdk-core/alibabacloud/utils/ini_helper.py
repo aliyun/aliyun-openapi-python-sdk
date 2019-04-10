@@ -1,6 +1,6 @@
 import os
 
-from alibabacloud.exception import ClientException
+from alibabacloud.exceptions import ClientException
 from alibabacloud.vendored import six
 
 
