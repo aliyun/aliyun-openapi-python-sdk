@@ -16,7 +16,7 @@
 # specific language governing permissions and limitations
 # under the License.
 #
-from aliyunsdkcore.vendored.six import iteritems
+from alibabacloud.vendored.six import iteritems
 
 from alibabacloud.endpoint.local_config_regional_endpoint_resolver \
     import LocalConfigRegionalEndpointResolver

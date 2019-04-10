@@ -1,11 +1,6 @@
-import sys
-from aliyunsdkcore.vendored import six
+from alibabacloud.vendored import six
 
 if six.PY2:
-    from base64 import encodestring as b64_encode_bytes
-    from base64 import decodestring as b64_decode_bytes
-    from urllib import urlencode
-
 
     def ensure_bytes(s, encoding='utf-8', errors='strict'):
         if isinstance(s, unicode):
@@ -22,10 +17,6 @@ if six.PY2:
         raise ValueError("Expected str or unicode, received %s." % type(s))
 
 else:
-    from base64 import encodebytes as b64_encode_bytes
-    from base64 import decodebytes as b64_decode_bytes
-    from urllib.parse import urlencode
-
 
     def ensure_bytes(s, encoding='utf-8', errors='strict'):
         if isinstance(s, str):

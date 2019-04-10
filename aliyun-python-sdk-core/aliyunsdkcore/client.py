@@ -24,8 +24,8 @@ import logging
 import platform
 
 # from aliyunsdkcore.endpoint.default_endpoint_resolver import DefaultEndpointResolver
-from aliyunsdkcore.vendored.requests.structures import CaseInsensitiveDict
-from aliyunsdkcore.vendored.requests.structures import OrderedDict
+from alibabacloud.vendored.requests.structures import CaseInsensitiveDict
+from alibabacloud.vendored.requests.structures import OrderedDict
 
 from aliyunsdkcore.auth.credentials import AccessKeyCredential, StsTokenCredential
 from aliyunsdkcore.auth.credentials import RamRoleArnCredential, EcsRamRoleCredential

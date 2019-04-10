@@ -22,7 +22,7 @@ import base64
 import uuid
 import time
 
-from aliyunsdkcore.compat import ensure_bytes, ensure_string
+from alibabacloud.compat import ensure_bytes, ensure_string
 
 TIME_ZONE = "GMT"
 FORMAT_ISO_8601 = "%Y-%m-%dT%H:%M:%SZ"

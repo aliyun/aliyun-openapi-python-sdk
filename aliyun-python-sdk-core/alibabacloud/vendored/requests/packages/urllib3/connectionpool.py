@@ -45,7 +45,7 @@ from .util.url import get_host, Url
 
 if six.PY2:
     # Queue is imported for side effects on MS Windows
-    import Queue as _unused_module_Queue  # noqa: F401
+    pass
 
 xrange = six.moves.xrange
 

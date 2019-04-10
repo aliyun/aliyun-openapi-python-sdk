@@ -13,19 +13,10 @@
 # limitations under the License.
 
 from base import SDKTestBase
-from mock import MagicMock, patch
 from aliyunsdkcore.client import AcsClient
 
 from aliyunsdkecs.request.v20140526.DescribeInstancesRequest import DescribeInstancesRequest
-from aliyunsdkecs.request.v20140526.CreateInstanceRequest import CreateInstanceRequest
-from aliyunsdkecs.request.v20140526.DescribeInstanceHistoryEventsRequest import \
-    DescribeInstanceHistoryEventsRequest
-from aliyunsdkecs.request.v20140526.DescribeDisksRequest import DescribeDisksRequest
 from aliyunsdkecs.request.v20140526.RunInstancesRequest import RunInstancesRequest
-from aliyunsdkram.request.v20150501.ListUsersRequest import ListUsersRequest
-
-from aliyunsdkcore.acs_exception.exceptions import ClientException
-from aliyunsdkcore.acs_exception.exceptions import ServerException
 
 from alibabacloud.handlers.timeout_config_reader import TimeoutConfigReader
 

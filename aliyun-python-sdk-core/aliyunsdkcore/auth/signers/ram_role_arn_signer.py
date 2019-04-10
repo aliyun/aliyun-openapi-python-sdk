@@ -30,7 +30,7 @@ from aliyunsdkcore.acs_exception import exceptions
 from aliyunsdkcore.auth.credentials import RamRoleArnCredential
 from aliyunsdkcore.auth.credentials import AccessKeyCredential
 from aliyunsdkcore.request import CommonRequest
-from aliyunsdkcore.compat import ensure_string
+from alibabacloud.compat import ensure_string
 
 logger = logging.getLogger(__name__)
 

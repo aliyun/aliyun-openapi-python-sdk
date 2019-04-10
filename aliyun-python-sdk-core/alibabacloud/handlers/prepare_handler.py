@@ -16,9 +16,9 @@ import json
 
 from alibabacloud.handlers import RequestHandler
 from alibabacloud.utils import format_type
-from aliyunsdkcore.vendored.requests.structures import CaseInsensitiveDict
-from aliyunsdkcore.vendored.requests.structures import OrderedDict
-from aliyunsdkcore.compat import urlencode
+from alibabacloud.vendored.requests.structures import CaseInsensitiveDict
+from alibabacloud.vendored.requests.structures import OrderedDict
+from alibabacloud.compat import urlencode
 
 
 def _user_agent_header():

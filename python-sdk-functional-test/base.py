@@ -14,15 +14,13 @@
 
 import os.path
 import json
-import sys
 import os
 import threading
-import logging
 import time
 
 import sys
 from aliyunsdkcore.client import AcsClient
-from aliyunsdkcore.vendored.six import iteritems
+from alibabacloud.vendored.six import iteritems
 from aliyunsdkcore.acs_exception.exceptions import ServerException
 
 from aliyunsdkram.request.v20150501.ListUsersRequest import ListUsersRequest
