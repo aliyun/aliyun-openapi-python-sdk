@@ -24,7 +24,6 @@ def raw_config_parse(config_filename, parse_subsections=True):
         path = os.path.expanduser(path)
         if not os.path.isfile(path):
             raise ClientException(
-                'Credentials',
                 'The specified credentials file (%s) does not exist.' % path,
             )
         cp = six.moves.configparser.RawConfigParser()
@@ -32,12 +31,10 @@ def raw_config_parse(config_filename, parse_subsections=True):
             cp.read([path])
         except six.moves.configparser.ParsingError:
             raise ClientException(
-                'Credentials',
                 'Credentials file (%s) format is incorrect.' % path
             )
         except six.moves.configparser.Error:
             raise ClientException(
-                'Credentials',
                 'Cannot read credentials from (%s).' % path
             )
         else:
@@ -52,7 +49,6 @@ def raw_config_parse(config_filename, parse_subsections=True):
                             config_value = _parse_nested(config_value)
                         except ValueError:
                             raise ClientException(
-                                'Credentials',
                                 'Unable to parse ini file: %s.' % path
                             )
                     config[section][option] = config_value

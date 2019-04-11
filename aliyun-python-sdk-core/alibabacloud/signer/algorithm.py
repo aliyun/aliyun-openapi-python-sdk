@@ -71,7 +71,7 @@ class ShaHmac256(Algorithm):
             message = "auth type [publicKeyId] is disabled in Windows " \
                       "because 'pycrypto' is not supported, we will resolve " \
                       "this soon"
-            raise exceptions.ClientException(error_code.SDK_NOT_SUPPORT, message)
+            raise exceptions.ClientException(message)
 
     @property
     def signer_name(self):

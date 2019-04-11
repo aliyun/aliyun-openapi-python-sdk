@@ -36,7 +36,6 @@ class ChainedEndpointResolver(EndpointResolver):
                 return
 
         raise ClientException(
-            error_code.SDK_ENDPOINT_RESOLVING_ERROR,
             error_msg.ENDPOINT_NO_PRODUCT.format(
                 product_code=request.product_code)
         )
@@ -47,7 +46,6 @@ class ChainedEndpointResolver(EndpointResolver):
                 return
 
         raise ClientException(
-            error_code.SDK_ENDPOINT_RESOLVING_ERROR,
             error_msg.INVALID_REGION_ID.format(region_id=request.region_id)
         )
 
@@ -73,7 +71,6 @@ class ChainedEndpointResolver(EndpointResolver):
         self._check_region_id(request)
 
         raise ClientException(
-            error_code.SDK_ENDPOINT_RESOLVING_ERROR,
             error_msg.ENDPOINT_NO_REGION.format(
                 region_id=request.region_id,
                 product_code=request.product_code,
