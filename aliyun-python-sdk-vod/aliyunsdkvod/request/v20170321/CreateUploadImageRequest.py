@@ -94,3 +94,9 @@ class CreateUploadImageRequest(RpcRequest):
 
 	def set_CateId(self,CateId):
 		self.add_query_param('CateId',CateId)
+
+	def get_AppId(self):
+		return self.get_query_params().get('AppId')
+
+	def set_AppId(self,AppId):
+		self.add_query_param('AppId',AppId)

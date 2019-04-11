@@ -41,6 +41,12 @@ class GetImageInfoRequest(RpcRequest):
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
+	def get_OutputType(self):
+		return self.get_query_params().get('OutputType')
+
+	def set_OutputType(self,OutputType):
+		self.add_query_param('OutputType',OutputType)
+
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 

@@ -35,6 +35,18 @@ class CreateUploadAttachedMediaRequest(RpcRequest):
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
+	def get_CateIds(self):
+		return self.get_query_params().get('CateIds')
+
+	def set_CateIds(self,CateIds):
+		self.add_query_param('CateIds',CateIds)
+
+	def get_Icon(self):
+		return self.get_query_params().get('Icon')
+
+	def set_Icon(self,Icon):
+		self.add_query_param('Icon',Icon)
+
 	def get_Description(self):
 		return self.get_query_params().get('Description')
 
@@ -100,3 +112,9 @@ class CreateUploadAttachedMediaRequest(RpcRequest):
 
 	def set_CateId(self,CateId):
 		self.add_query_param('CateId',CateId)
+
+	def get_AppId(self):
+		return self.get_query_params().get('AppId')
+
+	def set_AppId(self,AppId):
+		self.add_query_param('AppId',AppId)

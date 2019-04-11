@@ -29,6 +29,12 @@ class GetEditingProjectMaterialsRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_MaterialType(self):
+		return self.get_query_params().get('MaterialType')
+
+	def set_MaterialType(self,MaterialType):
+		self.add_query_param('MaterialType',MaterialType)
+
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 

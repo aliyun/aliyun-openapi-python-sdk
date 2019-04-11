@@ -35,6 +35,12 @@ class GetVideoInfosRequest(RpcRequest):
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
+	def get_AdditionType(self):
+		return self.get_query_params().get('AdditionType')
+
+	def set_AdditionType(self,AdditionType):
+		self.add_query_param('AdditionType',AdditionType)
+
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 

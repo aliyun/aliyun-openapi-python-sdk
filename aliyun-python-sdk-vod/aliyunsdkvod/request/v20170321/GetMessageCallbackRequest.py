@@ -18,22 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class AddEditingProjectRequest(RpcRequest):
+class GetMessageCallbackRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'vod', '2017-03-21', 'AddEditingProject','vod')
-
-	def get_CoverURL(self):
-		return self.get_query_params().get('CoverURL')
-
-	def set_CoverURL(self,CoverURL):
-		self.add_query_param('CoverURL',CoverURL)
-
-	def get_Division(self):
-		return self.get_query_params().get('Division')
-
-	def set_Division(self,Division):
-		self.add_query_param('Division',Division)
+		RpcRequest.__init__(self, 'vod', '2017-03-21', 'GetMessageCallback','vod')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -53,26 +41,20 @@ class AddEditingProjectRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
-	def get_Description(self):
-		return self.get_query_params().get('Description')
+	def get_AppId(self):
+		return self.get_query_params().get('AppId')
 
-	def set_Description(self,Description):
-		self.add_query_param('Description',Description)
+	def set_AppId(self,AppId):
+		self.add_query_param('AppId',AppId)
 
-	def get_Timeline(self):
-		return self.get_query_params().get('Timeline')
+	def get_ResourceRealOwnerId(self):
+		return self.get_query_params().get('ResourceRealOwnerId')
 
-	def set_Timeline(self,Timeline):
-		self.add_query_param('Timeline',Timeline)
+	def set_ResourceRealOwnerId(self,ResourceRealOwnerId):
+		self.add_query_param('ResourceRealOwnerId',ResourceRealOwnerId)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
-
-	def get_Title(self):
-		return self.get_query_params().get('Title')
-
-	def set_Title(self,Title):
-		self.add_query_param('Title',Title)
