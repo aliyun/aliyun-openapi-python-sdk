@@ -27,7 +27,6 @@ class EndpointHandler(RequestHandler):
                 context.client.product_code,
                 context.client.location_service_code,
                 context.client.location_endpoint_type,
-                context.client.credentials_provider,
             )
             context.endpoint = context.client.endpoint_resolver.resolve(resolve_request)
 

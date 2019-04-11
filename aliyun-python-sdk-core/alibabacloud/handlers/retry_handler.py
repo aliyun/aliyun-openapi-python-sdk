@@ -31,10 +31,13 @@ class RetryHandler(RequestHandler):
     def handle_response(self, context):
         api_request = context.api_request
         client = context.client
+        retry_config_prefix = client.product_code.lower() + '.' + client.product_version \
+            if client.product_code else None
 
         retry_policy_context = RetryPolicyContext(api_request, context.exception,
                                                   context.http_request.retries,
-                                                  context.http_response.status_code, client)
+                                                  context.http_response.status_code,
+                                                  retry_config_prefix)
 
         should_retry = context.client.retry_policy.should_retry(retry_policy_context)
 
