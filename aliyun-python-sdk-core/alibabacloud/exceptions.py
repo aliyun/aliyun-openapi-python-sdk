@@ -49,7 +49,8 @@ class ClientException(Exception):
 
 class ServerException(Exception):
 
-    def __init__(self, error_code, error_message, endpoint=None, http_status=None, request_id=None, service_name= None):
+    def __init__(self, error_code, error_message, endpoint=None,
+                 http_status=None, request_id=None, service_name= None):
         self.error_code = error_code
         self.error_message = error_message
         self.endpoint = endpoint

@@ -4,6 +4,7 @@ from alibabacloud.credentials.provider import DefaultChainedCredentialsProvider
 from alibabacloud.endpoint.resolver_endpoint_request import ResolveEndpointRequest
 from tests import unittest
 
+
 class TestResolveEndpointRequest(unittest.TestCase):
     def test_request(self):
         r = ResolveEndpointRequest(

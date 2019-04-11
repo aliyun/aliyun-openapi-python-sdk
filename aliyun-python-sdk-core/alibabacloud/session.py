@@ -12,8 +12,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-
 # TODO the Session interface needs to be specified
+
 
 class Session:
 

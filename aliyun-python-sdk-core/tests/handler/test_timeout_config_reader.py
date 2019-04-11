@@ -10,6 +10,7 @@ DEFAULT_READ_TIMEOUT = 10
 DEFAULT_CONNECTION_TIMEOUT = 5
 _api_timeout_config_data = load_json_from_data_dir._load_json_from_data_dir("timeout_config.json")
 
+
 class TestTimeoutConfigReader(unittest.TestCase):
 
     def test_timeout_reader_priority(self):

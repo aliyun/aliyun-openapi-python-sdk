@@ -25,7 +25,8 @@ class MiniLocationClient(AlibabaCloudClient):
         self.location_service_code = None
         self.location_endpoint_type = "openAPI"
 
-    def describe_endpoint(self, region_id=None, endpoint_type=None, location_service_code=None, location_endpoint=None):
+    def describe_endpoint(self, region_id=None, endpoint_type=None,
+                          location_service_code=None, location_endpoint=None):
         api_request = APIRequest('DescribeEndpoints', 'GET', 'https', 'RPC')
         api_request._params = {
             "Id": region_id,
@@ -42,4 +43,5 @@ class DescribeEndpointCaller:
         self._client = MiniLocationClient(client_config, credentials_provider)
 
     def fetch(self, region_id, endpoint_type, location_service_code, location_endpoint):
-        return self._client.describe_endpoint(region_id, endpoint_type, location_service_code, location_endpoint)
+        return self._client.describe_endpoint(region_id, endpoint_type,
+                                              location_service_code, location_endpoint)

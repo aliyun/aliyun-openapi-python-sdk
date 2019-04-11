@@ -20,6 +20,7 @@ from alibabacloud.exceptions import ClientException
 
 
 class HttpHandler(RequestHandler):
+
     def handle_request(self, context):
         self._do_request(context)
 

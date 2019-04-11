@@ -11,6 +11,7 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+
 import os
 import time
 from alibabacloud.handlers import RequestContext
@@ -180,7 +181,9 @@ class AlibabaCloudClient:
         self.logger = None  # TODO initialize
         from alibabacloud.endpoint.default_endpoint_resolver import DefaultEndpointResolver
 
-        self.endpoint_resolver = DefaultEndpointResolver(self.config, self.credentials_provider)  # TODO initialize
+        self.endpoint_resolver = DefaultEndpointResolver(self.config,
+                                                         self.credentials_provider)
+        # TODO initialize
         # retry
         if self.config.enable_retry:
             self.retry_policy = retry_policy.get_default_retry_policy(

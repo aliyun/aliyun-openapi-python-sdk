@@ -5,6 +5,7 @@ from alibabacloud.credentials.provider import CredentialsProvider, StaticCredent
     ChainedCredentialsProvider, CachedCredentialsProvider, RotatingCredentialsProvider
 from tests import unittest
 
+
 class TestCredentialsHandler(unittest.TestCase):
 
     def test_credentials_handler(self):

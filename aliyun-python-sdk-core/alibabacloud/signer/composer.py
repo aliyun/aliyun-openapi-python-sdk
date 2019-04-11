@@ -15,7 +15,6 @@
 # specific language governing permissions and limitations
 # under the License.
 
-# coding=utf-8
 import time
 
 from alibabacloud.utils import format_type as FormatType, parameter_helper as helper
