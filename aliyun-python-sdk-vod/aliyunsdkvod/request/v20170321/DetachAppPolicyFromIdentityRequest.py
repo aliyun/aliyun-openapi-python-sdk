@@ -18,22 +18,16 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class AddEditingProjectRequest(RpcRequest):
+class DetachAppPolicyFromIdentityRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'vod', '2017-03-21', 'AddEditingProject','vod')
+		RpcRequest.__init__(self, 'vod', '2017-03-21', 'DetachAppPolicyFromIdentity','vod')
 
-	def get_CoverURL(self):
-		return self.get_query_params().get('CoverURL')
+	def get_IdentityName(self):
+		return self.get_query_params().get('IdentityName')
 
-	def set_CoverURL(self,CoverURL):
-		self.add_query_param('CoverURL',CoverURL)
-
-	def get_Division(self):
-		return self.get_query_params().get('Division')
-
-	def set_Division(self,Division):
-		self.add_query_param('Division',Division)
+	def set_IdentityName(self,IdentityName):
+		self.add_query_param('IdentityName',IdentityName)
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -41,38 +35,32 @@ class AddEditingProjectRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_IdentityType(self):
+		return self.get_query_params().get('IdentityType')
+
+	def set_IdentityType(self,IdentityType):
+		self.add_query_param('IdentityType',IdentityType)
+
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
-	def get_OwnerAccount(self):
-		return self.get_query_params().get('OwnerAccount')
+	def get_AppId(self):
+		return self.get_query_params().get('AppId')
 
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
+	def set_AppId(self,AppId):
+		self.add_query_param('AppId',AppId)
 
-	def get_Description(self):
-		return self.get_query_params().get('Description')
+	def get_PolicyNames(self):
+		return self.get_query_params().get('PolicyNames')
 
-	def set_Description(self,Description):
-		self.add_query_param('Description',Description)
-
-	def get_Timeline(self):
-		return self.get_query_params().get('Timeline')
-
-	def set_Timeline(self,Timeline):
-		self.add_query_param('Timeline',Timeline)
+	def set_PolicyNames(self,PolicyNames):
+		self.add_query_param('PolicyNames',PolicyNames)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
-
-	def get_Title(self):
-		return self.get_query_params().get('Title')
-
-	def set_Title(self,Title):
-		self.add_query_param('Title',Title)
