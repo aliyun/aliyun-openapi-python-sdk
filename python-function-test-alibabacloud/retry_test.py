@@ -68,10 +68,10 @@ class RetryTest(SDKTestBase):
         self.assertTrue(isinstance(context.exception, ServerException))
 
     def test_retry_with_client_token(self):
-     pass
+        pass
 
     def test_retry_with_client_token_set(self):
-       pass
+        pass
 
     def test_invalid_max_retry_times(self):
         client = AcsClient(self.access_key_id,
@@ -149,42 +149,50 @@ class RetryTest(SDKTestBase):
         invalid_param_excpetion = SE("MissingParameter")
         unknown_error = SE(error_code.SDK_UNKNOWN_SERVER_ERROR)
         internal_error = SE("InternalError")
+        retry_config_prefix = '"{0}"."{1}"'.format(retryable_client.product_code.lower(),
+                                                   retryable_client.product_version) \
+            if retryable_client.product_code else None
 
-        _assert_retryable(retryable_request, timeout_exception, 0, 500, retryable_client)
-        _assert_retryable(retryable_request, timeout_exception, 2, 500, retryable_client)
-        _assert_retryable(retryable_request, unknown_error, 0, 500, retryable_client)
-        _assert_retryable(retryable_request, unknown_error, 0, 502, retryable_client)
-        _assert_retryable(retryable_request, unknown_error, 0, 503, retryable_client)
-        _assert_retryable(retryable_request, unknown_error, 0, 504, retryable_client)
-        _assert_retryable(retryable_request, internal_error, 0, 500, retryable_client)
-        _assert_retryable(retryable_request, SE("Throttling"), 0, 400, retryable_client)
-        _assert_retryable(retryable_request, SE("ServiceUnavailable"), 0, 503, retryable_client)
-        _assert_not_retryable(retryable_request, invalid_param_excpetion, 0, 400, retryable_client)
-        _assert_not_retryable(retryable_request, timeout_exception, 3, 500, retryable_client)
-        _assert_not_retryable(retryable_request, SE("InvalidAccessKeyId.NotFound"), 0, 404, retryable_client)
+        _assert_retryable(retryable_request, timeout_exception, 0, 500, retry_config_prefix)
+        _assert_retryable(retryable_request, timeout_exception, 2, 500, retry_config_prefix)
+        _assert_retryable(retryable_request, unknown_error, 0, 500, retry_config_prefix)
+        _assert_retryable(retryable_request, unknown_error, 0, 502, retry_config_prefix)
+        _assert_retryable(retryable_request, unknown_error, 0, 503, retry_config_prefix)
+        _assert_retryable(retryable_request, unknown_error, 0, 504, retry_config_prefix)
+        _assert_retryable(retryable_request, internal_error, 0, 500, retry_config_prefix)
+        _assert_retryable(retryable_request, SE("Throttling"), 0, 400, retry_config_prefix)
+        _assert_retryable(retryable_request, SE("ServiceUnavailable"), 0, 503, retry_config_prefix)
+        _assert_not_retryable(retryable_request, invalid_param_excpetion, 0, 400, retry_config_prefix)
+        _assert_not_retryable(retryable_request, timeout_exception, 3, 500, retry_config_prefix)
+        _assert_not_retryable(retryable_request, SE("InvalidAccessKeyId.NotFound"), 0, 404, retry_config_prefix)
 
         acs_request = DescribeInstanceHistoryEventsRequest()
         request1 = client._get_new_style_request(acs_request)
 
         config = self.client._get_new_style_config(acs_request)
         client1 = self.client._get_new_style_client(acs_request, config)
-        _assert_retryable(request1, SE("ServiceUnavailable"), 0, 503, client1)
+        retry_config_prefix = '"{0}"."{1}"'.format(client1.product_code.lower(), client1.product_version) if client1.product_code else None
+
+        _assert_retryable(request1, SE("ServiceUnavailable"), 0, 503, retry_config_prefix)
 
         acs_request = DescribeDisksRequest()
         request2 = client._get_new_style_request(acs_request)
 
         config = self.client._get_new_style_config(acs_request)
         client2 = self.client._get_new_style_client(acs_request, config)
-        _assert_retryable(request2, SE("ServiceUnavailable"), 0, 503, client2)
+        retry_config_prefix = '"{0}"."{1}"'.format(client2.product_code.lower(), client2.product_version) if client2.product_code else None
+
+        _assert_retryable(request2, SE("ServiceUnavailable"), 0, 503, retry_config_prefix)
         # no_retry
         acs_request = AttachDiskRequest()
         no_retry_request = client._get_new_style_request(acs_request)
         config = self.client._get_new_style_config(acs_request)
         no_retry_client = self.client._get_new_style_client(acs_request, config)
+        no_retry_config_prefix = '"{0}"."{1}"'.format(no_retry_client.product_code.lower(), no_retry_client.product_version) if no_retry_client.product_code else None
 
-        _assert_not_retryable(no_retry_request, timeout_exception, 0, 500, no_retry_client)
-        _assert_not_retryable(no_retry_request, unknown_error, 0, 504, no_retry_client)
-        _assert_not_retryable(no_retry_request, invalid_param_excpetion, 0, 400, no_retry_client)
+        _assert_not_retryable(no_retry_request, timeout_exception, 0, 500, no_retry_config_prefix)
+        _assert_not_retryable(no_retry_request, unknown_error, 0, 504, no_retry_config_prefix)
+        _assert_not_retryable(no_retry_request, invalid_param_excpetion, 0, 400, no_retry_config_prefix)
 
         # _assert_retryable_with_client_token(CreateInstanceRequest())
         # _assert_retryable_with_client_token(CreateDiskRequest())

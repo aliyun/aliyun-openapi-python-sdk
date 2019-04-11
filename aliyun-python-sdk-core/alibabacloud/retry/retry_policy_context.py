@@ -17,10 +17,11 @@ from alibabacloud.retry.retry_condition import RetryCondition
 
 class RetryPolicyContext:
 
-    def __init__(self, original_request, exception, retries_attempted, http_status_code, client):
+    def __init__(self, original_request, exception, retries_attempted, http_status_code,
+                 retry_config_prefix):
         self.original_request = original_request
         self.exception = exception
         self.retries_attempted = retries_attempted
         self.http_status_code = http_status_code
         self.retryable = RetryCondition.BLANK_STATUS
-        self.client = client
+        self.retry_config_prefix = retry_config_prefix

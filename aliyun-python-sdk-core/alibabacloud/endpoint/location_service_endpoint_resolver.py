@@ -28,10 +28,11 @@ DEFAULT_LOCATION_SERVICE_ENDPOINT = "location-readonly.aliyuncs.com"
 
 class LocationServiceEndpointResolver(EndpointResolverBase):
 
-    def __init__(self, config):
+    def __init__(self, config, credentials_provider):
         EndpointResolverBase.__init__(self)
         self._location_service_endpoint = DEFAULT_LOCATION_SERVICE_ENDPOINT
-        self.config = config
+        self._config = config
+        self._credentials_provider = credentials_provider
         self._invalid_product_codes = set()
         self._invalid_region_ids = set()
         self._valid_product_codes = set()
@@ -69,7 +70,7 @@ class LocationServiceEndpointResolver(EndpointResolverBase):
         return self.endpoints_data.get(key)
 
     def _call_location_service(self, key, raw_request):
-        client_caller = DescribeEndpointCaller(self.config, raw_request.credentials_provider)
+        client_caller = DescribeEndpointCaller(self._config, self._credentials_provider)
 
         try:
             context = client_caller.fetch(region_id=raw_request.region_id,

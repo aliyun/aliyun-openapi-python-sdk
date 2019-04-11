@@ -36,8 +36,8 @@ DEFAULT_HANDLERS = [
     LogHandler(),
     EndpointHandler(),
     RetryHandler(),
-    ServerErrorHandler(),
     HttpHandler(),
+    ServerErrorHandler(),
 ]
 
 DEFAULT_FORMAT = 'JSON'
@@ -131,9 +131,9 @@ class ClientConfig:
 
         else:
             profile = load_config(self.config_file)
-        
+
         for key in dir(self):
-            if profile.get(key)is not None and getattr(self, key) is None:
+            if profile.get(key) is not None and getattr(self, key) is None:
                 # 不存在config当中的值 pass
                 setattr(self, key, profile.get(key))
             # print('不存在config当中的值', key)
@@ -180,7 +180,7 @@ class AlibabaCloudClient:
         self.logger = None  # TODO initialize
         from alibabacloud.endpoint.default_endpoint_resolver import DefaultEndpointResolver
 
-        self.endpoint_resolver = DefaultEndpointResolver(self.config)  # TODO initialize
+        self.endpoint_resolver = DefaultEndpointResolver(self.config, self.credentials_provider)  # TODO initialize
         # retry
         if self.config.enable_retry:
             self.retry_policy = retry_policy.get_default_retry_policy(

@@ -23,15 +23,12 @@ import warnings
 import logging
 import platform
 
-# from aliyunsdkcore.endpoint.default_endpoint_resolver import DefaultEndpointResolver
 from alibabacloud.vendored.requests.structures import CaseInsensitiveDict
 from alibabacloud.vendored.requests.structures import OrderedDict
 
-from aliyunsdkcore.auth.credentials import AccessKeyCredential, StsTokenCredential
+from .auth.credentials import AccessKeyCredential, StsTokenCredential
 from aliyunsdkcore.auth.credentials import RamRoleArnCredential, EcsRamRoleCredential
 from aliyunsdkcore.auth.credentials import RsaKeyPairCredential
-
-# from alibabacloud.exception import ClientException
 
 from alibabacloud.endpoint.default_endpoint_resolver import DefaultEndpointResolver
 from alibabacloud.credentials import AccessKeyCredentials, SecurityCredentials
@@ -96,9 +93,9 @@ class AcsClient:
         )
 
         self._loaded_new_clients = {}
-        self._endpoint_resolver = DefaultEndpointResolver(self._new_style_config)
-
         self._credentials_provider = self._init_credentials_provider(ak, secret, credential)
+
+        self._endpoint_resolver = DefaultEndpointResolver(self._new_style_config, self._credentials_provider)
 
     def _init_credentials_provider(self, access_key_id, access_key_secret, legacy_credentials):
 
