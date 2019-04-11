@@ -65,10 +65,12 @@ class HTTPRequest:
         self.protocol = protocol
         self.proxy = proxy
         self.port = 80
-        self.signature = signature
         self.headers = headers
         self.url = url
         self.timeout = timeout
+
+        self.signature = signature
+
         self.endpoint = endpoint
         self.enable_retry = enable_retry
         self.max_retry_times = max_retry_times
