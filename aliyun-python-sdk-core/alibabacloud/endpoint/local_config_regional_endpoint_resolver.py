@@ -103,7 +103,6 @@ class LocalConfigRegionalEndpointResolver(EndpointResolverBase):
             request.region_id,
             self._get_normalized_product_code(request.product_code),
             request.location_service_code,
-            request.endpoint_type,
-            request.credentials_provider
+            request.endpoint_type
         )
         return EndpointResolverBase.is_product_code_valid(self, tmp_request)

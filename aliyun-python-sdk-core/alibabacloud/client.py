@@ -36,8 +36,8 @@ DEFAULT_HANDLERS = [
     LogHandler(),
     EndpointHandler(),
     RetryHandler(),
-    ServerErrorHandler(),
     HttpHandler(),
+    ServerErrorHandler(),
 ]
 
 DEFAULT_FORMAT = 'JSON'
@@ -131,9 +131,9 @@ class ClientConfig:
 
         else:
             profile = load_config(self.config_file)
-        
+
         for key in dir(self):
-            if profile.get(key)is not None and getattr(self, key) is None:
+            if profile.get(key) is not None and getattr(self, key) is None:
                 # 不存在config当中的值 pass
                 setattr(self, key, profile.get(key))
             # print('不存在config当中的值', key)

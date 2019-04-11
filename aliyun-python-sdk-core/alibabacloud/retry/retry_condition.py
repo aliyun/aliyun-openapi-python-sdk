@@ -26,7 +26,7 @@ logger = logging.getLogger(__name__)
 def _find_data_in_retry_config(key_name, retry_config_prefix, retry_config):
     if retry_config_prefix is None:
         return None
-    path = '"{0}"."{1}"'.format(retry_config_prefix, key_name)
+    path = '{0}."{1}"'.format(retry_config_prefix, key_name)
     return jmespath.search(path, retry_config)
 
 

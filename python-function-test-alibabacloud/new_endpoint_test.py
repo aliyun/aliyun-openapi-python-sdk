@@ -42,7 +42,7 @@ class NewEndpointTest(SDKTestBase):
         SDKTestBase.setUp(self)
         DefaultEndpointResolver.predefined_endpoint_resolver = UserCustomizedEndpointResolver()
 
-    def init_env(self, config, test_local_config=None):
+    def init_env(self, config, credentials_provider, test_local_config=None):
         resolver_chain = []
 
         self._user_customized_endpoint_resolver = UserCustomizedEndpointResolver()
@@ -55,7 +55,7 @@ class NewEndpointTest(SDKTestBase):
             self._local_config_global_endpoint_resolver = \
                 LocalConfigGlobalEndpointResolver(test_local_config)
             # FIXME client
-        self._location_service_endpoint_resolver = LocationServiceEndpointResolver(config)
+        self._location_service_endpoint_resolver = LocationServiceEndpointResolver(config, credentials_provider)
 
         resolver_chain.append(self._user_customized_endpoint_resolver)
         resolver_chain.append(self._local_config_regional_endpoint_resolver)
@@ -64,15 +64,14 @@ class NewEndpointTest(SDKTestBase):
 
         self._endpoint_resolver = ChainedEndpointResolver(resolver_chain)
 
-    def resolve(self, region_id, product_code, location_service_code=None, endpoint_type=None,
-                credentials_provider=None):
+    def resolve(self, region_id, product_code, location_service_code=None, endpoint_type=None):
         request = ResolveEndpointRequest(region_id, product_code,
-                                         location_service_code, endpoint_type, credentials_provider)
+                                         location_service_code, endpoint_type)
         return self._endpoint_resolver.resolve(request)
 
     def resolve_request(self, region_id, product_code, location_service_code=None, endpoint_type=None):
         request = ResolveEndpointRequest(region_id, product_code,
-                                         location_service_code, endpoint_type, None)
+                                         location_service_code, endpoint_type)
         return request
 
     def temp_client(self, product, version=None, endpoint_type=None, location_service_code=None, client=None):
@@ -167,7 +166,7 @@ class NewEndpointTest(SDKTestBase):
             }
         """
         temp_client = self.temp_client('abc')
-        self.init_env(temp_client.config, test_config)
+        self.init_env(temp_client.config, temp_client.credentials_provider, test_config)
 
         self.assertEqual(
                 "ecs.mars-ningbo.aliyuncs.com",
@@ -189,7 +188,7 @@ class NewEndpointTest(SDKTestBase):
             }
         """
         temp_client = self.temp_client('abc')
-        self.init_env(temp_client, test_config)
+        self.init_env(temp_client, temp_client.credentials_provider, test_config)
 
         self.assertEqual(
             "ecs.mars-ningbo.aliyuncs.com",
@@ -206,7 +205,7 @@ class NewEndpointTest(SDKTestBase):
 
     def test_endpoint_comes_from_location_service(self):
         temp_client = self.temp_client('ECS', None, None, 'ecs')
-        self.init_env(temp_client.config, "{}")  # empty local config
+        self.init_env(temp_client.config, temp_client.credentials_provider, "{}")  # empty local config
         from aliyunsdkecs.request.v20140526.DescribeRegionsRequest import DescribeRegionsRequest
         request = DescribeRegionsRequest()
         config = self.client._get_new_style_config(request)
@@ -227,7 +226,7 @@ class NewEndpointTest(SDKTestBase):
 
     def test_location_service_miss(self):
         temp_client = self.temp_client("Ram", None, 'openAPI', 'ram')
-        self.init_env(temp_client.config, "{}")  # empty local config
+        self.init_env(temp_client.config, temp_client.credentials_provider, "{}")  # empty local config
 
         with patch.object(
             self._location_service_endpoint_resolver,
@@ -239,7 +238,7 @@ class NewEndpointTest(SDKTestBase):
             # No openAPI data
             for i in range(3):
                 try:
-                    self.resolve("cn-hangzhou", "Ram", "ram", "openAPI", temp_client.credentials_provider)
+                    self.resolve("cn-hangzhou", "Ram", "ram", "openAPI")
                     assert False
                 except ClientException as e:
                     self.assertEqual(error_code.SDK_ENDPOINT_RESOLVING_ERROR, e.error_code)
@@ -252,7 +251,7 @@ class NewEndpointTest(SDKTestBase):
             # Bad region ID
             for i in range(3):
                 try:
-                    self.resolve("mars", "Ram", "ram", "openAPI", temp_client.credentials_provider)
+                    self.resolve("mars", "Ram", "ram", "openAPI")
                     assert False
                 except ClientException as e:
                     self.assertEqual(error_code.SDK_ENDPOINT_RESOLVING_ERROR, e.error_code)
@@ -263,7 +262,7 @@ class NewEndpointTest(SDKTestBase):
             self.assertEqual(2, monkey.call_count)
             # Bad region ID with another product
             try:
-                self.resolve("mars", "Ecs", "ecs", "openAPI", temp_client.credentials_provider)
+                self.resolve("mars", "Ecs", "ecs", "openAPI")
                 assert False
             except ClientException as e:
                 self.assertEqual(error_code.SDK_ENDPOINT_RESOLVING_ERROR, e.error_code)
@@ -276,7 +275,7 @@ class NewEndpointTest(SDKTestBase):
             for i in range(3):
                 try:
                     self.resolve("cn-hangzhou", "InvalidProductCode",
-                                 "InvalidProductCode", "openAPI", temp_client.credentials_provider)
+                                 "InvalidProductCode", "openAPI")
                     assert False
                 except ClientException as e:
                     self.assertEqual(error_code.SDK_ENDPOINT_RESOLVING_ERROR, e.error_code)
@@ -288,7 +287,7 @@ class NewEndpointTest(SDKTestBase):
 
             # Bad product code with another region ID
             try:
-                self.resolve("cn-beijing", "InvalidProductCode", "InvalidProductCode", "openAPI", temp_client.credentials_provider)
+                self.resolve("cn-beijing", "InvalidProductCode", "InvalidProductCode", "openAPI")
                 assert False
             except ClientException as e:
                 self.assertEqual(error_code.SDK_ENDPOINT_RESOLVING_ERROR, e.error_code)
@@ -301,7 +300,7 @@ class NewEndpointTest(SDKTestBase):
 
     def test_try_to_get_endpoint_with_invalid_region_id(self):
         temp_client = self.temp_client('ecs')
-        self.init_env(temp_client.config)
+        self.init_env(temp_client.config, temp_client.credentials_provider)
         try:
             self.resolve("mars", "Ecs")
             assert False
@@ -314,7 +313,7 @@ class NewEndpointTest(SDKTestBase):
     def test_try_to_get_endpoint_with_invalid_product_code(self):
         temp_client = self.temp_client('InvalidProductCode')
 
-        self.init_env(temp_client.config)
+        self.init_env(temp_client.config, temp_client.credentials_provider)
         try:
             self.resolve("cn-beijing", "InvalidProductCode")
             assert False
@@ -329,10 +328,10 @@ class NewEndpointTest(SDKTestBase):
     def test_inner_api_endpoint(self):
         temp_client = self.temp_client('Ram', endpoint_type='innerAPI', location_service_code='ram')
 
-        self.init_env(temp_client.config)
+        self.init_env(temp_client.config, temp_client.credentials_provider)
         self.assertEqual(
             "ram-share.aliyuncs.com",
-            self.resolve("cn-hangzhou", "Ram", "ram", "innerAPI", temp_client.credentials_provider)
+            self.resolve("cn-hangzhou", "Ram", "ram", "innerAPI")
         )
 
     def test_get_inner_api_endpoint_bypass_local_config(self):
@@ -349,15 +348,15 @@ class NewEndpointTest(SDKTestBase):
             }
         """
         temp_client = self.temp_client('Ram', None, 'innerAPI', 'ram')
-        self.init_env(temp_client.config, test_config)
+        self.init_env(temp_client.config, temp_client.credentials_provider, test_config)
         self.assertEqual(
             "ram-share.aliyuncs.com",
-            self.resolve("cn-hangzhou", "Ram", "ram", "innerAPI", temp_client.credentials_provider)
+            self.resolve("cn-hangzhou", "Ram", "ram", "innerAPI")
         )
 
     def test_get_inner_api_endpoint_by_manually_adding(self):
         temp_client = self.temp_client('Ram', '2015-06-12', 'innerAPI')
-        self.init_env(temp_client)
+        self.init_env(temp_client, temp_client.credentials_provider)
         self._user_customized_endpoint_resolver.put_endpoint_entry(
             "cn-hangzhou",
             "Ram",
@@ -371,11 +370,11 @@ class NewEndpointTest(SDKTestBase):
     def test_can_not_connect_location_service(self):
         temp_client = self.temp_client("Ecs", None, 'innerAPI', 'ecs')
 
-        self.init_env(temp_client.config)
+        self.init_env(temp_client.config, temp_client.credentials_provider)
         self._location_service_endpoint_resolver.set_location_service_endpoint(
             "location-on-mars.aliyuncs.com")
         try:
-            self.resolve("cn-hangzhou", "Ecs", "ecs", "innerAPI", temp_client.credentials_provider)
+            self.resolve("cn-hangzhou", "Ecs", "ecs", "innerAPI")
             assert False
         except ClientException as e:
             self.assertEqual("SDK.HttpError", e.error_code)
@@ -384,9 +383,9 @@ class NewEndpointTest(SDKTestBase):
     def test_invalid_access_key_id(self):
         client = AcsClient("BadAccessKeyId", self.access_key_secret, "cn-hangzhou")
         temp_client = self.temp_client('Ecs', None, 'innerAPI', 'ecs', client)
-        self.init_env(temp_client.config, None)
+        self.init_env(temp_client.config, temp_client.credentials_provider, None)
         try:
-            self.resolve("cn-hangzhou", "Ecs", "ecs", "innerAPI", temp_client.credentials_provider)
+            self.resolve("cn-hangzhou", "Ecs", "ecs", "innerAPI")
         except ServerException as e:
             self.assertEqual(e.error_code, 'InvalidAccessKeyId.NotFound')
             self.assertEqual(e.error_message, 'Specified access key is not found.')
@@ -395,9 +394,9 @@ class NewEndpointTest(SDKTestBase):
 
         client = AcsClient(self.access_key_id, "BadAccessKeySecret", "cn-hangzhou")
         temp_client = self.temp_client('ECS', None, 'innerAPI', 'ecs', client)
-        self.init_env(temp_client.config, None)
+        self.init_env(temp_client.config, temp_client.credentials_provider, None)
         try:
-            self.resolve("cn-hangzhou", "Ecs", "ecs", "innerAPI", temp_client.credentials_provider)
+            self.resolve("cn-hangzhou", "Ecs", "ecs", "innerAPI")
         except ServerException as e:
             self.assertEqual(e.error_code, 'InvalidAccessKeySecret')
             self.assertEqual(e.error_message, 'The AccessKeySecret is incorrect. Please check your AccessKeyId and AccessKeySecret.')
@@ -427,7 +426,7 @@ class NewEndpointTest(SDKTestBase):
     def test_location_service_code_not_equals_product_code2(self):
         temp_client = self.temp_client('CloudAPI', '2016-07-14', 'openAPI', 'apigateway')
 
-        self.init_env(temp_client.config, "{}")
+        self.init_env(temp_client.config, temp_client.credentials_provider, "{}")
         client = self.init_client(region_id="cn-hangzhou")
         client._endpoint_resolver = self._endpoint_resolver
 
@@ -491,14 +490,14 @@ class NewEndpointTest(SDKTestBase):
 
     def test_r_kvstore(self):
         temp_client = self.temp_client("R-kvstore")
-        resolver = DefaultEndpointResolver(temp_client)
-        request = ResolveEndpointRequest("cn-hangzhou", "R-kvstore", None, None, None)
+        resolver = DefaultEndpointResolver(temp_client, temp_client.credentials_provider)
+        request = ResolveEndpointRequest("cn-hangzhou", "R-kvstore", None, None)
         self.assertEqual("r-kvstore.aliyuncs.com", resolver.resolve(request))
 
     def test_dts_regions(self):
         temp_client = self.temp_client("dts")
-        resolver = DefaultEndpointResolver(temp_client)
-        request = ResolveEndpointRequest("cn-chengdu", "dts", None, None, None)
+        resolver = DefaultEndpointResolver(temp_client.config, temp_client.credentials_provider)
+        request = ResolveEndpointRequest("cn-chengdu", "dts", None, None)
 
         expected_message = "No endpoint in the region 'cn-chengdu' for product 'dts'.\n" \
                            "You can set an endpoint for your request explicitly.\n" \
@@ -515,11 +514,11 @@ class NewEndpointTest(SDKTestBase):
 
     def test_bssopenapi_resolve(self):
         temp_client = self.temp_client("BssOpenApi")
-        resolver = DefaultEndpointResolver(temp_client)
-        request = ResolveEndpointRequest("cn-hangzhou", "BssOpenApi", None, None, None)
+        resolver = DefaultEndpointResolver(temp_client.config, temp_client.credentials_provider)
+        request = ResolveEndpointRequest("cn-hangzhou", "BssOpenApi", None, None)
         self.assertEqual("business.aliyuncs.com", resolver.resolve(request))
 
-        request = ResolveEndpointRequest("eu-west-1", "BssOpenApi", None, None, None)
+        request = ResolveEndpointRequest("eu-west-1", "BssOpenApi", None, None)
         self.assertEqual("business.ap-southeast-1.aliyuncs.com", resolver.resolve(request))
 
         from aliyunsdkbssopenapi.request.v20171214.GetOrderDetailRequest \
@@ -534,8 +533,8 @@ class NewEndpointTest(SDKTestBase):
 
     def test_faas_resolve(self):
         temp_client = self.temp_client("faas")
-        resolver = DefaultEndpointResolver(temp_client)
-        request = ResolveEndpointRequest("cn-hangzhou", "faas", None, None, None)
+        resolver = DefaultEndpointResolver(temp_client.config, temp_client.credentials_provider)
+        request = ResolveEndpointRequest("cn-hangzhou", "faas", None, None)
         self.assertEqual("faas.cn-hangzhou.aliyuncs.com", resolver.resolve(request))
         client = self.init_client(region_id="cn-hangzhou")
 
