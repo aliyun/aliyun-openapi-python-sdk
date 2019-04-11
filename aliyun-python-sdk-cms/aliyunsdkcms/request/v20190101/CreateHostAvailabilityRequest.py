@@ -43,6 +43,23 @@ class CreateHostAvailabilityRequest(RpcRequest):
 	def set_TaskOptionHttpMethod(self,TaskOptionHttpMethod):
 		self.add_query_param('TaskOption.HttpMethod',TaskOptionHttpMethod)
 
+	def get_AlertConfigEscalationLists(self):
+		return self.get_query_params().get('AlertConfigEscalationLists')
+
+	def set_AlertConfigEscalationLists(self,AlertConfigEscalationLists):
+		for i in range(len(AlertConfigEscalationLists)):	
+			if AlertConfigEscalationLists[i].get('Times') is not None:
+				self.add_query_param('AlertConfigEscalationList.' + str(i + 1) + '.Times' , AlertConfigEscalationLists[i].get('Times'))
+			if AlertConfigEscalationLists[i].get('MetricName') is not None:
+				self.add_query_param('AlertConfigEscalationList.' + str(i + 1) + '.MetricName' , AlertConfigEscalationLists[i].get('MetricName'))
+			if AlertConfigEscalationLists[i].get('Value') is not None:
+				self.add_query_param('AlertConfigEscalationList.' + str(i + 1) + '.Value' , AlertConfigEscalationLists[i].get('Value'))
+			if AlertConfigEscalationLists[i].get('Operator') is not None:
+				self.add_query_param('AlertConfigEscalationList.' + str(i + 1) + '.Operator' , AlertConfigEscalationLists[i].get('Operator'))
+			if AlertConfigEscalationLists[i].get('Aggregate') is not None:
+				self.add_query_param('AlertConfigEscalationList.' + str(i + 1) + '.Aggregate' , AlertConfigEscalationLists[i].get('Aggregate'))
+
+
 	def get_GroupId(self):
 		return self.get_query_params().get('GroupId')
 
@@ -114,23 +131,6 @@ class CreateHostAvailabilityRequest(RpcRequest):
 
 	def set_TaskOptionHttpResponseMatchContent(self,TaskOptionHttpResponseMatchContent):
 		self.add_query_param('TaskOption.HttpResponseMatchContent',TaskOptionHttpResponseMatchContent)
-
-	def get_AlertConfigEscalationLists(self):
-		return self.get_query_params().get('AlertConfig.EscalationLists')
-
-	def set_AlertConfigEscalationLists(self,AlertConfigEscalationLists):
-		for i in range(len(AlertConfigEscalationLists)):	
-			if AlertConfigEscalationLists[i].get('Times') is not None:
-				self.add_query_param('AlertConfig.EscalationList.' + str(i + 1) + '.Times' , AlertConfigEscalationLists[i].get('Times'))
-			if AlertConfigEscalationLists[i].get('MetricName') is not None:
-				self.add_query_param('AlertConfig.EscalationList.' + str(i + 1) + '.MetricName' , AlertConfigEscalationLists[i].get('MetricName'))
-			if AlertConfigEscalationLists[i].get('Value') is not None:
-				self.add_query_param('AlertConfig.EscalationList.' + str(i + 1) + '.Value' , AlertConfigEscalationLists[i].get('Value'))
-			if AlertConfigEscalationLists[i].get('Operator') is not None:
-				self.add_query_param('AlertConfig.EscalationList.' + str(i + 1) + '.Operator' , AlertConfigEscalationLists[i].get('Operator'))
-			if AlertConfigEscalationLists[i].get('Aggregate') is not None:
-				self.add_query_param('AlertConfig.EscalationList.' + str(i + 1) + '.Aggregate' , AlertConfigEscalationLists[i].get('Aggregate'))
-
 
 	def get_AlertConfigWebHook(self):
 		return self.get_query_params().get('AlertConfig.WebHook')
