@@ -11,7 +11,6 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-
 from alibabacloud.handlers import RequestHandler
 from alibabacloud.retry.retry_condition import RetryCondition
 from alibabacloud.retry.retry_policy_context import RetryPolicyContext
@@ -22,17 +21,18 @@ class RetryHandler(RequestHandler):
 
     def handle_request(self, context):
         client = context.client
+        retry_config_prefix = '"{0}"."{1}"'.format(client.product_code.lower(), client.product_version) if client.product_code else None
+
         if context.http_request.retries == 0:
-            retry_policy_context = RetryPolicyContext(context.api_request, None, 0, None, client)
+            retry_policy_context = RetryPolicyContext(context.api_request, None, 0, None, retry_config_prefix)
             if context.client.retry_policy.should_retry(retry_policy_context) & \
                     RetryCondition.SHOULD_RETRY_WITH_CLIENT_TOKEN:
                 self._add_request_client_token(context.api_request)
 
     def handle_response(self, context):
-        api_request = context.api_request
         client = context.client
-        retry_config_prefix = client.product_code.lower() + '.' + client.product_version \
-            if client.product_code else None
+        api_request = context.api_request
+        retry_config_prefix = '"{0}"."{1}"'.format(client.product_code.lower(), client.product_version) if client.product_code else None
 
         retry_policy_context = RetryPolicyContext(api_request, context.exception,
                                                   context.http_request.retries,
@@ -40,7 +40,6 @@ class RetryHandler(RequestHandler):
                                                   retry_config_prefix)
 
         should_retry = context.client.retry_policy.should_retry(retry_policy_context)
-
         if should_retry & RetryCondition.NO_RETRY:
             context.retry_flag = False
         else:

@@ -79,14 +79,14 @@ class LocationServiceEndpointResolver(EndpointResolverBase):
                                           location_endpoint=self._location_service_endpoint)
 
         except ServerException as e:
-            if "InvalidRegionId" == e.get_error_code() and \
-               "The specified region does not exist." == e.get_error_msg():
+            if "InvalidRegionId" == e.error_code and \
+               "The specified region does not exist." == e.error_message:
                 # No such region`
                 self._invalid_region_ids.add(raw_request.region_id)
                 self.put_endpoint_entry(key, None)
                 return
-            elif "Illegal Parameter" == e.get_error_code() and \
-                 "Please check the parameters" == e.get_error_msg():
+            elif "Illegal Parameter" == e.error_code and \
+                 "Please check the parameters" == e.error_message:
                 # No such product
                 self._invalid_product_codes.add(raw_request.product_code_lower)
                 self.put_endpoint_entry(key, None)
