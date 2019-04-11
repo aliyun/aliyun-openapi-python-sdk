@@ -28,10 +28,11 @@ DEFAULT_LOCATION_SERVICE_ENDPOINT = "location-readonly.aliyuncs.com"
 
 class LocationServiceEndpointResolver(EndpointResolverBase):
 
-    def __init__(self, config):
+    def __init__(self, config, credentials_provider):
         EndpointResolverBase.__init__(self)
         self._location_service_endpoint = DEFAULT_LOCATION_SERVICE_ENDPOINT
-        self.config = config
+        self._config = config
+        self._credentials_provider = credentials_provider
         self._invalid_product_codes = set()
         self._invalid_region_ids = set()
         self._valid_product_codes = set()
@@ -69,7 +70,7 @@ class LocationServiceEndpointResolver(EndpointResolverBase):
         return self.endpoints_data.get(key)
 
     def _call_location_service(self, key, raw_request):
-        client_caller = DescribeEndpointCaller(self.config, raw_request.credentials_provider)
+        client_caller = DescribeEndpointCaller(self._config, self._credentials_provider)
 
         try:
             context = client_caller.fetch(region_id=raw_request.region_id,
@@ -78,14 +79,14 @@ class LocationServiceEndpointResolver(EndpointResolverBase):
                                           location_endpoint=self._location_service_endpoint)
 
         except ServerException as e:
-            if "InvalidRegionId" == e.error_code and \
-               "The specified region does not exist." == e.error_message:
+            if "InvalidRegionId" == e.get_error_code() and \
+               "The specified region does not exist." == e.get_error_msg():
                 # No such region`
                 self._invalid_region_ids.add(raw_request.region_id)
                 self.put_endpoint_entry(key, None)
                 return
-            elif "Illegal Parameter" == e.error_code and \
-                 "Please check the parameters" == e.error_message:
+            elif "Illegal Parameter" == e.get_error_code() and \
+                 "Please check the parameters" == e.get_error_msg():
                 # No such product
                 self._invalid_product_codes.add(raw_request.product_code_lower)
                 self.put_endpoint_entry(key, None)

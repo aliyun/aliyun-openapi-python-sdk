@@ -180,7 +180,7 @@ class AlibabaCloudClient:
         self.logger = None  # TODO initialize
         from alibabacloud.endpoint.default_endpoint_resolver import DefaultEndpointResolver
 
-        self.endpoint_resolver = DefaultEndpointResolver(self.config)  # TODO initialize
+        self.endpoint_resolver = DefaultEndpointResolver(self.config, self.credentials_provider)  # TODO initialize
         # retry
         if self.config.enable_retry:
             self.retry_policy = retry_policy.get_default_retry_policy(

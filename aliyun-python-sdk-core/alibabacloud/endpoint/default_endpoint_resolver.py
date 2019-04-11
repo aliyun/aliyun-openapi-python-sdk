@@ -29,7 +29,7 @@ class DefaultEndpointResolver(EndpointResolver):
     # Not recommended
     predefined_endpoint_resolver = UserCustomizedEndpointResolver()
 
-    def __init__(self, config, user_config=None):
+    def __init__(self, config, credentials_provider, user_config=None):
 
         self._user_customized_endpoint_resolver = UserCustomizedEndpointResolver()
 
@@ -38,7 +38,7 @@ class DefaultEndpointResolver(EndpointResolver):
             self._user_customized_endpoint_resolver,
             LocalConfigRegionalEndpointResolver(user_config),
             LocalConfigGlobalEndpointResolver(user_config),
-            LocationServiceEndpointResolver(config),
+            LocationServiceEndpointResolver(config, credentials_provider),
         ]
 
         self._resolver = ChainedEndpointResolver(endpoint_resolvers)
