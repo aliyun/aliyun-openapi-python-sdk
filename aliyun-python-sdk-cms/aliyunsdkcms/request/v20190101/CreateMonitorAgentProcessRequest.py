@@ -18,16 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class DescribeMonitorGroupsRequest(RpcRequest):
+class CreateMonitorAgentProcessRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cms', '2019-01-01', 'DescribeMonitorGroups','cms')
-
-	def get_SelectContactGroups(self):
-		return self.get_query_params().get('SelectContactGroups')
-
-	def set_SelectContactGroups(self,SelectContactGroups):
-		self.add_query_param('SelectContactGroups',SelectContactGroups)
+		RpcRequest.__init__(self, 'Cms', '2019-01-01', 'CreateMonitorAgentProcess','cms')
 
 	def get_InstanceId(self):
 		return self.get_query_params().get('InstanceId')
@@ -35,26 +29,14 @@ class DescribeMonitorGroupsRequest(RpcRequest):
 	def set_InstanceId(self,InstanceId):
 		self.add_query_param('InstanceId',InstanceId)
 
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
+	def get_ProcessName(self):
+		return self.get_query_params().get('ProcessName')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
+	def set_ProcessName(self,ProcessName):
+		self.add_query_param('ProcessName',ProcessName)
 
-	def get_Keyword(self):
-		return self.get_query_params().get('Keyword')
+	def get_ProcessUser(self):
+		return self.get_query_params().get('ProcessUser')
 
-	def set_Keyword(self,Keyword):
-		self.add_query_param('Keyword',Keyword)
-
-	def get_GroupName(self):
-		return self.get_query_params().get('GroupName')
-
-	def set_GroupName(self,GroupName):
-		self.add_query_param('GroupName',GroupName)
-
-	def get_PageNumber(self):
-		return self.get_query_params().get('PageNumber')
-
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
+	def set_ProcessUser(self,ProcessUser):
+		self.add_query_param('ProcessUser',ProcessUser)
