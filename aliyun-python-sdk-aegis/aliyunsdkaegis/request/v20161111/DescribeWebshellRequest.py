@@ -23,12 +23,6 @@ class DescribeWebshellRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'aegis', '2016-11-11', 'DescribeWebshell','vipaegis')
 
-	def get_ResourceOwnerId(self):
-		return self.get_query_params().get('ResourceOwnerId')
-
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
 	def get_SourceIp(self):
 		return self.get_query_params().get('SourceIp')
 
@@ -46,3 +40,15 @@ class DescribeWebshellRequest(RpcRequest):
 
 	def set_Remark(self,Remark):
 		self.add_query_param('Remark',Remark)
+
+	def get_Dealed(self):
+		return self.get_query_params().get('Dealed')
+
+	def set_Dealed(self,Dealed):
+		self.add_query_param('Dealed',Dealed)
+
+	def get_Tag(self):
+		return self.get_query_params().get('Tag')
+
+	def set_Tag(self,Tag):
+		self.add_query_param('Tag',Tag)

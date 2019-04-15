@@ -23,18 +23,6 @@ class DescribeVulListRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'aegis', '2016-11-11', 'DescribeVulList','vipaegis')
 
-	def get_ResourceOwnerId(self):
-		return self.get_query_params().get('ResourceOwnerId')
-
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_Product(self):
-		return self.get_query_params().get('Product')
-
-	def set_Product(self,Product):
-		self.add_query_param('Product',Product)
-
 	def get_StatusList(self):
 		return self.get_query_params().get('StatusList')
 
@@ -53,11 +41,11 @@ class DescribeVulListRequest(RpcRequest):
 	def set_Resource(self,Resource):
 		self.add_query_param('Resource',Resource)
 
-	def get_OrderBy(self):
-		return self.get_query_params().get('OrderBy')
+	def get_Remark(self):
+		return self.get_query_params().get('Remark')
 
-	def set_OrderBy(self,OrderBy):
-		self.add_query_param('OrderBy',OrderBy)
+	def set_Remark(self,Remark):
+		self.add_query_param('Remark',Remark)
 
 	def get_Dealed(self):
 		return self.get_query_params().get('Dealed')
@@ -77,23 +65,17 @@ class DescribeVulListRequest(RpcRequest):
 	def set_Type(self,Type):
 		self.add_query_param('Type',Type)
 
-	def get_LastTsEnd(self):
-		return self.get_query_params().get('LastTsEnd')
+	def get_CreateTsStart(self):
+		return self.get_query_params().get('CreateTsStart')
 
-	def set_LastTsEnd(self,LastTsEnd):
-		self.add_query_param('LastTsEnd',LastTsEnd)
+	def set_CreateTsStart(self,CreateTsStart):
+		self.add_query_param('CreateTsStart',CreateTsStart)
 
 	def get_BatchName(self):
 		return self.get_query_params().get('BatchName')
 
 	def set_BatchName(self,BatchName):
 		self.add_query_param('BatchName',BatchName)
-
-	def get_PatchId(self):
-		return self.get_query_params().get('PatchId')
-
-	def set_PatchId(self,PatchId):
-		self.add_query_param('PatchId',PatchId)
 
 	def get_AliasName(self):
 		return self.get_query_params().get('AliasName')
@@ -125,11 +107,11 @@ class DescribeVulListRequest(RpcRequest):
 	def set_Lang(self,Lang):
 		self.add_query_param('Lang',Lang)
 
-	def get_LastTsStart(self):
-		return self.get_query_params().get('LastTsStart')
+	def get_CreateTsEnd(self):
+		return self.get_query_params().get('CreateTsEnd')
 
-	def set_LastTsStart(self,LastTsStart):
-		self.add_query_param('LastTsStart',LastTsStart)
+	def set_CreateTsEnd(self,CreateTsEnd):
+		self.add_query_param('CreateTsEnd',CreateTsEnd)
 
 	def get_Necessity(self):
 		return self.get_query_params().get('Necessity')
@@ -142,9 +124,3 @@ class DescribeVulListRequest(RpcRequest):
 
 	def set_Uuids(self,Uuids):
 		self.add_query_param('Uuids',Uuids)
-
-	def get_Direction(self):
-		return self.get_query_params().get('Direction')
-
-	def set_Direction(self,Direction):
-		self.add_query_param('Direction',Direction)
