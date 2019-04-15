@@ -262,6 +262,19 @@ class CreateInstanceRequest(RpcRequest):
 	def set_InstanceType(self,InstanceType):
 		self.add_query_param('InstanceType',InstanceType)
 
+	def get_Arns(self):
+		return self.get_query_params().get('Arns')
+
+	def set_Arns(self,Arns):
+		for i in range(len(Arns)):	
+			if Arns[i].get('Rolearn') is not None:
+				self.add_query_param('Arn.' + str(i + 1) + '.Rolearn' , Arns[i].get('Rolearn'))
+			if Arns[i].get('RoleType') is not None:
+				self.add_query_param('Arn.' + str(i + 1) + '.RoleType' , Arns[i].get('RoleType'))
+			if Arns[i].get('AssumeRoleFor') is not None:
+				self.add_query_param('Arn.' + str(i + 1) + '.AssumeRoleFor' , Arns[i].get('AssumeRoleFor'))
+
+
 	def get_InstanceChargeType(self):
 		return self.get_query_params().get('InstanceChargeType')
 
