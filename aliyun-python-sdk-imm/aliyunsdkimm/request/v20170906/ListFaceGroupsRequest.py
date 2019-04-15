@@ -18,16 +18,22 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class GetImageRequest(RpcRequest):
+class ListFaceGroupsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'imm', '2017-09-06', 'GetImage','imm')
+		RpcRequest.__init__(self, 'imm', '2017-09-06', 'ListFaceGroups','imm')
 
-	def get_ImageUri(self):
-		return self.get_query_params().get('ImageUri')
+	def get_Marker(self):
+		return self.get_query_params().get('Marker')
 
-	def set_ImageUri(self,ImageUri):
-		self.add_query_param('ImageUri',ImageUri)
+	def set_Marker(self,Marker):
+		self.add_query_param('Marker',Marker)
+
+	def get_Limit(self):
+		return self.get_query_params().get('Limit')
+
+	def set_Limit(self,Limit):
+		self.add_query_param('Limit',Limit)
 
 	def get_Project(self):
 		return self.get_query_params().get('Project')
@@ -40,3 +46,15 @@ class GetImageRequest(RpcRequest):
 
 	def set_SetId(self,SetId):
 		self.add_query_param('SetId',SetId)
+
+	def get_OrderBy(self):
+		return self.get_query_params().get('OrderBy')
+
+	def set_OrderBy(self,OrderBy):
+		self.add_query_param('OrderBy',OrderBy)
+
+	def get_Order(self):
+		return self.get_query_params().get('Order')
+
+	def set_Order(self,Order):
+		self.add_query_param('Order',Order)
