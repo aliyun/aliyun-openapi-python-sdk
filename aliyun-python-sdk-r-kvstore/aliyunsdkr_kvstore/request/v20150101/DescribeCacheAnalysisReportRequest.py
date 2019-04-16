@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class DescribeCacheAnalysisReportRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'R-kvstore', '2015-01-01', 'DescribeCacheAnalysisReport','redisa')
+		RpcRequest.__init__(self, 'R-kvstore', '2015-01-01', 'DescribeCacheAnalysisReport','R-kvstore')
 
 	def get_Date(self):
 		return self.get_query_params().get('Date')

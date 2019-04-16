@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class DescribeInstancesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'R-kvstore', '2015-01-01', 'DescribeInstances','redisa')
+		RpcRequest.__init__(self, 'R-kvstore', '2015-01-01', 'DescribeInstances','R-kvstore')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -142,3 +142,13 @@ class DescribeInstancesRequest(RpcRequest):
 
 	def set_ChargeType(self,ChargeType):
 		self.add_query_param('ChargeType',ChargeType)
+
+	def get_Tags(self):
+		return self.get_query_params().get('Tags')
+
+	def set_Tags(self,Tags):
+		for i in range(len(Tags)):	
+			if Tags[i].get('Value') is not None:
+				self.add_query_param('Tag.' + str(i + 1) + '.Value' , Tags[i].get('Value'))
+			if Tags[i].get('Key') is not None:
+				self.add_query_param('Tag.' + str(i + 1) + '.Key' , Tags[i].get('Key'))

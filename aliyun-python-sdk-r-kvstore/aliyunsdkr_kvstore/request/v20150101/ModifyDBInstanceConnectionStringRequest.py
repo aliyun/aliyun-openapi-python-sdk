@@ -21,19 +21,13 @@ from aliyunsdkcore.request import RpcRequest
 class ModifyDBInstanceConnectionStringRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'R-kvstore', '2015-01-01', 'ModifyDBInstanceConnectionString','redisa')
+		RpcRequest.__init__(self, 'R-kvstore', '2015-01-01', 'ModifyDBInstanceConnectionString','R-kvstore')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_SecurityToken(self):
-		return self.get_query_params().get('SecurityToken')
-
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -47,17 +41,11 @@ class ModifyDBInstanceConnectionStringRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
-	def get_DBInstanceId(self):
-		return self.get_query_params().get('DBInstanceId')
+	def get_NewConnectionString(self):
+		return self.get_query_params().get('NewConnectionString')
 
-	def set_DBInstanceId(self,DBInstanceId):
-		self.add_query_param('DBInstanceId',DBInstanceId)
-
-	def get_newConnectionString(self):
-		return self.get_query_params().get('newConnectionString')
-
-	def set_newConnectionString(self,newConnectionString):
-		self.add_query_param('newConnectionString',newConnectionString)
+	def set_NewConnectionString(self,NewConnectionString):
+		self.add_query_param('NewConnectionString',NewConnectionString)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
@@ -65,8 +53,32 @@ class ModifyDBInstanceConnectionStringRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_currentConnectionString(self):
-		return self.get_query_params().get('currentConnectionString')
+	def get_IPType(self):
+		return self.get_query_params().get('IPType')
 
-	def set_currentConnectionString(self,currentConnectionString):
-		self.add_query_param('currentConnectionString',currentConnectionString)
+	def set_IPType(self,IPType):
+		self.add_query_param('IPType',IPType)
+
+	def get_CurrentConnectionString(self):
+		return self.get_query_params().get('CurrentConnectionString')
+
+	def set_CurrentConnectionString(self,CurrentConnectionString):
+		self.add_query_param('CurrentConnectionString',CurrentConnectionString)
+
+	def get_SecurityToken(self):
+		return self.get_query_params().get('SecurityToken')
+
+	def set_SecurityToken(self,SecurityToken):
+		self.add_query_param('SecurityToken',SecurityToken)
+
+	def get_Port(self):
+		return self.get_query_params().get('Port')
+
+	def set_Port(self,Port):
+		self.add_query_param('Port',Port)
+
+	def get_DBInstanceId(self):
+		return self.get_query_params().get('DBInstanceId')
+
+	def set_DBInstanceId(self,DBInstanceId):
+		self.add_query_param('DBInstanceId',DBInstanceId)

@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class RestartInstanceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'R-kvstore', '2015-01-01', 'RestartInstance','redisa')
+		RpcRequest.__init__(self, 'R-kvstore', '2015-01-01', 'RestartInstance','R-kvstore')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')

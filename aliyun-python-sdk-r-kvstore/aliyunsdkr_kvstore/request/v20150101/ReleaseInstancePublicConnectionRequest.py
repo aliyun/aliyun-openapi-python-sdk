@@ -18,10 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class ModifyAuditLogConfigRequest(RpcRequest):
+class ReleaseInstancePublicConnectionRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'R-kvstore', '2015-01-01', 'ModifyAuditLogConfig','R-kvstore')
+		RpcRequest.__init__(self, 'R-kvstore', '2015-01-01', 'ReleaseInstancePublicConnection','R-kvstore')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -47,12 +47,6 @@ class ModifyAuditLogConfigRequest(RpcRequest):
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
-	def get_AuditCommand(self):
-		return self.get_query_params().get('AuditCommand')
-
-	def set_AuditCommand(self,AuditCommand):
-		self.add_query_param('AuditCommand',AuditCommand)
-
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
 
@@ -65,8 +59,8 @@ class ModifyAuditLogConfigRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_Retention(self):
-		return self.get_query_params().get('Retention')
+	def get_CurrentConnectionString(self):
+		return self.get_query_params().get('CurrentConnectionString')
 
-	def set_Retention(self,Retention):
-		self.add_query_param('Retention',Retention)
+	def set_CurrentConnectionString(self,CurrentConnectionString):
+		self.add_query_param('CurrentConnectionString',CurrentConnectionString)

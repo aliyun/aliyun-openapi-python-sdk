@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class VerifyPasswordRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'R-kvstore', '2015-01-01', 'VerifyPassword','redisa')
+		RpcRequest.__init__(self, 'R-kvstore', '2015-01-01', 'VerifyPassword','R-kvstore')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
