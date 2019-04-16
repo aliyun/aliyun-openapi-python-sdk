@@ -20,6 +20,7 @@ import alibabacloud.utils.parameter_helper
 class RetryHandler(RequestHandler):
 
     def handle_request(self, context):
+
         client = context.client
         product_code = client.product_code.lower() if client.product_code else None
 

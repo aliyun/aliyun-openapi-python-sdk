@@ -24,6 +24,7 @@ class TimeoutConfigReader(RequestHandler):
     # client config 不能处理  涉及到产品的product—code
     # TODO request级别仅对读取配置进行处理，用户不设置request层级的timeout
     def handle_request(self, context):
+
         context.http_request.timeout = (self._connection_timeout(context.config),
                                         self._read_timeout(context))
 

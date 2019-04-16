@@ -32,7 +32,8 @@ class MiniLocationClient(AlibabaCloudClient):
             "Type": endpoint_type,
             "ServiceCode": location_service_code,
         }
-        api_request.endpoint = location_endpoint
+        # TODO endpoint  a special request
+        self.config.endpoint = location_endpoint
         return self._handle_request(api_request)
 
 

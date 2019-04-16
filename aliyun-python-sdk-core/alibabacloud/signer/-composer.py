@@ -24,7 +24,6 @@ from alibabacloud.vendored.six import iteritems
 from alibabacloud.vendored.six.moves.urllib.request import pathname2url
 from alibabacloud.compat import urlencode
 from alibabacloud.exceptions import ClientException
-from alibabacloud.utils.parameter_helper import md5_sum
 
 FORMAT_ISO_8601 = "%Y-%m-%dT%H:%M:%SZ"
 HEADER_SEPARATOR = "\n"
@@ -50,30 +49,20 @@ class ROASigner:
         else:
             self.signer = mac1()
 
-        self._headers = self._prepare_headers()
         self._uri = self._replace_occupied_parameters()
 
-    def _prepare_headers(self):
+    def _refresh_sign_parameters(self):
         if self.credentials is None:
             raise ClientException('Credentials Error', 'Unable to locate credentials.')
-
-        headers = self.request.headers
-        headers['x-acs-version'] = self.version
-        headers['x-acs-region-id'] = str(self.region_id)
-        if self.request.content is not None:
-            headers['Content-MD5'] = md5_sum(self.request.content)
-
+        parameters = self.request.headers
+        api_request.headers["Content-Length"] = str(len(api_request.content))
+        api_request.headers['Content-MD5'] = md5_sum(api_request.content)
+        parameters['x-acs-version'] = self.version
         if getattr(self.credentials, 'security_token') is not None:
-            headers['x-acs-security-token'] = self.credentials.security_token
+            parameters['x-acs-security-token'] = self.credentials.security_token
 
         if getattr(self.credentials, 'bearer_token') is not None:
-            headers['x-acs-bearer-token'] = self.credentials.bearer_token
-        return headers
-
-    def _refresh_sign_parameters(self):
-        parameters = self._headers
-        if parameters is None or not isinstance(parameters, dict):
-            parameters = dict()
+            parameters['x-acs-bearer-token'] = self.credentials.bearer_token
         parameters["Date"] = helper.get_rfc_2616_date()
         parameters["Accept"] = FormatType.map_format_to_accept('JSON')
         parameters["x-acs-signature-method"] = self.signer.signer_name
@@ -98,6 +87,7 @@ class ROASigner:
         sign_to_string += self.request.method.upper()
         sign_to_string += "\n"
         for ih in interesting_headers:
+            print(ih, headers.get(ih))
             if headers.get(ih) is not None:
                 sign_to_string += headers[ih]
             sign_to_string += "\n"
@@ -109,12 +99,6 @@ class ROASigner:
     # and change it to key.lower():value
     @staticmethod
     def _build_canonical_headers(headers, header_begin):
-        """
-        alibabacloud headers
-        :param headers:
-        :param header_begin:
-        :return:
-        """
         result = ""
         unsort_map = dict()
         for (key, value) in iteritems(headers):
@@ -128,12 +112,6 @@ class ROASigner:
 
     @staticmethod
     def _build_canonical_resource(uri, queries):
-        """
-        resource and params
-        :param uri:
-        :param queries:
-        :return:
-        """
         uri_parts = uri.rsplit("?", 1)
         if len(uri_parts) > 1 and uri_parts[1] is not None:
             queries[uri_parts[1]] = None
@@ -153,7 +131,7 @@ class ROASigner:
 
     @property
     def headers(self):
-        headers = self._headers
+        headers = self.request.headers
         signature = self.signer.sign_string(self.signature, self.credentials.access_key_secret)
         headers['Authorization'] = "acs %s:%s" % (self.credentials.access_key_id, signature)
         return headers
@@ -226,14 +204,14 @@ class RPCSigner:
         if self.credentials is None:
             raise ClientException('Credentials Error', 'Unable to locate credentials.')
         parameters = self.request.query_params
+        if parameters is None:
+            parameters = {}
         # TODO version 是client level
         parameters['Version'] = self.version
         parameters['Action'] = self.request.action_name
-        # parameters['Format'] = self.request.accept_format
         parameters['Format'] = "JSON"
         parameters["Timestamp"] = time.strftime(FORMAT_ISO_8601, time.gmtime())
         parameters["SignatureMethod"] = self.signer.signer_name
-        # self.signer.si
         parameters["SignatureType"] = self.signer.signer_type
         parameters["SignatureVersion"] = self.signer.signer_version
         parameters["SignatureNonce"] = helper.get_uuid()

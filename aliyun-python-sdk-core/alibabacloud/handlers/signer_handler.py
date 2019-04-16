@@ -31,7 +31,6 @@ class SignerHandler(RequestHandler):
     def handle_request(self, context):
         http_request = context.http_request
         api_request = context.api_request
-
         credentials = http_request.credentials
 
         signature, headers, params = Signer().sign(credentials, context)
@@ -41,25 +40,9 @@ class SignerHandler(RequestHandler):
         body_params = api_request.body_params
 
         if body_params:
-            allow_methods = ['POST', 'PUT']
-            if api_request.method.upper() in allow_methods:
-                body = json.dumps(body_params)
-                api_request._content = body
-                headers = self._modify_http_headers(headers, body, format_type.APPLICATION_JSON)
-
-            else:
-                body = urlencode(body_params)
-                api_request._content = body
-                headers = self._modify_http_headers(headers, body, format_type.APPLICATION_FORM)
-
-        http_request.body = api_request.content
-
+            body = urlencode(body_params)
+            headers = self._modify_http_headers(headers, body, format_type.APPLICATION_FORM)
         context.http_request.headers = headers
-
-        http_request.headers = headers
-
-    def handle_response(self, context):
-        pass
 
     def _modify_http_headers(self, headers, body, format_type='JSON'):
         if body is None:

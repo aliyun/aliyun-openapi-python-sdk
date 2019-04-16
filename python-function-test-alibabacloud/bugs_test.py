@@ -42,7 +42,7 @@ class BugsTest(SDKTestBase):
         content = '{"text":"裙子穿着很美哦，上身效果也不错，是纯棉的料子，穿着也很舒服。", ' \
                   '"cate":"clothing"}'
         request.set_content_type("application/json;chrset=utf-8")
-        request.set_accept_format("application/json;chrset=utf-8")
+        # request.set_accept_format("application/json;chrset=utf-8")
         if sys.version_info[0] == 2:
             request.set_content(content)
         else:
@@ -57,7 +57,7 @@ class BugsTest(SDKTestBase):
             self.assertTrue(response)
         except ServerException as e:
             self.assertEqual("InvalidApi.NotPurchase", e.error_code)
-            self.assertEqual("Specified api is not purchase", e.get_error_msg())
+            self.assertEqual("Specified api is not purchase", e.error_message)
 
     # def test_bug_with_17602976(self):
     #     from aliyunsdkecs.request.v20140526.DescribeRegionsRequest import DescribeRegionsRequest

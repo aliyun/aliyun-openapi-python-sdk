@@ -19,6 +19,7 @@ from alibabacloud.utils import format_type
 from alibabacloud.vendored.requests.structures import CaseInsensitiveDict
 from alibabacloud.vendored.requests.structures import OrderedDict
 from alibabacloud.compat import urlencode
+from alibabacloud.utils.parameter_helper import md5_sum
 
 
 def _user_agent_header():
@@ -79,25 +80,28 @@ class PrepareHandler(RequestHandler):
             else:
                 api_request.query_params.update(api_request.params)
 
+        # handle api_request region_id, rpc and roa must
+        if 'RegionId' not in api_request.query_params.keys():
+            api_request.query_params['RegionId'] = context.config.region_id
+
         # handle headers
         body_params = api_request.body_params
-        if body_params:
-            if api_request.method.upper() in allow_methods:
-                body = json.dumps(body_params)
-                api_request.content = body
-                api_request.headers["Content-Type"] = format_type.APPLICATION_JSON
 
-            else:
-                body = urlencode(body_params)
-                api_request.content = body
-                api_request.headers["Content-Type"] = format_type.APPLICATION_FORM
+        if body_params:
+            body = urlencode(body_params)
+            api_request.content = body
+            api_request.headers["Content-Type"] = format_type.APPLICATION_FORM
 
         elif api_request.content and "Content-Type" not in api_request.headers:
-
             api_request.headers["Content-Type"] = format_type.APPLICATION_OCTET_STREAM
 
+        # 从容器服务的案例说明，content是为了弥补body的不足，弥补发布json 的不足，so 正确用法是用户设置content-type 就是
+        http_request.body = api_request.content
+
         user_agent = _modify_user_agent(context.config.user_agent)
+
         api_request.headers['User-Agent'] = user_agent
+        api_request.headers['x-acs-region-id'] = str(context.config.region_id)
         api_request.headers['x-sdk-client'] = 'python/2.0.0'
         api_request.headers['Accept-Encoding'] = 'identity'
 
