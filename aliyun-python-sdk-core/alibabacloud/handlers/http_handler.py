@@ -56,7 +56,7 @@ class HttpHandler(RequestHandler):
             except IOError as e:
                 from alibabacloud.exceptions import ClientException
                 from aliyunsdkcore.acs_exception import error_code
-                exception = ClientException(error_code.SDK_HTTP_ERROR, str(e))
+                exception = ClientException(str(e))
 
                 context.exception = exception
                 from alibabacloud.request import HTTPResponse
