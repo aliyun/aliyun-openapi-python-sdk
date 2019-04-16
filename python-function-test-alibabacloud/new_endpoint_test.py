@@ -117,7 +117,7 @@ class NewEndpointTest(SDKTestBase):
         with patch.object(
             my_client._endpoint_resolver,
             'resolve',
-            wraps=my_client._endpoint_resolver.resolve
+            # wraps=my_client._endpoint_resolver.resolve
         ) as monkey:
             monkey.side_effect = ClientException(
                 error_code.SDK_HTTP_ERROR,
@@ -458,7 +458,7 @@ class NewEndpointTest(SDKTestBase):
                 "No such region 'cn-ningbo'. Please check your region ID.",
                 e.error_message)
 
-        add_endpoint(
+        my_client.add_endpoint(
             "Ecs",  # which does not exist at all
             "cn-ningbo",
             "abc.cn-ningbo.endpoint-test.exception.com"
@@ -467,7 +467,7 @@ class NewEndpointTest(SDKTestBase):
         with patch.object(
             my_client._endpoint_resolver,
             'resolve',
-            wraps=my_client._endpoint_resolver.resolve
+            # wraps=my_client._endpoint_resolver.resolve
         ) as monkey:
             monkey.side_effect = ClientException(
                 error_code.SDK_HTTP_ERROR,
@@ -480,7 +480,7 @@ class NewEndpointTest(SDKTestBase):
                 self.assertEqual(error_code.SDK_HTTP_ERROR, e.error_code)
                 self.assertEqual("abc.cn-ningbo.endpoint-test.exception.com", e.error_message)
 
-        DefaultEndpointResolver.predefined_endpoint_resolver.reset()
+        # DefaultEndpointResolver.predefined_endpoint_resolver.reset()
 
     def test_doc_help_sample(self):
         from aliyunsdkecs.request.v20140526.DescribeInstancesRequest import DescribeInstancesRequest

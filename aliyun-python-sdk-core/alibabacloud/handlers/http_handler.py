@@ -38,7 +38,6 @@ class HttpHandler(RequestHandler):
             if http_request.port != 80 or http_request.port != 443:
                 url = current_protocol + context.endpoint + ":" + \
                       str(http_request.port) + http_request.params
-
             http_request.url = url
             req = Request(method=http_request.method, url=http_request.url,
                           data=http_request.body,
@@ -62,7 +61,6 @@ class HttpHandler(RequestHandler):
                 from alibabacloud.request import HTTPResponse
                 context.http_response = HTTPResponse()
             else:
-
                 if context.config.enable_http_debug is not None:
                     # http debug information
                     self._do_http_debug(context, response)

@@ -23,10 +23,10 @@ import aliyunsdkcore.acs_exception.error_code as error_code
 logger = logging.getLogger(__name__)
 
 
-def _find_data_in_retry_config(key_name, retry_config_prefix, retry_config):
-    if retry_config_prefix is None:
+def _find_data_in_retry_config(key_name, product_info, retry_config):
+    if product_info[0] is None:
         return None
-    path = '{0}."{1}"'.format(retry_config_prefix, key_name)
+    path = '"{0}"."{1}"."{2}"'.format(product_info[0], product_info[1], key_name)
     return jmespath.search(path, retry_config)
 
 
@@ -71,7 +71,7 @@ class RetryOnExceptionCondition(RetryCondition):
         self.retry_config = retry_config
 
     def should_retry(self, retry_policy_context):
-        retry_config_prefix = retry_policy_context.retry_config_prefix
+        product_info = retry_policy_context.product_info
         exception = retry_policy_context.exception
 
         if isinstance(exception, ClientException):
@@ -84,7 +84,7 @@ class RetryOnExceptionCondition(RetryCondition):
         if isinstance(exception, ServerException):
             error_code_ = exception.error_code
             normal_errors = _find_data_in_retry_config("RetryableNormalErrors",
-                                                       retry_config_prefix,
+                                                       product_info,
                                                        self.retry_config)
             if isinstance(normal_errors, list) and error_code_ in normal_errors:
                 logger.debug("Retryable ServerException occurred. ServerException:%s",
@@ -92,7 +92,7 @@ class RetryOnExceptionCondition(RetryCondition):
                 return RetryCondition.SHOULD_RETRY
 
             throttling_errors = _find_data_in_retry_config("RetryableThrottlingErrors",
-                                                           retry_config_prefix,
+                                                           product_info,
                                                            self.retry_config)
             if isinstance(throttling_errors, list) and error_code_ in throttling_errors:
                 logger.debug("Retryable ThrottlingError occurred. ThrottlingError:%s",
@@ -132,8 +132,8 @@ class RetryOnApiCondition(RetryCondition):
 
     def should_retry(self, retry_policy_context):
         request = retry_policy_context.original_request
-        retry_config_prefix = retry_policy_context.retry_config_prefix
-        retryable_apis = _find_data_in_retry_config("RetryableAPIs", retry_config_prefix, self.retry_config)
+        product_info = retry_policy_context.product_info
+        retryable_apis = _find_data_in_retry_config("RetryableAPIs", product_info, self.retry_config)
         if isinstance(retryable_apis, list) and request.action_name in retryable_apis:
             return RetryCondition.SHOULD_RETRY
         else:
@@ -147,9 +147,9 @@ class RetryOnApiWithClientTokenCondition(RetryCondition):
 
     def should_retry(self, retry_policy_context):
         request = retry_policy_context.original_request
-        retry_config_prefix = retry_policy_context.retry_config_prefix
+        product_info = retry_policy_context.product_info
         retryable_apis = _find_data_in_retry_config(
-            "RetryableAPIsWithClientToken", retry_config_prefix, self.retry_config)
+            "RetryableAPIsWithClientToken", product_info, self.retry_config)
         if isinstance(retryable_apis, list) and request.action_name in retryable_apis:
             return RetryCondition.SHOULD_RETRY | RetryCondition.SHOULD_RETRY_WITH_THROTTLING_BACKOFF
         else:

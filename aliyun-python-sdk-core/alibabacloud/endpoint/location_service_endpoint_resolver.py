@@ -26,10 +26,10 @@ DEFAULT_LOCATION_SERVICE_ENDPOINT = "location-readonly.aliyuncs.com"
 
 class LocationServiceEndpointResolver(EndpointResolverBase):
 
-    def __init__(self, config, credentials_provider):
+    def __init__(self, client_config, credentials_provider):
         EndpointResolverBase.__init__(self)
         self._location_service_endpoint = DEFAULT_LOCATION_SERVICE_ENDPOINT
-        self._config = config
+        self._config = client_config
         self._credentials_provider = credentials_provider
         self._invalid_product_codes = set()
         self._invalid_region_ids = set()

@@ -18,7 +18,6 @@ from alibabacloud.handlers import RequestContext
 from alibabacloud.handlers.prepare_handler import PrepareHandler
 from alibabacloud.handlers.credentials_handler import CredentialsHandler
 from alibabacloud.handlers.signer_handler import SignerHandler
-
 from alibabacloud.handlers.timeout_config_reader import TimeoutConfigReader
 from alibabacloud.handlers.endpoint_handler import EndpointHandler
 from alibabacloud.handlers.log_handler import LogHandler

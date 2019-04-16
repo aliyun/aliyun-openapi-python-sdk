@@ -20,18 +20,18 @@ class APIRequest:
         self.protocol = protocol  # http|https
         self.method = method
         self.style = style
+        self._params = {}
+        self.uri_pattern = ''
+        self.path_params = ''
 
-        self.accept_format = 'JSON'
+        # 以下参数仅兼容Common Request
+        self.headers = {}
         self.body_params = {}
         self.query_params = {}
-        self.headers = {}
-        self.endpoint = None
         self.content = None
-        self._params = {}
 
     def _compat_old_request(self, request):
-        self.headers = request._header
-        self.endpoint = request.endpoint
+        # request:acsrequest
 
         # FIXME：需要兼容content的
         self.content = request._content
@@ -66,10 +66,12 @@ class HTTPRequest:
         self.protocol = protocol
         self.proxy = proxy
         self.port = 80
-        self.signature = signature
         self.headers = headers
         self.url = url
         self.timeout = timeout
+
+        self.signature = signature
+
         self.endpoint = endpoint
         self.enable_retry = enable_retry
         self.max_retry_times = max_retry_times
