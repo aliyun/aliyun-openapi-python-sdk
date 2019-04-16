@@ -16,9 +16,11 @@ from alibabacloud.handlers import RequestHandler
 
 from alibabacloud.vendored.requests import Request, Session
 from alibabacloud.vendored.requests.packages import urllib3
+from alibabacloud.exceptions import ClientException
 
 
 class HttpHandler(RequestHandler):
+
     def handle_request(self, context):
         self._do_request(context)
 
@@ -54,9 +56,7 @@ class HttpHandler(RequestHandler):
 
                 # requests.adapters.DEFAULT_RETRIES = 0
             except IOError as e:
-                from alibabacloud.exceptions import ClientException
-                from aliyunsdkcore.acs_exception import error_code
-                exception = ClientException(error_code.SDK_HTTP_ERROR, str(e))
+                exception = ClientException(str(e))
 
                 context.exception = exception
                 from alibabacloud.request import HTTPResponse

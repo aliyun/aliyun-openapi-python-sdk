@@ -21,6 +21,7 @@ from alibabacloud.compat import urlencode
 
 
 class SignerHandler(RequestHandler):
+
     content_md5 = "Content-MD5"
     content_length = "Content-Length"
     content_type = "Content-Type"

@@ -54,6 +54,7 @@ class APIResponse:
 
 
 class HTTPRequest:
+
     def __init__(self, accept_format=None, method=None, protocol=None, proxy=None,
                  signature=None,
                  headers=None, url=None, endpoint=None, timeout=None,
@@ -77,6 +78,7 @@ class HTTPRequest:
 
 
 class HTTPResponse:
+
     def __init__(self, status_code=None, headers=None, content=None):
         self.status_code = status_code
         self.headers = headers

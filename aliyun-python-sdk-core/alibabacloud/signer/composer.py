@@ -15,7 +15,6 @@
 # specific language governing permissions and limitations
 # under the License.
 
-# coding=utf-8
 import time
 
 from alibabacloud.utils import format_type as FormatType, parameter_helper as helper
@@ -55,7 +54,7 @@ class ROASigner:
 
     def _prepare_params_headers(self):
         if self.credentials is None:
-            raise ClientException('Credentials Error', 'Unable to locate credentials.')
+            raise ClientException('Unable to locate credentials.')
 
         headers = self.request.headers
         headers['x-acs-version'] = self.version
@@ -219,7 +218,7 @@ class RPCSigner:
 
     def _canonicalized_query_string(self):
         if self.credentials is None:
-            raise ClientException('Credentials Error', 'Unable to locate credentials.')
+            raise ClientException('Unable to locate credentials.')
         parameters = self.request.query_params
         if parameters is None:
             parameters = {}

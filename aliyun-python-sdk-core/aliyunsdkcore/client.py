@@ -95,7 +95,8 @@ class AcsClient:
         self._loaded_new_clients = {}
         self._credentials_provider = self._init_credentials_provider(ak, secret, credential)
 
-        self._endpoint_resolver = DefaultEndpointResolver(self._new_style_config, self._credentials_provider)
+        self._endpoint_resolver = DefaultEndpointResolver(self._new_style_config,
+                                                          self._credentials_provider)
 
     def _init_credentials_provider(self, access_key_id, access_key_secret, legacy_credentials):
 

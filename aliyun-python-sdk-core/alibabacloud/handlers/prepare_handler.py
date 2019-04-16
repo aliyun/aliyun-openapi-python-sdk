@@ -11,6 +11,7 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+
 import platform
 import json
 
@@ -66,6 +67,7 @@ def _modify_user_agent(client_user_agent):
 
 
 class PrepareHandler(RequestHandler):
+
     def handle_request(self, context):
         http_request = context.http_request
         api_request = context.api_request
