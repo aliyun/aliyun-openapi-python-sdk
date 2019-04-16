@@ -29,6 +29,12 @@ class DescribeNetworkInterfacesRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_ServiceManaged(self):
+		return self.get_query_params().get('ServiceManaged')
+
+	def set_ServiceManaged(self,ServiceManaged):
+		self.add_query_param('ServiceManaged',ServiceManaged)
+
 	def get_SecurityGroupId(self):
 		return self.get_query_params().get('SecurityGroupId')
 

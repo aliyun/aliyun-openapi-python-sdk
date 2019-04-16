@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class CompareFacesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cloudauth', '2018-09-16', 'CompareFaces','CloudAuth')
+		RpcRequest.__init__(self, 'Cloudauth', '2018-09-16', 'CompareFaces','cloudauth')
 		self.set_protocol_type('https');
 		self.set_method('POST')
 

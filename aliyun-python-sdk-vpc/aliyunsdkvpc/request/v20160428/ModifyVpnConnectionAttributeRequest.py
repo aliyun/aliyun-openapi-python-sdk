@@ -47,6 +47,12 @@ class ModifyVpnConnectionAttributeRequest(RpcRequest):
 	def set_EffectImmediately(self,EffectImmediately):
 		self.add_query_param('EffectImmediately',EffectImmediately)
 
+	def get_AutoConfigRoute(self):
+		return self.get_query_params().get('AutoConfigRoute')
+
+	def set_AutoConfigRoute(self,AutoConfigRoute):
+		self.add_query_param('AutoConfigRoute',AutoConfigRoute)
+
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -76,6 +82,12 @@ class ModifyVpnConnectionAttributeRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_HealthCheckConfig(self):
+		return self.get_query_params().get('HealthCheckConfig')
+
+	def set_HealthCheckConfig(self,HealthCheckConfig):
+		self.add_query_param('HealthCheckConfig',HealthCheckConfig)
 
 	def get_LocalSubnet(self):
 		return self.get_query_params().get('LocalSubnet')

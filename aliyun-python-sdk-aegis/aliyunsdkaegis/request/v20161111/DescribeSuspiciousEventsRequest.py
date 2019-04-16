@@ -23,14 +23,50 @@ class DescribeSuspiciousEventsRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'aegis', '2016-11-11', 'DescribeSuspiciousEvents','vipaegis')
 
-	def get_ResourceOwnerId(self):
-		return self.get_query_params().get('ResourceOwnerId')
-
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
 	def get_SourceIp(self):
 		return self.get_query_params().get('SourceIp')
 
 	def set_SourceIp(self,SourceIp):
 		self.add_query_param('SourceIp',SourceIp)
+
+	def get_Level(self):
+		return self.get_query_params().get('Level')
+
+	def set_Level(self,Level):
+		self.add_query_param('Level',Level)
+
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
+
+	def get_CurrentPage(self):
+		return self.get_query_params().get('CurrentPage')
+
+	def set_CurrentPage(self,CurrentPage):
+		self.add_query_param('CurrentPage',CurrentPage)
+
+	def get_Dealed(self):
+		return self.get_query_params().get('Dealed')
+
+	def set_Dealed(self,Dealed):
+		self.add_query_param('Dealed',Dealed)
+
+	def get_Remark(self):
+		return self.get_query_params().get('Remark')
+
+	def set_Remark(self,Remark):
+		self.add_query_param('Remark',Remark)
+
+	def get_EventType(self):
+		return self.get_query_params().get('EventType')
+
+	def set_EventType(self,EventType):
+		self.add_query_param('EventType',EventType)
+
+	def get_Uuid(self):
+		return self.get_query_params().get('Uuid')
+
+	def set_Uuid(self,Uuid):
+		self.add_query_param('Uuid',Uuid)

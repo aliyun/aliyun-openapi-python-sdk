@@ -23,11 +23,11 @@ class DescribeLoginLogsRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'aegis', '2016-11-11', 'DescribeLoginLogs','vipaegis')
 
-	def get_ResourceOwnerId(self):
-		return self.get_query_params().get('ResourceOwnerId')
+	def get_Types(self):
+		return self.get_query_params().get('Types')
 
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+	def set_Types(self,Types):
+		self.add_query_param('Types',Types)
 
 	def get_SourceIp(self):
 		return self.get_query_params().get('SourceIp')
@@ -41,8 +41,26 @@ class DescribeLoginLogsRequest(RpcRequest):
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
 
+	def get_Statuses(self):
+		return self.get_query_params().get('Statuses')
+
+	def set_Statuses(self,Statuses):
+		self.add_query_param('Statuses',Statuses)
+
 	def get_CurrentPage(self):
 		return self.get_query_params().get('CurrentPage')
 
 	def set_CurrentPage(self,CurrentPage):
 		self.add_query_param('CurrentPage',CurrentPage)
+
+	def get_Remark(self):
+		return self.get_query_params().get('Remark')
+
+	def set_Remark(self,Remark):
+		self.add_query_param('Remark',Remark)
+
+	def get_Tag(self):
+		return self.get_query_params().get('Tag')
+
+	def set_Tag(self,Tag):
+		self.add_query_param('Tag',Tag)

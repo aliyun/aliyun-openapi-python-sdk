@@ -29,6 +29,12 @@ class AddEditingProjectRequest(RpcRequest):
 	def set_CoverURL(self,CoverURL):
 		self.add_query_param('CoverURL',CoverURL)
 
+	def get_Division(self):
+		return self.get_query_params().get('Division')
+
+	def set_Division(self,Division):
+		self.add_query_param('Division',Division)
+
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 

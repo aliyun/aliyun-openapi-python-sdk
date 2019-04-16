@@ -41,6 +41,12 @@ class GetVideoInfoRequest(RpcRequest):
 	def set_VideoId(self,VideoId):
 		self.add_query_param('VideoId',VideoId)
 
+	def get_AdditionType(self):
+		return self.get_query_params().get('AdditionType')
+
+	def set_AdditionType(self,AdditionType):
+		self.add_query_param('AdditionType',AdditionType)
+
 	def get_ResultTypes(self):
 		return self.get_query_params().get('ResultTypes')
 

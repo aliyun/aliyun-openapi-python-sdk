@@ -35,6 +35,19 @@ class CreateScalingRuleRequest(RpcRequest):
 	def set_AdjustmentValue(self,AdjustmentValue):
 		self.add_query_param('AdjustmentValue',AdjustmentValue)
 
+	def get_StepAdjustments(self):
+		return self.get_query_params().get('StepAdjustments')
+
+	def set_StepAdjustments(self,StepAdjustments):
+		for i in range(len(StepAdjustments)):	
+			if StepAdjustments[i].get('MetricIntervalLowerBound') is not None:
+				self.add_query_param('StepAdjustment.' + str(i + 1) + '.MetricIntervalLowerBound' , StepAdjustments[i].get('MetricIntervalLowerBound'))
+			if StepAdjustments[i].get('MetricIntervalUpperBound') is not None:
+				self.add_query_param('StepAdjustment.' + str(i + 1) + '.MetricIntervalUpperBound' , StepAdjustments[i].get('MetricIntervalUpperBound'))
+			if StepAdjustments[i].get('ScalingAdjustment') is not None:
+				self.add_query_param('StepAdjustment.' + str(i + 1) + '.ScalingAdjustment' , StepAdjustments[i].get('ScalingAdjustment'))
+
+
 	def get_ScalingGroupId(self):
 		return self.get_query_params().get('ScalingGroupId')
 
@@ -82,6 +95,12 @@ class CreateScalingRuleRequest(RpcRequest):
 
 	def set_Cooldown(self,Cooldown):
 		self.add_query_param('Cooldown',Cooldown)
+
+	def get_MinAdjustmentMagnitude(self):
+		return self.get_query_params().get('MinAdjustmentMagnitude')
+
+	def set_MinAdjustmentMagnitude(self,MinAdjustmentMagnitude):
+		self.add_query_param('MinAdjustmentMagnitude',MinAdjustmentMagnitude)
 
 	def get_TargetValue(self):
 		return self.get_query_params().get('TargetValue')

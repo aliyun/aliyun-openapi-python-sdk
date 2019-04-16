@@ -162,6 +162,12 @@ class CreateScalingConfigurationRequest(RpcRequest):
 	def set_Cpu(self,Cpu):
 		self.add_query_param('Cpu',Cpu)
 
+	def get_SystemDiskDiskName(self):
+		return self.get_query_params().get('SystemDisk.DiskName')
+
+	def set_SystemDiskDiskName(self,SystemDiskDiskName):
+		self.add_query_param('SystemDisk.DiskName',SystemDiskDiskName)
+
 	def get_RamRoleName(self):
 		return self.get_query_params().get('RamRoleName')
 
@@ -179,12 +185,20 @@ class CreateScalingConfigurationRequest(RpcRequest):
 
 	def set_DataDisks(self,DataDisks):
 		for i in range(len(DataDisks)):	
+			if DataDisks[i].get('DiskName') is not None:
+				self.add_query_param('DataDisk.' + str(i + 1) + '.DiskName' , DataDisks[i].get('DiskName'))
 			if DataDisks[i].get('SnapshotId') is not None:
 				self.add_query_param('DataDisk.' + str(i + 1) + '.SnapshotId' , DataDisks[i].get('SnapshotId'))
 			if DataDisks[i].get('Size') is not None:
 				self.add_query_param('DataDisk.' + str(i + 1) + '.Size' , DataDisks[i].get('Size'))
+			if DataDisks[i].get('Encrypted') is not None:
+				self.add_query_param('DataDisk.' + str(i + 1) + '.Encrypted' , DataDisks[i].get('Encrypted'))
+			if DataDisks[i].get('Description') is not None:
+				self.add_query_param('DataDisk.' + str(i + 1) + '.Description' , DataDisks[i].get('Description'))
 			if DataDisks[i].get('Category') is not None:
 				self.add_query_param('DataDisk.' + str(i + 1) + '.Category' , DataDisks[i].get('Category'))
+			if DataDisks[i].get('KMSKeyId') is not None:
+				self.add_query_param('DataDisk.' + str(i + 1) + '.KMSKeyId' , DataDisks[i].get('KMSKeyId'))
 			if DataDisks[i].get('Device') is not None:
 				self.add_query_param('DataDisk.' + str(i + 1) + '.Device' , DataDisks[i].get('Device'))
 			if DataDisks[i].get('DeleteWithInstance') is not None:
@@ -238,3 +252,9 @@ class CreateScalingConfigurationRequest(RpcRequest):
 
 	def set_InternetMaxBandwidthIn(self,InternetMaxBandwidthIn):
 		self.add_query_param('InternetMaxBandwidthIn',InternetMaxBandwidthIn)
+
+	def get_SystemDiskDescription(self):
+		return self.get_query_params().get('SystemDisk.Description')
+
+	def set_SystemDiskDescription(self,SystemDiskDescription):
+		self.add_query_param('SystemDisk.Description',SystemDiskDescription)

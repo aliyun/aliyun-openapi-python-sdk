@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class GetMaterialsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cloudauth', '2018-09-16', 'GetMaterials','CloudAuth')
+		RpcRequest.__init__(self, 'Cloudauth', '2018-09-16', 'GetMaterials','cloudauth')
 		self.set_protocol_type('https');
 
 	def get_ResourceOwnerId(self):

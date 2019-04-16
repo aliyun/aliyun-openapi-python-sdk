@@ -47,6 +47,12 @@ class ExecuteScalingRuleRequest(RpcRequest):
 	def set_ClientToken(self,ClientToken):
 		self.add_query_param('ClientToken',ClientToken)
 
+	def get_BreachThreshold(self):
+		return self.get_query_params().get('BreachThreshold')
+
+	def set_BreachThreshold(self,BreachThreshold):
+		self.add_query_param('BreachThreshold',BreachThreshold)
+
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
 
@@ -58,3 +64,9 @@ class ExecuteScalingRuleRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_MetricValue(self):
+		return self.get_query_params().get('MetricValue')
+
+	def set_MetricValue(self,MetricValue):
+		self.add_query_param('MetricValue',MetricValue)

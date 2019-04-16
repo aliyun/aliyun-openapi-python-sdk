@@ -42,12 +42,6 @@ class GenerateDataKeyRequest(RpcRequest):
 	def set_KeySpec(self,KeySpec):
 		self.add_query_param('KeySpec',KeySpec)
 
-	def get_STSToken(self):
-		return self.get_query_params().get('STSToken')
-
-	def set_STSToken(self,STSToken):
-		self.add_query_param('STSToken',STSToken)
-
 	def get_NumberOfBytes(self):
 		return self.get_query_params().get('NumberOfBytes')
 

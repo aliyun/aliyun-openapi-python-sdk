@@ -139,6 +139,9 @@ class CreateContainerGroupRequest(RpcRequest):
 					if Containers[i].get('VolumeMounts')[j] is not None:
 						self.add_query_param('Container.' + str(i + 1) + '.VolumeMount.' + str(j + 1) + '.Name',
 											 Containers[i].get('VolumeMounts')[j].get('Name'))
+						if Containers[i].get('VolumeMounts')[j].get('SubPath') is not None:
+							self.add_query_param('Container.' + str(i + 1) + '.VolumeMount.' + str(j + 1) + '.SubPath',
+												 Containers[i].get('VolumeMounts')[j].get('SubPath'))
 						self.add_query_param('Container.' + str(i + 1) + '.VolumeMount.' + str(j + 1) + '.MountPath',
 											 Containers[i].get('VolumeMounts')[j].get('MountPath'))
 						self.add_query_param('Container.' + str(i + 1) + '.VolumeMount.' + str(j + 1) + '.ReadOnly',
@@ -159,6 +162,14 @@ class CreateContainerGroupRequest(RpcRequest):
 											 Containers[i].get('EnvironmentVars')[j].get('Key'))
 						self.add_query_param('Container.' + str(i + 1) + '.EnvironmentVar.' + str(j + 1) + '.Value',
 											 Containers[i].get('EnvironmentVars')[j].get('Value'))
+			if Containers[i].get('Stdin') is not None:
+				self.add_query_param('Container.' + str(i + 1) + '.Stdin', Containers[i].get('Stdin'))
+			if Containers[i].get('StdinOnce') is not None:
+				self.add_query_param('Container.' + str(i + 1) + '.StdinOnce', Containers[i].get('StdinOnce'))
+			if Containers[i].get('Tty') is not None:
+				self.add_query_param('Container.' + str(i + 1) + '.Tty', Containers[i].get('Tty'))
+			if Containers[i].get('Gpu') is not None:
+				self.add_query_param('Container.' + str(i + 1) + '.Gpu', Containers[i].get('Gpu'))
 
 
 	def get_ResourceOwnerId(self):
@@ -223,6 +234,9 @@ class CreateContainerGroupRequest(RpcRequest):
 					if InitContainers[i].get('VolumeMounts')[j] is not None:
 						self.add_query_param('InitContainer.' + str(i + 1) + '.VolumeMount.' + str(j + 1) + '.Name',
 											 InitContainers[i].get('VolumeMounts')[j].get('Name'))
+						if InitContainers[i].get('VolumeMounts')[j].get('SubPath') is not None:
+							self.add_query_param('Container.' + str(i + 1) + '.VolumeMount.' + str(j + 1) + '.SubPath',
+												 InitContainers[i].get('VolumeMounts')[j].get('SubPath'))
 						self.add_query_param('InitContainer.' + str(i + 1) + '.VolumeMount.' + str(j + 1) + '.MountPath',
 											 InitContainers[i].get('VolumeMounts')[j].get('MountPath'))
 						self.add_query_param('InitContainer.' + str(i + 1) + '.VolumeMount.' + str(j + 1) + '.ReadOnly',
@@ -243,6 +257,10 @@ class CreateContainerGroupRequest(RpcRequest):
 											 InitContainers[i].get('EnvironmentVars')[j].get('Key'))
 						self.add_query_param('InitContainer.' + str(i + 1) + '.EnvironmentVar.' + str(j + 1) + '.Value',
 											 InitContainers[i].get('EnvironmentVars')[j].get('Value'))
+
+			if InitContainers[i].get('Gpu') is not None:
+				self.add_query_param('InitContainer.' + str(i + 1) + '.Gpu', InitContainers[i].get('Gpu'))
+
 
 	def get_ImageRegistryCredentials(self):
 		return self.get_query_params().get('ImageRegistryCredentials')
@@ -322,6 +340,10 @@ class CreateContainerGroupRequest(RpcRequest):
 			if Volumes[i].get('NFSVolume.ReadOnly') is not None:
 				self.add_query_param('Volume.' + str(i + 1) + '.NFSVolume.ReadOnly' , Volumes[i].get('NFSVolume.ReadOnly'))
 
+			if Volumes[i].get('EmptyDirVolume.Medium') is not None:
+				self.add_query_param('Volume.' + str(i + 1) + '.EmptyDirVolume.Medium',
+									 Volumes[i].get('EmptyDirVolume.Medium'))
+
 			if Volumes[i].get('ConfigFileVolume.ConfigFileToPaths') is not None:
 				for j in range(len(Volumes[i].get('ConfigFileVolume.ConfigFileToPaths'))):
 					if Volumes[i].get('ConfigFileVolume.ConfigFileToPaths')[j] is not None:
@@ -369,8 +391,32 @@ class CreateContainerGroupRequest(RpcRequest):
 
 	def get_DnsConfigSearchs(self):
 		return self.get_query_params().get('DnsConfig.Searchs')
-	
+
 	def set_DnsConfigSearchs(self, DnsConfigSearchs):
 		for i in range(len(DnsConfigSearchs)):
 			if DnsConfigSearchs[i] is not None:
 				self.add_query_param('DnsConfig.Search.' + str(i + 1), DnsConfigSearchs[i])
+
+	def get_InstanceType(self):
+		return self.get_query_params().get('InstanceType')
+
+	def set_InstanceType(self, InstanceType):
+		self.add_query_param('InstanceType', InstanceType)
+
+	def get_HostAliases(self):
+		return self.get_query_params().get('HostAliases')
+
+	def set_HostAliases(self, HostAliases):
+		for i in range(len(HostAliases)):
+			if HostAliases[i].get('Ip') is not None:
+				self.add_query_param('HostAliase.' + str(i + 1) + '.Ip', HostAliases[i].get('Ip'))
+			for j in range(len(HostAliases[i].get('Hostnames'))):
+				if HostAliases[i].get('Hostnames')[j] is not None:
+					self.add_query_param('HostAliase.' + str(i + 1) + '.Hostname.' + str(j + 1),
+										 HostAliases[i].get('Hostnames')[j])
+
+	def get_ClientToken(self):
+		return self.get_query_params().get('ClientToken')
+
+	def set_ClientToken(self, ClientToken):
+		self.add_query_param('ClientToken', ClientToken)

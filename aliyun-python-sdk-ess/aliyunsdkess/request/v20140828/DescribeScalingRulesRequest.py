@@ -215,6 +215,12 @@ class DescribeScalingRulesRequest(RpcRequest):
 	def set_ScalingRuleId4(self,ScalingRuleId4):
 		self.add_query_param('ScalingRuleId.4',ScalingRuleId4)
 
+	def get_ShowAlarmRules(self):
+		return self.get_query_params().get('ShowAlarmRules')
+
+	def set_ShowAlarmRules(self,ShowAlarmRules):
+		self.add_query_param('ShowAlarmRules',ShowAlarmRules)
+
 	def get_ScalingRuleId5(self):
 		return self.get_query_params().get('ScalingRuleId.5')
 

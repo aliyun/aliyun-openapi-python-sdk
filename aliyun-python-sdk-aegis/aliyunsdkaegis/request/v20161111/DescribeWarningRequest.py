@@ -29,12 +29,6 @@ class DescribeWarningRequest(RpcRequest):
 	def set_TypeNames(self,TypeNames):
 		self.add_query_param('TypeNames',TypeNames)
 
-	def get_ResourceOwnerId(self):
-		return self.get_query_params().get('ResourceOwnerId')
-
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
 	def get_RiskName(self):
 		return self.get_query_params().get('RiskName')
 
@@ -64,6 +58,12 @@ class DescribeWarningRequest(RpcRequest):
 
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
+
+	def get_StrategyId(self):
+		return self.get_query_params().get('StrategyId')
+
+	def set_StrategyId(self,StrategyId):
+		self.add_query_param('StrategyId',StrategyId)
 
 	def get_CurrentPage(self):
 		return self.get_query_params().get('CurrentPage')

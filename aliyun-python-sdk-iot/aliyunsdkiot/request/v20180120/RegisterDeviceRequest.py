@@ -35,6 +35,12 @@ class RegisterDeviceRequest(RpcRequest):
 	def set_IotInstanceId(self,IotInstanceId):
 		self.add_query_param('IotInstanceId',IotInstanceId)
 
+	def get_Nickname(self):
+		return self.get_query_params().get('Nickname')
+
+	def set_Nickname(self,Nickname):
+		self.add_query_param('Nickname',Nickname)
+
 	def get_DeviceName(self):
 		return self.get_query_params().get('DeviceName')
 
