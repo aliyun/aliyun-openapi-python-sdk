@@ -31,28 +31,26 @@ SDK_INVALID_PARAMETER = "SDK.InvalidParameter"
 class ClientException(Exception):
     """client exception"""
 
-    def __init__(self, error_code, error_message,):
+    def __init__(self, error_message):
         """
 
-        :param error_code: error code
         :param error_message: error message
         :return:
         """
         Exception.__init__(self)
         self.__error_type = 'Client'
-        self.error_code = error_code
         self.error_message = error_message
 
     def __str__(self):
-        return "%s %s" % (
-            self.error_code,
+        return "%s" % (
             self.error_message,
         )
 
 
 class ServerException(Exception):
 
-    def __init__(self, error_code, error_message, endpoint=None, http_status=None, request_id=None, service_name= None):
+    def __init__(self, error_code, error_message, endpoint=None,
+                 http_status=None, request_id=None, service_name= None):
         self.error_code = error_code
         self.error_message = error_message
         self.endpoint = endpoint

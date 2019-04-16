@@ -57,7 +57,7 @@ class BugsTest(SDKTestBase):
             self.assertTrue(response)
         except ServerException as e:
             self.assertEqual("InvalidApi.NotPurchase", e.error_code)
-            self.assertEqual("Specified api is not purchase", e.get_error_msg())
+            self.assertEqual("Specified api is not purchase", e.error_message)
 
     # def test_bug_with_17602976(self):
     #     from aliyunsdkecs.request.v20140526.DescribeRegionsRequest import DescribeRegionsRequest

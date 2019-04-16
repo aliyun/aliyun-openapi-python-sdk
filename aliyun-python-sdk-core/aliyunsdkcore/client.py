@@ -23,15 +23,12 @@ import warnings
 import logging
 import platform
 
-# from aliyunsdkcore.endpoint.default_endpoint_resolver import DefaultEndpointResolver
 from alibabacloud.vendored.requests.structures import CaseInsensitiveDict
 from alibabacloud.vendored.requests.structures import OrderedDict
 
-from aliyunsdkcore.auth.credentials import AccessKeyCredential, StsTokenCredential
+from .auth.credentials import AccessKeyCredential, StsTokenCredential
 from aliyunsdkcore.auth.credentials import RamRoleArnCredential, EcsRamRoleCredential
 from aliyunsdkcore.auth.credentials import RsaKeyPairCredential
-
-# from alibabacloud.exception import ClientException
 
 from alibabacloud.endpoint.default_endpoint_resolver import DefaultEndpointResolver
 from alibabacloud.credentials import AccessKeyCredentials, SecurityCredentials
@@ -41,15 +38,11 @@ from alibabacloud.credentials.provider import InstanceProfileCredentialsProvider
 from alibabacloud.client import ClientConfig
 from alibabacloud.client import AlibabaCloudClient  # New Style Client
 
+from alibabacloud.exceptions import ClientException
+
 """
 Acs default client module.
 """
-
-DEFAULT_READ_TIMEOUT = 10
-DEFAULT_CONNECTION_TIMEOUT = 5
-
-# TODO: replace it with TimeoutHandler
-# _api_timeout_config_data = aliyunsdkcore.utils._load_json_from_data_dir("timeout_config.json")
 
 logger = logging.getLogger(__name__)
 
@@ -96,12 +89,12 @@ class AcsClient:
         )
 
         self._loaded_new_clients = {}
-        self._endpoint_resolver = DefaultEndpointResolver(self._new_style_config)
-
         self._credentials_provider = self._init_credentials_provider(ak, secret, credential)
 
-    def _init_credentials_provider(self, access_key_id, access_key_secret, legacy_credentials):
+        self._endpoint_resolver = DefaultEndpointResolver(self._new_style_config,
+                                                          self._credentials_provider)
 
+    def _init_credentials_provider(self, access_key_id, access_key_secret, legacy_credentials):
         # get credentials provider
         access_key_id = os.environ.get('ALIYUN_ACCESS_KEY_ID') or access_key_id
         access_key_secret = os.environ.get('ALIYUN_ACCESS_KEY_SECRET') or access_key_secret
@@ -305,6 +298,7 @@ class AcsClient:
     def _handle_request_in_new_style(self, acs_request, raise_exception=True):
         # 新的request
         api_request = self._get_new_style_request(acs_request)
+
         # 新的config
         config = self._get_new_style_config(acs_request)
         new_style_client = self._get_new_style_client(acs_request, config)
@@ -314,11 +308,9 @@ class AcsClient:
         return context
 
     def do_action_with_exception(self, acs_request):
-
         from aliyunsdkcore.request import CommonRequest
         if isinstance(acs_request, CommonRequest):
             acs_request.trans_to_acs_request()
-
         context = self._handle_request_in_new_style(acs_request)
         return context.http_response.content
 

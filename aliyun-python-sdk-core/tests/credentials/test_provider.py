@@ -11,6 +11,7 @@ from alibabacloud.credentials.provider import StaticCredentialsProvider, CachedC
 from alibabacloud.exceptions import ClientException
 from tests import unittest
 
+
 class TestProvider(unittest.TestCase):
 
     def test_credentials_provider(self):
@@ -38,7 +39,8 @@ class TestProvider(unittest.TestCase):
         except NotImplementedError as e:
             self.assertEqual(type(e), NotImplementedError)
 
-        rotating_credentials.rotate_credentials = mock.Mock(return_value=SecurityCredentials(None, None, None))
+        rotating_credentials.rotate_credentials = mock.Mock(
+            return_value=SecurityCredentials(None, None, None))
         self.assertEqual(type(rotating_credentials.provide()), SecurityCredentials)
 
         rotating_credentials = RotatingCredentialsProvider(-36000000000, 0)
@@ -46,8 +48,10 @@ class TestProvider(unittest.TestCase):
         self.assertEqual(type(rotating_credentials.provide()), AccessKeyCredentials)
 
     def test_profile_credentials_provider(self):
-        profile_credentials = ProfileCredentialsProvider("ClientConfig()", "~/.alibabacloud/credentials", "default")
-        profile = profile_credentials._load_profile("~/.alibabacloud/credentials", "default")
+        profile_credentials = ProfileCredentialsProvider(
+            "ClientConfig()", "~/.alibabacloud/credentials", "default")
+        profile = profile_credentials._load_profile("~/.alibabacloud/credentials",
+                                                    "default")
         self.assertTrue(profile)
 
         with self.assertRaises(ClientException) as e:
@@ -57,7 +61,8 @@ class TestProvider(unittest.TestCase):
         full_path = os.path.expanduser("~/.alibabacloud/credentials")
         with self.assertRaises(ClientException) as e:
             profile_credentials._load_profile("~/.alibabacloud/credentials", "abc")
-        self.assertEqual(str(e.exception), 'The Credentials file (%s) can not find the needed param "type".'
+        self.assertEqual(str(e.exception),
+                         'The Credentials file (%s) can not find the needed param "type".'
                          % full_path)
 
         ak_dict = {'type': 'access_key', 'access_key_id': 'qwe', 'access_key_secret': 'abc'}
@@ -70,7 +75,8 @@ class TestProvider(unittest.TestCase):
         ak_dict_error = {'type': 'access_key'}
         with self.assertRaises(ClientException) as e:
             profile_credentials._get_provider_by_profile(ak_dict_error)
-        self.assertEqual(str(e.exception), "access_key_id must be set for credentials type access_key.")
+        self.assertEqual(str(e.exception),
+                         "access_key_id must be set for credentials type access_key.")
 
         self.assertEqual(type(profile_credentials.provide()), AccessKeyCredentials)
 

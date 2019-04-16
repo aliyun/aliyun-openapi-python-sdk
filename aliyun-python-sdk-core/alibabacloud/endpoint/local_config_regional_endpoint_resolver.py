@@ -1,4 +1,3 @@
-#
 # Licensed to the Apache Software Foundation (ASF) under one
 # or more contributor license agreements.  See the NOTICE file
 # distributed with self work for additional information
@@ -15,7 +14,6 @@
 # KIND, either express or implied.  See the License for the
 # specific language governing permissions and limitations
 # under the License.
-#
 
 import os.path
 import json
@@ -53,7 +51,8 @@ class LocalConfigRegionalEndpointResolver(EndpointResolverBase):
         self._regional_endpoint_data = obj["regional_endpoints"]
         for code, product_data in iteritems(obj["regional_endpoints"]):
             for region_id, endpoint in iteritems(product_data):
-                self.put_endpoint_entry(self._make_endpoint_entry_key(code, region_id), endpoint)
+                self.put_endpoint_entry(self._make_endpoint_entry_key(code, region_id),
+                                        endpoint)
 
     def _init_region_ids(self, obj):
         if "regions" not in obj:
@@ -82,7 +81,8 @@ class LocalConfigRegionalEndpointResolver(EndpointResolverBase):
             return None
 
     def get_endpoint_key_from_request(self, request):
-        return self._make_endpoint_entry_key(request.product_code.lower(), request.region_id.lower())
+        return self._make_endpoint_entry_key(request.product_code.lower(),
+                                             request.region_id.lower())
 
     def _make_endpoint_entry_key(self, product_code, region_id):
         return self._get_normalized_product_code(product_code) + "." + region_id
@@ -103,7 +103,6 @@ class LocalConfigRegionalEndpointResolver(EndpointResolverBase):
             request.region_id,
             self._get_normalized_product_code(request.product_code),
             request.location_service_code,
-            request.endpoint_type,
-            request.credentials_provider
+            request.endpoint_type
         )
         return EndpointResolverBase.is_product_code_valid(self, tmp_request)

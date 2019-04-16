@@ -15,7 +15,6 @@
 # specific language governing permissions and limitations
 # under the License.
 
-# coding=utf-8
 import time
 
 from alibabacloud.utils import format_type as FormatType, parameter_helper as helper
@@ -50,33 +49,28 @@ class ROASigner:
         else:
             self.signer = mac1()
 
-        self._prepare_params, self._prepare_headers = self._prepare_params_headers()
+        self._headers = self._prepare_headers()
         self._uri = self._replace_occupied_parameters()
 
-    def _prepare_params_headers(self):
+    def _prepare_headers(self):
         if self.credentials is None:
-            raise ClientException('Credentials Error', 'Unable to locate credentials.')
+            raise ClientException('Unable to locate credentials.')
 
         headers = self.request.headers
         headers['x-acs-version'] = self.version
-
-        sign_params = self.request.query_params
-        if 'RegionId' not in sign_params.keys():
-            sign_params['RegionId'] = self.region_id
-            headers['x-acs-region-id'] = str(self.region_id)
-
+        headers['x-acs-region-id'] = str(self.region_id)
         if self.request.content is not None:
-            self.request.headers['Content-MD5'] = md5_sum(self.request.content)
+            headers['Content-MD5'] = md5_sum(self.request.content)
 
         if getattr(self.credentials, 'security_token') is not None:
-            self.request.headers['x-acs-security-token'] = self.credentials.security_token
+            headers['x-acs-security-token'] = self.credentials.security_token
 
         if getattr(self.credentials, 'bearer_token') is not None:
-            self.request.headers['x-acs-bearer-token'] = self.credentials.bearer_token
-        return sign_params, self.request.headers
+            headers['x-acs-bearer-token'] = self.credentials.bearer_token
+        return headers
 
     def _refresh_sign_parameters(self):
-        parameters = self._prepare_headers
+        parameters = self._headers
         if parameters is None or not isinstance(parameters, dict):
             parameters = dict()
         parameters["Date"] = helper.get_rfc_2616_date()
@@ -107,13 +101,19 @@ class ROASigner:
                 sign_to_string += headers[ih]
             sign_to_string += "\n"
         sign_to_string += self._build_canonical_headers(headers, "x-acs-")
-        sign_to_string += self._build_canonical_resource(self._uri, self._prepare_params)
+        sign_to_string += self._build_canonical_resource(self._uri, self.request.query_params)
         return sign_to_string
 
     # change the give headerBegin to the lower() which in the headers
     # and change it to key.lower():value
     @staticmethod
     def _build_canonical_headers(headers, header_begin):
+        """
+        alibabacloud headers
+        :param headers:
+        :param header_begin:
+        :return:
+        """
         result = ""
         unsort_map = dict()
         for (key, value) in iteritems(headers):
@@ -127,6 +127,12 @@ class ROASigner:
 
     @staticmethod
     def _build_canonical_resource(uri, queries):
+        """
+        resource and params
+        :param uri:
+        :param queries:
+        :return:
+        """
         uri_parts = uri.rsplit("?", 1)
         if len(uri_parts) > 1 and uri_parts[1] is not None:
             queries[uri_parts[1]] = None
@@ -146,20 +152,18 @@ class ROASigner:
 
     @property
     def headers(self):
-        headers = self._prepare_headers
+        headers = self._headers
         signature = self.signer.sign_string(self.signature, self.credentials.access_key_secret)
         headers['Authorization'] = "acs %s:%s" % (self.credentials.access_key_id, signature)
         return headers
 
     @property
     def params(self):
-
         param = ""
         param += self._uri
         if not param.endswith("?"):
             param += "?"
-
-        param += urlencode(self._prepare_params)
+        param += urlencode(self.request.query_params)
         if param.endswith("?"):
             param = param[0:(len(param) - 1)]
         return param
@@ -219,23 +223,19 @@ class RPCSigner:
 
     def _canonicalized_query_string(self):
         if self.credentials is None:
-            raise ClientException('Credentials Error', 'Unable to locate credentials.')
+            raise ClientException('Unable to locate credentials.')
         parameters = self.request.query_params
-        if parameters is None:
-            parameters = {}
         # TODO version 是client level
         parameters['Version'] = self.version
         parameters['Action'] = self.request.action_name
-        parameters['Format'] = self.request.accept_format
-
+        # parameters['Format'] = self.request.accept_format
+        parameters['Format'] = "JSON"
         parameters["Timestamp"] = time.strftime(FORMAT_ISO_8601, time.gmtime())
         parameters["SignatureMethod"] = self.signer.signer_name
         # self.signer.si
         parameters["SignatureType"] = self.signer.signer_type
         parameters["SignatureVersion"] = self.signer.signer_version
         parameters["SignatureNonce"] = helper.get_uuid()
-        if 'RegionId' not in parameters:
-            parameters['RegionId'] = self.region_id
         if getattr(self.credentials, 'access_key_id') is not None:
             parameters["AccessKeyId"] = self.credentials.access_key_id
         return parameters

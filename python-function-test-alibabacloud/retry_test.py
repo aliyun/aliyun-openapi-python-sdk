@@ -48,7 +48,9 @@ class RetryTest(SDKTestBase):
                 client.do_action_with_exception(request)
                 assert False
             except ClientException as e:
-                self.assertEqual(error_code.SDK_HTTP_ERROR, e.error_code)
+                self.assertTrue(e.error_message.startswith(
+                    "HTTPConnectionPool(host='somewhere.you.will.never.get', port=80)"))
+
         self.assertEqual(1, monkey.call_count)
 
     def test_default_retry_times(self):
@@ -68,10 +70,10 @@ class RetryTest(SDKTestBase):
         self.assertTrue(isinstance(context.exception, ServerException))
 
     def test_retry_with_client_token(self):
-     pass
+        pass
 
     def test_retry_with_client_token_set(self):
-       pass
+        pass
 
     def test_invalid_max_retry_times(self):
         client = AcsClient(self.access_key_id,
@@ -87,7 +89,6 @@ class RetryTest(SDKTestBase):
             response = client.do_action_with_exception(request)
             assert False
         except ClientException as e:
-            self.assertEqual("SDK.InvalidParameter", e.error_code)
             self.assertEqual("max_retry_times should be a positive integer.",
                              e.error_message)
 
@@ -112,7 +113,7 @@ class RetryTest(SDKTestBase):
         default_retry_policy = retry_policy.get_default_retry_policy()
 
         def CE(code):
-            return ClientException(code, "some error")
+            return ClientException("some error")
 
         def SE(code):
             return ServerException(code, "some error")
@@ -149,42 +150,51 @@ class RetryTest(SDKTestBase):
         invalid_param_excpetion = SE("MissingParameter")
         unknown_error = SE(error_code.SDK_UNKNOWN_SERVER_ERROR)
         internal_error = SE("InternalError")
-
-        _assert_retryable(retryable_request, timeout_exception, 0, 500, retryable_client)
-        _assert_retryable(retryable_request, timeout_exception, 2, 500, retryable_client)
-        _assert_retryable(retryable_request, unknown_error, 0, 500, retryable_client)
-        _assert_retryable(retryable_request, unknown_error, 0, 502, retryable_client)
-        _assert_retryable(retryable_request, unknown_error, 0, 503, retryable_client)
-        _assert_retryable(retryable_request, unknown_error, 0, 504, retryable_client)
-        _assert_retryable(retryable_request, internal_error, 0, 500, retryable_client)
-        _assert_retryable(retryable_request, SE("Throttling"), 0, 400, retryable_client)
-        _assert_retryable(retryable_request, SE("ServiceUnavailable"), 0, 503, retryable_client)
-        _assert_not_retryable(retryable_request, invalid_param_excpetion, 0, 400, retryable_client)
-        _assert_not_retryable(retryable_request, timeout_exception, 3, 500, retryable_client)
-        _assert_not_retryable(retryable_request, SE("InvalidAccessKeyId.NotFound"), 0, 404, retryable_client)
+        product_code = retryable_client.product_code.lower()
+        product_version = retryable_client.product_version
+        _assert_retryable(retryable_request, timeout_exception, 0, 500, product_code, product_version)
+        _assert_retryable(retryable_request, timeout_exception, 2, 500, product_code, product_version)
+        _assert_retryable(retryable_request, unknown_error, 0, 500, product_code, product_version)
+        _assert_retryable(retryable_request, unknown_error, 0, 502, product_code, product_version)
+        _assert_retryable(retryable_request, unknown_error, 0, 503, product_code, product_version)
+        _assert_retryable(retryable_request, unknown_error, 0, 504, product_code, product_version)
+        _assert_retryable(retryable_request, internal_error, 0, 500, product_code, product_version)
+        _assert_retryable(retryable_request, SE("Throttling"), 0, 400, product_code, product_version)
+        _assert_retryable(retryable_request, SE("ServiceUnavailable"), 0, 503, product_code, product_version)
+        _assert_not_retryable(retryable_request, invalid_param_excpetion, 0, 400, product_code, product_version)
+        _assert_not_retryable(retryable_request, timeout_exception, 3, 500, product_code, product_version)
+        _assert_not_retryable(retryable_request, SE("InvalidAccessKeyId.NotFound"), 0, 404, product_code, product_version)
 
         acs_request = DescribeInstanceHistoryEventsRequest()
         request1 = client._get_new_style_request(acs_request)
 
         config = self.client._get_new_style_config(acs_request)
         client1 = self.client._get_new_style_client(acs_request, config)
-        _assert_retryable(request1, SE("ServiceUnavailable"), 0, 503, client1)
+        product_code = client1.product_code.lower()
+        product_version = client1.product_version
+        _assert_retryable(request1, SE("ServiceUnavailable"), 0, 503, product_code, product_version)
 
         acs_request = DescribeDisksRequest()
         request2 = client._get_new_style_request(acs_request)
 
         config = self.client._get_new_style_config(acs_request)
         client2 = self.client._get_new_style_client(acs_request, config)
-        _assert_retryable(request2, SE("ServiceUnavailable"), 0, 503, client2)
+        product_code = client2.product_code.lower()
+        product_version = client2.product_version
+
+        _assert_retryable(request2, SE("ServiceUnavailable"), 0, 503, product_code, product_version)
         # no_retry
         acs_request = AttachDiskRequest()
         no_retry_request = client._get_new_style_request(acs_request)
         config = self.client._get_new_style_config(acs_request)
         no_retry_client = self.client._get_new_style_client(acs_request, config)
 
-        _assert_not_retryable(no_retry_request, timeout_exception, 0, 500, no_retry_client)
-        _assert_not_retryable(no_retry_request, unknown_error, 0, 504, no_retry_client)
-        _assert_not_retryable(no_retry_request, invalid_param_excpetion, 0, 400, no_retry_client)
+        product_code = no_retry_client.product_code.lower()
+        product_version = no_retry_client.product_version
+
+        _assert_not_retryable(no_retry_request, timeout_exception, 0, 500, product_code, product_version)
+        _assert_not_retryable(no_retry_request, unknown_error, 0, 504, product_code, product_version)
+        _assert_not_retryable(no_retry_request, invalid_param_excpetion, 0, 400, product_code, product_version)
 
         # _assert_retryable_with_client_token(CreateInstanceRequest())
         # _assert_retryable_with_client_token(CreateDiskRequest())
@@ -211,7 +221,7 @@ class RetryTest(SDKTestBase):
                 client.do_action_with_exception(request)
                 assert False
             except ClientException as e:
-                self.assertEqual(error_code.SDK_HTTP_ERROR, e.error_code)
+                self.assertTrue(e.error_message.startswith("HTTPConnectionPool(host='somewhere.you.will.never.get', port=80)"))
         # self.assertEqual(10, monkey.call_count)
         self.assertEqual([0.1, 0.2, 0.4, 0.8, 1.6, 3.2, 6.4, 12.8, 20.0, 20.0],
                          _test_compute_delay)
@@ -242,7 +252,6 @@ class RetryTest(SDKTestBase):
         from alibabacloud.handlers.retry_handler import RetryHandler
         from alibabacloud.handlers.server_error_handler import ServerErrorHandler
         from alibabacloud.handlers.http_handler import HttpHandler
-
         DEFAULT_HANDLERS = [
             PrepareHandler(),
             CredentialsHandler(),

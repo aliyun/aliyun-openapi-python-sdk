@@ -21,23 +21,27 @@ import alibabacloud.utils.parameter_helper
 class RetryHandler(RequestHandler):
 
     def handle_request(self, context):
+
         client = context.client
+        product_code = client.product_code.lower() if client.product_code else None
+
         if context.http_request.retries == 0:
-            retry_policy_context = RetryPolicyContext(context.api_request, None, 0, None, client)
+            retry_policy_context = RetryPolicyContext(context.api_request, None, 0, None, product_code, client.product_version)
             if context.client.retry_policy.should_retry(retry_policy_context) & \
                     RetryCondition.SHOULD_RETRY_WITH_CLIENT_TOKEN:
                 self._add_request_client_token(context.api_request)
 
     def handle_response(self, context):
-        api_request = context.api_request
         client = context.client
+        api_request = context.api_request
+        product_code = client.product_code.lower() if client.product_code else None
 
         retry_policy_context = RetryPolicyContext(api_request, context.exception,
                                                   context.http_request.retries,
-                                                  context.http_response.status_code, client)
+                                                  context.http_response.status_code,
+                                                  product_code, client.product_version)
 
         should_retry = context.client.retry_policy.should_retry(retry_policy_context)
-
         if should_retry & RetryCondition.NO_RETRY:
             context.retry_flag = False
         else:

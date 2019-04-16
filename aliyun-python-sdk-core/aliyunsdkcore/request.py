@@ -224,7 +224,8 @@ class AcsRequest:
 
     def set_endpoint(self, endpoint):
         self.endpoint = endpoint
-        self._new_style_config.endpoint = self.endpoint
+        self._new_style_config.endpoint = endpoint
+        # self._new_style_config.endpoint = endpoint
 
     def get_connect_timeout(self):
         return self._new_style_config.connection_timeout
@@ -471,3 +472,5 @@ class CommonRequest(AcsRequest):
         self.request.set_body_params(self.get_body_params())
 
         self.request.set_endpoint(self.get_domain())
+
+        self._new_style_config.endpoint = self.endpoint

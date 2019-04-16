@@ -23,12 +23,10 @@ import aliyunsdkcore.acs_exception.error_code as error_code
 logger = logging.getLogger(__name__)
 
 
-def _find_data_in_retry_config(key_name, client, retry_config):
-    if client.product_code is None:
+def _find_data_in_retry_config(key_name, product_info, retry_config):
+    if product_info[0] is None:
         return None
-    path = '"{0}"."{1}"."{2}"'.format(client.product_code.lower(),
-                                      client.product_version,
-                                      key_name)
+    path = '"{0}"."{1}"."{2}"'.format(product_info[0], product_info[1], key_name)
     return jmespath.search(path, retry_config)
 
 
@@ -73,20 +71,22 @@ class RetryOnExceptionCondition(RetryCondition):
         self.retry_config = retry_config
 
     def should_retry(self, retry_policy_context):
-        client = retry_policy_context.client
+        product_info = retry_policy_context.product_info
         exception = retry_policy_context.exception
 
         if isinstance(exception, ClientException):
-            if exception.error_code == error_code.SDK_HTTP_ERROR:
+            # TODO 什么情况下的ClientException retry
 
-                logger.debug("Retryable ClientException occurred. ClientException:%s",
-                             exception)
-                return RetryCondition.SHOULD_RETRY
+            # if exception.error_code == error_code.SDK_HTTP_ERROR:
+            #
+            #     logger.debug("Retryable ClientException occurred. ClientException:%s",
+            #                  exception)
+            return RetryCondition.SHOULD_RETRY
 
         if isinstance(exception, ServerException):
             error_code_ = exception.error_code
             normal_errors = _find_data_in_retry_config("RetryableNormalErrors",
-                                                       client,
+                                                       product_info,
                                                        self.retry_config)
             if isinstance(normal_errors, list) and error_code_ in normal_errors:
                 logger.debug("Retryable ServerException occurred. ServerException:%s",
@@ -94,7 +94,7 @@ class RetryOnExceptionCondition(RetryCondition):
                 return RetryCondition.SHOULD_RETRY
 
             throttling_errors = _find_data_in_retry_config("RetryableThrottlingErrors",
-                                                           client,
+                                                           product_info,
                                                            self.retry_config)
             if isinstance(throttling_errors, list) and error_code_ in throttling_errors:
                 logger.debug("Retryable ThrottlingError occurred. ThrottlingError:%s",
@@ -134,8 +134,8 @@ class RetryOnApiCondition(RetryCondition):
 
     def should_retry(self, retry_policy_context):
         request = retry_policy_context.original_request
-        client = retry_policy_context.client
-        retryable_apis = _find_data_in_retry_config("RetryableAPIs", client, self.retry_config)
+        product_info = retry_policy_context.product_info
+        retryable_apis = _find_data_in_retry_config("RetryableAPIs", product_info, self.retry_config)
         if isinstance(retryable_apis, list) and request.action_name in retryable_apis:
             return RetryCondition.SHOULD_RETRY
         else:
@@ -149,9 +149,9 @@ class RetryOnApiWithClientTokenCondition(RetryCondition):
 
     def should_retry(self, retry_policy_context):
         request = retry_policy_context.original_request
-        client = retry_policy_context.client
+        product_info = retry_policy_context.product_info
         retryable_apis = _find_data_in_retry_config(
-            "RetryableAPIsWithClientToken", client, self.retry_config)
+            "RetryableAPIsWithClientToken", product_info, self.retry_config)
         if isinstance(retryable_apis, list) and request.action_name in retryable_apis:
             return RetryCondition.SHOULD_RETRY | RetryCondition.SHOULD_RETRY_WITH_THROTTLING_BACKOFF
         else:
