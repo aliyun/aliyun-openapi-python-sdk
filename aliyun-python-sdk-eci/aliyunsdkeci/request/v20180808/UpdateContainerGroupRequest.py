@@ -18,10 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class CreateContainerGroupRequest(RpcRequest):
+class UpdateContainerGroupRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Eci', '2018-08-08', 'CreateContainerGroup','eci')
+		RpcRequest.__init__(self, 'Eci', '2018-08-08', 'UpdateContainerGroup','eci')
 
 	def get_Containers(self):
 		return self.get_query_params().get('Containers')
@@ -172,18 +172,6 @@ class CreateContainerGroupRequest(RpcRequest):
 				self.add_query_param('Container.' + str(i + 1) + '.Gpu', Containers[i].get('Gpu'))
 
 
-	def get_ResourceOwnerId(self):
-		return self.get_query_params().get('ResourceOwnerId')
-
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_SecurityGroupId(self):
-		return self.get_query_params().get('SecurityGroupId')
-
-	def set_SecurityGroupId(self,SecurityGroupId):
-		self.add_query_param('SecurityGroupId',SecurityGroupId)
-
 	def get_InitContainers(self):
 		return self.get_query_params().get('InitContainers')
 
@@ -262,6 +250,24 @@ class CreateContainerGroupRequest(RpcRequest):
 				self.add_query_param('InitContainer.' + str(i + 1) + '.Gpu', InitContainers[i].get('Gpu'))
 
 
+	def get_ResourceOwnerId(self):
+		return self.get_query_params().get('ResourceOwnerId')
+
+	def set_ResourceOwnerId(self,ResourceOwnerId):
+		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+
+	def get_Memory(self):
+		return self.get_query_params().get('Memory')
+
+	def set_Memory(self,Memory):
+		self.add_query_param('Memory',Memory)
+
+	def get_ClientToken(self):
+		return self.get_query_params().get('ClientToken')
+
+	def set_ClientToken(self,ClientToken):
+		self.add_query_param('ClientToken',ClientToken)
+
 	def get_ImageRegistryCredentials(self):
 		return self.get_query_params().get('ImageRegistryCredentials')
 
@@ -278,7 +284,6 @@ class CreateContainerGroupRequest(RpcRequest):
 					self.add_query_param('ImageRegistryCredential.' + str(i + 1) + '.Password',
 										 ImageRegistryCredentials[i].get('Password'))
 
-
 	def get_Tags(self):
 		return self.get_query_params().get('Tags')
 
@@ -290,11 +295,11 @@ class CreateContainerGroupRequest(RpcRequest):
 				self.add_query_param('Tag.' + str(i + 1) + '.Value' , Tags[i].get('Value'))
 
 
-	def get_EipInstanceId(self):
-		return self.get_query_params().get('EipInstanceId')
+	def get_ContainerGroupId(self):
+		return self.get_query_params().get('ContainerGroupId')
 
-	def set_EipInstanceId(self,EipInstanceId):
-		self.add_query_param('EipInstanceId',EipInstanceId)
+	def set_ContainerGroupId(self,ContainerGroupId):
+		self.add_query_param('ContainerGroupId',ContainerGroupId)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -314,17 +319,17 @@ class CreateContainerGroupRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
+	def get_Cpu(self):
+		return self.get_query_params().get('Cpu')
+
+	def set_Cpu(self,Cpu):
+		self.add_query_param('Cpu',Cpu)
+
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
-
-	def get_VSwitchId(self):
-		return self.get_query_params().get('VSwitchId')
-
-	def set_VSwitchId(self,VSwitchId):
-		self.add_query_param('VSwitchId',VSwitchId)
 
 	def get_Volumes(self):
 		return self.get_query_params().get('Volumes')
@@ -357,19 +362,6 @@ class CreateContainerGroupRequest(RpcRequest):
 			if Volumes[i].get('Type') is not None:
 				self.add_query_param('Volume.' + str(i + 1) + '.Type' , Volumes[i].get('Type'))
 
-
-	def get_ContainerGroupName(self):
-		return self.get_query_params().get('ContainerGroupName')
-
-	def set_ContainerGroupName(self,ContainerGroupName):
-		self.add_query_param('ContainerGroupName',ContainerGroupName)
-
-	def get_ZoneId(self):
-		return self.get_query_params().get('ZoneId')
-
-	def set_ZoneId(self,ZoneId):
-		self.add_query_param('ZoneId',ZoneId)
-
 	#DNS config
 	def get_DnsConfigNameServers(self):
 		return self.get_query_params().get('DnsConfig.NameServers')
@@ -396,27 +388,3 @@ class CreateContainerGroupRequest(RpcRequest):
 		for i in range(len(DnsConfigSearchs)):
 			if DnsConfigSearchs[i] is not None:
 				self.add_query_param('DnsConfig.Search.' + str(i + 1), DnsConfigSearchs[i])
-
-	def get_InstanceType(self):
-		return self.get_query_params().get('InstanceType')
-
-	def set_InstanceType(self, InstanceType):
-		self.add_query_param('InstanceType', InstanceType)
-
-	def get_HostAliases(self):
-		return self.get_query_params().get('HostAliases')
-
-	def set_HostAliases(self, HostAliases):
-		for i in range(len(HostAliases)):
-			if HostAliases[i].get('Ip') is not None:
-				self.add_query_param('HostAliase.' + str(i + 1) + '.Ip', HostAliases[i].get('Ip'))
-			for j in range(len(HostAliases[i].get('Hostnames'))):
-				if HostAliases[i].get('Hostnames')[j] is not None:
-					self.add_query_param('HostAliase.' + str(i + 1) + '.Hostname.' + str(j + 1),
-										 HostAliases[i].get('Hostnames')[j])
-
-	def get_ClientToken(self):
-		return self.get_query_params().get('ClientToken')
-
-	def set_ClientToken(self, ClientToken):
-		self.add_query_param('ClientToken', ClientToken)

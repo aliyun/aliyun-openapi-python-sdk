@@ -1,3 +1,10 @@
+2019-04-16 Version: 1.0.4
+1, support ECI resatart/update
+2, support ECI metric
+3, support template API
+4, support memory for emptyDirVolume
+5, support client token
+
 2018-12-29 Version: 1.0.3
 1, Add probe for container.
 2, Add securityContext for container.
