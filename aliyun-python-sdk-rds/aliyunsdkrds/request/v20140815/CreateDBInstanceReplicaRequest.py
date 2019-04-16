@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class CreateDBInstanceReplicaRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'CreateDBInstanceReplica','rds')
+		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'CreateDBInstanceReplica','Rds')
 
 	def get_ConnectionMode(self):
 		return self.get_query_params().get('ConnectionMode')

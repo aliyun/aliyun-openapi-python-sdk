@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class ModifySQLCollectorPolicyRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'ModifySQLCollectorPolicy','rds')
+		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'ModifySQLCollectorPolicy','Rds')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')

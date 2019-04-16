@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class ModifyBackupPolicyRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'ModifyBackupPolicy','rds')
+		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'ModifyBackupPolicy','Rds')
 
 	def get_PreferredBackupPeriod(self):
 		return self.get_query_params().get('PreferredBackupPeriod')
@@ -58,6 +58,12 @@ class ModifyBackupPolicyRequest(RpcRequest):
 
 	def set_LogBackupFrequency(self,LogBackupFrequency):
 		self.add_query_param('LogBackupFrequency',LogBackupFrequency)
+
+	def get_CompressType(self):
+		return self.get_query_params().get('CompressType')
+
+	def set_CompressType(self,CompressType):
+		self.add_query_param('CompressType',CompressType)
 
 	def get_BackupLog(self):
 		return self.get_query_params().get('BackupLog')

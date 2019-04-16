@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class DescribeBackupPolicyRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'DescribeBackupPolicy','rds')
+		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'DescribeBackupPolicy','Rds')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -40,6 +40,12 @@ class DescribeBackupPolicyRequest(RpcRequest):
 
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
+
+	def get_CompressType(self):
+		return self.get_query_params().get('CompressType')
+
+	def set_CompressType(self,CompressType):
+		self.add_query_param('CompressType',CompressType)
 
 	def get_DBInstanceId(self):
 		return self.get_query_params().get('DBInstanceId')

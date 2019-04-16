@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class ModifyDBInstanceTDERequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'ModifyDBInstanceTDE','rds')
+		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'ModifyDBInstanceTDE','Rds')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -41,6 +41,12 @@ class ModifyDBInstanceTDERequest(RpcRequest):
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
+	def get_RoleArn(self):
+		return self.get_query_params().get('RoleArn')
+
+	def set_RoleArn(self,RoleArn):
+		self.add_query_param('RoleArn',RoleArn)
+
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
 
@@ -52,6 +58,12 @@ class ModifyDBInstanceTDERequest(RpcRequest):
 
 	def set_DBInstanceId(self,DBInstanceId):
 		self.add_query_param('DBInstanceId',DBInstanceId)
+
+	def get_EncryptionKey(self):
+		return self.get_query_params().get('EncryptionKey')
+
+	def set_EncryptionKey(self,EncryptionKey):
+		self.add_query_param('EncryptionKey',EncryptionKey)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')

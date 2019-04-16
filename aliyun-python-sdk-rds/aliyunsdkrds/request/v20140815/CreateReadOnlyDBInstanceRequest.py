@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class CreateReadOnlyDBInstanceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'CreateReadOnlyDBInstance','rds')
+		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'CreateReadOnlyDBInstance','Rds')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -112,6 +112,18 @@ class CreateReadOnlyDBInstanceRequest(RpcRequest):
 
 	def set_DBInstanceDescription(self,DBInstanceDescription):
 		self.add_query_param('DBInstanceDescription',DBInstanceDescription)
+
+	def get_DBInstanceStorageType(self):
+		return self.get_query_params().get('DBInstanceStorageType')
+
+	def set_DBInstanceStorageType(self,DBInstanceStorageType):
+		self.add_query_param('DBInstanceStorageType',DBInstanceStorageType)
+
+	def get_Category(self):
+		return self.get_query_params().get('Category')
+
+	def set_Category(self,Category):
+		self.add_query_param('Category',Category)
 
 	def get_PayType(self):
 		return self.get_query_params().get('PayType')
