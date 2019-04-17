@@ -2,9 +2,10 @@
 
 import logging
 import os
-from aliyunsdkcore.acs_exception import error_msg
-from aliyunsdkcore.acs_exception import error_code
-from aliyunsdkcore.acs_exception import exceptions
+# from aliyunsdkcore.acs_exception import error_msg
+# from aliyunsdkcore.acs_exception import error_code
+# from aliyunsdkcore.acs_exception import exceptions
+from alibabacloud.exceptions import ClientException
 from aliyunsdkcore.auth import credentials
 from aliyunsdkcore.auth.signers import access_key_signer
 from aliyunsdkcore.auth.signers import sts_token_signer
@@ -46,5 +47,4 @@ class SignerFactory(object):
                                                                        cred['session_period'])
             return rsa_key_pair_signer.RsaKeyPairSigner(rsa_key_pair_credential, region_id, debug)
         else:
-            raise exceptions.ClientException(error_code.SDK_INVALID_CREDENTIAL,
-                                             error_msg.get_msg('SDK_INVALID_CREDENTIAL'))
+            raise ClientException(error_msg.get_msg('SDK_INVALID_CREDENTIAL'))

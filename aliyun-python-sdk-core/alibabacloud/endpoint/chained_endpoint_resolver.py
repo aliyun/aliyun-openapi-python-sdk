@@ -1,4 +1,3 @@
-#
 # Licensed to the Apache Software Foundation (ASF) under one
 # or more contributor license agreements.  See the NOTICE file
 # distributed with self work for additional information
@@ -15,12 +14,10 @@
 # KIND, either express or implied.  See the License for the
 # specific language governing permissions and limitations
 # under the License.
-#
 
 from alibabacloud.exceptions import ClientException
 from alibabacloud.endpoint import EndpointResolver
 
-import aliyunsdkcore.acs_exception.error_code as error_code
 import aliyunsdkcore.acs_exception.error_msg as error_msg
 
 
@@ -36,7 +33,6 @@ class ChainedEndpointResolver(EndpointResolver):
                 return
 
         raise ClientException(
-            error_code.SDK_ENDPOINT_RESOLVING_ERROR,
             error_msg.ENDPOINT_NO_PRODUCT.format(
                 product_code=request.product_code)
         )
@@ -47,7 +43,6 @@ class ChainedEndpointResolver(EndpointResolver):
                 return
 
         raise ClientException(
-            error_code.SDK_ENDPOINT_RESOLVING_ERROR,
             error_msg.INVALID_REGION_ID.format(region_id=request.region_id)
         )
 
@@ -73,7 +68,6 @@ class ChainedEndpointResolver(EndpointResolver):
         self._check_region_id(request)
 
         raise ClientException(
-            error_code.SDK_ENDPOINT_RESOLVING_ERROR,
             error_msg.ENDPOINT_NO_REGION.format(
                 region_id=request.region_id,
                 product_code=request.product_code,

@@ -22,6 +22,7 @@ class RequestContext:
         self.api_response = api_response
         self.http_response = http_response
         self.exception = exception
+
         self.config = config
         self.client = client
         self.retry_flag = retry_flag

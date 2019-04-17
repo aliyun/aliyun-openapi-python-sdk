@@ -8,7 +8,7 @@ from aliyunsdkcore.credentials.credentials import EcsRamRoleCredential
 from aliyunsdkcore.auth.signers.ecs_ram_role_signer import EcsRamRoleSigner
 from aliyunsdkcore.request import RpcRequest, RoaRequest
 
-from aliyunsdkcore.acs_exception.exceptions import ServerException
+from alibabacloud.exceptions import ServerException
 from alibabacloud.compat import ensure_bytes
 
 

@@ -23,7 +23,6 @@ class ErrorHandleTest(SDKTestBase):
             assert False
         except ClientException as e:
             
-            self.assertEqual("SDK.HttpError", e.error_code)
             self.assertTrue(e.error_message.startswith("HTTPConnectionPool(host='ecs-cn-hangzhou.aliyuncs.com', port=80): Max retries exceeded with url"))
             self.assertTrue(e.error_message.endswith("'Connection to ecs-cn-hangzhou.aliyuncs.com timed out. (connect timeout=0.001)'))"))
             # self.assertEqual("HTTPConnectionPool(host='ecs-cn-hangzhou.aliyuncs.com',"
@@ -37,7 +36,6 @@ class ErrorHandleTest(SDKTestBase):
             response = self.client.do_action_with_exception(request)
             assert False
         except ClientException as e:
-            self.assertEqual("SDK.HttpError", e.error_code)
             self.assertTrue(e.error_message.startswith(
                 "HTTPConnectionPool(host='www.aliyun-hangzhou.com', port=80): "
                 "Max retries exceeded with url:"))

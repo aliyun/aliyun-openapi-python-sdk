@@ -4,7 +4,6 @@ import os
 from tests import unittest
 
 from aliyunsdkcore.client import AcsClient
-from aliyunsdkcore.acs_exception.exceptions import ClientException
 from aliyunsdkcore.credentials.credentials import EcsRamRoleCredential, AccessKeyCredential
 
 

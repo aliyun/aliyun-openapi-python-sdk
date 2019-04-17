@@ -11,10 +11,13 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+
 import json
 
 from alibabacloud.handlers import RequestHandler
 from alibabacloud.vendored.requests import codes
+
+SDK_UNKNOWN_SERVER_ERROR = 'SDK.UnknownServerError'
 
 
 class ServerErrorHandler(RequestHandler):
@@ -38,7 +41,6 @@ class ServerErrorHandler(RequestHandler):
 
                 server_error_code, server_error_message = self._parse_error_info_from_response_body(
                     response.text)
-
                 special_error_codes = ['IncompleteSignature', 'SignatureDoesNotMatch']
                 if response.status_code == codes.BAD_REQUEST and \
                         server_error_code in special_error_codes:
@@ -48,13 +50,13 @@ class ServerErrorHandler(RequestHandler):
                                                'Please check your AccessKeyId and AccessKeySecret.'
                 from alibabacloud.exceptions import ServerException
                 exception = ServerException(server_error_code, server_error_message,
-                                            context.endpoint, response.status_code, request_id)
+                                            context.endpoint, context.client.product_code,
+                                            response.status_code, request_id)
                 context.exception = exception
 
     @staticmethod
     def _parse_error_info_from_response_body(response_body):
-        from aliyunsdkcore.acs_exception import error_code
-        error_code_to_return = error_code.SDK_UNKNOWN_SERVER_ERROR
+        error_code_to_return = SDK_UNKNOWN_SERVER_ERROR
         # TODO handle if response_body is too big
         error_message_to_return = "ServerResponseBody: " + str(response_body)
         try:

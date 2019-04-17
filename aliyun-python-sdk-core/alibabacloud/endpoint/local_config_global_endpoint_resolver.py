@@ -1,4 +1,3 @@
-#
 # Licensed to the Apache Software Foundation (ASF) under one
 # or more contributor license agreements.  See the NOTICE file
 # distributed with self work for additional information
@@ -15,7 +14,7 @@
 # KIND, either express or implied.  See the License for the
 # specific language governing permissions and limitations
 # under the License.
-#
+
 from alibabacloud.vendored.six import iteritems
 
 from alibabacloud.endpoint.local_config_regional_endpoint_resolver \
@@ -35,7 +34,8 @@ class LocalConfigGlobalEndpointResolver(LocalConfigRegionalEndpointResolver):
 
         global_endpoints = obj["global_endpoints"]
         for location_service_code, endpoint in iteritems(global_endpoints):
-            self.put_endpoint_entry(self._make_endpoint_entry_key(location_service_code), endpoint)
+            self.put_endpoint_entry(self._make_endpoint_entry_key(location_service_code),
+                                    endpoint)
 
     def resolve(self, request):
         if request.is_open_api_endpoint() and self.is_region_id_valid(request):

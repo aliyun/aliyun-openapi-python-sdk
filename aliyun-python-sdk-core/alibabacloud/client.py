@@ -11,13 +11,13 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+
 import os
 import time
 from alibabacloud.handlers import RequestContext
 from alibabacloud.handlers.prepare_handler import PrepareHandler
 from alibabacloud.handlers.credentials_handler import CredentialsHandler
 from alibabacloud.handlers.signer_handler import SignerHandler
-
 from alibabacloud.handlers.timeout_config_reader import TimeoutConfigReader
 from alibabacloud.handlers.endpoint_handler import EndpointHandler
 from alibabacloud.handlers.log_handler import LogHandler
@@ -36,8 +36,8 @@ DEFAULT_HANDLERS = [
     LogHandler(),
     EndpointHandler(),
     RetryHandler(),
-    ServerErrorHandler(),
     HttpHandler(),
+    ServerErrorHandler(),
 ]
 
 DEFAULT_FORMAT = 'JSON'
@@ -131,9 +131,9 @@ class ClientConfig:
 
         else:
             profile = load_config(self.config_file)
-        
+
         for key in dir(self):
-            if profile.get(key)is not None and getattr(self, key) is None:
+            if profile.get(key) is not None and getattr(self, key) is None:
                 # 不存在config当中的值 pass
                 setattr(self, key, profile.get(key))
             # print('不存在config当中的值', key)
@@ -180,7 +180,9 @@ class AlibabaCloudClient:
         self.logger = None  # TODO initialize
         from alibabacloud.endpoint.default_endpoint_resolver import DefaultEndpointResolver
 
-        self.endpoint_resolver = DefaultEndpointResolver(self.config)  # TODO initialize
+        self.endpoint_resolver = DefaultEndpointResolver(self.config,
+                                                         self.credentials_provider)
+        # TODO initialize
         # retry
         if self.config.enable_retry:
             self.retry_policy = retry_policy.get_default_retry_policy(
