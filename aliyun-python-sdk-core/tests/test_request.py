@@ -6,7 +6,6 @@ from mock import patch
 
 from aliyunsdkcore.request import RpcRequest, RoaRequest, \
     CommonRequest, get_default_protocol_type, set_default_protocol_type
-from aliyunsdkcore.acs_exception.exceptions import ClientException
 
 
 class TestRequest(unittest.TestCase):

@@ -18,7 +18,6 @@ import logging
 from alibabacloud.utils.load_json_from_data_dir import _load_json_from_data_dir
 import alibabacloud.utils.validation as validation
 from alibabacloud.exceptions import ServerException, ClientException
-import aliyunsdkcore.acs_exception.error_code as error_code
 
 logger = logging.getLogger(__name__)
 

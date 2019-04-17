@@ -12,21 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-SDK_INVALID_REGION_ID = 'SDK.InvalidRegionId'
-SDK_SERVER_UNREACHABLE = 'SDK.ServerUnreachable'
-SDK_INVALID_REQUEST = 'SDK.InvalidRequest'
-SDK_MISSING_ENDPOINTS_FILER = 'SDK.MissingEndpointsFiler'
-SDK_UNKNOWN_SERVER_ERROR = 'SDK.UnknownServerError'
-SDK_INVALID_CREDENTIAL = 'SDK.InvalidCredential'
-SDK_INVALID_SESSION_EXPIRATION = 'SDK.InvalidSessionExpiration'
-SDK_GET_SESSION_CREDENTIAL_FAILED = 'SDK.GetSessionCredentialFailed'
-SDK_INVALID_PARAMS = 'SDK.InvalidParams'
-SDK_NOT_SUPPORT = 'SDK.NotSupport'
-SDK_ENDPOINT_RESOLVING_ERROR = 'SDK.EndpointResolvingError'
-SDK_ENDPOINT_TESTABILITY = 'SDK.EndpointTestability'
-SDK_HTTP_ERROR = 'SDK.HttpError'
-SDK_INVALID_PARAMETER = "SDK.InvalidParameter"
-
 
 class ClientException(Exception):
     """client exception"""
@@ -49,19 +34,21 @@ class ClientException(Exception):
 
 class ServerException(Exception):
 
-    def __init__(self, error_code, error_message, endpoint=None,
-                 http_status=None, request_id=None, service_name= None):
+    def __init__(self, error_code, error_message, endpoint=None, service_name=None,
+                 http_status=None, request_id=None):
         self.error_code = error_code
         self.error_message = error_message
         self.endpoint = endpoint
-        self.http_status = http_status
-        self.request_id = request_id
         # TODO service_name
         self.service_name = service_name
+        self.http_status = http_status
+        self.request_id = request_id
 
     def __str__(self):
-        return "HTTP Status: %s Error:%s %s RequestID: %s" % (
+        return "HTTP Status: %s Product:%s Endpoint:%s Error:%s %s RequestID: %s" % (
             str(self.http_status),
+            self.service_name,
+            self.endpoint,
             self.error_code,
             self.error_message,
             self.request_id

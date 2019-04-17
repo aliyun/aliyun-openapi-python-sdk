@@ -5,7 +5,7 @@ import platform
 
 from mock import MagicMock, patch
 from aliyunsdkcore.auth.algorithm import sha_hmac256 as hmac256
-from aliyunsdkcore.acs_exception.exceptions import ClientException
+from alibabacloud.exceptions import ClientException
 
 
 class TestShaHmac256(unittest.TestCase):

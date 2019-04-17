@@ -14,8 +14,6 @@
 
 from alibabacloud.exceptions import ClientException
 
-import aliyunsdkcore.acs_exception.error_code as error_code
-
 
 def assert_integer_positive(integer, name):
     if isinstance(integer, int) and integer > 0:

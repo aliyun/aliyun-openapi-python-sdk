@@ -27,10 +27,25 @@ from aliyunsdkecs.request.v20140526.CreateDiskRequest import CreateDiskRequest
 from aliyunsdkecs.request.v20140526.RunInstancesRequest import RunInstancesRequest
 from alibabacloud.exceptions import ClientException, ServerException
 
-import aliyunsdkcore.acs_exception.error_code as error_code
 import alibabacloud.retry.retry_policy as retry_policy
 from alibabacloud.retry.retry_condition import RetryCondition
 from alibabacloud.retry.retry_policy_context import RetryPolicyContext
+
+# error code
+SDK_INVALID_REGION_ID = 'SDK.InvalidRegionId'
+SDK_SERVER_UNREACHABLE = 'SDK.ServerUnreachable'
+SDK_INVALID_REQUEST = 'SDK.InvalidRequest'
+SDK_MISSING_ENDPOINTS_FILER = 'SDK.MissingEndpointsFiler'
+SDK_UNKNOWN_SERVER_ERROR = 'SDK.UnknownServerError'
+SDK_INVALID_CREDENTIAL = 'SDK.InvalidCredential'
+SDK_INVALID_SESSION_EXPIRATION = 'SDK.InvalidSessionExpiration'
+SDK_GET_SESSION_CREDENTIAL_FAILED = 'SDK.GetSessionCredentialFailed'
+SDK_INVALID_PARAMS = 'SDK.InvalidParams'
+SDK_NOT_SUPPORT = 'SDK.NotSupport'
+SDK_ENDPOINT_RESOLVING_ERROR = 'SDK.EndpointResolvingError'
+SDK_ENDPOINT_TESTABILITY = 'SDK.EndpointTestability'
+SDK_HTTP_ERROR = 'SDK.HttpError'
+SDK_INVALID_PARAMETER = "SDK.InvalidParameter"
 
 
 class RetryTest(SDKTestBase):
@@ -146,9 +161,9 @@ class RetryTest(SDKTestBase):
         config = client._get_new_style_config(acs_request)
         retryable_client = client._get_new_style_client(acs_request, config)
 
-        timeout_exception = CE(error_code.SDK_HTTP_ERROR)
+        timeout_exception = CE(SDK_HTTP_ERROR)
         invalid_param_excpetion = SE("MissingParameter")
-        unknown_error = SE(error_code.SDK_UNKNOWN_SERVER_ERROR)
+        unknown_error = SE(SDK_UNKNOWN_SERVER_ERROR)
         internal_error = SE("InternalError")
         product_code = retryable_client.product_code.lower()
         product_version = retryable_client.product_version
