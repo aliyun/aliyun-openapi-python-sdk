@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class ModifyReplicaRecoveryModeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dds', '2015-12-01', 'ModifyReplicaRecoveryMode','dds')
+		RpcRequest.__init__(self, 'Dds', '2015-12-01', 'ModifyReplicaRecoveryMode','Dds')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')

@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class DescribeAvailableEngineVersionRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dds', '2015-12-01', 'DescribeAvailableEngineVersion','dds')
+		RpcRequest.__init__(self, 'Dds', '2015-12-01', 'DescribeAvailableEngineVersion','Dds')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')

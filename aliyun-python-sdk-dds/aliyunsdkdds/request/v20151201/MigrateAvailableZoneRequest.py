@@ -18,10 +18,16 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class ModifyAuditPolicyRequest(RpcRequest):
+class MigrateAvailableZoneRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dds', '2015-12-01', 'ModifyAuditPolicy','Dds')
+		RpcRequest.__init__(self, 'Dds', '2015-12-01', 'MigrateAvailableZone','Dds')
+
+	def get_Vswitch(self):
+		return self.get_query_params().get('Vswitch')
+
+	def set_Vswitch(self,Vswitch):
+		self.add_query_param('Vswitch',Vswitch)
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -29,35 +35,29 @@ class ModifyAuditPolicyRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_AuditStatus(self):
-		return self.get_query_params().get('AuditStatus')
-
-	def set_AuditStatus(self,AuditStatus):
-		self.add_query_param('AuditStatus',AuditStatus)
-
-	def get_StoragePeriod(self):
-		return self.get_query_params().get('StoragePeriod')
-
-	def set_StoragePeriod(self,StoragePeriod):
-		self.add_query_param('StoragePeriod',StoragePeriod)
-
-	def get_SecurityToken(self):
-		return self.get_query_params().get('SecurityToken')
-
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)
-
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
+	def get_EffectiveTime(self):
+		return self.get_query_params().get('EffectiveTime')
+
+	def set_EffectiveTime(self,EffectiveTime):
+		self.add_query_param('EffectiveTime',EffectiveTime)
+
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
 
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
+
+	def get_ZoneId(self):
+		return self.get_query_params().get('ZoneId')
+
+	def set_ZoneId(self,ZoneId):
+		self.add_query_param('ZoneId',ZoneId)
 
 	def get_DBInstanceId(self):
 		return self.get_query_params().get('DBInstanceId')

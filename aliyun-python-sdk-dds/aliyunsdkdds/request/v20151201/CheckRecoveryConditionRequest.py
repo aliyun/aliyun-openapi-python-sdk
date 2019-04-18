@@ -18,10 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class ModifyAuditPolicyRequest(RpcRequest):
+class CheckRecoveryConditionRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dds', '2015-12-01', 'ModifyAuditPolicy','Dds')
+		RpcRequest.__init__(self, 'Dds', '2015-12-01', 'CheckRecoveryCondition','Dds')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -29,17 +29,17 @@ class ModifyAuditPolicyRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_AuditStatus(self):
-		return self.get_query_params().get('AuditStatus')
+	def get_RestoreTime(self):
+		return self.get_query_params().get('RestoreTime')
 
-	def set_AuditStatus(self,AuditStatus):
-		self.add_query_param('AuditStatus',AuditStatus)
+	def set_RestoreTime(self,RestoreTime):
+		self.add_query_param('RestoreTime',RestoreTime)
 
-	def get_StoragePeriod(self):
-		return self.get_query_params().get('StoragePeriod')
+	def get_DatabaseNames(self):
+		return self.get_query_params().get('DatabaseNames')
 
-	def set_StoragePeriod(self,StoragePeriod):
-		self.add_query_param('StoragePeriod',StoragePeriod)
+	def set_DatabaseNames(self,DatabaseNames):
+		self.add_query_param('DatabaseNames',DatabaseNames)
 
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
@@ -59,11 +59,17 @@ class ModifyAuditPolicyRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
-	def get_DBInstanceId(self):
-		return self.get_query_params().get('DBInstanceId')
+	def get_BackupId(self):
+		return self.get_query_params().get('BackupId')
 
-	def set_DBInstanceId(self,DBInstanceId):
-		self.add_query_param('DBInstanceId',DBInstanceId)
+	def set_BackupId(self,BackupId):
+		self.add_query_param('BackupId',BackupId)
+
+	def get_SourceDBInstance(self):
+		return self.get_query_params().get('SourceDBInstance')
+
+	def set_SourceDBInstance(self,SourceDBInstance):
+		self.add_query_param('SourceDBInstance',SourceDBInstance)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')

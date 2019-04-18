@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class MigrateToOtherZoneRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dds', '2015-12-01', 'MigrateToOtherZone','dds')
+		RpcRequest.__init__(self, 'Dds', '2015-12-01', 'MigrateToOtherZone','Dds')
 
 	def get_VSwitchId(self):
 		return self.get_query_params().get('VSwitchId')

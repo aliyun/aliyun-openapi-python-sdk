@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class CreateDBInstanceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dds', '2015-12-01', 'CreateDBInstance','dds')
+		RpcRequest.__init__(self, 'Dds', '2015-12-01', 'CreateDBInstance','Dds')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -76,6 +76,12 @@ class CreateDBInstanceRequest(RpcRequest):
 
 	def set_ResourceGroupId(self,ResourceGroupId):
 		self.add_query_param('ResourceGroupId',ResourceGroupId)
+
+	def get_DatabaseNames(self):
+		return self.get_query_params().get('DatabaseNames')
+
+	def set_DatabaseNames(self,DatabaseNames):
+		self.add_query_param('DatabaseNames',DatabaseNames)
 
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')

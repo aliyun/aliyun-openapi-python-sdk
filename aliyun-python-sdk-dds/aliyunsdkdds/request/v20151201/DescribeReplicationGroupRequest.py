@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class DescribeReplicationGroupRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dds', '2015-12-01', 'DescribeReplicationGroup','dds')
+		RpcRequest.__init__(self, 'Dds', '2015-12-01', 'DescribeReplicationGroup','Dds')
 
 	def get_DestinationInstanceIds(self):
 		return self.get_query_params().get('DestinationInstanceIds')

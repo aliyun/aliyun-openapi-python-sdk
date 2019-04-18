@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class ModifyAuditLogFilterRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dds', '2015-12-01', 'ModifyAuditLogFilter','dds')
+		RpcRequest.__init__(self, 'Dds', '2015-12-01', 'ModifyAuditLogFilter','Dds')
 
 	def get_Filter(self):
 		return self.get_query_params().get('Filter')

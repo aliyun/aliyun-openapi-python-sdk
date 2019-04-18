@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class CreateBackupRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dds', '2015-12-01', 'CreateBackup','dds')
+		RpcRequest.__init__(self, 'Dds', '2015-12-01', 'CreateBackup','Dds')
 
 	def get_BackupMethod(self):
 		return self.get_query_params().get('BackupMethod')

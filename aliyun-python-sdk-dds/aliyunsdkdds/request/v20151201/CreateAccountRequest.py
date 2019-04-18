@@ -18,10 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class ModifyAuditPolicyRequest(RpcRequest):
+class CreateAccountRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dds', '2015-12-01', 'ModifyAuditPolicy','Dds')
+		RpcRequest.__init__(self, 'Dds', '2015-12-01', 'CreateAccount','Dds')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -29,17 +29,17 @@ class ModifyAuditPolicyRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_AuditStatus(self):
-		return self.get_query_params().get('AuditStatus')
+	def get_AccountPassword(self):
+		return self.get_query_params().get('AccountPassword')
 
-	def set_AuditStatus(self,AuditStatus):
-		self.add_query_param('AuditStatus',AuditStatus)
+	def set_AccountPassword(self,AccountPassword):
+		self.add_query_param('AccountPassword',AccountPassword)
 
-	def get_StoragePeriod(self):
-		return self.get_query_params().get('StoragePeriod')
+	def get_AccountName(self):
+		return self.get_query_params().get('AccountName')
 
-	def set_StoragePeriod(self,StoragePeriod):
-		self.add_query_param('StoragePeriod',StoragePeriod)
+	def set_AccountName(self,AccountName):
+		self.add_query_param('AccountName',AccountName)
 
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
@@ -70,3 +70,9 @@ class ModifyAuditPolicyRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_AccountDescription(self):
+		return self.get_query_params().get('AccountDescription')
+
+	def set_AccountDescription(self,AccountDescription):
+		self.add_query_param('AccountDescription',AccountDescription)

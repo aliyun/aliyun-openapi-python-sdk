@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class RenewDBInstanceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dds', '2015-12-01', 'RenewDBInstance','dds')
+		RpcRequest.__init__(self, 'Dds', '2015-12-01', 'RenewDBInstance','Dds')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')

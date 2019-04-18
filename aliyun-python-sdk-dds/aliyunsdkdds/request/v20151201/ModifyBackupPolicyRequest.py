@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class ModifyBackupPolicyRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dds', '2015-12-01', 'ModifyBackupPolicy','dds')
+		RpcRequest.__init__(self, 'Dds', '2015-12-01', 'ModifyBackupPolicy','Dds')
 
 	def get_PreferredBackupTime(self):
 		return self.get_query_params().get('PreferredBackupTime')

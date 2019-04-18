@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class ModifyReplicaModeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dds', '2015-12-01', 'ModifyReplicaMode','dds')
+		RpcRequest.__init__(self, 'Dds', '2015-12-01', 'ModifyReplicaMode','Dds')
 
 	def get_DomainMode(self):
 		return self.get_query_params().get('DomainMode')
