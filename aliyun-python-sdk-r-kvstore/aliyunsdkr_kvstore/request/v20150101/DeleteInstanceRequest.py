@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class DeleteInstanceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'R-kvstore', '2015-01-01', 'DeleteInstance','R-kvstore')
+		RpcRequest.__init__(self, 'R-kvstore', '2015-01-01', 'DeleteInstance','redisa')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')

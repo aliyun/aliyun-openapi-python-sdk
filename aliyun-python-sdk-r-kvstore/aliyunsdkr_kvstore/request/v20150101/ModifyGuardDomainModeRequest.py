@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class ModifyGuardDomainModeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'R-kvstore', '2015-01-01', 'ModifyGuardDomainMode','R-kvstore')
+		RpcRequest.__init__(self, 'R-kvstore', '2015-01-01', 'ModifyGuardDomainMode','redisa')
 
 	def get_DomainMode(self):
 		return self.get_query_params().get('DomainMode')

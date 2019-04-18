@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class ModifyInstanceAutoRenewalAttributeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'R-kvstore', '2015-01-01', 'ModifyInstanceAutoRenewalAttribute','R-kvstore')
+		RpcRequest.__init__(self, 'R-kvstore', '2015-01-01', 'ModifyInstanceAutoRenewalAttribute','redisa')
 
 	def get_Duration(self):
 		return self.get_query_params().get('Duration')

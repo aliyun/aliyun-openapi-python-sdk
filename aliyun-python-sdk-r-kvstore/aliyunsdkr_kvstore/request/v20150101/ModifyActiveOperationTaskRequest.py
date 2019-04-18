@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class ModifyActiveOperationTaskRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'R-kvstore', '2015-01-01', 'ModifyActiveOperationTask','R-kvstore')
+		RpcRequest.__init__(self, 'R-kvstore', '2015-01-01', 'ModifyActiveOperationTask','redisa')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')

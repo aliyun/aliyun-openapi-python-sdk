@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class DescribeRunningLogRecordsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'R-kvstore', '2015-01-01', 'DescribeRunningLogRecords','R-kvstore')
+		RpcRequest.__init__(self, 'R-kvstore', '2015-01-01', 'DescribeRunningLogRecords','redisa')
 
 	def get_SQLId(self):
 		return self.get_query_params().get('SQLId')

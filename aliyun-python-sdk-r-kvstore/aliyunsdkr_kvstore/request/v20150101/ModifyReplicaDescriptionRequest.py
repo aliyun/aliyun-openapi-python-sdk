@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class ModifyReplicaDescriptionRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'R-kvstore', '2015-01-01', 'ModifyReplicaDescription','R-kvstore')
+		RpcRequest.__init__(self, 'R-kvstore', '2015-01-01', 'ModifyReplicaDescription','redisa')
 
 	def get_ReplicaDescription(self):
 		return self.get_query_params().get('ReplicaDescription')
