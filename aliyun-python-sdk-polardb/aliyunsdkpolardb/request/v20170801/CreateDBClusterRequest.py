@@ -89,6 +89,12 @@ class CreateDBClusterRequest(RpcRequest):
 	def set_DBNodeClass(self,DBNodeClass):
 		self.add_query_param('DBNodeClass',DBNodeClass)
 
+	def get_AutoRenew(self):
+		return self.get_query_params().get('AutoRenew')
+
+	def set_AutoRenew(self,AutoRenew):
+		self.add_query_param('AutoRenew',AutoRenew)
+
 	def get_Engine(self):
 		return self.get_query_params().get('Engine')
 
