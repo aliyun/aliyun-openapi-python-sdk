@@ -18,13 +18,13 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class QueryInvoicingCustomerListRequest(RpcRequest):
+class UnsubscribeBillToOSSRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'QueryInvoicingCustomerList')
+		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'UnsubscribeBillToOSS')
 
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
+	def get_SubscribeType(self):
+		return self.get_query_params().get('SubscribeType')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
+	def set_SubscribeType(self,SubscribeType):
+		self.add_query_param('SubscribeType',SubscribeType)
