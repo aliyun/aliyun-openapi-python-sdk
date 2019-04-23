@@ -53,6 +53,18 @@ class SaveRegistrantProfileRequest(RpcRequest):
 	def set_RegistrantProfileId(self,RegistrantProfileId):
 		self.add_query_param('RegistrantProfileId',RegistrantProfileId)
 
+	def get_RegistrantType(self):
+		return self.get_query_params().get('RegistrantType')
+
+	def set_RegistrantType(self,RegistrantType):
+		self.add_query_param('RegistrantType',RegistrantType)
+
+	def get_RegistrantProfileType(self):
+		return self.get_query_params().get('RegistrantProfileType')
+
+	def set_RegistrantProfileType(self,RegistrantProfileType):
+		self.add_query_param('RegistrantProfileType',RegistrantProfileType)
+
 	def get_Telephone(self):
 		return self.get_query_params().get('Telephone')
 

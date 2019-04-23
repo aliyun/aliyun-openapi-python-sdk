@@ -18,16 +18,23 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class VerifyContactFieldRequest(RpcRequest):
+class SaveTaskForUpdatingRegistrantInfoByIdentityCredentialRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Domain-intl', '2017-12-18', 'VerifyContactField','domain')
+		RpcRequest.__init__(self, 'Domain-intl', '2017-12-18', 'SaveTaskForUpdatingRegistrantInfoByIdentityCredential','domain')
+		self.set_method('POST')
 
 	def get_Country(self):
 		return self.get_query_params().get('Country')
 
 	def set_Country(self,Country):
 		self.add_query_param('Country',Country)
+
+	def get_IdentityCredentialType(self):
+		return self.get_query_params().get('IdentityCredentialType')
+
+	def set_IdentityCredentialType(self,IdentityCredentialType):
+		self.add_query_param('IdentityCredentialType',IdentityCredentialType)
 
 	def get_Address(self):
 		return self.get_query_params().get('Address')
@@ -47,23 +54,37 @@ class VerifyContactFieldRequest(RpcRequest):
 	def set_City(self,City):
 		self.add_query_param('City',City)
 
-	def get_DomainName(self):
-		return self.get_query_params().get('DomainName')
-
-	def set_DomainName(self,DomainName):
-		self.add_query_param('DomainName',DomainName)
-
 	def get_RegistrantType(self):
 		return self.get_query_params().get('RegistrantType')
 
 	def set_RegistrantType(self,RegistrantType):
 		self.add_query_param('RegistrantType',RegistrantType)
 
+	def get_DomainNames(self):
+		return self.get_query_params().get('DomainNames')
+
+	def set_DomainNames(self,DomainNames):
+		for i in range(len(DomainNames)):	
+			if DomainNames[i] is not None:
+				self.add_query_param('DomainName.' + str(i + 1) , DomainNames[i]);
+
+	def get_IdentityCredential(self):
+		return self.get_body_params().get('IdentityCredential')
+
+	def set_IdentityCredential(self,IdentityCredential):
+		self.add_body_params('IdentityCredential', IdentityCredential)
+
 	def get_Telephone(self):
 		return self.get_query_params().get('Telephone')
 
 	def set_Telephone(self,Telephone):
 		self.add_query_param('Telephone',Telephone)
+
+	def get_TransferOutProhibited(self):
+		return self.get_query_params().get('TransferOutProhibited')
+
+	def set_TransferOutProhibited(self,TransferOutProhibited):
+		self.add_query_param('TransferOutProhibited',TransferOutProhibited)
 
 	def get_RegistrantOrganization(self):
 		return self.get_query_params().get('RegistrantOrganization')
@@ -100,6 +121,12 @@ class VerifyContactFieldRequest(RpcRequest):
 
 	def set_Lang(self,Lang):
 		self.add_query_param('Lang',Lang)
+
+	def get_IdentityCredentialNo(self):
+		return self.get_query_params().get('IdentityCredentialNo')
+
+	def set_IdentityCredentialNo(self,IdentityCredentialNo):
+		self.add_query_param('IdentityCredentialNo',IdentityCredentialNo)
 
 	def get_Email(self):
 		return self.get_query_params().get('Email')
