@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class SwitchDBInstanceVpcRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'SwitchDBInstanceVpc','Rds')
+		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'SwitchDBInstanceVpc','rds')
 
 	def get_VSwitchId(self):
 		return self.get_query_params().get('VSwitchId')

@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class AllocateInstanceVpcNetworkTypeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'AllocateInstanceVpcNetworkType','Rds')
+		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'AllocateInstanceVpcNetworkType','rds')
 
 	def get_TargetVpcId(self):
 		return self.get_query_params().get('TargetVpcId')

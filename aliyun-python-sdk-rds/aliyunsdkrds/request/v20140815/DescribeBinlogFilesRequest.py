@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class DescribeBinlogFilesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'DescribeBinlogFiles','Rds')
+		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'DescribeBinlogFiles','rds')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
