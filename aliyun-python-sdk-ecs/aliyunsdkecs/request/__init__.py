@@ -1,0 +1,1 @@
+from v20140526 import DescribeRegionsRequest
