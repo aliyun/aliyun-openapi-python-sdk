@@ -95,6 +95,12 @@ class CreateLoadBalancerRequest(RpcRequest):
 	def set_AutoPay(self,AutoPay):
 		self.add_query_param('AutoPay',AutoPay)
 
+	def get_Address(self):
+		return self.get_query_params().get('Address')
+
+	def set_Address(self,Address):
+		self.add_query_param('Address',Address)
+
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -160,3 +166,9 @@ class CreateLoadBalancerRequest(RpcRequest):
 
 	def set_PricingCycle(self,PricingCycle):
 		self.add_query_param('PricingCycle',PricingCycle)
+
+	def get_Ratio(self):
+		return self.get_query_params().get('Ratio')
+
+	def set_Ratio(self,Ratio):
+		self.add_query_param('Ratio',Ratio)

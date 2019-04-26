@@ -29,6 +29,12 @@ class DescribeLoadBalancerAttributeRequest(RpcRequest):
 	def set_access_key_id(self,access_key_id):
 		self.add_query_param('access_key_id',access_key_id)
 
+	def get_IncludeReservedData(self):
+		return self.get_query_params().get('IncludeReservedData')
+
+	def set_IncludeReservedData(self,IncludeReservedData):
+		self.add_query_param('IncludeReservedData',IncludeReservedData)
+
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 

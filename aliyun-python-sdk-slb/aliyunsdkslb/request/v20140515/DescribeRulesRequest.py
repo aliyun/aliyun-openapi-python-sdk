@@ -65,6 +65,12 @@ class DescribeRulesRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
+	def get_ListenerProtocol(self):
+		return self.get_query_params().get('ListenerProtocol')
+
+	def set_ListenerProtocol(self,ListenerProtocol):
+		self.add_query_param('ListenerProtocol',ListenerProtocol)
+
 	def get_Tags(self):
 		return self.get_query_params().get('Tags')
 

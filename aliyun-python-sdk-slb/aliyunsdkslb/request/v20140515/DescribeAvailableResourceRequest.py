@@ -18,10 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class DescribeLoadBalancerAutoReleaseTimeRequest(RpcRequest):
+class DescribeAvailableResourceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Slb', '2014-05-15', 'DescribeLoadBalancerAutoReleaseTime','slb')
+		RpcRequest.__init__(self, 'Slb', '2014-05-15', 'DescribeAvailableResource','slb')
 
 	def get_access_key_id(self):
 		return self.get_query_params().get('access_key_id')
@@ -35,12 +35,6 @@ class DescribeLoadBalancerAutoReleaseTimeRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_LoadBalancerId(self):
-		return self.get_query_params().get('LoadBalancerId')
-
-	def set_LoadBalancerId(self,LoadBalancerId):
-		self.add_query_param('LoadBalancerId',LoadBalancerId)
-
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -53,14 +47,20 @@ class DescribeLoadBalancerAutoReleaseTimeRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
+	def get_AddressType(self):
+		return self.get_query_params().get('AddressType')
+
+	def set_AddressType(self,AddressType):
+		self.add_query_param('AddressType',AddressType)
+
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_Tags(self):
-		return self.get_query_params().get('Tags')
+	def get_AddressIPVersion(self):
+		return self.get_query_params().get('AddressIPVersion')
 
-	def set_Tags(self,Tags):
-		self.add_query_param('Tags',Tags)
+	def set_AddressIPVersion(self,AddressIPVersion):
+		self.add_query_param('AddressIPVersion',AddressIPVersion)

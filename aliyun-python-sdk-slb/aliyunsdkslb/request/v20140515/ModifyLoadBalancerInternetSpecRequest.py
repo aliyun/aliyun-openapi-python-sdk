@@ -35,12 +35,6 @@ class ModifyLoadBalancerInternetSpecRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_LoadBalancerId(self):
-		return self.get_query_params().get('LoadBalancerId')
-
-	def set_LoadBalancerId(self,LoadBalancerId):
-		self.add_query_param('LoadBalancerId',LoadBalancerId)
-
 	def get_AutoPay(self):
 		return self.get_query_params().get('AutoPay')
 
@@ -59,12 +53,6 @@ class ModifyLoadBalancerInternetSpecRequest(RpcRequest):
 	def set_Bandwidth(self,Bandwidth):
 		self.add_query_param('Bandwidth',Bandwidth)
 
-	def get_InternetChargeType(self):
-		return self.get_query_params().get('InternetChargeType')
-
-	def set_InternetChargeType(self,InternetChargeType):
-		self.add_query_param('InternetChargeType',InternetChargeType)
-
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
 
@@ -82,3 +70,21 @@ class ModifyLoadBalancerInternetSpecRequest(RpcRequest):
 
 	def set_Tags(self,Tags):
 		self.add_query_param('Tags',Tags)
+
+	def get_LoadBalancerId(self):
+		return self.get_query_params().get('LoadBalancerId')
+
+	def set_LoadBalancerId(self,LoadBalancerId):
+		self.add_query_param('LoadBalancerId',LoadBalancerId)
+
+	def get_InternetChargeType(self):
+		return self.get_query_params().get('InternetChargeType')
+
+	def set_InternetChargeType(self,InternetChargeType):
+		self.add_query_param('InternetChargeType',InternetChargeType)
+
+	def get_Ratio(self):
+		return self.get_query_params().get('Ratio')
+
+	def set_Ratio(self,Ratio):
+		self.add_query_param('Ratio',Ratio)
