@@ -42,6 +42,12 @@ class StartMPUTaskRequest(RpcRequest):
 	def set_BackgroundColor(self,BackgroundColor):
 		self.add_query_param('BackgroundColor',BackgroundColor)
 
+	def get_TaskProfile(self):
+		return self.get_query_params().get('TaskProfile')
+
+	def set_TaskProfile(self,TaskProfile):
+		self.add_query_param('TaskProfile',TaskProfile)
+
 	def get_LayoutIdss(self):
 		return self.get_query_params().get('LayoutIdss')
 
