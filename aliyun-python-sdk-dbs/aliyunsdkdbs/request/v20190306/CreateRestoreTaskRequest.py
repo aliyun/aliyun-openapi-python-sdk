@@ -125,6 +125,12 @@ class CreateRestoreTaskRequest(RpcRequest):
 	def set_RestoreTaskName(self,RestoreTaskName):
 		self.add_query_param('RestoreTaskName',RestoreTaskName)
 
+	def get_DuplicateConflict(self):
+		return self.get_query_params().get('DuplicateConflict')
+
+	def set_DuplicateConflict(self,DuplicateConflict):
+		self.add_query_param('DuplicateConflict',DuplicateConflict)
+
 	def get_DestinationEndpointPassword(self):
 		return self.get_query_params().get('DestinationEndpointPassword')
 
