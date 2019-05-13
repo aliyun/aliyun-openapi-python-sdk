@@ -18,10 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class CreateCommandRequest(RpcRequest):
+class ModifyReservedInstanceAttributeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'CreateCommand','ecs')
+		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'ModifyReservedInstanceAttribute','ecs')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -29,35 +29,11 @@ class CreateCommandRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_WorkingDir(self):
-		return self.get_query_params().get('WorkingDir')
-
-	def set_WorkingDir(self,WorkingDir):
-		self.add_query_param('WorkingDir',WorkingDir)
-
 	def get_Description(self):
 		return self.get_query_params().get('Description')
 
 	def set_Description(self,Description):
 		self.add_query_param('Description',Description)
-
-	def get_Type(self):
-		return self.get_query_params().get('Type')
-
-	def set_Type(self,Type):
-		self.add_query_param('Type',Type)
-
-	def get_CommandContent(self):
-		return self.get_query_params().get('CommandContent')
-
-	def set_CommandContent(self,CommandContent):
-		self.add_query_param('CommandContent',CommandContent)
-
-	def get_Timeout(self):
-		return self.get_query_params().get('Timeout')
-
-	def set_Timeout(self,Timeout):
-		self.add_query_param('Timeout',Timeout)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -77,14 +53,14 @@ class CreateCommandRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_Name(self):
-		return self.get_query_params().get('Name')
+	def get_ReservedInstanceId(self):
+		return self.get_query_params().get('ReservedInstanceId')
 
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)
+	def set_ReservedInstanceId(self,ReservedInstanceId):
+		self.add_query_param('ReservedInstanceId',ReservedInstanceId)
 
-	def get_EnableParameter(self):
-		return self.get_query_params().get('EnableParameter')
+	def get_ReservedInstanceName(self):
+		return self.get_query_params().get('ReservedInstanceName')
 
-	def set_EnableParameter(self,EnableParameter):
-		self.add_query_param('EnableParameter',EnableParameter)
+	def set_ReservedInstanceName(self,ReservedInstanceName):
+		self.add_query_param('ReservedInstanceName',ReservedInstanceName)

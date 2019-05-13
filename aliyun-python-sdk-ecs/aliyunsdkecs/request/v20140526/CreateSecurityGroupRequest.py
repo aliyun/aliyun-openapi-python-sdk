@@ -65,6 +65,12 @@ class CreateSecurityGroupRequest(RpcRequest):
 	def set_SecurityGroupName(self,SecurityGroupName):
 		self.add_query_param('SecurityGroupName',SecurityGroupName)
 
+	def get_SecurityGroupType(self):
+		return self.get_query_params().get('SecurityGroupType')
+
+	def set_SecurityGroupType(self,SecurityGroupType):
+		self.add_query_param('SecurityGroupType',SecurityGroupType)
+
 	def get_ResourceGroupId(self):
 		return self.get_query_params().get('ResourceGroupId')
 

@@ -142,6 +142,12 @@ class AllocateDedicatedHostsRequest(RpcRequest):
 	def set_ZoneId(self,ZoneId):
 		self.add_query_param('ZoneId',ZoneId)
 
+	def get_AutoPlacement(self):
+		return self.get_query_params().get('AutoPlacement')
+
+	def set_AutoPlacement(self,AutoPlacement):
+		self.add_query_param('AutoPlacement',AutoPlacement)
+
 	def get_ChargeType(self):
 		return self.get_query_params().get('ChargeType')
 

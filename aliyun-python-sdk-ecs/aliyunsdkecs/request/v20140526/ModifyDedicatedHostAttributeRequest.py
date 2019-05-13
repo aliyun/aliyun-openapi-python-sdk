@@ -77,6 +77,12 @@ class ModifyDedicatedHostAttributeRequest(RpcRequest):
 	def set_NetworkAttributesSlbUdpTimeout(self,NetworkAttributesSlbUdpTimeout):
 		self.add_query_param('NetworkAttributes.SlbUdpTimeout',NetworkAttributesSlbUdpTimeout)
 
+	def get_AutoPlacement(self):
+		return self.get_query_params().get('AutoPlacement')
+
+	def set_AutoPlacement(self,AutoPlacement):
+		self.add_query_param('AutoPlacement',AutoPlacement)
+
 	def get_NetworkAttributesUdpTimeout(self):
 		return self.get_query_params().get('NetworkAttributes.UdpTimeout')
 

@@ -82,6 +82,12 @@ class CopyImageRequest(RpcRequest):
 				self.add_query_param('Tag.' + str(i + 1) + '.Key' , Tags[i].get('Key'))
 
 
+	def get_KMSKeyId(self):
+		return self.get_query_params().get('KMSKeyId')
+
+	def set_KMSKeyId(self,KMSKeyId):
+		self.add_query_param('KMSKeyId',KMSKeyId)
+
 	def get_DestinationDescription(self):
 		return self.get_query_params().get('DestinationDescription')
 
