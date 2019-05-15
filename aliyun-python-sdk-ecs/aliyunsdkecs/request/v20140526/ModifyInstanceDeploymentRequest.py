@@ -47,6 +47,12 @@ class ModifyInstanceDeploymentRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
+	def get_Tenancy(self):
+		return self.get_query_params().get('Tenancy')
+
+	def set_Tenancy(self,Tenancy):
+		self.add_query_param('Tenancy',Tenancy)
+
 	def get_DedicatedHostId(self):
 		return self.get_query_params().get('DedicatedHostId')
 
@@ -70,3 +76,9 @@ class ModifyInstanceDeploymentRequest(RpcRequest):
 
 	def set_Force(self,Force):
 		self.add_query_param('Force',Force)
+
+	def get_Affinity(self):
+		return self.get_query_params().get('Affinity')
+
+	def set_Affinity(self,Affinity):
+		self.add_query_param('Affinity',Affinity)

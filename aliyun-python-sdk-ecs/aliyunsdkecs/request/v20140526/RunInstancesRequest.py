@@ -210,6 +210,12 @@ class RunInstancesRequest(RpcRequest):
 	def set_InternetMaxBandwidthIn(self,InternetMaxBandwidthIn):
 		self.add_query_param('InternetMaxBandwidthIn',InternetMaxBandwidthIn)
 
+	def get_Affinity(self):
+		return self.get_query_params().get('Affinity')
+
+	def set_Affinity(self,Affinity):
+		self.add_query_param('Affinity',Affinity)
+
 	def get_ImageId(self):
 		return self.get_query_params().get('ImageId')
 
@@ -334,6 +340,12 @@ class RunInstancesRequest(RpcRequest):
 
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
+
+	def get_Tenancy(self):
+		return self.get_query_params().get('Tenancy')
+
+	def set_Tenancy(self,Tenancy):
+		self.add_query_param('Tenancy',Tenancy)
 
 	def get_SystemDiskDiskName(self):
 		return self.get_query_params().get('SystemDisk.DiskName')
