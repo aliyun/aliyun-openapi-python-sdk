@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RoaRequest
 class AttachInstancesRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'CS', '2015-12-15', 'AttachInstances','cs')
+		RoaRequest.__init__(self, 'CS', '2015-12-15', 'AttachInstances')
 		self.set_uri_pattern('/clusters/[ClusterId]/attach')
 		self.set_method('POST')
 

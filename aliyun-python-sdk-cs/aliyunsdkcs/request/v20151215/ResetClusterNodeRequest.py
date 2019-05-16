@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RoaRequest
 class ResetClusterNodeRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'CS', '2015-12-15', 'ResetClusterNode','cs')
+		RoaRequest.__init__(self, 'CS', '2015-12-15', 'ResetClusterNode')
 		self.set_uri_pattern('/clusters/[ClusterId]/instances/[InstanceId]/reset')
 		self.set_method('POST')
 

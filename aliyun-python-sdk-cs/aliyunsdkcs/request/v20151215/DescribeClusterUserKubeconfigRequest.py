@@ -21,9 +21,15 @@ from aliyunsdkcore.request import RoaRequest
 class DescribeClusterUserKubeconfigRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'CS', '2015-12-15', 'DescribeClusterUserKubeconfig','cs')
+		RoaRequest.__init__(self, 'CS', '2015-12-15', 'DescribeClusterUserKubeconfig')
 		self.set_uri_pattern('/k8s/[ClusterId]/user_config')
 		self.set_method('GET')
+
+	def get_PrivateIpAddress(self):
+		return self.get_query_params().get('PrivateIpAddress')
+
+	def set_PrivateIpAddress(self,PrivateIpAddress):
+		self.add_query_param('PrivateIpAddress',PrivateIpAddress)
 
 	def get_ClusterId(self):
 		return self.get_path_params().get('ClusterId')

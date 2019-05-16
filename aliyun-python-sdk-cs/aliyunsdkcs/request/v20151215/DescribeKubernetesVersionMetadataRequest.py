@@ -18,15 +18,33 @@
 # under the License.
 
 from aliyunsdkcore.request import RoaRequest
-class DescribeClusterCertsRequest(RoaRequest):
+class DescribeKubernetesVersionMetadataRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'CS', '2015-12-15', 'DescribeClusterCerts')
-		self.set_uri_pattern('/clusters/[ClusterId]/certs')
+		RoaRequest.__init__(self, 'CS', '2015-12-15', 'DescribeKubernetesVersionMetadata')
+		self.set_uri_pattern('/api/v1/metadata/versions')
 		self.set_method('GET')
 
-	def get_ClusterId(self):
-		return self.get_path_params().get('ClusterId')
+	def get_ClusterType(self):
+		return self.get_query_params().get('ClusterType')
 
-	def set_ClusterId(self,ClusterId):
-		self.add_path_param('ClusterId',ClusterId)
+	def set_ClusterType(self,ClusterType):
+		self.add_query_param('ClusterType',ClusterType)
+
+	def get_MultiAZ(self):
+		return self.get_query_params().get('MultiAZ')
+
+	def set_MultiAZ(self,MultiAZ):
+		self.add_query_param('MultiAZ',MultiAZ)
+
+	def get_KubernetesVersion(self):
+		return self.get_query_params().get('KubernetesVersion')
+
+	def set_KubernetesVersion(self,KubernetesVersion):
+		self.add_query_param('KubernetesVersion',KubernetesVersion)
+
+	def get_Region(self):
+		return self.get_query_params().get('Region')
+
+	def set_Region(self,Region):
+		self.add_query_param('Region',Region)

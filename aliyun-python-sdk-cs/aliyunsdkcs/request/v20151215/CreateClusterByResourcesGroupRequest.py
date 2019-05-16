@@ -18,15 +18,15 @@
 # under the License.
 
 from aliyunsdkcore.request import RoaRequest
-class DeleteClusterRequest(RoaRequest):
+class CreateClusterByResourcesGroupRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'CS', '2015-12-15', 'DeleteCluster')
-		self.set_uri_pattern('/clusters/[ClusterId]')
-		self.set_method('DELETE')
+		RoaRequest.__init__(self, 'CS', '2015-12-15', 'CreateClusterByResourcesGroup')
+		self.set_uri_pattern('/resource_groups/[ResourceGroupId]/clusters')
+		self.set_method('POST')
 
-	def get_ClusterId(self):
-		return self.get_path_params().get('ClusterId')
+	def get_ResourceGroupId(self):
+		return self.get_path_params().get('ResourceGroupId')
 
-	def set_ClusterId(self,ClusterId):
-		self.add_path_param('ClusterId',ClusterId)
+	def set_ResourceGroupId(self,ResourceGroupId):
+		self.add_path_param('ResourceGroupId',ResourceGroupId)

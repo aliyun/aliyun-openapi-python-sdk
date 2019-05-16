@@ -18,15 +18,21 @@
 # under the License.
 
 from aliyunsdkcore.request import RoaRequest
-class DeleteClusterRequest(RoaRequest):
+class DescribeEdgeClusterAttachScriptsRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'CS', '2015-12-15', 'DeleteCluster')
-		self.set_uri_pattern('/clusters/[ClusterId]')
-		self.set_method('DELETE')
+		RoaRequest.__init__(self, 'CS', '2015-12-15', 'DescribeEdgeClusterAttachScripts')
+		self.set_uri_pattern('/clusters/[ClusterId]/attachscript')
+		self.set_method('GET')
 
 	def get_ClusterId(self):
 		return self.get_path_params().get('ClusterId')
 
 	def set_ClusterId(self,ClusterId):
 		self.add_path_param('ClusterId',ClusterId)
+
+	def get_NamePrefix(self):
+		return self.get_query_params().get('NamePrefix')
+
+	def set_NamePrefix(self,NamePrefix):
+		self.add_query_param('NamePrefix',NamePrefix)

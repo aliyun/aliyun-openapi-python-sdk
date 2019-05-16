@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RoaRequest
 class ScaleClusterRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'CS', '2015-12-15', 'ScaleCluster','cs')
+		RoaRequest.__init__(self, 'CS', '2015-12-15', 'ScaleCluster')
 		self.set_uri_pattern('/clusters/[ClusterId]')
 		self.set_method('PUT')
 
