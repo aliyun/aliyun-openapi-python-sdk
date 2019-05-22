@@ -18,10 +18,16 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class ModifyPrepayInstanceSpecRequest(RpcRequest):
+class ReportInstancesStatusRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'ModifyPrepayInstanceSpec','ecs')
+		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'ReportInstancesStatus','ecs')
+
+	def get_Reason(self):
+		return self.get_query_params().get('Reason')
+
+	def set_Reason(self,Reason):
+		self.add_query_param('Reason',Reason)
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -29,23 +35,31 @@ class ModifyPrepayInstanceSpecRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_AutoPay(self):
-		return self.get_query_params().get('AutoPay')
+	def get_Description(self):
+		return self.get_query_params().get('Description')
 
-	def set_AutoPay(self,AutoPay):
-		self.add_query_param('AutoPay',AutoPay)
+	def set_Description(self,Description):
+		self.add_query_param('Description',Description)
+
+	def get_StartTime(self):
+		return self.get_query_params().get('StartTime')
+
+	def set_StartTime(self,StartTime):
+		self.add_query_param('StartTime',StartTime)
+
+	def get_DiskIds(self):
+		return self.get_query_params().get('DiskIds')
+
+	def set_DiskIds(self,DiskIds):
+		for i in range(len(DiskIds)):	
+			if DiskIds[i] is not None:
+				self.add_query_param('DiskId.' + str(i + 1) , DiskIds[i]);
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_ClientToken(self):
-		return self.get_query_params().get('ClientToken')
-
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
 
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
@@ -65,38 +79,18 @@ class ModifyPrepayInstanceSpecRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_OperatorType(self):
-		return self.get_query_params().get('OperatorType')
+	def get_InstanceIds(self):
+		return self.get_query_params().get('InstanceIds')
 
-	def set_OperatorType(self,OperatorType):
-		self.add_query_param('OperatorType',OperatorType)
+	def set_InstanceIds(self,InstanceIds):
+		for i in range(len(InstanceIds)):	
+			if InstanceIds[i] is not None:
+				self.add_query_param('InstanceId.' + str(i + 1) , InstanceIds[i]);
 
-	def get_SystemDiskCategory(self):
-		return self.get_query_params().get('SystemDisk.Category')
+	def get_Devices(self):
+		return self.get_query_params().get('Devices')
 
-	def set_SystemDiskCategory(self,SystemDiskCategory):
-		self.add_query_param('SystemDisk.Category',SystemDiskCategory)
-
-	def get_RebootTime(self):
-		return self.get_query_params().get('RebootTime')
-
-	def set_RebootTime(self,RebootTime):
-		self.add_query_param('RebootTime',RebootTime)
-
-	def get_InstanceId(self):
-		return self.get_query_params().get('InstanceId')
-
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
-
-	def get_MigrateAcrossZone(self):
-		return self.get_query_params().get('MigrateAcrossZone')
-
-	def set_MigrateAcrossZone(self,MigrateAcrossZone):
-		self.add_query_param('MigrateAcrossZone',MigrateAcrossZone)
-
-	def get_InstanceType(self):
-		return self.get_query_params().get('InstanceType')
-
-	def set_InstanceType(self,InstanceType):
-		self.add_query_param('InstanceType',InstanceType)
+	def set_Devices(self,Devices):
+		for i in range(len(Devices)):	
+			if Devices[i] is not None:
+				self.add_query_param('Device.' + str(i + 1) , Devices[i]);
