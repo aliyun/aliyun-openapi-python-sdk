@@ -18,7 +18,21 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class DescribeSiteMonitorQuotaRequest(RpcRequest):
+class DeleteMetricRuleTargetsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cms', '2019-01-01', 'DescribeSiteMonitorQuota','cms')
+		RpcRequest.__init__(self, 'Cms', '2019-01-01', 'DeleteMetricRuleTargets','cms')
+
+	def get_TargetIdss(self):
+		return self.get_query_params().get('TargetIdss')
+
+	def set_TargetIdss(self,TargetIdss):
+		for i in range(len(TargetIdss)):	
+			if TargetIdss[i] is not None:
+				self.add_query_param('TargetIds.' + str(i + 1) , TargetIdss[i]);
+
+	def get_RuleId(self):
+		return self.get_query_params().get('RuleId')
+
+	def set_RuleId(self,RuleId):
+		self.add_query_param('RuleId',RuleId)

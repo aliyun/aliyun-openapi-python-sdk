@@ -59,11 +59,11 @@ class DescribeSiteMonitorDataRequest(RpcRequest):
 	def set_Type(self,Type):
 		self.add_query_param('Type',Type)
 
-	def get_metricName(self):
-		return self.get_query_params().get('metricName')
+	def get_MetricName(self):
+		return self.get_query_params().get('MetricName')
 
-	def set_metricName(self,metricName):
-		self.add_query_param('metricName',metricName)
+	def set_MetricName(self,MetricName):
+		self.add_query_param('MetricName',MetricName)
 
 	def get_TaskId(self):
 		return self.get_query_params().get('TaskId')

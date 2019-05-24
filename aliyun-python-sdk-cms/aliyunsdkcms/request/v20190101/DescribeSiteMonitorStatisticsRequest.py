@@ -29,6 +29,12 @@ class DescribeSiteMonitorStatisticsRequest(RpcRequest):
 	def set_TimeRange(self,TimeRange):
 		self.add_query_param('TimeRange',TimeRange)
 
+	def get_StartTime(self):
+		return self.get_query_params().get('StartTime')
+
+	def set_StartTime(self,StartTime):
+		self.add_query_param('StartTime',StartTime)
+
 	def get_MetricName(self):
 		return self.get_query_params().get('MetricName')
 
