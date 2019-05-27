@@ -18,10 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class DeleteVideoRequest(RpcRequest):
+class CreateVideoCompressTaskRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'imm', '2017-09-06', 'DeleteVideo','imm')
+		RpcRequest.__init__(self, 'imm', '2017-09-06', 'CreateVideoCompressTask','imm')
 
 	def get_VideoUri(self):
 		return self.get_query_params().get('VideoUri')
@@ -29,20 +29,26 @@ class DeleteVideoRequest(RpcRequest):
 	def set_VideoUri(self,VideoUri):
 		self.add_query_param('VideoUri',VideoUri)
 
+	def get_NotifyTopicName(self):
+		return self.get_query_params().get('NotifyTopicName')
+
+	def set_NotifyTopicName(self,NotifyTopicName):
+		self.add_query_param('NotifyTopicName',NotifyTopicName)
+
+	def get_TargetList(self):
+		return self.get_query_params().get('TargetList')
+
+	def set_TargetList(self,TargetList):
+		self.add_query_param('TargetList',TargetList)
+
+	def get_NotifyEndpoint(self):
+		return self.get_query_params().get('NotifyEndpoint')
+
+	def set_NotifyEndpoint(self,NotifyEndpoint):
+		self.add_query_param('NotifyEndpoint',NotifyEndpoint)
+
 	def get_Project(self):
 		return self.get_query_params().get('Project')
 
 	def set_Project(self,Project):
 		self.add_query_param('Project',Project)
-
-	def get_SetId(self):
-		return self.get_query_params().get('SetId')
-
-	def set_SetId(self,SetId):
-		self.add_query_param('SetId',SetId)
-
-	def get_Resources(self):
-		return self.get_query_params().get('Resources')
-
-	def set_Resources(self,Resources):
-		self.add_query_param('Resources',Resources)
