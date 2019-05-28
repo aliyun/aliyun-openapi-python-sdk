@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class CreateDBInstanceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'CreateDBInstance','rds')
+		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'CreateDBInstance','Rds')
 
 	def get_ConnectionMode(self):
 		return self.get_query_params().get('ConnectionMode')
@@ -113,6 +113,12 @@ class CreateDBInstanceRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
+	def get_EncryptionKey(self):
+		return self.get_query_params().get('EncryptionKey')
+
+	def set_EncryptionKey(self,EncryptionKey):
+		self.add_query_param('EncryptionKey',EncryptionKey)
+
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
@@ -148,6 +154,18 @@ class CreateDBInstanceRequest(RpcRequest):
 
 	def set_PrivateIpAddress(self,PrivateIpAddress):
 		self.add_query_param('PrivateIpAddress',PrivateIpAddress)
+
+	def get_AutoRenew(self):
+		return self.get_query_params().get('AutoRenew')
+
+	def set_AutoRenew(self,AutoRenew):
+		self.add_query_param('AutoRenew',AutoRenew)
+
+	def get_RoleARN(self):
+		return self.get_query_params().get('RoleARN')
+
+	def set_RoleARN(self,RoleARN):
+		self.add_query_param('RoleARN',RoleARN)
 
 	def get_VPCId(self):
 		return self.get_query_params().get('VPCId')
