@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class GrantOperatorPermissionRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'GrantOperatorPermission','Rds')
+		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'GrantOperatorPermission','rds')
 
 	def get_Privileges(self):
 		return self.get_query_params().get('Privileges')
