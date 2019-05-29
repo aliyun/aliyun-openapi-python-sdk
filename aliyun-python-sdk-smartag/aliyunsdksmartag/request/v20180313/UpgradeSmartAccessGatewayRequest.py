@@ -29,17 +29,23 @@ class UpgradeSmartAccessGatewayRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_AutoPay(self):
-		return self.get_query_params().get('AutoPay')
-
-	def set_AutoPay(self,AutoPay):
-		self.add_query_param('AutoPay',AutoPay)
-
 	def get_BandWidthSpec(self):
 		return self.get_query_params().get('BandWidthSpec')
 
 	def set_BandWidthSpec(self,BandWidthSpec):
 		self.add_query_param('BandWidthSpec',BandWidthSpec)
+
+	def get_UserCount(self):
+		return self.get_query_params().get('UserCount')
+
+	def set_UserCount(self,UserCount):
+		self.add_query_param('UserCount',UserCount)
+
+	def get_AutoPay(self):
+		return self.get_query_params().get('AutoPay')
+
+	def set_AutoPay(self,AutoPay):
+		self.add_query_param('AutoPay',AutoPay)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -53,14 +59,20 @@ class UpgradeSmartAccessGatewayRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
+
 	def get_SmartAGId(self):
 		return self.get_query_params().get('SmartAGId')
 
 	def set_SmartAGId(self,SmartAGId):
 		self.add_query_param('SmartAGId',SmartAGId)
 
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
+	def get_DataPlan(self):
+		return self.get_query_params().get('DataPlan')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
+	def set_DataPlan(self,DataPlan):
+		self.add_query_param('DataPlan',DataPlan)

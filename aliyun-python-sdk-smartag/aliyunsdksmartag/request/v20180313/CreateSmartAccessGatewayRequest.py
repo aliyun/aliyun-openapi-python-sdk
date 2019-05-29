@@ -53,11 +53,23 @@ class CreateSmartAccessGatewayRequest(RpcRequest):
 	def set_ReceiverDistrict(self,ReceiverDistrict):
 		self.add_query_param('ReceiverDistrict',ReceiverDistrict)
 
+	def get_UserCount(self):
+		return self.get_query_params().get('UserCount')
+
+	def set_UserCount(self,UserCount):
+		self.add_query_param('UserCount',UserCount)
+
 	def get_ReceiverAddress(self):
 		return self.get_query_params().get('ReceiverAddress')
 
 	def set_ReceiverAddress(self,ReceiverAddress):
 		self.add_query_param('ReceiverAddress',ReceiverAddress)
+
+	def get_InstanceType(self):
+		return self.get_query_params().get('InstanceType')
+
+	def set_InstanceType(self,InstanceType):
+		self.add_query_param('InstanceType',InstanceType)
 
 	def get_BuyerMessage(self):
 		return self.get_query_params().get('BuyerMessage')
@@ -160,6 +172,12 @@ class CreateSmartAccessGatewayRequest(RpcRequest):
 
 	def set_ChargeType(self,ChargeType):
 		self.add_query_param('ChargeType',ChargeType)
+
+	def get_DataPlan(self):
+		return self.get_query_params().get('DataPlan')
+
+	def set_DataPlan(self,DataPlan):
+		self.add_query_param('DataPlan',DataPlan)
 
 	def get_ReceiverZip(self):
 		return self.get_query_params().get('ReceiverZip')

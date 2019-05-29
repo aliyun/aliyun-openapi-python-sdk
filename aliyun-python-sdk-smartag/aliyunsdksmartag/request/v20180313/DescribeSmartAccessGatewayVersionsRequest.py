@@ -41,14 +41,14 @@ class DescribeSmartAccessGatewayVersionsRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
-	def get_SmartAGId(self):
-		return self.get_query_params().get('SmartAGId')
-
-	def set_SmartAGId(self,SmartAGId):
-		self.add_query_param('SmartAGId',SmartAGId)
-
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_SmartAGId(self):
+		return self.get_query_params().get('SmartAGId')
+
+	def set_SmartAGId(self,SmartAGId):
+		self.add_query_param('SmartAGId',SmartAGId)

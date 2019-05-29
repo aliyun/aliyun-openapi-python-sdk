@@ -29,23 +29,52 @@ class ModifySmartAccessGatewayRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
-
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
 	def get_City(self):
 		return self.get_query_params().get('City')
 
 	def set_City(self,City):
 		self.add_query_param('City',City)
 
+	def get_Description(self):
+		return self.get_query_params().get('Description')
+
+	def set_Description(self,Description):
+		self.add_query_param('Description',Description)
+
+	def get_SecurityLockThreshold(self):
+		return self.get_query_params().get('SecurityLockThreshold')
+
+	def set_SecurityLockThreshold(self,SecurityLockThreshold):
+		self.add_query_param('SecurityLockThreshold',SecurityLockThreshold)
+
+	def get_SnatEntriess(self):
+		return self.get_query_params().get('SnatEntriess')
+
+	def set_SnatEntriess(self,SnatEntriess):
+		for i in range(len(SnatEntriess)):	
+			if SnatEntriess[i].get('CidrBlock') is not None:
+				self.add_query_param('SnatEntries.' + str(i + 1) + '.CidrBlock' , SnatEntriess[i].get('CidrBlock'))
+			if SnatEntriess[i].get('SnatIp') is not None:
+				self.add_query_param('SnatEntries.' + str(i + 1) + '.SnatIp' , SnatEntriess[i].get('SnatIp'))
+
+
+	def get_ResourceOwnerAccount(self):
+		return self.get_query_params().get('ResourceOwnerAccount')
+
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
 
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
+
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
 
 	def get_Name(self):
 		return self.get_query_params().get('Name')
@@ -64,21 +93,3 @@ class ModifySmartAccessGatewayRequest(RpcRequest):
 
 	def set_SmartAGId(self,SmartAGId):
 		self.add_query_param('SmartAGId',SmartAGId)
-
-	def get_Description(self):
-		return self.get_query_params().get('Description')
-
-	def set_Description(self,Description):
-		self.add_query_param('Description',Description)
-
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_SecurityLockThreshold(self):
-		return self.get_query_params().get('SecurityLockThreshold')
-
-	def set_SecurityLockThreshold(self,SecurityLockThreshold):
-		self.add_query_param('SecurityLockThreshold',SecurityLockThreshold)

@@ -29,6 +29,12 @@ class DeleteCloudConnectNetworkRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_CcnId(self):
+		return self.get_query_params().get('CcnId')
+
+	def set_CcnId(self,CcnId):
+		self.add_query_param('CcnId',CcnId)
+
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -40,12 +46,6 @@ class DeleteCloudConnectNetworkRequest(RpcRequest):
 
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
-
-	def get_CcnId(self):
-		return self.get_query_params().get('CcnId')
-
-	def set_CcnId(self,CcnId):
-		self.add_query_param('CcnId',CcnId)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')

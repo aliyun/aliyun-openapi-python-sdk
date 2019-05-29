@@ -29,17 +29,17 @@ class RevokeInstanceFromCbnRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_CcnInstanceId(self):
+		return self.get_query_params().get('CcnInstanceId')
+
+	def set_CcnInstanceId(self,CcnInstanceId):
+		self.add_query_param('CcnInstanceId',CcnInstanceId)
+
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_CenInstanceId(self):
-		return self.get_query_params().get('CenInstanceId')
-
-	def set_CenInstanceId(self,CenInstanceId):
-		self.add_query_param('CenInstanceId',CenInstanceId)
 
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
@@ -47,14 +47,14 @@ class RevokeInstanceFromCbnRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
-	def get_CcnInstanceId(self):
-		return self.get_query_params().get('CcnInstanceId')
-
-	def set_CcnInstanceId(self,CcnInstanceId):
-		self.add_query_param('CcnInstanceId',CcnInstanceId)
-
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_CenInstanceId(self):
+		return self.get_query_params().get('CenInstanceId')
+
+	def set_CenInstanceId(self,CenInstanceId):
+		self.add_query_param('CenInstanceId',CenInstanceId)
