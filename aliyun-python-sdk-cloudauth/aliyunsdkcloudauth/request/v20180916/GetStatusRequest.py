@@ -22,7 +22,7 @@ class GetStatusRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Cloudauth', '2018-09-16', 'GetStatus','cloudauth')
-		self.set_protocol_type('https');
+		self.set_protocol_type('https')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')

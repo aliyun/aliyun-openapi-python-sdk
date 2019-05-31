@@ -22,7 +22,7 @@ class SubmitVerificationRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Cloudauth', '2018-09-16', 'SubmitVerification','cloudauth')
-		self.set_protocol_type('https');
+		self.set_protocol_type('https')
 		self.set_method('POST')
 
 	def get_ResourceOwnerId(self):
