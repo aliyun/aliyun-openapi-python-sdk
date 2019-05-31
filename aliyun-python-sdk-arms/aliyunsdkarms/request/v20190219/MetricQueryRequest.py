@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class MetricQueryRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ARMS', '2018-12-19', 'MetricQuery','arms')
+		RpcRequest.__init__(self, 'ARMS', '2019-02-19', 'MetricQuery')
 
 	def get_EndTime(self):
 		return self.get_query_params().get('EndTime')
