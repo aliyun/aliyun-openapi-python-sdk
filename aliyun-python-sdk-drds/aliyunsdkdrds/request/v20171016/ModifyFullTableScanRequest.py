@@ -23,12 +23,6 @@ class ModifyFullTableScanRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Drds', '2017-10-16', 'ModifyFullTableScan')
 
-	def get_DbName(self):
-		return self.get_query_params().get('DbName')
-
-	def set_DbName(self,DbName):
-		self.add_query_param('DbName',DbName)
-
 	def get_TableNames(self):
 		return self.get_query_params().get('TableNames')
 
@@ -40,6 +34,12 @@ class ModifyFullTableScanRequest(RpcRequest):
 
 	def set_DrdsInstanceId(self,DrdsInstanceId):
 		self.add_query_param('DrdsInstanceId',DrdsInstanceId)
+
+	def get_DbName(self):
+		return self.get_query_params().get('DbName')
+
+	def set_DbName(self,DbName):
+		self.add_query_param('DbName',DbName)
 
 	def get_FullTableScan(self):
 		return self.get_query_params().get('FullTableScan')

@@ -23,6 +23,12 @@ class RemoveReadOnlyAccountRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Drds', '2017-10-16', 'RemoveReadOnlyAccount')
 
+	def get_DrdsInstanceId(self):
+		return self.get_query_params().get('DrdsInstanceId')
+
+	def set_DrdsInstanceId(self,DrdsInstanceId):
+		self.add_query_param('DrdsInstanceId',DrdsInstanceId)
+
 	def get_DbName(self):
 		return self.get_query_params().get('DbName')
 
@@ -34,9 +40,3 @@ class RemoveReadOnlyAccountRequest(RpcRequest):
 
 	def set_AccountName(self,AccountName):
 		self.add_query_param('AccountName',AccountName)
-
-	def get_DrdsInstanceId(self):
-		return self.get_query_params().get('DrdsInstanceId')
-
-	def set_DrdsInstanceId(self,DrdsInstanceId):
-		self.add_query_param('DrdsInstanceId',DrdsInstanceId)

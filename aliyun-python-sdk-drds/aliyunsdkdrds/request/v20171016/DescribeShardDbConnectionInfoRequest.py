@@ -23,12 +23,6 @@ class DescribeShardDbConnectionInfoRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Drds', '2017-10-16', 'DescribeShardDbConnectionInfo')
 
-	def get_DbName(self):
-		return self.get_query_params().get('DbName')
-
-	def set_DbName(self,DbName):
-		self.add_query_param('DbName',DbName)
-
 	def get_DrdsInstanceId(self):
 		return self.get_query_params().get('DrdsInstanceId')
 
@@ -40,3 +34,9 @@ class DescribeShardDbConnectionInfoRequest(RpcRequest):
 
 	def set_SubDbName(self,SubDbName):
 		self.add_query_param('SubDbName',SubDbName)
+
+	def get_DbName(self):
+		return self.get_query_params().get('DbName')
+
+	def set_DbName(self,DbName):
+		self.add_query_param('DbName',DbName)

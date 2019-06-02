@@ -29,6 +29,12 @@ class CreateDrdsDBRequest(RpcRequest):
 	def set_Encode(self,Encode):
 		self.add_query_param('Encode',Encode)
 
+	def get_DrdsInstanceId(self):
+		return self.get_query_params().get('DrdsInstanceId')
+
+	def set_DrdsInstanceId(self,DrdsInstanceId):
+		self.add_query_param('DrdsInstanceId',DrdsInstanceId)
+
 	def get_Password(self):
 		return self.get_query_params().get('Password')
 
@@ -46,9 +52,3 @@ class CreateDrdsDBRequest(RpcRequest):
 
 	def set_RdsInstances(self,RdsInstances):
 		self.add_query_param('RdsInstances',RdsInstances)
-
-	def get_DrdsInstanceId(self):
-		return self.get_query_params().get('DrdsInstanceId')
-
-	def set_DrdsInstanceId(self,DrdsInstanceId):
-		self.add_query_param('DrdsInstanceId',DrdsInstanceId)

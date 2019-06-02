@@ -18,10 +18,22 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class DescribeRdsListRequest(RpcRequest):
+class DescribeDrdsInstanceMonitorRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Drds', '2017-10-16', 'DescribeRdsList')
+		RpcRequest.__init__(self, 'Drds', '2017-10-16', 'DescribeDrdsInstanceMonitor')
+
+	def get_EndTime(self):
+		return self.get_query_params().get('EndTime')
+
+	def set_EndTime(self,EndTime):
+		self.add_query_param('EndTime',EndTime)
+
+	def get_StartTime(self):
+		return self.get_query_params().get('StartTime')
+
+	def set_StartTime(self,StartTime):
+		self.add_query_param('StartTime',StartTime)
 
 	def get_DrdsInstanceId(self):
 		return self.get_query_params().get('DrdsInstanceId')
@@ -29,8 +41,14 @@ class DescribeRdsListRequest(RpcRequest):
 	def set_DrdsInstanceId(self,DrdsInstanceId):
 		self.add_query_param('DrdsInstanceId',DrdsInstanceId)
 
-	def get_DbName(self):
-		return self.get_query_params().get('DbName')
+	def get_Key(self):
+		return self.get_query_params().get('Key')
 
-	def set_DbName(self,DbName):
-		self.add_query_param('DbName',DbName)
+	def set_Key(self,Key):
+		self.add_query_param('Key',Key)
+
+	def get_PeriodMultiple(self):
+		return self.get_query_params().get('PeriodMultiple')
+
+	def set_PeriodMultiple(self,PeriodMultiple):
+		self.add_query_param('PeriodMultiple',PeriodMultiple)

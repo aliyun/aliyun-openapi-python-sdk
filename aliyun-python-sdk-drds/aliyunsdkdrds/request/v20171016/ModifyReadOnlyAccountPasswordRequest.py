@@ -23,6 +23,12 @@ class ModifyReadOnlyAccountPasswordRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Drds', '2017-10-16', 'ModifyReadOnlyAccountPassword')
 
+	def get_DrdsInstanceId(self):
+		return self.get_query_params().get('DrdsInstanceId')
+
+	def set_DrdsInstanceId(self,DrdsInstanceId):
+		self.add_query_param('DrdsInstanceId',DrdsInstanceId)
+
 	def get_NewPasswd(self):
 		return self.get_query_params().get('NewPasswd')
 
@@ -46,9 +52,3 @@ class ModifyReadOnlyAccountPasswordRequest(RpcRequest):
 
 	def set_OriginPassword(self,OriginPassword):
 		self.add_query_param('OriginPassword',OriginPassword)
-
-	def get_DrdsInstanceId(self):
-		return self.get_query_params().get('DrdsInstanceId')
-
-	def set_DrdsInstanceId(self,DrdsInstanceId):
-		self.add_query_param('DrdsInstanceId',DrdsInstanceId)

@@ -23,6 +23,12 @@ class ModifyDrdsDBPasswdRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Drds', '2017-10-16', 'ModifyDrdsDBPasswd')
 
+	def get_DrdsInstanceId(self):
+		return self.get_query_params().get('DrdsInstanceId')
+
+	def set_DrdsInstanceId(self,DrdsInstanceId):
+		self.add_query_param('DrdsInstanceId',DrdsInstanceId)
+
 	def get_NewPasswd(self):
 		return self.get_query_params().get('NewPasswd')
 
@@ -34,9 +40,3 @@ class ModifyDrdsDBPasswdRequest(RpcRequest):
 
 	def set_DbName(self,DbName):
 		self.add_query_param('DbName',DbName)
-
-	def get_DrdsInstanceId(self):
-		return self.get_query_params().get('DrdsInstanceId')
-
-	def set_DrdsInstanceId(self,DrdsInstanceId):
-		self.add_query_param('DrdsInstanceId',DrdsInstanceId)

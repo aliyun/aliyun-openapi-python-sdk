@@ -18,10 +18,22 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class ModifyDrdsIpWhiteListRequest(RpcRequest):
+class DescribeDrdsInstanceDbMonitorRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Drds', '2017-10-16', 'ModifyDrdsIpWhiteList')
+		RpcRequest.__init__(self, 'Drds', '2017-10-16', 'DescribeDrdsInstanceDbMonitor')
+
+	def get_EndTime(self):
+		return self.get_query_params().get('EndTime')
+
+	def set_EndTime(self,EndTime):
+		self.add_query_param('EndTime',EndTime)
+
+	def get_StartTime(self):
+		return self.get_query_params().get('StartTime')
+
+	def set_StartTime(self,StartTime):
+		self.add_query_param('StartTime',StartTime)
 
 	def get_DrdsInstanceId(self):
 		return self.get_query_params().get('DrdsInstanceId')
@@ -29,32 +41,14 @@ class ModifyDrdsIpWhiteListRequest(RpcRequest):
 	def set_DrdsInstanceId(self,DrdsInstanceId):
 		self.add_query_param('DrdsInstanceId',DrdsInstanceId)
 
-	def get_GroupName(self):
-		return self.get_query_params().get('GroupName')
-
-	def set_GroupName(self,GroupName):
-		self.add_query_param('GroupName',GroupName)
-
-	def get_Mode(self):
-		return self.get_query_params().get('Mode')
-
-	def set_Mode(self,Mode):
-		self.add_query_param('Mode',Mode)
-
 	def get_DbName(self):
 		return self.get_query_params().get('DbName')
 
 	def set_DbName(self,DbName):
 		self.add_query_param('DbName',DbName)
 
-	def get_GroupAttribute(self):
-		return self.get_query_params().get('GroupAttribute')
+	def get_Key(self):
+		return self.get_query_params().get('Key')
 
-	def set_GroupAttribute(self,GroupAttribute):
-		self.add_query_param('GroupAttribute',GroupAttribute)
-
-	def get_IpWhiteList(self):
-		return self.get_query_params().get('IpWhiteList')
-
-	def set_IpWhiteList(self,IpWhiteList):
-		self.add_query_param('IpWhiteList',IpWhiteList)
+	def set_Key(self,Key):
+		self.add_query_param('Key',Key)
