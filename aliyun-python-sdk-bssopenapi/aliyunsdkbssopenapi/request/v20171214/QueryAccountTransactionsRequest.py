@@ -18,16 +18,16 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class QueryRedeemRequest(RpcRequest):
+class QueryAccountTransactionsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'QueryRedeem')
+		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'QueryAccountTransactions')
 
-	def get_ExpiryTimeEnd(self):
-		return self.get_query_params().get('ExpiryTimeEnd')
+	def get_RecordID(self):
+		return self.get_query_params().get('RecordID')
 
-	def set_ExpiryTimeEnd(self,ExpiryTimeEnd):
-		self.add_query_param('ExpiryTimeEnd',ExpiryTimeEnd)
+	def set_RecordID(self,RecordID):
+		self.add_query_param('RecordID',RecordID)
 
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
@@ -35,11 +35,23 @@ class QueryRedeemRequest(RpcRequest):
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
 
-	def get_ExpiryTimeStart(self):
-		return self.get_query_params().get('ExpiryTimeStart')
+	def get_TransactionChannelSN(self):
+		return self.get_query_params().get('TransactionChannelSN')
 
-	def set_ExpiryTimeStart(self,ExpiryTimeStart):
-		self.add_query_param('ExpiryTimeStart',ExpiryTimeStart)
+	def set_TransactionChannelSN(self,TransactionChannelSN):
+		self.add_query_param('TransactionChannelSN',TransactionChannelSN)
+
+	def get_CreateTimeStart(self):
+		return self.get_query_params().get('CreateTimeStart')
+
+	def set_CreateTimeStart(self,CreateTimeStart):
+		self.add_query_param('CreateTimeStart',CreateTimeStart)
+
+	def get_TransactionNumber(self):
+		return self.get_query_params().get('TransactionNumber')
+
+	def set_TransactionNumber(self,TransactionNumber):
+		self.add_query_param('TransactionNumber',TransactionNumber)
 
 	def get_PageNum(self):
 		return self.get_query_params().get('PageNum')
@@ -47,8 +59,8 @@ class QueryRedeemRequest(RpcRequest):
 	def set_PageNum(self,PageNum):
 		self.add_query_param('PageNum',PageNum)
 
-	def get_EffectiveOrNot(self):
-		return self.get_query_params().get('EffectiveOrNot')
+	def get_CreateTimeEnd(self):
+		return self.get_query_params().get('CreateTimeEnd')
 
-	def set_EffectiveOrNot(self,EffectiveOrNot):
-		self.add_query_param('EffectiveOrNot',EffectiveOrNot)
+	def set_CreateTimeEnd(self,CreateTimeEnd):
+		self.add_query_param('CreateTimeEnd',CreateTimeEnd)

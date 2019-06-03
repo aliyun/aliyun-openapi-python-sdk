@@ -18,16 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class SetUserAlarmThresholdRequest(RpcRequest):
+class SetResellerUserAlarmThresholdRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'SetUserAlarmThreshold')
-
-	def get_Uid(self):
-		return self.get_query_params().get('Uid')
-
-	def set_Uid(self,Uid):
-		self.add_query_param('Uid',Uid)
+		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'SetResellerUserAlarmThreshold')
 
 	def get_AlarmType(self):
 		return self.get_query_params().get('AlarmType')
@@ -41,8 +35,8 @@ class SetUserAlarmThresholdRequest(RpcRequest):
 	def set_AlarmThresholds(self,AlarmThresholds):
 		self.add_query_param('AlarmThresholds',AlarmThresholds)
 
-	def get_Bid(self):
-		return self.get_query_params().get('Bid')
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
 
-	def set_Bid(self,Bid):
-		self.add_query_param('Bid',Bid)
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)

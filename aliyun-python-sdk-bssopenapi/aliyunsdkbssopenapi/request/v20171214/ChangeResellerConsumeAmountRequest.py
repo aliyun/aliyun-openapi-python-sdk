@@ -18,16 +18,16 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class CreateUserQuotaRequest(RpcRequest):
+class ChangeResellerConsumeAmountRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'CreateUserQuota')
+		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'ChangeResellerConsumeAmount')
 
-	def get_Uid(self):
-		return self.get_query_params().get('Uid')
+	def get_AdjustType(self):
+		return self.get_query_params().get('AdjustType')
 
-	def set_Uid(self,Uid):
-		self.add_query_param('Uid',Uid)
+	def set_AdjustType(self,AdjustType):
+		self.add_query_param('AdjustType',AdjustType)
 
 	def get_Amount(self):
 		return self.get_query_params().get('Amount')
@@ -41,14 +41,32 @@ class CreateUserQuotaRequest(RpcRequest):
 	def set_OutBizId(self,OutBizId):
 		self.add_query_param('OutBizId',OutBizId)
 
+	def get_ExtendMap(self):
+		return self.get_query_params().get('ExtendMap')
+
+	def set_ExtendMap(self,ExtendMap):
+		self.add_query_param('ExtendMap',ExtendMap)
+
 	def get_Currency(self):
 		return self.get_query_params().get('Currency')
 
 	def set_Currency(self,Currency):
 		self.add_query_param('Currency',Currency)
 
-	def get_Bid(self):
-		return self.get_query_params().get('Bid')
+	def get_Source(self):
+		return self.get_query_params().get('Source')
 
-	def set_Bid(self,Bid):
-		self.add_query_param('Bid',Bid)
+	def set_Source(self,Source):
+		self.add_query_param('Source',Source)
+
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
+
+	def get_BusinessType(self):
+		return self.get_query_params().get('BusinessType')
+
+	def set_BusinessType(self,BusinessType):
+		self.add_query_param('BusinessType',BusinessType)

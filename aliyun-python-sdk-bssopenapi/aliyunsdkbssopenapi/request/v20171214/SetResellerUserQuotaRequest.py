@@ -18,31 +18,31 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class SetUserAlarmThresholdRequest(RpcRequest):
+class SetResellerUserQuotaRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'SetUserAlarmThreshold')
+		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'SetResellerUserQuota')
 
-	def get_Uid(self):
-		return self.get_query_params().get('Uid')
+	def get_Amount(self):
+		return self.get_query_params().get('Amount')
 
-	def set_Uid(self,Uid):
-		self.add_query_param('Uid',Uid)
+	def set_Amount(self,Amount):
+		self.add_query_param('Amount',Amount)
 
-	def get_AlarmType(self):
-		return self.get_query_params().get('AlarmType')
+	def get_OutBizId(self):
+		return self.get_query_params().get('OutBizId')
 
-	def set_AlarmType(self,AlarmType):
-		self.add_query_param('AlarmType',AlarmType)
+	def set_OutBizId(self,OutBizId):
+		self.add_query_param('OutBizId',OutBizId)
 
-	def get_AlarmThresholds(self):
-		return self.get_query_params().get('AlarmThresholds')
+	def get_Currency(self):
+		return self.get_query_params().get('Currency')
 
-	def set_AlarmThresholds(self,AlarmThresholds):
-		self.add_query_param('AlarmThresholds',AlarmThresholds)
+	def set_Currency(self,Currency):
+		self.add_query_param('Currency',Currency)
 
-	def get_Bid(self):
-		return self.get_query_params().get('Bid')
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
 
-	def set_Bid(self,Bid):
-		self.add_query_param('Bid',Bid)
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
