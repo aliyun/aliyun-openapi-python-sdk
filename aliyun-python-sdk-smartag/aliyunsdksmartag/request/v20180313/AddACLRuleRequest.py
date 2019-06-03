@@ -23,6 +23,12 @@ class AddACLRuleRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Smartag', '2018-03-13', 'AddACLRule','smartag')
 
+	def get_AclId(self):
+		return self.get_query_params().get('AclId')
+
+	def set_AclId(self,AclId):
+		self.add_query_param('AclId',AclId)
+
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
@@ -34,42 +40,6 @@ class AddACLRuleRequest(RpcRequest):
 
 	def set_SourcePortRange(self,SourcePortRange):
 		self.add_query_param('SourcePortRange',SourcePortRange)
-
-	def get_SourceCidr(self):
-		return self.get_query_params().get('SourceCidr')
-
-	def set_SourceCidr(self,SourceCidr):
-		self.add_query_param('SourceCidr',SourceCidr)
-
-	def get_Description(self):
-		return self.get_query_params().get('Description')
-
-	def set_Description(self,Description):
-		self.add_query_param('Description',Description)
-
-	def get_DestCidr(self):
-		return self.get_query_params().get('DestCidr')
-
-	def set_DestCidr(self,DestCidr):
-		self.add_query_param('DestCidr',DestCidr)
-
-	def get_Direction(self):
-		return self.get_query_params().get('Direction')
-
-	def set_Direction(self,Direction):
-		self.add_query_param('Direction',Direction)
-
-	def get_Policy(self):
-		return self.get_query_params().get('Policy')
-
-	def set_Policy(self,Policy):
-		self.add_query_param('Policy',Policy)
-
-	def get_AclId(self):
-		return self.get_query_params().get('AclId')
-
-	def set_AclId(self,AclId):
-		self.add_query_param('AclId',AclId)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -89,6 +59,18 @@ class AddACLRuleRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
+	def get_SourceCidr(self):
+		return self.get_query_params().get('SourceCidr')
+
+	def set_SourceCidr(self,SourceCidr):
+		self.add_query_param('SourceCidr',SourceCidr)
+
+	def get_Description(self):
+		return self.get_query_params().get('Description')
+
+	def set_Description(self,Description):
+		self.add_query_param('Description',Description)
+
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
@@ -101,8 +83,26 @@ class AddACLRuleRequest(RpcRequest):
 	def set_Priority(self,Priority):
 		self.add_query_param('Priority',Priority)
 
+	def get_DestCidr(self):
+		return self.get_query_params().get('DestCidr')
+
+	def set_DestCidr(self,DestCidr):
+		self.add_query_param('DestCidr',DestCidr)
+
 	def get_DestPortRange(self):
 		return self.get_query_params().get('DestPortRange')
 
 	def set_DestPortRange(self,DestPortRange):
 		self.add_query_param('DestPortRange',DestPortRange)
+
+	def get_Direction(self):
+		return self.get_query_params().get('Direction')
+
+	def set_Direction(self,Direction):
+		self.add_query_param('Direction',Direction)
+
+	def get_Policy(self):
+		return self.get_query_params().get('Policy')
+
+	def set_Policy(self,Policy):
+		self.add_query_param('Policy',Policy)

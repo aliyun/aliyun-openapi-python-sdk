@@ -23,17 +23,17 @@ class AssociateACLRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Smartag', '2018-03-13', 'AssociateACL','smartag')
 
-	def get_ResourceOwnerId(self):
-		return self.get_query_params().get('ResourceOwnerId')
-
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
 	def get_AclId(self):
 		return self.get_query_params().get('AclId')
 
 	def set_AclId(self,AclId):
 		self.add_query_param('AclId',AclId)
+
+	def get_ResourceOwnerId(self):
+		return self.get_query_params().get('ResourceOwnerId')
+
+	def set_ResourceOwnerId(self,ResourceOwnerId):
+		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -47,14 +47,14 @@ class AssociateACLRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
 	def get_SmartAGId(self):
 		return self.get_query_params().get('SmartAGId')
 
 	def set_SmartAGId(self,SmartAGId):
 		self.add_query_param('SmartAGId',SmartAGId)
+
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)

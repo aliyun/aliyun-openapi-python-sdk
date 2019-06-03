@@ -29,12 +29,6 @@ class CreateSmartAccessGatewayClientUserRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_ClientIp(self):
-		return self.get_query_params().get('ClientIp')
-
-	def set_ClientIp(self,ClientIp):
-		self.add_query_param('ClientIp',ClientIp)
-
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -53,6 +47,18 @@ class CreateSmartAccessGatewayClientUserRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
+	def get_ClientIp(self):
+		return self.get_query_params().get('ClientIp')
+
+	def set_ClientIp(self,ClientIp):
+		self.add_query_param('ClientIp',ClientIp)
+
+	def get_SmartAGId(self):
+		return self.get_query_params().get('SmartAGId')
+
+	def set_SmartAGId(self,SmartAGId):
+		self.add_query_param('SmartAGId',SmartAGId)
+
 	def get_UserMail(self):
 		return self.get_query_params().get('UserMail')
 
@@ -64,12 +70,6 @@ class CreateSmartAccessGatewayClientUserRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
-
-	def get_SmartAGId(self):
-		return self.get_query_params().get('SmartAGId')
-
-	def set_SmartAGId(self,SmartAGId):
-		self.add_query_param('SmartAGId',SmartAGId)
 
 	def get_UserName(self):
 		return self.get_query_params().get('UserName')

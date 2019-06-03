@@ -29,23 +29,23 @@ class DescribeNetworkOptimizationSettingsRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_ResourceOwnerAccount(self):
+		return self.get_query_params().get('ResourceOwnerAccount')
+
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+
 	def get_NetworkOptId(self):
 		return self.get_query_params().get('NetworkOptId')
 
 	def set_NetworkOptId(self,NetworkOptId):
 		self.add_query_param('NetworkOptId',NetworkOptId)
 
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
+	def get_PageNo(self):
+		return self.get_query_params().get('PageNo')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
-
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+	def set_PageNo(self,PageNo):
+		self.add_query_param('PageNo',PageNo)
 
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
@@ -53,14 +53,14 @@ class DescribeNetworkOptimizationSettingsRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
+
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
-
-	def get_PageNo(self):
-		return self.get_query_params().get('PageNo')
-
-	def set_PageNo(self,PageNo):
-		self.add_query_param('PageNo',PageNo)

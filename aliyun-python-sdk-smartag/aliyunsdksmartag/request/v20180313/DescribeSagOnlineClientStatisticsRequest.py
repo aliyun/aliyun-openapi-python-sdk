@@ -29,14 +29,6 @@ class DescribeSagOnlineClientStatisticsRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_SmartAGIdss(self):
-		return self.get_query_params().get('SmartAGIdss')
-
-	def set_SmartAGIdss(self,SmartAGIdss):
-		for i in range(len(SmartAGIdss)):	
-			if SmartAGIdss[i] is not None:
-				self.add_query_param('SmartAGIds.' + str(i + 1) , SmartAGIdss[i]);
-
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -48,6 +40,14 @@ class DescribeSagOnlineClientStatisticsRequest(RpcRequest):
 
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
+
+	def get_SmartAGIdss(self):
+		return self.get_query_params().get('SmartAGIdss')
+
+	def set_SmartAGIdss(self,SmartAGIdss):
+		for i in range(len(SmartAGIdss)):	
+			if SmartAGIdss[i] is not None:
+				self.add_query_param('SmartAGIds.' + str(i + 1) , SmartAGIdss[i]);
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')

@@ -35,11 +35,41 @@ class CreateSAGLinkLevelHaRequest(RpcRequest):
 	def set_BackupLinkId(self,BackupLinkId):
 		self.add_query_param('BackupLinkId',BackupLinkId)
 
+	def get_ResourceOwnerAccount(self):
+		return self.get_query_params().get('ResourceOwnerAccount')
+
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+
+	def get_HaType(self):
+		return self.get_query_params().get('HaType')
+
+	def set_HaType(self,HaType):
+		self.add_query_param('HaType',HaType)
+
+	def get_OwnerAccount(self):
+		return self.get_query_params().get('OwnerAccount')
+
+	def set_OwnerAccount(self,OwnerAccount):
+		self.add_query_param('OwnerAccount',OwnerAccount)
+
 	def get_MainLinkRegionId(self):
 		return self.get_query_params().get('MainLinkRegionId')
 
 	def set_MainLinkRegionId(self,MainLinkRegionId):
 		self.add_query_param('MainLinkRegionId',MainLinkRegionId)
+
+	def get_SmartAGId(self):
+		return self.get_query_params().get('SmartAGId')
+
+	def set_SmartAGId(self,SmartAGId):
+		self.add_query_param('SmartAGId',SmartAGId)
+
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
 
 	def get_MainLinkId(self):
 		return self.get_query_params().get('MainLinkId')
@@ -52,33 +82,3 @@ class CreateSAGLinkLevelHaRequest(RpcRequest):
 
 	def set_BackupLinkRegionId(self,BackupLinkRegionId):
 		self.add_query_param('BackupLinkRegionId',BackupLinkRegionId)
-
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
-
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_OwnerAccount(self):
-		return self.get_query_params().get('OwnerAccount')
-
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
-
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_HaType(self):
-		return self.get_query_params().get('HaType')
-
-	def set_HaType(self,HaType):
-		self.add_query_param('HaType',HaType)
-
-	def get_SmartAGId(self):
-		return self.get_query_params().get('SmartAGId')
-
-	def set_SmartAGId(self,SmartAGId):
-		self.add_query_param('SmartAGId',SmartAGId)

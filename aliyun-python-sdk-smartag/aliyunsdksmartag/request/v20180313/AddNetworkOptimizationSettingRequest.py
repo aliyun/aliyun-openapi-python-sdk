@@ -29,11 +29,11 @@ class AddNetworkOptimizationSettingRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_Type(self):
-		return self.get_query_params().get('Type')
+	def get_ResourceOwnerAccount(self):
+		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_Type(self,Type):
-		self.add_query_param('Type',Type)
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
 	def get_NetworkOptId(self):
 		return self.get_query_params().get('NetworkOptId')
@@ -41,17 +41,17 @@ class AddNetworkOptimizationSettingRequest(RpcRequest):
 	def set_NetworkOptId(self,NetworkOptId):
 		self.add_query_param('NetworkOptId',NetworkOptId)
 
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
-
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
 
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
+
+	def get_Domain(self):
+		return self.get_query_params().get('Domain')
+
+	def set_Domain(self,Domain):
+		self.add_query_param('Domain',Domain)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
@@ -59,8 +59,8 @@ class AddNetworkOptimizationSettingRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_Domain(self):
-		return self.get_query_params().get('Domain')
+	def get_Type(self):
+		return self.get_query_params().get('Type')
 
-	def set_Domain(self,Domain):
-		self.add_query_param('Domain',Domain)
+	def set_Type(self,Type):
+		self.add_query_param('Type',Type)

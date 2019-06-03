@@ -41,6 +41,12 @@ class ClearSagRouteableAddressRequest(RpcRequest):
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
+	def get_SagId(self):
+		return self.get_query_params().get('SagId')
+
+	def set_SagId(self,SagId):
+		self.add_query_param('SagId',SagId)
+
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
 
@@ -52,9 +58,3 @@ class ClearSagRouteableAddressRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
-
-	def get_SagId(self):
-		return self.get_query_params().get('SagId')
-
-	def set_SagId(self,SagId):
-		self.add_query_param('SagId',SagId)
