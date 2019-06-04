@@ -35,12 +35,6 @@ class DescribeLiveStreamOnlineUserNumRequest(RpcRequest):
 	def set_SecurityToken(self,SecurityToken):
 		self.add_query_param('SecurityToken',SecurityToken)
 
-	def get_HlsSwitch(self):
-		return self.get_query_params().get('HlsSwitch')
-
-	def set_HlsSwitch(self,HlsSwitch):
-		self.add_query_param('HlsSwitch',HlsSwitch)
-
 	def get_DomainName(self):
 		return self.get_query_params().get('DomainName')
 

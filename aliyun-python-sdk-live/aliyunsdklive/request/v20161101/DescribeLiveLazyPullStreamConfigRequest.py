@@ -23,6 +23,12 @@ class DescribeLiveLazyPullStreamConfigRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'live', '2016-11-01', 'DescribeLiveLazyPullStreamConfig','live')
 
+	def get_AppName(self):
+		return self.get_query_params().get('AppName')
+
+	def set_AppName(self,AppName):
+		self.add_query_param('AppName',AppName)
+
 	def get_DomainName(self):
 		return self.get_query_params().get('DomainName')
 
@@ -34,9 +40,3 @@ class DescribeLiveLazyPullStreamConfigRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
-
-	def get_AppName(self):
-		return self.get_query_params().get('AppName')
-
-	def set_AppName(self,AppName):
-		self.add_query_param('AppName',AppName)

@@ -23,11 +23,23 @@ class CreateRoomRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'live', '2016-11-01', 'CreateRoom','live')
 
+	def get_TemplateIds(self):
+		return self.get_query_params().get('TemplateIds')
+
+	def set_TemplateIds(self,TemplateIds):
+		self.add_query_param('TemplateIds',TemplateIds)
+
 	def get_AnchorId(self):
 		return self.get_query_params().get('AnchorId')
 
 	def set_AnchorId(self,AnchorId):
 		self.add_query_param('AnchorId',AnchorId)
+
+	def get_UseAppTranscode(self):
+		return self.get_query_params().get('UseAppTranscode')
+
+	def set_UseAppTranscode(self,UseAppTranscode):
+		self.add_query_param('UseAppTranscode',UseAppTranscode)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')

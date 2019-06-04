@@ -23,6 +23,12 @@ class SetLiveLazyPullStreamInfoConfigRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'live', '2016-11-01', 'SetLiveLazyPullStreamInfoConfig','live')
 
+	def get_PullArgs(self):
+		return self.get_query_params().get('PullArgs')
+
+	def set_PullArgs(self,PullArgs):
+		self.add_query_param('PullArgs',PullArgs)
+
 	def get_AppName(self):
 		return self.get_query_params().get('AppName')
 

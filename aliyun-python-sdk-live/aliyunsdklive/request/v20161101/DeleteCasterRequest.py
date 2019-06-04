@@ -23,6 +23,12 @@ class DeleteCasterRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'live', '2016-11-01', 'DeleteCaster','live')
 
+	def get_SecurityToken(self):
+		return self.get_query_params().get('SecurityToken')
+
+	def set_SecurityToken(self,SecurityToken):
+		self.add_query_param('SecurityToken',SecurityToken)
+
 	def get_CasterId(self):
 		return self.get_query_params().get('CasterId')
 
