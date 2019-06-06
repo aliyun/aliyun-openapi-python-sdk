@@ -143,6 +143,12 @@ class CreateLoadBalancerTCPListenerRequest(RpcRequest):
 	def set_Bandwidth(self,Bandwidth):
 		self.add_query_param('Bandwidth',Bandwidth)
 
+	def get_HealthCheckMethod(self):
+		return self.get_query_params().get('HealthCheckMethod')
+
+	def set_HealthCheckMethod(self,HealthCheckMethod):
+		self.add_query_param('HealthCheckMethod',HealthCheckMethod)
+
 	def get_HealthCheckDomain(self):
 		return self.get_query_params().get('HealthCheckDomain')
 

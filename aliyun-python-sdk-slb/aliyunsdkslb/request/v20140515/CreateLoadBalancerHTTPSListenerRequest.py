@@ -149,6 +149,12 @@ class CreateLoadBalancerHTTPSListenerRequest(RpcRequest):
 	def set_Cookie(self,Cookie):
 		self.add_query_param('Cookie',Cookie)
 
+	def get_HealthCheckType(self):
+		return self.get_query_params().get('HealthCheckType')
+
+	def set_HealthCheckType(self,HealthCheckType):
+		self.add_query_param('HealthCheckType',HealthCheckType)
+
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -166,6 +172,12 @@ class CreateLoadBalancerHTTPSListenerRequest(RpcRequest):
 
 	def set_StickySession(self,StickySession):
 		self.add_query_param('StickySession',StickySession)
+
+	def get_HealthCheckMethod(self):
+		return self.get_query_params().get('HealthCheckMethod')
+
+	def set_HealthCheckMethod(self,HealthCheckMethod):
+		self.add_query_param('HealthCheckMethod',HealthCheckMethod)
 
 	def get_HealthCheckDomain(self):
 		return self.get_query_params().get('HealthCheckDomain')
@@ -214,6 +226,12 @@ class CreateLoadBalancerHTTPSListenerRequest(RpcRequest):
 
 	def set_CACertificateId(self,CACertificateId):
 		self.add_query_param('CACertificateId',CACertificateId)
+
+	def get_BackendProtocol(self):
+		return self.get_query_params().get('BackendProtocol')
+
+	def set_BackendProtocol(self,BackendProtocol):
+		self.add_query_param('BackendProtocol',BackendProtocol)
 
 	def get_Tags(self):
 		return self.get_query_params().get('Tags')

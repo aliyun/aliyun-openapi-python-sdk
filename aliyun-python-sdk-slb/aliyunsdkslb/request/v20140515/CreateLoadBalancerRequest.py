@@ -83,6 +83,12 @@ class CreateLoadBalancerRequest(RpcRequest):
 	def set_SlaveZoneId(self,SlaveZoneId):
 		self.add_query_param('SlaveZoneId',SlaveZoneId)
 
+	def get_DeleteProtection(self):
+		return self.get_query_params().get('DeleteProtection')
+
+	def set_DeleteProtection(self,DeleteProtection):
+		self.add_query_param('DeleteProtection',DeleteProtection)
+
 	def get_LoadBalancerSpec(self):
 		return self.get_query_params().get('LoadBalancerSpec')
 

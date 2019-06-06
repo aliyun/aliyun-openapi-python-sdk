@@ -143,6 +143,12 @@ class SetLoadBalancerHTTPListenerAttributeRequest(RpcRequest):
 	def set_Cookie(self,Cookie):
 		self.add_query_param('Cookie',Cookie)
 
+	def get_HealthCheckType(self):
+		return self.get_query_params().get('HealthCheckType')
+
+	def set_HealthCheckType(self,HealthCheckType):
+		self.add_query_param('HealthCheckType',HealthCheckType)
+
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -160,6 +166,12 @@ class SetLoadBalancerHTTPListenerAttributeRequest(RpcRequest):
 
 	def set_StickySession(self,StickySession):
 		self.add_query_param('StickySession',StickySession)
+
+	def get_HealthCheckMethod(self):
+		return self.get_query_params().get('HealthCheckMethod')
+
+	def set_HealthCheckMethod(self,HealthCheckMethod):
+		self.add_query_param('HealthCheckMethod',HealthCheckMethod)
 
 	def get_HealthCheckDomain(self):
 		return self.get_query_params().get('HealthCheckDomain')
