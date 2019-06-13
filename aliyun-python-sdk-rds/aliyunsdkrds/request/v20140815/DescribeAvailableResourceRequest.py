@@ -53,6 +53,12 @@ class DescribeAvailableResourceRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
+	def get_DBInstanceClass(self):
+		return self.get_query_params().get('DBInstanceClass')
+
+	def set_DBInstanceClass(self,DBInstanceClass):
+		self.add_query_param('DBInstanceClass',DBInstanceClass)
+
 	def get_Engine(self):
 		return self.get_query_params().get('Engine')
 
