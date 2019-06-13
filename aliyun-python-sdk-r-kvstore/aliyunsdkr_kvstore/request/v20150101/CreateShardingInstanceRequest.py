@@ -18,10 +18,16 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class CreateInstanceRequest(RpcRequest):
+class CreateShardingInstanceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'R-kvstore', '2015-01-01', 'CreateInstance','redisa')
+		RpcRequest.__init__(self, 'R-kvstore', '2015-01-01', 'CreateShardingInstance','redisa')
+
+	def get_ShardStorageQuantity(self):
+		return self.get_query_params().get('ShardStorageQuantity')
+
+	def set_ShardStorageQuantity(self,ShardStorageQuantity):
+		self.add_query_param('ShardStorageQuantity',ShardStorageQuantity)
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -53,12 +59,6 @@ class CreateInstanceRequest(RpcRequest):
 	def set_EngineVersion(self,EngineVersion):
 		self.add_query_param('EngineVersion',EngineVersion)
 
-	def get_AutoUseCoupon(self):
-		return self.get_query_params().get('AutoUseCoupon')
-
-	def set_AutoUseCoupon(self,AutoUseCoupon):
-		self.add_query_param('AutoUseCoupon',AutoUseCoupon)
-
 	def get_InstanceClass(self):
 		return self.get_query_params().get('InstanceClass')
 
@@ -77,11 +77,23 @@ class CreateInstanceRequest(RpcRequest):
 	def set_Password(self,Password):
 		self.add_query_param('Password',Password)
 
+	def get_ShardReplicaClass(self):
+		return self.get_query_params().get('ShardReplicaClass')
+
+	def set_ShardReplicaClass(self,ShardReplicaClass):
+		self.add_query_param('ShardReplicaClass',ShardReplicaClass)
+
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
 
 	def set_SecurityToken(self,SecurityToken):
 		self.add_query_param('SecurityToken',SecurityToken)
+
+	def get_IncrementalBackupMode(self):
+		return self.get_query_params().get('IncrementalBackupMode')
+
+	def set_IncrementalBackupMode(self,IncrementalBackupMode):
+		self.add_query_param('IncrementalBackupMode',IncrementalBackupMode)
 
 	def get_InstanceType(self):
 		return self.get_query_params().get('InstanceType')
@@ -94,12 +106,6 @@ class CreateInstanceRequest(RpcRequest):
 
 	def set_BusinessInfo(self,BusinessInfo):
 		self.add_query_param('BusinessInfo',BusinessInfo)
-
-	def get_AutoRenewPeriod(self):
-		return self.get_query_params().get('AutoRenewPeriod')
-
-	def set_AutoRenewPeriod(self,AutoRenewPeriod):
-		self.add_query_param('AutoRenewPeriod',AutoRenewPeriod)
 
 	def get_Period(self):
 		return self.get_query_params().get('Period')
@@ -143,6 +149,12 @@ class CreateInstanceRequest(RpcRequest):
 	def set_Token(self,Token):
 		self.add_query_param('Token',Token)
 
+	def get_ShardQuantity(self):
+		return self.get_query_params().get('ShardQuantity')
+
+	def set_ShardQuantity(self,ShardQuantity):
+		self.add_query_param('ShardQuantity',ShardQuantity)
+
 	def get_VSwitchId(self):
 		return self.get_query_params().get('VSwitchId')
 
@@ -155,23 +167,41 @@ class CreateInstanceRequest(RpcRequest):
 	def set_PrivateIpAddress(self,PrivateIpAddress):
 		self.add_query_param('PrivateIpAddress',PrivateIpAddress)
 
+	def get_SecurityIPList(self):
+		return self.get_query_params().get('SecurityIPList')
+
+	def set_SecurityIPList(self,SecurityIPList):
+		self.add_query_param('SecurityIPList',SecurityIPList)
+
 	def get_InstanceName(self):
 		return self.get_query_params().get('InstanceName')
 
 	def set_InstanceName(self,InstanceName):
 		self.add_query_param('InstanceName',InstanceName)
 
-	def get_AutoRenew(self):
-		return self.get_query_params().get('AutoRenew')
+	def get_ShardReplicaQuantity(self):
+		return self.get_query_params().get('ShardReplicaQuantity')
 
-	def set_AutoRenew(self,AutoRenew):
-		self.add_query_param('AutoRenew',AutoRenew)
+	def set_ShardReplicaQuantity(self,ShardReplicaQuantity):
+		self.add_query_param('ShardReplicaQuantity',ShardReplicaQuantity)
+
+	def get_ArchitectureType(self):
+		return self.get_query_params().get('ArchitectureType')
+
+	def set_ArchitectureType(self,ArchitectureType):
+		self.add_query_param('ArchitectureType',ArchitectureType)
 
 	def get_VpcId(self):
 		return self.get_query_params().get('VpcId')
 
 	def set_VpcId(self,VpcId):
 		self.add_query_param('VpcId',VpcId)
+
+	def get_RedisManagerClass(self):
+		return self.get_query_params().get('RedisManagerClass')
+
+	def set_RedisManagerClass(self,RedisManagerClass):
+		self.add_query_param('RedisManagerClass',RedisManagerClass)
 
 	def get_ZoneId(self):
 		return self.get_query_params().get('ZoneId')
@@ -185,8 +215,20 @@ class CreateInstanceRequest(RpcRequest):
 	def set_ChargeType(self,ChargeType):
 		self.add_query_param('ChargeType',ChargeType)
 
+	def get_ProxyQuantity(self):
+		return self.get_query_params().get('ProxyQuantity')
+
+	def set_ProxyQuantity(self,ProxyQuantity):
+		self.add_query_param('ProxyQuantity',ProxyQuantity)
+
 	def get_Config(self):
 		return self.get_query_params().get('Config')
 
 	def set_Config(self,Config):
 		self.add_query_param('Config',Config)
+
+	def get_ProxyMode(self):
+		return self.get_query_params().get('ProxyMode')
+
+	def set_ProxyMode(self,ProxyMode):
+		self.add_query_param('ProxyMode',ProxyMode)
