@@ -1,3 +1,7 @@
+2019-06-18 Version: 1.0.1
+1. Supported the related recommend.
+2. Supported exposure time controll and exposure filter by scene.
+
 2019-01-03 Version: 1.0.0
 1, Airec SDK Release Version 1.0.0.
 

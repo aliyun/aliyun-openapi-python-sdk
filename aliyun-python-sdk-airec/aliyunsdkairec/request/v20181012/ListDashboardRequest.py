@@ -18,18 +18,18 @@
 # under the License.
 
 from aliyunsdkcore.request import RoaRequest
-class RecommendRequest(RoaRequest):
+class ListDashboardRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'Airec', '2018-10-12', 'Recommend','airec')
-		self.set_uri_pattern('/openapi/instances/[InstanceId]/actions/recommend')
+		RoaRequest.__init__(self, 'Airec', '2018-10-12', 'ListDashboard','airec')
+		self.set_uri_pattern('/openapi/instances/[InstanceId]/dashboard/statistics')
 		self.set_method('GET')
 
-	def get_ReturnCount(self):
-		return self.get_query_params().get('ReturnCount')
+	def get_TraceId(self):
+		return self.get_query_params().get('TraceId')
 
-	def set_ReturnCount(self,ReturnCount):
-		self.add_query_param('ReturnCount',ReturnCount)
+	def set_TraceId(self,TraceId):
+		self.add_query_param('TraceId',TraceId)
 
 	def get_InstanceId(self):
 		return self.get_path_params().get('InstanceId')
@@ -37,11 +37,17 @@ class RecommendRequest(RoaRequest):
 	def set_InstanceId(self,InstanceId):
 		self.add_path_param('InstanceId',InstanceId)
 
-	def get_Ip(self):
-		return self.get_query_params().get('Ip')
+	def get_EndDate(self):
+		return self.get_query_params().get('EndDate')
 
-	def set_Ip(self,Ip):
-		self.add_query_param('Ip',Ip)
+	def set_EndDate(self,EndDate):
+		self.add_query_param('EndDate',EndDate)
+
+	def get_Size(self):
+		return self.get_query_params().get('Size')
+
+	def set_Size(self,Size):
+		self.add_query_param('Size',Size)
 
 	def get_SceneId(self):
 		return self.get_query_params().get('SceneId')
@@ -49,20 +55,14 @@ class RecommendRequest(RoaRequest):
 	def set_SceneId(self,SceneId):
 		self.add_query_param('SceneId',SceneId)
 
-	def get_Imei(self):
-		return self.get_query_params().get('Imei')
+	def get_Page(self):
+		return self.get_query_params().get('Page')
 
-	def set_Imei(self,Imei):
-		self.add_query_param('Imei',Imei)
+	def set_Page(self,Page):
+		self.add_query_param('Page',Page)
 
-	def get_UserId(self):
-		return self.get_query_params().get('UserId')
+	def get_StartDate(self):
+		return self.get_query_params().get('StartDate')
 
-	def set_UserId(self,UserId):
-		self.add_query_param('UserId',UserId)
-
-	def get_Items(self):
-		return self.get_query_params().get('Items')
-
-	def set_Items(self,Items):
-		self.add_query_param('Items',Items)
+	def set_StartDate(self,StartDate):
+		self.add_query_param('StartDate',StartDate)
