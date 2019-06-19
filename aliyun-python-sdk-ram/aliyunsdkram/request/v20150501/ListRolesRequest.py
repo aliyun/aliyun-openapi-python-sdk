@@ -21,8 +21,8 @@ from aliyunsdkcore.request import RpcRequest
 class ListRolesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ram', '2015-05-01', 'ListRoles','ram')
-		self.set_protocol_type('https');
+		RpcRequest.__init__(self, 'Ram', '2015-05-01', 'ListRoles')
+		self.set_protocol_type('https')
 
 	def get_Marker(self):
 		return self.get_query_params().get('Marker')

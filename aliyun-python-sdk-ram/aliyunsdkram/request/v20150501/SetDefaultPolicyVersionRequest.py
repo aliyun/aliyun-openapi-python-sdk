@@ -21,8 +21,8 @@ from aliyunsdkcore.request import RpcRequest
 class SetDefaultPolicyVersionRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ram', '2015-05-01', 'SetDefaultPolicyVersion','ram')
-		self.set_protocol_type('https');
+		RpcRequest.__init__(self, 'Ram', '2015-05-01', 'SetDefaultPolicyVersion')
+		self.set_protocol_type('https')
 
 	def get_VersionId(self):
 		return self.get_query_params().get('VersionId')

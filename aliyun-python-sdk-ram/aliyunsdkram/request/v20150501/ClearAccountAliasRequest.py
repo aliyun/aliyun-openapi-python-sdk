@@ -21,5 +21,5 @@ from aliyunsdkcore.request import RpcRequest
 class ClearAccountAliasRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ram', '2015-05-01', 'ClearAccountAlias','ram')
-		self.set_protocol_type('https');
+		RpcRequest.__init__(self, 'Ram', '2015-05-01', 'ClearAccountAlias')
+		self.set_protocol_type('https')

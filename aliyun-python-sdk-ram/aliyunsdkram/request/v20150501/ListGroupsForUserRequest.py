@@ -21,8 +21,8 @@ from aliyunsdkcore.request import RpcRequest
 class ListGroupsForUserRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ram', '2015-05-01', 'ListGroupsForUser','ram')
-		self.set_protocol_type('https');
+		RpcRequest.__init__(self, 'Ram', '2015-05-01', 'ListGroupsForUser')
+		self.set_protocol_type('https')
 
 	def get_UserName(self):
 		return self.get_query_params().get('UserName')

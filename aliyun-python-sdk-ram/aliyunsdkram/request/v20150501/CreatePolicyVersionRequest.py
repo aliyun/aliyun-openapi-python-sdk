@@ -21,8 +21,8 @@ from aliyunsdkcore.request import RpcRequest
 class CreatePolicyVersionRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ram', '2015-05-01', 'CreatePolicyVersion','ram')
-		self.set_protocol_type('https');
+		RpcRequest.__init__(self, 'Ram', '2015-05-01', 'CreatePolicyVersion')
+		self.set_protocol_type('https')
 
 	def get_SetAsDefault(self):
 		return self.get_query_params().get('SetAsDefault')
@@ -41,3 +41,9 @@ class CreatePolicyVersionRequest(RpcRequest):
 
 	def set_PolicyDocument(self,PolicyDocument):
 		self.add_query_param('PolicyDocument',PolicyDocument)
+
+	def get_RotateStrategy(self):
+		return self.get_query_params().get('RotateStrategy')
+
+	def set_RotateStrategy(self,RotateStrategy):
+		self.add_query_param('RotateStrategy',RotateStrategy)

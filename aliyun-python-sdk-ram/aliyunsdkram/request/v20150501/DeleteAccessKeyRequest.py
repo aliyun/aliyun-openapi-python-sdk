@@ -21,8 +21,8 @@ from aliyunsdkcore.request import RpcRequest
 class DeleteAccessKeyRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ram', '2015-05-01', 'DeleteAccessKey','ram')
-		self.set_protocol_type('https');
+		RpcRequest.__init__(self, 'Ram', '2015-05-01', 'DeleteAccessKey')
+		self.set_protocol_type('https')
 
 	def get_UserAccessKeyId(self):
 		return self.get_query_params().get('UserAccessKeyId')
