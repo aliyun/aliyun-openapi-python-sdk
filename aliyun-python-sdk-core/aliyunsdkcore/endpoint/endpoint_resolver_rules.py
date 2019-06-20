@@ -28,7 +28,7 @@ class EndpointResolverRules():
 
     def set_endpoint_data(self, endpoint_data):
         self.endpoint_data = endpoint_data
-    
+
     def get_endpoint_data(self):
         return self.endpoint_data
 
@@ -40,7 +40,7 @@ class EndpointResolverRules():
 
     def resolve(self, request):
         try:
-            if self.endpoint_data == None:
+            if self.endpoint_data is None:
                 endpoint_data = self.import_endpoint_data(request)
                 self.set_endpoint_data(endpoint_data)
         except ModuleNotFoundError:
@@ -49,7 +49,7 @@ class EndpointResolverRules():
             endpoint_data = self.get_endpoint_data()
             endpoint = endpoint_data.getEndpoint(
                 request.region_id, request.request_network)
-            if endpoint != None and endpoint != "":
+            if endpoint is not None and endpoint != "":
                 self.product_code_valid = True
                 self.region_id_valid = True
                 return endpoint

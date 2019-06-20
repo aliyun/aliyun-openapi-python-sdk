@@ -33,7 +33,7 @@ class TestDefaultEndpointResolver(unittest.TestCase):
             "cn-hangzhou", "test", "", "", "public")
         endpoint = resolver.resolve(request)
         self.assertEqual("test.cn-hangzhou.aliyuncs.com", endpoint)
-    
+
     def test_resolver_central(self):
         resolver = EndpointResolverRules(None)
         endpoint_data = EndpointData()
@@ -73,7 +73,7 @@ class EndpointData():
         self.endpoint_regional = "regional"
 
     def getEndpoint(self, region_id, network=None):
-        if(network == None or network == ""):
+        if(network is None or network == ""):
             network = "public"
 
         endpoint_map = self.getEndpointMap()

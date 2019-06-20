@@ -265,13 +265,14 @@ class AcsRequest:
 
     def set_read_timeout(self, read_timeout):
         self._request_read_timeout = read_timeout
-    
+
     def set_request_network(self, request_network):
         if type(request_network).__name__ == "str":
             self.request_network = request_network
-    
+
     def get_request_network(self):
         return self.request_network
+
 
 class RpcRequest(AcsRequest):
     """

@@ -23,6 +23,7 @@ from aliyunsdkcore.endpoint.location_service_endpoint_resolver \
     import LocationServiceEndpointResolver
 from aliyunsdkcore.endpoint.endpoint_resolver_rules import EndpointResolverRules
 
+
 class DefaultEndpointResolver(EndpointResolver):
 
     # Deprecated use for add_endpoint and modify_endpoint
