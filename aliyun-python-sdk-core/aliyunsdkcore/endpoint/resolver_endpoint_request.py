@@ -23,7 +23,8 @@ ENDPOINT_TYPE_OPEN = "openAPI"
 
 class ResolveEndpointRequest(object):
 
-    def __init__(self, region_id, product_code, location_service_code, endpoint_type):
+    def __init__(self, region_id, product_code, location_service_code, endpoint_type,
+                 request_network="public"):
 
         self.region_id = region_id
         self.product_code = product_code
@@ -36,5 +37,10 @@ class ResolveEndpointRequest(object):
 
         self.location_service_code = location_service_code
 
+        self.request_network = request_network
+
     def is_open_api_endpoint(self):
         return ENDPOINT_TYPE_OPEN == self.endpoint_type
+
+    def get_request_network(self):
+        return self.request_network

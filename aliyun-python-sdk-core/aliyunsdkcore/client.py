@@ -464,6 +464,7 @@ class AcsClient:
             request.get_product(),
             request.get_location_service_code(),
             request.get_location_endpoint_type(),
+            request.get_request_network(),
         )
         return self._endpoint_resolver.resolve(resolve_request)
 
