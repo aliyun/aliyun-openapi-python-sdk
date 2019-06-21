@@ -43,7 +43,7 @@ class EndpointResolverRules():
             if self.endpoint_data is None:
                 endpoint_data = self.import_endpoint_data(request)
                 self.set_endpoint_data(endpoint_data)
-        except ModuleNotFoundError:
+        except ImportError:
             return None
         else:
             endpoint_data = self.get_endpoint_data()
