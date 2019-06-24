@@ -29,6 +29,12 @@ class DescribeVodStorageDataRequest(RpcRequest):
 	def set_StartTime(self,StartTime):
 		self.add_query_param('StartTime',StartTime)
 
+	def get_Storage(self):
+		return self.get_query_params().get('Storage')
+
+	def set_Storage(self,Storage):
+		self.add_query_param('Storage',Storage)
+
 	def get_StorageType(self):
 		return self.get_query_params().get('StorageType')
 

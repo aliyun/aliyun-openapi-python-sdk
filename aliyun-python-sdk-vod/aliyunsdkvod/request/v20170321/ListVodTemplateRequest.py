@@ -41,6 +41,12 @@ class ListVodTemplateRequest(RpcRequest):
 	def set_TemplateType(self,TemplateType):
 		self.add_query_param('TemplateType',TemplateType)
 
+	def get_AppId(self):
+		return self.get_query_params().get('AppId')
+
+	def set_AppId(self,AppId):
+		self.add_query_param('AppId',AppId)
+
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 

@@ -29,6 +29,12 @@ class DescribeVodAIDataRequest(RpcRequest):
 	def set_StartTime(self,StartTime):
 		self.add_query_param('StartTime',StartTime)
 
+	def get_AIType(self):
+		return self.get_query_params().get('AIType')
+
+	def set_AIType(self,AIType):
+		self.add_query_param('AIType',AIType)
+
 	def get_EndTime(self):
 		return self.get_query_params().get('EndTime')
 

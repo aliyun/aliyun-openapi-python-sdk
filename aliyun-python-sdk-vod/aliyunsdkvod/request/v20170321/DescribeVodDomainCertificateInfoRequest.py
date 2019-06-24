@@ -18,40 +18,16 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class ListWatermarkRequest(RpcRequest):
+class DescribeVodDomainCertificateInfoRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'vod', '2017-03-21', 'ListWatermark','vod')
+		RpcRequest.__init__(self, 'vod', '2017-03-21', 'DescribeVodDomainCertificateInfo','vod')
 
-	def get_ResourceOwnerId(self):
-		return self.get_query_params().get('ResourceOwnerId')
+	def get_DomainName(self):
+		return self.get_query_params().get('DomainName')
 
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
-
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_PageNo(self):
-		return self.get_query_params().get('PageNo')
-
-	def set_PageNo(self,PageNo):
-		self.add_query_param('PageNo',PageNo)
-
-	def get_AppId(self):
-		return self.get_query_params().get('AppId')
-
-	def set_AppId(self,AppId):
-		self.add_query_param('AppId',AppId)
-
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
+	def set_DomainName(self,DomainName):
+		self.add_query_param('DomainName',DomainName)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
