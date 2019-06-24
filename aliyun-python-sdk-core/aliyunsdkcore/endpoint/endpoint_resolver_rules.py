@@ -20,8 +20,8 @@
 
 class EndpointResolverRules():
     def __init__(self, *args, **kwargs):
-        self.product_code_valid = True
-        self.region_id_valid = True
+        self.product_code_valid = False
+        self.region_id_valid = False
         self.endpoint_data = None
 
     def set_endpoint_data(self, endpoint_data):
