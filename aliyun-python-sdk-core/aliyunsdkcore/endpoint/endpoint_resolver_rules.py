@@ -43,13 +43,13 @@ class EndpointResolverRules():
                 endpoint_data = self.import_endpoint_data(request)
                 self.set_endpoint_data(endpoint_data)
         except ImportError:
-            return True
+            return None
         else:
             endpoint_data = self.get_endpoint_data()
             endpoint = endpoint_data.getEndpoint(
                 request.region_id, request.request_network)
             if endpoint is not None and endpoint != "":
-                self.product_code_valid = True
+                self.product_code_valid = True 
                 self.region_id_valid = True
                 return endpoint
             return None
