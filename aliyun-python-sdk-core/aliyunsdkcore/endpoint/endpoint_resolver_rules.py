@@ -63,4 +63,4 @@ class EndpointResolverRules():
 
     @classmethod
     def get_valid_region_ids_by_product(self, product_code):
-        return []
+        return None
