@@ -49,7 +49,7 @@ class EndpointResolverRules():
             endpoint = endpoint_data.getEndpoint(
                 request.region_id, request.request_network)
             if endpoint is not None and endpoint != "":
-                self.product_code_valid = True 
+                self.product_code_valid = True
                 self.region_id_valid = True
                 return endpoint
             return None
