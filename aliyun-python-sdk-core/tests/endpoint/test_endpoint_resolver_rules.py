@@ -15,7 +15,7 @@ class TestDefaultEndpointResolver(unittest.TestCase):
         # can not be resolved
         request = ResolveEndpointRequest("foo", "test", "", "", "public")
         endpoint = resolver.resolve(request)
-        self.assertEqual(None, endpoint)
+        self.assertEqual(True, endpoint)
 
     def test_resolver_has_endpoint(self):
         resolver = EndpointResolverRules(None)
