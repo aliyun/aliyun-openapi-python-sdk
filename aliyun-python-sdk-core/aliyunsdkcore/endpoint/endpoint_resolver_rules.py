@@ -17,8 +17,6 @@
 # under the License.
 #
 
-from aliyunsdkcore.endpoint.endpoint_resolver_base import EndpointResolverBase
-
 
 class EndpointResolverRules():
     def __init__(self, *args, **kwargs):
@@ -33,17 +31,18 @@ class EndpointResolverRules():
         return self.endpoint_data
 
     def import_endpoint_data(self, request):
-        return __import__(
+        endpoint_data = __import__(
             '.'.join(['aliyunsdk'+request.product_code,
                       'endpoint', 'endpoint_data']), globals(), locals(),
             ['endpoint', 'end'], 0)
+        return endpoint_data
 
     def resolve(self, request):
         try:
             if self.endpoint_data is None:
                 endpoint_data = self.import_endpoint_data(request)
                 self.set_endpoint_data(endpoint_data)
-        except ModuleNotFoundError:
+        except ImportError:
             return None
         else:
             endpoint_data = self.get_endpoint_data()
