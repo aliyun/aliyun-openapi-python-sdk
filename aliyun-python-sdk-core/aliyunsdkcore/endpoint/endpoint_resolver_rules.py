@@ -43,7 +43,7 @@ class EndpointResolverRules():
                 endpoint_data = self.import_endpoint_data(request)
                 self.set_endpoint_data(endpoint_data)
         except ImportError:
-            return None
+            return True
         else:
             endpoint_data = self.get_endpoint_data()
             endpoint = endpoint_data.getEndpoint(
