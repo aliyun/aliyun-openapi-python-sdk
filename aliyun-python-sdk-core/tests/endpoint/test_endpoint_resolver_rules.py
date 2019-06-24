@@ -1,11 +1,8 @@
 
 from tests import unittest
 
-from mock import MagicMock, patch, Mock
-
 from aliyunsdkcore.endpoint.endpoint_resolver_rules import EndpointResolverRules
 from aliyunsdkcore.endpoint.resolver_endpoint_request import ResolveEndpointRequest
-from aliyunsdkcore.acs_exception.exceptions import ClientException
 
 
 class TestDefaultEndpointResolver(unittest.TestCase):

@@ -30,6 +30,7 @@ class EndpointResolverRules():
     def get_endpoint_data(self):
         return self.endpoint_data
 
+    @classmethod
     def import_endpoint_data(self, request):
         endpoint_data = __import__(
             '.'.join(['aliyunsdk'+request.product_code,
@@ -60,5 +61,6 @@ class EndpointResolverRules():
     def is_region_id_valid(self, request):
         return self.region_id_valid
 
+    @classmethod
     def get_valid_region_ids_by_product(self, product_code):
         return []
