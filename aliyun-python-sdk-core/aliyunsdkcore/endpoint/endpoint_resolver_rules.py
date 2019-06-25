@@ -17,10 +17,6 @@
 # under the License.
 #
 
-import imp
-
-# from aliyunsdkcr import end
-
 
 class EndpointResolverRules():
     def __init__(self, *args, **kwargs):
