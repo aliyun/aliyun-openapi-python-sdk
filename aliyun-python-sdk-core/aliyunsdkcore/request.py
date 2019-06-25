@@ -108,6 +108,7 @@ class AcsRequest:
         self.string_to_sign = ''
         self._request_connect_timeout = None
         self._request_read_timeout = None
+        self.request_network = "public"
 
     def add_query_param(self, k, v):
         self._params[k] = v
@@ -264,6 +265,12 @@ class AcsRequest:
 
     def set_read_timeout(self, read_timeout):
         self._request_read_timeout = read_timeout
+
+    def get_request_network(self):
+        return self.request_network
+
+    def set_request_network(self, request_network):
+        self.request_network = request_network
 
 
 class RpcRequest(AcsRequest):
