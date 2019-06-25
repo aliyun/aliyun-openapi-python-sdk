@@ -18,14 +18,16 @@ class TestDefaultEndpointResolver(unittest.TestCase):
         resolver = EndpointResolverRules(None)
         request = ResolveEndpointRequest("foo", "test", "", "")
         endpoint_data = EndpointData()
-        resolver.set_endpoint_data(endpoint_data)
+        resolver.set_endpoint_data(
+            endpoint_data.getEndpointMap(), endpoint_data.getEndpointRegional())
         endpoint = resolver.resolve(request)
         self.assertEqual("bar", endpoint)
 
     def test_resolver_reginoal(self):
         resolver = EndpointResolverRules(None)
         endpoint_data = EndpointData()
-        resolver.set_endpoint_data(endpoint_data)
+        resolver.set_endpoint_data(
+            endpoint_data.getEndpointMap(), endpoint_data.getEndpointRegional())
         request = ResolveEndpointRequest(
             "cn-hangzhou", "test", "", "")
         endpoint = resolver.resolve(request)
@@ -35,7 +37,8 @@ class TestDefaultEndpointResolver(unittest.TestCase):
         resolver = EndpointResolverRules(None)
         endpoint_data = EndpointData()
         endpoint_data.endpoint_regional = "central"
-        resolver.set_endpoint_data(endpoint_data)
+        resolver.set_endpoint_data(
+            endpoint_data.getEndpointMap(), endpoint_data.getEndpointRegional())
         request = ResolveEndpointRequest(
             "cn-hangzhou", "test", "", "")
         endpoint = resolver.resolve(request)
@@ -44,7 +47,8 @@ class TestDefaultEndpointResolver(unittest.TestCase):
     def test_resolver_network(self):
         resolver = EndpointResolverRules(None)
         endpoint_data = EndpointData()
-        resolver.set_endpoint_data(endpoint_data)
+        resolver.set_endpoint_data(
+            endpoint_data.getEndpointMap(), endpoint_data.getEndpointRegional())
         request = ResolveEndpointRequest(
             "cn-hangzhou", "test", "", "")
         request.set_request_network("vpc")
@@ -54,43 +58,13 @@ class TestDefaultEndpointResolver(unittest.TestCase):
 
 class EndpointData():
     def __init__(self):
-        self.endpoint_map = None
-        self.endpoint_regional = None
-        self.iniEndpointData()
+        self.endpoint_map = {
+            "foo": "bar",
+        }
+        self.endpoint_regional = "regional"
 
     def getEndpointMap(self):
         return self.endpoint_map
 
     def getEndpointRegional(self):
         return self.endpoint_regional
-
-    def iniEndpointData(self):
-        self.endpoint_map = {
-            "foo": "bar",
-        }
-        self.endpoint_regional = "regional"
-
-    def getEndpoint(self, region_id, network=None):
-        if(network is None or network == ""):
-            network = "public"
-
-        endpoint_map = self.getEndpointMap()
-        endpoint_regional = self.getEndpointRegional()
-        endpoint = ""
-        for key in endpoint_map:
-            if (key == region_id):
-                endpoint = endpoint_map[key]
-                break
-
-        if endpoint == "":
-            if endpoint_regional == "regional":
-                endpoint = "test<network>.<region_id>.aliyuncs.com"
-            else:
-                endpoint = "test<network>.aliyuncs.com"
-            if network != "public":
-                endpoint = endpoint.replace("<network>", "-"+network)
-            else:
-                endpoint = endpoint.replace("<network>", "")
-            endpoint = endpoint.replace("<region_id>", region_id.lower())
-
-        return endpoint

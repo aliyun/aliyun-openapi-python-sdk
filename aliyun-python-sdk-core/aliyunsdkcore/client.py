@@ -466,6 +466,9 @@ class AcsClient:
             request.get_location_endpoint_type(),
         )
         resolve_request.set_request_network(request.get_request_network())
+        resolve_request.set_product_suffix(request.get_product_suffix())
+        resolve_request.set_endpoint_map(request.get_endpoint_map())
+        resolve_request.set_endpoint_regional(request.get_endpoint_regional())
         return self._endpoint_resolver.resolve(resolve_request)
 
     def do_action(self, acs_request):

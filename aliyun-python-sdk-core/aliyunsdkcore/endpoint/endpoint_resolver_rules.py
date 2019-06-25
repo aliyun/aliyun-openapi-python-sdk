@@ -22,41 +22,56 @@ class EndpointResolverRules():
     def __init__(self, *args, **kwargs):
         self.product_code_valid = False
         self.region_id_valid = False
-        self.endpoint_data = None
+        self.endpoint_map = None
+        self.endpoint_regional = None
+        self.request_network = 'public'
+        self.product_suffix = ''
 
-    def set_endpoint_data(self, endpoint_data):
-        self.endpoint_data = endpoint_data
-
-    def get_endpoint_data(self):
-        return self.endpoint_data
-
-    @classmethod
-    def import_endpoint_data(self, request):
-        mod_name = '.'.join(['aliyunsdk' + request.product_code, 'endpoint'])
-        try:
-            end = __import__(mod_name, globals(), locals(),
-                             ['endpoint_data'], 0)
-            return end.endpoint_data
-        except AttributeError:
-            return None
+    def set_endpoint_data(self, endpoint_map, endpoint_regional):
+        self.endpoint_map = endpoint_map
+        self.endpoint_regional = endpoint_regional
 
     def resolve(self, request):
-        try:
-            if self.endpoint_data is None:
-                endpoint_data = self.import_endpoint_data(request)
-                self.set_endpoint_data(endpoint_data)
-        except ImportError:
+        if self.endpoint_map is None or self.endpoint_regional is None:
             return None
-        else:
-            endpoint_data = self.get_endpoint_data()
-            if endpoint_data is not None:
-                endpoint = endpoint_data.getEndpoint(
-                    request.region_id, request.get_request_network())
-                if endpoint is not None and endpoint != "":
-                    self.product_code_valid = True
-                    self.region_id_valid = True
-                    return endpoint
-            return None
+        product_id = request.product_code_lower
+        region_id = request.region_id
+        network = request.get_request_network()
+        suffix = request.get_product_suffix()
+        endpoint = self.get_endpoint(region_id, product_id, network, suffix)
+        return endpoint
+
+    def get_endpoint(self, region_id, product_id, network, suffix):
+        if(network is None or network == ""):
+            network = "public"
+
+        endpoint_map = self.endpoint_map
+        endpoint_regional = self.endpoint_regional
+        endpoint = ""
+        for key in endpoint_map:
+            if (key == region_id):
+                endpoint = endpoint_map[key]
+                break
+
+        if endpoint == "":
+            if endpoint_regional == "regional":
+                endpoint = "<product_id><suffix><network>.<region_id>.aliyuncs.com"
+                endpoint = endpoint.replace("<region_id>", region_id.lower())
+            elif endpoint_regional == "central":
+                endpoint = "<product_id><suffix><network>.aliyuncs.com"
+            else:
+                return None
+            if network != "public":
+                endpoint = endpoint.replace("<network>", "-"+network)
+            else:
+                endpoint = endpoint.replace("<network>", "")
+            if suffix != "":
+                endpoint = endpoint.replace("<suffix>", "-"+suffix)
+            else:
+                endpoint = endpoint.replace("<suffix>", "")
+            endpoint = endpoint.replace("<product_id>", product_id)
+
+        return endpoint
 
     def is_product_code_valid(self, request):
         return self.product_code_valid
