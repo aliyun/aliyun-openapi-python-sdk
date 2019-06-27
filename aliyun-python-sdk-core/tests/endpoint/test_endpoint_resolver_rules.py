@@ -55,6 +55,17 @@ class TestDefaultEndpointResolver(unittest.TestCase):
         endpoint = resolver.resolve(request)
         self.assertEqual("test-vpc.cn-hangzhou.aliyuncs.com", endpoint)
 
+    def test_resolver_network_special_endpoint(self):
+        resolver = EndpointResolverRules(None)
+        endpoint_data = EndpointData()
+        resolver.set_endpoint_data(
+            endpoint_data.getEndpointMap(), endpoint_data.getEndpointRegional())
+        request = ResolveEndpointRequest(
+            "foo", "test", "", "")
+        request.set_request_network("vpc")
+        endpoint = resolver.resolve(request)
+        self.assertEqual("test-vpc.foo.aliyuncs.com", endpoint)
+
 
 class EndpointData():
     def __init__(self):

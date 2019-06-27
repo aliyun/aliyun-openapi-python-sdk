@@ -48,10 +48,11 @@ class EndpointResolverRules():
         endpoint_map = self.endpoint_map
         endpoint_regional = self.endpoint_regional
         endpoint = ""
-        for key in endpoint_map:
-            if (key == region_id):
-                endpoint = endpoint_map[key]
-                break
+        if network == "public":
+            for key in endpoint_map:
+                if (key == region_id):
+                    endpoint = endpoint_map[key]
+                    break
 
         if endpoint == "":
             if endpoint_regional == "regional":
