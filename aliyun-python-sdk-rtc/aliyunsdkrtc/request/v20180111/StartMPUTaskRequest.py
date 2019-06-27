@@ -42,6 +42,12 @@ class StartMPUTaskRequest(RpcRequest):
 	def set_BackgroundColor(self,BackgroundColor):
 		self.add_query_param('BackgroundColor',BackgroundColor)
 
+	def get_CropMode(self):
+		return self.get_query_params().get('CropMode')
+
+	def set_CropMode(self,CropMode):
+		self.add_query_param('CropMode',CropMode)
+
 	def get_TaskProfile(self):
 		return self.get_query_params().get('TaskProfile')
 
