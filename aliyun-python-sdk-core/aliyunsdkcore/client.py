@@ -254,6 +254,9 @@ class AcsClient:
 
         header['x-sdk-client'] = 'python/2.0.0'
 
+        # modify Accept-Encoding
+        header['Accept-Encoding'] = 'identity'
+
         protocol = request.get_protocol_type()
         response = HttpResponse(
             endpoint,
@@ -275,9 +278,6 @@ class AcsClient:
             raise ClientException(
                 error_code.SDK_INVALID_REQUEST,
                 error_msg.get_msg('SDK_INVALID_REQUEST'))
-
-        # modify Accept-Encoding
-        request.add_header('Accept-Encoding', 'identity')
 
         if isinstance(request, CommonRequest):
             request.trans_to_acs_request()
