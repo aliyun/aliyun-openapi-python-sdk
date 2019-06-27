@@ -1,3 +1,6 @@
+2019-06-27 Version:2.13.6
+1, Fix rpc style API accept-encoding
+
 2018-12-23 Version: 2.11.4
 1,  Fix README.dst missing problem because of Python2.7 with setup.py has bug
 2,  Fix a server error handling bug
