@@ -29,6 +29,12 @@ class DescribeRegionsRequest(RpcRequest):
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
 
+	def get_FileSystemType(self):
+		return self.get_query_params().get('FileSystemType')
+
+	def set_FileSystemType(self,FileSystemType):
+		self.add_query_param('FileSystemType',FileSystemType)
+
 	def get_PageNumber(self):
 		return self.get_query_params().get('PageNumber')
 

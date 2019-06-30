@@ -34,3 +34,9 @@ class DeleteAccessRuleRequest(RpcRequest):
 
 	def set_AccessRuleId(self,AccessRuleId):
 		self.add_query_param('AccessRuleId',AccessRuleId)
+
+	def get_FileSystemType(self):
+		return self.get_query_params().get('FileSystemType')
+
+	def set_FileSystemType(self,FileSystemType):
+		self.add_query_param('FileSystemType',FileSystemType)

@@ -28,3 +28,9 @@ class DeleteAccessGroupRequest(RpcRequest):
 
 	def set_AccessGroupName(self,AccessGroupName):
 		self.add_query_param('AccessGroupName',AccessGroupName)
+
+	def get_FileSystemType(self):
+		return self.get_query_params().get('FileSystemType')
+
+	def set_FileSystemType(self,FileSystemType):
+		self.add_query_param('FileSystemType',FileSystemType)

@@ -23,12 +23,6 @@ class DeleteFileSystemRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'NAS', '2017-06-26', 'DeleteFileSystem','nas')
 
-	def get_FileSystemType(self):
-		return self.get_query_params().get('FileSystemType')
-
-	def set_FileSystemType(self,FileSystemType):
-		self.add_query_param('FileSystemType',FileSystemType)
-
 	def get_FileSystemId(self):
 		return self.get_query_params().get('FileSystemId')
 
