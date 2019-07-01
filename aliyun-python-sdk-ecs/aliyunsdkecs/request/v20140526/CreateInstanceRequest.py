@@ -250,6 +250,12 @@ class CreateInstanceRequest(RpcRequest):
 	def set_CapacityReservationId(self,CapacityReservationId):
 		self.add_query_param('CapacityReservationId',CapacityReservationId)
 
+	def get_SystemDiskPerformanceLevel(self):
+		return self.get_query_params().get('SystemDisk.PerformanceLevel')
+
+	def set_SystemDiskPerformanceLevel(self,SystemDiskPerformanceLevel):
+		self.add_query_param('SystemDisk.PerformanceLevel',SystemDiskPerformanceLevel)
+
 	def get_UserData(self):
 		return self.get_query_params().get('UserData')
 
@@ -360,6 +366,8 @@ class CreateInstanceRequest(RpcRequest):
 				self.add_query_param('DataDisk.' + str(i + 1) + '.Size' , DataDisks[i].get('Size'))
 			if DataDisks[i].get('Encrypted') is not None:
 				self.add_query_param('DataDisk.' + str(i + 1) + '.Encrypted' , DataDisks[i].get('Encrypted'))
+			if DataDisks[i].get('PerformanceLevel') is not None:
+				self.add_query_param('DataDisk.' + str(i + 1) + '.PerformanceLevel' , DataDisks[i].get('PerformanceLevel'))
 			if DataDisks[i].get('Description') is not None:
 				self.add_query_param('DataDisk.' + str(i + 1) + '.Description' , DataDisks[i].get('Description'))
 			if DataDisks[i].get('Category') is not None:

@@ -47,6 +47,12 @@ class CreateDiskRequest(RpcRequest):
 	def set_ClientToken(self,ClientToken):
 		self.add_query_param('ClientToken',ClientToken)
 
+	def get_PerformanceLevel(self):
+		return self.get_query_params().get('PerformanceLevel')
+
+	def set_PerformanceLevel(self,PerformanceLevel):
+		self.add_query_param('PerformanceLevel',PerformanceLevel)
+
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
 

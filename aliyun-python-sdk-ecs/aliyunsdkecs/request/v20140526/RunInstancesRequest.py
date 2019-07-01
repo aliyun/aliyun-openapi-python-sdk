@@ -270,6 +270,12 @@ class RunInstancesRequest(RpcRequest):
 	def set_CapacityReservationId(self,CapacityReservationId):
 		self.add_query_param('CapacityReservationId',CapacityReservationId)
 
+	def get_SystemDiskPerformanceLevel(self):
+		return self.get_query_params().get('SystemDisk.PerformanceLevel')
+
+	def set_SystemDiskPerformanceLevel(self,SystemDiskPerformanceLevel):
+		self.add_query_param('SystemDisk.PerformanceLevel',SystemDiskPerformanceLevel)
+
 	def get_UserData(self):
 		return self.get_query_params().get('UserData')
 
@@ -408,6 +414,8 @@ class RunInstancesRequest(RpcRequest):
 				self.add_query_param('DataDisk.' + str(i + 1) + '.Device' , DataDisks[i].get('Device'))
 			if DataDisks[i].get('DeleteWithInstance') is not None:
 				self.add_query_param('DataDisk.' + str(i + 1) + '.DeleteWithInstance' , DataDisks[i].get('DeleteWithInstance'))
+			if DataDisks[i].get('PerformanceLevel') is not None:
+				self.add_query_param('DataDisk.' + str(i + 1) + '.PerformanceLevel' , DataDisks[i].get('PerformanceLevel'))
 
 
 	def get_LaunchTemplateVersion(self):

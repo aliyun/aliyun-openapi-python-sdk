@@ -23,6 +23,12 @@ class DescribePriceRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'DescribePrice','ecs')
 
+	def get_DataDisk3PerformanceLevel(self):
+		return self.get_query_params().get('DataDisk.3.PerformanceLevel')
+
+	def set_DataDisk3PerformanceLevel(self,DataDisk3PerformanceLevel):
+		self.add_query_param('DataDisk.3.PerformanceLevel',DataDisk3PerformanceLevel)
+
 	def get_DataDisk3Size(self):
 		return self.get_query_params().get('DataDisk.3.Size')
 
@@ -65,11 +71,23 @@ class DescribePriceRequest(RpcRequest):
 	def set_SystemDiskCategory(self,SystemDiskCategory):
 		self.add_query_param('SystemDisk.Category',SystemDiskCategory)
 
+	def get_SystemDiskPerformanceLevel(self):
+		return self.get_query_params().get('SystemDisk.PerformanceLevel')
+
+	def set_SystemDiskPerformanceLevel(self,SystemDiskPerformanceLevel):
+		self.add_query_param('SystemDisk.PerformanceLevel',SystemDiskPerformanceLevel)
+
 	def get_DataDisk4Category(self):
 		return self.get_query_params().get('DataDisk.4.Category')
 
 	def set_DataDisk4Category(self,DataDisk4Category):
 		self.add_query_param('DataDisk.4.Category',DataDisk4Category)
+
+	def get_DataDisk4PerformanceLevel(self):
+		return self.get_query_params().get('DataDisk.4.PerformanceLevel')
+
+	def set_DataDisk4PerformanceLevel(self,DataDisk4PerformanceLevel):
+		self.add_query_param('DataDisk.4.PerformanceLevel',DataDisk4PerformanceLevel)
 
 	def get_DataDisk4Size(self):
 		return self.get_query_params().get('DataDisk.4.Size')
@@ -131,6 +149,12 @@ class DescribePriceRequest(RpcRequest):
 	def set_DataDisk2Size(self,DataDisk2Size):
 		self.add_query_param('DataDisk.2.Size',DataDisk2Size)
 
+	def get_DataDisk1PerformanceLevel(self):
+		return self.get_query_params().get('DataDisk.1.PerformanceLevel')
+
+	def set_DataDisk1PerformanceLevel(self,DataDisk1PerformanceLevel):
+		self.add_query_param('DataDisk.1.PerformanceLevel',DataDisk1PerformanceLevel)
+
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
@@ -148,6 +172,12 @@ class DescribePriceRequest(RpcRequest):
 
 	def set_DataDisk1Category(self,DataDisk1Category):
 		self.add_query_param('DataDisk.1.Category',DataDisk1Category)
+
+	def get_DataDisk2PerformanceLevel(self):
+		return self.get_query_params().get('DataDisk.2.PerformanceLevel')
+
+	def set_DataDisk2PerformanceLevel(self,DataDisk2PerformanceLevel):
+		self.add_query_param('DataDisk.2.PerformanceLevel',DataDisk2PerformanceLevel)
 
 	def get_SystemDiskSize(self):
 		return self.get_query_params().get('SystemDisk.Size')

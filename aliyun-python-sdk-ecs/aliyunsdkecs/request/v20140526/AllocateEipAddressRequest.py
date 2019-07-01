@@ -23,6 +23,12 @@ class AllocateEipAddressRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'AllocateEipAddress','ecs')
 
+	def get_ActivityId(self):
+		return self.get_query_params().get('ActivityId')
+
+	def set_ActivityId(self,ActivityId):
+		self.add_query_param('ActivityId',ActivityId)
+
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
