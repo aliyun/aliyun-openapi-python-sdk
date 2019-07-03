@@ -18,10 +18,16 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class DescribeDnsProductInstancesRequest(RpcRequest):
+class DescribeDomainStatisticsSummaryRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'DescribeDnsProductInstances','Alidns')
+		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'DescribeDomainStatisticsSummary','Alidns')
+
+	def get_EndDate(self):
+		return self.get_query_params().get('EndDate')
+
+	def set_EndDate(self,EndDate):
+		self.add_query_param('EndDate',EndDate)
 
 	def get_UserClientIp(self):
 		return self.get_query_params().get('UserClientIp')
@@ -35,20 +41,50 @@ class DescribeDnsProductInstancesRequest(RpcRequest):
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
 
+	def get_OrderBy(self):
+		return self.get_query_params().get('OrderBy')
+
+	def set_OrderBy(self,OrderBy):
+		self.add_query_param('OrderBy',OrderBy)
+
+	def get_SearchMode(self):
+		return self.get_query_params().get('SearchMode')
+
+	def set_SearchMode(self,SearchMode):
+		self.add_query_param('SearchMode',SearchMode)
+
+	def get_Threshold(self):
+		return self.get_query_params().get('Threshold')
+
+	def set_Threshold(self,Threshold):
+		self.add_query_param('Threshold',Threshold)
+
 	def get_Lang(self):
 		return self.get_query_params().get('Lang')
 
 	def set_Lang(self,Lang):
 		self.add_query_param('Lang',Lang)
 
-	def get_VersionCode(self):
-		return self.get_query_params().get('VersionCode')
+	def get_StartDate(self):
+		return self.get_query_params().get('StartDate')
 
-	def set_VersionCode(self,VersionCode):
-		self.add_query_param('VersionCode',VersionCode)
+	def set_StartDate(self,StartDate):
+		self.add_query_param('StartDate',StartDate)
+
+	def get_Keyword(self):
+		return self.get_query_params().get('Keyword')
+
+	def set_Keyword(self,Keyword):
+		self.add_query_param('Keyword',Keyword)
 
 	def get_PageNumber(self):
 		return self.get_query_params().get('PageNumber')
 
 	def set_PageNumber(self,PageNumber):
 		self.add_query_param('PageNumber',PageNumber)
+
+	def get_Direction(self):
+		return self.get_query_params().get('Direction')
+
+	def set_Direction(self,Direction):
+		self.add_query_param('Direction',Direction)

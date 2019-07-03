@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class OperateBatchDomainRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'OperateBatchDomain','alidns')
+		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'OperateBatchDomain','Alidns')
 
 	def get_UserClientIp(self):
 		return self.get_query_params().get('UserClientIp')
@@ -36,6 +36,10 @@ class OperateBatchDomainRequest(RpcRequest):
 		for i in range(len(DomainRecordInfos)):	
 			if DomainRecordInfos[i].get('Rr') is not None:
 				self.add_query_param('DomainRecordInfo.' + str(i + 1) + '.Rr' , DomainRecordInfos[i].get('Rr'))
+			if DomainRecordInfos[i].get('NewType') is not None:
+				self.add_query_param('DomainRecordInfo.' + str(i + 1) + '.NewType' , DomainRecordInfos[i].get('NewType'))
+			if DomainRecordInfos[i].get('NewValue') is not None:
+				self.add_query_param('DomainRecordInfo.' + str(i + 1) + '.NewValue' , DomainRecordInfos[i].get('NewValue'))
 			if DomainRecordInfos[i].get('Line') is not None:
 				self.add_query_param('DomainRecordInfo.' + str(i + 1) + '.Line' , DomainRecordInfos[i].get('Line'))
 			if DomainRecordInfos[i].get('Domain') is not None:
@@ -48,6 +52,8 @@ class OperateBatchDomainRequest(RpcRequest):
 				self.add_query_param('DomainRecordInfo.' + str(i + 1) + '.Value' , DomainRecordInfos[i].get('Value'))
 			if DomainRecordInfos[i].get('Ttl') is not None:
 				self.add_query_param('DomainRecordInfo.' + str(i + 1) + '.Ttl' , DomainRecordInfos[i].get('Ttl'))
+			if DomainRecordInfos[i].get('NewRr') is not None:
+				self.add_query_param('DomainRecordInfo.' + str(i + 1) + '.NewRr' , DomainRecordInfos[i].get('NewRr'))
 
 
 	def get_Lang(self):

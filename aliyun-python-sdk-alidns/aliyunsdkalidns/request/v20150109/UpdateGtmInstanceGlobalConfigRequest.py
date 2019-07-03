@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class UpdateGtmInstanceGlobalConfigRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'UpdateGtmInstanceGlobalConfig','alidns')
+		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'UpdateGtmInstanceGlobalConfig','Alidns')
 
 	def get_AlertGroup(self):
 		return self.get_query_params().get('AlertGroup')
@@ -47,6 +47,12 @@ class UpdateGtmInstanceGlobalConfigRequest(RpcRequest):
 	def set_UserDomainName(self,UserDomainName):
 		self.add_query_param('UserDomainName',UserDomainName)
 
+	def get_CnameMode(self):
+		return self.get_query_params().get('CnameMode')
+
+	def set_CnameMode(self,CnameMode):
+		self.add_query_param('CnameMode',CnameMode)
+
 	def get_UserClientIp(self):
 		return self.get_query_params().get('UserClientIp')
 
@@ -70,3 +76,9 @@ class UpdateGtmInstanceGlobalConfigRequest(RpcRequest):
 
 	def set_Ttl(self,Ttl):
 		self.add_query_param('Ttl',Ttl)
+
+	def get_CnameCustomDomainName(self):
+		return self.get_query_params().get('CnameCustomDomainName')
+
+	def set_CnameCustomDomainName(self,CnameCustomDomainName):
+		self.add_query_param('CnameCustomDomainName',CnameCustomDomainName)

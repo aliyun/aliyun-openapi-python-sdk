@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -21,13 +21,19 @@ from aliyunsdkcore.request import RpcRequest
 class DescribeDomainRecordsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'DescribeDomainRecords','alidns')
+		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'DescribeDomainRecords','Alidns')
 
 	def get_ValueKeyWord(self):
 		return self.get_query_params().get('ValueKeyWord')
 
 	def set_ValueKeyWord(self,ValueKeyWord):
 		self.add_query_param('ValueKeyWord',ValueKeyWord)
+
+	def get_Line(self):
+		return self.get_query_params().get('Line')
+
+	def set_Line(self,Line):
+		self.add_query_param('Line',Line)
 
 	def get_GroupId(self):
 		return self.get_query_params().get('GroupId')
@@ -46,6 +52,12 @@ class DescribeDomainRecordsRequest(RpcRequest):
 
 	def set_OrderBy(self,OrderBy):
 		self.add_query_param('OrderBy',OrderBy)
+
+	def get_Type(self):
+		return self.get_query_params().get('Type')
+
+	def set_Type(self,Type):
+		self.add_query_param('Type',Type)
 
 	def get_PageNumber(self):
 		return self.get_query_params().get('PageNumber')
@@ -100,3 +112,9 @@ class DescribeDomainRecordsRequest(RpcRequest):
 
 	def set_Direction(self,Direction):
 		self.add_query_param('Direction',Direction)
+
+	def get_Status(self):
+		return self.get_query_params().get('Status')
+
+	def set_Status(self,Status):
+		self.add_query_param('Status',Status)

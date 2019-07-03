@@ -18,22 +18,22 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class DescribeGtmMonitorConfigRequest(RpcRequest):
+class DescribeGtmInstanceSystemCnameRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'DescribeGtmMonitorConfig','Alidns')
+		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'DescribeGtmInstanceSystemCname','Alidns')
+
+	def get_InstanceId(self):
+		return self.get_query_params().get('InstanceId')
+
+	def set_InstanceId(self,InstanceId):
+		self.add_query_param('InstanceId',InstanceId)
 
 	def get_UserClientIp(self):
 		return self.get_query_params().get('UserClientIp')
 
 	def set_UserClientIp(self,UserClientIp):
 		self.add_query_param('UserClientIp',UserClientIp)
-
-	def get_MonitorConfigId(self):
-		return self.get_query_params().get('MonitorConfigId')
-
-	def set_MonitorConfigId(self,MonitorConfigId):
-		self.add_query_param('MonitorConfigId',MonitorConfigId)
 
 	def get_Lang(self):
 		return self.get_query_params().get('Lang')
