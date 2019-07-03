@@ -18,28 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class QueryDeviceServiceDataRequest(RpcRequest):
+class BatchQueryDeviceDetailRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'QueryDeviceServiceData','iot')
-
-	def get_Asc(self):
-		return self.get_query_params().get('Asc')
-
-	def set_Asc(self,Asc):
-		self.add_query_param('Asc',Asc)
-
-	def get_Identifier(self):
-		return self.get_query_params().get('Identifier')
-
-	def set_Identifier(self,Identifier):
-		self.add_query_param('Identifier',Identifier)
-
-	def get_IotId(self):
-		return self.get_query_params().get('IotId')
-
-	def set_IotId(self,IotId):
-		self.add_query_param('IotId',IotId)
+		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'BatchQueryDeviceDetail','iot')
 
 	def get_IotInstanceId(self):
 		return self.get_query_params().get('IotInstanceId')
@@ -47,29 +29,13 @@ class QueryDeviceServiceDataRequest(RpcRequest):
 	def set_IotInstanceId(self,IotInstanceId):
 		self.add_query_param('IotInstanceId',IotInstanceId)
 
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
+	def get_DeviceNames(self):
+		return self.get_query_params().get('DeviceNames')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_EndTime(self):
-		return self.get_query_params().get('EndTime')
-
-	def set_EndTime(self,EndTime):
-		self.add_query_param('EndTime',EndTime)
-
-	def get_DeviceName(self):
-		return self.get_query_params().get('DeviceName')
-
-	def set_DeviceName(self,DeviceName):
-		self.add_query_param('DeviceName',DeviceName)
-
-	def get_StartTime(self):
-		return self.get_query_params().get('StartTime')
-
-	def set_StartTime(self,StartTime):
-		self.add_query_param('StartTime',StartTime)
+	def set_DeviceNames(self,DeviceNames):
+		for i in range(len(DeviceNames)):	
+			if DeviceNames[i] is not None:
+				self.add_query_param('DeviceName.' + str(i + 1) , DeviceNames[i]);
 
 	def get_ProductKey(self):
 		return self.get_query_params().get('ProductKey')
