@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -35,6 +35,12 @@ class CreateKeywordLibRequest(RpcRequest):
 	def set_LibType(self,LibType):
 		self.add_query_param('LibType',LibType)
 
+	def get_Enable(self):
+		return self.get_query_params().get('Enable')
+
+	def set_Enable(self,Enable):
+		self.add_query_param('Enable',Enable)
+
 	def get_Name(self):
 		return self.get_query_params().get('Name')
 
@@ -46,6 +52,12 @@ class CreateKeywordLibRequest(RpcRequest):
 
 	def set_BizTypes(self,BizTypes):
 		self.add_query_param('BizTypes',BizTypes)
+
+	def get_Language(self):
+		return self.get_query_params().get('Language')
+
+	def set_Language(self,Language):
+		self.add_query_param('Language',Language)
 
 	def get_ServiceModule(self):
 		return self.get_query_params().get('ServiceModule')
@@ -64,6 +76,12 @@ class CreateKeywordLibRequest(RpcRequest):
 
 	def set_Category(self,Category):
 		self.add_query_param('Category',Category)
+
+	def get_MatchMode(self):
+		return self.get_query_params().get('MatchMode')
+
+	def set_MatchMode(self,MatchMode):
+		self.add_query_param('MatchMode',MatchMode)
 
 	def get_ResourceType(self):
 		return self.get_query_params().get('ResourceType')

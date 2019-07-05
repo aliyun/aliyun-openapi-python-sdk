@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -28,6 +28,18 @@ class DescribeAuditContentRequest(RpcRequest):
 
 	def set_TotalCount(self,TotalCount):
 		self.add_query_param('TotalCount',TotalCount)
+
+	def get_KeywordId(self):
+		return self.get_query_params().get('KeywordId')
+
+	def set_KeywordId(self,KeywordId):
+		self.add_query_param('KeywordId',KeywordId)
+
+	def get_ImageId(self):
+		return self.get_query_params().get('ImageId')
+
+	def set_ImageId(self,ImageId):
+		self.add_query_param('ImageId',ImageId)
 
 	def get_Suggestion(self):
 		return self.get_query_params().get('Suggestion')
@@ -88,6 +100,12 @@ class DescribeAuditContentRequest(RpcRequest):
 
 	def set_DataId(self,DataId):
 		self.add_query_param('DataId',DataId)
+
+	def get_LibType(self):
+		return self.get_query_params().get('LibType')
+
+	def set_LibType(self,LibType):
+		self.add_query_param('LibType',LibType)
 
 	def get_AuditResult(self):
 		return self.get_query_params().get('AuditResult')

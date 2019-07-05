@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -28,6 +28,12 @@ class UpdateKeywordLibRequest(RpcRequest):
 
 	def set_SourceIp(self,SourceIp):
 		self.add_query_param('SourceIp',SourceIp)
+
+	def get_Enable(self):
+		return self.get_query_params().get('Enable')
+
+	def set_Enable(self,Enable):
+		self.add_query_param('Enable',Enable)
 
 	def get_Name(self):
 		return self.get_query_params().get('Name')
@@ -52,3 +58,9 @@ class UpdateKeywordLibRequest(RpcRequest):
 
 	def set_Lang(self,Lang):
 		self.add_query_param('Lang',Lang)
+
+	def get_MatchMode(self):
+		return self.get_query_params().get('MatchMode')
+
+	def set_MatchMode(self,MatchMode):
+		self.add_query_param('MatchMode',MatchMode)
