@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -35,8 +35,8 @@ class ListActionsRequest(RpcRequest):
 	def set_MaxResults(self,MaxResults):
 		self.add_query_param('MaxResults',MaxResults)
 
-	def get_ActionName(self):
-		return self.get_query_params().get('ActionName')
+	def get_OOSActionName(self):
+		return self.get_query_params().get('OOSActionName')
 
-	def set_ActionName(self,ActionName):
-		self.add_query_param('ActionName',ActionName)
+	def set_OOSActionName(self,OOSActionName):
+		self.add_query_param('OOSActionName',OOSActionName)
