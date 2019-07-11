@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -22,12 +22,6 @@ class CreateBackupPlanRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Dbs', '2019-03-06', 'CreateBackupPlan','cbs')
-
-	def get_BackupMethod(self):
-		return self.get_query_params().get('BackupMethod')
-
-	def set_BackupMethod(self,BackupMethod):
-		self.add_query_param('BackupMethod',BackupMethod)
 
 	def get_DatabaseType(self):
 		return self.get_query_params().get('DatabaseType')
@@ -47,12 +41,6 @@ class CreateBackupPlanRequest(RpcRequest):
 	def set_ClientToken(self,ClientToken):
 		self.add_query_param('ClientToken',ClientToken)
 
-	def get_Region(self):
-		return self.get_query_params().get('Region')
-
-	def set_Region(self,Region):
-		self.add_query_param('Region',Region)
-
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
@@ -70,3 +58,45 @@ class CreateBackupPlanRequest(RpcRequest):
 
 	def set_InstanceClass(self,InstanceClass):
 		self.add_query_param('InstanceClass',InstanceClass)
+
+	def get_StorageType(self):
+		return self.get_query_params().get('StorageType')
+
+	def set_StorageType(self,StorageType):
+		self.add_query_param('StorageType',StorageType)
+
+	def get_BackupMethod(self):
+		return self.get_query_params().get('BackupMethod')
+
+	def set_BackupMethod(self,BackupMethod):
+		self.add_query_param('BackupMethod',BackupMethod)
+
+	def get_DatabaseRegion(self):
+		return self.get_query_params().get('DatabaseRegion')
+
+	def set_DatabaseRegion(self,DatabaseRegion):
+		self.add_query_param('DatabaseRegion',DatabaseRegion)
+
+	def get_StorageRegion(self):
+		return self.get_query_params().get('StorageRegion')
+
+	def set_StorageRegion(self,StorageRegion):
+		self.add_query_param('StorageRegion',StorageRegion)
+
+	def get_InstanceType(self):
+		return self.get_query_params().get('InstanceType')
+
+	def set_InstanceType(self,InstanceType):
+		self.add_query_param('InstanceType',InstanceType)
+
+	def get_Region(self):
+		return self.get_query_params().get('Region')
+
+	def set_Region(self,Region):
+		self.add_query_param('Region',Region)
+
+	def get_PayType(self):
+		return self.get_query_params().get('PayType')
+
+	def set_PayType(self,PayType):
+		self.add_query_param('PayType',PayType)

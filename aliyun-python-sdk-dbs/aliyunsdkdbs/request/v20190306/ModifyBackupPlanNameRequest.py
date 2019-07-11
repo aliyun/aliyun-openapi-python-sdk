@@ -18,10 +18,16 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class StartRestoreTaskRequest(RpcRequest):
+class ModifyBackupPlanNameRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dbs', '2019-03-06', 'StartRestoreTask','cbs')
+		RpcRequest.__init__(self, 'Dbs', '2019-03-06', 'ModifyBackupPlanName','cbs')
+
+	def get_BackupPlanName(self):
+		return self.get_query_params().get('BackupPlanName')
+
+	def set_BackupPlanName(self,BackupPlanName):
+		self.add_query_param('BackupPlanName',BackupPlanName)
 
 	def get_ClientToken(self):
 		return self.get_query_params().get('ClientToken')
@@ -29,11 +35,11 @@ class StartRestoreTaskRequest(RpcRequest):
 	def set_ClientToken(self,ClientToken):
 		self.add_query_param('ClientToken',ClientToken)
 
-	def get_RestoreTaskId(self):
-		return self.get_query_params().get('RestoreTaskId')
+	def get_BackupPlanId(self):
+		return self.get_query_params().get('BackupPlanId')
 
-	def set_RestoreTaskId(self,RestoreTaskId):
-		self.add_query_param('RestoreTaskId',RestoreTaskId)
+	def set_BackupPlanId(self,BackupPlanId):
+		self.add_query_param('BackupPlanId',BackupPlanId)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')

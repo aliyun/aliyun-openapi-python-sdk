@@ -18,22 +18,16 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class ConfigureBackupPlanRequest(RpcRequest):
+class ModifyBackupSourceEndpointRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dbs', '2019-03-06', 'ConfigureBackupPlan','cbs')
+		RpcRequest.__init__(self, 'Dbs', '2019-03-06', 'ModifyBackupSourceEndpoint','cbs')
 
 	def get_SourceEndpointRegion(self):
 		return self.get_query_params().get('SourceEndpointRegion')
 
 	def set_SourceEndpointRegion(self,SourceEndpointRegion):
 		self.add_query_param('SourceEndpointRegion',SourceEndpointRegion)
-
-	def get_DuplicationArchivePeriod(self):
-		return self.get_query_params().get('DuplicationArchivePeriod')
-
-	def set_DuplicationArchivePeriod(self,DuplicationArchivePeriod):
-		self.add_query_param('DuplicationArchivePeriod',DuplicationArchivePeriod)
 
 	def get_BackupGatewayId(self):
 		return self.get_query_params().get('BackupGatewayId')
@@ -95,30 +89,6 @@ class ConfigureBackupPlanRequest(RpcRequest):
 	def set_SourceEndpointDatabaseName(self,SourceEndpointDatabaseName):
 		self.add_query_param('SourceEndpointDatabaseName',SourceEndpointDatabaseName)
 
-	def get_BackupRetentionPeriod(self):
-		return self.get_query_params().get('BackupRetentionPeriod')
-
-	def set_BackupRetentionPeriod(self,BackupRetentionPeriod):
-		self.add_query_param('BackupRetentionPeriod',BackupRetentionPeriod)
-
-	def get_DuplicationInfrequentAccessPeriod(self):
-		return self.get_query_params().get('DuplicationInfrequentAccessPeriod')
-
-	def set_DuplicationInfrequentAccessPeriod(self,DuplicationInfrequentAccessPeriod):
-		self.add_query_param('DuplicationInfrequentAccessPeriod',DuplicationInfrequentAccessPeriod)
-
-	def get_BackupPeriod(self):
-		return self.get_query_params().get('BackupPeriod')
-
-	def set_BackupPeriod(self,BackupPeriod):
-		self.add_query_param('BackupPeriod',BackupPeriod)
-
-	def get_BackupStartTime(self):
-		return self.get_query_params().get('BackupStartTime')
-
-	def set_BackupStartTime(self,BackupStartTime):
-		self.add_query_param('BackupStartTime',BackupStartTime)
-
 	def get_SourceEndpointInstanceType(self):
 		return self.get_query_params().get('SourceEndpointInstanceType')
 
@@ -131,26 +101,8 @@ class ConfigureBackupPlanRequest(RpcRequest):
 	def set_SourceEndpointIP(self,SourceEndpointIP):
 		self.add_query_param('SourceEndpointIP',SourceEndpointIP)
 
-	def get_BackupPlanName(self):
-		return self.get_query_params().get('BackupPlanName')
-
-	def set_BackupPlanName(self,BackupPlanName):
-		self.add_query_param('BackupPlanName',BackupPlanName)
-
 	def get_SourceEndpointOracleSID(self):
 		return self.get_query_params().get('SourceEndpointOracleSID')
 
 	def set_SourceEndpointOracleSID(self,SourceEndpointOracleSID):
 		self.add_query_param('SourceEndpointOracleSID',SourceEndpointOracleSID)
-
-	def get_OSSBucketName(self):
-		return self.get_query_params().get('OSSBucketName')
-
-	def set_OSSBucketName(self,OSSBucketName):
-		self.add_query_param('OSSBucketName',OSSBucketName)
-
-	def get_EnableBackupLog(self):
-		return self.get_query_params().get('EnableBackupLog')
-
-	def set_EnableBackupLog(self,EnableBackupLog):
-		self.add_query_param('EnableBackupLog',EnableBackupLog)
