@@ -18,16 +18,16 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class DescribeCasterRtcInfoRequest(RpcRequest):
+class DescribeLiveStreamTranscodeStreamNumRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'live', '2016-11-01', 'DescribeCasterRtcInfo','live')
+		RpcRequest.__init__(self, 'live', '2016-11-01', 'DescribeLiveStreamTranscodeStreamNum','live')
 
-	def get_CasterId(self):
-		return self.get_query_params().get('CasterId')
+	def get_DomainName(self):
+		return self.get_query_params().get('DomainName')
 
-	def set_CasterId(self,CasterId):
-		self.add_query_param('CasterId',CasterId)
+	def set_DomainName(self,DomainName):
+		self.add_query_param('DomainName',DomainName)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')

@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -23,41 +23,11 @@ class DescribeLiveStreamsPublishListRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'live', '2016-11-01', 'DescribeLiveStreamsPublishList','live')
 
-	def get_StreamType(self):
-		return self.get_query_params().get('StreamType')
-
-	def set_StreamType(self,StreamType):
-		self.add_query_param('StreamType',StreamType)
-
-	def get_DomainName(self):
-		return self.get_query_params().get('DomainName')
-
-	def set_DomainName(self,DomainName):
-		self.add_query_param('DomainName',DomainName)
-
-	def get_EndTime(self):
-		return self.get_query_params().get('EndTime')
-
-	def set_EndTime(self,EndTime):
-		self.add_query_param('EndTime',EndTime)
-
-	def get_OrderBy(self):
-		return self.get_query_params().get('OrderBy')
-
-	def set_OrderBy(self,OrderBy):
-		self.add_query_param('OrderBy',OrderBy)
-
 	def get_StartTime(self):
 		return self.get_query_params().get('StartTime')
 
 	def set_StartTime(self,StartTime):
 		self.add_query_param('StartTime',StartTime)
-
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
 
 	def get_PageNumber(self):
 		return self.get_query_params().get('PageNumber')
@@ -88,3 +58,33 @@ class DescribeLiveStreamsPublishListRequest(RpcRequest):
 
 	def set_QueryType(self,QueryType):
 		self.add_query_param('QueryType',QueryType)
+
+	def get_StreamType(self):
+		return self.get_query_params().get('StreamType')
+
+	def set_StreamType(self,StreamType):
+		self.add_query_param('StreamType',StreamType)
+
+	def get_DomainName(self):
+		return self.get_query_params().get('DomainName')
+
+	def set_DomainName(self,DomainName):
+		self.add_query_param('DomainName',DomainName)
+
+	def get_EndTime(self):
+		return self.get_query_params().get('EndTime')
+
+	def set_EndTime(self,EndTime):
+		self.add_query_param('EndTime',EndTime)
+
+	def get_OrderBy(self):
+		return self.get_query_params().get('OrderBy')
+
+	def set_OrderBy(self,OrderBy):
+		self.add_query_param('OrderBy',OrderBy)
+
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
