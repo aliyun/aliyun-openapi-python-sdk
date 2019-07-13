@@ -38,7 +38,7 @@ class EndpointResolverRules():
         return endpoint
 
     def get_endpoint(self, region_id, product_id, network, suffix):
-        if(network is None or network == ""):
+        if network is None or network == "":
             network = "public"
 
         endpoint_map = self.endpoint_map
