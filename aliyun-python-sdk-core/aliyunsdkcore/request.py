@@ -269,30 +269,6 @@ class AcsRequest:
     def set_read_timeout(self, read_timeout):
         self._request_read_timeout = read_timeout
 
-    def get_request_network(self):
-        return self.request_network
-
-    def set_request_network(self, request_network):
-        self.request_network = request_network
-
-    def get_product_suffix(self):
-        return self.product_suffix
-
-    def set_product_suffix(self, suffix):
-        self.product_suffix = suffix
-
-    def get_endpoint_map(self):
-        return self.endpoint_map
-
-    def set_endpoint_map(self, endpoint_map):
-        self.endpoint_map = endpoint_map
-
-    def get_endpoint_regional(self):
-        return self.endpoint_regional
-
-    def set_endpoint_regional(self):
-        self.endpoint_regional = endpoint_regional
-
 
 class RpcRequest(AcsRequest):
     """

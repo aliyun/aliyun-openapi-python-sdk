@@ -18,16 +18,16 @@ class TestDefaultEndpointResolver(unittest.TestCase):
         resolver = EndpointResolverRules(None)
         request = ResolveEndpointRequest("foo", "test", "", "")
         endpoint_data = EndpointData()
-        resolver.set_endpoint_data(
-            endpoint_data.getEndpointMap(), endpoint_data.getEndpointRegional())
+        resolver.endpoint_map = endpoint_data.endpoint_map
+        resolver.endpoint_regional = endpoint_data.endpoint_regional
         endpoint = resolver.resolve(request)
         self.assertEqual("bar", endpoint)
 
     def test_resolver_reginoal(self):
         resolver = EndpointResolverRules(None)
         endpoint_data = EndpointData()
-        resolver.set_endpoint_data(
-            endpoint_data.getEndpointMap(), endpoint_data.getEndpointRegional())
+        resolver.endpoint_map = endpoint_data.endpoint_map
+        resolver.endpoint_regional = endpoint_data.endpoint_regional
         request = ResolveEndpointRequest(
             "cn-hangzhou", "test", "", "")
         endpoint = resolver.resolve(request)
@@ -37,8 +37,8 @@ class TestDefaultEndpointResolver(unittest.TestCase):
         resolver = EndpointResolverRules(None)
         endpoint_data = EndpointData()
         endpoint_data.endpoint_regional = "central"
-        resolver.set_endpoint_data(
-            endpoint_data.getEndpointMap(), endpoint_data.getEndpointRegional())
+        resolver.endpoint_map = endpoint_data.endpoint_map
+        resolver.endpoint_regional = endpoint_data.endpoint_regional
         request = ResolveEndpointRequest(
             "cn-hangzhou", "test", "", "")
         endpoint = resolver.resolve(request)
@@ -47,22 +47,22 @@ class TestDefaultEndpointResolver(unittest.TestCase):
     def test_resolver_network(self):
         resolver = EndpointResolverRules(None)
         endpoint_data = EndpointData()
-        resolver.set_endpoint_data(
-            endpoint_data.getEndpointMap(), endpoint_data.getEndpointRegional())
+        resolver.endpoint_map = endpoint_data.endpoint_map
+        resolver.endpoint_regional = endpoint_data.endpoint_regional
         request = ResolveEndpointRequest(
             "cn-hangzhou", "test", "", "")
-        request.set_request_network("vpc")
+        request.request_network = "vpc"
         endpoint = resolver.resolve(request)
         self.assertEqual("test-vpc.cn-hangzhou.aliyuncs.com", endpoint)
 
     def test_resolver_network_special_endpoint(self):
         resolver = EndpointResolverRules(None)
         endpoint_data = EndpointData()
-        resolver.set_endpoint_data(
-            endpoint_data.getEndpointMap(), endpoint_data.getEndpointRegional())
+        resolver.endpoint_map = endpoint_data.endpoint_map
+        resolver.endpoint_regional = endpoint_data.endpoint_regional
         request = ResolveEndpointRequest(
             "foo", "test", "", "")
-        request.set_request_network("vpc")
+        request.request_network = "vpc"
         endpoint = resolver.resolve(request)
         self.assertEqual("test-vpc.foo.aliyuncs.com", endpoint)
 
@@ -74,8 +74,3 @@ class EndpointData():
         }
         self.endpoint_regional = "regional"
 
-    def getEndpointMap(self):
-        return self.endpoint_map
-
-    def getEndpointRegional(self):
-        return self.endpoint_regional

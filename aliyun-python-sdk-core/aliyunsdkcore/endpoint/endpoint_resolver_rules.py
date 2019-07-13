@@ -27,17 +27,13 @@ class EndpointResolverRules():
         self.request_network = 'public'
         self.product_suffix = ''
 
-    def set_endpoint_data(self, endpoint_map, endpoint_regional):
-        self.endpoint_map = endpoint_map
-        self.endpoint_regional = endpoint_regional
-
     def resolve(self, request):
         if self.endpoint_map is None or self.endpoint_regional is None:
             return None
         product_id = request.product_code_lower
         region_id = request.region_id
-        network = request.get_request_network()
-        suffix = request.get_product_suffix()
+        network = request.request_network
+        suffix = request.product_suffix
         endpoint = self.get_endpoint(region_id, product_id, network, suffix)
         return endpoint
 
