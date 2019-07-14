@@ -46,7 +46,7 @@ class EndpointResolverRules():
         endpoint = ""
         if network == "public":
             for key in endpoint_map:
-                if (key == region_id):
+                if key == region_id:
                     endpoint = endpoint_map[key]
                     break
 
