@@ -108,6 +108,10 @@ class AcsRequest:
         self.string_to_sign = ''
         self._request_connect_timeout = None
         self._request_read_timeout = None
+        self.request_network = "public"
+        self.product_suffix = ""
+        self.endpoint_map = None
+        self.endpoint_regional = None
 
     def add_query_param(self, k, v):
         self._params[k] = v
