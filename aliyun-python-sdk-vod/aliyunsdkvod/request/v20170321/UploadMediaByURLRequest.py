@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -23,47 +23,17 @@ class UploadMediaByURLRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'vod', '2017-03-21', 'UploadMediaByURL','vod')
 
-	def get_UserData(self):
-		return self.get_query_params().get('UserData')
-
-	def set_UserData(self,UserData):
-		self.add_query_param('UserData',UserData)
-
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_TemplateGroupId(self):
-		return self.get_query_params().get('TemplateGroupId')
-
-	def set_TemplateGroupId(self,TemplateGroupId):
-		self.add_query_param('TemplateGroupId',TemplateGroupId)
-
-	def get_UploadMetadatas(self):
-		return self.get_query_params().get('UploadMetadatas')
-
-	def set_UploadMetadatas(self,UploadMetadatas):
-		self.add_query_param('UploadMetadatas',UploadMetadatas)
-
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_UploadURLs(self):
-		return self.get_query_params().get('UploadURLs')
-
-	def set_UploadURLs(self,UploadURLs):
-		self.add_query_param('UploadURLs',UploadURLs)
-
-	def get_AppId(self):
-		return self.get_query_params().get('AppId')
-
-	def set_AppId(self,AppId):
-		self.add_query_param('AppId',AppId)
 
 	def get_MessageCallback(self):
 		return self.get_query_params().get('MessageCallback')
@@ -88,3 +58,39 @@ class UploadMediaByURLRequest(RpcRequest):
 
 	def set_StorageLocation(self,StorageLocation):
 		self.add_query_param('StorageLocation',StorageLocation)
+
+	def get_UserData(self):
+		return self.get_query_params().get('UserData')
+
+	def set_UserData(self,UserData):
+		self.add_query_param('UserData',UserData)
+
+	def get_TemplateGroupId(self):
+		return self.get_query_params().get('TemplateGroupId')
+
+	def set_TemplateGroupId(self,TemplateGroupId):
+		self.add_query_param('TemplateGroupId',TemplateGroupId)
+
+	def get_UploadMetadatas(self):
+		return self.get_query_params().get('UploadMetadatas')
+
+	def set_UploadMetadatas(self,UploadMetadatas):
+		self.add_query_param('UploadMetadatas',UploadMetadatas)
+
+	def get_UploadURLs(self):
+		return self.get_query_params().get('UploadURLs')
+
+	def set_UploadURLs(self,UploadURLs):
+		self.add_query_param('UploadURLs',UploadURLs)
+
+	def get_AppId(self):
+		return self.get_query_params().get('AppId')
+
+	def set_AppId(self,AppId):
+		self.add_query_param('AppId',AppId)
+
+	def get_WorkflowId(self):
+		return self.get_query_params().get('WorkflowId')
+
+	def set_WorkflowId(self,WorkflowId):
+		self.add_query_param('WorkflowId',WorkflowId)
