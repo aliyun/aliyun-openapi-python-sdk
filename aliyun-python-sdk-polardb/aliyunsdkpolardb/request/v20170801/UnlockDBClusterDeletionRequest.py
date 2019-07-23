@@ -18,10 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class DescribeDBClusterAccessWhitelistRequest(RpcRequest):
+class UnlockDBClusterDeletionRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'polardb', '2017-08-01', 'DescribeDBClusterAccessWhitelist','polardb')
+		RpcRequest.__init__(self, 'polardb', '2017-08-01', 'UnlockDBClusterDeletion','polardb')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):

@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -22,6 +22,11 @@ class CreateDBClusterRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'polardb', '2017-08-01', 'CreateDBCluster','polardb')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -124,6 +129,24 @@ class CreateDBClusterRequest(RpcRequest):
 
 	def set_DBVersion(self,DBVersion):
 		self.add_query_param('DBVersion',DBVersion)
+
+	def get_CreationOption(self):
+		return self.get_query_params().get('CreationOption')
+
+	def set_CreationOption(self,CreationOption):
+		self.add_query_param('CreationOption',CreationOption)
+
+	def get_SourceResourceId(self):
+		return self.get_query_params().get('SourceResourceId')
+
+	def set_SourceResourceId(self,SourceResourceId):
+		self.add_query_param('SourceResourceId',SourceResourceId)
+
+	def get_CloneDataPoint(self):
+		return self.get_query_params().get('CloneDataPoint')
+
+	def set_CloneDataPoint(self,CloneDataPoint):
+		self.add_query_param('CloneDataPoint',CloneDataPoint)
 
 	def get_PayType(self):
 		return self.get_query_params().get('PayType')

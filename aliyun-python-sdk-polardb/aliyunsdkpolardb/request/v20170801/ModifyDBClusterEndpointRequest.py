@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -22,6 +22,17 @@ class ModifyDBClusterEndpointRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'polardb', '2017-08-01', 'ModifyDBClusterEndpoint','polardb')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
+
+	def get_AutoAddNewNodes(self):
+		return self.get_query_params().get('AutoAddNewNodes')
+
+	def set_AutoAddNewNodes(self,AutoAddNewNodes):
+		self.add_query_param('AutoAddNewNodes',AutoAddNewNodes)
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -34,6 +45,12 @@ class ModifyDBClusterEndpointRequest(RpcRequest):
 
 	def set_Nodes(self,Nodes):
 		self.add_query_param('Nodes',Nodes)
+
+	def get_ReadWriteMode(self):
+		return self.get_query_params().get('ReadWriteMode')
+
+	def set_ReadWriteMode(self,ReadWriteMode):
+		self.add_query_param('ReadWriteMode',ReadWriteMode)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')

@@ -18,10 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class DescribeDBClusterAccessWhitelistRequest(RpcRequest):
+class ModifyDBClusterMigrationRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'polardb', '2017-08-01', 'DescribeDBClusterAccessWhitelist','polardb')
+		RpcRequest.__init__(self, 'polardb', '2017-08-01', 'ModifyDBClusterMigration','polardb')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -33,6 +33,12 @@ class DescribeDBClusterAccessWhitelistRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+
+	def get_SecurityToken(self):
+		return self.get_query_params().get('SecurityToken')
+
+	def set_SecurityToken(self,SecurityToken):
+		self.add_query_param('SecurityToken',SecurityToken)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -51,6 +57,18 @@ class DescribeDBClusterAccessWhitelistRequest(RpcRequest):
 
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
+
+	def get_SourceRDSDBInstanceId(self):
+		return self.get_query_params().get('SourceRDSDBInstanceId')
+
+	def set_SourceRDSDBInstanceId(self,SourceRDSDBInstanceId):
+		self.add_query_param('SourceRDSDBInstanceId',SourceRDSDBInstanceId)
+
+	def get_NewMasterInstanceId(self):
+		return self.get_query_params().get('NewMasterInstanceId')
+
+	def set_NewMasterInstanceId(self,NewMasterInstanceId):
+		self.add_query_param('NewMasterInstanceId',NewMasterInstanceId)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
