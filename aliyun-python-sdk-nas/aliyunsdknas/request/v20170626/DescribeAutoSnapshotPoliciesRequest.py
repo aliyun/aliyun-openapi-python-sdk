@@ -18,25 +18,31 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class ModifyAccessGroupRequest(RpcRequest):
+class DescribeAutoSnapshotPoliciesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'NAS', '2017-06-26', 'ModifyAccessGroup','NAS')
+		RpcRequest.__init__(self, 'NAS', '2017-06-26', 'DescribeAutoSnapshotPolicies','NAS')
 
-	def get_Description(self):
-		return self.get_query_params().get('Description')
+	def get_AutoSnapshotPolicyId(self):
+		return self.get_query_params().get('AutoSnapshotPolicyId')
 
-	def set_Description(self,Description):
-		self.add_query_param('Description',Description)
+	def set_AutoSnapshotPolicyId(self,AutoSnapshotPolicyId):
+		self.add_query_param('AutoSnapshotPolicyId',AutoSnapshotPolicyId)
 
-	def get_AccessGroupName(self):
-		return self.get_query_params().get('AccessGroupName')
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
 
-	def set_AccessGroupName(self,AccessGroupName):
-		self.add_query_param('AccessGroupName',AccessGroupName)
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
 
 	def get_FileSystemType(self):
 		return self.get_query_params().get('FileSystemType')
 
 	def set_FileSystemType(self,FileSystemType):
 		self.add_query_param('FileSystemType',FileSystemType)
+
+	def get_PageNumber(self):
+		return self.get_query_params().get('PageNumber')
+
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)

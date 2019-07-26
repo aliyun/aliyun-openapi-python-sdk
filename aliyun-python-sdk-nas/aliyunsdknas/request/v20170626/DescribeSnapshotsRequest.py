@@ -18,22 +18,46 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class ModifyMountTargetRequest(RpcRequest):
+class DescribeSnapshotsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'NAS', '2017-06-26', 'ModifyMountTarget','NAS')
+		RpcRequest.__init__(self, 'NAS', '2017-06-26', 'DescribeSnapshots','NAS')
 
-	def get_MountTargetDomain(self):
-		return self.get_query_params().get('MountTargetDomain')
+	def get_SnapshotType(self):
+		return self.get_query_params().get('SnapshotType')
 
-	def set_MountTargetDomain(self,MountTargetDomain):
-		self.add_query_param('MountTargetDomain',MountTargetDomain)
+	def set_SnapshotType(self,SnapshotType):
+		self.add_query_param('SnapshotType',SnapshotType)
 
-	def get_AccessGroupName(self):
-		return self.get_query_params().get('AccessGroupName')
+	def get_SnapshotIds(self):
+		return self.get_query_params().get('SnapshotIds')
 
-	def set_AccessGroupName(self,AccessGroupName):
-		self.add_query_param('AccessGroupName',AccessGroupName)
+	def set_SnapshotIds(self,SnapshotIds):
+		self.add_query_param('SnapshotIds',SnapshotIds)
+
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
+
+	def get_SnapshotName(self):
+		return self.get_query_params().get('SnapshotName')
+
+	def set_SnapshotName(self,SnapshotName):
+		self.add_query_param('SnapshotName',SnapshotName)
+
+	def get_FileSystemType(self):
+		return self.get_query_params().get('FileSystemType')
+
+	def set_FileSystemType(self,FileSystemType):
+		self.add_query_param('FileSystemType',FileSystemType)
+
+	def get_PageNumber(self):
+		return self.get_query_params().get('PageNumber')
+
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)
 
 	def get_FileSystemId(self):
 		return self.get_query_params().get('FileSystemId')

@@ -18,25 +18,37 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class ModifyAccessGroupRequest(RpcRequest):
+class CreateAutoSnapshotPolicyRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'NAS', '2017-06-26', 'ModifyAccessGroup','NAS')
+		RpcRequest.__init__(self, 'NAS', '2017-06-26', 'CreateAutoSnapshotPolicy','NAS')
 
-	def get_Description(self):
-		return self.get_query_params().get('Description')
+	def get_TimePoints(self):
+		return self.get_query_params().get('TimePoints')
 
-	def set_Description(self,Description):
-		self.add_query_param('Description',Description)
+	def set_TimePoints(self,TimePoints):
+		self.add_query_param('TimePoints',TimePoints)
 
-	def get_AccessGroupName(self):
-		return self.get_query_params().get('AccessGroupName')
+	def get_RetentionDays(self):
+		return self.get_query_params().get('RetentionDays')
 
-	def set_AccessGroupName(self,AccessGroupName):
-		self.add_query_param('AccessGroupName',AccessGroupName)
+	def set_RetentionDays(self,RetentionDays):
+		self.add_query_param('RetentionDays',RetentionDays)
+
+	def get_RepeatWeekdays(self):
+		return self.get_query_params().get('RepeatWeekdays')
+
+	def set_RepeatWeekdays(self,RepeatWeekdays):
+		self.add_query_param('RepeatWeekdays',RepeatWeekdays)
 
 	def get_FileSystemType(self):
 		return self.get_query_params().get('FileSystemType')
 
 	def set_FileSystemType(self,FileSystemType):
 		self.add_query_param('FileSystemType',FileSystemType)
+
+	def get_AutoSnapshotPolicyName(self):
+		return self.get_query_params().get('AutoSnapshotPolicyName')
+
+	def set_AutoSnapshotPolicyName(self,AutoSnapshotPolicyName):
+		self.add_query_param('AutoSnapshotPolicyName',AutoSnapshotPolicyName)

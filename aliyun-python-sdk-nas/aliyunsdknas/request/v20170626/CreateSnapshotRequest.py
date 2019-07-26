@@ -18,10 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class ModifyAccessGroupRequest(RpcRequest):
+class CreateSnapshotRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'NAS', '2017-06-26', 'ModifyAccessGroup','NAS')
+		RpcRequest.__init__(self, 'NAS', '2017-06-26', 'CreateSnapshot','NAS')
 
 	def get_Description(self):
 		return self.get_query_params().get('Description')
@@ -29,14 +29,20 @@ class ModifyAccessGroupRequest(RpcRequest):
 	def set_Description(self,Description):
 		self.add_query_param('Description',Description)
 
-	def get_AccessGroupName(self):
-		return self.get_query_params().get('AccessGroupName')
+	def get_SnapshotName(self):
+		return self.get_query_params().get('SnapshotName')
 
-	def set_AccessGroupName(self,AccessGroupName):
-		self.add_query_param('AccessGroupName',AccessGroupName)
+	def set_SnapshotName(self,SnapshotName):
+		self.add_query_param('SnapshotName',SnapshotName)
 
-	def get_FileSystemType(self):
-		return self.get_query_params().get('FileSystemType')
+	def get_RetentionDays(self):
+		return self.get_query_params().get('RetentionDays')
 
-	def set_FileSystemType(self,FileSystemType):
-		self.add_query_param('FileSystemType',FileSystemType)
+	def set_RetentionDays(self,RetentionDays):
+		self.add_query_param('RetentionDays',RetentionDays)
+
+	def get_FileSystemId(self):
+		return self.get_query_params().get('FileSystemId')
+
+	def set_FileSystemId(self,FileSystemId):
+		self.add_query_param('FileSystemId',FileSystemId)

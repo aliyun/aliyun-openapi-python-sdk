@@ -18,25 +18,13 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class ModifyAccessGroupRequest(RpcRequest):
+class CancelAutoSnapshotPolicyRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'NAS', '2017-06-26', 'ModifyAccessGroup','NAS')
+		RpcRequest.__init__(self, 'NAS', '2017-06-26', 'CancelAutoSnapshotPolicy','NAS')
 
-	def get_Description(self):
-		return self.get_query_params().get('Description')
+	def get_FileSystemIds(self):
+		return self.get_query_params().get('FileSystemIds')
 
-	def set_Description(self,Description):
-		self.add_query_param('Description',Description)
-
-	def get_AccessGroupName(self):
-		return self.get_query_params().get('AccessGroupName')
-
-	def set_AccessGroupName(self,AccessGroupName):
-		self.add_query_param('AccessGroupName',AccessGroupName)
-
-	def get_FileSystemType(self):
-		return self.get_query_params().get('FileSystemType')
-
-	def set_FileSystemType(self,FileSystemType):
-		self.add_query_param('FileSystemType',FileSystemType)
+	def set_FileSystemIds(self,FileSystemIds):
+		self.add_query_param('FileSystemIds',FileSystemIds)
