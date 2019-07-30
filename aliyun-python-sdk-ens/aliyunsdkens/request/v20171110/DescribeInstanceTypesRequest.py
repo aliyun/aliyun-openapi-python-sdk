@@ -18,16 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class DescribeImageInfosRequest(RpcRequest):
+class DescribeInstanceTypesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'DescribeImageInfos','ens')
-
-	def get_OsType(self):
-		return self.get_query_params().get('OsType')
-
-	def set_OsType(self,OsType):
-		self.add_query_param('OsType',OsType)
+		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'DescribeInstanceTypes','ens')
 
 	def get_Version(self):
 		return self.get_query_params().get('Version')
