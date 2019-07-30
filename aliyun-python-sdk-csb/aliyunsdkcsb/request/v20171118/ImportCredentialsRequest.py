@@ -21,10 +21,10 @@ from aliyunsdkcsb.endpoint import endpoint_data
 from aliyunsdkcore.request import RpcRequest
 
 
-class RenewCredentialsRequest(RpcRequest):
+class ImportCredentialsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'CSB', '2017-11-18', 'RenewCredentials')
+		RpcRequest.__init__(self, 'CSB', '2017-11-18', 'ImportCredentials')
 		self.set_protocol_type('https')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
@@ -33,8 +33,14 @@ class RenewCredentialsRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_CredentialId(self):
-		return self.get_query_params().get('CredentialId')
+	def get_Data(self):
+		return self.get_body_params().get('Data')
 
-	def set_CredentialId(self,CredentialId):
-		self.add_query_param('CredentialId',CredentialId)
+	def set_Data(self,Data):
+		self.add_body_params('Data', Data)
+
+	def get_CsbId(self):
+		return self.get_query_params().get('CsbId')
+
+	def set_CsbId(self,CsbId):
+		self.add_query_param('CsbId',CsbId)
