@@ -17,14 +17,11 @@
 # specific language governing permissions and limitations
 # under the License.
 
-from aliyunsdkbssopenapi.endpoint import endpoint_data
 from aliyunsdkcore.request import RpcRequest
-
-
 class ApplyInvoiceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'ApplyInvoice')
+		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'ApplyInvoice','bssopenapi')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
