@@ -18,6 +18,8 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkkms.endpoint import endpoint_data
+
 class DeleteAliasRequest(RpcRequest):
 
 	def __init__(self):
