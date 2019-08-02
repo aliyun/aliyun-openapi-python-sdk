@@ -18,6 +18,8 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkbssopenapi.endpoint import endpoint_data
+
 class SetResellerUserAlarmThresholdRequest(RpcRequest):
 
 	def __init__(self):

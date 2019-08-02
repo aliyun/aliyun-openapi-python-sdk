@@ -18,6 +18,8 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkbssopenapi.endpoint import endpoint_data
+
 class UnsubscribeBillToOSSRequest(RpcRequest):
 
 	def __init__(self):
@@ -33,3 +35,9 @@ class UnsubscribeBillToOSSRequest(RpcRequest):
 
 	def set_SubscribeType(self,SubscribeType):
 		self.add_query_param('SubscribeType',SubscribeType)
+
+	def get_MultAccountRelSubscribe(self):
+		return self.get_query_params().get('MultAccountRelSubscribe')
+
+	def set_MultAccountRelSubscribe(self,MultAccountRelSubscribe):
+		self.add_query_param('MultAccountRelSubscribe',MultAccountRelSubscribe)

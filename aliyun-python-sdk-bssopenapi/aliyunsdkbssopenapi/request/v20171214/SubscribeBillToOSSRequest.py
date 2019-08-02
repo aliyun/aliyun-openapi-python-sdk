@@ -18,6 +18,8 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkbssopenapi.endpoint import endpoint_data
+
 class SubscribeBillToOSSRequest(RpcRequest):
 
 	def __init__(self):
@@ -27,6 +29,12 @@ class SubscribeBillToOSSRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+
+	def get_BucketOwnerId(self):
+		return self.get_query_params().get('BucketOwnerId')
+
+	def set_BucketOwnerId(self,BucketOwnerId):
+		self.add_query_param('BucketOwnerId',BucketOwnerId)
 
 	def get_SubscribeType(self):
 		return self.get_query_params().get('SubscribeType')
@@ -39,3 +47,9 @@ class SubscribeBillToOSSRequest(RpcRequest):
 
 	def set_SubscribeBucket(self,SubscribeBucket):
 		self.add_query_param('SubscribeBucket',SubscribeBucket)
+
+	def get_MultAccountRelSubscribe(self):
+		return self.get_query_params().get('MultAccountRelSubscribe')
+
+	def set_MultAccountRelSubscribe(self,MultAccountRelSubscribe):
+		self.add_query_param('MultAccountRelSubscribe',MultAccountRelSubscribe)
