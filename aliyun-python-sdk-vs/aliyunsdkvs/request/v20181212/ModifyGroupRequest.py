@@ -18,6 +18,8 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkvs.endpoint import endpoint_data
+
 class ModifyGroupRequest(RpcRequest):
 
 	def __init__(self):

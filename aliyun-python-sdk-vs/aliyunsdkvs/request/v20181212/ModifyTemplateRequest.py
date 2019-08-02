@@ -18,6 +18,8 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkvs.endpoint import endpoint_data
+
 class ModifyTemplateRequest(RpcRequest):
 
 	def __init__(self):
@@ -64,17 +66,17 @@ class ModifyTemplateRequest(RpcRequest):
 	def set_StartTime(self,StartTime):
 		self.add_query_param('StartTime',StartTime)
 
-	def get_Type(self):
-		return self.get_query_params().get('Type')
-
-	def set_Type(self,Type):
-		self.add_query_param('Type',Type)
-
 	def get_Id(self):
 		return self.get_query_params().get('Id')
 
 	def set_Id(self,Id):
 		self.add_query_param('Id',Id)
+
+	def get_Retention(self):
+		return self.get_query_params().get('Retention')
+
+	def set_Retention(self,Retention):
+		self.add_query_param('Retention',Retention)
 
 	def get_ShowLog(self):
 		return self.get_query_params().get('ShowLog')

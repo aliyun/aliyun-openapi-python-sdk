@@ -18,6 +18,8 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkvs.endpoint import endpoint_data
+
 class CreateTemplateRequest(RpcRequest):
 
 	def __init__(self):
@@ -69,6 +71,12 @@ class CreateTemplateRequest(RpcRequest):
 
 	def set_Type(self,Type):
 		self.add_query_param('Type',Type)
+
+	def get_Retention(self):
+		return self.get_query_params().get('Retention')
+
+	def set_Retention(self,Retention):
+		self.add_query_param('Retention',Retention)
 
 	def get_ShowLog(self):
 		return self.get_query_params().get('ShowLog')
