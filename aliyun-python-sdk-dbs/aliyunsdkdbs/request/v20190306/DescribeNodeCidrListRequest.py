@@ -18,6 +18,7 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+
 class DescribeNodeCidrListRequest(RpcRequest):
 
 	def __init__(self):
