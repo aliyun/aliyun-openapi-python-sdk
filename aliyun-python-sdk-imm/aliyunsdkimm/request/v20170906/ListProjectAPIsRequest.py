@@ -19,25 +19,13 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class UpdateSetRequest(RpcRequest):
+class ListProjectAPIsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'imm', '2017-09-06', 'UpdateSet','imm')
-
-	def get_SetName(self):
-		return self.get_query_params().get('SetName')
-
-	def set_SetName(self,SetName):
-		self.add_query_param('SetName',SetName)
+		RpcRequest.__init__(self, 'imm', '2017-09-06', 'ListProjectAPIs','imm')
 
 	def get_Project(self):
 		return self.get_query_params().get('Project')
 
 	def set_Project(self,Project):
 		self.add_query_param('Project',Project)
-
-	def get_SetId(self):
-		return self.get_query_params().get('SetId')
-
-	def set_SetId(self,SetId):
-		self.add_query_param('SetId',SetId)
