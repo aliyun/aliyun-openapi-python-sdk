@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,22 +18,11 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+
 class ModifyRdsReadWeightRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Drds', '2017-10-16', 'ModifyRdsReadWeight')
-
-	def get_Weights(self):
-		return self.get_query_params().get('Weights')
-
-	def set_Weights(self,Weights):
-		self.add_query_param('Weights',Weights)
-
-	def get_DrdsInstanceId(self):
-		return self.get_query_params().get('DrdsInstanceId')
-
-	def set_DrdsInstanceId(self,DrdsInstanceId):
-		self.add_query_param('DrdsInstanceId',DrdsInstanceId)
+		RpcRequest.__init__(self, 'Drds', '2017-10-16', 'ModifyRdsReadWeight','drds')
 
 	def get_InstanceNames(self):
 		return self.get_query_params().get('InstanceNames')
@@ -46,3 +35,15 @@ class ModifyRdsReadWeightRequest(RpcRequest):
 
 	def set_DbName(self,DbName):
 		self.add_query_param('DbName',DbName)
+
+	def get_Weights(self):
+		return self.get_query_params().get('Weights')
+
+	def set_Weights(self,Weights):
+		self.add_query_param('Weights',Weights)
+
+	def get_DrdsInstanceId(self):
+		return self.get_query_params().get('DrdsInstanceId')
+
+	def set_DrdsInstanceId(self,DrdsInstanceId):
+		self.add_query_param('DrdsInstanceId',DrdsInstanceId)

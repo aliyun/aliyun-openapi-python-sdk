@@ -1,0 +1,71 @@
+# Licensed to the Apache Software Foundation (ASF) under one
+# or more contributor license agreements.  See the NOTICE file
+# distributed with this work for additional information
+# regarding copyright ownership.  The ASF licenses this file
+# to you under the Apache License, Version 2.0 (the
+# "License"); you may not use this file except in compliance
+# with the License.  You may obtain a copy of the License at
+#
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+#
+# Unless required by applicable law or agreed to in writing,
+# software distributed under the License is distributed on an
+# "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+# KIND, either express or implied.  See the License for the
+# specific language governing permissions and limitations
+# under the License.
+
+from aliyunsdkcore.request import RpcRequest
+
+class SubmitSmoothExpandTaskRequest(RpcRequest):
+
+	def __init__(self):
+		RpcRequest.__init__(self, 'Drds', '2019-01-23', 'SubmitSmoothExpandTask','drds')
+
+	def get_RdsSuperInstancess(self):
+		return self.get_query_params().get('RdsSuperInstancess')
+
+	def set_RdsSuperInstancess(self,RdsSuperInstancess):
+		for i in range(len(RdsSuperInstancess)):	
+			if RdsSuperInstancess[i].get('Password') is not None:
+				self.add_query_param('RdsSuperInstances.' + str(i + 1) + '.Password' , RdsSuperInstancess[i].get('Password'))
+			if RdsSuperInstancess[i].get('AccountName') is not None:
+				self.add_query_param('RdsSuperInstances.' + str(i + 1) + '.AccountName' , RdsSuperInstancess[i].get('AccountName'))
+			if RdsSuperInstancess[i].get('RdsName') is not None:
+				self.add_query_param('RdsSuperInstances.' + str(i + 1) + '.RdsName' , RdsSuperInstancess[i].get('RdsName'))
+
+
+	def get_DbName(self):
+		return self.get_query_params().get('DbName')
+
+	def set_DbName(self,DbName):
+		self.add_query_param('DbName',DbName)
+
+	def get_TransferTaskInfoss(self):
+		return self.get_query_params().get('TransferTaskInfoss')
+
+	def set_TransferTaskInfoss(self,TransferTaskInfoss):
+		for i in range(len(TransferTaskInfoss)):	
+			if TransferTaskInfoss[i].get('DbName') is not None:
+				self.add_query_param('TransferTaskInfos.' + str(i + 1) + '.DbName' , TransferTaskInfoss[i].get('DbName'))
+			if TransferTaskInfoss[i].get('SrcInstanceName') is not None:
+				self.add_query_param('TransferTaskInfos.' + str(i + 1) + '.SrcInstanceName' , TransferTaskInfoss[i].get('SrcInstanceName'))
+			if TransferTaskInfoss[i].get('InstanceType') is not None:
+				self.add_query_param('TransferTaskInfos.' + str(i + 1) + '.InstanceType' , TransferTaskInfoss[i].get('InstanceType'))
+			if TransferTaskInfoss[i].get('DstInstanceName') is not None:
+				self.add_query_param('TransferTaskInfos.' + str(i + 1) + '.DstInstanceName' , TransferTaskInfoss[i].get('DstInstanceName'))
+
+
+	def get_DrdsInstanceId(self):
+		return self.get_query_params().get('DrdsInstanceId')
+
+	def set_DrdsInstanceId(self,DrdsInstanceId):
+		self.add_query_param('DrdsInstanceId',DrdsInstanceId)
+
+	def get_DbInstanceIsCreating(self):
+		return self.get_query_params().get('DbInstanceIsCreating')
+
+	def set_DbInstanceIsCreating(self,DbInstanceIsCreating):
+		self.add_query_param('DbInstanceIsCreating',DbInstanceIsCreating)

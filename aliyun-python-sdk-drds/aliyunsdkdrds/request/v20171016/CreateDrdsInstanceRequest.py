@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,16 +18,23 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+
 class CreateDrdsInstanceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Drds', '2017-10-16', 'CreateDrdsInstance')
+		RpcRequest.__init__(self, 'Drds', '2017-10-16', 'CreateDrdsInstance','drds')
 
 	def get_IsAutoRenew(self):
 		return self.get_query_params().get('IsAutoRenew')
 
 	def set_IsAutoRenew(self,IsAutoRenew):
 		self.add_query_param('IsAutoRenew',IsAutoRenew)
+
+	def get_Quantity(self):
+		return self.get_query_params().get('Quantity')
+
+	def set_Quantity(self,Quantity):
+		self.add_query_param('Quantity',Quantity)
 
 	def get_ClientToken(self):
 		return self.get_query_params().get('ClientToken')
@@ -41,11 +48,23 @@ class CreateDrdsInstanceRequest(RpcRequest):
 	def set_Description(self,Description):
 		self.add_query_param('Description',Description)
 
+	def get_Specification(self):
+		return self.get_query_params().get('Specification')
+
+	def set_Specification(self,Specification):
+		self.add_query_param('Specification',Specification)
+
 	def get_Type(self):
 		return self.get_query_params().get('Type')
 
 	def set_Type(self,Type):
 		self.add_query_param('Type',Type)
+
+	def get_VswitchId(self):
+		return self.get_query_params().get('VswitchId')
+
+	def set_VswitchId(self,VswitchId):
+		self.add_query_param('VswitchId',VswitchId)
 
 	def get_Duration(self):
 		return self.get_query_params().get('Duration')
@@ -64,24 +83,6 @@ class CreateDrdsInstanceRequest(RpcRequest):
 
 	def set_InstanceSeries(self,InstanceSeries):
 		self.add_query_param('InstanceSeries',InstanceSeries)
-
-	def get_Quantity(self):
-		return self.get_query_params().get('Quantity')
-
-	def set_Quantity(self,Quantity):
-		self.add_query_param('Quantity',Quantity)
-
-	def get_Specification(self):
-		return self.get_query_params().get('Specification')
-
-	def set_Specification(self,Specification):
-		self.add_query_param('Specification',Specification)
-
-	def get_VswitchId(self):
-		return self.get_query_params().get('VswitchId')
-
-	def set_VswitchId(self,VswitchId):
-		self.add_query_param('VswitchId',VswitchId)
 
 	def get_VpcId(self):
 		return self.get_query_params().get('VpcId')
