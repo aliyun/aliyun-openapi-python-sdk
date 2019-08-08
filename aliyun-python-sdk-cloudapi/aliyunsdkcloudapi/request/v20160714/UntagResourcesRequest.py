@@ -20,27 +20,29 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcloudapi.endpoint import endpoint_data
 
-class SetApisAuthoritiesRequest(RpcRequest):
+class UntagResourcesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'CloudAPI', '2016-07-14', 'SetApisAuthorities','apigateway')
+		RpcRequest.__init__(self, 'CloudAPI', '2016-07-14', 'UntagResources','apigateway')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_AuthVaildTime(self):
-		return self.get_query_params().get('AuthVaildTime')
+	def get_All(self):
+		return self.get_query_params().get('All')
 
-	def set_AuthVaildTime(self,AuthVaildTime):
-		self.add_query_param('AuthVaildTime',AuthVaildTime)
+	def set_All(self,All):
+		self.add_query_param('All',All)
 
-	def get_StageName(self):
-		return self.get_query_params().get('StageName')
+	def get_ResourceIds(self):
+		return self.get_query_params().get('ResourceIds')
 
-	def set_StageName(self,StageName):
-		self.add_query_param('StageName',StageName)
+	def set_ResourceIds(self,ResourceIds):
+		for i in range(len(ResourceIds)):	
+			if ResourceIds[i] is not None:
+				self.add_query_param('ResourceId.' + str(i + 1) , ResourceIds[i]);
 
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
@@ -48,32 +50,16 @@ class SetApisAuthoritiesRequest(RpcRequest):
 	def set_SecurityToken(self,SecurityToken):
 		self.add_query_param('SecurityToken',SecurityToken)
 
-	def get_GroupId(self):
-		return self.get_query_params().get('GroupId')
+	def get_TagKeys(self):
+		return self.get_query_params().get('TagKeys')
 
-	def set_GroupId(self,GroupId):
-		self.add_query_param('GroupId',GroupId)
+	def set_TagKeys(self,TagKeys):
+		for i in range(len(TagKeys)):	
+			if TagKeys[i] is not None:
+				self.add_query_param('TagKey.' + str(i + 1) , TagKeys[i]);
 
-	def get_AppId(self):
-		return self.get_query_params().get('AppId')
+	def get_ResourceType(self):
+		return self.get_query_params().get('ResourceType')
 
-	def set_AppId(self,AppId):
-		self.add_query_param('AppId',AppId)
-
-	def get_Description(self):
-		return self.get_query_params().get('Description')
-
-	def set_Description(self,Description):
-		self.add_query_param('Description',Description)
-
-	def get_AuthValidTime(self):
-		return self.get_query_params().get('AuthValidTime')
-
-	def set_AuthValidTime(self,AuthValidTime):
-		self.add_query_param('AuthValidTime',AuthValidTime)
-
-	def get_ApiIds(self):
-		return self.get_query_params().get('ApiIds')
-
-	def set_ApiIds(self,ApiIds):
-		self.add_query_param('ApiIds',ApiIds)
+	def set_ResourceType(self,ResourceType):
+		self.add_query_param('ResourceType',ResourceType)

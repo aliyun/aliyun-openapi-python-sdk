@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,10 +18,17 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkcloudapi.endpoint import endpoint_data
+
 class CreateApiRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'CloudAPI', '2016-07-14', 'CreateApi','apigateway')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_WebSocketApiType(self):
 		return self.get_query_params().get('WebSocketApiType')
@@ -34,6 +41,12 @@ class CreateApiRequest(RpcRequest):
 
 	def set_ErrorCodeSamples(self,ErrorCodeSamples):
 		self.add_query_param('ErrorCodeSamples',ErrorCodeSamples)
+
+	def get_AppCodeAuthType(self):
+		return self.get_query_params().get('AppCodeAuthType')
+
+	def set_AppCodeAuthType(self,AppCodeAuthType):
+		self.add_query_param('AppCodeAuthType',AppCodeAuthType)
 
 	def get_Description(self):
 		return self.get_query_params().get('Description')
