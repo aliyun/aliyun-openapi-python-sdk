@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,10 +18,17 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkecs.endpoint import endpoint_data
+
 class CreateDiskRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'CreateDisk','ecs')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -89,6 +96,12 @@ class CreateDiskRequest(RpcRequest):
 	def set_InstanceId(self,InstanceId):
 		self.add_query_param('InstanceId',InstanceId)
 
+	def get_StorageSetId(self):
+		return self.get_query_params().get('StorageSetId')
+
+	def set_StorageSetId(self,StorageSetId):
+		self.add_query_param('StorageSetId',StorageSetId)
+
 	def get_Size(self):
 		return self.get_query_params().get('Size')
 
@@ -112,6 +125,12 @@ class CreateDiskRequest(RpcRequest):
 
 	def set_ZoneId(self,ZoneId):
 		self.add_query_param('ZoneId',ZoneId)
+
+	def get_StorageSetPartitionNumber(self):
+		return self.get_query_params().get('StorageSetPartitionNumber')
+
+	def set_StorageSetPartitionNumber(self,StorageSetPartitionNumber):
+		self.add_query_param('StorageSetPartitionNumber',StorageSetPartitionNumber)
 
 	def get_Tags(self):
 		return self.get_query_params().get('Tags')

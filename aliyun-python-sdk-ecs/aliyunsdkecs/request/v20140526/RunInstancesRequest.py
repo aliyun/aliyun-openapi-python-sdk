@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,10 +18,17 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkecs.endpoint import endpoint_data
+
 class RunInstancesRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'RunInstances','ecs')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_LaunchTemplateName(self):
 		return self.get_query_params().get('LaunchTemplateName')
@@ -59,12 +66,6 @@ class RunInstancesRequest(RpcRequest):
 	def set_KeyPairName(self,KeyPairName):
 		self.add_query_param('KeyPairName',KeyPairName)
 
-	def get_MinAmount(self):
-		return self.get_query_params().get('MinAmount')
-
-	def set_MinAmount(self,MinAmount):
-		self.add_query_param('MinAmount',MinAmount)
-
 	def get_SpotPriceLimit(self):
 		return self.get_query_params().get('SpotPriceLimit')
 
@@ -95,6 +96,12 @@ class RunInstancesRequest(RpcRequest):
 	def set_Password(self,Password):
 		self.add_query_param('Password',Password)
 
+	def get_StorageSetPartitionNumber(self):
+		return self.get_query_params().get('StorageSetPartitionNumber')
+
+	def set_StorageSetPartitionNumber(self,StorageSetPartitionNumber):
+		self.add_query_param('StorageSetPartitionNumber',StorageSetPartitionNumber)
+
 	def get_Tags(self):
 		return self.get_query_params().get('Tags')
 
@@ -111,6 +118,12 @@ class RunInstancesRequest(RpcRequest):
 
 	def set_AutoRenewPeriod(self,AutoRenewPeriod):
 		self.add_query_param('AutoRenewPeriod',AutoRenewPeriod)
+
+	def get_CpuOptionsCore(self):
+		return self.get_query_params().get('CpuOptions.Core')
+
+	def set_CpuOptionsCore(self,CpuOptionsCore):
+		self.add_query_param('CpuOptions.Core',CpuOptionsCore)
 
 	def get_Period(self):
 		return self.get_query_params().get('Period')
@@ -135,6 +148,12 @@ class RunInstancesRequest(RpcRequest):
 
 	def set_Ipv6AddressCount(self,Ipv6AddressCount):
 		self.add_query_param('Ipv6AddressCount',Ipv6AddressCount)
+
+	def get_CpuOptionsNuma(self):
+		return self.get_query_params().get('CpuOptions.Numa')
+
+	def set_CpuOptionsNuma(self,CpuOptionsNuma):
+		self.add_query_param('CpuOptions.Numa',CpuOptionsNuma)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
@@ -257,6 +276,12 @@ class RunInstancesRequest(RpcRequest):
 
 	def set_Description(self,Description):
 		self.add_query_param('Description',Description)
+
+	def get_CpuOptionsThreadsPerCore(self):
+		return self.get_query_params().get('CpuOptions.ThreadsPerCore')
+
+	def set_CpuOptionsThreadsPerCore(self,CpuOptionsThreadsPerCore):
+		self.add_query_param('CpuOptions.ThreadsPerCore',CpuOptionsThreadsPerCore)
 
 	def get_SystemDiskCategory(self):
 		return self.get_query_params().get('SystemDisk.Category')
@@ -391,6 +416,12 @@ class RunInstancesRequest(RpcRequest):
 			if SecurityGroupIdss[i] is not None:
 				self.add_query_param('SecurityGroupIds.' + str(i + 1) , SecurityGroupIdss[i]);
 
+	def get_SpotDuration(self):
+		return self.get_query_params().get('SpotDuration')
+
+	def set_SpotDuration(self,SpotDuration):
+		self.add_query_param('SpotDuration',SpotDuration)
+
 	def get_DataDisks(self):
 		return self.get_query_params().get('DataDisks')
 
@@ -423,6 +454,12 @@ class RunInstancesRequest(RpcRequest):
 
 	def set_LaunchTemplateVersion(self,LaunchTemplateVersion):
 		self.add_query_param('LaunchTemplateVersion',LaunchTemplateVersion)
+
+	def get_StorageSetId(self):
+		return self.get_query_params().get('StorageSetId')
+
+	def set_StorageSetId(self,StorageSetId):
+		self.add_query_param('StorageSetId',StorageSetId)
 
 	def get_SystemDiskSize(self):
 		return self.get_query_params().get('SystemDisk.Size')
