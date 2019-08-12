@@ -20,11 +20,11 @@
 from aliyunsdkcore.request import RoaRequest
 from aliyunsdkgreen.endpoint import endpoint_data
 
-class ListSimilarityImagesRequest(RoaRequest):
+class DetectFaceRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'Green', '2018-05-09', 'ListSimilarityImages','green')
-		self.set_uri_pattern('/green/similarity/image/list')
+		RoaRequest.__init__(self, 'Green', '2018-05-09', 'DetectFace','green')
+		self.set_uri_pattern('/green/face/detect')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
