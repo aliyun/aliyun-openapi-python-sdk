@@ -129,5 +129,9 @@ class QueryDatasetRequest(RpcRequest):
 
 	def set_Dimensionss(self,Dimensionss):
 		for i in range(len(Dimensionss)):	
-			if Dimensionss[i] is not None:
-				self.add_query_param('Dimensions.' + str(i + 1) , Dimensionss[i]);
+			if Dimensionss[i].get('Type') is not None:
+				self.add_query_param('Dimensions.' + str(i + 1) + '.Type' , Dimensionss[i].get('Type'))
+			if Dimensionss[i].get('Value') is not None:
+				self.add_query_param('Dimensions.' + str(i + 1) + '.Value' , Dimensionss[i].get('Value'))
+			if Dimensionss[i].get('Key') is not None:
+				self.add_query_param('Dimensions.' + str(i + 1) + '.Key' , Dimensionss[i].get('Key'))
