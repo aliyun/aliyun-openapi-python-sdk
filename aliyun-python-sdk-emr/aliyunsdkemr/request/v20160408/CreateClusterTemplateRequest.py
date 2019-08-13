@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,10 +18,17 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkemr.endpoint import endpoint_data
+
 class CreateClusterTemplateRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'CreateClusterTemplate')
+		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'CreateClusterTemplate','emr')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -71,6 +78,18 @@ class CreateClusterTemplateRequest(RpcRequest):
 	def set_EasEnable(self,EasEnable):
 		self.add_query_param('EasEnable',EasEnable)
 
+	def get_KeyPairName(self):
+		return self.get_query_params().get('KeyPairName')
+
+	def set_KeyPairName(self,KeyPairName):
+		self.add_query_param('KeyPairName',KeyPairName)
+
+	def get_MetaStoreType(self):
+		return self.get_query_params().get('MetaStoreType')
+
+	def set_MetaStoreType(self,MetaStoreType):
+		self.add_query_param('MetaStoreType',MetaStoreType)
+
 	def get_SecurityGroupName(self):
 		return self.get_query_params().get('SecurityGroupName')
 
@@ -107,6 +126,12 @@ class CreateClusterTemplateRequest(RpcRequest):
 
 	def set_UseLocalMetaDb(self,UseLocalMetaDb):
 		self.add_query_param('UseLocalMetaDb',UseLocalMetaDb)
+
+	def get_MetaStoreConf(self):
+		return self.get_query_params().get('MetaStoreConf')
+
+	def set_MetaStoreConf(self,MetaStoreConf):
+		self.add_query_param('MetaStoreConf',MetaStoreConf)
 
 	def get_EmrVer(self):
 		return self.get_query_params().get('EmrVer')

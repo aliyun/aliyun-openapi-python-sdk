@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,10 +18,37 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkemr.endpoint import endpoint_data
+
 class ListFlowJobHistoryRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'ListFlowJobHistory')
+		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'ListFlowJobHistory','emr')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
+
+	def get_TimeRange(self):
+		return self.get_query_params().get('TimeRange')
+
+	def set_TimeRange(self,TimeRange):
+		self.add_query_param('TimeRange',TimeRange)
+
+	def get_StatusLists(self):
+		return self.get_query_params().get('StatusLists')
+
+	def set_StatusLists(self,StatusLists):
+		for i in range(len(StatusLists)):	
+			if StatusLists[i] is not None:
+				self.add_query_param('StatusList.' + str(i + 1) , StatusLists[i]);
+
+	def get_InstanceId(self):
+		return self.get_query_params().get('InstanceId')
+
+	def set_InstanceId(self,InstanceId):
+		self.add_query_param('InstanceId',InstanceId)
 
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
@@ -40,6 +67,12 @@ class ListFlowJobHistoryRequest(RpcRequest):
 
 	def set_ProjectId(self,ProjectId):
 		self.add_query_param('ProjectId',ProjectId)
+
+	def get_JobType(self):
+		return self.get_query_params().get('JobType')
+
+	def set_JobType(self,JobType):
+		self.add_query_param('JobType',JobType)
 
 	def get_PageNumber(self):
 		return self.get_query_params().get('PageNumber')

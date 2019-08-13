@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,22 +18,29 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkemr.endpoint import endpoint_data
+
 class ModifyClusterServiceConfigRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'ModifyClusterServiceConfig')
+		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'ModifyClusterServiceConfig','emr')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
+
+	def get_RefreshHostConfig(self):
+		return self.get_query_params().get('RefreshHostConfig')
+
+	def set_RefreshHostConfig(self,RefreshHostConfig):
+		self.add_query_param('RefreshHostConfig',RefreshHostConfig)
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_CustomConfigParams(self):
-		return self.get_query_params().get('CustomConfigParams')
-
-	def set_CustomConfigParams(self,CustomConfigParams):
-		self.add_query_param('CustomConfigParams',CustomConfigParams)
 
 	def get_ConfigType(self):
 		return self.get_query_params().get('ConfigType')
@@ -53,6 +60,18 @@ class ModifyClusterServiceConfigRequest(RpcRequest):
 	def set_GroupId(self,GroupId):
 		self.add_query_param('GroupId',GroupId)
 
+	def get_ClusterId(self):
+		return self.get_query_params().get('ClusterId')
+
+	def set_ClusterId(self,ClusterId):
+		self.add_query_param('ClusterId',ClusterId)
+
+	def get_CustomConfigParams(self):
+		return self.get_query_params().get('CustomConfigParams')
+
+	def set_CustomConfigParams(self,CustomConfigParams):
+		self.add_query_param('CustomConfigParams',CustomConfigParams)
+
 	def get_ServiceName(self):
 		return self.get_query_params().get('ServiceName')
 
@@ -65,11 +84,13 @@ class ModifyClusterServiceConfigRequest(RpcRequest):
 	def set_Comment(self,Comment):
 		self.add_query_param('Comment',Comment)
 
-	def get_ClusterId(self):
-		return self.get_query_params().get('ClusterId')
+	def get_GatewayClusterIdLists(self):
+		return self.get_query_params().get('GatewayClusterIdLists')
 
-	def set_ClusterId(self,ClusterId):
-		self.add_query_param('ClusterId',ClusterId)
+	def set_GatewayClusterIdLists(self,GatewayClusterIdLists):
+		for i in range(len(GatewayClusterIdLists)):	
+			if GatewayClusterIdLists[i] is not None:
+				self.add_query_param('GatewayClusterIdList.' + str(i + 1) , GatewayClusterIdLists[i]);
 
 	def get_ConfigParams(self):
 		return self.get_query_params().get('ConfigParams')
