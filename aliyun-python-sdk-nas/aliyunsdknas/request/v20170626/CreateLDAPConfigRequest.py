@@ -20,38 +20,33 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdknas.endpoint import endpoint_data
 
-class DescribeTagsRequest(RpcRequest):
+class CreateLDAPConfigRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'NAS', '2017-06-26', 'DescribeTags','nas')
+		RpcRequest.__init__(self, 'NAS', '2017-06-26', 'CreateLDAPConfig','nas')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
+	def get_BindDN(self):
+		return self.get_query_params().get('BindDN')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
+	def set_BindDN(self,BindDN):
+		self.add_query_param('BindDN',BindDN)
 
-	def get_Tags(self):
-		return self.get_query_params().get('Tags')
+	def get_SearchBase(self):
+		return self.get_query_params().get('SearchBase')
 
-	def set_Tags(self,Tags):
-		for i in range(len(Tags)):	
-			if Tags[i].get('Value') is not None:
-				self.add_query_param('Tag.' + str(i + 1) + '.Value' , Tags[i].get('Value'))
-			if Tags[i].get('Key') is not None:
-				self.add_query_param('Tag.' + str(i + 1) + '.Key' , Tags[i].get('Key'))
+	def set_SearchBase(self,SearchBase):
+		self.add_query_param('SearchBase',SearchBase)
 
+	def get_URI(self):
+		return self.get_query_params().get('URI')
 
-	def get_PageNumber(self):
-		return self.get_query_params().get('PageNumber')
-
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
+	def set_URI(self,URI):
+		self.add_query_param('URI',URI)
 
 	def get_FileSystemId(self):
 		return self.get_query_params().get('FileSystemId')

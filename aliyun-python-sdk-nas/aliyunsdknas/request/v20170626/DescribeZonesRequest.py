@@ -18,7 +18,13 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdknas.endpoint import endpoint_data
+
 class DescribeZonesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'NAS', '2017-06-26', 'DescribeZones','NAS')
+		RpcRequest.__init__(self, 'NAS', '2017-06-26', 'DescribeZones','nas')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())

@@ -18,10 +18,17 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdknas.endpoint import endpoint_data
+
 class ModifyMountTargetRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'NAS', '2017-06-26', 'ModifyMountTarget','NAS')
+		RpcRequest.__init__(self, 'NAS', '2017-06-26', 'ModifyMountTarget','nas')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_MountTargetDomain(self):
 		return self.get_query_params().get('MountTargetDomain')
