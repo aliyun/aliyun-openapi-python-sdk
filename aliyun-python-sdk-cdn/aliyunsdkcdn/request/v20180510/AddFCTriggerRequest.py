@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,10 +18,17 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkcdn.endpoint import endpoint_data
+
 class AddFCTriggerRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cdn', '2018-05-10', 'AddFCTrigger')
+		RpcRequest.__init__(self, 'Cdn', '2018-05-10', 'AddFCTrigger','cdn')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_Notes(self):
 		return self.get_body_params().get('Notes')
@@ -64,3 +71,9 @@ class AddFCTriggerRequest(RpcRequest):
 
 	def set_EventMetaName(self,EventMetaName):
 		self.add_body_params('EventMetaName', EventMetaName)
+
+	def get_FunctionARN(self):
+		return self.get_body_params().get('FunctionARN')
+
+	def set_FunctionARN(self,FunctionARN):
+		self.add_body_params('FunctionARN', FunctionARN)
