@@ -19,16 +19,17 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class ListExecutionsRequest(RpcRequest):
+class ReportTaskSucceededRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'fnf', '2019-03-15', 'ListExecutions','fnf')
+		RpcRequest.__init__(self, 'fnf', '2019-03-15', 'ReportTaskSucceeded','fnf')
+		self.set_method('POST')
 
-	def get_NextToken(self):
-		return self.get_query_params().get('NextToken')
+	def get_Output(self):
+		return self.get_body_params().get('Output')
 
-	def set_NextToken(self,NextToken):
-		self.add_query_param('NextToken',NextToken)
+	def set_Output(self,Output):
+		self.add_body_params('Output', Output)
 
 	def get_RequestId(self):
 		return self.get_query_params().get('RequestId')
@@ -36,14 +37,8 @@ class ListExecutionsRequest(RpcRequest):
 	def set_RequestId(self,RequestId):
 		self.add_query_param('RequestId',RequestId)
 
-	def get_Limit(self):
-		return self.get_query_params().get('Limit')
+	def get_TaskToken(self):
+		return self.get_query_params().get('TaskToken')
 
-	def set_Limit(self,Limit):
-		self.add_query_param('Limit',Limit)
-
-	def get_FlowName(self):
-		return self.get_query_params().get('FlowName')
-
-	def set_FlowName(self,FlowName):
-		self.add_query_param('FlowName',FlowName)
+	def set_TaskToken(self,TaskToken):
+		self.add_query_param('TaskToken',TaskToken)
