@@ -18,10 +18,17 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkiot.endpoint import endpoint_data
+
 class QueryDeviceStatisticsRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'QueryDeviceStatistics','iot')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_IotInstanceId(self):
 		return self.get_query_params().get('IotInstanceId')
