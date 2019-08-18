@@ -20,11 +20,11 @@
 from aliyunsdkcore.request import RoaRequest
 from aliyunsdkedas.endpoint import endpoint_data
 
-class BindServerlessSlbRequest(RoaRequest):
+class ChangeDeployGroupRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'BindServerlessSlb','edas')
-		self.set_uri_pattern('/pop/v5/k8s/acs/serverless_slb_binding')
+		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'ChangeDeployGroup','edas')
+		self.set_uri_pattern('/pop/v5/changeorder/co_change_group')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -32,11 +32,11 @@ class BindServerlessSlbRequest(RoaRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_Intranet(self):
-		return self.get_query_params().get('Intranet')
+	def get_ForceStatus(self):
+		return self.get_query_params().get('ForceStatus')
 
-	def set_Intranet(self,Intranet):
-		self.add_query_param('Intranet',Intranet)
+	def set_ForceStatus(self,ForceStatus):
+		self.add_query_param('ForceStatus',ForceStatus)
 
 	def get_AppId(self):
 		return self.get_query_params().get('AppId')
@@ -44,8 +44,14 @@ class BindServerlessSlbRequest(RoaRequest):
 	def set_AppId(self,AppId):
 		self.add_query_param('AppId',AppId)
 
-	def get_Internet(self):
-		return self.get_query_params().get('Internet')
+	def get_EccInfo(self):
+		return self.get_query_params().get('EccInfo')
 
-	def set_Internet(self,Internet):
-		self.add_query_param('Internet',Internet)
+	def set_EccInfo(self,EccInfo):
+		self.add_query_param('EccInfo',EccInfo)
+
+	def get_GroupName(self):
+		return self.get_query_params().get('GroupName')
+
+	def set_GroupName(self,GroupName):
+		self.add_query_param('GroupName',GroupName)

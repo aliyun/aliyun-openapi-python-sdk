@@ -20,32 +20,20 @@
 from aliyunsdkcore.request import RoaRequest
 from aliyunsdkedas.endpoint import endpoint_data
 
-class BindServerlessSlbRequest(RoaRequest):
+class QueryEccInfoRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'BindServerlessSlb','edas')
-		self.set_uri_pattern('/pop/v5/k8s/acs/serverless_slb_binding')
-		self.set_method('POST')
+		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'QueryEccInfo','edas')
+		self.set_uri_pattern('/pop/v5/ecc')
+		self.set_method('GET')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_Intranet(self):
-		return self.get_query_params().get('Intranet')
+	def get_EccId(self):
+		return self.get_query_params().get('EccId')
 
-	def set_Intranet(self,Intranet):
-		self.add_query_param('Intranet',Intranet)
-
-	def get_AppId(self):
-		return self.get_query_params().get('AppId')
-
-	def set_AppId(self,AppId):
-		self.add_query_param('AppId',AppId)
-
-	def get_Internet(self):
-		return self.get_query_params().get('Internet')
-
-	def set_Internet(self,Internet):
-		self.add_query_param('Internet',Internet)
+	def set_EccId(self,EccId):
+		self.add_query_param('EccId',EccId)

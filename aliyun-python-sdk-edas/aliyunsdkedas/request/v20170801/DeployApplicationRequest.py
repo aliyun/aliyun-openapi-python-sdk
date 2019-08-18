@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,12 +18,19 @@
 # under the License.
 
 from aliyunsdkcore.request import RoaRequest
+from aliyunsdkedas.endpoint import endpoint_data
+
 class DeployApplicationRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'DeployApplication')
+		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'DeployApplication','edas')
 		self.set_uri_pattern('/pop/v5/changeorder/co_deploy')
 		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_BuildPackId(self):
 		return self.get_query_params().get('BuildPackId')
@@ -37,18 +44,6 @@ class DeployApplicationRequest(RoaRequest):
 	def set_ComponentIds(self,ComponentIds):
 		self.add_query_param('ComponentIds',ComponentIds)
 
-	def get_AppId(self):
-		return self.get_query_params().get('AppId')
-
-	def set_AppId(self,AppId):
-		self.add_query_param('AppId',AppId)
-
-	def get_ImageUrl(self):
-		return self.get_query_params().get('ImageUrl')
-
-	def set_ImageUrl(self,ImageUrl):
-		self.add_query_param('ImageUrl',ImageUrl)
-
 	def get_GroupId(self):
 		return self.get_query_params().get('GroupId')
 
@@ -60,6 +55,12 @@ class DeployApplicationRequest(RoaRequest):
 
 	def set_BatchWaitTime(self,BatchWaitTime):
 		self.add_query_param('BatchWaitTime',BatchWaitTime)
+
+	def get_ReleaseType(self):
+		return self.get_query_params().get('ReleaseType')
+
+	def set_ReleaseType(self,ReleaseType):
+		self.add_query_param('ReleaseType',ReleaseType)
 
 	def get_Batch(self):
 		return self.get_query_params().get('Batch')
@@ -73,17 +74,29 @@ class DeployApplicationRequest(RoaRequest):
 	def set_AppEnv(self,AppEnv):
 		self.add_query_param('AppEnv',AppEnv)
 
-	def get_WarUrl(self):
-		return self.get_query_params().get('WarUrl')
-
-	def set_WarUrl(self,WarUrl):
-		self.add_query_param('WarUrl',WarUrl)
-
 	def get_PackageVersion(self):
 		return self.get_query_params().get('PackageVersion')
 
 	def set_PackageVersion(self,PackageVersion):
 		self.add_query_param('PackageVersion',PackageVersion)
+
+	def get_AppId(self):
+		return self.get_query_params().get('AppId')
+
+	def set_AppId(self,AppId):
+		self.add_query_param('AppId',AppId)
+
+	def get_ImageUrl(self):
+		return self.get_query_params().get('ImageUrl')
+
+	def set_ImageUrl(self,ImageUrl):
+		self.add_query_param('ImageUrl',ImageUrl)
+
+	def get_WarUrl(self):
+		return self.get_query_params().get('WarUrl')
+
+	def set_WarUrl(self,WarUrl):
+		self.add_query_param('WarUrl',WarUrl)
 
 	def get_Desc(self):
 		return self.get_query_params().get('Desc')

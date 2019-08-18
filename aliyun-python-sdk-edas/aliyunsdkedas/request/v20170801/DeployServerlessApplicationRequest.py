@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,12 +18,19 @@
 # under the License.
 
 from aliyunsdkcore.request import RoaRequest
+from aliyunsdkedas.endpoint import endpoint_data
+
 class DeployServerlessApplicationRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'DeployServerlessApplication')
+		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'DeployServerlessApplication','edas')
 		self.set_uri_pattern('/pop/v5/k8s/pop/pop_serverless_app_deploy')
 		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_WebContainer(self):
 		return self.get_query_params().get('WebContainer')
@@ -36,12 +43,6 @@ class DeployServerlessApplicationRequest(RoaRequest):
 
 	def set_JarStartArgs(self,JarStartArgs):
 		self.add_query_param('JarStartArgs',JarStartArgs)
-
-	def get_BuildPackId(self):
-		return self.get_query_params().get('BuildPackId')
-
-	def set_BuildPackId(self,BuildPackId):
-		self.add_query_param('BuildPackId',BuildPackId)
 
 	def get_CommandArgs(self):
 		return self.get_query_params().get('CommandArgs')
@@ -108,6 +109,12 @@ class DeployServerlessApplicationRequest(RoaRequest):
 
 	def set_MinReadyInstances(self,MinReadyInstances):
 		self.add_query_param('MinReadyInstances',MinReadyInstances)
+
+	def get_EdasContainerVersion(self):
+		return self.get_query_params().get('EdasContainerVersion')
+
+	def set_EdasContainerVersion(self,EdasContainerVersion):
+		self.add_query_param('EdasContainerVersion',EdasContainerVersion)
 
 	def get_PackageUrl(self):
 		return self.get_query_params().get('PackageUrl')

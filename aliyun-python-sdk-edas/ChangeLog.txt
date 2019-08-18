@@ -1,3 +1,6 @@
+2019-08-18 Version: 2.51.0
+- Upgrade DeployK8sApplication api and so on.
+
 2019-03-28 Version: 2.43.0
 1, EDAS serverless support Pandora application deployment in war/jar mode
 
