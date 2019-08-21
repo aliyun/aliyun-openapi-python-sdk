@@ -32,10 +32,10 @@ class StartExecutionRequest(RpcRequest):
 		self.add_body_params('Input', Input)
 
 	def get_ExecutionName(self):
-		return self.get_query_params().get('ExecutionName')
+		return self.get_body_params().get('ExecutionName')
 
 	def set_ExecutionName(self,ExecutionName):
-		self.add_query_param('ExecutionName',ExecutionName)
+		self.add_body_params('ExecutionName', ExecutionName)
 
 	def get_RequestId(self):
 		return self.get_query_params().get('RequestId')
@@ -44,7 +44,7 @@ class StartExecutionRequest(RpcRequest):
 		self.add_query_param('RequestId',RequestId)
 
 	def get_FlowName(self):
-		return self.get_query_params().get('FlowName')
+		return self.get_body_params().get('FlowName')
 
 	def set_FlowName(self,FlowName):
-		self.add_query_param('FlowName',FlowName)
+		self.add_body_params('FlowName', FlowName)
