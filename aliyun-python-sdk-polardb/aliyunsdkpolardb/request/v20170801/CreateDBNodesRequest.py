@@ -18,10 +18,17 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkpolardb.endpoint import endpoint_data
+
 class CreateDBNodesRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'polardb', '2017-08-01', 'CreateDBNodes','polardb')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
