@@ -48,6 +48,12 @@ class ImportAppAlertRulesRequest(RpcRequest):
 	def set_Pids(self,Pids):
 		self.add_query_param('Pids',Pids)
 
+	def get_TemplageAlertConfig(self):
+		return self.get_query_params().get('TemplageAlertConfig')
+
+	def set_TemplageAlertConfig(self,TemplageAlertConfig):
+		self.add_query_param('TemplageAlertConfig',TemplageAlertConfig)
+
 	def get_TemplateAlertId(self):
 		return self.get_query_params().get('TemplateAlertId')
 
