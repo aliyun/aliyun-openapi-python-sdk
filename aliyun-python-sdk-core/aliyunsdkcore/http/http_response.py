@@ -121,8 +121,6 @@ class HttpResponse(HttpRequest):
                 "http": proxy_http,
                 "https": proxy_https,
             }
-            # ignore the warning-InsecureRequestWarning
-            # urllib3.disable_warnings()
 
             response = s.send(prepped, proxies=proxies,
                               timeout=(self.__connect_timeout, self.__read_timeout),
