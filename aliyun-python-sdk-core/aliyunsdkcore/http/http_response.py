@@ -90,6 +90,10 @@ class HttpResponse(HttpRequest):
             response.status_code, status_codes._codes.get(response.status_code)[0].upper())
         logger.debug(response_base + self.prepare_http_debug(response, '<'))
 
+    @staticmethod
+    def get_verify_value():
+        return os.environ.get('ALIBABA_CLOUD_CA_BUNDLE', True)
+
     def get_response_object(self):
         with Session() as s:
             current_protocol = 'https://' if self.get_ssl_enabled() else 'http://'
@@ -114,12 +118,10 @@ class HttpResponse(HttpRequest):
                 "http": proxy_http,
                 "https": proxy_https,
             }
-            # ignore the warning-InsecureRequestWarning
-            urllib3.disable_warnings()
 
             response = s.send(prepped, proxies=proxies,
                               timeout=(self.__connect_timeout, self.__read_timeout),
-                              allow_redirects=False, verify=True, cert=None)
+                              allow_redirects=False, verify=self.get_verify_value(), cert=None)
 
             http_debug = os.environ.get('DEBUG')
 
