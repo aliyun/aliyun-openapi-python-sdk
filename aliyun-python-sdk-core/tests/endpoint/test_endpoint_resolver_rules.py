@@ -10,58 +10,58 @@ class TestDefaultEndpointResolver(unittest.TestCase):
         # clinet = Mock()
         resolver = EndpointResolverRules(None)
         # can not be resolved
-        request = ResolveEndpointRequest("foo", "test", "", "")
+        request = ResolveEndpointRequest("region_id", "product_code", "", "")
         endpoint = resolver.resolve(request)
         self.assertEqual(None, endpoint)
 
     def test_resolver_has_endpoint(self):
         resolver = EndpointResolverRules(None)
-        request = ResolveEndpointRequest("foo", "test", "", "")
+        request = ResolveEndpointRequest("cn-hangzhou", "product_code", "", "")
         endpoint_data = EndpointData()
-        resolver.endpoint_map = endpoint_data.endpoint_map
-        resolver.endpoint_regional = endpoint_data.endpoint_regional
+        request.endpoint_map = endpoint_data.endpoint_map
+        request.endpoint_regional = endpoint_data.endpoint_regional
         endpoint = resolver.resolve(request)
-        self.assertEqual("bar", endpoint)
+        self.assertEqual("mock.endpoint", endpoint)
 
     def test_resolver_reginoal(self):
         resolver = EndpointResolverRules(None)
         endpoint_data = EndpointData()
-        resolver.endpoint_map = endpoint_data.endpoint_map
-        resolver.endpoint_regional = endpoint_data.endpoint_regional
         request = ResolveEndpointRequest(
-            "cn-hangzhou", "test", "", "")
+            "cn-beijing", "test", "", "")
+        request.endpoint_map = endpoint_data.endpoint_map
+        request.endpoint_regional = endpoint_data.endpoint_regional
         endpoint = resolver.resolve(request)
-        self.assertEqual("test.cn-hangzhou.aliyuncs.com", endpoint)
+        self.assertEqual("test.cn-beijing.aliyuncs.com", endpoint)
 
     def test_resolver_central(self):
         resolver = EndpointResolverRules(None)
         endpoint_data = EndpointData()
         endpoint_data.endpoint_regional = "central"
-        resolver.endpoint_map = endpoint_data.endpoint_map
-        resolver.endpoint_regional = endpoint_data.endpoint_regional
         request = ResolveEndpointRequest(
-            "cn-hangzhou", "test", "", "")
+            "cn-beijing", "test", "", "")
+        request.endpoint_map = endpoint_data.endpoint_map
+        request.endpoint_regional = endpoint_data.endpoint_regional
         endpoint = resolver.resolve(request)
         self.assertEqual("test.aliyuncs.com", endpoint)
 
     def test_resolver_network(self):
         resolver = EndpointResolverRules(None)
         endpoint_data = EndpointData()
-        resolver.endpoint_map = endpoint_data.endpoint_map
-        resolver.endpoint_regional = endpoint_data.endpoint_regional
         request = ResolveEndpointRequest(
-            "cn-hangzhou", "test", "", "")
+            "cn-beijing", "test", "", "")
+        request.endpoint_map = endpoint_data.endpoint_map
+        request.endpoint_regional = endpoint_data.endpoint_regional
         request.request_network = "vpc"
         endpoint = resolver.resolve(request)
-        self.assertEqual("test-vpc.cn-hangzhou.aliyuncs.com", endpoint)
+        self.assertEqual("test-vpc.cn-beijing.aliyuncs.com", endpoint)
 
     def test_resolver_network_special_endpoint(self):
         resolver = EndpointResolverRules(None)
         endpoint_data = EndpointData()
-        resolver.endpoint_map = endpoint_data.endpoint_map
-        resolver.endpoint_regional = endpoint_data.endpoint_regional
         request = ResolveEndpointRequest(
             "foo", "test", "", "")
+        request.endpoint_map = endpoint_data.endpoint_map
+        request.endpoint_regional = endpoint_data.endpoint_regional
         request.request_network = "vpc"
         endpoint = resolver.resolve(request)
         self.assertEqual("test-vpc.foo.aliyuncs.com", endpoint)
@@ -70,7 +70,6 @@ class TestDefaultEndpointResolver(unittest.TestCase):
 class EndpointData():
     def __init__(self):
         self.endpoint_map = {
-            "foo": "bar",
+            "cn-hangzhou": "mock.endpoint",
         }
         self.endpoint_regional = "regional"
-
