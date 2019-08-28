@@ -18,10 +18,11 @@
  under the License.
 '''
 
-from setuptools import setup, find_packages
+import logging
 import os
 import platform
-import logging
+
+from setuptools import setup, find_packages
 
 """
 Setup module for core.
@@ -37,14 +38,11 @@ AUTHOR = "Alibaba Cloud"
 AUTHOR_EMAIL = "alibaba-cloud-sdk-dev-team@list.alibaba-inc.com"
 URL = "https://github.com/aliyun/aliyun-openapi-python-sdk"
 
-
 TOPDIR = os.path.dirname(__file__) or "."
 VERSION = __import__(PACKAGE).__version__
 
-
 with open("README.rst") as fp:
     LONG_DESCRIPTION = fp.read()
-
 
 requires = [
     "jmespath>=0.9.3,<1.0.0"
@@ -57,7 +55,6 @@ else:
         "auth type [publicKeyId] is disabled because "
         "'pycrypto' not support windows, we will resolve this soon")
 
-
 setup_args = {
     'version': VERSION,
     'description': DESCRIPTION,
@@ -68,7 +65,8 @@ setup_args = {
     'url': URL,
     'keywords': ["aliyun", "sdk", "core"],
     'packages': find_packages(exclude=["tests*"]),
-    'package_data': {'aliyunsdkcore': ['data/*.json']},
+    'package_data': {'aliyunsdkcore': ['data/*.json', '*.pem', "vendored/*.pem"],
+                     'aliyunsdkcore.vendored.requests.packages.certifi': ['cacert.pem']},
     'platforms': 'any',
     'install_requires': requires,
     'classifiers': (
@@ -88,6 +86,4 @@ setup_args = {
     )
 }
 
-
 setup(name='aliyun-python-sdk-core', **setup_args)
-

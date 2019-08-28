@@ -1,3 +1,8 @@
+2019-08-28 Version 2.13.8
+1, upgrade certifi from 2017.04.17 to 2018.01.18
+2, Add interface to import ca.pem
+3, Fix setup.py to include cacert.pem
+
 2018-12-23 Version: 2.11.4
 1,  Fix README.dst missing problem because of Python2.7 with setup.py has bug
 2,  Fix a server error handling bug
