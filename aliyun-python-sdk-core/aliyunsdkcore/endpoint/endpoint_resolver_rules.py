@@ -28,8 +28,10 @@ class EndpointResolverRules():
         self.product_suffix = ''
 
     def resolve(self, request):
-        if self.endpoint_map is None or self.endpoint_regional is None:
+        if request.endpoint_map is None or request.endpoint_regional is None:
             return None
+        self.endpoint_map = request.endpoint_map
+        self.endpoint_regional = request.endpoint_regional
         product_id = request.product_code_lower
         region_id = request.region_id
         network = request.request_network
