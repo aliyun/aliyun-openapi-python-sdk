@@ -1,0 +1,3 @@
+2019-08-28 Version: 2.0.17
+- Add rate OpenAPI.
+
