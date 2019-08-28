@@ -68,7 +68,8 @@ setup_args = {
     'url': URL,
     'keywords': ["aliyun", "sdk", "core"],
     'packages': find_packages(exclude=["tests*"]),
-    'package_data': {'aliyunsdkcore': ['data/*.json']},
+    'package_data': {'aliyunsdkcore': ['data/*.json', '*.pem', "vendored/*.pem"],
+                     'aliyunsdkcore.vendored.requests.packages.certifi': ['cacert.pem']},
     'platforms': 'any',
     'install_requires': requires,
     'classifiers': (

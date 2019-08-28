@@ -82,7 +82,8 @@ class AcsClient:
             private_key=None,
             session_period=3600,
             credential=None,
-            debug=False):
+            debug=False,
+            verify=None):
         """
         constructor for AcsClient
         :param ak: String, access key id
@@ -103,6 +104,7 @@ class AcsClient:
         self._connect_timeout = connect_timeout
         self._read_timeout = timeout
         self._extra_user_agent = {}
+        self._verify = verify
         credential = {
             'ak': ak,
             'secret': secret,
@@ -139,6 +141,9 @@ class AcsClient:
     def get_user_agent(self):
         return self._user_agent
 
+    def get_verify(self):
+        return self._verify
+
     def set_region_id(self, region):
         self._region_id = region
 
@@ -160,6 +165,9 @@ class AcsClient:
         :return:
         """
         self._user_agent = agent
+
+    def set_verify(self, verify):
+        self._verify = verify
 
     def append_user_agent(self, key, value):
         self._extra_user_agent.update({key: value})
@@ -264,7 +272,8 @@ class AcsClient:
             request.get_content(),
             self._port,
             read_timeout=read_timeout,
-            connect_timeout=connect_timeout)
+            connect_timeout=connect_timeout,
+            verify=self.get_verify())
         if body_params:
             body = urlencode(request.get_body_params())
             response.set_content(body, "utf-8", format_type.APPLICATION_FORM)
