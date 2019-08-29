@@ -1,3 +1,6 @@
+2019-08-29 Version: 1.1.0
+- Add PTZ APIs.
+
 2019-08-02 Version: 1.0.1
 - Generated 2018-12-12 for `vs`.
 

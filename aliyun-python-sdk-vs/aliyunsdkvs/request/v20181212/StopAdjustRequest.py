@@ -20,15 +20,27 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkvs.endpoint import endpoint_data
 
-class DescribeVsStreamsNotifyUrlConfigRequest(RpcRequest):
+class StopAdjustRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'vs', '2018-12-12', 'DescribeVsStreamsNotifyUrlConfig','vs')
+		RpcRequest.__init__(self, 'vs', '2018-12-12', 'StopAdjust','vs')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+
+	def get_Focus(self):
+		return self.get_query_params().get('Focus')
+
+	def set_Focus(self,Focus):
+		self.add_query_param('Focus',Focus)
+
+	def get_Id(self):
+		return self.get_query_params().get('Id')
+
+	def set_Id(self,Id):
+		self.add_query_param('Id',Id)
 
 	def get_ShowLog(self):
 		return self.get_query_params().get('ShowLog')
@@ -36,11 +48,11 @@ class DescribeVsStreamsNotifyUrlConfigRequest(RpcRequest):
 	def set_ShowLog(self,ShowLog):
 		self.add_query_param('ShowLog',ShowLog)
 
-	def get_DomainName(self):
-		return self.get_query_params().get('DomainName')
+	def get_Iris(self):
+		return self.get_query_params().get('Iris')
 
-	def set_DomainName(self,DomainName):
-		self.add_query_param('DomainName',DomainName)
+	def set_Iris(self,Iris):
+		self.add_query_param('Iris',Iris)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')

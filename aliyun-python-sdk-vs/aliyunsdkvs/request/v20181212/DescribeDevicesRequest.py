@@ -36,6 +36,12 @@ class DescribeDevicesRequest(RpcRequest):
 	def set_SortDirection(self,SortDirection):
 		self.add_query_param('SortDirection',SortDirection)
 
+	def get_GbId(self):
+		return self.get_query_params().get('GbId')
+
+	def set_GbId(self,GbId):
+		self.add_query_param('GbId',GbId)
+
 	def get_Type(self):
 		return self.get_query_params().get('Type')
 

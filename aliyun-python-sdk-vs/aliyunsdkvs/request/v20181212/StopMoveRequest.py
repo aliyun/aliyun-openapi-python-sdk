@@ -20,15 +20,33 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkvs.endpoint import endpoint_data
 
-class DescribeVsStreamsNotifyUrlConfigRequest(RpcRequest):
+class StopMoveRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'vs', '2018-12-12', 'DescribeVsStreamsNotifyUrlConfig','vs')
+		RpcRequest.__init__(self, 'vs', '2018-12-12', 'StopMove','vs')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+
+	def get_Tilt(self):
+		return self.get_query_params().get('Tilt')
+
+	def set_Tilt(self,Tilt):
+		self.add_query_param('Tilt',Tilt)
+
+	def get_Id(self):
+		return self.get_query_params().get('Id')
+
+	def set_Id(self,Id):
+		self.add_query_param('Id',Id)
+
+	def get_Pan(self):
+		return self.get_query_params().get('Pan')
+
+	def set_Pan(self,Pan):
+		self.add_query_param('Pan',Pan)
 
 	def get_ShowLog(self):
 		return self.get_query_params().get('ShowLog')
@@ -36,11 +54,11 @@ class DescribeVsStreamsNotifyUrlConfigRequest(RpcRequest):
 	def set_ShowLog(self,ShowLog):
 		self.add_query_param('ShowLog',ShowLog)
 
-	def get_DomainName(self):
-		return self.get_query_params().get('DomainName')
+	def get_Zoom(self):
+		return self.get_query_params().get('Zoom')
 
-	def set_DomainName(self,DomainName):
-		self.add_query_param('DomainName',DomainName)
+	def set_Zoom(self,Zoom):
+		self.add_query_param('Zoom',Zoom)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
