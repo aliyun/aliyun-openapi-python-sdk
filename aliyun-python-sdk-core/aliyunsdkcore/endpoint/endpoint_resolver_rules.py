@@ -33,10 +33,6 @@ class EndpointResolverRules(LocalConfigRegionalEndpointResolver):
     def resolve(self, request):
         if request.endpoint_map is None or request.endpoint_regional is None:
             return None
-        endpoint = self.get_endpoint(request)
-        return endpoint
-
-    def get_endpoint(self, request):
         request_network = "public" if not request.request_network else request.request_network
 
         endpoint_regional = request.endpoint_regional
@@ -48,7 +44,8 @@ class EndpointResolverRules(LocalConfigRegionalEndpointResolver):
             if endpoint_regional == "regional":
                 if request.region_id not in self._valid_region_ids:
                     return None
-                endpoint_domain = ".{region_id}.aliyuncs.com".format(region_id=request.region_id.lower())
+                endpoint_domain = ".{region_id}.aliyuncs.com".format(
+                    region_id=request.region_id.lower())
             elif endpoint_regional == "central":
                 endpoint_domain = ".aliyuncs.com"
             else:
@@ -58,8 +55,7 @@ class EndpointResolverRules(LocalConfigRegionalEndpointResolver):
             suffix = "-" + request.product_suffix if request.product_suffix else ""
             endpoint_param_list = [request.product_code_lower, suffix, network, endpoint_domain]
 
-            endpoint = "".join(list(filter(lambda x:x,endpoint_param_list)))
-
+            endpoint = "".join(list(filter(lambda x: x, endpoint_param_list)))
         return endpoint
 
     def is_product_code_valid(self, request):
