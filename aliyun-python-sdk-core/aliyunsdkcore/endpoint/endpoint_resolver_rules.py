@@ -34,7 +34,7 @@ class EndpointResolverRules(LocalConfigRegionalEndpointResolver):
     def resolve(self, request):
         if request.endpoint_map is None or request.endpoint_regional is None:
             return None
-        if not self.is_region_id_valid(request):
+        if request.region_id not in self._valid_region_ids:
             return None
         self.endpoint_map = request.endpoint_map
         self.endpoint_regional = request.endpoint_regional
