@@ -16,19 +16,25 @@
 # specific language governing permissions and limitations
 # under the License.
 #
+from aliyunsdkcore.endpoint.local_config_regional_endpoint_resolver \
+    import LocalConfigRegionalEndpointResolver
 
 
-class EndpointResolverRules():
+class EndpointResolverRules(LocalConfigRegionalEndpointResolver):
     def __init__(self, *args, **kwargs):
+        LocalConfigRegionalEndpointResolver.__init__(self)
         self.product_code_valid = False
         self.region_id_valid = False
         self.endpoint_map = None
         self.endpoint_regional = None
         self.request_network = 'public'
         self.product_suffix = ''
+        self.valid_regions = set()
 
     def resolve(self, request):
         if request.endpoint_map is None or request.endpoint_regional is None:
+            return None
+        if not self.is_region_id_valid(request):
             return None
         self.endpoint_map = request.endpoint_map
         self.endpoint_regional = request.endpoint_regional
