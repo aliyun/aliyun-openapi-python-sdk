@@ -1,3 +1,6 @@
+2019-08-30 Version: 2.0.15
+- Support Alert Configuration.
+
 2019-03-15 Version: 2.0.10
 1, Support subscribe for RDS MySQL 5.7
 

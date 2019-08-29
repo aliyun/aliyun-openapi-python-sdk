@@ -19,11 +19,23 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class ModifyConsumptionTimestampRequest(RpcRequest):
+class CreateConsumerGroupRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dts', '2018-08-01', 'ModifyConsumptionTimestamp','dts')
+		RpcRequest.__init__(self, 'Dts', '2018-08-01', 'CreateConsumerGroup','dts')
 		self.set_method('POST')
+
+	def get_ConsumerGroupName(self):
+		return self.get_query_params().get('ConsumerGroupName')
+
+	def set_ConsumerGroupName(self,ConsumerGroupName):
+		self.add_query_param('ConsumerGroupName',ConsumerGroupName)
+
+	def get_ConsumerGroupUserName(self):
+		return self.get_query_params().get('ConsumerGroupUserName')
+
+	def set_ConsumerGroupUserName(self,ConsumerGroupUserName):
+		self.add_query_param('ConsumerGroupUserName',ConsumerGroupUserName)
 
 	def get_SubscriptionInstanceId(self):
 		return self.get_query_params().get('SubscriptionInstanceId')
@@ -31,14 +43,14 @@ class ModifyConsumptionTimestampRequest(RpcRequest):
 	def set_SubscriptionInstanceId(self,SubscriptionInstanceId):
 		self.add_query_param('SubscriptionInstanceId',SubscriptionInstanceId)
 
-	def get_ConsumptionTimestamp(self):
-		return self.get_query_params().get('ConsumptionTimestamp')
-
-	def set_ConsumptionTimestamp(self,ConsumptionTimestamp):
-		self.add_query_param('ConsumptionTimestamp',ConsumptionTimestamp)
-
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_ConsumerGroupPassword(self):
+		return self.get_query_params().get('ConsumerGroupPassword')
+
+	def set_ConsumerGroupPassword(self,ConsumerGroupPassword):
+		self.add_query_param('ConsumerGroupPassword',ConsumerGroupPassword)

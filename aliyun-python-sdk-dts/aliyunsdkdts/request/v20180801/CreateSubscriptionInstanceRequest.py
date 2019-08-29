@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,6 +18,7 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+
 class CreateSubscriptionInstanceRequest(RpcRequest):
 
 	def __init__(self):
@@ -59,3 +60,9 @@ class CreateSubscriptionInstanceRequest(RpcRequest):
 
 	def set_UsedTime(self,UsedTime):
 		self.add_query_param('UsedTime',UsedTime)
+
+	def get_SourceEndpointInstanceType(self):
+		return self.get_query_params().get('SourceEndpoint.InstanceType')
+
+	def set_SourceEndpointInstanceType(self,SourceEndpointInstanceType):
+		self.add_query_param('SourceEndpoint.InstanceType',SourceEndpointInstanceType)

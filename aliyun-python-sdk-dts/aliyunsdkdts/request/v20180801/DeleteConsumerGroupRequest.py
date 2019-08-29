@@ -19,25 +19,26 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class DescribeSynchronizationObjectModifyStatusRequest(RpcRequest):
+class DeleteConsumerGroupRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dts', '2018-08-01', 'DescribeSynchronizationObjectModifyStatus','dts')
+		RpcRequest.__init__(self, 'Dts', '2018-08-01', 'DeleteConsumerGroup','dts')
+		self.set_method('POST')
 
-	def get_ClientToken(self):
-		return self.get_query_params().get('ClientToken')
+	def get_ConsumerGroupID(self):
+		return self.get_query_params().get('ConsumerGroupID')
 
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
+	def set_ConsumerGroupID(self,ConsumerGroupID):
+		self.add_query_param('ConsumerGroupID',ConsumerGroupID)
+
+	def get_SubscriptionInstanceId(self):
+		return self.get_query_params().get('SubscriptionInstanceId')
+
+	def set_SubscriptionInstanceId(self,SubscriptionInstanceId):
+		self.add_query_param('SubscriptionInstanceId',SubscriptionInstanceId)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
-
-	def get_TaskId(self):
-		return self.get_query_params().get('TaskId')
-
-	def set_TaskId(self,TaskId):
-		self.add_query_param('TaskId',TaskId)
