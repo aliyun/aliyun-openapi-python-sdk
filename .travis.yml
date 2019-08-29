@@ -1,15 +1,24 @@
+
 sudo: false
 
 language: python
 
+matrix:
+  include:
+    - os: linux
+      language: python
+      python: "2.6"
+      env:
+        - PACKAGE_LEVEL=latest
+    - os: linux
+      language: python
+      python: "3.3"
+      env:
+        - PACKAGE_LEVEL=latest
+
 python:
   - "2.6"
-  - "2.7"
   - "3.3"
-  - "3.4"
-  - "3.5"
-  - "3.6"
-  - "3.7-dev"
 
 install:
   - pip install unittest2
