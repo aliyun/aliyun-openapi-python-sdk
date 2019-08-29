@@ -11,19 +11,20 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+
 from base import SDKTestBase
 
-from aliyunsdkcore.endpoint.user_customized_endpoint_resolver import UserCustomizedEndpointResolver
-from aliyunsdkcore.endpoint.local_config_regional_endpoint_resolver \
-    import LocalConfigRegionalEndpointResolver
-from aliyunsdkcore.endpoint.local_config_global_endpoint_resolver \
-    import LocalConfigGlobalEndpointResolver
-from aliyunsdkcore.endpoint.location_service_endpoint_resolver \
-    import LocationServiceEndpointResolver
 from aliyunsdkcore.endpoint.chained_endpoint_resolver import ChainedEndpointResolver
-from aliyunsdkcore.endpoint.resolver_endpoint_request import ResolveEndpointRequest
 from aliyunsdkcore.endpoint.default_endpoint_resolver import DefaultEndpointResolver
 from aliyunsdkcore.endpoint.endpoint_resolver_rules import EndpointResolverRules
+from aliyunsdkcore.endpoint.local_config_global_endpoint_resolver \
+    import LocalConfigGlobalEndpointResolver
+from aliyunsdkcore.endpoint.local_config_regional_endpoint_resolver \
+    import LocalConfigRegionalEndpointResolver
+from aliyunsdkcore.endpoint.location_service_endpoint_resolver \
+    import LocationServiceEndpointResolver
+from aliyunsdkcore.endpoint.resolver_endpoint_request import ResolveEndpointRequest
+from aliyunsdkcore.endpoint.user_customized_endpoint_resolver import UserCustomizedEndpointResolver
 
 
 class EndpointRulesTest(SDKTestBase):
@@ -57,9 +58,10 @@ class EndpointRulesTest(SDKTestBase):
 
         self._endpoint_resolver = ChainedEndpointResolver(resolver_chain)
 
-    def resolve(self, region_id, product_code, location_service_code=None, endpoint_type=None, request=None):
+    def resolve(self, region_id, product_code, location_service_code=None, endpoint_type=None,
+                request=None):
         resolve_request = ResolveEndpointRequest(region_id, product_code,
-                                         location_service_code, endpoint_type)
+                                                 location_service_code, endpoint_type)
         if request:
             resolve_request.request_network = request.request_network
             resolve_request.product_suffix = request.product_suffix
