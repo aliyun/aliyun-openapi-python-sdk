@@ -26,10 +26,10 @@ class StopExecutionRequest(RpcRequest):
 		self.set_method('POST')
 
 	def get_ExecutionName(self):
-		return self.get_query_params().get('ExecutionName')
+		return self.get_body_params().get('ExecutionName')
 
 	def set_ExecutionName(self,ExecutionName):
-		self.add_query_param('ExecutionName',ExecutionName)
+		self.add_body_params('ExecutionName', ExecutionName)
 
 	def get_RequestId(self):
 		return self.get_query_params().get('RequestId')
@@ -38,19 +38,19 @@ class StopExecutionRequest(RpcRequest):
 		self.add_query_param('RequestId',RequestId)
 
 	def get_Cause(self):
-		return self.get_query_params().get('Cause')
+		return self.get_body_params().get('Cause')
 
 	def set_Cause(self,Cause):
-		self.add_query_param('Cause',Cause)
+		self.add_body_params('Cause', Cause)
 
 	def get_FlowName(self):
-		return self.get_query_params().get('FlowName')
+		return self.get_body_params().get('FlowName')
 
 	def set_FlowName(self,FlowName):
-		self.add_query_param('FlowName',FlowName)
+		self.add_body_params('FlowName', FlowName)
 
 	def get_Error(self):
-		return self.get_query_params().get('Error')
+		return self.get_body_params().get('Error')
 
 	def set_Error(self,Error):
-		self.add_query_param('Error',Error)
+		self.add_body_params('Error', Error)
