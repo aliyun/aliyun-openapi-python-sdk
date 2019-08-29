@@ -29,54 +29,36 @@ class EndpointResolverRules(LocalConfigRegionalEndpointResolver):
         self.endpoint_regional = None
         self.request_network = 'public'
         self.product_suffix = ''
-        self.valid_regions = set()
 
     def resolve(self, request):
         if request.endpoint_map is None or request.endpoint_regional is None:
             return None
-        if request.region_id not in self._valid_region_ids:
-            return None
-        self.endpoint_map = request.endpoint_map
-        self.endpoint_regional = request.endpoint_regional
-        self.request_network = request.request_network
-        self.product_suffix = request.product_suffix
-        product_id = request.product_code_lower
-        region_id = request.region_id
-        network = request.request_network
-        suffix = request.product_suffix
-        endpoint = self.get_endpoint(region_id, product_id, network, suffix)
+        endpoint = self.get_endpoint(request)
         return endpoint
 
-    def get_endpoint(self, region_id, product_id, network, suffix):
-        if network is None or network == "":
-            network = "public"
+    def get_endpoint(self, request):
+        request_network = "public" if not request.request_network else request.request_network
 
-        endpoint_map = self.endpoint_map
-        endpoint_regional = self.endpoint_regional
+        endpoint_regional = request.endpoint_regional
         endpoint = ""
-        if network == "public":
-            for key in endpoint_map:
-                if key == region_id:
-                    endpoint = endpoint_map[key]
-                    break
+        if request_network == "public":
+            endpoint = request.endpoint_map.get(request.region_id, "")
 
         if endpoint == "":
             if endpoint_regional == "regional":
-                endpoint = "<product_id><suffix><network>.<region_id>.aliyuncs.com"
-                endpoint = endpoint.replace("<region_id>", region_id.lower())
+                if request.region_id not in self._valid_region_ids:
+                    return None
+                endpoint_domain = ".{region_id}.aliyuncs.com".format(region_id=request.region_id.lower())
             elif endpoint_regional == "central":
-                endpoint = "<product_id><suffix><network>.aliyuncs.com"
+                endpoint_domain = ".aliyuncs.com"
             else:
                 return None
-            if network != "public":
-                endpoint = endpoint.replace("<network>", "-"+network)
-            else:
-                endpoint = endpoint.replace("<network>", "")
-            if suffix != "":
-                endpoint = endpoint.replace("<suffix>", "-"+suffix)
-            else:
-                endpoint = endpoint.replace("<suffix>", "")
-            endpoint = endpoint.replace("<product_id>", product_id)
+
+            network = "" if request_network == "public" else "-" + request_network
+            suffix = "-" + request.product_suffix if request.product_suffix else ""
+            endpoint_param_list = [request.product_code_lower, suffix, network, endpoint_domain]
+
+            endpoint = "".join(list(filter(lambda x:x,endpoint_param_list)))
 
         return endpoint
 
