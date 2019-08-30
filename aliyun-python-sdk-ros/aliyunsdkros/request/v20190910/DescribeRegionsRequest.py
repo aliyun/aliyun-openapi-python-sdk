@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -17,22 +17,15 @@
 # specific language governing permissions and limitations
 # under the License.
 
-from aliyunsdkcore.request import RoaRequest
-class CancelUpdateStackRequest(RoaRequest):
+from aliyunsdkcore.request import RpcRequest
+
+class DescribeRegionsRequest(RpcRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'ROS', '2015-09-01', 'CancelUpdateStack')
-		self.set_uri_pattern('/stacks/[StackName]/[StackId]/cancel')
-		self.set_method('PUT')
+		RpcRequest.__init__(self, 'ROS', '2019-09-10', 'DescribeRegions','ROS')
 
-	def get_StackId(self):
-		return self.get_path_params().get('StackId')
+	def get_AcceptLanguage(self):
+		return self.get_query_params().get('AcceptLanguage')
 
-	def set_StackId(self,StackId):
-		self.add_path_param('StackId',StackId)
-
-	def get_StackName(self):
-		return self.get_path_params().get('StackName')
-
-	def set_StackName(self,StackName):
-		self.add_path_param('StackName',StackName)
+	def set_AcceptLanguage(self,AcceptLanguage):
+		self.add_query_param('AcceptLanguage',AcceptLanguage)

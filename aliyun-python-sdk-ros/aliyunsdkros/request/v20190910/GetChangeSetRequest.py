@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -17,10 +17,21 @@
 # specific language governing permissions and limitations
 # under the License.
 
-from aliyunsdkcore.request import RoaRequest
-class ValidateTemplateRequest(RoaRequest):
+from aliyunsdkcore.request import RpcRequest
+
+class GetChangeSetRequest(RpcRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'ROS', '2015-09-01', 'ValidateTemplate')
-		self.set_uri_pattern('/validate')
-		self.set_method('POST')
+		RpcRequest.__init__(self, 'ROS', '2019-09-10', 'GetChangeSet','ROS')
+
+	def get_ChangeSetId(self):
+		return self.get_query_params().get('ChangeSetId')
+
+	def set_ChangeSetId(self,ChangeSetId):
+		self.add_query_param('ChangeSetId',ChangeSetId)
+
+	def get_ShowTemplate(self):
+		return self.get_query_params().get('ShowTemplate')
+
+	def set_ShowTemplate(self,ShowTemplate):
+		self.add_query_param('ShowTemplate',ShowTemplate)

@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -17,16 +17,21 @@
 # specific language governing permissions and limitations
 # under the License.
 
-from aliyunsdkcore.request import RoaRequest
-class DescribeResourceTypeTemplateRequest(RoaRequest):
+from aliyunsdkcore.request import RpcRequest
+
+class GetTemplateRequest(RpcRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'ROS', '2015-09-01', 'DescribeResourceTypeTemplate')
-		self.set_uri_pattern('/resource_types/[TypeName]/template')
-		self.set_method('GET')
+		RpcRequest.__init__(self, 'ROS', '2019-09-10', 'GetTemplate','ROS')
 
-	def get_TypeName(self):
-		return self.get_path_params().get('TypeName')
+	def get_StackId(self):
+		return self.get_query_params().get('StackId')
 
-	def set_TypeName(self,TypeName):
-		self.add_path_param('TypeName',TypeName)
+	def set_StackId(self,StackId):
+		self.add_query_param('StackId',StackId)
+
+	def get_ChangeSetId(self):
+		return self.get_query_params().get('ChangeSetId')
+
+	def set_ChangeSetId(self,ChangeSetId):
+		self.add_query_param('ChangeSetId',ChangeSetId)

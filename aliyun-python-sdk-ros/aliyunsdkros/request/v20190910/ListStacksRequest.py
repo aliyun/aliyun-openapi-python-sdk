@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -17,25 +17,24 @@
 # specific language governing permissions and limitations
 # under the License.
 
-from aliyunsdkcore.request import RoaRequest
-class DescribeStacksRequest(RoaRequest):
+from aliyunsdkcore.request import RpcRequest
+
+class ListStacksRequest(RpcRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'ROS', '2015-09-01', 'DescribeStacks')
-		self.set_uri_pattern('/stacks')
-		self.set_method('GET')
+		RpcRequest.__init__(self, 'ROS', '2019-09-10', 'ListStacks','ROS')
 
-	def get_StackId(self):
-		return self.get_query_params().get('StackId')
+	def get_ParentStackId(self):
+		return self.get_query_params().get('ParentStackId')
 
-	def set_StackId(self,StackId):
-		self.add_query_param('StackId',StackId)
+	def set_ParentStackId(self,ParentStackId):
+		self.add_query_param('ParentStackId',ParentStackId)
 
-	def get_Name(self):
-		return self.get_query_params().get('Name')
+	def get_ShowNestedStack(self):
+		return self.get_query_params().get('ShowNestedStack')
 
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)
+	def set_ShowNestedStack(self,ShowNestedStack):
+		self.add_query_param('ShowNestedStack',ShowNestedStack)
 
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
@@ -43,14 +42,24 @@ class DescribeStacksRequest(RoaRequest):
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
 
+	def get_StackNames(self):
+		return self.get_query_params().get('StackNames')
+
+	def set_StackNames(self,StackNames):
+		for i in range(len(StackNames)):	
+			if StackNames[i] is not None:
+				self.add_query_param('StackName.' + str(i + 1) , StackNames[i]);
+
 	def get_PageNumber(self):
 		return self.get_query_params().get('PageNumber')
 
 	def set_PageNumber(self,PageNumber):
 		self.add_query_param('PageNumber',PageNumber)
 
-	def get_Status(self):
-		return self.get_query_params().get('Status')
+	def get_Statuss(self):
+		return self.get_query_params().get('Statuss')
 
-	def set_Status(self,Status):
-		self.add_query_param('Status',Status)
+	def set_Statuss(self,Statuss):
+		for i in range(len(Statuss)):	
+			if Statuss[i] is not None:
+				self.add_query_param('Status.' + str(i + 1) , Statuss[i]);

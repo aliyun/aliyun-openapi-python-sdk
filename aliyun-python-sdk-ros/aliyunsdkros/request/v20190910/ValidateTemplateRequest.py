@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -17,10 +17,21 @@
 # specific language governing permissions and limitations
 # under the License.
 
-from aliyunsdkcore.request import RoaRequest
-class DescribeRegionsRequest(RoaRequest):
+from aliyunsdkcore.request import RpcRequest
+
+class ValidateTemplateRequest(RpcRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'ROS', '2015-09-01', 'DescribeRegions')
-		self.set_uri_pattern('/regions')
-		self.set_method('GET')
+		RpcRequest.__init__(self, 'ROS', '2019-09-10', 'ValidateTemplate','ROS')
+
+	def get_TemplateBody(self):
+		return self.get_query_params().get('TemplateBody')
+
+	def set_TemplateBody(self,TemplateBody):
+		self.add_query_param('TemplateBody',TemplateBody)
+
+	def get_TemplateURL(self):
+		return self.get_query_params().get('TemplateURL')
+
+	def set_TemplateURL(self,TemplateURL):
+		self.add_query_param('TemplateURL',TemplateURL)
