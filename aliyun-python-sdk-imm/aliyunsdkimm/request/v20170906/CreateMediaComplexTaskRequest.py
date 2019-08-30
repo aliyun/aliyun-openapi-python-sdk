@@ -19,16 +19,22 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class UpdateFaceGroupRequest(RpcRequest):
+class CreateMediaComplexTaskRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'imm', '2017-09-06', 'UpdateFaceGroup','imm')
+		RpcRequest.__init__(self, 'imm', '2017-09-06', 'CreateMediaComplexTask','imm')
 
-	def get_GroupId(self):
-		return self.get_query_params().get('GroupId')
+	def get_NotifyTopicName(self):
+		return self.get_query_params().get('NotifyTopicName')
 
-	def set_GroupId(self,GroupId):
-		self.add_query_param('GroupId',GroupId)
+	def set_NotifyTopicName(self,NotifyTopicName):
+		self.add_query_param('NotifyTopicName',NotifyTopicName)
+
+	def get_NotifyEndpoint(self):
+		return self.get_query_params().get('NotifyEndpoint')
+
+	def set_NotifyEndpoint(self,NotifyEndpoint):
+		self.add_query_param('NotifyEndpoint',NotifyEndpoint)
 
 	def get_Project(self):
 		return self.get_query_params().get('Project')
@@ -36,20 +42,8 @@ class UpdateFaceGroupRequest(RpcRequest):
 	def set_Project(self,Project):
 		self.add_query_param('Project',Project)
 
-	def get_SetId(self):
-		return self.get_query_params().get('SetId')
+	def get_Parameters(self):
+		return self.get_query_params().get('Parameters')
 
-	def set_SetId(self,SetId):
-		self.add_query_param('SetId',SetId)
-
-	def get_GroupName(self):
-		return self.get_query_params().get('GroupName')
-
-	def set_GroupName(self,GroupName):
-		self.add_query_param('GroupName',GroupName)
-
-	def get_GroupCoverFaceId(self):
-		return self.get_query_params().get('GroupCoverFaceId')
-
-	def set_GroupCoverFaceId(self,GroupCoverFaceId):
-		self.add_query_param('GroupCoverFaceId',GroupCoverFaceId)
+	def set_Parameters(self,Parameters):
+		self.add_query_param('Parameters',Parameters)

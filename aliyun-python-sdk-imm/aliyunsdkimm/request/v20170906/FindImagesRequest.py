@@ -42,6 +42,12 @@ class FindImagesRequest(RpcRequest):
 	def set_ExternalId(self,ExternalId):
 		self.add_query_param('ExternalId',ExternalId)
 
+	def get_FacesModifyTimeRange(self):
+		return self.get_query_params().get('FacesModifyTimeRange')
+
+	def set_FacesModifyTimeRange(self,FacesModifyTimeRange):
+		self.add_query_param('FacesModifyTimeRange',FacesModifyTimeRange)
+
 	def get_ImageSizeRange(self):
 		return self.get_query_params().get('ImageSizeRange')
 
@@ -83,6 +89,12 @@ class FindImagesRequest(RpcRequest):
 
 	def set_RemarksDPrefix(self,RemarksDPrefix):
 		self.add_query_param('RemarksDPrefix',RemarksDPrefix)
+
+	def get_TagsModifyTimeRange(self):
+		return self.get_query_params().get('TagsModifyTimeRange')
+
+	def set_TagsModifyTimeRange(self,TagsModifyTimeRange):
+		self.add_query_param('TagsModifyTimeRange',TagsModifyTimeRange)
 
 	def get_SourceType(self):
 		return self.get_query_params().get('SourceType')

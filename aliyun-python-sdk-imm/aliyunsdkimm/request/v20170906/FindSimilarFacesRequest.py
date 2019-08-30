@@ -36,6 +36,12 @@ class FindSimilarFacesRequest(RpcRequest):
 	def set_MinSimilarity(self,MinSimilarity):
 		self.add_query_param('MinSimilarity',MinSimilarity)
 
+	def get_ResponseFormat(self):
+		return self.get_query_params().get('ResponseFormat')
+
+	def set_ResponseFormat(self,ResponseFormat):
+		self.add_query_param('ResponseFormat',ResponseFormat)
+
 	def get_Limit(self):
 		return self.get_query_params().get('Limit')
 
