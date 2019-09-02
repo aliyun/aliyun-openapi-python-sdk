@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,10 +18,17 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkvpc.endpoint import endpoint_data
+
 class CreateVpnRouteEntryRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'CreateVpnRouteEntry','vpc')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -88,3 +95,9 @@ class CreateVpnRouteEntryRequest(RpcRequest):
 
 	def set_PublishVpc(self,PublishVpc):
 		self.add_query_param('PublishVpc',PublishVpc)
+
+	def get_OverlayMode(self):
+		return self.get_query_params().get('OverlayMode')
+
+	def set_OverlayMode(self,OverlayMode):
+		self.add_query_param('OverlayMode',OverlayMode)

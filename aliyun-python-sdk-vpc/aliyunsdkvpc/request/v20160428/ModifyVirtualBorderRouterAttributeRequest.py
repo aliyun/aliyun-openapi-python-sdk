@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,10 +18,17 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkvpc.endpoint import endpoint_data
+
 class ModifyVirtualBorderRouterAttributeRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'ModifyVirtualBorderRouterAttribute','vpc')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -83,11 +90,23 @@ class ModifyVirtualBorderRouterAttributeRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
+	def get_MinRxInterval(self):
+		return self.get_query_params().get('MinRxInterval')
+
+	def set_MinRxInterval(self,MinRxInterval):
+		self.add_query_param('MinRxInterval',MinRxInterval)
+
 	def get_PeerGatewayIp(self):
 		return self.get_query_params().get('PeerGatewayIp')
 
 	def set_PeerGatewayIp(self,PeerGatewayIp):
 		self.add_query_param('PeerGatewayIp',PeerGatewayIp)
+
+	def get_DetectMultiplier(self):
+		return self.get_query_params().get('DetectMultiplier')
+
+	def set_DetectMultiplier(self,DetectMultiplier):
+		self.add_query_param('DetectMultiplier',DetectMultiplier)
 
 	def get_PeeringSubnetMask(self):
 		return self.get_query_params().get('PeeringSubnetMask')
@@ -106,3 +125,9 @@ class ModifyVirtualBorderRouterAttributeRequest(RpcRequest):
 
 	def set_LocalGatewayIp(self,LocalGatewayIp):
 		self.add_query_param('LocalGatewayIp',LocalGatewayIp)
+
+	def get_MinTxInterval(self):
+		return self.get_query_params().get('MinTxInterval')
+
+	def set_MinTxInterval(self,MinTxInterval):
+		self.add_query_param('MinTxInterval',MinTxInterval)

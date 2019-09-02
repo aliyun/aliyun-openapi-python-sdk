@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,16 +18,29 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkvpc.endpoint import endpoint_data
+
 class ModifyRouterInterfaceAttributeRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'ModifyRouterInterfaceAttribute','vpc')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_OppositeRouterId(self):
 		return self.get_query_params().get('OppositeRouterId')
 
 	def set_OppositeRouterId(self,OppositeRouterId):
 		self.add_query_param('OppositeRouterId',OppositeRouterId)
+
+	def get_HcThreshold(self):
+		return self.get_query_params().get('HcThreshold')
+
+	def set_HcThreshold(self,HcThreshold):
+		self.add_query_param('HcThreshold',HcThreshold)
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -94,6 +107,12 @@ class ModifyRouterInterfaceAttributeRequest(RpcRequest):
 
 	def set_OppositeRouterType(self,OppositeRouterType):
 		self.add_query_param('OppositeRouterType',OppositeRouterType)
+
+	def get_HcRate(self):
+		return self.get_query_params().get('HcRate')
+
+	def set_HcRate(self,HcRate):
+		self.add_query_param('HcRate',HcRate)
 
 	def get_OppositeInterfaceId(self):
 		return self.get_query_params().get('OppositeInterfaceId')

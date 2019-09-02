@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,16 +18,17 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class ModifyNqaRequest(RpcRequest):
+from aliyunsdkvpc.endpoint import endpoint_data
+
+class DeleteExpressConnectRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'ModifyNqa','vpc')
+		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'DeleteExpressConnect','vpc')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_DestinationIp(self):
-		return self.get_query_params().get('DestinationIp')
-
-	def set_DestinationIp(self,DestinationIp):
-		self.add_query_param('DestinationIp',DestinationIp)
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -53,11 +54,17 @@ class ModifyNqaRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
-	def get_NqaId(self):
-		return self.get_query_params().get('NqaId')
+	def get_Force(self):
+		return self.get_query_params().get('Force')
 
-	def set_NqaId(self,NqaId):
-		self.add_query_param('NqaId',NqaId)
+	def set_Force(self,Force):
+		self.add_query_param('Force',Force)
+
+	def get_RouterInterfaceId(self):
+		return self.get_query_params().get('RouterInterfaceId')
+
+	def set_RouterInterfaceId(self,RouterInterfaceId):
+		self.add_query_param('RouterInterfaceId',RouterInterfaceId)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
