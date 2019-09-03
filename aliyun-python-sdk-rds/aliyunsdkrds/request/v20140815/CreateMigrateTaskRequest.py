@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,6 +18,7 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+
 class CreateMigrateTaskRequest(RpcRequest):
 
 	def __init__(self):
@@ -28,6 +29,18 @@ class CreateMigrateTaskRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+
+	def get_IsOnlineDB(self):
+		return self.get_query_params().get('IsOnlineDB')
+
+	def set_IsOnlineDB(self,IsOnlineDB):
+		self.add_query_param('IsOnlineDB',IsOnlineDB)
+
+	def get_DBInstanceId(self):
+		return self.get_query_params().get('DBInstanceId')
+
+	def set_DBInstanceId(self,DBInstanceId):
+		self.add_query_param('DBInstanceId',DBInstanceId)
 
 	def get_MigrateTaskId(self):
 		return self.get_query_params().get('MigrateTaskId')
@@ -40,12 +53,6 @@ class CreateMigrateTaskRequest(RpcRequest):
 
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_IsOnlineDB(self):
-		return self.get_query_params().get('IsOnlineDB')
-
-	def set_IsOnlineDB(self,IsOnlineDB):
-		self.add_query_param('IsOnlineDB',IsOnlineDB)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
@@ -70,12 +77,6 @@ class CreateMigrateTaskRequest(RpcRequest):
 
 	def set_DBName(self,DBName):
 		self.add_query_param('DBName',DBName)
-
-	def get_DBInstanceId(self):
-		return self.get_query_params().get('DBInstanceId')
-
-	def set_DBInstanceId(self,DBInstanceId):
-		self.add_query_param('DBInstanceId',DBInstanceId)
 
 	def get_BackupMode(self):
 		return self.get_query_params().get('BackupMode')

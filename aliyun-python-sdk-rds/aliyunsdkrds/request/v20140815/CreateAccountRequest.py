@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,6 +18,7 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+
 class CreateAccountRequest(RpcRequest):
 
 	def __init__(self):
@@ -29,17 +30,29 @@ class CreateAccountRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_AccountPassword(self):
-		return self.get_query_params().get('AccountPassword')
+	def get_AccountType(self):
+		return self.get_query_params().get('AccountType')
 
-	def set_AccountPassword(self,AccountPassword):
-		self.add_query_param('AccountPassword',AccountPassword)
+	def set_AccountType(self,AccountType):
+		self.add_query_param('AccountType',AccountType)
+
+	def get_AccountDescription(self):
+		return self.get_query_params().get('AccountDescription')
+
+	def set_AccountDescription(self,AccountDescription):
+		self.add_query_param('AccountDescription',AccountDescription)
 
 	def get_AccountName(self):
 		return self.get_query_params().get('AccountName')
 
 	def set_AccountName(self,AccountName):
 		self.add_query_param('AccountName',AccountName)
+
+	def get_DBInstanceId(self):
+		return self.get_query_params().get('DBInstanceId')
+
+	def set_DBInstanceId(self,DBInstanceId):
+		self.add_query_param('DBInstanceId',DBInstanceId)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -53,26 +66,14 @@ class CreateAccountRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
-	def get_AccountType(self):
-		return self.get_query_params().get('AccountType')
-
-	def set_AccountType(self,AccountType):
-		self.add_query_param('AccountType',AccountType)
-
-	def get_DBInstanceId(self):
-		return self.get_query_params().get('DBInstanceId')
-
-	def set_DBInstanceId(self,DBInstanceId):
-		self.add_query_param('DBInstanceId',DBInstanceId)
-
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_AccountDescription(self):
-		return self.get_query_params().get('AccountDescription')
+	def get_AccountPassword(self):
+		return self.get_query_params().get('AccountPassword')
 
-	def set_AccountDescription(self,AccountDescription):
-		self.add_query_param('AccountDescription',AccountDescription)
+	def set_AccountPassword(self,AccountPassword):
+		self.add_query_param('AccountPassword',AccountPassword)

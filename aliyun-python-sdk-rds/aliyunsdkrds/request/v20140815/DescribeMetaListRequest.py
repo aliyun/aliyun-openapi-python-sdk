@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,6 +18,7 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+
 class DescribeMetaListRequest(RpcRequest):
 
 	def __init__(self):
@@ -28,18 +29,6 @@ class DescribeMetaListRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_RestoreTime(self):
-		return self.get_query_params().get('RestoreTime')
-
-	def set_RestoreTime(self,RestoreTime):
-		self.add_query_param('RestoreTime',RestoreTime)
-
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
-
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
 	def get_ClientToken(self):
 		return self.get_query_params().get('ClientToken')
@@ -52,6 +41,36 @@ class DescribeMetaListRequest(RpcRequest):
 
 	def set_Pattern(self,Pattern):
 		self.add_query_param('Pattern',Pattern)
+
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
+
+	def get_DBInstanceId(self):
+		return self.get_query_params().get('DBInstanceId')
+
+	def set_DBInstanceId(self,DBInstanceId):
+		self.add_query_param('DBInstanceId',DBInstanceId)
+
+	def get_PageIndex(self):
+		return self.get_query_params().get('PageIndex')
+
+	def set_PageIndex(self,PageIndex):
+		self.add_query_param('PageIndex',PageIndex)
+
+	def get_RestoreTime(self):
+		return self.get_query_params().get('RestoreTime')
+
+	def set_RestoreTime(self,RestoreTime):
+		self.add_query_param('RestoreTime',RestoreTime)
+
+	def get_ResourceOwnerAccount(self):
+		return self.get_query_params().get('ResourceOwnerAccount')
+
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
 	def get_BackupSetID(self):
 		return self.get_query_params().get('BackupSetID')
@@ -76,21 +95,3 @@ class DescribeMetaListRequest(RpcRequest):
 
 	def set_RestoreType(self,RestoreType):
 		self.add_query_param('RestoreType',RestoreType)
-
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_DBInstanceId(self):
-		return self.get_query_params().get('DBInstanceId')
-
-	def set_DBInstanceId(self,DBInstanceId):
-		self.add_query_param('DBInstanceId',DBInstanceId)
-
-	def get_PageIndex(self):
-		return self.get_query_params().get('PageIndex')
-
-	def set_PageIndex(self,PageIndex):
-		self.add_query_param('PageIndex',PageIndex)

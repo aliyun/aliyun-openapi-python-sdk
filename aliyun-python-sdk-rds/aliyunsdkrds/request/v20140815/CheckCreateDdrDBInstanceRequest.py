@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,6 +18,7 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+
 class CheckCreateDdrDBInstanceRequest(RpcRequest):
 
 	def __init__(self):
@@ -28,12 +29,6 @@ class CheckCreateDdrDBInstanceRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_RestoreTime(self):
-		return self.get_query_params().get('RestoreTime')
-
-	def set_RestoreTime(self,RestoreTime):
-		self.add_query_param('RestoreTime',RestoreTime)
 
 	def get_DBInstanceStorage(self):
 		return self.get_query_params().get('DBInstanceStorage')
@@ -47,6 +42,48 @@ class CheckCreateDdrDBInstanceRequest(RpcRequest):
 	def set_SourceDBInstanceName(self,SourceDBInstanceName):
 		self.add_query_param('SourceDBInstanceName',SourceDBInstanceName)
 
+	def get_HostType(self):
+		return self.get_query_params().get('HostType')
+
+	def set_HostType(self,HostType):
+		self.add_query_param('HostType',HostType)
+
+	def get_EngineVersion(self):
+		return self.get_query_params().get('EngineVersion')
+
+	def set_EngineVersion(self,EngineVersion):
+		self.add_query_param('EngineVersion',EngineVersion)
+
+	def get_UserBakSetURL(self):
+		return self.get_query_params().get('UserBakSetURL')
+
+	def set_UserBakSetURL(self,UserBakSetURL):
+		self.add_query_param('UserBakSetURL',UserBakSetURL)
+
+	def get_Engine(self):
+		return self.get_query_params().get('Engine')
+
+	def set_Engine(self,Engine):
+		self.add_query_param('Engine',Engine)
+
+	def get_BackupSetRegion(self):
+		return self.get_query_params().get('BackupSetRegion')
+
+	def set_BackupSetRegion(self,BackupSetRegion):
+		self.add_query_param('BackupSetRegion',BackupSetRegion)
+
+	def get_BackupSetType(self):
+		return self.get_query_params().get('BackupSetType')
+
+	def set_BackupSetType(self,BackupSetType):
+		self.add_query_param('BackupSetType',BackupSetType)
+
+	def get_RestoreTime(self):
+		return self.get_query_params().get('RestoreTime')
+
+	def set_RestoreTime(self,RestoreTime):
+		self.add_query_param('RestoreTime',RestoreTime)
+
 	def get_BakSetName(self):
 		return self.get_query_params().get('BakSetName')
 
@@ -59,35 +96,17 @@ class CheckCreateDdrDBInstanceRequest(RpcRequest):
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
-	def get_HostType(self):
-		return self.get_query_params().get('HostType')
-
-	def set_HostType(self,HostType):
-		self.add_query_param('HostType',HostType)
-
 	def get_BackupSetId(self):
 		return self.get_query_params().get('BackupSetId')
 
 	def set_BackupSetId(self,BackupSetId):
 		self.add_query_param('BackupSetId',BackupSetId)
 
-	def get_EngineVersion(self):
-		return self.get_query_params().get('EngineVersion')
-
-	def set_EngineVersion(self,EngineVersion):
-		self.add_query_param('EngineVersion',EngineVersion)
-
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
-
-	def get_UserBakSetURL(self):
-		return self.get_query_params().get('UserBakSetURL')
-
-	def set_UserBakSetURL(self,UserBakSetURL):
-		self.add_query_param('UserBakSetURL',UserBakSetURL)
 
 	def get_DBInstanceClass(self):
 		return self.get_query_params().get('DBInstanceClass')
@@ -101,26 +120,8 @@ class CheckCreateDdrDBInstanceRequest(RpcRequest):
 	def set_RestoreType(self,RestoreType):
 		self.add_query_param('RestoreType',RestoreType)
 
-	def get_Engine(self):
-		return self.get_query_params().get('Engine')
-
-	def set_Engine(self,Engine):
-		self.add_query_param('Engine',Engine)
-
 	def get_SourceRegion(self):
 		return self.get_query_params().get('SourceRegion')
 
 	def set_SourceRegion(self,SourceRegion):
 		self.add_query_param('SourceRegion',SourceRegion)
-
-	def get_BackupSetRegion(self):
-		return self.get_query_params().get('BackupSetRegion')
-
-	def set_BackupSetRegion(self,BackupSetRegion):
-		self.add_query_param('BackupSetRegion',BackupSetRegion)
-
-	def get_BackupSetType(self):
-		return self.get_query_params().get('BackupSetType')
-
-	def set_BackupSetType(self,BackupSetType):
-		self.add_query_param('BackupSetType',BackupSetType)

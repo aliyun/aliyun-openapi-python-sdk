@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,6 +18,7 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+
 class CloneDBInstanceRequest(RpcRequest):
 
 	def __init__(self):
@@ -28,6 +29,60 @@ class CloneDBInstanceRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+
+	def get_DBInstanceStorage(self):
+		return self.get_query_params().get('DBInstanceStorage')
+
+	def set_DBInstanceStorage(self,DBInstanceStorage):
+		self.add_query_param('DBInstanceStorage',DBInstanceStorage)
+
+	def get_ClientToken(self):
+		return self.get_query_params().get('ClientToken')
+
+	def set_ClientToken(self,ClientToken):
+		self.add_query_param('ClientToken',ClientToken)
+
+	def get_ZoneIdSlave1(self):
+		return self.get_query_params().get('ZoneIdSlave1')
+
+	def set_ZoneIdSlave1(self,ZoneIdSlave1):
+		self.add_query_param('ZoneIdSlave1',ZoneIdSlave1)
+
+	def get_ZoneIdSlave2(self):
+		return self.get_query_params().get('ZoneIdSlave2')
+
+	def set_ZoneIdSlave2(self,ZoneIdSlave2):
+		self.add_query_param('ZoneIdSlave2',ZoneIdSlave2)
+
+	def get_ResourceGroupId(self):
+		return self.get_query_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self,ResourceGroupId):
+		self.add_query_param('ResourceGroupId',ResourceGroupId)
+
+	def get_TableMeta(self):
+		return self.get_query_params().get('TableMeta')
+
+	def set_TableMeta(self,TableMeta):
+		self.add_query_param('TableMeta',TableMeta)
+
+	def get_DBInstanceDescription(self):
+		return self.get_query_params().get('DBInstanceDescription')
+
+	def set_DBInstanceDescription(self,DBInstanceDescription):
+		self.add_query_param('DBInstanceDescription',DBInstanceDescription)
+
+	def get_DBInstanceId(self):
+		return self.get_query_params().get('DBInstanceId')
+
+	def set_DBInstanceId(self,DBInstanceId):
+		self.add_query_param('DBInstanceId',DBInstanceId)
+
+	def get_DBInstanceStorageType(self):
+		return self.get_query_params().get('DBInstanceStorageType')
+
+	def set_DBInstanceStorageType(self,DBInstanceStorageType):
+		self.add_query_param('DBInstanceStorageType',DBInstanceStorageType)
 
 	def get_RestoreTime(self):
 		return self.get_query_params().get('RestoreTime')
@@ -41,23 +96,11 @@ class CloneDBInstanceRequest(RpcRequest):
 	def set_Period(self,Period):
 		self.add_query_param('Period',Period)
 
-	def get_DBInstanceStorage(self):
-		return self.get_query_params().get('DBInstanceStorage')
-
-	def set_DBInstanceStorage(self,DBInstanceStorage):
-		self.add_query_param('DBInstanceStorage',DBInstanceStorage)
-
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_ClientToken(self):
-		return self.get_query_params().get('ClientToken')
-
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
 
 	def get_BackupId(self):
 		return self.get_query_params().get('BackupId')
@@ -70,6 +113,12 @@ class CloneDBInstanceRequest(RpcRequest):
 
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
+
+	def get_RestoreTable(self):
+		return self.get_query_params().get('RestoreTable')
+
+	def set_RestoreTable(self,RestoreTable):
+		self.add_query_param('RestoreTable',RestoreTable)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
@@ -107,12 +156,6 @@ class CloneDBInstanceRequest(RpcRequest):
 	def set_PrivateIpAddress(self,PrivateIpAddress):
 		self.add_query_param('PrivateIpAddress',PrivateIpAddress)
 
-	def get_ResourceGroupId(self):
-		return self.get_query_params().get('ResourceGroupId')
-
-	def set_ResourceGroupId(self,ResourceGroupId):
-		self.add_query_param('ResourceGroupId',ResourceGroupId)
-
 	def get_VPCId(self):
 		return self.get_query_params().get('VPCId')
 
@@ -125,17 +168,11 @@ class CloneDBInstanceRequest(RpcRequest):
 	def set_ZoneId(self,ZoneId):
 		self.add_query_param('ZoneId',ZoneId)
 
-	def get_DBInstanceDescription(self):
-		return self.get_query_params().get('DBInstanceDescription')
+	def get_Category(self):
+		return self.get_query_params().get('Category')
 
-	def set_DBInstanceDescription(self,DBInstanceDescription):
-		self.add_query_param('DBInstanceDescription',DBInstanceDescription)
-
-	def get_DBInstanceId(self):
-		return self.get_query_params().get('DBInstanceId')
-
-	def set_DBInstanceId(self,DBInstanceId):
-		self.add_query_param('DBInstanceId',DBInstanceId)
+	def set_Category(self,Category):
+		self.add_query_param('Category',Category)
 
 	def get_PayType(self):
 		return self.get_query_params().get('PayType')

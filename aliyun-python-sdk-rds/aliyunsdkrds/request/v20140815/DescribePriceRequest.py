@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,6 +18,7 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+
 class DescribePriceRequest(RpcRequest):
 
 	def __init__(self):
@@ -35,6 +36,24 @@ class DescribePriceRequest(RpcRequest):
 	def set_DBInstanceStorage(self,DBInstanceStorage):
 		self.add_query_param('DBInstanceStorage',DBInstanceStorage)
 
+	def get_ClientToken(self):
+		return self.get_query_params().get('ClientToken')
+
+	def set_ClientToken(self,ClientToken):
+		self.add_query_param('ClientToken',ClientToken)
+
+	def get_EngineVersion(self):
+		return self.get_query_params().get('EngineVersion')
+
+	def set_EngineVersion(self,EngineVersion):
+		self.add_query_param('EngineVersion',EngineVersion)
+
+	def get_Engine(self):
+		return self.get_query_params().get('Engine')
+
+	def set_Engine(self,Engine):
+		self.add_query_param('Engine',Engine)
+
 	def get_Quantity(self):
 		return self.get_query_params().get('Quantity')
 
@@ -47,12 +66,6 @@ class DescribePriceRequest(RpcRequest):
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
-	def get_ClientToken(self):
-		return self.get_query_params().get('ClientToken')
-
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
-
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
 
@@ -64,12 +77,6 @@ class DescribePriceRequest(RpcRequest):
 
 	def set_CommodityCode(self,CommodityCode):
 		self.add_query_param('CommodityCode',CommodityCode)
-
-	def get_EngineVersion(self):
-		return self.get_query_params().get('EngineVersion')
-
-	def set_EngineVersion(self,EngineVersion):
-		self.add_query_param('EngineVersion',EngineVersion)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
@@ -94,12 +101,6 @@ class DescribePriceRequest(RpcRequest):
 
 	def set_InstanceUsedType(self,InstanceUsedType):
 		self.add_query_param('InstanceUsedType',InstanceUsedType)
-
-	def get_Engine(self):
-		return self.get_query_params().get('Engine')
-
-	def set_Engine(self,Engine):
-		self.add_query_param('Engine',Engine)
 
 	def get_ZoneId(self):
 		return self.get_query_params().get('ZoneId')

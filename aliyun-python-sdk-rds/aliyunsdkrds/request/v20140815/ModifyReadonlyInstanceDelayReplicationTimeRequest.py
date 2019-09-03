@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,6 +18,7 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+
 class ModifyReadonlyInstanceDelayReplicationTimeRequest(RpcRequest):
 
 	def __init__(self):
@@ -29,26 +30,26 @@ class ModifyReadonlyInstanceDelayReplicationTimeRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_ReadSQLReplicationTime(self):
-		return self.get_query_params().get('ReadSQLReplicationTime')
-
-	def set_ReadSQLReplicationTime(self,ReadSQLReplicationTime):
-		self.add_query_param('ReadSQLReplicationTime',ReadSQLReplicationTime)
-
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
-	def get_DBInstanceId(self):
-		return self.get_query_params().get('DBInstanceId')
-
-	def set_DBInstanceId(self,DBInstanceId):
-		self.add_query_param('DBInstanceId',DBInstanceId)
-
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_ReadSQLReplicationTime(self):
+		return self.get_query_params().get('ReadSQLReplicationTime')
+
+	def set_ReadSQLReplicationTime(self,ReadSQLReplicationTime):
+		self.add_query_param('ReadSQLReplicationTime',ReadSQLReplicationTime)
+
+	def get_DBInstanceId(self):
+		return self.get_query_params().get('DBInstanceId')
+
+	def set_DBInstanceId(self,DBInstanceId):
+		self.add_query_param('DBInstanceId',DBInstanceId)

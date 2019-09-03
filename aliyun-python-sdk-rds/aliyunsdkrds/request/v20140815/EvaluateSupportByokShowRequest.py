@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,6 +18,7 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+
 class EvaluateSupportByokShowRequest(RpcRequest):
 
 	def __init__(self):
@@ -35,29 +36,11 @@ class EvaluateSupportByokShowRequest(RpcRequest):
 	def set_NodeType(self,NodeType):
 		self.add_query_param('NodeType',NodeType)
 
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
-
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_OwnerAccount(self):
-		return self.get_query_params().get('OwnerAccount')
-
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
-
 	def get_EngineVersion(self):
 		return self.get_query_params().get('EngineVersion')
 
 	def set_EngineVersion(self,EngineVersion):
 		self.add_query_param('EngineVersion',EngineVersion)
-
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
 
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
@@ -71,14 +54,32 @@ class EvaluateSupportByokShowRequest(RpcRequest):
 	def set_Engine(self,Engine):
 		self.add_query_param('Engine',Engine)
 
-	def get_TargetRegionId(self):
-		return self.get_query_params().get('TargetRegionId')
-
-	def set_TargetRegionId(self,TargetRegionId):
-		self.add_query_param('TargetRegionId',TargetRegionId)
-
 	def get_DbInstanceStorageType(self):
 		return self.get_query_params().get('DbInstanceStorageType')
 
 	def set_DbInstanceStorageType(self,DbInstanceStorageType):
 		self.add_query_param('DbInstanceStorageType',DbInstanceStorageType)
+
+	def get_ResourceOwnerAccount(self):
+		return self.get_query_params().get('ResourceOwnerAccount')
+
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+
+	def get_OwnerAccount(self):
+		return self.get_query_params().get('OwnerAccount')
+
+	def set_OwnerAccount(self,OwnerAccount):
+		self.add_query_param('OwnerAccount',OwnerAccount)
+
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
+
+	def get_TargetRegionId(self):
+		return self.get_query_params().get('TargetRegionId')
+
+	def set_TargetRegionId(self,TargetRegionId):
+		self.add_query_param('TargetRegionId',TargetRegionId)

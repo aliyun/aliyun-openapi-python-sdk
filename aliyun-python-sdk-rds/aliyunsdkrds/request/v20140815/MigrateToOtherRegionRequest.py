@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,6 +18,7 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+
 class MigrateToOtherRegionRequest(RpcRequest):
 
 	def __init__(self):
@@ -28,30 +29,6 @@ class MigrateToOtherRegionRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
-
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_OwnerAccount(self):
-		return self.get_query_params().get('OwnerAccount')
-
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
-
-	def get_TargetVSwitchId(self):
-		return self.get_query_params().get('TargetVSwitchId')
-
-	def set_TargetVSwitchId(self,TargetVSwitchId):
-		self.add_query_param('TargetVSwitchId',TargetVSwitchId)
-
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
 
 	def get_TargetVpcId(self):
 		return self.get_query_params().get('TargetVpcId')
@@ -77,14 +54,38 @@ class MigrateToOtherRegionRequest(RpcRequest):
 	def set_DBInstanceId(self,DBInstanceId):
 		self.add_query_param('DBInstanceId',DBInstanceId)
 
-	def get_TargetRegionId(self):
-		return self.get_query_params().get('TargetRegionId')
-
-	def set_TargetRegionId(self,TargetRegionId):
-		self.add_query_param('TargetRegionId',TargetRegionId)
-
 	def get_SwitchTime(self):
 		return self.get_query_params().get('SwitchTime')
 
 	def set_SwitchTime(self,SwitchTime):
 		self.add_query_param('SwitchTime',SwitchTime)
+
+	def get_ResourceOwnerAccount(self):
+		return self.get_query_params().get('ResourceOwnerAccount')
+
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+
+	def get_OwnerAccount(self):
+		return self.get_query_params().get('OwnerAccount')
+
+	def set_OwnerAccount(self,OwnerAccount):
+		self.add_query_param('OwnerAccount',OwnerAccount)
+
+	def get_TargetVSwitchId(self):
+		return self.get_query_params().get('TargetVSwitchId')
+
+	def set_TargetVSwitchId(self,TargetVSwitchId):
+		self.add_query_param('TargetVSwitchId',TargetVSwitchId)
+
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
+
+	def get_TargetRegionId(self):
+		return self.get_query_params().get('TargetRegionId')
+
+	def set_TargetRegionId(self,TargetRegionId):
+		self.add_query_param('TargetRegionId',TargetRegionId)

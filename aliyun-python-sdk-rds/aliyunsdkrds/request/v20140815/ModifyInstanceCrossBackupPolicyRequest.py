@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,6 +18,7 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+
 class ModifyInstanceCrossBackupPolicyRequest(RpcRequest):
 
 	def __init__(self):
@@ -34,6 +35,42 @@ class ModifyInstanceCrossBackupPolicyRequest(RpcRequest):
 
 	def set_RetentType(self,RetentType):
 		self.add_query_param('RetentType',RetentType)
+
+	def get_BackupEnabled(self):
+		return self.get_query_params().get('BackupEnabled')
+
+	def set_BackupEnabled(self,BackupEnabled):
+		self.add_query_param('BackupEnabled',BackupEnabled)
+
+	def get_RelService(self):
+		return self.get_query_params().get('RelService')
+
+	def set_RelService(self,RelService):
+		self.add_query_param('RelService',RelService)
+
+	def get_StorageType(self):
+		return self.get_query_params().get('StorageType')
+
+	def set_StorageType(self,StorageType):
+		self.add_query_param('StorageType',StorageType)
+
+	def get_Endpoint(self):
+		return self.get_query_params().get('Endpoint')
+
+	def set_Endpoint(self,Endpoint):
+		self.add_query_param('Endpoint',Endpoint)
+
+	def get_DBInstanceId(self):
+		return self.get_query_params().get('DBInstanceId')
+
+	def set_DBInstanceId(self,DBInstanceId):
+		self.add_query_param('DBInstanceId',DBInstanceId)
+
+	def get_Retention(self):
+		return self.get_query_params().get('Retention')
+
+	def set_Retention(self,Retention):
+		self.add_query_param('Retention',Retention)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -53,12 +90,6 @@ class ModifyInstanceCrossBackupPolicyRequest(RpcRequest):
 	def set_LogBackupEnabled(self,LogBackupEnabled):
 		self.add_query_param('LogBackupEnabled',LogBackupEnabled)
 
-	def get_BackupEnabled(self):
-		return self.get_query_params().get('BackupEnabled')
-
-	def set_BackupEnabled(self,BackupEnabled):
-		self.add_query_param('BackupEnabled',BackupEnabled)
-
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
@@ -71,32 +102,8 @@ class ModifyInstanceCrossBackupPolicyRequest(RpcRequest):
 	def set_CrossBackupRegion(self,CrossBackupRegion):
 		self.add_query_param('CrossBackupRegion',CrossBackupRegion)
 
-	def get_StorageType(self):
-		return self.get_query_params().get('StorageType')
-
-	def set_StorageType(self,StorageType):
-		self.add_query_param('StorageType',StorageType)
-
-	def get_Endpoint(self):
-		return self.get_query_params().get('Endpoint')
-
-	def set_Endpoint(self,Endpoint):
-		self.add_query_param('Endpoint',Endpoint)
-
 	def get_StorageOwner(self):
 		return self.get_query_params().get('StorageOwner')
 
 	def set_StorageOwner(self,StorageOwner):
 		self.add_query_param('StorageOwner',StorageOwner)
-
-	def get_DBInstanceId(self):
-		return self.get_query_params().get('DBInstanceId')
-
-	def set_DBInstanceId(self,DBInstanceId):
-		self.add_query_param('DBInstanceId',DBInstanceId)
-
-	def get_Retention(self):
-		return self.get_query_params().get('Retention')
-
-	def set_Retention(self,Retention):
-		self.add_query_param('Retention',Retention)

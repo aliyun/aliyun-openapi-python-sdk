@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,16 +18,11 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+
 class DescribeCloudDbExpertServiceRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'DescribeCloudDbExpertService','rds')
-
-	def get_ServiceRequestParam(self):
-		return self.get_query_params().get('ServiceRequestParam')
-
-	def set_ServiceRequestParam(self,ServiceRequestParam):
-		self.add_query_param('ServiceRequestParam',ServiceRequestParam)
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -35,11 +30,29 @@ class DescribeCloudDbExpertServiceRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_ServiceRequestType(self):
+		return self.get_query_params().get('ServiceRequestType')
+
+	def set_ServiceRequestType(self,ServiceRequestType):
+		self.add_query_param('ServiceRequestType',ServiceRequestType)
+
+	def get_ServiceRequestParam(self):
+		return self.get_query_params().get('ServiceRequestParam')
+
+	def set_ServiceRequestParam(self,ServiceRequestParam):
+		self.add_query_param('ServiceRequestParam',ServiceRequestParam)
+
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
 
 	def set_SecurityToken(self,SecurityToken):
 		self.add_query_param('SecurityToken',SecurityToken)
+
+	def get_DBInstanceId(self):
+		return self.get_query_params().get('DBInstanceId')
+
+	def set_DBInstanceId(self,DBInstanceId):
+		self.add_query_param('DBInstanceId',DBInstanceId)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -53,20 +66,8 @@ class DescribeCloudDbExpertServiceRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
-	def get_DBInstanceId(self):
-		return self.get_query_params().get('DBInstanceId')
-
-	def set_DBInstanceId(self,DBInstanceId):
-		self.add_query_param('DBInstanceId',DBInstanceId)
-
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
-
-	def get_ServiceRequestType(self):
-		return self.get_query_params().get('ServiceRequestType')
-
-	def set_ServiceRequestType(self,ServiceRequestType):
-		self.add_query_param('ServiceRequestType',ServiceRequestType)
