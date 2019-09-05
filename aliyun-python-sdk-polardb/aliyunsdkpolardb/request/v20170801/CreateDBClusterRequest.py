@@ -42,6 +42,42 @@ class CreateDBClusterRequest(RpcRequest):
 	def set_DBClusterDescription(self,DBClusterDescription):
 		self.add_query_param('DBClusterDescription',DBClusterDescription)
 
+	def get_ClientToken(self):
+		return self.get_query_params().get('ClientToken')
+
+	def set_ClientToken(self,ClientToken):
+		self.add_query_param('ClientToken',ClientToken)
+
+	def get_ClusterNetworkType(self):
+		return self.get_query_params().get('ClusterNetworkType')
+
+	def set_ClusterNetworkType(self,ClusterNetworkType):
+		self.add_query_param('ClusterNetworkType',ClusterNetworkType)
+
+	def get_DBNodeClass(self):
+		return self.get_query_params().get('DBNodeClass')
+
+	def set_DBNodeClass(self,DBNodeClass):
+		self.add_query_param('DBNodeClass',DBNodeClass)
+
+	def get_Engine(self):
+		return self.get_query_params().get('Engine')
+
+	def set_Engine(self,Engine):
+		self.add_query_param('Engine',Engine)
+
+	def get_CreationOption(self):
+		return self.get_query_params().get('CreationOption')
+
+	def set_CreationOption(self,CreationOption):
+		self.add_query_param('CreationOption',CreationOption)
+
+	def get_SourceResourceId(self):
+		return self.get_query_params().get('SourceResourceId')
+
+	def set_SourceResourceId(self,SourceResourceId):
+		self.add_query_param('SourceResourceId',SourceResourceId)
+
 	def get_Period(self):
 		return self.get_query_params().get('Period')
 
@@ -53,12 +89,6 @@ class CreateDBClusterRequest(RpcRequest):
 
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_ClientToken(self):
-		return self.get_query_params().get('ClientToken')
-
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
 
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
@@ -78,35 +108,17 @@ class CreateDBClusterRequest(RpcRequest):
 	def set_UsedTime(self,UsedTime):
 		self.add_query_param('UsedTime',UsedTime)
 
-	def get_ClusterNetworkType(self):
-		return self.get_query_params().get('ClusterNetworkType')
-
-	def set_ClusterNetworkType(self,ClusterNetworkType):
-		self.add_query_param('ClusterNetworkType',ClusterNetworkType)
-
 	def get_VSwitchId(self):
 		return self.get_query_params().get('VSwitchId')
 
 	def set_VSwitchId(self,VSwitchId):
 		self.add_query_param('VSwitchId',VSwitchId)
 
-	def get_DBNodeClass(self):
-		return self.get_query_params().get('DBNodeClass')
-
-	def set_DBNodeClass(self,DBNodeClass):
-		self.add_query_param('DBNodeClass',DBNodeClass)
-
 	def get_AutoRenew(self):
 		return self.get_query_params().get('AutoRenew')
 
 	def set_AutoRenew(self,AutoRenew):
 		self.add_query_param('AutoRenew',AutoRenew)
-
-	def get_Engine(self):
-		return self.get_query_params().get('Engine')
-
-	def set_Engine(self,Engine):
-		self.add_query_param('Engine',Engine)
 
 	def get_VPCId(self):
 		return self.get_query_params().get('VPCId')
@@ -131,18 +143,6 @@ class CreateDBClusterRequest(RpcRequest):
 
 	def set_DBVersion(self,DBVersion):
 		self.add_query_param('DBVersion',DBVersion)
-
-	def get_CreationOption(self):
-		return self.get_query_params().get('CreationOption')
-
-	def set_CreationOption(self,CreationOption):
-		self.add_query_param('CreationOption',CreationOption)
-
-	def get_SourceResourceId(self):
-		return self.get_query_params().get('SourceResourceId')
-
-	def set_SourceResourceId(self,SourceResourceId):
-		self.add_query_param('SourceResourceId',SourceResourceId)
 
 	def get_CloneDataPoint(self):
 		return self.get_query_params().get('CloneDataPoint')

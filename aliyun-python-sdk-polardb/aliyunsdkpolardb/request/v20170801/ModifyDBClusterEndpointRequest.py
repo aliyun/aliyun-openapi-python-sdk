@@ -42,11 +42,11 @@ class ModifyDBClusterEndpointRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_Nodes(self):
-		return self.get_query_params().get('Nodes')
+	def get_DBEndpointId(self):
+		return self.get_query_params().get('DBEndpointId')
 
-	def set_Nodes(self,Nodes):
-		self.add_query_param('Nodes',Nodes)
+	def set_DBEndpointId(self,DBEndpointId):
+		self.add_query_param('DBEndpointId',DBEndpointId)
 
 	def get_ReadWriteMode(self):
 		return self.get_query_params().get('ReadWriteMode')
@@ -72,12 +72,6 @@ class ModifyDBClusterEndpointRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
-	def get_DBEndpointId(self):
-		return self.get_query_params().get('DBEndpointId')
-
-	def set_DBEndpointId(self,DBEndpointId):
-		self.add_query_param('DBEndpointId',DBEndpointId)
-
 	def get_EndpointConfig(self):
 		return self.get_query_params().get('EndpointConfig')
 
@@ -89,3 +83,9 @@ class ModifyDBClusterEndpointRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_Nodes(self):
+		return self.get_query_params().get('Nodes')
+
+	def set_Nodes(self,Nodes):
+		self.add_query_param('Nodes',Nodes)

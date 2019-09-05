@@ -42,6 +42,12 @@ class ModifyDBClusterMigrationRequest(RpcRequest):
 	def set_SecurityToken(self,SecurityToken):
 		self.add_query_param('SecurityToken',SecurityToken)
 
+	def get_NewMasterInstanceId(self):
+		return self.get_query_params().get('NewMasterInstanceId')
+
+	def set_NewMasterInstanceId(self,NewMasterInstanceId):
+		self.add_query_param('NewMasterInstanceId',NewMasterInstanceId)
+
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -65,12 +71,6 @@ class ModifyDBClusterMigrationRequest(RpcRequest):
 
 	def set_SourceRDSDBInstanceId(self,SourceRDSDBInstanceId):
 		self.add_query_param('SourceRDSDBInstanceId',SourceRDSDBInstanceId)
-
-	def get_NewMasterInstanceId(self):
-		return self.get_query_params().get('NewMasterInstanceId')
-
-	def set_NewMasterInstanceId(self,NewMasterInstanceId):
-		self.add_query_param('NewMasterInstanceId',NewMasterInstanceId)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')

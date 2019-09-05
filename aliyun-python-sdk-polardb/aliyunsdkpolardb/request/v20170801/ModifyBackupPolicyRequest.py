@@ -30,29 +30,17 @@ class ModifyBackupPolicyRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_PreferredBackupTime(self):
-		return self.get_query_params().get('PreferredBackupTime')
+	def get_ResourceOwnerId(self):
+		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_PreferredBackupTime(self,PreferredBackupTime):
-		self.add_query_param('PreferredBackupTime',PreferredBackupTime)
+	def set_ResourceOwnerId(self,ResourceOwnerId):
+		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
 	def get_PreferredBackupPeriod(self):
 		return self.get_query_params().get('PreferredBackupPeriod')
 
 	def set_PreferredBackupPeriod(self,PreferredBackupPeriod):
 		self.add_query_param('PreferredBackupPeriod',PreferredBackupPeriod)
-
-	def get_BackupRetentionPeriod(self):
-		return self.get_query_params().get('BackupRetentionPeriod')
-
-	def set_BackupRetentionPeriod(self,BackupRetentionPeriod):
-		self.add_query_param('BackupRetentionPeriod',BackupRetentionPeriod)
-
-	def get_ResourceOwnerId(self):
-		return self.get_query_params().get('ResourceOwnerId')
-
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -77,3 +65,15 @@ class ModifyBackupPolicyRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_PreferredBackupTime(self):
+		return self.get_query_params().get('PreferredBackupTime')
+
+	def set_PreferredBackupTime(self,PreferredBackupTime):
+		self.add_query_param('PreferredBackupTime',PreferredBackupTime)
+
+	def get_BackupRetentionPeriod(self):
+		return self.get_query_params().get('BackupRetentionPeriod')
+
+	def set_BackupRetentionPeriod(self,BackupRetentionPeriod):
+		self.add_query_param('BackupRetentionPeriod',BackupRetentionPeriod)

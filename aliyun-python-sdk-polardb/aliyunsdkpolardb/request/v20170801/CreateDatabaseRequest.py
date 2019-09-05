@@ -36,17 +36,23 @@ class CreateDatabaseRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_DBName(self):
-		return self.get_query_params().get('DBName')
+	def get_AccountPrivilege(self):
+		return self.get_query_params().get('AccountPrivilege')
 
-	def set_DBName(self,DBName):
-		self.add_query_param('DBName',DBName)
+	def set_AccountPrivilege(self,AccountPrivilege):
+		self.add_query_param('AccountPrivilege',AccountPrivilege)
 
 	def get_AccountName(self):
 		return self.get_query_params().get('AccountName')
 
 	def set_AccountName(self,AccountName):
 		self.add_query_param('AccountName',AccountName)
+
+	def get_DBDescription(self):
+		return self.get_query_params().get('DBDescription')
+
+	def set_DBDescription(self,DBDescription):
+		self.add_query_param('DBDescription',DBDescription)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -66,26 +72,20 @@ class CreateDatabaseRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
-	def get_DBDescription(self):
-		return self.get_query_params().get('DBDescription')
-
-	def set_DBDescription(self,DBDescription):
-		self.add_query_param('DBDescription',DBDescription)
-
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
+	def get_DBName(self):
+		return self.get_query_params().get('DBName')
+
+	def set_DBName(self,DBName):
+		self.add_query_param('DBName',DBName)
+
 	def get_CharacterSetName(self):
 		return self.get_query_params().get('CharacterSetName')
 
 	def set_CharacterSetName(self,CharacterSetName):
 		self.add_query_param('CharacterSetName',CharacterSetName)
-
-	def get_AccountPrivilege(self):
-		return self.get_query_params().get('AccountPrivilege')
-
-	def set_AccountPrivilege(self,AccountPrivilege):
-		self.add_query_param('AccountPrivilege',AccountPrivilege)

@@ -36,6 +36,12 @@ class DescribeDBClusterEndpointsRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_DBEndpointId(self):
+		return self.get_query_params().get('DBEndpointId')
+
+	def set_DBEndpointId(self,DBEndpointId):
+		self.add_query_param('DBEndpointId',DBEndpointId)
+
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -53,12 +59,6 @@ class DescribeDBClusterEndpointsRequest(RpcRequest):
 
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
-
-	def get_DBEndpointId(self):
-		return self.get_query_params().get('DBEndpointId')
-
-	def set_DBEndpointId(self,DBEndpointId):
-		self.add_query_param('DBEndpointId',DBEndpointId)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')

@@ -36,12 +36,6 @@ class CloseDBClusterMigrationRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_ContinueEnableBinlog(self):
-		return self.get_query_params().get('ContinueEnableBinlog')
-
-	def set_ContinueEnableBinlog(self,ContinueEnableBinlog):
-		self.add_query_param('ContinueEnableBinlog',ContinueEnableBinlog)
-
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
 
@@ -71,3 +65,9 @@ class CloseDBClusterMigrationRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_ContinueEnableBinlog(self):
+		return self.get_query_params().get('ContinueEnableBinlog')
+
+	def set_ContinueEnableBinlog(self,ContinueEnableBinlog):
+		self.add_query_param('ContinueEnableBinlog',ContinueEnableBinlog)

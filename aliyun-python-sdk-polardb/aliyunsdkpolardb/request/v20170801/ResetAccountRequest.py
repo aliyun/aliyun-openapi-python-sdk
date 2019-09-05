@@ -36,12 +36,6 @@ class ResetAccountRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_AccountPassword(self):
-		return self.get_query_params().get('AccountPassword')
-
-	def set_AccountPassword(self,AccountPassword):
-		self.add_query_param('AccountPassword',AccountPassword)
-
 	def get_AccountName(self):
 		return self.get_query_params().get('AccountName')
 
@@ -71,3 +65,9 @@ class ResetAccountRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_AccountPassword(self):
+		return self.get_query_params().get('AccountPassword')
+
+	def set_AccountPassword(self,AccountPassword):
+		self.add_query_param('AccountPassword',AccountPassword)

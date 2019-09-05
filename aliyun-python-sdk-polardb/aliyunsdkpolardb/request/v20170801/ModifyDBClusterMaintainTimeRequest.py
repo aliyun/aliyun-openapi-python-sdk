@@ -30,17 +30,17 @@ class ModifyDBClusterMaintainTimeRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_MaintainTime(self):
-		return self.get_query_params().get('MaintainTime')
-
-	def set_MaintainTime(self,MaintainTime):
-		self.add_query_param('MaintainTime',MaintainTime)
-
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+
+	def get_MaintainTime(self):
+		return self.get_query_params().get('MaintainTime')
+
+	def set_MaintainTime(self,MaintainTime):
+		self.add_query_param('MaintainTime',MaintainTime)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')

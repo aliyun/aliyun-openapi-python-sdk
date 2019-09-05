@@ -42,6 +42,12 @@ class CreateDBEndpointAddressRequest(RpcRequest):
 	def set_ConnectionStringPrefix(self,ConnectionStringPrefix):
 		self.add_query_param('ConnectionStringPrefix',ConnectionStringPrefix)
 
+	def get_DBEndpointId(self):
+		return self.get_query_params().get('DBEndpointId')
+
+	def set_DBEndpointId(self,DBEndpointId):
+		self.add_query_param('DBEndpointId',DBEndpointId)
+
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -60,20 +66,14 @@ class CreateDBEndpointAddressRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
-	def get_NetType(self):
-		return self.get_query_params().get('NetType')
-
-	def set_NetType(self,NetType):
-		self.add_query_param('NetType',NetType)
-
-	def get_DBEndpointId(self):
-		return self.get_query_params().get('DBEndpointId')
-
-	def set_DBEndpointId(self,DBEndpointId):
-		self.add_query_param('DBEndpointId',DBEndpointId)
-
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_NetType(self):
+		return self.get_query_params().get('NetType')
+
+	def set_NetType(self,NetType):
+		self.add_query_param('NetType',NetType)

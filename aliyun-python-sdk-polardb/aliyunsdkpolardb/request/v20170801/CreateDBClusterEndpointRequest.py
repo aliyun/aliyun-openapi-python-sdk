@@ -42,17 +42,29 @@ class CreateDBClusterEndpointRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
-
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
 	def get_ClientToken(self):
 		return self.get_query_params().get('ClientToken')
 
 	def set_ClientToken(self,ClientToken):
 		self.add_query_param('ClientToken',ClientToken)
+
+	def get_ReadWriteMode(self):
+		return self.get_query_params().get('ReadWriteMode')
+
+	def set_ReadWriteMode(self,ReadWriteMode):
+		self.add_query_param('ReadWriteMode',ReadWriteMode)
+
+	def get_EndpointType(self):
+		return self.get_query_params().get('EndpointType')
+
+	def set_EndpointType(self,EndpointType):
+		self.add_query_param('EndpointType',EndpointType)
+
+	def get_ResourceOwnerAccount(self):
+		return self.get_query_params().get('ResourceOwnerAccount')
+
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
 	def get_DBClusterId(self):
 		return self.get_query_params().get('DBClusterId')
@@ -83,15 +95,3 @@ class CreateDBClusterEndpointRequest(RpcRequest):
 
 	def set_Nodes(self,Nodes):
 		self.add_query_param('Nodes',Nodes)
-
-	def get_ReadWriteMode(self):
-		return self.get_query_params().get('ReadWriteMode')
-
-	def set_ReadWriteMode(self,ReadWriteMode):
-		self.add_query_param('ReadWriteMode',ReadWriteMode)
-
-	def get_EndpointType(self):
-		return self.get_query_params().get('EndpointType')
-
-	def set_EndpointType(self,EndpointType):
-		self.add_query_param('EndpointType',EndpointType)

@@ -36,12 +36,6 @@ class DescribeDatabasesRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_DBName(self):
-		return self.get_query_params().get('DBName')
-
-	def set_DBName(self,DBName):
-		self.add_query_param('DBName',DBName)
-
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -65,3 +59,9 @@ class DescribeDatabasesRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_DBName(self):
+		return self.get_query_params().get('DBName')
+
+	def set_DBName(self,DBName):
+		self.add_query_param('DBName',DBName)

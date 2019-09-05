@@ -30,23 +30,23 @@ class ModifyAutoRenewAttributeRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_Duration(self):
-		return self.get_query_params().get('Duration')
-
-	def set_Duration(self,Duration):
-		self.add_query_param('Duration',Duration)
-
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_PeriodUnit(self):
-		return self.get_query_params().get('PeriodUnit')
+	def get_Duration(self):
+		return self.get_query_params().get('Duration')
 
-	def set_PeriodUnit(self,PeriodUnit):
-		self.add_query_param('PeriodUnit',PeriodUnit)
+	def set_Duration(self,Duration):
+		self.add_query_param('Duration',Duration)
+
+	def get_RenewalStatus(self):
+		return self.get_query_params().get('RenewalStatus')
+
+	def set_RenewalStatus(self,RenewalStatus):
+		self.add_query_param('RenewalStatus',RenewalStatus)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -60,17 +60,17 @@ class ModifyAutoRenewAttributeRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
-	def get_RenewalStatus(self):
-		return self.get_query_params().get('RenewalStatus')
-
-	def set_RenewalStatus(self,RenewalStatus):
-		self.add_query_param('RenewalStatus',RenewalStatus)
-
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_PeriodUnit(self):
+		return self.get_query_params().get('PeriodUnit')
+
+	def set_PeriodUnit(self,PeriodUnit):
+		self.add_query_param('PeriodUnit',PeriodUnit)
 
 	def get_DBClusterIds(self):
 		return self.get_query_params().get('DBClusterIds')
