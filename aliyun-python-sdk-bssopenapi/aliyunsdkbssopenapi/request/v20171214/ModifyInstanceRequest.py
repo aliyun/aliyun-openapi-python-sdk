@@ -23,7 +23,7 @@ from aliyunsdkbssopenapi.endpoint import endpoint_data
 class ModifyInstanceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'ModifyInstance')
+		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'ModifyInstance','bssopenapi')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -36,12 +36,6 @@ class ModifyInstanceRequest(RpcRequest):
 	def set_ProductCode(self,ProductCode):
 		self.add_query_param('ProductCode',ProductCode)
 
-	def get_InstanceId(self):
-		return self.get_query_params().get('InstanceId')
-
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
-
 	def get_ClientToken(self):
 		return self.get_query_params().get('ClientToken')
 
@@ -53,6 +47,24 @@ class ModifyInstanceRequest(RpcRequest):
 
 	def set_SubscriptionType(self,SubscriptionType):
 		self.add_query_param('SubscriptionType',SubscriptionType)
+
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
+
+	def get_ProductType(self):
+		return self.get_query_params().get('ProductType')
+
+	def set_ProductType(self,ProductType):
+		self.add_query_param('ProductType',ProductType)
+
+	def get_InstanceId(self):
+		return self.get_query_params().get('InstanceId')
+
+	def set_InstanceId(self,InstanceId):
+		self.add_query_param('InstanceId',InstanceId)
 
 	def get_ModifyType(self):
 		return self.get_query_params().get('ModifyType')
@@ -69,16 +81,3 @@ class ModifyInstanceRequest(RpcRequest):
 				self.add_query_param('Parameter.' + str(i + 1) + '.Code' , Parameters[i].get('Code'))
 			if Parameters[i].get('Value') is not None:
 				self.add_query_param('Parameter.' + str(i + 1) + '.Value' , Parameters[i].get('Value'))
-
-
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_ProductType(self):
-		return self.get_query_params().get('ProductType')
-
-	def set_ProductType(self,ProductType):
-		self.add_query_param('ProductType',ProductType)

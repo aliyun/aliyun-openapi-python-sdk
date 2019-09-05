@@ -23,18 +23,12 @@ from aliyunsdkbssopenapi.endpoint import endpoint_data
 class ChangeResellerConsumeAmountRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'ChangeResellerConsumeAmount')
+		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'ChangeResellerConsumeAmount','bssopenapi')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_AdjustType(self):
-		return self.get_query_params().get('AdjustType')
-
-	def set_AdjustType(self,AdjustType):
-		self.add_query_param('AdjustType',AdjustType)
 
 	def get_Amount(self):
 		return self.get_query_params().get('Amount')
@@ -47,18 +41,6 @@ class ChangeResellerConsumeAmountRequest(RpcRequest):
 
 	def set_OutBizId(self,OutBizId):
 		self.add_query_param('OutBizId',OutBizId)
-
-	def get_ExtendMap(self):
-		return self.get_query_params().get('ExtendMap')
-
-	def set_ExtendMap(self,ExtendMap):
-		self.add_query_param('ExtendMap',ExtendMap)
-
-	def get_Currency(self):
-		return self.get_query_params().get('Currency')
-
-	def set_Currency(self,Currency):
-		self.add_query_param('Currency',Currency)
 
 	def get_Source(self):
 		return self.get_query_params().get('Source')
@@ -77,3 +59,21 @@ class ChangeResellerConsumeAmountRequest(RpcRequest):
 
 	def set_BusinessType(self,BusinessType):
 		self.add_query_param('BusinessType',BusinessType)
+
+	def get_AdjustType(self):
+		return self.get_query_params().get('AdjustType')
+
+	def set_AdjustType(self,AdjustType):
+		self.add_query_param('AdjustType',AdjustType)
+
+	def get_ExtendMap(self):
+		return self.get_query_params().get('ExtendMap')
+
+	def set_ExtendMap(self,ExtendMap):
+		self.add_query_param('ExtendMap',ExtendMap)
+
+	def get_Currency(self):
+		return self.get_query_params().get('Currency')
+
+	def set_Currency(self,Currency):
+		self.add_query_param('Currency',Currency)

@@ -23,18 +23,12 @@ from aliyunsdkbssopenapi.endpoint import endpoint_data
 class UpgradeResourcePackageRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'UpgradeResourcePackage')
+		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'UpgradeResourcePackage','bssopenapi')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_InstanceId(self):
-		return self.get_query_params().get('InstanceId')
-
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
 
 	def get_Specification(self):
 		return self.get_query_params().get('Specification')
@@ -53,3 +47,9 @@ class UpgradeResourcePackageRequest(RpcRequest):
 
 	def set_EffectiveDate(self,EffectiveDate):
 		self.add_query_param('EffectiveDate',EffectiveDate)
+
+	def get_InstanceId(self):
+		return self.get_query_params().get('InstanceId')
+
+	def set_InstanceId(self,InstanceId):
+		self.add_query_param('InstanceId',InstanceId)

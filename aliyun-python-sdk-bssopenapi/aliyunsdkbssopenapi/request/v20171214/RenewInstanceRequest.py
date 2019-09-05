@@ -23,7 +23,7 @@ from aliyunsdkbssopenapi.endpoint import endpoint_data
 class RenewInstanceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'RenewInstance')
+		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'RenewInstance','bssopenapi')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -36,23 +36,11 @@ class RenewInstanceRequest(RpcRequest):
 	def set_ProductCode(self,ProductCode):
 		self.add_query_param('ProductCode',ProductCode)
 
-	def get_InstanceId(self):
-		return self.get_query_params().get('InstanceId')
-
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
-
 	def get_ClientToken(self):
 		return self.get_query_params().get('ClientToken')
 
 	def set_ClientToken(self,ClientToken):
 		self.add_query_param('ClientToken',ClientToken)
-
-	def get_RenewPeriod(self):
-		return self.get_query_params().get('RenewPeriod')
-
-	def set_RenewPeriod(self,RenewPeriod):
-		self.add_query_param('RenewPeriod',RenewPeriod)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
@@ -65,3 +53,15 @@ class RenewInstanceRequest(RpcRequest):
 
 	def set_ProductType(self,ProductType):
 		self.add_query_param('ProductType',ProductType)
+
+	def get_InstanceId(self):
+		return self.get_query_params().get('InstanceId')
+
+	def set_InstanceId(self,InstanceId):
+		self.add_query_param('InstanceId',InstanceId)
+
+	def get_RenewPeriod(self):
+		return self.get_query_params().get('RenewPeriod')
+
+	def set_RenewPeriod(self,RenewPeriod):
+		self.add_query_param('RenewPeriod',RenewPeriod)

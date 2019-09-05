@@ -23,7 +23,7 @@ from aliyunsdkbssopenapi.endpoint import endpoint_data
 class GetPayAsYouGoPriceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'GetPayAsYouGoPrice')
+		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'GetPayAsYouGoPrice','bssopenapi')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -61,14 +61,14 @@ class GetPayAsYouGoPriceRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_Region(self):
-		return self.get_query_params().get('Region')
-
-	def set_Region(self,Region):
-		self.add_query_param('Region',Region)
-
 	def get_ProductType(self):
 		return self.get_query_params().get('ProductType')
 
 	def set_ProductType(self,ProductType):
 		self.add_query_param('ProductType',ProductType)
+
+	def get_Region(self):
+		return self.get_query_params().get('Region')
+
+	def set_Region(self,Region):
+		self.add_query_param('Region',Region)

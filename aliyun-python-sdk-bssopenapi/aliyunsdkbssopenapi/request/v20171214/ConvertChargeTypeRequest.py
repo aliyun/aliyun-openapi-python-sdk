@@ -23,7 +23,7 @@ from aliyunsdkbssopenapi.endpoint import endpoint_data
 class ConvertChargeTypeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'ConvertChargeType')
+		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'ConvertChargeType','bssopenapi')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -42,12 +42,6 @@ class ConvertChargeTypeRequest(RpcRequest):
 	def set_ProductCode(self,ProductCode):
 		self.add_query_param('ProductCode',ProductCode)
 
-	def get_InstanceId(self):
-		return self.get_query_params().get('InstanceId')
-
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
-
 	def get_SubscriptionType(self):
 		return self.get_query_params().get('SubscriptionType')
 
@@ -65,3 +59,9 @@ class ConvertChargeTypeRequest(RpcRequest):
 
 	def set_ProductType(self,ProductType):
 		self.add_query_param('ProductType',ProductType)
+
+	def get_InstanceId(self):
+		return self.get_query_params().get('InstanceId')
+
+	def set_InstanceId(self,InstanceId):
+		self.add_query_param('InstanceId',InstanceId)

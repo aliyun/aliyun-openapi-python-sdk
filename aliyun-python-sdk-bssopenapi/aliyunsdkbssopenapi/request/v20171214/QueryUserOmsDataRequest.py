@@ -23,30 +23,12 @@ from aliyunsdkbssopenapi.endpoint import endpoint_data
 class QueryUserOmsDataRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'QueryUserOmsData')
+		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'QueryUserOmsData','bssopenapi')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_DataType(self):
-		return self.get_query_params().get('DataType')
-
-	def set_DataType(self,DataType):
-		self.add_query_param('DataType',DataType)
-
-	def get_Marker(self):
-		return self.get_query_params().get('Marker')
-
-	def set_Marker(self,Marker):
-		self.add_query_param('Marker',Marker)
-
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
 
 	def get_EndTime(self):
 		return self.get_query_params().get('EndTime')
@@ -65,6 +47,24 @@ class QueryUserOmsDataRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_DataType(self):
+		return self.get_query_params().get('DataType')
+
+	def set_DataType(self,DataType):
+		self.add_query_param('DataType',DataType)
+
+	def get_Marker(self):
+		return self.get_query_params().get('Marker')
+
+	def set_Marker(self,Marker):
+		self.add_query_param('Marker',Marker)
+
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
 
 	def get_Table(self):
 		return self.get_query_params().get('Table')

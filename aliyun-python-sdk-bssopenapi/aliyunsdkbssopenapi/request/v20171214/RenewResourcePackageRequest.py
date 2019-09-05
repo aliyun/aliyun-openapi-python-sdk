@@ -23,24 +23,12 @@ from aliyunsdkbssopenapi.endpoint import endpoint_data
 class RenewResourcePackageRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'RenewResourcePackage')
+		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'RenewResourcePackage','bssopenapi')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Duration(self):
-		return self.get_query_params().get('Duration')
-
-	def set_Duration(self,Duration):
-		self.add_query_param('Duration',Duration)
-
-	def get_InstanceId(self):
-		return self.get_query_params().get('InstanceId')
-
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
@@ -53,6 +41,18 @@ class RenewResourcePackageRequest(RpcRequest):
 
 	def set_EffectiveDate(self,EffectiveDate):
 		self.add_query_param('EffectiveDate',EffectiveDate)
+
+	def get_Duration(self):
+		return self.get_query_params().get('Duration')
+
+	def set_Duration(self,Duration):
+		self.add_query_param('Duration',Duration)
+
+	def get_InstanceId(self):
+		return self.get_query_params().get('InstanceId')
+
+	def set_InstanceId(self,InstanceId):
+		self.add_query_param('InstanceId',InstanceId)
 
 	def get_PricingCycle(self):
 		return self.get_query_params().get('PricingCycle')

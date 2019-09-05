@@ -23,7 +23,7 @@ from aliyunsdkbssopenapi.endpoint import endpoint_data
 class QueryMonthlyInstanceConsumptionRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'QueryMonthlyInstanceConsumption')
+		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'QueryMonthlyInstanceConsumption','bssopenapi')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -41,12 +41,6 @@ class QueryMonthlyInstanceConsumptionRequest(RpcRequest):
 
 	def set_SubscriptionType(self,SubscriptionType):
 		self.add_query_param('SubscriptionType',SubscriptionType)
-
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
 
 	def get_BillingCycle(self):
 		return self.get_query_params().get('BillingCycle')
@@ -71,3 +65,9 @@ class QueryMonthlyInstanceConsumptionRequest(RpcRequest):
 
 	def set_ProductType(self,ProductType):
 		self.add_query_param('ProductType',ProductType)
+
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)

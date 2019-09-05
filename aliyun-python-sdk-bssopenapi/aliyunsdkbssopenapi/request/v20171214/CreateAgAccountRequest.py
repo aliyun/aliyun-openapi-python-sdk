@@ -23,7 +23,7 @@ from aliyunsdkbssopenapi.endpoint import endpoint_data
 class CreateAgAccountRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'CreateAgAccount')
+		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'CreateAgAccount','bssopenapi')
 		self.set_protocol_type('https')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -37,29 +37,11 @@ class CreateAgAccountRequest(RpcRequest):
 	def set_FirstName(self,FirstName):
 		self.add_query_param('FirstName',FirstName)
 
-	def get_LoginEmail(self):
-		return self.get_query_params().get('LoginEmail')
-
-	def set_LoginEmail(self,LoginEmail):
-		self.add_query_param('LoginEmail',LoginEmail)
-
-	def get_ProvinceName(self):
-		return self.get_query_params().get('ProvinceName')
-
-	def set_ProvinceName(self,ProvinceName):
-		self.add_query_param('ProvinceName',ProvinceName)
-
 	def get_CityName(self):
 		return self.get_query_params().get('CityName')
 
 	def set_CityName(self,CityName):
 		self.add_query_param('CityName',CityName)
-
-	def get_AccountAttr(self):
-		return self.get_query_params().get('AccountAttr')
-
-	def set_AccountAttr(self,AccountAttr):
-		self.add_query_param('AccountAttr',AccountAttr)
 
 	def get_Postcode(self):
 		return self.get_query_params().get('Postcode')
@@ -84,3 +66,21 @@ class CreateAgAccountRequest(RpcRequest):
 
 	def set_LastName(self,LastName):
 		self.add_query_param('LastName',LastName)
+
+	def get_LoginEmail(self):
+		return self.get_query_params().get('LoginEmail')
+
+	def set_LoginEmail(self,LoginEmail):
+		self.add_query_param('LoginEmail',LoginEmail)
+
+	def get_ProvinceName(self):
+		return self.get_query_params().get('ProvinceName')
+
+	def set_ProvinceName(self,ProvinceName):
+		self.add_query_param('ProvinceName',ProvinceName)
+
+	def get_AccountAttr(self):
+		return self.get_query_params().get('AccountAttr')
+
+	def set_AccountAttr(self,AccountAttr):
+		self.add_query_param('AccountAttr',AccountAttr)

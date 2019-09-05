@@ -23,12 +23,24 @@ from aliyunsdkbssopenapi.endpoint import endpoint_data
 class QueryAccountTransactionsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'QueryAccountTransactions')
+		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'QueryAccountTransactions','bssopenapi')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+
+	def get_PageNum(self):
+		return self.get_query_params().get('PageNum')
+
+	def set_PageNum(self,PageNum):
+		self.add_query_param('PageNum',PageNum)
+
+	def get_CreateTimeEnd(self):
+		return self.get_query_params().get('CreateTimeEnd')
+
+	def set_CreateTimeEnd(self,CreateTimeEnd):
+		self.add_query_param('CreateTimeEnd',CreateTimeEnd)
 
 	def get_RecordID(self):
 		return self.get_query_params().get('RecordID')
@@ -59,15 +71,3 @@ class QueryAccountTransactionsRequest(RpcRequest):
 
 	def set_TransactionNumber(self,TransactionNumber):
 		self.add_query_param('TransactionNumber',TransactionNumber)
-
-	def get_PageNum(self):
-		return self.get_query_params().get('PageNum')
-
-	def set_PageNum(self,PageNum):
-		self.add_query_param('PageNum',PageNum)
-
-	def get_CreateTimeEnd(self):
-		return self.get_query_params().get('CreateTimeEnd')
-
-	def set_CreateTimeEnd(self,CreateTimeEnd):
-		self.add_query_param('CreateTimeEnd',CreateTimeEnd)

@@ -23,7 +23,7 @@ from aliyunsdkbssopenapi.endpoint import endpoint_data
 class ApplyInvoiceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'ApplyInvoice')
+		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'ApplyInvoice','bssopenapi')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -35,32 +35,6 @@ class ApplyInvoiceRequest(RpcRequest):
 
 	def set_InvoicingType(self,InvoicingType):
 		self.add_query_param('InvoicingType',InvoicingType)
-
-	def get_ApplyUserNick(self):
-		return self.get_query_params().get('ApplyUserNick')
-
-	def set_ApplyUserNick(self,ApplyUserNick):
-		self.add_query_param('ApplyUserNick',ApplyUserNick)
-
-	def get_InvoiceByAmount(self):
-		return self.get_query_params().get('InvoiceByAmount')
-
-	def set_InvoiceByAmount(self,InvoiceByAmount):
-		self.add_query_param('InvoiceByAmount',InvoiceByAmount)
-
-	def get_CustomerId(self):
-		return self.get_query_params().get('CustomerId')
-
-	def set_CustomerId(self,CustomerId):
-		self.add_query_param('CustomerId',CustomerId)
-
-	def get_SelectedIdss(self):
-		return self.get_query_params().get('SelectedIdss')
-
-	def set_SelectedIdss(self,SelectedIdss):
-		for i in range(len(SelectedIdss)):	
-			if SelectedIdss[i] is not None:
-				self.add_query_param('SelectedIds.' + str(i + 1) , SelectedIdss[i]);
 
 	def get_ProcessWay(self):
 		return self.get_query_params().get('ProcessWay')
@@ -91,6 +65,32 @@ class ApplyInvoiceRequest(RpcRequest):
 
 	def set_AddressId(self,AddressId):
 		self.add_query_param('AddressId',AddressId)
+
+	def get_ApplyUserNick(self):
+		return self.get_query_params().get('ApplyUserNick')
+
+	def set_ApplyUserNick(self,ApplyUserNick):
+		self.add_query_param('ApplyUserNick',ApplyUserNick)
+
+	def get_InvoiceByAmount(self):
+		return self.get_query_params().get('InvoiceByAmount')
+
+	def set_InvoiceByAmount(self,InvoiceByAmount):
+		self.add_query_param('InvoiceByAmount',InvoiceByAmount)
+
+	def get_CustomerId(self):
+		return self.get_query_params().get('CustomerId')
+
+	def set_CustomerId(self,CustomerId):
+		self.add_query_param('CustomerId',CustomerId)
+
+	def get_SelectedIdss(self):
+		return self.get_query_params().get('SelectedIdss')
+
+	def set_SelectedIdss(self,SelectedIdss):
+		for i in range(len(SelectedIdss)):	
+			if SelectedIdss[i] is not None:
+				self.add_query_param('SelectedIds.' + str(i + 1) , SelectedIdss[i]);
 
 	def get_callerUid(self):
 		return self.get_query_params().get('callerUid')

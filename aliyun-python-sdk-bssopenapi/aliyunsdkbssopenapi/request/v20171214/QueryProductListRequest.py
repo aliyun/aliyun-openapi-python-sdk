@@ -23,12 +23,18 @@ from aliyunsdkbssopenapi.endpoint import endpoint_data
 class QueryProductListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'QueryProductList')
+		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'QueryProductList','bssopenapi')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+
+	def get_PageNum(self):
+		return self.get_query_params().get('PageNum')
+
+	def set_PageNum(self,PageNum):
+		self.add_query_param('PageNum',PageNum)
 
 	def get_QueryTotalCount(self):
 		return self.get_query_params().get('QueryTotalCount')
@@ -41,9 +47,3 @@ class QueryProductListRequest(RpcRequest):
 
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
-
-	def get_PageNum(self):
-		return self.get_query_params().get('PageNum')
-
-	def set_PageNum(self,PageNum):
-		self.add_query_param('PageNum',PageNum)

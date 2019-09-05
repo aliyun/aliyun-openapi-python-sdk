@@ -23,30 +23,18 @@ from aliyunsdkbssopenapi.endpoint import endpoint_data
 class GetResourcePackagePriceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'GetResourcePackagePrice')
+		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'GetResourcePackagePrice','bssopenapi')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_Duration(self):
-		return self.get_query_params().get('Duration')
-
-	def set_Duration(self,Duration):
-		self.add_query_param('Duration',Duration)
-
 	def get_ProductCode(self):
 		return self.get_query_params().get('ProductCode')
 
 	def set_ProductCode(self,ProductCode):
 		self.add_query_param('ProductCode',ProductCode)
-
-	def get_InstanceId(self):
-		return self.get_query_params().get('InstanceId')
-
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
 
 	def get_Specification(self):
 		return self.get_query_params().get('Specification')
@@ -60,17 +48,29 @@ class GetResourcePackagePriceRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_PackageType(self):
-		return self.get_query_params().get('PackageType')
-
-	def set_PackageType(self,PackageType):
-		self.add_query_param('PackageType',PackageType)
-
 	def get_EffectiveDate(self):
 		return self.get_query_params().get('EffectiveDate')
 
 	def set_EffectiveDate(self,EffectiveDate):
 		self.add_query_param('EffectiveDate',EffectiveDate)
+
+	def get_Duration(self):
+		return self.get_query_params().get('Duration')
+
+	def set_Duration(self,Duration):
+		self.add_query_param('Duration',Duration)
+
+	def get_InstanceId(self):
+		return self.get_query_params().get('InstanceId')
+
+	def set_InstanceId(self,InstanceId):
+		self.add_query_param('InstanceId',InstanceId)
+
+	def get_PackageType(self):
+		return self.get_query_params().get('PackageType')
+
+	def set_PackageType(self,PackageType):
+		self.add_query_param('PackageType',PackageType)
 
 	def get_PricingCycle(self):
 		return self.get_query_params().get('PricingCycle')

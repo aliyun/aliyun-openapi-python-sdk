@@ -23,7 +23,7 @@ from aliyunsdkbssopenapi.endpoint import endpoint_data
 class CreateResellerUserQuotaRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'CreateResellerUserQuota')
+		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'CreateResellerUserQuota','bssopenapi')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -42,14 +42,14 @@ class CreateResellerUserQuotaRequest(RpcRequest):
 	def set_OutBizId(self,OutBizId):
 		self.add_query_param('OutBizId',OutBizId)
 
-	def get_Currency(self):
-		return self.get_query_params().get('Currency')
-
-	def set_Currency(self,Currency):
-		self.add_query_param('Currency',Currency)
-
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_Currency(self):
+		return self.get_query_params().get('Currency')
+
+	def set_Currency(self,Currency):
+		self.add_query_param('Currency',Currency)

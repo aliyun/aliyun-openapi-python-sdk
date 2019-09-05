@@ -23,7 +23,7 @@ from aliyunsdkbssopenapi.endpoint import endpoint_data
 class QueryResourcePackageInstancesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'QueryResourcePackageInstances')
+		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'QueryResourcePackageInstances','bssopenapi')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -42,12 +42,6 @@ class QueryResourcePackageInstancesRequest(RpcRequest):
 	def set_ProductCode(self,ProductCode):
 		self.add_query_param('ProductCode',ProductCode)
 
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
@@ -65,3 +59,9 @@ class QueryResourcePackageInstancesRequest(RpcRequest):
 
 	def set_PageNum(self,PageNum):
 		self.add_query_param('PageNum',PageNum)
+
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)

@@ -23,7 +23,7 @@ from aliyunsdkbssopenapi.endpoint import endpoint_data
 class SetResellerUserStatusRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'SetResellerUserStatus')
+		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'SetResellerUserStatus','bssopenapi')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -36,14 +36,14 @@ class SetResellerUserStatusRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_Status(self):
-		return self.get_query_params().get('Status')
-
-	def set_Status(self,Status):
-		self.add_query_param('Status',Status)
-
 	def get_BusinessType(self):
 		return self.get_query_params().get('BusinessType')
 
 	def set_BusinessType(self,BusinessType):
 		self.add_query_param('BusinessType',BusinessType)
+
+	def get_Status(self):
+		return self.get_query_params().get('Status')
+
+	def set_Status(self,Status):
+		self.add_query_param('Status',Status)
