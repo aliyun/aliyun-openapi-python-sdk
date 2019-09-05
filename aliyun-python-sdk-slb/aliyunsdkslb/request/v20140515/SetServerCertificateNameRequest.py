@@ -66,14 +66,14 @@ class SetServerCertificateNameRequest(RpcRequest):
 	def set_ServerCertificateId(self,ServerCertificateId):
 		self.add_query_param('ServerCertificateId',ServerCertificateId)
 
-	def get_ServerCertificateName(self):
-		return self.get_query_params().get('ServerCertificateName')
-
-	def set_ServerCertificateName(self,ServerCertificateName):
-		self.add_query_param('ServerCertificateName',ServerCertificateName)
-
 	def get_Tags(self):
 		return self.get_query_params().get('Tags')
 
 	def set_Tags(self,Tags):
 		self.add_query_param('Tags',Tags)
+
+	def get_ServerCertificateName(self):
+		return self.get_query_params().get('ServerCertificateName')
+
+	def set_ServerCertificateName(self,ServerCertificateName):
+		self.add_query_param('ServerCertificateName',ServerCertificateName)

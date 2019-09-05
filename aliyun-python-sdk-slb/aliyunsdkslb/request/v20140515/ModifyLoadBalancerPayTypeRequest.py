@@ -42,6 +42,12 @@ class ModifyLoadBalancerPayTypeRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_Duration(self):
+		return self.get_query_params().get('Duration')
+
+	def set_Duration(self,Duration):
+		self.add_query_param('Duration',Duration)
+
 	def get_AutoPay(self):
 		return self.get_query_params().get('AutoPay')
 
@@ -71,12 +77,6 @@ class ModifyLoadBalancerPayTypeRequest(RpcRequest):
 
 	def set_Tags(self,Tags):
 		self.add_query_param('Tags',Tags)
-
-	def get_Duration(self):
-		return self.get_query_params().get('Duration')
-
-	def set_Duration(self,Duration):
-		self.add_query_param('Duration',Duration)
 
 	def get_LoadBalancerId(self):
 		return self.get_query_params().get('LoadBalancerId')

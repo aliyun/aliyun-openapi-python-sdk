@@ -36,29 +36,29 @@ class UploadCACertificateRequest(RpcRequest):
 	def set_access_key_id(self,access_key_id):
 		self.add_query_param('access_key_id',access_key_id)
 
-	def get_ResourceGroupId(self):
-		return self.get_query_params().get('ResourceGroupId')
-
-	def set_ResourceGroupId(self,ResourceGroupId):
-		self.add_query_param('ResourceGroupId',ResourceGroupId)
-
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_CACertificate(self):
-		return self.get_query_params().get('CACertificate')
+	def get_ResourceGroupId(self):
+		return self.get_query_params().get('ResourceGroupId')
 
-	def set_CACertificate(self,CACertificate):
-		self.add_query_param('CACertificate',CACertificate)
+	def set_ResourceGroupId(self,ResourceGroupId):
+		self.add_query_param('ResourceGroupId',ResourceGroupId)
 
 	def get_CACertificateName(self):
 		return self.get_query_params().get('CACertificateName')
 
 	def set_CACertificateName(self,CACertificateName):
 		self.add_query_param('CACertificateName',CACertificateName)
+
+	def get_CACertificate(self):
+		return self.get_query_params().get('CACertificate')
+
+	def set_CACertificate(self,CACertificate):
+		self.add_query_param('CACertificate',CACertificate)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')

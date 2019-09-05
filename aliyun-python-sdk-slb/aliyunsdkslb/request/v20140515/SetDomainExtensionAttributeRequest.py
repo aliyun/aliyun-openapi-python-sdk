@@ -42,6 +42,12 @@ class SetDomainExtensionAttributeRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_DomainExtensionId(self):
+		return self.get_query_params().get('DomainExtensionId')
+
+	def set_DomainExtensionId(self,DomainExtensionId):
+		self.add_query_param('DomainExtensionId',DomainExtensionId)
+
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -71,9 +77,3 @@ class SetDomainExtensionAttributeRequest(RpcRequest):
 
 	def set_Tags(self,Tags):
 		self.add_query_param('Tags',Tags)
-
-	def get_DomainExtensionId(self):
-		return self.get_query_params().get('DomainExtensionId')
-
-	def set_DomainExtensionId(self,DomainExtensionId):
-		self.add_query_param('DomainExtensionId',DomainExtensionId)

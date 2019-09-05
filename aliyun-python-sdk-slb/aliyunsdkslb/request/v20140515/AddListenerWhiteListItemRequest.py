@@ -42,23 +42,17 @@ class AddListenerWhiteListItemRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_ListenerPort(self):
-		return self.get_query_params().get('ListenerPort')
-
-	def set_ListenerPort(self,ListenerPort):
-		self.add_query_param('ListenerPort',ListenerPort)
-
-	def get_LoadBalancerId(self):
-		return self.get_query_params().get('LoadBalancerId')
-
-	def set_LoadBalancerId(self,LoadBalancerId):
-		self.add_query_param('LoadBalancerId',LoadBalancerId)
-
 	def get_SourceItems(self):
 		return self.get_query_params().get('SourceItems')
 
 	def set_SourceItems(self,SourceItems):
 		self.add_query_param('SourceItems',SourceItems)
+
+	def get_ListenerPort(self):
+		return self.get_query_params().get('ListenerPort')
+
+	def set_ListenerPort(self,ListenerPort):
+		self.add_query_param('ListenerPort',ListenerPort)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -89,3 +83,9 @@ class AddListenerWhiteListItemRequest(RpcRequest):
 
 	def set_Tags(self,Tags):
 		self.add_query_param('Tags',Tags)
+
+	def get_LoadBalancerId(self):
+		return self.get_query_params().get('LoadBalancerId')
+
+	def set_LoadBalancerId(self,LoadBalancerId):
+		self.add_query_param('LoadBalancerId',LoadBalancerId)

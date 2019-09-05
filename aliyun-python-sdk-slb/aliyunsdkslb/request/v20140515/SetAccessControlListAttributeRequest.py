@@ -36,12 +36,6 @@ class SetAccessControlListAttributeRequest(RpcRequest):
 	def set_access_key_id(self,access_key_id):
 		self.add_query_param('access_key_id',access_key_id)
 
-	def get_AclId(self):
-		return self.get_query_params().get('AclId')
-
-	def set_AclId(self,AclId):
-		self.add_query_param('AclId',AclId)
-
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
@@ -53,6 +47,12 @@ class SetAccessControlListAttributeRequest(RpcRequest):
 
 	def set_AclName(self,AclName):
 		self.add_query_param('AclName',AclName)
+
+	def get_AclId(self):
+		return self.get_query_params().get('AclId')
+
+	def set_AclId(self,AclId):
+		self.add_query_param('AclId',AclId)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')

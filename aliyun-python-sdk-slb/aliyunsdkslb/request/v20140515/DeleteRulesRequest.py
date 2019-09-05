@@ -42,12 +42,6 @@ class DeleteRulesRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_RuleIds(self):
-		return self.get_query_params().get('RuleIds')
-
-	def set_RuleIds(self,RuleIds):
-		self.add_query_param('RuleIds',RuleIds)
-
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -71,3 +65,9 @@ class DeleteRulesRequest(RpcRequest):
 
 	def set_Tags(self,Tags):
 		self.add_query_param('Tags',Tags)
+
+	def get_RuleIds(self):
+		return self.get_query_params().get('RuleIds')
+
+	def set_RuleIds(self,RuleIds):
+		self.add_query_param('RuleIds',RuleIds)

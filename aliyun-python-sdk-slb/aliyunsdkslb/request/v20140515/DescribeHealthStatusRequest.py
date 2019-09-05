@@ -48,12 +48,6 @@ class DescribeHealthStatusRequest(RpcRequest):
 	def set_ListenerPort(self,ListenerPort):
 		self.add_query_param('ListenerPort',ListenerPort)
 
-	def get_LoadBalancerId(self):
-		return self.get_query_params().get('LoadBalancerId')
-
-	def set_LoadBalancerId(self,LoadBalancerId):
-		self.add_query_param('LoadBalancerId',LoadBalancerId)
-
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -83,3 +77,9 @@ class DescribeHealthStatusRequest(RpcRequest):
 
 	def set_Tags(self,Tags):
 		self.add_query_param('Tags',Tags)
+
+	def get_LoadBalancerId(self):
+		return self.get_query_params().get('LoadBalancerId')
+
+	def set_LoadBalancerId(self,LoadBalancerId):
+		self.add_query_param('LoadBalancerId',LoadBalancerId)

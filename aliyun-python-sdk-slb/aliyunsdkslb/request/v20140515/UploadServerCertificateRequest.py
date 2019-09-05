@@ -48,18 +48,6 @@ class UploadServerCertificateRequest(RpcRequest):
 	def set_ServerCertificate(self,ServerCertificate):
 		self.add_query_param('ServerCertificate',ServerCertificate)
 
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
-
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_OwnerAccount(self):
-		return self.get_query_params().get('OwnerAccount')
-
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
-
 	def get_AliCloudCertificateName(self):
 		return self.get_query_params().get('AliCloudCertificateName')
 
@@ -72,18 +60,6 @@ class UploadServerCertificateRequest(RpcRequest):
 	def set_AliCloudCertificateId(self,AliCloudCertificateId):
 		self.add_query_param('AliCloudCertificateId',AliCloudCertificateId)
 
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_Tags(self):
-		return self.get_query_params().get('Tags')
-
-	def set_Tags(self,Tags):
-		self.add_query_param('Tags',Tags)
-
 	def get_PrivateKey(self):
 		return self.get_query_params().get('PrivateKey')
 
@@ -95,6 +71,30 @@ class UploadServerCertificateRequest(RpcRequest):
 
 	def set_ResourceGroupId(self,ResourceGroupId):
 		self.add_query_param('ResourceGroupId',ResourceGroupId)
+
+	def get_ResourceOwnerAccount(self):
+		return self.get_query_params().get('ResourceOwnerAccount')
+
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+
+	def get_OwnerAccount(self):
+		return self.get_query_params().get('OwnerAccount')
+
+	def set_OwnerAccount(self,OwnerAccount):
+		self.add_query_param('OwnerAccount',OwnerAccount)
+
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
+
+	def get_Tags(self):
+		return self.get_query_params().get('Tags')
+
+	def set_Tags(self,Tags):
+		self.add_query_param('Tags',Tags)
 
 	def get_ServerCertificateName(self):
 		return self.get_query_params().get('ServerCertificateName')

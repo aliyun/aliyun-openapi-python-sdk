@@ -42,12 +42,6 @@ class DeleteMasterSlaveServerGroupRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_MasterSlaveServerGroupId(self):
-		return self.get_query_params().get('MasterSlaveServerGroupId')
-
-	def set_MasterSlaveServerGroupId(self,MasterSlaveServerGroupId):
-		self.add_query_param('MasterSlaveServerGroupId',MasterSlaveServerGroupId)
-
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -71,3 +65,9 @@ class DeleteMasterSlaveServerGroupRequest(RpcRequest):
 
 	def set_Tags(self,Tags):
 		self.add_query_param('Tags',Tags)
+
+	def get_MasterSlaveServerGroupId(self):
+		return self.get_query_params().get('MasterSlaveServerGroupId')
+
+	def set_MasterSlaveServerGroupId(self,MasterSlaveServerGroupId):
+		self.add_query_param('MasterSlaveServerGroupId',MasterSlaveServerGroupId)

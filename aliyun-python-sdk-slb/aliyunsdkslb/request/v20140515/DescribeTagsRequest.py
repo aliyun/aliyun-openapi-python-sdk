@@ -42,11 +42,17 @@ class DescribeTagsRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_LoadBalancerId(self):
-		return self.get_query_params().get('LoadBalancerId')
+	def get_PageNumber(self):
+		return self.get_query_params().get('PageNumber')
 
-	def set_LoadBalancerId(self,LoadBalancerId):
-		self.add_query_param('LoadBalancerId',LoadBalancerId)
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)
+
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -60,12 +66,6 @@ class DescribeTagsRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
 	def get_DistinctKey(self):
 		return self.get_query_params().get('DistinctKey')
 
@@ -78,14 +78,14 @@ class DescribeTagsRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_PageNumber(self):
-		return self.get_query_params().get('PageNumber')
-
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
-
 	def get_Tags(self):
 		return self.get_query_params().get('Tags')
 
 	def set_Tags(self,Tags):
 		self.add_query_param('Tags',Tags)
+
+	def get_LoadBalancerId(self):
+		return self.get_query_params().get('LoadBalancerId')
+
+	def set_LoadBalancerId(self,LoadBalancerId):
+		self.add_query_param('LoadBalancerId',LoadBalancerId)

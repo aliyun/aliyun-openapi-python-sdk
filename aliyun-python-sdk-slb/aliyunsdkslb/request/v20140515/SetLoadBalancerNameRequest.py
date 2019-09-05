@@ -48,12 +48,6 @@ class SetLoadBalancerNameRequest(RpcRequest):
 	def set_LoadBalancerName(self,LoadBalancerName):
 		self.add_query_param('LoadBalancerName',LoadBalancerName)
 
-	def get_LoadBalancerId(self):
-		return self.get_query_params().get('LoadBalancerId')
-
-	def set_LoadBalancerId(self,LoadBalancerId):
-		self.add_query_param('LoadBalancerId',LoadBalancerId)
-
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -77,3 +71,9 @@ class SetLoadBalancerNameRequest(RpcRequest):
 
 	def set_Tags(self,Tags):
 		self.add_query_param('Tags',Tags)
+
+	def get_LoadBalancerId(self):
+		return self.get_query_params().get('LoadBalancerId')
+
+	def set_LoadBalancerId(self,LoadBalancerId):
+		self.add_query_param('LoadBalancerId',LoadBalancerId)

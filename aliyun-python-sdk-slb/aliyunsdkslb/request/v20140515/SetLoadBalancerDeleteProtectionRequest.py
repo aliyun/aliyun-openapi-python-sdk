@@ -42,11 +42,11 @@ class SetLoadBalancerDeleteProtectionRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_LoadBalancerId(self):
-		return self.get_query_params().get('LoadBalancerId')
+	def get_DeleteProtection(self):
+		return self.get_query_params().get('DeleteProtection')
 
-	def set_LoadBalancerId(self,LoadBalancerId):
-		self.add_query_param('LoadBalancerId',LoadBalancerId)
+	def set_DeleteProtection(self,DeleteProtection):
+		self.add_query_param('DeleteProtection',DeleteProtection)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -66,14 +66,14 @@ class SetLoadBalancerDeleteProtectionRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_DeleteProtection(self):
-		return self.get_query_params().get('DeleteProtection')
-
-	def set_DeleteProtection(self,DeleteProtection):
-		self.add_query_param('DeleteProtection',DeleteProtection)
-
 	def get_Tags(self):
 		return self.get_query_params().get('Tags')
 
 	def set_Tags(self,Tags):
 		self.add_query_param('Tags',Tags)
+
+	def get_LoadBalancerId(self):
+		return self.get_query_params().get('LoadBalancerId')
+
+	def set_LoadBalancerId(self,LoadBalancerId):
+		self.add_query_param('LoadBalancerId',LoadBalancerId)

@@ -36,17 +36,17 @@ class DescribeVServerGroupAttributeRequest(RpcRequest):
 	def set_access_key_id(self,access_key_id):
 		self.add_query_param('access_key_id',access_key_id)
 
-	def get_VServerGroupId(self):
-		return self.get_query_params().get('VServerGroupId')
-
-	def set_VServerGroupId(self,VServerGroupId):
-		self.add_query_param('VServerGroupId',VServerGroupId)
-
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+
+	def get_VServerGroupId(self):
+		return self.get_query_params().get('VServerGroupId')
+
+	def set_VServerGroupId(self,VServerGroupId):
+		self.add_query_param('VServerGroupId',VServerGroupId)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')

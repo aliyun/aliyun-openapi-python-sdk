@@ -48,12 +48,6 @@ class CreateDomainExtensionRequest(RpcRequest):
 	def set_ListenerPort(self,ListenerPort):
 		self.add_query_param('ListenerPort',ListenerPort)
 
-	def get_LoadBalancerId(self):
-		return self.get_query_params().get('LoadBalancerId')
-
-	def set_LoadBalancerId(self,LoadBalancerId):
-		self.add_query_param('LoadBalancerId',LoadBalancerId)
-
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -65,12 +59,6 @@ class CreateDomainExtensionRequest(RpcRequest):
 
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
-
-	def get_Domain(self):
-		return self.get_query_params().get('Domain')
-
-	def set_Domain(self,Domain):
-		self.add_query_param('Domain',Domain)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
@@ -89,3 +77,15 @@ class CreateDomainExtensionRequest(RpcRequest):
 
 	def set_Tags(self,Tags):
 		self.add_query_param('Tags',Tags)
+
+	def get_LoadBalancerId(self):
+		return self.get_query_params().get('LoadBalancerId')
+
+	def set_LoadBalancerId(self,LoadBalancerId):
+		self.add_query_param('LoadBalancerId',LoadBalancerId)
+
+	def get_Domain(self):
+		return self.get_query_params().get('Domain')
+
+	def set_Domain(self,Domain):
+		self.add_query_param('Domain',Domain)

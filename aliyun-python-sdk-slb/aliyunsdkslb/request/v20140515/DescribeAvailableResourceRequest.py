@@ -42,6 +42,18 @@ class DescribeAvailableResourceRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_AddressIPVersion(self):
+		return self.get_query_params().get('AddressIPVersion')
+
+	def set_AddressIPVersion(self,AddressIPVersion):
+		self.add_query_param('AddressIPVersion',AddressIPVersion)
+
+	def get_AddressType(self):
+		return self.get_query_params().get('AddressType')
+
+	def set_AddressType(self,AddressType):
+		self.add_query_param('AddressType',AddressType)
+
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -54,20 +66,8 @@ class DescribeAvailableResourceRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
-	def get_AddressType(self):
-		return self.get_query_params().get('AddressType')
-
-	def set_AddressType(self,AddressType):
-		self.add_query_param('AddressType',AddressType)
-
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
-
-	def get_AddressIPVersion(self):
-		return self.get_query_params().get('AddressIPVersion')
-
-	def set_AddressIPVersion(self,AddressIPVersion):
-		self.add_query_param('AddressIPVersion',AddressIPVersion)

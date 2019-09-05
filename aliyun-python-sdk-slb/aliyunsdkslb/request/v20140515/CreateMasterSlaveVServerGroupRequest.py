@@ -48,12 +48,6 @@ class CreateMasterSlaveVServerGroupRequest(RpcRequest):
 	def set_MasterSlaveBackendServers(self,MasterSlaveBackendServers):
 		self.add_query_param('MasterSlaveBackendServers',MasterSlaveBackendServers)
 
-	def get_LoadBalancerId(self):
-		return self.get_query_params().get('LoadBalancerId')
-
-	def set_LoadBalancerId(self,LoadBalancerId):
-		self.add_query_param('LoadBalancerId',LoadBalancerId)
-
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -83,3 +77,9 @@ class CreateMasterSlaveVServerGroupRequest(RpcRequest):
 
 	def set_Tags(self,Tags):
 		self.add_query_param('Tags',Tags)
+
+	def get_LoadBalancerId(self):
+		return self.get_query_params().get('LoadBalancerId')
+
+	def set_LoadBalancerId(self,LoadBalancerId):
+		self.add_query_param('LoadBalancerId',LoadBalancerId)

@@ -36,23 +36,17 @@ class DescribeLoadBalancerAttributeRequest(RpcRequest):
 	def set_access_key_id(self,access_key_id):
 		self.add_query_param('access_key_id',access_key_id)
 
-	def get_IncludeReservedData(self):
-		return self.get_query_params().get('IncludeReservedData')
-
-	def set_IncludeReservedData(self,IncludeReservedData):
-		self.add_query_param('IncludeReservedData',IncludeReservedData)
-
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_LoadBalancerId(self):
-		return self.get_query_params().get('LoadBalancerId')
+	def get_IncludeReservedData(self):
+		return self.get_query_params().get('IncludeReservedData')
 
-	def set_LoadBalancerId(self,LoadBalancerId):
-		self.add_query_param('LoadBalancerId',LoadBalancerId)
+	def set_IncludeReservedData(self,IncludeReservedData):
+		self.add_query_param('IncludeReservedData',IncludeReservedData)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -77,3 +71,9 @@ class DescribeLoadBalancerAttributeRequest(RpcRequest):
 
 	def set_Tags(self,Tags):
 		self.add_query_param('Tags',Tags)
+
+	def get_LoadBalancerId(self):
+		return self.get_query_params().get('LoadBalancerId')
+
+	def set_LoadBalancerId(self,LoadBalancerId):
+		self.add_query_param('LoadBalancerId',LoadBalancerId)

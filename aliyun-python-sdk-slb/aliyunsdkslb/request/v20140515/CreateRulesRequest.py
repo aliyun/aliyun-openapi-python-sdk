@@ -42,29 +42,23 @@ class CreateRulesRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_RuleList(self):
+		return self.get_query_params().get('RuleList')
+
+	def set_RuleList(self,RuleList):
+		self.add_query_param('RuleList',RuleList)
+
 	def get_ListenerPort(self):
 		return self.get_query_params().get('ListenerPort')
 
 	def set_ListenerPort(self,ListenerPort):
 		self.add_query_param('ListenerPort',ListenerPort)
 
-	def get_LoadBalancerId(self):
-		return self.get_query_params().get('LoadBalancerId')
-
-	def set_LoadBalancerId(self,LoadBalancerId):
-		self.add_query_param('LoadBalancerId',LoadBalancerId)
-
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_RuleList(self):
-		return self.get_query_params().get('RuleList')
-
-	def set_RuleList(self,RuleList):
-		self.add_query_param('RuleList',RuleList)
 
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
@@ -89,3 +83,9 @@ class CreateRulesRequest(RpcRequest):
 
 	def set_Tags(self,Tags):
 		self.add_query_param('Tags',Tags)
+
+	def get_LoadBalancerId(self):
+		return self.get_query_params().get('LoadBalancerId')
+
+	def set_LoadBalancerId(self,LoadBalancerId):
+		self.add_query_param('LoadBalancerId',LoadBalancerId)

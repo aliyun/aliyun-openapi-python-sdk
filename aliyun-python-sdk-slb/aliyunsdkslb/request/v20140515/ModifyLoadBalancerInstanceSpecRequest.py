@@ -36,23 +36,17 @@ class ModifyLoadBalancerInstanceSpecRequest(RpcRequest):
 	def set_access_key_id(self,access_key_id):
 		self.add_query_param('access_key_id',access_key_id)
 
-	def get_LoadBalancerSpec(self):
-		return self.get_query_params().get('LoadBalancerSpec')
-
-	def set_LoadBalancerSpec(self,LoadBalancerSpec):
-		self.add_query_param('LoadBalancerSpec',LoadBalancerSpec)
-
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_LoadBalancerId(self):
-		return self.get_query_params().get('LoadBalancerId')
+	def get_LoadBalancerSpec(self):
+		return self.get_query_params().get('LoadBalancerSpec')
 
-	def set_LoadBalancerId(self,LoadBalancerId):
-		self.add_query_param('LoadBalancerId',LoadBalancerId)
+	def set_LoadBalancerSpec(self,LoadBalancerSpec):
+		self.add_query_param('LoadBalancerSpec',LoadBalancerSpec)
 
 	def get_AutoPay(self):
 		return self.get_query_params().get('AutoPay')
@@ -83,3 +77,9 @@ class ModifyLoadBalancerInstanceSpecRequest(RpcRequest):
 
 	def set_Tags(self,Tags):
 		self.add_query_param('Tags',Tags)
+
+	def get_LoadBalancerId(self):
+		return self.get_query_params().get('LoadBalancerId')
+
+	def set_LoadBalancerId(self,LoadBalancerId):
+		self.add_query_param('LoadBalancerId',LoadBalancerId)
