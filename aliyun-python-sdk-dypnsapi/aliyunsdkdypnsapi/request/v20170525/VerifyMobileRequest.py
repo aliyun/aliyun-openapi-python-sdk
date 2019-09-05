@@ -38,6 +38,12 @@ class VerifyMobileRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_PhoneNumber(self):
+		return self.get_query_params().get('PhoneNumber')
+
+	def set_PhoneNumber(self,PhoneNumber):
+		self.add_query_param('PhoneNumber',PhoneNumber)
+
 	def get_AccessCode(self):
 		return self.get_query_params().get('AccessCode')
 
@@ -50,20 +56,14 @@ class VerifyMobileRequest(RpcRequest):
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
-	def get_PhoneNumber(self):
-		return self.get_query_params().get('PhoneNumber')
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
 
-	def set_PhoneNumber(self,PhoneNumber):
-		self.add_query_param('PhoneNumber',PhoneNumber)
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
 
 	def get_OutId(self):
 		return self.get_query_params().get('OutId')
 
 	def set_OutId(self,OutId):
 		self.add_query_param('OutId',OutId)
-
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)

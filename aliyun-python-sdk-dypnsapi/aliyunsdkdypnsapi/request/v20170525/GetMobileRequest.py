@@ -50,14 +50,14 @@ class GetMobileRequest(RpcRequest):
 	def set_AccessToken(self,AccessToken):
 		self.add_query_param('AccessToken',AccessToken)
 
-	def get_OutId(self):
-		return self.get_query_params().get('OutId')
-
-	def set_OutId(self,OutId):
-		self.add_query_param('OutId',OutId)
-
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_OutId(self):
+		return self.get_query_params().get('OutId')
+
+	def set_OutId(self,OutId):
+		self.add_query_param('OutId',OutId)

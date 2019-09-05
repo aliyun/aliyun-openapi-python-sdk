@@ -37,11 +37,11 @@ class CreateVerifySchemeRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_PackName(self):
-		return self.get_query_params().get('PackName')
+	def get_BundleId(self):
+		return self.get_query_params().get('BundleId')
 
-	def set_PackName(self,PackName):
-		self.add_query_param('PackName',PackName)
+	def set_BundleId(self,BundleId):
+		self.add_query_param('BundleId',BundleId)
 
 	def get_AppName(self):
 		return self.get_query_params().get('AppName')
@@ -49,23 +49,23 @@ class CreateVerifySchemeRequest(RpcRequest):
 	def set_AppName(self,AppName):
 		self.add_query_param('AppName',AppName)
 
+	def get_PackSign(self):
+		return self.get_query_params().get('PackSign')
+
+	def set_PackSign(self,PackSign):
+		self.add_query_param('PackSign',PackSign)
+
+	def get_PackName(self):
+		return self.get_query_params().get('PackName')
+
+	def set_PackName(self,PackName):
+		self.add_query_param('PackName',PackName)
+
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_SchemeName(self):
-		return self.get_query_params().get('SchemeName')
-
-	def set_SchemeName(self,SchemeName):
-		self.add_query_param('SchemeName',SchemeName)
-
-	def get_BundleId(self):
-		return self.get_query_params().get('BundleId')
-
-	def set_BundleId(self,BundleId):
-		self.add_query_param('BundleId',BundleId)
 
 	def get_OsType(self):
 		return self.get_query_params().get('OsType')
@@ -79,8 +79,8 @@ class CreateVerifySchemeRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_PackSign(self):
-		return self.get_query_params().get('PackSign')
+	def get_SchemeName(self):
+		return self.get_query_params().get('SchemeName')
 
-	def set_PackSign(self,PackSign):
-		self.add_query_param('PackSign',PackSign)
+	def set_SchemeName(self,SchemeName):
+		self.add_query_param('SchemeName',SchemeName)
