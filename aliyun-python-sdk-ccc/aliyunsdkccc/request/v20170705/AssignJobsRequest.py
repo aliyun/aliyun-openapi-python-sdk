@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,10 +18,31 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkccc.endpoint import endpoint_data
+
 class AssignJobsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'CCC', '2017-07-05', 'AssignJobs','ccc')
+		RpcRequest.__init__(self, 'CCC', '2017-07-05', 'AssignJobs')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
+
+	def get_GroupId(self):
+		return self.get_query_params().get('GroupId')
+
+	def set_GroupId(self,GroupId):
+		self.add_query_param('GroupId',GroupId)
+
+	def get_JobsJsons(self):
+		return self.get_query_params().get('JobsJsons')
+
+	def set_JobsJsons(self,JobsJsons):
+		for i in range(len(JobsJsons)):	
+			if JobsJsons[i] is not None:
+				self.add_query_param('JobsJson.' + str(i + 1) , JobsJsons[i]);
 
 	def get_CallingNumbers(self):
 		return self.get_query_params().get('CallingNumbers')
@@ -37,12 +58,6 @@ class AssignJobsRequest(RpcRequest):
 	def set_InstanceId(self,InstanceId):
 		self.add_query_param('InstanceId',InstanceId)
 
-	def get_GroupId(self):
-		return self.get_query_params().get('GroupId')
-
-	def set_GroupId(self,GroupId):
-		self.add_query_param('GroupId',GroupId)
-
 	def get_StrategyJson(self):
 		return self.get_query_params().get('StrategyJson')
 
@@ -54,11 +69,3 @@ class AssignJobsRequest(RpcRequest):
 
 	def set_ScenarioId(self,ScenarioId):
 		self.add_query_param('ScenarioId',ScenarioId)
-
-	def get_JobsJsons(self):
-		return self.get_query_params().get('JobsJsons')
-
-	def set_JobsJsons(self,JobsJsons):
-		for i in range(len(JobsJsons)):	
-			if JobsJsons[i] is not None:
-				self.add_query_param('JobsJson.' + str(i + 1) , JobsJsons[i]);
