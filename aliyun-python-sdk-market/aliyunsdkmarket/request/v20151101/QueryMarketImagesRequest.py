@@ -23,7 +23,7 @@ from aliyunsdkmarket.endpoint import endpoint_data
 class QueryMarketImagesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Market', '2015-11-01', 'QueryMarketImages')
+		RpcRequest.__init__(self, 'Market', '2015-11-01', 'QueryMarketImages','yunmarket')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):

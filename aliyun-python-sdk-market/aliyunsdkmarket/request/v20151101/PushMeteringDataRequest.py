@@ -23,7 +23,7 @@ from aliyunsdkmarket.endpoint import endpoint_data
 class PushMeteringDataRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Market', '2015-11-01', 'PushMeteringData')
+		RpcRequest.__init__(self, 'Market', '2015-11-01', 'PushMeteringData','yunmarket')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())

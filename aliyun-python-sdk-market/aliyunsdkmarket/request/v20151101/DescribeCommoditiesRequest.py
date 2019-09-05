@@ -23,7 +23,7 @@ from aliyunsdkmarket.endpoint import endpoint_data
 class DescribeCommoditiesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Market', '2015-11-01', 'DescribeCommodities')
+		RpcRequest.__init__(self, 'Market', '2015-11-01', 'DescribeCommodities','yunmarket')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -103,10 +103,10 @@ class DescribeCommoditiesRequest(RpcRequest):
 		self.add_query_param('CommodityAuditStatuses',CommodityAuditStatuses)
 
 	def get_Properties(self):
-		return self.get_body_params().get('Properties')
+		return self.get_query_params().get('Properties')
 
 	def set_Properties(self,Properties):
-		self.add_body_params('Properties', Properties)
+		self.add_query_param('Properties',Properties)
 
 	def get_CommodityCategoryIds(self):
 		return self.get_query_params().get('CommodityCategoryIds')

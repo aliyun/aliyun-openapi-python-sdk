@@ -23,7 +23,7 @@ from aliyunsdkmarket.endpoint import endpoint_data
 class NotifyContractEventRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Market', '2015-11-01', 'NotifyContractEvent')
+		RpcRequest.__init__(self, 'Market', '2015-11-01', 'NotifyContractEvent','yunmarket')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
