@@ -17,9 +17,8 @@
 # specific language governing permissions and limitations
 # under the License.
 
-from aliyunsdkcusanalytic_sc_online.endpoint import endpoint_data
 from aliyunsdkcore.request import RpcRequest
-
+from aliyunsdkcusanalytic_sc_online.endpoint import endpoint_data
 
 class GetHeatMapDataRequest(RpcRequest):
 

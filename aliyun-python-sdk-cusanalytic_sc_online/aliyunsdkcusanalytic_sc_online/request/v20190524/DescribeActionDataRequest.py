@@ -17,9 +17,8 @@
 # specific language governing permissions and limitations
 # under the License.
 
-from aliyunsdkcusanalytic_sc_online.endpoint import endpoint_data
 from aliyunsdkcore.request import RpcRequest
-
+from aliyunsdkcusanalytic_sc_online.endpoint import endpoint_data
 
 class DescribeActionDataRequest(RpcRequest):
 
@@ -37,18 +36,6 @@ class DescribeActionDataRequest(RpcRequest):
 	def set_TsEnd(self,TsEnd):
 		self.add_body_params('TsEnd', TsEnd)
 
-	def get_PageNo(self):
-		return self.get_body_params().get('PageNo')
-
-	def set_PageNo(self,PageNo):
-		self.add_body_params('PageNo', PageNo)
-
-	def get_TsStart(self):
-		return self.get_body_params().get('TsStart')
-
-	def set_TsStart(self,TsStart):
-		self.add_body_params('TsStart', TsStart)
-
 	def get_StoreId(self):
 		return self.get_body_params().get('StoreId')
 
@@ -60,3 +47,15 @@ class DescribeActionDataRequest(RpcRequest):
 
 	def set_PageLimit(self,PageLimit):
 		self.add_body_params('PageLimit', PageLimit)
+
+	def get_PageNo(self):
+		return self.get_body_params().get('PageNo')
+
+	def set_PageNo(self,PageNo):
+		self.add_body_params('PageNo', PageNo)
+
+	def get_TsStart(self):
+		return self.get_body_params().get('TsStart')
+
+	def set_TsStart(self,TsStart):
+		self.add_body_params('TsStart', TsStart)

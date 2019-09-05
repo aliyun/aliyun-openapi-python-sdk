@@ -17,9 +17,8 @@
 # specific language governing permissions and limitations
 # under the License.
 
-from aliyunsdkcusanalytic_sc_online.endpoint import endpoint_data
 from aliyunsdkcore.request import RpcRequest
-
+from aliyunsdkcusanalytic_sc_online.endpoint import endpoint_data
 
 class ListVisitorsRequest(RpcRequest):
 
@@ -30,12 +29,6 @@ class ListVisitorsRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_PkId(self):
-		return self.get_body_params().get('PkId')
-
-	def set_PkId(self,PkId):
-		self.add_body_params('PkId', PkId)
 
 	def get_Gender(self):
 		return self.get_body_params().get('Gender')
@@ -49,23 +42,23 @@ class ListVisitorsRequest(RpcRequest):
 	def set_UkId(self,UkId):
 		self.add_body_params('UkId', UkId)
 
-	def get_PageSize(self):
-		return self.get_body_params().get('PageSize')
-
-	def set_PageSize(self,PageSize):
-		self.add_body_params('PageSize', PageSize)
-
 	def get_LocationIds(self):
 		return self.get_body_params().get('LocationIds')
 
 	def set_LocationIds(self,LocationIds):
 		self.add_body_params('LocationIds', LocationIds)
 
-	def get_EndTime(self):
-		return self.get_body_params().get('EndTime')
+	def get_StartTime(self):
+		return self.get_body_params().get('StartTime')
 
-	def set_EndTime(self,EndTime):
-		self.add_body_params('EndTime', EndTime)
+	def set_StartTime(self,StartTime):
+		self.add_body_params('StartTime', StartTime)
+
+	def get_PageSize(self):
+		return self.get_body_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_body_params('PageSize', PageSize)
 
 	def get_EnterCount(self):
 		return self.get_body_params().get('EnterCount')
@@ -79,12 +72,6 @@ class ListVisitorsRequest(RpcRequest):
 	def set_PageIndex(self,PageIndex):
 		self.add_body_params('PageIndex', PageIndex)
 
-	def get_StartTime(self):
-		return self.get_body_params().get('StartTime')
-
-	def set_StartTime(self,StartTime):
-		self.add_body_params('StartTime', StartTime)
-
 	def get_AgeStart(self):
 		return self.get_body_params().get('AgeStart')
 
@@ -96,6 +83,18 @@ class ListVisitorsRequest(RpcRequest):
 
 	def set_AgeEnd(self,AgeEnd):
 		self.add_body_params('AgeEnd', AgeEnd)
+
+	def get_PkId(self):
+		return self.get_body_params().get('PkId')
+
+	def set_PkId(self,PkId):
+		self.add_body_params('PkId', PkId)
+
+	def get_EndTime(self):
+		return self.get_body_params().get('EndTime')
+
+	def set_EndTime(self,EndTime):
+		self.add_body_params('EndTime', EndTime)
 
 	def get_StoreIds(self):
 		return self.get_body_params().get('StoreIds')

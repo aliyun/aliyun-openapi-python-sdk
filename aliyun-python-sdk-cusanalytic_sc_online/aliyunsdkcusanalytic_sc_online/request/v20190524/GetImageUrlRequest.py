@@ -20,15 +20,21 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcusanalytic_sc_online.endpoint import endpoint_data
 
-class SearchPersonByImgRequest(RpcRequest):
+class GetImageUrlRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'cusanalytic_sc_online', '2019-05-24', 'SearchPersonByImg')
+		RpcRequest.__init__(self, 'cusanalytic_sc_online', '2019-05-24', 'GetImageUrl')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+
+	def get_OriginUrls(self):
+		return self.get_body_params().get('OriginUrls')
+
+	def set_OriginUrls(self,OriginUrls):
+		self.add_body_params('OriginUrls', OriginUrls)
 
 	def get_StoreId(self):
 		return self.get_body_params().get('StoreId')
@@ -36,8 +42,8 @@ class SearchPersonByImgRequest(RpcRequest):
 	def set_StoreId(self,StoreId):
 		self.add_body_params('StoreId', StoreId)
 
-	def get_ImgUrl(self):
-		return self.get_body_params().get('ImgUrl')
+	def get_ObjectKeys(self):
+		return self.get_body_params().get('ObjectKeys')
 
-	def set_ImgUrl(self,ImgUrl):
-		self.add_body_params('ImgUrl', ImgUrl)
+	def set_ObjectKeys(self,ObjectKeys):
+		self.add_body_params('ObjectKeys', ObjectKeys)

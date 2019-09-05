@@ -17,9 +17,8 @@
 # specific language governing permissions and limitations
 # under the License.
 
-from aliyunsdkcusanalytic_sc_online.endpoint import endpoint_data
 from aliyunsdkcore.request import RpcRequest
-
+from aliyunsdkcusanalytic_sc_online.endpoint import endpoint_data
 
 class GetEMapRequest(RpcRequest):
 
@@ -31,14 +30,14 @@ class GetEMapRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_LocationId(self):
-		return self.get_body_params().get('LocationId')
-
-	def set_LocationId(self,LocationId):
-		self.add_body_params('LocationId', LocationId)
-
 	def get_StoreId(self):
 		return self.get_body_params().get('StoreId')
 
 	def set_StoreId(self,StoreId):
 		self.add_body_params('StoreId', StoreId)
+
+	def get_LocationId(self):
+		return self.get_body_params().get('LocationId')
+
+	def set_LocationId(self,LocationId):
+		self.add_body_params('LocationId', LocationId)

@@ -17,9 +17,8 @@
 # specific language governing permissions and limitations
 # under the License.
 
-from aliyunsdkcusanalytic_sc_online.endpoint import endpoint_data
 from aliyunsdkcore.request import RpcRequest
-
+from aliyunsdkcusanalytic_sc_online.endpoint import endpoint_data
 
 class GetAnalyzePlaceDataRequest(RpcRequest):
 
@@ -43,24 +42,6 @@ class GetAnalyzePlaceDataRequest(RpcRequest):
 	def set_ParentAmount(self,ParentAmount):
 		self.add_body_params('ParentAmount', ParentAmount)
 
-	def get_EndDate(self):
-		return self.get_body_params().get('EndDate')
-
-	def set_EndDate(self,EndDate):
-		self.add_body_params('EndDate', EndDate)
-
-	def get_LocationId(self):
-		return self.get_body_params().get('LocationId')
-
-	def set_LocationId(self,LocationId):
-		self.add_body_params('LocationId', LocationId)
-
-	def get_ParentLocationIds(self):
-		return self.get_body_params().get('ParentLocationIds')
-
-	def set_ParentLocationIds(self,ParentLocationIds):
-		self.add_body_params('ParentLocationIds', ParentLocationIds)
-
 	def get_StartDate(self):
 		return self.get_body_params().get('StartDate')
 
@@ -78,3 +59,21 @@ class GetAnalyzePlaceDataRequest(RpcRequest):
 
 	def set_StoreId(self,StoreId):
 		self.add_body_params('StoreId', StoreId)
+
+	def get_EndDate(self):
+		return self.get_body_params().get('EndDate')
+
+	def set_EndDate(self,EndDate):
+		self.add_body_params('EndDate', EndDate)
+
+	def get_LocationId(self):
+		return self.get_body_params().get('LocationId')
+
+	def set_LocationId(self,LocationId):
+		self.add_body_params('LocationId', LocationId)
+
+	def get_ParentLocationIds(self):
+		return self.get_body_params().get('ParentLocationIds')
+
+	def set_ParentLocationIds(self,ParentLocationIds):
+		self.add_body_params('ParentLocationIds', ParentLocationIds)
