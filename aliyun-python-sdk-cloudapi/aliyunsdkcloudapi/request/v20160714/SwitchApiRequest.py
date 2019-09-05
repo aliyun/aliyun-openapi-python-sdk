@@ -36,12 +36,6 @@ class SwitchApiRequest(RpcRequest):
 	def set_StageName(self,StageName):
 		self.add_query_param('StageName',StageName)
 
-	def get_SecurityToken(self):
-		return self.get_query_params().get('SecurityToken')
-
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)
-
 	def get_GroupId(self):
 		return self.get_query_params().get('GroupId')
 
@@ -53,6 +47,12 @@ class SwitchApiRequest(RpcRequest):
 
 	def set_Description(self,Description):
 		self.add_query_param('Description',Description)
+
+	def get_SecurityToken(self):
+		return self.get_query_params().get('SecurityToken')
+
+	def set_SecurityToken(self,SecurityToken):
+		self.add_query_param('SecurityToken',SecurityToken)
 
 	def get_ApiId(self):
 		return self.get_query_params().get('ApiId')

@@ -30,6 +30,30 @@ class DescribeApisRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_Visibility(self):
+		return self.get_query_params().get('Visibility')
+
+	def set_Visibility(self,Visibility):
+		self.add_query_param('Visibility',Visibility)
+
+	def get_GroupId(self):
+		return self.get_query_params().get('GroupId')
+
+	def set_GroupId(self,GroupId):
+		self.add_query_param('GroupId',GroupId)
+
+	def get_EnableTagAuth(self):
+		return self.get_query_params().get('EnableTagAuth')
+
+	def set_EnableTagAuth(self,EnableTagAuth):
+		self.add_query_param('EnableTagAuth',EnableTagAuth)
+
+	def get_PageNumber(self):
+		return self.get_query_params().get('PageNumber')
+
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)
+
 	def get_ApiName(self):
 		return self.get_query_params().get('ApiName')
 
@@ -42,23 +66,11 @@ class DescribeApisRequest(RpcRequest):
 	def set_CatalogId(self,CatalogId):
 		self.add_query_param('CatalogId',CatalogId)
 
-	def get_Visibility(self):
-		return self.get_query_params().get('Visibility')
-
-	def set_Visibility(self,Visibility):
-		self.add_query_param('Visibility',Visibility)
-
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
 
 	def set_SecurityToken(self,SecurityToken):
 		self.add_query_param('SecurityToken',SecurityToken)
-
-	def get_GroupId(self):
-		return self.get_query_params().get('GroupId')
-
-	def set_GroupId(self,GroupId):
-		self.add_query_param('GroupId',GroupId)
 
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
@@ -77,20 +89,8 @@ class DescribeApisRequest(RpcRequest):
 				self.add_query_param('Tag.' + str(i + 1) + '.Key' , Tags[i].get('Key'))
 
 
-	def get_EnableTagAuth(self):
-		return self.get_query_params().get('EnableTagAuth')
-
-	def set_EnableTagAuth(self,EnableTagAuth):
-		self.add_query_param('EnableTagAuth',EnableTagAuth)
-
 	def get_ApiId(self):
 		return self.get_query_params().get('ApiId')
 
 	def set_ApiId(self,ApiId):
 		self.add_query_param('ApiId',ApiId)
-
-	def get_PageNumber(self):
-		return self.get_query_params().get('PageNumber')
-
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)

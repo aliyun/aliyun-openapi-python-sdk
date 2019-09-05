@@ -30,6 +30,12 @@ class ModifyAppRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_Description(self):
+		return self.get_query_params().get('Description')
+
+	def set_Description(self,Description):
+		self.add_query_param('Description',Description)
+
 	def get_AppName(self):
 		return self.get_query_params().get('AppName')
 
@@ -47,12 +53,6 @@ class ModifyAppRequest(RpcRequest):
 
 	def set_AppId(self,AppId):
 		self.add_query_param('AppId',AppId)
-
-	def get_Description(self):
-		return self.get_query_params().get('Description')
-
-	def set_Description(self,Description):
-		self.add_query_param('Description',Description)
 
 	def get_Tags(self):
 		return self.get_query_params().get('Tags')

@@ -44,6 +44,12 @@ class UntagResourcesRequest(RpcRequest):
 			if ResourceIds[i] is not None:
 				self.add_query_param('ResourceId.' + str(i + 1) , ResourceIds[i]);
 
+	def get_ResourceType(self):
+		return self.get_query_params().get('ResourceType')
+
+	def set_ResourceType(self,ResourceType):
+		self.add_query_param('ResourceType',ResourceType)
+
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
 
@@ -57,9 +63,3 @@ class UntagResourcesRequest(RpcRequest):
 		for i in range(len(TagKeys)):	
 			if TagKeys[i] is not None:
 				self.add_query_param('TagKey.' + str(i + 1) , TagKeys[i]);
-
-	def get_ResourceType(self):
-		return self.get_query_params().get('ResourceType')
-
-	def set_ResourceType(self,ResourceType):
-		self.add_query_param('ResourceType',ResourceType)

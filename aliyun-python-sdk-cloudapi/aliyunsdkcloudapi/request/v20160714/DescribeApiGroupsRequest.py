@@ -30,34 +30,11 @@ class DescribeApiGroupsRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_SecurityToken(self):
-		return self.get_query_params().get('SecurityToken')
-
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)
-
 	def get_GroupId(self):
 		return self.get_query_params().get('GroupId')
 
 	def set_GroupId(self,GroupId):
 		self.add_query_param('GroupId',GroupId)
-
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_Tags(self):
-		return self.get_query_params().get('Tags')
-
-	def set_Tags(self,Tags):
-		for i in range(len(Tags)):	
-			if Tags[i].get('Value') is not None:
-				self.add_query_param('Tag.' + str(i + 1) + '.Value' , Tags[i].get('Value'))
-			if Tags[i].get('Key') is not None:
-				self.add_query_param('Tag.' + str(i + 1) + '.Key' , Tags[i].get('Key'))
-
 
 	def get_EnableTagAuth(self):
 		return self.get_query_params().get('EnableTagAuth')
@@ -76,3 +53,25 @@ class DescribeApiGroupsRequest(RpcRequest):
 
 	def set_PageNumber(self,PageNumber):
 		self.add_query_param('PageNumber',PageNumber)
+
+	def get_SecurityToken(self):
+		return self.get_query_params().get('SecurityToken')
+
+	def set_SecurityToken(self,SecurityToken):
+		self.add_query_param('SecurityToken',SecurityToken)
+
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
+
+	def get_Tags(self):
+		return self.get_query_params().get('Tags')
+
+	def set_Tags(self,Tags):
+		for i in range(len(Tags)):	
+			if Tags[i].get('Value') is not None:
+				self.add_query_param('Tag.' + str(i + 1) + '.Value' , Tags[i].get('Value'))
+			if Tags[i].get('Key') is not None:
+				self.add_query_param('Tag.' + str(i + 1) + '.Key' , Tags[i].get('Key'))

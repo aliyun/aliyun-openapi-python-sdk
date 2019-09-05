@@ -30,12 +30,6 @@ class DescribeDomainsResolutionRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_SecurityToken(self):
-		return self.get_query_params().get('SecurityToken')
-
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)
-
 	def get_DomainNames(self):
 		return self.get_query_params().get('DomainNames')
 
@@ -47,3 +41,9 @@ class DescribeDomainsResolutionRequest(RpcRequest):
 
 	def set_GroupId(self,GroupId):
 		self.add_query_param('GroupId',GroupId)
+
+	def get_SecurityToken(self):
+		return self.get_query_params().get('SecurityToken')
+
+	def set_SecurityToken(self,SecurityToken):
+		self.add_query_param('SecurityToken',SecurityToken)

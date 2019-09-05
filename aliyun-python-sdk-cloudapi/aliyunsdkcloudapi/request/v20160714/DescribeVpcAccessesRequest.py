@@ -30,6 +30,12 @@ class DescribeVpcAccessesRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_PageNumber(self):
+		return self.get_query_params().get('PageNumber')
+
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)
+
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
 
@@ -41,9 +47,3 @@ class DescribeVpcAccessesRequest(RpcRequest):
 
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
-
-	def get_PageNumber(self):
-		return self.get_query_params().get('PageNumber')
-
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)

@@ -42,17 +42,17 @@ class AddTrafficSpecialControlRequest(RpcRequest):
 	def set_SpecialKey(self,SpecialKey):
 		self.add_query_param('SpecialKey',SpecialKey)
 
-	def get_SecurityToken(self):
-		return self.get_query_params().get('SecurityToken')
-
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)
-
 	def get_TrafficValue(self):
 		return self.get_query_params().get('TrafficValue')
 
 	def set_TrafficValue(self,TrafficValue):
 		self.add_query_param('TrafficValue',TrafficValue)
+
+	def get_SecurityToken(self):
+		return self.get_query_params().get('SecurityToken')
+
+	def set_SecurityToken(self,SecurityToken):
+		self.add_query_param('SecurityToken',SecurityToken)
 
 	def get_SpecialType(self):
 		return self.get_query_params().get('SpecialType')

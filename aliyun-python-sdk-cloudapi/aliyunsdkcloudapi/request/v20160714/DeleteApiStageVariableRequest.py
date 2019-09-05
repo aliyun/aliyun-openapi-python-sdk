@@ -30,6 +30,12 @@ class DeleteApiStageVariableRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_GroupId(self):
+		return self.get_query_params().get('GroupId')
+
+	def set_GroupId(self,GroupId):
+		self.add_query_param('GroupId',GroupId)
+
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
 
@@ -41,12 +47,6 @@ class DeleteApiStageVariableRequest(RpcRequest):
 
 	def set_VariableName(self,VariableName):
 		self.add_query_param('VariableName',VariableName)
-
-	def get_GroupId(self):
-		return self.get_query_params().get('GroupId')
-
-	def set_GroupId(self,GroupId):
-		self.add_query_param('GroupId',GroupId)
 
 	def get_StageId(self):
 		return self.get_query_params().get('StageId')

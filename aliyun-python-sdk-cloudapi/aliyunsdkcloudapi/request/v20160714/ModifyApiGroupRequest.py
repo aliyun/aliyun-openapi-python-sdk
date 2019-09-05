@@ -30,12 +30,6 @@ class ModifyApiGroupRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_SecurityToken(self):
-		return self.get_query_params().get('SecurityToken')
-
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)
-
 	def get_GroupId(self):
 		return self.get_query_params().get('GroupId')
 
@@ -48,6 +42,18 @@ class ModifyApiGroupRequest(RpcRequest):
 	def set_Description(self,Description):
 		self.add_query_param('Description',Description)
 
+	def get_GroupName(self):
+		return self.get_query_params().get('GroupName')
+
+	def set_GroupName(self,GroupName):
+		self.add_query_param('GroupName',GroupName)
+
+	def get_SecurityToken(self):
+		return self.get_query_params().get('SecurityToken')
+
+	def set_SecurityToken(self,SecurityToken):
+		self.add_query_param('SecurityToken',SecurityToken)
+
 	def get_Tags(self):
 		return self.get_query_params().get('Tags')
 
@@ -57,10 +63,3 @@ class ModifyApiGroupRequest(RpcRequest):
 				self.add_query_param('Tag.' + str(i + 1) + '.Value' , Tags[i].get('Value'))
 			if Tags[i].get('Key') is not None:
 				self.add_query_param('Tag.' + str(i + 1) + '.Key' , Tags[i].get('Key'))
-
-
-	def get_GroupName(self):
-		return self.get_query_params().get('GroupName')
-
-	def set_GroupName(self,GroupName):
-		self.add_query_param('GroupName',GroupName)

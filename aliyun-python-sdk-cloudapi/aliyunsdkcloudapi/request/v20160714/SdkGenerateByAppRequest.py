@@ -30,6 +30,12 @@ class SdkGenerateByAppRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_Language(self):
+		return self.get_query_params().get('Language')
+
+	def set_Language(self,Language):
+		self.add_query_param('Language',Language)
+
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
 
@@ -41,9 +47,3 @@ class SdkGenerateByAppRequest(RpcRequest):
 
 	def set_AppId(self,AppId):
 		self.add_query_param('AppId',AppId)
-
-	def get_Language(self):
-		return self.get_query_params().get('Language')
-
-	def set_Language(self,Language):
-		self.add_query_param('Language',Language)

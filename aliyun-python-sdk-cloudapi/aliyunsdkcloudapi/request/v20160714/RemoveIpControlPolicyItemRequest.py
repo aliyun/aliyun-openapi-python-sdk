@@ -30,6 +30,12 @@ class RemoveIpControlPolicyItemRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_PolicyItemIds(self):
+		return self.get_query_params().get('PolicyItemIds')
+
+	def set_PolicyItemIds(self,PolicyItemIds):
+		self.add_query_param('PolicyItemIds',PolicyItemIds)
+
 	def get_IpControlId(self):
 		return self.get_query_params().get('IpControlId')
 
@@ -41,9 +47,3 @@ class RemoveIpControlPolicyItemRequest(RpcRequest):
 
 	def set_SecurityToken(self,SecurityToken):
 		self.add_query_param('SecurityToken',SecurityToken)
-
-	def get_PolicyItemIds(self):
-		return self.get_query_params().get('PolicyItemIds')
-
-	def set_PolicyItemIds(self,PolicyItemIds):
-		self.add_query_param('PolicyItemIds',PolicyItemIds)

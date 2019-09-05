@@ -42,17 +42,17 @@ class SetTrafficControlApisRequest(RpcRequest):
 	def set_StageName(self,StageName):
 		self.add_query_param('StageName',StageName)
 
-	def get_SecurityToken(self):
-		return self.get_query_params().get('SecurityToken')
-
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)
-
 	def get_GroupId(self):
 		return self.get_query_params().get('GroupId')
 
 	def set_GroupId(self,GroupId):
 		self.add_query_param('GroupId',GroupId)
+
+	def get_SecurityToken(self):
+		return self.get_query_params().get('SecurityToken')
+
+	def set_SecurityToken(self,SecurityToken):
+		self.add_query_param('SecurityToken',SecurityToken)
 
 	def get_ApiIds(self):
 		return self.get_query_params().get('ApiIds')

@@ -30,12 +30,6 @@ class DescribeApiErrorDataRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_SecurityToken(self):
-		return self.get_query_params().get('SecurityToken')
-
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)
-
 	def get_GroupId(self):
 		return self.get_query_params().get('GroupId')
 
@@ -53,6 +47,12 @@ class DescribeApiErrorDataRequest(RpcRequest):
 
 	def set_StartTime(self,StartTime):
 		self.add_query_param('StartTime',StartTime)
+
+	def get_SecurityToken(self):
+		return self.get_query_params().get('SecurityToken')
+
+	def set_SecurityToken(self,SecurityToken):
+		self.add_query_param('SecurityToken',SecurityToken)
 
 	def get_ApiId(self):
 		return self.get_query_params().get('ApiId')

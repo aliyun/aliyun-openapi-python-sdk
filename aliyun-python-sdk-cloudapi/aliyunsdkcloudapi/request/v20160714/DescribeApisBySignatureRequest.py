@@ -30,18 +30,6 @@ class DescribeApisBySignatureRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_SecurityToken(self):
-		return self.get_query_params().get('SecurityToken')
-
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)
-
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
 	def get_SignatureId(self):
 		return self.get_query_params().get('SignatureId')
 
@@ -53,3 +41,15 @@ class DescribeApisBySignatureRequest(RpcRequest):
 
 	def set_PageNumber(self,PageNumber):
 		self.add_query_param('PageNumber',PageNumber)
+
+	def get_SecurityToken(self):
+		return self.get_query_params().get('SecurityToken')
+
+	def set_SecurityToken(self,SecurityToken):
+		self.add_query_param('SecurityToken',SecurityToken)
+
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)

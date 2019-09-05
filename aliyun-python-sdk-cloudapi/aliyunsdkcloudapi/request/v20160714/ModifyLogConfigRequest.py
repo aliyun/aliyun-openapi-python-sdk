@@ -36,6 +36,12 @@ class ModifyLogConfigRequest(RpcRequest):
 	def set_SlsLogStore(self,SlsLogStore):
 		self.add_query_param('SlsLogStore',SlsLogStore)
 
+	def get_SlsProject(self):
+		return self.get_query_params().get('SlsProject')
+
+	def set_SlsProject(self,SlsProject):
+		self.add_query_param('SlsProject',SlsProject)
+
 	def get_LogType(self):
 		return self.get_query_params().get('LogType')
 
@@ -47,9 +53,3 @@ class ModifyLogConfigRequest(RpcRequest):
 
 	def set_SecurityToken(self,SecurityToken):
 		self.add_query_param('SecurityToken',SecurityToken)
-
-	def get_SlsProject(self):
-		return self.get_query_params().get('SlsProject')
-
-	def set_SlsProject(self,SlsProject):
-		self.add_query_param('SlsProject',SlsProject)

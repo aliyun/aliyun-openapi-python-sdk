@@ -30,26 +30,26 @@ class CreateSignatureRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_SecurityToken(self):
-		return self.get_query_params().get('SecurityToken')
-
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)
-
 	def get_SignatureName(self):
 		return self.get_query_params().get('SignatureName')
 
 	def set_SignatureName(self,SignatureName):
 		self.add_query_param('SignatureName',SignatureName)
 
-	def get_SignatureKey(self):
-		return self.get_query_params().get('SignatureKey')
-
-	def set_SignatureKey(self,SignatureKey):
-		self.add_query_param('SignatureKey',SignatureKey)
-
 	def get_SignatureSecret(self):
 		return self.get_query_params().get('SignatureSecret')
 
 	def set_SignatureSecret(self,SignatureSecret):
 		self.add_query_param('SignatureSecret',SignatureSecret)
+
+	def get_SecurityToken(self):
+		return self.get_query_params().get('SecurityToken')
+
+	def set_SecurityToken(self,SecurityToken):
+		self.add_query_param('SecurityToken',SecurityToken)
+
+	def get_SignatureKey(self):
+		return self.get_query_params().get('SignatureKey')
+
+	def set_SignatureKey(self,SignatureKey):
+		self.add_query_param('SignatureKey',SignatureKey)

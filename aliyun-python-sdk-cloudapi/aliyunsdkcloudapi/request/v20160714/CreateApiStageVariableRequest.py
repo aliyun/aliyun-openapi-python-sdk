@@ -36,18 +36,6 @@ class CreateApiStageVariableRequest(RpcRequest):
 	def set_SupportRoute(self,SupportRoute):
 		self.add_query_param('SupportRoute',SupportRoute)
 
-	def get_SecurityToken(self):
-		return self.get_query_params().get('SecurityToken')
-
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)
-
-	def get_VariableName(self):
-		return self.get_query_params().get('VariableName')
-
-	def set_VariableName(self,VariableName):
-		self.add_query_param('VariableName',VariableName)
-
 	def get_VariableValue(self):
 		return self.get_query_params().get('VariableValue')
 
@@ -65,6 +53,18 @@ class CreateApiStageVariableRequest(RpcRequest):
 
 	def set_StageRouteModel(self,StageRouteModel):
 		self.add_query_param('StageRouteModel',StageRouteModel)
+
+	def get_SecurityToken(self):
+		return self.get_query_params().get('SecurityToken')
+
+	def set_SecurityToken(self,SecurityToken):
+		self.add_query_param('SecurityToken',SecurityToken)
+
+	def get_VariableName(self):
+		return self.get_query_params().get('VariableName')
+
+	def set_VariableName(self,VariableName):
+		self.add_query_param('VariableName',VariableName)
 
 	def get_StageId(self):
 		return self.get_query_params().get('StageId')

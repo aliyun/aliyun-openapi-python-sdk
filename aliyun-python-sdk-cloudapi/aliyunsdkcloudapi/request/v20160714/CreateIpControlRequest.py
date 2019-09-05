@@ -30,23 +30,11 @@ class CreateIpControlRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_SecurityToken(self):
-		return self.get_query_params().get('SecurityToken')
-
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)
-
 	def get_IpControlName(self):
 		return self.get_query_params().get('IpControlName')
 
 	def set_IpControlName(self,IpControlName):
 		self.add_query_param('IpControlName',IpControlName)
-
-	def get_IpControlType(self):
-		return self.get_query_params().get('IpControlType')
-
-	def set_IpControlType(self,IpControlType):
-		self.add_query_param('IpControlType',IpControlType)
 
 	def get_IpControlPolicyss(self):
 		return self.get_query_params().get('IpControlPolicyss')
@@ -64,3 +52,15 @@ class CreateIpControlRequest(RpcRequest):
 
 	def set_Description(self,Description):
 		self.add_query_param('Description',Description)
+
+	def get_SecurityToken(self):
+		return self.get_query_params().get('SecurityToken')
+
+	def set_SecurityToken(self,SecurityToken):
+		self.add_query_param('SecurityToken',SecurityToken)
+
+	def get_IpControlType(self):
+		return self.get_query_params().get('IpControlType')
+
+	def set_IpControlType(self,IpControlType):
+		self.add_query_param('IpControlType',IpControlType)

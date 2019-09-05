@@ -30,6 +30,12 @@ class CreateAppRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_Description(self):
+		return self.get_query_params().get('Description')
+
+	def set_Description(self,Description):
+		self.add_query_param('Description',Description)
+
 	def get_AppName(self):
 		return self.get_query_params().get('AppName')
 
@@ -41,12 +47,6 @@ class CreateAppRequest(RpcRequest):
 
 	def set_SecurityToken(self,SecurityToken):
 		self.add_query_param('SecurityToken',SecurityToken)
-
-	def get_Description(self):
-		return self.get_query_params().get('Description')
-
-	def set_Description(self,Description):
-		self.add_query_param('Description',Description)
 
 	def get_Tags(self):
 		return self.get_query_params().get('Tags')

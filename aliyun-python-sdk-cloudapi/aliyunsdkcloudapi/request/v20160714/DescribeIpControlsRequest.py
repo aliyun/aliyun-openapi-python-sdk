@@ -30,6 +30,18 @@ class DescribeIpControlsRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_IpControlName(self):
+		return self.get_query_params().get('IpControlName')
+
+	def set_IpControlName(self,IpControlName):
+		self.add_query_param('IpControlName',IpControlName)
+
+	def get_PageNumber(self):
+		return self.get_query_params().get('PageNumber')
+
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)
+
 	def get_IpControlId(self):
 		return self.get_query_params().get('IpControlId')
 
@@ -42,12 +54,6 @@ class DescribeIpControlsRequest(RpcRequest):
 	def set_SecurityToken(self,SecurityToken):
 		self.add_query_param('SecurityToken',SecurityToken)
 
-	def get_IpControlName(self):
-		return self.get_query_params().get('IpControlName')
-
-	def set_IpControlName(self,IpControlName):
-		self.add_query_param('IpControlName',IpControlName)
-
 	def get_IpControlType(self):
 		return self.get_query_params().get('IpControlType')
 
@@ -59,9 +65,3 @@ class DescribeIpControlsRequest(RpcRequest):
 
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
-
-	def get_PageNumber(self):
-		return self.get_query_params().get('PageNumber')
-
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)

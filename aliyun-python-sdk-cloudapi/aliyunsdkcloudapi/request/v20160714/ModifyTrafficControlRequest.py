@@ -36,29 +36,11 @@ class ModifyTrafficControlRequest(RpcRequest):
 	def set_TrafficControlId(self,TrafficControlId):
 		self.add_query_param('TrafficControlId',TrafficControlId)
 
-	def get_ApiDefault(self):
-		return self.get_query_params().get('ApiDefault')
-
-	def set_ApiDefault(self,ApiDefault):
-		self.add_query_param('ApiDefault',ApiDefault)
-
-	def get_SecurityToken(self):
-		return self.get_query_params().get('SecurityToken')
-
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)
-
 	def get_TrafficControlName(self):
 		return self.get_query_params().get('TrafficControlName')
 
 	def set_TrafficControlName(self,TrafficControlName):
 		self.add_query_param('TrafficControlName',TrafficControlName)
-
-	def get_TrafficControlUnit(self):
-		return self.get_query_params().get('TrafficControlUnit')
-
-	def set_TrafficControlUnit(self,TrafficControlUnit):
-		self.add_query_param('TrafficControlUnit',TrafficControlUnit)
 
 	def get_Description(self):
 		return self.get_query_params().get('Description')
@@ -71,6 +53,24 @@ class ModifyTrafficControlRequest(RpcRequest):
 
 	def set_UserDefault(self,UserDefault):
 		self.add_query_param('UserDefault',UserDefault)
+
+	def get_ApiDefault(self):
+		return self.get_query_params().get('ApiDefault')
+
+	def set_ApiDefault(self,ApiDefault):
+		self.add_query_param('ApiDefault',ApiDefault)
+
+	def get_SecurityToken(self):
+		return self.get_query_params().get('SecurityToken')
+
+	def set_SecurityToken(self,SecurityToken):
+		self.add_query_param('SecurityToken',SecurityToken)
+
+	def get_TrafficControlUnit(self):
+		return self.get_query_params().get('TrafficControlUnit')
+
+	def set_TrafficControlUnit(self,TrafficControlUnit):
+		self.add_query_param('TrafficControlUnit',TrafficControlUnit)
 
 	def get_AppDefault(self):
 		return self.get_query_params().get('AppDefault')

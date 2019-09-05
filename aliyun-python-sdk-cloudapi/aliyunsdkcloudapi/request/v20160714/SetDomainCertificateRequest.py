@@ -30,12 +30,6 @@ class SetDomainCertificateRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_SecurityToken(self):
-		return self.get_query_params().get('SecurityToken')
-
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)
-
 	def get_CertificatePrivateKey(self):
 		return self.get_query_params().get('CertificatePrivateKey')
 
@@ -54,14 +48,20 @@ class SetDomainCertificateRequest(RpcRequest):
 	def set_DomainName(self,DomainName):
 		self.add_query_param('DomainName',DomainName)
 
-	def get_CertificateName(self):
-		return self.get_query_params().get('CertificateName')
-
-	def set_CertificateName(self,CertificateName):
-		self.add_query_param('CertificateName',CertificateName)
-
 	def get_CertificateBody(self):
 		return self.get_query_params().get('CertificateBody')
 
 	def set_CertificateBody(self,CertificateBody):
 		self.add_query_param('CertificateBody',CertificateBody)
+
+	def get_SecurityToken(self):
+		return self.get_query_params().get('SecurityToken')
+
+	def set_SecurityToken(self,SecurityToken):
+		self.add_query_param('SecurityToken',SecurityToken)
+
+	def get_CertificateName(self):
+		return self.get_query_params().get('CertificateName')
+
+	def set_CertificateName(self,CertificateName):
+		self.add_query_param('CertificateName',CertificateName)
