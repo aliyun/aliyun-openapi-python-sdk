@@ -36,6 +36,18 @@ class DeleteRouteEntryRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_NextHopId(self):
+		return self.get_query_params().get('NextHopId')
+
+	def set_NextHopId(self,NextHopId):
+		self.add_query_param('NextHopId',NextHopId)
+
+	def get_RouteTableId(self):
+		return self.get_query_params().get('RouteTableId')
+
+	def set_RouteTableId(self,RouteTableId):
+		self.add_query_param('RouteTableId',RouteTableId)
+
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -54,12 +66,6 @@ class DeleteRouteEntryRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
-	def get_NextHopId(self):
-		return self.get_query_params().get('NextHopId')
-
-	def set_NextHopId(self,NextHopId):
-		self.add_query_param('NextHopId',NextHopId)
-
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
@@ -75,10 +81,3 @@ class DeleteRouteEntryRequest(RpcRequest):
 				self.add_query_param('NextHopList.' + str(i + 1) + '.NextHopId' , NextHopLists[i].get('NextHopId'))
 			if NextHopLists[i].get('NextHopType') is not None:
 				self.add_query_param('NextHopList.' + str(i + 1) + '.NextHopType' , NextHopLists[i].get('NextHopType'))
-
-
-	def get_RouteTableId(self):
-		return self.get_query_params().get('RouteTableId')
-
-	def set_RouteTableId(self,RouteTableId):
-		self.add_query_param('RouteTableId',RouteTableId)

@@ -36,35 +36,11 @@ class DescribeDeploymentSetsRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
-
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_OwnerAccount(self):
-		return self.get_query_params().get('OwnerAccount')
-
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
-
 	def get_NetworkType(self):
 		return self.get_query_params().get('NetworkType')
 
 	def set_NetworkType(self,NetworkType):
 		self.add_query_param('NetworkType',NetworkType)
-
-	def get_DeploymentSetName(self):
-		return self.get_query_params().get('DeploymentSetName')
-
-	def set_DeploymentSetName(self,DeploymentSetName):
-		self.add_query_param('DeploymentSetName',DeploymentSetName)
-
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
 
 	def get_PageNumber(self):
 		return self.get_query_params().get('PageNumber')
@@ -78,6 +54,36 @@ class DescribeDeploymentSetsRequest(RpcRequest):
 	def set_DeploymentSetIds(self,DeploymentSetIds):
 		self.add_query_param('DeploymentSetIds',DeploymentSetIds)
 
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
+
+	def get_ResourceOwnerAccount(self):
+		return self.get_query_params().get('ResourceOwnerAccount')
+
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+
+	def get_OwnerAccount(self):
+		return self.get_query_params().get('OwnerAccount')
+
+	def set_OwnerAccount(self,OwnerAccount):
+		self.add_query_param('OwnerAccount',OwnerAccount)
+
+	def get_DeploymentSetName(self):
+		return self.get_query_params().get('DeploymentSetName')
+
+	def set_DeploymentSetName(self,DeploymentSetName):
+		self.add_query_param('DeploymentSetName',DeploymentSetName)
+
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
+
 	def get_Granularity(self):
 		return self.get_query_params().get('Granularity')
 
@@ -89,12 +95,6 @@ class DescribeDeploymentSetsRequest(RpcRequest):
 
 	def set_Domain(self,Domain):
 		self.add_query_param('Domain',Domain)
-
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
 
 	def get_Strategy(self):
 		return self.get_query_params().get('Strategy')

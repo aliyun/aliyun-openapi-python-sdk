@@ -30,17 +30,17 @@ class DescribeInstanceTypeFamiliesRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_Generation(self):
-		return self.get_query_params().get('Generation')
-
-	def set_Generation(self,Generation):
-		self.add_query_param('Generation',Generation)
-
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+
+	def get_Generation(self):
+		return self.get_query_params().get('Generation')
+
+	def set_Generation(self,Generation):
+		self.add_query_param('Generation',Generation)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')

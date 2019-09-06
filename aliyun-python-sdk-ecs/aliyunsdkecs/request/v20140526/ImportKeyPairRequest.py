@@ -36,6 +36,12 @@ class ImportKeyPairRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_KeyPairName(self):
+		return self.get_query_params().get('KeyPairName')
+
+	def set_KeyPairName(self,KeyPairName):
+		self.add_query_param('KeyPairName',KeyPairName)
+
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -47,12 +53,6 @@ class ImportKeyPairRequest(RpcRequest):
 
 	def set_PublicKeyBody(self,PublicKeyBody):
 		self.add_query_param('PublicKeyBody',PublicKeyBody)
-
-	def get_KeyPairName(self):
-		return self.get_query_params().get('KeyPairName')
-
-	def set_KeyPairName(self,KeyPairName):
-		self.add_query_param('KeyPairName',KeyPairName)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')

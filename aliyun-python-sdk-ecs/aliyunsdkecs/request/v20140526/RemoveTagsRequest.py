@@ -36,6 +36,17 @@ class RemoveTagsRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_Tags(self):
+		return self.get_query_params().get('Tags')
+
+	def set_Tags(self,Tags):
+		for i in range(len(Tags)):	
+			if Tags[i].get('Value') is not None:
+				self.add_query_param('Tag.' + str(i + 1) + '.Value' , Tags[i].get('Value'))
+			if Tags[i].get('Key') is not None:
+				self.add_query_param('Tag.' + str(i + 1) + '.Key' , Tags[i].get('Key'))
+
+
 	def get_ResourceId(self):
 		return self.get_query_params().get('ResourceId')
 
@@ -47,17 +58,6 @@ class RemoveTagsRequest(RpcRequest):
 
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_Tags(self):
-		return self.get_query_params().get('Tags')
-
-	def set_Tags(self,Tags):
-		for i in range(len(Tags)):	
-			if Tags[i].get('Value') is not None:
-				self.add_query_param('Tag.' + str(i + 1) + '.Value' , Tags[i].get('Value'))
-			if Tags[i].get('Key') is not None:
-				self.add_query_param('Tag.' + str(i + 1) + '.Key' , Tags[i].get('Key'))
-
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')

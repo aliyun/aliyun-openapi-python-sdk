@@ -42,27 +42,11 @@ class ModifyImageSharePermissionRequest(RpcRequest):
 	def set_ImageId(self,ImageId):
 		self.add_query_param('ImageId',ImageId)
 
-	def get_AddAccounts(self):
-		return self.get_query_params().get('AddAccounts')
-
-	def set_AddAccounts(self,AddAccounts):
-		for i in range(len(AddAccounts)):	
-			if AddAccounts[i] is not None:
-				self.add_query_param('AddAccount.' + str(i + 1) , AddAccounts[i]);
-
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_RemoveAccounts(self):
-		return self.get_query_params().get('RemoveAccounts')
-
-	def set_RemoveAccounts(self,RemoveAccounts):
-		for i in range(len(RemoveAccounts)):	
-			if RemoveAccounts[i] is not None:
-				self.add_query_param('RemoveAccount.' + str(i + 1) , RemoveAccounts[i]);
 
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
@@ -75,3 +59,19 @@ class ModifyImageSharePermissionRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_AddAccounts(self):
+		return self.get_query_params().get('AddAccounts')
+
+	def set_AddAccounts(self,AddAccounts):
+		for i in range(len(AddAccounts)):	
+			if AddAccounts[i] is not None:
+				self.add_query_param('AddAccount.' + str(i + 1) , AddAccounts[i]);
+
+	def get_RemoveAccounts(self):
+		return self.get_query_params().get('RemoveAccounts')
+
+	def set_RemoveAccounts(self,RemoveAccounts):
+		for i in range(len(RemoveAccounts)):	
+			if RemoveAccounts[i] is not None:
+				self.add_query_param('RemoveAccount.' + str(i + 1) , RemoveAccounts[i]);

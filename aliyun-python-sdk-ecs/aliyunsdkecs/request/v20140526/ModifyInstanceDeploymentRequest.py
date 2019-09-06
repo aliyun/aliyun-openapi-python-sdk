@@ -84,6 +84,12 @@ class ModifyInstanceDeploymentRequest(RpcRequest):
 	def set_Force(self,Force):
 		self.add_query_param('Force',Force)
 
+	def get_MigrationType(self):
+		return self.get_query_params().get('MigrationType')
+
+	def set_MigrationType(self,MigrationType):
+		self.add_query_param('MigrationType',MigrationType)
+
 	def get_Affinity(self):
 		return self.get_query_params().get('Affinity')
 

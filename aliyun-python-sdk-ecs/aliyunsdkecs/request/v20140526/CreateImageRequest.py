@@ -57,35 +57,17 @@ class CreateImageRequest(RpcRequest):
 	def set_SnapshotId(self,SnapshotId):
 		self.add_query_param('SnapshotId',SnapshotId)
 
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
-
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
 	def get_ClientToken(self):
 		return self.get_query_params().get('ClientToken')
 
 	def set_ClientToken(self,ClientToken):
 		self.add_query_param('ClientToken',ClientToken)
 
-	def get_OwnerAccount(self):
-		return self.get_query_params().get('OwnerAccount')
-
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
-
 	def get_Description(self):
 		return self.get_query_params().get('Description')
 
 	def set_Description(self,Description):
 		self.add_query_param('Description',Description)
-
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
 
 	def get_Platform(self):
 		return self.get_query_params().get('Platform')
@@ -99,23 +81,11 @@ class CreateImageRequest(RpcRequest):
 	def set_ResourceGroupId(self,ResourceGroupId):
 		self.add_query_param('ResourceGroupId',ResourceGroupId)
 
-	def get_InstanceId(self):
-		return self.get_query_params().get('InstanceId')
-
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
-
 	def get_ImageName(self):
 		return self.get_query_params().get('ImageName')
 
 	def set_ImageName(self,ImageName):
 		self.add_query_param('ImageName',ImageName)
-
-	def get_ImageVersion(self):
-		return self.get_query_params().get('ImageVersion')
-
-	def set_ImageVersion(self,ImageVersion):
-		self.add_query_param('ImageVersion',ImageVersion)
 
 	def get_Tags(self):
 		return self.get_query_params().get('Tags')
@@ -133,3 +103,33 @@ class CreateImageRequest(RpcRequest):
 
 	def set_Architecture(self,Architecture):
 		self.add_query_param('Architecture',Architecture)
+
+	def get_ResourceOwnerAccount(self):
+		return self.get_query_params().get('ResourceOwnerAccount')
+
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+
+	def get_OwnerAccount(self):
+		return self.get_query_params().get('OwnerAccount')
+
+	def set_OwnerAccount(self,OwnerAccount):
+		self.add_query_param('OwnerAccount',OwnerAccount)
+
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
+
+	def get_InstanceId(self):
+		return self.get_query_params().get('InstanceId')
+
+	def set_InstanceId(self,InstanceId):
+		self.add_query_param('InstanceId',InstanceId)
+
+	def get_ImageVersion(self):
+		return self.get_query_params().get('ImageVersion')
+
+	def set_ImageVersion(self,ImageVersion):
+		self.add_query_param('ImageVersion',ImageVersion)

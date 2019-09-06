@@ -42,6 +42,12 @@ class ExportImageRequest(RpcRequest):
 	def set_ImageId(self,ImageId):
 		self.add_query_param('ImageId',ImageId)
 
+	def get_ImageFormat(self):
+		return self.get_query_params().get('ImageFormat')
+
+	def set_ImageFormat(self,ImageFormat):
+		self.add_query_param('ImageFormat',ImageFormat)
+
 	def get_OSSBucket(self):
 		return self.get_query_params().get('OSSBucket')
 
@@ -53,12 +59,6 @@ class ExportImageRequest(RpcRequest):
 
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_OSSPrefix(self):
-		return self.get_query_params().get('OSSPrefix')
-
-	def set_OSSPrefix(self,OSSPrefix):
-		self.add_query_param('OSSPrefix',OSSPrefix)
 
 	def get_RoleName(self):
 		return self.get_query_params().get('RoleName')
@@ -72,8 +72,8 @@ class ExportImageRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_ImageFormat(self):
-		return self.get_query_params().get('ImageFormat')
+	def get_OSSPrefix(self):
+		return self.get_query_params().get('OSSPrefix')
 
-	def set_ImageFormat(self,ImageFormat):
-		self.add_query_param('ImageFormat',ImageFormat)
+	def set_OSSPrefix(self,OSSPrefix):
+		self.add_query_param('OSSPrefix',OSSPrefix)

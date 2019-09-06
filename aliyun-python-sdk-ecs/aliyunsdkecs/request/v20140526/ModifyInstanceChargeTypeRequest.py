@@ -36,6 +36,24 @@ class ModifyInstanceChargeTypeRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_ClientToken(self):
+		return self.get_query_params().get('ClientToken')
+
+	def set_ClientToken(self,ClientToken):
+		self.add_query_param('ClientToken',ClientToken)
+
+	def get_IsDetailFee(self):
+		return self.get_query_params().get('IsDetailFee')
+
+	def set_IsDetailFee(self,IsDetailFee):
+		self.add_query_param('IsDetailFee',IsDetailFee)
+
+	def get_InstanceChargeType(self):
+		return self.get_query_params().get('InstanceChargeType')
+
+	def set_InstanceChargeType(self,InstanceChargeType):
+		self.add_query_param('InstanceChargeType',InstanceChargeType)
+
 	def get_Period(self):
 		return self.get_query_params().get('Period')
 
@@ -66,12 +84,6 @@ class ModifyInstanceChargeTypeRequest(RpcRequest):
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
-	def get_ClientToken(self):
-		return self.get_query_params().get('ClientToken')
-
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
-
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
 
@@ -95,15 +107,3 @@ class ModifyInstanceChargeTypeRequest(RpcRequest):
 
 	def set_InstanceIds(self,InstanceIds):
 		self.add_query_param('InstanceIds',InstanceIds)
-
-	def get_IsDetailFee(self):
-		return self.get_query_params().get('IsDetailFee')
-
-	def set_IsDetailFee(self,IsDetailFee):
-		self.add_query_param('IsDetailFee',IsDetailFee)
-
-	def get_InstanceChargeType(self):
-		return self.get_query_params().get('InstanceChargeType')
-
-	def set_InstanceChargeType(self,InstanceChargeType):
-		self.add_query_param('InstanceChargeType',InstanceChargeType)

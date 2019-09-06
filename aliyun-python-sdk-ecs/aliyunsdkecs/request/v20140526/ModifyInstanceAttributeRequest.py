@@ -36,41 +36,17 @@ class ModifyInstanceAttributeRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
-
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
 	def get_Recyclable(self):
 		return self.get_query_params().get('Recyclable')
 
 	def set_Recyclable(self,Recyclable):
 		self.add_query_param('Recyclable',Recyclable)
 
-	def get_OwnerAccount(self):
-		return self.get_query_params().get('OwnerAccount')
-
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
-
 	def get_Description(self):
 		return self.get_query_params().get('Description')
 
 	def set_Description(self,Description):
 		self.add_query_param('Description',Description)
-
-	def get_CreditSpecification(self):
-		return self.get_query_params().get('CreditSpecification')
-
-	def set_CreditSpecification(self,CreditSpecification):
-		self.add_query_param('CreditSpecification',CreditSpecification)
-
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
 
 	def get_DeletionProtection(self):
 		return self.get_query_params().get('DeletionProtection')
@@ -95,6 +71,30 @@ class ModifyInstanceAttributeRequest(RpcRequest):
 
 	def set_HostName(self,HostName):
 		self.add_query_param('HostName',HostName)
+
+	def get_ResourceOwnerAccount(self):
+		return self.get_query_params().get('ResourceOwnerAccount')
+
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+
+	def get_OwnerAccount(self):
+		return self.get_query_params().get('OwnerAccount')
+
+	def set_OwnerAccount(self,OwnerAccount):
+		self.add_query_param('OwnerAccount',OwnerAccount)
+
+	def get_CreditSpecification(self):
+		return self.get_query_params().get('CreditSpecification')
+
+	def set_CreditSpecification(self,CreditSpecification):
+		self.add_query_param('CreditSpecification',CreditSpecification)
+
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
 
 	def get_InstanceId(self):
 		return self.get_query_params().get('InstanceId')

@@ -36,6 +36,12 @@ class DescribeRegionsRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_InstanceChargeType(self):
+		return self.get_query_params().get('InstanceChargeType')
+
+	def set_InstanceChargeType(self,InstanceChargeType):
+		self.add_query_param('InstanceChargeType',InstanceChargeType)
+
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -48,26 +54,20 @@ class DescribeRegionsRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
-	def get_AcceptLanguage(self):
-		return self.get_query_params().get('AcceptLanguage')
-
-	def set_AcceptLanguage(self,AcceptLanguage):
-		self.add_query_param('AcceptLanguage',AcceptLanguage)
-
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_InstanceChargeType(self):
-		return self.get_query_params().get('InstanceChargeType')
-
-	def set_InstanceChargeType(self,InstanceChargeType):
-		self.add_query_param('InstanceChargeType',InstanceChargeType)
-
 	def get_ResourceType(self):
 		return self.get_query_params().get('ResourceType')
 
 	def set_ResourceType(self,ResourceType):
 		self.add_query_param('ResourceType',ResourceType)
+
+	def get_AcceptLanguage(self):
+		return self.get_query_params().get('AcceptLanguage')
+
+	def set_AcceptLanguage(self,AcceptLanguage):
+		self.add_query_param('AcceptLanguage',AcceptLanguage)

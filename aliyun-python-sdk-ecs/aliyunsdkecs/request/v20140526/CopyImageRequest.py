@@ -42,6 +42,23 @@ class CopyImageRequest(RpcRequest):
 	def set_ImageId(self,ImageId):
 		self.add_query_param('ImageId',ImageId)
 
+	def get_DestinationRegionId(self):
+		return self.get_query_params().get('DestinationRegionId')
+
+	def set_DestinationRegionId(self,DestinationRegionId):
+		self.add_query_param('DestinationRegionId',DestinationRegionId)
+
+	def get_Tags(self):
+		return self.get_query_params().get('Tags')
+
+	def set_Tags(self,Tags):
+		for i in range(len(Tags)):	
+			if Tags[i].get('Value') is not None:
+				self.add_query_param('Tag.' + str(i + 1) + '.Value' , Tags[i].get('Value'))
+			if Tags[i].get('Key') is not None:
+				self.add_query_param('Tag.' + str(i + 1) + '.Key' , Tags[i].get('Key'))
+
+
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -53,12 +70,6 @@ class CopyImageRequest(RpcRequest):
 
 	def set_DestinationImageName(self,DestinationImageName):
 		self.add_query_param('DestinationImageName',DestinationImageName)
-
-	def get_DestinationRegionId(self):
-		return self.get_query_params().get('DestinationRegionId')
-
-	def set_DestinationRegionId(self,DestinationRegionId):
-		self.add_query_param('DestinationRegionId',DestinationRegionId)
 
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
@@ -77,17 +88,6 @@ class CopyImageRequest(RpcRequest):
 
 	def set_Encrypted(self,Encrypted):
 		self.add_query_param('Encrypted',Encrypted)
-
-	def get_Tags(self):
-		return self.get_query_params().get('Tags')
-
-	def set_Tags(self,Tags):
-		for i in range(len(Tags)):	
-			if Tags[i].get('Value') is not None:
-				self.add_query_param('Tag.' + str(i + 1) + '.Value' , Tags[i].get('Value'))
-			if Tags[i].get('Key') is not None:
-				self.add_query_param('Tag.' + str(i + 1) + '.Key' , Tags[i].get('Key'))
-
 
 	def get_KMSKeyId(self):
 		return self.get_query_params().get('KMSKeyId')

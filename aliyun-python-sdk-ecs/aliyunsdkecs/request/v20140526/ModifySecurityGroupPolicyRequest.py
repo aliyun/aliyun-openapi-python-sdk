@@ -42,6 +42,18 @@ class ModifySecurityGroupPolicyRequest(RpcRequest):
 	def set_ClientToken(self,ClientToken):
 		self.add_query_param('ClientToken',ClientToken)
 
+	def get_SecurityGroupId(self):
+		return self.get_query_params().get('SecurityGroupId')
+
+	def set_SecurityGroupId(self,SecurityGroupId):
+		self.add_query_param('SecurityGroupId',SecurityGroupId)
+
+	def get_InnerAccessPolicy(self):
+		return self.get_query_params().get('InnerAccessPolicy')
+
+	def set_InnerAccessPolicy(self,InnerAccessPolicy):
+		self.add_query_param('InnerAccessPolicy',InnerAccessPolicy)
+
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -54,20 +66,8 @@ class ModifySecurityGroupPolicyRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
-	def get_SecurityGroupId(self):
-		return self.get_query_params().get('SecurityGroupId')
-
-	def set_SecurityGroupId(self,SecurityGroupId):
-		self.add_query_param('SecurityGroupId',SecurityGroupId)
-
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
-
-	def get_InnerAccessPolicy(self):
-		return self.get_query_params().get('InnerAccessPolicy')
-
-	def set_InnerAccessPolicy(self,InnerAccessPolicy):
-		self.add_query_param('InnerAccessPolicy',InnerAccessPolicy)

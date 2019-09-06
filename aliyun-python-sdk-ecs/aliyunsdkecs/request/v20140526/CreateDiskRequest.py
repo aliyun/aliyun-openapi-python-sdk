@@ -42,41 +42,17 @@ class CreateDiskRequest(RpcRequest):
 	def set_SnapshotId(self,SnapshotId):
 		self.add_query_param('SnapshotId',SnapshotId)
 
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
-
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
 	def get_ClientToken(self):
 		return self.get_query_params().get('ClientToken')
 
 	def set_ClientToken(self,ClientToken):
 		self.add_query_param('ClientToken',ClientToken)
 
-	def get_PerformanceLevel(self):
-		return self.get_query_params().get('PerformanceLevel')
-
-	def set_PerformanceLevel(self,PerformanceLevel):
-		self.add_query_param('PerformanceLevel',PerformanceLevel)
-
-	def get_OwnerAccount(self):
-		return self.get_query_params().get('OwnerAccount')
-
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
-
 	def get_Description(self):
 		return self.get_query_params().get('Description')
 
 	def set_Description(self,Description):
 		self.add_query_param('Description',Description)
-
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
 
 	def get_DiskName(self):
 		return self.get_query_params().get('DiskName')
@@ -90,41 +66,11 @@ class CreateDiskRequest(RpcRequest):
 	def set_ResourceGroupId(self,ResourceGroupId):
 		self.add_query_param('ResourceGroupId',ResourceGroupId)
 
-	def get_InstanceId(self):
-		return self.get_query_params().get('InstanceId')
-
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
-
-	def get_StorageSetId(self):
-		return self.get_query_params().get('StorageSetId')
-
-	def set_StorageSetId(self,StorageSetId):
-		self.add_query_param('StorageSetId',StorageSetId)
-
-	def get_Size(self):
-		return self.get_query_params().get('Size')
-
-	def set_Size(self,Size):
-		self.add_query_param('Size',Size)
-
-	def get_Encrypted(self):
-		return self.get_query_params().get('Encrypted')
-
-	def set_Encrypted(self,Encrypted):
-		self.add_query_param('Encrypted',Encrypted)
-
 	def get_DiskCategory(self):
 		return self.get_query_params().get('DiskCategory')
 
 	def set_DiskCategory(self,DiskCategory):
 		self.add_query_param('DiskCategory',DiskCategory)
-
-	def get_ZoneId(self):
-		return self.get_query_params().get('ZoneId')
-
-	def set_ZoneId(self,ZoneId):
-		self.add_query_param('ZoneId',ZoneId)
 
 	def get_StorageSetPartitionNumber(self):
 		return self.get_query_params().get('StorageSetPartitionNumber')
@@ -156,14 +102,68 @@ class CreateDiskRequest(RpcRequest):
 				self.add_query_param('Arn.' + str(i + 1) + '.AssumeRoleFor' , Arns[i].get('AssumeRoleFor'))
 
 
-	def get_KMSKeyId(self):
-		return self.get_query_params().get('KMSKeyId')
-
-	def set_KMSKeyId(self,KMSKeyId):
-		self.add_query_param('KMSKeyId',KMSKeyId)
-
 	def get_AdvancedFeatures(self):
 		return self.get_query_params().get('AdvancedFeatures')
 
 	def set_AdvancedFeatures(self,AdvancedFeatures):
 		self.add_query_param('AdvancedFeatures',AdvancedFeatures)
+
+	def get_ResourceOwnerAccount(self):
+		return self.get_query_params().get('ResourceOwnerAccount')
+
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+
+	def get_PerformanceLevel(self):
+		return self.get_query_params().get('PerformanceLevel')
+
+	def set_PerformanceLevel(self,PerformanceLevel):
+		self.add_query_param('PerformanceLevel',PerformanceLevel)
+
+	def get_OwnerAccount(self):
+		return self.get_query_params().get('OwnerAccount')
+
+	def set_OwnerAccount(self,OwnerAccount):
+		self.add_query_param('OwnerAccount',OwnerAccount)
+
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
+
+	def get_InstanceId(self):
+		return self.get_query_params().get('InstanceId')
+
+	def set_InstanceId(self,InstanceId):
+		self.add_query_param('InstanceId',InstanceId)
+
+	def get_StorageSetId(self):
+		return self.get_query_params().get('StorageSetId')
+
+	def set_StorageSetId(self,StorageSetId):
+		self.add_query_param('StorageSetId',StorageSetId)
+
+	def get_Size(self):
+		return self.get_query_params().get('Size')
+
+	def set_Size(self,Size):
+		self.add_query_param('Size',Size)
+
+	def get_Encrypted(self):
+		return self.get_query_params().get('Encrypted')
+
+	def set_Encrypted(self,Encrypted):
+		self.add_query_param('Encrypted',Encrypted)
+
+	def get_ZoneId(self):
+		return self.get_query_params().get('ZoneId')
+
+	def set_ZoneId(self,ZoneId):
+		self.add_query_param('ZoneId',ZoneId)
+
+	def get_KMSKeyId(self):
+		return self.get_query_params().get('KMSKeyId')
+
+	def set_KMSKeyId(self,KMSKeyId):
+		self.add_query_param('KMSKeyId',KMSKeyId)

@@ -36,6 +36,12 @@ class DeleteDiskRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_DiskId(self):
+		return self.get_query_params().get('DiskId')
+
+	def set_DiskId(self,DiskId):
+		self.add_query_param('DiskId',DiskId)
+
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -47,12 +53,6 @@ class DeleteDiskRequest(RpcRequest):
 
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
-
-	def get_DiskId(self):
-		return self.get_query_params().get('DiskId')
-
-	def set_DiskId(self,DiskId):
-		self.add_query_param('DiskId',DiskId)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')

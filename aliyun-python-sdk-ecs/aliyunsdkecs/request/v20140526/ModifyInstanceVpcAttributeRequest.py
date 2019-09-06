@@ -30,29 +30,11 @@ class ModifyInstanceVpcAttributeRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_VSwitchId(self):
-		return self.get_query_params().get('VSwitchId')
-
-	def set_VSwitchId(self,VSwitchId):
-		self.add_query_param('VSwitchId',VSwitchId)
-
-	def get_PrivateIpAddress(self):
-		return self.get_query_params().get('PrivateIpAddress')
-
-	def set_PrivateIpAddress(self,PrivateIpAddress):
-		self.add_query_param('PrivateIpAddress',PrivateIpAddress)
-
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_InstanceId(self):
-		return self.get_query_params().get('InstanceId')
-
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -71,3 +53,21 @@ class ModifyInstanceVpcAttributeRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_VSwitchId(self):
+		return self.get_query_params().get('VSwitchId')
+
+	def set_VSwitchId(self,VSwitchId):
+		self.add_query_param('VSwitchId',VSwitchId)
+
+	def get_PrivateIpAddress(self):
+		return self.get_query_params().get('PrivateIpAddress')
+
+	def set_PrivateIpAddress(self,PrivateIpAddress):
+		self.add_query_param('PrivateIpAddress',PrivateIpAddress)
+
+	def get_InstanceId(self):
+		return self.get_query_params().get('InstanceId')
+
+	def set_InstanceId(self,InstanceId):
+		self.add_query_param('InstanceId',InstanceId)

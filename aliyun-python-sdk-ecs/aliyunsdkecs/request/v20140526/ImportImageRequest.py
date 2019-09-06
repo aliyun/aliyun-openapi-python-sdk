@@ -55,35 +55,11 @@ class ImportImageRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
-
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_RoleName(self):
-		return self.get_query_params().get('RoleName')
-
-	def set_RoleName(self,RoleName):
-		self.add_query_param('RoleName',RoleName)
-
 	def get_Description(self):
 		return self.get_query_params().get('Description')
 
 	def set_Description(self,Description):
 		self.add_query_param('Description',Description)
-
-	def get_OSType(self):
-		return self.get_query_params().get('OSType')
-
-	def set_OSType(self,OSType):
-		self.add_query_param('OSType',OSType)
-
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
 
 	def get_Platform(self):
 		return self.get_query_params().get('Platform')
@@ -102,3 +78,33 @@ class ImportImageRequest(RpcRequest):
 
 	def set_Architecture(self,Architecture):
 		self.add_query_param('Architecture',Architecture)
+
+	def get_LicenseType(self):
+		return self.get_query_params().get('LicenseType')
+
+	def set_LicenseType(self,LicenseType):
+		self.add_query_param('LicenseType',LicenseType)
+
+	def get_ResourceOwnerAccount(self):
+		return self.get_query_params().get('ResourceOwnerAccount')
+
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+
+	def get_RoleName(self):
+		return self.get_query_params().get('RoleName')
+
+	def set_RoleName(self,RoleName):
+		self.add_query_param('RoleName',RoleName)
+
+	def get_OSType(self):
+		return self.get_query_params().get('OSType')
+
+	def set_OSType(self,OSType):
+		self.add_query_param('OSType',OSType)
+
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)

@@ -36,6 +36,24 @@ class ModifyInstanceNetworkSpecRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_ClientToken(self):
+		return self.get_query_params().get('ClientToken')
+
+	def set_ClientToken(self,ClientToken):
+		self.add_query_param('ClientToken',ClientToken)
+
+	def get_InternetMaxBandwidthOut(self):
+		return self.get_query_params().get('InternetMaxBandwidthOut')
+
+	def set_InternetMaxBandwidthOut(self,InternetMaxBandwidthOut):
+		self.add_query_param('InternetMaxBandwidthOut',InternetMaxBandwidthOut)
+
+	def get_StartTime(self):
+		return self.get_query_params().get('StartTime')
+
+	def set_StartTime(self,StartTime):
+		self.add_query_param('StartTime',StartTime)
+
 	def get_AutoPay(self):
 		return self.get_query_params().get('AutoPay')
 
@@ -48,35 +66,17 @@ class ModifyInstanceNetworkSpecRequest(RpcRequest):
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
-	def get_ClientToken(self):
-		return self.get_query_params().get('ClientToken')
-
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
-
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
 
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
-	def get_InternetMaxBandwidthOut(self):
-		return self.get_query_params().get('InternetMaxBandwidthOut')
-
-	def set_InternetMaxBandwidthOut(self,InternetMaxBandwidthOut):
-		self.add_query_param('InternetMaxBandwidthOut',InternetMaxBandwidthOut)
-
 	def get_EndTime(self):
 		return self.get_query_params().get('EndTime')
 
 	def set_EndTime(self,EndTime):
 		self.add_query_param('EndTime',EndTime)
-
-	def get_StartTime(self):
-		return self.get_query_params().get('StartTime')
-
-	def set_StartTime(self,StartTime):
-		self.add_query_param('StartTime',StartTime)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')

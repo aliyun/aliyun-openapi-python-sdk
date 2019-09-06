@@ -36,6 +36,12 @@ class DescribeRenewalPriceRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_PriceUnit(self):
+		return self.get_query_params().get('PriceUnit')
+
+	def set_PriceUnit(self,PriceUnit):
+		self.add_query_param('PriceUnit',PriceUnit)
+
 	def get_ResourceId(self):
 		return self.get_query_params().get('ResourceId')
 
@@ -59,12 +65,6 @@ class DescribeRenewalPriceRequest(RpcRequest):
 
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
-
-	def get_PriceUnit(self):
-		return self.get_query_params().get('PriceUnit')
-
-	def set_PriceUnit(self,PriceUnit):
-		self.add_query_param('PriceUnit',PriceUnit)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')

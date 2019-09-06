@@ -36,29 +36,11 @@ class EnablePhysicalConnectionRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
-
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
 	def get_ClientToken(self):
 		return self.get_query_params().get('ClientToken')
 
 	def set_ClientToken(self,ClientToken):
 		self.add_query_param('ClientToken',ClientToken)
-
-	def get_PhysicalConnectionId(self):
-		return self.get_query_params().get('PhysicalConnectionId')
-
-	def set_PhysicalConnectionId(self,PhysicalConnectionId):
-		self.add_query_param('PhysicalConnectionId',PhysicalConnectionId)
-
-	def get_OwnerAccount(self):
-		return self.get_query_params().get('OwnerAccount')
-
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
 
 	def get_UserCidr(self):
 		return self.get_query_params().get('UserCidr')
@@ -66,8 +48,26 @@ class EnablePhysicalConnectionRequest(RpcRequest):
 	def set_UserCidr(self,UserCidr):
 		self.add_query_param('UserCidr',UserCidr)
 
+	def get_ResourceOwnerAccount(self):
+		return self.get_query_params().get('ResourceOwnerAccount')
+
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+
+	def get_OwnerAccount(self):
+		return self.get_query_params().get('OwnerAccount')
+
+	def set_OwnerAccount(self,OwnerAccount):
+		self.add_query_param('OwnerAccount',OwnerAccount)
+
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_PhysicalConnectionId(self):
+		return self.get_query_params().get('PhysicalConnectionId')
+
+	def set_PhysicalConnectionId(self,PhysicalConnectionId):
+		self.add_query_param('PhysicalConnectionId',PhysicalConnectionId)

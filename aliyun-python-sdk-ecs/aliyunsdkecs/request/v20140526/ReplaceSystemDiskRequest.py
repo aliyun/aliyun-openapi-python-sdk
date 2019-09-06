@@ -42,23 +42,11 @@ class ReplaceSystemDiskRequest(RpcRequest):
 	def set_ImageId(self,ImageId):
 		self.add_query_param('ImageId',ImageId)
 
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
-
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
 	def get_ClientToken(self):
 		return self.get_query_params().get('ClientToken')
 
 	def set_ClientToken(self,ClientToken):
 		self.add_query_param('ClientToken',ClientToken)
-
-	def get_OwnerAccount(self):
-		return self.get_query_params().get('OwnerAccount')
-
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
 
 	def get_SecurityEnhancementStrategy(self):
 		return self.get_query_params().get('SecurityEnhancementStrategy')
@@ -72,12 +60,6 @@ class ReplaceSystemDiskRequest(RpcRequest):
 	def set_KeyPairName(self,KeyPairName):
 		self.add_query_param('KeyPairName',KeyPairName)
 
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
 	def get_Platform(self):
 		return self.get_query_params().get('Platform')
 
@@ -90,23 +72,11 @@ class ReplaceSystemDiskRequest(RpcRequest):
 	def set_Password(self,Password):
 		self.add_query_param('Password',Password)
 
-	def get_InstanceId(self):
-		return self.get_query_params().get('InstanceId')
-
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
-
 	def get_PasswordInherit(self):
 		return self.get_query_params().get('PasswordInherit')
 
 	def set_PasswordInherit(self,PasswordInherit):
 		self.add_query_param('PasswordInherit',PasswordInherit)
-
-	def get_SystemDiskSize(self):
-		return self.get_query_params().get('SystemDisk.Size')
-
-	def set_SystemDiskSize(self,SystemDiskSize):
-		self.add_query_param('SystemDisk.Size',SystemDiskSize)
 
 	def get_DiskId(self):
 		return self.get_query_params().get('DiskId')
@@ -114,14 +84,44 @@ class ReplaceSystemDiskRequest(RpcRequest):
 	def set_DiskId(self,DiskId):
 		self.add_query_param('DiskId',DiskId)
 
-	def get_UseAdditionalService(self):
-		return self.get_query_params().get('UseAdditionalService')
-
-	def set_UseAdditionalService(self,UseAdditionalService):
-		self.add_query_param('UseAdditionalService',UseAdditionalService)
-
 	def get_Architecture(self):
 		return self.get_query_params().get('Architecture')
 
 	def set_Architecture(self,Architecture):
 		self.add_query_param('Architecture',Architecture)
+
+	def get_ResourceOwnerAccount(self):
+		return self.get_query_params().get('ResourceOwnerAccount')
+
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+
+	def get_OwnerAccount(self):
+		return self.get_query_params().get('OwnerAccount')
+
+	def set_OwnerAccount(self,OwnerAccount):
+		self.add_query_param('OwnerAccount',OwnerAccount)
+
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
+
+	def get_InstanceId(self):
+		return self.get_query_params().get('InstanceId')
+
+	def set_InstanceId(self,InstanceId):
+		self.add_query_param('InstanceId',InstanceId)
+
+	def get_SystemDiskSize(self):
+		return self.get_query_params().get('SystemDisk.Size')
+
+	def set_SystemDiskSize(self,SystemDiskSize):
+		self.add_query_param('SystemDisk.Size',SystemDiskSize)
+
+	def get_UseAdditionalService(self):
+		return self.get_query_params().get('UseAdditionalService')
+
+	def set_UseAdditionalService(self,UseAdditionalService):
+		self.add_query_param('UseAdditionalService',UseAdditionalService)

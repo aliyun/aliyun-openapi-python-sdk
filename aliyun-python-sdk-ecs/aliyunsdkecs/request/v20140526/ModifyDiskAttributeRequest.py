@@ -30,6 +30,18 @@ class ModifyDiskAttributeRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_ResourceOwnerId(self):
+		return self.get_query_params().get('ResourceOwnerId')
+
+	def set_ResourceOwnerId(self,ResourceOwnerId):
+		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+
+	def get_Description(self):
+		return self.get_query_params().get('Description')
+
+	def set_Description(self,Description):
+		self.add_query_param('Description',Description)
+
 	def get_DiskName(self):
 		return self.get_query_params().get('DiskName')
 
@@ -42,11 +54,17 @@ class ModifyDiskAttributeRequest(RpcRequest):
 	def set_DeleteAutoSnapshot(self,DeleteAutoSnapshot):
 		self.add_query_param('DeleteAutoSnapshot',DeleteAutoSnapshot)
 
-	def get_ResourceOwnerId(self):
-		return self.get_query_params().get('ResourceOwnerId')
+	def get_DiskId(self):
+		return self.get_query_params().get('DiskId')
 
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+	def set_DiskId(self,DiskId):
+		self.add_query_param('DiskId',DiskId)
+
+	def get_DeleteWithInstance(self):
+		return self.get_query_params().get('DeleteWithInstance')
+
+	def set_DeleteWithInstance(self,DeleteWithInstance):
+		self.add_query_param('DeleteWithInstance',DeleteWithInstance)
 
 	def get_EnableAutoSnapshot(self):
 		return self.get_query_params().get('EnableAutoSnapshot')
@@ -66,26 +84,8 @@ class ModifyDiskAttributeRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
-	def get_Description(self):
-		return self.get_query_params().get('Description')
-
-	def set_Description(self,Description):
-		self.add_query_param('Description',Description)
-
-	def get_DiskId(self):
-		return self.get_query_params().get('DiskId')
-
-	def set_DiskId(self,DiskId):
-		self.add_query_param('DiskId',DiskId)
-
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
-
-	def get_DeleteWithInstance(self):
-		return self.get_query_params().get('DeleteWithInstance')
-
-	def set_DeleteWithInstance(self,DeleteWithInstance):
-		self.add_query_param('DeleteWithInstance',DeleteWithInstance)

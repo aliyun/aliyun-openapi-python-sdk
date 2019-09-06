@@ -42,6 +42,12 @@ class ResetDiskRequest(RpcRequest):
 	def set_SnapshotId(self,SnapshotId):
 		self.add_query_param('SnapshotId',SnapshotId)
 
+	def get_DiskId(self):
+		return self.get_query_params().get('DiskId')
+
+	def set_DiskId(self,DiskId):
+		self.add_query_param('DiskId',DiskId)
+
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -53,12 +59,6 @@ class ResetDiskRequest(RpcRequest):
 
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
-
-	def get_DiskId(self):
-		return self.get_query_params().get('DiskId')
-
-	def set_DiskId(self,DiskId):
-		self.add_query_param('DiskId',DiskId)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')

@@ -36,6 +36,12 @@ class DescribeSnapshotMonitorDataRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_StartTime(self):
+		return self.get_query_params().get('StartTime')
+
+	def set_StartTime(self,StartTime):
+		self.add_query_param('StartTime',StartTime)
+
 	def get_Period(self):
 		return self.get_query_params().get('Period')
 
@@ -59,12 +65,6 @@ class DescribeSnapshotMonitorDataRequest(RpcRequest):
 
 	def set_EndTime(self,EndTime):
 		self.add_query_param('EndTime',EndTime)
-
-	def get_StartTime(self):
-		return self.get_query_params().get('StartTime')
-
-	def set_StartTime(self,StartTime):
-		self.add_query_param('StartTime',StartTime)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')

@@ -36,13 +36,17 @@ class DeleteInstancesRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_InstanceIds(self):
-		return self.get_query_params().get('InstanceIds')
+	def get_ClientToken(self):
+		return self.get_query_params().get('ClientToken')
 
-	def set_InstanceIds(self,InstanceIds):
-		for i in range(len(InstanceIds)):	
-			if InstanceIds[i] is not None:
-				self.add_query_param('InstanceId.' + str(i + 1) , InstanceIds[i]);
+	def set_ClientToken(self,ClientToken):
+		self.add_query_param('ClientToken',ClientToken)
+
+	def get_TerminateSubscription(self):
+		return self.get_query_params().get('TerminateSubscription')
+
+	def set_TerminateSubscription(self,TerminateSubscription):
+		self.add_query_param('TerminateSubscription',TerminateSubscription)
 
 	def get_DryRun(self):
 		return self.get_query_params().get('DryRun')
@@ -56,32 +60,28 @@ class DeleteInstancesRequest(RpcRequest):
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
-	def get_ClientToken(self):
-		return self.get_query_params().get('ClientToken')
-
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
-
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
 
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
-	def get_TerminateSubscription(self):
-		return self.get_query_params().get('TerminateSubscription')
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
 
-	def set_TerminateSubscription(self,TerminateSubscription):
-		self.add_query_param('TerminateSubscription',TerminateSubscription)
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
+
+	def get_InstanceIds(self):
+		return self.get_query_params().get('InstanceIds')
+
+	def set_InstanceIds(self,InstanceIds):
+		for i in range(len(InstanceIds)):	
+			if InstanceIds[i] is not None:
+				self.add_query_param('InstanceId.' + str(i + 1) , InstanceIds[i]);
 
 	def get_Force(self):
 		return self.get_query_params().get('Force')
 
 	def set_Force(self,Force):
 		self.add_query_param('Force',Force)
-
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)

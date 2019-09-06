@@ -42,6 +42,30 @@ class DescribeRouteTablesRequest(RpcRequest):
 	def set_VRouterId(self,VRouterId):
 		self.add_query_param('VRouterId',VRouterId)
 
+	def get_PageNumber(self):
+		return self.get_query_params().get('PageNumber')
+
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)
+
+	def get_RouteTableName(self):
+		return self.get_query_params().get('RouteTableName')
+
+	def set_RouteTableName(self,RouteTableName):
+		self.add_query_param('RouteTableName',RouteTableName)
+
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
+
+	def get_RouteTableId(self):
+		return self.get_query_params().get('RouteTableId')
+
+	def set_RouteTableId(self,RouteTableId):
+		self.add_query_param('RouteTableId',RouteTableId)
+
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -60,38 +84,14 @@ class DescribeRouteTablesRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_PageNumber(self):
-		return self.get_query_params().get('PageNumber')
-
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
-
 	def get_RouterType(self):
 		return self.get_query_params().get('RouterType')
 
 	def set_RouterType(self,RouterType):
 		self.add_query_param('RouterType',RouterType)
 
-	def get_RouteTableName(self):
-		return self.get_query_params().get('RouteTableName')
-
-	def set_RouteTableName(self,RouteTableName):
-		self.add_query_param('RouteTableName',RouteTableName)
-
 	def get_RouterId(self):
 		return self.get_query_params().get('RouterId')
 
 	def set_RouterId(self,RouterId):
 		self.add_query_param('RouterId',RouterId)
-
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_RouteTableId(self):
-		return self.get_query_params().get('RouteTableId')
-
-	def set_RouteTableId(self,RouteTableId):
-		self.add_query_param('RouteTableId',RouteTableId)

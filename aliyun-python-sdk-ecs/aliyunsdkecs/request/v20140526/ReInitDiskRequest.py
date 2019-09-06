@@ -36,35 +36,11 @@ class ReInitDiskRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_Password(self):
-		return self.get_query_params().get('Password')
-
-	def set_Password(self,Password):
-		self.add_query_param('Password',Password)
-
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
-
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
 	def get_AutoStartInstance(self):
 		return self.get_query_params().get('AutoStartInstance')
 
 	def set_AutoStartInstance(self,AutoStartInstance):
 		self.add_query_param('AutoStartInstance',AutoStartInstance)
-
-	def get_OwnerAccount(self):
-		return self.get_query_params().get('OwnerAccount')
-
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
-
-	def get_DiskId(self):
-		return self.get_query_params().get('DiskId')
-
-	def set_DiskId(self,DiskId):
-		self.add_query_param('DiskId',DiskId)
 
 	def get_SecurityEnhancementStrategy(self):
 		return self.get_query_params().get('SecurityEnhancementStrategy')
@@ -77,6 +53,30 @@ class ReInitDiskRequest(RpcRequest):
 
 	def set_KeyPairName(self,KeyPairName):
 		self.add_query_param('KeyPairName',KeyPairName)
+
+	def get_Password(self):
+		return self.get_query_params().get('Password')
+
+	def set_Password(self,Password):
+		self.add_query_param('Password',Password)
+
+	def get_DiskId(self):
+		return self.get_query_params().get('DiskId')
+
+	def set_DiskId(self,DiskId):
+		self.add_query_param('DiskId',DiskId)
+
+	def get_ResourceOwnerAccount(self):
+		return self.get_query_params().get('ResourceOwnerAccount')
+
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+
+	def get_OwnerAccount(self):
+		return self.get_query_params().get('OwnerAccount')
+
+	def set_OwnerAccount(self,OwnerAccount):
+		self.add_query_param('OwnerAccount',OwnerAccount)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')

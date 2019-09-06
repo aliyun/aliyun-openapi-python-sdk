@@ -30,17 +30,23 @@ class ModifyDeploymentSetAttributeRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_DeploymentSetId(self):
-		return self.get_query_params().get('DeploymentSetId')
-
-	def set_DeploymentSetId(self,DeploymentSetId):
-		self.add_query_param('DeploymentSetId',DeploymentSetId)
-
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+
+	def get_Description(self):
+		return self.get_query_params().get('Description')
+
+	def set_Description(self,Description):
+		self.add_query_param('Description',Description)
+
+	def get_DeploymentSetId(self):
+		return self.get_query_params().get('DeploymentSetId')
+
+	def set_DeploymentSetId(self,DeploymentSetId):
+		self.add_query_param('DeploymentSetId',DeploymentSetId)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -53,12 +59,6 @@ class ModifyDeploymentSetAttributeRequest(RpcRequest):
 
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
-
-	def get_Description(self):
-		return self.get_query_params().get('Description')
-
-	def set_Description(self,Description):
-		self.add_query_param('Description',Description)
 
 	def get_DeploymentSetName(self):
 		return self.get_query_params().get('DeploymentSetName')

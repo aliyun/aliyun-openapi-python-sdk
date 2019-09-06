@@ -36,12 +36,6 @@ class ModifyAutoSnapshotPolicyExRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
-
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
 	def get_autoSnapshotPolicyId(self):
 		return self.get_query_params().get('autoSnapshotPolicyId')
 
@@ -54,11 +48,17 @@ class ModifyAutoSnapshotPolicyExRequest(RpcRequest):
 	def set_timePoints(self,timePoints):
 		self.add_query_param('timePoints',timePoints)
 
-	def get_retentionDays(self):
-		return self.get_query_params().get('retentionDays')
+	def get_repeatWeekdays(self):
+		return self.get_query_params().get('repeatWeekdays')
 
-	def set_retentionDays(self,retentionDays):
-		self.add_query_param('retentionDays',retentionDays)
+	def set_repeatWeekdays(self,repeatWeekdays):
+		self.add_query_param('repeatWeekdays',repeatWeekdays)
+
+	def get_ResourceOwnerAccount(self):
+		return self.get_query_params().get('ResourceOwnerAccount')
+
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
@@ -66,14 +66,14 @@ class ModifyAutoSnapshotPolicyExRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_repeatWeekdays(self):
-		return self.get_query_params().get('repeatWeekdays')
-
-	def set_repeatWeekdays(self,repeatWeekdays):
-		self.add_query_param('repeatWeekdays',repeatWeekdays)
-
 	def get_autoSnapshotPolicyName(self):
 		return self.get_query_params().get('autoSnapshotPolicyName')
 
 	def set_autoSnapshotPolicyName(self,autoSnapshotPolicyName):
 		self.add_query_param('autoSnapshotPolicyName',autoSnapshotPolicyName)
+
+	def get_retentionDays(self):
+		return self.get_query_params().get('retentionDays')
+
+	def set_retentionDays(self,retentionDays):
+		self.add_query_param('retentionDays',retentionDays)

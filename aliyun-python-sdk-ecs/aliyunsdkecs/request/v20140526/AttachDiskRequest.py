@@ -36,11 +36,17 @@ class AttachDiskRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_InstanceId(self):
-		return self.get_query_params().get('InstanceId')
+	def get_DiskId(self):
+		return self.get_query_params().get('DiskId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
+	def set_DiskId(self,DiskId):
+		self.add_query_param('DiskId',DiskId)
+
+	def get_DeleteWithInstance(self):
+		return self.get_query_params().get('DeleteWithInstance')
+
+	def set_DeleteWithInstance(self,DeleteWithInstance):
+		self.add_query_param('DeleteWithInstance',DeleteWithInstance)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -54,26 +60,20 @@ class AttachDiskRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
-	def get_DiskId(self):
-		return self.get_query_params().get('DiskId')
-
-	def set_DiskId(self,DiskId):
-		self.add_query_param('DiskId',DiskId)
-
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
+	def get_InstanceId(self):
+		return self.get_query_params().get('InstanceId')
+
+	def set_InstanceId(self,InstanceId):
+		self.add_query_param('InstanceId',InstanceId)
+
 	def get_Device(self):
 		return self.get_query_params().get('Device')
 
 	def set_Device(self,Device):
 		self.add_query_param('Device',Device)
-
-	def get_DeleteWithInstance(self):
-		return self.get_query_params().get('DeleteWithInstance')
-
-	def set_DeleteWithInstance(self,DeleteWithInstance):
-		self.add_query_param('DeleteWithInstance',DeleteWithInstance)

@@ -36,11 +36,11 @@ class DescribeResourceByTagsRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
+	def get_PageNumber(self):
+		return self.get_query_params().get('PageNumber')
 
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)
 
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
@@ -59,6 +59,12 @@ class DescribeResourceByTagsRequest(RpcRequest):
 				self.add_query_param('Tag.' + str(i + 1) + '.Key' , Tags[i].get('Key'))
 
 
+	def get_ResourceOwnerAccount(self):
+		return self.get_query_params().get('ResourceOwnerAccount')
+
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
@@ -70,9 +76,3 @@ class DescribeResourceByTagsRequest(RpcRequest):
 
 	def set_ResourceType(self,ResourceType):
 		self.add_query_param('ResourceType',ResourceType)
-
-	def get_PageNumber(self):
-		return self.get_query_params().get('PageNumber')
-
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)

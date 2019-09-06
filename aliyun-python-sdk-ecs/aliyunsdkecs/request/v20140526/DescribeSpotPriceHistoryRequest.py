@@ -96,6 +96,12 @@ class DescribeSpotPriceHistoryRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
+	def get_SpotDuration(self):
+		return self.get_query_params().get('SpotDuration')
+
+	def set_SpotDuration(self,SpotDuration):
+		self.add_query_param('SpotDuration',SpotDuration)
+
 	def get_ZoneId(self):
 		return self.get_query_params().get('ZoneId')
 

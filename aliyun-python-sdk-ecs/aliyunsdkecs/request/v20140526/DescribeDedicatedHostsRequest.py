@@ -42,30 +42,6 @@ class DescribeDedicatedHostsRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_DedicatedHostName(self):
-		return self.get_query_params().get('DedicatedHostName')
-
-	def set_DedicatedHostName(self,DedicatedHostName):
-		self.add_query_param('DedicatedHostName',DedicatedHostName)
-
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
-
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_OwnerAccount(self):
-		return self.get_query_params().get('OwnerAccount')
-
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
-
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
 	def get_PageNumber(self):
 		return self.get_query_params().get('PageNumber')
 
@@ -90,12 +66,6 @@ class DescribeDedicatedHostsRequest(RpcRequest):
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
 
-	def get_ZoneId(self):
-		return self.get_query_params().get('ZoneId')
-
-	def set_ZoneId(self,ZoneId):
-		self.add_query_param('ZoneId',ZoneId)
-
 	def get_DedicatedHostType(self):
 		return self.get_query_params().get('DedicatedHostType')
 
@@ -112,6 +82,36 @@ class DescribeDedicatedHostsRequest(RpcRequest):
 			if Tags[i].get('Key') is not None:
 				self.add_query_param('Tag.' + str(i + 1) + '.Key' , Tags[i].get('Key'))
 
+
+	def get_DedicatedHostName(self):
+		return self.get_query_params().get('DedicatedHostName')
+
+	def set_DedicatedHostName(self,DedicatedHostName):
+		self.add_query_param('DedicatedHostName',DedicatedHostName)
+
+	def get_ResourceOwnerAccount(self):
+		return self.get_query_params().get('ResourceOwnerAccount')
+
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+
+	def get_OwnerAccount(self):
+		return self.get_query_params().get('OwnerAccount')
+
+	def set_OwnerAccount(self,OwnerAccount):
+		self.add_query_param('OwnerAccount',OwnerAccount)
+
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
+
+	def get_ZoneId(self):
+		return self.get_query_params().get('ZoneId')
+
+	def set_ZoneId(self,ZoneId):
+		self.add_query_param('ZoneId',ZoneId)
 
 	def get_Status(self):
 		return self.get_query_params().get('Status')

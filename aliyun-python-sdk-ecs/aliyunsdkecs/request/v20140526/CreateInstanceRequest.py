@@ -366,6 +366,12 @@ class CreateInstanceRequest(RpcRequest):
 	def set_CreditSpecification(self,CreditSpecification):
 		self.add_query_param('CreditSpecification',CreditSpecification)
 
+	def get_SpotDuration(self):
+		return self.get_query_params().get('SpotDuration')
+
+	def set_SpotDuration(self,SpotDuration):
+		self.add_query_param('SpotDuration',SpotDuration)
+
 	def get_DataDisks(self):
 		return self.get_query_params().get('DataDisks')
 
