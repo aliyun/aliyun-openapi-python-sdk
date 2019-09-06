@@ -1,3 +1,6 @@
+2019-09-06 Version: 0.0.1
+- Generated 2019-06-25 for `hivisengine`.
+
 2019-08-29 Version: 0.0.1
 - Supported TranslateText.
 
