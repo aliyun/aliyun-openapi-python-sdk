@@ -30,6 +30,12 @@ class UnTagResourcesRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_ResourceOwnerId(self):
+		return self.get_query_params().get('ResourceOwnerId')
+
+	def set_ResourceOwnerId(self,ResourceOwnerId):
+		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+
 	def get_ResourceIds(self):
 		return self.get_query_params().get('ResourceIds')
 
@@ -37,12 +43,6 @@ class UnTagResourcesRequest(RpcRequest):
 		for i in range(len(ResourceIds)):	
 			if ResourceIds[i] is not None:
 				self.add_query_param('ResourceId.' + str(i + 1) , ResourceIds[i]);
-
-	def get_ResourceOwnerId(self):
-		return self.get_query_params().get('ResourceOwnerId')
-
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -56,14 +56,6 @@ class UnTagResourcesRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
-	def get_TagKeys(self):
-		return self.get_query_params().get('TagKeys')
-
-	def set_TagKeys(self,TagKeys):
-		for i in range(len(TagKeys)):	
-			if TagKeys[i] is not None:
-				self.add_query_param('TagKey.' + str(i + 1) , TagKeys[i]);
-
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
@@ -75,3 +67,11 @@ class UnTagResourcesRequest(RpcRequest):
 
 	def set_ResourceType(self,ResourceType):
 		self.add_query_param('ResourceType',ResourceType)
+
+	def get_TagKeys(self):
+		return self.get_query_params().get('TagKeys')
+
+	def set_TagKeys(self,TagKeys):
+		for i in range(len(TagKeys)):	
+			if TagKeys[i] is not None:
+				self.add_query_param('TagKey.' + str(i + 1) , TagKeys[i]);

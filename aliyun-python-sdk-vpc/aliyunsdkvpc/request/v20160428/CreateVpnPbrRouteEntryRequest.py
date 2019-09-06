@@ -42,17 +42,29 @@ class CreateVpnPbrRouteEntryRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
-
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
 	def get_ClientToken(self):
 		return self.get_query_params().get('ClientToken')
 
 	def set_ClientToken(self,ClientToken):
 		self.add_query_param('ClientToken',ClientToken)
+
+	def get_Description(self):
+		return self.get_query_params().get('Description')
+
+	def set_Description(self,Description):
+		self.add_query_param('Description',Description)
+
+	def get_PublishVpc(self):
+		return self.get_query_params().get('PublishVpc')
+
+	def set_PublishVpc(self,PublishVpc):
+		self.add_query_param('PublishVpc',PublishVpc)
+
+	def get_ResourceOwnerAccount(self):
+		return self.get_query_params().get('ResourceOwnerAccount')
+
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
@@ -65,12 +77,6 @@ class CreateVpnPbrRouteEntryRequest(RpcRequest):
 
 	def set_Weight(self,Weight):
 		self.add_query_param('Weight',Weight)
-
-	def get_Description(self):
-		return self.get_query_params().get('Description')
-
-	def set_Description(self,Description):
-		self.add_query_param('Description',Description)
 
 	def get_VpnGatewayId(self):
 		return self.get_query_params().get('VpnGatewayId')
@@ -95,12 +101,6 @@ class CreateVpnPbrRouteEntryRequest(RpcRequest):
 
 	def set_NextHop(self,NextHop):
 		self.add_query_param('NextHop',NextHop)
-
-	def get_PublishVpc(self):
-		return self.get_query_params().get('PublishVpc')
-
-	def set_PublishVpc(self,PublishVpc):
-		self.add_query_param('PublishVpc',PublishVpc)
 
 	def get_OverlayMode(self):
 		return self.get_query_params().get('OverlayMode')

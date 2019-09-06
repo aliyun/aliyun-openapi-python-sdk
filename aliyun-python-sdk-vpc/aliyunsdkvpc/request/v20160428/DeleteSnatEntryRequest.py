@@ -36,6 +36,12 @@ class DeleteSnatEntryRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_SnatEntryId(self):
+		return self.get_query_params().get('SnatEntryId')
+
+	def set_SnatEntryId(self,SnatEntryId):
+		self.add_query_param('SnatEntryId',SnatEntryId)
+
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -53,12 +59,6 @@ class DeleteSnatEntryRequest(RpcRequest):
 
 	def set_SnatTableId(self,SnatTableId):
 		self.add_query_param('SnatTableId',SnatTableId)
-
-	def get_SnatEntryId(self):
-		return self.get_query_params().get('SnatEntryId')
-
-	def set_SnatEntryId(self,SnatEntryId):
-		self.add_query_param('SnatEntryId',SnatEntryId)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')

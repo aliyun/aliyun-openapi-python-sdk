@@ -42,29 +42,11 @@ class CreateVpnConnectionRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_RemoteSubnet(self):
-		return self.get_query_params().get('RemoteSubnet')
-
-	def set_RemoteSubnet(self,RemoteSubnet):
-		self.add_query_param('RemoteSubnet',RemoteSubnet)
-
-	def get_EffectImmediately(self):
-		return self.get_query_params().get('EffectImmediately')
-
-	def set_EffectImmediately(self,EffectImmediately):
-		self.add_query_param('EffectImmediately',EffectImmediately)
-
 	def get_AutoConfigRoute(self):
 		return self.get_query_params().get('AutoConfigRoute')
 
 	def set_AutoConfigRoute(self,AutoConfigRoute):
 		self.add_query_param('AutoConfigRoute',AutoConfigRoute)
-
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
-
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
 	def get_ClientToken(self):
 		return self.get_query_params().get('ClientToken')
@@ -72,29 +54,11 @@ class CreateVpnConnectionRequest(RpcRequest):
 	def set_ClientToken(self,ClientToken):
 		self.add_query_param('ClientToken',ClientToken)
 
-	def get_OwnerAccount(self):
-		return self.get_query_params().get('OwnerAccount')
-
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
-
 	def get_IpsecConfig(self):
 		return self.get_query_params().get('IpsecConfig')
 
 	def set_IpsecConfig(self,IpsecConfig):
 		self.add_query_param('IpsecConfig',IpsecConfig)
-
-	def get_VpnGatewayId(self):
-		return self.get_query_params().get('VpnGatewayId')
-
-	def set_VpnGatewayId(self,VpnGatewayId):
-		self.add_query_param('VpnGatewayId',VpnGatewayId)
-
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
 
 	def get_HealthCheckConfig(self):
 		return self.get_query_params().get('HealthCheckConfig')
@@ -113,6 +77,42 @@ class CreateVpnConnectionRequest(RpcRequest):
 
 	def set_LocalSubnet(self,LocalSubnet):
 		self.add_query_param('LocalSubnet',LocalSubnet)
+
+	def get_RemoteSubnet(self):
+		return self.get_query_params().get('RemoteSubnet')
+
+	def set_RemoteSubnet(self,RemoteSubnet):
+		self.add_query_param('RemoteSubnet',RemoteSubnet)
+
+	def get_EffectImmediately(self):
+		return self.get_query_params().get('EffectImmediately')
+
+	def set_EffectImmediately(self,EffectImmediately):
+		self.add_query_param('EffectImmediately',EffectImmediately)
+
+	def get_ResourceOwnerAccount(self):
+		return self.get_query_params().get('ResourceOwnerAccount')
+
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+
+	def get_OwnerAccount(self):
+		return self.get_query_params().get('OwnerAccount')
+
+	def set_OwnerAccount(self,OwnerAccount):
+		self.add_query_param('OwnerAccount',OwnerAccount)
+
+	def get_VpnGatewayId(self):
+		return self.get_query_params().get('VpnGatewayId')
+
+	def set_VpnGatewayId(self,VpnGatewayId):
+		self.add_query_param('VpnGatewayId',VpnGatewayId)
+
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
 
 	def get_Name(self):
 		return self.get_query_params().get('Name')

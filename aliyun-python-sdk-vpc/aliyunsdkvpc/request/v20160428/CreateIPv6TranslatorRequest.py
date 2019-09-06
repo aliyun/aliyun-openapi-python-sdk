@@ -36,6 +36,24 @@ class CreateIPv6TranslatorRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_ClientToken(self):
+		return self.get_query_params().get('ClientToken')
+
+	def set_ClientToken(self,ClientToken):
+		self.add_query_param('ClientToken',ClientToken)
+
+	def get_Spec(self):
+		return self.get_query_params().get('Spec')
+
+	def set_Spec(self,Spec):
+		self.add_query_param('Spec',Spec)
+
+	def get_Duration(self):
+		return self.get_query_params().get('Duration')
+
+	def set_Duration(self,Duration):
+		self.add_query_param('Duration',Duration)
+
 	def get_AutoPay(self):
 		return self.get_query_params().get('AutoPay')
 
@@ -47,12 +65,6 @@ class CreateIPv6TranslatorRequest(RpcRequest):
 
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_ClientToken(self):
-		return self.get_query_params().get('ClientToken')
-
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
 
 	def get_Bandwidth(self):
 		return self.get_query_params().get('Bandwidth')
@@ -71,18 +83,6 @@ class CreateIPv6TranslatorRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
-
-	def get_Spec(self):
-		return self.get_query_params().get('Spec')
-
-	def set_Spec(self,Spec):
-		self.add_query_param('Spec',Spec)
-
-	def get_Duration(self):
-		return self.get_query_params().get('Duration')
-
-	def set_Duration(self,Duration):
-		self.add_query_param('Duration',Duration)
 
 	def get_Name(self):
 		return self.get_query_params().get('Name')

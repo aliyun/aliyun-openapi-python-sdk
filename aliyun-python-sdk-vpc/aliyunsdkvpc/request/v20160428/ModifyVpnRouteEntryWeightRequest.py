@@ -36,17 +36,23 @@ class ModifyVpnRouteEntryWeightRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
-
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
 	def get_ClientToken(self):
 		return self.get_query_params().get('ClientToken')
 
 	def set_ClientToken(self,ClientToken):
 		self.add_query_param('ClientToken',ClientToken)
+
+	def get_NewWeight(self):
+		return self.get_query_params().get('NewWeight')
+
+	def set_NewWeight(self,NewWeight):
+		self.add_query_param('NewWeight',NewWeight)
+
+	def get_ResourceOwnerAccount(self):
+		return self.get_query_params().get('ResourceOwnerAccount')
+
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
@@ -71,12 +77,6 @@ class ModifyVpnRouteEntryWeightRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
-
-	def get_NewWeight(self):
-		return self.get_query_params().get('NewWeight')
-
-	def set_NewWeight(self,NewWeight):
-		self.add_query_param('NewWeight',NewWeight)
 
 	def get_RouteDest(self):
 		return self.get_query_params().get('RouteDest')

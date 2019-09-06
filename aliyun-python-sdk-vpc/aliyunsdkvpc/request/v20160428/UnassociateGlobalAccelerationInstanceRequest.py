@@ -36,6 +36,18 @@ class UnassociateGlobalAccelerationInstanceRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_GlobalAccelerationInstanceId(self):
+		return self.get_query_params().get('GlobalAccelerationInstanceId')
+
+	def set_GlobalAccelerationInstanceId(self,GlobalAccelerationInstanceId):
+		self.add_query_param('GlobalAccelerationInstanceId',GlobalAccelerationInstanceId)
+
+	def get_InstanceType(self):
+		return self.get_query_params().get('InstanceType')
+
+	def set_InstanceType(self,InstanceType):
+		self.add_query_param('InstanceType',InstanceType)
+
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -48,20 +60,8 @@ class UnassociateGlobalAccelerationInstanceRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
-	def get_InstanceType(self):
-		return self.get_query_params().get('InstanceType')
-
-	def set_InstanceType(self,InstanceType):
-		self.add_query_param('InstanceType',InstanceType)
-
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
-
-	def get_GlobalAccelerationInstanceId(self):
-		return self.get_query_params().get('GlobalAccelerationInstanceId')
-
-	def set_GlobalAccelerationInstanceId(self,GlobalAccelerationInstanceId):
-		self.add_query_param('GlobalAccelerationInstanceId',GlobalAccelerationInstanceId)

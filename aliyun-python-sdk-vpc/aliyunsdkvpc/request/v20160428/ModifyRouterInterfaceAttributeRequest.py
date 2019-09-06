@@ -36,29 +36,11 @@ class ModifyRouterInterfaceAttributeRequest(RpcRequest):
 	def set_OppositeRouterId(self,OppositeRouterId):
 		self.add_query_param('OppositeRouterId',OppositeRouterId)
 
-	def get_HcThreshold(self):
-		return self.get_query_params().get('HcThreshold')
-
-	def set_HcThreshold(self,HcThreshold):
-		self.add_query_param('HcThreshold',HcThreshold)
-
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
-
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_DeleteHealthCheckIp(self):
-		return self.get_query_params().get('DeleteHealthCheckIp')
-
-	def set_DeleteHealthCheckIp(self,DeleteHealthCheckIp):
-		self.add_query_param('DeleteHealthCheckIp',DeleteHealthCheckIp)
 
 	def get_Description(self):
 		return self.get_query_params().get('Description')
@@ -71,6 +53,30 @@ class ModifyRouterInterfaceAttributeRequest(RpcRequest):
 
 	def set_HealthCheckTargetIp(self,HealthCheckTargetIp):
 		self.add_query_param('HealthCheckTargetIp',HealthCheckTargetIp)
+
+	def get_OppositeInterfaceId(self):
+		return self.get_query_params().get('OppositeInterfaceId')
+
+	def set_OppositeInterfaceId(self,OppositeInterfaceId):
+		self.add_query_param('OppositeInterfaceId',OppositeInterfaceId)
+
+	def get_HcThreshold(self):
+		return self.get_query_params().get('HcThreshold')
+
+	def set_HcThreshold(self,HcThreshold):
+		self.add_query_param('HcThreshold',HcThreshold)
+
+	def get_ResourceOwnerAccount(self):
+		return self.get_query_params().get('ResourceOwnerAccount')
+
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+
+	def get_DeleteHealthCheckIp(self):
+		return self.get_query_params().get('DeleteHealthCheckIp')
+
+	def set_DeleteHealthCheckIp(self,DeleteHealthCheckIp):
+		self.add_query_param('DeleteHealthCheckIp',DeleteHealthCheckIp)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
@@ -113,9 +119,3 @@ class ModifyRouterInterfaceAttributeRequest(RpcRequest):
 
 	def set_HcRate(self,HcRate):
 		self.add_query_param('HcRate',HcRate)
-
-	def get_OppositeInterfaceId(self):
-		return self.get_query_params().get('OppositeInterfaceId')
-
-	def set_OppositeInterfaceId(self,OppositeInterfaceId):
-		self.add_query_param('OppositeInterfaceId',OppositeInterfaceId)

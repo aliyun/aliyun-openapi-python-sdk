@@ -36,12 +36,6 @@ class DescribeEipAddressesRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
-
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
 	def get_Filter2Value(self):
 		return self.get_query_params().get('Filter.2.Value')
 
@@ -54,35 +48,11 @@ class DescribeEipAddressesRequest(RpcRequest):
 	def set_ISP(self,ISP):
 		self.add_query_param('ISP',ISP)
 
-	def get_OwnerAccount(self):
-		return self.get_query_params().get('OwnerAccount')
-
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
-
 	def get_AllocationId(self):
 		return self.get_query_params().get('AllocationId')
 
 	def set_AllocationId(self,AllocationId):
 		self.add_query_param('AllocationId',AllocationId)
-
-	def get_Filter1Value(self):
-		return self.get_query_params().get('Filter.1.Value')
-
-	def set_Filter1Value(self,Filter1Value):
-		self.add_query_param('Filter.1.Value',Filter1Value)
-
-	def get_Filter2Key(self):
-		return self.get_query_params().get('Filter.2.Key')
-
-	def set_Filter2Key(self,Filter2Key):
-		self.add_query_param('Filter.2.Key',Filter2Key)
-
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
 
 	def get_IncludeReservationData(self):
 		return self.get_query_params().get('IncludeReservationData')
@@ -142,6 +112,36 @@ class DescribeEipAddressesRequest(RpcRequest):
 			if Tags[i].get('Key') is not None:
 				self.add_query_param('Tag.' + str(i + 1) + '.Key' , Tags[i].get('Key'))
 
+
+	def get_ResourceOwnerAccount(self):
+		return self.get_query_params().get('ResourceOwnerAccount')
+
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+
+	def get_OwnerAccount(self):
+		return self.get_query_params().get('OwnerAccount')
+
+	def set_OwnerAccount(self,OwnerAccount):
+		self.add_query_param('OwnerAccount',OwnerAccount)
+
+	def get_Filter1Value(self):
+		return self.get_query_params().get('Filter.1.Value')
+
+	def set_Filter1Value(self,Filter1Value):
+		self.add_query_param('Filter.1.Value',Filter1Value)
+
+	def get_Filter2Key(self):
+		return self.get_query_params().get('Filter.2.Key')
+
+	def set_Filter2Key(self,Filter2Key):
+		self.add_query_param('Filter.2.Key',Filter2Key)
+
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
 
 	def get_ChargeType(self):
 		return self.get_query_params().get('ChargeType')

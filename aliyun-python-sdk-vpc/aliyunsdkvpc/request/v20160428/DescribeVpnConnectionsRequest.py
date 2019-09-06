@@ -36,29 +36,35 @@ class DescribeVpnConnectionsRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
+	def get_CustomerGatewayId(self):
+		return self.get_query_params().get('CustomerGatewayId')
 
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+	def set_CustomerGatewayId(self,CustomerGatewayId):
+		self.add_query_param('CustomerGatewayId',CustomerGatewayId)
 
-	def get_VpnConnectionId(self):
-		return self.get_query_params().get('VpnConnectionId')
+	def get_PageNumber(self):
+		return self.get_query_params().get('PageNumber')
 
-	def set_VpnConnectionId(self,VpnConnectionId):
-		self.add_query_param('VpnConnectionId',VpnConnectionId)
-
-	def get_OwnerAccount(self):
-		return self.get_query_params().get('OwnerAccount')
-
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)
 
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
 
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
+
+	def get_ResourceOwnerAccount(self):
+		return self.get_query_params().get('ResourceOwnerAccount')
+
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+
+	def get_OwnerAccount(self):
+		return self.get_query_params().get('OwnerAccount')
+
+	def set_OwnerAccount(self,OwnerAccount):
+		self.add_query_param('OwnerAccount',OwnerAccount)
 
 	def get_VpnGatewayId(self):
 		return self.get_query_params().get('VpnGatewayId')
@@ -72,14 +78,8 @@ class DescribeVpnConnectionsRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_CustomerGatewayId(self):
-		return self.get_query_params().get('CustomerGatewayId')
+	def get_VpnConnectionId(self):
+		return self.get_query_params().get('VpnConnectionId')
 
-	def set_CustomerGatewayId(self,CustomerGatewayId):
-		self.add_query_param('CustomerGatewayId',CustomerGatewayId)
-
-	def get_PageNumber(self):
-		return self.get_query_params().get('PageNumber')
-
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
+	def set_VpnConnectionId(self,VpnConnectionId):
+		self.add_query_param('VpnConnectionId',VpnConnectionId)

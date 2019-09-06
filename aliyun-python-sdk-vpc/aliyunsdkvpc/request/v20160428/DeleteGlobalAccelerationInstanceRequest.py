@@ -36,6 +36,12 @@ class DeleteGlobalAccelerationInstanceRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_GlobalAccelerationInstanceId(self):
+		return self.get_query_params().get('GlobalAccelerationInstanceId')
+
+	def set_GlobalAccelerationInstanceId(self,GlobalAccelerationInstanceId):
+		self.add_query_param('GlobalAccelerationInstanceId',GlobalAccelerationInstanceId)
+
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -53,9 +59,3 @@ class DeleteGlobalAccelerationInstanceRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
-
-	def get_GlobalAccelerationInstanceId(self):
-		return self.get_query_params().get('GlobalAccelerationInstanceId')
-
-	def set_GlobalAccelerationInstanceId(self,GlobalAccelerationInstanceId):
-		self.add_query_param('GlobalAccelerationInstanceId',GlobalAccelerationInstanceId)

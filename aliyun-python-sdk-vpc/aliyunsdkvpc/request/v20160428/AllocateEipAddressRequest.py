@@ -36,6 +36,36 @@ class AllocateEipAddressRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_ClientToken(self):
+		return self.get_query_params().get('ClientToken')
+
+	def set_ClientToken(self,ClientToken):
+		self.add_query_param('ClientToken',ClientToken)
+
+	def get_ISP(self):
+		return self.get_query_params().get('ISP')
+
+	def set_ISP(self,ISP):
+		self.add_query_param('ISP',ISP)
+
+	def get_ResourceGroupId(self):
+		return self.get_query_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self,ResourceGroupId):
+		self.add_query_param('ResourceGroupId',ResourceGroupId)
+
+	def get_Netmode(self):
+		return self.get_query_params().get('Netmode')
+
+	def set_Netmode(self,Netmode):
+		self.add_query_param('Netmode',Netmode)
+
+	def get_InstanceChargeType(self):
+		return self.get_query_params().get('InstanceChargeType')
+
+	def set_InstanceChargeType(self,InstanceChargeType):
+		self.add_query_param('InstanceChargeType',InstanceChargeType)
+
 	def get_Period(self):
 		return self.get_query_params().get('Period')
 
@@ -60,18 +90,6 @@ class AllocateEipAddressRequest(RpcRequest):
 	def set_Bandwidth(self,Bandwidth):
 		self.add_query_param('Bandwidth',Bandwidth)
 
-	def get_ClientToken(self):
-		return self.get_query_params().get('ClientToken')
-
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
-
-	def get_ISP(self):
-		return self.get_query_params().get('ISP')
-
-	def set_ISP(self,ISP):
-		self.add_query_param('ISP',ISP)
-
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
 
@@ -90,32 +108,14 @@ class AllocateEipAddressRequest(RpcRequest):
 	def set_ActivityId(self,ActivityId):
 		self.add_query_param('ActivityId',ActivityId)
 
-	def get_ResourceGroupId(self):
-		return self.get_query_params().get('ResourceGroupId')
-
-	def set_ResourceGroupId(self,ResourceGroupId):
-		self.add_query_param('ResourceGroupId',ResourceGroupId)
-
 	def get_InternetChargeType(self):
 		return self.get_query_params().get('InternetChargeType')
 
 	def set_InternetChargeType(self,InternetChargeType):
 		self.add_query_param('InternetChargeType',InternetChargeType)
 
-	def get_Netmode(self):
-		return self.get_query_params().get('Netmode')
-
-	def set_Netmode(self,Netmode):
-		self.add_query_param('Netmode',Netmode)
-
 	def get_PricingCycle(self):
 		return self.get_query_params().get('PricingCycle')
 
 	def set_PricingCycle(self,PricingCycle):
 		self.add_query_param('PricingCycle',PricingCycle)
-
-	def get_InstanceChargeType(self):
-		return self.get_query_params().get('InstanceChargeType')
-
-	def set_InstanceChargeType(self,InstanceChargeType):
-		self.add_query_param('InstanceChargeType',InstanceChargeType)

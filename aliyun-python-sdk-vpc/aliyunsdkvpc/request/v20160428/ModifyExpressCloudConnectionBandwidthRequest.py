@@ -36,6 +36,12 @@ class ModifyExpressCloudConnectionBandwidthRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_EccId(self):
+		return self.get_query_params().get('EccId')
+
+	def set_EccId(self,EccId):
+		self.add_query_param('EccId',EccId)
+
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -59,9 +65,3 @@ class ModifyExpressCloudConnectionBandwidthRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
-
-	def get_EccId(self):
-		return self.get_query_params().get('EccId')
-
-	def set_EccId(self,EccId):
-		self.add_query_param('EccId',EccId)

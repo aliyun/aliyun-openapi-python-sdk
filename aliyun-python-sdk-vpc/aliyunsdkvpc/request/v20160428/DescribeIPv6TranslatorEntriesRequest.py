@@ -36,29 +36,11 @@ class DescribeIPv6TranslatorEntriesRequest(RpcRequest):
 	def set_BackendIpv4Port(self,BackendIpv4Port):
 		self.add_query_param('BackendIpv4Port',BackendIpv4Port)
 
-	def get_AclId(self):
-		return self.get_query_params().get('AclId')
-
-	def set_AclId(self,AclId):
-		self.add_query_param('AclId',AclId)
-
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_Ipv6TranslatorEntryId(self):
-		return self.get_query_params().get('Ipv6TranslatorEntryId')
-
-	def set_Ipv6TranslatorEntryId(self,Ipv6TranslatorEntryId):
-		self.add_query_param('Ipv6TranslatorEntryId',Ipv6TranslatorEntryId)
-
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
-
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
 	def get_EntryName(self):
 		return self.get_query_params().get('EntryName')
@@ -66,29 +48,11 @@ class DescribeIPv6TranslatorEntriesRequest(RpcRequest):
 	def set_EntryName(self,EntryName):
 		self.add_query_param('EntryName',EntryName)
 
-	def get_AllocateIpv6Addr(self):
-		return self.get_query_params().get('AllocateIpv6Addr')
-
-	def set_AllocateIpv6Addr(self,AllocateIpv6Addr):
-		self.add_query_param('AllocateIpv6Addr',AllocateIpv6Addr)
-
 	def get_ClientToken(self):
 		return self.get_query_params().get('ClientToken')
 
 	def set_ClientToken(self,ClientToken):
 		self.add_query_param('ClientToken',ClientToken)
-
-	def get_OwnerAccount(self):
-		return self.get_query_params().get('OwnerAccount')
-
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
-
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
 
 	def get_AclStatus(self):
 		return self.get_query_params().get('AclStatus')
@@ -125,6 +89,42 @@ class DescribeIPv6TranslatorEntriesRequest(RpcRequest):
 
 	def set_BackendIpv4Addr(self,BackendIpv4Addr):
 		self.add_query_param('BackendIpv4Addr',BackendIpv4Addr)
+
+	def get_AclId(self):
+		return self.get_query_params().get('AclId')
+
+	def set_AclId(self,AclId):
+		self.add_query_param('AclId',AclId)
+
+	def get_Ipv6TranslatorEntryId(self):
+		return self.get_query_params().get('Ipv6TranslatorEntryId')
+
+	def set_Ipv6TranslatorEntryId(self,Ipv6TranslatorEntryId):
+		self.add_query_param('Ipv6TranslatorEntryId',Ipv6TranslatorEntryId)
+
+	def get_ResourceOwnerAccount(self):
+		return self.get_query_params().get('ResourceOwnerAccount')
+
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+
+	def get_AllocateIpv6Addr(self):
+		return self.get_query_params().get('AllocateIpv6Addr')
+
+	def set_AllocateIpv6Addr(self,AllocateIpv6Addr):
+		self.add_query_param('AllocateIpv6Addr',AllocateIpv6Addr)
+
+	def get_OwnerAccount(self):
+		return self.get_query_params().get('OwnerAccount')
+
+	def set_OwnerAccount(self,OwnerAccount):
+		self.add_query_param('OwnerAccount',OwnerAccount)
+
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
 
 	def get_TransProtocol(self):
 		return self.get_query_params().get('TransProtocol')

@@ -36,6 +36,18 @@ class AssociateGlobalAccelerationInstanceRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_GlobalAccelerationInstanceId(self):
+		return self.get_query_params().get('GlobalAccelerationInstanceId')
+
+	def set_GlobalAccelerationInstanceId(self,GlobalAccelerationInstanceId):
+		self.add_query_param('GlobalAccelerationInstanceId',GlobalAccelerationInstanceId)
+
+	def get_BackendServerId(self):
+		return self.get_query_params().get('BackendServerId')
+
+	def set_BackendServerId(self,BackendServerId):
+		self.add_query_param('BackendServerId',BackendServerId)
+
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -48,23 +60,11 @@ class AssociateGlobalAccelerationInstanceRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
-	def get_BackendServerId(self):
-		return self.get_query_params().get('BackendServerId')
-
-	def set_BackendServerId(self,BackendServerId):
-		self.add_query_param('BackendServerId',BackendServerId)
-
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
-
-	def get_GlobalAccelerationInstanceId(self):
-		return self.get_query_params().get('GlobalAccelerationInstanceId')
-
-	def set_GlobalAccelerationInstanceId(self,GlobalAccelerationInstanceId):
-		self.add_query_param('GlobalAccelerationInstanceId',GlobalAccelerationInstanceId)
 
 	def get_BackendServerRegionId(self):
 		return self.get_query_params().get('BackendServerRegionId')

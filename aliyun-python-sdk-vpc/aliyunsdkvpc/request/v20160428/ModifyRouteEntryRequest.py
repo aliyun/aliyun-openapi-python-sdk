@@ -36,12 +36,6 @@ class ModifyRouteEntryRequest(RpcRequest):
 	def set_RouteEntryName(self,RouteEntryName):
 		self.add_query_param('RouteEntryName',RouteEntryName)
 
-	def get_RouteEntryId(self):
-		return self.get_query_params().get('RouteEntryId')
-
-	def set_RouteEntryId(self,RouteEntryId):
-		self.add_query_param('RouteEntryId',RouteEntryId)
-
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -59,3 +53,9 @@ class ModifyRouteEntryRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_RouteEntryId(self):
+		return self.get_query_params().get('RouteEntryId')
+
+	def set_RouteEntryId(self,RouteEntryId):
+		self.add_query_param('RouteEntryId',RouteEntryId)

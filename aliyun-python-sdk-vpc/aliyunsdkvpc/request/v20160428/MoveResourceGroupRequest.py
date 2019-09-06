@@ -42,12 +42,6 @@ class MoveResourceGroupRequest(RpcRequest):
 	def set_ResourceId(self,ResourceId):
 		self.add_query_param('ResourceId',ResourceId)
 
-	def get_NewResourceGroupId(self):
-		return self.get_query_params().get('NewResourceGroupId')
-
-	def set_NewResourceGroupId(self,NewResourceGroupId):
-		self.add_query_param('NewResourceGroupId',NewResourceGroupId)
-
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -71,3 +65,9 @@ class MoveResourceGroupRequest(RpcRequest):
 
 	def set_ResourceType(self,ResourceType):
 		self.add_query_param('ResourceType',ResourceType)
+
+	def get_NewResourceGroupId(self):
+		return self.get_query_params().get('NewResourceGroupId')
+
+	def set_NewResourceGroupId(self,NewResourceGroupId):
+		self.add_query_param('NewResourceGroupId',NewResourceGroupId)

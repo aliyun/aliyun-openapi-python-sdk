@@ -48,35 +48,17 @@ class AssociatePhysicalConnectionToVirtualBorderRouterRequest(RpcRequest):
 	def set_VlanId(self,VlanId):
 		self.add_query_param('VlanId',VlanId)
 
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
-
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
 	def get_ClientToken(self):
 		return self.get_query_params().get('ClientToken')
 
 	def set_ClientToken(self,ClientToken):
 		self.add_query_param('ClientToken',ClientToken)
 
-	def get_OwnerAccount(self):
-		return self.get_query_params().get('OwnerAccount')
-
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
-
 	def get_VbrId(self):
 		return self.get_query_params().get('VbrId')
 
 	def set_VbrId(self,VbrId):
 		self.add_query_param('VbrId',VbrId)
-
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
 
 	def get_PeerGatewayIp(self):
 		return self.get_query_params().get('PeerGatewayIp')
@@ -90,14 +72,32 @@ class AssociatePhysicalConnectionToVirtualBorderRouterRequest(RpcRequest):
 	def set_PeeringSubnetMask(self,PeeringSubnetMask):
 		self.add_query_param('PeeringSubnetMask',PeeringSubnetMask)
 
-	def get_PhysicalConnectionId(self):
-		return self.get_query_params().get('PhysicalConnectionId')
-
-	def set_PhysicalConnectionId(self,PhysicalConnectionId):
-		self.add_query_param('PhysicalConnectionId',PhysicalConnectionId)
-
 	def get_LocalGatewayIp(self):
 		return self.get_query_params().get('LocalGatewayIp')
 
 	def set_LocalGatewayIp(self,LocalGatewayIp):
 		self.add_query_param('LocalGatewayIp',LocalGatewayIp)
+
+	def get_ResourceOwnerAccount(self):
+		return self.get_query_params().get('ResourceOwnerAccount')
+
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+
+	def get_OwnerAccount(self):
+		return self.get_query_params().get('OwnerAccount')
+
+	def set_OwnerAccount(self,OwnerAccount):
+		self.add_query_param('OwnerAccount',OwnerAccount)
+
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
+
+	def get_PhysicalConnectionId(self):
+		return self.get_query_params().get('PhysicalConnectionId')
+
+	def set_PhysicalConnectionId(self,PhysicalConnectionId):
+		self.add_query_param('PhysicalConnectionId',PhysicalConnectionId)

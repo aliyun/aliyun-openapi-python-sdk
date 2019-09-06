@@ -36,6 +36,30 @@ class ModifyRouteTableAttributesRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_Description(self):
+		return self.get_query_params().get('Description')
+
+	def set_Description(self,Description):
+		self.add_query_param('Description',Description)
+
+	def get_RouteTableName(self):
+		return self.get_query_params().get('RouteTableName')
+
+	def set_RouteTableName(self,RouteTableName):
+		self.add_query_param('RouteTableName',RouteTableName)
+
+	def get_ResourceUid(self):
+		return self.get_query_params().get('ResourceUid')
+
+	def set_ResourceUid(self,ResourceUid):
+		self.add_query_param('ResourceUid',ResourceUid)
+
+	def get_RouteTableId(self):
+		return self.get_query_params().get('RouteTableId')
+
+	def set_RouteTableId(self,RouteTableId):
+		self.add_query_param('RouteTableId',RouteTableId)
+
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -54,12 +78,6 @@ class ModifyRouteTableAttributesRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
-	def get_Description(self):
-		return self.get_query_params().get('Description')
-
-	def set_Description(self,Description):
-		self.add_query_param('Description',Description)
-
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
@@ -72,26 +90,8 @@ class ModifyRouteTableAttributesRequest(RpcRequest):
 	def set_KbpsBandwidth(self,KbpsBandwidth):
 		self.add_query_param('KbpsBandwidth',KbpsBandwidth)
 
-	def get_RouteTableName(self):
-		return self.get_query_params().get('RouteTableName')
-
-	def set_RouteTableName(self,RouteTableName):
-		self.add_query_param('RouteTableName',RouteTableName)
-
-	def get_ResourceUid(self):
-		return self.get_query_params().get('ResourceUid')
-
-	def set_ResourceUid(self,ResourceUid):
-		self.add_query_param('ResourceUid',ResourceUid)
-
 	def get_ResourceBid(self):
 		return self.get_query_params().get('ResourceBid')
 
 	def set_ResourceBid(self,ResourceBid):
 		self.add_query_param('ResourceBid',ResourceBid)
-
-	def get_RouteTableId(self):
-		return self.get_query_params().get('RouteTableId')
-
-	def set_RouteTableId(self,RouteTableId):
-		self.add_query_param('RouteTableId',RouteTableId)

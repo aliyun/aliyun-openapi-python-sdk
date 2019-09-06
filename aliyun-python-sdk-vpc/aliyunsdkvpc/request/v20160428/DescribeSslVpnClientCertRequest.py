@@ -36,6 +36,12 @@ class DescribeSslVpnClientCertRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_SslVpnClientCertId(self):
+		return self.get_query_params().get('SslVpnClientCertId')
+
+	def set_SslVpnClientCertId(self,SslVpnClientCertId):
+		self.add_query_param('SslVpnClientCertId',SslVpnClientCertId)
+
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -53,9 +59,3 @@ class DescribeSslVpnClientCertRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
-
-	def get_SslVpnClientCertId(self):
-		return self.get_query_params().get('SslVpnClientCertId')
-
-	def set_SslVpnClientCertId(self,SslVpnClientCertId):
-		self.add_query_param('SslVpnClientCertId',SslVpnClientCertId)

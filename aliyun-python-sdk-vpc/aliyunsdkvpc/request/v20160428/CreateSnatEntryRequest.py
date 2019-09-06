@@ -36,6 +36,18 @@ class CreateSnatEntryRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_SourceCIDR(self):
+		return self.get_query_params().get('SourceCIDR')
+
+	def set_SourceCIDR(self,SourceCIDR):
+		self.add_query_param('SourceCIDR',SourceCIDR)
+
+	def get_SnatIp(self):
+		return self.get_query_params().get('SnatIp')
+
+	def set_SnatIp(self,SnatIp):
+		self.add_query_param('SnatIp',SnatIp)
+
 	def get_SourceVSwitchId(self):
 		return self.get_query_params().get('SourceVSwitchId')
 
@@ -54,18 +66,6 @@ class CreateSnatEntryRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
-	def get_SnatEntryName(self):
-		return self.get_query_params().get('SnatEntryName')
-
-	def set_SnatEntryName(self,SnatEntryName):
-		self.add_query_param('SnatEntryName',SnatEntryName)
-
-	def get_SourceCIDR(self):
-		return self.get_query_params().get('SourceCIDR')
-
-	def set_SourceCIDR(self,SourceCIDR):
-		self.add_query_param('SourceCIDR',SourceCIDR)
-
 	def get_SnatTableId(self):
 		return self.get_query_params().get('SnatTableId')
 
@@ -78,8 +78,8 @@ class CreateSnatEntryRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_SnatIp(self):
-		return self.get_query_params().get('SnatIp')
+	def get_SnatEntryName(self):
+		return self.get_query_params().get('SnatEntryName')
 
-	def set_SnatIp(self,SnatIp):
-		self.add_query_param('SnatIp',SnatIp)
+	def set_SnatEntryName(self,SnatEntryName):
+		self.add_query_param('SnatEntryName',SnatEntryName)

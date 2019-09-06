@@ -36,6 +36,18 @@ class CreateVpnGatewayRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_EnableIpsec(self):
+		return self.get_query_params().get('EnableIpsec')
+
+	def set_EnableIpsec(self,EnableIpsec):
+		self.add_query_param('EnableIpsec',EnableIpsec)
+
+	def get_InstanceChargeType(self):
+		return self.get_query_params().get('InstanceChargeType')
+
+	def set_InstanceChargeType(self,InstanceChargeType):
+		self.add_query_param('InstanceChargeType',InstanceChargeType)
+
 	def get_Period(self):
 		return self.get_query_params().get('Period')
 
@@ -60,12 +72,6 @@ class CreateVpnGatewayRequest(RpcRequest):
 	def set_Bandwidth(self,Bandwidth):
 		self.add_query_param('Bandwidth',Bandwidth)
 
-	def get_EnableIpsec(self):
-		return self.get_query_params().get('EnableIpsec')
-
-	def set_EnableIpsec(self,EnableIpsec):
-		self.add_query_param('EnableIpsec',EnableIpsec)
-
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
 
@@ -77,6 +83,12 @@ class CreateVpnGatewayRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_VSwitchId(self):
+		return self.get_query_params().get('VSwitchId')
+
+	def set_VSwitchId(self,VSwitchId):
+		self.add_query_param('VSwitchId',VSwitchId)
 
 	def get_EnableSsl(self):
 		return self.get_query_params().get('EnableSsl')
@@ -101,9 +113,3 @@ class CreateVpnGatewayRequest(RpcRequest):
 
 	def set_Name(self,Name):
 		self.add_query_param('Name',Name)
-
-	def get_InstanceChargeType(self):
-		return self.get_query_params().get('InstanceChargeType')
-
-	def set_InstanceChargeType(self,InstanceChargeType):
-		self.add_query_param('InstanceChargeType',InstanceChargeType)

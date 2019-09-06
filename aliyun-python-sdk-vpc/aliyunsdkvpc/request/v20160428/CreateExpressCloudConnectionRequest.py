@@ -36,17 +36,29 @@ class CreateExpressCloudConnectionRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_PeerLocation(self):
-		return self.get_query_params().get('PeerLocation')
-
-	def set_PeerLocation(self,PeerLocation):
-		self.add_query_param('PeerLocation',PeerLocation)
-
 	def get_PortType(self):
 		return self.get_query_params().get('PortType')
 
 	def set_PortType(self,PortType):
 		self.add_query_param('PortType',PortType)
+
+	def get_Description(self):
+		return self.get_query_params().get('Description')
+
+	def set_Description(self,Description):
+		self.add_query_param('Description',Description)
+
+	def get_RedundantEccId(self):
+		return self.get_query_params().get('RedundantEccId')
+
+	def set_RedundantEccId(self,RedundantEccId):
+		self.add_query_param('RedundantEccId',RedundantEccId)
+
+	def get_PeerLocation(self):
+		return self.get_query_params().get('PeerLocation')
+
+	def set_PeerLocation(self,PeerLocation):
+		self.add_query_param('PeerLocation',PeerLocation)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -66,12 +78,6 @@ class CreateExpressCloudConnectionRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
-	def get_Description(self):
-		return self.get_query_params().get('Description')
-
-	def set_Description(self,Description):
-		self.add_query_param('Description',Description)
-
 	def get_PeerCity(self):
 		return self.get_query_params().get('PeerCity')
 
@@ -83,12 +89,6 @@ class CreateExpressCloudConnectionRequest(RpcRequest):
 
 	def set_IDCardNo(self,IDCardNo):
 		self.add_query_param('IDCardNo',IDCardNo)
-
-	def get_RedundantEccId(self):
-		return self.get_query_params().get('RedundantEccId')
-
-	def set_RedundantEccId(self,RedundantEccId):
-		self.add_query_param('RedundantEccId',RedundantEccId)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')

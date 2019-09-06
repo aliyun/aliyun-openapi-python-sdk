@@ -36,17 +36,29 @@ class ApplyPhysicalConnectionLOARequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_PeerLocation(self):
-		return self.get_query_params().get('PeerLocation')
-
-	def set_PeerLocation(self,PeerLocation):
-		self.add_query_param('PeerLocation',PeerLocation)
-
 	def get_ClientToken(self):
 		return self.get_query_params().get('ClientToken')
 
 	def set_ClientToken(self,ClientToken):
 		self.add_query_param('ClientToken',ClientToken)
+
+	def get_LineType(self):
+		return self.get_query_params().get('LineType')
+
+	def set_LineType(self,LineType):
+		self.add_query_param('LineType',LineType)
+
+	def get_Si(self):
+		return self.get_query_params().get('Si')
+
+	def set_Si(self,Si):
+		self.add_query_param('Si',Si)
+
+	def get_PeerLocation(self):
+		return self.get_query_params().get('PeerLocation')
+
+	def set_PeerLocation(self,PeerLocation):
+		self.add_query_param('PeerLocation',PeerLocation)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -59,12 +71,6 @@ class ApplyPhysicalConnectionLOARequest(RpcRequest):
 
 	def set_Bandwidth(self,Bandwidth):
 		self.add_query_param('Bandwidth',Bandwidth)
-
-	def get_LineType(self):
-		return self.get_query_params().get('LineType')
-
-	def set_LineType(self,LineType):
-		self.add_query_param('LineType',LineType)
 
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
@@ -95,12 +101,6 @@ class ApplyPhysicalConnectionLOARequest(RpcRequest):
 
 	def set_CompanyName(self,CompanyName):
 		self.add_query_param('CompanyName',CompanyName)
-
-	def get_Si(self):
-		return self.get_query_params().get('Si')
-
-	def set_Si(self,Si):
-		self.add_query_param('Si',Si)
 
 	def get_PMInfos(self):
 		return self.get_query_params().get('PMInfos')

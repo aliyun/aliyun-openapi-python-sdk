@@ -30,6 +30,18 @@ class RemoveBandwidthPackageIpsRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_ResourceOwnerId(self):
+		return self.get_query_params().get('ResourceOwnerId')
+
+	def set_ResourceOwnerId(self,ResourceOwnerId):
+		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+
+	def get_ClientToken(self):
+		return self.get_query_params().get('ClientToken')
+
+	def set_ClientToken(self,ClientToken):
+		self.add_query_param('ClientToken',ClientToken)
+
 	def get_RemovedIpAddressess(self):
 		return self.get_query_params().get('RemovedIpAddressess')
 
@@ -37,12 +49,6 @@ class RemoveBandwidthPackageIpsRequest(RpcRequest):
 		for i in range(len(RemovedIpAddressess)):	
 			if RemovedIpAddressess[i] is not None:
 				self.add_query_param('RemovedIpAddresses.' + str(i + 1) , RemovedIpAddressess[i]);
-
-	def get_ResourceOwnerId(self):
-		return self.get_query_params().get('ResourceOwnerId')
-
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
 	def get_BandwidthPackageId(self):
 		return self.get_query_params().get('BandwidthPackageId')
@@ -55,12 +61,6 @@ class RemoveBandwidthPackageIpsRequest(RpcRequest):
 
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_ClientToken(self):
-		return self.get_query_params().get('ClientToken')
-
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
 
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')

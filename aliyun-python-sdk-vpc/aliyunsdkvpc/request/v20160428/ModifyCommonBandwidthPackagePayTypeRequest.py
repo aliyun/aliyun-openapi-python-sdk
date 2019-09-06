@@ -36,6 +36,18 @@ class ModifyCommonBandwidthPackagePayTypeRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_Duration(self):
+		return self.get_query_params().get('Duration')
+
+	def set_Duration(self,Duration):
+		self.add_query_param('Duration',Duration)
+
+	def get_ResourceUid(self):
+		return self.get_query_params().get('ResourceUid')
+
+	def set_ResourceUid(self,ResourceUid):
+		self.add_query_param('ResourceUid',ResourceUid)
+
 	def get_BandwidthPackageId(self):
 		return self.get_query_params().get('BandwidthPackageId')
 
@@ -72,23 +84,11 @@ class ModifyCommonBandwidthPackagePayTypeRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_Duration(self):
-		return self.get_query_params().get('Duration')
-
-	def set_Duration(self,Duration):
-		self.add_query_param('Duration',Duration)
-
 	def get_KbpsBandwidth(self):
 		return self.get_query_params().get('KbpsBandwidth')
 
 	def set_KbpsBandwidth(self,KbpsBandwidth):
 		self.add_query_param('KbpsBandwidth',KbpsBandwidth)
-
-	def get_ResourceUid(self):
-		return self.get_query_params().get('ResourceUid')
-
-	def set_ResourceUid(self,ResourceUid):
-		self.add_query_param('ResourceUid',ResourceUid)
 
 	def get_ResourceBid(self):
 		return self.get_query_params().get('ResourceBid')

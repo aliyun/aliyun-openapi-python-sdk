@@ -36,12 +36,6 @@ class CreatePhysicalConnectionSetupOrderRequest(RpcRequest):
 	def set_AccessPointId(self,AccessPointId):
 		self.add_query_param('AccessPointId',AccessPointId)
 
-	def get_RedundantPhysicalConnectionId(self):
-		return self.get_query_params().get('RedundantPhysicalConnectionId')
-
-	def set_RedundantPhysicalConnectionId(self,RedundantPhysicalConnectionId):
-		self.add_query_param('RedundantPhysicalConnectionId',RedundantPhysicalConnectionId)
-
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
@@ -54,17 +48,23 @@ class CreatePhysicalConnectionSetupOrderRequest(RpcRequest):
 	def set_PortType(self,PortType):
 		self.add_query_param('PortType',PortType)
 
-	def get_AutoPay(self):
-		return self.get_query_params().get('AutoPay')
-
-	def set_AutoPay(self,AutoPay):
-		self.add_query_param('AutoPay',AutoPay)
-
 	def get_ClientToken(self):
 		return self.get_query_params().get('ClientToken')
 
 	def set_ClientToken(self,ClientToken):
 		self.add_query_param('ClientToken',ClientToken)
+
+	def get_RedundantPhysicalConnectionId(self):
+		return self.get_query_params().get('RedundantPhysicalConnectionId')
+
+	def set_RedundantPhysicalConnectionId(self,RedundantPhysicalConnectionId):
+		self.add_query_param('RedundantPhysicalConnectionId',RedundantPhysicalConnectionId)
+
+	def get_AutoPay(self):
+		return self.get_query_params().get('AutoPay')
+
+	def set_AutoPay(self,AutoPay):
+		self.add_query_param('AutoPay',AutoPay)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')

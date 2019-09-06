@@ -36,11 +36,11 @@ class DeleteForwardEntryRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
+	def get_ForwardTableId(self):
+		return self.get_query_params().get('ForwardTableId')
 
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+	def set_ForwardTableId(self,ForwardTableId):
+		self.add_query_param('ForwardTableId',ForwardTableId)
 
 	def get_ForwardEntryId(self):
 		return self.get_query_params().get('ForwardEntryId')
@@ -48,17 +48,17 @@ class DeleteForwardEntryRequest(RpcRequest):
 	def set_ForwardEntryId(self,ForwardEntryId):
 		self.add_query_param('ForwardEntryId',ForwardEntryId)
 
+	def get_ResourceOwnerAccount(self):
+		return self.get_query_params().get('ResourceOwnerAccount')
+
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
 
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
-
-	def get_ForwardTableId(self):
-		return self.get_query_params().get('ForwardTableId')
-
-	def set_ForwardTableId(self,ForwardTableId):
-		self.add_query_param('ForwardTableId',ForwardTableId)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')

@@ -22,10 +22,14 @@ class EndpointData():
 	def __init__(self):
 		self.endpoint_map = {
 			"cn-shenzhen": "vpc.aliyuncs.com",
-			"cn-qingdao": "vpc.aliyuncs.com",
 			"cn-beijing": "vpc.aliyuncs.com",
+			"cn-shenzhen-finance-1": "vpc.aliyuncs.com",
+			"cn-north-2-gov-1": "vpc.aliyuncs.com",
+			"cn-qingdao": "vpc.aliyuncs.com",
 			"cn-shanghai": "vpc.aliyuncs.com",
+			"cn-shanghai-finance-1": "vpc.aliyuncs.com",
 			"cn-hongkong": "vpc.aliyuncs.com",
+			"cn-hangzhou-finance": "vpc.aliyuncs.com",
 			"ap-southeast-1": "vpc.aliyuncs.com",
 			"us-east-1": "vpc.aliyuncs.com",
 			"us-west-1": "vpc.aliyuncs.com",

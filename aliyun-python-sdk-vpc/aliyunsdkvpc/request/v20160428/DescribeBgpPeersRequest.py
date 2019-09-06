@@ -36,23 +36,17 @@ class DescribeBgpPeersRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
+	def get_BgpGroupId(self):
+		return self.get_query_params().get('BgpGroupId')
 
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+	def set_BgpGroupId(self,BgpGroupId):
+		self.add_query_param('BgpGroupId',BgpGroupId)
 
-	def get_RouterId(self):
-		return self.get_query_params().get('RouterId')
+	def get_PageNumber(self):
+		return self.get_query_params().get('PageNumber')
 
-	def set_RouterId(self,RouterId):
-		self.add_query_param('RouterId',RouterId)
-
-	def get_OwnerAccount(self):
-		return self.get_query_params().get('OwnerAccount')
-
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)
 
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
@@ -60,11 +54,23 @@ class DescribeBgpPeersRequest(RpcRequest):
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
 
-	def get_BgpGroupId(self):
-		return self.get_query_params().get('BgpGroupId')
+	def get_IsDefault(self):
+		return self.get_query_params().get('IsDefault')
 
-	def set_BgpGroupId(self,BgpGroupId):
-		self.add_query_param('BgpGroupId',BgpGroupId)
+	def set_IsDefault(self,IsDefault):
+		self.add_query_param('IsDefault',IsDefault)
+
+	def get_ResourceOwnerAccount(self):
+		return self.get_query_params().get('ResourceOwnerAccount')
+
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+
+	def get_OwnerAccount(self):
+		return self.get_query_params().get('OwnerAccount')
+
+	def set_OwnerAccount(self,OwnerAccount):
+		self.add_query_param('OwnerAccount',OwnerAccount)
 
 	def get_BgpPeerId(self):
 		return self.get_query_params().get('BgpPeerId')
@@ -72,20 +78,14 @@ class DescribeBgpPeersRequest(RpcRequest):
 	def set_BgpPeerId(self,BgpPeerId):
 		self.add_query_param('BgpPeerId',BgpPeerId)
 
-	def get_IsDefault(self):
-		return self.get_query_params().get('IsDefault')
-
-	def set_IsDefault(self,IsDefault):
-		self.add_query_param('IsDefault',IsDefault)
-
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_PageNumber(self):
-		return self.get_query_params().get('PageNumber')
+	def get_RouterId(self):
+		return self.get_query_params().get('RouterId')
 
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
+	def set_RouterId(self,RouterId):
+		self.add_query_param('RouterId',RouterId)

@@ -36,35 +36,11 @@ class DescribeSnatTableEntriesRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
-
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_OwnerAccount(self):
-		return self.get_query_params().get('OwnerAccount')
-
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
-
 	def get_SourceCIDR(self):
 		return self.get_query_params().get('SourceCIDR')
 
 	def set_SourceCIDR(self,SourceCIDR):
 		self.add_query_param('SourceCIDR',SourceCIDR)
-
-	def get_SnatTableId(self):
-		return self.get_query_params().get('SnatTableId')
-
-	def set_SnatTableId(self,SnatTableId):
-		self.add_query_param('SnatTableId',SnatTableId)
-
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
 
 	def get_SnatIp(self):
 		return self.get_query_params().get('SnatIp')
@@ -84,12 +60,6 @@ class DescribeSnatTableEntriesRequest(RpcRequest):
 	def set_SourceVSwitchId(self,SourceVSwitchId):
 		self.add_query_param('SourceVSwitchId',SourceVSwitchId)
 
-	def get_SnatEntryName(self):
-		return self.get_query_params().get('SnatEntryName')
-
-	def set_SnatEntryName(self,SnatEntryName):
-		self.add_query_param('SnatEntryName',SnatEntryName)
-
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
 
@@ -101,3 +71,33 @@ class DescribeSnatTableEntriesRequest(RpcRequest):
 
 	def set_SnatEntryId(self,SnatEntryId):
 		self.add_query_param('SnatEntryId',SnatEntryId)
+
+	def get_ResourceOwnerAccount(self):
+		return self.get_query_params().get('ResourceOwnerAccount')
+
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+
+	def get_OwnerAccount(self):
+		return self.get_query_params().get('OwnerAccount')
+
+	def set_OwnerAccount(self,OwnerAccount):
+		self.add_query_param('OwnerAccount',OwnerAccount)
+
+	def get_SnatTableId(self):
+		return self.get_query_params().get('SnatTableId')
+
+	def set_SnatTableId(self,SnatTableId):
+		self.add_query_param('SnatTableId',SnatTableId)
+
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
+
+	def get_SnatEntryName(self):
+		return self.get_query_params().get('SnatEntryName')
+
+	def set_SnatEntryName(self,SnatEntryName):
+		self.add_query_param('SnatEntryName',SnatEntryName)

@@ -36,6 +36,12 @@ class DeleteIPv6TranslatorEntryRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_ClientToken(self):
+		return self.get_query_params().get('ClientToken')
+
+	def set_ClientToken(self,ClientToken):
+		self.add_query_param('ClientToken',ClientToken)
+
 	def get_Ipv6TranslatorEntryId(self):
 		return self.get_query_params().get('Ipv6TranslatorEntryId')
 
@@ -48,26 +54,20 @@ class DeleteIPv6TranslatorEntryRequest(RpcRequest):
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
-	def get_ClientToken(self):
-		return self.get_query_params().get('ClientToken')
-
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
-
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
 
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
-	def get_Ipv6TranslatorId(self):
-		return self.get_query_params().get('Ipv6TranslatorId')
-
-	def set_Ipv6TranslatorId(self,Ipv6TranslatorId):
-		self.add_query_param('Ipv6TranslatorId',Ipv6TranslatorId)
-
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_Ipv6TranslatorId(self):
+		return self.get_query_params().get('Ipv6TranslatorId')
+
+	def set_Ipv6TranslatorId(self,Ipv6TranslatorId):
+		self.add_query_param('Ipv6TranslatorId',Ipv6TranslatorId)

@@ -36,6 +36,18 @@ class PublishVpnRouteEntryRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_ClientToken(self):
+		return self.get_query_params().get('ClientToken')
+
+	def set_ClientToken(self,ClientToken):
+		self.add_query_param('ClientToken',ClientToken)
+
+	def get_RouteType(self):
+		return self.get_query_params().get('RouteType')
+
+	def set_RouteType(self,RouteType):
+		self.add_query_param('RouteType',RouteType)
+
 	def get_PublishVpc(self):
 		return self.get_query_params().get('PublishVpc')
 
@@ -47,12 +59,6 @@ class PublishVpnRouteEntryRequest(RpcRequest):
 
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_ClientToken(self):
-		return self.get_query_params().get('ClientToken')
-
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
 
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
@@ -83,9 +89,3 @@ class PublishVpnRouteEntryRequest(RpcRequest):
 
 	def set_NextHop(self,NextHop):
 		self.add_query_param('NextHop',NextHop)
-
-	def get_RouteType(self):
-		return self.get_query_params().get('RouteType')
-
-	def set_RouteType(self,RouteType):
-		self.add_query_param('RouteType',RouteType)

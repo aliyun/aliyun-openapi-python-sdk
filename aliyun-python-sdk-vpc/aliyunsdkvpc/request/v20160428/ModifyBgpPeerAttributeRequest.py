@@ -36,6 +36,24 @@ class ModifyBgpPeerAttributeRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_ClientToken(self):
+		return self.get_query_params().get('ClientToken')
+
+	def set_ClientToken(self,ClientToken):
+		self.add_query_param('ClientToken',ClientToken)
+
+	def get_BgpGroupId(self):
+		return self.get_query_params().get('BgpGroupId')
+
+	def set_BgpGroupId(self,BgpGroupId):
+		self.add_query_param('BgpGroupId',BgpGroupId)
+
+	def get_PeerIpAddress(self):
+		return self.get_query_params().get('PeerIpAddress')
+
+	def set_PeerIpAddress(self,PeerIpAddress):
+		self.add_query_param('PeerIpAddress',PeerIpAddress)
+
 	def get_EnableBfd(self):
 		return self.get_query_params().get('EnableBfd')
 
@@ -48,23 +66,11 @@ class ModifyBgpPeerAttributeRequest(RpcRequest):
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
-	def get_ClientToken(self):
-		return self.get_query_params().get('ClientToken')
-
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
-
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
 
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
-
-	def get_BgpGroupId(self):
-		return self.get_query_params().get('BgpGroupId')
-
-	def set_BgpGroupId(self,BgpGroupId):
-		self.add_query_param('BgpGroupId',BgpGroupId)
 
 	def get_BgpPeerId(self):
 		return self.get_query_params().get('BgpPeerId')
@@ -77,9 +83,3 @@ class ModifyBgpPeerAttributeRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
-
-	def get_PeerIpAddress(self):
-		return self.get_query_params().get('PeerIpAddress')
-
-	def set_PeerIpAddress(self,PeerIpAddress):
-		self.add_query_param('PeerIpAddress',PeerIpAddress)

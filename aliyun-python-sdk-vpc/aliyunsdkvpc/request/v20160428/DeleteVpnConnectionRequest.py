@@ -36,23 +36,17 @@ class DeleteVpnConnectionRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
-
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
 	def get_ClientToken(self):
 		return self.get_query_params().get('ClientToken')
 
 	def set_ClientToken(self,ClientToken):
 		self.add_query_param('ClientToken',ClientToken)
 
-	def get_VpnConnectionId(self):
-		return self.get_query_params().get('VpnConnectionId')
+	def get_ResourceOwnerAccount(self):
+		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_VpnConnectionId(self,VpnConnectionId):
-		self.add_query_param('VpnConnectionId',VpnConnectionId)
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
@@ -65,3 +59,9 @@ class DeleteVpnConnectionRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_VpnConnectionId(self):
+		return self.get_query_params().get('VpnConnectionId')
+
+	def set_VpnConnectionId(self,VpnConnectionId):
+		self.add_query_param('VpnConnectionId',VpnConnectionId)
