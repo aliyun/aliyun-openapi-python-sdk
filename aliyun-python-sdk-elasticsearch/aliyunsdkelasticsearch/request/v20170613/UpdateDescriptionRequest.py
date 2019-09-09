@@ -18,6 +18,7 @@
 # under the License.
 
 from aliyunsdkcore.request import RoaRequest
+from aliyunsdkelasticsearch.endpoint import endpoint_data
 
 class UpdateDescriptionRequest(RoaRequest):
 
@@ -25,6 +26,11 @@ class UpdateDescriptionRequest(RoaRequest):
 		RoaRequest.__init__(self, 'elasticsearch', '2017-06-13', 'UpdateDescription','elasticsearch')
 		self.set_uri_pattern('/openapi/instances/[InstanceId]/description')
 		self.set_method('POST|PATCH')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_InstanceId(self):
 		return self.get_path_params().get('InstanceId')

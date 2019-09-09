@@ -18,6 +18,7 @@
 # under the License.
 
 from aliyunsdkcore.request import RoaRequest
+from aliyunsdkelasticsearch.endpoint import endpoint_data
 
 class DeleteProjectRequest(RoaRequest):
 
@@ -25,6 +26,11 @@ class DeleteProjectRequest(RoaRequest):
 		RoaRequest.__init__(self, 'elasticsearch', '2017-06-13', 'DeleteProject','elasticsearch')
 		self.set_uri_pattern('/openapi/projects/[Id]')
 		self.set_method('DELETE')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_clientToken(self):
 		return self.get_query_params().get('clientToken')

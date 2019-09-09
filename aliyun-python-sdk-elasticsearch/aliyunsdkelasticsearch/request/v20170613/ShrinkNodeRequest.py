@@ -18,6 +18,7 @@
 # under the License.
 
 from aliyunsdkcore.request import RoaRequest
+from aliyunsdkelasticsearch.endpoint import endpoint_data
 
 class ShrinkNodeRequest(RoaRequest):
 
@@ -25,6 +26,11 @@ class ShrinkNodeRequest(RoaRequest):
 		RoaRequest.__init__(self, 'elasticsearch', '2017-06-13', 'ShrinkNode','elasticsearch')
 		self.set_uri_pattern('/openapi/instances/[InstanceId]/actions/shrink')
 		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_InstanceId(self):
 		return self.get_path_params().get('InstanceId')
