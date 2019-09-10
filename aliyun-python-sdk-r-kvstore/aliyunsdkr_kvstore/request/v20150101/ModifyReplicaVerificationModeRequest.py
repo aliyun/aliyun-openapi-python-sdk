@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,10 +18,11 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+
 class ModifyReplicaVerificationModeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'R-kvstore', '2015-01-01', 'ModifyReplicaVerificationMode','redisa')
+		RpcRequest.__init__(self, 'R-kvstore', '2015-01-01', 'ModifyReplicaVerificationMode')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -29,17 +30,23 @@ class ModifyReplicaVerificationModeRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_VerificationMode(self):
-		return self.get_query_params().get('VerificationMode')
-
-	def set_VerificationMode(self,VerificationMode):
-		self.add_query_param('VerificationMode',VerificationMode)
-
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
 
 	def set_SecurityToken(self,SecurityToken):
 		self.add_query_param('SecurityToken',SecurityToken)
+
+	def get_ReplicaId(self):
+		return self.get_query_params().get('ReplicaId')
+
+	def set_ReplicaId(self,ReplicaId):
+		self.add_query_param('ReplicaId',ReplicaId)
+
+	def get_VerificationMode(self):
+		return self.get_query_params().get('VerificationMode')
+
+	def set_VerificationMode(self,VerificationMode):
+		self.add_query_param('VerificationMode',VerificationMode)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -52,12 +59,6 @@ class ModifyReplicaVerificationModeRequest(RpcRequest):
 
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
-
-	def get_ReplicaId(self):
-		return self.get_query_params().get('ReplicaId')
-
-	def set_ReplicaId(self,ReplicaId):
-		self.add_query_param('ReplicaId',ReplicaId)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')

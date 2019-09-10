@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,16 +18,47 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+
 class DescribeCacheAnalysisReportListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'R-kvstore', '2015-01-01', 'DescribeCacheAnalysisReportList','redisa')
+		RpcRequest.__init__(self, 'R-kvstore', '2015-01-01', 'DescribeCacheAnalysisReportList')
+
+	def get_Date(self):
+		return self.get_query_params().get('Date')
+
+	def set_Date(self,Date):
+		self.add_query_param('Date',Date)
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+
+	def get_SecurityToken(self):
+		return self.get_query_params().get('SecurityToken')
+
+	def set_SecurityToken(self,SecurityToken):
+		self.add_query_param('SecurityToken',SecurityToken)
+
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
+
+	def get_PageNumbers(self):
+		return self.get_query_params().get('PageNumbers')
+
+	def set_PageNumbers(self,PageNumbers):
+		self.add_query_param('PageNumbers',PageNumbers)
+
+	def get_NodeId(self):
+		return self.get_query_params().get('NodeId')
+
+	def set_NodeId(self,NodeId):
+		self.add_query_param('NodeId',NodeId)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -53,32 +84,8 @@ class DescribeCacheAnalysisReportListRequest(RpcRequest):
 	def set_InstanceId(self,InstanceId):
 		self.add_query_param('InstanceId',InstanceId)
 
-	def get_SecurityToken(self):
-		return self.get_query_params().get('SecurityToken')
-
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)
-
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_PageNumbers(self):
-		return self.get_query_params().get('PageNumbers')
-
-	def set_PageNumbers(self,PageNumbers):
-		self.add_query_param('PageNumbers',PageNumbers)
-
 	def get_Days(self):
 		return self.get_query_params().get('Days')
 
 	def set_Days(self,Days):
 		self.add_query_param('Days',Days)
-
-	def get_NodeId(self):
-		return self.get_query_params().get('NodeId')
-
-	def set_NodeId(self,NodeId):
-		self.add_query_param('NodeId',NodeId)

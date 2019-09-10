@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,16 +18,41 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+
 class DescribeHistoryMonitorValuesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'R-kvstore', '2015-01-01', 'DescribeHistoryMonitorValues','redisa')
+		RpcRequest.__init__(self, 'R-kvstore', '2015-01-01', 'DescribeHistoryMonitorValues')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+
+	def get_StartTime(self):
+		return self.get_query_params().get('StartTime')
+
+	def set_StartTime(self,StartTime):
+		self.add_query_param('StartTime',StartTime)
+
+	def get_SecurityToken(self):
+		return self.get_query_params().get('SecurityToken')
+
+	def set_SecurityToken(self,SecurityToken):
+		self.add_query_param('SecurityToken',SecurityToken)
+
+	def get_IntervalForHistory(self):
+		return self.get_query_params().get('IntervalForHistory')
+
+	def set_IntervalForHistory(self,IntervalForHistory):
+		self.add_query_param('IntervalForHistory',IntervalForHistory)
+
+	def get_NodeId(self):
+		return self.get_query_params().get('NodeId')
+
+	def set_NodeId(self,NodeId):
+		self.add_query_param('NodeId',NodeId)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -47,12 +72,6 @@ class DescribeHistoryMonitorValuesRequest(RpcRequest):
 	def set_EndTime(self,EndTime):
 		self.add_query_param('EndTime',EndTime)
 
-	def get_StartTime(self):
-		return self.get_query_params().get('StartTime')
-
-	def set_StartTime(self,StartTime):
-		self.add_query_param('StartTime',StartTime)
-
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
@@ -64,24 +83,6 @@ class DescribeHistoryMonitorValuesRequest(RpcRequest):
 
 	def set_InstanceId(self,InstanceId):
 		self.add_query_param('InstanceId',InstanceId)
-
-	def get_SecurityToken(self):
-		return self.get_query_params().get('SecurityToken')
-
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)
-
-	def get_IntervalForHistory(self):
-		return self.get_query_params().get('IntervalForHistory')
-
-	def set_IntervalForHistory(self,IntervalForHistory):
-		self.add_query_param('IntervalForHistory',IntervalForHistory)
-
-	def get_NodeId(self):
-		return self.get_query_params().get('NodeId')
-
-	def set_NodeId(self,NodeId):
-		self.add_query_param('NodeId',NodeId)
 
 	def get_MonitorKeys(self):
 		return self.get_query_params().get('MonitorKeys')
