@@ -18,10 +18,29 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdklive.endpoint import endpoint_data
+
 class CreateCasterRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'live', '2016-11-01', 'CreateCaster','live')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
+
+	def get_ClientToken(self):
+		return self.get_query_params().get('ClientToken')
+
+	def set_ClientToken(self,ClientToken):
+		self.add_query_param('ClientToken',ClientToken)
+
+	def get_CasterName(self):
+		return self.get_query_params().get('CasterName')
+
+	def set_CasterName(self,CasterName):
+		self.add_query_param('CasterName',CasterName)
 
 	def get_CasterTemplate(self):
 		return self.get_query_params().get('CasterTemplate')
@@ -41,24 +60,6 @@ class CreateCasterRequest(RpcRequest):
 	def set_NormType(self,NormType):
 		self.add_query_param('NormType',NormType)
 
-	def get_CasterName(self):
-		return self.get_query_params().get('CasterName')
-
-	def set_CasterName(self,CasterName):
-		self.add_query_param('CasterName',CasterName)
-
-	def get_ClientToken(self):
-		return self.get_query_params().get('ClientToken')
-
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
-
-	def get_ChargeType(self):
-		return self.get_query_params().get('ChargeType')
-
-	def set_ChargeType(self,ChargeType):
-		self.add_query_param('ChargeType',ChargeType)
-
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
@@ -70,3 +71,9 @@ class CreateCasterRequest(RpcRequest):
 
 	def set_PurchaseTime(self,PurchaseTime):
 		self.add_query_param('PurchaseTime',PurchaseTime)
+
+	def get_ChargeType(self):
+		return self.get_query_params().get('ChargeType')
+
+	def set_ChargeType(self,ChargeType):
+		self.add_query_param('ChargeType',ChargeType)

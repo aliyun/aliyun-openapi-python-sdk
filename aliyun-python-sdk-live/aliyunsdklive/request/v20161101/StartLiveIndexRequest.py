@@ -18,16 +18,17 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdklive.endpoint import endpoint_data
+
 class StartLiveIndexRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'live', '2016-11-01', 'StartLiveIndex','live')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_OssBucket(self):
-		return self.get_query_params().get('OssBucket')
-
-	def set_OssBucket(self,OssBucket):
-		self.add_query_param('OssBucket',OssBucket)
 
 	def get_TokenId(self):
 		return self.get_query_params().get('TokenId')
@@ -35,41 +36,17 @@ class StartLiveIndexRequest(RpcRequest):
 	def set_TokenId(self,TokenId):
 		self.add_query_param('TokenId',TokenId)
 
-	def get_DomainName(self):
-		return self.get_query_params().get('DomainName')
-
-	def set_DomainName(self,DomainName):
-		self.add_query_param('DomainName',DomainName)
-
 	def get_OssEndpoint(self):
 		return self.get_query_params().get('OssEndpoint')
 
 	def set_OssEndpoint(self,OssEndpoint):
 		self.add_query_param('OssEndpoint',OssEndpoint)
 
-	def get_InputUrl(self):
-		return self.get_query_params().get('InputUrl')
-
-	def set_InputUrl(self,InputUrl):
-		self.add_query_param('InputUrl',InputUrl)
-
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
 	def get_AppName(self):
 		return self.get_query_params().get('AppName')
 
 	def set_AppName(self,AppName):
 		self.add_query_param('AppName',AppName)
-
-	def get_Interval(self):
-		return self.get_query_params().get('Interval')
-
-	def set_Interval(self,Interval):
-		self.add_query_param('Interval',Interval)
 
 	def get_OssRamRole(self):
 		return self.get_query_params().get('OssRamRole')
@@ -88,3 +65,33 @@ class StartLiveIndexRequest(RpcRequest):
 
 	def set_OssUserId(self,OssUserId):
 		self.add_query_param('OssUserId',OssUserId)
+
+	def get_OssBucket(self):
+		return self.get_query_params().get('OssBucket')
+
+	def set_OssBucket(self,OssBucket):
+		self.add_query_param('OssBucket',OssBucket)
+
+	def get_DomainName(self):
+		return self.get_query_params().get('DomainName')
+
+	def set_DomainName(self,DomainName):
+		self.add_query_param('DomainName',DomainName)
+
+	def get_InputUrl(self):
+		return self.get_query_params().get('InputUrl')
+
+	def set_InputUrl(self,InputUrl):
+		self.add_query_param('InputUrl',InputUrl)
+
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
+
+	def get_Interval(self):
+		return self.get_query_params().get('Interval')
+
+	def set_Interval(self,Interval):
+		self.add_query_param('Interval',Interval)

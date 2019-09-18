@@ -18,10 +18,35 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdklive.endpoint import endpoint_data
+
 class AddLiveRecordVodConfigRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'live', '2016-11-01', 'AddLiveRecordVodConfig','live')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
+
+	def get_AutoCompose(self):
+		return self.get_query_params().get('AutoCompose')
+
+	def set_AutoCompose(self,AutoCompose):
+		self.add_query_param('AutoCompose',AutoCompose)
+
+	def get_ComposeVodTranscodeGroupId(self):
+		return self.get_query_params().get('ComposeVodTranscodeGroupId')
+
+	def set_ComposeVodTranscodeGroupId(self,ComposeVodTranscodeGroupId):
+		self.add_query_param('ComposeVodTranscodeGroupId',ComposeVodTranscodeGroupId)
+
+	def get_StorageLocation(self):
+		return self.get_query_params().get('StorageLocation')
+
+	def set_StorageLocation(self,StorageLocation):
+		self.add_query_param('StorageLocation',StorageLocation)
 
 	def get_AppName(self):
 		return self.get_query_params().get('AppName')
@@ -29,11 +54,17 @@ class AddLiveRecordVodConfigRequest(RpcRequest):
 	def set_AppName(self,AppName):
 		self.add_query_param('AppName',AppName)
 
-	def get_AutoCompose(self):
-		return self.get_query_params().get('AutoCompose')
+	def get_StreamName(self):
+		return self.get_query_params().get('StreamName')
 
-	def set_AutoCompose(self,AutoCompose):
-		self.add_query_param('AutoCompose',AutoCompose)
+	def set_StreamName(self,StreamName):
+		self.add_query_param('StreamName',StreamName)
+
+	def get_VodTranscodeGroupId(self):
+		return self.get_query_params().get('VodTranscodeGroupId')
+
+	def set_VodTranscodeGroupId(self,VodTranscodeGroupId):
+		self.add_query_param('VodTranscodeGroupId',VodTranscodeGroupId)
 
 	def get_DomainName(self):
 		return self.get_query_params().get('DomainName')
@@ -52,21 +83,3 @@ class AddLiveRecordVodConfigRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
-
-	def get_ComposeVodTranscodeGroupId(self):
-		return self.get_query_params().get('ComposeVodTranscodeGroupId')
-
-	def set_ComposeVodTranscodeGroupId(self,ComposeVodTranscodeGroupId):
-		self.add_query_param('ComposeVodTranscodeGroupId',ComposeVodTranscodeGroupId)
-
-	def get_StreamName(self):
-		return self.get_query_params().get('StreamName')
-
-	def set_StreamName(self,StreamName):
-		self.add_query_param('StreamName',StreamName)
-
-	def get_VodTranscodeGroupId(self):
-		return self.get_query_params().get('VodTranscodeGroupId')
-
-	def set_VodTranscodeGroupId(self,VodTranscodeGroupId):
-		self.add_query_param('VodTranscodeGroupId',VodTranscodeGroupId)

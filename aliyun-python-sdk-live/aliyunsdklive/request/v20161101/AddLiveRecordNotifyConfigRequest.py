@@ -18,10 +18,17 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdklive.endpoint import endpoint_data
+
 class AddLiveRecordNotifyConfigRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'live', '2016-11-01', 'AddLiveRecordNotifyConfig','live')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_OnDemandUrl(self):
 		return self.get_query_params().get('OnDemandUrl')
@@ -35,26 +42,26 @@ class AddLiveRecordNotifyConfigRequest(RpcRequest):
 	def set_SecurityToken(self,SecurityToken):
 		self.add_query_param('SecurityToken',SecurityToken)
 
-	def get_DomainName(self):
-		return self.get_query_params().get('DomainName')
-
-	def set_DomainName(self,DomainName):
-		self.add_query_param('DomainName',DomainName)
-
 	def get_NotifyUrl(self):
 		return self.get_query_params().get('NotifyUrl')
 
 	def set_NotifyUrl(self,NotifyUrl):
 		self.add_query_param('NotifyUrl',NotifyUrl)
 
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
 	def get_NeedStatusNotify(self):
 		return self.get_query_params().get('NeedStatusNotify')
 
 	def set_NeedStatusNotify(self,NeedStatusNotify):
 		self.add_query_param('NeedStatusNotify',NeedStatusNotify)
+
+	def get_DomainName(self):
+		return self.get_query_params().get('DomainName')
+
+	def set_DomainName(self,DomainName):
+		self.add_query_param('DomainName',DomainName)
+
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)

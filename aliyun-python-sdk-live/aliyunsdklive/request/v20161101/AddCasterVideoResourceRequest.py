@@ -18,10 +18,29 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdklive.endpoint import endpoint_data
+
 class AddCasterVideoResourceRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'live', '2016-11-01', 'AddCasterVideoResource','live')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
+
+	def get_EndOffset(self):
+		return self.get_query_params().get('EndOffset')
+
+	def set_EndOffset(self,EndOffset):
+		self.add_query_param('EndOffset',EndOffset)
+
+	def get_MaterialId(self):
+		return self.get_query_params().get('MaterialId')
+
+	def set_MaterialId(self,MaterialId):
+		self.add_query_param('MaterialId',MaterialId)
 
 	def get_VodUrl(self):
 		return self.get_query_params().get('VodUrl')
@@ -35,23 +54,11 @@ class AddCasterVideoResourceRequest(RpcRequest):
 	def set_CasterId(self,CasterId):
 		self.add_query_param('CasterId',CasterId)
 
-	def get_EndOffset(self):
-		return self.get_query_params().get('EndOffset')
-
-	def set_EndOffset(self,EndOffset):
-		self.add_query_param('EndOffset',EndOffset)
-
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
-
-	def get_MaterialId(self):
-		return self.get_query_params().get('MaterialId')
-
-	def set_MaterialId(self,MaterialId):
-		self.add_query_param('MaterialId',MaterialId)
 
 	def get_BeginOffset(self):
 		return self.get_query_params().get('BeginOffset')

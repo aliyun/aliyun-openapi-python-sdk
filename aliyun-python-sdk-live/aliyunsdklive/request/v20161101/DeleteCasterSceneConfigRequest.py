@@ -18,10 +18,23 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdklive.endpoint import endpoint_data
+
 class DeleteCasterSceneConfigRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'live', '2016-11-01', 'DeleteCasterSceneConfig','live')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
+
+	def get_Type(self):
+		return self.get_query_params().get('Type')
+
+	def set_Type(self,Type):
+		self.add_query_param('Type',Type)
 
 	def get_CasterId(self):
 		return self.get_query_params().get('CasterId')
@@ -29,20 +42,14 @@ class DeleteCasterSceneConfigRequest(RpcRequest):
 	def set_CasterId(self,CasterId):
 		self.add_query_param('CasterId',CasterId)
 
-	def get_SceneId(self):
-		return self.get_query_params().get('SceneId')
-
-	def set_SceneId(self,SceneId):
-		self.add_query_param('SceneId',SceneId)
-
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_Type(self):
-		return self.get_query_params().get('Type')
+	def get_SceneId(self):
+		return self.get_query_params().get('SceneId')
 
-	def set_Type(self,Type):
-		self.add_query_param('Type',Type)
+	def set_SceneId(self,SceneId):
+		self.add_query_param('SceneId',SceneId)

@@ -18,10 +18,23 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdklive.endpoint import endpoint_data
+
 class DescribeCasterLayoutsRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'live', '2016-11-01', 'DescribeCasterLayouts','live')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
+
+	def get_LayoutId(self):
+		return self.get_query_params().get('LayoutId')
+
+	def set_LayoutId(self,LayoutId):
+		self.add_query_param('LayoutId',LayoutId)
 
 	def get_CasterId(self):
 		return self.get_query_params().get('CasterId')
@@ -34,9 +47,3 @@ class DescribeCasterLayoutsRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
-
-	def get_LayoutId(self):
-		return self.get_query_params().get('LayoutId')
-
-	def set_LayoutId(self,LayoutId):
-		self.add_query_param('LayoutId',LayoutId)

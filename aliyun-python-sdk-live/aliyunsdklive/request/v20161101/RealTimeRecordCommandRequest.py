@@ -18,16 +18,29 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdklive.endpoint import endpoint_data
+
 class RealTimeRecordCommandRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'live', '2016-11-01', 'RealTimeRecordCommand','live')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_AppName(self):
 		return self.get_query_params().get('AppName')
 
 	def set_AppName(self,AppName):
 		self.add_query_param('AppName',AppName)
+
+	def get_StreamName(self):
+		return self.get_query_params().get('StreamName')
+
+	def set_StreamName(self,StreamName):
+		self.add_query_param('StreamName',StreamName)
 
 	def get_DomainName(self):
 		return self.get_query_params().get('DomainName')
@@ -46,9 +59,3 @@ class RealTimeRecordCommandRequest(RpcRequest):
 
 	def set_Command(self,Command):
 		self.add_query_param('Command',Command)
-
-	def get_StreamName(self):
-		return self.get_query_params().get('StreamName')
-
-	def set_StreamName(self,StreamName):
-		self.add_query_param('StreamName',StreamName)

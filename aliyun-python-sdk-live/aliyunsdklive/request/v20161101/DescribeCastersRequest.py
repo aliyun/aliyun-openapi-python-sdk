@@ -18,34 +18,17 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdklive.endpoint import endpoint_data
+
 class DescribeCastersRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'live', '2016-11-01', 'DescribeCasters','live')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_CasterName(self):
-		return self.get_query_params().get('CasterName')
-
-	def set_CasterName(self,CasterName):
-		self.add_query_param('CasterName',CasterName)
-
-	def get_CasterId(self):
-		return self.get_query_params().get('CasterId')
-
-	def set_CasterId(self,CasterId):
-		self.add_query_param('CasterId',CasterId)
-
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_EndTime(self):
-		return self.get_query_params().get('EndTime')
-
-	def set_EndTime(self,EndTime):
-		self.add_query_param('EndTime',EndTime)
 
 	def get_StartTime(self):
 		return self.get_query_params().get('StartTime')
@@ -53,17 +36,41 @@ class DescribeCastersRequest(RpcRequest):
 	def set_StartTime(self,StartTime):
 		self.add_query_param('StartTime',StartTime)
 
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
 	def get_PageNum(self):
 		return self.get_query_params().get('PageNum')
 
 	def set_PageNum(self,PageNum):
 		self.add_query_param('PageNum',PageNum)
+
+	def get_CasterName(self):
+		return self.get_query_params().get('CasterName')
+
+	def set_CasterName(self,CasterName):
+		self.add_query_param('CasterName',CasterName)
+
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
+
+	def get_CasterId(self):
+		return self.get_query_params().get('CasterId')
+
+	def set_CasterId(self,CasterId):
+		self.add_query_param('CasterId',CasterId)
+
+	def get_EndTime(self):
+		return self.get_query_params().get('EndTime')
+
+	def set_EndTime(self,EndTime):
+		self.add_query_param('EndTime',EndTime)
+
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
 
 	def get_Status(self):
 		return self.get_query_params().get('Status')
