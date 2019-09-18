@@ -19,22 +19,22 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class CreatePornBatchDetectJobRequest(RpcRequest):
+class CreateVideoAbstractTaskRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'imm', '2017-09-06', 'CreatePornBatchDetectJob','imm')
+		RpcRequest.__init__(self, 'imm', '2017-09-06', 'CreateVideoAbstractTask','imm')
+
+	def get_TargetVideoUri(self):
+		return self.get_query_params().get('TargetVideoUri')
+
+	def set_TargetVideoUri(self,TargetVideoUri):
+		self.add_query_param('TargetVideoUri',TargetVideoUri)
 
 	def get_Project(self):
 		return self.get_query_params().get('Project')
 
 	def set_Project(self,Project):
 		self.add_query_param('Project',Project)
-
-	def get_ExternalID(self):
-		return self.get_query_params().get('ExternalID')
-
-	def set_ExternalID(self,ExternalID):
-		self.add_query_param('ExternalID',ExternalID)
 
 	def get_NotifyEndpoint(self):
 		return self.get_query_params().get('NotifyEndpoint')
@@ -48,14 +48,20 @@ class CreatePornBatchDetectJobRequest(RpcRequest):
 	def set_NotifyTopicName(self,NotifyTopicName):
 		self.add_query_param('NotifyTopicName',NotifyTopicName)
 
-	def get_SrcUri(self):
-		return self.get_query_params().get('SrcUri')
+	def get_VideoUri(self):
+		return self.get_query_params().get('VideoUri')
 
-	def set_SrcUri(self,SrcUri):
-		self.add_query_param('SrcUri',SrcUri)
+	def set_VideoUri(self,VideoUri):
+		self.add_query_param('VideoUri',VideoUri)
 
-	def get_TgtUri(self):
-		return self.get_query_params().get('TgtUri')
+	def get_AbstractLength(self):
+		return self.get_query_params().get('AbstractLength')
 
-	def set_TgtUri(self,TgtUri):
-		self.add_query_param('TgtUri',TgtUri)
+	def set_AbstractLength(self,AbstractLength):
+		self.add_query_param('AbstractLength',AbstractLength)
+
+	def get_TargetClipsUri(self):
+		return self.get_query_params().get('TargetClipsUri')
+
+	def set_TargetClipsUri(self,TargetClipsUri):
+		self.add_query_param('TargetClipsUri',TargetClipsUri)

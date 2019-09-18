@@ -24,11 +24,11 @@ class IndexTagRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'imm', '2017-09-06', 'IndexTag','imm')
 
-	def get_SrcUris(self):
-		return self.get_query_params().get('SrcUris')
+	def get_Project(self):
+		return self.get_query_params().get('Project')
 
-	def set_SrcUris(self,SrcUris):
-		self.add_query_param('SrcUris',SrcUris)
+	def set_Project(self,Project):
+		self.add_query_param('Project',Project)
 
 	def get_ModelId(self):
 		return self.get_query_params().get('ModelId')
@@ -36,11 +36,11 @@ class IndexTagRequest(RpcRequest):
 	def set_ModelId(self,ModelId):
 		self.add_query_param('ModelId',ModelId)
 
-	def get_Project(self):
-		return self.get_query_params().get('Project')
+	def get_SrcUris(self):
+		return self.get_query_params().get('SrcUris')
 
-	def set_Project(self,Project):
-		self.add_query_param('Project',Project)
+	def set_SrcUris(self,SrcUris):
+		self.add_query_param('SrcUris',SrcUris)
 
 	def get_SetId(self):
 		return self.get_query_params().get('SetId')

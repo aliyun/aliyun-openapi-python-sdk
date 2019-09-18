@@ -24,14 +24,14 @@ class DetectImageTextsRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'imm', '2017-09-06', 'DetectImageTexts','imm')
 
-	def get_ImageUri(self):
-		return self.get_query_params().get('ImageUri')
-
-	def set_ImageUri(self,ImageUri):
-		self.add_query_param('ImageUri',ImageUri)
-
 	def get_Project(self):
 		return self.get_query_params().get('Project')
 
 	def set_Project(self,Project):
 		self.add_query_param('Project',Project)
+
+	def get_ImageUri(self):
+		return self.get_query_params().get('ImageUri')
+
+	def set_ImageUri(self,ImageUri):
+		self.add_query_param('ImageUri',ImageUri)

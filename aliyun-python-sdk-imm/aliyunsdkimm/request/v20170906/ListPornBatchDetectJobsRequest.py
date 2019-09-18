@@ -30,14 +30,14 @@ class ListPornBatchDetectJobsRequest(RpcRequest):
 	def set_MaxKeys(self,MaxKeys):
 		self.add_query_param('MaxKeys',MaxKeys)
 
-	def get_Marker(self):
-		return self.get_query_params().get('Marker')
-
-	def set_Marker(self,Marker):
-		self.add_query_param('Marker',Marker)
-
 	def get_Project(self):
 		return self.get_query_params().get('Project')
 
 	def set_Project(self,Project):
 		self.add_query_param('Project',Project)
+
+	def get_Marker(self):
+		return self.get_query_params().get('Marker')
+
+	def set_Marker(self,Marker):
+		self.add_query_param('Marker',Marker)

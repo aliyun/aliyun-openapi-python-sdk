@@ -24,17 +24,17 @@ class DeleteTagByNameRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'imm', '2017-09-06', 'DeleteTagByName','imm')
 
-	def get_TagName(self):
-		return self.get_query_params().get('TagName')
-
-	def set_TagName(self,TagName):
-		self.add_query_param('TagName',TagName)
-
 	def get_Project(self):
 		return self.get_query_params().get('Project')
 
 	def set_Project(self,Project):
 		self.add_query_param('Project',Project)
+
+	def get_TagName(self):
+		return self.get_query_params().get('TagName')
+
+	def set_TagName(self,TagName):
+		self.add_query_param('TagName',TagName)
 
 	def get_SetId(self):
 		return self.get_query_params().get('SetId')

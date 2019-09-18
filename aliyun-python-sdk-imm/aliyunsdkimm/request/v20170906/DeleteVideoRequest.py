@@ -24,26 +24,26 @@ class DeleteVideoRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'imm', '2017-09-06', 'DeleteVideo','imm')
 
-	def get_VideoUri(self):
-		return self.get_query_params().get('VideoUri')
-
-	def set_VideoUri(self,VideoUri):
-		self.add_query_param('VideoUri',VideoUri)
-
 	def get_Project(self):
 		return self.get_query_params().get('Project')
 
 	def set_Project(self,Project):
 		self.add_query_param('Project',Project)
 
-	def get_SetId(self):
-		return self.get_query_params().get('SetId')
-
-	def set_SetId(self,SetId):
-		self.add_query_param('SetId',SetId)
-
 	def get_Resources(self):
 		return self.get_query_params().get('Resources')
 
 	def set_Resources(self,Resources):
 		self.add_query_param('Resources',Resources)
+
+	def get_VideoUri(self):
+		return self.get_query_params().get('VideoUri')
+
+	def set_VideoUri(self,VideoUri):
+		self.add_query_param('VideoUri',VideoUri)
+
+	def get_SetId(self):
+		return self.get_query_params().get('SetId')
+
+	def set_SetId(self,SetId):
+		self.add_query_param('SetId',SetId)

@@ -24,17 +24,17 @@ class UpdateProjectRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'imm', '2017-09-06', 'UpdateProject','imm')
 
-	def get_NewServiceRole(self):
-		return self.get_query_params().get('NewServiceRole')
-
-	def set_NewServiceRole(self,NewServiceRole):
-		self.add_query_param('NewServiceRole',NewServiceRole)
-
 	def get_Project(self):
 		return self.get_query_params().get('Project')
 
 	def set_Project(self,Project):
 		self.add_query_param('Project',Project)
+
+	def get_NewServiceRole(self):
+		return self.get_query_params().get('NewServiceRole')
+
+	def set_NewServiceRole(self,NewServiceRole):
+		self.add_query_param('NewServiceRole',NewServiceRole)
 
 	def get_NewCU(self):
 		return self.get_query_params().get('NewCU')

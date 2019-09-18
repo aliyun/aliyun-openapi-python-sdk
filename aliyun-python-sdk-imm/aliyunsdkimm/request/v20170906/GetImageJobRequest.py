@@ -24,17 +24,17 @@ class GetImageJobRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'imm', '2017-09-06', 'GetImageJob','imm')
 
-	def get_JobId(self):
-		return self.get_query_params().get('JobId')
-
-	def set_JobId(self,JobId):
-		self.add_query_param('JobId',JobId)
-
 	def get_Project(self):
 		return self.get_query_params().get('Project')
 
 	def set_Project(self,Project):
 		self.add_query_param('Project',Project)
+
+	def get_JobId(self):
+		return self.get_query_params().get('JobId')
+
+	def set_JobId(self,JobId):
+		self.add_query_param('JobId',JobId)
 
 	def get_JobType(self):
 		return self.get_query_params().get('JobType')

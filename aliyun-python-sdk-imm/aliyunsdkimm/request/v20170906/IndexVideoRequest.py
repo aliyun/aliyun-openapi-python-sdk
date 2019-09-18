@@ -30,29 +30,11 @@ class IndexVideoRequest(RpcRequest):
 	def set_GrabType(self,GrabType):
 		self.add_query_param('GrabType',GrabType)
 
-	def get_RemarksB(self):
-		return self.get_query_params().get('RemarksB')
-
-	def set_RemarksB(self,RemarksB):
-		self.add_query_param('RemarksB',RemarksB)
-
 	def get_Project(self):
 		return self.get_query_params().get('Project')
 
 	def set_Project(self,Project):
 		self.add_query_param('Project',Project)
-
-	def get_RemarksA(self):
-		return self.get_query_params().get('RemarksA')
-
-	def set_RemarksA(self,RemarksA):
-		self.add_query_param('RemarksA',RemarksA)
-
-	def get_EndTime(self):
-		return self.get_query_params().get('EndTime')
-
-	def set_EndTime(self,EndTime):
-		self.add_query_param('EndTime',EndTime)
 
 	def get_ExternalId(self):
 		return self.get_query_params().get('ExternalId')
@@ -65,6 +47,24 @@ class IndexVideoRequest(RpcRequest):
 
 	def set_StartTime(self,StartTime):
 		self.add_query_param('StartTime',StartTime)
+
+	def get_RemarksB(self):
+		return self.get_query_params().get('RemarksB')
+
+	def set_RemarksB(self,RemarksB):
+		self.add_query_param('RemarksB',RemarksB)
+
+	def get_RemarksA(self):
+		return self.get_query_params().get('RemarksA')
+
+	def set_RemarksA(self,RemarksA):
+		self.add_query_param('RemarksA',RemarksA)
+
+	def get_EndTime(self):
+		return self.get_query_params().get('EndTime')
+
+	def set_EndTime(self,EndTime):
+		self.add_query_param('EndTime',EndTime)
 
 	def get_VideoUri(self):
 		return self.get_query_params().get('VideoUri')

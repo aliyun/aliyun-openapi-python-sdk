@@ -24,11 +24,17 @@ class CreateVideoCompressTaskRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'imm', '2017-09-06', 'CreateVideoCompressTask','imm')
 
-	def get_VideoUri(self):
-		return self.get_query_params().get('VideoUri')
+	def get_Project(self):
+		return self.get_query_params().get('Project')
 
-	def set_VideoUri(self,VideoUri):
-		self.add_query_param('VideoUri',VideoUri)
+	def set_Project(self,Project):
+		self.add_query_param('Project',Project)
+
+	def get_NotifyEndpoint(self):
+		return self.get_query_params().get('NotifyEndpoint')
+
+	def set_NotifyEndpoint(self,NotifyEndpoint):
+		self.add_query_param('NotifyEndpoint',NotifyEndpoint)
 
 	def get_NotifyTopicName(self):
 		return self.get_query_params().get('NotifyTopicName')
@@ -42,14 +48,8 @@ class CreateVideoCompressTaskRequest(RpcRequest):
 	def set_TargetList(self,TargetList):
 		self.add_query_param('TargetList',TargetList)
 
-	def get_NotifyEndpoint(self):
-		return self.get_query_params().get('NotifyEndpoint')
+	def get_VideoUri(self):
+		return self.get_query_params().get('VideoUri')
 
-	def set_NotifyEndpoint(self,NotifyEndpoint):
-		self.add_query_param('NotifyEndpoint',NotifyEndpoint)
-
-	def get_Project(self):
-		return self.get_query_params().get('Project')
-
-	def set_Project(self,Project):
-		self.add_query_param('Project',Project)
+	def set_VideoUri(self,VideoUri):
+		self.add_query_param('VideoUri',VideoUri)

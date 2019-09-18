@@ -24,11 +24,11 @@ class ListFaceGroupsRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'imm', '2017-09-06', 'ListFaceGroups','imm')
 
-	def get_Marker(self):
-		return self.get_query_params().get('Marker')
+	def get_Project(self):
+		return self.get_query_params().get('Project')
 
-	def set_Marker(self,Marker):
-		self.add_query_param('Marker',Marker)
+	def set_Project(self,Project):
+		self.add_query_param('Project',Project)
 
 	def get_Limit(self):
 		return self.get_query_params().get('Limit')
@@ -36,17 +36,11 @@ class ListFaceGroupsRequest(RpcRequest):
 	def set_Limit(self,Limit):
 		self.add_query_param('Limit',Limit)
 
-	def get_Project(self):
-		return self.get_query_params().get('Project')
+	def get_Order(self):
+		return self.get_query_params().get('Order')
 
-	def set_Project(self,Project):
-		self.add_query_param('Project',Project)
-
-	def get_SetId(self):
-		return self.get_query_params().get('SetId')
-
-	def set_SetId(self,SetId):
-		self.add_query_param('SetId',SetId)
+	def set_Order(self,Order):
+		self.add_query_param('Order',Order)
 
 	def get_OrderBy(self):
 		return self.get_query_params().get('OrderBy')
@@ -54,8 +48,14 @@ class ListFaceGroupsRequest(RpcRequest):
 	def set_OrderBy(self,OrderBy):
 		self.add_query_param('OrderBy',OrderBy)
 
-	def get_Order(self):
-		return self.get_query_params().get('Order')
+	def get_Marker(self):
+		return self.get_query_params().get('Marker')
 
-	def set_Order(self,Order):
-		self.add_query_param('Order',Order)
+	def set_Marker(self,Marker):
+		self.add_query_param('Marker',Marker)
+
+	def get_SetId(self):
+		return self.get_query_params().get('SetId')
+
+	def set_SetId(self,SetId):
+		self.add_query_param('SetId',SetId)

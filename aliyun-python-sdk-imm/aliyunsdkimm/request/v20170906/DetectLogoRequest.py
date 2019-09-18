@@ -24,14 +24,14 @@ class DetectLogoRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'imm', '2017-09-06', 'DetectLogo','imm')
 
-	def get_SrcUris(self):
-		return self.get_query_params().get('SrcUris')
-
-	def set_SrcUris(self,SrcUris):
-		self.add_query_param('SrcUris',SrcUris)
-
 	def get_Project(self):
 		return self.get_query_params().get('Project')
 
 	def set_Project(self,Project):
 		self.add_query_param('Project',Project)
+
+	def get_SrcUris(self):
+		return self.get_query_params().get('SrcUris')
+
+	def set_SrcUris(self,SrcUris):
+		self.add_query_param('SrcUris',SrcUris)

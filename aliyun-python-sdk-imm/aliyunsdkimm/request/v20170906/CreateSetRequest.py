@@ -24,17 +24,17 @@ class CreateSetRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'imm', '2017-09-06', 'CreateSet','imm')
 
-	def get_SetName(self):
-		return self.get_query_params().get('SetName')
-
-	def set_SetName(self,SetName):
-		self.add_query_param('SetName',SetName)
-
 	def get_Project(self):
 		return self.get_query_params().get('Project')
 
 	def set_Project(self,Project):
 		self.add_query_param('Project',Project)
+
+	def get_SetName(self):
+		return self.get_query_params().get('SetName')
+
+	def set_SetName(self,SetName):
+		self.add_query_param('SetName',SetName)
 
 	def get_SetId(self):
 		return self.get_query_params().get('SetId')

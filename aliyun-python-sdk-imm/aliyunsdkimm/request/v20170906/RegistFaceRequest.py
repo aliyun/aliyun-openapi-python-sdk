@@ -42,6 +42,12 @@ class RegistFaceRequest(RpcRequest):
 	def set_Project(self,Project):
 		self.add_query_param('Project',Project)
 
+	def get_GroupName(self):
+		return self.get_query_params().get('GroupName')
+
+	def set_GroupName(self,GroupName):
+		self.add_query_param('GroupName',GroupName)
+
 	def get_SrcUri(self):
 		return self.get_query_params().get('SrcUri')
 
@@ -53,12 +59,6 @@ class RegistFaceRequest(RpcRequest):
 
 	def set_RegisterCheckLevel(self,RegisterCheckLevel):
 		self.add_query_param('RegisterCheckLevel',RegisterCheckLevel)
-
-	def get_GroupName(self):
-		return self.get_query_params().get('GroupName')
-
-	def set_GroupName(self,GroupName):
-		self.add_query_param('GroupName',GroupName)
 
 	def get_User(self):
 		return self.get_query_params().get('User')

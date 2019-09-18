@@ -19,10 +19,16 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class CreatePornBatchDetectJobRequest(RpcRequest):
+class DecodeBlindWatermarkRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'imm', '2017-09-06', 'CreatePornBatchDetectJob','imm')
+		RpcRequest.__init__(self, 'imm', '2017-09-06', 'DecodeBlindWatermark','imm')
+
+	def get_ImageQuality(self):
+		return self.get_query_params().get('ImageQuality')
+
+	def set_ImageQuality(self,ImageQuality):
+		self.add_query_param('ImageQuality',ImageQuality)
 
 	def get_Project(self):
 		return self.get_query_params().get('Project')
@@ -30,32 +36,26 @@ class CreatePornBatchDetectJobRequest(RpcRequest):
 	def set_Project(self,Project):
 		self.add_query_param('Project',Project)
 
-	def get_ExternalID(self):
-		return self.get_query_params().get('ExternalID')
+	def get_WatermarkType(self):
+		return self.get_query_params().get('WatermarkType')
 
-	def set_ExternalID(self,ExternalID):
-		self.add_query_param('ExternalID',ExternalID)
+	def set_WatermarkType(self,WatermarkType):
+		self.add_query_param('WatermarkType',WatermarkType)
 
-	def get_NotifyEndpoint(self):
-		return self.get_query_params().get('NotifyEndpoint')
+	def get_TargetUri(self):
+		return self.get_query_params().get('TargetUri')
 
-	def set_NotifyEndpoint(self,NotifyEndpoint):
-		self.add_query_param('NotifyEndpoint',NotifyEndpoint)
+	def set_TargetUri(self,TargetUri):
+		self.add_query_param('TargetUri',TargetUri)
 
-	def get_NotifyTopicName(self):
-		return self.get_query_params().get('NotifyTopicName')
+	def get_ImageUri(self):
+		return self.get_query_params().get('ImageUri')
 
-	def set_NotifyTopicName(self,NotifyTopicName):
-		self.add_query_param('NotifyTopicName',NotifyTopicName)
+	def set_ImageUri(self,ImageUri):
+		self.add_query_param('ImageUri',ImageUri)
 
-	def get_SrcUri(self):
-		return self.get_query_params().get('SrcUri')
+	def get_OriginalImageUri(self):
+		return self.get_query_params().get('OriginalImageUri')
 
-	def set_SrcUri(self,SrcUri):
-		self.add_query_param('SrcUri',SrcUri)
-
-	def get_TgtUri(self):
-		return self.get_query_params().get('TgtUri')
-
-	def set_TgtUri(self,TgtUri):
-		self.add_query_param('TgtUri',TgtUri)
+	def set_OriginalImageUri(self,OriginalImageUri):
+		self.add_query_param('OriginalImageUri',OriginalImageUri)

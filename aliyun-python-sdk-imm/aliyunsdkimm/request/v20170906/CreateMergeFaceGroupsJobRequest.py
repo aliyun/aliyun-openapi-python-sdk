@@ -24,23 +24,11 @@ class CreateMergeFaceGroupsJobRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'imm', '2017-09-06', 'CreateMergeFaceGroupsJob','imm')
 
-	def get_GroupIdFrom(self):
-		return self.get_query_params().get('GroupIdFrom')
+	def get_Project(self):
+		return self.get_query_params().get('Project')
 
-	def set_GroupIdFrom(self,GroupIdFrom):
-		self.add_query_param('GroupIdFrom',GroupIdFrom)
-
-	def get_GroupIdTo(self):
-		return self.get_query_params().get('GroupIdTo')
-
-	def set_GroupIdTo(self,GroupIdTo):
-		self.add_query_param('GroupIdTo',GroupIdTo)
-
-	def get_NotifyTopicName(self):
-		return self.get_query_params().get('NotifyTopicName')
-
-	def set_NotifyTopicName(self,NotifyTopicName):
-		self.add_query_param('NotifyTopicName',NotifyTopicName)
+	def set_Project(self,Project):
+		self.add_query_param('Project',Project)
 
 	def get_NotifyEndpoint(self):
 		return self.get_query_params().get('NotifyEndpoint')
@@ -48,11 +36,23 @@ class CreateMergeFaceGroupsJobRequest(RpcRequest):
 	def set_NotifyEndpoint(self,NotifyEndpoint):
 		self.add_query_param('NotifyEndpoint',NotifyEndpoint)
 
-	def get_Project(self):
-		return self.get_query_params().get('Project')
+	def get_GroupIdFrom(self):
+		return self.get_query_params().get('GroupIdFrom')
 
-	def set_Project(self,Project):
-		self.add_query_param('Project',Project)
+	def set_GroupIdFrom(self,GroupIdFrom):
+		self.add_query_param('GroupIdFrom',GroupIdFrom)
+
+	def get_NotifyTopicName(self):
+		return self.get_query_params().get('NotifyTopicName')
+
+	def set_NotifyTopicName(self,NotifyTopicName):
+		self.add_query_param('NotifyTopicName',NotifyTopicName)
+
+	def get_GroupIdTo(self):
+		return self.get_query_params().get('GroupIdTo')
+
+	def set_GroupIdTo(self,GroupIdTo):
+		self.add_query_param('GroupIdTo',GroupIdTo)
 
 	def get_SetId(self):
 		return self.get_query_params().get('SetId')

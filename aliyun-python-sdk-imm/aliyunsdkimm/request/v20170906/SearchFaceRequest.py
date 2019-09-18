@@ -42,12 +42,6 @@ class SearchFaceRequest(RpcRequest):
 	def set_SearchThresholdLevel(self,SearchThresholdLevel):
 		self.add_query_param('SearchThresholdLevel',SearchThresholdLevel)
 
-	def get_SrcUri(self):
-		return self.get_query_params().get('SrcUri')
-
-	def set_SrcUri(self,SrcUri):
-		self.add_query_param('SrcUri',SrcUri)
-
 	def get_IsThreshold(self):
 		return self.get_query_params().get('IsThreshold')
 
@@ -59,3 +53,9 @@ class SearchFaceRequest(RpcRequest):
 
 	def set_GroupName(self,GroupName):
 		self.add_query_param('GroupName',GroupName)
+
+	def get_SrcUri(self):
+		return self.get_query_params().get('SrcUri')
+
+	def set_SrcUri(self,SrcUri):
+		self.add_query_param('SrcUri',SrcUri)

@@ -24,29 +24,11 @@ class CompareImageFacesRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'imm', '2017-09-06', 'CompareImageFaces','imm')
 
-	def get_ImageUriB(self):
-		return self.get_query_params().get('ImageUriB')
-
-	def set_ImageUriB(self,ImageUriB):
-		self.add_query_param('ImageUriB',ImageUriB)
-
-	def get_ImageUriA(self):
-		return self.get_query_params().get('ImageUriA')
-
-	def set_ImageUriA(self,ImageUriA):
-		self.add_query_param('ImageUriA',ImageUriA)
-
 	def get_Project(self):
 		return self.get_query_params().get('Project')
 
 	def set_Project(self,Project):
 		self.add_query_param('Project',Project)
-
-	def get_SetId(self):
-		return self.get_query_params().get('SetId')
-
-	def set_SetId(self,SetId):
-		self.add_query_param('SetId',SetId)
 
 	def get_FaceIdA(self):
 		return self.get_query_params().get('FaceIdA')
@@ -59,3 +41,21 @@ class CompareImageFacesRequest(RpcRequest):
 
 	def set_FaceIdB(self,FaceIdB):
 		self.add_query_param('FaceIdB',FaceIdB)
+
+	def get_ImageUriB(self):
+		return self.get_query_params().get('ImageUriB')
+
+	def set_ImageUriB(self,ImageUriB):
+		self.add_query_param('ImageUriB',ImageUriB)
+
+	def get_ImageUriA(self):
+		return self.get_query_params().get('ImageUriA')
+
+	def set_ImageUriA(self,ImageUriA):
+		self.add_query_param('ImageUriA',ImageUriA)
+
+	def get_SetId(self):
+		return self.get_query_params().get('SetId')
+
+	def set_SetId(self,SetId):
+		self.add_query_param('SetId',SetId)

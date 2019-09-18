@@ -24,26 +24,26 @@ class DeleteTagSetRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'imm', '2017-09-06', 'DeleteTagSet','imm')
 
-	def get_LazyMode(self):
-		return self.get_query_params().get('LazyMode')
-
-	def set_LazyMode(self,LazyMode):
-		self.add_query_param('LazyMode',LazyMode)
-
 	def get_Project(self):
 		return self.get_query_params().get('Project')
 
 	def set_Project(self,Project):
 		self.add_query_param('Project',Project)
 
-	def get_SetId(self):
-		return self.get_query_params().get('SetId')
+	def get_LazyMode(self):
+		return self.get_query_params().get('LazyMode')
 
-	def set_SetId(self,SetId):
-		self.add_query_param('SetId',SetId)
+	def set_LazyMode(self,LazyMode):
+		self.add_query_param('LazyMode',LazyMode)
 
 	def get_CheckEmpty(self):
 		return self.get_query_params().get('CheckEmpty')
 
 	def set_CheckEmpty(self,CheckEmpty):
 		self.add_query_param('CheckEmpty',CheckEmpty)
+
+	def get_SetId(self):
+		return self.get_query_params().get('SetId')
+
+	def set_SetId(self,SetId):
+		self.add_query_param('SetId',SetId)

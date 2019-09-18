@@ -24,11 +24,11 @@ class DetectImageCelebrityRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'imm', '2017-09-06', 'DetectImageCelebrity','imm')
 
-	def get_ImageUri(self):
-		return self.get_query_params().get('ImageUri')
+	def get_Project(self):
+		return self.get_query_params().get('Project')
 
-	def set_ImageUri(self,ImageUri):
-		self.add_query_param('ImageUri',ImageUri)
+	def set_Project(self,Project):
+		self.add_query_param('Project',Project)
 
 	def get_Library(self):
 		return self.get_query_params().get('Library')
@@ -36,14 +36,14 @@ class DetectImageCelebrityRequest(RpcRequest):
 	def set_Library(self,Library):
 		self.add_query_param('Library',Library)
 
-	def get_Project(self):
-		return self.get_query_params().get('Project')
-
-	def set_Project(self,Project):
-		self.add_query_param('Project',Project)
-
 	def get_RealUid(self):
 		return self.get_query_params().get('RealUid')
 
 	def set_RealUid(self,RealUid):
 		self.add_query_param('RealUid',RealUid)
+
+	def get_ImageUri(self):
+		return self.get_query_params().get('ImageUri')
+
+	def set_ImageUri(self,ImageUri):
+		self.add_query_param('ImageUri',ImageUri)

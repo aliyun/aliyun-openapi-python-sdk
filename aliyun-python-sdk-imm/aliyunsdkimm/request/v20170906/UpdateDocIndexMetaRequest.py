@@ -24,6 +24,18 @@ class UpdateDocIndexMetaRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'imm', '2017-09-06', 'UpdateDocIndexMeta','imm')
 
+	def get_Project(self):
+		return self.get_query_params().get('Project')
+
+	def set_Project(self,Project):
+		self.add_query_param('Project',Project)
+
+	def get_UniqueId(self):
+		return self.get_query_params().get('UniqueId')
+
+	def set_UniqueId(self,UniqueId):
+		self.add_query_param('UniqueId',UniqueId)
+
 	def get_CustomKey1(self):
 		return self.get_query_params().get('CustomKey1')
 
@@ -60,12 +72,6 @@ class UpdateDocIndexMetaRequest(RpcRequest):
 	def set_CustomKey2(self,CustomKey2):
 		self.add_query_param('CustomKey2',CustomKey2)
 
-	def get_Project(self):
-		return self.get_query_params().get('Project')
-
-	def set_Project(self,Project):
-		self.add_query_param('Project',Project)
-
 	def get_CustomKey6(self):
 		return self.get_query_params().get('CustomKey6')
 
@@ -77,9 +83,3 @@ class UpdateDocIndexMetaRequest(RpcRequest):
 
 	def set_Name(self,Name):
 		self.add_query_param('Name',Name)
-
-	def get_UniqueId(self):
-		return self.get_query_params().get('UniqueId')
-
-	def set_UniqueId(self,UniqueId):
-		self.add_query_param('UniqueId',UniqueId)

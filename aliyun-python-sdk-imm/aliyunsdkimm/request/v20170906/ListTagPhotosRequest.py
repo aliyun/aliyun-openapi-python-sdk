@@ -24,29 +24,29 @@ class ListTagPhotosRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'imm', '2017-09-06', 'ListTagPhotos','imm')
 
-	def get_TagName(self):
-		return self.get_query_params().get('TagName')
-
-	def set_TagName(self,TagName):
-		self.add_query_param('TagName',TagName)
-
 	def get_MaxKeys(self):
 		return self.get_query_params().get('MaxKeys')
 
 	def set_MaxKeys(self,MaxKeys):
 		self.add_query_param('MaxKeys',MaxKeys)
 
-	def get_Marker(self):
-		return self.get_query_params().get('Marker')
-
-	def set_Marker(self,Marker):
-		self.add_query_param('Marker',Marker)
-
 	def get_Project(self):
 		return self.get_query_params().get('Project')
 
 	def set_Project(self,Project):
 		self.add_query_param('Project',Project)
+
+	def get_TagName(self):
+		return self.get_query_params().get('TagName')
+
+	def set_TagName(self,TagName):
+		self.add_query_param('TagName',TagName)
+
+	def get_Marker(self):
+		return self.get_query_params().get('Marker')
+
+	def set_Marker(self,Marker):
+		self.add_query_param('Marker',Marker)
 
 	def get_SetId(self):
 		return self.get_query_params().get('SetId')

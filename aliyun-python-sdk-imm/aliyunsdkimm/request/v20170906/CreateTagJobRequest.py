@@ -24,18 +24,6 @@ class CreateTagJobRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'imm', '2017-09-06', 'CreateTagJob','imm')
 
-	def get_NotifyTopicName(self):
-		return self.get_query_params().get('NotifyTopicName')
-
-	def set_NotifyTopicName(self,NotifyTopicName):
-		self.add_query_param('NotifyTopicName',NotifyTopicName)
-
-	def get_NotifyEndpoint(self):
-		return self.get_query_params().get('NotifyEndpoint')
-
-	def set_NotifyEndpoint(self,NotifyEndpoint):
-		self.add_query_param('NotifyEndpoint',NotifyEndpoint)
-
 	def get_Project(self):
 		return self.get_query_params().get('Project')
 
@@ -47,6 +35,18 @@ class CreateTagJobRequest(RpcRequest):
 
 	def set_ExternalID(self,ExternalID):
 		self.add_query_param('ExternalID',ExternalID)
+
+	def get_NotifyEndpoint(self):
+		return self.get_query_params().get('NotifyEndpoint')
+
+	def set_NotifyEndpoint(self,NotifyEndpoint):
+		self.add_query_param('NotifyEndpoint',NotifyEndpoint)
+
+	def get_NotifyTopicName(self):
+		return self.get_query_params().get('NotifyTopicName')
+
+	def set_NotifyTopicName(self,NotifyTopicName):
+		self.add_query_param('NotifyTopicName',NotifyTopicName)
 
 	def get_SrcUri(self):
 		return self.get_query_params().get('SrcUri')

@@ -24,11 +24,11 @@ class FindImagesByTagNamesRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'imm', '2017-09-06', 'FindImagesByTagNames','imm')
 
-	def get_Marker(self):
-		return self.get_query_params().get('Marker')
+	def get_Project(self):
+		return self.get_query_params().get('Project')
 
-	def set_Marker(self,Marker):
-		self.add_query_param('Marker',Marker)
+	def set_Project(self,Project):
+		self.add_query_param('Project',Project)
 
 	def get_Limit(self):
 		return self.get_query_params().get('Limit')
@@ -36,20 +36,20 @@ class FindImagesByTagNamesRequest(RpcRequest):
 	def set_Limit(self,Limit):
 		self.add_query_param('Limit',Limit)
 
-	def get_Project(self):
-		return self.get_query_params().get('Project')
+	def get_TagNames(self):
+		return self.get_query_params().get('TagNames')
 
-	def set_Project(self,Project):
-		self.add_query_param('Project',Project)
+	def set_TagNames(self,TagNames):
+		self.add_query_param('TagNames',TagNames)
+
+	def get_Marker(self):
+		return self.get_query_params().get('Marker')
+
+	def set_Marker(self,Marker):
+		self.add_query_param('Marker',Marker)
 
 	def get_SetId(self):
 		return self.get_query_params().get('SetId')
 
 	def set_SetId(self,SetId):
 		self.add_query_param('SetId',SetId)
-
-	def get_TagNames(self):
-		return self.get_query_params().get('TagNames')
-
-	def set_TagNames(self,TagNames):
-		self.add_query_param('TagNames',TagNames)

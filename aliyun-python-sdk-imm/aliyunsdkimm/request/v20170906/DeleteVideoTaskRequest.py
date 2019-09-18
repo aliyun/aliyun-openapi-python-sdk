@@ -24,12 +24,6 @@ class DeleteVideoTaskRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'imm', '2017-09-06', 'DeleteVideoTask','imm')
 
-	def get_TaskType(self):
-		return self.get_query_params().get('TaskType')
-
-	def set_TaskType(self,TaskType):
-		self.add_query_param('TaskType',TaskType)
-
 	def get_Project(self):
 		return self.get_query_params().get('Project')
 
@@ -41,3 +35,9 @@ class DeleteVideoTaskRequest(RpcRequest):
 
 	def set_TaskId(self,TaskId):
 		self.add_query_param('TaskId',TaskId)
+
+	def get_TaskType(self):
+		return self.get_query_params().get('TaskType')
+
+	def set_TaskType(self,TaskType):
+		self.add_query_param('TaskType',TaskType)

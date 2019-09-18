@@ -24,29 +24,29 @@ class UpdateFaceGroupRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'imm', '2017-09-06', 'UpdateFaceGroup','imm')
 
-	def get_GroupId(self):
-		return self.get_query_params().get('GroupId')
-
-	def set_GroupId(self,GroupId):
-		self.add_query_param('GroupId',GroupId)
-
 	def get_Project(self):
 		return self.get_query_params().get('Project')
 
 	def set_Project(self,Project):
 		self.add_query_param('Project',Project)
 
-	def get_SetId(self):
-		return self.get_query_params().get('SetId')
+	def get_GroupId(self):
+		return self.get_query_params().get('GroupId')
 
-	def set_SetId(self,SetId):
-		self.add_query_param('SetId',SetId)
+	def set_GroupId(self,GroupId):
+		self.add_query_param('GroupId',GroupId)
 
 	def get_GroupName(self):
 		return self.get_query_params().get('GroupName')
 
 	def set_GroupName(self,GroupName):
 		self.add_query_param('GroupName',GroupName)
+
+	def get_SetId(self):
+		return self.get_query_params().get('SetId')
+
+	def set_SetId(self,SetId):
+		self.add_query_param('SetId',SetId)
 
 	def get_GroupCoverFaceId(self):
 		return self.get_query_params().get('GroupCoverFaceId')

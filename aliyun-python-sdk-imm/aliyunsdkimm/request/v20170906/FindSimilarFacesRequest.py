@@ -24,11 +24,11 @@ class FindSimilarFacesRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'imm', '2017-09-06', 'FindSimilarFaces','imm')
 
-	def get_ImageUri(self):
-		return self.get_query_params().get('ImageUri')
+	def get_Project(self):
+		return self.get_query_params().get('Project')
 
-	def set_ImageUri(self,ImageUri):
-		self.add_query_param('ImageUri',ImageUri)
+	def set_Project(self,Project):
+		self.add_query_param('Project',Project)
 
 	def get_MinSimilarity(self):
 		return self.get_query_params().get('MinSimilarity')
@@ -48,20 +48,20 @@ class FindSimilarFacesRequest(RpcRequest):
 	def set_Limit(self,Limit):
 		self.add_query_param('Limit',Limit)
 
-	def get_Project(self):
-		return self.get_query_params().get('Project')
+	def get_FaceId(self):
+		return self.get_query_params().get('FaceId')
 
-	def set_Project(self,Project):
-		self.add_query_param('Project',Project)
+	def set_FaceId(self,FaceId):
+		self.add_query_param('FaceId',FaceId)
+
+	def get_ImageUri(self):
+		return self.get_query_params().get('ImageUri')
+
+	def set_ImageUri(self,ImageUri):
+		self.add_query_param('ImageUri',ImageUri)
 
 	def get_SetId(self):
 		return self.get_query_params().get('SetId')
 
 	def set_SetId(self,SetId):
 		self.add_query_param('SetId',SetId)
-
-	def get_FaceId(self):
-		return self.get_query_params().get('FaceId')
-
-	def set_FaceId(self,FaceId):
-		self.add_query_param('FaceId',FaceId)

@@ -36,17 +36,17 @@ class GetFaceSearchImageRequest(RpcRequest):
 	def set_Project(self,Project):
 		self.add_query_param('Project',Project)
 
-	def get_SrcUri(self):
-		return self.get_query_params().get('SrcUri')
-
-	def set_SrcUri(self,SrcUri):
-		self.add_query_param('SrcUri',SrcUri)
-
 	def get_GroupName(self):
 		return self.get_query_params().get('GroupName')
 
 	def set_GroupName(self,GroupName):
 		self.add_query_param('GroupName',GroupName)
+
+	def get_SrcUri(self):
+		return self.get_query_params().get('SrcUri')
+
+	def set_SrcUri(self,SrcUri):
+		self.add_query_param('SrcUri',SrcUri)
 
 	def get_User(self):
 		return self.get_query_params().get('User')

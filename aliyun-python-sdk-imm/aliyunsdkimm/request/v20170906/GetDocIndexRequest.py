@@ -24,12 +24,6 @@ class GetDocIndexRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'imm', '2017-09-06', 'GetDocIndex','imm')
 
-	def get_Set(self):
-		return self.get_query_params().get('Set')
-
-	def set_Set(self,Set):
-		self.add_query_param('Set',Set)
-
 	def get_Project(self):
 		return self.get_query_params().get('Project')
 
@@ -41,3 +35,9 @@ class GetDocIndexRequest(RpcRequest):
 
 	def set_UniqueId(self,UniqueId):
 		self.add_query_param('UniqueId',UniqueId)
+
+	def get_Set(self):
+		return self.get_query_params().get('Set')
+
+	def set_Set(self,Set):
+		self.add_query_param('Set',Set)
