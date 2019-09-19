@@ -19,16 +19,22 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class ProcessCompanyRegOrderRequest(RpcRequest):
+class SubmitCommunicationNoteRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'companyreg', '2019-05-08', 'ProcessCompanyRegOrder','companyreg')
+		RpcRequest.__init__(self, 'companyreg', '2019-05-08', 'SubmitCommunicationNote','companyreg')
 
-	def get_ActionType(self):
-		return self.get_query_params().get('ActionType')
+	def get_Note(self):
+		return self.get_query_params().get('Note')
 
-	def set_ActionType(self,ActionType):
-		self.add_query_param('ActionType',ActionType)
+	def set_Note(self,Note):
+		self.add_query_param('Note',Note)
+
+	def get_Type(self):
+		return self.get_query_params().get('Type')
+
+	def set_Type(self,Type):
+		self.add_query_param('Type',Type)
 
 	def get_ActionRequestId(self):
 		return self.get_query_params().get('ActionRequestId')
@@ -42,12 +48,6 @@ class ProcessCompanyRegOrderRequest(RpcRequest):
 	def set_OperatorType(self,OperatorType):
 		self.add_query_param('OperatorType',OperatorType)
 
-	def get_ActionInfo(self):
-		return self.get_query_params().get('ActionInfo')
-
-	def set_ActionInfo(self,ActionInfo):
-		self.add_query_param('ActionInfo',ActionInfo)
-
 	def get_BizCode(self):
 		return self.get_query_params().get('BizCode')
 
@@ -59,9 +59,3 @@ class ProcessCompanyRegOrderRequest(RpcRequest):
 
 	def set_BizId(self,BizId):
 		self.add_query_param('BizId',BizId)
-
-	def get_BizSubCode(self):
-		return self.get_query_params().get('BizSubCode')
-
-	def set_BizSubCode(self,BizSubCode):
-		self.add_query_param('BizSubCode',BizSubCode)

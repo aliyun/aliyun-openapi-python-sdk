@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,6 +18,7 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+
 class GetCompanyRegOrderRequest(RpcRequest):
 
 	def __init__(self):
@@ -46,3 +47,9 @@ class GetCompanyRegOrderRequest(RpcRequest):
 
 	def set_MaxOperationSize(self,MaxOperationSize):
 		self.add_query_param('MaxOperationSize',MaxOperationSize)
+
+	def get_BizSubCode(self):
+		return self.get_query_params().get('BizSubCode')
+
+	def set_BizSubCode(self,BizSubCode):
+		self.add_query_param('BizSubCode',BizSubCode)

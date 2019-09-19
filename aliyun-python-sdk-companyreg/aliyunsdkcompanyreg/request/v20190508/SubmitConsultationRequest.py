@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,6 +18,7 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+
 class SubmitConsultationRequest(RpcRequest):
 
 	def __init__(self):
@@ -28,6 +29,12 @@ class SubmitConsultationRequest(RpcRequest):
 
 	def set_Data(self,Data):
 		self.add_query_param('Data',Data)
+
+	def get_Vcode(self):
+		return self.get_query_params().get('Vcode')
+
+	def set_Vcode(self,Vcode):
+		self.add_query_param('Vcode',Vcode)
 
 	def get_BizCode(self):
 		return self.get_query_params().get('BizCode')
@@ -41,8 +48,8 @@ class SubmitConsultationRequest(RpcRequest):
 	def set_ConsultRequestId(self,ConsultRequestId):
 		self.add_query_param('ConsultRequestId',ConsultRequestId)
 
-	def get_Vcode(self):
-		return self.get_query_params().get('Vcode')
+	def get_BizSubCode(self):
+		return self.get_query_params().get('BizSubCode')
 
-	def set_Vcode(self,Vcode):
-		self.add_query_param('Vcode',Vcode)
+	def set_BizSubCode(self,BizSubCode):
+		self.add_query_param('BizSubCode',BizSubCode)

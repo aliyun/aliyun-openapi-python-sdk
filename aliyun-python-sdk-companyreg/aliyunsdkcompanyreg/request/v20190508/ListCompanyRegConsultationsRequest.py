@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,6 +18,7 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+
 class ListCompanyRegConsultationsRequest(RpcRequest):
 
 	def __init__(self):
@@ -29,17 +30,23 @@ class ListCompanyRegConsultationsRequest(RpcRequest):
 	def set_EndGmtCreate(self,EndGmtCreate):
 		self.add_query_param('EndGmtCreate',EndGmtCreate)
 
-	def get_BizCode(self):
-		return self.get_query_params().get('BizCode')
-
-	def set_BizCode(self,BizCode):
-		self.add_query_param('BizCode',BizCode)
-
 	def get_City(self):
 		return self.get_query_params().get('City')
 
 	def set_City(self,City):
 		self.add_query_param('City',City)
+
+	def get_PageNum(self):
+		return self.get_query_params().get('PageNum')
+
+	def set_PageNum(self,PageNum):
+		self.add_query_param('PageNum',PageNum)
+
+	def get_BizCode(self):
+		return self.get_query_params().get('BizCode')
+
+	def set_BizCode(self,BizCode):
+		self.add_query_param('BizCode',BizCode)
 
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
@@ -58,9 +65,3 @@ class ListCompanyRegConsultationsRequest(RpcRequest):
 
 	def set_StartGmtCreate(self,StartGmtCreate):
 		self.add_query_param('StartGmtCreate',StartGmtCreate)
-
-	def get_PageNum(self):
-		return self.get_query_params().get('PageNum')
-
-	def set_PageNum(self,PageNum):
-		self.add_query_param('PageNum',PageNum)
