@@ -24,12 +24,6 @@ class FindImagesRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'imm', '2017-09-06', 'FindImages','imm')
 
-	def get_Gender(self):
-		return self.get_query_params().get('Gender')
-
-	def set_Gender(self,Gender):
-		self.add_query_param('Gender',Gender)
-
 	def get_Project(self):
 		return self.get_query_params().get('Project')
 
@@ -47,6 +41,84 @@ class FindImagesRequest(RpcRequest):
 
 	def set_FacesModifyTimeRange(self,FacesModifyTimeRange):
 		self.add_query_param('FacesModifyTimeRange',FacesModifyTimeRange)
+
+	def get_OCRContentsMatch(self):
+		return self.get_query_params().get('OCRContentsMatch')
+
+	def set_OCRContentsMatch(self,OCRContentsMatch):
+		self.add_query_param('OCRContentsMatch',OCRContentsMatch)
+
+	def get_Limit(self):
+		return self.get_query_params().get('Limit')
+
+	def set_Limit(self,Limit):
+		self.add_query_param('Limit',Limit)
+
+	def get_RemarksDPrefix(self):
+		return self.get_query_params().get('RemarksDPrefix')
+
+	def set_RemarksDPrefix(self,RemarksDPrefix):
+		self.add_query_param('RemarksDPrefix',RemarksDPrefix)
+
+	def get_SourceType(self):
+		return self.get_query_params().get('SourceType')
+
+	def set_SourceType(self,SourceType):
+		self.add_query_param('SourceType',SourceType)
+
+	def get_Order(self):
+		return self.get_query_params().get('Order')
+
+	def set_Order(self,Order):
+		self.add_query_param('Order',Order)
+
+	def get_GroupId(self):
+		return self.get_query_params().get('GroupId')
+
+	def set_GroupId(self,GroupId):
+		self.add_query_param('GroupId',GroupId)
+
+	def get_OrderBy(self):
+		return self.get_query_params().get('OrderBy')
+
+	def set_OrderBy(self,OrderBy):
+		self.add_query_param('OrderBy',OrderBy)
+
+	def get_TagNames(self):
+		return self.get_query_params().get('TagNames')
+
+	def set_TagNames(self,TagNames):
+		self.add_query_param('TagNames',TagNames)
+
+	def get_Marker(self):
+		return self.get_query_params().get('Marker')
+
+	def set_Marker(self,Marker):
+		self.add_query_param('Marker',Marker)
+
+	def get_RemarksCPrefix(self):
+		return self.get_query_params().get('RemarksCPrefix')
+
+	def set_RemarksCPrefix(self,RemarksCPrefix):
+		self.add_query_param('RemarksCPrefix',RemarksCPrefix)
+
+	def get_ModifyTimeRange(self):
+		return self.get_query_params().get('ModifyTimeRange')
+
+	def set_ModifyTimeRange(self,ModifyTimeRange):
+		self.add_query_param('ModifyTimeRange',ModifyTimeRange)
+
+	def get_AddressLineContentsMatch(self):
+		return self.get_query_params().get('AddressLineContentsMatch')
+
+	def set_AddressLineContentsMatch(self,AddressLineContentsMatch):
+		self.add_query_param('AddressLineContentsMatch',AddressLineContentsMatch)
+
+	def get_Gender(self):
+		return self.get_query_params().get('Gender')
+
+	def set_Gender(self,Gender):
+		self.add_query_param('Gender',Gender)
 
 	def get_ImageSizeRange(self):
 		return self.get_query_params().get('ImageSizeRange')
@@ -72,35 +144,11 @@ class FindImagesRequest(RpcRequest):
 	def set_ImageTimeRange(self,ImageTimeRange):
 		self.add_query_param('ImageTimeRange',ImageTimeRange)
 
-	def get_OCRContentsMatch(self):
-		return self.get_query_params().get('OCRContentsMatch')
-
-	def set_OCRContentsMatch(self,OCRContentsMatch):
-		self.add_query_param('OCRContentsMatch',OCRContentsMatch)
-
-	def get_Limit(self):
-		return self.get_query_params().get('Limit')
-
-	def set_Limit(self,Limit):
-		self.add_query_param('Limit',Limit)
-
-	def get_RemarksDPrefix(self):
-		return self.get_query_params().get('RemarksDPrefix')
-
-	def set_RemarksDPrefix(self,RemarksDPrefix):
-		self.add_query_param('RemarksDPrefix',RemarksDPrefix)
-
 	def get_TagsModifyTimeRange(self):
 		return self.get_query_params().get('TagsModifyTimeRange')
 
 	def set_TagsModifyTimeRange(self,TagsModifyTimeRange):
 		self.add_query_param('TagsModifyTimeRange',TagsModifyTimeRange)
-
-	def get_SourceType(self):
-		return self.get_query_params().get('SourceType')
-
-	def set_SourceType(self,SourceType):
-		self.add_query_param('SourceType',SourceType)
 
 	def get_AgeRange(self):
 		return self.get_query_params().get('AgeRange')
@@ -108,35 +156,11 @@ class FindImagesRequest(RpcRequest):
 	def set_AgeRange(self,AgeRange):
 		self.add_query_param('AgeRange',AgeRange)
 
-	def get_Order(self):
-		return self.get_query_params().get('Order')
-
-	def set_Order(self,Order):
-		self.add_query_param('Order',Order)
-
 	def get_RemarksAPrefix(self):
 		return self.get_query_params().get('RemarksAPrefix')
 
 	def set_RemarksAPrefix(self,RemarksAPrefix):
 		self.add_query_param('RemarksAPrefix',RemarksAPrefix)
-
-	def get_GroupId(self):
-		return self.get_query_params().get('GroupId')
-
-	def set_GroupId(self,GroupId):
-		self.add_query_param('GroupId',GroupId)
-
-	def get_OrderBy(self):
-		return self.get_query_params().get('OrderBy')
-
-	def set_OrderBy(self,OrderBy):
-		self.add_query_param('OrderBy',OrderBy)
-
-	def get_TagNames(self):
-		return self.get_query_params().get('TagNames')
-
-	def set_TagNames(self,TagNames):
-		self.add_query_param('TagNames',TagNames)
 
 	def get_SourceUriPrefix(self):
 		return self.get_query_params().get('SourceUriPrefix')
@@ -150,18 +174,6 @@ class FindImagesRequest(RpcRequest):
 	def set_Emotion(self,Emotion):
 		self.add_query_param('Emotion',Emotion)
 
-	def get_Marker(self):
-		return self.get_query_params().get('Marker')
-
-	def set_Marker(self,Marker):
-		self.add_query_param('Marker',Marker)
-
-	def get_RemarksCPrefix(self):
-		return self.get_query_params().get('RemarksCPrefix')
-
-	def set_RemarksCPrefix(self,RemarksCPrefix):
-		self.add_query_param('RemarksCPrefix',RemarksCPrefix)
-
 	def get_CreateTimeRange(self):
 		return self.get_query_params().get('CreateTimeRange')
 
@@ -173,9 +185,3 @@ class FindImagesRequest(RpcRequest):
 
 	def set_SetId(self,SetId):
 		self.add_query_param('SetId',SetId)
-
-	def get_ModifyTimeRange(self):
-		return self.get_query_params().get('ModifyTimeRange')
-
-	def set_ModifyTimeRange(self,ModifyTimeRange):
-		self.add_query_param('ModifyTimeRange',ModifyTimeRange)
