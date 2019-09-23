@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkecs.endpoint import endpoint_data
 
-class DescribeInvocationsRequest(RpcRequest):
+class RunCommandRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'DescribeInvocations','ecs')
+		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'RunCommand','ecs')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -36,23 +36,41 @@ class DescribeInvocationsRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_InvokeStatus(self):
-		return self.get_query_params().get('InvokeStatus')
+	def get_WorkingDir(self):
+		return self.get_query_params().get('WorkingDir')
 
-	def set_InvokeStatus(self,InvokeStatus):
-		self.add_query_param('InvokeStatus',InvokeStatus)
+	def set_WorkingDir(self,WorkingDir):
+		self.add_query_param('WorkingDir',WorkingDir)
 
-	def get_CommandId(self):
-		return self.get_query_params().get('CommandId')
+	def get_Description(self):
+		return self.get_query_params().get('Description')
 
-	def set_CommandId(self,CommandId):
-		self.add_query_param('CommandId',CommandId)
+	def set_Description(self,Description):
+		self.add_query_param('Description',Description)
 
-	def get_PageNumber(self):
-		return self.get_query_params().get('PageNumber')
+	def get_Type(self):
+		return self.get_query_params().get('Type')
 
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
+	def set_Type(self,Type):
+		self.add_query_param('Type',Type)
+
+	def get_CommandContent(self):
+		return self.get_query_params().get('CommandContent')
+
+	def set_CommandContent(self,CommandContent):
+		self.add_query_param('CommandContent',CommandContent)
+
+	def get_Timeout(self):
+		return self.get_query_params().get('Timeout')
+
+	def set_Timeout(self,Timeout):
+		self.add_query_param('Timeout',Timeout)
+
+	def get_Frequency(self):
+		return self.get_query_params().get('Frequency')
+
+	def set_Frequency(self,Frequency):
+		self.add_query_param('Frequency',Frequency)
 
 	def get_ContentEncoding(self):
 		return self.get_query_params().get('ContentEncoding')
@@ -60,29 +78,17 @@ class DescribeInvocationsRequest(RpcRequest):
 	def set_ContentEncoding(self,ContentEncoding):
 		self.add_query_param('ContentEncoding',ContentEncoding)
 
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
+	def get_KeepCommand(self):
+		return self.get_query_params().get('KeepCommand')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_InvokeId(self):
-		return self.get_query_params().get('InvokeId')
-
-	def set_InvokeId(self,InvokeId):
-		self.add_query_param('InvokeId',InvokeId)
+	def set_KeepCommand(self,KeepCommand):
+		self.add_query_param('KeepCommand',KeepCommand)
 
 	def get_Timed(self):
 		return self.get_query_params().get('Timed')
 
 	def set_Timed(self,Timed):
 		self.add_query_param('Timed',Timed)
-
-	def get_CommandName(self):
-		return self.get_query_params().get('CommandName')
-
-	def set_CommandName(self,CommandName):
-		self.add_query_param('CommandName',CommandName)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -102,14 +108,28 @@ class DescribeInvocationsRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_CommandType(self):
-		return self.get_query_params().get('CommandType')
+	def get_InstanceIds(self):
+		return self.get_query_params().get('InstanceIds')
 
-	def set_CommandType(self,CommandType):
-		self.add_query_param('CommandType',CommandType)
+	def set_InstanceIds(self,InstanceIds):
+		for i in range(len(InstanceIds)):	
+			if InstanceIds[i] is not None:
+				self.add_query_param('InstanceId.' + str(i + 1) , InstanceIds[i]);
 
-	def get_InstanceId(self):
-		return self.get_query_params().get('InstanceId')
+	def get_Name(self):
+		return self.get_query_params().get('Name')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
+	def set_Name(self,Name):
+		self.add_query_param('Name',Name)
+
+	def get_Parameters(self):
+		return self.get_query_params().get('Parameters')
+
+	def set_Parameters(self,Parameters):
+		self.add_query_param('Parameters',Parameters)
+
+	def get_EnableParameter(self):
+		return self.get_query_params().get('EnableParameter')
+
+	def set_EnableParameter(self,EnableParameter):
+		self.add_query_param('EnableParameter',EnableParameter)

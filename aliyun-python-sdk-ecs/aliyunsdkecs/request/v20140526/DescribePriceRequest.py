@@ -90,6 +90,12 @@ class DescribePriceRequest(RpcRequest):
 	def set_InstanceNetworkType(self,InstanceNetworkType):
 		self.add_query_param('InstanceNetworkType',InstanceNetworkType)
 
+	def get_InstanceAmount(self):
+		return self.get_query_params().get('InstanceAmount')
+
+	def set_InstanceAmount(self,InstanceAmount):
+		self.add_query_param('InstanceAmount',InstanceAmount)
+
 	def get_DataDisk3PerformanceLevel(self):
 		return self.get_query_params().get('DataDisk.3.PerformanceLevel')
 
@@ -120,6 +126,12 @@ class DescribePriceRequest(RpcRequest):
 	def set_SystemDiskCategory(self,SystemDiskCategory):
 		self.add_query_param('SystemDisk.Category',SystemDiskCategory)
 
+	def get_Platform(self):
+		return self.get_query_params().get('Platform')
+
+	def set_Platform(self,Platform):
+		self.add_query_param('Platform',Platform)
+
 	def get_SystemDiskPerformanceLevel(self):
 		return self.get_query_params().get('SystemDisk.PerformanceLevel')
 
@@ -137,6 +149,12 @@ class DescribePriceRequest(RpcRequest):
 
 	def set_DataDisk4PerformanceLevel(self,DataDisk4PerformanceLevel):
 		self.add_query_param('DataDisk.4.PerformanceLevel',DataDisk4PerformanceLevel)
+
+	def get_Scope(self):
+		return self.get_query_params().get('Scope')
+
+	def set_Scope(self,Scope):
+		self.add_query_param('Scope',Scope)
 
 	def get_InstanceType(self):
 		return self.get_query_params().get('InstanceType')
@@ -203,3 +221,9 @@ class DescribePriceRequest(RpcRequest):
 
 	def set_SystemDiskSize(self,SystemDiskSize):
 		self.add_query_param('SystemDisk.Size',SystemDiskSize)
+
+	def get_OfferingType(self):
+		return self.get_query_params().get('OfferingType')
+
+	def set_OfferingType(self,OfferingType):
+		self.add_query_param('OfferingType',OfferingType)

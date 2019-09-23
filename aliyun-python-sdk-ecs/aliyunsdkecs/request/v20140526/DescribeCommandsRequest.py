@@ -60,6 +60,12 @@ class DescribeCommandsRequest(RpcRequest):
 	def set_PageNumber(self,PageNumber):
 		self.add_query_param('PageNumber',PageNumber)
 
+	def get_ContentEncoding(self):
+		return self.get_query_params().get('ContentEncoding')
+
+	def set_ContentEncoding(self,ContentEncoding):
+		self.add_query_param('ContentEncoding',ContentEncoding)
+
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
 
