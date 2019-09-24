@@ -1,3 +1,6 @@
+2019-09-24 Version: 1.5.2
+- New version 1-5-2.
+
 2019-06-03 Version: 1.5.1
 1, Add openapi of ACL.
 

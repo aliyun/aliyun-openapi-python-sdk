@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,10 +18,17 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdksmartag.endpoint import endpoint_data
+
 class DescribeNetworkOptimizationSettingsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Smartag', '2018-03-13', 'DescribeNetworkOptimizationSettings','smartag')
+		RpcRequest.__init__(self, 'Smartag', '2018-03-13', 'DescribeNetworkOptimizationSettings','Smartag')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -29,11 +36,11 @@ class DescribeNetworkOptimizationSettingsRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
+	def get_PageNumber(self):
+		return self.get_query_params().get('PageNumber')
 
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)
 
 	def get_NetworkOptId(self):
 		return self.get_query_params().get('NetworkOptId')
@@ -41,23 +48,23 @@ class DescribeNetworkOptimizationSettingsRequest(RpcRequest):
 	def set_NetworkOptId(self,NetworkOptId):
 		self.add_query_param('NetworkOptId',NetworkOptId)
 
-	def get_PageNo(self):
-		return self.get_query_params().get('PageNo')
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
 
-	def set_PageNo(self,PageNo):
-		self.add_query_param('PageNo',PageNo)
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
+
+	def get_ResourceOwnerAccount(self):
+		return self.get_query_params().get('ResourceOwnerAccount')
+
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
 
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
-
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')

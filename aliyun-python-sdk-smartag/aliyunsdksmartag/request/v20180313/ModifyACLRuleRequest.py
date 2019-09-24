@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,16 +18,17 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdksmartag.endpoint import endpoint_data
+
 class ModifyACLRuleRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Smartag', '2018-03-13', 'ModifyACLRule','smartag')
+		RpcRequest.__init__(self, 'Smartag', '2018-03-13', 'ModifyACLRule','Smartag')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_AclId(self):
-		return self.get_query_params().get('AclId')
-
-	def set_AclId(self,AclId):
-		self.add_query_param('AclId',AclId)
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -40,6 +41,48 @@ class ModifyACLRuleRequest(RpcRequest):
 
 	def set_SourcePortRange(self,SourcePortRange):
 		self.add_query_param('SourcePortRange',SourcePortRange)
+
+	def get_SourceCidr(self):
+		return self.get_query_params().get('SourceCidr')
+
+	def set_SourceCidr(self,SourceCidr):
+		self.add_query_param('SourceCidr',SourceCidr)
+
+	def get_Description(self):
+		return self.get_query_params().get('Description')
+
+	def set_Description(self,Description):
+		self.add_query_param('Description',Description)
+
+	def get_Type(self):
+		return self.get_query_params().get('Type')
+
+	def set_Type(self,Type):
+		self.add_query_param('Type',Type)
+
+	def get_DestCidr(self):
+		return self.get_query_params().get('DestCidr')
+
+	def set_DestCidr(self,DestCidr):
+		self.add_query_param('DestCidr',DestCidr)
+
+	def get_Direction(self):
+		return self.get_query_params().get('Direction')
+
+	def set_Direction(self,Direction):
+		self.add_query_param('Direction',Direction)
+
+	def get_Policy(self):
+		return self.get_query_params().get('Policy')
+
+	def set_Policy(self,Policy):
+		self.add_query_param('Policy',Policy)
+
+	def get_AclId(self):
+		return self.get_query_params().get('AclId')
+
+	def set_AclId(self,AclId):
+		self.add_query_param('AclId',AclId)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -59,18 +102,6 @@ class ModifyACLRuleRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
-	def get_SourceCidr(self):
-		return self.get_query_params().get('SourceCidr')
-
-	def set_SourceCidr(self,SourceCidr):
-		self.add_query_param('SourceCidr',SourceCidr)
-
-	def get_Description(self):
-		return self.get_query_params().get('Description')
-
-	def set_Description(self,Description):
-		self.add_query_param('Description',Description)
-
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
@@ -89,26 +120,8 @@ class ModifyACLRuleRequest(RpcRequest):
 	def set_AcrId(self,AcrId):
 		self.add_query_param('AcrId',AcrId)
 
-	def get_DestCidr(self):
-		return self.get_query_params().get('DestCidr')
-
-	def set_DestCidr(self,DestCidr):
-		self.add_query_param('DestCidr',DestCidr)
-
 	def get_DestPortRange(self):
 		return self.get_query_params().get('DestPortRange')
 
 	def set_DestPortRange(self,DestPortRange):
 		self.add_query_param('DestPortRange',DestPortRange)
-
-	def get_Direction(self):
-		return self.get_query_params().get('Direction')
-
-	def set_Direction(self,Direction):
-		self.add_query_param('Direction',Direction)
-
-	def get_Policy(self):
-		return self.get_query_params().get('Policy')
-
-	def set_Policy(self,Policy):
-		self.add_query_param('Policy',Policy)
