@@ -23,7 +23,7 @@ from aliyunsdkschedulerx2.endpoint import endpoint_data
 class CreateJobRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'schedulerx2', '2019-04-30', 'CreateJob','schedulerx2')
+		RpcRequest.__init__(self, 'schedulerx2', '2019-04-30', 'CreateJob')
 		self.set_protocol_type('https')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
