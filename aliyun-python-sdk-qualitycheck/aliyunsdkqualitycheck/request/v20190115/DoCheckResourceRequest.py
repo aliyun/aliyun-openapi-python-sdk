@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,6 +18,7 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+
 class DoCheckResourceRequest(RpcRequest):
 
 	def __init__(self):
@@ -41,6 +42,24 @@ class DoCheckResourceRequest(RpcRequest):
 	def set_Hid(self,Hid):
 		self.add_query_param('Hid',Hid)
 
+	def get_Interrupt(self):
+		return self.get_query_params().get('Interrupt')
+
+	def set_Interrupt(self,Interrupt):
+		self.add_query_param('Interrupt',Interrupt)
+
+	def get_GmtWakeup(self):
+		return self.get_query_params().get('GmtWakeup')
+
+	def set_GmtWakeup(self,GmtWakeup):
+		self.add_query_param('GmtWakeup',GmtWakeup)
+
+	def get_TaskExtraData(self):
+		return self.get_query_params().get('TaskExtraData')
+
+	def set_TaskExtraData(self,TaskExtraData):
+		self.add_query_param('TaskExtraData',TaskExtraData)
+
 	def get_Level(self):
 		return self.get_query_params().get('Level')
 
@@ -59,18 +78,6 @@ class DoCheckResourceRequest(RpcRequest):
 	def set_Success(self,Success):
 		self.add_query_param('Success',Success)
 
-	def get_Interrupt(self):
-		return self.get_query_params().get('Interrupt')
-
-	def set_Interrupt(self,Interrupt):
-		self.add_query_param('Interrupt',Interrupt)
-
-	def get_GmtWakeup(self):
-		return self.get_query_params().get('GmtWakeup')
-
-	def set_GmtWakeup(self,GmtWakeup):
-		self.add_query_param('GmtWakeup',GmtWakeup)
-
 	def get_Pk(self):
 		return self.get_query_params().get('Pk')
 
@@ -88,12 +95,6 @@ class DoCheckResourceRequest(RpcRequest):
 
 	def set_Prompt(self,Prompt):
 		self.add_query_param('Prompt',Prompt)
-
-	def get_TaskExtraData(self):
-		return self.get_query_params().get('TaskExtraData')
-
-	def set_TaskExtraData(self,TaskExtraData):
-		self.add_query_param('TaskExtraData',TaskExtraData)
 
 	def get_TaskIdentifier(self):
 		return self.get_query_params().get('TaskIdentifier')

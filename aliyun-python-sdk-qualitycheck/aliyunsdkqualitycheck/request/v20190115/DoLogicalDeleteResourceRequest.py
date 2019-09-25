@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,6 +18,7 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+
 class DoLogicalDeleteResourceRequest(RpcRequest):
 
 	def __init__(self):
@@ -40,6 +41,12 @@ class DoLogicalDeleteResourceRequest(RpcRequest):
 
 	def set_Hid(self,Hid):
 		self.add_query_param('Hid',Hid)
+
+	def get_Message(self):
+		return self.get_query_params().get('Message')
+
+	def set_Message(self,Message):
+		self.add_query_param('Message',Message)
 
 	def get_Success(self):
 		return self.get_query_params().get('Success')
@@ -70,12 +77,6 @@ class DoLogicalDeleteResourceRequest(RpcRequest):
 
 	def set_Bid(self,Bid):
 		self.add_query_param('Bid',Bid)
-
-	def get_Message(self):
-		return self.get_query_params().get('Message')
-
-	def set_Message(self,Message):
-		self.add_query_param('Message',Message)
 
 	def get_TaskExtraData(self):
 		return self.get_query_params().get('TaskExtraData')
