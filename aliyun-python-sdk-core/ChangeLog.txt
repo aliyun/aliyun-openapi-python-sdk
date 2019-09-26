@@ -1,3 +1,6 @@
+2019-08-28 Version 2.13.9
+1, add local endpoint method by hx
+
 2019-08-28 Version 2.13.8
 1, upgrade certifi from 2017.04.17 to 2018.01.18
 2, Add interface to import ca.pem

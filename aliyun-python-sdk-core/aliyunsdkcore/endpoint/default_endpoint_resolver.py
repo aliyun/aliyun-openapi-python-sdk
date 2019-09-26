@@ -37,8 +37,8 @@ class DefaultEndpointResolver(EndpointResolver):
         endpoint_resolvers = [
             self.predefined_endpoint_resolver,
             self._user_customized_endpoint_resolver,
-            EndpointResolverRules(),
             LocalConfigRegionalEndpointResolver(user_config),
+            EndpointResolverRules(),
             LocalConfigGlobalEndpointResolver(user_config),
             LocationServiceEndpointResolver(client),
         ]
