@@ -1,0 +1,4 @@
+2019-09-26 Version: 1.2.0
+- Supported RingConfig for BindAxb,BindAxn,BindAxg,BindAxnExtension.
+- Add QuerySubsId.
+
