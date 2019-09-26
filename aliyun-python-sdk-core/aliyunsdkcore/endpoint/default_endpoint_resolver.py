@@ -38,8 +38,8 @@ class DefaultEndpointResolver(EndpointResolver):
             self.predefined_endpoint_resolver,
             self._user_customized_endpoint_resolver,
             LocalConfigRegionalEndpointResolver(user_config),
-            LocalConfigGlobalEndpointResolver(user_config),
             EndpointResolverRules(),
+            LocalConfigGlobalEndpointResolver(user_config),
             LocationServiceEndpointResolver(client),
         ]
 
