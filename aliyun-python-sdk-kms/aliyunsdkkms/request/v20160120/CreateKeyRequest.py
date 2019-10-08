@@ -54,3 +54,15 @@ class CreateKeyRequest(RpcRequest):
 
 	def set_Description(self,Description):
 		self.add_query_param('Description',Description)
+
+	def get_RotationInterval(self):
+		return self.get_query_params().get('RotationInterval')
+
+	def set_RotationInterval(self,RotationInterval):
+		self.add_query_param('RotationInterval',RotationInterval)
+
+	def get_EnableAutomaticRotation(self):
+		return self.get_query_params().get('EnableAutomaticRotation')
+
+	def set_EnableAutomaticRotation(self,EnableAutomaticRotation):
+		self.add_query_param('EnableAutomaticRotation',EnableAutomaticRotation)

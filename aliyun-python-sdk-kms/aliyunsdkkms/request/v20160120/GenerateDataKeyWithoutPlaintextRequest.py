@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkkms.endpoint import endpoint_data
 
-class DecryptRequest(RpcRequest):
+class GenerateDataKeyWithoutPlaintextRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Kms', '2016-01-20', 'Decrypt','kms')
+		RpcRequest.__init__(self, 'Kms', '2016-01-20', 'GenerateDataKeyWithoutPlaintext','kms')
 		self.set_protocol_type('https')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -37,8 +37,20 @@ class DecryptRequest(RpcRequest):
 	def set_EncryptionContext(self,EncryptionContext):
 		self.add_query_param('EncryptionContext',EncryptionContext)
 
-	def get_CiphertextBlob(self):
-		return self.get_query_params().get('CiphertextBlob')
+	def get_KeyId(self):
+		return self.get_query_params().get('KeyId')
 
-	def set_CiphertextBlob(self,CiphertextBlob):
-		self.add_query_param('CiphertextBlob',CiphertextBlob)
+	def set_KeyId(self,KeyId):
+		self.add_query_param('KeyId',KeyId)
+
+	def get_KeySpec(self):
+		return self.get_query_params().get('KeySpec')
+
+	def set_KeySpec(self,KeySpec):
+		self.add_query_param('KeySpec',KeySpec)
+
+	def get_NumberOfBytes(self):
+		return self.get_query_params().get('NumberOfBytes')
+
+	def set_NumberOfBytes(self,NumberOfBytes):
+		self.add_query_param('NumberOfBytes',NumberOfBytes)
