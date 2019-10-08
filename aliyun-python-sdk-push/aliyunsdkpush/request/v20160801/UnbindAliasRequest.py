@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,10 +18,17 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+
 class UnbindAliasRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Push', '2016-08-01', 'UnbindAlias')
+
+	def get_DeviceId(self):
+		return self.get_query_params().get('DeviceId')
+
+	def set_DeviceId(self,DeviceId):
+		self.add_query_param('DeviceId',DeviceId)
 
 	def get_AliasName(self):
 		return self.get_query_params().get('AliasName')
@@ -34,12 +41,6 @@ class UnbindAliasRequest(RpcRequest):
 
 	def set_AppKey(self,AppKey):
 		self.add_query_param('AppKey',AppKey)
-
-	def get_DeviceId(self):
-		return self.get_query_params().get('DeviceId')
-
-	def set_DeviceId(self,DeviceId):
-		self.add_query_param('DeviceId',DeviceId)
 
 	def get_UnbindAll(self):
 		return self.get_query_params().get('UnbindAll')

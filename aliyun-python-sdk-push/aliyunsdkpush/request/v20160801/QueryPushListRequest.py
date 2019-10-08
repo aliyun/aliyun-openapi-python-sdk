@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,16 +18,11 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+
 class QueryPushListRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Push', '2016-08-01', 'QueryPushList')
-
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
 
 	def get_EndTime(self):
 		return self.get_query_params().get('EndTime')
@@ -35,17 +30,23 @@ class QueryPushListRequest(RpcRequest):
 	def set_EndTime(self,EndTime):
 		self.add_query_param('EndTime',EndTime)
 
-	def get_AppKey(self):
-		return self.get_query_params().get('AppKey')
-
-	def set_AppKey(self,AppKey):
-		self.add_query_param('AppKey',AppKey)
-
 	def get_StartTime(self):
 		return self.get_query_params().get('StartTime')
 
 	def set_StartTime(self,StartTime):
 		self.add_query_param('StartTime',StartTime)
+
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
+
+	def get_AppKey(self):
+		return self.get_query_params().get('AppKey')
+
+	def set_AppKey(self,AppKey):
+		self.add_query_param('AppKey',AppKey)
 
 	def get_Page(self):
 		return self.get_query_params().get('Page')

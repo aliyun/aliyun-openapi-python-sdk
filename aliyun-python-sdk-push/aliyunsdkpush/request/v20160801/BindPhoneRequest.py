@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,6 +18,7 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+
 class BindPhoneRequest(RpcRequest):
 
 	def __init__(self):
@@ -29,14 +30,14 @@ class BindPhoneRequest(RpcRequest):
 	def set_PhoneNumber(self,PhoneNumber):
 		self.add_query_param('PhoneNumber',PhoneNumber)
 
-	def get_AppKey(self):
-		return self.get_query_params().get('AppKey')
-
-	def set_AppKey(self,AppKey):
-		self.add_query_param('AppKey',AppKey)
-
 	def get_DeviceId(self):
 		return self.get_query_params().get('DeviceId')
 
 	def set_DeviceId(self,DeviceId):
 		self.add_query_param('DeviceId',DeviceId)
+
+	def get_AppKey(self):
+		return self.get_query_params().get('AppKey')
+
+	def set_AppKey(self,AppKey):
+		self.add_query_param('AppKey',AppKey)

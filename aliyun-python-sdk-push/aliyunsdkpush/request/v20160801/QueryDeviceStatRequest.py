@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,6 +18,7 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+
 class QueryDeviceStatRequest(RpcRequest):
 
 	def __init__(self):
@@ -28,12 +29,6 @@ class QueryDeviceStatRequest(RpcRequest):
 
 	def set_EndTime(self,EndTime):
 		self.add_query_param('EndTime',EndTime)
-
-	def get_AppKey(self):
-		return self.get_query_params().get('AppKey')
-
-	def set_AppKey(self,AppKey):
-		self.add_query_param('AppKey',AppKey)
 
 	def get_StartTime(self):
 		return self.get_query_params().get('StartTime')
@@ -46,6 +41,12 @@ class QueryDeviceStatRequest(RpcRequest):
 
 	def set_DeviceType(self,DeviceType):
 		self.add_query_param('DeviceType',DeviceType)
+
+	def get_AppKey(self):
+		return self.get_query_params().get('AppKey')
+
+	def set_AppKey(self,AppKey):
+		self.add_query_param('AppKey',AppKey)
 
 	def get_QueryType(self):
 		return self.get_query_params().get('QueryType')
