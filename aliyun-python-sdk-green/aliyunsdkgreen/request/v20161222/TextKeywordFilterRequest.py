@@ -18,9 +18,15 @@
 # under the License.
 
 from aliyunsdkcore.request import RoaRequest
+from aliyunsdkgreen.endpoint import endpoint_data
+
 class TextKeywordFilterRequest(RoaRequest):
 
 	def __init__(self):
 		RoaRequest.__init__(self, 'Green', '2016-12-22', 'TextKeywordFilter','green')
 		self.set_uri_pattern('/text/keyword_filter')
 		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())

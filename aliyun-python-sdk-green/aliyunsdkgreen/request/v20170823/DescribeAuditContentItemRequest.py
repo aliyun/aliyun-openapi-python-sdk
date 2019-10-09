@@ -18,16 +18,17 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkgreen.endpoint import endpoint_data
+
 class DescribeAuditContentItemRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Green', '2017-08-23', 'DescribeAuditContentItem','green')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_TotalCount(self):
-		return self.get_query_params().get('TotalCount')
-
-	def set_TotalCount(self,TotalCount):
-		self.add_query_param('TotalCount',TotalCount)
 
 	def get_SourceIp(self):
 		return self.get_query_params().get('SourceIp')
@@ -41,26 +42,32 @@ class DescribeAuditContentItemRequest(RpcRequest):
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
 
-	def get_CurrentPage(self):
-		return self.get_query_params().get('CurrentPage')
-
-	def set_CurrentPage(self,CurrentPage):
-		self.add_query_param('CurrentPage',CurrentPage)
-
 	def get_Lang(self):
 		return self.get_query_params().get('Lang')
 
 	def set_Lang(self,Lang):
 		self.add_query_param('Lang',Lang)
 
-	def get_ResourceType(self):
-		return self.get_query_params().get('ResourceType')
-
-	def set_ResourceType(self,ResourceType):
-		self.add_query_param('ResourceType',ResourceType)
-
 	def get_TaskId(self):
 		return self.get_query_params().get('TaskId')
 
 	def set_TaskId(self,TaskId):
 		self.add_query_param('TaskId',TaskId)
+
+	def get_TotalCount(self):
+		return self.get_query_params().get('TotalCount')
+
+	def set_TotalCount(self,TotalCount):
+		self.add_query_param('TotalCount',TotalCount)
+
+	def get_CurrentPage(self):
+		return self.get_query_params().get('CurrentPage')
+
+	def set_CurrentPage(self,CurrentPage):
+		self.add_query_param('CurrentPage',CurrentPage)
+
+	def get_ResourceType(self):
+		return self.get_query_params().get('ResourceType')
+
+	def set_ResourceType(self,ResourceType):
+		self.add_query_param('ResourceType',ResourceType)

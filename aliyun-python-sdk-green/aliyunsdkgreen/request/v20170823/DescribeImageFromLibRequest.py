@@ -18,22 +18,23 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkgreen.endpoint import endpoint_data
+
 class DescribeImageFromLibRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Green', '2017-08-23', 'DescribeImageFromLib','green')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_TotalCount(self):
-		return self.get_query_params().get('TotalCount')
 
-	def set_TotalCount(self,TotalCount):
-		self.add_query_param('TotalCount',TotalCount)
+	def get_StartDate(self):
+		return self.get_query_params().get('StartDate')
 
-	def get_EndDate(self):
-		return self.get_query_params().get('EndDate')
-
-	def set_EndDate(self,EndDate):
-		self.add_query_param('EndDate',EndDate)
+	def set_StartDate(self,StartDate):
+		self.add_query_param('StartDate',StartDate)
 
 	def get_SourceIp(self):
 		return self.get_query_params().get('SourceIp')
@@ -53,20 +54,26 @@ class DescribeImageFromLibRequest(RpcRequest):
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
 
-	def get_CurrentPage(self):
-		return self.get_query_params().get('CurrentPage')
-
-	def set_CurrentPage(self,CurrentPage):
-		self.add_query_param('CurrentPage',CurrentPage)
-
 	def get_Id(self):
 		return self.get_query_params().get('Id')
 
 	def set_Id(self,Id):
 		self.add_query_param('Id',Id)
 
-	def get_StartDate(self):
-		return self.get_query_params().get('StartDate')
+	def get_TotalCount(self):
+		return self.get_query_params().get('TotalCount')
 
-	def set_StartDate(self,StartDate):
-		self.add_query_param('StartDate',StartDate)
+	def set_TotalCount(self,TotalCount):
+		self.add_query_param('TotalCount',TotalCount)
+
+	def get_CurrentPage(self):
+		return self.get_query_params().get('CurrentPage')
+
+	def set_CurrentPage(self,CurrentPage):
+		self.add_query_param('CurrentPage',CurrentPage)
+
+	def get_EndDate(self):
+		return self.get_query_params().get('EndDate')
+
+	def set_EndDate(self,EndDate):
+		self.add_query_param('EndDate',EndDate)

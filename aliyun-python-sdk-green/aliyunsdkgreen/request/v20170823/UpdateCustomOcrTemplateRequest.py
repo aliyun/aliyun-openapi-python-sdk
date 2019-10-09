@@ -18,10 +18,23 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkgreen.endpoint import endpoint_data
+
 class UpdateCustomOcrTemplateRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Green', '2017-08-23', 'UpdateCustomOcrTemplate','green')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
+
+	def get_RecognizeArea(self):
+		return self.get_query_params().get('RecognizeArea')
+
+	def set_RecognizeArea(self,RecognizeArea):
+		self.add_query_param('RecognizeArea',RecognizeArea)
 
 	def get_SourceIp(self):
 		return self.get_query_params().get('SourceIp')
@@ -34,12 +47,6 @@ class UpdateCustomOcrTemplateRequest(RpcRequest):
 
 	def set_ReferArea(self,ReferArea):
 		self.add_query_param('ReferArea',ReferArea)
-
-	def get_RecognizeArea(self):
-		return self.get_query_params().get('RecognizeArea')
-
-	def set_RecognizeArea(self,RecognizeArea):
-		self.add_query_param('RecognizeArea',RecognizeArea)
 
 	def get_Name(self):
 		return self.get_query_params().get('Name')

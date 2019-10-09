@@ -18,22 +18,17 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkgreen.endpoint import endpoint_data
+
 class UpdateOssCallbackSettingRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Green', '2017-08-23', 'UpdateOssCallbackSetting','green')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_SourceIp(self):
-		return self.get_query_params().get('SourceIp')
-
-	def set_SourceIp(self,SourceIp):
-		self.add_query_param('SourceIp',SourceIp)
-
-	def get_ScanCallback(self):
-		return self.get_query_params().get('ScanCallback')
-
-	def set_ScanCallback(self,ScanCallback):
-		self.add_query_param('ScanCallback',ScanCallback)
 
 	def get_ScanCallbackSuggestions(self):
 		return self.get_query_params().get('ScanCallbackSuggestions')
@@ -41,11 +36,23 @@ class UpdateOssCallbackSettingRequest(RpcRequest):
 	def set_ScanCallbackSuggestions(self,ScanCallbackSuggestions):
 		self.add_query_param('ScanCallbackSuggestions',ScanCallbackSuggestions)
 
+	def get_SourceIp(self):
+		return self.get_query_params().get('SourceIp')
+
+	def set_SourceIp(self,SourceIp):
+		self.add_query_param('SourceIp',SourceIp)
+
 	def get_CallbackSeed(self):
 		return self.get_query_params().get('CallbackSeed')
 
 	def set_CallbackSeed(self,CallbackSeed):
 		self.add_query_param('CallbackSeed',CallbackSeed)
+
+	def get_ServiceModules(self):
+		return self.get_query_params().get('ServiceModules')
+
+	def set_ServiceModules(self,ServiceModules):
+		self.add_query_param('ServiceModules',ServiceModules)
 
 	def get_AuditCallback(self):
 		return self.get_query_params().get('AuditCallback')
@@ -53,14 +60,14 @@ class UpdateOssCallbackSettingRequest(RpcRequest):
 	def set_AuditCallback(self,AuditCallback):
 		self.add_query_param('AuditCallback',AuditCallback)
 
+	def get_ScanCallback(self):
+		return self.get_query_params().get('ScanCallback')
+
+	def set_ScanCallback(self,ScanCallback):
+		self.add_query_param('ScanCallback',ScanCallback)
+
 	def get_CallbackUrl(self):
 		return self.get_query_params().get('CallbackUrl')
 
 	def set_CallbackUrl(self,CallbackUrl):
 		self.add_query_param('CallbackUrl',CallbackUrl)
-
-	def get_ServiceModules(self):
-		return self.get_query_params().get('ServiceModules')
-
-	def set_ServiceModules(self,ServiceModules):
-		self.add_query_param('ServiceModules',ServiceModules)

@@ -18,10 +18,23 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkgreen.endpoint import endpoint_data
+
 class CreateBizTypeRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Green', '2017-08-23', 'CreateBizType','green')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
+
+	def get_BizTypeImport(self):
+		return self.get_query_params().get('BizTypeImport')
+
+	def set_BizTypeImport(self,BizTypeImport):
+		self.add_query_param('BizTypeImport',BizTypeImport)
 
 	def get_SourceIp(self):
 		return self.get_query_params().get('SourceIp')
@@ -40,9 +53,3 @@ class CreateBizTypeRequest(RpcRequest):
 
 	def set_BizTypeName(self,BizTypeName):
 		self.add_query_param('BizTypeName',BizTypeName)
-
-	def get_BizTypeImport(self):
-		return self.get_query_params().get('BizTypeImport')
-
-	def set_BizTypeImport(self,BizTypeImport):
-		self.add_query_param('BizTypeImport',BizTypeImport)

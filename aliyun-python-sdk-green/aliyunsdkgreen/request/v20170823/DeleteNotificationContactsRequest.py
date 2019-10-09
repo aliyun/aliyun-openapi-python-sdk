@@ -18,10 +18,23 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkgreen.endpoint import endpoint_data
+
 class DeleteNotificationContactsRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Green', '2017-08-23', 'DeleteNotificationContacts','green')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
+
+	def get_ContactTypes(self):
+		return self.get_query_params().get('ContactTypes')
+
+	def set_ContactTypes(self,ContactTypes):
+		self.add_query_param('ContactTypes',ContactTypes)
 
 	def get_SourceIp(self):
 		return self.get_query_params().get('SourceIp')
@@ -34,9 +47,3 @@ class DeleteNotificationContactsRequest(RpcRequest):
 
 	def set_Lang(self,Lang):
 		self.add_query_param('Lang',Lang)
-
-	def get_ContactTypes(self):
-		return self.get_query_params().get('ContactTypes')
-
-	def set_ContactTypes(self,ContactTypes):
-		self.add_query_param('ContactTypes',ContactTypes)

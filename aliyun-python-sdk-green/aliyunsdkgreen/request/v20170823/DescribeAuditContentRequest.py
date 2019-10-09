@@ -18,22 +18,17 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkgreen.endpoint import endpoint_data
+
 class DescribeAuditContentRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Green', '2017-08-23', 'DescribeAuditContent','green')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_TotalCount(self):
-		return self.get_query_params().get('TotalCount')
-
-	def set_TotalCount(self,TotalCount):
-		self.add_query_param('TotalCount',TotalCount)
-
-	def get_KeywordId(self):
-		return self.get_query_params().get('KeywordId')
-
-	def set_KeywordId(self,KeywordId):
-		self.add_query_param('KeywordId',KeywordId)
 
 	def get_ImageId(self):
 		return self.get_query_params().get('ImageId')
@@ -41,35 +36,11 @@ class DescribeAuditContentRequest(RpcRequest):
 	def set_ImageId(self,ImageId):
 		self.add_query_param('ImageId',ImageId)
 
-	def get_Suggestion(self):
-		return self.get_query_params().get('Suggestion')
-
-	def set_Suggestion(self,Suggestion):
-		self.add_query_param('Suggestion',Suggestion)
-
-	def get_CurrentPage(self):
-		return self.get_query_params().get('CurrentPage')
-
-	def set_CurrentPage(self,CurrentPage):
-		self.add_query_param('CurrentPage',CurrentPage)
-
-	def get_Label(self):
-		return self.get_query_params().get('Label')
-
-	def set_Label(self,Label):
-		self.add_query_param('Label',Label)
-
 	def get_StartDate(self):
 		return self.get_query_params().get('StartDate')
 
 	def set_StartDate(self,StartDate):
 		self.add_query_param('StartDate',StartDate)
-
-	def get_ResourceType(self):
-		return self.get_query_params().get('ResourceType')
-
-	def set_ResourceType(self,ResourceType):
-		self.add_query_param('ResourceType',ResourceType)
 
 	def get_Scene(self):
 		return self.get_query_params().get('Scene')
@@ -77,29 +48,11 @@ class DescribeAuditContentRequest(RpcRequest):
 	def set_Scene(self,Scene):
 		self.add_query_param('Scene',Scene)
 
-	def get_BizType(self):
-		return self.get_query_params().get('BizType')
-
-	def set_BizType(self,BizType):
-		self.add_query_param('BizType',BizType)
-
-	def get_EndDate(self):
-		return self.get_query_params().get('EndDate')
-
-	def set_EndDate(self,EndDate):
-		self.add_query_param('EndDate',EndDate)
-
 	def get_SourceIp(self):
 		return self.get_query_params().get('SourceIp')
 
 	def set_SourceIp(self,SourceIp):
 		self.add_query_param('SourceIp',SourceIp)
-
-	def get_DataId(self):
-		return self.get_query_params().get('DataId')
-
-	def set_DataId(self,DataId):
-		self.add_query_param('DataId',DataId)
 
 	def get_LibType(self):
 		return self.get_query_params().get('LibType')
@@ -130,3 +83,57 @@ class DescribeAuditContentRequest(RpcRequest):
 
 	def set_TaskId(self,TaskId):
 		self.add_query_param('TaskId',TaskId)
+
+	def get_TotalCount(self):
+		return self.get_query_params().get('TotalCount')
+
+	def set_TotalCount(self,TotalCount):
+		self.add_query_param('TotalCount',TotalCount)
+
+	def get_KeywordId(self):
+		return self.get_query_params().get('KeywordId')
+
+	def set_KeywordId(self,KeywordId):
+		self.add_query_param('KeywordId',KeywordId)
+
+	def get_Suggestion(self):
+		return self.get_query_params().get('Suggestion')
+
+	def set_Suggestion(self,Suggestion):
+		self.add_query_param('Suggestion',Suggestion)
+
+	def get_CurrentPage(self):
+		return self.get_query_params().get('CurrentPage')
+
+	def set_CurrentPage(self,CurrentPage):
+		self.add_query_param('CurrentPage',CurrentPage)
+
+	def get_Label(self):
+		return self.get_query_params().get('Label')
+
+	def set_Label(self,Label):
+		self.add_query_param('Label',Label)
+
+	def get_ResourceType(self):
+		return self.get_query_params().get('ResourceType')
+
+	def set_ResourceType(self,ResourceType):
+		self.add_query_param('ResourceType',ResourceType)
+
+	def get_BizType(self):
+		return self.get_query_params().get('BizType')
+
+	def set_BizType(self,BizType):
+		self.add_query_param('BizType',BizType)
+
+	def get_EndDate(self):
+		return self.get_query_params().get('EndDate')
+
+	def set_EndDate(self,EndDate):
+		self.add_query_param('EndDate',EndDate)
+
+	def get_DataId(self):
+		return self.get_query_params().get('DataId')
+
+	def set_DataId(self,DataId):
+		self.add_query_param('DataId',DataId)

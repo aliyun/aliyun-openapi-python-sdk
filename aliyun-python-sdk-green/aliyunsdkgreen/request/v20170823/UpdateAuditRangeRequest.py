@@ -17,23 +17,27 @@
 # specific language governing permissions and limitations
 # under the License.
 
-from aliyunsdkcore.request import RoaRequest
+from aliyunsdkcore.request import RpcRequest
 from aliyunsdkgreen.endpoint import endpoint_data
 
-class AddGroupsRequest(RoaRequest):
+class UpdateAuditRangeRequest(RpcRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'Green', '2018-05-09', 'AddGroups','green')
-		self.set_uri_pattern('/green/sface/person/groups/add')
-		self.set_method('POST')
+		RpcRequest.__init__(self, 'Green', '2017-08-23', 'UpdateAuditRange','green')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_ClientInfo(self):
-		return self.get_query_params().get('ClientInfo')
+	def get_AuditRange(self):
+		return self.get_query_params().get('AuditRange')
 
-	def set_ClientInfo(self,ClientInfo):
-		self.add_query_param('ClientInfo',ClientInfo)
+	def set_AuditRange(self,AuditRange):
+		self.add_query_param('AuditRange',AuditRange)
+
+	def get_SourceIp(self):
+		return self.get_query_params().get('SourceIp')
+
+	def set_SourceIp(self,SourceIp):
+		self.add_query_param('SourceIp',SourceIp)

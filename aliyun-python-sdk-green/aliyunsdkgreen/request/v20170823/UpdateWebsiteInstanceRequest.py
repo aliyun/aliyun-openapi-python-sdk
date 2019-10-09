@@ -18,10 +18,41 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkgreen.endpoint import endpoint_data
+
 class UpdateWebsiteInstanceRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Green', '2017-08-23', 'UpdateWebsiteInstance','green')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
+
+	def get_IndexPage(self):
+		return self.get_query_params().get('IndexPage')
+
+	def set_IndexPage(self,IndexPage):
+		self.add_query_param('IndexPage',IndexPage)
+
+	def get_SourceIp(self):
+		return self.get_query_params().get('SourceIp')
+
+	def set_SourceIp(self,SourceIp):
+		self.add_query_param('SourceIp',SourceIp)
+
+	def get_Lang(self):
+		return self.get_query_params().get('Lang')
+
+	def set_Lang(self,Lang):
+		self.add_query_param('Lang',Lang)
+
+	def get_WebsiteScanInterval(self):
+		return self.get_query_params().get('WebsiteScanInterval')
+
+	def set_WebsiteScanInterval(self,WebsiteScanInterval):
+		self.add_query_param('WebsiteScanInterval',WebsiteScanInterval)
 
 	def get_SiteProtocol(self):
 		return self.get_query_params().get('SiteProtocol')
@@ -35,35 +66,11 @@ class UpdateWebsiteInstanceRequest(RpcRequest):
 	def set_InstanceId(self,InstanceId):
 		self.add_query_param('InstanceId',InstanceId)
 
-	def get_SourceIp(self):
-		return self.get_query_params().get('SourceIp')
-
-	def set_SourceIp(self,SourceIp):
-		self.add_query_param('SourceIp',SourceIp)
-
-	def get_WebsiteScanInterval(self):
-		return self.get_query_params().get('WebsiteScanInterval')
-
-	def set_WebsiteScanInterval(self,WebsiteScanInterval):
-		self.add_query_param('WebsiteScanInterval',WebsiteScanInterval)
-
 	def get_Domain(self):
 		return self.get_query_params().get('Domain')
 
 	def set_Domain(self,Domain):
 		self.add_query_param('Domain',Domain)
-
-	def get_IndexPage(self):
-		return self.get_query_params().get('IndexPage')
-
-	def set_IndexPage(self,IndexPage):
-		self.add_query_param('IndexPage',IndexPage)
-
-	def get_Lang(self):
-		return self.get_query_params().get('Lang')
-
-	def set_Lang(self,Lang):
-		self.add_query_param('Lang',Lang)
 
 	def get_IndexPageScanInterval(self):
 		return self.get_query_params().get('IndexPageScanInterval')

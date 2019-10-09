@@ -20,11 +20,11 @@
 from aliyunsdkcore.request import RoaRequest
 from aliyunsdkgreen.endpoint import endpoint_data
 
-class AddGroupsRequest(RoaRequest):
+class VideoCancelScanRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'Green', '2018-05-09', 'AddGroups','green')
-		self.set_uri_pattern('/green/sface/person/groups/add')
+		RoaRequest.__init__(self, 'Green', '2018-05-09', 'VideoCancelScan','green')
+		self.set_uri_pattern('/green/video/cancelscan')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())

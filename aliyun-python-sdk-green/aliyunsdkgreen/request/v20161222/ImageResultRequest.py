@@ -18,12 +18,19 @@
 # under the License.
 
 from aliyunsdkcore.request import RoaRequest
+from aliyunsdkgreen.endpoint import endpoint_data
+
 class ImageResultRequest(RoaRequest):
 
 	def __init__(self):
 		RoaRequest.__init__(self, 'Green', '2016-12-22', 'ImageResult','green')
 		self.set_uri_pattern('/image/result/[taskid]')
 		self.set_method('GET')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_taskid(self):
 		return self.get_path_params().get('taskid')

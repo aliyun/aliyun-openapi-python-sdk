@@ -18,16 +18,17 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkgreen.endpoint import endpoint_data
+
 class DescribeWebsiteScanResultRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Green', '2017-08-23', 'DescribeWebsiteScanResult','green')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_TotalCount(self):
-		return self.get_query_params().get('TotalCount')
-
-	def set_TotalCount(self,TotalCount):
-		self.add_query_param('TotalCount',TotalCount)
 
 	def get_SubServiceModule(self):
 		return self.get_query_params().get('SubServiceModule')
@@ -35,35 +36,41 @@ class DescribeWebsiteScanResultRequest(RpcRequest):
 	def set_SubServiceModule(self,SubServiceModule):
 		self.add_query_param('SubServiceModule',SubServiceModule)
 
-	def get_SiteUrl(self):
-		return self.get_query_params().get('SiteUrl')
-
-	def set_SiteUrl(self,SiteUrl):
-		self.add_query_param('SiteUrl',SiteUrl)
-
 	def get_SourceIp(self):
 		return self.get_query_params().get('SourceIp')
 
 	def set_SourceIp(self,SourceIp):
 		self.add_query_param('SourceIp',SourceIp)
 
-	def get_HandleStatus(self):
-		return self.get_query_params().get('HandleStatus')
-
-	def set_HandleStatus(self,HandleStatus):
-		self.add_query_param('HandleStatus',HandleStatus)
-
-	def get_Domain(self):
-		return self.get_query_params().get('Domain')
-
-	def set_Domain(self,Domain):
-		self.add_query_param('Domain',Domain)
-
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
 
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
+
+	def get_Lang(self):
+		return self.get_query_params().get('Lang')
+
+	def set_Lang(self,Lang):
+		self.add_query_param('Lang',Lang)
+
+	def get_TotalCount(self):
+		return self.get_query_params().get('TotalCount')
+
+	def set_TotalCount(self,TotalCount):
+		self.add_query_param('TotalCount',TotalCount)
+
+	def get_SiteUrl(self):
+		return self.get_query_params().get('SiteUrl')
+
+	def set_SiteUrl(self,SiteUrl):
+		self.add_query_param('SiteUrl',SiteUrl)
+
+	def get_HandleStatus(self):
+		return self.get_query_params().get('HandleStatus')
+
+	def set_HandleStatus(self,HandleStatus):
+		self.add_query_param('HandleStatus',HandleStatus)
 
 	def get_CurrentPage(self):
 		return self.get_query_params().get('CurrentPage')
@@ -77,8 +84,8 @@ class DescribeWebsiteScanResultRequest(RpcRequest):
 	def set_Label(self,Label):
 		self.add_query_param('Label',Label)
 
-	def get_Lang(self):
-		return self.get_query_params().get('Lang')
+	def get_Domain(self):
+		return self.get_query_params().get('Domain')
 
-	def set_Lang(self,Lang):
-		self.add_query_param('Lang',Lang)
+	def set_Domain(self,Domain):
+		self.add_query_param('Domain',Domain)

@@ -18,16 +18,29 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkgreen.endpoint import endpoint_data
+
 class UpdateAppPackageRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Green', '2017-08-23', 'UpdateAppPackage','green')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_Debug(self):
 		return self.get_query_params().get('Debug')
 
 	def set_Debug(self,Debug):
 		self.add_query_param('Debug',Debug)
+
+	def get_Platform(self):
+		return self.get_query_params().get('Platform')
+
+	def set_Platform(self,Platform):
+		self.add_query_param('Platform',Platform)
 
 	def get_SourceIp(self):
 		return self.get_query_params().get('SourceIp')
@@ -52,9 +65,3 @@ class UpdateAppPackageRequest(RpcRequest):
 
 	def set_Lang(self,Lang):
 		self.add_query_param('Lang',Lang)
-
-	def get_Platform(self):
-		return self.get_query_params().get('Platform')
-
-	def set_Platform(self,Platform):
-		self.add_query_param('Platform',Platform)

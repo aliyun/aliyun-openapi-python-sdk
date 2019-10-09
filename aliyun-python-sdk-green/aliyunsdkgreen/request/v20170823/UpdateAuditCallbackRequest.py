@@ -17,23 +17,33 @@
 # specific language governing permissions and limitations
 # under the License.
 
-from aliyunsdkcore.request import RoaRequest
+from aliyunsdkcore.request import RpcRequest
 from aliyunsdkgreen.endpoint import endpoint_data
 
-class AddGroupsRequest(RoaRequest):
+class UpdateAuditCallbackRequest(RpcRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'Green', '2018-05-09', 'AddGroups','green')
-		self.set_uri_pattern('/green/sface/person/groups/add')
-		self.set_method('POST')
+		RpcRequest.__init__(self, 'Green', '2017-08-23', 'UpdateAuditCallback','green')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_ClientInfo(self):
-		return self.get_query_params().get('ClientInfo')
+	def get_Seed(self):
+		return self.get_query_params().get('Seed')
 
-	def set_ClientInfo(self,ClientInfo):
-		self.add_query_param('ClientInfo',ClientInfo)
+	def set_Seed(self,Seed):
+		self.add_query_param('Seed',Seed)
+
+	def get_SourceIp(self):
+		return self.get_query_params().get('SourceIp')
+
+	def set_SourceIp(self,SourceIp):
+		self.add_query_param('SourceIp',SourceIp)
+
+	def get_Callback(self):
+		return self.get_query_params().get('Callback')
+
+	def set_Callback(self,Callback):
+		self.add_query_param('Callback',Callback)

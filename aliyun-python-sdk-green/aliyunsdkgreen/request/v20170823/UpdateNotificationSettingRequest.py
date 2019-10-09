@@ -18,16 +18,29 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkgreen.endpoint import endpoint_data
+
 class UpdateNotificationSettingRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Green', '2017-08-23', 'UpdateNotificationSetting','green')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_RealtimeMessageList(self):
 		return self.get_query_params().get('RealtimeMessageList')
 
 	def set_RealtimeMessageList(self,RealtimeMessageList):
 		self.add_query_param('RealtimeMessageList',RealtimeMessageList)
+
+	def get_ScheduleMessageTime(self):
+		return self.get_query_params().get('ScheduleMessageTime')
+
+	def set_ScheduleMessageTime(self,ScheduleMessageTime):
+		self.add_query_param('ScheduleMessageTime',ScheduleMessageTime)
 
 	def get_SourceIp(self):
 		return self.get_query_params().get('SourceIp')
@@ -40,12 +53,6 @@ class UpdateNotificationSettingRequest(RpcRequest):
 
 	def set_ReminderModeList(self,ReminderModeList):
 		self.add_query_param('ReminderModeList',ReminderModeList)
-
-	def get_ScheduleMessageTime(self):
-		return self.get_query_params().get('ScheduleMessageTime')
-
-	def set_ScheduleMessageTime(self,ScheduleMessageTime):
-		self.add_query_param('ScheduleMessageTime',ScheduleMessageTime)
 
 	def get_Lang(self):
 		return self.get_query_params().get('Lang')
