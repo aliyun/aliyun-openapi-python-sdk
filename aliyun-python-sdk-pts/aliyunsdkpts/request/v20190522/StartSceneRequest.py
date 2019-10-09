@@ -23,7 +23,7 @@ from aliyunsdkpts.endpoint import endpoint_data
 class StartSceneRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'PTS', '2019-05-22', 'StartScene','1.0.0')
+		RpcRequest.__init__(self, 'PTS', '2019-05-22', 'StartScene')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
