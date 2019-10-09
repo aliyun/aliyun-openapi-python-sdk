@@ -31,17 +31,17 @@ class ChangeImageSizeRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_Width(self):
-		return self.get_body_params().get('Width')
-
-	def set_Width(self,Width):
-		self.add_body_params('Width', Width)
-
 	def get_Url(self):
 		return self.get_body_params().get('Url')
 
 	def set_Url(self,Url):
 		self.add_body_params('Url', Url)
+
+	def get_Width(self):
+		return self.get_body_params().get('Width')
+
+	def set_Width(self,Width):
+		self.add_body_params('Width', Width)
 
 	def get_Height(self):
 		return self.get_body_params().get('Height')

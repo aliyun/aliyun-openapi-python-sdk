@@ -31,12 +31,6 @@ class RecolorImageRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_Mode(self):
-		return self.get_body_params().get('Mode')
-
-	def set_Mode(self,Mode):
-		self.add_body_params('Mode', Mode)
-
 	def get_ColorTemplates(self):
 		return self.get_body_params().get('ColorTemplates')
 
@@ -45,6 +39,18 @@ class RecolorImageRequest(RpcRequest):
 			if ColorTemplates[i].get('Color') is not None:
 				self.add_body_params('ColorTemplate.' + str(i + 1) + '.Color' , ColorTemplates[i].get('Color'))
 
+
+	def get_Url(self):
+		return self.get_body_params().get('Url')
+
+	def set_Url(self,Url):
+		self.add_body_params('Url', Url)
+
+	def get_Mode(self):
+		return self.get_body_params().get('Mode')
+
+	def set_Mode(self,Mode):
+		self.add_body_params('Mode', Mode)
 
 	def get_ColorCount(self):
 		return self.get_body_params().get('ColorCount')
@@ -57,9 +63,3 @@ class RecolorImageRequest(RpcRequest):
 
 	def set_RefUrl(self,RefUrl):
 		self.add_body_params('RefUrl', RefUrl)
-
-	def get_Url(self):
-		return self.get_body_params().get('Url')
-
-	def set_Url(self,Url):
-		self.add_body_params('Url', Url)

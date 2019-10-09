@@ -31,14 +31,14 @@ class RecognizeImageColorRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_ColorCount(self):
-		return self.get_body_params().get('ColorCount')
-
-	def set_ColorCount(self,ColorCount):
-		self.add_body_params('ColorCount', ColorCount)
-
 	def get_Url(self):
 		return self.get_body_params().get('Url')
 
 	def set_Url(self,Url):
 		self.add_body_params('Url', Url)
+
+	def get_ColorCount(self):
+		return self.get_body_params().get('ColorCount')
+
+	def set_ColorCount(self,ColorCount):
+		self.add_body_params('ColorCount', ColorCount)
