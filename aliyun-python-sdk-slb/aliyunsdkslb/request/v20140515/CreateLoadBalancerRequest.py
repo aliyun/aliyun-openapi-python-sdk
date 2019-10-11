@@ -48,6 +48,12 @@ class CreateLoadBalancerRequest(RpcRequest):
 	def set_ClientToken(self,ClientToken):
 		self.add_query_param('ClientToken',ClientToken)
 
+	def get_CloudType(self):
+		return self.get_query_params().get('CloudType')
+
+	def set_CloudType(self,CloudType):
+		self.add_query_param('CloudType',CloudType)
+
 	def get_AddressIPVersion(self):
 		return self.get_query_params().get('AddressIPVersion')
 
