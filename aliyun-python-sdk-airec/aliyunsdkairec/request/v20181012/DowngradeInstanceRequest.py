@@ -20,12 +20,12 @@
 from aliyunsdkcore.request import RoaRequest
 from aliyunsdkairec.endpoint import endpoint_data
 
-class DescribeExposureSettingsRequest(RoaRequest):
+class DowngradeInstanceRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'Airec', '2018-10-12', 'DescribeExposureSettings','airec')
-		self.set_uri_pattern('/openapi/instances/[InstanceId]/exposure-settings')
-		self.set_method('GET')
+		RoaRequest.__init__(self, 'Airec', '2018-10-12', 'DowngradeInstance','airec')
+		self.set_uri_pattern('/openapi/instances/[InstanceId]/actions/downgrade')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):

@@ -20,11 +20,11 @@
 from aliyunsdkcore.request import RoaRequest
 from aliyunsdkairec.endpoint import endpoint_data
 
-class DescribeExposureSettingsRequest(RoaRequest):
+class QuerySingleAggregationReportRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'Airec', '2018-10-12', 'DescribeExposureSettings','airec')
-		self.set_uri_pattern('/openapi/instances/[InstanceId]/exposure-settings')
+		RoaRequest.__init__(self, 'Airec', '2018-10-12', 'QuerySingleAggregationReport','airec')
+		self.set_uri_pattern('/openapi/instances/[InstanceId]/sync-reports/single-aggregation-report')
 		self.set_method('GET')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
