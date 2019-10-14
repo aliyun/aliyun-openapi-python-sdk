@@ -20,39 +20,21 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkvs.endpoint import endpoint_data
 
-class DescribeStreamURLRequest(RpcRequest):
+class DescribeStreamVodListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'vs', '2018-12-12', 'DescribeStreamURL','vs')
+		RpcRequest.__init__(self, 'vs', '2018-12-12', 'DescribeStreamVodList','vs')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_AuthKey(self):
-		return self.get_query_params().get('AuthKey')
-
-	def set_AuthKey(self,AuthKey):
-		self.add_query_param('AuthKey',AuthKey)
-
-	def get_Auth(self):
-		return self.get_query_params().get('Auth')
-
-	def set_Auth(self,Auth):
-		self.add_query_param('Auth',Auth)
-
 	def get_StartTime(self):
 		return self.get_query_params().get('StartTime')
 
 	def set_StartTime(self,StartTime):
 		self.add_query_param('StartTime',StartTime)
-
-	def get_Type(self):
-		return self.get_query_params().get('Type')
-
-	def set_Type(self,Type):
-		self.add_query_param('Type',Type)
 
 	def get_Id(self):
 		return self.get_query_params().get('Id')
@@ -66,12 +48,6 @@ class DescribeStreamURLRequest(RpcRequest):
 	def set_ShowLog(self,ShowLog):
 		self.add_query_param('ShowLog',ShowLog)
 
-	def get_OutProtocol(self):
-		return self.get_query_params().get('OutProtocol')
-
-	def set_OutProtocol(self,OutProtocol):
-		self.add_query_param('OutProtocol',OutProtocol)
-
 	def get_EndTime(self):
 		return self.get_query_params().get('EndTime')
 
@@ -83,15 +59,3 @@ class DescribeStreamURLRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
-
-	def get_Expire(self):
-		return self.get_query_params().get('Expire')
-
-	def set_Expire(self,Expire):
-		self.add_query_param('Expire',Expire)
-
-	def get_Location(self):
-		return self.get_query_params().get('Location')
-
-	def set_Location(self,Location):
-		self.add_query_param('Location',Location)

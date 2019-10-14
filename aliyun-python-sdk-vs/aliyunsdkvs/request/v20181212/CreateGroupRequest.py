@@ -78,11 +78,23 @@ class CreateGroupRequest(RpcRequest):
 	def set_InProtocol(self,InProtocol):
 		self.add_query_param('InProtocol',InProtocol)
 
+	def get_LazyPull(self):
+		return self.get_query_params().get('LazyPull')
+
+	def set_LazyPull(self,LazyPull):
+		self.add_query_param('LazyPull',LazyPull)
+
 	def get_Name(self):
 		return self.get_query_params().get('Name')
 
 	def set_Name(self,Name):
 		self.add_query_param('Name',Name)
+
+	def get_Callback(self):
+		return self.get_query_params().get('Callback')
+
+	def set_Callback(self,Callback):
+		self.add_query_param('Callback',Callback)
 
 	def get_Region(self):
 		return self.get_query_params().get('Region')
