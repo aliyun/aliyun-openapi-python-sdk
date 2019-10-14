@@ -20,33 +20,27 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkpush.endpoint import endpoint_data
 
-class ListPushRecordsRequest(RpcRequest):
+class ContinuouslyPushRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Push', '2016-08-01', 'ListPushRecords')
+		RpcRequest.__init__(self, 'Push', '2016-08-01', 'ContinuouslyPush')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_EndTime(self):
-		return self.get_query_params().get('EndTime')
+	def get_MessageId(self):
+		return self.get_query_params().get('MessageId')
 
-	def set_EndTime(self,EndTime):
-		self.add_query_param('EndTime',EndTime)
+	def set_MessageId(self,MessageId):
+		self.add_query_param('MessageId',MessageId)
 
-	def get_StartTime(self):
-		return self.get_query_params().get('StartTime')
+	def get_Target(self):
+		return self.get_query_params().get('Target')
 
-	def set_StartTime(self,StartTime):
-		self.add_query_param('StartTime',StartTime)
-
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
+	def set_Target(self,Target):
+		self.add_query_param('Target',Target)
 
 	def get_AppKey(self):
 		return self.get_query_params().get('AppKey')
@@ -54,14 +48,8 @@ class ListPushRecordsRequest(RpcRequest):
 	def set_AppKey(self,AppKey):
 		self.add_query_param('AppKey',AppKey)
 
-	def get_Page(self):
-		return self.get_query_params().get('Page')
+	def get_TargetValue(self):
+		return self.get_query_params().get('TargetValue')
 
-	def set_Page(self,Page):
-		self.add_query_param('Page',Page)
-
-	def get_PushType(self):
-		return self.get_query_params().get('PushType')
-
-	def set_PushType(self,PushType):
-		self.add_query_param('PushType',PushType)
+	def set_TargetValue(self,TargetValue):
+		self.add_query_param('TargetValue',TargetValue)
