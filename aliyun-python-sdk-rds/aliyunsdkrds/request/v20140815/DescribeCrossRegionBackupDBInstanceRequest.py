@@ -18,11 +18,17 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkrds.endpoint import endpoint_data
 
 class DescribeCrossRegionBackupDBInstanceRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'DescribeCrossRegionBackupDBInstance','rds')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -47,6 +53,18 @@ class DescribeCrossRegionBackupDBInstanceRequest(RpcRequest):
 
 	def set_DBInstanceId(self,DBInstanceId):
 		self.add_query_param('DBInstanceId',DBInstanceId)
+
+	def get_NotEnabled(self):
+		return self.get_query_params().get('NotEnabled')
+
+	def set_NotEnabled(self,NotEnabled):
+		self.add_query_param('NotEnabled',NotEnabled)
+
+	def get_Product(self):
+		return self.get_query_params().get('Product')
+
+	def set_Product(self,Product):
+		self.add_query_param('Product',Product)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')

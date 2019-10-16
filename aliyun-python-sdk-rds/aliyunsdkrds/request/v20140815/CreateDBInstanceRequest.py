@@ -18,11 +18,17 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkrds.endpoint import endpoint_data
 
 class CreateDBInstanceRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'CreateDBInstance','rds')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -53,6 +59,12 @@ class CreateDBInstanceRequest(RpcRequest):
 
 	def set_ResourceGroupId(self,ResourceGroupId):
 		self.add_query_param('ResourceGroupId',ResourceGroupId)
+
+	def get_TargetDedicatedHostIdForMaster(self):
+		return self.get_query_params().get('TargetDedicatedHostIdForMaster')
+
+	def set_TargetDedicatedHostIdForMaster(self,TargetDedicatedHostIdForMaster):
+		self.add_query_param('TargetDedicatedHostIdForMaster',TargetDedicatedHostIdForMaster)
 
 	def get_DBInstanceDescription(self):
 		return self.get_query_params().get('DBInstanceDescription')
@@ -108,6 +120,12 @@ class CreateDBInstanceRequest(RpcRequest):
 	def set_PrivateIpAddress(self,PrivateIpAddress):
 		self.add_query_param('PrivateIpAddress',PrivateIpAddress)
 
+	def get_TargetDedicatedHostIdForLog(self):
+		return self.get_query_params().get('TargetDedicatedHostIdForLog')
+
+	def set_TargetDedicatedHostIdForLog(self,TargetDedicatedHostIdForLog):
+		self.add_query_param('TargetDedicatedHostIdForLog',TargetDedicatedHostIdForLog)
+
 	def get_AutoRenew(self):
 		return self.get_query_params().get('AutoRenew')
 
@@ -150,6 +168,12 @@ class CreateDBInstanceRequest(RpcRequest):
 	def set_ClientToken(self,ClientToken):
 		self.add_query_param('ClientToken',ClientToken)
 
+	def get_TargetDedicatedHostIdForSlave(self):
+		return self.get_query_params().get('TargetDedicatedHostIdForSlave')
+
+	def set_TargetDedicatedHostIdForSlave(self,TargetDedicatedHostIdForSlave):
+		self.add_query_param('TargetDedicatedHostIdForSlave',TargetDedicatedHostIdForSlave)
+
 	def get_ZoneIdSlave1(self):
 		return self.get_query_params().get('ZoneIdSlave1')
 
@@ -173,6 +197,12 @@ class CreateDBInstanceRequest(RpcRequest):
 
 	def set_DBInstanceStorageType(self,DBInstanceStorageType):
 		self.add_query_param('DBInstanceStorageType',DBInstanceStorageType)
+
+	def get_DedicatedHostGroupId(self):
+		return self.get_query_params().get('DedicatedHostGroupId')
+
+	def set_DedicatedHostGroupId(self,DedicatedHostGroupId):
+		self.add_query_param('DedicatedHostGroupId',DedicatedHostGroupId)
 
 	def get_DBInstanceNetType(self):
 		return self.get_query_params().get('DBInstanceNetType')

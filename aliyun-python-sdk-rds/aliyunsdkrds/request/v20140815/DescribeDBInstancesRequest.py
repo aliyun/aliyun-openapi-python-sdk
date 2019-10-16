@@ -18,11 +18,17 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkrds.endpoint import endpoint_data
 
 class DescribeDBInstancesRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'DescribeDBInstances','rds')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_Tag4value(self):
 		return self.get_query_params().get('Tag.4.value')
@@ -179,6 +185,12 @@ class DescribeDBInstancesRequest(RpcRequest):
 
 	def set_DBInstanceId(self,DBInstanceId):
 		self.add_query_param('DBInstanceId',DBInstanceId)
+
+	def get_DedicatedHostGroupId(self):
+		return self.get_query_params().get('DedicatedHostGroupId')
+
+	def set_DedicatedHostGroupId(self,DedicatedHostGroupId):
+		self.add_query_param('DedicatedHostGroupId',DedicatedHostGroupId)
 
 	def get_Tag3value(self):
 		return self.get_query_params().get('Tag.3.value')

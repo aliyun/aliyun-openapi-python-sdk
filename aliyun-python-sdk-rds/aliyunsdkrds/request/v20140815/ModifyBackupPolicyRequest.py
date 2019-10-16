@@ -18,11 +18,17 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkrds.endpoint import endpoint_data
 
 class ModifyBackupPolicyRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'ModifyBackupPolicy','rds')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -41,6 +47,12 @@ class ModifyBackupPolicyRequest(RpcRequest):
 
 	def set_LogBackupFrequency(self,LogBackupFrequency):
 		self.add_query_param('LogBackupFrequency',LogBackupFrequency)
+
+	def get_ArchiveBackupKeepCount(self):
+		return self.get_query_params().get('ArchiveBackupKeepCount')
+
+	def set_ArchiveBackupKeepCount(self,ArchiveBackupKeepCount):
+		self.add_query_param('ArchiveBackupKeepCount',ArchiveBackupKeepCount)
 
 	def get_BackupLog(self):
 		return self.get_query_params().get('BackupLog')
@@ -114,6 +126,12 @@ class ModifyBackupPolicyRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
+	def get_ArchiveBackupKeepPolicy(self):
+		return self.get_query_params().get('ArchiveBackupKeepPolicy')
+
+	def set_ArchiveBackupKeepPolicy(self,ArchiveBackupKeepPolicy):
+		self.add_query_param('ArchiveBackupKeepPolicy',ArchiveBackupKeepPolicy)
+
 	def get_Duplication(self):
 		return self.get_query_params().get('Duplication')
 
@@ -137,6 +155,12 @@ class ModifyBackupPolicyRequest(RpcRequest):
 
 	def set_DuplicationLocation(self,DuplicationLocation):
 		self.add_query_param('DuplicationLocation',DuplicationLocation)
+
+	def get_ArchiveBackupRetentionPeriod(self):
+		return self.get_query_params().get('ArchiveBackupRetentionPeriod')
+
+	def set_ArchiveBackupRetentionPeriod(self,ArchiveBackupRetentionPeriod):
+		self.add_query_param('ArchiveBackupRetentionPeriod',ArchiveBackupRetentionPeriod)
 
 	def get_LogBackupRetentionPeriod(self):
 		return self.get_query_params().get('LogBackupRetentionPeriod')
