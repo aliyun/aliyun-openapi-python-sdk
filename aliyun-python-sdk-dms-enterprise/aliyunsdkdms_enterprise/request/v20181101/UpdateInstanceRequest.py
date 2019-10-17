@@ -20,15 +20,21 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdms_enterprise.endpoint import endpoint_data
 
-class RegisterInstanceRequest(RpcRequest):
+class UpdateInstanceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'dms-enterprise', '2018-11-01', 'RegisterInstance','dmsenterprise')
+		RpcRequest.__init__(self, 'dms-enterprise', '2018-11-01', 'UpdateInstance','dmsenterprise')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+
+	def get_SafeRuleId(self):
+		return self.get_query_params().get('SafeRuleId')
+
+	def set_SafeRuleId(self,SafeRuleId):
+		self.add_query_param('SafeRuleId',SafeRuleId)
 
 	def get_EcsRegion(self):
 		return self.get_query_params().get('EcsRegion')
@@ -48,12 +54,6 @@ class RegisterInstanceRequest(RpcRequest):
 	def set_UseDsql(self,UseDsql):
 		self.add_query_param('UseDsql',UseDsql)
 
-	def get_NetworkType(self):
-		return self.get_query_params().get('NetworkType')
-
-	def set_NetworkType(self,NetworkType):
-		self.add_query_param('NetworkType',NetworkType)
-
 	def get_Tid(self):
 		return self.get_query_params().get('Tid')
 
@@ -65,6 +65,12 @@ class RegisterInstanceRequest(RpcRequest):
 
 	def set_Sid(self,Sid):
 		self.add_query_param('Sid',Sid)
+
+	def get_DbaId(self):
+		return self.get_query_params().get('DbaId')
+
+	def set_DbaId(self,DbaId):
+		self.add_query_param('DbaId',DbaId)
 
 	def get_DataLinkName(self):
 		return self.get_query_params().get('DataLinkName')
@@ -132,6 +138,12 @@ class RegisterInstanceRequest(RpcRequest):
 	def set_DatabaseUser(self,DatabaseUser):
 		self.add_query_param('DatabaseUser',DatabaseUser)
 
+	def get_InstanceId(self):
+		return self.get_query_params().get('InstanceId')
+
+	def set_InstanceId(self,InstanceId):
+		self.add_query_param('InstanceId',InstanceId)
+
 	def get_Port(self):
 		return self.get_query_params().get('Port')
 
@@ -143,15 +155,3 @@ class RegisterInstanceRequest(RpcRequest):
 
 	def set_VpcId(self,VpcId):
 		self.add_query_param('VpcId',VpcId)
-
-	def get_DbaUid(self):
-		return self.get_query_params().get('DbaUid')
-
-	def set_DbaUid(self,DbaUid):
-		self.add_query_param('DbaUid',DbaUid)
-
-	def get_SafeRule(self):
-		return self.get_query_params().get('SafeRule')
-
-	def set_SafeRule(self,SafeRule):
-		self.add_query_param('SafeRule',SafeRule)

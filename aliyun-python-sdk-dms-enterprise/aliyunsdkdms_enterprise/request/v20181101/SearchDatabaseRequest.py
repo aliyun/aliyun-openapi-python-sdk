@@ -20,39 +20,27 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdms_enterprise.endpoint import endpoint_data
 
-class GetOpLogRequest(RpcRequest):
+class SearchDatabaseRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'dms-enterprise', '2018-11-01', 'GetOpLog','dmsenterprise')
+		RpcRequest.__init__(self, 'dms-enterprise', '2018-11-01', 'SearchDatabase','dmsenterprise')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_Module(self):
-		return self.get_query_params().get('Module')
+	def get_SearchKey(self):
+		return self.get_query_params().get('SearchKey')
 
-	def set_Module(self,Module):
-		self.add_query_param('Module',Module)
+	def set_SearchKey(self,SearchKey):
+		self.add_query_param('SearchKey',SearchKey)
 
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
+	def get_SearchRange(self):
+		return self.get_query_params().get('SearchRange')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_EndTime(self):
-		return self.get_query_params().get('EndTime')
-
-	def set_EndTime(self,EndTime):
-		self.add_query_param('EndTime',EndTime)
-
-	def get_StartTime(self):
-		return self.get_query_params().get('StartTime')
-
-	def set_StartTime(self,StartTime):
-		self.add_query_param('StartTime',StartTime)
+	def set_SearchRange(self,SearchRange):
+		self.add_query_param('SearchRange',SearchRange)
 
 	def get_Tid(self):
 		return self.get_query_params().get('Tid')
@@ -65,3 +53,27 @@ class GetOpLogRequest(RpcRequest):
 
 	def set_PageNumber(self,PageNumber):
 		self.add_query_param('PageNumber',PageNumber)
+
+	def get_SearchTarget(self):
+		return self.get_query_params().get('SearchTarget')
+
+	def set_SearchTarget(self,SearchTarget):
+		self.add_query_param('SearchTarget',SearchTarget)
+
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
+
+	def get_EnvType(self):
+		return self.get_query_params().get('EnvType')
+
+	def set_EnvType(self,EnvType):
+		self.add_query_param('EnvType',EnvType)
+
+	def get_DbType(self):
+		return self.get_query_params().get('DbType')
+
+	def set_DbType(self,DbType):
+		self.add_query_param('DbType',DbType)

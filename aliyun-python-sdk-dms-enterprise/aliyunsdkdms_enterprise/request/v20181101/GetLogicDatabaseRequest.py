@@ -20,33 +20,21 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdms_enterprise.endpoint import endpoint_data
 
-class RegisterUserRequest(RpcRequest):
+class GetLogicDatabaseRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'dms-enterprise', '2018-11-01', 'RegisterUser','dmsenterprise')
+		RpcRequest.__init__(self, 'dms-enterprise', '2018-11-01', 'GetLogicDatabase','dmsenterprise')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_RoleNames(self):
-		return self.get_query_params().get('RoleNames')
+	def get_DbId(self):
+		return self.get_query_params().get('DbId')
 
-	def set_RoleNames(self,RoleNames):
-		self.add_query_param('RoleNames',RoleNames)
-
-	def get_Uid(self):
-		return self.get_query_params().get('Uid')
-
-	def set_Uid(self,Uid):
-		self.add_query_param('Uid',Uid)
-
-	def get_UserNick(self):
-		return self.get_query_params().get('UserNick')
-
-	def set_UserNick(self,UserNick):
-		self.add_query_param('UserNick',UserNick)
+	def set_DbId(self,DbId):
+		self.add_query_param('DbId',DbId)
 
 	def get_Tid(self):
 		return self.get_query_params().get('Tid')

@@ -20,10 +20,11 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdms_enterprise.endpoint import endpoint_data
 
-class RegisterUserRequest(RpcRequest):
+class UpdateUserRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'dms-enterprise', '2018-11-01', 'RegisterUser','dmsenterprise')
+		RpcRequest.__init__(self, 'dms-enterprise', '2018-11-01', 'UpdateUser','dmsenterprise')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -47,6 +48,12 @@ class RegisterUserRequest(RpcRequest):
 
 	def set_UserNick(self,UserNick):
 		self.add_query_param('UserNick',UserNick)
+
+	def get_Mobile(self):
+		return self.get_query_params().get('Mobile')
+
+	def set_Mobile(self,Mobile):
+		self.add_query_param('Mobile',Mobile)
 
 	def get_Tid(self):
 		return self.get_query_params().get('Tid')

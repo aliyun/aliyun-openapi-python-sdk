@@ -20,36 +20,48 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdms_enterprise.endpoint import endpoint_data
 
-class RegisterUserRequest(RpcRequest):
+class ListUsersRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'dms-enterprise', '2018-11-01', 'RegisterUser','dmsenterprise')
+		RpcRequest.__init__(self, 'dms-enterprise', '2018-11-01', 'ListUsers','dmsenterprise')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_RoleNames(self):
-		return self.get_query_params().get('RoleNames')
+	def get_UserState(self):
+		return self.get_query_params().get('UserState')
 
-	def set_RoleNames(self,RoleNames):
-		self.add_query_param('RoleNames',RoleNames)
+	def set_UserState(self,UserState):
+		self.add_query_param('UserState',UserState)
 
-	def get_Uid(self):
-		return self.get_query_params().get('Uid')
+	def get_Role(self):
+		return self.get_query_params().get('Role')
 
-	def set_Uid(self,Uid):
-		self.add_query_param('Uid',Uid)
+	def set_Role(self,Role):
+		self.add_query_param('Role',Role)
 
-	def get_UserNick(self):
-		return self.get_query_params().get('UserNick')
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
 
-	def set_UserNick(self,UserNick):
-		self.add_query_param('UserNick',UserNick)
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
+
+	def get_SearchKey(self):
+		return self.get_query_params().get('SearchKey')
+
+	def set_SearchKey(self,SearchKey):
+		self.add_query_param('SearchKey',SearchKey)
 
 	def get_Tid(self):
 		return self.get_query_params().get('Tid')
 
 	def set_Tid(self,Tid):
 		self.add_query_param('Tid',Tid)
+
+	def get_PageNumber(self):
+		return self.get_query_params().get('PageNumber')
+
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)
