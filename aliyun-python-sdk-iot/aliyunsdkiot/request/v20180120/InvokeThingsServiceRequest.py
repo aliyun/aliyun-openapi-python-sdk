@@ -30,17 +30,23 @@ class InvokeThingsServiceRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_Args(self):
-		return self.get_query_params().get('Args')
-
-	def set_Args(self,Args):
-		self.add_query_param('Args',Args)
-
 	def get_Identifier(self):
 		return self.get_query_params().get('Identifier')
 
 	def set_Identifier(self,Identifier):
 		self.add_query_param('Identifier',Identifier)
+
+	def get_ProductKey(self):
+		return self.get_query_params().get('ProductKey')
+
+	def set_ProductKey(self,ProductKey):
+		self.add_query_param('ProductKey',ProductKey)
+
+	def get_Args(self):
+		return self.get_query_params().get('Args')
+
+	def set_Args(self,Args):
+		self.add_query_param('Args',Args)
 
 	def get_IotInstanceId(self):
 		return self.get_query_params().get('IotInstanceId')
@@ -55,9 +61,3 @@ class InvokeThingsServiceRequest(RpcRequest):
 		for i in range(len(DeviceNames)):	
 			if DeviceNames[i] is not None:
 				self.add_query_param('DeviceName.' + str(i + 1) , DeviceNames[i]);
-
-	def get_ProductKey(self):
-		return self.get_query_params().get('ProductKey')
-
-	def set_ProductKey(self,ProductKey):
-		self.add_query_param('ProductKey',ProductKey)

@@ -38,6 +38,12 @@ class QueryDeviceDesiredPropertyRequest(RpcRequest):
 			if Identifiers[i] is not None:
 				self.add_query_param('Identifier.' + str(i + 1) , Identifiers[i]);
 
+	def get_ProductKey(self):
+		return self.get_query_params().get('ProductKey')
+
+	def set_ProductKey(self,ProductKey):
+		self.add_query_param('ProductKey',ProductKey)
+
 	def get_IotId(self):
 		return self.get_query_params().get('IotId')
 
@@ -55,9 +61,3 @@ class QueryDeviceDesiredPropertyRequest(RpcRequest):
 
 	def set_DeviceName(self,DeviceName):
 		self.add_query_param('DeviceName',DeviceName)
-
-	def get_ProductKey(self):
-		return self.get_query_params().get('ProductKey')
-
-	def set_ProductKey(self,ProductKey):
-		self.add_query_param('ProductKey',ProductKey)

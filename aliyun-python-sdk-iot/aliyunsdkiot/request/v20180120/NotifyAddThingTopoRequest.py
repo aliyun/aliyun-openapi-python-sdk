@@ -36,6 +36,12 @@ class NotifyAddThingTopoRequest(RpcRequest):
 	def set_GwProductKey(self,GwProductKey):
 		self.add_query_param('GwProductKey',GwProductKey)
 
+	def get_DeviceListStr(self):
+		return self.get_query_params().get('DeviceListStr')
+
+	def set_DeviceListStr(self,DeviceListStr):
+		self.add_query_param('DeviceListStr',DeviceListStr)
+
 	def get_GwDeviceName(self):
 		return self.get_query_params().get('GwDeviceName')
 
@@ -53,9 +59,3 @@ class NotifyAddThingTopoRequest(RpcRequest):
 
 	def set_GwIotId(self,GwIotId):
 		self.add_query_param('GwIotId',GwIotId)
-
-	def get_DeviceListStr(self):
-		return self.get_query_params().get('DeviceListStr')
-
-	def set_DeviceListStr(self,DeviceListStr):
-		self.add_query_param('DeviceListStr',DeviceListStr)

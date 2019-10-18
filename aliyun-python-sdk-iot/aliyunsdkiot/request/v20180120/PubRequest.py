@@ -36,26 +36,26 @@ class PubRequest(RpcRequest):
 	def set_TopicFullName(self,TopicFullName):
 		self.add_query_param('TopicFullName',TopicFullName)
 
-	def get_Qos(self):
-		return self.get_query_params().get('Qos')
-
-	def set_Qos(self,Qos):
-		self.add_query_param('Qos',Qos)
-
 	def get_MessageContent(self):
 		return self.get_query_params().get('MessageContent')
 
 	def set_MessageContent(self,MessageContent):
 		self.add_query_param('MessageContent',MessageContent)
 
-	def get_IotInstanceId(self):
-		return self.get_query_params().get('IotInstanceId')
-
-	def set_IotInstanceId(self,IotInstanceId):
-		self.add_query_param('IotInstanceId',IotInstanceId)
-
 	def get_ProductKey(self):
 		return self.get_query_params().get('ProductKey')
 
 	def set_ProductKey(self,ProductKey):
 		self.add_query_param('ProductKey',ProductKey)
+
+	def get_Qos(self):
+		return self.get_query_params().get('Qos')
+
+	def set_Qos(self,Qos):
+		self.add_query_param('Qos',Qos)
+
+	def get_IotInstanceId(self):
+		return self.get_query_params().get('IotInstanceId')
+
+	def set_IotInstanceId(self,IotInstanceId):
+		self.add_query_param('IotInstanceId',IotInstanceId)

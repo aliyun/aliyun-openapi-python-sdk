@@ -42,6 +42,18 @@ class CreateRuleRequest(RpcRequest):
 	def set_RuleDesc(self,RuleDesc):
 		self.add_query_param('RuleDesc',RuleDesc)
 
+	def get_ProductKey(self):
+		return self.get_query_params().get('ProductKey')
+
+	def set_ProductKey(self,ProductKey):
+		self.add_query_param('ProductKey',ProductKey)
+
+	def get_ShortTopic(self):
+		return self.get_query_params().get('ShortTopic')
+
+	def set_ShortTopic(self,ShortTopic):
+		self.add_query_param('ShortTopic',ShortTopic)
+
 	def get_DataType(self):
 		return self.get_query_params().get('DataType')
 
@@ -66,20 +78,8 @@ class CreateRuleRequest(RpcRequest):
 	def set_Where(self,Where):
 		self.add_query_param('Where',Where)
 
-	def get_ProductKey(self):
-		return self.get_query_params().get('ProductKey')
-
-	def set_ProductKey(self,ProductKey):
-		self.add_query_param('ProductKey',ProductKey)
-
 	def get_TopicType(self):
 		return self.get_query_params().get('TopicType')
 
 	def set_TopicType(self,TopicType):
 		self.add_query_param('TopicType',TopicType)
-
-	def get_ShortTopic(self):
-		return self.get_query_params().get('ShortTopic')
-
-	def set_ShortTopic(self,ShortTopic):
-		self.add_query_param('ShortTopic',ShortTopic)

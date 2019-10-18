@@ -20,36 +20,24 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkiot.endpoint import endpoint_data
 
-class DisableThingRequest(RpcRequest):
+class QueryCertUrlByApplyIdRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'DisableThing','iot')
+		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'QueryCertUrlByApplyId','iot')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_ProductKey(self):
-		return self.get_query_params().get('ProductKey')
+	def get_ApplyId(self):
+		return self.get_query_params().get('ApplyId')
 
-	def set_ProductKey(self,ProductKey):
-		self.add_query_param('ProductKey',ProductKey)
-
-	def get_IotId(self):
-		return self.get_query_params().get('IotId')
-
-	def set_IotId(self,IotId):
-		self.add_query_param('IotId',IotId)
+	def set_ApplyId(self,ApplyId):
+		self.add_query_param('ApplyId',ApplyId)
 
 	def get_IotInstanceId(self):
 		return self.get_query_params().get('IotInstanceId')
 
 	def set_IotInstanceId(self,IotInstanceId):
 		self.add_query_param('IotInstanceId',IotInstanceId)
-
-	def get_DeviceName(self):
-		return self.get_query_params().get('DeviceName')
-
-	def set_DeviceName(self,DeviceName):
-		self.add_query_param('DeviceName',DeviceName)

@@ -30,6 +30,12 @@ class CreateEdgeInstanceDeploymentRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_Type(self):
+		return self.get_query_params().get('Type')
+
+	def set_Type(self,Type):
+		self.add_query_param('Type',Type)
+
 	def get_InstanceId(self):
 		return self.get_query_params().get('InstanceId')
 
@@ -41,9 +47,3 @@ class CreateEdgeInstanceDeploymentRequest(RpcRequest):
 
 	def set_IotInstanceId(self,IotInstanceId):
 		self.add_query_param('IotInstanceId',IotInstanceId)
-
-	def get_Type(self):
-		return self.get_query_params().get('Type')
-
-	def set_Type(self,Type):
-		self.add_query_param('Type',Type)

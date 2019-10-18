@@ -30,6 +30,23 @@ class QueryAppDeviceListRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_CurrentPage(self):
+		return self.get_query_params().get('CurrentPage')
+
+	def set_CurrentPage(self,CurrentPage):
+		self.add_query_param('CurrentPage',CurrentPage)
+
+	def get_TagLists(self):
+		return self.get_query_params().get('TagLists')
+
+	def set_TagLists(self,TagLists):
+		for i in range(len(TagLists)):	
+			if TagLists[i].get('TagName') is not None:
+				self.add_query_param('TagList.' + str(i + 1) + '.TagName' , TagLists[i].get('TagName'))
+			if TagLists[i].get('TagValue') is not None:
+				self.add_query_param('TagList.' + str(i + 1) + '.TagValue' , TagLists[i].get('TagValue'))
+
+
 	def get_ProductKeyLists(self):
 		return self.get_query_params().get('ProductKeyLists')
 
@@ -58,24 +75,8 @@ class QueryAppDeviceListRequest(RpcRequest):
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
 
-	def get_CurrentPage(self):
-		return self.get_query_params().get('CurrentPage')
-
-	def set_CurrentPage(self,CurrentPage):
-		self.add_query_param('CurrentPage',CurrentPage)
-
 	def get_AppKey(self):
 		return self.get_query_params().get('AppKey')
 
 	def set_AppKey(self,AppKey):
 		self.add_query_param('AppKey',AppKey)
-
-	def get_TagLists(self):
-		return self.get_query_params().get('TagLists')
-
-	def set_TagLists(self,TagLists):
-		for i in range(len(TagLists)):	
-			if TagLists[i].get('TagName') is not None:
-				self.add_query_param('TagList.' + str(i + 1) + '.TagName' , TagLists[i].get('TagName'))
-			if TagLists[i].get('TagValue') is not None:
-				self.add_query_param('TagList.' + str(i + 1) + '.TagValue' , TagLists[i].get('TagValue'))

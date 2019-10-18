@@ -36,6 +36,12 @@ class CreateRuleActionRequest(RpcRequest):
 	def set_Configuration(self,Configuration):
 		self.add_query_param('Configuration',Configuration)
 
+	def get_Type(self):
+		return self.get_query_params().get('Type')
+
+	def set_Type(self,Type):
+		self.add_query_param('Type',Type)
+
 	def get_IotInstanceId(self):
 		return self.get_query_params().get('IotInstanceId')
 
@@ -47,12 +53,6 @@ class CreateRuleActionRequest(RpcRequest):
 
 	def set_RuleId(self,RuleId):
 		self.add_query_param('RuleId',RuleId)
-
-	def get_Type(self):
-		return self.get_query_params().get('Type')
-
-	def set_Type(self,Type):
-		self.add_query_param('Type',Type)
 
 	def get_ErrorActionFlag(self):
 		return self.get_query_params().get('ErrorActionFlag')

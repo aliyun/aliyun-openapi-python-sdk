@@ -30,17 +30,11 @@ class QueryDeviceEventDataRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_Asc(self):
-		return self.get_query_params().get('Asc')
+	def get_StartTime(self):
+		return self.get_query_params().get('StartTime')
 
-	def set_Asc(self,Asc):
-		self.add_query_param('Asc',Asc)
-
-	def get_Identifier(self):
-		return self.get_query_params().get('Identifier')
-
-	def set_Identifier(self,Identifier):
-		self.add_query_param('Identifier',Identifier)
+	def set_StartTime(self,StartTime):
+		self.add_query_param('StartTime',StartTime)
 
 	def get_IotId(self):
 		return self.get_query_params().get('IotId')
@@ -60,11 +54,29 @@ class QueryDeviceEventDataRequest(RpcRequest):
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
 
+	def get_Identifier(self):
+		return self.get_query_params().get('Identifier')
+
+	def set_Identifier(self,Identifier):
+		self.add_query_param('Identifier',Identifier)
+
 	def get_EndTime(self):
 		return self.get_query_params().get('EndTime')
 
 	def set_EndTime(self,EndTime):
 		self.add_query_param('EndTime',EndTime)
+
+	def get_ProductKey(self):
+		return self.get_query_params().get('ProductKey')
+
+	def set_ProductKey(self,ProductKey):
+		self.add_query_param('ProductKey',ProductKey)
+
+	def get_Asc(self):
+		return self.get_query_params().get('Asc')
+
+	def set_Asc(self,Asc):
+		self.add_query_param('Asc',Asc)
 
 	def get_EventType(self):
 		return self.get_query_params().get('EventType')
@@ -77,15 +89,3 @@ class QueryDeviceEventDataRequest(RpcRequest):
 
 	def set_DeviceName(self,DeviceName):
 		self.add_query_param('DeviceName',DeviceName)
-
-	def get_StartTime(self):
-		return self.get_query_params().get('StartTime')
-
-	def set_StartTime(self,StartTime):
-		self.add_query_param('StartTime',StartTime)
-
-	def get_ProductKey(self):
-		return self.get_query_params().get('ProductKey')
-
-	def set_ProductKey(self,ProductKey):
-		self.add_query_param('ProductKey',ProductKey)

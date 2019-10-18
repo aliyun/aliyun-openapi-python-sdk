@@ -30,6 +30,18 @@ class SaveDevicePropRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_ProductKey(self):
+		return self.get_query_params().get('ProductKey')
+
+	def set_ProductKey(self,ProductKey):
+		self.add_query_param('ProductKey',ProductKey)
+
+	def get_Props(self):
+		return self.get_query_params().get('Props')
+
+	def set_Props(self,Props):
+		self.add_query_param('Props',Props)
+
 	def get_IotId(self):
 		return self.get_query_params().get('IotId')
 
@@ -47,15 +59,3 @@ class SaveDevicePropRequest(RpcRequest):
 
 	def set_DeviceName(self,DeviceName):
 		self.add_query_param('DeviceName',DeviceName)
-
-	def get_ProductKey(self):
-		return self.get_query_params().get('ProductKey')
-
-	def set_ProductKey(self,ProductKey):
-		self.add_query_param('ProductKey',ProductKey)
-
-	def get_Props(self):
-		return self.get_query_params().get('Props')
-
-	def set_Props(self,Props):
-		self.add_query_param('Props',Props)

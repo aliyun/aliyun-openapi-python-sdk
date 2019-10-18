@@ -30,29 +30,11 @@ class RRpcRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_IotInstanceId(self):
-		return self.get_query_params().get('IotInstanceId')
-
-	def set_IotInstanceId(self,IotInstanceId):
-		self.add_query_param('IotInstanceId',IotInstanceId)
-
 	def get_RequestBase64Byte(self):
 		return self.get_query_params().get('RequestBase64Byte')
 
 	def set_RequestBase64Byte(self,RequestBase64Byte):
 		self.add_query_param('RequestBase64Byte',RequestBase64Byte)
-
-	def get_Topic(self):
-		return self.get_query_params().get('Topic')
-
-	def set_Topic(self,Topic):
-		self.add_query_param('Topic',Topic)
-
-	def get_DeviceName(self):
-		return self.get_query_params().get('DeviceName')
-
-	def set_DeviceName(self,DeviceName):
-		self.add_query_param('DeviceName',DeviceName)
 
 	def get_ProductKey(self):
 		return self.get_query_params().get('ProductKey')
@@ -65,3 +47,21 @@ class RRpcRequest(RpcRequest):
 
 	def set_Timeout(self,Timeout):
 		self.add_query_param('Timeout',Timeout)
+
+	def get_IotInstanceId(self):
+		return self.get_query_params().get('IotInstanceId')
+
+	def set_IotInstanceId(self,IotInstanceId):
+		self.add_query_param('IotInstanceId',IotInstanceId)
+
+	def get_Topic(self):
+		return self.get_query_params().get('Topic')
+
+	def set_Topic(self,Topic):
+		self.add_query_param('Topic',Topic)
+
+	def get_DeviceName(self):
+		return self.get_query_params().get('DeviceName')
+
+	def set_DeviceName(self,DeviceName):
+		self.add_query_param('DeviceName',DeviceName)

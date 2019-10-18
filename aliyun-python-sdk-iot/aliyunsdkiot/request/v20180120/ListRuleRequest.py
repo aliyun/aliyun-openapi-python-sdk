@@ -36,6 +36,12 @@ class ListRuleRequest(RpcRequest):
 	def set_SearchName(self,SearchName):
 		self.add_query_param('SearchName',SearchName)
 
+	def get_CurrentPage(self):
+		return self.get_query_params().get('CurrentPage')
+
+	def set_CurrentPage(self,CurrentPage):
+		self.add_query_param('CurrentPage',CurrentPage)
+
 	def get_IotInstanceId(self):
 		return self.get_query_params().get('IotInstanceId')
 
@@ -47,9 +53,3 @@ class ListRuleRequest(RpcRequest):
 
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
-
-	def get_CurrentPage(self):
-		return self.get_query_params().get('CurrentPage')
-
-	def set_CurrentPage(self,CurrentPage):
-		self.add_query_param('CurrentPage',CurrentPage)

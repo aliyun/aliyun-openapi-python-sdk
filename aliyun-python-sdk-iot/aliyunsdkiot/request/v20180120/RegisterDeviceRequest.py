@@ -36,6 +36,18 @@ class RegisterDeviceRequest(RpcRequest):
 	def set_PinCode(self,PinCode):
 		self.add_query_param('PinCode',PinCode)
 
+	def get_ProductKey(self):
+		return self.get_query_params().get('ProductKey')
+
+	def set_ProductKey(self,ProductKey):
+		self.add_query_param('ProductKey',ProductKey)
+
+	def get_DevEui(self):
+		return self.get_query_params().get('DevEui')
+
+	def set_DevEui(self,DevEui):
+		self.add_query_param('DevEui',DevEui)
+
 	def get_IotInstanceId(self):
 		return self.get_query_params().get('IotInstanceId')
 
@@ -53,15 +65,3 @@ class RegisterDeviceRequest(RpcRequest):
 
 	def set_DeviceName(self,DeviceName):
 		self.add_query_param('DeviceName',DeviceName)
-
-	def get_ProductKey(self):
-		return self.get_query_params().get('ProductKey')
-
-	def set_ProductKey(self,ProductKey):
-		self.add_query_param('ProductKey',ProductKey)
-
-	def get_DevEui(self):
-		return self.get_query_params().get('DevEui')
-
-	def set_DevEui(self,DevEui):
-		self.add_query_param('DevEui',DevEui)

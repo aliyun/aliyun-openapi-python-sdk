@@ -30,19 +30,11 @@ class QueryDevicePropertiesDataRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_Asc(self):
-		return self.get_query_params().get('Asc')
+	def get_StartTime(self):
+		return self.get_query_params().get('StartTime')
 
-	def set_Asc(self,Asc):
-		self.add_query_param('Asc',Asc)
-
-	def get_Identifiers(self):
-		return self.get_query_params().get('Identifiers')
-
-	def set_Identifiers(self,Identifiers):
-		for i in range(len(Identifiers)):	
-			if Identifiers[i] is not None:
-				self.add_query_param('Identifier.' + str(i + 1) , Identifiers[i]);
+	def set_StartTime(self,StartTime):
+		self.add_query_param('StartTime',StartTime)
 
 	def get_IotId(self):
 		return self.get_query_params().get('IotId')
@@ -62,26 +54,34 @@ class QueryDevicePropertiesDataRequest(RpcRequest):
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
 
+	def get_Identifiers(self):
+		return self.get_query_params().get('Identifiers')
+
+	def set_Identifiers(self,Identifiers):
+		for i in range(len(Identifiers)):	
+			if Identifiers[i] is not None:
+				self.add_query_param('Identifier.' + str(i + 1) , Identifiers[i]);
+
 	def get_EndTime(self):
 		return self.get_query_params().get('EndTime')
 
 	def set_EndTime(self,EndTime):
 		self.add_query_param('EndTime',EndTime)
 
-	def get_DeviceName(self):
-		return self.get_query_params().get('DeviceName')
-
-	def set_DeviceName(self,DeviceName):
-		self.add_query_param('DeviceName',DeviceName)
-
-	def get_StartTime(self):
-		return self.get_query_params().get('StartTime')
-
-	def set_StartTime(self,StartTime):
-		self.add_query_param('StartTime',StartTime)
-
 	def get_ProductKey(self):
 		return self.get_query_params().get('ProductKey')
 
 	def set_ProductKey(self,ProductKey):
 		self.add_query_param('ProductKey',ProductKey)
+
+	def get_Asc(self):
+		return self.get_query_params().get('Asc')
+
+	def set_Asc(self,Asc):
+		self.add_query_param('Asc',Asc)
+
+	def get_DeviceName(self):
+		return self.get_query_params().get('DeviceName')
+
+	def set_DeviceName(self,DeviceName):
+		self.add_query_param('DeviceName',DeviceName)

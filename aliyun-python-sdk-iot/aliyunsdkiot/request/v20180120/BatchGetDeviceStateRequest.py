@@ -30,6 +30,12 @@ class BatchGetDeviceStateRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_ProductKey(self):
+		return self.get_query_params().get('ProductKey')
+
+	def set_ProductKey(self,ProductKey):
+		self.add_query_param('ProductKey',ProductKey)
+
 	def get_IotIds(self):
 		return self.get_query_params().get('IotIds')
 
@@ -51,9 +57,3 @@ class BatchGetDeviceStateRequest(RpcRequest):
 		for i in range(len(DeviceNames)):	
 			if DeviceNames[i] is not None:
 				self.add_query_param('DeviceName.' + str(i + 1) , DeviceNames[i]);
-
-	def get_ProductKey(self):
-		return self.get_query_params().get('ProductKey')
-
-	def set_ProductKey(self,ProductKey):
-		self.add_query_param('ProductKey',ProductKey)

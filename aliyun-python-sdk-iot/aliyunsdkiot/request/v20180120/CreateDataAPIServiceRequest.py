@@ -30,35 +30,6 @@ class CreateDataAPIServiceRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_ResponseParams(self):
-		return self.get_body_params().get('ResponseParams')
-
-	def set_ResponseParams(self,ResponseParams):
-		for i in range(len(ResponseParams)):	
-			if ResponseParams[i].get('Name') is not None:
-				self.add_body_params('ResponseParam.' + str(i + 1) + '.Name' , ResponseParams[i].get('Name'))
-			if ResponseParams[i].get('Type') is not None:
-				self.add_body_params('ResponseParam.' + str(i + 1) + '.Type' , ResponseParams[i].get('Type'))
-			if ResponseParams[i].get('Required') is not None:
-				self.add_body_params('ResponseParam.' + str(i + 1) + '.Required' , ResponseParams[i].get('Required'))
-			if ResponseParams[i].get('Desc') is not None:
-				self.add_body_params('ResponseParam.' + str(i + 1) + '.Desc' , ResponseParams[i].get('Desc'))
-			if ResponseParams[i].get('Example') is not None:
-				self.add_body_params('ResponseParam.' + str(i + 1) + '.Example' , ResponseParams[i].get('Example'))
-
-
-	def get_OriginSql(self):
-		return self.get_query_params().get('OriginSql')
-
-	def set_OriginSql(self,OriginSql):
-		self.add_query_param('OriginSql',OriginSql)
-
-	def get_DisplayName(self):
-		return self.get_query_params().get('DisplayName')
-
-	def set_DisplayName(self,DisplayName):
-		self.add_query_param('DisplayName',DisplayName)
-
 	def get_ApiPath(self):
 		return self.get_query_params().get('ApiPath')
 
@@ -93,6 +64,35 @@ class CreateDataAPIServiceRequest(RpcRequest):
 
 	def set_TemplateSql(self,TemplateSql):
 		self.add_query_param('TemplateSql',TemplateSql)
+
+	def get_ResponseParams(self):
+		return self.get_body_params().get('ResponseParams')
+
+	def set_ResponseParams(self,ResponseParams):
+		for i in range(len(ResponseParams)):	
+			if ResponseParams[i].get('Name') is not None:
+				self.add_body_params('ResponseParam.' + str(i + 1) + '.Name' , ResponseParams[i].get('Name'))
+			if ResponseParams[i].get('Type') is not None:
+				self.add_body_params('ResponseParam.' + str(i + 1) + '.Type' , ResponseParams[i].get('Type'))
+			if ResponseParams[i].get('Required') is not None:
+				self.add_body_params('ResponseParam.' + str(i + 1) + '.Required' , ResponseParams[i].get('Required'))
+			if ResponseParams[i].get('Desc') is not None:
+				self.add_body_params('ResponseParam.' + str(i + 1) + '.Desc' , ResponseParams[i].get('Desc'))
+			if ResponseParams[i].get('Example') is not None:
+				self.add_body_params('ResponseParam.' + str(i + 1) + '.Example' , ResponseParams[i].get('Example'))
+
+
+	def get_OriginSql(self):
+		return self.get_query_params().get('OriginSql')
+
+	def set_OriginSql(self,OriginSql):
+		self.add_query_param('OriginSql',OriginSql)
+
+	def get_DisplayName(self):
+		return self.get_query_params().get('DisplayName')
+
+	def set_DisplayName(self,DisplayName):
+		self.add_query_param('DisplayName',DisplayName)
 
 	def get_Desc(self):
 		return self.get_query_params().get('Desc')

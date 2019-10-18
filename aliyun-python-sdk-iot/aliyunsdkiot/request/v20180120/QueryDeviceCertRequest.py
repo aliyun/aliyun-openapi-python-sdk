@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkiot.endpoint import endpoint_data
 
-class DisableThingRequest(RpcRequest):
+class QueryDeviceCertRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'DisableThing','iot')
+		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'QueryDeviceCert','iot')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -35,12 +35,6 @@ class DisableThingRequest(RpcRequest):
 
 	def set_ProductKey(self,ProductKey):
 		self.add_query_param('ProductKey',ProductKey)
-
-	def get_IotId(self):
-		return self.get_query_params().get('IotId')
-
-	def set_IotId(self,IotId):
-		self.add_query_param('IotId',IotId)
 
 	def get_IotInstanceId(self):
 		return self.get_query_params().get('IotInstanceId')

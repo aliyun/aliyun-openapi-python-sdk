@@ -30,6 +30,12 @@ class BindDriverToEdgeInstanceRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_OrderId(self):
+		return self.get_query_params().get('OrderId')
+
+	def set_OrderId(self,OrderId):
+		self.add_query_param('OrderId',OrderId)
+
 	def get_InstanceId(self):
 		return self.get_query_params().get('InstanceId')
 

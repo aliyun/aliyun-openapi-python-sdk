@@ -30,23 +30,11 @@ class QueryDeviceGroupListRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_IotInstanceId(self):
-		return self.get_query_params().get('IotInstanceId')
-
-	def set_IotInstanceId(self,IotInstanceId):
-		self.add_query_param('IotInstanceId',IotInstanceId)
-
 	def get_SuperGroupId(self):
 		return self.get_query_params().get('SuperGroupId')
 
 	def set_SuperGroupId(self,SuperGroupId):
 		self.add_query_param('SuperGroupId',SuperGroupId)
-
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
 
 	def get_CurrentPage(self):
 		return self.get_query_params().get('CurrentPage')
@@ -59,3 +47,15 @@ class QueryDeviceGroupListRequest(RpcRequest):
 
 	def set_GroupName(self,GroupName):
 		self.add_query_param('GroupName',GroupName)
+
+	def get_IotInstanceId(self):
+		return self.get_query_params().get('IotInstanceId')
+
+	def set_IotInstanceId(self,IotInstanceId):
+		self.add_query_param('IotInstanceId',IotInstanceId)
+
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
