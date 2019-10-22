@@ -48,6 +48,12 @@ class PurchaseReservedInstancesOfferingRequest(RpcRequest):
 	def set_Description(self,Description):
 		self.add_query_param('Description',Description)
 
+	def get_Platform(self):
+		return self.get_query_params().get('Platform')
+
+	def set_Platform(self,Platform):
+		self.add_query_param('Platform',Platform)
+
 	def get_ResourceGroupId(self):
 		return self.get_query_params().get('ResourceGroupId')
 

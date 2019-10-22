@@ -132,6 +132,12 @@ class DescribePriceRequest(RpcRequest):
 	def set_Platform(self,Platform):
 		self.add_query_param('Platform',Platform)
 
+	def get_Capacity(self):
+		return self.get_query_params().get('Capacity')
+
+	def set_Capacity(self,Capacity):
+		self.add_query_param('Capacity',Capacity)
+
 	def get_SystemDiskPerformanceLevel(self):
 		return self.get_query_params().get('SystemDisk.PerformanceLevel')
 

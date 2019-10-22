@@ -42,6 +42,12 @@ class DescribeInvocationsRequest(RpcRequest):
 	def set_InvokeStatus(self,InvokeStatus):
 		self.add_query_param('InvokeStatus',InvokeStatus)
 
+	def get_IncludeOutput(self):
+		return self.get_query_params().get('IncludeOutput')
+
+	def set_IncludeOutput(self,IncludeOutput):
+		self.add_query_param('IncludeOutput',IncludeOutput)
+
 	def get_CommandId(self):
 		return self.get_query_params().get('CommandId')
 
