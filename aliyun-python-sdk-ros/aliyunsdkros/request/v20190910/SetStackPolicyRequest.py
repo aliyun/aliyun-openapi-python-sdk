@@ -18,17 +18,17 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkros.endpoint import endpoint_data
 
 class SetStackPolicyRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ROS', '2019-09-10', 'SetStackPolicy','ROS')
+		RpcRequest.__init__(self, 'ROS', '2019-09-10', 'SetStackPolicy')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_StackPolicyURL(self):
-		return self.get_query_params().get('StackPolicyURL')
-
-	def set_StackPolicyURL(self,StackPolicyURL):
-		self.add_query_param('StackPolicyURL',StackPolicyURL)
 
 	def get_StackId(self):
 		return self.get_query_params().get('StackId')
@@ -41,3 +41,9 @@ class SetStackPolicyRequest(RpcRequest):
 
 	def set_StackPolicyBody(self,StackPolicyBody):
 		self.add_query_param('StackPolicyBody',StackPolicyBody)
+
+	def get_StackPolicyURL(self):
+		return self.get_query_params().get('StackPolicyURL')
+
+	def set_StackPolicyURL(self,StackPolicyURL):
+		self.add_query_param('StackPolicyURL',StackPolicyURL)

@@ -18,11 +18,17 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkros.endpoint import endpoint_data
 
 class GetTemplateEstimateCostRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ROS', '2019-09-10', 'GetTemplateEstimateCost','ROS')
+		RpcRequest.__init__(self, 'ROS', '2019-09-10', 'GetTemplateEstimateCost')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_ClientToken(self):
 		return self.get_query_params().get('ClientToken')
@@ -36,6 +42,12 @@ class GetTemplateEstimateCostRequest(RpcRequest):
 	def set_TemplateBody(self,TemplateBody):
 		self.add_query_param('TemplateBody',TemplateBody)
 
+	def get_TemplateURL(self):
+		return self.get_query_params().get('TemplateURL')
+
+	def set_TemplateURL(self,TemplateURL):
+		self.add_query_param('TemplateURL',TemplateURL)
+
 	def get_Parameterss(self):
 		return self.get_query_params().get('Parameterss')
 
@@ -45,10 +57,3 @@ class GetTemplateEstimateCostRequest(RpcRequest):
 				self.add_query_param('Parameters.' + str(i + 1) + '.ParameterValue' , Parameterss[i].get('ParameterValue'))
 			if Parameterss[i].get('ParameterKey') is not None:
 				self.add_query_param('Parameters.' + str(i + 1) + '.ParameterKey' , Parameterss[i].get('ParameterKey'))
-
-
-	def get_TemplateURL(self):
-		return self.get_query_params().get('TemplateURL')
-
-	def set_TemplateURL(self,TemplateURL):
-		self.add_query_param('TemplateURL',TemplateURL)

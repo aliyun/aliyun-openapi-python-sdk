@@ -18,13 +18,19 @@
 # under the License.
 
 from aliyunsdkcore.request import RoaRequest
+from aliyunsdkros.endpoint import endpoint_data
 
 class DescribeStacksRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'ROS', '2015-09-01', 'DescribeStacks','ROS')
+		RoaRequest.__init__(self, 'ROS', '2015-09-01', 'DescribeStacks')
 		self.set_uri_pattern('/stacks')
 		self.set_method('GET')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_StackId(self):
 		return self.get_query_params().get('StackId')

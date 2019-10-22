@@ -18,13 +18,19 @@
 # under the License.
 
 from aliyunsdkcore.request import RoaRequest
+from aliyunsdkros.endpoint import endpoint_data
 
 class DeleteStackRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'ROS', '2015-09-01', 'DeleteStack','ROS')
+		RoaRequest.__init__(self, 'ROS', '2015-09-01', 'DeleteStack')
 		self.set_uri_pattern('/stacks/[StackName]/[StackId]')
 		self.set_method('DELETE')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_StackId(self):
 		return self.get_path_params().get('StackId')

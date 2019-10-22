@@ -18,10 +18,15 @@
 # under the License.
 
 from aliyunsdkcore.request import RoaRequest
+from aliyunsdkros.endpoint import endpoint_data
 
 class DescribeRegionsRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'ROS', '2015-09-01', 'DescribeRegions','ROS')
+		RoaRequest.__init__(self, 'ROS', '2015-09-01', 'DescribeRegions')
 		self.set_uri_pattern('/regions')
 		self.set_method('GET')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())

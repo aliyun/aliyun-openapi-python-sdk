@@ -18,23 +18,29 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkros.endpoint import endpoint_data
 
 class ListStacksRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ROS', '2019-09-10', 'ListStacks','ROS')
+		RpcRequest.__init__(self, 'ROS', '2019-09-10', 'ListStacks')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ParentStackId(self):
-		return self.get_query_params().get('ParentStackId')
-
-	def set_ParentStackId(self,ParentStackId):
-		self.add_query_param('ParentStackId',ParentStackId)
 
 	def get_ShowNestedStack(self):
 		return self.get_query_params().get('ShowNestedStack')
 
 	def set_ShowNestedStack(self,ShowNestedStack):
 		self.add_query_param('ShowNestedStack',ShowNestedStack)
+
+	def get_PageNumber(self):
+		return self.get_query_params().get('PageNumber')
+
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)
 
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
@@ -50,11 +56,11 @@ class ListStacksRequest(RpcRequest):
 			if StackNames[i] is not None:
 				self.add_query_param('StackName.' + str(i + 1) , StackNames[i]);
 
-	def get_PageNumber(self):
-		return self.get_query_params().get('PageNumber')
+	def get_ParentStackId(self):
+		return self.get_query_params().get('ParentStackId')
 
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
+	def set_ParentStackId(self,ParentStackId):
+		self.add_query_param('ParentStackId',ParentStackId)
 
 	def get_Statuss(self):
 		return self.get_query_params().get('Statuss')

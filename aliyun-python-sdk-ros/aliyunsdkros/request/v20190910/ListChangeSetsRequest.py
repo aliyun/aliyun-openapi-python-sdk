@@ -18,11 +18,35 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkros.endpoint import endpoint_data
 
 class ListChangeSetsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ROS', '2019-09-10', 'ListChangeSets','ROS')
+		RpcRequest.__init__(self, 'ROS', '2019-09-10', 'ListChangeSets')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
+
+	def get_StackId(self):
+		return self.get_query_params().get('StackId')
+
+	def set_StackId(self,StackId):
+		self.add_query_param('StackId',StackId)
+
+	def get_PageNumber(self):
+		return self.get_query_params().get('PageNumber')
+
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)
+
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
 
 	def get_ExecutionStatuss(self):
 		return self.get_query_params().get('ExecutionStatuss')
@@ -39,24 +63,6 @@ class ListChangeSetsRequest(RpcRequest):
 		for i in range(len(ChangeSetNames)):	
 			if ChangeSetNames[i] is not None:
 				self.add_query_param('ChangeSetName.' + str(i + 1) , ChangeSetNames[i]);
-
-	def get_StackId(self):
-		return self.get_query_params().get('StackId')
-
-	def set_StackId(self,StackId):
-		self.add_query_param('StackId',StackId)
-
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_PageNumber(self):
-		return self.get_query_params().get('PageNumber')
-
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
 
 	def get_Statuss(self):
 		return self.get_query_params().get('Statuss')

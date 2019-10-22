@@ -18,13 +18,19 @@
 # under the License.
 
 from aliyunsdkcore.request import RoaRequest
+from aliyunsdkros.endpoint import endpoint_data
 
 class WaitConditionsRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'ROS', '2015-09-01', 'WaitConditions','ROS')
+		RoaRequest.__init__(self, 'ROS', '2015-09-01', 'WaitConditions')
 		self.set_uri_pattern('/waitcondition')
 		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_resource(self):
 		return self.get_query_params().get('resource')

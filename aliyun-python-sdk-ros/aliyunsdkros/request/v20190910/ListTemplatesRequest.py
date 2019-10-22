@@ -17,16 +17,33 @@
 # specific language governing permissions and limitations
 # under the License.
 
-from aliyunsdkcore.request import RoaRequest
+from aliyunsdkcore.request import RpcRequest
 from aliyunsdkros.endpoint import endpoint_data
 
-class InquiryStackRequest(RoaRequest):
+class ListTemplatesRequest(RpcRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'ROS', '2015-09-01', 'InquiryStack')
-		self.set_uri_pattern('/stacks/inquiry')
-		self.set_method('POST')
+		RpcRequest.__init__(self, 'ROS', '2019-09-10', 'ListTemplates')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
+
+	def get_PageNumber(self):
+		return self.get_query_params().get('PageNumber')
+
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)
+
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
+
+	def get_TemplateName(self):
+		return self.get_query_params().get('TemplateName')
+
+	def set_TemplateName(self,TemplateName):
+		self.add_query_param('TemplateName',TemplateName)

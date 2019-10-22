@@ -17,16 +17,39 @@
 # specific language governing permissions and limitations
 # under the License.
 
-from aliyunsdkcore.request import RoaRequest
+from aliyunsdkcore.request import RpcRequest
 from aliyunsdkros.endpoint import endpoint_data
 
-class InquiryStackRequest(RoaRequest):
+class CreateTemplateRequest(RpcRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'ROS', '2015-09-01', 'InquiryStack')
-		self.set_uri_pattern('/stacks/inquiry')
-		self.set_method('POST')
+		RpcRequest.__init__(self, 'ROS', '2019-09-10', 'CreateTemplate')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
+
+	def get_TemplateBody(self):
+		return self.get_query_params().get('TemplateBody')
+
+	def set_TemplateBody(self,TemplateBody):
+		self.add_query_param('TemplateBody',TemplateBody)
+
+	def get_Description(self):
+		return self.get_query_params().get('Description')
+
+	def set_Description(self,Description):
+		self.add_query_param('Description',Description)
+
+	def get_TemplateURL(self):
+		return self.get_query_params().get('TemplateURL')
+
+	def set_TemplateURL(self,TemplateURL):
+		self.add_query_param('TemplateURL',TemplateURL)
+
+	def get_TemplateName(self):
+		return self.get_query_params().get('TemplateName')
+
+	def set_TemplateName(self,TemplateName):
+		self.add_query_param('TemplateName',TemplateName)

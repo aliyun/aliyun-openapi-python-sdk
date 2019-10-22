@@ -18,13 +18,19 @@
 # under the License.
 
 from aliyunsdkcore.request import RoaRequest
+from aliyunsdkros.endpoint import endpoint_data
 
 class DoActionsRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'ROS', '2015-09-01', 'DoActions','ROS')
+		RoaRequest.__init__(self, 'ROS', '2015-09-01', 'DoActions')
 		self.set_uri_pattern('/stacks/[StackName]/[StackId]/actions')
 		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_StackId(self):
 		return self.get_path_params().get('StackId')

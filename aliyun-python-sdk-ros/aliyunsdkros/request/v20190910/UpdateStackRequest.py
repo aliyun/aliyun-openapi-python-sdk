@@ -18,17 +18,52 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkros.endpoint import endpoint_data
 
 class UpdateStackRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ROS', '2019-09-10', 'UpdateStack','ROS')
+		RpcRequest.__init__(self, 'ROS', '2019-09-10', 'UpdateStack')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_StackPolicyDuringUpdateURL(self):
-		return self.get_query_params().get('StackPolicyDuringUpdateURL')
 
-	def set_StackPolicyDuringUpdateURL(self,StackPolicyDuringUpdateURL):
-		self.add_query_param('StackPolicyDuringUpdateURL',StackPolicyDuringUpdateURL)
+	def get_EnableRecover(self):
+		return self.get_query_params().get('EnableRecover')
+
+	def set_EnableRecover(self,EnableRecover):
+		self.add_query_param('EnableRecover',EnableRecover)
+
+	def get_TimeoutInMinutes(self):
+		return self.get_query_params().get('TimeoutInMinutes')
+
+	def set_TimeoutInMinutes(self,TimeoutInMinutes):
+		self.add_query_param('TimeoutInMinutes',TimeoutInMinutes)
+
+	def get_StackPolicyDuringUpdateBody(self):
+		return self.get_query_params().get('StackPolicyDuringUpdateBody')
+
+	def set_StackPolicyDuringUpdateBody(self,StackPolicyDuringUpdateBody):
+		self.add_query_param('StackPolicyDuringUpdateBody',StackPolicyDuringUpdateBody)
+
+	def get_DisableRollback(self):
+		return self.get_query_params().get('DisableRollback')
+
+	def set_DisableRollback(self,DisableRollback):
+		self.add_query_param('DisableRollback',DisableRollback)
+
+	def get_Parameterss(self):
+		return self.get_query_params().get('Parameterss')
+
+	def set_Parameterss(self,Parameterss):
+		for i in range(len(Parameterss)):	
+			if Parameterss[i].get('ParameterValue') is not None:
+				self.add_query_param('Parameters.' + str(i + 1) + '.ParameterValue' , Parameterss[i].get('ParameterValue'))
+			if Parameterss[i].get('ParameterKey') is not None:
+				self.add_query_param('Parameters.' + str(i + 1) + '.ParameterKey' , Parameterss[i].get('ParameterKey'))
+
 
 	def get_ClientToken(self):
 		return self.get_query_params().get('ClientToken')
@@ -48,17 +83,23 @@ class UpdateStackRequest(RpcRequest):
 	def set_StackId(self,StackId):
 		self.add_query_param('StackId',StackId)
 
-	def get_DisableRollback(self):
-		return self.get_query_params().get('DisableRollback')
+	def get_TemplateURL(self):
+		return self.get_query_params().get('TemplateURL')
 
-	def set_DisableRollback(self,DisableRollback):
-		self.add_query_param('DisableRollback',DisableRollback)
+	def set_TemplateURL(self,TemplateURL):
+		self.add_query_param('TemplateURL',TemplateURL)
 
-	def get_EnableRecover(self):
-		return self.get_query_params().get('EnableRecover')
+	def get_StackPolicyBody(self):
+		return self.get_query_params().get('StackPolicyBody')
 
-	def set_EnableRecover(self,EnableRecover):
-		self.add_query_param('EnableRecover',EnableRecover)
+	def set_StackPolicyBody(self,StackPolicyBody):
+		self.add_query_param('StackPolicyBody',StackPolicyBody)
+
+	def get_StackPolicyDuringUpdateURL(self):
+		return self.get_query_params().get('StackPolicyDuringUpdateURL')
+
+	def set_StackPolicyDuringUpdateURL(self,StackPolicyDuringUpdateURL):
+		self.add_query_param('StackPolicyDuringUpdateURL',StackPolicyDuringUpdateURL)
 
 	def get_UpdateAllowPolicy(self):
 		return self.get_query_params().get('UpdateAllowPolicy')
@@ -66,49 +107,14 @@ class UpdateStackRequest(RpcRequest):
 	def set_UpdateAllowPolicy(self,UpdateAllowPolicy):
 		self.add_query_param('UpdateAllowPolicy',UpdateAllowPolicy)
 
-	def get_TimeoutInMinutes(self):
-		return self.get_query_params().get('TimeoutInMinutes')
-
-	def set_TimeoutInMinutes(self,TimeoutInMinutes):
-		self.add_query_param('TimeoutInMinutes',TimeoutInMinutes)
-
 	def get_UsePreviousParameters(self):
 		return self.get_query_params().get('UsePreviousParameters')
 
 	def set_UsePreviousParameters(self,UsePreviousParameters):
 		self.add_query_param('UsePreviousParameters',UsePreviousParameters)
 
-	def get_TemplateURL(self):
-		return self.get_query_params().get('TemplateURL')
-
-	def set_TemplateURL(self,TemplateURL):
-		self.add_query_param('TemplateURL',TemplateURL)
-
-	def get_StackPolicyDuringUpdateBody(self):
-		return self.get_query_params().get('StackPolicyDuringUpdateBody')
-
-	def set_StackPolicyDuringUpdateBody(self,StackPolicyDuringUpdateBody):
-		self.add_query_param('StackPolicyDuringUpdateBody',StackPolicyDuringUpdateBody)
-
 	def get_StackPolicyURL(self):
 		return self.get_query_params().get('StackPolicyURL')
 
 	def set_StackPolicyURL(self,StackPolicyURL):
 		self.add_query_param('StackPolicyURL',StackPolicyURL)
-
-	def get_Parameterss(self):
-		return self.get_query_params().get('Parameterss')
-
-	def set_Parameterss(self,Parameterss):
-		for i in range(len(Parameterss)):	
-			if Parameterss[i].get('ParameterValue') is not None:
-				self.add_query_param('Parameters.' + str(i + 1) + '.ParameterValue' , Parameterss[i].get('ParameterValue'))
-			if Parameterss[i].get('ParameterKey') is not None:
-				self.add_query_param('Parameters.' + str(i + 1) + '.ParameterKey' , Parameterss[i].get('ParameterKey'))
-
-
-	def get_StackPolicyBody(self):
-		return self.get_query_params().get('StackPolicyBody')
-
-	def set_StackPolicyBody(self,StackPolicyBody):
-		self.add_query_param('StackPolicyBody',StackPolicyBody)

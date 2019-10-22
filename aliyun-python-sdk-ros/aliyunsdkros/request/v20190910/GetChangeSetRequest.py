@@ -18,20 +18,26 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkros.endpoint import endpoint_data
 
 class GetChangeSetRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ROS', '2019-09-10', 'GetChangeSet','ROS')
+		RpcRequest.__init__(self, 'ROS', '2019-09-10', 'GetChangeSet')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ChangeSetId(self):
-		return self.get_query_params().get('ChangeSetId')
-
-	def set_ChangeSetId(self,ChangeSetId):
-		self.add_query_param('ChangeSetId',ChangeSetId)
 
 	def get_ShowTemplate(self):
 		return self.get_query_params().get('ShowTemplate')
 
 	def set_ShowTemplate(self,ShowTemplate):
 		self.add_query_param('ShowTemplate',ShowTemplate)
+
+	def get_ChangeSetId(self):
+		return self.get_query_params().get('ChangeSetId')
+
+	def set_ChangeSetId(self,ChangeSetId):
+		self.add_query_param('ChangeSetId',ChangeSetId)
