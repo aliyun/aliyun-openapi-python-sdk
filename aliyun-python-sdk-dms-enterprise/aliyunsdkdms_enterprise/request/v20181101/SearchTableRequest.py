@@ -30,6 +30,12 @@ class SearchTableRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_SearchTarget(self):
+		return self.get_query_params().get('SearchTarget')
+
+	def set_SearchTarget(self,SearchTarget):
+		self.add_query_param('SearchTarget',SearchTarget)
+
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
 
