@@ -19,10 +19,10 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class CreatePornBatchDetectJobRequest(RpcRequest):
+class DetectImageQRCodesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'imm', '2017-09-06', 'CreatePornBatchDetectJob','imm')
+		RpcRequest.__init__(self, 'imm', '2017-09-06', 'DetectImageQRCodes','imm')
 
 	def get_Project(self):
 		return self.get_query_params().get('Project')
@@ -30,32 +30,8 @@ class CreatePornBatchDetectJobRequest(RpcRequest):
 	def set_Project(self,Project):
 		self.add_query_param('Project',Project)
 
-	def get_ExternalID(self):
-		return self.get_query_params().get('ExternalID')
+	def get_ImageUri(self):
+		return self.get_query_params().get('ImageUri')
 
-	def set_ExternalID(self,ExternalID):
-		self.add_query_param('ExternalID',ExternalID)
-
-	def get_NotifyEndpoint(self):
-		return self.get_query_params().get('NotifyEndpoint')
-
-	def set_NotifyEndpoint(self,NotifyEndpoint):
-		self.add_query_param('NotifyEndpoint',NotifyEndpoint)
-
-	def get_NotifyTopicName(self):
-		return self.get_query_params().get('NotifyTopicName')
-
-	def set_NotifyTopicName(self,NotifyTopicName):
-		self.add_query_param('NotifyTopicName',NotifyTopicName)
-
-	def get_SrcUri(self):
-		return self.get_query_params().get('SrcUri')
-
-	def set_SrcUri(self,SrcUri):
-		self.add_query_param('SrcUri',SrcUri)
-
-	def get_TgtUri(self):
-		return self.get_query_params().get('TgtUri')
-
-	def set_TgtUri(self,TgtUri):
-		self.add_query_param('TgtUri',TgtUri)
+	def set_ImageUri(self,ImageUri):
+		self.add_query_param('ImageUri',ImageUri)
