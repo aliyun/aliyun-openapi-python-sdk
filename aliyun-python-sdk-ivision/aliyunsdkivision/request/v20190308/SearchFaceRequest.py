@@ -20,33 +20,33 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkivision.endpoint import endpoint_data
 
-class DescribeStreamPredictsRequest(RpcRequest):
+class SearchFaceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ivision', '2019-03-08', 'DescribeStreamPredicts','ivision')
+		RpcRequest.__init__(self, 'ivision', '2019-03-08', 'SearchFace','ivision')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_NextPageToken(self):
-		return self.get_query_params().get('NextPageToken')
+	def get_Content(self):
+		return self.get_query_params().get('Content')
 
-	def set_NextPageToken(self,NextPageToken):
-		self.add_query_param('NextPageToken',NextPageToken)
+	def set_Content(self,Content):
+		self.add_query_param('Content',Content)
 
-	def get_PredictIds(self):
-		return self.get_query_params().get('PredictIds')
+	def get_DataType(self):
+		return self.get_query_params().get('DataType')
 
-	def set_PredictIds(self,PredictIds):
-		self.add_query_param('PredictIds',PredictIds)
+	def set_DataType(self,DataType):
+		self.add_query_param('DataType',DataType)
 
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
+	def get_ProbabilityThreshold(self):
+		return self.get_query_params().get('ProbabilityThreshold')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
+	def set_ProbabilityThreshold(self,ProbabilityThreshold):
+		self.add_query_param('ProbabilityThreshold',ProbabilityThreshold)
 
 	def get_ShowLog(self):
 		return self.get_query_params().get('ShowLog')
@@ -54,11 +54,17 @@ class DescribeStreamPredictsRequest(RpcRequest):
 	def set_ShowLog(self,ShowLog):
 		self.add_query_param('ShowLog',ShowLog)
 
-	def get_CurrentPage(self):
-		return self.get_query_params().get('CurrentPage')
+	def get_GroupId(self):
+		return self.get_query_params().get('GroupId')
 
-	def set_CurrentPage(self,CurrentPage):
-		self.add_query_param('CurrentPage',CurrentPage)
+	def set_GroupId(self,GroupId):
+		self.add_query_param('GroupId',GroupId)
+
+	def get_Count(self):
+		return self.get_query_params().get('Count')
+
+	def set_Count(self,Count):
+		self.add_query_param('Count',Count)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')

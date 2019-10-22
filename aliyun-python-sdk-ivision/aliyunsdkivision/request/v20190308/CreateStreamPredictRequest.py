@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,10 +18,23 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkivision.endpoint import endpoint_data
+
 class CreateStreamPredictRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'ivision', '2019-03-08', 'CreateStreamPredict','ivision')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
+
+	def get_ClientToken(self):
+		return self.get_query_params().get('ClientToken')
+
+	def set_ClientToken(self,ClientToken):
+		self.add_query_param('ClientToken',ClientToken)
 
 	def get_AutoStart(self):
 		return self.get_query_params().get('AutoStart')
@@ -41,12 +54,6 @@ class CreateStreamPredictRequest(RpcRequest):
 	def set_Output(self,Output):
 		self.add_query_param('Output',Output)
 
-	def get_UserData(self):
-		return self.get_query_params().get('UserData')
-
-	def set_UserData(self,UserData):
-		self.add_query_param('UserData',UserData)
-
 	def get_ShowLog(self):
 		return self.get_query_params().get('ShowLog')
 
@@ -59,11 +66,23 @@ class CreateStreamPredictRequest(RpcRequest):
 	def set_StreamType(self,StreamType):
 		self.add_query_param('StreamType',StreamType)
 
+	def get_FaceGroupId(self):
+		return self.get_query_params().get('FaceGroupId')
+
+	def set_FaceGroupId(self,FaceGroupId):
+		self.add_query_param('FaceGroupId',FaceGroupId)
+
 	def get_StreamId(self):
 		return self.get_query_params().get('StreamId')
 
 	def set_StreamId(self,StreamId):
 		self.add_query_param('StreamId',StreamId)
+
+	def get_DetectIntervals(self):
+		return self.get_query_params().get('DetectIntervals')
+
+	def set_DetectIntervals(self,DetectIntervals):
+		self.add_query_param('DetectIntervals',DetectIntervals)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
@@ -82,3 +101,9 @@ class CreateStreamPredictRequest(RpcRequest):
 
 	def set_ModelIds(self,ModelIds):
 		self.add_query_param('ModelIds',ModelIds)
+
+	def get_ModelUserData(self):
+		return self.get_query_params().get('ModelUserData')
+
+	def set_ModelUserData(self,ModelUserData):
+		self.add_query_param('ModelUserData',ModelUserData)

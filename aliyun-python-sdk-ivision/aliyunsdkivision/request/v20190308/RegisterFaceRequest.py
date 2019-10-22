@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,22 +18,29 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class CreateTagRequest(RpcRequest):
+from aliyunsdkivision.endpoint import endpoint_data
+
+class RegisterFaceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ivision', '2019-03-08', 'CreateTag','ivision')
+		RpcRequest.__init__(self, 'ivision', '2019-03-08', 'RegisterFace','ivision')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_Description(self):
-		return self.get_query_params().get('Description')
 
-	def set_Description(self,Description):
-		self.add_query_param('Description',Description)
+	def get_Content(self):
+		return self.get_query_params().get('Content')
 
-	def get_ProjectId(self):
-		return self.get_query_params().get('ProjectId')
+	def set_Content(self,Content):
+		self.add_query_param('Content',Content)
 
-	def set_ProjectId(self,ProjectId):
-		self.add_query_param('ProjectId',ProjectId)
+	def get_DataType(self):
+		return self.get_query_params().get('DataType')
+
+	def set_DataType(self,DataType):
+		self.add_query_param('DataType',DataType)
 
 	def get_ShowLog(self):
 		return self.get_query_params().get('ShowLog')
@@ -41,14 +48,14 @@ class CreateTagRequest(RpcRequest):
 	def set_ShowLog(self,ShowLog):
 		self.add_query_param('ShowLog',ShowLog)
 
+	def get_GroupId(self):
+		return self.get_query_params().get('GroupId')
+
+	def set_GroupId(self,GroupId):
+		self.add_query_param('GroupId',GroupId)
+
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
-
-	def get_Name(self):
-		return self.get_query_params().get('Name')
-
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)

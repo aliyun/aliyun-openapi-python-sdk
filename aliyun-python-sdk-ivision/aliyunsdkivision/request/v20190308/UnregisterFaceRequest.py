@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,22 +18,17 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class DescribeProjectsRequest(RpcRequest):
+from aliyunsdkivision.endpoint import endpoint_data
+
+class UnregisterFaceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ivision', '2019-03-08', 'DescribeProjects','ivision')
+		RpcRequest.__init__(self, 'ivision', '2019-03-08', 'UnregisterFace','ivision')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_NextPageToken(self):
-		return self.get_query_params().get('NextPageToken')
-
-	def set_NextPageToken(self,NextPageToken):
-		self.add_query_param('NextPageToken',NextPageToken)
-
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
 
 	def get_ShowLog(self):
 		return self.get_query_params().get('ShowLog')
@@ -41,20 +36,20 @@ class DescribeProjectsRequest(RpcRequest):
 	def set_ShowLog(self,ShowLog):
 		self.add_query_param('ShowLog',ShowLog)
 
-	def get_CurrentPage(self):
-		return self.get_query_params().get('CurrentPage')
+	def get_GroupId(self):
+		return self.get_query_params().get('GroupId')
 
-	def set_CurrentPage(self,CurrentPage):
-		self.add_query_param('CurrentPage',CurrentPage)
-
-	def get_ProjectIds(self):
-		return self.get_query_params().get('ProjectIds')
-
-	def set_ProjectIds(self,ProjectIds):
-		self.add_query_param('ProjectIds',ProjectIds)
+	def set_GroupId(self,GroupId):
+		self.add_query_param('GroupId',GroupId)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_FaceToken(self):
+		return self.get_query_params().get('FaceToken')
+
+	def set_FaceToken(self,FaceToken):
+		self.add_query_param('FaceToken',FaceToken)
