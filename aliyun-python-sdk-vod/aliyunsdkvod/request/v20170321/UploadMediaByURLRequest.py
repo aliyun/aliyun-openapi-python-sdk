@@ -18,10 +18,17 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkvod.endpoint import endpoint_data
+
 class UploadMediaByURLRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'vod', '2017-03-21', 'UploadMediaByURL','vod')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -29,29 +36,11 @@ class UploadMediaByURLRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
-
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
 	def get_MessageCallback(self):
 		return self.get_query_params().get('MessageCallback')
 
 	def set_MessageCallback(self,MessageCallback):
 		self.add_query_param('MessageCallback',MessageCallback)
-
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_Priority(self):
-		return self.get_query_params().get('Priority')
-
-	def set_Priority(self,Priority):
-		self.add_query_param('Priority',Priority)
 
 	def get_StorageLocation(self):
 		return self.get_query_params().get('StorageLocation')
@@ -64,6 +53,30 @@ class UploadMediaByURLRequest(RpcRequest):
 
 	def set_UserData(self,UserData):
 		self.add_query_param('UserData',UserData)
+
+	def get_WorkflowId(self):
+		return self.get_query_params().get('WorkflowId')
+
+	def set_WorkflowId(self,WorkflowId):
+		self.add_query_param('WorkflowId',WorkflowId)
+
+	def get_ResourceOwnerAccount(self):
+		return self.get_query_params().get('ResourceOwnerAccount')
+
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
+
+	def get_Priority(self):
+		return self.get_query_params().get('Priority')
+
+	def set_Priority(self,Priority):
+		self.add_query_param('Priority',Priority)
 
 	def get_TemplateGroupId(self):
 		return self.get_query_params().get('TemplateGroupId')
@@ -88,9 +101,3 @@ class UploadMediaByURLRequest(RpcRequest):
 
 	def set_AppId(self,AppId):
 		self.add_query_param('AppId',AppId)
-
-	def get_WorkflowId(self):
-		return self.get_query_params().get('WorkflowId')
-
-	def set_WorkflowId(self,WorkflowId):
-		self.add_query_param('WorkflowId',WorkflowId)

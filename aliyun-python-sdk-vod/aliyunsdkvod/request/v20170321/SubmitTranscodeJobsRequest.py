@@ -18,16 +18,17 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkvod.endpoint import endpoint_data
+
 class SubmitTranscodeJobsRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'vod', '2017-03-21', 'SubmitTranscodeJobs','vod')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_UserData(self):
-		return self.get_query_params().get('UserData')
-
-	def set_UserData(self,UserData):
-		self.add_query_param('UserData',UserData)
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -35,11 +36,11 @@ class SubmitTranscodeJobsRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_TemplateGroupId(self):
-		return self.get_query_params().get('TemplateGroupId')
+	def get_UserData(self):
+		return self.get_query_params().get('UserData')
 
-	def set_TemplateGroupId(self,TemplateGroupId):
-		self.add_query_param('TemplateGroupId',TemplateGroupId)
+	def set_UserData(self,UserData):
+		self.add_query_param('UserData',UserData)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -71,14 +72,26 @@ class SubmitTranscodeJobsRequest(RpcRequest):
 	def set_Priority(self,Priority):
 		self.add_query_param('Priority',Priority)
 
-	def get_EncryptConfig(self):
-		return self.get_query_params().get('EncryptConfig')
-
-	def set_EncryptConfig(self,EncryptConfig):
-		self.add_query_param('EncryptConfig',EncryptConfig)
-
 	def get_PipelineId(self):
 		return self.get_query_params().get('PipelineId')
 
 	def set_PipelineId(self,PipelineId):
 		self.add_query_param('PipelineId',PipelineId)
+
+	def get_TemplateGroupId(self):
+		return self.get_query_params().get('TemplateGroupId')
+
+	def set_TemplateGroupId(self,TemplateGroupId):
+		self.add_query_param('TemplateGroupId',TemplateGroupId)
+
+	def get_FileUrl(self):
+		return self.get_query_params().get('FileUrl')
+
+	def set_FileUrl(self,FileUrl):
+		self.add_query_param('FileUrl',FileUrl)
+
+	def get_EncryptConfig(self):
+		return self.get_query_params().get('EncryptConfig')
+
+	def set_EncryptConfig(self,EncryptConfig):
+		self.add_query_param('EncryptConfig',EncryptConfig)

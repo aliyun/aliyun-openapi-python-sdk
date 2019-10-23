@@ -18,16 +18,17 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkvod.endpoint import endpoint_data
+
 class MoveAppResourceRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'vod', '2017-03-21', 'MoveAppResource','vod')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_TargetAppId(self):
-		return self.get_query_params().get('TargetAppId')
-
-	def set_TargetAppId(self,TargetAppId):
-		self.add_query_param('TargetAppId',TargetAppId)
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -35,17 +36,23 @@ class MoveAppResourceRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
-
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
 	def get_ResourceRealOwnerId(self):
 		return self.get_query_params().get('ResourceRealOwnerId')
 
 	def set_ResourceRealOwnerId(self,ResourceRealOwnerId):
 		self.add_query_param('ResourceRealOwnerId',ResourceRealOwnerId)
+
+	def get_TargetAppId(self):
+		return self.get_query_params().get('TargetAppId')
+
+	def set_TargetAppId(self,TargetAppId):
+		self.add_query_param('TargetAppId',TargetAppId)
+
+	def get_ResourceOwnerAccount(self):
+		return self.get_query_params().get('ResourceOwnerAccount')
+
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')

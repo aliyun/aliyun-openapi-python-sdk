@@ -18,16 +18,29 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkvod.endpoint import endpoint_data
+
 class SubmitAIMediaAuditJobRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'vod', '2017-03-21', 'SubmitAIMediaAuditJob','vod')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+
+	def get_UserData(self):
+		return self.get_query_params().get('UserData')
+
+	def set_UserData(self,UserData):
+		self.add_query_param('UserData',UserData)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -52,3 +65,9 @@ class SubmitAIMediaAuditJobRequest(RpcRequest):
 
 	def set_TemplateId(self,TemplateId):
 		self.add_query_param('TemplateId',TemplateId)
+
+	def get_MediaType(self):
+		return self.get_query_params().get('MediaType')
+
+	def set_MediaType(self,MediaType):
+		self.add_query_param('MediaType',MediaType)

@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkvod.endpoint import endpoint_data
 
-class DeleteMultipartUploadRequest(RpcRequest):
+class SubmitDynamicImageJobRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'vod', '2017-03-21', 'DeleteMultipartUpload','vod')
+		RpcRequest.__init__(self, 'vod', '2017-03-21', 'SubmitDynamicImageJob','vod')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -36,11 +36,11 @@ class DeleteMultipartUploadRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_ResourceRealOwnerId(self):
-		return self.get_query_params().get('ResourceRealOwnerId')
+	def get_DynamicImageTemplateId(self):
+		return self.get_query_params().get('DynamicImageTemplateId')
 
-	def set_ResourceRealOwnerId(self,ResourceRealOwnerId):
-		self.add_query_param('ResourceRealOwnerId',ResourceRealOwnerId)
+	def set_DynamicImageTemplateId(self,DynamicImageTemplateId):
+		self.add_query_param('DynamicImageTemplateId',DynamicImageTemplateId)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -48,26 +48,20 @@ class DeleteMultipartUploadRequest(RpcRequest):
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
-	def get_OwnerAccount(self):
-		return self.get_query_params().get('OwnerAccount')
+	def get_VideoId(self):
+		return self.get_query_params().get('VideoId')
 
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
+	def set_VideoId(self,VideoId):
+		self.add_query_param('VideoId',VideoId)
+
+	def get_OverrideParams(self):
+		return self.get_query_params().get('OverrideParams')
+
+	def set_OverrideParams(self,OverrideParams):
+		self.add_query_param('OverrideParams',OverrideParams)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
-
-	def get_MediaId(self):
-		return self.get_query_params().get('MediaId')
-
-	def set_MediaId(self,MediaId):
-		self.add_query_param('MediaId',MediaId)
-
-	def get_MediaType(self):
-		return self.get_query_params().get('MediaType')
-
-	def set_MediaType(self,MediaType):
-		self.add_query_param('MediaType',MediaType)

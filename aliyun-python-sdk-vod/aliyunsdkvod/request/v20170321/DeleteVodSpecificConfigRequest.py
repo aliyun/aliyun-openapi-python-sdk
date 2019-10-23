@@ -18,22 +18,17 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkvod.endpoint import endpoint_data
+
 class DeleteVodSpecificConfigRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'vod', '2017-03-21', 'DeleteVodSpecificConfig','vod')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_SecurityToken(self):
-		return self.get_query_params().get('SecurityToken')
-
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)
-
-	def get_ConfigId(self):
-		return self.get_query_params().get('ConfigId')
-
-	def set_ConfigId(self,ConfigId):
-		self.add_query_param('ConfigId',ConfigId)
 
 	def get_DomainName(self):
 		return self.get_query_params().get('DomainName')
@@ -46,3 +41,15 @@ class DeleteVodSpecificConfigRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_SecurityToken(self):
+		return self.get_query_params().get('SecurityToken')
+
+	def set_SecurityToken(self,SecurityToken):
+		self.add_query_param('SecurityToken',SecurityToken)
+
+	def get_ConfigId(self):
+		return self.get_query_params().get('ConfigId')
+
+	def set_ConfigId(self,ConfigId):
+		self.add_query_param('ConfigId',ConfigId)

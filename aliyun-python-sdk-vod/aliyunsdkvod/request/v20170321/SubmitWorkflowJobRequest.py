@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkvod.endpoint import endpoint_data
 
-class DeleteMultipartUploadRequest(RpcRequest):
+class SubmitWorkflowJobRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'vod', '2017-03-21', 'DeleteMultipartUpload','vod')
+		RpcRequest.__init__(self, 'vod', '2017-03-21', 'SubmitWorkflowJob','vod')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -36,23 +36,17 @@ class DeleteMultipartUploadRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_ResourceRealOwnerId(self):
-		return self.get_query_params().get('ResourceRealOwnerId')
+	def get_WorkflowId(self):
+		return self.get_query_params().get('WorkflowId')
 
-	def set_ResourceRealOwnerId(self,ResourceRealOwnerId):
-		self.add_query_param('ResourceRealOwnerId',ResourceRealOwnerId)
+	def set_WorkflowId(self,WorkflowId):
+		self.add_query_param('WorkflowId',WorkflowId)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_OwnerAccount(self):
-		return self.get_query_params().get('OwnerAccount')
-
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
@@ -66,8 +60,8 @@ class DeleteMultipartUploadRequest(RpcRequest):
 	def set_MediaId(self,MediaId):
 		self.add_query_param('MediaId',MediaId)
 
-	def get_MediaType(self):
-		return self.get_query_params().get('MediaType')
+	def get_FileUrl(self):
+		return self.get_query_params().get('FileUrl')
 
-	def set_MediaType(self,MediaType):
-		self.add_query_param('MediaType',MediaType)
+	def set_FileUrl(self,FileUrl):
+		self.add_query_param('FileUrl',FileUrl)

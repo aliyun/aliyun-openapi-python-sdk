@@ -18,16 +18,53 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkvod.endpoint import endpoint_data
+
 class SubmitSnapshotJobRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'vod', '2017-03-21', 'SubmitSnapshotJob','vod')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+
+	def get_UserData(self):
+		return self.get_query_params().get('UserData')
+
+	def set_UserData(self,UserData):
+		self.add_query_param('UserData',UserData)
+
+	def get_SpecifiedOffsetTime(self):
+		return self.get_query_params().get('SpecifiedOffsetTime')
+
+	def set_SpecifiedOffsetTime(self,SpecifiedOffsetTime):
+		self.add_query_param('SpecifiedOffsetTime',SpecifiedOffsetTime)
+
+	def get_SpriteSnapshotConfig(self):
+		return self.get_query_params().get('SpriteSnapshotConfig')
+
+	def set_SpriteSnapshotConfig(self,SpriteSnapshotConfig):
+		self.add_query_param('SpriteSnapshotConfig',SpriteSnapshotConfig)
+
+	def get_SnapshotTemplateId(self):
+		return self.get_query_params().get('SnapshotTemplateId')
+
+	def set_SnapshotTemplateId(self,SnapshotTemplateId):
+		self.add_query_param('SnapshotTemplateId',SnapshotTemplateId)
+
+	def get_Height(self):
+		return self.get_query_params().get('Height')
+
+	def set_Height(self,Height):
+		self.add_query_param('Height',Height)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -53,44 +90,20 @@ class SubmitSnapshotJobRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_UserData(self):
-		return self.get_query_params().get('UserData')
-
-	def set_UserData(self,UserData):
-		self.add_query_param('UserData',UserData)
-
-	def get_SpecifiedOffsetTime(self):
-		return self.get_query_params().get('SpecifiedOffsetTime')
-
-	def set_SpecifiedOffsetTime(self,SpecifiedOffsetTime):
-		self.add_query_param('SpecifiedOffsetTime',SpecifiedOffsetTime)
-
 	def get_Width(self):
 		return self.get_query_params().get('Width')
 
 	def set_Width(self,Width):
 		self.add_query_param('Width',Width)
 
+	def get_FileUrl(self):
+		return self.get_query_params().get('FileUrl')
+
+	def set_FileUrl(self,FileUrl):
+		self.add_query_param('FileUrl',FileUrl)
+
 	def get_Interval(self):
 		return self.get_query_params().get('Interval')
 
 	def set_Interval(self,Interval):
 		self.add_query_param('Interval',Interval)
-
-	def get_SpriteSnapshotConfig(self):
-		return self.get_query_params().get('SpriteSnapshotConfig')
-
-	def set_SpriteSnapshotConfig(self,SpriteSnapshotConfig):
-		self.add_query_param('SpriteSnapshotConfig',SpriteSnapshotConfig)
-
-	def get_SnapshotTemplateId(self):
-		return self.get_query_params().get('SnapshotTemplateId')
-
-	def set_SnapshotTemplateId(self,SnapshotTemplateId):
-		self.add_query_param('SnapshotTemplateId',SnapshotTemplateId)
-
-	def get_Height(self):
-		return self.get_query_params().get('Height')
-
-	def set_Height(self,Height):
-		self.add_query_param('Height',Height)

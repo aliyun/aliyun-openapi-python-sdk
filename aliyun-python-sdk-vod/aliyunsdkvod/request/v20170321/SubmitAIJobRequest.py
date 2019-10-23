@@ -18,28 +18,29 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkvod.endpoint import endpoint_data
+
 class SubmitAIJobRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'vod', '2017-03-21', 'SubmitAIJob','vod')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_UserData(self):
-		return self.get_query_params().get('UserData')
-
-	def set_UserData(self,UserData):
-		self.add_query_param('UserData',UserData)
-
-	def get_Input(self):
-		return self.get_query_params().get('Input')
-
-	def set_Input(self,Input):
-		self.add_query_param('Input',Input)
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+
+	def get_UserData(self):
+		return self.get_query_params().get('UserData')
+
+	def set_UserData(self,UserData):
+		self.add_query_param('UserData',UserData)
 
 	def get_Types(self):
 		return self.get_query_params().get('Types')
@@ -70,6 +71,12 @@ class SubmitAIJobRequest(RpcRequest):
 
 	def set_MediaId(self,MediaId):
 		self.add_query_param('MediaId',MediaId)
+
+	def get_Input(self):
+		return self.get_query_params().get('Input')
+
+	def set_Input(self,Input):
+		self.add_query_param('Input',Input)
 
 	def get_Config(self):
 		return self.get_query_params().get('Config')

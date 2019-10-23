@@ -18,16 +18,29 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkvod.endpoint import endpoint_data
+
 class SetEditingProjectMaterialsRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'vod', '2017-03-21', 'SetEditingProjectMaterials','vod')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+
+	def get_ProjectId(self):
+		return self.get_query_params().get('ProjectId')
+
+	def set_ProjectId(self,ProjectId):
+		self.add_query_param('ProjectId',ProjectId)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -41,20 +54,14 @@ class SetEditingProjectMaterialsRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
-	def get_MaterialIds(self):
-		return self.get_query_params().get('MaterialIds')
-
-	def set_MaterialIds(self,MaterialIds):
-		self.add_query_param('MaterialIds',MaterialIds)
-
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_ProjectId(self):
-		return self.get_query_params().get('ProjectId')
+	def get_MaterialIds(self):
+		return self.get_query_params().get('MaterialIds')
 
-	def set_ProjectId(self,ProjectId):
-		self.add_query_param('ProjectId',ProjectId)
+	def set_MaterialIds(self,MaterialIds):
+		self.add_query_param('MaterialIds',MaterialIds)

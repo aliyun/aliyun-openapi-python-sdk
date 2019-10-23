@@ -18,22 +18,29 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkvod.endpoint import endpoint_data
+
 class SetAuditSecurityIpRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'vod', '2017-03-21', 'SetAuditSecurityIp','vod')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_OperateMode(self):
-		return self.get_query_params().get('OperateMode')
-
-	def set_OperateMode(self,OperateMode):
-		self.add_query_param('OperateMode',OperateMode)
 
 	def get_SecurityGroupName(self):
 		return self.get_query_params().get('SecurityGroupName')
 
 	def set_SecurityGroupName(self,SecurityGroupName):
 		self.add_query_param('SecurityGroupName',SecurityGroupName)
+
+	def get_OperateMode(self):
+		return self.get_query_params().get('OperateMode')
+
+	def set_OperateMode(self,OperateMode):
+		self.add_query_param('OperateMode',OperateMode)
 
 	def get_Ips(self):
 		return self.get_query_params().get('Ips')

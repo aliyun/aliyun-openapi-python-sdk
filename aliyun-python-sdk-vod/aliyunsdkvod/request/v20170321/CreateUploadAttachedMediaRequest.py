@@ -18,28 +18,23 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkvod.endpoint import endpoint_data
+
 class CreateUploadAttachedMediaRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'vod', '2017-03-21', 'CreateUploadAttachedMedia','vod')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
-
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_CateIds(self):
-		return self.get_query_params().get('CateIds')
-
-	def set_CateIds(self,CateIds):
-		self.add_query_param('CateIds',CateIds)
 
 	def get_Icon(self):
 		return self.get_query_params().get('Icon')
@@ -59,12 +54,6 @@ class CreateUploadAttachedMediaRequest(RpcRequest):
 	def set_FileSize(self,FileSize):
 		self.add_query_param('FileSize',FileSize)
 
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
 	def get_Title(self):
 		return self.get_query_params().get('Title')
 
@@ -76,12 +65,6 @@ class CreateUploadAttachedMediaRequest(RpcRequest):
 
 	def set_BusinessType(self,BusinessType):
 		self.add_query_param('BusinessType',BusinessType)
-
-	def get_Tags(self):
-		return self.get_query_params().get('Tags')
-
-	def set_Tags(self,Tags):
-		self.add_query_param('Tags',Tags)
 
 	def get_StorageLocation(self):
 		return self.get_query_params().get('StorageLocation')
@@ -95,6 +78,36 @@ class CreateUploadAttachedMediaRequest(RpcRequest):
 	def set_UserData(self,UserData):
 		self.add_query_param('UserData',UserData)
 
+	def get_CateId(self):
+		return self.get_query_params().get('CateId')
+
+	def set_CateId(self,CateId):
+		self.add_query_param('CateId',CateId)
+
+	def get_ResourceOwnerAccount(self):
+		return self.get_query_params().get('ResourceOwnerAccount')
+
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+
+	def get_CateIds(self):
+		return self.get_query_params().get('CateIds')
+
+	def set_CateIds(self,CateIds):
+		self.add_query_param('CateIds',CateIds)
+
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
+
+	def get_Tags(self):
+		return self.get_query_params().get('Tags')
+
+	def set_Tags(self,Tags):
+		self.add_query_param('Tags',Tags)
+
 	def get_MediaExt(self):
 		return self.get_query_params().get('MediaExt')
 
@@ -106,12 +119,6 @@ class CreateUploadAttachedMediaRequest(RpcRequest):
 
 	def set_FileName(self,FileName):
 		self.add_query_param('FileName',FileName)
-
-	def get_CateId(self):
-		return self.get_query_params().get('CateId')
-
-	def set_CateId(self,CateId):
-		self.add_query_param('CateId',CateId)
 
 	def get_AppId(self):
 		return self.get_query_params().get('AppId')

@@ -18,10 +18,17 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkvod.endpoint import endpoint_data
+
 class UpdateTranscodeTemplateGroupRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'vod', '2017-03-21', 'UpdateTranscodeTemplateGroup','vod')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_TranscodeTemplateList(self):
 		return self.get_query_params().get('TranscodeTemplateList')
@@ -35,17 +42,17 @@ class UpdateTranscodeTemplateGroupRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_Locked(self):
+		return self.get_query_params().get('Locked')
+
+	def set_Locked(self,Locked):
+		self.add_query_param('Locked',Locked)
+
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_Name(self):
-		return self.get_query_params().get('Name')
-
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
@@ -53,14 +60,14 @@ class UpdateTranscodeTemplateGroupRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_Locked(self):
-		return self.get_query_params().get('Locked')
-
-	def set_Locked(self,Locked):
-		self.add_query_param('Locked',Locked)
-
 	def get_TranscodeTemplateGroupId(self):
 		return self.get_query_params().get('TranscodeTemplateGroupId')
 
 	def set_TranscodeTemplateGroupId(self,TranscodeTemplateGroupId):
 		self.add_query_param('TranscodeTemplateGroupId',TranscodeTemplateGroupId)
+
+	def get_Name(self):
+		return self.get_query_params().get('Name')
+
+	def set_Name(self,Name):
+		self.add_query_param('Name',Name)

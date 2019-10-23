@@ -18,16 +18,29 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkvod.endpoint import endpoint_data
+
 class DeleteImageRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'vod', '2017-03-21', 'DeleteImage','vod')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+
+	def get_ImageURLs(self):
+		return self.get_query_params().get('ImageURLs')
+
+	def set_ImageURLs(self,ImageURLs):
+		self.add_query_param('ImageURLs',ImageURLs)
 
 	def get_ImageType(self):
 		return self.get_query_params().get('ImageType')
@@ -40,12 +53,6 @@ class DeleteImageRequest(RpcRequest):
 
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_ImageURLs(self):
-		return self.get_query_params().get('ImageURLs')
-
-	def set_ImageURLs(self,ImageURLs):
-		self.add_query_param('ImageURLs',ImageURLs)
 
 	def get_VideoId(self):
 		return self.get_query_params().get('VideoId')

@@ -18,16 +18,17 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkvod.endpoint import endpoint_data
+
 class DeleteWatermarkRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'vod', '2017-03-21', 'DeleteWatermark','vod')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_WatermarkId(self):
-		return self.get_query_params().get('WatermarkId')
-
-	def set_WatermarkId(self,WatermarkId):
-		self.add_query_param('WatermarkId',WatermarkId)
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -46,3 +47,9 @@ class DeleteWatermarkRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_WatermarkId(self):
+		return self.get_query_params().get('WatermarkId')
+
+	def set_WatermarkId(self,WatermarkId):
+		self.add_query_param('WatermarkId',WatermarkId)

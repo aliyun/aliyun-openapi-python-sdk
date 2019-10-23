@@ -18,16 +18,17 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkvod.endpoint import endpoint_data
+
 class GetAuditHistoryRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'vod', '2017-03-21', 'GetAuditHistory','vod')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_PageNo(self):
-		return self.get_query_params().get('PageNo')
-
-	def set_PageNo(self,PageNo):
-		self.add_query_param('PageNo',PageNo)
 
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
@@ -40,6 +41,12 @@ class GetAuditHistoryRequest(RpcRequest):
 
 	def set_VideoId(self,VideoId):
 		self.add_query_param('VideoId',VideoId)
+
+	def get_PageNo(self):
+		return self.get_query_params().get('PageNo')
+
+	def set_PageNo(self,PageNo):
+		self.add_query_param('PageNo',PageNo)
 
 	def get_SortBy(self):
 		return self.get_query_params().get('SortBy')

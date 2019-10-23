@@ -18,10 +18,17 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkvod.endpoint import endpoint_data
+
 class GetVideoListRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'vod', '2017-03-21', 'GetVideoList','vod')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -29,11 +36,17 @@ class GetVideoListRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
+	def get_StartTime(self):
+		return self.get_query_params().get('StartTime')
 
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+	def set_StartTime(self,StartTime):
+		self.add_query_param('StartTime',StartTime)
+
+	def get_StorageLocation(self):
+		return self.get_query_params().get('StorageLocation')
+
+	def set_StorageLocation(self,StorageLocation):
+		self.add_query_param('StorageLocation',StorageLocation)
 
 	def get_CateId(self):
 		return self.get_query_params().get('CateId')
@@ -41,17 +54,17 @@ class GetVideoListRequest(RpcRequest):
 	def set_CateId(self,CateId):
 		self.add_query_param('CateId',CateId)
 
-	def get_PageNo(self):
-		return self.get_query_params().get('PageNo')
-
-	def set_PageNo(self,PageNo):
-		self.add_query_param('PageNo',PageNo)
-
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
 
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
+
+	def get_ResourceOwnerAccount(self):
+		return self.get_query_params().get('ResourceOwnerAccount')
+
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
 	def get_EndTime(self):
 		return self.get_query_params().get('EndTime')
@@ -59,32 +72,26 @@ class GetVideoListRequest(RpcRequest):
 	def set_EndTime(self,EndTime):
 		self.add_query_param('EndTime',EndTime)
 
-	def get_SortBy(self):
-		return self.get_query_params().get('SortBy')
-
-	def set_SortBy(self,SortBy):
-		self.add_query_param('SortBy',SortBy)
-
-	def get_StartTime(self):
-		return self.get_query_params().get('StartTime')
-
-	def set_StartTime(self,StartTime):
-		self.add_query_param('StartTime',StartTime)
-
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
+	def get_PageNo(self):
+		return self.get_query_params().get('PageNo')
+
+	def set_PageNo(self,PageNo):
+		self.add_query_param('PageNo',PageNo)
+
+	def get_SortBy(self):
+		return self.get_query_params().get('SortBy')
+
+	def set_SortBy(self,SortBy):
+		self.add_query_param('SortBy',SortBy)
+
 	def get_Status(self):
 		return self.get_query_params().get('Status')
 
 	def set_Status(self,Status):
 		self.add_query_param('Status',Status)
-
-	def get_StorageLocation(self):
-		return self.get_query_params().get('StorageLocation')
-
-	def set_StorageLocation(self,StorageLocation):
-		self.add_query_param('StorageLocation',StorageLocation)
