@@ -212,6 +212,18 @@ class InsertK8sApplicationRequest(RoaRequest):
 	def set_JDK(self,JDK):
 		self.add_query_param('JDK',JDK)
 
+	def get_UseBodyEncoding(self):
+		return self.get_query_params().get('UseBodyEncoding')
+
+	def set_UseBodyEncoding(self,UseBodyEncoding):
+		self.add_query_param('UseBodyEncoding',UseBodyEncoding)
+
+	def get_UriEncoding(self):
+		return self.get_query_params().get('UriEncoding')
+
+	def set_UriEncoding(self,UriEncoding):
+		self.add_query_param('UriEncoding',UriEncoding)
+
 	def get_IntranetSlbProtocol(self):
 		return self.get_query_params().get('IntranetSlbProtocol')
 
