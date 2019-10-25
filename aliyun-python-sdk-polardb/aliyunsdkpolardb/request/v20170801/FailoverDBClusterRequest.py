@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkpolardb.endpoint import endpoint_data
 
-class ContinueDBClusterMigrationRequest(RpcRequest):
+class FailoverDBClusterRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'polardb', '2017-08-01', 'ContinueDBClusterMigration','polardb')
+		RpcRequest.__init__(self, 'polardb', '2017-08-01', 'FailoverDBCluster','polardb')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -36,11 +36,11 @@ class ContinueDBClusterMigrationRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_SecurityToken(self):
-		return self.get_query_params().get('SecurityToken')
+	def get_ClientToken(self):
+		return self.get_query_params().get('ClientToken')
 
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)
+	def set_ClientToken(self,ClientToken):
+		self.add_query_param('ClientToken',ClientToken)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -65,3 +65,9 @@ class ContinueDBClusterMigrationRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_TargetDBNodeId(self):
+		return self.get_query_params().get('TargetDBNodeId')
+
+	def set_TargetDBNodeId(self,TargetDBNodeId):
+		self.add_query_param('TargetDBNodeId',TargetDBNodeId)

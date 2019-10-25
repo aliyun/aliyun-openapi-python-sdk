@@ -78,11 +78,23 @@ class CreateDatabaseRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
+	def get_Collate(self):
+		return self.get_query_params().get('Collate')
+
+	def set_Collate(self,Collate):
+		self.add_query_param('Collate',Collate)
+
 	def get_DBName(self):
 		return self.get_query_params().get('DBName')
 
 	def set_DBName(self,DBName):
 		self.add_query_param('DBName',DBName)
+
+	def get_Ctype(self):
+		return self.get_query_params().get('Ctype')
+
+	def set_Ctype(self,Ctype):
+		self.add_query_param('Ctype',Ctype)
 
 	def get_CharacterSetName(self):
 		return self.get_query_params().get('CharacterSetName')

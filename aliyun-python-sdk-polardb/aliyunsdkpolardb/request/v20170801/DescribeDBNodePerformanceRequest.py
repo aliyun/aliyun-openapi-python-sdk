@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkpolardb.endpoint import endpoint_data
 
-class LockDBClusterDeletionRequest(RpcRequest):
+class DescribeDBNodePerformanceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'polardb', '2017-08-01', 'LockDBClusterDeletion','polardb')
+		RpcRequest.__init__(self, 'polardb', '2017-08-01', 'DescribeDBNodePerformance','polardb')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -36,17 +36,29 @@ class LockDBClusterDeletionRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_DBNodeId(self):
+		return self.get_query_params().get('DBNodeId')
+
+	def set_DBNodeId(self,DBNodeId):
+		self.add_query_param('DBNodeId',DBNodeId)
+
+	def get_StartTime(self):
+		return self.get_query_params().get('StartTime')
+
+	def set_StartTime(self,StartTime):
+		self.add_query_param('StartTime',StartTime)
+
+	def get_Key(self):
+		return self.get_query_params().get('Key')
+
+	def set_Key(self,Key):
+		self.add_query_param('Key',Key)
+
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_DBClusterId(self):
-		return self.get_query_params().get('DBClusterId')
-
-	def set_DBClusterId(self,DBClusterId):
-		self.add_query_param('DBClusterId',DBClusterId)
 
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
@@ -54,8 +66,20 @@ class LockDBClusterDeletionRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
+	def get_EndTime(self):
+		return self.get_query_params().get('EndTime')
+
+	def set_EndTime(self,EndTime):
+		self.add_query_param('EndTime',EndTime)
+
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_Metric(self):
+		return self.get_query_params().get('Metric')
+
+	def set_Metric(self,Metric):
+		self.add_query_param('Metric',Metric)
