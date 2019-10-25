@@ -20,21 +20,51 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkpush.endpoint import endpoint_data
 
-class ContinuouslyPushRequest(RpcRequest):
+class QueryPushRecordsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Push', '2016-08-01', 'ContinuouslyPush','cps')
+		RpcRequest.__init__(self, 'Push', '2016-08-01', 'QueryPushRecords','cps')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_MessageId(self):
-		return self.get_query_params().get('MessageId')
+	def get_StartTime(self):
+		return self.get_query_params().get('StartTime')
 
-	def set_MessageId(self,MessageId):
-		self.add_query_param('MessageId',MessageId)
+	def set_StartTime(self,StartTime):
+		self.add_query_param('StartTime',StartTime)
+
+	def get_Source(self):
+		return self.get_query_params().get('Source')
+
+	def set_Source(self,Source):
+		self.add_query_param('Source',Source)
+
+	def get_NextToken(self):
+		return self.get_query_params().get('NextToken')
+
+	def set_NextToken(self,NextToken):
+		self.add_query_param('NextToken',NextToken)
+
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
+
+	def get_Keyword(self):
+		return self.get_query_params().get('Keyword')
+
+	def set_Keyword(self,Keyword):
+		self.add_query_param('Keyword',Keyword)
+
+	def get_EndTime(self):
+		return self.get_query_params().get('EndTime')
+
+	def set_EndTime(self,EndTime):
+		self.add_query_param('EndTime',EndTime)
 
 	def get_Target(self):
 		return self.get_query_params().get('Target')
@@ -48,8 +78,8 @@ class ContinuouslyPushRequest(RpcRequest):
 	def set_AppKey(self,AppKey):
 		self.add_query_param('AppKey',AppKey)
 
-	def get_TargetValue(self):
-		return self.get_query_params().get('TargetValue')
+	def get_PushType(self):
+		return self.get_query_params().get('PushType')
 
-	def set_TargetValue(self,TargetValue):
-		self.add_query_param('TargetValue',TargetValue)
+	def set_PushType(self,PushType):
+		self.add_query_param('PushType',PushType)

@@ -23,7 +23,7 @@ from aliyunsdkpush.endpoint import endpoint_data
 class QueryPushListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Push', '2016-08-01', 'QueryPushList')
+		RpcRequest.__init__(self, 'Push', '2016-08-01', 'QueryPushList','cps')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
