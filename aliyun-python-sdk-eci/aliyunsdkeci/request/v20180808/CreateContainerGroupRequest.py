@@ -420,3 +420,34 @@ class CreateContainerGroupRequest(RpcRequest):
 
 	def set_ClientToken(self, ClientToken):
 		self.add_query_param('ClientToken', ClientToken)
+
+	def get_ImageSnapshotId(self):
+		return self.get_query_params().get('ImageSnapshotId')
+
+	def set_ImageSnapshotId(self, ImageSnapshotId):
+		self.add_query_param('ImageSnapshotId', ImageSnapshotId)
+
+	def get_AutoMatchImageCache(self):
+		return self.get_query_params().get('AutoMatchImageCache')
+
+	def set_AutoMatchImageCache(self, AutoMatchImageCache):
+		self.add_query_param('AutoMatchImageCache', AutoMatchImageCache)
+
+	def get_SlsEnable(self):
+		return self.get_query_params().get('SlsEnable')
+
+	def set_SlsEnable(self, SlsEnable):
+		self.add_query_param('SlsEnable', SlsEnable)
+
+	def get_Cpu(self):
+		return self.get_query_params().get('Cpu')
+
+	def set_Cpu(self, Cpu):
+		self.add_query_param('Cpu', Cpu)
+
+	def get_Memory(self):
+		return self.get_query_params().get('Memory')
+
+	def set_Memory(self, Memory):
+		self.add_query_param('Memory', Memory)
+
