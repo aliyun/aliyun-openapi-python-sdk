@@ -20,36 +20,36 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkbssopenapi.endpoint import endpoint_data
 
-class SetResellerUserQuotaRequest(RpcRequest):
+class QueryAccountBillRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'SetResellerUserQuota')
+		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'QueryAccountBill')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_Amount(self):
-		return self.get_query_params().get('Amount')
+	def get_BillingCycle(self):
+		return self.get_query_params().get('BillingCycle')
 
-	def set_Amount(self,Amount):
-		self.add_query_param('Amount',Amount)
+	def set_BillingCycle(self,BillingCycle):
+		self.add_query_param('BillingCycle',BillingCycle)
 
-	def get_OutBizId(self):
-		return self.get_query_params().get('OutBizId')
+	def get_PageNum(self):
+		return self.get_query_params().get('PageNum')
 
-	def set_OutBizId(self,OutBizId):
-		self.add_query_param('OutBizId',OutBizId)
+	def set_PageNum(self,PageNum):
+		self.add_query_param('PageNum',PageNum)
 
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
+	def get_OwnerID(self):
+		return self.get_query_params().get('OwnerID')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
+	def set_OwnerID(self,OwnerID):
+		self.add_query_param('OwnerID',OwnerID)
 
-	def get_Currency(self):
-		return self.get_query_params().get('Currency')
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
 
-	def set_Currency(self,Currency):
-		self.add_query_param('Currency',Currency)
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
