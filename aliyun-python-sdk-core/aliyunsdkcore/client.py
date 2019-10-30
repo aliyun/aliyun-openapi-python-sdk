@@ -262,6 +262,9 @@ class AcsClient:
 
         header['x-sdk-client'] = 'python/2.0.0'
 
+        if request.get_style() == 'RPC' and "Content-Type" not in header:
+            header["Content-Type"] = format_type.APPLICATION_FORM
+
         protocol = request.get_protocol_type()
         response = HttpResponse(
             endpoint,
