@@ -30,6 +30,12 @@ class DescribeFaceUsageRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_StartDate(self):
+		return self.get_query_params().get('StartDate')
+
+	def set_StartDate(self,StartDate):
+		self.add_query_param('StartDate',StartDate)
+
 	def get_EndDate(self):
 		return self.get_query_params().get('EndDate')
 
@@ -41,9 +47,3 @@ class DescribeFaceUsageRequest(RpcRequest):
 
 	def set_SourceIp(self,SourceIp):
 		self.add_query_param('SourceIp',SourceIp)
-
-	def get_StartDate(self):
-		return self.get_query_params().get('StartDate')
-
-	def set_StartDate(self,StartDate):
-		self.add_query_param('StartDate',StartDate)

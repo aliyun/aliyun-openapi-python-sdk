@@ -44,26 +44,26 @@ class CompareFacesRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_SourceIp(self):
-		return self.get_query_params().get('SourceIp')
-
-	def set_SourceIp(self,SourceIp):
-		self.add_query_param('SourceIp',SourceIp)
-
 	def get_TargetImageType(self):
 		return self.get_body_params().get('TargetImageType')
 
 	def set_TargetImageType(self,TargetImageType):
 		self.add_body_params('TargetImageType', TargetImageType)
 
-	def get_SourceImageValue(self):
-		return self.get_body_params().get('SourceImageValue')
-
-	def set_SourceImageValue(self,SourceImageValue):
-		self.add_body_params('SourceImageValue', SourceImageValue)
-
 	def get_TargetImageValue(self):
 		return self.get_body_params().get('TargetImageValue')
 
 	def set_TargetImageValue(self,TargetImageValue):
 		self.add_body_params('TargetImageValue', TargetImageValue)
+
+	def get_SourceIp(self):
+		return self.get_query_params().get('SourceIp')
+
+	def set_SourceIp(self,SourceIp):
+		self.add_query_param('SourceIp',SourceIp)
+
+	def get_SourceImageValue(self):
+		return self.get_body_params().get('SourceImageValue')
+
+	def set_SourceImageValue(self,SourceImageValue):
+		self.add_body_params('SourceImageValue', SourceImageValue)

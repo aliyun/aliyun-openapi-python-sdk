@@ -30,35 +30,17 @@ class DescribeVerifyRecordsRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_BizType(self):
-		return self.get_query_params().get('BizType')
-
-	def set_BizType(self,BizType):
-		self.add_query_param('BizType',BizType)
-
-	def get_IdCardNum(self):
-		return self.get_query_params().get('IdCardNum')
-
-	def set_IdCardNum(self,IdCardNum):
-		self.add_query_param('IdCardNum',IdCardNum)
-
-	def get_TotalCount(self):
-		return self.get_query_params().get('TotalCount')
-
-	def set_TotalCount(self,TotalCount):
-		self.add_query_param('TotalCount',TotalCount)
-
-	def get_EndDate(self):
-		return self.get_query_params().get('EndDate')
-
-	def set_EndDate(self,EndDate):
-		self.add_query_param('EndDate',EndDate)
-
 	def get_StatusList(self):
 		return self.get_query_params().get('StatusList')
 
 	def set_StatusList(self,StatusList):
 		self.add_query_param('StatusList',StatusList)
+
+	def get_StartDate(self):
+		return self.get_query_params().get('StartDate')
+
+	def set_StartDate(self,StartDate):
+		self.add_query_param('StartDate',StartDate)
 
 	def get_SourceIp(self):
 		return self.get_query_params().get('SourceIp')
@@ -72,11 +54,11 @@ class DescribeVerifyRecordsRequest(RpcRequest):
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
 
-	def get_BizId(self):
-		return self.get_query_params().get('BizId')
+	def get_TotalCount(self):
+		return self.get_query_params().get('TotalCount')
 
-	def set_BizId(self,BizId):
-		self.add_query_param('BizId',BizId)
+	def set_TotalCount(self,TotalCount):
+		self.add_query_param('TotalCount',TotalCount)
 
 	def get_CurrentPage(self):
 		return self.get_query_params().get('CurrentPage')
@@ -84,14 +66,32 @@ class DescribeVerifyRecordsRequest(RpcRequest):
 	def set_CurrentPage(self,CurrentPage):
 		self.add_query_param('CurrentPage',CurrentPage)
 
-	def get_StartDate(self):
-		return self.get_query_params().get('StartDate')
-
-	def set_StartDate(self,StartDate):
-		self.add_query_param('StartDate',StartDate)
-
 	def get_QueryId(self):
 		return self.get_query_params().get('QueryId')
 
 	def set_QueryId(self,QueryId):
 		self.add_query_param('QueryId',QueryId)
+
+	def get_BizType(self):
+		return self.get_query_params().get('BizType')
+
+	def set_BizType(self,BizType):
+		self.add_query_param('BizType',BizType)
+
+	def get_IdCardNum(self):
+		return self.get_query_params().get('IdCardNum')
+
+	def set_IdCardNum(self,IdCardNum):
+		self.add_query_param('IdCardNum',IdCardNum)
+
+	def get_EndDate(self):
+		return self.get_query_params().get('EndDate')
+
+	def set_EndDate(self,EndDate):
+		self.add_query_param('EndDate',EndDate)
+
+	def get_BizId(self):
+		return self.get_query_params().get('BizId')
+
+	def set_BizId(self,BizId):
+		self.add_query_param('BizId',BizId)

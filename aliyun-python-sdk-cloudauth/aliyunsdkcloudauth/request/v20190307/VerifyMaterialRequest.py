@@ -30,11 +30,29 @@ class VerifyMaterialRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_BizType(self):
-		return self.get_query_params().get('BizType')
+	def get_FaceImageUrl(self):
+		return self.get_query_params().get('FaceImageUrl')
 
-	def set_BizType(self,BizType):
-		self.add_query_param('BizType',BizType)
+	def set_FaceImageUrl(self,FaceImageUrl):
+		self.add_query_param('FaceImageUrl',FaceImageUrl)
+
+	def get_UserId(self):
+		return self.get_query_params().get('UserId')
+
+	def set_UserId(self,UserId):
+		self.add_query_param('UserId',UserId)
+
+	def get_SourceIp(self):
+		return self.get_query_params().get('SourceIp')
+
+	def set_SourceIp(self,SourceIp):
+		self.add_query_param('SourceIp',SourceIp)
+
+	def get_IdCardBackImageUrl(self):
+		return self.get_query_params().get('IdCardBackImageUrl')
+
+	def set_IdCardBackImageUrl(self,IdCardBackImageUrl):
+		self.add_query_param('IdCardBackImageUrl',IdCardBackImageUrl)
 
 	def get_IdCardNumber(self):
 		return self.get_query_params().get('IdCardNumber')
@@ -42,11 +60,17 @@ class VerifyMaterialRequest(RpcRequest):
 	def set_IdCardNumber(self,IdCardNumber):
 		self.add_query_param('IdCardNumber',IdCardNumber)
 
-	def get_SourceIp(self):
-		return self.get_query_params().get('SourceIp')
+	def get_IdCardFrontImageUrl(self):
+		return self.get_query_params().get('IdCardFrontImageUrl')
 
-	def set_SourceIp(self,SourceIp):
-		self.add_query_param('SourceIp',SourceIp)
+	def set_IdCardFrontImageUrl(self,IdCardFrontImageUrl):
+		self.add_query_param('IdCardFrontImageUrl',IdCardFrontImageUrl)
+
+	def get_BizType(self):
+		return self.get_query_params().get('BizType')
+
+	def set_BizType(self,BizType):
+		self.add_query_param('BizType',BizType)
 
 	def get_BizId(self):
 		return self.get_query_params().get('BizId')
@@ -59,27 +83,3 @@ class VerifyMaterialRequest(RpcRequest):
 
 	def set_Name(self,Name):
 		self.add_query_param('Name',Name)
-
-	def get_IdCardFrontImageUrl(self):
-		return self.get_query_params().get('IdCardFrontImageUrl')
-
-	def set_IdCardFrontImageUrl(self,IdCardFrontImageUrl):
-		self.add_query_param('IdCardFrontImageUrl',IdCardFrontImageUrl)
-
-	def get_IdCardBackImageUrl(self):
-		return self.get_query_params().get('IdCardBackImageUrl')
-
-	def set_IdCardBackImageUrl(self,IdCardBackImageUrl):
-		self.add_query_param('IdCardBackImageUrl',IdCardBackImageUrl)
-
-	def get_FaceImageUrl(self):
-		return self.get_query_params().get('FaceImageUrl')
-
-	def set_FaceImageUrl(self,FaceImageUrl):
-		self.add_query_param('FaceImageUrl',FaceImageUrl)
-
-	def get_UserId(self):
-		return self.get_query_params().get('UserId')
-
-	def set_UserId(self,UserId):
-		self.add_query_param('UserId',UserId)

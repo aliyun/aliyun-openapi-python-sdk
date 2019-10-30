@@ -30,11 +30,11 @@ class CreateVerifySettingRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_BizType(self):
-		return self.get_query_params().get('BizType')
+	def get_GuideStep(self):
+		return self.get_query_params().get('GuideStep')
 
-	def set_BizType(self,BizType):
-		self.add_query_param('BizType',BizType)
+	def set_GuideStep(self,GuideStep):
+		self.add_query_param('GuideStep',GuideStep)
 
 	def get_ResultStep(self):
 		return self.get_query_params().get('ResultStep')
@@ -42,17 +42,17 @@ class CreateVerifySettingRequest(RpcRequest):
 	def set_ResultStep(self,ResultStep):
 		self.add_query_param('ResultStep',ResultStep)
 
-	def get_GuideStep(self):
-		return self.get_query_params().get('GuideStep')
-
-	def set_GuideStep(self,GuideStep):
-		self.add_query_param('GuideStep',GuideStep)
-
 	def get_SourceIp(self):
 		return self.get_query_params().get('SourceIp')
 
 	def set_SourceIp(self,SourceIp):
 		self.add_query_param('SourceIp',SourceIp)
+
+	def get_Solution(self):
+		return self.get_query_params().get('Solution')
+
+	def set_Solution(self,Solution):
+		self.add_query_param('Solution',Solution)
 
 	def get_BizName(self):
 		return self.get_query_params().get('BizName')
@@ -60,11 +60,11 @@ class CreateVerifySettingRequest(RpcRequest):
 	def set_BizName(self,BizName):
 		self.add_query_param('BizName',BizName)
 
-	def get_Solution(self):
-		return self.get_query_params().get('Solution')
+	def get_BizType(self):
+		return self.get_query_params().get('BizType')
 
-	def set_Solution(self,Solution):
-		self.add_query_param('Solution',Solution)
+	def set_BizType(self,BizType):
+		self.add_query_param('BizType',BizType)
 
 	def get_PrivacyStep(self):
 		return self.get_query_params().get('PrivacyStep')

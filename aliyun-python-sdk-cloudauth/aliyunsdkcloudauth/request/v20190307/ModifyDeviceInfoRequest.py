@@ -36,12 +36,6 @@ class ModifyDeviceInfoRequest(RpcRequest):
 	def set_UserDeviceId(self,UserDeviceId):
 		self.add_query_param('UserDeviceId',UserDeviceId)
 
-	def get_BizType(self):
-		return self.get_query_params().get('BizType')
-
-	def set_BizType(self,BizType):
-		self.add_query_param('BizType',BizType)
-
 	def get_Duration(self):
 		return self.get_query_params().get('Duration')
 
@@ -71,3 +65,9 @@ class ModifyDeviceInfoRequest(RpcRequest):
 
 	def set_DeviceId(self,DeviceId):
 		self.add_query_param('DeviceId',DeviceId)
+
+	def get_BizType(self):
+		return self.get_query_params().get('BizType')
+
+	def set_BizType(self,BizType):
+		self.add_query_param('BizType',BizType)

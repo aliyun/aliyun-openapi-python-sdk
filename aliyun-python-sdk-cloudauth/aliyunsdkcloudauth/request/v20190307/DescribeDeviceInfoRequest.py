@@ -30,23 +30,11 @@ class DescribeDeviceInfoRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_BizType(self):
-		return self.get_query_params().get('BizType')
-
-	def set_BizType(self,BizType):
-		self.add_query_param('BizType',BizType)
-
 	def get_UserDeviceId(self):
 		return self.get_query_params().get('UserDeviceId')
 
 	def set_UserDeviceId(self,UserDeviceId):
 		self.add_query_param('UserDeviceId',UserDeviceId)
-
-	def get_TotalCount(self):
-		return self.get_query_params().get('TotalCount')
-
-	def set_TotalCount(self,TotalCount):
-		self.add_query_param('TotalCount',TotalCount)
 
 	def get_SourceIp(self):
 		return self.get_query_params().get('SourceIp')
@@ -60,23 +48,29 @@ class DescribeDeviceInfoRequest(RpcRequest):
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
 
-	def get_CurrentPage(self):
-		return self.get_query_params().get('CurrentPage')
-
-	def set_CurrentPage(self,CurrentPage):
-		self.add_query_param('CurrentPage',CurrentPage)
-
 	def get_Lang(self):
 		return self.get_query_params().get('Lang')
 
 	def set_Lang(self,Lang):
 		self.add_query_param('Lang',Lang)
 
-	def get_ExpiredEndDay(self):
-		return self.get_query_params().get('ExpiredEndDay')
+	def get_ExpiredStartDay(self):
+		return self.get_query_params().get('ExpiredStartDay')
 
-	def set_ExpiredEndDay(self,ExpiredEndDay):
-		self.add_query_param('ExpiredEndDay',ExpiredEndDay)
+	def set_ExpiredStartDay(self,ExpiredStartDay):
+		self.add_query_param('ExpiredStartDay',ExpiredStartDay)
+
+	def get_TotalCount(self):
+		return self.get_query_params().get('TotalCount')
+
+	def set_TotalCount(self,TotalCount):
+		self.add_query_param('TotalCount',TotalCount)
+
+	def get_CurrentPage(self):
+		return self.get_query_params().get('CurrentPage')
+
+	def set_CurrentPage(self,CurrentPage):
+		self.add_query_param('CurrentPage',CurrentPage)
 
 	def get_DeviceId(self):
 		return self.get_query_params().get('DeviceId')
@@ -84,8 +78,14 @@ class DescribeDeviceInfoRequest(RpcRequest):
 	def set_DeviceId(self,DeviceId):
 		self.add_query_param('DeviceId',DeviceId)
 
-	def get_ExpiredStartDay(self):
-		return self.get_query_params().get('ExpiredStartDay')
+	def get_BizType(self):
+		return self.get_query_params().get('BizType')
 
-	def set_ExpiredStartDay(self,ExpiredStartDay):
-		self.add_query_param('ExpiredStartDay',ExpiredStartDay)
+	def set_BizType(self,BizType):
+		self.add_query_param('BizType',BizType)
+
+	def get_ExpiredEndDay(self):
+		return self.get_query_params().get('ExpiredEndDay')
+
+	def set_ExpiredEndDay(self,ExpiredEndDay):
+		self.add_query_param('ExpiredEndDay',ExpiredEndDay)

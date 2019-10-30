@@ -30,26 +30,26 @@ class CreateVerifySDKRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_SourceIp(self):
-		return self.get_query_params().get('SourceIp')
-
-	def set_SourceIp(self,SourceIp):
-		self.add_query_param('SourceIp',SourceIp)
-
 	def get_AppUrl(self):
 		return self.get_query_params().get('AppUrl')
 
 	def set_AppUrl(self,AppUrl):
 		self.add_query_param('AppUrl',AppUrl)
 
-	def get_Lang(self):
-		return self.get_query_params().get('Lang')
-
-	def set_Lang(self,Lang):
-		self.add_query_param('Lang',Lang)
-
 	def get_Platform(self):
 		return self.get_query_params().get('Platform')
 
 	def set_Platform(self,Platform):
 		self.add_query_param('Platform',Platform)
+
+	def get_SourceIp(self):
+		return self.get_query_params().get('SourceIp')
+
+	def set_SourceIp(self,SourceIp):
+		self.add_query_param('SourceIp',SourceIp)
+
+	def get_Lang(self):
+		return self.get_query_params().get('Lang')
+
+	def set_Lang(self,Lang):
+		self.add_query_param('Lang',Lang)

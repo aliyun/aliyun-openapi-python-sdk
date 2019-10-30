@@ -30,18 +30,6 @@ class DescribeVerifyTokenRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_IdCardNumber(self):
-		return self.get_query_params().get('IdCardNumber')
-
-	def set_IdCardNumber(self,IdCardNumber):
-		self.add_query_param('IdCardNumber',IdCardNumber)
-
-	def get_IdCardFrontImageUrl(self):
-		return self.get_query_params().get('IdCardFrontImageUrl')
-
-	def set_IdCardFrontImageUrl(self,IdCardFrontImageUrl):
-		self.add_query_param('IdCardFrontImageUrl',IdCardFrontImageUrl)
-
 	def get_FaceRetainedImageUrl(self):
 		return self.get_query_params().get('FaceRetainedImageUrl')
 
@@ -53,24 +41,6 @@ class DescribeVerifyTokenRequest(RpcRequest):
 
 	def set_UserId(self,UserId):
 		self.add_query_param('UserId',UserId)
-
-	def get_BizType(self):
-		return self.get_query_params().get('BizType')
-
-	def set_BizType(self,BizType):
-		self.add_query_param('BizType',BizType)
-
-	def get_IdImageUrl(self):
-		return self.get_query_params().get('IdImageUrl')
-
-	def set_IdImageUrl(self,IdImageUrl):
-		self.add_query_param('IdImageUrl',IdImageUrl)
-
-	def get_PassedRedirectUrl(self):
-		return self.get_query_params().get('PassedRedirectUrl')
-
-	def set_PassedRedirectUrl(self,PassedRedirectUrl):
-		self.add_query_param('PassedRedirectUrl',PassedRedirectUrl)
 
 	def get_SourceIp(self):
 		return self.get_query_params().get('SourceIp')
@@ -84,6 +54,36 @@ class DescribeVerifyTokenRequest(RpcRequest):
 	def set_CallbackSeed(self,CallbackSeed):
 		self.add_query_param('CallbackSeed',CallbackSeed)
 
+	def get_IdCardBackImageUrl(self):
+		return self.get_query_params().get('IdCardBackImageUrl')
+
+	def set_IdCardBackImageUrl(self,IdCardBackImageUrl):
+		self.add_query_param('IdCardBackImageUrl',IdCardBackImageUrl)
+
+	def get_IdCardNumber(self):
+		return self.get_query_params().get('IdCardNumber')
+
+	def set_IdCardNumber(self,IdCardNumber):
+		self.add_query_param('IdCardNumber',IdCardNumber)
+
+	def get_IdCardFrontImageUrl(self):
+		return self.get_query_params().get('IdCardFrontImageUrl')
+
+	def set_IdCardFrontImageUrl(self,IdCardFrontImageUrl):
+		self.add_query_param('IdCardFrontImageUrl',IdCardFrontImageUrl)
+
+	def get_BizType(self):
+		return self.get_query_params().get('BizType')
+
+	def set_BizType(self,BizType):
+		self.add_query_param('BizType',BizType)
+
+	def get_PassedRedirectUrl(self):
+		return self.get_query_params().get('PassedRedirectUrl')
+
+	def set_PassedRedirectUrl(self,PassedRedirectUrl):
+		self.add_query_param('PassedRedirectUrl',PassedRedirectUrl)
+
 	def get_BizId(self):
 		return self.get_query_params().get('BizId')
 
@@ -95,12 +95,6 @@ class DescribeVerifyTokenRequest(RpcRequest):
 
 	def set_Name(self,Name):
 		self.add_query_param('Name',Name)
-
-	def get_IdCardBackImageUrl(self):
-		return self.get_query_params().get('IdCardBackImageUrl')
-
-	def set_IdCardBackImageUrl(self,IdCardBackImageUrl):
-		self.add_query_param('IdCardBackImageUrl',IdCardBackImageUrl)
 
 	def get_CallbackUrl(self):
 		return self.get_query_params().get('CallbackUrl')

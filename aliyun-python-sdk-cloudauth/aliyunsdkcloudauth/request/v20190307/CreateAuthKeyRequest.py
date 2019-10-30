@@ -30,29 +30,29 @@ class CreateAuthKeyRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_BizType(self):
-		return self.get_query_params().get('BizType')
-
-	def set_BizType(self,BizType):
-		self.add_query_param('BizType',BizType)
-
 	def get_UserDeviceId(self):
 		return self.get_query_params().get('UserDeviceId')
 
 	def set_UserDeviceId(self,UserDeviceId):
 		self.add_query_param('UserDeviceId',UserDeviceId)
 
-	def get_SourceIp(self):
-		return self.get_query_params().get('SourceIp')
-
-	def set_SourceIp(self,SourceIp):
-		self.add_query_param('SourceIp',SourceIp)
-
 	def get_Test(self):
 		return self.get_query_params().get('Test')
 
 	def set_Test(self,Test):
 		self.add_query_param('Test',Test)
+
+	def get_BizType(self):
+		return self.get_query_params().get('BizType')
+
+	def set_BizType(self,BizType):
+		self.add_query_param('BizType',BizType)
+
+	def get_SourceIp(self):
+		return self.get_query_params().get('SourceIp')
+
+	def set_SourceIp(self,SourceIp):
+		self.add_query_param('SourceIp',SourceIp)
 
 	def get_AuthYears(self):
 		return self.get_query_params().get('AuthYears')
