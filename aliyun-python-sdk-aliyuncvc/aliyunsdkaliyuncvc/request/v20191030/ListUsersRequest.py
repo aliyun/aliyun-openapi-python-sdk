@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkaliyuncvc.endpoint import endpoint_data
 
-class QueryUserListRequest(RpcRequest):
+class ListUsersRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'aliyuncvc', '2019-09-19', 'QueryUserList','aliyuncvc')
+		RpcRequest.__init__(self, 'aliyuncvc', '2019-10-30', 'ListUsers','aliyuncvc')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -36,8 +36,8 @@ class QueryUserListRequest(RpcRequest):
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
 
-	def get_PageNum(self):
-		return self.get_query_params().get('PageNum')
+	def get_PageNumber(self):
+		return self.get_query_params().get('PageNumber')
 
-	def set_PageNum(self,PageNum):
-		self.add_query_param('PageNum',PageNum)
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)

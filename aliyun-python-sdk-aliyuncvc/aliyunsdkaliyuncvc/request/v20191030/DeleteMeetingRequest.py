@@ -20,11 +20,18 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkaliyuncvc.endpoint import endpoint_data
 
-class QueryUserEvaluationRequest(RpcRequest):
+class DeleteMeetingRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'aliyuncvc', '2019-09-19', 'QueryUserEvaluation','aliyuncvc')
+		RpcRequest.__init__(self, 'aliyuncvc', '2019-10-30', 'DeleteMeeting','aliyuncvc')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
+
+	def get_MeetingUUID(self):
+		return self.get_body_params().get('MeetingUUID')
+
+	def set_MeetingUUID(self,MeetingUUID):
+		self.add_body_params('MeetingUUID', MeetingUUID)

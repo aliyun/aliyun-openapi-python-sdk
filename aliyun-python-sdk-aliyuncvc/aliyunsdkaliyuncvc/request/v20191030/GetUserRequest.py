@@ -20,24 +20,18 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkaliyuncvc.endpoint import endpoint_data
 
-class DeleteUserRequest(RpcRequest):
+class GetUserRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'aliyuncvc', '2019-09-19', 'DeleteUser','aliyuncvc')
+		RpcRequest.__init__(self, 'aliyuncvc', '2019-10-30', 'GetUser','aliyuncvc')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_Count(self):
-		return self.get_body_params().get('Count')
+	def get_UserId(self):
+		return self.get_query_params().get('UserId')
 
-	def set_Count(self,Count):
-		self.add_body_params('Count', Count)
-
-	def get_UserInfo(self):
-		return self.get_body_params().get('UserInfo')
-
-	def set_UserInfo(self,UserInfo):
-		self.add_body_params('UserInfo', UserInfo)
+	def set_UserId(self,UserId):
+		self.add_query_param('UserId',UserId)

@@ -20,15 +20,21 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkaliyuncvc.endpoint import endpoint_data
 
-class CreateUserEvaluationsRequest(RpcRequest):
+class CreateEvaluationRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'aliyuncvc', '2019-09-19', 'CreateUserEvaluations','aliyuncvc')
+		RpcRequest.__init__(self, 'aliyuncvc', '2019-10-30', 'CreateEvaluation','aliyuncvc')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+
+	def get_CreateTime(self):
+		return self.get_query_params().get('CreateTime')
+
+	def set_CreateTime(self,CreateTime):
+		self.add_query_param('CreateTime',CreateTime)
 
 	def get_Memo(self):
 		return self.get_query_params().get('Memo')
@@ -41,12 +47,6 @@ class CreateUserEvaluationsRequest(RpcRequest):
 
 	def set_Description(self,Description):
 		self.add_query_param('Description',Description)
-
-	def get_CreateDate(self):
-		return self.get_query_params().get('CreateDate')
-
-	def set_CreateDate(self,CreateDate):
-		self.add_query_param('CreateDate',CreateDate)
 
 	def get_MemberUUID(self):
 		return self.get_query_params().get('MemberUUID')
