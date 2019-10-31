@@ -20,24 +20,30 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkaas.endpoint import endpoint_data
 
-class UpdatePasswordForAccountRequest(RpcRequest):
+class GetShortTermAccessKeyForAccountRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Aas', '2015-07-01', 'UpdatePasswordForAccount')
+		RpcRequest.__init__(self, 'Aas', '2015-07-01', 'GetShortTermAccessKeyForAccount')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_ExpireTime(self):
+		return self.get_query_params().get('ExpireTime')
+
+	def set_ExpireTime(self,ExpireTime):
+		self.add_query_param('ExpireTime',ExpireTime)
+
+	def get_IsMfaPresent(self):
+		return self.get_query_params().get('IsMfaPresent')
+
+	def set_IsMfaPresent(self,IsMfaPresent):
+		self.add_query_param('IsMfaPresent',IsMfaPresent)
+
 	def get_PK(self):
 		return self.get_query_params().get('PK')
 
 	def set_PK(self,PK):
 		self.add_query_param('PK',PK)
-
-	def get_NewPassword(self):
-		return self.get_query_params().get('NewPassword')
-
-	def set_NewPassword(self,NewPassword):
-		self.add_query_param('NewPassword',NewPassword)

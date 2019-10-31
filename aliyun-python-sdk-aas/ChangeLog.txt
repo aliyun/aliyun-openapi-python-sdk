@@ -1,0 +1,3 @@
+2019-10-31 Version: 1.1.0
+- Supported ChangePreferredLanguage for Internet customers.
+

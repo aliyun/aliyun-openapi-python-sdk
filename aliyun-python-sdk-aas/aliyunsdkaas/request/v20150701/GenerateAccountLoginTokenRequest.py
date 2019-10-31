@@ -20,24 +20,18 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkaas.endpoint import endpoint_data
 
-class UpdatePasswordForAccountRequest(RpcRequest):
+class GenerateAccountLoginTokenRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Aas', '2015-07-01', 'UpdatePasswordForAccount')
+		RpcRequest.__init__(self, 'Aas', '2015-07-01', 'GenerateAccountLoginToken')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_PK(self):
-		return self.get_query_params().get('PK')
+	def get_TargetPk(self):
+		return self.get_query_params().get('TargetPk')
 
-	def set_PK(self,PK):
-		self.add_query_param('PK',PK)
-
-	def get_NewPassword(self):
-		return self.get_query_params().get('NewPassword')
-
-	def set_NewPassword(self,NewPassword):
-		self.add_query_param('NewPassword',NewPassword)
+	def set_TargetPk(self,TargetPk):
+		self.add_query_param('TargetPk',TargetPk)

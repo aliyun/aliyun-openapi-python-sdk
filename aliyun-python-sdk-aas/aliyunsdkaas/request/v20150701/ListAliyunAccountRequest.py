@@ -20,24 +20,24 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkaas.endpoint import endpoint_data
 
-class UpdatePasswordForAccountRequest(RpcRequest):
+class ListAliyunAccountRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Aas', '2015-07-01', 'UpdatePasswordForAccount')
+		RpcRequest.__init__(self, 'Aas', '2015-07-01', 'ListAliyunAccount')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_PK(self):
-		return self.get_query_params().get('PK')
+	def get_Marker(self):
+		return self.get_query_params().get('Marker')
 
-	def set_PK(self,PK):
-		self.add_query_param('PK',PK)
+	def set_Marker(self,Marker):
+		self.add_query_param('Marker',Marker)
 
-	def get_NewPassword(self):
-		return self.get_query_params().get('NewPassword')
+	def get_MaxItems(self):
+		return self.get_query_params().get('MaxItems')
 
-	def set_NewPassword(self,NewPassword):
-		self.add_query_param('NewPassword',NewPassword)
+	def set_MaxItems(self,MaxItems):
+		self.add_query_param('MaxItems',MaxItems)
