@@ -36,6 +36,12 @@ class DescribeDevicesRequest(RpcRequest):
 	def set_SortDirection(self,SortDirection):
 		self.add_query_param('SortDirection',SortDirection)
 
+	def get_IncludeDirectory(self):
+		return self.get_query_params().get('IncludeDirectory')
+
+	def set_IncludeDirectory(self,IncludeDirectory):
+		self.add_query_param('IncludeDirectory',IncludeDirectory)
+
 	def get_GbId(self):
 		return self.get_query_params().get('GbId')
 
@@ -77,6 +83,12 @@ class DescribeDevicesRequest(RpcRequest):
 
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
+
+	def get_DirectoryId(self):
+		return self.get_query_params().get('DirectoryId')
+
+	def set_DirectoryId(self,DirectoryId):
+		self.add_query_param('DirectoryId',DirectoryId)
 
 	def get_Id(self):
 		return self.get_query_params().get('Id')

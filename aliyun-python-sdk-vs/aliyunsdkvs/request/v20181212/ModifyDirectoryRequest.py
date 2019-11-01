@@ -20,27 +20,21 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkvs.endpoint import endpoint_data
 
-class DescribeDeviceRequest(RpcRequest):
+class ModifyDirectoryRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'vs', '2018-12-12', 'DescribeDevice','vs')
+		RpcRequest.__init__(self, 'vs', '2018-12-12', 'ModifyDirectory','vs')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_IncludeDirectory(self):
-		return self.get_query_params().get('IncludeDirectory')
+	def get_Description(self):
+		return self.get_query_params().get('Description')
 
-	def set_IncludeDirectory(self,IncludeDirectory):
-		self.add_query_param('IncludeDirectory',IncludeDirectory)
-
-	def get_IncludeStats(self):
-		return self.get_query_params().get('IncludeStats')
-
-	def set_IncludeStats(self,IncludeStats):
-		self.add_query_param('IncludeStats',IncludeStats)
+	def set_Description(self,Description):
+		self.add_query_param('Description',Description)
 
 	def get_Id(self):
 		return self.get_query_params().get('Id')
@@ -59,3 +53,9 @@ class DescribeDeviceRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_Name(self):
+		return self.get_query_params().get('Name')
+
+	def set_Name(self,Name):
+		self.add_query_param('Name',Name)

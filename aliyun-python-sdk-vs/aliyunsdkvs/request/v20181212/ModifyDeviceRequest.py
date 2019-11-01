@@ -72,6 +72,12 @@ class ModifyDeviceRequest(RpcRequest):
 	def set_Vendor(self,Vendor):
 		self.add_query_param('Vendor',Vendor)
 
+	def get_DirectoryId(self):
+		return self.get_query_params().get('DirectoryId')
+
+	def set_DirectoryId(self,DirectoryId):
+		self.add_query_param('DirectoryId',DirectoryId)
+
 	def get_Id(self):
 		return self.get_query_params().get('Id')
 
