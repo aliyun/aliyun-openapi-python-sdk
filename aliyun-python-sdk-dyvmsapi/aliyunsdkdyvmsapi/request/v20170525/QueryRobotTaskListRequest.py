@@ -19,10 +19,10 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class QueryRobotInfoListRequest(RpcRequest):
+class QueryRobotTaskListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dyvmsapi', '2017-05-25', 'QueryRobotInfoList')
+		RpcRequest.__init__(self, 'Dyvmsapi', '2017-05-25', 'QueryRobotTaskList')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -30,11 +30,17 @@ class QueryRobotInfoListRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_AuditStatus(self):
-		return self.get_query_params().get('AuditStatus')
+	def get_TaskName(self):
+		return self.get_query_params().get('TaskName')
 
-	def set_AuditStatus(self,AuditStatus):
-		self.add_query_param('AuditStatus',AuditStatus)
+	def set_TaskName(self,TaskName):
+		self.add_query_param('TaskName',TaskName)
+
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -47,3 +53,21 @@ class QueryRobotInfoListRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_PageNo(self):
+		return self.get_query_params().get('PageNo')
+
+	def set_PageNo(self,PageNo):
+		self.add_query_param('PageNo',PageNo)
+
+	def get_Time(self):
+		return self.get_query_params().get('Time')
+
+	def set_Time(self,Time):
+		self.add_query_param('Time',Time)
+
+	def get_Status(self):
+		return self.get_query_params().get('Status')
+
+	def set_Status(self,Status):
+		self.add_query_param('Status',Status)

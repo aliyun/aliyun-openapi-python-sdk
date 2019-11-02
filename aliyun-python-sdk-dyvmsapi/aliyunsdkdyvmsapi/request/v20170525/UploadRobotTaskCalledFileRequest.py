@@ -19,10 +19,10 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class QueryRobotInfoListRequest(RpcRequest):
+class UploadRobotTaskCalledFileRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dyvmsapi', '2017-05-25', 'QueryRobotInfoList')
+		RpcRequest.__init__(self, 'Dyvmsapi', '2017-05-25', 'UploadRobotTaskCalledFile')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -30,11 +30,29 @@ class QueryRobotInfoListRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_AuditStatus(self):
-		return self.get_query_params().get('AuditStatus')
+	def get_TtsParamHead(self):
+		return self.get_query_params().get('TtsParamHead')
 
-	def set_AuditStatus(self,AuditStatus):
-		self.add_query_param('AuditStatus',AuditStatus)
+	def set_TtsParamHead(self,TtsParamHead):
+		self.add_query_param('TtsParamHead',TtsParamHead)
+
+	def get_TtsParam(self):
+		return self.get_query_params().get('TtsParam')
+
+	def set_TtsParam(self,TtsParam):
+		self.add_query_param('TtsParam',TtsParam)
+
+	def get_CalledNumber(self):
+		return self.get_query_params().get('CalledNumber')
+
+	def set_CalledNumber(self,CalledNumber):
+		self.add_query_param('CalledNumber',CalledNumber)
+
+	def get_Id(self):
+		return self.get_query_params().get('Id')
+
+	def set_Id(self,Id):
+		self.add_query_param('Id',Id)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')

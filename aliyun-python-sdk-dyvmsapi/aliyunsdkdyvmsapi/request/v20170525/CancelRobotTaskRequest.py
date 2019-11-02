@@ -19,22 +19,16 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class QueryRobotInfoListRequest(RpcRequest):
+class CancelRobotTaskRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dyvmsapi', '2017-05-25', 'QueryRobotInfoList')
+		RpcRequest.__init__(self, 'Dyvmsapi', '2017-05-25', 'CancelRobotTask')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_AuditStatus(self):
-		return self.get_query_params().get('AuditStatus')
-
-	def set_AuditStatus(self,AuditStatus):
-		self.add_query_param('AuditStatus',AuditStatus)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -47,3 +41,9 @@ class QueryRobotInfoListRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_TaskId(self):
+		return self.get_query_params().get('TaskId')
+
+	def set_TaskId(self,TaskId):
+		self.add_query_param('TaskId',TaskId)

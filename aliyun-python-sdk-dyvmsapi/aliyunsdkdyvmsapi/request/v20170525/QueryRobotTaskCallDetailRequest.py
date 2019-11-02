@@ -19,10 +19,10 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class QueryRobotInfoListRequest(RpcRequest):
+class QueryRobotTaskCallDetailRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dyvmsapi', '2017-05-25', 'QueryRobotInfoList')
+		RpcRequest.__init__(self, 'Dyvmsapi', '2017-05-25', 'QueryRobotTaskCallDetail')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -30,11 +30,23 @@ class QueryRobotInfoListRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_AuditStatus(self):
-		return self.get_query_params().get('AuditStatus')
+	def get_Callee(self):
+		return self.get_query_params().get('Callee')
 
-	def set_AuditStatus(self,AuditStatus):
-		self.add_query_param('AuditStatus',AuditStatus)
+	def set_Callee(self,Callee):
+		self.add_query_param('Callee',Callee)
+
+	def get_TaskId(self):
+		return self.get_query_params().get('TaskId')
+
+	def set_TaskId(self,TaskId):
+		self.add_query_param('TaskId',TaskId)
+
+	def get_QueryDate(self):
+		return self.get_query_params().get('QueryDate')
+
+	def set_QueryDate(self,QueryDate):
+		self.add_query_param('QueryDate',QueryDate)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')

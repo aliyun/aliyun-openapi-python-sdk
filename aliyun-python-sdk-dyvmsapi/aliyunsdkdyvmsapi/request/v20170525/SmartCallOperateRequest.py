@@ -19,10 +19,16 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class QueryRobotInfoListRequest(RpcRequest):
+class SmartCallOperateRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dyvmsapi', '2017-05-25', 'QueryRobotInfoList')
+		RpcRequest.__init__(self, 'Dyvmsapi', '2017-05-25', 'SmartCallOperate')
+
+	def get_CallId(self):
+		return self.get_query_params().get('CallId')
+
+	def set_CallId(self,CallId):
+		self.add_query_param('CallId',CallId)
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -30,11 +36,11 @@ class QueryRobotInfoListRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_AuditStatus(self):
-		return self.get_query_params().get('AuditStatus')
+	def get_Param(self):
+		return self.get_query_params().get('Param')
 
-	def set_AuditStatus(self,AuditStatus):
-		self.add_query_param('AuditStatus',AuditStatus)
+	def set_Param(self,Param):
+		self.add_query_param('Param',Param)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -47,3 +53,9 @@ class QueryRobotInfoListRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_Command(self):
+		return self.get_query_params().get('Command')
+
+	def set_Command(self,Command):
+		self.add_query_param('Command',Command)

@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,10 +18,11 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+
 class IvrCallRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dyvmsapi', '2017-05-25', 'IvrCall','dyvmsapi')
+		RpcRequest.__init__(self, 'Dyvmsapi', '2017-05-25', 'IvrCall')
 
 	def get_ByeCode(self):
 		return self.get_query_params().get('ByeCode')
@@ -29,48 +30,17 @@ class IvrCallRequest(RpcRequest):
 	def set_ByeCode(self,ByeCode):
 		self.add_query_param('ByeCode',ByeCode)
 
-	def get_MenuKeyMaps(self):
-		return self.get_query_params().get('MenuKeyMaps')
-
-	def set_MenuKeyMaps(self,MenuKeyMaps):
-		for i in range(len(MenuKeyMaps)):	
-			if MenuKeyMaps[i].get('Code') is not None:
-				self.add_query_param('MenuKeyMap.' + str(i + 1) + '.Code' , MenuKeyMaps[i].get('Code'))
-			if MenuKeyMaps[i].get('TtsParams') is not None:
-				self.add_query_param('MenuKeyMap.' + str(i + 1) + '.TtsParams' , MenuKeyMaps[i].get('TtsParams'))
-			if MenuKeyMaps[i].get('Key') is not None:
-				self.add_query_param('MenuKeyMap.' + str(i + 1) + '.Key' , MenuKeyMaps[i].get('Key'))
-
-
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
-
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
 	def get_StartTtsParams(self):
 		return self.get_query_params().get('StartTtsParams')
 
 	def set_StartTtsParams(self,StartTtsParams):
 		self.add_query_param('StartTtsParams',StartTtsParams)
-
-	def get_PlayTimes(self):
-		return self.get_query_params().get('PlayTimes')
-
-	def set_PlayTimes(self,PlayTimes):
-		self.add_query_param('PlayTimes',PlayTimes)
-
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
 
 	def get_Timeout(self):
 		return self.get_query_params().get('Timeout')
@@ -95,6 +65,37 @@ class IvrCallRequest(RpcRequest):
 
 	def set_CalledShowNumber(self,CalledShowNumber):
 		self.add_query_param('CalledShowNumber',CalledShowNumber)
+
+	def get_MenuKeyMaps(self):
+		return self.get_query_params().get('MenuKeyMaps')
+
+	def set_MenuKeyMaps(self,MenuKeyMaps):
+		for i in range(len(MenuKeyMaps)):	
+			if MenuKeyMaps[i].get('Code') is not None:
+				self.add_query_param('MenuKeyMap.' + str(i + 1) + '.Code' , MenuKeyMaps[i].get('Code'))
+			if MenuKeyMaps[i].get('TtsParams') is not None:
+				self.add_query_param('MenuKeyMap.' + str(i + 1) + '.TtsParams' , MenuKeyMaps[i].get('TtsParams'))
+			if MenuKeyMaps[i].get('Key') is not None:
+				self.add_query_param('MenuKeyMap.' + str(i + 1) + '.Key' , MenuKeyMaps[i].get('Key'))
+
+
+	def get_ResourceOwnerAccount(self):
+		return self.get_query_params().get('ResourceOwnerAccount')
+
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+
+	def get_PlayTimes(self):
+		return self.get_query_params().get('PlayTimes')
+
+	def set_PlayTimes(self,PlayTimes):
+		self.add_query_param('PlayTimes',PlayTimes)
+
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
 
 	def get_OutId(self):
 		return self.get_query_params().get('OutId')

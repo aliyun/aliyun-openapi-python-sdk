@@ -19,10 +19,10 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class BatchRobotSmartCallRequest(RpcRequest):
+class CreateRobotTaskRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dyvmsapi', '2017-05-25', 'BatchRobotSmartCall')
+		RpcRequest.__init__(self, 'Dyvmsapi', '2017-05-25', 'CreateRobotTask')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -30,17 +30,11 @@ class BatchRobotSmartCallRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_EarlyMediaAsr(self):
-		return self.get_query_params().get('EarlyMediaAsr')
+	def get_RecallStateCodes(self):
+		return self.get_query_params().get('RecallStateCodes')
 
-	def set_EarlyMediaAsr(self,EarlyMediaAsr):
-		self.add_query_param('EarlyMediaAsr',EarlyMediaAsr)
-
-	def get_TtsParamHead(self):
-		return self.get_query_params().get('TtsParamHead')
-
-	def set_TtsParamHead(self,TtsParamHead):
-		self.add_query_param('TtsParamHead',TtsParamHead)
+	def set_RecallStateCodes(self,RecallStateCodes):
+		self.add_query_param('RecallStateCodes',RecallStateCodes)
 
 	def get_TaskName(self):
 		return self.get_query_params().get('TaskName')
@@ -48,23 +42,11 @@ class BatchRobotSmartCallRequest(RpcRequest):
 	def set_TaskName(self,TaskName):
 		self.add_query_param('TaskName',TaskName)
 
-	def get_TtsParam(self):
-		return self.get_query_params().get('TtsParam')
+	def get_RecallTimes(self):
+		return self.get_query_params().get('RecallTimes')
 
-	def set_TtsParam(self,TtsParam):
-		self.add_query_param('TtsParam',TtsParam)
-
-	def get_CalledNumber(self):
-		return self.get_query_params().get('CalledNumber')
-
-	def set_CalledNumber(self,CalledNumber):
-		self.add_query_param('CalledNumber',CalledNumber)
-
-	def get_CalledShowNumber(self):
-		return self.get_query_params().get('CalledShowNumber')
-
-	def set_CalledShowNumber(self,CalledShowNumber):
-		self.add_query_param('CalledShowNumber',CalledShowNumber)
+	def set_RecallTimes(self,RecallTimes):
+		self.add_query_param('RecallTimes',RecallTimes)
 
 	def get_IsSelfLine(self):
 		return self.get_query_params().get('IsSelfLine')
@@ -78,6 +60,12 @@ class BatchRobotSmartCallRequest(RpcRequest):
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
+	def get_RetryType(self):
+		return self.get_query_params().get('RetryType')
+
+	def set_RetryType(self,RetryType):
+		self.add_query_param('RetryType',RetryType)
+
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
@@ -90,11 +78,17 @@ class BatchRobotSmartCallRequest(RpcRequest):
 	def set_DialogId(self,DialogId):
 		self.add_query_param('DialogId',DialogId)
 
-	def get_ScheduleTime(self):
-		return self.get_query_params().get('ScheduleTime')
+	def get_Caller(self):
+		return self.get_query_params().get('Caller')
 
-	def set_ScheduleTime(self,ScheduleTime):
-		self.add_query_param('ScheduleTime',ScheduleTime)
+	def set_Caller(self,Caller):
+		self.add_query_param('Caller',Caller)
+
+	def get_NumberStatusIdent(self):
+		return self.get_query_params().get('NumberStatusIdent')
+
+	def set_NumberStatusIdent(self,NumberStatusIdent):
+		self.add_query_param('NumberStatusIdent',NumberStatusIdent)
 
 	def get_CorpName(self):
 		return self.get_query_params().get('CorpName')
@@ -102,8 +96,8 @@ class BatchRobotSmartCallRequest(RpcRequest):
 	def set_CorpName(self,CorpName):
 		self.add_query_param('CorpName',CorpName)
 
-	def get_ScheduleCall(self):
-		return self.get_query_params().get('ScheduleCall')
+	def get_RecallInterval(self):
+		return self.get_query_params().get('RecallInterval')
 
-	def set_ScheduleCall(self,ScheduleCall):
-		self.add_query_param('ScheduleCall',ScheduleCall)
+	def set_RecallInterval(self,RecallInterval):
+		self.add_query_param('RecallInterval',RecallInterval)
