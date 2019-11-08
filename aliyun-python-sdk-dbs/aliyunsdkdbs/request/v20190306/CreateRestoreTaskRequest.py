@@ -30,18 +30,6 @@ class CreateRestoreTaskRequest(RpcRequest):
 	def set_BackupGatewayId(self,BackupGatewayId):
 		self.add_query_param('BackupGatewayId',BackupGatewayId)
 
-	def get_DestinationEndpointOracleSID(self):
-		return self.get_query_params().get('DestinationEndpointOracleSID')
-
-	def set_DestinationEndpointOracleSID(self,DestinationEndpointOracleSID):
-		self.add_query_param('DestinationEndpointOracleSID',DestinationEndpointOracleSID)
-
-	def get_RestoreTime(self):
-		return self.get_query_params().get('RestoreTime')
-
-	def set_RestoreTime(self,RestoreTime):
-		self.add_query_param('RestoreTime',RestoreTime)
-
 	def get_DestinationEndpointInstanceType(self):
 		return self.get_query_params().get('DestinationEndpointInstanceType')
 
@@ -54,59 +42,17 @@ class CreateRestoreTaskRequest(RpcRequest):
 	def set_ClientToken(self,ClientToken):
 		self.add_query_param('ClientToken',ClientToken)
 
-	def get_DestinationEndpointInstanceID(self):
-		return self.get_query_params().get('DestinationEndpointInstanceID')
-
-	def set_DestinationEndpointInstanceID(self,DestinationEndpointInstanceID):
-		self.add_query_param('DestinationEndpointInstanceID',DestinationEndpointInstanceID)
-
-	def get_DestinationEndpointPort(self):
-		return self.get_query_params().get('DestinationEndpointPort')
-
-	def set_DestinationEndpointPort(self,DestinationEndpointPort):
-		self.add_query_param('DestinationEndpointPort',DestinationEndpointPort)
-
 	def get_BackupPlanId(self):
 		return self.get_query_params().get('BackupPlanId')
 
 	def set_BackupPlanId(self,BackupPlanId):
 		self.add_query_param('BackupPlanId',BackupPlanId)
 
-	def get_BackupSetId(self):
-		return self.get_query_params().get('BackupSetId')
-
-	def set_BackupSetId(self,BackupSetId):
-		self.add_query_param('BackupSetId',BackupSetId)
-
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
 	def get_DestinationEndpointRegion(self):
 		return self.get_query_params().get('DestinationEndpointRegion')
 
 	def set_DestinationEndpointRegion(self,DestinationEndpointRegion):
 		self.add_query_param('DestinationEndpointRegion',DestinationEndpointRegion)
-
-	def get_RestoreDir(self):
-		return self.get_query_params().get('RestoreDir')
-
-	def set_RestoreDir(self,RestoreDir):
-		self.add_query_param('RestoreDir',RestoreDir)
-
-	def get_DestinationEndpointIP(self):
-		return self.get_query_params().get('DestinationEndpointIP')
-
-	def set_DestinationEndpointIP(self,DestinationEndpointIP):
-		self.add_query_param('DestinationEndpointIP',DestinationEndpointIP)
-
-	def get_DestinationEndpointDatabaseName(self):
-		return self.get_query_params().get('DestinationEndpointDatabaseName')
-
-	def set_DestinationEndpointDatabaseName(self,DestinationEndpointDatabaseName):
-		self.add_query_param('DestinationEndpointDatabaseName',DestinationEndpointDatabaseName)
 
 	def get_DestinationEndpointUserName(self):
 		return self.get_query_params().get('DestinationEndpointUserName')
@@ -125,6 +71,60 @@ class CreateRestoreTaskRequest(RpcRequest):
 
 	def set_RestoreTaskName(self,RestoreTaskName):
 		self.add_query_param('RestoreTaskName',RestoreTaskName)
+
+	def get_DestinationEndpointOracleSID(self):
+		return self.get_query_params().get('DestinationEndpointOracleSID')
+
+	def set_DestinationEndpointOracleSID(self,DestinationEndpointOracleSID):
+		self.add_query_param('DestinationEndpointOracleSID',DestinationEndpointOracleSID)
+
+	def get_RestoreTime(self):
+		return self.get_query_params().get('RestoreTime')
+
+	def set_RestoreTime(self,RestoreTime):
+		self.add_query_param('RestoreTime',RestoreTime)
+
+	def get_DestinationEndpointInstanceID(self):
+		return self.get_query_params().get('DestinationEndpointInstanceID')
+
+	def set_DestinationEndpointInstanceID(self,DestinationEndpointInstanceID):
+		self.add_query_param('DestinationEndpointInstanceID',DestinationEndpointInstanceID)
+
+	def get_DestinationEndpointPort(self):
+		return self.get_query_params().get('DestinationEndpointPort')
+
+	def set_DestinationEndpointPort(self,DestinationEndpointPort):
+		self.add_query_param('DestinationEndpointPort',DestinationEndpointPort)
+
+	def get_BackupSetId(self):
+		return self.get_query_params().get('BackupSetId')
+
+	def set_BackupSetId(self,BackupSetId):
+		self.add_query_param('BackupSetId',BackupSetId)
+
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
+
+	def get_RestoreDir(self):
+		return self.get_query_params().get('RestoreDir')
+
+	def set_RestoreDir(self,RestoreDir):
+		self.add_query_param('RestoreDir',RestoreDir)
+
+	def get_DestinationEndpointIP(self):
+		return self.get_query_params().get('DestinationEndpointIP')
+
+	def set_DestinationEndpointIP(self,DestinationEndpointIP):
+		self.add_query_param('DestinationEndpointIP',DestinationEndpointIP)
+
+	def get_DestinationEndpointDatabaseName(self):
+		return self.get_query_params().get('DestinationEndpointDatabaseName')
+
+	def set_DestinationEndpointDatabaseName(self,DestinationEndpointDatabaseName):
+		self.add_query_param('DestinationEndpointDatabaseName',DestinationEndpointDatabaseName)
 
 	def get_DuplicateConflict(self):
 		return self.get_query_params().get('DuplicateConflict')

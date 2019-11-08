@@ -54,17 +54,29 @@ class ModifyBackupSourceEndpointRequest(RpcRequest):
 	def set_ClientToken(self,ClientToken):
 		self.add_query_param('ClientToken',ClientToken)
 
-	def get_SourceEndpointPassword(self):
-		return self.get_query_params().get('SourceEndpointPassword')
-
-	def set_SourceEndpointPassword(self,SourceEndpointPassword):
-		self.add_query_param('SourceEndpointPassword',SourceEndpointPassword)
-
 	def get_BackupPlanId(self):
 		return self.get_query_params().get('BackupPlanId')
 
 	def set_BackupPlanId(self,BackupPlanId):
 		self.add_query_param('BackupPlanId',BackupPlanId)
+
+	def get_SourceEndpointDatabaseName(self):
+		return self.get_query_params().get('SourceEndpointDatabaseName')
+
+	def set_SourceEndpointDatabaseName(self,SourceEndpointDatabaseName):
+		self.add_query_param('SourceEndpointDatabaseName',SourceEndpointDatabaseName)
+
+	def get_SourceEndpointIP(self):
+		return self.get_query_params().get('SourceEndpointIP')
+
+	def set_SourceEndpointIP(self,SourceEndpointIP):
+		self.add_query_param('SourceEndpointIP',SourceEndpointIP)
+
+	def get_SourceEndpointPassword(self):
+		return self.get_query_params().get('SourceEndpointPassword')
+
+	def set_SourceEndpointPassword(self,SourceEndpointPassword):
+		self.add_query_param('SourceEndpointPassword',SourceEndpointPassword)
 
 	def get_BackupObjects(self):
 		return self.get_query_params().get('BackupObjects')
@@ -84,23 +96,11 @@ class ModifyBackupSourceEndpointRequest(RpcRequest):
 	def set_SourceEndpointPort(self,SourceEndpointPort):
 		self.add_query_param('SourceEndpointPort',SourceEndpointPort)
 
-	def get_SourceEndpointDatabaseName(self):
-		return self.get_query_params().get('SourceEndpointDatabaseName')
-
-	def set_SourceEndpointDatabaseName(self,SourceEndpointDatabaseName):
-		self.add_query_param('SourceEndpointDatabaseName',SourceEndpointDatabaseName)
-
 	def get_SourceEndpointInstanceType(self):
 		return self.get_query_params().get('SourceEndpointInstanceType')
 
 	def set_SourceEndpointInstanceType(self,SourceEndpointInstanceType):
 		self.add_query_param('SourceEndpointInstanceType',SourceEndpointInstanceType)
-
-	def get_SourceEndpointIP(self):
-		return self.get_query_params().get('SourceEndpointIP')
-
-	def set_SourceEndpointIP(self,SourceEndpointIP):
-		self.add_query_param('SourceEndpointIP',SourceEndpointIP)
 
 	def get_SourceEndpointOracleSID(self):
 		return self.get_query_params().get('SourceEndpointOracleSID')

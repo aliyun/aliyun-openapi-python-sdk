@@ -30,12 +30,6 @@ class DescribePreCheckProgressListRequest(RpcRequest):
 	def set_ClientToken(self,ClientToken):
 		self.add_query_param('ClientToken',ClientToken)
 
-	def get_RestoreTaskId(self):
-		return self.get_query_params().get('RestoreTaskId')
-
-	def set_RestoreTaskId(self,RestoreTaskId):
-		self.add_query_param('RestoreTaskId',RestoreTaskId)
-
 	def get_BackupPlanId(self):
 		return self.get_query_params().get('BackupPlanId')
 
@@ -47,3 +41,9 @@ class DescribePreCheckProgressListRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_RestoreTaskId(self):
+		return self.get_query_params().get('RestoreTaskId')
+
+	def set_RestoreTaskId(self,RestoreTaskId):
+		self.add_query_param('RestoreTaskId',RestoreTaskId)

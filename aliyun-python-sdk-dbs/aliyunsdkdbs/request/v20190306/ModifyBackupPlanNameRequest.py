@@ -24,12 +24,6 @@ class ModifyBackupPlanNameRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Dbs', '2019-03-06', 'ModifyBackupPlanName','cbs')
 
-	def get_BackupPlanName(self):
-		return self.get_query_params().get('BackupPlanName')
-
-	def set_BackupPlanName(self,BackupPlanName):
-		self.add_query_param('BackupPlanName',BackupPlanName)
-
 	def get_ClientToken(self):
 		return self.get_query_params().get('ClientToken')
 
@@ -47,3 +41,9 @@ class ModifyBackupPlanNameRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_BackupPlanName(self):
+		return self.get_query_params().get('BackupPlanName')
+
+	def set_BackupPlanName(self,BackupPlanName):
+		self.add_query_param('BackupPlanName',BackupPlanName)

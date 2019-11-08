@@ -24,18 +24,6 @@ class ModifyBackupStrategyRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Dbs', '2019-03-06', 'ModifyBackupStrategy','cbs')
 
-	def get_BackupPeriod(self):
-		return self.get_query_params().get('BackupPeriod')
-
-	def set_BackupPeriod(self,BackupPeriod):
-		self.add_query_param('BackupPeriod',BackupPeriod)
-
-	def get_BackupStartTime(self):
-		return self.get_query_params().get('BackupStartTime')
-
-	def set_BackupStartTime(self,BackupStartTime):
-		self.add_query_param('BackupStartTime',BackupStartTime)
-
 	def get_ClientToken(self):
 		return self.get_query_params().get('ClientToken')
 
@@ -53,3 +41,15 @@ class ModifyBackupStrategyRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_BackupPeriod(self):
+		return self.get_query_params().get('BackupPeriod')
+
+	def set_BackupPeriod(self,BackupPeriod):
+		self.add_query_param('BackupPeriod',BackupPeriod)
+
+	def get_BackupStartTime(self):
+		return self.get_query_params().get('BackupStartTime')
+
+	def set_BackupStartTime(self,BackupStartTime):
+		self.add_query_param('BackupStartTime',BackupStartTime)

@@ -30,29 +30,11 @@ class CreateBackupPlanRequest(RpcRequest):
 	def set_DatabaseType(self,DatabaseType):
 		self.add_query_param('DatabaseType',DatabaseType)
 
-	def get_Period(self):
-		return self.get_query_params().get('Period')
-
-	def set_Period(self,Period):
-		self.add_query_param('Period',Period)
-
 	def get_ClientToken(self):
 		return self.get_query_params().get('ClientToken')
 
 	def set_ClientToken(self,ClientToken):
 		self.add_query_param('ClientToken',ClientToken)
-
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_UsedTime(self):
-		return self.get_query_params().get('UsedTime')
-
-	def set_UsedTime(self,UsedTime):
-		self.add_query_param('UsedTime',UsedTime)
 
 	def get_InstanceClass(self):
 		return self.get_query_params().get('InstanceClass')
@@ -66,29 +48,47 @@ class CreateBackupPlanRequest(RpcRequest):
 	def set_StorageType(self,StorageType):
 		self.add_query_param('StorageType',StorageType)
 
-	def get_BackupMethod(self):
-		return self.get_query_params().get('BackupMethod')
-
-	def set_BackupMethod(self,BackupMethod):
-		self.add_query_param('BackupMethod',BackupMethod)
-
 	def get_DatabaseRegion(self):
 		return self.get_query_params().get('DatabaseRegion')
 
 	def set_DatabaseRegion(self,DatabaseRegion):
 		self.add_query_param('DatabaseRegion',DatabaseRegion)
 
-	def get_StorageRegion(self):
-		return self.get_query_params().get('StorageRegion')
-
-	def set_StorageRegion(self,StorageRegion):
-		self.add_query_param('StorageRegion',StorageRegion)
-
 	def get_InstanceType(self):
 		return self.get_query_params().get('InstanceType')
 
 	def set_InstanceType(self,InstanceType):
 		self.add_query_param('InstanceType',InstanceType)
+
+	def get_Period(self):
+		return self.get_query_params().get('Period')
+
+	def set_Period(self,Period):
+		self.add_query_param('Period',Period)
+
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
+
+	def get_UsedTime(self):
+		return self.get_query_params().get('UsedTime')
+
+	def set_UsedTime(self,UsedTime):
+		self.add_query_param('UsedTime',UsedTime)
+
+	def get_BackupMethod(self):
+		return self.get_query_params().get('BackupMethod')
+
+	def set_BackupMethod(self,BackupMethod):
+		self.add_query_param('BackupMethod',BackupMethod)
+
+	def get_StorageRegion(self):
+		return self.get_query_params().get('StorageRegion')
+
+	def set_StorageRegion(self,StorageRegion):
+		self.add_query_param('StorageRegion',StorageRegion)
 
 	def get_Region(self):
 		return self.get_query_params().get('Region')
