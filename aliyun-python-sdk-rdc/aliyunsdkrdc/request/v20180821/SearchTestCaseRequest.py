@@ -1,0 +1,86 @@
+# Licensed to the Apache Software Foundation (ASF) under one
+# or more contributor license agreements.  See the NOTICE file
+# distributed with this work for additional information
+# regarding copyright ownership.  The ASF licenses this file
+# to you under the Apache License, Version 2.0 (the
+# "License"); you may not use this file except in compliance
+# with the License.  You may obtain a copy of the License at
+#
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+#
+# Unless required by applicable law or agreed to in writing,
+# software distributed under the License is distributed on an
+# "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+# KIND, either express or implied.  See the License for the
+# specific language governing permissions and limitations
+# under the License.
+
+from aliyunsdkcore.request import RpcRequest
+from aliyunsdkrdc.endpoint import endpoint_data
+
+class SearchTestCaseRequest(RpcRequest):
+
+	def __init__(self):
+		RpcRequest.__init__(self, 'Rdc', '2018-08-21', 'SearchTestCase','rdc')
+		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
+
+	def get_UpdateDateEnd(self):
+		return self.get_body_params().get('UpdateDateEnd')
+
+	def set_UpdateDateEnd(self,UpdateDateEnd):
+		self.add_body_params('UpdateDateEnd', UpdateDateEnd)
+
+	def get_CorpIdentifier(self):
+		return self.get_query_params().get('CorpIdentifier')
+
+	def set_CorpIdentifier(self,CorpIdentifier):
+		self.add_query_param('CorpIdentifier',CorpIdentifier)
+
+	def get_CreateDateEnd(self):
+		return self.get_body_params().get('CreateDateEnd')
+
+	def set_CreateDateEnd(self,CreateDateEnd):
+		self.add_body_params('CreateDateEnd', CreateDateEnd)
+
+	def get_CreateDateStart(self):
+		return self.get_body_params().get('CreateDateStart')
+
+	def set_CreateDateStart(self,CreateDateStart):
+		self.add_body_params('CreateDateStart', CreateDateStart)
+
+	def get_UpdateDateStart(self):
+		return self.get_body_params().get('UpdateDateStart')
+
+	def set_UpdateDateStart(self,UpdateDateStart):
+		self.add_body_params('UpdateDateStart', UpdateDateStart)
+
+	def get_PageSize(self):
+		return self.get_body_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_body_params('PageSize', PageSize)
+
+	def get_AkProjectId(self):
+		return self.get_body_params().get('AkProjectId')
+
+	def set_AkProjectId(self,AkProjectId):
+		self.add_body_params('AkProjectId', AkProjectId)
+
+	def get_CaseTag(self):
+		return self.get_body_params().get('CaseTag')
+
+	def set_CaseTag(self,CaseTag):
+		self.add_body_params('CaseTag', CaseTag)
+
+	def get_PageNum(self):
+		return self.get_body_params().get('PageNum')
+
+	def set_PageNum(self,PageNum):
+		self.add_body_params('PageNum', PageNum)
