@@ -18,22 +18,29 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkalidns.endpoint import endpoint_data
+
 class SetGtmMonitorStatusRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'SetGtmMonitorStatus','Alidns')
+		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'SetGtmMonitorStatus','alidns')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_UserClientIp(self):
-		return self.get_query_params().get('UserClientIp')
-
-	def set_UserClientIp(self,UserClientIp):
-		self.add_query_param('UserClientIp',UserClientIp)
 
 	def get_MonitorConfigId(self):
 		return self.get_query_params().get('MonitorConfigId')
 
 	def set_MonitorConfigId(self,MonitorConfigId):
 		self.add_query_param('MonitorConfigId',MonitorConfigId)
+
+	def get_UserClientIp(self):
+		return self.get_query_params().get('UserClientIp')
+
+	def set_UserClientIp(self,UserClientIp):
+		self.add_query_param('UserClientIp',UserClientIp)
 
 	def get_Lang(self):
 		return self.get_query_params().get('Lang')

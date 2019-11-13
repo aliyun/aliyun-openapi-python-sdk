@@ -18,16 +18,17 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkalidns.endpoint import endpoint_data
+
 class OperateBatchDomainRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'OperateBatchDomain','Alidns')
+		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'OperateBatchDomain','alidns')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_UserClientIp(self):
-		return self.get_query_params().get('UserClientIp')
-
-	def set_UserClientIp(self,UserClientIp):
-		self.add_query_param('UserClientIp',UserClientIp)
 
 	def get_DomainRecordInfos(self):
 		return self.get_query_params().get('DomainRecordInfos')
@@ -56,14 +57,20 @@ class OperateBatchDomainRequest(RpcRequest):
 				self.add_query_param('DomainRecordInfo.' + str(i + 1) + '.NewRr' , DomainRecordInfos[i].get('NewRr'))
 
 
-	def get_Lang(self):
-		return self.get_query_params().get('Lang')
-
-	def set_Lang(self,Lang):
-		self.add_query_param('Lang',Lang)
-
 	def get_Type(self):
 		return self.get_query_params().get('Type')
 
 	def set_Type(self,Type):
 		self.add_query_param('Type',Type)
+
+	def get_UserClientIp(self):
+		return self.get_query_params().get('UserClientIp')
+
+	def set_UserClientIp(self,UserClientIp):
+		self.add_query_param('UserClientIp',UserClientIp)
+
+	def get_Lang(self):
+		return self.get_query_params().get('Lang')
+
+	def set_Lang(self,Lang):
+		self.add_query_param('Lang',Lang)

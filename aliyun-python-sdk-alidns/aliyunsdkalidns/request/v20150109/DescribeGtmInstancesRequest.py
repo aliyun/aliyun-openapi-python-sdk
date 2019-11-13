@@ -18,10 +18,23 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkalidns.endpoint import endpoint_data
+
 class DescribeGtmInstancesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'DescribeGtmInstances','Alidns')
+		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'DescribeGtmInstances','alidns')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
+
+	def get_PageNumber(self):
+		return self.get_query_params().get('PageNumber')
+
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)
 
 	def get_ResourceGroupId(self):
 		return self.get_query_params().get('ResourceGroupId')
@@ -53,8 +66,8 @@ class DescribeGtmInstancesRequest(RpcRequest):
 	def set_Keyword(self,Keyword):
 		self.add_query_param('Keyword',Keyword)
 
-	def get_PageNumber(self):
-		return self.get_query_params().get('PageNumber')
+	def get_NeedDetailAttributes(self):
+		return self.get_query_params().get('NeedDetailAttributes')
 
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
+	def set_NeedDetailAttributes(self,NeedDetailAttributes):
+		self.add_query_param('NeedDetailAttributes',NeedDetailAttributes)

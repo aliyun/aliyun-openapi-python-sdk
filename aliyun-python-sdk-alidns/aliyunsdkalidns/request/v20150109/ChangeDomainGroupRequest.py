@@ -18,10 +18,17 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkalidns.endpoint import endpoint_data
+
 class ChangeDomainGroupRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'ChangeDomainGroup','Alidns')
+		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'ChangeDomainGroup','alidns')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_GroupId(self):
 		return self.get_query_params().get('GroupId')
@@ -29,17 +36,17 @@ class ChangeDomainGroupRequest(RpcRequest):
 	def set_GroupId(self,GroupId):
 		self.add_query_param('GroupId',GroupId)
 
-	def get_UserClientIp(self):
-		return self.get_query_params().get('UserClientIp')
-
-	def set_UserClientIp(self,UserClientIp):
-		self.add_query_param('UserClientIp',UserClientIp)
-
 	def get_DomainName(self):
 		return self.get_query_params().get('DomainName')
 
 	def set_DomainName(self,DomainName):
 		self.add_query_param('DomainName',DomainName)
+
+	def get_UserClientIp(self):
+		return self.get_query_params().get('UserClientIp')
+
+	def set_UserClientIp(self,UserClientIp):
+		self.add_query_param('UserClientIp',UserClientIp)
 
 	def get_Lang(self):
 		return self.get_query_params().get('Lang')

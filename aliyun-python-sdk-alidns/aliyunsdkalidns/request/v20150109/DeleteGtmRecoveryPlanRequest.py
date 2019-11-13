@@ -18,16 +18,17 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class QueryCreateInstancePriceRequest(RpcRequest):
+from aliyunsdkalidns.endpoint import endpoint_data
+
+class DeleteGtmRecoveryPlanRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'QueryCreateInstancePrice','Alidns')
+		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'DeleteGtmRecoveryPlan','alidns')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_Month(self):
-		return self.get_query_params().get('Month')
-
-	def set_Month(self,Month):
-		self.add_query_param('Month',Month)
 
 	def get_UserClientIp(self):
 		return self.get_query_params().get('UserClientIp')
@@ -35,20 +36,14 @@ class QueryCreateInstancePriceRequest(RpcRequest):
 	def set_UserClientIp(self,UserClientIp):
 		self.add_query_param('UserClientIp',UserClientIp)
 
+	def get_RecoveryPlanId(self):
+		return self.get_query_params().get('RecoveryPlanId')
+
+	def set_RecoveryPlanId(self,RecoveryPlanId):
+		self.add_query_param('RecoveryPlanId',RecoveryPlanId)
+
 	def get_Lang(self):
 		return self.get_query_params().get('Lang')
 
 	def set_Lang(self,Lang):
 		self.add_query_param('Lang',Lang)
-
-	def get_InstanceVersion(self):
-		return self.get_query_params().get('InstanceVersion')
-
-	def set_InstanceVersion(self,InstanceVersion):
-		self.add_query_param('InstanceVersion',InstanceVersion)
-
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)

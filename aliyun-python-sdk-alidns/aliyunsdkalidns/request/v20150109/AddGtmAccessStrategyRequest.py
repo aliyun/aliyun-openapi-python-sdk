@@ -18,22 +18,35 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkalidns.endpoint import endpoint_data
+
 class AddGtmAccessStrategyRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'AddGtmAccessStrategy','Alidns')
+		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'AddGtmAccessStrategy','alidns')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_StrategyName(self):
-		return self.get_query_params().get('StrategyName')
-
-	def set_StrategyName(self,StrategyName):
-		self.add_query_param('StrategyName',StrategyName)
 
 	def get_DefaultAddrPoolId(self):
 		return self.get_query_params().get('DefaultAddrPoolId')
 
 	def set_DefaultAddrPoolId(self,DefaultAddrPoolId):
 		self.add_query_param('DefaultAddrPoolId',DefaultAddrPoolId)
+
+	def get_FailoverAddrPoolId(self):
+		return self.get_query_params().get('FailoverAddrPoolId')
+
+	def set_FailoverAddrPoolId(self,FailoverAddrPoolId):
+		self.add_query_param('FailoverAddrPoolId',FailoverAddrPoolId)
+
+	def get_StrategyName(self):
+		return self.get_query_params().get('StrategyName')
+
+	def set_StrategyName(self,StrategyName):
+		self.add_query_param('StrategyName',StrategyName)
 
 	def get_AccessLines(self):
 		return self.get_query_params().get('AccessLines')
@@ -46,12 +59,6 @@ class AddGtmAccessStrategyRequest(RpcRequest):
 
 	def set_InstanceId(self,InstanceId):
 		self.add_query_param('InstanceId',InstanceId)
-
-	def get_FailoverAddrPoolId(self):
-		return self.get_query_params().get('FailoverAddrPoolId')
-
-	def set_FailoverAddrPoolId(self,FailoverAddrPoolId):
-		self.add_query_param('FailoverAddrPoolId',FailoverAddrPoolId)
 
 	def get_UserClientIp(self):
 		return self.get_query_params().get('UserClientIp')

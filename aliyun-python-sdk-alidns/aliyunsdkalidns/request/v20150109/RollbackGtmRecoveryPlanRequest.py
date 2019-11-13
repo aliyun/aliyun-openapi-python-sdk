@@ -20,45 +20,15 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkalidns.endpoint import endpoint_data
 
-class DescribeDomainLogsRequest(RpcRequest):
+class RollbackGtmRecoveryPlanRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'DescribeDomainLogs','alidns')
+		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'RollbackGtmRecoveryPlan','alidns')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_GroupId(self):
-		return self.get_query_params().get('GroupId')
-
-	def set_GroupId(self,GroupId):
-		self.add_query_param('GroupId',GroupId)
-
-	def get_StartDate(self):
-		return self.get_query_params().get('StartDate')
-
-	def set_StartDate(self,StartDate):
-		self.add_query_param('StartDate',StartDate)
-
-	def get_Type(self):
-		return self.get_query_params().get('Type')
-
-	def set_Type(self,Type):
-		self.add_query_param('Type',Type)
-
-	def get_PageNumber(self):
-		return self.get_query_params().get('PageNumber')
-
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
-
-	def get_endDate(self):
-		return self.get_query_params().get('endDate')
-
-	def set_endDate(self,endDate):
-		self.add_query_param('endDate',endDate)
 
 	def get_UserClientIp(self):
 		return self.get_query_params().get('UserClientIp')
@@ -66,20 +36,14 @@ class DescribeDomainLogsRequest(RpcRequest):
 	def set_UserClientIp(self,UserClientIp):
 		self.add_query_param('UserClientIp',UserClientIp)
 
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
+	def get_RecoveryPlanId(self):
+		return self.get_query_params().get('RecoveryPlanId')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
+	def set_RecoveryPlanId(self,RecoveryPlanId):
+		self.add_query_param('RecoveryPlanId',RecoveryPlanId)
 
 	def get_Lang(self):
 		return self.get_query_params().get('Lang')
 
 	def set_Lang(self,Lang):
 		self.add_query_param('Lang',Lang)
-
-	def get_KeyWord(self):
-		return self.get_query_params().get('KeyWord')
-
-	def set_KeyWord(self,KeyWord):
-		self.add_query_param('KeyWord',KeyWord)

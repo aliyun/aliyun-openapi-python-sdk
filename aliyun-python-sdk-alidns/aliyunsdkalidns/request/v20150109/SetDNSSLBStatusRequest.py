@@ -18,10 +18,29 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkalidns.endpoint import endpoint_data
+
 class SetDNSSLBStatusRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'SetDNSSLBStatus','Alidns')
+		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'SetDNSSLBStatus','alidns')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
+
+	def get_DomainName(self):
+		return self.get_query_params().get('DomainName')
+
+	def set_DomainName(self,DomainName):
+		self.add_query_param('DomainName',DomainName)
+
+	def get_Type(self):
+		return self.get_query_params().get('Type')
+
+	def set_Type(self,Type):
+		self.add_query_param('Type',Type)
 
 	def get_UserClientIp(self):
 		return self.get_query_params().get('UserClientIp')

@@ -18,10 +18,35 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkalidns.endpoint import endpoint_data
+
 class DescribeGtmLogsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'DescribeGtmLogs','Alidns')
+		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'DescribeGtmLogs','alidns')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
+
+	def get_StartTimestamp(self):
+		return self.get_query_params().get('StartTimestamp')
+
+	def set_StartTimestamp(self,StartTimestamp):
+		self.add_query_param('StartTimestamp',StartTimestamp)
+
+	def get_PageNumber(self):
+		return self.get_query_params().get('PageNumber')
+
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)
+
+	def get_EndTimestamp(self):
+		return self.get_query_params().get('EndTimestamp')
+
+	def set_EndTimestamp(self,EndTimestamp):
+		self.add_query_param('EndTimestamp',EndTimestamp)
 
 	def get_InstanceId(self):
 		return self.get_query_params().get('InstanceId')
@@ -52,21 +77,3 @@ class DescribeGtmLogsRequest(RpcRequest):
 
 	def set_Keyword(self,Keyword):
 		self.add_query_param('Keyword',Keyword)
-
-	def get_StartTimestamp(self):
-		return self.get_query_params().get('StartTimestamp')
-
-	def set_StartTimestamp(self,StartTimestamp):
-		self.add_query_param('StartTimestamp',StartTimestamp)
-
-	def get_PageNumber(self):
-		return self.get_query_params().get('PageNumber')
-
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
-
-	def get_EndTimestamp(self):
-		return self.get_query_params().get('EndTimestamp')
-
-	def set_EndTimestamp(self,EndTimestamp):
-		self.add_query_param('EndTimestamp',EndTimestamp)

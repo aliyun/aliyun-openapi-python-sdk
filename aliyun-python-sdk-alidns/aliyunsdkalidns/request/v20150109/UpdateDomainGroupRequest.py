@@ -18,16 +18,29 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkalidns.endpoint import endpoint_data
+
 class UpdateDomainGroupRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'UpdateDomainGroup','Alidns')
+		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'UpdateDomainGroup','alidns')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_GroupId(self):
 		return self.get_query_params().get('GroupId')
 
 	def set_GroupId(self,GroupId):
 		self.add_query_param('GroupId',GroupId)
+
+	def get_GroupName(self):
+		return self.get_query_params().get('GroupName')
+
+	def set_GroupName(self,GroupName):
+		self.add_query_param('GroupName',GroupName)
 
 	def get_UserClientIp(self):
 		return self.get_query_params().get('UserClientIp')
@@ -40,9 +53,3 @@ class UpdateDomainGroupRequest(RpcRequest):
 
 	def set_Lang(self,Lang):
 		self.add_query_param('Lang',Lang)
-
-	def get_GroupName(self):
-		return self.get_query_params().get('GroupName')
-
-	def set_GroupName(self,GroupName):
-		self.add_query_param('GroupName',GroupName)

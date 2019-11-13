@@ -18,10 +18,23 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkalidns.endpoint import endpoint_data
+
 class UpdateDNSSLBWeightRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'UpdateDNSSLBWeight','Alidns')
+		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'UpdateDNSSLBWeight','alidns')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
+
+	def get_Weight(self):
+		return self.get_query_params().get('Weight')
+
+	def set_Weight(self,Weight):
+		self.add_query_param('Weight',Weight)
 
 	def get_RecordId(self):
 		return self.get_query_params().get('RecordId')
@@ -34,12 +47,6 @@ class UpdateDNSSLBWeightRequest(RpcRequest):
 
 	def set_UserClientIp(self,UserClientIp):
 		self.add_query_param('UserClientIp',UserClientIp)
-
-	def get_Weight(self):
-		return self.get_query_params().get('Weight')
-
-	def set_Weight(self,Weight):
-		self.add_query_param('Weight',Weight)
 
 	def get_Lang(self):
 		return self.get_query_params().get('Lang')

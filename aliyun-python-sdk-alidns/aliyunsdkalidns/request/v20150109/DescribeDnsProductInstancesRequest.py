@@ -18,10 +18,23 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkalidns.endpoint import endpoint_data
+
 class DescribeDnsProductInstancesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'DescribeDnsProductInstances','Alidns')
+		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'DescribeDnsProductInstances','alidns')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
+
+	def get_PageNumber(self):
+		return self.get_query_params().get('PageNumber')
+
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)
 
 	def get_UserClientIp(self):
 		return self.get_query_params().get('UserClientIp')
@@ -46,9 +59,3 @@ class DescribeDnsProductInstancesRequest(RpcRequest):
 
 	def set_VersionCode(self,VersionCode):
 		self.add_query_param('VersionCode',VersionCode)
-
-	def get_PageNumber(self):
-		return self.get_query_params().get('PageNumber')
-
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)

@@ -18,10 +18,23 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkalidns.endpoint import endpoint_data
+
 class DescribeDomainsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'DescribeDomains','Alidns')
+		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'DescribeDomains','alidns')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
+
+	def get_PageNumber(self):
+		return self.get_query_params().get('PageNumber')
+
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)
 
 	def get_ResourceGroupId(self):
 		return self.get_query_params().get('ResourceGroupId')
@@ -29,29 +42,11 @@ class DescribeDomainsRequest(RpcRequest):
 	def set_ResourceGroupId(self,ResourceGroupId):
 		self.add_query_param('ResourceGroupId',ResourceGroupId)
 
-	def get_GroupId(self):
-		return self.get_query_params().get('GroupId')
-
-	def set_GroupId(self,GroupId):
-		self.add_query_param('GroupId',GroupId)
-
-	def get_UserClientIp(self):
-		return self.get_query_params().get('UserClientIp')
-
-	def set_UserClientIp(self,UserClientIp):
-		self.add_query_param('UserClientIp',UserClientIp)
-
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
 
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
-
-	def get_SearchMode(self):
-		return self.get_query_params().get('SearchMode')
-
-	def set_SearchMode(self,SearchMode):
-		self.add_query_param('SearchMode',SearchMode)
 
 	def get_Lang(self):
 		return self.get_query_params().get('Lang')
@@ -65,8 +60,38 @@ class DescribeDomainsRequest(RpcRequest):
 	def set_KeyWord(self,KeyWord):
 		self.add_query_param('KeyWord',KeyWord)
 
-	def get_PageNumber(self):
-		return self.get_query_params().get('PageNumber')
+	def get_Direction(self):
+		return self.get_query_params().get('Direction')
 
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
+	def set_Direction(self,Direction):
+		self.add_query_param('Direction',Direction)
+
+	def get_Starmark(self):
+		return self.get_query_params().get('Starmark')
+
+	def set_Starmark(self,Starmark):
+		self.add_query_param('Starmark',Starmark)
+
+	def get_GroupId(self):
+		return self.get_query_params().get('GroupId')
+
+	def set_GroupId(self,GroupId):
+		self.add_query_param('GroupId',GroupId)
+
+	def get_OrderBy(self):
+		return self.get_query_params().get('OrderBy')
+
+	def set_OrderBy(self,OrderBy):
+		self.add_query_param('OrderBy',OrderBy)
+
+	def get_UserClientIp(self):
+		return self.get_query_params().get('UserClientIp')
+
+	def set_UserClientIp(self,UserClientIp):
+		self.add_query_param('UserClientIp',UserClientIp)
+
+	def get_SearchMode(self):
+		return self.get_query_params().get('SearchMode')
+
+	def set_SearchMode(self,SearchMode):
+		self.add_query_param('SearchMode',SearchMode)

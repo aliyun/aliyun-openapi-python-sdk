@@ -18,16 +18,35 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkalidns.endpoint import endpoint_data
+
 class DescribeRecordStatisticsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'DescribeRecordStatistics','Alidns')
+		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'DescribeRecordStatistics','alidns')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_Rr(self):
 		return self.get_query_params().get('Rr')
 
 	def set_Rr(self,Rr):
 		self.add_query_param('Rr',Rr)
+
+	def get_DomainName(self):
+		return self.get_query_params().get('DomainName')
+
+	def set_DomainName(self,DomainName):
+		self.add_query_param('DomainName',DomainName)
+
+	def get_StartDate(self):
+		return self.get_query_params().get('StartDate')
+
+	def set_StartDate(self,StartDate):
+		self.add_query_param('StartDate',StartDate)
 
 	def get_EndDate(self):
 		return self.get_query_params().get('EndDate')
@@ -41,20 +60,8 @@ class DescribeRecordStatisticsRequest(RpcRequest):
 	def set_UserClientIp(self,UserClientIp):
 		self.add_query_param('UserClientIp',UserClientIp)
 
-	def get_DomainName(self):
-		return self.get_query_params().get('DomainName')
-
-	def set_DomainName(self,DomainName):
-		self.add_query_param('DomainName',DomainName)
-
 	def get_Lang(self):
 		return self.get_query_params().get('Lang')
 
 	def set_Lang(self,Lang):
 		self.add_query_param('Lang',Lang)
-
-	def get_StartDate(self):
-		return self.get_query_params().get('StartDate')
-
-	def set_StartDate(self,StartDate):
-		self.add_query_param('StartDate',StartDate)

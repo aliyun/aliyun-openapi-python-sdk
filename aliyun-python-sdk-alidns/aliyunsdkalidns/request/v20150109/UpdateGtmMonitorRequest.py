@@ -18,10 +18,17 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkalidns.endpoint import endpoint_data
+
 class UpdateGtmMonitorRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'UpdateGtmMonitor','Alidns')
+		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'UpdateGtmMonitor','alidns')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_MonitorExtendInfo(self):
 		return self.get_query_params().get('MonitorExtendInfo')
@@ -29,23 +36,23 @@ class UpdateGtmMonitorRequest(RpcRequest):
 	def set_MonitorExtendInfo(self,MonitorExtendInfo):
 		self.add_query_param('MonitorExtendInfo',MonitorExtendInfo)
 
-	def get_UserClientIp(self):
-		return self.get_query_params().get('UserClientIp')
-
-	def set_UserClientIp(self,UserClientIp):
-		self.add_query_param('UserClientIp',UserClientIp)
-
-	def get_Name(self):
-		return self.get_query_params().get('Name')
-
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)
-
 	def get_MonitorConfigId(self):
 		return self.get_query_params().get('MonitorConfigId')
 
 	def set_MonitorConfigId(self,MonitorConfigId):
 		self.add_query_param('MonitorConfigId',MonitorConfigId)
+
+	def get_Timeout(self):
+		return self.get_query_params().get('Timeout')
+
+	def set_Timeout(self,Timeout):
+		self.add_query_param('Timeout',Timeout)
+
+	def get_UserClientIp(self):
+		return self.get_query_params().get('UserClientIp')
+
+	def set_UserClientIp(self,UserClientIp):
+		self.add_query_param('UserClientIp',UserClientIp)
 
 	def get_EvaluationCount(self):
 		return self.get_query_params().get('EvaluationCount')
@@ -70,12 +77,6 @@ class UpdateGtmMonitorRequest(RpcRequest):
 
 	def set_Lang(self,Lang):
 		self.add_query_param('Lang',Lang)
-
-	def get_Timeout(self):
-		return self.get_query_params().get('Timeout')
-
-	def set_Timeout(self,Timeout):
-		self.add_query_param('Timeout',Timeout)
 
 	def get_IspCityNodes(self):
 		return self.get_query_params().get('IspCityNodes')

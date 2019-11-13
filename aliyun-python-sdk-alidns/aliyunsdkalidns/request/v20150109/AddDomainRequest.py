@@ -18,16 +18,17 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkalidns.endpoint import endpoint_data
+
 class AddDomainRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'AddDomain','Alidns')
+		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'AddDomain','alidns')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ResourceGroupId(self):
-		return self.get_query_params().get('ResourceGroupId')
-
-	def set_ResourceGroupId(self,ResourceGroupId):
-		self.add_query_param('ResourceGroupId',ResourceGroupId)
 
 	def get_GroupId(self):
 		return self.get_query_params().get('GroupId')
@@ -40,6 +41,12 @@ class AddDomainRequest(RpcRequest):
 
 	def set_DomainName(self,DomainName):
 		self.add_query_param('DomainName',DomainName)
+
+	def get_ResourceGroupId(self):
+		return self.get_query_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self,ResourceGroupId):
+		self.add_query_param('ResourceGroupId',ResourceGroupId)
 
 	def get_UserClientIp(self):
 		return self.get_query_params().get('UserClientIp')

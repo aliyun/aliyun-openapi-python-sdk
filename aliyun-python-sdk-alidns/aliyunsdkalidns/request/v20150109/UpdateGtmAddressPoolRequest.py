@@ -18,10 +18,29 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkalidns.endpoint import endpoint_data
+
 class UpdateGtmAddressPoolRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'UpdateGtmAddressPool','Alidns')
+		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'UpdateGtmAddressPool','alidns')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
+
+	def get_Type(self):
+		return self.get_query_params().get('Type')
+
+	def set_Type(self,Type):
+		self.add_query_param('Type',Type)
+
+	def get_MinAvailableAddrNum(self):
+		return self.get_query_params().get('MinAvailableAddrNum')
+
+	def set_MinAvailableAddrNum(self,MinAvailableAddrNum):
+		self.add_query_param('MinAvailableAddrNum',MinAvailableAddrNum)
 
 	def get_AddrPoolId(self):
 		return self.get_query_params().get('AddrPoolId')
@@ -47,12 +66,6 @@ class UpdateGtmAddressPoolRequest(RpcRequest):
 	def set_Lang(self,Lang):
 		self.add_query_param('Lang',Lang)
 
-	def get_Type(self):
-		return self.get_query_params().get('Type')
-
-	def set_Type(self,Type):
-		self.add_query_param('Type',Type)
-
 	def get_Addrs(self):
 		return self.get_query_params().get('Addrs')
 
@@ -64,10 +77,3 @@ class UpdateGtmAddressPoolRequest(RpcRequest):
 				self.add_query_param('Addr.' + str(i + 1) + '.LbaWeight' , Addrs[i].get('LbaWeight'))
 			if Addrs[i].get('Value') is not None:
 				self.add_query_param('Addr.' + str(i + 1) + '.Value' , Addrs[i].get('Value'))
-
-
-	def get_MinAvailableAddrNum(self):
-		return self.get_query_params().get('MinAvailableAddrNum')
-
-	def set_MinAvailableAddrNum(self,MinAvailableAddrNum):
-		self.add_query_param('MinAvailableAddrNum',MinAvailableAddrNum)

@@ -18,10 +18,17 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkalidns.endpoint import endpoint_data
+
 class AddDomainRecordRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'AddDomainRecord','Alidns')
+		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'AddDomainRecord','alidns')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_RR(self):
 		return self.get_query_params().get('RR')
@@ -35,17 +42,11 @@ class AddDomainRecordRequest(RpcRequest):
 	def set_Line(self,Line):
 		self.add_query_param('Line',Line)
 
-	def get_UserClientIp(self):
-		return self.get_query_params().get('UserClientIp')
+	def get_Type(self):
+		return self.get_query_params().get('Type')
 
-	def set_UserClientIp(self,UserClientIp):
-		self.add_query_param('UserClientIp',UserClientIp)
-
-	def get_DomainName(self):
-		return self.get_query_params().get('DomainName')
-
-	def set_DomainName(self,DomainName):
-		self.add_query_param('DomainName',DomainName)
+	def set_Type(self,Type):
+		self.add_query_param('Type',Type)
 
 	def get_Lang(self):
 		return self.get_query_params().get('Lang')
@@ -53,11 +54,17 @@ class AddDomainRecordRequest(RpcRequest):
 	def set_Lang(self,Lang):
 		self.add_query_param('Lang',Lang)
 
-	def get_Type(self):
-		return self.get_query_params().get('Type')
+	def get_Value(self):
+		return self.get_query_params().get('Value')
 
-	def set_Type(self,Type):
-		self.add_query_param('Type',Type)
+	def set_Value(self,Value):
+		self.add_query_param('Value',Value)
+
+	def get_DomainName(self):
+		return self.get_query_params().get('DomainName')
+
+	def set_DomainName(self,DomainName):
+		self.add_query_param('DomainName',DomainName)
 
 	def get_Priority(self):
 		return self.get_query_params().get('Priority')
@@ -65,14 +72,14 @@ class AddDomainRecordRequest(RpcRequest):
 	def set_Priority(self,Priority):
 		self.add_query_param('Priority',Priority)
 
-	def get_Value(self):
-		return self.get_query_params().get('Value')
-
-	def set_Value(self,Value):
-		self.add_query_param('Value',Value)
-
 	def get_TTL(self):
 		return self.get_query_params().get('TTL')
 
 	def set_TTL(self,TTL):
 		self.add_query_param('TTL',TTL)
+
+	def get_UserClientIp(self):
+		return self.get_query_params().get('UserClientIp')
+
+	def set_UserClientIp(self,UserClientIp):
+		self.add_query_param('UserClientIp',UserClientIp)

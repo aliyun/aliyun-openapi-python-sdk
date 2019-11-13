@@ -18,10 +18,35 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkalidns.endpoint import endpoint_data
+
 class DescribeRecordLogsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'DescribeRecordLogs','Alidns')
+		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'DescribeRecordLogs','alidns')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
+
+	def get_DomainName(self):
+		return self.get_query_params().get('DomainName')
+
+	def set_DomainName(self,DomainName):
+		self.add_query_param('DomainName',DomainName)
+
+	def get_StartDate(self):
+		return self.get_query_params().get('StartDate')
+
+	def set_StartDate(self,StartDate):
+		self.add_query_param('StartDate',StartDate)
+
+	def get_PageNumber(self):
+		return self.get_query_params().get('PageNumber')
+
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)
 
 	def get_endDate(self):
 		return self.get_query_params().get('endDate')
@@ -34,12 +59,6 @@ class DescribeRecordLogsRequest(RpcRequest):
 
 	def set_UserClientIp(self,UserClientIp):
 		self.add_query_param('UserClientIp',UserClientIp)
-
-	def get_DomainName(self):
-		return self.get_query_params().get('DomainName')
-
-	def set_DomainName(self,DomainName):
-		self.add_query_param('DomainName',DomainName)
 
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
@@ -58,15 +77,3 @@ class DescribeRecordLogsRequest(RpcRequest):
 
 	def set_KeyWord(self,KeyWord):
 		self.add_query_param('KeyWord',KeyWord)
-
-	def get_StartDate(self):
-		return self.get_query_params().get('StartDate')
-
-	def set_StartDate(self,StartDate):
-		self.add_query_param('StartDate',StartDate)
-
-	def get_PageNumber(self):
-		return self.get_query_params().get('PageNumber')
-
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
