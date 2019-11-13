@@ -17,14 +17,13 @@
 # specific language governing permissions and limitations
 # under the License.
 
-from aliyunsdkcsb.endpoint import endpoint_data
 from aliyunsdkcore.request import RpcRequest
-
+from aliyunsdkcsb.endpoint import endpoint_data
 
 class FindServiceStatisticalDataRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'CSB', '2017-11-18', 'FindServiceStatisticalData')
+		RpcRequest.__init__(self, 'CSB', '2017-11-18', 'FindServiceStatisticalData','csb')
 		self.set_protocol_type('https')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -44,14 +43,14 @@ class FindServiceStatisticalDataRequest(RpcRequest):
 	def set_EndTime(self,EndTime):
 		self.add_query_param('EndTime',EndTime)
 
-	def get_ServiceName(self):
-		return self.get_query_params().get('ServiceName')
-
-	def set_ServiceName(self,ServiceName):
-		self.add_query_param('ServiceName',ServiceName)
-
 	def get_StartTime(self):
 		return self.get_query_params().get('StartTime')
 
 	def set_StartTime(self,StartTime):
 		self.add_query_param('StartTime',StartTime)
+
+	def get_ServiceName(self):
+		return self.get_query_params().get('ServiceName')
+
+	def set_ServiceName(self,ServiceName):
+		self.add_query_param('ServiceName',ServiceName)

@@ -17,14 +17,13 @@
 # specific language governing permissions and limitations
 # under the License.
 
-from aliyunsdkcsb.endpoint import endpoint_data
 from aliyunsdkcore.request import RpcRequest
-
+from aliyunsdkcsb.endpoint import endpoint_data
 
 class FindServiceListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'CSB', '2017-11-18', 'FindServiceList')
+		RpcRequest.__init__(self, 'CSB', '2017-11-18', 'FindServiceList','csb')
 		self.set_protocol_type('https')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -44,17 +43,23 @@ class FindServiceListRequest(RpcRequest):
 	def set_ShowDelService(self,ShowDelService):
 		self.add_query_param('ShowDelService',ShowDelService)
 
-	def get_CasShowType(self):
-		return self.get_query_params().get('CasShowType')
-
-	def set_CasShowType(self,CasShowType):
-		self.add_query_param('CasShowType',CasShowType)
-
 	def get_CsbId(self):
 		return self.get_query_params().get('CsbId')
 
 	def set_CsbId(self,CsbId):
 		self.add_query_param('CsbId',CsbId)
+
+	def get_PageNum(self):
+		return self.get_query_params().get('PageNum')
+
+	def set_PageNum(self,PageNum):
+		self.add_query_param('PageNum',PageNum)
+
+	def get_CasShowType(self):
+		return self.get_query_params().get('CasShowType')
+
+	def set_CasShowType(self,CasShowType):
+		self.add_query_param('CasShowType',CasShowType)
 
 	def get_Alias(self):
 		return self.get_query_params().get('Alias')
@@ -67,9 +72,3 @@ class FindServiceListRequest(RpcRequest):
 
 	def set_ServiceName(self,ServiceName):
 		self.add_query_param('ServiceName',ServiceName)
-
-	def get_PageNum(self):
-		return self.get_query_params().get('PageNum')
-
-	def set_PageNum(self,PageNum):
-		self.add_query_param('PageNum',PageNum)

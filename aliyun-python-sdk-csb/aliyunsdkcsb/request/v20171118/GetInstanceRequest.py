@@ -17,14 +17,13 @@
 # specific language governing permissions and limitations
 # under the License.
 
-from aliyunsdkcsb.endpoint import endpoint_data
 from aliyunsdkcore.request import RpcRequest
-
+from aliyunsdkcsb.endpoint import endpoint_data
 
 class GetInstanceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'CSB', '2017-11-18', 'GetInstance')
+		RpcRequest.__init__(self, 'CSB', '2017-11-18', 'GetInstance','csb')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
