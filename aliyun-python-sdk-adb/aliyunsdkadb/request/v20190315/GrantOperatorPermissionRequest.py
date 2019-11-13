@@ -60,14 +60,14 @@ class GrantOperatorPermissionRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
-	def get_ExpiredTime(self):
-		return self.get_query_params().get('ExpiredTime')
-
-	def set_ExpiredTime(self,ExpiredTime):
-		self.add_query_param('ExpiredTime',ExpiredTime)
-
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_ExpiredTime(self):
+		return self.get_query_params().get('ExpiredTime')
+
+	def set_ExpiredTime(self,ExpiredTime):
+		self.add_query_param('ExpiredTime',ExpiredTime)

@@ -36,6 +36,18 @@ class ModifyDBClusterAccessWhiteListRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_SecurityIps(self):
+		return self.get_query_params().get('SecurityIps')
+
+	def set_SecurityIps(self,SecurityIps):
+		self.add_query_param('SecurityIps',SecurityIps)
+
+	def get_DBClusterIPArrayAttribute(self):
+		return self.get_query_params().get('DBClusterIPArrayAttribute')
+
+	def set_DBClusterIPArrayAttribute(self,DBClusterIPArrayAttribute):
+		self.add_query_param('DBClusterIPArrayAttribute',DBClusterIPArrayAttribute)
+
 	def get_ModifyMode(self):
 		return self.get_query_params().get('ModifyMode')
 
@@ -60,26 +72,14 @@ class ModifyDBClusterAccessWhiteListRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
-	def get_SecurityIps(self):
-		return self.get_query_params().get('SecurityIps')
-
-	def set_SecurityIps(self,SecurityIps):
-		self.add_query_param('SecurityIps',SecurityIps)
-
-	def get_DBClusterIPArrayName(self):
-		return self.get_query_params().get('DBClusterIPArrayName')
-
-	def set_DBClusterIPArrayName(self,DBClusterIPArrayName):
-		self.add_query_param('DBClusterIPArrayName',DBClusterIPArrayName)
-
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_DBClusterIPArrayAttribute(self):
-		return self.get_query_params().get('DBClusterIPArrayAttribute')
+	def get_DBClusterIPArrayName(self):
+		return self.get_query_params().get('DBClusterIPArrayName')
 
-	def set_DBClusterIPArrayAttribute(self,DBClusterIPArrayAttribute):
-		self.add_query_param('DBClusterIPArrayAttribute',DBClusterIPArrayAttribute)
+	def set_DBClusterIPArrayName(self,DBClusterIPArrayName):
+		self.add_query_param('DBClusterIPArrayName',DBClusterIPArrayName)
