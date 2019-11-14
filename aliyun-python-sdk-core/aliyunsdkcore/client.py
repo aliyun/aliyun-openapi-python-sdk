@@ -243,8 +243,10 @@ class AcsClient:
             body = urlencode(body_params)
             request.set_content(body)
             request.set_content_type(format_type.APPLICATION_FORM)
-        elif request.get_content() and "Content-Type" not in request.get_headers():
-            request.set_content_type(format_type.APPLICATION_OCTET_STREAM)
+        elif request.get_content():
+            if 'Content-Type' not in request.get_headers() or \
+                    request.get_headers()['Content-Type'] == format_type.APPLICATION_FORM:
+                request.set_content_type(format_type.APPLICATION_OCTET_STREAM)
         method = request.get_method()
 
         signer = self._signer if specific_signer is None else specific_signer

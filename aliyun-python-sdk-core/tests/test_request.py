@@ -52,7 +52,10 @@ class TestRequest(unittest.TestCase):
         r.set_content("content")
         self.assertEqual(r.get_content(), "content")
         # headers
-        self.assertDictEqual(r.get_headers(), {'x-sdk-invoke-type': 'normal'})
+        # headers
+        self.assertDictEqual(r.get_headers(),
+                             {'x-sdk-invoke-type': 'normal',
+                              'Content-Type': 'application/x-www-form-urlencoded'})
         r.set_headers({})
         self.assertDictEqual(r.get_headers(), {})
         r.add_header("key", "value")
@@ -197,7 +200,9 @@ class TestRequest(unittest.TestCase):
         r.set_content("content")
         self.assertEqual(r.get_content(), "content")
         # headers
-        self.assertDictEqual(r.get_headers(), {'x-sdk-invoke-type': 'normal'})
+        self.assertDictEqual(r.get_headers(),
+                             {'x-sdk-invoke-type': 'normal',
+                              'Content-Type': 'application/x-www-form-urlencoded'})
         r.set_headers({})
         self.assertDictEqual(r.get_headers(), {})
         r.add_header("key", "value")
@@ -278,51 +283,55 @@ class TestRequest(unittest.TestCase):
         mock_get_rfc_2616_date.return_value = "2018-12-04T03:25:29Z"
         headers = r.get_signed_header("regionid", "accesskeyid", "secret")
         mock_get_rfc_2616_date.assert_called_once_with()
+        del headers['Authorization']
         self.assertDictEqual(headers, {
             'Accept': 'application/octet-stream',
-            'Authorization': 'acs accesskeyid:Lq1u0OzLW/uqLQswxwhne97Umlw=',
             'Date': '2018-12-04T03:25:29Z',
             'x-acs-region-id': 'regionid',
             'x-acs-signature-method': 'HMAC-SHA1',
             'x-acs-signature-version': '1.0',
-            'x-acs-version': 'version'
+            'x-acs-version': 'version',
+            'Content-Type': 'application/x-www-form-urlencoded',
         })
 
         r.set_query_params(None)
         headers = r.get_signed_header("regionid", "accesskeyid", "secret")
+        del headers['Authorization']
         self.assertDictEqual(headers, {
             'Accept': 'application/octet-stream',
-            'Authorization': 'acs accesskeyid:Lq1u0OzLW/uqLQswxwhne97Umlw=',
             'Date': '2018-12-04T03:25:29Z',
             'x-acs-region-id': 'regionid',
             'x-acs-signature-method': 'HMAC-SHA1',
             'x-acs-signature-version': '1.0',
-            'x-acs-version': 'version'
+            'x-acs-version': 'version',
+            'Content-Type': 'application/x-www-form-urlencoded'
         })
 
         r.set_query_params({'RegionId': 'regionid'})
         headers = r.get_signed_header("regionid", "accesskeyid", "secret")
+        del headers['Authorization']
         self.assertDictEqual(headers, {
             'Accept': 'application/octet-stream',
-            'Authorization': 'acs accesskeyid:Lq1u0OzLW/uqLQswxwhne97Umlw=',
             'Date': '2018-12-04T03:25:29Z',
             'x-acs-region-id': 'regionid',
             'x-acs-signature-method': 'HMAC-SHA1',
             'x-acs-signature-version': '1.0',
-            'x-acs-version': 'version'
+            'x-acs-version': 'version',
+            'Content-Type': 'application/x-www-form-urlencoded'
         })
 
         r.set_content("content")
         headers = r.get_signed_header("regionid", "accesskeyid", "secret")
+        del headers['Authorization']
         self.assertDictEqual(headers, {
             'Accept': 'application/octet-stream',
-            'Authorization': 'acs accesskeyid:u2RdkokGTtn2BhUmzUNJjVUh448=',
             'Content-MD5': 'mgNkuembtIDdJeHwKEyFVQ==',
             'Date': '2018-12-04T03:25:29Z',
             'x-acs-region-id': 'regionid',
             'x-acs-signature-method': 'HMAC-SHA1',
             'x-acs-signature-version': '1.0',
-            'x-acs-version': 'version'
+            'x-acs-version': 'version',
+            'Content-Type': 'application/x-www-form-urlencoded'
         })
 
     def test_common_request(self):

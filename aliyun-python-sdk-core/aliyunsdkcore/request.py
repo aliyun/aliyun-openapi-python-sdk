@@ -297,6 +297,7 @@ class RpcRequest(AcsRequest):
             mt.GET)
         self._style = STYLE_RPC
         self._signer = signer
+        self.set_content_type(ft.APPLICATION_FORM)
 
     def get_style(self):
         return self._style
@@ -330,6 +331,8 @@ class RpcRequest(AcsRequest):
         headers = {}
         for headerKey, headerValue in iteritems(self.get_headers()):
             if headerKey.startswith("x-acs-") or headerKey.startswith("x-sdk-"):
+                headers[headerKey] = headerValue
+            if headerKey == 'Content-Type':
                 headers[headerKey] = headerValue
         return headers
 
@@ -379,6 +382,7 @@ class RoaRequest(AcsRequest):
             self._header = headers
         self._uri_pattern = uri_pattern
         self._path_params = path_params
+        self.set_content_type(ft.APPLICATION_FORM)
 
     def get_style(self):
         """
