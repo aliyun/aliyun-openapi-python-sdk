@@ -23,12 +23,18 @@ from aliyunsdkbssopenapi.endpoint import endpoint_data
 class QueryAccountBillRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'QueryAccountBill','BssOpenApi')
+		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'QueryAccountBill')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+
+	def get_ProductCode(self):
+		return self.get_query_params().get('ProductCode')
+
+	def set_ProductCode(self,ProductCode):
+		self.add_query_param('ProductCode',ProductCode)
 
 	def get_BillingCycle(self):
 		return self.get_query_params().get('BillingCycle')
@@ -47,6 +53,12 @@ class QueryAccountBillRequest(RpcRequest):
 
 	def set_OwnerID(self,OwnerID):
 		self.add_query_param('OwnerID',OwnerID)
+
+	def get_IsGroupByProduct(self):
+		return self.get_query_params().get('IsGroupByProduct')
+
+	def set_IsGroupByProduct(self,IsGroupByProduct):
+		self.add_query_param('IsGroupByProduct',IsGroupByProduct)
 
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
