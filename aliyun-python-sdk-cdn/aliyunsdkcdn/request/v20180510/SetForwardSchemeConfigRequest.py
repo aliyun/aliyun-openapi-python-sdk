@@ -23,7 +23,7 @@ from aliyunsdkcdn.endpoint import endpoint_data
 class SetForwardSchemeConfigRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cdn', '2018-05-10', 'SetForwardSchemeConfig','cdn')
+		RpcRequest.__init__(self, 'Cdn', '2018-05-10', 'SetForwardSchemeConfig')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):

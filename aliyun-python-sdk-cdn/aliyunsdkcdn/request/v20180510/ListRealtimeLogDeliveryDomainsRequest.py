@@ -20,36 +20,36 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcdn.endpoint import endpoint_data
 
-class DeleteSpecificStagingConfigRequest(RpcRequest):
+class ListRealtimeLogDeliveryDomainsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cdn', '2018-05-10', 'DeleteSpecificStagingConfig','cdn')
+		RpcRequest.__init__(self, 'Cdn', '2018-05-10', 'ListRealtimeLogDeliveryDomains')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_SecurityToken(self):
-		return self.get_query_params().get('SecurityToken')
+	def get_Project(self):
+		return self.get_query_params().get('Project')
 
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)
-
-	def get_ConfigId(self):
-		return self.get_query_params().get('ConfigId')
-
-	def set_ConfigId(self,ConfigId):
-		self.add_query_param('ConfigId',ConfigId)
-
-	def get_DomainName(self):
-		return self.get_query_params().get('DomainName')
-
-	def set_DomainName(self,DomainName):
-		self.add_query_param('DomainName',DomainName)
+	def set_Project(self,Project):
+		self.add_query_param('Project',Project)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_Region(self):
+		return self.get_query_params().get('Region')
+
+	def set_Region(self,Region):
+		self.add_query_param('Region',Region)
+
+	def get_Logstore(self):
+		return self.get_query_params().get('Logstore')
+
+	def set_Logstore(self,Logstore):
+		self.add_query_param('Logstore',Logstore)

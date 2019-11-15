@@ -20,15 +20,33 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcdn.endpoint import endpoint_data
 
-class SetL2OssKeyConfigRequest(RpcRequest):
+class DescribeDomainRealTimeSrcHttpCodeDataRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cdn', '2018-05-10', 'SetL2OssKeyConfig','cdn')
+		RpcRequest.__init__(self, 'Cdn', '2018-05-10', 'DescribeDomainRealTimeSrcHttpCodeData')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+
+	def get_LocationNameEn(self):
+		return self.get_query_params().get('LocationNameEn')
+
+	def set_LocationNameEn(self,LocationNameEn):
+		self.add_query_param('LocationNameEn',LocationNameEn)
+
+	def get_StartTime(self):
+		return self.get_query_params().get('StartTime')
+
+	def set_StartTime(self,StartTime):
+		self.add_query_param('StartTime',StartTime)
+
+	def get_IspNameEn(self):
+		return self.get_query_params().get('IspNameEn')
+
+	def set_IspNameEn(self,IspNameEn):
+		self.add_query_param('IspNameEn',IspNameEn)
 
 	def get_DomainName(self):
 		return self.get_query_params().get('DomainName')
@@ -36,20 +54,14 @@ class SetL2OssKeyConfigRequest(RpcRequest):
 	def set_DomainName(self,DomainName):
 		self.add_query_param('DomainName',DomainName)
 
+	def get_EndTime(self):
+		return self.get_query_params().get('EndTime')
+
+	def set_EndTime(self,EndTime):
+		self.add_query_param('EndTime',EndTime)
+
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
-
-	def get_ConfigId(self):
-		return self.get_query_params().get('ConfigId')
-
-	def set_ConfigId(self,ConfigId):
-		self.add_query_param('ConfigId',ConfigId)
-
-	def get_PrivateOssAuth(self):
-		return self.get_query_params().get('PrivateOssAuth')
-
-	def set_PrivateOssAuth(self,PrivateOssAuth):
-		self.add_query_param('PrivateOssAuth',PrivateOssAuth)

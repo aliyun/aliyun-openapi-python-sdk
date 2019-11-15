@@ -23,12 +23,30 @@ from aliyunsdkcdn.endpoint import endpoint_data
 class DescribeRefreshTasksRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cdn', '2018-05-10', 'DescribeRefreshTasks','cdn')
+		RpcRequest.__init__(self, 'Cdn', '2018-05-10', 'DescribeRefreshTasks')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+
+	def get_ObjectPath(self):
+		return self.get_query_params().get('ObjectPath')
+
+	def set_ObjectPath(self,ObjectPath):
+		self.add_query_param('ObjectPath',ObjectPath)
+
+	def get_StartTime(self):
+		return self.get_query_params().get('StartTime')
+
+	def set_StartTime(self,StartTime):
+		self.add_query_param('StartTime',StartTime)
+
+	def get_PageNumber(self):
+		return self.get_query_params().get('PageNumber')
+
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)
 
 	def get_ResourceGroupId(self):
 		return self.get_query_params().get('ResourceGroupId')
@@ -42,41 +60,11 @@ class DescribeRefreshTasksRequest(RpcRequest):
 	def set_SecurityToken(self,SecurityToken):
 		self.add_query_param('SecurityToken',SecurityToken)
 
-	def get_ObjectPath(self):
-		return self.get_query_params().get('ObjectPath')
-
-	def set_ObjectPath(self,ObjectPath):
-		self.add_query_param('ObjectPath',ObjectPath)
-
-	def get_DomainName(self):
-		return self.get_query_params().get('DomainName')
-
-	def set_DomainName(self,DomainName):
-		self.add_query_param('DomainName',DomainName)
-
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
 
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
-
-	def get_EndTime(self):
-		return self.get_query_params().get('EndTime')
-
-	def set_EndTime(self,EndTime):
-		self.add_query_param('EndTime',EndTime)
-
-	def get_StartTime(self):
-		return self.get_query_params().get('StartTime')
-
-	def set_StartTime(self,StartTime):
-		self.add_query_param('StartTime',StartTime)
-
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
 
 	def get_ObjectType(self):
 		return self.get_query_params().get('ObjectType')
@@ -90,11 +78,23 @@ class DescribeRefreshTasksRequest(RpcRequest):
 	def set_TaskId(self,TaskId):
 		self.add_query_param('TaskId',TaskId)
 
-	def get_PageNumber(self):
-		return self.get_query_params().get('PageNumber')
+	def get_DomainName(self):
+		return self.get_query_params().get('DomainName')
 
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
+	def set_DomainName(self,DomainName):
+		self.add_query_param('DomainName',DomainName)
+
+	def get_EndTime(self):
+		return self.get_query_params().get('EndTime')
+
+	def set_EndTime(self,EndTime):
+		self.add_query_param('EndTime',EndTime)
+
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
 
 	def get_Status(self):
 		return self.get_query_params().get('Status')

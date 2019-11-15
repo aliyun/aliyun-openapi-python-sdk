@@ -23,7 +23,7 @@ from aliyunsdkcdn.endpoint import endpoint_data
 class DescribeDomainTopReferVisitRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cdn', '2018-05-10', 'DescribeDomainTopReferVisit','cdn')
+		RpcRequest.__init__(self, 'Cdn', '2018-05-10', 'DescribeDomainTopReferVisit')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -47,6 +47,12 @@ class DescribeDomainTopReferVisitRequest(RpcRequest):
 
 	def set_DomainName(self,DomainName):
 		self.add_query_param('DomainName',DomainName)
+
+	def get_EndTime(self):
+		return self.get_query_params().get('EndTime')
+
+	def set_EndTime(self,EndTime):
+		self.add_query_param('EndTime',EndTime)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')

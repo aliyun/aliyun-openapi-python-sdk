@@ -23,7 +23,7 @@ from aliyunsdkcdn.endpoint import endpoint_data
 class DescribeDomainTopUrlVisitRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cdn', '2018-05-10', 'DescribeDomainTopUrlVisit','cdn')
+		RpcRequest.__init__(self, 'Cdn', '2018-05-10', 'DescribeDomainTopUrlVisit')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -35,12 +35,6 @@ class DescribeDomainTopUrlVisitRequest(RpcRequest):
 
 	def set_StartTime(self,StartTime):
 		self.add_query_param('StartTime',StartTime)
-
-	def get_Percent(self):
-		return self.get_query_params().get('Percent')
-
-	def set_Percent(self,Percent):
-		self.add_query_param('Percent',Percent)
 
 	def get_DomainName(self):
 		return self.get_query_params().get('DomainName')

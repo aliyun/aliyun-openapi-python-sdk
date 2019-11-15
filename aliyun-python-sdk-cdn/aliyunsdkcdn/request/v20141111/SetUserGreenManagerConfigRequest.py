@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,10 +18,23 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkcdn.endpoint import endpoint_data
+
 class SetUserGreenManagerConfigRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'SetUserGreenManagerConfig')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
+
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
 
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
@@ -34,12 +47,6 @@ class SetUserGreenManagerConfigRequest(RpcRequest):
 
 	def set_Quota(self,Quota):
 		self.add_query_param('Quota',Quota)
-
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
 
 	def get_Ratio(self):
 		return self.get_query_params().get('Ratio')

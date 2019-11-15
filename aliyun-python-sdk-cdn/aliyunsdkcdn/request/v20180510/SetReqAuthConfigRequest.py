@@ -23,7 +23,7 @@ from aliyunsdkcdn.endpoint import endpoint_data
 class SetReqAuthConfigRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cdn', '2018-05-10', 'SetReqAuthConfig','cdn')
+		RpcRequest.__init__(self, 'Cdn', '2018-05-10', 'SetReqAuthConfig')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -41,6 +41,18 @@ class SetReqAuthConfigRequest(RpcRequest):
 
 	def set_Key2(self,Key2):
 		self.add_query_param('Key2',Key2)
+
+	def get_TimeOut(self):
+		return self.get_query_params().get('TimeOut')
+
+	def set_TimeOut(self,TimeOut):
+		self.add_query_param('TimeOut',TimeOut)
+
+	def get_AuthType(self):
+		return self.get_query_params().get('AuthType')
+
+	def set_AuthType(self,AuthType):
+		self.add_query_param('AuthType',AuthType)
 
 	def get_AuthRemoteDesc(self):
 		return self.get_query_params().get('AuthRemoteDesc')
@@ -65,15 +77,3 @@ class SetReqAuthConfigRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
-
-	def get_TimeOut(self):
-		return self.get_query_params().get('TimeOut')
-
-	def set_TimeOut(self,TimeOut):
-		self.add_query_param('TimeOut',TimeOut)
-
-	def get_AuthType(self):
-		return self.get_query_params().get('AuthType')
-
-	def set_AuthType(self,AuthType):
-		self.add_query_param('AuthType',AuthType)

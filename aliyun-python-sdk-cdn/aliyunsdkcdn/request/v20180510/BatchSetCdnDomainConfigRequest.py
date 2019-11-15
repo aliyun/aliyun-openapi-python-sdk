@@ -23,7 +23,7 @@ from aliyunsdkcdn.endpoint import endpoint_data
 class BatchSetCdnDomainConfigRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cdn', '2018-05-10', 'BatchSetCdnDomainConfig','cdn')
+		RpcRequest.__init__(self, 'Cdn', '2018-05-10', 'BatchSetCdnDomainConfig')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -35,12 +35,6 @@ class BatchSetCdnDomainConfigRequest(RpcRequest):
 
 	def set_Functions(self,Functions):
 		self.add_query_param('Functions',Functions)
-
-	def get_SecurityToken(self):
-		return self.get_query_params().get('SecurityToken')
-
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)
 
 	def get_DomainNames(self):
 		return self.get_query_params().get('DomainNames')
@@ -59,3 +53,9 @@ class BatchSetCdnDomainConfigRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_SecurityToken(self):
+		return self.get_query_params().get('SecurityToken')
+
+	def set_SecurityToken(self,SecurityToken):
+		self.add_query_param('SecurityToken',SecurityToken)

@@ -23,24 +23,12 @@ from aliyunsdkcdn.endpoint import endpoint_data
 class BatchUpdateCdnDomainRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cdn', '2018-05-10', 'BatchUpdateCdnDomain','cdn')
+		RpcRequest.__init__(self, 'Cdn', '2018-05-10', 'BatchUpdateCdnDomain')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_TopLevelDomain(self):
-		return self.get_query_params().get('TopLevelDomain')
-
-	def set_TopLevelDomain(self,TopLevelDomain):
-		self.add_query_param('TopLevelDomain',TopLevelDomain)
-
-	def get_ResourceGroupId(self):
-		return self.get_query_params().get('ResourceGroupId')
-
-	def set_ResourceGroupId(self,ResourceGroupId):
-		self.add_query_param('ResourceGroupId',ResourceGroupId)
 
 	def get_Sources(self):
 		return self.get_query_params().get('Sources')
@@ -48,11 +36,23 @@ class BatchUpdateCdnDomainRequest(RpcRequest):
 	def set_Sources(self,Sources):
 		self.add_query_param('Sources',Sources)
 
+	def get_ResourceGroupId(self):
+		return self.get_query_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self,ResourceGroupId):
+		self.add_query_param('ResourceGroupId',ResourceGroupId)
+
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
 
 	def set_SecurityToken(self,SecurityToken):
 		self.add_query_param('SecurityToken',SecurityToken)
+
+	def get_TopLevelDomain(self):
+		return self.get_query_params().get('TopLevelDomain')
+
+	def set_TopLevelDomain(self,TopLevelDomain):
+		self.add_query_param('TopLevelDomain',TopLevelDomain)
 
 	def get_DomainName(self):
 		return self.get_query_params().get('DomainName')

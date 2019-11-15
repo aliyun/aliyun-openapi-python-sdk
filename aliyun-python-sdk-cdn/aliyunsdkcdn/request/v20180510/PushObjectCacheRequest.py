@@ -23,7 +23,7 @@ from aliyunsdkcdn.endpoint import endpoint_data
 class PushObjectCacheRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cdn', '2018-05-10', 'PushObjectCache','cdn')
+		RpcRequest.__init__(self, 'Cdn', '2018-05-10', 'PushObjectCache')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -36,12 +36,6 @@ class PushObjectCacheRequest(RpcRequest):
 	def set_Area(self,Area):
 		self.add_query_param('Area',Area)
 
-	def get_SecurityToken(self):
-		return self.get_query_params().get('SecurityToken')
-
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)
-
 	def get_ObjectPath(self):
 		return self.get_query_params().get('ObjectPath')
 
@@ -53,3 +47,9 @@ class PushObjectCacheRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_SecurityToken(self):
+		return self.get_query_params().get('SecurityToken')
+
+	def set_SecurityToken(self,SecurityToken):
+		self.add_query_param('SecurityToken',SecurityToken)

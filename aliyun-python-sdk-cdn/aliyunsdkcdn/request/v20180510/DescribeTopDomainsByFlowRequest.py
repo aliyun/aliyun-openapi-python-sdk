@@ -23,7 +23,7 @@ from aliyunsdkcdn.endpoint import endpoint_data
 class DescribeTopDomainsByFlowRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cdn', '2018-05-10', 'DescribeTopDomainsByFlow','cdn')
+		RpcRequest.__init__(self, 'Cdn', '2018-05-10', 'DescribeTopDomainsByFlow')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -41,12 +41,6 @@ class DescribeTopDomainsByFlowRequest(RpcRequest):
 
 	def set_Limit(self,Limit):
 		self.add_query_param('Limit',Limit)
-
-	def get_Product(self):
-		return self.get_query_params().get('Product')
-
-	def set_Product(self,Product):
-		self.add_query_param('Product',Product)
 
 	def get_EndTime(self):
 		return self.get_query_params().get('EndTime')

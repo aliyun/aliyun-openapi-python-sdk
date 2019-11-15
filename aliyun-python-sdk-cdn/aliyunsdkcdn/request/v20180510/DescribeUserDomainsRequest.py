@@ -23,11 +23,64 @@ from aliyunsdkcdn.endpoint import endpoint_data
 class DescribeUserDomainsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cdn', '2018-05-10', 'DescribeUserDomains','cdn')
+		RpcRequest.__init__(self, 'Cdn', '2018-05-10', 'DescribeUserDomains')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
+
+	def get_PageNumber(self):
+		return self.get_query_params().get('PageNumber')
+
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)
+
+	def get_CheckDomainShow(self):
+		return self.get_query_params().get('CheckDomainShow')
+
+	def set_CheckDomainShow(self,CheckDomainShow):
+		self.add_query_param('CheckDomainShow',CheckDomainShow)
+
+	def get_ResourceGroupId(self):
+		return self.get_query_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self,ResourceGroupId):
+		self.add_query_param('ResourceGroupId',ResourceGroupId)
+
+	def get_SecurityToken(self):
+		return self.get_query_params().get('SecurityToken')
+
+	def set_SecurityToken(self,SecurityToken):
+		self.add_query_param('SecurityToken',SecurityToken)
+
+	def get_CdnType(self):
+		return self.get_query_params().get('CdnType')
+
+	def set_CdnType(self,CdnType):
+		self.add_query_param('CdnType',CdnType)
+
+	def get_ChangeEndTime(self):
+		return self.get_query_params().get('ChangeEndTime')
+
+	def set_ChangeEndTime(self,ChangeEndTime):
+		self.add_query_param('ChangeEndTime',ChangeEndTime)
+
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
+
+	def get_Tags(self):
+		return self.get_query_params().get('Tags')
+
+	def set_Tags(self,Tags):
+		for i in range(len(Tags)):	
+			if Tags[i].get('Value') is not None:
+				self.add_query_param('Tag.' + str(i + 1) + '.Value' , Tags[i].get('Value'))
+			if Tags[i].get('Key') is not None:
+				self.add_query_param('Tag.' + str(i + 1) + '.Key' , Tags[i].get('Key'))
 
 
 	def get_FuncFilter(self):
@@ -54,12 +107,6 @@ class DescribeUserDomainsRequest(RpcRequest):
 	def set_FuncId(self,FuncId):
 		self.add_query_param('FuncId',FuncId)
 
-	def get_PageNumber(self):
-		return self.get_query_params().get('PageNumber')
-
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
-
 	def get_DomainStatus(self):
 		return self.get_query_params().get('DomainStatus')
 
@@ -72,42 +119,8 @@ class DescribeUserDomainsRequest(RpcRequest):
 	def set_DomainSearchType(self,DomainSearchType):
 		self.add_query_param('DomainSearchType',DomainSearchType)
 
-	def get_CheckDomainShow(self):
-		return self.get_query_params().get('CheckDomainShow')
+	def get_ChangeStartTime(self):
+		return self.get_query_params().get('ChangeStartTime')
 
-	def set_CheckDomainShow(self,CheckDomainShow):
-		self.add_query_param('CheckDomainShow',CheckDomainShow)
-
-	def get_ResourceGroupId(self):
-		return self.get_query_params().get('ResourceGroupId')
-
-	def set_ResourceGroupId(self,ResourceGroupId):
-		self.add_query_param('ResourceGroupId',ResourceGroupId)
-
-	def get_SecurityToken(self):
-		return self.get_query_params().get('SecurityToken')
-
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)
-
-	def get_CdnType(self):
-		return self.get_query_params().get('CdnType')
-
-	def set_CdnType(self,CdnType):
-		self.add_query_param('CdnType',CdnType)
-
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_Tags(self):
-		return self.get_query_params().get('Tags')
-
-	def set_Tags(self,Tags):
-		for i in range(len(Tags)):	
-			if Tags[i].get('Value') is not None:
-				self.add_query_param('Tag.' + str(i + 1) + '.Value' , Tags[i].get('Value'))
-			if Tags[i].get('Key') is not None:
-				self.add_query_param('Tag.' + str(i + 1) + '.Key' , Tags[i].get('Key'))
+	def set_ChangeStartTime(self,ChangeStartTime):
+		self.add_query_param('ChangeStartTime',ChangeStartTime)
