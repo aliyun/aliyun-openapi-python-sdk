@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,10 +18,17 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkdcdn.endpoint import endpoint_data
+
 class DescribeDcdnDomainWebsocketBpsDataRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'dcdn', '2018-01-15', 'DescribeDcdnDomainWebsocketBpsData')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_LocationNameEn(self):
 		return self.get_query_params().get('LocationNameEn')
@@ -40,18 +47,6 @@ class DescribeDcdnDomainWebsocketBpsDataRequest(RpcRequest):
 
 	def set_IspNameEn(self,IspNameEn):
 		self.add_query_param('IspNameEn',IspNameEn)
-
-	def get_FixTimeGap(self):
-		return self.get_query_params().get('FixTimeGap')
-
-	def set_FixTimeGap(self,FixTimeGap):
-		self.add_query_param('FixTimeGap',FixTimeGap)
-
-	def get_TimeMerge(self):
-		return self.get_query_params().get('TimeMerge')
-
-	def set_TimeMerge(self,TimeMerge):
-		self.add_query_param('TimeMerge',TimeMerge)
 
 	def get_DomainName(self):
 		return self.get_query_params().get('DomainName')

@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdcdn.endpoint import endpoint_data
 
-class DescribeDcdnUserDomainsRequest(RpcRequest):
+class DescribeDcdnIpaUserDomainsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'dcdn', '2018-01-15', 'DescribeDcdnUserDomains')
+		RpcRequest.__init__(self, 'dcdn', '2018-01-15', 'DescribeDcdnIpaUserDomains')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -53,12 +53,6 @@ class DescribeDcdnUserDomainsRequest(RpcRequest):
 
 	def set_SecurityToken(self,SecurityToken):
 		self.add_query_param('SecurityToken',SecurityToken)
-
-	def get_ChangeEndTime(self):
-		return self.get_query_params().get('ChangeEndTime')
-
-	def set_ChangeEndTime(self,ChangeEndTime):
-		self.add_query_param('ChangeEndTime',ChangeEndTime)
 
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
@@ -101,9 +95,3 @@ class DescribeDcdnUserDomainsRequest(RpcRequest):
 
 	def set_DomainSearchType(self,DomainSearchType):
 		self.add_query_param('DomainSearchType',DomainSearchType)
-
-	def get_ChangeStartTime(self):
-		return self.get_query_params().get('ChangeStartTime')
-
-	def set_ChangeStartTime(self,ChangeStartTime):
-		self.add_query_param('ChangeStartTime',ChangeStartTime)

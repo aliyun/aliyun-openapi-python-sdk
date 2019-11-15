@@ -20,21 +20,21 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdcdn.endpoint import endpoint_data
 
-class DescribeDcdnDomainIspDataRequest(RpcRequest):
+class DescribeDcdnIpaDomainConfigsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'dcdn', '2018-01-15', 'DescribeDcdnDomainIspData')
+		RpcRequest.__init__(self, 'dcdn', '2018-01-15', 'DescribeDcdnIpaDomainConfigs')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_StartTime(self):
-		return self.get_query_params().get('StartTime')
+	def get_FunctionNames(self):
+		return self.get_query_params().get('FunctionNames')
 
-	def set_StartTime(self,StartTime):
-		self.add_query_param('StartTime',StartTime)
+	def set_FunctionNames(self,FunctionNames):
+		self.add_query_param('FunctionNames',FunctionNames)
 
 	def get_DomainName(self):
 		return self.get_query_params().get('DomainName')
@@ -42,14 +42,14 @@ class DescribeDcdnDomainIspDataRequest(RpcRequest):
 	def set_DomainName(self,DomainName):
 		self.add_query_param('DomainName',DomainName)
 
-	def get_EndTime(self):
-		return self.get_query_params().get('EndTime')
-
-	def set_EndTime(self,EndTime):
-		self.add_query_param('EndTime',EndTime)
-
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_SecurityToken(self):
+		return self.get_query_params().get('SecurityToken')
+
+	def set_SecurityToken(self,SecurityToken):
+		self.add_query_param('SecurityToken',SecurityToken)

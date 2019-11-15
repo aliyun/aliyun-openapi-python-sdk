@@ -20,21 +20,45 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdcdn.endpoint import endpoint_data
 
-class DescribeDcdnDomainIspDataRequest(RpcRequest):
+class DescribeDcdnDomainIpaBpsDataRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'dcdn', '2018-01-15', 'DescribeDcdnDomainIspData')
+		RpcRequest.__init__(self, 'dcdn', '2018-01-15', 'DescribeDcdnDomainIpaBpsData')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_LocationNameEn(self):
+		return self.get_query_params().get('LocationNameEn')
+
+	def set_LocationNameEn(self,LocationNameEn):
+		self.add_query_param('LocationNameEn',LocationNameEn)
+
 	def get_StartTime(self):
 		return self.get_query_params().get('StartTime')
 
 	def set_StartTime(self,StartTime):
 		self.add_query_param('StartTime',StartTime)
+
+	def get_IspNameEn(self):
+		return self.get_query_params().get('IspNameEn')
+
+	def set_IspNameEn(self,IspNameEn):
+		self.add_query_param('IspNameEn',IspNameEn)
+
+	def get_FixTimeGap(self):
+		return self.get_query_params().get('FixTimeGap')
+
+	def set_FixTimeGap(self,FixTimeGap):
+		self.add_query_param('FixTimeGap',FixTimeGap)
+
+	def get_TimeMerge(self):
+		return self.get_query_params().get('TimeMerge')
+
+	def set_TimeMerge(self,TimeMerge):
+		self.add_query_param('TimeMerge',TimeMerge)
 
 	def get_DomainName(self):
 		return self.get_query_params().get('DomainName')
@@ -53,3 +77,9 @@ class DescribeDcdnDomainIspDataRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_Interval(self):
+		return self.get_query_params().get('Interval')
+
+	def set_Interval(self,Interval):
+		self.add_query_param('Interval',Interval)
