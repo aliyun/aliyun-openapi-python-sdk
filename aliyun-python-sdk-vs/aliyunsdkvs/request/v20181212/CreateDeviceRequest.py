@@ -120,6 +120,12 @@ class CreateDeviceRequest(RpcRequest):
 	def set_Name(self,Name):
 		self.add_query_param('Name',Name)
 
+	def get_Dsn(self):
+		return self.get_query_params().get('Dsn')
+
+	def set_Dsn(self,Dsn):
+		self.add_query_param('Dsn',Dsn)
+
 	def get_Username(self):
 		return self.get_query_params().get('Username')
 

@@ -72,6 +72,12 @@ class CreateTemplateRequest(RpcRequest):
 	def set_Type(self,Type):
 		self.add_query_param('Type',Type)
 
+	def get_JpgOnDemand(self):
+		return self.get_query_params().get('JpgOnDemand')
+
+	def set_JpgOnDemand(self,JpgOnDemand):
+		self.add_query_param('JpgOnDemand',JpgOnDemand)
+
 	def get_Retention(self):
 		return self.get_query_params().get('Retention')
 
@@ -95,6 +101,12 @@ class CreateTemplateRequest(RpcRequest):
 
 	def set_OssBucket(self,OssBucket):
 		self.add_query_param('OssBucket',OssBucket)
+
+	def get_TransConfigsJSON(self):
+		return self.get_query_params().get('TransConfigsJSON')
+
+	def set_TransConfigsJSON(self,TransConfigsJSON):
+		self.add_query_param('TransConfigsJSON',TransConfigsJSON)
 
 	def get_EndTime(self):
 		return self.get_query_params().get('EndTime')
