@@ -152,6 +152,12 @@ class DescribeRecommendInstanceTypeRequest(RpcRequest):
 	def set_PriorityStrategy(self,PriorityStrategy):
 		self.add_query_param('PriorityStrategy',PriorityStrategy)
 
+	def get_InstanceFamilyLevel(self):
+		return self.get_query_params().get('InstanceFamilyLevel')
+
+	def set_InstanceFamilyLevel(self,InstanceFamilyLevel):
+		self.add_query_param('InstanceFamilyLevel',InstanceFamilyLevel)
+
 	def get_ZoneId(self):
 		return self.get_query_params().get('ZoneId')
 

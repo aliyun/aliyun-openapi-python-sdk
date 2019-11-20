@@ -131,6 +131,12 @@ class RunInstancesRequest(RpcRequest):
 	def set_AutoRenewPeriod(self,AutoRenewPeriod):
 		self.add_query_param('AutoRenewPeriod',AutoRenewPeriod)
 
+	def get_CpuOptionsCore(self):
+		return self.get_query_params().get('CpuOptions.Core')
+
+	def set_CpuOptionsCore(self,CpuOptionsCore):
+		self.add_query_param('CpuOptions.Core',CpuOptionsCore)
+
 	def get_Period(self):
 		return self.get_query_params().get('Period')
 
@@ -154,6 +160,12 @@ class RunInstancesRequest(RpcRequest):
 
 	def set_Ipv6AddressCount(self,Ipv6AddressCount):
 		self.add_query_param('Ipv6AddressCount',Ipv6AddressCount)
+
+	def get_CpuOptionsNuma(self):
+		return self.get_query_params().get('CpuOptions.Numa')
+
+	def set_CpuOptionsNuma(self,CpuOptionsNuma):
+		self.add_query_param('CpuOptions.Numa',CpuOptionsNuma)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
@@ -276,6 +288,12 @@ class RunInstancesRequest(RpcRequest):
 
 	def set_Description(self,Description):
 		self.add_query_param('Description',Description)
+
+	def get_CpuOptionsThreadsPerCore(self):
+		return self.get_query_params().get('CpuOptions.ThreadsPerCore')
+
+	def set_CpuOptionsThreadsPerCore(self,CpuOptionsThreadsPerCore):
+		self.add_query_param('CpuOptions.ThreadsPerCore',CpuOptionsThreadsPerCore)
 
 	def get_SystemDiskCategory(self):
 		return self.get_query_params().get('SystemDisk.Category')

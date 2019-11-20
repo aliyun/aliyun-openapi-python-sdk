@@ -20,15 +20,21 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkecs.endpoint import endpoint_data
 
-class ListTagResourcesRequest(RpcRequest):
+class DeleteDemandRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'ListTagResources','ecs')
+		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'DeleteDemand','ecs')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+
+	def get_Reason(self):
+		return self.get_query_params().get('Reason')
+
+	def set_Reason(self,Reason):
+		self.add_query_param('Reason',Reason)
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -36,30 +42,11 @@ class ListTagResourcesRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_NextToken(self):
-		return self.get_query_params().get('NextToken')
+	def get_ClientToken(self):
+		return self.get_query_params().get('ClientToken')
 
-	def set_NextToken(self,NextToken):
-		self.add_query_param('NextToken',NextToken)
-
-	def get_Tags(self):
-		return self.get_query_params().get('Tags')
-
-	def set_Tags(self,Tags):
-		for i in range(len(Tags)):	
-			if Tags[i].get('Key') is not None:
-				self.add_query_param('Tag.' + str(i + 1) + '.Key' , Tags[i].get('Key'))
-			if Tags[i].get('Value') is not None:
-				self.add_query_param('Tag.' + str(i + 1) + '.Value' , Tags[i].get('Value'))
-
-
-	def get_ResourceIds(self):
-		return self.get_query_params().get('ResourceIds')
-
-	def set_ResourceIds(self,ResourceIds):
-		for i in range(len(ResourceIds)):	
-			if ResourceIds[i] is not None:
-				self.add_query_param('ResourceId.' + str(i + 1) , ResourceIds[i]);
+	def set_ClientToken(self,ClientToken):
+		self.add_query_param('ClientToken',ClientToken)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -79,20 +66,8 @@ class ListTagResourcesRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_TagFilters(self):
-		return self.get_query_params().get('TagFilters')
+	def get_DemandId(self):
+		return self.get_query_params().get('DemandId')
 
-	def set_TagFilters(self,TagFilters):
-		for i in range(len(TagFilters)):	
-			if TagFilters[i].get('TagKey') is not None:
-				self.add_query_param('TagFilter.' + str(i + 1) + '.TagKey' , TagFilters[i].get('TagKey'))
-			for j in range(len(TagFilters[i].get('TagValuess'))):
-				if TagFilters[i].get('TagValuess')[j] is not None:
-					self.add_query_param('TagFilter.' + str(i + 1) + '.TagValues.'+str(j + 1), TagFilters[i].get('TagValuess')[j])
-
-
-	def get_ResourceType(self):
-		return self.get_query_params().get('ResourceType')
-
-	def set_ResourceType(self,ResourceType):
-		self.add_query_param('ResourceType',ResourceType)
+	def set_DemandId(self,DemandId):
+		self.add_query_param('DemandId',DemandId)

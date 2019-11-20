@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkecs.endpoint import endpoint_data
 
-class DescribeDemandsRequest(RpcRequest):
+class CreateDemandRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'DescribeDemands','ecs')
+		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'CreateDemand','ecs')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -36,17 +36,23 @@ class DescribeDemandsRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_PageNumber(self):
-		return self.get_query_params().get('PageNumber')
+	def get_ClientToken(self):
+		return self.get_query_params().get('ClientToken')
 
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
+	def set_ClientToken(self,ClientToken):
+		self.add_query_param('ClientToken',ClientToken)
 
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
+	def get_StartTime(self):
+		return self.get_query_params().get('StartTime')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
+	def set_StartTime(self,StartTime):
+		self.add_query_param('StartTime',StartTime)
+
+	def get_DemandDescription(self):
+		return self.get_query_params().get('DemandDescription')
+
+	def set_DemandDescription(self,DemandDescription):
+		self.add_query_param('DemandDescription',DemandDescription)
 
 	def get_InstanceType(self):
 		return self.get_query_params().get('InstanceType')
@@ -54,28 +60,29 @@ class DescribeDemandsRequest(RpcRequest):
 	def set_InstanceType(self,InstanceType):
 		self.add_query_param('InstanceType',InstanceType)
 
-	def get_Tags(self):
-		return self.get_query_params().get('Tags')
-
-	def set_Tags(self,Tags):
-		for i in range(len(Tags)):	
-			if Tags[i].get('Key') is not None:
-				self.add_query_param('Tag.' + str(i + 1) + '.Key' , Tags[i].get('Key'))
-			if Tags[i].get('Value') is not None:
-				self.add_query_param('Tag.' + str(i + 1) + '.Value' , Tags[i].get('Value'))
-
-
 	def get_InstanceChargeType(self):
 		return self.get_query_params().get('InstanceChargeType')
 
 	def set_InstanceChargeType(self,InstanceChargeType):
 		self.add_query_param('InstanceChargeType',InstanceChargeType)
 
-	def get_DryRun(self):
-		return self.get_query_params().get('DryRun')
+	def get_DemandName(self):
+		return self.get_query_params().get('DemandName')
 
-	def set_DryRun(self,DryRun):
-		self.add_query_param('DryRun',DryRun)
+	def set_DemandName(self,DemandName):
+		self.add_query_param('DemandName',DemandName)
+
+	def get_Amount(self):
+		return self.get_query_params().get('Amount')
+
+	def set_Amount(self,Amount):
+		self.add_query_param('Amount',Amount)
+
+	def get_Period(self):
+		return self.get_query_params().get('Period')
+
+	def set_Period(self,Period):
+		self.add_query_param('Period',Period)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -89,11 +96,11 @@ class DescribeDemandsRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
-	def get_InstanceTypeFamily(self):
-		return self.get_query_params().get('InstanceTypeFamily')
+	def get_EndTime(self):
+		return self.get_query_params().get('EndTime')
 
-	def set_InstanceTypeFamily(self,InstanceTypeFamily):
-		self.add_query_param('InstanceTypeFamily',InstanceTypeFamily)
+	def set_EndTime(self,EndTime):
+		self.add_query_param('EndTime',EndTime)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
@@ -101,28 +108,14 @@ class DescribeDemandsRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_DemandStatuss(self):
-		return self.get_query_params().get('DemandStatuss')
+	def get_PeriodUnit(self):
+		return self.get_query_params().get('PeriodUnit')
 
-	def set_DemandStatuss(self,DemandStatuss):
-		for i in range(len(DemandStatuss)):	
-			if DemandStatuss[i] is not None:
-				self.add_query_param('DemandStatus.' + str(i + 1) , DemandStatuss[i]);
-
-	def get_DemandId(self):
-		return self.get_query_params().get('DemandId')
-
-	def set_DemandId(self,DemandId):
-		self.add_query_param('DemandId',DemandId)
+	def set_PeriodUnit(self,PeriodUnit):
+		self.add_query_param('PeriodUnit',PeriodUnit)
 
 	def get_ZoneId(self):
 		return self.get_query_params().get('ZoneId')
 
 	def set_ZoneId(self,ZoneId):
 		self.add_query_param('ZoneId',ZoneId)
-
-	def get_DemandType(self):
-		return self.get_query_params().get('DemandType')
-
-	def set_DemandType(self,DemandType):
-		self.add_query_param('DemandType',DemandType)
