@@ -20,18 +20,36 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkhbase.endpoint import endpoint_data
 
-class DescribeIpWhitelistRequest(RpcRequest):
+class ModifyInstanceNameRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'HBase', '2019-01-01', 'DescribeIpWhitelist','hbase')
+		RpcRequest.__init__(self, 'HBase', '2019-01-01', 'ModifyInstanceName','hbase')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_ClientToken(self):
+		return self.get_query_params().get('ClientToken')
+
+	def set_ClientToken(self,ClientToken):
+		self.add_query_param('ClientToken',ClientToken)
+
+	def get_ClusterName(self):
+		return self.get_query_params().get('ClusterName')
+
+	def set_ClusterName(self,ClusterName):
+		self.add_query_param('ClusterName',ClusterName)
+
 	def get_ClusterId(self):
 		return self.get_query_params().get('ClusterId')
 
 	def set_ClusterId(self,ClusterId):
 		self.add_query_param('ClusterId',ClusterId)
+
+	def get_ZoneId(self):
+		return self.get_query_params().get('ZoneId')
+
+	def set_ZoneId(self,ZoneId):
+		self.add_query_param('ZoneId',ZoneId)

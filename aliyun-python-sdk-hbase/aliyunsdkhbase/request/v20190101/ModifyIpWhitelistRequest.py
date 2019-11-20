@@ -20,18 +20,36 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkhbase.endpoint import endpoint_data
 
-class DescribeIpWhitelistRequest(RpcRequest):
+class ModifyIpWhitelistRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'HBase', '2019-01-01', 'DescribeIpWhitelist','hbase')
+		RpcRequest.__init__(self, 'HBase', '2019-01-01', 'ModifyIpWhitelist','hbase')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_IpList(self):
+		return self.get_query_params().get('IpList')
+
+	def set_IpList(self,IpList):
+		self.add_query_param('IpList',IpList)
+
+	def get_IpVersion(self):
+		return self.get_query_params().get('IpVersion')
+
+	def set_IpVersion(self,IpVersion):
+		self.add_query_param('IpVersion',IpVersion)
+
 	def get_ClusterId(self):
 		return self.get_query_params().get('ClusterId')
 
 	def set_ClusterId(self,ClusterId):
 		self.add_query_param('ClusterId',ClusterId)
+
+	def get_GroupName(self):
+		return self.get_query_params().get('GroupName')
+
+	def set_GroupName(self,GroupName):
+		self.add_query_param('GroupName',GroupName)

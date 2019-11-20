@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkhbase.endpoint import endpoint_data
 
-class DescribeIpWhitelistRequest(RpcRequest):
+class DeleteUserHdfsInfoRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'HBase', '2019-01-01', 'DescribeIpWhitelist','hbase')
+		RpcRequest.__init__(self, 'HBase', '2019-01-01', 'DeleteUserHdfsInfo','hbase')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -35,3 +35,9 @@ class DescribeIpWhitelistRequest(RpcRequest):
 
 	def set_ClusterId(self,ClusterId):
 		self.add_query_param('ClusterId',ClusterId)
+
+	def get_NameService(self):
+		return self.get_query_params().get('NameService')
+
+	def set_NameService(self,NameService):
+		self.add_query_param('NameService',NameService)
