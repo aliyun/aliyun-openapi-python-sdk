@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdyvmsapi.endpoint import endpoint_data
 
-class ClickToDialRequest(RpcRequest):
+class QueryVoipNumberBindInfosRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dyvmsapi', '2017-05-25', 'ClickToDial','dyvms')
+		RpcRequest.__init__(self, 'Dyvmsapi', '2017-05-25', 'QueryVoipNumberBindInfos','dyvms')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -36,47 +36,17 @@ class ClickToDialRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_CallerShowNumber(self):
-		return self.get_query_params().get('CallerShowNumber')
-
-	def set_CallerShowNumber(self,CallerShowNumber):
-		self.add_query_param('CallerShowNumber',CallerShowNumber)
-
-	def get_SessionTimeout(self):
-		return self.get_query_params().get('SessionTimeout')
-
-	def set_SessionTimeout(self,SessionTimeout):
-		self.add_query_param('SessionTimeout',SessionTimeout)
-
-	def get_CalledNumber(self):
-		return self.get_query_params().get('CalledNumber')
-
-	def set_CalledNumber(self,CalledNumber):
-		self.add_query_param('CalledNumber',CalledNumber)
-
-	def get_CalledShowNumber(self):
-		return self.get_query_params().get('CalledShowNumber')
-
-	def set_CalledShowNumber(self,CalledShowNumber):
-		self.add_query_param('CalledShowNumber',CalledShowNumber)
-
-	def get_AsrFlag(self):
-		return self.get_query_params().get('AsrFlag')
-
-	def set_AsrFlag(self,AsrFlag):
-		self.add_query_param('AsrFlag',AsrFlag)
-
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
-	def get_RecordFlag(self):
-		return self.get_query_params().get('RecordFlag')
+	def get_PhoneNumber(self):
+		return self.get_query_params().get('PhoneNumber')
 
-	def set_RecordFlag(self,RecordFlag):
-		self.add_query_param('RecordFlag',RecordFlag)
+	def set_PhoneNumber(self,PhoneNumber):
+		self.add_query_param('PhoneNumber',PhoneNumber)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
@@ -84,20 +54,8 @@ class ClickToDialRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_OutId(self):
-		return self.get_query_params().get('OutId')
+	def get_VoipId(self):
+		return self.get_query_params().get('VoipId')
 
-	def set_OutId(self,OutId):
-		self.add_query_param('OutId',OutId)
-
-	def get_AsrModelId(self):
-		return self.get_query_params().get('AsrModelId')
-
-	def set_AsrModelId(self,AsrModelId):
-		self.add_query_param('AsrModelId',AsrModelId)
-
-	def get_CallerNumber(self):
-		return self.get_query_params().get('CallerNumber')
-
-	def set_CallerNumber(self,CallerNumber):
-		self.add_query_param('CallerNumber',CallerNumber)
+	def set_VoipId(self,VoipId):
+		self.add_query_param('VoipId',VoipId)
