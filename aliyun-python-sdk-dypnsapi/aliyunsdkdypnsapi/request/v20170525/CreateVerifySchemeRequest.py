@@ -23,7 +23,7 @@ from aliyunsdkdypnsapi.endpoint import endpoint_data
 class CreateVerifySchemeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dypnsapi', '2017-05-25', 'CreateVerifyScheme','dypnsapi')
+		RpcRequest.__init__(self, 'Dypnsapi', '2017-05-25', 'CreateVerifyScheme','dypns')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())

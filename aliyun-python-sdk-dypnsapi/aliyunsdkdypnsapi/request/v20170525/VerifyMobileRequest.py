@@ -23,7 +23,7 @@ from aliyunsdkdypnsapi.endpoint import endpoint_data
 class VerifyMobileRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dypnsapi', '2017-05-25', 'VerifyMobile','dypnsapi')
+		RpcRequest.__init__(self, 'Dypnsapi', '2017-05-25', 'VerifyMobile','dypns')
 		self.set_protocol_type('https')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):

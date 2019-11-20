@@ -23,7 +23,7 @@ from aliyunsdkdypnsapi.endpoint import endpoint_data
 class TwiceTelVerifyRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dypnsapi', '2017-05-25', 'TwiceTelVerify','dypnsapi')
+		RpcRequest.__init__(self, 'Dypnsapi', '2017-05-25', 'TwiceTelVerify','dypns')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
