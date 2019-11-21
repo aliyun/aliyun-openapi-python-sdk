@@ -19,10 +19,10 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class DescribeVulWhitelistRequest(RpcRequest):
+class DescribePropertyPortItemRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeVulWhitelist','sas')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribePropertyPortItem','sas')
 
 	def get_CurrentPage(self):
 		return self.get_query_params().get('CurrentPage')
@@ -36,8 +36,20 @@ class DescribeVulWhitelistRequest(RpcRequest):
 	def set_SourceIp(self,SourceIp):
 		self.add_query_param('SourceIp',SourceIp)
 
+	def get_Port(self):
+		return self.get_query_params().get('Port')
+
+	def set_Port(self,Port):
+		self.add_query_param('Port',Port)
+
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
 
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
+
+	def get_ForceFlush(self):
+		return self.get_query_params().get('ForceFlush')
+
+	def set_ForceFlush(self,ForceFlush):
+		self.add_query_param('ForceFlush',ForceFlush)

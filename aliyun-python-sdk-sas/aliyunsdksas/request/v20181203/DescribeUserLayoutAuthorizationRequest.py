@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,10 +18,11 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class ModifySecurityCheckScheduleConfigRequest(RpcRequest):
+
+class DescribeUserLayoutAuthorizationRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'ModifySecurityCheckScheduleConfig','sas')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeUserLayoutAuthorization','sas')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -34,24 +35,6 @@ class ModifySecurityCheckScheduleConfigRequest(RpcRequest):
 
 	def set_SourceIp(self,SourceIp):
 		self.add_query_param('SourceIp',SourceIp)
-
-	def get_DaysOfWeek(self):
-		return self.get_query_params().get('DaysOfWeek')
-
-	def set_DaysOfWeek(self,DaysOfWeek):
-		self.add_query_param('DaysOfWeek',DaysOfWeek)
-
-	def get_EndTime(self):
-		return self.get_query_params().get('EndTime')
-
-	def set_EndTime(self,EndTime):
-		self.add_query_param('EndTime',EndTime)
-
-	def get_StartTime(self):
-		return self.get_query_params().get('StartTime')
-
-	def set_StartTime(self,StartTime):
-		self.add_query_param('StartTime',StartTime)
 
 	def get_Lang(self):
 		return self.get_query_params().get('Lang')

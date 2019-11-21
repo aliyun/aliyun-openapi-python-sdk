@@ -19,16 +19,28 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class DescribeVulWhitelistRequest(RpcRequest):
+class DescribePropertyProcDetailRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeVulWhitelist','sas')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribePropertyProcDetail','sas')
 
-	def get_CurrentPage(self):
-		return self.get_query_params().get('CurrentPage')
+	def get_Remark(self):
+		return self.get_query_params().get('Remark')
 
-	def set_CurrentPage(self,CurrentPage):
-		self.add_query_param('CurrentPage',CurrentPage)
+	def set_Remark(self,Remark):
+		self.add_query_param('Remark',Remark)
+
+	def get_Uuid(self):
+		return self.get_query_params().get('Uuid')
+
+	def set_Uuid(self,Uuid):
+		self.add_query_param('Uuid',Uuid)
+
+	def get_Cmdline(self):
+		return self.get_query_params().get('Cmdline')
+
+	def set_Cmdline(self,Cmdline):
+		self.add_query_param('Cmdline',Cmdline)
 
 	def get_SourceIp(self):
 		return self.get_query_params().get('SourceIp')
@@ -41,3 +53,21 @@ class DescribeVulWhitelistRequest(RpcRequest):
 
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
+
+	def get_CurrentPage(self):
+		return self.get_query_params().get('CurrentPage')
+
+	def set_CurrentPage(self,CurrentPage):
+		self.add_query_param('CurrentPage',CurrentPage)
+
+	def get_Name(self):
+		return self.get_query_params().get('Name')
+
+	def set_Name(self,Name):
+		self.add_query_param('Name',Name)
+
+	def get_User(self):
+		return self.get_query_params().get('User')
+
+	def set_User(self,User):
+		self.add_query_param('User',User)

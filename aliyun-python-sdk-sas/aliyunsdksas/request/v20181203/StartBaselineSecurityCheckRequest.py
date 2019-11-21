@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,6 +18,7 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+
 class StartBaselineSecurityCheckRequest(RpcRequest):
 
 	def __init__(self):
@@ -28,6 +29,20 @@ class StartBaselineSecurityCheckRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+
+	def get_ItemIdss(self):
+		return self.get_query_params().get('ItemIdss')
+
+	def set_ItemIdss(self,ItemIdss):
+		for i in range(len(ItemIdss)):	
+			if ItemIdss[i] is not None:
+				self.add_query_param('ItemIds.' + str(i + 1) , ItemIdss[i]);
+
+	def get_Type(self):
+		return self.get_query_params().get('Type')
+
+	def set_Type(self,Type):
+		self.add_query_param('Type',Type)
 
 	def get_Assetss(self):
 		return self.get_query_params().get('Assetss')
@@ -43,22 +58,8 @@ class StartBaselineSecurityCheckRequest(RpcRequest):
 	def set_SourceIp(self,SourceIp):
 		self.add_query_param('SourceIp',SourceIp)
 
-	def get_ItemIdss(self):
-		return self.get_query_params().get('ItemIdss')
-
-	def set_ItemIdss(self,ItemIdss):
-		for i in range(len(ItemIdss)):	
-			if ItemIdss[i] is not None:
-				self.add_query_param('ItemIds.' + str(i + 1) , ItemIdss[i]);
-
 	def get_Lang(self):
 		return self.get_query_params().get('Lang')
 
 	def set_Lang(self,Lang):
 		self.add_query_param('Lang',Lang)
-
-	def get_Type(self):
-		return self.get_query_params().get('Type')
-
-	def set_Type(self,Type):
-		self.add_query_param('Type',Type)

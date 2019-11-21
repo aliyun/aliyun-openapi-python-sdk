@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,6 +18,7 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+
 class ModifyCreateVulWhitelistRequest(RpcRequest):
 
 	def __init__(self):
@@ -29,14 +30,14 @@ class ModifyCreateVulWhitelistRequest(RpcRequest):
 	def set_Reason(self,Reason):
 		self.add_query_param('Reason',Reason)
 
-	def get_SourceIp(self):
-		return self.get_query_params().get('SourceIp')
-
-	def set_SourceIp(self,SourceIp):
-		self.add_query_param('SourceIp',SourceIp)
-
 	def get_Whitelist(self):
 		return self.get_query_params().get('Whitelist')
 
 	def set_Whitelist(self,Whitelist):
 		self.add_query_param('Whitelist',Whitelist)
+
+	def get_SourceIp(self):
+		return self.get_query_params().get('SourceIp')
+
+	def set_SourceIp(self,SourceIp):
+		self.add_query_param('SourceIp',SourceIp)

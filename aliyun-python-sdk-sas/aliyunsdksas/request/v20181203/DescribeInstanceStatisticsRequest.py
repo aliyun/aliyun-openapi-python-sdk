@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,10 +18,17 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class ModifyPushAllTaskRequest(RpcRequest):
+
+class DescribeInstanceStatisticsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'ModifyPushAllTask','sas')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeInstanceStatistics','sas')
+
+	def get_Uuid(self):
+		return self.get_query_params().get('Uuid')
+
+	def set_Uuid(self,Uuid):
+		self.add_query_param('Uuid',Uuid)
 
 	def get_SourceIp(self):
 		return self.get_query_params().get('SourceIp')
@@ -29,14 +36,14 @@ class ModifyPushAllTaskRequest(RpcRequest):
 	def set_SourceIp(self,SourceIp):
 		self.add_query_param('SourceIp',SourceIp)
 
-	def get_Tasks(self):
-		return self.get_query_params().get('Tasks')
+	def get__From(self):
+		return self.get_query_params().get('From')
 
-	def set_Tasks(self,Tasks):
-		self.add_query_param('Tasks',Tasks)
+	def set__From(self,_From):
+		self.add_query_param('From',_From)
 
-	def get_Uuids(self):
-		return self.get_query_params().get('Uuids')
+	def get_Lang(self):
+		return self.get_query_params().get('Lang')
 
-	def set_Uuids(self,Uuids):
-		self.add_query_param('Uuids',Uuids)
+	def set_Lang(self,Lang):
+		self.add_query_param('Lang',Lang)

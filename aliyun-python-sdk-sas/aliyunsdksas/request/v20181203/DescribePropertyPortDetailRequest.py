@@ -19,16 +19,22 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class DescribeVulWhitelistRequest(RpcRequest):
+class DescribePropertyPortDetailRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeVulWhitelist','sas')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribePropertyPortDetail','sas')
 
-	def get_CurrentPage(self):
-		return self.get_query_params().get('CurrentPage')
+	def get_Remark(self):
+		return self.get_query_params().get('Remark')
 
-	def set_CurrentPage(self,CurrentPage):
-		self.add_query_param('CurrentPage',CurrentPage)
+	def set_Remark(self,Remark):
+		self.add_query_param('Remark',Remark)
+
+	def get_Uuid(self):
+		return self.get_query_params().get('Uuid')
+
+	def set_Uuid(self,Uuid):
+		self.add_query_param('Uuid',Uuid)
 
 	def get_SourceIp(self):
 		return self.get_query_params().get('SourceIp')
@@ -41,3 +47,21 @@ class DescribeVulWhitelistRequest(RpcRequest):
 
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
+
+	def get_CurrentPage(self):
+		return self.get_query_params().get('CurrentPage')
+
+	def set_CurrentPage(self,CurrentPage):
+		self.add_query_param('CurrentPage',CurrentPage)
+
+	def get_Port(self):
+		return self.get_query_params().get('Port')
+
+	def set_Port(self,Port):
+		self.add_query_param('Port',Port)
+
+	def get_ProcName(self):
+		return self.get_query_params().get('ProcName')
+
+	def set_ProcName(self,ProcName):
+		self.add_query_param('ProcName',ProcName)

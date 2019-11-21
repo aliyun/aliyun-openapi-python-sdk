@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,31 +18,20 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class ModifyEmgVulSubmitRequest(RpcRequest):
+
+class DescribeGroupedTagsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'ModifyEmgVulSubmit','sas')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeGroupedTags','sas')
+
+	def get_MachineTypes(self):
+		return self.get_query_params().get('MachineTypes')
+
+	def set_MachineTypes(self,MachineTypes):
+		self.add_query_param('MachineTypes',MachineTypes)
 
 	def get_SourceIp(self):
 		return self.get_query_params().get('SourceIp')
 
 	def set_SourceIp(self,SourceIp):
 		self.add_query_param('SourceIp',SourceIp)
-
-	def get_Name(self):
-		return self.get_query_params().get('Name')
-
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)
-
-	def get_UserAgreement(self):
-		return self.get_query_params().get('UserAgreement')
-
-	def set_UserAgreement(self,UserAgreement):
-		self.add_query_param('UserAgreement',UserAgreement)
-
-	def get_Lang(self):
-		return self.get_query_params().get('Lang')
-
-	def set_Lang(self,Lang):
-		self.add_query_param('Lang',Lang)

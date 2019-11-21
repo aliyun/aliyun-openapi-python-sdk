@@ -19,16 +19,22 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class DescribeVulWhitelistRequest(RpcRequest):
+class CreateOrUpdateAssetGroupRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeVulWhitelist','sas')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'CreateOrUpdateAssetGroup','sas')
 
-	def get_CurrentPage(self):
-		return self.get_query_params().get('CurrentPage')
+	def get_GroupId(self):
+		return self.get_query_params().get('GroupId')
 
-	def set_CurrentPage(self,CurrentPage):
-		self.add_query_param('CurrentPage',CurrentPage)
+	def set_GroupId(self,GroupId):
+		self.add_query_param('GroupId',GroupId)
+
+	def get_GroupName(self):
+		return self.get_query_params().get('GroupName')
+
+	def set_GroupName(self,GroupName):
+		self.add_query_param('GroupName',GroupName)
 
 	def get_SourceIp(self):
 		return self.get_query_params().get('SourceIp')
@@ -36,8 +42,8 @@ class DescribeVulWhitelistRequest(RpcRequest):
 	def set_SourceIp(self,SourceIp):
 		self.add_query_param('SourceIp',SourceIp)
 
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
+	def get_Uuids(self):
+		return self.get_query_params().get('Uuids')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
+	def set_Uuids(self,Uuids):
+		self.add_query_param('Uuids',Uuids)

@@ -19,16 +19,16 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class DescribeVulWhitelistRequest(RpcRequest):
+class DescribePropertyCountRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeVulWhitelist','sas')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribePropertyCount','sas')
 
-	def get_CurrentPage(self):
-		return self.get_query_params().get('CurrentPage')
+	def get_Type(self):
+		return self.get_query_params().get('Type')
 
-	def set_CurrentPage(self,CurrentPage):
-		self.add_query_param('CurrentPage',CurrentPage)
+	def set_Type(self,Type):
+		self.add_query_param('Type',Type)
 
 	def get_SourceIp(self):
 		return self.get_query_params().get('SourceIp')
@@ -36,8 +36,8 @@ class DescribeVulWhitelistRequest(RpcRequest):
 	def set_SourceIp(self,SourceIp):
 		self.add_query_param('SourceIp',SourceIp)
 
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
+	def get_UuidList(self):
+		return self.get_query_params().get('UuidList')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
+	def set_UuidList(self,UuidList):
+		self.add_query_param('UuidList',UuidList)

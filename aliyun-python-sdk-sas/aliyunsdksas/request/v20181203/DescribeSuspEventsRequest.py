@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,40 +18,11 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+
 class DescribeSuspEventsRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeSuspEvents','sas')
-
-	def get_AlarmUniqueInfo(self):
-		return self.get_query_params().get('AlarmUniqueInfo')
-
-	def set_AlarmUniqueInfo(self,AlarmUniqueInfo):
-		self.add_query_param('AlarmUniqueInfo',AlarmUniqueInfo)
-
-	def get_SourceIp(self):
-		return self.get_query_params().get('SourceIp')
-
-	def set_SourceIp(self,SourceIp):
-		self.add_query_param('SourceIp',SourceIp)
-
-	def get_Name(self):
-		return self.get_query_params().get('Name')
-
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)
-
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_Dealed(self):
-		return self.get_query_params().get('Dealed')
-
-	def set_Dealed(self,Dealed):
-		self.add_query_param('Dealed',Dealed)
 
 	def get_Remark(self):
 		return self.get_query_params().get('Remark')
@@ -59,11 +30,17 @@ class DescribeSuspEventsRequest(RpcRequest):
 	def set_Remark(self,Remark):
 		self.add_query_param('Remark',Remark)
 
-	def get_CurrentPage(self):
-		return self.get_query_params().get('CurrentPage')
+	def get_SourceIp(self):
+		return self.get_query_params().get('SourceIp')
 
-	def set_CurrentPage(self,CurrentPage):
-		self.add_query_param('CurrentPage',CurrentPage)
+	def set_SourceIp(self,SourceIp):
+		self.add_query_param('SourceIp',SourceIp)
+
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
 
 	def get__From(self):
 		return self.get_query_params().get('From')
@@ -76,6 +53,30 @@ class DescribeSuspEventsRequest(RpcRequest):
 
 	def set_Lang(self,Lang):
 		self.add_query_param('Lang',Lang)
+
+	def get_AlarmUniqueInfo(self):
+		return self.get_query_params().get('AlarmUniqueInfo')
+
+	def set_AlarmUniqueInfo(self,AlarmUniqueInfo):
+		self.add_query_param('AlarmUniqueInfo',AlarmUniqueInfo)
+
+	def get_Dealed(self):
+		return self.get_query_params().get('Dealed')
+
+	def set_Dealed(self,Dealed):
+		self.add_query_param('Dealed',Dealed)
+
+	def get_CurrentPage(self):
+		return self.get_query_params().get('CurrentPage')
+
+	def set_CurrentPage(self,CurrentPage):
+		self.add_query_param('CurrentPage',CurrentPage)
+
+	def get_Name(self):
+		return self.get_query_params().get('Name')
+
+	def set_Name(self,Name):
+		self.add_query_param('Name',Name)
 
 	def get_Levels(self):
 		return self.get_query_params().get('Levels')

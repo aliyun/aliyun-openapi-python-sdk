@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,16 +18,23 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class DescribeUserBaselineAuthorizationRequest(RpcRequest):
+
+class DescribeDomainListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeUserBaselineAuthorization','sas')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeDomainList','sas')
 
-	def get_ResourceOwnerId(self):
-		return self.get_query_params().get('ResourceOwnerId')
+	def get_CurrentPage(self):
+		return self.get_query_params().get('CurrentPage')
 
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+	def set_CurrentPage(self,CurrentPage):
+		self.add_query_param('CurrentPage',CurrentPage)
+
+	def get_FuzzyDomain(self):
+		return self.get_query_params().get('FuzzyDomain')
+
+	def set_FuzzyDomain(self,FuzzyDomain):
+		self.add_query_param('FuzzyDomain',FuzzyDomain)
 
 	def get_SourceIp(self):
 		return self.get_query_params().get('SourceIp')
@@ -35,8 +42,14 @@ class DescribeUserBaselineAuthorizationRequest(RpcRequest):
 	def set_SourceIp(self,SourceIp):
 		self.add_query_param('SourceIp',SourceIp)
 
-	def get_Lang(self):
-		return self.get_query_params().get('Lang')
+	def get_DomainType(self):
+		return self.get_query_params().get('DomainType')
 
-	def set_Lang(self,Lang):
-		self.add_query_param('Lang',Lang)
+	def set_DomainType(self,DomainType):
+		self.add_query_param('DomainType',DomainType)
+
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)

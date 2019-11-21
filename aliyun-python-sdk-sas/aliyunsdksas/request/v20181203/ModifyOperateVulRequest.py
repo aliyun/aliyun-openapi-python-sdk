@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,6 +18,7 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+
 class ModifyOperateVulRequest(RpcRequest):
 
 	def __init__(self):
@@ -28,6 +29,12 @@ class ModifyOperateVulRequest(RpcRequest):
 
 	def set_Reason(self,Reason):
 		self.add_query_param('Reason',Reason)
+
+	def get_Type(self):
+		return self.get_query_params().get('Type')
+
+	def set_Type(self,Type):
+		self.add_query_param('Type',Type)
 
 	def get_SourceIp(self):
 		return self.get_query_params().get('SourceIp')
@@ -40,12 +47,6 @@ class ModifyOperateVulRequest(RpcRequest):
 
 	def set_OperateType(self,OperateType):
 		self.add_query_param('OperateType',OperateType)
-
-	def get_Type(self):
-		return self.get_query_params().get('Type')
-
-	def set_Type(self,Type):
-		self.add_query_param('Type',Type)
 
 	def get_Info(self):
 		return self.get_query_params().get('Info')
