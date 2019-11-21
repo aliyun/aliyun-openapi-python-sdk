@@ -1,3 +1,7 @@
+2019-11-21 Version: 3.0.10
+- Add ConvertPayType.
+- Add ConvertLogstashPayType.
+
 2019-09-09 Version: 3.0.8
 - CreateInstance add toen.
 - UpdateInstance add toen.
