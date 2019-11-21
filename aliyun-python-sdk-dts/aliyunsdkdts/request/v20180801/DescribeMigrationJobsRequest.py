@@ -24,18 +24,6 @@ class DescribeMigrationJobsRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Dts', '2018-08-01', 'DescribeMigrationJobs','dts')
 
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_MigrationJobName(self):
-		return self.get_query_params().get('MigrationJobName')
-
-	def set_MigrationJobName(self,MigrationJobName):
-		self.add_query_param('MigrationJobName',MigrationJobName)
-
 	def get_PageNum(self):
 		return self.get_query_params().get('PageNum')
 
@@ -47,3 +35,15 @@ class DescribeMigrationJobsRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
+
+	def get_MigrationJobName(self):
+		return self.get_query_params().get('MigrationJobName')
+
+	def set_MigrationJobName(self,MigrationJobName):
+		self.add_query_param('MigrationJobName',MigrationJobName)

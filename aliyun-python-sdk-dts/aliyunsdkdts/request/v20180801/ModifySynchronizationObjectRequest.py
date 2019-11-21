@@ -24,12 +24,6 @@ class ModifySynchronizationObjectRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Dts', '2018-08-01', 'ModifySynchronizationObject','dts')
 
-	def get_SynchronizationJobId(self):
-		return self.get_query_params().get('SynchronizationJobId')
-
-	def set_SynchronizationJobId(self,SynchronizationJobId):
-		self.add_query_param('SynchronizationJobId',SynchronizationJobId)
-
 	def get_SynchronizationObjects(self):
 		return self.get_query_params().get('SynchronizationObjects')
 
@@ -41,6 +35,12 @@ class ModifySynchronizationObjectRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_SynchronizationJobId(self):
+		return self.get_query_params().get('SynchronizationJobId')
+
+	def set_SynchronizationJobId(self,SynchronizationJobId):
+		self.add_query_param('SynchronizationJobId',SynchronizationJobId)
 
 	def get_SynchronizationDirection(self):
 		return self.get_query_params().get('SynchronizationDirection')

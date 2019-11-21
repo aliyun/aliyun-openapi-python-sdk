@@ -37,23 +37,11 @@ class CreateSubscriptionInstanceRequest(RpcRequest):
 	def set_ClientToken(self,ClientToken):
 		self.add_query_param('ClientToken',ClientToken)
 
-	def get_Region(self):
-		return self.get_query_params().get('Region')
-
-	def set_Region(self,Region):
-		self.add_query_param('Region',Region)
-
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
-
-	def get_PayType(self):
-		return self.get_query_params().get('PayType')
-
-	def set_PayType(self,PayType):
-		self.add_query_param('PayType',PayType)
 
 	def get_UsedTime(self):
 		return self.get_query_params().get('UsedTime')
@@ -66,3 +54,15 @@ class CreateSubscriptionInstanceRequest(RpcRequest):
 
 	def set_SourceEndpointInstanceType(self,SourceEndpointInstanceType):
 		self.add_query_param('SourceEndpoint.InstanceType',SourceEndpointInstanceType)
+
+	def get_Region(self):
+		return self.get_query_params().get('Region')
+
+	def set_Region(self,Region):
+		self.add_query_param('Region',Region)
+
+	def get_PayType(self):
+		return self.get_query_params().get('PayType')
+
+	def set_PayType(self,PayType):
+		self.add_query_param('PayType',PayType)

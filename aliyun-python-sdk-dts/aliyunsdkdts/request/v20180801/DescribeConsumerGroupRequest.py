@@ -24,12 +24,6 @@ class DescribeConsumerGroupRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Dts', '2018-08-01', 'DescribeConsumerGroup','dts')
 
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
 	def get_SubscriptionInstanceId(self):
 		return self.get_query_params().get('SubscriptionInstanceId')
 
@@ -47,3 +41,9 @@ class DescribeConsumerGroupRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)

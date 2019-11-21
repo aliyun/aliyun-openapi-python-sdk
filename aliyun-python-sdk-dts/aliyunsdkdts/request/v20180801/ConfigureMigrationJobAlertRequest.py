@@ -24,18 +24,6 @@ class ConfigureMigrationJobAlertRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Dts', '2018-08-01', 'ConfigureMigrationJobAlert','dts')
 
-	def get_ErrorAlertPhone(self):
-		return self.get_query_params().get('ErrorAlertPhone')
-
-	def set_ErrorAlertPhone(self,ErrorAlertPhone):
-		self.add_query_param('ErrorAlertPhone',ErrorAlertPhone)
-
-	def get_DelayAlertPhone(self):
-		return self.get_query_params().get('DelayAlertPhone')
-
-	def set_DelayAlertPhone(self,DelayAlertPhone):
-		self.add_query_param('DelayAlertPhone',DelayAlertPhone)
-
 	def get_DelayOverSeconds(self):
 		return self.get_query_params().get('DelayOverSeconds')
 
@@ -54,14 +42,26 @@ class ConfigureMigrationJobAlertRequest(RpcRequest):
 	def set_MigrationJobId(self,MigrationJobId):
 		self.add_query_param('MigrationJobId',MigrationJobId)
 
-	def get_ErrorAlertStatus(self):
-		return self.get_query_params().get('ErrorAlertStatus')
-
-	def set_ErrorAlertStatus(self,ErrorAlertStatus):
-		self.add_query_param('ErrorAlertStatus',ErrorAlertStatus)
-
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_ErrorAlertPhone(self):
+		return self.get_query_params().get('ErrorAlertPhone')
+
+	def set_ErrorAlertPhone(self,ErrorAlertPhone):
+		self.add_query_param('ErrorAlertPhone',ErrorAlertPhone)
+
+	def get_DelayAlertPhone(self):
+		return self.get_query_params().get('DelayAlertPhone')
+
+	def set_DelayAlertPhone(self,DelayAlertPhone):
+		self.add_query_param('DelayAlertPhone',DelayAlertPhone)
+
+	def get_ErrorAlertStatus(self):
+		return self.get_query_params().get('ErrorAlertStatus')
+
+	def set_ErrorAlertStatus(self,ErrorAlertStatus):
+		self.add_query_param('ErrorAlertStatus',ErrorAlertStatus)

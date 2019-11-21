@@ -24,6 +24,24 @@ class ConfigureSynchronizationJobAlertRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Dts', '2018-08-01', 'ConfigureSynchronizationJobAlert','dts')
 
+	def get_DelayOverSeconds(self):
+		return self.get_query_params().get('DelayOverSeconds')
+
+	def set_DelayOverSeconds(self,DelayOverSeconds):
+		self.add_query_param('DelayOverSeconds',DelayOverSeconds)
+
+	def get_DelayAlertStatus(self):
+		return self.get_query_params().get('DelayAlertStatus')
+
+	def set_DelayAlertStatus(self,DelayAlertStatus):
+		self.add_query_param('DelayAlertStatus',DelayAlertStatus)
+
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
+
 	def get_SynchronizationJobId(self):
 		return self.get_query_params().get('SynchronizationJobId')
 
@@ -42,29 +60,11 @@ class ConfigureSynchronizationJobAlertRequest(RpcRequest):
 	def set_DelayAlertPhone(self,DelayAlertPhone):
 		self.add_query_param('DelayAlertPhone',DelayAlertPhone)
 
-	def get_DelayOverSeconds(self):
-		return self.get_query_params().get('DelayOverSeconds')
-
-	def set_DelayOverSeconds(self,DelayOverSeconds):
-		self.add_query_param('DelayOverSeconds',DelayOverSeconds)
-
-	def get_DelayAlertStatus(self):
-		return self.get_query_params().get('DelayAlertStatus')
-
-	def set_DelayAlertStatus(self,DelayAlertStatus):
-		self.add_query_param('DelayAlertStatus',DelayAlertStatus)
-
 	def get_ErrorAlertStatus(self):
 		return self.get_query_params().get('ErrorAlertStatus')
 
 	def set_ErrorAlertStatus(self,ErrorAlertStatus):
 		self.add_query_param('ErrorAlertStatus',ErrorAlertStatus)
-
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
 
 	def get_SynchronizationDirection(self):
 		return self.get_query_params().get('SynchronizationDirection')

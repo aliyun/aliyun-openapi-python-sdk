@@ -24,12 +24,6 @@ class DescribeMigrationJobDetailRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Dts', '2018-08-01', 'DescribeMigrationJobDetail','dts')
 
-	def get_MigrationModeDataSynchronization(self):
-		return self.get_query_params().get('MigrationMode.DataSynchronization')
-
-	def set_MigrationModeDataSynchronization(self,MigrationModeDataSynchronization):
-		self.add_query_param('MigrationMode.DataSynchronization',MigrationModeDataSynchronization)
-
 	def get_ClientToken(self):
 		return self.get_query_params().get('ClientToken')
 
@@ -41,12 +35,6 @@ class DescribeMigrationJobDetailRequest(RpcRequest):
 
 	def set_MigrationModeDataInitialization(self,MigrationModeDataInitialization):
 		self.add_query_param('MigrationMode.DataInitialization',MigrationModeDataInitialization)
-
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
 
 	def get_MigrationJobId(self):
 		return self.get_query_params().get('MigrationJobId')
@@ -71,3 +59,15 @@ class DescribeMigrationJobDetailRequest(RpcRequest):
 
 	def set_MigrationModeStructureInitialization(self,MigrationModeStructureInitialization):
 		self.add_query_param('MigrationMode.StructureInitialization',MigrationModeStructureInitialization)
+
+	def get_MigrationModeDataSynchronization(self):
+		return self.get_query_params().get('MigrationMode.DataSynchronization')
+
+	def set_MigrationModeDataSynchronization(self,MigrationModeDataSynchronization):
+		self.add_query_param('MigrationMode.DataSynchronization',MigrationModeDataSynchronization)
+
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)

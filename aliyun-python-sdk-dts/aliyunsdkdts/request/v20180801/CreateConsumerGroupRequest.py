@@ -31,12 +31,6 @@ class CreateConsumerGroupRequest(RpcRequest):
 	def set_ConsumerGroupName(self,ConsumerGroupName):
 		self.add_query_param('ConsumerGroupName',ConsumerGroupName)
 
-	def get_ConsumerGroupUserName(self):
-		return self.get_query_params().get('ConsumerGroupUserName')
-
-	def set_ConsumerGroupUserName(self,ConsumerGroupUserName):
-		self.add_query_param('ConsumerGroupUserName',ConsumerGroupUserName)
-
 	def get_SubscriptionInstanceId(self):
 		return self.get_query_params().get('SubscriptionInstanceId')
 
@@ -54,3 +48,9 @@ class CreateConsumerGroupRequest(RpcRequest):
 
 	def set_ConsumerGroupPassword(self,ConsumerGroupPassword):
 		self.add_query_param('ConsumerGroupPassword',ConsumerGroupPassword)
+
+	def get_ConsumerGroupUserName(self):
+		return self.get_query_params().get('ConsumerGroupUserName')
+
+	def set_ConsumerGroupUserName(self,ConsumerGroupUserName):
+		self.add_query_param('ConsumerGroupUserName',ConsumerGroupUserName)

@@ -48,12 +48,6 @@ class CreateSynchronizationJobRequest(RpcRequest):
 	def set_Topology(self,Topology):
 		self.add_query_param('Topology',Topology)
 
-	def get_SynchronizationJobClass(self):
-		return self.get_query_params().get('SynchronizationJobClass')
-
-	def set_SynchronizationJobClass(self,SynchronizationJobClass):
-		self.add_query_param('SynchronizationJobClass',SynchronizationJobClass)
-
 	def get_networkType(self):
 		return self.get_query_params().get('networkType')
 
@@ -66,18 +60,6 @@ class CreateSynchronizationJobRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_SourceRegion(self):
-		return self.get_query_params().get('SourceRegion')
-
-	def set_SourceRegion(self,SourceRegion):
-		self.add_query_param('SourceRegion',SourceRegion)
-
-	def get_PayType(self):
-		return self.get_query_params().get('PayType')
-
-	def set_PayType(self,PayType):
-		self.add_query_param('PayType',PayType)
-
 	def get_UsedTime(self):
 		return self.get_query_params().get('UsedTime')
 
@@ -89,6 +71,24 @@ class CreateSynchronizationJobRequest(RpcRequest):
 
 	def set_SourceEndpointInstanceType(self,SourceEndpointInstanceType):
 		self.add_query_param('SourceEndpoint.InstanceType',SourceEndpointInstanceType)
+
+	def get_SynchronizationJobClass(self):
+		return self.get_query_params().get('SynchronizationJobClass')
+
+	def set_SynchronizationJobClass(self,SynchronizationJobClass):
+		self.add_query_param('SynchronizationJobClass',SynchronizationJobClass)
+
+	def get_SourceRegion(self):
+		return self.get_query_params().get('SourceRegion')
+
+	def set_SourceRegion(self,SourceRegion):
+		self.add_query_param('SourceRegion',SourceRegion)
+
+	def get_PayType(self):
+		return self.get_query_params().get('PayType')
+
+	def set_PayType(self,PayType):
+		self.add_query_param('PayType',PayType)
 
 	def get_DestinationEndpointInstanceType(self):
 		return self.get_query_params().get('DestinationEndpoint.InstanceType')

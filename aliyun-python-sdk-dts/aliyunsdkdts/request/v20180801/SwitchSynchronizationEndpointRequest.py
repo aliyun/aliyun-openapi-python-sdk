@@ -24,35 +24,23 @@ class SwitchSynchronizationEndpointRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Dts', '2018-08-01', 'SwitchSynchronizationEndpoint','dts')
 
-	def get_SynchronizationJobId(self):
-		return self.get_query_params().get('SynchronizationJobId')
-
-	def set_SynchronizationJobId(self,SynchronizationJobId):
-		self.add_query_param('SynchronizationJobId',SynchronizationJobId)
-
-	def get_EndpointType(self):
-		return self.get_query_params().get('Endpoint.Type')
-
-	def set_EndpointType(self,EndpointType):
-		self.add_query_param('Endpoint.Type',EndpointType)
-
 	def get_EndpointInstanceType(self):
 		return self.get_query_params().get('Endpoint.InstanceType')
 
 	def set_EndpointInstanceType(self,EndpointInstanceType):
 		self.add_query_param('Endpoint.InstanceType',EndpointInstanceType)
 
-	def get_EndpointPort(self):
-		return self.get_query_params().get('Endpoint.Port')
+	def get_SourceEndpointOwnerID(self):
+		return self.get_query_params().get('SourceEndpoint.OwnerID')
 
-	def set_EndpointPort(self,EndpointPort):
-		self.add_query_param('Endpoint.Port',EndpointPort)
+	def set_SourceEndpointOwnerID(self,SourceEndpointOwnerID):
+		self.add_query_param('SourceEndpoint.OwnerID',SourceEndpointOwnerID)
 
-	def get_EndpointInstanceId(self):
-		return self.get_query_params().get('Endpoint.InstanceId')
+	def get_SourceEndpointRole(self):
+		return self.get_query_params().get('SourceEndpoint.Role')
 
-	def set_EndpointInstanceId(self,EndpointInstanceId):
-		self.add_query_param('Endpoint.InstanceId',EndpointInstanceId)
+	def set_SourceEndpointRole(self,SourceEndpointRole):
+		self.add_query_param('SourceEndpoint.Role',SourceEndpointRole)
 
 	def get_EndpointIP(self):
 		return self.get_query_params().get('Endpoint.IP')
@@ -65,6 +53,30 @@ class SwitchSynchronizationEndpointRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_SynchronizationJobId(self):
+		return self.get_query_params().get('SynchronizationJobId')
+
+	def set_SynchronizationJobId(self,SynchronizationJobId):
+		self.add_query_param('SynchronizationJobId',SynchronizationJobId)
+
+	def get_EndpointType(self):
+		return self.get_query_params().get('Endpoint.Type')
+
+	def set_EndpointType(self,EndpointType):
+		self.add_query_param('Endpoint.Type',EndpointType)
+
+	def get_EndpointPort(self):
+		return self.get_query_params().get('Endpoint.Port')
+
+	def set_EndpointPort(self,EndpointPort):
+		self.add_query_param('Endpoint.Port',EndpointPort)
+
+	def get_EndpointInstanceId(self):
+		return self.get_query_params().get('Endpoint.InstanceId')
+
+	def set_EndpointInstanceId(self,EndpointInstanceId):
+		self.add_query_param('Endpoint.InstanceId',EndpointInstanceId)
 
 	def get_SynchronizationDirection(self):
 		return self.get_query_params().get('SynchronizationDirection')
