@@ -23,7 +23,7 @@ from aliyunsdkimageenhan.endpoint import endpoint_data
 class ChangeImageSizeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'imageenhan', '2019-09-30', 'ChangeImageSize')
+		RpcRequest.__init__(self, 'imageenhan', '2019-09-30', 'ChangeImageSize','imageenhan')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
