@@ -158,6 +158,12 @@ class DeployK8sApplicationRequest(RoaRequest):
 	def set_Command(self,Command):
 		self.add_query_param('Command',Command)
 
+	def get_UpdateStrategy(self):
+		return self.get_query_params().get('UpdateStrategy')
+
+	def set_UpdateStrategy(self,UpdateStrategy):
+		self.add_query_param('UpdateStrategy',UpdateStrategy)
+
 	def get_Args(self):
 		return self.get_query_params().get('Args')
 
@@ -187,6 +193,18 @@ class DeployK8sApplicationRequest(RoaRequest):
 
 	def set_AppId(self,AppId):
 		self.add_query_param('AppId',AppId)
+
+	def get_MCpuRequest(self):
+		return self.get_query_params().get('MCpuRequest')
+
+	def set_MCpuRequest(self,MCpuRequest):
+		self.add_query_param('MCpuRequest',MCpuRequest)
+
+	def get_MCpuLimit(self):
+		return self.get_query_params().get('MCpuLimit')
+
+	def set_MCpuLimit(self,MCpuLimit):
+		self.add_query_param('MCpuLimit',MCpuLimit)
 
 	def get_PostStart(self):
 		return self.get_query_params().get('PostStart')
