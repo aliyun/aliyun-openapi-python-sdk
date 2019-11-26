@@ -20,27 +20,27 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkalidns.endpoint import endpoint_data
 
-class DescribeBatchResultDetailRequest(RpcRequest):
+class AddDomainBackupRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'DescribeBatchResultDetail','alidns')
+		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'AddDomainBackup','alidns')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_BatchType(self):
-		return self.get_query_params().get('BatchType')
+	def get_DomainName(self):
+		return self.get_query_params().get('DomainName')
 
-	def set_BatchType(self,BatchType):
-		self.add_query_param('BatchType',BatchType)
+	def set_DomainName(self,DomainName):
+		self.add_query_param('DomainName',DomainName)
 
-	def get_PageNumber(self):
-		return self.get_query_params().get('PageNumber')
+	def get_PeriodType(self):
+		return self.get_query_params().get('PeriodType')
 
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
+	def set_PeriodType(self,PeriodType):
+		self.add_query_param('PeriodType',PeriodType)
 
 	def get_UserClientIp(self):
 		return self.get_query_params().get('UserClientIp')
@@ -48,26 +48,8 @@ class DescribeBatchResultDetailRequest(RpcRequest):
 	def set_UserClientIp(self,UserClientIp):
 		self.add_query_param('UserClientIp',UserClientIp)
 
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
 	def get_Lang(self):
 		return self.get_query_params().get('Lang')
 
 	def set_Lang(self,Lang):
 		self.add_query_param('Lang',Lang)
-
-	def get_TaskId(self):
-		return self.get_query_params().get('TaskId')
-
-	def set_TaskId(self,TaskId):
-		self.add_query_param('TaskId',TaskId)
-
-	def get_Status(self):
-		return self.get_query_params().get('Status')
-
-	def set_Status(self,Status):
-		self.add_query_param('Status',Status)

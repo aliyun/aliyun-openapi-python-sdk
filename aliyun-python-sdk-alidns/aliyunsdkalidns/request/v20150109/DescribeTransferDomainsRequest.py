@@ -20,27 +20,27 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkalidns.endpoint import endpoint_data
 
-class DescribeBatchResultDetailRequest(RpcRequest):
+class DescribeTransferDomainsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'DescribeBatchResultDetail','alidns')
+		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'DescribeTransferDomains','alidns')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_BatchType(self):
-		return self.get_query_params().get('BatchType')
-
-	def set_BatchType(self,BatchType):
-		self.add_query_param('BatchType',BatchType)
-
 	def get_PageNumber(self):
 		return self.get_query_params().get('PageNumber')
 
 	def set_PageNumber(self,PageNumber):
 		self.add_query_param('PageNumber',PageNumber)
+
+	def get_TransferType(self):
+		return self.get_query_params().get('TransferType')
+
+	def set_TransferType(self,TransferType):
+		self.add_query_param('TransferType',TransferType)
 
 	def get_UserClientIp(self):
 		return self.get_query_params().get('UserClientIp')
@@ -59,15 +59,3 @@ class DescribeBatchResultDetailRequest(RpcRequest):
 
 	def set_Lang(self,Lang):
 		self.add_query_param('Lang',Lang)
-
-	def get_TaskId(self):
-		return self.get_query_params().get('TaskId')
-
-	def set_TaskId(self,TaskId):
-		self.add_query_param('TaskId',TaskId)
-
-	def get_Status(self):
-		return self.get_query_params().get('Status')
-
-	def set_Status(self,Status):
-		self.add_query_param('Status',Status)
