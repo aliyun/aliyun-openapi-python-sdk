@@ -20,20 +20,43 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkaligreen_console.endpoint import endpoint_data
 
-class ListSfaceAuditTasksRequest(RpcRequest):
+class RemoveSfaceFaceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'aligreen-console', '2019-11-15', 'ListSfaceAuditTasks')
+		RpcRequest.__init__(self, 'aligreen-console', '2019-11-15', 'RemoveSfaceFace')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_DataIds(self):
-		return self.get_query_params().get('DataIds')
+	def get_FaceId(self):
+		return self.get_query_params().get('FaceId')
 
-	def set_DataIds(self,DataIds):
-		for i in range(len(DataIds)):	
-			if DataIds[i] is not None:
-				self.add_query_param('DataId.' + str(i + 1) , DataIds[i]);
+	def set_FaceId(self,FaceId):
+		self.add_query_param('FaceId',FaceId)
+
+	def get_DataId(self):
+		return self.get_query_params().get('DataId')
+
+	def set_DataId(self,DataId):
+		self.add_query_param('DataId',DataId)
+
+	def get_CallbackSeed(self):
+		return self.get_query_params().get('CallbackSeed')
+
+	def set_CallbackSeed(self,CallbackSeed):
+		self.add_query_param('CallbackSeed',CallbackSeed)
+
+	def get_PersonId(self):
+		return self.get_query_params().get('PersonId')
+
+	def set_PersonId(self,PersonId):
+		self.add_query_param('PersonId',PersonId)
+
+	def get_CallbackUrl(self):
+		return self.get_query_params().get('CallbackUrl')
+
+	def set_CallbackUrl(self,CallbackUrl):
+		self.add_query_param('CallbackUrl',CallbackUrl)
