@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkvpc.endpoint import endpoint_data
 
-class CreateGlobalAccelerationInstanceRequest(RpcRequest):
+class DeleteExpressCloudConnectionRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'CreateGlobalAccelerationInstance','vpc')
+		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'DeleteExpressCloudConnection','vpc')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -36,41 +36,17 @@ class CreateGlobalAccelerationInstanceRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_BandwidthType(self):
-		return self.get_query_params().get('BandwidthType')
+	def get_EccId(self):
+		return self.get_query_params().get('EccId')
 
-	def set_BandwidthType(self,BandwidthType):
-		self.add_query_param('BandwidthType',BandwidthType)
-
-	def get_ClientToken(self):
-		return self.get_query_params().get('ClientToken')
-
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
-
-	def get_Description(self):
-		return self.get_query_params().get('Description')
-
-	def set_Description(self,Description):
-		self.add_query_param('Description',Description)
+	def set_EccId(self,EccId):
+		self.add_query_param('EccId',EccId)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_ServiceLocation(self):
-		return self.get_query_params().get('ServiceLocation')
-
-	def set_ServiceLocation(self,ServiceLocation):
-		self.add_query_param('ServiceLocation',ServiceLocation)
-
-	def get_Bandwidth(self):
-		return self.get_query_params().get('Bandwidth')
-
-	def set_Bandwidth(self,Bandwidth):
-		self.add_query_param('Bandwidth',Bandwidth)
 
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
@@ -83,9 +59,3 @@ class CreateGlobalAccelerationInstanceRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
-
-	def get_Name(self):
-		return self.get_query_params().get('Name')
-
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)

@@ -42,12 +42,6 @@ class DeletePhysicalConnectionRequest(RpcRequest):
 	def set_ClientToken(self,ClientToken):
 		self.add_query_param('ClientToken',ClientToken)
 
-	def get_UserCidr(self):
-		return self.get_query_params().get('UserCidr')
-
-	def set_UserCidr(self,UserCidr):
-		self.add_query_param('UserCidr',UserCidr)
-
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 

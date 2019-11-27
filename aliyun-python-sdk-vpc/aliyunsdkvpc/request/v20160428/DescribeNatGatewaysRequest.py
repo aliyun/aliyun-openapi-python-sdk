@@ -48,6 +48,18 @@ class DescribeNatGatewaysRequest(RpcRequest):
 	def set_PageNumber(self,PageNumber):
 		self.add_query_param('PageNumber',PageNumber)
 
+	def get_ResourceGroupId(self):
+		return self.get_query_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self,ResourceGroupId):
+		self.add_query_param('ResourceGroupId',ResourceGroupId)
+
+	def get_NatType(self):
+		return self.get_query_params().get('NatType')
+
+	def set_NatType(self,NatType):
+		self.add_query_param('NatType',NatType)
+
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
 

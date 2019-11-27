@@ -60,6 +60,12 @@ class CreateNatGatewayRequest(RpcRequest):
 	def set_Duration(self,Duration):
 		self.add_query_param('Duration',Duration)
 
+	def get_NatType(self):
+		return self.get_query_params().get('NatType')
+
+	def set_NatType(self,NatType):
+		self.add_query_param('NatType',NatType)
+
 	def get_BandwidthPackages(self):
 		return self.get_query_params().get('BandwidthPackages')
 
@@ -106,6 +112,18 @@ class CreateNatGatewayRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_VSwitchId(self):
+		return self.get_query_params().get('VSwitchId')
+
+	def set_VSwitchId(self,VSwitchId):
+		self.add_query_param('VSwitchId',VSwitchId)
+
+	def get_InternetChargeType(self):
+		return self.get_query_params().get('InternetChargeType')
+
+	def set_InternetChargeType(self,InternetChargeType):
+		self.add_query_param('InternetChargeType',InternetChargeType)
 
 	def get_VpcId(self):
 		return self.get_query_params().get('VpcId')
