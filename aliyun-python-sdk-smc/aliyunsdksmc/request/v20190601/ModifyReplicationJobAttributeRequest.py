@@ -66,6 +66,12 @@ class ModifyReplicationJobAttributeRequest(RpcRequest):
 	def set_SystemDiskSize(self,SystemDiskSize):
 		self.add_query_param('SystemDiskSize',SystemDiskSize)
 
+	def get_InstanceType(self):
+		return self.get_query_params().get('InstanceType')
+
+	def set_InstanceType(self,InstanceType):
+		self.add_query_param('InstanceType',InstanceType)
+
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
