@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkslb.endpoint import endpoint_data
 
-class DescribeMasterSlaveVServerGroupAttributeRequest(RpcRequest):
+class ListTagResourcesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Slb', '2014-05-15', 'DescribeMasterSlaveVServerGroupAttribute','slb')
+		RpcRequest.__init__(self, 'Slb', '2014-05-15', 'ListTagResources','slb')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -42,11 +42,30 @@ class DescribeMasterSlaveVServerGroupAttributeRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_MasterSlaveVServerGroupId(self):
-		return self.get_query_params().get('MasterSlaveVServerGroupId')
+	def get_NextToken(self):
+		return self.get_query_params().get('NextToken')
 
-	def set_MasterSlaveVServerGroupId(self,MasterSlaveVServerGroupId):
-		self.add_query_param('MasterSlaveVServerGroupId',MasterSlaveVServerGroupId)
+	def set_NextToken(self,NextToken):
+		self.add_query_param('NextToken',NextToken)
+
+	def get_Tags(self):
+		return self.get_query_params().get('Tags')
+
+	def set_Tags(self,Tags):
+		for i in range(len(Tags)):	
+			if Tags[i].get('Value') is not None:
+				self.add_query_param('Tag.' + str(i + 1) + '.Value' , Tags[i].get('Value'))
+			if Tags[i].get('Key') is not None:
+				self.add_query_param('Tag.' + str(i + 1) + '.Key' , Tags[i].get('Key'))
+
+
+	def get_ResourceIds(self):
+		return self.get_query_params().get('ResourceIds')
+
+	def set_ResourceIds(self,ResourceIds):
+		for i in range(len(ResourceIds)):	
+			if ResourceIds[i] is not None:
+				self.add_query_param('ResourceId.' + str(i + 1) , ResourceIds[i]);
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -66,8 +85,8 @@ class DescribeMasterSlaveVServerGroupAttributeRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_Tags(self):
-		return self.get_query_params().get('Tags')
+	def get_ResourceType(self):
+		return self.get_query_params().get('ResourceType')
 
-	def set_Tags(self,Tags):
-		self.add_query_param('Tags',Tags)
+	def set_ResourceType(self,ResourceType):
+		self.add_query_param('ResourceType',ResourceType)

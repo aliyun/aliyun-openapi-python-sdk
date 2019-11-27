@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkslb.endpoint import endpoint_data
 
-class DescribeMasterSlaveVServerGroupsRequest(RpcRequest):
+class UntagResourcesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Slb', '2014-05-15', 'DescribeMasterSlaveVServerGroups','slb')
+		RpcRequest.__init__(self, 'Slb', '2014-05-15', 'UntagResources','slb')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -41,6 +41,20 @@ class DescribeMasterSlaveVServerGroupsRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+
+	def get_All(self):
+		return self.get_query_params().get('All')
+
+	def set_All(self,All):
+		self.add_query_param('All',All)
+
+	def get_ResourceIds(self):
+		return self.get_query_params().get('ResourceIds')
+
+	def set_ResourceIds(self,ResourceIds):
+		for i in range(len(ResourceIds)):	
+			if ResourceIds[i] is not None:
+				self.add_query_param('ResourceId.' + str(i + 1) , ResourceIds[i]);
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -60,14 +74,16 @@ class DescribeMasterSlaveVServerGroupsRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_Tags(self):
-		return self.get_query_params().get('Tags')
+	def get_ResourceType(self):
+		return self.get_query_params().get('ResourceType')
 
-	def set_Tags(self,Tags):
-		self.add_query_param('Tags',Tags)
+	def set_ResourceType(self,ResourceType):
+		self.add_query_param('ResourceType',ResourceType)
 
-	def get_LoadBalancerId(self):
-		return self.get_query_params().get('LoadBalancerId')
+	def get_TagKeys(self):
+		return self.get_query_params().get('TagKeys')
 
-	def set_LoadBalancerId(self,LoadBalancerId):
-		self.add_query_param('LoadBalancerId',LoadBalancerId)
+	def set_TagKeys(self,TagKeys):
+		for i in range(len(TagKeys)):	
+			if TagKeys[i] is not None:
+				self.add_query_param('TagKey.' + str(i + 1) , TagKeys[i]);

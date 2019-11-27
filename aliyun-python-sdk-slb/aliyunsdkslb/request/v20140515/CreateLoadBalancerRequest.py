@@ -42,6 +42,12 @@ class CreateLoadBalancerRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_SupportPrivateLink(self):
+		return self.get_query_params().get('SupportPrivateLink')
+
+	def set_SupportPrivateLink(self,SupportPrivateLink):
+		self.add_query_param('SupportPrivateLink',SupportPrivateLink)
+
 	def get_ClientToken(self):
 		return self.get_query_params().get('ClientToken')
 
