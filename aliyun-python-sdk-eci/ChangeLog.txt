@@ -1,3 +1,9 @@
+2019-11-28 Version: 1.0.6
+1, support image cache auto expire
+
+2019-10-28 Version: 1.0.5
+1, support image cache
+
 2019-04-16 Version: 1.0.4
 1, support ECI resatart/update
 2, support ECI metric
@@ -9,24 +15,6 @@
 1, Add probe for container.
 2, Add securityContext for container.
 3, Add dnsConfig for pod.
-
-2018-12-29 Version: 1.0.2
-1, Add probe for container.
-2, Add securityContext for container.
-3, Add dnsConfig for pod.
-
-2018-12-28 Version: 1.0.2
-1, Add probe for container.
-2, Add securityContext for container.
-3, Add dnsConfig for pod.
-
-2018-12-28 Version: 1.0.2
-1, container probe.
-2, container securityContext.
-3, pod dnsConfig.
-
-2018-12-28 Version: 1.0.2
-1, probe,securityContext,dnsConfig.
 
 2018-12-28 Version: 1.0.2
 1, Add probe for container.
