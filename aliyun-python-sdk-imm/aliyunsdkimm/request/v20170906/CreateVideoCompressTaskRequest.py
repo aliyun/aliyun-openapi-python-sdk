@@ -36,6 +36,12 @@ class CreateVideoCompressTaskRequest(RpcRequest):
 	def set_NotifyEndpoint(self,NotifyEndpoint):
 		self.add_query_param('NotifyEndpoint',NotifyEndpoint)
 
+	def get_TargetContainer(self):
+		return self.get_query_params().get('TargetContainer')
+
+	def set_TargetContainer(self,TargetContainer):
+		self.add_query_param('TargetContainer',TargetContainer)
+
 	def get_CustomMessage(self):
 		return self.get_query_params().get('CustomMessage')
 
