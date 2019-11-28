@@ -354,6 +354,9 @@ class RunInstancesRequest(RpcRequest):
 				self.add_query_param('NetworkInterface.' + str(i + 1) + '.VSwitchId' , NetworkInterfaces[i].get('VSwitchId'))
 			if NetworkInterfaces[i].get('SecurityGroupId') is not None:
 				self.add_query_param('NetworkInterface.' + str(i + 1) + '.SecurityGroupId' , NetworkInterfaces[i].get('SecurityGroupId'))
+			for j in range(len(NetworkInterfaces[i].get('SecurityGroupIdss'))):
+				if NetworkInterfaces[i].get('SecurityGroupIdss')[j] is not None:
+					self.add_query_param('NetworkInterface.' + str(i + 1) + '.SecurityGroupIds.'+str(j + 1), NetworkInterfaces[i].get('SecurityGroupIdss')[j])
 			if NetworkInterfaces[i].get('NetworkInterfaceName') is not None:
 				self.add_query_param('NetworkInterface.' + str(i + 1) + '.NetworkInterfaceName' , NetworkInterfaces[i].get('NetworkInterfaceName'))
 			if NetworkInterfaces[i].get('Description') is not None:
