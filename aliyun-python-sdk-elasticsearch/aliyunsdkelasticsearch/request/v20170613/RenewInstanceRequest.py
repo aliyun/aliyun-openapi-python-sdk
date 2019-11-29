@@ -20,11 +20,11 @@
 from aliyunsdkcore.request import RoaRequest
 from aliyunsdkelasticsearch.endpoint import endpoint_data
 
-class ConvertLogstashPayTypeRequest(RoaRequest):
+class RenewInstanceRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'elasticsearch', '2017-06-13', 'ConvertLogstashPayType','elasticsearch')
-		self.set_uri_pattern('/openapi/logstashes/[InstanceId]/convert-pay-type')
+		RoaRequest.__init__(self, 'elasticsearch', '2017-06-13', 'RenewInstance','elasticsearch')
+		self.set_uri_pattern('/openapi/instances/[InstanceId]/actions/renew')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
