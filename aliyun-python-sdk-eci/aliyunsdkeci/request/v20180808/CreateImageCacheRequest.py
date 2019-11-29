@@ -60,6 +60,12 @@ class CreateImageCacheRequest(RpcRequest):
 	def set_ImageCacheSize(self,ImageCacheSize):
 		self.add_query_param('ImageCacheSize',ImageCacheSize)
 
+	def get_RetentionDays(self):
+		return self.get_query_params().get('RetentionDays')
+
+	def set_RetentionDays(self, RetentionDays):
+		self.add_query_param('RetentionDays', RetentionDays)
+
 	def get_ImageRegistryCredentials(self):
 		return self.get_query_params().get('ImageRegistryCredentials')
 
