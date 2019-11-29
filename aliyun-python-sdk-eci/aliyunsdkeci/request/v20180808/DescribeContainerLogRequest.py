@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,6 +18,7 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+
 class DescribeContainerLogRequest(RpcRequest):
 
 	def __init__(self):
@@ -47,6 +48,12 @@ class DescribeContainerLogRequest(RpcRequest):
 	def set_ContainerGroupId(self,ContainerGroupId):
 		self.add_query_param('ContainerGroupId',ContainerGroupId)
 
+	def get_SinceSeconds(self):
+		return self.get_query_params().get('SinceSeconds')
+
+	def set_SinceSeconds(self,SinceSeconds):
+		self.add_query_param('SinceSeconds',SinceSeconds)
+
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -70,3 +77,9 @@ class DescribeContainerLogRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_LastTime(self):
+		return self.get_query_params().get('LastTime')
+
+	def set_LastTime(self,LastTime):
+		self.add_query_param('LastTime',LastTime)

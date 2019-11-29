@@ -1,3 +1,6 @@
+2019-11-29 Version: 1.0.6
+- Support imag cache auto expire time.
+
 2019-11-28 Version: 1.0.6
 1, support image cache auto expire
 

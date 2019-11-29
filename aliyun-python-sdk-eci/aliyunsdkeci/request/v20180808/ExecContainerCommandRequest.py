@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,6 +18,7 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+
 class ExecContainerCommandRequest(RpcRequest):
 
 	def __init__(self):
@@ -64,3 +65,9 @@ class ExecContainerCommandRequest(RpcRequest):
 
 	def set_Command(self,Command):
 		self.add_query_param('Command',Command)
+
+	def get_TTY(self):
+		return self.get_query_params().get('TTY')
+
+	def set_TTY(self,TTY):
+		self.add_query_param('TTY',TTY)
