@@ -20,15 +20,33 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkpts.endpoint import endpoint_data
 
-class ListRunnableScenesRequest(RpcRequest):
+class DescribeSamplingLogRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'PTS', '2018-11-11', 'ListRunnableScenes')
+		RpcRequest.__init__(self, 'PTS', '2019-08-10', 'DescribeSamplingLog','1.0.0')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+
+	def get_ReportId(self):
+		return self.get_query_params().get('ReportId')
+
+	def set_ReportId(self,ReportId):
+		self.add_query_param('ReportId',ReportId)
+
+	def get_ChainId(self):
+		return self.get_query_params().get('ChainId')
+
+	def set_ChainId(self,ChainId):
+		self.add_query_param('ChainId',ChainId)
+
+	def get_HttpResponseStatus(self):
+		return self.get_query_params().get('HttpResponseStatus')
+
+	def set_HttpResponseStatus(self,HttpResponseStatus):
+		self.add_query_param('HttpResponseStatus',HttpResponseStatus)
 
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
@@ -41,3 +59,9 @@ class ListRunnableScenesRequest(RpcRequest):
 
 	def set_PageNumber(self,PageNumber):
 		self.add_query_param('PageNumber',PageNumber)
+
+	def get_ErrorCode(self):
+		return self.get_query_params().get('ErrorCode')
+
+	def set_ErrorCode(self,ErrorCode):
+		self.add_query_param('ErrorCode',ErrorCode)

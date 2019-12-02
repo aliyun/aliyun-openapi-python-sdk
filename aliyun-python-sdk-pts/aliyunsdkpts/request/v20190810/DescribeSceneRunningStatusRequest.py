@@ -20,21 +20,15 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkpts.endpoint import endpoint_data
 
-class QueryPlanStatusRequest(RpcRequest):
+class DescribeSceneRunningStatusRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'PTS', '2018-11-11', 'QueryPlanStatus')
+		RpcRequest.__init__(self, 'PTS', '2019-08-10', 'DescribeSceneRunningStatus','1.0.0')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ReportId(self):
-		return self.get_query_params().get('ReportId')
-
-	def set_ReportId(self,ReportId):
-		self.add_query_param('ReportId',ReportId)
 
 	def get_SceneId(self):
 		return self.get_query_params().get('SceneId')

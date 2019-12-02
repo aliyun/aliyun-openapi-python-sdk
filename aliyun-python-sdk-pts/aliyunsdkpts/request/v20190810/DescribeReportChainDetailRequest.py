@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkpts.endpoint import endpoint_data
 
-class GetReportRequest(RpcRequest):
+class DescribeReportChainDetailRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'PTS', '2018-11-11', 'GetReport')
+		RpcRequest.__init__(self, 'PTS', '2019-08-10', 'DescribeReportChainDetail','1.0.0')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -35,3 +35,21 @@ class GetReportRequest(RpcRequest):
 
 	def set_ReportId(self,ReportId):
 		self.add_query_param('ReportId',ReportId)
+
+	def get_ChainId(self):
+		return self.get_query_params().get('ChainId')
+
+	def set_ChainId(self,ChainId):
+		self.add_query_param('ChainId',ChainId)
+
+	def get_EndTime(self):
+		return self.get_query_params().get('EndTime')
+
+	def set_EndTime(self,EndTime):
+		self.add_query_param('EndTime',EndTime)
+
+	def get_BeginTime(self):
+		return self.get_query_params().get('BeginTime')
+
+	def set_BeginTime(self,BeginTime):
+		self.add_query_param('BeginTime',BeginTime)
