@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#
 #     http://www.apache.org/licenses/LICENSE-2.0
+#
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,7 +18,6 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-
 class ExportContainerGroupTemplateRequest(RpcRequest):
 
 	def __init__(self):
@@ -29,12 +28,6 @@ class ExportContainerGroupTemplateRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_VkClientVersion(self):
-		return self.get_query_params().get('VkClientVersion')
-
-	def set_VkClientVersion(self,VkClientVersion):
-		self.add_query_param('VkClientVersion',VkClientVersion)
 
 	def get_ContainerGroupId(self):
 		return self.get_query_params().get('ContainerGroupId')

@@ -1,12 +1,3 @@
-2019-11-29 Version: 1.0.6
-- Support imag cache auto expire time.
-
-2019-11-28 Version: 1.0.6
-1, support image cache auto expire
-
-2019-10-28 Version: 1.0.5
-1, support image cache
-
 2019-04-16 Version: 1.0.4
 1, support ECI resatart/update
 2, support ECI metric

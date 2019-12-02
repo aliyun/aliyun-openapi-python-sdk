@@ -42,12 +42,6 @@ class DeleteImageCacheRequest(RpcRequest):
 	def set_ClientToken(self,ClientToken):
 		self.add_query_param('ClientToken',ClientToken)
 
-	def get_VkClientVersion(self):
-		return self.get_query_params().get('VkClientVersion')
-
-	def set_VkClientVersion(self,VkClientVersion):
-		self.add_query_param('VkClientVersion',VkClientVersion)
-
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
