@@ -62,5 +62,11 @@ class ExecContainerCommandRequest(RpcRequest):
 	def get_Command(self):
 		return self.get_query_params().get('Command')
 
-	def set_Command(self,Command):
-		self.add_query_param('Command',Command)
+	def set_Command(self, Command):
+		self.add_query_param('Command', Command)
+
+	def get_TTY(self):
+		return self.get_query_params().get('TTY')
+
+	def set_TTY(self, TTY):
+		self.add_query_param('TTY', TTY)
