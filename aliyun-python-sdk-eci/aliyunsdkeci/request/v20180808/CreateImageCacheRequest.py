@@ -36,12 +36,6 @@ class CreateImageCacheRequest(RpcRequest):
 	def set_ClientToken(self,ClientToken):
 		self.add_query_param('ClientToken',ClientToken)
 
-	def get_VkClientVersion(self):
-		return self.get_query_params().get('VkClientVersion')
-
-	def set_VkClientVersion(self,VkClientVersion):
-		self.add_query_param('VkClientVersion',VkClientVersion)
-
 	def get_SecurityGroupId(self):
 		return self.get_query_params().get('SecurityGroupId')
 
@@ -91,7 +85,7 @@ class CreateImageCacheRequest(RpcRequest):
 	def set_Images(self,Images):
 		for i in range(len(Images)):	
 			if Images[i] is not None:
-				self.add_query_param('Image.' + str(i + 1) , Images[i]);
+				self.add_query_param('Image.' + str(i + 1) , Images[i])
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -126,5 +120,5 @@ class CreateImageCacheRequest(RpcRequest):
 	def get_RetentionDays(self):
 		return self.get_query_params().get('RetentionDays')
 
-	def set_RetentionDays(self,RetentionDays):
-		self.add_query_param('RetentionDays',RetentionDays)
+	def set_RetentionDays(self, RetentionDays):
+		self.add_query_param('RetentionDays', RetentionDays)

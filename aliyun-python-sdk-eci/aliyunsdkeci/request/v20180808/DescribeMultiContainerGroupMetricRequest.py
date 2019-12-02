@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#
 #     http://www.apache.org/licenses/LICENSE-2.0
+#
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,17 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-
 class DescribeMultiContainerGroupMetricRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Eci', '2018-08-08', 'DescribeMultiContainerGroupMetric','eci')
-
-	def get_MetricType(self):
-		return self.get_query_params().get('MetricType')
-
-	def set_MetricType(self,MetricType):
-		self.add_query_param('MetricType',MetricType)
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
