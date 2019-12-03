@@ -30,6 +30,12 @@ class CreateCoverTaskRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_TemplateId(self):
+		return self.get_query_params().get('TemplateId')
+
+	def set_TemplateId(self,TemplateId):
+		self.add_query_param('TemplateId',TemplateId)
+
 	def get_VideoUrl(self):
 		return self.get_query_params().get('VideoUrl')
 
@@ -41,6 +47,12 @@ class CreateCoverTaskRequest(RpcRequest):
 
 	def set_VideoName(self,VideoName):
 		self.add_query_param('VideoName',VideoName)
+
+	def get_CallbackUrl(self):
+		return self.get_query_params().get('CallbackUrl')
+
+	def set_CallbackUrl(self,CallbackUrl):
+		self.add_query_param('CallbackUrl',CallbackUrl)
 
 	def get_ApplicationId(self):
 		return self.get_query_params().get('ApplicationId')

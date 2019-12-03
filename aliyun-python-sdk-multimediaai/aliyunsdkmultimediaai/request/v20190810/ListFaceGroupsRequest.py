@@ -20,42 +20,24 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkmultimediaai.endpoint import endpoint_data
 
-class CreateLabelTaskRequest(RpcRequest):
+class ListFaceGroupsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'multimediaai', '2019-08-10', 'CreateLabelTask','multimediaai')
+		RpcRequest.__init__(self, 'multimediaai', '2019-08-10', 'ListFaceGroups','multimediaai')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_TemplateId(self):
-		return self.get_query_params().get('TemplateId')
+	def get_PageNumber(self):
+		return self.get_query_params().get('PageNumber')
 
-	def set_TemplateId(self,TemplateId):
-		self.add_query_param('TemplateId',TemplateId)
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)
 
-	def get_VideoUrl(self):
-		return self.get_query_params().get('VideoUrl')
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
 
-	def set_VideoUrl(self,VideoUrl):
-		self.add_query_param('VideoUrl',VideoUrl)
-
-	def get_VideoName(self):
-		return self.get_query_params().get('VideoName')
-
-	def set_VideoName(self,VideoName):
-		self.add_query_param('VideoName',VideoName)
-
-	def get_CallbackUrl(self):
-		return self.get_query_params().get('CallbackUrl')
-
-	def set_CallbackUrl(self,CallbackUrl):
-		self.add_query_param('CallbackUrl',CallbackUrl)
-
-	def get_ApplicationId(self):
-		return self.get_query_params().get('ApplicationId')
-
-	def set_ApplicationId(self,ApplicationId):
-		self.add_query_param('ApplicationId',ApplicationId)
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
