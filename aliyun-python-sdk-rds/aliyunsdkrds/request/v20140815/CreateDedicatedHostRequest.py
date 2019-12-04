@@ -48,12 +48,6 @@ class CreateDedicatedHostRequest(RpcRequest):
 	def set_HostName(self,HostName):
 		self.add_query_param('HostName',HostName)
 
-	def get_HostCount(self):
-		return self.get_query_params().get('HostCount')
-
-	def set_HostCount(self,HostCount):
-		self.add_query_param('HostCount',HostCount)
-
 	def get_DedicatedHostGroupId(self):
 		return self.get_query_params().get('DedicatedHostGroupId')
 

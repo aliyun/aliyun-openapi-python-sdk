@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkrds.endpoint import endpoint_data
 
-class ModifyDBProxyInstanceRequest(RpcRequest):
+class DescribeAvailableDedicatedHostClassesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'ModifyDBProxyInstance','rds')
+		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'DescribeAvailableDedicatedHostClasses','rds')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -35,24 +35,6 @@ class ModifyDBProxyInstanceRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_EffectiveTime(self):
-		return self.get_query_params().get('EffectiveTime')
-
-	def set_EffectiveTime(self,EffectiveTime):
-		self.add_query_param('EffectiveTime',EffectiveTime)
-
-	def get_EffectiveSpecificTime(self):
-		return self.get_query_params().get('EffectiveSpecificTime')
-
-	def set_EffectiveSpecificTime(self,EffectiveSpecificTime):
-		self.add_query_param('EffectiveSpecificTime',EffectiveSpecificTime)
-
-	def get_DBInstanceId(self):
-		return self.get_query_params().get('DBInstanceId')
-
-	def set_DBInstanceId(self,DBInstanceId):
-		self.add_query_param('DBInstanceId',DBInstanceId)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -66,14 +48,8 @@ class ModifyDBProxyInstanceRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_DBProxyInstanceNum(self):
-		return self.get_query_params().get('DBProxyInstanceNum')
+	def get_ZoneId(self):
+		return self.get_query_params().get('ZoneId')
 
-	def set_DBProxyInstanceNum(self,DBProxyInstanceNum):
-		self.add_query_param('DBProxyInstanceNum',DBProxyInstanceNum)
-
-	def get_DBProxyInstanceType(self):
-		return self.get_query_params().get('DBProxyInstanceType')
-
-	def set_DBProxyInstanceType(self,DBProxyInstanceType):
-		self.add_query_param('DBProxyInstanceType',DBProxyInstanceType)
+	def set_ZoneId(self,ZoneId):
+		self.add_query_param('ZoneId',ZoneId)

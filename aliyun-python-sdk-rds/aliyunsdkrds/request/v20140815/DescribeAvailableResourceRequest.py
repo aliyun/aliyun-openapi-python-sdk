@@ -30,6 +30,12 @@ class DescribeAvailableResourceRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_DBInstanceName(self):
+		return self.get_query_params().get('DBInstanceName')
+
+	def set_DBInstanceName(self,DBInstanceName):
+		self.add_query_param('DBInstanceName',DBInstanceName)
+
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
@@ -77,6 +83,12 @@ class DescribeAvailableResourceRequest(RpcRequest):
 
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
+
+	def get_CommodityCode(self):
+		return self.get_query_params().get('CommodityCode')
+
+	def set_CommodityCode(self,CommodityCode):
+		self.add_query_param('CommodityCode',CommodityCode)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')

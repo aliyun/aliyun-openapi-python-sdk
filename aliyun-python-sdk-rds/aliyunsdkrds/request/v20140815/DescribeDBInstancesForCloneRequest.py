@@ -20,27 +20,27 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkrds.endpoint import endpoint_data
 
-class PreCheckCreateOrderForModifyRequest(RpcRequest):
+class DescribeDBInstancesForCloneRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'PreCheckCreateOrderForModify','rds')
+		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'DescribeDBInstancesForClone','rds')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_ConnectionMode(self):
+		return self.get_query_params().get('ConnectionMode')
+
+	def set_ConnectionMode(self,ConnectionMode):
+		self.add_query_param('ConnectionMode',ConnectionMode)
+
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_DBInstanceStorage(self):
-		return self.get_query_params().get('DBInstanceStorage')
-
-	def set_DBInstanceStorage(self,DBInstanceStorage):
-		self.add_query_param('DBInstanceStorage',DBInstanceStorage)
 
 	def get_NodeType(self):
 		return self.get_query_params().get('NodeType')
@@ -54,17 +54,47 @@ class PreCheckCreateOrderForModifyRequest(RpcRequest):
 	def set_ClientToken(self,ClientToken):
 		self.add_query_param('ClientToken',ClientToken)
 
+	def get_SearchKey(self):
+		return self.get_query_params().get('SearchKey')
+
+	def set_SearchKey(self,SearchKey):
+		self.add_query_param('SearchKey',SearchKey)
+
 	def get_EngineVersion(self):
 		return self.get_query_params().get('EngineVersion')
 
 	def set_EngineVersion(self,EngineVersion):
 		self.add_query_param('EngineVersion',EngineVersion)
 
-	def get_EffectiveTime(self):
-		return self.get_query_params().get('EffectiveTime')
+	def get_PageNumber(self):
+		return self.get_query_params().get('PageNumber')
 
-	def set_EffectiveTime(self,EffectiveTime):
-		self.add_query_param('EffectiveTime',EffectiveTime)
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)
+
+	def get_Expired(self):
+		return self.get_query_params().get('Expired')
+
+	def set_Expired(self,Expired):
+		self.add_query_param('Expired',Expired)
+
+	def get_Engine(self):
+		return self.get_query_params().get('Engine')
+
+	def set_Engine(self,Engine):
+		self.add_query_param('Engine',Engine)
+
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
+
+	def get_DBInstanceStatus(self):
+		return self.get_query_params().get('DBInstanceStatus')
+
+	def set_DBInstanceStatus(self,DBInstanceStatus):
+		self.add_query_param('DBInstanceStatus',DBInstanceStatus)
 
 	def get_DBInstanceId(self):
 		return self.get_query_params().get('DBInstanceId')
@@ -72,29 +102,11 @@ class PreCheckCreateOrderForModifyRequest(RpcRequest):
 	def set_DBInstanceId(self,DBInstanceId):
 		self.add_query_param('DBInstanceId',DBInstanceId)
 
-	def get_SwitchTime(self):
-		return self.get_query_params().get('SwitchTime')
+	def get_proxyId(self):
+		return self.get_query_params().get('proxyId')
 
-	def set_SwitchTime(self,SwitchTime):
-		self.add_query_param('SwitchTime',SwitchTime)
-
-	def get_DBInstanceStorageType(self):
-		return self.get_query_params().get('DBInstanceStorageType')
-
-	def set_DBInstanceStorageType(self,DBInstanceStorageType):
-		self.add_query_param('DBInstanceStorageType',DBInstanceStorageType)
-
-	def get_BusinessInfo(self):
-		return self.get_query_params().get('BusinessInfo')
-
-	def set_BusinessInfo(self,BusinessInfo):
-		self.add_query_param('BusinessInfo',BusinessInfo)
-
-	def get_AutoPay(self):
-		return self.get_query_params().get('AutoPay')
-
-	def set_AutoPay(self,AutoPay):
-		self.add_query_param('AutoPay',AutoPay)
+	def set_proxyId(self,proxyId):
+		self.add_query_param('proxyId',proxyId)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -102,17 +114,11 @@ class PreCheckCreateOrderForModifyRequest(RpcRequest):
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
-	def get_Resource(self):
-		return self.get_query_params().get('Resource')
+	def get_OwnerAccount(self):
+		return self.get_query_params().get('OwnerAccount')
 
-	def set_Resource(self,Resource):
-		self.add_query_param('Resource',Resource)
-
-	def get_CommodityCode(self):
-		return self.get_query_params().get('CommodityCode')
-
-	def set_CommodityCode(self,CommodityCode):
-		self.add_query_param('CommodityCode',CommodityCode)
+	def set_OwnerAccount(self,OwnerAccount):
+		self.add_query_param('OwnerAccount',OwnerAccount)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
@@ -120,11 +126,11 @@ class PreCheckCreateOrderForModifyRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_UsedTime(self):
-		return self.get_query_params().get('UsedTime')
+	def get_DBInstanceType(self):
+		return self.get_query_params().get('DBInstanceType')
 
-	def set_UsedTime(self,UsedTime):
-		self.add_query_param('UsedTime',UsedTime)
+	def set_DBInstanceType(self,DBInstanceType):
+		self.add_query_param('DBInstanceType',DBInstanceType)
 
 	def get_DBInstanceClass(self):
 		return self.get_query_params().get('DBInstanceClass')
@@ -138,12 +144,6 @@ class PreCheckCreateOrderForModifyRequest(RpcRequest):
 	def set_VSwitchId(self,VSwitchId):
 		self.add_query_param('VSwitchId',VSwitchId)
 
-	def get_PromotionCode(self):
-		return self.get_query_params().get('PromotionCode')
-
-	def set_PromotionCode(self,PromotionCode):
-		self.add_query_param('PromotionCode',PromotionCode)
-
 	def get_VpcId(self):
 		return self.get_query_params().get('VpcId')
 
@@ -155,12 +155,6 @@ class PreCheckCreateOrderForModifyRequest(RpcRequest):
 
 	def set_ZoneId(self,ZoneId):
 		self.add_query_param('ZoneId',ZoneId)
-
-	def get_TimeType(self):
-		return self.get_query_params().get('TimeType')
-
-	def set_TimeType(self,TimeType):
-		self.add_query_param('TimeType',TimeType)
 
 	def get_PayType(self):
 		return self.get_query_params().get('PayType')

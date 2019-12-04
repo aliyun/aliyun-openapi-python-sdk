@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkrds.endpoint import endpoint_data
 
-class PreCheckDBInstanceOperationRequest(RpcRequest):
+class EvaluateDedicatedHostInstanceResourceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'PreCheckDBInstanceOperation','rds')
+		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'EvaluateDedicatedHostInstanceResource','rds')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -35,6 +35,36 @@ class PreCheckDBInstanceOperationRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+
+	def get_EngineVersion(self):
+		return self.get_query_params().get('EngineVersion')
+
+	def set_EngineVersion(self,EngineVersion):
+		self.add_query_param('EngineVersion',EngineVersion)
+
+	def get_Engine(self):
+		return self.get_query_params().get('Engine')
+
+	def set_Engine(self,Engine):
+		self.add_query_param('Engine',Engine)
+
+	def get_DedicatedHostGroupId(self):
+		return self.get_query_params().get('DedicatedHostGroupId')
+
+	def set_DedicatedHostGroupId(self,DedicatedHostGroupId):
+		self.add_query_param('DedicatedHostGroupId',DedicatedHostGroupId)
+
+	def get_InstanceClassNames(self):
+		return self.get_query_params().get('InstanceClassNames')
+
+	def set_InstanceClassNames(self,InstanceClassNames):
+		self.add_query_param('InstanceClassNames',InstanceClassNames)
+
+	def get_DiskSize(self):
+		return self.get_query_params().get('DiskSize')
+
+	def set_DiskSize(self,DiskSize):
+		self.add_query_param('DiskSize',DiskSize)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -48,14 +78,8 @@ class PreCheckDBInstanceOperationRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_DBInstanceId(self):
-		return self.get_query_params().get('DBInstanceId')
+	def get_DiskType(self):
+		return self.get_query_params().get('DiskType')
 
-	def set_DBInstanceId(self,DBInstanceId):
-		self.add_query_param('DBInstanceId',DBInstanceId)
-
-	def get_Operation(self):
-		return self.get_query_params().get('Operation')
-
-	def set_Operation(self,Operation):
-		self.add_query_param('Operation',Operation)
+	def set_DiskType(self,DiskType):
+		self.add_query_param('DiskType',DiskType)

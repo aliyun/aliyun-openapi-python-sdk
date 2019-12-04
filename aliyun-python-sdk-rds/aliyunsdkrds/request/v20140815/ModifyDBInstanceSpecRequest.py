@@ -72,6 +72,12 @@ class ModifyDBInstanceSpecRequest(RpcRequest):
 	def set_DBInstanceStorageType(self,DBInstanceStorageType):
 		self.add_query_param('DBInstanceStorageType',DBInstanceStorageType)
 
+	def get_Direction(self):
+		return self.get_query_params().get('Direction')
+
+	def set_Direction(self,Direction):
+		self.add_query_param('Direction',Direction)
+
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 

@@ -96,6 +96,12 @@ class ModifyBackupPolicyRequest(RpcRequest):
 	def set_PreferredBackupPeriod(self,PreferredBackupPeriod):
 		self.add_query_param('PreferredBackupPeriod',PreferredBackupPeriod)
 
+	def get_ReleasedKeepPolicy(self):
+		return self.get_query_params().get('ReleasedKeepPolicy')
+
+	def set_ReleasedKeepPolicy(self,ReleasedKeepPolicy):
+		self.add_query_param('ReleasedKeepPolicy',ReleasedKeepPolicy)
+
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
