@@ -30,29 +30,11 @@ class SearchTracesRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_ServiceIp(self):
-		return self.get_query_params().get('ServiceIp')
-
-	def set_ServiceIp(self,ServiceIp):
-		self.add_query_param('ServiceIp',ServiceIp)
-
-	def get_OperationName(self):
-		return self.get_query_params().get('OperationName')
-
-	def set_OperationName(self,OperationName):
-		self.add_query_param('OperationName',OperationName)
-
 	def get_AppType(self):
 		return self.get_query_params().get('AppType')
 
 	def set_AppType(self,AppType):
 		self.add_query_param('AppType',AppType)
-
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
 
 	def get_EndTime(self):
 		return self.get_query_params().get('EndTime')
@@ -60,28 +42,11 @@ class SearchTracesRequest(RpcRequest):
 	def set_EndTime(self,EndTime):
 		self.add_query_param('EndTime',EndTime)
 
-	def get_ServiceName(self):
-		return self.get_query_params().get('ServiceName')
-
-	def set_ServiceName(self,ServiceName):
-		self.add_query_param('ServiceName',ServiceName)
-
 	def get_StartTime(self):
 		return self.get_query_params().get('StartTime')
 
 	def set_StartTime(self,StartTime):
 		self.add_query_param('StartTime',StartTime)
-
-	def get_Tags(self):
-		return self.get_query_params().get('Tags')
-
-	def set_Tags(self,Tags):
-		for i in range(len(Tags)):	
-			if Tags[i].get('Value') is not None:
-				self.add_query_param('Tag.' + str(i + 1) + '.Value' , Tags[i].get('Value'))
-			if Tags[i].get('Key') is not None:
-				self.add_query_param('Tag.' + str(i + 1) + '.Key' , Tags[i].get('Key'))
-
 
 	def get_Reverse(self):
 		return self.get_query_params().get('Reverse')
@@ -100,3 +65,37 @@ class SearchTracesRequest(RpcRequest):
 
 	def set_PageNumber(self,PageNumber):
 		self.add_query_param('PageNumber',PageNumber)
+
+	def get_ServiceIp(self):
+		return self.get_query_params().get('ServiceIp')
+
+	def set_ServiceIp(self,ServiceIp):
+		self.add_query_param('ServiceIp',ServiceIp)
+
+	def get_OperationName(self):
+		return self.get_query_params().get('OperationName')
+
+	def set_OperationName(self,OperationName):
+		self.add_query_param('OperationName',OperationName)
+
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
+
+	def get_ServiceName(self):
+		return self.get_query_params().get('ServiceName')
+
+	def set_ServiceName(self,ServiceName):
+		self.add_query_param('ServiceName',ServiceName)
+
+	def get_Tags(self):
+		return self.get_query_params().get('Tags')
+
+	def set_Tags(self,Tags):
+		for i in range(len(Tags)):	
+			if Tags[i].get('Value') is not None:
+				self.add_query_param('Tag.' + str(i + 1) + '.Value' , Tags[i].get('Value'))
+			if Tags[i].get('Key') is not None:
+				self.add_query_param('Tag.' + str(i + 1) + '.Key' , Tags[i].get('Key'))
