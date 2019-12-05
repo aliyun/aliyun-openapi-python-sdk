@@ -1,3 +1,18 @@
+2019-12-05 Version: 1.0.8
+1, support container lifecycle
+2, support disk volume
+3, support eci instance ram role
+4, support SecurityContextSysctls
+5, support ntp server
+6, support TerminationGracePeriodSeconds
+
+
+2019-11-28 Version: 1.0.7
+1, support image cache auto expire time
+
+2019-10-28 Version: 1.0.5
+1, support image cache
+
 2019-04-16 Version: 1.0.4
 1, support ECI resatart/update
 2, support ECI metric
