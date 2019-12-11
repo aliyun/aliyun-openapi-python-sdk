@@ -20,33 +20,21 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkiot.endpoint import endpoint_data
 
-class BindDriverToEdgeInstanceRequest(RpcRequest):
+class GisQueryDeviceLocationRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'BindDriverToEdgeInstance','iot')
+		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'GisQueryDeviceLocation','iot')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_OrderId(self):
-		return self.get_query_params().get('OrderId')
+	def get_ThingList(self):
+		return self.get_query_params().get('ThingList')
 
-	def set_OrderId(self,OrderId):
-		self.add_query_param('OrderId',OrderId)
-
-	def get_InstanceId(self):
-		return self.get_query_params().get('InstanceId')
-
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
-
-	def get_DriverId(self):
-		return self.get_query_params().get('DriverId')
-
-	def set_DriverId(self,DriverId):
-		self.add_query_param('DriverId',DriverId)
+	def set_ThingList(self,ThingList):
+		self.add_query_param('ThingList',ThingList)
 
 	def get_IotInstanceId(self):
 		return self.get_query_params().get('IotInstanceId')
@@ -54,8 +42,14 @@ class BindDriverToEdgeInstanceRequest(RpcRequest):
 	def set_IotInstanceId(self,IotInstanceId):
 		self.add_query_param('IotInstanceId',IotInstanceId)
 
-	def get_DriverVersion(self):
-		return self.get_query_params().get('DriverVersion')
+	def get_ApiProduct(self):
+		return self.get_body_params().get('ApiProduct')
 
-	def set_DriverVersion(self,DriverVersion):
-		self.add_query_param('DriverVersion',DriverVersion)
+	def set_ApiProduct(self,ApiProduct):
+		self.add_body_params('ApiProduct', ApiProduct)
+
+	def get_ApiRevision(self):
+		return self.get_body_params().get('ApiRevision')
+
+	def set_ApiRevision(self,ApiRevision):
+		self.add_body_params('ApiRevision', ApiRevision)

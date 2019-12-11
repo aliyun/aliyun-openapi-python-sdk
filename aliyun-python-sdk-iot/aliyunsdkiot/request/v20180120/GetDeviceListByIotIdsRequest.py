@@ -20,33 +20,15 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkiot.endpoint import endpoint_data
 
-class CreateRuleRequest(RpcRequest):
+class GetDeviceListByIotIdsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'CreateRule','iot')
+		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'GetDeviceListByIotIds','iot')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Select(self):
-		return self.get_query_params().get('Select')
-
-	def set_Select(self,Select):
-		self.add_query_param('Select',Select)
-
-	def get_RuleDesc(self):
-		return self.get_query_params().get('RuleDesc')
-
-	def set_RuleDesc(self,RuleDesc):
-		self.add_query_param('RuleDesc',RuleDesc)
-
-	def get_ShortTopic(self):
-		return self.get_query_params().get('ShortTopic')
-
-	def set_ShortTopic(self,ShortTopic):
-		self.add_query_param('ShortTopic',ShortTopic)
 
 	def get_ResourceGroupId(self):
 		return self.get_query_params().get('ResourceGroupId')
@@ -54,38 +36,14 @@ class CreateRuleRequest(RpcRequest):
 	def set_ResourceGroupId(self,ResourceGroupId):
 		self.add_query_param('ResourceGroupId',ResourceGroupId)
 
-	def get_DataType(self):
-		return self.get_query_params().get('DataType')
+	def get_IotIds(self):
+		return self.get_query_params().get('IotIds')
 
-	def set_DataType(self,DataType):
-		self.add_query_param('DataType',DataType)
+	def set_IotIds(self,IotIds):
+		self.add_query_param('IotIds',IotIds)
 
 	def get_IotInstanceId(self):
 		return self.get_query_params().get('IotInstanceId')
 
 	def set_IotInstanceId(self,IotInstanceId):
 		self.add_query_param('IotInstanceId',IotInstanceId)
-
-	def get_Where(self):
-		return self.get_query_params().get('Where')
-
-	def set_Where(self,Where):
-		self.add_query_param('Where',Where)
-
-	def get_TopicType(self):
-		return self.get_query_params().get('TopicType')
-
-	def set_TopicType(self,TopicType):
-		self.add_query_param('TopicType',TopicType)
-
-	def get_ProductKey(self):
-		return self.get_query_params().get('ProductKey')
-
-	def set_ProductKey(self,ProductKey):
-		self.add_query_param('ProductKey',ProductKey)
-
-	def get_Name(self):
-		return self.get_query_params().get('Name')
-
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)

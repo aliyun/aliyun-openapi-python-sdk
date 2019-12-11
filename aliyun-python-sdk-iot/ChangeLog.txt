@@ -1,3 +1,9 @@
+2019-12-11 Version: 8.2.0
+- Add api `BatchAddThingTopo`, support add multiple sub-devices for a gateway.
+- Add api `QueryDeviceByStatus`, support query device list by device status.
+- Support grouping products and rules.
+- Support using RAM to authorize resouces, including products, devices, rules, groups and instances, to RAM users.
+
 2019-10-18 Version: 8.1.0
 - Add X509 API, including queryDeviceCert, queryCertUrlByApplyId, createDeviceCert.
 - Add authType parameter of APIs, including createProduct, queryProduct, queryProductList, CreateProductPop, QueryProductAllInfo, QueryProductListPop, ListProductConsole, QueryAllProductListPop, QueryDeviceBatchList.
