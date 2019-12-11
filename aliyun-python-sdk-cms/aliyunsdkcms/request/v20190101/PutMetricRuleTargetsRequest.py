@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,16 +18,11 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+
 class PutMetricRuleTargetsRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Cms', '2019-01-01', 'PutMetricRuleTargets','cms')
-
-	def get_RuleId(self):
-		return self.get_query_params().get('RuleId')
-
-	def set_RuleId(self,RuleId):
-		self.add_query_param('RuleId',RuleId)
 
 	def get_Targetss(self):
 		return self.get_query_params().get('Targetss')
@@ -40,3 +35,10 @@ class PutMetricRuleTargetsRequest(RpcRequest):
 				self.add_query_param('Targets.' + str(i + 1) + '.Id' , Targetss[i].get('Id'))
 			if Targetss[i].get('Arn') is not None:
 				self.add_query_param('Targets.' + str(i + 1) + '.Arn' , Targetss[i].get('Arn'))
+
+
+	def get_RuleId(self):
+		return self.get_query_params().get('RuleId')
+
+	def set_RuleId(self,RuleId):
+		self.add_query_param('RuleId',RuleId)

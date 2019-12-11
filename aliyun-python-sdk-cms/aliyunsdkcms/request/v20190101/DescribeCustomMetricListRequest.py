@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,6 +18,7 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+
 class DescribeCustomMetricListRequest(RpcRequest):
 
 	def __init__(self):
@@ -28,6 +29,12 @@ class DescribeCustomMetricListRequest(RpcRequest):
 
 	def set_GroupId(self,GroupId):
 		self.add_query_param('GroupId',GroupId)
+
+	def get_PageNumber(self):
+		return self.get_query_params().get('PageNumber')
+
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)
 
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
@@ -46,12 +53,6 @@ class DescribeCustomMetricListRequest(RpcRequest):
 
 	def set_Dimension(self,Dimension):
 		self.add_query_param('Dimension',Dimension)
-
-	def get_PageNumber(self):
-		return self.get_query_params().get('PageNumber')
-
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
 
 	def get_Md5(self):
 		return self.get_query_params().get('Md5')

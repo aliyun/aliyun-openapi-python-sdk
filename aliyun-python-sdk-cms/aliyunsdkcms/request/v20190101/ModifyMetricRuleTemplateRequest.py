@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,16 +18,11 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+
 class ModifyMetricRuleTemplateRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Cms', '2019-01-01', 'ModifyMetricRuleTemplate','cms')
-
-	def get_Name(self):
-		return self.get_query_params().get('Name')
-
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)
 
 	def get_RestVersion(self):
 		return self.get_query_params().get('RestVersion')
@@ -41,6 +36,18 @@ class ModifyMetricRuleTemplateRequest(RpcRequest):
 	def set_Description(self,Description):
 		self.add_query_param('Description',Description)
 
+	def get_TemplateId(self):
+		return self.get_query_params().get('TemplateId')
+
+	def set_TemplateId(self,TemplateId):
+		self.add_query_param('TemplateId',TemplateId)
+
+	def get_Name(self):
+		return self.get_query_params().get('Name')
+
+	def set_Name(self,Name):
+		self.add_query_param('Name',Name)
+
 	def get_AlertTemplatess(self):
 		return self.get_query_params().get('AlertTemplatess')
 
@@ -50,6 +57,8 @@ class ModifyMetricRuleTemplateRequest(RpcRequest):
 				self.add_query_param('AlertTemplates.' + str(i + 1) + '.Period' , AlertTemplatess[i].get('Period'))
 			if AlertTemplatess[i].get('Escalations.Warn.Threshold') is not None:
 				self.add_query_param('AlertTemplates.' + str(i + 1) + '.Escalations.Warn.Threshold' , AlertTemplatess[i].get('Escalations.Warn.Threshold'))
+			if AlertTemplatess[i].get('Webhook') is not None:
+				self.add_query_param('AlertTemplates.' + str(i + 1) + '.Webhook' , AlertTemplatess[i].get('Webhook'))
 			if AlertTemplatess[i].get('Escalations.Warn.ComparisonOperator') is not None:
 				self.add_query_param('AlertTemplates.' + str(i + 1) + '.Escalations.Warn.ComparisonOperator' , AlertTemplatess[i].get('Escalations.Warn.ComparisonOperator'))
 			if AlertTemplatess[i].get('Escalations.Critical.Statistics') is not None:
@@ -82,10 +91,3 @@ class ModifyMetricRuleTemplateRequest(RpcRequest):
 				self.add_query_param('AlertTemplates.' + str(i + 1) + '.Escalations.Warn.Times' , AlertTemplatess[i].get('Escalations.Warn.Times'))
 			if AlertTemplatess[i].get('Escalations.Critical.Threshold') is not None:
 				self.add_query_param('AlertTemplates.' + str(i + 1) + '.Escalations.Critical.Threshold' , AlertTemplatess[i].get('Escalations.Critical.Threshold'))
-
-
-	def get_TemplateId(self):
-		return self.get_query_params().get('TemplateId')
-
-	def set_TemplateId(self,TemplateId):
-		self.add_query_param('TemplateId',TemplateId)

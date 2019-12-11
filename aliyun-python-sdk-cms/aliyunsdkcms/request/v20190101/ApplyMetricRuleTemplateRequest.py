@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,16 +18,11 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+
 class ApplyMetricRuleTemplateRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Cms', '2019-01-01', 'ApplyMetricRuleTemplate','cms')
-
-	def get_EnableStartTime(self):
-		return self.get_query_params().get('EnableStartTime')
-
-	def set_EnableStartTime(self,EnableStartTime):
-		self.add_query_param('EnableStartTime',EnableStartTime)
 
 	def get_ApplyMode(self):
 		return self.get_query_params().get('ApplyMode')
@@ -64,6 +59,12 @@ class ApplyMetricRuleTemplateRequest(RpcRequest):
 
 	def set_NotifyLevel(self,NotifyLevel):
 		self.add_query_param('NotifyLevel',NotifyLevel)
+
+	def get_EnableStartTime(self):
+		return self.get_query_params().get('EnableStartTime')
+
+	def set_EnableStartTime(self,EnableStartTime):
+		self.add_query_param('EnableStartTime',EnableStartTime)
 
 	def get_SilenceTime(self):
 		return self.get_query_params().get('SilenceTime')

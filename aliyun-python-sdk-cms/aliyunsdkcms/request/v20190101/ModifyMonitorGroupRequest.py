@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,6 +18,7 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+
 class ModifyMonitorGroupRequest(RpcRequest):
 
 	def __init__(self):
@@ -35,12 +36,6 @@ class ModifyMonitorGroupRequest(RpcRequest):
 	def set_GroupId(self,GroupId):
 		self.add_query_param('GroupId',GroupId)
 
-	def get_ServiceId(self):
-		return self.get_query_params().get('ServiceId')
-
-	def set_ServiceId(self,ServiceId):
-		self.add_query_param('ServiceId',ServiceId)
-
 	def get_GroupName(self):
 		return self.get_query_params().get('GroupName')
 
@@ -52,3 +47,9 @@ class ModifyMonitorGroupRequest(RpcRequest):
 
 	def set_BindUrls(self,BindUrls):
 		self.add_query_param('BindUrls',BindUrls)
+
+	def get_ServiceId(self):
+		return self.get_query_params().get('ServiceId')
+
+	def set_ServiceId(self,ServiceId):
+		self.add_query_param('ServiceId',ServiceId)

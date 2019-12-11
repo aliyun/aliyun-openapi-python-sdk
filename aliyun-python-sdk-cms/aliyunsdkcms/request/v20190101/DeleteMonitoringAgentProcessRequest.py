@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,10 +18,17 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+
 class DeleteMonitoringAgentProcessRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Cms', '2019-01-01', 'DeleteMonitoringAgentProcess','cms')
+
+	def get_ProcessName(self):
+		return self.get_query_params().get('ProcessName')
+
+	def set_ProcessName(self,ProcessName):
+		self.add_query_param('ProcessName',ProcessName)
 
 	def get_InstanceId(self):
 		return self.get_query_params().get('InstanceId')
@@ -34,9 +41,3 @@ class DeleteMonitoringAgentProcessRequest(RpcRequest):
 
 	def set_ProcessId(self,ProcessId):
 		self.add_query_param('ProcessId',ProcessId)
-
-	def get_ProcessName(self):
-		return self.get_query_params().get('ProcessName')
-
-	def set_ProcessName(self,ProcessName):
-		self.add_query_param('ProcessName',ProcessName)

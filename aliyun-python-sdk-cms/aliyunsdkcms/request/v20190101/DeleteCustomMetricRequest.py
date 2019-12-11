@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,6 +18,7 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+
 class DeleteCustomMetricRequest(RpcRequest):
 
 	def __init__(self):
@@ -29,17 +30,17 @@ class DeleteCustomMetricRequest(RpcRequest):
 	def set_GroupId(self,GroupId):
 		self.add_query_param('GroupId',GroupId)
 
-	def get_MetricName(self):
-		return self.get_query_params().get('MetricName')
-
-	def set_MetricName(self,MetricName):
-		self.add_query_param('MetricName',MetricName)
-
 	def get_UUID(self):
 		return self.get_query_params().get('UUID')
 
 	def set_UUID(self,UUID):
 		self.add_query_param('UUID',UUID)
+
+	def get_MetricName(self):
+		return self.get_query_params().get('MetricName')
+
+	def set_MetricName(self,MetricName):
+		self.add_query_param('MetricName',MetricName)
 
 	def get_Md5(self):
 		return self.get_query_params().get('Md5')

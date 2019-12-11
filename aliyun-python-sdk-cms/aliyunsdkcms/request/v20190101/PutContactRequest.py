@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,10 +18,17 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+
 class PutContactRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Cms', '2019-01-01', 'PutContact','cms')
+
+	def get_ChannelsDingWebHook(self):
+		return self.get_query_params().get('Channels.DingWebHook')
+
+	def set_ChannelsDingWebHook(self,ChannelsDingWebHook):
+		self.add_query_param('Channels.DingWebHook',ChannelsDingWebHook)
 
 	def get_ContactName(self):
 		return self.get_query_params().get('ContactName')
@@ -40,12 +47,6 @@ class PutContactRequest(RpcRequest):
 
 	def set_ChannelsAliIM(self,ChannelsAliIM):
 		self.add_query_param('Channels.AliIM',ChannelsAliIM)
-
-	def get_ChannelsDingWebHook(self):
-		return self.get_query_params().get('Channels.DingWebHook')
-
-	def set_ChannelsDingWebHook(self,ChannelsDingWebHook):
-		self.add_query_param('Channels.DingWebHook',ChannelsDingWebHook)
 
 	def get_Describe(self):
 		return self.get_query_params().get('Describe')

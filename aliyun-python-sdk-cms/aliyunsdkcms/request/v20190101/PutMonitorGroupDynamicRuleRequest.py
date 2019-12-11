@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,6 +18,7 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+
 class PutMonitorGroupDynamicRuleRequest(RpcRequest):
 
 	def __init__(self):
@@ -32,7 +33,12 @@ class PutMonitorGroupDynamicRuleRequest(RpcRequest):
 				self.add_query_param('GroupRules.' + str(i + 1) + '.FilterRelation' , GroupRuless[i].get('FilterRelation'))
 			for j in range(len(GroupRuless[i].get('Filterss'))):
 				if GroupRuless[i].get('Filterss')[j] is not None:
-					self.add_query_param('GroupRules.' + str(i + 1) + '.Filters.'+str(j + 1), GroupRuless[i].get('Filterss')[j])
+					if GroupRuless[i].get('Filterss')[j].get('Function') is not None:
+						self.add_query_param('GroupRules.' + str(i + 1) + '.Filters.'+str(j + 1)+ '.Function', GroupRuless[i].get('Filterss')[j].get('Function'))
+					if GroupRuless[i].get('Filterss')[j].get('Name') is not None:
+						self.add_query_param('GroupRules.' + str(i + 1) + '.Filters.'+str(j + 1)+ '.Name', GroupRuless[i].get('Filterss')[j].get('Name'))
+					if GroupRuless[i].get('Filterss')[j].get('Value') is not None:
+						self.add_query_param('GroupRules.' + str(i + 1) + '.Filters.'+str(j + 1)+ '.Value', GroupRuless[i].get('Filterss')[j].get('Value'))
 			if GroupRuless[i].get('Category') is not None:
 				self.add_query_param('GroupRules.' + str(i + 1) + '.Category' , GroupRuless[i].get('Category'))
 

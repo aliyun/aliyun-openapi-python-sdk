@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,10 +18,29 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+
 class PutEventRuleRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Cms', '2019-01-01', 'PutEventRule','cms')
+
+	def get_GroupId(self):
+		return self.get_query_params().get('GroupId')
+
+	def set_GroupId(self,GroupId):
+		self.add_query_param('GroupId',GroupId)
+
+	def get_Description(self):
+		return self.get_query_params().get('Description')
+
+	def set_Description(self,Description):
+		self.add_query_param('Description',Description)
+
+	def get_RuleName(self):
+		return self.get_query_params().get('RuleName')
+
+	def set_RuleName(self,RuleName):
+		self.add_query_param('RuleName',RuleName)
 
 	def get_EventPatterns(self):
 		return self.get_query_params().get('EventPatterns')
@@ -43,24 +62,6 @@ class PutEventRuleRequest(RpcRequest):
 				if EventPatterns[i].get('EventTypeLists')[j] is not None:
 					self.add_query_param('EventPattern.' + str(i + 1) + '.EventTypeList.'+str(j + 1), EventPatterns[i].get('EventTypeLists')[j])
 
-
-	def get_GroupId(self):
-		return self.get_query_params().get('GroupId')
-
-	def set_GroupId(self,GroupId):
-		self.add_query_param('GroupId',GroupId)
-
-	def get_Description(self):
-		return self.get_query_params().get('Description')
-
-	def set_Description(self,Description):
-		self.add_query_param('Description',Description)
-
-	def get_RuleName(self):
-		return self.get_query_params().get('RuleName')
-
-	def set_RuleName(self,RuleName):
-		self.add_query_param('RuleName',RuleName)
 
 	def get_EventType(self):
 		return self.get_query_params().get('EventType')

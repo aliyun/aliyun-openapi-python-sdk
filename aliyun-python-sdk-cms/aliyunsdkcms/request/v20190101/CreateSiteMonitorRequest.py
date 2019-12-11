@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,16 +18,11 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+
 class CreateSiteMonitorRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Cms', '2019-01-01', 'CreateSiteMonitor','cms')
-
-	def get_OptionsJson(self):
-		return self.get_query_params().get('OptionsJson')
-
-	def set_OptionsJson(self,OptionsJson):
-		self.add_query_param('OptionsJson',OptionsJson)
 
 	def get_Address(self):
 		return self.get_query_params().get('Address')
@@ -41,26 +36,32 @@ class CreateSiteMonitorRequest(RpcRequest):
 	def set_TaskType(self,TaskType):
 		self.add_query_param('TaskType',TaskType)
 
-	def get_AlertIds(self):
-		return self.get_query_params().get('AlertIds')
-
-	def set_AlertIds(self,AlertIds):
-		self.add_query_param('AlertIds',AlertIds)
-
 	def get_TaskName(self):
 		return self.get_query_params().get('TaskName')
 
 	def set_TaskName(self,TaskName):
 		self.add_query_param('TaskName',TaskName)
 
-	def get_Interval(self):
-		return self.get_query_params().get('Interval')
-
-	def set_Interval(self,Interval):
-		self.add_query_param('Interval',Interval)
-
 	def get_IspCities(self):
 		return self.get_query_params().get('IspCities')
 
 	def set_IspCities(self,IspCities):
 		self.add_query_param('IspCities',IspCities)
+
+	def get_OptionsJson(self):
+		return self.get_query_params().get('OptionsJson')
+
+	def set_OptionsJson(self,OptionsJson):
+		self.add_query_param('OptionsJson',OptionsJson)
+
+	def get_AlertIds(self):
+		return self.get_query_params().get('AlertIds')
+
+	def set_AlertIds(self,AlertIds):
+		self.add_query_param('AlertIds',AlertIds)
+
+	def get_Interval(self):
+		return self.get_query_params().get('Interval')
+
+	def set_Interval(self,Interval):
+		self.add_query_param('Interval',Interval)

@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,6 +18,7 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+
 class PutEventRuleTargetsRequest(RpcRequest):
 
 	def __init__(self):
@@ -66,21 +67,6 @@ class PutEventRuleTargetsRequest(RpcRequest):
 				self.add_query_param('SlsParameters.' + str(i + 1) + '.LogStore' , SlsParameterss[i].get('LogStore'))
 
 
-	def get_FcParameterss(self):
-		return self.get_query_params().get('FcParameterss')
-
-	def set_FcParameterss(self,FcParameterss):
-		for i in range(len(FcParameterss)):	
-			if FcParameterss[i].get('FunctionName') is not None:
-				self.add_query_param('FcParameters.' + str(i + 1) + '.FunctionName' , FcParameterss[i].get('FunctionName'))
-			if FcParameterss[i].get('ServiceName') is not None:
-				self.add_query_param('FcParameters.' + str(i + 1) + '.ServiceName' , FcParameterss[i].get('ServiceName'))
-			if FcParameterss[i].get('Id') is not None:
-				self.add_query_param('FcParameters.' + str(i + 1) + '.Id' , FcParameterss[i].get('Id'))
-			if FcParameterss[i].get('Region') is not None:
-				self.add_query_param('FcParameters.' + str(i + 1) + '.Region' , FcParameterss[i].get('Region'))
-
-
 	def get_RuleName(self):
 		return self.get_query_params().get('RuleName')
 
@@ -98,3 +84,18 @@ class PutEventRuleTargetsRequest(RpcRequest):
 				self.add_query_param('MnsParameters.' + str(i + 1) + '.Region' , MnsParameterss[i].get('Region'))
 			if MnsParameterss[i].get('Queue') is not None:
 				self.add_query_param('MnsParameters.' + str(i + 1) + '.Queue' , MnsParameterss[i].get('Queue'))
+
+
+	def get_FcParameterss(self):
+		return self.get_query_params().get('FcParameterss')
+
+	def set_FcParameterss(self,FcParameterss):
+		for i in range(len(FcParameterss)):	
+			if FcParameterss[i].get('FunctionName') is not None:
+				self.add_query_param('FcParameters.' + str(i + 1) + '.FunctionName' , FcParameterss[i].get('FunctionName'))
+			if FcParameterss[i].get('ServiceName') is not None:
+				self.add_query_param('FcParameters.' + str(i + 1) + '.ServiceName' , FcParameterss[i].get('ServiceName'))
+			if FcParameterss[i].get('Id') is not None:
+				self.add_query_param('FcParameters.' + str(i + 1) + '.Id' , FcParameterss[i].get('Id'))
+			if FcParameterss[i].get('Region') is not None:
+				self.add_query_param('FcParameters.' + str(i + 1) + '.Region' , FcParameterss[i].get('Region'))

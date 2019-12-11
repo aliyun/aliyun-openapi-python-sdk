@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,40 +18,11 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+
 class DescribeMetricTopRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Cms', '2019-01-01', 'DescribeMetricTop','cms')
-
-	def get_Period(self):
-		return self.get_query_params().get('Period')
-
-	def set_Period(self,Period):
-		self.add_query_param('Period',Period)
-
-	def get_Namespace(self):
-		return self.get_query_params().get('Namespace')
-
-	def set_Namespace(self,Namespace):
-		self.add_query_param('Namespace',Namespace)
-
-	def get_Length(self):
-		return self.get_query_params().get('Length')
-
-	def set_Length(self,Length):
-		self.add_query_param('Length',Length)
-
-	def get_EndTime(self):
-		return self.get_query_params().get('EndTime')
-
-	def set_EndTime(self,EndTime):
-		self.add_query_param('EndTime',EndTime)
-
-	def get_Orderby(self):
-		return self.get_query_params().get('Orderby')
-
-	def set_Orderby(self,Orderby):
-		self.add_query_param('Orderby',Orderby)
 
 	def get_Express(self):
 		return self.get_query_params().get('Express')
@@ -71,14 +42,44 @@ class DescribeMetricTopRequest(RpcRequest):
 	def set_MetricName(self,MetricName):
 		self.add_query_param('MetricName',MetricName)
 
-	def get_Dimensions(self):
-		return self.get_query_params().get('Dimensions')
+	def get_Period(self):
+		return self.get_query_params().get('Period')
 
-	def set_Dimensions(self,Dimensions):
-		self.add_query_param('Dimensions',Dimensions)
+	def set_Period(self,Period):
+		self.add_query_param('Period',Period)
+
+	def get_Length(self):
+		return self.get_query_params().get('Length')
+
+	def set_Length(self,Length):
+		self.add_query_param('Length',Length)
+
+	def get_EndTime(self):
+		return self.get_query_params().get('EndTime')
+
+	def set_EndTime(self,EndTime):
+		self.add_query_param('EndTime',EndTime)
+
+	def get_Orderby(self):
+		return self.get_query_params().get('Orderby')
+
+	def set_Orderby(self,Orderby):
+		self.add_query_param('Orderby',Orderby)
 
 	def get_OrderDesc(self):
 		return self.get_query_params().get('OrderDesc')
 
 	def set_OrderDesc(self,OrderDesc):
 		self.add_query_param('OrderDesc',OrderDesc)
+
+	def get_Namespace(self):
+		return self.get_query_params().get('Namespace')
+
+	def set_Namespace(self,Namespace):
+		self.add_query_param('Namespace',Namespace)
+
+	def get_Dimensions(self):
+		return self.get_query_params().get('Dimensions')
+
+	def set_Dimensions(self,Dimensions):
+		self.add_query_param('Dimensions',Dimensions)
