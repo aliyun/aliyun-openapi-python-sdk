@@ -1,3 +1,6 @@
+2019-12-13 Version 2.13.13
+1, Improve helper.get_uuid method
+
 2019-08-28 Version 2.13.9
 1, add local endpoint method by hx
 
