@@ -19,6 +19,7 @@
 
 import hashlib
 import base64
+import socket
 import uuid
 import time
 import sys
@@ -32,7 +33,9 @@ FORMAT_RFC_2616 = "%a, %d %b %Y %X GMT"
 
 
 def get_uuid():
-    return str(uuid.uuid4())
+    name = socket.gethostname() + str(uuid.uuid1())
+    namespace = uuid.NAMESPACE_URL
+    return str(uuid.uuid5(namespace, name))
 
 
 def get_iso_8061_date():
