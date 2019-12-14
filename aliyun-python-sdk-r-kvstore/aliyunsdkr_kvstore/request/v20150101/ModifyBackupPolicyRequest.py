@@ -18,11 +18,17 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkr_kvstore.endpoint import endpoint_data
 
 class ModifyBackupPolicyRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'R-kvstore', '2015-01-01', 'ModifyBackupPolicy')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -35,6 +41,12 @@ class ModifyBackupPolicyRequest(RpcRequest):
 
 	def set_SecurityToken(self,SecurityToken):
 		self.add_query_param('SecurityToken',SecurityToken)
+
+	def get_EnableBackupLog(self):
+		return self.get_query_params().get('EnableBackupLog')
+
+	def set_EnableBackupLog(self,EnableBackupLog):
+		self.add_query_param('EnableBackupLog',EnableBackupLog)
 
 	def get_PreferredBackupPeriod(self):
 		return self.get_query_params().get('PreferredBackupPeriod')

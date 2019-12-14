@@ -18,23 +18,23 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkr_kvstore.endpoint import endpoint_data
 
 class CreateInstanceRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'R-kvstore', '2015-01-01', 'CreateInstance')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_NodeType(self):
-		return self.get_query_params().get('NodeType')
-
-	def set_NodeType(self,NodeType):
-		self.add_query_param('NodeType',NodeType)
 
 	def get_CouponNo(self):
 		return self.get_query_params().get('CouponNo')
@@ -54,23 +54,11 @@ class CreateInstanceRequest(RpcRequest):
 	def set_EngineVersion(self,EngineVersion):
 		self.add_query_param('EngineVersion',EngineVersion)
 
-	def get_AutoUseCoupon(self):
-		return self.get_query_params().get('AutoUseCoupon')
+	def get_ResourceGroupId(self):
+		return self.get_query_params().get('ResourceGroupId')
 
-	def set_AutoUseCoupon(self,AutoUseCoupon):
-		self.add_query_param('AutoUseCoupon',AutoUseCoupon)
-
-	def get_InstanceClass(self):
-		return self.get_query_params().get('InstanceClass')
-
-	def set_InstanceClass(self,InstanceClass):
-		self.add_query_param('InstanceClass',InstanceClass)
-
-	def get_Capacity(self):
-		return self.get_query_params().get('Capacity')
-
-	def set_Capacity(self,Capacity):
-		self.add_query_param('Capacity',Capacity)
+	def set_ResourceGroupId(self,ResourceGroupId):
+		self.add_query_param('ResourceGroupId',ResourceGroupId)
 
 	def get_Password(self):
 		return self.get_query_params().get('Password')
@@ -83,12 +71,6 @@ class CreateInstanceRequest(RpcRequest):
 
 	def set_SecurityToken(self,SecurityToken):
 		self.add_query_param('SecurityToken',SecurityToken)
-
-	def get_InstanceType(self):
-		return self.get_query_params().get('InstanceType')
-
-	def set_InstanceType(self,InstanceType):
-		self.add_query_param('InstanceType',InstanceType)
 
 	def get_BusinessInfo(self):
 		return self.get_query_params().get('BusinessInfo')
@@ -108,24 +90,6 @@ class CreateInstanceRequest(RpcRequest):
 	def set_Period(self,Period):
 		self.add_query_param('Period',Period)
 
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
-
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_SrcDBInstanceId(self):
-		return self.get_query_params().get('SrcDBInstanceId')
-
-	def set_SrcDBInstanceId(self,SrcDBInstanceId):
-		self.add_query_param('SrcDBInstanceId',SrcDBInstanceId)
-
-	def get_OwnerAccount(self):
-		return self.get_query_params().get('OwnerAccount')
-
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
-
 	def get_BackupId(self):
 		return self.get_query_params().get('BackupId')
 
@@ -137,12 +101,6 @@ class CreateInstanceRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
-
-	def get_Token(self):
-		return self.get_query_params().get('Token')
-
-	def set_Token(self,Token):
-		self.add_query_param('Token',Token)
 
 	def get_VSwitchId(self):
 		return self.get_query_params().get('VSwitchId')
@@ -168,17 +126,77 @@ class CreateInstanceRequest(RpcRequest):
 	def set_AutoRenew(self,AutoRenew):
 		self.add_query_param('AutoRenew',AutoRenew)
 
-	def get_VpcId(self):
-		return self.get_query_params().get('VpcId')
-
-	def set_VpcId(self,VpcId):
-		self.add_query_param('VpcId',VpcId)
-
 	def get_ZoneId(self):
 		return self.get_query_params().get('ZoneId')
 
 	def set_ZoneId(self,ZoneId):
 		self.add_query_param('ZoneId',ZoneId)
+
+	def get_NodeType(self):
+		return self.get_query_params().get('NodeType')
+
+	def set_NodeType(self,NodeType):
+		self.add_query_param('NodeType',NodeType)
+
+	def get_AutoUseCoupon(self):
+		return self.get_query_params().get('AutoUseCoupon')
+
+	def set_AutoUseCoupon(self,AutoUseCoupon):
+		self.add_query_param('AutoUseCoupon',AutoUseCoupon)
+
+	def get_InstanceClass(self):
+		return self.get_query_params().get('InstanceClass')
+
+	def set_InstanceClass(self,InstanceClass):
+		self.add_query_param('InstanceClass',InstanceClass)
+
+	def get_Capacity(self):
+		return self.get_query_params().get('Capacity')
+
+	def set_Capacity(self,Capacity):
+		self.add_query_param('Capacity',Capacity)
+
+	def get_InstanceType(self):
+		return self.get_query_params().get('InstanceType')
+
+	def set_InstanceType(self,InstanceType):
+		self.add_query_param('InstanceType',InstanceType)
+
+	def get_RestoreTime(self):
+		return self.get_query_params().get('RestoreTime')
+
+	def set_RestoreTime(self,RestoreTime):
+		self.add_query_param('RestoreTime',RestoreTime)
+
+	def get_ResourceOwnerAccount(self):
+		return self.get_query_params().get('ResourceOwnerAccount')
+
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+
+	def get_SrcDBInstanceId(self):
+		return self.get_query_params().get('SrcDBInstanceId')
+
+	def set_SrcDBInstanceId(self,SrcDBInstanceId):
+		self.add_query_param('SrcDBInstanceId',SrcDBInstanceId)
+
+	def get_OwnerAccount(self):
+		return self.get_query_params().get('OwnerAccount')
+
+	def set_OwnerAccount(self,OwnerAccount):
+		self.add_query_param('OwnerAccount',OwnerAccount)
+
+	def get_Token(self):
+		return self.get_query_params().get('Token')
+
+	def set_Token(self,Token):
+		self.add_query_param('Token',Token)
+
+	def get_VpcId(self):
+		return self.get_query_params().get('VpcId')
+
+	def set_VpcId(self,VpcId):
+		self.add_query_param('VpcId',VpcId)
 
 	def get_ChargeType(self):
 		return self.get_query_params().get('ChargeType')

@@ -18,11 +18,17 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkr_kvstore.endpoint import endpoint_data
 
 class DescribeAvailableResourceRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'R-kvstore', '2015-01-01', 'DescribeAvailableResource')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -36,6 +42,12 @@ class DescribeAvailableResourceRequest(RpcRequest):
 	def set_SecurityToken(self,SecurityToken):
 		self.add_query_param('SecurityToken',SecurityToken)
 
+	def get_Engine(self):
+		return self.get_query_params().get('Engine')
+
+	def set_Engine(self,Engine):
+		self.add_query_param('Engine',Engine)
+
 	def get_InstanceChargeType(self):
 		return self.get_query_params().get('InstanceChargeType')
 
@@ -47,6 +59,12 @@ class DescribeAvailableResourceRequest(RpcRequest):
 
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+
+	def get_Level(self):
+		return self.get_query_params().get('Level')
+
+	def set_Level(self,Level):
+		self.add_query_param('Level',Level)
 
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')

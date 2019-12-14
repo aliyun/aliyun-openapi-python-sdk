@@ -18,11 +18,17 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkr_kvstore.endpoint import endpoint_data
 
 class DescribeSlowLogRecordsRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'R-kvstore', '2015-01-01', 'DescribeSlowLogRecords')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -90,6 +96,12 @@ class DescribeSlowLogRecordsRequest(RpcRequest):
 	def set_EndTime(self,EndTime):
 		self.add_query_param('EndTime',EndTime)
 
+	def get_OrderBy(self):
+		return self.get_query_params().get('OrderBy')
+
+	def set_OrderBy(self,OrderBy):
+		self.add_query_param('OrderBy',OrderBy)
+
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
@@ -113,3 +125,9 @@ class DescribeSlowLogRecordsRequest(RpcRequest):
 
 	def set_DBName(self,DBName):
 		self.add_query_param('DBName',DBName)
+
+	def get_OrderType(self):
+		return self.get_query_params().get('OrderType')
+
+	def set_OrderType(self,OrderType):
+		self.add_query_param('OrderType',OrderType)

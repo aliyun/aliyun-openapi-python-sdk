@@ -18,11 +18,17 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkr_kvstore.endpoint import endpoint_data
 
-class DescribeCertificationRequest(RpcRequest):
+class FlushExpireKeysRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'R-kvstore', '2015-01-01', 'DescribeCertification')
+		RpcRequest.__init__(self, 'R-kvstore', '2015-01-01', 'FlushExpireKeys')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -35,6 +41,12 @@ class DescribeCertificationRequest(RpcRequest):
 
 	def set_SecurityToken(self,SecurityToken):
 		self.add_query_param('SecurityToken',SecurityToken)
+
+	def get_EffectiveTime(self):
+		return self.get_query_params().get('EffectiveTime')
+
+	def set_EffectiveTime(self,EffectiveTime):
+		self.add_query_param('EffectiveTime',EffectiveTime)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -59,9 +71,3 @@ class DescribeCertificationRequest(RpcRequest):
 
 	def set_InstanceId(self,InstanceId):
 		self.add_query_param('InstanceId',InstanceId)
-
-	def get_Parameters(self):
-		return self.get_query_params().get('Parameters')
-
-	def set_Parameters(self,Parameters):
-		self.add_query_param('Parameters',Parameters)
