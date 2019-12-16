@@ -30,23 +30,23 @@ class DescribeTransferDomainsRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_FromUserId(self):
+		return self.get_query_params().get('FromUserId')
+
+	def set_FromUserId(self,FromUserId):
+		self.add_query_param('FromUserId',FromUserId)
+
 	def get_PageNumber(self):
 		return self.get_query_params().get('PageNumber')
 
 	def set_PageNumber(self,PageNumber):
 		self.add_query_param('PageNumber',PageNumber)
 
-	def get_TransferType(self):
-		return self.get_query_params().get('TransferType')
+	def get_TargetUserId(self):
+		return self.get_query_params().get('TargetUserId')
 
-	def set_TransferType(self,TransferType):
-		self.add_query_param('TransferType',TransferType)
-
-	def get_UserClientIp(self):
-		return self.get_query_params().get('UserClientIp')
-
-	def set_UserClientIp(self,UserClientIp):
-		self.add_query_param('UserClientIp',UserClientIp)
+	def set_TargetUserId(self,TargetUserId):
+		self.add_query_param('TargetUserId',TargetUserId)
 
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
@@ -59,3 +59,21 @@ class DescribeTransferDomainsRequest(RpcRequest):
 
 	def set_Lang(self,Lang):
 		self.add_query_param('Lang',Lang)
+
+	def get_DomainName(self):
+		return self.get_query_params().get('DomainName')
+
+	def set_DomainName(self,DomainName):
+		self.add_query_param('DomainName',DomainName)
+
+	def get_TransferType(self):
+		return self.get_query_params().get('TransferType')
+
+	def set_TransferType(self,TransferType):
+		self.add_query_param('TransferType',TransferType)
+
+	def get_UserClientIp(self):
+		return self.get_query_params().get('UserClientIp')
+
+	def set_UserClientIp(self,UserClientIp):
+		self.add_query_param('UserClientIp',UserClientIp)
