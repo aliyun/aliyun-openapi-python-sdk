@@ -31,26 +31,26 @@ class ScanImageRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_Sceness(self):
-		return self.get_body_params().get('Sceness')
+	def get_Scenes(self):
+		return self.get_body_params().get('Scenes')
 
-	def set_Sceness(self,Sceness):
-		for i in range(len(Sceness)):	
-			if Sceness[i] is not None:
-				self.add_body_params('Scenes.' + str(i + 1) , Sceness[i]);
+	def set_Scenes(self,Scenes):
+		for i in range(len(Scenes)):	
+			if Scenes[i] is not None:
+				self.add_body_params('Scene.' + str(i + 1) , Scenes[i]);
 
-	def get_Taskss(self):
-		return self.get_body_params().get('Taskss')
+	def get_Tasks(self):
+		return self.get_body_params().get('Tasks')
 
-	def set_Taskss(self,Taskss):
-		for i in range(len(Taskss)):	
-			if Taskss[i].get('DataId') is not None:
-				self.add_body_params('Tasks.' + str(i + 1) + '.DataId' , Taskss[i].get('DataId'))
-			if Taskss[i].get('ImageURL') is not None:
-				self.add_body_params('Tasks.' + str(i + 1) + '.ImageURL' , Taskss[i].get('ImageURL'))
-			if Taskss[i].get('MaxFrames') is not None:
-				self.add_body_params('Tasks.' + str(i + 1) + '.MaxFrames' , Taskss[i].get('MaxFrames'))
-			if Taskss[i].get('Interval') is not None:
-				self.add_body_params('Tasks.' + str(i + 1) + '.Interval' , Taskss[i].get('Interval'))
-			if Taskss[i].get('ImageTimeMillisecond') is not None:
-				self.add_body_params('Tasks.' + str(i + 1) + '.ImageTimeMillisecond' , Taskss[i].get('ImageTimeMillisecond'))
+	def set_Tasks(self,Tasks):
+		for i in range(len(Tasks)):	
+			if Tasks[i].get('DataId') is not None:
+				self.add_body_params('Task.' + str(i + 1) + '.DataId' , Tasks[i].get('DataId'))
+			if Tasks[i].get('ImageURL') is not None:
+				self.add_body_params('Task.' + str(i + 1) + '.ImageURL' , Tasks[i].get('ImageURL'))
+			if Tasks[i].get('MaxFrames') is not None:
+				self.add_body_params('Task.' + str(i + 1) + '.MaxFrames' , Tasks[i].get('MaxFrames'))
+			if Tasks[i].get('Interval') is not None:
+				self.add_body_params('Task.' + str(i + 1) + '.Interval' , Tasks[i].get('Interval'))
+			if Tasks[i].get('ImageTimeMillisecond') is not None:
+				self.add_body_params('Task.' + str(i + 1) + '.ImageTimeMillisecond' , Tasks[i].get('ImageTimeMillisecond'))
