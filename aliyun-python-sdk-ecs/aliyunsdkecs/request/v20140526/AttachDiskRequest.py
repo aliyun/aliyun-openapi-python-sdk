@@ -36,6 +36,24 @@ class AttachDiskRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_KeyPairName(self):
+		return self.get_query_params().get('KeyPairName')
+
+	def set_KeyPairName(self,KeyPairName):
+		self.add_query_param('KeyPairName',KeyPairName)
+
+	def get_Bootable(self):
+		return self.get_query_params().get('Bootable')
+
+	def set_Bootable(self,Bootable):
+		self.add_query_param('Bootable',Bootable)
+
+	def get_Password(self):
+		return self.get_query_params().get('Password')
+
+	def set_Password(self,Password):
+		self.add_query_param('Password',Password)
+
 	def get_DiskId(self):
 		return self.get_query_params().get('DiskId')
 

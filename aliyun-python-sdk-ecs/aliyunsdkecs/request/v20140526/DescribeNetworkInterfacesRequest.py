@@ -66,6 +66,12 @@ class DescribeNetworkInterfacesRequest(RpcRequest):
 	def set_ResourceGroupId(self,ResourceGroupId):
 		self.add_query_param('ResourceGroupId',ResourceGroupId)
 
+	def get_NextToken(self):
+		return self.get_query_params().get('NextToken')
+
+	def set_NextToken(self,NextToken):
+		self.add_query_param('NextToken',NextToken)
+
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
 
@@ -138,6 +144,12 @@ class DescribeNetworkInterfacesRequest(RpcRequest):
 
 	def set_PrimaryIpAddress(self,PrimaryIpAddress):
 		self.add_query_param('PrimaryIpAddress',PrimaryIpAddress)
+
+	def get_MaxResults(self):
+		return self.get_query_params().get('MaxResults')
+
+	def set_MaxResults(self,MaxResults):
+		self.add_query_param('MaxResults',MaxResults)
 
 	def get_NetworkInterfaceIds(self):
 		return self.get_query_params().get('NetworkInterfaceIds')

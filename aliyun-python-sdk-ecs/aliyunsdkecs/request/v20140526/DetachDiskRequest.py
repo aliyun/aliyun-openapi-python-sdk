@@ -42,6 +42,12 @@ class DetachDiskRequest(RpcRequest):
 	def set_DiskId(self,DiskId):
 		self.add_query_param('DiskId',DiskId)
 
+	def get_DeleteWithInstance(self):
+		return self.get_query_params().get('DeleteWithInstance')
+
+	def set_DeleteWithInstance(self,DeleteWithInstance):
+		self.add_query_param('DeleteWithInstance',DeleteWithInstance)
+
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
