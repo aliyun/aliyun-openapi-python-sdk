@@ -66,11 +66,23 @@ class ModifyDBClusterAccessWhitelistRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
+	def get_WhiteListType(self):
+		return self.get_query_params().get('WhiteListType')
+
+	def set_WhiteListType(self,WhiteListType):
+		self.add_query_param('WhiteListType',WhiteListType)
+
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_SecurityGroupIds(self):
+		return self.get_query_params().get('SecurityGroupIds')
+
+	def set_SecurityGroupIds(self,SecurityGroupIds):
+		self.add_query_param('SecurityGroupIds',SecurityGroupIds)
 
 	def get_DBClusterIPArrayName(self):
 		return self.get_query_params().get('DBClusterIPArrayName')

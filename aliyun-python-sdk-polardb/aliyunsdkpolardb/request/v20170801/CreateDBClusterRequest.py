@@ -54,6 +54,12 @@ class CreateDBClusterRequest(RpcRequest):
 	def set_ClusterNetworkType(self,ClusterNetworkType):
 		self.add_query_param('ClusterNetworkType',ClusterNetworkType)
 
+	def get_ResourceGroupId(self):
+		return self.get_query_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self,ResourceGroupId):
+		self.add_query_param('ResourceGroupId',ResourceGroupId)
+
 	def get_DBNodeClass(self):
 		return self.get_query_params().get('DBNodeClass')
 
