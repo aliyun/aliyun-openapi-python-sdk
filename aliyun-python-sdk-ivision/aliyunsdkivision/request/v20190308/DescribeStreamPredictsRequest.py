@@ -54,6 +54,12 @@ class DescribeStreamPredictsRequest(RpcRequest):
 	def set_ShowLog(self,ShowLog):
 		self.add_query_param('ShowLog',ShowLog)
 
+	def get_ModelId(self):
+		return self.get_query_params().get('ModelId')
+
+	def set_ModelId(self,ModelId):
+		self.add_query_param('ModelId',ModelId)
+
 	def get_CurrentPage(self):
 		return self.get_query_params().get('CurrentPage')
 
