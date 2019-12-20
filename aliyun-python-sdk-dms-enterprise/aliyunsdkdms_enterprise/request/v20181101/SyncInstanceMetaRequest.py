@@ -20,39 +20,27 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdms_enterprise.endpoint import endpoint_data
 
-class RegisterUserRequest(RpcRequest):
+class SyncInstanceMetaRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'dms-enterprise', '2018-11-01', 'RegisterUser','dmsenterprise')
+		RpcRequest.__init__(self, 'dms-enterprise', '2018-11-01', 'SyncInstanceMeta','dmsenterprise')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_RoleNames(self):
-		return self.get_query_params().get('RoleNames')
+	def get_InstanceId(self):
+		return self.get_query_params().get('InstanceId')
 
-	def set_RoleNames(self,RoleNames):
-		self.add_query_param('RoleNames',RoleNames)
+	def set_InstanceId(self,InstanceId):
+		self.add_query_param('InstanceId',InstanceId)
 
-	def get_Uid(self):
-		return self.get_query_params().get('Uid')
+	def get_IgnoreTable(self):
+		return self.get_query_params().get('IgnoreTable')
 
-	def set_Uid(self,Uid):
-		self.add_query_param('Uid',Uid)
-
-	def get_UserNick(self):
-		return self.get_query_params().get('UserNick')
-
-	def set_UserNick(self,UserNick):
-		self.add_query_param('UserNick',UserNick)
-
-	def get_Mobile(self):
-		return self.get_query_params().get('Mobile')
-
-	def set_Mobile(self,Mobile):
-		self.add_query_param('Mobile',Mobile)
+	def set_IgnoreTable(self,IgnoreTable):
+		self.add_query_param('IgnoreTable',IgnoreTable)
 
 	def get_Tid(self):
 		return self.get_query_params().get('Tid')
