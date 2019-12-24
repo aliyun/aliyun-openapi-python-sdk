@@ -18,6 +18,7 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkunimkt.endpoint import endpoint_data
 
 class PushDeviceStatusRequest(RpcRequest):
 
@@ -25,6 +26,11 @@ class PushDeviceStatusRequest(RpcRequest):
 		RpcRequest.__init__(self, 'UniMkt', '2018-12-12', 'PushDeviceStatus')
 		self.set_protocol_type('https')
 		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_DeviceSn(self):
 		return self.get_body_params().get('DeviceSn')

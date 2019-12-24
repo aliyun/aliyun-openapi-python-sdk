@@ -23,7 +23,7 @@ from aliyunsdkunimkt.endpoint import endpoint_data
 class ScanCodeNotificationRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'UniMkt', '2018-12-07', 'ScanCodeNotification')
+		RpcRequest.__init__(self, 'UniMkt', '2018-12-12', 'ScanCodeNotification')
 		self.set_protocol_type('https')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
@@ -121,6 +121,12 @@ class ScanCodeNotificationRequest(RpcRequest):
 
 	def set_Sex(self,Sex):
 		self.add_query_param('Sex',Sex)
+
+	def get_CostDetail(self):
+		return self.get_query_params().get('CostDetail')
+
+	def set_CostDetail(self,CostDetail):
+		self.add_query_param('CostDetail',CostDetail)
 
 	def get_ProxyUserId(self):
 		return self.get_query_params().get('ProxyUserId')
