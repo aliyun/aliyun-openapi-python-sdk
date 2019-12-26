@@ -72,6 +72,12 @@ class CreateRestoreTaskRequest(RpcRequest):
 	def set_RestoreTaskName(self,RestoreTaskName):
 		self.add_query_param('RestoreTaskName',RestoreTaskName)
 
+	def get_RestoreHome(self):
+		return self.get_query_params().get('RestoreHome')
+
+	def set_RestoreHome(self,RestoreHome):
+		self.add_query_param('RestoreHome',RestoreHome)
+
 	def get_DestinationEndpointOracleSID(self):
 		return self.get_query_params().get('DestinationEndpointOracleSID')
 
