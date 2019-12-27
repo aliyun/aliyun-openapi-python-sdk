@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,6 +18,7 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+
 class LookupEventsRequest(RpcRequest):
 
 	def __init__(self):
@@ -28,6 +29,36 @@ class LookupEventsRequest(RpcRequest):
 
 	def set_Request(self,Request):
 		self.add_query_param('Request',Request)
+
+	def get_StartTime(self):
+		return self.get_query_params().get('StartTime')
+
+	def set_StartTime(self,StartTime):
+		self.add_query_param('StartTime',StartTime)
+
+	def get_EventName(self):
+		return self.get_query_params().get('EventName')
+
+	def set_EventName(self,EventName):
+		self.add_query_param('EventName',EventName)
+
+	def get_NextToken(self):
+		return self.get_query_params().get('NextToken')
+
+	def set_NextToken(self,NextToken):
+		self.add_query_param('NextToken',NextToken)
+
+	def get_ServiceName(self):
+		return self.get_query_params().get('ServiceName')
+
+	def set_ServiceName(self,ServiceName):
+		self.add_query_param('ServiceName',ServiceName)
+
+	def get_Event(self):
+		return self.get_query_params().get('Event')
+
+	def set_Event(self,Event):
+		self.add_query_param('Event',Event)
 
 	def get_EventAccessKeyId(self):
 		return self.get_query_params().get('EventAccessKeyId')
@@ -47,29 +78,11 @@ class LookupEventsRequest(RpcRequest):
 	def set_EventRW(self,EventRW):
 		self.add_query_param('EventRW',EventRW)
 
-	def get_StartTime(self):
-		return self.get_query_params().get('StartTime')
-
-	def set_StartTime(self,StartTime):
-		self.add_query_param('StartTime',StartTime)
-
 	def get_ResourceType(self):
 		return self.get_query_params().get('ResourceType')
 
 	def set_ResourceType(self,ResourceType):
 		self.add_query_param('ResourceType',ResourceType)
-
-	def get_EventName(self):
-		return self.get_query_params().get('EventName')
-
-	def set_EventName(self,EventName):
-		self.add_query_param('EventName',EventName)
-
-	def get_NextToken(self):
-		return self.get_query_params().get('NextToken')
-
-	def set_NextToken(self,NextToken):
-		self.add_query_param('NextToken',NextToken)
 
 	def get_MaxResults(self):
 		return self.get_query_params().get('MaxResults')
@@ -83,23 +96,11 @@ class LookupEventsRequest(RpcRequest):
 	def set_EventType(self,EventType):
 		self.add_query_param('EventType',EventType)
 
-	def get_ServiceName(self):
-		return self.get_query_params().get('ServiceName')
-
-	def set_ServiceName(self,ServiceName):
-		self.add_query_param('ServiceName',ServiceName)
-
 	def get_ResourceName(self):
 		return self.get_query_params().get('ResourceName')
 
 	def set_ResourceName(self,ResourceName):
 		self.add_query_param('ResourceName',ResourceName)
-
-	def get_Event(self):
-		return self.get_query_params().get('Event')
-
-	def set_Event(self,Event):
-		self.add_query_param('Event',Event)
 
 	def get_User(self):
 		return self.get_query_params().get('User')
