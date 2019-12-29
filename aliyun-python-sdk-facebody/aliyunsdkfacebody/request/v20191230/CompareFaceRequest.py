@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkfacebody.endpoint import endpoint_data
 
-class DetectFaceRequest(RpcRequest):
+class CompareFaceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'facebody', '2019-12-30', 'DetectFace','facebody')
+		RpcRequest.__init__(self, 'facebody', '2019-12-30', 'CompareFace','facebody')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,20 +31,32 @@ class DetectFaceRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_ImageContentB(self):
+		return self.get_body_params().get('ImageContentB')
+
+	def set_ImageContentB(self,ImageContentB):
+		self.add_body_params('ImageContentB', ImageContentB)
+
 	def get_ImageType(self):
 		return self.get_body_params().get('ImageType')
 
 	def set_ImageType(self,ImageType):
 		self.add_body_params('ImageType', ImageType)
 
-	def get_ImageURL(self):
-		return self.get_body_params().get('ImageURL')
+	def get_ImageContentA(self):
+		return self.get_body_params().get('ImageContentA')
 
-	def set_ImageURL(self,ImageURL):
-		self.add_body_params('ImageURL', ImageURL)
+	def set_ImageContentA(self,ImageContentA):
+		self.add_body_params('ImageContentA', ImageContentA)
 
-	def get_ImageContent(self):
-		return self.get_body_params().get('ImageContent')
+	def get_ImageURLB(self):
+		return self.get_body_params().get('ImageURLB')
 
-	def set_ImageContent(self,ImageContent):
-		self.add_body_params('ImageContent', ImageContent)
+	def set_ImageURLB(self,ImageURLB):
+		self.add_body_params('ImageURLB', ImageURLB)
+
+	def get_ImageURLA(self):
+		return self.get_body_params().get('ImageURLA')
+
+	def set_ImageURLA(self,ImageURLA):
+		self.add_body_params('ImageURLA', ImageURLA)
