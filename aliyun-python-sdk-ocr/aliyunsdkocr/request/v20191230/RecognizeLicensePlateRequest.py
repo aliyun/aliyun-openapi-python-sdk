@@ -42,9 +42,3 @@ class RecognizeLicensePlateRequest(RpcRequest):
 
 	def set_ImageURL(self,ImageURL):
 		self.add_body_params('ImageURL', ImageURL)
-
-	def get_ImageContent(self):
-		return self.get_body_params().get('ImageContent')
-
-	def set_ImageContent(self,ImageContent):
-		self.add_body_params('ImageContent', ImageContent)

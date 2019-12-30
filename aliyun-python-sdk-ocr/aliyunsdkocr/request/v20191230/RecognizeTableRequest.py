@@ -31,6 +31,12 @@ class RecognizeTableRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_ImageType(self):
+		return self.get_body_params().get('ImageType')
+
+	def set_ImageType(self,ImageType):
+		self.add_body_params('ImageType', ImageType)
+
 	def get_UseFinanceModel(self):
 		return self.get_body_params().get('UseFinanceModel')
 
@@ -43,17 +49,17 @@ class RecognizeTableRequest(RpcRequest):
 	def set_SkipDetection(self,SkipDetection):
 		self.add_body_params('SkipDetection', SkipDetection)
 
+	def get_ImageURL(self):
+		return self.get_body_params().get('ImageURL')
+
+	def set_ImageURL(self,ImageURL):
+		self.add_body_params('ImageURL', ImageURL)
+
 	def get_OutputFormat(self):
 		return self.get_body_params().get('OutputFormat')
 
 	def set_OutputFormat(self,OutputFormat):
 		self.add_body_params('OutputFormat', OutputFormat)
-
-	def get_ImageContent(self):
-		return self.get_body_params().get('ImageContent')
-
-	def set_ImageContent(self,ImageContent):
-		self.add_body_params('ImageContent', ImageContent)
 
 	def get_AssureDirection(self):
 		return self.get_body_params().get('AssureDirection')
@@ -66,15 +72,3 @@ class RecognizeTableRequest(RpcRequest):
 
 	def set_HasLine(self,HasLine):
 		self.add_body_params('HasLine', HasLine)
-
-	def get_ImageType(self):
-		return self.get_body_params().get('ImageType')
-
-	def set_ImageType(self,ImageType):
-		self.add_body_params('ImageType', ImageType)
-
-	def get_ImageURL(self):
-		return self.get_body_params().get('ImageURL')
-
-	def set_ImageURL(self,ImageURL):
-		self.add_body_params('ImageURL', ImageURL)

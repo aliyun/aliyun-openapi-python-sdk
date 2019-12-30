@@ -42,9 +42,3 @@ class RecognizeVINCodeRequest(RpcRequest):
 
 	def set_ImageURL(self,ImageURL):
 		self.add_query_param('ImageURL',ImageURL)
-
-	def get_ImageContent(self):
-		return self.get_query_params().get('ImageContent')
-
-	def set_ImageContent(self,ImageContent):
-		self.add_query_param('ImageContent',ImageContent)
