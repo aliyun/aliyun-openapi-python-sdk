@@ -31,23 +31,11 @@ class CompareFaceRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_ImageContentB(self):
-		return self.get_body_params().get('ImageContentB')
-
-	def set_ImageContentB(self,ImageContentB):
-		self.add_body_params('ImageContentB', ImageContentB)
-
 	def get_ImageType(self):
 		return self.get_body_params().get('ImageType')
 
 	def set_ImageType(self,ImageType):
 		self.add_body_params('ImageType', ImageType)
-
-	def get_ImageContentA(self):
-		return self.get_body_params().get('ImageContentA')
-
-	def set_ImageContentA(self,ImageContentA):
-		self.add_body_params('ImageContentA', ImageContentA)
 
 	def get_ImageURLB(self):
 		return self.get_body_params().get('ImageURLB')
