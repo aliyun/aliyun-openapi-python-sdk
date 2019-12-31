@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkadb.endpoint import endpoint_data
 
-class DescribeRegionsRequest(RpcRequest):
+class DescribeLoghubDetailRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'adb', '2019-03-15', 'DescribeRegions','ads')
+		RpcRequest.__init__(self, 'adb', '2019-03-15', 'DescribeLoghubDetail','ads')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -35,6 +35,12 @@ class DescribeRegionsRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+
+	def get_ProjectName(self):
+		return self.get_query_params().get('ProjectName')
+
+	def set_ProjectName(self,ProjectName):
+		self.add_query_param('ProjectName',ProjectName)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -54,8 +60,8 @@ class DescribeRegionsRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_AcceptLanguage(self):
-		return self.get_query_params().get('AcceptLanguage')
+	def get_ExportName(self):
+		return self.get_query_params().get('ExportName')
 
-	def set_AcceptLanguage(self,AcceptLanguage):
-		self.add_query_param('AcceptLanguage',AcceptLanguage)
+	def set_ExportName(self,ExportName):
+		self.add_query_param('ExportName',ExportName)

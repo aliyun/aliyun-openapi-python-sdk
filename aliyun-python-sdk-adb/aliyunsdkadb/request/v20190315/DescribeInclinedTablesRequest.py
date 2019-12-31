@@ -20,15 +20,21 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkadb.endpoint import endpoint_data
 
-class DescribeRegionsRequest(RpcRequest):
+class DescribeInclinedTablesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'adb', '2019-03-15', 'DescribeRegions','ads')
+		RpcRequest.__init__(self, 'adb', '2019-03-15', 'DescribeInclinedTables','ads')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+
+	def get_TableType(self):
+		return self.get_query_params().get('TableType')
+
+	def set_TableType(self,TableType):
+		self.add_query_param('TableType',TableType)
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -36,11 +42,35 @@ class DescribeRegionsRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_PageNumber(self):
+		return self.get_query_params().get('PageNumber')
+
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)
+
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
+
+	def get_Order(self):
+		return self.get_query_params().get('Order')
+
+	def set_Order(self,Order):
+		self.add_query_param('Order',Order)
+
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+
+	def get_DBClusterId(self):
+		return self.get_query_params().get('DBClusterId')
+
+	def set_DBClusterId(self,DBClusterId):
+		self.add_query_param('DBClusterId',DBClusterId)
 
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
@@ -53,9 +83,3 @@ class DescribeRegionsRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
-
-	def get_AcceptLanguage(self):
-		return self.get_query_params().get('AcceptLanguage')
-
-	def set_AcceptLanguage(self,AcceptLanguage):
-		self.add_query_param('AcceptLanguage',AcceptLanguage)

@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkadb.endpoint import endpoint_data
 
-class DescribeRegionsRequest(RpcRequest):
+class ModifyBackupPolicyRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'adb', '2019-03-15', 'DescribeRegions','ads')
+		RpcRequest.__init__(self, 'adb', '2019-03-15', 'ModifyBackupPolicy','ads')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -36,11 +36,23 @@ class DescribeRegionsRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_PreferredBackupPeriod(self):
+		return self.get_query_params().get('PreferredBackupPeriod')
+
+	def set_PreferredBackupPeriod(self,PreferredBackupPeriod):
+		self.add_query_param('PreferredBackupPeriod',PreferredBackupPeriod)
+
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+
+	def get_DBClusterId(self):
+		return self.get_query_params().get('DBClusterId')
+
+	def set_DBClusterId(self,DBClusterId):
+		self.add_query_param('DBClusterId',DBClusterId)
 
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
@@ -54,8 +66,14 @@ class DescribeRegionsRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_AcceptLanguage(self):
-		return self.get_query_params().get('AcceptLanguage')
+	def get_PreferredBackupTime(self):
+		return self.get_query_params().get('PreferredBackupTime')
 
-	def set_AcceptLanguage(self,AcceptLanguage):
-		self.add_query_param('AcceptLanguage',AcceptLanguage)
+	def set_PreferredBackupTime(self,PreferredBackupTime):
+		self.add_query_param('PreferredBackupTime',PreferredBackupTime)
+
+	def get_BackupRetentionPeriod(self):
+		return self.get_query_params().get('BackupRetentionPeriod')
+
+	def set_BackupRetentionPeriod(self,BackupRetentionPeriod):
+		self.add_query_param('BackupRetentionPeriod',BackupRetentionPeriod)
