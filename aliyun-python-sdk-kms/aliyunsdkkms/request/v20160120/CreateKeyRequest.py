@@ -55,6 +55,12 @@ class CreateKeyRequest(RpcRequest):
 	def set_Description(self,Description):
 		self.add_query_param('Description',Description)
 
+	def get_KeySpec(self):
+		return self.get_query_params().get('KeySpec')
+
+	def set_KeySpec(self,KeySpec):
+		self.add_query_param('KeySpec',KeySpec)
+
 	def get_RotationInterval(self):
 		return self.get_query_params().get('RotationInterval')
 
