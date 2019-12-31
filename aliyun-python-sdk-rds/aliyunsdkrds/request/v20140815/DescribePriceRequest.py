@@ -60,6 +60,18 @@ class DescribePriceRequest(RpcRequest):
 	def set_Engine(self,Engine):
 		self.add_query_param('Engine',Engine)
 
+	def get_DBInstanceId(self):
+		return self.get_query_params().get('DBInstanceId')
+
+	def set_DBInstanceId(self,DBInstanceId):
+		self.add_query_param('DBInstanceId',DBInstanceId)
+
+	def get_DBInstanceStorageType(self):
+		return self.get_query_params().get('DBInstanceStorageType')
+
+	def set_DBInstanceStorageType(self,DBInstanceStorageType):
+		self.add_query_param('DBInstanceStorageType',DBInstanceStorageType)
+
 	def get_Quantity(self):
 		return self.get_query_params().get('Quantity')
 

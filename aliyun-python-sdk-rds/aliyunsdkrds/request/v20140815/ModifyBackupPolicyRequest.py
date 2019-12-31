@@ -72,6 +72,12 @@ class ModifyBackupPolicyRequest(RpcRequest):
 	def set_HighSpaceUsageProtection(self,HighSpaceUsageProtection):
 		self.add_query_param('HighSpaceUsageProtection',HighSpaceUsageProtection)
 
+	def get_LogBackupLocalRetentionNumber(self):
+		return self.get_query_params().get('LogBackupLocalRetentionNumber')
+
+	def set_LogBackupLocalRetentionNumber(self,LogBackupLocalRetentionNumber):
+		self.add_query_param('LogBackupLocalRetentionNumber',LogBackupLocalRetentionNumber)
+
 	def get_DBInstanceId(self):
 		return self.get_query_params().get('DBInstanceId')
 
