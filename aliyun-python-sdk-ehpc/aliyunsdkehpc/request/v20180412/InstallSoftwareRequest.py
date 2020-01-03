@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,19 +18,20 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+
 class InstallSoftwareRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'EHPC', '2018-04-12', 'InstallSoftware','ehs')
-
-	def get_Application(self):
-		return self.get_query_params().get('Application')
-
-	def set_Application(self,Application):
-		self.add_query_param('Application',Application)
 
 	def get_ClusterId(self):
 		return self.get_query_params().get('ClusterId')
 
 	def set_ClusterId(self,ClusterId):
 		self.add_query_param('ClusterId',ClusterId)
+
+	def get_Application(self):
+		return self.get_query_params().get('Application')
+
+	def set_Application(self,Application):
+		self.add_query_param('Application',Application)

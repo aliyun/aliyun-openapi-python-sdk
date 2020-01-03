@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,6 +18,7 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+
 class RecoverClusterRequest(RpcRequest):
 
 	def __init__(self):
@@ -47,12 +48,6 @@ class RecoverClusterRequest(RpcRequest):
 	def set_AccountType(self,AccountType):
 		self.add_query_param('AccountType',AccountType)
 
-	def get_SchedulerType(self):
-		return self.get_query_params().get('SchedulerType')
-
-	def set_SchedulerType(self,SchedulerType):
-		self.add_query_param('SchedulerType',SchedulerType)
-
 	def get_ClusterId(self):
 		return self.get_query_params().get('ClusterId')
 
@@ -64,3 +59,9 @@ class RecoverClusterRequest(RpcRequest):
 
 	def set_ImageOwnerAlias(self,ImageOwnerAlias):
 		self.add_query_param('ImageOwnerAlias',ImageOwnerAlias)
+
+	def get_SchedulerType(self):
+		return self.get_query_params().get('SchedulerType')
+
+	def set_SchedulerType(self,SchedulerType):
+		self.add_query_param('SchedulerType',SchedulerType)

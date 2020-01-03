@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,6 +18,7 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+
 class ListJobsRequest(RpcRequest):
 
 	def __init__(self):
@@ -29,23 +30,11 @@ class ListJobsRequest(RpcRequest):
 	def set_Owner(self,Owner):
 		self.add_query_param('Owner',Owner)
 
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
 	def get_ClusterId(self):
 		return self.get_query_params().get('ClusterId')
 
 	def set_ClusterId(self,ClusterId):
 		self.add_query_param('ClusterId',ClusterId)
-
-	def get_State(self):
-		return self.get_query_params().get('State')
-
-	def set_State(self,State):
-		self.add_query_param('State',State)
 
 	def get_Rerunable(self):
 		return self.get_query_params().get('Rerunable')
@@ -58,3 +47,15 @@ class ListJobsRequest(RpcRequest):
 
 	def set_PageNumber(self,PageNumber):
 		self.add_query_param('PageNumber',PageNumber)
+
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
+
+	def get_State(self):
+		return self.get_query_params().get('State')
+
+	def set_State(self,State):
+		self.add_query_param('State',State)

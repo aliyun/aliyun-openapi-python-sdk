@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,16 +18,11 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+
 class DeleteNodesRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'EHPC', '2018-04-12', 'DeleteNodes','ehs')
-
-	def get_ReleaseInstance(self):
-		return self.get_query_params().get('ReleaseInstance')
-
-	def set_ReleaseInstance(self,ReleaseInstance):
-		self.add_query_param('ReleaseInstance',ReleaseInstance)
 
 	def get_Instances(self):
 		return self.get_query_params().get('Instances')
@@ -43,3 +38,9 @@ class DeleteNodesRequest(RpcRequest):
 
 	def set_ClusterId(self,ClusterId):
 		self.add_query_param('ClusterId',ClusterId)
+
+	def get_ReleaseInstance(self):
+		return self.get_query_params().get('ReleaseInstance')
+
+	def set_ReleaseInstance(self,ReleaseInstance):
+		self.add_query_param('ReleaseInstance',ReleaseInstance)

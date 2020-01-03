@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,6 +18,7 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+
 class CreateJobTemplateRequest(RpcRequest):
 
 	def __init__(self):
@@ -28,6 +29,12 @@ class CreateJobTemplateRequest(RpcRequest):
 
 	def set_StderrRedirectPath(self,StderrRedirectPath):
 		self.add_query_param('StderrRedirectPath',StderrRedirectPath)
+
+	def get_CommandLine(self):
+		return self.get_query_params().get('CommandLine')
+
+	def set_CommandLine(self,CommandLine):
+		self.add_query_param('CommandLine',CommandLine)
 
 	def get_ArrayRequest(self):
 		return self.get_query_params().get('ArrayRequest')
@@ -41,29 +48,23 @@ class CreateJobTemplateRequest(RpcRequest):
 	def set_PackagePath(self,PackagePath):
 		self.add_query_param('PackagePath',PackagePath)
 
+	def get_StdoutRedirectPath(self):
+		return self.get_query_params().get('StdoutRedirectPath')
+
+	def set_StdoutRedirectPath(self,StdoutRedirectPath):
+		self.add_query_param('StdoutRedirectPath',StdoutRedirectPath)
+
 	def get_Variables(self):
 		return self.get_query_params().get('Variables')
 
 	def set_Variables(self,Variables):
 		self.add_query_param('Variables',Variables)
 
-	def get_Name(self):
-		return self.get_query_params().get('Name')
-
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)
-
 	def get_RunasUser(self):
 		return self.get_query_params().get('RunasUser')
 
 	def set_RunasUser(self,RunasUser):
 		self.add_query_param('RunasUser',RunasUser)
-
-	def get_StdoutRedirectPath(self):
-		return self.get_query_params().get('StdoutRedirectPath')
-
-	def set_StdoutRedirectPath(self,StdoutRedirectPath):
-		self.add_query_param('StdoutRedirectPath',StdoutRedirectPath)
 
 	def get_ReRunable(self):
 		return self.get_query_params().get('ReRunable')
@@ -77,8 +78,8 @@ class CreateJobTemplateRequest(RpcRequest):
 	def set_Priority(self,Priority):
 		self.add_query_param('Priority',Priority)
 
-	def get_CommandLine(self):
-		return self.get_query_params().get('CommandLine')
+	def get_Name(self):
+		return self.get_query_params().get('Name')
 
-	def set_CommandLine(self,CommandLine):
-		self.add_query_param('CommandLine',CommandLine)
+	def set_Name(self,Name):
+		self.add_query_param('Name',Name)

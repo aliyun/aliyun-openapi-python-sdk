@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,6 +18,7 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+
 class ListAvailableEcsTypesRequest(RpcRequest):
 
 	def __init__(self):
@@ -34,6 +35,12 @@ class ListAvailableEcsTypesRequest(RpcRequest):
 
 	def set_ZoneId(self,ZoneId):
 		self.add_query_param('ZoneId',ZoneId)
+
+	def get_ShowSoldOut(self):
+		return self.get_query_params().get('ShowSoldOut')
+
+	def set_ShowSoldOut(self,ShowSoldOut):
+		self.add_query_param('ShowSoldOut',ShowSoldOut)
 
 	def get_InstanceChargeType(self):
 		return self.get_query_params().get('InstanceChargeType')

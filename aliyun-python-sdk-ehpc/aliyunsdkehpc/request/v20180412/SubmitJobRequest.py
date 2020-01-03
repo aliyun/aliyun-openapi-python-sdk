@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,6 +18,7 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+
 class SubmitJobRequest(RpcRequest):
 
 	def __init__(self):
@@ -29,47 +30,11 @@ class SubmitJobRequest(RpcRequest):
 	def set_StderrRedirectPath(self,StderrRedirectPath):
 		self.add_query_param('StderrRedirectPath',StderrRedirectPath)
 
-	def get_Variables(self):
-		return self.get_query_params().get('Variables')
-
-	def set_Variables(self,Variables):
-		self.add_query_param('Variables',Variables)
-
 	def get_RunasUserPassword(self):
 		return self.get_query_params().get('RunasUserPassword')
 
 	def set_RunasUserPassword(self,RunasUserPassword):
 		self.add_query_param('RunasUserPassword',RunasUserPassword)
-
-	def get_PostCmdLine(self):
-		return self.get_query_params().get('PostCmdLine')
-
-	def set_PostCmdLine(self,PostCmdLine):
-		self.add_query_param('PostCmdLine',PostCmdLine)
-
-	def get_RunasUser(self):
-		return self.get_query_params().get('RunasUser')
-
-	def set_RunasUser(self,RunasUser):
-		self.add_query_param('RunasUser',RunasUser)
-
-	def get_ClusterId(self):
-		return self.get_query_params().get('ClusterId')
-
-	def set_ClusterId(self,ClusterId):
-		self.add_query_param('ClusterId',ClusterId)
-
-	def get_ReRunable(self):
-		return self.get_query_params().get('ReRunable')
-
-	def set_ReRunable(self,ReRunable):
-		self.add_query_param('ReRunable',ReRunable)
-
-	def get_Priority(self):
-		return self.get_query_params().get('Priority')
-
-	def set_Priority(self,Priority):
-		self.add_query_param('Priority',Priority)
 
 	def get_CommandLine(self):
 		return self.get_query_params().get('CommandLine')
@@ -101,6 +66,48 @@ class SubmitJobRequest(RpcRequest):
 	def set_PackagePath(self,PackagePath):
 		self.add_query_param('PackagePath',PackagePath)
 
+	def get_StdoutRedirectPath(self):
+		return self.get_query_params().get('StdoutRedirectPath')
+
+	def set_StdoutRedirectPath(self,StdoutRedirectPath):
+		self.add_query_param('StdoutRedirectPath',StdoutRedirectPath)
+
+	def get_Variables(self):
+		return self.get_query_params().get('Variables')
+
+	def set_Variables(self,Variables):
+		self.add_query_param('Variables',Variables)
+
+	def get_PostCmdLine(self):
+		return self.get_query_params().get('PostCmdLine')
+
+	def set_PostCmdLine(self,PostCmdLine):
+		self.add_query_param('PostCmdLine',PostCmdLine)
+
+	def get_RunasUser(self):
+		return self.get_query_params().get('RunasUser')
+
+	def set_RunasUser(self,RunasUser):
+		self.add_query_param('RunasUser',RunasUser)
+
+	def get_ClusterId(self):
+		return self.get_query_params().get('ClusterId')
+
+	def set_ClusterId(self,ClusterId):
+		self.add_query_param('ClusterId',ClusterId)
+
+	def get_ReRunable(self):
+		return self.get_query_params().get('ReRunable')
+
+	def set_ReRunable(self,ReRunable):
+		self.add_query_param('ReRunable',ReRunable)
+
+	def get_Priority(self):
+		return self.get_query_params().get('Priority')
+
+	def set_Priority(self,Priority):
+		self.add_query_param('Priority',Priority)
+
 	def get_InputFileUrl(self):
 		return self.get_query_params().get('InputFileUrl')
 
@@ -112,12 +119,6 @@ class SubmitJobRequest(RpcRequest):
 
 	def set_Name(self,Name):
 		self.add_query_param('Name',Name)
-
-	def get_StdoutRedirectPath(self):
-		return self.get_query_params().get('StdoutRedirectPath')
-
-	def set_StdoutRedirectPath(self,StdoutRedirectPath):
-		self.add_query_param('StdoutRedirectPath',StdoutRedirectPath)
 
 	def get_ContainerId(self):
 		return self.get_query_params().get('ContainerId')

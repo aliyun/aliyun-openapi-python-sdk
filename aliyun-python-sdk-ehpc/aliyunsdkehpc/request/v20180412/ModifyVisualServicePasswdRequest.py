@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,16 +18,11 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+
 class ModifyVisualServicePasswdRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'EHPC', '2018-04-12', 'ModifyVisualServicePasswd','ehs')
-
-	def get_Passwd(self):
-		return self.get_query_params().get('Passwd')
-
-	def set_Passwd(self,Passwd):
-		self.add_query_param('Passwd',Passwd)
 
 	def get_RunasUserPassword(self):
 		return self.get_query_params().get('RunasUserPassword')
@@ -46,3 +41,9 @@ class ModifyVisualServicePasswdRequest(RpcRequest):
 
 	def set_ClusterId(self,ClusterId):
 		self.add_query_param('ClusterId',ClusterId)
+
+	def get_Passwd(self):
+		return self.get_query_params().get('Passwd')
+
+	def set_Passwd(self,Passwd):
+		self.add_query_param('Passwd',Passwd)

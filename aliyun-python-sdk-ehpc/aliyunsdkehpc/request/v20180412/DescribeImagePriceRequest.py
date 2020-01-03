@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,6 +18,7 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+
 class DescribeImagePriceRequest(RpcRequest):
 
 	def __init__(self):
@@ -41,17 +42,17 @@ class DescribeImagePriceRequest(RpcRequest):
 	def set_ImageId(self,ImageId):
 		self.add_query_param('ImageId',ImageId)
 
-	def get_PriceUnit(self):
-		return self.get_query_params().get('PriceUnit')
-
-	def set_PriceUnit(self,PriceUnit):
-		self.add_query_param('PriceUnit',PriceUnit)
-
 	def get_SkuCode(self):
 		return self.get_query_params().get('SkuCode')
 
 	def set_SkuCode(self,SkuCode):
 		self.add_query_param('SkuCode',SkuCode)
+
+	def get_PriceUnit(self):
+		return self.get_query_params().get('PriceUnit')
+
+	def set_PriceUnit(self,PriceUnit):
+		self.add_query_param('PriceUnit',PriceUnit)
 
 	def get_OrderType(self):
 		return self.get_query_params().get('OrderType')

@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,22 +18,11 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+
 class CreateClusterRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'EHPC', '2018-04-12', 'CreateCluster','ehs')
-
-	def get_SccClusterId(self):
-		return self.get_query_params().get('SccClusterId')
-
-	def set_SccClusterId(self,SccClusterId):
-		self.add_query_param('SccClusterId',SccClusterId)
-
-	def get_ImageId(self):
-		return self.get_query_params().get('ImageId')
-
-	def set_ImageId(self,ImageId):
-		self.add_query_param('ImageId',ImageId)
 
 	def get_AdditionalVolumess(self):
 		return self.get_query_params().get('AdditionalVolumess')
@@ -50,7 +39,8 @@ class CreateClusterRequest(RpcRequest):
 				self.add_query_param('AdditionalVolumes.' + str(i + 1) + '.RemoteDirectory' , AdditionalVolumess[i].get('RemoteDirectory'))
 			for j in range(len(AdditionalVolumess[i].get('Roless'))):
 				if AdditionalVolumess[i].get('Roless')[j] is not None:
-					self.add_query_param('AdditionalVolumes.' + str(i + 1) + '.Roles.'+str(j + 1), AdditionalVolumess[i].get('Roless')[j])
+					if AdditionalVolumess[i].get('Roless')[j].get('Name') is not None:
+						self.add_query_param('AdditionalVolumes.' + str(i + 1) + '.Roles.'+str(j + 1)+ '.Name', AdditionalVolumess[i].get('Roless')[j].get('Name'))
 			if AdditionalVolumess[i].get('VolumeId') is not None:
 				self.add_query_param('AdditionalVolumes.' + str(i + 1) + '.VolumeId' , AdditionalVolumess[i].get('VolumeId'))
 			if AdditionalVolumess[i].get('VolumeMountpoint') is not None:
@@ -67,30 +57,6 @@ class CreateClusterRequest(RpcRequest):
 	def set_EcsOrderManagerInstanceType(self,EcsOrderManagerInstanceType):
 		self.add_query_param('EcsOrder.Manager.InstanceType',EcsOrderManagerInstanceType)
 
-	def get_EhpcVersion(self):
-		return self.get_query_params().get('EhpcVersion')
-
-	def set_EhpcVersion(self,EhpcVersion):
-		self.add_query_param('EhpcVersion',EhpcVersion)
-
-	def get_AccountType(self):
-		return self.get_query_params().get('AccountType')
-
-	def set_AccountType(self,AccountType):
-		self.add_query_param('AccountType',AccountType)
-
-	def get_SecurityGroupId(self):
-		return self.get_query_params().get('SecurityGroupId')
-
-	def set_SecurityGroupId(self,SecurityGroupId):
-		self.add_query_param('SecurityGroupId',SecurityGroupId)
-
-	def get_Description(self):
-		return self.get_query_params().get('Description')
-
-	def set_Description(self,Description):
-		self.add_query_param('Description',Description)
-
 	def get_KeyPairName(self):
 		return self.get_query_params().get('KeyPairName')
 
@@ -103,29 +69,11 @@ class CreateClusterRequest(RpcRequest):
 	def set_SecurityGroupName(self,SecurityGroupName):
 		self.add_query_param('SecurityGroupName',SecurityGroupName)
 
-	def get_EcsOrderComputeInstanceType(self):
-		return self.get_query_params().get('EcsOrder.Compute.InstanceType')
-
-	def set_EcsOrderComputeInstanceType(self,EcsOrderComputeInstanceType):
-		self.add_query_param('EcsOrder.Compute.InstanceType',EcsOrderComputeInstanceType)
-
-	def get_JobQueue(self):
-		return self.get_query_params().get('JobQueue')
-
-	def set_JobQueue(self,JobQueue):
-		self.add_query_param('JobQueue',JobQueue)
-
 	def get_ImageOwnerAlias(self):
 		return self.get_query_params().get('ImageOwnerAlias')
 
 	def set_ImageOwnerAlias(self,ImageOwnerAlias):
 		self.add_query_param('ImageOwnerAlias',ImageOwnerAlias)
-
-	def get_VolumeType(self):
-		return self.get_query_params().get('VolumeType')
-
-	def set_VolumeType(self,VolumeType):
-		self.add_query_param('VolumeType',VolumeType)
 
 	def get_DeployMode(self):
 		return self.get_query_params().get('DeployMode')
@@ -187,24 +135,6 @@ class CreateClusterRequest(RpcRequest):
 	def set_Period(self,Period):
 		self.add_query_param('Period',Period)
 
-	def get_VolumeProtocol(self):
-		return self.get_query_params().get('VolumeProtocol')
-
-	def set_VolumeProtocol(self,VolumeProtocol):
-		self.add_query_param('VolumeProtocol',VolumeProtocol)
-
-	def get_ClientVersion(self):
-		return self.get_query_params().get('ClientVersion')
-
-	def set_ClientVersion(self,ClientVersion):
-		self.add_query_param('ClientVersion',ClientVersion)
-
-	def get_OsTag(self):
-		return self.get_query_params().get('OsTag')
-
-	def set_OsTag(self,OsTag):
-		self.add_query_param('OsTag',OsTag)
-
 	def get_RemoteDirectory(self):
 		return self.get_query_params().get('RemoteDirectory')
 
@@ -246,6 +176,114 @@ class CreateClusterRequest(RpcRequest):
 	def set_PeriodUnit(self,PeriodUnit):
 		self.add_query_param('PeriodUnit',PeriodUnit)
 
+	def get_ComputeEnableHt(self):
+		return self.get_query_params().get('ComputeEnableHt')
+
+	def set_ComputeEnableHt(self,ComputeEnableHt):
+		self.add_query_param('ComputeEnableHt',ComputeEnableHt)
+
+	def get_AutoRenew(self):
+		return self.get_query_params().get('AutoRenew')
+
+	def set_AutoRenew(self,AutoRenew):
+		self.add_query_param('AutoRenew',AutoRenew)
+
+	def get_Name(self):
+		return self.get_query_params().get('Name')
+
+	def set_Name(self,Name):
+		self.add_query_param('Name',Name)
+
+	def get_VolumeId(self):
+		return self.get_query_params().get('VolumeId')
+
+	def set_VolumeId(self,VolumeId):
+		self.add_query_param('VolumeId',VolumeId)
+
+	def get_ZoneId(self):
+		return self.get_query_params().get('ZoneId')
+
+	def set_ZoneId(self,ZoneId):
+		self.add_query_param('ZoneId',ZoneId)
+
+	def get_SccClusterId(self):
+		return self.get_query_params().get('SccClusterId')
+
+	def set_SccClusterId(self,SccClusterId):
+		self.add_query_param('SccClusterId',SccClusterId)
+
+	def get_ImageId(self):
+		return self.get_query_params().get('ImageId')
+
+	def set_ImageId(self,ImageId):
+		self.add_query_param('ImageId',ImageId)
+
+	def get_EhpcVersion(self):
+		return self.get_query_params().get('EhpcVersion')
+
+	def set_EhpcVersion(self,EhpcVersion):
+		self.add_query_param('EhpcVersion',EhpcVersion)
+
+	def get_AccountType(self):
+		return self.get_query_params().get('AccountType')
+
+	def set_AccountType(self,AccountType):
+		self.add_query_param('AccountType',AccountType)
+
+	def get_SecurityGroupId(self):
+		return self.get_query_params().get('SecurityGroupId')
+
+	def set_SecurityGroupId(self,SecurityGroupId):
+		self.add_query_param('SecurityGroupId',SecurityGroupId)
+
+	def get_Description(self):
+		return self.get_query_params().get('Description')
+
+	def set_Description(self,Description):
+		self.add_query_param('Description',Description)
+
+	def get_EcsOrderComputeInstanceType(self):
+		return self.get_query_params().get('EcsOrder.Compute.InstanceType')
+
+	def set_EcsOrderComputeInstanceType(self,EcsOrderComputeInstanceType):
+		self.add_query_param('EcsOrder.Compute.InstanceType',EcsOrderComputeInstanceType)
+
+	def get_JobQueue(self):
+		return self.get_query_params().get('JobQueue')
+
+	def set_JobQueue(self,JobQueue):
+		self.add_query_param('JobQueue',JobQueue)
+
+	def get_VolumeType(self):
+		return self.get_query_params().get('VolumeType')
+
+	def set_VolumeType(self,VolumeType):
+		self.add_query_param('VolumeType',VolumeType)
+
+	def get_SystemDiskType(self):
+		return self.get_query_params().get('SystemDiskType')
+
+	def set_SystemDiskType(self,SystemDiskType):
+		self.add_query_param('SystemDiskType',SystemDiskType)
+
+	def get_VolumeProtocol(self):
+		return self.get_query_params().get('VolumeProtocol')
+
+	def set_VolumeProtocol(self,VolumeProtocol):
+		self.add_query_param('VolumeProtocol',VolumeProtocol)
+
+	def get_ClientVersion(self):
+		return self.get_query_params().get('ClientVersion')
+
+	def set_ClientVersion(self,ClientVersion):
+		self.add_query_param('ClientVersion',ClientVersion)
+
+	def get_OsTag(self):
+		return self.get_query_params().get('OsTag')
+
+	def set_OsTag(self,OsTag):
+		self.add_query_param('OsTag',OsTag)
+
 	def get_Applications(self):
 		return self.get_query_params().get('Applications')
 
@@ -254,12 +292,6 @@ class CreateClusterRequest(RpcRequest):
 			if Applications[i].get('Tag') is not None:
 				self.add_query_param('Application.' + str(i + 1) + '.Tag' , Applications[i].get('Tag'))
 
-
-	def get_AutoRenew(self):
-		return self.get_query_params().get('AutoRenew')
-
-	def set_AutoRenew(self,AutoRenew):
-		self.add_query_param('AutoRenew',AutoRenew)
 
 	def get_EcsChargeType(self):
 		return self.get_query_params().get('EcsChargeType')
@@ -285,23 +317,11 @@ class CreateClusterRequest(RpcRequest):
 	def set_HaEnable(self,HaEnable):
 		self.add_query_param('HaEnable',HaEnable)
 
-	def get_Name(self):
-		return self.get_query_params().get('Name')
-
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)
-
 	def get_SchedulerType(self):
 		return self.get_query_params().get('SchedulerType')
 
 	def set_SchedulerType(self,SchedulerType):
 		self.add_query_param('SchedulerType',SchedulerType)
-
-	def get_VolumeId(self):
-		return self.get_query_params().get('VolumeId')
-
-	def set_VolumeId(self,VolumeId):
-		self.add_query_param('VolumeId',VolumeId)
 
 	def get_VolumeMountpoint(self):
 		return self.get_query_params().get('VolumeMountpoint')
@@ -314,9 +334,3 @@ class CreateClusterRequest(RpcRequest):
 
 	def set_EcsOrderLoginInstanceType(self,EcsOrderLoginInstanceType):
 		self.add_query_param('EcsOrder.Login.InstanceType',EcsOrderLoginInstanceType)
-
-	def get_ZoneId(self):
-		return self.get_query_params().get('ZoneId')
-
-	def set_ZoneId(self,ZoneId):
-		self.add_query_param('ZoneId',ZoneId)

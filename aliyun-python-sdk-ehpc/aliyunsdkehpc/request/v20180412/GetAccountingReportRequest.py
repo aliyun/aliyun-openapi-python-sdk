@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,6 +18,7 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+
 class GetAccountingReportRequest(RpcRequest):
 
 	def __init__(self):
@@ -34,6 +35,12 @@ class GetAccountingReportRequest(RpcRequest):
 
 	def set_EndTime(self,EndTime):
 		self.add_query_param('EndTime',EndTime)
+
+	def get_FilterValue(self):
+		return self.get_query_params().get('FilterValue')
+
+	def set_FilterValue(self,FilterValue):
+		self.add_query_param('FilterValue',FilterValue)
 
 	def get_ClusterId(self):
 		return self.get_query_params().get('ClusterId')
