@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,10 +18,17 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class DescribeReplicaUsageRequest(RpcRequest):
+from aliyunsdkdds.endpoint import endpoint_data
+
+class ModifySecurityGroupConfigurationRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dds', '2015-12-01', 'DescribeReplicaUsage','Dds')
+		RpcRequest.__init__(self, 'Dds', '2015-12-01', 'ModifySecurityGroupConfiguration','Dds')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -29,23 +36,23 @@ class DescribeReplicaUsageRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_SourceDBInstanceId(self):
-		return self.get_query_params().get('SourceDBInstanceId')
+	def get_SecurityGroupId(self):
+		return self.get_query_params().get('SecurityGroupId')
 
-	def set_SourceDBInstanceId(self,SourceDBInstanceId):
-		self.add_query_param('SourceDBInstanceId',SourceDBInstanceId)
-
-	def get_DestinationDBInstanceId(self):
-		return self.get_query_params().get('DestinationDBInstanceId')
-
-	def set_DestinationDBInstanceId(self,DestinationDBInstanceId):
-		self.add_query_param('DestinationDBInstanceId',DestinationDBInstanceId)
+	def set_SecurityGroupId(self,SecurityGroupId):
+		self.add_query_param('SecurityGroupId',SecurityGroupId)
 
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
 
 	def set_SecurityToken(self,SecurityToken):
 		self.add_query_param('SecurityToken',SecurityToken)
+
+	def get_DBInstanceId(self):
+		return self.get_query_params().get('DBInstanceId')
+
+	def set_DBInstanceId(self,DBInstanceId):
+		self.add_query_param('DBInstanceId',DBInstanceId)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -58,12 +65,6 @@ class DescribeReplicaUsageRequest(RpcRequest):
 
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
-
-	def get_ReplicaId(self):
-		return self.get_query_params().get('ReplicaId')
-
-	def set_ReplicaId(self,ReplicaId):
-		self.add_query_param('ReplicaId',ReplicaId)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')

@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,16 +18,17 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class ModifyReplicaModeRequest(RpcRequest):
+from aliyunsdkdds.endpoint import endpoint_data
+
+class DescribeTagsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dds', '2015-12-01', 'ModifyReplicaMode','Dds')
+		RpcRequest.__init__(self, 'Dds', '2015-12-01', 'DescribeTags','Dds')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_DomainMode(self):
-		return self.get_query_params().get('DomainMode')
-
-	def set_DomainMode(self,DomainMode):
-		self.add_query_param('DomainMode',DomainMode)
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -35,23 +36,11 @@ class ModifyReplicaModeRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_PrimaryInstanceId(self):
-		return self.get_query_params().get('PrimaryInstanceId')
+	def get_NextToken(self):
+		return self.get_query_params().get('NextToken')
 
-	def set_PrimaryInstanceId(self,PrimaryInstanceId):
-		self.add_query_param('PrimaryInstanceId',PrimaryInstanceId)
-
-	def get_ReplicaMode(self):
-		return self.get_query_params().get('ReplicaMode')
-
-	def set_ReplicaMode(self,ReplicaMode):
-		self.add_query_param('ReplicaMode',ReplicaMode)
-
-	def get_SecurityToken(self):
-		return self.get_query_params().get('SecurityToken')
-
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)
+	def set_NextToken(self,NextToken):
+		self.add_query_param('NextToken',NextToken)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -65,14 +54,14 @@ class ModifyReplicaModeRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
-	def get_ReplicaId(self):
-		return self.get_query_params().get('ReplicaId')
-
-	def set_ReplicaId(self,ReplicaId):
-		self.add_query_param('ReplicaId',ReplicaId)
-
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_ResourceType(self):
+		return self.get_query_params().get('ResourceType')
+
+	def set_ResourceType(self,ResourceType):
+		self.add_query_param('ResourceType',ResourceType)
