@@ -20,24 +20,11 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkhbase.endpoint import endpoint_data
 
-class DeleteInstanceRequest(RpcRequest):
+class ListTagsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'HBase', '2019-01-01', 'DeleteInstance','hbase')
+		RpcRequest.__init__(self, 'HBase', '2019-01-01', 'ListTags','hbase')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
-
-
-	def get_ImmediateDeleteFlag(self):
-		return self.get_query_params().get('ImmediateDeleteFlag')
-
-	def set_ImmediateDeleteFlag(self,ImmediateDeleteFlag):
-		self.add_query_param('ImmediateDeleteFlag',ImmediateDeleteFlag)
-
-	def get_ClusterId(self):
-		return self.get_query_params().get('ClusterId')
-
-	def set_ClusterId(self,ClusterId):
-		self.add_query_param('ClusterId',ClusterId)
