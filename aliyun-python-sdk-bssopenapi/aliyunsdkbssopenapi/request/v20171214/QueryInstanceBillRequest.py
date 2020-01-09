@@ -66,6 +66,12 @@ class QueryInstanceBillRequest(RpcRequest):
 	def set_PageNum(self,PageNum):
 		self.add_query_param('PageNum',PageNum)
 
+	def get_BillingDate(self):
+		return self.get_query_params().get('BillingDate')
+
+	def set_BillingDate(self,BillingDate):
+		self.add_query_param('BillingDate',BillingDate)
+
 	def get_ProductType(self):
 		return self.get_query_params().get('ProductType')
 
@@ -77,6 +83,12 @@ class QueryInstanceBillRequest(RpcRequest):
 
 	def set_IsBillingItem(self,IsBillingItem):
 		self.add_query_param('IsBillingItem',IsBillingItem)
+
+	def get_Granularity(self):
+		return self.get_query_params().get('Granularity')
+
+	def set_Granularity(self,Granularity):
+		self.add_query_param('Granularity',Granularity)
 
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
