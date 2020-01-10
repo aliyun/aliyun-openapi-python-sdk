@@ -48,6 +48,12 @@ class ModifyDBClusterAccessWhitelistRequest(RpcRequest):
 	def set_DBClusterIPArrayAttribute(self,DBClusterIPArrayAttribute):
 		self.add_query_param('DBClusterIPArrayAttribute',DBClusterIPArrayAttribute)
 
+	def get_ModifyMode(self):
+		return self.get_query_params().get('ModifyMode')
+
+	def set_ModifyMode(self,ModifyMode):
+		self.add_query_param('ModifyMode',ModifyMode)
+
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 

@@ -120,6 +120,12 @@ class CreateDBClusterRequest(RpcRequest):
 	def set_VSwitchId(self,VSwitchId):
 		self.add_query_param('VSwitchId',VSwitchId)
 
+	def get_SecurityIPList(self):
+		return self.get_query_params().get('SecurityIPList')
+
+	def set_SecurityIPList(self,SecurityIPList):
+		self.add_query_param('SecurityIPList',SecurityIPList)
+
 	def get_AutoRenew(self):
 		return self.get_query_params().get('AutoRenew')
 
