@@ -42,23 +42,11 @@ class DescribeMonitorGroupsRequest(RpcRequest):
 	def set_Type(self,Type):
 		self.add_query_param('Type',Type)
 
-	def get_GroupName(self):
-		return self.get_query_params().get('GroupName')
-
-	def set_GroupName(self,GroupName):
-		self.add_query_param('GroupName',GroupName)
-
 	def get_PageNumber(self):
 		return self.get_query_params().get('PageNumber')
 
 	def set_PageNumber(self,PageNumber):
 		self.add_query_param('PageNumber',PageNumber)
-
-	def get_InstanceId(self):
-		return self.get_query_params().get('InstanceId')
-
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
 
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
@@ -82,3 +70,27 @@ class DescribeMonitorGroupsRequest(RpcRequest):
 
 	def set_Keyword(self,Keyword):
 		self.add_query_param('Keyword',Keyword)
+
+	def get_GroupId(self):
+		return self.get_query_params().get('GroupId')
+
+	def set_GroupId(self,GroupId):
+		self.add_query_param('GroupId',GroupId)
+
+	def get_GroupName(self):
+		return self.get_query_params().get('GroupName')
+
+	def set_GroupName(self,GroupName):
+		self.add_query_param('GroupName',GroupName)
+
+	def get_InstanceId(self):
+		return self.get_query_params().get('InstanceId')
+
+	def set_InstanceId(self,InstanceId):
+		self.add_query_param('InstanceId',InstanceId)
+
+	def get_DynamicTagGroupId(self):
+		return self.get_query_params().get('DynamicTagGroupId')
+
+	def set_DynamicTagGroupId(self,DynamicTagGroupId):
+		self.add_query_param('DynamicTagGroupId',DynamicTagGroupId)

@@ -24,12 +24,6 @@ class DescribeAlertHistoryListRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Cms', '2019-01-01', 'DescribeAlertHistoryList','cms')
 
-	def get_AlertStatus(self):
-		return self.get_query_params().get('AlertStatus')
-
-	def set_AlertStatus(self,AlertStatus):
-		self.add_query_param('AlertStatus',AlertStatus)
-
 	def get_RuleName(self):
 		return self.get_query_params().get('RuleName')
 
@@ -95,3 +89,9 @@ class DescribeAlertHistoryListRequest(RpcRequest):
 
 	def set_RuleId(self,RuleId):
 		self.add_query_param('RuleId',RuleId)
+
+	def get_Status(self):
+		return self.get_query_params().get('Status')
+
+	def set_Status(self,Status):
+		self.add_query_param('Status',Status)
