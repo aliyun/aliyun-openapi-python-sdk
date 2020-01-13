@@ -78,6 +78,12 @@ class ModifyPrepayInstanceSpecRequest(RpcRequest):
 	def set_AutoPay(self,AutoPay):
 		self.add_query_param('AutoPay',AutoPay)
 
+	def get_RebootWhenFinished(self):
+		return self.get_query_params().get('RebootWhenFinished')
+
+	def set_RebootWhenFinished(self,RebootWhenFinished):
+		self.add_query_param('RebootWhenFinished',RebootWhenFinished)
+
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 

@@ -54,6 +54,12 @@ class CreateNetworkInterfaceRequest(RpcRequest):
 	def set_Description(self,Description):
 		self.add_query_param('Description',Description)
 
+	def get_SecondaryPrivateIpAddressCount(self):
+		return self.get_query_params().get('SecondaryPrivateIpAddressCount')
+
+	def set_SecondaryPrivateIpAddressCount(self,SecondaryPrivateIpAddressCount):
+		self.add_query_param('SecondaryPrivateIpAddressCount',SecondaryPrivateIpAddressCount)
+
 	def get_BusinessType(self):
 		return self.get_query_params().get('BusinessType')
 
@@ -120,6 +126,14 @@ class CreateNetworkInterfaceRequest(RpcRequest):
 
 	def set_VSwitchId(self,VSwitchId):
 		self.add_query_param('VSwitchId',VSwitchId)
+
+	def get_PrivateIpAddresss(self):
+		return self.get_query_params().get('PrivateIpAddresss')
+
+	def set_PrivateIpAddresss(self,PrivateIpAddresss):
+		for i in range(len(PrivateIpAddresss)):	
+			if PrivateIpAddresss[i] is not None:
+				self.add_query_param('PrivateIpAddress.' + str(i + 1) , PrivateIpAddresss[i]);
 
 	def get_PrimaryIpAddress(self):
 		return self.get_query_params().get('PrimaryIpAddress')

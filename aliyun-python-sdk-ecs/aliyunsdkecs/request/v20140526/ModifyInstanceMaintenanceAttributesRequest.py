@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkecs.endpoint import endpoint_data
 
-class ModifyMaintenancePropertyRequest(RpcRequest):
+class ModifyInstanceMaintenanceAttributesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'ModifyMaintenanceProperty','ecs')
+		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'ModifyInstanceMaintenanceAttributes','ecs')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -36,11 +36,16 @@ class ModifyMaintenancePropertyRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_StartTime(self):
-		return self.get_query_params().get('StartTime')
+	def get_MaintenanceWindows(self):
+		return self.get_query_params().get('MaintenanceWindows')
 
-	def set_StartTime(self,StartTime):
-		self.add_query_param('StartTime',StartTime)
+	def set_MaintenanceWindows(self,MaintenanceWindows):
+		for i in range(len(MaintenanceWindows)):	
+			if MaintenanceWindows[i].get('StartTime') is not None:
+				self.add_query_param('MaintenanceWindow.' + str(i + 1) + '.StartTime' , MaintenanceWindows[i].get('StartTime'))
+			if MaintenanceWindows[i].get('EndTime') is not None:
+				self.add_query_param('MaintenanceWindow.' + str(i + 1) + '.EndTime' , MaintenanceWindows[i].get('EndTime'))
+
 
 	def get_ActionOnMaintenance(self):
 		return self.get_query_params().get('ActionOnMaintenance')
@@ -59,12 +64,6 @@ class ModifyMaintenancePropertyRequest(RpcRequest):
 
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
-
-	def get_EndTime(self):
-		return self.get_query_params().get('EndTime')
-
-	def set_EndTime(self,EndTime):
-		self.add_query_param('EndTime',EndTime)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
