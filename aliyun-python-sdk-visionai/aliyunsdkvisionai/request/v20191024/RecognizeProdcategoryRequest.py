@@ -31,8 +31,8 @@ class RecognizeProdcategoryRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_ImageContent(self):
-		return self.get_body_params().get('ImageContent')
+	def get_ImageUrl(self):
+		return self.get_body_params().get('ImageUrl')
 
-	def set_ImageContent(self,ImageContent):
-		self.add_body_params('ImageContent', ImageContent)
+	def set_ImageUrl(self,ImageUrl):
+		self.add_body_params('ImageUrl', ImageUrl)
