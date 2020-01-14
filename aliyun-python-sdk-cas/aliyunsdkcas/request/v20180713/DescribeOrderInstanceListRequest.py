@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,10 +18,11 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class DescribeDomainVerifyInfoRequest(RpcRequest):
+
+class DescribeOrderInstanceListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'cas', '2018-08-13', 'DescribeDomainVerifyInfo','cas_esign_fdd')
+		RpcRequest.__init__(self, 'cas', '2018-07-13', 'DescribeOrderInstanceList','cas')
 
 	def get_SourceIp(self):
 		return self.get_query_params().get('SourceIp')
@@ -29,11 +30,11 @@ class DescribeDomainVerifyInfoRequest(RpcRequest):
 	def set_SourceIp(self,SourceIp):
 		self.add_query_param('SourceIp',SourceIp)
 
-	def get_OrderId(self):
-		return self.get_query_params().get('OrderId')
+	def get_StartIndex(self):
+		return self.get_query_params().get('StartIndex')
 
-	def set_OrderId(self,OrderId):
-		self.add_query_param('OrderId',OrderId)
+	def set_StartIndex(self,StartIndex):
+		self.add_query_param('StartIndex',StartIndex)
 
 	def get_Lang(self):
 		return self.get_query_params().get('Lang')

@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,22 +18,29 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class DeleteOrderRequest(RpcRequest):
+
+class DescribeUserCertificateListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'cas', '2018-08-13', 'DeleteOrder','cas_esign_fdd')
+		RpcRequest.__init__(self, 'cas', '2018-07-13', 'DescribeUserCertificateList','cas')
+
+	def get_ShowSize(self):
+		return self.get_query_params().get('ShowSize')
+
+	def set_ShowSize(self,ShowSize):
+		self.add_query_param('ShowSize',ShowSize)
+
+	def get_CurrentPage(self):
+		return self.get_query_params().get('CurrentPage')
+
+	def set_CurrentPage(self,CurrentPage):
+		self.add_query_param('CurrentPage',CurrentPage)
 
 	def get_SourceIp(self):
 		return self.get_query_params().get('SourceIp')
 
 	def set_SourceIp(self,SourceIp):
 		self.add_query_param('SourceIp',SourceIp)
-
-	def get_OrderId(self):
-		return self.get_query_params().get('OrderId')
-
-	def set_OrderId(self,OrderId):
-		self.add_query_param('OrderId',OrderId)
 
 	def get_Lang(self):
 		return self.get_query_params().get('Lang')

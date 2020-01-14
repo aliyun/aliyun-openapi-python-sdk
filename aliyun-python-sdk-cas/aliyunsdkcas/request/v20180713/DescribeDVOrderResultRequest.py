@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,28 +18,23 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class CreateCertificateNameRequest(RpcRequest):
+
+class DescribeDVOrderResultRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'cas', '2018-08-13', 'CreateCertificateName','cas_esign_fdd')
+		RpcRequest.__init__(self, 'cas', '2018-07-13', 'DescribeDVOrderResult','cas')
+
+	def get_InstanceId(self):
+		return self.get_query_params().get('InstanceId')
+
+	def set_InstanceId(self,InstanceId):
+		self.add_query_param('InstanceId',InstanceId)
 
 	def get_SourceIp(self):
 		return self.get_query_params().get('SourceIp')
 
 	def set_SourceIp(self,SourceIp):
 		self.add_query_param('SourceIp',SourceIp)
-
-	def get_CertificateId(self):
-		return self.get_query_params().get('CertificateId')
-
-	def set_CertificateId(self,CertificateId):
-		self.add_query_param('CertificateId',CertificateId)
-
-	def get_Name(self):
-		return self.get_query_params().get('Name')
-
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)
 
 	def get_Lang(self):
 		return self.get_query_params().get('Lang')

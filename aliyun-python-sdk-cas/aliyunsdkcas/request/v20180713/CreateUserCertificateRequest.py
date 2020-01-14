@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,10 +18,17 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class DescribeOrderDocumentRequest(RpcRequest):
+
+class CreateUserCertificateRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'cas', '2018-08-13', 'DescribeOrderDocument','cas_esign_fdd')
+		RpcRequest.__init__(self, 'cas', '2018-07-13', 'CreateUserCertificate','cas')
+
+	def get_Cert(self):
+		return self.get_query_params().get('Cert')
+
+	def set_Cert(self,Cert):
+		self.add_query_param('Cert',Cert)
 
 	def get_SourceIp(self):
 		return self.get_query_params().get('SourceIp')
@@ -29,20 +36,20 @@ class DescribeOrderDocumentRequest(RpcRequest):
 	def set_SourceIp(self,SourceIp):
 		self.add_query_param('SourceIp',SourceIp)
 
-	def get_OrderId(self):
-		return self.get_query_params().get('OrderId')
+	def get_Name(self):
+		return self.get_query_params().get('Name')
 
-	def set_OrderId(self,OrderId):
-		self.add_query_param('OrderId',OrderId)
-
-	def get_Type(self):
-		return self.get_query_params().get('Type')
-
-	def set_Type(self,Type):
-		self.add_query_param('Type',Type)
+	def set_Name(self,Name):
+		self.add_query_param('Name',Name)
 
 	def get_Lang(self):
 		return self.get_query_params().get('Lang')
 
 	def set_Lang(self,Lang):
 		self.add_query_param('Lang',Lang)
+
+	def get_Key(self):
+		return self.get_query_params().get('Key')
+
+	def set_Key(self,Key):
+		self.add_query_param('Key',Key)

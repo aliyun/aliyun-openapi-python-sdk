@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,34 +18,23 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class CreateCooperationOrderRequest(RpcRequest):
+
+class DeleteUserCertificateRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'cas', '2018-08-13', 'CreateCooperationOrder','cas_esign_fdd')
+		RpcRequest.__init__(self, 'cas', '2018-07-13', 'DeleteUserCertificate','cas')
 
-	def get_ProductCode(self):
-		return self.get_query_params().get('ProductCode')
+	def get_CertId(self):
+		return self.get_query_params().get('CertId')
 
-	def set_ProductCode(self,ProductCode):
-		self.add_query_param('ProductCode',ProductCode)
+	def set_CertId(self,CertId):
+		self.add_query_param('CertId',CertId)
 
 	def get_SourceIp(self):
 		return self.get_query_params().get('SourceIp')
 
 	def set_SourceIp(self,SourceIp):
 		self.add_query_param('SourceIp',SourceIp)
-
-	def get_Domain(self):
-		return self.get_query_params().get('Domain')
-
-	def set_Domain(self,Domain):
-		self.add_query_param('Domain',Domain)
-
-	def get__From(self):
-		return self.get_query_params().get('From')
-
-	def set__From(self,_From):
-		self.add_query_param('From',_From)
 
 	def get_Lang(self):
 		return self.get_query_params().get('Lang')

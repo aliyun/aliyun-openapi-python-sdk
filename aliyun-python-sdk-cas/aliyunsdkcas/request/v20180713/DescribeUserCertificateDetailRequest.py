@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,10 +18,17 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class DescribeSignatureTradeListRequest(RpcRequest):
+
+class DescribeUserCertificateDetailRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'cas', '2018-08-13', 'DescribeSignatureTradeList','cas_esign_fdd')
+		RpcRequest.__init__(self, 'cas', '2018-07-13', 'DescribeUserCertificateDetail','cas')
+
+	def get_CertId(self):
+		return self.get_query_params().get('CertId')
+
+	def set_CertId(self,CertId):
+		self.add_query_param('CertId',CertId)
 
 	def get_SourceIp(self):
 		return self.get_query_params().get('SourceIp')
@@ -29,32 +36,8 @@ class DescribeSignatureTradeListRequest(RpcRequest):
 	def set_SourceIp(self,SourceIp):
 		self.add_query_param('SourceIp',SourceIp)
 
-	def get_ShowSize(self):
-		return self.get_query_params().get('ShowSize')
-
-	def set_ShowSize(self,ShowSize):
-		self.add_query_param('ShowSize',ShowSize)
-
-	def get_SearchType(self):
-		return self.get_query_params().get('SearchType')
-
-	def set_SearchType(self,SearchType):
-		self.add_query_param('SearchType',SearchType)
-
-	def get_CurrentPage(self):
-		return self.get_query_params().get('CurrentPage')
-
-	def set_CurrentPage(self,CurrentPage):
-		self.add_query_param('CurrentPage',CurrentPage)
-
 	def get_Lang(self):
 		return self.get_query_params().get('Lang')
 
 	def set_Lang(self,Lang):
 		self.add_query_param('Lang',Lang)
-
-	def get_SearchValue(self):
-		return self.get_query_params().get('SearchValue')
-
-	def set_SearchValue(self,SearchValue):
-		self.add_query_param('SearchValue',SearchValue)
