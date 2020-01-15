@@ -31,10 +31,10 @@ class GetOrderBaseInfoRequest(RpcRequest):
 
 
 	def get_OrderId(self):
-		return self.get_body_params().get('OrderId')
+		return self.get_query_params().get('OrderId')
 
 	def set_OrderId(self,OrderId):
-		self.add_body_params('OrderId', OrderId)
+		self.add_query_param('OrderId',OrderId)
 
 	def get_Tid(self):
 		return self.get_query_params().get('Tid')
