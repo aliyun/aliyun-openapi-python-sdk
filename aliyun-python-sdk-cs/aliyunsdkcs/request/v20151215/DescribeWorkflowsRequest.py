@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,15 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RoaRequest
-class DescribeClusterCertsRequest(RoaRequest):
+
+class DescribeWorkflowsRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'CS', '2015-12-15', 'DescribeClusterCerts')
-		self.set_uri_pattern('/clusters/[ClusterId]/certs')
+		RoaRequest.__init__(self, 'CS', '2015-12-15', 'DescribeWorkflows','csk')
+		self.set_uri_pattern('/gs/workflows')
 		self.set_method('GET')
-
-	def get_ClusterId(self):
-		return self.get_path_params().get('ClusterId')
-
-	def set_ClusterId(self,ClusterId):
-		self.add_path_param('ClusterId',ClusterId)

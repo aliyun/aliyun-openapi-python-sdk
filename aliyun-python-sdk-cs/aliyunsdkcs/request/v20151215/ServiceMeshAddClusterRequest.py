@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,21 +18,16 @@
 # under the License.
 
 from aliyunsdkcore.request import RoaRequest
-class UpgradeClusterComponentsRequest(RoaRequest):
+
+class ServiceMeshAddClusterRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'CS', '2015-12-15', 'UpgradeClusterComponents')
-		self.set_uri_pattern('/clusters/[ClusterId]/components/[ComponentId]/upgrade')
-		self.set_method('POST')
+		RoaRequest.__init__(self, 'CS', '2015-12-15', 'ServiceMeshAddCluster','csk')
+		self.set_uri_pattern('/servicemesh/[ServiceMeshId]/add/clusters')
+		self.set_method('PUT')
 
-	def get_ComponentId(self):
-		return self.get_path_params().get('ComponentId')
+	def get_ServiceMeshId(self):
+		return self.get_path_params().get('ServiceMeshId')
 
-	def set_ComponentId(self,ComponentId):
-		self.add_path_param('ComponentId',ComponentId)
-
-	def get_ClusterId(self):
-		return self.get_path_params().get('ClusterId')
-
-	def set_ClusterId(self,ClusterId):
-		self.add_path_param('ClusterId',ClusterId)
+	def set_ServiceMeshId(self,ServiceMeshId):
+		self.add_path_param('ServiceMeshId',ServiceMeshId)

@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,9 +18,16 @@
 # under the License.
 
 from aliyunsdkcore.request import RoaRequest
-class DescribeApiVersionRequest(RoaRequest):
+
+class RemoveWorkflowRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'CS', '2015-12-15', 'DescribeApiVersion')
-		self.set_uri_pattern('/version')
-		self.set_method('GET')
+		RoaRequest.__init__(self, 'CS', '2015-12-15', 'RemoveWorkflow','csk')
+		self.set_uri_pattern('/gs/workflow/[workflowName]')
+		self.set_method('DELETE')
+
+	def get_workflowName(self):
+		return self.get_path_params().get('workflowName')
+
+	def set_workflowName(self,workflowName):
+		self.add_path_param('workflowName',workflowName)

@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,9 +18,10 @@
 # under the License.
 
 from aliyunsdkcore.request import RoaRequest
-class CheckAliyunCSServiceRoleRequest(RoaRequest):
+
+class CreateServiceMeshRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'CS', '2015-12-15', 'CheckAliyunCSServiceRole')
-		self.set_uri_pattern('/aliyuncsrole/status')
-		self.set_method('GET')
+		RoaRequest.__init__(self, 'CS', '2015-12-15', 'CreateServiceMesh','csk')
+		self.set_uri_pattern('/servicemesh')
+		self.set_method('POST')

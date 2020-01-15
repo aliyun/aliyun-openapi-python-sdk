@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,10 +18,11 @@
 # under the License.
 
 from aliyunsdkcore.request import RoaRequest
+
 class DescribeClusterUserKubeconfigRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'CS', '2015-12-15', 'DescribeClusterUserKubeconfig')
+		RoaRequest.__init__(self, 'CS', '2015-12-15', 'DescribeClusterUserKubeconfig','csk')
 		self.set_uri_pattern('/k8s/[ClusterId]/user_config')
 		self.set_method('GET')
 

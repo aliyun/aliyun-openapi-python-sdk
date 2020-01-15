@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,9 +18,16 @@
 # under the License.
 
 from aliyunsdkcore.request import RoaRequest
-class PreCheckForCreateClusterRequest(RoaRequest):
+
+class UpdateServiceMeshRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'CS', '2015-12-15', 'PreCheckForCreateCluster')
-		self.set_uri_pattern('/api/v1/ess/precheck')
-		self.set_method('POST')
+		RoaRequest.__init__(self, 'CS', '2015-12-15', 'UpdateServiceMesh','csk')
+		self.set_uri_pattern('/servicemesh/[ServiceMeshId]')
+		self.set_method('PUT')
+
+	def get_ServiceMeshId(self):
+		return self.get_path_params().get('ServiceMeshId')
+
+	def set_ServiceMeshId(self,ServiceMeshId):
+		self.add_path_param('ServiceMeshId',ServiceMeshId)

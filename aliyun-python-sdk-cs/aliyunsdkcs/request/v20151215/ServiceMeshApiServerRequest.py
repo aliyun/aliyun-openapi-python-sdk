@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,15 +18,16 @@
 # under the License.
 
 from aliyunsdkcore.request import RoaRequest
-class GetClusterCertInfoRequest(RoaRequest):
+
+class ServiceMeshApiServerRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'CS', '2015-12-15', 'GetClusterCertInfo')
-		self.set_uri_pattern('/clusters/[ClusterId]/hosts/certs')
-		self.set_method('GET')
+		RoaRequest.__init__(self, 'CS', '2015-12-15', 'ServiceMeshApiServer','csk')
+		self.set_uri_pattern('/servicemesh/[ServiceMeshId]/api_proxy')
+		self.set_method('POST')
 
-	def get_ClusterId(self):
-		return self.get_path_params().get('ClusterId')
+	def get_ServiceMeshId(self):
+		return self.get_path_params().get('ServiceMeshId')
 
-	def set_ClusterId(self,ClusterId):
-		self.add_path_param('ClusterId',ClusterId)
+	def set_ServiceMeshId(self,ServiceMeshId):
+		self.add_path_param('ServiceMeshId',ServiceMeshId)
