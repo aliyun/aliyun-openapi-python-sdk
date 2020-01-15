@@ -47,8 +47,6 @@ class CreateDynamicTagGroupRequest(RpcRequest):
 
 	def set_MatchExpresss(self,MatchExpresss):
 		for i in range(len(MatchExpresss)):	
-			if MatchExpresss[i].get('TagName') is not None:
-				self.add_query_param('MatchExpress.' + str(i + 1) + '.TagName' , MatchExpresss[i].get('TagName'))
 			if MatchExpresss[i].get('TagValue') is not None:
 				self.add_query_param('MatchExpress.' + str(i + 1) + '.TagValue' , MatchExpresss[i].get('TagValue'))
 			if MatchExpresss[i].get('TagValueMatchFunction') is not None:

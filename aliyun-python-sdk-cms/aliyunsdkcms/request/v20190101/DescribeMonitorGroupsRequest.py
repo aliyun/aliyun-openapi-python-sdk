@@ -36,6 +36,12 @@ class DescribeMonitorGroupsRequest(RpcRequest):
 	def set_IncludeTemplateHistory(self,IncludeTemplateHistory):
 		self.add_query_param('IncludeTemplateHistory',IncludeTemplateHistory)
 
+	def get_DynamicTagRuleId(self):
+		return self.get_query_params().get('DynamicTagRuleId')
+
+	def set_DynamicTagRuleId(self,DynamicTagRuleId):
+		self.add_query_param('DynamicTagRuleId',DynamicTagRuleId)
+
 	def get_Type(self):
 		return self.get_query_params().get('Type')
 
@@ -88,9 +94,3 @@ class DescribeMonitorGroupsRequest(RpcRequest):
 
 	def set_InstanceId(self,InstanceId):
 		self.add_query_param('InstanceId',InstanceId)
-
-	def get_DynamicTagGroupId(self):
-		return self.get_query_params().get('DynamicTagGroupId')
-
-	def set_DynamicTagGroupId(self,DynamicTagGroupId):
-		self.add_query_param('DynamicTagGroupId',DynamicTagGroupId)
