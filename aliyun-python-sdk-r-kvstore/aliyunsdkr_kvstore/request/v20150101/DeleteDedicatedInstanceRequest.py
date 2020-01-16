@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkr_kvstore.endpoint import endpoint_data
 
-class GrantAccountPrivilegeRequest(RpcRequest):
+class DeleteDedicatedInstanceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'R-kvstore', '2015-01-01', 'GrantAccountPrivilege','R-kvstore')
+		RpcRequest.__init__(self, 'R-kvstore', '2015-01-01', 'DeleteDedicatedInstance','R-kvstore')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -35,18 +35,6 @@ class GrantAccountPrivilegeRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_AccountPrivilege(self):
-		return self.get_query_params().get('AccountPrivilege')
-
-	def set_AccountPrivilege(self,AccountPrivilege):
-		self.add_query_param('AccountPrivilege',AccountPrivilege)
-
-	def get_AccountName(self):
-		return self.get_query_params().get('AccountName')
-
-	def set_AccountName(self,AccountName):
-		self.add_query_param('AccountName',AccountName)
 
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
@@ -66,6 +54,12 @@ class GrantAccountPrivilegeRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
+	def get_ClusterId(self):
+		return self.get_query_params().get('ClusterId')
+
+	def set_ClusterId(self,ClusterId):
+		self.add_query_param('ClusterId',ClusterId)
+
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
@@ -77,3 +71,9 @@ class GrantAccountPrivilegeRequest(RpcRequest):
 
 	def set_InstanceId(self,InstanceId):
 		self.add_query_param('InstanceId',InstanceId)
+
+	def get_ZoneId(self):
+		return self.get_query_params().get('ZoneId')
+
+	def set_ZoneId(self,ZoneId):
+		self.add_query_param('ZoneId',ZoneId)

@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkr_kvstore.endpoint import endpoint_data
 
-class GrantAccountPrivilegeRequest(RpcRequest):
+class CreateDedicatedUserClusterRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'R-kvstore', '2015-01-01', 'GrantAccountPrivilege','R-kvstore')
+		RpcRequest.__init__(self, 'R-kvstore', '2015-01-01', 'CreateDedicatedUserCluster','R-kvstore')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -36,23 +36,23 @@ class GrantAccountPrivilegeRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_AccountPrivilege(self):
-		return self.get_query_params().get('AccountPrivilege')
+	def get_ClusterName(self):
+		return self.get_query_params().get('ClusterName')
 
-	def set_AccountPrivilege(self,AccountPrivilege):
-		self.add_query_param('AccountPrivilege',AccountPrivilege)
-
-	def get_AccountName(self):
-		return self.get_query_params().get('AccountName')
-
-	def set_AccountName(self,AccountName):
-		self.add_query_param('AccountName',AccountName)
+	def set_ClusterName(self,ClusterName):
+		self.add_query_param('ClusterName',ClusterName)
 
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
 
 	def set_SecurityToken(self,SecurityToken):
 		self.add_query_param('SecurityToken',SecurityToken)
+
+	def get_DiskOverAllocationRatio(self):
+		return self.get_query_params().get('DiskOverAllocationRatio')
+
+	def set_DiskOverAllocationRatio(self,DiskOverAllocationRatio):
+		self.add_query_param('DiskOverAllocationRatio',DiskOverAllocationRatio)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -66,14 +66,44 @@ class GrantAccountPrivilegeRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
+	def get_ClusterId(self):
+		return self.get_query_params().get('ClusterId')
+
+	def set_ClusterId(self,ClusterId):
+		self.add_query_param('ClusterId',ClusterId)
+
+	def get_MemoryOverAllocationRatio(self):
+		return self.get_query_params().get('MemoryOverAllocationRatio')
+
+	def set_MemoryOverAllocationRatio(self,MemoryOverAllocationRatio):
+		self.add_query_param('MemoryOverAllocationRatio',MemoryOverAllocationRatio)
+
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_InstanceId(self):
-		return self.get_query_params().get('InstanceId')
+	def get_HostReplacePolicy(self):
+		return self.get_query_params().get('HostReplacePolicy')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
+	def set_HostReplacePolicy(self,HostReplacePolicy):
+		self.add_query_param('HostReplacePolicy',HostReplacePolicy)
+
+	def get_AllocationPolicy(self):
+		return self.get_query_params().get('AllocationPolicy')
+
+	def set_AllocationPolicy(self,AllocationPolicy):
+		self.add_query_param('AllocationPolicy',AllocationPolicy)
+
+	def get_ZoneId(self):
+		return self.get_query_params().get('ZoneId')
+
+	def set_ZoneId(self,ZoneId):
+		self.add_query_param('ZoneId',ZoneId)
+
+	def get_CpuOverAllocationRatio(self):
+		return self.get_query_params().get('CpuOverAllocationRatio')
+
+	def set_CpuOverAllocationRatio(self,CpuOverAllocationRatio):
+		self.add_query_param('CpuOverAllocationRatio',CpuOverAllocationRatio)
