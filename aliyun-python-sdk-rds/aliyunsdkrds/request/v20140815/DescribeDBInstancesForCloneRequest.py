@@ -84,6 +84,12 @@ class DescribeDBInstancesForCloneRequest(RpcRequest):
 	def set_Engine(self,Engine):
 		self.add_query_param('Engine',Engine)
 
+	def get_CurrentInstanceId(self):
+		return self.get_query_params().get('CurrentInstanceId')
+
+	def set_CurrentInstanceId(self,CurrentInstanceId):
+		self.add_query_param('CurrentInstanceId',CurrentInstanceId)
+
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
 
