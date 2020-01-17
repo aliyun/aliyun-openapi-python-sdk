@@ -55,6 +55,12 @@ class CreateAppRequest(RpcRequest):
 	def set_OperatingSystem(self,OperatingSystem):
 		self.add_body_params('OperatingSystem', OperatingSystem)
 
+	def get_Namespace(self):
+		return self.get_body_params().get('Namespace')
+
+	def set_Namespace(self,Namespace):
+		self.add_body_params('Namespace', Namespace)
+
 	def get_Description(self):
 		return self.get_body_params().get('Description')
 

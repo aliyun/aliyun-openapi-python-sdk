@@ -31,6 +31,14 @@ class UpdateDeployConfigRequest(RpcRequest):
 	def set_CodePath(self,CodePath):
 		self.add_query_param('CodePath',CodePath)
 
+	def get_ConfigMapLists(self):
+		return self.get_query_params().get('ConfigMapLists')
+
+	def set_ConfigMapLists(self,ConfigMapLists):
+		for i in range(len(ConfigMapLists)):	
+			if ConfigMapLists[i] is not None:
+				self.add_query_param('ConfigMapList.' + str(i + 1) , ConfigMapLists[i]);
+
 	def get_ConfigMap(self):
 		return self.get_query_params().get('ConfigMap')
 
