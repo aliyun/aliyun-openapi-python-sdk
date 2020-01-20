@@ -30,23 +30,44 @@ class InvokeDataAPIServiceRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_ApiSrn(self):
-		return self.get_query_params().get('ApiSrn')
-
-	def set_ApiSrn(self,ApiSrn):
-		self.add_query_param('ApiSrn',ApiSrn)
-
 	def get_Params(self):
 		return self.get_body_params().get('Params')
 
 	def set_Params(self,Params):
 		for i in range(len(Params)):	
-			if Params[i].get('ListParamType') is not None:
-				self.add_body_params('Param.' + str(i + 1) + '.ListParamType' , Params[i].get('ListParamType'))
+			if Params[i].get('ParamType') is not None:
+				self.add_body_params('Param.' + str(i + 1) + '.ParamType' , Params[i].get('ParamType'))
 			for j in range(len(Params[i].get('ListParamValues'))):
 				if Params[i].get('ListParamValues')[j] is not None:
 					self.add_body_params('Param.' + str(i + 1) + '.ListParamValue.'+str(j + 1), Params[i].get('ListParamValues')[j])
-			if Params[i].get('ParamValue') is not None:
-				self.add_body_params('Param.' + str(i + 1) + '.ParamValue' , Params[i].get('ParamValue'))
+			if Params[i].get('ListParamType') is not None:
+				self.add_body_params('Param.' + str(i + 1) + '.ListParamType' , Params[i].get('ListParamType'))
 			if Params[i].get('ParamName') is not None:
 				self.add_body_params('Param.' + str(i + 1) + '.ParamName' , Params[i].get('ParamName'))
+			if Params[i].get('ParamValue') is not None:
+				self.add_body_params('Param.' + str(i + 1) + '.ParamValue' , Params[i].get('ParamValue'))
+
+
+	def get_IotInstanceId(self):
+		return self.get_body_params().get('IotInstanceId')
+
+	def set_IotInstanceId(self,IotInstanceId):
+		self.add_body_params('IotInstanceId', IotInstanceId)
+
+	def get_ApiSrn(self):
+		return self.get_body_params().get('ApiSrn')
+
+	def set_ApiSrn(self,ApiSrn):
+		self.add_body_params('ApiSrn', ApiSrn)
+
+	def get_ApiProduct(self):
+		return self.get_body_params().get('ApiProduct')
+
+	def set_ApiProduct(self,ApiProduct):
+		self.add_body_params('ApiProduct', ApiProduct)
+
+	def get_ApiRevision(self):
+		return self.get_body_params().get('ApiRevision')
+
+	def set_ApiRevision(self,ApiRevision):
+		self.add_body_params('ApiRevision', ApiRevision)

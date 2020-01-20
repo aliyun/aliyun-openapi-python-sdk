@@ -36,12 +36,6 @@ class CancelOTATaskByJobRequest(RpcRequest):
 	def set_CancelScheduledTask(self,CancelScheduledTask):
 		self.add_query_param('CancelScheduledTask',CancelScheduledTask)
 
-	def get_CancelInProgressTask(self):
-		return self.get_query_params().get('CancelInProgressTask')
-
-	def set_CancelInProgressTask(self,CancelInProgressTask):
-		self.add_query_param('CancelInProgressTask',CancelInProgressTask)
-
 	def get_JobId(self):
 		return self.get_query_params().get('JobId')
 
@@ -59,3 +53,27 @@ class CancelOTATaskByJobRequest(RpcRequest):
 
 	def set_CancelQueuedTask(self,CancelQueuedTask):
 		self.add_query_param('CancelQueuedTask',CancelQueuedTask)
+
+	def get_CancelInProgressTask(self):
+		return self.get_query_params().get('CancelInProgressTask')
+
+	def set_CancelInProgressTask(self,CancelInProgressTask):
+		self.add_query_param('CancelInProgressTask',CancelInProgressTask)
+
+	def get_CancelNotifiedTask(self):
+		return self.get_query_params().get('CancelNotifiedTask')
+
+	def set_CancelNotifiedTask(self,CancelNotifiedTask):
+		self.add_query_param('CancelNotifiedTask',CancelNotifiedTask)
+
+	def get_ApiProduct(self):
+		return self.get_body_params().get('ApiProduct')
+
+	def set_ApiProduct(self,ApiProduct):
+		self.add_body_params('ApiProduct', ApiProduct)
+
+	def get_ApiRevision(self):
+		return self.get_body_params().get('ApiRevision')
+
+	def set_ApiRevision(self,ApiRevision):
+		self.add_body_params('ApiRevision', ApiRevision)

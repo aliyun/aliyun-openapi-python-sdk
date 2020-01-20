@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkiot.endpoint import endpoint_data
 
-class GetProductMetaListByNameRequest(RpcRequest):
+class QueryThingModelRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'GetProductMetaListByName','iot')
+		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'QueryThingModel','iot')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -31,10 +31,10 @@ class GetProductMetaListByNameRequest(RpcRequest):
 
 
 	def get_ProductKey(self):
-		return self.get_body_params().get('ProductKey')
+		return self.get_query_params().get('ProductKey')
 
 	def set_ProductKey(self,ProductKey):
-		self.add_body_params('ProductKey', ProductKey)
+		self.add_query_param('ProductKey',ProductKey)
 
 	def get_ResourceGroupId(self):
 		return self.get_query_params().get('ResourceGroupId')
@@ -48,14 +48,8 @@ class GetProductMetaListByNameRequest(RpcRequest):
 	def set_IotInstanceId(self,IotInstanceId):
 		self.add_query_param('IotInstanceId',IotInstanceId)
 
-	def get_DeviceName(self):
-		return self.get_body_params().get('DeviceName')
+	def get_ModelVersion(self):
+		return self.get_query_params().get('ModelVersion')
 
-	def set_DeviceName(self,DeviceName):
-		self.add_body_params('DeviceName', DeviceName)
-
-	def get_Page(self):
-		return self.get_body_params().get('Page')
-
-	def set_Page(self,Page):
-		self.add_body_params('Page', Page)
+	def set_ModelVersion(self,ModelVersion):
+		self.add_query_param('ModelVersion',ModelVersion)
