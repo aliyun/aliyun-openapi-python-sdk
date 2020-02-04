@@ -30,6 +30,12 @@ class DescribeDomainsRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_StartDate(self):
+		return self.get_query_params().get('StartDate')
+
+	def set_StartDate(self,StartDate):
+		self.add_query_param('StartDate',StartDate)
+
 	def get_PageNumber(self):
 		return self.get_query_params().get('PageNumber')
 
@@ -83,6 +89,12 @@ class DescribeDomainsRequest(RpcRequest):
 
 	def set_OrderBy(self,OrderBy):
 		self.add_query_param('OrderBy',OrderBy)
+
+	def get_EndDate(self):
+		return self.get_query_params().get('EndDate')
+
+	def set_EndDate(self,EndDate):
+		self.add_query_param('EndDate',EndDate)
 
 	def get_UserClientIp(self):
 		return self.get_query_params().get('UserClientIp')
