@@ -1,3 +1,6 @@
+2020-02-06 Version 2.13.14
+1, Add some regions to endpoints.json
+
 2019-12-13 Version 2.13.13
 1, Improve helper.get_uuid method
 
