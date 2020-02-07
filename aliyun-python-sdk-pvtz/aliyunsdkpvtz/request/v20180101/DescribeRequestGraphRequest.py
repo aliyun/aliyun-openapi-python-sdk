@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,10 +18,23 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+
 class DescribeRequestGraphRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'pvtz', '2018-01-01', 'DescribeRequestGraph','pvtz')
+
+	def get_StartTimestamp(self):
+		return self.get_query_params().get('StartTimestamp')
+
+	def set_StartTimestamp(self,StartTimestamp):
+		self.add_query_param('StartTimestamp',StartTimestamp)
+
+	def get_EndTimestamp(self):
+		return self.get_query_params().get('EndTimestamp')
+
+	def set_EndTimestamp(self,EndTimestamp):
+		self.add_query_param('EndTimestamp',EndTimestamp)
 
 	def get_VpcId(self):
 		return self.get_query_params().get('VpcId')
@@ -46,15 +59,3 @@ class DescribeRequestGraphRequest(RpcRequest):
 
 	def set_Lang(self,Lang):
 		self.add_query_param('Lang',Lang)
-
-	def get_StartTimestamp(self):
-		return self.get_query_params().get('StartTimestamp')
-
-	def set_StartTimestamp(self,StartTimestamp):
-		self.add_query_param('StartTimestamp',StartTimestamp)
-
-	def get_EndTimestamp(self):
-		return self.get_query_params().get('EndTimestamp')
-
-	def set_EndTimestamp(self,EndTimestamp):
-		self.add_query_param('EndTimestamp',EndTimestamp)

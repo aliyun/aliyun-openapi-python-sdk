@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,6 +18,7 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+
 class DescribeZonesRequest(RpcRequest):
 
 	def __init__(self):
@@ -29,23 +30,23 @@ class DescribeZonesRequest(RpcRequest):
 	def set_QueryVpcId(self,QueryVpcId):
 		self.add_query_param('QueryVpcId',QueryVpcId)
 
+	def get_PageNumber(self):
+		return self.get_query_params().get('PageNumber')
+
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)
+
+	def get_ResourceGroupId(self):
+		return self.get_query_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self,ResourceGroupId):
+		self.add_query_param('ResourceGroupId',ResourceGroupId)
+
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
 
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
-
-	def get_UserClientIp(self):
-		return self.get_query_params().get('UserClientIp')
-
-	def set_UserClientIp(self,UserClientIp):
-		self.add_query_param('UserClientIp',UserClientIp)
-
-	def get_SearchMode(self):
-		return self.get_query_params().get('SearchMode')
-
-	def set_SearchMode(self,SearchMode):
-		self.add_query_param('SearchMode',SearchMode)
 
 	def get_Lang(self):
 		return self.get_query_params().get('Lang')
@@ -59,11 +60,29 @@ class DescribeZonesRequest(RpcRequest):
 	def set_Keyword(self,Keyword):
 		self.add_query_param('Keyword',Keyword)
 
-	def get_PageNumber(self):
-		return self.get_query_params().get('PageNumber')
+	def get_Direction(self):
+		return self.get_query_params().get('Direction')
 
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
+	def set_Direction(self,Direction):
+		self.add_query_param('Direction',Direction)
+
+	def get_OrderBy(self):
+		return self.get_query_params().get('OrderBy')
+
+	def set_OrderBy(self,OrderBy):
+		self.add_query_param('OrderBy',OrderBy)
+
+	def get_UserClientIp(self):
+		return self.get_query_params().get('UserClientIp')
+
+	def set_UserClientIp(self,UserClientIp):
+		self.add_query_param('UserClientIp',UserClientIp)
+
+	def get_SearchMode(self):
+		return self.get_query_params().get('SearchMode')
+
+	def set_SearchMode(self,SearchMode):
+		self.add_query_param('SearchMode',SearchMode)
 
 	def get_QueryRegionId(self):
 		return self.get_query_params().get('QueryRegionId')

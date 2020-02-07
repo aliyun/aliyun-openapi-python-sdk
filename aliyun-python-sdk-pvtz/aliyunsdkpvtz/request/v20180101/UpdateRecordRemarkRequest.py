@@ -19,28 +19,28 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class DescribeRegionsRequest(RpcRequest):
+class UpdateRecordRemarkRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'pvtz', '2018-01-01', 'DescribeRegions','pvtz')
+		RpcRequest.__init__(self, 'pvtz', '2018-01-01', 'UpdateRecordRemark','pvtz')
 
-	def get_AuthorizedUserId(self):
-		return self.get_query_params().get('AuthorizedUserId')
+	def get_Remark(self):
+		return self.get_query_params().get('Remark')
 
-	def set_AuthorizedUserId(self,AuthorizedUserId):
-		self.add_query_param('AuthorizedUserId',AuthorizedUserId)
+	def set_Remark(self,Remark):
+		self.add_query_param('Remark',Remark)
+
+	def get_RecordId(self):
+		return self.get_query_params().get('RecordId')
+
+	def set_RecordId(self,RecordId):
+		self.add_query_param('RecordId',RecordId)
 
 	def get_UserClientIp(self):
 		return self.get_query_params().get('UserClientIp')
 
 	def set_UserClientIp(self,UserClientIp):
 		self.add_query_param('UserClientIp',UserClientIp)
-
-	def get_AcceptLanguage(self):
-		return self.get_query_params().get('AcceptLanguage')
-
-	def set_AcceptLanguage(self,AcceptLanguage):
-		self.add_query_param('AcceptLanguage',AcceptLanguage)
 
 	def get_Lang(self):
 		return self.get_query_params().get('Lang')

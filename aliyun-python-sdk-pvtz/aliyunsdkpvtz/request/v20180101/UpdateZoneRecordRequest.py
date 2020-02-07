@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,6 +18,7 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+
 class UpdateZoneRecordRequest(RpcRequest):
 
 	def __init__(self):
@@ -28,24 +29,6 @@ class UpdateZoneRecordRequest(RpcRequest):
 
 	def set_Rr(self,Rr):
 		self.add_query_param('Rr',Rr)
-
-	def get_RecordId(self):
-		return self.get_query_params().get('RecordId')
-
-	def set_RecordId(self,RecordId):
-		self.add_query_param('RecordId',RecordId)
-
-	def get_UserClientIp(self):
-		return self.get_query_params().get('UserClientIp')
-
-	def set_UserClientIp(self,UserClientIp):
-		self.add_query_param('UserClientIp',UserClientIp)
-
-	def get_Lang(self):
-		return self.get_query_params().get('Lang')
-
-	def set_Lang(self,Lang):
-		self.add_query_param('Lang',Lang)
 
 	def get_Type(self):
 		return self.get_query_params().get('Type')
@@ -64,6 +47,24 @@ class UpdateZoneRecordRequest(RpcRequest):
 
 	def set_Ttl(self,Ttl):
 		self.add_query_param('Ttl',Ttl)
+
+	def get_RecordId(self):
+		return self.get_query_params().get('RecordId')
+
+	def set_RecordId(self,RecordId):
+		self.add_query_param('RecordId',RecordId)
+
+	def get_UserClientIp(self):
+		return self.get_query_params().get('UserClientIp')
+
+	def set_UserClientIp(self,UserClientIp):
+		self.add_query_param('UserClientIp',UserClientIp)
+
+	def get_Lang(self):
+		return self.get_query_params().get('Lang')
+
+	def set_Lang(self,Lang):
+		self.add_query_param('Lang',Lang)
 
 	def get_Value(self):
 		return self.get_query_params().get('Value')
