@@ -18,11 +18,17 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkpvtz.endpoint import endpoint_data
 
 class DescribeZonesRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'pvtz', '2018-01-01', 'DescribeZones','pvtz')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_QueryVpcId(self):
 		return self.get_query_params().get('QueryVpcId')
