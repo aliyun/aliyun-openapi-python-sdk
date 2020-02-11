@@ -96,6 +96,14 @@ class ModifyInstanceAttributeRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
+	def get_SecurityGroupIdss(self):
+		return self.get_query_params().get('SecurityGroupIdss')
+
+	def set_SecurityGroupIdss(self,SecurityGroupIdss):
+		for i in range(len(SecurityGroupIdss)):	
+			if SecurityGroupIdss[i] is not None:
+				self.add_query_param('SecurityGroupIds.' + str(i + 1) , SecurityGroupIdss[i]);
+
 	def get_InstanceId(self):
 		return self.get_query_params().get('InstanceId')
 

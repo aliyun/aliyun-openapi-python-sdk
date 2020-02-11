@@ -123,3 +123,9 @@ class DescribeReservedInstancesRequest(RpcRequest):
 		for i in range(len(Statuss)):	
 			if Statuss[i] is not None:
 				self.add_query_param('Status.' + str(i + 1) , Statuss[i]);
+
+	def get_AllocationType(self):
+		return self.get_query_params().get('AllocationType')
+
+	def set_AllocationType(self,AllocationType):
+		self.add_query_param('AllocationType',AllocationType)

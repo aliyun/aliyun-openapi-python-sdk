@@ -94,3 +94,9 @@ class CreateSnapshotRequest(RpcRequest):
 
 	def set_RetentionDays(self,RetentionDays):
 		self.add_query_param('RetentionDays',RetentionDays)
+
+	def get_Category(self):
+		return self.get_query_params().get('Category')
+
+	def set_Category(self,Category):
+		self.add_query_param('Category',Category)
