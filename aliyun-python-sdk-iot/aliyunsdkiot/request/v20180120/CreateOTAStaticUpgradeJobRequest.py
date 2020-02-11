@@ -92,6 +92,18 @@ class CreateOTAStaticUpgradeJobRequest(RpcRequest):
 	def set_ScheduleTime(self,ScheduleTime):
 		self.add_query_param('ScheduleTime',ScheduleTime)
 
+	def get_ApiProduct(self):
+		return self.get_body_params().get('ApiProduct')
+
+	def set_ApiProduct(self,ApiProduct):
+		self.add_body_params('ApiProduct', ApiProduct)
+
+	def get_ApiRevision(self):
+		return self.get_body_params().get('ApiRevision')
+
+	def set_ApiRevision(self,ApiRevision):
+		self.add_body_params('ApiRevision', ApiRevision)
+
 	def get_MaximumPerMinute(self):
 		return self.get_query_params().get('MaximumPerMinute')
 

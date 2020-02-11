@@ -20,45 +20,39 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkiot.endpoint import endpoint_data
 
-class ListOTAJobByFirmwareRequest(RpcRequest):
+class UpdateThingModelRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'ListOTAJobByFirmware','iot')
+		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'UpdateThingModel','iot')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_IotInstanceId(self):
-		return self.get_query_params().get('IotInstanceId')
+	def get_Identifier(self):
+		return self.get_query_params().get('Identifier')
 
-	def set_IotInstanceId(self,IotInstanceId):
-		self.add_query_param('IotInstanceId',IotInstanceId)
+	def set_Identifier(self,Identifier):
+		self.add_query_param('Identifier',Identifier)
 
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
+	def get_ProductKey(self):
+		return self.get_query_params().get('ProductKey')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_FirmwareId(self):
-		return self.get_query_params().get('FirmwareId')
-
-	def set_FirmwareId(self,FirmwareId):
-		self.add_query_param('FirmwareId',FirmwareId)
-
-	def get_CurrentPage(self):
-		return self.get_query_params().get('CurrentPage')
-
-	def set_CurrentPage(self,CurrentPage):
-		self.add_query_param('CurrentPage',CurrentPage)
+	def set_ProductKey(self,ProductKey):
+		self.add_query_param('ProductKey',ProductKey)
 
 	def get_ApiProduct(self):
 		return self.get_body_params().get('ApiProduct')
 
 	def set_ApiProduct(self,ApiProduct):
 		self.add_body_params('ApiProduct', ApiProduct)
+
+	def get_ThingModelJson(self):
+		return self.get_query_params().get('ThingModelJson')
+
+	def set_ThingModelJson(self,ThingModelJson):
+		self.add_query_param('ThingModelJson',ThingModelJson)
 
 	def get_ApiRevision(self):
 		return self.get_body_params().get('ApiRevision')
