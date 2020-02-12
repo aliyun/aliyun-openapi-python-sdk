@@ -29,7 +29,7 @@ from aliyunsdkcore.compat import ensure_bytes, ensure_string
 
 TIME_ZONE = "GMT"
 FORMAT_ISO_8601 = "%Y-%m-%dT%H:%M:%SZ"
-FORMAT_RFC_2616 = "%a, %d %b %Y %X GMT"
+FORMAT_RFC_2616 = "%a, %d %b %Y %H:%M:%S GMT"
 
 
 def get_uuid():
