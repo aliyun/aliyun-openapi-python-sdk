@@ -18,11 +18,17 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkdbs.endpoint import endpoint_data
 
 class DescribeFullBackupListRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Dbs', '2019-03-06', 'DescribeFullBackupList','cbs')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_ClientToken(self):
 		return self.get_query_params().get('ClientToken')
@@ -47,6 +53,12 @@ class DescribeFullBackupListRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_ShowStorageType(self):
+		return self.get_query_params().get('ShowStorageType')
+
+	def set_ShowStorageType(self,ShowStorageType):
+		self.add_query_param('ShowStorageType',ShowStorageType)
 
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
