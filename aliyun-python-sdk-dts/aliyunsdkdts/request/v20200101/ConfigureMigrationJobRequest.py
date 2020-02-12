@@ -150,6 +150,12 @@ class ConfigureMigrationJobRequest(RpcRequest):
 	def set_DestinationEndpointUserName(self,DestinationEndpointUserName):
 		self.add_query_param('DestinationEndpoint.UserName',DestinationEndpointUserName)
 
+	def get_DestinationEndpointOracleSID(self):
+		return self.get_query_params().get('DestinationEndpoint.OracleSID')
+
+	def set_DestinationEndpointOracleSID(self,DestinationEndpointOracleSID):
+		self.add_query_param('DestinationEndpoint.OracleSID',DestinationEndpointOracleSID)
+
 	def get_DestinationEndpointPort(self):
 		return self.get_query_params().get('DestinationEndpoint.Port')
 

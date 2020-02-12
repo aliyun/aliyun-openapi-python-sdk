@@ -24,6 +24,30 @@ class SwitchSynchronizationEndpointRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Dts', '2020-01-01', 'SwitchSynchronizationEndpoint','dts')
 
+	def get_SynchronizationJobId(self):
+		return self.get_query_params().get('SynchronizationJobId')
+
+	def set_SynchronizationJobId(self,SynchronizationJobId):
+		self.add_query_param('SynchronizationJobId',SynchronizationJobId)
+
+	def get_EndpointType(self):
+		return self.get_query_params().get('Endpoint.Type')
+
+	def set_EndpointType(self,EndpointType):
+		self.add_query_param('Endpoint.Type',EndpointType)
+
+	def get_AccountId(self):
+		return self.get_query_params().get('AccountId')
+
+	def set_AccountId(self,AccountId):
+		self.add_query_param('AccountId',AccountId)
+
+	def get_EndpointPort(self):
+		return self.get_query_params().get('Endpoint.Port')
+
+	def set_EndpointPort(self,EndpointPort):
+		self.add_query_param('Endpoint.Port',EndpointPort)
+
 	def get_EndpointInstanceType(self):
 		return self.get_query_params().get('Endpoint.InstanceType')
 
@@ -53,30 +77,6 @@ class SwitchSynchronizationEndpointRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
-
-	def get_SynchronizationJobId(self):
-		return self.get_query_params().get('SynchronizationJobId')
-
-	def set_SynchronizationJobId(self,SynchronizationJobId):
-		self.add_query_param('SynchronizationJobId',SynchronizationJobId)
-
-	def get_EndpointType(self):
-		return self.get_query_params().get('Endpoint.Type')
-
-	def set_EndpointType(self,EndpointType):
-		self.add_query_param('Endpoint.Type',EndpointType)
-
-	def get_AccountId(self):
-		return self.get_query_params().get('AccountId')
-
-	def set_AccountId(self,AccountId):
-		self.add_query_param('AccountId',AccountId)
-
-	def get_EndpointPort(self):
-		return self.get_query_params().get('Endpoint.Port')
-
-	def set_EndpointPort(self,EndpointPort):
-		self.add_query_param('Endpoint.Port',EndpointPort)
 
 	def get_EndpointInstanceId(self):
 		return self.get_query_params().get('Endpoint.InstanceId')

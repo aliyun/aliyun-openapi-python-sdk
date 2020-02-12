@@ -24,47 +24,17 @@ class CreateSynchronizationJobRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Dts', '2020-01-01', 'CreateSynchronizationJob','dts')
 
-	def get_Period(self):
-		return self.get_query_params().get('Period')
-
-	def set_Period(self,Period):
-		self.add_query_param('Period',Period)
-
-	def get_DestRegion(self):
-		return self.get_query_params().get('DestRegion')
-
-	def set_DestRegion(self,DestRegion):
-		self.add_query_param('DestRegion',DestRegion)
-
 	def get_ClientToken(self):
 		return self.get_query_params().get('ClientToken')
 
 	def set_ClientToken(self,ClientToken):
 		self.add_query_param('ClientToken',ClientToken)
 
-	def get_Topology(self):
-		return self.get_query_params().get('Topology')
-
-	def set_Topology(self,Topology):
-		self.add_query_param('Topology',Topology)
-
 	def get_networkType(self):
 		return self.get_query_params().get('networkType')
 
 	def set_networkType(self,networkType):
 		self.add_query_param('networkType',networkType)
-
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_UsedTime(self):
-		return self.get_query_params().get('UsedTime')
-
-	def set_UsedTime(self,UsedTime):
-		self.add_query_param('UsedTime',UsedTime)
 
 	def get_SourceEndpointInstanceType(self):
 		return self.get_query_params().get('SourceEndpoint.InstanceType')
@@ -83,6 +53,36 @@ class CreateSynchronizationJobRequest(RpcRequest):
 
 	def set_SynchronizationJobClass(self,SynchronizationJobClass):
 		self.add_query_param('SynchronizationJobClass',SynchronizationJobClass)
+
+	def get_Period(self):
+		return self.get_query_params().get('Period')
+
+	def set_Period(self,Period):
+		self.add_query_param('Period',Period)
+
+	def get_DestRegion(self):
+		return self.get_query_params().get('DestRegion')
+
+	def set_DestRegion(self,DestRegion):
+		self.add_query_param('DestRegion',DestRegion)
+
+	def get_Topology(self):
+		return self.get_query_params().get('Topology')
+
+	def set_Topology(self,Topology):
+		self.add_query_param('Topology',Topology)
+
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
+
+	def get_UsedTime(self):
+		return self.get_query_params().get('UsedTime')
+
+	def set_UsedTime(self,UsedTime):
+		self.add_query_param('UsedTime',UsedTime)
 
 	def get_SourceRegion(self):
 		return self.get_query_params().get('SourceRegion')
