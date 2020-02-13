@@ -30,6 +30,12 @@ class ModifyNetworkInterfaceAttributeRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_QueueNumber(self):
+		return self.get_query_params().get('QueueNumber')
+
+	def set_QueueNumber(self,QueueNumber):
+		self.add_query_param('QueueNumber',QueueNumber)
+
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
