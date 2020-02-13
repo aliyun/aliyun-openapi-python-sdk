@@ -20,48 +20,24 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcdn.endpoint import endpoint_data
 
-class SetIgnoreQueryStringConfigRequest(RpcRequest):
+class DescribeCertificateInfoByIDRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'SetIgnoreQueryStringConfig')
+		RpcRequest.__init__(self, 'Cdn', '2018-05-10', 'DescribeCertificateInfoByID')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_SecurityToken(self):
-		return self.get_query_params().get('SecurityToken')
+	def get_CertId(self):
+		return self.get_query_params().get('CertId')
 
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)
-
-	def get_Enable(self):
-		return self.get_query_params().get('Enable')
-
-	def set_Enable(self,Enable):
-		self.add_query_param('Enable',Enable)
-
-	def get_KeepOssArgs(self):
-		return self.get_query_params().get('KeepOssArgs')
-
-	def set_KeepOssArgs(self,KeepOssArgs):
-		self.add_query_param('KeepOssArgs',KeepOssArgs)
-
-	def get_DomainName(self):
-		return self.get_query_params().get('DomainName')
-
-	def set_DomainName(self,DomainName):
-		self.add_query_param('DomainName',DomainName)
+	def set_CertId(self,CertId):
+		self.add_query_param('CertId',CertId)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
-
-	def get_HashKeyArgs(self):
-		return self.get_query_params().get('HashKeyArgs')
-
-	def set_HashKeyArgs(self,HashKeyArgs):
-		self.add_query_param('HashKeyArgs',HashKeyArgs)

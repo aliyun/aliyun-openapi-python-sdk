@@ -66,6 +66,12 @@ class DescribeDomainRealTimeDetailDataRequest(RpcRequest):
 	def set_EndTime(self,EndTime):
 		self.add_query_param('EndTime',EndTime)
 
+	def get_MergeLocIsp(self):
+		return self.get_query_params().get('MergeLocIsp')
+
+	def set_MergeLocIsp(self,MergeLocIsp):
+		self.add_query_param('MergeLocIsp',MergeLocIsp)
+
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 

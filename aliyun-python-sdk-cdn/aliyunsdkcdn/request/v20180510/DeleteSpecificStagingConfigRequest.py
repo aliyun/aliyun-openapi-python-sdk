@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcdn.endpoint import endpoint_data
 
-class SetIgnoreQueryStringConfigRequest(RpcRequest):
+class DeleteSpecificStagingConfigRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'SetIgnoreQueryStringConfig')
+		RpcRequest.__init__(self, 'Cdn', '2018-05-10', 'DeleteSpecificStagingConfig')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -35,18 +35,6 @@ class SetIgnoreQueryStringConfigRequest(RpcRequest):
 
 	def set_SecurityToken(self,SecurityToken):
 		self.add_query_param('SecurityToken',SecurityToken)
-
-	def get_Enable(self):
-		return self.get_query_params().get('Enable')
-
-	def set_Enable(self,Enable):
-		self.add_query_param('Enable',Enable)
-
-	def get_KeepOssArgs(self):
-		return self.get_query_params().get('KeepOssArgs')
-
-	def set_KeepOssArgs(self,KeepOssArgs):
-		self.add_query_param('KeepOssArgs',KeepOssArgs)
 
 	def get_DomainName(self):
 		return self.get_query_params().get('DomainName')
@@ -60,8 +48,8 @@ class SetIgnoreQueryStringConfigRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_HashKeyArgs(self):
-		return self.get_query_params().get('HashKeyArgs')
+	def get_ConfigId(self):
+		return self.get_query_params().get('ConfigId')
 
-	def set_HashKeyArgs(self,HashKeyArgs):
-		self.add_query_param('HashKeyArgs',HashKeyArgs)
+	def set_ConfigId(self,ConfigId):
+		self.add_query_param('ConfigId',ConfigId)

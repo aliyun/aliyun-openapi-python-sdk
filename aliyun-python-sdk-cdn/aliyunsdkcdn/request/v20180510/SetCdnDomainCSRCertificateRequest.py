@@ -20,15 +20,21 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcdn.endpoint import endpoint_data
 
-class DescribeDomainCnameRequest(RpcRequest):
+class SetCdnDomainCSRCertificateRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cdn', '2018-05-10', 'DescribeDomainCname')
+		RpcRequest.__init__(self, 'Cdn', '2018-05-10', 'SetCdnDomainCSRCertificate')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+
+	def get_Certificate(self):
+		return self.get_query_params().get('Certificate')
+
+	def set_Certificate(self,Certificate):
+		self.add_query_param('Certificate',Certificate)
 
 	def get_DomainName(self):
 		return self.get_query_params().get('DomainName')

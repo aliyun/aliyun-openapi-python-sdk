@@ -30,29 +30,11 @@ class SetForwardSchemeConfigRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_SchemeOrigin(self):
-		return self.get_query_params().get('SchemeOrigin')
-
-	def set_SchemeOrigin(self,SchemeOrigin):
-		self.add_query_param('SchemeOrigin',SchemeOrigin)
-
 	def get_SchemeOriginPort(self):
 		return self.get_query_params().get('SchemeOriginPort')
 
 	def set_SchemeOriginPort(self,SchemeOriginPort):
 		self.add_query_param('SchemeOriginPort',SchemeOriginPort)
-
-	def get_DomainName(self):
-		return self.get_query_params().get('DomainName')
-
-	def set_DomainName(self,DomainName):
-		self.add_query_param('DomainName',DomainName)
-
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
 
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
@@ -65,3 +47,21 @@ class SetForwardSchemeConfigRequest(RpcRequest):
 
 	def set_Enable(self,Enable):
 		self.add_query_param('Enable',Enable)
+
+	def get_SchemeOrigin(self):
+		return self.get_query_params().get('SchemeOrigin')
+
+	def set_SchemeOrigin(self,SchemeOrigin):
+		self.add_query_param('SchemeOrigin',SchemeOrigin)
+
+	def get_DomainName(self):
+		return self.get_query_params().get('DomainName')
+
+	def set_DomainName(self,DomainName):
+		self.add_query_param('DomainName',DomainName)
+
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)

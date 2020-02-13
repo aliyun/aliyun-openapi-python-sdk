@@ -30,6 +30,12 @@ class SetFileCacheExpiredConfigRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_SecurityToken(self):
+		return self.get_query_params().get('SecurityToken')
+
+	def set_SecurityToken(self,SecurityToken):
+		self.add_query_param('SecurityToken',SecurityToken)
+
 	def get_DomainName(self):
 		return self.get_query_params().get('DomainName')
 
@@ -59,9 +65,3 @@ class SetFileCacheExpiredConfigRequest(RpcRequest):
 
 	def set_TTL(self,TTL):
 		self.add_query_param('TTL',TTL)
-
-	def get_SecurityToken(self):
-		return self.get_query_params().get('SecurityToken')
-
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)

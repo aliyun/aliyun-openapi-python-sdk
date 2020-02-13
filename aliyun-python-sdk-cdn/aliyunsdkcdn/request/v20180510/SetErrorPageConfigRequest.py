@@ -36,6 +36,12 @@ class SetErrorPageConfigRequest(RpcRequest):
 	def set_PageType(self,PageType):
 		self.add_query_param('PageType',PageType)
 
+	def get_SecurityToken(self):
+		return self.get_query_params().get('SecurityToken')
+
+	def set_SecurityToken(self,SecurityToken):
+		self.add_query_param('SecurityToken',SecurityToken)
+
 	def get_DomainName(self):
 		return self.get_query_params().get('DomainName')
 
@@ -53,9 +59,3 @@ class SetErrorPageConfigRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
-
-	def get_SecurityToken(self):
-		return self.get_query_params().get('SecurityToken')
-
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)

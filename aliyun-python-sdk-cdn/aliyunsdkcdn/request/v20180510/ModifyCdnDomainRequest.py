@@ -30,29 +30,11 @@ class ModifyCdnDomainRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_TopLevelDomain(self):
-		return self.get_query_params().get('TopLevelDomain')
-
-	def set_TopLevelDomain(self,TopLevelDomain):
-		self.add_query_param('TopLevelDomain',TopLevelDomain)
-
 	def get_Sources(self):
 		return self.get_query_params().get('Sources')
 
 	def set_Sources(self,Sources):
 		self.add_query_param('Sources',Sources)
-
-	def get_DomainName(self):
-		return self.get_query_params().get('DomainName')
-
-	def set_DomainName(self,DomainName):
-		self.add_query_param('DomainName',DomainName)
-
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
 
 	def get_ResourceGroupId(self):
 		return self.get_query_params().get('ResourceGroupId')
@@ -65,3 +47,21 @@ class ModifyCdnDomainRequest(RpcRequest):
 
 	def set_SecurityToken(self,SecurityToken):
 		self.add_query_param('SecurityToken',SecurityToken)
+
+	def get_TopLevelDomain(self):
+		return self.get_query_params().get('TopLevelDomain')
+
+	def set_TopLevelDomain(self,TopLevelDomain):
+		self.add_query_param('TopLevelDomain',TopLevelDomain)
+
+	def get_DomainName(self):
+		return self.get_query_params().get('DomainName')
+
+	def set_DomainName(self,DomainName):
+		self.add_query_param('DomainName',DomainName)
+
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)

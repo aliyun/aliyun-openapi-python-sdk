@@ -36,18 +36,6 @@ class SetRefererConfigRequest(RpcRequest):
 	def set_ReferList(self,ReferList):
 		self.add_query_param('ReferList',ReferList)
 
-	def get_DomainName(self):
-		return self.get_query_params().get('DomainName')
-
-	def set_DomainName(self,DomainName):
-		self.add_query_param('DomainName',DomainName)
-
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
 
@@ -65,6 +53,18 @@ class SetRefererConfigRequest(RpcRequest):
 
 	def set_DisableAst(self,DisableAst):
 		self.add_query_param('DisableAst',DisableAst)
+
+	def get_DomainName(self):
+		return self.get_query_params().get('DomainName')
+
+	def set_DomainName(self,DomainName):
+		self.add_query_param('DomainName',DomainName)
+
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
 
 	def get_AllowEmpty(self):
 		return self.get_query_params().get('AllowEmpty')

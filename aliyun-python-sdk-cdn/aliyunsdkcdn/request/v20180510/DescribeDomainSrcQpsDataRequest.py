@@ -20,33 +20,21 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcdn.endpoint import endpoint_data
 
-class SetIgnoreQueryStringConfigRequest(RpcRequest):
+class DescribeDomainSrcQpsDataRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'SetIgnoreQueryStringConfig')
+		RpcRequest.__init__(self, 'Cdn', '2018-05-10', 'DescribeDomainSrcQpsData')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_SecurityToken(self):
-		return self.get_query_params().get('SecurityToken')
+	def get_StartTime(self):
+		return self.get_query_params().get('StartTime')
 
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)
-
-	def get_Enable(self):
-		return self.get_query_params().get('Enable')
-
-	def set_Enable(self,Enable):
-		self.add_query_param('Enable',Enable)
-
-	def get_KeepOssArgs(self):
-		return self.get_query_params().get('KeepOssArgs')
-
-	def set_KeepOssArgs(self,KeepOssArgs):
-		self.add_query_param('KeepOssArgs',KeepOssArgs)
+	def set_StartTime(self,StartTime):
+		self.add_query_param('StartTime',StartTime)
 
 	def get_DomainName(self):
 		return self.get_query_params().get('DomainName')
@@ -54,14 +42,20 @@ class SetIgnoreQueryStringConfigRequest(RpcRequest):
 	def set_DomainName(self,DomainName):
 		self.add_query_param('DomainName',DomainName)
 
+	def get_EndTime(self):
+		return self.get_query_params().get('EndTime')
+
+	def set_EndTime(self,EndTime):
+		self.add_query_param('EndTime',EndTime)
+
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_HashKeyArgs(self):
-		return self.get_query_params().get('HashKeyArgs')
+	def get_Interval(self):
+		return self.get_query_params().get('Interval')
 
-	def set_HashKeyArgs(self,HashKeyArgs):
-		self.add_query_param('HashKeyArgs',HashKeyArgs)
+	def set_Interval(self,Interval):
+		self.add_query_param('Interval',Interval)

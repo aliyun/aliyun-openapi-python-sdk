@@ -30,24 +30,6 @@ class ResumeLiveStreamRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_LiveStreamType(self):
-		return self.get_query_params().get('LiveStreamType')
-
-	def set_LiveStreamType(self,LiveStreamType):
-		self.add_query_param('LiveStreamType',LiveStreamType)
-
-	def get_DomainName(self):
-		return self.get_query_params().get('DomainName')
-
-	def set_DomainName(self,DomainName):
-		self.add_query_param('DomainName',DomainName)
-
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
 	def get_AppName(self):
 		return self.get_query_params().get('AppName')
 
@@ -65,3 +47,21 @@ class ResumeLiveStreamRequest(RpcRequest):
 
 	def set_StreamName(self,StreamName):
 		self.add_query_param('StreamName',StreamName)
+
+	def get_LiveStreamType(self):
+		return self.get_query_params().get('LiveStreamType')
+
+	def set_LiveStreamType(self,LiveStreamType):
+		self.add_query_param('LiveStreamType',LiveStreamType)
+
+	def get_DomainName(self):
+		return self.get_query_params().get('DomainName')
+
+	def set_DomainName(self,DomainName):
+		self.add_query_param('DomainName',DomainName)
+
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)

@@ -30,24 +30,6 @@ class DescribeLiveStreamRecordIndexFileRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_DomainName(self):
-		return self.get_query_params().get('DomainName')
-
-	def set_DomainName(self,DomainName):
-		self.add_query_param('DomainName',DomainName)
-
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_RecordId(self):
-		return self.get_query_params().get('RecordId')
-
-	def set_RecordId(self,RecordId):
-		self.add_query_param('RecordId',RecordId)
-
 	def get_AppName(self):
 		return self.get_query_params().get('AppName')
 
@@ -65,3 +47,21 @@ class DescribeLiveStreamRecordIndexFileRequest(RpcRequest):
 
 	def set_StreamName(self,StreamName):
 		self.add_query_param('StreamName',StreamName)
+
+	def get_DomainName(self):
+		return self.get_query_params().get('DomainName')
+
+	def set_DomainName(self,DomainName):
+		self.add_query_param('DomainName',DomainName)
+
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
+
+	def get_RecordId(self):
+		return self.get_query_params().get('RecordId')
+
+	def set_RecordId(self,RecordId):
+		self.add_query_param('RecordId',RecordId)
