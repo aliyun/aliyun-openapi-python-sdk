@@ -30,32 +30,8 @@ class CreateMonitorGroupRequest(RpcRequest):
 	def set_ContactGroups(self,ContactGroups):
 		self.add_query_param('ContactGroups',ContactGroups)
 
-	def get_Type(self):
-		return self.get_query_params().get('Type')
-
-	def set_Type(self,Type):
-		self.add_query_param('Type',Type)
-
 	def get_GroupName(self):
 		return self.get_query_params().get('GroupName')
 
 	def set_GroupName(self,GroupName):
 		self.add_query_param('GroupName',GroupName)
-
-	def get_Options(self):
-		return self.get_query_params().get('Options')
-
-	def set_Options(self,Options):
-		self.add_query_param('Options',Options)
-
-	def get_ServiceId(self):
-		return self.get_query_params().get('ServiceId')
-
-	def set_ServiceId(self,ServiceId):
-		self.add_query_param('ServiceId',ServiceId)
-
-	def get_BindUrl(self):
-		return self.get_query_params().get('BindUrl')
-
-	def set_BindUrl(self,BindUrl):
-		self.add_query_param('BindUrl',BindUrl)

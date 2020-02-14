@@ -41,15 +41,3 @@ class ModifyMonitorGroupRequest(RpcRequest):
 
 	def set_GroupName(self,GroupName):
 		self.add_query_param('GroupName',GroupName)
-
-	def get_BindUrls(self):
-		return self.get_query_params().get('BindUrls')
-
-	def set_BindUrls(self,BindUrls):
-		self.add_query_param('BindUrls',BindUrls)
-
-	def get_ServiceId(self):
-		return self.get_query_params().get('ServiceId')
-
-	def set_ServiceId(self,ServiceId):
-		self.add_query_param('ServiceId',ServiceId)
