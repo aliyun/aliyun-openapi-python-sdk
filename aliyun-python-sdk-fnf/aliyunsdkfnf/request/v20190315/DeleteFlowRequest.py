@@ -18,11 +18,17 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkfnf.endpoint import endpoint_data
 
 class DeleteFlowRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'fnf', '2019-03-15', 'DeleteFlow','fnf')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_RequestId(self):
 		return self.get_query_params().get('RequestId')

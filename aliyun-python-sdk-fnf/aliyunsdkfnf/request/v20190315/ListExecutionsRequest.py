@@ -18,11 +18,17 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkfnf.endpoint import endpoint_data
 
 class ListExecutionsRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'fnf', '2019-03-15', 'ListExecutions','fnf')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_NextToken(self):
 		return self.get_query_params().get('NextToken')
@@ -47,3 +53,9 @@ class ListExecutionsRequest(RpcRequest):
 
 	def set_FlowName(self,FlowName):
 		self.add_query_param('FlowName',FlowName)
+
+	def get_Status(self):
+		return self.get_query_params().get('Status')
+
+	def set_Status(self,Status):
+		self.add_query_param('Status',Status)

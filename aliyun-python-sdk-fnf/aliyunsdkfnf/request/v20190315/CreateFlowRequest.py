@@ -18,12 +18,30 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkfnf.endpoint import endpoint_data
 
 class CreateFlowRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'fnf', '2019-03-15', 'CreateFlow','fnf')
 		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
+
+	def get_Description(self):
+		return self.get_body_params().get('Description')
+
+	def set_Description(self,Description):
+		self.add_body_params('Description', Description)
+
+	def get_Type(self):
+		return self.get_body_params().get('Type')
+
+	def set_Type(self,Type):
+		self.add_body_params('Type', Type)
 
 	def get_RequestId(self):
 		return self.get_query_params().get('RequestId')
@@ -43,20 +61,8 @@ class CreateFlowRequest(RpcRequest):
 	def set_Name(self,Name):
 		self.add_body_params('Name', Name)
 
-	def get_Description(self):
-		return self.get_body_params().get('Description')
-
-	def set_Description(self,Description):
-		self.add_body_params('Description', Description)
-
 	def get_Definition(self):
 		return self.get_body_params().get('Definition')
 
 	def set_Definition(self,Definition):
 		self.add_body_params('Definition', Definition)
-
-	def get_Type(self):
-		return self.get_body_params().get('Type')
-
-	def set_Type(self,Type):
-		self.add_body_params('Type', Type)

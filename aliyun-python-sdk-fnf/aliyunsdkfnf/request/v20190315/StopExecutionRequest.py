@@ -18,12 +18,18 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkfnf.endpoint import endpoint_data
 
 class StopExecutionRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'fnf', '2019-03-15', 'StopExecution','fnf')
 		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_ExecutionName(self):
 		return self.get_body_params().get('ExecutionName')
@@ -31,26 +37,26 @@ class StopExecutionRequest(RpcRequest):
 	def set_ExecutionName(self,ExecutionName):
 		self.add_body_params('ExecutionName', ExecutionName)
 
-	def get_RequestId(self):
-		return self.get_query_params().get('RequestId')
-
-	def set_RequestId(self,RequestId):
-		self.add_query_param('RequestId',RequestId)
-
 	def get_Cause(self):
 		return self.get_body_params().get('Cause')
 
 	def set_Cause(self,Cause):
 		self.add_body_params('Cause', Cause)
 
-	def get_FlowName(self):
-		return self.get_body_params().get('FlowName')
-
-	def set_FlowName(self,FlowName):
-		self.add_body_params('FlowName', FlowName)
-
 	def get_Error(self):
 		return self.get_body_params().get('Error')
 
 	def set_Error(self,Error):
 		self.add_body_params('Error', Error)
+
+	def get_RequestId(self):
+		return self.get_query_params().get('RequestId')
+
+	def set_RequestId(self,RequestId):
+		self.add_query_param('RequestId',RequestId)
+
+	def get_FlowName(self):
+		return self.get_body_params().get('FlowName')
+
+	def set_FlowName(self,FlowName):
+		self.add_body_params('FlowName', FlowName)
