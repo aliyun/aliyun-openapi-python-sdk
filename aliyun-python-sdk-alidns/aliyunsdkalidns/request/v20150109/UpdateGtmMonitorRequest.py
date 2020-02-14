@@ -48,12 +48,6 @@ class UpdateGtmMonitorRequest(RpcRequest):
 	def set_Timeout(self,Timeout):
 		self.add_query_param('Timeout',Timeout)
 
-	def get_UserClientIp(self):
-		return self.get_query_params().get('UserClientIp')
-
-	def set_UserClientIp(self,UserClientIp):
-		self.add_query_param('UserClientIp',UserClientIp)
-
 	def get_EvaluationCount(self):
 		return self.get_query_params().get('EvaluationCount')
 

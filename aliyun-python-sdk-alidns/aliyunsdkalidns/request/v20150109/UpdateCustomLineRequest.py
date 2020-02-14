@@ -47,12 +47,6 @@ class UpdateCustomLineRequest(RpcRequest):
 				self.add_query_param('IpSegment.' + str(i + 1) + '.StartIp' , IpSegments[i].get('StartIp'))
 
 
-	def get_UserClientIp(self):
-		return self.get_query_params().get('UserClientIp')
-
-	def set_UserClientIp(self,UserClientIp):
-		self.add_query_param('UserClientIp',UserClientIp)
-
 	def get_LineName(self):
 		return self.get_query_params().get('LineName')
 

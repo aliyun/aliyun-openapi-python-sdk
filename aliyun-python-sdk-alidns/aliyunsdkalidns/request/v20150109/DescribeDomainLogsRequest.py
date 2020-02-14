@@ -60,12 +60,6 @@ class DescribeDomainLogsRequest(RpcRequest):
 	def set_endDate(self,endDate):
 		self.add_query_param('endDate',endDate)
 
-	def get_UserClientIp(self):
-		return self.get_query_params().get('UserClientIp')
-
-	def set_UserClientIp(self,UserClientIp):
-		self.add_query_param('UserClientIp',UserClientIp)
-
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
 

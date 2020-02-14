@@ -54,12 +54,6 @@ class UpdateGtmAccessStrategyRequest(RpcRequest):
 	def set_AccessLines(self,AccessLines):
 		self.add_query_param('AccessLines',AccessLines)
 
-	def get_UserClientIp(self):
-		return self.get_query_params().get('UserClientIp')
-
-	def set_UserClientIp(self,UserClientIp):
-		self.add_query_param('UserClientIp',UserClientIp)
-
 	def get_StrategyId(self):
 		return self.get_query_params().get('StrategyId')
 

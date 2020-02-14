@@ -71,9 +71,3 @@ class DescribeTransferDomainsRequest(RpcRequest):
 
 	def set_TransferType(self,TransferType):
 		self.add_query_param('TransferType',TransferType)
-
-	def get_UserClientIp(self):
-		return self.get_query_params().get('UserClientIp')
-
-	def set_UserClientIp(self,UserClientIp):
-		self.add_query_param('UserClientIp',UserClientIp)
