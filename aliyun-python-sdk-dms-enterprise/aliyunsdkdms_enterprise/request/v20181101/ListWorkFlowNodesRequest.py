@@ -20,28 +20,21 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdms_enterprise.endpoint import endpoint_data
 
-class ExecuteDataExportRequest(RpcRequest):
+class ListWorkFlowNodesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'dms-enterprise', '2018-11-01', 'ExecuteDataExport','dmsenterprise')
-		self.set_method('POST')
+		RpcRequest.__init__(self, 'dms-enterprise', '2018-11-01', 'ListWorkFlowNodes','dmsenterprise')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_ActionDetail(self):
-		return self.get_query_params().get('ActionDetail')
+	def get_SearchName(self):
+		return self.get_query_params().get('SearchName')
 
-	def set_ActionDetail(self,ActionDetail):
-		self.add_query_param('ActionDetail',ActionDetail)
-
-	def get_OrderId(self):
-		return self.get_query_params().get('OrderId')
-
-	def set_OrderId(self,OrderId):
-		self.add_query_param('OrderId',OrderId)
+	def set_SearchName(self,SearchName):
+		self.add_query_param('SearchName',SearchName)
 
 	def get_Tid(self):
 		return self.get_query_params().get('Tid')

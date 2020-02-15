@@ -36,12 +36,6 @@ class GetDataExportDownloadURLRequest(RpcRequest):
 	def set_OrderId(self,OrderId):
 		self.add_query_param('OrderId',OrderId)
 
-	def get_ActionName(self):
-		return self.get_query_params().get('ActionName')
-
-	def set_ActionName(self,ActionName):
-		self.add_query_param('ActionName',ActionName)
-
 	def get_Tid(self):
 		return self.get_query_params().get('Tid')
 
