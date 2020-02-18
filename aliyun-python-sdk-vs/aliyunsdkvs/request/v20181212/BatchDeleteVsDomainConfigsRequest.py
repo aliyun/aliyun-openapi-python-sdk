@@ -42,12 +42,6 @@ class BatchDeleteVsDomainConfigsRequest(RpcRequest):
 	def set_DomainNames(self,DomainNames):
 		self.add_query_param('DomainNames',DomainNames)
 
-	def get_ShowLog(self):
-		return self.get_query_params().get('ShowLog')
-
-	def set_ShowLog(self,ShowLog):
-		self.add_query_param('ShowLog',ShowLog)
-
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 

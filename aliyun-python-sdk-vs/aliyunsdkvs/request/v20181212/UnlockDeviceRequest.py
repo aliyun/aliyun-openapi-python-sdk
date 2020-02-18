@@ -36,12 +36,6 @@ class UnlockDeviceRequest(RpcRequest):
 	def set_Id(self,Id):
 		self.add_query_param('Id',Id)
 
-	def get_ShowLog(self):
-		return self.get_query_params().get('ShowLog')
-
-	def set_ShowLog(self,ShowLog):
-		self.add_query_param('ShowLog',ShowLog)
-
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 

@@ -66,12 +66,6 @@ class DescribeVsStreamsOnlineListRequest(RpcRequest):
 	def set_QueryType(self,QueryType):
 		self.add_query_param('QueryType',QueryType)
 
-	def get_ShowLog(self):
-		return self.get_query_params().get('ShowLog')
-
-	def set_ShowLog(self,ShowLog):
-		self.add_query_param('ShowLog',ShowLog)
-
 	def get_StreamType(self):
 		return self.get_query_params().get('StreamType')
 

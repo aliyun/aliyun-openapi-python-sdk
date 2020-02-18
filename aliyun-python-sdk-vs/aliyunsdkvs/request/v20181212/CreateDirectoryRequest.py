@@ -42,12 +42,6 @@ class CreateDirectoryRequest(RpcRequest):
 	def set_ParentId(self,ParentId):
 		self.add_query_param('ParentId',ParentId)
 
-	def get_ShowLog(self):
-		return self.get_query_params().get('ShowLog')
-
-	def set_ShowLog(self,ShowLog):
-		self.add_query_param('ShowLog',ShowLog)
-
 	def get_GroupId(self):
 		return self.get_query_params().get('GroupId')
 

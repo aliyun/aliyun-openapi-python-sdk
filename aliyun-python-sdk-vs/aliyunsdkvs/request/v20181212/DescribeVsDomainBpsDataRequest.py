@@ -48,12 +48,6 @@ class DescribeVsDomainBpsDataRequest(RpcRequest):
 	def set_IspNameEn(self,IspNameEn):
 		self.add_query_param('IspNameEn',IspNameEn)
 
-	def get_ShowLog(self):
-		return self.get_query_params().get('ShowLog')
-
-	def set_ShowLog(self,ShowLog):
-		self.add_query_param('ShowLog',ShowLog)
-
 	def get_DomainName(self):
 		return self.get_query_params().get('DomainName')
 

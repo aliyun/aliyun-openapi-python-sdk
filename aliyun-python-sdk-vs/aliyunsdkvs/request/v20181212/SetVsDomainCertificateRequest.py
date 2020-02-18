@@ -42,12 +42,6 @@ class SetVsDomainCertificateRequest(RpcRequest):
 	def set_CertType(self,CertType):
 		self.add_query_param('CertType',CertType)
 
-	def get_ShowLog(self):
-		return self.get_query_params().get('ShowLog')
-
-	def set_ShowLog(self,ShowLog):
-		self.add_query_param('ShowLog',ShowLog)
-
 	def get_SSLPri(self):
 		return self.get_query_params().get('SSLPri')
 

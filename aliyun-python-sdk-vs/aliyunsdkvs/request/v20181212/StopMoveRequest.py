@@ -48,12 +48,6 @@ class StopMoveRequest(RpcRequest):
 	def set_Pan(self,Pan):
 		self.add_query_param('Pan',Pan)
 
-	def get_ShowLog(self):
-		return self.get_query_params().get('ShowLog')
-
-	def set_ShowLog(self,ShowLog):
-		self.add_query_param('ShowLog',ShowLog)
-
 	def get_Zoom(self):
 		return self.get_query_params().get('Zoom')
 

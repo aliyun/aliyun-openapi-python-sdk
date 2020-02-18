@@ -36,12 +36,6 @@ class BatchResumeVsStreamRequest(RpcRequest):
 	def set_Channel(self,Channel):
 		self.add_query_param('Channel',Channel)
 
-	def get_ShowLog(self):
-		return self.get_query_params().get('ShowLog')
-
-	def set_ShowLog(self,ShowLog):
-		self.add_query_param('ShowLog',ShowLog)
-
 	def get_ControlStreamAction(self):
 		return self.get_query_params().get('ControlStreamAction')
 

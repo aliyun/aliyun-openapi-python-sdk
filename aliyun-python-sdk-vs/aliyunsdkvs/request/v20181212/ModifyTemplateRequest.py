@@ -84,12 +84,6 @@ class ModifyTemplateRequest(RpcRequest):
 	def set_Retention(self,Retention):
 		self.add_query_param('Retention',Retention)
 
-	def get_ShowLog(self):
-		return self.get_query_params().get('ShowLog')
-
-	def set_ShowLog(self,ShowLog):
-		self.add_query_param('ShowLog',ShowLog)
-
 	def get_HlsM3u8(self):
 		return self.get_query_params().get('HlsM3u8')
 

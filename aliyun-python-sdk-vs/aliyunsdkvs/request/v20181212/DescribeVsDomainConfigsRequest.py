@@ -36,12 +36,6 @@ class DescribeVsDomainConfigsRequest(RpcRequest):
 	def set_FunctionNames(self,FunctionNames):
 		self.add_query_param('FunctionNames',FunctionNames)
 
-	def get_ShowLog(self):
-		return self.get_query_params().get('ShowLog')
-
-	def set_ShowLog(self,ShowLog):
-		self.add_query_param('ShowLog',ShowLog)
-
 	def get_DomainName(self):
 		return self.get_query_params().get('DomainName')
 

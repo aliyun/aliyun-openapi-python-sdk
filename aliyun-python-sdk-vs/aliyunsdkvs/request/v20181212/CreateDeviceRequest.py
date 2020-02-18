@@ -84,12 +84,6 @@ class CreateDeviceRequest(RpcRequest):
 	def set_DirectoryId(self,DirectoryId):
 		self.add_query_param('DirectoryId',DirectoryId)
 
-	def get_ShowLog(self):
-		return self.get_query_params().get('ShowLog')
-
-	def set_ShowLog(self,ShowLog):
-		self.add_query_param('ShowLog',ShowLog)
-
 	def get_Longitude(self):
 		return self.get_query_params().get('Longitude')
 
@@ -113,6 +107,12 @@ class CreateDeviceRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_Params(self):
+		return self.get_query_params().get('Params')
+
+	def set_Params(self,Params):
+		self.add_query_param('Params',Params)
 
 	def get_Url(self):
 		return self.get_query_params().get('Url')

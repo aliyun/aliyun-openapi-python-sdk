@@ -36,12 +36,6 @@ class UnbindDirectoryRequest(RpcRequest):
 	def set_DirectoryId(self,DirectoryId):
 		self.add_query_param('DirectoryId',DirectoryId)
 
-	def get_ShowLog(self):
-		return self.get_query_params().get('ShowLog')
-
-	def set_ShowLog(self,ShowLog):
-		self.add_query_param('ShowLog',ShowLog)
-
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
