@@ -23,7 +23,7 @@ from aliyunsdkreid.endpoint import endpoint_data
 class PullActionDataRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'reid', '2019-09-28', 'PullActionData','reid')
+		RpcRequest.__init__(self, 'reid', '2019-09-28', 'PullActionData','1.0.0')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
