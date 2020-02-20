@@ -18,11 +18,17 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkretailcloud.endpoint import endpoint_data
 
 class ListAppEnvironmentRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'retailcloud', '2018-03-13', 'ListAppEnvironment','retailcloud')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_EnvName(self):
 		return self.get_query_params().get('EnvName')

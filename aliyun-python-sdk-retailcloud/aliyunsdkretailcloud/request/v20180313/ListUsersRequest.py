@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkretailcloud.endpoint import endpoint_data
 
-class ListClusterNodeRequest(RpcRequest):
+class ListUsersRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'retailcloud', '2018-03-13', 'ListClusterNode','retailcloud')
+		RpcRequest.__init__(self, 'retailcloud', '2018-03-13', 'ListUsers','retailcloud')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -36,14 +36,8 @@ class ListClusterNodeRequest(RpcRequest):
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
 
-	def get_PageNum(self):
-		return self.get_query_params().get('PageNum')
+	def get_PageNumber(self):
+		return self.get_query_params().get('PageNumber')
 
-	def set_PageNum(self,PageNum):
-		self.add_query_param('PageNum',PageNum)
-
-	def get_ClusterInstanceId(self):
-		return self.get_query_params().get('ClusterInstanceId')
-
-	def set_ClusterInstanceId(self,ClusterInstanceId):
-		self.add_query_param('ClusterInstanceId',ClusterInstanceId)
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)

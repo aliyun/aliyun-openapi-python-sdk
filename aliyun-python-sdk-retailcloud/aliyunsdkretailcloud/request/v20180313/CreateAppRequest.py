@@ -18,12 +18,18 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkretailcloud.endpoint import endpoint_data
 
 class CreateAppRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'retailcloud', '2018-03-13', 'CreateApp','retailcloud')
 		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_BizTitle(self):
 		return self.get_body_params().get('BizTitle')
@@ -42,6 +48,19 @@ class CreateAppRequest(RpcRequest):
 
 	def set_ServiceType(self,ServiceType):
 		self.add_body_params('ServiceType', ServiceType)
+
+	def get_UserRoless(self):
+		return self.get_body_params().get('UserRoless')
+
+	def set_UserRoless(self,UserRoless):
+		for i in range(len(UserRoless)):	
+			if UserRoless[i].get('RoleName') is not None:
+				self.add_body_params('UserRoles.' + str(i + 1) + '.RoleName' , UserRoless[i].get('RoleName'))
+			if UserRoless[i].get('UserType') is not None:
+				self.add_body_params('UserRoles.' + str(i + 1) + '.UserType' , UserRoless[i].get('UserType'))
+			if UserRoless[i].get('UserId') is not None:
+				self.add_body_params('UserRoles.' + str(i + 1) + '.UserId' , UserRoless[i].get('UserId'))
+
 
 	def get_BizCode(self):
 		return self.get_body_params().get('BizCode')
