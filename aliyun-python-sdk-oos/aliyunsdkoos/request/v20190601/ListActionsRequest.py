@@ -18,10 +18,17 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+
 class ListActionsRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'oos', '2019-06-01', 'ListActions','oos')
+
+	def get_OOSActionName(self):
+		return self.get_query_params().get('OOSActionName')
+
+	def set_OOSActionName(self,OOSActionName):
+		self.add_query_param('OOSActionName',OOSActionName)
 
 	def get_NextToken(self):
 		return self.get_query_params().get('NextToken')
@@ -34,9 +41,3 @@ class ListActionsRequest(RpcRequest):
 
 	def set_MaxResults(self,MaxResults):
 		self.add_query_param('MaxResults',MaxResults)
-
-	def get_OOSActionName(self):
-		return self.get_query_params().get('OOSActionName')
-
-	def set_OOSActionName(self,OOSActionName):
-		self.add_query_param('OOSActionName',OOSActionName)

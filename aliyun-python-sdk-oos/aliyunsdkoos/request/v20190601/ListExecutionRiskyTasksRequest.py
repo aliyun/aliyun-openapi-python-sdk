@@ -19,22 +19,10 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class CreateTemplateRequest(RpcRequest):
+class ListExecutionRiskyTasksRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'oos', '2019-06-01', 'CreateTemplate','oos')
-
-	def get_Content(self):
-		return self.get_query_params().get('Content')
-
-	def set_Content(self,Content):
-		self.add_query_param('Content',Content)
-
-	def get_Tags(self):
-		return self.get_query_params().get('Tags')
-
-	def set_Tags(self,Tags):
-		self.add_query_param('Tags',Tags)
+		RpcRequest.__init__(self, 'oos', '2019-06-01', 'ListExecutionRiskyTasks','oos')
 
 	def get_TemplateName(self):
 		return self.get_query_params().get('TemplateName')

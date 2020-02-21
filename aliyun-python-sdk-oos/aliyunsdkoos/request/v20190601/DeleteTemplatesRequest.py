@@ -19,25 +19,19 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class CreateTemplateRequest(RpcRequest):
+class DeleteTemplatesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'oos', '2019-06-01', 'CreateTemplate','oos')
+		RpcRequest.__init__(self, 'oos', '2019-06-01', 'DeleteTemplates','oos')
 
-	def get_Content(self):
-		return self.get_query_params().get('Content')
+	def get_TemplateNames(self):
+		return self.get_query_params().get('TemplateNames')
 
-	def set_Content(self,Content):
-		self.add_query_param('Content',Content)
+	def set_TemplateNames(self,TemplateNames):
+		self.add_query_param('TemplateNames',TemplateNames)
 
-	def get_Tags(self):
-		return self.get_query_params().get('Tags')
+	def get_AutoDeleteExecutions(self):
+		return self.get_query_params().get('AutoDeleteExecutions')
 
-	def set_Tags(self,Tags):
-		self.add_query_param('Tags',Tags)
-
-	def get_TemplateName(self):
-		return self.get_query_params().get('TemplateName')
-
-	def set_TemplateName(self,TemplateName):
-		self.add_query_param('TemplateName',TemplateName)
+	def set_AutoDeleteExecutions(self,AutoDeleteExecutions):
+		self.add_query_param('AutoDeleteExecutions',AutoDeleteExecutions)

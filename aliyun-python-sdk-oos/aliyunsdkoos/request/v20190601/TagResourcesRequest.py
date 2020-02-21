@@ -19,16 +19,16 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class CreateTemplateRequest(RpcRequest):
+class TagResourcesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'oos', '2019-06-01', 'CreateTemplate','oos')
+		RpcRequest.__init__(self, 'oos', '2019-06-01', 'TagResources','oos')
 
-	def get_Content(self):
-		return self.get_query_params().get('Content')
+	def get_ResourceType(self):
+		return self.get_query_params().get('ResourceType')
 
-	def set_Content(self,Content):
-		self.add_query_param('Content',Content)
+	def set_ResourceType(self,ResourceType):
+		self.add_query_param('ResourceType',ResourceType)
 
 	def get_Tags(self):
 		return self.get_query_params().get('Tags')
@@ -36,8 +36,8 @@ class CreateTemplateRequest(RpcRequest):
 	def set_Tags(self,Tags):
 		self.add_query_param('Tags',Tags)
 
-	def get_TemplateName(self):
-		return self.get_query_params().get('TemplateName')
+	def get_ResourceIds(self):
+		return self.get_query_params().get('ResourceIds')
 
-	def set_TemplateName(self,TemplateName):
-		self.add_query_param('TemplateName',TemplateName)
+	def set_ResourceIds(self,ResourceIds):
+		self.add_query_param('ResourceIds',ResourceIds)

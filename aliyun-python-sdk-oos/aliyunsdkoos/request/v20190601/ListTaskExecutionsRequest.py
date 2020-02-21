@@ -18,22 +18,11 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+
 class ListTaskExecutionsRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'oos', '2019-06-01', 'ListTaskExecutions','oos')
-
-	def get_StartDateAfter(self):
-		return self.get_query_params().get('StartDateAfter')
-
-	def set_StartDateAfter(self,StartDateAfter):
-		self.add_query_param('StartDateAfter',StartDateAfter)
-
-	def get_StartDateBefore(self):
-		return self.get_query_params().get('StartDateBefore')
-
-	def set_StartDateBefore(self,StartDateBefore):
-		self.add_query_param('StartDateBefore',StartDateBefore)
 
 	def get_TaskName(self):
 		return self.get_query_params().get('TaskName')
@@ -65,6 +54,30 @@ class ListTaskExecutionsRequest(RpcRequest):
 	def set_NextToken(self,NextToken):
 		self.add_query_param('NextToken',NextToken)
 
+	def get_EndDateBefore(self):
+		return self.get_query_params().get('EndDateBefore')
+
+	def set_EndDateBefore(self,EndDateBefore):
+		self.add_query_param('EndDateBefore',EndDateBefore)
+
+	def get_SortOrder(self):
+		return self.get_query_params().get('SortOrder')
+
+	def set_SortOrder(self,SortOrder):
+		self.add_query_param('SortOrder',SortOrder)
+
+	def get_StartDateAfter(self):
+		return self.get_query_params().get('StartDateAfter')
+
+	def set_StartDateAfter(self,StartDateAfter):
+		self.add_query_param('StartDateAfter',StartDateAfter)
+
+	def get_StartDateBefore(self):
+		return self.get_query_params().get('StartDateBefore')
+
+	def set_StartDateBefore(self,StartDateBefore):
+		self.add_query_param('StartDateBefore',StartDateBefore)
+
 	def get_EndDateAfter(self):
 		return self.get_query_params().get('EndDateAfter')
 
@@ -77,23 +90,11 @@ class ListTaskExecutionsRequest(RpcRequest):
 	def set_MaxResults(self,MaxResults):
 		self.add_query_param('MaxResults',MaxResults)
 
-	def get_EndDateBefore(self):
-		return self.get_query_params().get('EndDateBefore')
-
-	def set_EndDateBefore(self,EndDateBefore):
-		self.add_query_param('EndDateBefore',EndDateBefore)
-
 	def get_TaskExecutionId(self):
 		return self.get_query_params().get('TaskExecutionId')
 
 	def set_TaskExecutionId(self,TaskExecutionId):
 		self.add_query_param('TaskExecutionId',TaskExecutionId)
-
-	def get_SortOrder(self):
-		return self.get_query_params().get('SortOrder')
-
-	def set_SortOrder(self,SortOrder):
-		self.add_query_param('SortOrder',SortOrder)
 
 	def get_SortField(self):
 		return self.get_query_params().get('SortField')

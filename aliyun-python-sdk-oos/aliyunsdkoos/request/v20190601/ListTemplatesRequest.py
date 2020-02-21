@@ -18,6 +18,7 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+
 class ListTemplatesRequest(RpcRequest):
 
 	def __init__(self):
@@ -41,18 +42,6 @@ class ListTemplatesRequest(RpcRequest):
 	def set_NextToken(self,NextToken):
 		self.add_query_param('NextToken',NextToken)
 
-	def get_CreatedDateAfter(self):
-		return self.get_query_params().get('CreatedDateAfter')
-
-	def set_CreatedDateAfter(self,CreatedDateAfter):
-		self.add_query_param('CreatedDateAfter',CreatedDateAfter)
-
-	def get_MaxResults(self):
-		return self.get_query_params().get('MaxResults')
-
-	def set_MaxResults(self,MaxResults):
-		self.add_query_param('MaxResults',MaxResults)
-
 	def get_TemplateName(self):
 		return self.get_query_params().get('TemplateName')
 
@@ -65,20 +54,50 @@ class ListTemplatesRequest(RpcRequest):
 	def set_SortOrder(self,SortOrder):
 		self.add_query_param('SortOrder',SortOrder)
 
-	def get_TemplateFormat(self):
-		return self.get_query_params().get('TemplateFormat')
-
-	def set_TemplateFormat(self,TemplateFormat):
-		self.add_query_param('TemplateFormat',TemplateFormat)
-
 	def get_ShareType(self):
 		return self.get_query_params().get('ShareType')
 
 	def set_ShareType(self,ShareType):
 		self.add_query_param('ShareType',ShareType)
 
+	def get_HasTrigger(self):
+		return self.get_query_params().get('HasTrigger')
+
+	def set_HasTrigger(self,HasTrigger):
+		self.add_query_param('HasTrigger',HasTrigger)
+
+	def get_CreatedDateAfter(self):
+		return self.get_query_params().get('CreatedDateAfter')
+
+	def set_CreatedDateAfter(self,CreatedDateAfter):
+		self.add_query_param('CreatedDateAfter',CreatedDateAfter)
+
+	def get_Tags(self):
+		return self.get_query_params().get('Tags')
+
+	def set_Tags(self,Tags):
+		self.add_query_param('Tags',Tags)
+
+	def get_MaxResults(self):
+		return self.get_query_params().get('MaxResults')
+
+	def set_MaxResults(self,MaxResults):
+		self.add_query_param('MaxResults',MaxResults)
+
+	def get_TemplateFormat(self):
+		return self.get_query_params().get('TemplateFormat')
+
+	def set_TemplateFormat(self,TemplateFormat):
+		self.add_query_param('TemplateFormat',TemplateFormat)
+
 	def get_SortField(self):
 		return self.get_query_params().get('SortField')
 
 	def set_SortField(self,SortField):
 		self.add_query_param('SortField',SortField)
+
+	def get_Category(self):
+		return self.get_query_params().get('Category')
+
+	def set_Category(self,Category):
+		self.add_query_param('Category',Category)

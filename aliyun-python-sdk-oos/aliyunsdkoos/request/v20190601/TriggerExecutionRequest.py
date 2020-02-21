@@ -19,10 +19,22 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class CreateTemplateRequest(RpcRequest):
+class TriggerExecutionRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'oos', '2019-06-01', 'CreateTemplate','oos')
+		RpcRequest.__init__(self, 'oos', '2019-06-01', 'TriggerExecution','oos')
+
+	def get_ClientToken(self):
+		return self.get_query_params().get('ClientToken')
+
+	def set_ClientToken(self,ClientToken):
+		self.add_query_param('ClientToken',ClientToken)
+
+	def get_Type(self):
+		return self.get_query_params().get('Type')
+
+	def set_Type(self,Type):
+		self.add_query_param('Type',Type)
 
 	def get_Content(self):
 		return self.get_query_params().get('Content')
@@ -30,14 +42,8 @@ class CreateTemplateRequest(RpcRequest):
 	def set_Content(self,Content):
 		self.add_query_param('Content',Content)
 
-	def get_Tags(self):
-		return self.get_query_params().get('Tags')
+	def get_ExecutionId(self):
+		return self.get_query_params().get('ExecutionId')
 
-	def set_Tags(self,Tags):
-		self.add_query_param('Tags',Tags)
-
-	def get_TemplateName(self):
-		return self.get_query_params().get('TemplateName')
-
-	def set_TemplateName(self,TemplateName):
-		self.add_query_param('TemplateName',TemplateName)
+	def set_ExecutionId(self,ExecutionId):
+		self.add_query_param('ExecutionId',ExecutionId)

@@ -18,6 +18,7 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+
 class ListExecutionLogsRequest(RpcRequest):
 
 	def __init__(self):
@@ -28,6 +29,12 @@ class ListExecutionLogsRequest(RpcRequest):
 
 	def set_ExecutionId(self,ExecutionId):
 		self.add_query_param('ExecutionId',ExecutionId)
+
+	def get_LogType(self):
+		return self.get_query_params().get('LogType')
+
+	def set_LogType(self,LogType):
+		self.add_query_param('LogType',LogType)
 
 	def get_NextToken(self):
 		return self.get_query_params().get('NextToken')
@@ -40,3 +47,9 @@ class ListExecutionLogsRequest(RpcRequest):
 
 	def set_MaxResults(self,MaxResults):
 		self.add_query_param('MaxResults',MaxResults)
+
+	def get_TaskExecutionId(self):
+		return self.get_query_params().get('TaskExecutionId')
+
+	def set_TaskExecutionId(self,TaskExecutionId):
+		self.add_query_param('TaskExecutionId',TaskExecutionId)

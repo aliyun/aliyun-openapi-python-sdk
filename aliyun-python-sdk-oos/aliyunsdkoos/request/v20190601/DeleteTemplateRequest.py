@@ -18,10 +18,17 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+
 class DeleteTemplateRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'oos', '2019-06-01', 'DeleteTemplate','oos')
+
+	def get_AutoDeleteExecutions(self):
+		return self.get_query_params().get('AutoDeleteExecutions')
+
+	def set_AutoDeleteExecutions(self,AutoDeleteExecutions):
+		self.add_query_param('AutoDeleteExecutions',AutoDeleteExecutions)
 
 	def get_TemplateName(self):
 		return self.get_query_params().get('TemplateName')

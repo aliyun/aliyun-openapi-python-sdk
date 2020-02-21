@@ -18,16 +18,29 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+
 class NotifyExecutionRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'oos', '2019-06-01', 'NotifyExecution','oos')
+
+	def get_TaskName(self):
+		return self.get_query_params().get('TaskName')
+
+	def set_TaskName(self,TaskName):
+		self.add_query_param('TaskName',TaskName)
 
 	def get_ExecutionId(self):
 		return self.get_query_params().get('ExecutionId')
 
 	def set_ExecutionId(self,ExecutionId):
 		self.add_query_param('ExecutionId',ExecutionId)
+
+	def get_NotifyType(self):
+		return self.get_query_params().get('NotifyType')
+
+	def set_NotifyType(self,NotifyType):
+		self.add_query_param('NotifyType',NotifyType)
 
 	def get_ExecutionStatus(self):
 		return self.get_query_params().get('ExecutionStatus')
@@ -41,17 +54,17 @@ class NotifyExecutionRequest(RpcRequest):
 	def set_NotifyNote(self,NotifyNote):
 		self.add_query_param('NotifyNote',NotifyNote)
 
-	def get_TaskName(self):
-		return self.get_query_params().get('TaskName')
+	def get_LoopItem(self):
+		return self.get_query_params().get('LoopItem')
 
-	def set_TaskName(self,TaskName):
-		self.add_query_param('TaskName',TaskName)
+	def set_LoopItem(self,LoopItem):
+		self.add_query_param('LoopItem',LoopItem)
 
-	def get_NotifyType(self):
-		return self.get_query_params().get('NotifyType')
+	def get_TaskExecutionId(self):
+		return self.get_query_params().get('TaskExecutionId')
 
-	def set_NotifyType(self,NotifyType):
-		self.add_query_param('NotifyType',NotifyType)
+	def set_TaskExecutionId(self,TaskExecutionId):
+		self.add_query_param('TaskExecutionId',TaskExecutionId)
 
 	def get_Parameters(self):
 		return self.get_query_params().get('Parameters')

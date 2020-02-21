@@ -18,6 +18,7 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+
 class ListExecutionsRequest(RpcRequest):
 
 	def __init__(self):
@@ -35,18 +36,6 @@ class ListExecutionsRequest(RpcRequest):
 	def set_IncludeChildExecution(self,IncludeChildExecution):
 		self.add_query_param('IncludeChildExecution',IncludeChildExecution)
 
-	def get_StartDateAfter(self):
-		return self.get_query_params().get('StartDateAfter')
-
-	def set_StartDateAfter(self,StartDateAfter):
-		self.add_query_param('StartDateAfter',StartDateAfter)
-
-	def get_StartDateBefore(self):
-		return self.get_query_params().get('StartDateBefore')
-
-	def set_StartDateBefore(self,StartDateBefore):
-		self.add_query_param('StartDateBefore',StartDateBefore)
-
 	def get_Mode(self):
 		return self.get_query_params().get('Mode')
 
@@ -59,12 +48,6 @@ class ListExecutionsRequest(RpcRequest):
 	def set_ExecutionId(self,ExecutionId):
 		self.add_query_param('ExecutionId',ExecutionId)
 
-	def get_ParentExecutionId(self):
-		return self.get_query_params().get('ParentExecutionId')
-
-	def set_ParentExecutionId(self,ParentExecutionId):
-		self.add_query_param('ParentExecutionId',ParentExecutionId)
-
 	def get_RamRole(self):
 		return self.get_query_params().get('RamRole')
 
@@ -76,18 +59,6 @@ class ListExecutionsRequest(RpcRequest):
 
 	def set_NextToken(self,NextToken):
 		self.add_query_param('NextToken',NextToken)
-
-	def get_EndDateAfter(self):
-		return self.get_query_params().get('EndDateAfter')
-
-	def set_EndDateAfter(self,EndDateAfter):
-		self.add_query_param('EndDateAfter',EndDateAfter)
-
-	def get_MaxResults(self):
-		return self.get_query_params().get('MaxResults')
-
-	def set_MaxResults(self,MaxResults):
-		self.add_query_param('MaxResults',MaxResults)
 
 	def get_TemplateName(self):
 		return self.get_query_params().get('TemplateName')
@@ -107,11 +78,53 @@ class ListExecutionsRequest(RpcRequest):
 	def set_SortOrder(self,SortOrder):
 		self.add_query_param('SortOrder',SortOrder)
 
+	def get_StartDateAfter(self):
+		return self.get_query_params().get('StartDateAfter')
+
+	def set_StartDateAfter(self,StartDateAfter):
+		self.add_query_param('StartDateAfter',StartDateAfter)
+
+	def get_StartDateBefore(self):
+		return self.get_query_params().get('StartDateBefore')
+
+	def set_StartDateBefore(self,StartDateBefore):
+		self.add_query_param('StartDateBefore',StartDateBefore)
+
+	def get_Tags(self):
+		return self.get_query_params().get('Tags')
+
+	def set_Tags(self,Tags):
+		self.add_query_param('Tags',Tags)
+
+	def get_ParentExecutionId(self):
+		return self.get_query_params().get('ParentExecutionId')
+
+	def set_ParentExecutionId(self,ParentExecutionId):
+		self.add_query_param('ParentExecutionId',ParentExecutionId)
+
+	def get_EndDateAfter(self):
+		return self.get_query_params().get('EndDateAfter')
+
+	def set_EndDateAfter(self,EndDateAfter):
+		self.add_query_param('EndDateAfter',EndDateAfter)
+
+	def get_MaxResults(self):
+		return self.get_query_params().get('MaxResults')
+
+	def set_MaxResults(self,MaxResults):
+		self.add_query_param('MaxResults',MaxResults)
+
 	def get_SortField(self):
 		return self.get_query_params().get('SortField')
 
 	def set_SortField(self,SortField):
 		self.add_query_param('SortField',SortField)
+
+	def get_Category(self):
+		return self.get_query_params().get('Category')
+
+	def set_Category(self,Category):
+		self.add_query_param('Category',Category)
 
 	def get_Status(self):
 		return self.get_query_params().get('Status')

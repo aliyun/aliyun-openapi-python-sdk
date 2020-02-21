@@ -19,25 +19,31 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class CreateTemplateRequest(RpcRequest):
+class ListTagValuesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'oos', '2019-06-01', 'CreateTemplate','oos')
+		RpcRequest.__init__(self, 'oos', '2019-06-01', 'ListTagValues','oos')
 
-	def get_Content(self):
-		return self.get_query_params().get('Content')
+	def get_ResourceType(self):
+		return self.get_query_params().get('ResourceType')
 
-	def set_Content(self,Content):
-		self.add_query_param('Content',Content)
+	def set_ResourceType(self,ResourceType):
+		self.add_query_param('ResourceType',ResourceType)
 
-	def get_Tags(self):
-		return self.get_query_params().get('Tags')
+	def get_NextToken(self):
+		return self.get_query_params().get('NextToken')
 
-	def set_Tags(self,Tags):
-		self.add_query_param('Tags',Tags)
+	def set_NextToken(self,NextToken):
+		self.add_query_param('NextToken',NextToken)
 
-	def get_TemplateName(self):
-		return self.get_query_params().get('TemplateName')
+	def get_MaxResults(self):
+		return self.get_query_params().get('MaxResults')
 
-	def set_TemplateName(self,TemplateName):
-		self.add_query_param('TemplateName',TemplateName)
+	def set_MaxResults(self,MaxResults):
+		self.add_query_param('MaxResults',MaxResults)
+
+	def get_Key(self):
+		return self.get_query_params().get('Key')
+
+	def set_Key(self,Key):
+		self.add_query_param('Key',Key)
