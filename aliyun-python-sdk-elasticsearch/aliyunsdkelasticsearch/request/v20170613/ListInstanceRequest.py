@@ -32,6 +32,30 @@ class ListInstanceRequest(RoaRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_description(self):
+		return self.get_query_params().get('description')
+
+	def set_description(self,description):
+		self.add_query_param('description',description)
+
+	def get_instanceCategory(self):
+		return self.get_query_params().get('instanceCategory')
+
+	def set_instanceCategory(self,instanceCategory):
+		self.add_query_param('instanceCategory',instanceCategory)
+
+	def get_ownerId(self):
+		return self.get_query_params().get('ownerId')
+
+	def set_ownerId(self,ownerId):
+		self.add_query_param('ownerId',ownerId)
+
+	def get_tags(self):
+		return self.get_query_params().get('tags')
+
+	def set_tags(self,tags):
+		self.add_query_param('tags',tags)
+
 	def get_resourceGroupId(self):
 		return self.get_query_params().get('resourceGroupId')
 
@@ -56,11 +80,17 @@ class ListInstanceRequest(RoaRequest):
 	def set_esVersion(self,esVersion):
 		self.add_query_param('esVersion',esVersion)
 
-	def get_description(self):
-		return self.get_query_params().get('description')
+	def get_vpcId(self):
+		return self.get_query_params().get('vpcId')
 
-	def set_description(self,description):
-		self.add_query_param('description',description)
+	def set_vpcId(self,vpcId):
+		self.add_query_param('vpcId',vpcId)
+
+	def get_zoneId(self):
+		return self.get_query_params().get('zoneId')
+
+	def set_zoneId(self,zoneId):
+		self.add_query_param('zoneId',zoneId)
 
 	def get_page(self):
 		return self.get_query_params().get('page')
@@ -68,8 +98,8 @@ class ListInstanceRequest(RoaRequest):
 	def set_page(self,page):
 		self.add_query_param('page',page)
 
-	def get_ownerId(self):
-		return self.get_query_params().get('ownerId')
+	def get_paymentType(self):
+		return self.get_query_params().get('paymentType')
 
-	def set_ownerId(self,ownerId):
-		self.add_query_param('ownerId',ownerId)
+	def set_paymentType(self,paymentType):
+		self.add_query_param('paymentType',paymentType)

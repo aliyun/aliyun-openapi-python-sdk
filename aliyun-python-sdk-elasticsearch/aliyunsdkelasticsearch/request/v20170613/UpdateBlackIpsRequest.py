@@ -25,7 +25,7 @@ class UpdateBlackIpsRequest(RoaRequest):
 	def __init__(self):
 		RoaRequest.__init__(self, 'elasticsearch', '2017-06-13', 'UpdateBlackIps','elasticsearch')
 		self.set_uri_pattern('/openapi/instances/[InstanceId]/black-ips')
-		self.set_method('POST|PATCH')
+		self.set_method('PATCH|POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):

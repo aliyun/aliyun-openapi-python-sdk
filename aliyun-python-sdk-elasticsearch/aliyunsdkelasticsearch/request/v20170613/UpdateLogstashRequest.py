@@ -25,7 +25,7 @@ class UpdateLogstashRequest(RoaRequest):
 	def __init__(self):
 		RoaRequest.__init__(self, 'elasticsearch', '2017-06-13', 'UpdateLogstash','elasticsearch')
 		self.set_uri_pattern('/openapi/logstashes/[InstanceId]')
-		self.set_method('PUT|PATCH')
+		self.set_method('PATCH|PUT')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):

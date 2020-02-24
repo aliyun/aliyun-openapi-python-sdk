@@ -20,12 +20,12 @@
 from aliyunsdkcore.request import RoaRequest
 from aliyunsdkelasticsearch.endpoint import endpoint_data
 
-class UpdateLogstashDescriptionRequest(RoaRequest):
+class UpdatePipelinesRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'elasticsearch', '2017-06-13', 'UpdateLogstashDescription','elasticsearch')
-		self.set_uri_pattern('/openapi/logstashes/[InstanceId]/description')
-		self.set_method('PATCH|POST')
+		RoaRequest.__init__(self, 'elasticsearch', '2017-06-13', 'UpdatePipelines','elasticsearch')
+		self.set_uri_pattern('/openapi/logstashes/[InstanceId]/pipelines')
+		self.set_method('PUT')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -43,3 +43,9 @@ class UpdateLogstashDescriptionRequest(RoaRequest):
 
 	def set_clientToken(self,clientToken):
 		self.add_query_param('clientToken',clientToken)
+
+	def get_trigger(self):
+		return self.get_query_params().get('trigger')
+
+	def set_trigger(self,trigger):
+		self.add_query_param('trigger',trigger)
