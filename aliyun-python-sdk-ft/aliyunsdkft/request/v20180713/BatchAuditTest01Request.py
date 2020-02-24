@@ -19,19 +19,31 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class FtDynamicAddressDubboRequest(RpcRequest):
+class BatchAuditTest01Request(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ft', '2018-07-13', 'FtDynamicAddressDubbo')
+		RpcRequest.__init__(self, 'Ft', '2018-07-13', 'BatchAuditTest01')
 
-	def get_IntValue(self):
-		return self.get_query_params().get('IntValue')
+	def get_Demo01(self):
+		return self.get_query_params().get('Demo01')
 
-	def set_IntValue(self,IntValue):
-		self.add_query_param('IntValue',IntValue)
+	def set_Demo01(self,Demo01):
+		self.add_query_param('Demo01',Demo01)
 
-	def get_StringValue(self):
-		return self.get_query_params().get('StringValue')
+	def get_Test010101(self):
+		return self.get_body_params().get('Test010101')
 
-	def set_StringValue(self,StringValue):
-		self.add_query_param('StringValue',StringValue)
+	def set_Test010101(self,Test010101):
+		self.add_body_params('Test010101', Test010101)
+
+	def get_Name(self):
+		return self.get_query_params().get('Name')
+
+	def set_Name(self,Name):
+		self.add_query_param('Name',Name)
+
+	def get_BatchAuditTest01(self):
+		return self.get_query_params().get('BatchAuditTest01')
+
+	def set_BatchAuditTest01(self,BatchAuditTest01):
+		self.add_query_param('BatchAuditTest01',BatchAuditTest01)

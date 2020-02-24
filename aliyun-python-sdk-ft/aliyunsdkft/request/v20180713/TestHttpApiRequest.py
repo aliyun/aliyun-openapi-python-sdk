@@ -19,19 +19,31 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class FtDynamicAddressDubboRequest(RpcRequest):
+class TestHttpApiRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ft', '2018-07-13', 'FtDynamicAddressDubbo')
-
-	def get_IntValue(self):
-		return self.get_query_params().get('IntValue')
-
-	def set_IntValue(self,IntValue):
-		self.add_query_param('IntValue',IntValue)
+		RpcRequest.__init__(self, 'Ft', '2018-07-13', 'TestHttpApi')
 
 	def get_StringValue(self):
 		return self.get_query_params().get('StringValue')
 
 	def set_StringValue(self,StringValue):
 		self.add_query_param('StringValue',StringValue)
+
+	def get_OtherParam(self):
+		return self.get_query_params().get('OtherParam')
+
+	def set_OtherParam(self,OtherParam):
+		self.add_query_param('OtherParam',OtherParam)
+
+	def get_BooleanParam(self):
+		return self.get_query_params().get('BooleanParam')
+
+	def set_BooleanParam(self,BooleanParam):
+		self.add_query_param('BooleanParam',BooleanParam)
+
+	def get_DefaultValue(self):
+		return self.get_query_params().get('DefaultValue')
+
+	def set_DefaultValue(self,DefaultValue):
+		self.add_query_param('DefaultValue',DefaultValue)

@@ -19,19 +19,13 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class FtDynamicAddressDubboRequest(RpcRequest):
+class FtIpFlowControlRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ft', '2018-07-13', 'FtDynamicAddressDubbo')
+		RpcRequest.__init__(self, 'Ft', '2018-07-13', 'FtIpFlowControl')
 
-	def get_IntValue(self):
-		return self.get_query_params().get('IntValue')
+	def get_Name(self):
+		return self.get_query_params().get('Name')
 
-	def set_IntValue(self,IntValue):
-		self.add_query_param('IntValue',IntValue)
-
-	def get_StringValue(self):
-		return self.get_query_params().get('StringValue')
-
-	def set_StringValue(self,StringValue):
-		self.add_query_param('StringValue',StringValue)
+	def set_Name(self,Name):
+		self.add_query_param('Name',Name)
