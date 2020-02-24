@@ -20,21 +20,21 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkhbase.endpoint import endpoint_data
 
-class AddUserHdfsInfoRequest(RpcRequest):
+class ModifyClusterDeletionProtectionRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'HBase', '2019-01-01', 'AddUserHdfsInfo')
+		RpcRequest.__init__(self, 'HBase', '2019-01-01', 'ModifyClusterDeletionProtection')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_ExtInfo(self):
-		return self.get_query_params().get('ExtInfo')
+	def get_Protection(self):
+		return self.get_query_params().get('Protection')
 
-	def set_ExtInfo(self,ExtInfo):
-		self.add_query_param('ExtInfo',ExtInfo)
+	def set_Protection(self,Protection):
+		self.add_query_param('Protection',Protection)
 
 	def get_ClusterId(self):
 		return self.get_query_params().get('ClusterId')

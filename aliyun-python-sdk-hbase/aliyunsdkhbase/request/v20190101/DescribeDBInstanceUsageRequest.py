@@ -23,7 +23,7 @@ from aliyunsdkhbase.endpoint import endpoint_data
 class DescribeDBInstanceUsageRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'HBase', '2019-01-01', 'DescribeDBInstanceUsage','hbase')
+		RpcRequest.__init__(self, 'HBase', '2019-01-01', 'DescribeDBInstanceUsage')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):

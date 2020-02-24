@@ -23,7 +23,7 @@ from aliyunsdkhbase.endpoint import endpoint_data
 class ModifyInstanceNameRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'HBase', '2019-01-01', 'ModifyInstanceName','hbase')
+		RpcRequest.__init__(self, 'HBase', '2019-01-01', 'ModifyInstanceName')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):

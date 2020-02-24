@@ -23,12 +23,18 @@ from aliyunsdkhbase.endpoint import endpoint_data
 class QueryXpackRelateDBRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'HBase', '2019-01-01', 'QueryXpackRelateDB','hbase')
+		RpcRequest.__init__(self, 'HBase', '2019-01-01', 'QueryXpackRelateDB')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+
+	def get_HasSingleNode(self):
+		return self.get_query_params().get('HasSingleNode')
+
+	def set_HasSingleNode(self,HasSingleNode):
+		self.add_query_param('HasSingleNode',HasSingleNode)
 
 	def get_ClusterId(self):
 		return self.get_query_params().get('ClusterId')
