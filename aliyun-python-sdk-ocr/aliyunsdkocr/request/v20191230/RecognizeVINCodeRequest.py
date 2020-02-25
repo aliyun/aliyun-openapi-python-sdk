@@ -23,19 +23,13 @@ from aliyunsdkocr.endpoint import endpoint_data
 class RecognizeVINCodeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ocr', '2019-12-30', 'RecognizeVINCode','ocr')
+		RpcRequest.__init__(self, 'ocr', '2019-12-30', 'RecognizeVINCode')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ImageType(self):
-		return self.get_query_params().get('ImageType')
-
-	def set_ImageType(self,ImageType):
-		self.add_query_param('ImageType',ImageType)
 
 	def get_ImageURL(self):
 		return self.get_query_params().get('ImageURL')

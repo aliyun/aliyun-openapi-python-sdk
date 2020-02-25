@@ -23,19 +23,13 @@ from aliyunsdkocr.endpoint import endpoint_data
 class RecognizeBusinessLicenseRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ocr', '2019-12-30', 'RecognizeBusinessLicense','ocr')
+		RpcRequest.__init__(self, 'ocr', '2019-12-30', 'RecognizeBusinessLicense')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ImageType(self):
-		return self.get_body_params().get('ImageType')
-
-	def set_ImageType(self,ImageType):
-		self.add_body_params('ImageType', ImageType)
 
 	def get_ImageURL(self):
 		return self.get_body_params().get('ImageURL')
