@@ -20,21 +20,15 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdbs.endpoint import endpoint_data
 
-class DescribeBackupGatewayListRequest(RpcRequest):
+class StartTaskRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dbs', '2019-03-06', 'DescribeBackupGatewayList')
+		RpcRequest.__init__(self, 'Dbs', '2019-03-06', 'StartTask')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Identifier(self):
-		return self.get_query_params().get('Identifier')
-
-	def set_Identifier(self,Identifier):
-		self.add_query_param('Identifier',Identifier)
 
 	def get_ClientToken(self):
 		return self.get_query_params().get('ClientToken')
@@ -42,26 +36,14 @@ class DescribeBackupGatewayListRequest(RpcRequest):
 	def set_ClientToken(self,ClientToken):
 		self.add_query_param('ClientToken',ClientToken)
 
-	def get_PageNum(self):
-		return self.get_query_params().get('PageNum')
-
-	def set_PageNum(self,PageNum):
-		self.add_query_param('PageNum',PageNum)
-
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
+	def get_TaskId(self):
+		return self.get_query_params().get('TaskId')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_Region(self):
-		return self.get_query_params().get('Region')
-
-	def set_Region(self,Region):
-		self.add_query_param('Region',Region)
+	def set_TaskId(self,TaskId):
+		self.add_query_param('TaskId',TaskId)

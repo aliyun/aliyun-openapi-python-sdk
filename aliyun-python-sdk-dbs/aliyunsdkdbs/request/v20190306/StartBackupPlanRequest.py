@@ -23,7 +23,7 @@ from aliyunsdkdbs.endpoint import endpoint_data
 class StartBackupPlanRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dbs', '2019-03-06', 'StartBackupPlan','cbs')
+		RpcRequest.__init__(self, 'Dbs', '2019-03-06', 'StartBackupPlan')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):

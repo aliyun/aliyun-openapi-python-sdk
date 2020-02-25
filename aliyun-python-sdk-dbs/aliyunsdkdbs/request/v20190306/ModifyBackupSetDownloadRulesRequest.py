@@ -20,21 +20,39 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdbs.endpoint import endpoint_data
 
-class ModifyBackupPlanNameRequest(RpcRequest):
+class ModifyBackupSetDownloadRulesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dbs', '2019-03-06', 'ModifyBackupPlanName')
+		RpcRequest.__init__(self, 'Dbs', '2019-03-06', 'ModifyBackupSetDownloadRules')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_FullDataFormat(self):
+		return self.get_query_params().get('FullDataFormat')
+
+	def set_FullDataFormat(self,FullDataFormat):
+		self.add_query_param('FullDataFormat',FullDataFormat)
+
+	def get_BackupGatewayId(self):
+		return self.get_query_params().get('BackupGatewayId')
+
+	def set_BackupGatewayId(self,BackupGatewayId):
+		self.add_query_param('BackupGatewayId',BackupGatewayId)
+
 	def get_ClientToken(self):
 		return self.get_query_params().get('ClientToken')
 
 	def set_ClientToken(self,ClientToken):
 		self.add_query_param('ClientToken',ClientToken)
+
+	def get_BackupSetDownloadTargetType(self):
+		return self.get_query_params().get('BackupSetDownloadTargetType')
+
+	def set_BackupSetDownloadTargetType(self,BackupSetDownloadTargetType):
+		self.add_query_param('BackupSetDownloadTargetType',BackupSetDownloadTargetType)
 
 	def get_BackupPlanId(self):
 		return self.get_query_params().get('BackupPlanId')
@@ -48,8 +66,20 @@ class ModifyBackupPlanNameRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_BackupPlanName(self):
-		return self.get_query_params().get('BackupPlanName')
+	def get_OpenAutoDownload(self):
+		return self.get_query_params().get('OpenAutoDownload')
 
-	def set_BackupPlanName(self,BackupPlanName):
-		self.add_query_param('BackupPlanName',BackupPlanName)
+	def set_OpenAutoDownload(self,OpenAutoDownload):
+		self.add_query_param('OpenAutoDownload',OpenAutoDownload)
+
+	def get_IncrementDataFormat(self):
+		return self.get_query_params().get('IncrementDataFormat')
+
+	def set_IncrementDataFormat(self,IncrementDataFormat):
+		self.add_query_param('IncrementDataFormat',IncrementDataFormat)
+
+	def get_BackupSetDownloadDir(self):
+		return self.get_query_params().get('BackupSetDownloadDir')
+
+	def set_BackupSetDownloadDir(self,BackupSetDownloadDir):
+		self.add_query_param('BackupSetDownloadDir',BackupSetDownloadDir)
