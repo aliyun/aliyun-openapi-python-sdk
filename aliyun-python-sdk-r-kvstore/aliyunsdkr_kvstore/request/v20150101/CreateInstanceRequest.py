@@ -23,7 +23,7 @@ from aliyunsdkr_kvstore.endpoint import endpoint_data
 class CreateInstanceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'R-kvstore', '2015-01-01', 'CreateInstance','R-kvstore')
+		RpcRequest.__init__(self, 'R-kvstore', '2015-01-01', 'CreateInstance')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -161,12 +161,6 @@ class CreateInstanceRequest(RpcRequest):
 
 	def set_InstanceType(self,InstanceType):
 		self.add_query_param('InstanceType',InstanceType)
-
-	def get_RestoreTime(self):
-		return self.get_query_params().get('RestoreTime')
-
-	def set_RestoreTime(self,RestoreTime):
-		self.add_query_param('RestoreTime',RestoreTime)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')

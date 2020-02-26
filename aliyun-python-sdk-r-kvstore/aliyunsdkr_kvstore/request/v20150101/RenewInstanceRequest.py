@@ -23,7 +23,7 @@ from aliyunsdkr_kvstore.endpoint import endpoint_data
 class RenewInstanceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'R-kvstore', '2015-01-01', 'RenewInstance','R-kvstore')
+		RpcRequest.__init__(self, 'R-kvstore', '2015-01-01', 'RenewInstance')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -107,9 +107,3 @@ class RenewInstanceRequest(RpcRequest):
 
 	def set_InstanceId(self,InstanceId):
 		self.add_query_param('InstanceId',InstanceId)
-
-	def get_ForceUpgrade(self):
-		return self.get_query_params().get('ForceUpgrade')
-
-	def set_ForceUpgrade(self,ForceUpgrade):
-		self.add_query_param('ForceUpgrade',ForceUpgrade)

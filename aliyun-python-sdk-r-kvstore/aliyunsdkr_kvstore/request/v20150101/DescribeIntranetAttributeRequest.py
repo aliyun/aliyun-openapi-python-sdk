@@ -23,7 +23,7 @@ from aliyunsdkr_kvstore.endpoint import endpoint_data
 class DescribeIntranetAttributeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'R-kvstore', '2015-01-01', 'DescribeIntranetAttribute','R-kvstore')
+		RpcRequest.__init__(self, 'R-kvstore', '2015-01-01', 'DescribeIntranetAttribute')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -35,6 +35,12 @@ class DescribeIntranetAttributeRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+
+	def get_ResourceGroupId(self):
+		return self.get_query_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self,ResourceGroupId):
+		self.add_query_param('ResourceGroupId',ResourceGroupId)
 
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')

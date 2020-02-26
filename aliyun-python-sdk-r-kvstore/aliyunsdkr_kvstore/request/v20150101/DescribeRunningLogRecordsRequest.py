@@ -23,7 +23,7 @@ from aliyunsdkr_kvstore.endpoint import endpoint_data
 class DescribeRunningLogRecordsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'R-kvstore', '2015-01-01', 'DescribeRunningLogRecords','R-kvstore')
+		RpcRequest.__init__(self, 'R-kvstore', '2015-01-01', 'DescribeRunningLogRecords')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -71,12 +71,6 @@ class DescribeRunningLogRecordsRequest(RpcRequest):
 
 	def set_NodeId(self,NodeId):
 		self.add_query_param('NodeId',NodeId)
-
-	def get_SQLId(self):
-		return self.get_query_params().get('SQLId')
-
-	def set_SQLId(self,SQLId):
-		self.add_query_param('SQLId',SQLId)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')

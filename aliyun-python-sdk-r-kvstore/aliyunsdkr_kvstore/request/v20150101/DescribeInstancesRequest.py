@@ -23,7 +23,7 @@ from aliyunsdkr_kvstore.endpoint import endpoint_data
 class DescribeInstancesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'R-kvstore', '2015-01-01', 'DescribeInstances','R-kvstore')
+		RpcRequest.__init__(self, 'R-kvstore', '2015-01-01', 'DescribeInstances')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -136,12 +136,6 @@ class DescribeInstancesRequest(RpcRequest):
 
 	def set_VSwitchId(self,VSwitchId):
 		self.add_query_param('VSwitchId',VSwitchId)
-
-	def get_VpcCloudInsInfo(self):
-		return self.get_query_params().get('VpcCloudInsInfo')
-
-	def set_VpcCloudInsInfo(self,VpcCloudInsInfo):
-		self.add_query_param('VpcCloudInsInfo',VpcCloudInsInfo)
 
 	def get_InstanceIds(self):
 		return self.get_query_params().get('InstanceIds')

@@ -23,7 +23,7 @@ from aliyunsdkr_kvstore.endpoint import endpoint_data
 class ModifyAuditLogConfigRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'R-kvstore', '2015-01-01', 'ModifyAuditLogConfig','R-kvstore')
+		RpcRequest.__init__(self, 'R-kvstore', '2015-01-01', 'ModifyAuditLogConfig')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -41,12 +41,6 @@ class ModifyAuditLogConfigRequest(RpcRequest):
 
 	def set_SecurityToken(self,SecurityToken):
 		self.add_query_param('SecurityToken',SecurityToken)
-
-	def get_AuditCommand(self):
-		return self.get_query_params().get('AuditCommand')
-
-	def set_AuditCommand(self,AuditCommand):
-		self.add_query_param('AuditCommand',AuditCommand)
 
 	def get_Retention(self):
 		return self.get_query_params().get('Retention')

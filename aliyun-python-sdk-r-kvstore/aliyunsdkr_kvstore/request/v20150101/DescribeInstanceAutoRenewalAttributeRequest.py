@@ -23,7 +23,7 @@ from aliyunsdkr_kvstore.endpoint import endpoint_data
 class DescribeInstanceAutoRenewalAttributeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'R-kvstore', '2015-01-01', 'DescribeInstanceAutoRenewalAttribute','R-kvstore')
+		RpcRequest.__init__(self, 'R-kvstore', '2015-01-01', 'DescribeInstanceAutoRenewalAttribute')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -59,12 +59,6 @@ class DescribeInstanceAutoRenewalAttributeRequest(RpcRequest):
 
 	def set_DBInstanceId(self,DBInstanceId):
 		self.add_query_param('DBInstanceId',DBInstanceId)
-
-	def get_proxyId(self):
-		return self.get_query_params().get('proxyId')
-
-	def set_proxyId(self,proxyId):
-		self.add_query_param('proxyId',proxyId)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
