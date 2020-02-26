@@ -25,7 +25,7 @@ class UpdatePublicWhiteIpsRequest(RoaRequest):
 	def __init__(self):
 		RoaRequest.__init__(self, 'elasticsearch', '2017-06-13', 'UpdatePublicWhiteIps','elasticsearch')
 		self.set_uri_pattern('/openapi/instances/[InstanceId]/public-white-ips')
-		self.set_method('PATCH|POST')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):

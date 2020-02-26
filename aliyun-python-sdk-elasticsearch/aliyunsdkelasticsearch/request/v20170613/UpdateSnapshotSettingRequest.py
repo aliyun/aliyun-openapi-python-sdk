@@ -25,7 +25,7 @@ class UpdateSnapshotSettingRequest(RoaRequest):
 	def __init__(self):
 		RoaRequest.__init__(self, 'elasticsearch', '2017-06-13', 'UpdateSnapshotSetting','elasticsearch')
 		self.set_uri_pattern('/openapi/instances/[InstanceId]/snapshot-setting')
-		self.set_method('POST|PUT')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
