@@ -23,7 +23,7 @@ from aliyunsdkcloudauth.endpoint import endpoint_data
 class UpdateVerifySettingRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cloudauth', '2019-03-07', 'UpdateVerifySetting','cloudauth')
+		RpcRequest.__init__(self, 'Cloudauth', '2019-03-07', 'UpdateVerifySetting')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -41,12 +41,6 @@ class UpdateVerifySettingRequest(RpcRequest):
 
 	def set_ResultStep(self,ResultStep):
 		self.add_query_param('ResultStep',ResultStep)
-
-	def get_SourceIp(self):
-		return self.get_query_params().get('SourceIp')
-
-	def set_SourceIp(self,SourceIp):
-		self.add_query_param('SourceIp',SourceIp)
 
 	def get_Solution(self):
 		return self.get_query_params().get('Solution')

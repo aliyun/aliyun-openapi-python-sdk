@@ -23,7 +23,7 @@ from aliyunsdkcloudauth.endpoint import endpoint_data
 class VerifyMaterialRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cloudauth', '2019-03-07', 'VerifyMaterial','cloudauth')
+		RpcRequest.__init__(self, 'Cloudauth', '2019-03-07', 'VerifyMaterial')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -41,12 +41,6 @@ class VerifyMaterialRequest(RpcRequest):
 
 	def set_UserId(self,UserId):
 		self.add_query_param('UserId',UserId)
-
-	def get_SourceIp(self):
-		return self.get_query_params().get('SourceIp')
-
-	def set_SourceIp(self,SourceIp):
-		self.add_query_param('SourceIp',SourceIp)
 
 	def get_IdCardBackImageUrl(self):
 		return self.get_query_params().get('IdCardBackImageUrl')

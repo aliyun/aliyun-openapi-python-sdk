@@ -20,30 +20,24 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcloudauth.endpoint import endpoint_data
 
-class DescribeVerifyUsageRequest(RpcRequest):
+class DescribeFaceVerifyRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cloudauth', '2019-03-07', 'DescribeVerifyUsage')
+		RpcRequest.__init__(self, 'Cloudauth', '2019-03-07', 'DescribeFaceVerify')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_StartDate(self):
-		return self.get_query_params().get('StartDate')
+	def get_SceneId(self):
+		return self.get_query_params().get('SceneId')
 
-	def set_StartDate(self,StartDate):
-		self.add_query_param('StartDate',StartDate)
+	def set_SceneId(self,SceneId):
+		self.add_query_param('SceneId',SceneId)
 
-	def get_BizType(self):
-		return self.get_query_params().get('BizType')
+	def get_CertifyId(self):
+		return self.get_query_params().get('CertifyId')
 
-	def set_BizType(self,BizType):
-		self.add_query_param('BizType',BizType)
-
-	def get_EndDate(self):
-		return self.get_query_params().get('EndDate')
-
-	def set_EndDate(self,EndDate):
-		self.add_query_param('EndDate',EndDate)
+	def set_CertifyId(self,CertifyId):
+		self.add_query_param('CertifyId',CertifyId)
