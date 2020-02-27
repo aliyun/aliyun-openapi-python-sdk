@@ -23,7 +23,7 @@ from aliyunsdkocr.endpoint import endpoint_data
 class RecognizeTaxiInvoiceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ocr', '2019-12-30', 'RecognizeTaxiInvoice')
+		RpcRequest.__init__(self, 'ocr', '2019-12-30', 'RecognizeTaxiInvoice','ocr')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())

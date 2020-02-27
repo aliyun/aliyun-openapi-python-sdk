@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkocr.endpoint import endpoint_data
 
-class RecognizeCharacterRequest(RpcRequest):
+class RecognizeQrCodeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ocr', '2019-12-30', 'RecognizeCharacter','ocr')
+		RpcRequest.__init__(self, 'ocr', '2019-12-30', 'RecognizeQrCode','ocr')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,20 +31,10 @@ class RecognizeCharacterRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_OutputProbability(self):
-		return self.get_body_params().get('OutputProbability')
+	def get_Taskss(self):
+		return self.get_body_params().get('Taskss')
 
-	def set_OutputProbability(self,OutputProbability):
-		self.add_body_params('OutputProbability', OutputProbability)
-
-	def get_ImageURL(self):
-		return self.get_body_params().get('ImageURL')
-
-	def set_ImageURL(self,ImageURL):
-		self.add_body_params('ImageURL', ImageURL)
-
-	def get_MinHeight(self):
-		return self.get_body_params().get('MinHeight')
-
-	def set_MinHeight(self,MinHeight):
-		self.add_body_params('MinHeight', MinHeight)
+	def set_Taskss(self,Taskss):
+		for i in range(len(Taskss)):	
+			if Taskss[i].get('ImageURL') is not None:
+				self.add_body_params('Tasks.' + str(i + 1) + '.ImageURL' , Taskss[i].get('ImageURL'))

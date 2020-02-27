@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkocr.endpoint import endpoint_data
 
-class RecognizeCharacterRequest(RpcRequest):
+class RecognizeVATInvoiceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ocr', '2019-12-30', 'RecognizeCharacter','ocr')
+		RpcRequest.__init__(self, 'ocr', '2019-12-30', 'RecognizeVATInvoice','ocr')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,20 +31,14 @@ class RecognizeCharacterRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_OutputProbability(self):
-		return self.get_body_params().get('OutputProbability')
+	def get_FileType(self):
+		return self.get_body_params().get('FileType')
 
-	def set_OutputProbability(self,OutputProbability):
-		self.add_body_params('OutputProbability', OutputProbability)
+	def set_FileType(self,FileType):
+		self.add_body_params('FileType', FileType)
 
-	def get_ImageURL(self):
-		return self.get_body_params().get('ImageURL')
+	def get_FileURL(self):
+		return self.get_body_params().get('FileURL')
 
-	def set_ImageURL(self,ImageURL):
-		self.add_body_params('ImageURL', ImageURL)
-
-	def get_MinHeight(self):
-		return self.get_body_params().get('MinHeight')
-
-	def set_MinHeight(self,MinHeight):
-		self.add_body_params('MinHeight', MinHeight)
+	def set_FileURL(self,FileURL):
+		self.add_body_params('FileURL', FileURL)
