@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkobjectdet.endpoint import endpoint_data
 
-class DetectVehicleRequest(RpcRequest):
+class RecognizeVehicleDashboardRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'objectdet', '2019-12-30', 'DetectVehicle','objectdet')
+		RpcRequest.__init__(self, 'objectdet', '2019-12-30', 'RecognizeVehicleDashboard','objectdet')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
