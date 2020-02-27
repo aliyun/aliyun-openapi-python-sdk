@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkfacebody.endpoint import endpoint_data
 
-class DetectFaceRequest(RpcRequest):
+class RecognizePublicFaceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'facebody', '2019-12-30', 'DetectFace','facebody')
+		RpcRequest.__init__(self, 'facebody', '2019-12-30', 'RecognizePublicFace','facebody')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,8 +31,10 @@ class DetectFaceRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_ImageURL(self):
-		return self.get_body_params().get('ImageURL')
+	def get_Tasks(self):
+		return self.get_body_params().get('Tasks')
 
-	def set_ImageURL(self,ImageURL):
-		self.add_body_params('ImageURL', ImageURL)
+	def set_Tasks(self,Tasks):
+		for i in range(len(Tasks)):	
+			if Tasks[i].get('ImageURL') is not None:
+				self.add_body_params('Task.' + str(i + 1) + '.ImageURL' , Tasks[i].get('ImageURL'))
