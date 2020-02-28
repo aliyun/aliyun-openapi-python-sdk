@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkkms.endpoint import endpoint_data
 
-class UntagResourceRequest(RpcRequest):
+class UpdateSecretRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Kms', '2016-01-20', 'UntagResource','kms')
+		RpcRequest.__init__(self, 'Kms', '2016-01-20', 'UpdateSecret','kms')
 		self.set_protocol_type('https')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,17 +31,11 @@ class UntagResourceRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_TagKeys(self):
-		return self.get_query_params().get('TagKeys')
+	def get_Description(self):
+		return self.get_query_params().get('Description')
 
-	def set_TagKeys(self,TagKeys):
-		self.add_query_param('TagKeys',TagKeys)
-
-	def get_KeyId(self):
-		return self.get_query_params().get('KeyId')
-
-	def set_KeyId(self,KeyId):
-		self.add_query_param('KeyId',KeyId)
+	def set_Description(self,Description):
+		self.add_query_param('Description',Description)
 
 	def get_SecretName(self):
 		return self.get_query_params().get('SecretName')

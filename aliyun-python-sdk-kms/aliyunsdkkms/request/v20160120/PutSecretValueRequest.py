@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkkms.endpoint import endpoint_data
 
-class UntagResourceRequest(RpcRequest):
+class PutSecretValueRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Kms', '2016-01-20', 'UntagResource','kms')
+		RpcRequest.__init__(self, 'Kms', '2016-01-20', 'PutSecretValue','kms')
 		self.set_protocol_type('https')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,20 +31,32 @@ class UntagResourceRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_TagKeys(self):
-		return self.get_query_params().get('TagKeys')
+	def get_VersionId(self):
+		return self.get_query_params().get('VersionId')
 
-	def set_TagKeys(self,TagKeys):
-		self.add_query_param('TagKeys',TagKeys)
+	def set_VersionId(self,VersionId):
+		self.add_query_param('VersionId',VersionId)
 
-	def get_KeyId(self):
-		return self.get_query_params().get('KeyId')
+	def get_VersionStages(self):
+		return self.get_query_params().get('VersionStages')
 
-	def set_KeyId(self,KeyId):
-		self.add_query_param('KeyId',KeyId)
+	def set_VersionStages(self,VersionStages):
+		self.add_query_param('VersionStages',VersionStages)
+
+	def get_SecretData(self):
+		return self.get_query_params().get('SecretData')
+
+	def set_SecretData(self,SecretData):
+		self.add_query_param('SecretData',SecretData)
 
 	def get_SecretName(self):
 		return self.get_query_params().get('SecretName')
 
 	def set_SecretName(self,SecretName):
 		self.add_query_param('SecretName',SecretName)
+
+	def get_SecretDataType(self):
+		return self.get_query_params().get('SecretDataType')
+
+	def set_SecretDataType(self,SecretDataType):
+		self.add_query_param('SecretDataType',SecretDataType)

@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkkms.endpoint import endpoint_data
 
-class UntagResourceRequest(RpcRequest):
+class ListSecretVersionIdsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Kms', '2016-01-20', 'UntagResource','kms')
+		RpcRequest.__init__(self, 'Kms', '2016-01-20', 'ListSecretVersionIds','kms')
 		self.set_protocol_type('https')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,20 +31,26 @@ class UntagResourceRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_TagKeys(self):
-		return self.get_query_params().get('TagKeys')
+	def get_IncludeDeprecated(self):
+		return self.get_query_params().get('IncludeDeprecated')
 
-	def set_TagKeys(self,TagKeys):
-		self.add_query_param('TagKeys',TagKeys)
+	def set_IncludeDeprecated(self,IncludeDeprecated):
+		self.add_query_param('IncludeDeprecated',IncludeDeprecated)
 
-	def get_KeyId(self):
-		return self.get_query_params().get('KeyId')
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
 
-	def set_KeyId(self,KeyId):
-		self.add_query_param('KeyId',KeyId)
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
 
 	def get_SecretName(self):
 		return self.get_query_params().get('SecretName')
 
 	def set_SecretName(self,SecretName):
 		self.add_query_param('SecretName',SecretName)
+
+	def get_PageNumber(self):
+		return self.get_query_params().get('PageNumber')
+
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)
