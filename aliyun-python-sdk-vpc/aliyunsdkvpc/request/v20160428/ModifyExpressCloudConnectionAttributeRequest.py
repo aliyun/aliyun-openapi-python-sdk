@@ -23,7 +23,7 @@ from aliyunsdkvpc.endpoint import endpoint_data
 class ModifyExpressCloudConnectionAttributeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'ModifyExpressCloudConnectionAttribute','vpc')
+		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'ModifyExpressCloudConnectionAttribute','Vpc')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -59,6 +59,24 @@ class ModifyExpressCloudConnectionAttributeRequest(RpcRequest):
 
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
+
+	def get_CeIp(self):
+		return self.get_query_params().get('CeIp')
+
+	def set_CeIp(self,CeIp):
+		self.add_query_param('CeIp',CeIp)
+
+	def get_BgpAs(self):
+		return self.get_query_params().get('BgpAs')
+
+	def set_BgpAs(self,BgpAs):
+		self.add_query_param('BgpAs',BgpAs)
+
+	def get_PeIp(self):
+		return self.get_query_params().get('PeIp')
+
+	def set_PeIp(self,PeIp):
+		self.add_query_param('PeIp',PeIp)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')

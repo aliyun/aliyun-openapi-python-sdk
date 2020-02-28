@@ -23,7 +23,7 @@ from aliyunsdkvpc.endpoint import endpoint_data
 class ModifyIpv6AddressAttributeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'ModifyIpv6AddressAttribute','vpc')
+		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'ModifyIpv6AddressAttribute','Vpc')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):

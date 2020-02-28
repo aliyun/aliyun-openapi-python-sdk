@@ -23,7 +23,7 @@ from aliyunsdkvpc.endpoint import endpoint_data
 class CreateRouterInterfaceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'CreateRouterInterface','vpc')
+		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'CreateRouterInterface','Vpc')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):

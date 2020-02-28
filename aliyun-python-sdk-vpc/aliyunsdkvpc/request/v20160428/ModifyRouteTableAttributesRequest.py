@@ -23,7 +23,7 @@ from aliyunsdkvpc.endpoint import endpoint_data
 class ModifyRouteTableAttributesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'ModifyRouteTableAttributes','vpc')
+		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'ModifyRouteTableAttributes','Vpc')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -48,12 +48,6 @@ class ModifyRouteTableAttributesRequest(RpcRequest):
 	def set_RouteTableName(self,RouteTableName):
 		self.add_query_param('RouteTableName',RouteTableName)
 
-	def get_ResourceUid(self):
-		return self.get_query_params().get('ResourceUid')
-
-	def set_ResourceUid(self,ResourceUid):
-		self.add_query_param('ResourceUid',ResourceUid)
-
 	def get_RouteTableId(self):
 		return self.get_query_params().get('RouteTableId')
 
@@ -66,12 +60,6 @@ class ModifyRouteTableAttributesRequest(RpcRequest):
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
-	def get_Bandwidth(self):
-		return self.get_query_params().get('Bandwidth')
-
-	def set_Bandwidth(self,Bandwidth):
-		self.add_query_param('Bandwidth',Bandwidth)
-
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
 
@@ -83,15 +71,3 @@ class ModifyRouteTableAttributesRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
-
-	def get_KbpsBandwidth(self):
-		return self.get_query_params().get('KbpsBandwidth')
-
-	def set_KbpsBandwidth(self,KbpsBandwidth):
-		self.add_query_param('KbpsBandwidth',KbpsBandwidth)
-
-	def get_ResourceBid(self):
-		return self.get_query_params().get('ResourceBid')
-
-	def set_ResourceBid(self,ResourceBid):
-		self.add_query_param('ResourceBid',ResourceBid)

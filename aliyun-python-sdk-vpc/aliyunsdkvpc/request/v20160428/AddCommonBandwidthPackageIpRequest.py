@@ -23,7 +23,7 @@ from aliyunsdkvpc.endpoint import endpoint_data
 class AddCommonBandwidthPackageIpRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'AddCommonBandwidthPackageIp','vpc')
+		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'AddCommonBandwidthPackageIp','Vpc')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -59,6 +59,12 @@ class AddCommonBandwidthPackageIpRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_IpType(self):
+		return self.get_query_params().get('IpType')
+
+	def set_IpType(self,IpType):
+		self.add_query_param('IpType',IpType)
 
 	def get_IpInstanceId(self):
 		return self.get_query_params().get('IpInstanceId')

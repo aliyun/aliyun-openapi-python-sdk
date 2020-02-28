@@ -23,7 +23,7 @@ from aliyunsdkvpc.endpoint import endpoint_data
 class ModifyIpv6InternetBandwidthRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'ModifyIpv6InternetBandwidth','vpc')
+		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'ModifyIpv6InternetBandwidth','Vpc')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):

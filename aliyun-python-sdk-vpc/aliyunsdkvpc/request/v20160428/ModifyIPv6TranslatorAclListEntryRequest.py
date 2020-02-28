@@ -23,7 +23,7 @@ from aliyunsdkvpc.endpoint import endpoint_data
 class ModifyIPv6TranslatorAclListEntryRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'ModifyIPv6TranslatorAclListEntry','vpc')
+		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'ModifyIPv6TranslatorAclListEntry','Vpc')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):

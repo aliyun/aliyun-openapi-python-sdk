@@ -23,7 +23,7 @@ from aliyunsdkvpc.endpoint import endpoint_data
 class CancelExpressCloudConnectionRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'CancelExpressCloudConnection','vpc')
+		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'CancelExpressCloudConnection','Vpc')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):

@@ -23,7 +23,7 @@ from aliyunsdkvpc.endpoint import endpoint_data
 class CreateSnatEntryRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'CreateSnatEntry','vpc')
+		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'CreateSnatEntry','Vpc')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -35,6 +35,12 @@ class CreateSnatEntryRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+
+	def get_ClientToken(self):
+		return self.get_query_params().get('ClientToken')
+
+	def set_ClientToken(self,ClientToken):
+		self.add_query_param('ClientToken',ClientToken)
 
 	def get_SourceCIDR(self):
 		return self.get_query_params().get('SourceCIDR')

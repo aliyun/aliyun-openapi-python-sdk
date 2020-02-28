@@ -23,7 +23,7 @@ from aliyunsdkvpc.endpoint import endpoint_data
 class CreateSslVpnServerRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'CreateSslVpnServer','vpc')
+		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'CreateSslVpnServer','Vpc')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -47,6 +47,18 @@ class CreateSslVpnServerRequest(RpcRequest):
 
 	def set_LocalSubnet(self,LocalSubnet):
 		self.add_query_param('LocalSubnet',LocalSubnet)
+
+	def get_EnableMultiFactorAuth(self):
+		return self.get_query_params().get('EnableMultiFactorAuth')
+
+	def set_EnableMultiFactorAuth(self,EnableMultiFactorAuth):
+		self.add_query_param('EnableMultiFactorAuth',EnableMultiFactorAuth)
+
+	def get_IDaaSInstanceId(self):
+		return self.get_query_params().get('IDaaSInstanceId')
+
+	def set_IDaaSInstanceId(self,IDaaSInstanceId):
+		self.add_query_param('IDaaSInstanceId',IDaaSInstanceId)
 
 	def get_Cipher(self):
 		return self.get_query_params().get('Cipher')

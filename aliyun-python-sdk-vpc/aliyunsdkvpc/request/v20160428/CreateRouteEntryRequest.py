@@ -23,7 +23,7 @@ from aliyunsdkvpc.endpoint import endpoint_data
 class CreateRouteEntryRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'CreateRouteEntry','vpc')
+		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'CreateRouteEntry','Vpc')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -89,12 +89,6 @@ class CreateRouteEntryRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
-
-	def get_PrivateIpAddress(self):
-		return self.get_query_params().get('PrivateIpAddress')
-
-	def set_PrivateIpAddress(self,PrivateIpAddress):
-		self.add_query_param('PrivateIpAddress',PrivateIpAddress)
 
 	def get_NextHopLists(self):
 		return self.get_query_params().get('NextHopLists')

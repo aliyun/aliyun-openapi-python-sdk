@@ -23,7 +23,7 @@ from aliyunsdkvpc.endpoint import endpoint_data
 class DescribeAccessPointsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'DescribeAccessPoints','vpc')
+		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'DescribeAccessPoints','Vpc')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -35,12 +35,6 @@ class DescribeAccessPointsRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_Type(self):
-		return self.get_query_params().get('Type')
-
-	def set_Type(self,Type):
-		self.add_query_param('Type',Type)
 
 	def get_PageNumber(self):
 		return self.get_query_params().get('PageNumber')
@@ -65,27 +59,3 @@ class DescribeAccessPointsRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
-
-	def get_Filters(self):
-		return self.get_query_params().get('Filters')
-
-	def set_Filters(self,Filters):
-		for i in range(len(Filters)):	
-			for j in range(len(Filters[i].get('Values'))):
-				if Filters[i].get('Values')[j] is not None:
-					self.add_query_param('Filter.' + str(i + 1) + '.Value.'+str(j + 1), Filters[i].get('Values')[j])
-			if Filters[i].get('Key') is not None:
-				self.add_query_param('Filter.' + str(i + 1) + '.Key' , Filters[i].get('Key'))
-
-
-	def get_HostOperator(self):
-		return self.get_query_params().get('HostOperator')
-
-	def set_HostOperator(self,HostOperator):
-		self.add_query_param('HostOperator',HostOperator)
-
-	def get_Name(self):
-		return self.get_query_params().get('Name')
-
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)

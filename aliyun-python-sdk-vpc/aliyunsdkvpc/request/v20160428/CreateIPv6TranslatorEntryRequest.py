@@ -23,7 +23,7 @@ from aliyunsdkvpc.endpoint import endpoint_data
 class CreateIPv6TranslatorEntryRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'CreateIPv6TranslatorEntry','vpc')
+		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'CreateIPv6TranslatorEntry','Vpc')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
