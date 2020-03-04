@@ -20,15 +20,21 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkreid.endpoint import endpoint_data
 
-class PullActionDataRequest(RpcRequest):
+class DescribeCameraStatisticsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'reid', '2019-09-28', 'PullActionData','1.1.2')
+		RpcRequest.__init__(self, 'reid', '2019-09-28', 'DescribeCameraStatistics','1.1.2')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+
+	def get_StartTimestamp(self):
+		return self.get_body_params().get('StartTimestamp')
+
+	def set_StartTimestamp(self,StartTimestamp):
+		self.add_body_params('StartTimestamp', StartTimestamp)
 
 	def get_StoreId(self):
 		return self.get_body_params().get('StoreId')
@@ -36,20 +42,8 @@ class PullActionDataRequest(RpcRequest):
 	def set_StoreId(self,StoreId):
 		self.add_body_params('StoreId', StoreId)
 
-	def get_EndMessageId(self):
-		return self.get_body_params().get('EndMessageId')
+	def get_EndTimestamp(self):
+		return self.get_body_params().get('EndTimestamp')
 
-	def set_EndMessageId(self,EndMessageId):
-		self.add_body_params('EndMessageId', EndMessageId)
-
-	def get_Limit(self):
-		return self.get_body_params().get('Limit')
-
-	def set_Limit(self,Limit):
-		self.add_body_params('Limit', Limit)
-
-	def get_StartMessageId(self):
-		return self.get_body_params().get('StartMessageId')
-
-	def set_StartMessageId(self,StartMessageId):
-		self.add_body_params('StartMessageId', StartMessageId)
+	def set_EndTimestamp(self,EndTimestamp):
+		self.add_body_params('EndTimestamp', EndTimestamp)
