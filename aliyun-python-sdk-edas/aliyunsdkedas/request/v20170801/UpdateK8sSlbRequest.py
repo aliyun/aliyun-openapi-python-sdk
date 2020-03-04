@@ -32,6 +32,12 @@ class UpdateK8sSlbRequest(RoaRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_ServicePortInfos(self):
+		return self.get_query_params().get('ServicePortInfos')
+
+	def set_ServicePortInfos(self,ServicePortInfos):
+		self.add_query_param('ServicePortInfos',ServicePortInfos)
+
 	def get_SlbProtocol(self):
 		return self.get_query_params().get('SlbProtocol')
 

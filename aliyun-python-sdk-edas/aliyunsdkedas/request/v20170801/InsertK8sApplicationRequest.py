@@ -116,6 +116,12 @@ class InsertK8sApplicationRequest(RoaRequest):
 	def set_LimitMem(self,LimitMem):
 		self.add_query_param('LimitMem',LimitMem)
 
+	def get_LimitmCpu(self):
+		return self.get_query_params().get('LimitmCpu')
+
+	def set_LimitmCpu(self,LimitmCpu):
+		self.add_query_param('LimitmCpu',LimitmCpu)
+
 	def get_EdasContainerVersion(self):
 		return self.get_query_params().get('EdasContainerVersion')
 
@@ -145,6 +151,12 @@ class InsertK8sApplicationRequest(RoaRequest):
 
 	def set_PackageUrl(self,PackageUrl):
 		self.add_query_param('PackageUrl',PackageUrl)
+
+	def get_RequestsmCpu(self):
+		return self.get_query_params().get('RequestsmCpu')
+
+	def set_RequestsmCpu(self,RequestsmCpu):
+		self.add_query_param('RequestsmCpu',RequestsmCpu)
 
 	def get_InternetSlbProtocol(self):
 		return self.get_query_params().get('InternetSlbProtocol')

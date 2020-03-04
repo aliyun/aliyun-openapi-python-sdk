@@ -50,6 +50,12 @@ class DeployK8sApplicationRequest(RoaRequest):
 	def set_Readiness(self,Readiness):
 		self.add_query_param('Readiness',Readiness)
 
+	def get_PackageVersionId(self):
+		return self.get_query_params().get('PackageVersionId')
+
+	def set_PackageVersionId(self,PackageVersionId):
+		self.add_query_param('PackageVersionId',PackageVersionId)
+
 	def get_BatchWaitTime(self):
 		return self.get_query_params().get('BatchWaitTime')
 
@@ -182,6 +188,12 @@ class DeployK8sApplicationRequest(RoaRequest):
 	def set_UseBodyEncoding(self,UseBodyEncoding):
 		self.add_query_param('UseBodyEncoding',UseBodyEncoding)
 
+	def get_ChangeOrderDesc(self):
+		return self.get_query_params().get('ChangeOrderDesc')
+
+	def set_ChangeOrderDesc(self,ChangeOrderDesc):
+		self.add_query_param('ChangeOrderDesc',ChangeOrderDesc)
+
 	def get_UriEncoding(self):
 		return self.get_query_params().get('UriEncoding')
 
@@ -194,17 +206,23 @@ class DeployK8sApplicationRequest(RoaRequest):
 	def set_AppId(self,AppId):
 		self.add_query_param('AppId',AppId)
 
-	def get_MCpuRequest(self):
-		return self.get_query_params().get('MCpuRequest')
+	def get_McpuRequest(self):
+		return self.get_query_params().get('McpuRequest')
 
-	def set_MCpuRequest(self,MCpuRequest):
-		self.add_query_param('MCpuRequest',MCpuRequest)
+	def set_McpuRequest(self,McpuRequest):
+		self.add_query_param('McpuRequest',McpuRequest)
 
-	def get_MCpuLimit(self):
-		return self.get_query_params().get('MCpuLimit')
+	def get_McpuLimit(self):
+		return self.get_query_params().get('McpuLimit')
 
-	def set_MCpuLimit(self,MCpuLimit):
-		self.add_query_param('MCpuLimit',MCpuLimit)
+	def set_McpuLimit(self,McpuLimit):
+		self.add_query_param('McpuLimit',McpuLimit)
+
+	def get_VolumesStr(self):
+		return self.get_query_params().get('VolumesStr')
+
+	def set_VolumesStr(self,VolumesStr):
+		self.add_query_param('VolumesStr',VolumesStr)
 
 	def get_PostStart(self):
 		return self.get_query_params().get('PostStart')

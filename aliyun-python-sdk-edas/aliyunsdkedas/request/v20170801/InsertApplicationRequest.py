@@ -50,6 +50,12 @@ class InsertApplicationRequest(RoaRequest):
 	def set_BuildPackId(self,BuildPackId):
 		self.add_query_param('BuildPackId',BuildPackId)
 
+	def get_ComponentIds(self):
+		return self.get_query_params().get('ComponentIds')
+
+	def set_ComponentIds(self,ComponentIds):
+		self.add_query_param('ComponentIds',ComponentIds)
+
 	def get_HealthCheckURL(self):
 		return self.get_query_params().get('HealthCheckURL')
 

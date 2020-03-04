@@ -25,7 +25,7 @@ class ModifyScalingRuleRequest(RoaRequest):
 	def __init__(self):
 		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'ModifyScalingRule','edas')
 		self.set_uri_pattern('/pop/v5/app/scaling_rules2')
-		self.set_method('POST|PUT')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):

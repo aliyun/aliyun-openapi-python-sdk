@@ -20,11 +20,11 @@
 from aliyunsdkcore.request import RoaRequest
 from aliyunsdkedas.endpoint import endpoint_data
 
-class UpdateK8sApplicationConfigRequest(RoaRequest):
+class AbortChangeOrderRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'UpdateK8sApplicationConfig','edas')
-		self.set_uri_pattern('/pop/v5/k8s/acs/k8s_app_configuration')
+		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'AbortChangeOrder','edas')
+		self.set_uri_pattern('/pop/v5/changeorder/change_order_abort')
 		self.set_method('PUT')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -32,32 +32,8 @@ class UpdateK8sApplicationConfigRequest(RoaRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_AppId(self):
-		return self.get_query_params().get('AppId')
+	def get_ChangeOrderId(self):
+		return self.get_query_params().get('ChangeOrderId')
 
-	def set_AppId(self,AppId):
-		self.add_query_param('AppId',AppId)
-
-	def get_MemoryLimit(self):
-		return self.get_query_params().get('MemoryLimit')
-
-	def set_MemoryLimit(self,MemoryLimit):
-		self.add_query_param('MemoryLimit',MemoryLimit)
-
-	def get_ClusterId(self):
-		return self.get_query_params().get('ClusterId')
-
-	def set_ClusterId(self,ClusterId):
-		self.add_query_param('ClusterId',ClusterId)
-
-	def get_CpuLimit(self):
-		return self.get_query_params().get('CpuLimit')
-
-	def set_CpuLimit(self,CpuLimit):
-		self.add_query_param('CpuLimit',CpuLimit)
-
-	def get_McpuLimit(self):
-		return self.get_query_params().get('McpuLimit')
-
-	def set_McpuLimit(self,McpuLimit):
-		self.add_query_param('McpuLimit',McpuLimit)
+	def set_ChangeOrderId(self,ChangeOrderId):
+		self.add_query_param('ChangeOrderId',ChangeOrderId)
