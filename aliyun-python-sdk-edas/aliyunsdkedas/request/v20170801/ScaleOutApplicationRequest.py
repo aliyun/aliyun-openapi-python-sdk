@@ -23,7 +23,7 @@ from aliyunsdkedas.endpoint import endpoint_data
 class ScaleOutApplicationRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'ScaleOutApplication','edas')
+		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'ScaleOutApplication','Edas')
 		self.set_uri_pattern('/pop/v5/changeorder/co_scale_out')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):

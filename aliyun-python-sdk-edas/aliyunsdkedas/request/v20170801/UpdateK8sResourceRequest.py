@@ -23,7 +23,7 @@ from aliyunsdkedas.endpoint import endpoint_data
 class UpdateK8sResourceRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'UpdateK8sResource','edas')
+		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'UpdateK8sResource','Edas')
 		self.set_uri_pattern('/pop/v5/oam/update_k8s_resource_config')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):

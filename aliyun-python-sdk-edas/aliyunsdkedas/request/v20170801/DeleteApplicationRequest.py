@@ -23,7 +23,7 @@ from aliyunsdkedas.endpoint import endpoint_data
 class DeleteApplicationRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'DeleteApplication','edas')
+		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'DeleteApplication','Edas')
 		self.set_uri_pattern('/pop/v5/changeorder/co_delete_app')
 		self.set_method('DELETE')
 		if hasattr(self, "endpoint_map"):

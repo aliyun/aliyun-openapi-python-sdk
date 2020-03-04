@@ -23,7 +23,7 @@ from aliyunsdkedas.endpoint import endpoint_data
 class InsertClusterMemberRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'InsertClusterMember','edas')
+		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'InsertClusterMember','Edas')
 		self.set_uri_pattern('/pop/v5/resource/cluster_member')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
