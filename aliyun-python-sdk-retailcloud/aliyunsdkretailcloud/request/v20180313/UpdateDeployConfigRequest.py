@@ -63,6 +63,14 @@ class UpdateDeployConfigRequest(RpcRequest):
 	def set_AppId(self,AppId):
 		self.add_query_param('AppId',AppId)
 
+	def get_SecretLists(self):
+		return self.get_query_params().get('SecretLists')
+
+	def set_SecretLists(self,SecretLists):
+		for i in range(len(SecretLists)):	
+			if SecretLists[i] is not None:
+				self.add_query_param('SecretList.' + str(i + 1) , SecretLists[i]);
+
 	def get_Id(self):
 		return self.get_query_params().get('Id')
 

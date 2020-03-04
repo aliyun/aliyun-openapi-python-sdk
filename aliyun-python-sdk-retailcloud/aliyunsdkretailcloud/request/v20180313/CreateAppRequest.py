@@ -37,6 +37,38 @@ class CreateAppRequest(RpcRequest):
 	def set_BizTitle(self,BizTitle):
 		self.add_body_params('BizTitle', BizTitle)
 
+	def get_OperatingSystem(self):
+		return self.get_body_params().get('OperatingSystem')
+
+	def set_OperatingSystem(self,OperatingSystem):
+		self.add_body_params('OperatingSystem', OperatingSystem)
+
+	def get_Description(self):
+		return self.get_body_params().get('Description')
+
+	def set_Description(self,Description):
+		self.add_body_params('Description', Description)
+
+	def get_Language(self):
+		return self.get_body_params().get('Language')
+
+	def set_Language(self,Language):
+		self.add_body_params('Language', Language)
+
+	def get_Title(self):
+		return self.get_body_params().get('Title')
+
+	def set_Title(self,Title):
+		self.add_body_params('Title', Title)
+
+	def get_MiddleWareIdLists(self):
+		return self.get_body_params().get('MiddleWareIdLists')
+
+	def set_MiddleWareIdLists(self,MiddleWareIdLists):
+		for i in range(len(MiddleWareIdLists)):	
+			if MiddleWareIdLists[i] is not None:
+				self.add_body_params('MiddleWareIdList.' + str(i + 1) , MiddleWareIdLists[i]);
+
 	def get_StateType(self):
 		return self.get_body_params().get('StateType')
 
@@ -68,32 +100,8 @@ class CreateAppRequest(RpcRequest):
 	def set_BizCode(self,BizCode):
 		self.add_body_params('BizCode', BizCode)
 
-	def get_OperatingSystem(self):
-		return self.get_body_params().get('OperatingSystem')
-
-	def set_OperatingSystem(self,OperatingSystem):
-		self.add_body_params('OperatingSystem', OperatingSystem)
-
 	def get_Namespace(self):
 		return self.get_body_params().get('Namespace')
 
 	def set_Namespace(self,Namespace):
 		self.add_body_params('Namespace', Namespace)
-
-	def get_Description(self):
-		return self.get_body_params().get('Description')
-
-	def set_Description(self,Description):
-		self.add_body_params('Description', Description)
-
-	def get_Language(self):
-		return self.get_body_params().get('Language')
-
-	def set_Language(self,Language):
-		self.add_body_params('Language', Language)
-
-	def get_Title(self):
-		return self.get_body_params().get('Title')
-
-	def set_Title(self,Title):
-		self.add_body_params('Title', Title)

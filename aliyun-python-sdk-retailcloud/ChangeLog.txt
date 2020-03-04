@@ -1,3 +1,6 @@
+2020-03-04 Version: 2.0.4
+- Mesh.
+
 2020-02-20 Version: 2.0.2
 - Add new api ListUsers.
 - Supported userRole setting for api, CreateApp, UpdateApp, DescribeAppDetail.

@@ -79,3 +79,11 @@ class UpdateAppRequest(RpcRequest):
 
 	def set_Language(self,Language):
 		self.add_body_params('Language', Language)
+
+	def get_MiddleWareIdLists(self):
+		return self.get_body_params().get('MiddleWareIdLists')
+
+	def set_MiddleWareIdLists(self,MiddleWareIdLists):
+		for i in range(len(MiddleWareIdLists)):	
+			if MiddleWareIdLists[i] is not None:
+				self.add_body_params('MiddleWareIdList.' + str(i + 1) , MiddleWareIdLists[i]);
