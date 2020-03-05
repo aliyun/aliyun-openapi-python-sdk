@@ -20,15 +20,33 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkiot.endpoint import endpoint_data
 
-class QueryDeviceByDriverRequest(RpcRequest):
+class UpdateEdgeDriverVersionRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'QueryDeviceByDriver','iot')
+		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'UpdateEdgeDriverVersion','iot')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+
+	def get_ConfigCheckRule(self):
+		return self.get_query_params().get('ConfigCheckRule')
+
+	def set_ConfigCheckRule(self,ConfigCheckRule):
+		self.add_query_param('ConfigCheckRule',ConfigCheckRule)
+
+	def get_EdgeVersion(self):
+		return self.get_query_params().get('EdgeVersion')
+
+	def set_EdgeVersion(self,EdgeVersion):
+		self.add_query_param('EdgeVersion',EdgeVersion)
+
+	def get_Description(self):
+		return self.get_query_params().get('Description')
+
+	def set_Description(self,Description):
+		self.add_query_param('Description',Description)
 
 	def get_DriverId(self):
 		return self.get_query_params().get('DriverId')
@@ -42,20 +60,26 @@ class QueryDeviceByDriverRequest(RpcRequest):
 	def set_IotInstanceId(self,IotInstanceId):
 		self.add_query_param('IotInstanceId',IotInstanceId)
 
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
+	def get_ContainerConfig(self):
+		return self.get_query_params().get('ContainerConfig')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
+	def set_ContainerConfig(self,ContainerConfig):
+		self.add_query_param('ContainerConfig',ContainerConfig)
 
-	def get_CurrentPage(self):
-		return self.get_query_params().get('CurrentPage')
+	def get_DriverVersion(self):
+		return self.get_query_params().get('DriverVersion')
 
-	def set_CurrentPage(self,CurrentPage):
-		self.add_query_param('CurrentPage',CurrentPage)
+	def set_DriverVersion(self,DriverVersion):
+		self.add_query_param('DriverVersion',DriverVersion)
 
-	def get_InstanceId(self):
-		return self.get_query_params().get('InstanceId')
+	def get_DriverConfig(self):
+		return self.get_query_params().get('DriverConfig')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
+	def set_DriverConfig(self,DriverConfig):
+		self.add_query_param('DriverConfig',DriverConfig)
+
+	def get_SourceConfig(self):
+		return self.get_query_params().get('SourceConfig')
+
+	def set_SourceConfig(self,SourceConfig):
+		self.add_query_param('SourceConfig',SourceConfig)

@@ -20,48 +20,26 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkiot.endpoint import endpoint_data
 
-class CancelOTATaskByJobRequest(RpcRequest):
+class BatchGetEdgeDriverRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'CancelOTATaskByJob','iot')
+		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'BatchGetEdgeDriver','iot')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_CancelScheduledTask(self):
-		return self.get_query_params().get('CancelScheduledTask')
+	def get_DriverIdss(self):
+		return self.get_query_params().get('DriverIdss')
 
-	def set_CancelScheduledTask(self,CancelScheduledTask):
-		self.add_query_param('CancelScheduledTask',CancelScheduledTask)
-
-	def get_JobId(self):
-		return self.get_query_params().get('JobId')
-
-	def set_JobId(self,JobId):
-		self.add_query_param('JobId',JobId)
+	def set_DriverIdss(self,DriverIdss):
+		for i in range(len(DriverIdss)):	
+			if DriverIdss[i] is not None:
+				self.add_query_param('DriverIds.' + str(i + 1) , DriverIdss[i]);
 
 	def get_IotInstanceId(self):
 		return self.get_query_params().get('IotInstanceId')
 
 	def set_IotInstanceId(self,IotInstanceId):
 		self.add_query_param('IotInstanceId',IotInstanceId)
-
-	def get_CancelQueuedTask(self):
-		return self.get_query_params().get('CancelQueuedTask')
-
-	def set_CancelQueuedTask(self,CancelQueuedTask):
-		self.add_query_param('CancelQueuedTask',CancelQueuedTask)
-
-	def get_CancelInProgressTask(self):
-		return self.get_query_params().get('CancelInProgressTask')
-
-	def set_CancelInProgressTask(self,CancelInProgressTask):
-		self.add_query_param('CancelInProgressTask',CancelInProgressTask)
-
-	def get_CancelNotifiedTask(self):
-		return self.get_query_params().get('CancelNotifiedTask')
-
-	def set_CancelNotifiedTask(self,CancelNotifiedTask):
-		self.add_query_param('CancelNotifiedTask',CancelNotifiedTask)

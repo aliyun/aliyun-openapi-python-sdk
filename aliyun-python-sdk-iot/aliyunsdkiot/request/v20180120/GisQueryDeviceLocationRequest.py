@@ -30,26 +30,14 @@ class GisQueryDeviceLocationRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_ThingList(self):
-		return self.get_query_params().get('ThingList')
-
-	def set_ThingList(self,ThingList):
-		self.add_query_param('ThingList',ThingList)
-
 	def get_IotInstanceId(self):
 		return self.get_query_params().get('IotInstanceId')
 
 	def set_IotInstanceId(self,IotInstanceId):
 		self.add_query_param('IotInstanceId',IotInstanceId)
 
-	def get_ApiProduct(self):
-		return self.get_body_params().get('ApiProduct')
+	def get_ThingList(self):
+		return self.get_query_params().get('ThingList')
 
-	def set_ApiProduct(self,ApiProduct):
-		self.add_body_params('ApiProduct', ApiProduct)
-
-	def get_ApiRevision(self):
-		return self.get_body_params().get('ApiRevision')
-
-	def set_ApiRevision(self,ApiRevision):
-		self.add_body_params('ApiRevision', ApiRevision)
+	def set_ThingList(self,ThingList):
+		self.add_query_param('ThingList',ThingList)

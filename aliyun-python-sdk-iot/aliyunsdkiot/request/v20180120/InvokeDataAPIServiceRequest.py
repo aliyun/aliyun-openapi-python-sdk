@@ -59,15 +59,3 @@ class InvokeDataAPIServiceRequest(RpcRequest):
 
 	def set_ApiSrn(self,ApiSrn):
 		self.add_body_params('ApiSrn', ApiSrn)
-
-	def get_ApiProduct(self):
-		return self.get_body_params().get('ApiProduct')
-
-	def set_ApiProduct(self,ApiProduct):
-		self.add_body_params('ApiProduct', ApiProduct)
-
-	def get_ApiRevision(self):
-		return self.get_body_params().get('ApiRevision')
-
-	def set_ApiRevision(self,ApiRevision):
-		self.add_body_params('ApiRevision', ApiRevision)

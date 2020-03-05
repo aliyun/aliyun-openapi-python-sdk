@@ -30,14 +30,14 @@ class QueryCertUrlByApplyIdRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_ApplyId(self):
-		return self.get_query_params().get('ApplyId')
-
-	def set_ApplyId(self,ApplyId):
-		self.add_query_param('ApplyId',ApplyId)
-
 	def get_IotInstanceId(self):
 		return self.get_query_params().get('IotInstanceId')
 
 	def set_IotInstanceId(self,IotInstanceId):
 		self.add_query_param('IotInstanceId',IotInstanceId)
+
+	def get_ApplyId(self):
+		return self.get_query_params().get('ApplyId')
+
+	def set_ApplyId(self,ApplyId):
+		self.add_query_param('ApplyId',ApplyId)

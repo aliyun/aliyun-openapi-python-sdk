@@ -30,12 +30,6 @@ class CreateDataAPIServiceRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_ApiPath(self):
-		return self.get_query_params().get('ApiPath')
-
-	def set_ApiPath(self,ApiPath):
-		self.add_query_param('ApiPath',ApiPath)
-
 	def get_RequestParams(self):
 		return self.get_body_params().get('RequestParams')
 
@@ -45,25 +39,37 @@ class CreateDataAPIServiceRequest(RpcRequest):
 				self.add_body_params('RequestParam.' + str(i + 1) + '.Name' , RequestParams[i].get('Name'))
 			if RequestParams[i].get('Type') is not None:
 				self.add_body_params('RequestParam.' + str(i + 1) + '.Type' , RequestParams[i].get('Type'))
-			if RequestParams[i].get('Required') is not None:
-				self.add_body_params('RequestParam.' + str(i + 1) + '.Required' , RequestParams[i].get('Required'))
 			if RequestParams[i].get('Desc') is not None:
 				self.add_body_params('RequestParam.' + str(i + 1) + '.Desc' , RequestParams[i].get('Desc'))
 			if RequestParams[i].get('Example') is not None:
 				self.add_body_params('RequestParam.' + str(i + 1) + '.Example' , RequestParams[i].get('Example'))
+			if RequestParams[i].get('Required') is not None:
+				self.add_body_params('RequestParam.' + str(i + 1) + '.Required' , RequestParams[i].get('Required'))
 
 
 	def get_FolderId(self):
-		return self.get_query_params().get('FolderId')
+		return self.get_body_params().get('FolderId')
 
 	def set_FolderId(self,FolderId):
-		self.add_query_param('FolderId',FolderId)
+		self.add_body_params('FolderId', FolderId)
+
+	def get_IotInstanceId(self):
+		return self.get_body_params().get('IotInstanceId')
+
+	def set_IotInstanceId(self,IotInstanceId):
+		self.add_body_params('IotInstanceId', IotInstanceId)
+
+	def get_ApiPath(self):
+		return self.get_body_params().get('ApiPath')
+
+	def set_ApiPath(self,ApiPath):
+		self.add_body_params('ApiPath', ApiPath)
 
 	def get_TemplateSql(self):
-		return self.get_query_params().get('TemplateSql')
+		return self.get_body_params().get('TemplateSql')
 
 	def set_TemplateSql(self,TemplateSql):
-		self.add_query_param('TemplateSql',TemplateSql)
+		self.add_body_params('TemplateSql', TemplateSql)
 
 	def get_ResponseParams(self):
 		return self.get_body_params().get('ResponseParams')
@@ -74,28 +80,28 @@ class CreateDataAPIServiceRequest(RpcRequest):
 				self.add_body_params('ResponseParam.' + str(i + 1) + '.Name' , ResponseParams[i].get('Name'))
 			if ResponseParams[i].get('Type') is not None:
 				self.add_body_params('ResponseParam.' + str(i + 1) + '.Type' , ResponseParams[i].get('Type'))
-			if ResponseParams[i].get('Required') is not None:
-				self.add_body_params('ResponseParam.' + str(i + 1) + '.Required' , ResponseParams[i].get('Required'))
 			if ResponseParams[i].get('Desc') is not None:
 				self.add_body_params('ResponseParam.' + str(i + 1) + '.Desc' , ResponseParams[i].get('Desc'))
 			if ResponseParams[i].get('Example') is not None:
 				self.add_body_params('ResponseParam.' + str(i + 1) + '.Example' , ResponseParams[i].get('Example'))
+			if ResponseParams[i].get('Required') is not None:
+				self.add_body_params('ResponseParam.' + str(i + 1) + '.Required' , ResponseParams[i].get('Required'))
 
 
 	def get_OriginSql(self):
-		return self.get_query_params().get('OriginSql')
+		return self.get_body_params().get('OriginSql')
 
 	def set_OriginSql(self,OriginSql):
-		self.add_query_param('OriginSql',OriginSql)
+		self.add_body_params('OriginSql', OriginSql)
 
 	def get_DisplayName(self):
-		return self.get_query_params().get('DisplayName')
+		return self.get_body_params().get('DisplayName')
 
 	def set_DisplayName(self,DisplayName):
-		self.add_query_param('DisplayName',DisplayName)
+		self.add_body_params('DisplayName', DisplayName)
 
 	def get_Desc(self):
-		return self.get_query_params().get('Desc')
+		return self.get_body_params().get('Desc')
 
 	def set_Desc(self,Desc):
-		self.add_query_param('Desc',Desc)
+		self.add_body_params('Desc', Desc)

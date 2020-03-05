@@ -60,6 +60,12 @@ class CreateOTAFirmwareRequest(RpcRequest):
 	def set_FirmwareDesc(self,FirmwareDesc):
 		self.add_query_param('FirmwareDesc',FirmwareDesc)
 
+	def get_ModuleName(self):
+		return self.get_query_params().get('ModuleName')
+
+	def set_ModuleName(self,ModuleName):
+		self.add_query_param('ModuleName',ModuleName)
+
 	def get_FirmwareSign(self):
 		return self.get_query_params().get('FirmwareSign')
 

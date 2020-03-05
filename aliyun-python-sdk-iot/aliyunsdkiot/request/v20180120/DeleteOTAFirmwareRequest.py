@@ -30,14 +30,14 @@ class DeleteOTAFirmwareRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_FirmwareId(self):
-		return self.get_query_params().get('FirmwareId')
-
-	def set_FirmwareId(self,FirmwareId):
-		self.add_query_param('FirmwareId',FirmwareId)
-
 	def get_IotInstanceId(self):
 		return self.get_query_params().get('IotInstanceId')
 
 	def set_IotInstanceId(self,IotInstanceId):
 		self.add_query_param('IotInstanceId',IotInstanceId)
+
+	def get_FirmwareId(self):
+		return self.get_query_params().get('FirmwareId')
+
+	def set_FirmwareId(self,FirmwareId):
+		self.add_query_param('FirmwareId',FirmwareId)

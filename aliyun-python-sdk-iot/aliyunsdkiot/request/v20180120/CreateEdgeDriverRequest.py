@@ -20,27 +20,33 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkiot.endpoint import endpoint_data
 
-class CancelOTATaskByJobRequest(RpcRequest):
+class CreateEdgeDriverRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'CancelOTATaskByJob','iot')
+		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'CreateEdgeDriver','iot')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_CancelScheduledTask(self):
-		return self.get_query_params().get('CancelScheduledTask')
+	def get_DriverProtocol(self):
+		return self.get_query_params().get('DriverProtocol')
 
-	def set_CancelScheduledTask(self,CancelScheduledTask):
-		self.add_query_param('CancelScheduledTask',CancelScheduledTask)
+	def set_DriverProtocol(self,DriverProtocol):
+		self.add_query_param('DriverProtocol',DriverProtocol)
 
-	def get_JobId(self):
-		return self.get_query_params().get('JobId')
+	def get_DriverName(self):
+		return self.get_query_params().get('DriverName')
 
-	def set_JobId(self,JobId):
-		self.add_query_param('JobId',JobId)
+	def set_DriverName(self,DriverName):
+		self.add_query_param('DriverName',DriverName)
+
+	def get_IsBuiltIn(self):
+		return self.get_query_params().get('IsBuiltIn')
+
+	def set_IsBuiltIn(self,IsBuiltIn):
+		self.add_query_param('IsBuiltIn',IsBuiltIn)
 
 	def get_IotInstanceId(self):
 		return self.get_query_params().get('IotInstanceId')
@@ -48,20 +54,14 @@ class CancelOTATaskByJobRequest(RpcRequest):
 	def set_IotInstanceId(self,IotInstanceId):
 		self.add_query_param('IotInstanceId',IotInstanceId)
 
-	def get_CancelQueuedTask(self):
-		return self.get_query_params().get('CancelQueuedTask')
+	def get_Runtime(self):
+		return self.get_query_params().get('Runtime')
 
-	def set_CancelQueuedTask(self,CancelQueuedTask):
-		self.add_query_param('CancelQueuedTask',CancelQueuedTask)
+	def set_Runtime(self,Runtime):
+		self.add_query_param('Runtime',Runtime)
 
-	def get_CancelInProgressTask(self):
-		return self.get_query_params().get('CancelInProgressTask')
+	def get_CpuArch(self):
+		return self.get_query_params().get('CpuArch')
 
-	def set_CancelInProgressTask(self,CancelInProgressTask):
-		self.add_query_param('CancelInProgressTask',CancelInProgressTask)
-
-	def get_CancelNotifiedTask(self):
-		return self.get_query_params().get('CancelNotifiedTask')
-
-	def set_CancelNotifiedTask(self,CancelNotifiedTask):
-		self.add_query_param('CancelNotifiedTask',CancelNotifiedTask)
+	def set_CpuArch(self,CpuArch):
+		self.add_query_param('CpuArch',CpuArch)

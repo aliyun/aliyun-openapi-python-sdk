@@ -20,27 +20,21 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkiot.endpoint import endpoint_data
 
-class GetDeviceListByIotIdsRequest(RpcRequest):
+class DeleteEdgeDriverRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'GetDeviceListByIotIds','iot')
+		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'DeleteEdgeDriver','iot')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_ResourceGroupId(self):
-		return self.get_query_params().get('ResourceGroupId')
+	def get_DriverId(self):
+		return self.get_query_params().get('DriverId')
 
-	def set_ResourceGroupId(self,ResourceGroupId):
-		self.add_query_param('ResourceGroupId',ResourceGroupId)
-
-	def get_IotIds(self):
-		return self.get_query_params().get('IotIds')
-
-	def set_IotIds(self,IotIds):
-		self.add_query_param('IotIds',IotIds)
+	def set_DriverId(self,DriverId):
+		self.add_query_param('DriverId',DriverId)
 
 	def get_IotInstanceId(self):
 		return self.get_query_params().get('IotInstanceId')

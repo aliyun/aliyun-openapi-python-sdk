@@ -30,6 +30,12 @@ class CreateTopicRouteTableRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_IotInstanceId(self):
+		return self.get_query_params().get('IotInstanceId')
+
+	def set_IotInstanceId(self,IotInstanceId):
+		self.add_query_param('IotInstanceId',IotInstanceId)
+
 	def get_DstTopics(self):
 		return self.get_query_params().get('DstTopics')
 
@@ -37,12 +43,6 @@ class CreateTopicRouteTableRequest(RpcRequest):
 		for i in range(len(DstTopics)):	
 			if DstTopics[i] is not None:
 				self.add_query_param('DstTopic.' + str(i + 1) , DstTopics[i]);
-
-	def get_IotInstanceId(self):
-		return self.get_query_params().get('IotInstanceId')
-
-	def set_IotInstanceId(self,IotInstanceId):
-		self.add_query_param('IotInstanceId',IotInstanceId)
 
 	def get_SrcTopic(self):
 		return self.get_query_params().get('SrcTopic')

@@ -30,8 +30,14 @@ class GetDataAPIServiceDetailRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_IotInstanceId(self):
+		return self.get_body_params().get('IotInstanceId')
+
+	def set_IotInstanceId(self,IotInstanceId):
+		self.add_body_params('IotInstanceId', IotInstanceId)
+
 	def get_ApiSrn(self):
-		return self.get_query_params().get('ApiSrn')
+		return self.get_body_params().get('ApiSrn')
 
 	def set_ApiSrn(self,ApiSrn):
-		self.add_query_param('ApiSrn',ApiSrn)
+		self.add_body_params('ApiSrn', ApiSrn)

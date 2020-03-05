@@ -30,12 +30,6 @@ class BatchAddThingTopoRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_Ext(self):
-		return self.get_query_params().get('Ext')
-
-	def set_Ext(self,Ext):
-		self.add_query_param('Ext',Ext)
-
 	def get_GwProductKey(self):
 		return self.get_query_params().get('GwProductKey')
 
