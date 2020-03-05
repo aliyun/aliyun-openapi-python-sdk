@@ -25,12 +25,6 @@ class SendMessageRequest(RpcRequest):
 		RpcRequest.__init__(self, 'OnsMqtt', '2019-12-11', 'SendMessage','onsmqtt')
 		self.set_method('POST')
 
-	def get_NoPersistFlag(self):
-		return self.get_query_params().get('NoPersistFlag')
-
-	def set_NoPersistFlag(self,NoPersistFlag):
-		self.add_query_param('NoPersistFlag',NoPersistFlag)
-
 	def get_MqttTopic(self):
 		return self.get_query_params().get('MqttTopic')
 
