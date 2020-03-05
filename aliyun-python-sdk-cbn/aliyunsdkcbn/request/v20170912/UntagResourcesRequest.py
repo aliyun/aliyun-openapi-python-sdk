@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,10 +18,17 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkcbn.endpoint import endpoint_data
+
 class UntagResourcesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cbn', '2017-09-12', 'UntagResources','cbn')
+		RpcRequest.__init__(self, 'Cbn', '2017-09-12', 'UntagResources','Cbn')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -49,23 +56,17 @@ class UntagResourcesRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
-	def get_TagOwnerUid(self):
-		return self.get_query_params().get('TagOwnerUid')
-
-	def set_TagOwnerUid(self,TagOwnerUid):
-		self.add_query_param('TagOwnerUid',TagOwnerUid)
-
-	def get_TagOwnerBid(self):
-		return self.get_query_params().get('TagOwnerBid')
-
-	def set_TagOwnerBid(self,TagOwnerBid):
-		self.add_query_param('TagOwnerBid',TagOwnerBid)
-
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_ResourceType(self):
+		return self.get_query_params().get('ResourceType')
+
+	def set_ResourceType(self,ResourceType):
+		self.add_query_param('ResourceType',ResourceType)
 
 	def get_TagKeys(self):
 		return self.get_query_params().get('TagKeys')
@@ -74,9 +75,3 @@ class UntagResourcesRequest(RpcRequest):
 		for i in range(len(TagKeys)):	
 			if TagKeys[i] is not None:
 				self.add_query_param('TagKey.' + str(i + 1) , TagKeys[i]);
-
-	def get_ResourceType(self):
-		return self.get_query_params().get('ResourceType')
-
-	def set_ResourceType(self,ResourceType):
-		self.add_query_param('ResourceType',ResourceType)

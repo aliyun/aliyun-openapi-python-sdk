@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcbn.endpoint import endpoint_data
 
-class ModifyCenAttributeRequest(RpcRequest):
+class DescribeCenChildInstanceRouteEntriesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cbn', '2017-09-12', 'ModifyCenAttribute','Cbn')
+		RpcRequest.__init__(self, 'Cbn', '2017-09-12', 'DescribeCenChildInstanceRouteEntries','Cbn')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -42,11 +42,23 @@ class ModifyCenAttributeRequest(RpcRequest):
 	def set_CenId(self,CenId):
 		self.add_query_param('CenId',CenId)
 
-	def get_Description(self):
-		return self.get_query_params().get('Description')
+	def get_PageNumber(self):
+		return self.get_query_params().get('PageNumber')
 
-	def set_Description(self,Description):
-		self.add_query_param('Description',Description)
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)
+
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
+
+	def get_ChildInstanceRegionId(self):
+		return self.get_query_params().get('ChildInstanceRegionId')
+
+	def set_ChildInstanceRegionId(self,ChildInstanceRegionId):
+		self.add_query_param('ChildInstanceRegionId',ChildInstanceRegionId)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -66,14 +78,20 @@ class ModifyCenAttributeRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_ProtectionLevel(self):
-		return self.get_query_params().get('ProtectionLevel')
+	def get_ChildInstanceType(self):
+		return self.get_query_params().get('ChildInstanceType')
 
-	def set_ProtectionLevel(self,ProtectionLevel):
-		self.add_query_param('ProtectionLevel',ProtectionLevel)
+	def set_ChildInstanceType(self,ChildInstanceType):
+		self.add_query_param('ChildInstanceType',ChildInstanceType)
 
-	def get_Name(self):
-		return self.get_query_params().get('Name')
+	def get_ChildInstanceId(self):
+		return self.get_query_params().get('ChildInstanceId')
 
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)
+	def set_ChildInstanceId(self,ChildInstanceId):
+		self.add_query_param('ChildInstanceId',ChildInstanceId)
+
+	def get_Status(self):
+		return self.get_query_params().get('Status')
+
+	def set_Status(self,Status):
+		self.add_query_param('Status',Status)

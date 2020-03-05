@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcbn.endpoint import endpoint_data
 
-class ModifyCenAttributeRequest(RpcRequest):
+class DescribeFlowlogsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cbn', '2017-09-12', 'ModifyCenAttribute','Cbn')
+		RpcRequest.__init__(self, 'Cbn', '2017-09-12', 'DescribeFlowlogs','Cbn')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -36,6 +36,12 @@ class ModifyCenAttributeRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_ClientToken(self):
+		return self.get_query_params().get('ClientToken')
+
+	def set_ClientToken(self,ClientToken):
+		self.add_query_param('ClientToken',ClientToken)
+
 	def get_CenId(self):
 		return self.get_query_params().get('CenId')
 
@@ -47,6 +53,30 @@ class ModifyCenAttributeRequest(RpcRequest):
 
 	def set_Description(self,Description):
 		self.add_query_param('Description',Description)
+
+	def get_PageNumber(self):
+		return self.get_query_params().get('PageNumber')
+
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)
+
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
+
+	def get_ProjectName(self):
+		return self.get_query_params().get('ProjectName')
+
+	def set_ProjectName(self,ProjectName):
+		self.add_query_param('ProjectName',ProjectName)
+
+	def get_LogStoreName(self):
+		return self.get_query_params().get('LogStoreName')
+
+	def set_LogStoreName(self,LogStoreName):
+		self.add_query_param('LogStoreName',LogStoreName)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -66,14 +96,20 @@ class ModifyCenAttributeRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_ProtectionLevel(self):
-		return self.get_query_params().get('ProtectionLevel')
+	def get_FlowLogId(self):
+		return self.get_query_params().get('FlowLogId')
 
-	def set_ProtectionLevel(self,ProtectionLevel):
-		self.add_query_param('ProtectionLevel',ProtectionLevel)
+	def set_FlowLogId(self,FlowLogId):
+		self.add_query_param('FlowLogId',FlowLogId)
 
-	def get_Name(self):
-		return self.get_query_params().get('Name')
+	def get_FlowLogName(self):
+		return self.get_query_params().get('FlowLogName')
 
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)
+	def set_FlowLogName(self,FlowLogName):
+		self.add_query_param('FlowLogName',FlowLogName)
+
+	def get_Status(self):
+		return self.get_query_params().get('Status')
+
+	def set_Status(self,Status):
+		self.add_query_param('Status',Status)

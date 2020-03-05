@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcbn.endpoint import endpoint_data
 
-class ModifyCenAttributeRequest(RpcRequest):
+class DeactiveFlowLogRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cbn', '2017-09-12', 'ModifyCenAttribute','Cbn')
+		RpcRequest.__init__(self, 'Cbn', '2017-09-12', 'DeactiveFlowLog','Cbn')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -36,17 +36,17 @@ class ModifyCenAttributeRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_ClientToken(self):
+		return self.get_query_params().get('ClientToken')
+
+	def set_ClientToken(self,ClientToken):
+		self.add_query_param('ClientToken',ClientToken)
+
 	def get_CenId(self):
 		return self.get_query_params().get('CenId')
 
 	def set_CenId(self,CenId):
 		self.add_query_param('CenId',CenId)
-
-	def get_Description(self):
-		return self.get_query_params().get('Description')
-
-	def set_Description(self,Description):
-		self.add_query_param('Description',Description)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -66,14 +66,8 @@ class ModifyCenAttributeRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_ProtectionLevel(self):
-		return self.get_query_params().get('ProtectionLevel')
+	def get_FlowLogId(self):
+		return self.get_query_params().get('FlowLogId')
 
-	def set_ProtectionLevel(self,ProtectionLevel):
-		self.add_query_param('ProtectionLevel',ProtectionLevel)
-
-	def get_Name(self):
-		return self.get_query_params().get('Name')
-
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)
+	def set_FlowLogId(self,FlowLogId):
+		self.add_query_param('FlowLogId',FlowLogId)

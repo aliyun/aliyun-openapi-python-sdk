@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcbn.endpoint import endpoint_data
 
-class ModifyCenAttributeRequest(RpcRequest):
+class ListTagResourcesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cbn', '2017-09-12', 'ModifyCenAttribute','Cbn')
+		RpcRequest.__init__(self, 'Cbn', '2017-09-12', 'ListTagResources','Cbn')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -36,17 +36,36 @@ class ModifyCenAttributeRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_CenId(self):
-		return self.get_query_params().get('CenId')
+	def get_NextToken(self):
+		return self.get_query_params().get('NextToken')
 
-	def set_CenId(self,CenId):
-		self.add_query_param('CenId',CenId)
+	def set_NextToken(self,NextToken):
+		self.add_query_param('NextToken',NextToken)
 
-	def get_Description(self):
-		return self.get_query_params().get('Description')
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
 
-	def set_Description(self,Description):
-		self.add_query_param('Description',Description)
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
+
+	def get_Tags(self):
+		return self.get_query_params().get('Tags')
+
+	def set_Tags(self,Tags):
+		for i in range(len(Tags)):	
+			if Tags[i].get('Value') is not None:
+				self.add_query_param('Tag.' + str(i + 1) + '.Value' , Tags[i].get('Value'))
+			if Tags[i].get('Key') is not None:
+				self.add_query_param('Tag.' + str(i + 1) + '.Key' , Tags[i].get('Key'))
+
+
+	def get_ResourceIds(self):
+		return self.get_query_params().get('ResourceIds')
+
+	def set_ResourceIds(self,ResourceIds):
+		for i in range(len(ResourceIds)):	
+			if ResourceIds[i] is not None:
+				self.add_query_param('ResourceId.' + str(i + 1) , ResourceIds[i]);
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -66,14 +85,8 @@ class ModifyCenAttributeRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_ProtectionLevel(self):
-		return self.get_query_params().get('ProtectionLevel')
+	def get_ResourceType(self):
+		return self.get_query_params().get('ResourceType')
 
-	def set_ProtectionLevel(self,ProtectionLevel):
-		self.add_query_param('ProtectionLevel',ProtectionLevel)
-
-	def get_Name(self):
-		return self.get_query_params().get('Name')
-
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)
+	def set_ResourceType(self,ResourceType):
+		self.add_query_param('ResourceType',ResourceType)
