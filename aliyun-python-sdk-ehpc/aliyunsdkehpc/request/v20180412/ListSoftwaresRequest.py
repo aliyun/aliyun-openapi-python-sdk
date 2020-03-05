@@ -18,11 +18,23 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkehpc.endpoint import endpoint_data
 
 class ListSoftwaresRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'EHPC', '2018-04-12', 'ListSoftwares','ehs')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
+
+	def get_OsTag(self):
+		return self.get_query_params().get('OsTag')
+
+	def set_OsTag(self,OsTag):
+		self.add_query_param('OsTag',OsTag)
 
 	def get_EhpcVersion(self):
 		return self.get_query_params().get('EhpcVersion')

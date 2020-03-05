@@ -18,11 +18,17 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkehpc.endpoint import endpoint_data
 
 class GetAccountingReportRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'EHPC', '2018-04-12', 'GetAccountingReport','ehs')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_ReportType(self):
 		return self.get_query_params().get('ReportType')
@@ -42,6 +48,12 @@ class GetAccountingReportRequest(RpcRequest):
 	def set_FilterValue(self,FilterValue):
 		self.add_query_param('FilterValue',FilterValue)
 
+	def get_Dim(self):
+		return self.get_query_params().get('Dim')
+
+	def set_Dim(self,Dim):
+		self.add_query_param('Dim',Dim)
+
 	def get_ClusterId(self):
 		return self.get_query_params().get('ClusterId')
 
@@ -53,3 +65,21 @@ class GetAccountingReportRequest(RpcRequest):
 
 	def set_StartTime(self,StartTime):
 		self.add_query_param('StartTime',StartTime)
+
+	def get_PageNumber(self):
+		return self.get_query_params().get('PageNumber')
+
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)
+
+	def get_JobId(self):
+		return self.get_query_params().get('JobId')
+
+	def set_JobId(self,JobId):
+		self.add_query_param('JobId',JobId)
+
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)

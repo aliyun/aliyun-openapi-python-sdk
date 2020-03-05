@@ -18,11 +18,23 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkehpc.endpoint import endpoint_data
 
 class SetAutoScaleConfigRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'EHPC', '2018-04-12', 'SetAutoScaleConfig','ehs')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
+
+	def get_ImageId(self):
+		return self.get_query_params().get('ImageId')
+
+	def set_ImageId(self,ImageId):
+		self.add_query_param('ImageId',ImageId)
 
 	def get_SpotPriceLimit(self):
 		return self.get_query_params().get('SpotPriceLimit')
@@ -113,6 +125,8 @@ class SetAutoScaleConfigRequest(RpcRequest):
 						self.add_query_param('Queues.' + str(i + 1) + '.InstanceTypes.'+str(j + 1)+ '.HostNamePrefix', Queuess[i].get('InstanceTypess')[j].get('HostNamePrefix'))
 					if Queuess[i].get('InstanceTypess')[j].get('SpotPriceLimit') is not None:
 						self.add_query_param('Queues.' + str(i + 1) + '.InstanceTypes.'+str(j + 1)+ '.SpotPriceLimit', Queuess[i].get('InstanceTypess')[j].get('SpotPriceLimit'))
+			if Queuess[i].get('MaxNodesInQueue') is not None:
+				self.add_query_param('Queues.' + str(i + 1) + '.MaxNodesInQueue' , Queuess[i].get('MaxNodesInQueue'))
 			if Queuess[i].get('InstanceType') is not None:
 				self.add_query_param('Queues.' + str(i + 1) + '.InstanceType' , Queuess[i].get('InstanceType'))
 			if Queuess[i].get('EnableAutoGrow') is not None:

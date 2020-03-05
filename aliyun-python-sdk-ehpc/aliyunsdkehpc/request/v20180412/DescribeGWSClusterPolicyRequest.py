@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkehpc.endpoint import endpoint_data
 
-class GetHybridClusterConfigRequest(RpcRequest):
+class DescribeGWSClusterPolicyRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'EHPC', '2018-04-12', 'GetHybridClusterConfig','ehs')
+		RpcRequest.__init__(self, 'EHPC', '2018-04-12', 'DescribeGWSClusterPolicy','ehs')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -35,9 +35,3 @@ class GetHybridClusterConfigRequest(RpcRequest):
 
 	def set_ClusterId(self,ClusterId):
 		self.add_query_param('ClusterId',ClusterId)
-
-	def get_Node(self):
-		return self.get_query_params().get('Node')
-
-	def set_Node(self,Node):
-		self.add_query_param('Node',Node)

@@ -20,15 +20,27 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkehpc.endpoint import endpoint_data
 
-class GetHybridClusterConfigRequest(RpcRequest):
+class SetGWSClusterPolicyRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'EHPC', '2018-04-12', 'GetHybridClusterConfig','ehs')
+		RpcRequest.__init__(self, 'EHPC', '2018-04-12', 'SetGWSClusterPolicy','ehs')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+
+	def get_Watermark(self):
+		return self.get_query_params().get('Watermark')
+
+	def set_Watermark(self,Watermark):
+		self.add_query_param('Watermark',Watermark)
+
+	def get_LocalDrive(self):
+		return self.get_query_params().get('LocalDrive')
+
+	def set_LocalDrive(self,LocalDrive):
+		self.add_query_param('LocalDrive',LocalDrive)
 
 	def get_ClusterId(self):
 		return self.get_query_params().get('ClusterId')
@@ -36,8 +48,14 @@ class GetHybridClusterConfigRequest(RpcRequest):
 	def set_ClusterId(self,ClusterId):
 		self.add_query_param('ClusterId',ClusterId)
 
-	def get_Node(self):
-		return self.get_query_params().get('Node')
+	def get_Clipboard(self):
+		return self.get_query_params().get('Clipboard')
 
-	def set_Node(self,Node):
-		self.add_query_param('Node',Node)
+	def set_Clipboard(self,Clipboard):
+		self.add_query_param('Clipboard',Clipboard)
+
+	def get_UsbRedirect(self):
+		return self.get_query_params().get('UsbRedirect')
+
+	def set_UsbRedirect(self,UsbRedirect):
+		self.add_query_param('UsbRedirect',UsbRedirect)
