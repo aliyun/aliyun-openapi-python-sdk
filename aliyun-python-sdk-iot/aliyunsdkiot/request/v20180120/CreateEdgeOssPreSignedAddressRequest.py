@@ -20,30 +20,48 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkiot.endpoint import endpoint_data
 
-class UpdateDeviceGroupRequest(RpcRequest):
+class CreateEdgeOssPreSignedAddressRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'UpdateDeviceGroup','Iot')
+		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'CreateEdgeOssPreSignedAddress','Iot')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_GroupId(self):
-		return self.get_query_params().get('GroupId')
+	def get_Type(self):
+		return self.get_query_params().get('Type')
 
-	def set_GroupId(self,GroupId):
-		self.add_query_param('GroupId',GroupId)
-
-	def get_GroupDesc(self):
-		return self.get_query_params().get('GroupDesc')
-
-	def set_GroupDesc(self,GroupDesc):
-		self.add_query_param('GroupDesc',GroupDesc)
+	def set_Type(self,Type):
+		self.add_query_param('Type',Type)
 
 	def get_IotInstanceId(self):
 		return self.get_query_params().get('IotInstanceId')
 
 	def set_IotInstanceId(self,IotInstanceId):
 		self.add_query_param('IotInstanceId',IotInstanceId)
+
+	def get_ResourceVersion(self):
+		return self.get_query_params().get('ResourceVersion')
+
+	def set_ResourceVersion(self,ResourceVersion):
+		self.add_query_param('ResourceVersion',ResourceVersion)
+
+	def get_ResourceId(self):
+		return self.get_query_params().get('ResourceId')
+
+	def set_ResourceId(self,ResourceId):
+		self.add_query_param('ResourceId',ResourceId)
+
+	def get_FileName(self):
+		return self.get_query_params().get('FileName')
+
+	def set_FileName(self,FileName):
+		self.add_query_param('FileName',FileName)
+
+	def get_InstanceId(self):
+		return self.get_query_params().get('InstanceId')
+
+	def set_InstanceId(self,InstanceId):
+		self.add_query_param('InstanceId',InstanceId)

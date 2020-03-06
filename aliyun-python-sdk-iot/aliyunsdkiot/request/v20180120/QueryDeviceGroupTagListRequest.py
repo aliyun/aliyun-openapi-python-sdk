@@ -23,7 +23,7 @@ from aliyunsdkiot.endpoint import endpoint_data
 class QueryDeviceGroupTagListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'QueryDeviceGroupTagList','iot')
+		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'QueryDeviceGroupTagList','Iot')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
