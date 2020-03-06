@@ -66,12 +66,6 @@ class OnsWarnCreateRequest(RpcRequest):
 	def set_InstanceId(self,InstanceId):
 		self.add_query_param('InstanceId',InstanceId)
 
-	def get_BlockTime(self):
-		return self.get_query_params().get('BlockTime')
-
-	def set_BlockTime(self,BlockTime):
-		self.add_query_param('BlockTime',BlockTime)
-
 	def get_Topic(self):
 		return self.get_query_params().get('Topic')
 
