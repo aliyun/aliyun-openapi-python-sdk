@@ -23,7 +23,7 @@ from aliyunsdksaf.endpoint import endpoint_data
 class ExecuteRequestRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'saf', '2019-05-21', 'ExecuteRequest','saf')
+		RpcRequest.__init__(self, 'saf', '2018-09-19', 'ExecuteRequest','saf')
 		self.set_protocol_type('https')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
