@@ -23,7 +23,7 @@ from aliyunsdkdbs.endpoint import endpoint_data
 class ConfigureBackupPlanRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dbs', '2019-03-06', 'ConfigureBackupPlan')
+		RpcRequest.__init__(self, 'Dbs', '2019-03-06', 'ConfigureBackupPlan','cbs')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -95,6 +95,12 @@ class ConfigureBackupPlanRequest(RpcRequest):
 
 	def set_EnableBackupLog(self,EnableBackupLog):
 		self.add_query_param('EnableBackupLog',EnableBackupLog)
+
+	def get_BackupStorageType(self):
+		return self.get_query_params().get('BackupStorageType')
+
+	def set_BackupStorageType(self,BackupStorageType):
+		self.add_query_param('BackupStorageType',BackupStorageType)
 
 	def get_DuplicationArchivePeriod(self):
 		return self.get_query_params().get('DuplicationArchivePeriod')
