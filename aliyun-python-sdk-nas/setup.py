@@ -30,8 +30,8 @@ Created on 7/3/2015
 @author: alex
 """
 
-PACKAGE = "aliyunsdknasfork"
-NAME = "aliyun-python-sdk-nas-fork"
+PACKAGE = "aliyunsdknas"
+NAME = "aliyun-python-sdk-nas"
 DESCRIPTION = "The nas module of Aliyun Python sdk."
 AUTHOR = "Aliyun"
 AUTHOR_EMAIL = "aliyun-developers-efficiency@list.alibaba-inc.com"
