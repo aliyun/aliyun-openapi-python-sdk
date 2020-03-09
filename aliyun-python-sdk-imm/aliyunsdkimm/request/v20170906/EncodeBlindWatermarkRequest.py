@@ -48,12 +48,6 @@ class EncodeBlindWatermarkRequest(RpcRequest):
 	def set_Content(self,Content):
 		self.add_query_param('Content',Content)
 
-	def get_WatermarkType(self):
-		return self.get_query_params().get('WatermarkType')
-
-	def set_WatermarkType(self,WatermarkType):
-		self.add_query_param('WatermarkType',WatermarkType)
-
 	def get_TargetUri(self):
 		return self.get_query_params().get('TargetUri')
 

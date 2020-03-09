@@ -30,12 +30,6 @@ class DetectImageTagsRequest(RpcRequest):
 	def set_Project(self,Project):
 		self.add_query_param('Project',Project)
 
-	def get_RealUid(self):
-		return self.get_query_params().get('RealUid')
-
-	def set_RealUid(self,RealUid):
-		self.add_query_param('RealUid',RealUid)
-
 	def get_ImageUri(self):
 		return self.get_query_params().get('ImageUri')
 

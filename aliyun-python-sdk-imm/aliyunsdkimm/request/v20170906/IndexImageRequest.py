@@ -48,12 +48,6 @@ class IndexImageRequest(RpcRequest):
 	def set_SourceType(self,SourceType):
 		self.add_query_param('SourceType',SourceType)
 
-	def get_RealUid(self):
-		return self.get_query_params().get('RealUid')
-
-	def set_RealUid(self,RealUid):
-		self.add_query_param('RealUid',RealUid)
-
 	def get_NotifyTopicName(self):
 		return self.get_query_params().get('NotifyTopicName')
 
