@@ -257,7 +257,9 @@ class AcsClient:
         user_agent = self.merge_user_agent(default_agent, extra_agent)
 
         for key, value in user_agent.items():
-            base += ' %s/%s' % (key, value)
+            temp = ' %s/%s' % (key, value)
+            if temp not in base:
+                base += temp
         header['User-Agent'] = base
 
         header['x-sdk-client'] = 'python/2.0.0'

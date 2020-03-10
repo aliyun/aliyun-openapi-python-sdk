@@ -5,4 +5,6 @@ for i in `ls | grep aliyun-python-sdk-`; do
     export PYTHONPATH=$PYTHONPATH:`pwd`/$i > /dev/null
 done
 
+python --version
+pip --version
 coverage run -a --source="./aliyun-python-sdk-core/aliyunsdkcore" --branch -m pytest python-sdk-functional-test

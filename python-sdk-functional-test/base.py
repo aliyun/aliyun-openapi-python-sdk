@@ -100,13 +100,9 @@ class SDKTestBase(TestCase):
         self.access_key_secret = self._read_key_from_env_or_config("ACCESS_KEY_SECRET")
         self.region_id = self._read_key_from_env_or_config("REGION_ID")
         self.user_id = self._read_key_from_env_or_config("USER_ID")
-        if 'TRAVIS_JOB_NUMBER' in os.environ:
-            self.travis_concurrent = os.environ.get('TRAVIS_JOB_NUMBER').split(".")[-1]
-        else:
-            self.travis_concurrent = "0"
-        self.default_ram_user_name = "RamUserForSDKCredentialsTest" + self.travis_concurrent
-        self.default_ram_role_name = "RamROleForSDKTest" + self.travis_concurrent
-        self.default_role_session_name = "RoleSession" + self.travis_concurrent
+        self.default_ram_user_name = "RamUserForSDKCredentialsTest0"
+        self.default_ram_role_name = "RamROleForSDKTest0"
+        self.default_role_session_name = "RoleSession0"
         self.ram_user_id = None
         self.ram_policy_attched = False
         self.ram_user_access_key_id = None
