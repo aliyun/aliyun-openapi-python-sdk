@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkrds.endpoint import endpoint_data
 
-class DescribeMigrateTaskByIdRequest(RpcRequest):
+class ModifyDedicatedHostUserRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'DescribeMigrateTaskById','rds')
+		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'ModifyDedicatedHostUser','rds')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -36,11 +36,11 @@ class DescribeMigrateTaskByIdRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_MigrateTaskId(self):
-		return self.get_query_params().get('MigrateTaskId')
+	def get_DedicatedHostName(self):
+		return self.get_query_params().get('DedicatedHostName')
 
-	def set_MigrateTaskId(self,MigrateTaskId):
-		self.add_query_param('MigrateTaskId',MigrateTaskId)
+	def set_DedicatedHostName(self,DedicatedHostName):
+		self.add_query_param('DedicatedHostName',DedicatedHostName)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -48,14 +48,26 @@ class DescribeMigrateTaskByIdRequest(RpcRequest):
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
+	def get_OldPassword(self):
+		return self.get_query_params().get('OldPassword')
+
+	def set_OldPassword(self,OldPassword):
+		self.add_query_param('OldPassword',OldPassword)
+
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_DBInstanceId(self):
-		return self.get_query_params().get('DBInstanceId')
+	def get_NewPassword(self):
+		return self.get_query_params().get('NewPassword')
 
-	def set_DBInstanceId(self,DBInstanceId):
-		self.add_query_param('DBInstanceId',DBInstanceId)
+	def set_NewPassword(self,NewPassword):
+		self.add_query_param('NewPassword',NewPassword)
+
+	def get_UserName(self):
+		return self.get_query_params().get('UserName')
+
+	def set_UserName(self,UserName):
+		self.add_query_param('UserName',UserName)

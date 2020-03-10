@@ -36,18 +36,6 @@ class ModifySQLCollectorPolicyRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_StoragePeriod(self):
-		return self.get_query_params().get('StoragePeriod')
-
-	def set_StoragePeriod(self,StoragePeriod):
-		self.add_query_param('StoragePeriod',StoragePeriod)
-
-	def get_ClientToken(self):
-		return self.get_query_params().get('ClientToken')
-
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
-
 	def get_SQLCollectorStatus(self):
 		return self.get_query_params().get('SQLCollectorStatus')
 

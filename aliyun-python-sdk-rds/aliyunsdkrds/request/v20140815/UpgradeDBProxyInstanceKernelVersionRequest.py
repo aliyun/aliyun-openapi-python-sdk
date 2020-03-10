@@ -20,21 +20,15 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkrds.endpoint import endpoint_data
 
-class ModifyReplicaDescriptionRequest(RpcRequest):
+class UpgradeDBProxyInstanceKernelVersionRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'ModifyReplicaDescription','rds')
+		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'UpgradeDBProxyInstanceKernelVersion','rds')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ReplicaDescription(self):
-		return self.get_query_params().get('ReplicaDescription')
-
-	def set_ReplicaDescription(self,ReplicaDescription):
-		self.add_query_param('ReplicaDescription',ReplicaDescription)
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -42,32 +36,32 @@ class ModifyReplicaDescriptionRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_SecurityToken(self):
-		return self.get_query_params().get('SecurityToken')
-
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)
-
-	def get_ReplicaId(self):
-		return self.get_query_params().get('ReplicaId')
-
-	def set_ReplicaId(self,ReplicaId):
-		self.add_query_param('ReplicaId',ReplicaId)
-
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
-	def get_OwnerAccount(self):
-		return self.get_query_params().get('OwnerAccount')
-
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
-
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_UpgradeTime(self):
+		return self.get_query_params().get('UpgradeTime')
+
+	def set_UpgradeTime(self,UpgradeTime):
+		self.add_query_param('UpgradeTime',UpgradeTime)
+
+	def get_DBInstanceId(self):
+		return self.get_query_params().get('DBInstanceId')
+
+	def set_DBInstanceId(self,DBInstanceId):
+		self.add_query_param('DBInstanceId',DBInstanceId)
+
+	def get_SwitchTime(self):
+		return self.get_query_params().get('SwitchTime')
+
+	def set_SwitchTime(self,SwitchTime):
+		self.add_query_param('SwitchTime',SwitchTime)

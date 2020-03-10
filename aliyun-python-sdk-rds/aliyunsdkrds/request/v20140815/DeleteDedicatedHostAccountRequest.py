@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkrds.endpoint import endpoint_data
 
-class DescribeDBInstanceAttributeRequest(RpcRequest):
+class DeleteDedicatedHostAccountRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'DescribeDBInstanceAttribute','rds')
+		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'DeleteDedicatedHostAccount','rds')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -36,14 +36,26 @@ class DescribeDBInstanceAttributeRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_Expired(self):
-		return self.get_query_params().get('Expired')
+	def get_ResourceOwnerAccount(self):
+		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_Expired(self,Expired):
-		self.add_query_param('Expired',Expired)
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
-	def get_DBInstanceId(self):
-		return self.get_query_params().get('DBInstanceId')
+	def get_DedicatedHostId(self):
+		return self.get_query_params().get('DedicatedHostId')
 
-	def set_DBInstanceId(self,DBInstanceId):
-		self.add_query_param('DBInstanceId',DBInstanceId)
+	def set_DedicatedHostId(self,DedicatedHostId):
+		self.add_query_param('DedicatedHostId',DedicatedHostId)
+
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
+
+	def get_AccountName(self):
+		return self.get_query_params().get('AccountName')
+
+	def set_AccountName(self,AccountName):
+		self.add_query_param('AccountName',AccountName)

@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkrds.endpoint import endpoint_data
 
-class MigrateDBInstanceRequest(RpcRequest):
+class StartDBInstanceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'MigrateDBInstance','rds')
+		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'StartDBInstance','rds')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -48,11 +48,29 @@ class MigrateDBInstanceRequest(RpcRequest):
 	def set_TargetDedicatedHostIdForSlave(self,TargetDedicatedHostIdForSlave):
 		self.add_query_param('TargetDedicatedHostIdForSlave',TargetDedicatedHostIdForSlave)
 
+	def get_EngineVersion(self):
+		return self.get_query_params().get('EngineVersion')
+
+	def set_EngineVersion(self,EngineVersion):
+		self.add_query_param('EngineVersion',EngineVersion)
+
+	def get_Storage(self):
+		return self.get_query_params().get('Storage')
+
+	def set_Storage(self,Storage):
+		self.add_query_param('Storage',Storage)
+
 	def get_EffectiveTime(self):
 		return self.get_query_params().get('EffectiveTime')
 
 	def set_EffectiveTime(self,EffectiveTime):
 		self.add_query_param('EffectiveTime',EffectiveTime)
+
+	def get_DBInstanceTransType(self):
+		return self.get_query_params().get('DBInstanceTransType')
+
+	def set_DBInstanceTransType(self,DBInstanceTransType):
+		self.add_query_param('DBInstanceTransType',DBInstanceTransType)
 
 	def get_TargetDedicatedHostIdForMaster(self):
 		return self.get_query_params().get('TargetDedicatedHostIdForMaster')
@@ -83,3 +101,27 @@ class MigrateDBInstanceRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_TargetDBInstanceClass(self):
+		return self.get_query_params().get('TargetDBInstanceClass')
+
+	def set_TargetDBInstanceClass(self,TargetDBInstanceClass):
+		self.add_query_param('TargetDBInstanceClass',TargetDBInstanceClass)
+
+	def get_VSwitchId(self):
+		return self.get_query_params().get('VSwitchId')
+
+	def set_VSwitchId(self,VSwitchId):
+		self.add_query_param('VSwitchId',VSwitchId)
+
+	def get_TargetDedicatedHostIdForLog(self):
+		return self.get_query_params().get('TargetDedicatedHostIdForLog')
+
+	def set_TargetDedicatedHostIdForLog(self,TargetDedicatedHostIdForLog):
+		self.add_query_param('TargetDedicatedHostIdForLog',TargetDedicatedHostIdForLog)
+
+	def get_ZoneId(self):
+		return self.get_query_params().get('ZoneId')
+
+	def set_ZoneId(self,ZoneId):
+		self.add_query_param('ZoneId',ZoneId)

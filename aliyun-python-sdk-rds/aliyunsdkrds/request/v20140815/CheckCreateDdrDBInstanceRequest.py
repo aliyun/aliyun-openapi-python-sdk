@@ -48,23 +48,11 @@ class CheckCreateDdrDBInstanceRequest(RpcRequest):
 	def set_SourceDBInstanceName(self,SourceDBInstanceName):
 		self.add_query_param('SourceDBInstanceName',SourceDBInstanceName)
 
-	def get_HostType(self):
-		return self.get_query_params().get('HostType')
-
-	def set_HostType(self,HostType):
-		self.add_query_param('HostType',HostType)
-
 	def get_EngineVersion(self):
 		return self.get_query_params().get('EngineVersion')
 
 	def set_EngineVersion(self,EngineVersion):
 		self.add_query_param('EngineVersion',EngineVersion)
-
-	def get_UserBakSetURL(self):
-		return self.get_query_params().get('UserBakSetURL')
-
-	def set_UserBakSetURL(self,UserBakSetURL):
-		self.add_query_param('UserBakSetURL',UserBakSetURL)
 
 	def get_Engine(self):
 		return self.get_query_params().get('Engine')
@@ -72,29 +60,11 @@ class CheckCreateDdrDBInstanceRequest(RpcRequest):
 	def set_Engine(self,Engine):
 		self.add_query_param('Engine',Engine)
 
-	def get_BackupSetRegion(self):
-		return self.get_query_params().get('BackupSetRegion')
-
-	def set_BackupSetRegion(self,BackupSetRegion):
-		self.add_query_param('BackupSetRegion',BackupSetRegion)
-
-	def get_BackupSetType(self):
-		return self.get_query_params().get('BackupSetType')
-
-	def set_BackupSetType(self,BackupSetType):
-		self.add_query_param('BackupSetType',BackupSetType)
-
 	def get_RestoreTime(self):
 		return self.get_query_params().get('RestoreTime')
 
 	def set_RestoreTime(self,RestoreTime):
 		self.add_query_param('RestoreTime',RestoreTime)
-
-	def get_BakSetName(self):
-		return self.get_query_params().get('BakSetName')
-
-	def set_BakSetName(self,BakSetName):
-		self.add_query_param('BakSetName',BakSetName)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')

@@ -48,12 +48,6 @@ class RenewInstanceRequest(RpcRequest):
 	def set_DBInstanceId(self,DBInstanceId):
 		self.add_query_param('DBInstanceId',DBInstanceId)
 
-	def get_BusinessInfo(self):
-		return self.get_query_params().get('BusinessInfo')
-
-	def set_BusinessInfo(self,BusinessInfo):
-		self.add_query_param('BusinessInfo',BusinessInfo)
-
 	def get_Period(self):
 		return self.get_query_params().get('Period')
 

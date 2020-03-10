@@ -36,6 +36,18 @@ class DescribeDedicatedHostsRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_HostType(self):
+		return self.get_query_params().get('HostType')
+
+	def set_HostType(self,HostType):
+		self.add_query_param('HostType',HostType)
+
+	def get_DedicatedHostGroupId(self):
+		return self.get_query_params().get('DedicatedHostGroupId')
+
+	def set_DedicatedHostGroupId(self,DedicatedHostGroupId):
+		self.add_query_param('DedicatedHostGroupId',DedicatedHostGroupId)
+
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -53,9 +65,3 @@ class DescribeDedicatedHostsRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
-
-	def get_DedicatedHostGroupId(self):
-		return self.get_query_params().get('DedicatedHostGroupId')
-
-	def set_DedicatedHostGroupId(self,DedicatedHostGroupId):
-		self.add_query_param('DedicatedHostGroupId',DedicatedHostGroupId)

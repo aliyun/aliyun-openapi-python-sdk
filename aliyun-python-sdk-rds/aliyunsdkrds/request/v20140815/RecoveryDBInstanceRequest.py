@@ -42,24 +42,6 @@ class RecoveryDBInstanceRequest(RpcRequest):
 	def set_DBInstanceStorage(self,DBInstanceStorage):
 		self.add_query_param('DBInstanceStorage',DBInstanceStorage)
 
-	def get_ClientToken(self):
-		return self.get_query_params().get('ClientToken')
-
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
-
-	def get_ResourceGroupId(self):
-		return self.get_query_params().get('ResourceGroupId')
-
-	def set_ResourceGroupId(self,ResourceGroupId):
-		self.add_query_param('ResourceGroupId',ResourceGroupId)
-
-	def get_DBInstanceDescription(self):
-		return self.get_query_params().get('DBInstanceDescription')
-
-	def set_DBInstanceDescription(self,DBInstanceDescription):
-		self.add_query_param('DBInstanceDescription',DBInstanceDescription)
-
 	def get_DBInstanceId(self):
 		return self.get_query_params().get('DBInstanceId')
 
@@ -84,29 +66,11 @@ class RecoveryDBInstanceRequest(RpcRequest):
 	def set_Period(self,Period):
 		self.add_query_param('Period',Period)
 
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
-
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
 	def get_BackupId(self):
 		return self.get_query_params().get('BackupId')
 
 	def set_BackupId(self,BackupId):
 		self.add_query_param('BackupId',BackupId)
-
-	def get_OwnerAccount(self):
-		return self.get_query_params().get('OwnerAccount')
-
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
-
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
 
 	def get_UsedTime(self):
 		return self.get_query_params().get('UsedTime')
