@@ -20,30 +20,30 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcdn.endpoint import endpoint_data
 
-class SetCdnDomainCSRCertificateRequest(RpcRequest):
+class CreateIllegalUrlExportTaskRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cdn', '2018-05-10', 'SetCdnDomainCSRCertificate')
+		RpcRequest.__init__(self, 'Cdn', '2018-05-10', 'CreateIllegalUrlExportTask')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_ServerCertificate(self):
-		return self.get_query_params().get('ServerCertificate')
+	def get_TaskName(self):
+		return self.get_query_params().get('TaskName')
 
-	def set_ServerCertificate(self,ServerCertificate):
-		self.add_query_param('ServerCertificate',ServerCertificate)
-
-	def get_DomainName(self):
-		return self.get_query_params().get('DomainName')
-
-	def set_DomainName(self,DomainName):
-		self.add_query_param('DomainName',DomainName)
+	def set_TaskName(self,TaskName):
+		self.add_query_param('TaskName',TaskName)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_TimePoint(self):
+		return self.get_query_params().get('TimePoint')
+
+	def set_TimePoint(self,TimePoint):
+		self.add_query_param('TimePoint',TimePoint)

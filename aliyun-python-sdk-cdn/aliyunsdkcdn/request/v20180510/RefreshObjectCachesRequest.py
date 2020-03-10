@@ -36,12 +36,6 @@ class RefreshObjectCachesRequest(RpcRequest):
 	def set_ObjectPath(self,ObjectPath):
 		self.add_query_param('ObjectPath',ObjectPath)
 
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
 
@@ -53,3 +47,9 @@ class RefreshObjectCachesRequest(RpcRequest):
 
 	def set_ObjectType(self,ObjectType):
 		self.add_query_param('ObjectType',ObjectType)
+
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)

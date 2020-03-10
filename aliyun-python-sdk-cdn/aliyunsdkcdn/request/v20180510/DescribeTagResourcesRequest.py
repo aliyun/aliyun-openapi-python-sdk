@@ -30,12 +30,6 @@ class DescribeTagResourcesRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_Scope(self):
-		return self.get_query_params().get('Scope')
-
-	def set_Scope(self,Scope):
-		self.add_query_param('Scope',Scope)
-
 	def get_Tags(self):
 		return self.get_query_params().get('Tags')
 
