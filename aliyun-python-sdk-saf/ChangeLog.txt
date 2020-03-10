@@ -7,6 +7,9 @@
 2020-03-10 Version: 3.0.0
 - Supported Saf for cn.
 
+2020-03-10 Version: 3.0.0
+- Supported Saf for cn.
+
 2020-03-10 Version: 1.0.0
 - Supported Saf for oversea.
 
