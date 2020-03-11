@@ -20,39 +20,51 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkvs.endpoint import endpoint_data
 
-class BatchBindTemplatesRequest(RpcRequest):
+class UpdateVsPullStreamInfoConfigRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'vs', '2018-12-12', 'BatchBindTemplates','vs')
+		RpcRequest.__init__(self, 'vs', '2018-12-12', 'UpdateVsPullStreamInfoConfig','vs')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_Replace(self):
-		return self.get_query_params().get('Replace')
+	def get_StartTime(self):
+		return self.get_query_params().get('StartTime')
 
-	def set_Replace(self,Replace):
-		self.add_query_param('Replace',Replace)
+	def set_StartTime(self,StartTime):
+		self.add_query_param('StartTime',StartTime)
 
-	def get_TemplateType(self):
-		return self.get_query_params().get('TemplateType')
+	def get_AppName(self):
+		return self.get_query_params().get('AppName')
 
-	def set_TemplateType(self,TemplateType):
-		self.add_query_param('TemplateType',TemplateType)
+	def set_AppName(self,AppName):
+		self.add_query_param('AppName',AppName)
 
-	def get_InstanceType(self):
-		return self.get_query_params().get('InstanceType')
+	def get_StreamName(self):
+		return self.get_query_params().get('StreamName')
 
-	def set_InstanceType(self,InstanceType):
-		self.add_query_param('InstanceType',InstanceType)
+	def set_StreamName(self,StreamName):
+		self.add_query_param('StreamName',StreamName)
 
-	def get_ApplyAll(self):
-		return self.get_query_params().get('ApplyAll')
+	def get_Always(self):
+		return self.get_query_params().get('Always')
 
-	def set_ApplyAll(self,ApplyAll):
-		self.add_query_param('ApplyAll',ApplyAll)
+	def set_Always(self,Always):
+		self.add_query_param('Always',Always)
+
+	def get_DomainName(self):
+		return self.get_query_params().get('DomainName')
+
+	def set_DomainName(self,DomainName):
+		self.add_query_param('DomainName',DomainName)
+
+	def get_EndTime(self):
+		return self.get_query_params().get('EndTime')
+
+	def set_EndTime(self,EndTime):
+		self.add_query_param('EndTime',EndTime)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
@@ -60,14 +72,8 @@ class BatchBindTemplatesRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_TemplateId(self):
-		return self.get_query_params().get('TemplateId')
+	def get_SourceUrl(self):
+		return self.get_query_params().get('SourceUrl')
 
-	def set_TemplateId(self,TemplateId):
-		self.add_query_param('TemplateId',TemplateId)
-
-	def get_InstanceId(self):
-		return self.get_query_params().get('InstanceId')
-
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
+	def set_SourceUrl(self,SourceUrl):
+		self.add_query_param('SourceUrl',SourceUrl)

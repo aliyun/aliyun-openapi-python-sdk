@@ -20,39 +20,33 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkvs.endpoint import endpoint_data
 
-class BatchBindTemplatesRequest(RpcRequest):
+class StartRecordStreamRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'vs', '2018-12-12', 'BatchBindTemplates','vs')
+		RpcRequest.__init__(self, 'vs', '2018-12-12', 'StartRecordStream','vs')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_Replace(self):
-		return self.get_query_params().get('Replace')
+	def get_Id(self):
+		return self.get_query_params().get('Id')
 
-	def set_Replace(self,Replace):
-		self.add_query_param('Replace',Replace)
+	def set_Id(self,Id):
+		self.add_query_param('Id',Id)
 
-	def get_TemplateType(self):
-		return self.get_query_params().get('TemplateType')
+	def get_PlayDomain(self):
+		return self.get_query_params().get('PlayDomain')
 
-	def set_TemplateType(self,TemplateType):
-		self.add_query_param('TemplateType',TemplateType)
+	def set_PlayDomain(self,PlayDomain):
+		self.add_query_param('PlayDomain',PlayDomain)
 
-	def get_InstanceType(self):
-		return self.get_query_params().get('InstanceType')
+	def get_App(self):
+		return self.get_query_params().get('App')
 
-	def set_InstanceType(self,InstanceType):
-		self.add_query_param('InstanceType',InstanceType)
-
-	def get_ApplyAll(self):
-		return self.get_query_params().get('ApplyAll')
-
-	def set_ApplyAll(self,ApplyAll):
-		self.add_query_param('ApplyAll',ApplyAll)
+	def set_App(self,App):
+		self.add_query_param('App',App)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
@@ -60,14 +54,8 @@ class BatchBindTemplatesRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_TemplateId(self):
-		return self.get_query_params().get('TemplateId')
+	def get_Name(self):
+		return self.get_query_params().get('Name')
 
-	def set_TemplateId(self,TemplateId):
-		self.add_query_param('TemplateId',TemplateId)
-
-	def get_InstanceId(self):
-		return self.get_query_params().get('InstanceId')
-
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
+	def set_Name(self,Name):
+		self.add_query_param('Name',Name)

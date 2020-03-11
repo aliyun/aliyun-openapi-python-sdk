@@ -20,54 +20,24 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkvs.endpoint import endpoint_data
 
-class BatchBindTemplatesRequest(RpcRequest):
+class DescribeVsPullStreamInfoConfigRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'vs', '2018-12-12', 'BatchBindTemplates','vs')
+		RpcRequest.__init__(self, 'vs', '2018-12-12', 'DescribeVsPullStreamInfoConfig','vs')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_Replace(self):
-		return self.get_query_params().get('Replace')
+	def get_DomainName(self):
+		return self.get_query_params().get('DomainName')
 
-	def set_Replace(self,Replace):
-		self.add_query_param('Replace',Replace)
-
-	def get_TemplateType(self):
-		return self.get_query_params().get('TemplateType')
-
-	def set_TemplateType(self,TemplateType):
-		self.add_query_param('TemplateType',TemplateType)
-
-	def get_InstanceType(self):
-		return self.get_query_params().get('InstanceType')
-
-	def set_InstanceType(self,InstanceType):
-		self.add_query_param('InstanceType',InstanceType)
-
-	def get_ApplyAll(self):
-		return self.get_query_params().get('ApplyAll')
-
-	def set_ApplyAll(self,ApplyAll):
-		self.add_query_param('ApplyAll',ApplyAll)
+	def set_DomainName(self,DomainName):
+		self.add_query_param('DomainName',DomainName)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
-
-	def get_TemplateId(self):
-		return self.get_query_params().get('TemplateId')
-
-	def set_TemplateId(self,TemplateId):
-		self.add_query_param('TemplateId',TemplateId)
-
-	def get_InstanceId(self):
-		return self.get_query_params().get('InstanceId')
-
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)

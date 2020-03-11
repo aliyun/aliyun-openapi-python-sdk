@@ -108,6 +108,12 @@ class ModifyTemplateRequest(RpcRequest):
 	def set_EndTime(self,EndTime):
 		self.add_query_param('EndTime',EndTime)
 
+	def get_Trigger(self):
+		return self.get_query_params().get('Trigger')
+
+	def set_Trigger(self,Trigger):
+		self.add_query_param('Trigger',Trigger)
+
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
