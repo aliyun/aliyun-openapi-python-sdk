@@ -22,7 +22,7 @@ from aliyunsdkcore.request import RpcRequest
 class ConfigureMigrationJobRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dts', '2020-01-01', 'ConfigureMigrationJob','dts')
+		RpcRequest.__init__(self, 'Dts', '2020-01-01', 'ConfigureMigrationJob')
 
 	def get_SourceEndpointInstanceID(self):
 		return self.get_query_params().get('SourceEndpoint.InstanceID')

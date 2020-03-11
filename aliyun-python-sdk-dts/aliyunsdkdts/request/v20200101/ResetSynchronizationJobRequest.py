@@ -22,7 +22,7 @@ from aliyunsdkcore.request import RpcRequest
 class ResetSynchronizationJobRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dts', '2020-01-01', 'ResetSynchronizationJob','dts')
+		RpcRequest.__init__(self, 'Dts', '2020-01-01', 'ResetSynchronizationJob')
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')

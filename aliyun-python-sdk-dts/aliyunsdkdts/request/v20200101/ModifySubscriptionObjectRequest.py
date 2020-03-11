@@ -22,7 +22,7 @@ from aliyunsdkcore.request import RpcRequest
 class ModifySubscriptionObjectRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dts', '2020-01-01', 'ModifySubscriptionObject','dts')
+		RpcRequest.__init__(self, 'Dts', '2020-01-01', 'ModifySubscriptionObject')
 		self.set_method('POST')
 
 	def get_SubscriptionInstanceId(self):

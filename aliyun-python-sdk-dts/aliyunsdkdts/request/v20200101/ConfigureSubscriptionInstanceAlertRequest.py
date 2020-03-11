@@ -22,7 +22,7 @@ from aliyunsdkcore.request import RpcRequest
 class ConfigureSubscriptionInstanceAlertRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dts', '2020-01-01', 'ConfigureSubscriptionInstanceAlert','dts')
+		RpcRequest.__init__(self, 'Dts', '2020-01-01', 'ConfigureSubscriptionInstanceAlert')
 
 	def get_DelayOverSeconds(self):
 		return self.get_query_params().get('DelayOverSeconds')

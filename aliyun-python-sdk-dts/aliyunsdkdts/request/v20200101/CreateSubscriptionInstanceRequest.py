@@ -22,7 +22,7 @@ from aliyunsdkcore.request import RpcRequest
 class CreateSubscriptionInstanceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dts', '2020-01-01', 'CreateSubscriptionInstance','dts')
+		RpcRequest.__init__(self, 'Dts', '2020-01-01', 'CreateSubscriptionInstance')
 		self.set_method('POST')
 
 	def get_Period(self):

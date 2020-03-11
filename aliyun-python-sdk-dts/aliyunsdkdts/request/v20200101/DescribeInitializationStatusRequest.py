@@ -22,7 +22,7 @@ from aliyunsdkcore.request import RpcRequest
 class DescribeInitializationStatusRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dts', '2020-01-01', 'DescribeInitializationStatus','dts')
+		RpcRequest.__init__(self, 'Dts', '2020-01-01', 'DescribeInitializationStatus')
 
 	def get_PageNum(self):
 		return self.get_query_params().get('PageNum')

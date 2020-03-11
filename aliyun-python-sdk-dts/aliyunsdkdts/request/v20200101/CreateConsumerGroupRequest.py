@@ -22,7 +22,7 @@ from aliyunsdkcore.request import RpcRequest
 class CreateConsumerGroupRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dts', '2020-01-01', 'CreateConsumerGroup','dts')
+		RpcRequest.__init__(self, 'Dts', '2020-01-01', 'CreateConsumerGroup')
 		self.set_method('POST')
 
 	def get_ConsumerGroupName(self):

@@ -22,7 +22,7 @@ from aliyunsdkcore.request import RpcRequest
 class ConfigureSynchronizationJobReplicatorCompareRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dts', '2020-01-01', 'ConfigureSynchronizationJobReplicatorCompare','dts')
+		RpcRequest.__init__(self, 'Dts', '2020-01-01', 'ConfigureSynchronizationJobReplicatorCompare')
 
 	def get_ClientToken(self):
 		return self.get_query_params().get('ClientToken')

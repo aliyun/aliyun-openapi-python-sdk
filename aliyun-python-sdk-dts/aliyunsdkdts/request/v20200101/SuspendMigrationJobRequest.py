@@ -22,7 +22,7 @@ from aliyunsdkcore.request import RpcRequest
 class SuspendMigrationJobRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dts', '2020-01-01', 'SuspendMigrationJob','dts')
+		RpcRequest.__init__(self, 'Dts', '2020-01-01', 'SuspendMigrationJob')
 		self.set_method('POST')
 
 	def get_ClientToken(self):

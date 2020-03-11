@@ -22,7 +22,7 @@ from aliyunsdkcore.request import RpcRequest
 class SwitchSynchronizationEndpointRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dts', '2020-01-01', 'SwitchSynchronizationEndpoint','dts')
+		RpcRequest.__init__(self, 'Dts', '2020-01-01', 'SwitchSynchronizationEndpoint')
 
 	def get_SynchronizationJobId(self):
 		return self.get_query_params().get('SynchronizationJobId')

@@ -22,7 +22,7 @@ from aliyunsdkcore.request import RpcRequest
 class DescribeSubscriptionObjectModifyStatusRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dts', '2020-01-01', 'DescribeSubscriptionObjectModifyStatus','dts')
+		RpcRequest.__init__(self, 'Dts', '2020-01-01', 'DescribeSubscriptionObjectModifyStatus')
 
 	def get_ClientToken(self):
 		return self.get_query_params().get('ClientToken')
