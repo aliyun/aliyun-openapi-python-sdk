@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdds.endpoint import endpoint_data
 
-class RestoreDBInstanceRequest(RpcRequest):
+class DescribeUserEncryptionKeyListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dds', '2015-12-01', 'RestoreDBInstance','dds')
+		RpcRequest.__init__(self, 'Dds', '2015-12-01', 'DescribeUserEncryptionKeyList','dds')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -59,12 +59,6 @@ class RestoreDBInstanceRequest(RpcRequest):
 
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
-
-	def get_BackupId(self):
-		return self.get_query_params().get('BackupId')
-
-	def set_BackupId(self,BackupId):
-		self.add_query_param('BackupId',BackupId)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')

@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdds.endpoint import endpoint_data
 
-class CreateAccountRequest(RpcRequest):
+class DescribeDBInstanceEncryptionKeyRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dds', '2015-12-01', 'CreateAccount','Dds')
+		RpcRequest.__init__(self, 'Dds', '2015-12-01', 'DescribeDBInstanceEncryptionKey','dds')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -35,18 +35,6 @@ class CreateAccountRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_AccountDescription(self):
-		return self.get_query_params().get('AccountDescription')
-
-	def set_AccountDescription(self,AccountDescription):
-		self.add_query_param('AccountDescription',AccountDescription)
-
-	def get_AccountName(self):
-		return self.get_query_params().get('AccountName')
-
-	def set_AccountName(self,AccountName):
-		self.add_query_param('AccountName',AccountName)
 
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
@@ -72,14 +60,14 @@ class CreateAccountRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
+	def get_EncryptionKey(self):
+		return self.get_query_params().get('EncryptionKey')
+
+	def set_EncryptionKey(self,EncryptionKey):
+		self.add_query_param('EncryptionKey',EncryptionKey)
+
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
-
-	def get_AccountPassword(self):
-		return self.get_query_params().get('AccountPassword')
-
-	def set_AccountPassword(self,AccountPassword):
-		self.add_query_param('AccountPassword',AccountPassword)

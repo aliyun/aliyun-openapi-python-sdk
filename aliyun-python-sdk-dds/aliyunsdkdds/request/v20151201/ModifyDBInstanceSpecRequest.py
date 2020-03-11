@@ -23,7 +23,7 @@ from aliyunsdkdds.endpoint import endpoint_data
 class ModifyDBInstanceSpecRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dds', '2015-12-01', 'ModifyDBInstanceSpec','Dds')
+		RpcRequest.__init__(self, 'Dds', '2015-12-01', 'ModifyDBInstanceSpec','dds')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -89,12 +89,6 @@ class ModifyDBInstanceSpecRequest(RpcRequest):
 
 	def set_AutoPay(self,AutoPay):
 		self.add_query_param('AutoPay',AutoPay)
-
-	def get_FromApp(self):
-		return self.get_query_params().get('FromApp')
-
-	def set_FromApp(self,FromApp):
-		self.add_query_param('FromApp',FromApp)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
