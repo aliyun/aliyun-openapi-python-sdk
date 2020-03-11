@@ -20,10 +20,11 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkalimt.endpoint import endpoint_data
 
-class TranslateGeneralRequest(RpcRequest):
+class TranslateCertificateRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'alimt', '2018-10-12', 'TranslateGeneral','alimtct')
+		RpcRequest.__init__(self, 'alimt', '2018-10-12', 'TranslateCertificate','alimtct')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -36,23 +37,23 @@ class TranslateGeneralRequest(RpcRequest):
 	def set_SourceLanguage(self,SourceLanguage):
 		self.add_body_params('SourceLanguage', SourceLanguage)
 
-	def get_SourceText(self):
-		return self.get_body_params().get('SourceText')
+	def get_CertificateType(self):
+		return self.get_body_params().get('CertificateType')
 
-	def set_SourceText(self,SourceText):
-		self.add_body_params('SourceText', SourceText)
+	def set_CertificateType(self,CertificateType):
+		self.add_body_params('CertificateType', CertificateType)
 
-	def get_FormatType(self):
-		return self.get_body_params().get('FormatType')
+	def get_ResultType(self):
+		return self.get_body_params().get('ResultType')
 
-	def set_FormatType(self,FormatType):
-		self.add_body_params('FormatType', FormatType)
+	def set_ResultType(self,ResultType):
+		self.add_body_params('ResultType', ResultType)
 
-	def get_Scene(self):
-		return self.get_body_params().get('Scene')
+	def get_ImageUrl(self):
+		return self.get_body_params().get('ImageUrl')
 
-	def set_Scene(self,Scene):
-		self.add_body_params('Scene', Scene)
+	def set_ImageUrl(self,ImageUrl):
+		self.add_body_params('ImageUrl', ImageUrl)
 
 	def get_TargetLanguage(self):
 		return self.get_body_params().get('TargetLanguage')
