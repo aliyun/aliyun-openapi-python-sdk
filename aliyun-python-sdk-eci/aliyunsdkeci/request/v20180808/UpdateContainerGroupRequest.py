@@ -223,7 +223,7 @@ class UpdateContainerGroupRequest(RpcRequest):
 						self.add_query_param('InitContainer.' + str(i + 1) + '.VolumeMount.' + str(j + 1) + '.Name',
 											 InitContainers[i].get('VolumeMounts')[j].get('Name'))
 						if InitContainers[i].get('VolumeMounts')[j].get('SubPath') is not None:
-							self.add_query_param('Container.' + str(i + 1) + '.VolumeMount.' + str(j + 1) + '.SubPath',
+							self.add_query_param('InitContainer.' + str(i + 1) + '.VolumeMount.' + str(j + 1) + '.SubPath',
 												 InitContainers[i].get('VolumeMounts')[j].get('SubPath'))
 						self.add_query_param('InitContainer.' + str(i + 1) + '.VolumeMount.' + str(j + 1) + '.MountPath',
 											 InitContainers[i].get('VolumeMounts')[j].get('MountPath'))

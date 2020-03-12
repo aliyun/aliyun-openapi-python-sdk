@@ -312,7 +312,7 @@ class CreateContainerGroupRequest(RpcRequest):
 						self.add_query_param('InitContainer.' + str(i + 1) + '.VolumeMount.' + str(j + 1) + '.Name',
 											 InitContainers[i].get('VolumeMounts')[j].get('Name'))
 						if InitContainers[i].get('VolumeMounts')[j].get('SubPath') is not None:
-							self.add_query_param('Container.' + str(i + 1) + '.VolumeMount.' + str(j + 1) + '.SubPath',
+							self.add_query_param('InitContainer.' + str(i + 1) + '.VolumeMount.' + str(j + 1) + '.SubPath',
 												 InitContainers[i].get('VolumeMounts')[j].get('SubPath'))
 						self.add_query_param('InitContainer.' + str(i + 1) + '.VolumeMount.' + str(j + 1) + '.MountPath',
 											 InitContainers[i].get('VolumeMounts')[j].get('MountPath'))
@@ -424,8 +424,7 @@ class CreateContainerGroupRequest(RpcRequest):
 			if Volumes[i].get('DiskVolume.FsType') is not None:
 				self.add_query_param('Volume.' + str(i + 1) + '.DiskVolume.FsType', Volumes[i].get('DiskVolume.FsType'))
 			if Volumes[i].get('DiskVolume.DiskSize') is not None:
-				self.add_query_param('Volume.' + str(i + 1) + '.DiskVolume.DiskSize',
-									 Volumes[i].get('DiskVolume.DiskSize'))
+				self.add_query_param('Volume.' + str(i + 1) + '.DiskVolume.DiskSize',Volumes[i].get('DiskVolume.DiskSize'))
 
 			if Volumes[i].get('ConfigFileVolume.ConfigFileToPaths') is not None:
 				for j in range(len(Volumes[i].get('ConfigFileVolume.ConfigFileToPaths'))):
@@ -436,10 +435,15 @@ class CreateContainerGroupRequest(RpcRequest):
 						self.add_query_param(
 							'Volume.' + str(i + 1) + '.ConfigFileVolume.ConfigFileToPath.' + str(j + 1) + '.Content',
 							Volumes[i].get('ConfigFileVolume.ConfigFileToPaths')[j].get('Content'))
-
 			if Volumes[i].get('ConfigFileVolume.DefaultModel') is not None:
-				self.add_query_param('Volume.' + str(i + 1) + '.ConfigFileVolume.DefaultModel',
-									 Volumes[i].get('ConfigFileVolume.DefaultModel'))
+				self.add_query_param('Volume.' + str(i + 1) + '.ConfigFileVolume.DefaultModel',Volumes[i].get('ConfigFileVolume.DefaultModel'))
+
+			if Volumes[i].get('FlexVolume.Driver') is not None:
+				self.add_query_param('Volume.' + str(i + 1) + '.FlexVolume.Driver', Volumes[i].get('FlexVolume.Driver'))
+			if Volumes[i].get('FlexVolume.FsType') is not None:
+				self.add_query_param('Volume.' + str(i + 1) + '.FlexVolume.FsType', Volumes[i].get('FlexVolume.FsType'))
+			if Volumes[i].get('FlexVolume.Options') is not None:
+				self.add_query_param('Volume.' + str(i + 1) + '.FlexVolume.Options', Volumes[i].get('FlexVolume.Options'))
 
 			if Volumes[i].get('Type') is not None:
 				self.add_query_param('Volume.' + str(i + 1) + '.Type', Volumes[i].get('Type'))
@@ -574,4 +578,16 @@ class CreateContainerGroupRequest(RpcRequest):
 		for i in range(len(NtpServers)):
 			if NtpServers[i] is not None:
 				self.add_query_param('NtpServer.' + str(i + 1), NtpServers[i])
+
+	def get_SpotStrategy(self):
+		return self.get_query_params().get('SpotStrategy')
+
+	def set_SpotStrategy(self, SpotStrategy):
+		self.add_query_param('SpotStrategy', SpotStrategy)
+
+	def get_SpotPriceLimit(self):
+		return self.get_query_params().get('SpotPriceLimit')
+
+	def set_SpotPriceLimit(self, SpotPriceLimit):
+		self.add_query_param('SpotPriceLimit', SpotPriceLimit)
 
