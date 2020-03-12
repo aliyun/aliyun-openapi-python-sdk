@@ -1,3 +1,7 @@
+2020-03-12 Version: 3.0.1
+- Update structure for DescribeAvailableResource without compatible.
+- Rebuild to python sdk.
+
 2020-03-11 Version: 3.0.0
 - Update structure for DescribeAvailableResource without compatible.
 
