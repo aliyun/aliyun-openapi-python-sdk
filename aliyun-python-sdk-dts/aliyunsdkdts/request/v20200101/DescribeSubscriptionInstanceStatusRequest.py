@@ -22,7 +22,7 @@ from aliyunsdkcore.request import RpcRequest
 class DescribeSubscriptionInstanceStatusRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dts', '2020-01-01', 'DescribeSubscriptionInstanceStatus')
+		RpcRequest.__init__(self, 'Dts', '2020-01-01', 'DescribeSubscriptionInstanceStatus','dts')
 
 	def get_SubscriptionInstanceId(self):
 		return self.get_query_params().get('SubscriptionInstanceId')

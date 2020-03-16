@@ -22,7 +22,7 @@ from aliyunsdkcore.request import RpcRequest
 class ModifyConsumerGroupPasswordRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dts', '2020-01-01', 'ModifyConsumerGroupPassword')
+		RpcRequest.__init__(self, 'Dts', '2020-01-01', 'ModifyConsumerGroupPassword','dts')
 		self.set_method('POST')
 
 	def get_ConsumerGroupName(self):

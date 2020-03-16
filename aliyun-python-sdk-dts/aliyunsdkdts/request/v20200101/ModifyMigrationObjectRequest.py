@@ -22,7 +22,7 @@ from aliyunsdkcore.request import RpcRequest
 class ModifyMigrationObjectRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dts', '2020-01-01', 'ModifyMigrationObject')
+		RpcRequest.__init__(self, 'Dts', '2020-01-01', 'ModifyMigrationObject','dts')
 		self.set_method('POST')
 
 	def get_MigrationObject(self):

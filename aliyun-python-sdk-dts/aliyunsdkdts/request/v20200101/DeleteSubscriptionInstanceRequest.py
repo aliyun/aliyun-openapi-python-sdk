@@ -22,7 +22,7 @@ from aliyunsdkcore.request import RpcRequest
 class DeleteSubscriptionInstanceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dts', '2020-01-01', 'DeleteSubscriptionInstance')
+		RpcRequest.__init__(self, 'Dts', '2020-01-01', 'DeleteSubscriptionInstance','dts')
 		self.set_method('POST')
 
 	def get_SubscriptionInstanceId(self):

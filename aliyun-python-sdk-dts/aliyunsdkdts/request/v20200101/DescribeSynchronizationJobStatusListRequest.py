@@ -22,7 +22,7 @@ from aliyunsdkcore.request import RpcRequest
 class DescribeSynchronizationJobStatusListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dts', '2020-01-01', 'DescribeSynchronizationJobStatusList')
+		RpcRequest.__init__(self, 'Dts', '2020-01-01', 'DescribeSynchronizationJobStatusList','dts')
 
 	def get_ClientToken(self):
 		return self.get_query_params().get('ClientToken')
