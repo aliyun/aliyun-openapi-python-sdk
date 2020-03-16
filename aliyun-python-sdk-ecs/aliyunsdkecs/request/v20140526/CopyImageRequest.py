@@ -42,6 +42,12 @@ class CopyImageRequest(RpcRequest):
 	def set_ImageId(self,ImageId):
 		self.add_query_param('ImageId',ImageId)
 
+	def get_EncryptAlgorithm(self):
+		return self.get_query_params().get('EncryptAlgorithm')
+
+	def set_EncryptAlgorithm(self,EncryptAlgorithm):
+		self.add_query_param('EncryptAlgorithm',EncryptAlgorithm)
+
 	def get_DestinationRegionId(self):
 		return self.get_query_params().get('DestinationRegionId')
 

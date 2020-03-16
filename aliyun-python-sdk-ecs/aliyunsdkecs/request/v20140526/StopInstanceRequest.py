@@ -42,12 +42,6 @@ class StopInstanceRequest(RpcRequest):
 	def set_StoppedMode(self,StoppedMode):
 		self.add_query_param('StoppedMode',StoppedMode)
 
-	def get_Hibernate(self):
-		return self.get_query_params().get('Hibernate')
-
-	def set_Hibernate(self,Hibernate):
-		self.add_query_param('Hibernate',Hibernate)
-
 	def get_ForceStop(self):
 		return self.get_query_params().get('ForceStop')
 

@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkecs.endpoint import endpoint_data
 
-class ModifyImageAttributeRequest(RpcRequest):
+class RebootInstancesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'ModifyImageAttribute','ecs')
+		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'RebootInstances','ecs')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -36,23 +36,11 @@ class ModifyImageAttributeRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_ImageId(self):
-		return self.get_query_params().get('ImageId')
+	def get_DryRun(self):
+		return self.get_query_params().get('DryRun')
 
-	def set_ImageId(self,ImageId):
-		self.add_query_param('ImageId',ImageId)
-
-	def get_Description(self):
-		return self.get_query_params().get('Description')
-
-	def set_Description(self,Description):
-		self.add_query_param('Description',Description)
-
-	def get_ImageName(self):
-		return self.get_query_params().get('ImageName')
-
-	def set_ImageName(self,ImageName):
-		self.add_query_param('ImageName',ImageName)
+	def set_DryRun(self,DryRun):
+		self.add_query_param('DryRun',DryRun)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -72,8 +60,16 @@ class ModifyImageAttributeRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_Status(self):
-		return self.get_query_params().get('Status')
+	def get_ForceReboot(self):
+		return self.get_query_params().get('ForceReboot')
 
-	def set_Status(self,Status):
-		self.add_query_param('Status',Status)
+	def set_ForceReboot(self,ForceReboot):
+		self.add_query_param('ForceReboot',ForceReboot)
+
+	def get_InstanceIds(self):
+		return self.get_query_params().get('InstanceIds')
+
+	def set_InstanceIds(self,InstanceIds):
+		for i in range(len(InstanceIds)):	
+			if InstanceIds[i] is not None:
+				self.add_query_param('InstanceId.' + str(i + 1) , InstanceIds[i]);
