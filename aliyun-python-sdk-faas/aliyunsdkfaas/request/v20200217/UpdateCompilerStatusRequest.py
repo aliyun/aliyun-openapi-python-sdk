@@ -20,43 +20,42 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkfaas.endpoint import endpoint_data
 
-class UpdateImageAttributeRequest(RpcRequest):
+class UpdateCompilerStatusRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'faas', '2017-08-24', 'UpdateImageAttribute')
-		self.set_method('POST')
+		RpcRequest.__init__(self, 'faas', '2020-02-17', 'UpdateCompilerStatus')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_Name(self):
-		return self.get_query_params().get('Name')
+	def get_ErrorMessage(self):
+		return self.get_query_params().get('ErrorMessage')
 
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)
+	def set_ErrorMessage(self,ErrorMessage):
+		self.add_query_param('ErrorMessage',ErrorMessage)
 
-	def get_Description(self):
-		return self.get_query_params().get('Description')
+	def get_InstanceId(self):
+		return self.get_query_params().get('InstanceId')
 
-	def set_Description(self,Description):
-		self.add_query_param('Description',Description)
+	def set_InstanceId(self,InstanceId):
+		self.add_query_param('InstanceId',InstanceId)
 
-	def get_FpgaImageUUID(self):
-		return self.get_query_params().get('FpgaImageUUID')
+	def get_TaskId(self):
+		return self.get_query_params().get('TaskId')
 
-	def set_FpgaImageUUID(self,FpgaImageUUID):
-		self.add_query_param('FpgaImageUUID',FpgaImageUUID)
+	def set_TaskId(self,TaskId):
+		self.add_query_param('TaskId',TaskId)
 
-	def get_callerUid(self):
-		return self.get_query_params().get('callerUid')
+	def get_ErrorCode(self):
+		return self.get_query_params().get('ErrorCode')
 
-	def set_callerUid(self,callerUid):
-		self.add_query_param('callerUid',callerUid)
+	def set_ErrorCode(self,ErrorCode):
+		self.add_query_param('ErrorCode',ErrorCode)
 
-	def get_Tags(self):
-		return self.get_query_params().get('Tags')
+	def get_Status(self):
+		return self.get_query_params().get('Status')
 
-	def set_Tags(self,Tags):
-		self.add_query_param('Tags',Tags)
+	def set_Status(self,Status):
+		self.add_query_param('Status',Status)

@@ -23,7 +23,7 @@ from aliyunsdkfaas.endpoint import endpoint_data
 class DeleteFpgaImageRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'faas', '2017-08-24', 'DeleteFpgaImage','faas')
+		RpcRequest.__init__(self, 'faas', '2017-08-24', 'DeleteFpgaImage')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())

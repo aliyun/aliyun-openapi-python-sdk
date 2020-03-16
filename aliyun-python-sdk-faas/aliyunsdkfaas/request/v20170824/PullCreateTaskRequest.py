@@ -23,7 +23,7 @@ from aliyunsdkfaas.endpoint import endpoint_data
 class PullCreateTaskRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'faas', '2017-08-24', 'PullCreateTask','faas')
+		RpcRequest.__init__(self, 'faas', '2017-08-24', 'PullCreateTask')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
