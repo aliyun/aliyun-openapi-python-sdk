@@ -94,3 +94,9 @@ class DescribeMonitorGroupsRequest(RpcRequest):
 
 	def set_InstanceId(self,InstanceId):
 		self.add_query_param('InstanceId',InstanceId)
+
+	def get_ServiceId(self):
+		return self.get_query_params().get('ServiceId')
+
+	def set_ServiceId(self,ServiceId):
+		self.add_query_param('ServiceId',ServiceId)
