@@ -23,7 +23,7 @@ from aliyunsdkcloudauth.endpoint import endpoint_data
 class InitDeviceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cloudauth', '2019-03-07', 'InitDevice')
+		RpcRequest.__init__(self, 'Cloudauth', '2019-03-07', 'InitDevice','cloudauth')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -53,6 +53,12 @@ class InitDeviceRequest(RpcRequest):
 
 	def set_AppVersion(self,AppVersion):
 		self.add_query_param('AppVersion',AppVersion)
+
+	def get_DeviceToken(self):
+		return self.get_query_params().get('DeviceToken')
+
+	def set_DeviceToken(self,DeviceToken):
+		self.add_query_param('DeviceToken',DeviceToken)
 
 	def get_CertifyId(self):
 		return self.get_query_params().get('CertifyId')

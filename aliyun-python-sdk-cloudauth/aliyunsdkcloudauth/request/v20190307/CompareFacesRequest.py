@@ -23,7 +23,7 @@ from aliyunsdkcloudauth.endpoint import endpoint_data
 class CompareFacesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cloudauth', '2019-03-07', 'CompareFaces')
+		RpcRequest.__init__(self, 'Cloudauth', '2019-03-07', 'CompareFaces','cloudauth')
 		self.set_protocol_type('https')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
@@ -55,12 +55,6 @@ class CompareFacesRequest(RpcRequest):
 
 	def set_TargetImageValue(self,TargetImageValue):
 		self.add_body_params('TargetImageValue', TargetImageValue)
-
-	def get_SourceIp(self):
-		return self.get_query_params().get('SourceIp')
-
-	def set_SourceIp(self,SourceIp):
-		self.add_query_param('SourceIp',SourceIp)
 
 	def get_SourceImageValue(self):
 		return self.get_body_params().get('SourceImageValue')

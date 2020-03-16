@@ -23,7 +23,7 @@ from aliyunsdkcloudauth.endpoint import endpoint_data
 class DescribeDeviceInfoRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cloudauth', '2019-03-07', 'DescribeDeviceInfo')
+		RpcRequest.__init__(self, 'Cloudauth', '2019-03-07', 'DescribeDeviceInfo','cloudauth')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -36,35 +36,17 @@ class DescribeDeviceInfoRequest(RpcRequest):
 	def set_UserDeviceId(self,UserDeviceId):
 		self.add_query_param('UserDeviceId',UserDeviceId)
 
-	def get_SourceIp(self):
-		return self.get_query_params().get('SourceIp')
-
-	def set_SourceIp(self,SourceIp):
-		self.add_query_param('SourceIp',SourceIp)
-
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
 
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
 
-	def get_Lang(self):
-		return self.get_query_params().get('Lang')
-
-	def set_Lang(self,Lang):
-		self.add_query_param('Lang',Lang)
-
 	def get_ExpiredStartDay(self):
 		return self.get_query_params().get('ExpiredStartDay')
 
 	def set_ExpiredStartDay(self,ExpiredStartDay):
 		self.add_query_param('ExpiredStartDay',ExpiredStartDay)
-
-	def get_TotalCount(self):
-		return self.get_query_params().get('TotalCount')
-
-	def set_TotalCount(self,TotalCount):
-		self.add_query_param('TotalCount',TotalCount)
 
 	def get_CurrentPage(self):
 		return self.get_query_params().get('CurrentPage')
