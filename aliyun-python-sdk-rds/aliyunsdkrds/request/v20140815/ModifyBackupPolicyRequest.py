@@ -60,12 +60,6 @@ class ModifyBackupPolicyRequest(RpcRequest):
 	def set_BackupLog(self,BackupLog):
 		self.add_query_param('BackupLog',BackupLog)
 
-	def get_DuplicationContent(self):
-		return self.get_query_params().get('DuplicationContent')
-
-	def set_DuplicationContent(self,DuplicationContent):
-		self.add_query_param('DuplicationContent',DuplicationContent)
-
 	def get_HighSpaceUsageProtection(self):
 		return self.get_query_params().get('HighSpaceUsageProtection')
 
@@ -144,12 +138,6 @@ class ModifyBackupPolicyRequest(RpcRequest):
 	def set_ArchiveBackupKeepPolicy(self,ArchiveBackupKeepPolicy):
 		self.add_query_param('ArchiveBackupKeepPolicy',ArchiveBackupKeepPolicy)
 
-	def get_Duplication(self):
-		return self.get_query_params().get('Duplication')
-
-	def set_Duplication(self,Duplication):
-		self.add_query_param('Duplication',Duplication)
-
 	def get_PreferredBackupTime(self):
 		return self.get_query_params().get('PreferredBackupTime')
 
@@ -161,12 +149,6 @@ class ModifyBackupPolicyRequest(RpcRequest):
 
 	def set_BackupRetentionPeriod(self,BackupRetentionPeriod):
 		self.add_query_param('BackupRetentionPeriod',BackupRetentionPeriod)
-
-	def get_DuplicationLocation(self):
-		return self.get_query_params().get('DuplicationLocation')
-
-	def set_DuplicationLocation(self,DuplicationLocation):
-		self.add_query_param('DuplicationLocation',DuplicationLocation)
 
 	def get_ArchiveBackupRetentionPeriod(self):
 		return self.get_query_params().get('ArchiveBackupRetentionPeriod')

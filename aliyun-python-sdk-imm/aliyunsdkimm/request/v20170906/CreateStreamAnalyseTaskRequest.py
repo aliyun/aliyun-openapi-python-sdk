@@ -24,23 +24,11 @@ class CreateStreamAnalyseTaskRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'imm', '2017-09-06', 'CreateStreamAnalyseTask','imm')
 
-	def get_GrabType(self):
-		return self.get_query_params().get('GrabType')
-
-	def set_GrabType(self,GrabType):
-		self.add_query_param('GrabType',GrabType)
-
 	def get_Project(self):
 		return self.get_query_params().get('Project')
 
 	def set_Project(self,Project):
 		self.add_query_param('Project',Project)
-
-	def get_StartTime(self):
-		return self.get_query_params().get('StartTime')
-
-	def set_StartTime(self,StartTime):
-		self.add_query_param('StartTime',StartTime)
 
 	def get_NotifyEndpoint(self):
 		return self.get_query_params().get('NotifyEndpoint')
@@ -59,24 +47,6 @@ class CreateStreamAnalyseTaskRequest(RpcRequest):
 
 	def set_NotifyTopicName(self,NotifyTopicName):
 		self.add_query_param('NotifyTopicName',NotifyTopicName)
-
-	def get_EndTime(self):
-		return self.get_query_params().get('EndTime')
-
-	def set_EndTime(self,EndTime):
-		self.add_query_param('EndTime',EndTime)
-
-	def get_SaveType(self):
-		return self.get_query_params().get('SaveType')
-
-	def set_SaveType(self,SaveType):
-		self.add_query_param('SaveType',SaveType)
-
-	def get_Interval(self):
-		return self.get_query_params().get('Interval')
-
-	def set_Interval(self,Interval):
-		self.add_query_param('Interval',Interval)
 
 	def get_TgtUri(self):
 		return self.get_query_params().get('TgtUri')

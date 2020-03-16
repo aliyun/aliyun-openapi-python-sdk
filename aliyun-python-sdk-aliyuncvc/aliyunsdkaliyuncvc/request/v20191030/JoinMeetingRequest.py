@@ -30,14 +30,14 @@ class JoinMeetingRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_MeetingCode(self):
-		return self.get_body_params().get('MeetingCode')
-
-	def set_MeetingCode(self,MeetingCode):
-		self.add_body_params('MeetingCode', MeetingCode)
-
 	def get_UserId(self):
 		return self.get_body_params().get('UserId')
 
 	def set_UserId(self,UserId):
 		self.add_body_params('UserId', UserId)
+
+	def get_MeetingCode(self):
+		return self.get_body_params().get('MeetingCode')
+
+	def set_MeetingCode(self,MeetingCode):
+		self.add_body_params('MeetingCode', MeetingCode)

@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,10 +18,17 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkcbn.endpoint import endpoint_data
+
 class DescribeRouteServicesInCenRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cbn', '2017-09-12', 'DescribeRouteServicesInCen','cbn')
+		RpcRequest.__init__(self, 'Cbn', '2017-09-12', 'DescribeRouteServicesInCen','Cbn')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -29,23 +36,23 @@ class DescribeRouteServicesInCenRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
-
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
 	def get_CenId(self):
 		return self.get_query_params().get('CenId')
 
 	def set_CenId(self,CenId):
 		self.add_query_param('CenId',CenId)
 
-	def get_OwnerAccount(self):
-		return self.get_query_params().get('OwnerAccount')
+	def get_AccessRegionId(self):
+		return self.get_query_params().get('AccessRegionId')
 
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
+	def set_AccessRegionId(self,AccessRegionId):
+		self.add_query_param('AccessRegionId',AccessRegionId)
+
+	def get_PageNumber(self):
+		return self.get_query_params().get('PageNumber')
+
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)
 
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
@@ -65,20 +72,26 @@ class DescribeRouteServicesInCenRequest(RpcRequest):
 	def set_HostRegionId(self,HostRegionId):
 		self.add_query_param('HostRegionId',HostRegionId)
 
-	def get_AccessRegionId(self):
-		return self.get_query_params().get('AccessRegionId')
+	def get_HostVpcId(self):
+		return self.get_query_params().get('HostVpcId')
 
-	def set_AccessRegionId(self,AccessRegionId):
-		self.add_query_param('AccessRegionId',AccessRegionId)
+	def set_HostVpcId(self,HostVpcId):
+		self.add_query_param('HostVpcId',HostVpcId)
+
+	def get_ResourceOwnerAccount(self):
+		return self.get_query_params().get('ResourceOwnerAccount')
+
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+
+	def get_OwnerAccount(self):
+		return self.get_query_params().get('OwnerAccount')
+
+	def set_OwnerAccount(self,OwnerAccount):
+		self.add_query_param('OwnerAccount',OwnerAccount)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
-
-	def get_PageNumber(self):
-		return self.get_query_params().get('PageNumber')
-
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)

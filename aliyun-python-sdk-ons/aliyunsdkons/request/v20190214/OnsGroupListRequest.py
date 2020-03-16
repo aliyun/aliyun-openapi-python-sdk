@@ -41,3 +41,9 @@ class OnsGroupListRequest(RpcRequest):
 
 	def set_InstanceId(self,InstanceId):
 		self.add_query_param('InstanceId',InstanceId)
+
+	def get_GroupType(self):
+		return self.get_query_params().get('GroupType')
+
+	def set_GroupType(self,GroupType):
+		self.add_query_param('GroupType',GroupType)

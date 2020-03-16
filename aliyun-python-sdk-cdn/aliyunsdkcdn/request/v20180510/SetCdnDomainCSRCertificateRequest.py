@@ -30,11 +30,11 @@ class SetCdnDomainCSRCertificateRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_Certificate(self):
-		return self.get_query_params().get('Certificate')
+	def get_ServerCertificate(self):
+		return self.get_query_params().get('ServerCertificate')
 
-	def set_Certificate(self,Certificate):
-		self.add_query_param('Certificate',Certificate)
+	def set_ServerCertificate(self,ServerCertificate):
+		self.add_query_param('ServerCertificate',ServerCertificate)
 
 	def get_DomainName(self):
 		return self.get_query_params().get('DomainName')

@@ -23,7 +23,7 @@ from aliyunsdkiot.endpoint import endpoint_data
 class RemoveThingTopoRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'RemoveThingTopo','iot')
+		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'RemoveThingTopo','Iot')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):

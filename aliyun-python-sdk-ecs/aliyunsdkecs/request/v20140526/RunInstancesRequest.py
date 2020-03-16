@@ -173,12 +173,6 @@ class RunInstancesRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_CapacityReservationPreference(self):
-		return self.get_query_params().get('CapacityReservationPreference')
-
-	def set_CapacityReservationPreference(self,CapacityReservationPreference):
-		self.add_query_param('CapacityReservationPreference',CapacityReservationPreference)
-
 	def get_VSwitchId(self):
 		return self.get_query_params().get('VSwitchId')
 
@@ -301,12 +295,6 @@ class RunInstancesRequest(RpcRequest):
 	def set_SystemDiskCategory(self,SystemDiskCategory):
 		self.add_query_param('SystemDisk.Category',SystemDiskCategory)
 
-	def get_CapacityReservationId(self):
-		return self.get_query_params().get('CapacityReservationId')
-
-	def set_CapacityReservationId(self,CapacityReservationId):
-		self.add_query_param('CapacityReservationId',CapacityReservationId)
-
 	def get_SystemDiskPerformanceLevel(self):
 		return self.get_query_params().get('SystemDisk.PerformanceLevel')
 
@@ -330,12 +318,6 @@ class RunInstancesRequest(RpcRequest):
 
 	def set_InstanceType(self,InstanceType):
 		self.add_query_param('InstanceType',InstanceType)
-
-	def get_HibernationConfigured(self):
-		return self.get_query_params().get('HibernationConfigured')
-
-	def set_HibernationConfigured(self,HibernationConfigured):
-		self.add_query_param('HibernationConfigured',HibernationConfigured)
 
 	def get_InstanceChargeType(self):
 		return self.get_query_params().get('InstanceChargeType')
@@ -464,6 +446,8 @@ class RunInstancesRequest(RpcRequest):
 				self.add_query_param('DataDisk.' + str(i + 1) + '.PerformanceLevel' , DataDisks[i].get('PerformanceLevel'))
 			if DataDisks[i].get('AutoSnapshotPolicyId') is not None:
 				self.add_query_param('DataDisk.' + str(i + 1) + '.AutoSnapshotPolicyId' , DataDisks[i].get('AutoSnapshotPolicyId'))
+			if DataDisks[i].get('EncryptAlgorithm') is not None:
+				self.add_query_param('DataDisk.' + str(i + 1) + '.EncryptAlgorithm' , DataDisks[i].get('EncryptAlgorithm'))
 
 
 	def get_LaunchTemplateVersion(self):
@@ -483,6 +467,12 @@ class RunInstancesRequest(RpcRequest):
 
 	def set_SystemDiskSize(self,SystemDiskSize):
 		self.add_query_param('SystemDisk.Size',SystemDiskSize)
+
+	def get_ImageFamily(self):
+		return self.get_query_params().get('ImageFamily')
+
+	def set_ImageFamily(self,ImageFamily):
+		self.add_query_param('ImageFamily',ImageFamily)
 
 	def get_SystemDiskDescription(self):
 		return self.get_query_params().get('SystemDisk.Description')

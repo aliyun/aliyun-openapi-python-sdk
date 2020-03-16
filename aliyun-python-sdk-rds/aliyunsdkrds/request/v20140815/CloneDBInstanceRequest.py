@@ -42,41 +42,11 @@ class CloneDBInstanceRequest(RpcRequest):
 	def set_DBInstanceStorage(self,DBInstanceStorage):
 		self.add_query_param('DBInstanceStorage',DBInstanceStorage)
 
-	def get_ClientToken(self):
-		return self.get_query_params().get('ClientToken')
-
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
-
-	def get_ZoneIdSlave1(self):
-		return self.get_query_params().get('ZoneIdSlave1')
-
-	def set_ZoneIdSlave1(self,ZoneIdSlave1):
-		self.add_query_param('ZoneIdSlave1',ZoneIdSlave1)
-
-	def get_ZoneIdSlave2(self):
-		return self.get_query_params().get('ZoneIdSlave2')
-
-	def set_ZoneIdSlave2(self,ZoneIdSlave2):
-		self.add_query_param('ZoneIdSlave2',ZoneIdSlave2)
-
-	def get_ResourceGroupId(self):
-		return self.get_query_params().get('ResourceGroupId')
-
-	def set_ResourceGroupId(self,ResourceGroupId):
-		self.add_query_param('ResourceGroupId',ResourceGroupId)
-
 	def get_TableMeta(self):
 		return self.get_query_params().get('TableMeta')
 
 	def set_TableMeta(self,TableMeta):
 		self.add_query_param('TableMeta',TableMeta)
-
-	def get_DBInstanceDescription(self):
-		return self.get_query_params().get('DBInstanceDescription')
-
-	def set_DBInstanceDescription(self,DBInstanceDescription):
-		self.add_query_param('DBInstanceDescription',DBInstanceDescription)
 
 	def get_DBInstanceId(self):
 		return self.get_query_params().get('DBInstanceId')
@@ -96,6 +66,12 @@ class CloneDBInstanceRequest(RpcRequest):
 	def set_DedicatedHostGroupId(self,DedicatedHostGroupId):
 		self.add_query_param('DedicatedHostGroupId',DedicatedHostGroupId)
 
+	def get_BackupType(self):
+		return self.get_query_params().get('BackupType')
+
+	def set_BackupType(self,BackupType):
+		self.add_query_param('BackupType',BackupType)
+
 	def get_RestoreTime(self):
 		return self.get_query_params().get('RestoreTime')
 
@@ -108,35 +84,17 @@ class CloneDBInstanceRequest(RpcRequest):
 	def set_Period(self,Period):
 		self.add_query_param('Period',Period)
 
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
-
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
 	def get_BackupId(self):
 		return self.get_query_params().get('BackupId')
 
 	def set_BackupId(self,BackupId):
 		self.add_query_param('BackupId',BackupId)
 
-	def get_OwnerAccount(self):
-		return self.get_query_params().get('OwnerAccount')
-
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
-
 	def get_RestoreTable(self):
 		return self.get_query_params().get('RestoreTable')
 
 	def set_RestoreTable(self,RestoreTable):
 		self.add_query_param('RestoreTable',RestoreTable)
-
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
 
 	def get_UsedTime(self):
 		return self.get_query_params().get('UsedTime')

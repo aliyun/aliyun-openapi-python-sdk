@@ -42,23 +42,11 @@ class ModifySecurityIpsRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_ClientToken(self):
-		return self.get_query_params().get('ClientToken')
-
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
-
 	def get_SecurityIps(self):
 		return self.get_query_params().get('SecurityIps')
 
 	def set_SecurityIps(self,SecurityIps):
 		self.add_query_param('SecurityIps',SecurityIps)
-
-	def get_SecurityGroupId(self):
-		return self.get_query_params().get('SecurityGroupId')
-
-	def set_SecurityGroupId(self,SecurityGroupId):
-		self.add_query_param('SecurityGroupId',SecurityGroupId)
 
 	def get_WhitelistNetworkType(self):
 		return self.get_query_params().get('WhitelistNetworkType')
@@ -83,24 +71,6 @@ class ModifySecurityIpsRequest(RpcRequest):
 
 	def set_ModifyMode(self,ModifyMode):
 		self.add_query_param('ModifyMode',ModifyMode)
-
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
-
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_OwnerAccount(self):
-		return self.get_query_params().get('OwnerAccount')
-
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
-
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
 
 	def get_DBInstanceIPArrayAttribute(self):
 		return self.get_query_params().get('DBInstanceIPArrayAttribute')

@@ -114,6 +114,12 @@ class ConfigureSynchronizationJobRequest(RpcRequest):
 	def set_SourceEndpointUserName(self,SourceEndpointUserName):
 		self.add_query_param('SourceEndpoint.UserName',SourceEndpointUserName)
 
+	def get_SourceEndpointDatabaseName(self):
+		return self.get_query_params().get('SourceEndpoint.DatabaseName')
+
+	def set_SourceEndpointDatabaseName(self,SourceEndpointDatabaseName):
+		self.add_query_param('SourceEndpoint.DatabaseName',SourceEndpointDatabaseName)
+
 	def get_PartitionKeyModifyTime_Month(self):
 		return self.get_query_params().get('PartitionKey.ModifyTime_Month')
 
@@ -167,6 +173,12 @@ class ConfigureSynchronizationJobRequest(RpcRequest):
 
 	def set_PartitionKeyModifyTime_Hour(self,PartitionKeyModifyTime_Hour):
 		self.add_query_param('PartitionKey.ModifyTime_Hour',PartitionKeyModifyTime_Hour)
+
+	def get_DestinationEndpointDataBaseName(self):
+		return self.get_query_params().get('DestinationEndpoint.DataBaseName')
+
+	def set_DestinationEndpointDataBaseName(self,DestinationEndpointDataBaseName):
+		self.add_query_param('DestinationEndpoint.DataBaseName',DestinationEndpointDataBaseName)
 
 	def get_SourceEndpointPassword(self):
 		return self.get_query_params().get('SourceEndpoint.Password')

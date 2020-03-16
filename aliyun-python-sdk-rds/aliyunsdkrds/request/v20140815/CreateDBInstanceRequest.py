@@ -30,6 +30,12 @@ class CreateDBInstanceRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_DBParamGroupId(self):
+		return self.get_query_params().get('DBParamGroupId')
+
+	def set_DBParamGroupId(self,DBParamGroupId):
+		self.add_query_param('DBParamGroupId',DBParamGroupId)
+
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
@@ -53,12 +59,6 @@ class CreateDBInstanceRequest(RpcRequest):
 
 	def set_EngineVersion(self,EngineVersion):
 		self.add_query_param('EngineVersion',EngineVersion)
-
-	def get_ResourceGroupId(self):
-		return self.get_query_params().get('ResourceGroupId')
-
-	def set_ResourceGroupId(self,ResourceGroupId):
-		self.add_query_param('ResourceGroupId',ResourceGroupId)
 
 	def get_TargetDedicatedHostIdForMaster(self):
 		return self.get_query_params().get('TargetDedicatedHostIdForMaster')
@@ -89,12 +89,6 @@ class CreateDBInstanceRequest(RpcRequest):
 
 	def set_EncryptionKey(self,EncryptionKey):
 		self.add_query_param('EncryptionKey',EncryptionKey)
-
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
 
 	def get_DBInstanceClass(self):
 		return self.get_query_params().get('DBInstanceClass')
@@ -138,12 +132,6 @@ class CreateDBInstanceRequest(RpcRequest):
 	def set_RoleARN(self,RoleARN):
 		self.add_query_param('RoleARN',RoleARN)
 
-	def get_TunnelId(self):
-		return self.get_query_params().get('TunnelId')
-
-	def set_TunnelId(self,TunnelId):
-		self.add_query_param('TunnelId',TunnelId)
-
 	def get_ZoneId(self):
 		return self.get_query_params().get('ZoneId')
 
@@ -174,23 +162,23 @@ class CreateDBInstanceRequest(RpcRequest):
 	def set_TargetDedicatedHostIdForSlave(self,TargetDedicatedHostIdForSlave):
 		self.add_query_param('TargetDedicatedHostIdForSlave',TargetDedicatedHostIdForSlave)
 
-	def get_ZoneIdSlave1(self):
-		return self.get_query_params().get('ZoneIdSlave1')
+	def get_DBIsIgnoreCase(self):
+		return self.get_query_params().get('DBIsIgnoreCase')
 
-	def set_ZoneIdSlave1(self,ZoneIdSlave1):
-		self.add_query_param('ZoneIdSlave1',ZoneIdSlave1)
-
-	def get_ZoneIdSlave2(self):
-		return self.get_query_params().get('ZoneIdSlave2')
-
-	def set_ZoneIdSlave2(self,ZoneIdSlave2):
-		self.add_query_param('ZoneIdSlave2',ZoneIdSlave2)
+	def set_DBIsIgnoreCase(self,DBIsIgnoreCase):
+		self.add_query_param('DBIsIgnoreCase',DBIsIgnoreCase)
 
 	def get_Engine(self):
 		return self.get_query_params().get('Engine')
 
 	def set_Engine(self,Engine):
 		self.add_query_param('Engine',Engine)
+
+	def get_DBTimeZone(self):
+		return self.get_query_params().get('DBTimeZone')
+
+	def set_DBTimeZone(self,DBTimeZone):
+		self.add_query_param('DBTimeZone',DBTimeZone)
 
 	def get_DBInstanceStorageType(self):
 		return self.get_query_params().get('DBInstanceStorageType')
@@ -209,18 +197,6 @@ class CreateDBInstanceRequest(RpcRequest):
 
 	def set_DBInstanceNetType(self,DBInstanceNetType):
 		self.add_query_param('DBInstanceNetType',DBInstanceNetType)
-
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
-
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_OwnerAccount(self):
-		return self.get_query_params().get('OwnerAccount')
-
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
 
 	def get_UsedTime(self):
 		return self.get_query_params().get('UsedTime')

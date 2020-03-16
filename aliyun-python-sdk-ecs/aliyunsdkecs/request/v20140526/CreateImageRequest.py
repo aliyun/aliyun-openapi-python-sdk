@@ -128,6 +128,12 @@ class CreateImageRequest(RpcRequest):
 	def set_InstanceId(self,InstanceId):
 		self.add_query_param('InstanceId',InstanceId)
 
+	def get_ImageFamily(self):
+		return self.get_query_params().get('ImageFamily')
+
+	def set_ImageFamily(self,ImageFamily):
+		self.add_query_param('ImageFamily',ImageFamily)
+
 	def get_ImageVersion(self):
 		return self.get_query_params().get('ImageVersion')
 

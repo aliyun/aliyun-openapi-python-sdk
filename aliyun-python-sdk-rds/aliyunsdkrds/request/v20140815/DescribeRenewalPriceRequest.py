@@ -72,12 +72,6 @@ class DescribeRenewalPriceRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
-	def get_CommodityCode(self):
-		return self.get_query_params().get('CommodityCode')
-
-	def set_CommodityCode(self,CommodityCode):
-		self.add_query_param('CommodityCode',CommodityCode)
-
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
@@ -95,12 +89,6 @@ class DescribeRenewalPriceRequest(RpcRequest):
 
 	def set_DBInstanceClass(self,DBInstanceClass):
 		self.add_query_param('DBInstanceClass',DBInstanceClass)
-
-	def get_PromotionCode(self):
-		return self.get_query_params().get('PromotionCode')
-
-	def set_PromotionCode(self,PromotionCode):
-		self.add_query_param('PromotionCode',PromotionCode)
 
 	def get_TimeType(self):
 		return self.get_query_params().get('TimeType')

@@ -54,18 +54,6 @@ class DescribeCrossRegionBackupDBInstanceRequest(RpcRequest):
 	def set_DBInstanceId(self,DBInstanceId):
 		self.add_query_param('DBInstanceId',DBInstanceId)
 
-	def get_NotEnabled(self):
-		return self.get_query_params().get('NotEnabled')
-
-	def set_NotEnabled(self,NotEnabled):
-		self.add_query_param('NotEnabled',NotEnabled)
-
-	def get_Product(self):
-		return self.get_query_params().get('Product')
-
-	def set_Product(self,Product):
-		self.add_query_param('Product',Product)
-
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 

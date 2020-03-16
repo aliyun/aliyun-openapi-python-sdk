@@ -172,6 +172,12 @@ class DescribeImagesRequest(RpcRequest):
 				self.add_query_param('Filter.' + str(i + 1) + '.Key' , Filters[i].get('Key'))
 
 
+	def get_ImageFamily(self):
+		return self.get_query_params().get('ImageFamily')
+
+	def set_ImageFamily(self,ImageFamily):
+		self.add_query_param('ImageFamily',ImageFamily)
+
 	def get_Status(self):
 		return self.get_query_params().get('Status')
 

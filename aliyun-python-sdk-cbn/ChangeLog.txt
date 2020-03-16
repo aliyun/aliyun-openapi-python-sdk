@@ -1,3 +1,7 @@
+2020-03-05 Version: 1.0.5
+- Support flow log.
+- Support route map.
+
 2019-03-14 Version: 1.0.2
 1, Update Dependency
 

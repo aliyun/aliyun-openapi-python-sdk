@@ -23,7 +23,7 @@ from aliyunsdkiot.endpoint import endpoint_data
 class DeleteDeviceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'DeleteDevice','iot')
+		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'DeleteDevice','Iot')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):

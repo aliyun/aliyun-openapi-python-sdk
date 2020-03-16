@@ -48,6 +48,12 @@ class CreateDiskRequest(RpcRequest):
 	def set_ClientToken(self,ClientToken):
 		self.add_query_param('ClientToken',ClientToken)
 
+	def get_EncryptAlgorithm(self):
+		return self.get_query_params().get('EncryptAlgorithm')
+
+	def set_EncryptAlgorithm(self,EncryptAlgorithm):
+		self.add_query_param('EncryptAlgorithm',EncryptAlgorithm)
+
 	def get_Description(self):
 		return self.get_query_params().get('Description')
 

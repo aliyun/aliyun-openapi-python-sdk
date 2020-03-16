@@ -36,12 +36,6 @@ class DetectImageCelebrityRequest(RpcRequest):
 	def set_Library(self,Library):
 		self.add_query_param('Library',Library)
 
-	def get_RealUid(self):
-		return self.get_query_params().get('RealUid')
-
-	def set_RealUid(self,RealUid):
-		self.add_query_param('RealUid',RealUid)
-
 	def get_ImageUri(self):
 		return self.get_query_params().get('ImageUri')
 

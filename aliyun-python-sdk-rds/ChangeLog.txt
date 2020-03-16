@@ -1,3 +1,9 @@
+2020-03-11 Version: 2.4.5
+- Support newest OpenAPI for rds.
+
+2020-03-10 Version: 2.4.5
+- Generated 2014-08-15 for `Rds`.
+
 2020-01-17 Version: 2.4.4
 - Supported Add the history event signature function.
 

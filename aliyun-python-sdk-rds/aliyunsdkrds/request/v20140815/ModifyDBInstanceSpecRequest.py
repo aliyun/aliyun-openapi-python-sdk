@@ -42,12 +42,6 @@ class ModifyDBInstanceSpecRequest(RpcRequest):
 	def set_DBInstanceStorage(self,DBInstanceStorage):
 		self.add_query_param('DBInstanceStorage',DBInstanceStorage)
 
-	def get_ClientToken(self):
-		return self.get_query_params().get('ClientToken')
-
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
-
 	def get_EngineVersion(self):
 		return self.get_query_params().get('EngineVersion')
 

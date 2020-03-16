@@ -77,9 +77,3 @@ class SwitchDBInstanceHARequest(RpcRequest):
 
 	def set_Force(self,Force):
 		self.add_query_param('Force',Force)
-
-	def get_Operation(self):
-		return self.get_query_params().get('Operation')
-
-	def set_Operation(self,Operation):
-		self.add_query_param('Operation',Operation)

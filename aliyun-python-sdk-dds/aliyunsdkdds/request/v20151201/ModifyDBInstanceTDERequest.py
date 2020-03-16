@@ -23,7 +23,7 @@ from aliyunsdkdds.endpoint import endpoint_data
 class ModifyDBInstanceTDERequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dds', '2015-12-01', 'ModifyDBInstanceTDE','Dds')
+		RpcRequest.__init__(self, 'Dds', '2015-12-01', 'ModifyDBInstanceTDE','dds')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -60,6 +60,12 @@ class ModifyDBInstanceTDERequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
+	def get_EncryptionKey(self):
+		return self.get_query_params().get('EncryptionKey')
+
+	def set_EncryptionKey(self,EncryptionKey):
+		self.add_query_param('EncryptionKey',EncryptionKey)
+
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
@@ -71,6 +77,12 @@ class ModifyDBInstanceTDERequest(RpcRequest):
 
 	def set_EncryptorName(self,EncryptorName):
 		self.add_query_param('EncryptorName',EncryptorName)
+
+	def get_RoleARN(self):
+		return self.get_query_params().get('RoleARN')
+
+	def set_RoleARN(self,RoleARN):
+		self.add_query_param('RoleARN',RoleARN)
 
 	def get_TDEStatus(self):
 		return self.get_query_params().get('TDEStatus')

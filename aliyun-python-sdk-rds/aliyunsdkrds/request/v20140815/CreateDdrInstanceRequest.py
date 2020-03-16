@@ -54,12 +54,6 @@ class CreateDdrInstanceRequest(RpcRequest):
 	def set_EngineVersion(self,EngineVersion):
 		self.add_query_param('EngineVersion',EngineVersion)
 
-	def get_UserBakSetURL(self):
-		return self.get_query_params().get('UserBakSetURL')
-
-	def set_UserBakSetURL(self,UserBakSetURL):
-		self.add_query_param('UserBakSetURL',UserBakSetURL)
-
 	def get_ResourceGroupId(self):
 		return self.get_query_params().get('ResourceGroupId')
 
@@ -71,12 +65,6 @@ class CreateDdrInstanceRequest(RpcRequest):
 
 	def set_DBInstanceDescription(self,DBInstanceDescription):
 		self.add_query_param('DBInstanceDescription',DBInstanceDescription)
-
-	def get_BackupSetRegion(self):
-		return self.get_query_params().get('BackupSetRegion')
-
-	def set_BackupSetRegion(self,BackupSetRegion):
-		self.add_query_param('BackupSetRegion',BackupSetRegion)
 
 	def get_Period(self):
 		return self.get_query_params().get('Period')
@@ -120,12 +108,6 @@ class CreateDdrInstanceRequest(RpcRequest):
 	def set_PrivateIpAddress(self,PrivateIpAddress):
 		self.add_query_param('PrivateIpAddress',PrivateIpAddress)
 
-	def get_TunnelId(self):
-		return self.get_query_params().get('TunnelId')
-
-	def set_TunnelId(self,TunnelId):
-		self.add_query_param('TunnelId',TunnelId)
-
 	def get_ZoneId(self):
 		return self.get_query_params().get('ZoneId')
 
@@ -156,12 +138,6 @@ class CreateDdrInstanceRequest(RpcRequest):
 	def set_ClientToken(self,ClientToken):
 		self.add_query_param('ClientToken',ClientToken)
 
-	def get_HostType(self):
-		return self.get_query_params().get('HostType')
-
-	def set_HostType(self,HostType):
-		self.add_query_param('HostType',HostType)
-
 	def get_Engine(self):
 		return self.get_query_params().get('Engine')
 
@@ -180,23 +156,11 @@ class CreateDdrInstanceRequest(RpcRequest):
 	def set_DBInstanceNetType(self,DBInstanceNetType):
 		self.add_query_param('DBInstanceNetType',DBInstanceNetType)
 
-	def get_BackupSetType(self):
-		return self.get_query_params().get('BackupSetType')
-
-	def set_BackupSetType(self,BackupSetType):
-		self.add_query_param('BackupSetType',BackupSetType)
-
 	def get_RestoreTime(self):
 		return self.get_query_params().get('RestoreTime')
 
 	def set_RestoreTime(self,RestoreTime):
 		self.add_query_param('RestoreTime',RestoreTime)
-
-	def get_BakSetName(self):
-		return self.get_query_params().get('BakSetName')
-
-	def set_BakSetName(self,BakSetName):
-		self.add_query_param('BakSetName',BakSetName)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')

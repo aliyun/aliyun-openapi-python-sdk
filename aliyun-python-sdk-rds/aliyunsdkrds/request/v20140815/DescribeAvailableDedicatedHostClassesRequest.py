@@ -48,6 +48,12 @@ class DescribeAvailableDedicatedHostClassesRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
+	def get_StorageType(self):
+		return self.get_query_params().get('StorageType')
+
+	def set_StorageType(self,StorageType):
+		self.add_query_param('StorageType',StorageType)
+
 	def get_ZoneId(self):
 		return self.get_query_params().get('ZoneId')
 

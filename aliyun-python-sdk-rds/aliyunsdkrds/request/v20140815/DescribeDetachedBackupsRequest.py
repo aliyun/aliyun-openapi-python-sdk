@@ -48,12 +48,6 @@ class DescribeDetachedBackupsRequest(RpcRequest):
 	def set_PageNumber(self,PageNumber):
 		self.add_query_param('PageNumber',PageNumber)
 
-	def get_BackupLocation(self):
-		return self.get_query_params().get('BackupLocation')
-
-	def set_BackupLocation(self,BackupLocation):
-		self.add_query_param('BackupLocation',BackupLocation)
-
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
 
@@ -66,35 +60,17 @@ class DescribeDetachedBackupsRequest(RpcRequest):
 	def set_DBInstanceId(self,DBInstanceId):
 		self.add_query_param('DBInstanceId',DBInstanceId)
 
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
-
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
 	def get_BackupId(self):
 		return self.get_query_params().get('BackupId')
 
 	def set_BackupId(self,BackupId):
 		self.add_query_param('BackupId',BackupId)
 
-	def get_OwnerAccount(self):
-		return self.get_query_params().get('OwnerAccount')
-
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
-
 	def get_EndTime(self):
 		return self.get_query_params().get('EndTime')
 
 	def set_EndTime(self,EndTime):
 		self.add_query_param('EndTime',EndTime)
-
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
 
 	def get_BackupStatus(self):
 		return self.get_query_params().get('BackupStatus')

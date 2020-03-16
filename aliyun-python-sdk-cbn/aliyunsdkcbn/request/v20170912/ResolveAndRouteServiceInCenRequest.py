@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,22 +18,23 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkcbn.endpoint import endpoint_data
+
 class ResolveAndRouteServiceInCenRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cbn', '2017-09-12', 'ResolveAndRouteServiceInCen','cbn')
+		RpcRequest.__init__(self, 'Cbn', '2017-09-12', 'ResolveAndRouteServiceInCen','Cbn')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
-
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
 	def get_ClientToken(self):
 		return self.get_query_params().get('ClientToken')
@@ -47,11 +48,11 @@ class ResolveAndRouteServiceInCenRequest(RpcRequest):
 	def set_CenId(self,CenId):
 		self.add_query_param('CenId',CenId)
 
-	def get_OwnerAccount(self):
-		return self.get_query_params().get('OwnerAccount')
+	def get_Description(self):
+		return self.get_query_params().get('Description')
 
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
+	def set_Description(self,Description):
+		self.add_query_param('Description',Description)
 
 	def get_Host(self):
 		return self.get_query_params().get('Host')
@@ -65,11 +66,23 @@ class ResolveAndRouteServiceInCenRequest(RpcRequest):
 	def set_HostRegionId(self,HostRegionId):
 		self.add_query_param('HostRegionId',HostRegionId)
 
-	def get_AccessRegionId(self):
-		return self.get_query_params().get('AccessRegionId')
+	def get_HostVpcId(self):
+		return self.get_query_params().get('HostVpcId')
 
-	def set_AccessRegionId(self,AccessRegionId):
-		self.add_query_param('AccessRegionId',AccessRegionId)
+	def set_HostVpcId(self,HostVpcId):
+		self.add_query_param('HostVpcId',HostVpcId)
+
+	def get_ResourceOwnerAccount(self):
+		return self.get_query_params().get('ResourceOwnerAccount')
+
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+
+	def get_OwnerAccount(self):
+		return self.get_query_params().get('OwnerAccount')
+
+	def set_OwnerAccount(self,OwnerAccount):
+		self.add_query_param('OwnerAccount',OwnerAccount)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
@@ -77,8 +90,10 @@ class ResolveAndRouteServiceInCenRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_UpdateInterval(self):
-		return self.get_query_params().get('UpdateInterval')
+	def get_AccessRegionIdss(self):
+		return self.get_query_params().get('AccessRegionIdss')
 
-	def set_UpdateInterval(self,UpdateInterval):
-		self.add_query_param('UpdateInterval',UpdateInterval)
+	def set_AccessRegionIdss(self,AccessRegionIdss):
+		for i in range(len(AccessRegionIdss)):	
+			if AccessRegionIdss[i] is not None:
+				self.add_query_param('AccessRegionIds.' + str(i + 1) , AccessRegionIdss[i]);

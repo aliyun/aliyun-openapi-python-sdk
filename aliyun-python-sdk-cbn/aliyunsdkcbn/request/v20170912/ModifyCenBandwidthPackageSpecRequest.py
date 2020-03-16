@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,10 +18,17 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkcbn.endpoint import endpoint_data
+
 class ModifyCenBandwidthPackageSpecRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cbn', '2017-09-12', 'ModifyCenBandwidthPackageSpec','cbn')
+		RpcRequest.__init__(self, 'Cbn', '2017-09-12', 'ModifyCenBandwidthPackageSpec','Cbn')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -41,12 +48,6 @@ class ModifyCenBandwidthPackageSpecRequest(RpcRequest):
 	def set_Bandwidth(self,Bandwidth):
 		self.add_query_param('Bandwidth',Bandwidth)
 
-	def get_CenBandwidthPackageId(self):
-		return self.get_query_params().get('CenBandwidthPackageId')
-
-	def set_CenBandwidthPackageId(self,CenBandwidthPackageId):
-		self.add_query_param('CenBandwidthPackageId',CenBandwidthPackageId)
-
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
 
@@ -58,3 +59,9 @@ class ModifyCenBandwidthPackageSpecRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_CenBandwidthPackageId(self):
+		return self.get_query_params().get('CenBandwidthPackageId')
+
+	def set_CenBandwidthPackageId(self,CenBandwidthPackageId):
+		self.add_query_param('CenBandwidthPackageId',CenBandwidthPackageId)

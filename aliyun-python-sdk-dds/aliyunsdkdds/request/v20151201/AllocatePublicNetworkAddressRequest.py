@@ -23,7 +23,7 @@ from aliyunsdkdds.endpoint import endpoint_data
 class AllocatePublicNetworkAddressRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dds', '2015-12-01', 'AllocatePublicNetworkAddress','Dds')
+		RpcRequest.__init__(self, 'Dds', '2015-12-01', 'AllocatePublicNetworkAddress','dds')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):

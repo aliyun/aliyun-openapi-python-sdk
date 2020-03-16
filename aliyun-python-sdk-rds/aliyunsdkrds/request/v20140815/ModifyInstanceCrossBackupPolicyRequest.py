@@ -48,24 +48,6 @@ class ModifyInstanceCrossBackupPolicyRequest(RpcRequest):
 	def set_BackupEnabled(self,BackupEnabled):
 		self.add_query_param('BackupEnabled',BackupEnabled)
 
-	def get_RelService(self):
-		return self.get_query_params().get('RelService')
-
-	def set_RelService(self,RelService):
-		self.add_query_param('RelService',RelService)
-
-	def get_StorageType(self):
-		return self.get_query_params().get('StorageType')
-
-	def set_StorageType(self,StorageType):
-		self.add_query_param('StorageType',StorageType)
-
-	def get_Endpoint(self):
-		return self.get_query_params().get('Endpoint')
-
-	def set_Endpoint(self,Endpoint):
-		self.add_query_param('Endpoint',Endpoint)
-
 	def get_DBInstanceId(self):
 		return self.get_query_params().get('DBInstanceId')
 
@@ -107,9 +89,3 @@ class ModifyInstanceCrossBackupPolicyRequest(RpcRequest):
 
 	def set_CrossBackupRegion(self,CrossBackupRegion):
 		self.add_query_param('CrossBackupRegion',CrossBackupRegion)
-
-	def get_StorageOwner(self):
-		return self.get_query_params().get('StorageOwner')
-
-	def set_StorageOwner(self,StorageOwner):
-		self.add_query_param('StorageOwner',StorageOwner)

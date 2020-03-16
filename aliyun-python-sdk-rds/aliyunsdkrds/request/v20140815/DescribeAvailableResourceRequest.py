@@ -30,12 +30,6 @@ class DescribeAvailableResourceRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_DBInstanceName(self):
-		return self.get_query_params().get('DBInstanceName')
-
-	def set_DBInstanceName(self,DBInstanceName):
-		self.add_query_param('DBInstanceName',DBInstanceName)
-
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
@@ -54,12 +48,6 @@ class DescribeAvailableResourceRequest(RpcRequest):
 	def set_Engine(self,Engine):
 		self.add_query_param('Engine',Engine)
 
-	def get_DBInstanceId(self):
-		return self.get_query_params().get('DBInstanceId')
-
-	def set_DBInstanceId(self,DBInstanceId):
-		self.add_query_param('DBInstanceId',DBInstanceId)
-
 	def get_DBInstanceStorageType(self):
 		return self.get_query_params().get('DBInstanceStorageType')
 
@@ -71,30 +59,6 @@ class DescribeAvailableResourceRequest(RpcRequest):
 
 	def set_InstanceChargeType(self,InstanceChargeType):
 		self.add_query_param('InstanceChargeType',InstanceChargeType)
-
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
-
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_OwnerAccount(self):
-		return self.get_query_params().get('OwnerAccount')
-
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
-
-	def get_CommodityCode(self):
-		return self.get_query_params().get('CommodityCode')
-
-	def set_CommodityCode(self,CommodityCode):
-		self.add_query_param('CommodityCode',CommodityCode)
-
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
 
 	def get_DBInstanceClass(self):
 		return self.get_query_params().get('DBInstanceClass')
