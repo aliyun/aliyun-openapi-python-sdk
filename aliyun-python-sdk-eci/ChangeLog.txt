@@ -1,3 +1,8 @@
+2020-03-16 Version: 1.0.9
+1, support create spot
+2, support create flexVolume
+3, fix up a parameter
+
 2019-12-05 Version: 1.0.8
 1, support container lifecycle
 2, support disk volume
