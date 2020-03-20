@@ -23,7 +23,7 @@ from aliyunsdkros.endpoint import endpoint_data
 class DescribeStackDetailRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'ROS', '2015-09-01', 'DescribeStackDetail')
+		RoaRequest.__init__(self, 'ROS', '2015-09-01', 'DescribeStackDetail','ROS')
 		self.set_uri_pattern('/stacks/[StackName]/[StackId]')
 		self.set_method('GET')
 		if hasattr(self, "endpoint_map"):

@@ -23,7 +23,7 @@ from aliyunsdkros.endpoint import endpoint_data
 class DeleteStackRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'ROS', '2015-09-01', 'DeleteStack')
+		RoaRequest.__init__(self, 'ROS', '2015-09-01', 'DeleteStack','ROS')
 		self.set_uri_pattern('/stacks/[StackName]/[StackId]')
 		self.set_method('DELETE')
 		if hasattr(self, "endpoint_map"):

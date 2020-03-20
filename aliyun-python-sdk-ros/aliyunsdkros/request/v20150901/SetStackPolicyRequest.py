@@ -23,7 +23,7 @@ from aliyunsdkros.endpoint import endpoint_data
 class SetStackPolicyRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'ROS', '2015-09-01', 'SetStackPolicy')
+		RoaRequest.__init__(self, 'ROS', '2015-09-01', 'SetStackPolicy','ROS')
 		self.set_uri_pattern('/stacks/[StackName]/[StackId]/policy')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):

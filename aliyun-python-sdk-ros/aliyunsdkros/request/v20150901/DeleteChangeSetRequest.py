@@ -23,7 +23,7 @@ from aliyunsdkros.endpoint import endpoint_data
 class DeleteChangeSetRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'ROS', '2015-09-01', 'DeleteChangeSet')
+		RoaRequest.__init__(self, 'ROS', '2015-09-01', 'DeleteChangeSet','ROS')
 		self.set_uri_pattern('/stacks/[StackName]/[StackId]/changeSets/[ChangeSetName]')
 		self.set_method('DELETE')
 		if hasattr(self, "endpoint_map"):

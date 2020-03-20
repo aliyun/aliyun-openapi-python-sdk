@@ -23,18 +23,12 @@ from aliyunsdkros.endpoint import endpoint_data
 class SignalResourceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ROS', '2019-09-10', 'SignalResource')
+		RpcRequest.__init__(self, 'ROS', '2019-09-10', 'SignalResource','ROS')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Data(self):
-		return self.get_query_params().get('Data')
-
-	def set_Data(self,Data):
-		self.add_query_param('Data',Data)
 
 	def get_ClientToken(self):
 		return self.get_query_params().get('ClientToken')

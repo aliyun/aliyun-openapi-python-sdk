@@ -23,7 +23,7 @@ from aliyunsdkros.endpoint import endpoint_data
 class PreviewStackRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'ROS', '2015-09-01', 'PreviewStack')
+		RoaRequest.__init__(self, 'ROS', '2015-09-01', 'PreviewStack','ROS')
 		self.set_uri_pattern('/stacks/preview')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):

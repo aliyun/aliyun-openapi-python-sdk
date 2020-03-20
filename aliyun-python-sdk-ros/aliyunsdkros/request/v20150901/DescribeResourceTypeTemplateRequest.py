@@ -23,7 +23,7 @@ from aliyunsdkros.endpoint import endpoint_data
 class DescribeResourceTypeTemplateRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'ROS', '2015-09-01', 'DescribeResourceTypeTemplate')
+		RoaRequest.__init__(self, 'ROS', '2015-09-01', 'DescribeResourceTypeTemplate','ROS')
 		self.set_uri_pattern('/resource_types/[TypeName]/template')
 		self.set_method('GET')
 		if hasattr(self, "endpoint_map"):

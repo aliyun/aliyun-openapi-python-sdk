@@ -23,7 +23,7 @@ from aliyunsdkros.endpoint import endpoint_data
 class CreateStacksRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'ROS', '2015-09-01', 'CreateStacks')
+		RoaRequest.__init__(self, 'ROS', '2015-09-01', 'CreateStacks','ROS')
 		self.set_uri_pattern('/stacks')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):

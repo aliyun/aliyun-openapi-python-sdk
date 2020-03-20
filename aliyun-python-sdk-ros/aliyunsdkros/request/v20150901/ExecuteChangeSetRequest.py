@@ -23,7 +23,7 @@ from aliyunsdkros.endpoint import endpoint_data
 class ExecuteChangeSetRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'ROS', '2015-09-01', 'ExecuteChangeSet')
+		RoaRequest.__init__(self, 'ROS', '2015-09-01', 'ExecuteChangeSet','ROS')
 		self.set_uri_pattern('/stacks/[StackName]/[StackId]/changeSets/[ChangeSetName]/execute')
 		self.set_method('PUT')
 		if hasattr(self, "endpoint_map"):

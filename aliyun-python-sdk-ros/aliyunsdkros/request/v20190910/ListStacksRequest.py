@@ -23,7 +23,7 @@ from aliyunsdkros.endpoint import endpoint_data
 class ListStacksRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ROS', '2019-09-10', 'ListStacks')
+		RpcRequest.__init__(self, 'ROS', '2019-09-10', 'ListStacks','ROS')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -35,6 +35,12 @@ class ListStacksRequest(RpcRequest):
 
 	def set_ShowNestedStack(self,ShowNestedStack):
 		self.add_query_param('ShowNestedStack',ShowNestedStack)
+
+	def get_StackId(self):
+		return self.get_query_params().get('StackId')
+
+	def set_StackId(self,StackId):
+		self.add_query_param('StackId',StackId)
 
 	def get_PageNumber(self):
 		return self.get_query_params().get('PageNumber')
@@ -55,6 +61,17 @@ class ListStacksRequest(RpcRequest):
 		for i in range(len(StackNames)):	
 			if StackNames[i] is not None:
 				self.add_query_param('StackName.' + str(i + 1) , StackNames[i]);
+
+	def get_Tags(self):
+		return self.get_query_params().get('Tags')
+
+	def set_Tags(self,Tags):
+		for i in range(len(Tags)):	
+			if Tags[i].get('Value') is not None:
+				self.add_query_param('Tag.' + str(i + 1) + '.Value' , Tags[i].get('Value'))
+			if Tags[i].get('Key') is not None:
+				self.add_query_param('Tag.' + str(i + 1) + '.Key' , Tags[i].get('Key'))
+
 
 	def get_ParentStackId(self):
 		return self.get_query_params().get('ParentStackId')

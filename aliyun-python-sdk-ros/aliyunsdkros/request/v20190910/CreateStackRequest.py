@@ -23,7 +23,7 @@ from aliyunsdkros.endpoint import endpoint_data
 class CreateStackRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ROS', '2019-09-10', 'CreateStack')
+		RpcRequest.__init__(self, 'ROS', '2019-09-10', 'CreateStack','ROS')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -91,26 +91,14 @@ class CreateStackRequest(RpcRequest):
 	def set_StackPolicyBody(self,StackPolicyBody):
 		self.add_query_param('StackPolicyBody',StackPolicyBody)
 
-	def get_OrderSource(self):
-		return self.get_query_params().get('OrderSource')
+	def get_RamRoleName(self):
+		return self.get_query_params().get('RamRoleName')
 
-	def set_OrderSource(self,OrderSource):
-		self.add_query_param('OrderSource',OrderSource)
-
-	def get_ActivityId(self):
-		return self.get_query_params().get('ActivityId')
-
-	def set_ActivityId(self,ActivityId):
-		self.add_query_param('ActivityId',ActivityId)
+	def set_RamRoleName(self,RamRoleName):
+		self.add_query_param('RamRoleName',RamRoleName)
 
 	def get_StackPolicyURL(self):
 		return self.get_query_params().get('StackPolicyURL')
 
 	def set_StackPolicyURL(self,StackPolicyURL):
 		self.add_query_param('StackPolicyURL',StackPolicyURL)
-
-	def get_ChannelId(self):
-		return self.get_query_params().get('ChannelId')
-
-	def set_ChannelId(self,ChannelId):
-		self.add_query_param('ChannelId',ChannelId)

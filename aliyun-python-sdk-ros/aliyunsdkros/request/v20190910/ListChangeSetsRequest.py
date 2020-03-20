@@ -23,7 +23,7 @@ from aliyunsdkros.endpoint import endpoint_data
 class ListChangeSetsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ROS', '2019-09-10', 'ListChangeSets')
+		RpcRequest.__init__(self, 'ROS', '2019-09-10', 'ListChangeSets','ROS')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -63,6 +63,12 @@ class ListChangeSetsRequest(RpcRequest):
 		for i in range(len(ChangeSetNames)):	
 			if ChangeSetNames[i] is not None:
 				self.add_query_param('ChangeSetName.' + str(i + 1) , ChangeSetNames[i]);
+
+	def get_ChangeSetId(self):
+		return self.get_query_params().get('ChangeSetId')
+
+	def set_ChangeSetId(self,ChangeSetId):
+		self.add_query_param('ChangeSetId',ChangeSetId)
 
 	def get_Statuss(self):
 		return self.get_query_params().get('Statuss')

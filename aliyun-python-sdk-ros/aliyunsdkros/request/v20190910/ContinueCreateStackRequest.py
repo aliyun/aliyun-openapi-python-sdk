@@ -23,7 +23,7 @@ from aliyunsdkros.endpoint import endpoint_data
 class ContinueCreateStackRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ROS', '2019-09-10', 'ContinueCreateStack')
+		RpcRequest.__init__(self, 'ROS', '2019-09-10', 'ContinueCreateStack','ROS')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -35,6 +35,12 @@ class ContinueCreateStackRequest(RpcRequest):
 
 	def set_StackId(self,StackId):
 		self.add_query_param('StackId',StackId)
+
+	def get_RamRoleName(self):
+		return self.get_query_params().get('RamRoleName')
+
+	def set_RamRoleName(self,RamRoleName):
+		self.add_query_param('RamRoleName',RamRoleName)
 
 	def get_RecreatingResourcess(self):
 		return self.get_query_params().get('RecreatingResourcess')

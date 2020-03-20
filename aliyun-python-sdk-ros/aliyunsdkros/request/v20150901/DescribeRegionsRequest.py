@@ -23,7 +23,7 @@ from aliyunsdkros.endpoint import endpoint_data
 class DescribeRegionsRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'ROS', '2015-09-01', 'DescribeRegions')
+		RoaRequest.__init__(self, 'ROS', '2015-09-01', 'DescribeRegions','ROS')
 		self.set_uri_pattern('/regions')
 		self.set_method('GET')
 		if hasattr(self, "endpoint_map"):

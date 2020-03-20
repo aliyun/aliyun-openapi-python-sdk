@@ -23,7 +23,7 @@ from aliyunsdkros.endpoint import endpoint_data
 class UpdateStackRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'ROS', '2015-09-01', 'UpdateStack')
+		RoaRequest.__init__(self, 'ROS', '2015-09-01', 'UpdateStack','ROS')
 		self.set_uri_pattern('/stacks/[StackName]/[StackId]')
 		self.set_method('PUT')
 		if hasattr(self, "endpoint_map"):

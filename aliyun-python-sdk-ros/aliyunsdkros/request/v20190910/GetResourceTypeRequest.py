@@ -23,7 +23,7 @@ from aliyunsdkros.endpoint import endpoint_data
 class GetResourceTypeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ROS', '2019-09-10', 'GetResourceType')
+		RpcRequest.__init__(self, 'ROS', '2019-09-10', 'GetResourceType','ROS')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):

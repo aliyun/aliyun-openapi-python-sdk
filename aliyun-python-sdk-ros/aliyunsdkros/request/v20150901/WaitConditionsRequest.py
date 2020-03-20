@@ -23,7 +23,7 @@ from aliyunsdkros.endpoint import endpoint_data
 class WaitConditionsRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'ROS', '2015-09-01', 'WaitConditions')
+		RoaRequest.__init__(self, 'ROS', '2015-09-01', 'WaitConditions','ROS')
 		self.set_uri_pattern('/waitcondition')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):

@@ -23,18 +23,12 @@ from aliyunsdkros.endpoint import endpoint_data
 class UpdateStackRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ROS', '2019-09-10', 'UpdateStack')
+		RpcRequest.__init__(self, 'ROS', '2019-09-10', 'UpdateStack','ROS')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_EnableRecover(self):
-		return self.get_query_params().get('EnableRecover')
-
-	def set_EnableRecover(self,EnableRecover):
-		self.add_query_param('EnableRecover',EnableRecover)
 
 	def get_TimeoutInMinutes(self):
 		return self.get_query_params().get('TimeoutInMinutes')
@@ -101,11 +95,11 @@ class UpdateStackRequest(RpcRequest):
 	def set_StackPolicyDuringUpdateURL(self,StackPolicyDuringUpdateURL):
 		self.add_query_param('StackPolicyDuringUpdateURL',StackPolicyDuringUpdateURL)
 
-	def get_UpdateAllowPolicy(self):
-		return self.get_query_params().get('UpdateAllowPolicy')
+	def get_RamRoleName(self):
+		return self.get_query_params().get('RamRoleName')
 
-	def set_UpdateAllowPolicy(self,UpdateAllowPolicy):
-		self.add_query_param('UpdateAllowPolicy',UpdateAllowPolicy)
+	def set_RamRoleName(self,RamRoleName):
+		self.add_query_param('RamRoleName',RamRoleName)
 
 	def get_UsePreviousParameters(self):
 		return self.get_query_params().get('UsePreviousParameters')
