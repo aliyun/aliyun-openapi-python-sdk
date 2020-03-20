@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,23 +18,30 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkram.endpoint import endpoint_data
+
 class GetPolicyVersionRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ram', '2015-05-01', 'GetPolicyVersion')
+		RpcRequest.__init__(self, 'Ram', '2015-05-01', 'GetPolicyVersion','Ram')
 		self.set_protocol_type('https')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_VersionId(self):
-		return self.get_query_params().get('VersionId')
-
-	def set_VersionId(self,VersionId):
-		self.add_query_param('VersionId',VersionId)
 
 	def get_PolicyType(self):
 		return self.get_query_params().get('PolicyType')
 
 	def set_PolicyType(self,PolicyType):
 		self.add_query_param('PolicyType',PolicyType)
+
+	def get_VersionId(self):
+		return self.get_query_params().get('VersionId')
+
+	def set_VersionId(self,VersionId):
+		self.add_query_param('VersionId',VersionId)
 
 	def get_PolicyName(self):
 		return self.get_query_params().get('PolicyName')

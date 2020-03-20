@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,23 +18,18 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkram.endpoint import endpoint_data
+
 class CreateUserRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ram', '2015-05-01', 'CreateUser')
+		RpcRequest.__init__(self, 'Ram', '2015-05-01', 'CreateUser','Ram')
 		self.set_protocol_type('https')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_Comments(self):
-		return self.get_query_params().get('Comments')
-
-	def set_Comments(self,Comments):
-		self.add_query_param('Comments',Comments)
-
-	def get_DisplayName(self):
-		return self.get_query_params().get('DisplayName')
-
-	def set_DisplayName(self,DisplayName):
-		self.add_query_param('DisplayName',DisplayName)
 
 	def get_MobilePhone(self):
 		return self.get_query_params().get('MobilePhone')
@@ -47,6 +42,18 @@ class CreateUserRequest(RpcRequest):
 
 	def set_Email(self,Email):
 		self.add_query_param('Email',Email)
+
+	def get_Comments(self):
+		return self.get_query_params().get('Comments')
+
+	def set_Comments(self,Comments):
+		self.add_query_param('Comments',Comments)
+
+	def get_DisplayName(self):
+		return self.get_query_params().get('DisplayName')
+
+	def set_DisplayName(self,DisplayName):
+		self.add_query_param('DisplayName',DisplayName)
 
 	def get_UserName(self):
 		return self.get_query_params().get('UserName')
