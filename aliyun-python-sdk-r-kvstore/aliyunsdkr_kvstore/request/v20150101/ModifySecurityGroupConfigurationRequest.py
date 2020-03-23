@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkr_kvstore.endpoint import endpoint_data
 
-class ModifyInstanceAutoRenewalAttributeRequest(RpcRequest):
+class ModifySecurityGroupConfigurationRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'R-kvstore', '2015-01-01', 'ModifyInstanceAutoRenewalAttribute','redisa')
+		RpcRequest.__init__(self, 'R-kvstore', '2015-01-01', 'ModifySecurityGroupConfiguration','redisa')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -36,11 +36,11 @@ class ModifyInstanceAutoRenewalAttributeRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_Duration(self):
-		return self.get_query_params().get('Duration')
+	def get_SecurityGroupId(self):
+		return self.get_query_params().get('SecurityGroupId')
 
-	def set_Duration(self,Duration):
-		self.add_query_param('Duration',Duration)
+	def set_SecurityGroupId(self,SecurityGroupId):
+		self.add_query_param('SecurityGroupId',SecurityGroupId)
 
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
@@ -71,9 +71,3 @@ class ModifyInstanceAutoRenewalAttributeRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
-
-	def get_AutoRenew(self):
-		return self.get_query_params().get('AutoRenew')
-
-	def set_AutoRenew(self,AutoRenew):
-		self.add_query_param('AutoRenew',AutoRenew)
