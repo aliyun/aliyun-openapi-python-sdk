@@ -30,41 +30,17 @@ class DescribeDBInstancesRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_Tag4value(self):
-		return self.get_query_params().get('Tag.4.value')
-
-	def set_Tag4value(self,Tag4value):
-		self.add_query_param('Tag.4.value',Tag4value)
-
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_Tag2key(self):
-		return self.get_query_params().get('Tag.2.key')
-
-	def set_Tag2key(self,Tag2key):
-		self.add_query_param('Tag.2.key',Tag2key)
-
-	def get_Tag3key(self):
-		return self.get_query_params().get('Tag.3.key')
-
-	def set_Tag3key(self,Tag3key):
-		self.add_query_param('Tag.3.key',Tag3key)
-
 	def get_EngineVersion(self):
 		return self.get_query_params().get('EngineVersion')
 
 	def set_EngineVersion(self,EngineVersion):
 		self.add_query_param('EngineVersion',EngineVersion)
-
-	def get_Tag1value(self):
-		return self.get_query_params().get('Tag.1.value')
-
-	def set_Tag1value(self,Tag1value):
-		self.add_query_param('Tag.1.value',Tag1value)
 
 	def get_ResourceGroupId(self):
 		return self.get_query_params().get('ResourceGroupId')
@@ -77,12 +53,6 @@ class DescribeDBInstancesRequest(RpcRequest):
 
 	def set_proxyId(self,proxyId):
 		self.add_query_param('proxyId',proxyId)
-
-	def get_Tag5key(self):
-		return self.get_query_params().get('Tag.5.key')
-
-	def set_Tag5key(self,Tag5key):
-		self.add_query_param('Tag.5.key',Tag5key)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
@@ -119,12 +89,6 @@ class DescribeDBInstancesRequest(RpcRequest):
 
 	def set_ZoneId(self,ZoneId):
 		self.add_query_param('ZoneId',ZoneId)
-
-	def get_Tag4key(self):
-		return self.get_query_params().get('Tag.4.key')
-
-	def set_Tag4key(self,Tag4key):
-		self.add_query_param('Tag.4.key',Tag4key)
 
 	def get_InstanceNetworkType(self):
 		return self.get_query_params().get('InstanceNetworkType')
@@ -192,12 +156,6 @@ class DescribeDBInstancesRequest(RpcRequest):
 	def set_DedicatedHostGroupId(self,DedicatedHostGroupId):
 		self.add_query_param('DedicatedHostGroupId',DedicatedHostGroupId)
 
-	def get_Tag3value(self):
-		return self.get_query_params().get('Tag.3.value')
-
-	def set_Tag3value(self,Tag3value):
-		self.add_query_param('Tag.3.value',Tag3value)
-
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -216,29 +174,11 @@ class DescribeDBInstancesRequest(RpcRequest):
 	def set_DedicatedHostId(self,DedicatedHostId):
 		self.add_query_param('DedicatedHostId',DedicatedHostId)
 
-	def get_Tag5value(self):
-		return self.get_query_params().get('Tag.5.value')
-
-	def set_Tag5value(self,Tag5value):
-		self.add_query_param('Tag.5.value',Tag5value)
-
-	def get_Tag1key(self):
-		return self.get_query_params().get('Tag.1.key')
-
-	def set_Tag1key(self,Tag1key):
-		self.add_query_param('Tag.1.key',Tag1key)
-
 	def get_VpcId(self):
 		return self.get_query_params().get('VpcId')
 
 	def set_VpcId(self,VpcId):
 		self.add_query_param('VpcId',VpcId)
-
-	def get_Tag2value(self):
-		return self.get_query_params().get('Tag.2.value')
-
-	def set_Tag2value(self,Tag2value):
-		self.add_query_param('Tag.2.value',Tag2value)
 
 	def get_PayType(self):
 		return self.get_query_params().get('PayType')
