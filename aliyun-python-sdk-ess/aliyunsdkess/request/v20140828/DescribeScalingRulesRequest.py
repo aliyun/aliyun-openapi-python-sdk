@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,22 +18,95 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkess.endpoint import endpoint_data
+
 class DescribeScalingRulesRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ess', '2014-08-28', 'DescribeScalingRules','ess')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ScalingRuleName1(self):
-		return self.get_query_params().get('ScalingRuleName.1')
-
-	def set_ScalingRuleName1(self,ScalingRuleName1):
-		self.add_query_param('ScalingRuleName.1',ScalingRuleName1)
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+
+	def get_ScalingRuleId10(self):
+		return self.get_query_params().get('ScalingRuleId.10')
+
+	def set_ScalingRuleId10(self,ScalingRuleId10):
+		self.add_query_param('ScalingRuleId.10',ScalingRuleId10)
+
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
+
+	def get_ScalingRuleAri1(self):
+		return self.get_query_params().get('ScalingRuleAri.1')
+
+	def set_ScalingRuleAri1(self,ScalingRuleAri1):
+		self.add_query_param('ScalingRuleAri.1',ScalingRuleAri1)
+
+	def get_ScalingRuleAri2(self):
+		return self.get_query_params().get('ScalingRuleAri.2')
+
+	def set_ScalingRuleAri2(self,ScalingRuleAri2):
+		self.add_query_param('ScalingRuleAri.2',ScalingRuleAri2)
+
+	def get_ScalingRuleAri3(self):
+		return self.get_query_params().get('ScalingRuleAri.3')
+
+	def set_ScalingRuleAri3(self,ScalingRuleAri3):
+		self.add_query_param('ScalingRuleAri.3',ScalingRuleAri3)
+
+	def get_ScalingRuleAri4(self):
+		return self.get_query_params().get('ScalingRuleAri.4')
+
+	def set_ScalingRuleAri4(self,ScalingRuleAri4):
+		self.add_query_param('ScalingRuleAri.4',ScalingRuleAri4)
+
+	def get_ScalingRuleAri5(self):
+		return self.get_query_params().get('ScalingRuleAri.5')
+
+	def set_ScalingRuleAri5(self,ScalingRuleAri5):
+		self.add_query_param('ScalingRuleAri.5',ScalingRuleAri5)
+
+	def get_ScalingRuleAri6(self):
+		return self.get_query_params().get('ScalingRuleAri.6')
+
+	def set_ScalingRuleAri6(self,ScalingRuleAri6):
+		self.add_query_param('ScalingRuleAri.6',ScalingRuleAri6)
+
+	def get_ScalingRuleAri7(self):
+		return self.get_query_params().get('ScalingRuleAri.7')
+
+	def set_ScalingRuleAri7(self,ScalingRuleAri7):
+		self.add_query_param('ScalingRuleAri.7',ScalingRuleAri7)
+
+	def get_ScalingRuleAri8(self):
+		return self.get_query_params().get('ScalingRuleAri.8')
+
+	def set_ScalingRuleAri8(self,ScalingRuleAri8):
+		self.add_query_param('ScalingRuleAri.8',ScalingRuleAri8)
+
+	def get_ShowAlarmRules(self):
+		return self.get_query_params().get('ShowAlarmRules')
+
+	def set_ShowAlarmRules(self,ShowAlarmRules):
+		self.add_query_param('ShowAlarmRules',ShowAlarmRules)
+
+	def get_ScalingRuleName1(self):
+		return self.get_query_params().get('ScalingRuleName.1')
+
+	def set_ScalingRuleName1(self,ScalingRuleName1):
+		self.add_query_param('ScalingRuleName.1',ScalingRuleName1)
 
 	def get_ScalingRuleName2(self):
 		return self.get_query_params().get('ScalingRuleName.2')
@@ -113,12 +186,6 @@ class DescribeScalingRulesRequest(RpcRequest):
 	def set_ScalingRuleType(self,ScalingRuleType):
 		self.add_query_param('ScalingRuleType',ScalingRuleType)
 
-	def get_ScalingRuleId10(self):
-		return self.get_query_params().get('ScalingRuleId.10')
-
-	def set_ScalingRuleId10(self,ScalingRuleId10):
-		self.add_query_param('ScalingRuleId.10',ScalingRuleId10)
-
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -131,41 +198,11 @@ class DescribeScalingRulesRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_ScalingRuleAri1(self):
-		return self.get_query_params().get('ScalingRuleAri.1')
-
-	def set_ScalingRuleAri1(self,ScalingRuleAri1):
-		self.add_query_param('ScalingRuleAri.1',ScalingRuleAri1)
-
-	def get_ScalingRuleAri2(self):
-		return self.get_query_params().get('ScalingRuleAri.2')
-
-	def set_ScalingRuleAri2(self,ScalingRuleAri2):
-		self.add_query_param('ScalingRuleAri.2',ScalingRuleAri2)
-
 	def get_ScalingRuleName10(self):
 		return self.get_query_params().get('ScalingRuleName.10')
 
 	def set_ScalingRuleName10(self,ScalingRuleName10):
 		self.add_query_param('ScalingRuleName.10',ScalingRuleName10)
-
-	def get_ScalingRuleAri3(self):
-		return self.get_query_params().get('ScalingRuleAri.3')
-
-	def set_ScalingRuleAri3(self,ScalingRuleAri3):
-		self.add_query_param('ScalingRuleAri.3',ScalingRuleAri3)
-
-	def get_ScalingRuleAri4(self):
-		return self.get_query_params().get('ScalingRuleAri.4')
-
-	def set_ScalingRuleAri4(self,ScalingRuleAri4):
-		self.add_query_param('ScalingRuleAri.4',ScalingRuleAri4)
 
 	def get_ScalingRuleId8(self):
 		return self.get_query_params().get('ScalingRuleId.8')
@@ -173,29 +210,11 @@ class DescribeScalingRulesRequest(RpcRequest):
 	def set_ScalingRuleId8(self,ScalingRuleId8):
 		self.add_query_param('ScalingRuleId.8',ScalingRuleId8)
 
-	def get_ScalingRuleAri5(self):
-		return self.get_query_params().get('ScalingRuleAri.5')
-
-	def set_ScalingRuleAri5(self,ScalingRuleAri5):
-		self.add_query_param('ScalingRuleAri.5',ScalingRuleAri5)
-
 	def get_ScalingRuleId9(self):
 		return self.get_query_params().get('ScalingRuleId.9')
 
 	def set_ScalingRuleId9(self,ScalingRuleId9):
 		self.add_query_param('ScalingRuleId.9',ScalingRuleId9)
-
-	def get_ScalingRuleAri6(self):
-		return self.get_query_params().get('ScalingRuleAri.6')
-
-	def set_ScalingRuleAri6(self,ScalingRuleAri6):
-		self.add_query_param('ScalingRuleAri.6',ScalingRuleAri6)
-
-	def get_ScalingRuleAri7(self):
-		return self.get_query_params().get('ScalingRuleAri.7')
-
-	def set_ScalingRuleAri7(self,ScalingRuleAri7):
-		self.add_query_param('ScalingRuleAri.7',ScalingRuleAri7)
 
 	def get_ScalingRuleAri10(self):
 		return self.get_query_params().get('ScalingRuleAri.10')
@@ -203,23 +222,11 @@ class DescribeScalingRulesRequest(RpcRequest):
 	def set_ScalingRuleAri10(self,ScalingRuleAri10):
 		self.add_query_param('ScalingRuleAri.10',ScalingRuleAri10)
 
-	def get_ScalingRuleAri8(self):
-		return self.get_query_params().get('ScalingRuleAri.8')
-
-	def set_ScalingRuleAri8(self,ScalingRuleAri8):
-		self.add_query_param('ScalingRuleAri.8',ScalingRuleAri8)
-
 	def get_ScalingRuleId4(self):
 		return self.get_query_params().get('ScalingRuleId.4')
 
 	def set_ScalingRuleId4(self,ScalingRuleId4):
 		self.add_query_param('ScalingRuleId.4',ScalingRuleId4)
-
-	def get_ShowAlarmRules(self):
-		return self.get_query_params().get('ShowAlarmRules')
-
-	def set_ShowAlarmRules(self,ShowAlarmRules):
-		self.add_query_param('ShowAlarmRules',ShowAlarmRules)
 
 	def get_ScalingRuleId5(self):
 		return self.get_query_params().get('ScalingRuleId.5')

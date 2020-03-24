@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,22 +18,17 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkess.endpoint import endpoint_data
+
 class CreateScalingRuleRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ess', '2014-08-28', 'CreateScalingRule','ess')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
-
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_AdjustmentValue(self):
-		return self.get_query_params().get('AdjustmentValue')
-
-	def set_AdjustmentValue(self,AdjustmentValue):
-		self.add_query_param('AdjustmentValue',AdjustmentValue)
 
 	def get_StepAdjustments(self):
 		return self.get_query_params().get('StepAdjustments')
@@ -54,35 +49,17 @@ class CreateScalingRuleRequest(RpcRequest):
 	def set_ScalingGroupId(self,ScalingGroupId):
 		self.add_query_param('ScalingGroupId',ScalingGroupId)
 
-	def get_EstimatedInstanceWarmup(self):
-		return self.get_query_params().get('EstimatedInstanceWarmup')
-
-	def set_EstimatedInstanceWarmup(self,EstimatedInstanceWarmup):
-		self.add_query_param('EstimatedInstanceWarmup',EstimatedInstanceWarmup)
-
-	def get_OwnerAccount(self):
-		return self.get_query_params().get('OwnerAccount')
-
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
-
-	def get_AdjustmentType(self):
-		return self.get_query_params().get('AdjustmentType')
-
-	def set_AdjustmentType(self,AdjustmentType):
-		self.add_query_param('AdjustmentType',AdjustmentType)
-
 	def get_DisableScaleIn(self):
 		return self.get_query_params().get('DisableScaleIn')
 
 	def set_DisableScaleIn(self,DisableScaleIn):
 		self.add_query_param('DisableScaleIn',DisableScaleIn)
 
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
+	def get_InitialMaxSize(self):
+		return self.get_query_params().get('InitialMaxSize')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
+	def set_InitialMaxSize(self,InitialMaxSize):
+		self.add_query_param('InitialMaxSize',InitialMaxSize)
 
 	def get_ScalingRuleName(self):
 		return self.get_query_params().get('ScalingRuleName')
@@ -96,17 +73,11 @@ class CreateScalingRuleRequest(RpcRequest):
 	def set_Cooldown(self,Cooldown):
 		self.add_query_param('Cooldown',Cooldown)
 
-	def get_MinAdjustmentMagnitude(self):
-		return self.get_query_params().get('MinAdjustmentMagnitude')
+	def get_PredictiveValueBehavior(self):
+		return self.get_query_params().get('PredictiveValueBehavior')
 
-	def set_MinAdjustmentMagnitude(self,MinAdjustmentMagnitude):
-		self.add_query_param('MinAdjustmentMagnitude',MinAdjustmentMagnitude)
-
-	def get_TargetValue(self):
-		return self.get_query_params().get('TargetValue')
-
-	def set_TargetValue(self,TargetValue):
-		self.add_query_param('TargetValue',TargetValue)
+	def set_PredictiveValueBehavior(self,PredictiveValueBehavior):
+		self.add_query_param('PredictiveValueBehavior',PredictiveValueBehavior)
 
 	def get_ScalingRuleType(self):
 		return self.get_query_params().get('ScalingRuleType')
@@ -119,3 +90,69 @@ class CreateScalingRuleRequest(RpcRequest):
 
 	def set_MetricName(self,MetricName):
 		self.add_query_param('MetricName',MetricName)
+
+	def get_PredictiveScalingMode(self):
+		return self.get_query_params().get('PredictiveScalingMode')
+
+	def set_PredictiveScalingMode(self,PredictiveScalingMode):
+		self.add_query_param('PredictiveScalingMode',PredictiveScalingMode)
+
+	def get_ResourceOwnerAccount(self):
+		return self.get_query_params().get('ResourceOwnerAccount')
+
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+
+	def get_AdjustmentValue(self):
+		return self.get_query_params().get('AdjustmentValue')
+
+	def set_AdjustmentValue(self,AdjustmentValue):
+		self.add_query_param('AdjustmentValue',AdjustmentValue)
+
+	def get_EstimatedInstanceWarmup(self):
+		return self.get_query_params().get('EstimatedInstanceWarmup')
+
+	def set_EstimatedInstanceWarmup(self,EstimatedInstanceWarmup):
+		self.add_query_param('EstimatedInstanceWarmup',EstimatedInstanceWarmup)
+
+	def get_OwnerAccount(self):
+		return self.get_query_params().get('OwnerAccount')
+
+	def set_OwnerAccount(self,OwnerAccount):
+		self.add_query_param('OwnerAccount',OwnerAccount)
+
+	def get_PredictiveTaskBufferTime(self):
+		return self.get_query_params().get('PredictiveTaskBufferTime')
+
+	def set_PredictiveTaskBufferTime(self,PredictiveTaskBufferTime):
+		self.add_query_param('PredictiveTaskBufferTime',PredictiveTaskBufferTime)
+
+	def get_AdjustmentType(self):
+		return self.get_query_params().get('AdjustmentType')
+
+	def set_AdjustmentType(self,AdjustmentType):
+		self.add_query_param('AdjustmentType',AdjustmentType)
+
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
+
+	def get_PredictiveValueBuffer(self):
+		return self.get_query_params().get('PredictiveValueBuffer')
+
+	def set_PredictiveValueBuffer(self,PredictiveValueBuffer):
+		self.add_query_param('PredictiveValueBuffer',PredictiveValueBuffer)
+
+	def get_MinAdjustmentMagnitude(self):
+		return self.get_query_params().get('MinAdjustmentMagnitude')
+
+	def set_MinAdjustmentMagnitude(self,MinAdjustmentMagnitude):
+		self.add_query_param('MinAdjustmentMagnitude',MinAdjustmentMagnitude)
+
+	def get_TargetValue(self):
+		return self.get_query_params().get('TargetValue')
+
+	def set_TargetValue(self,TargetValue):
+		self.add_query_param('TargetValue',TargetValue)

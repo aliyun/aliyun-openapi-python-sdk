@@ -20,15 +20,34 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkess.endpoint import endpoint_data
 
-class DeleteScalingConfigurationRequest(RpcRequest):
+class TagResourcesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ess', '2014-08-28', 'DeleteScalingConfiguration','ess')
+		RpcRequest.__init__(self, 'Ess', '2014-08-28', 'TagResources','ess')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+
+	def get_Tags(self):
+		return self.get_query_params().get('Tags')
+
+	def set_Tags(self,Tags):
+		for i in range(len(Tags)):	
+			if Tags[i].get('Value') is not None:
+				self.add_query_param('Tag.' + str(i + 1) + '.Value' , Tags[i].get('Value'))
+			if Tags[i].get('Key') is not None:
+				self.add_query_param('Tag.' + str(i + 1) + '.Key' , Tags[i].get('Key'))
+
+
+	def get_ResourceIds(self):
+		return self.get_query_params().get('ResourceIds')
+
+	def set_ResourceIds(self,ResourceIds):
+		for i in range(len(ResourceIds)):	
+			if ResourceIds[i] is not None:
+				self.add_query_param('ResourceId.' + str(i + 1) , ResourceIds[i]);
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -36,20 +55,14 @@ class DeleteScalingConfigurationRequest(RpcRequest):
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
-	def get_OwnerAccount(self):
-		return self.get_query_params().get('OwnerAccount')
-
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
-
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_ScalingConfigurationId(self):
-		return self.get_query_params().get('ScalingConfigurationId')
+	def get_ResourceType(self):
+		return self.get_query_params().get('ResourceType')
 
-	def set_ScalingConfigurationId(self,ScalingConfigurationId):
-		self.add_query_param('ScalingConfigurationId',ScalingConfigurationId)
+	def set_ResourceType(self,ResourceType):
+		self.add_query_param('ResourceType',ResourceType)

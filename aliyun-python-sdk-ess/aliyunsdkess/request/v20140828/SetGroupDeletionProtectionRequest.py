@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,16 +18,35 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class DescribeAccountAttributesRequest(RpcRequest):
+from aliyunsdkess.endpoint import endpoint_data
+
+class SetGroupDeletionProtectionRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ess', '2014-08-28', 'DescribeAccountAttributes','ess')
+		RpcRequest.__init__(self, 'Ess', '2014-08-28', 'SetGroupDeletionProtection','ess')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+
+	def get_ScalingGroupId(self):
+		return self.get_query_params().get('ScalingGroupId')
+
+	def set_ScalingGroupId(self,ScalingGroupId):
+		self.add_query_param('ScalingGroupId',ScalingGroupId)
+
+	def get_GroupDeletionProtection(self):
+		return self.get_query_params().get('GroupDeletionProtection')
+
+	def set_GroupDeletionProtection(self,GroupDeletionProtection):
+		self.add_query_param('GroupDeletionProtection',GroupDeletionProtection)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')

@@ -1,3 +1,6 @@
+2020-03-24 Version: 2.3.1
+- Add ListTagKeys, ListTagValues etc.
+
 2019-04-04 Version: 2.3.0
 1, ScalingConf systemDisk add DiskName and Description  parameters.
 2, ScalingConf dataDisk add DiskName & Description & Encrypted & KMSKeyId  parameters.

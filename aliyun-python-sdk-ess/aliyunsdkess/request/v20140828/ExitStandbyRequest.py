@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,18 +18,17 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkess.endpoint import endpoint_data
+
 class ExitStandbyRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ess', '2014-08-28', 'ExitStandby','ess')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_InstanceIds(self):
-		return self.get_query_params().get('InstanceIds')
-
-	def set_InstanceIds(self,InstanceIds):
-		for i in range(len(InstanceIds)):	
-			if InstanceIds[i] is not None:
-				self.add_query_param('InstanceId.' + str(i + 1) , InstanceIds[i]);
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -48,3 +47,11 @@ class ExitStandbyRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_InstanceIds(self):
+		return self.get_query_params().get('InstanceIds')
+
+	def set_InstanceIds(self,InstanceIds):
+		for i in range(len(InstanceIds)):	
+			if InstanceIds[i] is not None:
+				self.add_query_param('InstanceId.' + str(i + 1) , InstanceIds[i]);
