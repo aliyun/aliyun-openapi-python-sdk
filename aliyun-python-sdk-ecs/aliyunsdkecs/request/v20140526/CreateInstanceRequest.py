@@ -42,6 +42,12 @@ class CreateInstanceRequest(RpcRequest):
 	def set_HpcClusterId(self,HpcClusterId):
 		self.add_query_param('HpcClusterId',HpcClusterId)
 
+	def get_HttpPutResponseHopLimit(self):
+		return self.get_query_params().get('HttpPutResponseHopLimit')
+
+	def set_HttpPutResponseHopLimit(self,HttpPutResponseHopLimit):
+		self.add_query_param('HttpPutResponseHopLimit',HttpPutResponseHopLimit)
+
 	def get_SecurityEnhancementStrategy(self):
 		return self.get_query_params().get('SecurityEnhancementStrategy')
 
@@ -269,6 +275,12 @@ class CreateInstanceRequest(RpcRequest):
 	def set_PasswordInherit(self,PasswordInherit):
 		self.add_query_param('PasswordInherit',PasswordInherit)
 
+	def get_HttpEndpoint(self):
+		return self.get_query_params().get('HttpEndpoint')
+
+	def set_HttpEndpoint(self,HttpEndpoint):
+		self.add_query_param('HttpEndpoint',HttpEndpoint)
+
 	def get_InstanceType(self):
 		return self.get_query_params().get('InstanceType')
 
@@ -406,6 +418,12 @@ class CreateInstanceRequest(RpcRequest):
 
 	def set_ImageFamily(self,ImageFamily):
 		self.add_query_param('ImageFamily',ImageFamily)
+
+	def get_HttpTokens(self):
+		return self.get_query_params().get('HttpTokens')
+
+	def set_HttpTokens(self,HttpTokens):
+		self.add_query_param('HttpTokens',HttpTokens)
 
 	def get_SystemDiskDescription(self):
 		return self.get_query_params().get('SystemDisk.Description')

@@ -54,6 +54,12 @@ class DescribeInstancesRequest(RpcRequest):
 	def set_HpcClusterId(self,HpcClusterId):
 		self.add_query_param('HpcClusterId',HpcClusterId)
 
+	def get_HttpPutResponseHopLimit(self):
+		return self.get_query_params().get('HttpPutResponseHopLimit')
+
+	def set_HttpPutResponseHopLimit(self,HttpPutResponseHopLimit):
+		self.add_query_param('HttpPutResponseHopLimit',HttpPutResponseHopLimit)
+
 	def get_Filter2Value(self):
 		return self.get_query_params().get('Filter.2.Value')
 
@@ -137,6 +143,14 @@ class DescribeInstancesRequest(RpcRequest):
 	def set_VSwitchId(self,VSwitchId):
 		self.add_query_param('VSwitchId',VSwitchId)
 
+	def get_AdditionalAttributess(self):
+		return self.get_query_params().get('AdditionalAttributess')
+
+	def set_AdditionalAttributess(self,AdditionalAttributess):
+		for i in range(len(AdditionalAttributess)):	
+			if AdditionalAttributess[i] is not None:
+				self.add_query_param('AdditionalAttributes.' + str(i + 1) , AdditionalAttributess[i]);
+
 	def get_InstanceName(self):
 		return self.get_query_params().get('InstanceName')
 
@@ -215,6 +229,12 @@ class DescribeInstancesRequest(RpcRequest):
 	def set_RdmaIpAddresses(self,RdmaIpAddresses):
 		self.add_query_param('RdmaIpAddresses',RdmaIpAddresses)
 
+	def get_HttpEndpoint(self):
+		return self.get_query_params().get('HttpEndpoint')
+
+	def set_HttpEndpoint(self,HttpEndpoint):
+		self.add_query_param('HttpEndpoint',HttpEndpoint)
+
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
 
@@ -274,6 +294,12 @@ class DescribeInstancesRequest(RpcRequest):
 
 	def set_VpcId(self,VpcId):
 		self.add_query_param('VpcId',VpcId)
+
+	def get_HttpTokens(self):
+		return self.get_query_params().get('HttpTokens')
+
+	def set_HttpTokens(self,HttpTokens):
+		self.add_query_param('HttpTokens',HttpTokens)
 
 	def get_Filter3Key(self):
 		return self.get_query_params().get('Filter.3.Key')

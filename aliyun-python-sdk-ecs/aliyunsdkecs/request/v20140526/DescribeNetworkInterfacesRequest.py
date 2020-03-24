@@ -158,3 +158,9 @@ class DescribeNetworkInterfacesRequest(RpcRequest):
 		for i in range(len(NetworkInterfaceIds)):	
 			if NetworkInterfaceIds[i] is not None:
 				self.add_query_param('NetworkInterfaceId.' + str(i + 1) , NetworkInterfaceIds[i]);
+
+	def get_Status(self):
+		return self.get_query_params().get('Status')
+
+	def set_Status(self,Status):
+		self.add_query_param('Status',Status)
