@@ -20,21 +20,15 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkrtc.endpoint import endpoint_data
 
-class MuteAudioAllRequest(RpcRequest):
+class DescribeRtcChannelMetricRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'rtc', '2018-01-11', 'MuteAudioAll','rtc')
+		RpcRequest.__init__(self, 'rtc', '2018-01-11', 'DescribeRtcChannelMetric','rtc')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ConferenceId(self):
-		return self.get_query_params().get('ConferenceId')
-
-	def set_ConferenceId(self,ConferenceId):
-		self.add_query_param('ConferenceId',ConferenceId)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
@@ -42,14 +36,20 @@ class MuteAudioAllRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_ParticipantId(self):
-		return self.get_query_params().get('ParticipantId')
-
-	def set_ParticipantId(self,ParticipantId):
-		self.add_query_param('ParticipantId',ParticipantId)
-
 	def get_AppId(self):
 		return self.get_query_params().get('AppId')
 
 	def set_AppId(self,AppId):
 		self.add_query_param('AppId',AppId)
+
+	def get_ChannelId(self):
+		return self.get_query_params().get('ChannelId')
+
+	def set_ChannelId(self,ChannelId):
+		self.add_query_param('ChannelId',ChannelId)
+
+	def get_TimePoint(self):
+		return self.get_query_params().get('TimePoint')
+
+	def set_TimePoint(self,TimePoint):
+		self.add_query_param('TimePoint',TimePoint)

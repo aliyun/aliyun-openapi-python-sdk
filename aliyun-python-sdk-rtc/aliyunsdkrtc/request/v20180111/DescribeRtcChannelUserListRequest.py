@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,28 +18,17 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class DescribeRecordListRequest(RpcRequest):
+from aliyunsdkrtc.endpoint import endpoint_data
+
+class DescribeRtcChannelUserListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'rtc', '2018-01-11', 'DescribeRecordList','rtc')
+		RpcRequest.__init__(self, 'rtc', '2018-01-11', 'DescribeRtcChannelUserList','rtc')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_SortType(self):
-		return self.get_query_params().get('SortType')
-
-	def set_SortType(self,SortType):
-		self.add_query_param('SortType',SortType)
-
-	def get_StartTime(self):
-		return self.get_query_params().get('StartTime')
-
-	def set_StartTime(self,StartTime):
-		self.add_query_param('StartTime',StartTime)
-
-	def get_ServiceArea(self):
-		return self.get_query_params().get('ServiceArea')
-
-	def set_ServiceArea(self,ServiceArea):
-		self.add_query_param('ServiceArea',ServiceArea)
 
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
@@ -47,29 +36,11 @@ class DescribeRecordListRequest(RpcRequest):
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
 
-	def get_Id(self):
-		return self.get_query_params().get('Id')
-
-	def set_Id(self,Id):
-		self.add_query_param('Id',Id)
-
-	def get_EndTime(self):
-		return self.get_query_params().get('EndTime')
-
-	def set_EndTime(self,EndTime):
-		self.add_query_param('EndTime',EndTime)
-
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
-
-	def get_IdType(self):
-		return self.get_query_params().get('IdType')
-
-	def set_IdType(self,IdType):
-		self.add_query_param('IdType',IdType)
 
 	def get_PageNo(self):
 		return self.get_query_params().get('PageNo')
@@ -82,3 +53,15 @@ class DescribeRecordListRequest(RpcRequest):
 
 	def set_AppId(self,AppId):
 		self.add_query_param('AppId',AppId)
+
+	def get_ChannelId(self):
+		return self.get_query_params().get('ChannelId')
+
+	def set_ChannelId(self,ChannelId):
+		self.add_query_param('ChannelId',ChannelId)
+
+	def get_TimePoint(self):
+		return self.get_query_params().get('TimePoint')
+
+	def set_TimePoint(self,TimePoint):
+		self.add_query_param('TimePoint',TimePoint)

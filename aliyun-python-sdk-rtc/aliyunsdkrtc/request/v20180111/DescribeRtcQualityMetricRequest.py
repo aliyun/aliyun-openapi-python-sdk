@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,22 +18,35 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class CreateChannelTokenRequest(RpcRequest):
+from aliyunsdkrtc.endpoint import endpoint_data
+
+class DescribeRtcQualityMetricRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'rtc', '2018-01-11', 'CreateChannelToken','rtc')
+		RpcRequest.__init__(self, 'rtc', '2018-01-11', 'DescribeRtcQualityMetric','rtc')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_SessionId(self):
-		return self.get_query_params().get('SessionId')
 
-	def set_SessionId(self,SessionId):
-		self.add_query_param('SessionId',SessionId)
+	def get_StartTime(self):
+		return self.get_query_params().get('StartTime')
 
-	def get_UId(self):
-		return self.get_query_params().get('UId')
+	def set_StartTime(self,StartTime):
+		self.add_query_param('StartTime',StartTime)
 
-	def set_UId(self,UId):
-		self.add_query_param('UId',UId)
+	def get_SubUser(self):
+		return self.get_query_params().get('SubUser')
+
+	def set_SubUser(self,SubUser):
+		self.add_query_param('SubUser',SubUser)
+
+	def get_EndTime(self):
+		return self.get_query_params().get('EndTime')
+
+	def set_EndTime(self,EndTime):
+		self.add_query_param('EndTime',EndTime)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
@@ -41,11 +54,11 @@ class CreateChannelTokenRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_Nonce(self):
-		return self.get_query_params().get('Nonce')
+	def get_PubUser(self):
+		return self.get_query_params().get('PubUser')
 
-	def set_Nonce(self,Nonce):
-		self.add_query_param('Nonce',Nonce)
+	def set_PubUser(self,PubUser):
+		self.add_query_param('PubUser',PubUser)
 
 	def get_AppId(self):
 		return self.get_query_params().get('AppId')

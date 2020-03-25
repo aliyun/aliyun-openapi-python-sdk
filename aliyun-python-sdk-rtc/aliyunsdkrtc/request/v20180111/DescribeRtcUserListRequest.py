@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,41 +18,35 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class UpdateTaskParamRequest(RpcRequest):
+from aliyunsdkrtc.endpoint import endpoint_data
+
+class DescribeRtcUserListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'rtc', '2018-01-11', 'UpdateTaskParam','rtc')
-
-	def get_MixPaness(self):
-		return self.get_query_params().get('MixPaness')
-
-	def set_MixPaness(self,MixPaness):
-		for i in range(len(MixPaness)):	
-			if MixPaness[i].get('PaneId') is not None:
-				self.add_query_param('MixPanes.' + str(i + 1) + '.PaneId' , MixPaness[i].get('PaneId'))
-			if MixPaness[i].get('UserId') is not None:
-				self.add_query_param('MixPanes.' + str(i + 1) + '.UserId' , MixPaness[i].get('UserId'))
-			if MixPaness[i].get('SourceType') is not None:
-				self.add_query_param('MixPanes.' + str(i + 1) + '.SourceType' , MixPaness[i].get('SourceType'))
+		RpcRequest.__init__(self, 'rtc', '2018-01-11', 'DescribeRtcUserList','rtc')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_TaskId(self):
-		return self.get_query_params().get('TaskId')
+	def get_StartTime(self):
+		return self.get_query_params().get('StartTime')
 
-	def set_TaskId(self,TaskId):
-		self.add_query_param('TaskId',TaskId)
+	def set_StartTime(self,StartTime):
+		self.add_query_param('StartTime',StartTime)
+
+	def get_EndTime(self):
+		return self.get_query_params().get('EndTime')
+
+	def set_EndTime(self,EndTime):
+		self.add_query_param('EndTime',EndTime)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
-
-	def get_TemplateId(self):
-		return self.get_query_params().get('TemplateId')
-
-	def set_TemplateId(self,TemplateId):
-		self.add_query_param('TemplateId',TemplateId)
 
 	def get_AppId(self):
 		return self.get_query_params().get('AppId')

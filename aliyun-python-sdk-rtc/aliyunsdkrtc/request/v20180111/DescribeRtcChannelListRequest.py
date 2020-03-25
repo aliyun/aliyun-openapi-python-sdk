@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,10 +18,17 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class DescribeStatisRequest(RpcRequest):
+from aliyunsdkrtc.endpoint import endpoint_data
+
+class DescribeRtcChannelListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'rtc', '2018-01-11', 'DescribeStatis','rtc')
+		RpcRequest.__init__(self, 'rtc', '2018-01-11', 'DescribeRtcChannelList','rtc')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_SortType(self):
 		return self.get_query_params().get('SortType')
@@ -29,17 +36,11 @@ class DescribeStatisRequest(RpcRequest):
 	def set_SortType(self,SortType):
 		self.add_query_param('SortType',SortType)
 
-	def get_StartTime(self):
-		return self.get_query_params().get('StartTime')
+	def get_UserId(self):
+		return self.get_query_params().get('UserId')
 
-	def set_StartTime(self,StartTime):
-		self.add_query_param('StartTime',StartTime)
-
-	def get_DataType(self):
-		return self.get_query_params().get('DataType')
-
-	def set_DataType(self,DataType):
-		self.add_query_param('DataType',DataType)
+	def set_UserId(self,UserId):
+		self.add_query_param('UserId',UserId)
 
 	def get_ServiceArea(self):
 		return self.get_query_params().get('ServiceArea')
@@ -47,11 +48,11 @@ class DescribeStatisRequest(RpcRequest):
 	def set_ServiceArea(self,ServiceArea):
 		self.add_query_param('ServiceArea',ServiceArea)
 
-	def get_EndTime(self):
-		return self.get_query_params().get('EndTime')
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
 
-	def set_EndTime(self,EndTime):
-		self.add_query_param('EndTime',EndTime)
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
@@ -59,14 +60,26 @@ class DescribeStatisRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
+	def get_PageNo(self):
+		return self.get_query_params().get('PageNo')
+
+	def set_PageNo(self,PageNo):
+		self.add_query_param('PageNo',PageNo)
+
 	def get_AppId(self):
 		return self.get_query_params().get('AppId')
 
 	def set_AppId(self,AppId):
 		self.add_query_param('AppId',AppId)
 
-	def get_Interval(self):
-		return self.get_query_params().get('Interval')
+	def get_ChannelId(self):
+		return self.get_query_params().get('ChannelId')
 
-	def set_Interval(self,Interval):
-		self.add_query_param('Interval',Interval)
+	def set_ChannelId(self,ChannelId):
+		self.add_query_param('ChannelId',ChannelId)
+
+	def get_TimePoint(self):
+		return self.get_query_params().get('TimePoint')
+
+	def set_TimePoint(self,TimePoint):
+		self.add_query_param('TimePoint',TimePoint)
