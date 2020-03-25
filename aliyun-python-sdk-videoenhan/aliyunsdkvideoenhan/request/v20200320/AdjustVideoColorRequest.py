@@ -37,12 +37,6 @@ class AdjustVideoColorRequest(RpcRequest):
 	def set_Mode(self,Mode):
 		self.add_body_params('Mode', Mode)
 
-	def get_VideoCode(self):
-		return self.get_body_params().get('VideoCode')
-
-	def set_VideoCode(self,VideoCode):
-		self.add_body_params('VideoCode', VideoCode)
-
 	def get_VideoUrl(self):
 		return self.get_body_params().get('VideoUrl')
 
@@ -54,6 +48,12 @@ class AdjustVideoColorRequest(RpcRequest):
 
 	def set_VideoBitrate(self,VideoBitrate):
 		self.add_body_params('VideoBitrate', VideoBitrate)
+
+	def get_VideoCodec(self):
+		return self.get_body_params().get('VideoCodec')
+
+	def set_VideoCodec(self,VideoCodec):
+		self.add_body_params('VideoCodec', VideoCodec)
 
 	def get_VideoFormat(self):
 		return self.get_body_params().get('VideoFormat')
