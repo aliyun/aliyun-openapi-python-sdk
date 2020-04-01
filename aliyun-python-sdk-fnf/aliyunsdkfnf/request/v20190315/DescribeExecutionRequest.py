@@ -36,6 +36,12 @@ class DescribeExecutionRequest(RpcRequest):
 	def set_ExecutionName(self,ExecutionName):
 		self.add_query_param('ExecutionName',ExecutionName)
 
+	def get_WaitTimeSeconds(self):
+		return self.get_query_params().get('WaitTimeSeconds')
+
+	def set_WaitTimeSeconds(self,WaitTimeSeconds):
+		self.add_query_param('WaitTimeSeconds',WaitTimeSeconds)
+
 	def get_RequestId(self):
 		return self.get_query_params().get('RequestId')
 
