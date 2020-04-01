@@ -18,11 +18,17 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkoos.endpoint import endpoint_data
 
 class NotifyExecutionRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'oos', '2019-06-01', 'NotifyExecution','oos')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_TaskName(self):
 		return self.get_query_params().get('TaskName')
@@ -59,6 +65,12 @@ class NotifyExecutionRequest(RpcRequest):
 
 	def set_LoopItem(self,LoopItem):
 		self.add_query_param('LoopItem',LoopItem)
+
+	def get_TaskExecutionIds(self):
+		return self.get_query_params().get('TaskExecutionIds')
+
+	def set_TaskExecutionIds(self,TaskExecutionIds):
+		self.add_query_param('TaskExecutionIds',TaskExecutionIds)
 
 	def get_TaskExecutionId(self):
 		return self.get_query_params().get('TaskExecutionId')

@@ -18,11 +18,17 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkoos.endpoint import endpoint_data
 
 class DeleteTemplateRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'oos', '2019-06-01', 'DeleteTemplate','oos')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_AutoDeleteExecutions(self):
 		return self.get_query_params().get('AutoDeleteExecutions')
