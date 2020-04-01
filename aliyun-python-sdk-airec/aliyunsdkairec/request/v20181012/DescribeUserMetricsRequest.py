@@ -20,11 +20,11 @@
 from aliyunsdkcore.request import RoaRequest
 from aliyunsdkairec.endpoint import endpoint_data
 
-class DescribeSyncReportDetailRequest(RoaRequest):
+class DescribeUserMetricsRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'Airec', '2018-10-12', 'DescribeSyncReportDetail','airec')
-		self.set_uri_pattern('/openapi/instances/[InstanceId]/sync-reports/detail')
+		RoaRequest.__init__(self, 'Airec', '2018-10-12', 'DescribeUserMetrics','airec')
+		self.set_uri_pattern('/openapi/instances/[InstanceId]/metrics')
 		self.set_method('GET')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -32,17 +32,17 @@ class DescribeSyncReportDetailRequest(RoaRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_MetricType(self):
+		return self.get_query_params().get('MetricType')
+
+	def set_MetricType(self,MetricType):
+		self.add_query_param('MetricType',MetricType)
+
 	def get_InstanceId(self):
 		return self.get_path_params().get('InstanceId')
 
 	def set_InstanceId(self,InstanceId):
 		self.add_path_param('InstanceId',InstanceId)
-
-	def get_LevelType(self):
-		return self.get_query_params().get('LevelType')
-
-	def set_LevelType(self,LevelType):
-		self.add_query_param('LevelType',LevelType)
 
 	def get_EndTime(self):
 		return self.get_query_params().get('EndTime')
@@ -55,9 +55,3 @@ class DescribeSyncReportDetailRequest(RoaRequest):
 
 	def set_StartTime(self,StartTime):
 		self.add_query_param('StartTime',StartTime)
-
-	def get_Type(self):
-		return self.get_query_params().get('Type')
-
-	def set_Type(self,Type):
-		self.add_query_param('Type',Type)

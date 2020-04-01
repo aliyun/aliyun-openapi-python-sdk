@@ -20,44 +20,13 @@
 from aliyunsdkcore.request import RoaRequest
 from aliyunsdkairec.endpoint import endpoint_data
 
-class DescribeSyncReportDetailRequest(RoaRequest):
+class ListUmengAppkeysRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'Airec', '2018-10-12', 'DescribeSyncReportDetail','airec')
-		self.set_uri_pattern('/openapi/instances/[InstanceId]/sync-reports/detail')
+		RoaRequest.__init__(self, 'Airec', '2018-10-12', 'ListUmengAppkeys','airec')
+		self.set_uri_pattern('/openapi/umeng/appkeys')
 		self.set_method('GET')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
-
-
-	def get_InstanceId(self):
-		return self.get_path_params().get('InstanceId')
-
-	def set_InstanceId(self,InstanceId):
-		self.add_path_param('InstanceId',InstanceId)
-
-	def get_LevelType(self):
-		return self.get_query_params().get('LevelType')
-
-	def set_LevelType(self,LevelType):
-		self.add_query_param('LevelType',LevelType)
-
-	def get_EndTime(self):
-		return self.get_query_params().get('EndTime')
-
-	def set_EndTime(self,EndTime):
-		self.add_query_param('EndTime',EndTime)
-
-	def get_StartTime(self):
-		return self.get_query_params().get('StartTime')
-
-	def set_StartTime(self,StartTime):
-		self.add_query_param('StartTime',StartTime)
-
-	def get_Type(self):
-		return self.get_query_params().get('Type')
-
-	def set_Type(self,Type):
-		self.add_query_param('Type',Type)
