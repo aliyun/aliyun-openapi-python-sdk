@@ -48,6 +48,12 @@ class DescribeVerifyTokenRequest(RpcRequest):
 	def set_CallbackSeed(self,CallbackSeed):
 		self.add_query_param('CallbackSeed',CallbackSeed)
 
+	def get_UserIp(self):
+		return self.get_query_params().get('UserIp')
+
+	def set_UserIp(self,UserIp):
+		self.add_query_param('UserIp',UserIp)
+
 	def get_IdCardBackImageUrl(self):
 		return self.get_query_params().get('IdCardBackImageUrl')
 
@@ -78,6 +84,12 @@ class DescribeVerifyTokenRequest(RpcRequest):
 	def set_PassedRedirectUrl(self,PassedRedirectUrl):
 		self.add_query_param('PassedRedirectUrl',PassedRedirectUrl)
 
+	def get_UserRegistTime(self):
+		return self.get_query_params().get('UserRegistTime')
+
+	def set_UserRegistTime(self,UserRegistTime):
+		self.add_query_param('UserRegistTime',UserRegistTime)
+
 	def get_BizId(self):
 		return self.get_query_params().get('BizId')
 
@@ -89,6 +101,12 @@ class DescribeVerifyTokenRequest(RpcRequest):
 
 	def set_Name(self,Name):
 		self.add_query_param('Name',Name)
+
+	def get_UserPhoneNumber(self):
+		return self.get_query_params().get('UserPhoneNumber')
+
+	def set_UserPhoneNumber(self,UserPhoneNumber):
+		self.add_query_param('UserPhoneNumber',UserPhoneNumber)
 
 	def get_CallbackUrl(self):
 		return self.get_query_params().get('CallbackUrl')
