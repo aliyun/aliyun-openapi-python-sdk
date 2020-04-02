@@ -23,7 +23,7 @@ from aliyunsdkcsb.endpoint import endpoint_data
 class GetProjectRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'CSB', '2017-11-18', 'GetProject','csb')
+		RpcRequest.__init__(self, 'CSB', '2017-11-18', 'GetProject')
 		self.set_protocol_type('https')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())

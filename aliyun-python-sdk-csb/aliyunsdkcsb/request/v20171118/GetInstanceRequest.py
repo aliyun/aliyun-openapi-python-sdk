@@ -23,7 +23,7 @@ from aliyunsdkcsb.endpoint import endpoint_data
 class GetInstanceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'CSB', '2017-11-18', 'GetInstance','csb')
+		RpcRequest.__init__(self, 'CSB', '2017-11-18', 'GetInstance')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):

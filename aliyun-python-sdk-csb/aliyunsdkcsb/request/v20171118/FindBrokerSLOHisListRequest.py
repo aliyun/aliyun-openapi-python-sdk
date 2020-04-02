@@ -20,32 +20,18 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcsb.endpoint import endpoint_data
 
-class DeleteCredentialsListRequest(RpcRequest):
+class FindBrokerSLOHisListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'CSB', '2017-11-18', 'DeleteCredentialsList')
-		self.set_protocol_type('https')
-		self.set_method('POST')
+		RpcRequest.__init__(self, 'CSB', '2017-11-18', 'FindBrokerSLOHisList')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_Data(self):
-		return self.get_body_params().get('Data')
+	def get_CsbId(self):
+		return self.get_query_params().get('CsbId')
 
-	def set_Data(self,Data):
-		self.add_body_params('Data', Data)
-
-	def get_IgnoreDauth(self):
-		return self.get_query_params().get('IgnoreDauth')
-
-	def set_IgnoreDauth(self,IgnoreDauth):
-		self.add_query_param('IgnoreDauth',IgnoreDauth)
-
-	def get_Force(self):
-		return self.get_query_params().get('Force')
-
-	def set_Force(self,Force):
-		self.add_query_param('Force',Force)
+	def set_CsbId(self,CsbId):
+		self.add_query_param('CsbId',CsbId)

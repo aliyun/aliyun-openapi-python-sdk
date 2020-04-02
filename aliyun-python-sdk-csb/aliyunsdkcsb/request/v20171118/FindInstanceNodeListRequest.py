@@ -20,32 +20,36 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcsb.endpoint import endpoint_data
 
-class DeleteCredentialsListRequest(RpcRequest):
+class FindInstanceNodeListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'CSB', '2017-11-18', 'DeleteCredentialsList')
-		self.set_protocol_type('https')
-		self.set_method('POST')
+		RpcRequest.__init__(self, 'CSB', '2017-11-18', 'FindInstanceNodeList')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_Data(self):
-		return self.get_body_params().get('Data')
+	def get_OnlyImported(self):
+		return self.get_query_params().get('OnlyImported')
 
-	def set_Data(self,Data):
-		self.add_body_params('Data', Data)
+	def set_OnlyImported(self,OnlyImported):
+		self.add_query_param('OnlyImported',OnlyImported)
 
-	def get_IgnoreDauth(self):
-		return self.get_query_params().get('IgnoreDauth')
+	def get_PageNum(self):
+		return self.get_query_params().get('PageNum')
 
-	def set_IgnoreDauth(self,IgnoreDauth):
-		self.add_query_param('IgnoreDauth',IgnoreDauth)
+	def set_PageNum(self,PageNum):
+		self.add_query_param('PageNum',PageNum)
 
-	def get_Force(self):
-		return self.get_query_params().get('Force')
+	def get_InstanceName(self):
+		return self.get_query_params().get('InstanceName')
 
-	def set_Force(self,Force):
-		self.add_query_param('Force',Force)
+	def set_InstanceName(self,InstanceName):
+		self.add_query_param('InstanceName',InstanceName)
+
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)

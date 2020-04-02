@@ -23,7 +23,7 @@ from aliyunsdkcsb.endpoint import endpoint_data
 class ReplaceCredentialRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'CSB', '2017-11-18', 'ReplaceCredential','csb')
+		RpcRequest.__init__(self, 'CSB', '2017-11-18', 'ReplaceCredential')
 		self.set_protocol_type('https')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):

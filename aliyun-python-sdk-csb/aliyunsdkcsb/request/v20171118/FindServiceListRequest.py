@@ -23,7 +23,7 @@ from aliyunsdkcsb.endpoint import endpoint_data
 class FindServiceListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'CSB', '2017-11-18', 'FindServiceList','csb')
+		RpcRequest.__init__(self, 'CSB', '2017-11-18', 'FindServiceList')
 		self.set_protocol_type('https')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -60,6 +60,12 @@ class FindServiceListRequest(RpcRequest):
 
 	def set_CasShowType(self,CasShowType):
 		self.add_query_param('CasShowType',CasShowType)
+
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
 
 	def get_Alias(self):
 		return self.get_query_params().get('Alias')
