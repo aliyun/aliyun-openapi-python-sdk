@@ -30,23 +30,11 @@ class DescribeSnapshotsRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_SnapshotType(self):
-		return self.get_query_params().get('SnapshotType')
-
-	def set_SnapshotType(self,SnapshotType):
-		self.add_query_param('SnapshotType',SnapshotType)
-
 	def get_SnapshotIds(self):
 		return self.get_query_params().get('SnapshotIds')
 
 	def set_SnapshotIds(self,SnapshotIds):
 		self.add_query_param('SnapshotIds',SnapshotIds)
-
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
 
 	def get_SnapshotName(self):
 		return self.get_query_params().get('SnapshotName')
@@ -66,11 +54,23 @@ class DescribeSnapshotsRequest(RpcRequest):
 	def set_PageNumber(self,PageNumber):
 		self.add_query_param('PageNumber',PageNumber)
 
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
+
 	def get_FileSystemId(self):
 		return self.get_query_params().get('FileSystemId')
 
 	def set_FileSystemId(self,FileSystemId):
 		self.add_query_param('FileSystemId',FileSystemId)
+
+	def get_SnapshotType(self):
+		return self.get_query_params().get('SnapshotType')
+
+	def set_SnapshotType(self,SnapshotType):
+		self.add_query_param('SnapshotType',SnapshotType)
 
 	def get_Status(self):
 		return self.get_query_params().get('Status')

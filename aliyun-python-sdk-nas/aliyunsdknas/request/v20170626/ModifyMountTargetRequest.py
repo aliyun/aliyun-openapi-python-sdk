@@ -30,6 +30,12 @@ class ModifyMountTargetRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_FileSystemId(self):
+		return self.get_query_params().get('FileSystemId')
+
+	def set_FileSystemId(self,FileSystemId):
+		self.add_query_param('FileSystemId',FileSystemId)
+
 	def get_MountTargetDomain(self):
 		return self.get_query_params().get('MountTargetDomain')
 
@@ -41,12 +47,6 @@ class ModifyMountTargetRequest(RpcRequest):
 
 	def set_AccessGroupName(self,AccessGroupName):
 		self.add_query_param('AccessGroupName',AccessGroupName)
-
-	def get_FileSystemId(self):
-		return self.get_query_params().get('FileSystemId')
-
-	def set_FileSystemId(self,FileSystemId):
-		self.add_query_param('FileSystemId',FileSystemId)
 
 	def get_Status(self):
 		return self.get_query_params().get('Status')

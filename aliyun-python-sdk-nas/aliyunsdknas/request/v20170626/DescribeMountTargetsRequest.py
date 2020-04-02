@@ -30,11 +30,11 @@ class DescribeMountTargetsRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_MountTargetDomain(self):
-		return self.get_query_params().get('MountTargetDomain')
+	def get_PageNumber(self):
+		return self.get_query_params().get('PageNumber')
 
-	def set_MountTargetDomain(self,MountTargetDomain):
-		self.add_query_param('MountTargetDomain',MountTargetDomain)
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)
 
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
@@ -42,14 +42,14 @@ class DescribeMountTargetsRequest(RpcRequest):
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
 
-	def get_PageNumber(self):
-		return self.get_query_params().get('PageNumber')
-
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
-
 	def get_FileSystemId(self):
 		return self.get_query_params().get('FileSystemId')
 
 	def set_FileSystemId(self,FileSystemId):
 		self.add_query_param('FileSystemId',FileSystemId)
+
+	def get_MountTargetDomain(self):
+		return self.get_query_params().get('MountTargetDomain')
+
+	def set_MountTargetDomain(self,MountTargetDomain):
+		self.add_query_param('MountTargetDomain',MountTargetDomain)

@@ -30,6 +30,30 @@ class CreateMountTargetRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_SecurityGroupId(self):
+		return self.get_query_params().get('SecurityGroupId')
+
+	def set_SecurityGroupId(self,SecurityGroupId):
+		self.add_query_param('SecurityGroupId',SecurityGroupId)
+
+	def get_NetworkType(self):
+		return self.get_query_params().get('NetworkType')
+
+	def set_NetworkType(self,NetworkType):
+		self.add_query_param('NetworkType',NetworkType)
+
+	def get_FileSystemId(self):
+		return self.get_query_params().get('FileSystemId')
+
+	def set_FileSystemId(self,FileSystemId):
+		self.add_query_param('FileSystemId',FileSystemId)
+
+	def get_AccessGroupName(self):
+		return self.get_query_params().get('AccessGroupName')
+
+	def set_AccessGroupName(self,AccessGroupName):
+		self.add_query_param('AccessGroupName',AccessGroupName)
+
 	def get_VSwitchId(self):
 		return self.get_query_params().get('VSwitchId')
 
@@ -41,21 +65,3 @@ class CreateMountTargetRequest(RpcRequest):
 
 	def set_VpcId(self,VpcId):
 		self.add_query_param('VpcId',VpcId)
-
-	def get_NetworkType(self):
-		return self.get_query_params().get('NetworkType')
-
-	def set_NetworkType(self,NetworkType):
-		self.add_query_param('NetworkType',NetworkType)
-
-	def get_AccessGroupName(self):
-		return self.get_query_params().get('AccessGroupName')
-
-	def set_AccessGroupName(self,AccessGroupName):
-		self.add_query_param('AccessGroupName',AccessGroupName)
-
-	def get_FileSystemId(self):
-		return self.get_query_params().get('FileSystemId')
-
-	def set_FileSystemId(self,FileSystemId):
-		self.add_query_param('FileSystemId',FileSystemId)

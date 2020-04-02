@@ -30,14 +30,14 @@ class DeleteMountTargetRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_MountTargetDomain(self):
-		return self.get_query_params().get('MountTargetDomain')
-
-	def set_MountTargetDomain(self,MountTargetDomain):
-		self.add_query_param('MountTargetDomain',MountTargetDomain)
-
 	def get_FileSystemId(self):
 		return self.get_query_params().get('FileSystemId')
 
 	def set_FileSystemId(self,FileSystemId):
 		self.add_query_param('FileSystemId',FileSystemId)
+
+	def get_MountTargetDomain(self):
+		return self.get_query_params().get('MountTargetDomain')
+
+	def set_MountTargetDomain(self,MountTargetDomain):
+		self.add_query_param('MountTargetDomain',MountTargetDomain)

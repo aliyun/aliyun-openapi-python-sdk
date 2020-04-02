@@ -20,30 +20,30 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdknas.endpoint import endpoint_data
 
-class ModifyAccessGroupRequest(RpcRequest):
+class DescribeStoragePackagesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'NAS', '2017-06-26', 'ModifyAccessGroup','nas')
+		RpcRequest.__init__(self, 'NAS', '2017-06-26', 'DescribeStoragePackages','nas')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_Description(self):
-		return self.get_query_params().get('Description')
+	def get_UseUTCDateTime(self):
+		return self.get_query_params().get('UseUTCDateTime')
 
-	def set_Description(self,Description):
-		self.add_query_param('Description',Description)
+	def set_UseUTCDateTime(self,UseUTCDateTime):
+		self.add_query_param('UseUTCDateTime',UseUTCDateTime)
 
-	def get_FileSystemType(self):
-		return self.get_query_params().get('FileSystemType')
+	def get_PageNumber(self):
+		return self.get_query_params().get('PageNumber')
 
-	def set_FileSystemType(self,FileSystemType):
-		self.add_query_param('FileSystemType',FileSystemType)
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)
 
-	def get_AccessGroupName(self):
-		return self.get_query_params().get('AccessGroupName')
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
 
-	def set_AccessGroupName(self,AccessGroupName):
-		self.add_query_param('AccessGroupName',AccessGroupName)
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)

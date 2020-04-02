@@ -30,11 +30,17 @@ class CreateFileSystemRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_ZoneId(self):
-		return self.get_query_params().get('ZoneId')
+	def get_SnapshotId(self):
+		return self.get_query_params().get('SnapshotId')
 
-	def set_ZoneId(self,ZoneId):
-		self.add_query_param('ZoneId',ZoneId)
+	def set_SnapshotId(self,SnapshotId):
+		self.add_query_param('SnapshotId',SnapshotId)
+
+	def get_ClientToken(self):
+		return self.get_query_params().get('ClientToken')
+
+	def set_ClientToken(self,ClientToken):
+		self.add_query_param('ClientToken',ClientToken)
 
 	def get_Description(self):
 		return self.get_query_params().get('Description')
@@ -42,14 +48,74 @@ class CreateFileSystemRequest(RpcRequest):
 	def set_Description(self,Description):
 		self.add_query_param('Description',Description)
 
-	def get_ProtocolType(self):
-		return self.get_query_params().get('ProtocolType')
+	def get_FileSystemType(self):
+		return self.get_query_params().get('FileSystemType')
 
-	def set_ProtocolType(self,ProtocolType):
-		self.add_query_param('ProtocolType',ProtocolType)
+	def set_FileSystemType(self,FileSystemType):
+		self.add_query_param('FileSystemType',FileSystemType)
 
 	def get_StorageType(self):
 		return self.get_query_params().get('StorageType')
 
 	def set_StorageType(self,StorageType):
 		self.add_query_param('StorageType',StorageType)
+
+	def get_Capacity(self):
+		return self.get_query_params().get('Capacity')
+
+	def set_Capacity(self,Capacity):
+		self.add_query_param('Capacity',Capacity)
+
+	def get_EncryptType(self):
+		return self.get_query_params().get('EncryptType')
+
+	def set_EncryptType(self,EncryptType):
+		self.add_query_param('EncryptType',EncryptType)
+
+	def get_Duration(self):
+		return self.get_query_params().get('Duration')
+
+	def set_Duration(self,Duration):
+		self.add_query_param('Duration',Duration)
+
+	def get_DryRun(self):
+		return self.get_query_params().get('DryRun')
+
+	def set_DryRun(self,DryRun):
+		self.add_query_param('DryRun',DryRun)
+
+	def get_Bandwidth(self):
+		return self.get_query_params().get('Bandwidth')
+
+	def set_Bandwidth(self,Bandwidth):
+		self.add_query_param('Bandwidth',Bandwidth)
+
+	def get_VSwitchId(self):
+		return self.get_query_params().get('VSwitchId')
+
+	def set_VSwitchId(self,VSwitchId):
+		self.add_query_param('VSwitchId',VSwitchId)
+
+	def get_VpcId(self):
+		return self.get_query_params().get('VpcId')
+
+	def set_VpcId(self,VpcId):
+		self.add_query_param('VpcId',VpcId)
+
+	def get_ZoneId(self):
+		return self.get_query_params().get('ZoneId')
+
+	def set_ZoneId(self,ZoneId):
+		self.add_query_param('ZoneId',ZoneId)
+
+	def get_ProtocolType(self):
+		return self.get_query_params().get('ProtocolType')
+
+	def set_ProtocolType(self,ProtocolType):
+		self.add_query_param('ProtocolType',ProtocolType)
+
+	def get_ChargeType(self):
+		return self.get_query_params().get('ChargeType')
+
+	def set_ChargeType(self,ChargeType):
+		self.add_query_param('ChargeType',ChargeType)

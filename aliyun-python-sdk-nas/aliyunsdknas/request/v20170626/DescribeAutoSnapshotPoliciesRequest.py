@@ -36,12 +36,6 @@ class DescribeAutoSnapshotPoliciesRequest(RpcRequest):
 	def set_AutoSnapshotPolicyId(self,AutoSnapshotPolicyId):
 		self.add_query_param('AutoSnapshotPolicyId',AutoSnapshotPolicyId)
 
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
 	def get_FileSystemType(self):
 		return self.get_query_params().get('FileSystemType')
 
@@ -53,3 +47,9 @@ class DescribeAutoSnapshotPoliciesRequest(RpcRequest):
 
 	def set_PageNumber(self,PageNumber):
 		self.add_query_param('PageNumber',PageNumber)
+
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)

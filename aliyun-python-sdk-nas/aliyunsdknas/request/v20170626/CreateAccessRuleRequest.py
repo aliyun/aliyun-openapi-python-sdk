@@ -36,17 +36,23 @@ class CreateAccessRuleRequest(RpcRequest):
 	def set_RWAccessType(self,RWAccessType):
 		self.add_query_param('RWAccessType',RWAccessType)
 
-	def get_SourceCidrIp(self):
-		return self.get_query_params().get('SourceCidrIp')
-
-	def set_SourceCidrIp(self,SourceCidrIp):
-		self.add_query_param('SourceCidrIp',SourceCidrIp)
-
 	def get_UserAccessType(self):
 		return self.get_query_params().get('UserAccessType')
 
 	def set_UserAccessType(self,UserAccessType):
 		self.add_query_param('UserAccessType',UserAccessType)
+
+	def get_FileSystemType(self):
+		return self.get_query_params().get('FileSystemType')
+
+	def set_FileSystemType(self,FileSystemType):
+		self.add_query_param('FileSystemType',FileSystemType)
+
+	def get_SourceCidrIp(self):
+		return self.get_query_params().get('SourceCidrIp')
+
+	def set_SourceCidrIp(self,SourceCidrIp):
+		self.add_query_param('SourceCidrIp',SourceCidrIp)
 
 	def get_Priority(self):
 		return self.get_query_params().get('Priority')
@@ -59,9 +65,3 @@ class CreateAccessRuleRequest(RpcRequest):
 
 	def set_AccessGroupName(self,AccessGroupName):
 		self.add_query_param('AccessGroupName',AccessGroupName)
-
-	def get_FileSystemType(self):
-		return self.get_query_params().get('FileSystemType')
-
-	def set_FileSystemType(self,FileSystemType):
-		self.add_query_param('FileSystemType',FileSystemType)

@@ -42,14 +42,14 @@ class CreateSnapshotRequest(RpcRequest):
 	def set_SnapshotName(self,SnapshotName):
 		self.add_query_param('SnapshotName',SnapshotName)
 
-	def get_RetentionDays(self):
-		return self.get_query_params().get('RetentionDays')
-
-	def set_RetentionDays(self,RetentionDays):
-		self.add_query_param('RetentionDays',RetentionDays)
-
 	def get_FileSystemId(self):
 		return self.get_query_params().get('FileSystemId')
 
 	def set_FileSystemId(self,FileSystemId):
 		self.add_query_param('FileSystemId',FileSystemId)
+
+	def get_RetentionDays(self):
+		return self.get_query_params().get('RetentionDays')
+
+	def set_RetentionDays(self,RetentionDays):
+		self.add_query_param('RetentionDays',RetentionDays)

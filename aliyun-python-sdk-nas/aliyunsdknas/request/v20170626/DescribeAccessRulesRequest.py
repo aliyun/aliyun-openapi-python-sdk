@@ -30,24 +30,6 @@ class DescribeAccessRulesRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_AccessGroupName(self):
-		return self.get_query_params().get('AccessGroupName')
-
-	def set_AccessGroupName(self,AccessGroupName):
-		self.add_query_param('AccessGroupName',AccessGroupName)
-
-	def get_AccessRuleId(self):
-		return self.get_query_params().get('AccessRuleId')
-
-	def set_AccessRuleId(self,AccessRuleId):
-		self.add_query_param('AccessRuleId',AccessRuleId)
-
 	def get_FileSystemType(self):
 		return self.get_query_params().get('FileSystemType')
 
@@ -59,3 +41,21 @@ class DescribeAccessRulesRequest(RpcRequest):
 
 	def set_PageNumber(self,PageNumber):
 		self.add_query_param('PageNumber',PageNumber)
+
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
+
+	def get_AccessRuleId(self):
+		return self.get_query_params().get('AccessRuleId')
+
+	def set_AccessRuleId(self,AccessRuleId):
+		self.add_query_param('AccessRuleId',AccessRuleId)
+
+	def get_AccessGroupName(self):
+		return self.get_query_params().get('AccessGroupName')
+
+	def set_AccessGroupName(self,AccessGroupName):
+		self.add_query_param('AccessGroupName',AccessGroupName)

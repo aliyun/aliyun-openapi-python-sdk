@@ -30,11 +30,11 @@ class DeleteAccessRuleRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_AccessGroupName(self):
-		return self.get_query_params().get('AccessGroupName')
+	def get_FileSystemType(self):
+		return self.get_query_params().get('FileSystemType')
 
-	def set_AccessGroupName(self,AccessGroupName):
-		self.add_query_param('AccessGroupName',AccessGroupName)
+	def set_FileSystemType(self,FileSystemType):
+		self.add_query_param('FileSystemType',FileSystemType)
 
 	def get_AccessRuleId(self):
 		return self.get_query_params().get('AccessRuleId')
@@ -42,8 +42,8 @@ class DeleteAccessRuleRequest(RpcRequest):
 	def set_AccessRuleId(self,AccessRuleId):
 		self.add_query_param('AccessRuleId',AccessRuleId)
 
-	def get_FileSystemType(self):
-		return self.get_query_params().get('FileSystemType')
+	def get_AccessGroupName(self):
+		return self.get_query_params().get('AccessGroupName')
 
-	def set_FileSystemType(self,FileSystemType):
-		self.add_query_param('FileSystemType',FileSystemType)
+	def set_AccessGroupName(self,AccessGroupName):
+		self.add_query_param('AccessGroupName',AccessGroupName)

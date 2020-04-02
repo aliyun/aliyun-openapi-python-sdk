@@ -30,11 +30,11 @@ class ResetFileSystemRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_snapshotId(self):
-		return self.get_query_params().get('snapshotId')
+	def get_SnapshotId(self):
+		return self.get_query_params().get('SnapshotId')
 
-	def set_snapshotId(self,snapshotId):
-		self.add_query_param('snapshotId',snapshotId)
+	def set_SnapshotId(self,SnapshotId):
+		self.add_query_param('SnapshotId',SnapshotId)
 
 	def get_FileSystemId(self):
 		return self.get_query_params().get('FileSystemId')

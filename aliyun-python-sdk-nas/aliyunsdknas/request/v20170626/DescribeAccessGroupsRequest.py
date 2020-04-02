@@ -30,17 +30,11 @@ class DescribeAccessGroupsRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
+	def get_UseUTCDateTime(self):
+		return self.get_query_params().get('UseUTCDateTime')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_AccessGroupName(self):
-		return self.get_query_params().get('AccessGroupName')
-
-	def set_AccessGroupName(self,AccessGroupName):
-		self.add_query_param('AccessGroupName',AccessGroupName)
+	def set_UseUTCDateTime(self,UseUTCDateTime):
+		self.add_query_param('UseUTCDateTime',UseUTCDateTime)
 
 	def get_FileSystemType(self):
 		return self.get_query_params().get('FileSystemType')
@@ -53,3 +47,15 @@ class DescribeAccessGroupsRequest(RpcRequest):
 
 	def set_PageNumber(self,PageNumber):
 		self.add_query_param('PageNumber',PageNumber)
+
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
+
+	def get_AccessGroupName(self):
+		return self.get_query_params().get('AccessGroupName')
+
+	def set_AccessGroupName(self,AccessGroupName):
+		self.add_query_param('AccessGroupName',AccessGroupName)

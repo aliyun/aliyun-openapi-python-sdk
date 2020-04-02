@@ -30,17 +30,17 @@ class ModifyLDAPConfigRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_BindDN(self):
-		return self.get_query_params().get('BindDN')
-
-	def set_BindDN(self,BindDN):
-		self.add_query_param('BindDN',BindDN)
-
 	def get_SearchBase(self):
 		return self.get_query_params().get('SearchBase')
 
 	def set_SearchBase(self,SearchBase):
 		self.add_query_param('SearchBase',SearchBase)
+
+	def get_FileSystemId(self):
+		return self.get_query_params().get('FileSystemId')
+
+	def set_FileSystemId(self,FileSystemId):
+		self.add_query_param('FileSystemId',FileSystemId)
 
 	def get_URI(self):
 		return self.get_query_params().get('URI')
@@ -48,8 +48,8 @@ class ModifyLDAPConfigRequest(RpcRequest):
 	def set_URI(self,URI):
 		self.add_query_param('URI',URI)
 
-	def get_FileSystemId(self):
-		return self.get_query_params().get('FileSystemId')
+	def get_BindDN(self):
+		return self.get_query_params().get('BindDN')
 
-	def set_FileSystemId(self,FileSystemId):
-		self.add_query_param('FileSystemId',FileSystemId)
+	def set_BindDN(self,BindDN):
+		self.add_query_param('BindDN',BindDN)

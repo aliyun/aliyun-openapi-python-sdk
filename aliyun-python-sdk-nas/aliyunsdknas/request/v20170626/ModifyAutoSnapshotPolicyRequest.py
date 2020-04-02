@@ -36,12 +36,6 @@ class ModifyAutoSnapshotPolicyRequest(RpcRequest):
 	def set_AutoSnapshotPolicyId(self,AutoSnapshotPolicyId):
 		self.add_query_param('AutoSnapshotPolicyId',AutoSnapshotPolicyId)
 
-	def get_RetentionDays(self):
-		return self.get_query_params().get('RetentionDays')
-
-	def set_RetentionDays(self,RetentionDays):
-		self.add_query_param('RetentionDays',RetentionDays)
-
 	def get_TimePoints(self):
 		return self.get_query_params().get('TimePoints')
 
@@ -59,3 +53,9 @@ class ModifyAutoSnapshotPolicyRequest(RpcRequest):
 
 	def set_AutoSnapshotPolicyName(self,AutoSnapshotPolicyName):
 		self.add_query_param('AutoSnapshotPolicyName',AutoSnapshotPolicyName)
+
+	def get_RetentionDays(self):
+		return self.get_query_params().get('RetentionDays')
+
+	def set_RetentionDays(self,RetentionDays):
+		self.add_query_param('RetentionDays',RetentionDays)
