@@ -38,6 +38,12 @@ class DescribeSyncReportOutliersRequest(RoaRequest):
 	def set_InstanceId(self,InstanceId):
 		self.add_path_param('InstanceId',InstanceId)
 
+	def get_LevelType(self):
+		return self.get_query_params().get('LevelType')
+
+	def set_LevelType(self,LevelType):
+		self.add_query_param('LevelType',LevelType)
+
 	def get_EndTime(self):
 		return self.get_query_params().get('EndTime')
 
