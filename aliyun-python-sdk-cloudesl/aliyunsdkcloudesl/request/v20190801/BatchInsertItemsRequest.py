@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,10 +18,23 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkcloudesl.endpoint import endpoint_data
+
 class BatchInsertItemsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'cloudesl', '2018-08-01', 'BatchInsertItems')
+		RpcRequest.__init__(self, 'cloudesl', '2019-08-01', 'BatchInsertItems','cloudesl')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
+
+	def get_StoreId(self):
+		return self.get_body_params().get('StoreId')
+
+	def set_StoreId(self,StoreId):
+		self.add_body_params('StoreId', StoreId)
 
 	def get_ItemInfos(self):
 		return self.get_body_params().get('ItemInfos')
@@ -44,16 +57,18 @@ class BatchInsertItemsRequest(RpcRequest):
 				self.add_body_params('ItemInfo.' + str(i + 1) + '.PromotionStart' , ItemInfos[i].get('PromotionStart'))
 			if ItemInfos[i].get('SourceCode') is not None:
 				self.add_body_params('ItemInfo.' + str(i + 1) + '.SourceCode' , ItemInfos[i].get('SourceCode'))
-			if ItemInfos[i].get('ItemId') is not None:
-				self.add_body_params('ItemInfo.' + str(i + 1) + '.ItemId' , ItemInfos[i].get('ItemId'))
 			if ItemInfos[i].get('ExtraAttribute') is not None:
 				self.add_body_params('ItemInfo.' + str(i + 1) + '.ExtraAttribute' , ItemInfos[i].get('ExtraAttribute'))
+			if ItemInfos[i].get('ItemId') is not None:
+				self.add_body_params('ItemInfo.' + str(i + 1) + '.ItemId' , ItemInfos[i].get('ItemId'))
 			if ItemInfos[i].get('CompanyId') is not None:
 				self.add_body_params('ItemInfo.' + str(i + 1) + '.CompanyId' , ItemInfos[i].get('CompanyId'))
 			if ItemInfos[i].get('PriceUnit') is not None:
 				self.add_body_params('ItemInfo.' + str(i + 1) + '.PriceUnit' , ItemInfos[i].get('PriceUnit'))
 			if ItemInfos[i].get('Rank') is not None:
 				self.add_body_params('ItemInfo.' + str(i + 1) + '.Rank' , ItemInfos[i].get('Rank'))
+			if ItemInfos[i].get('ItemInfoIndex') is not None:
+				self.add_body_params('ItemInfo.' + str(i + 1) + '.ItemInfoIndex' , ItemInfos[i].get('ItemInfoIndex'))
 			if ItemInfos[i].get('ItemBarCode') is not None:
 				self.add_body_params('ItemInfo.' + str(i + 1) + '.ItemBarCode' , ItemInfos[i].get('ItemBarCode'))
 			if ItemInfos[i].get('BePromotion') is not None:
@@ -106,14 +121,7 @@ class BatchInsertItemsRequest(RpcRequest):
 				self.add_body_params('ItemInfo.' + str(i + 1) + '.CategoryName' , ItemInfos[i].get('CategoryName'))
 			if ItemInfos[i].get('EnergyEfficiency') is not None:
 				self.add_body_params('ItemInfo.' + str(i + 1) + '.EnergyEfficiency' , ItemInfos[i].get('EnergyEfficiency'))
-			if ItemInfos[i].get('SkuId') is not None:
-				self.add_body_params('ItemInfo.' + str(i + 1) + '.SkuId' , ItemInfos[i].get('SkuId'))
 			if ItemInfos[i].get('PromotionText') is not None:
 				self.add_body_params('ItemInfo.' + str(i + 1) + '.PromotionText' , ItemInfos[i].get('PromotionText'))
-
-
-	def get_StoreId(self):
-		return self.get_query_params().get('StoreId')
-
-	def set_StoreId(self,StoreId):
-		self.add_query_param('StoreId',StoreId)
+			if ItemInfos[i].get('SkuId') is not None:
+				self.add_body_params('ItemInfo.' + str(i + 1) + '.SkuId' , ItemInfos[i].get('SkuId'))

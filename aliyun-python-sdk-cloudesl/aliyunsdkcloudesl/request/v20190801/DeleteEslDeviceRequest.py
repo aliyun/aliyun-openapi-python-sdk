@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,19 +18,26 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkcloudesl.endpoint import endpoint_data
+
 class DeleteEslDeviceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'cloudesl', '2018-08-01', 'DeleteEslDevice')
+		RpcRequest.__init__(self, 'cloudesl', '2019-08-01', 'DeleteEslDevice','cloudesl')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_EslBarCode(self):
-		return self.get_query_params().get('EslBarCode')
-
-	def set_EslBarCode(self,EslBarCode):
-		self.add_query_param('EslBarCode',EslBarCode)
 
 	def get_StoreId(self):
-		return self.get_query_params().get('StoreId')
+		return self.get_body_params().get('StoreId')
 
 	def set_StoreId(self,StoreId):
-		self.add_query_param('StoreId',StoreId)
+		self.add_body_params('StoreId', StoreId)
+
+	def get_EslBarCode(self):
+		return self.get_body_params().get('EslBarCode')
+
+	def set_EslBarCode(self,EslBarCode):
+		self.add_body_params('EslBarCode', EslBarCode)
