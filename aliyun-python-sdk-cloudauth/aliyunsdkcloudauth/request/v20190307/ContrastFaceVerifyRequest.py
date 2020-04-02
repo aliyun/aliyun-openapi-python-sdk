@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcloudauth.endpoint import endpoint_data
 
-class InitFaceVerifyRequest(RpcRequest):
+class ContrastFaceVerifyRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cloudauth', '2019-03-07', 'InitFaceVerify','cloudauth')
+		RpcRequest.__init__(self, 'Cloudauth', '2019-03-07', 'ContrastFaceVerify','cloudauth')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -36,11 +36,41 @@ class InitFaceVerifyRequest(RpcRequest):
 	def set_ProductCode(self,ProductCode):
 		self.add_query_param('ProductCode',ProductCode)
 
+	def get_OssObjectName(self):
+		return self.get_query_params().get('OssObjectName')
+
+	def set_OssObjectName(self,OssObjectName):
+		self.add_query_param('OssObjectName',OssObjectName)
+
 	def get_FaceContrastPicture(self):
 		return self.get_query_params().get('FaceContrastPicture')
 
 	def set_FaceContrastPicture(self,FaceContrastPicture):
 		self.add_query_param('FaceContrastPicture',FaceContrastPicture)
+
+	def get_CertName(self):
+		return self.get_query_params().get('CertName')
+
+	def set_CertName(self,CertName):
+		self.add_query_param('CertName',CertName)
+
+	def get_Ip(self):
+		return self.get_query_params().get('Ip')
+
+	def set_Ip(self,Ip):
+		self.add_query_param('Ip',Ip)
+
+	def get_Mobile(self):
+		return self.get_query_params().get('Mobile')
+
+	def set_Mobile(self,Mobile):
+		self.add_query_param('Mobile',Mobile)
+
+	def get_DeviceToken(self):
+		return self.get_query_params().get('DeviceToken')
+
+	def set_DeviceToken(self,DeviceToken):
+		self.add_query_param('DeviceToken',DeviceToken)
 
 	def get_UserId(self):
 		return self.get_query_params().get('UserId')
@@ -78,36 +108,6 @@ class InitFaceVerifyRequest(RpcRequest):
 	def set_FaceContrastPictureUrl(self,FaceContrastPictureUrl):
 		self.add_query_param('FaceContrastPictureUrl',FaceContrastPictureUrl)
 
-	def get_MetaInfo(self):
-		return self.get_query_params().get('MetaInfo')
-
-	def set_MetaInfo(self,MetaInfo):
-		self.add_query_param('MetaInfo',MetaInfo)
-
-	def get_OssObjectName(self):
-		return self.get_query_params().get('OssObjectName')
-
-	def set_OssObjectName(self,OssObjectName):
-		self.add_query_param('OssObjectName',OssObjectName)
-
-	def get_CertName(self):
-		return self.get_query_params().get('CertName')
-
-	def set_CertName(self,CertName):
-		self.add_query_param('CertName',CertName)
-
-	def get_Ip(self):
-		return self.get_query_params().get('Ip')
-
-	def set_Ip(self,Ip):
-		self.add_query_param('Ip',Ip)
-
-	def get_Mobile(self):
-		return self.get_query_params().get('Mobile')
-
-	def set_Mobile(self,Mobile):
-		self.add_query_param('Mobile',Mobile)
-
 	def get_SceneId(self):
 		return self.get_query_params().get('SceneId')
 
@@ -119,9 +119,3 @@ class InitFaceVerifyRequest(RpcRequest):
 
 	def set_OssBucketName(self,OssBucketName):
 		self.add_query_param('OssBucketName',OssBucketName)
-
-	def get_ReturnUrl(self):
-		return self.get_query_params().get('ReturnUrl')
-
-	def set_ReturnUrl(self,ReturnUrl):
-		self.add_query_param('ReturnUrl',ReturnUrl)
