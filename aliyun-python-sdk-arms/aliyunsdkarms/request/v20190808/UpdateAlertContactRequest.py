@@ -20,21 +20,27 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkarms.endpoint import endpoint_data
 
-class ImportAppAlertRulesRequest(RpcRequest):
+class UpdateAlertContactRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ARMS', '2019-08-08', 'ImportAppAlertRules','arms')
+		RpcRequest.__init__(self, 'ARMS', '2019-08-08', 'UpdateAlertContact','arms')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_IsAutoStart(self):
-		return self.get_query_params().get('IsAutoStart')
+	def get_ContactId(self):
+		return self.get_query_params().get('ContactId')
 
-	def set_IsAutoStart(self,IsAutoStart):
-		self.add_query_param('IsAutoStart',IsAutoStart)
+	def set_ContactId(self,ContactId):
+		self.add_query_param('ContactId',ContactId)
+
+	def get_PhoneNum(self):
+		return self.get_query_params().get('PhoneNum')
+
+	def set_PhoneNum(self,PhoneNum):
+		self.add_query_param('PhoneNum',PhoneNum)
 
 	def get_ProxyUserId(self):
 		return self.get_query_params().get('ProxyUserId')
@@ -42,26 +48,26 @@ class ImportAppAlertRulesRequest(RpcRequest):
 	def set_ProxyUserId(self,ProxyUserId):
 		self.add_query_param('ProxyUserId',ProxyUserId)
 
-	def get_ContactGroupIds(self):
-		return self.get_query_params().get('ContactGroupIds')
+	def get_ContactName(self):
+		return self.get_query_params().get('ContactName')
 
-	def set_ContactGroupIds(self,ContactGroupIds):
-		self.add_query_param('ContactGroupIds',ContactGroupIds)
+	def set_ContactName(self,ContactName):
+		self.add_query_param('ContactName',ContactName)
 
-	def get_Pids(self):
-		return self.get_query_params().get('Pids')
+	def get_DingRobotWebhookUrl(self):
+		return self.get_query_params().get('DingRobotWebhookUrl')
 
-	def set_Pids(self,Pids):
-		self.add_query_param('Pids',Pids)
+	def set_DingRobotWebhookUrl(self,DingRobotWebhookUrl):
+		self.add_query_param('DingRobotWebhookUrl',DingRobotWebhookUrl)
 
-	def get_TemplageAlertConfig(self):
-		return self.get_query_params().get('TemplageAlertConfig')
+	def get_Email(self):
+		return self.get_query_params().get('Email')
 
-	def set_TemplageAlertConfig(self,TemplageAlertConfig):
-		self.add_query_param('TemplageAlertConfig',TemplageAlertConfig)
+	def set_Email(self,Email):
+		self.add_query_param('Email',Email)
 
-	def get_TemplateAlertId(self):
-		return self.get_query_params().get('TemplateAlertId')
+	def get_SystemNoc(self):
+		return self.get_query_params().get('SystemNoc')
 
-	def set_TemplateAlertId(self,TemplateAlertId):
-		self.add_query_param('TemplateAlertId',TemplateAlertId)
+	def set_SystemNoc(self,SystemNoc):
+		self.add_query_param('SystemNoc',SystemNoc)

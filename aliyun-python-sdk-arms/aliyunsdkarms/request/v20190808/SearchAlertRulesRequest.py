@@ -20,21 +20,33 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkarms.endpoint import endpoint_data
 
-class ImportAppAlertRulesRequest(RpcRequest):
+class SearchAlertRulesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ARMS', '2019-08-08', 'ImportAppAlertRules','arms')
+		RpcRequest.__init__(self, 'ARMS', '2019-08-08', 'SearchAlertRules','arms')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_IsAutoStart(self):
-		return self.get_query_params().get('IsAutoStart')
+	def get_AppType(self):
+		return self.get_query_params().get('AppType')
 
-	def set_IsAutoStart(self,IsAutoStart):
-		self.add_query_param('IsAutoStart',IsAutoStart)
+	def set_AppType(self,AppType):
+		self.add_query_param('AppType',AppType)
+
+	def get_CurrentPage(self):
+		return self.get_query_params().get('CurrentPage')
+
+	def set_CurrentPage(self,CurrentPage):
+		self.add_query_param('CurrentPage',CurrentPage)
+
+	def get_Pid(self):
+		return self.get_query_params().get('Pid')
+
+	def set_Pid(self,Pid):
+		self.add_query_param('Pid',Pid)
 
 	def get_ProxyUserId(self):
 		return self.get_query_params().get('ProxyUserId')
@@ -42,26 +54,20 @@ class ImportAppAlertRulesRequest(RpcRequest):
 	def set_ProxyUserId(self,ProxyUserId):
 		self.add_query_param('ProxyUserId',ProxyUserId)
 
-	def get_ContactGroupIds(self):
-		return self.get_query_params().get('ContactGroupIds')
+	def get_Title(self):
+		return self.get_query_params().get('Title')
 
-	def set_ContactGroupIds(self,ContactGroupIds):
-		self.add_query_param('ContactGroupIds',ContactGroupIds)
+	def set_Title(self,Title):
+		self.add_query_param('Title',Title)
 
-	def get_Pids(self):
-		return self.get_query_params().get('Pids')
+	def get_Type(self):
+		return self.get_query_params().get('Type')
 
-	def set_Pids(self,Pids):
-		self.add_query_param('Pids',Pids)
+	def set_Type(self,Type):
+		self.add_query_param('Type',Type)
 
-	def get_TemplageAlertConfig(self):
-		return self.get_query_params().get('TemplageAlertConfig')
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
 
-	def set_TemplageAlertConfig(self,TemplageAlertConfig):
-		self.add_query_param('TemplageAlertConfig',TemplageAlertConfig)
-
-	def get_TemplateAlertId(self):
-		return self.get_query_params().get('TemplateAlertId')
-
-	def set_TemplateAlertId(self,TemplateAlertId):
-		self.add_query_param('TemplateAlertId',TemplateAlertId)
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)

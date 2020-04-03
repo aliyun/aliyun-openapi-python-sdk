@@ -42,6 +42,12 @@ class QueryDatasetRequest(RpcRequest):
 	def set_MinTime(self,MinTime):
 		self.add_query_param('MinTime',MinTime)
 
+	def get_ProxyUserId(self):
+		return self.get_query_params().get('ProxyUserId')
+
+	def set_ProxyUserId(self,ProxyUserId):
+		self.add_query_param('ProxyUserId',ProxyUserId)
+
 	def get_ReduceTail(self):
 		return self.get_query_params().get('ReduceTail')
 

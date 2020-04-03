@@ -20,30 +20,11 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkarms.endpoint import endpoint_data
 
-class CreateAlertContactGroupRequest(RpcRequest):
+class ListPromClustersRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ARMS', '2019-08-08', 'CreateAlertContactGroup','arms')
+		RpcRequest.__init__(self, 'ARMS', '2019-08-08', 'ListPromClusters','arms')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
-
-
-	def get_ContactGroupName(self):
-		return self.get_query_params().get('ContactGroupName')
-
-	def set_ContactGroupName(self,ContactGroupName):
-		self.add_query_param('ContactGroupName',ContactGroupName)
-
-	def get_ProxyUserId(self):
-		return self.get_query_params().get('ProxyUserId')
-
-	def set_ProxyUserId(self,ProxyUserId):
-		self.add_query_param('ProxyUserId',ProxyUserId)
-
-	def get_ContactIds(self):
-		return self.get_query_params().get('ContactIds')
-
-	def set_ContactIds(self,ContactIds):
-		self.add_query_param('ContactIds',ContactIds)

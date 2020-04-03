@@ -20,15 +20,39 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkarms.endpoint import endpoint_data
 
-class SearchAlertContactRequest(RpcRequest):
+class SearchEventsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ARMS', '2019-08-08', 'SearchAlertContact','arms')
+		RpcRequest.__init__(self, 'ARMS', '2019-08-08', 'SearchEvents','arms')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+
+	def get_IsTrigger(self):
+		return self.get_query_params().get('IsTrigger')
+
+	def set_IsTrigger(self,IsTrigger):
+		self.add_query_param('IsTrigger',IsTrigger)
+
+	def get_AppType(self):
+		return self.get_query_params().get('AppType')
+
+	def set_AppType(self,AppType):
+		self.add_query_param('AppType',AppType)
+
+	def get_EndTime(self):
+		return self.get_query_params().get('EndTime')
+
+	def set_EndTime(self,EndTime):
+		self.add_query_param('EndTime',EndTime)
+
+	def get_Pid(self):
+		return self.get_query_params().get('Pid')
+
+	def set_Pid(self,Pid):
+		self.add_query_param('Pid',Pid)
 
 	def get_CurrentPage(self):
 		return self.get_query_params().get('CurrentPage')
@@ -36,23 +60,23 @@ class SearchAlertContactRequest(RpcRequest):
 	def set_CurrentPage(self,CurrentPage):
 		self.add_query_param('CurrentPage',CurrentPage)
 
+	def get_StartTime(self):
+		return self.get_query_params().get('StartTime')
+
+	def set_StartTime(self,StartTime):
+		self.add_query_param('StartTime',StartTime)
+
 	def get_ProxyUserId(self):
 		return self.get_query_params().get('ProxyUserId')
 
 	def set_ProxyUserId(self,ProxyUserId):
 		self.add_query_param('ProxyUserId',ProxyUserId)
 
-	def get_ContactName(self):
-		return self.get_query_params().get('ContactName')
+	def get_AlertType(self):
+		return self.get_query_params().get('AlertType')
 
-	def set_ContactName(self,ContactName):
-		self.add_query_param('ContactName',ContactName)
-
-	def get_Phone(self):
-		return self.get_query_params().get('Phone')
-
-	def set_Phone(self,Phone):
-		self.add_query_param('Phone',Phone)
+	def set_AlertType(self,AlertType):
+		self.add_query_param('AlertType',AlertType)
 
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
@@ -60,8 +84,8 @@ class SearchAlertContactRequest(RpcRequest):
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
 
-	def get_Email(self):
-		return self.get_query_params().get('Email')
+	def get_AlertId(self):
+		return self.get_query_params().get('AlertId')
 
-	def set_Email(self,Email):
-		self.add_query_param('Email',Email)
+	def set_AlertId(self,AlertId):
+		self.add_query_param('AlertId',AlertId)

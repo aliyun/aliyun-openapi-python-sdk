@@ -30,32 +30,6 @@ class QueryMetricRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_Measuress(self):
-		return self.get_query_params().get('Measuress')
-
-	def set_Measuress(self,Measuress):
-		for i in range(len(Measuress)):	
-			if Measuress[i] is not None:
-				self.add_query_param('Measures.' + str(i + 1) , Measuress[i]);
-
-	def get_IntervalInSec(self):
-		return self.get_query_params().get('IntervalInSec')
-
-	def set_IntervalInSec(self,IntervalInSec):
-		self.add_query_param('IntervalInSec',IntervalInSec)
-
-	def get_Metric(self):
-		return self.get_query_params().get('Metric')
-
-	def set_Metric(self,Metric):
-		self.add_query_param('Metric',Metric)
-
-	def get_Limit(self):
-		return self.get_query_params().get('Limit')
-
-	def set_Limit(self,Limit):
-		self.add_query_param('Limit',Limit)
-
 	def get_EndTime(self):
 		return self.get_query_params().get('EndTime')
 
@@ -84,6 +58,38 @@ class QueryMetricRequest(RpcRequest):
 			if Filterss[i].get('Key') is not None:
 				self.add_query_param('Filters.' + str(i + 1) + '.Key' , Filterss[i].get('Key'))
 
+
+	def get_ProxyUserId(self):
+		return self.get_query_params().get('ProxyUserId')
+
+	def set_ProxyUserId(self,ProxyUserId):
+		self.add_query_param('ProxyUserId',ProxyUserId)
+
+	def get_Measuress(self):
+		return self.get_query_params().get('Measuress')
+
+	def set_Measuress(self,Measuress):
+		for i in range(len(Measuress)):	
+			if Measuress[i] is not None:
+				self.add_query_param('Measures.' + str(i + 1) , Measuress[i]);
+
+	def get_IntervalInSec(self):
+		return self.get_query_params().get('IntervalInSec')
+
+	def set_IntervalInSec(self,IntervalInSec):
+		self.add_query_param('IntervalInSec',IntervalInSec)
+
+	def get_Metric(self):
+		return self.get_query_params().get('Metric')
+
+	def set_Metric(self,Metric):
+		self.add_query_param('Metric',Metric)
+
+	def get_Limit(self):
+		return self.get_query_params().get('Limit')
+
+	def set_Limit(self,Limit):
+		self.add_query_param('Limit',Limit)
 
 	def get_Dimensionss(self):
 		return self.get_query_params().get('Dimensionss')

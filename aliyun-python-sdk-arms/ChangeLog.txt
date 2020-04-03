@@ -1,3 +1,7 @@
+2020-04-03 Version: 2.5.3
+- Add trace api.
+- Add prometheus api.
+
 2019-08-22 Version: 2.5.2
 - Api release 2019-08-08 public sdk 2-5-2 sdk release 20190822 shichun-fsc.
 

@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkarms.endpoint import endpoint_data
 
-class ImportAppAlertRulesRequest(RpcRequest):
+class UpdateAlertRuleRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ARMS', '2019-08-08', 'ImportAppAlertRules','arms')
+		RpcRequest.__init__(self, 'ARMS', '2019-08-08', 'UpdateAlertRule','arms')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -48,20 +48,14 @@ class ImportAppAlertRulesRequest(RpcRequest):
 	def set_ContactGroupIds(self,ContactGroupIds):
 		self.add_query_param('ContactGroupIds',ContactGroupIds)
 
-	def get_Pids(self):
-		return self.get_query_params().get('Pids')
+	def get_AlertId(self):
+		return self.get_query_params().get('AlertId')
 
-	def set_Pids(self,Pids):
-		self.add_query_param('Pids',Pids)
+	def set_AlertId(self,AlertId):
+		self.add_query_param('AlertId',AlertId)
 
 	def get_TemplageAlertConfig(self):
 		return self.get_query_params().get('TemplageAlertConfig')
 
 	def set_TemplageAlertConfig(self,TemplageAlertConfig):
 		self.add_query_param('TemplageAlertConfig',TemplageAlertConfig)
-
-	def get_TemplateAlertId(self):
-		return self.get_query_params().get('TemplateAlertId')
-
-	def set_TemplateAlertId(self,TemplateAlertId):
-		self.add_query_param('TemplateAlertId',TemplateAlertId)

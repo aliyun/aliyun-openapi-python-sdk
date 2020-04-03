@@ -30,17 +30,23 @@ class CreateAlertContactRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_ContactName(self):
-		return self.get_query_params().get('ContactName')
-
-	def set_ContactName(self,ContactName):
-		self.add_query_param('ContactName',ContactName)
-
 	def get_PhoneNum(self):
 		return self.get_query_params().get('PhoneNum')
 
 	def set_PhoneNum(self,PhoneNum):
 		self.add_query_param('PhoneNum',PhoneNum)
+
+	def get_ProxyUserId(self):
+		return self.get_query_params().get('ProxyUserId')
+
+	def set_ProxyUserId(self,ProxyUserId):
+		self.add_query_param('ProxyUserId',ProxyUserId)
+
+	def get_ContactName(self):
+		return self.get_query_params().get('ContactName')
+
+	def set_ContactName(self,ContactName):
+		self.add_query_param('ContactName',ContactName)
 
 	def get_DingRobotWebhookUrl(self):
 		return self.get_query_params().get('DingRobotWebhookUrl')
