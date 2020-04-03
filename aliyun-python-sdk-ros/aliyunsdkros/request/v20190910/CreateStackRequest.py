@@ -36,6 +36,12 @@ class CreateStackRequest(RpcRequest):
 	def set_TimeoutInMinutes(self,TimeoutInMinutes):
 		self.add_query_param('TimeoutInMinutes',TimeoutInMinutes)
 
+	def get_DeletionProtection(self):
+		return self.get_query_params().get('DeletionProtection')
+
+	def set_DeletionProtection(self,DeletionProtection):
+		self.add_query_param('DeletionProtection',DeletionProtection)
+
 	def get_StackName(self):
 		return self.get_query_params().get('StackName')
 

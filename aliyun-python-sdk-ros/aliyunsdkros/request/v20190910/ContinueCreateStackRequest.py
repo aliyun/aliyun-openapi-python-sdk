@@ -30,17 +30,52 @@ class ContinueCreateStackRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_TemplateBody(self):
+		return self.get_query_params().get('TemplateBody')
+
+	def set_TemplateBody(self,TemplateBody):
+		self.add_query_param('TemplateBody',TemplateBody)
+
 	def get_StackId(self):
 		return self.get_query_params().get('StackId')
 
 	def set_StackId(self,StackId):
 		self.add_query_param('StackId',StackId)
 
+	def get_TemplateURL(self):
+		return self.get_query_params().get('TemplateURL')
+
+	def set_TemplateURL(self,TemplateURL):
+		self.add_query_param('TemplateURL',TemplateURL)
+
+	def get_Mode(self):
+		return self.get_query_params().get('Mode')
+
+	def set_Mode(self,Mode):
+		self.add_query_param('Mode',Mode)
+
+	def get_DryRun(self):
+		return self.get_query_params().get('DryRun')
+
+	def set_DryRun(self,DryRun):
+		self.add_query_param('DryRun',DryRun)
+
 	def get_RamRoleName(self):
 		return self.get_query_params().get('RamRoleName')
 
 	def set_RamRoleName(self,RamRoleName):
 		self.add_query_param('RamRoleName',RamRoleName)
+
+	def get_Parameterss(self):
+		return self.get_query_params().get('Parameterss')
+
+	def set_Parameterss(self,Parameterss):
+		for i in range(len(Parameterss)):	
+			if Parameterss[i].get('ParameterValue') is not None:
+				self.add_query_param('Parameters.' + str(i + 1) + '.ParameterValue' , Parameterss[i].get('ParameterValue'))
+			if Parameterss[i].get('ParameterKey') is not None:
+				self.add_query_param('Parameters.' + str(i + 1) + '.ParameterKey' , Parameterss[i].get('ParameterKey'))
+
 
 	def get_RecreatingResourcess(self):
 		return self.get_query_params().get('RecreatingResourcess')
