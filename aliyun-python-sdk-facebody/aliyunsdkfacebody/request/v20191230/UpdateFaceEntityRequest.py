@@ -20,21 +20,27 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkfacebody.endpoint import endpoint_data
 
-class ListFacesRequest(RpcRequest):
+class UpdateFaceEntityRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'facebody', '2019-12-30', 'ListFaces','facebody')
+		RpcRequest.__init__(self, 'facebody', '2019-12-30', 'UpdateFaceEntity','facebody')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_FromScrollId(self):
-		return self.get_body_params().get('FromScrollId')
+	def get_EntityId(self):
+		return self.get_body_params().get('EntityId')
 
-	def set_FromScrollId(self,FromScrollId):
-		self.add_body_params('FromScrollId', FromScrollId)
+	def set_EntityId(self,EntityId):
+		self.add_body_params('EntityId', EntityId)
+
+	def get_Labels(self):
+		return self.get_body_params().get('Labels')
+
+	def set_Labels(self,Labels):
+		self.add_body_params('Labels', Labels)
 
 	def get_DbName(self):
 		return self.get_body_params().get('DbName')
