@@ -36,26 +36,20 @@ class AddImageRequest(RpcRequest):
 	def set_EntityId(self,EntityId):
 		self.add_body_params('EntityId', EntityId)
 
-	def get_ExtraData(self):
-		return self.get_body_params().get('ExtraData')
-
-	def set_ExtraData(self,ExtraData):
-		self.add_body_params('ExtraData', ExtraData)
-
 	def get_DbName(self):
 		return self.get_body_params().get('DbName')
 
 	def set_DbName(self,DbName):
 		self.add_body_params('DbName', DbName)
 
-	def get_DataId(self):
-		return self.get_body_params().get('DataId')
-
-	def set_DataId(self,DataId):
-		self.add_body_params('DataId', DataId)
-
 	def get_ImageUrl(self):
 		return self.get_body_params().get('ImageUrl')
 
 	def set_ImageUrl(self,ImageUrl):
 		self.add_body_params('ImageUrl', ImageUrl)
+
+	def get_ExtraData(self):
+		return self.get_body_params().get('ExtraData')
+
+	def set_ExtraData(self,ExtraData):
+		self.add_body_params('ExtraData', ExtraData)

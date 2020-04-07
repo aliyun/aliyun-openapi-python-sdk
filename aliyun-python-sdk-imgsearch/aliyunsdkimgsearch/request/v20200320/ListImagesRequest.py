@@ -30,11 +30,35 @@ class ListImagesRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_FromScrollId(self):
-		return self.get_body_params().get('FromScrollId')
+	def get_EntityIdPrefix(self):
+		return self.get_body_params().get('EntityIdPrefix')
 
-	def set_FromScrollId(self,FromScrollId):
-		self.add_body_params('FromScrollId', FromScrollId)
+	def set_EntityIdPrefix(self,EntityIdPrefix):
+		self.add_body_params('EntityIdPrefix', EntityIdPrefix)
+
+	def get_Limit(self):
+		return self.get_body_params().get('Limit')
+
+	def set_Limit(self,Limit):
+		self.add_body_params('Limit', Limit)
+
+	def get_Order(self):
+		return self.get_body_params().get('Order')
+
+	def set_Order(self,Order):
+		self.add_body_params('Order', Order)
+
+	def get_Offset(self):
+		return self.get_body_params().get('Offset')
+
+	def set_Offset(self,Offset):
+		self.add_body_params('Offset', Offset)
+
+	def get_Token(self):
+		return self.get_body_params().get('Token')
+
+	def set_Token(self,Token):
+		self.add_body_params('Token', Token)
 
 	def get_DbName(self):
 		return self.get_body_params().get('DbName')

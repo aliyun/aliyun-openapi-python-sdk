@@ -30,14 +30,14 @@ class DeleteImageRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_EntityId(self):
+		return self.get_body_params().get('EntityId')
+
+	def set_EntityId(self,EntityId):
+		self.add_body_params('EntityId', EntityId)
+
 	def get_DbName(self):
 		return self.get_body_params().get('DbName')
 
 	def set_DbName(self,DbName):
 		self.add_body_params('DbName', DbName)
-
-	def get_DataId(self):
-		return self.get_body_params().get('DataId')
-
-	def set_DataId(self,DataId):
-		self.add_body_params('DataId', DataId)
