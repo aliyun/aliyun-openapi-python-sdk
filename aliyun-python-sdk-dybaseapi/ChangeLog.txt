@@ -1,5 +1,5 @@
 2020-04-08 Version: 1.0.1
-- Supported Python3.
+1, Supported Python3.
 
 2018-11-20 Version: 1.0.0
 1, Add MNS STS Token Query API
