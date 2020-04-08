@@ -127,11 +127,14 @@ class MNSClient:
         if self.http.is_keep_alive():
             req_inter.header["Connection"] = "Keep-Alive"
         if req_inter.data != "":
-            content_md5 = hashlib.md5(req_inter.data).hexdigest()
             try:
-                req_inter.header["content-md5"] = base64.b64encode(content_md5)
+                # python2 base64encode
+                content_md5 = base64.b64encode(hashlib.md5(req_inter.data).hexdigest())
             except Exception:
-                req_inter.header["content-md5"] = base64.b64encode(content_md5.encode('utf-8'))
+                # python3 base64encode
+                content_md5 = base64.b64encode(hashlib.md5(req_inter.data).hexdigest().encode('utf-8'))
+
+            req_inter.header["content-md5"] = content_md5
             req_inter.header["content-type"] = "text/xml;charset=UTF-8"
         req_inter.header["x-mns-version"] = self.version
         req_inter.header["host"] = self.host
