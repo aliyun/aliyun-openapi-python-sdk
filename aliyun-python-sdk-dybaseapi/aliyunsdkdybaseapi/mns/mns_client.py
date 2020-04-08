@@ -131,7 +131,7 @@ class MNSClient:
             try:
                 # python2 base64encode
                 b64content_md5 = base64.b64encode(content_md5)
-            except Exception:
+            except TypeError:
                 # python3 base64encode
                 b64content_md5 = base64.b64encode(content_md5.encode('utf-8'))
 
