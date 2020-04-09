@@ -1,3 +1,6 @@
+2020-04-09 Version: 3.1.0
+- Add DescribePrice API.
+
 2020-03-12 Version: 3.0.1
 - Update structure for DescribeAvailableResource without compatible.
 - Rebuild to python sdk.
