@@ -48,6 +48,12 @@ class DescribeDBNodePerformanceRequest(RpcRequest):
 	def set_Key(self,Key):
 		self.add_query_param('Key',Key)
 
+	def get_DBClusterId(self):
+		return self.get_query_params().get('DBClusterId')
+
+	def set_DBClusterId(self,DBClusterId):
+		self.add_query_param('DBClusterId',DBClusterId)
+
 	def get_EndTime(self):
 		return self.get_query_params().get('EndTime')
 

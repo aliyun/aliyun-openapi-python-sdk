@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkpolardb.endpoint import endpoint_data
 
-class ModifyAutoRenewAttributeRequest(RpcRequest):
+class DescribeDBClusterMonitorRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'polardb', '2017-08-01', 'ModifyAutoRenewAttribute','polardb')
+		RpcRequest.__init__(self, 'polardb', '2017-08-01', 'DescribeDBClusterMonitor','polardb')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -36,29 +36,17 @@ class ModifyAutoRenewAttributeRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_Duration(self):
-		return self.get_query_params().get('Duration')
-
-	def set_Duration(self,Duration):
-		self.add_query_param('Duration',Duration)
-
-	def get_ResourceGroupId(self):
-		return self.get_query_params().get('ResourceGroupId')
-
-	def set_ResourceGroupId(self,ResourceGroupId):
-		self.add_query_param('ResourceGroupId',ResourceGroupId)
-
-	def get_RenewalStatus(self):
-		return self.get_query_params().get('RenewalStatus')
-
-	def set_RenewalStatus(self,RenewalStatus):
-		self.add_query_param('RenewalStatus',RenewalStatus)
-
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+
+	def get_DBClusterId(self):
+		return self.get_query_params().get('DBClusterId')
+
+	def set_DBClusterId(self,DBClusterId):
+		self.add_query_param('DBClusterId',DBClusterId)
 
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
@@ -71,15 +59,3 @@ class ModifyAutoRenewAttributeRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
-
-	def get_PeriodUnit(self):
-		return self.get_query_params().get('PeriodUnit')
-
-	def set_PeriodUnit(self,PeriodUnit):
-		self.add_query_param('PeriodUnit',PeriodUnit)
-
-	def get_DBClusterIds(self):
-		return self.get_query_params().get('DBClusterIds')
-
-	def set_DBClusterIds(self,DBClusterIds):
-		self.add_query_param('DBClusterIds',DBClusterIds)

@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkpolardb.endpoint import endpoint_data
 
-class ModifyAutoRenewAttributeRequest(RpcRequest):
+class DescribeDBClusterAvailableResourcesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'polardb', '2017-08-01', 'ModifyAutoRenewAttribute','polardb')
+		RpcRequest.__init__(self, 'polardb', '2017-08-01', 'DescribeDBClusterAvailableResources','polardb')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -36,23 +36,11 @@ class ModifyAutoRenewAttributeRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_Duration(self):
-		return self.get_query_params().get('Duration')
+	def get_DBNodeClass(self):
+		return self.get_query_params().get('DBNodeClass')
 
-	def set_Duration(self,Duration):
-		self.add_query_param('Duration',Duration)
-
-	def get_ResourceGroupId(self):
-		return self.get_query_params().get('ResourceGroupId')
-
-	def set_ResourceGroupId(self,ResourceGroupId):
-		self.add_query_param('ResourceGroupId',ResourceGroupId)
-
-	def get_RenewalStatus(self):
-		return self.get_query_params().get('RenewalStatus')
-
-	def set_RenewalStatus(self,RenewalStatus):
-		self.add_query_param('RenewalStatus',RenewalStatus)
+	def set_DBNodeClass(self,DBNodeClass):
+		self.add_query_param('DBNodeClass',DBNodeClass)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -72,14 +60,26 @@ class ModifyAutoRenewAttributeRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_PeriodUnit(self):
-		return self.get_query_params().get('PeriodUnit')
+	def get_DBType(self):
+		return self.get_query_params().get('DBType')
 
-	def set_PeriodUnit(self,PeriodUnit):
-		self.add_query_param('PeriodUnit',PeriodUnit)
+	def set_DBType(self,DBType):
+		self.add_query_param('DBType',DBType)
 
-	def get_DBClusterIds(self):
-		return self.get_query_params().get('DBClusterIds')
+	def get_DBVersion(self):
+		return self.get_query_params().get('DBVersion')
 
-	def set_DBClusterIds(self,DBClusterIds):
-		self.add_query_param('DBClusterIds',DBClusterIds)
+	def set_DBVersion(self,DBVersion):
+		self.add_query_param('DBVersion',DBVersion)
+
+	def get_ZoneId(self):
+		return self.get_query_params().get('ZoneId')
+
+	def set_ZoneId(self,ZoneId):
+		self.add_query_param('ZoneId',ZoneId)
+
+	def get_PayType(self):
+		return self.get_query_params().get('PayType')
+
+	def set_PayType(self,PayType):
+		self.add_query_param('PayType',PayType)

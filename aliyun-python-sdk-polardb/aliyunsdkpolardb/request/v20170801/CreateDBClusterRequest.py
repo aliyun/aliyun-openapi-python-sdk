@@ -66,6 +66,12 @@ class CreateDBClusterRequest(RpcRequest):
 	def set_DBNodeClass(self,DBNodeClass):
 		self.add_query_param('DBNodeClass',DBNodeClass)
 
+	def get_GDNId(self):
+		return self.get_query_params().get('GDNId')
+
+	def set_GDNId(self,GDNId):
+		self.add_query_param('GDNId',GDNId)
+
 	def get_CreationOption(self):
 		return self.get_query_params().get('CreationOption')
 
@@ -155,6 +161,12 @@ class CreateDBClusterRequest(RpcRequest):
 
 	def set_CloneDataPoint(self,CloneDataPoint):
 		self.add_query_param('CloneDataPoint',CloneDataPoint)
+
+	def get_TDEStatus(self):
+		return self.get_query_params().get('TDEStatus')
+
+	def set_TDEStatus(self,TDEStatus):
+		self.add_query_param('TDEStatus',TDEStatus)
 
 	def get_PayType(self):
 		return self.get_query_params().get('PayType')

@@ -48,6 +48,18 @@ class ModifyDBEndpointAddressRequest(RpcRequest):
 	def set_DBEndpointId(self,DBEndpointId):
 		self.add_query_param('DBEndpointId',DBEndpointId)
 
+	def get_PrivateZoneName(self):
+		return self.get_query_params().get('PrivateZoneName')
+
+	def set_PrivateZoneName(self,PrivateZoneName):
+		self.add_query_param('PrivateZoneName',PrivateZoneName)
+
+	def get_PrivateZoneAddressPrefix(self):
+		return self.get_query_params().get('PrivateZoneAddressPrefix')
+
+	def set_PrivateZoneAddressPrefix(self,PrivateZoneAddressPrefix):
+		self.add_query_param('PrivateZoneAddressPrefix',PrivateZoneAddressPrefix)
+
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
