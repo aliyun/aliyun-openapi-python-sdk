@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkrds.endpoint import endpoint_data
 
-class DescribeLocalAvailableRecoveryTimeRequest(RpcRequest):
+class TerminateMigrateTaskRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'DescribeLocalAvailableRecoveryTime','rds')
+		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'TerminateMigrateTask','rds')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -35,6 +35,12 @@ class DescribeLocalAvailableRecoveryTimeRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+
+	def get_MigrateTaskId(self):
+		return self.get_query_params().get('MigrateTaskId')
+
+	def set_MigrateTaskId(self,MigrateTaskId):
+		self.add_query_param('MigrateTaskId',MigrateTaskId)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -53,9 +59,3 @@ class DescribeLocalAvailableRecoveryTimeRequest(RpcRequest):
 
 	def set_DBInstanceId(self,DBInstanceId):
 		self.add_query_param('DBInstanceId',DBInstanceId)
-
-	def get_Region(self):
-		return self.get_query_params().get('Region')
-
-	def set_Region(self,Region):
-		self.add_query_param('Region',Region)

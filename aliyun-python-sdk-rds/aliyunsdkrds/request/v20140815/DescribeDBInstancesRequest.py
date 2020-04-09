@@ -108,6 +108,12 @@ class DescribeDBInstancesRequest(RpcRequest):
 	def set_ClientToken(self,ClientToken):
 		self.add_query_param('ClientToken',ClientToken)
 
+	def get_InstanceLevel(self):
+		return self.get_query_params().get('InstanceLevel')
+
+	def set_InstanceLevel(self,InstanceLevel):
+		self.add_query_param('InstanceLevel',InstanceLevel)
+
 	def get_SearchKey(self):
 		return self.get_query_params().get('SearchKey')
 
