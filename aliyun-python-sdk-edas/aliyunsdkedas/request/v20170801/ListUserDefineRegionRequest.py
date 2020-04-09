@@ -23,7 +23,7 @@ from aliyunsdkedas.endpoint import endpoint_data
 class ListUserDefineRegionRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'ListUserDefineRegion','Edas')
+		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'ListUserDefineRegion','edas')
 		self.set_uri_pattern('/pop/v5/user_region_defs')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):

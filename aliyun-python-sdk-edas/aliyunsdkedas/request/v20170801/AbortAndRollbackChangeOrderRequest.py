@@ -23,7 +23,7 @@ from aliyunsdkedas.endpoint import endpoint_data
 class AbortAndRollbackChangeOrderRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'AbortAndRollbackChangeOrder','Edas')
+		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'AbortAndRollbackChangeOrder','edas')
 		self.set_uri_pattern('/pop/v5/changeorder/change_order_abort_and_rollback')
 		self.set_method('PUT')
 		if hasattr(self, "endpoint_map"):

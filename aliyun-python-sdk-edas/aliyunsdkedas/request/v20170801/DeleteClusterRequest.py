@@ -23,7 +23,7 @@ from aliyunsdkedas.endpoint import endpoint_data
 class DeleteClusterRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'DeleteCluster','Edas')
+		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'DeleteCluster','edas')
 		self.set_uri_pattern('/pop/v5/resource/cluster')
 		self.set_method('DELETE')
 		if hasattr(self, "endpoint_map"):
