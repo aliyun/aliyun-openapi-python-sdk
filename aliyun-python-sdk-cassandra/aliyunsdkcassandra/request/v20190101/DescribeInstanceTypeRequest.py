@@ -18,11 +18,17 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkcassandra.endpoint import endpoint_data
 
 class DescribeInstanceTypeRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Cassandra', '2019-01-01', 'DescribeInstanceType','Cassandra')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_InstanceType(self):
 		return self.get_query_params().get('InstanceType')
