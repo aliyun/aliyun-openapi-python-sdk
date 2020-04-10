@@ -19,16 +19,10 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class GetOfficePreviewURLRequest(RpcRequest):
+class RefreshOfficeEditTokenRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'imm', '2017-09-06', 'GetOfficePreviewURL','imm')
-
-	def get_SrcType(self):
-		return self.get_query_params().get('SrcType')
-
-	def set_SrcType(self,SrcType):
-		self.add_query_param('SrcType',SrcType)
+		RpcRequest.__init__(self, 'imm', '2017-09-06', 'RefreshOfficeEditToken','imm')
 
 	def get_Project(self):
 		return self.get_query_params().get('Project')
@@ -36,14 +30,14 @@ class GetOfficePreviewURLRequest(RpcRequest):
 	def set_Project(self,Project):
 		self.add_query_param('Project',Project)
 
-	def get_UseOldURL(self):
-		return self.get_query_params().get('UseOldURL')
+	def get_AccessToken(self):
+		return self.get_query_params().get('AccessToken')
 
-	def set_UseOldURL(self,UseOldURL):
-		self.add_query_param('UseOldURL',UseOldURL)
+	def set_AccessToken(self,AccessToken):
+		self.add_query_param('AccessToken',AccessToken)
 
-	def get_SrcUri(self):
-		return self.get_query_params().get('SrcUri')
+	def get_RefreshToken(self):
+		return self.get_query_params().get('RefreshToken')
 
-	def set_SrcUri(self,SrcUri):
-		self.add_query_param('SrcUri',SrcUri)
+	def set_RefreshToken(self,RefreshToken):
+		self.add_query_param('RefreshToken',RefreshToken)
