@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkivpd.endpoint import endpoint_data
 
-class SegmentBodyRequest(RpcRequest):
+class CreateSegmentBodyJobRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ivpd', '2019-06-25', 'SegmentBody','ivpd')
+		RpcRequest.__init__(self, 'ivpd', '2019-06-25', 'CreateSegmentBodyJob','ivpd')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,8 +31,25 @@ class SegmentBodyRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_ImageUrl(self):
-		return self.get_body_params().get('ImageUrl')
+	def get_DataLists(self):
+		return self.get_body_params().get('DataLists')
 
-	def set_ImageUrl(self,ImageUrl):
-		self.add_body_params('ImageUrl', ImageUrl)
+	def set_DataLists(self,DataLists):
+		for i in range(len(DataLists)):	
+			if DataLists[i].get('DataId') is not None:
+				self.add_body_params('DataList.' + str(i + 1) + '.DataId' , DataLists[i].get('DataId'))
+			if DataLists[i].get('ImageUrl') is not None:
+				self.add_body_params('DataList.' + str(i + 1) + '.ImageUrl' , DataLists[i].get('ImageUrl'))
+
+
+	def get_JobId(self):
+		return self.get_body_params().get('JobId')
+
+	def set_JobId(self,JobId):
+		self.add_body_params('JobId', JobId)
+
+	def get_TimeToLive(self):
+		return self.get_body_params().get('TimeToLive')
+
+	def set_TimeToLive(self,TimeToLive):
+		self.add_body_params('TimeToLive', TimeToLive)
