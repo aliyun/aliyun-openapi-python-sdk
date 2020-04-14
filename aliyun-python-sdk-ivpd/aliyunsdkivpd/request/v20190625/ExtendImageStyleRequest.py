@@ -23,7 +23,7 @@ from aliyunsdkivpd.endpoint import endpoint_data
 class ExtendImageStyleRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ivpd', '2019-06-25', 'ExtendImageStyle','ivpd')
+		RpcRequest.__init__(self, 'ivpd', '2019-06-25', 'ExtendImageStyle')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
