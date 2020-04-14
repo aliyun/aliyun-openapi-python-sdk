@@ -1,6 +1,9 @@
 2020-04-14 Version: 1.0.3
 - Supported CreateSegmentBodyJob.
 
+2020-04-14 Version: 1.0.3
+- Supported CreateSegmentBodyJob.
+
 2020-04-13 Version: 1.0.3
 - Generated 2019-06-25 for `ivpd`.
 
