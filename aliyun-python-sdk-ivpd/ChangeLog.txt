@@ -1,3 +1,6 @@
+2020-04-14 Version: 1.0.5
+- Supported CreateSegmentBodyJob.
+
 2020-04-14 Version: 1.0.3
 - Supported CreateSegmentBodyJob.
 
