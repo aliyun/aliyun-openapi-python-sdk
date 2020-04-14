@@ -23,7 +23,7 @@ from aliyunsdkdms_enterprise.endpoint import endpoint_data
 class UpdateUserRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'dms-enterprise', '2018-11-01', 'UpdateUser')
+		RpcRequest.__init__(self, 'dms-enterprise', '2018-11-01', 'UpdateUser','dmsenterprise')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -42,6 +42,18 @@ class UpdateUserRequest(RpcRequest):
 
 	def set_Uid(self,Uid):
 		self.add_query_param('Uid',Uid)
+
+	def get_MaxResultCount(self):
+		return self.get_query_params().get('MaxResultCount')
+
+	def set_MaxResultCount(self,MaxResultCount):
+		self.add_query_param('MaxResultCount',MaxResultCount)
+
+	def get_MaxExecuteCount(self):
+		return self.get_query_params().get('MaxExecuteCount')
+
+	def set_MaxExecuteCount(self,MaxExecuteCount):
+		self.add_query_param('MaxExecuteCount',MaxExecuteCount)
 
 	def get_UserNick(self):
 		return self.get_query_params().get('UserNick')

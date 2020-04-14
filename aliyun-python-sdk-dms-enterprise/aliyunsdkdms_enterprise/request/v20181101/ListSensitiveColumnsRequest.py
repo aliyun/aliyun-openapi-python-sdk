@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdms_enterprise.endpoint import endpoint_data
 
-class CreatePublishGroupTaskRequest(RpcRequest):
+class ListSensitiveColumnsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'dms-enterprise', '2018-11-01', 'CreatePublishGroupTask','dmsenterprise')
+		RpcRequest.__init__(self, 'dms-enterprise', '2018-11-01', 'ListSensitiveColumns','dmsenterprise')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,29 +31,35 @@ class CreatePublishGroupTaskRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_OrderId(self):
-		return self.get_query_params().get('OrderId')
+	def get_SchemaName(self):
+		return self.get_query_params().get('SchemaName')
 
-	def set_OrderId(self,OrderId):
-		self.add_query_param('OrderId',OrderId)
+	def set_SchemaName(self,SchemaName):
+		self.add_query_param('SchemaName',SchemaName)
 
-	def get_DbId(self):
-		return self.get_query_params().get('DbId')
+	def get_SecurityLevel(self):
+		return self.get_query_params().get('SecurityLevel')
 
-	def set_DbId(self,DbId):
-		self.add_query_param('DbId',DbId)
+	def set_SecurityLevel(self,SecurityLevel):
+		self.add_query_param('SecurityLevel',SecurityLevel)
 
-	def get_PlanTime(self):
-		return self.get_query_params().get('PlanTime')
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
 
-	def set_PlanTime(self,PlanTime):
-		self.add_query_param('PlanTime',PlanTime)
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
 
-	def get_Logic(self):
-		return self.get_query_params().get('Logic')
+	def get_TableName(self):
+		return self.get_query_params().get('TableName')
 
-	def set_Logic(self,Logic):
-		self.add_query_param('Logic',Logic)
+	def set_TableName(self,TableName):
+		self.add_query_param('TableName',TableName)
+
+	def get_ColumnName(self):
+		return self.get_query_params().get('ColumnName')
+
+	def set_ColumnName(self,ColumnName):
+		self.add_query_param('ColumnName',ColumnName)
 
 	def get_Tid(self):
 		return self.get_query_params().get('Tid')
@@ -61,8 +67,8 @@ class CreatePublishGroupTaskRequest(RpcRequest):
 	def set_Tid(self,Tid):
 		self.add_query_param('Tid',Tid)
 
-	def get_PublishStrategy(self):
-		return self.get_query_params().get('PublishStrategy')
+	def get_PageNumber(self):
+		return self.get_query_params().get('PageNumber')
 
-	def set_PublishStrategy(self,PublishStrategy):
-		self.add_query_param('PublishStrategy',PublishStrategy)
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)

@@ -23,7 +23,7 @@ from aliyunsdkdms_enterprise.endpoint import endpoint_data
 class RevokeUserPermissionRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'dms-enterprise', '2018-11-01', 'RevokeUserPermission')
+		RpcRequest.__init__(self, 'dms-enterprise', '2018-11-01', 'RevokeUserPermission','dmsenterprise')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
