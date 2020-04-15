@@ -20,19 +20,31 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdknlp_automl.endpoint import endpoint_data
 
-class GetAsyncPredictRequest(RpcRequest):
+class RunPreTrainServiceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'nlp-automl', '2019-11-11', 'GetAsyncPredict','nlpautoml')
-		self.set_method('GET')
+		RpcRequest.__init__(self, 'nlp-automl', '2019-11-11', 'RunPreTrainService','nlpautoml')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_AsyncPredictId(self):
-		return self.get_query_params().get('AsyncPredictId')
+	def get_PredictContent(self):
+		return self.get_body_params().get('PredictContent')
 
-	def set_AsyncPredictId(self,AsyncPredictId):
-		self.add_query_param('AsyncPredictId',AsyncPredictId)
+	def set_PredictContent(self,PredictContent):
+		self.add_body_params('PredictContent', PredictContent)
+
+	def get_ServiceVersion(self):
+		return self.get_body_params().get('ServiceVersion')
+
+	def set_ServiceVersion(self,ServiceVersion):
+		self.add_body_params('ServiceVersion', ServiceVersion)
+
+	def get_ServiceName(self):
+		return self.get_body_params().get('ServiceName')
+
+	def set_ServiceName(self,ServiceName):
+		self.add_body_params('ServiceName', ServiceName)
