@@ -18,38 +18,21 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkcas.endpoint import endpoint_data
 
-class CreateUserCertificateRequest(RpcRequest):
+class DescribeCertificateStateRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'cas', '2018-07-13', 'CreateUserCertificate','cas')
+		RpcRequest.__init__(self, 'cas', '2020-04-07', 'DescribeCertificateState','cas')
+		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_Cert(self):
-		return self.get_query_params().get('Cert')
 
-	def set_Cert(self,Cert):
-		self.add_query_param('Cert',Cert)
+	def get_OrderId(self):
+		return self.get_query_params().get('OrderId')
 
-	def get_SourceIp(self):
-		return self.get_query_params().get('SourceIp')
-
-	def set_SourceIp(self,SourceIp):
-		self.add_query_param('SourceIp',SourceIp)
-
-	def get_Name(self):
-		return self.get_query_params().get('Name')
-
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)
-
-	def get_Lang(self):
-		return self.get_query_params().get('Lang')
-
-	def set_Lang(self,Lang):
-		self.add_query_param('Lang',Lang)
-
-	def get_Key(self):
-		return self.get_query_params().get('Key')
-
-	def set_Key(self,Key):
-		self.add_query_param('Key',Key)
+	def set_OrderId(self,OrderId):
+		self.add_query_param('OrderId',OrderId)

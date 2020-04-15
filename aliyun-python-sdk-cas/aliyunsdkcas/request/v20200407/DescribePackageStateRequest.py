@@ -18,32 +18,14 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkcas.endpoint import endpoint_data
 
-class DescribeUserCertificateListRequest(RpcRequest):
+class DescribePackageStateRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'cas', '2018-07-13', 'DescribeUserCertificateList','cas')
-
-	def get_ShowSize(self):
-		return self.get_query_params().get('ShowSize')
-
-	def set_ShowSize(self,ShowSize):
-		self.add_query_param('ShowSize',ShowSize)
-
-	def get_CurrentPage(self):
-		return self.get_query_params().get('CurrentPage')
-
-	def set_CurrentPage(self,CurrentPage):
-		self.add_query_param('CurrentPage',CurrentPage)
-
-	def get_SourceIp(self):
-		return self.get_query_params().get('SourceIp')
-
-	def set_SourceIp(self,SourceIp):
-		self.add_query_param('SourceIp',SourceIp)
-
-	def get_Lang(self):
-		return self.get_query_params().get('Lang')
-
-	def set_Lang(self,Lang):
-		self.add_query_param('Lang',Lang)
+		RpcRequest.__init__(self, 'cas', '2020-04-07', 'DescribePackageState','cas')
+		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())

@@ -18,26 +18,21 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkcas.endpoint import endpoint_data
 
-class DescribeOrderInstanceListRequest(RpcRequest):
+class DeleteCertificateRequestRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'cas', '2018-07-13', 'DescribeOrderInstanceList','cas')
+		RpcRequest.__init__(self, 'cas', '2020-04-07', 'DeleteCertificateRequest','cas')
+		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_SourceIp(self):
-		return self.get_query_params().get('SourceIp')
 
-	def set_SourceIp(self,SourceIp):
-		self.add_query_param('SourceIp',SourceIp)
+	def get_OrderId(self):
+		return self.get_query_params().get('OrderId')
 
-	def get_StartIndex(self):
-		return self.get_query_params().get('StartIndex')
-
-	def set_StartIndex(self,StartIndex):
-		self.add_query_param('StartIndex',StartIndex)
-
-	def get_Lang(self):
-		return self.get_query_params().get('Lang')
-
-	def set_Lang(self,Lang):
-		self.add_query_param('Lang',Lang)
+	def set_OrderId(self,OrderId):
+		self.add_query_param('OrderId',OrderId)
