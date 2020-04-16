@@ -48,6 +48,12 @@ class StopInstancesRequest(RpcRequest):
 	def set_ForceStop(self,ForceStop):
 		self.add_query_param('ForceStop',ForceStop)
 
+	def get_BatchOptimization(self):
+		return self.get_query_params().get('BatchOptimization')
+
+	def set_BatchOptimization(self,BatchOptimization):
+		self.add_query_param('BatchOptimization',BatchOptimization)
+
 	def get_DryRun(self):
 		return self.get_query_params().get('DryRun')
 

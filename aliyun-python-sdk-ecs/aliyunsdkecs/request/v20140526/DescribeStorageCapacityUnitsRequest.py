@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkecs.endpoint import endpoint_data
 
-class GetInstanceConsoleOutputRequest(RpcRequest):
+class DescribeStorageCapacityUnitsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'GetInstanceConsoleOutput','ecs')
+		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'DescribeStorageCapacityUnits','ecs')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -36,11 +36,31 @@ class GetInstanceConsoleOutputRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_RemoveSymbols(self):
-		return self.get_query_params().get('RemoveSymbols')
+	def get_PageNumber(self):
+		return self.get_query_params().get('PageNumber')
 
-	def set_RemoveSymbols(self,RemoveSymbols):
-		self.add_query_param('RemoveSymbols',RemoveSymbols)
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)
+
+	def get_Capacity(self):
+		return self.get_query_params().get('Capacity')
+
+	def set_Capacity(self,Capacity):
+		self.add_query_param('Capacity',Capacity)
+
+	def get_StorageCapacityUnitIds(self):
+		return self.get_query_params().get('StorageCapacityUnitIds')
+
+	def set_StorageCapacityUnitIds(self,StorageCapacityUnitIds):
+		for i in range(len(StorageCapacityUnitIds)):	
+			if StorageCapacityUnitIds[i] is not None:
+				self.add_query_param('StorageCapacityUnitId.' + str(i + 1) , StorageCapacityUnitIds[i]);
+
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -60,8 +80,16 @@ class GetInstanceConsoleOutputRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_InstanceId(self):
-		return self.get_query_params().get('InstanceId')
+	def get_Name(self):
+		return self.get_query_params().get('Name')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
+	def set_Name(self,Name):
+		self.add_query_param('Name',Name)
+
+	def get_Statuss(self):
+		return self.get_query_params().get('Statuss')
+
+	def set_Statuss(self,Statuss):
+		for i in range(len(Statuss)):	
+			if Statuss[i] is not None:
+				self.add_query_param('Status.' + str(i + 1) , Statuss[i]);

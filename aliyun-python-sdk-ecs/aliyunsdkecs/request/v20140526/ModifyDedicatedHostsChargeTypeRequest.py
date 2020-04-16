@@ -20,15 +20,21 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkecs.endpoint import endpoint_data
 
-class GetInstanceConsoleOutputRequest(RpcRequest):
+class ModifyDedicatedHostsChargeTypeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'GetInstanceConsoleOutput','ecs')
+		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'ModifyDedicatedHostsChargeType','ecs')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+
+	def get_DedicatedHostIds(self):
+		return self.get_query_params().get('DedicatedHostIds')
+
+	def set_DedicatedHostIds(self,DedicatedHostIds):
+		self.add_query_param('DedicatedHostIds',DedicatedHostIds)
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -36,11 +42,35 @@ class GetInstanceConsoleOutputRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_RemoveSymbols(self):
-		return self.get_query_params().get('RemoveSymbols')
+	def get_ClientToken(self):
+		return self.get_query_params().get('ClientToken')
 
-	def set_RemoveSymbols(self,RemoveSymbols):
-		self.add_query_param('RemoveSymbols',RemoveSymbols)
+	def set_ClientToken(self,ClientToken):
+		self.add_query_param('ClientToken',ClientToken)
+
+	def get_DedicatedHostChargeType(self):
+		return self.get_query_params().get('DedicatedHostChargeType')
+
+	def set_DedicatedHostChargeType(self,DedicatedHostChargeType):
+		self.add_query_param('DedicatedHostChargeType',DedicatedHostChargeType)
+
+	def get_Period(self):
+		return self.get_query_params().get('Period')
+
+	def set_Period(self,Period):
+		self.add_query_param('Period',Period)
+
+	def get_DryRun(self):
+		return self.get_query_params().get('DryRun')
+
+	def set_DryRun(self,DryRun):
+		self.add_query_param('DryRun',DryRun)
+
+	def get_AutoPay(self):
+		return self.get_query_params().get('AutoPay')
+
+	def set_AutoPay(self,AutoPay):
+		self.add_query_param('AutoPay',AutoPay)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -60,8 +90,14 @@ class GetInstanceConsoleOutputRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_InstanceId(self):
-		return self.get_query_params().get('InstanceId')
+	def get_DetailFee(self):
+		return self.get_query_params().get('DetailFee')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
+	def set_DetailFee(self,DetailFee):
+		self.add_query_param('DetailFee',DetailFee)
+
+	def get_PeriodUnit(self):
+		return self.get_query_params().get('PeriodUnit')
+
+	def set_PeriodUnit(self,PeriodUnit):
+		self.add_query_param('PeriodUnit',PeriodUnit)

@@ -36,6 +36,12 @@ class RebootInstancesRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_BatchOptimization(self):
+		return self.get_query_params().get('BatchOptimization')
+
+	def set_BatchOptimization(self,BatchOptimization):
+		self.add_query_param('BatchOptimization',BatchOptimization)
+
 	def get_DryRun(self):
 		return self.get_query_params().get('DryRun')
 
