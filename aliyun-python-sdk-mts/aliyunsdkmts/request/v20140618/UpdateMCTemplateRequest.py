@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,10 +18,17 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkmts.endpoint import endpoint_data
+
 class UpdateMCTemplateRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Mts', '2014-06-18', 'UpdateMCTemplate','mts')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_Politics(self):
 		return self.get_query_params().get('Politics')
@@ -35,6 +42,42 @@ class UpdateMCTemplateRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_Abuse(self):
+		return self.get_query_params().get('Abuse')
+
+	def set_Abuse(self,Abuse):
+		self.add_query_param('Abuse',Abuse)
+
+	def get_Qrcode(self):
+		return self.get_query_params().get('Qrcode')
+
+	def set_Qrcode(self,Qrcode):
+		self.add_query_param('Qrcode',Qrcode)
+
+	def get_Porn(self):
+		return self.get_query_params().get('Porn')
+
+	def set_Porn(self,Porn):
+		self.add_query_param('Porn',Porn)
+
+	def get_Terrorism(self):
+		return self.get_query_params().get('Terrorism')
+
+	def set_Terrorism(self,Terrorism):
+		self.add_query_param('Terrorism',Terrorism)
+
+	def get_Logo(self):
+		return self.get_query_params().get('Logo')
+
+	def set_Logo(self,Logo):
+		self.add_query_param('Logo',Logo)
+
+	def get_Live(self):
+		return self.get_query_params().get('Live')
+
+	def set_Live(self,Live):
+		self.add_query_param('Live',Live)
+
 	def get_Contraband(self):
 		return self.get_query_params().get('Contraband')
 
@@ -47,23 +90,11 @@ class UpdateMCTemplateRequest(RpcRequest):
 	def set_Ad(self,Ad):
 		self.add_query_param('Ad',Ad)
 
-	def get_Abuse(self):
-		return self.get_query_params().get('Abuse')
-
-	def set_Abuse(self,Abuse):
-		self.add_query_param('Abuse',Abuse)
-
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_Qrcode(self):
-		return self.get_query_params().get('Qrcode')
-
-	def set_Qrcode(self,Qrcode):
-		self.add_query_param('Qrcode',Qrcode)
 
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
@@ -83,38 +114,14 @@ class UpdateMCTemplateRequest(RpcRequest):
 	def set_TemplateId(self,TemplateId):
 		self.add_query_param('TemplateId',TemplateId)
 
-	def get_Porn(self):
-		return self.get_query_params().get('Porn')
-
-	def set_Porn(self,Porn):
-		self.add_query_param('Porn',Porn)
-
-	def get_Terrorism(self):
-		return self.get_query_params().get('Terrorism')
-
-	def set_Terrorism(self,Terrorism):
-		self.add_query_param('Terrorism',Terrorism)
-
 	def get_Name(self):
 		return self.get_query_params().get('Name')
 
 	def set_Name(self,Name):
 		self.add_query_param('Name',Name)
 
-	def get_Logo(self):
-		return self.get_query_params().get('Logo')
-
-	def set_Logo(self,Logo):
-		self.add_query_param('Logo',Logo)
-
 	def get_spam(self):
 		return self.get_query_params().get('spam')
 
 	def set_spam(self,spam):
 		self.add_query_param('spam',spam)
-
-	def get_Live(self):
-		return self.get_query_params().get('Live')
-
-	def set_Live(self,Live):
-		self.add_query_param('Live',Live)
