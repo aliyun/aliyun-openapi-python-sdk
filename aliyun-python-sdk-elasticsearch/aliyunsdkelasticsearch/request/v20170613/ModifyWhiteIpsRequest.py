@@ -20,20 +20,26 @@
 from aliyunsdkcore.request import RoaRequest
 from aliyunsdkelasticsearch.endpoint import endpoint_data
 
-class GetRegionConfigurationRequest(RoaRequest):
+class ModifyWhiteIpsRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'elasticsearch', '2017-06-13', 'GetRegionConfiguration','elasticsearch')
-		self.set_uri_pattern('/openapi/region')
-		self.set_method('GET')
+		RoaRequest.__init__(self, 'elasticsearch', '2017-06-13', 'ModifyWhiteIps','elasticsearch')
+		self.set_uri_pattern('/openapi/instances/[InstanceId]/actions/modify-white-ips')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_zoneId(self):
-		return self.get_query_params().get('zoneId')
+	def get_InstanceId(self):
+		return self.get_path_params().get('InstanceId')
 
-	def set_zoneId(self,zoneId):
-		self.add_query_param('zoneId',zoneId)
+	def set_InstanceId(self,InstanceId):
+		self.add_path_param('InstanceId',InstanceId)
+
+	def get_clientToken(self):
+		return self.get_query_params().get('clientToken')
+
+	def set_clientToken(self,clientToken):
+		self.add_query_param('clientToken',clientToken)
