@@ -20,10 +20,11 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkccc.endpoint import endpoint_data
 
-class GetContactInfoByOutboundTaskIdRequest(RpcRequest):
+class InflightTaskTimeoutRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'CCC', '2017-07-05', 'GetContactInfoByOutboundTaskId')
+		RpcRequest.__init__(self, 'CCC', '2017-07-05', 'InflightTaskTimeout')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -36,14 +37,14 @@ class GetContactInfoByOutboundTaskIdRequest(RpcRequest):
 	def set_InstanceId(self,InstanceId):
 		self.add_query_param('InstanceId',InstanceId)
 
-	def get_OutboundTaskId(self):
-		return self.get_query_params().get('OutboundTaskId')
+	def get_InstanceOwnerId(self):
+		return self.get_query_params().get('InstanceOwnerId')
 
-	def set_OutboundTaskId(self,OutboundTaskId):
-		self.add_query_param('OutboundTaskId',OutboundTaskId)
+	def set_InstanceOwnerId(self,InstanceOwnerId):
+		self.add_query_param('InstanceOwnerId',InstanceOwnerId)
 
-	def get_SkillGroupId(self):
-		return self.get_query_params().get('SkillGroupId')
+	def get_TaskId(self):
+		return self.get_query_params().get('TaskId')
 
-	def set_SkillGroupId(self,SkillGroupId):
-		self.add_query_param('SkillGroupId',SkillGroupId)
+	def set_TaskId(self,TaskId):
+		self.add_query_param('TaskId',TaskId)

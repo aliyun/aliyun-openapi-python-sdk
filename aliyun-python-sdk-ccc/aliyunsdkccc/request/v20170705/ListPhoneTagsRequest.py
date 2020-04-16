@@ -20,15 +20,42 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkccc.endpoint import endpoint_data
 
-class ListPrivilegesOfUserRequest(RpcRequest):
+class ListPhoneTagsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'CCC', '2017-07-05', 'ListPrivilegesOfUser')
+		RpcRequest.__init__(self, 'CCC', '2017-07-05', 'ListPhoneTags')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+
+	def get_NumberGroupIdss(self):
+		return self.get_query_params().get('NumberGroupIdss')
+
+	def set_NumberGroupIdss(self,NumberGroupIdss):
+		for i in range(len(NumberGroupIdss)):	
+			if NumberGroupIdss[i] is not None:
+				self.add_query_param('NumberGroupIds.' + str(i + 1) , NumberGroupIdss[i]);
+
+	def get_CurrentPage(self):
+		return self.get_query_params().get('CurrentPage')
+
+	def set_CurrentPage(self,CurrentPage):
+		self.add_query_param('CurrentPage',CurrentPage)
+
+	def get_OutboundOnly(self):
+		return self.get_query_params().get('OutboundOnly')
+
+	def set_OutboundOnly(self,OutboundOnly):
+		self.add_query_param('OutboundOnly',OutboundOnly)
+
+	def get_Number(self):
+		return self.get_query_params().get('Number')
+
+	def set_Number(self,Number):
+		self.add_query_param('Number',Number)
 
 	def get_InstanceId(self):
 		return self.get_query_params().get('InstanceId')
@@ -36,8 +63,8 @@ class ListPrivilegesOfUserRequest(RpcRequest):
 	def set_InstanceId(self,InstanceId):
 		self.add_query_param('InstanceId',InstanceId)
 
-	def get_UserId(self):
-		return self.get_query_params().get('UserId')
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
 
-	def set_UserId(self,UserId):
-		self.add_query_param('UserId',UserId)
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)

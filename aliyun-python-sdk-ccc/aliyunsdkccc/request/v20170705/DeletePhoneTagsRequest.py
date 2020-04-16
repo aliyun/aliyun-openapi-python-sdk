@@ -20,24 +20,27 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkccc.endpoint import endpoint_data
 
-class GetPredictiveJobRequest(RpcRequest):
+class DeletePhoneTagsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'CCC', '2017-07-05', 'GetPredictiveJob')
+		RpcRequest.__init__(self, 'CCC', '2017-07-05', 'DeletePhoneTags')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_JobId(self):
-		return self.get_query_params().get('JobId')
-
-	def set_JobId(self,JobId):
-		self.add_query_param('JobId',JobId)
-
 	def get_InstanceId(self):
 		return self.get_query_params().get('InstanceId')
 
 	def set_InstanceId(self,InstanceId):
 		self.add_query_param('InstanceId',InstanceId)
+
+	def get_PhoneNumberLists(self):
+		return self.get_query_params().get('PhoneNumberLists')
+
+	def set_PhoneNumberLists(self,PhoneNumberLists):
+		for i in range(len(PhoneNumberLists)):	
+			if PhoneNumberLists[i] is not None:
+				self.add_query_param('PhoneNumberList.' + str(i + 1) , PhoneNumberLists[i]);

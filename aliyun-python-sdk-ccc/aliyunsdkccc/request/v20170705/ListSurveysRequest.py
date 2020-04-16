@@ -24,6 +24,7 @@ class ListSurveysRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'CCC', '2017-07-05', 'ListSurveys')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):

@@ -20,23 +20,22 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkccc.endpoint import endpoint_data
 
-class CreatePredictiveJobsRequest(RpcRequest):
+class TaskPreparingRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'CCC', '2017-07-05', 'CreatePredictiveJobs')
+		RpcRequest.__init__(self, 'CCC', '2017-07-05', 'TaskPreparing')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_JobsJsons(self):
-		return self.get_query_params().get('JobsJsons')
+	def get_JobId(self):
+		return self.get_query_params().get('JobId')
 
-	def set_JobsJsons(self,JobsJsons):
-		for i in range(len(JobsJsons)):	
-			if JobsJsons[i] is not None:
-				self.add_query_param('JobsJson.' + str(i + 1) , JobsJsons[i]);
+	def set_JobId(self,JobId):
+		self.add_query_param('JobId',JobId)
 
 	def get_InstanceId(self):
 		return self.get_query_params().get('InstanceId')
@@ -44,14 +43,8 @@ class CreatePredictiveJobsRequest(RpcRequest):
 	def set_InstanceId(self,InstanceId):
 		self.add_query_param('InstanceId',InstanceId)
 
-	def get_SkillGroupId(self):
-		return self.get_query_params().get('SkillGroupId')
+	def get_InstanceOwnerId(self):
+		return self.get_query_params().get('InstanceOwnerId')
 
-	def set_SkillGroupId(self,SkillGroupId):
-		self.add_query_param('SkillGroupId',SkillGroupId)
-
-	def get_StrategyJson(self):
-		return self.get_query_params().get('StrategyJson')
-
-	def set_StrategyJson(self,StrategyJson):
-		self.add_query_param('StrategyJson',StrategyJson)
+	def set_InstanceOwnerId(self,InstanceOwnerId):
+		self.add_query_param('InstanceOwnerId',InstanceOwnerId)

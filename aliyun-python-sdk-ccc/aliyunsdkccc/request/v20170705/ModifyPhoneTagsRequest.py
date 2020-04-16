@@ -20,10 +20,11 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkccc.endpoint import endpoint_data
 
-class GetContactIdentifyByOutBoundTaskIdRequest(RpcRequest):
+class ModifyPhoneTagsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'CCC', '2017-07-05', 'GetContactIdentifyByOutBoundTaskId')
+		RpcRequest.__init__(self, 'CCC', '2017-07-05', 'ModifyPhoneTags')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -36,8 +37,16 @@ class GetContactIdentifyByOutBoundTaskIdRequest(RpcRequest):
 	def set_InstanceId(self,InstanceId):
 		self.add_query_param('InstanceId',InstanceId)
 
-	def get_OutboundTaskId(self):
-		return self.get_query_params().get('OutboundTaskId')
+	def get_SkillGroupIdLists(self):
+		return self.get_query_params().get('SkillGroupIdLists')
 
-	def set_OutboundTaskId(self,OutboundTaskId):
-		self.add_query_param('OutboundTaskId',OutboundTaskId)
+	def set_SkillGroupIdLists(self,SkillGroupIdLists):
+		for i in range(len(SkillGroupIdLists)):	
+			if SkillGroupIdLists[i] is not None:
+				self.add_query_param('SkillGroupIdList.' + str(i + 1) , SkillGroupIdLists[i]);
+
+	def get_ServiceTag(self):
+		return self.get_query_params().get('ServiceTag')
+
+	def set_ServiceTag(self,ServiceTag):
+		self.add_query_param('ServiceTag',ServiceTag)

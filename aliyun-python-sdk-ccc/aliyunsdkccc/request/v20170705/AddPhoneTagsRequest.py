@@ -20,33 +20,22 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkccc.endpoint import endpoint_data
 
-class ModifyMediaRequest(RpcRequest):
+class AddPhoneTagsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'CCC', '2017-07-05', 'ModifyMedia')
+		RpcRequest.__init__(self, 'CCC', '2017-07-05', 'AddPhoneTags')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_Description(self):
-		return self.get_query_params().get('Description')
+	def get_RegionNameProvince(self):
+		return self.get_query_params().get('RegionNameProvince')
 
-	def set_Description(self,Description):
-		self.add_query_param('Description',Description)
-
-	def get_OssFilePath(self):
-		return self.get_query_params().get('OssFilePath')
-
-	def set_OssFilePath(self,OssFilePath):
-		self.add_query_param('OssFilePath',OssFilePath)
-
-	def get_UploadResult(self):
-		return self.get_query_params().get('UploadResult')
-
-	def set_UploadResult(self,UploadResult):
-		self.add_query_param('UploadResult',UploadResult)
+	def set_RegionNameProvince(self,RegionNameProvince):
+		self.add_query_param('RegionNameProvince',RegionNameProvince)
 
 	def get_Type(self):
 		return self.get_query_params().get('Type')
@@ -54,17 +43,11 @@ class ModifyMediaRequest(RpcRequest):
 	def set_Type(self,Type):
 		self.add_query_param('Type',Type)
 
-	def get_Content(self):
-		return self.get_query_params().get('Content')
+	def get_Concurrency(self):
+		return self.get_query_params().get('Concurrency')
 
-	def set_Content(self,Content):
-		self.add_query_param('Content',Content)
-
-	def get_OssFileName(self):
-		return self.get_query_params().get('OssFileName')
-
-	def set_OssFileName(self,OssFileName):
-		self.add_query_param('OssFileName',OssFileName)
+	def set_Concurrency(self,Concurrency):
+		self.add_query_param('Concurrency',Concurrency)
 
 	def get_InstanceId(self):
 		return self.get_query_params().get('InstanceId')
@@ -72,14 +55,28 @@ class ModifyMediaRequest(RpcRequest):
 	def set_InstanceId(self,InstanceId):
 		self.add_query_param('InstanceId',InstanceId)
 
-	def get_FileName(self):
-		return self.get_query_params().get('FileName')
+	def get_Provider(self):
+		return self.get_query_params().get('Provider')
 
-	def set_FileName(self,FileName):
-		self.add_query_param('FileName',FileName)
+	def set_Provider(self,Provider):
+		self.add_query_param('Provider',Provider)
 
-	def get_Name(self):
-		return self.get_query_params().get('Name')
+	def get_PhoneNumberLists(self):
+		return self.get_query_params().get('PhoneNumberLists')
 
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)
+	def set_PhoneNumberLists(self,PhoneNumberLists):
+		for i in range(len(PhoneNumberLists)):	
+			if PhoneNumberLists[i] is not None:
+				self.add_query_param('PhoneNumberList.' + str(i + 1) , PhoneNumberLists[i]);
+
+	def get_ServiceTag(self):
+		return self.get_query_params().get('ServiceTag')
+
+	def set_ServiceTag(self,ServiceTag):
+		self.add_query_param('ServiceTag',ServiceTag)
+
+	def get_RegionNameCity(self):
+		return self.get_query_params().get('RegionNameCity')
+
+	def set_RegionNameCity(self,RegionNameCity):
+		self.add_query_param('RegionNameCity',RegionNameCity)

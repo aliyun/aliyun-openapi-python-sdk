@@ -24,11 +24,24 @@ class ListOutboundPhoneNumberOfUserRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'CCC', '2017-07-05', 'ListOutboundPhoneNumberOfUser')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+
+	def get_UserId(self):
+		return self.get_query_params().get('UserId')
+
+	def set_UserId(self,UserId):
+		self.add_query_param('UserId',UserId)
+
+	def get_PageNumber(self):
+		return self.get_query_params().get('PageNumber')
+
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)
 
 	def get_InstanceId(self):
 		return self.get_query_params().get('InstanceId')
@@ -36,8 +49,8 @@ class ListOutboundPhoneNumberOfUserRequest(RpcRequest):
 	def set_InstanceId(self,InstanceId):
 		self.add_query_param('InstanceId',InstanceId)
 
-	def get_UserId(self):
-		return self.get_query_params().get('UserId')
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
 
-	def set_UserId(self,UserId):
-		self.add_query_param('UserId',UserId)
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)

@@ -24,6 +24,7 @@ class DialogueRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'CCC', '2017-07-05', 'Dialogue')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -36,41 +37,11 @@ class DialogueRequest(RpcRequest):
 	def set_CallId(self,CallId):
 		self.add_query_param('CallId',CallId)
 
-	def get_ActionParams(self):
-		return self.get_query_params().get('ActionParams')
-
-	def set_ActionParams(self,ActionParams):
-		self.add_query_param('ActionParams',ActionParams)
-
-	def get_CallingNumber(self):
-		return self.get_query_params().get('CallingNumber')
-
-	def set_CallingNumber(self,CallingNumber):
-		self.add_query_param('CallingNumber',CallingNumber)
-
-	def get_InstanceId(self):
-		return self.get_query_params().get('InstanceId')
-
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
-
 	def get_CalledNumber(self):
 		return self.get_query_params().get('CalledNumber')
 
 	def set_CalledNumber(self,CalledNumber):
 		self.add_query_param('CalledNumber',CalledNumber)
-
-	def get_InstanceOwnerId(self):
-		return self.get_query_params().get('InstanceOwnerId')
-
-	def set_InstanceOwnerId(self,InstanceOwnerId):
-		self.add_query_param('InstanceOwnerId',InstanceOwnerId)
-
-	def get_ActionKey(self):
-		return self.get_query_params().get('ActionKey')
-
-	def set_ActionKey(self,ActionKey):
-		self.add_query_param('ActionKey',ActionKey)
 
 	def get_CallType(self):
 		return self.get_query_params().get('CallType')
@@ -95,3 +66,27 @@ class DialogueRequest(RpcRequest):
 
 	def set_Utterance(self,Utterance):
 		self.add_query_param('Utterance',Utterance)
+
+	def get_ActionParams(self):
+		return self.get_query_params().get('ActionParams')
+
+	def set_ActionParams(self,ActionParams):
+		self.add_query_param('ActionParams',ActionParams)
+
+	def get_CallingNumber(self):
+		return self.get_query_params().get('CallingNumber')
+
+	def set_CallingNumber(self,CallingNumber):
+		self.add_query_param('CallingNumber',CallingNumber)
+
+	def get_InstanceId(self):
+		return self.get_query_params().get('InstanceId')
+
+	def set_InstanceId(self,InstanceId):
+		self.add_query_param('InstanceId',InstanceId)
+
+	def get_ActionKey(self):
+		return self.get_query_params().get('ActionKey')
+
+	def set_ActionKey(self,ActionKey):
+		self.add_query_param('ActionKey',ActionKey)
