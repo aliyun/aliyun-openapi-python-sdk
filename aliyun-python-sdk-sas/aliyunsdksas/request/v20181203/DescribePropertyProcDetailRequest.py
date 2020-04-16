@@ -18,11 +18,17 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdksas.endpoint import endpoint_data
 
 class DescribePropertyProcDetailRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribePropertyProcDetail','sas')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_Remark(self):
 		return self.get_query_params().get('Remark')
@@ -41,12 +47,6 @@ class DescribePropertyProcDetailRequest(RpcRequest):
 
 	def set_Cmdline(self,Cmdline):
 		self.add_query_param('Cmdline',Cmdline)
-
-	def get_SourceIp(self):
-		return self.get_query_params().get('SourceIp')
-
-	def set_SourceIp(self,SourceIp):
-		self.add_query_param('SourceIp',SourceIp)
 
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')

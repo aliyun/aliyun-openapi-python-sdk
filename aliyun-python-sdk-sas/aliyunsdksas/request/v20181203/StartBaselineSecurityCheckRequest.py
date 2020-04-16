@@ -18,11 +18,17 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdksas.endpoint import endpoint_data
 
 class StartBaselineSecurityCheckRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'StartBaselineSecurityCheck','sas')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -43,14 +49,6 @@ class StartBaselineSecurityCheckRequest(RpcRequest):
 
 	def set_Type(self,Type):
 		self.add_query_param('Type',Type)
-
-	def get_Assetss(self):
-		return self.get_query_params().get('Assetss')
-
-	def set_Assetss(self,Assetss):
-		for i in range(len(Assetss)):	
-			if Assetss[i] is not None:
-				self.add_query_param('Assets.' + str(i + 1) , Assetss[i]);
 
 	def get_SourceIp(self):
 		return self.get_query_params().get('SourceIp')
