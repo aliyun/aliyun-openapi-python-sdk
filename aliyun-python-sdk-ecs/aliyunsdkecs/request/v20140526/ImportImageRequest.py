@@ -67,11 +67,28 @@ class ImportImageRequest(RpcRequest):
 	def set_Platform(self,Platform):
 		self.add_query_param('Platform',Platform)
 
+	def get_ResourceGroupId(self):
+		return self.get_query_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self,ResourceGroupId):
+		self.add_query_param('ResourceGroupId',ResourceGroupId)
+
 	def get_ImageName(self):
 		return self.get_query_params().get('ImageName')
 
 	def set_ImageName(self,ImageName):
 		self.add_query_param('ImageName',ImageName)
+
+	def get_Tags(self):
+		return self.get_query_params().get('Tags')
+
+	def set_Tags(self,Tags):
+		for i in range(len(Tags)):	
+			if Tags[i].get('Value') is not None:
+				self.add_query_param('Tag.' + str(i + 1) + '.Value' , Tags[i].get('Value'))
+			if Tags[i].get('Key') is not None:
+				self.add_query_param('Tag.' + str(i + 1) + '.Key' , Tags[i].get('Key'))
+
 
 	def get_Architecture(self):
 		return self.get_query_params().get('Architecture')
