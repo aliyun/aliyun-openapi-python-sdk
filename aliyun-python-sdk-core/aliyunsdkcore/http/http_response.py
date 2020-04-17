@@ -124,7 +124,7 @@ class HttpResponse(HttpRequest):
 
             response = s.send(prepped, proxies=proxies,
                               timeout=(self.__connect_timeout, self.__read_timeout),
-                              allow_redirects=False, verify=self.get_verify_value(), cert=None)
+                              allow_redirects=True, verify=self.get_verify_value(), cert=None)
 
             http_debug = os.environ.get('DEBUG')
 
