@@ -23,7 +23,7 @@ from aliyunsdkmultimediaai.endpoint import endpoint_data
 class DeleteFaceGroupRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'multimediaai', '2019-08-10', 'DeleteFaceGroup','multimediaai')
+		RpcRequest.__init__(self, 'multimediaai', '2019-08-10', 'DeleteFaceGroup')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):

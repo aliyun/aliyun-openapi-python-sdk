@@ -23,7 +23,7 @@ from aliyunsdkmultimediaai.endpoint import endpoint_data
 class CreateFacePersonRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'multimediaai', '2019-08-10', 'CreateFacePerson','multimediaai')
+		RpcRequest.__init__(self, 'multimediaai', '2019-08-10', 'CreateFacePerson')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
