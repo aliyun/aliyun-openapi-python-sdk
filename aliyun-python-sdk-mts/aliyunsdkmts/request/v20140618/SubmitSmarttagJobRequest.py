@@ -23,7 +23,7 @@ from aliyunsdkmts.endpoint import endpoint_data
 class SubmitSmarttagJobRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Mts', '2014-06-18', 'SubmitSmarttagJob','mts')
+		RpcRequest.__init__(self, 'Mts', '2014-06-18', 'SubmitSmarttagJob')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -83,6 +83,12 @@ class SubmitSmarttagJobRequest(RpcRequest):
 
 	def set_Params(self,Params):
 		self.add_query_param('Params',Params)
+
+	def get_TemplateId(self):
+		return self.get_query_params().get('TemplateId')
+
+	def set_TemplateId(self,TemplateId):
+		self.add_query_param('TemplateId',TemplateId)
 
 	def get_PipelineId(self):
 		return self.get_query_params().get('PipelineId')

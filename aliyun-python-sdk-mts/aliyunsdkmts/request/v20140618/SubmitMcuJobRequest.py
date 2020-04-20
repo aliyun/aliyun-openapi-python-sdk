@@ -23,7 +23,7 @@ from aliyunsdkmts.endpoint import endpoint_data
 class SubmitMcuJobRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Mts', '2014-06-18', 'SubmitMcuJob','mts')
+		RpcRequest.__init__(self, 'Mts', '2014-06-18', 'SubmitMcuJob')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):

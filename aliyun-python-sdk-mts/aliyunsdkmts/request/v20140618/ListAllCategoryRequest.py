@@ -23,7 +23,7 @@ from aliyunsdkmts.endpoint import endpoint_data
 class ListAllCategoryRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Mts', '2014-06-18', 'ListAllCategory','mts')
+		RpcRequest.__init__(self, 'Mts', '2014-06-18', 'ListAllCategory')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):

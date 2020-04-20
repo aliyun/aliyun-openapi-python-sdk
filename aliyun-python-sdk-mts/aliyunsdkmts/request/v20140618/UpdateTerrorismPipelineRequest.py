@@ -23,7 +23,7 @@ from aliyunsdkmts.endpoint import endpoint_data
 class UpdateTerrorismPipelineRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Mts', '2014-06-18', 'UpdateTerrorismPipeline','mts')
+		RpcRequest.__init__(self, 'Mts', '2014-06-18', 'UpdateTerrorismPipeline')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):

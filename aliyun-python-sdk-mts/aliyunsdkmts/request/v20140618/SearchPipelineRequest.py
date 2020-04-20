@@ -23,7 +23,7 @@ from aliyunsdkmts.endpoint import endpoint_data
 class SearchPipelineRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Mts', '2014-06-18', 'SearchPipeline','mts')
+		RpcRequest.__init__(self, 'Mts', '2014-06-18', 'SearchPipeline')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
