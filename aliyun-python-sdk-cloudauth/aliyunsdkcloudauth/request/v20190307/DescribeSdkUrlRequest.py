@@ -20,18 +20,24 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcloudauth.endpoint import endpoint_data
 
-class DescribeUploadInfoRequest(RpcRequest):
+class DescribeSdkUrlRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cloudauth', '2019-03-07', 'DescribeUploadInfo','cloudauth')
+		RpcRequest.__init__(self, 'Cloudauth', '2019-03-07', 'DescribeSdkUrl','cloudauth')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_Biz(self):
-		return self.get_query_params().get('Biz')
+	def get_Debug(self):
+		return self.get_query_params().get('Debug')
 
-	def set_Biz(self,Biz):
-		self.add_query_param('Biz',Biz)
+	def set_Debug(self,Debug):
+		self.add_query_param('Debug',Debug)
+
+	def get_Id(self):
+		return self.get_query_params().get('Id')
+
+	def set_Id(self,Id):
+		self.add_query_param('Id',Id)

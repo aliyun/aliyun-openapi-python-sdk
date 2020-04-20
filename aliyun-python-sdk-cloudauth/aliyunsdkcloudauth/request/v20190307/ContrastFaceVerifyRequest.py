@@ -31,91 +31,91 @@ class ContrastFaceVerifyRequest(RpcRequest):
 
 
 	def get_ProductCode(self):
-		return self.get_query_params().get('ProductCode')
+		return self.get_body_params().get('ProductCode')
 
 	def set_ProductCode(self,ProductCode):
-		self.add_query_param('ProductCode',ProductCode)
+		self.add_body_params('ProductCode', ProductCode)
 
 	def get_OssObjectName(self):
-		return self.get_query_params().get('OssObjectName')
+		return self.get_body_params().get('OssObjectName')
 
 	def set_OssObjectName(self,OssObjectName):
-		self.add_query_param('OssObjectName',OssObjectName)
+		self.add_body_params('OssObjectName', OssObjectName)
 
 	def get_FaceContrastPicture(self):
-		return self.get_query_params().get('FaceContrastPicture')
+		return self.get_body_params().get('FaceContrastPicture')
 
 	def set_FaceContrastPicture(self,FaceContrastPicture):
-		self.add_query_param('FaceContrastPicture',FaceContrastPicture)
+		self.add_body_params('FaceContrastPicture', FaceContrastPicture)
 
 	def get_CertName(self):
-		return self.get_query_params().get('CertName')
+		return self.get_body_params().get('CertName')
 
 	def set_CertName(self,CertName):
-		self.add_query_param('CertName',CertName)
+		self.add_body_params('CertName', CertName)
 
 	def get_Ip(self):
-		return self.get_query_params().get('Ip')
+		return self.get_body_params().get('Ip')
 
 	def set_Ip(self,Ip):
-		self.add_query_param('Ip',Ip)
+		self.add_body_params('Ip', Ip)
 
 	def get_Mobile(self):
-		return self.get_query_params().get('Mobile')
+		return self.get_body_params().get('Mobile')
 
 	def set_Mobile(self,Mobile):
-		self.add_query_param('Mobile',Mobile)
+		self.add_body_params('Mobile', Mobile)
 
 	def get_DeviceToken(self):
-		return self.get_query_params().get('DeviceToken')
+		return self.get_body_params().get('DeviceToken')
 
 	def set_DeviceToken(self,DeviceToken):
-		self.add_query_param('DeviceToken',DeviceToken)
+		self.add_body_params('DeviceToken', DeviceToken)
 
 	def get_UserId(self):
-		return self.get_query_params().get('UserId')
+		return self.get_body_params().get('UserId')
 
 	def set_UserId(self,UserId):
-		self.add_query_param('UserId',UserId)
+		self.add_body_params('UserId', UserId)
 
 	def get_CertifyId(self):
-		return self.get_query_params().get('CertifyId')
+		return self.get_body_params().get('CertifyId')
 
 	def set_CertifyId(self,CertifyId):
-		self.add_query_param('CertifyId',CertifyId)
+		self.add_body_params('CertifyId', CertifyId)
 
 	def get_CertNo(self):
-		return self.get_query_params().get('CertNo')
+		return self.get_body_params().get('CertNo')
 
 	def set_CertNo(self,CertNo):
-		self.add_query_param('CertNo',CertNo)
+		self.add_body_params('CertNo', CertNo)
 
 	def get_OuterOrderNo(self):
-		return self.get_query_params().get('OuterOrderNo')
+		return self.get_body_params().get('OuterOrderNo')
 
 	def set_OuterOrderNo(self,OuterOrderNo):
-		self.add_query_param('OuterOrderNo',OuterOrderNo)
+		self.add_body_params('OuterOrderNo', OuterOrderNo)
 
 	def get_CertType(self):
-		return self.get_query_params().get('CertType')
+		return self.get_body_params().get('CertType')
 
 	def set_CertType(self,CertType):
-		self.add_query_param('CertType',CertType)
+		self.add_body_params('CertType', CertType)
 
 	def get_FaceContrastPictureUrl(self):
-		return self.get_query_params().get('FaceContrastPictureUrl')
+		return self.get_body_params().get('FaceContrastPictureUrl')
 
 	def set_FaceContrastPictureUrl(self,FaceContrastPictureUrl):
-		self.add_query_param('FaceContrastPictureUrl',FaceContrastPictureUrl)
+		self.add_body_params('FaceContrastPictureUrl', FaceContrastPictureUrl)
 
 	def get_SceneId(self):
-		return self.get_query_params().get('SceneId')
+		return self.get_body_params().get('SceneId')
 
 	def set_SceneId(self,SceneId):
-		self.add_query_param('SceneId',SceneId)
+		self.add_body_params('SceneId', SceneId)
 
 	def get_OssBucketName(self):
-		return self.get_query_params().get('OssBucketName')
+		return self.get_body_params().get('OssBucketName')
 
 	def set_OssBucketName(self,OssBucketName):
-		self.add_query_param('OssBucketName',OssBucketName)
+		self.add_body_params('OssBucketName', OssBucketName)

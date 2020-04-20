@@ -20,18 +20,30 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcloudauth.endpoint import endpoint_data
 
-class DescribeUploadInfoRequest(RpcRequest):
+class DescribeAppInfoRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cloudauth', '2019-03-07', 'DescribeUploadInfo','cloudauth')
+		RpcRequest.__init__(self, 'Cloudauth', '2019-03-07', 'DescribeAppInfo','cloudauth')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_Biz(self):
-		return self.get_query_params().get('Biz')
+	def get_CurrentPage(self):
+		return self.get_query_params().get('CurrentPage')
 
-	def set_Biz(self,Biz):
-		self.add_query_param('Biz',Biz)
+	def set_CurrentPage(self,CurrentPage):
+		self.add_query_param('CurrentPage',CurrentPage)
+
+	def get_Platform(self):
+		return self.get_query_params().get('Platform')
+
+	def set_Platform(self,Platform):
+		self.add_query_param('Platform',Platform)
+
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)

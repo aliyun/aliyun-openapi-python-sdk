@@ -37,10 +37,10 @@ class InitFaceVerifyRequest(RpcRequest):
 		self.add_query_param('ProductCode',ProductCode)
 
 	def get_FaceContrastPicture(self):
-		return self.get_query_params().get('FaceContrastPicture')
+		return self.get_body_params().get('FaceContrastPicture')
 
 	def set_FaceContrastPicture(self,FaceContrastPicture):
-		self.add_query_param('FaceContrastPicture',FaceContrastPicture)
+		self.add_body_params('FaceContrastPicture', FaceContrastPicture)
 
 	def get_UserId(self):
 		return self.get_query_params().get('UserId')
