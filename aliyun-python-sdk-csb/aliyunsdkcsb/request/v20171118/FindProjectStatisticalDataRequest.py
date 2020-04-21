@@ -20,15 +20,21 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcsb.endpoint import endpoint_data
 
-class FindServiceStatisticalDataRequest(RpcRequest):
+class FindProjectStatisticalDataRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'CSB', '2017-11-18', 'FindServiceStatisticalData')
+		RpcRequest.__init__(self, 'CSB', '2017-11-18', 'FindProjectStatisticalData')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+
+	def get_ProjectName(self):
+		return self.get_query_params().get('ProjectName')
+
+	def set_ProjectName(self,ProjectName):
+		self.add_query_param('ProjectName',ProjectName)
 
 	def get_CsbId(self):
 		return self.get_query_params().get('CsbId')
@@ -47,9 +53,3 @@ class FindServiceStatisticalDataRequest(RpcRequest):
 
 	def set_StartTime(self,StartTime):
 		self.add_query_param('StartTime',StartTime)
-
-	def get_ServiceNameVersion(self):
-		return self.get_query_params().get('ServiceNameVersion')
-
-	def set_ServiceNameVersion(self,ServiceNameVersion):
-		self.add_query_param('ServiceNameVersion',ServiceNameVersion)

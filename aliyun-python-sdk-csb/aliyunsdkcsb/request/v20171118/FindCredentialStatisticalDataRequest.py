@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcsb.endpoint import endpoint_data
 
-class FindServiceStatisticalDataRequest(RpcRequest):
+class FindCredentialStatisticalDataRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'CSB', '2017-11-18', 'FindServiceStatisticalData')
+		RpcRequest.__init__(self, 'CSB', '2017-11-18', 'FindCredentialStatisticalData')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -48,8 +48,8 @@ class FindServiceStatisticalDataRequest(RpcRequest):
 	def set_StartTime(self,StartTime):
 		self.add_query_param('StartTime',StartTime)
 
-	def get_ServiceNameVersion(self):
-		return self.get_query_params().get('ServiceNameVersion')
+	def get_CredentialName(self):
+		return self.get_query_params().get('CredentialName')
 
-	def set_ServiceNameVersion(self,ServiceNameVersion):
-		self.add_query_param('ServiceNameVersion',ServiceNameVersion)
+	def set_CredentialName(self,CredentialName):
+		self.add_query_param('CredentialName',CredentialName)
