@@ -19,29 +19,20 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class BatchSendMessagesRequest(RpcRequest):
+class DeleteGroupIdRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'OnsMqtt', '2019-12-11', 'BatchSendMessages','onsmqtt')
+		RpcRequest.__init__(self, 'OnsMqtt', '2020-04-20', 'DeleteGroupId')
 		self.set_method('POST')
+
+	def get_GroupId(self):
+		return self.get_query_params().get('GroupId')
+
+	def set_GroupId(self,GroupId):
+		self.add_query_param('GroupId',GroupId)
 
 	def get_InstanceId(self):
 		return self.get_query_params().get('InstanceId')
 
 	def set_InstanceId(self,InstanceId):
 		self.add_query_param('InstanceId',InstanceId)
-
-	def get_Messagess(self):
-		return self.get_query_params().get('Messagess')
-
-	def set_Messagess(self,Messagess):
-		for i in range(len(Messagess)):	
-			if Messagess[i].get('Payload') is not None:
-				self.add_query_param('Messages.' + str(i + 1) + '.Payload' , Messagess[i].get('Payload'))
-			for j in range(len(Messagess[i].get('Topicss'))):
-				if Messagess[i].get('Topicss')[j] is not None:
-					self.add_query_param('Messages.' + str(i + 1) + '.Topics.'+str(j + 1), Messagess[i].get('Topicss')[j])
-			if Messagess[i].get('Id') is not None:
-				self.add_query_param('Messages.' + str(i + 1) + '.Id' , Messagess[i].get('Id'))
-			if Messagess[i].get('ReceiptId') is not None:
-				self.add_query_param('Messages.' + str(i + 1) + '.ReceiptId' , Messagess[i].get('ReceiptId'))

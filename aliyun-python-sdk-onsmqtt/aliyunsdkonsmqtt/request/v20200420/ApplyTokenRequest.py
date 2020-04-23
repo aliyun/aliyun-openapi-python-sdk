@@ -19,20 +19,32 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class RevokeTokenRequest(RpcRequest):
+class ApplyTokenRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'OnsMqtt', '2019-12-11', 'RevokeToken','onsmqtt')
+		RpcRequest.__init__(self, 'OnsMqtt', '2020-04-20', 'ApplyToken')
 		self.set_method('POST')
 
-	def get_Token(self):
-		return self.get_query_params().get('Token')
+	def get_ExpireTime(self):
+		return self.get_query_params().get('ExpireTime')
 
-	def set_Token(self,Token):
-		self.add_query_param('Token',Token)
+	def set_ExpireTime(self,ExpireTime):
+		self.add_query_param('ExpireTime',ExpireTime)
+
+	def get_Resources(self):
+		return self.get_query_params().get('Resources')
+
+	def set_Resources(self,Resources):
+		self.add_query_param('Resources',Resources)
 
 	def get_InstanceId(self):
 		return self.get_query_params().get('InstanceId')
 
 	def set_InstanceId(self,InstanceId):
 		self.add_query_param('InstanceId',InstanceId)
+
+	def get_Actions(self):
+		return self.get_query_params().get('Actions')
+
+	def set_Actions(self,Actions):
+		self.add_query_param('Actions',Actions)

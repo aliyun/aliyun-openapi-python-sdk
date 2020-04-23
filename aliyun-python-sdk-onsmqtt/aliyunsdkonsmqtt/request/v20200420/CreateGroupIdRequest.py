@@ -19,16 +19,17 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class QueryTokenRequest(RpcRequest):
+class CreateGroupIdRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'OnsMqtt', '2019-12-11', 'QueryToken','onsmqtt')
+		RpcRequest.__init__(self, 'OnsMqtt', '2020-04-20', 'CreateGroupId')
+		self.set_method('POST')
 
-	def get_Token(self):
-		return self.get_query_params().get('Token')
+	def get_GroupId(self):
+		return self.get_query_params().get('GroupId')
 
-	def set_Token(self,Token):
-		self.add_query_param('Token',Token)
+	def set_GroupId(self,GroupId):
+		self.add_query_param('GroupId',GroupId)
 
 	def get_InstanceId(self):
 		return self.get_query_params().get('InstanceId')

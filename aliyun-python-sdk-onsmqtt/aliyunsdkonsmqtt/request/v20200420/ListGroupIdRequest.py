@@ -19,18 +19,10 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class BatchQuerySessionByClientIdsRequest(RpcRequest):
+class ListGroupIdRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'OnsMqtt', '2019-12-11', 'BatchQuerySessionByClientIds','onsmqtt')
-
-	def get_ClientIdLists(self):
-		return self.get_query_params().get('ClientIdLists')
-
-	def set_ClientIdLists(self,ClientIdLists):
-		for i in range(len(ClientIdLists)):	
-			if ClientIdLists[i] is not None:
-				self.add_query_param('ClientIdList.' + str(i + 1) , ClientIdLists[i]);
+		RpcRequest.__init__(self, 'OnsMqtt', '2020-04-20', 'ListGroupId')
 
 	def get_InstanceId(self):
 		return self.get_query_params().get('InstanceId')

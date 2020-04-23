@@ -19,16 +19,17 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class QuerySessionByClientIdRequest(RpcRequest):
+class RevokeTokenRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'OnsMqtt', '2019-12-11', 'QuerySessionByClientId','onsmqtt')
+		RpcRequest.__init__(self, 'OnsMqtt', '2020-04-20', 'RevokeToken')
+		self.set_method('POST')
 
-	def get_ClientId(self):
-		return self.get_query_params().get('ClientId')
+	def get_Token(self):
+		return self.get_query_params().get('Token')
 
-	def set_ClientId(self,ClientId):
-		self.add_query_param('ClientId',ClientId)
+	def set_Token(self,Token):
+		self.add_query_param('Token',Token)
 
 	def get_InstanceId(self):
 		return self.get_query_params().get('InstanceId')

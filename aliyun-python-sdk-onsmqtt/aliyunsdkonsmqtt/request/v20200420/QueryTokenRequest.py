@@ -19,32 +19,19 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class SendMessageRequest(RpcRequest):
+class QueryTokenRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'OnsMqtt', '2019-12-11', 'SendMessage','onsmqtt')
-		self.set_method('POST')
+		RpcRequest.__init__(self, 'OnsMqtt', '2020-04-20', 'QueryToken')
 
-	def get_MqttTopic(self):
-		return self.get_query_params().get('MqttTopic')
+	def get_Token(self):
+		return self.get_query_params().get('Token')
 
-	def set_MqttTopic(self,MqttTopic):
-		self.add_query_param('MqttTopic',MqttTopic)
+	def set_Token(self,Token):
+		self.add_query_param('Token',Token)
 
 	def get_InstanceId(self):
 		return self.get_query_params().get('InstanceId')
 
 	def set_InstanceId(self,InstanceId):
 		self.add_query_param('InstanceId',InstanceId)
-
-	def get_Payload(self):
-		return self.get_query_params().get('Payload')
-
-	def set_Payload(self,Payload):
-		self.add_query_param('Payload',Payload)
-
-	def get_ReceiptId(self):
-		return self.get_query_params().get('ReceiptId')
-
-	def set_ReceiptId(self,ReceiptId):
-		self.add_query_param('ReceiptId',ReceiptId)
