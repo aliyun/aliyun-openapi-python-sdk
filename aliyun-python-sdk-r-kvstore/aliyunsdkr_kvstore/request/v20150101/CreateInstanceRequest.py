@@ -162,6 +162,12 @@ class CreateInstanceRequest(RpcRequest):
 	def set_InstanceType(self,InstanceType):
 		self.add_query_param('InstanceType',InstanceType)
 
+	def get_RestoreTime(self):
+		return self.get_query_params().get('RestoreTime')
+
+	def set_RestoreTime(self,RestoreTime):
+		self.add_query_param('RestoreTime',RestoreTime)
+
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 

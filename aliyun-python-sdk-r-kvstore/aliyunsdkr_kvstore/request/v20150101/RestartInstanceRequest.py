@@ -36,6 +36,12 @@ class RestartInstanceRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_UpgradeMinorVersion(self):
+		return self.get_query_params().get('UpgradeMinorVersion')
+
+	def set_UpgradeMinorVersion(self,UpgradeMinorVersion):
+		self.add_query_param('UpgradeMinorVersion',UpgradeMinorVersion)
+
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
 
