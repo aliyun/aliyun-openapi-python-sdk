@@ -20,30 +20,24 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkhbase.endpoint import endpoint_data
 
-class RenewInstanceRequest(RpcRequest):
+class DescribeAvailableResourceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'HBase', '2019-01-01', 'RenewInstance','hbase')
+		RpcRequest.__init__(self, 'HBase', '2019-01-01', 'DescribeAvailableResource','hbase')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_ClusterId(self):
-		return self.get_query_params().get('ClusterId')
+	def get_ZoneId(self):
+		return self.get_query_params().get('ZoneId')
 
-	def set_ClusterId(self,ClusterId):
-		self.add_query_param('ClusterId',ClusterId)
+	def set_ZoneId(self,ZoneId):
+		self.add_query_param('ZoneId',ZoneId)
 
-	def get_Duration(self):
-		return self.get_query_params().get('Duration')
+	def get_ChargeType(self):
+		return self.get_query_params().get('ChargeType')
 
-	def set_Duration(self,Duration):
-		self.add_query_param('Duration',Duration)
-
-	def get_PricingCycle(self):
-		return self.get_query_params().get('PricingCycle')
-
-	def set_PricingCycle(self,PricingCycle):
-		self.add_query_param('PricingCycle',PricingCycle)
+	def set_ChargeType(self,ChargeType):
+		self.add_query_param('ChargeType',ChargeType)

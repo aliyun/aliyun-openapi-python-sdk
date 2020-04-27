@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkhbase.endpoint import endpoint_data
 
-class RenewInstanceRequest(RpcRequest):
+class DescribeRestoreSummaryRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'HBase', '2019-01-01', 'RenewInstance','hbase')
+		RpcRequest.__init__(self, 'HBase', '2019-01-01', 'DescribeRestoreSummary','hbase')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -35,15 +35,3 @@ class RenewInstanceRequest(RpcRequest):
 
 	def set_ClusterId(self,ClusterId):
 		self.add_query_param('ClusterId',ClusterId)
-
-	def get_Duration(self):
-		return self.get_query_params().get('Duration')
-
-	def set_Duration(self,Duration):
-		self.add_query_param('Duration',Duration)
-
-	def get_PricingCycle(self):
-		return self.get_query_params().get('PricingCycle')
-
-	def set_PricingCycle(self,PricingCycle):
-		self.add_query_param('PricingCycle',PricingCycle)

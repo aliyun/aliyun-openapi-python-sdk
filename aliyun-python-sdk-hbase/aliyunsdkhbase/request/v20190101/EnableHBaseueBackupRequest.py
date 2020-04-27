@@ -20,30 +20,36 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkhbase.endpoint import endpoint_data
 
-class RenewInstanceRequest(RpcRequest):
+class EnableHBaseueBackupRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'HBase', '2019-01-01', 'RenewInstance','hbase')
+		RpcRequest.__init__(self, 'HBase', '2019-01-01', 'EnableHBaseueBackup','hbase')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_ClusterId(self):
-		return self.get_query_params().get('ClusterId')
+	def get_ClientToken(self):
+		return self.get_query_params().get('ClientToken')
 
-	def set_ClusterId(self,ClusterId):
-		self.add_query_param('ClusterId',ClusterId)
+	def set_ClientToken(self,ClientToken):
+		self.add_query_param('ClientToken',ClientToken)
 
-	def get_Duration(self):
-		return self.get_query_params().get('Duration')
+	def get_HbaseueClusterId(self):
+		return self.get_query_params().get('HbaseueClusterId')
 
-	def set_Duration(self,Duration):
-		self.add_query_param('Duration',Duration)
+	def set_HbaseueClusterId(self,HbaseueClusterId):
+		self.add_query_param('HbaseueClusterId',HbaseueClusterId)
 
-	def get_PricingCycle(self):
-		return self.get_query_params().get('PricingCycle')
+	def get_ColdStorageSize(self):
+		return self.get_query_params().get('ColdStorageSize')
 
-	def set_PricingCycle(self,PricingCycle):
-		self.add_query_param('PricingCycle',PricingCycle)
+	def set_ColdStorageSize(self,ColdStorageSize):
+		self.add_query_param('ColdStorageSize',ColdStorageSize)
+
+	def get_NodeCount(self):
+		return self.get_query_params().get('NodeCount')
+
+	def set_NodeCount(self,NodeCount):
+		self.add_query_param('NodeCount',NodeCount)

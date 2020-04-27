@@ -20,15 +20,27 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkhbase.endpoint import endpoint_data
 
-class RenewInstanceRequest(RpcRequest):
+class ModifyBackupPlanConfigRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'HBase', '2019-01-01', 'RenewInstance','hbase')
+		RpcRequest.__init__(self, 'HBase', '2019-01-01', 'ModifyBackupPlanConfig','hbase')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+
+	def get_FullBackupCycle(self):
+		return self.get_query_params().get('FullBackupCycle')
+
+	def set_FullBackupCycle(self,FullBackupCycle):
+		self.add_query_param('FullBackupCycle',FullBackupCycle)
+
+	def get_Tables(self):
+		return self.get_query_params().get('Tables')
+
+	def set_Tables(self,Tables):
+		self.add_query_param('Tables',Tables)
 
 	def get_ClusterId(self):
 		return self.get_query_params().get('ClusterId')
@@ -36,14 +48,14 @@ class RenewInstanceRequest(RpcRequest):
 	def set_ClusterId(self,ClusterId):
 		self.add_query_param('ClusterId',ClusterId)
 
-	def get_Duration(self):
-		return self.get_query_params().get('Duration')
+	def get_MinHFileBackupCount(self):
+		return self.get_query_params().get('MinHFileBackupCount')
 
-	def set_Duration(self,Duration):
-		self.add_query_param('Duration',Duration)
+	def set_MinHFileBackupCount(self,MinHFileBackupCount):
+		self.add_query_param('MinHFileBackupCount',MinHFileBackupCount)
 
-	def get_PricingCycle(self):
-		return self.get_query_params().get('PricingCycle')
+	def get_NextFullBackupDate(self):
+		return self.get_query_params().get('NextFullBackupDate')
 
-	def set_PricingCycle(self,PricingCycle):
-		self.add_query_param('PricingCycle',PricingCycle)
+	def set_NextFullBackupDate(self,NextFullBackupDate):
+		self.add_query_param('NextFullBackupDate',NextFullBackupDate)
