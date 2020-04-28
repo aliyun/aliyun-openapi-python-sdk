@@ -24,11 +24,18 @@ class VerifyDeviceRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Cloudauth', '2019-03-07', 'VerifyDevice','cloudauth')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+
+	def get_ExtInfo(self):
+		return self.get_body_params().get('ExtInfo')
+
+	def set_ExtInfo(self,ExtInfo):
+		self.add_body_params('ExtInfo', ExtInfo)
 
 	def get_CertifyData(self):
 		return self.get_query_params().get('CertifyData')
