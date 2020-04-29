@@ -23,7 +23,7 @@ from aliyunsdkalimt.endpoint import endpoint_data
 class TranslateCertificateRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'alimt', '2018-10-12', 'TranslateCertificate','alimtct')
+		RpcRequest.__init__(self, 'alimt', '2018-10-12', 'TranslateCertificate','alimt')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
