@@ -24,6 +24,7 @@ class DescribeDcdnUserDomainsRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'dcdn', '2018-01-15', 'DescribeDcdnUserDomains')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -66,12 +67,6 @@ class DescribeDcdnUserDomainsRequest(RpcRequest):
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
 
-	def get_FuncFilter(self):
-		return self.get_query_params().get('FuncFilter')
-
-	def set_FuncFilter(self,FuncFilter):
-		self.add_query_param('FuncFilter',FuncFilter)
-
 	def get_DomainName(self):
 		return self.get_query_params().get('DomainName')
 
@@ -83,12 +78,6 @@ class DescribeDcdnUserDomainsRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
-
-	def get_FuncId(self):
-		return self.get_query_params().get('FuncId')
-
-	def set_FuncId(self,FuncId):
-		self.add_query_param('FuncId',FuncId)
 
 	def get_DomainStatus(self):
 		return self.get_query_params().get('DomainStatus')
