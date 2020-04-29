@@ -23,6 +23,7 @@ class SearchDocIndexRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'imm', '2017-09-06', 'SearchDocIndex','imm')
+		self.set_method('POST')
 
 	def get_ModifiedTimeEnd(self):
 		return self.get_query_params().get('ModifiedTimeEnd')

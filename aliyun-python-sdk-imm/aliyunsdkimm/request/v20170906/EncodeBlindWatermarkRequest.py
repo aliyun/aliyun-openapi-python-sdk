@@ -23,6 +23,7 @@ class EncodeBlindWatermarkRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'imm', '2017-09-06', 'EncodeBlindWatermark','imm')
+		self.set_method('POST')
 
 	def get_ImageQuality(self):
 		return self.get_query_params().get('ImageQuality')

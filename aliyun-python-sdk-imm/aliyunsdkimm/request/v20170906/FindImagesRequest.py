@@ -23,6 +23,13 @@ class FindImagesRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'imm', '2017-09-06', 'FindImages','imm')
+		self.set_method('POST')
+
+	def get_RemarksArrayBIn(self):
+		return self.get_query_params().get('RemarksArrayBIn')
+
+	def set_RemarksArrayBIn(self,RemarksArrayBIn):
+		self.add_query_param('RemarksArrayBIn',RemarksArrayBIn)
 
 	def get_Project(self):
 		return self.get_query_params().get('Project')
@@ -119,6 +126,12 @@ class FindImagesRequest(RpcRequest):
 
 	def set_Gender(self,Gender):
 		self.add_query_param('Gender',Gender)
+
+	def get_RemarksArrayAIn(self):
+		return self.get_query_params().get('RemarksArrayAIn')
+
+	def set_RemarksArrayAIn(self,RemarksArrayAIn):
+		self.add_query_param('RemarksArrayAIn',RemarksArrayAIn)
 
 	def get_ImageSizeRange(self):
 		return self.get_query_params().get('ImageSizeRange')

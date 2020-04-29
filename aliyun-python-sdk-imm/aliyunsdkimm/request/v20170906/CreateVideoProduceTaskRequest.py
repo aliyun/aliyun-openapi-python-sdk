@@ -19,10 +19,10 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class CreateMergeFaceGroupsJobRequest(RpcRequest):
+class CreateVideoProduceTaskRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'imm', '2017-09-06', 'CreateMergeFaceGroupsJob','imm')
+		RpcRequest.__init__(self, 'imm', '2017-09-06', 'CreateVideoProduceTask','imm')
 		self.set_method('POST')
 
 	def get_Project(self):
@@ -31,17 +31,47 @@ class CreateMergeFaceGroupsJobRequest(RpcRequest):
 	def set_Project(self,Project):
 		self.add_query_param('Project',Project)
 
+	def get_Music(self):
+		return self.get_query_params().get('Music')
+
+	def set_Music(self,Music):
+		self.add_query_param('Music',Music)
+
 	def get_NotifyEndpoint(self):
 		return self.get_query_params().get('NotifyEndpoint')
 
 	def set_NotifyEndpoint(self,NotifyEndpoint):
 		self.add_query_param('NotifyEndpoint',NotifyEndpoint)
 
-	def get_GroupIdFrom(self):
-		return self.get_query_params().get('GroupIdFrom')
+	def get_TargetUri(self):
+		return self.get_query_params().get('TargetUri')
 
-	def set_GroupIdFrom(self,GroupIdFrom):
-		self.add_query_param('GroupIdFrom',GroupIdFrom)
+	def set_TargetUri(self,TargetUri):
+		self.add_query_param('TargetUri',TargetUri)
+
+	def get_TemplateName(self):
+		return self.get_query_params().get('TemplateName')
+
+	def set_TemplateName(self,TemplateName):
+		self.add_query_param('TemplateName',TemplateName)
+
+	def get_Height(self):
+		return self.get_query_params().get('Height')
+
+	def set_Height(self,Height):
+		self.add_query_param('Height',Height)
+
+	def get_CustomMessage(self):
+		return self.get_query_params().get('CustomMessage')
+
+	def set_CustomMessage(self,CustomMessage):
+		self.add_query_param('CustomMessage',CustomMessage)
+
+	def get_Images(self):
+		return self.get_query_params().get('Images')
+
+	def set_Images(self,Images):
+		self.add_query_param('Images',Images)
 
 	def get_NotifyTopicName(self):
 		return self.get_query_params().get('NotifyTopicName')
@@ -49,14 +79,8 @@ class CreateMergeFaceGroupsJobRequest(RpcRequest):
 	def set_NotifyTopicName(self,NotifyTopicName):
 		self.add_query_param('NotifyTopicName',NotifyTopicName)
 
-	def get_GroupIdTo(self):
-		return self.get_query_params().get('GroupIdTo')
+	def get_Width(self):
+		return self.get_query_params().get('Width')
 
-	def set_GroupIdTo(self,GroupIdTo):
-		self.add_query_param('GroupIdTo',GroupIdTo)
-
-	def get_SetId(self):
-		return self.get_query_params().get('SetId')
-
-	def set_SetId(self,SetId):
-		self.add_query_param('SetId',SetId)
+	def set_Width(self,Width):
+		self.add_query_param('Width',Width)

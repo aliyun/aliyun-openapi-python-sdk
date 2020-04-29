@@ -23,6 +23,7 @@ class IndexVideoRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'imm', '2017-09-06', 'IndexVideo','imm')
+		self.set_method('POST')
 
 	def get_Project(self):
 		return self.get_query_params().get('Project')

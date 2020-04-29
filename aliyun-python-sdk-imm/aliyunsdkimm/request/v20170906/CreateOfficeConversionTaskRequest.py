@@ -23,6 +23,7 @@ class CreateOfficeConversionTaskRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'imm', '2017-09-06', 'CreateOfficeConversionTask','imm')
+		self.set_method('POST')
 
 	def get_SrcType(self):
 		return self.get_query_params().get('SrcType')

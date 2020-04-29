@@ -23,6 +23,7 @@ class IndexImageRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'imm', '2017-09-06', 'IndexImage','imm')
+		self.set_method('POST')
 
 	def get_Project(self):
 		return self.get_query_params().get('Project')
@@ -71,6 +72,18 @@ class IndexImageRequest(RpcRequest):
 
 	def set_ImageUri(self,ImageUri):
 		self.add_query_param('ImageUri',ImageUri)
+
+	def get_RemarksArrayA(self):
+		return self.get_query_params().get('RemarksArrayA')
+
+	def set_RemarksArrayA(self,RemarksArrayA):
+		self.add_query_param('RemarksArrayA',RemarksArrayA)
+
+	def get_RemarksArrayB(self):
+		return self.get_query_params().get('RemarksArrayB')
+
+	def set_RemarksArrayB(self,RemarksArrayB):
+		self.add_query_param('RemarksArrayB',RemarksArrayB)
 
 	def get_SourceUri(self):
 		return self.get_query_params().get('SourceUri')
