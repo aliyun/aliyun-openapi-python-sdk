@@ -24,6 +24,7 @@ class DeleteLiveStreamTranscodeRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'DeleteLiveStreamTranscode')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -35,6 +36,12 @@ class DeleteLiveStreamTranscodeRequest(RpcRequest):
 
 	def set_Template(self,Template):
 		self.add_query_param('Template',Template)
+
+	def get_SecurityToken(self):
+		return self.get_query_params().get('SecurityToken')
+
+	def set_SecurityToken(self,SecurityToken):
+		self.add_query_param('SecurityToken',SecurityToken)
 
 	def get_App(self):
 		return self.get_query_params().get('App')
@@ -53,12 +60,6 @@ class DeleteLiveStreamTranscodeRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
-
-	def get_SecurityToken(self):
-		return self.get_query_params().get('SecurityToken')
-
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)
 
 	def get_Domain(self):
 		return self.get_query_params().get('Domain')

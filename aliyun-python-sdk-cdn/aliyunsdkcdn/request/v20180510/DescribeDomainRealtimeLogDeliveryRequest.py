@@ -24,6 +24,7 @@ class DescribeDomainRealtimeLogDeliveryRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Cdn', '2018-05-10', 'DescribeDomainRealtimeLogDelivery')
+		self.set_method('GET')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):

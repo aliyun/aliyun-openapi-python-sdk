@@ -24,11 +24,18 @@ class ModifyPathCacheExpiredConfigRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'ModifyPathCacheExpiredConfig')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+
+	def get_SecurityToken(self):
+		return self.get_query_params().get('SecurityToken')
+
+	def set_SecurityToken(self,SecurityToken):
+		self.add_query_param('SecurityToken',SecurityToken)
 
 	def get_DomainName(self):
 		return self.get_query_params().get('DomainName')
@@ -59,12 +66,6 @@ class ModifyPathCacheExpiredConfigRequest(RpcRequest):
 
 	def set_TTL(self,TTL):
 		self.add_query_param('TTL',TTL)
-
-	def get_SecurityToken(self):
-		return self.get_query_params().get('SecurityToken')
-
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)
 
 	def get_ConfigID(self):
 		return self.get_query_params().get('ConfigID')
