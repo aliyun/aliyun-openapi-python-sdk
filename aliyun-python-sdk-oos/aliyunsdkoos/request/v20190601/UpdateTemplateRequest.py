@@ -24,6 +24,7 @@ class UpdateTemplateRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'oos', '2019-06-01', 'UpdateTemplate','oos')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -47,3 +48,9 @@ class UpdateTemplateRequest(RpcRequest):
 
 	def set_TemplateName(self,TemplateName):
 		self.add_query_param('TemplateName',TemplateName)
+
+	def get_VersionName(self):
+		return self.get_query_params().get('VersionName')
+
+	def set_VersionName(self,VersionName):
+		self.add_query_param('VersionName',VersionName)

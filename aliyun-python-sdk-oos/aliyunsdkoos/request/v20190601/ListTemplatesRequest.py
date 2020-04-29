@@ -24,6 +24,7 @@ class ListTemplatesRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'oos', '2019-06-01', 'ListTemplates','oos')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -47,6 +48,12 @@ class ListTemplatesRequest(RpcRequest):
 
 	def set_NextToken(self,NextToken):
 		self.add_query_param('NextToken',NextToken)
+
+	def get_TemplateType(self):
+		return self.get_query_params().get('TemplateType')
+
+	def set_TemplateType(self,TemplateType):
+		self.add_query_param('TemplateType',TemplateType)
 
 	def get_TemplateName(self):
 		return self.get_query_params().get('TemplateName')

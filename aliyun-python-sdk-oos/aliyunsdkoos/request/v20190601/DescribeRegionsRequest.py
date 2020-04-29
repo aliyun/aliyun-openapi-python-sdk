@@ -24,6 +24,7 @@ class DescribeRegionsRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'oos', '2019-06-01', 'DescribeRegions','oos')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
