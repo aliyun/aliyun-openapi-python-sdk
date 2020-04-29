@@ -1,3 +1,6 @@
+2020-04-30 Version: 2.5.6
+- Add prometheus ListDashboards api.
+
 2020-04-29 Version: 2.5.5
 - Add prometheus ListDashboards api.
 
