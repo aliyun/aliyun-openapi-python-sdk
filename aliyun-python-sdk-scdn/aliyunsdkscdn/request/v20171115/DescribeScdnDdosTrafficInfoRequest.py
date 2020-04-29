@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkscdn.endpoint import endpoint_data
 
-class DescribeScdnDomainRealTimeByteHitRateDataRequest(RpcRequest):
+class DescribeScdnDdosTrafficInfoRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'scdn', '2017-11-15', 'DescribeScdnDomainRealTimeByteHitRateData')
+		RpcRequest.__init__(self, 'scdn', '2017-11-15', 'DescribeScdnDdosTrafficInfo')
 		self.set_method('GET')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,17 +31,17 @@ class DescribeScdnDomainRealTimeByteHitRateDataRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_Line(self):
+		return self.get_query_params().get('Line')
+
+	def set_Line(self,Line):
+		self.add_query_param('Line',Line)
+
 	def get_StartTime(self):
 		return self.get_query_params().get('StartTime')
 
 	def set_StartTime(self,StartTime):
 		self.add_query_param('StartTime',StartTime)
-
-	def get_DomainName(self):
-		return self.get_query_params().get('DomainName')
-
-	def set_DomainName(self,DomainName):
-		self.add_query_param('DomainName',DomainName)
 
 	def get_EndTime(self):
 		return self.get_query_params().get('EndTime')

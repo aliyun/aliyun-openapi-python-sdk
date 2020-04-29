@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkscdn.endpoint import endpoint_data
 
-class DescribeScdnDomainRealTimeByteHitRateDataRequest(RpcRequest):
+class DescribeScdnCcQpsInfoRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'scdn', '2017-11-15', 'DescribeScdnDomainRealTimeByteHitRateData')
+		RpcRequest.__init__(self, 'scdn', '2017-11-15', 'DescribeScdnCcQpsInfo')
 		self.set_method('GET')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
