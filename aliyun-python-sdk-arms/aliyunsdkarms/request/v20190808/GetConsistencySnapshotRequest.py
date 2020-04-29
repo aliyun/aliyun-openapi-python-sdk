@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkarms.endpoint import endpoint_data
 
-class UpdateAlertContactGroupRequest(RpcRequest):
+class GetConsistencySnapshotRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ARMS', '2019-08-08', 'UpdateAlertContactGroup','arms')
+		RpcRequest.__init__(self, 'ARMS', '2019-08-08', 'GetConsistencySnapshot','arms')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,26 +31,26 @@ class UpdateAlertContactGroupRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_ContactGroupId(self):
-		return self.get_query_params().get('ContactGroupId')
+	def get_CurrentTimestamp(self):
+		return self.get_query_params().get('CurrentTimestamp')
 
-	def set_ContactGroupId(self,ContactGroupId):
-		self.add_query_param('ContactGroupId',ContactGroupId)
+	def set_CurrentTimestamp(self,CurrentTimestamp):
+		self.add_query_param('CurrentTimestamp',CurrentTimestamp)
 
-	def get_ContactGroupName(self):
-		return self.get_query_params().get('ContactGroupName')
+	def get_AppType(self):
+		return self.get_query_params().get('AppType')
 
-	def set_ContactGroupName(self,ContactGroupName):
-		self.add_query_param('ContactGroupName',ContactGroupName)
+	def set_AppType(self,AppType):
+		self.add_query_param('AppType',AppType)
+
+	def get_Pid(self):
+		return self.get_query_params().get('Pid')
+
+	def set_Pid(self,Pid):
+		self.add_query_param('Pid',Pid)
 
 	def get_ProxyUserId(self):
 		return self.get_query_params().get('ProxyUserId')
 
 	def set_ProxyUserId(self,ProxyUserId):
 		self.add_query_param('ProxyUserId',ProxyUserId)
-
-	def get_ContactIds(self):
-		return self.get_query_params().get('ContactIds')
-
-	def set_ContactIds(self,ContactIds):
-		self.add_query_param('ContactIds',ContactIds)

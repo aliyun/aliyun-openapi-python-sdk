@@ -24,6 +24,7 @@ class GetPrometheusApiTokenRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'ARMS', '2019-08-08', 'GetPrometheusApiToken','arms')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):

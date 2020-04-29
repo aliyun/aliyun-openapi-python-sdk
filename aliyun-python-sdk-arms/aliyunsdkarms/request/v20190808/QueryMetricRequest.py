@@ -24,11 +24,18 @@ class QueryMetricRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'ARMS', '2019-08-08', 'QueryMetric','arms')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+
+	def get_ConsistencyQueryStrategy(self):
+		return self.get_query_params().get('ConsistencyQueryStrategy')
+
+	def set_ConsistencyQueryStrategy(self,ConsistencyQueryStrategy):
+		self.add_query_param('ConsistencyQueryStrategy',ConsistencyQueryStrategy)
 
 	def get_EndTime(self):
 		return self.get_query_params().get('EndTime')
@@ -58,6 +65,12 @@ class QueryMetricRequest(RpcRequest):
 			if Filterss[i].get('Key') is not None:
 				self.add_query_param('Filters.' + str(i + 1) + '.Key' , Filterss[i].get('Key'))
 
+
+	def get_ConsistencyDataKey(self):
+		return self.get_query_params().get('ConsistencyDataKey')
+
+	def set_ConsistencyDataKey(self,ConsistencyDataKey):
+		self.add_query_param('ConsistencyDataKey',ConsistencyDataKey)
 
 	def get_ProxyUserId(self):
 		return self.get_query_params().get('ProxyUserId')
