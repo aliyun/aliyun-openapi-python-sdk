@@ -16,3 +16,5 @@ if access_key_id and access_key_secret:
     check_call(
         'coverage run --branch --source="./aliyun-python-sdk-core/aliyunsdkcore" -m pytest python-sdk-functional-test/',
         shell=True)
+
+def test_coverage():pass
