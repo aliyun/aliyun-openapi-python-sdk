@@ -16,6 +16,15 @@
   <img src="https://img.alicdn.com/tfs/TB12GX6zW6qK1RjSZFmXXX0PFXa-744-122.png" width="180" />
 </a>
 
+## 文档
+
+- [环境要求](./docs/0-Requirement-CN.md)
+- [安装](./docs/1-Installation-CN.md)
+- [客户端](./docs/2-Client-CN.md)
+- [超时机制](./docs/3-Timeout-CN.md)
+- [代理配置](./docs/4-Proxy-CN.md)
+- [日志](./docs/5-Log-CN.md)
+
 ## 环境准备
 
 1. 要使用阿里云 Python SDK ，您需要一个云账号以及一对`Access Key ID`和`Access Key Secret`。 请在阿里云控制台中的 [AccessKey管理页面](https://usercenter.console.aliyun.com/?spm=5176.doc52740.2.3.QKZk8w#/manage/ak) 上创建和查看您的 Access Key，或者联系您的系统管理员
@@ -95,12 +104,3 @@ print response
 < x-acs-request-id : 670F3D09-F8E7-4144-83C3-B56C35DA35ED
 < Server : Jetty(7.2.2.v20101205)
 ```
-
-## 文档
-
-- [环境要求](./docs/0-Requirement-CN.md)
-- [安装](./docs/1-Installation-CN.md)
-- [客户端](./docs/2-Client-CN.md)
-- [超时机制](./docs/3-Timeout-CN.md)
-- [代理配置](./docs/4-Proxy-CN.md)
-- [日志](./docs/5-Log-CN.md)
