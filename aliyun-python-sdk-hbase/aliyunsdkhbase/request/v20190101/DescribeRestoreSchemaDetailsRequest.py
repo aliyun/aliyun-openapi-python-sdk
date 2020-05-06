@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkhbase.endpoint import endpoint_data
 
-class TagResourcesRequest(RpcRequest):
+class DescribeRestoreSchemaDetailsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'HBase', '2019-01-01', 'TagResources','hbase')
+		RpcRequest.__init__(self, 'HBase', '2019-01-01', 'DescribeRestoreSchemaDetails','hbase')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,20 +31,26 @@ class TagResourcesRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_ResourceIds(self):
-		return self.get_query_params().get('ResourceIds')
+	def get_PageNumber(self):
+		return self.get_query_params().get('PageNumber')
 
-	def set_ResourceIds(self,ResourceIds):
-		for i in range(len(ResourceIds)):	
-			if ResourceIds[i] is not None:
-				self.add_query_param('ResourceId.' + str(i + 1) , ResourceIds[i]);
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)
 
-	def get_Tags(self):
-		return self.get_query_params().get('Tags')
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
 
-	def set_Tags(self,Tags):
-		for i in range(len(Tags)):	
-			if Tags[i].get('Value') is not None:
-				self.add_query_param('Tag.' + str(i + 1) + '.Value' , Tags[i].get('Value'))
-			if Tags[i].get('Key') is not None:
-				self.add_query_param('Tag.' + str(i + 1) + '.Key' , Tags[i].get('Key'))
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
+
+	def get_ClusterId(self):
+		return self.get_query_params().get('ClusterId')
+
+	def set_ClusterId(self,ClusterId):
+		self.add_query_param('ClusterId',ClusterId)
+
+	def get_RestoreRecordId(self):
+		return self.get_query_params().get('RestoreRecordId')
+
+	def set_RestoreRecordId(self,RestoreRecordId):
+		self.add_query_param('RestoreRecordId',RestoreRecordId)
