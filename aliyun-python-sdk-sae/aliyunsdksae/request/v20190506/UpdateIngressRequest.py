@@ -20,11 +20,11 @@
 from aliyunsdkcore.request import RoaRequest
 from aliyunsdksae.endpoint import endpoint_data
 
-class StopApplicationRequest(RoaRequest):
+class UpdateIngressRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'sae', '2019-05-06', 'StopApplication')
-		self.set_uri_pattern('/pop/v1/sam/app/stopApplication')
+		RoaRequest.__init__(self, 'sae', '2019-05-06', 'UpdateIngress')
+		self.set_uri_pattern('/pop/v1/sam/ingress/Ingress')
 		self.set_method('PUT')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -32,8 +32,38 @@ class StopApplicationRequest(RoaRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_AppId(self):
-		return self.get_query_params().get('AppId')
+	def get_IngressId(self):
+		return self.get_query_params().get('IngressId')
 
-	def set_AppId(self,AppId):
-		self.add_query_param('AppId',AppId)
+	def set_IngressId(self,IngressId):
+		self.add_query_param('IngressId',IngressId)
+
+	def get_ListenerPort(self):
+		return self.get_query_params().get('ListenerPort')
+
+	def set_ListenerPort(self,ListenerPort):
+		self.add_query_param('ListenerPort',ListenerPort)
+
+	def get_Description(self):
+		return self.get_query_params().get('Description')
+
+	def set_Description(self,Description):
+		self.add_query_param('Description',Description)
+
+	def get_Rules(self):
+		return self.get_query_params().get('Rules')
+
+	def set_Rules(self,Rules):
+		self.add_query_param('Rules',Rules)
+
+	def get_CertId(self):
+		return self.get_query_params().get('CertId')
+
+	def set_CertId(self,CertId):
+		self.add_query_param('CertId',CertId)
+
+	def get_DefaultRule(self):
+		return self.get_query_params().get('DefaultRule')
+
+	def set_DefaultRule(self,DefaultRule):
+		self.add_query_param('DefaultRule',DefaultRule)

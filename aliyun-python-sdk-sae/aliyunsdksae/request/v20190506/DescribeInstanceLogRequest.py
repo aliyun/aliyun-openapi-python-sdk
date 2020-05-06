@@ -23,7 +23,7 @@ from aliyunsdksae.endpoint import endpoint_data
 class DescribeInstanceLogRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'sae', '2019-05-06', 'DescribeInstanceLog','serverless')
+		RoaRequest.__init__(self, 'sae', '2019-05-06', 'DescribeInstanceLog')
 		self.set_uri_pattern('/pop/v1/sam/instance/describeInstanceLog')
 		self.set_method('GET')
 		if hasattr(self, "endpoint_map"):

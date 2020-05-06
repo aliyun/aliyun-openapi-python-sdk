@@ -23,7 +23,7 @@ from aliyunsdksae.endpoint import endpoint_data
 class ListApplicationsRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'sae', '2019-05-06', 'ListApplications','serverless')
+		RoaRequest.__init__(self, 'sae', '2019-05-06', 'ListApplications')
 		self.set_uri_pattern('/pop/v1/sam/app/listApplications')
 		self.set_method('GET')
 		if hasattr(self, "endpoint_map"):
@@ -38,6 +38,12 @@ class ListApplicationsRequest(RoaRequest):
 	def set_AppName(self,AppName):
 		self.add_query_param('AppName',AppName)
 
+	def get_NamespaceId(self):
+		return self.get_query_params().get('NamespaceId')
+
+	def set_NamespaceId(self,NamespaceId):
+		self.add_query_param('NamespaceId',NamespaceId)
+
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
 
@@ -49,3 +55,9 @@ class ListApplicationsRequest(RoaRequest):
 
 	def set_CurrentPage(self,CurrentPage):
 		self.add_query_param('CurrentPage',CurrentPage)
+
+	def get_Tags(self):
+		return self.get_query_params().get('Tags')
+
+	def set_Tags(self,Tags):
+		self.add_query_param('Tags',Tags)

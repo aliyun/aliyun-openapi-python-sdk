@@ -23,7 +23,7 @@ from aliyunsdksae.endpoint import endpoint_data
 class BindSlbRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'sae', '2019-05-06', 'BindSlb','serverless')
+		RoaRequest.__init__(self, 'sae', '2019-05-06', 'BindSlb')
 		self.set_uri_pattern('/pop/v1/sam/app/slb')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
@@ -37,6 +37,18 @@ class BindSlbRequest(RoaRequest):
 
 	def set_Intranet(self,Intranet):
 		self.add_query_param('Intranet',Intranet)
+
+	def get_IntranetSlbId(self):
+		return self.get_query_params().get('IntranetSlbId')
+
+	def set_IntranetSlbId(self,IntranetSlbId):
+		self.add_query_param('IntranetSlbId',IntranetSlbId)
+
+	def get_InternetSlbId(self):
+		return self.get_query_params().get('InternetSlbId')
+
+	def set_InternetSlbId(self,InternetSlbId):
+		self.add_query_param('InternetSlbId',InternetSlbId)
 
 	def get_AppId(self):
 		return self.get_query_params().get('AppId')

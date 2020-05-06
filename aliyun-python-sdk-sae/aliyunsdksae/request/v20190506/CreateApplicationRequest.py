@@ -23,7 +23,7 @@ from aliyunsdksae.endpoint import endpoint_data
 class CreateApplicationRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'sae', '2019-05-06', 'CreateApplication','serverless')
+		RoaRequest.__init__(self, 'sae', '2019-05-06', 'CreateApplication')
 		self.set_uri_pattern('/pop/v1/sam/app/createApplication')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
@@ -31,6 +31,12 @@ class CreateApplicationRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+
+	def get_NasId(self):
+		return self.get_query_params().get('NasId')
+
+	def set_NasId(self,NasId):
+		self.add_query_param('NasId',NasId)
 
 	def get_WebContainer(self):
 		return self.get_query_params().get('WebContainer')
@@ -74,6 +80,12 @@ class CreateApplicationRequest(RoaRequest):
 	def set_Timezone(self,Timezone):
 		self.add_query_param('Timezone',Timezone)
 
+	def get_MountHost(self):
+		return self.get_query_params().get('MountHost')
+
+	def set_MountHost(self,MountHost):
+		self.add_query_param('MountHost',MountHost)
+
 	def get_Liveness(self):
 		return self.get_query_params().get('Liveness')
 
@@ -103,6 +115,12 @@ class CreateApplicationRequest(RoaRequest):
 
 	def set_Deploy(self,Deploy):
 		self.add_query_param('Deploy',Deploy)
+
+	def get_WarStartOptions(self):
+		return self.get_query_params().get('WarStartOptions')
+
+	def set_WarStartOptions(self,WarStartOptions):
+		self.add_query_param('WarStartOptions',WarStartOptions)
 
 	def get_JarStartOptions(self):
 		return self.get_query_params().get('JarStartOptions')
@@ -134,6 +152,12 @@ class CreateApplicationRequest(RoaRequest):
 	def set_PackageUrl(self,PackageUrl):
 		self.add_query_param('PackageUrl',PackageUrl)
 
+	def get_PreStop(self):
+		return self.get_query_params().get('PreStop')
+
+	def set_PreStop(self,PreStop):
+		self.add_query_param('PreStop',PreStop)
+
 	def get_Replicas(self):
 		return self.get_query_params().get('Replicas')
 
@@ -151,6 +175,12 @@ class CreateApplicationRequest(RoaRequest):
 
 	def set_Command(self,Command):
 		self.add_query_param('Command',Command)
+
+	def get_MountDesc(self):
+		return self.get_query_params().get('MountDesc')
+
+	def set_MountDesc(self,MountDesc):
+		self.add_query_param('MountDesc',MountDesc)
 
 	def get_VSwitchId(self):
 		return self.get_query_params().get('VSwitchId')
@@ -187,3 +217,9 @@ class CreateApplicationRequest(RoaRequest):
 
 	def set_PackageType(self,PackageType):
 		self.add_query_param('PackageType',PackageType)
+
+	def get_PostStart(self):
+		return self.get_query_params().get('PostStart')
+
+	def set_PostStart(self,PostStart):
+		self.add_query_param('PostStart',PostStart)

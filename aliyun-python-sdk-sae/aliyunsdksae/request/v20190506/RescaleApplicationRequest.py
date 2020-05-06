@@ -23,7 +23,7 @@ from aliyunsdksae.endpoint import endpoint_data
 class RescaleApplicationRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'sae', '2019-05-06', 'RescaleApplication','serverless')
+		RoaRequest.__init__(self, 'sae', '2019-05-06', 'RescaleApplication')
 		self.set_uri_pattern('/pop/v1/sam/app/rescaleApplication')
 		self.set_method('PUT')
 		if hasattr(self, "endpoint_map"):
@@ -31,6 +31,12 @@ class RescaleApplicationRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+
+	def get_MinReadyInstances(self):
+		return self.get_query_params().get('MinReadyInstances')
+
+	def set_MinReadyInstances(self,MinReadyInstances):
+		self.add_query_param('MinReadyInstances',MinReadyInstances)
 
 	def get_Replicas(self):
 		return self.get_query_params().get('Replicas')

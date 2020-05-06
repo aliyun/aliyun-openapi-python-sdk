@@ -20,11 +20,11 @@
 from aliyunsdkcore.request import RoaRequest
 from aliyunsdksae.endpoint import endpoint_data
 
-class DescribeNamespaceRequest(RoaRequest):
+class ListNamespaceChangeOrdersRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'sae', '2019-05-06', 'DescribeNamespace')
-		self.set_uri_pattern('/pop/v1/paas/namespace')
+		RoaRequest.__init__(self, 'sae', '2019-05-06', 'ListNamespaceChangeOrders')
+		self.set_uri_pattern('/pop/v1/sam/changeorder/listNamespaceChangeOrders')
 		self.set_method('GET')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -32,8 +32,38 @@ class DescribeNamespaceRequest(RoaRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_CoType(self):
+		return self.get_query_params().get('CoType')
+
+	def set_CoType(self,CoType):
+		self.add_query_param('CoType',CoType)
+
 	def get_NamespaceId(self):
 		return self.get_query_params().get('NamespaceId')
 
 	def set_NamespaceId(self,NamespaceId):
 		self.add_query_param('NamespaceId',NamespaceId)
+
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
+
+	def get_CurrentPage(self):
+		return self.get_query_params().get('CurrentPage')
+
+	def set_CurrentPage(self,CurrentPage):
+		self.add_query_param('CurrentPage',CurrentPage)
+
+	def get_CoStatus(self):
+		return self.get_query_params().get('CoStatus')
+
+	def set_CoStatus(self,CoStatus):
+		self.add_query_param('CoStatus',CoStatus)
+
+	def get_Key(self):
+		return self.get_query_params().get('Key')
+
+	def set_Key(self,Key):
+		self.add_query_param('Key',Key)

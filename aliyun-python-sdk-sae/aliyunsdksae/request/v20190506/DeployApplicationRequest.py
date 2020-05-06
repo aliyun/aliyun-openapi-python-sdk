@@ -23,7 +23,7 @@ from aliyunsdksae.endpoint import endpoint_data
 class DeployApplicationRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'sae', '2019-05-06', 'DeployApplication','serverless')
+		RoaRequest.__init__(self, 'sae', '2019-05-06', 'DeployApplication')
 		self.set_uri_pattern('/pop/v1/sam/app/deployApplication')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
@@ -31,6 +31,12 @@ class DeployApplicationRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+
+	def get_NasId(self):
+		return self.get_path_params().get('NasId')
+
+	def set_NasId(self,NasId):
+		self.add_path_param('NasId',NasId)
 
 	def get_WebContainer(self):
 		return self.get_query_params().get('WebContainer')
@@ -44,6 +50,12 @@ class DeployApplicationRequest(RoaRequest):
 	def set_JarStartArgs(self,JarStartArgs):
 		self.add_query_param('JarStartArgs',JarStartArgs)
 
+	def get_SlsConfigs(self):
+		return self.get_query_params().get('SlsConfigs')
+
+	def set_SlsConfigs(self,SlsConfigs):
+		self.add_query_param('SlsConfigs',SlsConfigs)
+
 	def get_CommandArgs(self):
 		return self.get_query_params().get('CommandArgs')
 
@@ -55,6 +67,18 @@ class DeployApplicationRequest(RoaRequest):
 
 	def set_Readiness(self,Readiness):
 		self.add_query_param('Readiness',Readiness)
+
+	def get_Timezone(self):
+		return self.get_query_params().get('Timezone')
+
+	def set_Timezone(self,Timezone):
+		self.add_query_param('Timezone',Timezone)
+
+	def get_MountHost(self):
+		return self.get_path_params().get('MountHost')
+
+	def set_MountHost(self,MountHost):
+		self.add_path_param('MountHost',MountHost)
 
 	def get_BatchWaitTime(self):
 		return self.get_query_params().get('BatchWaitTime')
@@ -80,41 +104,23 @@ class DeployApplicationRequest(RoaRequest):
 	def set_PackageVersion(self,PackageVersion):
 		self.add_query_param('PackageVersion',PackageVersion)
 
-	def get_Command(self):
-		return self.get_query_params().get('Command')
-
-	def set_Command(self,Command):
-		self.add_query_param('Command',Command)
-
 	def get_CustomHostAlias(self):
 		return self.get_query_params().get('CustomHostAlias')
 
 	def set_CustomHostAlias(self,CustomHostAlias):
 		self.add_query_param('CustomHostAlias',CustomHostAlias)
 
-	def get_UpdateStrategy(self):
-		return self.get_query_params().get('UpdateStrategy')
+	def get_WarStartOptions(self):
+		return self.get_query_params().get('WarStartOptions')
 
-	def set_UpdateStrategy(self,UpdateStrategy):
-		self.add_query_param('UpdateStrategy',UpdateStrategy)
-
-	def get_Jdk(self):
-		return self.get_query_params().get('Jdk')
-
-	def set_Jdk(self,Jdk):
-		self.add_query_param('Jdk',Jdk)
+	def set_WarStartOptions(self,WarStartOptions):
+		self.add_query_param('WarStartOptions',WarStartOptions)
 
 	def get_JarStartOptions(self):
 		return self.get_query_params().get('JarStartOptions')
 
 	def set_JarStartOptions(self,JarStartOptions):
 		self.add_query_param('JarStartOptions',JarStartOptions)
-
-	def get_MinReadyInstances(self):
-		return self.get_query_params().get('MinReadyInstances')
-
-	def set_MinReadyInstances(self,MinReadyInstances):
-		self.add_query_param('MinReadyInstances',MinReadyInstances)
 
 	def get_EdasContainerVersion(self):
 		return self.get_query_params().get('EdasContainerVersion')
@@ -128,6 +134,48 @@ class DeployApplicationRequest(RoaRequest):
 	def set_PackageUrl(self,PackageUrl):
 		self.add_query_param('PackageUrl',PackageUrl)
 
+	def get_PreStop(self):
+		return self.get_query_params().get('PreStop')
+
+	def set_PreStop(self,PreStop):
+		self.add_query_param('PreStop',PreStop)
+
+	def get_Command(self):
+		return self.get_query_params().get('Command')
+
+	def set_Command(self,Command):
+		self.add_query_param('Command',Command)
+
+	def get_UpdateStrategy(self):
+		return self.get_query_params().get('UpdateStrategy')
+
+	def set_UpdateStrategy(self,UpdateStrategy):
+		self.add_query_param('UpdateStrategy',UpdateStrategy)
+
+	def get_MountDesc(self):
+		return self.get_path_params().get('MountDesc')
+
+	def set_MountDesc(self,MountDesc):
+		self.add_path_param('MountDesc',MountDesc)
+
+	def get_Jdk(self):
+		return self.get_query_params().get('Jdk')
+
+	def set_Jdk(self,Jdk):
+		self.add_query_param('Jdk',Jdk)
+
+	def get_MinReadyInstances(self):
+		return self.get_query_params().get('MinReadyInstances')
+
+	def set_MinReadyInstances(self,MinReadyInstances):
+		self.add_query_param('MinReadyInstances',MinReadyInstances)
+
+	def get_ChangeOrderDesc(self):
+		return self.get_query_params().get('ChangeOrderDesc')
+
+	def set_ChangeOrderDesc(self,ChangeOrderDesc):
+		self.add_query_param('ChangeOrderDesc',ChangeOrderDesc)
+
 	def get_AppId(self):
 		return self.get_query_params().get('AppId')
 
@@ -139,3 +187,9 @@ class DeployApplicationRequest(RoaRequest):
 
 	def set_ImageUrl(self,ImageUrl):
 		self.add_query_param('ImageUrl',ImageUrl)
+
+	def get_PostStart(self):
+		return self.get_query_params().get('PostStart')
+
+	def set_PostStart(self,PostStart):
+		self.add_query_param('PostStart',PostStart)

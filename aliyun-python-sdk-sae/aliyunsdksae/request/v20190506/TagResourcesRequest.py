@@ -20,20 +20,32 @@
 from aliyunsdkcore.request import RoaRequest
 from aliyunsdksae.endpoint import endpoint_data
 
-class DescribeNamespaceRequest(RoaRequest):
+class TagResourcesRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'sae', '2019-05-06', 'DescribeNamespace')
-		self.set_uri_pattern('/pop/v1/paas/namespace')
-		self.set_method('GET')
+		RoaRequest.__init__(self, 'sae', '2019-05-06', 'TagResources')
+		self.set_uri_pattern('/tags')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_NamespaceId(self):
-		return self.get_query_params().get('NamespaceId')
+	def get_ResourceType(self):
+		return self.get_body_params().get('ResourceType')
 
-	def set_NamespaceId(self,NamespaceId):
-		self.add_query_param('NamespaceId',NamespaceId)
+	def set_ResourceType(self,ResourceType):
+		self.add_body_params('ResourceType', ResourceType)
+
+	def get_Tags(self):
+		return self.get_body_params().get('Tags')
+
+	def set_Tags(self,Tags):
+		self.add_body_params('Tags', Tags)
+
+	def get_ResourceIds(self):
+		return self.get_body_params().get('ResourceIds')
+
+	def set_ResourceIds(self,ResourceIds):
+		self.add_body_params('ResourceIds', ResourceIds)

@@ -20,12 +20,12 @@
 from aliyunsdkcore.request import RoaRequest
 from aliyunsdksae.endpoint import endpoint_data
 
-class DescribeNamespaceRequest(RoaRequest):
+class UpdateNamespaceVpcRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'sae', '2019-05-06', 'DescribeNamespace')
-		self.set_uri_pattern('/pop/v1/paas/namespace')
-		self.set_method('GET')
+		RoaRequest.__init__(self, 'sae', '2019-05-06', 'UpdateNamespaceVpc')
+		self.set_uri_pattern('/pop/v1/sam/namespace/updateNamespaceVpc')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -37,3 +37,9 @@ class DescribeNamespaceRequest(RoaRequest):
 
 	def set_NamespaceId(self,NamespaceId):
 		self.add_query_param('NamespaceId',NamespaceId)
+
+	def get_VpcId(self):
+		return self.get_query_params().get('VpcId')
+
+	def set_VpcId(self,VpcId):
+		self.add_query_param('VpcId',VpcId)

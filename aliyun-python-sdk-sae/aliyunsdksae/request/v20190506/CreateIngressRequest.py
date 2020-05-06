@@ -20,20 +20,56 @@
 from aliyunsdkcore.request import RoaRequest
 from aliyunsdksae.endpoint import endpoint_data
 
-class DescribeNamespaceRequest(RoaRequest):
+class CreateIngressRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'sae', '2019-05-06', 'DescribeNamespace')
-		self.set_uri_pattern('/pop/v1/paas/namespace')
-		self.set_method('GET')
+		RoaRequest.__init__(self, 'sae', '2019-05-06', 'CreateIngress')
+		self.set_uri_pattern('/pop/v1/sam/ingress/Ingress')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_ListenerPort(self):
+		return self.get_query_params().get('ListenerPort')
+
+	def set_ListenerPort(self,ListenerPort):
+		self.add_query_param('ListenerPort',ListenerPort)
+
+	def get_SlbId(self):
+		return self.get_query_params().get('SlbId')
+
+	def set_SlbId(self,SlbId):
+		self.add_query_param('SlbId',SlbId)
+
 	def get_NamespaceId(self):
 		return self.get_query_params().get('NamespaceId')
 
 	def set_NamespaceId(self,NamespaceId):
 		self.add_query_param('NamespaceId',NamespaceId)
+
+	def get_Description(self):
+		return self.get_query_params().get('Description')
+
+	def set_Description(self,Description):
+		self.add_query_param('Description',Description)
+
+	def get_Rules(self):
+		return self.get_query_params().get('Rules')
+
+	def set_Rules(self,Rules):
+		self.add_query_param('Rules',Rules)
+
+	def get_CertId(self):
+		return self.get_query_params().get('CertId')
+
+	def set_CertId(self,CertId):
+		self.add_query_param('CertId',CertId)
+
+	def get_DefaultRule(self):
+		return self.get_query_params().get('DefaultRule')
+
+	def set_DefaultRule(self,DefaultRule):
+		self.add_query_param('DefaultRule',DefaultRule)

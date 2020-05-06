@@ -23,7 +23,7 @@ from aliyunsdksae.endpoint import endpoint_data
 class AbortChangeOrderRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'sae', '2019-05-06', 'AbortChangeOrder','serverless')
+		RoaRequest.__init__(self, 'sae', '2019-05-06', 'AbortChangeOrder')
 		self.set_uri_pattern('/pop/v1/sam/changeorder/AbortChangeOrder')
 		self.set_method('PUT')
 		if hasattr(self, "endpoint_map"):

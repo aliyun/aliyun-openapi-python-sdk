@@ -23,7 +23,7 @@ from aliyunsdksae.endpoint import endpoint_data
 class DescribeComponentsRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'sae', '2019-05-06', 'DescribeComponents','serverless')
+		RoaRequest.__init__(self, 'sae', '2019-05-06', 'DescribeComponents')
 		self.set_uri_pattern('/pop/v1/sam/resource/components')
 		self.set_method('GET')
 		if hasattr(self, "endpoint_map"):

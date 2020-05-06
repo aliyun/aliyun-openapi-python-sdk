@@ -20,20 +20,38 @@
 from aliyunsdkcore.request import RoaRequest
 from aliyunsdksae.endpoint import endpoint_data
 
-class DescribeNamespaceRequest(RoaRequest):
+class UntagResourcesRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'sae', '2019-05-06', 'DescribeNamespace')
-		self.set_uri_pattern('/pop/v1/paas/namespace')
-		self.set_method('GET')
+		RoaRequest.__init__(self, 'sae', '2019-05-06', 'UntagResources')
+		self.set_uri_pattern('/tags')
+		self.set_method('DELETE')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_NamespaceId(self):
-		return self.get_query_params().get('NamespaceId')
+	def get_TagKeys(self):
+		return self.get_query_params().get('TagKeys')
 
-	def set_NamespaceId(self,NamespaceId):
-		self.add_query_param('NamespaceId',NamespaceId)
+	def set_TagKeys(self,TagKeys):
+		self.add_query_param('TagKeys',TagKeys)
+
+	def get_DeleteAll(self):
+		return self.get_query_params().get('DeleteAll')
+
+	def set_DeleteAll(self,DeleteAll):
+		self.add_query_param('DeleteAll',DeleteAll)
+
+	def get_ResourceType(self):
+		return self.get_query_params().get('ResourceType')
+
+	def set_ResourceType(self,ResourceType):
+		self.add_query_param('ResourceType',ResourceType)
+
+	def get_ResourceIds(self):
+		return self.get_query_params().get('ResourceIds')
+
+	def set_ResourceIds(self,ResourceIds):
+		self.add_query_param('ResourceIds',ResourceIds)

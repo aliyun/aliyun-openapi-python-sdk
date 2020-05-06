@@ -23,7 +23,7 @@ from aliyunsdksae.endpoint import endpoint_data
 class UpdateNamespaceRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'sae', '2019-05-06', 'UpdateNamespace','serverless')
+		RoaRequest.__init__(self, 'sae', '2019-05-06', 'UpdateNamespace')
 		self.set_uri_pattern('/pop/v1/paas/namespace')
 		self.set_method('PUT')
 		if hasattr(self, "endpoint_map"):

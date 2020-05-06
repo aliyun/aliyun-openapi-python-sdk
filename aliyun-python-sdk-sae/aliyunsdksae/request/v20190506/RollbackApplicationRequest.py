@@ -20,20 +20,44 @@
 from aliyunsdkcore.request import RoaRequest
 from aliyunsdksae.endpoint import endpoint_data
 
-class DescribeNamespaceRequest(RoaRequest):
+class RollbackApplicationRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'sae', '2019-05-06', 'DescribeNamespace')
-		self.set_uri_pattern('/pop/v1/paas/namespace')
-		self.set_method('GET')
+		RoaRequest.__init__(self, 'sae', '2019-05-06', 'RollbackApplication')
+		self.set_uri_pattern('/pop/v1/sam/app/rollbackApplication')
+		self.set_method('PUT')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_NamespaceId(self):
-		return self.get_query_params().get('NamespaceId')
+	def get_MinReadyInstances(self):
+		return self.get_query_params().get('MinReadyInstances')
 
-	def set_NamespaceId(self,NamespaceId):
-		self.add_query_param('NamespaceId',NamespaceId)
+	def set_MinReadyInstances(self,MinReadyInstances):
+		self.add_query_param('MinReadyInstances',MinReadyInstances)
+
+	def get_VersionId(self):
+		return self.get_query_params().get('VersionId')
+
+	def set_VersionId(self,VersionId):
+		self.add_query_param('VersionId',VersionId)
+
+	def get_AppId(self):
+		return self.get_query_params().get('AppId')
+
+	def set_AppId(self,AppId):
+		self.add_query_param('AppId',AppId)
+
+	def get_BatchWaitTime(self):
+		return self.get_query_params().get('BatchWaitTime')
+
+	def set_BatchWaitTime(self,BatchWaitTime):
+		self.add_query_param('BatchWaitTime',BatchWaitTime)
+
+	def get_UpdateStrategy(self):
+		return self.get_query_params().get('UpdateStrategy')
+
+	def set_UpdateStrategy(self,UpdateStrategy):
+		self.add_query_param('UpdateStrategy',UpdateStrategy)

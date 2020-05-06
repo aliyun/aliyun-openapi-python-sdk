@@ -23,7 +23,7 @@ from aliyunsdksae.endpoint import endpoint_data
 class DeleteNamespaceRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'sae', '2019-05-06', 'DeleteNamespace','serverless')
+		RoaRequest.__init__(self, 'sae', '2019-05-06', 'DeleteNamespace')
 		self.set_uri_pattern('/pop/v1/paas/namespace')
 		self.set_method('DELETE')
 		if hasattr(self, "endpoint_map"):

@@ -23,7 +23,7 @@ from aliyunsdksae.endpoint import endpoint_data
 class DescribeChangeOrderRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'sae', '2019-05-06', 'DescribeChangeOrder','serverless')
+		RoaRequest.__init__(self, 'sae', '2019-05-06', 'DescribeChangeOrder')
 		self.set_uri_pattern('/pop/v1/sam/changeorder/DescribeChangeOrder')
 		self.set_method('GET')
 		if hasattr(self, "endpoint_map"):

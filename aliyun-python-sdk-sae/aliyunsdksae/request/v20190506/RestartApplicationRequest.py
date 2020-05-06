@@ -23,7 +23,7 @@ from aliyunsdksae.endpoint import endpoint_data
 class RestartApplicationRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'sae', '2019-05-06', 'RestartApplication','serverless')
+		RoaRequest.__init__(self, 'sae', '2019-05-06', 'RestartApplication')
 		self.set_uri_pattern('/pop/v1/sam/app/restartApplication')
 		self.set_method('PUT')
 		if hasattr(self, "endpoint_map"):

@@ -23,7 +23,7 @@ from aliyunsdksae.endpoint import endpoint_data
 class DeleteApplicationRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'sae', '2019-05-06', 'DeleteApplication','serverless')
+		RoaRequest.__init__(self, 'sae', '2019-05-06', 'DeleteApplication')
 		self.set_uri_pattern('/pop/v1/sam/app/deleteApplication')
 		self.set_method('DELETE')
 		if hasattr(self, "endpoint_map"):
