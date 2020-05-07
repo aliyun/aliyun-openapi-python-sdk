@@ -247,6 +247,9 @@ class AcsClient:
             request.set_content_type(format_type.APPLICATION_OCTET_STREAM)
         method = request.get_method()
 
+        if isinstance(request, CommonRequest):
+            request.trans_to_acs_request()
+
         signer = self._signer if specific_signer is None else specific_signer
         header, url = signer.sign(self._region_id, request)
 
@@ -287,9 +290,6 @@ class AcsClient:
 
         # modify Accept-Encoding
         request.add_header('Accept-Encoding', 'identity')
-
-        if isinstance(request, CommonRequest):
-            request.trans_to_acs_request()
 
         if request.endpoint:
             endpoint = request.endpoint
