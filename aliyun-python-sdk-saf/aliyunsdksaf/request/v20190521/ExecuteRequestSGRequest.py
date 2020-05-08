@@ -20,11 +20,12 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdksaf.endpoint import endpoint_data
 
-class ExecuteRequestRequest(RpcRequest):
+class ExecuteRequestSGRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'saf', '2018-09-19', 'ExecuteRequest','saf')
+		RpcRequest.__init__(self, 'saf', '2019-05-21', 'ExecuteRequestSG','saf')
 		self.set_protocol_type('https')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):

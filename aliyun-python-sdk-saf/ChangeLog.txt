@@ -1,3 +1,6 @@
+2020-05-08 Version: 3.0.2
+- Support sg for region.
+
 2020-03-16 Version: 3.0.1
 - Supported Saf for cn.
 
