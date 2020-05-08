@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,10 +18,23 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkpvtz.endpoint import endpoint_data
+
 class DescribeZoneRecordsRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'pvtz', '2018-01-01', 'DescribeZoneRecords','pvtz')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
+
+	def get_PageNumber(self):
+		return self.get_query_params().get('PageNumber')
+
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)
 
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
@@ -41,17 +54,17 @@ class DescribeZoneRecordsRequest(RpcRequest):
 	def set_ZoneId(self,ZoneId):
 		self.add_query_param('ZoneId',ZoneId)
 
+	def get_SearchMode(self):
+		return self.get_query_params().get('SearchMode')
+
+	def set_SearchMode(self,SearchMode):
+		self.add_query_param('SearchMode',SearchMode)
+
 	def get_Tag(self):
 		return self.get_query_params().get('Tag')
 
 	def set_Tag(self,Tag):
 		self.add_query_param('Tag',Tag)
-
-	def get_Keyword(self):
-		return self.get_query_params().get('Keyword')
-
-	def set_Keyword(self,Keyword):
-		self.add_query_param('Keyword',Keyword)
 
 	def get_Lang(self):
 		return self.get_query_params().get('Lang')
@@ -59,8 +72,8 @@ class DescribeZoneRecordsRequest(RpcRequest):
 	def set_Lang(self,Lang):
 		self.add_query_param('Lang',Lang)
 
-	def get_PageNumber(self):
-		return self.get_query_params().get('PageNumber')
+	def get_Keyword(self):
+		return self.get_query_params().get('Keyword')
 
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
+	def set_Keyword(self,Keyword):
+		self.add_query_param('Keyword',Keyword)

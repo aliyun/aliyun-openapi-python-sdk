@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,17 +18,48 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkfaas.endpoint import endpoint_data
+
 class LoadFpgaImageTaskRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'faas', '2017-08-24', 'LoadFpgaImageTask')
 		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_FpgaImageType(self):
 		return self.get_query_params().get('FpgaImageType')
 
 	def set_FpgaImageType(self,FpgaImageType):
 		self.add_query_param('FpgaImageType',FpgaImageType)
+
+	def get_FpgaImageUUID(self):
+		return self.get_query_params().get('FpgaImageUUID')
+
+	def set_FpgaImageUUID(self,FpgaImageUUID):
+		self.add_query_param('FpgaImageUUID',FpgaImageUUID)
+
+	def get_SecurityToken(self):
+		return self.get_query_params().get('SecurityToken')
+
+	def set_SecurityToken(self,SecurityToken):
+		self.add_query_param('SecurityToken',SecurityToken)
+
+	def get_FpgaType(self):
+		return self.get_query_params().get('FpgaType')
+
+	def set_FpgaType(self,FpgaType):
+		self.add_query_param('FpgaType',FpgaType)
+
+	def get_FpgaUUID(self):
+		return self.get_query_params().get('FpgaUUID')
+
+	def set_FpgaUUID(self,FpgaUUID):
+		self.add_query_param('FpgaUUID',FpgaUUID)
 
 	def get_ShellUUID(self):
 		return self.get_query_params().get('ShellUUID')
@@ -42,41 +73,17 @@ class LoadFpgaImageTaskRequest(RpcRequest):
 	def set_OwnerAlias(self,OwnerAlias):
 		self.add_query_param('OwnerAlias',OwnerAlias)
 
-	def get_FpgaImageUUID(self):
-		return self.get_query_params().get('FpgaImageUUID')
-
-	def set_FpgaImageUUID(self,FpgaImageUUID):
-		self.add_query_param('FpgaImageUUID',FpgaImageUUID)
-
 	def get_InstanceId(self):
 		return self.get_query_params().get('InstanceId')
 
 	def set_InstanceId(self,InstanceId):
 		self.add_query_param('InstanceId',InstanceId)
 
-	def get_SecurityToken(self):
-		return self.get_query_params().get('SecurityToken')
-
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)
-
 	def get_RoleArn(self):
 		return self.get_query_params().get('RoleArn')
 
 	def set_RoleArn(self,RoleArn):
 		self.add_query_param('RoleArn',RoleArn)
-
-	def get_FpgaType(self):
-		return self.get_query_params().get('FpgaType')
-
-	def set_FpgaType(self,FpgaType):
-		self.add_query_param('FpgaType',FpgaType)
-
-	def get_FpgaUUID(self):
-		return self.get_query_params().get('FpgaUUID')
-
-	def set_FpgaUUID(self,FpgaUUID):
-		self.add_query_param('FpgaUUID',FpgaUUID)
 
 	def get_Object(self):
 		return self.get_query_params().get('Object')

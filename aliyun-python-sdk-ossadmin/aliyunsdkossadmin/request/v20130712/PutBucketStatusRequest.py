@@ -21,19 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class PutBucketStatusRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'OssAdmin', '2013-07-12', 'PutBucketStatus')
-
-	def get_uid(self):
-		return self.get_query_params().get('uid')
-
-	def set_uid(self,uid):
-		self.add_query_param('uid',uid)
-
-	def get_bid(self):
-		return self.get_query_params().get('bid')
-
-	def set_bid(self,bid):
-		self.add_query_param('bid',bid)
+		RpcRequest.__init__(self, 'OssAdmin', '2013-07-12', 'PutBucketStatus','ossadmin')
 
 	def get_Bucket(self):
 		return self.get_query_params().get('Bucket')
@@ -41,14 +29,26 @@ class PutBucketStatusRequest(RpcRequest):
 	def set_Bucket(self,Bucket):
 		self.add_query_param('Bucket',Bucket)
 
-	def get_Status(self):
-		return self.get_query_params().get('Status')
+	def get_uid(self):
+		return self.get_query_params().get('uid')
 
-	def set_Status(self,Status):
-		self.add_query_param('Status',Status)
+	def set_uid(self,uid):
+		self.add_query_param('uid',uid)
 
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
 
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
+
+	def get_bid(self):
+		return self.get_query_params().get('bid')
+
+	def set_bid(self,bid):
+		self.add_query_param('bid',bid)
+
+	def get_Status(self):
+		return self.get_query_params().get('Status')
+
+	def set_Status(self,Status):
+		self.add_query_param('Status',Status)

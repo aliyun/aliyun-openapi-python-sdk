@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,10 +18,17 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkehpc.endpoint import endpoint_data
+
 class RecoverClusterRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'EHPC', '2018-04-12', 'RecoverCluster','ehs')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_ImageId(self):
 		return self.get_query_params().get('ImageId')
@@ -35,17 +42,17 @@ class RecoverClusterRequest(RpcRequest):
 	def set_OsTag(self,OsTag):
 		self.add_query_param('OsTag',OsTag)
 
+	def get_ClientVersion(self):
+		return self.get_query_params().get('ClientVersion')
+
+	def set_ClientVersion(self,ClientVersion):
+		self.add_query_param('ClientVersion',ClientVersion)
+
 	def get_AccountType(self):
 		return self.get_query_params().get('AccountType')
 
 	def set_AccountType(self,AccountType):
 		self.add_query_param('AccountType',AccountType)
-
-	def get_SchedulerType(self):
-		return self.get_query_params().get('SchedulerType')
-
-	def set_SchedulerType(self,SchedulerType):
-		self.add_query_param('SchedulerType',SchedulerType)
 
 	def get_ClusterId(self):
 		return self.get_query_params().get('ClusterId')
@@ -58,3 +65,9 @@ class RecoverClusterRequest(RpcRequest):
 
 	def set_ImageOwnerAlias(self,ImageOwnerAlias):
 		self.add_query_param('ImageOwnerAlias',ImageOwnerAlias)
+
+	def get_SchedulerType(self):
+		return self.get_query_params().get('SchedulerType')
+
+	def set_SchedulerType(self,SchedulerType):
+		self.add_query_param('SchedulerType',SchedulerType)

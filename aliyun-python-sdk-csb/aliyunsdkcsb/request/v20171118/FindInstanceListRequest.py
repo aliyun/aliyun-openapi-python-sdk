@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,16 +18,17 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkcsb.endpoint import endpoint_data
+
 class FindInstanceListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'CSB', '2017-11-18', 'FindInstanceList','csb')
+		RpcRequest.__init__(self, 'CSB', '2017-11-18', 'FindInstanceList')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_SearchTxt(self):
-		return self.get_query_params().get('SearchTxt')
-
-	def set_SearchTxt(self,SearchTxt):
-		self.add_query_param('SearchTxt',SearchTxt)
 
 	def get_CsbId(self):
 		return self.get_query_params().get('CsbId')
@@ -40,6 +41,12 @@ class FindInstanceListRequest(RpcRequest):
 
 	def set_PageNum(self,PageNum):
 		self.add_query_param('PageNum',PageNum)
+
+	def get_SearchTxt(self):
+		return self.get_query_params().get('SearchTxt')
+
+	def set_SearchTxt(self,SearchTxt):
+		self.add_query_param('SearchTxt',SearchTxt)
 
 	def get_Status(self):
 		return self.get_query_params().get('Status')

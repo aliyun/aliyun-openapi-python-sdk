@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,16 +18,17 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkmts.endpoint import endpoint_data
+
 class PlayInfoRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Mts', '2014-06-18', 'PlayInfo','mts')
+		RpcRequest.__init__(self, 'Mts', '2014-06-18', 'PlayInfo')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_PlayDomain(self):
-		return self.get_query_params().get('PlayDomain')
-
-	def set_PlayDomain(self,PlayDomain):
-		self.add_query_param('PlayDomain',PlayDomain)
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -40,6 +41,24 @@ class PlayInfoRequest(RpcRequest):
 
 	def set_Formats(self,Formats):
 		self.add_query_param('Formats',Formats)
+
+	def get_Rand(self):
+		return self.get_query_params().get('Rand')
+
+	def set_Rand(self,Rand):
+		self.add_query_param('Rand',Rand)
+
+	def get_AuthTimeout(self):
+		return self.get_query_params().get('AuthTimeout')
+
+	def set_AuthTimeout(self,AuthTimeout):
+		self.add_query_param('AuthTimeout',AuthTimeout)
+
+	def get_PlayDomain(self):
+		return self.get_query_params().get('PlayDomain')
+
+	def set_PlayDomain(self,PlayDomain):
+		self.add_query_param('PlayDomain',PlayDomain)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -76,18 +95,6 @@ class PlayInfoRequest(RpcRequest):
 
 	def set_MediaId(self,MediaId):
 		self.add_query_param('MediaId',MediaId)
-
-	def get_Rand(self):
-		return self.get_query_params().get('Rand')
-
-	def set_Rand(self,Rand):
-		self.add_query_param('Rand',Rand)
-
-	def get_AuthTimeout(self):
-		return self.get_query_params().get('AuthTimeout')
-
-	def set_AuthTimeout(self,AuthTimeout):
-		self.add_query_param('AuthTimeout',AuthTimeout)
 
 	def get_AuthInfo(self):
 		return self.get_query_params().get('AuthInfo')

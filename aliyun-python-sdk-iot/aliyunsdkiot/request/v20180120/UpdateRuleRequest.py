@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,10 +18,17 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkiot.endpoint import endpoint_data
+
 class UpdateRuleRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'UpdateRule','iot')
+		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'UpdateRule','Iot')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_Select(self):
 		return self.get_query_params().get('Select')
@@ -35,17 +42,17 @@ class UpdateRuleRequest(RpcRequest):
 	def set_RuleDesc(self,RuleDesc):
 		self.add_query_param('RuleDesc',RuleDesc)
 
+	def get_ShortTopic(self):
+		return self.get_query_params().get('ShortTopic')
+
+	def set_ShortTopic(self,ShortTopic):
+		self.add_query_param('ShortTopic',ShortTopic)
+
 	def get_IotInstanceId(self):
 		return self.get_query_params().get('IotInstanceId')
 
 	def set_IotInstanceId(self,IotInstanceId):
 		self.add_query_param('IotInstanceId',IotInstanceId)
-
-	def get_Name(self):
-		return self.get_query_params().get('Name')
-
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)
 
 	def get_Where(self):
 		return self.get_query_params().get('Where')
@@ -53,11 +60,11 @@ class UpdateRuleRequest(RpcRequest):
 	def set_Where(self,Where):
 		self.add_query_param('Where',Where)
 
-	def get_RuleId(self):
-		return self.get_query_params().get('RuleId')
+	def get_TopicType(self):
+		return self.get_query_params().get('TopicType')
 
-	def set_RuleId(self,RuleId):
-		self.add_query_param('RuleId',RuleId)
+	def set_TopicType(self,TopicType):
+		self.add_query_param('TopicType',TopicType)
 
 	def get_ProductKey(self):
 		return self.get_query_params().get('ProductKey')
@@ -65,14 +72,14 @@ class UpdateRuleRequest(RpcRequest):
 	def set_ProductKey(self,ProductKey):
 		self.add_query_param('ProductKey',ProductKey)
 
-	def get_TopicType(self):
-		return self.get_query_params().get('TopicType')
+	def get_Name(self):
+		return self.get_query_params().get('Name')
 
-	def set_TopicType(self,TopicType):
-		self.add_query_param('TopicType',TopicType)
+	def set_Name(self,Name):
+		self.add_query_param('Name',Name)
 
-	def get_ShortTopic(self):
-		return self.get_query_params().get('ShortTopic')
+	def get_RuleId(self):
+		return self.get_query_params().get('RuleId')
 
-	def set_ShortTopic(self,ShortTopic):
-		self.add_query_param('ShortTopic',ShortTopic)
+	def set_RuleId(self,RuleId):
+		self.add_query_param('RuleId',RuleId)

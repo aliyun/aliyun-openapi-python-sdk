@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,28 +18,17 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkons.endpoint import endpoint_data
+
 class OnsWarnCreateRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ons', '2019-02-14', 'OnsWarnCreate','ons')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_PreventCache(self):
-		return self.get_query_params().get('PreventCache')
-
-	def set_PreventCache(self,PreventCache):
-		self.add_query_param('PreventCache',PreventCache)
-
-	def get_InstanceId(self):
-		return self.get_query_params().get('InstanceId')
-
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
-
-	def get_BlockTime(self):
-		return self.get_query_params().get('BlockTime')
-
-	def set_BlockTime(self,BlockTime):
-		self.add_query_param('BlockTime',BlockTime)
 
 	def get_Level(self):
 		return self.get_query_params().get('Level')
@@ -59,12 +48,6 @@ class OnsWarnCreateRequest(RpcRequest):
 	def set_DelayTime(self,DelayTime):
 		self.add_query_param('DelayTime',DelayTime)
 
-	def get_Topic(self):
-		return self.get_query_params().get('Topic')
-
-	def set_Topic(self,Topic):
-		self.add_query_param('Topic',Topic)
-
 	def get_Threshold(self):
 		return self.get_query_params().get('Threshold')
 
@@ -76,6 +59,18 @@ class OnsWarnCreateRequest(RpcRequest):
 
 	def set_AlertTime(self,AlertTime):
 		self.add_query_param('AlertTime',AlertTime)
+
+	def get_InstanceId(self):
+		return self.get_query_params().get('InstanceId')
+
+	def set_InstanceId(self,InstanceId):
+		self.add_query_param('InstanceId',InstanceId)
+
+	def get_Topic(self):
+		return self.get_query_params().get('Topic')
+
+	def set_Topic(self,Topic):
+		self.add_query_param('Topic',Topic)
 
 	def get_Contacts(self):
 		return self.get_query_params().get('Contacts')

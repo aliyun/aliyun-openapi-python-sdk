@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,10 +18,17 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkess.endpoint import endpoint_data
+
 class CreateAlarmRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ess', '2014-08-28', 'CreateAlarm','ess')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_MetricType(self):
 		return self.get_query_params().get('MetricType')
@@ -29,29 +36,11 @@ class CreateAlarmRequest(RpcRequest):
 	def set_MetricType(self,MetricType):
 		self.add_query_param('MetricType',MetricType)
 
-	def get_Period(self):
-		return self.get_query_params().get('Period')
-
-	def set_Period(self,Period):
-		self.add_query_param('Period',Period)
-
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
-
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
 	def get_ScalingGroupId(self):
 		return self.get_query_params().get('ScalingGroupId')
 
 	def set_ScalingGroupId(self,ScalingGroupId):
 		self.add_query_param('ScalingGroupId',ScalingGroupId)
-
-	def get_GroupId(self):
-		return self.get_query_params().get('GroupId')
-
-	def set_GroupId(self,GroupId):
-		self.add_query_param('GroupId',GroupId)
 
 	def get_Description(self):
 		return self.get_query_params().get('Description')
@@ -73,18 +62,6 @@ class CreateAlarmRequest(RpcRequest):
 	def set_Threshold(self,Threshold):
 		self.add_query_param('Threshold',Threshold)
 
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_Name(self):
-		return self.get_query_params().get('Name')
-
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)
-
 	def get_EvaluationCount(self):
 		return self.get_query_params().get('EvaluationCount')
 
@@ -97,12 +74,6 @@ class CreateAlarmRequest(RpcRequest):
 	def set_MetricName(self,MetricName):
 		self.add_query_param('MetricName',MetricName)
 
-	def get_ComparisonOperator(self):
-		return self.get_query_params().get('ComparisonOperator')
-
-	def set_ComparisonOperator(self,ComparisonOperator):
-		self.add_query_param('ComparisonOperator',ComparisonOperator)
-
 	def get_Dimensions(self):
 		return self.get_query_params().get('Dimensions')
 
@@ -113,6 +84,42 @@ class CreateAlarmRequest(RpcRequest):
 			if Dimensions[i].get('DimensionKey') is not None:
 				self.add_query_param('Dimension.' + str(i + 1) + '.DimensionKey' , Dimensions[i].get('DimensionKey'))
 
+
+	def get_Period(self):
+		return self.get_query_params().get('Period')
+
+	def set_Period(self,Period):
+		self.add_query_param('Period',Period)
+
+	def get_ResourceOwnerAccount(self):
+		return self.get_query_params().get('ResourceOwnerAccount')
+
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+
+	def get_GroupId(self):
+		return self.get_query_params().get('GroupId')
+
+	def set_GroupId(self,GroupId):
+		self.add_query_param('GroupId',GroupId)
+
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
+
+	def get_Name(self):
+		return self.get_query_params().get('Name')
+
+	def set_Name(self,Name):
+		self.add_query_param('Name',Name)
+
+	def get_ComparisonOperator(self):
+		return self.get_query_params().get('ComparisonOperator')
+
+	def set_ComparisonOperator(self,ComparisonOperator):
+		self.add_query_param('ComparisonOperator',ComparisonOperator)
 
 	def get_Statistics(self):
 		return self.get_query_params().get('Statistics')

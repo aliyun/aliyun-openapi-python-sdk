@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class GetIpProfileRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas-api', '2017-07-05', 'GetIpProfile')
+		RpcRequest.__init__(self, 'Sas-api', '2017-07-05', 'GetIpProfile','sas-api')
 
 	def get_DeviceIdMd5(self):
 		return self.get_query_params().get('DeviceIdMd5')

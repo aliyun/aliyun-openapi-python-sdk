@@ -1,0 +1,27 @@
+2020-04-07 Version: 1.0.8
+- Generated 2019-12-30 for `facebody`.
+
+2020-03-23 Version: 1.0.7
+- Sdk version 107.
+
+2020-02-27 Version: 1.0.6
+- Sdk version 106.
+
+2020-02-09 Version: 1.0.4
+- Sdk version 104.
+
+2020-02-08 Version: 1.0.3
+- Add DetectMask Api.
+
+2020-01-20 Version: 1.0.1
+- Onezeroone sdk version.
+
+2019-12-30 Version: 1.0.2
+- Disable Base64 Image string data support.
+
+2019-12-29 Version: 1.0.1
+- Add new api.
+
+2019-12-18 Version: 1.0.0
+- First sdk version.
+

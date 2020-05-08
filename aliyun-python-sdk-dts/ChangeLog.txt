@@ -1,0 +1,44 @@
+2020-03-16 Version: 5.0.34.19.2
+- Synchronization support source and destination database.
+- Synchronization add delayMillis.
+
+2020-03-11 Version: 5.0.34.19.2
+- Synchronization support source and destination database.
+- Synchronization add delayMillis.
+
+2020-02-13 Version: 5.0.26.19.1
+- Add api.
+
+2020-02-13 Version: 5.0.26.19.1
+- Add api.
+
+2020-02-13 Version: 5.0.26.19.1
+- Add api.
+
+2020-02-13 Version: 5.0.26.19.1
+- Add api.
+
+2020-02-12 Version: 2.0.20
+- Fixed oracle SID.
+
+2020-01-10 Version: 2.0.18
+- Support RAM policy.
+
+2019-11-21 Version: 2.0.17
+- Support switchSourceEndpoint cross account.
+
+2019-11-21 Version: 2.0.16
+- Support Alert Configuration.
+
+2019-09-03 Version: 2.0.16
+- Support Alert Configuration.
+
+2019-09-02 Version: 2.0.15
+- Support Alert Configuration.
+
+2019-08-30 Version: 2.0.15
+- Support Alert Configuration.
+
+2019-03-15 Version: 2.0.10
+1, Support subscribe for RDS MySQL 5.7
+

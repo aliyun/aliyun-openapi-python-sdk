@@ -1,0 +1,17 @@
+2020-04-16 Version: 1.1.0
+- Support DescribeSecurityStatInfo API.
+
+2019-11-21 Version: 1.0.3
+- Supported SDK for python.
+- Supported api for alerts.
+- Fixed bugs for endpoints.
+
+2019-04-16 Version: 1.0.2
+1, Add api about pushing security check commands
+
+2019-04-03 Version: 1.0.1
+1, Add interfaces related to vulnerability whitelist
+2, Add interfaces related to vulnerability auto-del configuration
+3, Add interfaces related to vulnerability fix advise
+4, Add interfaces searching and operating vulnerability
+

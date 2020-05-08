@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,28 +18,23 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkcloudapi.endpoint import endpoint_data
+
 class CreateApiStageVariableRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'CloudAPI', '2016-07-14', 'CreateApiStageVariable','apigateway')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_SupportRoute(self):
 		return self.get_query_params().get('SupportRoute')
 
 	def set_SupportRoute(self,SupportRoute):
 		self.add_query_param('SupportRoute',SupportRoute)
-
-	def get_SecurityToken(self):
-		return self.get_query_params().get('SecurityToken')
-
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)
-
-	def get_VariableName(self):
-		return self.get_query_params().get('VariableName')
-
-	def set_VariableName(self,VariableName):
-		self.add_query_param('VariableName',VariableName)
 
 	def get_VariableValue(self):
 		return self.get_query_params().get('VariableValue')
@@ -58,6 +53,18 @@ class CreateApiStageVariableRequest(RpcRequest):
 
 	def set_StageRouteModel(self,StageRouteModel):
 		self.add_query_param('StageRouteModel',StageRouteModel)
+
+	def get_SecurityToken(self):
+		return self.get_query_params().get('SecurityToken')
+
+	def set_SecurityToken(self,SecurityToken):
+		self.add_query_param('SecurityToken',SecurityToken)
+
+	def get_VariableName(self):
+		return self.get_query_params().get('VariableName')
+
+	def set_VariableName(self,VariableName):
+		self.add_query_param('VariableName',VariableName)
 
 	def get_StageId(self):
 		return self.get_query_params().get('StageId')

@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,16 +18,17 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkess.endpoint import endpoint_data
+
 class DescribeScalingInstancesRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ess', '2014-08-28', 'DescribeScalingInstances','ess')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_InstanceId10(self):
-		return self.get_query_params().get('InstanceId.10')
-
-	def set_InstanceId10(self,InstanceId10):
-		self.add_query_param('InstanceId.10',InstanceId10)
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -35,53 +36,11 @@ class DescribeScalingInstancesRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_InstanceId12(self):
-		return self.get_query_params().get('InstanceId.12')
-
-	def set_InstanceId12(self,InstanceId12):
-		self.add_query_param('InstanceId.12',InstanceId12)
-
-	def get_InstanceId11(self):
-		return self.get_query_params().get('InstanceId.11')
-
-	def set_InstanceId11(self,InstanceId11):
-		self.add_query_param('InstanceId.11',InstanceId11)
-
-	def get_ScalingGroupId(self):
-		return self.get_query_params().get('ScalingGroupId')
-
-	def set_ScalingGroupId(self,ScalingGroupId):
-		self.add_query_param('ScalingGroupId',ScalingGroupId)
-
-	def get_LifecycleState(self):
-		return self.get_query_params().get('LifecycleState')
-
-	def set_LifecycleState(self,LifecycleState):
-		self.add_query_param('LifecycleState',LifecycleState)
-
 	def get_CreationType(self):
 		return self.get_query_params().get('CreationType')
 
 	def set_CreationType(self,CreationType):
 		self.add_query_param('CreationType',CreationType)
-
-	def get_PageNumber(self):
-		return self.get_query_params().get('PageNumber')
-
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
-
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_InstanceId20(self):
-		return self.get_query_params().get('InstanceId.20')
-
-	def set_InstanceId20(self,InstanceId20):
-		self.add_query_param('InstanceId.20',InstanceId20)
 
 	def get_InstanceId1(self):
 		return self.get_query_params().get('InstanceId.1')
@@ -94,12 +53,6 @@ class DescribeScalingInstancesRequest(RpcRequest):
 
 	def set_InstanceId3(self,InstanceId3):
 		self.add_query_param('InstanceId.3',InstanceId3)
-
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
-
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
 	def get_InstanceId2(self):
 		return self.get_query_params().get('InstanceId.2')
@@ -118,12 +71,6 @@ class DescribeScalingInstancesRequest(RpcRequest):
 
 	def set_InstanceId4(self,InstanceId4):
 		self.add_query_param('InstanceId.4',InstanceId4)
-
-	def get_OwnerAccount(self):
-		return self.get_query_params().get('OwnerAccount')
-
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
 
 	def get_InstanceId7(self):
 		return self.get_query_params().get('InstanceId.7')
@@ -166,6 +113,66 @@ class DescribeScalingInstancesRequest(RpcRequest):
 
 	def set_HealthStatus(self,HealthStatus):
 		self.add_query_param('HealthStatus',HealthStatus)
+
+	def get_InstanceId10(self):
+		return self.get_query_params().get('InstanceId.10')
+
+	def set_InstanceId10(self,InstanceId10):
+		self.add_query_param('InstanceId.10',InstanceId10)
+
+	def get_InstanceId12(self):
+		return self.get_query_params().get('InstanceId.12')
+
+	def set_InstanceId12(self,InstanceId12):
+		self.add_query_param('InstanceId.12',InstanceId12)
+
+	def get_InstanceId11(self):
+		return self.get_query_params().get('InstanceId.11')
+
+	def set_InstanceId11(self,InstanceId11):
+		self.add_query_param('InstanceId.11',InstanceId11)
+
+	def get_ScalingGroupId(self):
+		return self.get_query_params().get('ScalingGroupId')
+
+	def set_ScalingGroupId(self,ScalingGroupId):
+		self.add_query_param('ScalingGroupId',ScalingGroupId)
+
+	def get_LifecycleState(self):
+		return self.get_query_params().get('LifecycleState')
+
+	def set_LifecycleState(self,LifecycleState):
+		self.add_query_param('LifecycleState',LifecycleState)
+
+	def get_PageNumber(self):
+		return self.get_query_params().get('PageNumber')
+
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)
+
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
+
+	def get_InstanceId20(self):
+		return self.get_query_params().get('InstanceId.20')
+
+	def set_InstanceId20(self,InstanceId20):
+		self.add_query_param('InstanceId.20',InstanceId20)
+
+	def get_ResourceOwnerAccount(self):
+		return self.get_query_params().get('ResourceOwnerAccount')
+
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+
+	def get_OwnerAccount(self):
+		return self.get_query_params().get('OwnerAccount')
+
+	def set_OwnerAccount(self,OwnerAccount):
+		self.add_query_param('OwnerAccount',OwnerAccount)
 
 	def get_InstanceId18(self):
 		return self.get_query_params().get('InstanceId.18')

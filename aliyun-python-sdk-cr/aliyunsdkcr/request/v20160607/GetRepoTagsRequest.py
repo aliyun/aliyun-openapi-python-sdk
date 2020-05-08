@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RoaRequest
 class GetRepoTagsRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'cr', '2016-06-07', 'GetRepoTags')
+		RoaRequest.__init__(self, 'cr', '2016-06-07', 'GetRepoTags','cr')
 		self.set_uri_pattern('/repos/[RepoNamespace]/[RepoName]/tags')
 		self.set_method('GET')
 

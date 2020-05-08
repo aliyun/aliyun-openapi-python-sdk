@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,28 +18,23 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkcloudapi.endpoint import endpoint_data
+
 class ModifySignatureRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'CloudAPI', '2016-07-14', 'ModifySignature','apigateway')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_SecurityToken(self):
-		return self.get_query_params().get('SecurityToken')
-
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)
 
 	def get_SignatureName(self):
 		return self.get_query_params().get('SignatureName')
 
 	def set_SignatureName(self,SignatureName):
 		self.add_query_param('SignatureName',SignatureName)
-
-	def get_SignatureKey(self):
-		return self.get_query_params().get('SignatureKey')
-
-	def set_SignatureKey(self,SignatureKey):
-		self.add_query_param('SignatureKey',SignatureKey)
 
 	def get_SignatureId(self):
 		return self.get_query_params().get('SignatureId')
@@ -52,3 +47,15 @@ class ModifySignatureRequest(RpcRequest):
 
 	def set_SignatureSecret(self,SignatureSecret):
 		self.add_query_param('SignatureSecret',SignatureSecret)
+
+	def get_SecurityToken(self):
+		return self.get_query_params().get('SecurityToken')
+
+	def set_SecurityToken(self,SecurityToken):
+		self.add_query_param('SecurityToken',SecurityToken)
+
+	def get_SignatureKey(self):
+		return self.get_query_params().get('SignatureKey')
+
+	def set_SignatureKey(self,SignatureKey):
+		self.add_query_param('SignatureKey',SignatureKey)

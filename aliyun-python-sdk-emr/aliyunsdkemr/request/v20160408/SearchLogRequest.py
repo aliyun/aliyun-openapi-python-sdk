@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,22 +18,23 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkemr.endpoint import endpoint_data
+
 class SearchLogRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'SearchLog')
+		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'SearchLog','emr')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_HostInnerIp(self):
-		return self.get_query_params().get('HostInnerIp')
-
-	def set_HostInnerIp(self,HostInnerIp):
-		self.add_query_param('HostInnerIp',HostInnerIp)
 
 	def get_LogstoreName(self):
 		return self.get_query_params().get('LogstoreName')
@@ -59,18 +60,6 @@ class SearchLogRequest(RpcRequest):
 	def set_Line(self,Line):
 		self.add_query_param('Line',Line)
 
-	def get_ToTimestamp(self):
-		return self.get_query_params().get('ToTimestamp')
-
-	def set_ToTimestamp(self,ToTimestamp):
-		self.add_query_param('ToTimestamp',ToTimestamp)
-
-	def get_SlsQueryString(self):
-		return self.get_query_params().get('SlsQueryString')
-
-	def set_SlsQueryString(self,SlsQueryString):
-		self.add_query_param('SlsQueryString',SlsQueryString)
-
 	def get_ClusterId(self):
 		return self.get_query_params().get('ClusterId')
 
@@ -82,3 +71,27 @@ class SearchLogRequest(RpcRequest):
 
 	def set_Reverse(self,Reverse):
 		self.add_query_param('Reverse',Reverse)
+
+	def get_HostInnerIp(self):
+		return self.get_query_params().get('HostInnerIp')
+
+	def set_HostInnerIp(self,HostInnerIp):
+		self.add_query_param('HostInnerIp',HostInnerIp)
+
+	def get_HostName(self):
+		return self.get_query_params().get('HostName')
+
+	def set_HostName(self,HostName):
+		self.add_query_param('HostName',HostName)
+
+	def get_ToTimestamp(self):
+		return self.get_query_params().get('ToTimestamp')
+
+	def set_ToTimestamp(self,ToTimestamp):
+		self.add_query_param('ToTimestamp',ToTimestamp)
+
+	def get_SlsQueryString(self):
+		return self.get_query_params().get('SlsQueryString')
+
+	def set_SlsQueryString(self,SlsQueryString):
+		self.add_query_param('SlsQueryString',SlsQueryString)

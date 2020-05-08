@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,10 +18,18 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkdds.endpoint import endpoint_data
+
 class DescribeDBInstancesRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Dds', '2015-12-01', 'DescribeDBInstances','dds')
+		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -94,6 +102,17 @@ class DescribeDBInstancesRequest(RpcRequest):
 
 	def set_DBInstanceStatus(self,DBInstanceStatus):
 		self.add_query_param('DBInstanceStatus',DBInstanceStatus)
+
+	def get_Tags(self):
+		return self.get_query_params().get('Tags')
+
+	def set_Tags(self,Tags):
+		for i in range(len(Tags)):	
+			if Tags[i].get('Value') is not None:
+				self.add_query_param('Tag.' + str(i + 1) + '.Value' , Tags[i].get('Value'))
+			if Tags[i].get('Key') is not None:
+				self.add_query_param('Tag.' + str(i + 1) + '.Key' , Tags[i].get('Key'))
+
 
 	def get_ExpireTime(self):
 		return self.get_query_params().get('ExpireTime')

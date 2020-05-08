@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class GetPhoneProfileRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas-api', '2017-07-05', 'GetPhoneProfile')
+		RpcRequest.__init__(self, 'Sas-api', '2017-07-05', 'GetPhoneProfile','sas-api')
 
 	def get_Phone(self):
 		return self.get_query_params().get('Phone')

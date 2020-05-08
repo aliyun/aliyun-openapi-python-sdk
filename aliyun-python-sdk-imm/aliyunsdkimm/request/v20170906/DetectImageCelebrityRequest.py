@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,16 +18,18 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+
 class DetectImageCelebrityRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'imm', '2017-09-06', 'DetectImageCelebrity','imm')
+		self.set_method('POST')
 
-	def get_ImageUri(self):
-		return self.get_query_params().get('ImageUri')
+	def get_Project(self):
+		return self.get_query_params().get('Project')
 
-	def set_ImageUri(self,ImageUri):
-		self.add_query_param('ImageUri',ImageUri)
+	def set_Project(self,Project):
+		self.add_query_param('Project',Project)
 
 	def get_Library(self):
 		return self.get_query_params().get('Library')
@@ -35,8 +37,8 @@ class DetectImageCelebrityRequest(RpcRequest):
 	def set_Library(self,Library):
 		self.add_query_param('Library',Library)
 
-	def get_Project(self):
-		return self.get_query_params().get('Project')
+	def get_ImageUri(self):
+		return self.get_query_params().get('ImageUri')
 
-	def set_Project(self,Project):
-		self.add_query_param('Project',Project)
+	def set_ImageUri(self,ImageUri):
+		self.add_query_param('ImageUri',ImageUri)

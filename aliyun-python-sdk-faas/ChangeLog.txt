@@ -1,3 +1,9 @@
+2020-03-16 Version: 2.7.11
+- Support UpdateComplieStatus.
+
+2020-02-13 Version: 2.7.5
+- Support cn-shanghai-finance-1 region.
+
 2019-02-22 Version: 1.2.0
 1, support ram authentication for sub user and  sts token
 2, add 2 new openAPIs

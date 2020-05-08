@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,16 +18,17 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkvod.endpoint import endpoint_data
+
 class RegisterMediaRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'vod', '2017-03-21', 'RegisterMedia','vod')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_UserData(self):
-		return self.get_query_params().get('UserData')
-
-	def set_UserData(self,UserData):
-		self.add_query_param('UserData',UserData)
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -35,11 +36,23 @@ class RegisterMediaRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_TemplateGroupId(self):
-		return self.get_query_params().get('TemplateGroupId')
+	def get_UserData(self):
+		return self.get_query_params().get('UserData')
 
-	def set_TemplateGroupId(self,TemplateGroupId):
-		self.add_query_param('TemplateGroupId',TemplateGroupId)
+	def set_UserData(self,UserData):
+		self.add_query_param('UserData',UserData)
+
+	def get_RegisterMetadatas(self):
+		return self.get_query_params().get('RegisterMetadatas')
+
+	def set_RegisterMetadatas(self,RegisterMetadatas):
+		self.add_query_param('RegisterMetadatas',RegisterMetadatas)
+
+	def get_WorkflowId(self):
+		return self.get_query_params().get('WorkflowId')
+
+	def set_WorkflowId(self,WorkflowId):
+		self.add_query_param('WorkflowId',WorkflowId)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -53,14 +66,8 @@ class RegisterMediaRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_RegisterMetadatas(self):
-		return self.get_query_params().get('RegisterMetadatas')
+	def get_TemplateGroupId(self):
+		return self.get_query_params().get('TemplateGroupId')
 
-	def set_RegisterMetadatas(self,RegisterMetadatas):
-		self.add_query_param('RegisterMetadatas',RegisterMetadatas)
-
-	def get_WorkFlowId(self):
-		return self.get_query_params().get('WorkFlowId')
-
-	def set_WorkFlowId(self,WorkFlowId):
-		self.add_query_param('WorkFlowId',WorkFlowId)
+	def set_TemplateGroupId(self,TemplateGroupId):
+		self.add_query_param('TemplateGroupId',TemplateGroupId)

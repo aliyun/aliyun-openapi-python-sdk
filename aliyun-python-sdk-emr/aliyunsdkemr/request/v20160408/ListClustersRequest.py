@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,10 +18,17 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkemr.endpoint import endpoint_data
+
 class ListClustersRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'ListClusters')
+		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'ListClusters','emr')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -63,6 +70,12 @@ class ListClustersRequest(RpcRequest):
 	def set_CreateType(self,CreateType):
 		self.add_query_param('CreateType',CreateType)
 
+	def get_DepositType(self):
+		return self.get_query_params().get('DepositType')
+
+	def set_DepositType(self,DepositType):
+		self.add_query_param('DepositType',DepositType)
+
 	def get_DefaultStatus(self):
 		return self.get_query_params().get('DefaultStatus')
 
@@ -74,3 +87,9 @@ class ListClustersRequest(RpcRequest):
 
 	def set_PageNumber(self,PageNumber):
 		self.add_query_param('PageNumber',PageNumber)
+
+	def get_MachineType(self):
+		return self.get_query_params().get('MachineType')
+
+	def set_MachineType(self,MachineType):
+		self.add_query_param('MachineType',MachineType)

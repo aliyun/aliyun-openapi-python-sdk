@@ -21,13 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class DescribeConfigNameRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'afs', '2018-01-12', 'DescribeConfigName')
-
-	def get_ResourceOwnerId(self):
-		return self.get_query_params().get('ResourceOwnerId')
-
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+		RpcRequest.__init__(self, 'afs', '2018-01-12', 'DescribeConfigName','afs')
 
 	def get_SourceIp(self):
 		return self.get_query_params().get('SourceIp')

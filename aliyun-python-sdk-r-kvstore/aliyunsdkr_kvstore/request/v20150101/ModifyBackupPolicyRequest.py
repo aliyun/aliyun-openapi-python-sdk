@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,22 +18,17 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkr_kvstore.endpoint import endpoint_data
+
 class ModifyBackupPolicyRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'R-kvstore', '2015-01-01', 'ModifyBackupPolicy','redisa')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_PreferredBackupTime(self):
-		return self.get_query_params().get('PreferredBackupTime')
-
-	def set_PreferredBackupTime(self,PreferredBackupTime):
-		self.add_query_param('PreferredBackupTime',PreferredBackupTime)
-
-	def get_PreferredBackupPeriod(self):
-		return self.get_query_params().get('PreferredBackupPeriod')
-
-	def set_PreferredBackupPeriod(self,PreferredBackupPeriod):
-		self.add_query_param('PreferredBackupPeriod',PreferredBackupPeriod)
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -41,17 +36,23 @@ class ModifyBackupPolicyRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_InstanceId(self):
-		return self.get_query_params().get('InstanceId')
-
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
-
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
 
 	def set_SecurityToken(self,SecurityToken):
 		self.add_query_param('SecurityToken',SecurityToken)
+
+	def get_EnableBackupLog(self):
+		return self.get_query_params().get('EnableBackupLog')
+
+	def set_EnableBackupLog(self,EnableBackupLog):
+		self.add_query_param('EnableBackupLog',EnableBackupLog)
+
+	def get_PreferredBackupPeriod(self):
+		return self.get_query_params().get('PreferredBackupPeriod')
+
+	def set_PreferredBackupPeriod(self,PreferredBackupPeriod):
+		self.add_query_param('PreferredBackupPeriod',PreferredBackupPeriod)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -70,3 +71,15 @@ class ModifyBackupPolicyRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_PreferredBackupTime(self):
+		return self.get_query_params().get('PreferredBackupTime')
+
+	def set_PreferredBackupTime(self,PreferredBackupTime):
+		self.add_query_param('PreferredBackupTime',PreferredBackupTime)
+
+	def get_InstanceId(self):
+		return self.get_query_params().get('InstanceId')
+
+	def set_InstanceId(self,InstanceId):
+		self.add_query_param('InstanceId',InstanceId)

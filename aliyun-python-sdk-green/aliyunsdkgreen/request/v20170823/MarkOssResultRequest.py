@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,22 +18,29 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkgreen.endpoint import endpoint_data
+
 class MarkOssResultRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Green', '2017-08-23', 'MarkOssResult','green')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
+
+	def get_Scene(self):
+		return self.get_query_params().get('Scene')
+
+	def set_Scene(self,Scene):
+		self.add_query_param('Scene',Scene)
 
 	def get_SourceIp(self):
 		return self.get_query_params().get('SourceIp')
 
 	def set_SourceIp(self,SourceIp):
 		self.add_query_param('SourceIp',SourceIp)
-
-	def get_Ids(self):
-		return self.get_query_params().get('Ids')
-
-	def set_Ids(self,Ids):
-		self.add_query_param('Ids',Ids)
 
 	def get_Lang(self):
 		return self.get_query_params().get('Lang')
@@ -47,20 +54,20 @@ class MarkOssResultRequest(RpcRequest):
 	def set_Stock(self,Stock):
 		self.add_query_param('Stock',Stock)
 
-	def get_Operation(self):
-		return self.get_query_params().get('Operation')
-
-	def set_Operation(self,Operation):
-		self.add_query_param('Operation',Operation)
-
 	def get_ResourceType(self):
 		return self.get_query_params().get('ResourceType')
 
 	def set_ResourceType(self,ResourceType):
 		self.add_query_param('ResourceType',ResourceType)
 
-	def get_Scene(self):
-		return self.get_query_params().get('Scene')
+	def get_Ids(self):
+		return self.get_query_params().get('Ids')
 
-	def set_Scene(self,Scene):
-		self.add_query_param('Scene',Scene)
+	def set_Ids(self,Ids):
+		self.add_query_param('Ids',Ids)
+
+	def get_Operation(self):
+		return self.get_query_params().get('Operation')
+
+	def set_Operation(self,Operation):
+		self.add_query_param('Operation',Operation)

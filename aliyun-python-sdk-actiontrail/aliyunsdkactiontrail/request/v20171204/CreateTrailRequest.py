@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,6 +18,7 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+
 class CreateTrailRequest(RpcRequest):
 
 	def __init__(self):
@@ -35,11 +36,23 @@ class CreateTrailRequest(RpcRequest):
 	def set_SlsWriteRoleArn(self,SlsWriteRoleArn):
 		self.add_query_param('SlsWriteRoleArn',SlsWriteRoleArn)
 
+	def get_OssKeyPrefix(self):
+		return self.get_query_params().get('OssKeyPrefix')
+
+	def set_OssKeyPrefix(self,OssKeyPrefix):
+		self.add_query_param('OssKeyPrefix',OssKeyPrefix)
+
 	def get_RoleName(self):
 		return self.get_query_params().get('RoleName')
 
 	def set_RoleName(self,RoleName):
 		self.add_query_param('RoleName',RoleName)
+
+	def get_EventRW(self):
+		return self.get_query_params().get('EventRW')
+
+	def set_EventRW(self,EventRW):
+		self.add_query_param('EventRW',EventRW)
 
 	def get_Name(self):
 		return self.get_query_params().get('Name')
@@ -53,14 +66,8 @@ class CreateTrailRequest(RpcRequest):
 	def set_OssBucketName(self,OssBucketName):
 		self.add_query_param('OssBucketName',OssBucketName)
 
-	def get_OssKeyPrefix(self):
-		return self.get_query_params().get('OssKeyPrefix')
+	def get_TrailRegion(self):
+		return self.get_query_params().get('TrailRegion')
 
-	def set_OssKeyPrefix(self,OssKeyPrefix):
-		self.add_query_param('OssKeyPrefix',OssKeyPrefix)
-
-	def get_EventRW(self):
-		return self.get_query_params().get('EventRW')
-
-	def set_EventRW(self,EventRW):
-		self.add_query_param('EventRW',EventRW)
+	def set_TrailRegion(self,TrailRegion):
+		self.add_query_param('TrailRegion',TrailRegion)

@@ -21,6 +21,7 @@ from aliyunsdkcore.endpoint.local_config_global_endpoint_resolver \
     import LocalConfigGlobalEndpointResolver
 from aliyunsdkcore.endpoint.location_service_endpoint_resolver \
     import LocationServiceEndpointResolver
+from aliyunsdkcore.endpoint.endpoint_resolver_rules import EndpointResolverRules
 
 
 class DefaultEndpointResolver(EndpointResolver):
@@ -37,6 +38,7 @@ class DefaultEndpointResolver(EndpointResolver):
             self.predefined_endpoint_resolver,
             self._user_customized_endpoint_resolver,
             LocalConfigRegionalEndpointResolver(user_config),
+            EndpointResolverRules(),
             LocalConfigGlobalEndpointResolver(user_config),
             LocationServiceEndpointResolver(client),
         ]

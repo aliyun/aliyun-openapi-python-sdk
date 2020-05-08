@@ -1,3 +1,59 @@
+2020-04-09 Version: 2.4.6
+- Generated 2014-08-15 for `Rds`.
+
+2020-03-23 Version: 2.4.5
+- Generated 2014-08-15 for `Rds`.
+
+2020-03-11 Version: 2.4.5
+- Support newest OpenAPI for rds.
+
+2020-03-10 Version: 2.4.5
+- Generated 2014-08-15 for `Rds`.
+
+2020-01-17 Version: 2.4.4
+- Supported Add the history event signature function.
+
+2019-12-31 Version: 2.4.2
+- Supported SQL SERVER support delete backup set according to time range.
+
+2019-12-04 Version: 2.3.11
+- Supported ModifyDBInstanceSpec for Direction param.
+
+2019-12-04 Version: 2.1.4
+- Supported ModifyDBInstanceSpec for Direction param.
+
+2019-10-16 Version: 2.3.10
+- Add ListTagResources OpenApi.
+- Add TagResources OpenApi.
+- Add UntagResources OpenApi.
+- Add ModifyDBInstanceAutoUpgradeMinorVersion OpenApi.
+
+2019-09-03 Version: 0.0.1
+- Generated 2014-08-15 for `Rds`.
+
+2019-06-13 Version: 2.3.9
+1, fixed DescribeAvailableResource OpenApi AvailableZones value problem.
+
+2019-06-13 Version: 2.3.8
+1, add DescribeAvailableResource OpenApi.
+2, upgrade version to 2.3.8 
+
+2019-05-29 Version: 2.3.7
+1, Fix ServiceCode typo in request
+
+2019-05-28 Version: 2.3.6
+1, CreateDBInstance now support autoRenew
+
+2019-04-26 Version: 2.3.5
+1, add new openapi.
+
+2019-04-25 Version: 2.3.4
+1, upgrade sdk version.
+
+2019-04-16 Version: 2.3.3
+1, Mark CreateDiagnosticReport as public api.
+2, ModifySecurityIps support modifyMode parameter.
+
 2019-01-28 Version: 2.3.2
 1, modify DescribeSlowLogs OpenApi.
 

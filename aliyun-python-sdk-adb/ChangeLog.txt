@@ -1,0 +1,17 @@
+2019-12-31 Version: 1.0.4
+- Support DeleteDBCluster.
+- Support ModifyDBCluster.
+- Support DescribeAvailableResource.
+
+2019-11-14 Version: 1.0.3
+- Support Tag OpenAPI.
+- Fix endpoint problem.
+
+2019-11-13 Version: 1.0.2
+- Support Go SDK.
+- Support C SDK.
+- Support PHP SDK.
+
+2019-08-27 Version: 1.0.0
+- Support Python SDK.
+

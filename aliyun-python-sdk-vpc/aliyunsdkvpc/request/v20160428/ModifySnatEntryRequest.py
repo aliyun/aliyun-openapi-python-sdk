@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,16 +18,41 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkvpc.endpoint import endpoint_data
+
 class ModifySnatEntryRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'ModifySnatEntry','vpc')
+		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'ModifySnatEntry','Vpc')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+
+	def get_ClientToken(self):
+		return self.get_query_params().get('ClientToken')
+
+	def set_ClientToken(self,ClientToken):
+		self.add_query_param('ClientToken',ClientToken)
+
+	def get_SnatIp(self):
+		return self.get_query_params().get('SnatIp')
+
+	def set_SnatIp(self,SnatIp):
+		self.add_query_param('SnatIp',SnatIp)
+
+	def get_SnatEntryId(self):
+		return self.get_query_params().get('SnatEntryId')
+
+	def set_SnatEntryId(self,SnatEntryId):
+		self.add_query_param('SnatEntryId',SnatEntryId)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -47,20 +72,14 @@ class ModifySnatEntryRequest(RpcRequest):
 	def set_SnatTableId(self,SnatTableId):
 		self.add_query_param('SnatTableId',SnatTableId)
 
-	def get_SnatEntryId(self):
-		return self.get_query_params().get('SnatEntryId')
-
-	def set_SnatEntryId(self,SnatEntryId):
-		self.add_query_param('SnatEntryId',SnatEntryId)
-
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_SnatIp(self):
-		return self.get_query_params().get('SnatIp')
+	def get_SnatEntryName(self):
+		return self.get_query_params().get('SnatEntryName')
 
-	def set_SnatIp(self,SnatIp):
-		self.add_query_param('SnatIp',SnatIp)
+	def set_SnatEntryName(self,SnatEntryName):
+		self.add_query_param('SnatEntryName',SnatEntryName)

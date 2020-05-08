@@ -1,0 +1,34 @@
+2020-03-23 Version: 1.0.7
+- SDK version 107.
+
+2020-03-23 Version: 1.0.7
+- SDK version 107.
+
+2020-02-27 Version: 1.0.6
+- Sixth version.
+
+2020-02-25 Version: 1.0.5
+- PYTHON fifth sdk version.
+
+2020-02-25 Version: 1.0.1
+- JAVA fifth sdk version.
+- PYTHON second sdk version.
+
+2019-12-30 Version: 1.0.4
+- Disable Base64 string data support.
+
+2019-12-29 Version: 1.0.3
+- Add new api.
+
+2019-12-18 Version: 1.0.2
+- Third sdk version.
+
+2019-12-18 Version: 1.0.1
+- Second sdk version.
+
+2019-12-18 Version: 1.0.1
+- Second sdk version.
+
+2019-12-18 Version: 1.0.0
+- First sdk version.
+

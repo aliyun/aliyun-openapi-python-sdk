@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,10 +18,17 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkmts.endpoint import endpoint_data
+
 class SubmitJobsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Mts', '2014-06-18', 'SubmitJobs','mts')
+		RpcRequest.__init__(self, 'Mts', '2014-06-18', 'SubmitJobs')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_Outputs(self):
 		return self.get_query_params().get('Outputs')
@@ -29,23 +36,17 @@ class SubmitJobsRequest(RpcRequest):
 	def set_Outputs(self,Outputs):
 		self.add_query_param('Outputs',Outputs)
 
-	def get_Input(self):
-		return self.get_query_params().get('Input')
-
-	def set_Input(self,Input):
-		self.add_query_param('Input',Input)
-
-	def get_OutputBucket(self):
-		return self.get_query_params().get('OutputBucket')
-
-	def set_OutputBucket(self,OutputBucket):
-		self.add_query_param('OutputBucket',OutputBucket)
-
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+
+	def get_OutputLocation(self):
+		return self.get_query_params().get('OutputLocation')
+
+	def set_OutputLocation(self,OutputLocation):
+		self.add_query_param('OutputLocation',OutputLocation)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -59,12 +60,6 @@ class SubmitJobsRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
-	def get_OutputLocation(self):
-		return self.get_query_params().get('OutputLocation')
-
-	def set_OutputLocation(self,OutputLocation):
-		self.add_query_param('OutputLocation',OutputLocation)
-
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
@@ -76,3 +71,15 @@ class SubmitJobsRequest(RpcRequest):
 
 	def set_PipelineId(self,PipelineId):
 		self.add_query_param('PipelineId',PipelineId)
+
+	def get_Input(self):
+		return self.get_query_params().get('Input')
+
+	def set_Input(self,Input):
+		self.add_query_param('Input',Input)
+
+	def get_OutputBucket(self):
+		return self.get_query_params().get('OutputBucket')
+
+	def set_OutputBucket(self,OutputBucket):
+		self.add_query_param('OutputBucket',OutputBucket)

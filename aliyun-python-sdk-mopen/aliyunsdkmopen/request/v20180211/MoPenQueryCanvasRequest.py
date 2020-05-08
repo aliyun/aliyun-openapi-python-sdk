@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class MoPenQueryCanvasRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'MoPen', '2018-02-11', 'MoPenQueryCanvas')
+		RpcRequest.__init__(self, 'MoPen', '2018-02-11', 'MoPenQueryCanvas','mopen')
 		self.set_protocol_type('https');
 		self.set_method('POST')
 

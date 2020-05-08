@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,10 +18,17 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkpush.endpoint import endpoint_data
+
 class PushRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Push', '2016-08-01', 'Push')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_AndroidNotificationBarType(self):
 		return self.get_query_params().get('AndroidNotificationBarType')
@@ -34,36 +41,6 @@ class PushRequest(RpcRequest):
 
 	def set_SmsSendPolicy(self,SmsSendPolicy):
 		self.add_query_param('SmsSendPolicy',SmsSendPolicy)
-
-	def get_AndroidExtParameters(self):
-		return self.get_query_params().get('AndroidExtParameters')
-
-	def set_AndroidExtParameters(self,AndroidExtParameters):
-		self.add_query_param('AndroidExtParameters',AndroidExtParameters)
-
-	def get_iOSBadge(self):
-		return self.get_query_params().get('iOSBadge')
-
-	def set_iOSBadge(self,iOSBadge):
-		self.add_query_param('iOSBadge',iOSBadge)
-
-	def get_iOSBadgeAutoIncrement(self):
-		return self.get_query_params().get('iOSBadgeAutoIncrement')
-
-	def set_iOSBadgeAutoIncrement(self,iOSBadgeAutoIncrement):
-		self.add_query_param('iOSBadgeAutoIncrement',iOSBadgeAutoIncrement)
-
-	def get_AndroidOpenType(self):
-		return self.get_query_params().get('AndroidOpenType')
-
-	def set_AndroidOpenType(self,AndroidOpenType):
-		self.add_query_param('AndroidOpenType',AndroidOpenType)
-
-	def get_Title(self):
-		return self.get_query_params().get('Title')
-
-	def set_Title(self,Title):
-		self.add_query_param('Title',Title)
 
 	def get_Body(self):
 		return self.get_query_params().get('Body')
@@ -83,12 +60,6 @@ class PushRequest(RpcRequest):
 	def set_PushTime(self,PushTime):
 		self.add_query_param('PushTime',PushTime)
 
-	def get_SmsDelaySecs(self):
-		return self.get_query_params().get('SmsDelaySecs')
-
-	def set_SmsDelaySecs(self,SmsDelaySecs):
-		self.add_query_param('SmsDelaySecs',SmsDelaySecs)
-
 	def get_SendSpeed(self):
 		return self.get_query_params().get('SendSpeed')
 
@@ -106,12 +77,6 @@ class PushRequest(RpcRequest):
 
 	def set_iOSRemindBody(self,iOSRemindBody):
 		self.add_query_param('iOSRemindBody',iOSRemindBody)
-
-	def get_iOSExtParameters(self):
-		return self.get_query_params().get('iOSExtParameters')
-
-	def set_iOSExtParameters(self,iOSExtParameters):
-		self.add_query_param('iOSExtParameters',iOSExtParameters)
 
 	def get_AndroidNotifyType(self):
 		return self.get_query_params().get('AndroidNotifyType')
@@ -155,18 +120,6 @@ class PushRequest(RpcRequest):
 	def set_ExpireTime(self,ExpireTime):
 		self.add_query_param('ExpireTime',ExpireTime)
 
-	def get_SmsTemplateName(self):
-		return self.get_query_params().get('SmsTemplateName')
-
-	def set_SmsTemplateName(self,SmsTemplateName):
-		self.add_query_param('SmsTemplateName',SmsTemplateName)
-
-	def get_AndroidPopupBody(self):
-		return self.get_query_params().get('AndroidPopupBody')
-
-	def set_AndroidPopupBody(self,AndroidPopupBody):
-		self.add_query_param('AndroidPopupBody',AndroidPopupBody)
-
 	def get_iOSNotificationCategory(self):
 		return self.get_query_params().get('iOSNotificationCategory')
 
@@ -178,12 +131,6 @@ class PushRequest(RpcRequest):
 
 	def set_StoreOffline(self,StoreOffline):
 		self.add_query_param('StoreOffline',StoreOffline)
-
-	def get_iOSSilentNotification(self):
-		return self.get_query_params().get('iOSSilentNotification')
-
-	def set_iOSSilentNotification(self,iOSSilentNotification):
-		self.add_query_param('iOSSilentNotification',iOSSilentNotification)
 
 	def get_SmsParams(self):
 		return self.get_query_params().get('SmsParams')
@@ -197,17 +144,107 @@ class PushRequest(RpcRequest):
 	def set_JobKey(self,JobKey):
 		self.add_query_param('JobKey',JobKey)
 
-	def get_Target(self):
-		return self.get_query_params().get('Target')
-
-	def set_Target(self,Target):
-		self.add_query_param('Target',Target)
-
 	def get_AndroidOpenUrl(self):
 		return self.get_query_params().get('AndroidOpenUrl')
 
 	def set_AndroidOpenUrl(self,AndroidOpenUrl):
 		self.add_query_param('AndroidOpenUrl',AndroidOpenUrl)
+
+	def get_AndroidXiaoMiNotifyBody(self):
+		return self.get_query_params().get('AndroidXiaoMiNotifyBody')
+
+	def set_AndroidXiaoMiNotifyBody(self,AndroidXiaoMiNotifyBody):
+		self.add_query_param('AndroidXiaoMiNotifyBody',AndroidXiaoMiNotifyBody)
+
+	def get_iOSSubtitle(self):
+		return self.get_query_params().get('iOSSubtitle')
+
+	def set_iOSSubtitle(self,iOSSubtitle):
+		self.add_query_param('iOSSubtitle',iOSSubtitle)
+
+	def get_iOSRemind(self):
+		return self.get_query_params().get('iOSRemind')
+
+	def set_iOSRemind(self,iOSRemind):
+		self.add_query_param('iOSRemind',iOSRemind)
+
+	def get_AndroidMusic(self):
+		return self.get_query_params().get('AndroidMusic')
+
+	def set_AndroidMusic(self,AndroidMusic):
+		self.add_query_param('AndroidMusic',AndroidMusic)
+
+	def get_PushType(self):
+		return self.get_query_params().get('PushType')
+
+	def set_PushType(self,PushType):
+		self.add_query_param('PushType',PushType)
+
+	def get_AndroidExtParameters(self):
+		return self.get_query_params().get('AndroidExtParameters')
+
+	def set_AndroidExtParameters(self,AndroidExtParameters):
+		self.add_query_param('AndroidExtParameters',AndroidExtParameters)
+
+	def get_iOSBadge(self):
+		return self.get_query_params().get('iOSBadge')
+
+	def set_iOSBadge(self,iOSBadge):
+		self.add_query_param('iOSBadge',iOSBadge)
+
+	def get_iOSBadgeAutoIncrement(self):
+		return self.get_query_params().get('iOSBadgeAutoIncrement')
+
+	def set_iOSBadgeAutoIncrement(self,iOSBadgeAutoIncrement):
+		self.add_query_param('iOSBadgeAutoIncrement',iOSBadgeAutoIncrement)
+
+	def get_AndroidOpenType(self):
+		return self.get_query_params().get('AndroidOpenType')
+
+	def set_AndroidOpenType(self,AndroidOpenType):
+		self.add_query_param('AndroidOpenType',AndroidOpenType)
+
+	def get_Title(self):
+		return self.get_query_params().get('Title')
+
+	def set_Title(self,Title):
+		self.add_query_param('Title',Title)
+
+	def get_SmsDelaySecs(self):
+		return self.get_query_params().get('SmsDelaySecs')
+
+	def set_SmsDelaySecs(self,SmsDelaySecs):
+		self.add_query_param('SmsDelaySecs',SmsDelaySecs)
+
+	def get_iOSExtParameters(self):
+		return self.get_query_params().get('iOSExtParameters')
+
+	def set_iOSExtParameters(self,iOSExtParameters):
+		self.add_query_param('iOSExtParameters',iOSExtParameters)
+
+	def get_SmsTemplateName(self):
+		return self.get_query_params().get('SmsTemplateName')
+
+	def set_SmsTemplateName(self,SmsTemplateName):
+		self.add_query_param('SmsTemplateName',SmsTemplateName)
+
+	def get_AndroidPopupBody(self):
+		return self.get_query_params().get('AndroidPopupBody')
+
+	def set_AndroidPopupBody(self,AndroidPopupBody):
+		self.add_query_param('AndroidPopupBody',AndroidPopupBody)
+
+	def get_iOSSilentNotification(self):
+		return self.get_query_params().get('iOSSilentNotification')
+
+	def set_iOSSilentNotification(self,iOSSilentNotification):
+		self.add_query_param('iOSSilentNotification',iOSSilentNotification)
+
+	def get_Target(self):
+		return self.get_query_params().get('Target')
+
+	def set_Target(self,Target):
+		self.add_query_param('Target',Target)
 
 	def get_AndroidNotificationChannel(self):
 		return self.get_query_params().get('AndroidNotificationChannel')
@@ -227,29 +264,11 @@ class PushRequest(RpcRequest):
 	def set_AndroidActivity(self,AndroidActivity):
 		self.add_query_param('AndroidActivity',AndroidActivity)
 
-	def get_AndroidXiaoMiNotifyBody(self):
-		return self.get_query_params().get('AndroidXiaoMiNotifyBody')
-
-	def set_AndroidXiaoMiNotifyBody(self,AndroidXiaoMiNotifyBody):
-		self.add_query_param('AndroidXiaoMiNotifyBody',AndroidXiaoMiNotifyBody)
-
-	def get_iOSSubtitle(self):
-		return self.get_query_params().get('iOSSubtitle')
-
-	def set_iOSSubtitle(self,iOSSubtitle):
-		self.add_query_param('iOSSubtitle',iOSSubtitle)
-
 	def get_SmsSignName(self):
 		return self.get_query_params().get('SmsSignName')
 
 	def set_SmsSignName(self,SmsSignName):
 		self.add_query_param('SmsSignName',SmsSignName)
-
-	def get_iOSRemind(self):
-		return self.get_query_params().get('iOSRemind')
-
-	def set_iOSRemind(self,iOSRemind):
-		self.add_query_param('iOSRemind',iOSRemind)
 
 	def get_AppKey(self):
 		return self.get_query_params().get('AppKey')
@@ -263,12 +282,6 @@ class PushRequest(RpcRequest):
 	def set_TargetValue(self,TargetValue):
 		self.add_query_param('TargetValue',TargetValue)
 
-	def get_AndroidMusic(self):
-		return self.get_query_params().get('AndroidMusic')
-
-	def set_AndroidMusic(self,AndroidMusic):
-		self.add_query_param('AndroidMusic',AndroidMusic)
-
 	def get_AndroidXiaoMiActivity(self):
 		return self.get_query_params().get('AndroidXiaoMiActivity')
 
@@ -280,9 +293,3 @@ class PushRequest(RpcRequest):
 
 	def set_AndroidXiaoMiNotifyTitle(self,AndroidXiaoMiNotifyTitle):
 		self.add_query_param('AndroidXiaoMiNotifyTitle',AndroidXiaoMiNotifyTitle)
-
-	def get_PushType(self):
-		return self.get_query_params().get('PushType')
-
-	def set_PushType(self,PushType):
-		self.add_query_param('PushType',PushType)

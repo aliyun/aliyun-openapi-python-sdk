@@ -21,31 +21,19 @@ from aliyunsdkcore.request import RpcRequest
 class ReplaceAuthenticIPRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ocs', '2015-03-01', 'ReplaceAuthenticIP')
+		RpcRequest.__init__(self, 'Ocs', '2015-03-01', 'ReplaceAuthenticIP','ocs')
 
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
+	def get_NewAuthenticIP(self):
+		return self.get_query_params().get('NewAuthenticIP')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
-
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+	def set_NewAuthenticIP(self,NewAuthenticIP):
+		self.add_query_param('NewAuthenticIP',NewAuthenticIP)
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_OwnerAccount(self):
-		return self.get_query_params().get('OwnerAccount')
-
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
 
 	def get_InstanceId(self):
 		return self.get_query_params().get('InstanceId')
@@ -59,8 +47,26 @@ class ReplaceAuthenticIPRequest(RpcRequest):
 	def set_OldAuthenticIP(self,OldAuthenticIP):
 		self.add_query_param('OldAuthenticIP',OldAuthenticIP)
 
-	def get_NewAuthenticIP(self):
-		return self.get_query_params().get('NewAuthenticIP')
+	def get_SecurityToken(self):
+		return self.get_query_params().get('SecurityToken')
 
-	def set_NewAuthenticIP(self,NewAuthenticIP):
-		self.add_query_param('NewAuthenticIP',NewAuthenticIP)
+	def set_SecurityToken(self,SecurityToken):
+		self.add_query_param('SecurityToken',SecurityToken)
+
+	def get_ResourceOwnerAccount(self):
+		return self.get_query_params().get('ResourceOwnerAccount')
+
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+
+	def get_OwnerAccount(self):
+		return self.get_query_params().get('OwnerAccount')
+
+	def set_OwnerAccount(self,OwnerAccount):
+		self.add_query_param('OwnerAccount',OwnerAccount)
+
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)

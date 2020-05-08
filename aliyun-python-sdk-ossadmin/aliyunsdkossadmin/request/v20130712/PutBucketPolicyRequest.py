@@ -21,43 +21,19 @@ from aliyunsdkcore.request import RpcRequest
 class PutBucketPolicyRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'OssAdmin', '2013-07-12', 'PutBucketPolicy')
+		RpcRequest.__init__(self, 'OssAdmin', '2013-07-12', 'PutBucketPolicy','ossadmin')
 
-	def get_uid(self):
-		return self.get_query_params().get('uid')
+	def get_LogPrefix(self):
+		return self.get_query_params().get('LogPrefix')
 
-	def set_uid(self,uid):
-		self.add_query_param('uid',uid)
+	def set_LogPrefix(self,LogPrefix):
+		self.add_query_param('LogPrefix',LogPrefix)
 
-	def get_bid(self):
-		return self.get_query_params().get('bid')
+	def get_OwnerAccount(self):
+		return self.get_query_params().get('OwnerAccount')
 
-	def set_bid(self,bid):
-		self.add_query_param('bid',bid)
-
-	def get_BucketName(self):
-		return self.get_query_params().get('BucketName')
-
-	def set_BucketName(self,BucketName):
-		self.add_query_param('BucketName',BucketName)
-
-	def get_IamPolicy(self):
-		return self.get_query_params().get('IamPolicy')
-
-	def set_IamPolicy(self,IamPolicy):
-		self.add_query_param('IamPolicy',IamPolicy)
-
-	def get_DisallowEmptyRefer(self):
-		return self.get_query_params().get('DisallowEmptyRefer')
-
-	def set_DisallowEmptyRefer(self,DisallowEmptyRefer):
-		self.add_query_param('DisallowEmptyRefer',DisallowEmptyRefer)
-
-	def get_EnableDualCluster(self):
-		return self.get_query_params().get('EnableDualCluster')
-
-	def set_EnableDualCluster(self,EnableDualCluster):
-		self.add_query_param('EnableDualCluster',EnableDualCluster)
+	def set_OwnerAccount(self,OwnerAccount):
+		self.add_query_param('OwnerAccount',OwnerAccount)
 
 	def get_ErrorFile(self):
 		return self.get_query_params().get('ErrorFile')
@@ -71,11 +47,17 @@ class PutBucketPolicyRequest(RpcRequest):
 	def set_IndexFile(self,IndexFile):
 		self.add_query_param('IndexFile',IndexFile)
 
-	def get_Location(self):
-		return self.get_query_params().get('Location')
+	def get_DisallowEmptyRefer(self):
+		return self.get_query_params().get('DisallowEmptyRefer')
 
-	def set_Location(self,Location):
-		self.add_query_param('Location',Location)
+	def set_DisallowEmptyRefer(self,DisallowEmptyRefer):
+		self.add_query_param('DisallowEmptyRefer',DisallowEmptyRefer)
+
+	def get_uid(self):
+		return self.get_query_params().get('uid')
+
+	def set_uid(self,uid):
+		self.add_query_param('uid',uid)
 
 	def get_LogBucket(self):
 		return self.get_query_params().get('LogBucket')
@@ -83,11 +65,29 @@ class PutBucketPolicyRequest(RpcRequest):
 	def set_LogBucket(self,LogBucket):
 		self.add_query_param('LogBucket',LogBucket)
 
-	def get_LogPrefix(self):
-		return self.get_query_params().get('LogPrefix')
+	def get_BucketName(self):
+		return self.get_query_params().get('BucketName')
 
-	def set_LogPrefix(self,LogPrefix):
-		self.add_query_param('LogPrefix',LogPrefix)
+	def set_BucketName(self,BucketName):
+		self.add_query_param('BucketName',BucketName)
+
+	def get_Location(self):
+		return self.get_query_params().get('Location')
+
+	def set_Location(self,Location):
+		self.add_query_param('Location',Location)
+
+	def get_bid(self):
+		return self.get_query_params().get('bid')
+
+	def set_bid(self,bid):
+		self.add_query_param('bid',bid)
+
+	def get_EnableDualCluster(self):
+		return self.get_query_params().get('EnableDualCluster')
+
+	def set_EnableDualCluster(self,EnableDualCluster):
+		self.add_query_param('EnableDualCluster',EnableDualCluster)
 
 	def get_WhiteReferList(self):
 		return self.get_query_params().get('WhiteReferList')
@@ -95,8 +95,8 @@ class PutBucketPolicyRequest(RpcRequest):
 	def set_WhiteReferList(self,WhiteReferList):
 		self.add_query_param('WhiteReferList',WhiteReferList)
 
-	def get_OwnerAccount(self):
-		return self.get_query_params().get('OwnerAccount')
+	def get_IamPolicy(self):
+		return self.get_query_params().get('IamPolicy')
 
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
+	def set_IamPolicy(self,IamPolicy):
+		self.add_query_param('IamPolicy',IamPolicy)

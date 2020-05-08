@@ -1,3 +1,25 @@
+2020-04-15 Version: 3.1.1
+- CreateNode API add return NodeId.
+
+2020-04-09 Version: 3.1.0
+- Add DescribePrice API.
+
+2020-03-12 Version: 3.0.1
+- Update structure for DescribeAvailableResource without compatible.
+- Rebuild to python sdk.
+
+2020-03-11 Version: 3.0.0
+- Update structure for DescribeAvailableResource without compatible.
+
+2020-01-13 Version: 2.0.7
+- New API DescribeAvailableResource.
+
+2020-01-03 Version: 2.0.6
+- New API DescribeAvailableResource.
+
+2019-04-18 Version: 2.0.5
+1, Add CreateAccount
+
 2019-02-15 Version: 2.0.4
 1, Modify DescribeDBInstances LastDowngradeTime DataType
 

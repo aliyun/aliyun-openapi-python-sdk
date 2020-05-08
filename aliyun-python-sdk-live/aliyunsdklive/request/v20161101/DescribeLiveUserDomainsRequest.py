@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,10 +18,23 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdklive.endpoint import endpoint_data
+
 class DescribeLiveUserDomainsRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'live', '2016-11-01', 'DescribeLiveUserDomains','live')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
+
+	def get_PageNumber(self):
+		return self.get_query_params().get('PageNumber')
+
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)
 
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
@@ -35,17 +48,17 @@ class DescribeLiveUserDomainsRequest(RpcRequest):
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
 
-	def get_DomainName(self):
-		return self.get_query_params().get('DomainName')
-
-	def set_DomainName(self,DomainName):
-		self.add_query_param('DomainName',DomainName)
-
 	def get_RegionName(self):
 		return self.get_query_params().get('RegionName')
 
 	def set_RegionName(self,RegionName):
 		self.add_query_param('RegionName',RegionName)
+
+	def get_DomainName(self):
+		return self.get_query_params().get('DomainName')
+
+	def set_DomainName(self,DomainName):
+		self.add_query_param('DomainName',DomainName)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
@@ -53,26 +66,20 @@ class DescribeLiveUserDomainsRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_PageNumber(self):
-		return self.get_query_params().get('PageNumber')
-
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
-
 	def get_DomainStatus(self):
 		return self.get_query_params().get('DomainStatus')
 
 	def set_DomainStatus(self,DomainStatus):
 		self.add_query_param('DomainStatus',DomainStatus)
 
-	def get_LiveDomainType(self):
-		return self.get_query_params().get('LiveDomainType')
-
-	def set_LiveDomainType(self,LiveDomainType):
-		self.add_query_param('LiveDomainType',LiveDomainType)
-
 	def get_DomainSearchType(self):
 		return self.get_query_params().get('DomainSearchType')
 
 	def set_DomainSearchType(self,DomainSearchType):
 		self.add_query_param('DomainSearchType',DomainSearchType)
+
+	def get_LiveDomainType(self):
+		return self.get_query_params().get('LiveDomainType')
+
+	def set_LiveDomainType(self,LiveDomainType):
+		self.add_query_param('LiveDomainType',LiveDomainType)

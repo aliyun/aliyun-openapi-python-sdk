@@ -59,7 +59,7 @@ class ListTagsRequest(RpcRequest):
 
 	def set_TagInfos(self,TagInfos):
 		for i in range(len(TagInfos)):	
-			if TagInfos[i].get('TagKey') is not None:
-				self.add_query_param('TagInfo.' + str(i + 1) + '.TagKey' , TagInfos[i].get('TagKey'))
 			if TagInfos[i].get('TagValue') is not None:
 				self.add_query_param('TagInfo.' + str(i + 1) + '.TagValue' , TagInfos[i].get('TagValue'))
+			if TagInfos[i].get('TagKey') is not None:
+				self.add_query_param('TagInfo.' + str(i + 1) + '.TagKey' , TagInfos[i].get('TagKey'))

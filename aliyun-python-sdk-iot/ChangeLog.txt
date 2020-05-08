@@ -1,3 +1,53 @@
+2020-03-06 Version: 8.7.0
+- Add LinkIoTEdge CreateEdgeOssPreSignedAddress API.
+
+2020-03-05 Version: 8.6.0
+- Add CreateEdgeDriver, DeleteEdgeDriver, BatchGetEdgeDriver, QueryEdgeDriver, CreateEdgeDriverVersion, DeleteEdgeDriverVersion, UpdateEdgeDriverVersion, GetEdgeDriverVersion, QueryEdgeDriverVersion API.
+- Add ResetThing API, support reset thing topo and 
+
+2020-02-11 Version: 8.5.0
+- Add Thing Model APIs, including CreateThingModel, UpdateThingModel, etc.
+- Add OTA API ListOTATaskByJob.
+- Update OTA API ListOTAJobByFirmware.
+- Update Thing Core Model API InvokeThingsService.
+
+2020-01-20 Version: 8.4.0
+- Add Thing Model APIs, including QueryThingModel, PublishThingModel, etc.
+
+2019-12-31 Version: 8.3.0
+- Add OTA APIs, including GenerateOTAUploadURL, CreateOTAFirmware, etc.
+- Add UpdateProductFilterConfig interface, support setting product filter config.
+
+2019-12-11 Version: 8.2.0
+- Add api `BatchAddThingTopo`, support add multiple sub-devices for a gateway.
+- Add api `QueryDeviceByStatus`, support query device list by device status.
+- Support grouping products and rules.
+- Support using RAM to authorize resouces, including products, devices, rules, groups and instances, to RAM users.
+
+2019-10-18 Version: 8.1.0
+- Add X509 API, including queryDeviceCert, queryCertUrlByApplyId, createDeviceCert.
+- Add authType parameter of APIs, including createProduct, queryProduct, queryProductList, CreateProductPop, QueryProductAllInfo, QueryProductListPop, ListProductConsole, QueryAllProductListPop, QueryDeviceBatchList.
+
+2019-08-16 Version: 8.0.0
+- Add LinkIoTEdge API.
+
+2019-07-04 Version: 7.11.0
+- Supported batch querying for device detail.
+
+2019-06-12 Version: 7.10.0
+1, Add InvokeDataAPIService interface, support invoke service of data api to get sql query result.
+2, Add GetDataAPIServiceDetail interface, support get data api's detail information.
+3, Add CreateDataAPIService interface, support create data api with sql statement.
+
+2019-05-09 Version: 7.9.0
+1, Add LoRa's API GetNodesAddingTask, QueryLoRaJoinPermissions, GetLoraNodesTask, CreateLoRaNodesTask
+
+2019-04-08 Version: 7.8.0
+1, Add api, BatchUpdateDeviceNickname.
+2, Add both api, QueryDeviceFileList, QueryDeviceFile and DeleteDeviceFile.
+3, Add api ListRule’s name searching feature.
+4, Modify Tag format, support for special character like '.','-'.
+
 2019-03-08 Version: 7.7.0
 1, add API QueryDeviceDesiredProperty and SetDeviceDesiredProperty.
 2, add iotId support of APIs.

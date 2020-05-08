@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,16 +18,29 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+
 class CreateDrdsInstanceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Drds', '2017-10-16', 'CreateDrdsInstance')
+		RpcRequest.__init__(self, 'Drds', '2017-10-16', 'CreateDrdsInstance','drds')
+
+	def get_IsAutoRenew(self):
+		return self.get_query_params().get('IsAutoRenew')
+
+	def set_IsAutoRenew(self,IsAutoRenew):
+		self.add_query_param('IsAutoRenew',IsAutoRenew)
 
 	def get_Quantity(self):
 		return self.get_query_params().get('Quantity')
 
 	def set_Quantity(self,Quantity):
 		self.add_query_param('Quantity',Quantity)
+
+	def get_ClientToken(self):
+		return self.get_query_params().get('ClientToken')
+
+	def set_ClientToken(self,ClientToken):
+		self.add_query_param('ClientToken',ClientToken)
 
 	def get_Description(self):
 		return self.get_query_params().get('Description')
@@ -53,17 +66,23 @@ class CreateDrdsInstanceRequest(RpcRequest):
 	def set_VswitchId(self,VswitchId):
 		self.add_query_param('VswitchId',VswitchId)
 
-	def get_isHa(self):
-		return self.get_query_params().get('isHa')
+	def get_Duration(self):
+		return self.get_query_params().get('Duration')
 
-	def set_isHa(self,isHa):
-		self.add_query_param('isHa',isHa)
+	def set_Duration(self,Duration):
+		self.add_query_param('Duration',Duration)
 
-	def get_instanceSeries(self):
-		return self.get_query_params().get('instanceSeries')
+	def get_IsHa(self):
+		return self.get_query_params().get('IsHa')
 
-	def set_instanceSeries(self,instanceSeries):
-		self.add_query_param('instanceSeries',instanceSeries)
+	def set_IsHa(self,IsHa):
+		self.add_query_param('IsHa',IsHa)
+
+	def get_InstanceSeries(self):
+		return self.get_query_params().get('InstanceSeries')
+
+	def set_InstanceSeries(self,InstanceSeries):
+		self.add_query_param('InstanceSeries',InstanceSeries)
 
 	def get_VpcId(self):
 		return self.get_query_params().get('VpcId')
@@ -82,3 +101,9 @@ class CreateDrdsInstanceRequest(RpcRequest):
 
 	def set_PayType(self,PayType):
 		self.add_query_param('PayType',PayType)
+
+	def get_PricingCycle(self):
+		return self.get_query_params().get('PricingCycle')
+
+	def set_PricingCycle(self,PricingCycle):
+		self.add_query_param('PricingCycle',PricingCycle)

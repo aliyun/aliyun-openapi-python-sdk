@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,10 +18,17 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkecs.endpoint import endpoint_data
+
 class DescribeInvocationsRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'DescribeInvocations','ecs')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -35,6 +42,12 @@ class DescribeInvocationsRequest(RpcRequest):
 	def set_InvokeStatus(self,InvokeStatus):
 		self.add_query_param('InvokeStatus',InvokeStatus)
 
+	def get_IncludeOutput(self):
+		return self.get_query_params().get('IncludeOutput')
+
+	def set_IncludeOutput(self,IncludeOutput):
+		self.add_query_param('IncludeOutput',IncludeOutput)
+
 	def get_CommandId(self):
 		return self.get_query_params().get('CommandId')
 
@@ -46,6 +59,12 @@ class DescribeInvocationsRequest(RpcRequest):
 
 	def set_PageNumber(self,PageNumber):
 		self.add_query_param('PageNumber',PageNumber)
+
+	def get_ContentEncoding(self):
+		return self.get_query_params().get('ContentEncoding')
+
+	def set_ContentEncoding(self,ContentEncoding):
+		self.add_query_param('ContentEncoding',ContentEncoding)
 
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')

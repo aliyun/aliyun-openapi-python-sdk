@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,22 +18,17 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkehpc.endpoint import endpoint_data
+
 class ModifyImageGatewayConfigRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'EHPC', '2018-04-12', 'ModifyImageGatewayConfig','ehs')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_DefaultRepoLocation(self):
-		return self.get_query_params().get('DefaultRepoLocation')
-
-	def set_DefaultRepoLocation(self,DefaultRepoLocation):
-		self.add_query_param('DefaultRepoLocation',DefaultRepoLocation)
-
-	def get_DBPassword(self):
-		return self.get_query_params().get('DBPassword')
-
-	def set_DBPassword(self,DBPassword):
-		self.add_query_param('DBPassword',DBPassword)
 
 	def get_Repos(self):
 		return self.get_query_params().get('Repos')
@@ -48,6 +43,30 @@ class ModifyImageGatewayConfigRequest(RpcRequest):
 				self.add_query_param('Repo.' + str(i + 1) + '.URL' , Repos[i].get('URL'))
 
 
+	def get_DBServerInfo(self):
+		return self.get_query_params().get('DBServerInfo')
+
+	def set_DBServerInfo(self,DBServerInfo):
+		self.add_query_param('DBServerInfo',DBServerInfo)
+
+	def get_ClusterId(self):
+		return self.get_query_params().get('ClusterId')
+
+	def set_ClusterId(self,ClusterId):
+		self.add_query_param('ClusterId',ClusterId)
+
+	def get_DefaultRepoLocation(self):
+		return self.get_query_params().get('DefaultRepoLocation')
+
+	def set_DefaultRepoLocation(self,DefaultRepoLocation):
+		self.add_query_param('DefaultRepoLocation',DefaultRepoLocation)
+
+	def get_DBPassword(self):
+		return self.get_query_params().get('DBPassword')
+
+	def set_DBPassword(self,DBPassword):
+		self.add_query_param('DBPassword',DBPassword)
+
 	def get_DBType(self):
 		return self.get_query_params().get('DBType')
 
@@ -60,23 +79,11 @@ class ModifyImageGatewayConfigRequest(RpcRequest):
 	def set_DBUsername(self,DBUsername):
 		self.add_query_param('DBUsername',DBUsername)
 
-	def get_DBServerInfo(self):
-		return self.get_query_params().get('DBServerInfo')
-
-	def set_DBServerInfo(self,DBServerInfo):
-		self.add_query_param('DBServerInfo',DBServerInfo)
-
 	def get_PullUpdateTimeout(self):
 		return self.get_query_params().get('PullUpdateTimeout')
 
 	def set_PullUpdateTimeout(self,PullUpdateTimeout):
 		self.add_query_param('PullUpdateTimeout',PullUpdateTimeout)
-
-	def get_ClusterId(self):
-		return self.get_query_params().get('ClusterId')
-
-	def set_ClusterId(self,ClusterId):
-		self.add_query_param('ClusterId',ClusterId)
 
 	def get_ImageExpirationTimeout(self):
 		return self.get_query_params().get('ImageExpirationTimeout')

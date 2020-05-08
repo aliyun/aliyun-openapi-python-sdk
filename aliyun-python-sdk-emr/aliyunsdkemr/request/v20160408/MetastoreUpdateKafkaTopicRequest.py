@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,10 +18,17 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkemr.endpoint import endpoint_data
+
 class MetastoreUpdateKafkaTopicRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'MetastoreUpdateKafkaTopic')
+		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'MetastoreUpdateKafkaTopic','emr')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -35,26 +42,19 @@ class MetastoreUpdateKafkaTopicRequest(RpcRequest):
 	def set_TopicId(self,TopicId):
 		self.add_query_param('TopicId',TopicId)
 
-	def get_TopicName(self):
-		return self.get_query_params().get('TopicName')
+	def get_AdvancedConfigs(self):
+		return self.get_query_params().get('AdvancedConfigs')
 
-	def set_TopicName(self,TopicName):
-		self.add_query_param('TopicName',TopicName)
+	def set_AdvancedConfigs(self,AdvancedConfigs):
+		for i in range(len(AdvancedConfigs)):	
+			if AdvancedConfigs[i].get('Value') is not None:
+				self.add_query_param('AdvancedConfig.' + str(i + 1) + '.Value' , AdvancedConfigs[i].get('Value'))
+			if AdvancedConfigs[i].get('Key') is not None:
+				self.add_query_param('AdvancedConfig.' + str(i + 1) + '.Key' , AdvancedConfigs[i].get('Key'))
 
-	def get_AdvancedConfig(self):
-		return self.get_query_params().get('AdvancedConfig')
-
-	def set_AdvancedConfig(self,AdvancedConfig):
-		self.add_query_param('AdvancedConfig',AdvancedConfig)
 
 	def get_NumPartitions(self):
 		return self.get_query_params().get('NumPartitions')
 
 	def set_NumPartitions(self,NumPartitions):
 		self.add_query_param('NumPartitions',NumPartitions)
-
-	def get_ReplicationFactor(self):
-		return self.get_query_params().get('ReplicationFactor')
-
-	def set_ReplicationFactor(self,ReplicationFactor):
-		self.add_query_param('ReplicationFactor',ReplicationFactor)

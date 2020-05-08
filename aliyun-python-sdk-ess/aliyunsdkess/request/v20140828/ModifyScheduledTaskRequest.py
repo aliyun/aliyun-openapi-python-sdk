@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,16 +18,17 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkess.endpoint import endpoint_data
+
 class ModifyScheduledTaskRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ess', '2014-08-28', 'ModifyScheduledTask','ess')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_LaunchTime(self):
-		return self.get_query_params().get('LaunchTime')
-
-	def set_LaunchTime(self,LaunchTime):
-		self.add_query_param('LaunchTime',LaunchTime)
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -41,6 +42,42 @@ class ModifyScheduledTaskRequest(RpcRequest):
 	def set_ScheduledAction(self,ScheduledAction):
 		self.add_query_param('ScheduledAction',ScheduledAction)
 
+	def get_MaxValue(self):
+		return self.get_query_params().get('MaxValue')
+
+	def set_MaxValue(self,MaxValue):
+		self.add_query_param('MaxValue',MaxValue)
+
+	def get_ScalingGroupId(self):
+		return self.get_query_params().get('ScalingGroupId')
+
+	def set_ScalingGroupId(self,ScalingGroupId):
+		self.add_query_param('ScalingGroupId',ScalingGroupId)
+
+	def get_Description(self):
+		return self.get_query_params().get('Description')
+
+	def set_Description(self,Description):
+		self.add_query_param('Description',Description)
+
+	def get_RecurrenceEndTime(self):
+		return self.get_query_params().get('RecurrenceEndTime')
+
+	def set_RecurrenceEndTime(self,RecurrenceEndTime):
+		self.add_query_param('RecurrenceEndTime',RecurrenceEndTime)
+
+	def get_LaunchTime(self):
+		return self.get_query_params().get('LaunchTime')
+
+	def set_LaunchTime(self,LaunchTime):
+		self.add_query_param('LaunchTime',LaunchTime)
+
+	def get_DesiredCapacity(self):
+		return self.get_query_params().get('DesiredCapacity')
+
+	def set_DesiredCapacity(self,DesiredCapacity):
+		self.add_query_param('DesiredCapacity',DesiredCapacity)
+
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -52,12 +89,6 @@ class ModifyScheduledTaskRequest(RpcRequest):
 
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
-
-	def get_Description(self):
-		return self.get_query_params().get('Description')
-
-	def set_Description(self,Description):
-		self.add_query_param('Description',Description)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
@@ -77,11 +108,11 @@ class ModifyScheduledTaskRequest(RpcRequest):
 	def set_LaunchExpirationTime(self,LaunchExpirationTime):
 		self.add_query_param('LaunchExpirationTime',LaunchExpirationTime)
 
-	def get_RecurrenceEndTime(self):
-		return self.get_query_params().get('RecurrenceEndTime')
+	def get_MinValue(self):
+		return self.get_query_params().get('MinValue')
 
-	def set_RecurrenceEndTime(self,RecurrenceEndTime):
-		self.add_query_param('RecurrenceEndTime',RecurrenceEndTime)
+	def set_MinValue(self,MinValue):
+		self.add_query_param('MinValue',MinValue)
 
 	def get_ScheduledTaskName(self):
 		return self.get_query_params().get('ScheduledTaskName')

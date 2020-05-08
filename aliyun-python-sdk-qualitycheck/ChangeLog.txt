@@ -1,0 +1,9 @@
+2019-09-25 Version: 3.0.6
+- Add new api.
+
+2019-04-30 Version: 3.0.1
+1, New API version.
+
+2019-03-19 Version: 3.0.0
+1, New API version.
+

@@ -1,0 +1,10 @@
+2020-05-06 Version: 1.4.0
+- Support tag.
+
+
+2020-05-06 Version: 1.4.0.0
+- Support Python SDK.
+
+2019-08-28 Version: 1.0.1
+- Add NamespaceId for listApplication.
+

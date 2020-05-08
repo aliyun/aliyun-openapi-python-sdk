@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,16 +18,42 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+
 class CreateCADConversionTaskRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'imm', '2017-09-06', 'CreateCADConversionTask','imm')
+		self.set_method('POST')
 
 	def get_SrcType(self):
 		return self.get_query_params().get('SrcType')
 
 	def set_SrcType(self,SrcType):
 		self.add_query_param('SrcType',SrcType)
+
+	def get_BaseRow(self):
+		return self.get_query_params().get('BaseRow')
+
+	def set_BaseRow(self,BaseRow):
+		self.add_query_param('BaseRow',BaseRow)
+
+	def get_Project(self):
+		return self.get_query_params().get('Project')
+
+	def set_Project(self,Project):
+		self.add_query_param('Project',Project)
+
+	def get_ZoomFactor(self):
+		return self.get_query_params().get('ZoomFactor')
+
+	def set_ZoomFactor(self,ZoomFactor):
+		self.add_query_param('ZoomFactor',ZoomFactor)
+
+	def get_NotifyEndpoint(self):
+		return self.get_query_params().get('NotifyEndpoint')
+
+	def set_NotifyEndpoint(self,NotifyEndpoint):
+		self.add_query_param('NotifyEndpoint',NotifyEndpoint)
 
 	def get_BaseCol(self):
 		return self.get_query_params().get('BaseCol')
@@ -53,29 +79,11 @@ class CreateCADConversionTaskRequest(RpcRequest):
 	def set_ZoomLevel(self,ZoomLevel):
 		self.add_query_param('ZoomLevel',ZoomLevel)
 
-	def get_BaseRow(self):
-		return self.get_query_params().get('BaseRow')
-
-	def set_BaseRow(self,BaseRow):
-		self.add_query_param('BaseRow',BaseRow)
-
 	def get_ModelId(self):
 		return self.get_query_params().get('ModelId')
 
 	def set_ModelId(self,ModelId):
 		self.add_query_param('ModelId',ModelId)
-
-	def get_Project(self):
-		return self.get_query_params().get('Project')
-
-	def set_Project(self,Project):
-		self.add_query_param('Project',Project)
-
-	def get_ZoomFactor(self):
-		return self.get_query_params().get('ZoomFactor')
-
-	def set_ZoomFactor(self,ZoomFactor):
-		self.add_query_param('ZoomFactor',ZoomFactor)
 
 	def get_TgtType(self):
 		return self.get_query_params().get('TgtType')
@@ -88,12 +96,6 @@ class CreateCADConversionTaskRequest(RpcRequest):
 
 	def set_UnitHeight(self,UnitHeight):
 		self.add_query_param('UnitHeight',UnitHeight)
-
-	def get_NotifyEndpoint(self):
-		return self.get_query_params().get('NotifyEndpoint')
-
-	def set_NotifyEndpoint(self,NotifyEndpoint):
-		self.add_query_param('NotifyEndpoint',NotifyEndpoint)
 
 	def get_SrcUri(self):
 		return self.get_query_params().get('SrcUri')

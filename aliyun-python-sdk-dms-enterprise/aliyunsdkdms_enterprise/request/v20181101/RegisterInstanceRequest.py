@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,16 +18,17 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkdms_enterprise.endpoint import endpoint_data
+
 class RegisterInstanceRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'dms-enterprise', '2018-11-01', 'RegisterInstance','dmsenterprise')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_EcsInstanceId(self):
-		return self.get_query_params().get('EcsInstanceId')
-
-	def set_EcsInstanceId(self,EcsInstanceId):
-		self.add_query_param('EcsInstanceId',EcsInstanceId)
 
 	def get_EcsRegion(self):
 		return self.get_query_params().get('EcsRegion')
@@ -35,23 +36,17 @@ class RegisterInstanceRequest(RpcRequest):
 	def set_EcsRegion(self,EcsRegion):
 		self.add_query_param('EcsRegion',EcsRegion)
 
-	def get_ExportTimeout(self):
-		return self.get_query_params().get('ExportTimeout')
+	def get_DdlOnline(self):
+		return self.get_query_params().get('DdlOnline')
 
-	def set_ExportTimeout(self,ExportTimeout):
-		self.add_query_param('ExportTimeout',ExportTimeout)
+	def set_DdlOnline(self,DdlOnline):
+		self.add_query_param('DdlOnline',DdlOnline)
 
-	def get_DatabasePassword(self):
-		return self.get_query_params().get('DatabasePassword')
+	def get_UseDsql(self):
+		return self.get_query_params().get('UseDsql')
 
-	def set_DatabasePassword(self,DatabasePassword):
-		self.add_query_param('DatabasePassword',DatabasePassword)
-
-	def get_InstanceAlias(self):
-		return self.get_query_params().get('InstanceAlias')
-
-	def set_InstanceAlias(self,InstanceAlias):
-		self.add_query_param('InstanceAlias',InstanceAlias)
+	def set_UseDsql(self,UseDsql):
+		self.add_query_param('UseDsql',UseDsql)
 
 	def get_NetworkType(self):
 		return self.get_query_params().get('NetworkType')
@@ -71,23 +66,11 @@ class RegisterInstanceRequest(RpcRequest):
 	def set_Sid(self,Sid):
 		self.add_query_param('Sid',Sid)
 
-	def get_DatabaseUser(self):
-		return self.get_query_params().get('DatabaseUser')
+	def get_DataLinkName(self):
+		return self.get_query_params().get('DataLinkName')
 
-	def set_DatabaseUser(self,DatabaseUser):
-		self.add_query_param('DatabaseUser',DatabaseUser)
-
-	def get_Port(self):
-		return self.get_query_params().get('Port')
-
-	def set_Port(self,Port):
-		self.add_query_param('Port',Port)
-
-	def get_VpcId(self):
-		return self.get_query_params().get('VpcId')
-
-	def set_VpcId(self,VpcId):
-		self.add_query_param('VpcId',VpcId)
+	def set_DataLinkName(self,DataLinkName):
+		self.add_query_param('DataLinkName',DataLinkName)
 
 	def get_InstanceSource(self):
 		return self.get_query_params().get('InstanceSource')
@@ -118,6 +101,48 @@ class RegisterInstanceRequest(RpcRequest):
 
 	def set_QueryTimeout(self,QueryTimeout):
 		self.add_query_param('QueryTimeout',QueryTimeout)
+
+	def get_EcsInstanceId(self):
+		return self.get_query_params().get('EcsInstanceId')
+
+	def set_EcsInstanceId(self,EcsInstanceId):
+		self.add_query_param('EcsInstanceId',EcsInstanceId)
+
+	def get_ExportTimeout(self):
+		return self.get_query_params().get('ExportTimeout')
+
+	def set_ExportTimeout(self,ExportTimeout):
+		self.add_query_param('ExportTimeout',ExportTimeout)
+
+	def get_DatabasePassword(self):
+		return self.get_query_params().get('DatabasePassword')
+
+	def set_DatabasePassword(self,DatabasePassword):
+		self.add_query_param('DatabasePassword',DatabasePassword)
+
+	def get_InstanceAlias(self):
+		return self.get_query_params().get('InstanceAlias')
+
+	def set_InstanceAlias(self,InstanceAlias):
+		self.add_query_param('InstanceAlias',InstanceAlias)
+
+	def get_DatabaseUser(self):
+		return self.get_query_params().get('DatabaseUser')
+
+	def set_DatabaseUser(self,DatabaseUser):
+		self.add_query_param('DatabaseUser',DatabaseUser)
+
+	def get_Port(self):
+		return self.get_query_params().get('Port')
+
+	def set_Port(self,Port):
+		self.add_query_param('Port',Port)
+
+	def get_VpcId(self):
+		return self.get_query_params().get('VpcId')
+
+	def set_VpcId(self,VpcId):
+		self.add_query_param('VpcId',VpcId)
 
 	def get_DbaUid(self):
 		return self.get_query_params().get('DbaUid')

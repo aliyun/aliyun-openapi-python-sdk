@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,10 +18,17 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkiot.endpoint import endpoint_data
+
 class QueryDeviceDesiredPropertyRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'QueryDeviceDesiredProperty','iot')
+		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'QueryDeviceDesiredProperty','Iot')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_Identifiers(self):
 		return self.get_query_params().get('Identifiers')
@@ -30,6 +37,12 @@ class QueryDeviceDesiredPropertyRequest(RpcRequest):
 		for i in range(len(Identifiers)):	
 			if Identifiers[i] is not None:
 				self.add_query_param('Identifier.' + str(i + 1) , Identifiers[i]);
+
+	def get_ProductKey(self):
+		return self.get_query_params().get('ProductKey')
+
+	def set_ProductKey(self,ProductKey):
+		self.add_query_param('ProductKey',ProductKey)
 
 	def get_IotId(self):
 		return self.get_query_params().get('IotId')
@@ -48,9 +61,3 @@ class QueryDeviceDesiredPropertyRequest(RpcRequest):
 
 	def set_DeviceName(self,DeviceName):
 		self.add_query_param('DeviceName',DeviceName)
-
-	def get_ProductKey(self):
-		return self.get_query_params().get('ProductKey')
-
-	def set_ProductKey(self,ProductKey):
-		self.add_query_param('ProductKey',ProductKey)

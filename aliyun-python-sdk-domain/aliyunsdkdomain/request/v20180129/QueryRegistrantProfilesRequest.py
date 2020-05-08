@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,6 +18,8 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+
+
 class QueryRegistrantProfilesRequest(RpcRequest):
 
 	def __init__(self):
@@ -52,6 +54,12 @@ class QueryRegistrantProfilesRequest(RpcRequest):
 
 	def set_RegistrantType(self,RegistrantType):
 		self.add_query_param('RegistrantType',RegistrantType)
+
+	def get_RegistrantProfileType(self):
+		return self.get_query_params().get('RegistrantProfileType')
+
+	def set_RegistrantProfileType(self,RegistrantProfileType):
+		self.add_query_param('RegistrantProfileType',RegistrantProfileType)
 
 	def get_RealNameStatus(self):
 		return self.get_query_params().get('RealNameStatus')

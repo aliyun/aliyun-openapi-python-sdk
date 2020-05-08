@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,10 +18,17 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkrds.endpoint import endpoint_data
+
 class AddTagsToResourceRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'AddTagsToResource','rds')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_Tag4value(self):
 		return self.get_query_params().get('Tag.4.value')
@@ -41,6 +48,42 @@ class AddTagsToResourceRequest(RpcRequest):
 	def set_Tag2key(self,Tag2key):
 		self.add_query_param('Tag.2.key',Tag2key)
 
+	def get_ClientToken(self):
+		return self.get_query_params().get('ClientToken')
+
+	def set_ClientToken(self,ClientToken):
+		self.add_query_param('ClientToken',ClientToken)
+
+	def get_Tag3key(self):
+		return self.get_query_params().get('Tag.3.key')
+
+	def set_Tag3key(self,Tag3key):
+		self.add_query_param('Tag.3.key',Tag3key)
+
+	def get_Tag1value(self):
+		return self.get_query_params().get('Tag.1.value')
+
+	def set_Tag1value(self,Tag1value):
+		self.add_query_param('Tag.1.value',Tag1value)
+
+	def get_DBInstanceId(self):
+		return self.get_query_params().get('DBInstanceId')
+
+	def set_DBInstanceId(self,DBInstanceId):
+		self.add_query_param('DBInstanceId',DBInstanceId)
+
+	def get_Tag3value(self):
+		return self.get_query_params().get('Tag.3.value')
+
+	def set_Tag3value(self,Tag3value):
+		self.add_query_param('Tag.3.value',Tag3value)
+
+	def get_proxyId(self):
+		return self.get_query_params().get('proxyId')
+
+	def set_proxyId(self,proxyId):
+		self.add_query_param('proxyId',proxyId)
+
 	def get_Tag5key(self):
 		return self.get_query_params().get('Tag.5.key')
 
@@ -53,23 +96,11 @@ class AddTagsToResourceRequest(RpcRequest):
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
-	def get_ClientToken(self):
-		return self.get_query_params().get('ClientToken')
-
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
-
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
 
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
-
-	def get_Tag3key(self):
-		return self.get_query_params().get('Tag.3.key')
-
-	def set_Tag3key(self,Tag3key):
-		self.add_query_param('Tag.3.key',Tag3key)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
@@ -95,12 +126,6 @@ class AddTagsToResourceRequest(RpcRequest):
 	def set_Tag1key(self,Tag1key):
 		self.add_query_param('Tag.1.key',Tag1key)
 
-	def get_Tag1value(self):
-		return self.get_query_params().get('Tag.1.value')
-
-	def set_Tag1value(self,Tag1value):
-		self.add_query_param('Tag.1.value',Tag1value)
-
 	def get_Tag2value(self):
 		return self.get_query_params().get('Tag.2.value')
 
@@ -112,21 +137,3 @@ class AddTagsToResourceRequest(RpcRequest):
 
 	def set_Tag4key(self,Tag4key):
 		self.add_query_param('Tag.4.key',Tag4key)
-
-	def get_DBInstanceId(self):
-		return self.get_query_params().get('DBInstanceId')
-
-	def set_DBInstanceId(self,DBInstanceId):
-		self.add_query_param('DBInstanceId',DBInstanceId)
-
-	def get_Tag3value(self):
-		return self.get_query_params().get('Tag.3.value')
-
-	def set_Tag3value(self,Tag3value):
-		self.add_query_param('Tag.3.value',Tag3value)
-
-	def get_proxyId(self):
-		return self.get_query_params().get('proxyId')
-
-	def set_proxyId(self,proxyId):
-		self.add_query_param('proxyId',proxyId)

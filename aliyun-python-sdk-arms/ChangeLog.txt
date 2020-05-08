@@ -1,3 +1,33 @@
+2020-04-30 Version: 2.5.6
+- Add prometheus ListDashboards api.
+
+2020-04-29 Version: 2.5.5
+- Add prometheus ListDashboards api.
+
+2020-04-29 Version: 2.5.5
+- Add prometheus ListDashboards api.
+
+2020-04-09 Version: 2.5.4
+- Add prometheus api AddGrafana and AddIntegration.
+
+2020-04-03 Version: 2.5.3
+- Add trace api.
+- Add prometheus api.
+
+2019-08-22 Version: 2.5.2
+- Api release 2019-08-08 public sdk 2-5-2 sdk release 20190822 shichun-fsc.
+
+2019-08-13 Version: 2.5.1
+- Optimize return code.
+- Edit QueryDataset.
+
+2019-08-13 Version: 2.5.0
+- Api release 2019-08-08 public sdk.
+
+2019-05-31 Version: 2.4.4
+1, add api 'search traces count' 
+2, add page index for api 'searchTraces'
+
 2018-12-21 Version: 2.3.0
 1, ARMS SDK 2018-12-19 go sdk upload
 

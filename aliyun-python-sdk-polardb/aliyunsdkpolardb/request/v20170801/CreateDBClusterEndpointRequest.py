@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,10 +18,23 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkpolardb.endpoint import endpoint_data
+
 class CreateDBClusterEndpointRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'polardb', '2017-08-01', 'CreateDBClusterEndpoint','polardb')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
+
+	def get_AutoAddNewNodes(self):
+		return self.get_query_params().get('AutoAddNewNodes')
+
+	def set_AutoAddNewNodes(self,AutoAddNewNodes):
+		self.add_query_param('AutoAddNewNodes',AutoAddNewNodes)
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -29,17 +42,17 @@ class CreateDBClusterEndpointRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_Nodes(self):
-		return self.get_query_params().get('Nodes')
+	def get_ClientToken(self):
+		return self.get_query_params().get('ClientToken')
 
-	def set_Nodes(self,Nodes):
-		self.add_query_param('Nodes',Nodes)
+	def set_ClientToken(self,ClientToken):
+		self.add_query_param('ClientToken',ClientToken)
 
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
+	def get_ReadWriteMode(self):
+		return self.get_query_params().get('ReadWriteMode')
 
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+	def set_ReadWriteMode(self,ReadWriteMode):
+		self.add_query_param('ReadWriteMode',ReadWriteMode)
 
 	def get_EndpointType(self):
 		return self.get_query_params().get('EndpointType')
@@ -47,11 +60,11 @@ class CreateDBClusterEndpointRequest(RpcRequest):
 	def set_EndpointType(self,EndpointType):
 		self.add_query_param('EndpointType',EndpointType)
 
-	def get_ClientToken(self):
-		return self.get_query_params().get('ClientToken')
+	def get_ResourceOwnerAccount(self):
+		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
 	def get_DBClusterId(self):
 		return self.get_query_params().get('DBClusterId')
@@ -65,8 +78,20 @@ class CreateDBClusterEndpointRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
+	def get_EndpointConfig(self):
+		return self.get_query_params().get('EndpointConfig')
+
+	def set_EndpointConfig(self,EndpointConfig):
+		self.add_query_param('EndpointConfig',EndpointConfig)
+
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_Nodes(self):
+		return self.get_query_params().get('Nodes')
+
+	def set_Nodes(self,Nodes):
+		self.add_query_param('Nodes',Nodes)

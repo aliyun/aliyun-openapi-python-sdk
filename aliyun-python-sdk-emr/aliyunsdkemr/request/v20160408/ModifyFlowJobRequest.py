@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,10 +18,17 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkemr.endpoint import endpoint_data
+
 class ModifyFlowJobRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'ModifyFlowJob')
+		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'ModifyFlowJob','emr')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_RunConf(self):
 		return self.get_query_params().get('RunConf')
@@ -76,6 +83,12 @@ class ModifyFlowJobRequest(RpcRequest):
 	def set_FailAct(self,FailAct):
 		self.add_query_param('FailAct',FailAct)
 
+	def get_CustomVariables(self):
+		return self.get_query_params().get('CustomVariables')
+
+	def set_CustomVariables(self,CustomVariables):
+		self.add_query_param('CustomVariables',CustomVariables)
+
 	def get_Mode(self):
 		return self.get_query_params().get('Mode')
 
@@ -111,6 +124,12 @@ class ModifyFlowJobRequest(RpcRequest):
 
 	def set_MaxRetry(self,MaxRetry):
 		self.add_query_param('MaxRetry',MaxRetry)
+
+	def get_AlertConf(self):
+		return self.get_query_params().get('AlertConf')
+
+	def set_AlertConf(self,AlertConf):
+		self.add_query_param('AlertConf',AlertConf)
 
 	def get_ProjectId(self):
 		return self.get_query_params().get('ProjectId')

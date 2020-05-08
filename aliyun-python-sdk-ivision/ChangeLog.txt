@@ -1,0 +1,29 @@
+2019-12-20 Version: 1.2.0
+- Supported Search stream predict task list use modelId for IVISION.
+
+2019-10-22 Version: 1.1.0
+- Supported Sync predict for Image.
+- Supported Set Frame Frequency for Stream Predict.
+- Fixed Errore Code For APIs.
+
+2019-04-11 Version: 1.0.1
+1, The ‘CreateProject’ interface adds the ‘ModelId’ parameter
+
+2019-03-27 Version: 1.0.0
+1, Add Project interface.
+2, Add Tag interface.
+3, Add TrainData interface.
+4, Add Train interface.
+5, Add Iteration interface.
+6, Add Predict interface.
+7, Add PredictData interface.
+
+2019-03-27 Version: 1.0.0
+1, Add Project interface.
+2, Add Tag interface.
+3, Add TrainData interface.
+4, Add Train interface.
+5, Add Iteration interface.
+6, Add Predict interface.
+7, Add PredictData interface.
+

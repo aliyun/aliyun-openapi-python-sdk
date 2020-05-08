@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,16 +18,17 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkslb.endpoint import endpoint_data
+
 class CreateLoadBalancerHTTPListenerRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Slb', '2014-05-15', 'CreateLoadBalancerHTTPListener','slb')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_access_key_id(self):
-		return self.get_query_params().get('access_key_id')
-
-	def set_access_key_id(self,access_key_id):
-		self.add_query_param('access_key_id',access_key_id)
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -59,35 +60,11 @@ class CreateLoadBalancerHTTPListenerRequest(RpcRequest):
 	def set_HealthCheckURI(self,HealthCheckURI):
 		self.add_query_param('HealthCheckURI',HealthCheckURI)
 
-	def get_Description(self):
-		return self.get_query_params().get('Description')
-
-	def set_Description(self,Description):
-		self.add_query_param('Description',Description)
-
-	def get_UnhealthyThreshold(self):
-		return self.get_query_params().get('UnhealthyThreshold')
-
-	def set_UnhealthyThreshold(self,UnhealthyThreshold):
-		self.add_query_param('UnhealthyThreshold',UnhealthyThreshold)
-
-	def get_HealthyThreshold(self):
-		return self.get_query_params().get('HealthyThreshold')
-
-	def set_HealthyThreshold(self,HealthyThreshold):
-		self.add_query_param('HealthyThreshold',HealthyThreshold)
-
 	def get_AclStatus(self):
 		return self.get_query_params().get('AclStatus')
 
 	def set_AclStatus(self,AclStatus):
 		self.add_query_param('AclStatus',AclStatus)
-
-	def get_Scheduler(self):
-		return self.get_query_params().get('Scheduler')
-
-	def set_Scheduler(self,Scheduler):
-		self.add_query_param('Scheduler',Scheduler)
 
 	def get_AclType(self):
 		return self.get_query_params().get('AclType')
@@ -100,30 +77,6 @@ class CreateLoadBalancerHTTPListenerRequest(RpcRequest):
 
 	def set_HealthCheck(self,HealthCheck):
 		self.add_query_param('HealthCheck',HealthCheck)
-
-	def get_ForwardPort(self):
-		return self.get_query_params().get('ForwardPort')
-
-	def set_ForwardPort(self,ForwardPort):
-		self.add_query_param('ForwardPort',ForwardPort)
-
-	def get_MaxConnection(self):
-		return self.get_query_params().get('MaxConnection')
-
-	def set_MaxConnection(self,MaxConnection):
-		self.add_query_param('MaxConnection',MaxConnection)
-
-	def get_CookieTimeout(self):
-		return self.get_query_params().get('CookieTimeout')
-
-	def set_CookieTimeout(self,CookieTimeout):
-		self.add_query_param('CookieTimeout',CookieTimeout)
-
-	def get_StickySessionType(self):
-		return self.get_query_params().get('StickySessionType')
-
-	def set_StickySessionType(self,StickySessionType):
-		self.add_query_param('StickySessionType',StickySessionType)
 
 	def get_VpcIds(self):
 		return self.get_query_params().get('VpcIds')
@@ -143,35 +96,17 @@ class CreateLoadBalancerHTTPListenerRequest(RpcRequest):
 	def set_AclId(self,AclId):
 		self.add_query_param('AclId',AclId)
 
-	def get_ListenerPort(self):
-		return self.get_query_params().get('ListenerPort')
-
-	def set_ListenerPort(self,ListenerPort):
-		self.add_query_param('ListenerPort',ListenerPort)
-
 	def get_Cookie(self):
 		return self.get_query_params().get('Cookie')
 
 	def set_Cookie(self,Cookie):
 		self.add_query_param('Cookie',Cookie)
 
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
+	def get_HealthCheckMethod(self):
+		return self.get_query_params().get('HealthCheckMethod')
 
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_Bandwidth(self):
-		return self.get_query_params().get('Bandwidth')
-
-	def set_Bandwidth(self,Bandwidth):
-		self.add_query_param('Bandwidth',Bandwidth)
-
-	def get_StickySession(self):
-		return self.get_query_params().get('StickySession')
-
-	def set_StickySession(self,StickySession):
-		self.add_query_param('StickySession',StickySession)
+	def set_HealthCheckMethod(self,HealthCheckMethod):
+		self.add_query_param('HealthCheckMethod',HealthCheckMethod)
 
 	def get_HealthCheckDomain(self):
 		return self.get_query_params().get('HealthCheckDomain')
@@ -185,18 +120,6 @@ class CreateLoadBalancerHTTPListenerRequest(RpcRequest):
 	def set_RequestTimeout(self,RequestTimeout):
 		self.add_query_param('RequestTimeout',RequestTimeout)
 
-	def get_OwnerAccount(self):
-		return self.get_query_params().get('OwnerAccount')
-
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
-
-	def get_Gzip(self):
-		return self.get_query_params().get('Gzip')
-
-	def set_Gzip(self,Gzip):
-		self.add_query_param('Gzip',Gzip)
-
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
@@ -208,12 +131,6 @@ class CreateLoadBalancerHTTPListenerRequest(RpcRequest):
 
 	def set_Tags(self,Tags):
 		self.add_query_param('Tags',Tags)
-
-	def get_IdleTimeout(self):
-		return self.get_query_params().get('IdleTimeout')
-
-	def set_IdleTimeout(self,IdleTimeout):
-		self.add_query_param('IdleTimeout',IdleTimeout)
 
 	def get_LoadBalancerId(self):
 		return self.get_query_params().get('LoadBalancerId')
@@ -239,17 +156,125 @@ class CreateLoadBalancerHTTPListenerRequest(RpcRequest):
 	def set_HealthCheckInterval(self,HealthCheckInterval):
 		self.add_query_param('HealthCheckInterval',HealthCheckInterval)
 
-	def get_XForwardedFor_proto(self):
-		return self.get_query_params().get('XForwardedFor_proto')
-
-	def set_XForwardedFor_proto(self,XForwardedFor_proto):
-		self.add_query_param('XForwardedFor_proto',XForwardedFor_proto)
-
 	def get_XForwardedFor_SLBID(self):
 		return self.get_query_params().get('XForwardedFor_SLBID')
 
 	def set_XForwardedFor_SLBID(self,XForwardedFor_SLBID):
 		self.add_query_param('XForwardedFor_SLBID',XForwardedFor_SLBID)
+
+	def get_HealthCheckHttpVersion(self):
+		return self.get_query_params().get('HealthCheckHttpVersion')
+
+	def set_HealthCheckHttpVersion(self,HealthCheckHttpVersion):
+		self.add_query_param('HealthCheckHttpVersion',HealthCheckHttpVersion)
+
+	def get_access_key_id(self):
+		return self.get_query_params().get('access_key_id')
+
+	def set_access_key_id(self,access_key_id):
+		self.add_query_param('access_key_id',access_key_id)
+
+	def get_Description(self):
+		return self.get_query_params().get('Description')
+
+	def set_Description(self,Description):
+		self.add_query_param('Description',Description)
+
+	def get_UnhealthyThreshold(self):
+		return self.get_query_params().get('UnhealthyThreshold')
+
+	def set_UnhealthyThreshold(self,UnhealthyThreshold):
+		self.add_query_param('UnhealthyThreshold',UnhealthyThreshold)
+
+	def get_HealthyThreshold(self):
+		return self.get_query_params().get('HealthyThreshold')
+
+	def set_HealthyThreshold(self,HealthyThreshold):
+		self.add_query_param('HealthyThreshold',HealthyThreshold)
+
+	def get_Scheduler(self):
+		return self.get_query_params().get('Scheduler')
+
+	def set_Scheduler(self,Scheduler):
+		self.add_query_param('Scheduler',Scheduler)
+
+	def get_ForwardPort(self):
+		return self.get_query_params().get('ForwardPort')
+
+	def set_ForwardPort(self,ForwardPort):
+		self.add_query_param('ForwardPort',ForwardPort)
+
+	def get_MaxConnection(self):
+		return self.get_query_params().get('MaxConnection')
+
+	def set_MaxConnection(self,MaxConnection):
+		self.add_query_param('MaxConnection',MaxConnection)
+
+	def get_CookieTimeout(self):
+		return self.get_query_params().get('CookieTimeout')
+
+	def set_CookieTimeout(self,CookieTimeout):
+		self.add_query_param('CookieTimeout',CookieTimeout)
+
+	def get_StickySessionType(self):
+		return self.get_query_params().get('StickySessionType')
+
+	def set_StickySessionType(self,StickySessionType):
+		self.add_query_param('StickySessionType',StickySessionType)
+
+	def get_ListenerPort(self):
+		return self.get_query_params().get('ListenerPort')
+
+	def set_ListenerPort(self,ListenerPort):
+		self.add_query_param('ListenerPort',ListenerPort)
+
+	def get_HealthCheckType(self):
+		return self.get_query_params().get('HealthCheckType')
+
+	def set_HealthCheckType(self,HealthCheckType):
+		self.add_query_param('HealthCheckType',HealthCheckType)
+
+	def get_ResourceOwnerAccount(self):
+		return self.get_query_params().get('ResourceOwnerAccount')
+
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+
+	def get_Bandwidth(self):
+		return self.get_query_params().get('Bandwidth')
+
+	def set_Bandwidth(self,Bandwidth):
+		self.add_query_param('Bandwidth',Bandwidth)
+
+	def get_StickySession(self):
+		return self.get_query_params().get('StickySession')
+
+	def set_StickySession(self,StickySession):
+		self.add_query_param('StickySession',StickySession)
+
+	def get_OwnerAccount(self):
+		return self.get_query_params().get('OwnerAccount')
+
+	def set_OwnerAccount(self,OwnerAccount):
+		self.add_query_param('OwnerAccount',OwnerAccount)
+
+	def get_Gzip(self):
+		return self.get_query_params().get('Gzip')
+
+	def set_Gzip(self,Gzip):
+		self.add_query_param('Gzip',Gzip)
+
+	def get_IdleTimeout(self):
+		return self.get_query_params().get('IdleTimeout')
+
+	def set_IdleTimeout(self,IdleTimeout):
+		self.add_query_param('IdleTimeout',IdleTimeout)
+
+	def get_XForwardedFor_proto(self):
+		return self.get_query_params().get('XForwardedFor_proto')
+
+	def set_XForwardedFor_proto(self,XForwardedFor_proto):
+		self.add_query_param('XForwardedFor_proto',XForwardedFor_proto)
 
 	def get_HealthCheckConnectPort(self):
 		return self.get_query_params().get('HealthCheckConnectPort')

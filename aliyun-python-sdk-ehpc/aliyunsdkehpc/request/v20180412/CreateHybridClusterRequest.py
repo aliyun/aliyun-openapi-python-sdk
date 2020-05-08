@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,10 +18,17 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkehpc.endpoint import endpoint_data
+
 class CreateHybridClusterRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'EHPC', '2018-04-12', 'CreateHybridCluster','ehs')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_EhpcVersion(self):
 		return self.get_query_params().get('EhpcVersion')
@@ -76,6 +83,12 @@ class CreateHybridClusterRequest(RpcRequest):
 
 	def set_VolumeType(self,VolumeType):
 		self.add_query_param('VolumeType',VolumeType)
+
+	def get_ResourceGroupId(self):
+		return self.get_query_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self,ResourceGroupId):
+		self.add_query_param('ResourceGroupId',ResourceGroupId)
 
 	def get_Password(self):
 		return self.get_query_params().get('Password')
@@ -142,11 +155,22 @@ class CreateHybridClusterRequest(RpcRequest):
 	def set_VSwitchId(self,VSwitchId):
 		self.add_query_param('VSwitchId',VSwitchId)
 
-	def get_Nodes(self):
-		return self.get_query_params().get('Nodes')
+	def get_Nodess(self):
+		return self.get_query_params().get('Nodess')
 
-	def set_Nodes(self,Nodes):
-		self.add_query_param('Nodes',Nodes)
+	def set_Nodess(self,Nodess):
+		for i in range(len(Nodess)):	
+			if Nodess[i].get('IpAddress') is not None:
+				self.add_query_param('Nodes.' + str(i + 1) + '.IpAddress' , Nodess[i].get('IpAddress'))
+			if Nodess[i].get('HostName') is not None:
+				self.add_query_param('Nodes.' + str(i + 1) + '.HostName' , Nodess[i].get('HostName'))
+			if Nodess[i].get('Role') is not None:
+				self.add_query_param('Nodes.' + str(i + 1) + '.Role' , Nodess[i].get('Role'))
+			if Nodess[i].get('AccountType') is not None:
+				self.add_query_param('Nodes.' + str(i + 1) + '.AccountType' , Nodess[i].get('AccountType'))
+			if Nodess[i].get('SchedulerType') is not None:
+				self.add_query_param('Nodes.' + str(i + 1) + '.SchedulerType' , Nodess[i].get('SchedulerType'))
+
 
 	def get_Applications(self):
 		return self.get_query_params().get('Applications')
@@ -192,6 +216,12 @@ class CreateHybridClusterRequest(RpcRequest):
 
 	def set_ZoneId(self,ZoneId):
 		self.add_query_param('ZoneId',ZoneId)
+
+	def get_SchedulerPreInstall(self):
+		return self.get_query_params().get('SchedulerPreInstall')
+
+	def set_SchedulerPreInstall(self,SchedulerPreInstall):
+		self.add_query_param('SchedulerPreInstall',SchedulerPreInstall)
 
 	def get_Location(self):
 		return self.get_query_params().get('Location')

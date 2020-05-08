@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,16 +18,30 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkccc.endpoint import endpoint_data
+
 class ModifyPhoneNumberRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'CCC', '2017-07-05', 'ModifyPhoneNumber','ccc')
+		RpcRequest.__init__(self, 'CCC', '2017-07-05', 'ModifyPhoneNumber')
+		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_ContactFlowId(self):
 		return self.get_query_params().get('ContactFlowId')
 
 	def set_ContactFlowId(self,ContactFlowId):
 		self.add_query_param('ContactFlowId',ContactFlowId)
+
+	def get_Usage(self):
+		return self.get_query_params().get('Usage')
+
+	def set_Usage(self,Usage):
+		self.add_query_param('Usage',Usage)
 
 	def get_InstanceId(self):
 		return self.get_query_params().get('InstanceId')
@@ -41,8 +55,10 @@ class ModifyPhoneNumberRequest(RpcRequest):
 	def set_PhoneNumberId(self,PhoneNumberId):
 		self.add_query_param('PhoneNumberId',PhoneNumberId)
 
-	def get_Usage(self):
-		return self.get_query_params().get('Usage')
+	def get_SkillGroupIds(self):
+		return self.get_query_params().get('SkillGroupIds')
 
-	def set_Usage(self,Usage):
-		self.add_query_param('Usage',Usage)
+	def set_SkillGroupIds(self,SkillGroupIds):
+		for i in range(len(SkillGroupIds)):	
+			if SkillGroupIds[i] is not None:
+				self.add_query_param('SkillGroupId.' + str(i + 1) , SkillGroupIds[i]);

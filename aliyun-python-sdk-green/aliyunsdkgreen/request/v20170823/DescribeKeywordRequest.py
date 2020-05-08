@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,16 +18,17 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkgreen.endpoint import endpoint_data
+
 class DescribeKeywordRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Green', '2017-08-23', 'DescribeKeyword','green')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_TotalCount(self):
-		return self.get_query_params().get('TotalCount')
-
-	def set_TotalCount(self,TotalCount):
-		self.add_query_param('TotalCount',TotalCount)
 
 	def get_SourceIp(self):
 		return self.get_query_params().get('SourceIp')
@@ -35,23 +36,11 @@ class DescribeKeywordRequest(RpcRequest):
 	def set_SourceIp(self,SourceIp):
 		self.add_query_param('SourceIp',SourceIp)
 
-	def get_KeywordLibId(self):
-		return self.get_query_params().get('KeywordLibId')
-
-	def set_KeywordLibId(self,KeywordLibId):
-		self.add_query_param('KeywordLibId',KeywordLibId)
-
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
 
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
-
-	def get_CurrentPage(self):
-		return self.get_query_params().get('CurrentPage')
-
-	def set_CurrentPage(self,CurrentPage):
-		self.add_query_param('CurrentPage',CurrentPage)
 
 	def get_Lang(self):
 		return self.get_query_params().get('Lang')
@@ -64,3 +53,21 @@ class DescribeKeywordRequest(RpcRequest):
 
 	def set_Keyword(self,Keyword):
 		self.add_query_param('Keyword',Keyword)
+
+	def get_TotalCount(self):
+		return self.get_query_params().get('TotalCount')
+
+	def set_TotalCount(self,TotalCount):
+		self.add_query_param('TotalCount',TotalCount)
+
+	def get_KeywordLibId(self):
+		return self.get_query_params().get('KeywordLibId')
+
+	def set_KeywordLibId(self,KeywordLibId):
+		self.add_query_param('KeywordLibId',KeywordLibId)
+
+	def get_CurrentPage(self):
+		return self.get_query_params().get('CurrentPage')
+
+	def set_CurrentPage(self,CurrentPage):
+		self.add_query_param('CurrentPage',CurrentPage)

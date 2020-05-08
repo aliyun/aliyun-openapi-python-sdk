@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,10 +18,30 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+
 class CompareImageFacesRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'imm', '2017-09-06', 'CompareImageFaces','imm')
+		self.set_method('POST')
+
+	def get_Project(self):
+		return self.get_query_params().get('Project')
+
+	def set_Project(self,Project):
+		self.add_query_param('Project',Project)
+
+	def get_FaceIdA(self):
+		return self.get_query_params().get('FaceIdA')
+
+	def set_FaceIdA(self,FaceIdA):
+		self.add_query_param('FaceIdA',FaceIdA)
+
+	def get_FaceIdB(self):
+		return self.get_query_params().get('FaceIdB')
+
+	def set_FaceIdB(self,FaceIdB):
+		self.add_query_param('FaceIdB',FaceIdB)
 
 	def get_ImageUriB(self):
 		return self.get_query_params().get('ImageUriB')
@@ -35,26 +55,8 @@ class CompareImageFacesRequest(RpcRequest):
 	def set_ImageUriA(self,ImageUriA):
 		self.add_query_param('ImageUriA',ImageUriA)
 
-	def get_Project(self):
-		return self.get_query_params().get('Project')
-
-	def set_Project(self,Project):
-		self.add_query_param('Project',Project)
-
 	def get_SetId(self):
 		return self.get_query_params().get('SetId')
 
 	def set_SetId(self,SetId):
 		self.add_query_param('SetId',SetId)
-
-	def get_FaceIdA(self):
-		return self.get_query_params().get('FaceIdA')
-
-	def set_FaceIdA(self,FaceIdA):
-		self.add_query_param('FaceIdA',FaceIdA)
-
-	def get_FaceIdB(self):
-		return self.get_query_params().get('FaceIdB')
-
-	def set_FaceIdB(self,FaceIdB):
-		self.add_query_param('FaceIdB',FaceIdB)

@@ -1,3 +1,36 @@
+2020-04-29 Version: 3.4.0
+- Add ExportTas apis.
+
+2020-03-10 Version: 3.4.0
+- Add ExportTas apis.
+
+2020-02-13 Version: 3.3.0
+- Add Staging apis.
+
+2020-02-13 Version: 3.2.0
+- Add Staging apis.
+
+2020-02-13 Version: 3.2.0
+- Add Staging apis.
+
+2020-02-13 Version: 3.2.0
+- Add Staging apis.
+
+2020-02-13 Version: 3.2.0
+- Add Staging apis.
+
+2020-02-13 Version: 3.2.0
+- Add Staging apis.
+
+2019-11-15 Version: 3.1.0
+- Fixed bugs.
+
+2019-08-15 Version: 3.0.9
+- Add API BatchStartCdnDomain, BatchStopCdnDomain, DescribeTagResources, DescribeUserTags, TagResources, UntagResources.
+
+2019-03-19 Version: 3.0.8
+1, Support ' fc ' Source DomainName
+
 2019-02-27 Version: 3.0.7
 1, Update Config API.
 

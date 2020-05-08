@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,28 +18,23 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkpush.endpoint import endpoint_data
+
 class PushNoticeToAndroidRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Push', '2016-08-01', 'PushNoticeToAndroid')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_ExtParameters(self):
 		return self.get_query_params().get('ExtParameters')
 
 	def set_ExtParameters(self,ExtParameters):
 		self.add_query_param('ExtParameters',ExtParameters)
-
-	def get_AppKey(self):
-		return self.get_query_params().get('AppKey')
-
-	def set_AppKey(self,AppKey):
-		self.add_query_param('AppKey',AppKey)
-
-	def get_TargetValue(self):
-		return self.get_query_params().get('TargetValue')
-
-	def set_TargetValue(self,TargetValue):
-		self.add_query_param('TargetValue',TargetValue)
 
 	def get_Title(self):
 		return self.get_query_params().get('Title')
@@ -64,3 +59,15 @@ class PushNoticeToAndroidRequest(RpcRequest):
 
 	def set_Target(self,Target):
 		self.add_query_param('Target',Target)
+
+	def get_AppKey(self):
+		return self.get_query_params().get('AppKey')
+
+	def set_AppKey(self,AppKey):
+		self.add_query_param('AppKey',AppKey)
+
+	def get_TargetValue(self):
+		return self.get_query_params().get('TargetValue')
+
+	def set_TargetValue(self,TargetValue):
+		self.add_query_param('TargetValue',TargetValue)

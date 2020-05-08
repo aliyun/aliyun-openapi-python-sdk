@@ -1,3 +1,22 @@
+2020-03-05 Version: 1.12.1
+- Add param InstanceType for ListImages and ListCustomImages.
+- Fix error codes for SubmitJobs and so on.
+
+2020-01-03 Version: 1.12.0
+- Add GWS serie apis.
+- Add QueryReport.
+- Fix ListJobs.
+- Etc.
+
+2019-04-23 Version: 1.11.1
+1, Support mounting multiple volumes using different protocol
+2, Support scaling out cross AZ
+
+2019-04-10 Version: 1.11.0
+1, New APIs for visual service (VNC).
+2, New APIs for software management.
+3, New APIs for CPFS filesystem.
+
 2018-12-13 Version: 1.10.0
 1, Add SystemDiskSize in CreateCluster and AddNodes, add more parameters in RecoverCluster
 

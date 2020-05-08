@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,16 +18,17 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkbssopenapi.endpoint import endpoint_data
+
 class CreateResourcePackageRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'CreateResourcePackage')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_Duration(self):
-		return self.get_query_params().get('Duration')
-
-	def set_Duration(self,Duration):
-		self.add_query_param('Duration',Duration)
 
 	def get_ProductCode(self):
 		return self.get_query_params().get('ProductCode')
@@ -47,17 +48,23 @@ class CreateResourcePackageRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_PackageType(self):
-		return self.get_query_params().get('PackageType')
-
-	def set_PackageType(self,PackageType):
-		self.add_query_param('PackageType',PackageType)
-
 	def get_EffectiveDate(self):
 		return self.get_query_params().get('EffectiveDate')
 
 	def set_EffectiveDate(self,EffectiveDate):
 		self.add_query_param('EffectiveDate',EffectiveDate)
+
+	def get_Duration(self):
+		return self.get_query_params().get('Duration')
+
+	def set_Duration(self,Duration):
+		self.add_query_param('Duration',Duration)
+
+	def get_PackageType(self):
+		return self.get_query_params().get('PackageType')
+
+	def set_PackageType(self,PackageType):
+		self.add_query_param('PackageType',PackageType)
 
 	def get_PricingCycle(self):
 		return self.get_query_params().get('PricingCycle')

@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class DescribeRiskListDetailRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'jarvis', '2018-02-06', 'DescribeRiskListDetail')
+		RpcRequest.__init__(self, 'jarvis', '2018-02-06', 'DescribeRiskListDetail','jarvis')
 
 	def get_riskType(self):
 		return self.get_query_params().get('riskType')

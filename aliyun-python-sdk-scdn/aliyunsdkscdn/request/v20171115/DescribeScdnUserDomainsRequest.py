@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,52 +18,24 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkscdn.endpoint import endpoint_data
+
 class DescribeScdnUserDomainsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'scdn', '2017-11-15', 'DescribeScdnUserDomains','scdn')
+		RpcRequest.__init__(self, 'scdn', '2017-11-15', 'DescribeScdnUserDomains')
+		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_FuncFilter(self):
-		return self.get_query_params().get('FuncFilter')
-
-	def set_FuncFilter(self,FuncFilter):
-		self.add_query_param('FuncFilter',FuncFilter)
-
-	def get_DomainName(self):
-		return self.get_query_params().get('DomainName')
-
-	def set_DomainName(self,DomainName):
-		self.add_query_param('DomainName',DomainName)
-
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_FuncId(self):
-		return self.get_query_params().get('FuncId')
-
-	def set_FuncId(self,FuncId):
-		self.add_query_param('FuncId',FuncId)
 
 	def get_PageNumber(self):
 		return self.get_query_params().get('PageNumber')
 
 	def set_PageNumber(self,PageNumber):
 		self.add_query_param('PageNumber',PageNumber)
-
-	def get_DomainStatus(self):
-		return self.get_query_params().get('DomainStatus')
-
-	def set_DomainStatus(self,DomainStatus):
-		self.add_query_param('DomainStatus',DomainStatus)
-
-	def get_DomainSearchType(self):
-		return self.get_query_params().get('DomainSearchType')
-
-	def set_DomainSearchType(self,DomainSearchType):
-		self.add_query_param('DomainSearchType',DomainSearchType)
 
 	def get_CheckDomainShow(self):
 		return self.get_query_params().get('CheckDomainShow')
@@ -83,8 +55,44 @@ class DescribeScdnUserDomainsRequest(RpcRequest):
 	def set_SecurityToken(self,SecurityToken):
 		self.add_query_param('SecurityToken',SecurityToken)
 
+	def get_ChangeEndTime(self):
+		return self.get_query_params().get('ChangeEndTime')
+
+	def set_ChangeEndTime(self,ChangeEndTime):
+		self.add_query_param('ChangeEndTime',ChangeEndTime)
+
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
 
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
+
+	def get_DomainName(self):
+		return self.get_query_params().get('DomainName')
+
+	def set_DomainName(self,DomainName):
+		self.add_query_param('DomainName',DomainName)
+
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
+
+	def get_DomainStatus(self):
+		return self.get_query_params().get('DomainStatus')
+
+	def set_DomainStatus(self,DomainStatus):
+		self.add_query_param('DomainStatus',DomainStatus)
+
+	def get_DomainSearchType(self):
+		return self.get_query_params().get('DomainSearchType')
+
+	def set_DomainSearchType(self,DomainSearchType):
+		self.add_query_param('DomainSearchType',DomainSearchType)
+
+	def get_ChangeStartTime(self):
+		return self.get_query_params().get('ChangeStartTime')
+
+	def set_ChangeStartTime(self,ChangeStartTime):
+		self.add_query_param('ChangeStartTime',ChangeStartTime)

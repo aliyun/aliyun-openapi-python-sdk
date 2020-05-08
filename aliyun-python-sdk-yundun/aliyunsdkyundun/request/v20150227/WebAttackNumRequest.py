@@ -21,4 +21,4 @@ from aliyunsdkcore.request import RpcRequest
 class WebAttackNumRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Yundun', '2015-02-27', 'WebAttackNum')
+		RpcRequest.__init__(self, 'Yundun', '2015-02-27', 'WebAttackNum','yundun')

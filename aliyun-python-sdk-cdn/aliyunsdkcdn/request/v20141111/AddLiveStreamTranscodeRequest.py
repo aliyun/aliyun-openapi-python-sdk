@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,10 +18,18 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkcdn.endpoint import endpoint_data
+
 class AddLiveStreamTranscodeRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'AddLiveStreamTranscode')
+		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_Template(self):
 		return self.get_query_params().get('Template')
@@ -29,29 +37,11 @@ class AddLiveStreamTranscodeRequest(RpcRequest):
 	def set_Template(self,Template):
 		self.add_query_param('Template',Template)
 
-	def get_App(self):
-		return self.get_query_params().get('App')
-
-	def set_App(self,App):
-		self.add_query_param('App',App)
-
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
 
 	def set_SecurityToken(self,SecurityToken):
 		self.add_query_param('SecurityToken',SecurityToken)
-
-	def get_OwnerAccount(self):
-		return self.get_query_params().get('OwnerAccount')
-
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
-
-	def get_Domain(self):
-		return self.get_query_params().get('Domain')
-
-	def set_Domain(self,Domain):
-		self.add_query_param('Domain',Domain)
 
 	def get_Record(self):
 		return self.get_query_params().get('Record')
@@ -59,11 +49,29 @@ class AddLiveStreamTranscodeRequest(RpcRequest):
 	def set_Record(self,Record):
 		self.add_query_param('Record',Record)
 
+	def get_App(self):
+		return self.get_query_params().get('App')
+
+	def set_App(self,App):
+		self.add_query_param('App',App)
+
+	def get_OwnerAccount(self):
+		return self.get_query_params().get('OwnerAccount')
+
+	def set_OwnerAccount(self,OwnerAccount):
+		self.add_query_param('OwnerAccount',OwnerAccount)
+
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_Domain(self):
+		return self.get_query_params().get('Domain')
+
+	def set_Domain(self,Domain):
+		self.add_query_param('Domain',Domain)
 
 	def get_Snapshot(self):
 		return self.get_query_params().get('Snapshot')

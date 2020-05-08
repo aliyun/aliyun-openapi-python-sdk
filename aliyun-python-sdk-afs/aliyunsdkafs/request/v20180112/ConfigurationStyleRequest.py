@@ -21,13 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class ConfigurationStyleRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'afs', '2018-01-12', 'ConfigurationStyle')
-
-	def get_ResourceOwnerId(self):
-		return self.get_query_params().get('ResourceOwnerId')
-
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+		RpcRequest.__init__(self, 'afs', '2018-01-12', 'ConfigurationStyle','afs')
 
 	def get_SourceIp(self):
 		return self.get_query_params().get('SourceIp')
@@ -40,6 +34,12 @@ class ConfigurationStyleRequest(RpcRequest):
 
 	def set_ConfigurationMethod(self,ConfigurationMethod):
 		self.add_query_param('ConfigurationMethod',ConfigurationMethod)
+
+	def get_RefExtId(self):
+		return self.get_query_params().get('RefExtId')
+
+	def set_RefExtId(self,RefExtId):
+		self.add_query_param('RefExtId',RefExtId)
 
 	def get_ApplyType(self):
 		return self.get_query_params().get('ApplyType')

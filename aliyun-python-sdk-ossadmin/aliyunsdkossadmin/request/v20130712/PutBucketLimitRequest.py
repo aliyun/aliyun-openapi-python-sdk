@@ -21,13 +21,19 @@ from aliyunsdkcore.request import RpcRequest
 class PutBucketLimitRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'OssAdmin', '2013-07-12', 'PutBucketLimit')
+		RpcRequest.__init__(self, 'OssAdmin', '2013-07-12', 'PutBucketLimit','ossadmin')
 
 	def get_uid(self):
 		return self.get_query_params().get('uid')
 
 	def set_uid(self,uid):
 		self.add_query_param('uid',uid)
+
+	def get_OwnerAccount(self):
+		return self.get_query_params().get('OwnerAccount')
+
+	def set_OwnerAccount(self,OwnerAccount):
+		self.add_query_param('OwnerAccount',OwnerAccount)
 
 	def get_bid(self):
 		return self.get_query_params().get('bid')
@@ -40,9 +46,3 @@ class PutBucketLimitRequest(RpcRequest):
 
 	def set_BucketLimit(self,BucketLimit):
 		self.add_query_param('BucketLimit',BucketLimit)
-
-	def get_OwnerAccount(self):
-		return self.get_query_params().get('OwnerAccount')
-
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)

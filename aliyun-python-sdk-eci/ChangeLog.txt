@@ -1,25 +1,34 @@
+2020-03-16 Version: 1.0.9
+1, support create spot
+2, support create flexVolume
+3, fix up a parameter
+
+2019-12-05 Version: 1.0.8
+1, support container lifecycle
+2, support disk volume
+3, support eci instance ram role
+4, support SecurityContextSysctls
+5, support ntp server
+6, support TerminationGracePeriodSeconds
+
+
+2019-11-28 Version: 1.0.7
+1, support image cache auto expire time
+
+2019-10-28 Version: 1.0.5
+1, support image cache
+
+2019-04-16 Version: 1.0.4
+1, support ECI resatart/update
+2, support ECI metric
+3, support template API
+4, support memory for emptyDirVolume
+5, support client token
+
 2018-12-29 Version: 1.0.3
 1, Add probe for container.
 2, Add securityContext for container.
 3, Add dnsConfig for pod.
-
-2018-12-29 Version: 1.0.2
-1, Add probe for container.
-2, Add securityContext for container.
-3, Add dnsConfig for pod.
-
-2018-12-28 Version: 1.0.2
-1, Add probe for container.
-2, Add securityContext for container.
-3, Add dnsConfig for pod.
-
-2018-12-28 Version: 1.0.2
-1, container probe.
-2, container securityContext.
-3, pod dnsConfig.
-
-2018-12-28 Version: 1.0.2
-1, probe,securityContext,dnsConfig.
 
 2018-12-28 Version: 1.0.2
 1, Add probe for container.

@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,16 +18,29 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkvpc.endpoint import endpoint_data
+
 class RemoveGlobalAccelerationInstanceIpRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'RemoveGlobalAccelerationInstanceIp','vpc')
+		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'RemoveGlobalAccelerationInstanceIp','Vpc')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+
+	def get_GlobalAccelerationInstanceId(self):
+		return self.get_query_params().get('GlobalAccelerationInstanceId')
+
+	def set_GlobalAccelerationInstanceId(self,GlobalAccelerationInstanceId):
+		self.add_query_param('GlobalAccelerationInstanceId',GlobalAccelerationInstanceId)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -41,20 +54,14 @@ class RemoveGlobalAccelerationInstanceIpRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
-	def get_IpInstanceId(self):
-		return self.get_query_params().get('IpInstanceId')
-
-	def set_IpInstanceId(self,IpInstanceId):
-		self.add_query_param('IpInstanceId',IpInstanceId)
-
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_GlobalAccelerationInstanceId(self):
-		return self.get_query_params().get('GlobalAccelerationInstanceId')
+	def get_IpInstanceId(self):
+		return self.get_query_params().get('IpInstanceId')
 
-	def set_GlobalAccelerationInstanceId(self,GlobalAccelerationInstanceId):
-		self.add_query_param('GlobalAccelerationInstanceId',GlobalAccelerationInstanceId)
+	def set_IpInstanceId(self,IpInstanceId):
+		self.add_query_param('IpInstanceId',IpInstanceId)

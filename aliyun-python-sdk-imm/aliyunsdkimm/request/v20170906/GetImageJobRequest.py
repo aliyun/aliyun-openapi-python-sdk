@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,22 +18,24 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+
 class GetImageJobRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'imm', '2017-09-06', 'GetImageJob','imm')
-
-	def get_JobId(self):
-		return self.get_query_params().get('JobId')
-
-	def set_JobId(self,JobId):
-		self.add_query_param('JobId',JobId)
+		self.set_method('POST')
 
 	def get_Project(self):
 		return self.get_query_params().get('Project')
 
 	def set_Project(self,Project):
 		self.add_query_param('Project',Project)
+
+	def get_JobId(self):
+		return self.get_query_params().get('JobId')
+
+	def set_JobId(self,JobId):
+		self.add_query_param('JobId',JobId)
 
 	def get_JobType(self):
 		return self.get_query_params().get('JobType')

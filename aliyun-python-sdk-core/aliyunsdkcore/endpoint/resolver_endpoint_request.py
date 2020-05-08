@@ -36,5 +36,11 @@ class ResolveEndpointRequest(object):
 
         self.location_service_code = location_service_code
 
+        self.request_network = "public"
+        self.product_suffix = ""
+        self.endpoint_map = None
+        self.endpoint_regional = None
+
     def is_open_api_endpoint(self):
         return ENDPOINT_TYPE_OPEN == self.endpoint_type
+

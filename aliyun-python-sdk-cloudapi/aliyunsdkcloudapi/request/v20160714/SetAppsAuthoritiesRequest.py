@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,10 +18,17 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkcloudapi.endpoint import endpoint_data
+
 class SetAppsAuthoritiesRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'CloudAPI', '2016-07-14', 'SetAppsAuthorities','apigateway')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_AuthVaildTime(self):
 		return self.get_query_params().get('AuthVaildTime')
@@ -35,18 +42,6 @@ class SetAppsAuthoritiesRequest(RpcRequest):
 	def set_StageName(self,StageName):
 		self.add_query_param('StageName',StageName)
 
-	def get_AppIds(self):
-		return self.get_query_params().get('AppIds')
-
-	def set_AppIds(self,AppIds):
-		self.add_query_param('AppIds',AppIds)
-
-	def get_SecurityToken(self):
-		return self.get_query_params().get('SecurityToken')
-
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)
-
 	def get_GroupId(self):
 		return self.get_query_params().get('GroupId')
 
@@ -59,14 +54,26 @@ class SetAppsAuthoritiesRequest(RpcRequest):
 	def set_Description(self,Description):
 		self.add_query_param('Description',Description)
 
-	def get_ApiId(self):
-		return self.get_query_params().get('ApiId')
-
-	def set_ApiId(self,ApiId):
-		self.add_query_param('ApiId',ApiId)
-
 	def get_AuthValidTime(self):
 		return self.get_query_params().get('AuthValidTime')
 
 	def set_AuthValidTime(self,AuthValidTime):
 		self.add_query_param('AuthValidTime',AuthValidTime)
+
+	def get_AppIds(self):
+		return self.get_query_params().get('AppIds')
+
+	def set_AppIds(self,AppIds):
+		self.add_query_param('AppIds',AppIds)
+
+	def get_SecurityToken(self):
+		return self.get_query_params().get('SecurityToken')
+
+	def set_SecurityToken(self,SecurityToken):
+		self.add_query_param('SecurityToken',SecurityToken)
+
+	def get_ApiId(self):
+		return self.get_query_params().get('ApiId')
+
+	def set_ApiId(self,ApiId):
+		self.add_query_param('ApiId',ApiId)

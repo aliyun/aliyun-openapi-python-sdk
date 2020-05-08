@@ -21,4 +21,4 @@ from aliyunsdkcore.request import RpcRequest
 class QueryTopologyRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'TeslaMaxCompute', '2018-01-04', 'QueryTopology')
+		RpcRequest.__init__(self, 'TeslaMaxCompute', '2018-01-04', 'QueryTopology','teslamaxcompute')

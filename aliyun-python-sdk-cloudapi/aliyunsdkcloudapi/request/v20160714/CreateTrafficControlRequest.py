@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,10 +18,35 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkcloudapi.endpoint import endpoint_data
+
 class CreateTrafficControlRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'CloudAPI', '2016-07-14', 'CreateTrafficControl','apigateway')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
+
+	def get_TrafficControlName(self):
+		return self.get_query_params().get('TrafficControlName')
+
+	def set_TrafficControlName(self,TrafficControlName):
+		self.add_query_param('TrafficControlName',TrafficControlName)
+
+	def get_Description(self):
+		return self.get_query_params().get('Description')
+
+	def set_Description(self,Description):
+		self.add_query_param('Description',Description)
+
+	def get_UserDefault(self):
+		return self.get_query_params().get('UserDefault')
+
+	def set_UserDefault(self,UserDefault):
+		self.add_query_param('UserDefault',UserDefault)
 
 	def get_ApiDefault(self):
 		return self.get_query_params().get('ApiDefault')
@@ -35,29 +60,11 @@ class CreateTrafficControlRequest(RpcRequest):
 	def set_SecurityToken(self,SecurityToken):
 		self.add_query_param('SecurityToken',SecurityToken)
 
-	def get_TrafficControlName(self):
-		return self.get_query_params().get('TrafficControlName')
-
-	def set_TrafficControlName(self,TrafficControlName):
-		self.add_query_param('TrafficControlName',TrafficControlName)
-
 	def get_TrafficControlUnit(self):
 		return self.get_query_params().get('TrafficControlUnit')
 
 	def set_TrafficControlUnit(self,TrafficControlUnit):
 		self.add_query_param('TrafficControlUnit',TrafficControlUnit)
-
-	def get_Description(self):
-		return self.get_query_params().get('Description')
-
-	def set_Description(self,Description):
-		self.add_query_param('Description',Description)
-
-	def get_UserDefault(self):
-		return self.get_query_params().get('UserDefault')
-
-	def set_UserDefault(self,UserDefault):
-		self.add_query_param('UserDefault',UserDefault)
 
 	def get_AppDefault(self):
 		return self.get_query_params().get('AppDefault')

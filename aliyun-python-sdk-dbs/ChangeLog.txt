@@ -1,0 +1,89 @@
+2020-03-09 Version: 1.0.22
+- Add BackupStorageType.
+
+2020-02-25 Version: 1.0.21
+- Update backupsetDownloadset fun.
+
+2020-02-12 Version: 1.0.20
+- Update Full showStorageTyp.
+
+2020-02-12 Version: 1.0.19
+- Add Full showStorageTyp.
+
+2019-12-26 Version: 1.0.18
+- Modify CreateRestoreTask.
+
+2019-11-15 Version: 1.0.17
+- Modify DescribeRestoreRangeInfo.
+
+2019-11-15 Version: 1.0.16
+- Add DescribeRestoreRangeInfo.
+
+2019-11-08 Version: 1.0.15
+- Add DescribeJobErrorCode.
+
+2019-08-29 Version: 1.0.14
+- For publish.
+
+2019-08-28 Version: 1.0.13
+- Add DBS API UpgradeBackupPlan.
+- Add DBS API DescribePreCheckProgressList.
+
+2019-08-05 Version: 1.0.12
+- Modify DBS API DescribeFullBackupList.
+
+2019-07-14 Version: 1.0.11
+- Modify DBS API DescribeBackupPlanList.
+
+2019-07-11 Version: 1.0.10
+- Modify CreateBackupPlan.
+- Modify ConfigureBackupPlan.
+- Modify DescribeFullBackupList.
+- Modify DescribeRestoreTaskList.
+- Add ModifyBackupSourceEndpoint.
+- Add ModifyBackupStrategy.
+- Add ModifyBackupPlanName.
+
+2019-06-12 Version: 1.0.9
+1, Add RenewBackupPlan DBS interface.
+
+2019-05-29 Version: 1.0.8
+1, Modify DescribeRestoreTaskList DBS interface.
+2, Modify DescribeFullBackupList DBS interface.
+
+2019-05-18 Version: 1.0.7
+1, Add ModifyBackupObjects DBS interface.
+
+2019-05-13 Version: 1.0.6
+1, Modify CreateRestoreTaskRequest DBS interface.
+
+2019-05-10 Version: 1.0.6
+1, Modify CreateRestoreTaskRequest DBS interface.
+
+2019-05-10 Version: 1.0.6
+1, Modify CreateRestoreTaskRequest DBS interface.
+
+2019-04-17 Version: 1.0.5
+1, Add DescribeRestoreTaskList DBS interface.
+2, Add DescribeNodeCidrList DBS interface.
+
+2019-04-15 Version: 1.0.4
+1, Add CreateRestoreTask DBS interface.
+2, Add StartRestoreTask DBS interface.
+
+2019-04-10 Version: 1.0.3
+1, Modify DescribeBackupGatewayList DBS interface.
+
+2019-04-08 Version: 1.0.2
+1, Modify DescribeBackupPlanList DBS interface.
+2, Modify DescribeFullBackupList DBS interface.
+3, Modify DescribeIncrementBackupList DBS interface.
+4, Modify DescribeBackupGatewayList DBS interface.
+
+2019-04-08 Version: 1.0.1
+1, Add StopBackupPlan DBS interface.
+2, Add DescribeBackupPlanList DBS interface.
+3, Add DescribeFullBackupList DBS interface.
+4, Add DescribeIncrementBackupList DBS interface.
+5, Add DescribeBackupGatewayList DBS interface.
+

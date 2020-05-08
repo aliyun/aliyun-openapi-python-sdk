@@ -22,7 +22,6 @@ class ReleaseInstanceRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'hsm', '2018-01-11', 'ReleaseInstance','hsm')
-		self.set_method('POST')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')

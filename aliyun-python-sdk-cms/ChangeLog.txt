@@ -1,3 +1,52 @@
+2020-03-16 Version: 7.0.11
+- Add exporter related API.
+
+2020-02-20 Version: 7.0.10
+- Fix the problem that the three APIs, disablesitemonitors, enablesitemonitors and modifysitemonitor, return result fields are not fully define.
+
+2020-02-14 Version: 7.0.9
+- Fix the field definition for the site monitoring option OptionJson.
+
+2020-01-16 Version: 7.0.8
+- Fix the result value of DeleteSiteMonitors.
+
+2020-01-15 Version: 7.0.7
+- Fix parameter issues for label synchronization group.
+
+2020-01-15 Version: 7.0.6
+- Fix parameter issues for label synchronization group.
+
+2020-01-13 Version: 7.0.6
+- Add Dynamic Tag API.
+
+2019-12-11 Version: 7.0.5
+- Add tag API.
+- Add group process monitoring API.
+- Add API for batch setting alarm rules.
+
+2019-05-24 Version: 7.0.4
+1, The list of site monitoring probes adds ISP and city fields in English.
+2, Fixed the capitalization problem of Describe MetricData and Describe Site Monitor Statistics API metricName.
+
+2019-04-25 Version: 7.0.3
+1, The alarm contact interface increases paging parameters
+
+2019-04-13 Version: 7.0.2
+1, Adding Modified Instance Management Interface.
+
+2019-04-11 Version: 7.0.1
+1, Fixed inconsistency between input and output parameters of alarm rule list interface.
+
+2019-04-09 Version: 7.0.0
+1, Optimizing the naming inconsistency of the old version of openAPI
+2, The problem of inaccurate parameter description in the old version is optimized.
+3, Adding API additions, deletions, modifications and checks of alarm contact group
+4, Increased query and alarm rules Association resources and the number of alarm rules
+5, This SDK is not compatible with the old version of SDK
+
+2019-03-20 Version: 6.0.14
+1, Update the Dependency
+
 2018-08-02 Version: 6.0.13
 1, Add parameter(GroupId) for CreateNotifyPolicy,GetNotifyPolicy,DeleteNotifyPolicy,ListNotifyPolicy.
 

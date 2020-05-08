@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,10 +18,17 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkvod.endpoint import endpoint_data
+
 class GetMediaAuditResultDetailRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'vod', '2017-03-21', 'GetMediaAuditResultDetail','vod')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -35,12 +42,6 @@ class GetMediaAuditResultDetailRequest(RpcRequest):
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
-	def get_PageNo(self):
-		return self.get_query_params().get('PageNo')
-
-	def set_PageNo(self,PageNo):
-		self.add_query_param('PageNo',PageNo)
-
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
@@ -52,3 +53,9 @@ class GetMediaAuditResultDetailRequest(RpcRequest):
 
 	def set_MediaId(self,MediaId):
 		self.add_query_param('MediaId',MediaId)
+
+	def get_PageNo(self):
+		return self.get_query_params().get('PageNo')
+
+	def set_PageNo(self,PageNo):
+		self.add_query_param('PageNo',PageNo)

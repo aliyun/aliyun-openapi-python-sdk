@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,16 +18,53 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkmts.endpoint import endpoint_data
+
 class QueryCoverJobListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Mts', '2014-06-18', 'QueryCoverJobList','mts')
+		RpcRequest.__init__(self, 'Mts', '2014-06-18', 'QueryCoverJobList')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+
+	def get_NextPageToken(self):
+		return self.get_query_params().get('NextPageToken')
+
+	def set_NextPageToken(self,NextPageToken):
+		self.add_query_param('NextPageToken',NextPageToken)
+
+	def get_StartOfJobCreatedTimeRange(self):
+		return self.get_query_params().get('StartOfJobCreatedTimeRange')
+
+	def set_StartOfJobCreatedTimeRange(self,StartOfJobCreatedTimeRange):
+		self.add_query_param('StartOfJobCreatedTimeRange',StartOfJobCreatedTimeRange)
+
+	def get_CoverJobIds(self):
+		return self.get_query_params().get('CoverJobIds')
+
+	def set_CoverJobIds(self,CoverJobIds):
+		self.add_query_param('CoverJobIds',CoverJobIds)
+
+	def get_State(self):
+		return self.get_query_params().get('State')
+
+	def set_State(self,State):
+		self.add_query_param('State',State)
+
+	def get_EndOfJobCreatedTimeRange(self):
+		return self.get_query_params().get('EndOfJobCreatedTimeRange')
+
+	def set_EndOfJobCreatedTimeRange(self,EndOfJobCreatedTimeRange):
+		self.add_query_param('EndOfJobCreatedTimeRange',EndOfJobCreatedTimeRange)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -41,14 +78,20 @@ class QueryCoverJobListRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
+	def get_MaximumPageSize(self):
+		return self.get_query_params().get('MaximumPageSize')
+
+	def set_MaximumPageSize(self,MaximumPageSize):
+		self.add_query_param('MaximumPageSize',MaximumPageSize)
+
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_CoverJobIds(self):
-		return self.get_query_params().get('CoverJobIds')
+	def get_PipelineId(self):
+		return self.get_query_params().get('PipelineId')
 
-	def set_CoverJobIds(self,CoverJobIds):
-		self.add_query_param('CoverJobIds',CoverJobIds)
+	def set_PipelineId(self,PipelineId):
+		self.add_query_param('PipelineId',PipelineId)

@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,16 +18,29 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkecs.endpoint import endpoint_data
+
 class ModifyInstanceDeploymentRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'ModifyInstanceDeployment','ecs')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+
+	def get_InstanceType(self):
+		return self.get_query_params().get('InstanceType')
+
+	def set_InstanceType(self,InstanceType):
+		self.add_query_param('InstanceType',InstanceType)
 
 	def get_DeploymentSetId(self):
 		return self.get_query_params().get('DeploymentSetId')
@@ -46,6 +59,12 @@ class ModifyInstanceDeploymentRequest(RpcRequest):
 
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
+
+	def get_Tenancy(self):
+		return self.get_query_params().get('Tenancy')
+
+	def set_Tenancy(self,Tenancy):
+		self.add_query_param('Tenancy',Tenancy)
 
 	def get_DedicatedHostId(self):
 		return self.get_query_params().get('DedicatedHostId')
@@ -70,3 +89,15 @@ class ModifyInstanceDeploymentRequest(RpcRequest):
 
 	def set_Force(self,Force):
 		self.add_query_param('Force',Force)
+
+	def get_MigrationType(self):
+		return self.get_query_params().get('MigrationType')
+
+	def set_MigrationType(self,MigrationType):
+		self.add_query_param('MigrationType',MigrationType)
+
+	def get_Affinity(self):
+		return self.get_query_params().get('Affinity')
+
+	def set_Affinity(self,Affinity):
+		self.add_query_param('Affinity',Affinity)

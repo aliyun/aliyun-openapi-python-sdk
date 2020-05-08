@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,34 +18,23 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkiot.endpoint import endpoint_data
+
 class RRpcRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'RRpc','iot')
+		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'RRpc','Iot')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_IotInstanceId(self):
-		return self.get_query_params().get('IotInstanceId')
-
-	def set_IotInstanceId(self,IotInstanceId):
-		self.add_query_param('IotInstanceId',IotInstanceId)
 
 	def get_RequestBase64Byte(self):
 		return self.get_query_params().get('RequestBase64Byte')
 
 	def set_RequestBase64Byte(self,RequestBase64Byte):
 		self.add_query_param('RequestBase64Byte',RequestBase64Byte)
-
-	def get_Topic(self):
-		return self.get_query_params().get('Topic')
-
-	def set_Topic(self,Topic):
-		self.add_query_param('Topic',Topic)
-
-	def get_DeviceName(self):
-		return self.get_query_params().get('DeviceName')
-
-	def set_DeviceName(self,DeviceName):
-		self.add_query_param('DeviceName',DeviceName)
 
 	def get_ProductKey(self):
 		return self.get_query_params().get('ProductKey')
@@ -58,3 +47,21 @@ class RRpcRequest(RpcRequest):
 
 	def set_Timeout(self,Timeout):
 		self.add_query_param('Timeout',Timeout)
+
+	def get_IotInstanceId(self):
+		return self.get_query_params().get('IotInstanceId')
+
+	def set_IotInstanceId(self,IotInstanceId):
+		self.add_query_param('IotInstanceId',IotInstanceId)
+
+	def get_Topic(self):
+		return self.get_query_params().get('Topic')
+
+	def set_Topic(self,Topic):
+		self.add_query_param('Topic',Topic)
+
+	def get_DeviceName(self):
+		return self.get_query_params().get('DeviceName')
+
+	def set_DeviceName(self,DeviceName):
+		self.add_query_param('DeviceName',DeviceName)

@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,16 +18,53 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkvod.endpoint import endpoint_data
+
 class ListLiveRecordVideoRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'vod', '2017-03-21', 'ListLiveRecordVideo','vod')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+
+	def get_StartTime(self):
+		return self.get_query_params().get('StartTime')
+
+	def set_StartTime(self,StartTime):
+		self.add_query_param('StartTime',StartTime)
+
+	def get_AppName(self):
+		return self.get_query_params().get('AppName')
+
+	def set_AppName(self,AppName):
+		self.add_query_param('AppName',AppName)
+
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
+
+	def get_StreamName(self):
+		return self.get_query_params().get('StreamName')
+
+	def set_StreamName(self,StreamName):
+		self.add_query_param('StreamName',StreamName)
+
+	def get_QueryType(self):
+		return self.get_query_params().get('QueryType')
+
+	def set_QueryType(self,QueryType):
+		self.add_query_param('QueryType',QueryType)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -47,23 +84,11 @@ class ListLiveRecordVideoRequest(RpcRequest):
 	def set_EndTime(self,EndTime):
 		self.add_query_param('EndTime',EndTime)
 
-	def get_StartTime(self):
-		return self.get_query_params().get('StartTime')
-
-	def set_StartTime(self,StartTime):
-		self.add_query_param('StartTime',StartTime)
-
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
-
-	def get_AppName(self):
-		return self.get_query_params().get('AppName')
-
-	def set_AppName(self,AppName):
-		self.add_query_param('AppName',AppName)
 
 	def get_PageNo(self):
 		return self.get_query_params().get('PageNo')
@@ -71,26 +96,8 @@ class ListLiveRecordVideoRequest(RpcRequest):
 	def set_PageNo(self,PageNo):
 		self.add_query_param('PageNo',PageNo)
 
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
 	def get_SortBy(self):
 		return self.get_query_params().get('SortBy')
 
 	def set_SortBy(self,SortBy):
 		self.add_query_param('SortBy',SortBy)
-
-	def get_StreamName(self):
-		return self.get_query_params().get('StreamName')
-
-	def set_StreamName(self,StreamName):
-		self.add_query_param('StreamName',StreamName)
-
-	def get_QueryType(self):
-		return self.get_query_params().get('QueryType')
-
-	def set_QueryType(self,QueryType):
-		self.add_query_param('QueryType',QueryType)

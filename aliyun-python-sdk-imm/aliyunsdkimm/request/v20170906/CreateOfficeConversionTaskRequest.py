@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,10 +18,12 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+
 class CreateOfficeConversionTaskRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'imm', '2017-09-06', 'CreateOfficeConversionTask','imm')
+		self.set_method('POST')
 
 	def get_SrcType(self):
 		return self.get_query_params().get('SrcType')
@@ -88,6 +90,12 @@ class CreateOfficeConversionTaskRequest(RpcRequest):
 
 	def set_ModelId(self,ModelId):
 		self.add_query_param('ModelId',ModelId)
+
+	def get_DisplayDpi(self):
+		return self.get_query_params().get('DisplayDpi')
+
+	def set_DisplayDpi(self,DisplayDpi):
+		self.add_query_param('DisplayDpi',DisplayDpi)
 
 	def get_MaxSheetRow(self):
 		return self.get_query_params().get('MaxSheetRow')

@@ -47,6 +47,18 @@ class VerifyContactFieldRequest(RpcRequest):
 	def set_City(self,City):
 		self.add_query_param('City',City)
 
+	def get_DomainName(self):
+		return self.get_query_params().get('DomainName')
+
+	def set_DomainName(self,DomainName):
+		self.add_query_param('DomainName',DomainName)
+
+	def get_RegistrantType(self):
+		return self.get_query_params().get('RegistrantType')
+
+	def set_RegistrantType(self,RegistrantType):
+		self.add_query_param('RegistrantType',RegistrantType)
+
 	def get_Telephone(self):
 		return self.get_query_params().get('Telephone')
 

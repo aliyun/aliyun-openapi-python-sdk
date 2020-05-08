@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,28 +18,23 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkiot.endpoint import endpoint_data
+
 class RegisterDeviceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'RegisterDevice','iot')
+		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'RegisterDevice','Iot')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_PinCode(self):
 		return self.get_query_params().get('PinCode')
 
 	def set_PinCode(self,PinCode):
 		self.add_query_param('PinCode',PinCode)
-
-	def get_IotInstanceId(self):
-		return self.get_query_params().get('IotInstanceId')
-
-	def set_IotInstanceId(self,IotInstanceId):
-		self.add_query_param('IotInstanceId',IotInstanceId)
-
-	def get_DeviceName(self):
-		return self.get_query_params().get('DeviceName')
-
-	def set_DeviceName(self,DeviceName):
-		self.add_query_param('DeviceName',DeviceName)
 
 	def get_ProductKey(self):
 		return self.get_query_params().get('ProductKey')
@@ -52,3 +47,21 @@ class RegisterDeviceRequest(RpcRequest):
 
 	def set_DevEui(self,DevEui):
 		self.add_query_param('DevEui',DevEui)
+
+	def get_IotInstanceId(self):
+		return self.get_query_params().get('IotInstanceId')
+
+	def set_IotInstanceId(self,IotInstanceId):
+		self.add_query_param('IotInstanceId',IotInstanceId)
+
+	def get_Nickname(self):
+		return self.get_query_params().get('Nickname')
+
+	def set_Nickname(self,Nickname):
+		self.add_query_param('Nickname',Nickname)
+
+	def get_DeviceName(self):
+		return self.get_query_params().get('DeviceName')
+
+	def set_DeviceName(self,DeviceName):
+		self.add_query_param('DeviceName',DeviceName)

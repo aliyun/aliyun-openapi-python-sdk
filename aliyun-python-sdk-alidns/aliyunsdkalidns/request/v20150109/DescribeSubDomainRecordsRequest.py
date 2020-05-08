@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,28 +18,35 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkalidns.endpoint import endpoint_data
+
 class DescribeSubDomainRecordsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'DescribeSubDomainRecords')
+		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'DescribeSubDomainRecords','alidns')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_Lang(self):
-		return self.get_query_params().get('Lang')
 
-	def set_Lang(self,Lang):
-		self.add_query_param('Lang',Lang)
+	def get_Line(self):
+		return self.get_query_params().get('Line')
 
-	def get_UserClientIp(self):
-		return self.get_query_params().get('UserClientIp')
+	def set_Line(self,Line):
+		self.add_query_param('Line',Line)
 
-	def set_UserClientIp(self,UserClientIp):
-		self.add_query_param('UserClientIp',UserClientIp)
+	def get_DomainName(self):
+		return self.get_query_params().get('DomainName')
 
-	def get_SubDomain(self):
-		return self.get_query_params().get('SubDomain')
+	def set_DomainName(self,DomainName):
+		self.add_query_param('DomainName',DomainName)
 
-	def set_SubDomain(self,SubDomain):
-		self.add_query_param('SubDomain',SubDomain)
+	def get_Type(self):
+		return self.get_query_params().get('Type')
+
+	def set_Type(self,Type):
+		self.add_query_param('Type',Type)
 
 	def get_PageNumber(self):
 		return self.get_query_params().get('PageNumber')
@@ -47,14 +54,26 @@ class DescribeSubDomainRecordsRequest(RpcRequest):
 	def set_PageNumber(self,PageNumber):
 		self.add_query_param('PageNumber',PageNumber)
 
+	def get_UserClientIp(self):
+		return self.get_query_params().get('UserClientIp')
+
+	def set_UserClientIp(self,UserClientIp):
+		self.add_query_param('UserClientIp',UserClientIp)
+
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
 
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
 
-	def get_Type(self):
-		return self.get_query_params().get('Type')
+	def get_SubDomain(self):
+		return self.get_query_params().get('SubDomain')
 
-	def set_Type(self,Type):
-		self.add_query_param('Type',Type)
+	def set_SubDomain(self,SubDomain):
+		self.add_query_param('SubDomain',SubDomain)
+
+	def get_Lang(self):
+		return self.get_query_params().get('Lang')
+
+	def set_Lang(self,Lang):
+		self.add_query_param('Lang',Lang)

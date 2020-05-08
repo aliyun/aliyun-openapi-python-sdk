@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RoaRequest
 class UpdateNamespaceRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'cr', '2016-06-07', 'UpdateNamespace')
+		RoaRequest.__init__(self, 'cr', '2016-06-07', 'UpdateNamespace','cr')
 		self.set_uri_pattern('/namespace/[Namespace]')
 		self.set_method('POST')
 

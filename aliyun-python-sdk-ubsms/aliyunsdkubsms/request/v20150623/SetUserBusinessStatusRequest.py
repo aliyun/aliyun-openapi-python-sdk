@@ -21,13 +21,19 @@ from aliyunsdkcore.request import RpcRequest
 class SetUserBusinessStatusRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ubsms', '2015-06-23', 'SetUserBusinessStatus')
+		RpcRequest.__init__(self, 'Ubsms', '2015-06-23', 'SetUserBusinessStatus','ubsms')
 
 	def get_Uid(self):
 		return self.get_query_params().get('Uid')
 
 	def set_Uid(self,Uid):
 		self.add_query_param('Uid',Uid)
+
+	def get_StatusValue(self):
+		return self.get_query_params().get('StatusValue')
+
+	def set_StatusValue(self,StatusValue):
+		self.add_query_param('StatusValue',StatusValue)
 
 	def get_Service(self):
 		return self.get_query_params().get('Service')
@@ -40,9 +46,3 @@ class SetUserBusinessStatusRequest(RpcRequest):
 
 	def set_StatusKey(self,StatusKey):
 		self.add_query_param('StatusKey',StatusKey)
-
-	def get_StatusValue(self):
-		return self.get_query_params().get('StatusValue')
-
-	def set_StatusValue(self,StatusValue):
-		self.add_query_param('StatusValue',StatusValue)

@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,10 +18,17 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkvpc.endpoint import endpoint_data
+
 class DescribeGlobalAccelerationInstancesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'DescribeGlobalAccelerationInstances','vpc')
+		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'DescribeGlobalAccelerationInstances','Vpc')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_IpAddress(self):
 		return self.get_query_params().get('IpAddress')
@@ -40,6 +47,30 @@ class DescribeGlobalAccelerationInstancesRequest(RpcRequest):
 
 	def set_BandwidthType(self,BandwidthType):
 		self.add_query_param('BandwidthType',BandwidthType)
+
+	def get_IncludeReservationData(self):
+		return self.get_query_params().get('IncludeReservationData')
+
+	def set_IncludeReservationData(self,IncludeReservationData):
+		self.add_query_param('IncludeReservationData',IncludeReservationData)
+
+	def get_GlobalAccelerationInstanceId(self):
+		return self.get_query_params().get('GlobalAccelerationInstanceId')
+
+	def set_GlobalAccelerationInstanceId(self,GlobalAccelerationInstanceId):
+		self.add_query_param('GlobalAccelerationInstanceId',GlobalAccelerationInstanceId)
+
+	def get_PageNumber(self):
+		return self.get_query_params().get('PageNumber')
+
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)
+
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -65,41 +96,17 @@ class DescribeGlobalAccelerationInstancesRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_IncludeReservationData(self):
-		return self.get_query_params().get('IncludeReservationData')
-
-	def set_IncludeReservationData(self,IncludeReservationData):
-		self.add_query_param('IncludeReservationData',IncludeReservationData)
-
-	def get_GlobalAccelerationInstanceId(self):
-		return self.get_query_params().get('GlobalAccelerationInstanceId')
-
-	def set_GlobalAccelerationInstanceId(self,GlobalAccelerationInstanceId):
-		self.add_query_param('GlobalAccelerationInstanceId',GlobalAccelerationInstanceId)
-
 	def get_ServerId(self):
 		return self.get_query_params().get('ServerId')
 
 	def set_ServerId(self,ServerId):
 		self.add_query_param('ServerId',ServerId)
 
-	def get_PageNumber(self):
-		return self.get_query_params().get('PageNumber')
-
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
-
 	def get_Name(self):
 		return self.get_query_params().get('Name')
 
 	def set_Name(self,Name):
 		self.add_query_param('Name',Name)
-
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
 
 	def get_Status(self):
 		return self.get_query_params().get('Status')

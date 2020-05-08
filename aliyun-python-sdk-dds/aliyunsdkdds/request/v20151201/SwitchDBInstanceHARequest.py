@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,16 +18,48 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkdds.endpoint import endpoint_data
+
 class SwitchDBInstanceHARequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Dds', '2015-12-01', 'SwitchDBInstanceHA','dds')
+		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+
+	def get_RoleIds(self):
+		return self.get_query_params().get('RoleIds')
+
+	def set_RoleIds(self,RoleIds):
+		self.add_query_param('RoleIds',RoleIds)
+
+	def get_SecurityToken(self):
+		return self.get_query_params().get('SecurityToken')
+
+	def set_SecurityToken(self,SecurityToken):
+		self.add_query_param('SecurityToken',SecurityToken)
+
+	def get_DBInstanceId(self):
+		return self.get_query_params().get('DBInstanceId')
+
+	def set_DBInstanceId(self,DBInstanceId):
+		self.add_query_param('DBInstanceId',DBInstanceId)
+
+	def get_NodeId(self):
+		return self.get_query_params().get('NodeId')
+
+	def set_NodeId(self,NodeId):
+		self.add_query_param('NodeId',NodeId)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -46,39 +78,3 @@ class SwitchDBInstanceHARequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
-
-	def get_TargetInstanceId(self):
-		return self.get_query_params().get('TargetInstanceId')
-
-	def set_TargetInstanceId(self,TargetInstanceId):
-		self.add_query_param('TargetInstanceId',TargetInstanceId)
-
-	def get_SecurityToken(self):
-		return self.get_query_params().get('SecurityToken')
-
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)
-
-	def get_SwitchType(self):
-		return self.get_query_params().get('SwitchType')
-
-	def set_SwitchType(self,SwitchType):
-		self.add_query_param('SwitchType',SwitchType)
-
-	def get_DBInstanceId(self):
-		return self.get_query_params().get('DBInstanceId')
-
-	def set_DBInstanceId(self,DBInstanceId):
-		self.add_query_param('DBInstanceId',DBInstanceId)
-
-	def get_SourceInstanceId(self):
-		return self.get_query_params().get('SourceInstanceId')
-
-	def set_SourceInstanceId(self,SourceInstanceId):
-		self.add_query_param('SourceInstanceId',SourceInstanceId)
-
-	def get_NodeId(self):
-		return self.get_query_params().get('NodeId')
-
-	def set_NodeId(self,NodeId):
-		self.add_query_param('NodeId',NodeId)

@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,10 +18,17 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkbssopenapi.endpoint import endpoint_data
+
 class QueryEvaluateListRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'QueryEvaluateList')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_EndSearchTime(self):
 		return self.get_query_params().get('EndSearchTime')
@@ -41,43 +48,17 @@ class QueryEvaluateListRequest(RpcRequest):
 	def set_SortType(self,SortType):
 		self.add_query_param('SortType',SortType)
 
-	def get_BizTypeLists(self):
-		return self.get_query_params().get('BizTypeLists')
-
-	def set_BizTypeLists(self,BizTypeLists):
-		for i in range(len(BizTypeLists)):	
-			if BizTypeLists[i] is not None:
-				self.add_query_param('BizTypeList.' + str(i + 1) , BizTypeLists[i]);
-
 	def get_Type(self):
 		return self.get_query_params().get('Type')
 
 	def set_Type(self,Type):
 		self.add_query_param('Type',Type)
 
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
 	def get_PageNum(self):
 		return self.get_query_params().get('PageNum')
 
 	def set_PageNum(self,PageNum):
 		self.add_query_param('PageNum',PageNum)
-
-	def get_StartSearchTime(self):
-		return self.get_query_params().get('StartSearchTime')
-
-	def set_StartSearchTime(self,StartSearchTime):
-		self.add_query_param('StartSearchTime',StartSearchTime)
-
-	def get_EndBizTime(self):
-		return self.get_query_params().get('EndBizTime')
-
-	def set_EndBizTime(self,EndBizTime):
-		self.add_query_param('EndBizTime',EndBizTime)
 
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
@@ -96,6 +77,32 @@ class QueryEvaluateListRequest(RpcRequest):
 
 	def set_BillCycle(self,BillCycle):
 		self.add_query_param('BillCycle',BillCycle)
+
+	def get_BizTypeLists(self):
+		return self.get_query_params().get('BizTypeLists')
+
+	def set_BizTypeLists(self,BizTypeLists):
+		for i in range(len(BizTypeLists)):	
+			if BizTypeLists[i] is not None:
+				self.add_query_param('BizTypeList.' + str(i + 1) , BizTypeLists[i]);
+
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
+
+	def get_StartSearchTime(self):
+		return self.get_query_params().get('StartSearchTime')
+
+	def set_StartSearchTime(self,StartSearchTime):
+		self.add_query_param('StartSearchTime',StartSearchTime)
+
+	def get_EndBizTime(self):
+		return self.get_query_params().get('EndBizTime')
+
+	def set_EndBizTime(self,EndBizTime):
+		self.add_query_param('EndBizTime',EndBizTime)
 
 	def get_StartAmount(self):
 		return self.get_query_params().get('StartAmount')

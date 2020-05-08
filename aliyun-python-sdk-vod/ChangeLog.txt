@@ -1,3 +1,60 @@
+2019-10-23 Version: 2.15.8
+- Add a new api named SubmitDynamicImageJob capture a certain part of the video as a dynamic image.
+- Add a new api named SubmitWorkflowJob to initiate the VoD workflow processing for audio and video.
+- Add a new field AuditStatus in the structure ImageInfo to GetImageInfo api response, which is used to identify the audit status of the image.
+- Modify the data type of return field StorageLocation to String.
+- Add a new field named MediaType to SubmitAIMediaAuditJob api request.
+
+2019-10-23 Version: 2.15.8
+- Add a new api named SubmitDynamicImageJob capture a certain part of the video as a dynamic image.
+- Add a new api named SubmitWorkflowJob to initiate the VoD workflow processing for audio and video.
+- Add a new field AuditStatus in the structure ImageInfo to GetImageInfo api response, which is used to identify the audit status of the image.
+- Modify the data type of return field StorageLocation to String.
+- Add a new field named MediaType to SubmitAIMediaAuditJob api request.
+
+2019-10-23 Version: 2.15.7
+- Add a new api named SubmitDynamicImageJob capture a certain part of the video as a dynamic image.
+- Add a new api named SubmitWorkflowJob to initiate the VoD workflow processing for audio and video.
+- Add a new field AuditStatus in the structure ImageInfo to GetImageInfo api response, which is used to identify the audit status of the image.
+- Modify the data type of return field StorageLocation to String.
+- Add a new field named MediaType to SubmitAIMediaAuditJob api request.
+
+2019-07-18 Version: 2.15.6
+- Add a new field named Input to SubmitAIJob api request to set the input file of AI job.
+- Change the field MediaId of SubmitAIJob api to non-mandatory.
+
+2019-06-24 Version: 2.15.5
+- Add some new apis to manage VoD domain, such as AddVodDomain, UpdateVodDomain, DeleteVodDomain, BatchStartVodDomain, BatchStopVodDomain, DescribeVodUserDomains, DescribeVodDomainDetail.
+- Add some new apis to manage VoD domain config, such as BatchSetVodDomainConfigs, DescribeVodDomainConfigs, DeleteVodSpecificConfig, SetVodDomainCertificate, DescribeVodCertificateList, DescribeVodDomainCertificateInfo.
+- Add a new field named AppId to some apis supporting the VoD App feature, such as AddWorkFlow, GetWorkFlow, ListWorkFlow, AddVodTemplate, GetVodTemplate, ListVodTemplate, AddTranscodeTemplateGroup, GetTranscodeTemplateGroup, ListTranscodeTemplateGroup, AddWatermark, GetWatermark, ListWatermark, UploadMediaByURL.
+- Add a new field named UserData to SubmitTranscodeJobs api request to support user-defined extension fields, which can be used for transparent return when callbacks.
+
+2019-06-24 Version: 2.15.4
+- Add some new apis to manage VoD domain, such as AddVodDomain, UpdateVodDomain, DeleteVodDomain, BatchStartVodDomain, BatchStopVodDomain, DescribeVodUserDomains, DescribeVodDomainDetail.
+- Add some new apis to manage VoD domain config, such as BatchSetVodDomainConfigs, DescribeVodDomainConfigs, DeleteVodSpecificConfig, SetVodDomainCertificate, DescribeVodCertificateList, DescribeVodDomainCertificateInfo.
+- Add a new field named AppId to some apis supporting the VoD App feature, such as AddWorkFlow, GetWorkFlow, ListWorkFlow, AddVodTemplate, GetVodTemplate, ListVodTemplate, AddTranscodeTemplateGroup, GetTranscodeTemplateGroup, ListTranscodeTemplateGroup, AddWatermark, GetWatermark, ListWatermark, UploadMediaByURL.
+- Add a new field named UserData to SubmitTranscodeJobs api request to support user-defined extension fields, which can be used for transparent return when callbacks.
+
+2019-05-16 Version: 2.15.3
+1, Add some new apis to fetch the usage data from VoD, such as DescribeVodDomainUsageData, DescribeVodStorageData, DescribeVodTranscodeData, DescribeVodAIData.
+2, Add a new api named GetUploadDetails to describe the upload detail, such as uploading time and uploading source.
+3, Add a new api named GetAIVideoTagResult to describe the result of AI tag.
+4, Add new field Icon and OnlineStatus to some apis to manage short video materials, such as SearchMedia, GetAttachedMediaInfo, CreateUploadAttachedMedia.
+5, Add a new field RegionId to the response of GetAttachedMediaInfo and GetImageInfo.
+6, Add the field named UserData to SubmitSnapshotJob api request.
+
+2019-04-11 Version: 2.15.2
+1, Add some new apis to manage VoD's App, such as CreateAppInfo, GetAppInfos, ListAppInfos, UpdateAppInfo, DeleteAppInfo, AttachAppPolicyToIdentity, DetachAppPolicyFromIdentity, ListAppPoliciesForIdentity and MoveAppResource.
+2, Add new apis SetMessageCallback, GetMessageCallback and DeleteMessageCallback to manage message callback configuration.
+3, Add new apis GetAttachedMedia, UpdateAttachedMediaInfos and DeleteAttachedMedia to manage attached media information.
+4, Add a new api named DeleteMultipartUpload to clean up the fragmented files generated during the upload process.
+5, Add a new field named AppId to some apis supporting the VoD App feature, such as CreateUploadVideo, SearchMedia, GetVideoInfo, GetVideoInfos; Add new fields named NonExistVideoIds and ForbiddenVideoIds to DeleteVideo api response; Add a new field named ForbiddenVideoIds to UpdateVideoInfos api response.
+6, The Editing supports multi-region and multi-materials. Add new fields named StorageLocation and RegionId in Project struct to GetEditingProject api response; Add new fields named StorageLocation, RegionId and Duration in ProjectList struct to SearchEditingProject api response; Add a new field named MaterialType to GetEditingProjectMaterials api request.
+7, Add new fields named TranscodeFileRegular, Clip and Rotate to GetTranscodeTemplateGroup api response to support the custom file path feature.
+8, Add a new field named AttachedMedia to api response to support the attached media feature.
+9, Add a new field named SubTotal to GetCategories response to show the number of sub category.
+10, Add a new field named AdditionType to GetVideoInfo and GetVideoInfos api request to fetch the custom media info and the corresponding field is CustomMediaInfo.
+
 2019-02-28 Version: 2.15.1
 1, Add new apis named ListTranscodeTask, GetTranscodeTask, GetTranscodeSummary.
 2, Add the new field named TranscodeTemplateIds and ForceDelGroup to DeleteTranscodeTemplateGroup api request, and add a new field named NonExistTranscodeTemplateIds to the api response.

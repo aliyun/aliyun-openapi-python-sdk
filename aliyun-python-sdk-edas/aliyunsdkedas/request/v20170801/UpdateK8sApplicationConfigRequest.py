@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,12 +18,19 @@
 # under the License.
 
 from aliyunsdkcore.request import RoaRequest
+from aliyunsdkedas.endpoint import endpoint_data
+
 class UpdateK8sApplicationConfigRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'UpdateK8sApplicationConfig')
+		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'UpdateK8sApplicationConfig','edas')
 		self.set_uri_pattern('/pop/v5/k8s/acs/k8s_app_configuration')
 		self.set_method('PUT')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_AppId(self):
 		return self.get_query_params().get('AppId')
@@ -48,3 +55,9 @@ class UpdateK8sApplicationConfigRequest(RoaRequest):
 
 	def set_CpuLimit(self,CpuLimit):
 		self.add_query_param('CpuLimit',CpuLimit)
+
+	def get_McpuLimit(self):
+		return self.get_query_params().get('McpuLimit')
+
+	def set_McpuLimit(self,McpuLimit):
+		self.add_query_param('McpuLimit',McpuLimit)

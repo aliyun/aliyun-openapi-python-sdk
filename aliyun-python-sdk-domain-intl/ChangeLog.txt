@@ -1,3 +1,9 @@
+2019-05-13 Version: 1.6.0
+1, Add three new apis, SaveSingleTaskForSaveArtExtension, QueryArtExtension and CancelTask.
+
+2019-04-23 Version: 1.5.0
+1, Add a new api, QueryDomainByDomainName.
+
 2018-12-20 Version: 1.4.0
 1, Add Dns Sec apis.
 2, Add coupon and promotion fields for order apis.

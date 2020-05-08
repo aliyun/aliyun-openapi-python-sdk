@@ -1,0 +1,34 @@
+2020-04-20 Version: 3.0.16
+- Add kibana network white Ips.
+
+2020-04-16 Version: 3.0.15
+- Add ModifyWhiteIps.
+
+2020-02-26 Version: 3.0.14
+- Fix tag upper case parameters.
+- Fix patch.
+
+2020-02-24 Version: 3.0.13
+- Add tag of list instance parameters.
+
+2020-01-07 Version: 3.0.12
+- Modify desribeInstance return dict item.
+
+2019-11-29 Version: 3.0.11
+- Add RenewInstance.
+- Add RenewLogstash.
+- Add UpdateInstanceChargeType.
+- Add UpdateLogstashChargeType.
+
+2019-11-21 Version: 3.0.10
+- Add ConvertPayType.
+- Add ConvertLogstashPayType.
+
+2019-09-09 Version: 3.0.8
+- CreateInstance add toen.
+- UpdateInstance add toen.
+
+2019-08-30 Version: 3.0.7
+- Add describeRegions.
+- Add toen.
+

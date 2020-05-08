@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,10 +18,38 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkccc.endpoint import endpoint_data
+
 class ModifyUserRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'CCC', '2017-07-05', 'ModifyUser','ccc')
+		RpcRequest.__init__(self, 'CCC', '2017-07-05', 'ModifyUser')
+		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
+
+	def get_PrivateOutboundNumberId(self):
+		return self.get_query_params().get('PrivateOutboundNumberId')
+
+	def set_PrivateOutboundNumberId(self,PrivateOutboundNumberId):
+		self.add_query_param('PrivateOutboundNumberId',PrivateOutboundNumberId)
+
+	def get_RoleIds(self):
+		return self.get_query_params().get('RoleIds')
+
+	def set_RoleIds(self,RoleIds):
+		for i in range(len(RoleIds)):	
+			if RoleIds[i] is not None:
+				self.add_query_param('RoleId.' + str(i + 1) , RoleIds[i]);
+
+	def get_UserId(self):
+		return self.get_query_params().get('UserId')
+
+	def set_UserId(self,UserId):
+		self.add_query_param('UserId',UserId)
 
 	def get_SkillLevels(self):
 		return self.get_query_params().get('SkillLevels')
@@ -43,14 +71,6 @@ class ModifyUserRequest(RpcRequest):
 	def set_Phone(self,Phone):
 		self.add_query_param('Phone',Phone)
 
-	def get_RoleIds(self):
-		return self.get_query_params().get('RoleIds')
-
-	def set_RoleIds(self,RoleIds):
-		for i in range(len(RoleIds)):	
-			if RoleIds[i] is not None:
-				self.add_query_param('RoleId.' + str(i + 1) , RoleIds[i]);
-
 	def get_DisplayName(self):
 		return self.get_query_params().get('DisplayName')
 
@@ -64,12 +84,6 @@ class ModifyUserRequest(RpcRequest):
 		for i in range(len(SkillGroupIds)):	
 			if SkillGroupIds[i] is not None:
 				self.add_query_param('SkillGroupId.' + str(i + 1) , SkillGroupIds[i]);
-
-	def get_UserId(self):
-		return self.get_query_params().get('UserId')
-
-	def set_UserId(self,UserId):
-		self.add_query_param('UserId',UserId)
 
 	def get_Email(self):
 		return self.get_query_params().get('Email')

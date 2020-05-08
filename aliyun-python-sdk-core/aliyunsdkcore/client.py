@@ -55,7 +55,8 @@ from aliyunsdkcore.vendored.requests.structures import OrderedDict
 Acs default client module.
 """
 
-DEFAULT_SDK_CONNECTION_TIMEOUT_IN_SECONDS = 10
+DEFAULT_READ_TIMEOUT = 10
+DEFAULT_CONNECTION_TIMEOUT = 5
 
 # TODO: replace it with TimeoutHandler
 _api_timeout_config_data = aliyunsdkcore.utils._load_json_from_data_dir("timeout_config.json")
@@ -75,12 +76,14 @@ class AcsClient:
             max_retry_time=None,
             user_agent=None,
             port=80,
+            connect_timeout=None,
             timeout=None,
             public_key_id=None,
             private_key=None,
             session_period=3600,
             credential=None,
-            debug=False):
+            debug=False,
+            verify=None):
         """
         constructor for AcsClient
         :param ak: String, access key id
@@ -98,8 +101,10 @@ class AcsClient:
         self._region_id = region_id
         self._user_agent = user_agent
         self._port = port
-        self._timeout = timeout
+        self._connect_timeout = connect_timeout
+        self._read_timeout = timeout
         self._extra_user_agent = {}
+        self._verify = verify
         credential = {
             'ak': ak,
             'secret': secret,
@@ -136,6 +141,9 @@ class AcsClient:
     def get_user_agent(self):
         return self._user_agent
 
+    def get_verify(self):
+        return self._verify
+
     def set_region_id(self, region):
         self._region_id = region
 
@@ -157,6 +165,9 @@ class AcsClient:
         :return:
         """
         self._user_agent = agent
+
+    def set_verify(self, verify):
+        self._verify = verify
 
     def append_user_agent(self, key, value):
         self._extra_user_agent.update({key: value})
@@ -225,7 +236,8 @@ class AcsClient:
         client_agent.update(request_agent)
         return client_agent
 
-    def _make_http_response(self, endpoint, request, timeout, specific_signer=None):
+    def _make_http_response(self, endpoint, request, read_timeout, connect_timeout,
+                            specific_signer=None):
         body_params = request.get_body_params()
         if body_params:
             body = urlencode(body_params)
@@ -234,6 +246,9 @@ class AcsClient:
         elif request.get_content() and "Content-Type" not in request.get_headers():
             request.set_content_type(format_type.APPLICATION_OCTET_STREAM)
         method = request.get_method()
+
+        if isinstance(request, CommonRequest):
+            request.trans_to_acs_request()
 
         signer = self._signer if specific_signer is None else specific_signer
         header, url = signer.sign(self._region_id, request)
@@ -259,7 +274,9 @@ class AcsClient:
             protocol,
             request.get_content(),
             self._port,
-            timeout=timeout)
+            read_timeout=read_timeout,
+            connect_timeout=connect_timeout,
+            verify=self.get_verify())
         if body_params:
             body = urlencode(request.get_body_params())
             response.set_content(body, "utf-8", format_type.APPLICATION_FORM)
@@ -273,9 +290,6 @@ class AcsClient:
 
         # modify Accept-Encoding
         request.add_header('Accept-Encoding', 'identity')
-
-        if isinstance(request, CommonRequest):
-            request.trans_to_acs_request()
 
         if request.endpoint:
             endpoint = request.endpoint
@@ -301,21 +315,35 @@ class AcsClient:
                 client_token = aliyunsdkcore.utils.parameter_helper.get_uuid()  # up to 60 chars
                 request.set_ClientToken(client_token)
 
-    def _get_request_timeout(self, request):
+    def _get_request_read_timeout(self, request):
         # TODO: replace it with a timeout_handler
-        if self._timeout:
-            return self._timeout
+        if request._request_read_timeout:
+            return request._request_read_timeout
+
+        # if self._timeout:
+        #     return self._timeout
+        if self._read_timeout:
+            return self._read_timeout
 
         if request.get_product() is None:
-            return DEFAULT_SDK_CONNECTION_TIMEOUT_IN_SECONDS
+            return DEFAULT_READ_TIMEOUT
         path = '"{0}"."{1}"."{2}"'.format(request.get_product().lower(), request.get_version(),
                                           request.get_action_name())
         timeout = jmespath.search(path, _api_timeout_config_data)
         if timeout is None:
-            return DEFAULT_SDK_CONNECTION_TIMEOUT_IN_SECONDS
+            return DEFAULT_READ_TIMEOUT
         else:
             aliyunsdkcore.utils.validation.assert_integer_positive(timeout, "timeout")
-            return max(timeout, DEFAULT_SDK_CONNECTION_TIMEOUT_IN_SECONDS)
+            return max(timeout, DEFAULT_READ_TIMEOUT)
+
+    def _get_request_connect_timeout(self, request):
+        if request._request_connect_timeout:
+            return request._request_connect_timeout
+
+        if self._connect_timeout:
+            return self._connect_timeout
+
+        return DEFAULT_CONNECTION_TIMEOUT
 
     def _handle_retry_and_timeout(self, endpoint, request, signer):
         # TODO: replace it with a retry_handler
@@ -328,7 +356,9 @@ class AcsClient:
                 RetryCondition.SHOULD_RETRY_WITH_CLIENT_TOKEN:
             self._add_request_client_token(request)
 
-        request_timeout = self._get_request_timeout(request)
+        request_read_timeout = self._get_request_read_timeout(request)
+
+        request_connect_timeout = self._get_request_connect_timeout(request)
 
         retries = 0
 
@@ -336,7 +366,8 @@ class AcsClient:
 
             status, headers, body, exception = self._handle_single_request(endpoint,
                                                                            request,
-                                                                           request_timeout,
+                                                                           request_read_timeout,
+                                                                           request_connect_timeout,
                                                                            signer)
             retry_policy_context = RetryPolicyContext(request, exception, retries, status)
             retryable = self._retry_policy.should_retry(retry_policy_context)
@@ -354,8 +385,9 @@ class AcsClient:
 
         return status, headers, body, exception
 
-    def _handle_single_request(self, endpoint, request, timeout, signer):
-        http_response = self._make_http_response(endpoint, request, timeout, signer)
+    def _handle_single_request(self, endpoint, request, read_timeout, connect_timeout, signer):
+        http_response = self._make_http_response(endpoint, request, read_timeout, connect_timeout,
+                                                 signer)
         params = copy.deepcopy(request.get_query_params())
         params.pop('AccessKeyId', None)
         logger.debug('Request received. Product:%s Endpoint:%s Params: %s',
@@ -442,6 +474,10 @@ class AcsClient:
             request.get_location_service_code(),
             request.get_location_endpoint_type(),
         )
+        resolve_request.request_network = request.request_network
+        resolve_request.product_suffix = request.product_suffix
+        resolve_request.endpoint_map = request.endpoint_map
+        resolve_request.endpoint_regional = request.endpoint_regional
         return self._endpoint_resolver.resolve(resolve_request)
 
     def do_action(self, acs_request):

@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RoaRequest
 class GetImageLayerRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'cr', '2016-06-07', 'GetImageLayer')
+		RoaRequest.__init__(self, 'cr', '2016-06-07', 'GetImageLayer','cr')
 		self.set_uri_pattern('/repos/[RepoNamespace]/[RepoName]/tags/[Tag]/layers')
 		self.set_method('GET')
 

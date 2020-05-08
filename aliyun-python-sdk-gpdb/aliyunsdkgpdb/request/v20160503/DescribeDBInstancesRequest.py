@@ -23,11 +23,11 @@ class DescribeDBInstancesRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'gpdb', '2016-05-03', 'DescribeDBInstances','gpdb')
 
-	def get_ConnectionMode(self):
-		return self.get_query_params().get('ConnectionMode')
+	def get_DBInstanceIds(self):
+		return self.get_query_params().get('DBInstanceIds')
 
-	def set_ConnectionMode(self,ConnectionMode):
-		self.add_query_param('ConnectionMode',ConnectionMode)
+	def set_DBInstanceIds(self,DBInstanceIds):
+		self.add_query_param('DBInstanceIds',DBInstanceIds)
 
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
@@ -40,6 +40,17 @@ class DescribeDBInstancesRequest(RpcRequest):
 
 	def set_DBInstanceDescription(self,DBInstanceDescription):
 		self.add_query_param('DBInstanceDescription',DBInstanceDescription)
+
+	def get_Tags(self):
+		return self.get_query_params().get('Tags')
+
+	def set_Tags(self,Tags):
+		for i in range(len(Tags)):	
+			if Tags[i].get('Value') is not None:
+				self.add_query_param('Tag.' + str(i + 1) + '.Value' , Tags[i].get('Value'))
+			if Tags[i].get('Key') is not None:
+				self.add_query_param('Tag.' + str(i + 1) + '.Key' , Tags[i].get('Key'))
+
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')

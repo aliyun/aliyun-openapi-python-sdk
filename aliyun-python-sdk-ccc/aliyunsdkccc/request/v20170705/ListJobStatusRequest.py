@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,22 +18,18 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkccc.endpoint import endpoint_data
+
 class ListJobStatusRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'CCC', '2017-07-05', 'ListJobStatus','ccc')
+		RpcRequest.__init__(self, 'CCC', '2017-07-05', 'ListJobStatus')
+		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ContactName(self):
-		return self.get_query_params().get('ContactName')
-
-	def set_ContactName(self,ContactName):
-		self.add_query_param('ContactName',ContactName)
-
-	def get_InstanceId(self):
-		return self.get_query_params().get('InstanceId')
-
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
 
 	def get_TimeAlignment(self):
 		return self.get_query_params().get('TimeAlignment')
@@ -53,12 +49,6 @@ class ListJobStatusRequest(RpcRequest):
 	def set_PhoneNumber(self,PhoneNumber):
 		self.add_query_param('PhoneNumber',PhoneNumber)
 
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
 	def get_EndTime(self):
 		return self.get_query_params().get('EndTime')
 
@@ -71,14 +61,32 @@ class ListJobStatusRequest(RpcRequest):
 	def set_StartTime(self,StartTime):
 		self.add_query_param('StartTime',StartTime)
 
-	def get_ScenarioId(self):
-		return self.get_query_params().get('ScenarioId')
-
-	def set_ScenarioId(self,ScenarioId):
-		self.add_query_param('ScenarioId',ScenarioId)
-
 	def get_PageNumber(self):
 		return self.get_query_params().get('PageNumber')
 
 	def set_PageNumber(self,PageNumber):
 		self.add_query_param('PageNumber',PageNumber)
+
+	def get_ContactName(self):
+		return self.get_query_params().get('ContactName')
+
+	def set_ContactName(self,ContactName):
+		self.add_query_param('ContactName',ContactName)
+
+	def get_InstanceId(self):
+		return self.get_query_params().get('InstanceId')
+
+	def set_InstanceId(self,InstanceId):
+		self.add_query_param('InstanceId',InstanceId)
+
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
+
+	def get_ScenarioId(self):
+		return self.get_query_params().get('ScenarioId')
+
+	def set_ScenarioId(self,ScenarioId):
+		self.add_query_param('ScenarioId',ScenarioId)

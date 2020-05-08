@@ -1,3 +1,12 @@
+2019-09-18 Version: 3.8.0
+- Generated 2016-11-01 for `live`.
+
+2019-07-12 Version: 3.7.5
+- Public api AddLivePullStreamInfoConfig.
+
+2019-06-04 Version: 3.7.4
+1, Add new API: UpdateLivePullStreamInfoConfig
+
 2018-12-06 Version: 3.7.3
 1, Add DescribeLiveDomainRealTimeBpsData, DescribeLiveDomainRealTimeHttpCodeData,DescribeLiveDomainRealTimeTrafficData.
 2, Update DescirbeCasterChannels and DescribeCasterStreamUrl.

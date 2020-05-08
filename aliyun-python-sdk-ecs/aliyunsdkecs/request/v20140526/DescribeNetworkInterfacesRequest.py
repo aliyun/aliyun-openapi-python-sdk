@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,16 +18,29 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkecs.endpoint import endpoint_data
+
 class DescribeNetworkInterfacesRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'DescribeNetworkInterfaces','ecs')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+
+	def get_ServiceManaged(self):
+		return self.get_query_params().get('ServiceManaged')
+
+	def set_ServiceManaged(self,ServiceManaged):
+		self.add_query_param('ServiceManaged',ServiceManaged)
 
 	def get_SecurityGroupId(self):
 		return self.get_query_params().get('SecurityGroupId')
@@ -52,6 +65,12 @@ class DescribeNetworkInterfacesRequest(RpcRequest):
 
 	def set_ResourceGroupId(self,ResourceGroupId):
 		self.add_query_param('ResourceGroupId',ResourceGroupId)
+
+	def get_NextToken(self):
+		return self.get_query_params().get('NextToken')
+
+	def set_NextToken(self,NextToken):
+		self.add_query_param('NextToken',NextToken)
 
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
@@ -100,6 +119,14 @@ class DescribeNetworkInterfacesRequest(RpcRequest):
 	def set_VSwitchId(self,VSwitchId):
 		self.add_query_param('VSwitchId',VSwitchId)
 
+	def get_PrivateIpAddresss(self):
+		return self.get_query_params().get('PrivateIpAddresss')
+
+	def set_PrivateIpAddresss(self,PrivateIpAddresss):
+		for i in range(len(PrivateIpAddresss)):	
+			if PrivateIpAddresss[i] is not None:
+				self.add_query_param('PrivateIpAddress.' + str(i + 1) , PrivateIpAddresss[i]);
+
 	def get_InstanceId(self):
 		return self.get_query_params().get('InstanceId')
 
@@ -118,6 +145,12 @@ class DescribeNetworkInterfacesRequest(RpcRequest):
 	def set_PrimaryIpAddress(self,PrimaryIpAddress):
 		self.add_query_param('PrimaryIpAddress',PrimaryIpAddress)
 
+	def get_MaxResults(self):
+		return self.get_query_params().get('MaxResults')
+
+	def set_MaxResults(self,MaxResults):
+		self.add_query_param('MaxResults',MaxResults)
+
 	def get_NetworkInterfaceIds(self):
 		return self.get_query_params().get('NetworkInterfaceIds')
 
@@ -125,3 +158,9 @@ class DescribeNetworkInterfacesRequest(RpcRequest):
 		for i in range(len(NetworkInterfaceIds)):	
 			if NetworkInterfaceIds[i] is not None:
 				self.add_query_param('NetworkInterfaceId.' + str(i + 1) , NetworkInterfaceIds[i]);
+
+	def get_Status(self):
+		return self.get_query_params().get('Status')
+
+	def set_Status(self,Status):
+		self.add_query_param('Status',Status)

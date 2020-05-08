@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,16 +18,17 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkehpc.endpoint import endpoint_data
+
 class PullImageRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'EHPC', '2018-04-12', 'PullImage','ehs')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ContainerType(self):
-		return self.get_query_params().get('ContainerType')
-
-	def set_ContainerType(self,ContainerType):
-		self.add_query_param('ContainerType',ContainerType)
 
 	def get_ClusterId(self):
 		return self.get_query_params().get('ClusterId')
@@ -40,6 +41,12 @@ class PullImageRequest(RpcRequest):
 
 	def set_Repository(self,Repository):
 		self.add_query_param('Repository',Repository)
+
+	def get_ContainerType(self):
+		return self.get_query_params().get('ContainerType')
+
+	def set_ContainerType(self,ContainerType):
+		self.add_query_param('ContainerType',ContainerType)
 
 	def get_ImageTag(self):
 		return self.get_query_params().get('ImageTag')

@@ -20,6 +20,14 @@ This document introduces how to obtain and call Alibaba Cloud Python SDK.
   <img src="https://img.alicdn.com/tfs/TB12GX6zW6qK1RjSZFmXXX0PFXa-744-122.png" width="180" />
 </a>
 
+## Documentation
+
+- [Requirements](docs/0-Requirement-EN.md)
+- [Installation](./docs/1-Installation-EN.md)
+- [Client](./docs/2-Client-EN.md)
+- [Timeout](./docs/3-Timeout-EN.md)
+- [Proxy Configurations](./docs/4-Proxy-EN.md)
+- [Log](./docs/5-Log-EN.md)
 
 ## Prerequisites
 
@@ -80,7 +88,7 @@ You can install the Alibaba Cloud Python SDK using the following two methods. Re
 
 	- `access-key-id` is the Accesskey ID for your account.
 	- `access-key-secret` is the AccessKey secret for your account.
-	- `region-id` is the ID of the region where the service is called. For a list of region IDs, see [Regions and zones](~~40654~~).
+	- `region-id` is the ID of the region where the service is called. For a list of region IDs, see [Regions and zones](https://www.alibabacloud.com/help/doc-detail/40654.html).
 
 	> **Note:** The sequence of these parameters cannot be changed.
 

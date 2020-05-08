@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,10 +18,17 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkvod.endpoint import endpoint_data
+
 class GetImageInfoRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'vod', '2017-03-21', 'GetImageInfo','vod')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -35,6 +42,18 @@ class GetImageInfoRequest(RpcRequest):
 	def set_ImageId(self,ImageId):
 		self.add_query_param('ImageId',ImageId)
 
+	def get_OutputType(self):
+		return self.get_query_params().get('OutputType')
+
+	def set_OutputType(self,OutputType):
+		self.add_query_param('OutputType',OutputType)
+
+	def get_AuthTimeout(self):
+		return self.get_query_params().get('AuthTimeout')
+
+	def set_AuthTimeout(self,AuthTimeout):
+		self.add_query_param('AuthTimeout',AuthTimeout)
+
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -46,9 +65,3 @@ class GetImageInfoRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
-
-	def get_AuthTimeout(self):
-		return self.get_query_params().get('AuthTimeout')
-
-	def set_AuthTimeout(self,AuthTimeout):
-		self.add_query_param('AuthTimeout',AuthTimeout)

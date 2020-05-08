@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,16 +18,24 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkcdn.endpoint import endpoint_data
+
 class ModifyCdnDomainRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'ModifyCdnDomain')
+		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_TopLevelDomain(self):
-		return self.get_query_params().get('TopLevelDomain')
 
-	def set_TopLevelDomain(self,TopLevelDomain):
-		self.add_query_param('TopLevelDomain',TopLevelDomain)
+	def get_Sources(self):
+		return self.get_query_params().get('Sources')
+
+	def set_Sources(self,Sources):
+		self.add_query_param('Sources',Sources)
 
 	def get_SourcePort(self):
 		return self.get_query_params().get('SourcePort')
@@ -47,29 +55,29 @@ class ModifyCdnDomainRequest(RpcRequest):
 	def set_Priorities(self,Priorities):
 		self.add_query_param('Priorities',Priorities)
 
-	def get_Sources(self):
-		return self.get_query_params().get('Sources')
-
-	def set_Sources(self,Sources):
-		self.add_query_param('Sources',Sources)
-
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
 
 	def set_SecurityToken(self,SecurityToken):
 		self.add_query_param('SecurityToken',SecurityToken)
 
-	def get_DomainName(self):
-		return self.get_query_params().get('DomainName')
-
-	def set_DomainName(self,DomainName):
-		self.add_query_param('DomainName',DomainName)
-
 	def get_SourceType(self):
 		return self.get_query_params().get('SourceType')
 
 	def set_SourceType(self,SourceType):
 		self.add_query_param('SourceType',SourceType)
+
+	def get_TopLevelDomain(self):
+		return self.get_query_params().get('TopLevelDomain')
+
+	def set_TopLevelDomain(self,TopLevelDomain):
+		self.add_query_param('TopLevelDomain',TopLevelDomain)
+
+	def get_DomainName(self):
+		return self.get_query_params().get('DomainName')
+
+	def set_DomainName(self,DomainName):
+		self.add_query_param('DomainName',DomainName)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')

@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,10 +18,23 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkgreen.endpoint import endpoint_data
+
 class UpdateImageLibRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Green', '2017-08-23', 'UpdateImageLib','green')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
+
+	def get_Scene(self):
+		return self.get_query_params().get('Scene')
+
+	def set_Scene(self,Scene):
+		self.add_query_param('Scene',Scene)
 
 	def get_SourceIp(self):
 		return self.get_query_params().get('SourceIp')
@@ -29,17 +42,11 @@ class UpdateImageLibRequest(RpcRequest):
 	def set_SourceIp(self,SourceIp):
 		self.add_query_param('SourceIp',SourceIp)
 
-	def get_Name(self):
-		return self.get_query_params().get('Name')
+	def get_Enable(self):
+		return self.get_query_params().get('Enable')
 
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)
-
-	def get_BizTypes(self):
-		return self.get_query_params().get('BizTypes')
-
-	def set_BizTypes(self,BizTypes):
-		self.add_query_param('BizTypes',BizTypes)
+	def set_Enable(self,Enable):
+		self.add_query_param('Enable',Enable)
 
 	def get_Id(self):
 		return self.get_query_params().get('Id')
@@ -47,14 +54,20 @@ class UpdateImageLibRequest(RpcRequest):
 	def set_Id(self,Id):
 		self.add_query_param('Id',Id)
 
+	def get_BizTypes(self):
+		return self.get_query_params().get('BizTypes')
+
+	def set_BizTypes(self,BizTypes):
+		self.add_query_param('BizTypes',BizTypes)
+
+	def get_Name(self):
+		return self.get_query_params().get('Name')
+
+	def set_Name(self,Name):
+		self.add_query_param('Name',Name)
+
 	def get_Category(self):
 		return self.get_query_params().get('Category')
 
 	def set_Category(self,Category):
 		self.add_query_param('Category',Category)
-
-	def get_Scene(self):
-		return self.get_query_params().get('Scene')
-
-	def set_Scene(self,Scene):
-		self.add_query_param('Scene',Scene)

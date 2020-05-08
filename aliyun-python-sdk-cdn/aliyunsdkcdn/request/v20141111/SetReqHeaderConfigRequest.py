@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,10 +18,18 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkcdn.endpoint import endpoint_data
+
 class SetReqHeaderConfigRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'SetReqHeaderConfig')
+		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
@@ -29,11 +37,17 @@ class SetReqHeaderConfigRequest(RpcRequest):
 	def set_SecurityToken(self,SecurityToken):
 		self.add_query_param('SecurityToken',SecurityToken)
 
-	def get_ConfigId(self):
-		return self.get_query_params().get('ConfigId')
+	def get_Value(self):
+		return self.get_query_params().get('Value')
 
-	def set_ConfigId(self,ConfigId):
-		self.add_query_param('ConfigId',ConfigId)
+	def set_Value(self,Value):
+		self.add_query_param('Value',Value)
+
+	def get_Key(self):
+		return self.get_query_params().get('Key')
+
+	def set_Key(self,Key):
+		self.add_query_param('Key',Key)
 
 	def get_DomainName(self):
 		return self.get_query_params().get('DomainName')
@@ -47,14 +61,8 @@ class SetReqHeaderConfigRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_Value(self):
-		return self.get_query_params().get('Value')
+	def get_ConfigId(self):
+		return self.get_query_params().get('ConfigId')
 
-	def set_Value(self,Value):
-		self.add_query_param('Value',Value)
-
-	def get_Key(self):
-		return self.get_query_params().get('Key')
-
-	def set_Key(self,Key):
-		self.add_query_param('Key',Key)
+	def set_ConfigId(self,ConfigId):
+		self.add_query_param('ConfigId',ConfigId)

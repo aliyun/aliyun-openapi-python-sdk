@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,16 +18,17 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkvod.endpoint import endpoint_data
+
 class UpdateWatermarkRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'vod', '2017-03-21', 'UpdateWatermark','vod')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_WatermarkId(self):
-		return self.get_query_params().get('WatermarkId')
-
-	def set_WatermarkId(self,WatermarkId):
-		self.add_query_param('WatermarkId',WatermarkId)
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -41,12 +42,6 @@ class UpdateWatermarkRequest(RpcRequest):
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
-	def get_Name(self):
-		return self.get_query_params().get('Name')
-
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)
-
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
@@ -58,3 +53,15 @@ class UpdateWatermarkRequest(RpcRequest):
 
 	def set_WatermarkConfig(self,WatermarkConfig):
 		self.add_query_param('WatermarkConfig',WatermarkConfig)
+
+	def get_WatermarkId(self):
+		return self.get_query_params().get('WatermarkId')
+
+	def set_WatermarkId(self,WatermarkId):
+		self.add_query_param('WatermarkId',WatermarkId)
+
+	def get_Name(self):
+		return self.get_query_params().get('Name')
+
+	def set_Name(self,Name):
+		self.add_query_param('Name',Name)

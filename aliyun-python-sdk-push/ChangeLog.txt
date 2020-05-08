@@ -1,3 +1,18 @@
+2020-04-23 Version: 3.13.1
+- Fixed bugs for MassPush API.
+
+2019-10-25 Version: 3.13.0
+- Supported query push records.
+
+2019-10-14 Version: 3.12.0
+- Support continuous pushing.
+
+2019-10-08 Version: 3.11.0
+- Supported API MassPush for Push Message or Notice.
+
+2019-03-11 Version: 3.10.1
+1, Update aliyun-java-sdk-core version.
+
 2018-03-23 Version: 3.10.0
 1, Add 'QueryDevicesByAccount' and 'QueryDevicesByAlias'  Api.
 2, Remove 'QueryPushDetail' Api.

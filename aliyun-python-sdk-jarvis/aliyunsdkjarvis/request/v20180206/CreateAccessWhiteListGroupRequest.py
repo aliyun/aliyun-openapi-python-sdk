@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class CreateAccessWhiteListGroupRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'jarvis', '2018-02-06', 'CreateAccessWhiteListGroup')
+		RpcRequest.__init__(self, 'jarvis', '2018-02-06', 'CreateAccessWhiteListGroup','jarvis')
 
 	def get_Note(self):
 		return self.get_query_params().get('Note')
@@ -76,6 +76,12 @@ class CreateAccessWhiteListGroupRequest(RpcRequest):
 
 	def set_WhiteListType(self,WhiteListType):
 		self.add_query_param('WhiteListType',WhiteListType)
+
+	def get_InstanceInfoList(self):
+		return self.get_query_params().get('InstanceInfoList')
+
+	def set_InstanceInfoList(self,InstanceInfoList):
+		self.add_query_param('InstanceInfoList',InstanceInfoList)
 
 	def get_Lang(self):
 		return self.get_query_params().get('Lang')

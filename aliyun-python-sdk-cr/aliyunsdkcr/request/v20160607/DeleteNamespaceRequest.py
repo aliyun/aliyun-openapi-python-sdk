@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RoaRequest
 class DeleteNamespaceRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'cr', '2016-06-07', 'DeleteNamespace')
+		RoaRequest.__init__(self, 'cr', '2016-06-07', 'DeleteNamespace','cr')
 		self.set_uri_pattern('/namespace/[Namespace]')
 		self.set_method('DELETE')
 

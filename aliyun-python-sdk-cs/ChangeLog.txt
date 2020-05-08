@@ -1,3 +1,27 @@
+2020-01-15 Version: 4.7.14
+- Add Workflow csk.
+
+2020-01-15 Version: 4.0.5
+- Support Workflow csk.
+
+2019-05-16 Version: 4.7.14
+1, Update SDK Version
+2, Change api UpgradeClusterAddons, UpgradeClusterComponents, DescribeClusterAddonsVersion to public
+
+
+2019-05-16 Version: 4.7.13
+1, Update SDK Version
+2, Change api UpgradeClusterAddons, UpgradeClusterComponents, DescribeClusterAddonsVersion to public
+
+
+2019-05-16 Version: 4.7.12
+1, Update SDK version
+2, Add api DescribeClusterAddonsVersion
+
+
+2019-03-19 Version: 2.9.1
+1, Update Dependency
+
 2018-02-27 Version: 2.9.0
 1, add new api DescribeClusters,DescribeClusterLogs,DescribeClusterNodes,UpgradeClusterComponents
 

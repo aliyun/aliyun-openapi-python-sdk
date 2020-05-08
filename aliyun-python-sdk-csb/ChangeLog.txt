@@ -1,3 +1,18 @@
+2020-04-21 Version: 1.2.8
+- Add Statistics API.
+
+2020-04-02 Version: 1.2.7
+- Add slo metrics.
+
+2019-11-13 Version: 1.2.1
+- FindServiceList add RouteConfJson result.
+
+2019-07-30 Version: 1.2.0
+- Suport ImportCredentials api.
+
+2019-07-30 Version: 1.1.9
+- Suport ImportCredentials api.
+
 2018-12-24 Version: 1.1.8
 1, use new version of alisdk
 2, update some filed

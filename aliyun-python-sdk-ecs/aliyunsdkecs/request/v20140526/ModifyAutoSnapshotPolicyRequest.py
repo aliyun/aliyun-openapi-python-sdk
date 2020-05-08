@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,10 +18,17 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkecs.endpoint import endpoint_data
+
 class ModifyAutoSnapshotPolicyRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'ModifyAutoSnapshotPolicy','ecs')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_DataDiskPolicyEnabled(self):
 		return self.get_query_params().get('DataDiskPolicyEnabled')
@@ -41,17 +48,29 @@ class ModifyAutoSnapshotPolicyRequest(RpcRequest):
 	def set_DataDiskPolicyRetentionDays(self,DataDiskPolicyRetentionDays):
 		self.add_query_param('DataDiskPolicyRetentionDays',DataDiskPolicyRetentionDays)
 
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
-
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
 	def get_SystemDiskPolicyRetentionLastWeek(self):
 		return self.get_query_params().get('SystemDiskPolicyRetentionLastWeek')
 
 	def set_SystemDiskPolicyRetentionLastWeek(self,SystemDiskPolicyRetentionLastWeek):
 		self.add_query_param('SystemDiskPolicyRetentionLastWeek',SystemDiskPolicyRetentionLastWeek)
+
+	def get_SystemDiskPolicyRetentionDays(self):
+		return self.get_query_params().get('SystemDiskPolicyRetentionDays')
+
+	def set_SystemDiskPolicyRetentionDays(self,SystemDiskPolicyRetentionDays):
+		self.add_query_param('SystemDiskPolicyRetentionDays',SystemDiskPolicyRetentionDays)
+
+	def get_DataDiskPolicyTimePeriod(self):
+		return self.get_query_params().get('DataDiskPolicyTimePeriod')
+
+	def set_DataDiskPolicyTimePeriod(self,DataDiskPolicyTimePeriod):
+		self.add_query_param('DataDiskPolicyTimePeriod',DataDiskPolicyTimePeriod)
+
+	def get_ResourceOwnerAccount(self):
+		return self.get_query_params().get('ResourceOwnerAccount')
+
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
@@ -76,18 +95,6 @@ class ModifyAutoSnapshotPolicyRequest(RpcRequest):
 
 	def set_DataDiskPolicyRetentionLastWeek(self,DataDiskPolicyRetentionLastWeek):
 		self.add_query_param('DataDiskPolicyRetentionLastWeek',DataDiskPolicyRetentionLastWeek)
-
-	def get_SystemDiskPolicyRetentionDays(self):
-		return self.get_query_params().get('SystemDiskPolicyRetentionDays')
-
-	def set_SystemDiskPolicyRetentionDays(self,SystemDiskPolicyRetentionDays):
-		self.add_query_param('SystemDiskPolicyRetentionDays',SystemDiskPolicyRetentionDays)
-
-	def get_DataDiskPolicyTimePeriod(self):
-		return self.get_query_params().get('DataDiskPolicyTimePeriod')
-
-	def set_DataDiskPolicyTimePeriod(self,DataDiskPolicyTimePeriod):
-		self.add_query_param('DataDiskPolicyTimePeriod',DataDiskPolicyTimePeriod)
 
 	def get_SystemDiskPolicyEnabled(self):
 		return self.get_query_params().get('SystemDiskPolicyEnabled')

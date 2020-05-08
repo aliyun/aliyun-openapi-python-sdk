@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,22 +18,30 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+
 class ListImagesRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'imm', '2017-09-06', 'ListImages','imm')
-
-	def get_Marker(self):
-		return self.get_query_params().get('Marker')
-
-	def set_Marker(self,Marker):
-		self.add_query_param('Marker',Marker)
+		self.set_method('POST')
 
 	def get_Project(self):
 		return self.get_query_params().get('Project')
 
 	def set_Project(self,Project):
 		self.add_query_param('Project',Project)
+
+	def get_Limit(self):
+		return self.get_query_params().get('Limit')
+
+	def set_Limit(self,Limit):
+		self.add_query_param('Limit',Limit)
+
+	def get_Marker(self):
+		return self.get_query_params().get('Marker')
+
+	def set_Marker(self,Marker):
+		self.add_query_param('Marker',Marker)
 
 	def get_SetId(self):
 		return self.get_query_params().get('SetId')

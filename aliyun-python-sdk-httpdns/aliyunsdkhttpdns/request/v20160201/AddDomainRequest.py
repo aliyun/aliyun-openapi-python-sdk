@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class AddDomainRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Httpdns', '2016-02-01', 'AddDomain')
+		RpcRequest.__init__(self, 'Httpdns', '2016-02-01', 'AddDomain','httpdns')
 
 	def get_AccountId(self):
 		return self.get_query_params().get('AccountId')

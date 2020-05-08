@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,10 +18,17 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkrds.endpoint import endpoint_data
+
 class ModifyDBInstanceConnectionStringRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'ModifyDBInstanceConnectionString','rds')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -35,29 +42,23 @@ class ModifyDBInstanceConnectionStringRequest(RpcRequest):
 	def set_ConnectionStringPrefix(self,ConnectionStringPrefix):
 		self.add_query_param('ConnectionStringPrefix',ConnectionStringPrefix)
 
+	def get_DBInstanceId(self):
+		return self.get_query_params().get('DBInstanceId')
+
+	def set_DBInstanceId(self,DBInstanceId):
+		self.add_query_param('DBInstanceId',DBInstanceId)
+
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
-	def get_Port(self):
-		return self.get_query_params().get('Port')
-
-	def set_Port(self,Port):
-		self.add_query_param('Port',Port)
-
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
 
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
-
-	def get_DBInstanceId(self):
-		return self.get_query_params().get('DBInstanceId')
-
-	def set_DBInstanceId(self,DBInstanceId):
-		self.add_query_param('DBInstanceId',DBInstanceId)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
@@ -70,3 +71,9 @@ class ModifyDBInstanceConnectionStringRequest(RpcRequest):
 
 	def set_CurrentConnectionString(self,CurrentConnectionString):
 		self.add_query_param('CurrentConnectionString',CurrentConnectionString)
+
+	def get_Port(self):
+		return self.get_query_params().get('Port')
+
+	def set_Port(self,Port):
+		self.add_query_param('Port',Port)

@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,10 +18,17 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkecs.endpoint import endpoint_data
+
 class CreateAutoSnapshotPolicyRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'CreateAutoSnapshotPolicy','ecs')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -29,29 +36,11 @@ class CreateAutoSnapshotPolicyRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
-
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
 	def get_timePoints(self):
 		return self.get_query_params().get('timePoints')
 
 	def set_timePoints(self,timePoints):
 		self.add_query_param('timePoints',timePoints)
-
-	def get_retentionDays(self):
-		return self.get_query_params().get('retentionDays')
-
-	def set_retentionDays(self,retentionDays):
-		self.add_query_param('retentionDays',retentionDays)
-
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
 
 	def get_repeatWeekdays(self):
 		return self.get_query_params().get('repeatWeekdays')
@@ -59,8 +48,37 @@ class CreateAutoSnapshotPolicyRequest(RpcRequest):
 	def set_repeatWeekdays(self,repeatWeekdays):
 		self.add_query_param('repeatWeekdays',repeatWeekdays)
 
+	def get_Tags(self):
+		return self.get_query_params().get('Tags')
+
+	def set_Tags(self,Tags):
+		for i in range(len(Tags)):	
+			if Tags[i].get('Value') is not None:
+				self.add_query_param('Tag.' + str(i + 1) + '.Value' , Tags[i].get('Value'))
+			if Tags[i].get('Key') is not None:
+				self.add_query_param('Tag.' + str(i + 1) + '.Key' , Tags[i].get('Key'))
+
+
+	def get_ResourceOwnerAccount(self):
+		return self.get_query_params().get('ResourceOwnerAccount')
+
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
+
 	def get_autoSnapshotPolicyName(self):
 		return self.get_query_params().get('autoSnapshotPolicyName')
 
 	def set_autoSnapshotPolicyName(self,autoSnapshotPolicyName):
 		self.add_query_param('autoSnapshotPolicyName',autoSnapshotPolicyName)
+
+	def get_retentionDays(self):
+		return self.get_query_params().get('retentionDays')
+
+	def set_retentionDays(self,retentionDays):
+		self.add_query_param('retentionDays',retentionDays)

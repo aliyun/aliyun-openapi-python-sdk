@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,16 +18,12 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+
 class GetVideoTaskRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'imm', '2017-09-06', 'GetVideoTask','imm')
-
-	def get_TaskType(self):
-		return self.get_query_params().get('TaskType')
-
-	def set_TaskType(self,TaskType):
-		self.add_query_param('TaskType',TaskType)
+		self.set_method('POST')
 
 	def get_Project(self):
 		return self.get_query_params().get('Project')
@@ -40,3 +36,9 @@ class GetVideoTaskRequest(RpcRequest):
 
 	def set_TaskId(self,TaskId):
 		self.add_query_param('TaskId',TaskId)
+
+	def get_TaskType(self):
+		return self.get_query_params().get('TaskType')
+
+	def set_TaskType(self,TaskType):
+		self.add_query_param('TaskType',TaskType)

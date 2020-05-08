@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,10 +18,17 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkecs.endpoint import endpoint_data
+
 class DescribeImagesRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'DescribeImages','ecs')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_ActionType(self):
 		return self.get_query_params().get('ActionType')
@@ -164,6 +171,12 @@ class DescribeImagesRequest(RpcRequest):
 			if Filters[i].get('Key') is not None:
 				self.add_query_param('Filter.' + str(i + 1) + '.Key' , Filters[i].get('Key'))
 
+
+	def get_ImageFamily(self):
+		return self.get_query_params().get('ImageFamily')
+
+	def set_ImageFamily(self,ImageFamily):
+		self.add_query_param('ImageFamily',ImageFamily)
 
 	def get_Status(self):
 		return self.get_query_params().get('Status')

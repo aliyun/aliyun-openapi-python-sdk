@@ -21,7 +21,13 @@ from aliyunsdkcore.request import RpcRequest
 class GetProductDefineRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Oms', '2015-02-12', 'GetProductDefine')
+		RpcRequest.__init__(self, 'Oms', '2015-02-12', 'GetProductDefine','oms')
+
+	def get_DataType(self):
+		return self.get_query_params().get('DataType')
+
+	def set_DataType(self,DataType):
+		self.add_query_param('DataType',DataType)
 
 	def get_ProductName(self):
 		return self.get_query_params().get('ProductName')
@@ -29,8 +35,8 @@ class GetProductDefineRequest(RpcRequest):
 	def set_ProductName(self,ProductName):
 		self.add_query_param('ProductName',ProductName)
 
-	def get_DataType(self):
-		return self.get_query_params().get('DataType')
+	def get_siteBid(self):
+		return self.get_query_params().get('siteBid')
 
-	def set_DataType(self,DataType):
-		self.add_query_param('DataType',DataType)
+	def set_siteBid(self,siteBid):
+		self.add_query_param('siteBid',siteBid)

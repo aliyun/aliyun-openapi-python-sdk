@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,10 +18,17 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkdms_enterprise.endpoint import endpoint_data
+
 class RegisterUserRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'dms-enterprise', '2018-11-01', 'RegisterUser','dmsenterprise')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_RoleNames(self):
 		return self.get_query_params().get('RoleNames')
@@ -40,6 +47,12 @@ class RegisterUserRequest(RpcRequest):
 
 	def set_UserNick(self,UserNick):
 		self.add_query_param('UserNick',UserNick)
+
+	def get_Mobile(self):
+		return self.get_query_params().get('Mobile')
+
+	def set_Mobile(self,Mobile):
+		self.add_query_param('Mobile',Mobile)
 
 	def get_Tid(self):
 		return self.get_query_params().get('Tid')

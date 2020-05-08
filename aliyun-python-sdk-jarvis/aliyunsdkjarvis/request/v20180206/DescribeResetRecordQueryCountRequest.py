@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class DescribeResetRecordQueryCountRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'jarvis', '2018-02-06', 'DescribeResetRecordQueryCount')
+		RpcRequest.__init__(self, 'jarvis', '2018-02-06', 'DescribeResetRecordQueryCount','jarvis')
 
 	def get_SourceIp(self):
 		return self.get_query_params().get('SourceIp')

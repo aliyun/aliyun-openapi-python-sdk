@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,16 +18,12 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+
 class UpdateImageRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'imm', '2017-09-06', 'UpdateImage','imm')
-
-	def get_RemarksB(self):
-		return self.get_query_params().get('RemarksB')
-
-	def set_RemarksB(self,RemarksB):
-		self.add_query_param('RemarksB',RemarksB)
+		self.set_method('POST')
 
 	def get_Project(self):
 		return self.get_query_params().get('Project')
@@ -35,23 +31,47 @@ class UpdateImageRequest(RpcRequest):
 	def set_Project(self,Project):
 		self.add_query_param('Project',Project)
 
-	def get_RemarksA(self):
-		return self.get_query_params().get('RemarksA')
-
-	def set_RemarksA(self,RemarksA):
-		self.add_query_param('RemarksA',RemarksA)
-
 	def get_ExternalId(self):
 		return self.get_query_params().get('ExternalId')
 
 	def set_ExternalId(self,ExternalId):
 		self.add_query_param('ExternalId',ExternalId)
 
+	def get_SourceType(self):
+		return self.get_query_params().get('SourceType')
+
+	def set_SourceType(self,SourceType):
+		self.add_query_param('SourceType',SourceType)
+
+	def get_RemarksB(self):
+		return self.get_query_params().get('RemarksB')
+
+	def set_RemarksB(self,RemarksB):
+		self.add_query_param('RemarksB',RemarksB)
+
+	def get_RemarksA(self):
+		return self.get_query_params().get('RemarksA')
+
+	def set_RemarksA(self,RemarksA):
+		self.add_query_param('RemarksA',RemarksA)
+
 	def get_ImageUri(self):
 		return self.get_query_params().get('ImageUri')
 
 	def set_ImageUri(self,ImageUri):
 		self.add_query_param('ImageUri',ImageUri)
+
+	def get_RemarksArrayA(self):
+		return self.get_query_params().get('RemarksArrayA')
+
+	def set_RemarksArrayA(self,RemarksArrayA):
+		self.add_query_param('RemarksArrayA',RemarksArrayA)
+
+	def get_RemarksArrayB(self):
+		return self.get_query_params().get('RemarksArrayB')
+
+	def set_RemarksArrayB(self,RemarksArrayB):
+		self.add_query_param('RemarksArrayB',RemarksArrayB)
 
 	def get_SourceUri(self):
 		return self.get_query_params().get('SourceUri')
@@ -82,9 +102,3 @@ class UpdateImageRequest(RpcRequest):
 
 	def set_SetId(self,SetId):
 		self.add_query_param('SetId',SetId)
-
-	def get_SourceType(self):
-		return self.get_query_params().get('SourceType')
-
-	def set_SourceType(self,SourceType):
-		self.add_query_param('SourceType',SourceType)

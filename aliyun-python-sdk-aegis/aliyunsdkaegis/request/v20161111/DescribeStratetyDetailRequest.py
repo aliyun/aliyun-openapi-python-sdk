@@ -23,12 +23,6 @@ class DescribeStratetyDetailRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'aegis', '2016-11-11', 'DescribeStratetyDetail','vipaegis')
 
-	def get_ResourceOwnerId(self):
-		return self.get_query_params().get('ResourceOwnerId')
-
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
 	def get_SourceIp(self):
 		return self.get_query_params().get('SourceIp')
 
@@ -40,3 +34,9 @@ class DescribeStratetyDetailRequest(RpcRequest):
 
 	def set_Id(self,Id):
 		self.add_query_param('Id',Id)
+
+	def get_Lang(self):
+		return self.get_query_params().get('Lang')
+
+	def set_Lang(self,Lang):
+		self.add_query_param('Lang',Lang)

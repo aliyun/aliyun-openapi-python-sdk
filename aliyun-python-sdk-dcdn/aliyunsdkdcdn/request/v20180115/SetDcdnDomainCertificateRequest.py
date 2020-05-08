@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,16 +18,24 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkdcdn.endpoint import endpoint_data
+
 class SetDcdnDomainCertificateRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'dcdn', '2018-01-15', 'SetDcdnDomainCertificate')
+		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ForceSet(self):
-		return self.get_query_params().get('ForceSet')
 
-	def set_ForceSet(self,ForceSet):
-		self.add_query_param('ForceSet',ForceSet)
+	def get_SSLProtocol(self):
+		return self.get_query_params().get('SSLProtocol')
+
+	def set_SSLProtocol(self,SSLProtocol):
+		self.add_query_param('SSLProtocol',SSLProtocol)
 
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
@@ -41,23 +49,23 @@ class SetDcdnDomainCertificateRequest(RpcRequest):
 	def set_CertType(self,CertType):
 		self.add_query_param('CertType',CertType)
 
-	def get_SSLPub(self):
-		return self.get_query_params().get('SSLPub')
+	def get_SSLPri(self):
+		return self.get_query_params().get('SSLPri')
 
-	def set_SSLPub(self,SSLPub):
-		self.add_query_param('SSLPub',SSLPub)
+	def set_SSLPri(self,SSLPri):
+		self.add_query_param('SSLPri',SSLPri)
+
+	def get_ForceSet(self):
+		return self.get_query_params().get('ForceSet')
+
+	def set_ForceSet(self,ForceSet):
+		self.add_query_param('ForceSet',ForceSet)
 
 	def get_CertName(self):
 		return self.get_query_params().get('CertName')
 
 	def set_CertName(self,CertName):
 		self.add_query_param('CertName',CertName)
-
-	def get_SSLProtocol(self):
-		return self.get_query_params().get('SSLProtocol')
-
-	def set_SSLProtocol(self,SSLProtocol):
-		self.add_query_param('SSLProtocol',SSLProtocol)
 
 	def get_DomainName(self):
 		return self.get_query_params().get('DomainName')
@@ -71,14 +79,14 @@ class SetDcdnDomainCertificateRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
+	def get_SSLPub(self):
+		return self.get_query_params().get('SSLPub')
+
+	def set_SSLPub(self,SSLPub):
+		self.add_query_param('SSLPub',SSLPub)
+
 	def get_Region(self):
 		return self.get_query_params().get('Region')
 
 	def set_Region(self,Region):
 		self.add_query_param('Region',Region)
-
-	def get_SSLPri(self):
-		return self.get_query_params().get('SSLPri')
-
-	def set_SSLPri(self,SSLPri):
-		self.add_query_param('SSLPri',SSLPri)

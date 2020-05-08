@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,11 +18,18 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkcsb.endpoint import endpoint_data
+
 class FindServiceListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'CSB', '2017-11-18', 'FindServiceList','csb')
-		self.set_protocol_type('https');
+		RpcRequest.__init__(self, 'CSB', '2017-11-18', 'FindServiceList')
+		self.set_protocol_type('https')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_ProjectName(self):
 		return self.get_query_params().get('ProjectName')
@@ -36,17 +43,29 @@ class FindServiceListRequest(RpcRequest):
 	def set_ShowDelService(self,ShowDelService):
 		self.add_query_param('ShowDelService',ShowDelService)
 
+	def get_CsbId(self):
+		return self.get_query_params().get('CsbId')
+
+	def set_CsbId(self,CsbId):
+		self.add_query_param('CsbId',CsbId)
+
+	def get_PageNum(self):
+		return self.get_query_params().get('PageNum')
+
+	def set_PageNum(self,PageNum):
+		self.add_query_param('PageNum',PageNum)
+
 	def get_CasShowType(self):
 		return self.get_query_params().get('CasShowType')
 
 	def set_CasShowType(self,CasShowType):
 		self.add_query_param('CasShowType',CasShowType)
 
-	def get_CsbId(self):
-		return self.get_query_params().get('CsbId')
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
 
-	def set_CsbId(self,CsbId):
-		self.add_query_param('CsbId',CsbId)
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
 
 	def get_Alias(self):
 		return self.get_query_params().get('Alias')
@@ -59,9 +78,3 @@ class FindServiceListRequest(RpcRequest):
 
 	def set_ServiceName(self,ServiceName):
 		self.add_query_param('ServiceName',ServiceName)
-
-	def get_PageNum(self):
-		return self.get_query_params().get('PageNum')
-
-	def set_PageNum(self,PageNum):
-		self.add_query_param('PageNum',PageNum)

@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class QueryCustomerLabelRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Crm', '2015-04-08', 'QueryCustomerLabel')
+		RpcRequest.__init__(self, 'Crm', '2015-04-08', 'QueryCustomerLabel','crm')
 
 	def get_LabelSeries(self):
 		return self.get_query_params().get('LabelSeries')

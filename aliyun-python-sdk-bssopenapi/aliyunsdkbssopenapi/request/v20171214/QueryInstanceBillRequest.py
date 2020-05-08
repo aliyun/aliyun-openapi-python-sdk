@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,16 +18,17 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkbssopenapi.endpoint import endpoint_data
+
 class QueryInstanceBillRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'QueryInstanceBill')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_IsBillingItem(self):
-		return self.get_query_params().get('IsBillingItem')
-
-	def set_IsBillingItem(self,IsBillingItem):
-		self.add_query_param('IsBillingItem',IsBillingItem)
 
 	def get_ProductCode(self):
 		return self.get_query_params().get('ProductCode')
@@ -47,12 +48,6 @@ class QueryInstanceBillRequest(RpcRequest):
 	def set_SubscriptionType(self,SubscriptionType):
 		self.add_query_param('SubscriptionType',SubscriptionType)
 
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
 	def get_BillingCycle(self):
 		return self.get_query_params().get('BillingCycle')
 
@@ -71,8 +66,32 @@ class QueryInstanceBillRequest(RpcRequest):
 	def set_PageNum(self,PageNum):
 		self.add_query_param('PageNum',PageNum)
 
+	def get_BillingDate(self):
+		return self.get_query_params().get('BillingDate')
+
+	def set_BillingDate(self,BillingDate):
+		self.add_query_param('BillingDate',BillingDate)
+
 	def get_ProductType(self):
 		return self.get_query_params().get('ProductType')
 
 	def set_ProductType(self,ProductType):
 		self.add_query_param('ProductType',ProductType)
+
+	def get_IsBillingItem(self):
+		return self.get_query_params().get('IsBillingItem')
+
+	def set_IsBillingItem(self,IsBillingItem):
+		self.add_query_param('IsBillingItem',IsBillingItem)
+
+	def get_Granularity(self):
+		return self.get_query_params().get('Granularity')
+
+	def set_Granularity(self,Granularity):
+		self.add_query_param('Granularity',Granularity)
+
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)

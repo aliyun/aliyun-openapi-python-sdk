@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,10 +18,17 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdksmartag.endpoint import endpoint_data
+
 class CreateSmartAccessGatewayRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Smartag', '2018-03-13', 'CreateSmartAccessGateway','smartag')
+		RpcRequest.__init__(self, 'Smartag', '2018-03-13', 'CreateSmartAccessGateway','Smartag')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_MaxBandWidth(self):
 		return self.get_query_params().get('MaxBandWidth')
@@ -53,11 +60,23 @@ class CreateSmartAccessGatewayRequest(RpcRequest):
 	def set_ReceiverDistrict(self,ReceiverDistrict):
 		self.add_query_param('ReceiverDistrict',ReceiverDistrict)
 
+	def get_UserCount(self):
+		return self.get_query_params().get('UserCount')
+
+	def set_UserCount(self,UserCount):
+		self.add_query_param('UserCount',UserCount)
+
 	def get_ReceiverAddress(self):
 		return self.get_query_params().get('ReceiverAddress')
 
 	def set_ReceiverAddress(self,ReceiverAddress):
 		self.add_query_param('ReceiverAddress',ReceiverAddress)
+
+	def get_InstanceType(self):
+		return self.get_query_params().get('InstanceType')
+
+	def set_InstanceType(self,InstanceType):
+		self.add_query_param('InstanceType',InstanceType)
 
 	def get_BuyerMessage(self):
 		return self.get_query_params().get('BuyerMessage')
@@ -160,6 +179,12 @@ class CreateSmartAccessGatewayRequest(RpcRequest):
 
 	def set_ChargeType(self,ChargeType):
 		self.add_query_param('ChargeType',ChargeType)
+
+	def get_DataPlan(self):
+		return self.get_query_params().get('DataPlan')
+
+	def set_DataPlan(self,DataPlan):
+		self.add_query_param('DataPlan',DataPlan)
 
 	def get_ReceiverZip(self):
 		return self.get_query_params().get('ReceiverZip')

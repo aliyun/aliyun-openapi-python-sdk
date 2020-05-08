@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,10 +18,17 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkecs.endpoint import endpoint_data
+
 class CreateNetworkInterfaceRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'CreateNetworkInterface','ecs')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -47,6 +54,18 @@ class CreateNetworkInterfaceRequest(RpcRequest):
 	def set_Description(self,Description):
 		self.add_query_param('Description',Description)
 
+	def get_SecondaryPrivateIpAddressCount(self):
+		return self.get_query_params().get('SecondaryPrivateIpAddressCount')
+
+	def set_SecondaryPrivateIpAddressCount(self,SecondaryPrivateIpAddressCount):
+		self.add_query_param('SecondaryPrivateIpAddressCount',SecondaryPrivateIpAddressCount)
+
+	def get_BusinessType(self):
+		return self.get_query_params().get('BusinessType')
+
+	def set_BusinessType(self,BusinessType):
+		self.add_query_param('BusinessType',BusinessType)
+
 	def get_ResourceGroupId(self):
 		return self.get_query_params().get('ResourceGroupId')
 
@@ -70,6 +89,12 @@ class CreateNetworkInterfaceRequest(RpcRequest):
 	def set_NetworkInterfaceName(self,NetworkInterfaceName):
 		self.add_query_param('NetworkInterfaceName',NetworkInterfaceName)
 
+	def get_Visible(self):
+		return self.get_query_params().get('Visible')
+
+	def set_Visible(self,Visible):
+		self.add_query_param('Visible',Visible)
+
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -88,11 +113,27 @@ class CreateNetworkInterfaceRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
+	def get_SecurityGroupIdss(self):
+		return self.get_query_params().get('SecurityGroupIdss')
+
+	def set_SecurityGroupIdss(self,SecurityGroupIdss):
+		for i in range(len(SecurityGroupIdss)):	
+			if SecurityGroupIdss[i] is not None:
+				self.add_query_param('SecurityGroupIds.' + str(i + 1) , SecurityGroupIdss[i]);
+
 	def get_VSwitchId(self):
 		return self.get_query_params().get('VSwitchId')
 
 	def set_VSwitchId(self,VSwitchId):
 		self.add_query_param('VSwitchId',VSwitchId)
+
+	def get_PrivateIpAddresss(self):
+		return self.get_query_params().get('PrivateIpAddresss')
+
+	def set_PrivateIpAddresss(self,PrivateIpAddresss):
+		for i in range(len(PrivateIpAddresss)):	
+			if PrivateIpAddresss[i] is not None:
+				self.add_query_param('PrivateIpAddress.' + str(i + 1) , PrivateIpAddresss[i]);
 
 	def get_PrimaryIpAddress(self):
 		return self.get_query_params().get('PrimaryIpAddress')

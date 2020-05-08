@@ -174,7 +174,8 @@ class RetryTest(SDKTestBase):
         globals()['_test_client_token'] = None
         globals()['_test_retry_times'] = 0
 
-        def _handle_single_request(endpoint, request, request_timeout, signer=None):
+        def _handle_single_request(endpoint, request, request_timeout, request_connect_timeout,
+                                   signer=None):
             global _test_client_token
             global _test_retry_times
 
@@ -213,7 +214,8 @@ class RetryTest(SDKTestBase):
 
         globals()['_test_retry_times'] = 0
 
-        def _handle_single_request(endpoint, request, request_timeout, signer=None):
+        def _handle_single_request(endpoint, request, request_timeout, request_connect_timeout,
+                                   signer=None):
             global _test_retry_times
 
             assert "ABCDEFGHIJKLMN" == request.get_ClientToken()
@@ -375,7 +377,8 @@ class RetryTest(SDKTestBase):
             global _test_compute_delay
             _test_compute_delay.append(delay)
 
-        def _handle_single_request(endpoint, request, request_timeout, signer=None):
+        def _handle_single_request(endpoint, request, request_timeout, request_connect_timeout,
+                                   signer=None):
             return 400, {}, None, ServerException("Throttling", "some error")
 
         client._handle_single_request = _handle_single_request

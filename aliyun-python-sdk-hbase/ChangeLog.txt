@@ -1,0 +1,28 @@
+2020-05-06 Version: 2.4.2
+- Describe describeAvailableResource.
+
+2020-04-27 Version: 2.4.1
+- Describe describeAvailableResource.
+
+2020-02-24 Version: 2.3.0
+- ImmediateDelete.
+- DescribeInstance CreateTimeUTC ExpireTimeUTC.
+- DescribeInstances CreateTimeUTC ExpireTimeUTC.
+- DescribeIpWhitelist Groups GroupName.
+- CreateCluster.
+
+2020-01-03 Version: 2.2.0
+- ImmediateDelete.
+- DescribeInstance CreateTimeUTC ExpireTimeUTC.
+- DescribeInstances CreateTimeUTC ExpireTimeUTC.
+- DescribeIpWhitelist Groups GroupName.
+
+2019-12-04 Version: 2.1.0
+- Generated 2019-01-01 for `HBase`.
+
+2019-11-20 Version: 2.0.0
+- Generated 2019-01-01 for `HBase`.
+
+2019-10-25 Version: 1.0.0
+- Generated 2019-01-01 for `HBase`.
+

@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,10 +18,29 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkemr.endpoint import endpoint_data
+
 class ListFlowInstanceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'ListFlowInstance')
+		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'ListFlowInstance','emr')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
+
+	def get_Owner(self):
+		return self.get_query_params().get('Owner')
+
+	def set_Owner(self,Owner):
+		self.add_query_param('Owner',Owner)
+
+	def get_TimeRange(self):
+		return self.get_query_params().get('TimeRange')
+
+	def set_TimeRange(self,TimeRange):
+		self.add_query_param('TimeRange',TimeRange)
 
 	def get_StatusLists(self):
 		return self.get_query_params().get('StatusLists')
@@ -30,6 +49,24 @@ class ListFlowInstanceRequest(RpcRequest):
 		for i in range(len(StatusLists)):	
 			if StatusLists[i] is not None:
 				self.add_query_param('StatusList.' + str(i + 1) , StatusLists[i]);
+
+	def get_OrderBy(self):
+		return self.get_query_params().get('OrderBy')
+
+	def set_OrderBy(self,OrderBy):
+		self.add_query_param('OrderBy',OrderBy)
+
+	def get_PageNumber(self):
+		return self.get_query_params().get('PageNumber')
+
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)
+
+	def get_InstanceId(self):
+		return self.get_query_params().get('InstanceId')
+
+	def set_InstanceId(self,InstanceId):
+		self.add_query_param('InstanceId',InstanceId)
 
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
@@ -61,8 +98,8 @@ class ListFlowInstanceRequest(RpcRequest):
 	def set_ProjectId(self,ProjectId):
 		self.add_query_param('ProjectId',ProjectId)
 
-	def get_PageNumber(self):
-		return self.get_query_params().get('PageNumber')
+	def get_OrderType(self):
+		return self.get_query_params().get('OrderType')
 
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
+	def set_OrderType(self,OrderType):
+		self.add_query_param('OrderType',OrderType)

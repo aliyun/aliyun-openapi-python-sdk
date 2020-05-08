@@ -1,3 +1,15 @@
+2019-09-24 Version: 1.5.2
+- New version 1-5-2.
+
+2019-06-03 Version: 1.5.1
+1, Add openapi of ACL.
+
+2019-05-29 Version: 1.4.2
+update  Smartag
+
+2019-05-29 Version: 1.1.0
+update product
+
 2018-12-12 Version: 1.4.1
 1, Fix a bug.
 

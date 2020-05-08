@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,10 +18,41 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkehpc.endpoint import endpoint_data
+
 class GetCloudMetricLogsRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'EHPC', '2018-04-12', 'GetCloudMetricLogs','ehs')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
+
+	def get_MetricScope(self):
+		return self.get_query_params().get('MetricScope')
+
+	def set_MetricScope(self,MetricScope):
+		self.add_query_param('MetricScope',MetricScope)
+
+	def get_ClusterId(self):
+		return self.get_query_params().get('ClusterId')
+
+	def set_ClusterId(self,ClusterId):
+		self.add_query_param('ClusterId',ClusterId)
+
+	def get_AggregationInterval(self):
+		return self.get_query_params().get('AggregationInterval')
+
+	def set_AggregationInterval(self,AggregationInterval):
+		self.add_query_param('AggregationInterval',AggregationInterval)
+
+	def get_Reverse(self):
+		return self.get_query_params().get('Reverse')
+
+	def set_Reverse(self,Reverse):
+		self.add_query_param('Reverse',Reverse)
 
 	def get_AggregationType(self):
 		return self.get_query_params().get('AggregationType')
@@ -41,38 +72,14 @@ class GetCloudMetricLogsRequest(RpcRequest):
 	def set_MetricCategories(self,MetricCategories):
 		self.add_query_param('MetricCategories',MetricCategories)
 
-	def get_MetricScope(self):
-		return self.get_query_params().get('MetricScope')
-
-	def set_MetricScope(self,MetricScope):
-		self.add_query_param('MetricScope',MetricScope)
-
 	def get__From(self):
 		return self.get_query_params().get('From')
 
 	def set__From(self,_From):
 		self.add_query_param('From',_From)
 
-	def get_ClusterId(self):
-		return self.get_query_params().get('ClusterId')
-
-	def set_ClusterId(self,ClusterId):
-		self.add_query_param('ClusterId',ClusterId)
-
 	def get_To(self):
 		return self.get_query_params().get('To')
 
 	def set_To(self,To):
 		self.add_query_param('To',To)
-
-	def get_AggregationInterval(self):
-		return self.get_query_params().get('AggregationInterval')
-
-	def set_AggregationInterval(self,AggregationInterval):
-		self.add_query_param('AggregationInterval',AggregationInterval)
-
-	def get_Reverse(self):
-		return self.get_query_params().get('Reverse')
-
-	def set_Reverse(self,Reverse):
-		self.add_query_param('Reverse',Reverse)

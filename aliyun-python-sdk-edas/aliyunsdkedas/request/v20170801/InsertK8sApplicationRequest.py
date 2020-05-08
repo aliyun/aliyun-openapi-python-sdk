@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,12 +18,19 @@
 # under the License.
 
 from aliyunsdkcore.request import RoaRequest
+from aliyunsdkedas.endpoint import endpoint_data
+
 class InsertK8sApplicationRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'InsertK8sApplication')
+		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'InsertK8sApplication','edas')
 		self.set_uri_pattern('/pop/v5/k8s/acs/create_k8s_app')
 		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_NasId(self):
 		return self.get_query_params().get('NasId')
@@ -42,6 +49,12 @@ class InsertK8sApplicationRequest(RoaRequest):
 
 	def set_InternetTargetPort(self,InternetTargetPort):
 		self.add_query_param('InternetTargetPort',InternetTargetPort)
+
+	def get_WebContainer(self):
+		return self.get_query_params().get('WebContainer')
+
+	def set_WebContainer(self,WebContainer):
+		self.add_query_param('WebContainer',WebContainer)
 
 	def get_IntranetSlbId(self):
 		return self.get_query_params().get('IntranetSlbId')
@@ -85,6 +98,12 @@ class InsertK8sApplicationRequest(RoaRequest):
 	def set_RequestsMem(self,RequestsMem):
 		self.add_query_param('RequestsMem',RequestsMem)
 
+	def get_PackageVersion(self):
+		return self.get_query_params().get('PackageVersion')
+
+	def set_PackageVersion(self,PackageVersion):
+		self.add_query_param('PackageVersion',PackageVersion)
+
 	def get_StorageType(self):
 		return self.get_query_params().get('StorageType')
 
@@ -96,6 +115,18 @@ class InsertK8sApplicationRequest(RoaRequest):
 
 	def set_LimitMem(self,LimitMem):
 		self.add_query_param('LimitMem',LimitMem)
+
+	def get_LimitmCpu(self):
+		return self.get_query_params().get('LimitmCpu')
+
+	def set_LimitmCpu(self,LimitmCpu):
+		self.add_query_param('LimitmCpu',LimitmCpu)
+
+	def get_EdasContainerVersion(self):
+		return self.get_query_params().get('EdasContainerVersion')
+
+	def set_EdasContainerVersion(self,EdasContainerVersion):
+		self.add_query_param('EdasContainerVersion',EdasContainerVersion)
 
 	def get_AppName(self):
 		return self.get_query_params().get('AppName')
@@ -114,6 +145,18 @@ class InsertK8sApplicationRequest(RoaRequest):
 
 	def set_LogicalRegionId(self,LogicalRegionId):
 		self.add_query_param('LogicalRegionId',LogicalRegionId)
+
+	def get_PackageUrl(self):
+		return self.get_query_params().get('PackageUrl')
+
+	def set_PackageUrl(self,PackageUrl):
+		self.add_query_param('PackageUrl',PackageUrl)
+
+	def get_RequestsmCpu(self):
+		return self.get_query_params().get('RequestsmCpu')
+
+	def set_RequestsmCpu(self,RequestsmCpu):
+		self.add_query_param('RequestsmCpu',RequestsmCpu)
 
 	def get_InternetSlbProtocol(self):
 		return self.get_query_params().get('InternetSlbProtocol')
@@ -175,6 +218,24 @@ class InsertK8sApplicationRequest(RoaRequest):
 	def set_Command(self,Command):
 		self.add_query_param('Command',Command)
 
+	def get_JDK(self):
+		return self.get_query_params().get('JDK')
+
+	def set_JDK(self,JDK):
+		self.add_query_param('JDK',JDK)
+
+	def get_UseBodyEncoding(self):
+		return self.get_query_params().get('UseBodyEncoding')
+
+	def set_UseBodyEncoding(self,UseBodyEncoding):
+		self.add_query_param('UseBodyEncoding',UseBodyEncoding)
+
+	def get_UriEncoding(self):
+		return self.get_query_params().get('UriEncoding')
+
+	def set_UriEncoding(self,UriEncoding):
+		self.add_query_param('UriEncoding',UriEncoding)
+
 	def get_IntranetSlbProtocol(self):
 		return self.get_query_params().get('IntranetSlbProtocol')
 
@@ -198,6 +259,12 @@ class InsertK8sApplicationRequest(RoaRequest):
 
 	def set_ApplicationDescription(self,ApplicationDescription):
 		self.add_query_param('ApplicationDescription',ApplicationDescription)
+
+	def get_PackageType(self):
+		return self.get_query_params().get('PackageType')
+
+	def set_PackageType(self,PackageType):
+		self.add_query_param('PackageType',PackageType)
 
 	def get_RequestsCpu(self):
 		return self.get_query_params().get('RequestsCpu')

@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,10 +18,11 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+
 class ModifyDrdsIpWhiteListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Drds', '2017-10-16', 'ModifyDrdsIpWhiteList')
+		RpcRequest.__init__(self, 'Drds', '2017-10-16', 'ModifyDrdsIpWhiteList','drds')
 
 	def get_Mode(self):
 		return self.get_query_params().get('Mode')

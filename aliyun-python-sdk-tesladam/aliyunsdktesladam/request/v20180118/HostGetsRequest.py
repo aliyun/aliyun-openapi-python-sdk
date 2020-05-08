@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class HostGetsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'TeslaDam', '2018-01-18', 'HostGets')
+		RpcRequest.__init__(self, 'TeslaDam', '2018-01-18', 'HostGets','tesladam')
 
 	def get_Query(self):
 		return self.get_query_params().get('Query')

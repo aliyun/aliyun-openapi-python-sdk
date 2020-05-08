@@ -1,3 +1,0 @@
-ignore:
-  - "aliyun-python-sdk-core/aliyunsdkcore/vendored/*"
-  - "aliyun-python-sdk-core/aliyunsdkcore/data/*"

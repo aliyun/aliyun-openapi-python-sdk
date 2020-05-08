@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,10 +18,17 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkecs.endpoint import endpoint_data
+
 class CreateImageRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'CreateImage','ecs')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_DiskDeviceMappings(self):
 		return self.get_query_params().get('DiskDeviceMappings')
@@ -50,35 +57,17 @@ class CreateImageRequest(RpcRequest):
 	def set_SnapshotId(self,SnapshotId):
 		self.add_query_param('SnapshotId',SnapshotId)
 
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
-
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
 	def get_ClientToken(self):
 		return self.get_query_params().get('ClientToken')
 
 	def set_ClientToken(self,ClientToken):
 		self.add_query_param('ClientToken',ClientToken)
 
-	def get_OwnerAccount(self):
-		return self.get_query_params().get('OwnerAccount')
-
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
-
 	def get_Description(self):
 		return self.get_query_params().get('Description')
 
 	def set_Description(self,Description):
 		self.add_query_param('Description',Description)
-
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
 
 	def get_Platform(self):
 		return self.get_query_params().get('Platform')
@@ -92,23 +81,11 @@ class CreateImageRequest(RpcRequest):
 	def set_ResourceGroupId(self,ResourceGroupId):
 		self.add_query_param('ResourceGroupId',ResourceGroupId)
 
-	def get_InstanceId(self):
-		return self.get_query_params().get('InstanceId')
-
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
-
 	def get_ImageName(self):
 		return self.get_query_params().get('ImageName')
 
 	def set_ImageName(self,ImageName):
 		self.add_query_param('ImageName',ImageName)
-
-	def get_ImageVersion(self):
-		return self.get_query_params().get('ImageVersion')
-
-	def set_ImageVersion(self,ImageVersion):
-		self.add_query_param('ImageVersion',ImageVersion)
 
 	def get_Tags(self):
 		return self.get_query_params().get('Tags')
@@ -126,3 +103,39 @@ class CreateImageRequest(RpcRequest):
 
 	def set_Architecture(self,Architecture):
 		self.add_query_param('Architecture',Architecture)
+
+	def get_ResourceOwnerAccount(self):
+		return self.get_query_params().get('ResourceOwnerAccount')
+
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+
+	def get_OwnerAccount(self):
+		return self.get_query_params().get('OwnerAccount')
+
+	def set_OwnerAccount(self,OwnerAccount):
+		self.add_query_param('OwnerAccount',OwnerAccount)
+
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
+
+	def get_InstanceId(self):
+		return self.get_query_params().get('InstanceId')
+
+	def set_InstanceId(self,InstanceId):
+		self.add_query_param('InstanceId',InstanceId)
+
+	def get_ImageFamily(self):
+		return self.get_query_params().get('ImageFamily')
+
+	def set_ImageFamily(self,ImageFamily):
+		self.add_query_param('ImageFamily',ImageFamily)
+
+	def get_ImageVersion(self):
+		return self.get_query_params().get('ImageVersion')
+
+	def set_ImageVersion(self,ImageVersion):
+		self.add_query_param('ImageVersion',ImageVersion)

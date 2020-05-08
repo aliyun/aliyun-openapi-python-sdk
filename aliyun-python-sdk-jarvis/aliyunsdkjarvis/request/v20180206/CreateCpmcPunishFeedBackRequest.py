@@ -21,7 +21,7 @@ from aliyunsdkcore.request import RpcRequest
 class CreateCpmcPunishFeedBackRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'jarvis', '2018-02-06', 'CreateCpmcPunishFeedBack')
+		RpcRequest.__init__(self, 'jarvis', '2018-02-06', 'CreateCpmcPunishFeedBack','jarvis')
 
 	def get_FeedBack(self):
 		return self.get_query_params().get('FeedBack')

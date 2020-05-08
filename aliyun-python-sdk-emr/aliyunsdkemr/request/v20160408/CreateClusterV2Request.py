@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,10 +18,23 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkemr.endpoint import endpoint_data
+
 class CreateClusterV2Request(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'CreateClusterV2')
+		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'CreateClusterV2','emr')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
+
+	def get_AutoPayOrder(self):
+		return self.get_query_params().get('AutoPayOrder')
+
+	def set_AutoPayOrder(self,AutoPayOrder):
+		self.add_query_param('AutoPayOrder',AutoPayOrder)
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -77,6 +90,12 @@ class CreateClusterV2Request(RpcRequest):
 	def set_KeyPairName(self,KeyPairName):
 		self.add_query_param('KeyPairName',KeyPairName)
 
+	def get_MetaStoreType(self):
+		return self.get_query_params().get('MetaStoreType')
+
+	def set_MetaStoreType(self,MetaStoreType):
+		self.add_query_param('MetaStoreType',MetaStoreType)
+
 	def get_SecurityGroupName(self):
 		return self.get_query_params().get('SecurityGroupName')
 
@@ -94,6 +113,20 @@ class CreateClusterV2Request(RpcRequest):
 
 	def set_MachineType(self,MachineType):
 		self.add_query_param('MachineType',MachineType)
+
+	def get_HostComponentInfos(self):
+		return self.get_query_params().get('HostComponentInfos')
+
+	def set_HostComponentInfos(self,HostComponentInfos):
+		for i in range(len(HostComponentInfos)):	
+			if HostComponentInfos[i].get('HostName') is not None:
+				self.add_query_param('HostComponentInfo.' + str(i + 1) + '.HostName' , HostComponentInfos[i].get('HostName'))
+			for j in range(len(HostComponentInfos[i].get('ComponentNameLists'))):
+				if HostComponentInfos[i].get('ComponentNameLists')[j] is not None:
+					self.add_query_param('HostComponentInfo.' + str(i + 1) + '.ComponentNameList.'+str(j + 1), HostComponentInfos[i].get('ComponentNameLists')[j])
+			if HostComponentInfos[i].get('ServiceName') is not None:
+				self.add_query_param('HostComponentInfo.' + str(i + 1) + '.ServiceName' , HostComponentInfos[i].get('ServiceName'))
+
 
 	def get_BootstrapActions(self):
 		return self.get_query_params().get('BootstrapActions')
@@ -113,6 +146,12 @@ class CreateClusterV2Request(RpcRequest):
 
 	def set_UseLocalMetaDb(self,UseLocalMetaDb):
 		self.add_query_param('UseLocalMetaDb',UseLocalMetaDb)
+
+	def get_MetaStoreConf(self):
+		return self.get_query_params().get('MetaStoreConf')
+
+	def set_MetaStoreConf(self,MetaStoreConf):
+		self.add_query_param('MetaStoreConf',MetaStoreConf)
 
 	def get_EmrVer(self):
 		return self.get_query_params().get('EmrVer')
@@ -139,6 +178,12 @@ class CreateClusterV2Request(RpcRequest):
 	def set_UserDefinedEmrEcsRole(self,UserDefinedEmrEcsRole):
 		self.add_query_param('UserDefinedEmrEcsRole',UserDefinedEmrEcsRole)
 
+	def get_AuthorizeContent(self):
+		return self.get_query_params().get('AuthorizeContent')
+
+	def set_AuthorizeContent(self,AuthorizeContent):
+		self.add_query_param('AuthorizeContent',AuthorizeContent)
+
 	def get_IsOpenPublicIp(self):
 		return self.get_query_params().get('IsOpenPublicIp')
 
@@ -150,6 +195,12 @@ class CreateClusterV2Request(RpcRequest):
 
 	def set_Period(self,Period):
 		self.add_query_param('Period',Period)
+
+	def get_WhiteListType(self):
+		return self.get_query_params().get('WhiteListType')
+
+	def set_WhiteListType(self,WhiteListType):
+		self.add_query_param('WhiteListType',WhiteListType)
 
 	def get_RelatedClusterId(self):
 		return self.get_query_params().get('RelatedClusterId')

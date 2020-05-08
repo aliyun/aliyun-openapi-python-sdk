@@ -125,6 +125,12 @@ class SaveSingleTaskForCreatingOrderActivateRequest(RpcRequest):
 	def set_DomainName(self,DomainName):
 		self.add_query_param('DomainName',DomainName)
 
+	def get_RegistrantType(self):
+		return self.get_query_params().get('RegistrantType')
+
+	def set_RegistrantType(self,RegistrantType):
+		self.add_query_param('RegistrantType',RegistrantType)
+
 	def get_Telephone(self):
 		return self.get_query_params().get('Telephone')
 

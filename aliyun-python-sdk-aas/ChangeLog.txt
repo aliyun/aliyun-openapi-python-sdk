@@ -1,0 +1,10 @@
+2019-11-18 Version: 2.1.1
+- Supported ChangePreferredLanguage for Internet customers.
+- Fixed bugs for ChangePreferredLanguage.
+
+2019-10-31 Version: 2.1.0
+- Supported ChangePreferredLanguage for Internet customers.
+
+2019-10-31 Version: 1.1.0
+- Supported ChangePreferredLanguage for Internet customers.
+
