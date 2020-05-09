@@ -34,6 +34,7 @@ class CoreLevelTest(SDKTestBase):
         ret = self.get_dict_response(response)
         self.assertTrue(ret.get("ResourceTypes"))
 
+
     def test_rpc_common_request_with_sts_token(self):
         sub_client = self.init_sub_client()
         self._create_default_ram_role()
