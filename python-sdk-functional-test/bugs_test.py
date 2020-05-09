@@ -53,7 +53,11 @@ class BugsTest(SDKTestBase):
 
         # We have 2 possible situations here: NLP purchased or NLP purchased
         # The test case should be passed in both situations.
-        self.assertRaises(ServerException, self.client.do_action_with_exception, acs_request=request)
+        self.assertRaises(
+            ServerException,
+            self.client.do_action_with_exception,
+            acs_request=request
+        )
 
     def test_bug_with_17602976(self):
         from aliyunsdkecs.request.v20140526.DescribeRegionsRequest import DescribeRegionsRequest
