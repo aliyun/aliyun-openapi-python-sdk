@@ -5,7 +5,7 @@ import os
 from aliyunsdkcore.client import AcsClient
 from aliyunsdkcore.auth.credentials import StsTokenCredential
 from aliyunsdkcore.request import CommonRequest
-
+from aliyunsdkcore.acs_exception.exceptions import ServerException
 from aliyunsdksts.request.v20150401.AssumeRoleRequest import AssumeRoleRequest
 
 
@@ -34,7 +34,6 @@ class CoreLevelTest(SDKTestBase):
         ret = self.get_dict_response(response)
         self.assertTrue(ret.get("ResourceTypes"))
 
-
     def test_rpc_common_request_with_sts_token(self):
         sub_client = self.init_sub_client()
         self._create_default_ram_role()
@@ -43,7 +42,9 @@ class CoreLevelTest(SDKTestBase):
         request = AssumeRoleRequest()
         request.set_RoleArn(self.ram_role_arn)
         request.set_RoleSessionName(self.default_role_session_name)
-        response = sub_client.do_action_with_exception(request)
+        response = self.client.do_action_with_exception(request)
+        # self.assertRaises(ServerException, sub_client.do_action_with_exception, acs_request=request)
+
         response = self.get_dict_response(response)
         credentials = response.get("Credentials")
 
