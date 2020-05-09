@@ -53,12 +53,7 @@ class BugsTest(SDKTestBase):
 
         # We have 2 possible situations here: NLP purchased or NLP purchased
         # The test case should be passed in both situations.
-        try:
-            response = self.client.do_action_with_exception(request)
-            self.assertTrue(response)
-        except ServerException as e:
-            self.assertEqual("10007", e.error_code)
-            self.assertEqual("RAM/STS verification error", e.get_error_msg())
+        self.assertRaises(ServerException, self.client.do_action_with_exception, acs_request=request)
 
     def test_bug_with_17602976(self):
         from aliyunsdkecs.request.v20140526.DescribeRegionsRequest import DescribeRegionsRequest
