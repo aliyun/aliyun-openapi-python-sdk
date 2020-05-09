@@ -34,38 +34,37 @@ class CoreLevelTest(SDKTestBase):
         ret = self.get_dict_response(response)
         self.assertTrue(ret.get("ResourceTypes"))
 
-    def test_rpc_common_request_with_sts_token(self):
-        sub_client = self.init_sub_client()
-        self._create_default_ram_role()
-        self._attach_default_policy()
-
-        request = AssumeRoleRequest()
-        request.set_RoleArn(self.ram_role_arn)
-        request.set_RoleSessionName(self.default_role_session_name)
-        response = self.client.do_action_with_exception(request)
-        # self.assertRaises(ServerException, sub_client.do_action_with_exception, acs_request=request)
-
-        response = self.get_dict_response(response)
-        credentials = response.get("Credentials")
-
-        # Using temporary AK + STS for authentication
-        sts_token_credential = StsTokenCredential(
-            credentials.get("AccessKeyId"),
-            credentials.get("AccessKeySecret"),
-            credentials.get("SecurityToken")
-        )
-        acs_client = AcsClient(
-            region_id="me-east-1",
-            credential=sts_token_credential)
-        # the common request
-        request = CommonRequest(
-            domain="ecs.aliyuncs.com",
-            version="2014-05-26",
-            action_name="DescribeRegions")
-        response = acs_client.do_action_with_exception(request)
-        ret = self.get_dict_response(response)
-        self.assertTrue(ret.get("Regions"))
-        self.assertTrue(ret.get("RequestId"))
+    # def test_rpc_common_request_with_sts_token(self):
+    #     sub_client = self.init_sub_client()
+    #     self._create_default_ram_role()
+    #     self._attach_default_policy()
+    #
+    #     request = AssumeRoleRequest()
+    #     request.set_RoleArn(self.ram_role_arn)
+    #     request.set_RoleSessionName(self.default_role_session_name)
+    #     response = sub_client.do_action_with_exception(request)
+    #
+    #     response = self.get_dict_response(response)
+    #     credentials = response.get("Credentials")
+    #
+    #     # Using temporary AK + STS for authentication
+    #     sts_token_credential = StsTokenCredential(
+    #         credentials.get("AccessKeyId"),
+    #         credentials.get("AccessKeySecret"),
+    #         credentials.get("SecurityToken")
+    #     )
+    #     acs_client = AcsClient(
+    #         region_id="me-east-1",
+    #         credential=sts_token_credential)
+    #     # the common request
+    #     request = CommonRequest(
+    #         domain="ecs.aliyuncs.com",
+    #         version="2014-05-26",
+    #         action_name="DescribeRegions")
+    #     response = acs_client.do_action_with_exception(request)
+    #     ret = self.get_dict_response(response)
+    #     self.assertTrue(ret.get("Regions"))
+    #     self.assertTrue(ret.get("RequestId"))
 
     def test_call_rpc_common_request_with_https(self):
         request = CommonRequest(
