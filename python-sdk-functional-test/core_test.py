@@ -114,6 +114,7 @@ class CoreLevelTest(SDKTestBase):
         request = DescribeCdnCertificateDetailRequest()
         request.set_CertName("sdk&-杭&&&州-test")
         request.set_endpoint("localhost")
+        request.set_method('GET')
         with MyServer() as s:
             client.do_action_with_exception(request)
             self.assertTrue(s.url.find("CertName="))
