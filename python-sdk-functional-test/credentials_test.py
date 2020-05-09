@@ -2,13 +2,13 @@
 import json
 import os
 
-from aliyunsdkcore.acs_exception.exceptions import ClientException
-from aliyunsdkcore.acs_exception.exceptions import ServerException
+# from aliyunsdkcore.acs_exception.exceptions import ClientException
+# from aliyunsdkcore.acs_exception.exceptions import ServerException
 from aliyunsdkcore.client import AcsClient
-from aliyunsdkcore.auth.credentials import StsTokenCredential
+# from aliyunsdkcore.auth.credentials import StsTokenCredential
 
 from aliyunsdkecs.request.v20140526.DescribeRegionsRequest import DescribeRegionsRequest
-from aliyunsdksts.request.v20150401.AssumeRoleRequest import AssumeRoleRequest
+# from aliyunsdksts.request.v20150401.AssumeRoleRequest import AssumeRoleRequest
 
 from base import SDKTestBase
 from base import disabled

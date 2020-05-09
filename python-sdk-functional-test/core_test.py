@@ -3,10 +3,9 @@ import json
 import os
 
 from aliyunsdkcore.client import AcsClient
-from aliyunsdkcore.auth.credentials import StsTokenCredential
+# from aliyunsdkcore.auth.credentials import StsTokenCredential
 from aliyunsdkcore.request import CommonRequest
-from aliyunsdkcore.acs_exception.exceptions import ServerException
-from aliyunsdksts.request.v20150401.AssumeRoleRequest import AssumeRoleRequest
+# from aliyunsdksts.request.v20150401.AssumeRoleRequest import AssumeRoleRequest
 
 
 from base import SDKTestBase, MyServer
