@@ -53,13 +53,18 @@ class BugsTest(SDKTestBase):
 
         # We have 2 possible situations here: NLP purchased or NLP purchased
         # The test case should be passed in both situations.
-        self.assertRaises(ServerException, self.client.do_action_with_exception, acs_request=request)
+        self.assertRaises(
+            ServerException,
+            self.client.do_action_with_exception,
+            acs_request=request
+        )
 
     def test_bug_with_17602976(self):
         from aliyunsdkecs.request.v20140526.DescribeRegionsRequest import DescribeRegionsRequest
         request = DescribeRegionsRequest()
         request.set_accept_format('JSON')
-        status, headers, body, exception = self.client._implementation_of_do_action(request)
+        status, headers, body, exception = self.client._implementation_of_do_action(
+            request)
         try:
             body_obj = ["ecs", "rdm", "roa"]
             request_id = body_obj.get("RequestId")
@@ -96,9 +101,11 @@ class BugsTest(SDKTestBase):
 
     def test_bug_with_not_match_sign(self):
         from aliyunsdkcdn.request.v20180510.PushObjectCacheRequest import PushObjectCacheRequest
-        client = AcsClient(self.access_key_id, 'BadAccessKeySecret', 'cn-hangzhou')
+        client = AcsClient(self.access_key_id,
+                           'BadAccessKeySecret', 'cn-hangzhou')
         request = PushObjectCacheRequest()
-        request.add_query_param('ObjectPath', 'http://lftest005.sbcicp1.net/C环境下SDK部署方式.txt')
+        request.add_query_param(
+            'ObjectPath', 'http://lftest005.sbcicp1.net/C环境下SDK部署方式.txt')
         try:
             response = client.do_action_with_exception(request)
             assert False
