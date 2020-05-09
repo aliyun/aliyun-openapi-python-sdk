@@ -24,6 +24,7 @@ class DescribeBackupPlansRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Cassandra', '2019-01-01', 'DescribeBackupPlans','Cassandra')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
