@@ -14,7 +14,6 @@
 
 import os.path
 import json
-import sys
 import os
 import threading
 import logging
@@ -32,8 +31,8 @@ from aliyunsdkram.request.v20150501.DeleteAccessKeyRequest import DeleteAccessKe
 from aliyunsdkram.request.v20150501.ListAccessKeysRequest import ListAccessKeysRequest
 from aliyunsdkram.request.v20150501.ListRolesRequest import ListRolesRequest
 from aliyunsdkram.request.v20150501.CreateRoleRequest import CreateRoleRequest
+from aliyunsdkram.request.v20150501.DeleteRoleRequest import DeleteRoleRequest
 from aliyunsdkram.request.v20150501.AttachPolicyToUserRequest import AttachPolicyToUserRequest
-
 
 # The unittest module got a significant overhaul
 # in 2.7, so if we're in 2.6 we can use the backported
@@ -218,7 +217,7 @@ class SDKTestBase(TestCase):
             if role_name == self.default_ram_role_name:
                 self.ram_role_arn = role_arn
                 return
-
+        user_id = '1325847523475998'
         policy_doc = """
         {
           "Statement": [
@@ -234,7 +233,7 @@ class SDKTestBase(TestCase):
           ],
           "Version": "1"
         }
-        """ % self.user_id
+        """ % user_id
 
         response = request_helper(self.client, CreateRoleRequest(),
                                   RoleName=self.default_ram_role_name,
@@ -244,10 +243,14 @@ class SDKTestBase(TestCase):
         # we can AssumeRole later
         time.sleep(5)
 
+    def _delete_default_ram_role(self):
+        request_helper(self.client, DeleteRoleRequest(), RoleName=self.default_ram_role_name)
+
 
 def disabled(func):
     def _decorator(func):
         pass
+
     return _decorator
 
 
@@ -288,4 +291,3 @@ class MyServer:
     @property
     def url(self):
         return self._url
-

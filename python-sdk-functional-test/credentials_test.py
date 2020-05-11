@@ -15,7 +15,6 @@ from base import disabled
 
 
 class CredentialsTest(SDKTestBase):
-
     __name__ = 'CredentialsTest'
 
     def get_http_request(self, client, request, specific_signer=None):
@@ -46,9 +45,11 @@ class CredentialsTest(SDKTestBase):
         request = DescribeRegionsRequest()
         url = self.get_http_request(acs_client, request)
         self.assertTrue(url.find("AccessKeyId=STS."))
-        acs_client.get_access_key()
         response = acs_client.do_action_with_exception(request)
         ret = self.get_dict_response(response)
+
+        self._delete_default_ram_role()
+        self._delete_access_key()
         self.assertTrue(ret.get("Regions"))
         self.assertTrue(ret.get("RequestId"))
 
@@ -72,6 +73,9 @@ class CredentialsTest(SDKTestBase):
         self.assertTrue(url.find("AccessKeyId=STS."))
         response = acs_client.do_action_with_exception(request)
         ret = self.get_dict_response(response)
+
+        self._delete_default_ram_role()
+        self._delete_access_key()
         self.assertTrue(ret.get("Regions"))
         self.assertTrue(ret.get("RequestId"))
 
@@ -83,4 +87,3 @@ class CredentialsTest(SDKTestBase):
         acs_client = AcsClient(region_id="cn-hangzhou", credential=ecs_ram_role_credential)
         request = DescribeRegionsRequest()
         response = acs_client.do_action_with_exception(request)
-

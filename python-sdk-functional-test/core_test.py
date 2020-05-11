@@ -1,7 +1,4 @@
 # encoding:utf-8
-import json
-import os
-
 from aliyunsdkcore.client import AcsClient
 from aliyunsdkcore.auth.credentials import StsTokenCredential
 from aliyunsdkcore.request import CommonRequest
@@ -40,7 +37,6 @@ class CoreLevelTest(SDKTestBase):
         request = AssumeRoleRequest()
         request.set_RoleArn(self.ram_role_arn)
         request.set_RoleSessionName(self.default_role_session_name)
-
         response = sub_client.do_action_with_exception(request)
 
         response = self.get_dict_response(response)
@@ -62,6 +58,8 @@ class CoreLevelTest(SDKTestBase):
             action_name="DescribeRegions")
         response = acs_client.do_action_with_exception(request)
         ret = self.get_dict_response(response)
+        self._delete_default_ram_role()
+        self._delete_access_key()
         self.assertTrue(ret.get("Regions"))
         self.assertTrue(ret.get("RequestId"))
 
@@ -118,4 +116,3 @@ class CoreLevelTest(SDKTestBase):
         with MyServer() as s:
             client.do_action_with_exception(request)
             self.assertTrue(s.url.find("CertName="))
-
