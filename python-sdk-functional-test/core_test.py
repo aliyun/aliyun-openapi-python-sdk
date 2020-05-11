@@ -7,7 +7,6 @@ from aliyunsdkcore.auth.credentials import StsTokenCredential
 from aliyunsdkcore.request import CommonRequest
 from aliyunsdksts.request.v20150401.AssumeRoleRequest import AssumeRoleRequest
 
-
 from base import SDKTestBase, MyServer
 
 
@@ -41,6 +40,7 @@ class CoreLevelTest(SDKTestBase):
         request = AssumeRoleRequest()
         request.set_RoleArn(self.ram_role_arn)
         request.set_RoleSessionName(self.default_role_session_name)
+
         response = sub_client.do_action_with_exception(request)
 
         response = self.get_dict_response(response)

@@ -46,6 +46,7 @@ class CredentialsTest(SDKTestBase):
         request = DescribeRegionsRequest()
         url = self.get_http_request(acs_client, request)
         self.assertTrue(url.find("AccessKeyId=STS."))
+        acs_client.get_access_key()
         response = acs_client.do_action_with_exception(request)
         ret = self.get_dict_response(response)
         self.assertTrue(ret.get("Regions"))
