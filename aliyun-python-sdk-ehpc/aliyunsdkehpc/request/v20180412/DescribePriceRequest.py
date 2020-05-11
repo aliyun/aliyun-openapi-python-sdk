@@ -23,7 +23,8 @@ from aliyunsdkehpc.endpoint import endpoint_data
 class DescribePriceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'EHPC', '2018-04-12', 'DescribePrice','ehs')
+		RpcRequest.__init__(self, 'EHPC', '2018-04-12', 'DescribePrice')
+		self.set_method('GET')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -43,8 +44,12 @@ class DescribePriceRequest(RpcRequest):
 				self.add_query_param('Commodities.' + str(i + 1) + '.NodeType' , Commoditiess[i].get('NodeType'))
 			if Commoditiess[i].get('SystemDiskCategory') is not None:
 				self.add_query_param('Commodities.' + str(i + 1) + '.SystemDiskCategory' , Commoditiess[i].get('SystemDiskCategory'))
+			if Commoditiess[i].get('InternetChargeType') is not None:
+				self.add_query_param('Commodities.' + str(i + 1) + '.InternetChargeType' , Commoditiess[i].get('InternetChargeType'))
 			if Commoditiess[i].get('SystemDiskSize') is not None:
 				self.add_query_param('Commodities.' + str(i + 1) + '.SystemDiskSize' , Commoditiess[i].get('SystemDiskSize'))
+			if Commoditiess[i].get('InternetMaxBandWidthOut') is not None:
+				self.add_query_param('Commodities.' + str(i + 1) + '.InternetMaxBandWidthOut' , Commoditiess[i].get('InternetMaxBandWidthOut'))
 			if Commoditiess[i].get('InstanceType') is not None:
 				self.add_query_param('Commodities.' + str(i + 1) + '.InstanceType' , Commoditiess[i].get('InstanceType'))
 			if Commoditiess[i].get('NetworkType') is not None:

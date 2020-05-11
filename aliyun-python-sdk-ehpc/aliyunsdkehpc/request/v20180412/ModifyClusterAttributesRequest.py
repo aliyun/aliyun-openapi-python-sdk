@@ -23,12 +23,19 @@ from aliyunsdkehpc.endpoint import endpoint_data
 class ModifyClusterAttributesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'EHPC', '2018-04-12', 'ModifyClusterAttributes','ehs')
+		RpcRequest.__init__(self, 'EHPC', '2018-04-12', 'ModifyClusterAttributes')
+		self.set_method('GET')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+
+	def get_ImageId(self):
+		return self.get_query_params().get('ImageId')
+
+	def set_ImageId(self,ImageId):
+		self.add_query_param('ImageId',ImageId)
 
 	def get_Description(self):
 		return self.get_query_params().get('Description')
@@ -41,6 +48,12 @@ class ModifyClusterAttributesRequest(RpcRequest):
 
 	def set_ClusterId(self,ClusterId):
 		self.add_query_param('ClusterId',ClusterId)
+
+	def get_ImageOwnerAlias(self):
+		return self.get_query_params().get('ImageOwnerAlias')
+
+	def set_ImageOwnerAlias(self,ImageOwnerAlias):
+		self.add_query_param('ImageOwnerAlias',ImageOwnerAlias)
 
 	def get_Name(self):
 		return self.get_query_params().get('Name')

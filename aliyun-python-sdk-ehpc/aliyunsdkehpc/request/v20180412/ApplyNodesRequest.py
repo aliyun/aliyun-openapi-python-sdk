@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkehpc.endpoint import endpoint_data
 
-class AddNodesRequest(RpcRequest):
+class ApplyNodesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'EHPC', '2018-04-12', 'AddNodes')
+		RpcRequest.__init__(self, 'EHPC', '2018-04-12', 'ApplyNodes')
 		self.set_method('GET')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -37,6 +37,12 @@ class AddNodesRequest(RpcRequest):
 	def set_ImageId(self,ImageId):
 		self.add_query_param('ImageId',ImageId)
 
+	def get_Memory(self):
+		return self.get_query_params().get('Memory')
+
+	def set_Memory(self,Memory):
+		self.add_query_param('Memory',Memory)
+
 	def get_AllocatePublicAddress(self):
 		return self.get_query_params().get('AllocatePublicAddress')
 
@@ -49,17 +55,11 @@ class AddNodesRequest(RpcRequest):
 	def set_InternetMaxBandWidthOut(self,InternetMaxBandWidthOut):
 		self.add_query_param('InternetMaxBandWidthOut',InternetMaxBandWidthOut)
 
-	def get_JobQueue(self):
-		return self.get_query_params().get('JobQueue')
+	def get_ResourceAmountType(self):
+		return self.get_query_params().get('ResourceAmountType')
 
-	def set_JobQueue(self,JobQueue):
-		self.add_query_param('JobQueue',JobQueue)
-
-	def get_ImageOwnerAlias(self):
-		return self.get_query_params().get('ImageOwnerAlias')
-
-	def set_ImageOwnerAlias(self,ImageOwnerAlias):
-		self.add_query_param('ImageOwnerAlias',ImageOwnerAlias)
+	def set_ResourceAmountType(self,ResourceAmountType):
+		self.add_query_param('ResourceAmountType',ResourceAmountType)
 
 	def get_SystemDiskType(self):
 		return self.get_query_params().get('SystemDiskType')
@@ -67,17 +67,28 @@ class AddNodesRequest(RpcRequest):
 	def set_SystemDiskType(self,SystemDiskType):
 		self.add_query_param('SystemDiskType',SystemDiskType)
 
+	def get_Cores(self):
+		return self.get_query_params().get('Cores')
+
+	def set_Cores(self,Cores):
+		self.add_query_param('Cores',Cores)
+
 	def get_SystemDiskSize(self):
 		return self.get_query_params().get('SystemDiskSize')
 
 	def set_SystemDiskSize(self,SystemDiskSize):
 		self.add_query_param('SystemDiskSize',SystemDiskSize)
 
-	def get_InstanceType(self):
-		return self.get_query_params().get('InstanceType')
+	def get_ZoneInfoss(self):
+		return self.get_query_params().get('ZoneInfoss')
 
-	def set_InstanceType(self,InstanceType):
-		self.add_query_param('InstanceType',InstanceType)
+	def set_ZoneInfoss(self,ZoneInfoss):
+		for i in range(len(ZoneInfoss)):	
+			if ZoneInfoss[i].get('VSwitchId') is not None:
+				self.add_query_param('ZoneInfos.' + str(i + 1) + '.VSwitchId' , ZoneInfoss[i].get('VSwitchId'))
+			if ZoneInfoss[i].get('ZoneId') is not None:
+				self.add_query_param('ZoneInfos.' + str(i + 1) + '.ZoneId' , ZoneInfoss[i].get('ZoneId'))
+
 
 	def get_HostNamePrefix(self):
 		return self.get_query_params().get('HostNamePrefix')
@@ -90,24 +101,6 @@ class AddNodesRequest(RpcRequest):
 
 	def set_ComputeSpotPriceLimit(self,ComputeSpotPriceLimit):
 		self.add_query_param('ComputeSpotPriceLimit',ComputeSpotPriceLimit)
-
-	def get_AutoRenewPeriod(self):
-		return self.get_query_params().get('AutoRenewPeriod')
-
-	def set_AutoRenewPeriod(self,AutoRenewPeriod):
-		self.add_query_param('AutoRenewPeriod',AutoRenewPeriod)
-
-	def get_Period(self):
-		return self.get_query_params().get('Period')
-
-	def set_Period(self,Period):
-		self.add_query_param('Period',Period)
-
-	def get_Count(self):
-		return self.get_query_params().get('Count')
-
-	def set_Count(self,Count):
-		self.add_query_param('Count',Count)
 
 	def get_ClusterId(self):
 		return self.get_query_params().get('ClusterId')
@@ -127,29 +120,17 @@ class AddNodesRequest(RpcRequest):
 	def set_HostNameSuffix(self,HostNameSuffix):
 		self.add_query_param('HostNameSuffix',HostNameSuffix)
 
-	def get_VSwitchId(self):
-		return self.get_query_params().get('VSwitchId')
+	def get_PriorityStrategy(self):
+		return self.get_query_params().get('PriorityStrategy')
 
-	def set_VSwitchId(self,VSwitchId):
-		self.add_query_param('VSwitchId',VSwitchId)
+	def set_PriorityStrategy(self,PriorityStrategy):
+		self.add_query_param('PriorityStrategy',PriorityStrategy)
 
-	def get_PeriodUnit(self):
-		return self.get_query_params().get('PeriodUnit')
+	def get_InstanceFamilyLevel(self):
+		return self.get_query_params().get('InstanceFamilyLevel')
 
-	def set_PeriodUnit(self,PeriodUnit):
-		self.add_query_param('PeriodUnit',PeriodUnit)
-
-	def get_ComputeEnableHt(self):
-		return self.get_query_params().get('ComputeEnableHt')
-
-	def set_ComputeEnableHt(self,ComputeEnableHt):
-		self.add_query_param('ComputeEnableHt',ComputeEnableHt)
-
-	def get_AutoRenew(self):
-		return self.get_query_params().get('AutoRenew')
-
-	def set_AutoRenew(self,AutoRenew):
-		self.add_query_param('AutoRenew',AutoRenew)
+	def set_InstanceFamilyLevel(self,InstanceFamilyLevel):
+		self.add_query_param('InstanceFamilyLevel',InstanceFamilyLevel)
 
 	def get_EcsChargeType(self):
 		return self.get_query_params().get('EcsChargeType')
@@ -163,20 +144,25 @@ class AddNodesRequest(RpcRequest):
 	def set_InternetChargeType(self,InternetChargeType):
 		self.add_query_param('InternetChargeType',InternetChargeType)
 
-	def get_CreateMode(self):
-		return self.get_query_params().get('CreateMode')
+	def get_InstanceTypeModels(self):
+		return self.get_query_params().get('InstanceTypeModels')
 
-	def set_CreateMode(self,CreateMode):
-		self.add_query_param('CreateMode',CreateMode)
+	def set_InstanceTypeModels(self,InstanceTypeModels):
+		for i in range(len(InstanceTypeModels)):	
+			if InstanceTypeModels[i].get('MaxPrice') is not None:
+				self.add_query_param('InstanceTypeModel.' + str(i + 1) + '.MaxPrice' , InstanceTypeModels[i].get('MaxPrice'))
+			if InstanceTypeModels[i].get('InstanceType') is not None:
+				self.add_query_param('InstanceTypeModel.' + str(i + 1) + '.InstanceType' , InstanceTypeModels[i].get('InstanceType'))
 
-	def get_ZoneId(self):
-		return self.get_query_params().get('ZoneId')
-
-	def set_ZoneId(self,ZoneId):
-		self.add_query_param('ZoneId',ZoneId)
 
 	def get_InternetMaxBandWidthIn(self):
 		return self.get_query_params().get('InternetMaxBandWidthIn')
 
 	def set_InternetMaxBandWidthIn(self,InternetMaxBandWidthIn):
 		self.add_query_param('InternetMaxBandWidthIn',InternetMaxBandWidthIn)
+
+	def get_TargetCapacity(self):
+		return self.get_query_params().get('TargetCapacity')
+
+	def set_TargetCapacity(self,TargetCapacity):
+		self.add_query_param('TargetCapacity',TargetCapacity)

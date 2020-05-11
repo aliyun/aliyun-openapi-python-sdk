@@ -23,7 +23,8 @@ from aliyunsdkehpc.endpoint import endpoint_data
 class SetAutoScaleConfigRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'EHPC', '2018-04-12', 'SetAutoScaleConfig','ehs')
+		RpcRequest.__init__(self, 'EHPC', '2018-04-12', 'SetAutoScaleConfig')
+		self.set_method('GET')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -111,6 +112,8 @@ class SetAutoScaleConfigRequest(RpcRequest):
 				self.add_query_param('Queues.' + str(i + 1) + '.SpotStrategy' , Queuess[i].get('SpotStrategy'))
 			if Queuess[i].get('QueueName') is not None:
 				self.add_query_param('Queues.' + str(i + 1) + '.QueueName' , Queuess[i].get('QueueName'))
+			if Queuess[i].get('MinNodesInQueue') is not None:
+				self.add_query_param('Queues.' + str(i + 1) + '.MinNodesInQueue' , Queuess[i].get('MinNodesInQueue'))
 			for j in range(len(Queuess[i].get('InstanceTypess'))):
 				if Queuess[i].get('InstanceTypess')[j] is not None:
 					if Queuess[i].get('InstanceTypess')[j].get('SpotStrategy') is not None:

@@ -23,7 +23,8 @@ from aliyunsdkehpc.endpoint import endpoint_data
 class UnbindAccountToClusterUserRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'EHPC', '2018-04-12', 'UnbindAccountToClusterUser','ehs')
+		RpcRequest.__init__(self, 'EHPC', '2018-04-12', 'UnbindAccountToClusterUser')
+		self.set_method('GET')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
