@@ -24,6 +24,7 @@ class DeleteDBClusterRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'polardb', '2017-08-01', 'DeleteDBCluster','polardb')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -35,6 +36,12 @@ class DeleteDBClusterRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+
+	def get_BackupRetentionPolicyOnClusterDeletion(self):
+		return self.get_query_params().get('BackupRetentionPolicyOnClusterDeletion')
+
+	def set_BackupRetentionPolicyOnClusterDeletion(self,BackupRetentionPolicyOnClusterDeletion):
+		self.add_query_param('BackupRetentionPolicyOnClusterDeletion',BackupRetentionPolicyOnClusterDeletion)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')

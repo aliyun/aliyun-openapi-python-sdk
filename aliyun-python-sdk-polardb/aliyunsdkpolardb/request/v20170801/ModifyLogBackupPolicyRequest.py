@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkpolardb.endpoint import endpoint_data
 
-class DescribeBackupPolicyRequest(RpcRequest):
+class ModifyLogBackupPolicyRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'polardb', '2017-08-01', 'DescribeBackupPolicy','polardb')
+		RpcRequest.__init__(self, 'polardb', '2017-08-01', 'ModifyLogBackupPolicy','polardb')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -60,3 +60,9 @@ class DescribeBackupPolicyRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_LogBackupRetentionPeriod(self):
+		return self.get_query_params().get('LogBackupRetentionPeriod')
+
+	def set_LogBackupRetentionPeriod(self,LogBackupRetentionPeriod):
+		self.add_query_param('LogBackupRetentionPeriod',LogBackupRetentionPeriod)

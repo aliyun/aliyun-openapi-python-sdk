@@ -24,6 +24,7 @@ class ModifyBackupPolicyRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'polardb', '2017-08-01', 'ModifyBackupPolicy','polardb')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -36,11 +37,29 @@ class ModifyBackupPolicyRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_DataLevel2BackupRetentionPeriod(self):
+		return self.get_query_params().get('DataLevel2BackupRetentionPeriod')
+
+	def set_DataLevel2BackupRetentionPeriod(self,DataLevel2BackupRetentionPeriod):
+		self.add_query_param('DataLevel2BackupRetentionPeriod',DataLevel2BackupRetentionPeriod)
+
 	def get_PreferredBackupPeriod(self):
 		return self.get_query_params().get('PreferredBackupPeriod')
 
 	def set_PreferredBackupPeriod(self,PreferredBackupPeriod):
 		self.add_query_param('PreferredBackupPeriod',PreferredBackupPeriod)
+
+	def get_DataLevel1BackupRetentionPeriod(self):
+		return self.get_query_params().get('DataLevel1BackupRetentionPeriod')
+
+	def set_DataLevel1BackupRetentionPeriod(self,DataLevel1BackupRetentionPeriod):
+		self.add_query_param('DataLevel1BackupRetentionPeriod',DataLevel1BackupRetentionPeriod)
+
+	def get_BackupRetentionPolicyOnClusterDeletion(self):
+		return self.get_query_params().get('BackupRetentionPolicyOnClusterDeletion')
+
+	def set_BackupRetentionPolicyOnClusterDeletion(self,BackupRetentionPolicyOnClusterDeletion):
+		self.add_query_param('BackupRetentionPolicyOnClusterDeletion',BackupRetentionPolicyOnClusterDeletion)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')

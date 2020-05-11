@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkpolardb.endpoint import endpoint_data
 
-class DescribeBackupPolicyRequest(RpcRequest):
+class DescribeDBClustersWithBackupsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'polardb', '2017-08-01', 'DescribeBackupPolicy','polardb')
+		RpcRequest.__init__(self, 'polardb', '2017-08-01', 'DescribeDBClustersWithBackups','polardb')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -37,17 +37,35 @@ class DescribeBackupPolicyRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_DBClusterDescription(self):
+		return self.get_query_params().get('DBClusterDescription')
+
+	def set_DBClusterDescription(self,DBClusterDescription):
+		self.add_query_param('DBClusterDescription',DBClusterDescription)
+
+	def get_IsDeleted(self):
+		return self.get_query_params().get('IsDeleted')
+
+	def set_IsDeleted(self,IsDeleted):
+		self.add_query_param('IsDeleted',IsDeleted)
+
+	def get_PageNumber(self):
+		return self.get_query_params().get('PageNumber')
+
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)
+
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
+
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_DBClusterId(self):
-		return self.get_query_params().get('DBClusterId')
-
-	def set_DBClusterId(self,DBClusterId):
-		self.add_query_param('DBClusterId',DBClusterId)
 
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
@@ -60,3 +78,21 @@ class DescribeBackupPolicyRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_DBType(self):
+		return self.get_query_params().get('DBType')
+
+	def set_DBType(self,DBType):
+		self.add_query_param('DBType',DBType)
+
+	def get_DBVersion(self):
+		return self.get_query_params().get('DBVersion')
+
+	def set_DBVersion(self,DBVersion):
+		self.add_query_param('DBVersion',DBVersion)
+
+	def get_DBClusterIds(self):
+		return self.get_query_params().get('DBClusterIds')
+
+	def set_DBClusterIds(self,DBClusterIds):
+		self.add_query_param('DBClusterIds',DBClusterIds)

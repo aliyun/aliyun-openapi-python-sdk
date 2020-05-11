@@ -24,6 +24,7 @@ class CreateDBClusterRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'polardb', '2017-08-01', 'CreateDBCluster','polardb')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -47,6 +48,12 @@ class CreateDBClusterRequest(RpcRequest):
 
 	def set_ClientToken(self,ClientToken):
 		self.add_query_param('ClientToken',ClientToken)
+
+	def get_CreationCategory(self):
+		return self.get_query_params().get('CreationCategory')
+
+	def set_CreationCategory(self,CreationCategory):
+		self.add_query_param('CreationCategory',CreationCategory)
 
 	def get_ClusterNetworkType(self):
 		return self.get_query_params().get('ClusterNetworkType')
