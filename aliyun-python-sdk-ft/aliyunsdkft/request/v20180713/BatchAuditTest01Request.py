@@ -16,7 +16,7 @@
 # KIND, either express or implied.  See the License for the
 # specific language governing permissions and limitations
 # under the License.
-# 11111
+
 from aliyunsdkcore.request import RpcRequest
 
 class BatchAuditTest01Request(RpcRequest):
