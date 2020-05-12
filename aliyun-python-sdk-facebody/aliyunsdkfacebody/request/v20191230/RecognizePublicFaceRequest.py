@@ -34,7 +34,7 @@ class RecognizePublicFaceRequest(RpcRequest):
 	def get_Tasks(self):
 		return self.get_body_params().get('Tasks')
 
-	def set_Tasks(self,Tasks):
-		for i in range(len(Tasks)):	
-			if Tasks[i].get('ImageURL') is not None:
-				self.add_body_params('Task.' + str(i + 1) + '.ImageURL' , Tasks[i].get('ImageURL'))
+	def set_Tasks(self, Tasks):
+		for depth1 in range(len(Tasks)):
+			if Tasks[depth1].get('ImageURL') is not None:
+				self.add_body_params('Task.' + str(depth1 + 1) + '.ImageURL', Tasks[depth1].get('ImageURL'))

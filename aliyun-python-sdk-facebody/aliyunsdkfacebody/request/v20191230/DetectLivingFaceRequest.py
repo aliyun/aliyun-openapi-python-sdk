@@ -34,7 +34,7 @@ class DetectLivingFaceRequest(RpcRequest):
 	def get_Taskss(self):
 		return self.get_body_params().get('Taskss')
 
-	def set_Taskss(self,Taskss):
-		for i in range(len(Taskss)):	
-			if Taskss[i].get('ImageURL') is not None:
-				self.add_body_params('Tasks.' + str(i + 1) + '.ImageURL' , Taskss[i].get('ImageURL'))
+	def set_Taskss(self, Taskss):
+		for depth1 in range(len(Taskss)):
+			if Taskss[depth1].get('ImageURL') is not None:
+				self.add_body_params('Tasks.' + str(depth1 + 1) + '.ImageURL', Taskss[depth1].get('ImageURL'))

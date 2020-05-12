@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkfacebody.endpoint import endpoint_data
 
-class AddFaceEntityRequest(RpcRequest):
+class SwapFacialFeaturesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'facebody', '2019-12-30', 'AddFaceEntity','facebody')
+		RpcRequest.__init__(self, 'facebody', '2019-12-30', 'SwapFacialFeatures','facebody')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,20 +31,20 @@ class AddFaceEntityRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_EntityId(self):
-		return self.get_body_params().get('EntityId')
+	def get_TargetImageURL(self):
+		return self.get_body_params().get('TargetImageURL')
 
-	def set_EntityId(self,EntityId):
-		self.add_body_params('EntityId', EntityId)
+	def set_TargetImageURL(self,TargetImageURL):
+		self.add_body_params('TargetImageURL', TargetImageURL)
 
-	def get_Labels(self):
-		return self.get_body_params().get('Labels')
+	def get_SourceImageURL(self):
+		return self.get_body_params().get('SourceImageURL')
 
-	def set_Labels(self,Labels):
-		self.add_body_params('Labels', Labels)
+	def set_SourceImageURL(self,SourceImageURL):
+		self.add_body_params('SourceImageURL', SourceImageURL)
 
-	def get_DbName(self):
-		return self.get_body_params().get('DbName')
+	def get_EditPart(self):
+		return self.get_body_params().get('EditPart')
 
-	def set_DbName(self,DbName):
-		self.add_body_params('DbName', DbName)
+	def set_EditPart(self,EditPart):
+		self.add_body_params('EditPart', EditPart)
