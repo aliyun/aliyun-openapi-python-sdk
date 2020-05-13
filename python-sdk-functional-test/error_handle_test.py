@@ -63,6 +63,7 @@ class ErrorHandleTest(SDKTestBase):
         # test invalid json format
         def get_response_object(inst):
             return 400, {}, b"bad-json"
+
         HttpResponse.get_response_object = get_response_object
         try:
             client.do_action_with_exception(request)
@@ -75,6 +76,7 @@ class ErrorHandleTest(SDKTestBase):
         # test valid json format but no Code or Message
         def get_response_object(inst):
             return 400, {}, b"""{"key" : "this is a valid json string"}"""
+
         HttpResponse.get_response_object = get_response_object
         try:
             client.do_action_with_exception(request)
@@ -87,6 +89,7 @@ class ErrorHandleTest(SDKTestBase):
         # test missing Code in response
         def get_response_object(inst):
             return 400, {}, b"{\"Message\": \"Some message\"}"
+
         HttpResponse.get_response_object = get_response_object
         try:
             client.do_action_with_exception(request)
@@ -98,6 +101,7 @@ class ErrorHandleTest(SDKTestBase):
         # test missing Code in response
         def get_response_object(inst):
             return 400, {}, b"{\"Code\": \"YouMessedSomethingUp\"}"
+
         HttpResponse.get_response_object = get_response_object
         try:
             client.do_action_with_exception(request)

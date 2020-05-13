@@ -36,7 +36,6 @@ class TimeoutTest(SDKTestBase):
         globals()['_test_patch_client_connect_timeout'] = None
 
     def _patch_client(self, client):
-
         original_make_http_response = client._make_http_response
 
         def _make_http_response(endpoint, request, read_timeout, connect_timeout,
@@ -132,4 +131,3 @@ class TimeoutTest(SDKTestBase):
         self._test_timeout(client, list_users, 10, 7)
         self._test_timeout(client, run_instances, 86, 8)
         self._test_timeout(client, create_instance, 86, 9)
-

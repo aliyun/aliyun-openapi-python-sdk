@@ -1,13 +1,9 @@
 # encoding:utf-8
-import json
-import os
-
 from aliyunsdkcore.client import AcsClient
 from aliyunsdkcore.auth.credentials import StsTokenCredential
 from aliyunsdkcore.request import CommonRequest
 
 from aliyunsdksts.request.v20150401.AssumeRoleRequest import AssumeRoleRequest
-
 
 from base import SDKTestBase, MyServer
 
@@ -62,6 +58,8 @@ class CoreLevelTest(SDKTestBase):
             action_name="DescribeRegions")
         response = acs_client.do_action_with_exception(request)
         ret = self.get_dict_response(response)
+        self._delete_default_ram_role()
+        self._delete_access_key()
         self.assertTrue(ret.get("Regions"))
         self.assertTrue(ret.get("RequestId"))
 
@@ -114,7 +112,7 @@ class CoreLevelTest(SDKTestBase):
         request = DescribeCdnCertificateDetailRequest()
         request.set_CertName("sdk&-杭&&&州-test")
         request.set_endpoint("localhost")
+        request.set_method('GET')
         with MyServer() as s:
             client.do_action_with_exception(request)
             self.assertTrue(s.url.find("CertName="))
-

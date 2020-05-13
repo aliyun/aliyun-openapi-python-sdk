@@ -99,9 +99,9 @@ class NewEndpointTest(SDKTestBase):
         )
 
         with patch.object(
-            my_client._endpoint_resolver,
-            'resolve',
-            wraps=my_client._endpoint_resolver.resolve
+                my_client._endpoint_resolver,
+                'resolve',
+                wraps=my_client._endpoint_resolver.resolve
         ) as monkey:
             monkey.side_effect = ClientException(
                 error_code.SDK_HTTP_ERROR,
@@ -120,13 +120,13 @@ class NewEndpointTest(SDKTestBase):
         response = my_client.do_action_with_exception(request)
 
         my_client.add_endpoint(
-                "cn-hangzhou",
-                "Ecs",
-                "abc.cn-hangzhou.endpoint-test.exception.com")
+            "cn-hangzhou",
+            "Ecs",
+            "abc.cn-hangzhou.endpoint-test.exception.com")
 
         with patch.object(
-            my_client._endpoint_resolver,
-            'resolve'
+                my_client._endpoint_resolver,
+                'resolve'
         ) as monkey:
             monkey.side_effect = ClientException(
                 error_code.SDK_HTTP_ERROR,
@@ -153,8 +153,8 @@ class NewEndpointTest(SDKTestBase):
         self.init_env(test_config)
 
         self.assertEqual(
-                "ecs.mars-ningbo.aliyuncs.com",
-                self.resolve("mars-ningbo", "abc")
+            "ecs.mars-ningbo.aliyuncs.com",
+            self.resolve("mars-ningbo", "abc")
         )
 
     def test_global_endpoint_comes_from_local_config(self):
@@ -190,9 +190,9 @@ class NewEndpointTest(SDKTestBase):
     def test_endpoint_comes_from_location_service(self):
         self.init_env("{}")  # empty local config
         with patch.object(
-            self._location_service_endpoint_resolver,
-            '_call_location_service',
-            wraps=self._location_service_endpoint_resolver._call_location_service
+                self._location_service_endpoint_resolver,
+                '_call_location_service',
+                wraps=self._location_service_endpoint_resolver._call_location_service
         ) as monkey:
             for i in range(3):
                 self.assertEqual(
@@ -206,9 +206,9 @@ class NewEndpointTest(SDKTestBase):
         self.init_env("{}")  # empty local config
 
         with patch.object(
-            self._location_service_endpoint_resolver,
-            '_call_location_service',
-            wraps=self._location_service_endpoint_resolver._call_location_service
+                self._location_service_endpoint_resolver,
+                '_call_location_service',
+                wraps=self._location_service_endpoint_resolver._call_location_service
         ) as monkey:
 
             self.assertEqual(0, monkey.call_count)
@@ -270,9 +270,9 @@ class NewEndpointTest(SDKTestBase):
             except ClientException as e:
                 self.assertEqual(error_code.SDK_ENDPOINT_RESOLVING_ERROR, e.get_error_code())
                 self.assertTrue(e.get_error_msg().startswith(
-                        "No endpoint for product 'InvalidProductCode'.\n"
-                        "Please check the product code, "
-                        "or set an endpoint for your request explicitly.\n")
+                    "No endpoint for product 'InvalidProductCode'.\n"
+                    "Please check the product code, "
+                    "or set an endpoint for your request explicitly.\n")
                 )
             self.assertEqual(3, monkey.call_count)
 
@@ -296,9 +296,9 @@ class NewEndpointTest(SDKTestBase):
         except ClientException as e:
             self.assertEqual(error_code.SDK_ENDPOINT_RESOLVING_ERROR, e.get_error_code())
             self.assertTrue(e.get_error_msg().startswith(
-                    "No endpoint for product 'InvalidProductCode'.\n"
-                    "Please check the product code, "
-                    "or set an endpoint for your request explicitly.\n")
+                "No endpoint for product 'InvalidProductCode'.\n"
+                "Please check the product code, "
+                "or set an endpoint for your request explicitly.\n")
             )
 
     def test_inner_api_endpoint(self):
@@ -397,9 +397,9 @@ class NewEndpointTest(SDKTestBase):
         client._endpoint_resolver = self._endpoint_resolver
 
         with patch.object(
-            self._location_service_endpoint_resolver,
-            '_call_location_service',
-            wraps=self._location_service_endpoint_resolver._call_location_service
+                self._location_service_endpoint_resolver,
+                '_call_location_service',
+                wraps=self._location_service_endpoint_resolver._call_location_service
         ) as monkey:
             for i in range(3):
                 request = DescribeApisRequest()
@@ -432,9 +432,9 @@ class NewEndpointTest(SDKTestBase):
         )
 
         with patch.object(
-            my_client._endpoint_resolver,
-            'resolve',
-            wraps=my_client._endpoint_resolver.resolve
+                my_client._endpoint_resolver,
+                'resolve',
+                wraps=my_client._endpoint_resolver.resolve
         ) as monkey:
             monkey.side_effect = ClientException(
                 error_code.SDK_HTTP_ERROR,

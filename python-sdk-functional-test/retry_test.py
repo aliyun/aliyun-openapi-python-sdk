@@ -400,4 +400,3 @@ class RetryTest(SDKTestBase):
             base *= 2
             if base >= 20:
                 base = 20
-

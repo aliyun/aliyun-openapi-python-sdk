@@ -14,7 +14,6 @@
 
 import os.path
 import json
-import sys
 import os
 import threading
 import logging
@@ -32,8 +31,8 @@ from aliyunsdkram.request.v20150501.DeleteAccessKeyRequest import DeleteAccessKe
 from aliyunsdkram.request.v20150501.ListAccessKeysRequest import ListAccessKeysRequest
 from aliyunsdkram.request.v20150501.ListRolesRequest import ListRolesRequest
 from aliyunsdkram.request.v20150501.CreateRoleRequest import CreateRoleRequest
+from aliyunsdkram.request.v20150501.DeleteRoleRequest import DeleteRoleRequest
 from aliyunsdkram.request.v20150501.AttachPolicyToUserRequest import AttachPolicyToUserRequest
-
 
 # The unittest module got a significant overhaul
 # in 2.7, so if we're in 2.6 we can use the backported
@@ -100,6 +99,7 @@ class SDKTestBase(TestCase):
         self.access_key_secret = self._read_key_from_env_or_config("ACCESS_KEY_SECRET")
         self.region_id = self._read_key_from_env_or_config("REGION_ID")
         self.user_id = self._read_key_from_env_or_config("USER_ID")
+        self.root_user_id = self._read_key_from_env_or_config("ROOT_UID")
         if 'TRAVIS_JOB_NUMBER' in os.environ:
             self.travis_concurrent = os.environ.get('TRAVIS_JOB_NUMBER').split(".")[-1]
         else:
@@ -234,7 +234,7 @@ class SDKTestBase(TestCase):
           ],
           "Version": "1"
         }
-        """ % self.user_id
+        """ % self.root_user_id
 
         response = request_helper(self.client, CreateRoleRequest(),
                                   RoleName=self.default_ram_role_name,
@@ -244,10 +244,14 @@ class SDKTestBase(TestCase):
         # we can AssumeRole later
         time.sleep(5)
 
+    def _delete_default_ram_role(self):
+        request_helper(self.client, DeleteRoleRequest(), RoleName=self.default_ram_role_name)
+
 
 def disabled(func):
     def _decorator(func):
         pass
+
     return _decorator
 
 
@@ -288,4 +292,3 @@ class MyServer:
     @property
     def url(self):
         return self._url
-
