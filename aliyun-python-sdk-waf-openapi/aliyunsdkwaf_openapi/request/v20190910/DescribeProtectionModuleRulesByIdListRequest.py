@@ -20,16 +20,22 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkwaf_openapi.endpoint import endpoint_data
 
-class DescribeInstanceSpecInfoRequest(RpcRequest):
+class DescribeProtectionModuleRulesByIdListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'waf-openapi', '2019-09-10', 'DescribeInstanceSpecInfo','waf')
+		RpcRequest.__init__(self, 'waf-openapi', '2019-09-10', 'DescribeProtectionModuleRulesByIdList','waf')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+
+	def get_RuleIdList(self):
+		return self.get_query_params().get('RuleIdList')
+
+	def set_RuleIdList(self,RuleIdList):
+		self.add_query_param('RuleIdList',RuleIdList)
 
 	def get_ResourceGroupId(self):
 		return self.get_query_params().get('ResourceGroupId')
@@ -42,3 +48,9 @@ class DescribeInstanceSpecInfoRequest(RpcRequest):
 
 	def set_InstanceId(self,InstanceId):
 		self.add_query_param('InstanceId',InstanceId)
+
+	def get_Lang(self):
+		return self.get_query_params().get('Lang')
+
+	def set_Lang(self,Lang):
+		self.add_query_param('Lang',Lang)

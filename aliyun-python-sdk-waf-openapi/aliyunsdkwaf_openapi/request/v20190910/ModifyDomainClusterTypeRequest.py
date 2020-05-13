@@ -24,6 +24,7 @@ class ModifyDomainClusterTypeRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'waf-openapi', '2019-09-10', 'ModifyDomainClusterType','waf')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -47,9 +48,3 @@ class ModifyDomainClusterTypeRequest(RpcRequest):
 
 	def set_Domain(self,Domain):
 		self.add_query_param('Domain',Domain)
-
-	def get_Region(self):
-		return self.get_query_params().get('Region')
-
-	def set_Region(self,Region):
-		self.add_query_param('Region',Region)
