@@ -19,8 +19,8 @@ install:
 script:
   - make lint
   - make test
-  - test -z $ACCESS_KEY_ID -a -z $ACCESS_KEY_SECRET || make functional-test
   - make coverage-report
+  - test -z $ACCESS_KEY_ID -a -z $ACCESS_KEY_SECRET || make functional-test
 
 notifications:
     webhooks: https://oapi.dingtalk.com/robot/send?access_token=096ed387df243a6d60835aadeccc47165f3813bc7cb81cdd0cfeadfd28e3acc1

@@ -29,4 +29,3 @@ class LoggerTest(SDKTestBase):
         get_logger.assert_called_with('foo.bar')
         get_logger.return_value.setLevel.assert_called_with(logging.ERROR)
         formatter.assert_called_with('foo')
-
