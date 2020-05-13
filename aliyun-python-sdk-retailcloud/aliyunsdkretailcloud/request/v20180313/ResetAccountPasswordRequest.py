@@ -20,25 +20,31 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkretailcloud.endpoint import endpoint_data
 
-class DescribeAppEnvironmentDetailRequest(RpcRequest):
+class ResetAccountPasswordRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'retailcloud', '2018-03-13', 'DescribeAppEnvironmentDetail','retailcloud')
-		self.set_method('GET')
+		RpcRequest.__init__(self, 'retailcloud', '2018-03-13', 'ResetAccountPassword','retailcloud')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_AppId(self):
-		return self.get_query_params().get('AppId')
+	def get_AccountPassword(self):
+		return self.get_body_params().get('AccountPassword')
 
-	def set_AppId(self,AppId):
-		self.add_query_param('AppId',AppId)
+	def set_AccountPassword(self,AccountPassword):
+		self.add_body_params('AccountPassword', AccountPassword)
 
-	def get_EnvId(self):
-		return self.get_query_params().get('EnvId')
+	def get_AccountName(self):
+		return self.get_body_params().get('AccountName')
 
-	def set_EnvId(self,EnvId):
-		self.add_query_param('EnvId',EnvId)
+	def set_AccountName(self,AccountName):
+		self.add_body_params('AccountName', AccountName)
+
+	def get_DbInstanceId(self):
+		return self.get_body_params().get('DbInstanceId')
+
+	def set_DbInstanceId(self,DbInstanceId):
+		self.add_body_params('DbInstanceId', DbInstanceId)

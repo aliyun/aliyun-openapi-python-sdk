@@ -64,10 +64,10 @@ class CreateAppRequest(RpcRequest):
 	def get_MiddleWareIdLists(self):
 		return self.get_body_params().get('MiddleWareIdLists')
 
-	def set_MiddleWareIdLists(self,MiddleWareIdLists):
-		for i in range(len(MiddleWareIdLists)):	
-			if MiddleWareIdLists[i] is not None:
-				self.add_body_params('MiddleWareIdList.' + str(i + 1) , MiddleWareIdLists[i]);
+	def set_MiddleWareIdLists(self, MiddleWareIdLists):
+		for depth1 in range(len(MiddleWareIdLists)):
+			if MiddleWareIdLists[depth1] is not None:
+				self.add_body_params('MiddleWareIdList.' + str(depth1 + 1) , MiddleWareIdLists[depth1])
 
 	def get_StateType(self):
 		return self.get_body_params().get('StateType')
@@ -84,15 +84,14 @@ class CreateAppRequest(RpcRequest):
 	def get_UserRoless(self):
 		return self.get_body_params().get('UserRoless')
 
-	def set_UserRoless(self,UserRoless):
-		for i in range(len(UserRoless)):	
-			if UserRoless[i].get('RoleName') is not None:
-				self.add_body_params('UserRoles.' + str(i + 1) + '.RoleName' , UserRoless[i].get('RoleName'))
-			if UserRoless[i].get('UserType') is not None:
-				self.add_body_params('UserRoles.' + str(i + 1) + '.UserType' , UserRoless[i].get('UserType'))
-			if UserRoless[i].get('UserId') is not None:
-				self.add_body_params('UserRoles.' + str(i + 1) + '.UserId' , UserRoless[i].get('UserId'))
-
+	def set_UserRoless(self, UserRoless):
+		for depth1 in range(len(UserRoless)):
+			if UserRoless[depth1].get('RoleName') is not None:
+				self.add_body_params('UserRoles.' + str(depth1 + 1) + '.RoleName', UserRoless[depth1].get('RoleName'))
+			if UserRoless[depth1].get('UserType') is not None:
+				self.add_body_params('UserRoles.' + str(depth1 + 1) + '.UserType', UserRoless[depth1].get('UserType'))
+			if UserRoless[depth1].get('UserId') is not None:
+				self.add_body_params('UserRoles.' + str(depth1 + 1) + '.UserId', UserRoless[depth1].get('UserId'))
 
 	def get_BizCode(self):
 		return self.get_body_params().get('BizCode')

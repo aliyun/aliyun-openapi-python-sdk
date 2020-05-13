@@ -58,19 +58,18 @@ class CreateServiceRequest(RpcRequest):
 	def get_PortMappingss(self):
 		return self.get_body_params().get('PortMappingss')
 
-	def set_PortMappingss(self,PortMappingss):
-		for i in range(len(PortMappingss)):	
-			if PortMappingss[i].get('Protocol') is not None:
-				self.add_body_params('PortMappings.' + str(i + 1) + '.Protocol' , PortMappingss[i].get('Protocol'))
-			if PortMappingss[i].get('Port') is not None:
-				self.add_body_params('PortMappings.' + str(i + 1) + '.Port' , PortMappingss[i].get('Port'))
-			if PortMappingss[i].get('Name') is not None:
-				self.add_body_params('PortMappings.' + str(i + 1) + '.Name' , PortMappingss[i].get('Name'))
-			if PortMappingss[i].get('NodePort') is not None:
-				self.add_body_params('PortMappings.' + str(i + 1) + '.NodePort' , PortMappingss[i].get('NodePort'))
-			if PortMappingss[i].get('TargetPort') is not None:
-				self.add_body_params('PortMappings.' + str(i + 1) + '.TargetPort' , PortMappingss[i].get('TargetPort'))
-
+	def set_PortMappingss(self, PortMappingss):
+		for depth1 in range(len(PortMappingss)):
+			if PortMappingss[depth1].get('Protocol') is not None:
+				self.add_body_params('PortMappings.' + str(depth1 + 1) + '.Protocol', PortMappingss[depth1].get('Protocol'))
+			if PortMappingss[depth1].get('Port') is not None:
+				self.add_body_params('PortMappings.' + str(depth1 + 1) + '.Port', PortMappingss[depth1].get('Port'))
+			if PortMappingss[depth1].get('Name') is not None:
+				self.add_body_params('PortMappings.' + str(depth1 + 1) + '.Name', PortMappingss[depth1].get('Name'))
+			if PortMappingss[depth1].get('NodePort') is not None:
+				self.add_body_params('PortMappings.' + str(depth1 + 1) + '.NodePort', PortMappingss[depth1].get('NodePort'))
+			if PortMappingss[depth1].get('TargetPort') is not None:
+				self.add_body_params('PortMappings.' + str(depth1 + 1) + '.TargetPort', PortMappingss[depth1].get('TargetPort'))
 
 	def get_EnvId(self):
 		return self.get_query_params().get('EnvId')

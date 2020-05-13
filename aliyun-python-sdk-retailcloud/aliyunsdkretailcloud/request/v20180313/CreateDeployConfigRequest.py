@@ -24,6 +24,7 @@ class CreateDeployConfigRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'retailcloud', '2018-03-13', 'CreateDeployConfig','retailcloud')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -39,10 +40,10 @@ class CreateDeployConfigRequest(RpcRequest):
 	def get_ConfigMapLists(self):
 		return self.get_query_params().get('ConfigMapLists')
 
-	def set_ConfigMapLists(self,ConfigMapLists):
-		for i in range(len(ConfigMapLists)):	
-			if ConfigMapLists[i] is not None:
-				self.add_query_param('ConfigMapList.' + str(i + 1) , ConfigMapLists[i]);
+	def set_ConfigMapLists(self, ConfigMapLists):
+		for depth1 in range(len(ConfigMapLists)):
+			if ConfigMapLists[depth1] is not None:
+				self.add_query_param('ConfigMapList.' + str(depth1 + 1) , ConfigMapLists[depth1])
 
 	def get_AppId(self):
 		return self.get_query_params().get('AppId')
@@ -77,10 +78,10 @@ class CreateDeployConfigRequest(RpcRequest):
 	def get_SecretLists(self):
 		return self.get_query_params().get('SecretLists')
 
-	def set_SecretLists(self,SecretLists):
-		for i in range(len(SecretLists)):	
-			if SecretLists[i] is not None:
-				self.add_query_param('SecretList.' + str(i + 1) , SecretLists[i]);
+	def set_SecretLists(self, SecretLists):
+		for depth1 in range(len(SecretLists)):
+			if SecretLists[depth1] is not None:
+				self.add_query_param('SecretList.' + str(depth1 + 1) , SecretLists[depth1])
 
 	def get_Deployment(self):
 		return self.get_query_params().get('Deployment')

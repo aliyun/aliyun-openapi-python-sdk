@@ -24,6 +24,7 @@ class AddClusterNodeRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'retailcloud', '2018-03-13', 'AddClusterNode','retailcloud')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -33,10 +34,10 @@ class AddClusterNodeRequest(RpcRequest):
 	def get_EcsInstanceIdLists(self):
 		return self.get_query_params().get('EcsInstanceIdLists')
 
-	def set_EcsInstanceIdLists(self,EcsInstanceIdLists):
-		for i in range(len(EcsInstanceIdLists)):	
-			if EcsInstanceIdLists[i] is not None:
-				self.add_query_param('EcsInstanceIdList.' + str(i + 1) , EcsInstanceIdLists[i]);
+	def set_EcsInstanceIdLists(self, EcsInstanceIdLists):
+		for depth1 in range(len(EcsInstanceIdLists)):
+			if EcsInstanceIdLists[depth1] is not None:
+				self.add_query_param('EcsInstanceIdList.' + str(depth1 + 1) , EcsInstanceIdLists[depth1])
 
 	def get_ClusterInstanceId(self):
 		return self.get_query_params().get('ClusterInstanceId')

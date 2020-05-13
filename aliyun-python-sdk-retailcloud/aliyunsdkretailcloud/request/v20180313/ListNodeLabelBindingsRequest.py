@@ -24,6 +24,7 @@ class ListNodeLabelBindingsRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'retailcloud', '2018-03-13', 'ListNodeLabelBindings','retailcloud')
+		self.set_method('GET')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):

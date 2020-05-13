@@ -40,10 +40,10 @@ class UpdateDeployConfigRequest(RpcRequest):
 	def get_ConfigMapLists(self):
 		return self.get_query_params().get('ConfigMapLists')
 
-	def set_ConfigMapLists(self,ConfigMapLists):
-		for i in range(len(ConfigMapLists)):	
-			if ConfigMapLists[i] is not None:
-				self.add_query_param('ConfigMapList.' + str(i + 1) , ConfigMapLists[i]);
+	def set_ConfigMapLists(self, ConfigMapLists):
+		for depth1 in range(len(ConfigMapLists)):
+			if ConfigMapLists[depth1] is not None:
+				self.add_query_param('ConfigMapList.' + str(depth1 + 1) , ConfigMapLists[depth1])
 
 	def get_ConfigMap(self):
 		return self.get_query_params().get('ConfigMap')
@@ -66,10 +66,10 @@ class UpdateDeployConfigRequest(RpcRequest):
 	def get_SecretLists(self):
 		return self.get_query_params().get('SecretLists')
 
-	def set_SecretLists(self,SecretLists):
-		for i in range(len(SecretLists)):	
-			if SecretLists[i] is not None:
-				self.add_query_param('SecretList.' + str(i + 1) , SecretLists[i]);
+	def set_SecretLists(self, SecretLists):
+		for depth1 in range(len(SecretLists)):
+			if SecretLists[depth1] is not None:
+				self.add_query_param('SecretList.' + str(depth1 + 1) , SecretLists[depth1])
 
 	def get_Id(self):
 		return self.get_query_params().get('Id')

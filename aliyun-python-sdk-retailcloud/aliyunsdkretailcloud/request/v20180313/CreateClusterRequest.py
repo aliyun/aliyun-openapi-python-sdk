@@ -46,10 +46,10 @@ class CreateClusterRequest(RpcRequest):
 	def get_Vswitchidss(self):
 		return self.get_query_params().get('Vswitchidss')
 
-	def set_Vswitchidss(self,Vswitchidss):
-		for i in range(len(Vswitchidss)):	
-			if Vswitchidss[i] is not None:
-				self.add_query_param('Vswitchids.' + str(i + 1) , Vswitchidss[i]);
+	def set_Vswitchidss(self, Vswitchidss):
+		for depth1 in range(len(Vswitchidss)):
+			if Vswitchidss[depth1] is not None:
+				self.add_query_param('Vswitchids.' + str(depth1 + 1) , Vswitchidss[depth1])
 
 	def get_CloudMonitorFlags(self):
 		return self.get_query_params().get('CloudMonitorFlags')

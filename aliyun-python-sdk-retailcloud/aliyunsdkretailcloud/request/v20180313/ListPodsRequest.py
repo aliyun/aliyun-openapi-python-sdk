@@ -34,10 +34,10 @@ class ListPodsRequest(RpcRequest):
 	def get_StatusLists(self):
 		return self.get_body_params().get('StatusLists')
 
-	def set_StatusLists(self,StatusLists):
-		for i in range(len(StatusLists)):	
-			if StatusLists[i] is not None:
-				self.add_body_params('StatusList.' + str(i + 1) , StatusLists[i]);
+	def set_StatusLists(self, StatusLists):
+		for depth1 in range(len(StatusLists)):
+			if StatusLists[depth1] is not None:
+				self.add_body_params('StatusList.' + str(depth1 + 1) , StatusLists[depth1])
 
 	def get_DeployOrderId(self):
 		return self.get_query_params().get('DeployOrderId')
@@ -60,7 +60,7 @@ class ListPodsRequest(RpcRequest):
 	def get_ResultLists(self):
 		return self.get_body_params().get('ResultLists')
 
-	def set_ResultLists(self,ResultLists):
-		for i in range(len(ResultLists)):	
-			if ResultLists[i] is not None:
-				self.add_body_params('ResultList.' + str(i + 1) , ResultLists[i]);
+	def set_ResultLists(self, ResultLists):
+		for depth1 in range(len(ResultLists)):
+			if ResultLists[depth1] is not None:
+				self.add_body_params('ResultList.' + str(depth1 + 1) , ResultLists[depth1])

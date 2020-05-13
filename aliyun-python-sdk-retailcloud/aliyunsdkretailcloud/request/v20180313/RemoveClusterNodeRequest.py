@@ -34,10 +34,10 @@ class RemoveClusterNodeRequest(RpcRequest):
 	def get_EcsInstanceIdLists(self):
 		return self.get_query_params().get('EcsInstanceIdLists')
 
-	def set_EcsInstanceIdLists(self,EcsInstanceIdLists):
-		for i in range(len(EcsInstanceIdLists)):	
-			if EcsInstanceIdLists[i] is not None:
-				self.add_query_param('EcsInstanceIdList.' + str(i + 1) , EcsInstanceIdLists[i]);
+	def set_EcsInstanceIdLists(self, EcsInstanceIdLists):
+		for depth1 in range(len(EcsInstanceIdLists)):
+			if EcsInstanceIdLists[depth1] is not None:
+				self.add_query_param('EcsInstanceIdList.' + str(depth1 + 1) , EcsInstanceIdLists[depth1])
 
 	def get_ClusterInstanceId(self):
 		return self.get_query_params().get('ClusterInstanceId')

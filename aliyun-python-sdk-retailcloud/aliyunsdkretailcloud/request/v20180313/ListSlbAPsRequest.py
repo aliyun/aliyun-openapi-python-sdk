@@ -34,10 +34,10 @@ class ListSlbAPsRequest(RpcRequest):
 	def get_ProtocolLists(self):
 		return self.get_body_params().get('ProtocolLists')
 
-	def set_ProtocolLists(self,ProtocolLists):
-		for i in range(len(ProtocolLists)):	
-			if ProtocolLists[i] is not None:
-				self.add_body_params('ProtocolList.' + str(i + 1) , ProtocolLists[i]);
+	def set_ProtocolLists(self, ProtocolLists):
+		for depth1 in range(len(ProtocolLists)):
+			if ProtocolLists[depth1] is not None:
+				self.add_body_params('ProtocolList.' + str(depth1 + 1) , ProtocolLists[depth1])
 
 	def get_SlbId(self):
 		return self.get_query_params().get('SlbId')
