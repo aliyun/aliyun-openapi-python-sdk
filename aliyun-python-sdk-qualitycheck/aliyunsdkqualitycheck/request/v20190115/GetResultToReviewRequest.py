@@ -18,17 +18,18 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkqualitycheck.endpoint import endpoint_data
 
 class GetResultToReviewRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Qualitycheck', '2019-01-15', 'GetResultToReview')
+		RpcRequest.__init__(self, 'Qualitycheck', '2019-01-15', 'GetResultToReview','Qualitycheck')
+		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ResourceOwnerId(self):
-		return self.get_query_params().get('ResourceOwnerId')
-
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
 	def get_JsonStr(self):
 		return self.get_query_params().get('JsonStr')
