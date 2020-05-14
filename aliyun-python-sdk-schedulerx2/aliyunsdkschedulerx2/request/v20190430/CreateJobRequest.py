@@ -179,13 +179,12 @@ class CreateJobRequest(RpcRequest):
 	def get_ContactInfos(self):
 		return self.get_body_params().get('ContactInfos')
 
-	def set_ContactInfos(self,ContactInfos):
-		for i in range(len(ContactInfos)):	
-			if ContactInfos[i].get('UserPhone') is not None:
-				self.add_body_params('ContactInfo.' + str(i + 1) + '.UserPhone' , ContactInfos[i].get('UserPhone'))
-			if ContactInfos[i].get('UserName') is not None:
-				self.add_body_params('ContactInfo.' + str(i + 1) + '.UserName' , ContactInfos[i].get('UserName'))
-
+	def set_ContactInfos(self, ContactInfos):
+		for depth1 in range(len(ContactInfos)):
+			if ContactInfos[depth1].get('UserPhone') is not None:
+				self.add_body_params('ContactInfo.' + str(depth1 + 1) + '.UserPhone', ContactInfos[depth1].get('UserPhone'))
+			if ContactInfos[depth1].get('UserName') is not None:
+				self.add_body_params('ContactInfo.' + str(depth1 + 1) + '.UserName', ContactInfos[depth1].get('UserName'))
 
 	def get_Name(self):
 		return self.get_body_params().get('Name')

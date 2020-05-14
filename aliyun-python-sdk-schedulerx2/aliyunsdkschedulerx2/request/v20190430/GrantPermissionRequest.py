@@ -20,12 +20,11 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkschedulerx2.endpoint import endpoint_data
 
-class DisableWorkflowRequest(RpcRequest):
+class GrantPermissionRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'schedulerx2', '2019-04-30', 'DisableWorkflow')
-		self.set_protocol_type('https')
-		self.set_method('GET')
+		RpcRequest.__init__(self, 'schedulerx2', '2019-04-30', 'GrantPermission')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -44,14 +43,26 @@ class DisableWorkflowRequest(RpcRequest):
 	def set_GroupId(self,GroupId):
 		self.add_query_param('GroupId',GroupId)
 
+	def get_UserId(self):
+		return self.get_query_params().get('UserId')
+
+	def set_UserId(self,UserId):
+		self.add_query_param('UserId',UserId)
+
+	def get_GrantOption(self):
+		return self.get_query_params().get('GrantOption')
+
+	def set_GrantOption(self,GrantOption):
+		self.add_query_param('GrantOption',GrantOption)
+
 	def get_Namespace(self):
 		return self.get_query_params().get('Namespace')
 
 	def set_Namespace(self,Namespace):
 		self.add_query_param('Namespace',Namespace)
 
-	def get_WorkflowId(self):
-		return self.get_query_params().get('WorkflowId')
+	def get_UserName(self):
+		return self.get_query_params().get('UserName')
 
-	def set_WorkflowId(self,WorkflowId):
-		self.add_query_param('WorkflowId',WorkflowId)
+	def set_UserName(self,UserName):
+		self.add_query_param('UserName',UserName)

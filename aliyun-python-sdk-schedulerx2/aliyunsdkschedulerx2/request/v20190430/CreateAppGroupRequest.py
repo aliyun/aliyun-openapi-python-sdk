@@ -25,6 +25,7 @@ class CreateAppGroupRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'schedulerx2', '2019-04-30', 'CreateAppGroup')
 		self.set_protocol_type('https')
+		self.set_method('GET')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
