@@ -24,6 +24,7 @@ class DescribeInstancesRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'R-kvstore', '2015-01-01', 'DescribeInstances','redisa')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -99,13 +100,12 @@ class DescribeInstancesRequest(RpcRequest):
 	def get_Tags(self):
 		return self.get_query_params().get('Tags')
 
-	def set_Tags(self,Tags):
-		for i in range(len(Tags)):	
-			if Tags[i].get('Value') is not None:
-				self.add_query_param('Tag.' + str(i + 1) + '.Value' , Tags[i].get('Value'))
-			if Tags[i].get('Key') is not None:
-				self.add_query_param('Tag.' + str(i + 1) + '.Key' , Tags[i].get('Key'))
-
+	def set_Tags(self, Tags):
+		for depth1 in range(len(Tags)):
+			if Tags[depth1].get('Value') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tags[depth1].get('Value'))
+			if Tags[depth1].get('Key') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tags[depth1].get('Key'))
 
 	def get_InstanceStatus(self):
 		return self.get_query_params().get('InstanceStatus')

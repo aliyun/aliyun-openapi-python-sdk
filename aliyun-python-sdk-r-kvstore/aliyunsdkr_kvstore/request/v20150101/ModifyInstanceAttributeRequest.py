@@ -24,6 +24,7 @@ class ModifyInstanceAttributeRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'R-kvstore', '2015-01-01', 'ModifyInstanceAttribute','redisa')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -41,6 +42,12 @@ class ModifyInstanceAttributeRequest(RpcRequest):
 
 	def set_SecurityToken(self,SecurityToken):
 		self.add_query_param('SecurityToken',SecurityToken)
+
+	def get_InstanceReleaseProtection(self):
+		return self.get_query_params().get('InstanceReleaseProtection')
+
+	def set_InstanceReleaseProtection(self,InstanceReleaseProtection):
+		self.add_query_param('InstanceReleaseProtection',InstanceReleaseProtection)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
