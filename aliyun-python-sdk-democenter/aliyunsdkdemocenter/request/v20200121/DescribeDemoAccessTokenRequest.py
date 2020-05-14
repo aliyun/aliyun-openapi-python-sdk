@@ -23,7 +23,7 @@ from aliyunsdkdemocenter.endpoint import endpoint_data
 class DescribeDemoAccessTokenRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'DemoCenter', '2020-01-21', 'DescribeDemoAccessToken','DemoCenter')
+		RpcRequest.__init__(self, 'DemoCenter', '2020-01-21', 'DescribeDemoAccessToken')
 		self.set_protocol_type('https')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):

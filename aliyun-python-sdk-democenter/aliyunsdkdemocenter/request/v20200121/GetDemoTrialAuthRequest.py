@@ -20,20 +20,19 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdemocenter.endpoint import endpoint_data
 
-class ExpireDemoAccessTokenRequest(RpcRequest):
+class GetDemoTrialAuthRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'DemoCenter', '2020-01-21', 'ExpireDemoAccessToken')
-		self.set_protocol_type('https')
-		self.set_method('POST')
+		RpcRequest.__init__(self, 'DemoCenter', '2020-01-21', 'GetDemoTrialAuth')
+		self.set_method('GET')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_DemoAccessToken(self):
-		return self.get_body_params().get('DemoAccessToken')
+	def get_DemoId(self):
+		return self.get_body_params().get('DemoId')
 
-	def set_DemoAccessToken(self,DemoAccessToken):
-		self.add_body_params('DemoAccessToken', DemoAccessToken)
+	def set_DemoId(self,DemoId):
+		self.add_body_params('DemoId', DemoId)

@@ -23,13 +23,20 @@ from aliyunsdkdemocenter.endpoint import endpoint_data
 class CreateDemoAccessTokenRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'DemoCenter', '2020-01-21', 'CreateDemoAccessToken','DemoCenter')
+		RpcRequest.__init__(self, 'DemoCenter', '2020-01-21', 'CreateDemoAccessToken')
 		self.set_protocol_type('https')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+
+	def get_Edition(self):
+		return self.get_body_params().get('Edition')
+
+	def set_Edition(self,Edition):
+		self.add_body_params('Edition', Edition)
 
 	def get_DemoId(self):
 		return self.get_body_params().get('DemoId')
