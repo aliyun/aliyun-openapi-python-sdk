@@ -24,6 +24,7 @@ class CancelOTATaskByDeviceRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'CancelOTATaskByDevice','Iot')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -57,7 +58,7 @@ class CancelOTATaskByDeviceRequest(RpcRequest):
 	def get_DeviceNames(self):
 		return self.get_query_params().get('DeviceNames')
 
-	def set_DeviceNames(self,DeviceNames):
-		for i in range(len(DeviceNames)):	
-			if DeviceNames[i] is not None:
-				self.add_query_param('DeviceName.' + str(i + 1) , DeviceNames[i]);
+	def set_DeviceNames(self, DeviceNames):
+		for depth1 in range(len(DeviceNames)):
+			if DeviceNames[depth1] is not None:
+				self.add_query_param('DeviceName.' + str(depth1 + 1) , DeviceNames[depth1])

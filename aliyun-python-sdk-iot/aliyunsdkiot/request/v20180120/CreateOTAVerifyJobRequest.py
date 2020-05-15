@@ -24,6 +24,7 @@ class CreateOTAVerifyJobRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'CreateOTAVerifyJob','Iot')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -57,7 +58,7 @@ class CreateOTAVerifyJobRequest(RpcRequest):
 	def get_TargetDeviceNames(self):
 		return self.get_query_params().get('TargetDeviceNames')
 
-	def set_TargetDeviceNames(self,TargetDeviceNames):
-		for i in range(len(TargetDeviceNames)):	
-			if TargetDeviceNames[i] is not None:
-				self.add_query_param('TargetDeviceName.' + str(i + 1) , TargetDeviceNames[i]);
+	def set_TargetDeviceNames(self, TargetDeviceNames):
+		for depth1 in range(len(TargetDeviceNames)):
+			if TargetDeviceNames[depth1] is not None:
+				self.add_query_param('TargetDeviceName.' + str(depth1 + 1) , TargetDeviceNames[depth1])

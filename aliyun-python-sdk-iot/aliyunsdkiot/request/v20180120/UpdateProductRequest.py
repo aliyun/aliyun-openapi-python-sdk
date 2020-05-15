@@ -24,6 +24,7 @@ class UpdateProductRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'UpdateProduct','Iot')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -36,12 +37,6 @@ class UpdateProductRequest(RpcRequest):
 	def set_Description(self,Description):
 		self.add_query_param('Description',Description)
 
-	def get_ProductKey(self):
-		return self.get_query_params().get('ProductKey')
-
-	def set_ProductKey(self,ProductKey):
-		self.add_query_param('ProductKey',ProductKey)
-
 	def get_IotInstanceId(self):
 		return self.get_query_params().get('IotInstanceId')
 
@@ -53,3 +48,9 @@ class UpdateProductRequest(RpcRequest):
 
 	def set_ProductName(self,ProductName):
 		self.add_query_param('ProductName',ProductName)
+
+	def get_ProductKey(self):
+		return self.get_query_params().get('ProductKey')
+
+	def set_ProductKey(self,ProductKey):
+		self.add_query_param('ProductKey',ProductKey)

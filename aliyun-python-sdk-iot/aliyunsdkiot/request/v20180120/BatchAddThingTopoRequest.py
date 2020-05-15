@@ -24,6 +24,7 @@ class BatchAddThingTopoRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'BatchAddThingTopo','Iot')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -36,33 +37,32 @@ class BatchAddThingTopoRequest(RpcRequest):
 	def set_GwProductKey(self,GwProductKey):
 		self.add_query_param('GwProductKey',GwProductKey)
 
+	def get_IotInstanceId(self):
+		return self.get_query_params().get('IotInstanceId')
+
+	def set_IotInstanceId(self,IotInstanceId):
+		self.add_query_param('IotInstanceId',IotInstanceId)
+
 	def get_TopoAddItems(self):
 		return self.get_query_params().get('TopoAddItems')
 
-	def set_TopoAddItems(self,TopoAddItems):
-		for i in range(len(TopoAddItems)):	
-			if TopoAddItems[i].get('ClientId') is not None:
-				self.add_query_param('TopoAddItem.' + str(i + 1) + '.ClientId' , TopoAddItems[i].get('ClientId'))
-			if TopoAddItems[i].get('SignMethod') is not None:
-				self.add_query_param('TopoAddItem.' + str(i + 1) + '.SignMethod' , TopoAddItems[i].get('SignMethod'))
-			if TopoAddItems[i].get('Sign') is not None:
-				self.add_query_param('TopoAddItem.' + str(i + 1) + '.Sign' , TopoAddItems[i].get('Sign'))
-			if TopoAddItems[i].get('DeviceName') is not None:
-				self.add_query_param('TopoAddItem.' + str(i + 1) + '.DeviceName' , TopoAddItems[i].get('DeviceName'))
-			if TopoAddItems[i].get('ProductKey') is not None:
-				self.add_query_param('TopoAddItem.' + str(i + 1) + '.ProductKey' , TopoAddItems[i].get('ProductKey'))
-			if TopoAddItems[i].get('Timestamp') is not None:
-				self.add_query_param('TopoAddItem.' + str(i + 1) + '.Timestamp' , TopoAddItems[i].get('Timestamp'))
-
+	def set_TopoAddItems(self, TopoAddItems):
+		for depth1 in range(len(TopoAddItems)):
+			if TopoAddItems[depth1].get('ClientId') is not None:
+				self.add_query_param('TopoAddItem.' + str(depth1 + 1) + '.ClientId', TopoAddItems[depth1].get('ClientId'))
+			if TopoAddItems[depth1].get('SignMethod') is not None:
+				self.add_query_param('TopoAddItem.' + str(depth1 + 1) + '.SignMethod', TopoAddItems[depth1].get('SignMethod'))
+			if TopoAddItems[depth1].get('Sign') is not None:
+				self.add_query_param('TopoAddItem.' + str(depth1 + 1) + '.Sign', TopoAddItems[depth1].get('Sign'))
+			if TopoAddItems[depth1].get('DeviceName') is not None:
+				self.add_query_param('TopoAddItem.' + str(depth1 + 1) + '.DeviceName', TopoAddItems[depth1].get('DeviceName'))
+			if TopoAddItems[depth1].get('ProductKey') is not None:
+				self.add_query_param('TopoAddItem.' + str(depth1 + 1) + '.ProductKey', TopoAddItems[depth1].get('ProductKey'))
+			if TopoAddItems[depth1].get('Timestamp') is not None:
+				self.add_query_param('TopoAddItem.' + str(depth1 + 1) + '.Timestamp', TopoAddItems[depth1].get('Timestamp'))
 
 	def get_GwDeviceName(self):
 		return self.get_query_params().get('GwDeviceName')
 
 	def set_GwDeviceName(self,GwDeviceName):
 		self.add_query_param('GwDeviceName',GwDeviceName)
-
-	def get_IotInstanceId(self):
-		return self.get_query_params().get('IotInstanceId')
-
-	def set_IotInstanceId(self,IotInstanceId):
-		self.add_query_param('IotInstanceId',IotInstanceId)

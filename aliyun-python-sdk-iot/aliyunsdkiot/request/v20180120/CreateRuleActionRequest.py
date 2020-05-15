@@ -24,6 +24,7 @@ class CreateRuleActionRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'CreateRuleAction','Iot')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -48,14 +49,14 @@ class CreateRuleActionRequest(RpcRequest):
 	def set_IotInstanceId(self,IotInstanceId):
 		self.add_query_param('IotInstanceId',IotInstanceId)
 
-	def get_RuleId(self):
-		return self.get_query_params().get('RuleId')
-
-	def set_RuleId(self,RuleId):
-		self.add_query_param('RuleId',RuleId)
-
 	def get_ErrorActionFlag(self):
 		return self.get_query_params().get('ErrorActionFlag')
 
 	def set_ErrorActionFlag(self,ErrorActionFlag):
 		self.add_query_param('ErrorActionFlag',ErrorActionFlag)
+
+	def get_RuleId(self):
+		return self.get_query_params().get('RuleId')
+
+	def set_RuleId(self,RuleId):
+		self.add_query_param('RuleId',RuleId)

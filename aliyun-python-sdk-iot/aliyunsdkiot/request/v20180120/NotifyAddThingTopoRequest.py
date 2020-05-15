@@ -24,6 +24,7 @@ class NotifyAddThingTopoRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'NotifyAddThingTopo','Iot')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -42,12 +43,6 @@ class NotifyAddThingTopoRequest(RpcRequest):
 	def set_DeviceListStr(self,DeviceListStr):
 		self.add_query_param('DeviceListStr',DeviceListStr)
 
-	def get_GwDeviceName(self):
-		return self.get_query_params().get('GwDeviceName')
-
-	def set_GwDeviceName(self,GwDeviceName):
-		self.add_query_param('GwDeviceName',GwDeviceName)
-
 	def get_IotInstanceId(self):
 		return self.get_query_params().get('IotInstanceId')
 
@@ -59,3 +54,9 @@ class NotifyAddThingTopoRequest(RpcRequest):
 
 	def set_GwIotId(self,GwIotId):
 		self.add_query_param('GwIotId',GwIotId)
+
+	def get_GwDeviceName(self):
+		return self.get_query_params().get('GwDeviceName')
+
+	def set_GwDeviceName(self,GwDeviceName):
+		self.add_query_param('GwDeviceName',GwDeviceName)

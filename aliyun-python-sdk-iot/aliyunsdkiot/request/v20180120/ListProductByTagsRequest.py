@@ -24,27 +24,11 @@ class ListProductByTagsRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'ListProductByTags','Iot')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
-
-
-	def get_CurrentPage(self):
-		return self.get_query_params().get('CurrentPage')
-
-	def set_CurrentPage(self,CurrentPage):
-		self.add_query_param('CurrentPage',CurrentPage)
-
-	def get_ProductTags(self):
-		return self.get_query_params().get('ProductTags')
-
-	def set_ProductTags(self,ProductTags):
-		for i in range(len(ProductTags)):	
-			if ProductTags[i].get('TagValue') is not None:
-				self.add_query_param('ProductTag.' + str(i + 1) + '.TagValue' , ProductTags[i].get('TagValue'))
-			if ProductTags[i].get('TagKey') is not None:
-				self.add_query_param('ProductTag.' + str(i + 1) + '.TagKey' , ProductTags[i].get('TagKey'))
 
 
 	def get_IotInstanceId(self):
@@ -58,3 +42,19 @@ class ListProductByTagsRequest(RpcRequest):
 
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
+
+	def get_CurrentPage(self):
+		return self.get_query_params().get('CurrentPage')
+
+	def set_CurrentPage(self,CurrentPage):
+		self.add_query_param('CurrentPage',CurrentPage)
+
+	def get_ProductTags(self):
+		return self.get_query_params().get('ProductTags')
+
+	def set_ProductTags(self, ProductTags):
+		for depth1 in range(len(ProductTags)):
+			if ProductTags[depth1].get('TagValue') is not None:
+				self.add_query_param('ProductTag.' + str(depth1 + 1) + '.TagValue', ProductTags[depth1].get('TagValue'))
+			if ProductTags[depth1].get('TagKey') is not None:
+				self.add_query_param('ProductTag.' + str(depth1 + 1) + '.TagKey', ProductTags[depth1].get('TagKey'))

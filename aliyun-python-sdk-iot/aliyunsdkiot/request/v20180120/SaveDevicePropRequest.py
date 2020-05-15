@@ -24,23 +24,12 @@ class SaveDevicePropRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'SaveDeviceProp','Iot')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ProductKey(self):
-		return self.get_query_params().get('ProductKey')
-
-	def set_ProductKey(self,ProductKey):
-		self.add_query_param('ProductKey',ProductKey)
-
-	def get_Props(self):
-		return self.get_query_params().get('Props')
-
-	def set_Props(self,Props):
-		self.add_query_param('Props',Props)
 
 	def get_IotId(self):
 		return self.get_query_params().get('IotId')
@@ -53,6 +42,18 @@ class SaveDevicePropRequest(RpcRequest):
 
 	def set_IotInstanceId(self,IotInstanceId):
 		self.add_query_param('IotInstanceId',IotInstanceId)
+
+	def get_ProductKey(self):
+		return self.get_query_params().get('ProductKey')
+
+	def set_ProductKey(self,ProductKey):
+		self.add_query_param('ProductKey',ProductKey)
+
+	def get_Props(self):
+		return self.get_query_params().get('Props')
+
+	def set_Props(self,Props):
+		self.add_query_param('Props',Props)
 
 	def get_DeviceName(self):
 		return self.get_query_params().get('DeviceName')

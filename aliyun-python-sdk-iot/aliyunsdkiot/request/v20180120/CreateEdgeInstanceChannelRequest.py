@@ -20,29 +20,46 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkiot.endpoint import endpoint_data
 
-class BatchGetDeviceDriverRequest(RpcRequest):
+class CreateEdgeInstanceChannelRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'BatchGetDeviceDriver','Iot')
+		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'CreateEdgeInstanceChannel','Iot')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_IotIdss(self):
-		return self.get_query_params().get('IotIdss')
+	def get_Configss(self):
+		return self.get_query_params().get('Configss')
 
-	def set_IotIdss(self,IotIdss):
-		for i in range(len(IotIdss)):	
-			if IotIdss[i] is not None:
-				self.add_query_param('IotIds.' + str(i + 1) , IotIdss[i]);
+	def set_Configss(self, Configss):
+		for depth1 in range(len(Configss)):
+			if Configss[depth1].get('Format') is not None:
+				self.add_query_param('Configs.' + str(depth1 + 1) + '.Format', Configss[depth1].get('Format'))
+			if Configss[depth1].get('Content') is not None:
+				self.add_query_param('Configs.' + str(depth1 + 1) + '.Content', Configss[depth1].get('Content'))
+			if Configss[depth1].get('Key') is not None:
+				self.add_query_param('Configs.' + str(depth1 + 1) + '.Key', Configss[depth1].get('Key'))
+
+	def get_DriverId(self):
+		return self.get_query_params().get('DriverId')
+
+	def set_DriverId(self,DriverId):
+		self.add_query_param('DriverId',DriverId)
 
 	def get_IotInstanceId(self):
 		return self.get_query_params().get('IotInstanceId')
 
 	def set_IotInstanceId(self,IotInstanceId):
 		self.add_query_param('IotInstanceId',IotInstanceId)
+
+	def get_ChannelName(self):
+		return self.get_query_params().get('ChannelName')
+
+	def set_ChannelName(self,ChannelName):
+		self.add_query_param('ChannelName',ChannelName)
 
 	def get_InstanceId(self):
 		return self.get_query_params().get('InstanceId')

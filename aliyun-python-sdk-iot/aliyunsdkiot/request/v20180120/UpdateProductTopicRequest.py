@@ -24,6 +24,7 @@ class UpdateProductTopicRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'UpdateProductTopic','Iot')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -42,17 +43,17 @@ class UpdateProductTopicRequest(RpcRequest):
 	def set_IotInstanceId(self,IotInstanceId):
 		self.add_query_param('IotInstanceId',IotInstanceId)
 
-	def get_Operation(self):
-		return self.get_query_params().get('Operation')
-
-	def set_Operation(self,Operation):
-		self.add_query_param('Operation',Operation)
-
 	def get_TopicShortName(self):
 		return self.get_query_params().get('TopicShortName')
 
 	def set_TopicShortName(self,TopicShortName):
 		self.add_query_param('TopicShortName',TopicShortName)
+
+	def get_Operation(self):
+		return self.get_query_params().get('Operation')
+
+	def set_Operation(self,Operation):
+		self.add_query_param('Operation',Operation)
 
 	def get_Desc(self):
 		return self.get_query_params().get('Desc')

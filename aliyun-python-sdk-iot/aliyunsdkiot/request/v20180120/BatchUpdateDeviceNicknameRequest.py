@@ -24,25 +24,11 @@ class BatchUpdateDeviceNicknameRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'BatchUpdateDeviceNickname','Iot')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
-
-
-	def get_DeviceNicknameInfos(self):
-		return self.get_query_params().get('DeviceNicknameInfos')
-
-	def set_DeviceNicknameInfos(self,DeviceNicknameInfos):
-		for i in range(len(DeviceNicknameInfos)):	
-			if DeviceNicknameInfos[i].get('IotId') is not None:
-				self.add_query_param('DeviceNicknameInfo.' + str(i + 1) + '.IotId' , DeviceNicknameInfos[i].get('IotId'))
-			if DeviceNicknameInfos[i].get('Nickname') is not None:
-				self.add_query_param('DeviceNicknameInfo.' + str(i + 1) + '.Nickname' , DeviceNicknameInfos[i].get('Nickname'))
-			if DeviceNicknameInfos[i].get('DeviceName') is not None:
-				self.add_query_param('DeviceNicknameInfo.' + str(i + 1) + '.DeviceName' , DeviceNicknameInfos[i].get('DeviceName'))
-			if DeviceNicknameInfos[i].get('ProductKey') is not None:
-				self.add_query_param('DeviceNicknameInfo.' + str(i + 1) + '.ProductKey' , DeviceNicknameInfos[i].get('ProductKey'))
 
 
 	def get_IotInstanceId(self):
@@ -50,3 +36,17 @@ class BatchUpdateDeviceNicknameRequest(RpcRequest):
 
 	def set_IotInstanceId(self,IotInstanceId):
 		self.add_query_param('IotInstanceId',IotInstanceId)
+
+	def get_DeviceNicknameInfos(self):
+		return self.get_query_params().get('DeviceNicknameInfos')
+
+	def set_DeviceNicknameInfos(self, DeviceNicknameInfos):
+		for depth1 in range(len(DeviceNicknameInfos)):
+			if DeviceNicknameInfos[depth1].get('IotId') is not None:
+				self.add_query_param('DeviceNicknameInfo.' + str(depth1 + 1) + '.IotId', DeviceNicknameInfos[depth1].get('IotId'))
+			if DeviceNicknameInfos[depth1].get('Nickname') is not None:
+				self.add_query_param('DeviceNicknameInfo.' + str(depth1 + 1) + '.Nickname', DeviceNicknameInfos[depth1].get('Nickname'))
+			if DeviceNicknameInfos[depth1].get('DeviceName') is not None:
+				self.add_query_param('DeviceNicknameInfo.' + str(depth1 + 1) + '.DeviceName', DeviceNicknameInfos[depth1].get('DeviceName'))
+			if DeviceNicknameInfos[depth1].get('ProductKey') is not None:
+				self.add_query_param('DeviceNicknameInfo.' + str(depth1 + 1) + '.ProductKey', DeviceNicknameInfos[depth1].get('ProductKey'))

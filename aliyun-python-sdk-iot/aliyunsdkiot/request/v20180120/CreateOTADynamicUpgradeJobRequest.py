@@ -24,6 +24,7 @@ class CreateOTADynamicUpgradeJobRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'CreateOTADynamicUpgradeJob','Iot')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -35,6 +36,18 @@ class CreateOTADynamicUpgradeJobRequest(RpcRequest):
 
 	def set_RetryCount(self,RetryCount):
 		self.add_query_param('RetryCount',RetryCount)
+
+	def get_TimeoutInMinutes(self):
+		return self.get_query_params().get('TimeoutInMinutes')
+
+	def set_TimeoutInMinutes(self,TimeoutInMinutes):
+		self.add_query_param('TimeoutInMinutes',TimeoutInMinutes)
+
+	def get_IotInstanceId(self):
+		return self.get_query_params().get('IotInstanceId')
+
+	def set_IotInstanceId(self,IotInstanceId):
+		self.add_query_param('IotInstanceId',IotInstanceId)
 
 	def get_FirmwareId(self):
 		return self.get_query_params().get('FirmwareId')
@@ -48,12 +61,6 @@ class CreateOTADynamicUpgradeJobRequest(RpcRequest):
 	def set_ProductKey(self,ProductKey):
 		self.add_query_param('ProductKey',ProductKey)
 
-	def get_TimeoutInMinutes(self):
-		return self.get_query_params().get('TimeoutInMinutes')
-
-	def set_TimeoutInMinutes(self,TimeoutInMinutes):
-		self.add_query_param('TimeoutInMinutes',TimeoutInMinutes)
-
 	def get_RetryInterval(self):
 		return self.get_query_params().get('RetryInterval')
 
@@ -63,16 +70,10 @@ class CreateOTADynamicUpgradeJobRequest(RpcRequest):
 	def get_SrcVersions(self):
 		return self.get_query_params().get('SrcVersions')
 
-	def set_SrcVersions(self,SrcVersions):
-		for i in range(len(SrcVersions)):	
-			if SrcVersions[i] is not None:
-				self.add_query_param('SrcVersion.' + str(i + 1) , SrcVersions[i]);
-
-	def get_IotInstanceId(self):
-		return self.get_query_params().get('IotInstanceId')
-
-	def set_IotInstanceId(self,IotInstanceId):
-		self.add_query_param('IotInstanceId',IotInstanceId)
+	def set_SrcVersions(self, SrcVersions):
+		for depth1 in range(len(SrcVersions)):
+			if SrcVersions[depth1] is not None:
+				self.add_query_param('SrcVersion.' + str(depth1 + 1) , SrcVersions[depth1])
 
 	def get_MaximumPerMinute(self):
 		return self.get_query_params().get('MaximumPerMinute')

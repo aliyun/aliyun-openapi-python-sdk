@@ -24,25 +24,20 @@ class BatchGetDeviceStateRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'BatchGetDeviceState','Iot')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_ProductKey(self):
-		return self.get_query_params().get('ProductKey')
-
-	def set_ProductKey(self,ProductKey):
-		self.add_query_param('ProductKey',ProductKey)
-
 	def get_IotIds(self):
 		return self.get_query_params().get('IotIds')
 
-	def set_IotIds(self,IotIds):
-		for i in range(len(IotIds)):	
-			if IotIds[i] is not None:
-				self.add_query_param('IotId.' + str(i + 1) , IotIds[i]);
+	def set_IotIds(self, IotIds):
+		for depth1 in range(len(IotIds)):
+			if IotIds[depth1] is not None:
+				self.add_query_param('IotId.' + str(depth1 + 1) , IotIds[depth1])
 
 	def get_IotInstanceId(self):
 		return self.get_query_params().get('IotInstanceId')
@@ -50,10 +45,16 @@ class BatchGetDeviceStateRequest(RpcRequest):
 	def set_IotInstanceId(self,IotInstanceId):
 		self.add_query_param('IotInstanceId',IotInstanceId)
 
+	def get_ProductKey(self):
+		return self.get_query_params().get('ProductKey')
+
+	def set_ProductKey(self,ProductKey):
+		self.add_query_param('ProductKey',ProductKey)
+
 	def get_DeviceNames(self):
 		return self.get_query_params().get('DeviceNames')
 
-	def set_DeviceNames(self,DeviceNames):
-		for i in range(len(DeviceNames)):	
-			if DeviceNames[i] is not None:
-				self.add_query_param('DeviceName.' + str(i + 1) , DeviceNames[i]);
+	def set_DeviceNames(self, DeviceNames):
+		for depth1 in range(len(DeviceNames)):
+			if DeviceNames[depth1] is not None:
+				self.add_query_param('DeviceName.' + str(depth1 + 1) , DeviceNames[depth1])

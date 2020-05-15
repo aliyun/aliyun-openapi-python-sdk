@@ -24,6 +24,7 @@ class QueryDevicePropertiesDataRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'QueryDevicePropertiesData','Iot')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -57,10 +58,10 @@ class QueryDevicePropertiesDataRequest(RpcRequest):
 	def get_Identifiers(self):
 		return self.get_query_params().get('Identifiers')
 
-	def set_Identifiers(self,Identifiers):
-		for i in range(len(Identifiers)):	
-			if Identifiers[i] is not None:
-				self.add_query_param('Identifier.' + str(i + 1) , Identifiers[i]);
+	def set_Identifiers(self, Identifiers):
+		for depth1 in range(len(Identifiers)):
+			if Identifiers[depth1] is not None:
+				self.add_query_param('Identifier.' + str(depth1 + 1) , Identifiers[depth1])
 
 	def get_EndTime(self):
 		return self.get_query_params().get('EndTime')

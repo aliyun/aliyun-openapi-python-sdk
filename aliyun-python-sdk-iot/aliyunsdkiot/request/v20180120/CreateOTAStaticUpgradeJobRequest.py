@@ -24,6 +24,7 @@ class CreateOTAStaticUpgradeJobRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'CreateOTAStaticUpgradeJob','Iot')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -81,10 +82,10 @@ class CreateOTAStaticUpgradeJobRequest(RpcRequest):
 	def get_SrcVersions(self):
 		return self.get_query_params().get('SrcVersions')
 
-	def set_SrcVersions(self,SrcVersions):
-		for i in range(len(SrcVersions)):	
-			if SrcVersions[i] is not None:
-				self.add_query_param('SrcVersion.' + str(i + 1) , SrcVersions[i]);
+	def set_SrcVersions(self, SrcVersions):
+		for depth1 in range(len(SrcVersions)):
+			if SrcVersions[depth1] is not None:
+				self.add_query_param('SrcVersion.' + str(depth1 + 1) , SrcVersions[depth1])
 
 	def get_ScheduleTime(self):
 		return self.get_query_params().get('ScheduleTime')
@@ -101,7 +102,7 @@ class CreateOTAStaticUpgradeJobRequest(RpcRequest):
 	def get_TargetDeviceNames(self):
 		return self.get_query_params().get('TargetDeviceNames')
 
-	def set_TargetDeviceNames(self,TargetDeviceNames):
-		for i in range(len(TargetDeviceNames)):	
-			if TargetDeviceNames[i] is not None:
-				self.add_query_param('TargetDeviceName.' + str(i + 1) , TargetDeviceNames[i]);
+	def set_TargetDeviceNames(self, TargetDeviceNames):
+		for depth1 in range(len(TargetDeviceNames)):
+			if TargetDeviceNames[depth1] is not None:
+				self.add_query_param('TargetDeviceName.' + str(depth1 + 1) , TargetDeviceNames[depth1])

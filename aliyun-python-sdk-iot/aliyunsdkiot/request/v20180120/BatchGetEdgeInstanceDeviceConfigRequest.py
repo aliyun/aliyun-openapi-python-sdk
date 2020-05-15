@@ -24,6 +24,7 @@ class BatchGetEdgeInstanceDeviceConfigRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'BatchGetEdgeInstanceDeviceConfig','Iot')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -33,10 +34,10 @@ class BatchGetEdgeInstanceDeviceConfigRequest(RpcRequest):
 	def get_IotIdss(self):
 		return self.get_query_params().get('IotIdss')
 
-	def set_IotIdss(self,IotIdss):
-		for i in range(len(IotIdss)):	
-			if IotIdss[i] is not None:
-				self.add_query_param('IotIds.' + str(i + 1) , IotIdss[i]);
+	def set_IotIdss(self, IotIdss):
+		for depth1 in range(len(IotIdss)):
+			if IotIdss[depth1] is not None:
+				self.add_query_param('IotIds.' + str(depth1 + 1) , IotIdss[depth1])
 
 	def get_IotInstanceId(self):
 		return self.get_query_params().get('IotInstanceId')

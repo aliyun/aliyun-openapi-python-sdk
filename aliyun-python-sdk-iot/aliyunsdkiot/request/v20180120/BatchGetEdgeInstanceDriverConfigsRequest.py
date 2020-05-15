@@ -24,6 +24,7 @@ class BatchGetEdgeInstanceDriverConfigsRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'BatchGetEdgeInstanceDriverConfigs','Iot')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -33,10 +34,10 @@ class BatchGetEdgeInstanceDriverConfigsRequest(RpcRequest):
 	def get_DriverIdss(self):
 		return self.get_query_params().get('DriverIdss')
 
-	def set_DriverIdss(self,DriverIdss):
-		for i in range(len(DriverIdss)):	
-			if DriverIdss[i] is not None:
-				self.add_query_param('DriverIds.' + str(i + 1) , DriverIdss[i]);
+	def set_DriverIdss(self, DriverIdss):
+		for depth1 in range(len(DriverIdss)):
+			if DriverIdss[depth1] is not None:
+				self.add_query_param('DriverIds.' + str(depth1 + 1) , DriverIdss[depth1])
 
 	def get_IotInstanceId(self):
 		return self.get_query_params().get('IotInstanceId')

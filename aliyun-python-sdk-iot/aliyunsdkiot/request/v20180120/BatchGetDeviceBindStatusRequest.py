@@ -20,24 +20,27 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkiot.endpoint import endpoint_data
 
-class GisQueryDeviceLocationRequest(RpcRequest):
+class BatchGetDeviceBindStatusRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'GisQueryDeviceLocation','Iot')
+		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'BatchGetDeviceBindStatus','Iot')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_IotIdss(self):
+		return self.get_query_params().get('IotIdss')
+
+	def set_IotIdss(self, IotIdss):
+		for depth1 in range(len(IotIdss)):
+			if IotIdss[depth1] is not None:
+				self.add_query_param('IotIds.' + str(depth1 + 1) , IotIdss[depth1])
+
 	def get_IotInstanceId(self):
 		return self.get_query_params().get('IotInstanceId')
 
 	def set_IotInstanceId(self,IotInstanceId):
 		self.add_query_param('IotInstanceId',IotInstanceId)
-
-	def get_ThingList(self):
-		return self.get_query_params().get('ThingList')
-
-	def set_ThingList(self,ThingList):
-		self.add_query_param('ThingList',ThingList)

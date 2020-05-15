@@ -24,6 +24,7 @@ class InvokeDataAPIServiceRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'InvokeDataAPIService','Iot')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -33,20 +34,20 @@ class InvokeDataAPIServiceRequest(RpcRequest):
 	def get_Params(self):
 		return self.get_body_params().get('Params')
 
-	def set_Params(self,Params):
-		for i in range(len(Params)):	
-			if Params[i].get('ParamType') is not None:
-				self.add_body_params('Param.' + str(i + 1) + '.ParamType' , Params[i].get('ParamType'))
-			for j in range(len(Params[i].get('ListParamValues'))):
-				if Params[i].get('ListParamValues')[j] is not None:
-					self.add_body_params('Param.' + str(i + 1) + '.ListParamValue.'+str(j + 1), Params[i].get('ListParamValues')[j])
-			if Params[i].get('ListParamType') is not None:
-				self.add_body_params('Param.' + str(i + 1) + '.ListParamType' , Params[i].get('ListParamType'))
-			if Params[i].get('ParamName') is not None:
-				self.add_body_params('Param.' + str(i + 1) + '.ParamName' , Params[i].get('ParamName'))
-			if Params[i].get('ParamValue') is not None:
-				self.add_body_params('Param.' + str(i + 1) + '.ParamValue' , Params[i].get('ParamValue'))
-
+	def set_Params(self, Params):
+		for depth1 in range(len(Params)):
+			if Params[depth1].get('ParamType') is not None:
+				self.add_body_params('Param.' + str(depth1 + 1) + '.ParamType', Params[depth1].get('ParamType'))
+			if Params[depth1].get('ListParamValue') is not None:
+				for depth2 in range(len(Params[depth1].get('ListParamValue'))):
+					if Params[depth1].get('ListParamValue')[depth2] is not None:
+						self.add_body_params('Param.' + str(depth1 + 1) + '.ListParamValue.' + str(depth2 + 1) , Params[depth1].get('ListParamValue')[depth2])
+			if Params[depth1].get('ListParamType') is not None:
+				self.add_body_params('Param.' + str(depth1 + 1) + '.ListParamType', Params[depth1].get('ListParamType'))
+			if Params[depth1].get('ParamName') is not None:
+				self.add_body_params('Param.' + str(depth1 + 1) + '.ParamName', Params[depth1].get('ParamName'))
+			if Params[depth1].get('ParamValue') is not None:
+				self.add_body_params('Param.' + str(depth1 + 1) + '.ParamValue', Params[depth1].get('ParamValue'))
 
 	def get_IotInstanceId(self):
 		return self.get_body_params().get('IotInstanceId')

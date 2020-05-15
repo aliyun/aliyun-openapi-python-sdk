@@ -24,6 +24,7 @@ class QueryAppDeviceListRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'QueryAppDeviceList','Iot')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -39,29 +40,28 @@ class QueryAppDeviceListRequest(RpcRequest):
 	def get_TagLists(self):
 		return self.get_query_params().get('TagLists')
 
-	def set_TagLists(self,TagLists):
-		for i in range(len(TagLists)):	
-			if TagLists[i].get('TagName') is not None:
-				self.add_query_param('TagList.' + str(i + 1) + '.TagName' , TagLists[i].get('TagName'))
-			if TagLists[i].get('TagValue') is not None:
-				self.add_query_param('TagList.' + str(i + 1) + '.TagValue' , TagLists[i].get('TagValue'))
-
+	def set_TagLists(self, TagLists):
+		for depth1 in range(len(TagLists)):
+			if TagLists[depth1].get('TagName') is not None:
+				self.add_query_param('TagList.' + str(depth1 + 1) + '.TagName', TagLists[depth1].get('TagName'))
+			if TagLists[depth1].get('TagValue') is not None:
+				self.add_query_param('TagList.' + str(depth1 + 1) + '.TagValue', TagLists[depth1].get('TagValue'))
 
 	def get_ProductKeyLists(self):
 		return self.get_query_params().get('ProductKeyLists')
 
-	def set_ProductKeyLists(self,ProductKeyLists):
-		for i in range(len(ProductKeyLists)):	
-			if ProductKeyLists[i] is not None:
-				self.add_query_param('ProductKeyList.' + str(i + 1) , ProductKeyLists[i]);
+	def set_ProductKeyLists(self, ProductKeyLists):
+		for depth1 in range(len(ProductKeyLists)):
+			if ProductKeyLists[depth1] is not None:
+				self.add_query_param('ProductKeyList.' + str(depth1 + 1) , ProductKeyLists[depth1])
 
 	def get_CategoryKeyLists(self):
 		return self.get_query_params().get('CategoryKeyLists')
 
-	def set_CategoryKeyLists(self,CategoryKeyLists):
-		for i in range(len(CategoryKeyLists)):	
-			if CategoryKeyLists[i] is not None:
-				self.add_query_param('CategoryKeyList.' + str(i + 1) , CategoryKeyLists[i]);
+	def set_CategoryKeyLists(self, CategoryKeyLists):
+		for depth1 in range(len(CategoryKeyLists)):
+			if CategoryKeyLists[depth1] is not None:
+				self.add_query_param('CategoryKeyList.' + str(depth1 + 1) , CategoryKeyLists[depth1])
 
 	def get_IotInstanceId(self):
 		return self.get_query_params().get('IotInstanceId')

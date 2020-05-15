@@ -24,6 +24,7 @@ class SetEdgeInstanceDriverConfigsRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'SetEdgeInstanceDriverConfigs','Iot')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -33,15 +34,14 @@ class SetEdgeInstanceDriverConfigsRequest(RpcRequest):
 	def get_Configss(self):
 		return self.get_query_params().get('Configss')
 
-	def set_Configss(self,Configss):
-		for i in range(len(Configss)):	
-			if Configss[i].get('Format') is not None:
-				self.add_query_param('Configs.' + str(i + 1) + '.Format' , Configss[i].get('Format'))
-			if Configss[i].get('Content') is not None:
-				self.add_query_param('Configs.' + str(i + 1) + '.Content' , Configss[i].get('Content'))
-			if Configss[i].get('Key') is not None:
-				self.add_query_param('Configs.' + str(i + 1) + '.Key' , Configss[i].get('Key'))
-
+	def set_Configss(self, Configss):
+		for depth1 in range(len(Configss)):
+			if Configss[depth1].get('Format') is not None:
+				self.add_query_param('Configs.' + str(depth1 + 1) + '.Format', Configss[depth1].get('Format'))
+			if Configss[depth1].get('Content') is not None:
+				self.add_query_param('Configs.' + str(depth1 + 1) + '.Content', Configss[depth1].get('Content'))
+			if Configss[depth1].get('Key') is not None:
+				self.add_query_param('Configs.' + str(depth1 + 1) + '.Key', Configss[depth1].get('Key'))
 
 	def get_DriverId(self):
 		return self.get_query_params().get('DriverId')

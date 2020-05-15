@@ -24,6 +24,7 @@ class QueryDeviceEventDataRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'QueryDeviceEventData','Iot')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -78,14 +79,14 @@ class QueryDeviceEventDataRequest(RpcRequest):
 	def set_Asc(self,Asc):
 		self.add_query_param('Asc',Asc)
 
-	def get_EventType(self):
-		return self.get_query_params().get('EventType')
-
-	def set_EventType(self,EventType):
-		self.add_query_param('EventType',EventType)
-
 	def get_DeviceName(self):
 		return self.get_query_params().get('DeviceName')
 
 	def set_DeviceName(self,DeviceName):
 		self.add_query_param('DeviceName',DeviceName)
+
+	def get_EventType(self):
+		return self.get_query_params().get('EventType')
+
+	def set_EventType(self,EventType):
+		self.add_query_param('EventType',EventType)

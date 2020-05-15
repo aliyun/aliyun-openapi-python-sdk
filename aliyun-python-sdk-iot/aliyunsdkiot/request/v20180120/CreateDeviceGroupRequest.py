@@ -24,6 +24,7 @@ class CreateDeviceGroupRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'CreateDeviceGroup','Iot')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -36,6 +37,12 @@ class CreateDeviceGroupRequest(RpcRequest):
 	def set_SuperGroupId(self,SuperGroupId):
 		self.add_query_param('SuperGroupId',SuperGroupId)
 
+	def get_IotInstanceId(self):
+		return self.get_query_params().get('IotInstanceId')
+
+	def set_IotInstanceId(self,IotInstanceId):
+		self.add_query_param('IotInstanceId',IotInstanceId)
+
 	def get_GroupName(self):
 		return self.get_query_params().get('GroupName')
 
@@ -47,9 +54,3 @@ class CreateDeviceGroupRequest(RpcRequest):
 
 	def set_GroupDesc(self,GroupDesc):
 		self.add_query_param('GroupDesc',GroupDesc)
-
-	def get_IotInstanceId(self):
-		return self.get_query_params().get('IotInstanceId')
-
-	def set_IotInstanceId(self,IotInstanceId):
-		self.add_query_param('IotInstanceId',IotInstanceId)

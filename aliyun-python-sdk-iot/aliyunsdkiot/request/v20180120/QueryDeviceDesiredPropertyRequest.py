@@ -24,25 +24,12 @@ class QueryDeviceDesiredPropertyRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'QueryDeviceDesiredProperty','Iot')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Identifiers(self):
-		return self.get_query_params().get('Identifiers')
-
-	def set_Identifiers(self,Identifiers):
-		for i in range(len(Identifiers)):	
-			if Identifiers[i] is not None:
-				self.add_query_param('Identifier.' + str(i + 1) , Identifiers[i]);
-
-	def get_ProductKey(self):
-		return self.get_query_params().get('ProductKey')
-
-	def set_ProductKey(self,ProductKey):
-		self.add_query_param('ProductKey',ProductKey)
 
 	def get_IotId(self):
 		return self.get_query_params().get('IotId')
@@ -55,6 +42,20 @@ class QueryDeviceDesiredPropertyRequest(RpcRequest):
 
 	def set_IotInstanceId(self,IotInstanceId):
 		self.add_query_param('IotInstanceId',IotInstanceId)
+
+	def get_Identifiers(self):
+		return self.get_query_params().get('Identifiers')
+
+	def set_Identifiers(self, Identifiers):
+		for depth1 in range(len(Identifiers)):
+			if Identifiers[depth1] is not None:
+				self.add_query_param('Identifier.' + str(depth1 + 1) , Identifiers[depth1])
+
+	def get_ProductKey(self):
+		return self.get_query_params().get('ProductKey')
+
+	def set_ProductKey(self,ProductKey):
+		self.add_query_param('ProductKey',ProductKey)
 
 	def get_DeviceName(self):
 		return self.get_query_params().get('DeviceName')

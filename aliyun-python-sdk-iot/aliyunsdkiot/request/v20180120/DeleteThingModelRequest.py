@@ -24,25 +24,12 @@ class DeleteThingModelRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'DeleteThingModel','Iot')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ServiceIdentifiers(self):
-		return self.get_query_params().get('ServiceIdentifiers')
-
-	def set_ServiceIdentifiers(self,ServiceIdentifiers):
-		for i in range(len(ServiceIdentifiers)):	
-			if ServiceIdentifiers[i] is not None:
-				self.add_query_param('ServiceIdentifier.' + str(i + 1) , ServiceIdentifiers[i]);
-
-	def get_ProductKey(self):
-		return self.get_query_params().get('ProductKey')
-
-	def set_ProductKey(self,ProductKey):
-		self.add_query_param('ProductKey',ProductKey)
 
 	def get_ResourceGroupId(self):
 		return self.get_query_params().get('ResourceGroupId')
@@ -53,10 +40,10 @@ class DeleteThingModelRequest(RpcRequest):
 	def get_PropertyIdentifiers(self):
 		return self.get_query_params().get('PropertyIdentifiers')
 
-	def set_PropertyIdentifiers(self,PropertyIdentifiers):
-		for i in range(len(PropertyIdentifiers)):	
-			if PropertyIdentifiers[i] is not None:
-				self.add_query_param('PropertyIdentifier.' + str(i + 1) , PropertyIdentifiers[i]);
+	def set_PropertyIdentifiers(self, PropertyIdentifiers):
+		for depth1 in range(len(PropertyIdentifiers)):
+			if PropertyIdentifiers[depth1] is not None:
+				self.add_query_param('PropertyIdentifier.' + str(depth1 + 1) , PropertyIdentifiers[depth1])
 
 	def get_IotInstanceId(self):
 		return self.get_query_params().get('IotInstanceId')
@@ -64,10 +51,24 @@ class DeleteThingModelRequest(RpcRequest):
 	def set_IotInstanceId(self,IotInstanceId):
 		self.add_query_param('IotInstanceId',IotInstanceId)
 
+	def get_ServiceIdentifiers(self):
+		return self.get_query_params().get('ServiceIdentifiers')
+
+	def set_ServiceIdentifiers(self, ServiceIdentifiers):
+		for depth1 in range(len(ServiceIdentifiers)):
+			if ServiceIdentifiers[depth1] is not None:
+				self.add_query_param('ServiceIdentifier.' + str(depth1 + 1) , ServiceIdentifiers[depth1])
+
+	def get_ProductKey(self):
+		return self.get_query_params().get('ProductKey')
+
+	def set_ProductKey(self,ProductKey):
+		self.add_query_param('ProductKey',ProductKey)
+
 	def get_EventIdentifiers(self):
 		return self.get_query_params().get('EventIdentifiers')
 
-	def set_EventIdentifiers(self,EventIdentifiers):
-		for i in range(len(EventIdentifiers)):	
-			if EventIdentifiers[i] is not None:
-				self.add_query_param('EventIdentifier.' + str(i + 1) , EventIdentifiers[i]);
+	def set_EventIdentifiers(self, EventIdentifiers):
+		for depth1 in range(len(EventIdentifiers)):
+			if EventIdentifiers[depth1] is not None:
+				self.add_query_param('EventIdentifier.' + str(depth1 + 1) , EventIdentifiers[depth1])

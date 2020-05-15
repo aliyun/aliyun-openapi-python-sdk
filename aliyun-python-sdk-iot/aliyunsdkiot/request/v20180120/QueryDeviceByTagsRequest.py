@@ -24,17 +24,12 @@ class QueryDeviceByTagsRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'QueryDeviceByTags','Iot')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_CurrentPage(self):
-		return self.get_query_params().get('CurrentPage')
-
-	def set_CurrentPage(self,CurrentPage):
-		self.add_query_param('CurrentPage',CurrentPage)
 
 	def get_IotInstanceId(self):
 		return self.get_query_params().get('IotInstanceId')
@@ -51,9 +46,15 @@ class QueryDeviceByTagsRequest(RpcRequest):
 	def get_Tags(self):
 		return self.get_query_params().get('Tags')
 
-	def set_Tags(self,Tags):
-		for i in range(len(Tags)):	
-			if Tags[i].get('TagValue') is not None:
-				self.add_query_param('Tag.' + str(i + 1) + '.TagValue' , Tags[i].get('TagValue'))
-			if Tags[i].get('TagKey') is not None:
-				self.add_query_param('Tag.' + str(i + 1) + '.TagKey' , Tags[i].get('TagKey'))
+	def set_Tags(self, Tags):
+		for depth1 in range(len(Tags)):
+			if Tags[depth1].get('TagValue') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.TagValue', Tags[depth1].get('TagValue'))
+			if Tags[depth1].get('TagKey') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.TagKey', Tags[depth1].get('TagKey'))
+
+	def get_CurrentPage(self):
+		return self.get_query_params().get('CurrentPage')
+
+	def set_CurrentPage(self,CurrentPage):
+		self.add_query_param('CurrentPage',CurrentPage)

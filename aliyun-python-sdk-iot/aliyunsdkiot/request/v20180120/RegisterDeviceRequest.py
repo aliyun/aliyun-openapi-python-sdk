@@ -24,11 +24,24 @@ class RegisterDeviceRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'RegisterDevice','Iot')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+
+	def get_IotInstanceId(self):
+		return self.get_query_params().get('IotInstanceId')
+
+	def set_IotInstanceId(self,IotInstanceId):
+		self.add_query_param('IotInstanceId',IotInstanceId)
+
+	def get_Nickname(self):
+		return self.get_query_params().get('Nickname')
+
+	def set_Nickname(self,Nickname):
+		self.add_query_param('Nickname',Nickname)
 
 	def get_PinCode(self):
 		return self.get_query_params().get('PinCode')
@@ -47,18 +60,6 @@ class RegisterDeviceRequest(RpcRequest):
 
 	def set_DevEui(self,DevEui):
 		self.add_query_param('DevEui',DevEui)
-
-	def get_IotInstanceId(self):
-		return self.get_query_params().get('IotInstanceId')
-
-	def set_IotInstanceId(self,IotInstanceId):
-		self.add_query_param('IotInstanceId',IotInstanceId)
-
-	def get_Nickname(self):
-		return self.get_query_params().get('Nickname')
-
-	def set_Nickname(self,Nickname):
-		self.add_query_param('Nickname',Nickname)
 
 	def get_DeviceName(self):
 		return self.get_query_params().get('DeviceName')
