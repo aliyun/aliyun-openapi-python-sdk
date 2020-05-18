@@ -34,7 +34,7 @@ class DeleteContainerAppsRequest(RpcRequest):
 	def get_ContainerApps(self):
 		return self.get_query_params().get('ContainerApps')
 
-	def set_ContainerApps(self,ContainerApps):
-		for i in range(len(ContainerApps)):	
-			if ContainerApps[i].get('Id') is not None:
-				self.add_query_param('ContainerApp.' + str(i + 1) + '.Id' , ContainerApps[i].get('Id'))
+	def set_ContainerApps(self, ContainerApps):
+		for depth1 in range(len(ContainerApps)):
+			if ContainerApps[depth1].get('Id') is not None:
+				self.add_query_param('ContainerApp.' + str(depth1 + 1) + '.Id', ContainerApps[depth1].get('Id'))

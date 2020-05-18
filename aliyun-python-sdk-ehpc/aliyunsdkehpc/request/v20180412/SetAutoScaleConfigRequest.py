@@ -106,39 +106,38 @@ class SetAutoScaleConfigRequest(RpcRequest):
 	def get_Queuess(self):
 		return self.get_query_params().get('Queuess')
 
-	def set_Queuess(self,Queuess):
-		for i in range(len(Queuess)):	
-			if Queuess[i].get('SpotStrategy') is not None:
-				self.add_query_param('Queues.' + str(i + 1) + '.SpotStrategy' , Queuess[i].get('SpotStrategy'))
-			if Queuess[i].get('QueueName') is not None:
-				self.add_query_param('Queues.' + str(i + 1) + '.QueueName' , Queuess[i].get('QueueName'))
-			if Queuess[i].get('MinNodesInQueue') is not None:
-				self.add_query_param('Queues.' + str(i + 1) + '.MinNodesInQueue' , Queuess[i].get('MinNodesInQueue'))
-			for j in range(len(Queuess[i].get('InstanceTypess'))):
-				if Queuess[i].get('InstanceTypess')[j] is not None:
-					if Queuess[i].get('InstanceTypess')[j].get('SpotStrategy') is not None:
-						self.add_query_param('Queues.' + str(i + 1) + '.InstanceTypes.'+str(j + 1)+ '.SpotStrategy', Queuess[i].get('InstanceTypess')[j].get('SpotStrategy'))
-					if Queuess[i].get('InstanceTypess')[j].get('VSwitchId') is not None:
-						self.add_query_param('Queues.' + str(i + 1) + '.InstanceTypes.'+str(j + 1)+ '.VSwitchId', Queuess[i].get('InstanceTypess')[j].get('VSwitchId'))
-					if Queuess[i].get('InstanceTypess')[j].get('InstanceType') is not None:
-						self.add_query_param('Queues.' + str(i + 1) + '.InstanceTypes.'+str(j + 1)+ '.InstanceType', Queuess[i].get('InstanceTypess')[j].get('InstanceType'))
-					if Queuess[i].get('InstanceTypess')[j].get('ZoneId') is not None:
-						self.add_query_param('Queues.' + str(i + 1) + '.InstanceTypes.'+str(j + 1)+ '.ZoneId', Queuess[i].get('InstanceTypess')[j].get('ZoneId'))
-					if Queuess[i].get('InstanceTypess')[j].get('HostNamePrefix') is not None:
-						self.add_query_param('Queues.' + str(i + 1) + '.InstanceTypes.'+str(j + 1)+ '.HostNamePrefix', Queuess[i].get('InstanceTypess')[j].get('HostNamePrefix'))
-					if Queuess[i].get('InstanceTypess')[j].get('SpotPriceLimit') is not None:
-						self.add_query_param('Queues.' + str(i + 1) + '.InstanceTypes.'+str(j + 1)+ '.SpotPriceLimit', Queuess[i].get('InstanceTypess')[j].get('SpotPriceLimit'))
-			if Queuess[i].get('MaxNodesInQueue') is not None:
-				self.add_query_param('Queues.' + str(i + 1) + '.MaxNodesInQueue' , Queuess[i].get('MaxNodesInQueue'))
-			if Queuess[i].get('InstanceType') is not None:
-				self.add_query_param('Queues.' + str(i + 1) + '.InstanceType' , Queuess[i].get('InstanceType'))
-			if Queuess[i].get('EnableAutoGrow') is not None:
-				self.add_query_param('Queues.' + str(i + 1) + '.EnableAutoGrow' , Queuess[i].get('EnableAutoGrow'))
-			if Queuess[i].get('SpotPriceLimit') is not None:
-				self.add_query_param('Queues.' + str(i + 1) + '.SpotPriceLimit' , Queuess[i].get('SpotPriceLimit'))
-			if Queuess[i].get('EnableAutoShrink') is not None:
-				self.add_query_param('Queues.' + str(i + 1) + '.EnableAutoShrink' , Queuess[i].get('EnableAutoShrink'))
-
+	def set_Queuess(self, Queuess):
+		for depth1 in range(len(Queuess)):
+			if Queuess[depth1].get('SpotStrategy') is not None:
+				self.add_query_param('Queues.' + str(depth1 + 1) + '.SpotStrategy', Queuess[depth1].get('SpotStrategy'))
+			if Queuess[depth1].get('QueueName') is not None:
+				self.add_query_param('Queues.' + str(depth1 + 1) + '.QueueName', Queuess[depth1].get('QueueName'))
+			if Queuess[depth1].get('MinNodesInQueue') is not None:
+				self.add_query_param('Queues.' + str(depth1 + 1) + '.MinNodesInQueue', Queuess[depth1].get('MinNodesInQueue'))
+			if Queuess[depth1].get('InstanceTypes') is not None:
+				for depth2 in range(len(Queuess[depth1].get('InstanceTypes'))):
+					if Queuess[depth1].get('InstanceTypes')[depth2].get('SpotStrategy') is not None:
+						self.add_query_param('Queues.' + str(depth1 + 1) + '.InstanceTypes.' + str(depth2 + 1) + '.SpotStrategy', Queuess[depth1].get('InstanceTypes')[depth2].get('SpotStrategy'))
+					if Queuess[depth1].get('InstanceTypes')[depth2].get('VSwitchId') is not None:
+						self.add_query_param('Queues.' + str(depth1 + 1) + '.InstanceTypes.' + str(depth2 + 1) + '.VSwitchId', Queuess[depth1].get('InstanceTypes')[depth2].get('VSwitchId'))
+					if Queuess[depth1].get('InstanceTypes')[depth2].get('InstanceType') is not None:
+						self.add_query_param('Queues.' + str(depth1 + 1) + '.InstanceTypes.' + str(depth2 + 1) + '.InstanceType', Queuess[depth1].get('InstanceTypes')[depth2].get('InstanceType'))
+					if Queuess[depth1].get('InstanceTypes')[depth2].get('ZoneId') is not None:
+						self.add_query_param('Queues.' + str(depth1 + 1) + '.InstanceTypes.' + str(depth2 + 1) + '.ZoneId', Queuess[depth1].get('InstanceTypes')[depth2].get('ZoneId'))
+					if Queuess[depth1].get('InstanceTypes')[depth2].get('HostNamePrefix') is not None:
+						self.add_query_param('Queues.' + str(depth1 + 1) + '.InstanceTypes.' + str(depth2 + 1) + '.HostNamePrefix', Queuess[depth1].get('InstanceTypes')[depth2].get('HostNamePrefix'))
+					if Queuess[depth1].get('InstanceTypes')[depth2].get('SpotPriceLimit') is not None:
+						self.add_query_param('Queues.' + str(depth1 + 1) + '.InstanceTypes.' + str(depth2 + 1) + '.SpotPriceLimit', Queuess[depth1].get('InstanceTypes')[depth2].get('SpotPriceLimit'))
+			if Queuess[depth1].get('MaxNodesInQueue') is not None:
+				self.add_query_param('Queues.' + str(depth1 + 1) + '.MaxNodesInQueue', Queuess[depth1].get('MaxNodesInQueue'))
+			if Queuess[depth1].get('InstanceType') is not None:
+				self.add_query_param('Queues.' + str(depth1 + 1) + '.InstanceType', Queuess[depth1].get('InstanceType'))
+			if Queuess[depth1].get('EnableAutoGrow') is not None:
+				self.add_query_param('Queues.' + str(depth1 + 1) + '.EnableAutoGrow', Queuess[depth1].get('EnableAutoGrow'))
+			if Queuess[depth1].get('SpotPriceLimit') is not None:
+				self.add_query_param('Queues.' + str(depth1 + 1) + '.SpotPriceLimit', Queuess[depth1].get('SpotPriceLimit'))
+			if Queuess[depth1].get('EnableAutoShrink') is not None:
+				self.add_query_param('Queues.' + str(depth1 + 1) + '.EnableAutoShrink', Queuess[depth1].get('EnableAutoShrink'))
 
 	def get_GrowIntervalInMinutes(self):
 		return self.get_query_params().get('GrowIntervalInMinutes')

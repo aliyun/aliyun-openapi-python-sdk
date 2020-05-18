@@ -40,11 +40,10 @@ class StartNodesRequest(RpcRequest):
 	def get_Instances(self):
 		return self.get_query_params().get('Instances')
 
-	def set_Instances(self,Instances):
-		for i in range(len(Instances)):	
-			if Instances[i].get('Id') is not None:
-				self.add_query_param('Instance.' + str(i + 1) + '.Id' , Instances[i].get('Id'))
-
+	def set_Instances(self, Instances):
+		for depth1 in range(len(Instances)):
+			if Instances[depth1].get('Id') is not None:
+				self.add_query_param('Instance.' + str(depth1 + 1) + '.Id', Instances[depth1].get('Id'))
 
 	def get_ClusterId(self):
 		return self.get_query_params().get('ClusterId')

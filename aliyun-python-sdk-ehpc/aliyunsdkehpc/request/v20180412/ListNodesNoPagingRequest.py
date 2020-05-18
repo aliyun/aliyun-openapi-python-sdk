@@ -43,6 +43,12 @@ class ListNodesNoPagingRequest(RpcRequest):
 	def set_ClusterId(self,ClusterId):
 		self.add_query_param('ClusterId',ClusterId)
 
+	def get_Sequence(self):
+		return self.get_query_params().get('Sequence')
+
+	def set_Sequence(self,Sequence):
+		self.add_query_param('Sequence',Sequence)
+
 	def get_HostName(self):
 		return self.get_query_params().get('HostName')
 

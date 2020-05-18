@@ -46,7 +46,7 @@ class SetQueueRequest(RpcRequest):
 	def get_Nodes(self):
 		return self.get_query_params().get('Nodes')
 
-	def set_Nodes(self,Nodes):
-		for i in range(len(Nodes)):	
-			if Nodes[i].get('Name') is not None:
-				self.add_query_param('Node.' + str(i + 1) + '.Name' , Nodes[i].get('Name'))
+	def set_Nodes(self, Nodes):
+		for depth1 in range(len(Nodes)):
+			if Nodes[depth1].get('Name') is not None:
+				self.add_query_param('Node.' + str(depth1 + 1) + '.Name', Nodes[depth1].get('Name'))

@@ -40,9 +40,9 @@ class ModifyUserGroupsRequest(RpcRequest):
 	def get_Users(self):
 		return self.get_query_params().get('Users')
 
-	def set_Users(self,Users):
-		for i in range(len(Users)):	
-			if Users[i].get('Name') is not None:
-				self.add_query_param('User.' + str(i + 1) + '.Name' , Users[i].get('Name'))
-			if Users[i].get('Group') is not None:
-				self.add_query_param('User.' + str(i + 1) + '.Group' , Users[i].get('Group'))
+	def set_Users(self, Users):
+		for depth1 in range(len(Users)):
+			if Users[depth1].get('Name') is not None:
+				self.add_query_param('User.' + str(depth1 + 1) + '.Name', Users[depth1].get('Name'))
+			if Users[depth1].get('Group') is not None:
+				self.add_query_param('User.' + str(depth1 + 1) + '.Group', Users[depth1].get('Group'))

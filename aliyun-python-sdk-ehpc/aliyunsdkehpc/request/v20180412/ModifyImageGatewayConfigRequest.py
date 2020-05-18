@@ -34,15 +34,14 @@ class ModifyImageGatewayConfigRequest(RpcRequest):
 	def get_Repos(self):
 		return self.get_query_params().get('Repos')
 
-	def set_Repos(self,Repos):
-		for i in range(len(Repos)):	
-			if Repos[i].get('Auth') is not None:
-				self.add_query_param('Repo.' + str(i + 1) + '.Auth' , Repos[i].get('Auth'))
-			if Repos[i].get('Location') is not None:
-				self.add_query_param('Repo.' + str(i + 1) + '.Location' , Repos[i].get('Location'))
-			if Repos[i].get('URL') is not None:
-				self.add_query_param('Repo.' + str(i + 1) + '.URL' , Repos[i].get('URL'))
-
+	def set_Repos(self, Repos):
+		for depth1 in range(len(Repos)):
+			if Repos[depth1].get('Auth') is not None:
+				self.add_query_param('Repo.' + str(depth1 + 1) + '.Auth', Repos[depth1].get('Auth'))
+			if Repos[depth1].get('Location') is not None:
+				self.add_query_param('Repo.' + str(depth1 + 1) + '.Location', Repos[depth1].get('Location'))
+			if Repos[depth1].get('URL') is not None:
+				self.add_query_param('Repo.' + str(depth1 + 1) + '.URL', Repos[depth1].get('URL'))
 
 	def get_DBServerInfo(self):
 		return self.get_query_params().get('DBServerInfo')

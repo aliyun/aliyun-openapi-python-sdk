@@ -34,29 +34,28 @@ class CreateClusterRequest(RpcRequest):
 	def get_AdditionalVolumess(self):
 		return self.get_query_params().get('AdditionalVolumess')
 
-	def set_AdditionalVolumess(self,AdditionalVolumess):
-		for i in range(len(AdditionalVolumess)):	
-			if AdditionalVolumess[i].get('VolumeType') is not None:
-				self.add_query_param('AdditionalVolumes.' + str(i + 1) + '.VolumeType' , AdditionalVolumess[i].get('VolumeType'))
-			if AdditionalVolumess[i].get('VolumeProtocol') is not None:
-				self.add_query_param('AdditionalVolumes.' + str(i + 1) + '.VolumeProtocol' , AdditionalVolumess[i].get('VolumeProtocol'))
-			if AdditionalVolumess[i].get('LocalDirectory') is not None:
-				self.add_query_param('AdditionalVolumes.' + str(i + 1) + '.LocalDirectory' , AdditionalVolumess[i].get('LocalDirectory'))
-			if AdditionalVolumess[i].get('RemoteDirectory') is not None:
-				self.add_query_param('AdditionalVolumes.' + str(i + 1) + '.RemoteDirectory' , AdditionalVolumess[i].get('RemoteDirectory'))
-			for j in range(len(AdditionalVolumess[i].get('Roless'))):
-				if AdditionalVolumess[i].get('Roless')[j] is not None:
-					if AdditionalVolumess[i].get('Roless')[j].get('Name') is not None:
-						self.add_query_param('AdditionalVolumes.' + str(i + 1) + '.Roles.'+str(j + 1)+ '.Name', AdditionalVolumess[i].get('Roless')[j].get('Name'))
-			if AdditionalVolumess[i].get('VolumeId') is not None:
-				self.add_query_param('AdditionalVolumes.' + str(i + 1) + '.VolumeId' , AdditionalVolumess[i].get('VolumeId'))
-			if AdditionalVolumess[i].get('VolumeMountpoint') is not None:
-				self.add_query_param('AdditionalVolumes.' + str(i + 1) + '.VolumeMountpoint' , AdditionalVolumess[i].get('VolumeMountpoint'))
-			if AdditionalVolumess[i].get('Location') is not None:
-				self.add_query_param('AdditionalVolumes.' + str(i + 1) + '.Location' , AdditionalVolumess[i].get('Location'))
-			if AdditionalVolumess[i].get('JobQueue') is not None:
-				self.add_query_param('AdditionalVolumes.' + str(i + 1) + '.JobQueue' , AdditionalVolumess[i].get('JobQueue'))
-
+	def set_AdditionalVolumess(self, AdditionalVolumess):
+		for depth1 in range(len(AdditionalVolumess)):
+			if AdditionalVolumess[depth1].get('VolumeType') is not None:
+				self.add_query_param('AdditionalVolumes.' + str(depth1 + 1) + '.VolumeType', AdditionalVolumess[depth1].get('VolumeType'))
+			if AdditionalVolumess[depth1].get('VolumeProtocol') is not None:
+				self.add_query_param('AdditionalVolumes.' + str(depth1 + 1) + '.VolumeProtocol', AdditionalVolumess[depth1].get('VolumeProtocol'))
+			if AdditionalVolumess[depth1].get('LocalDirectory') is not None:
+				self.add_query_param('AdditionalVolumes.' + str(depth1 + 1) + '.LocalDirectory', AdditionalVolumess[depth1].get('LocalDirectory'))
+			if AdditionalVolumess[depth1].get('RemoteDirectory') is not None:
+				self.add_query_param('AdditionalVolumes.' + str(depth1 + 1) + '.RemoteDirectory', AdditionalVolumess[depth1].get('RemoteDirectory'))
+			if AdditionalVolumess[depth1].get('Roles') is not None:
+				for depth2 in range(len(AdditionalVolumess[depth1].get('Roles'))):
+					if AdditionalVolumess[depth1].get('Roles')[depth2].get('Name') is not None:
+						self.add_query_param('AdditionalVolumes.' + str(depth1 + 1) + '.Roles.' + str(depth2 + 1) + '.Name', AdditionalVolumess[depth1].get('Roles')[depth2].get('Name'))
+			if AdditionalVolumess[depth1].get('VolumeId') is not None:
+				self.add_query_param('AdditionalVolumes.' + str(depth1 + 1) + '.VolumeId', AdditionalVolumess[depth1].get('VolumeId'))
+			if AdditionalVolumess[depth1].get('VolumeMountpoint') is not None:
+				self.add_query_param('AdditionalVolumes.' + str(depth1 + 1) + '.VolumeMountpoint', AdditionalVolumess[depth1].get('VolumeMountpoint'))
+			if AdditionalVolumess[depth1].get('Location') is not None:
+				self.add_query_param('AdditionalVolumes.' + str(depth1 + 1) + '.Location', AdditionalVolumess[depth1].get('Location'))
+			if AdditionalVolumess[depth1].get('JobQueue') is not None:
+				self.add_query_param('AdditionalVolumes.' + str(depth1 + 1) + '.JobQueue', AdditionalVolumess[depth1].get('JobQueue'))
 
 	def get_EcsOrderManagerInstanceType(self):
 		return self.get_query_params().get('EcsOrder.Manager.InstanceType')
@@ -163,13 +162,12 @@ class CreateClusterRequest(RpcRequest):
 	def get_PostInstallScripts(self):
 		return self.get_query_params().get('PostInstallScripts')
 
-	def set_PostInstallScripts(self,PostInstallScripts):
-		for i in range(len(PostInstallScripts)):	
-			if PostInstallScripts[i].get('Args') is not None:
-				self.add_query_param('PostInstallScript.' + str(i + 1) + '.Args' , PostInstallScripts[i].get('Args'))
-			if PostInstallScripts[i].get('Url') is not None:
-				self.add_query_param('PostInstallScript.' + str(i + 1) + '.Url' , PostInstallScripts[i].get('Url'))
-
+	def set_PostInstallScripts(self, PostInstallScripts):
+		for depth1 in range(len(PostInstallScripts)):
+			if PostInstallScripts[depth1].get('Args') is not None:
+				self.add_query_param('PostInstallScript.' + str(depth1 + 1) + '.Args', PostInstallScripts[depth1].get('Args'))
+			if PostInstallScripts[depth1].get('Url') is not None:
+				self.add_query_param('PostInstallScript.' + str(depth1 + 1) + '.Url', PostInstallScripts[depth1].get('Url'))
 
 	def get_VSwitchId(self):
 		return self.get_query_params().get('VSwitchId')
@@ -294,11 +292,10 @@ class CreateClusterRequest(RpcRequest):
 	def get_Applications(self):
 		return self.get_query_params().get('Applications')
 
-	def set_Applications(self,Applications):
-		for i in range(len(Applications)):	
-			if Applications[i].get('Tag') is not None:
-				self.add_query_param('Application.' + str(i + 1) + '.Tag' , Applications[i].get('Tag'))
-
+	def set_Applications(self, Applications):
+		for depth1 in range(len(Applications)):
+			if Applications[depth1].get('Tag') is not None:
+				self.add_query_param('Application.' + str(depth1 + 1) + '.Tag', Applications[depth1].get('Tag'))
 
 	def get_EcsChargeType(self):
 		return self.get_query_params().get('EcsChargeType')

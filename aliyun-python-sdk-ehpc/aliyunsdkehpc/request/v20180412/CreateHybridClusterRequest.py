@@ -94,13 +94,12 @@ class CreateHybridClusterRequest(RpcRequest):
 	def get_PostInstallScripts(self):
 		return self.get_query_params().get('PostInstallScripts')
 
-	def set_PostInstallScripts(self,PostInstallScripts):
-		for i in range(len(PostInstallScripts)):	
-			if PostInstallScripts[i].get('Args') is not None:
-				self.add_query_param('PostInstallScript.' + str(i + 1) + '.Args' , PostInstallScripts[i].get('Args'))
-			if PostInstallScripts[i].get('Url') is not None:
-				self.add_query_param('PostInstallScript.' + str(i + 1) + '.Url' , PostInstallScripts[i].get('Url'))
-
+	def set_PostInstallScripts(self, PostInstallScripts):
+		for depth1 in range(len(PostInstallScripts)):
+			if PostInstallScripts[depth1].get('Args') is not None:
+				self.add_query_param('PostInstallScript.' + str(depth1 + 1) + '.Args', PostInstallScripts[depth1].get('Args'))
+			if PostInstallScripts[depth1].get('Url') is not None:
+				self.add_query_param('PostInstallScript.' + str(depth1 + 1) + '.Url', PostInstallScripts[depth1].get('Url'))
 
 	def get_VSwitchId(self):
 		return self.get_query_params().get('VSwitchId')
@@ -207,28 +206,26 @@ class CreateHybridClusterRequest(RpcRequest):
 	def get_Nodess(self):
 		return self.get_query_params().get('Nodess')
 
-	def set_Nodess(self,Nodess):
-		for i in range(len(Nodess)):	
-			if Nodess[i].get('IpAddress') is not None:
-				self.add_query_param('Nodes.' + str(i + 1) + '.IpAddress' , Nodess[i].get('IpAddress'))
-			if Nodess[i].get('HostName') is not None:
-				self.add_query_param('Nodes.' + str(i + 1) + '.HostName' , Nodess[i].get('HostName'))
-			if Nodess[i].get('Role') is not None:
-				self.add_query_param('Nodes.' + str(i + 1) + '.Role' , Nodess[i].get('Role'))
-			if Nodess[i].get('AccountType') is not None:
-				self.add_query_param('Nodes.' + str(i + 1) + '.AccountType' , Nodess[i].get('AccountType'))
-			if Nodess[i].get('SchedulerType') is not None:
-				self.add_query_param('Nodes.' + str(i + 1) + '.SchedulerType' , Nodess[i].get('SchedulerType'))
-
+	def set_Nodess(self, Nodess):
+		for depth1 in range(len(Nodess)):
+			if Nodess[depth1].get('IpAddress') is not None:
+				self.add_query_param('Nodes.' + str(depth1 + 1) + '.IpAddress', Nodess[depth1].get('IpAddress'))
+			if Nodess[depth1].get('HostName') is not None:
+				self.add_query_param('Nodes.' + str(depth1 + 1) + '.HostName', Nodess[depth1].get('HostName'))
+			if Nodess[depth1].get('Role') is not None:
+				self.add_query_param('Nodes.' + str(depth1 + 1) + '.Role', Nodess[depth1].get('Role'))
+			if Nodess[depth1].get('AccountType') is not None:
+				self.add_query_param('Nodes.' + str(depth1 + 1) + '.AccountType', Nodess[depth1].get('AccountType'))
+			if Nodess[depth1].get('SchedulerType') is not None:
+				self.add_query_param('Nodes.' + str(depth1 + 1) + '.SchedulerType', Nodess[depth1].get('SchedulerType'))
 
 	def get_Applications(self):
 		return self.get_query_params().get('Applications')
 
-	def set_Applications(self,Applications):
-		for i in range(len(Applications)):	
-			if Applications[i].get('Tag') is not None:
-				self.add_query_param('Application.' + str(i + 1) + '.Tag' , Applications[i].get('Tag'))
-
+	def set_Applications(self, Applications):
+		for depth1 in range(len(Applications)):
+			if Applications[depth1].get('Tag') is not None:
+				self.add_query_param('Application.' + str(depth1 + 1) + '.Tag', Applications[depth1].get('Tag'))
 
 	def get_VpcId(self):
 		return self.get_query_params().get('VpcId')

@@ -82,13 +82,12 @@ class ApplyNodesRequest(RpcRequest):
 	def get_ZoneInfoss(self):
 		return self.get_query_params().get('ZoneInfoss')
 
-	def set_ZoneInfoss(self,ZoneInfoss):
-		for i in range(len(ZoneInfoss)):	
-			if ZoneInfoss[i].get('VSwitchId') is not None:
-				self.add_query_param('ZoneInfos.' + str(i + 1) + '.VSwitchId' , ZoneInfoss[i].get('VSwitchId'))
-			if ZoneInfoss[i].get('ZoneId') is not None:
-				self.add_query_param('ZoneInfos.' + str(i + 1) + '.ZoneId' , ZoneInfoss[i].get('ZoneId'))
-
+	def set_ZoneInfoss(self, ZoneInfoss):
+		for depth1 in range(len(ZoneInfoss)):
+			if ZoneInfoss[depth1].get('VSwitchId') is not None:
+				self.add_query_param('ZoneInfos.' + str(depth1 + 1) + '.VSwitchId', ZoneInfoss[depth1].get('VSwitchId'))
+			if ZoneInfoss[depth1].get('ZoneId') is not None:
+				self.add_query_param('ZoneInfos.' + str(depth1 + 1) + '.ZoneId', ZoneInfoss[depth1].get('ZoneId'))
 
 	def get_HostNamePrefix(self):
 		return self.get_query_params().get('HostNamePrefix')
@@ -147,13 +146,12 @@ class ApplyNodesRequest(RpcRequest):
 	def get_InstanceTypeModels(self):
 		return self.get_query_params().get('InstanceTypeModels')
 
-	def set_InstanceTypeModels(self,InstanceTypeModels):
-		for i in range(len(InstanceTypeModels)):	
-			if InstanceTypeModels[i].get('MaxPrice') is not None:
-				self.add_query_param('InstanceTypeModel.' + str(i + 1) + '.MaxPrice' , InstanceTypeModels[i].get('MaxPrice'))
-			if InstanceTypeModels[i].get('InstanceType') is not None:
-				self.add_query_param('InstanceTypeModel.' + str(i + 1) + '.InstanceType' , InstanceTypeModels[i].get('InstanceType'))
-
+	def set_InstanceTypeModels(self, InstanceTypeModels):
+		for depth1 in range(len(InstanceTypeModels)):
+			if InstanceTypeModels[depth1].get('MaxPrice') is not None:
+				self.add_query_param('InstanceTypeModel.' + str(depth1 + 1) + '.MaxPrice', InstanceTypeModels[depth1].get('MaxPrice'))
+			if InstanceTypeModels[depth1].get('InstanceType') is not None:
+				self.add_query_param('InstanceTypeModel.' + str(depth1 + 1) + '.InstanceType', InstanceTypeModels[depth1].get('InstanceType'))
 
 	def get_InternetMaxBandWidthIn(self):
 		return self.get_query_params().get('InternetMaxBandWidthIn')
@@ -166,3 +164,9 @@ class ApplyNodesRequest(RpcRequest):
 
 	def set_TargetCapacity(self,TargetCapacity):
 		self.add_query_param('TargetCapacity',TargetCapacity)
+
+	def get_StrictSatisfiedTargetCapacity(self):
+		return self.get_query_params().get('StrictSatisfiedTargetCapacity')
+
+	def set_StrictSatisfiedTargetCapacity(self,StrictSatisfiedTargetCapacity):
+		self.add_query_param('StrictSatisfiedTargetCapacity',StrictSatisfiedTargetCapacity)

@@ -34,27 +34,26 @@ class DescribePriceRequest(RpcRequest):
 	def get_Commoditiess(self):
 		return self.get_query_params().get('Commoditiess')
 
-	def set_Commoditiess(self,Commoditiess):
-		for i in range(len(Commoditiess)):	
-			if Commoditiess[i].get('Amount') is not None:
-				self.add_query_param('Commodities.' + str(i + 1) + '.Amount' , Commoditiess[i].get('Amount'))
-			if Commoditiess[i].get('Period') is not None:
-				self.add_query_param('Commodities.' + str(i + 1) + '.Period' , Commoditiess[i].get('Period'))
-			if Commoditiess[i].get('NodeType') is not None:
-				self.add_query_param('Commodities.' + str(i + 1) + '.NodeType' , Commoditiess[i].get('NodeType'))
-			if Commoditiess[i].get('SystemDiskCategory') is not None:
-				self.add_query_param('Commodities.' + str(i + 1) + '.SystemDiskCategory' , Commoditiess[i].get('SystemDiskCategory'))
-			if Commoditiess[i].get('InternetChargeType') is not None:
-				self.add_query_param('Commodities.' + str(i + 1) + '.InternetChargeType' , Commoditiess[i].get('InternetChargeType'))
-			if Commoditiess[i].get('SystemDiskSize') is not None:
-				self.add_query_param('Commodities.' + str(i + 1) + '.SystemDiskSize' , Commoditiess[i].get('SystemDiskSize'))
-			if Commoditiess[i].get('InternetMaxBandWidthOut') is not None:
-				self.add_query_param('Commodities.' + str(i + 1) + '.InternetMaxBandWidthOut' , Commoditiess[i].get('InternetMaxBandWidthOut'))
-			if Commoditiess[i].get('InstanceType') is not None:
-				self.add_query_param('Commodities.' + str(i + 1) + '.InstanceType' , Commoditiess[i].get('InstanceType'))
-			if Commoditiess[i].get('NetworkType') is not None:
-				self.add_query_param('Commodities.' + str(i + 1) + '.NetworkType' , Commoditiess[i].get('NetworkType'))
-
+	def set_Commoditiess(self, Commoditiess):
+		for depth1 in range(len(Commoditiess)):
+			if Commoditiess[depth1].get('Amount') is not None:
+				self.add_query_param('Commodities.' + str(depth1 + 1) + '.Amount', Commoditiess[depth1].get('Amount'))
+			if Commoditiess[depth1].get('Period') is not None:
+				self.add_query_param('Commodities.' + str(depth1 + 1) + '.Period', Commoditiess[depth1].get('Period'))
+			if Commoditiess[depth1].get('NodeType') is not None:
+				self.add_query_param('Commodities.' + str(depth1 + 1) + '.NodeType', Commoditiess[depth1].get('NodeType'))
+			if Commoditiess[depth1].get('SystemDiskCategory') is not None:
+				self.add_query_param('Commodities.' + str(depth1 + 1) + '.SystemDiskCategory', Commoditiess[depth1].get('SystemDiskCategory'))
+			if Commoditiess[depth1].get('InternetChargeType') is not None:
+				self.add_query_param('Commodities.' + str(depth1 + 1) + '.InternetChargeType', Commoditiess[depth1].get('InternetChargeType'))
+			if Commoditiess[depth1].get('SystemDiskSize') is not None:
+				self.add_query_param('Commodities.' + str(depth1 + 1) + '.SystemDiskSize', Commoditiess[depth1].get('SystemDiskSize'))
+			if Commoditiess[depth1].get('InternetMaxBandWidthOut') is not None:
+				self.add_query_param('Commodities.' + str(depth1 + 1) + '.InternetMaxBandWidthOut', Commoditiess[depth1].get('InternetMaxBandWidthOut'))
+			if Commoditiess[depth1].get('InstanceType') is not None:
+				self.add_query_param('Commodities.' + str(depth1 + 1) + '.InstanceType', Commoditiess[depth1].get('InstanceType'))
+			if Commoditiess[depth1].get('NetworkType') is not None:
+				self.add_query_param('Commodities.' + str(depth1 + 1) + '.NetworkType', Commoditiess[depth1].get('NetworkType'))
 
 	def get_PriceUnit(self):
 		return self.get_query_params().get('PriceUnit')
