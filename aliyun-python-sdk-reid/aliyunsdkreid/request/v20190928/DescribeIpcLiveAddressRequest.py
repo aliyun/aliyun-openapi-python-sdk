@@ -42,3 +42,9 @@ class DescribeIpcLiveAddressRequest(RpcRequest):
 
 	def set_StoreId(self,StoreId):
 		self.add_body_params('StoreId', StoreId)
+
+	def get_ProtocolType(self):
+		return self.get_body_params().get('ProtocolType')
+
+	def set_ProtocolType(self,ProtocolType):
+		self.add_body_params('ProtocolType', ProtocolType)
