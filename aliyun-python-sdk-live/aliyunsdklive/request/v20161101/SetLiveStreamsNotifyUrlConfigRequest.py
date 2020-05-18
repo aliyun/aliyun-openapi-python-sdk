@@ -24,23 +24,12 @@ class SetLiveStreamsNotifyUrlConfigRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'live', '2016-11-01', 'SetLiveStreamsNotifyUrlConfig','live')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_AuthKey(self):
-		return self.get_query_params().get('AuthKey')
-
-	def set_AuthKey(self,AuthKey):
-		self.add_query_param('AuthKey',AuthKey)
-
-	def get_AuthType(self):
-		return self.get_query_params().get('AuthType')
-
-	def set_AuthType(self,AuthType):
-		self.add_query_param('AuthType',AuthType)
 
 	def get_NotifyUrl(self):
 		return self.get_query_params().get('NotifyUrl')

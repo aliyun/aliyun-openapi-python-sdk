@@ -24,6 +24,7 @@ class UpdateCasterSceneAudioRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'live', '2016-11-01', 'UpdateCasterSceneAudio','live')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -45,15 +46,14 @@ class UpdateCasterSceneAudioRequest(RpcRequest):
 	def get_AudioLayers(self):
 		return self.get_query_params().get('AudioLayers')
 
-	def set_AudioLayers(self,AudioLayers):
-		for i in range(len(AudioLayers)):	
-			if AudioLayers[i].get('VolumeRate') is not None:
-				self.add_query_param('AudioLayer.' + str(i + 1) + '.VolumeRate' , AudioLayers[i].get('VolumeRate'))
-			if AudioLayers[i].get('ValidChannel') is not None:
-				self.add_query_param('AudioLayer.' + str(i + 1) + '.ValidChannel' , AudioLayers[i].get('ValidChannel'))
-			if AudioLayers[i].get('FixedDelayDuration') is not None:
-				self.add_query_param('AudioLayer.' + str(i + 1) + '.FixedDelayDuration' , AudioLayers[i].get('FixedDelayDuration'))
-
+	def set_AudioLayers(self, AudioLayers):
+		for depth1 in range(len(AudioLayers)):
+			if AudioLayers[depth1].get('VolumeRate') is not None:
+				self.add_query_param('AudioLayer.' + str(depth1 + 1) + '.VolumeRate', AudioLayers[depth1].get('VolumeRate'))
+			if AudioLayers[depth1].get('ValidChannel') is not None:
+				self.add_query_param('AudioLayer.' + str(depth1 + 1) + '.ValidChannel', AudioLayers[depth1].get('ValidChannel'))
+			if AudioLayers[depth1].get('FixedDelayDuration') is not None:
+				self.add_query_param('AudioLayer.' + str(depth1 + 1) + '.FixedDelayDuration', AudioLayers[depth1].get('FixedDelayDuration'))
 
 	def get_SceneId(self):
 		return self.get_query_params().get('SceneId')
@@ -64,10 +64,10 @@ class UpdateCasterSceneAudioRequest(RpcRequest):
 	def get_MixLists(self):
 		return self.get_query_params().get('MixLists')
 
-	def set_MixLists(self,MixLists):
-		for i in range(len(MixLists)):	
-			if MixLists[i] is not None:
-				self.add_query_param('MixList.' + str(i + 1) , MixLists[i]);
+	def set_MixLists(self, MixLists):
+		for depth1 in range(len(MixLists)):
+			if MixLists[depth1] is not None:
+				self.add_query_param('MixList.' + str(depth1 + 1) , MixLists[depth1])
 
 	def get_FollowEnable(self):
 		return self.get_query_params().get('FollowEnable')

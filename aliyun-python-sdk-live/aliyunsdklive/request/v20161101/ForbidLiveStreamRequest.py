@@ -24,6 +24,7 @@ class ForbidLiveStreamRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'live', '2016-11-01', 'ForbidLiveStream','live')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -41,12 +42,6 @@ class ForbidLiveStreamRequest(RpcRequest):
 
 	def set_StreamName(self,StreamName):
 		self.add_query_param('StreamName',StreamName)
-
-	def get_ControlStreamAction(self):
-		return self.get_query_params().get('ControlStreamAction')
-
-	def set_ControlStreamAction(self,ControlStreamAction):
-		self.add_query_param('ControlStreamAction',ControlStreamAction)
 
 	def get_ResumeTime(self):
 		return self.get_query_params().get('ResumeTime')

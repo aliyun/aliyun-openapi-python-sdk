@@ -24,6 +24,7 @@ class AddCasterVideoResourceRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'live', '2016-11-01', 'AddCasterVideoResource','live')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -47,6 +48,12 @@ class AddCasterVideoResourceRequest(RpcRequest):
 
 	def set_VodUrl(self,VodUrl):
 		self.add_query_param('VodUrl',VodUrl)
+
+	def get_StreamId(self):
+		return self.get_query_params().get('StreamId')
+
+	def set_StreamId(self,StreamId):
+		self.add_query_param('StreamId',StreamId)
 
 	def get_CasterId(self):
 		return self.get_query_params().get('CasterId')

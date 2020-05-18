@@ -24,6 +24,7 @@ class UpdateLiveSnapshotDetectPornConfigRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'live', '2016-11-01', 'UpdateLiveSnapshotDetectPornConfig','live')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -45,10 +46,10 @@ class UpdateLiveSnapshotDetectPornConfigRequest(RpcRequest):
 	def get_Scenes(self):
 		return self.get_query_params().get('Scenes')
 
-	def set_Scenes(self,Scenes):
-		for i in range(len(Scenes)):	
-			if Scenes[i] is not None:
-				self.add_query_param('Scene.' + str(i + 1) , Scenes[i]);
+	def set_Scenes(self, Scenes):
+		for depth1 in range(len(Scenes)):
+			if Scenes[depth1] is not None:
+				self.add_query_param('Scene.' + str(depth1 + 1) , Scenes[depth1])
 
 	def get_AppName(self):
 		return self.get_query_params().get('AppName')

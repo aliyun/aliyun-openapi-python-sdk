@@ -24,11 +24,18 @@ class AddCasterComponentRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'live', '2016-11-01', 'AddCasterComponent','live')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+
+	def get_HtmlLayerContent(self):
+		return self.get_query_params().get('HtmlLayerContent')
+
+	def set_HtmlLayerContent(self,HtmlLayerContent):
+		self.add_query_param('HtmlLayerContent',HtmlLayerContent)
 
 	def get_ImageLayerContent(self):
 		return self.get_query_params().get('ImageLayerContent')
@@ -41,6 +48,12 @@ class AddCasterComponentRequest(RpcRequest):
 
 	def set_ComponentName(self,ComponentName):
 		self.add_query_param('ComponentName',ComponentName)
+
+	def get_LayerOrder(self):
+		return self.get_query_params().get('LayerOrder')
+
+	def set_LayerOrder(self,LayerOrder):
+		self.add_query_param('LayerOrder',LayerOrder)
 
 	def get_CasterId(self):
 		return self.get_query_params().get('CasterId')

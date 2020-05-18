@@ -24,6 +24,7 @@ class AddCasterProgramRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'live', '2016-11-01', 'AddCasterProgram','live')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -33,24 +34,24 @@ class AddCasterProgramRequest(RpcRequest):
 	def get_Episodes(self):
 		return self.get_query_params().get('Episodes')
 
-	def set_Episodes(self,Episodes):
-		for i in range(len(Episodes)):	
-			if Episodes[i].get('EpisodeType') is not None:
-				self.add_query_param('Episode.' + str(i + 1) + '.EpisodeType' , Episodes[i].get('EpisodeType'))
-			if Episodes[i].get('EpisodeName') is not None:
-				self.add_query_param('Episode.' + str(i + 1) + '.EpisodeName' , Episodes[i].get('EpisodeName'))
-			if Episodes[i].get('ResourceId') is not None:
-				self.add_query_param('Episode.' + str(i + 1) + '.ResourceId' , Episodes[i].get('ResourceId'))
-			for j in range(len(Episodes[i].get('ComponentIds'))):
-				if Episodes[i].get('ComponentIds')[j] is not None:
-					self.add_query_param('Episode.' + str(i + 1) + '.ComponentId.'+str(j + 1), Episodes[i].get('ComponentIds')[j])
-			if Episodes[i].get('StartTime') is not None:
-				self.add_query_param('Episode.' + str(i + 1) + '.StartTime' , Episodes[i].get('StartTime'))
-			if Episodes[i].get('EndTime') is not None:
-				self.add_query_param('Episode.' + str(i + 1) + '.EndTime' , Episodes[i].get('EndTime'))
-			if Episodes[i].get('SwitchType') is not None:
-				self.add_query_param('Episode.' + str(i + 1) + '.SwitchType' , Episodes[i].get('SwitchType'))
-
+	def set_Episodes(self, Episodes):
+		for depth1 in range(len(Episodes)):
+			if Episodes[depth1].get('EpisodeType') is not None:
+				self.add_query_param('Episode.' + str(depth1 + 1) + '.EpisodeType', Episodes[depth1].get('EpisodeType'))
+			if Episodes[depth1].get('EpisodeName') is not None:
+				self.add_query_param('Episode.' + str(depth1 + 1) + '.EpisodeName', Episodes[depth1].get('EpisodeName'))
+			if Episodes[depth1].get('ResourceId') is not None:
+				self.add_query_param('Episode.' + str(depth1 + 1) + '.ResourceId', Episodes[depth1].get('ResourceId'))
+			if Episodes[depth1].get('ComponentId') is not None:
+				for depth2 in range(len(Episodes[depth1].get('ComponentId'))):
+					if Episodes[depth1].get('ComponentId')[depth2] is not None:
+						self.add_query_param('Episode.' + str(depth1 + 1) + '.ComponentId.' + str(depth2 + 1) , Episodes[depth1].get('ComponentId')[depth2])
+			if Episodes[depth1].get('StartTime') is not None:
+				self.add_query_param('Episode.' + str(depth1 + 1) + '.StartTime', Episodes[depth1].get('StartTime'))
+			if Episodes[depth1].get('EndTime') is not None:
+				self.add_query_param('Episode.' + str(depth1 + 1) + '.EndTime', Episodes[depth1].get('EndTime'))
+			if Episodes[depth1].get('SwitchType') is not None:
+				self.add_query_param('Episode.' + str(depth1 + 1) + '.SwitchType', Episodes[depth1].get('SwitchType'))
 
 	def get_CasterId(self):
 		return self.get_query_params().get('CasterId')

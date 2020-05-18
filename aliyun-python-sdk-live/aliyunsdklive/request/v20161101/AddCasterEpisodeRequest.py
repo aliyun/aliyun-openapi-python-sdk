@@ -24,6 +24,7 @@ class AddCasterEpisodeRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'live', '2016-11-01', 'AddCasterEpisode','live')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -51,10 +52,10 @@ class AddCasterEpisodeRequest(RpcRequest):
 	def get_ComponentIds(self):
 		return self.get_query_params().get('ComponentIds')
 
-	def set_ComponentIds(self,ComponentIds):
-		for i in range(len(ComponentIds)):	
-			if ComponentIds[i] is not None:
-				self.add_query_param('ComponentId.' + str(i + 1) , ComponentIds[i]);
+	def set_ComponentIds(self, ComponentIds):
+		for depth1 in range(len(ComponentIds)):
+			if ComponentIds[depth1] is not None:
+				self.add_query_param('ComponentId.' + str(depth1 + 1) , ComponentIds[depth1])
 
 	def get_CasterId(self):
 		return self.get_query_params().get('CasterId')

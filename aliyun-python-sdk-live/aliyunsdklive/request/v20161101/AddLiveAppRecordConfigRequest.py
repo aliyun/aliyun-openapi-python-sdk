@@ -24,6 +24,7 @@ class AddLiveAppRecordConfigRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'live', '2016-11-01', 'AddLiveAppRecordConfig','live')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -93,13 +94,13 @@ class AddLiveAppRecordConfigRequest(RpcRequest):
 	def get_RecordFormats(self):
 		return self.get_query_params().get('RecordFormats')
 
-	def set_RecordFormats(self,RecordFormats):
-		for i in range(len(RecordFormats)):	
-			if RecordFormats[i].get('SliceOssObjectPrefix') is not None:
-				self.add_query_param('RecordFormat.' + str(i + 1) + '.SliceOssObjectPrefix' , RecordFormats[i].get('SliceOssObjectPrefix'))
-			if RecordFormats[i].get('Format') is not None:
-				self.add_query_param('RecordFormat.' + str(i + 1) + '.Format' , RecordFormats[i].get('Format'))
-			if RecordFormats[i].get('OssObjectPrefix') is not None:
-				self.add_query_param('RecordFormat.' + str(i + 1) + '.OssObjectPrefix' , RecordFormats[i].get('OssObjectPrefix'))
-			if RecordFormats[i].get('CycleDuration') is not None:
-				self.add_query_param('RecordFormat.' + str(i + 1) + '.CycleDuration' , RecordFormats[i].get('CycleDuration'))
+	def set_RecordFormats(self, RecordFormats):
+		for depth1 in range(len(RecordFormats)):
+			if RecordFormats[depth1].get('SliceOssObjectPrefix') is not None:
+				self.add_query_param('RecordFormat.' + str(depth1 + 1) + '.SliceOssObjectPrefix', RecordFormats[depth1].get('SliceOssObjectPrefix'))
+			if RecordFormats[depth1].get('Format') is not None:
+				self.add_query_param('RecordFormat.' + str(depth1 + 1) + '.Format', RecordFormats[depth1].get('Format'))
+			if RecordFormats[depth1].get('OssObjectPrefix') is not None:
+				self.add_query_param('RecordFormat.' + str(depth1 + 1) + '.OssObjectPrefix', RecordFormats[depth1].get('OssObjectPrefix'))
+			if RecordFormats[depth1].get('CycleDuration') is not None:
+				self.add_query_param('RecordFormat.' + str(depth1 + 1) + '.CycleDuration', RecordFormats[depth1].get('CycleDuration'))

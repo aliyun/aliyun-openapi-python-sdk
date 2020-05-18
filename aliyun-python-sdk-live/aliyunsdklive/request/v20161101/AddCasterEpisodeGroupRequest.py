@@ -24,6 +24,7 @@ class AddCasterEpisodeGroupRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'live', '2016-11-01', 'AddCasterEpisodeGroup','live')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -51,13 +52,12 @@ class AddCasterEpisodeGroupRequest(RpcRequest):
 	def get_Items(self):
 		return self.get_query_params().get('Items')
 
-	def set_Items(self,Items):
-		for i in range(len(Items)):	
-			if Items[i].get('ItemName') is not None:
-				self.add_query_param('Item.' + str(i + 1) + '.ItemName' , Items[i].get('ItemName'))
-			if Items[i].get('VodUrl') is not None:
-				self.add_query_param('Item.' + str(i + 1) + '.VodUrl' , Items[i].get('VodUrl'))
-
+	def set_Items(self, Items):
+		for depth1 in range(len(Items)):
+			if Items[depth1].get('ItemName') is not None:
+				self.add_query_param('Item.' + str(depth1 + 1) + '.ItemName', Items[depth1].get('ItemName'))
+			if Items[depth1].get('VodUrl') is not None:
+				self.add_query_param('Item.' + str(depth1 + 1) + '.VodUrl', Items[depth1].get('VodUrl'))
 
 	def get_DomainName(self):
 		return self.get_query_params().get('DomainName')

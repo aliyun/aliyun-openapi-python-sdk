@@ -24,6 +24,7 @@ class SetCasterSyncGroupRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'live', '2016-11-01', 'SetCasterSyncGroup','live')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -45,12 +46,15 @@ class SetCasterSyncGroupRequest(RpcRequest):
 	def get_SyncGroups(self):
 		return self.get_query_params().get('SyncGroups')
 
-	def set_SyncGroups(self,SyncGroups):
-		for i in range(len(SyncGroups)):	
-			if SyncGroups[i].get('Mode') is not None:
-				self.add_query_param('SyncGroup.' + str(i + 1) + '.Mode' , SyncGroups[i].get('Mode'))
-			if SyncGroups[i].get('HostResourceId') is not None:
-				self.add_query_param('SyncGroup.' + str(i + 1) + '.HostResourceId' , SyncGroups[i].get('HostResourceId'))
-			for j in range(len(SyncGroups[i].get('ResourceIdss'))):
-				if SyncGroups[i].get('ResourceIdss')[j] is not None:
-					self.add_query_param('SyncGroup.' + str(i + 1) + '.ResourceIds.'+str(j + 1), SyncGroups[i].get('ResourceIdss')[j])
+	def set_SyncGroups(self, SyncGroups):
+		for depth1 in range(len(SyncGroups)):
+			if SyncGroups[depth1].get('Mode') is not None:
+				self.add_query_param('SyncGroup.' + str(depth1 + 1) + '.Mode', SyncGroups[depth1].get('Mode'))
+			if SyncGroups[depth1].get('SyncDelayThreshold') is not None:
+				self.add_query_param('SyncGroup.' + str(depth1 + 1) + '.SyncDelayThreshold', SyncGroups[depth1].get('SyncDelayThreshold'))
+			if SyncGroups[depth1].get('HostResourceId') is not None:
+				self.add_query_param('SyncGroup.' + str(depth1 + 1) + '.HostResourceId', SyncGroups[depth1].get('HostResourceId'))
+			if SyncGroups[depth1].get('ResourceIds') is not None:
+				for depth2 in range(len(SyncGroups[depth1].get('ResourceIds'))):
+					if SyncGroups[depth1].get('ResourceIds')[depth2] is not None:
+						self.add_query_param('SyncGroup.' + str(depth1 + 1) + '.ResourceIds.' + str(depth2 + 1) , SyncGroups[depth1].get('ResourceIds')[depth2])
