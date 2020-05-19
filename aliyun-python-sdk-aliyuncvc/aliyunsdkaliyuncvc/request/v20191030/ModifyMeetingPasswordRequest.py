@@ -20,22 +20,16 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkaliyuncvc.endpoint import endpoint_data
 
-class CreateMeetingRequest(RpcRequest):
+class ModifyMeetingPasswordRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'aliyuncvc', '2019-10-30', 'CreateMeeting','aliyuncvc')
+		RpcRequest.__init__(self, 'aliyuncvc', '2019-10-30', 'ModifyMeetingPassword','aliyuncvc')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_MeetingName(self):
-		return self.get_body_params().get('MeetingName')
-
-	def set_MeetingName(self,MeetingName):
-		self.add_body_params('MeetingName', MeetingName)
 
 	def get_UserId(self):
 		return self.get_body_params().get('UserId')
@@ -49,20 +43,14 @@ class CreateMeetingRequest(RpcRequest):
 	def set_OpenPasswordFlag(self,OpenPasswordFlag):
 		self.add_body_params('OpenPasswordFlag', OpenPasswordFlag)
 
+	def get_MeetingUUID(self):
+		return self.get_body_params().get('MeetingUUID')
+
+	def set_MeetingUUID(self,MeetingUUID):
+		self.add_body_params('MeetingUUID', MeetingUUID)
+
 	def get_Password(self):
 		return self.get_body_params().get('Password')
 
 	def set_Password(self,Password):
 		self.add_body_params('Password', Password)
-
-	def get_MasterEnableFlag(self):
-		return self.get_body_params().get('MasterEnableFlag')
-
-	def set_MasterEnableFlag(self,MasterEnableFlag):
-		self.add_body_params('MasterEnableFlag', MasterEnableFlag)
-
-	def get_MeetingMode(self):
-		return self.get_body_params().get('MeetingMode')
-
-	def set_MeetingMode(self,MeetingMode):
-		self.add_body_params('MeetingMode', MeetingMode)

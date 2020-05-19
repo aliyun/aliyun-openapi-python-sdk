@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkaliyuncvc.endpoint import endpoint_data
 
-class CreateMeetingRequest(RpcRequest):
+class RegisterUemDeviceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'aliyuncvc', '2019-10-30', 'CreateMeeting','aliyuncvc')
+		RpcRequest.__init__(self, 'aliyuncvc', '2019-10-30', 'RegisterUemDevice','aliyuncvc')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,38 +31,38 @@ class CreateMeetingRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_MeetingName(self):
-		return self.get_body_params().get('MeetingName')
+	def get_IP(self):
+		return self.get_query_params().get('IP')
 
-	def set_MeetingName(self,MeetingName):
-		self.add_body_params('MeetingName', MeetingName)
+	def set_IP(self,IP):
+		self.add_query_param('IP',IP)
 
-	def get_UserId(self):
-		return self.get_body_params().get('UserId')
+	def get_GroupId(self):
+		return self.get_query_params().get('GroupId')
 
-	def set_UserId(self,UserId):
-		self.add_body_params('UserId', UserId)
+	def set_GroupId(self,GroupId):
+		self.add_query_param('GroupId',GroupId)
 
-	def get_OpenPasswordFlag(self):
-		return self.get_body_params().get('OpenPasswordFlag')
+	def get_DeviceId(self):
+		return self.get_query_params().get('DeviceId')
 
-	def set_OpenPasswordFlag(self,OpenPasswordFlag):
-		self.add_body_params('OpenPasswordFlag', OpenPasswordFlag)
+	def set_DeviceId(self,DeviceId):
+		self.add_query_param('DeviceId',DeviceId)
 
-	def get_Password(self):
-		return self.get_body_params().get('Password')
+	def get_GroupName(self):
+		return self.get_query_params().get('GroupName')
 
-	def set_Password(self,Password):
-		self.add_body_params('Password', Password)
+	def set_GroupName(self,GroupName):
+		self.add_query_param('GroupName',GroupName)
 
-	def get_MasterEnableFlag(self):
-		return self.get_body_params().get('MasterEnableFlag')
+	def get_Mac(self):
+		return self.get_query_params().get('Mac')
 
-	def set_MasterEnableFlag(self,MasterEnableFlag):
-		self.add_body_params('MasterEnableFlag', MasterEnableFlag)
+	def set_Mac(self,Mac):
+		self.add_query_param('Mac',Mac)
 
-	def get_MeetingMode(self):
-		return self.get_body_params().get('MeetingMode')
+	def get_DeviceVersion(self):
+		return self.get_query_params().get('DeviceVersion')
 
-	def set_MeetingMode(self,MeetingMode):
-		self.add_body_params('MeetingMode', MeetingMode)
+	def set_DeviceVersion(self,DeviceVersion):
+		self.add_query_param('DeviceVersion',DeviceVersion)

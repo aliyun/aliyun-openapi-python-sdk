@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkaliyuncvc.endpoint import endpoint_data
 
-class CreateMeetingRequest(RpcRequest):
+class CreateDeviceMeetingRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'aliyuncvc', '2019-10-30', 'CreateMeeting','aliyuncvc')
+		RpcRequest.__init__(self, 'aliyuncvc', '2019-10-30', 'CreateDeviceMeeting','aliyuncvc')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -37,17 +37,17 @@ class CreateMeetingRequest(RpcRequest):
 	def set_MeetingName(self,MeetingName):
 		self.add_body_params('MeetingName', MeetingName)
 
-	def get_UserId(self):
-		return self.get_body_params().get('UserId')
+	def get_OpenPasswordtag(self):
+		return self.get_body_params().get('OpenPasswordtag')
 
-	def set_UserId(self,UserId):
-		self.add_body_params('UserId', UserId)
+	def set_OpenPasswordtag(self,OpenPasswordtag):
+		self.add_body_params('OpenPasswordtag', OpenPasswordtag)
 
-	def get_OpenPasswordFlag(self):
-		return self.get_body_params().get('OpenPasswordFlag')
+	def get_Token(self):
+		return self.get_body_params().get('Token')
 
-	def set_OpenPasswordFlag(self,OpenPasswordFlag):
-		self.add_body_params('OpenPasswordFlag', OpenPasswordFlag)
+	def set_Token(self,Token):
+		self.add_body_params('Token', Token)
 
 	def get_Password(self):
 		return self.get_body_params().get('Password')
@@ -55,14 +55,8 @@ class CreateMeetingRequest(RpcRequest):
 	def set_Password(self,Password):
 		self.add_body_params('Password', Password)
 
-	def get_MasterEnableFlag(self):
-		return self.get_body_params().get('MasterEnableFlag')
+	def get_SN(self):
+		return self.get_body_params().get('SN')
 
-	def set_MasterEnableFlag(self,MasterEnableFlag):
-		self.add_body_params('MasterEnableFlag', MasterEnableFlag)
-
-	def get_MeetingMode(self):
-		return self.get_body_params().get('MeetingMode')
-
-	def set_MeetingMode(self,MeetingMode):
-		self.add_body_params('MeetingMode', MeetingMode)
+	def set_SN(self,SN):
+		self.add_body_params('SN', SN)

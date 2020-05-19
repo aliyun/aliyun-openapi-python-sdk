@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkaliyuncvc.endpoint import endpoint_data
 
-class ListMembersRequest(RpcRequest):
+class BatchCreateDeviceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'aliyuncvc', '2019-10-30', 'ListMembers','aliyuncvc')
+		RpcRequest.__init__(self, 'aliyuncvc', '2019-10-30', 'BatchCreateDevice','aliyuncvc')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,8 +31,8 @@ class ListMembersRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_MeetingUUID(self):
-		return self.get_query_params().get('MeetingUUID')
+	def get_SN(self):
+		return self.get_body_params().get('SN')
 
-	def set_MeetingUUID(self,MeetingUUID):
-		self.add_query_param('MeetingUUID',MeetingUUID)
+	def set_SN(self,SN):
+		self.add_body_params('SN', SN)

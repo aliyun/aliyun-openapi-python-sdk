@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkaliyuncvc.endpoint import endpoint_data
 
-class CreateMeetingRequest(RpcRequest):
+class CreateLiveRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'aliyuncvc', '2019-10-30', 'CreateMeeting','aliyuncvc')
+		RpcRequest.__init__(self, 'aliyuncvc', '2019-10-30', 'CreateLive','aliyuncvc')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,11 +31,11 @@ class CreateMeetingRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_MeetingName(self):
-		return self.get_body_params().get('MeetingName')
+	def get_Memo(self):
+		return self.get_body_params().get('Memo')
 
-	def set_MeetingName(self,MeetingName):
-		self.add_body_params('MeetingName', MeetingName)
+	def set_Memo(self,Memo):
+		self.add_body_params('Memo', Memo)
 
 	def get_UserId(self):
 		return self.get_body_params().get('UserId')
@@ -55,14 +55,8 @@ class CreateMeetingRequest(RpcRequest):
 	def set_Password(self,Password):
 		self.add_body_params('Password', Password)
 
-	def get_MasterEnableFlag(self):
-		return self.get_body_params().get('MasterEnableFlag')
+	def get_LiveName(self):
+		return self.get_body_params().get('LiveName')
 
-	def set_MasterEnableFlag(self,MasterEnableFlag):
-		self.add_body_params('MasterEnableFlag', MasterEnableFlag)
-
-	def get_MeetingMode(self):
-		return self.get_body_params().get('MeetingMode')
-
-	def set_MeetingMode(self,MeetingMode):
-		self.add_body_params('MeetingMode', MeetingMode)
+	def set_LiveName(self,LiveName):
+		self.add_body_params('LiveName', LiveName)
