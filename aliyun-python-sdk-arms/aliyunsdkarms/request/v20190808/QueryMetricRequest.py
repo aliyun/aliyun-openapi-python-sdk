@@ -58,13 +58,12 @@ class QueryMetricRequest(RpcRequest):
 	def get_Filterss(self):
 		return self.get_query_params().get('Filterss')
 
-	def set_Filterss(self,Filterss):
-		for i in range(len(Filterss)):	
-			if Filterss[i].get('Value') is not None:
-				self.add_query_param('Filters.' + str(i + 1) + '.Value' , Filterss[i].get('Value'))
-			if Filterss[i].get('Key') is not None:
-				self.add_query_param('Filters.' + str(i + 1) + '.Key' , Filterss[i].get('Key'))
-
+	def set_Filterss(self, Filterss):
+		for depth1 in range(len(Filterss)):
+			if Filterss[depth1].get('Value') is not None:
+				self.add_query_param('Filters.' + str(depth1 + 1) + '.Value', Filterss[depth1].get('Value'))
+			if Filterss[depth1].get('Key') is not None:
+				self.add_query_param('Filters.' + str(depth1 + 1) + '.Key', Filterss[depth1].get('Key'))
 
 	def get_ConsistencyDataKey(self):
 		return self.get_query_params().get('ConsistencyDataKey')
@@ -81,10 +80,10 @@ class QueryMetricRequest(RpcRequest):
 	def get_Measuress(self):
 		return self.get_query_params().get('Measuress')
 
-	def set_Measuress(self,Measuress):
-		for i in range(len(Measuress)):	
-			if Measuress[i] is not None:
-				self.add_query_param('Measures.' + str(i + 1) , Measuress[i]);
+	def set_Measuress(self, Measuress):
+		for depth1 in range(len(Measuress)):
+			if Measuress[depth1] is not None:
+				self.add_query_param('Measures.' + str(depth1 + 1) , Measuress[depth1])
 
 	def get_IntervalInSec(self):
 		return self.get_query_params().get('IntervalInSec')
@@ -107,10 +106,10 @@ class QueryMetricRequest(RpcRequest):
 	def get_Dimensionss(self):
 		return self.get_query_params().get('Dimensionss')
 
-	def set_Dimensionss(self,Dimensionss):
-		for i in range(len(Dimensionss)):	
-			if Dimensionss[i] is not None:
-				self.add_query_param('Dimensions.' + str(i + 1) , Dimensionss[i]);
+	def set_Dimensionss(self, Dimensionss):
+		for depth1 in range(len(Dimensionss)):
+			if Dimensionss[depth1] is not None:
+				self.add_query_param('Dimensions.' + str(depth1 + 1) , Dimensionss[depth1])
 
 	def get_Order(self):
 		return self.get_query_params().get('Order')

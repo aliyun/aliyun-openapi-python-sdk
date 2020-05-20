@@ -64,23 +64,22 @@ class QueryDatasetRequest(RpcRequest):
 	def get_OptionalDimss(self):
 		return self.get_query_params().get('OptionalDimss')
 
-	def set_OptionalDimss(self,OptionalDimss):
-		for i in range(len(OptionalDimss)):	
-			if OptionalDimss[i].get('Type') is not None:
-				self.add_query_param('OptionalDims.' + str(i + 1) + '.Type' , OptionalDimss[i].get('Type'))
-			if OptionalDimss[i].get('Value') is not None:
-				self.add_query_param('OptionalDims.' + str(i + 1) + '.Value' , OptionalDimss[i].get('Value'))
-			if OptionalDimss[i].get('Key') is not None:
-				self.add_query_param('OptionalDims.' + str(i + 1) + '.Key' , OptionalDimss[i].get('Key'))
-
+	def set_OptionalDimss(self, OptionalDimss):
+		for depth1 in range(len(OptionalDimss)):
+			if OptionalDimss[depth1].get('Type') is not None:
+				self.add_query_param('OptionalDims.' + str(depth1 + 1) + '.Type', OptionalDimss[depth1].get('Type'))
+			if OptionalDimss[depth1].get('Value') is not None:
+				self.add_query_param('OptionalDims.' + str(depth1 + 1) + '.Value', OptionalDimss[depth1].get('Value'))
+			if OptionalDimss[depth1].get('Key') is not None:
+				self.add_query_param('OptionalDims.' + str(depth1 + 1) + '.Key', OptionalDimss[depth1].get('Key'))
 
 	def get_Measuress(self):
 		return self.get_query_params().get('Measuress')
 
-	def set_Measuress(self,Measuress):
-		for i in range(len(Measuress)):	
-			if Measuress[i] is not None:
-				self.add_query_param('Measures.' + str(i + 1) , Measuress[i]);
+	def set_Measuress(self, Measuress):
+		for depth1 in range(len(Measuress)):
+			if Measuress[depth1] is not None:
+				self.add_query_param('Measures.' + str(depth1 + 1) , Measuress[depth1])
 
 	def get_IntervalInSec(self):
 		return self.get_query_params().get('IntervalInSec')
@@ -121,24 +120,23 @@ class QueryDatasetRequest(RpcRequest):
 	def get_RequiredDimss(self):
 		return self.get_query_params().get('RequiredDimss')
 
-	def set_RequiredDimss(self,RequiredDimss):
-		for i in range(len(RequiredDimss)):	
-			if RequiredDimss[i].get('Type') is not None:
-				self.add_query_param('RequiredDims.' + str(i + 1) + '.Type' , RequiredDimss[i].get('Type'))
-			if RequiredDimss[i].get('Value') is not None:
-				self.add_query_param('RequiredDims.' + str(i + 1) + '.Value' , RequiredDimss[i].get('Value'))
-			if RequiredDimss[i].get('Key') is not None:
-				self.add_query_param('RequiredDims.' + str(i + 1) + '.Key' , RequiredDimss[i].get('Key'))
-
+	def set_RequiredDimss(self, RequiredDimss):
+		for depth1 in range(len(RequiredDimss)):
+			if RequiredDimss[depth1].get('Type') is not None:
+				self.add_query_param('RequiredDims.' + str(depth1 + 1) + '.Type', RequiredDimss[depth1].get('Type'))
+			if RequiredDimss[depth1].get('Value') is not None:
+				self.add_query_param('RequiredDims.' + str(depth1 + 1) + '.Value', RequiredDimss[depth1].get('Value'))
+			if RequiredDimss[depth1].get('Key') is not None:
+				self.add_query_param('RequiredDims.' + str(depth1 + 1) + '.Key', RequiredDimss[depth1].get('Key'))
 
 	def get_Dimensionss(self):
 		return self.get_query_params().get('Dimensionss')
 
-	def set_Dimensionss(self,Dimensionss):
-		for i in range(len(Dimensionss)):	
-			if Dimensionss[i].get('Type') is not None:
-				self.add_query_param('Dimensions.' + str(i + 1) + '.Type' , Dimensionss[i].get('Type'))
-			if Dimensionss[i].get('Value') is not None:
-				self.add_query_param('Dimensions.' + str(i + 1) + '.Value' , Dimensionss[i].get('Value'))
-			if Dimensionss[i].get('Key') is not None:
-				self.add_query_param('Dimensions.' + str(i + 1) + '.Key' , Dimensionss[i].get('Key'))
+	def set_Dimensionss(self, Dimensionss):
+		for depth1 in range(len(Dimensionss)):
+			if Dimensionss[depth1].get('Type') is not None:
+				self.add_query_param('Dimensions.' + str(depth1 + 1) + '.Type', Dimensionss[depth1].get('Type'))
+			if Dimensionss[depth1].get('Value') is not None:
+				self.add_query_param('Dimensions.' + str(depth1 + 1) + '.Value', Dimensionss[depth1].get('Value'))
+			if Dimensionss[depth1].get('Key') is not None:
+				self.add_query_param('Dimensions.' + str(depth1 + 1) + '.Key', Dimensionss[depth1].get('Key'))
