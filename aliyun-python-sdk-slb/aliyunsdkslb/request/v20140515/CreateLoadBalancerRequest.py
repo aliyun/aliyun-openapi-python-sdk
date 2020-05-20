@@ -24,41 +24,18 @@ class CreateLoadBalancerRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Slb', '2014-05-15', 'CreateLoadBalancer','slb')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_access_key_id(self):
-		return self.get_query_params().get('access_key_id')
-
-	def set_access_key_id(self,access_key_id):
-		self.add_query_param('access_key_id',access_key_id)
-
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_SupportPrivateLink(self):
-		return self.get_query_params().get('SupportPrivateLink')
-
-	def set_SupportPrivateLink(self,SupportPrivateLink):
-		self.add_query_param('SupportPrivateLink',SupportPrivateLink)
-
-	def get_ClientToken(self):
-		return self.get_query_params().get('ClientToken')
-
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
-
-	def get_CloudType(self):
-		return self.get_query_params().get('CloudType')
-
-	def set_CloudType(self,CloudType):
-		self.add_query_param('CloudType',CloudType)
 
 	def get_AddressIPVersion(self):
 		return self.get_query_params().get('AddressIPVersion')
@@ -72,12 +49,6 @@ class CreateLoadBalancerRequest(RpcRequest):
 	def set_MasterZoneId(self,MasterZoneId):
 		self.add_query_param('MasterZoneId',MasterZoneId)
 
-	def get_Duration(self):
-		return self.get_query_params().get('Duration')
-
-	def set_Duration(self,Duration):
-		self.add_query_param('Duration',Duration)
-
 	def get_ResourceGroupId(self):
 		return self.get_query_params().get('ResourceGroupId')
 
@@ -90,29 +61,65 @@ class CreateLoadBalancerRequest(RpcRequest):
 	def set_LoadBalancerName(self,LoadBalancerName):
 		self.add_query_param('LoadBalancerName',LoadBalancerName)
 
-	def get_AddressType(self):
-		return self.get_query_params().get('AddressType')
-
-	def set_AddressType(self,AddressType):
-		self.add_query_param('AddressType',AddressType)
-
 	def get_SlaveZoneId(self):
 		return self.get_query_params().get('SlaveZoneId')
 
 	def set_SlaveZoneId(self,SlaveZoneId):
 		self.add_query_param('SlaveZoneId',SlaveZoneId)
 
-	def get_DeleteProtection(self):
-		return self.get_query_params().get('DeleteProtection')
-
-	def set_DeleteProtection(self,DeleteProtection):
-		self.add_query_param('DeleteProtection',DeleteProtection)
-
 	def get_LoadBalancerSpec(self):
 		return self.get_query_params().get('LoadBalancerSpec')
 
 	def set_LoadBalancerSpec(self,LoadBalancerSpec):
 		self.add_query_param('LoadBalancerSpec',LoadBalancerSpec)
+
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
+
+	def get_VSwitchId(self):
+		return self.get_query_params().get('VSwitchId')
+
+	def set_VSwitchId(self,VSwitchId):
+		self.add_query_param('VSwitchId',VSwitchId)
+
+	def get_InternetChargeType(self):
+		return self.get_query_params().get('InternetChargeType')
+
+	def set_InternetChargeType(self,InternetChargeType):
+		self.add_query_param('InternetChargeType',InternetChargeType)
+
+	def get_PricingCycle(self):
+		return self.get_query_params().get('PricingCycle')
+
+	def set_PricingCycle(self,PricingCycle):
+		self.add_query_param('PricingCycle',PricingCycle)
+
+	def get_ClientToken(self):
+		return self.get_query_params().get('ClientToken')
+
+	def set_ClientToken(self,ClientToken):
+		self.add_query_param('ClientToken',ClientToken)
+
+	def get_Duration(self):
+		return self.get_query_params().get('Duration')
+
+	def set_Duration(self,Duration):
+		self.add_query_param('Duration',Duration)
+
+	def get_AddressType(self):
+		return self.get_query_params().get('AddressType')
+
+	def set_AddressType(self,AddressType):
+		self.add_query_param('AddressType',AddressType)
+
+	def get_DeleteProtection(self):
+		return self.get_query_params().get('DeleteProtection')
+
+	def set_DeleteProtection(self,DeleteProtection):
+		self.add_query_param('DeleteProtection',DeleteProtection)
 
 	def get_AutoPay(self):
 		return self.get_query_params().get('AutoPay')
@@ -144,36 +151,6 @@ class CreateLoadBalancerRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_Tags(self):
-		return self.get_query_params().get('Tags')
-
-	def set_Tags(self,Tags):
-		self.add_query_param('Tags',Tags)
-
-	def get_VSwitchId(self):
-		return self.get_query_params().get('VSwitchId')
-
-	def set_VSwitchId(self,VSwitchId):
-		self.add_query_param('VSwitchId',VSwitchId)
-
-	def get_EnableVpcVipFlow(self):
-		return self.get_query_params().get('EnableVpcVipFlow')
-
-	def set_EnableVpcVipFlow(self,EnableVpcVipFlow):
-		self.add_query_param('EnableVpcVipFlow',EnableVpcVipFlow)
-
-	def get_InternetChargeType(self):
-		return self.get_query_params().get('InternetChargeType')
-
-	def set_InternetChargeType(self,InternetChargeType):
-		self.add_query_param('InternetChargeType',InternetChargeType)
-
 	def get_VpcId(self):
 		return self.get_query_params().get('VpcId')
 
@@ -185,15 +162,3 @@ class CreateLoadBalancerRequest(RpcRequest):
 
 	def set_PayType(self,PayType):
 		self.add_query_param('PayType',PayType)
-
-	def get_PricingCycle(self):
-		return self.get_query_params().get('PricingCycle')
-
-	def set_PricingCycle(self,PricingCycle):
-		self.add_query_param('PricingCycle',PricingCycle)
-
-	def get_Ratio(self):
-		return self.get_query_params().get('Ratio')
-
-	def set_Ratio(self,Ratio):
-		self.add_query_param('Ratio',Ratio)

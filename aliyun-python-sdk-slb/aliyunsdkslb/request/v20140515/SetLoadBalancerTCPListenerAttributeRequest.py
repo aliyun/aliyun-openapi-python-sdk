@@ -24,6 +24,7 @@ class SetLoadBalancerTCPListenerAttributeRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Slb', '2014-05-15', 'SetLoadBalancerTCPListenerAttribute','slb')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -72,12 +73,6 @@ class SetLoadBalancerTCPListenerAttributeRequest(RpcRequest):
 	def set_PersistenceTimeout(self,PersistenceTimeout):
 		self.add_query_param('PersistenceTimeout',PersistenceTimeout)
 
-	def get_VpcIds(self):
-		return self.get_query_params().get('VpcIds')
-
-	def set_VpcIds(self,VpcIds):
-		self.add_query_param('VpcIds',VpcIds)
-
 	def get_VServerGroupId(self):
 		return self.get_query_params().get('VServerGroupId')
 
@@ -89,12 +84,6 @@ class SetLoadBalancerTCPListenerAttributeRequest(RpcRequest):
 
 	def set_AclId(self,AclId):
 		self.add_query_param('AclId',AclId)
-
-	def get_HealthCheckMethod(self):
-		return self.get_query_params().get('HealthCheckMethod')
-
-	def set_HealthCheckMethod(self,HealthCheckMethod):
-		self.add_query_param('HealthCheckMethod',HealthCheckMethod)
 
 	def get_HealthCheckDomain(self):
 		return self.get_query_params().get('HealthCheckDomain')
@@ -114,12 +103,6 @@ class SetLoadBalancerTCPListenerAttributeRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_Tags(self):
-		return self.get_query_params().get('Tags')
-
-	def set_Tags(self,Tags):
-		self.add_query_param('Tags',Tags)
-
 	def get_LoadBalancerId(self):
 		return self.get_query_params().get('LoadBalancerId')
 
@@ -137,12 +120,6 @@ class SetLoadBalancerTCPListenerAttributeRequest(RpcRequest):
 
 	def set_HealthCheckInterval(self,HealthCheckInterval):
 		self.add_query_param('HealthCheckInterval',HealthCheckInterval)
-
-	def get_access_key_id(self):
-		return self.get_query_params().get('access_key_id')
-
-	def set_access_key_id(self,access_key_id):
-		self.add_query_param('access_key_id',access_key_id)
 
 	def get_HealthCheckConnectTimeout(self):
 		return self.get_query_params().get('HealthCheckConnectTimeout')
@@ -173,12 +150,6 @@ class SetLoadBalancerTCPListenerAttributeRequest(RpcRequest):
 
 	def set_Scheduler(self,Scheduler):
 		self.add_query_param('Scheduler',Scheduler)
-
-	def get_MaxConnection(self):
-		return self.get_query_params().get('MaxConnection')
-
-	def set_MaxConnection(self,MaxConnection):
-		self.add_query_param('MaxConnection',MaxConnection)
 
 	def get_ListenerPort(self):
 		return self.get_query_params().get('ListenerPort')

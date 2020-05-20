@@ -24,6 +24,7 @@ class CreateLoadBalancerHTTPListenerRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Slb', '2014-05-15', 'CreateLoadBalancerHTTPListener','slb')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -78,12 +79,6 @@ class CreateLoadBalancerHTTPListenerRequest(RpcRequest):
 	def set_HealthCheck(self,HealthCheck):
 		self.add_query_param('HealthCheck',HealthCheck)
 
-	def get_VpcIds(self):
-		return self.get_query_params().get('VpcIds')
-
-	def set_VpcIds(self,VpcIds):
-		self.add_query_param('VpcIds',VpcIds)
-
 	def get_VServerGroupId(self):
 		return self.get_query_params().get('VServerGroupId')
 
@@ -102,12 +97,6 @@ class CreateLoadBalancerHTTPListenerRequest(RpcRequest):
 	def set_Cookie(self,Cookie):
 		self.add_query_param('Cookie',Cookie)
 
-	def get_HealthCheckMethod(self):
-		return self.get_query_params().get('HealthCheckMethod')
-
-	def set_HealthCheckMethod(self,HealthCheckMethod):
-		self.add_query_param('HealthCheckMethod',HealthCheckMethod)
-
 	def get_HealthCheckDomain(self):
 		return self.get_query_params().get('HealthCheckDomain')
 
@@ -125,12 +114,6 @@ class CreateLoadBalancerHTTPListenerRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
-
-	def get_Tags(self):
-		return self.get_query_params().get('Tags')
-
-	def set_Tags(self,Tags):
-		self.add_query_param('Tags',Tags)
 
 	def get_LoadBalancerId(self):
 		return self.get_query_params().get('LoadBalancerId')
@@ -162,18 +145,6 @@ class CreateLoadBalancerHTTPListenerRequest(RpcRequest):
 	def set_XForwardedFor_SLBID(self,XForwardedFor_SLBID):
 		self.add_query_param('XForwardedFor_SLBID',XForwardedFor_SLBID)
 
-	def get_HealthCheckHttpVersion(self):
-		return self.get_query_params().get('HealthCheckHttpVersion')
-
-	def set_HealthCheckHttpVersion(self,HealthCheckHttpVersion):
-		self.add_query_param('HealthCheckHttpVersion',HealthCheckHttpVersion)
-
-	def get_access_key_id(self):
-		return self.get_query_params().get('access_key_id')
-
-	def set_access_key_id(self,access_key_id):
-		self.add_query_param('access_key_id',access_key_id)
-
 	def get_Description(self):
 		return self.get_query_params().get('Description')
 
@@ -204,12 +175,6 @@ class CreateLoadBalancerHTTPListenerRequest(RpcRequest):
 	def set_ForwardPort(self,ForwardPort):
 		self.add_query_param('ForwardPort',ForwardPort)
 
-	def get_MaxConnection(self):
-		return self.get_query_params().get('MaxConnection')
-
-	def set_MaxConnection(self,MaxConnection):
-		self.add_query_param('MaxConnection',MaxConnection)
-
 	def get_CookieTimeout(self):
 		return self.get_query_params().get('CookieTimeout')
 
@@ -227,12 +192,6 @@ class CreateLoadBalancerHTTPListenerRequest(RpcRequest):
 
 	def set_ListenerPort(self,ListenerPort):
 		self.add_query_param('ListenerPort',ListenerPort)
-
-	def get_HealthCheckType(self):
-		return self.get_query_params().get('HealthCheckType')
-
-	def set_HealthCheckType(self,HealthCheckType):
-		self.add_query_param('HealthCheckType',HealthCheckType)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')

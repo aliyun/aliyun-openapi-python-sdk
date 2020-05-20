@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkslb.endpoint import endpoint_data
 
-class DescribeLoadBalancerHTTPSListenerAttributeRequest(RpcRequest):
+class SetLoadBalancerListenerAttributeExRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Slb', '2014-05-15', 'DescribeLoadBalancerHTTPSListenerAttribute','slb')
+		RpcRequest.__init__(self, 'Slb', '2014-05-15', 'SetLoadBalancerListenerAttributeEx','slb')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,35 +31,27 @@ class DescribeLoadBalancerHTTPSListenerAttributeRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_ResourceOwnerId(self):
-		return self.get_query_params().get('ResourceOwnerId')
-
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
 	def get_ListenerPort(self):
 		return self.get_query_params().get('ListenerPort')
 
 	def set_ListenerPort(self,ListenerPort):
 		self.add_query_param('ListenerPort',ListenerPort)
 
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
+	def get_KvAttributes(self):
+		return self.get_query_params().get('KvAttributes')
 
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+	def set_KvAttributes(self, KvAttributes):
+		for depth1 in range(len(KvAttributes)):
+			if KvAttributes[depth1].get('Value') is not None:
+				self.add_query_param('KvAttribute.' + str(depth1 + 1) + '.Value', KvAttributes[depth1].get('Value'))
+			if KvAttributes[depth1].get('Key') is not None:
+				self.add_query_param('KvAttribute.' + str(depth1 + 1) + '.Key', KvAttributes[depth1].get('Key'))
 
-	def get_OwnerAccount(self):
-		return self.get_query_params().get('OwnerAccount')
+	def get_Protocol(self):
+		return self.get_query_params().get('Protocol')
 
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
-
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
+	def set_Protocol(self,Protocol):
+		self.add_query_param('Protocol',Protocol)
 
 	def get_LoadBalancerId(self):
 		return self.get_query_params().get('LoadBalancerId')

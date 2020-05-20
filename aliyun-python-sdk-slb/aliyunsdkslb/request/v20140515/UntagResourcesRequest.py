@@ -24,17 +24,12 @@ class UntagResourcesRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Slb', '2014-05-15', 'UntagResources','slb')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_access_key_id(self):
-		return self.get_query_params().get('access_key_id')
-
-	def set_access_key_id(self,access_key_id):
-		self.add_query_param('access_key_id',access_key_id)
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -51,10 +46,10 @@ class UntagResourcesRequest(RpcRequest):
 	def get_ResourceIds(self):
 		return self.get_query_params().get('ResourceIds')
 
-	def set_ResourceIds(self,ResourceIds):
-		for i in range(len(ResourceIds)):	
-			if ResourceIds[i] is not None:
-				self.add_query_param('ResourceId.' + str(i + 1) , ResourceIds[i]);
+	def set_ResourceIds(self, ResourceIds):
+		for depth1 in range(len(ResourceIds)):
+			if ResourceIds[depth1] is not None:
+				self.add_query_param('ResourceId.' + str(depth1 + 1) , ResourceIds[depth1])
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -83,7 +78,7 @@ class UntagResourcesRequest(RpcRequest):
 	def get_TagKeys(self):
 		return self.get_query_params().get('TagKeys')
 
-	def set_TagKeys(self,TagKeys):
-		for i in range(len(TagKeys)):	
-			if TagKeys[i] is not None:
-				self.add_query_param('TagKey.' + str(i + 1) , TagKeys[i]);
+	def set_TagKeys(self, TagKeys):
+		for depth1 in range(len(TagKeys)):
+			if TagKeys[depth1] is not None:
+				self.add_query_param('TagKey.' + str(depth1 + 1) , TagKeys[depth1])
