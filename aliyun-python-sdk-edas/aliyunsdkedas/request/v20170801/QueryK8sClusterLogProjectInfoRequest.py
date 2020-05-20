@@ -20,44 +20,20 @@
 from aliyunsdkcore.request import RoaRequest
 from aliyunsdkedas.endpoint import endpoint_data
 
-class InsertConfigCenterRequest(RoaRequest):
+class QueryK8sClusterLogProjectInfoRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'InsertConfigCenter','Edas')
-		self.set_uri_pattern('/pop/v5/configCenter')
-		self.set_method('POST')
+		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'QueryK8sClusterLogProjectInfo','Edas')
+		self.set_uri_pattern('/pop/v5/k8s/sls/project')
+		self.set_method('GET')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_DataId(self):
-		return self.get_query_params().get('DataId')
+	def get_ClusterId(self):
+		return self.get_query_params().get('ClusterId')
 
-	def set_DataId(self,DataId):
-		self.add_query_param('DataId',DataId)
-
-	def get_Data(self):
-		return self.get_query_params().get('Data')
-
-	def set_Data(self,Data):
-		self.add_query_param('Data',Data)
-
-	def get_AppName(self):
-		return self.get_query_params().get('AppName')
-
-	def set_AppName(self,AppName):
-		self.add_query_param('AppName',AppName)
-
-	def get_LogicalRegionId(self):
-		return self.get_query_params().get('LogicalRegionId')
-
-	def set_LogicalRegionId(self,LogicalRegionId):
-		self.add_query_param('LogicalRegionId',LogicalRegionId)
-
-	def get_Group(self):
-		return self.get_query_params().get('Group')
-
-	def set_Group(self,Group):
-		self.add_query_param('Group',Group)
+	def set_ClusterId(self,ClusterId):
+		self.add_query_param('ClusterId',ClusterId)

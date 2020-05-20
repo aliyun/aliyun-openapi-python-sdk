@@ -23,7 +23,7 @@ from aliyunsdkedas.endpoint import endpoint_data
 class InsertK8sApplicationRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'InsertK8sApplication','edas')
+		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'InsertK8sApplication','Edas')
 		self.set_uri_pattern('/pop/v5/k8s/acs/create_k8s_app')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
@@ -158,6 +158,12 @@ class InsertK8sApplicationRequest(RoaRequest):
 	def set_RequestsmCpu(self,RequestsmCpu):
 		self.add_query_param('RequestsmCpu',RequestsmCpu)
 
+	def get_DeployAcrossZones(self):
+		return self.get_query_params().get('DeployAcrossZones')
+
+	def set_DeployAcrossZones(self,DeployAcrossZones):
+		self.add_query_param('DeployAcrossZones',DeployAcrossZones)
+
 	def get_InternetSlbProtocol(self):
 		return self.get_query_params().get('InternetSlbProtocol')
 
@@ -265,6 +271,12 @@ class InsertK8sApplicationRequest(RoaRequest):
 
 	def set_PackageType(self,PackageType):
 		self.add_query_param('PackageType',PackageType)
+
+	def get_RuntimeClassName(self):
+		return self.get_query_params().get('RuntimeClassName')
+
+	def set_RuntimeClassName(self,RuntimeClassName):
+		self.add_query_param('RuntimeClassName',RuntimeClassName)
 
 	def get_RequestsCpu(self):
 		return self.get_query_params().get('RequestsCpu')

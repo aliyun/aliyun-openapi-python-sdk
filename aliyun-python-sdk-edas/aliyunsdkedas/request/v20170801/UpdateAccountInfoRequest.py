@@ -23,7 +23,7 @@ from aliyunsdkedas.endpoint import endpoint_data
 class UpdateAccountInfoRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'UpdateAccountInfo','edas')
+		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'UpdateAccountInfo','Edas')
 		self.set_uri_pattern('/pop/v5/account/edit_account_info')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):

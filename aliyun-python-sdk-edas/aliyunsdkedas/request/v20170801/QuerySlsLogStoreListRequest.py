@@ -20,44 +20,38 @@
 from aliyunsdkcore.request import RoaRequest
 from aliyunsdkedas.endpoint import endpoint_data
 
-class InsertConfigCenterRequest(RoaRequest):
+class QuerySlsLogStoreListRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'InsertConfigCenter','Edas')
-		self.set_uri_pattern('/pop/v5/configCenter')
-		self.set_method('POST')
+		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'QuerySlsLogStoreList','Edas')
+		self.set_uri_pattern('/pop/v5/k8s/sls/query_sls_log_store_list')
+		self.set_method('GET')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_DataId(self):
-		return self.get_query_params().get('DataId')
+	def get_AppId(self):
+		return self.get_query_params().get('AppId')
 
-	def set_DataId(self,DataId):
-		self.add_query_param('DataId',DataId)
+	def set_AppId(self,AppId):
+		self.add_query_param('AppId',AppId)
 
-	def get_Data(self):
-		return self.get_query_params().get('Data')
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
 
-	def set_Data(self,Data):
-		self.add_query_param('Data',Data)
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
 
-	def get_AppName(self):
-		return self.get_query_params().get('AppName')
+	def get_CurrentPage(self):
+		return self.get_query_params().get('CurrentPage')
 
-	def set_AppName(self,AppName):
-		self.add_query_param('AppName',AppName)
+	def set_CurrentPage(self,CurrentPage):
+		self.add_query_param('CurrentPage',CurrentPage)
 
-	def get_LogicalRegionId(self):
-		return self.get_query_params().get('LogicalRegionId')
+	def get_Type(self):
+		return self.get_query_params().get('Type')
 
-	def set_LogicalRegionId(self,LogicalRegionId):
-		self.add_query_param('LogicalRegionId',LogicalRegionId)
-
-	def get_Group(self):
-		return self.get_query_params().get('Group')
-
-	def set_Group(self,Group):
-		self.add_query_param('Group',Group)
+	def set_Type(self,Type):
+		self.add_query_param('Type',Type)

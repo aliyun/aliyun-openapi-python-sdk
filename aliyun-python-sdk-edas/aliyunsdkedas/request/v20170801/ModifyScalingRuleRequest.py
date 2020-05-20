@@ -23,7 +23,7 @@ from aliyunsdkedas.endpoint import endpoint_data
 class ModifyScalingRuleRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'ModifyScalingRule','edas')
+		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'ModifyScalingRule','Edas')
 		self.set_uri_pattern('/pop/v5/app/scaling_rules')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):

@@ -23,7 +23,7 @@ from aliyunsdkedas.endpoint import endpoint_data
 class UnbindK8sSlbRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'UnbindK8sSlb','edas')
+		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'UnbindK8sSlb','Edas')
 		self.set_uri_pattern('/pop/v5/k8s/acs/k8s_slb_binding')
 		self.set_method('DELETE')
 		if hasattr(self, "endpoint_map"):

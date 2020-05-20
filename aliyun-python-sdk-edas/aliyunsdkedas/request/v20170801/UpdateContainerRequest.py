@@ -23,7 +23,7 @@ from aliyunsdkedas.endpoint import endpoint_data
 class UpdateContainerRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'UpdateContainer','edas')
+		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'UpdateContainer','Edas')
 		self.set_uri_pattern('/pop/v5/changeorder/co_update_container')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):

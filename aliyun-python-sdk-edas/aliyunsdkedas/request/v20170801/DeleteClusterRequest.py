@@ -23,7 +23,7 @@ from aliyunsdkedas.endpoint import endpoint_data
 class DeleteClusterRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'DeleteCluster','edas')
+		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'DeleteCluster','Edas')
 		self.set_uri_pattern('/pop/v5/resource/cluster')
 		self.set_method('DELETE')
 		if hasattr(self, "endpoint_map"):
@@ -31,6 +31,12 @@ class DeleteClusterRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+
+	def get_Mode(self):
+		return self.get_query_params().get('Mode')
+
+	def set_Mode(self,Mode):
+		self.add_query_param('Mode',Mode)
 
 	def get_ClusterId(self):
 		return self.get_query_params().get('ClusterId')
