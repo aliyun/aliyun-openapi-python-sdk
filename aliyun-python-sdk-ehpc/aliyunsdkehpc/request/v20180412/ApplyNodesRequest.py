@@ -131,12 +131,6 @@ class ApplyNodesRequest(RpcRequest):
 	def set_InstanceFamilyLevel(self,InstanceFamilyLevel):
 		self.add_query_param('InstanceFamilyLevel',InstanceFamilyLevel)
 
-	def get_EcsChargeType(self):
-		return self.get_query_params().get('EcsChargeType')
-
-	def set_EcsChargeType(self,EcsChargeType):
-		self.add_query_param('EcsChargeType',EcsChargeType)
-
 	def get_InternetChargeType(self):
 		return self.get_query_params().get('InternetChargeType')
 
