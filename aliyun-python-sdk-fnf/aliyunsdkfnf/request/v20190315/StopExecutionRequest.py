@@ -23,7 +23,7 @@ from aliyunsdkfnf.endpoint import endpoint_data
 class StopExecutionRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'fnf', '2019-03-15', 'StopExecution','fnf')
+		RpcRequest.__init__(self, 'fnf', '2019-03-15', 'StopExecution')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())

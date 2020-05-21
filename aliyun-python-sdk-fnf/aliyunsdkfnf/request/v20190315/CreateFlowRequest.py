@@ -23,7 +23,7 @@ from aliyunsdkfnf.endpoint import endpoint_data
 class CreateFlowRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'fnf', '2019-03-15', 'CreateFlow','fnf')
+		RpcRequest.__init__(self, 'fnf', '2019-03-15', 'CreateFlow')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -66,3 +66,9 @@ class CreateFlowRequest(RpcRequest):
 
 	def set_Definition(self,Definition):
 		self.add_body_params('Definition', Definition)
+
+	def get_ExternalStorageLocation(self):
+		return self.get_body_params().get('ExternalStorageLocation')
+
+	def set_ExternalStorageLocation(self,ExternalStorageLocation):
+		self.add_body_params('ExternalStorageLocation', ExternalStorageLocation)
