@@ -49,17 +49,17 @@ class AddDeviceRequest(RpcRequest):
 	def set_GbId(self,GbId):
 		self.add_body_params('GbId', GbId)
 
+	def get_BitRate(self):
+		return self.get_body_params().get('BitRate')
+
+	def set_BitRate(self,BitRate):
+		self.add_body_params('BitRate', BitRate)
+
 	def get_DeviceDirection(self):
 		return self.get_body_params().get('DeviceDirection')
 
 	def set_DeviceDirection(self,DeviceDirection):
 		self.add_body_params('DeviceDirection', DeviceDirection)
-
-	def get_DeviceRate(self):
-		return self.get_body_params().get('DeviceRate')
-
-	def set_DeviceRate(self,DeviceRate):
-		self.add_body_params('DeviceRate', DeviceRate)
 
 	def get_DeviceAddress(self):
 		return self.get_body_params().get('DeviceAddress')

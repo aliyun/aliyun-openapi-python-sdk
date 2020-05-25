@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkvcs.endpoint import endpoint_data
 
-class GetDeviceLiveUrlRequest(RpcRequest):
+class SearchBodyRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Vcs', '2020-05-15', 'GetDeviceLiveUrl','vcs')
+		RpcRequest.__init__(self, 'Vcs', '2020-05-15', 'SearchBody','vcs')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -42,3 +42,33 @@ class GetDeviceLiveUrlRequest(RpcRequest):
 
 	def set_GbId(self,GbId):
 		self.add_body_params('GbId', GbId)
+
+	def get_StartTimeStamp(self):
+		return self.get_body_params().get('StartTimeStamp')
+
+	def set_StartTimeStamp(self,StartTimeStamp):
+		self.add_body_params('StartTimeStamp', StartTimeStamp)
+
+	def get_EndTimeStamp(self):
+		return self.get_body_params().get('EndTimeStamp')
+
+	def set_EndTimeStamp(self,EndTimeStamp):
+		self.add_body_params('EndTimeStamp', EndTimeStamp)
+
+	def get_PageNo(self):
+		return self.get_body_params().get('PageNo')
+
+	def set_PageNo(self,PageNo):
+		self.add_body_params('PageNo', PageNo)
+
+	def get_PageSize(self):
+		return self.get_body_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_body_params('PageSize', PageSize)
+
+	def get_OptionList(self):
+		return self.get_body_params().get('OptionList')
+
+	def set_OptionList(self,OptionList):
+		self.add_body_params('OptionList', OptionList)

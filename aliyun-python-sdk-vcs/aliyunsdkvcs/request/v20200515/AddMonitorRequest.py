@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkvcs.endpoint import endpoint_data
 
-class GetDeviceLiveUrlRequest(RpcRequest):
+class AddMonitorRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Vcs', '2020-05-15', 'GetDeviceLiveUrl','vcs')
+		RpcRequest.__init__(self, 'Vcs', '2020-05-15', 'AddMonitor','vcs')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,14 +31,26 @@ class GetDeviceLiveUrlRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_MonitorType(self):
+		return self.get_body_params().get('MonitorType')
+
+	def set_MonitorType(self,MonitorType):
+		self.add_body_params('MonitorType', MonitorType)
+
 	def get_CorpId(self):
 		return self.get_body_params().get('CorpId')
 
 	def set_CorpId(self,CorpId):
 		self.add_body_params('CorpId', CorpId)
 
-	def get_GbId(self):
-		return self.get_body_params().get('GbId')
+	def get_Description(self):
+		return self.get_body_params().get('Description')
 
-	def set_GbId(self,GbId):
-		self.add_body_params('GbId', GbId)
+	def set_Description(self,Description):
+		self.add_body_params('Description', Description)
+
+	def get_BatchIndicator(self):
+		return self.get_body_params().get('BatchIndicator')
+
+	def set_BatchIndicator(self,BatchIndicator):
+		self.add_body_params('BatchIndicator', BatchIndicator)

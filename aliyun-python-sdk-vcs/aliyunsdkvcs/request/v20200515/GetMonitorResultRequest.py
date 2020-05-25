@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkvcs.endpoint import endpoint_data
 
-class GetDeviceLiveUrlRequest(RpcRequest):
+class GetMonitorResultRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Vcs', '2020-05-15', 'GetDeviceLiveUrl','vcs')
+		RpcRequest.__init__(self, 'Vcs', '2020-05-15', 'GetMonitorResult','vcs')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -37,8 +37,26 @@ class GetDeviceLiveUrlRequest(RpcRequest):
 	def set_CorpId(self,CorpId):
 		self.add_body_params('CorpId', CorpId)
 
-	def get_GbId(self):
-		return self.get_body_params().get('GbId')
+	def get_EndTime(self):
+		return self.get_body_params().get('EndTime')
 
-	def set_GbId(self,GbId):
-		self.add_body_params('GbId', GbId)
+	def set_EndTime(self,EndTime):
+		self.add_body_params('EndTime', EndTime)
+
+	def get_StartTime(self):
+		return self.get_body_params().get('StartTime')
+
+	def set_StartTime(self,StartTime):
+		self.add_body_params('StartTime', StartTime)
+
+	def get_MinRecordId(self):
+		return self.get_body_params().get('MinRecordId')
+
+	def set_MinRecordId(self,MinRecordId):
+		self.add_body_params('MinRecordId', MinRecordId)
+
+	def get_TaskId(self):
+		return self.get_body_params().get('TaskId')
+
+	def set_TaskId(self,TaskId):
+		self.add_body_params('TaskId', TaskId)

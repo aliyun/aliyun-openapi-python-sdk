@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkvcs.endpoint import endpoint_data
 
-class GetDeviceLiveUrlRequest(RpcRequest):
+class StopMonitorRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Vcs', '2020-05-15', 'GetDeviceLiveUrl','vcs')
+		RpcRequest.__init__(self, 'Vcs', '2020-05-15', 'StopMonitor','vcs')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,14 +31,8 @@ class GetDeviceLiveUrlRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_CorpId(self):
-		return self.get_body_params().get('CorpId')
+	def get_TaskId(self):
+		return self.get_body_params().get('TaskId')
 
-	def set_CorpId(self,CorpId):
-		self.add_body_params('CorpId', CorpId)
-
-	def get_GbId(self):
-		return self.get_body_params().get('GbId')
-
-	def set_GbId(self,GbId):
-		self.add_body_params('GbId', GbId)
+	def set_TaskId(self,TaskId):
+		self.add_body_params('TaskId', TaskId)
