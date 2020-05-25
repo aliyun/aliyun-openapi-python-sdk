@@ -24,6 +24,7 @@ class DescribeDirectoryRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'vs', '2018-12-12', 'DescribeDirectory','vs')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):

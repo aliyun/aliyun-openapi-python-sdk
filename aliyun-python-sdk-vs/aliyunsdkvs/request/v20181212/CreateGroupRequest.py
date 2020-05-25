@@ -24,11 +24,18 @@ class CreateGroupRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'vs', '2018-12-12', 'CreateGroup','vs')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+
+	def get_CaptureVideo(self):
+		return self.get_query_params().get('CaptureVideo')
+
+	def set_CaptureVideo(self,CaptureVideo):
+		self.add_query_param('CaptureVideo',CaptureVideo)
 
 	def get_Description(self):
 		return self.get_query_params().get('Description')
@@ -36,11 +43,23 @@ class CreateGroupRequest(RpcRequest):
 	def set_Description(self,Description):
 		self.add_query_param('Description',Description)
 
+	def get_CaptureOssPath(self):
+		return self.get_query_params().get('CaptureOssPath')
+
+	def set_CaptureOssPath(self,CaptureOssPath):
+		self.add_query_param('CaptureOssPath',CaptureOssPath)
+
 	def get_PushDomain(self):
 		return self.get_query_params().get('PushDomain')
 
 	def set_PushDomain(self,PushDomain):
 		self.add_query_param('PushDomain',PushDomain)
+
+	def get_CaptureImage(self):
+		return self.get_query_params().get('CaptureImage')
+
+	def set_CaptureImage(self,CaptureImage):
+		self.add_query_param('CaptureImage',CaptureImage)
 
 	def get_App(self):
 		return self.get_query_params().get('App')
@@ -59,6 +78,12 @@ class CreateGroupRequest(RpcRequest):
 
 	def set_OutProtocol(self,OutProtocol):
 		self.add_query_param('OutProtocol',OutProtocol)
+
+	def get_CaptureInterval(self):
+		return self.get_query_params().get('CaptureInterval')
+
+	def set_CaptureInterval(self,CaptureInterval):
+		self.add_query_param('CaptureInterval',CaptureInterval)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
@@ -95,3 +120,9 @@ class CreateGroupRequest(RpcRequest):
 
 	def set_Region(self,Region):
 		self.add_query_param('Region',Region)
+
+	def get_CaptureOssBucket(self):
+		return self.get_query_params().get('CaptureOssBucket')
+
+	def set_CaptureOssBucket(self,CaptureOssBucket):
+		self.add_query_param('CaptureOssBucket',CaptureOssBucket)

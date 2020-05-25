@@ -24,6 +24,7 @@ class DescribeRecordsRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'vs', '2018-12-12', 'DescribeRecords','vs')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -53,6 +54,12 @@ class DescribeRecordsRequest(RpcRequest):
 
 	def set_PageNum(self,PageNum):
 		self.add_query_param('PageNum',PageNum)
+
+	def get_PrivateBucket(self):
+		return self.get_query_params().get('PrivateBucket')
+
+	def set_PrivateBucket(self,PrivateBucket):
+		self.add_query_param('PrivateBucket',PrivateBucket)
 
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')

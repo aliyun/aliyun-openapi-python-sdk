@@ -24,6 +24,7 @@ class StopStreamRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'vs', '2018-12-12', 'StopStream','vs')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -47,3 +48,9 @@ class StopStreamRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_Name(self):
+		return self.get_query_params().get('Name')
+
+	def set_Name(self,Name):
+		self.add_query_param('Name',Name)

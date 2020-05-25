@@ -24,6 +24,7 @@ class CreateDeviceRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'vs', '2018-12-12', 'CreateDevice','vs')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -77,6 +78,12 @@ class CreateDeviceRequest(RpcRequest):
 
 	def set_Vendor(self,Vendor):
 		self.add_query_param('Vendor',Vendor)
+
+	def get_AlarmMethod(self):
+		return self.get_query_params().get('AlarmMethod')
+
+	def set_AlarmMethod(self,AlarmMethod):
+		self.add_query_param('AlarmMethod',AlarmMethod)
 
 	def get_DirectoryId(self):
 		return self.get_query_params().get('DirectoryId')

@@ -24,11 +24,18 @@ class ModifyDeviceChannelsRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'vs', '2018-12-12', 'ModifyDeviceChannels','vs')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+
+	def get_DeviceStatus(self):
+		return self.get_query_params().get('DeviceStatus')
+
+	def set_DeviceStatus(self,DeviceStatus):
+		self.add_query_param('DeviceStatus',DeviceStatus)
 
 	def get_Id(self):
 		return self.get_query_params().get('Id')
@@ -47,3 +54,9 @@ class ModifyDeviceChannelsRequest(RpcRequest):
 
 	def set_Channels(self,Channels):
 		self.add_query_param('Channels',Channels)
+
+	def get_Dsn(self):
+		return self.get_query_params().get('Dsn')
+
+	def set_Dsn(self,Dsn):
+		self.add_query_param('Dsn',Dsn)

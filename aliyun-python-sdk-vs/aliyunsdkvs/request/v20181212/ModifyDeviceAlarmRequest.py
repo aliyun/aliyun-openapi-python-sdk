@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkvs.endpoint import endpoint_data
 
-class DescribeVsUpPeakPublishStreamDataRequest(RpcRequest):
+class ModifyDeviceAlarmRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'vs', '2018-12-12', 'DescribeVsUpPeakPublishStreamData','vs')
+		RpcRequest.__init__(self, 'vs', '2018-12-12', 'ModifyDeviceAlarm','vs')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,23 +31,11 @@ class DescribeVsUpPeakPublishStreamDataRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_StartTime(self):
-		return self.get_query_params().get('StartTime')
+	def get_Id(self):
+		return self.get_query_params().get('Id')
 
-	def set_StartTime(self,StartTime):
-		self.add_query_param('StartTime',StartTime)
-
-	def get_DomainName(self):
-		return self.get_query_params().get('DomainName')
-
-	def set_DomainName(self,DomainName):
-		self.add_query_param('DomainName',DomainName)
-
-	def get_EndTime(self):
-		return self.get_query_params().get('EndTime')
-
-	def set_EndTime(self,EndTime):
-		self.add_query_param('EndTime',EndTime)
+	def set_Id(self,Id):
+		self.add_query_param('Id',Id)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
@@ -55,8 +43,20 @@ class DescribeVsUpPeakPublishStreamDataRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_DomainSwitch(self):
-		return self.get_query_params().get('DomainSwitch')
+	def get_AlarmId(self):
+		return self.get_query_params().get('AlarmId')
 
-	def set_DomainSwitch(self,DomainSwitch):
-		self.add_query_param('DomainSwitch',DomainSwitch)
+	def set_AlarmId(self,AlarmId):
+		self.add_query_param('AlarmId',AlarmId)
+
+	def get_ChannelId(self):
+		return self.get_query_params().get('ChannelId')
+
+	def set_ChannelId(self,ChannelId):
+		self.add_query_param('ChannelId',ChannelId)
+
+	def get_Status(self):
+		return self.get_query_params().get('Status')
+
+	def set_Status(self,Status):
+		self.add_query_param('Status',Status)
