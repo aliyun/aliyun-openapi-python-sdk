@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdksas.endpoint import endpoint_data
 
-class DescribeEmgVulGroupRequest(RpcRequest):
+class FixCheckWarningsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeEmgVulGroup','sas')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'FixCheckWarnings','sas')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,8 +31,32 @@ class DescribeEmgVulGroupRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_RiskId(self):
+		return self.get_query_params().get('RiskId')
+
+	def set_RiskId(self,RiskId):
+		self.add_query_param('RiskId',RiskId)
+
+	def get_CheckParams(self):
+		return self.get_query_params().get('CheckParams')
+
+	def set_CheckParams(self,CheckParams):
+		self.add_query_param('CheckParams',CheckParams)
+
+	def get_SourceIp(self):
+		return self.get_query_params().get('SourceIp')
+
+	def set_SourceIp(self,SourceIp):
+		self.add_query_param('SourceIp',SourceIp)
+
 	def get_Lang(self):
 		return self.get_query_params().get('Lang')
 
 	def set_Lang(self,Lang):
 		self.add_query_param('Lang',Lang)
+
+	def get_Uuids(self):
+		return self.get_query_params().get('Uuids')
+
+	def set_Uuids(self,Uuids):
+		self.add_query_param('Uuids',Uuids)

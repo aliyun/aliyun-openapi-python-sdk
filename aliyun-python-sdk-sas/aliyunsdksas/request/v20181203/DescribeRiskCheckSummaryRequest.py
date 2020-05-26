@@ -24,6 +24,7 @@ class DescribeRiskCheckSummaryRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeRiskCheckSummary','sas')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -47,3 +48,9 @@ class DescribeRiskCheckSummaryRequest(RpcRequest):
 
 	def set_Lang(self,Lang):
 		self.add_query_param('Lang',Lang)
+
+	def get_ResourceDirectoryAccountId(self):
+		return self.get_query_params().get('ResourceDirectoryAccountId')
+
+	def set_ResourceDirectoryAccountId(self,ResourceDirectoryAccountId):
+		self.add_query_param('ResourceDirectoryAccountId',ResourceDirectoryAccountId)

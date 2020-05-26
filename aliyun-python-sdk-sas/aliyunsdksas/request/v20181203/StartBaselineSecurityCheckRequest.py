@@ -24,6 +24,7 @@ class StartBaselineSecurityCheckRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'StartBaselineSecurityCheck','sas')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -39,10 +40,10 @@ class StartBaselineSecurityCheckRequest(RpcRequest):
 	def get_ItemIdss(self):
 		return self.get_query_params().get('ItemIdss')
 
-	def set_ItemIdss(self,ItemIdss):
-		for i in range(len(ItemIdss)):	
-			if ItemIdss[i] is not None:
-				self.add_query_param('ItemIds.' + str(i + 1) , ItemIdss[i]);
+	def set_ItemIdss(self, ItemIdss):
+		for depth1 in range(len(ItemIdss)):
+			if ItemIdss[depth1] is not None:
+				self.add_query_param('ItemIds.' + str(depth1 + 1) , ItemIdss[depth1])
 
 	def get_Type(self):
 		return self.get_query_params().get('Type')

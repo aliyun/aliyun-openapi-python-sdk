@@ -24,6 +24,7 @@ class CreateAntiBruteForceRuleRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'CreateAntiBruteForceRule','sas')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -57,10 +58,10 @@ class CreateAntiBruteForceRuleRequest(RpcRequest):
 	def get_UuidLists(self):
 		return self.get_query_params().get('UuidLists')
 
-	def set_UuidLists(self,UuidLists):
-		for i in range(len(UuidLists)):	
-			if UuidLists[i] is not None:
-				self.add_query_param('UuidList.' + str(i + 1) , UuidLists[i]);
+	def set_UuidLists(self, UuidLists):
+		for depth1 in range(len(UuidLists)):
+			if UuidLists[depth1] is not None:
+				self.add_query_param('UuidList.' + str(depth1 + 1) , UuidLists[depth1])
 
 	def get_Name(self):
 		return self.get_query_params().get('Name')

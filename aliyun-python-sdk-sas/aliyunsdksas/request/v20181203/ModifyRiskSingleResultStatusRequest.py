@@ -24,6 +24,7 @@ class ModifyRiskSingleResultStatusRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'ModifyRiskSingleResultStatus','sas')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -45,10 +46,10 @@ class ModifyRiskSingleResultStatusRequest(RpcRequest):
 	def get_Idss(self):
 		return self.get_query_params().get('Idss')
 
-	def set_Idss(self,Idss):
-		for i in range(len(Idss)):	
-			if Idss[i] is not None:
-				self.add_query_param('Ids.' + str(i + 1) , Idss[i]);
+	def set_Idss(self, Idss):
+		for depth1 in range(len(Idss)):
+			if Idss[depth1] is not None:
+				self.add_query_param('Ids.' + str(depth1 + 1) , Idss[depth1])
 
 	def get_Lang(self):
 		return self.get_query_params().get('Lang')

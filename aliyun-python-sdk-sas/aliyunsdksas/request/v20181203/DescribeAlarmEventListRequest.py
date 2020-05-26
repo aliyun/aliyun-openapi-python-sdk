@@ -24,6 +24,7 @@ class DescribeAlarmEventListRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeAlarmEventList','sas')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -93,10 +94,10 @@ class DescribeAlarmEventListRequest(RpcRequest):
 	def get_OperateErrorCodeLists(self):
 		return self.get_query_params().get('OperateErrorCodeLists')
 
-	def set_OperateErrorCodeLists(self,OperateErrorCodeLists):
-		for i in range(len(OperateErrorCodeLists)):	
-			if OperateErrorCodeLists[i] is not None:
-				self.add_query_param('OperateErrorCodeList.' + str(i + 1) , OperateErrorCodeLists[i]);
+	def set_OperateErrorCodeLists(self, OperateErrorCodeLists):
+		for depth1 in range(len(OperateErrorCodeLists)):
+			if OperateErrorCodeLists[depth1] is not None:
+				self.add_query_param('OperateErrorCodeList.' + str(depth1 + 1) , OperateErrorCodeLists[depth1])
 
 	def get_Levels(self):
 		return self.get_query_params().get('Levels')
