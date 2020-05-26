@@ -24,6 +24,7 @@ class ResolveAndRouteServiceInCenRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Cbn', '2017-09-12', 'ResolveAndRouteServiceInCen','Cbn')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -93,7 +94,7 @@ class ResolveAndRouteServiceInCenRequest(RpcRequest):
 	def get_AccessRegionIdss(self):
 		return self.get_query_params().get('AccessRegionIdss')
 
-	def set_AccessRegionIdss(self,AccessRegionIdss):
-		for i in range(len(AccessRegionIdss)):	
-			if AccessRegionIdss[i] is not None:
-				self.add_query_param('AccessRegionIds.' + str(i + 1) , AccessRegionIdss[i]);
+	def set_AccessRegionIdss(self, AccessRegionIdss):
+		for depth1 in range(len(AccessRegionIdss)):
+			if AccessRegionIdss[depth1] is not None:
+				self.add_query_param('AccessRegionIds.' + str(depth1 + 1) , AccessRegionIdss[depth1])

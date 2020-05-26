@@ -24,6 +24,7 @@ class CreateCenBandwidthPackageRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Cbn', '2017-09-12', 'CreateCenBandwidthPackage','Cbn')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -47,6 +48,12 @@ class CreateCenBandwidthPackageRequest(RpcRequest):
 
 	def set_Description(self,Description):
 		self.add_query_param('Description',Description)
+
+	def get_AutoRenewDuration(self):
+		return self.get_query_params().get('AutoRenewDuration')
+
+	def set_AutoRenewDuration(self,AutoRenewDuration):
+		self.add_query_param('AutoRenewDuration',AutoRenewDuration)
 
 	def get_BandwidthPackageChargeType(self):
 		return self.get_query_params().get('BandwidthPackageChargeType')
@@ -101,6 +108,12 @@ class CreateCenBandwidthPackageRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_AutoRenew(self):
+		return self.get_query_params().get('AutoRenew')
+
+	def set_AutoRenew(self,AutoRenew):
+		self.add_query_param('AutoRenew',AutoRenew)
 
 	def get_Name(self):
 		return self.get_query_params().get('Name')

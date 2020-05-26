@@ -24,6 +24,7 @@ class CreateCenRouteMapRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Cbn', '2017-09-12', 'CreateCenRouteMap','Cbn')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -57,34 +58,34 @@ class CreateCenRouteMapRequest(RpcRequest):
 	def get_DestinationCidrBlockss(self):
 		return self.get_query_params().get('DestinationCidrBlockss')
 
-	def set_DestinationCidrBlockss(self,DestinationCidrBlockss):
-		for i in range(len(DestinationCidrBlockss)):	
-			if DestinationCidrBlockss[i] is not None:
-				self.add_query_param('DestinationCidrBlocks.' + str(i + 1) , DestinationCidrBlockss[i]);
+	def set_DestinationCidrBlockss(self, DestinationCidrBlockss):
+		for depth1 in range(len(DestinationCidrBlockss)):
+			if DestinationCidrBlockss[depth1] is not None:
+				self.add_query_param('DestinationCidrBlocks.' + str(depth1 + 1) , DestinationCidrBlockss[depth1])
 
 	def get_SourceInstanceIdss(self):
 		return self.get_query_params().get('SourceInstanceIdss')
 
-	def set_SourceInstanceIdss(self,SourceInstanceIdss):
-		for i in range(len(SourceInstanceIdss)):	
-			if SourceInstanceIdss[i] is not None:
-				self.add_query_param('SourceInstanceIds.' + str(i + 1) , SourceInstanceIdss[i]);
+	def set_SourceInstanceIdss(self, SourceInstanceIdss):
+		for depth1 in range(len(SourceInstanceIdss)):
+			if SourceInstanceIdss[depth1] is not None:
+				self.add_query_param('SourceInstanceIds.' + str(depth1 + 1) , SourceInstanceIdss[depth1])
 
 	def get_SourceRegionIdss(self):
 		return self.get_query_params().get('SourceRegionIdss')
 
-	def set_SourceRegionIdss(self,SourceRegionIdss):
-		for i in range(len(SourceRegionIdss)):	
-			if SourceRegionIdss[i] is not None:
-				self.add_query_param('SourceRegionIds.' + str(i + 1) , SourceRegionIdss[i]);
+	def set_SourceRegionIdss(self, SourceRegionIdss):
+		for depth1 in range(len(SourceRegionIdss)):
+			if SourceRegionIdss[depth1] is not None:
+				self.add_query_param('SourceRegionIds.' + str(depth1 + 1) , SourceRegionIdss[depth1])
 
 	def get_MatchAsnss(self):
 		return self.get_query_params().get('MatchAsnss')
 
-	def set_MatchAsnss(self,MatchAsnss):
-		for i in range(len(MatchAsnss)):	
-			if MatchAsnss[i] is not None:
-				self.add_query_param('MatchAsns.' + str(i + 1) , MatchAsnss[i]);
+	def set_MatchAsnss(self, MatchAsnss):
+		for depth1 in range(len(MatchAsnss)):
+			if MatchAsnss[depth1] is not None:
+				self.add_query_param('MatchAsns.' + str(depth1 + 1) , MatchAsnss[depth1])
 
 	def get_Preference(self):
 		return self.get_query_params().get('Preference')
@@ -107,26 +108,26 @@ class CreateCenRouteMapRequest(RpcRequest):
 	def get_DestinationChildInstanceTypess(self):
 		return self.get_query_params().get('DestinationChildInstanceTypess')
 
-	def set_DestinationChildInstanceTypess(self,DestinationChildInstanceTypess):
-		for i in range(len(DestinationChildInstanceTypess)):	
-			if DestinationChildInstanceTypess[i] is not None:
-				self.add_query_param('DestinationChildInstanceTypes.' + str(i + 1) , DestinationChildInstanceTypess[i]);
+	def set_DestinationChildInstanceTypess(self, DestinationChildInstanceTypess):
+		for depth1 in range(len(DestinationChildInstanceTypess)):
+			if DestinationChildInstanceTypess[depth1] is not None:
+				self.add_query_param('DestinationChildInstanceTypes.' + str(depth1 + 1) , DestinationChildInstanceTypess[depth1])
 
 	def get_SourceRouteTableIdss(self):
 		return self.get_query_params().get('SourceRouteTableIdss')
 
-	def set_SourceRouteTableIdss(self,SourceRouteTableIdss):
-		for i in range(len(SourceRouteTableIdss)):	
-			if SourceRouteTableIdss[i] is not None:
-				self.add_query_param('SourceRouteTableIds.' + str(i + 1) , SourceRouteTableIdss[i]);
+	def set_SourceRouteTableIdss(self, SourceRouteTableIdss):
+		for depth1 in range(len(SourceRouteTableIdss)):
+			if SourceRouteTableIdss[depth1] is not None:
+				self.add_query_param('SourceRouteTableIds.' + str(depth1 + 1) , SourceRouteTableIdss[depth1])
 
 	def get_SourceChildInstanceTypess(self):
 		return self.get_query_params().get('SourceChildInstanceTypess')
 
-	def set_SourceChildInstanceTypess(self,SourceChildInstanceTypess):
-		for i in range(len(SourceChildInstanceTypess)):	
-			if SourceChildInstanceTypess[i] is not None:
-				self.add_query_param('SourceChildInstanceTypes.' + str(i + 1) , SourceChildInstanceTypess[i]);
+	def set_SourceChildInstanceTypess(self, SourceChildInstanceTypess):
+		for depth1 in range(len(SourceChildInstanceTypess)):
+			if SourceChildInstanceTypess[depth1] is not None:
+				self.add_query_param('SourceChildInstanceTypes.' + str(depth1 + 1) , SourceChildInstanceTypess[depth1])
 
 	def get_CommunityOperateMode(self):
 		return self.get_query_params().get('CommunityOperateMode')
@@ -137,18 +138,18 @@ class CreateCenRouteMapRequest(RpcRequest):
 	def get_OperateCommunitySets(self):
 		return self.get_query_params().get('OperateCommunitySets')
 
-	def set_OperateCommunitySets(self,OperateCommunitySets):
-		for i in range(len(OperateCommunitySets)):	
-			if OperateCommunitySets[i] is not None:
-				self.add_query_param('OperateCommunitySet.' + str(i + 1) , OperateCommunitySets[i]);
+	def set_OperateCommunitySets(self, OperateCommunitySets):
+		for depth1 in range(len(OperateCommunitySets)):
+			if OperateCommunitySets[depth1] is not None:
+				self.add_query_param('OperateCommunitySet.' + str(depth1 + 1) , OperateCommunitySets[depth1])
 
 	def get_RouteTypess(self):
 		return self.get_query_params().get('RouteTypess')
 
-	def set_RouteTypess(self,RouteTypess):
-		for i in range(len(RouteTypess)):	
-			if RouteTypess[i] is not None:
-				self.add_query_param('RouteTypes.' + str(i + 1) , RouteTypess[i]);
+	def set_RouteTypess(self, RouteTypess):
+		for depth1 in range(len(RouteTypess)):
+			if RouteTypess[depth1] is not None:
+				self.add_query_param('RouteTypes.' + str(depth1 + 1) , RouteTypess[depth1])
 
 	def get_CidrMatchMode(self):
 		return self.get_query_params().get('CidrMatchMode')
@@ -177,10 +178,10 @@ class CreateCenRouteMapRequest(RpcRequest):
 	def get_DestinationRouteTableIdss(self):
 		return self.get_query_params().get('DestinationRouteTableIdss')
 
-	def set_DestinationRouteTableIdss(self,DestinationRouteTableIdss):
-		for i in range(len(DestinationRouteTableIdss)):	
-			if DestinationRouteTableIdss[i] is not None:
-				self.add_query_param('DestinationRouteTableIds.' + str(i + 1) , DestinationRouteTableIdss[i]);
+	def set_DestinationRouteTableIdss(self, DestinationRouteTableIdss):
+		for depth1 in range(len(DestinationRouteTableIdss)):
+			if DestinationRouteTableIdss[depth1] is not None:
+				self.add_query_param('DestinationRouteTableIds.' + str(depth1 + 1) , DestinationRouteTableIdss[depth1])
 
 	def get_TransmitDirection(self):
 		return self.get_query_params().get('TransmitDirection')
@@ -191,10 +192,10 @@ class CreateCenRouteMapRequest(RpcRequest):
 	def get_DestinationInstanceIdss(self):
 		return self.get_query_params().get('DestinationInstanceIdss')
 
-	def set_DestinationInstanceIdss(self,DestinationInstanceIdss):
-		for i in range(len(DestinationInstanceIdss)):	
-			if DestinationInstanceIdss[i] is not None:
-				self.add_query_param('DestinationInstanceIds.' + str(i + 1) , DestinationInstanceIdss[i]);
+	def set_DestinationInstanceIdss(self, DestinationInstanceIdss):
+		for depth1 in range(len(DestinationInstanceIdss)):
+			if DestinationInstanceIdss[depth1] is not None:
+				self.add_query_param('DestinationInstanceIds.' + str(depth1 + 1) , DestinationInstanceIdss[depth1])
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -217,10 +218,10 @@ class CreateCenRouteMapRequest(RpcRequest):
 	def get_PrependAsPaths(self):
 		return self.get_query_params().get('PrependAsPaths')
 
-	def set_PrependAsPaths(self,PrependAsPaths):
-		for i in range(len(PrependAsPaths)):	
-			if PrependAsPaths[i] is not None:
-				self.add_query_param('PrependAsPath.' + str(i + 1) , PrependAsPaths[i]);
+	def set_PrependAsPaths(self, PrependAsPaths):
+		for depth1 in range(len(PrependAsPaths)):
+			if PrependAsPaths[depth1] is not None:
+				self.add_query_param('PrependAsPath.' + str(depth1 + 1) , PrependAsPaths[depth1])
 
 	def get_AsPathMatchMode(self):
 		return self.get_query_params().get('AsPathMatchMode')
@@ -231,10 +232,10 @@ class CreateCenRouteMapRequest(RpcRequest):
 	def get_MatchCommunitySets(self):
 		return self.get_query_params().get('MatchCommunitySets')
 
-	def set_MatchCommunitySets(self,MatchCommunitySets):
-		for i in range(len(MatchCommunitySets)):	
-			if MatchCommunitySets[i] is not None:
-				self.add_query_param('MatchCommunitySet.' + str(i + 1) , MatchCommunitySets[i]);
+	def set_MatchCommunitySets(self, MatchCommunitySets):
+		for depth1 in range(len(MatchCommunitySets)):
+			if MatchCommunitySets[depth1] is not None:
+				self.add_query_param('MatchCommunitySet.' + str(depth1 + 1) , MatchCommunitySets[depth1])
 
 	def get_CenRegionId(self):
 		return self.get_query_params().get('CenRegionId')

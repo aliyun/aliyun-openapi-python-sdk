@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcbn.endpoint import endpoint_data
 
-class DisableCenVbrHealthCheckRequest(RpcRequest):
+class TempUpgradeCenBandwidthPackageSpecRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cbn', '2017-09-12', 'DisableCenVbrHealthCheck','Cbn')
+		RpcRequest.__init__(self, 'Cbn', '2017-09-12', 'TempUpgradeCenBandwidthPackageSpec','Cbn')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -37,29 +37,17 @@ class DisableCenVbrHealthCheckRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_CenId(self):
-		return self.get_query_params().get('CenId')
-
-	def set_CenId(self,CenId):
-		self.add_query_param('CenId',CenId)
-
-	def get_VbrInstanceOwnerId(self):
-		return self.get_query_params().get('VbrInstanceOwnerId')
-
-	def set_VbrInstanceOwnerId(self,VbrInstanceOwnerId):
-		self.add_query_param('VbrInstanceOwnerId',VbrInstanceOwnerId)
-
-	def get_VbrInstanceRegionId(self):
-		return self.get_query_params().get('VbrInstanceRegionId')
-
-	def set_VbrInstanceRegionId(self,VbrInstanceRegionId):
-		self.add_query_param('VbrInstanceRegionId',VbrInstanceRegionId)
-
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+
+	def get_Bandwidth(self):
+		return self.get_query_params().get('Bandwidth')
+
+	def set_Bandwidth(self,Bandwidth):
+		self.add_query_param('Bandwidth',Bandwidth)
 
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
@@ -67,14 +55,20 @@ class DisableCenVbrHealthCheckRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
+	def get_EndTime(self):
+		return self.get_query_params().get('EndTime')
+
+	def set_EndTime(self,EndTime):
+		self.add_query_param('EndTime',EndTime)
+
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_VbrInstanceId(self):
-		return self.get_query_params().get('VbrInstanceId')
+	def get_CenBandwidthPackageId(self):
+		return self.get_query_params().get('CenBandwidthPackageId')
 
-	def set_VbrInstanceId(self,VbrInstanceId):
-		self.add_query_param('VbrInstanceId',VbrInstanceId)
+	def set_CenBandwidthPackageId(self,CenBandwidthPackageId):
+		self.add_query_param('CenBandwidthPackageId',CenBandwidthPackageId)
