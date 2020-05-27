@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkhbase.endpoint import endpoint_data
 
-class UnTagResourcesRequest(RpcRequest):
+class DeleteMultiZoneClusterRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'HBase', '2019-01-01', 'UnTagResources','hbase')
+		RpcRequest.__init__(self, 'HBase', '2019-01-01', 'DeleteMultiZoneCluster','hbase')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,24 +31,14 @@ class UnTagResourcesRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_All(self):
-		return self.get_query_params().get('All')
+	def get_ImmediateDeleteFlag(self):
+		return self.get_query_params().get('ImmediateDeleteFlag')
 
-	def set_All(self,All):
-		self.add_query_param('All',All)
+	def set_ImmediateDeleteFlag(self,ImmediateDeleteFlag):
+		self.add_query_param('ImmediateDeleteFlag',ImmediateDeleteFlag)
 
-	def get_ResourceIds(self):
-		return self.get_query_params().get('ResourceIds')
+	def get_ClusterId(self):
+		return self.get_query_params().get('ClusterId')
 
-	def set_ResourceIds(self, ResourceIds):
-		for depth1 in range(len(ResourceIds)):
-			if ResourceIds[depth1] is not None:
-				self.add_query_param('ResourceId.' + str(depth1 + 1) , ResourceIds[depth1])
-
-	def get_TagKeys(self):
-		return self.get_query_params().get('TagKeys')
-
-	def set_TagKeys(self, TagKeys):
-		for depth1 in range(len(TagKeys)):
-			if TagKeys[depth1] is not None:
-				self.add_query_param('TagKey.' + str(depth1 + 1) , TagKeys[depth1])
+	def set_ClusterId(self,ClusterId):
+		self.add_query_param('ClusterId',ClusterId)
