@@ -58,13 +58,12 @@ class CreateShardingDBInstanceRequest(RpcRequest):
 	def get_ReplicaSets(self):
 		return self.get_query_params().get('ReplicaSets')
 
-	def set_ReplicaSets(self,ReplicaSets):
-		for i in range(len(ReplicaSets)):	
-			if ReplicaSets[i].get('Storage') is not None:
-				self.add_query_param('ReplicaSet.' + str(i + 1) + '.Storage' , ReplicaSets[i].get('Storage'))
-			if ReplicaSets[i].get('Class') is not None:
-				self.add_query_param('ReplicaSet.' + str(i + 1) + '.Class' , ReplicaSets[i].get('Class'))
-
+	def set_ReplicaSets(self, ReplicaSets):
+		for depth1 in range(len(ReplicaSets)):
+			if ReplicaSets[depth1].get('Storage') is not None:
+				self.add_query_param('ReplicaSet.' + str(depth1 + 1) + '.Storage', ReplicaSets[depth1].get('Storage'))
+			if ReplicaSets[depth1].get('Class') is not None:
+				self.add_query_param('ReplicaSet.' + str(depth1 + 1) + '.Class', ReplicaSets[depth1].get('Class'))
 
 	def get_StorageEngine(self):
 		return self.get_query_params().get('StorageEngine')
@@ -123,13 +122,12 @@ class CreateShardingDBInstanceRequest(RpcRequest):
 	def get_ConfigServers(self):
 		return self.get_query_params().get('ConfigServers')
 
-	def set_ConfigServers(self,ConfigServers):
-		for i in range(len(ConfigServers)):	
-			if ConfigServers[i].get('Storage') is not None:
-				self.add_query_param('ConfigServer.' + str(i + 1) + '.Storage' , ConfigServers[i].get('Storage'))
-			if ConfigServers[i].get('Class') is not None:
-				self.add_query_param('ConfigServer.' + str(i + 1) + '.Class' , ConfigServers[i].get('Class'))
-
+	def set_ConfigServers(self, ConfigServers):
+		for depth1 in range(len(ConfigServers)):
+			if ConfigServers[depth1].get('Storage') is not None:
+				self.add_query_param('ConfigServer.' + str(depth1 + 1) + '.Storage', ConfigServers[depth1].get('Storage'))
+			if ConfigServers[depth1].get('Class') is not None:
+				self.add_query_param('ConfigServer.' + str(depth1 + 1) + '.Class', ConfigServers[depth1].get('Class'))
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
@@ -140,11 +138,10 @@ class CreateShardingDBInstanceRequest(RpcRequest):
 	def get_Mongoss(self):
 		return self.get_query_params().get('Mongoss')
 
-	def set_Mongoss(self,Mongoss):
-		for i in range(len(Mongoss)):	
-			if Mongoss[i].get('Class') is not None:
-				self.add_query_param('Mongos.' + str(i + 1) + '.Class' , Mongoss[i].get('Class'))
-
+	def set_Mongoss(self, Mongoss):
+		for depth1 in range(len(Mongoss)):
+			if Mongoss[depth1].get('Class') is not None:
+				self.add_query_param('Mongos.' + str(depth1 + 1) + '.Class', Mongoss[depth1].get('Class'))
 
 	def get_SecurityIPList(self):
 		return self.get_query_params().get('SecurityIPList')
