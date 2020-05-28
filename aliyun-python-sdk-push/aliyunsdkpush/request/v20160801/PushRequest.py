@@ -24,6 +24,7 @@ class PushRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Push', '2016-08-01', 'Push')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -125,6 +126,12 @@ class PushRequest(RpcRequest):
 
 	def set_iOSNotificationCategory(self,iOSNotificationCategory):
 		self.add_query_param('iOSNotificationCategory',iOSNotificationCategory)
+
+	def get_AndroidNotificationXiaomiChannel(self):
+		return self.get_query_params().get('AndroidNotificationXiaomiChannel')
+
+	def set_AndroidNotificationXiaomiChannel(self,AndroidNotificationXiaomiChannel):
+		self.add_query_param('AndroidNotificationXiaomiChannel',AndroidNotificationXiaomiChannel)
 
 	def get_StoreOffline(self):
 		return self.get_query_params().get('StoreOffline')

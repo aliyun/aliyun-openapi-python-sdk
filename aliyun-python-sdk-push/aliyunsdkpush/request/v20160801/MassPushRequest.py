@@ -24,6 +24,7 @@ class MassPushRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Push', '2016-08-01', 'MassPush')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -33,85 +34,86 @@ class MassPushRequest(RpcRequest):
 	def get_PushTasks(self):
 		return self.get_body_params().get('PushTasks')
 
-	def set_PushTasks(self,PushTasks):
-		for i in range(len(PushTasks)):	
-			if PushTasks[i].get('AndroidNotificationBarType') is not None:
-				self.add_body_params('PushTask.' + str(i + 1) + '.AndroidNotificationBarType' , PushTasks[i].get('AndroidNotificationBarType'))
-			if PushTasks[i].get('AndroidExtParameters') is not None:
-				self.add_body_params('PushTask.' + str(i + 1) + '.AndroidExtParameters' , PushTasks[i].get('AndroidExtParameters'))
-			if PushTasks[i].get('iOSBadge') is not None:
-				self.add_body_params('PushTask.' + str(i + 1) + '.iOSBadge' , PushTasks[i].get('iOSBadge'))
-			if PushTasks[i].get('iOSBadgeAutoIncrement') is not None:
-				self.add_body_params('PushTask.' + str(i + 1) + '.iOSBadgeAutoIncrement' , PushTasks[i].get('iOSBadgeAutoIncrement'))
-			if PushTasks[i].get('AndroidOpenType') is not None:
-				self.add_body_params('PushTask.' + str(i + 1) + '.AndroidOpenType' , PushTasks[i].get('AndroidOpenType'))
-			if PushTasks[i].get('Title') is not None:
-				self.add_body_params('PushTask.' + str(i + 1) + '.Title' , PushTasks[i].get('Title'))
-			if PushTasks[i].get('Body') is not None:
-				self.add_body_params('PushTask.' + str(i + 1) + '.Body' , PushTasks[i].get('Body'))
-			if PushTasks[i].get('DeviceType') is not None:
-				self.add_body_params('PushTask.' + str(i + 1) + '.DeviceType' , PushTasks[i].get('DeviceType'))
-			if PushTasks[i].get('PushTime') is not None:
-				self.add_body_params('PushTask.' + str(i + 1) + '.PushTime' , PushTasks[i].get('PushTime'))
-			if PushTasks[i].get('SendSpeed') is not None:
-				self.add_body_params('PushTask.' + str(i + 1) + '.SendSpeed' , PushTasks[i].get('SendSpeed'))
-			if PushTasks[i].get('AndroidPopupActivity') is not None:
-				self.add_body_params('PushTask.' + str(i + 1) + '.AndroidPopupActivity' , PushTasks[i].get('AndroidPopupActivity'))
-			if PushTasks[i].get('iOSRemindBody') is not None:
-				self.add_body_params('PushTask.' + str(i + 1) + '.iOSRemindBody' , PushTasks[i].get('iOSRemindBody'))
-			if PushTasks[i].get('iOSExtParameters') is not None:
-				self.add_body_params('PushTask.' + str(i + 1) + '.iOSExtParameters' , PushTasks[i].get('iOSExtParameters'))
-			if PushTasks[i].get('AndroidNotifyType') is not None:
-				self.add_body_params('PushTask.' + str(i + 1) + '.AndroidNotifyType' , PushTasks[i].get('AndroidNotifyType'))
-			if PushTasks[i].get('AndroidPopupTitle') is not None:
-				self.add_body_params('PushTask.' + str(i + 1) + '.AndroidPopupTitle' , PushTasks[i].get('AndroidPopupTitle'))
-			if PushTasks[i].get('iOSMusic') is not None:
-				self.add_body_params('PushTask.' + str(i + 1) + '.iOSMusic' , PushTasks[i].get('iOSMusic'))
-			if PushTasks[i].get('iOSApnsEnv') is not None:
-				self.add_body_params('PushTask.' + str(i + 1) + '.iOSApnsEnv' , PushTasks[i].get('iOSApnsEnv'))
-			if PushTasks[i].get('iOSMutableContent') is not None:
-				self.add_body_params('PushTask.' + str(i + 1) + '.iOSMutableContent' , PushTasks[i].get('iOSMutableContent'))
-			if PushTasks[i].get('AndroidNotificationBarPriority') is not None:
-				self.add_body_params('PushTask.' + str(i + 1) + '.AndroidNotificationBarPriority' , PushTasks[i].get('AndroidNotificationBarPriority'))
-			if PushTasks[i].get('ExpireTime') is not None:
-				self.add_body_params('PushTask.' + str(i + 1) + '.ExpireTime' , PushTasks[i].get('ExpireTime'))
-			if PushTasks[i].get('AndroidPopupBody') is not None:
-				self.add_body_params('PushTask.' + str(i + 1) + '.AndroidPopupBody' , PushTasks[i].get('AndroidPopupBody'))
-			if PushTasks[i].get('iOSNotificationCategory') is not None:
-				self.add_body_params('PushTask.' + str(i + 1) + '.iOSNotificationCategory' , PushTasks[i].get('iOSNotificationCategory'))
-			if PushTasks[i].get('StoreOffline') is not None:
-				self.add_body_params('PushTask.' + str(i + 1) + '.StoreOffline' , PushTasks[i].get('StoreOffline'))
-			if PushTasks[i].get('iOSSilentNotification') is not None:
-				self.add_body_params('PushTask.' + str(i + 1) + '.iOSSilentNotification' , PushTasks[i].get('iOSSilentNotification'))
-			if PushTasks[i].get('JobKey') is not None:
-				self.add_body_params('PushTask.' + str(i + 1) + '.JobKey' , PushTasks[i].get('JobKey'))
-			if PushTasks[i].get('Target') is not None:
-				self.add_body_params('PushTask.' + str(i + 1) + '.Target' , PushTasks[i].get('Target'))
-			if PushTasks[i].get('AndroidOpenUrl') is not None:
-				self.add_body_params('PushTask.' + str(i + 1) + '.AndroidOpenUrl' , PushTasks[i].get('AndroidOpenUrl'))
-			if PushTasks[i].get('AndroidNotificationChannel') is not None:
-				self.add_body_params('PushTask.' + str(i + 1) + '.AndroidNotificationChannel' , PushTasks[i].get('AndroidNotificationChannel'))
-			if PushTasks[i].get('AndroidRemind') is not None:
-				self.add_body_params('PushTask.' + str(i + 1) + '.AndroidRemind' , PushTasks[i].get('AndroidRemind'))
-			if PushTasks[i].get('AndroidActivity') is not None:
-				self.add_body_params('PushTask.' + str(i + 1) + '.AndroidActivity' , PushTasks[i].get('AndroidActivity'))
-			if PushTasks[i].get('AndroidXiaoMiNotifyBody') is not None:
-				self.add_body_params('PushTask.' + str(i + 1) + '.AndroidXiaoMiNotifyBody' , PushTasks[i].get('AndroidXiaoMiNotifyBody'))
-			if PushTasks[i].get('iOSSubtitle') is not None:
-				self.add_body_params('PushTask.' + str(i + 1) + '.iOSSubtitle' , PushTasks[i].get('iOSSubtitle'))
-			if PushTasks[i].get('iOSRemind') is not None:
-				self.add_body_params('PushTask.' + str(i + 1) + '.iOSRemind' , PushTasks[i].get('iOSRemind'))
-			if PushTasks[i].get('TargetValue') is not None:
-				self.add_body_params('PushTask.' + str(i + 1) + '.TargetValue' , PushTasks[i].get('TargetValue'))
-			if PushTasks[i].get('AndroidMusic') is not None:
-				self.add_body_params('PushTask.' + str(i + 1) + '.AndroidMusic' , PushTasks[i].get('AndroidMusic'))
-			if PushTasks[i].get('AndroidXiaoMiActivity') is not None:
-				self.add_body_params('PushTask.' + str(i + 1) + '.AndroidXiaoMiActivity' , PushTasks[i].get('AndroidXiaoMiActivity'))
-			if PushTasks[i].get('AndroidXiaoMiNotifyTitle') is not None:
-				self.add_body_params('PushTask.' + str(i + 1) + '.AndroidXiaoMiNotifyTitle' , PushTasks[i].get('AndroidXiaoMiNotifyTitle'))
-			if PushTasks[i].get('PushType') is not None:
-				self.add_body_params('PushTask.' + str(i + 1) + '.PushType' , PushTasks[i].get('PushType'))
-
+	def set_PushTasks(self, PushTasks):
+		for depth1 in range(len(PushTasks)):
+			if PushTasks[depth1].get('AndroidNotificationBarType') is not None:
+				self.add_body_params('PushTask.' + str(depth1 + 1) + '.AndroidNotificationBarType', PushTasks[depth1].get('AndroidNotificationBarType'))
+			if PushTasks[depth1].get('AndroidExtParameters') is not None:
+				self.add_body_params('PushTask.' + str(depth1 + 1) + '.AndroidExtParameters', PushTasks[depth1].get('AndroidExtParameters'))
+			if PushTasks[depth1].get('iOSBadge') is not None:
+				self.add_body_params('PushTask.' + str(depth1 + 1) + '.iOSBadge', PushTasks[depth1].get('iOSBadge'))
+			if PushTasks[depth1].get('iOSBadgeAutoIncrement') is not None:
+				self.add_body_params('PushTask.' + str(depth1 + 1) + '.iOSBadgeAutoIncrement', PushTasks[depth1].get('iOSBadgeAutoIncrement'))
+			if PushTasks[depth1].get('AndroidOpenType') is not None:
+				self.add_body_params('PushTask.' + str(depth1 + 1) + '.AndroidOpenType', PushTasks[depth1].get('AndroidOpenType'))
+			if PushTasks[depth1].get('Title') is not None:
+				self.add_body_params('PushTask.' + str(depth1 + 1) + '.Title', PushTasks[depth1].get('Title'))
+			if PushTasks[depth1].get('Body') is not None:
+				self.add_body_params('PushTask.' + str(depth1 + 1) + '.Body', PushTasks[depth1].get('Body'))
+			if PushTasks[depth1].get('DeviceType') is not None:
+				self.add_body_params('PushTask.' + str(depth1 + 1) + '.DeviceType', PushTasks[depth1].get('DeviceType'))
+			if PushTasks[depth1].get('PushTime') is not None:
+				self.add_body_params('PushTask.' + str(depth1 + 1) + '.PushTime', PushTasks[depth1].get('PushTime'))
+			if PushTasks[depth1].get('SendSpeed') is not None:
+				self.add_body_params('PushTask.' + str(depth1 + 1) + '.SendSpeed', PushTasks[depth1].get('SendSpeed'))
+			if PushTasks[depth1].get('AndroidPopupActivity') is not None:
+				self.add_body_params('PushTask.' + str(depth1 + 1) + '.AndroidPopupActivity', PushTasks[depth1].get('AndroidPopupActivity'))
+			if PushTasks[depth1].get('iOSRemindBody') is not None:
+				self.add_body_params('PushTask.' + str(depth1 + 1) + '.iOSRemindBody', PushTasks[depth1].get('iOSRemindBody'))
+			if PushTasks[depth1].get('iOSExtParameters') is not None:
+				self.add_body_params('PushTask.' + str(depth1 + 1) + '.iOSExtParameters', PushTasks[depth1].get('iOSExtParameters'))
+			if PushTasks[depth1].get('AndroidNotifyType') is not None:
+				self.add_body_params('PushTask.' + str(depth1 + 1) + '.AndroidNotifyType', PushTasks[depth1].get('AndroidNotifyType'))
+			if PushTasks[depth1].get('AndroidPopupTitle') is not None:
+				self.add_body_params('PushTask.' + str(depth1 + 1) + '.AndroidPopupTitle', PushTasks[depth1].get('AndroidPopupTitle'))
+			if PushTasks[depth1].get('iOSMusic') is not None:
+				self.add_body_params('PushTask.' + str(depth1 + 1) + '.iOSMusic', PushTasks[depth1].get('iOSMusic'))
+			if PushTasks[depth1].get('iOSApnsEnv') is not None:
+				self.add_body_params('PushTask.' + str(depth1 + 1) + '.iOSApnsEnv', PushTasks[depth1].get('iOSApnsEnv'))
+			if PushTasks[depth1].get('iOSMutableContent') is not None:
+				self.add_body_params('PushTask.' + str(depth1 + 1) + '.iOSMutableContent', PushTasks[depth1].get('iOSMutableContent'))
+			if PushTasks[depth1].get('AndroidNotificationBarPriority') is not None:
+				self.add_body_params('PushTask.' + str(depth1 + 1) + '.AndroidNotificationBarPriority', PushTasks[depth1].get('AndroidNotificationBarPriority'))
+			if PushTasks[depth1].get('ExpireTime') is not None:
+				self.add_body_params('PushTask.' + str(depth1 + 1) + '.ExpireTime', PushTasks[depth1].get('ExpireTime'))
+			if PushTasks[depth1].get('AndroidPopupBody') is not None:
+				self.add_body_params('PushTask.' + str(depth1 + 1) + '.AndroidPopupBody', PushTasks[depth1].get('AndroidPopupBody'))
+			if PushTasks[depth1].get('iOSNotificationCategory') is not None:
+				self.add_body_params('PushTask.' + str(depth1 + 1) + '.iOSNotificationCategory', PushTasks[depth1].get('iOSNotificationCategory'))
+			if PushTasks[depth1].get('AndroidNotificationXiaomiChannel') is not None:
+				self.add_body_params('PushTask.' + str(depth1 + 1) + '.AndroidNotificationXiaomiChannel', PushTasks[depth1].get('AndroidNotificationXiaomiChannel'))
+			if PushTasks[depth1].get('StoreOffline') is not None:
+				self.add_body_params('PushTask.' + str(depth1 + 1) + '.StoreOffline', PushTasks[depth1].get('StoreOffline'))
+			if PushTasks[depth1].get('iOSSilentNotification') is not None:
+				self.add_body_params('PushTask.' + str(depth1 + 1) + '.iOSSilentNotification', PushTasks[depth1].get('iOSSilentNotification'))
+			if PushTasks[depth1].get('JobKey') is not None:
+				self.add_body_params('PushTask.' + str(depth1 + 1) + '.JobKey', PushTasks[depth1].get('JobKey'))
+			if PushTasks[depth1].get('Target') is not None:
+				self.add_body_params('PushTask.' + str(depth1 + 1) + '.Target', PushTasks[depth1].get('Target'))
+			if PushTasks[depth1].get('AndroidOpenUrl') is not None:
+				self.add_body_params('PushTask.' + str(depth1 + 1) + '.AndroidOpenUrl', PushTasks[depth1].get('AndroidOpenUrl'))
+			if PushTasks[depth1].get('AndroidNotificationChannel') is not None:
+				self.add_body_params('PushTask.' + str(depth1 + 1) + '.AndroidNotificationChannel', PushTasks[depth1].get('AndroidNotificationChannel'))
+			if PushTasks[depth1].get('AndroidRemind') is not None:
+				self.add_body_params('PushTask.' + str(depth1 + 1) + '.AndroidRemind', PushTasks[depth1].get('AndroidRemind'))
+			if PushTasks[depth1].get('AndroidActivity') is not None:
+				self.add_body_params('PushTask.' + str(depth1 + 1) + '.AndroidActivity', PushTasks[depth1].get('AndroidActivity'))
+			if PushTasks[depth1].get('AndroidXiaoMiNotifyBody') is not None:
+				self.add_body_params('PushTask.' + str(depth1 + 1) + '.AndroidXiaoMiNotifyBody', PushTasks[depth1].get('AndroidXiaoMiNotifyBody'))
+			if PushTasks[depth1].get('iOSSubtitle') is not None:
+				self.add_body_params('PushTask.' + str(depth1 + 1) + '.iOSSubtitle', PushTasks[depth1].get('iOSSubtitle'))
+			if PushTasks[depth1].get('iOSRemind') is not None:
+				self.add_body_params('PushTask.' + str(depth1 + 1) + '.iOSRemind', PushTasks[depth1].get('iOSRemind'))
+			if PushTasks[depth1].get('TargetValue') is not None:
+				self.add_body_params('PushTask.' + str(depth1 + 1) + '.TargetValue', PushTasks[depth1].get('TargetValue'))
+			if PushTasks[depth1].get('AndroidMusic') is not None:
+				self.add_body_params('PushTask.' + str(depth1 + 1) + '.AndroidMusic', PushTasks[depth1].get('AndroidMusic'))
+			if PushTasks[depth1].get('AndroidXiaoMiActivity') is not None:
+				self.add_body_params('PushTask.' + str(depth1 + 1) + '.AndroidXiaoMiActivity', PushTasks[depth1].get('AndroidXiaoMiActivity'))
+			if PushTasks[depth1].get('AndroidXiaoMiNotifyTitle') is not None:
+				self.add_body_params('PushTask.' + str(depth1 + 1) + '.AndroidXiaoMiNotifyTitle', PushTasks[depth1].get('AndroidXiaoMiNotifyTitle'))
+			if PushTasks[depth1].get('PushType') is not None:
+				self.add_body_params('PushTask.' + str(depth1 + 1) + '.PushType', PushTasks[depth1].get('PushType'))
 
 	def get_AppKey(self):
 		return self.get_query_params().get('AppKey')
