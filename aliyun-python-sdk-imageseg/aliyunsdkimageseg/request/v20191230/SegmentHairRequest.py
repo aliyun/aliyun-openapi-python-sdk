@@ -24,6 +24,7 @@ class SegmentHairRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'imageseg', '2019-12-30', 'SegmentHair','imageseg')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):

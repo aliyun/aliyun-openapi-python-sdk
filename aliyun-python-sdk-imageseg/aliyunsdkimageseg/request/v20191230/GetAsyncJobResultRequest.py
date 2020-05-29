@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkimageseg.endpoint import endpoint_data
 
-class SegmentHeadRequest(RpcRequest):
+class GetAsyncJobResultRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'imageseg', '2019-12-30', 'SegmentHead','imageseg')
+		RpcRequest.__init__(self, 'imageseg', '2019-12-30', 'GetAsyncJobResult','imageseg')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,8 +31,8 @@ class SegmentHeadRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_ImageURL(self):
-		return self.get_query_params().get('ImageURL')
+	def get_JobId(self):
+		return self.get_body_params().get('JobId')
 
-	def set_ImageURL(self,ImageURL):
-		self.add_query_param('ImageURL',ImageURL)
+	def set_JobId(self,JobId):
+		self.add_body_params('JobId', JobId)
