@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,12 +18,19 @@
 # under the License.
 
 from aliyunsdkcore.request import RoaRequest
+
 class UpdateRepoBuildRuleRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'cr', '2016-06-07', 'UpdateRepoBuildRule','cr')
+		RoaRequest.__init__(self, 'cr', '2016-06-07', 'UpdateRepoBuildRule','acr')
 		self.set_uri_pattern('/repos/[RepoNamespace]/[RepoName]/rules/[BuildRuleId]')
 		self.set_method('POST')
+
+	def get_BuildRuleId(self):
+		return self.get_path_params().get('BuildRuleId')
+
+	def set_BuildRuleId(self,BuildRuleId):
+		self.add_path_param('BuildRuleId',BuildRuleId)
 
 	def get_RepoNamespace(self):
 		return self.get_path_params().get('RepoNamespace')
@@ -36,9 +43,3 @@ class UpdateRepoBuildRuleRequest(RoaRequest):
 
 	def set_RepoName(self,RepoName):
 		self.add_path_param('RepoName',RepoName)
-
-	def get_BuildRuleId(self):
-		return self.get_path_params().get('BuildRuleId')
-
-	def set_BuildRuleId(self,BuildRuleId):
-		self.add_path_param('BuildRuleId',BuildRuleId)

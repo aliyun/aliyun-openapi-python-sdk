@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,24 +18,25 @@
 # under the License.
 
 from aliyunsdkcore.request import RoaRequest
+
 class DeleteRepoWebhookRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'cr', '2016-06-07', 'DeleteRepoWebhook','cr')
+		RoaRequest.__init__(self, 'cr', '2016-06-07', 'DeleteRepoWebhook','acr')
 		self.set_uri_pattern('/repos/[RepoNamespace]/[RepoName]/webhooks/[WebhookId]')
 		self.set_method('DELETE')
-
-	def get_RepoNamespace(self):
-		return self.get_path_params().get('RepoNamespace')
-
-	def set_RepoNamespace(self,RepoNamespace):
-		self.add_path_param('RepoNamespace',RepoNamespace)
 
 	def get_WebhookId(self):
 		return self.get_path_params().get('WebhookId')
 
 	def set_WebhookId(self,WebhookId):
 		self.add_path_param('WebhookId',WebhookId)
+
+	def get_RepoNamespace(self):
+		return self.get_path_params().get('RepoNamespace')
+
+	def set_RepoNamespace(self,RepoNamespace):
+		self.add_path_param('RepoNamespace',RepoNamespace)
 
 	def get_RepoName(self):
 		return self.get_path_params().get('RepoName')

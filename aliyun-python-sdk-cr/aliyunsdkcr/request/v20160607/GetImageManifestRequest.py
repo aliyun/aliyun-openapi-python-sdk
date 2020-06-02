@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,12 +18,19 @@
 # under the License.
 
 from aliyunsdkcore.request import RoaRequest
+
 class GetImageManifestRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'cr', '2016-06-07', 'GetImageManifest','cr')
+		RoaRequest.__init__(self, 'cr', '2016-06-07', 'GetImageManifest','acr')
 		self.set_uri_pattern('/repos/[RepoNamespace]/[RepoName]/tags/[Tag]/manifest')
 		self.set_method('GET')
+
+	def get_SchemaVersion(self):
+		return self.get_query_params().get('SchemaVersion')
+
+	def set_SchemaVersion(self,SchemaVersion):
+		self.add_query_param('SchemaVersion',SchemaVersion)
 
 	def get_RepoNamespace(self):
 		return self.get_path_params().get('RepoNamespace')
@@ -42,9 +49,3 @@ class GetImageManifestRequest(RoaRequest):
 
 	def set_Tag(self,Tag):
 		self.add_path_param('Tag',Tag)
-
-	def get_SchemaVersion(self):
-		return self.get_query_params().get('SchemaVersion')
-
-	def set_SchemaVersion(self,SchemaVersion):
-		self.add_query_param('SchemaVersion',SchemaVersion)

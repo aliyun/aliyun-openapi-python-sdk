@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,10 +18,11 @@
 # under the License.
 
 from aliyunsdkcore.request import RoaRequest
+
 class GetRepoBuildListRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'cr', '2016-06-07', 'GetRepoBuildList','cr')
+		RoaRequest.__init__(self, 'cr', '2016-06-07', 'GetRepoBuildList','acr')
 		self.set_uri_pattern('/repos/[RepoNamespace]/[RepoName]/build')
 		self.set_method('GET')
 
