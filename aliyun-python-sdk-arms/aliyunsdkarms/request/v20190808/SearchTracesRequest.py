@@ -61,6 +61,16 @@ class SearchTracesRequest(RpcRequest):
 	def set_ServiceIp(self,ServiceIp):
 		self.add_query_param('ServiceIp',ServiceIp)
 
+	def get_ExclusionFilterss(self):
+		return self.get_query_params().get('ExclusionFilterss')
+
+	def set_ExclusionFilterss(self, ExclusionFilterss):
+		for depth1 in range(len(ExclusionFilterss)):
+			if ExclusionFilterss[depth1].get('Value') is not None:
+				self.add_query_param('ExclusionFilters.' + str(depth1 + 1) + '.Value', ExclusionFilterss[depth1].get('Value'))
+			if ExclusionFilterss[depth1].get('Key') is not None:
+				self.add_query_param('ExclusionFilters.' + str(depth1 + 1) + '.Key', ExclusionFilterss[depth1].get('Key'))
+
 	def get_OperationName(self):
 		return self.get_query_params().get('OperationName')
 
