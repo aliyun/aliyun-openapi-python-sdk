@@ -31,6 +31,12 @@ class RebootClusterRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_DataCenterId(self):
+		return self.get_query_params().get('DataCenterId')
+
+	def set_DataCenterId(self,DataCenterId):
+		self.add_query_param('DataCenterId',DataCenterId)
+
 	def get_ClusterId(self):
 		return self.get_query_params().get('ClusterId')
 
