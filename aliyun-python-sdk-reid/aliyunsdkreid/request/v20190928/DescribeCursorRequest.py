@@ -23,7 +23,7 @@ from aliyunsdkreid.endpoint import endpoint_data
 class DescribeCursorRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'reid', '2019-09-28', 'DescribeCursor')
+		RpcRequest.__init__(self, 'reid', '2019-09-28', 'DescribeCursor','1.1.7')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
