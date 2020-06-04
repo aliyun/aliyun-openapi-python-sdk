@@ -24,6 +24,7 @@ class UpdateVideoInfoRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'vod', '2017-03-21', 'UpdateVideoInfo','vod')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -53,12 +54,6 @@ class UpdateVideoInfoRequest(RpcRequest):
 
 	def set_CoverURL(self,CoverURL):
 		self.add_query_param('CoverURL',CoverURL)
-
-	def get_DownloadSwitch(self):
-		return self.get_query_params().get('DownloadSwitch')
-
-	def set_DownloadSwitch(self,DownloadSwitch):
-		self.add_query_param('DownloadSwitch',DownloadSwitch)
 
 	def get_CateId(self):
 		return self.get_query_params().get('CateId')
@@ -95,9 +90,3 @@ class UpdateVideoInfoRequest(RpcRequest):
 
 	def set_Tags(self,Tags):
 		self.add_query_param('Tags',Tags)
-
-	def get_Status(self):
-		return self.get_query_params().get('Status')
-
-	def set_Status(self,Status):
-		self.add_query_param('Status',Status)

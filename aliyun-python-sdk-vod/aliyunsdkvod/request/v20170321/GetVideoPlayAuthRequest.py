@@ -24,6 +24,7 @@ class GetVideoPlayAuthRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'vod', '2017-03-21', 'GetVideoPlayAuth','vod')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -35,12 +36,6 @@ class GetVideoPlayAuthRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_ReAuthInfo(self):
-		return self.get_query_params().get('ReAuthInfo')
-
-	def set_ReAuthInfo(self,ReAuthInfo):
-		self.add_query_param('ReAuthInfo',ReAuthInfo)
 
 	def get_PlayConfig(self):
 		return self.get_query_params().get('PlayConfig')

@@ -24,6 +24,7 @@ class GetPlayInfoRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'vod', '2017-03-21', 'GetPlayInfo','vod')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -41,24 +42,6 @@ class GetPlayInfoRequest(RpcRequest):
 
 	def set_Formats(self,Formats):
 		self.add_query_param('Formats',Formats)
-
-	def get_Channel(self):
-		return self.get_query_params().get('Channel')
-
-	def set_Channel(self,Channel):
-		self.add_query_param('Channel',Channel)
-
-	def get_PlayerVersion(self):
-		return self.get_query_params().get('PlayerVersion')
-
-	def set_PlayerVersion(self,PlayerVersion):
-		self.add_query_param('PlayerVersion',PlayerVersion)
-
-	def get_Rand(self):
-		return self.get_query_params().get('Rand')
-
-	def set_Rand(self,Rand):
-		self.add_query_param('Rand',Rand)
 
 	def get_ReAuthInfo(self):
 		return self.get_query_params().get('ReAuthInfo')
@@ -119,9 +102,3 @@ class GetPlayInfoRequest(RpcRequest):
 
 	def set_ResultType(self,ResultType):
 		self.add_query_param('ResultType',ResultType)
-
-	def get_AuthInfo(self):
-		return self.get_query_params().get('AuthInfo')
-
-	def set_AuthInfo(self,AuthInfo):
-		self.add_query_param('AuthInfo',AuthInfo)

@@ -24,6 +24,7 @@ class AttachAppPolicyToIdentityRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'vod', '2017-03-21', 'AttachAppPolicyToIdentity','vod')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -41,12 +42,6 @@ class AttachAppPolicyToIdentityRequest(RpcRequest):
 
 	def set_PolicyNames(self,PolicyNames):
 		self.add_query_param('PolicyNames',PolicyNames)
-
-	def get_ResourceRealOwnerId(self):
-		return self.get_query_params().get('ResourceRealOwnerId')
-
-	def set_ResourceRealOwnerId(self,ResourceRealOwnerId):
-		self.add_query_param('ResourceRealOwnerId',ResourceRealOwnerId)
 
 	def get_IdentityName(self):
 		return self.get_query_params().get('IdentityName')

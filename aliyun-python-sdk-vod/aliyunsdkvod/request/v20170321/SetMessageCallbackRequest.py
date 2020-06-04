@@ -24,6 +24,7 @@ class SetMessageCallbackRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'vod', '2017-03-21', 'SetMessageCallback','vod')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -53,12 +54,6 @@ class SetMessageCallbackRequest(RpcRequest):
 
 	def set_CallbackType(self,CallbackType):
 		self.add_query_param('CallbackType',CallbackType)
-
-	def get_CallbackSwitch(self):
-		return self.get_query_params().get('CallbackSwitch')
-
-	def set_CallbackSwitch(self,CallbackSwitch):
-		self.add_query_param('CallbackSwitch',CallbackSwitch)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')

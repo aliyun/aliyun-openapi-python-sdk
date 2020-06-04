@@ -24,6 +24,7 @@ class SearchMediaRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'vod', '2017-03-21', 'SearchMedia','vod')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -59,12 +60,6 @@ class SearchMediaRequest(RpcRequest):
 
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
-
-	def get_ResultTypes(self):
-		return self.get_query_params().get('ResultTypes')
-
-	def set_ResultTypes(self,ResultTypes):
-		self.add_query_param('ResultTypes',ResultTypes)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
