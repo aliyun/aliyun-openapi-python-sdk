@@ -24,6 +24,7 @@ class SubmitRecordingRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'OutboundBot', '2019-12-26', 'SubmitRecording','outboundbot')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -47,12 +48,6 @@ class SubmitRecordingRequest(RpcRequest):
 
 	def set_InstanceId(self,InstanceId):
 		self.add_query_param('InstanceId',InstanceId)
-
-	def get_InstanceOwnerId(self):
-		return self.get_query_params().get('InstanceOwnerId')
-
-	def set_InstanceOwnerId(self,InstanceOwnerId):
-		self.add_query_param('InstanceOwnerId',InstanceOwnerId)
 
 	def get_TaskId(self):
 		return self.get_query_params().get('TaskId')

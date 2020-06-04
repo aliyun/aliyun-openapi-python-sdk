@@ -24,6 +24,7 @@ class CreateJobGroupRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'OutboundBot', '2019-12-26', 'CreateJobGroup','outboundbot')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -51,10 +52,10 @@ class CreateJobGroupRequest(RpcRequest):
 	def get_CallingNumbers(self):
 		return self.get_query_params().get('CallingNumbers')
 
-	def set_CallingNumbers(self,CallingNumbers):
-		for i in range(len(CallingNumbers)):	
-			if CallingNumbers[i] is not None:
-				self.add_query_param('CallingNumber.' + str(i + 1) , CallingNumbers[i]);
+	def set_CallingNumbers(self, CallingNumbers):
+		for depth1 in range(len(CallingNumbers)):
+			if CallingNumbers[depth1] is not None:
+				self.add_query_param('CallingNumber.' + str(depth1 + 1) , CallingNumbers[depth1])
 
 	def get_InstanceId(self):
 		return self.get_query_params().get('InstanceId')
