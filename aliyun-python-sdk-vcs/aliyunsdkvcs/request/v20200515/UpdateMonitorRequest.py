@@ -31,23 +31,11 @@ class UpdateMonitorRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_DeviceOperateType(self):
-		return self.get_body_params().get('DeviceOperateType')
-
-	def set_DeviceOperateType(self,DeviceOperateType):
-		self.add_body_params('DeviceOperateType', DeviceOperateType)
-
 	def get_CorpId(self):
 		return self.get_body_params().get('CorpId')
 
 	def set_CorpId(self,CorpId):
 		self.add_body_params('CorpId', CorpId)
-
-	def get_PicList(self):
-		return self.get_body_params().get('PicList')
-
-	def set_PicList(self,PicList):
-		self.add_body_params('PicList', PicList)
 
 	def get_Description(self):
 		return self.get_body_params().get('Description')
@@ -73,6 +61,36 @@ class UpdateMonitorRequest(RpcRequest):
 	def set_AttributeName(self,AttributeName):
 		self.add_body_params('AttributeName', AttributeName)
 
+	def get_AttributeOperateType(self):
+		return self.get_body_params().get('AttributeOperateType')
+
+	def set_AttributeOperateType(self,AttributeOperateType):
+		self.add_body_params('AttributeOperateType', AttributeOperateType)
+
+	def get_RuleExpression(self):
+		return self.get_body_params().get('RuleExpression')
+
+	def set_RuleExpression(self,RuleExpression):
+		self.add_body_params('RuleExpression', RuleExpression)
+
+	def get_TaskId(self):
+		return self.get_body_params().get('TaskId')
+
+	def set_TaskId(self,TaskId):
+		self.add_body_params('TaskId', TaskId)
+
+	def get_DeviceOperateType(self):
+		return self.get_body_params().get('DeviceOperateType')
+
+	def set_DeviceOperateType(self,DeviceOperateType):
+		self.add_body_params('DeviceOperateType', DeviceOperateType)
+
+	def get_PicList(self):
+		return self.get_body_params().get('PicList')
+
+	def set_PicList(self,PicList):
+		self.add_body_params('PicList', PicList)
+
 	def get_AttributeValueList(self):
 		return self.get_body_params().get('AttributeValueList')
 
@@ -84,15 +102,3 @@ class UpdateMonitorRequest(RpcRequest):
 
 	def set_DeviceList(self,DeviceList):
 		self.add_body_params('DeviceList', DeviceList)
-
-	def get_AttributeOperateType(self):
-		return self.get_body_params().get('AttributeOperateType')
-
-	def set_AttributeOperateType(self,AttributeOperateType):
-		self.add_body_params('AttributeOperateType', AttributeOperateType)
-
-	def get_TaskId(self):
-		return self.get_body_params().get('TaskId')
-
-	def set_TaskId(self,TaskId):
-		self.add_body_params('TaskId', TaskId)
