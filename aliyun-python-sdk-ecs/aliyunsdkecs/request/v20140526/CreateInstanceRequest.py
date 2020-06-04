@@ -24,6 +24,7 @@ class CreateInstanceRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'CreateInstance','ecs')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -99,13 +100,12 @@ class CreateInstanceRequest(RpcRequest):
 	def get_Tags(self):
 		return self.get_query_params().get('Tags')
 
-	def set_Tags(self,Tags):
-		for i in range(len(Tags)):	
-			if Tags[i].get('Value') is not None:
-				self.add_query_param('Tag.' + str(i + 1) + '.Value' , Tags[i].get('Value'))
-			if Tags[i].get('Key') is not None:
-				self.add_query_param('Tag.' + str(i + 1) + '.Key' , Tags[i].get('Key'))
-
+	def set_Tags(self, Tags):
+		for depth1 in range(len(Tags)):
+			if Tags[depth1].get('Value') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tags[depth1].get('Value'))
+			if Tags[depth1].get('Key') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tags[depth1].get('Key'))
 
 	def get_AutoRenewPeriod(self):
 		return self.get_query_params().get('AutoRenewPeriod')
@@ -290,15 +290,14 @@ class CreateInstanceRequest(RpcRequest):
 	def get_Arns(self):
 		return self.get_query_params().get('Arns')
 
-	def set_Arns(self,Arns):
-		for i in range(len(Arns)):	
-			if Arns[i].get('Rolearn') is not None:
-				self.add_query_param('Arn.' + str(i + 1) + '.Rolearn' , Arns[i].get('Rolearn'))
-			if Arns[i].get('RoleType') is not None:
-				self.add_query_param('Arn.' + str(i + 1) + '.RoleType' , Arns[i].get('RoleType'))
-			if Arns[i].get('AssumeRoleFor') is not None:
-				self.add_query_param('Arn.' + str(i + 1) + '.AssumeRoleFor' , Arns[i].get('AssumeRoleFor'))
-
+	def set_Arns(self, Arns):
+		for depth1 in range(len(Arns)):
+			if Arns[depth1].get('Rolearn') is not None:
+				self.add_query_param('Arn.' + str(depth1 + 1) + '.Rolearn', Arns[depth1].get('Rolearn'))
+			if Arns[depth1].get('RoleType') is not None:
+				self.add_query_param('Arn.' + str(depth1 + 1) + '.RoleType', Arns[depth1].get('RoleType'))
+			if Arns[depth1].get('AssumeRoleFor') is not None:
+				self.add_query_param('Arn.' + str(depth1 + 1) + '.AssumeRoleFor', Arns[depth1].get('AssumeRoleFor'))
 
 	def get_InstanceChargeType(self):
 		return self.get_query_params().get('InstanceChargeType')
@@ -375,31 +374,30 @@ class CreateInstanceRequest(RpcRequest):
 	def get_DataDisks(self):
 		return self.get_query_params().get('DataDisks')
 
-	def set_DataDisks(self,DataDisks):
-		for i in range(len(DataDisks)):	
-			if DataDisks[i].get('DiskName') is not None:
-				self.add_query_param('DataDisk.' + str(i + 1) + '.DiskName' , DataDisks[i].get('DiskName'))
-			if DataDisks[i].get('SnapshotId') is not None:
-				self.add_query_param('DataDisk.' + str(i + 1) + '.SnapshotId' , DataDisks[i].get('SnapshotId'))
-			if DataDisks[i].get('Size') is not None:
-				self.add_query_param('DataDisk.' + str(i + 1) + '.Size' , DataDisks[i].get('Size'))
-			if DataDisks[i].get('Encrypted') is not None:
-				self.add_query_param('DataDisk.' + str(i + 1) + '.Encrypted' , DataDisks[i].get('Encrypted'))
-			if DataDisks[i].get('PerformanceLevel') is not None:
-				self.add_query_param('DataDisk.' + str(i + 1) + '.PerformanceLevel' , DataDisks[i].get('PerformanceLevel'))
-			if DataDisks[i].get('EncryptAlgorithm') is not None:
-				self.add_query_param('DataDisk.' + str(i + 1) + '.EncryptAlgorithm' , DataDisks[i].get('EncryptAlgorithm'))
-			if DataDisks[i].get('Description') is not None:
-				self.add_query_param('DataDisk.' + str(i + 1) + '.Description' , DataDisks[i].get('Description'))
-			if DataDisks[i].get('Category') is not None:
-				self.add_query_param('DataDisk.' + str(i + 1) + '.Category' , DataDisks[i].get('Category'))
-			if DataDisks[i].get('KMSKeyId') is not None:
-				self.add_query_param('DataDisk.' + str(i + 1) + '.KMSKeyId' , DataDisks[i].get('KMSKeyId'))
-			if DataDisks[i].get('Device') is not None:
-				self.add_query_param('DataDisk.' + str(i + 1) + '.Device' , DataDisks[i].get('Device'))
-			if DataDisks[i].get('DeleteWithInstance') is not None:
-				self.add_query_param('DataDisk.' + str(i + 1) + '.DeleteWithInstance' , DataDisks[i].get('DeleteWithInstance'))
-
+	def set_DataDisks(self, DataDisks):
+		for depth1 in range(len(DataDisks)):
+			if DataDisks[depth1].get('DiskName') is not None:
+				self.add_query_param('DataDisk.' + str(depth1 + 1) + '.DiskName', DataDisks[depth1].get('DiskName'))
+			if DataDisks[depth1].get('SnapshotId') is not None:
+				self.add_query_param('DataDisk.' + str(depth1 + 1) + '.SnapshotId', DataDisks[depth1].get('SnapshotId'))
+			if DataDisks[depth1].get('Size') is not None:
+				self.add_query_param('DataDisk.' + str(depth1 + 1) + '.Size', DataDisks[depth1].get('Size'))
+			if DataDisks[depth1].get('Encrypted') is not None:
+				self.add_query_param('DataDisk.' + str(depth1 + 1) + '.Encrypted', DataDisks[depth1].get('Encrypted'))
+			if DataDisks[depth1].get('PerformanceLevel') is not None:
+				self.add_query_param('DataDisk.' + str(depth1 + 1) + '.PerformanceLevel', DataDisks[depth1].get('PerformanceLevel'))
+			if DataDisks[depth1].get('EncryptAlgorithm') is not None:
+				self.add_query_param('DataDisk.' + str(depth1 + 1) + '.EncryptAlgorithm', DataDisks[depth1].get('EncryptAlgorithm'))
+			if DataDisks[depth1].get('Description') is not None:
+				self.add_query_param('DataDisk.' + str(depth1 + 1) + '.Description', DataDisks[depth1].get('Description'))
+			if DataDisks[depth1].get('Category') is not None:
+				self.add_query_param('DataDisk.' + str(depth1 + 1) + '.Category', DataDisks[depth1].get('Category'))
+			if DataDisks[depth1].get('KMSKeyId') is not None:
+				self.add_query_param('DataDisk.' + str(depth1 + 1) + '.KMSKeyId', DataDisks[depth1].get('KMSKeyId'))
+			if DataDisks[depth1].get('Device') is not None:
+				self.add_query_param('DataDisk.' + str(depth1 + 1) + '.Device', DataDisks[depth1].get('Device'))
+			if DataDisks[depth1].get('DeleteWithInstance') is not None:
+				self.add_query_param('DataDisk.' + str(depth1 + 1) + '.DeleteWithInstance', DataDisks[depth1].get('DeleteWithInstance'))
 
 	def get_StorageSetId(self):
 		return self.get_query_params().get('StorageSetId')

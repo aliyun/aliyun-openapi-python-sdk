@@ -24,6 +24,7 @@ class DescribeNetworkInterfacePermissionsRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'DescribeNetworkInterfacePermissions','ecs')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -51,10 +52,10 @@ class DescribeNetworkInterfacePermissionsRequest(RpcRequest):
 	def get_NetworkInterfacePermissionIds(self):
 		return self.get_query_params().get('NetworkInterfacePermissionIds')
 
-	def set_NetworkInterfacePermissionIds(self,NetworkInterfacePermissionIds):
-		for i in range(len(NetworkInterfacePermissionIds)):	
-			if NetworkInterfacePermissionIds[i] is not None:
-				self.add_query_param('NetworkInterfacePermissionId.' + str(i + 1) , NetworkInterfacePermissionIds[i]);
+	def set_NetworkInterfacePermissionIds(self, NetworkInterfacePermissionIds):
+		for depth1 in range(len(NetworkInterfacePermissionIds)):
+			if NetworkInterfacePermissionIds[depth1] is not None:
+				self.add_query_param('NetworkInterfacePermissionId.' + str(depth1 + 1) , NetworkInterfacePermissionIds[depth1])
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')

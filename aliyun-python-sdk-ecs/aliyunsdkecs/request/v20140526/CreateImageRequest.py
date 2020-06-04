@@ -24,6 +24,7 @@ class CreateImageRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'CreateImage','ecs')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -33,17 +34,16 @@ class CreateImageRequest(RpcRequest):
 	def get_DiskDeviceMappings(self):
 		return self.get_query_params().get('DiskDeviceMappings')
 
-	def set_DiskDeviceMappings(self,DiskDeviceMappings):
-		for i in range(len(DiskDeviceMappings)):	
-			if DiskDeviceMappings[i].get('SnapshotId') is not None:
-				self.add_query_param('DiskDeviceMapping.' + str(i + 1) + '.SnapshotId' , DiskDeviceMappings[i].get('SnapshotId'))
-			if DiskDeviceMappings[i].get('Size') is not None:
-				self.add_query_param('DiskDeviceMapping.' + str(i + 1) + '.Size' , DiskDeviceMappings[i].get('Size'))
-			if DiskDeviceMappings[i].get('DiskType') is not None:
-				self.add_query_param('DiskDeviceMapping.' + str(i + 1) + '.DiskType' , DiskDeviceMappings[i].get('DiskType'))
-			if DiskDeviceMappings[i].get('Device') is not None:
-				self.add_query_param('DiskDeviceMapping.' + str(i + 1) + '.Device' , DiskDeviceMappings[i].get('Device'))
-
+	def set_DiskDeviceMappings(self, DiskDeviceMappings):
+		for depth1 in range(len(DiskDeviceMappings)):
+			if DiskDeviceMappings[depth1].get('SnapshotId') is not None:
+				self.add_query_param('DiskDeviceMapping.' + str(depth1 + 1) + '.SnapshotId', DiskDeviceMappings[depth1].get('SnapshotId'))
+			if DiskDeviceMappings[depth1].get('Size') is not None:
+				self.add_query_param('DiskDeviceMapping.' + str(depth1 + 1) + '.Size', DiskDeviceMappings[depth1].get('Size'))
+			if DiskDeviceMappings[depth1].get('DiskType') is not None:
+				self.add_query_param('DiskDeviceMapping.' + str(depth1 + 1) + '.DiskType', DiskDeviceMappings[depth1].get('DiskType'))
+			if DiskDeviceMappings[depth1].get('Device') is not None:
+				self.add_query_param('DiskDeviceMapping.' + str(depth1 + 1) + '.Device', DiskDeviceMappings[depth1].get('Device'))
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -90,13 +90,12 @@ class CreateImageRequest(RpcRequest):
 	def get_Tags(self):
 		return self.get_query_params().get('Tags')
 
-	def set_Tags(self,Tags):
-		for i in range(len(Tags)):	
-			if Tags[i].get('Value') is not None:
-				self.add_query_param('Tag.' + str(i + 1) + '.Value' , Tags[i].get('Value'))
-			if Tags[i].get('Key') is not None:
-				self.add_query_param('Tag.' + str(i + 1) + '.Key' , Tags[i].get('Key'))
-
+	def set_Tags(self, Tags):
+		for depth1 in range(len(Tags)):
+			if Tags[depth1].get('Value') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tags[depth1].get('Value'))
+			if Tags[depth1].get('Key') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tags[depth1].get('Key'))
 
 	def get_Architecture(self):
 		return self.get_query_params().get('Architecture')

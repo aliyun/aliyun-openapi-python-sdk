@@ -24,6 +24,7 @@ class ModifyDiskAttributeRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'ModifyDiskAttribute','ecs')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -57,10 +58,10 @@ class ModifyDiskAttributeRequest(RpcRequest):
 	def get_DiskIdss(self):
 		return self.get_query_params().get('DiskIdss')
 
-	def set_DiskIdss(self,DiskIdss):
-		for i in range(len(DiskIdss)):	
-			if DiskIdss[i] is not None:
-				self.add_query_param('DiskIds.' + str(i + 1) , DiskIdss[i]);
+	def set_DiskIdss(self, DiskIdss):
+		for depth1 in range(len(DiskIdss)):
+			if DiskIdss[depth1] is not None:
+				self.add_query_param('DiskIds.' + str(depth1 + 1) , DiskIdss[depth1])
 
 	def get_DiskId(self):
 		return self.get_query_params().get('DiskId')

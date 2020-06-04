@@ -24,6 +24,7 @@ class ModifyImageSharePermissionRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'ModifyImageSharePermission','ecs')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -63,15 +64,15 @@ class ModifyImageSharePermissionRequest(RpcRequest):
 	def get_AddAccounts(self):
 		return self.get_query_params().get('AddAccounts')
 
-	def set_AddAccounts(self,AddAccounts):
-		for i in range(len(AddAccounts)):	
-			if AddAccounts[i] is not None:
-				self.add_query_param('AddAccount.' + str(i + 1) , AddAccounts[i]);
+	def set_AddAccounts(self, AddAccounts):
+		for depth1 in range(len(AddAccounts)):
+			if AddAccounts[depth1] is not None:
+				self.add_query_param('AddAccount.' + str(depth1 + 1) , AddAccounts[depth1])
 
 	def get_RemoveAccounts(self):
 		return self.get_query_params().get('RemoveAccounts')
 
-	def set_RemoveAccounts(self,RemoveAccounts):
-		for i in range(len(RemoveAccounts)):	
-			if RemoveAccounts[i] is not None:
-				self.add_query_param('RemoveAccount.' + str(i + 1) , RemoveAccounts[i]);
+	def set_RemoveAccounts(self, RemoveAccounts):
+		for depth1 in range(len(RemoveAccounts)):
+			if RemoveAccounts[depth1] is not None:
+				self.add_query_param('RemoveAccount.' + str(depth1 + 1) , RemoveAccounts[depth1])

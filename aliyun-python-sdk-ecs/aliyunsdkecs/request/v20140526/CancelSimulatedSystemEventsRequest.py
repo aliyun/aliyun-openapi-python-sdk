@@ -24,6 +24,7 @@ class CancelSimulatedSystemEventsRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'CancelSimulatedSystemEvents','ecs')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -33,10 +34,10 @@ class CancelSimulatedSystemEventsRequest(RpcRequest):
 	def get_EventIds(self):
 		return self.get_query_params().get('EventIds')
 
-	def set_EventIds(self,EventIds):
-		for i in range(len(EventIds)):	
-			if EventIds[i] is not None:
-				self.add_query_param('EventId.' + str(i + 1) , EventIds[i]);
+	def set_EventIds(self, EventIds):
+		for depth1 in range(len(EventIds)):
+			if EventIds[depth1] is not None:
+				self.add_query_param('EventId.' + str(depth1 + 1) , EventIds[depth1])
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')

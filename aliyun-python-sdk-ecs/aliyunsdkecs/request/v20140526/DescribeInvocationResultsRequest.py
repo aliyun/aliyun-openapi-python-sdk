@@ -24,6 +24,7 @@ class DescribeInvocationResultsRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'DescribeInvocationResults','ecs')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -47,6 +48,12 @@ class DescribeInvocationResultsRequest(RpcRequest):
 
 	def set_PageNumber(self,PageNumber):
 		self.add_query_param('PageNumber',PageNumber)
+
+	def get_ContentEncoding(self):
+		return self.get_query_params().get('ContentEncoding')
+
+	def set_ContentEncoding(self,ContentEncoding):
+		self.add_query_param('ContentEncoding',ContentEncoding)
 
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')

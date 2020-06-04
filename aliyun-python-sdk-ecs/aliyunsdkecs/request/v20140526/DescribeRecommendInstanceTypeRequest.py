@@ -24,6 +24,7 @@ class DescribeRecommendInstanceTypeRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'DescribeRecommendInstanceType','ecs')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -105,10 +106,10 @@ class DescribeRecommendInstanceTypeRequest(RpcRequest):
 	def get_InstanceTypeFamilys(self):
 		return self.get_query_params().get('InstanceTypeFamilys')
 
-	def set_InstanceTypeFamilys(self,InstanceTypeFamilys):
-		for i in range(len(InstanceTypeFamilys)):	
-			if InstanceTypeFamilys[i] is not None:
-				self.add_query_param('InstanceTypeFamily.' + str(i + 1) , InstanceTypeFamilys[i]);
+	def set_InstanceTypeFamilys(self, InstanceTypeFamilys):
+		for depth1 in range(len(InstanceTypeFamilys)):
+			if InstanceTypeFamilys[depth1] is not None:
+				self.add_query_param('InstanceTypeFamily.' + str(depth1 + 1) , InstanceTypeFamilys[depth1])
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')

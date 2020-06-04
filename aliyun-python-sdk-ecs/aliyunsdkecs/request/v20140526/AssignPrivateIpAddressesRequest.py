@@ -24,6 +24,7 @@ class AssignPrivateIpAddressesRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'AssignPrivateIpAddresses','ecs')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -63,10 +64,10 @@ class AssignPrivateIpAddressesRequest(RpcRequest):
 	def get_PrivateIpAddresss(self):
 		return self.get_query_params().get('PrivateIpAddresss')
 
-	def set_PrivateIpAddresss(self,PrivateIpAddresss):
-		for i in range(len(PrivateIpAddresss)):	
-			if PrivateIpAddresss[i] is not None:
-				self.add_query_param('PrivateIpAddress.' + str(i + 1) , PrivateIpAddresss[i]);
+	def set_PrivateIpAddresss(self, PrivateIpAddresss):
+		for depth1 in range(len(PrivateIpAddresss)):
+			if PrivateIpAddresss[depth1] is not None:
+				self.add_query_param('PrivateIpAddress.' + str(depth1 + 1) , PrivateIpAddresss[depth1])
 
 	def get_NetworkInterfaceId(self):
 		return self.get_query_params().get('NetworkInterfaceId')

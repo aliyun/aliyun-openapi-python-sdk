@@ -24,6 +24,7 @@ class ModifyInstanceVpcAttributeRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'ModifyInstanceVpcAttribute','ecs')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -35,6 +36,14 @@ class ModifyInstanceVpcAttributeRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+
+	def get_SecurityGroupIds(self):
+		return self.get_query_params().get('SecurityGroupIds')
+
+	def set_SecurityGroupIds(self, SecurityGroupIds):
+		for depth1 in range(len(SecurityGroupIds)):
+			if SecurityGroupIds[depth1] is not None:
+				self.add_query_param('SecurityGroupId.' + str(depth1 + 1) , SecurityGroupIds[depth1])
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -71,3 +80,9 @@ class ModifyInstanceVpcAttributeRequest(RpcRequest):
 
 	def set_InstanceId(self,InstanceId):
 		self.add_query_param('InstanceId',InstanceId)
+
+	def get_VpcId(self):
+		return self.get_query_params().get('VpcId')
+
+	def set_VpcId(self,VpcId):
+		self.add_query_param('VpcId',VpcId)

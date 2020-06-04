@@ -24,6 +24,7 @@ class UnassignIpv6AddressesRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'UnassignIpv6Addresses','ecs')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -63,7 +64,7 @@ class UnassignIpv6AddressesRequest(RpcRequest):
 	def get_Ipv6Addresss(self):
 		return self.get_query_params().get('Ipv6Addresss')
 
-	def set_Ipv6Addresss(self,Ipv6Addresss):
-		for i in range(len(Ipv6Addresss)):	
-			if Ipv6Addresss[i] is not None:
-				self.add_query_param('Ipv6Address.' + str(i + 1) , Ipv6Addresss[i]);
+	def set_Ipv6Addresss(self, Ipv6Addresss):
+		for depth1 in range(len(Ipv6Addresss)):
+			if Ipv6Addresss[depth1] is not None:
+				self.add_query_param('Ipv6Address.' + str(depth1 + 1) , Ipv6Addresss[depth1])

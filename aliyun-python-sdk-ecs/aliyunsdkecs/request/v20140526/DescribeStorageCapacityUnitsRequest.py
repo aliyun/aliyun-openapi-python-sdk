@@ -24,6 +24,7 @@ class DescribeStorageCapacityUnitsRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'DescribeStorageCapacityUnits','ecs')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -51,10 +52,10 @@ class DescribeStorageCapacityUnitsRequest(RpcRequest):
 	def get_StorageCapacityUnitIds(self):
 		return self.get_query_params().get('StorageCapacityUnitIds')
 
-	def set_StorageCapacityUnitIds(self,StorageCapacityUnitIds):
-		for i in range(len(StorageCapacityUnitIds)):	
-			if StorageCapacityUnitIds[i] is not None:
-				self.add_query_param('StorageCapacityUnitId.' + str(i + 1) , StorageCapacityUnitIds[i]);
+	def set_StorageCapacityUnitIds(self, StorageCapacityUnitIds):
+		for depth1 in range(len(StorageCapacityUnitIds)):
+			if StorageCapacityUnitIds[depth1] is not None:
+				self.add_query_param('StorageCapacityUnitId.' + str(depth1 + 1) , StorageCapacityUnitIds[depth1])
 
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
@@ -89,7 +90,7 @@ class DescribeStorageCapacityUnitsRequest(RpcRequest):
 	def get_Statuss(self):
 		return self.get_query_params().get('Statuss')
 
-	def set_Statuss(self,Statuss):
-		for i in range(len(Statuss)):	
-			if Statuss[i] is not None:
-				self.add_query_param('Status.' + str(i + 1) , Statuss[i]);
+	def set_Statuss(self, Statuss):
+		for depth1 in range(len(Statuss)):
+			if Statuss[depth1] is not None:
+				self.add_query_param('Status.' + str(depth1 + 1) , Statuss[depth1])

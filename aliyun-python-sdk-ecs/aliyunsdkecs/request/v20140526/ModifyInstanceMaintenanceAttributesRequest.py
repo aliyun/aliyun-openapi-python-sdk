@@ -24,6 +24,7 @@ class ModifyInstanceMaintenanceAttributesRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'ModifyInstanceMaintenanceAttributes','ecs')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -39,13 +40,12 @@ class ModifyInstanceMaintenanceAttributesRequest(RpcRequest):
 	def get_MaintenanceWindows(self):
 		return self.get_query_params().get('MaintenanceWindows')
 
-	def set_MaintenanceWindows(self,MaintenanceWindows):
-		for i in range(len(MaintenanceWindows)):	
-			if MaintenanceWindows[i].get('StartTime') is not None:
-				self.add_query_param('MaintenanceWindow.' + str(i + 1) + '.StartTime' , MaintenanceWindows[i].get('StartTime'))
-			if MaintenanceWindows[i].get('EndTime') is not None:
-				self.add_query_param('MaintenanceWindow.' + str(i + 1) + '.EndTime' , MaintenanceWindows[i].get('EndTime'))
-
+	def set_MaintenanceWindows(self, MaintenanceWindows):
+		for depth1 in range(len(MaintenanceWindows)):
+			if MaintenanceWindows[depth1].get('StartTime') is not None:
+				self.add_query_param('MaintenanceWindow.' + str(depth1 + 1) + '.StartTime', MaintenanceWindows[depth1].get('StartTime'))
+			if MaintenanceWindows[depth1].get('EndTime') is not None:
+				self.add_query_param('MaintenanceWindow.' + str(depth1 + 1) + '.EndTime', MaintenanceWindows[depth1].get('EndTime'))
 
 	def get_ActionOnMaintenance(self):
 		return self.get_query_params().get('ActionOnMaintenance')
@@ -74,7 +74,7 @@ class ModifyInstanceMaintenanceAttributesRequest(RpcRequest):
 	def get_InstanceIds(self):
 		return self.get_query_params().get('InstanceIds')
 
-	def set_InstanceIds(self,InstanceIds):
-		for i in range(len(InstanceIds)):	
-			if InstanceIds[i] is not None:
-				self.add_query_param('InstanceId.' + str(i + 1) , InstanceIds[i]);
+	def set_InstanceIds(self, InstanceIds):
+		for depth1 in range(len(InstanceIds)):
+			if InstanceIds[depth1] is not None:
+				self.add_query_param('InstanceId.' + str(depth1 + 1) , InstanceIds[depth1])

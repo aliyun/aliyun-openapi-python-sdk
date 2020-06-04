@@ -24,6 +24,7 @@ class ReportInstancesStatusRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'ReportInstancesStatus','ecs')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -57,10 +58,10 @@ class ReportInstancesStatusRequest(RpcRequest):
 	def get_DiskIds(self):
 		return self.get_query_params().get('DiskIds')
 
-	def set_DiskIds(self,DiskIds):
-		for i in range(len(DiskIds)):	
-			if DiskIds[i] is not None:
-				self.add_query_param('DiskId.' + str(i + 1) , DiskIds[i]);
+	def set_DiskIds(self, DiskIds):
+		for depth1 in range(len(DiskIds)):
+			if DiskIds[depth1] is not None:
+				self.add_query_param('DiskId.' + str(depth1 + 1) , DiskIds[depth1])
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -89,15 +90,15 @@ class ReportInstancesStatusRequest(RpcRequest):
 	def get_InstanceIds(self):
 		return self.get_query_params().get('InstanceIds')
 
-	def set_InstanceIds(self,InstanceIds):
-		for i in range(len(InstanceIds)):	
-			if InstanceIds[i] is not None:
-				self.add_query_param('InstanceId.' + str(i + 1) , InstanceIds[i]);
+	def set_InstanceIds(self, InstanceIds):
+		for depth1 in range(len(InstanceIds)):
+			if InstanceIds[depth1] is not None:
+				self.add_query_param('InstanceId.' + str(depth1 + 1) , InstanceIds[depth1])
 
 	def get_Devices(self):
 		return self.get_query_params().get('Devices')
 
-	def set_Devices(self,Devices):
-		for i in range(len(Devices)):	
-			if Devices[i] is not None:
-				self.add_query_param('Device.' + str(i + 1) , Devices[i]);
+	def set_Devices(self, Devices):
+		for depth1 in range(len(Devices)):
+			if Devices[depth1] is not None:
+				self.add_query_param('Device.' + str(depth1 + 1) , Devices[depth1])

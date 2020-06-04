@@ -24,6 +24,7 @@ class DescribeDemandsRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'DescribeDemands','ecs')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -57,13 +58,12 @@ class DescribeDemandsRequest(RpcRequest):
 	def get_Tags(self):
 		return self.get_query_params().get('Tags')
 
-	def set_Tags(self,Tags):
-		for i in range(len(Tags)):	
-			if Tags[i].get('Key') is not None:
-				self.add_query_param('Tag.' + str(i + 1) + '.Key' , Tags[i].get('Key'))
-			if Tags[i].get('Value') is not None:
-				self.add_query_param('Tag.' + str(i + 1) + '.Value' , Tags[i].get('Value'))
-
+	def set_Tags(self, Tags):
+		for depth1 in range(len(Tags)):
+			if Tags[depth1].get('Key') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tags[depth1].get('Key'))
+			if Tags[depth1].get('Value') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tags[depth1].get('Value'))
 
 	def get_InstanceChargeType(self):
 		return self.get_query_params().get('InstanceChargeType')
@@ -104,10 +104,10 @@ class DescribeDemandsRequest(RpcRequest):
 	def get_DemandStatuss(self):
 		return self.get_query_params().get('DemandStatuss')
 
-	def set_DemandStatuss(self,DemandStatuss):
-		for i in range(len(DemandStatuss)):	
-			if DemandStatuss[i] is not None:
-				self.add_query_param('DemandStatus.' + str(i + 1) , DemandStatuss[i]);
+	def set_DemandStatuss(self, DemandStatuss):
+		for depth1 in range(len(DemandStatuss)):
+			if DemandStatuss[depth1] is not None:
+				self.add_query_param('DemandStatus.' + str(depth1 + 1) , DemandStatuss[depth1])
 
 	def get_DemandId(self):
 		return self.get_query_params().get('DemandId')

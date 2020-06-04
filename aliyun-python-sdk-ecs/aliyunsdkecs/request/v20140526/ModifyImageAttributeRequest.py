@@ -24,6 +24,7 @@ class ModifyImageAttributeRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'ModifyImageAttribute','ecs')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -47,6 +48,12 @@ class ModifyImageAttributeRequest(RpcRequest):
 
 	def set_Description(self,Description):
 		self.add_query_param('Description',Description)
+
+	def get_BootMode(self):
+		return self.get_query_params().get('BootMode')
+
+	def set_BootMode(self,BootMode):
+		self.add_query_param('BootMode',BootMode)
 
 	def get_ImageName(self):
 		return self.get_query_params().get('ImageName')

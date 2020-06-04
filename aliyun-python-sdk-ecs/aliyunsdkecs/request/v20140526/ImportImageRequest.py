@@ -24,6 +24,7 @@ class ImportImageRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'ImportImage','ecs')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -33,21 +34,20 @@ class ImportImageRequest(RpcRequest):
 	def get_DiskDeviceMappings(self):
 		return self.get_query_params().get('DiskDeviceMappings')
 
-	def set_DiskDeviceMappings(self,DiskDeviceMappings):
-		for i in range(len(DiskDeviceMappings)):	
-			if DiskDeviceMappings[i].get('OSSBucket') is not None:
-				self.add_query_param('DiskDeviceMapping.' + str(i + 1) + '.OSSBucket' , DiskDeviceMappings[i].get('OSSBucket'))
-			if DiskDeviceMappings[i].get('DiskImSize') is not None:
-				self.add_query_param('DiskDeviceMapping.' + str(i + 1) + '.DiskImSize' , DiskDeviceMappings[i].get('DiskImSize'))
-			if DiskDeviceMappings[i].get('Format') is not None:
-				self.add_query_param('DiskDeviceMapping.' + str(i + 1) + '.Format' , DiskDeviceMappings[i].get('Format'))
-			if DiskDeviceMappings[i].get('Device') is not None:
-				self.add_query_param('DiskDeviceMapping.' + str(i + 1) + '.Device' , DiskDeviceMappings[i].get('Device'))
-			if DiskDeviceMappings[i].get('OSSObject') is not None:
-				self.add_query_param('DiskDeviceMapping.' + str(i + 1) + '.OSSObject' , DiskDeviceMappings[i].get('OSSObject'))
-			if DiskDeviceMappings[i].get('DiskImageSize') is not None:
-				self.add_query_param('DiskDeviceMapping.' + str(i + 1) + '.DiskImageSize' , DiskDeviceMappings[i].get('DiskImageSize'))
-
+	def set_DiskDeviceMappings(self, DiskDeviceMappings):
+		for depth1 in range(len(DiskDeviceMappings)):
+			if DiskDeviceMappings[depth1].get('OSSBucket') is not None:
+				self.add_query_param('DiskDeviceMapping.' + str(depth1 + 1) + '.OSSBucket', DiskDeviceMappings[depth1].get('OSSBucket'))
+			if DiskDeviceMappings[depth1].get('DiskImSize') is not None:
+				self.add_query_param('DiskDeviceMapping.' + str(depth1 + 1) + '.DiskImSize', DiskDeviceMappings[depth1].get('DiskImSize'))
+			if DiskDeviceMappings[depth1].get('Format') is not None:
+				self.add_query_param('DiskDeviceMapping.' + str(depth1 + 1) + '.Format', DiskDeviceMappings[depth1].get('Format'))
+			if DiskDeviceMappings[depth1].get('Device') is not None:
+				self.add_query_param('DiskDeviceMapping.' + str(depth1 + 1) + '.Device', DiskDeviceMappings[depth1].get('Device'))
+			if DiskDeviceMappings[depth1].get('OSSObject') is not None:
+				self.add_query_param('DiskDeviceMapping.' + str(depth1 + 1) + '.OSSObject', DiskDeviceMappings[depth1].get('OSSObject'))
+			if DiskDeviceMappings[depth1].get('DiskImageSize') is not None:
+				self.add_query_param('DiskDeviceMapping.' + str(depth1 + 1) + '.DiskImageSize', DiskDeviceMappings[depth1].get('DiskImageSize'))
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -82,13 +82,12 @@ class ImportImageRequest(RpcRequest):
 	def get_Tags(self):
 		return self.get_query_params().get('Tags')
 
-	def set_Tags(self,Tags):
-		for i in range(len(Tags)):	
-			if Tags[i].get('Value') is not None:
-				self.add_query_param('Tag.' + str(i + 1) + '.Value' , Tags[i].get('Value'))
-			if Tags[i].get('Key') is not None:
-				self.add_query_param('Tag.' + str(i + 1) + '.Key' , Tags[i].get('Key'))
-
+	def set_Tags(self, Tags):
+		for depth1 in range(len(Tags)):
+			if Tags[depth1].get('Value') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tags[depth1].get('Value'))
+			if Tags[depth1].get('Key') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tags[depth1].get('Key'))
 
 	def get_Architecture(self):
 		return self.get_query_params().get('Architecture')

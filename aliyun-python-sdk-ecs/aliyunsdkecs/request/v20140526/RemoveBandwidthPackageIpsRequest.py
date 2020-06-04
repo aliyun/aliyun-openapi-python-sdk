@@ -24,6 +24,7 @@ class RemoveBandwidthPackageIpsRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'RemoveBandwidthPackageIps','ecs')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -45,10 +46,10 @@ class RemoveBandwidthPackageIpsRequest(RpcRequest):
 	def get_RemovedIpAddressess(self):
 		return self.get_query_params().get('RemovedIpAddressess')
 
-	def set_RemovedIpAddressess(self,RemovedIpAddressess):
-		for i in range(len(RemovedIpAddressess)):	
-			if RemovedIpAddressess[i] is not None:
-				self.add_query_param('RemovedIpAddresses.' + str(i + 1) , RemovedIpAddressess[i]);
+	def set_RemovedIpAddressess(self, RemovedIpAddressess):
+		for depth1 in range(len(RemovedIpAddressess)):
+			if RemovedIpAddressess[depth1] is not None:
+				self.add_query_param('RemovedIpAddresses.' + str(depth1 + 1) , RemovedIpAddressess[depth1])
 
 	def get_BandwidthPackageId(self):
 		return self.get_query_params().get('BandwidthPackageId')

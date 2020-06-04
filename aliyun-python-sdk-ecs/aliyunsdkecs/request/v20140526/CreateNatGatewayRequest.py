@@ -24,6 +24,7 @@ class CreateNatGatewayRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'CreateNatGateway','ecs')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -51,15 +52,14 @@ class CreateNatGatewayRequest(RpcRequest):
 	def get_BandwidthPackages(self):
 		return self.get_query_params().get('BandwidthPackages')
 
-	def set_BandwidthPackages(self,BandwidthPackages):
-		for i in range(len(BandwidthPackages)):	
-			if BandwidthPackages[i].get('Bandwidth') is not None:
-				self.add_query_param('BandwidthPackage.' + str(i + 1) + '.Bandwidth' , BandwidthPackages[i].get('Bandwidth'))
-			if BandwidthPackages[i].get('Zone') is not None:
-				self.add_query_param('BandwidthPackage.' + str(i + 1) + '.Zone' , BandwidthPackages[i].get('Zone'))
-			if BandwidthPackages[i].get('IpCount') is not None:
-				self.add_query_param('BandwidthPackage.' + str(i + 1) + '.IpCount' , BandwidthPackages[i].get('IpCount'))
-
+	def set_BandwidthPackages(self, BandwidthPackages):
+		for depth1 in range(len(BandwidthPackages)):
+			if BandwidthPackages[depth1].get('Bandwidth') is not None:
+				self.add_query_param('BandwidthPackage.' + str(depth1 + 1) + '.Bandwidth', BandwidthPackages[depth1].get('Bandwidth'))
+			if BandwidthPackages[depth1].get('Zone') is not None:
+				self.add_query_param('BandwidthPackage.' + str(depth1 + 1) + '.Zone', BandwidthPackages[depth1].get('Zone'))
+			if BandwidthPackages[depth1].get('IpCount') is not None:
+				self.add_query_param('BandwidthPackage.' + str(depth1 + 1) + '.IpCount', BandwidthPackages[depth1].get('IpCount'))
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')

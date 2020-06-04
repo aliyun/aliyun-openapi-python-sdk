@@ -24,6 +24,7 @@ class DeleteLaunchTemplateVersionRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'DeleteLaunchTemplateVersion','ecs')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -45,10 +46,10 @@ class DeleteLaunchTemplateVersionRequest(RpcRequest):
 	def get_DeleteVersions(self):
 		return self.get_query_params().get('DeleteVersions')
 
-	def set_DeleteVersions(self,DeleteVersions):
-		for i in range(len(DeleteVersions)):	
-			if DeleteVersions[i] is not None:
-				self.add_query_param('DeleteVersion.' + str(i + 1) , DeleteVersions[i]);
+	def set_DeleteVersions(self, DeleteVersions):
+		for depth1 in range(len(DeleteVersions)):
+			if DeleteVersions[depth1] is not None:
+				self.add_query_param('DeleteVersion.' + str(depth1 + 1) , DeleteVersions[depth1])
 
 	def get_LaunchTemplateId(self):
 		return self.get_query_params().get('LaunchTemplateId')

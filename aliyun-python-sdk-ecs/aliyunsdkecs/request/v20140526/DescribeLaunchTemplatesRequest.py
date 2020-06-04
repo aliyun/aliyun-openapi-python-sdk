@@ -24,6 +24,7 @@ class DescribeLaunchTemplatesRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'DescribeLaunchTemplates','ecs')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -33,10 +34,10 @@ class DescribeLaunchTemplatesRequest(RpcRequest):
 	def get_LaunchTemplateNames(self):
 		return self.get_query_params().get('LaunchTemplateNames')
 
-	def set_LaunchTemplateNames(self,LaunchTemplateNames):
-		for i in range(len(LaunchTemplateNames)):	
-			if LaunchTemplateNames[i] is not None:
-				self.add_query_param('LaunchTemplateName.' + str(i + 1) , LaunchTemplateNames[i]);
+	def set_LaunchTemplateNames(self, LaunchTemplateNames):
+		for depth1 in range(len(LaunchTemplateNames)):
+			if LaunchTemplateNames[depth1] is not None:
+				self.add_query_param('LaunchTemplateName.' + str(depth1 + 1) , LaunchTemplateNames[depth1])
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -59,21 +60,20 @@ class DescribeLaunchTemplatesRequest(RpcRequest):
 	def get_TemplateTags(self):
 		return self.get_query_params().get('TemplateTags')
 
-	def set_TemplateTags(self,TemplateTags):
-		for i in range(len(TemplateTags)):	
-			if TemplateTags[i].get('Key') is not None:
-				self.add_query_param('TemplateTag.' + str(i + 1) + '.Key' , TemplateTags[i].get('Key'))
-			if TemplateTags[i].get('Value') is not None:
-				self.add_query_param('TemplateTag.' + str(i + 1) + '.Value' , TemplateTags[i].get('Value'))
-
+	def set_TemplateTags(self, TemplateTags):
+		for depth1 in range(len(TemplateTags)):
+			if TemplateTags[depth1].get('Key') is not None:
+				self.add_query_param('TemplateTag.' + str(depth1 + 1) + '.Key', TemplateTags[depth1].get('Key'))
+			if TemplateTags[depth1].get('Value') is not None:
+				self.add_query_param('TemplateTag.' + str(depth1 + 1) + '.Value', TemplateTags[depth1].get('Value'))
 
 	def get_LaunchTemplateIds(self):
 		return self.get_query_params().get('LaunchTemplateIds')
 
-	def set_LaunchTemplateIds(self,LaunchTemplateIds):
-		for i in range(len(LaunchTemplateIds)):	
-			if LaunchTemplateIds[i] is not None:
-				self.add_query_param('LaunchTemplateId.' + str(i + 1) , LaunchTemplateIds[i]);
+	def set_LaunchTemplateIds(self, LaunchTemplateIds):
+		for depth1 in range(len(LaunchTemplateIds)):
+			if LaunchTemplateIds[depth1] is not None:
+				self.add_query_param('LaunchTemplateId.' + str(depth1 + 1) , LaunchTemplateIds[depth1])
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')

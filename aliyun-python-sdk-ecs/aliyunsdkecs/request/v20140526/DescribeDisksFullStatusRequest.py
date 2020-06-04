@@ -24,6 +24,7 @@ class DescribeDisksFullStatusRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'DescribeDisksFullStatus','ecs')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -33,10 +34,10 @@ class DescribeDisksFullStatusRequest(RpcRequest):
 	def get_EventIds(self):
 		return self.get_query_params().get('EventIds')
 
-	def set_EventIds(self,EventIds):
-		for i in range(len(EventIds)):	
-			if EventIds[i] is not None:
-				self.add_query_param('EventId.' + str(i + 1) , EventIds[i]);
+	def set_EventIds(self, EventIds):
+		for depth1 in range(len(EventIds)):
+			if EventIds[depth1] is not None:
+				self.add_query_param('EventId.' + str(depth1 + 1) , EventIds[depth1])
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -65,10 +66,10 @@ class DescribeDisksFullStatusRequest(RpcRequest):
 	def get_DiskIds(self):
 		return self.get_query_params().get('DiskIds')
 
-	def set_DiskIds(self,DiskIds):
-		for i in range(len(DiskIds)):	
-			if DiskIds[i] is not None:
-				self.add_query_param('DiskId.' + str(i + 1) , DiskIds[i]);
+	def set_DiskIds(self, DiskIds):
+		for depth1 in range(len(DiskIds)):
+			if DiskIds[depth1] is not None:
+				self.add_query_param('DiskId.' + str(depth1 + 1) , DiskIds[depth1])
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')

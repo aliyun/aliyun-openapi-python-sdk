@@ -24,6 +24,7 @@ class DescribeReservedInstancesRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'DescribeReservedInstances','ecs')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -93,10 +94,10 @@ class DescribeReservedInstancesRequest(RpcRequest):
 	def get_ReservedInstanceIds(self):
 		return self.get_query_params().get('ReservedInstanceIds')
 
-	def set_ReservedInstanceIds(self,ReservedInstanceIds):
-		for i in range(len(ReservedInstanceIds)):	
-			if ReservedInstanceIds[i] is not None:
-				self.add_query_param('ReservedInstanceId.' + str(i + 1) , ReservedInstanceIds[i]);
+	def set_ReservedInstanceIds(self, ReservedInstanceIds):
+		for depth1 in range(len(ReservedInstanceIds)):
+			if ReservedInstanceIds[depth1] is not None:
+				self.add_query_param('ReservedInstanceId.' + str(depth1 + 1) , ReservedInstanceIds[depth1])
 
 	def get_OfferingType(self):
 		return self.get_query_params().get('OfferingType')
@@ -119,10 +120,10 @@ class DescribeReservedInstancesRequest(RpcRequest):
 	def get_Statuss(self):
 		return self.get_query_params().get('Statuss')
 
-	def set_Statuss(self,Statuss):
-		for i in range(len(Statuss)):	
-			if Statuss[i] is not None:
-				self.add_query_param('Status.' + str(i + 1) , Statuss[i]);
+	def set_Statuss(self, Statuss):
+		for depth1 in range(len(Statuss)):
+			if Statuss[depth1] is not None:
+				self.add_query_param('Status.' + str(depth1 + 1) , Statuss[depth1])
 
 	def get_AllocationType(self):
 		return self.get_query_params().get('AllocationType')

@@ -24,6 +24,7 @@ class DescribeInstanceHistoryEventsRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'DescribeInstanceHistoryEvents','ecs')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -33,10 +34,10 @@ class DescribeInstanceHistoryEventsRequest(RpcRequest):
 	def get_EventIds(self):
 		return self.get_query_params().get('EventIds')
 
-	def set_EventIds(self,EventIds):
-		for i in range(len(EventIds)):	
-			if EventIds[i] is not None:
-				self.add_query_param('EventId.' + str(i + 1) , EventIds[i]);
+	def set_EventIds(self, EventIds):
+		for depth1 in range(len(EventIds)):
+			if EventIds[depth1] is not None:
+				self.add_query_param('EventId.' + str(depth1 + 1) , EventIds[depth1])
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -56,6 +57,12 @@ class DescribeInstanceHistoryEventsRequest(RpcRequest):
 	def set_PageNumber(self,PageNumber):
 		self.add_query_param('PageNumber',PageNumber)
 
+	def get_ImpactLevel(self):
+		return self.get_query_params().get('ImpactLevel')
+
+	def set_ImpactLevel(self,ImpactLevel):
+		self.add_query_param('ImpactLevel',ImpactLevel)
+
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
 
@@ -65,10 +72,10 @@ class DescribeInstanceHistoryEventsRequest(RpcRequest):
 	def get_InstanceEventCycleStatuss(self):
 		return self.get_query_params().get('InstanceEventCycleStatuss')
 
-	def set_InstanceEventCycleStatuss(self,InstanceEventCycleStatuss):
-		for i in range(len(InstanceEventCycleStatuss)):	
-			if InstanceEventCycleStatuss[i] is not None:
-				self.add_query_param('InstanceEventCycleStatus.' + str(i + 1) , InstanceEventCycleStatuss[i]);
+	def set_InstanceEventCycleStatuss(self, InstanceEventCycleStatuss):
+		for depth1 in range(len(InstanceEventCycleStatuss)):
+			if InstanceEventCycleStatuss[depth1] is not None:
+				self.add_query_param('InstanceEventCycleStatus.' + str(depth1 + 1) , InstanceEventCycleStatuss[depth1])
 
 	def get_EventPublishTimeEnd(self):
 		return self.get_query_params().get('EventPublishTime.End')
@@ -79,10 +86,10 @@ class DescribeInstanceHistoryEventsRequest(RpcRequest):
 	def get_InstanceEventTypes(self):
 		return self.get_query_params().get('InstanceEventTypes')
 
-	def set_InstanceEventTypes(self,InstanceEventTypes):
-		for i in range(len(InstanceEventTypes)):	
-			if InstanceEventTypes[i] is not None:
-				self.add_query_param('InstanceEventType.' + str(i + 1) , InstanceEventTypes[i]);
+	def set_InstanceEventTypes(self, InstanceEventTypes):
+		for depth1 in range(len(InstanceEventTypes)):
+			if InstanceEventTypes[depth1] is not None:
+				self.add_query_param('InstanceEventType.' + str(depth1 + 1) , InstanceEventTypes[depth1])
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')

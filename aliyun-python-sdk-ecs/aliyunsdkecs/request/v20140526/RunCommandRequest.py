@@ -24,6 +24,7 @@ class RunCommandRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'RunCommand','ecs')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -111,10 +112,10 @@ class RunCommandRequest(RpcRequest):
 	def get_InstanceIds(self):
 		return self.get_query_params().get('InstanceIds')
 
-	def set_InstanceIds(self,InstanceIds):
-		for i in range(len(InstanceIds)):	
-			if InstanceIds[i] is not None:
-				self.add_query_param('InstanceId.' + str(i + 1) , InstanceIds[i]);
+	def set_InstanceIds(self, InstanceIds):
+		for depth1 in range(len(InstanceIds)):
+			if InstanceIds[depth1] is not None:
+				self.add_query_param('InstanceId.' + str(depth1 + 1) , InstanceIds[depth1])
 
 	def get_Name(self):
 		return self.get_query_params().get('Name')

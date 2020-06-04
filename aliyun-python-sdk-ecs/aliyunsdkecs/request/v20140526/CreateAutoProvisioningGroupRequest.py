@@ -24,6 +24,7 @@ class CreateAutoProvisioningGroupRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'CreateAutoProvisioningGroup','ecs')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -93,19 +94,18 @@ class CreateAutoProvisioningGroupRequest(RpcRequest):
 	def get_LaunchTemplateConfigs(self):
 		return self.get_query_params().get('LaunchTemplateConfigs')
 
-	def set_LaunchTemplateConfigs(self,LaunchTemplateConfigs):
-		for i in range(len(LaunchTemplateConfigs)):	
-			if LaunchTemplateConfigs[i].get('InstanceType') is not None:
-				self.add_query_param('LaunchTemplateConfig.' + str(i + 1) + '.InstanceType' , LaunchTemplateConfigs[i].get('InstanceType'))
-			if LaunchTemplateConfigs[i].get('MaxPrice') is not None:
-				self.add_query_param('LaunchTemplateConfig.' + str(i + 1) + '.MaxPrice' , LaunchTemplateConfigs[i].get('MaxPrice'))
-			if LaunchTemplateConfigs[i].get('VSwitchId') is not None:
-				self.add_query_param('LaunchTemplateConfig.' + str(i + 1) + '.VSwitchId' , LaunchTemplateConfigs[i].get('VSwitchId'))
-			if LaunchTemplateConfigs[i].get('WeightedCapacity') is not None:
-				self.add_query_param('LaunchTemplateConfig.' + str(i + 1) + '.WeightedCapacity' , LaunchTemplateConfigs[i].get('WeightedCapacity'))
-			if LaunchTemplateConfigs[i].get('Priority') is not None:
-				self.add_query_param('LaunchTemplateConfig.' + str(i + 1) + '.Priority' , LaunchTemplateConfigs[i].get('Priority'))
-
+	def set_LaunchTemplateConfigs(self, LaunchTemplateConfigs):
+		for depth1 in range(len(LaunchTemplateConfigs)):
+			if LaunchTemplateConfigs[depth1].get('InstanceType') is not None:
+				self.add_query_param('LaunchTemplateConfig.' + str(depth1 + 1) + '.InstanceType', LaunchTemplateConfigs[depth1].get('InstanceType'))
+			if LaunchTemplateConfigs[depth1].get('MaxPrice') is not None:
+				self.add_query_param('LaunchTemplateConfig.' + str(depth1 + 1) + '.MaxPrice', LaunchTemplateConfigs[depth1].get('MaxPrice'))
+			if LaunchTemplateConfigs[depth1].get('VSwitchId') is not None:
+				self.add_query_param('LaunchTemplateConfig.' + str(depth1 + 1) + '.VSwitchId', LaunchTemplateConfigs[depth1].get('VSwitchId'))
+			if LaunchTemplateConfigs[depth1].get('WeightedCapacity') is not None:
+				self.add_query_param('LaunchTemplateConfig.' + str(depth1 + 1) + '.WeightedCapacity', LaunchTemplateConfigs[depth1].get('WeightedCapacity'))
+			if LaunchTemplateConfigs[depth1].get('Priority') is not None:
+				self.add_query_param('LaunchTemplateConfig.' + str(depth1 + 1) + '.Priority', LaunchTemplateConfigs[depth1].get('Priority'))
 
 	def get_ValidUntil(self):
 		return self.get_query_params().get('ValidUntil')

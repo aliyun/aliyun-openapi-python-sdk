@@ -24,6 +24,7 @@ class DescribeAutoProvisioningGroupsRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'DescribeAutoProvisioningGroups','ecs')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -51,10 +52,10 @@ class DescribeAutoProvisioningGroupsRequest(RpcRequest):
 	def get_AutoProvisioningGroupStatuss(self):
 		return self.get_query_params().get('AutoProvisioningGroupStatuss')
 
-	def set_AutoProvisioningGroupStatuss(self,AutoProvisioningGroupStatuss):
-		for i in range(len(AutoProvisioningGroupStatuss)):	
-			if AutoProvisioningGroupStatuss[i] is not None:
-				self.add_query_param('AutoProvisioningGroupStatus.' + str(i + 1) , AutoProvisioningGroupStatuss[i]);
+	def set_AutoProvisioningGroupStatuss(self, AutoProvisioningGroupStatuss):
+		for depth1 in range(len(AutoProvisioningGroupStatuss)):
+			if AutoProvisioningGroupStatuss[depth1] is not None:
+				self.add_query_param('AutoProvisioningGroupStatus.' + str(depth1 + 1) , AutoProvisioningGroupStatuss[depth1])
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -77,10 +78,10 @@ class DescribeAutoProvisioningGroupsRequest(RpcRequest):
 	def get_AutoProvisioningGroupIds(self):
 		return self.get_query_params().get('AutoProvisioningGroupIds')
 
-	def set_AutoProvisioningGroupIds(self,AutoProvisioningGroupIds):
-		for i in range(len(AutoProvisioningGroupIds)):	
-			if AutoProvisioningGroupIds[i] is not None:
-				self.add_query_param('AutoProvisioningGroupId.' + str(i + 1) , AutoProvisioningGroupIds[i]);
+	def set_AutoProvisioningGroupIds(self, AutoProvisioningGroupIds):
+		for depth1 in range(len(AutoProvisioningGroupIds)):
+			if AutoProvisioningGroupIds[depth1] is not None:
+				self.add_query_param('AutoProvisioningGroupId.' + str(depth1 + 1) , AutoProvisioningGroupIds[depth1])
 
 	def get_AutoProvisioningGroupName(self):
 		return self.get_query_params().get('AutoProvisioningGroupName')

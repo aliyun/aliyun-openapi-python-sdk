@@ -24,6 +24,7 @@ class ModifyReservedInstancesRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'ModifyReservedInstances','ecs')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -39,19 +40,18 @@ class ModifyReservedInstancesRequest(RpcRequest):
 	def get_Configurations(self):
 		return self.get_query_params().get('Configurations')
 
-	def set_Configurations(self,Configurations):
-		for i in range(len(Configurations)):	
-			if Configurations[i].get('ZoneId') is not None:
-				self.add_query_param('Configuration.' + str(i + 1) + '.ZoneId' , Configurations[i].get('ZoneId'))
-			if Configurations[i].get('ReservedInstanceName') is not None:
-				self.add_query_param('Configuration.' + str(i + 1) + '.ReservedInstanceName' , Configurations[i].get('ReservedInstanceName'))
-			if Configurations[i].get('InstanceType') is not None:
-				self.add_query_param('Configuration.' + str(i + 1) + '.InstanceType' , Configurations[i].get('InstanceType'))
-			if Configurations[i].get('Scope') is not None:
-				self.add_query_param('Configuration.' + str(i + 1) + '.Scope' , Configurations[i].get('Scope'))
-			if Configurations[i].get('InstanceAmount') is not None:
-				self.add_query_param('Configuration.' + str(i + 1) + '.InstanceAmount' , Configurations[i].get('InstanceAmount'))
-
+	def set_Configurations(self, Configurations):
+		for depth1 in range(len(Configurations)):
+			if Configurations[depth1].get('ZoneId') is not None:
+				self.add_query_param('Configuration.' + str(depth1 + 1) + '.ZoneId', Configurations[depth1].get('ZoneId'))
+			if Configurations[depth1].get('ReservedInstanceName') is not None:
+				self.add_query_param('Configuration.' + str(depth1 + 1) + '.ReservedInstanceName', Configurations[depth1].get('ReservedInstanceName'))
+			if Configurations[depth1].get('InstanceType') is not None:
+				self.add_query_param('Configuration.' + str(depth1 + 1) + '.InstanceType', Configurations[depth1].get('InstanceType'))
+			if Configurations[depth1].get('Scope') is not None:
+				self.add_query_param('Configuration.' + str(depth1 + 1) + '.Scope', Configurations[depth1].get('Scope'))
+			if Configurations[depth1].get('InstanceAmount') is not None:
+				self.add_query_param('Configuration.' + str(depth1 + 1) + '.InstanceAmount', Configurations[depth1].get('InstanceAmount'))
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -74,7 +74,7 @@ class ModifyReservedInstancesRequest(RpcRequest):
 	def get_ReservedInstanceIds(self):
 		return self.get_query_params().get('ReservedInstanceIds')
 
-	def set_ReservedInstanceIds(self,ReservedInstanceIds):
-		for i in range(len(ReservedInstanceIds)):	
-			if ReservedInstanceIds[i] is not None:
-				self.add_query_param('ReservedInstanceId.' + str(i + 1) , ReservedInstanceIds[i]);
+	def set_ReservedInstanceIds(self, ReservedInstanceIds):
+		for depth1 in range(len(ReservedInstanceIds)):
+			if ReservedInstanceIds[depth1] is not None:
+				self.add_query_param('ReservedInstanceId.' + str(depth1 + 1) , ReservedInstanceIds[depth1])

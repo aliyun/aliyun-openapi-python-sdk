@@ -24,6 +24,7 @@ class DescribeAccountAttributesRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'DescribeAccountAttributes','ecs')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -39,10 +40,10 @@ class DescribeAccountAttributesRequest(RpcRequest):
 	def get_AttributeNames(self):
 		return self.get_query_params().get('AttributeNames')
 
-	def set_AttributeNames(self,AttributeNames):
-		for i in range(len(AttributeNames)):	
-			if AttributeNames[i] is not None:
-				self.add_query_param('AttributeName.' + str(i + 1) , AttributeNames[i]);
+	def set_AttributeNames(self, AttributeNames):
+		for depth1 in range(len(AttributeNames)):
+			if AttributeNames[depth1] is not None:
+				self.add_query_param('AttributeName.' + str(depth1 + 1) , AttributeNames[depth1])
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')

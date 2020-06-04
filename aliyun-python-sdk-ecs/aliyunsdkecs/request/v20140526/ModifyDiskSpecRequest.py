@@ -24,6 +24,7 @@ class ModifyDiskSpecRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'ModifyDiskSpec','ecs')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -36,11 +37,23 @@ class ModifyDiskSpecRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_DiskCategory(self):
+		return self.get_query_params().get('DiskCategory')
+
+	def set_DiskCategory(self,DiskCategory):
+		self.add_query_param('DiskCategory',DiskCategory)
+
 	def get_DiskId(self):
 		return self.get_query_params().get('DiskId')
 
 	def set_DiskId(self,DiskId):
 		self.add_query_param('DiskId',DiskId)
+
+	def get_DryRun(self):
+		return self.get_query_params().get('DryRun')
+
+	def set_DryRun(self,DryRun):
+		self.add_query_param('DryRun',DryRun)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')

@@ -24,6 +24,7 @@ class CreateDiskRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'CreateDisk','ecs')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -87,26 +88,24 @@ class CreateDiskRequest(RpcRequest):
 	def get_Tags(self):
 		return self.get_query_params().get('Tags')
 
-	def set_Tags(self,Tags):
-		for i in range(len(Tags)):	
-			if Tags[i].get('Value') is not None:
-				self.add_query_param('Tag.' + str(i + 1) + '.Value' , Tags[i].get('Value'))
-			if Tags[i].get('Key') is not None:
-				self.add_query_param('Tag.' + str(i + 1) + '.Key' , Tags[i].get('Key'))
-
+	def set_Tags(self, Tags):
+		for depth1 in range(len(Tags)):
+			if Tags[depth1].get('Value') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tags[depth1].get('Value'))
+			if Tags[depth1].get('Key') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tags[depth1].get('Key'))
 
 	def get_Arns(self):
 		return self.get_query_params().get('Arns')
 
-	def set_Arns(self,Arns):
-		for i in range(len(Arns)):	
-			if Arns[i].get('Rolearn') is not None:
-				self.add_query_param('Arn.' + str(i + 1) + '.Rolearn' , Arns[i].get('Rolearn'))
-			if Arns[i].get('RoleType') is not None:
-				self.add_query_param('Arn.' + str(i + 1) + '.RoleType' , Arns[i].get('RoleType'))
-			if Arns[i].get('AssumeRoleFor') is not None:
-				self.add_query_param('Arn.' + str(i + 1) + '.AssumeRoleFor' , Arns[i].get('AssumeRoleFor'))
-
+	def set_Arns(self, Arns):
+		for depth1 in range(len(Arns)):
+			if Arns[depth1].get('Rolearn') is not None:
+				self.add_query_param('Arn.' + str(depth1 + 1) + '.Rolearn', Arns[depth1].get('Rolearn'))
+			if Arns[depth1].get('RoleType') is not None:
+				self.add_query_param('Arn.' + str(depth1 + 1) + '.RoleType', Arns[depth1].get('RoleType'))
+			if Arns[depth1].get('AssumeRoleFor') is not None:
+				self.add_query_param('Arn.' + str(depth1 + 1) + '.AssumeRoleFor', Arns[depth1].get('AssumeRoleFor'))
 
 	def get_AdvancedFeatures(self):
 		return self.get_query_params().get('AdvancedFeatures')

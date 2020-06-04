@@ -24,6 +24,7 @@ class ModifyInstanceAttributeRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'ModifyInstanceAttribute','ecs')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -99,10 +100,10 @@ class ModifyInstanceAttributeRequest(RpcRequest):
 	def get_SecurityGroupIdss(self):
 		return self.get_query_params().get('SecurityGroupIdss')
 
-	def set_SecurityGroupIdss(self,SecurityGroupIdss):
-		for i in range(len(SecurityGroupIdss)):	
-			if SecurityGroupIdss[i] is not None:
-				self.add_query_param('SecurityGroupIds.' + str(i + 1) , SecurityGroupIdss[i]);
+	def set_SecurityGroupIdss(self, SecurityGroupIdss):
+		for depth1 in range(len(SecurityGroupIdss)):
+			if SecurityGroupIdss[depth1] is not None:
+				self.add_query_param('SecurityGroupIds.' + str(depth1 + 1) , SecurityGroupIdss[depth1])
 
 	def get_InstanceId(self):
 		return self.get_query_params().get('InstanceId')

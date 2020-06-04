@@ -24,6 +24,7 @@ class DeleteRouteEntryRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'DeleteRouteEntry','ecs')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -75,9 +76,9 @@ class DeleteRouteEntryRequest(RpcRequest):
 	def get_NextHopLists(self):
 		return self.get_query_params().get('NextHopLists')
 
-	def set_NextHopLists(self,NextHopLists):
-		for i in range(len(NextHopLists)):	
-			if NextHopLists[i].get('NextHopId') is not None:
-				self.add_query_param('NextHopList.' + str(i + 1) + '.NextHopId' , NextHopLists[i].get('NextHopId'))
-			if NextHopLists[i].get('NextHopType') is not None:
-				self.add_query_param('NextHopList.' + str(i + 1) + '.NextHopType' , NextHopLists[i].get('NextHopType'))
+	def set_NextHopLists(self, NextHopLists):
+		for depth1 in range(len(NextHopLists)):
+			if NextHopLists[depth1].get('NextHopId') is not None:
+				self.add_query_param('NextHopList.' + str(depth1 + 1) + '.NextHopId', NextHopLists[depth1].get('NextHopId'))
+			if NextHopLists[depth1].get('NextHopType') is not None:
+				self.add_query_param('NextHopList.' + str(depth1 + 1) + '.NextHopType', NextHopLists[depth1].get('NextHopType'))

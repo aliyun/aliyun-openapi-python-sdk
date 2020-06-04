@@ -24,6 +24,7 @@ class DescribeLaunchTemplateVersionsRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'DescribeLaunchTemplateVersions','ecs')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -99,10 +100,10 @@ class DescribeLaunchTemplateVersionsRequest(RpcRequest):
 	def get_LaunchTemplateVersions(self):
 		return self.get_query_params().get('LaunchTemplateVersions')
 
-	def set_LaunchTemplateVersions(self,LaunchTemplateVersions):
-		for i in range(len(LaunchTemplateVersions)):	
-			if LaunchTemplateVersions[i] is not None:
-				self.add_query_param('LaunchTemplateVersion.' + str(i + 1) , LaunchTemplateVersions[i]);
+	def set_LaunchTemplateVersions(self, LaunchTemplateVersions):
+		for depth1 in range(len(LaunchTemplateVersions)):
+			if LaunchTemplateVersions[depth1] is not None:
+				self.add_query_param('LaunchTemplateVersion.' + str(depth1 + 1) , LaunchTemplateVersions[depth1])
 
 	def get_DetailFlag(self):
 		return self.get_query_params().get('DetailFlag')

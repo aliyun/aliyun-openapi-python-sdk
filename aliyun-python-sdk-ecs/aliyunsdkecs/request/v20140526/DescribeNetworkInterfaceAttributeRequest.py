@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkecs.endpoint import endpoint_data
 
-class DeleteImageRequest(RpcRequest):
+class DescribeNetworkInterfaceAttributeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'DeleteImage','ecs')
+		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'DescribeNetworkInterfaceAttribute','ecs')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -37,11 +37,21 @@ class DeleteImageRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_ImageId(self):
-		return self.get_query_params().get('ImageId')
+	def get_Tags(self):
+		return self.get_query_params().get('Tags')
 
-	def set_ImageId(self,ImageId):
-		self.add_query_param('ImageId',ImageId)
+	def set_Tags(self, Tags):
+		for depth1 in range(len(Tags)):
+			if Tags[depth1].get('Key') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tags[depth1].get('Key'))
+			if Tags[depth1].get('Value') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tags[depth1].get('Value'))
+
+	def get_Attribute(self):
+		return self.get_query_params().get('Attribute')
+
+	def set_Attribute(self,Attribute):
+		self.add_query_param('Attribute',Attribute)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -61,8 +71,8 @@ class DeleteImageRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_Force(self):
-		return self.get_query_params().get('Force')
+	def get_NetworkInterfaceId(self):
+		return self.get_query_params().get('NetworkInterfaceId')
 
-	def set_Force(self,Force):
-		self.add_query_param('Force',Force)
+	def set_NetworkInterfaceId(self,NetworkInterfaceId):
+		self.add_query_param('NetworkInterfaceId',NetworkInterfaceId)

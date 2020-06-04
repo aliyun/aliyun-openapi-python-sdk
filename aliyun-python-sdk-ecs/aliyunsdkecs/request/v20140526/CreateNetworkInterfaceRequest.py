@@ -24,6 +24,7 @@ class CreateNetworkInterfaceRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'CreateNetworkInterface','ecs')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -72,16 +73,21 @@ class CreateNetworkInterfaceRequest(RpcRequest):
 	def set_ResourceGroupId(self,ResourceGroupId):
 		self.add_query_param('ResourceGroupId',ResourceGroupId)
 
+	def get_InstanceType(self):
+		return self.get_query_params().get('InstanceType')
+
+	def set_InstanceType(self,InstanceType):
+		self.add_query_param('InstanceType',InstanceType)
+
 	def get_Tags(self):
 		return self.get_query_params().get('Tags')
 
-	def set_Tags(self,Tags):
-		for i in range(len(Tags)):	
-			if Tags[i].get('Key') is not None:
-				self.add_query_param('Tag.' + str(i + 1) + '.Key' , Tags[i].get('Key'))
-			if Tags[i].get('Value') is not None:
-				self.add_query_param('Tag.' + str(i + 1) + '.Value' , Tags[i].get('Value'))
-
+	def set_Tags(self, Tags):
+		for depth1 in range(len(Tags)):
+			if Tags[depth1].get('Key') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tags[depth1].get('Key'))
+			if Tags[depth1].get('Value') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tags[depth1].get('Value'))
 
 	def get_NetworkInterfaceName(self):
 		return self.get_query_params().get('NetworkInterfaceName')
@@ -116,10 +122,10 @@ class CreateNetworkInterfaceRequest(RpcRequest):
 	def get_SecurityGroupIdss(self):
 		return self.get_query_params().get('SecurityGroupIdss')
 
-	def set_SecurityGroupIdss(self,SecurityGroupIdss):
-		for i in range(len(SecurityGroupIdss)):	
-			if SecurityGroupIdss[i] is not None:
-				self.add_query_param('SecurityGroupIds.' + str(i + 1) , SecurityGroupIdss[i]);
+	def set_SecurityGroupIdss(self, SecurityGroupIdss):
+		for depth1 in range(len(SecurityGroupIdss)):
+			if SecurityGroupIdss[depth1] is not None:
+				self.add_query_param('SecurityGroupIds.' + str(depth1 + 1) , SecurityGroupIdss[depth1])
 
 	def get_VSwitchId(self):
 		return self.get_query_params().get('VSwitchId')
@@ -130,10 +136,10 @@ class CreateNetworkInterfaceRequest(RpcRequest):
 	def get_PrivateIpAddresss(self):
 		return self.get_query_params().get('PrivateIpAddresss')
 
-	def set_PrivateIpAddresss(self,PrivateIpAddresss):
-		for i in range(len(PrivateIpAddresss)):	
-			if PrivateIpAddresss[i] is not None:
-				self.add_query_param('PrivateIpAddress.' + str(i + 1) , PrivateIpAddresss[i]);
+	def set_PrivateIpAddresss(self, PrivateIpAddresss):
+		for depth1 in range(len(PrivateIpAddresss)):
+			if PrivateIpAddresss[depth1] is not None:
+				self.add_query_param('PrivateIpAddress.' + str(depth1 + 1) , PrivateIpAddresss[depth1])
 
 	def get_PrimaryIpAddress(self):
 		return self.get_query_params().get('PrimaryIpAddress')
