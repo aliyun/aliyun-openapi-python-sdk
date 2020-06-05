@@ -24,6 +24,7 @@ class ListDataSourceRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'ListDataSource','emr')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -41,6 +42,18 @@ class ListDataSourceRequest(RpcRequest):
 
 	def set_CreateFrom(self,CreateFrom):
 		self.add_query_param('CreateFrom',CreateFrom)
+
+	def get_PageNumber(self):
+		return self.get_query_params().get('PageNumber')
+
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)
+
+	def get_ResourceGroupId(self):
+		return self.get_query_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self,ResourceGroupId):
+		self.add_query_param('ResourceGroupId',ResourceGroupId)
 
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
@@ -71,9 +84,3 @@ class ListDataSourceRequest(RpcRequest):
 
 	def set_ProjectId(self,ProjectId):
 		self.add_query_param('ProjectId',ProjectId)
-
-	def get_PageNumber(self):
-		return self.get_query_params().get('PageNumber')
-
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)

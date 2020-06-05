@@ -24,6 +24,7 @@ class ListClusterServiceQuickLinkRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'ListClusterServiceQuickLink','emr')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -36,14 +37,20 @@ class ListClusterServiceQuickLinkRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_ServiceName(self):
-		return self.get_query_params().get('ServiceName')
+	def get_DirectType(self):
+		return self.get_query_params().get('DirectType')
 
-	def set_ServiceName(self,ServiceName):
-		self.add_query_param('ServiceName',ServiceName)
+	def set_DirectType(self,DirectType):
+		self.add_query_param('DirectType',DirectType)
 
 	def get_ClusterId(self):
 		return self.get_query_params().get('ClusterId')
 
 	def set_ClusterId(self,ClusterId):
 		self.add_query_param('ClusterId',ClusterId)
+
+	def get_ServiceName(self):
+		return self.get_query_params().get('ServiceName')
+
+	def set_ServiceName(self,ServiceName):
+		self.add_query_param('ServiceName',ServiceName)

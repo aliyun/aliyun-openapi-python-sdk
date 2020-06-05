@@ -24,17 +24,12 @@ class ResizeClusterV2Request(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'ResizeClusterV2','emr')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_VswitchId(self):
-		return self.get_query_params().get('VswitchId')
-
-	def set_VswitchId(self,VswitchId):
-		self.add_query_param('VswitchId',VswitchId)
 
 	def get_IsOpenPublicIp(self):
 		return self.get_query_params().get('IsOpenPublicIp')
@@ -48,67 +43,72 @@ class ResizeClusterV2Request(RpcRequest):
 	def set_AutoPayOrder(self,AutoPayOrder):
 		self.add_query_param('AutoPayOrder',AutoPayOrder)
 
-	def get_HostComponentInfos(self):
-		return self.get_query_params().get('HostComponentInfos')
-
-	def set_HostComponentInfos(self,HostComponentInfos):
-		for i in range(len(HostComponentInfos)):	
-			if HostComponentInfos[i].get('HostName') is not None:
-				self.add_query_param('HostComponentInfo.' + str(i + 1) + '.HostName' , HostComponentInfos[i].get('HostName'))
-			for j in range(len(HostComponentInfos[i].get('ComponentNameLists'))):
-				if HostComponentInfos[i].get('ComponentNameLists')[j] is not None:
-					self.add_query_param('HostComponentInfo.' + str(i + 1) + '.ComponentNameList.'+str(j + 1), HostComponentInfos[i].get('ComponentNameLists')[j])
-			if HostComponentInfos[i].get('ServiceName') is not None:
-				self.add_query_param('HostComponentInfo.' + str(i + 1) + '.ServiceName' , HostComponentInfos[i].get('ServiceName'))
-
-
-	def get_HostGroups(self):
-		return self.get_query_params().get('HostGroups')
-
-	def set_HostGroups(self,HostGroups):
-		for i in range(len(HostGroups)):	
-			if HostGroups[i].get('Period') is not None:
-				self.add_query_param('HostGroup.' + str(i + 1) + '.Period' , HostGroups[i].get('Period'))
-			if HostGroups[i].get('SysDiskCapacity') is not None:
-				self.add_query_param('HostGroup.' + str(i + 1) + '.SysDiskCapacity' , HostGroups[i].get('SysDiskCapacity'))
-			if HostGroups[i].get('HostKeyPairName') is not None:
-				self.add_query_param('HostGroup.' + str(i + 1) + '.HostKeyPairName' , HostGroups[i].get('HostKeyPairName'))
-			if HostGroups[i].get('DiskCapacity') is not None:
-				self.add_query_param('HostGroup.' + str(i + 1) + '.DiskCapacity' , HostGroups[i].get('DiskCapacity'))
-			if HostGroups[i].get('SysDiskType') is not None:
-				self.add_query_param('HostGroup.' + str(i + 1) + '.SysDiskType' , HostGroups[i].get('SysDiskType'))
-			if HostGroups[i].get('ClusterId') is not None:
-				self.add_query_param('HostGroup.' + str(i + 1) + '.ClusterId' , HostGroups[i].get('ClusterId'))
-			if HostGroups[i].get('DiskType') is not None:
-				self.add_query_param('HostGroup.' + str(i + 1) + '.DiskType' , HostGroups[i].get('DiskType'))
-			if HostGroups[i].get('HostGroupName') is not None:
-				self.add_query_param('HostGroup.' + str(i + 1) + '.HostGroupName' , HostGroups[i].get('HostGroupName'))
-			if HostGroups[i].get('VswitchId') is not None:
-				self.add_query_param('HostGroup.' + str(i + 1) + '.VswitchId' , HostGroups[i].get('VswitchId'))
-			if HostGroups[i].get('DiskCount') is not None:
-				self.add_query_param('HostGroup.' + str(i + 1) + '.DiskCount' , HostGroups[i].get('DiskCount'))
-			if HostGroups[i].get('AutoRenew') is not None:
-				self.add_query_param('HostGroup.' + str(i + 1) + '.AutoRenew' , HostGroups[i].get('AutoRenew'))
-			if HostGroups[i].get('HostGroupId') is not None:
-				self.add_query_param('HostGroup.' + str(i + 1) + '.HostGroupId' , HostGroups[i].get('HostGroupId'))
-			if HostGroups[i].get('NodeCount') is not None:
-				self.add_query_param('HostGroup.' + str(i + 1) + '.NodeCount' , HostGroups[i].get('NodeCount'))
-			if HostGroups[i].get('InstanceType') is not None:
-				self.add_query_param('HostGroup.' + str(i + 1) + '.InstanceType' , HostGroups[i].get('InstanceType'))
-			if HostGroups[i].get('Comment') is not None:
-				self.add_query_param('HostGroup.' + str(i + 1) + '.Comment' , HostGroups[i].get('Comment'))
-			if HostGroups[i].get('ChargeType') is not None:
-				self.add_query_param('HostGroup.' + str(i + 1) + '.ChargeType' , HostGroups[i].get('ChargeType'))
-			if HostGroups[i].get('CreateType') is not None:
-				self.add_query_param('HostGroup.' + str(i + 1) + '.CreateType' , HostGroups[i].get('CreateType'))
-			if HostGroups[i].get('HostPassword') is not None:
-				self.add_query_param('HostGroup.' + str(i + 1) + '.HostPassword' , HostGroups[i].get('HostPassword'))
-			if HostGroups[i].get('HostGroupType') is not None:
-				self.add_query_param('HostGroup.' + str(i + 1) + '.HostGroupType' , HostGroups[i].get('HostGroupType'))
-
-
 	def get_ClusterId(self):
 		return self.get_query_params().get('ClusterId')
 
 	def set_ClusterId(self,ClusterId):
 		self.add_query_param('ClusterId',ClusterId)
+
+	def get_VswitchId(self):
+		return self.get_query_params().get('VswitchId')
+
+	def set_VswitchId(self,VswitchId):
+		self.add_query_param('VswitchId',VswitchId)
+
+	def get_HostComponentInfos(self):
+		return self.get_query_params().get('HostComponentInfos')
+
+	def set_HostComponentInfos(self, HostComponentInfos):
+		for depth1 in range(len(HostComponentInfos)):
+			if HostComponentInfos[depth1].get('HostName') is not None:
+				self.add_query_param('HostComponentInfo.' + str(depth1 + 1) + '.HostName', HostComponentInfos[depth1].get('HostName'))
+			if HostComponentInfos[depth1].get('ComponentNameList') is not None:
+				for depth2 in range(len(HostComponentInfos[depth1].get('ComponentNameList'))):
+					if HostComponentInfos[depth1].get('ComponentNameList')[depth2] is not None:
+						self.add_query_param('HostComponentInfo.' + str(depth1 + 1) + '.ComponentNameList.' + str(depth2 + 1) , HostComponentInfos[depth1].get('ComponentNameList')[depth2])
+			if HostComponentInfos[depth1].get('ServiceName') is not None:
+				self.add_query_param('HostComponentInfo.' + str(depth1 + 1) + '.ServiceName', HostComponentInfos[depth1].get('ServiceName'))
+
+	def get_HostGroups(self):
+		return self.get_query_params().get('HostGroups')
+
+	def set_HostGroups(self, HostGroups):
+		for depth1 in range(len(HostGroups)):
+			if HostGroups[depth1].get('Period') is not None:
+				self.add_query_param('HostGroup.' + str(depth1 + 1) + '.Period', HostGroups[depth1].get('Period'))
+			if HostGroups[depth1].get('SysDiskCapacity') is not None:
+				self.add_query_param('HostGroup.' + str(depth1 + 1) + '.SysDiskCapacity', HostGroups[depth1].get('SysDiskCapacity'))
+			if HostGroups[depth1].get('HostKeyPairName') is not None:
+				self.add_query_param('HostGroup.' + str(depth1 + 1) + '.HostKeyPairName', HostGroups[depth1].get('HostKeyPairName'))
+			if HostGroups[depth1].get('DiskCapacity') is not None:
+				self.add_query_param('HostGroup.' + str(depth1 + 1) + '.DiskCapacity', HostGroups[depth1].get('DiskCapacity'))
+			if HostGroups[depth1].get('SysDiskType') is not None:
+				self.add_query_param('HostGroup.' + str(depth1 + 1) + '.SysDiskType', HostGroups[depth1].get('SysDiskType'))
+			if HostGroups[depth1].get('ClusterId') is not None:
+				self.add_query_param('HostGroup.' + str(depth1 + 1) + '.ClusterId', HostGroups[depth1].get('ClusterId'))
+			if HostGroups[depth1].get('DiskType') is not None:
+				self.add_query_param('HostGroup.' + str(depth1 + 1) + '.DiskType', HostGroups[depth1].get('DiskType'))
+			if HostGroups[depth1].get('HostGroupName') is not None:
+				self.add_query_param('HostGroup.' + str(depth1 + 1) + '.HostGroupName', HostGroups[depth1].get('HostGroupName'))
+			if HostGroups[depth1].get('VswitchId') is not None:
+				self.add_query_param('HostGroup.' + str(depth1 + 1) + '.VswitchId', HostGroups[depth1].get('VswitchId'))
+			if HostGroups[depth1].get('DiskCount') is not None:
+				self.add_query_param('HostGroup.' + str(depth1 + 1) + '.DiskCount', HostGroups[depth1].get('DiskCount'))
+			if HostGroups[depth1].get('AutoRenew') is not None:
+				self.add_query_param('HostGroup.' + str(depth1 + 1) + '.AutoRenew', HostGroups[depth1].get('AutoRenew'))
+			if HostGroups[depth1].get('HostGroupId') is not None:
+				self.add_query_param('HostGroup.' + str(depth1 + 1) + '.HostGroupId', HostGroups[depth1].get('HostGroupId'))
+			if HostGroups[depth1].get('NodeCount') is not None:
+				self.add_query_param('HostGroup.' + str(depth1 + 1) + '.NodeCount', HostGroups[depth1].get('NodeCount'))
+			if HostGroups[depth1].get('InstanceType') is not None:
+				self.add_query_param('HostGroup.' + str(depth1 + 1) + '.InstanceType', HostGroups[depth1].get('InstanceType'))
+			if HostGroups[depth1].get('Comment') is not None:
+				self.add_query_param('HostGroup.' + str(depth1 + 1) + '.Comment', HostGroups[depth1].get('Comment'))
+			if HostGroups[depth1].get('ChargeType') is not None:
+				self.add_query_param('HostGroup.' + str(depth1 + 1) + '.ChargeType', HostGroups[depth1].get('ChargeType'))
+			if HostGroups[depth1].get('CreateType') is not None:
+				self.add_query_param('HostGroup.' + str(depth1 + 1) + '.CreateType', HostGroups[depth1].get('CreateType'))
+			if HostGroups[depth1].get('HostPassword') is not None:
+				self.add_query_param('HostGroup.' + str(depth1 + 1) + '.HostPassword', HostGroups[depth1].get('HostPassword'))
+			if HostGroups[depth1].get('HostGroupType') is not None:
+				self.add_query_param('HostGroup.' + str(depth1 + 1) + '.HostGroupType', HostGroups[depth1].get('HostGroupType'))

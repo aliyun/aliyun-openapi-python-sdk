@@ -24,6 +24,7 @@ class DescribeFlowNodeInstanceLauncherLogRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'DescribeFlowNodeInstanceLauncherLog','emr')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -60,12 +61,6 @@ class DescribeFlowNodeInstanceLauncherLogRequest(RpcRequest):
 	def set_StartTime(self,StartTime):
 		self.add_query_param('StartTime',StartTime)
 
-	def get_Lines(self):
-		return self.get_query_params().get('Lines')
-
-	def set_Lines(self,Lines):
-		self.add_query_param('Lines',Lines)
-
 	def get_Reverse(self):
 		return self.get_query_params().get('Reverse')
 
@@ -77,6 +72,12 @@ class DescribeFlowNodeInstanceLauncherLogRequest(RpcRequest):
 
 	def set_NodeInstanceId(self,NodeInstanceId):
 		self.add_query_param('NodeInstanceId',NodeInstanceId)
+
+	def get_Lines(self):
+		return self.get_query_params().get('Lines')
+
+	def set_Lines(self,Lines):
+		self.add_query_param('Lines',Lines)
 
 	def get_ProjectId(self):
 		return self.get_query_params().get('ProjectId')

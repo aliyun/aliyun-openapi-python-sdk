@@ -24,6 +24,7 @@ class DescribeClusterOperationHostTaskLogRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'DescribeClusterOperationHostTaskLog','emr')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -36,12 +37,6 @@ class DescribeClusterOperationHostTaskLogRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_OperationId(self):
-		return self.get_query_params().get('OperationId')
-
-	def set_OperationId(self,OperationId):
-		self.add_query_param('OperationId',OperationId)
-
 	def get_HostId(self):
 		return self.get_query_params().get('HostId')
 
@@ -53,6 +48,12 @@ class DescribeClusterOperationHostTaskLogRequest(RpcRequest):
 
 	def set_ClusterId(self,ClusterId):
 		self.add_query_param('ClusterId',ClusterId)
+
+	def get_OperationId(self):
+		return self.get_query_params().get('OperationId')
+
+	def set_OperationId(self,OperationId):
+		self.add_query_param('OperationId',OperationId)
 
 	def get_TaskId(self):
 		return self.get_query_params().get('TaskId')

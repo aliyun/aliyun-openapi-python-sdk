@@ -24,6 +24,7 @@ class ListJobExecutionInstancesRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'ListJobExecutionInstances','emr')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -36,18 +37,6 @@ class ListJobExecutionInstancesRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_ExecutionPlanInstanceId(self):
-		return self.get_query_params().get('ExecutionPlanInstanceId')
-
-	def set_ExecutionPlanInstanceId(self,ExecutionPlanInstanceId):
-		self.add_query_param('ExecutionPlanInstanceId',ExecutionPlanInstanceId)
-
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
 	def get_IsDesc(self):
 		return self.get_query_params().get('IsDesc')
 
@@ -59,3 +48,15 @@ class ListJobExecutionInstancesRequest(RpcRequest):
 
 	def set_PageNumber(self,PageNumber):
 		self.add_query_param('PageNumber',PageNumber)
+
+	def get_ExecutionPlanInstanceId(self):
+		return self.get_query_params().get('ExecutionPlanInstanceId')
+
+	def set_ExecutionPlanInstanceId(self,ExecutionPlanInstanceId):
+		self.add_query_param('ExecutionPlanInstanceId',ExecutionPlanInstanceId)
+
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)

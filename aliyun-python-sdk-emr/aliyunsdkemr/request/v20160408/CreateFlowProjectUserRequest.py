@@ -24,6 +24,7 @@ class CreateFlowProjectUserRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'CreateFlowProjectUser','emr')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -39,9 +40,9 @@ class CreateFlowProjectUserRequest(RpcRequest):
 	def get_Users(self):
 		return self.get_query_params().get('Users')
 
-	def set_Users(self,Users):
-		for i in range(len(Users)):	
-			if Users[i].get('UserId') is not None:
-				self.add_query_param('User.' + str(i + 1) + '.UserId' , Users[i].get('UserId'))
-			if Users[i].get('UserName') is not None:
-				self.add_query_param('User.' + str(i + 1) + '.UserName' , Users[i].get('UserName'))
+	def set_Users(self, Users):
+		for depth1 in range(len(Users)):
+			if Users[depth1].get('UserId') is not None:
+				self.add_query_param('User.' + str(depth1 + 1) + '.UserId', Users[depth1].get('UserId'))
+			if Users[depth1].get('UserName') is not None:
+				self.add_query_param('User.' + str(depth1 + 1) + '.UserName', Users[depth1].get('UserName'))

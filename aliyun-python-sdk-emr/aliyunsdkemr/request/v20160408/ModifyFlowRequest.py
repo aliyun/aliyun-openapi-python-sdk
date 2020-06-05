@@ -24,6 +24,7 @@ class ModifyFlowRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'ModifyFlow','emr')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -36,41 +37,17 @@ class ModifyFlowRequest(RpcRequest):
 	def set_CronExpr(self,CronExpr):
 		self.add_query_param('CronExpr',CronExpr)
 
-	def get_ParentFlowList(self):
-		return self.get_query_params().get('ParentFlowList')
-
-	def set_ParentFlowList(self,ParentFlowList):
-		self.add_query_param('ParentFlowList',ParentFlowList)
-
-	def get_AlertDingDingGroupBizId(self):
-		return self.get_query_params().get('AlertDingDingGroupBizId')
-
-	def set_AlertDingDingGroupBizId(self,AlertDingDingGroupBizId):
-		self.add_query_param('AlertDingDingGroupBizId',AlertDingDingGroupBizId)
-
 	def get_Periodic(self):
 		return self.get_query_params().get('Periodic')
 
 	def set_Periodic(self,Periodic):
 		self.add_query_param('Periodic',Periodic)
 
-	def get_StartSchedule(self):
-		return self.get_query_params().get('StartSchedule')
-
-	def set_StartSchedule(self,StartSchedule):
-		self.add_query_param('StartSchedule',StartSchedule)
-
 	def get_Description(self):
 		return self.get_query_params().get('Description')
 
 	def set_Description(self,Description):
 		self.add_query_param('Description',Description)
-
-	def get_ClusterId(self):
-		return self.get_query_params().get('ClusterId')
-
-	def set_ClusterId(self,ClusterId):
-		self.add_query_param('ClusterId',ClusterId)
 
 	def get_AlertUserGroupBizId(self):
 		return self.get_query_params().get('AlertUserGroupBizId')
@@ -84,23 +61,11 @@ class ModifyFlowRequest(RpcRequest):
 	def set_HostName(self,HostName):
 		self.add_query_param('HostName',HostName)
 
-	def get_Application(self):
-		return self.get_query_params().get('Application')
-
-	def set_Application(self,Application):
-		self.add_query_param('Application',Application)
-
 	def get_CreateCluster(self):
 		return self.get_query_params().get('CreateCluster')
 
 	def set_CreateCluster(self,CreateCluster):
 		self.add_query_param('CreateCluster',CreateCluster)
-
-	def get_Name(self):
-		return self.get_query_params().get('Name')
-
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)
 
 	def get_EndSchedule(self):
 		return self.get_query_params().get('EndSchedule')
@@ -125,6 +90,42 @@ class ModifyFlowRequest(RpcRequest):
 
 	def set_ProjectId(self,ProjectId):
 		self.add_query_param('ProjectId',ProjectId)
+
+	def get_ParentFlowList(self):
+		return self.get_query_params().get('ParentFlowList')
+
+	def set_ParentFlowList(self,ParentFlowList):
+		self.add_query_param('ParentFlowList',ParentFlowList)
+
+	def get_AlertDingDingGroupBizId(self):
+		return self.get_query_params().get('AlertDingDingGroupBizId')
+
+	def set_AlertDingDingGroupBizId(self,AlertDingDingGroupBizId):
+		self.add_query_param('AlertDingDingGroupBizId',AlertDingDingGroupBizId)
+
+	def get_StartSchedule(self):
+		return self.get_query_params().get('StartSchedule')
+
+	def set_StartSchedule(self,StartSchedule):
+		self.add_query_param('StartSchedule',StartSchedule)
+
+	def get_ClusterId(self):
+		return self.get_query_params().get('ClusterId')
+
+	def set_ClusterId(self,ClusterId):
+		self.add_query_param('ClusterId',ClusterId)
+
+	def get_Application(self):
+		return self.get_query_params().get('Application')
+
+	def set_Application(self,Application):
+		self.add_query_param('Application',Application)
+
+	def get_Name(self):
+		return self.get_query_params().get('Name')
+
+	def set_Name(self,Name):
+		self.add_query_param('Name',Name)
 
 	def get_Status(self):
 		return self.get_query_params().get('Status')

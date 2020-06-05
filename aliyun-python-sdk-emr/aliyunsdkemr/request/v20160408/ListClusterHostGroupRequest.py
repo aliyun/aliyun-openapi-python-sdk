@@ -24,6 +24,7 @@ class ListClusterHostGroupRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'ListClusterHostGroup','emr')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -39,22 +40,10 @@ class ListClusterHostGroupRequest(RpcRequest):
 	def get_StatusLists(self):
 		return self.get_query_params().get('StatusLists')
 
-	def set_StatusLists(self,StatusLists):
-		for i in range(len(StatusLists)):	
-			if StatusLists[i] is not None:
-				self.add_query_param('StatusList.' + str(i + 1) , StatusLists[i]);
-
-	def get_HostGroupId(self):
-		return self.get_query_params().get('HostGroupId')
-
-	def set_HostGroupId(self,HostGroupId):
-		self.add_query_param('HostGroupId',HostGroupId)
-
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
+	def set_StatusLists(self, StatusLists):
+		for depth1 in range(len(StatusLists)):
+			if StatusLists[depth1] is not None:
+				self.add_query_param('StatusList.' + str(depth1 + 1) , StatusLists[depth1])
 
 	def get_ClusterId(self):
 		return self.get_query_params().get('ClusterId')
@@ -68,14 +57,26 @@ class ListClusterHostGroupRequest(RpcRequest):
 	def set_HostGroupName(self,HostGroupName):
 		self.add_query_param('HostGroupName',HostGroupName)
 
-	def get_HostGroupType(self):
-		return self.get_query_params().get('HostGroupType')
-
-	def set_HostGroupType(self,HostGroupType):
-		self.add_query_param('HostGroupType',HostGroupType)
-
 	def get_PageNumber(self):
 		return self.get_query_params().get('PageNumber')
 
 	def set_PageNumber(self,PageNumber):
 		self.add_query_param('PageNumber',PageNumber)
+
+	def get_HostGroupId(self):
+		return self.get_query_params().get('HostGroupId')
+
+	def set_HostGroupId(self,HostGroupId):
+		self.add_query_param('HostGroupId',HostGroupId)
+
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
+
+	def get_HostGroupType(self):
+		return self.get_query_params().get('HostGroupType')
+
+	def set_HostGroupType(self,HostGroupType):
+		self.add_query_param('HostGroupType',HostGroupType)

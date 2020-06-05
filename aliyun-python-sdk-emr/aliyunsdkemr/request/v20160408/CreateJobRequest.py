@@ -24,11 +24,30 @@ class CreateJobRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'CreateJob','emr')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+
+	def get_ResourceOwnerId(self):
+		return self.get_query_params().get('ResourceOwnerId')
+
+	def set_ResourceOwnerId(self,ResourceOwnerId):
+		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+
+	def get_Type(self):
+		return self.get_query_params().get('Type')
+
+	def set_Type(self,Type):
+		self.add_query_param('Type',Type)
+
+	def get_FailAct(self):
+		return self.get_query_params().get('FailAct')
+
+	def set_FailAct(self,FailAct):
+		self.add_query_param('FailAct',FailAct)
 
 	def get_RunParameter(self):
 		return self.get_query_params().get('RunParameter')
@@ -42,11 +61,11 @@ class CreateJobRequest(RpcRequest):
 	def set_RetryInterval(self,RetryInterval):
 		self.add_query_param('RetryInterval',RetryInterval)
 
-	def get_ResourceOwnerId(self):
-		return self.get_query_params().get('ResourceOwnerId')
+	def get_ResourceGroupId(self):
+		return self.get_query_params().get('ResourceGroupId')
 
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+	def set_ResourceGroupId(self,ResourceGroupId):
+		self.add_query_param('ResourceGroupId',ResourceGroupId)
 
 	def get_Name(self):
 		return self.get_query_params().get('Name')
@@ -54,20 +73,8 @@ class CreateJobRequest(RpcRequest):
 	def set_Name(self,Name):
 		self.add_query_param('Name',Name)
 
-	def get_Type(self):
-		return self.get_query_params().get('Type')
-
-	def set_Type(self,Type):
-		self.add_query_param('Type',Type)
-
 	def get_MaxRetry(self):
 		return self.get_query_params().get('MaxRetry')
 
 	def set_MaxRetry(self,MaxRetry):
 		self.add_query_param('MaxRetry',MaxRetry)
-
-	def get_FailAct(self):
-		return self.get_query_params().get('FailAct')
-
-	def set_FailAct(self,FailAct):
-		self.add_query_param('FailAct',FailAct)

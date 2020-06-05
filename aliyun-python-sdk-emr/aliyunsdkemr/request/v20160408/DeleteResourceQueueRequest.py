@@ -24,6 +24,7 @@ class DeleteResourceQueueRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'DeleteResourceQueue','emr')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -36,14 +37,14 @@ class DeleteResourceQueueRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_ResourceQueueId(self):
-		return self.get_query_params().get('ResourceQueueId')
-
-	def set_ResourceQueueId(self,ResourceQueueId):
-		self.add_query_param('ResourceQueueId',ResourceQueueId)
-
 	def get_ClusterId(self):
 		return self.get_query_params().get('ClusterId')
 
 	def set_ClusterId(self,ClusterId):
 		self.add_query_param('ClusterId',ClusterId)
+
+	def get_ResourceQueueId(self):
+		return self.get_query_params().get('ResourceQueueId')
+
+	def set_ResourceQueueId(self,ResourceQueueId):
+		self.add_query_param('ResourceQueueId',ResourceQueueId)

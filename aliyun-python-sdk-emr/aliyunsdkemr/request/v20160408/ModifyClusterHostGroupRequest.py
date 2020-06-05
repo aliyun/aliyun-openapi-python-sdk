@@ -24,17 +24,12 @@ class ModifyClusterHostGroupRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'ModifyClusterHostGroup','emr')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_VswitchId(self):
-		return self.get_query_params().get('VswitchId')
-
-	def set_VswitchId(self,VswitchId):
-		self.add_query_param('VswitchId',VswitchId)
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -42,23 +37,11 @@ class ModifyClusterHostGroupRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_HostGroupId(self):
-		return self.get_query_params().get('HostGroupId')
-
-	def set_HostGroupId(self,HostGroupId):
-		self.add_query_param('HostGroupId',HostGroupId)
-
 	def get_SecurityGroupId(self):
 		return self.get_query_params().get('SecurityGroupId')
 
 	def set_SecurityGroupId(self,SecurityGroupId):
 		self.add_query_param('SecurityGroupId',SecurityGroupId)
-
-	def get_Comment(self):
-		return self.get_query_params().get('Comment')
-
-	def set_Comment(self,Comment):
-		self.add_query_param('Comment',Comment)
 
 	def get_ClusterId(self):
 		return self.get_query_params().get('ClusterId')
@@ -71,3 +54,21 @@ class ModifyClusterHostGroupRequest(RpcRequest):
 
 	def set_HostGroupName(self,HostGroupName):
 		self.add_query_param('HostGroupName',HostGroupName)
+
+	def get_VswitchId(self):
+		return self.get_query_params().get('VswitchId')
+
+	def set_VswitchId(self,VswitchId):
+		self.add_query_param('VswitchId',VswitchId)
+
+	def get_HostGroupId(self):
+		return self.get_query_params().get('HostGroupId')
+
+	def set_HostGroupId(self,HostGroupId):
+		self.add_query_param('HostGroupId',HostGroupId)
+
+	def get_Comment(self):
+		return self.get_query_params().get('Comment')
+
+	def set_Comment(self,Comment):
+		self.add_query_param('Comment',Comment)

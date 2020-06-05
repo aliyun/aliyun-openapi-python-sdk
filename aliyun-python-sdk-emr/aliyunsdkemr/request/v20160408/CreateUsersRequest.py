@@ -24,6 +24,7 @@ class CreateUsersRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'CreateUsers','emr')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -45,11 +46,11 @@ class CreateUsersRequest(RpcRequest):
 	def get_UserInfos(self):
 		return self.get_query_params().get('UserInfos')
 
-	def set_UserInfos(self,UserInfos):
-		for i in range(len(UserInfos)):	
-			if UserInfos[i].get('Type') is not None:
-				self.add_query_param('UserInfo.' + str(i + 1) + '.Type' , UserInfos[i].get('Type'))
-			if UserInfos[i].get('UserId') is not None:
-				self.add_query_param('UserInfo.' + str(i + 1) + '.UserId' , UserInfos[i].get('UserId'))
-			if UserInfos[i].get('UserName') is not None:
-				self.add_query_param('UserInfo.' + str(i + 1) + '.UserName' , UserInfos[i].get('UserName'))
+	def set_UserInfos(self, UserInfos):
+		for depth1 in range(len(UserInfos)):
+			if UserInfos[depth1].get('Type') is not None:
+				self.add_query_param('UserInfo.' + str(depth1 + 1) + '.Type', UserInfos[depth1].get('Type'))
+			if UserInfos[depth1].get('UserId') is not None:
+				self.add_query_param('UserInfo.' + str(depth1 + 1) + '.UserId', UserInfos[depth1].get('UserId'))
+			if UserInfos[depth1].get('UserName') is not None:
+				self.add_query_param('UserInfo.' + str(depth1 + 1) + '.UserName', UserInfos[depth1].get('UserName'))

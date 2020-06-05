@@ -1,3 +1,7 @@
+2020-06-05 Version: 3.3.0
+- Support tag.
+- Support resource group.
+
 2019-08-13 Version: 3.2.5
 - Generated 2016-04-08 for `Emr`.
 

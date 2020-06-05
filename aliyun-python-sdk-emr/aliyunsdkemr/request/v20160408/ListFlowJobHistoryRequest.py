@@ -24,6 +24,7 @@ class ListFlowJobHistoryRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'ListFlowJobHistory','emr')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -39,10 +40,22 @@ class ListFlowJobHistoryRequest(RpcRequest):
 	def get_StatusLists(self):
 		return self.get_query_params().get('StatusLists')
 
-	def set_StatusLists(self,StatusLists):
-		for i in range(len(StatusLists)):	
-			if StatusLists[i] is not None:
-				self.add_query_param('StatusList.' + str(i + 1) , StatusLists[i]);
+	def set_StatusLists(self, StatusLists):
+		for depth1 in range(len(StatusLists)):
+			if StatusLists[depth1] is not None:
+				self.add_query_param('StatusList.' + str(depth1 + 1) , StatusLists[depth1])
+
+	def get_JobType(self):
+		return self.get_query_params().get('JobType')
+
+	def set_JobType(self,JobType):
+		self.add_query_param('JobType',JobType)
+
+	def get_PageNumber(self):
+		return self.get_query_params().get('PageNumber')
+
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)
 
 	def get_InstanceId(self):
 		return self.get_query_params().get('InstanceId')
@@ -67,15 +80,3 @@ class ListFlowJobHistoryRequest(RpcRequest):
 
 	def set_ProjectId(self,ProjectId):
 		self.add_query_param('ProjectId',ProjectId)
-
-	def get_JobType(self):
-		return self.get_query_params().get('JobType')
-
-	def set_JobType(self,JobType):
-		self.add_query_param('JobType',JobType)
-
-	def get_PageNumber(self):
-		return self.get_query_params().get('PageNumber')
-
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)

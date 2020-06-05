@@ -24,6 +24,7 @@ class ListClustersRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'ListClusters','emr')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -39,24 +40,10 @@ class ListClustersRequest(RpcRequest):
 	def get_StatusLists(self):
 		return self.get_query_params().get('StatusLists')
 
-	def set_StatusLists(self,StatusLists):
-		for i in range(len(StatusLists)):	
-			if StatusLists[i] is not None:
-				self.add_query_param('StatusList.' + str(i + 1) , StatusLists[i]);
-
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_ClusterTypeLists(self):
-		return self.get_query_params().get('ClusterTypeLists')
-
-	def set_ClusterTypeLists(self,ClusterTypeLists):
-		for i in range(len(ClusterTypeLists)):	
-			if ClusterTypeLists[i] is not None:
-				self.add_query_param('ClusterTypeList.' + str(i + 1) , ClusterTypeLists[i]);
+	def set_StatusLists(self, StatusLists):
+		for depth1 in range(len(StatusLists)):
+			if StatusLists[depth1] is not None:
+				self.add_query_param('StatusList.' + str(depth1 + 1) , StatusLists[depth1])
 
 	def get_IsDesc(self):
 		return self.get_query_params().get('IsDesc')
@@ -64,23 +51,11 @@ class ListClustersRequest(RpcRequest):
 	def set_IsDesc(self,IsDesc):
 		self.add_query_param('IsDesc',IsDesc)
 
-	def get_CreateType(self):
-		return self.get_query_params().get('CreateType')
-
-	def set_CreateType(self,CreateType):
-		self.add_query_param('CreateType',CreateType)
-
 	def get_DepositType(self):
 		return self.get_query_params().get('DepositType')
 
 	def set_DepositType(self,DepositType):
 		self.add_query_param('DepositType',DepositType)
-
-	def get_DefaultStatus(self):
-		return self.get_query_params().get('DefaultStatus')
-
-	def set_DefaultStatus(self,DefaultStatus):
-		self.add_query_param('DefaultStatus',DefaultStatus)
 
 	def get_PageNumber(self):
 		return self.get_query_params().get('PageNumber')
@@ -93,3 +68,59 @@ class ListClustersRequest(RpcRequest):
 
 	def set_MachineType(self,MachineType):
 		self.add_query_param('MachineType',MachineType)
+
+	def get_ResourceGroupId(self):
+		return self.get_query_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self,ResourceGroupId):
+		self.add_query_param('ResourceGroupId',ResourceGroupId)
+
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
+
+	def get_Tags(self):
+		return self.get_query_params().get('Tags')
+
+	def set_Tags(self, Tags):
+		for depth1 in range(len(Tags)):
+			if Tags[depth1].get('Value') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tags[depth1].get('Value'))
+			if Tags[depth1].get('Key') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tags[depth1].get('Key'))
+
+	def get_CreateType(self):
+		return self.get_query_params().get('CreateType')
+
+	def set_CreateType(self,CreateType):
+		self.add_query_param('CreateType',CreateType)
+
+	def get_ExpiredTagLists(self):
+		return self.get_query_params().get('ExpiredTagLists')
+
+	def set_ExpiredTagLists(self, ExpiredTagLists):
+		for depth1 in range(len(ExpiredTagLists)):
+			if ExpiredTagLists[depth1] is not None:
+				self.add_query_param('ExpiredTagList.' + str(depth1 + 1) , ExpiredTagLists[depth1])
+
+	def get_DefaultStatus(self):
+		return self.get_query_params().get('DefaultStatus')
+
+	def set_DefaultStatus(self,DefaultStatus):
+		self.add_query_param('DefaultStatus',DefaultStatus)
+
+	def get_Name(self):
+		return self.get_query_params().get('Name')
+
+	def set_Name(self,Name):
+		self.add_query_param('Name',Name)
+
+	def get_ClusterTypeLists(self):
+		return self.get_query_params().get('ClusterTypeLists')
+
+	def set_ClusterTypeLists(self, ClusterTypeLists):
+		for depth1 in range(len(ClusterTypeLists)):
+			if ClusterTypeLists[depth1] is not None:
+				self.add_query_param('ClusterTypeList.' + str(depth1 + 1) , ClusterTypeLists[depth1])

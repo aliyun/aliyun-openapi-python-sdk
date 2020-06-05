@@ -24,23 +24,12 @@ class SubmitFlowJobRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'SubmitFlowJob','emr')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_JobId(self):
-		return self.get_query_params().get('JobId')
-
-	def set_JobId(self,JobId):
-		self.add_query_param('JobId',JobId)
-
-	def get_HostName(self):
-		return self.get_query_params().get('HostName')
-
-	def set_HostName(self,HostName):
-		self.add_query_param('HostName',HostName)
 
 	def get_Conf(self):
 		return self.get_query_params().get('Conf')
@@ -53,6 +42,18 @@ class SubmitFlowJobRequest(RpcRequest):
 
 	def set_ClusterId(self,ClusterId):
 		self.add_query_param('ClusterId',ClusterId)
+
+	def get_JobId(self):
+		return self.get_query_params().get('JobId')
+
+	def set_JobId(self,JobId):
+		self.add_query_param('JobId',JobId)
+
+	def get_HostName(self):
+		return self.get_query_params().get('HostName')
+
+	def set_HostName(self,HostName):
+		self.add_query_param('HostName',HostName)
 
 	def get_ProjectId(self):
 		return self.get_query_params().get('ProjectId')

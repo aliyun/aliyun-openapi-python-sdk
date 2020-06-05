@@ -24,6 +24,7 @@ class ListClusterOperationHostTaskRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'ListClusterOperationHostTask','emr')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -35,18 +36,6 @@ class ListClusterOperationHostTaskRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_OperationId(self):
-		return self.get_query_params().get('OperationId')
-
-	def set_OperationId(self,OperationId):
-		self.add_query_param('OperationId',OperationId)
 
 	def get_HostId(self):
 		return self.get_query_params().get('HostId')
@@ -65,6 +54,18 @@ class ListClusterOperationHostTaskRequest(RpcRequest):
 
 	def set_PageNumber(self,PageNumber):
 		self.add_query_param('PageNumber',PageNumber)
+
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
+
+	def get_OperationId(self):
+		return self.get_query_params().get('OperationId')
+
+	def set_OperationId(self,OperationId):
+		self.add_query_param('OperationId',OperationId)
 
 	def get_Status(self):
 		return self.get_query_params().get('Status')

@@ -24,17 +24,12 @@ class ListFlowNodeInstanceContainerStatusRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'ListFlowNodeInstanceContainerStatus','emr')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
 
 	def get_NodeInstanceId(self):
 		return self.get_query_params().get('NodeInstanceId')
@@ -42,14 +37,20 @@ class ListFlowNodeInstanceContainerStatusRequest(RpcRequest):
 	def set_NodeInstanceId(self,NodeInstanceId):
 		self.add_query_param('NodeInstanceId',NodeInstanceId)
 
-	def get_ProjectId(self):
-		return self.get_query_params().get('ProjectId')
-
-	def set_ProjectId(self,ProjectId):
-		self.add_query_param('ProjectId',ProjectId)
-
 	def get_PageNumber(self):
 		return self.get_query_params().get('PageNumber')
 
 	def set_PageNumber(self,PageNumber):
 		self.add_query_param('PageNumber',PageNumber)
+
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
+
+	def get_ProjectId(self):
+		return self.get_query_params().get('ProjectId')
+
+	def set_ProjectId(self,ProjectId):
+		self.add_query_param('ProjectId',ProjectId)

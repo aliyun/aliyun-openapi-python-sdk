@@ -24,6 +24,7 @@ class ListApmApplicationRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'ListApmApplication','emr')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -35,6 +36,36 @@ class ListApmApplicationRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+
+	def get_PageNumber(self):
+		return self.get_query_params().get('PageNumber')
+
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)
+
+	def get_FinalStatus(self):
+		return self.get_query_params().get('FinalStatus')
+
+	def set_FinalStatus(self,FinalStatus):
+		self.add_query_param('FinalStatus',FinalStatus)
+
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
+
+	def get_State(self):
+		return self.get_query_params().get('State')
+
+	def set_State(self,State):
+		self.add_query_param('State',State)
+
+	def get_StartTimeTo(self):
+		return self.get_query_params().get('StartTimeTo')
+
+	def set_StartTimeTo(self,StartTimeTo):
+		self.add_query_param('StartTimeTo',StartTimeTo)
 
 	def get_DiagnoseResult(self):
 		return self.get_query_params().get('DiagnoseResult')
@@ -66,18 +97,6 @@ class ListApmApplicationRequest(RpcRequest):
 	def set_JobType(self,JobType):
 		self.add_query_param('JobType',JobType)
 
-	def get_PageNumber(self):
-		return self.get_query_params().get('PageNumber')
-
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
-
-	def get_FinalStatus(self):
-		return self.get_query_params().get('FinalStatus')
-
-	def set_FinalStatus(self,FinalStatus):
-		self.add_query_param('FinalStatus',FinalStatus)
-
 	def get_StartTimeFrom(self):
 		return self.get_query_params().get('StartTimeFrom')
 
@@ -95,24 +114,6 @@ class ListApmApplicationRequest(RpcRequest):
 
 	def set_Name(self,Name):
 		self.add_query_param('Name',Name)
-
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_State(self):
-		return self.get_query_params().get('State')
-
-	def set_State(self,State):
-		self.add_query_param('State',State)
-
-	def get_StartTimeTo(self):
-		return self.get_query_params().get('StartTimeTo')
-
-	def set_StartTimeTo(self,StartTimeTo):
-		self.add_query_param('StartTimeTo',StartTimeTo)
 
 	def get_User(self):
 		return self.get_query_params().get('User')

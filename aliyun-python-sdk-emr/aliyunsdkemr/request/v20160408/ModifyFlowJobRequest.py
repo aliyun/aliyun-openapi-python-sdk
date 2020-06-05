@@ -24,6 +24,7 @@ class ModifyFlowJobRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'ModifyFlowJob','emr')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -36,29 +37,11 @@ class ModifyFlowJobRequest(RpcRequest):
 	def set_RunConf(self,RunConf):
 		self.add_query_param('RunConf',RunConf)
 
-	def get_EnvConf(self):
-		return self.get_query_params().get('EnvConf')
-
-	def set_EnvConf(self,EnvConf):
-		self.add_query_param('EnvConf',EnvConf)
-
 	def get_Description(self):
 		return self.get_query_params().get('Description')
 
 	def set_Description(self,Description):
 		self.add_query_param('Description',Description)
-
-	def get_ClusterId(self):
-		return self.get_query_params().get('ClusterId')
-
-	def set_ClusterId(self,ClusterId):
-		self.add_query_param('ClusterId',ClusterId)
-
-	def get_Params(self):
-		return self.get_query_params().get('Params')
-
-	def set_Params(self,Params):
-		self.add_query_param('Params',Params)
 
 	def get_ParamConf(self):
 		return self.get_query_params().get('ParamConf')
@@ -69,13 +52,12 @@ class ModifyFlowJobRequest(RpcRequest):
 	def get_ResourceLists(self):
 		return self.get_query_params().get('ResourceLists')
 
-	def set_ResourceLists(self,ResourceLists):
-		for i in range(len(ResourceLists)):	
-			if ResourceLists[i].get('Path') is not None:
-				self.add_query_param('ResourceList.' + str(i + 1) + '.Path' , ResourceLists[i].get('Path'))
-			if ResourceLists[i].get('Alias') is not None:
-				self.add_query_param('ResourceList.' + str(i + 1) + '.Alias' , ResourceLists[i].get('Alias'))
-
+	def set_ResourceLists(self, ResourceLists):
+		for depth1 in range(len(ResourceLists)):
+			if ResourceLists[depth1].get('Path') is not None:
+				self.add_query_param('ResourceList.' + str(depth1 + 1) + '.Path', ResourceLists[depth1].get('Path'))
+			if ResourceLists[depth1].get('Alias') is not None:
+				self.add_query_param('ResourceList.' + str(depth1 + 1) + '.Alias', ResourceLists[depth1].get('Alias'))
 
 	def get_FailAct(self):
 		return self.get_query_params().get('FailAct')
@@ -83,35 +65,17 @@ class ModifyFlowJobRequest(RpcRequest):
 	def set_FailAct(self,FailAct):
 		self.add_query_param('FailAct',FailAct)
 
-	def get_CustomVariables(self):
-		return self.get_query_params().get('CustomVariables')
-
-	def set_CustomVariables(self,CustomVariables):
-		self.add_query_param('CustomVariables',CustomVariables)
-
 	def get_Mode(self):
 		return self.get_query_params().get('Mode')
 
 	def set_Mode(self,Mode):
 		self.add_query_param('Mode',Mode)
 
-	def get_RetryInterval(self):
-		return self.get_query_params().get('RetryInterval')
-
-	def set_RetryInterval(self,RetryInterval):
-		self.add_query_param('RetryInterval',RetryInterval)
-
 	def get_MonitorConf(self):
 		return self.get_query_params().get('MonitorConf')
 
 	def set_MonitorConf(self,MonitorConf):
 		self.add_query_param('MonitorConf',MonitorConf)
-
-	def get_Name(self):
-		return self.get_query_params().get('Name')
-
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)
 
 	def get_Id(self):
 		return self.get_query_params().get('Id')
@@ -136,3 +100,45 @@ class ModifyFlowJobRequest(RpcRequest):
 
 	def set_ProjectId(self,ProjectId):
 		self.add_query_param('ProjectId',ProjectId)
+
+	def get_EnvConf(self):
+		return self.get_query_params().get('EnvConf')
+
+	def set_EnvConf(self,EnvConf):
+		self.add_query_param('EnvConf',EnvConf)
+
+	def get_MaxRunningTimeSec(self):
+		return self.get_query_params().get('MaxRunningTimeSec')
+
+	def set_MaxRunningTimeSec(self,MaxRunningTimeSec):
+		self.add_query_param('MaxRunningTimeSec',MaxRunningTimeSec)
+
+	def get_ClusterId(self):
+		return self.get_query_params().get('ClusterId')
+
+	def set_ClusterId(self,ClusterId):
+		self.add_query_param('ClusterId',ClusterId)
+
+	def get_Params(self):
+		return self.get_query_params().get('Params')
+
+	def set_Params(self,Params):
+		self.add_query_param('Params',Params)
+
+	def get_CustomVariables(self):
+		return self.get_query_params().get('CustomVariables')
+
+	def set_CustomVariables(self,CustomVariables):
+		self.add_query_param('CustomVariables',CustomVariables)
+
+	def get_RetryInterval(self):
+		return self.get_query_params().get('RetryInterval')
+
+	def set_RetryInterval(self,RetryInterval):
+		self.add_query_param('RetryInterval',RetryInterval)
+
+	def get_Name(self):
+		return self.get_query_params().get('Name')
+
+	def set_Name(self,Name):
+		self.add_query_param('Name',Name)

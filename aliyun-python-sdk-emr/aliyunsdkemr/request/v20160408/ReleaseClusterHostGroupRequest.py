@@ -24,6 +24,7 @@ class ReleaseClusterHostGroupRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'ReleaseClusterHostGroup','emr')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -36,6 +37,12 @@ class ReleaseClusterHostGroupRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_ClusterId(self):
+		return self.get_query_params().get('ClusterId')
+
+	def set_ClusterId(self,ClusterId):
+		self.add_query_param('ClusterId',ClusterId)
+
 	def get_HostGroupId(self):
 		return self.get_query_params().get('HostGroupId')
 
@@ -47,9 +54,3 @@ class ReleaseClusterHostGroupRequest(RpcRequest):
 
 	def set_InstanceIdList(self,InstanceIdList):
 		self.add_query_param('InstanceIdList',InstanceIdList)
-
-	def get_ClusterId(self):
-		return self.get_query_params().get('ClusterId')
-
-	def set_ClusterId(self,ClusterId):
-		self.add_query_param('ClusterId',ClusterId)

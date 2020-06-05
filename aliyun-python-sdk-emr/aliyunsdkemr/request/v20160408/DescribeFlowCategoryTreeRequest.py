@@ -24,6 +24,7 @@ class DescribeFlowCategoryTreeRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'DescribeFlowCategoryTree','emr')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -36,8 +37,26 @@ class DescribeFlowCategoryTreeRequest(RpcRequest):
 	def set_Type(self,Type):
 		self.add_query_param('Type',Type)
 
+	def get_Mode(self):
+		return self.get_query_params().get('Mode')
+
+	def set_Mode(self,Mode):
+		self.add_query_param('Mode',Mode)
+
+	def get_Keyword(self):
+		return self.get_query_params().get('Keyword')
+
+	def set_Keyword(self,Keyword):
+		self.add_query_param('Keyword',Keyword)
+
 	def get_ProjectId(self):
 		return self.get_query_params().get('ProjectId')
 
 	def set_ProjectId(self,ProjectId):
 		self.add_query_param('ProjectId',ProjectId)
+
+	def get_CategoryId(self):
+		return self.get_query_params().get('CategoryId')
+
+	def set_CategoryId(self,CategoryId):
+		self.add_query_param('CategoryId',CategoryId)

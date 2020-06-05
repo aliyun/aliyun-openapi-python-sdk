@@ -24,6 +24,7 @@ class CreateDataSourceRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'CreateDataSource','emr')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -42,23 +43,11 @@ class CreateDataSourceRequest(RpcRequest):
 	def set_NavParentId(self,NavParentId):
 		self.add_query_param('NavParentId',NavParentId)
 
-	def get_Name(self):
-		return self.get_query_params().get('Name')
-
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)
-
 	def get_Description(self):
 		return self.get_query_params().get('Description')
 
 	def set_Description(self,Description):
 		self.add_query_param('Description',Description)
-
-	def get_SourceType(self):
-		return self.get_query_params().get('SourceType')
-
-	def set_SourceType(self,SourceType):
-		self.add_query_param('SourceType',SourceType)
 
 	def get_Conf(self):
 		return self.get_query_params().get('Conf')
@@ -71,3 +60,21 @@ class CreateDataSourceRequest(RpcRequest):
 
 	def set_ClusterId(self,ClusterId):
 		self.add_query_param('ClusterId',ClusterId)
+
+	def get_ResourceGroupId(self):
+		return self.get_query_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self,ResourceGroupId):
+		self.add_query_param('ResourceGroupId',ResourceGroupId)
+
+	def get_Name(self):
+		return self.get_query_params().get('Name')
+
+	def set_Name(self,Name):
+		self.add_query_param('Name',Name)
+
+	def get_SourceType(self):
+		return self.get_query_params().get('SourceType')
+
+	def set_SourceType(self,SourceType):
+		self.add_query_param('SourceType',SourceType)

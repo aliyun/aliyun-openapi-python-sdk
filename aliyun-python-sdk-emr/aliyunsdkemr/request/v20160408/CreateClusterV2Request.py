@@ -24,6 +24,7 @@ class CreateClusterV2Request(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'CreateClusterV2','emr')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -60,29 +61,11 @@ class CreateClusterV2Request(RpcRequest):
 	def set_Configurations(self,Configurations):
 		self.add_query_param('Configurations',Configurations)
 
-	def get_IoOptimized(self):
-		return self.get_query_params().get('IoOptimized')
-
-	def set_IoOptimized(self,IoOptimized):
-		self.add_query_param('IoOptimized',IoOptimized)
-
-	def get_SecurityGroupId(self):
-		return self.get_query_params().get('SecurityGroupId')
-
-	def set_SecurityGroupId(self,SecurityGroupId):
-		self.add_query_param('SecurityGroupId',SecurityGroupId)
-
 	def get_SshEnable(self):
 		return self.get_query_params().get('SshEnable')
 
 	def set_SshEnable(self,SshEnable):
 		self.add_query_param('SshEnable',SshEnable)
-
-	def get_EasEnable(self):
-		return self.get_query_params().get('EasEnable')
-
-	def set_EasEnable(self,EasEnable):
-		self.add_query_param('EasEnable',EasEnable)
 
 	def get_KeyPairName(self):
 		return self.get_query_params().get('KeyPairName')
@@ -102,50 +85,49 @@ class CreateClusterV2Request(RpcRequest):
 	def set_SecurityGroupName(self,SecurityGroupName):
 		self.add_query_param('SecurityGroupName',SecurityGroupName)
 
-	def get_DepositType(self):
-		return self.get_query_params().get('DepositType')
-
-	def set_DepositType(self,DepositType):
-		self.add_query_param('DepositType',DepositType)
-
 	def get_MachineType(self):
 		return self.get_query_params().get('MachineType')
 
 	def set_MachineType(self,MachineType):
 		self.add_query_param('MachineType',MachineType)
 
+	def get_ResourceGroupId(self):
+		return self.get_query_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self,ResourceGroupId):
+		self.add_query_param('ResourceGroupId',ResourceGroupId)
+
 	def get_HostComponentInfos(self):
 		return self.get_query_params().get('HostComponentInfos')
 
-	def set_HostComponentInfos(self,HostComponentInfos):
-		for i in range(len(HostComponentInfos)):	
-			if HostComponentInfos[i].get('HostName') is not None:
-				self.add_query_param('HostComponentInfo.' + str(i + 1) + '.HostName' , HostComponentInfos[i].get('HostName'))
-			for j in range(len(HostComponentInfos[i].get('ComponentNameLists'))):
-				if HostComponentInfos[i].get('ComponentNameLists')[j] is not None:
-					self.add_query_param('HostComponentInfo.' + str(i + 1) + '.ComponentNameList.'+str(j + 1), HostComponentInfos[i].get('ComponentNameLists')[j])
-			if HostComponentInfos[i].get('ServiceName') is not None:
-				self.add_query_param('HostComponentInfo.' + str(i + 1) + '.ServiceName' , HostComponentInfos[i].get('ServiceName'))
+	def set_HostComponentInfos(self, HostComponentInfos):
+		for depth1 in range(len(HostComponentInfos)):
+			if HostComponentInfos[depth1].get('HostName') is not None:
+				self.add_query_param('HostComponentInfo.' + str(depth1 + 1) + '.HostName', HostComponentInfos[depth1].get('HostName'))
+			if HostComponentInfos[depth1].get('ComponentNameList') is not None:
+				for depth2 in range(len(HostComponentInfos[depth1].get('ComponentNameList'))):
+					if HostComponentInfos[depth1].get('ComponentNameList')[depth2] is not None:
+						self.add_query_param('HostComponentInfo.' + str(depth1 + 1) + '.ComponentNameList.' + str(depth2 + 1) , HostComponentInfos[depth1].get('ComponentNameList')[depth2])
+			if HostComponentInfos[depth1].get('ServiceName') is not None:
+				self.add_query_param('HostComponentInfo.' + str(depth1 + 1) + '.ServiceName', HostComponentInfos[depth1].get('ServiceName'))
 
+	def get_ClickHouseConf(self):
+		return self.get_query_params().get('ClickHouseConf')
+
+	def set_ClickHouseConf(self,ClickHouseConf):
+		self.add_query_param('ClickHouseConf',ClickHouseConf)
 
 	def get_BootstrapActions(self):
 		return self.get_query_params().get('BootstrapActions')
 
-	def set_BootstrapActions(self,BootstrapActions):
-		for i in range(len(BootstrapActions)):	
-			if BootstrapActions[i].get('Path') is not None:
-				self.add_query_param('BootstrapAction.' + str(i + 1) + '.Path' , BootstrapActions[i].get('Path'))
-			if BootstrapActions[i].get('Arg') is not None:
-				self.add_query_param('BootstrapAction.' + str(i + 1) + '.Arg' , BootstrapActions[i].get('Arg'))
-			if BootstrapActions[i].get('Name') is not None:
-				self.add_query_param('BootstrapAction.' + str(i + 1) + '.Name' , BootstrapActions[i].get('Name'))
-
-
-	def get_UseLocalMetaDb(self):
-		return self.get_query_params().get('UseLocalMetaDb')
-
-	def set_UseLocalMetaDb(self,UseLocalMetaDb):
-		self.add_query_param('UseLocalMetaDb',UseLocalMetaDb)
+	def set_BootstrapActions(self, BootstrapActions):
+		for depth1 in range(len(BootstrapActions)):
+			if BootstrapActions[depth1].get('Path') is not None:
+				self.add_query_param('BootstrapAction.' + str(depth1 + 1) + '.Path', BootstrapActions[depth1].get('Path'))
+			if BootstrapActions[depth1].get('Arg') is not None:
+				self.add_query_param('BootstrapAction.' + str(depth1 + 1) + '.Arg', BootstrapActions[depth1].get('Arg'))
+			if BootstrapActions[depth1].get('Name') is not None:
+				self.add_query_param('BootstrapAction.' + str(depth1 + 1) + '.Name', BootstrapActions[depth1].get('Name'))
 
 	def get_MetaStoreConf(self):
 		return self.get_query_params().get('MetaStoreConf')
@@ -159,24 +141,15 @@ class CreateClusterV2Request(RpcRequest):
 	def set_EmrVer(self,EmrVer):
 		self.add_query_param('EmrVer',EmrVer)
 
-	def get_UserInfos(self):
-		return self.get_query_params().get('UserInfos')
+	def get_Tags(self):
+		return self.get_query_params().get('Tags')
 
-	def set_UserInfos(self,UserInfos):
-		for i in range(len(UserInfos)):	
-			if UserInfos[i].get('Password') is not None:
-				self.add_query_param('UserInfo.' + str(i + 1) + '.Password' , UserInfos[i].get('Password'))
-			if UserInfos[i].get('UserId') is not None:
-				self.add_query_param('UserInfo.' + str(i + 1) + '.UserId' , UserInfos[i].get('UserId'))
-			if UserInfos[i].get('UserName') is not None:
-				self.add_query_param('UserInfo.' + str(i + 1) + '.UserName' , UserInfos[i].get('UserName'))
-
-
-	def get_UserDefinedEmrEcsRole(self):
-		return self.get_query_params().get('UserDefinedEmrEcsRole')
-
-	def set_UserDefinedEmrEcsRole(self,UserDefinedEmrEcsRole):
-		self.add_query_param('UserDefinedEmrEcsRole',UserDefinedEmrEcsRole)
+	def set_Tags(self, Tags):
+		for depth1 in range(len(Tags)):
+			if Tags[depth1].get('Value') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tags[depth1].get('Value'))
+			if Tags[depth1].get('Key') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tags[depth1].get('Key'))
 
 	def get_AuthorizeContent(self):
 		return self.get_query_params().get('AuthorizeContent')
@@ -196,18 +169,6 @@ class CreateClusterV2Request(RpcRequest):
 	def set_Period(self,Period):
 		self.add_query_param('Period',Period)
 
-	def get_WhiteListType(self):
-		return self.get_query_params().get('WhiteListType')
-
-	def set_WhiteListType(self,WhiteListType):
-		self.add_query_param('WhiteListType',WhiteListType)
-
-	def get_RelatedClusterId(self):
-		return self.get_query_params().get('RelatedClusterId')
-
-	def set_RelatedClusterId(self,RelatedClusterId):
-		self.add_query_param('RelatedClusterId',RelatedClusterId)
-
 	def get_InstanceGeneration(self):
 		return self.get_query_params().get('InstanceGeneration')
 
@@ -226,6 +187,12 @@ class CreateClusterV2Request(RpcRequest):
 	def set_ClusterType(self,ClusterType):
 		self.add_query_param('ClusterType',ClusterType)
 
+	def get_ExtraAttributes(self):
+		return self.get_query_params().get('ExtraAttributes')
+
+	def set_ExtraAttributes(self,ExtraAttributes):
+		self.add_query_param('ExtraAttributes',ExtraAttributes)
+
 	def get_AutoRenew(self):
 		return self.get_query_params().get('AutoRenew')
 
@@ -235,16 +202,10 @@ class CreateClusterV2Request(RpcRequest):
 	def get_OptionSoftWareLists(self):
 		return self.get_query_params().get('OptionSoftWareLists')
 
-	def set_OptionSoftWareLists(self,OptionSoftWareLists):
-		for i in range(len(OptionSoftWareLists)):	
-			if OptionSoftWareLists[i] is not None:
-				self.add_query_param('OptionSoftWareList.' + str(i + 1) , OptionSoftWareLists[i]);
-
-	def get_VpcId(self):
-		return self.get_query_params().get('VpcId')
-
-	def set_VpcId(self,VpcId):
-		self.add_query_param('VpcId',VpcId)
+	def set_OptionSoftWareLists(self, OptionSoftWareLists):
+		for depth1 in range(len(OptionSoftWareLists)):
+			if OptionSoftWareLists[depth1] is not None:
+				self.add_query_param('OptionSoftWareList.' + str(depth1 + 1) , OptionSoftWareLists[depth1])
 
 	def get_NetType(self):
 		return self.get_query_params().get('NetType')
@@ -258,60 +219,11 @@ class CreateClusterV2Request(RpcRequest):
 	def set_Name(self,Name):
 		self.add_query_param('Name',Name)
 
-	def get_HostGroups(self):
-		return self.get_query_params().get('HostGroups')
-
-	def set_HostGroups(self,HostGroups):
-		for i in range(len(HostGroups)):	
-			if HostGroups[i].get('Period') is not None:
-				self.add_query_param('HostGroup.' + str(i + 1) + '.Period' , HostGroups[i].get('Period'))
-			if HostGroups[i].get('SysDiskCapacity') is not None:
-				self.add_query_param('HostGroup.' + str(i + 1) + '.SysDiskCapacity' , HostGroups[i].get('SysDiskCapacity'))
-			if HostGroups[i].get('DiskCapacity') is not None:
-				self.add_query_param('HostGroup.' + str(i + 1) + '.DiskCapacity' , HostGroups[i].get('DiskCapacity'))
-			if HostGroups[i].get('SysDiskType') is not None:
-				self.add_query_param('HostGroup.' + str(i + 1) + '.SysDiskType' , HostGroups[i].get('SysDiskType'))
-			if HostGroups[i].get('ClusterId') is not None:
-				self.add_query_param('HostGroup.' + str(i + 1) + '.ClusterId' , HostGroups[i].get('ClusterId'))
-			if HostGroups[i].get('DiskType') is not None:
-				self.add_query_param('HostGroup.' + str(i + 1) + '.DiskType' , HostGroups[i].get('DiskType'))
-			if HostGroups[i].get('HostGroupName') is not None:
-				self.add_query_param('HostGroup.' + str(i + 1) + '.HostGroupName' , HostGroups[i].get('HostGroupName'))
-			if HostGroups[i].get('VSwitchId') is not None:
-				self.add_query_param('HostGroup.' + str(i + 1) + '.VSwitchId' , HostGroups[i].get('VSwitchId'))
-			if HostGroups[i].get('DiskCount') is not None:
-				self.add_query_param('HostGroup.' + str(i + 1) + '.DiskCount' , HostGroups[i].get('DiskCount'))
-			if HostGroups[i].get('AutoRenew') is not None:
-				self.add_query_param('HostGroup.' + str(i + 1) + '.AutoRenew' , HostGroups[i].get('AutoRenew'))
-			if HostGroups[i].get('GpuDriver') is not None:
-				self.add_query_param('HostGroup.' + str(i + 1) + '.GpuDriver' , HostGroups[i].get('GpuDriver'))
-			if HostGroups[i].get('HostGroupId') is not None:
-				self.add_query_param('HostGroup.' + str(i + 1) + '.HostGroupId' , HostGroups[i].get('HostGroupId'))
-			if HostGroups[i].get('NodeCount') is not None:
-				self.add_query_param('HostGroup.' + str(i + 1) + '.NodeCount' , HostGroups[i].get('NodeCount'))
-			if HostGroups[i].get('InstanceType') is not None:
-				self.add_query_param('HostGroup.' + str(i + 1) + '.InstanceType' , HostGroups[i].get('InstanceType'))
-			if HostGroups[i].get('Comment') is not None:
-				self.add_query_param('HostGroup.' + str(i + 1) + '.Comment' , HostGroups[i].get('Comment'))
-			if HostGroups[i].get('ChargeType') is not None:
-				self.add_query_param('HostGroup.' + str(i + 1) + '.ChargeType' , HostGroups[i].get('ChargeType'))
-			if HostGroups[i].get('CreateType') is not None:
-				self.add_query_param('HostGroup.' + str(i + 1) + '.CreateType' , HostGroups[i].get('CreateType'))
-			if HostGroups[i].get('HostGroupType') is not None:
-				self.add_query_param('HostGroup.' + str(i + 1) + '.HostGroupType' , HostGroups[i].get('HostGroupType'))
-
-
 	def get_ZoneId(self):
 		return self.get_query_params().get('ZoneId')
 
 	def set_ZoneId(self,ZoneId):
 		self.add_query_param('ZoneId',ZoneId)
-
-	def get_ChargeType(self):
-		return self.get_query_params().get('ChargeType')
-
-	def set_ChargeType(self,ChargeType):
-		self.add_query_param('ChargeType',ChargeType)
 
 	def get_UseCustomHiveMetaDB(self):
 		return self.get_query_params().get('UseCustomHiveMetaDB')
@@ -319,33 +231,156 @@ class CreateClusterV2Request(RpcRequest):
 	def set_UseCustomHiveMetaDB(self,UseCustomHiveMetaDB):
 		self.add_query_param('UseCustomHiveMetaDB',UseCustomHiveMetaDB)
 
+	def get_InitCustomHiveMetaDB(self):
+		return self.get_query_params().get('InitCustomHiveMetaDB')
+
+	def set_InitCustomHiveMetaDB(self,InitCustomHiveMetaDB):
+		self.add_query_param('InitCustomHiveMetaDB',InitCustomHiveMetaDB)
+
+	def get_IoOptimized(self):
+		return self.get_query_params().get('IoOptimized')
+
+	def set_IoOptimized(self,IoOptimized):
+		self.add_query_param('IoOptimized',IoOptimized)
+
+	def get_SecurityGroupId(self):
+		return self.get_query_params().get('SecurityGroupId')
+
+	def set_SecurityGroupId(self,SecurityGroupId):
+		self.add_query_param('SecurityGroupId',SecurityGroupId)
+
+	def get_EasEnable(self):
+		return self.get_query_params().get('EasEnable')
+
+	def set_EasEnable(self,EasEnable):
+		self.add_query_param('EasEnable',EasEnable)
+
+	def get_DepositType(self):
+		return self.get_query_params().get('DepositType')
+
+	def set_DepositType(self,DepositType):
+		self.add_query_param('DepositType',DepositType)
+
+	def get_UseLocalMetaDb(self):
+		return self.get_query_params().get('UseLocalMetaDb')
+
+	def set_UseLocalMetaDb(self,UseLocalMetaDb):
+		self.add_query_param('UseLocalMetaDb',UseLocalMetaDb)
+
+	def get_UserInfos(self):
+		return self.get_query_params().get('UserInfos')
+
+	def set_UserInfos(self, UserInfos):
+		for depth1 in range(len(UserInfos)):
+			if UserInfos[depth1].get('Password') is not None:
+				self.add_query_param('UserInfo.' + str(depth1 + 1) + '.Password', UserInfos[depth1].get('Password'))
+			if UserInfos[depth1].get('UserId') is not None:
+				self.add_query_param('UserInfo.' + str(depth1 + 1) + '.UserId', UserInfos[depth1].get('UserId'))
+			if UserInfos[depth1].get('UserName') is not None:
+				self.add_query_param('UserInfo.' + str(depth1 + 1) + '.UserName', UserInfos[depth1].get('UserName'))
+
+	def get_UserDefinedEmrEcsRole(self):
+		return self.get_query_params().get('UserDefinedEmrEcsRole')
+
+	def set_UserDefinedEmrEcsRole(self,UserDefinedEmrEcsRole):
+		self.add_query_param('UserDefinedEmrEcsRole',UserDefinedEmrEcsRole)
+
+	def get_WhiteListType(self):
+		return self.get_query_params().get('WhiteListType')
+
+	def set_WhiteListType(self,WhiteListType):
+		self.add_query_param('WhiteListType',WhiteListType)
+
+	def get_RelatedClusterId(self):
+		return self.get_query_params().get('RelatedClusterId')
+
+	def set_RelatedClusterId(self,RelatedClusterId):
+		self.add_query_param('RelatedClusterId',RelatedClusterId)
+
+	def get_VpcId(self):
+		return self.get_query_params().get('VpcId')
+
+	def set_VpcId(self,VpcId):
+		self.add_query_param('VpcId',VpcId)
+
+	def get_HostGroups(self):
+		return self.get_query_params().get('HostGroups')
+
+	def set_HostGroups(self, HostGroups):
+		for depth1 in range(len(HostGroups)):
+			if HostGroups[depth1].get('Period') is not None:
+				self.add_query_param('HostGroup.' + str(depth1 + 1) + '.Period', HostGroups[depth1].get('Period'))
+			if HostGroups[depth1].get('SysDiskCapacity') is not None:
+				self.add_query_param('HostGroup.' + str(depth1 + 1) + '.SysDiskCapacity', HostGroups[depth1].get('SysDiskCapacity'))
+			if HostGroups[depth1].get('DiskCapacity') is not None:
+				self.add_query_param('HostGroup.' + str(depth1 + 1) + '.DiskCapacity', HostGroups[depth1].get('DiskCapacity'))
+			if HostGroups[depth1].get('SysDiskType') is not None:
+				self.add_query_param('HostGroup.' + str(depth1 + 1) + '.SysDiskType', HostGroups[depth1].get('SysDiskType'))
+			if HostGroups[depth1].get('ClusterId') is not None:
+				self.add_query_param('HostGroup.' + str(depth1 + 1) + '.ClusterId', HostGroups[depth1].get('ClusterId'))
+			if HostGroups[depth1].get('DiskType') is not None:
+				self.add_query_param('HostGroup.' + str(depth1 + 1) + '.DiskType', HostGroups[depth1].get('DiskType'))
+			if HostGroups[depth1].get('HostGroupName') is not None:
+				self.add_query_param('HostGroup.' + str(depth1 + 1) + '.HostGroupName', HostGroups[depth1].get('HostGroupName'))
+			if HostGroups[depth1].get('VSwitchId') is not None:
+				self.add_query_param('HostGroup.' + str(depth1 + 1) + '.VSwitchId', HostGroups[depth1].get('VSwitchId'))
+			if HostGroups[depth1].get('DiskCount') is not None:
+				self.add_query_param('HostGroup.' + str(depth1 + 1) + '.DiskCount', HostGroups[depth1].get('DiskCount'))
+			if HostGroups[depth1].get('AutoRenew') is not None:
+				self.add_query_param('HostGroup.' + str(depth1 + 1) + '.AutoRenew', HostGroups[depth1].get('AutoRenew'))
+			if HostGroups[depth1].get('GpuDriver') is not None:
+				self.add_query_param('HostGroup.' + str(depth1 + 1) + '.GpuDriver', HostGroups[depth1].get('GpuDriver'))
+			if HostGroups[depth1].get('HostGroupId') is not None:
+				self.add_query_param('HostGroup.' + str(depth1 + 1) + '.HostGroupId', HostGroups[depth1].get('HostGroupId'))
+			if HostGroups[depth1].get('NodeCount') is not None:
+				self.add_query_param('HostGroup.' + str(depth1 + 1) + '.NodeCount', HostGroups[depth1].get('NodeCount'))
+			if HostGroups[depth1].get('InstanceType') is not None:
+				self.add_query_param('HostGroup.' + str(depth1 + 1) + '.InstanceType', HostGroups[depth1].get('InstanceType'))
+			if HostGroups[depth1].get('Comment') is not None:
+				self.add_query_param('HostGroup.' + str(depth1 + 1) + '.Comment', HostGroups[depth1].get('Comment'))
+			if HostGroups[depth1].get('ChargeType') is not None:
+				self.add_query_param('HostGroup.' + str(depth1 + 1) + '.ChargeType', HostGroups[depth1].get('ChargeType'))
+			if HostGroups[depth1].get('CreateType') is not None:
+				self.add_query_param('HostGroup.' + str(depth1 + 1) + '.CreateType', HostGroups[depth1].get('CreateType'))
+			if HostGroups[depth1].get('HostGroupType') is not None:
+				self.add_query_param('HostGroup.' + str(depth1 + 1) + '.HostGroupType', HostGroups[depth1].get('HostGroupType'))
+
+	def get_ChargeType(self):
+		return self.get_query_params().get('ChargeType')
+
+	def set_ChargeType(self,ChargeType):
+		self.add_query_param('ChargeType',ChargeType)
+
+	def get_ServiceInfos(self):
+		return self.get_query_params().get('ServiceInfos')
+
+	def set_ServiceInfos(self, ServiceInfos):
+		for depth1 in range(len(ServiceInfos)):
+			if ServiceInfos[depth1].get('ServiceVersion') is not None:
+				self.add_query_param('ServiceInfo.' + str(depth1 + 1) + '.ServiceVersion', ServiceInfos[depth1].get('ServiceVersion'))
+			if ServiceInfos[depth1].get('ServiceName') is not None:
+				self.add_query_param('ServiceInfo.' + str(depth1 + 1) + '.ServiceName', ServiceInfos[depth1].get('ServiceName'))
+
 	def get_Configs(self):
 		return self.get_query_params().get('Configs')
 
-	def set_Configs(self,Configs):
-		for i in range(len(Configs)):	
-			if Configs[i].get('ConfigKey') is not None:
-				self.add_query_param('Config.' + str(i + 1) + '.ConfigKey' , Configs[i].get('ConfigKey'))
-			if Configs[i].get('FileName') is not None:
-				self.add_query_param('Config.' + str(i + 1) + '.FileName' , Configs[i].get('FileName'))
-			if Configs[i].get('Encrypt') is not None:
-				self.add_query_param('Config.' + str(i + 1) + '.Encrypt' , Configs[i].get('Encrypt'))
-			if Configs[i].get('Replace') is not None:
-				self.add_query_param('Config.' + str(i + 1) + '.Replace' , Configs[i].get('Replace'))
-			if Configs[i].get('ConfigValue') is not None:
-				self.add_query_param('Config.' + str(i + 1) + '.ConfigValue' , Configs[i].get('ConfigValue'))
-			if Configs[i].get('ServiceName') is not None:
-				self.add_query_param('Config.' + str(i + 1) + '.ServiceName' , Configs[i].get('ServiceName'))
-
+	def set_Configs(self, Configs):
+		for depth1 in range(len(Configs)):
+			if Configs[depth1].get('ConfigKey') is not None:
+				self.add_query_param('Config.' + str(depth1 + 1) + '.ConfigKey', Configs[depth1].get('ConfigKey'))
+			if Configs[depth1].get('FileName') is not None:
+				self.add_query_param('Config.' + str(depth1 + 1) + '.FileName', Configs[depth1].get('FileName'))
+			if Configs[depth1].get('Encrypt') is not None:
+				self.add_query_param('Config.' + str(depth1 + 1) + '.Encrypt', Configs[depth1].get('Encrypt'))
+			if Configs[depth1].get('Replace') is not None:
+				self.add_query_param('Config.' + str(depth1 + 1) + '.Replace', Configs[depth1].get('Replace'))
+			if Configs[depth1].get('ConfigValue') is not None:
+				self.add_query_param('Config.' + str(depth1 + 1) + '.ConfigValue', Configs[depth1].get('ConfigValue'))
+			if Configs[depth1].get('ServiceName') is not None:
+				self.add_query_param('Config.' + str(depth1 + 1) + '.ServiceName', Configs[depth1].get('ServiceName'))
 
 	def get_HighAvailabilityEnable(self):
 		return self.get_query_params().get('HighAvailabilityEnable')
 
 	def set_HighAvailabilityEnable(self,HighAvailabilityEnable):
 		self.add_query_param('HighAvailabilityEnable',HighAvailabilityEnable)
-
-	def get_InitCustomHiveMetaDB(self):
-		return self.get_query_params().get('InitCustomHiveMetaDB')
-
-	def set_InitCustomHiveMetaDB(self,InitCustomHiveMetaDB):
-		self.add_query_param('InitCustomHiveMetaDB',InitCustomHiveMetaDB)

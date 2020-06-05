@@ -24,6 +24,7 @@ class CreateExecutionPlanRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'CreateExecutionPlan','emr')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -60,24 +61,6 @@ class CreateExecutionPlanRequest(RpcRequest):
 	def set_Configurations(self,Configurations):
 		self.add_query_param('Configurations',Configurations)
 
-	def get_IoOptimized(self):
-		return self.get_query_params().get('IoOptimized')
-
-	def set_IoOptimized(self,IoOptimized):
-		self.add_query_param('IoOptimized',IoOptimized)
-
-	def get_SecurityGroupId(self):
-		return self.get_query_params().get('SecurityGroupId')
-
-	def set_SecurityGroupId(self,SecurityGroupId):
-		self.add_query_param('SecurityGroupId',SecurityGroupId)
-
-	def get_EasEnable(self):
-		return self.get_query_params().get('EasEnable')
-
-	def set_EasEnable(self,EasEnable):
-		self.add_query_param('EasEnable',EasEnable)
-
 	def get_CreateClusterOnDemand(self):
 		return self.get_query_params().get('CreateClusterOnDemand')
 
@@ -90,38 +73,17 @@ class CreateExecutionPlanRequest(RpcRequest):
 	def set_StartTime(self,StartTime):
 		self.add_query_param('StartTime',StartTime)
 
-	def get_JobIdLists(self):
-		return self.get_query_params().get('JobIdLists')
-
-	def set_JobIdLists(self,JobIdLists):
-		for i in range(len(JobIdLists)):	
-			if JobIdLists[i] is not None:
-				self.add_query_param('JobIdList.' + str(i + 1) , JobIdLists[i]);
-
-	def get_DayOfMonth(self):
-		return self.get_query_params().get('DayOfMonth')
-
-	def set_DayOfMonth(self,DayOfMonth):
-		self.add_query_param('DayOfMonth',DayOfMonth)
-
 	def get_BootstrapActions(self):
 		return self.get_query_params().get('BootstrapActions')
 
-	def set_BootstrapActions(self,BootstrapActions):
-		for i in range(len(BootstrapActions)):	
-			if BootstrapActions[i].get('Path') is not None:
-				self.add_query_param('BootstrapAction.' + str(i + 1) + '.Path' , BootstrapActions[i].get('Path'))
-			if BootstrapActions[i].get('Arg') is not None:
-				self.add_query_param('BootstrapAction.' + str(i + 1) + '.Arg' , BootstrapActions[i].get('Arg'))
-			if BootstrapActions[i].get('Name') is not None:
-				self.add_query_param('BootstrapAction.' + str(i + 1) + '.Name' , BootstrapActions[i].get('Name'))
-
-
-	def get_UseLocalMetaDb(self):
-		return self.get_query_params().get('UseLocalMetaDb')
-
-	def set_UseLocalMetaDb(self,UseLocalMetaDb):
-		self.add_query_param('UseLocalMetaDb',UseLocalMetaDb)
+	def set_BootstrapActions(self, BootstrapActions):
+		for depth1 in range(len(BootstrapActions)):
+			if BootstrapActions[depth1].get('Path') is not None:
+				self.add_query_param('BootstrapAction.' + str(depth1 + 1) + '.Path', BootstrapActions[depth1].get('Path'))
+			if BootstrapActions[depth1].get('Arg') is not None:
+				self.add_query_param('BootstrapAction.' + str(depth1 + 1) + '.Arg', BootstrapActions[depth1].get('Arg'))
+			if BootstrapActions[depth1].get('Name') is not None:
+				self.add_query_param('BootstrapAction.' + str(depth1 + 1) + '.Name', BootstrapActions[depth1].get('Name'))
 
 	def get_EmrVer(self):
 		return self.get_query_params().get('EmrVer')
@@ -129,29 +91,11 @@ class CreateExecutionPlanRequest(RpcRequest):
 	def set_EmrVer(self,EmrVer):
 		self.add_query_param('EmrVer',EmrVer)
 
-	def get_UserDefinedEmrEcsRole(self):
-		return self.get_query_params().get('UserDefinedEmrEcsRole')
-
-	def set_UserDefinedEmrEcsRole(self,UserDefinedEmrEcsRole):
-		self.add_query_param('UserDefinedEmrEcsRole',UserDefinedEmrEcsRole)
-
 	def get_IsOpenPublicIp(self):
 		return self.get_query_params().get('IsOpenPublicIp')
 
 	def set_IsOpenPublicIp(self,IsOpenPublicIp):
 		self.add_query_param('IsOpenPublicIp',IsOpenPublicIp)
-
-	def get_ClusterId(self):
-		return self.get_query_params().get('ClusterId')
-
-	def set_ClusterId(self,ClusterId):
-		self.add_query_param('ClusterId',ClusterId)
-
-	def get_TimeUnit(self):
-		return self.get_query_params().get('TimeUnit')
-
-	def set_TimeUnit(self,TimeUnit):
-		self.add_query_param('TimeUnit',TimeUnit)
 
 	def get_InstanceGeneration(self):
 		return self.get_query_params().get('InstanceGeneration')
@@ -174,16 +118,10 @@ class CreateExecutionPlanRequest(RpcRequest):
 	def get_OptionSoftWareLists(self):
 		return self.get_query_params().get('OptionSoftWareLists')
 
-	def set_OptionSoftWareLists(self,OptionSoftWareLists):
-		for i in range(len(OptionSoftWareLists)):	
-			if OptionSoftWareLists[i] is not None:
-				self.add_query_param('OptionSoftWareList.' + str(i + 1) , OptionSoftWareLists[i]);
-
-	def get_VpcId(self):
-		return self.get_query_params().get('VpcId')
-
-	def set_VpcId(self,VpcId):
-		self.add_query_param('VpcId',VpcId)
+	def set_OptionSoftWareLists(self, OptionSoftWareLists):
+		for depth1 in range(len(OptionSoftWareLists)):
+			if OptionSoftWareLists[depth1] is not None:
+				self.add_query_param('OptionSoftWareList.' + str(depth1 + 1) , OptionSoftWareLists[depth1])
 
 	def get_NetType(self):
 		return self.get_query_params().get('NetType')
@@ -194,41 +132,28 @@ class CreateExecutionPlanRequest(RpcRequest):
 	def get_EcsOrders(self):
 		return self.get_query_params().get('EcsOrders')
 
-	def set_EcsOrders(self,EcsOrders):
-		for i in range(len(EcsOrders)):	
-			if EcsOrders[i].get('NodeType') is not None:
-				self.add_query_param('EcsOrder.' + str(i + 1) + '.NodeType' , EcsOrders[i].get('NodeType'))
-			if EcsOrders[i].get('DiskCount') is not None:
-				self.add_query_param('EcsOrder.' + str(i + 1) + '.DiskCount' , EcsOrders[i].get('DiskCount'))
-			if EcsOrders[i].get('NodeCount') is not None:
-				self.add_query_param('EcsOrder.' + str(i + 1) + '.NodeCount' , EcsOrders[i].get('NodeCount'))
-			if EcsOrders[i].get('DiskCapacity') is not None:
-				self.add_query_param('EcsOrder.' + str(i + 1) + '.DiskCapacity' , EcsOrders[i].get('DiskCapacity'))
-			if EcsOrders[i].get('Index') is not None:
-				self.add_query_param('EcsOrder.' + str(i + 1) + '.Index' , EcsOrders[i].get('Index'))
-			if EcsOrders[i].get('InstanceType') is not None:
-				self.add_query_param('EcsOrder.' + str(i + 1) + '.InstanceType' , EcsOrders[i].get('InstanceType'))
-			if EcsOrders[i].get('DiskType') is not None:
-				self.add_query_param('EcsOrder.' + str(i + 1) + '.DiskType' , EcsOrders[i].get('DiskType'))
-
-
-	def get_WorkflowDefinition(self):
-		return self.get_query_params().get('WorkflowDefinition')
-
-	def set_WorkflowDefinition(self,WorkflowDefinition):
-		self.add_query_param('WorkflowDefinition',WorkflowDefinition)
+	def set_EcsOrders(self, EcsOrders):
+		for depth1 in range(len(EcsOrders)):
+			if EcsOrders[depth1].get('NodeType') is not None:
+				self.add_query_param('EcsOrder.' + str(depth1 + 1) + '.NodeType', EcsOrders[depth1].get('NodeType'))
+			if EcsOrders[depth1].get('DiskCount') is not None:
+				self.add_query_param('EcsOrder.' + str(depth1 + 1) + '.DiskCount', EcsOrders[depth1].get('DiskCount'))
+			if EcsOrders[depth1].get('NodeCount') is not None:
+				self.add_query_param('EcsOrder.' + str(depth1 + 1) + '.NodeCount', EcsOrders[depth1].get('NodeCount'))
+			if EcsOrders[depth1].get('DiskCapacity') is not None:
+				self.add_query_param('EcsOrder.' + str(depth1 + 1) + '.DiskCapacity', EcsOrders[depth1].get('DiskCapacity'))
+			if EcsOrders[depth1].get('Index') is not None:
+				self.add_query_param('EcsOrder.' + str(depth1 + 1) + '.Index', EcsOrders[depth1].get('Index'))
+			if EcsOrders[depth1].get('InstanceType') is not None:
+				self.add_query_param('EcsOrder.' + str(depth1 + 1) + '.InstanceType', EcsOrders[depth1].get('InstanceType'))
+			if EcsOrders[depth1].get('DiskType') is not None:
+				self.add_query_param('EcsOrder.' + str(depth1 + 1) + '.DiskType', EcsOrders[depth1].get('DiskType'))
 
 	def get_Name(self):
 		return self.get_query_params().get('Name')
 
 	def set_Name(self,Name):
 		self.add_query_param('Name',Name)
-
-	def get_DayOfWeek(self):
-		return self.get_query_params().get('DayOfWeek')
-
-	def set_DayOfWeek(self,DayOfWeek):
-		self.add_query_param('DayOfWeek',DayOfWeek)
 
 	def get_ZoneId(self):
 		return self.get_query_params().get('ZoneId')
@@ -242,6 +167,86 @@ class CreateExecutionPlanRequest(RpcRequest):
 	def set_UseCustomHiveMetaDB(self,UseCustomHiveMetaDB):
 		self.add_query_param('UseCustomHiveMetaDB',UseCustomHiveMetaDB)
 
+	def get_InitCustomHiveMetaDB(self):
+		return self.get_query_params().get('InitCustomHiveMetaDB')
+
+	def set_InitCustomHiveMetaDB(self,InitCustomHiveMetaDB):
+		self.add_query_param('InitCustomHiveMetaDB',InitCustomHiveMetaDB)
+
+	def get_IoOptimized(self):
+		return self.get_query_params().get('IoOptimized')
+
+	def set_IoOptimized(self,IoOptimized):
+		self.add_query_param('IoOptimized',IoOptimized)
+
+	def get_SecurityGroupId(self):
+		return self.get_query_params().get('SecurityGroupId')
+
+	def set_SecurityGroupId(self,SecurityGroupId):
+		self.add_query_param('SecurityGroupId',SecurityGroupId)
+
+	def get_EasEnable(self):
+		return self.get_query_params().get('EasEnable')
+
+	def set_EasEnable(self,EasEnable):
+		self.add_query_param('EasEnable',EasEnable)
+
+	def get_JobIdLists(self):
+		return self.get_query_params().get('JobIdLists')
+
+	def set_JobIdLists(self, JobIdLists):
+		for depth1 in range(len(JobIdLists)):
+			if JobIdLists[depth1] is not None:
+				self.add_query_param('JobIdList.' + str(depth1 + 1) , JobIdLists[depth1])
+
+	def get_DayOfMonth(self):
+		return self.get_query_params().get('DayOfMonth')
+
+	def set_DayOfMonth(self,DayOfMonth):
+		self.add_query_param('DayOfMonth',DayOfMonth)
+
+	def get_UseLocalMetaDb(self):
+		return self.get_query_params().get('UseLocalMetaDb')
+
+	def set_UseLocalMetaDb(self,UseLocalMetaDb):
+		self.add_query_param('UseLocalMetaDb',UseLocalMetaDb)
+
+	def get_UserDefinedEmrEcsRole(self):
+		return self.get_query_params().get('UserDefinedEmrEcsRole')
+
+	def set_UserDefinedEmrEcsRole(self,UserDefinedEmrEcsRole):
+		self.add_query_param('UserDefinedEmrEcsRole',UserDefinedEmrEcsRole)
+
+	def get_ClusterId(self):
+		return self.get_query_params().get('ClusterId')
+
+	def set_ClusterId(self,ClusterId):
+		self.add_query_param('ClusterId',ClusterId)
+
+	def get_TimeUnit(self):
+		return self.get_query_params().get('TimeUnit')
+
+	def set_TimeUnit(self,TimeUnit):
+		self.add_query_param('TimeUnit',TimeUnit)
+
+	def get_VpcId(self):
+		return self.get_query_params().get('VpcId')
+
+	def set_VpcId(self,VpcId):
+		self.add_query_param('VpcId',VpcId)
+
+	def get_WorkflowDefinition(self):
+		return self.get_query_params().get('WorkflowDefinition')
+
+	def set_WorkflowDefinition(self,WorkflowDefinition):
+		self.add_query_param('WorkflowDefinition',WorkflowDefinition)
+
+	def get_DayOfWeek(self):
+		return self.get_query_params().get('DayOfWeek')
+
+	def set_DayOfWeek(self,DayOfWeek):
+		self.add_query_param('DayOfWeek',DayOfWeek)
+
 	def get_Strategy(self):
 		return self.get_query_params().get('Strategy')
 
@@ -251,33 +256,26 @@ class CreateExecutionPlanRequest(RpcRequest):
 	def get_Configs(self):
 		return self.get_query_params().get('Configs')
 
-	def set_Configs(self,Configs):
-		for i in range(len(Configs)):	
-			if Configs[i].get('ConfigKey') is not None:
-				self.add_query_param('Config.' + str(i + 1) + '.ConfigKey' , Configs[i].get('ConfigKey'))
-			if Configs[i].get('FileName') is not None:
-				self.add_query_param('Config.' + str(i + 1) + '.FileName' , Configs[i].get('FileName'))
-			if Configs[i].get('Encrypt') is not None:
-				self.add_query_param('Config.' + str(i + 1) + '.Encrypt' , Configs[i].get('Encrypt'))
-			if Configs[i].get('Replace') is not None:
-				self.add_query_param('Config.' + str(i + 1) + '.Replace' , Configs[i].get('Replace'))
-			if Configs[i].get('ConfigValue') is not None:
-				self.add_query_param('Config.' + str(i + 1) + '.ConfigValue' , Configs[i].get('ConfigValue'))
-			if Configs[i].get('ServiceName') is not None:
-				self.add_query_param('Config.' + str(i + 1) + '.ServiceName' , Configs[i].get('ServiceName'))
-
+	def set_Configs(self, Configs):
+		for depth1 in range(len(Configs)):
+			if Configs[depth1].get('ConfigKey') is not None:
+				self.add_query_param('Config.' + str(depth1 + 1) + '.ConfigKey', Configs[depth1].get('ConfigKey'))
+			if Configs[depth1].get('FileName') is not None:
+				self.add_query_param('Config.' + str(depth1 + 1) + '.FileName', Configs[depth1].get('FileName'))
+			if Configs[depth1].get('Encrypt') is not None:
+				self.add_query_param('Config.' + str(depth1 + 1) + '.Encrypt', Configs[depth1].get('Encrypt'))
+			if Configs[depth1].get('Replace') is not None:
+				self.add_query_param('Config.' + str(depth1 + 1) + '.Replace', Configs[depth1].get('Replace'))
+			if Configs[depth1].get('ConfigValue') is not None:
+				self.add_query_param('Config.' + str(depth1 + 1) + '.ConfigValue', Configs[depth1].get('ConfigValue'))
+			if Configs[depth1].get('ServiceName') is not None:
+				self.add_query_param('Config.' + str(depth1 + 1) + '.ServiceName', Configs[depth1].get('ServiceName'))
 
 	def get_HighAvailabilityEnable(self):
 		return self.get_query_params().get('HighAvailabilityEnable')
 
 	def set_HighAvailabilityEnable(self,HighAvailabilityEnable):
 		self.add_query_param('HighAvailabilityEnable',HighAvailabilityEnable)
-
-	def get_InitCustomHiveMetaDB(self):
-		return self.get_query_params().get('InitCustomHiveMetaDB')
-
-	def set_InitCustomHiveMetaDB(self,InitCustomHiveMetaDB):
-		self.add_query_param('InitCustomHiveMetaDB',InitCustomHiveMetaDB)
 
 	def get_LogEnable(self):
 		return self.get_query_params().get('LogEnable')

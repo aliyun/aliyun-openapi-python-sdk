@@ -24,6 +24,7 @@ class ModifyClusterServiceConfigRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'ModifyClusterServiceConfig','emr')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -42,17 +43,37 @@ class ModifyClusterServiceConfigRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_ConfigType(self):
-		return self.get_query_params().get('ConfigType')
-
-	def set_ConfigType(self,ConfigType):
-		self.add_query_param('ConfigType',ConfigType)
-
 	def get_HostInstanceId(self):
 		return self.get_query_params().get('HostInstanceId')
 
 	def set_HostInstanceId(self,HostInstanceId):
 		self.add_query_param('HostInstanceId',HostInstanceId)
+
+	def get_ServiceName(self):
+		return self.get_query_params().get('ServiceName')
+
+	def set_ServiceName(self,ServiceName):
+		self.add_query_param('ServiceName',ServiceName)
+
+	def get_GatewayClusterIdLists(self):
+		return self.get_query_params().get('GatewayClusterIdLists')
+
+	def set_GatewayClusterIdLists(self, GatewayClusterIdLists):
+		for depth1 in range(len(GatewayClusterIdLists)):
+			if GatewayClusterIdLists[depth1] is not None:
+				self.add_query_param('GatewayClusterIdList.' + str(depth1 + 1) , GatewayClusterIdLists[depth1])
+
+	def get_ConfigParams(self):
+		return self.get_query_params().get('ConfigParams')
+
+	def set_ConfigParams(self,ConfigParams):
+		self.add_query_param('ConfigParams',ConfigParams)
+
+	def get_ConfigType(self):
+		return self.get_query_params().get('ConfigType')
+
+	def set_ConfigType(self,ConfigType):
+		self.add_query_param('ConfigType',ConfigType)
 
 	def get_GroupId(self):
 		return self.get_query_params().get('GroupId')
@@ -72,28 +93,8 @@ class ModifyClusterServiceConfigRequest(RpcRequest):
 	def set_CustomConfigParams(self,CustomConfigParams):
 		self.add_query_param('CustomConfigParams',CustomConfigParams)
 
-	def get_ServiceName(self):
-		return self.get_query_params().get('ServiceName')
-
-	def set_ServiceName(self,ServiceName):
-		self.add_query_param('ServiceName',ServiceName)
-
 	def get_Comment(self):
 		return self.get_query_params().get('Comment')
 
 	def set_Comment(self,Comment):
 		self.add_query_param('Comment',Comment)
-
-	def get_GatewayClusterIdLists(self):
-		return self.get_query_params().get('GatewayClusterIdLists')
-
-	def set_GatewayClusterIdLists(self,GatewayClusterIdLists):
-		for i in range(len(GatewayClusterIdLists)):	
-			if GatewayClusterIdLists[i] is not None:
-				self.add_query_param('GatewayClusterIdList.' + str(i + 1) , GatewayClusterIdLists[i]);
-
-	def get_ConfigParams(self):
-		return self.get_query_params().get('ConfigParams')
-
-	def set_ConfigParams(self,ConfigParams):
-		self.add_query_param('ConfigParams',ConfigParams)

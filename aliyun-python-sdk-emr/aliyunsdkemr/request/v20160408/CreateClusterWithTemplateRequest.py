@@ -24,6 +24,7 @@ class CreateClusterWithTemplateRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'CreateClusterWithTemplate','emr')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -47,6 +48,12 @@ class CreateClusterWithTemplateRequest(RpcRequest):
 
 	def set_ClusterName(self,ClusterName):
 		self.add_query_param('ClusterName',ClusterName)
+
+	def get_ResourceGroupId(self):
+		return self.get_query_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self,ResourceGroupId):
+		self.add_query_param('ResourceGroupId',ResourceGroupId)
 
 	def get_TemplateBizId(self):
 		return self.get_query_params().get('TemplateBizId')

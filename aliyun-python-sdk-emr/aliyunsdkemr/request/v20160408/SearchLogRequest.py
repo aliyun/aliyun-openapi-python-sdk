@@ -24,6 +24,7 @@ class SearchLogRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'SearchLog','emr')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -35,6 +36,18 @@ class SearchLogRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+
+	def get_Line(self):
+		return self.get_query_params().get('Line')
+
+	def set_Line(self,Line):
+		self.add_query_param('Line',Line)
+
+	def get_HostName(self):
+		return self.get_query_params().get('HostName')
+
+	def set_HostName(self,HostName):
+		self.add_query_param('HostName',HostName)
 
 	def get_LogstoreName(self):
 		return self.get_query_params().get('LogstoreName')
@@ -54,12 +67,6 @@ class SearchLogRequest(RpcRequest):
 	def set_Offset(self,Offset):
 		self.add_query_param('Offset',Offset)
 
-	def get_Line(self):
-		return self.get_query_params().get('Line')
-
-	def set_Line(self,Line):
-		self.add_query_param('Line',Line)
-
 	def get_ClusterId(self):
 		return self.get_query_params().get('ClusterId')
 
@@ -77,12 +84,6 @@ class SearchLogRequest(RpcRequest):
 
 	def set_HostInnerIp(self,HostInnerIp):
 		self.add_query_param('HostInnerIp',HostInnerIp)
-
-	def get_HostName(self):
-		return self.get_query_params().get('HostName')
-
-	def set_HostName(self,HostName):
-		self.add_query_param('HostName',HostName)
 
 	def get_ToTimestamp(self):
 		return self.get_query_params().get('ToTimestamp')

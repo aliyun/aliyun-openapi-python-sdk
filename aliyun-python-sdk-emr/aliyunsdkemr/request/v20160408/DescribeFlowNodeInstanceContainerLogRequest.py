@@ -24,6 +24,7 @@ class DescribeFlowNodeInstanceContainerLogRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'DescribeFlowNodeInstanceContainerLog','emr')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -42,29 +43,29 @@ class DescribeFlowNodeInstanceContainerLogRequest(RpcRequest):
 	def set_LogName(self,LogName):
 		self.add_query_param('LogName',LogName)
 
-	def get_AppId(self):
-		return self.get_query_params().get('AppId')
-
-	def set_AppId(self,AppId):
-		self.add_query_param('AppId',AppId)
-
 	def get_Length(self):
 		return self.get_query_params().get('Length')
 
 	def set_Length(self,Length):
 		self.add_query_param('Length',Length)
 
-	def get_ContainerId(self):
-		return self.get_query_params().get('ContainerId')
-
-	def set_ContainerId(self,ContainerId):
-		self.add_query_param('ContainerId',ContainerId)
-
 	def get_NodeInstanceId(self):
 		return self.get_query_params().get('NodeInstanceId')
 
 	def set_NodeInstanceId(self,NodeInstanceId):
 		self.add_query_param('NodeInstanceId',NodeInstanceId)
+
+	def get_AppId(self):
+		return self.get_query_params().get('AppId')
+
+	def set_AppId(self,AppId):
+		self.add_query_param('AppId',AppId)
+
+	def get_ContainerId(self):
+		return self.get_query_params().get('ContainerId')
+
+	def set_ContainerId(self,ContainerId):
+		self.add_query_param('ContainerId',ContainerId)
 
 	def get_ProjectId(self):
 		return self.get_query_params().get('ProjectId')

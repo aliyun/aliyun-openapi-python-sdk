@@ -24,6 +24,7 @@ class GetQueueSubmissionStatisticInfoRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'GetQueueSubmissionStatisticInfo','emr')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -54,14 +55,14 @@ class GetQueueSubmissionStatisticInfoRequest(RpcRequest):
 	def set_ToDatetime(self,ToDatetime):
 		self.add_query_param('ToDatetime',ToDatetime)
 
-	def get_ApplicationType(self):
-		return self.get_query_params().get('ApplicationType')
-
-	def set_ApplicationType(self,ApplicationType):
-		self.add_query_param('ApplicationType',ApplicationType)
-
 	def get_FinalStatus(self):
 		return self.get_query_params().get('FinalStatus')
 
 	def set_FinalStatus(self,FinalStatus):
 		self.add_query_param('FinalStatus',FinalStatus)
+
+	def get_ApplicationType(self):
+		return self.get_query_params().get('ApplicationType')
+
+	def set_ApplicationType(self,ApplicationType):
+		self.add_query_param('ApplicationType',ApplicationType)

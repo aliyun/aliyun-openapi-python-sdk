@@ -24,6 +24,7 @@ class ListFlowNodeInstanceRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'ListFlowNodeInstance','emr')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -33,16 +34,10 @@ class ListFlowNodeInstanceRequest(RpcRequest):
 	def get_StatusLists(self):
 		return self.get_query_params().get('StatusLists')
 
-	def set_StatusLists(self,StatusLists):
-		for i in range(len(StatusLists)):	
-			if StatusLists[i] is not None:
-				self.add_query_param('StatusList.' + str(i + 1) , StatusLists[i]);
-
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
+	def set_StatusLists(self, StatusLists):
+		for depth1 in range(len(StatusLists)):
+			if StatusLists[depth1] is not None:
+				self.add_query_param('StatusList.' + str(depth1 + 1) , StatusLists[depth1])
 
 	def get_OrderBy(self):
 		return self.get_query_params().get('OrderBy')
@@ -56,17 +51,29 @@ class ListFlowNodeInstanceRequest(RpcRequest):
 	def set_StartTime(self,StartTime):
 		self.add_query_param('StartTime',StartTime)
 
-	def get_ProjectId(self):
-		return self.get_query_params().get('ProjectId')
-
-	def set_ProjectId(self,ProjectId):
-		self.add_query_param('ProjectId',ProjectId)
-
 	def get_PageNumber(self):
 		return self.get_query_params().get('PageNumber')
 
 	def set_PageNumber(self,PageNumber):
 		self.add_query_param('PageNumber',PageNumber)
+
+	def get_ResourceGroupId(self):
+		return self.get_query_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self,ResourceGroupId):
+		self.add_query_param('ResourceGroupId',ResourceGroupId)
+
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
+
+	def get_ProjectId(self):
+		return self.get_query_params().get('ProjectId')
+
+	def set_ProjectId(self,ProjectId):
+		self.add_query_param('ProjectId',ProjectId)
 
 	def get_OrderType(self):
 		return self.get_query_params().get('OrderType')

@@ -24,23 +24,36 @@ class ListFlowRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'ListFlow','emr')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_JobId(self):
-		return self.get_query_params().get('JobId')
-
-	def set_JobId(self,JobId):
-		self.add_query_param('JobId',JobId)
-
 	def get_Periodic(self):
 		return self.get_query_params().get('Periodic')
 
 	def set_Periodic(self,Periodic):
 		self.add_query_param('Periodic',Periodic)
+
+	def get_ClusterId(self):
+		return self.get_query_params().get('ClusterId')
+
+	def set_ClusterId(self,ClusterId):
+		self.add_query_param('ClusterId',ClusterId)
+
+	def get_PageNumber(self):
+		return self.get_query_params().get('PageNumber')
+
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)
+
+	def get_JobId(self):
+		return self.get_query_params().get('JobId')
+
+	def set_JobId(self,JobId):
+		self.add_query_param('JobId',JobId)
 
 	def get_Name(self):
 		return self.get_query_params().get('Name')
@@ -60,23 +73,11 @@ class ListFlowRequest(RpcRequest):
 	def set_Id(self,Id):
 		self.add_query_param('Id',Id)
 
-	def get_ClusterId(self):
-		return self.get_query_params().get('ClusterId')
-
-	def set_ClusterId(self,ClusterId):
-		self.add_query_param('ClusterId',ClusterId)
-
 	def get_ProjectId(self):
 		return self.get_query_params().get('ProjectId')
 
 	def set_ProjectId(self,ProjectId):
 		self.add_query_param('ProjectId',ProjectId)
-
-	def get_PageNumber(self):
-		return self.get_query_params().get('PageNumber')
-
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
 
 	def get_Status(self):
 		return self.get_query_params().get('Status')

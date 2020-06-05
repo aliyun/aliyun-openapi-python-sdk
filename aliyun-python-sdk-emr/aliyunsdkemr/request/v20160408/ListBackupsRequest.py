@@ -24,6 +24,7 @@ class ListBackupsRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'ListBackups','emr')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -90,19 +91,13 @@ class ListBackupsRequest(RpcRequest):
 	def set_CurrentSize(self,CurrentSize):
 		self.add_query_param('CurrentSize',CurrentSize)
 
-	def get_OrderField(self):
-		return self.get_query_params().get('OrderField')
-
-	def set_OrderField(self,OrderField):
-		self.add_query_param('OrderField',OrderField)
-
 	def get_BackupIds(self):
 		return self.get_query_params().get('BackupIds')
 
-	def set_BackupIds(self,BackupIds):
-		for i in range(len(BackupIds)):	
-			if BackupIds[i] is not None:
-				self.add_query_param('BackupId.' + str(i + 1) , BackupIds[i]);
+	def set_BackupIds(self, BackupIds):
+		for depth1 in range(len(BackupIds)):
+			if BackupIds[depth1] is not None:
+				self.add_query_param('BackupId.' + str(depth1 + 1) , BackupIds[depth1])
 
 	def get_ClusterId(self):
 		return self.get_query_params().get('ClusterId')

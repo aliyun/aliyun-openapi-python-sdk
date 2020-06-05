@@ -24,6 +24,7 @@ class QueryAlarmHistoryRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'QueryAlarmHistory','emr')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -42,12 +43,6 @@ class QueryAlarmHistoryRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_Size(self):
-		return self.get_query_params().get('Size')
-
-	def set_Size(self,Size):
-		self.add_query_param('Size',Size)
-
 	def get_ClusterId(self):
 		return self.get_query_params().get('ClusterId')
 
@@ -65,3 +60,9 @@ class QueryAlarmHistoryRequest(RpcRequest):
 
 	def set_EndTimeStamp(self,EndTimeStamp):
 		self.add_query_param('EndTimeStamp',EndTimeStamp)
+
+	def get_Size(self):
+		return self.get_query_params().get('Size')
+
+	def set_Size(self,Size):
+		self.add_query_param('Size',Size)

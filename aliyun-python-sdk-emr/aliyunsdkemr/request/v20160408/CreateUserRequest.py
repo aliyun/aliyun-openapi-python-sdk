@@ -24,6 +24,7 @@ class CreateUserRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'CreateUser','emr')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -51,31 +52,30 @@ class CreateUserRequest(RpcRequest):
 	def get_UserAccountParamLists(self):
 		return self.get_query_params().get('UserAccountParamLists')
 
-	def set_UserAccountParamLists(self,UserAccountParamLists):
-		for i in range(len(UserAccountParamLists)):	
-			if UserAccountParamLists[i].get('AccountType') is not None:
-				self.add_query_param('UserAccountParamList.' + str(i + 1) + '.AccountType' , UserAccountParamLists[i].get('AccountType'))
-			if UserAccountParamLists[i].get('AuthType') is not None:
-				self.add_query_param('UserAccountParamList.' + str(i + 1) + '.AuthType' , UserAccountParamLists[i].get('AuthType'))
-			if UserAccountParamLists[i].get('AccountPassword') is not None:
-				self.add_query_param('UserAccountParamList.' + str(i + 1) + '.AccountPassword' , UserAccountParamLists[i].get('AccountPassword'))
-
+	def set_UserAccountParamLists(self, UserAccountParamLists):
+		for depth1 in range(len(UserAccountParamLists)):
+			if UserAccountParamLists[depth1].get('AccountType') is not None:
+				self.add_query_param('UserAccountParamList.' + str(depth1 + 1) + '.AccountType', UserAccountParamLists[depth1].get('AccountType'))
+			if UserAccountParamLists[depth1].get('AuthType') is not None:
+				self.add_query_param('UserAccountParamList.' + str(depth1 + 1) + '.AuthType', UserAccountParamLists[depth1].get('AuthType'))
+			if UserAccountParamLists[depth1].get('AccountPassword') is not None:
+				self.add_query_param('UserAccountParamList.' + str(depth1 + 1) + '.AccountPassword', UserAccountParamLists[depth1].get('AccountPassword'))
 
 	def get_GroupIdLists(self):
 		return self.get_query_params().get('GroupIdLists')
 
-	def set_GroupIdLists(self,GroupIdLists):
-		for i in range(len(GroupIdLists)):	
-			if GroupIdLists[i] is not None:
-				self.add_query_param('GroupIdList.' + str(i + 1) , GroupIdLists[i]);
+	def set_GroupIdLists(self, GroupIdLists):
+		for depth1 in range(len(GroupIdLists)):
+			if GroupIdLists[depth1] is not None:
+				self.add_query_param('GroupIdList.' + str(depth1 + 1) , GroupIdLists[depth1])
 
 	def get_RoleIdLists(self):
 		return self.get_query_params().get('RoleIdLists')
 
-	def set_RoleIdLists(self,RoleIdLists):
-		for i in range(len(RoleIdLists)):	
-			if RoleIdLists[i] is not None:
-				self.add_query_param('RoleIdList.' + str(i + 1) , RoleIdLists[i]);
+	def set_RoleIdLists(self, RoleIdLists):
+		for depth1 in range(len(RoleIdLists)):
+			if RoleIdLists[depth1] is not None:
+				self.add_query_param('RoleIdList.' + str(depth1 + 1) , RoleIdLists[depth1])
 
 	def get_AliyunUserId(self):
 		return self.get_query_params().get('AliyunUserId')

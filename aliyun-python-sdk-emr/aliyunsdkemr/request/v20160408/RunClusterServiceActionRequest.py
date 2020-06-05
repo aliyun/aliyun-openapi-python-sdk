@@ -24,31 +24,56 @@ class RunClusterServiceActionRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'RunClusterServiceAction','emr')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_ExecuteStrategy(self):
-		return self.get_query_params().get('ExecuteStrategy')
-
-	def set_ExecuteStrategy(self,ExecuteStrategy):
-		self.add_query_param('ExecuteStrategy',ExecuteStrategy)
-
 	def get_HostGroupIdLists(self):
 		return self.get_query_params().get('HostGroupIdLists')
 
-	def set_HostGroupIdLists(self,HostGroupIdLists):
-		for i in range(len(HostGroupIdLists)):	
-			if HostGroupIdLists[i] is not None:
-				self.add_query_param('HostGroupIdList.' + str(i + 1) , HostGroupIdLists[i]);
+	def set_HostGroupIdLists(self, HostGroupIdLists):
+		for depth1 in range(len(HostGroupIdLists)):
+			if HostGroupIdLists[depth1] is not None:
+				self.add_query_param('HostGroupIdList.' + str(depth1 + 1) , HostGroupIdLists[depth1])
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+
+	def get_ServiceActionName(self):
+		return self.get_query_params().get('ServiceActionName')
+
+	def set_ServiceActionName(self,ServiceActionName):
+		self.add_query_param('ServiceActionName',ServiceActionName)
+
+	def get_IsRolling(self):
+		return self.get_query_params().get('IsRolling')
+
+	def set_IsRolling(self,IsRolling):
+		self.add_query_param('IsRolling',IsRolling)
+
+	def get_TotlerateFailCount(self):
+		return self.get_query_params().get('TotlerateFailCount')
+
+	def set_TotlerateFailCount(self,TotlerateFailCount):
+		self.add_query_param('TotlerateFailCount',TotlerateFailCount)
+
+	def get_ServiceName(self):
+		return self.get_query_params().get('ServiceName')
+
+	def set_ServiceName(self,ServiceName):
+		self.add_query_param('ServiceName',ServiceName)
+
+	def get_ExecuteStrategy(self):
+		return self.get_query_params().get('ExecuteStrategy')
+
+	def set_ExecuteStrategy(self,ExecuteStrategy):
+		self.add_query_param('ExecuteStrategy',ExecuteStrategy)
 
 	def get_OnlyRestartStaleConfigNodes(self):
 		return self.get_query_params().get('OnlyRestartStaleConfigNodes')
@@ -79,30 +104,6 @@ class RunClusterServiceActionRequest(RpcRequest):
 
 	def set_ComponentNameList(self,ComponentNameList):
 		self.add_query_param('ComponentNameList',ComponentNameList)
-
-	def get_ServiceActionName(self):
-		return self.get_query_params().get('ServiceActionName')
-
-	def set_ServiceActionName(self,ServiceActionName):
-		self.add_query_param('ServiceActionName',ServiceActionName)
-
-	def get_IsRolling(self):
-		return self.get_query_params().get('IsRolling')
-
-	def set_IsRolling(self,IsRolling):
-		self.add_query_param('IsRolling',IsRolling)
-
-	def get_TotlerateFailCount(self):
-		return self.get_query_params().get('TotlerateFailCount')
-
-	def set_TotlerateFailCount(self,TotlerateFailCount):
-		self.add_query_param('TotlerateFailCount',TotlerateFailCount)
-
-	def get_ServiceName(self):
-		return self.get_query_params().get('ServiceName')
-
-	def set_ServiceName(self,ServiceName):
-		self.add_query_param('ServiceName',ServiceName)
 
 	def get_Comment(self):
 		return self.get_query_params().get('Comment')

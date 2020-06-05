@@ -24,6 +24,7 @@ class AddClusterServiceRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'AddClusterService','emr')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -36,23 +37,24 @@ class AddClusterServiceRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_ClusterId(self):
+		return self.get_query_params().get('ClusterId')
+
+	def set_ClusterId(self,ClusterId):
+		self.add_query_param('ClusterId',ClusterId)
+
 	def get_Services(self):
 		return self.get_query_params().get('Services')
 
-	def set_Services(self,Services):
-		for i in range(len(Services)):	
-			if Services[i].get('ServiceName') is not None:
-				self.add_query_param('Service.' + str(i + 1) + '.ServiceName' , Services[i].get('ServiceName'))
-
+	def set_Services(self, Services):
+		for depth1 in range(len(Services)):
+			if Services[depth1].get('ServiceVersion') is not None:
+				self.add_query_param('Service.' + str(depth1 + 1) + '.ServiceVersion', Services[depth1].get('ServiceVersion'))
+			if Services[depth1].get('ServiceName') is not None:
+				self.add_query_param('Service.' + str(depth1 + 1) + '.ServiceName', Services[depth1].get('ServiceName'))
 
 	def get_Comment(self):
 		return self.get_query_params().get('Comment')
 
 	def set_Comment(self,Comment):
 		self.add_query_param('Comment',Comment)
-
-	def get_ClusterId(self):
-		return self.get_query_params().get('ClusterId')
-
-	def set_ClusterId(self,ClusterId):
-		self.add_query_param('ClusterId',ClusterId)

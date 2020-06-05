@@ -24,6 +24,7 @@ class ModifyResourcePoolRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'ModifyResourcePool','emr')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -36,23 +37,11 @@ class ModifyResourcePoolRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_Name(self):
-		return self.get_query_params().get('Name')
-
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)
-
 	def get_Active(self):
 		return self.get_query_params().get('Active')
 
 	def set_Active(self,Active):
 		self.add_query_param('Active',Active)
-
-	def get_Id(self):
-		return self.get_query_params().get('Id')
-
-	def set_Id(self,Id):
-		self.add_query_param('Id',Id)
 
 	def get_ClusterId(self):
 		return self.get_query_params().get('ClusterId')
@@ -66,18 +55,30 @@ class ModifyResourcePoolRequest(RpcRequest):
 	def set_Yarnsiteconfig(self,Yarnsiteconfig):
 		self.add_query_param('Yarnsiteconfig',Yarnsiteconfig)
 
+	def get_Name(self):
+		return self.get_query_params().get('Name')
+
+	def set_Name(self,Name):
+		self.add_query_param('Name',Name)
+
+	def get_Id(self):
+		return self.get_query_params().get('Id')
+
+	def set_Id(self,Id):
+		self.add_query_param('Id',Id)
+
 	def get_Configs(self):
 		return self.get_query_params().get('Configs')
 
-	def set_Configs(self,Configs):
-		for i in range(len(Configs)):	
-			if Configs[i].get('ConfigKey') is not None:
-				self.add_query_param('Config.' + str(i + 1) + '.ConfigKey' , Configs[i].get('ConfigKey'))
-			if Configs[i].get('Note') is not None:
-				self.add_query_param('Config.' + str(i + 1) + '.Note' , Configs[i].get('Note'))
-			if Configs[i].get('ConfigValue') is not None:
-				self.add_query_param('Config.' + str(i + 1) + '.ConfigValue' , Configs[i].get('ConfigValue'))
-			if Configs[i].get('Id') is not None:
-				self.add_query_param('Config.' + str(i + 1) + '.Id' , Configs[i].get('Id'))
-			if Configs[i].get('Category') is not None:
-				self.add_query_param('Config.' + str(i + 1) + '.Category' , Configs[i].get('Category'))
+	def set_Configs(self, Configs):
+		for depth1 in range(len(Configs)):
+			if Configs[depth1].get('ConfigKey') is not None:
+				self.add_query_param('Config.' + str(depth1 + 1) + '.ConfigKey', Configs[depth1].get('ConfigKey'))
+			if Configs[depth1].get('Note') is not None:
+				self.add_query_param('Config.' + str(depth1 + 1) + '.Note', Configs[depth1].get('Note'))
+			if Configs[depth1].get('ConfigValue') is not None:
+				self.add_query_param('Config.' + str(depth1 + 1) + '.ConfigValue', Configs[depth1].get('ConfigValue'))
+			if Configs[depth1].get('Id') is not None:
+				self.add_query_param('Config.' + str(depth1 + 1) + '.Id', Configs[depth1].get('Id'))
+			if Configs[depth1].get('Category') is not None:
+				self.add_query_param('Config.' + str(depth1 + 1) + '.Category', Configs[depth1].get('Category'))

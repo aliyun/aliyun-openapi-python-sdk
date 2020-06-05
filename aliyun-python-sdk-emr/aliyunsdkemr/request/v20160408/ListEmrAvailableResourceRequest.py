@@ -24,6 +24,7 @@ class ListEmrAvailableResourceRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'ListEmrAvailableResource','emr')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -36,17 +37,41 @@ class ListEmrAvailableResourceRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_ClusterId(self):
-		return self.get_query_params().get('ClusterId')
-
-	def set_ClusterId(self,ClusterId):
-		self.add_query_param('ClusterId',ClusterId)
-
 	def get_DepositType(self):
 		return self.get_query_params().get('DepositType')
 
 	def set_DepositType(self,DepositType):
 		self.add_query_param('DepositType',DepositType)
+
+	def get_SystemDiskType(self):
+		return self.get_query_params().get('SystemDiskType')
+
+	def set_SystemDiskType(self,SystemDiskType):
+		self.add_query_param('SystemDiskType',SystemDiskType)
+
+	def get_ResourceGroupId(self):
+		return self.get_query_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self,ResourceGroupId):
+		self.add_query_param('ResourceGroupId',ResourceGroupId)
+
+	def get_InstanceType(self):
+		return self.get_query_params().get('InstanceType')
+
+	def set_InstanceType(self,InstanceType):
+		self.add_query_param('InstanceType',InstanceType)
+
+	def get_InstanceChargeType(self):
+		return self.get_query_params().get('InstanceChargeType')
+
+	def set_InstanceChargeType(self,InstanceChargeType):
+		self.add_query_param('InstanceChargeType',InstanceChargeType)
+
+	def get_ClusterId(self):
+		return self.get_query_params().get('ClusterId')
+
+	def set_ClusterId(self,ClusterId):
+		self.add_query_param('ClusterId',ClusterId)
 
 	def get_DestinationResource(self):
 		return self.get_query_params().get('DestinationResource')
@@ -66,12 +91,6 @@ class ListEmrAvailableResourceRequest(RpcRequest):
 	def set_SpotStrategy(self,SpotStrategy):
 		self.add_query_param('SpotStrategy',SpotStrategy)
 
-	def get_SystemDiskType(self):
-		return self.get_query_params().get('SystemDiskType')
-
-	def set_SystemDiskType(self,SystemDiskType):
-		self.add_query_param('SystemDiskType',SystemDiskType)
-
 	def get_NetType(self):
 		return self.get_query_params().get('NetType')
 
@@ -84,20 +103,8 @@ class ListEmrAvailableResourceRequest(RpcRequest):
 	def set_ZoneId(self,ZoneId):
 		self.add_query_param('ZoneId',ZoneId)
 
-	def get_InstanceType(self):
-		return self.get_query_params().get('InstanceType')
-
-	def set_InstanceType(self,InstanceType):
-		self.add_query_param('InstanceType',InstanceType)
-
 	def get_DataDiskType(self):
 		return self.get_query_params().get('DataDiskType')
 
 	def set_DataDiskType(self,DataDiskType):
 		self.add_query_param('DataDiskType',DataDiskType)
-
-	def get_InstanceChargeType(self):
-		return self.get_query_params().get('InstanceChargeType')
-
-	def set_InstanceChargeType(self,InstanceChargeType):
-		self.add_query_param('InstanceChargeType',InstanceChargeType)

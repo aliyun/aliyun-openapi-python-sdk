@@ -24,7 +24,10 @@ class EndpointData():
 			"cn-shenzhen": "emr.aliyuncs.com",
 			"cn-beijing": "emr.aliyuncs.com",
 			"cn-shanghai": "emr.aliyuncs.com",
+			"cn-shanghai-finance-1": "emr.aliyuncs.com",
+			"cn-hangzhou-finance": "emr.aliyuncs.com",
 			"ap-southeast-1": "emr.aliyuncs.com",
+			"cn-shenzhen-finance-1": "emr.aliyuncs.com",
 			"us-west-1": "emr.aliyuncs.com",
 			"cn-hangzhou": "emr.aliyuncs.com",
 		}

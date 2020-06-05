@@ -24,6 +24,7 @@ class ListExecutionPlanInstancesRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'ListExecutionPlanInstances','emr')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -45,24 +46,18 @@ class ListExecutionPlanInstancesRequest(RpcRequest):
 	def get_ExecutionPlanIdLists(self):
 		return self.get_query_params().get('ExecutionPlanIdLists')
 
-	def set_ExecutionPlanIdLists(self,ExecutionPlanIdLists):
-		for i in range(len(ExecutionPlanIdLists)):	
-			if ExecutionPlanIdLists[i] is not None:
-				self.add_query_param('ExecutionPlanIdList.' + str(i + 1) , ExecutionPlanIdLists[i]);
+	def set_ExecutionPlanIdLists(self, ExecutionPlanIdLists):
+		for depth1 in range(len(ExecutionPlanIdLists)):
+			if ExecutionPlanIdLists[depth1] is not None:
+				self.add_query_param('ExecutionPlanIdList.' + str(depth1 + 1) , ExecutionPlanIdLists[depth1])
 
 	def get_StatusLists(self):
 		return self.get_query_params().get('StatusLists')
 
-	def set_StatusLists(self,StatusLists):
-		for i in range(len(StatusLists)):	
-			if StatusLists[i] is not None:
-				self.add_query_param('StatusList.' + str(i + 1) , StatusLists[i]);
-
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
+	def set_StatusLists(self, StatusLists):
+		for depth1 in range(len(StatusLists)):
+			if StatusLists[depth1] is not None:
+				self.add_query_param('StatusList.' + str(depth1 + 1) , StatusLists[depth1])
 
 	def get_IsDesc(self):
 		return self.get_query_params().get('IsDesc')
@@ -75,3 +70,9 @@ class ListExecutionPlanInstancesRequest(RpcRequest):
 
 	def set_PageNumber(self,PageNumber):
 		self.add_query_param('PageNumber',PageNumber)
+
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)

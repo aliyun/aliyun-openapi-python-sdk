@@ -24,6 +24,7 @@ class ModifyFlowProjectClusterSettingRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'ModifyFlowProjectClusterSetting','emr')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -33,26 +34,18 @@ class ModifyFlowProjectClusterSettingRequest(RpcRequest):
 	def get_UserLists(self):
 		return self.get_query_params().get('UserLists')
 
-	def set_UserLists(self,UserLists):
-		for i in range(len(UserLists)):	
-			if UserLists[i] is not None:
-				self.add_query_param('UserList.' + str(i + 1) , UserLists[i]);
-
-	def get_QueueLists(self):
-		return self.get_query_params().get('QueueLists')
-
-	def set_QueueLists(self,QueueLists):
-		for i in range(len(QueueLists)):	
-			if QueueLists[i] is not None:
-				self.add_query_param('QueueList.' + str(i + 1) , QueueLists[i]);
+	def set_UserLists(self, UserLists):
+		for depth1 in range(len(UserLists)):
+			if UserLists[depth1] is not None:
+				self.add_query_param('UserList.' + str(depth1 + 1) , UserLists[depth1])
 
 	def get_HostLists(self):
 		return self.get_query_params().get('HostLists')
 
-	def set_HostLists(self,HostLists):
-		for i in range(len(HostLists)):	
-			if HostLists[i] is not None:
-				self.add_query_param('HostList.' + str(i + 1) , HostLists[i]);
+	def set_HostLists(self, HostLists):
+		for depth1 in range(len(HostLists)):
+			if HostLists[depth1] is not None:
+				self.add_query_param('HostList.' + str(depth1 + 1) , HostLists[depth1])
 
 	def get_ClusterId(self):
 		return self.get_query_params().get('ClusterId')
@@ -66,14 +59,22 @@ class ModifyFlowProjectClusterSettingRequest(RpcRequest):
 	def set_DefaultQueue(self,DefaultQueue):
 		self.add_query_param('DefaultQueue',DefaultQueue)
 
-	def get_ProjectId(self):
-		return self.get_query_params().get('ProjectId')
-
-	def set_ProjectId(self,ProjectId):
-		self.add_query_param('ProjectId',ProjectId)
-
 	def get_DefaultUser(self):
 		return self.get_query_params().get('DefaultUser')
 
 	def set_DefaultUser(self,DefaultUser):
 		self.add_query_param('DefaultUser',DefaultUser)
+
+	def get_QueueLists(self):
+		return self.get_query_params().get('QueueLists')
+
+	def set_QueueLists(self, QueueLists):
+		for depth1 in range(len(QueueLists)):
+			if QueueLists[depth1] is not None:
+				self.add_query_param('QueueList.' + str(depth1 + 1) , QueueLists[depth1])
+
+	def get_ProjectId(self):
+		return self.get_query_params().get('ProjectId')
+
+	def set_ProjectId(self,ProjectId):
+		self.add_query_param('ProjectId',ProjectId)

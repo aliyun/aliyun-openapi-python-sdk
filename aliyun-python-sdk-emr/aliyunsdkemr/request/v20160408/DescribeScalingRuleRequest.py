@@ -24,6 +24,7 @@ class DescribeScalingRuleRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'DescribeScalingRule','emr')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -36,12 +37,6 @@ class DescribeScalingRuleRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_HostGroupId(self):
-		return self.get_query_params().get('HostGroupId')
-
-	def set_HostGroupId(self,HostGroupId):
-		self.add_query_param('HostGroupId',HostGroupId)
-
 	def get_ClusterId(self):
 		return self.get_query_params().get('ClusterId')
 
@@ -53,3 +48,9 @@ class DescribeScalingRuleRequest(RpcRequest):
 
 	def set_ScalingRuleId(self,ScalingRuleId):
 		self.add_query_param('ScalingRuleId',ScalingRuleId)
+
+	def get_HostGroupId(self):
+		return self.get_query_params().get('HostGroupId')
+
+	def set_HostGroupId(self,HostGroupId):
+		self.add_query_param('HostGroupId',HostGroupId)

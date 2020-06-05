@@ -24,11 +24,44 @@ class ListFlowInstanceRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'ListFlowInstance','emr')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+
+	def get_StatusLists(self):
+		return self.get_query_params().get('StatusLists')
+
+	def set_StatusLists(self, StatusLists):
+		for depth1 in range(len(StatusLists)):
+			if StatusLists[depth1] is not None:
+				self.add_query_param('StatusList.' + str(depth1 + 1) , StatusLists[depth1])
+
+	def get_PageNumber(self):
+		return self.get_query_params().get('PageNumber')
+
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)
+
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
+
+	def get_Id(self):
+		return self.get_query_params().get('Id')
+
+	def set_Id(self,Id):
+		self.add_query_param('Id',Id)
+
+	def get_ProjectId(self):
+		return self.get_query_params().get('ProjectId')
+
+	def set_ProjectId(self,ProjectId):
+		self.add_query_param('ProjectId',ProjectId)
 
 	def get_Owner(self):
 		return self.get_query_params().get('Owner')
@@ -42,25 +75,11 @@ class ListFlowInstanceRequest(RpcRequest):
 	def set_TimeRange(self,TimeRange):
 		self.add_query_param('TimeRange',TimeRange)
 
-	def get_StatusLists(self):
-		return self.get_query_params().get('StatusLists')
-
-	def set_StatusLists(self,StatusLists):
-		for i in range(len(StatusLists)):	
-			if StatusLists[i] is not None:
-				self.add_query_param('StatusList.' + str(i + 1) , StatusLists[i]);
-
 	def get_OrderBy(self):
 		return self.get_query_params().get('OrderBy')
 
 	def set_OrderBy(self,OrderBy):
 		self.add_query_param('OrderBy',OrderBy)
-
-	def get_PageNumber(self):
-		return self.get_query_params().get('PageNumber')
-
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
 
 	def get_InstanceId(self):
 		return self.get_query_params().get('InstanceId')
@@ -68,35 +87,17 @@ class ListFlowInstanceRequest(RpcRequest):
 	def set_InstanceId(self,InstanceId):
 		self.add_query_param('InstanceId',InstanceId)
 
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
 	def get_FlowName(self):
 		return self.get_query_params().get('FlowName')
 
 	def set_FlowName(self,FlowName):
 		self.add_query_param('FlowName',FlowName)
 
-	def get_Id(self):
-		return self.get_query_params().get('Id')
-
-	def set_Id(self,Id):
-		self.add_query_param('Id',Id)
-
 	def get_FlowId(self):
 		return self.get_query_params().get('FlowId')
 
 	def set_FlowId(self,FlowId):
 		self.add_query_param('FlowId',FlowId)
-
-	def get_ProjectId(self):
-		return self.get_query_params().get('ProjectId')
-
-	def set_ProjectId(self,ProjectId):
-		self.add_query_param('ProjectId',ProjectId)
 
 	def get_OrderType(self):
 		return self.get_query_params().get('OrderType')
