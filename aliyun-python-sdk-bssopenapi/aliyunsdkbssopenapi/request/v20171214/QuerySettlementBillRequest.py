@@ -23,7 +23,8 @@ from aliyunsdkbssopenapi.endpoint import endpoint_data
 class QuerySettlementBillRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'QuerySettlementBill')
+		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'QuerySettlementBill','bssopenapi')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):

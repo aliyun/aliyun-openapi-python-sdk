@@ -23,7 +23,8 @@ from aliyunsdkbssopenapi.endpoint import endpoint_data
 class CreateInstanceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'CreateInstance')
+		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'CreateInstance','bssopenapi')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -75,13 +76,12 @@ class CreateInstanceRequest(RpcRequest):
 	def get_Parameters(self):
 		return self.get_query_params().get('Parameters')
 
-	def set_Parameters(self,Parameters):
-		for i in range(len(Parameters)):	
-			if Parameters[i].get('Code') is not None:
-				self.add_query_param('Parameter.' + str(i + 1) + '.Code' , Parameters[i].get('Code'))
-			if Parameters[i].get('Value') is not None:
-				self.add_query_param('Parameter.' + str(i + 1) + '.Value' , Parameters[i].get('Value'))
-
+	def set_Parameters(self, Parameters):
+		for depth1 in range(len(Parameters)):
+			if Parameters[depth1].get('Code') is not None:
+				self.add_query_param('Parameter.' + str(depth1 + 1) + '.Code', Parameters[depth1].get('Code'))
+			if Parameters[depth1].get('Value') is not None:
+				self.add_query_param('Parameter.' + str(depth1 + 1) + '.Value', Parameters[depth1].get('Value'))
 
 	def get_RenewalStatus(self):
 		return self.get_query_params().get('RenewalStatus')

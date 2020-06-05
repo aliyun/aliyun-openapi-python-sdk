@@ -23,7 +23,7 @@ from aliyunsdkbssopenapi.endpoint import endpoint_data
 class AllocateCostUnitResourceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'AllocateCostUnitResource')
+		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'AllocateCostUnitResource','bssopenapi')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -34,15 +34,14 @@ class AllocateCostUnitResourceRequest(RpcRequest):
 	def get_ResourceInstanceLists(self):
 		return self.get_query_params().get('ResourceInstanceLists')
 
-	def set_ResourceInstanceLists(self,ResourceInstanceLists):
-		for i in range(len(ResourceInstanceLists)):	
-			if ResourceInstanceLists[i].get('ResourceId') is not None:
-				self.add_query_param('ResourceInstanceList.' + str(i + 1) + '.ResourceId' , ResourceInstanceLists[i].get('ResourceId'))
-			if ResourceInstanceLists[i].get('CommodityCode') is not None:
-				self.add_query_param('ResourceInstanceList.' + str(i + 1) + '.CommodityCode' , ResourceInstanceLists[i].get('CommodityCode'))
-			if ResourceInstanceLists[i].get('ResourceUserId') is not None:
-				self.add_query_param('ResourceInstanceList.' + str(i + 1) + '.ResourceUserId' , ResourceInstanceLists[i].get('ResourceUserId'))
-
+	def set_ResourceInstanceLists(self, ResourceInstanceLists):
+		for depth1 in range(len(ResourceInstanceLists)):
+			if ResourceInstanceLists[depth1].get('ResourceId') is not None:
+				self.add_query_param('ResourceInstanceList.' + str(depth1 + 1) + '.ResourceId', ResourceInstanceLists[depth1].get('ResourceId'))
+			if ResourceInstanceLists[depth1].get('CommodityCode') is not None:
+				self.add_query_param('ResourceInstanceList.' + str(depth1 + 1) + '.CommodityCode', ResourceInstanceLists[depth1].get('CommodityCode'))
+			if ResourceInstanceLists[depth1].get('ResourceUserId') is not None:
+				self.add_query_param('ResourceInstanceList.' + str(depth1 + 1) + '.ResourceUserId', ResourceInstanceLists[depth1].get('ResourceUserId'))
 
 	def get_FromUnitId(self):
 		return self.get_query_params().get('FromUnitId')

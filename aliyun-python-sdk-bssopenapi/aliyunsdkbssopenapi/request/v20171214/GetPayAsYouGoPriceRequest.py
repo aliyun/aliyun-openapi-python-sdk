@@ -23,7 +23,8 @@ from aliyunsdkbssopenapi.endpoint import endpoint_data
 class GetPayAsYouGoPriceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'GetPayAsYouGoPrice')
+		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'GetPayAsYouGoPrice','bssopenapi')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -45,15 +46,14 @@ class GetPayAsYouGoPriceRequest(RpcRequest):
 	def get_ModuleLists(self):
 		return self.get_query_params().get('ModuleLists')
 
-	def set_ModuleLists(self,ModuleLists):
-		for i in range(len(ModuleLists)):	
-			if ModuleLists[i].get('ModuleCode') is not None:
-				self.add_query_param('ModuleList.' + str(i + 1) + '.ModuleCode' , ModuleLists[i].get('ModuleCode'))
-			if ModuleLists[i].get('PriceType') is not None:
-				self.add_query_param('ModuleList.' + str(i + 1) + '.PriceType' , ModuleLists[i].get('PriceType'))
-			if ModuleLists[i].get('Config') is not None:
-				self.add_query_param('ModuleList.' + str(i + 1) + '.Config' , ModuleLists[i].get('Config'))
-
+	def set_ModuleLists(self, ModuleLists):
+		for depth1 in range(len(ModuleLists)):
+			if ModuleLists[depth1].get('ModuleCode') is not None:
+				self.add_query_param('ModuleList.' + str(depth1 + 1) + '.ModuleCode', ModuleLists[depth1].get('ModuleCode'))
+			if ModuleLists[depth1].get('PriceType') is not None:
+				self.add_query_param('ModuleList.' + str(depth1 + 1) + '.PriceType', ModuleLists[depth1].get('PriceType'))
+			if ModuleLists[depth1].get('Config') is not None:
+				self.add_query_param('ModuleList.' + str(depth1 + 1) + '.Config', ModuleLists[depth1].get('Config'))
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')

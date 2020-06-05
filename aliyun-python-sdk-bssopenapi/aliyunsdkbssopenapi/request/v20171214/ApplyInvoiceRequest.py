@@ -23,7 +23,8 @@ from aliyunsdkbssopenapi.endpoint import endpoint_data
 class ApplyInvoiceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'ApplyInvoice')
+		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'ApplyInvoice','bssopenapi')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -41,12 +42,6 @@ class ApplyInvoiceRequest(RpcRequest):
 
 	def set_ProcessWay(self,ProcessWay):
 		self.add_query_param('ProcessWay',ProcessWay)
-
-	def get_callerBid(self):
-		return self.get_query_params().get('callerBid')
-
-	def set_callerBid(self,callerBid):
-		self.add_query_param('callerBid',callerBid)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
@@ -87,13 +82,7 @@ class ApplyInvoiceRequest(RpcRequest):
 	def get_SelectedIdss(self):
 		return self.get_query_params().get('SelectedIdss')
 
-	def set_SelectedIdss(self,SelectedIdss):
-		for i in range(len(SelectedIdss)):	
-			if SelectedIdss[i] is not None:
-				self.add_query_param('SelectedIds.' + str(i + 1) , SelectedIdss[i]);
-
-	def get_callerUid(self):
-		return self.get_query_params().get('callerUid')
-
-	def set_callerUid(self,callerUid):
-		self.add_query_param('callerUid',callerUid)
+	def set_SelectedIdss(self, SelectedIdss):
+		for depth1 in range(len(SelectedIdss)):
+			if SelectedIdss[depth1] is not None:
+				self.add_query_param('SelectedIds.' + str(depth1 + 1) , SelectedIdss[depth1])

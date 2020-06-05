@@ -23,7 +23,7 @@ from aliyunsdkbssopenapi.endpoint import endpoint_data
 class CreateCostUnitRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'CreateCostUnit')
+		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'CreateCostUnit','bssopenapi')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -34,11 +34,11 @@ class CreateCostUnitRequest(RpcRequest):
 	def get_UnitEntityLists(self):
 		return self.get_query_params().get('UnitEntityLists')
 
-	def set_UnitEntityLists(self,UnitEntityLists):
-		for i in range(len(UnitEntityLists)):	
-			if UnitEntityLists[i].get('UnitName') is not None:
-				self.add_query_param('UnitEntityList.' + str(i + 1) + '.UnitName' , UnitEntityLists[i].get('UnitName'))
-			if UnitEntityLists[i].get('ParentUnitId') is not None:
-				self.add_query_param('UnitEntityList.' + str(i + 1) + '.ParentUnitId' , UnitEntityLists[i].get('ParentUnitId'))
-			if UnitEntityLists[i].get('OwnerUid') is not None:
-				self.add_query_param('UnitEntityList.' + str(i + 1) + '.OwnerUid' , UnitEntityLists[i].get('OwnerUid'))
+	def set_UnitEntityLists(self, UnitEntityLists):
+		for depth1 in range(len(UnitEntityLists)):
+			if UnitEntityLists[depth1].get('UnitName') is not None:
+				self.add_query_param('UnitEntityList.' + str(depth1 + 1) + '.UnitName', UnitEntityLists[depth1].get('UnitName'))
+			if UnitEntityLists[depth1].get('ParentUnitId') is not None:
+				self.add_query_param('UnitEntityList.' + str(depth1 + 1) + '.ParentUnitId', UnitEntityLists[depth1].get('ParentUnitId'))
+			if UnitEntityLists[depth1].get('OwnerUid') is not None:
+				self.add_query_param('UnitEntityList.' + str(depth1 + 1) + '.OwnerUid', UnitEntityLists[depth1].get('OwnerUid'))

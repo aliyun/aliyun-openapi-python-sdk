@@ -23,7 +23,8 @@ from aliyunsdkbssopenapi.endpoint import endpoint_data
 class QueryEvaluateListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'QueryEvaluateList')
+		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'QueryEvaluateList','bssopenapi')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -81,10 +82,10 @@ class QueryEvaluateListRequest(RpcRequest):
 	def get_BizTypeLists(self):
 		return self.get_query_params().get('BizTypeLists')
 
-	def set_BizTypeLists(self,BizTypeLists):
-		for i in range(len(BizTypeLists)):	
-			if BizTypeLists[i] is not None:
-				self.add_query_param('BizTypeList.' + str(i + 1) , BizTypeLists[i]);
+	def set_BizTypeLists(self, BizTypeLists):
+		for depth1 in range(len(BizTypeLists)):
+			if BizTypeLists[depth1] is not None:
+				self.add_query_param('BizTypeList.' + str(depth1 + 1) , BizTypeLists[depth1])
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')

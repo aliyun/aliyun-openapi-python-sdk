@@ -23,8 +23,9 @@ from aliyunsdkbssopenapi.endpoint import endpoint_data
 class CreateAgAccountRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'CreateAgAccount')
+		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'CreateAgAccount','bssopenapi')
 		self.set_protocol_type('https')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):

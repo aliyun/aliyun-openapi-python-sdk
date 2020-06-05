@@ -23,7 +23,8 @@ from aliyunsdkbssopenapi.endpoint import endpoint_data
 class GetSubscriptionPriceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'GetSubscriptionPrice')
+		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'GetSubscriptionPrice','bssopenapi')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -51,17 +52,16 @@ class GetSubscriptionPriceRequest(RpcRequest):
 	def get_ModuleLists(self):
 		return self.get_query_params().get('ModuleLists')
 
-	def set_ModuleLists(self,ModuleLists):
-		for i in range(len(ModuleLists)):	
-			if ModuleLists[i].get('ModuleCode') is not None:
-				self.add_query_param('ModuleList.' + str(i + 1) + '.ModuleCode' , ModuleLists[i].get('ModuleCode'))
-			if ModuleLists[i].get('ModuleStatus') is not None:
-				self.add_query_param('ModuleList.' + str(i + 1) + '.ModuleStatus' , ModuleLists[i].get('ModuleStatus'))
-			if ModuleLists[i].get('Tag') is not None:
-				self.add_query_param('ModuleList.' + str(i + 1) + '.Tag' , ModuleLists[i].get('Tag'))
-			if ModuleLists[i].get('Config') is not None:
-				self.add_query_param('ModuleList.' + str(i + 1) + '.Config' , ModuleLists[i].get('Config'))
-
+	def set_ModuleLists(self, ModuleLists):
+		for depth1 in range(len(ModuleLists)):
+			if ModuleLists[depth1].get('ModuleCode') is not None:
+				self.add_query_param('ModuleList.' + str(depth1 + 1) + '.ModuleCode', ModuleLists[depth1].get('ModuleCode'))
+			if ModuleLists[depth1].get('ModuleStatus') is not None:
+				self.add_query_param('ModuleList.' + str(depth1 + 1) + '.ModuleStatus', ModuleLists[depth1].get('ModuleStatus'))
+			if ModuleLists[depth1].get('Tag') is not None:
+				self.add_query_param('ModuleList.' + str(depth1 + 1) + '.Tag', ModuleLists[depth1].get('Tag'))
+			if ModuleLists[depth1].get('Config') is not None:
+				self.add_query_param('ModuleList.' + str(depth1 + 1) + '.Config', ModuleLists[depth1].get('Config'))
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')

@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkbssopenapi.endpoint import endpoint_data
 
-class SetResellerUserStatusRequest(RpcRequest):
+class QuerySplitItemBillRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'SetResellerUserStatus','bssopenapi')
+		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'QuerySplitItemBill','bssopenapi')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,20 +31,44 @@ class SetResellerUserStatusRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_ProductCode(self):
+		return self.get_query_params().get('ProductCode')
+
+	def set_ProductCode(self,ProductCode):
+		self.add_query_param('ProductCode',ProductCode)
+
+	def get_SubscriptionType(self):
+		return self.get_query_params().get('SubscriptionType')
+
+	def set_SubscriptionType(self,SubscriptionType):
+		self.add_query_param('SubscriptionType',SubscriptionType)
+
+	def get_BillingCycle(self):
+		return self.get_query_params().get('BillingCycle')
+
+	def set_BillingCycle(self,BillingCycle):
+		self.add_query_param('BillingCycle',BillingCycle)
+
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_BusinessType(self):
-		return self.get_query_params().get('BusinessType')
+	def get_PageNum(self):
+		return self.get_query_params().get('PageNum')
 
-	def set_BusinessType(self,BusinessType):
-		self.add_query_param('BusinessType',BusinessType)
+	def set_PageNum(self,PageNum):
+		self.add_query_param('PageNum',PageNum)
 
-	def get_Status(self):
-		return self.get_query_params().get('Status')
+	def get_ProductType(self):
+		return self.get_query_params().get('ProductType')
 
-	def set_Status(self,Status):
-		self.add_query_param('Status',Status)
+	def set_ProductType(self,ProductType):
+		self.add_query_param('ProductType',ProductType)
+
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
