@@ -19,10 +19,10 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class DescribeGeoipInstanceRequest(RpcRequest):
+class DescribeGeoipInstanceDataUrlRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'geoip', '2020-01-01', 'DescribeGeoipInstance','geoip')
+		RpcRequest.__init__(self, 'geoip', '2020-01-01', 'DescribeGeoipInstanceDataUrl','geoip')
 		self.set_method('POST')
 
 	def get_InstanceId(self):
@@ -30,6 +30,12 @@ class DescribeGeoipInstanceRequest(RpcRequest):
 
 	def set_InstanceId(self,InstanceId):
 		self.add_query_param('InstanceId',InstanceId)
+
+	def get_DataType(self):
+		return self.get_query_params().get('DataType')
+
+	def set_DataType(self,DataType):
+		self.add_query_param('DataType',DataType)
 
 	def get_Lang(self):
 		return self.get_query_params().get('Lang')

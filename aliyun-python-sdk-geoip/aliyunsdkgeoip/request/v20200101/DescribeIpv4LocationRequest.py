@@ -23,6 +23,7 @@ class DescribeIpv4LocationRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'geoip', '2020-01-01', 'DescribeIpv4Location','geoip')
+		self.set_method('POST')
 
 	def get_Ip(self):
 		return self.get_query_params().get('Ip')

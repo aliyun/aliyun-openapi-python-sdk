@@ -23,6 +23,7 @@ class DescribeGeoipInstancesRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'geoip', '2020-01-01', 'DescribeGeoipInstances','geoip')
+		self.set_method('POST')
 
 	def get_Lang(self):
 		return self.get_query_params().get('Lang')
