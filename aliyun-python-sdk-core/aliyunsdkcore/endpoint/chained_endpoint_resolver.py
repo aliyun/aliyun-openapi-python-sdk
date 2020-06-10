@@ -65,6 +65,9 @@ class ChainedEndpointResolver(EndpointResolver):
 
     def resolve(self, request):
         for resolver in self.endpoint_resolvers:
+            if request.request_network and request.request_network != 'public':
+                if resolver.__class__.__name__ == 'LocalConfigRegionalEndpointResolver':
+                    continue
             endpoint = resolver.resolve(request)
             if endpoint is not None:
                 return endpoint
