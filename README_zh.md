@@ -25,6 +25,7 @@
 - [超时机制](./docs/3-Timeout-CN.md)
 - [代理配置](./docs/4-Proxy-CN.md)
 - [日志](./docs/5-Log-CN.md)
+- [域名](./docs/6-Endpoint-CN.md)
 
 ## 环境准备
 

@@ -29,6 +29,7 @@ This document introduces how to obtain and call Alibaba Cloud Python SDK.
 - [Timeout](./docs/3-Timeout-EN.md)
 - [Proxy Configurations](./docs/4-Proxy-EN.md)
 - [Log](./docs/5-Log-EN.md)
+- [Endpoint](./docs/6-Endpoint-EN.md)
 
 ## Prerequisites
 
