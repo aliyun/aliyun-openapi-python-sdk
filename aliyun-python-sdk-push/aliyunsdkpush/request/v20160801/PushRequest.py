@@ -121,6 +121,12 @@ class PushRequest(RpcRequest):
 	def set_ExpireTime(self,ExpireTime):
 		self.add_query_param('ExpireTime',ExpireTime)
 
+	def get_AndroidNotificationVivoChannel(self):
+		return self.get_query_params().get('AndroidNotificationVivoChannel')
+
+	def set_AndroidNotificationVivoChannel(self,AndroidNotificationVivoChannel):
+		self.add_query_param('AndroidNotificationVivoChannel',AndroidNotificationVivoChannel)
+
 	def get_iOSNotificationCategory(self):
 		return self.get_query_params().get('iOSNotificationCategory')
 

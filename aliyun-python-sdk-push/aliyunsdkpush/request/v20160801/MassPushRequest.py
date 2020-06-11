@@ -76,6 +76,8 @@ class MassPushRequest(RpcRequest):
 				self.add_body_params('PushTask.' + str(depth1 + 1) + '.AndroidNotificationBarPriority', PushTasks[depth1].get('AndroidNotificationBarPriority'))
 			if PushTasks[depth1].get('ExpireTime') is not None:
 				self.add_body_params('PushTask.' + str(depth1 + 1) + '.ExpireTime', PushTasks[depth1].get('ExpireTime'))
+			if PushTasks[depth1].get('AndroidNotificationVivoChannel') is not None:
+				self.add_body_params('PushTask.' + str(depth1 + 1) + '.AndroidNotificationVivoChannel', PushTasks[depth1].get('AndroidNotificationVivoChannel'))
 			if PushTasks[depth1].get('AndroidPopupBody') is not None:
 				self.add_body_params('PushTask.' + str(depth1 + 1) + '.AndroidPopupBody', PushTasks[depth1].get('AndroidPopupBody'))
 			if PushTasks[depth1].get('iOSNotificationCategory') is not None:
