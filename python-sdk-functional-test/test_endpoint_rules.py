@@ -76,3 +76,6 @@ class EndpointRulesTest(SDKTestBase):
         self.init_env(None, client)
         endpoint = self.resolve("cn-hangzhou", "Edas", "edas", "openApi", request=request)
         self.assertEqual(endpoint, "edas.cn-hangzhou.aliyuncs.com")
+        request.request_network = 'vpc'
+        endpoint = self.resolve("cn-hangzhou", "Edas", "edas", "openApi", request=request)
+        self.assertEqual(endpoint, "edas-vpc.cn-hangzhou.aliyuncs.com")

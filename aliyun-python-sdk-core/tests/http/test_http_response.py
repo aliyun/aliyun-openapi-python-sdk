@@ -54,5 +54,7 @@ class TestHttpResponse(unittest.TestCase):
             if sys.version_info[0] == 3:
                 response = make_request.prepare_http_debug(response, '<')
                 self.assertTrue('User-Agent' in response)
-
+            request.set_endpoint("http://localhost")
+            response = self.do_request(client, request)
+            self.assertTrue('User-Agent' in response.headers)
         os.environ.pop('DEBUG', None)
