@@ -1,10 +1,11 @@
-
 from tests import unittest
 
 from aliyunsdkcore.endpoint.user_customized_endpoint_resolver import UserCustomizedEndpointResolver
 from aliyunsdkcore.endpoint.chained_endpoint_resolver import ChainedEndpointResolver
 from aliyunsdkcore.endpoint.resolver_endpoint_request import ResolveEndpointRequest
 from aliyunsdkcore.acs_exception.exceptions import ClientException
+from aliyunsdkcore.endpoint.local_config_regional_endpoint_resolver import \
+    LocalConfigRegionalEndpointResolver
 
 
 class TestChainedEndpointResolver(unittest.TestCase):
@@ -42,9 +43,18 @@ class TestChainedEndpointResolver(unittest.TestCase):
         self.assertEqual(ex.exception.error_code, "SDK.EndpointResolvingError")
         self.assertEqual(
             ex.exception.message, "No endpoint in the region 'cn-hangzhou' for product 'ecs'.\n"
-            "You can set an endpoint for your request explicitly.\n"
-            "See https://www.alibabacloud.com/help/doc-detail/92074.htm\n")
+                                  "You can set an endpoint for your request explicitly.\n"
+                                  "See https://www.alibabacloud.com/help/doc-detail/92074.htm\n")
         # can be resolved
         request = ResolveEndpointRequest("cn-huhehaote", "ecs", "", "")
         self.assertEqual(resolver.resolve(request),
                          "my-endpoint-for-cnhuhehaote-ecs")
+
+        chain = [
+            LocalConfigRegionalEndpointResolver(),
+            user
+        ]
+        resolver = ChainedEndpointResolver(chain)
+        request.request_network = 'inner'
+        endpoint = resolver.resolve(request)
+        self.assertEqual('my-endpoint-for-cnhuhehaote-ecs', endpoint)

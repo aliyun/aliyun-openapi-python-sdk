@@ -100,11 +100,17 @@ class HttpResponse(HttpRequest):
     def get_response_object(self):
         with Session() as s:
             current_protocol = 'https://' if self.get_ssl_enabled() else 'http://'
+            host = self.get_host()
+            if host.startswith('https://') or\
+                    not host.startswith('https://') and current_protocol == 'https://':
+                port = ':%s' % self.__port if self.__port != 80 and self.__port != 443 else ''
+            else:
+                port = ':%s' % self.__port if self.__port != 80 else ''
 
-            url = current_protocol + self.get_host() + self.get_url()
-
-            if self.__port != 80:
-                url = current_protocol + self.get_host() + ":" + str(self.__port) + self.get_url()
+            if host.startswith('http://') or host.startswith('https://'):
+                url = host + port + self.get_url()
+            else:
+                url = current_protocol + host + port + self.get_url()
 
             req = Request(method=self.get_method(), url=url,
                           data=self.get_body(),
