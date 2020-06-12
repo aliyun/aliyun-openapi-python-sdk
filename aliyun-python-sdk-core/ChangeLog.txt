@@ -1,3 +1,7 @@
+2020-06-12 Version 2.13.18
+1, Fixed repeated stacking of UserAgent.
+2, Improve URL stitching when specifying endpoint.
+
 2020-06-11 Version 2.13.17
 1, Fixed find endpoint rule.
 
