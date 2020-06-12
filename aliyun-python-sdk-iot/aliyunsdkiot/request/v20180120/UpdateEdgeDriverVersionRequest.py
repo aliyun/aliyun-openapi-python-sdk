@@ -23,7 +23,7 @@ from aliyunsdkiot.endpoint import endpoint_data
 class UpdateEdgeDriverVersionRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'UpdateEdgeDriverVersion','Iot')
+		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'UpdateEdgeDriverVersion','iot')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -36,6 +36,12 @@ class UpdateEdgeDriverVersionRequest(RpcRequest):
 
 	def set_ConfigCheckRule(self,ConfigCheckRule):
 		self.add_query_param('ConfigCheckRule',ConfigCheckRule)
+
+	def get_Argument(self):
+		return self.get_query_params().get('Argument')
+
+	def set_Argument(self,Argument):
+		self.add_query_param('Argument',Argument)
 
 	def get_EdgeVersion(self):
 		return self.get_query_params().get('EdgeVersion')
