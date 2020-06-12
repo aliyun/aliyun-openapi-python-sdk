@@ -429,7 +429,7 @@ class RoaRequest(AcsRequest):
             ak,
             secret,
             self.get_accept_format(),
-            self.get_headers(),
+            self.get_headers().copy(),
             self.get_uri_pattern(),
             self.get_path_params(),
             self.get_method())
