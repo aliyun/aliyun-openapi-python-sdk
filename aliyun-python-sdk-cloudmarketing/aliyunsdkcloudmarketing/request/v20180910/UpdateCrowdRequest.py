@@ -19,8 +19,14 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class RequestUploadFileRequest(RpcRequest):
+class UpdateCrowdRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'cloudmarketing', '2018-09-10', 'RequestUploadFile')
+		RpcRequest.__init__(self, 'cloudmarketing', '2018-09-10', 'UpdateCrowd')
 		self.set_method('POST')
+
+	def get_RequestJsonData(self):
+		return self.get_body_params().get('RequestJsonData')
+
+	def set_RequestJsonData(self,RequestJsonData):
+		self.add_body_params('RequestJsonData', RequestJsonData)

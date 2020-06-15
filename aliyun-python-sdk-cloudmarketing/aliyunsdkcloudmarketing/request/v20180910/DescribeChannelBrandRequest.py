@@ -19,8 +19,8 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class RequestUploadFileRequest(RpcRequest):
+class DescribeChannelBrandRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'cloudmarketing', '2018-09-10', 'RequestUploadFile')
+		RpcRequest.__init__(self, 'cloudmarketing', '2018-09-10', 'DescribeChannelBrand')
 		self.set_method('POST')

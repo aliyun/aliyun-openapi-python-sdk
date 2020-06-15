@@ -19,8 +19,14 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class RequestUploadFileRequest(RpcRequest):
+class DeleteCrowdRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'cloudmarketing', '2018-09-10', 'RequestUploadFile')
+		RpcRequest.__init__(self, 'cloudmarketing', '2018-09-10', 'DeleteCrowd')
 		self.set_method('POST')
+
+	def get_CrowdId(self):
+		return self.get_query_params().get('CrowdId')
+
+	def set_CrowdId(self,CrowdId):
+		self.add_query_param('CrowdId',CrowdId)

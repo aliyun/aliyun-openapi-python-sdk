@@ -19,8 +19,14 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class RequestUploadFileRequest(RpcRequest):
+class FetchFileSchemaRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'cloudmarketing', '2018-09-10', 'RequestUploadFile')
+		RpcRequest.__init__(self, 'cloudmarketing', '2018-09-10', 'FetchFileSchema')
 		self.set_method('POST')
+
+	def get_FileId(self):
+		return self.get_query_params().get('FileId')
+
+	def set_FileId(self,FileId):
+		self.add_query_param('FileId',FileId)

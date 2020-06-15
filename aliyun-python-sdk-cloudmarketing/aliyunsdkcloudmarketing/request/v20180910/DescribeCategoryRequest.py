@@ -19,8 +19,20 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class RequestUploadFileRequest(RpcRequest):
+class DescribeCategoryRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'cloudmarketing', '2018-09-10', 'RequestUploadFile')
+		RpcRequest.__init__(self, 'cloudmarketing', '2018-09-10', 'DescribeCategory')
 		self.set_method('POST')
+
+	def get_Recursive(self):
+		return self.get_query_params().get('Recursive')
+
+	def set_Recursive(self,Recursive):
+		self.add_query_param('Recursive',Recursive)
+
+	def get_CategoryId(self):
+		return self.get_query_params().get('CategoryId')
+
+	def set_CategoryId(self,CategoryId):
+		self.add_query_param('CategoryId',CategoryId)

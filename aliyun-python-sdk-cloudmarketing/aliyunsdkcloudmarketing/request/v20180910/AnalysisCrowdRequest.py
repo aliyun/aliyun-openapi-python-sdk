@@ -19,8 +19,22 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class RequestUploadFileRequest(RpcRequest):
+class AnalysisCrowdRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'cloudmarketing', '2018-09-10', 'RequestUploadFile')
+		RpcRequest.__init__(self, 'cloudmarketing', '2018-09-10', 'AnalysisCrowd')
 		self.set_method('POST')
+
+	def get_TagIdss(self):
+		return self.get_query_params().get('TagIdss')
+
+	def set_TagIdss(self, TagIdss):
+		for depth1 in range(len(TagIdss)):
+			if TagIdss[depth1] is not None:
+				self.add_query_param('TagIds.' + str(depth1 + 1) , TagIdss[depth1])
+
+	def get_CrowdId(self):
+		return self.get_query_params().get('CrowdId')
+
+	def set_CrowdId(self,CrowdId):
+		self.add_query_param('CrowdId',CrowdId)

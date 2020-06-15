@@ -19,8 +19,26 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class RequestUploadFileRequest(RpcRequest):
+class UpdateBrandRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'cloudmarketing', '2018-09-10', 'RequestUploadFile')
+		RpcRequest.__init__(self, 'cloudmarketing', '2018-09-10', 'UpdateBrand')
 		self.set_method('POST')
+
+	def get_Name(self):
+		return self.get_body_params().get('Name')
+
+	def set_Name(self,Name):
+		self.add_body_params('Name', Name)
+
+	def get_Id(self):
+		return self.get_body_params().get('Id')
+
+	def set_Id(self,Id):
+		self.add_body_params('Id', Id)
+
+	def get_Desc(self):
+		return self.get_body_params().get('Desc')
+
+	def set_Desc(self,Desc):
+		self.add_body_params('Desc', Desc)

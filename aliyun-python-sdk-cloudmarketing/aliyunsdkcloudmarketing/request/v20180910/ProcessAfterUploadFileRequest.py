@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,19 +18,21 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+
 class ProcessAfterUploadFileRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'cloudmarketing', '2018-09-10', 'ProcessAfterUploadFile')
-
-	def get_SrcFileName(self):
-		return self.get_query_params().get('SrcFileName')
-
-	def set_SrcFileName(self,SrcFileName):
-		self.add_query_param('SrcFileName',SrcFileName)
+		self.set_method('POST')
 
 	def get_OssPath(self):
 		return self.get_query_params().get('OssPath')
 
 	def set_OssPath(self,OssPath):
 		self.add_query_param('OssPath',OssPath)
+
+	def get_SrcFileName(self):
+		return self.get_query_params().get('SrcFileName')
+
+	def set_SrcFileName(self,SrcFileName):
+		self.add_query_param('SrcFileName',SrcFileName)

@@ -19,8 +19,16 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class RequestUploadFileRequest(RpcRequest):
+class DescribeAuthBrandRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'cloudmarketing', '2018-09-10', 'RequestUploadFile')
+		RpcRequest.__init__(self, 'cloudmarketing', '2018-09-10', 'DescribeAuthBrand')
 		self.set_method('POST')
+
+	def get_AccountIdss(self):
+		return self.get_query_params().get('AccountIdss')
+
+	def set_AccountIdss(self, AccountIdss):
+		for depth1 in range(len(AccountIdss)):
+			if AccountIdss[depth1] is not None:
+				self.add_query_param('AccountIds.' + str(depth1 + 1) , AccountIdss[depth1])

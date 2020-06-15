@@ -19,8 +19,14 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class RequestUploadFileRequest(RpcRequest):
+class FetchTagRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'cloudmarketing', '2018-09-10', 'RequestUploadFile')
+		RpcRequest.__init__(self, 'cloudmarketing', '2018-09-10', 'FetchTag')
 		self.set_method('POST')
+
+	def get_TagId(self):
+		return self.get_query_params().get('TagId')
+
+	def set_TagId(self,TagId):
+		self.add_query_param('TagId',TagId)
