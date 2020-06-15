@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkwaf_openapi.endpoint import endpoint_data
 
-class CreateIPBlockRequest(RpcRequest):
+class DescribeInstanceInfosRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'waf-openapi', '2019-09-10', 'CreateIPBlock','waf')
+		RpcRequest.__init__(self, 'waf-openapi', '2019-09-10', 'DescribeInstanceInfos','waf')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,38 +31,20 @@ class CreateIPBlockRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_DomainList(self):
-		return self.get_query_params().get('DomainList')
-
-	def set_DomainList(self,DomainList):
-		self.add_query_param('DomainList',DomainList)
-
-	def get_IPList(self):
-		return self.get_query_params().get('IPList')
-
-	def set_IPList(self,IPList):
-		self.add_query_param('IPList',IPList)
-
 	def get_ResourceGroupId(self):
 		return self.get_query_params().get('ResourceGroupId')
 
 	def set_ResourceGroupId(self,ResourceGroupId):
 		self.add_query_param('ResourceGroupId',ResourceGroupId)
 
-	def get_BlockInterval(self):
-		return self.get_query_params().get('BlockInterval')
-
-	def set_BlockInterval(self,BlockInterval):
-		self.add_query_param('BlockInterval',BlockInterval)
-
-	def get_OperationType(self):
-		return self.get_query_params().get('OperationType')
-
-	def set_OperationType(self,OperationType):
-		self.add_query_param('OperationType',OperationType)
-
 	def get_InstanceId(self):
 		return self.get_query_params().get('InstanceId')
 
 	def set_InstanceId(self,InstanceId):
 		self.add_query_param('InstanceId',InstanceId)
+
+	def get_InstanceSource(self):
+		return self.get_query_params().get('InstanceSource')
+
+	def set_InstanceSource(self,InstanceSource):
+		self.add_query_param('InstanceSource',InstanceSource)
