@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,28 +18,18 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+
 class SwitchInstanceNetTypeRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'PetaData', '2016-01-01', 'SwitchInstanceNetType','petadata')
-
-	def get_VSwitchId(self):
-		return self.get_query_params().get('VSwitchId')
-
-	def set_VSwitchId(self,VSwitchId):
-		self.add_query_param('VSwitchId',VSwitchId)
+		self.set_method('POST')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_InstanceId(self):
-		return self.get_query_params().get('InstanceId')
-
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
 
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
@@ -53,26 +43,38 @@ class SwitchInstanceNetTypeRequest(RpcRequest):
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
-	def get_TargetNetworkType(self):
-		return self.get_query_params().get('TargetNetworkType')
-
-	def set_TargetNetworkType(self,TargetNetworkType):
-		self.add_query_param('TargetNetworkType',TargetNetworkType)
-
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
 
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
-	def get_VpcId(self):
-		return self.get_query_params().get('VpcId')
-
-	def set_VpcId(self,VpcId):
-		self.add_query_param('VpcId',VpcId)
-
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_VSwitchId(self):
+		return self.get_query_params().get('VSwitchId')
+
+	def set_VSwitchId(self,VSwitchId):
+		self.add_query_param('VSwitchId',VSwitchId)
+
+	def get_InstanceId(self):
+		return self.get_query_params().get('InstanceId')
+
+	def set_InstanceId(self,InstanceId):
+		self.add_query_param('InstanceId',InstanceId)
+
+	def get_TargetNetworkType(self):
+		return self.get_query_params().get('TargetNetworkType')
+
+	def set_TargetNetworkType(self,TargetNetworkType):
+		self.add_query_param('TargetNetworkType',TargetNetworkType)
+
+	def get_VpcId(self):
+		return self.get_query_params().get('VpcId')
+
+	def set_VpcId(self,VpcId):
+		self.add_query_param('VpcId',VpcId)

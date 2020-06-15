@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,22 +18,30 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+
 class ModifyBackupPolicyRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'PetaData', '2016-01-01', 'ModifyBackupPolicy','petadata')
-
-	def get_PreferredBackupPeriod(self):
-		return self.get_query_params().get('PreferredBackupPeriod')
-
-	def set_PreferredBackupPeriod(self,PreferredBackupPeriod):
-		self.add_query_param('PreferredBackupPeriod',PreferredBackupPeriod)
+		self.set_method('POST')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+
+	def get_SecurityToken(self):
+		return self.get_query_params().get('SecurityToken')
+
+	def set_SecurityToken(self,SecurityToken):
+		self.add_query_param('SecurityToken',SecurityToken)
+
+	def get_PreferredBackupPeriod(self):
+		return self.get_query_params().get('PreferredBackupPeriod')
+
+	def set_PreferredBackupPeriod(self,PreferredBackupPeriod):
+		self.add_query_param('PreferredBackupPeriod',PreferredBackupPeriod)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -82,9 +90,3 @@ class ModifyBackupPolicyRequest(RpcRequest):
 
 	def set_DBName(self,DBName):
 		self.add_query_param('DBName',DBName)
-
-	def get_SecurityToken(self):
-		return self.get_query_params().get('SecurityToken')
-
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)

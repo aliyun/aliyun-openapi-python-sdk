@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,16 +18,24 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+
 class ModifyAccountDescriptionRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'PetaData', '2016-01-01', 'ModifyAccountDescription','petadata')
+		self.set_method('POST')
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+
+	def get_AccountDescription(self):
+		return self.get_query_params().get('AccountDescription')
+
+	def set_AccountDescription(self,AccountDescription):
+		self.add_query_param('AccountDescription',AccountDescription)
 
 	def get_AccountName(self):
 		return self.get_query_params().get('AccountName')
@@ -41,6 +49,12 @@ class ModifyAccountDescriptionRequest(RpcRequest):
 	def set_SecurityToken(self,SecurityToken):
 		self.add_query_param('SecurityToken',SecurityToken)
 
+	def get_DBInstanceId(self):
+		return self.get_query_params().get('DBInstanceId')
+
+	def set_DBInstanceId(self,DBInstanceId):
+		self.add_query_param('DBInstanceId',DBInstanceId)
+
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -53,20 +67,8 @@ class ModifyAccountDescriptionRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
-	def get_DBInstanceId(self):
-		return self.get_query_params().get('DBInstanceId')
-
-	def set_DBInstanceId(self,DBInstanceId):
-		self.add_query_param('DBInstanceId',DBInstanceId)
-
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
-
-	def get_AccountDescription(self):
-		return self.get_query_params().get('AccountDescription')
-
-	def set_AccountDescription(self,AccountDescription):
-		self.add_query_param('AccountDescription',AccountDescription)

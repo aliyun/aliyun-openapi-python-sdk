@@ -19,10 +19,10 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class DescribeDatabasePerformanceRequest(RpcRequest):
+class UntagResourcesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'PetaData', '2016-01-01', 'DescribeDatabasePerformance','petadata')
+		RpcRequest.__init__(self, 'PetaData', '2016-01-01', 'UntagResources','petadata')
 		self.set_method('POST')
 
 	def get_ResourceOwnerId(self):
@@ -31,29 +31,19 @@ class DescribeDatabasePerformanceRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_StartTime(self):
-		return self.get_query_params().get('StartTime')
+	def get_All(self):
+		return self.get_query_params().get('All')
 
-	def set_StartTime(self,StartTime):
-		self.add_query_param('StartTime',StartTime)
+	def set_All(self,All):
+		self.add_query_param('All',All)
 
-	def get_KeyList(self):
-		return self.get_query_params().get('KeyList')
+	def get_ResourceIds(self):
+		return self.get_query_params().get('ResourceIds')
 
-	def set_KeyList(self,KeyList):
-		self.add_query_param('KeyList',KeyList)
-
-	def get_SecurityToken(self):
-		return self.get_query_params().get('SecurityToken')
-
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)
-
-	def get_MonitorGroup(self):
-		return self.get_query_params().get('MonitorGroup')
-
-	def set_MonitorGroup(self,MonitorGroup):
-		self.add_query_param('MonitorGroup',MonitorGroup)
+	def set_ResourceIds(self, ResourceIds):
+		for depth1 in range(len(ResourceIds)):
+			if ResourceIds[depth1] is not None:
+				self.add_query_param('ResourceId.' + str(depth1 + 1) , ResourceIds[depth1])
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -67,32 +57,22 @@ class DescribeDatabasePerformanceRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
-	def get_EndTime(self):
-		return self.get_query_params().get('EndTime')
-
-	def set_EndTime(self,EndTime):
-		self.add_query_param('EndTime',EndTime)
-
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_InstanceId(self):
-		return self.get_query_params().get('InstanceId')
+	def get_ResourceType(self):
+		return self.get_query_params().get('ResourceType')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
+	def set_ResourceType(self,ResourceType):
+		self.add_query_param('ResourceType',ResourceType)
 
-	def get_DBName(self):
-		return self.get_query_params().get('DBName')
+	def get_TagKeys(self):
+		return self.get_query_params().get('TagKeys')
 
-	def set_DBName(self,DBName):
-		self.add_query_param('DBName',DBName)
-
-	def get_Interval(self):
-		return self.get_query_params().get('Interval')
-
-	def set_Interval(self,Interval):
-		self.add_query_param('Interval',Interval)
+	def set_TagKeys(self, TagKeys):
+		for depth1 in range(len(TagKeys)):
+			if TagKeys[depth1] is not None:
+				self.add_query_param('TagKey.' + str(depth1 + 1) , TagKeys[depth1])
