@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,6 +18,7 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+
 class BuyOriginPicturesRequest(RpcRequest):
 
 	def __init__(self):
@@ -27,7 +28,7 @@ class BuyOriginPicturesRequest(RpcRequest):
 	def get_PictureIds(self):
 		return self.get_query_params().get('PictureIds')
 
-	def set_PictureIds(self,PictureIds):
-		for i in range(len(PictureIds)):	
-			if PictureIds[i] is not None:
-				self.add_query_param('PictureId.' + str(i + 1) , PictureIds[i]);
+	def set_PictureIds(self, PictureIds):
+		for depth1 in range(len(PictureIds)):
+			if PictureIds[depth1] is not None:
+				self.add_query_param('PictureId.' + str(depth1 + 1) , PictureIds[depth1])

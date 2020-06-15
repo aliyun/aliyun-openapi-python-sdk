@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,6 +18,7 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+
 class SubmitGenerateTaskRequest(RpcRequest):
 
 	def __init__(self):
@@ -51,10 +52,10 @@ class SubmitGenerateTaskRequest(RpcRequest):
 	def get_MajorImagePaths(self):
 		return self.get_query_params().get('MajorImagePaths')
 
-	def set_MajorImagePaths(self,MajorImagePaths):
-		for i in range(len(MajorImagePaths)):	
-			if MajorImagePaths[i] is not None:
-				self.add_query_param('MajorImagePath.' + str(i + 1) , MajorImagePaths[i]);
+	def set_MajorImagePaths(self, MajorImagePaths):
+		for depth1 in range(len(MajorImagePaths)):
+			if MajorImagePaths[depth1] is not None:
+				self.add_query_param('MajorImagePath.' + str(depth1 + 1) , MajorImagePaths[depth1])
 
 	def get_Width(self):
 		return self.get_query_params().get('Width')
@@ -65,18 +66,18 @@ class SubmitGenerateTaskRequest(RpcRequest):
 	def get_CopyWrites(self):
 		return self.get_query_params().get('CopyWrites')
 
-	def set_CopyWrites(self,CopyWrites):
-		for i in range(len(CopyWrites)):	
-			if CopyWrites[i] is not None:
-				self.add_query_param('CopyWrite.' + str(i + 1) , CopyWrites[i]);
+	def set_CopyWrites(self, CopyWrites):
+		for depth1 in range(len(CopyWrites)):
+			if CopyWrites[depth1] is not None:
+				self.add_query_param('CopyWrite.' + str(depth1 + 1) , CopyWrites[depth1])
 
 	def get_PropertyIds(self):
 		return self.get_query_params().get('PropertyIds')
 
-	def set_PropertyIds(self,PropertyIds):
-		for i in range(len(PropertyIds)):	
-			if PropertyIds[i] is not None:
-				self.add_query_param('PropertyId.' + str(i + 1) , PropertyIds[i]);
+	def set_PropertyIds(self, PropertyIds):
+		for depth1 in range(len(PropertyIds)):
+			if PropertyIds[depth1] is not None:
+				self.add_query_param('PropertyId.' + str(depth1 + 1) , PropertyIds[depth1])
 
 	def get_Height(self):
 		return self.get_query_params().get('Height')

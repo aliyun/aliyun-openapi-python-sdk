@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,6 +18,7 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+
 class SubmitCutoutTaskRequest(RpcRequest):
 
 	def __init__(self):
@@ -27,7 +28,7 @@ class SubmitCutoutTaskRequest(RpcRequest):
 	def get_PictureUrls(self):
 		return self.get_query_params().get('PictureUrls')
 
-	def set_PictureUrls(self,PictureUrls):
-		for i in range(len(PictureUrls)):	
-			if PictureUrls[i] is not None:
-				self.add_query_param('PictureUrl.' + str(i + 1) , PictureUrls[i]);
+	def set_PictureUrls(self, PictureUrls):
+		for depth1 in range(len(PictureUrls)):
+			if PictureUrls[depth1] is not None:
+				self.add_query_param('PictureUrl.' + str(depth1 + 1) , PictureUrls[depth1])
