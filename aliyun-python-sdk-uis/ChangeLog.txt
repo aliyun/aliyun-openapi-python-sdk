@@ -1,3 +1,6 @@
+2020-06-15 Version: 1.0.1
+- Change dependency to aliyun-python-sdk-core.
+
 2018-11-29 Version: 1.0.0
 1, This is the first SDK version of Uis service.
 

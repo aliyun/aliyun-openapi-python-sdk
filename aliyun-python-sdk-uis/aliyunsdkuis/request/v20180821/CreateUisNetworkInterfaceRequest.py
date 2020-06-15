@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkuis.endpoint import endpoint_data
 
-class DescribeHighPriorityIpRequest(RpcRequest):
+class CreateUisNetworkInterfaceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Uis', '2018-08-21', 'DescribeHighPriorityIp','uis')
+		RpcRequest.__init__(self, 'Uis', '2018-08-21', 'CreateUisNetworkInterface','uis')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,29 +31,29 @@ class DescribeHighPriorityIpRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_IpAddress(self):
+		return self.get_query_params().get('IpAddress')
+
+	def set_IpAddress(self,IpAddress):
+		self.add_query_param('IpAddress',IpAddress)
+
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_PageNumber(self):
-		return self.get_query_params().get('PageNumber')
+	def get_SecurityGroupId(self):
+		return self.get_query_params().get('SecurityGroupId')
 
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
+	def set_SecurityGroupId(self,SecurityGroupId):
+		self.add_query_param('SecurityGroupId',SecurityGroupId)
 
-	def get_UisId(self):
-		return self.get_query_params().get('UisId')
+	def get_Description(self):
+		return self.get_query_params().get('Description')
 
-	def set_UisId(self,UisId):
-		self.add_query_param('UisId',UisId)
-
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
+	def set_Description(self,Description):
+		self.add_query_param('Description',Description)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -67,14 +67,26 @@ class DescribeHighPriorityIpRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
-	def get_HighPriorityIp(self):
-		return self.get_query_params().get('HighPriorityIp')
-
-	def set_HighPriorityIp(self,HighPriorityIp):
-		self.add_query_param('HighPriorityIp',HighPriorityIp)
-
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_VswitchId(self):
+		return self.get_query_params().get('VswitchId')
+
+	def set_VswitchId(self,VswitchId):
+		self.add_query_param('VswitchId',VswitchId)
+
+	def get_UisNodeId(self):
+		return self.get_query_params().get('UisNodeId')
+
+	def set_UisNodeId(self,UisNodeId):
+		self.add_query_param('UisNodeId',UisNodeId)
+
+	def get_Name(self):
+		return self.get_query_params().get('Name')
+
+	def set_Name(self,Name):
+		self.add_query_param('Name',Name)

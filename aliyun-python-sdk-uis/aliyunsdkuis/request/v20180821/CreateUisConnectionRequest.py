@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,10 +18,18 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkuis.endpoint import endpoint_data
+
 class CreateUisConnectionRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Uis', '2018-08-21', 'CreateUisConnection','uis')
+		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -29,11 +37,23 @@ class CreateUisConnectionRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_UisNodeId(self):
-		return self.get_query_params().get('UisNodeId')
+	def get_Description(self):
+		return self.get_query_params().get('Description')
 
-	def set_UisNodeId(self,UisNodeId):
-		self.add_query_param('UisNodeId',UisNodeId)
+	def set_Description(self,Description):
+		self.add_query_param('Description',Description)
+
+	def get_SslConfig(self):
+		return self.get_query_params().get('SslConfig')
+
+	def set_SslConfig(self,SslConfig):
+		self.add_query_param('SslConfig',SslConfig)
+
+	def get_UisProtocol(self):
+		return self.get_query_params().get('UisProtocol')
+
+	def set_UisProtocol(self,UisProtocol):
+		self.add_query_param('UisProtocol',UisProtocol)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -47,35 +67,23 @@ class CreateUisConnectionRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
-	def get_Name(self):
-		return self.get_query_params().get('Name')
-
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)
-
-	def get_Description(self):
-		return self.get_query_params().get('Description')
-
-	def set_Description(self,Description):
-		self.add_query_param('Description',Description)
-
-	def get_UisProtocol(self):
-		return self.get_query_params().get('UisProtocol')
-
-	def set_UisProtocol(self,UisProtocol):
-		self.add_query_param('UisProtocol',UisProtocol)
-
-	def get_SslConfig(self):
-		return self.get_query_params().get('SslConfig')
-
-	def set_SslConfig(self,SslConfig):
-		self.add_query_param('SslConfig',SslConfig)
-
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_UisNodeId(self):
+		return self.get_query_params().get('UisNodeId')
+
+	def set_UisNodeId(self,UisNodeId):
+		self.add_query_param('UisNodeId',UisNodeId)
+
+	def get_Name(self):
+		return self.get_query_params().get('Name')
+
+	def set_Name(self,Name):
+		self.add_query_param('Name',Name)
 
 	def get_GreConfig(self):
 		return self.get_query_params().get('GreConfig')

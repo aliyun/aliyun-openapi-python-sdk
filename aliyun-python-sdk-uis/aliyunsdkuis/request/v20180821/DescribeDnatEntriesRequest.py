@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkuis.endpoint import endpoint_data
 
-class DescribeHighPriorityIpRequest(RpcRequest):
+class DescribeDnatEntriesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Uis', '2018-08-21', 'DescribeHighPriorityIp','uis')
+		RpcRequest.__init__(self, 'Uis', '2018-08-21', 'DescribeDnatEntries','uis')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -43,11 +43,11 @@ class DescribeHighPriorityIpRequest(RpcRequest):
 	def set_PageNumber(self,PageNumber):
 		self.add_query_param('PageNumber',PageNumber)
 
-	def get_UisId(self):
-		return self.get_query_params().get('UisId')
+	def get_UisDnatId(self):
+		return self.get_query_params().get('UisDnatId')
 
-	def set_UisId(self,UisId):
-		self.add_query_param('UisId',UisId)
+	def set_UisDnatId(self,UisDnatId):
+		self.add_query_param('UisDnatId',UisDnatId)
 
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
@@ -67,14 +67,14 @@ class DescribeHighPriorityIpRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
-	def get_HighPriorityIp(self):
-		return self.get_query_params().get('HighPriorityIp')
-
-	def set_HighPriorityIp(self,HighPriorityIp):
-		self.add_query_param('HighPriorityIp',HighPriorityIp)
-
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_UisNodeId(self):
+		return self.get_query_params().get('UisNodeId')
+
+	def set_UisNodeId(self,UisNodeId):
+		self.add_query_param('UisNodeId',UisNodeId)

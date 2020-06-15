@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,10 +18,18 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkuis.endpoint import endpoint_data
+
 class ModifyUisNodeAttributeRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Uis', '2018-08-21', 'ModifyUisNodeAttribute','uis')
+		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -29,17 +37,17 @@ class ModifyUisNodeAttributeRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_UisNodeBandwidth(self):
-		return self.get_query_params().get('UisNodeBandwidth')
+	def get_Description(self):
+		return self.get_query_params().get('Description')
 
-	def set_UisNodeBandwidth(self,UisNodeBandwidth):
-		self.add_query_param('UisNodeBandwidth',UisNodeBandwidth)
+	def set_Description(self,Description):
+		self.add_query_param('Description',Description)
 
-	def get_UisNodeId(self):
-		return self.get_query_params().get('UisNodeId')
+	def get_UisId(self):
+		return self.get_query_params().get('UisId')
 
-	def set_UisNodeId(self,UisNodeId):
-		self.add_query_param('UisNodeId',UisNodeId)
+	def set_UisId(self,UisId):
+		self.add_query_param('UisId',UisId)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -53,26 +61,26 @@ class ModifyUisNodeAttributeRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
-	def get_UisId(self):
-		return self.get_query_params().get('UisId')
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
 
-	def set_UisId(self,UisId):
-		self.add_query_param('UisId',UisId)
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
+
+	def get_UisNodeBandwidth(self):
+		return self.get_query_params().get('UisNodeBandwidth')
+
+	def set_UisNodeBandwidth(self,UisNodeBandwidth):
+		self.add_query_param('UisNodeBandwidth',UisNodeBandwidth)
+
+	def get_UisNodeId(self):
+		return self.get_query_params().get('UisNodeId')
+
+	def set_UisNodeId(self,UisNodeId):
+		self.add_query_param('UisNodeId',UisNodeId)
 
 	def get_Name(self):
 		return self.get_query_params().get('Name')
 
 	def set_Name(self,Name):
 		self.add_query_param('Name',Name)
-
-	def get_Description(self):
-		return self.get_query_params().get('Description')
-
-	def set_Description(self,Description):
-		self.add_query_param('Description',Description)
-
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)

@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkuis.endpoint import endpoint_data
 
-class DescribeHighPriorityIpRequest(RpcRequest):
+class ModifyWhiteListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Uis', '2018-08-21', 'DescribeHighPriorityIp','uis')
+		RpcRequest.__init__(self, 'Uis', '2018-08-21', 'ModifyWhiteList','uis')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -37,11 +37,11 @@ class DescribeHighPriorityIpRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_PageNumber(self):
-		return self.get_query_params().get('PageNumber')
+	def get_ClientToken(self):
+		return self.get_query_params().get('ClientToken')
 
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
+	def set_ClientToken(self,ClientToken):
+		self.add_query_param('ClientToken',ClientToken)
 
 	def get_UisId(self):
 		return self.get_query_params().get('UisId')
@@ -49,11 +49,11 @@ class DescribeHighPriorityIpRequest(RpcRequest):
 	def set_UisId(self,UisId):
 		self.add_query_param('UisId',UisId)
 
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
+	def get_ModifyMode(self):
+		return self.get_query_params().get('ModifyMode')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
+	def set_ModifyMode(self,ModifyMode):
+		self.add_query_param('ModifyMode',ModifyMode)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -67,11 +67,11 @@ class DescribeHighPriorityIpRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
-	def get_HighPriorityIp(self):
-		return self.get_query_params().get('HighPriorityIp')
+	def get_Whitelist(self):
+		return self.get_query_params().get('Whitelist')
 
-	def set_HighPriorityIp(self,HighPriorityIp):
-		self.add_query_param('HighPriorityIp',HighPriorityIp)
+	def set_Whitelist(self,Whitelist):
+		self.add_query_param('Whitelist',Whitelist)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')

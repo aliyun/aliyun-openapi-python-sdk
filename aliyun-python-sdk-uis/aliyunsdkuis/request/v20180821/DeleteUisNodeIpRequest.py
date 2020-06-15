@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,10 +18,18 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkuis.endpoint import endpoint_data
+
 class DeleteUisNodeIpRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Uis', '2018-08-21', 'DeleteUisNodeIp','uis')
+		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -29,29 +37,17 @@ class DeleteUisNodeIpRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_UisNodeId(self):
-		return self.get_query_params().get('UisNodeId')
-
-	def set_UisNodeId(self,UisNodeId):
-		self.add_query_param('UisNodeId',UisNodeId)
-
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
-
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
 	def get_ClientToken(self):
 		return self.get_query_params().get('ClientToken')
 
 	def set_ClientToken(self,ClientToken):
 		self.add_query_param('ClientToken',ClientToken)
 
-	def get_UisNodeIpAddress(self):
-		return self.get_query_params().get('UisNodeIpAddress')
+	def get_ResourceOwnerAccount(self):
+		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_UisNodeIpAddress(self,UisNodeIpAddress):
-		self.add_query_param('UisNodeIpAddress',UisNodeIpAddress)
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
@@ -64,3 +60,15 @@ class DeleteUisNodeIpRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_UisNodeId(self):
+		return self.get_query_params().get('UisNodeId')
+
+	def set_UisNodeId(self,UisNodeId):
+		self.add_query_param('UisNodeId',UisNodeId)
+
+	def get_UisNodeIpAddress(self):
+		return self.get_query_params().get('UisNodeIpAddress')
+
+	def set_UisNodeIpAddress(self,UisNodeIpAddress):
+		self.add_query_param('UisNodeIpAddress',UisNodeIpAddress)
