@@ -31,6 +31,12 @@ class StopMonitorRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_AlgorithmVendor(self):
+		return self.get_body_params().get('AlgorithmVendor')
+
+	def set_AlgorithmVendor(self,AlgorithmVendor):
+		self.add_body_params('AlgorithmVendor', AlgorithmVendor)
+
 	def get_TaskId(self):
 		return self.get_body_params().get('TaskId')
 

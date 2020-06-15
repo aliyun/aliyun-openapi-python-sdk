@@ -49,6 +49,12 @@ class GetMonitorResultRequest(RpcRequest):
 	def set_StartTime(self,StartTime):
 		self.add_body_params('StartTime', StartTime)
 
+	def get_AlgorithmVendor(self):
+		return self.get_body_params().get('AlgorithmVendor')
+
+	def set_AlgorithmVendor(self,AlgorithmVendor):
+		self.add_body_params('AlgorithmVendor', AlgorithmVendor)
+
 	def get_MinRecordId(self):
 		return self.get_body_params().get('MinRecordId')
 

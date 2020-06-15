@@ -102,3 +102,9 @@ class UpdateMonitorRequest(RpcRequest):
 
 	def set_DeviceList(self,DeviceList):
 		self.add_body_params('DeviceList', DeviceList)
+
+	def get_AlgorithmVendor(self):
+		return self.get_body_params().get('AlgorithmVendor')
+
+	def set_AlgorithmVendor(self,AlgorithmVendor):
+		self.add_body_params('AlgorithmVendor', AlgorithmVendor)
