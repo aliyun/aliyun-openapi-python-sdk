@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,13 +18,27 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class AgreeInviteRequest(RpcRequest):
+from aliyunsdkbaas.endpoint import endpoint_data
+
+class UnfreezeAntChainAccountRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Baas', '2018-07-31', 'AgreeInvite')
+		RpcRequest.__init__(self, 'Baas', '2018-07-31', 'UnfreezeAntChainAccount')
+		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_Code(self):
-		return self.get_body_params().get('Code')
 
-	def set_Code(self,Code):
-		self.add_body_params('Code', Code)
+	def get_AntChainId(self):
+		return self.get_body_params().get('AntChainId')
+
+	def set_AntChainId(self,AntChainId):
+		self.add_body_params('AntChainId', AntChainId)
+
+	def get_Account(self):
+		return self.get_body_params().get('Account')
+
+	def set_Account(self,Account):
+		self.add_body_params('Account', Account)

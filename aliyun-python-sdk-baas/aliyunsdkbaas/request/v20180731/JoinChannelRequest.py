@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,22 +18,30 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkbaas.endpoint import endpoint_data
+
 class JoinChannelRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Baas', '2018-07-31', 'JoinChannel')
+		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_Location(self):
-		return self.get_body_params().get('Location')
-
-	def set_Location(self,Location):
-		self.add_body_params('Location', Location)
 
 	def get_Do(self):
 		return self.get_query_params().get('Do')
 
 	def set_Do(self,Do):
 		self.add_query_param('Do',Do)
+
+	def get_Location(self):
+		return self.get_body_params().get('Location')
+
+	def set_Location(self,Location):
+		self.add_body_params('Location', Location)
 
 	def get_ChannelId(self):
 		return self.get_query_params().get('ChannelId')

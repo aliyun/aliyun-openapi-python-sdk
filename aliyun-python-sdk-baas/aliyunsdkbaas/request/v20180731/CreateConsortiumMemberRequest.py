@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,10 +18,18 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkbaas.endpoint import endpoint_data
+
 class CreateConsortiumMemberRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Baas', '2018-07-31', 'CreateConsortiumMember')
+		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_Code(self):
 		return self.get_query_params().get('Code')
@@ -32,11 +40,10 @@ class CreateConsortiumMemberRequest(RpcRequest):
 	def get_Organizations(self):
 		return self.get_query_params().get('Organizations')
 
-	def set_Organizations(self,Organizations):
-		for i in range(len(Organizations)):	
-			if Organizations[i].get('Id') is not None:
-				self.add_query_param('Organization.' + str(i + 1) + '.Id' , Organizations[i].get('Id'))
-
+	def set_Organizations(self, Organizations):
+		for depth1 in range(len(Organizations)):
+			if Organizations[depth1].get('Id') is not None:
+				self.add_query_param('Organization.' + str(depth1 + 1) + '.Id', Organizations[depth1].get('Id'))
 
 	def get_ConsortiumId(self):
 		return self.get_query_params().get('ConsortiumId')

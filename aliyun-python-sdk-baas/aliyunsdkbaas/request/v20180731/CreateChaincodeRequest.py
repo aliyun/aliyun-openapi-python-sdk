@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,16 +18,24 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkbaas.endpoint import endpoint_data
+
 class CreateChaincodeRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Baas', '2018-07-31', 'CreateChaincode')
+		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_OrganizationId(self):
-		return self.get_body_params().get('OrganizationId')
 
-	def set_OrganizationId(self,OrganizationId):
-		self.add_body_params('OrganizationId', OrganizationId)
+	def get_EndorsePolicy(self):
+		return self.get_body_params().get('EndorsePolicy')
+
+	def set_EndorsePolicy(self,EndorsePolicy):
+		self.add_body_params('EndorsePolicy', EndorsePolicy)
 
 	def get_OssBucket(self):
 		return self.get_body_params().get('OssBucket')
@@ -35,17 +43,17 @@ class CreateChaincodeRequest(RpcRequest):
 	def set_OssBucket(self,OssBucket):
 		self.add_body_params('OssBucket', OssBucket)
 
+	def get_OrganizationId(self):
+		return self.get_body_params().get('OrganizationId')
+
+	def set_OrganizationId(self,OrganizationId):
+		self.add_body_params('OrganizationId', OrganizationId)
+
 	def get_OssUrl(self):
 		return self.get_body_params().get('OssUrl')
 
 	def set_OssUrl(self,OssUrl):
 		self.add_body_params('OssUrl', OssUrl)
-
-	def get_EndorsePolicy(self):
-		return self.get_body_params().get('EndorsePolicy')
-
-	def set_EndorsePolicy(self,EndorsePolicy):
-		self.add_body_params('EndorsePolicy', EndorsePolicy)
 
 	def get_Location(self):
 		return self.get_body_params().get('Location')
