@@ -144,6 +144,8 @@ class ApplyNodesRequest(RpcRequest):
 		for depth1 in range(len(InstanceTypeModels)):
 			if InstanceTypeModels[depth1].get('MaxPrice') is not None:
 				self.add_query_param('InstanceTypeModel.' + str(depth1 + 1) + '.MaxPrice', InstanceTypeModels[depth1].get('MaxPrice'))
+			if InstanceTypeModels[depth1].get('TargetImageId') is not None:
+				self.add_query_param('InstanceTypeModel.' + str(depth1 + 1) + '.TargetImageId', InstanceTypeModels[depth1].get('TargetImageId'))
 			if InstanceTypeModels[depth1].get('InstanceType') is not None:
 				self.add_query_param('InstanceTypeModel.' + str(depth1 + 1) + '.InstanceType', InstanceTypeModels[depth1].get('InstanceType'))
 
