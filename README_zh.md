@@ -21,7 +21,7 @@
 
 - [环境要求](./docs/0-Requirement-CN.md)
 - [安装](./docs/1-Installation-CN.md)
-- [客户端](./docs/2-Client-CN.md)
+- [客户端与凭证](./docs/2-Client-CN.md)
 - [超时机制](./docs/3-Timeout-CN.md)
 - [代理配置](./docs/4-Proxy-CN.md)
 - [日志](./docs/5-Log-CN.md)
