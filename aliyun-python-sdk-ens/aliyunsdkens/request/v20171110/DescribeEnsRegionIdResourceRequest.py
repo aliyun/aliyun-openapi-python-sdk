@@ -19,10 +19,10 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class DescribeUserBandWidthDataRequest(RpcRequest):
+class DescribeEnsRegionIdResourceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'DescribeUserBandWidthData','ens')
+		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'DescribeEnsRegionIdResource','ens')
 		self.set_method('POST')
 
 	def get_Isp(self):
@@ -37,17 +37,23 @@ class DescribeUserBandWidthDataRequest(RpcRequest):
 	def set_StartTime(self,StartTime):
 		self.add_query_param('StartTime',StartTime)
 
-	def get_EnsRegionId(self):
-		return self.get_query_params().get('EnsRegionId')
+	def get_PageNumber(self):
+		return self.get_query_params().get('PageNumber')
 
-	def set_EnsRegionId(self,EnsRegionId):
-		self.add_query_param('EnsRegionId',EnsRegionId)
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)
 
-	def get_Period(self):
-		return self.get_query_params().get('Period')
+	def get_OrderByParams(self):
+		return self.get_query_params().get('OrderByParams')
 
-	def set_Period(self,Period):
-		self.add_query_param('Period',Period)
+	def set_OrderByParams(self,OrderByParams):
+		self.add_query_param('OrderByParams',OrderByParams)
+
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
 
 	def get_EndTime(self):
 		return self.get_query_params().get('EndTime')
@@ -60,9 +66,3 @@ class DescribeUserBandWidthDataRequest(RpcRequest):
 
 	def set_Version(self,Version):
 		self.add_query_param('Version',Version)
-
-	def get_InstanceId(self):
-		return self.get_query_params().get('InstanceId')
-
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)

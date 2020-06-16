@@ -18,16 +18,18 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+
 class RebootInstanceRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'RebootInstance','ens')
+		self.set_method('POST')
 
-	def get_InstanceId(self):
-		return self.get_query_params().get('InstanceId')
+	def get_ForceStop(self):
+		return self.get_query_params().get('ForceStop')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
+	def set_ForceStop(self,ForceStop):
+		self.add_query_param('ForceStop',ForceStop)
 
 	def get_Version(self):
 		return self.get_query_params().get('Version')
@@ -35,8 +37,8 @@ class RebootInstanceRequest(RpcRequest):
 	def set_Version(self,Version):
 		self.add_query_param('Version',Version)
 
-	def get_ForceStop(self):
-		return self.get_query_params().get('ForceStop')
+	def get_InstanceId(self):
+		return self.get_query_params().get('InstanceId')
 
-	def set_ForceStop(self,ForceStop):
-		self.add_query_param('ForceStop',ForceStop)
+	def set_InstanceId(self,InstanceId):
+		self.add_query_param('InstanceId',InstanceId)

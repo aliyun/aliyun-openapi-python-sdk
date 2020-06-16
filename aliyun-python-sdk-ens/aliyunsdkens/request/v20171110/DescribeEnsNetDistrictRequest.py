@@ -19,11 +19,23 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class DescribeInstanceTypesRequest(RpcRequest):
+class DescribeEnsNetDistrictRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'DescribeInstanceTypes','ens')
+		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'DescribeEnsNetDistrict','ens')
 		self.set_method('POST')
+
+	def get_NetLevelCode(self):
+		return self.get_query_params().get('NetLevelCode')
+
+	def set_NetLevelCode(self,NetLevelCode):
+		self.add_query_param('NetLevelCode',NetLevelCode)
+
+	def get_NetDistrictCode(self):
+		return self.get_query_params().get('NetDistrictCode')
+
+	def set_NetDistrictCode(self,NetDistrictCode):
+		self.add_query_param('NetDistrictCode',NetDistrictCode)
 
 	def get_Version(self):
 		return self.get_query_params().get('Version')

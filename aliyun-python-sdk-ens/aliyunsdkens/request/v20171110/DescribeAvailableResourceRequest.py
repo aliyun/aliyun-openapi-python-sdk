@@ -18,10 +18,12 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+
 class DescribeAvailableResourceRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'DescribeAvailableResource','ens')
+		self.set_method('POST')
 
 	def get_Version(self):
 		return self.get_query_params().get('Version')

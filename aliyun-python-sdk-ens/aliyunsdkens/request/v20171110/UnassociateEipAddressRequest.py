@@ -19,11 +19,29 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class DescribeInstanceTypesRequest(RpcRequest):
+class UnassociateEipAddressRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'DescribeInstanceTypes','ens')
+		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'UnassociateEipAddress','ens')
 		self.set_method('POST')
+
+	def get_Eip(self):
+		return self.get_query_params().get('Eip')
+
+	def set_Eip(self,Eip):
+		self.add_query_param('Eip',Eip)
+
+	def get_EnsRegionId(self):
+		return self.get_query_params().get('EnsRegionId')
+
+	def set_EnsRegionId(self,EnsRegionId):
+		self.add_query_param('EnsRegionId',EnsRegionId)
+
+	def get_InstanceIdInternetIp(self):
+		return self.get_query_params().get('InstanceIdInternetIp')
+
+	def set_InstanceIdInternetIp(self,InstanceIdInternetIp):
+		self.add_query_param('InstanceIdInternetIp',InstanceIdInternetIp)
 
 	def get_Version(self):
 		return self.get_query_params().get('Version')

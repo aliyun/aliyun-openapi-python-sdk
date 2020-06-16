@@ -19,10 +19,10 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class DescribeInstanceTypesRequest(RpcRequest):
+class DescribeCreatePrePaidInstanceResultRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'DescribeInstanceTypes','ens')
+		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'DescribeCreatePrePaidInstanceResult','ens')
 		self.set_method('POST')
 
 	def get_Version(self):
@@ -30,3 +30,9 @@ class DescribeInstanceTypesRequest(RpcRequest):
 
 	def set_Version(self,Version):
 		self.add_query_param('Version',Version)
+
+	def get_InstanceId(self):
+		return self.get_query_params().get('InstanceId')
+
+	def set_InstanceId(self,InstanceId):
+		self.add_query_param('InstanceId',InstanceId)

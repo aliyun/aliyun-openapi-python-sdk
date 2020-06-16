@@ -19,23 +19,11 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class DescribeUserBandWidthDataRequest(RpcRequest):
+class DescribePriceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'DescribeUserBandWidthData','ens')
+		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'DescribePrice','ens')
 		self.set_method('POST')
-
-	def get_Isp(self):
-		return self.get_query_params().get('Isp')
-
-	def set_Isp(self,Isp):
-		self.add_query_param('Isp',Isp)
-
-	def get_StartTime(self):
-		return self.get_query_params().get('StartTime')
-
-	def set_StartTime(self,StartTime):
-		self.add_query_param('StartTime',StartTime)
 
 	def get_EnsRegionId(self):
 		return self.get_query_params().get('EnsRegionId')
@@ -43,17 +31,29 @@ class DescribeUserBandWidthDataRequest(RpcRequest):
 	def set_EnsRegionId(self,EnsRegionId):
 		self.add_query_param('EnsRegionId',EnsRegionId)
 
+	def get_InstanceType(self):
+		return self.get_query_params().get('InstanceType')
+
+	def set_InstanceType(self,InstanceType):
+		self.add_query_param('InstanceType',InstanceType)
+
+	def get_DataDisk1Size(self):
+		return self.get_query_params().get('DataDisk.1.Size')
+
+	def set_DataDisk1Size(self,DataDisk1Size):
+		self.add_query_param('DataDisk.1.Size',DataDisk1Size)
+
 	def get_Period(self):
 		return self.get_query_params().get('Period')
 
 	def set_Period(self,Period):
 		self.add_query_param('Period',Period)
 
-	def get_EndTime(self):
-		return self.get_query_params().get('EndTime')
+	def get_Quantity(self):
+		return self.get_query_params().get('Quantity')
 
-	def set_EndTime(self,EndTime):
-		self.add_query_param('EndTime',EndTime)
+	def set_Quantity(self,Quantity):
+		self.add_query_param('Quantity',Quantity)
 
 	def get_Version(self):
 		return self.get_query_params().get('Version')
@@ -61,8 +61,14 @@ class DescribeUserBandWidthDataRequest(RpcRequest):
 	def set_Version(self,Version):
 		self.add_query_param('Version',Version)
 
-	def get_InstanceId(self):
-		return self.get_query_params().get('InstanceId')
+	def get_SystemDiskSize(self):
+		return self.get_query_params().get('SystemDisk.Size')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
+	def set_SystemDiskSize(self,SystemDiskSize):
+		self.add_query_param('SystemDisk.Size',SystemDiskSize)
+
+	def get_InternetChargeType(self):
+		return self.get_query_params().get('InternetChargeType')
+
+	def set_InternetChargeType(self,InternetChargeType):
+		self.add_query_param('InternetChargeType',InternetChargeType)

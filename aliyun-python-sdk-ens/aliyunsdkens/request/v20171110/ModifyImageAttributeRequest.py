@@ -18,16 +18,12 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+
 class ModifyImageAttributeRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'ModifyImageAttribute','ens')
-
-	def get_product(self):
-		return self.get_query_params().get('product')
-
-	def set_product(self,product):
-		self.add_query_param('product',product)
+		self.set_method('POST')
 
 	def get_ImageId(self):
 		return self.get_query_params().get('ImageId')
@@ -40,6 +36,12 @@ class ModifyImageAttributeRequest(RpcRequest):
 
 	def set_ImageName(self,ImageName):
 		self.add_query_param('ImageName',ImageName)
+
+	def get_product(self):
+		return self.get_query_params().get('product')
+
+	def set_product(self,product):
+		self.add_query_param('product',product)
 
 	def get_Version(self):
 		return self.get_query_params().get('Version')

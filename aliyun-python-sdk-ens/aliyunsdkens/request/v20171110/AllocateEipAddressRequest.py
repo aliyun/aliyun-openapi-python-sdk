@@ -19,11 +19,29 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class DescribeInstanceTypesRequest(RpcRequest):
+class AllocateEipAddressRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'DescribeInstanceTypes','ens')
+		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'AllocateEipAddress','ens')
 		self.set_method('POST')
+
+	def get_MinCount(self):
+		return self.get_query_params().get('MinCount')
+
+	def set_MinCount(self,MinCount):
+		self.add_query_param('MinCount',MinCount)
+
+	def get_EnsRegionId(self):
+		return self.get_query_params().get('EnsRegionId')
+
+	def set_EnsRegionId(self,EnsRegionId):
+		self.add_query_param('EnsRegionId',EnsRegionId)
+
+	def get_Count(self):
+		return self.get_query_params().get('Count')
+
+	def set_Count(self,Count):
+		self.add_query_param('Count',Count)
 
 	def get_Version(self):
 		return self.get_query_params().get('Version')

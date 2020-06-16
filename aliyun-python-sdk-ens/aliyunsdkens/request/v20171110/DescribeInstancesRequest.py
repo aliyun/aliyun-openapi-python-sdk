@@ -18,10 +18,12 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+
 class DescribeInstancesRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'DescribeInstances','ens')
+		self.set_method('POST')
 
 	def get_ImageId(self):
 		return self.get_query_params().get('ImageId')
@@ -29,23 +31,11 @@ class DescribeInstancesRequest(RpcRequest):
 	def set_ImageId(self,ImageId):
 		self.add_query_param('ImageId',ImageId)
 
-	def get_EnsServiceId(self):
-		return self.get_query_params().get('EnsServiceId')
-
-	def set_EnsServiceId(self,EnsServiceId):
-		self.add_query_param('EnsServiceId',EnsServiceId)
-
 	def get_SearchKey(self):
 		return self.get_query_params().get('SearchKey')
 
 	def set_SearchKey(self,SearchKey):
 		self.add_query_param('SearchKey',SearchKey)
-
-	def get_Version(self):
-		return self.get_query_params().get('Version')
-
-	def set_Version(self,Version):
-		self.add_query_param('Version',Version)
 
 	def get_PageNumber(self):
 		return self.get_query_params().get('PageNumber')
@@ -58,24 +48,6 @@ class DescribeInstancesRequest(RpcRequest):
 
 	def set_OrderByParams(self,OrderByParams):
 		self.add_query_param('OrderByParams',OrderByParams)
-
-	def get_InstanceId(self):
-		return self.get_query_params().get('InstanceId')
-
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
-
-	def get_InstanceName(self):
-		return self.get_query_params().get('InstanceName')
-
-	def set_InstanceName(self,InstanceName):
-		self.add_query_param('InstanceName',InstanceName)
-
-	def get_InstanceIds(self):
-		return self.get_query_params().get('InstanceIds')
-
-	def set_InstanceIds(self,InstanceIds):
-		self.add_query_param('InstanceIds',InstanceIds)
 
 	def get_EnsRegionId(self):
 		return self.get_query_params().get('EnsRegionId')
@@ -100,6 +72,36 @@ class DescribeInstancesRequest(RpcRequest):
 
 	def set_InstanceResourceType(self,InstanceResourceType):
 		self.add_query_param('InstanceResourceType',InstanceResourceType)
+
+	def get_EnsServiceId(self):
+		return self.get_query_params().get('EnsServiceId')
+
+	def set_EnsServiceId(self,EnsServiceId):
+		self.add_query_param('EnsServiceId',EnsServiceId)
+
+	def get_Version(self):
+		return self.get_query_params().get('Version')
+
+	def set_Version(self,Version):
+		self.add_query_param('Version',Version)
+
+	def get_InstanceId(self):
+		return self.get_query_params().get('InstanceId')
+
+	def set_InstanceId(self,InstanceId):
+		self.add_query_param('InstanceId',InstanceId)
+
+	def get_InstanceName(self):
+		return self.get_query_params().get('InstanceName')
+
+	def set_InstanceName(self,InstanceName):
+		self.add_query_param('InstanceName',InstanceName)
+
+	def get_InstanceIds(self):
+		return self.get_query_params().get('InstanceIds')
+
+	def set_InstanceIds(self,InstanceIds):
+		self.add_query_param('InstanceIds',InstanceIds)
 
 	def get_Status(self):
 		return self.get_query_params().get('Status')

@@ -19,11 +19,17 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class DescribeInstanceTypesRequest(RpcRequest):
+class CreateKeyPairRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'DescribeInstanceTypes','ens')
+		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'CreateKeyPair','ens')
 		self.set_method('POST')
+
+	def get_KeyPairName(self):
+		return self.get_query_params().get('KeyPairName')
+
+	def set_KeyPairName(self,KeyPairName):
+		self.add_query_param('KeyPairName',KeyPairName)
 
 	def get_Version(self):
 		return self.get_query_params().get('Version')

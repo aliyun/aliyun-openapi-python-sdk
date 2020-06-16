@@ -18,22 +18,24 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+
 class DescribeImagesRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'DescribeImages','ens')
-
-	def get_product(self):
-		return self.get_query_params().get('product')
-
-	def set_product(self,product):
-		self.add_query_param('product',product)
+		self.set_method('POST')
 
 	def get_ImageId(self):
 		return self.get_query_params().get('ImageId')
 
 	def set_ImageId(self,ImageId):
 		self.add_query_param('ImageId',ImageId)
+
+	def get_PageNumber(self):
+		return self.get_query_params().get('PageNumber')
+
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)
 
 	def get_ImageName(self):
 		return self.get_query_params().get('ImageName')
@@ -53,17 +55,17 @@ class DescribeImagesRequest(RpcRequest):
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
 
+	def get_product(self):
+		return self.get_query_params().get('product')
+
+	def set_product(self,product):
+		self.add_query_param('product',product)
+
 	def get_Version(self):
 		return self.get_query_params().get('Version')
 
 	def set_Version(self,Version):
 		self.add_query_param('Version',Version)
-
-	def get_PageNumber(self):
-		return self.get_query_params().get('PageNumber')
-
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
 
 	def get_Status(self):
 		return self.get_query_params().get('Status')

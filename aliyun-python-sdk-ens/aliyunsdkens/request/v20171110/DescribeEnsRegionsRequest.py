@@ -18,10 +18,12 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+
 class DescribeEnsRegionsRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'DescribeEnsRegions','ens')
+		self.set_method('POST')
 
 	def get_EnsRegionId(self):
 		return self.get_query_params().get('EnsRegionId')

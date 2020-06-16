@@ -18,19 +18,27 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+
 class DescribeInstanceAutoRenewAttributeRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'DescribeInstanceAutoRenewAttribute','ens')
+		self.set_method('POST')
 
-	def get_InstanceIds(self):
-		return self.get_query_params().get('InstanceIds')
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
 
-	def set_InstanceIds(self,InstanceIds):
-		self.add_query_param('InstanceIds',InstanceIds)
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
 
 	def get_Version(self):
 		return self.get_query_params().get('Version')
 
 	def set_Version(self,Version):
 		self.add_query_param('Version',Version)
+
+	def get_InstanceIds(self):
+		return self.get_query_params().get('InstanceIds')
+
+	def set_InstanceIds(self,InstanceIds):
+		self.add_query_param('InstanceIds',InstanceIds)

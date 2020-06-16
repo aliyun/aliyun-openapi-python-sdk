@@ -19,11 +19,17 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class DescribeInstanceTypesRequest(RpcRequest):
+class DescribeEnsRegionIdIpv6InfoRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'DescribeInstanceTypes','ens')
+		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'DescribeEnsRegionIdIpv6Info','ens')
 		self.set_method('POST')
+
+	def get_EnsRegionId(self):
+		return self.get_query_params().get('EnsRegionId')
+
+	def set_EnsRegionId(self,EnsRegionId):
+		self.add_query_param('EnsRegionId',EnsRegionId)
 
 	def get_Version(self):
 		return self.get_query_params().get('Version')

@@ -18,16 +18,24 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+
 class ModifyInstanceAttributeRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'ModifyInstanceAttribute','ens')
+		self.set_method('POST')
 
 	def get_Password(self):
 		return self.get_query_params().get('Password')
 
 	def set_Password(self,Password):
 		self.add_query_param('Password',Password)
+
+	def get_Version(self):
+		return self.get_query_params().get('Version')
+
+	def set_Version(self,Version):
+		self.add_query_param('Version',Version)
 
 	def get_InstanceId(self):
 		return self.get_query_params().get('InstanceId')
@@ -40,9 +48,3 @@ class ModifyInstanceAttributeRequest(RpcRequest):
 
 	def set_InstanceName(self,InstanceName):
 		self.add_query_param('InstanceName',InstanceName)
-
-	def get_Version(self):
-		return self.get_query_params().get('Version')
-
-	def set_Version(self,Version):
-		self.add_query_param('Version',Version)

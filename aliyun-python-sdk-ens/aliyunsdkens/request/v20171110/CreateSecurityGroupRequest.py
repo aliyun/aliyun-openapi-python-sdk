@@ -19,11 +19,17 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class DescribeInstanceTypesRequest(RpcRequest):
+class CreateSecurityGroupRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'DescribeInstanceTypes','ens')
+		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'CreateSecurityGroup','ens')
 		self.set_method('POST')
+
+	def get_SecurityGroupName(self):
+		return self.get_query_params().get('SecurityGroupName')
+
+	def set_SecurityGroupName(self,SecurityGroupName):
+		self.add_query_param('SecurityGroupName',SecurityGroupName)
 
 	def get_Version(self):
 		return self.get_query_params().get('Version')

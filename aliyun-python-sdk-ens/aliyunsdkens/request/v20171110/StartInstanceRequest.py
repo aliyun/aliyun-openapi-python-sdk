@@ -18,19 +18,21 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+
 class StartInstanceRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'StartInstance','ens')
-
-	def get_InstanceId(self):
-		return self.get_query_params().get('InstanceId')
-
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
+		self.set_method('POST')
 
 	def get_Version(self):
 		return self.get_query_params().get('Version')
 
 	def set_Version(self,Version):
 		self.add_query_param('Version',Version)
+
+	def get_InstanceId(self):
+		return self.get_query_params().get('InstanceId')
+
+	def set_InstanceId(self,InstanceId):
+		self.add_query_param('InstanceId',InstanceId)
