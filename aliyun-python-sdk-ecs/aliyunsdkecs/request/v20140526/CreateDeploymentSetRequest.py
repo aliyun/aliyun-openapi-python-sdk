@@ -49,6 +49,12 @@ class CreateDeploymentSetRequest(RpcRequest):
 	def set_Description(self,Description):
 		self.add_query_param('Description',Description)
 
+	def get_GroupCount(self):
+		return self.get_query_params().get('GroupCount')
+
+	def set_GroupCount(self,GroupCount):
+		self.add_query_param('GroupCount',GroupCount)
+
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 

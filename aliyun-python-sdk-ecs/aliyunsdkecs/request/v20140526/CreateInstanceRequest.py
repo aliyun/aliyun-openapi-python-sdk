@@ -91,6 +91,12 @@ class CreateInstanceRequest(RpcRequest):
 	def set_Password(self,Password):
 		self.add_query_param('Password',Password)
 
+	def get_DeploymentSetGroupNo(self):
+		return self.get_query_params().get('DeploymentSetGroupNo')
+
+	def set_DeploymentSetGroupNo(self,DeploymentSetGroupNo):
+		self.add_query_param('DeploymentSetGroupNo',DeploymentSetGroupNo)
+
 	def get_StorageSetPartitionNumber(self):
 		return self.get_query_params().get('StorageSetPartitionNumber')
 
