@@ -24,6 +24,7 @@ class AddSmsSignRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Dysmsapi', '2017-05-25', 'AddSmsSign','dysms')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -51,13 +52,12 @@ class AddSmsSignRequest(RpcRequest):
 	def get_SignFileLists(self):
 		return self.get_query_params().get('SignFileLists')
 
-	def set_SignFileLists(self,SignFileLists):
-		for i in range(len(SignFileLists)):	
-			if SignFileLists[i].get('FileContents') is not None:
-				self.add_query_param('SignFileList.' + str(i + 1) + '.FileContents' , SignFileLists[i].get('FileContents'))
-			if SignFileLists[i].get('FileSuffix') is not None:
-				self.add_query_param('SignFileList.' + str(i + 1) + '.FileSuffix' , SignFileLists[i].get('FileSuffix'))
-
+	def set_SignFileLists(self, SignFileLists):
+		for depth1 in range(len(SignFileLists)):
+			if SignFileLists[depth1].get('FileContents') is not None:
+				self.add_query_param('SignFileList.' + str(depth1 + 1) + '.FileContents', SignFileLists[depth1].get('FileContents'))
+			if SignFileLists[depth1].get('FileSuffix') is not None:
+				self.add_query_param('SignFileList.' + str(depth1 + 1) + '.FileSuffix', SignFileLists[depth1].get('FileSuffix'))
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')

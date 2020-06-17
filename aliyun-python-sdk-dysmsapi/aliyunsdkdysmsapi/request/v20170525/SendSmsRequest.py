@@ -24,6 +24,7 @@ class SendSmsRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Dysmsapi', '2017-05-25', 'SendSms','dysms')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
