@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdypnsapi.endpoint import endpoint_data
 
-class TwiceTelVerifyRequest(RpcRequest):
+class VerifyPhoneWithTokenRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dypnsapi', '2017-05-25', 'TwiceTelVerify','dypns')
+		RpcRequest.__init__(self, 'Dypnsapi', '2017-05-25', 'VerifyPhoneWithToken','dypns')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -55,8 +55,8 @@ class TwiceTelVerifyRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_Since(self):
-		return self.get_query_params().get('Since')
+	def get_SpToken(self):
+		return self.get_query_params().get('SpToken')
 
-	def set_Since(self,Since):
-		self.add_query_param('Since',Since)
+	def set_SpToken(self,SpToken):
+		self.add_query_param('SpToken',SpToken)

@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdypnsapi.endpoint import endpoint_data
 
-class TwiceTelVerifyRequest(RpcRequest):
+class GetAuthTokenRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dypnsapi', '2017-05-25', 'TwiceTelVerify','dypns')
+		RpcRequest.__init__(self, 'Dypnsapi', '2017-05-25', 'GetAuthToken','dypns')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -43,11 +43,11 @@ class TwiceTelVerifyRequest(RpcRequest):
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
-	def get_PhoneNumber(self):
-		return self.get_query_params().get('PhoneNumber')
+	def get_Origin(self):
+		return self.get_query_params().get('Origin')
 
-	def set_PhoneNumber(self,PhoneNumber):
-		self.add_query_param('PhoneNumber',PhoneNumber)
+	def set_Origin(self,Origin):
+		self.add_query_param('Origin',Origin)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
@@ -55,8 +55,8 @@ class TwiceTelVerifyRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_Since(self):
-		return self.get_query_params().get('Since')
+	def get_Url(self):
+		return self.get_query_params().get('Url')
 
-	def set_Since(self,Since):
-		self.add_query_param('Since',Since)
+	def set_Url(self,Url):
+		self.add_query_param('Url',Url)
