@@ -24,6 +24,7 @@ class DescribeDedicatedHostsRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'DescribeDedicatedHosts','rds')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -41,6 +42,18 @@ class DescribeDedicatedHostsRequest(RpcRequest):
 
 	def set_HostType(self,HostType):
 		self.add_query_param('HostType',HostType)
+
+	def get_HostStatus(self):
+		return self.get_query_params().get('HostStatus')
+
+	def set_HostStatus(self,HostStatus):
+		self.add_query_param('HostStatus',HostStatus)
+
+	def get_AllocationStatus(self):
+		return self.get_query_params().get('AllocationStatus')
+
+	def set_AllocationStatus(self,AllocationStatus):
+		self.add_query_param('AllocationStatus',AllocationStatus)
 
 	def get_DedicatedHostGroupId(self):
 		return self.get_query_params().get('DedicatedHostGroupId')
@@ -65,3 +78,9 @@ class DescribeDedicatedHostsRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_ZoneId(self):
+		return self.get_query_params().get('ZoneId')
+
+	def set_ZoneId(self,ZoneId):
+		self.add_query_param('ZoneId',ZoneId)

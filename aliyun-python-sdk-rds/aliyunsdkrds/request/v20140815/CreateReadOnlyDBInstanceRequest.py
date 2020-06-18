@@ -24,6 +24,7 @@ class CreateReadOnlyDBInstanceRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'CreateReadOnlyDBInstance','rds')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -59,6 +60,12 @@ class CreateReadOnlyDBInstanceRequest(RpcRequest):
 
 	def set_ResourceGroupId(self,ResourceGroupId):
 		self.add_query_param('ResourceGroupId',ResourceGroupId)
+
+	def get_TargetDedicatedHostIdForMaster(self):
+		return self.get_query_params().get('TargetDedicatedHostIdForMaster')
+
+	def set_TargetDedicatedHostIdForMaster(self,TargetDedicatedHostIdForMaster):
+		self.add_query_param('TargetDedicatedHostIdForMaster',TargetDedicatedHostIdForMaster)
 
 	def get_DBInstanceId(self):
 		return self.get_query_params().get('DBInstanceId')

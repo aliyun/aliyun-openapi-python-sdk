@@ -24,6 +24,7 @@ class ModifyDBInstanceSpecRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'ModifyDBInstanceSpec','rds')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -72,6 +73,12 @@ class ModifyDBInstanceSpecRequest(RpcRequest):
 	def set_SourceBiz(self,SourceBiz):
 		self.add_query_param('SourceBiz',SourceBiz)
 
+	def get_DedicatedHostGroupId(self):
+		return self.get_query_params().get('DedicatedHostGroupId')
+
+	def set_DedicatedHostGroupId(self,DedicatedHostGroupId):
+		self.add_query_param('DedicatedHostGroupId',DedicatedHostGroupId)
+
 	def get_Direction(self):
 		return self.get_query_params().get('Direction')
 
@@ -101,6 +108,12 @@ class ModifyDBInstanceSpecRequest(RpcRequest):
 
 	def set_DBInstanceClass(self,DBInstanceClass):
 		self.add_query_param('DBInstanceClass',DBInstanceClass)
+
+	def get_ZoneId(self):
+		return self.get_query_params().get('ZoneId')
+
+	def set_ZoneId(self,ZoneId):
+		self.add_query_param('ZoneId',ZoneId)
 
 	def get_PayType(self):
 		return self.get_query_params().get('PayType')

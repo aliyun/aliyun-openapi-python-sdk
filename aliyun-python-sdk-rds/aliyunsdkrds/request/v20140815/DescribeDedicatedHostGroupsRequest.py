@@ -24,6 +24,7 @@ class DescribeDedicatedHostGroupsRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'DescribeDedicatedHostGroups','rds')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -47,6 +48,12 @@ class DescribeDedicatedHostGroupsRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_ImageCategory(self):
+		return self.get_query_params().get('ImageCategory')
+
+	def set_ImageCategory(self,ImageCategory):
+		self.add_query_param('ImageCategory',ImageCategory)
 
 	def get_DedicatedHostGroupId(self):
 		return self.get_query_params().get('DedicatedHostGroupId')

@@ -24,6 +24,7 @@ class CreateDedicatedHostGroupRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'CreateDedicatedHostGroup','rds')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -65,6 +66,12 @@ class CreateDedicatedHostGroupRequest(RpcRequest):
 
 	def set_DiskAllocationRatio(self,DiskAllocationRatio):
 		self.add_query_param('DiskAllocationRatio',DiskAllocationRatio)
+
+	def get_OpenPermission(self):
+		return self.get_query_params().get('OpenPermission')
+
+	def set_OpenPermission(self,OpenPermission):
+		self.add_query_param('OpenPermission',OpenPermission)
 
 	def get_MemAllocationRatio(self):
 		return self.get_query_params().get('MemAllocationRatio')

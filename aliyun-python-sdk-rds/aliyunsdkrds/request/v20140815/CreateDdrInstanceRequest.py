@@ -24,6 +24,7 @@ class CreateDdrInstanceRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'CreateDdrInstance','rds')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -47,6 +48,12 @@ class CreateDdrInstanceRequest(RpcRequest):
 
 	def set_SystemDBCharset(self,SystemDBCharset):
 		self.add_query_param('SystemDBCharset',SystemDBCharset)
+
+	def get_BinlogRole(self):
+		return self.get_query_params().get('BinlogRole')
+
+	def set_BinlogRole(self,BinlogRole):
+		self.add_query_param('BinlogRole',BinlogRole)
 
 	def get_EngineVersion(self):
 		return self.get_query_params().get('EngineVersion')
@@ -107,6 +114,12 @@ class CreateDdrInstanceRequest(RpcRequest):
 
 	def set_PrivateIpAddress(self,PrivateIpAddress):
 		self.add_query_param('PrivateIpAddress',PrivateIpAddress)
+
+	def get_BinlogName(self):
+		return self.get_query_params().get('BinlogName')
+
+	def set_BinlogName(self,BinlogName):
+		self.add_query_param('BinlogName',BinlogName)
 
 	def get_ZoneId(self):
 		return self.get_query_params().get('ZoneId')
@@ -179,6 +192,12 @@ class CreateDdrInstanceRequest(RpcRequest):
 
 	def set_UsedTime(self,UsedTime):
 		self.add_query_param('UsedTime',UsedTime)
+
+	def get_BinlogPosition(self):
+		return self.get_query_params().get('BinlogPosition')
+
+	def set_BinlogPosition(self,BinlogPosition):
+		self.add_query_param('BinlogPosition',BinlogPosition)
 
 	def get_RestoreType(self):
 		return self.get_query_params().get('RestoreType')

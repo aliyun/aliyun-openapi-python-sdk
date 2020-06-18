@@ -24,6 +24,7 @@ class DescribeAvailableResourceRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'DescribeAvailableResource','rds')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -59,6 +60,12 @@ class DescribeAvailableResourceRequest(RpcRequest):
 
 	def set_InstanceChargeType(self,InstanceChargeType):
 		self.add_query_param('InstanceChargeType',InstanceChargeType)
+
+	def get_DispenseMode(self):
+		return self.get_query_params().get('DispenseMode')
+
+	def set_DispenseMode(self,DispenseMode):
+		self.add_query_param('DispenseMode',DispenseMode)
 
 	def get_DBInstanceClass(self):
 		return self.get_query_params().get('DBInstanceClass')
