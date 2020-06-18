@@ -81,17 +81,6 @@ class NewEndpointTest(SDKTestBase):
 
     def test_add_new_endpoint_manually(self):
         my_client = self.init_client("cn-ningbo")
-        request = DescribeRegionsRequest()
-        try:
-            response = my_client.do_action_with_exception(request)
-            assert False
-        except ClientException as e:
-            self.assertEqual(error_code.SDK_ENDPOINT_RESOLVING_ERROR, e.get_error_code())
-            self.assertEqual(
-                "No such region 'cn-ningbo'. Please check your region ID.",
-                e.get_error_msg()
-            )
-
         my_client.add_endpoint(
             "cn-ningbo",  # which does not exist at all
             "Ecs",
@@ -414,17 +403,6 @@ class NewEndpointTest(SDKTestBase):
         from aliyunsdkcore.profile.region_provider import add_endpoint, modify_point
 
         my_client = self.init_client("cn-ningbo")
-        request = DescribeRegionsRequest()
-        try:
-            response = my_client.do_action_with_exception(request)
-            assert False
-        except ClientException as e:
-            self.assertEqual(error_code.SDK_ENDPOINT_RESOLVING_ERROR, e.get_error_code())
-            self.assertEqual(
-                "No such region 'cn-ningbo'. Please check your region ID.",
-                e.get_error_msg()
-            )
-
         add_endpoint(
             "Ecs",  # which does not exist at all
             "cn-ningbo",
