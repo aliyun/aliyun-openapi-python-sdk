@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkgpdb.endpoint import endpoint_data
 
-class ModifyDBInstanceConnectionStringRequest(RpcRequest):
+class UpgradeDBInstanceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'gpdb', '2016-05-03', 'ModifyDBInstanceConnectionString','gpdb')
+		RpcRequest.__init__(self, 'gpdb', '2016-05-03', 'UpgradeDBInstance','gpdb')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,26 +31,32 @@ class ModifyDBInstanceConnectionStringRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_ConnectionStringPrefix(self):
-		return self.get_query_params().get('ConnectionStringPrefix')
-
-	def set_ConnectionStringPrefix(self,ConnectionStringPrefix):
-		self.add_query_param('ConnectionStringPrefix',ConnectionStringPrefix)
-
 	def get_DBInstanceId(self):
 		return self.get_query_params().get('DBInstanceId')
 
 	def set_DBInstanceId(self,DBInstanceId):
 		self.add_query_param('DBInstanceId',DBInstanceId)
 
-	def get_CurrentConnectionString(self):
-		return self.get_query_params().get('CurrentConnectionString')
+	def get_DBInstanceGroupCount(self):
+		return self.get_query_params().get('DBInstanceGroupCount')
 
-	def set_CurrentConnectionString(self,CurrentConnectionString):
-		self.add_query_param('CurrentConnectionString',CurrentConnectionString)
+	def set_DBInstanceGroupCount(self,DBInstanceGroupCount):
+		self.add_query_param('DBInstanceGroupCount',DBInstanceGroupCount)
 
-	def get_Port(self):
-		return self.get_query_params().get('Port')
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
 
-	def set_Port(self,Port):
-		self.add_query_param('Port',Port)
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
+
+	def get_DBInstanceClass(self):
+		return self.get_query_params().get('DBInstanceClass')
+
+	def set_DBInstanceClass(self,DBInstanceClass):
+		self.add_query_param('DBInstanceClass',DBInstanceClass)
+
+	def get_PayType(self):
+		return self.get_query_params().get('PayType')
+
+	def set_PayType(self,PayType):
+		self.add_query_param('PayType',PayType)

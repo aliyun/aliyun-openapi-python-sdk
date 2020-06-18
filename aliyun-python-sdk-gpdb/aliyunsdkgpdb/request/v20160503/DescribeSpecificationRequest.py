@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkgpdb.endpoint import endpoint_data
 
-class ModifyDBInstanceConnectionStringRequest(RpcRequest):
+class DescribeSpecificationRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'gpdb', '2016-05-03', 'ModifyDBInstanceConnectionString','gpdb')
+		RpcRequest.__init__(self, 'gpdb', '2016-05-03', 'DescribeSpecification','gpdb')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,11 +31,17 @@ class ModifyDBInstanceConnectionStringRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_ConnectionStringPrefix(self):
-		return self.get_query_params().get('ConnectionStringPrefix')
+	def get_StorageType(self):
+		return self.get_query_params().get('StorageType')
 
-	def set_ConnectionStringPrefix(self,ConnectionStringPrefix):
-		self.add_query_param('ConnectionStringPrefix',ConnectionStringPrefix)
+	def set_StorageType(self,StorageType):
+		self.add_query_param('StorageType',StorageType)
+
+	def get_CpuCores(self):
+		return self.get_query_params().get('CpuCores')
+
+	def set_CpuCores(self,CpuCores):
+		self.add_query_param('CpuCores',CpuCores)
 
 	def get_DBInstanceId(self):
 		return self.get_query_params().get('DBInstanceId')
@@ -43,14 +49,14 @@ class ModifyDBInstanceConnectionStringRequest(RpcRequest):
 	def set_DBInstanceId(self,DBInstanceId):
 		self.add_query_param('DBInstanceId',DBInstanceId)
 
-	def get_CurrentConnectionString(self):
-		return self.get_query_params().get('CurrentConnectionString')
+	def get_TotalNodeNum(self):
+		return self.get_query_params().get('TotalNodeNum')
 
-	def set_CurrentConnectionString(self,CurrentConnectionString):
-		self.add_query_param('CurrentConnectionString',CurrentConnectionString)
+	def set_TotalNodeNum(self,TotalNodeNum):
+		self.add_query_param('TotalNodeNum',TotalNodeNum)
 
-	def get_Port(self):
-		return self.get_query_params().get('Port')
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
 
-	def set_Port(self,Port):
-		self.add_query_param('Port',Port)
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
