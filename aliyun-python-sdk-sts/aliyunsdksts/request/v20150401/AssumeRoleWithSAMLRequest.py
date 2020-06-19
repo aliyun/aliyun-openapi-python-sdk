@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdksts.endpoint import endpoint_data
 
-class AssumeRoleRequest(RpcRequest):
+class AssumeRoleWithSAMLRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sts', '2015-04-01', 'AssumeRole','sts')
+		RpcRequest.__init__(self, 'Sts', '2015-04-01', 'AssumeRoleWithSAML','sts')
 		self.set_protocol_type('https')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
@@ -32,17 +32,11 @@ class AssumeRoleRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_RoleSessionName(self):
-		return self.get_query_params().get('RoleSessionName')
+	def get_SAMLAssertion(self):
+		return self.get_query_params().get('SAMLAssertion')
 
-	def set_RoleSessionName(self,RoleSessionName):
-		self.add_query_param('RoleSessionName',RoleSessionName)
-
-	def get_Policy(self):
-		return self.get_query_params().get('Policy')
-
-	def set_Policy(self,Policy):
-		self.add_query_param('Policy',Policy)
+	def set_SAMLAssertion(self,SAMLAssertion):
+		self.add_query_param('SAMLAssertion',SAMLAssertion)
 
 	def get_RoleArn(self):
 		return self.get_query_params().get('RoleArn')
@@ -50,8 +44,20 @@ class AssumeRoleRequest(RpcRequest):
 	def set_RoleArn(self,RoleArn):
 		self.add_query_param('RoleArn',RoleArn)
 
+	def get_SAMLProviderArn(self):
+		return self.get_query_params().get('SAMLProviderArn')
+
+	def set_SAMLProviderArn(self,SAMLProviderArn):
+		self.add_query_param('SAMLProviderArn',SAMLProviderArn)
+
 	def get_DurationSeconds(self):
 		return self.get_query_params().get('DurationSeconds')
 
 	def set_DurationSeconds(self,DurationSeconds):
 		self.add_query_param('DurationSeconds',DurationSeconds)
+
+	def get_Policy(self):
+		return self.get_query_params().get('Policy')
+
+	def set_Policy(self,Policy):
+		self.add_query_param('Policy',Policy)
