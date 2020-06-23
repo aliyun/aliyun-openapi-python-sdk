@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdktag.endpoint import endpoint_data
 
-class UntagResourcesRequest(RpcRequest):
+class ListTagValuesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Tag', '2018-08-28', 'UntagResources','tag')
+		RpcRequest.__init__(self, 'Tag', '2018-08-28', 'ListTagValues','tag')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,13 +31,23 @@ class UntagResourcesRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_ResourceARNs(self):
-		return self.get_query_params().get('ResourceARNs')
+	def get_NextToken(self):
+		return self.get_query_params().get('NextToken')
 
-	def set_ResourceARNs(self, ResourceARNs):
-		for depth1 in range(len(ResourceARNs)):
-			if ResourceARNs[depth1] is not None:
-				self.add_query_param('ResourceARN.' + str(depth1 + 1) , ResourceARNs[depth1])
+	def set_NextToken(self,NextToken):
+		self.add_query_param('NextToken',NextToken)
+
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
+
+	def get_Key(self):
+		return self.get_query_params().get('Key')
+
+	def set_Key(self,Key):
+		self.add_query_param('Key',Key)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -57,10 +67,8 @@ class UntagResourcesRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_TagKeys(self):
-		return self.get_query_params().get('TagKeys')
+	def get_ResourceType(self):
+		return self.get_query_params().get('ResourceType')
 
-	def set_TagKeys(self, TagKeys):
-		for depth1 in range(len(TagKeys)):
-			if TagKeys[depth1] is not None:
-				self.add_query_param('TagKey.' + str(depth1 + 1) , TagKeys[depth1])
+	def set_ResourceType(self,ResourceType):
+		self.add_query_param('ResourceType',ResourceType)

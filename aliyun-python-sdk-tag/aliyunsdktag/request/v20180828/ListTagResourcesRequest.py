@@ -24,17 +24,12 @@ class ListTagResourcesRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Tag', '2018-08-28', 'ListTagResources','tag')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ResourceOwnerId(self):
-		return self.get_query_params().get('ResourceOwnerId')
-
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
 	def get_NextToken(self):
 		return self.get_query_params().get('NextToken')
@@ -51,10 +46,10 @@ class ListTagResourcesRequest(RpcRequest):
 	def get_ResourceARNs(self):
 		return self.get_query_params().get('ResourceARNs')
 
-	def set_ResourceARNs(self,ResourceARNs):
-		for i in range(len(ResourceARNs)):	
-			if ResourceARNs[i] is not None:
-				self.add_query_param('ResourceARN.' + str(i + 1) , ResourceARNs[i]);
+	def set_ResourceARNs(self, ResourceARNs):
+		for depth1 in range(len(ResourceARNs)):
+			if ResourceARNs[depth1] is not None:
+				self.add_query_param('ResourceARN.' + str(depth1 + 1) , ResourceARNs[depth1])
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
