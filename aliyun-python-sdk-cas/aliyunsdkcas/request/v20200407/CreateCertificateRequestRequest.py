@@ -31,11 +31,23 @@ class CreateCertificateRequestRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_ProductCode(self):
+		return self.get_query_params().get('ProductCode')
+
+	def set_ProductCode(self,ProductCode):
+		self.add_query_param('ProductCode',ProductCode)
+
 	def get_ValidateType(self):
 		return self.get_query_params().get('ValidateType')
 
 	def set_ValidateType(self,ValidateType):
 		self.add_query_param('ValidateType',ValidateType)
+
+	def get_Email(self):
+		return self.get_query_params().get('Email')
+
+	def set_Email(self,Email):
+		self.add_query_param('Email',Email)
 
 	def get_Phone(self):
 		return self.get_query_params().get('Phone')
@@ -48,12 +60,6 @@ class CreateCertificateRequestRequest(RpcRequest):
 
 	def set_Domain(self,Domain):
 		self.add_query_param('Domain',Domain)
-
-	def get_Email(self):
-		return self.get_query_params().get('Email')
-
-	def set_Email(self,Email):
-		self.add_query_param('Email',Email)
 
 	def get_Username(self):
 		return self.get_query_params().get('Username')
