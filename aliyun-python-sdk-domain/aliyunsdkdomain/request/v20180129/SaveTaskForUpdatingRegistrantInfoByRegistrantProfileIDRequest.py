@@ -18,18 +18,18 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-
+from aliyunsdkdomain.endpoint import endpoint_data
 
 class SaveTaskForUpdatingRegistrantInfoByRegistrantProfileIDRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Domain', '2018-01-29', 'SaveTaskForUpdatingRegistrantInfoByRegistrantProfileID')
+		RpcRequest.__init__(self, 'Domain', '2018-01-29', 'SaveTaskForUpdatingRegistrantInfoByRegistrantProfileID','domain')
+		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_UserClientIp(self):
-		return self.get_query_params().get('UserClientIp')
-
-	def set_UserClientIp(self,UserClientIp):
-		self.add_query_param('UserClientIp',UserClientIp)
 
 	def get_RegistrantProfileId(self):
 		return self.get_query_params().get('RegistrantProfileId')
@@ -40,16 +40,22 @@ class SaveTaskForUpdatingRegistrantInfoByRegistrantProfileIDRequest(RpcRequest):
 	def get_DomainNames(self):
 		return self.get_query_params().get('DomainNames')
 
-	def set_DomainNames(self,DomainNames):
-		for i in range(len(DomainNames)):	
-			if DomainNames[i] is not None:
-				self.add_query_param('DomainName.' + str(i + 1) , DomainNames[i]);
+	def set_DomainNames(self, DomainNames):
+		for depth1 in range(len(DomainNames)):
+			if DomainNames[depth1] is not None:
+				self.add_query_param('DomainName.' + str(depth1 + 1) , DomainNames[depth1])
 
 	def get_TransferOutProhibited(self):
 		return self.get_query_params().get('TransferOutProhibited')
 
 	def set_TransferOutProhibited(self,TransferOutProhibited):
 		self.add_query_param('TransferOutProhibited',TransferOutProhibited)
+
+	def get_UserClientIp(self):
+		return self.get_query_params().get('UserClientIp')
+
+	def set_UserClientIp(self,UserClientIp):
+		self.add_query_param('UserClientIp',UserClientIp)
 
 	def get_Lang(self):
 		return self.get_query_params().get('Lang')

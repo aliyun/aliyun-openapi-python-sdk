@@ -18,30 +18,18 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-
+from aliyunsdkdomain.endpoint import endpoint_data
 
 class SaveSingleTaskForCreatingOrderRedeemRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Domain', '2018-01-29', 'SaveSingleTaskForCreatingOrderRedeem')
+		RpcRequest.__init__(self, 'Domain', '2018-01-29', 'SaveSingleTaskForCreatingOrderRedeem','domain')
+		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_PromotionNo(self):
-		return self.get_query_params().get('PromotionNo')
-
-	def set_PromotionNo(self,PromotionNo):
-		self.add_query_param('PromotionNo',PromotionNo)
-
-	def get_CurrentExpirationDate(self):
-		return self.get_query_params().get('CurrentExpirationDate')
-
-	def set_CurrentExpirationDate(self,CurrentExpirationDate):
-		self.add_query_param('CurrentExpirationDate',CurrentExpirationDate)
-
-	def get_UserClientIp(self):
-		return self.get_query_params().get('UserClientIp')
-
-	def set_UserClientIp(self,UserClientIp):
-		self.add_query_param('UserClientIp',UserClientIp)
 
 	def get_DomainName(self):
 		return self.get_query_params().get('DomainName')
@@ -60,6 +48,24 @@ class SaveSingleTaskForCreatingOrderRedeemRequest(RpcRequest):
 
 	def set_UseCoupon(self,UseCoupon):
 		self.add_query_param('UseCoupon',UseCoupon)
+
+	def get_PromotionNo(self):
+		return self.get_query_params().get('PromotionNo')
+
+	def set_PromotionNo(self,PromotionNo):
+		self.add_query_param('PromotionNo',PromotionNo)
+
+	def get_CurrentExpirationDate(self):
+		return self.get_query_params().get('CurrentExpirationDate')
+
+	def set_CurrentExpirationDate(self,CurrentExpirationDate):
+		self.add_query_param('CurrentExpirationDate',CurrentExpirationDate)
+
+	def get_UserClientIp(self):
+		return self.get_query_params().get('UserClientIp')
+
+	def set_UserClientIp(self,UserClientIp):
+		self.add_query_param('UserClientIp',UserClientIp)
 
 	def get_Lang(self):
 		return self.get_query_params().get('Lang')

@@ -18,18 +18,18 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-
+from aliyunsdkdomain.endpoint import endpoint_data
 
 class QueryDomainListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Domain', '2018-01-29', 'QueryDomainList')
+		RpcRequest.__init__(self, 'Domain', '2018-01-29', 'QueryDomainList','domain')
+		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_EndExpirationDate(self):
-		return self.get_query_params().get('EndExpirationDate')
-
-	def set_EndExpirationDate(self,EndExpirationDate):
-		self.add_query_param('EndExpirationDate',EndExpirationDate)
 
 	def get_ProductDomainType(self):
 		return self.get_query_params().get('ProductDomainType')
@@ -43,18 +43,6 @@ class QueryDomainListRequest(RpcRequest):
 	def set_OrderKeyType(self,OrderKeyType):
 		self.add_query_param('OrderKeyType',OrderKeyType)
 
-	def get_DomainName(self):
-		return self.get_query_params().get('DomainName')
-
-	def set_DomainName(self,DomainName):
-		self.add_query_param('DomainName',DomainName)
-
-	def get_StartExpirationDate(self):
-		return self.get_query_params().get('StartExpirationDate')
-
-	def set_StartExpirationDate(self,StartExpirationDate):
-		self.add_query_param('StartExpirationDate',StartExpirationDate)
-
 	def get_PageNum(self):
 		return self.get_query_params().get('PageNum')
 
@@ -66,24 +54,6 @@ class QueryDomainListRequest(RpcRequest):
 
 	def set_OrderByType(self,OrderByType):
 		self.add_query_param('OrderByType',OrderByType)
-
-	def get_DomainGroupId(self):
-		return self.get_query_params().get('DomainGroupId')
-
-	def set_DomainGroupId(self,DomainGroupId):
-		self.add_query_param('DomainGroupId',DomainGroupId)
-
-	def get_EndRegistrationDate(self):
-		return self.get_query_params().get('EndRegistrationDate')
-
-	def set_EndRegistrationDate(self,EndRegistrationDate):
-		self.add_query_param('EndRegistrationDate',EndRegistrationDate)
-
-	def get_UserClientIp(self):
-		return self.get_query_params().get('UserClientIp')
-
-	def set_UserClientIp(self,UserClientIp):
-		self.add_query_param('UserClientIp',UserClientIp)
 
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
@@ -102,6 +72,42 @@ class QueryDomainListRequest(RpcRequest):
 
 	def set_QueryType(self,QueryType):
 		self.add_query_param('QueryType',QueryType)
+
+	def get_EndExpirationDate(self):
+		return self.get_query_params().get('EndExpirationDate')
+
+	def set_EndExpirationDate(self,EndExpirationDate):
+		self.add_query_param('EndExpirationDate',EndExpirationDate)
+
+	def get_DomainName(self):
+		return self.get_query_params().get('DomainName')
+
+	def set_DomainName(self,DomainName):
+		self.add_query_param('DomainName',DomainName)
+
+	def get_StartExpirationDate(self):
+		return self.get_query_params().get('StartExpirationDate')
+
+	def set_StartExpirationDate(self,StartExpirationDate):
+		self.add_query_param('StartExpirationDate',StartExpirationDate)
+
+	def get_DomainGroupId(self):
+		return self.get_query_params().get('DomainGroupId')
+
+	def set_DomainGroupId(self,DomainGroupId):
+		self.add_query_param('DomainGroupId',DomainGroupId)
+
+	def get_EndRegistrationDate(self):
+		return self.get_query_params().get('EndRegistrationDate')
+
+	def set_EndRegistrationDate(self,EndRegistrationDate):
+		self.add_query_param('EndRegistrationDate',EndRegistrationDate)
+
+	def get_UserClientIp(self):
+		return self.get_query_params().get('UserClientIp')
+
+	def set_UserClientIp(self,UserClientIp):
+		self.add_query_param('UserClientIp',UserClientIp)
 
 	def get_StartRegistrationDate(self):
 		return self.get_query_params().get('StartRegistrationDate')

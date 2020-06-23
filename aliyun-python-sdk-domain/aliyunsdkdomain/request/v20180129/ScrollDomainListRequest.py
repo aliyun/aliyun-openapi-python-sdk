@@ -18,24 +18,72 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-
+from aliyunsdkdomain.endpoint import endpoint_data
 
 class ScrollDomainListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Domain', '2018-01-29', 'ScrollDomainList')
+		RpcRequest.__init__(self, 'Domain', '2018-01-29', 'ScrollDomainList','domain')
+		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_EndExpirationDate(self):
-		return self.get_query_params().get('EndExpirationDate')
-
-	def set_EndExpirationDate(self,EndExpirationDate):
-		self.add_query_param('EndExpirationDate',EndExpirationDate)
 
 	def get_ProductDomainType(self):
 		return self.get_query_params().get('ProductDomainType')
 
 	def set_ProductDomainType(self,ProductDomainType):
 		self.add_query_param('ProductDomainType',ProductDomainType)
+
+	def get_Excluded(self):
+		return self.get_query_params().get('Excluded')
+
+	def set_Excluded(self,Excluded):
+		self.add_query_param('Excluded',Excluded)
+
+	def get_StartLength(self):
+		return self.get_query_params().get('StartLength')
+
+	def set_StartLength(self,StartLength):
+		self.add_query_param('StartLength',StartLength)
+
+	def get_ExcludedSuffix(self):
+		return self.get_query_params().get('ExcludedSuffix')
+
+	def set_ExcludedSuffix(self,ExcludedSuffix):
+		self.add_query_param('ExcludedSuffix',ExcludedSuffix)
+
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
+
+	def get_Lang(self):
+		return self.get_query_params().get('Lang')
+
+	def set_Lang(self,Lang):
+		self.add_query_param('Lang',Lang)
+
+	def get_ExcludedPrefix(self):
+		return self.get_query_params().get('ExcludedPrefix')
+
+	def set_ExcludedPrefix(self,ExcludedPrefix):
+		self.add_query_param('ExcludedPrefix',ExcludedPrefix)
+
+	def get_KeyWord(self):
+		return self.get_query_params().get('KeyWord')
+
+	def set_KeyWord(self,KeyWord):
+		self.add_query_param('KeyWord',KeyWord)
+
+	def get_EndExpirationDate(self):
+		return self.get_query_params().get('EndExpirationDate')
+
+	def set_EndExpirationDate(self,EndExpirationDate):
+		self.add_query_param('EndExpirationDate',EndExpirationDate)
 
 	def get_Suffixs(self):
 		return self.get_query_params().get('Suffixs')
@@ -73,35 +121,17 @@ class ScrollDomainListRequest(RpcRequest):
 	def set_ScrollId(self,ScrollId):
 		self.add_query_param('ScrollId',ScrollId)
 
-	def get_Excluded(self):
-		return self.get_query_params().get('Excluded')
-
-	def set_Excluded(self,Excluded):
-		self.add_query_param('Excluded',Excluded)
-
 	def get_KeyWordPrefix(self):
 		return self.get_query_params().get('KeyWordPrefix')
 
 	def set_KeyWordPrefix(self,KeyWordPrefix):
 		self.add_query_param('KeyWordPrefix',KeyWordPrefix)
 
-	def get_StartLength(self):
-		return self.get_query_params().get('StartLength')
-
-	def set_StartLength(self,StartLength):
-		self.add_query_param('StartLength',StartLength)
-
 	def get_TradeType(self):
 		return self.get_query_params().get('TradeType')
 
 	def set_TradeType(self,TradeType):
 		self.add_query_param('TradeType',TradeType)
-
-	def get_ExcludedSuffix(self):
-		return self.get_query_params().get('ExcludedSuffix')
-
-	def set_ExcludedSuffix(self,ExcludedSuffix):
-		self.add_query_param('ExcludedSuffix',ExcludedSuffix)
 
 	def get_EndRegistrationDate(self):
 		return self.get_query_params().get('EndRegistrationDate')
@@ -120,30 +150,6 @@ class ScrollDomainListRequest(RpcRequest):
 
 	def set_UserClientIp(self,UserClientIp):
 		self.add_query_param('UserClientIp',UserClientIp)
-
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_Lang(self):
-		return self.get_query_params().get('Lang')
-
-	def set_Lang(self,Lang):
-		self.add_query_param('Lang',Lang)
-
-	def get_ExcludedPrefix(self):
-		return self.get_query_params().get('ExcludedPrefix')
-
-	def set_ExcludedPrefix(self,ExcludedPrefix):
-		self.add_query_param('ExcludedPrefix',ExcludedPrefix)
-
-	def get_KeyWord(self):
-		return self.get_query_params().get('KeyWord')
-
-	def set_KeyWord(self,KeyWord):
-		self.add_query_param('KeyWord',KeyWord)
 
 	def get_StartRegistrationDate(self):
 		return self.get_query_params().get('StartRegistrationDate')

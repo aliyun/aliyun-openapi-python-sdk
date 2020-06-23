@@ -18,25 +18,24 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-
+from aliyunsdkdomain.endpoint import endpoint_data
 
 class RegistrantProfileRealNameVerificationRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Domain', '2018-01-29', 'RegistrantProfileRealNameVerification')
+		RpcRequest.__init__(self, 'Domain', '2018-01-29', 'RegistrantProfileRealNameVerification','domain')
 		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_IdentityCredentialType(self):
 		return self.get_query_params().get('IdentityCredentialType')
 
 	def set_IdentityCredentialType(self,IdentityCredentialType):
 		self.add_query_param('IdentityCredentialType',IdentityCredentialType)
-
-	def get_UserClientIp(self):
-		return self.get_query_params().get('UserClientIp')
-
-	def set_UserClientIp(self,UserClientIp):
-		self.add_query_param('UserClientIp',UserClientIp)
 
 	def get_RegistrantProfileID(self):
 		return self.get_query_params().get('RegistrantProfileID')
@@ -49,6 +48,12 @@ class RegistrantProfileRealNameVerificationRequest(RpcRequest):
 
 	def set_IdentityCredential(self,IdentityCredential):
 		self.add_body_params('IdentityCredential', IdentityCredential)
+
+	def get_UserClientIp(self):
+		return self.get_query_params().get('UserClientIp')
+
+	def set_UserClientIp(self,UserClientIp):
+		self.add_query_param('UserClientIp',UserClientIp)
 
 	def get_Lang(self):
 		return self.get_query_params().get('Lang')

@@ -18,54 +18,24 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-
+from aliyunsdkdomain.endpoint import endpoint_data
 
 class ListServerLockRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Domain', '2018-01-29', 'ListServerLock')
+		RpcRequest.__init__(self, 'Domain', '2018-01-29', 'ListServerLock','domain')
+		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_LockProductId(self):
 		return self.get_query_params().get('LockProductId')
 
 	def set_LockProductId(self,LockProductId):
 		self.add_query_param('LockProductId',LockProductId)
-
-	def get_EndStartDate(self):
-		return self.get_query_params().get('EndStartDate')
-
-	def set_EndStartDate(self,EndStartDate):
-		self.add_query_param('EndStartDate',EndStartDate)
-
-	def get_ServerLockStatus(self):
-		return self.get_query_params().get('ServerLockStatus')
-
-	def set_ServerLockStatus(self,ServerLockStatus):
-		self.add_query_param('ServerLockStatus',ServerLockStatus)
-
-	def get_StartExpireDate(self):
-		return self.get_query_params().get('StartExpireDate')
-
-	def set_StartExpireDate(self,StartExpireDate):
-		self.add_query_param('StartExpireDate',StartExpireDate)
-
-	def get_DomainName(self):
-		return self.get_query_params().get('DomainName')
-
-	def set_DomainName(self,DomainName):
-		self.add_query_param('DomainName',DomainName)
-
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_UserClientIp(self):
-		return self.get_query_params().get('UserClientIp')
-
-	def set_UserClientIp(self,UserClientIp):
-		self.add_query_param('UserClientIp',UserClientIp)
 
 	def get_EndExpireDate(self):
 		return self.get_query_params().get('EndExpireDate')
@@ -79,14 +49,50 @@ class ListServerLockRequest(RpcRequest):
 	def set_PageNum(self,PageNum):
 		self.add_query_param('PageNum',PageNum)
 
+	def get_BeginStartDate(self):
+		return self.get_query_params().get('BeginStartDate')
+
+	def set_BeginStartDate(self,BeginStartDate):
+		self.add_query_param('BeginStartDate',BeginStartDate)
+
+	def get_ServerLockStatus(self):
+		return self.get_query_params().get('ServerLockStatus')
+
+	def set_ServerLockStatus(self,ServerLockStatus):
+		self.add_query_param('ServerLockStatus',ServerLockStatus)
+
+	def get_StartExpireDate(self):
+		return self.get_query_params().get('StartExpireDate')
+
+	def set_StartExpireDate(self,StartExpireDate):
+		self.add_query_param('StartExpireDate',StartExpireDate)
+
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
+
 	def get_Lang(self):
 		return self.get_query_params().get('Lang')
 
 	def set_Lang(self,Lang):
 		self.add_query_param('Lang',Lang)
 
-	def get_BeginStartDate(self):
-		return self.get_query_params().get('BeginStartDate')
+	def get_DomainName(self):
+		return self.get_query_params().get('DomainName')
 
-	def set_BeginStartDate(self,BeginStartDate):
-		self.add_query_param('BeginStartDate',BeginStartDate)
+	def set_DomainName(self,DomainName):
+		self.add_query_param('DomainName',DomainName)
+
+	def get_EndStartDate(self):
+		return self.get_query_params().get('EndStartDate')
+
+	def set_EndStartDate(self,EndStartDate):
+		self.add_query_param('EndStartDate',EndStartDate)
+
+	def get_UserClientIp(self):
+		return self.get_query_params().get('UserClientIp')
+
+	def set_UserClientIp(self,UserClientIp):
+		self.add_query_param('UserClientIp',UserClientIp)

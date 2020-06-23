@@ -18,24 +18,18 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-
+from aliyunsdkdomain.endpoint import endpoint_data
 
 class SaveTaskForSubmittingDomainRealNameVerificationByRegistrantProfileIDRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Domain', '2018-01-29', 'SaveTaskForSubmittingDomainRealNameVerificationByRegistrantProfileID')
+		RpcRequest.__init__(self, 'Domain', '2018-01-29', 'SaveTaskForSubmittingDomainRealNameVerificationByRegistrantProfileID','domain')
+		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_InstanceId(self):
-		return self.get_query_params().get('InstanceId')
-
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
-
-	def get_UserClientIp(self):
-		return self.get_query_params().get('UserClientIp')
-
-	def set_UserClientIp(self,UserClientIp):
-		self.add_query_param('UserClientIp',UserClientIp)
 
 	def get_DomainName(self):
 		return self.get_query_params().get('DomainName')
@@ -48,6 +42,18 @@ class SaveTaskForSubmittingDomainRealNameVerificationByRegistrantProfileIDReques
 
 	def set_RegistrantProfileId(self,RegistrantProfileId):
 		self.add_query_param('RegistrantProfileId',RegistrantProfileId)
+
+	def get_InstanceId(self):
+		return self.get_query_params().get('InstanceId')
+
+	def set_InstanceId(self,InstanceId):
+		self.add_query_param('InstanceId',InstanceId)
+
+	def get_UserClientIp(self):
+		return self.get_query_params().get('UserClientIp')
+
+	def set_UserClientIp(self,UserClientIp):
+		self.add_query_param('UserClientIp',UserClientIp)
 
 	def get_Lang(self):
 		return self.get_query_params().get('Lang')

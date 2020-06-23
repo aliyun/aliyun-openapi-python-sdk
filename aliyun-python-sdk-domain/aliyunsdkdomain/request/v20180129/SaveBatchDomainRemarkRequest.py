@@ -18,12 +18,24 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-
+from aliyunsdkdomain.endpoint import endpoint_data
 
 class SaveBatchDomainRemarkRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Domain', '2018-01-29', 'SaveBatchDomainRemark')
+		RpcRequest.__init__(self, 'Domain', '2018-01-29', 'SaveBatchDomainRemark','domain')
+		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
+
+	def get_Remark(self):
+		return self.get_query_params().get('Remark')
+
+	def set_Remark(self,Remark):
+		self.add_query_param('Remark',Remark)
 
 	def get_InstanceIds(self):
 		return self.get_query_params().get('InstanceIds')
@@ -36,12 +48,6 @@ class SaveBatchDomainRemarkRequest(RpcRequest):
 
 	def set_UserClientIp(self,UserClientIp):
 		self.add_query_param('UserClientIp',UserClientIp)
-
-	def get_Remark(self):
-		return self.get_query_params().get('Remark')
-
-	def set_Remark(self,Remark):
-		self.add_query_param('Remark',Remark)
 
 	def get_Lang(self):
 		return self.get_query_params().get('Lang')

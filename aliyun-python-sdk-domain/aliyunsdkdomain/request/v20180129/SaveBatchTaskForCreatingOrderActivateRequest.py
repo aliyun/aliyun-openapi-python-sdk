@@ -18,83 +18,76 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-
+from aliyunsdkdomain.endpoint import endpoint_data
 
 class SaveBatchTaskForCreatingOrderActivateRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Domain', '2018-01-29', 'SaveBatchTaskForCreatingOrderActivate')
+		RpcRequest.__init__(self, 'Domain', '2018-01-29', 'SaveBatchTaskForCreatingOrderActivate','domain')
+		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_OrderActivateParams(self):
 		return self.get_query_params().get('OrderActivateParams')
 
-	def set_OrderActivateParams(self,OrderActivateParams):
-		for i in range(len(OrderActivateParams)):	
-			if OrderActivateParams[i].get('Country') is not None:
-				self.add_query_param('OrderActivateParam.' + str(i + 1) + '.Country' , OrderActivateParams[i].get('Country'))
-			if OrderActivateParams[i].get('SubscriptionDuration') is not None:
-				self.add_query_param('OrderActivateParam.' + str(i + 1) + '.SubscriptionDuration' , OrderActivateParams[i].get('SubscriptionDuration'))
-			if OrderActivateParams[i].get('PermitPremiumActivation') is not None:
-				self.add_query_param('OrderActivateParam.' + str(i + 1) + '.PermitPremiumActivation' , OrderActivateParams[i].get('PermitPremiumActivation'))
-			if OrderActivateParams[i].get('City') is not None:
-				self.add_query_param('OrderActivateParam.' + str(i + 1) + '.City' , OrderActivateParams[i].get('City'))
-			if OrderActivateParams[i].get('Dns2') is not None:
-				self.add_query_param('OrderActivateParam.' + str(i + 1) + '.Dns2' , OrderActivateParams[i].get('Dns2'))
-			if OrderActivateParams[i].get('Dns1') is not None:
-				self.add_query_param('OrderActivateParam.' + str(i + 1) + '.Dns1' , OrderActivateParams[i].get('Dns1'))
-			if OrderActivateParams[i].get('RegistrantProfileId') is not None:
-				self.add_query_param('OrderActivateParam.' + str(i + 1) + '.RegistrantProfileId' , OrderActivateParams[i].get('RegistrantProfileId'))
-			if OrderActivateParams[i].get('AliyunDns') is not None:
-				self.add_query_param('OrderActivateParam.' + str(i + 1) + '.AliyunDns' , OrderActivateParams[i].get('AliyunDns'))
-			if OrderActivateParams[i].get('ZhCity') is not None:
-				self.add_query_param('OrderActivateParam.' + str(i + 1) + '.ZhCity' , OrderActivateParams[i].get('ZhCity'))
-			if OrderActivateParams[i].get('TelExt') is not None:
-				self.add_query_param('OrderActivateParam.' + str(i + 1) + '.TelExt' , OrderActivateParams[i].get('TelExt'))
-			if OrderActivateParams[i].get('ZhRegistrantName') is not None:
-				self.add_query_param('OrderActivateParam.' + str(i + 1) + '.ZhRegistrantName' , OrderActivateParams[i].get('ZhRegistrantName'))
-			if OrderActivateParams[i].get('Province') is not None:
-				self.add_query_param('OrderActivateParam.' + str(i + 1) + '.Province' , OrderActivateParams[i].get('Province'))
-			if OrderActivateParams[i].get('PostalCode') is not None:
-				self.add_query_param('OrderActivateParam.' + str(i + 1) + '.PostalCode' , OrderActivateParams[i].get('PostalCode'))
-			if OrderActivateParams[i].get('Email') is not None:
-				self.add_query_param('OrderActivateParam.' + str(i + 1) + '.Email' , OrderActivateParams[i].get('Email'))
-			if OrderActivateParams[i].get('ZhRegistrantOrganization') is not None:
-				self.add_query_param('OrderActivateParam.' + str(i + 1) + '.ZhRegistrantOrganization' , OrderActivateParams[i].get('ZhRegistrantOrganization'))
-			if OrderActivateParams[i].get('Address') is not None:
-				self.add_query_param('OrderActivateParam.' + str(i + 1) + '.Address' , OrderActivateParams[i].get('Address'))
-			if OrderActivateParams[i].get('TelArea') is not None:
-				self.add_query_param('OrderActivateParam.' + str(i + 1) + '.TelArea' , OrderActivateParams[i].get('TelArea'))
-			if OrderActivateParams[i].get('DomainName') is not None:
-				self.add_query_param('OrderActivateParam.' + str(i + 1) + '.DomainName' , OrderActivateParams[i].get('DomainName'))
-			if OrderActivateParams[i].get('ZhAddress') is not None:
-				self.add_query_param('OrderActivateParam.' + str(i + 1) + '.ZhAddress' , OrderActivateParams[i].get('ZhAddress'))
-			if OrderActivateParams[i].get('RegistrantType') is not None:
-				self.add_query_param('OrderActivateParam.' + str(i + 1) + '.RegistrantType' , OrderActivateParams[i].get('RegistrantType'))
-			if OrderActivateParams[i].get('Telephone') is not None:
-				self.add_query_param('OrderActivateParam.' + str(i + 1) + '.Telephone' , OrderActivateParams[i].get('Telephone'))
-			if OrderActivateParams[i].get('TrademarkDomainActivation') is not None:
-				self.add_query_param('OrderActivateParam.' + str(i + 1) + '.TrademarkDomainActivation' , OrderActivateParams[i].get('TrademarkDomainActivation'))
-			if OrderActivateParams[i].get('ZhProvince') is not None:
-				self.add_query_param('OrderActivateParam.' + str(i + 1) + '.ZhProvince' , OrderActivateParams[i].get('ZhProvince'))
-			if OrderActivateParams[i].get('RegistrantOrganization') is not None:
-				self.add_query_param('OrderActivateParam.' + str(i + 1) + '.RegistrantOrganization' , OrderActivateParams[i].get('RegistrantOrganization'))
-			if OrderActivateParams[i].get('EnableDomainProxy') is not None:
-				self.add_query_param('OrderActivateParam.' + str(i + 1) + '.EnableDomainProxy' , OrderActivateParams[i].get('EnableDomainProxy'))
-			if OrderActivateParams[i].get('RegistrantName') is not None:
-				self.add_query_param('OrderActivateParam.' + str(i + 1) + '.RegistrantName' , OrderActivateParams[i].get('RegistrantName'))
-
-
-	def get_PromotionNo(self):
-		return self.get_query_params().get('PromotionNo')
-
-	def set_PromotionNo(self,PromotionNo):
-		self.add_query_param('PromotionNo',PromotionNo)
-
-	def get_UserClientIp(self):
-		return self.get_query_params().get('UserClientIp')
-
-	def set_UserClientIp(self,UserClientIp):
-		self.add_query_param('UserClientIp',UserClientIp)
+	def set_OrderActivateParams(self, OrderActivateParams):
+		for depth1 in range(len(OrderActivateParams)):
+			if OrderActivateParams[depth1].get('Country') is not None:
+				self.add_query_param('OrderActivateParam.' + str(depth1 + 1) + '.Country', OrderActivateParams[depth1].get('Country'))
+			if OrderActivateParams[depth1].get('SubscriptionDuration') is not None:
+				self.add_query_param('OrderActivateParam.' + str(depth1 + 1) + '.SubscriptionDuration', OrderActivateParams[depth1].get('SubscriptionDuration'))
+			if OrderActivateParams[depth1].get('PermitPremiumActivation') is not None:
+				self.add_query_param('OrderActivateParam.' + str(depth1 + 1) + '.PermitPremiumActivation', OrderActivateParams[depth1].get('PermitPremiumActivation'))
+			if OrderActivateParams[depth1].get('City') is not None:
+				self.add_query_param('OrderActivateParam.' + str(depth1 + 1) + '.City', OrderActivateParams[depth1].get('City'))
+			if OrderActivateParams[depth1].get('Dns2') is not None:
+				self.add_query_param('OrderActivateParam.' + str(depth1 + 1) + '.Dns2', OrderActivateParams[depth1].get('Dns2'))
+			if OrderActivateParams[depth1].get('Dns1') is not None:
+				self.add_query_param('OrderActivateParam.' + str(depth1 + 1) + '.Dns1', OrderActivateParams[depth1].get('Dns1'))
+			if OrderActivateParams[depth1].get('RegistrantProfileId') is not None:
+				self.add_query_param('OrderActivateParam.' + str(depth1 + 1) + '.RegistrantProfileId', OrderActivateParams[depth1].get('RegistrantProfileId'))
+			if OrderActivateParams[depth1].get('AliyunDns') is not None:
+				self.add_query_param('OrderActivateParam.' + str(depth1 + 1) + '.AliyunDns', OrderActivateParams[depth1].get('AliyunDns'))
+			if OrderActivateParams[depth1].get('ZhCity') is not None:
+				self.add_query_param('OrderActivateParam.' + str(depth1 + 1) + '.ZhCity', OrderActivateParams[depth1].get('ZhCity'))
+			if OrderActivateParams[depth1].get('TelExt') is not None:
+				self.add_query_param('OrderActivateParam.' + str(depth1 + 1) + '.TelExt', OrderActivateParams[depth1].get('TelExt'))
+			if OrderActivateParams[depth1].get('ZhRegistrantName') is not None:
+				self.add_query_param('OrderActivateParam.' + str(depth1 + 1) + '.ZhRegistrantName', OrderActivateParams[depth1].get('ZhRegistrantName'))
+			if OrderActivateParams[depth1].get('Province') is not None:
+				self.add_query_param('OrderActivateParam.' + str(depth1 + 1) + '.Province', OrderActivateParams[depth1].get('Province'))
+			if OrderActivateParams[depth1].get('PostalCode') is not None:
+				self.add_query_param('OrderActivateParam.' + str(depth1 + 1) + '.PostalCode', OrderActivateParams[depth1].get('PostalCode'))
+			if OrderActivateParams[depth1].get('Email') is not None:
+				self.add_query_param('OrderActivateParam.' + str(depth1 + 1) + '.Email', OrderActivateParams[depth1].get('Email'))
+			if OrderActivateParams[depth1].get('ZhRegistrantOrganization') is not None:
+				self.add_query_param('OrderActivateParam.' + str(depth1 + 1) + '.ZhRegistrantOrganization', OrderActivateParams[depth1].get('ZhRegistrantOrganization'))
+			if OrderActivateParams[depth1].get('Address') is not None:
+				self.add_query_param('OrderActivateParam.' + str(depth1 + 1) + '.Address', OrderActivateParams[depth1].get('Address'))
+			if OrderActivateParams[depth1].get('TelArea') is not None:
+				self.add_query_param('OrderActivateParam.' + str(depth1 + 1) + '.TelArea', OrderActivateParams[depth1].get('TelArea'))
+			if OrderActivateParams[depth1].get('DomainName') is not None:
+				self.add_query_param('OrderActivateParam.' + str(depth1 + 1) + '.DomainName', OrderActivateParams[depth1].get('DomainName'))
+			if OrderActivateParams[depth1].get('ZhAddress') is not None:
+				self.add_query_param('OrderActivateParam.' + str(depth1 + 1) + '.ZhAddress', OrderActivateParams[depth1].get('ZhAddress'))
+			if OrderActivateParams[depth1].get('RegistrantType') is not None:
+				self.add_query_param('OrderActivateParam.' + str(depth1 + 1) + '.RegistrantType', OrderActivateParams[depth1].get('RegistrantType'))
+			if OrderActivateParams[depth1].get('Telephone') is not None:
+				self.add_query_param('OrderActivateParam.' + str(depth1 + 1) + '.Telephone', OrderActivateParams[depth1].get('Telephone'))
+			if OrderActivateParams[depth1].get('TrademarkDomainActivation') is not None:
+				self.add_query_param('OrderActivateParam.' + str(depth1 + 1) + '.TrademarkDomainActivation', OrderActivateParams[depth1].get('TrademarkDomainActivation'))
+			if OrderActivateParams[depth1].get('ZhProvince') is not None:
+				self.add_query_param('OrderActivateParam.' + str(depth1 + 1) + '.ZhProvince', OrderActivateParams[depth1].get('ZhProvince'))
+			if OrderActivateParams[depth1].get('RegistrantOrganization') is not None:
+				self.add_query_param('OrderActivateParam.' + str(depth1 + 1) + '.RegistrantOrganization', OrderActivateParams[depth1].get('RegistrantOrganization'))
+			if OrderActivateParams[depth1].get('EnableDomainProxy') is not None:
+				self.add_query_param('OrderActivateParam.' + str(depth1 + 1) + '.EnableDomainProxy', OrderActivateParams[depth1].get('EnableDomainProxy'))
+			if OrderActivateParams[depth1].get('RegistrantName') is not None:
+				self.add_query_param('OrderActivateParam.' + str(depth1 + 1) + '.RegistrantName', OrderActivateParams[depth1].get('RegistrantName'))
 
 	def get_CouponNo(self):
 		return self.get_query_params().get('CouponNo')
@@ -107,6 +100,18 @@ class SaveBatchTaskForCreatingOrderActivateRequest(RpcRequest):
 
 	def set_UseCoupon(self,UseCoupon):
 		self.add_query_param('UseCoupon',UseCoupon)
+
+	def get_PromotionNo(self):
+		return self.get_query_params().get('PromotionNo')
+
+	def set_PromotionNo(self,PromotionNo):
+		self.add_query_param('PromotionNo',PromotionNo)
+
+	def get_UserClientIp(self):
+		return self.get_query_params().get('UserClientIp')
+
+	def set_UserClientIp(self,UserClientIp):
+		self.add_query_param('UserClientIp',UserClientIp)
 
 	def get_Lang(self):
 		return self.get_query_params().get('Lang')

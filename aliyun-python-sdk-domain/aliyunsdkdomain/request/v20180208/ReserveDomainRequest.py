@@ -18,20 +18,26 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-
+from aliyunsdkdomain.endpoint import endpoint_data
 
 class ReserveDomainRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Domain', '2018-02-08', 'ReserveDomain')
+		RpcRequest.__init__(self, 'Domain', '2018-02-08', 'ReserveDomain','domain')
+		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_Channelss(self):
 		return self.get_body_params().get('Channelss')
 
-	def set_Channelss(self,Channelss):
-		for i in range(len(Channelss)):	
-			if Channelss[i] is not None:
-				self.add_body_params('Channels.' + str(i + 1) , Channelss[i]);
+	def set_Channelss(self, Channelss):
+		for depth1 in range(len(Channelss)):
+			if Channelss[depth1] is not None:
+				self.add_body_params('Channels.' + str(depth1 + 1) , Channelss[depth1])
 
 	def get_DomainName(self):
 		return self.get_body_params().get('DomainName')

@@ -18,12 +18,48 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-
+from aliyunsdkdomain.endpoint import endpoint_data
 
 class SaveSingleTaskForCreatingOrderTransferRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Domain', '2018-01-29', 'SaveSingleTaskForCreatingOrderTransfer')
+		RpcRequest.__init__(self, 'Domain', '2018-01-29', 'SaveSingleTaskForCreatingOrderTransfer','domain')
+		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
+
+	def get_RegistrantProfileId(self):
+		return self.get_query_params().get('RegistrantProfileId')
+
+	def set_RegistrantProfileId(self,RegistrantProfileId):
+		self.add_query_param('RegistrantProfileId',RegistrantProfileId)
+
+	def get_CouponNo(self):
+		return self.get_query_params().get('CouponNo')
+
+	def set_CouponNo(self,CouponNo):
+		self.add_query_param('CouponNo',CouponNo)
+
+	def get_Lang(self):
+		return self.get_query_params().get('Lang')
+
+	def set_Lang(self,Lang):
+		self.add_query_param('Lang',Lang)
+
+	def get_DomainName(self):
+		return self.get_query_params().get('DomainName')
+
+	def set_DomainName(self,DomainName):
+		self.add_query_param('DomainName',DomainName)
+
+	def get_UseCoupon(self):
+		return self.get_query_params().get('UseCoupon')
+
+	def set_UseCoupon(self,UseCoupon):
+		self.add_query_param('UseCoupon',UseCoupon)
 
 	def get_PermitPremiumTransfer(self):
 		return self.get_query_params().get('PermitPremiumTransfer')
@@ -48,36 +84,6 @@ class SaveSingleTaskForCreatingOrderTransferRequest(RpcRequest):
 
 	def set_UserClientIp(self,UserClientIp):
 		self.add_query_param('UserClientIp',UserClientIp)
-
-	def get_DomainName(self):
-		return self.get_query_params().get('DomainName')
-
-	def set_DomainName(self,DomainName):
-		self.add_query_param('DomainName',DomainName)
-
-	def get_RegistrantProfileId(self):
-		return self.get_query_params().get('RegistrantProfileId')
-
-	def set_RegistrantProfileId(self,RegistrantProfileId):
-		self.add_query_param('RegistrantProfileId',RegistrantProfileId)
-
-	def get_CouponNo(self):
-		return self.get_query_params().get('CouponNo')
-
-	def set_CouponNo(self,CouponNo):
-		self.add_query_param('CouponNo',CouponNo)
-
-	def get_UseCoupon(self):
-		return self.get_query_params().get('UseCoupon')
-
-	def set_UseCoupon(self,UseCoupon):
-		self.add_query_param('UseCoupon',UseCoupon)
-
-	def get_Lang(self):
-		return self.get_query_params().get('Lang')
-
-	def set_Lang(self,Lang):
-		self.add_query_param('Lang',Lang)
 
 	def get_UsePromotion(self):
 		return self.get_query_params().get('UsePromotion')

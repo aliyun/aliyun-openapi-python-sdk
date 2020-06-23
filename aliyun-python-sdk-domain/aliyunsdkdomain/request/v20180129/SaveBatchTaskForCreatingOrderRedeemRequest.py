@@ -18,35 +18,18 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-
+from aliyunsdkdomain.endpoint import endpoint_data
 
 class SaveBatchTaskForCreatingOrderRedeemRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Domain', '2018-01-29', 'SaveBatchTaskForCreatingOrderRedeem')
+		RpcRequest.__init__(self, 'Domain', '2018-01-29', 'SaveBatchTaskForCreatingOrderRedeem','domain')
+		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_PromotionNo(self):
-		return self.get_query_params().get('PromotionNo')
-
-	def set_PromotionNo(self,PromotionNo):
-		self.add_query_param('PromotionNo',PromotionNo)
-
-	def get_OrderRedeemParams(self):
-		return self.get_query_params().get('OrderRedeemParams')
-
-	def set_OrderRedeemParams(self,OrderRedeemParams):
-		for i in range(len(OrderRedeemParams)):	
-			if OrderRedeemParams[i].get('CurrentExpirationDate') is not None:
-				self.add_query_param('OrderRedeemParam.' + str(i + 1) + '.CurrentExpirationDate' , OrderRedeemParams[i].get('CurrentExpirationDate'))
-			if OrderRedeemParams[i].get('DomainName') is not None:
-				self.add_query_param('OrderRedeemParam.' + str(i + 1) + '.DomainName' , OrderRedeemParams[i].get('DomainName'))
-
-
-	def get_UserClientIp(self):
-		return self.get_query_params().get('UserClientIp')
-
-	def set_UserClientIp(self,UserClientIp):
-		self.add_query_param('UserClientIp',UserClientIp)
 
 	def get_CouponNo(self):
 		return self.get_query_params().get('CouponNo')
@@ -59,6 +42,28 @@ class SaveBatchTaskForCreatingOrderRedeemRequest(RpcRequest):
 
 	def set_UseCoupon(self,UseCoupon):
 		self.add_query_param('UseCoupon',UseCoupon)
+
+	def get_PromotionNo(self):
+		return self.get_query_params().get('PromotionNo')
+
+	def set_PromotionNo(self,PromotionNo):
+		self.add_query_param('PromotionNo',PromotionNo)
+
+	def get_OrderRedeemParams(self):
+		return self.get_query_params().get('OrderRedeemParams')
+
+	def set_OrderRedeemParams(self, OrderRedeemParams):
+		for depth1 in range(len(OrderRedeemParams)):
+			if OrderRedeemParams[depth1].get('CurrentExpirationDate') is not None:
+				self.add_query_param('OrderRedeemParam.' + str(depth1 + 1) + '.CurrentExpirationDate', OrderRedeemParams[depth1].get('CurrentExpirationDate'))
+			if OrderRedeemParams[depth1].get('DomainName') is not None:
+				self.add_query_param('OrderRedeemParam.' + str(depth1 + 1) + '.DomainName', OrderRedeemParams[depth1].get('DomainName'))
+
+	def get_UserClientIp(self):
+		return self.get_query_params().get('UserClientIp')
+
+	def set_UserClientIp(self,UserClientIp):
+		self.add_query_param('UserClientIp',UserClientIp)
 
 	def get_Lang(self):
 		return self.get_query_params().get('Lang')

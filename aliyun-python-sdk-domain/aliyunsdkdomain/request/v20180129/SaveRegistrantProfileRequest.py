@@ -18,30 +18,24 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-
+from aliyunsdkdomain.endpoint import endpoint_data
 
 class SaveRegistrantProfileRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Domain', '2018-01-29', 'SaveRegistrantProfile')
+		RpcRequest.__init__(self, 'Domain', '2018-01-29', 'SaveRegistrantProfile','domain')
+		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_Country(self):
 		return self.get_query_params().get('Country')
 
 	def set_Country(self,Country):
 		self.add_query_param('Country',Country)
-
-	def get_Address(self):
-		return self.get_query_params().get('Address')
-
-	def set_Address(self,Address):
-		self.add_query_param('Address',Address)
-
-	def get_TelArea(self):
-		return self.get_query_params().get('TelArea')
-
-	def set_TelArea(self,TelArea):
-		self.add_query_param('TelArea',TelArea)
 
 	def get_City(self):
 		return self.get_query_params().get('City')
@@ -54,6 +48,66 @@ class SaveRegistrantProfileRequest(RpcRequest):
 
 	def set_RegistrantProfileId(self,RegistrantProfileId):
 		self.add_query_param('RegistrantProfileId',RegistrantProfileId)
+
+	def get_ZhCity(self):
+		return self.get_query_params().get('ZhCity')
+
+	def set_ZhCity(self,ZhCity):
+		self.add_query_param('ZhCity',ZhCity)
+
+	def get_TelExt(self):
+		return self.get_query_params().get('TelExt')
+
+	def set_TelExt(self,TelExt):
+		self.add_query_param('TelExt',TelExt)
+
+	def get_Province(self):
+		return self.get_query_params().get('Province')
+
+	def set_Province(self,Province):
+		self.add_query_param('Province',Province)
+
+	def get_ZhRegistrantName(self):
+		return self.get_query_params().get('ZhRegistrantName')
+
+	def set_ZhRegistrantName(self,ZhRegistrantName):
+		self.add_query_param('ZhRegistrantName',ZhRegistrantName)
+
+	def get_PostalCode(self):
+		return self.get_query_params().get('PostalCode')
+
+	def set_PostalCode(self,PostalCode):
+		self.add_query_param('PostalCode',PostalCode)
+
+	def get_Lang(self):
+		return self.get_query_params().get('Lang')
+
+	def set_Lang(self,Lang):
+		self.add_query_param('Lang',Lang)
+
+	def get_Email(self):
+		return self.get_query_params().get('Email')
+
+	def set_Email(self,Email):
+		self.add_query_param('Email',Email)
+
+	def get_ZhRegistrantOrganization(self):
+		return self.get_query_params().get('ZhRegistrantOrganization')
+
+	def set_ZhRegistrantOrganization(self,ZhRegistrantOrganization):
+		self.add_query_param('ZhRegistrantOrganization',ZhRegistrantOrganization)
+
+	def get_Address(self):
+		return self.get_query_params().get('Address')
+
+	def set_Address(self,Address):
+		self.add_query_param('Address',Address)
+
+	def get_TelArea(self):
+		return self.get_query_params().get('TelArea')
+
+	def set_TelArea(self,TelArea):
+		self.add_query_param('TelArea',TelArea)
 
 	def get_ZhAddress(self):
 		return self.get_query_params().get('ZhAddress')
@@ -85,12 +139,6 @@ class SaveRegistrantProfileRequest(RpcRequest):
 	def set_DefaultRegistrantProfile(self,DefaultRegistrantProfile):
 		self.add_query_param('DefaultRegistrantProfile',DefaultRegistrantProfile)
 
-	def get_ZhCity(self):
-		return self.get_query_params().get('ZhCity')
-
-	def set_ZhCity(self,ZhCity):
-		self.add_query_param('ZhCity',ZhCity)
-
 	def get_ZhProvince(self):
 		return self.get_query_params().get('ZhProvince')
 
@@ -103,56 +151,14 @@ class SaveRegistrantProfileRequest(RpcRequest):
 	def set_RegistrantOrganization(self,RegistrantOrganization):
 		self.add_query_param('RegistrantOrganization',RegistrantOrganization)
 
-	def get_TelExt(self):
-		return self.get_query_params().get('TelExt')
-
-	def set_TelExt(self,TelExt):
-		self.add_query_param('TelExt',TelExt)
-
-	def get_Province(self):
-		return self.get_query_params().get('Province')
-
-	def set_Province(self,Province):
-		self.add_query_param('Province',Province)
-
-	def get_ZhRegistrantName(self):
-		return self.get_query_params().get('ZhRegistrantName')
-
-	def set_ZhRegistrantName(self,ZhRegistrantName):
-		self.add_query_param('ZhRegistrantName',ZhRegistrantName)
-
-	def get_PostalCode(self):
-		return self.get_query_params().get('PostalCode')
-
-	def set_PostalCode(self,PostalCode):
-		self.add_query_param('PostalCode',PostalCode)
-
 	def get_UserClientIp(self):
 		return self.get_query_params().get('UserClientIp')
 
 	def set_UserClientIp(self,UserClientIp):
 		self.add_query_param('UserClientIp',UserClientIp)
 
-	def get_Lang(self):
-		return self.get_query_params().get('Lang')
-
-	def set_Lang(self,Lang):
-		self.add_query_param('Lang',Lang)
-
-	def get_Email(self):
-		return self.get_query_params().get('Email')
-
-	def set_Email(self,Email):
-		self.add_query_param('Email',Email)
-
 	def get_RegistrantName(self):
 		return self.get_query_params().get('RegistrantName')
 
 	def set_RegistrantName(self,RegistrantName):
 		self.add_query_param('RegistrantName',RegistrantName)
-
-	def get_ZhRegistrantOrganization(self):
-		return self.get_query_params().get('ZhRegistrantOrganization')
-
-	def set_ZhRegistrantOrganization(self,ZhRegistrantOrganization):
-		self.add_query_param('ZhRegistrantOrganization',ZhRegistrantOrganization)

@@ -18,26 +18,32 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-
+from aliyunsdkdomain.endpoint import endpoint_data
 
 class SaveSingleTaskForCreatingDnsHostRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Domain', '2018-01-29', 'SaveSingleTaskForCreatingDnsHost')
+		RpcRequest.__init__(self, 'Domain', '2018-01-29', 'SaveSingleTaskForCreatingDnsHost','domain')
+		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
+
+	def get_Ips(self):
+		return self.get_query_params().get('Ips')
+
+	def set_Ips(self, Ips):
+		for depth1 in range(len(Ips)):
+			if Ips[depth1] is not None:
+				self.add_query_param('Ip.' + str(depth1 + 1) , Ips[depth1])
 
 	def get_InstanceId(self):
 		return self.get_query_params().get('InstanceId')
 
 	def set_InstanceId(self,InstanceId):
 		self.add_query_param('InstanceId',InstanceId)
-
-	def get_Ips(self):
-		return self.get_query_params().get('Ips')
-
-	def set_Ips(self,Ips):
-		for i in range(len(Ips)):	
-			if Ips[i] is not None:
-				self.add_query_param('Ip.' + str(i + 1) , Ips[i]);
 
 	def get_DnsName(self):
 		return self.get_query_params().get('DnsName')

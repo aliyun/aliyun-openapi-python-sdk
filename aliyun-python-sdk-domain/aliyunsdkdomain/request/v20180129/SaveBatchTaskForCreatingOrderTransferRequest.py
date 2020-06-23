@@ -18,39 +18,32 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-
+from aliyunsdkdomain.endpoint import endpoint_data
 
 class SaveBatchTaskForCreatingOrderTransferRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Domain', '2018-01-29', 'SaveBatchTaskForCreatingOrderTransfer')
+		RpcRequest.__init__(self, 'Domain', '2018-01-29', 'SaveBatchTaskForCreatingOrderTransfer','domain')
+		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_PromotionNo(self):
-		return self.get_query_params().get('PromotionNo')
-
-	def set_PromotionNo(self,PromotionNo):
-		self.add_query_param('PromotionNo',PromotionNo)
 
 	def get_OrderTransferParams(self):
 		return self.get_query_params().get('OrderTransferParams')
 
-	def set_OrderTransferParams(self,OrderTransferParams):
-		for i in range(len(OrderTransferParams)):	
-			if OrderTransferParams[i].get('PermitPremiumTransfer') is not None:
-				self.add_query_param('OrderTransferParam.' + str(i + 1) + '.PermitPremiumTransfer' , OrderTransferParams[i].get('PermitPremiumTransfer'))
-			if OrderTransferParams[i].get('AuthorizationCode') is not None:
-				self.add_query_param('OrderTransferParam.' + str(i + 1) + '.AuthorizationCode' , OrderTransferParams[i].get('AuthorizationCode'))
-			if OrderTransferParams[i].get('DomainName') is not None:
-				self.add_query_param('OrderTransferParam.' + str(i + 1) + '.DomainName' , OrderTransferParams[i].get('DomainName'))
-			if OrderTransferParams[i].get('RegistrantProfileId') is not None:
-				self.add_query_param('OrderTransferParam.' + str(i + 1) + '.RegistrantProfileId' , OrderTransferParams[i].get('RegistrantProfileId'))
-
-
-	def get_UserClientIp(self):
-		return self.get_query_params().get('UserClientIp')
-
-	def set_UserClientIp(self,UserClientIp):
-		self.add_query_param('UserClientIp',UserClientIp)
+	def set_OrderTransferParams(self, OrderTransferParams):
+		for depth1 in range(len(OrderTransferParams)):
+			if OrderTransferParams[depth1].get('PermitPremiumTransfer') is not None:
+				self.add_query_param('OrderTransferParam.' + str(depth1 + 1) + '.PermitPremiumTransfer', OrderTransferParams[depth1].get('PermitPremiumTransfer'))
+			if OrderTransferParams[depth1].get('AuthorizationCode') is not None:
+				self.add_query_param('OrderTransferParam.' + str(depth1 + 1) + '.AuthorizationCode', OrderTransferParams[depth1].get('AuthorizationCode'))
+			if OrderTransferParams[depth1].get('DomainName') is not None:
+				self.add_query_param('OrderTransferParam.' + str(depth1 + 1) + '.DomainName', OrderTransferParams[depth1].get('DomainName'))
+			if OrderTransferParams[depth1].get('RegistrantProfileId') is not None:
+				self.add_query_param('OrderTransferParam.' + str(depth1 + 1) + '.RegistrantProfileId', OrderTransferParams[depth1].get('RegistrantProfileId'))
 
 	def get_CouponNo(self):
 		return self.get_query_params().get('CouponNo')
@@ -63,6 +56,18 @@ class SaveBatchTaskForCreatingOrderTransferRequest(RpcRequest):
 
 	def set_UseCoupon(self,UseCoupon):
 		self.add_query_param('UseCoupon',UseCoupon)
+
+	def get_PromotionNo(self):
+		return self.get_query_params().get('PromotionNo')
+
+	def set_PromotionNo(self,PromotionNo):
+		self.add_query_param('PromotionNo',PromotionNo)
+
+	def get_UserClientIp(self):
+		return self.get_query_params().get('UserClientIp')
+
+	def set_UserClientIp(self,UserClientIp):
+		self.add_query_param('UserClientIp',UserClientIp)
 
 	def get_Lang(self):
 		return self.get_query_params().get('Lang')

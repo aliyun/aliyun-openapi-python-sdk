@@ -18,24 +18,36 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-
+from aliyunsdkdomain.endpoint import endpoint_data
 
 class QueryTaskListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Domain', '2018-01-29', 'QueryTaskList')
+		RpcRequest.__init__(self, 'Domain', '2018-01-29', 'QueryTaskList','domain')
+		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_BeginCreateTime(self):
-		return self.get_query_params().get('BeginCreateTime')
-
-	def set_BeginCreateTime(self,BeginCreateTime):
-		self.add_query_param('BeginCreateTime',BeginCreateTime)
 
 	def get_EndCreateTime(self):
 		return self.get_query_params().get('EndCreateTime')
 
 	def set_EndCreateTime(self,EndCreateTime):
 		self.add_query_param('EndCreateTime',EndCreateTime)
+
+	def get_PageNum(self):
+		return self.get_query_params().get('PageNum')
+
+	def set_PageNum(self,PageNum):
+		self.add_query_param('PageNum',PageNum)
+
+	def get_BeginCreateTime(self):
+		return self.get_query_params().get('BeginCreateTime')
+
+	def set_BeginCreateTime(self,BeginCreateTime):
+		self.add_query_param('BeginCreateTime',BeginCreateTime)
 
 	def get_UserClientIp(self):
 		return self.get_query_params().get('UserClientIp')
@@ -54,9 +66,3 @@ class QueryTaskListRequest(RpcRequest):
 
 	def set_Lang(self,Lang):
 		self.add_query_param('Lang',Lang)
-
-	def get_PageNum(self):
-		return self.get_query_params().get('PageNum')
-
-	def set_PageNum(self,PageNum):
-		self.add_query_param('PageNum',PageNum)

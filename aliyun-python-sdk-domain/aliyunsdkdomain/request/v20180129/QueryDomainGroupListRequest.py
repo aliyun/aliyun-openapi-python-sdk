@@ -18,12 +18,24 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-
+from aliyunsdkdomain.endpoint import endpoint_data
 
 class QueryDomainGroupListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Domain', '2018-01-29', 'QueryDomainGroupList')
+		RpcRequest.__init__(self, 'Domain', '2018-01-29', 'QueryDomainGroupList','domain')
+		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
+
+	def get_ShowDeletingGroup(self):
+		return self.get_query_params().get('ShowDeletingGroup')
+
+	def set_ShowDeletingGroup(self,ShowDeletingGroup):
+		self.add_query_param('ShowDeletingGroup',ShowDeletingGroup)
 
 	def get_UserClientIp(self):
 		return self.get_query_params().get('UserClientIp')
@@ -42,9 +54,3 @@ class QueryDomainGroupListRequest(RpcRequest):
 
 	def set_Lang(self,Lang):
 		self.add_query_param('Lang',Lang)
-
-	def get_ShowDeletingGroup(self):
-		return self.get_query_params().get('ShowDeletingGroup')
-
-	def set_ShowDeletingGroup(self,ShowDeletingGroup):
-		self.add_query_param('ShowDeletingGroup',ShowDeletingGroup)
