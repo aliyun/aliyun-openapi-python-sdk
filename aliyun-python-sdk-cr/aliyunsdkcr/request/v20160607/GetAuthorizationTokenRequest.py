@@ -18,6 +18,7 @@
 # under the License.
 
 from aliyunsdkcore.request import RoaRequest
+from aliyunsdkcr.endpoint import endpoint_data
 
 class GetAuthorizationTokenRequest(RoaRequest):
 
@@ -25,3 +26,7 @@ class GetAuthorizationTokenRequest(RoaRequest):
 		RoaRequest.__init__(self, 'cr', '2016-06-07', 'GetAuthorizationToken','acr')
 		self.set_uri_pattern('/tokens')
 		self.set_method('GET')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())

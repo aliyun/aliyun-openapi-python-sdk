@@ -18,6 +18,7 @@
 # under the License.
 
 from aliyunsdkcore.request import RoaRequest
+from aliyunsdkcr.endpoint import endpoint_data
 
 class UpdateUserInfoRequest(RoaRequest):
 
@@ -25,3 +26,7 @@ class UpdateUserInfoRequest(RoaRequest):
 		RoaRequest.__init__(self, 'cr', '2016-06-07', 'UpdateUserInfo','acr')
 		self.set_uri_pattern('/users')
 		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())

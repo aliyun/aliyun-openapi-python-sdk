@@ -18,6 +18,7 @@
 # under the License.
 
 from aliyunsdkcore.request import RoaRequest
+from aliyunsdkcr.endpoint import endpoint_data
 
 class UpdateRepoWebhookRequest(RoaRequest):
 
@@ -25,6 +26,11 @@ class UpdateRepoWebhookRequest(RoaRequest):
 		RoaRequest.__init__(self, 'cr', '2016-06-07', 'UpdateRepoWebhook','acr')
 		self.set_uri_pattern('/repos/[RepoNamespace]/[RepoName]/webhooks/[WebhookId]')
 		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_WebhookId(self):
 		return self.get_path_params().get('WebhookId')
