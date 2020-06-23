@@ -20,20 +20,26 @@
 from aliyunsdkcore.request import RoaRequest
 from aliyunsdkcs.endpoint import endpoint_data
 
-class CancelWorkflowRequest(RoaRequest):
+class DescribeClusterAddonUpgradeStatusRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'CS', '2015-12-15', 'CancelWorkflow')
-		self.set_uri_pattern('/gs/workflow/[workflowName]')
-		self.set_method('PUT')
+		RoaRequest.__init__(self, 'CS', '2015-12-15', 'DescribeClusterAddonUpgradeStatus')
+		self.set_uri_pattern('/clusters/[ClusterId]/components/[ComponentId]/upgradestatus')
+		self.set_method('GET')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_workflowName(self):
-		return self.get_path_params().get('workflowName')
+	def get_ComponentId(self):
+		return self.get_path_params().get('ComponentId')
 
-	def set_workflowName(self,workflowName):
-		self.add_path_param('workflowName',workflowName)
+	def set_ComponentId(self,ComponentId):
+		self.add_path_param('ComponentId',ComponentId)
+
+	def get_ClusterId(self):
+		return self.get_path_params().get('ClusterId')
+
+	def set_ClusterId(self,ClusterId):
+		self.add_path_param('ClusterId',ClusterId)

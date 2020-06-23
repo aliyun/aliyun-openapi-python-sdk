@@ -18,13 +18,19 @@
 # under the License.
 
 from aliyunsdkcore.request import RoaRequest
+from aliyunsdkcs.endpoint import endpoint_data
 
 class DescribeClusterUserKubeconfigRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'CS', '2015-12-15', 'DescribeClusterUserKubeconfig','csk')
+		RoaRequest.__init__(self, 'CS', '2015-12-15', 'DescribeClusterUserKubeconfig')
 		self.set_uri_pattern('/k8s/[ClusterId]/user_config')
 		self.set_method('GET')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_PrivateIpAddress(self):
 		return self.get_query_params().get('PrivateIpAddress')

@@ -18,13 +18,25 @@
 # under the License.
 
 from aliyunsdkcore.request import RoaRequest
+from aliyunsdkcs.endpoint import endpoint_data
 
 class DeleteClusterNodesRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'CS', '2015-12-15', 'DeleteClusterNodes','csk')
+		RoaRequest.__init__(self, 'CS', '2015-12-15', 'DeleteClusterNodes')
 		self.set_uri_pattern('/clusters/[ClusterId]/nodes')
-		self.set_method('POST|DELETE')
+		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
+
+	def get_release_node(self):
+		return self.get_body_params().get('release_node')
+
+	def set_release_node(self,release_node):
+		self.add_body_params('release_node', release_node)
 
 	def get_ClusterId(self):
 		return self.get_path_params().get('ClusterId')

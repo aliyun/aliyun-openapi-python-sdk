@@ -18,16 +18,15 @@
 # under the License.
 
 from aliyunsdkcore.request import RoaRequest
+from aliyunsdkcs.endpoint import endpoint_data
 
-class UpdateServiceMeshRequest(RoaRequest):
+class DeleteTriggerHookRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'CS', '2015-12-15', 'UpdateServiceMesh','csk')
-		self.set_uri_pattern('/servicemesh/[ServiceMeshId]')
-		self.set_method('PUT')
-
-	def get_ServiceMeshId(self):
-		return self.get_path_params().get('ServiceMeshId')
-
-	def set_ServiceMeshId(self,ServiceMeshId):
-		self.add_path_param('ServiceMeshId',ServiceMeshId)
+		RoaRequest.__init__(self, 'CS', '2015-12-15', 'DeleteTriggerHook')
+		self.set_uri_pattern('/api/v2/hook/trigger')
+		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())

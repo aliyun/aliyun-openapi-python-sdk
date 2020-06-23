@@ -20,20 +20,38 @@
 from aliyunsdkcore.request import RoaRequest
 from aliyunsdkcs.endpoint import endpoint_data
 
-class CancelWorkflowRequest(RoaRequest):
+class CreateTemplateRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'CS', '2015-12-15', 'CancelWorkflow')
-		self.set_uri_pattern('/gs/workflow/[workflowName]')
-		self.set_method('PUT')
+		RoaRequest.__init__(self, 'CS', '2015-12-15', 'CreateTemplate')
+		self.set_uri_pattern('/templates')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_workflowName(self):
-		return self.get_path_params().get('workflowName')
+	def get_template(self):
+		return self.get_body_params().get('template')
 
-	def set_workflowName(self,workflowName):
-		self.add_path_param('workflowName',workflowName)
+	def set_template(self,template):
+		self.add_body_params('template', template)
+
+	def get_name(self):
+		return self.get_body_params().get('name')
+
+	def set_name(self,name):
+		self.add_body_params('name', name)
+
+	def get_template_type(self):
+		return self.get_body_params().get('template_type')
+
+	def set_template_type(self,template_type):
+		self.add_body_params('template_type', template_type)
+
+	def get_tags(self):
+		return self.get_body_params().get('tags')
+
+	def set_tags(self,tags):
+		self.add_body_params('tags', tags)

@@ -20,20 +20,32 @@
 from aliyunsdkcore.request import RoaRequest
 from aliyunsdkcs.endpoint import endpoint_data
 
-class CancelWorkflowRequest(RoaRequest):
+class ModifyClusterTagsRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'CS', '2015-12-15', 'CancelWorkflow')
-		self.set_uri_pattern('/gs/workflow/[workflowName]')
-		self.set_method('PUT')
+		RoaRequest.__init__(self, 'CS', '2015-12-15', 'ModifyClusterTags')
+		self.set_uri_pattern('/clusters/[ClusterId]/tags')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_workflowName(self):
-		return self.get_path_params().get('workflowName')
+	def get_ClusterId(self):
+		return self.get_path_params().get('ClusterId')
 
-	def set_workflowName(self,workflowName):
-		self.add_path_param('workflowName',workflowName)
+	def set_ClusterId(self,ClusterId):
+		self.add_path_param('ClusterId',ClusterId)
+
+	def get_value(self):
+		return self.get_body_params().get('value')
+
+	def set_value(self,value):
+		self.add_body_params('value', value)
+
+	def get_key(self):
+		return self.get_body_params().get('key')
+
+	def set_key(self,key):
+		self.add_body_params('key', key)

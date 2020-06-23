@@ -20,20 +20,26 @@
 from aliyunsdkcore.request import RoaRequest
 from aliyunsdkcs.endpoint import endpoint_data
 
-class CancelWorkflowRequest(RoaRequest):
+class DescribeAddonsRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'CS', '2015-12-15', 'CancelWorkflow')
-		self.set_uri_pattern('/gs/workflow/[workflowName]')
-		self.set_method('PUT')
+		RoaRequest.__init__(self, 'CS', '2015-12-15', 'DescribeAddons')
+		self.set_uri_pattern('/clusters/components/metadata')
+		self.set_method('GET')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_workflowName(self):
-		return self.get_path_params().get('workflowName')
+	def get_cluster_type(self):
+		return self.get_query_params().get('cluster_type')
 
-	def set_workflowName(self,workflowName):
-		self.add_path_param('workflowName',workflowName)
+	def set_cluster_type(self,cluster_type):
+		self.add_query_param('cluster_type',cluster_type)
+
+	def get_region(self):
+		return self.get_query_params().get('region')
+
+	def set_region(self,region):
+		self.add_query_param('region',region)

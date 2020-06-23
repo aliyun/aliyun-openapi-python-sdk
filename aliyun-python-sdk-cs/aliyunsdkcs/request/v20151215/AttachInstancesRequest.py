@@ -18,16 +18,52 @@
 # under the License.
 
 from aliyunsdkcore.request import RoaRequest
+from aliyunsdkcs.endpoint import endpoint_data
 
 class AttachInstancesRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'CS', '2015-12-15', 'AttachInstances','csk')
+		RoaRequest.__init__(self, 'CS', '2015-12-15', 'AttachInstances')
 		self.set_uri_pattern('/clusters/[ClusterId]/attach')
 		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
+
+	def get_password(self):
+		return self.get_body_params().get('password')
+
+	def set_password(self,password):
+		self.add_body_params('password', password)
+
+	def get_keep_instance_name(self):
+		return self.get_body_params().get('keep_instance_name')
+
+	def set_keep_instance_name(self,keep_instance_name):
+		self.add_body_params('keep_instance_name', keep_instance_name)
+
+	def get_key_pair(self):
+		return self.get_body_params().get('key_pair')
+
+	def set_key_pair(self,key_pair):
+		self.add_body_params('key_pair', key_pair)
+
+	def get_cpu_policy(self):
+		return self.get_body_params().get('cpu_policy')
+
+	def set_cpu_policy(self,cpu_policy):
+		self.add_body_params('cpu_policy', cpu_policy)
 
 	def get_ClusterId(self):
 		return self.get_path_params().get('ClusterId')
 
 	def set_ClusterId(self,ClusterId):
 		self.add_path_param('ClusterId',ClusterId)
+
+	def get_format_disk(self):
+		return self.get_body_params().get('format_disk')
+
+	def set_format_disk(self,format_disk):
+		self.add_body_params('format_disk', format_disk)

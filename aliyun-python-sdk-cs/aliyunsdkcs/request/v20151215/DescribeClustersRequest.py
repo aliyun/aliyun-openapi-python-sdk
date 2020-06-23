@@ -18,13 +18,19 @@
 # under the License.
 
 from aliyunsdkcore.request import RoaRequest
+from aliyunsdkcs.endpoint import endpoint_data
 
 class DescribeClustersRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'CS', '2015-12-15', 'DescribeClusters','csk')
+		RoaRequest.__init__(self, 'CS', '2015-12-15', 'DescribeClusters')
 		self.set_uri_pattern('/clusters')
 		self.set_method('GET')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_clusterType(self):
 		return self.get_query_params().get('clusterType')
@@ -32,8 +38,8 @@ class DescribeClustersRequest(RoaRequest):
 	def set_clusterType(self,clusterType):
 		self.add_query_param('clusterType',clusterType)
 
-	def get_Name(self):
-		return self.get_query_params().get('Name')
+	def get_name(self):
+		return self.get_query_params().get('name')
 
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)
+	def set_name(self,name):
+		self.add_query_param('name',name)

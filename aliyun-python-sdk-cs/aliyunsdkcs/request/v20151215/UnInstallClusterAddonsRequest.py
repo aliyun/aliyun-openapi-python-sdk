@@ -18,13 +18,25 @@
 # under the License.
 
 from aliyunsdkcore.request import RoaRequest
+from aliyunsdkcs.endpoint import endpoint_data
 
 class UnInstallClusterAddonsRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'CS', '2015-12-15', 'UnInstallClusterAddons','csk')
+		RoaRequest.__init__(self, 'CS', '2015-12-15', 'UnInstallClusterAddons')
 		self.set_uri_pattern('/clusters/[ClusterId]/components/uninstall')
 		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
+
+	def get_name(self):
+		return self.get_body_params().get('name')
+
+	def set_name(self,name):
+		self.add_body_params('name', name)
 
 	def get_ClusterId(self):
 		return self.get_path_params().get('ClusterId')

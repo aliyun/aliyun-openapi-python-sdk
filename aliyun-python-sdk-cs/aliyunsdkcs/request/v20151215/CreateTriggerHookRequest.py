@@ -20,11 +20,11 @@
 from aliyunsdkcore.request import RoaRequest
 from aliyunsdkcs.endpoint import endpoint_data
 
-class CancelWorkflowRequest(RoaRequest):
+class CreateTriggerHookRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'CS', '2015-12-15', 'CancelWorkflow')
-		self.set_uri_pattern('/gs/workflow/[workflowName]')
+		RoaRequest.__init__(self, 'CS', '2015-12-15', 'CreateTriggerHook')
+		self.set_uri_pattern('/hook/trigger')
 		self.set_method('PUT')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -32,8 +32,26 @@ class CancelWorkflowRequest(RoaRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_workflowName(self):
-		return self.get_path_params().get('workflowName')
+	def get_cluster_id(self):
+		return self.get_body_params().get('cluster_id')
 
-	def set_workflowName(self,workflowName):
-		self.add_path_param('workflowName',workflowName)
+	def set_cluster_id(self,cluster_id):
+		self.add_body_params('cluster_id', cluster_id)
+
+	def get_project_id(self):
+		return self.get_body_params().get('project_id')
+
+	def set_project_id(self,project_id):
+		self.add_body_params('project_id', project_id)
+
+	def get_trigger_url(self):
+		return self.get_body_params().get('trigger_url')
+
+	def set_trigger_url(self,trigger_url):
+		self.add_body_params('trigger_url', trigger_url)
+
+	def get_region_id(self):
+		return self.get_body_params().get('region_id')
+
+	def set_region_id(self,region_id):
+		self.add_body_params('region_id', region_id)

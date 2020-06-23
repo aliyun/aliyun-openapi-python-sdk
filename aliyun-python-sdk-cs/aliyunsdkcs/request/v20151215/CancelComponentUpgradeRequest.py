@@ -18,16 +18,28 @@
 # under the License.
 
 from aliyunsdkcore.request import RoaRequest
+from aliyunsdkcs.endpoint import endpoint_data
 
-class ServiceMeshRemoveClusterRequest(RoaRequest):
+class CancelComponentUpgradeRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'CS', '2015-12-15', 'ServiceMeshRemoveCluster','csk')
-		self.set_uri_pattern('/servicemesh/[ServiceMeshId]/remove/clusters')
-		self.set_method('PUT')
+		RoaRequest.__init__(self, 'CS', '2015-12-15', 'CancelComponentUpgrade')
+		self.set_uri_pattern('/clusters/[clusterid]/components/[componentid]/cancel')
+		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ServiceMeshId(self):
-		return self.get_path_params().get('ServiceMeshId')
 
-	def set_ServiceMeshId(self,ServiceMeshId):
-		self.add_path_param('ServiceMeshId',ServiceMeshId)
+	def get_componentid(self):
+		return self.get_path_params().get('componentid')
+
+	def set_componentid(self,componentid):
+		self.add_path_param('componentid',componentid)
+
+	def get_clusterid(self):
+		return self.get_path_params().get('clusterid')
+
+	def set_clusterid(self,clusterid):
+		self.add_path_param('clusterid',clusterid)

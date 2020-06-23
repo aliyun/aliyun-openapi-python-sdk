@@ -18,16 +18,22 @@
 # under the License.
 
 from aliyunsdkcore.request import RoaRequest
+from aliyunsdkcs.endpoint import endpoint_data
 
-class ServiceMeshAddClusterRequest(RoaRequest):
+class DescribeTemplatesRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'CS', '2015-12-15', 'ServiceMeshAddCluster','csk')
-		self.set_uri_pattern('/servicemesh/[ServiceMeshId]/add/clusters')
-		self.set_method('PUT')
+		RoaRequest.__init__(self, 'CS', '2015-12-15', 'DescribeTemplates')
+		self.set_uri_pattern('/templates')
+		self.set_method('GET')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ServiceMeshId(self):
-		return self.get_path_params().get('ServiceMeshId')
 
-	def set_ServiceMeshId(self,ServiceMeshId):
-		self.add_path_param('ServiceMeshId',ServiceMeshId)
+	def get_template_type(self):
+		return self.get_query_params().get('template_type')
+
+	def set_template_type(self,template_type):
+		self.add_query_param('template_type',template_type)
