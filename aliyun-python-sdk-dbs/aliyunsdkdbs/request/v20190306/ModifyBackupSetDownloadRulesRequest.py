@@ -24,6 +24,7 @@ class ModifyBackupSetDownloadRulesRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Dbs', '2019-03-06', 'ModifyBackupSetDownloadRules','cbs')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):

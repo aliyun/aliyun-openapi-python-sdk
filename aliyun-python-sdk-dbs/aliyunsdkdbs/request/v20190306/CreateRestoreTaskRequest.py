@@ -24,6 +24,7 @@ class CreateRestoreTaskRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Dbs', '2019-03-06', 'CreateRestoreTask','cbs')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -60,6 +61,12 @@ class CreateRestoreTaskRequest(RpcRequest):
 	def set_DestinationEndpointRegion(self,DestinationEndpointRegion):
 		self.add_query_param('DestinationEndpointRegion',DestinationEndpointRegion)
 
+	def get_CrossRoleName(self):
+		return self.get_query_params().get('CrossRoleName')
+
+	def set_CrossRoleName(self,CrossRoleName):
+		self.add_query_param('CrossRoleName',CrossRoleName)
+
 	def get_DestinationEndpointUserName(self):
 		return self.get_query_params().get('DestinationEndpointUserName')
 
@@ -95,6 +102,12 @@ class CreateRestoreTaskRequest(RpcRequest):
 
 	def set_RestoreTime(self,RestoreTime):
 		self.add_query_param('RestoreTime',RestoreTime)
+
+	def get_CrossAliyunId(self):
+		return self.get_query_params().get('CrossAliyunId')
+
+	def set_CrossAliyunId(self,CrossAliyunId):
+		self.add_query_param('CrossAliyunId',CrossAliyunId)
 
 	def get_DestinationEndpointInstanceID(self):
 		return self.get_query_params().get('DestinationEndpointInstanceID')

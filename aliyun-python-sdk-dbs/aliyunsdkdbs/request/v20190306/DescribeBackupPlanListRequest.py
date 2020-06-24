@@ -24,6 +24,7 @@ class DescribeBackupPlanListRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Dbs', '2019-03-06', 'DescribeBackupPlanList','cbs')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -53,6 +54,18 @@ class DescribeBackupPlanListRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_BackupPlanStatus(self):
+		return self.get_query_params().get('BackupPlanStatus')
+
+	def set_BackupPlanStatus(self,BackupPlanStatus):
+		self.add_query_param('BackupPlanStatus',BackupPlanStatus)
+
+	def get_BackupPlanName(self):
+		return self.get_query_params().get('BackupPlanName')
+
+	def set_BackupPlanName(self,BackupPlanName):
+		self.add_query_param('BackupPlanName',BackupPlanName)
 
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')

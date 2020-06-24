@@ -24,6 +24,7 @@ class ModifyBackupSourceEndpointRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Dbs', '2019-03-06', 'ModifyBackupSourceEndpoint','cbs')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -77,6 +78,18 @@ class ModifyBackupSourceEndpointRequest(RpcRequest):
 
 	def set_SourceEndpointIP(self,SourceEndpointIP):
 		self.add_query_param('SourceEndpointIP',SourceEndpointIP)
+
+	def get_CrossRoleName(self):
+		return self.get_query_params().get('CrossRoleName')
+
+	def set_CrossRoleName(self,CrossRoleName):
+		self.add_query_param('CrossRoleName',CrossRoleName)
+
+	def get_CrossAliyunId(self):
+		return self.get_query_params().get('CrossAliyunId')
+
+	def set_CrossAliyunId(self,CrossAliyunId):
+		self.add_query_param('CrossAliyunId',CrossAliyunId)
 
 	def get_SourceEndpointPassword(self):
 		return self.get_query_params().get('SourceEndpointPassword')

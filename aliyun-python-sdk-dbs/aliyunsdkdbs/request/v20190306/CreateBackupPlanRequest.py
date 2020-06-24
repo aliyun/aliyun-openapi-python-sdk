@@ -24,6 +24,7 @@ class CreateBackupPlanRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Dbs', '2019-03-06', 'CreateBackupPlan','cbs')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -71,6 +72,12 @@ class CreateBackupPlanRequest(RpcRequest):
 
 	def set_Period(self,Period):
 		self.add_query_param('Period',Period)
+
+	def get_FromApp(self):
+		return self.get_query_params().get('FromApp')
+
+	def set_FromApp(self,FromApp):
+		self.add_query_param('FromApp',FromApp)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')

@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdbs.endpoint import endpoint_data
 
-class DescribeRestoreTaskListRequest(RpcRequest):
+class DescribeBackupPlanBillingRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dbs', '2019-03-06', 'DescribeRestoreTaskList','cbs')
+		RpcRequest.__init__(self, 'Dbs', '2019-03-06', 'DescribeBackupPlanBilling','cbs')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -43,26 +43,14 @@ class DescribeRestoreTaskListRequest(RpcRequest):
 	def set_BackupPlanId(self,BackupPlanId):
 		self.add_query_param('BackupPlanId',BackupPlanId)
 
-	def get_PageNum(self):
-		return self.get_query_params().get('PageNum')
-
-	def set_PageNum(self,PageNum):
-		self.add_query_param('PageNum',PageNum)
-
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_RestoreTaskId(self):
-		return self.get_query_params().get('RestoreTaskId')
+	def get_ShowStorageType(self):
+		return self.get_query_params().get('ShowStorageType')
 
-	def set_RestoreTaskId(self,RestoreTaskId):
-		self.add_query_param('RestoreTaskId',RestoreTaskId)
-
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
+	def set_ShowStorageType(self,ShowStorageType):
+		self.add_query_param('ShowStorageType',ShowStorageType)

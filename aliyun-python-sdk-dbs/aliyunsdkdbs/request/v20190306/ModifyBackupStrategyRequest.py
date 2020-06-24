@@ -24,6 +24,7 @@ class ModifyBackupStrategyRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Dbs', '2019-03-06', 'ModifyBackupStrategy','cbs')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -59,3 +60,9 @@ class ModifyBackupStrategyRequest(RpcRequest):
 
 	def set_BackupStartTime(self,BackupStartTime):
 		self.add_query_param('BackupStartTime',BackupStartTime)
+
+	def get_BackupStrategyType(self):
+		return self.get_query_params().get('BackupStrategyType')
+
+	def set_BackupStrategyType(self,BackupStrategyType):
+		self.add_query_param('BackupStrategyType',BackupStrategyType)

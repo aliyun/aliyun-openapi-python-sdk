@@ -24,6 +24,7 @@ class ConfigureBackupPlanRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Dbs', '2019-03-06', 'ConfigureBackupPlan','cbs')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -90,6 +91,12 @@ class ConfigureBackupPlanRequest(RpcRequest):
 	def set_SourceEndpointIP(self,SourceEndpointIP):
 		self.add_query_param('SourceEndpointIP',SourceEndpointIP)
 
+	def get_CrossRoleName(self):
+		return self.get_query_params().get('CrossRoleName')
+
+	def set_CrossRoleName(self,CrossRoleName):
+		self.add_query_param('CrossRoleName',CrossRoleName)
+
 	def get_EnableBackupLog(self):
 		return self.get_query_params().get('EnableBackupLog')
 
@@ -107,6 +114,12 @@ class ConfigureBackupPlanRequest(RpcRequest):
 
 	def set_DuplicationArchivePeriod(self,DuplicationArchivePeriod):
 		self.add_query_param('DuplicationArchivePeriod',DuplicationArchivePeriod)
+
+	def get_CrossAliyunId(self):
+		return self.get_query_params().get('CrossAliyunId')
+
+	def set_CrossAliyunId(self,CrossAliyunId):
+		self.add_query_param('CrossAliyunId',CrossAliyunId)
 
 	def get_SourceEndpointPassword(self):
 		return self.get_query_params().get('SourceEndpointPassword')
@@ -144,6 +157,12 @@ class ConfigureBackupPlanRequest(RpcRequest):
 	def set_BackupPeriod(self,BackupPeriod):
 		self.add_query_param('BackupPeriod',BackupPeriod)
 
+	def get_BackupSpeedLimit(self):
+		return self.get_query_params().get('BackupSpeedLimit')
+
+	def set_BackupSpeedLimit(self,BackupSpeedLimit):
+		self.add_query_param('BackupSpeedLimit',BackupSpeedLimit)
+
 	def get_SourceEndpointInstanceType(self):
 		return self.get_query_params().get('SourceEndpointInstanceType')
 
@@ -167,3 +186,9 @@ class ConfigureBackupPlanRequest(RpcRequest):
 
 	def set_OSSBucketName(self,OSSBucketName):
 		self.add_query_param('OSSBucketName',OSSBucketName)
+
+	def get_BackupStrategyType(self):
+		return self.get_query_params().get('BackupStrategyType')
+
+	def set_BackupStrategyType(self,BackupStrategyType):
+		self.add_query_param('BackupStrategyType',BackupStrategyType)
