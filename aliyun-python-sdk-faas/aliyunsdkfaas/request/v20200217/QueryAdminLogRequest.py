@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkfaas.endpoint import endpoint_data
 
-class DescribeLoadTaskStatusRequest(RpcRequest):
+class QueryAdminLogRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'faas', '2017-08-24', 'DescribeLoadTaskStatus','faas')
+		RpcRequest.__init__(self, 'faas', '2020-02-17', 'QueryAdminLog','faas')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,26 +31,8 @@ class DescribeLoadTaskStatusRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_InstanceId(self):
-		return self.get_query_params().get('InstanceId')
+	def get_FpgaImageUniqueId(self):
+		return self.get_query_params().get('FpgaImageUniqueId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
-
-	def get_SecurityToken(self):
-		return self.get_query_params().get('SecurityToken')
-
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)
-
-	def get_RoleArn(self):
-		return self.get_query_params().get('RoleArn')
-
-	def set_RoleArn(self,RoleArn):
-		self.add_query_param('RoleArn',RoleArn)
-
-	def get_FpgaUUID(self):
-		return self.get_query_params().get('FpgaUUID')
-
-	def set_FpgaUUID(self,FpgaUUID):
-		self.add_query_param('FpgaUUID',FpgaUUID)
+	def set_FpgaImageUniqueId(self,FpgaImageUniqueId):
+		self.add_query_param('FpgaImageUniqueId',FpgaImageUniqueId)

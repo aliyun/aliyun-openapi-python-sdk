@@ -23,13 +23,25 @@ from aliyunsdkfaas.endpoint import endpoint_data
 class CreateFpgaImageTaskRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'faas', '2017-08-24', 'CreateFpgaImageTask','faas')
+		RpcRequest.__init__(self, 'faas', '2020-02-17', 'CreateFpgaImageTask','faas')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+
+	def get_ToolsVersion(self):
+		return self.get_query_params().get('ToolsVersion')
+
+	def set_ToolsVersion(self,ToolsVersion):
+		self.add_query_param('ToolsVersion',ToolsVersion)
+
+	def get_OssEndpoint(self):
+		return self.get_query_params().get('OssEndpoint')
+
+	def set_OssEndpoint(self,OssEndpoint):
+		self.add_query_param('OssEndpoint',OssEndpoint)
 
 	def get_Description(self):
 		return self.get_query_params().get('Description')
@@ -43,12 +55,6 @@ class CreateFpgaImageTaskRequest(RpcRequest):
 	def set_KeyId(self,KeyId):
 		self.add_query_param('KeyId',KeyId)
 
-	def get_ShellUUID(self):
-		return self.get_query_params().get('ShellUUID')
-
-	def set_ShellUUID(self,ShellUUID):
-		self.add_query_param('ShellUUID',ShellUUID)
-
 	def get_Tags(self):
 		return self.get_query_params().get('Tags')
 
@@ -61,17 +67,17 @@ class CreateFpgaImageTaskRequest(RpcRequest):
 	def set_Bucket(self,Bucket):
 		self.add_query_param('Bucket',Bucket)
 
-	def get_Encrypted(self):
-		return self.get_query_params().get('Encrypted')
+	def get_ShellUniqueId(self):
+		return self.get_query_params().get('ShellUniqueId')
 
-	def set_Encrypted(self,Encrypted):
-		self.add_query_param('Encrypted',Encrypted)
+	def set_ShellUniqueId(self,ShellUniqueId):
+		self.add_query_param('ShellUniqueId',ShellUniqueId)
 
-	def get_RoleArn(self):
-		return self.get_query_params().get('RoleArn')
+	def get_Encryption(self):
+		return self.get_query_params().get('Encryption')
 
-	def set_RoleArn(self,RoleArn):
-		self.add_query_param('RoleArn',RoleArn)
+	def set_Encryption(self,Encryption):
+		self.add_query_param('Encryption',Encryption)
 
 	def get_Name(self):
 		return self.get_query_params().get('Name')

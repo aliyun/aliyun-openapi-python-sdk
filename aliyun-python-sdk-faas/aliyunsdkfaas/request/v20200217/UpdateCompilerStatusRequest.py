@@ -23,7 +23,8 @@ from aliyunsdkfaas.endpoint import endpoint_data
 class UpdateCompilerStatusRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'faas', '2020-02-17', 'UpdateCompilerStatus')
+		RpcRequest.__init__(self, 'faas', '2020-02-17', 'UpdateCompilerStatus','faas')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):

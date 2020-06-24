@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkfaas.endpoint import endpoint_data
 
-class DescribeLoadTaskStatusRequest(RpcRequest):
+class UpdateEcsImageRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'faas', '2017-08-24', 'DescribeLoadTaskStatus','faas')
+		RpcRequest.__init__(self, 'faas', '2020-02-17', 'UpdateEcsImage','faas')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,26 +31,26 @@ class DescribeLoadTaskStatusRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_InstanceId(self):
-		return self.get_query_params().get('InstanceId')
+	def get_ShellUniqueId(self):
+		return self.get_query_params().get('ShellUniqueId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
+	def set_ShellUniqueId(self,ShellUniqueId):
+		self.add_query_param('ShellUniqueId',ShellUniqueId)
 
-	def get_SecurityToken(self):
-		return self.get_query_params().get('SecurityToken')
+	def get_ToolsVersion(self):
+		return self.get_query_params().get('ToolsVersion')
 
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)
+	def set_ToolsVersion(self,ToolsVersion):
+		self.add_query_param('ToolsVersion',ToolsVersion)
 
-	def get_RoleArn(self):
-		return self.get_query_params().get('RoleArn')
+	def get_ECSImageName(self):
+		return self.get_query_params().get('ECSImageName')
 
-	def set_RoleArn(self,RoleArn):
-		self.add_query_param('RoleArn',RoleArn)
+	def set_ECSImageName(self,ECSImageName):
+		self.add_query_param('ECSImageName',ECSImageName)
 
-	def get_FpgaUUID(self):
-		return self.get_query_params().get('FpgaUUID')
+	def get_Id(self):
+		return self.get_query_params().get('Id')
 
-	def set_FpgaUUID(self,FpgaUUID):
-		self.add_query_param('FpgaUUID',FpgaUUID)
+	def set_Id(self,Id):
+		self.add_query_param('Id',Id)
