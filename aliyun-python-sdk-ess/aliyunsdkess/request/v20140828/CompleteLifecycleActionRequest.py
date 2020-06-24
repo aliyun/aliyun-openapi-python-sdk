@@ -24,6 +24,7 @@ class CompleteLifecycleActionRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ess', '2014-08-28', 'CompleteLifecycleAction','ess')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -35,6 +36,12 @@ class CompleteLifecycleActionRequest(RpcRequest):
 
 	def set_LifecycleActionToken(self,LifecycleActionToken):
 		self.add_query_param('LifecycleActionToken',LifecycleActionToken)
+
+	def get_ClientToken(self):
+		return self.get_query_params().get('ClientToken')
+
+	def set_ClientToken(self,ClientToken):
+		self.add_query_param('ClientToken',ClientToken)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')

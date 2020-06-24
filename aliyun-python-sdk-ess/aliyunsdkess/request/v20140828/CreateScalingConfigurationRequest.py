@@ -24,6 +24,7 @@ class CreateScalingConfigurationRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ess', '2014-08-28', 'CreateScalingConfiguration','ess')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -51,13 +52,12 @@ class CreateScalingConfigurationRequest(RpcRequest):
 	def get_SpotPriceLimits(self):
 		return self.get_query_params().get('SpotPriceLimits')
 
-	def set_SpotPriceLimits(self,SpotPriceLimits):
-		for i in range(len(SpotPriceLimits)):	
-			if SpotPriceLimits[i].get('InstanceType') is not None:
-				self.add_query_param('SpotPriceLimit.' + str(i + 1) + '.InstanceType' , SpotPriceLimits[i].get('InstanceType'))
-			if SpotPriceLimits[i].get('PriceLimit') is not None:
-				self.add_query_param('SpotPriceLimit.' + str(i + 1) + '.PriceLimit' , SpotPriceLimits[i].get('PriceLimit'))
-
+	def set_SpotPriceLimits(self, SpotPriceLimits):
+		for depth1 in range(len(SpotPriceLimits)):
+			if SpotPriceLimits[depth1].get('InstanceType') is not None:
+				self.add_query_param('SpotPriceLimit.' + str(depth1 + 1) + '.InstanceType', SpotPriceLimits[depth1].get('InstanceType'))
+			if SpotPriceLimits[depth1].get('PriceLimit') is not None:
+				self.add_query_param('SpotPriceLimit.' + str(depth1 + 1) + '.PriceLimit', SpotPriceLimits[depth1].get('PriceLimit'))
 
 	def get_ResourceGroupId(self):
 		return self.get_query_params().get('ResourceGroupId')
@@ -137,11 +137,23 @@ class CreateScalingConfigurationRequest(RpcRequest):
 	def set_InternetChargeType(self,InternetChargeType):
 		self.add_query_param('InternetChargeType',InternetChargeType)
 
+	def get_ZoneId(self):
+		return self.get_query_params().get('ZoneId')
+
+	def set_ZoneId(self,ZoneId):
+		self.add_query_param('ZoneId',ZoneId)
+
 	def get_InternetMaxBandwidthIn(self):
 		return self.get_query_params().get('InternetMaxBandwidthIn')
 
 	def set_InternetMaxBandwidthIn(self,InternetMaxBandwidthIn):
 		self.add_query_param('InternetMaxBandwidthIn',InternetMaxBandwidthIn)
+
+	def get_Affinity(self):
+		return self.get_query_params().get('Affinity')
+
+	def set_Affinity(self,Affinity):
+		self.add_query_param('Affinity',Affinity)
 
 	def get_ImageId(self):
 		return self.get_query_params().get('ImageId')
@@ -170,10 +182,10 @@ class CreateScalingConfigurationRequest(RpcRequest):
 	def get_InstanceTypess(self):
 		return self.get_query_params().get('InstanceTypess')
 
-	def set_InstanceTypess(self,InstanceTypess):
-		for i in range(len(InstanceTypess)):	
-			if InstanceTypess[i] is not None:
-				self.add_query_param('InstanceTypes.' + str(i + 1) , InstanceTypess[i]);
+	def set_InstanceTypess(self, InstanceTypess):
+		for depth1 in range(len(InstanceTypess)):
+			if InstanceTypess[depth1] is not None:
+				self.add_query_param('InstanceTypes.' + str(depth1 + 1) , InstanceTypess[depth1])
 
 	def get_IoOptimized(self):
 		return self.get_query_params().get('IoOptimized')
@@ -241,6 +253,12 @@ class CreateScalingConfigurationRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
+	def get_Tenancy(self):
+		return self.get_query_params().get('Tenancy')
+
+	def set_Tenancy(self,Tenancy):
+		self.add_query_param('Tenancy',Tenancy)
+
 	def get_SystemDiskDiskName(self):
 		return self.get_query_params().get('SystemDisk.DiskName')
 
@@ -253,40 +271,51 @@ class CreateScalingConfigurationRequest(RpcRequest):
 	def set_RamRoleName(self,RamRoleName):
 		self.add_query_param('RamRoleName',RamRoleName)
 
+	def get_DedicatedHostId(self):
+		return self.get_query_params().get('DedicatedHostId')
+
+	def set_DedicatedHostId(self,DedicatedHostId):
+		self.add_query_param('DedicatedHostId',DedicatedHostId)
+
+	def get_CreditSpecification(self):
+		return self.get_query_params().get('CreditSpecification')
+
+	def set_CreditSpecification(self,CreditSpecification):
+		self.add_query_param('CreditSpecification',CreditSpecification)
+
 	def get_SecurityGroupIdss(self):
 		return self.get_query_params().get('SecurityGroupIdss')
 
-	def set_SecurityGroupIdss(self,SecurityGroupIdss):
-		for i in range(len(SecurityGroupIdss)):	
-			if SecurityGroupIdss[i] is not None:
-				self.add_query_param('SecurityGroupIds.' + str(i + 1) , SecurityGroupIdss[i]);
+	def set_SecurityGroupIdss(self, SecurityGroupIdss):
+		for depth1 in range(len(SecurityGroupIdss)):
+			if SecurityGroupIdss[depth1] is not None:
+				self.add_query_param('SecurityGroupIds.' + str(depth1 + 1) , SecurityGroupIdss[depth1])
 
 	def get_DataDisks(self):
 		return self.get_query_params().get('DataDisks')
 
-	def set_DataDisks(self,DataDisks):
-		for i in range(len(DataDisks)):	
-			if DataDisks[i].get('DiskName') is not None:
-				self.add_query_param('DataDisk.' + str(i + 1) + '.DiskName' , DataDisks[i].get('DiskName'))
-			if DataDisks[i].get('SnapshotId') is not None:
-				self.add_query_param('DataDisk.' + str(i + 1) + '.SnapshotId' , DataDisks[i].get('SnapshotId'))
-			if DataDisks[i].get('Size') is not None:
-				self.add_query_param('DataDisk.' + str(i + 1) + '.Size' , DataDisks[i].get('Size'))
-			if DataDisks[i].get('Encrypted') is not None:
-				self.add_query_param('DataDisk.' + str(i + 1) + '.Encrypted' , DataDisks[i].get('Encrypted'))
-			if DataDisks[i].get('AutoSnapshotPolicyId') is not None:
-				self.add_query_param('DataDisk.' + str(i + 1) + '.AutoSnapshotPolicyId' , DataDisks[i].get('AutoSnapshotPolicyId'))
-			if DataDisks[i].get('Description') is not None:
-				self.add_query_param('DataDisk.' + str(i + 1) + '.Description' , DataDisks[i].get('Description'))
-			if DataDisks[i].get('Category') is not None:
-				self.add_query_param('DataDisk.' + str(i + 1) + '.Category' , DataDisks[i].get('Category'))
-			if DataDisks[i].get('KMSKeyId') is not None:
-				self.add_query_param('DataDisk.' + str(i + 1) + '.KMSKeyId' , DataDisks[i].get('KMSKeyId'))
-			if DataDisks[i].get('Device') is not None:
-				self.add_query_param('DataDisk.' + str(i + 1) + '.Device' , DataDisks[i].get('Device'))
-			if DataDisks[i].get('DeleteWithInstance') is not None:
-				self.add_query_param('DataDisk.' + str(i + 1) + '.DeleteWithInstance' , DataDisks[i].get('DeleteWithInstance'))
-
+	def set_DataDisks(self, DataDisks):
+		for depth1 in range(len(DataDisks)):
+			if DataDisks[depth1].get('DiskName') is not None:
+				self.add_query_param('DataDisk.' + str(depth1 + 1) + '.DiskName', DataDisks[depth1].get('DiskName'))
+			if DataDisks[depth1].get('SnapshotId') is not None:
+				self.add_query_param('DataDisk.' + str(depth1 + 1) + '.SnapshotId', DataDisks[depth1].get('SnapshotId'))
+			if DataDisks[depth1].get('Size') is not None:
+				self.add_query_param('DataDisk.' + str(depth1 + 1) + '.Size', DataDisks[depth1].get('Size'))
+			if DataDisks[depth1].get('Encrypted') is not None:
+				self.add_query_param('DataDisk.' + str(depth1 + 1) + '.Encrypted', DataDisks[depth1].get('Encrypted'))
+			if DataDisks[depth1].get('AutoSnapshotPolicyId') is not None:
+				self.add_query_param('DataDisk.' + str(depth1 + 1) + '.AutoSnapshotPolicyId', DataDisks[depth1].get('AutoSnapshotPolicyId'))
+			if DataDisks[depth1].get('Description') is not None:
+				self.add_query_param('DataDisk.' + str(depth1 + 1) + '.Description', DataDisks[depth1].get('Description'))
+			if DataDisks[depth1].get('Category') is not None:
+				self.add_query_param('DataDisk.' + str(depth1 + 1) + '.Category', DataDisks[depth1].get('Category'))
+			if DataDisks[depth1].get('KMSKeyId') is not None:
+				self.add_query_param('DataDisk.' + str(depth1 + 1) + '.KMSKeyId', DataDisks[depth1].get('KMSKeyId'))
+			if DataDisks[depth1].get('Device') is not None:
+				self.add_query_param('DataDisk.' + str(depth1 + 1) + '.Device', DataDisks[depth1].get('Device'))
+			if DataDisks[depth1].get('DeleteWithInstance') is not None:
+				self.add_query_param('DataDisk.' + str(depth1 + 1) + '.DeleteWithInstance', DataDisks[depth1].get('DeleteWithInstance'))
 
 	def get_LoadBalancerWeight(self):
 		return self.get_query_params().get('LoadBalancerWeight')
@@ -299,6 +328,12 @@ class CreateScalingConfigurationRequest(RpcRequest):
 
 	def set_SystemDiskSize(self,SystemDiskSize):
 		self.add_query_param('SystemDisk.Size',SystemDiskSize)
+
+	def get_ImageFamily(self):
+		return self.get_query_params().get('ImageFamily')
+
+	def set_ImageFamily(self,ImageFamily):
+		self.add_query_param('ImageFamily',ImageFamily)
 
 	def get_SystemDiskDescription(self):
 		return self.get_query_params().get('SystemDisk.Description')

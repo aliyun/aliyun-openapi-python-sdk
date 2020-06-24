@@ -24,6 +24,7 @@ class CreateLifecycleHookRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ess', '2014-08-28', 'CreateLifecycleHook','ess')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -89,21 +90,3 @@ class CreateLifecycleHookRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
-
-	def get_LifecycleHooks(self):
-		return self.get_query_params().get('LifecycleHooks')
-
-	def set_LifecycleHooks(self,LifecycleHooks):
-		for i in range(len(LifecycleHooks)):	
-			if LifecycleHooks[i].get('DefaultResult') is not None:
-				self.add_query_param('LifecycleHook.' + str(i + 1) + '.DefaultResult' , LifecycleHooks[i].get('DefaultResult'))
-			if LifecycleHooks[i].get('LifecycleHookName') is not None:
-				self.add_query_param('LifecycleHook.' + str(i + 1) + '.LifecycleHookName' , LifecycleHooks[i].get('LifecycleHookName'))
-			if LifecycleHooks[i].get('HeartbeatTimeout') is not None:
-				self.add_query_param('LifecycleHook.' + str(i + 1) + '.HeartbeatTimeout' , LifecycleHooks[i].get('HeartbeatTimeout'))
-			if LifecycleHooks[i].get('NotificationArn') is not None:
-				self.add_query_param('LifecycleHook.' + str(i + 1) + '.NotificationArn' , LifecycleHooks[i].get('NotificationArn'))
-			if LifecycleHooks[i].get('NotificationMetadata') is not None:
-				self.add_query_param('LifecycleHook.' + str(i + 1) + '.NotificationMetadata' , LifecycleHooks[i].get('NotificationMetadata'))
-			if LifecycleHooks[i].get('LifecycleTransition') is not None:
-				self.add_query_param('LifecycleHook.' + str(i + 1) + '.LifecycleTransition' , LifecycleHooks[i].get('LifecycleTransition'))

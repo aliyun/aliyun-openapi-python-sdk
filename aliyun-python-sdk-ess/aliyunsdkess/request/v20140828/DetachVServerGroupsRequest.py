@@ -24,11 +24,18 @@ class DetachVServerGroupsRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ess', '2014-08-28', 'DetachVServerGroups','ess')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+
+	def get_ClientToken(self):
+		return self.get_query_params().get('ClientToken')
+
+	def set_ClientToken(self,ClientToken):
+		self.add_query_param('ClientToken',ClientToken)
 
 	def get_ScalingGroupId(self):
 		return self.get_query_params().get('ScalingGroupId')
@@ -57,13 +64,13 @@ class DetachVServerGroupsRequest(RpcRequest):
 	def get_VServerGroups(self):
 		return self.get_query_params().get('VServerGroups')
 
-	def set_VServerGroups(self,VServerGroups):
-		for i in range(len(VServerGroups)):	
-			if VServerGroups[i].get('LoadBalancerId') is not None:
-				self.add_query_param('VServerGroup.' + str(i + 1) + '.LoadBalancerId' , VServerGroups[i].get('LoadBalancerId'))
-			for j in range(len(VServerGroups[i].get('VServerGroupAttributes'))):
-				if VServerGroups[i].get('VServerGroupAttributes')[j] is not None:
-					if VServerGroups[i].get('VServerGroupAttributes')[j].get('VServerGroupId') is not None:
-						self.add_query_param('VServerGroup.' + str(i + 1) + '.VServerGroupAttribute.'+str(j + 1)+ '.VServerGroupId', VServerGroups[i].get('VServerGroupAttributes')[j].get('VServerGroupId'))
-					if VServerGroups[i].get('VServerGroupAttributes')[j].get('Port') is not None:
-						self.add_query_param('VServerGroup.' + str(i + 1) + '.VServerGroupAttribute.'+str(j + 1)+ '.Port', VServerGroups[i].get('VServerGroupAttributes')[j].get('Port'))
+	def set_VServerGroups(self, VServerGroups):
+		for depth1 in range(len(VServerGroups)):
+			if VServerGroups[depth1].get('LoadBalancerId') is not None:
+				self.add_query_param('VServerGroup.' + str(depth1 + 1) + '.LoadBalancerId', VServerGroups[depth1].get('LoadBalancerId'))
+			if VServerGroups[depth1].get('VServerGroupAttribute') is not None:
+				for depth2 in range(len(VServerGroups[depth1].get('VServerGroupAttribute'))):
+					if VServerGroups[depth1].get('VServerGroupAttribute')[depth2].get('VServerGroupId') is not None:
+						self.add_query_param('VServerGroup.' + str(depth1 + 1) + '.VServerGroupAttribute.' + str(depth2 + 1) + '.VServerGroupId', VServerGroups[depth1].get('VServerGroupAttribute')[depth2].get('VServerGroupId'))
+					if VServerGroups[depth1].get('VServerGroupAttribute')[depth2].get('Port') is not None:
+						self.add_query_param('VServerGroup.' + str(depth1 + 1) + '.VServerGroupAttribute.' + str(depth2 + 1) + '.Port', VServerGroups[depth1].get('VServerGroupAttribute')[depth2].get('Port'))

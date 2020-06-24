@@ -24,6 +24,7 @@ class ModifyNotificationConfigurationRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ess', '2014-08-28', 'ModifyNotificationConfiguration','ess')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -57,7 +58,7 @@ class ModifyNotificationConfigurationRequest(RpcRequest):
 	def get_NotificationTypes(self):
 		return self.get_query_params().get('NotificationTypes')
 
-	def set_NotificationTypes(self,NotificationTypes):
-		for i in range(len(NotificationTypes)):	
-			if NotificationTypes[i] is not None:
-				self.add_query_param('NotificationType.' + str(i + 1) , NotificationTypes[i]);
+	def set_NotificationTypes(self, NotificationTypes):
+		for depth1 in range(len(NotificationTypes)):
+			if NotificationTypes[depth1] is not None:
+				self.add_query_param('NotificationType.' + str(depth1 + 1) , NotificationTypes[depth1])

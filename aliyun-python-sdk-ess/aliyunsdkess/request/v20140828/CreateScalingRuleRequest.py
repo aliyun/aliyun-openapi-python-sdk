@@ -24,6 +24,7 @@ class CreateScalingRuleRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ess', '2014-08-28', 'CreateScalingRule','ess')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -33,15 +34,14 @@ class CreateScalingRuleRequest(RpcRequest):
 	def get_StepAdjustments(self):
 		return self.get_query_params().get('StepAdjustments')
 
-	def set_StepAdjustments(self,StepAdjustments):
-		for i in range(len(StepAdjustments)):	
-			if StepAdjustments[i].get('MetricIntervalLowerBound') is not None:
-				self.add_query_param('StepAdjustment.' + str(i + 1) + '.MetricIntervalLowerBound' , StepAdjustments[i].get('MetricIntervalLowerBound'))
-			if StepAdjustments[i].get('MetricIntervalUpperBound') is not None:
-				self.add_query_param('StepAdjustment.' + str(i + 1) + '.MetricIntervalUpperBound' , StepAdjustments[i].get('MetricIntervalUpperBound'))
-			if StepAdjustments[i].get('ScalingAdjustment') is not None:
-				self.add_query_param('StepAdjustment.' + str(i + 1) + '.ScalingAdjustment' , StepAdjustments[i].get('ScalingAdjustment'))
-
+	def set_StepAdjustments(self, StepAdjustments):
+		for depth1 in range(len(StepAdjustments)):
+			if StepAdjustments[depth1].get('MetricIntervalLowerBound') is not None:
+				self.add_query_param('StepAdjustment.' + str(depth1 + 1) + '.MetricIntervalLowerBound', StepAdjustments[depth1].get('MetricIntervalLowerBound'))
+			if StepAdjustments[depth1].get('MetricIntervalUpperBound') is not None:
+				self.add_query_param('StepAdjustment.' + str(depth1 + 1) + '.MetricIntervalUpperBound', StepAdjustments[depth1].get('MetricIntervalUpperBound'))
+			if StepAdjustments[depth1].get('ScalingAdjustment') is not None:
+				self.add_query_param('StepAdjustment.' + str(depth1 + 1) + '.ScalingAdjustment', StepAdjustments[depth1].get('ScalingAdjustment'))
 
 	def get_ScalingGroupId(self):
 		return self.get_query_params().get('ScalingGroupId')

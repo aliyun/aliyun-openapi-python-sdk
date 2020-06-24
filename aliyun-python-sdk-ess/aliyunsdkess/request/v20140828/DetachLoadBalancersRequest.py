@@ -24,11 +24,18 @@ class DetachLoadBalancersRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ess', '2014-08-28', 'DetachLoadBalancers','ess')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+
+	def get_ClientToken(self):
+		return self.get_query_params().get('ClientToken')
+
+	def set_ClientToken(self,ClientToken):
+		self.add_query_param('ClientToken',ClientToken)
 
 	def get_ScalingGroupId(self):
 		return self.get_query_params().get('ScalingGroupId')
@@ -39,10 +46,10 @@ class DetachLoadBalancersRequest(RpcRequest):
 	def get_LoadBalancers(self):
 		return self.get_query_params().get('LoadBalancers')
 
-	def set_LoadBalancers(self,LoadBalancers):
-		for i in range(len(LoadBalancers)):	
-			if LoadBalancers[i] is not None:
-				self.add_query_param('LoadBalancer.' + str(i + 1) , LoadBalancers[i]);
+	def set_LoadBalancers(self, LoadBalancers):
+		for depth1 in range(len(LoadBalancers)):
+			if LoadBalancers[depth1] is not None:
+				self.add_query_param('LoadBalancer.' + str(depth1 + 1) , LoadBalancers[depth1])
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')

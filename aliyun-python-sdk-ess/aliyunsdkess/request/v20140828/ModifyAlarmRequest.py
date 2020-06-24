@@ -24,6 +24,7 @@ class ModifyAlarmRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ess', '2014-08-28', 'ModifyAlarm','ess')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -45,10 +46,10 @@ class ModifyAlarmRequest(RpcRequest):
 	def get_AlarmActions(self):
 		return self.get_query_params().get('AlarmActions')
 
-	def set_AlarmActions(self,AlarmActions):
-		for i in range(len(AlarmActions)):	
-			if AlarmActions[i] is not None:
-				self.add_query_param('AlarmAction.' + str(i + 1) , AlarmActions[i]);
+	def set_AlarmActions(self, AlarmActions):
+		for depth1 in range(len(AlarmActions)):
+			if AlarmActions[depth1] is not None:
+				self.add_query_param('AlarmAction.' + str(depth1 + 1) , AlarmActions[depth1])
 
 	def get_Threshold(self):
 		return self.get_query_params().get('Threshold')
@@ -71,13 +72,12 @@ class ModifyAlarmRequest(RpcRequest):
 	def get_Dimensions(self):
 		return self.get_query_params().get('Dimensions')
 
-	def set_Dimensions(self,Dimensions):
-		for i in range(len(Dimensions)):	
-			if Dimensions[i].get('DimensionValue') is not None:
-				self.add_query_param('Dimension.' + str(i + 1) + '.DimensionValue' , Dimensions[i].get('DimensionValue'))
-			if Dimensions[i].get('DimensionKey') is not None:
-				self.add_query_param('Dimension.' + str(i + 1) + '.DimensionKey' , Dimensions[i].get('DimensionKey'))
-
+	def set_Dimensions(self, Dimensions):
+		for depth1 in range(len(Dimensions)):
+			if Dimensions[depth1].get('DimensionValue') is not None:
+				self.add_query_param('Dimension.' + str(depth1 + 1) + '.DimensionValue', Dimensions[depth1].get('DimensionValue'))
+			if Dimensions[depth1].get('DimensionKey') is not None:
+				self.add_query_param('Dimension.' + str(depth1 + 1) + '.DimensionKey', Dimensions[depth1].get('DimensionKey'))
 
 	def get_Period(self):
 		return self.get_query_params().get('Period')

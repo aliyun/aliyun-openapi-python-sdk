@@ -24,31 +24,38 @@ class SuspendProcessesRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ess', '2014-08-28', 'SuspendProcesses','ess')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_Processs(self):
-		return self.get_query_params().get('Processs')
+	def get_ClientToken(self):
+		return self.get_query_params().get('ClientToken')
 
-	def set_Processs(self,Processs):
-		for i in range(len(Processs)):	
-			if Processs[i] is not None:
-				self.add_query_param('Process.' + str(i + 1) , Processs[i]);
-
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
-
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+	def set_ClientToken(self,ClientToken):
+		self.add_query_param('ClientToken',ClientToken)
 
 	def get_ScalingGroupId(self):
 		return self.get_query_params().get('ScalingGroupId')
 
 	def set_ScalingGroupId(self,ScalingGroupId):
 		self.add_query_param('ScalingGroupId',ScalingGroupId)
+
+	def get_Processs(self):
+		return self.get_query_params().get('Processs')
+
+	def set_Processs(self, Processs):
+		for depth1 in range(len(Processs)):
+			if Processs[depth1] is not None:
+				self.add_query_param('Process.' + str(depth1 + 1) , Processs[depth1])
+
+	def get_ResourceOwnerAccount(self):
+		return self.get_query_params().get('ResourceOwnerAccount')
+
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')

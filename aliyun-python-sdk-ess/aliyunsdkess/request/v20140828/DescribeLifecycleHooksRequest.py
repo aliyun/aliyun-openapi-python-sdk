@@ -24,6 +24,7 @@ class DescribeLifecycleHooksRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ess', '2014-08-28', 'DescribeLifecycleHooks','ess')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -63,10 +64,10 @@ class DescribeLifecycleHooksRequest(RpcRequest):
 	def get_LifecycleHookIds(self):
 		return self.get_query_params().get('LifecycleHookIds')
 
-	def set_LifecycleHookIds(self,LifecycleHookIds):
-		for i in range(len(LifecycleHookIds)):	
-			if LifecycleHookIds[i] is not None:
-				self.add_query_param('LifecycleHookId.' + str(i + 1) , LifecycleHookIds[i]);
+	def set_LifecycleHookIds(self, LifecycleHookIds):
+		for depth1 in range(len(LifecycleHookIds)):
+			if LifecycleHookIds[depth1] is not None:
+				self.add_query_param('LifecycleHookId.' + str(depth1 + 1) , LifecycleHookIds[depth1])
 
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')

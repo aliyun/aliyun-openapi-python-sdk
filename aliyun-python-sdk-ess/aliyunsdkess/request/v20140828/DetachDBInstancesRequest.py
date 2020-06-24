@@ -24,11 +24,18 @@ class DetachDBInstancesRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ess', '2014-08-28', 'DetachDBInstances','ess')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+
+	def get_ClientToken(self):
+		return self.get_query_params().get('ClientToken')
+
+	def set_ClientToken(self,ClientToken):
+		self.add_query_param('ClientToken',ClientToken)
 
 	def get_ScalingGroupId(self):
 		return self.get_query_params().get('ScalingGroupId')
@@ -45,10 +52,10 @@ class DetachDBInstancesRequest(RpcRequest):
 	def get_DBInstances(self):
 		return self.get_query_params().get('DBInstances')
 
-	def set_DBInstances(self,DBInstances):
-		for i in range(len(DBInstances)):	
-			if DBInstances[i] is not None:
-				self.add_query_param('DBInstance.' + str(i + 1) , DBInstances[i]);
+	def set_DBInstances(self, DBInstances):
+		for depth1 in range(len(DBInstances)):
+			if DBInstances[depth1] is not None:
+				self.add_query_param('DBInstance.' + str(depth1 + 1) , DBInstances[depth1])
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')

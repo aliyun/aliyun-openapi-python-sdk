@@ -24,6 +24,7 @@ class ModifyScalingGroupRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ess', '2014-08-28', 'ModifyScalingGroup','ess')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -45,10 +46,10 @@ class ModifyScalingGroupRequest(RpcRequest):
 	def get_VSwitchIdss(self):
 		return self.get_query_params().get('VSwitchIdss')
 
-	def set_VSwitchIdss(self,VSwitchIdss):
-		for i in range(len(VSwitchIdss)):	
-			if VSwitchIdss[i] is not None:
-				self.add_query_param('VSwitchIds.' + str(i + 1) , VSwitchIdss[i]);
+	def set_VSwitchIdss(self, VSwitchIdss):
+		for depth1 in range(len(VSwitchIdss)):
+			if VSwitchIdss[depth1] is not None:
+				self.add_query_param('VSwitchIds.' + str(depth1 + 1) , VSwitchIdss[depth1])
 
 	def get_ActiveScalingConfigurationId(self):
 		return self.get_query_params().get('ActiveScalingConfigurationId')
