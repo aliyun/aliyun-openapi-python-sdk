@@ -1,3 +1,6 @@
+2020-06-26 Version: 1.0.5.1
+- Supported Api EraseLogoInVideo.
+
 2020-06-26 Version: 1.0.5
 - Supported Api EraseLogoInVideo.
 
