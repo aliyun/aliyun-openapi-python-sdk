@@ -23,7 +23,7 @@ from aliyunsdkivpd.endpoint import endpoint_data
 class CreateSegmentBodyJobRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ivpd', '2019-06-25', 'CreateSegmentBodyJob')
+		RpcRequest.__init__(self, 'ivpd', '2019-06-25', 'CreateSegmentBodyJob','ivpd')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -34,13 +34,12 @@ class CreateSegmentBodyJobRequest(RpcRequest):
 	def get_DataLists(self):
 		return self.get_body_params().get('DataLists')
 
-	def set_DataLists(self,DataLists):
-		for i in range(len(DataLists)):	
-			if DataLists[i].get('DataId') is not None:
-				self.add_body_params('DataList.' + str(i + 1) + '.DataId' , DataLists[i].get('DataId'))
-			if DataLists[i].get('ImageUrl') is not None:
-				self.add_body_params('DataList.' + str(i + 1) + '.ImageUrl' , DataLists[i].get('ImageUrl'))
-
+	def set_DataLists(self, DataLists):
+		for depth1 in range(len(DataLists)):
+			if DataLists[depth1].get('DataId') is not None:
+				self.add_body_params('DataList.' + str(depth1 + 1) + '.DataId', DataLists[depth1].get('DataId'))
+			if DataLists[depth1].get('ImageUrl') is not None:
+				self.add_body_params('DataList.' + str(depth1 + 1) + '.ImageUrl', DataLists[depth1].get('ImageUrl'))
 
 	def get_JobId(self):
 		return self.get_body_params().get('JobId')

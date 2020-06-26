@@ -23,7 +23,8 @@ from aliyunsdkivpd.endpoint import endpoint_data
 class RecolorImageRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ivpd', '2019-06-25', 'RecolorImage')
+		RpcRequest.__init__(self, 'ivpd', '2019-06-25', 'RecolorImage','ivpd')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -33,11 +34,10 @@ class RecolorImageRequest(RpcRequest):
 	def get_ColorTemplates(self):
 		return self.get_body_params().get('ColorTemplates')
 
-	def set_ColorTemplates(self,ColorTemplates):
-		for i in range(len(ColorTemplates)):	
-			if ColorTemplates[i].get('Color') is not None:
-				self.add_body_params('ColorTemplate.' + str(i + 1) + '.Color' , ColorTemplates[i].get('Color'))
-
+	def set_ColorTemplates(self, ColorTemplates):
+		for depth1 in range(len(ColorTemplates)):
+			if ColorTemplates[depth1].get('Color') is not None:
+				self.add_body_params('ColorTemplate.' + str(depth1 + 1) + '.Color', ColorTemplates[depth1].get('Color'))
 
 	def get_Url(self):
 		return self.get_body_params().get('Url')

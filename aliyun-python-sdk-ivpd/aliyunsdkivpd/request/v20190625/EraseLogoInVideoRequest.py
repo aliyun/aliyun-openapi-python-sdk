@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkivpd.endpoint import endpoint_data
 
-class GetJobStatusRequest(RpcRequest):
+class EraseLogoInVideoRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ivpd', '2019-06-25', 'GetJobStatus','ivpd')
+		RpcRequest.__init__(self, 'ivpd', '2019-06-25', 'EraseLogoInVideo','ivpd')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,8 +31,28 @@ class GetJobStatusRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_Boxess(self):
+		return self.get_body_params().get('Boxess')
+
+	def set_Boxess(self, Boxess):
+		for depth1 in range(len(Boxess)):
+			if Boxess[depth1].get('W') is not None:
+				self.add_body_params('Boxes.' + str(depth1 + 1) + '.W', Boxess[depth1].get('W'))
+			if Boxess[depth1].get('H') is not None:
+				self.add_body_params('Boxes.' + str(depth1 + 1) + '.H', Boxess[depth1].get('H'))
+			if Boxess[depth1].get('X') is not None:
+				self.add_body_params('Boxes.' + str(depth1 + 1) + '.X', Boxess[depth1].get('X'))
+			if Boxess[depth1].get('Y') is not None:
+				self.add_body_params('Boxes.' + str(depth1 + 1) + '.Y', Boxess[depth1].get('Y'))
+
 	def get_JobId(self):
 		return self.get_body_params().get('JobId')
 
 	def set_JobId(self,JobId):
 		self.add_body_params('JobId', JobId)
+
+	def get_VideoUrl(self):
+		return self.get_body_params().get('VideoUrl')
+
+	def set_VideoUrl(self,VideoUrl):
+		self.add_body_params('VideoUrl', VideoUrl)

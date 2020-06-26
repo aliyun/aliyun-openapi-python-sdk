@@ -23,7 +23,8 @@ from aliyunsdkivpd.endpoint import endpoint_data
 class PreviewModelForPackageDesignRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ivpd', '2019-06-25', 'PreviewModelForPackageDesign')
+		RpcRequest.__init__(self, 'ivpd', '2019-06-25', 'PreviewModelForPackageDesign','ivpd')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -39,13 +40,12 @@ class PreviewModelForPackageDesignRequest(RpcRequest):
 	def get_ElementLists(self):
 		return self.get_body_params().get('ElementLists')
 
-	def set_ElementLists(self,ElementLists):
-		for i in range(len(ElementLists)):	
-			if ElementLists[i].get('ImageUrl') is not None:
-				self.add_body_params('ElementList.' + str(i + 1) + '.ImageUrl' , ElementLists[i].get('ImageUrl'))
-			if ElementLists[i].get('SideName') is not None:
-				self.add_body_params('ElementList.' + str(i + 1) + '.SideName' , ElementLists[i].get('SideName'))
-
+	def set_ElementLists(self, ElementLists):
+		for depth1 in range(len(ElementLists)):
+			if ElementLists[depth1].get('ImageUrl') is not None:
+				self.add_body_params('ElementList.' + str(depth1 + 1) + '.ImageUrl', ElementLists[depth1].get('ImageUrl'))
+			if ElementLists[depth1].get('SideName') is not None:
+				self.add_body_params('ElementList.' + str(depth1 + 1) + '.SideName', ElementLists[depth1].get('SideName'))
 
 	def get_DataId(self):
 		return self.get_body_params().get('DataId')

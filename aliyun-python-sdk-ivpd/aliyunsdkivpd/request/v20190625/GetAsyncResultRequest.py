@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkivpd.endpoint import endpoint_data
 
-class GetJobStatusRequest(RpcRequest):
+class GetAsyncResultRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ivpd', '2019-06-25', 'GetJobStatus','ivpd')
+		RpcRequest.__init__(self, 'ivpd', '2019-06-25', 'GetAsyncResult','ivpd')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
