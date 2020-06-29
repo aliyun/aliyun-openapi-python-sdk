@@ -24,7 +24,6 @@ class DetectFaceAttributesRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Cloudauth', '2019-03-07', 'DetectFaceAttributes','cloudauth')
-		self.set_protocol_type('https')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -32,50 +31,8 @@ class DetectFaceAttributesRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_MaxNumPhotosPerCategory(self):
-		return self.get_body_params().get('MaxNumPhotosPerCategory')
-
-	def set_MaxNumPhotosPerCategory(self,MaxNumPhotosPerCategory):
-		self.add_body_params('MaxNumPhotosPerCategory', MaxNumPhotosPerCategory)
-
-	def get_MaxFaceNum(self):
-		return self.get_body_params().get('MaxFaceNum')
-
-	def set_MaxFaceNum(self,MaxFaceNum):
-		self.add_body_params('MaxFaceNum', MaxFaceNum)
-
-	def get_ResourceOwnerId(self):
-		return self.get_query_params().get('ResourceOwnerId')
-
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_RetAttributes(self):
-		return self.get_body_params().get('RetAttributes')
-
-	def set_RetAttributes(self,RetAttributes):
-		self.add_body_params('RetAttributes', RetAttributes)
-
-	def get_ClientTag(self):
-		return self.get_body_params().get('ClientTag')
-
-	def set_ClientTag(self,ClientTag):
-		self.add_body_params('ClientTag', ClientTag)
-
-	def get_SourceIp(self):
-		return self.get_query_params().get('SourceIp')
-
-	def set_SourceIp(self,SourceIp):
-		self.add_query_param('SourceIp',SourceIp)
-
 	def get_MaterialValue(self):
 		return self.get_body_params().get('MaterialValue')
 
 	def set_MaterialValue(self,MaterialValue):
 		self.add_body_params('MaterialValue', MaterialValue)
-
-	def get_DontSaveDB(self):
-		return self.get_body_params().get('DontSaveDB')
-
-	def set_DontSaveDB(self,DontSaveDB):
-		self.add_body_params('DontSaveDB', DontSaveDB)

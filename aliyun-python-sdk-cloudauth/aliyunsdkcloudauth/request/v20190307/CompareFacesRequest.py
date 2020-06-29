@@ -38,12 +38,6 @@ class CompareFacesRequest(RpcRequest):
 	def set_SourceImageType(self,SourceImageType):
 		self.add_body_params('SourceImageType', SourceImageType)
 
-	def get_ResourceOwnerId(self):
-		return self.get_query_params().get('ResourceOwnerId')
-
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
 	def get_TargetImageType(self):
 		return self.get_body_params().get('TargetImageType')
 

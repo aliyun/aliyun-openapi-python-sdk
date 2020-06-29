@@ -79,6 +79,12 @@ class InitFaceVerifyRequest(RpcRequest):
 	def set_FaceContrastPictureUrl(self,FaceContrastPictureUrl):
 		self.add_query_param('FaceContrastPictureUrl',FaceContrastPictureUrl)
 
+	def get_Model(self):
+		return self.get_body_params().get('Model')
+
+	def set_Model(self,Model):
+		self.add_body_params('Model', Model)
+
 	def get_MetaInfo(self):
 		return self.get_query_params().get('MetaInfo')
 

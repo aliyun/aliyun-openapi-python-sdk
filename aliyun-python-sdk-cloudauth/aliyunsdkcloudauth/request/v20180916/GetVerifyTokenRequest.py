@@ -32,12 +32,6 @@ class GetVerifyTokenRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_ResourceOwnerId(self):
-		return self.get_query_params().get('ResourceOwnerId')
-
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
 	def get_Binding(self):
 		return self.get_body_params().get('Binding')
 
@@ -61,12 +55,6 @@ class GetVerifyTokenRequest(RpcRequest):
 
 	def set_Biz(self,Biz):
 		self.add_query_param('Biz',Biz)
-
-	def get_SourceIp(self):
-		return self.get_query_params().get('SourceIp')
-
-	def set_SourceIp(self,SourceIp):
-		self.add_query_param('SourceIp',SourceIp)
 
 	def get_TicketId(self):
 		return self.get_query_params().get('TicketId')
