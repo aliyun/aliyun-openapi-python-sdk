@@ -1,3 +1,6 @@
+2020-06-18 Version 2.13.20
+1, Support JSON or XML  Content-Type.
+
 2020-06-18 Version 2.13.19
 1, Fixed endpoint resolver rules
 
