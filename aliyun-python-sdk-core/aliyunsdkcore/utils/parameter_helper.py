@@ -22,9 +22,8 @@ import base64
 import socket
 import uuid
 import time
-import sys
+import xml.etree.cElementTree as EleTree
 
-from aliyunsdkcore.vendored.six.moves.urllib.parse import quote
 from aliyunsdkcore.compat import ensure_bytes, ensure_string
 
 TIME_ZONE = "GMT"
@@ -50,3 +49,51 @@ def md5_sum(content):
     content_bytes = ensure_bytes(content)
     md5_bytes = hashlib.md5(content_bytes).digest()
     return ensure_string(base64.standard_b64encode(md5_bytes))
+
+
+def _get_xml_by_list(elem, val, parent_element):
+    i = 0
+    tag_name = elem.tag
+    if val.__len__() > 0:
+        _get_xml_factory(elem, val[0], parent_element)
+
+    for item in val:
+        if i > 0:
+            sub_elem = EleTree.SubElement(parent_element, tag_name)
+            _get_xml_factory(sub_elem, item, parent_element)
+        i = i + 1
+
+
+def _get_xml_by_dict(elem, val):
+    for k in val:
+        sub_elem = EleTree.SubElement(elem, k)
+        _get_xml_factory(sub_elem, val[k], elem)
+
+
+def _get_xml_factory(elem, val, parent_element=None):
+    if val is None:
+        return
+
+    if isinstance(val, dict):
+        _get_xml_by_dict(elem, val)
+    elif isinstance(val, (list, tuple, set)):
+        if parent_element is None:
+            raise ValueError("parent_element")
+        _get_xml_by_list(elem, val, parent_element)
+    else:
+        elem.text = str(val)
+
+
+def to_xml(dic):
+    if dic is None:
+        return
+
+    if dic.__len__() == 0:
+        return ""
+    else:
+        result_xml = ""
+        for k in dic:
+            elem = EleTree.Element(k)
+            _get_xml_factory(elem, dic[k])
+            result_xml += bytes.decode(EleTree.tostring(elem), encoding="utf-8")
+        return result_xml

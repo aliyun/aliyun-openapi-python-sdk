@@ -240,9 +240,16 @@ class AcsClient:
                             specific_signer=None):
         body_params = request.get_body_params()
         if body_params:
-            body = urlencode(body_params)
-            request.set_content(body)
-            request.set_content_type(format_type.APPLICATION_FORM)
+            if request.get_headers().get('Content-Type') == format_type.APPLICATION_JSON:
+                body = json.dumps(body_params)
+                request.set_content(body)
+            elif request.get_headers().get('Content-Type') == format_type.APPLICATION_XML:
+                body = aliyunsdkcore.utils.parameter_helper.to_xml(body_params)
+                request.set_content(body)
+            else:
+                body = urlencode(body_params)
+                request.set_content(body)
+                request.set_content_type(format_type.APPLICATION_FORM)
         elif request.get_content() and "Content-Type" not in request.get_headers():
             request.set_content_type(format_type.APPLICATION_OCTET_STREAM)
         method = request.get_method()
@@ -278,8 +285,7 @@ class AcsClient:
             connect_timeout=connect_timeout,
             verify=self.get_verify())
         if body_params:
-            body = urlencode(request.get_body_params())
-            response.set_content(body, "utf-8", format_type.APPLICATION_FORM)
+            response.set_content(body, "utf-8", request.get_headers().get('Content-Type'))
         return response
 
     def _implementation_of_do_action(self, request, signer=None):
