@@ -41,3 +41,11 @@ class TestShaHmac1(unittest.TestCase):
             self.assertRegex(
                 s,
                 '^[A-Z][a-z]{2}, [0-9]{2} [A-Z][a-z]{2} [0-9]{4} [0-9]{2}:[0-9]{2}:[0-9]{2} GMT$')
+
+    def test_to_xml(self):
+        dic = {'test': 'test1'}
+        xml = helper.to_xml(dic)
+        self.assertEqual('<test>test1</test>', xml)
+        dic = {'test1': {'test2': ['test', 'test1']}}
+        xml = helper.to_xml(dic)
+        self.assertEqual('<test1><test2>test</test2><test2>test1</test2></test1>', xml)
