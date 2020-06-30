@@ -23,7 +23,8 @@ from aliyunsdksmartag.endpoint import endpoint_data
 class DescribeSmartAccessGatewayClientUsersRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Smartag', '2018-03-13', 'DescribeSmartAccessGatewayClientUsers','Smartag')
+		RpcRequest.__init__(self, 'Smartag', '2018-03-13', 'DescribeSmartAccessGatewayClientUsers','smartag')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -59,6 +60,12 @@ class DescribeSmartAccessGatewayClientUsersRequest(RpcRequest):
 
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
+
+	def get_UserMail(self):
+		return self.get_query_params().get('UserMail')
+
+	def set_UserMail(self,UserMail):
+		self.add_query_param('UserMail',UserMail)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')

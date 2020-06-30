@@ -1,3 +1,6 @@
+2020-06-30 Version: 1.5.3
+- Supported qos,nat,flowlog for smartag.
+
 2019-09-24 Version: 1.5.2
 - New version 1-5-2.
 

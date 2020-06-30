@@ -23,7 +23,8 @@ from aliyunsdksmartag.endpoint import endpoint_data
 class UnbindVbrRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Smartag', '2018-03-13', 'UnbindVbr','Smartag')
+		RpcRequest.__init__(self, 'Smartag', '2018-03-13', 'UnbindVbr','smartag')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -65,6 +66,12 @@ class UnbindVbrRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_SmartAGUid(self):
+		return self.get_query_params().get('SmartAGUid')
+
+	def set_SmartAGUid(self,SmartAGUid):
+		self.add_query_param('SmartAGUid',SmartAGUid)
 
 	def get_SmartAGId(self):
 		return self.get_query_params().get('SmartAGId')

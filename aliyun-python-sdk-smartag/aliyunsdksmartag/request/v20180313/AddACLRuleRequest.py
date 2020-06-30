@@ -23,7 +23,8 @@ from aliyunsdksmartag.endpoint import endpoint_data
 class AddACLRuleRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Smartag', '2018-03-13', 'AddACLRule','Smartag')
+		RpcRequest.__init__(self, 'Smartag', '2018-03-13', 'AddACLRule','smartag')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -119,3 +120,9 @@ class AddACLRuleRequest(RpcRequest):
 
 	def set_DestPortRange(self,DestPortRange):
 		self.add_query_param('DestPortRange',DestPortRange)
+
+	def get_Name(self):
+		return self.get_query_params().get('Name')
+
+	def set_Name(self,Name):
+		self.add_query_param('Name',Name)

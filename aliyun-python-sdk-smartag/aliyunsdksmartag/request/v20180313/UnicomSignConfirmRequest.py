@@ -23,7 +23,8 @@ from aliyunsdksmartag.endpoint import endpoint_data
 class UnicomSignConfirmRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Smartag', '2018-03-13', 'UnicomSignConfirm','Smartag')
+		RpcRequest.__init__(self, 'Smartag', '2018-03-13', 'UnicomSignConfirm','smartag')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -51,17 +52,16 @@ class UnicomSignConfirmRequest(RpcRequest):
 	def get_TmsOrders(self):
 		return self.get_query_params().get('TmsOrders')
 
-	def set_TmsOrders(self,TmsOrders):
-		for i in range(len(TmsOrders)):	
-			if TmsOrders[i].get('TmsCode') is not None:
-				self.add_query_param('TmsOrder.' + str(i + 1) + '.TmsCode' , TmsOrders[i].get('TmsCode'))
-			if TmsOrders[i].get('SigningTime') is not None:
-				self.add_query_param('TmsOrder.' + str(i + 1) + '.SigningTime' , TmsOrders[i].get('SigningTime'))
-			if TmsOrders[i].get('TmsOrderCode') is not None:
-				self.add_query_param('TmsOrder.' + str(i + 1) + '.TmsOrderCode' , TmsOrders[i].get('TmsOrderCode'))
-			if TmsOrders[i].get('TradeId') is not None:
-				self.add_query_param('TmsOrder.' + str(i + 1) + '.TradeId' , TmsOrders[i].get('TradeId'))
-
+	def set_TmsOrders(self, TmsOrders):
+		for depth1 in range(len(TmsOrders)):
+			if TmsOrders[depth1].get('TmsCode') is not None:
+				self.add_query_param('TmsOrder.' + str(depth1 + 1) + '.TmsCode', TmsOrders[depth1].get('TmsCode'))
+			if TmsOrders[depth1].get('SigningTime') is not None:
+				self.add_query_param('TmsOrder.' + str(depth1 + 1) + '.SigningTime', TmsOrders[depth1].get('SigningTime'))
+			if TmsOrders[depth1].get('TmsOrderCode') is not None:
+				self.add_query_param('TmsOrder.' + str(depth1 + 1) + '.TmsOrderCode', TmsOrders[depth1].get('TmsOrderCode'))
+			if TmsOrders[depth1].get('TradeId') is not None:
+				self.add_query_param('TmsOrder.' + str(depth1 + 1) + '.TradeId', TmsOrders[depth1].get('TradeId'))
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')

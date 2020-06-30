@@ -23,7 +23,8 @@ from aliyunsdksmartag.endpoint import endpoint_data
 class UpgradeSmartAccessGatewayRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Smartag', '2018-03-13', 'UpgradeSmartAccessGateway','Smartag')
+		RpcRequest.__init__(self, 'Smartag', '2018-03-13', 'UpgradeSmartAccessGateway','smartag')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -41,12 +42,6 @@ class UpgradeSmartAccessGatewayRequest(RpcRequest):
 
 	def set_BandWidthSpec(self,BandWidthSpec):
 		self.add_query_param('BandWidthSpec',BandWidthSpec)
-
-	def get_UserCount(self):
-		return self.get_query_params().get('UserCount')
-
-	def set_UserCount(self,UserCount):
-		self.add_query_param('UserCount',UserCount)
 
 	def get_AutoPay(self):
 		return self.get_query_params().get('AutoPay')
@@ -77,9 +72,3 @@ class UpgradeSmartAccessGatewayRequest(RpcRequest):
 
 	def set_SmartAGId(self,SmartAGId):
 		self.add_query_param('SmartAGId',SmartAGId)
-
-	def get_DataPlan(self):
-		return self.get_query_params().get('DataPlan')
-
-	def set_DataPlan(self,DataPlan):
-		self.add_query_param('DataPlan',DataPlan)

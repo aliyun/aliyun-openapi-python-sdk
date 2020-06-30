@@ -23,7 +23,8 @@ from aliyunsdksmartag.endpoint import endpoint_data
 class DescribeUserFlowStatisticsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Smartag', '2018-03-13', 'DescribeUserFlowStatistics','Smartag')
+		RpcRequest.__init__(self, 'Smartag', '2018-03-13', 'DescribeUserFlowStatistics','smartag')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -39,10 +40,10 @@ class DescribeUserFlowStatisticsRequest(RpcRequest):
 	def get_UserNamess(self):
 		return self.get_query_params().get('UserNamess')
 
-	def set_UserNamess(self,UserNamess):
-		for i in range(len(UserNamess)):	
-			if UserNamess[i] is not None:
-				self.add_query_param('UserNames.' + str(i + 1) , UserNamess[i]);
+	def set_UserNamess(self, UserNamess):
+		for depth1 in range(len(UserNamess)):
+			if UserNamess[depth1] is not None:
+				self.add_query_param('UserNames.' + str(depth1 + 1) , UserNamess[depth1])
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')

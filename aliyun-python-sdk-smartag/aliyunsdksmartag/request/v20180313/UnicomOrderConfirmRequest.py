@@ -23,7 +23,8 @@ from aliyunsdksmartag.endpoint import endpoint_data
 class UnicomOrderConfirmRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Smartag', '2018-03-13', 'UnicomOrderConfirm','Smartag')
+		RpcRequest.__init__(self, 'Smartag', '2018-03-13', 'UnicomOrderConfirm','smartag')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -45,26 +46,26 @@ class UnicomOrderConfirmRequest(RpcRequest):
 	def get_OrderItems(self):
 		return self.get_query_params().get('OrderItems')
 
-	def set_OrderItems(self,OrderItems):
-		for i in range(len(OrderItems)):	
-			if OrderItems[i].get('ScItemName') is not None:
-				self.add_query_param('OrderItem.' + str(i + 1) + '.ScItemName' , OrderItems[i].get('ScItemName'))
-			if OrderItems[i].get('ItemAmount') is not None:
-				self.add_query_param('OrderItem.' + str(i + 1) + '.ItemAmount' , OrderItems[i].get('ItemAmount'))
-			for j in range(len(OrderItems[i].get('SnLists'))):
-				if OrderItems[i].get('SnLists')[j] is not None:
-					self.add_query_param('OrderItem.' + str(i + 1) + '.SnList.'+str(j + 1), OrderItems[i].get('SnLists')[j])
-			if OrderItems[i].get('OrderItemId') is not None:
-				self.add_query_param('OrderItem.' + str(i + 1) + '.OrderItemId' , OrderItems[i].get('OrderItemId'))
-			if OrderItems[i].get('ScItemCode') is not None:
-				self.add_query_param('OrderItem.' + str(i + 1) + '.ScItemCode' , OrderItems[i].get('ScItemCode'))
-			if OrderItems[i].get('ItemQuantity') is not None:
-				self.add_query_param('OrderItem.' + str(i + 1) + '.ItemQuantity' , OrderItems[i].get('ItemQuantity'))
-			if OrderItems[i].get('TradeId') is not None:
-				self.add_query_param('OrderItem.' + str(i + 1) + '.TradeId' , OrderItems[i].get('TradeId'))
-			if OrderItems[i].get('TradeItemId') is not None:
-				self.add_query_param('OrderItem.' + str(i + 1) + '.TradeItemId' , OrderItems[i].get('TradeItemId'))
-
+	def set_OrderItems(self, OrderItems):
+		for depth1 in range(len(OrderItems)):
+			if OrderItems[depth1].get('ScItemName') is not None:
+				self.add_query_param('OrderItem.' + str(depth1 + 1) + '.ScItemName', OrderItems[depth1].get('ScItemName'))
+			if OrderItems[depth1].get('ItemAmount') is not None:
+				self.add_query_param('OrderItem.' + str(depth1 + 1) + '.ItemAmount', OrderItems[depth1].get('ItemAmount'))
+			if OrderItems[depth1].get('SnList') is not None:
+				for depth2 in range(len(OrderItems[depth1].get('SnList'))):
+					if OrderItems[depth1].get('SnList')[depth2] is not None:
+						self.add_query_param('OrderItem.' + str(depth1 + 1) + '.SnList.' + str(depth2 + 1) , OrderItems[depth1].get('SnList')[depth2])
+			if OrderItems[depth1].get('OrderItemId') is not None:
+				self.add_query_param('OrderItem.' + str(depth1 + 1) + '.OrderItemId', OrderItems[depth1].get('OrderItemId'))
+			if OrderItems[depth1].get('ScItemCode') is not None:
+				self.add_query_param('OrderItem.' + str(depth1 + 1) + '.ScItemCode', OrderItems[depth1].get('ScItemCode'))
+			if OrderItems[depth1].get('ItemQuantity') is not None:
+				self.add_query_param('OrderItem.' + str(depth1 + 1) + '.ItemQuantity', OrderItems[depth1].get('ItemQuantity'))
+			if OrderItems[depth1].get('TradeId') is not None:
+				self.add_query_param('OrderItem.' + str(depth1 + 1) + '.TradeId', OrderItems[depth1].get('TradeId'))
+			if OrderItems[depth1].get('TradeItemId') is not None:
+				self.add_query_param('OrderItem.' + str(depth1 + 1) + '.TradeItemId', OrderItems[depth1].get('TradeItemId'))
 
 	def get_OrderPostFee(self):
 		return self.get_query_params().get('OrderPostFee')

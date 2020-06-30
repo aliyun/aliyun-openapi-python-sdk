@@ -23,7 +23,8 @@ from aliyunsdksmartag.endpoint import endpoint_data
 class AttachNetworkOptimizationSagsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Smartag', '2018-03-13', 'AttachNetworkOptimizationSags','Smartag')
+		RpcRequest.__init__(self, 'Smartag', '2018-03-13', 'AttachNetworkOptimizationSags','smartag')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -45,10 +46,10 @@ class AttachNetworkOptimizationSagsRequest(RpcRequest):
 	def get_SmartAGIdss(self):
 		return self.get_query_params().get('SmartAGIdss')
 
-	def set_SmartAGIdss(self,SmartAGIdss):
-		for i in range(len(SmartAGIdss)):	
-			if SmartAGIdss[i] is not None:
-				self.add_query_param('SmartAGIds.' + str(i + 1) , SmartAGIdss[i]);
+	def set_SmartAGIdss(self, SmartAGIdss):
+		for depth1 in range(len(SmartAGIdss)):
+			if SmartAGIdss[depth1] is not None:
+				self.add_query_param('SmartAGIds.' + str(depth1 + 1) , SmartAGIdss[depth1])
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')

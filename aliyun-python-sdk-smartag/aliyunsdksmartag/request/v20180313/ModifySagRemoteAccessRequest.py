@@ -23,7 +23,8 @@ from aliyunsdksmartag.endpoint import endpoint_data
 class ModifySagRemoteAccessRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Smartag', '2018-03-13', 'ModifySagRemoteAccess','Smartag')
+		RpcRequest.__init__(self, 'Smartag', '2018-03-13', 'ModifySagRemoteAccess','smartag')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):

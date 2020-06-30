@@ -23,7 +23,8 @@ from aliyunsdksmartag.endpoint import endpoint_data
 class DescribeBindableSmartAccessGatewaysRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Smartag', '2018-03-13', 'DescribeBindableSmartAccessGateways','Smartag')
+		RpcRequest.__init__(self, 'Smartag', '2018-03-13', 'DescribeBindableSmartAccessGateways','smartag')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -77,3 +78,15 @@ class DescribeBindableSmartAccessGatewaysRequest(RpcRequest):
 
 	def set_CrossAccount(self,CrossAccount):
 		self.add_query_param('CrossAccount',CrossAccount)
+
+	def get_Name(self):
+		return self.get_query_params().get('Name')
+
+	def set_Name(self,Name):
+		self.add_query_param('Name',Name)
+
+	def get_SmartAGId(self):
+		return self.get_query_params().get('SmartAGId')
+
+	def set_SmartAGId(self,SmartAGId):
+		self.add_query_param('SmartAGId',SmartAGId)

@@ -23,7 +23,8 @@ from aliyunsdksmartag.endpoint import endpoint_data
 class DescribeSmartAccessGatewaysRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Smartag', '2018-03-13', 'DescribeSmartAccessGateways','Smartag')
+		RpcRequest.__init__(self, 'Smartag', '2018-03-13', 'DescribeSmartAccessGateways','smartag')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -48,6 +49,12 @@ class DescribeSmartAccessGatewaysRequest(RpcRequest):
 	def set_CanAssociateQos(self,CanAssociateQos):
 		self.add_query_param('CanAssociateQos',CanAssociateQos)
 
+	def get_SoftwareVersion(self):
+		return self.get_query_params().get('SoftwareVersion')
+
+	def set_SoftwareVersion(self,SoftwareVersion):
+		self.add_query_param('SoftwareVersion',SoftwareVersion)
+
 	def get_UnboundAclIds(self):
 		return self.get_query_params().get('UnboundAclIds')
 
@@ -60,6 +67,18 @@ class DescribeSmartAccessGatewaysRequest(RpcRequest):
 	def set_PageNumber(self,PageNumber):
 		self.add_query_param('PageNumber',PageNumber)
 
+	def get_VersionComparator(self):
+		return self.get_query_params().get('VersionComparator')
+
+	def set_VersionComparator(self,VersionComparator):
+		self.add_query_param('VersionComparator',VersionComparator)
+
+	def get_ResourceGroupId(self):
+		return self.get_query_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self,ResourceGroupId):
+		self.add_query_param('ResourceGroupId',ResourceGroupId)
+
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
 
@@ -71,6 +90,12 @@ class DescribeSmartAccessGatewaysRequest(RpcRequest):
 
 	def set_InstanceType(self,InstanceType):
 		self.add_query_param('InstanceType',InstanceType)
+
+	def get_HardwareType(self):
+		return self.get_query_params().get('HardwareType')
+
+	def set_HardwareType(self,HardwareType):
+		self.add_query_param('HardwareType',HardwareType)
 
 	def get_SerialNumber(self):
 		return self.get_query_params().get('SerialNumber')
@@ -101,6 +126,12 @@ class DescribeSmartAccessGatewaysRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_BusinessState(self):
+		return self.get_query_params().get('BusinessState')
+
+	def set_BusinessState(self,BusinessState):
+		self.add_query_param('BusinessState',BusinessState)
 
 	def get_Name(self):
 		return self.get_query_params().get('Name')

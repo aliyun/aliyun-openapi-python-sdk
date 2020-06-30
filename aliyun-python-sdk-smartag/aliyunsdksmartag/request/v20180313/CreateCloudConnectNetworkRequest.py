@@ -23,7 +23,8 @@ from aliyunsdksmartag.endpoint import endpoint_data
 class CreateCloudConnectNetworkRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Smartag', '2018-03-13', 'CreateCloudConnectNetwork','Smartag')
+		RpcRequest.__init__(self, 'Smartag', '2018-03-13', 'CreateCloudConnectNetwork','smartag')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -47,12 +48,6 @@ class CreateCloudConnectNetworkRequest(RpcRequest):
 
 	def set_SnatCidrBlock(self,SnatCidrBlock):
 		self.add_query_param('SnatCidrBlock',SnatCidrBlock)
-
-	def get_IsDefault(self):
-		return self.get_query_params().get('IsDefault')
-
-	def set_IsDefault(self,IsDefault):
-		self.add_query_param('IsDefault',IsDefault)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')

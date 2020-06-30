@@ -23,7 +23,8 @@ from aliyunsdksmartag.endpoint import endpoint_data
 class DescribeSmartAccessGatewayVersionsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Smartag', '2018-03-13', 'DescribeSmartAccessGatewayVersions','Smartag')
+		RpcRequest.__init__(self, 'Smartag', '2018-03-13', 'DescribeSmartAccessGatewayVersions','smartag')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -59,3 +60,9 @@ class DescribeSmartAccessGatewayVersionsRequest(RpcRequest):
 
 	def set_SmartAGId(self,SmartAGId):
 		self.add_query_param('SmartAGId',SmartAGId)
+
+	def get_SmartAGSn(self):
+		return self.get_query_params().get('SmartAGSn')
+
+	def set_SmartAGSn(self,SmartAGSn):
+		self.add_query_param('SmartAGSn',SmartAGSn)

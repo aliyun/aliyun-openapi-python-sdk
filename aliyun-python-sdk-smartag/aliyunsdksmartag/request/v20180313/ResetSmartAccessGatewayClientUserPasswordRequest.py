@@ -23,7 +23,8 @@ from aliyunsdksmartag.endpoint import endpoint_data
 class ResetSmartAccessGatewayClientUserPasswordRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Smartag', '2018-03-13', 'ResetSmartAccessGatewayClientUserPassword','Smartag')
+		RpcRequest.__init__(self, 'Smartag', '2018-03-13', 'ResetSmartAccessGatewayClientUserPassword','smartag')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -35,6 +36,12 @@ class ResetSmartAccessGatewayClientUserPasswordRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+
+	def get_Password(self):
+		return self.get_query_params().get('Password')
+
+	def set_Password(self,Password):
+		self.add_query_param('Password',Password)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
