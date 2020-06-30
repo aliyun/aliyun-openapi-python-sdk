@@ -103,6 +103,18 @@ class CreateInstanceRequest(RpcRequest):
 	def set_Version(self,Version):
 		self.add_query_param('Version',Version)
 
+	def get_VSwitchId(self):
+		return self.get_query_params().get('VSwitchId')
+
+	def set_VSwitchId(self,VSwitchId):
+		self.add_query_param('VSwitchId',VSwitchId)
+
+	def get_PrivateIpAddress(self):
+		return self.get_query_params().get('PrivateIpAddress')
+
+	def set_PrivateIpAddress(self,PrivateIpAddress):
+		self.add_query_param('PrivateIpAddress',PrivateIpAddress)
+
 	def get_SystemDiskSize(self):
 		return self.get_query_params().get('SystemDisk.Size')
 
