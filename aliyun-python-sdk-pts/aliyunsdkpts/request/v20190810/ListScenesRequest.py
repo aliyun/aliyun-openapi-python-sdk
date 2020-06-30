@@ -24,23 +24,24 @@ class ListScenesRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'PTS', '2019-08-10', 'ListScenes','1.0.0')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_Keywords(self):
+		return self.get_query_params().get('Keywords')
+
+	def set_Keywords(self,Keywords):
+		self.add_query_param('Keywords',Keywords)
+
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
 
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
-
-	def get_Keyword(self):
-		return self.get_query_params().get('Keyword')
-
-	def set_Keyword(self,Keyword):
-		self.add_query_param('Keyword',Keyword)
 
 	def get_PageNumber(self):
 		return self.get_query_params().get('PageNumber')

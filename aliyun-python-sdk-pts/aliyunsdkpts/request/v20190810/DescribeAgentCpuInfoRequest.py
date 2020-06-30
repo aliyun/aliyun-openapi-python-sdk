@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkpts.endpoint import endpoint_data
 
-class ListReportsRequest(RpcRequest):
+class DescribeAgentCpuInfoRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'PTS', '2019-08-10', 'ListReports','1.0.0')
+		RpcRequest.__init__(self, 'PTS', '2019-08-10', 'DescribeAgentCpuInfo','1.0.0')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,17 +31,11 @@ class ListReportsRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_SceneType(self):
-		return self.get_query_params().get('SceneType')
+	def get_ReportId(self):
+		return self.get_query_params().get('ReportId')
 
-	def set_SceneType(self,SceneType):
-		self.add_query_param('SceneType',SceneType)
-
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
+	def set_ReportId(self,ReportId):
+		self.add_query_param('ReportId',ReportId)
 
 	def get_EndTime(self):
 		return self.get_query_params().get('EndTime')
@@ -55,14 +49,8 @@ class ListReportsRequest(RpcRequest):
 	def set_BeginTime(self,BeginTime):
 		self.add_query_param('BeginTime',BeginTime)
 
-	def get_Keyword(self):
-		return self.get_query_params().get('Keyword')
+	def get_TaskId(self):
+		return self.get_query_params().get('TaskId')
 
-	def set_Keyword(self,Keyword):
-		self.add_query_param('Keyword',Keyword)
-
-	def get_PageNumber(self):
-		return self.get_query_params().get('PageNumber')
-
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
+	def set_TaskId(self,TaskId):
+		self.add_query_param('TaskId',TaskId)

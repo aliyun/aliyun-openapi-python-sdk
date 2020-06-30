@@ -24,6 +24,7 @@ class RemoveScenesRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'PTS', '2019-08-10', 'RemoveScenes','1.0.0')
+		self.set_method('GET')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):

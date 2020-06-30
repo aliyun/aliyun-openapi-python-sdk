@@ -31,14 +31,20 @@ class AdjustSceneSpeedRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_SpeedData(self):
+		return self.get_query_params().get('SpeedData')
+
+	def set_SpeedData(self,SpeedData):
+		self.add_query_param('SpeedData',SpeedData)
+
 	def get_SceneId(self):
 		return self.get_query_params().get('SceneId')
 
 	def set_SceneId(self,SceneId):
 		self.add_query_param('SceneId',SceneId)
 
-	def get_Speed(self):
-		return self.get_query_params().get('Speed')
+	def get_Content(self):
+		return self.get_query_params().get('Content')
 
-	def set_Speed(self,Speed):
-		self.add_query_param('Speed',Speed)
+	def set_Content(self,Content):
+		self.add_query_param('Content',Content)

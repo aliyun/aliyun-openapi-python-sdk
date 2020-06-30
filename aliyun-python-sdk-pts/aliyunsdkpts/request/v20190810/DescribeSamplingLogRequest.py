@@ -24,6 +24,7 @@ class DescribeSamplingLogRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'PTS', '2019-08-10', 'DescribeSamplingLog','1.0.0')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -35,6 +36,12 @@ class DescribeSamplingLogRequest(RpcRequest):
 
 	def set_ReportId(self,ReportId):
 		self.add_query_param('ReportId',ReportId)
+
+	def get_PageNumber(self):
+		return self.get_query_params().get('PageNumber')
+
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)
 
 	def get_ChainId(self):
 		return self.get_query_params().get('ChainId')
@@ -48,17 +55,17 @@ class DescribeSamplingLogRequest(RpcRequest):
 	def set_HttpResponseStatus(self,HttpResponseStatus):
 		self.add_query_param('HttpResponseStatus',HttpResponseStatus)
 
+	def get_RtRange(self):
+		return self.get_query_params().get('RtRange')
+
+	def set_RtRange(self,RtRange):
+		self.add_query_param('RtRange',RtRange)
+
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
 
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
-
-	def get_PageNumber(self):
-		return self.get_query_params().get('PageNumber')
-
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
 
 	def get_ErrorCode(self):
 		return self.get_query_params().get('ErrorCode')
