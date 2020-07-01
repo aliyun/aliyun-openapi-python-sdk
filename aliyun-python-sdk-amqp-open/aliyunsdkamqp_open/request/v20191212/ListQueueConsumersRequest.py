@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkamqp_open.endpoint import endpoint_data
 
-class ListQueuesRequest(RpcRequest):
+class ListQueueConsumersRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'amqp-open', '2019-12-12', 'ListQueues','onsproxy')
+		RpcRequest.__init__(self, 'amqp-open', '2019-12-12', 'ListQueueConsumers','onsproxy')
 		self.set_method('GET')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -43,14 +43,20 @@ class ListQueuesRequest(RpcRequest):
 	def set_NextToken(self,NextToken):
 		self.add_query_param('NextToken',NextToken)
 
-	def get_MaxResults(self):
-		return self.get_query_params().get('MaxResults')
+	def get_QueryCount(self):
+		return self.get_query_params().get('QueryCount')
 
-	def set_MaxResults(self,MaxResults):
-		self.add_query_param('MaxResults',MaxResults)
+	def set_QueryCount(self,QueryCount):
+		self.add_query_param('QueryCount',QueryCount)
 
 	def get_VirtualHost(self):
 		return self.get_query_params().get('VirtualHost')
 
 	def set_VirtualHost(self,VirtualHost):
 		self.add_query_param('VirtualHost',VirtualHost)
+
+	def get_Queue(self):
+		return self.get_query_params().get('Queue')
+
+	def set_Queue(self,Queue):
+		self.add_query_param('Queue',Queue)
