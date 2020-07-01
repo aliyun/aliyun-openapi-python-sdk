@@ -23,6 +23,7 @@ class DeleteMonitorGroupInstancesRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Cms', '2019-01-01', 'DeleteMonitorGroupInstances','cms')
+		self.set_method('POST')
 
 	def get_GroupId(self):
 		return self.get_query_params().get('GroupId')

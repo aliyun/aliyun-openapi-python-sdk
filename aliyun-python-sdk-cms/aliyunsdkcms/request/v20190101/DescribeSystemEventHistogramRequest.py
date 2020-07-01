@@ -23,6 +23,7 @@ class DescribeSystemEventHistogramRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Cms', '2019-01-01', 'DescribeSystemEventHistogram','cms')
+		self.set_method('POST')
 
 	def get_StartTime(self):
 		return self.get_query_params().get('StartTime')
@@ -35,18 +36,6 @@ class DescribeSystemEventHistogramRequest(RpcRequest):
 
 	def set_SearchKeywords(self,SearchKeywords):
 		self.add_query_param('SearchKeywords',SearchKeywords)
-
-	def get_PageNumber(self):
-		return self.get_query_params().get('PageNumber')
-
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
-
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
 
 	def get_Product(self):
 		return self.get_query_params().get('Product')

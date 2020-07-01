@@ -23,6 +23,7 @@ class DescribeMonitorGroupsRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Cms', '2019-01-01', 'DescribeMonitorGroups','cms')
+		self.set_method('POST')
 
 	def get_SelectContactGroups(self):
 		return self.get_query_params().get('SelectContactGroups')
@@ -63,13 +64,12 @@ class DescribeMonitorGroupsRequest(RpcRequest):
 	def get_Tags(self):
 		return self.get_query_params().get('Tags')
 
-	def set_Tags(self,Tags):
-		for i in range(len(Tags)):	
-			if Tags[i].get('Value') is not None:
-				self.add_query_param('Tag.' + str(i + 1) + '.Value' , Tags[i].get('Value'))
-			if Tags[i].get('Key') is not None:
-				self.add_query_param('Tag.' + str(i + 1) + '.Key' , Tags[i].get('Key'))
-
+	def set_Tags(self, Tags):
+		for depth1 in range(len(Tags)):
+			if Tags[depth1].get('Value') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tags[depth1].get('Value'))
+			if Tags[depth1].get('Key') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tags[depth1].get('Key'))
 
 	def get_Keyword(self):
 		return self.get_query_params().get('Keyword')
@@ -94,9 +94,3 @@ class DescribeMonitorGroupsRequest(RpcRequest):
 
 	def set_InstanceId(self,InstanceId):
 		self.add_query_param('InstanceId',InstanceId)
-
-	def get_ServiceId(self):
-		return self.get_query_params().get('ServiceId')
-
-	def set_ServiceId(self,ServiceId):
-		self.add_query_param('ServiceId',ServiceId)

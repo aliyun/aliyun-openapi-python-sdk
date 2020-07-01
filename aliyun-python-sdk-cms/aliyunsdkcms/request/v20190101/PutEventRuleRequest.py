@@ -23,6 +23,7 @@ class PutEventRuleRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Cms', '2019-01-01', 'PutEventRule','cms')
+		self.set_method('POST')
 
 	def get_GroupId(self):
 		return self.get_query_params().get('GroupId')
@@ -45,23 +46,26 @@ class PutEventRuleRequest(RpcRequest):
 	def get_EventPatterns(self):
 		return self.get_query_params().get('EventPatterns')
 
-	def set_EventPatterns(self,EventPatterns):
-		for i in range(len(EventPatterns)):	
-			for j in range(len(EventPatterns[i].get('LevelLists'))):
-				if EventPatterns[i].get('LevelLists')[j] is not None:
-					self.add_query_param('EventPattern.' + str(i + 1) + '.LevelList.'+str(j + 1), EventPatterns[i].get('LevelLists')[j])
-			if EventPatterns[i].get('Product') is not None:
-				self.add_query_param('EventPattern.' + str(i + 1) + '.Product' , EventPatterns[i].get('Product'))
-			for j in range(len(EventPatterns[i].get('StatusLists'))):
-				if EventPatterns[i].get('StatusLists')[j] is not None:
-					self.add_query_param('EventPattern.' + str(i + 1) + '.StatusList.'+str(j + 1), EventPatterns[i].get('StatusLists')[j])
-			for j in range(len(EventPatterns[i].get('NameLists'))):
-				if EventPatterns[i].get('NameLists')[j] is not None:
-					self.add_query_param('EventPattern.' + str(i + 1) + '.NameList.'+str(j + 1), EventPatterns[i].get('NameLists')[j])
-			for j in range(len(EventPatterns[i].get('EventTypeLists'))):
-				if EventPatterns[i].get('EventTypeLists')[j] is not None:
-					self.add_query_param('EventPattern.' + str(i + 1) + '.EventTypeList.'+str(j + 1), EventPatterns[i].get('EventTypeLists')[j])
-
+	def set_EventPatterns(self, EventPatterns):
+		for depth1 in range(len(EventPatterns)):
+			if EventPatterns[depth1].get('LevelList') is not None:
+				for depth2 in range(len(EventPatterns[depth1].get('LevelList'))):
+					if EventPatterns[depth1].get('LevelList')[depth2] is not None:
+						self.add_query_param('EventPattern.' + str(depth1 + 1) + '.LevelList.' + str(depth2 + 1) , EventPatterns[depth1].get('LevelList')[depth2])
+			if EventPatterns[depth1].get('Product') is not None:
+				self.add_query_param('EventPattern.' + str(depth1 + 1) + '.Product', EventPatterns[depth1].get('Product'))
+			if EventPatterns[depth1].get('StatusList') is not None:
+				for depth2 in range(len(EventPatterns[depth1].get('StatusList'))):
+					if EventPatterns[depth1].get('StatusList')[depth2] is not None:
+						self.add_query_param('EventPattern.' + str(depth1 + 1) + '.StatusList.' + str(depth2 + 1) , EventPatterns[depth1].get('StatusList')[depth2])
+			if EventPatterns[depth1].get('NameList') is not None:
+				for depth2 in range(len(EventPatterns[depth1].get('NameList'))):
+					if EventPatterns[depth1].get('NameList')[depth2] is not None:
+						self.add_query_param('EventPattern.' + str(depth1 + 1) + '.NameList.' + str(depth2 + 1) , EventPatterns[depth1].get('NameList')[depth2])
+			if EventPatterns[depth1].get('EventTypeList') is not None:
+				for depth2 in range(len(EventPatterns[depth1].get('EventTypeList'))):
+					if EventPatterns[depth1].get('EventTypeList')[depth2] is not None:
+						self.add_query_param('EventPattern.' + str(depth1 + 1) + '.EventTypeList.' + str(depth2 + 1) , EventPatterns[depth1].get('EventTypeList')[depth2])
 
 	def get_EventType(self):
 		return self.get_query_params().get('EventType')

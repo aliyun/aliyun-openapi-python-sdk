@@ -23,49 +23,47 @@ class PutEventRuleTargetsRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Cms', '2019-01-01', 'PutEventRuleTargets','cms')
+		self.set_method('POST')
 
 	def get_WebhookParameterss(self):
 		return self.get_query_params().get('WebhookParameterss')
 
-	def set_WebhookParameterss(self,WebhookParameterss):
-		for i in range(len(WebhookParameterss)):	
-			if WebhookParameterss[i].get('Protocol') is not None:
-				self.add_query_param('WebhookParameters.' + str(i + 1) + '.Protocol' , WebhookParameterss[i].get('Protocol'))
-			if WebhookParameterss[i].get('Method') is not None:
-				self.add_query_param('WebhookParameters.' + str(i + 1) + '.Method' , WebhookParameterss[i].get('Method'))
-			if WebhookParameterss[i].get('Id') is not None:
-				self.add_query_param('WebhookParameters.' + str(i + 1) + '.Id' , WebhookParameterss[i].get('Id'))
-			if WebhookParameterss[i].get('Url') is not None:
-				self.add_query_param('WebhookParameters.' + str(i + 1) + '.Url' , WebhookParameterss[i].get('Url'))
-
+	def set_WebhookParameterss(self, WebhookParameterss):
+		for depth1 in range(len(WebhookParameterss)):
+			if WebhookParameterss[depth1].get('Protocol') is not None:
+				self.add_query_param('WebhookParameters.' + str(depth1 + 1) + '.Protocol', WebhookParameterss[depth1].get('Protocol'))
+			if WebhookParameterss[depth1].get('Method') is not None:
+				self.add_query_param('WebhookParameters.' + str(depth1 + 1) + '.Method', WebhookParameterss[depth1].get('Method'))
+			if WebhookParameterss[depth1].get('Id') is not None:
+				self.add_query_param('WebhookParameters.' + str(depth1 + 1) + '.Id', WebhookParameterss[depth1].get('Id'))
+			if WebhookParameterss[depth1].get('Url') is not None:
+				self.add_query_param('WebhookParameters.' + str(depth1 + 1) + '.Url', WebhookParameterss[depth1].get('Url'))
 
 	def get_ContactParameterss(self):
 		return self.get_query_params().get('ContactParameterss')
 
-	def set_ContactParameterss(self,ContactParameterss):
-		for i in range(len(ContactParameterss)):	
-			if ContactParameterss[i].get('Level') is not None:
-				self.add_query_param('ContactParameters.' + str(i + 1) + '.Level' , ContactParameterss[i].get('Level'))
-			if ContactParameterss[i].get('Id') is not None:
-				self.add_query_param('ContactParameters.' + str(i + 1) + '.Id' , ContactParameterss[i].get('Id'))
-			if ContactParameterss[i].get('ContactGroupName') is not None:
-				self.add_query_param('ContactParameters.' + str(i + 1) + '.ContactGroupName' , ContactParameterss[i].get('ContactGroupName'))
-
+	def set_ContactParameterss(self, ContactParameterss):
+		for depth1 in range(len(ContactParameterss)):
+			if ContactParameterss[depth1].get('Level') is not None:
+				self.add_query_param('ContactParameters.' + str(depth1 + 1) + '.Level', ContactParameterss[depth1].get('Level'))
+			if ContactParameterss[depth1].get('Id') is not None:
+				self.add_query_param('ContactParameters.' + str(depth1 + 1) + '.Id', ContactParameterss[depth1].get('Id'))
+			if ContactParameterss[depth1].get('ContactGroupName') is not None:
+				self.add_query_param('ContactParameters.' + str(depth1 + 1) + '.ContactGroupName', ContactParameterss[depth1].get('ContactGroupName'))
 
 	def get_SlsParameterss(self):
 		return self.get_query_params().get('SlsParameterss')
 
-	def set_SlsParameterss(self,SlsParameterss):
-		for i in range(len(SlsParameterss)):	
-			if SlsParameterss[i].get('Project') is not None:
-				self.add_query_param('SlsParameters.' + str(i + 1) + '.Project' , SlsParameterss[i].get('Project'))
-			if SlsParameterss[i].get('Id') is not None:
-				self.add_query_param('SlsParameters.' + str(i + 1) + '.Id' , SlsParameterss[i].get('Id'))
-			if SlsParameterss[i].get('Region') is not None:
-				self.add_query_param('SlsParameters.' + str(i + 1) + '.Region' , SlsParameterss[i].get('Region'))
-			if SlsParameterss[i].get('LogStore') is not None:
-				self.add_query_param('SlsParameters.' + str(i + 1) + '.LogStore' , SlsParameterss[i].get('LogStore'))
-
+	def set_SlsParameterss(self, SlsParameterss):
+		for depth1 in range(len(SlsParameterss)):
+			if SlsParameterss[depth1].get('Project') is not None:
+				self.add_query_param('SlsParameters.' + str(depth1 + 1) + '.Project', SlsParameterss[depth1].get('Project'))
+			if SlsParameterss[depth1].get('Id') is not None:
+				self.add_query_param('SlsParameters.' + str(depth1 + 1) + '.Id', SlsParameterss[depth1].get('Id'))
+			if SlsParameterss[depth1].get('Region') is not None:
+				self.add_query_param('SlsParameters.' + str(depth1 + 1) + '.Region', SlsParameterss[depth1].get('Region'))
+			if SlsParameterss[depth1].get('LogStore') is not None:
+				self.add_query_param('SlsParameters.' + str(depth1 + 1) + '.LogStore', SlsParameterss[depth1].get('LogStore'))
 
 	def get_RuleName(self):
 		return self.get_query_params().get('RuleName')
@@ -76,26 +74,25 @@ class PutEventRuleTargetsRequest(RpcRequest):
 	def get_MnsParameterss(self):
 		return self.get_query_params().get('MnsParameterss')
 
-	def set_MnsParameterss(self,MnsParameterss):
-		for i in range(len(MnsParameterss)):	
-			if MnsParameterss[i].get('Id') is not None:
-				self.add_query_param('MnsParameters.' + str(i + 1) + '.Id' , MnsParameterss[i].get('Id'))
-			if MnsParameterss[i].get('Region') is not None:
-				self.add_query_param('MnsParameters.' + str(i + 1) + '.Region' , MnsParameterss[i].get('Region'))
-			if MnsParameterss[i].get('Queue') is not None:
-				self.add_query_param('MnsParameters.' + str(i + 1) + '.Queue' , MnsParameterss[i].get('Queue'))
-
+	def set_MnsParameterss(self, MnsParameterss):
+		for depth1 in range(len(MnsParameterss)):
+			if MnsParameterss[depth1].get('Id') is not None:
+				self.add_query_param('MnsParameters.' + str(depth1 + 1) + '.Id', MnsParameterss[depth1].get('Id'))
+			if MnsParameterss[depth1].get('Region') is not None:
+				self.add_query_param('MnsParameters.' + str(depth1 + 1) + '.Region', MnsParameterss[depth1].get('Region'))
+			if MnsParameterss[depth1].get('Queue') is not None:
+				self.add_query_param('MnsParameters.' + str(depth1 + 1) + '.Queue', MnsParameterss[depth1].get('Queue'))
 
 	def get_FcParameterss(self):
 		return self.get_query_params().get('FcParameterss')
 
-	def set_FcParameterss(self,FcParameterss):
-		for i in range(len(FcParameterss)):	
-			if FcParameterss[i].get('FunctionName') is not None:
-				self.add_query_param('FcParameters.' + str(i + 1) + '.FunctionName' , FcParameterss[i].get('FunctionName'))
-			if FcParameterss[i].get('ServiceName') is not None:
-				self.add_query_param('FcParameters.' + str(i + 1) + '.ServiceName' , FcParameterss[i].get('ServiceName'))
-			if FcParameterss[i].get('Id') is not None:
-				self.add_query_param('FcParameters.' + str(i + 1) + '.Id' , FcParameterss[i].get('Id'))
-			if FcParameterss[i].get('Region') is not None:
-				self.add_query_param('FcParameters.' + str(i + 1) + '.Region' , FcParameterss[i].get('Region'))
+	def set_FcParameterss(self, FcParameterss):
+		for depth1 in range(len(FcParameterss)):
+			if FcParameterss[depth1].get('FunctionName') is not None:
+				self.add_query_param('FcParameters.' + str(depth1 + 1) + '.FunctionName', FcParameterss[depth1].get('FunctionName'))
+			if FcParameterss[depth1].get('ServiceName') is not None:
+				self.add_query_param('FcParameters.' + str(depth1 + 1) + '.ServiceName', FcParameterss[depth1].get('ServiceName'))
+			if FcParameterss[depth1].get('Id') is not None:
+				self.add_query_param('FcParameters.' + str(depth1 + 1) + '.Id', FcParameterss[depth1].get('Id'))
+			if FcParameterss[depth1].get('Region') is not None:
+				self.add_query_param('FcParameters.' + str(depth1 + 1) + '.Region', FcParameterss[depth1].get('Region'))

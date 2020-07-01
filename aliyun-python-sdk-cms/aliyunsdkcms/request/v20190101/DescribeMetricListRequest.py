@@ -23,6 +23,7 @@ class DescribeMetricListRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Cms', '2019-01-01', 'DescribeMetricList','cms')
+		self.set_method('POST')
 
 	def get_Express(self):
 		return self.get_query_params().get('Express')

@@ -23,6 +23,7 @@ class DescribeMetricRuleCountRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Cms', '2019-01-01', 'DescribeMetricRuleCount','cms')
+		self.set_method('GET')
 
 	def get_Namespace(self):
 		return self.get_query_params().get('Namespace')

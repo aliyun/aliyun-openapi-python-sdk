@@ -23,6 +23,7 @@ class DescribeAlertHistoryListRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Cms', '2019-01-01', 'DescribeAlertHistoryList','cms')
+		self.set_method('POST')
 
 	def get_RuleName(self):
 		return self.get_query_params().get('RuleName')

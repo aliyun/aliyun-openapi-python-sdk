@@ -23,3 +23,4 @@ class DescribeMonitoringAgentConfigRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Cms', '2019-01-01', 'DescribeMonitoringAgentConfig','cms')
+		self.set_method('POST')

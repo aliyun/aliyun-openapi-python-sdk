@@ -23,6 +23,7 @@ class ModifyMetricRuleTemplateRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Cms', '2019-01-01', 'ModifyMetricRuleTemplate','cms')
+		self.set_method('POST')
 
 	def get_RestVersion(self):
 		return self.get_query_params().get('RestVersion')
@@ -51,43 +52,43 @@ class ModifyMetricRuleTemplateRequest(RpcRequest):
 	def get_AlertTemplatess(self):
 		return self.get_query_params().get('AlertTemplatess')
 
-	def set_AlertTemplatess(self,AlertTemplatess):
-		for i in range(len(AlertTemplatess)):	
-			if AlertTemplatess[i].get('Period') is not None:
-				self.add_query_param('AlertTemplates.' + str(i + 1) + '.Period' , AlertTemplatess[i].get('Period'))
-			if AlertTemplatess[i].get('Escalations.Warn.Threshold') is not None:
-				self.add_query_param('AlertTemplates.' + str(i + 1) + '.Escalations.Warn.Threshold' , AlertTemplatess[i].get('Escalations.Warn.Threshold'))
-			if AlertTemplatess[i].get('Webhook') is not None:
-				self.add_query_param('AlertTemplates.' + str(i + 1) + '.Webhook' , AlertTemplatess[i].get('Webhook'))
-			if AlertTemplatess[i].get('Escalations.Warn.ComparisonOperator') is not None:
-				self.add_query_param('AlertTemplates.' + str(i + 1) + '.Escalations.Warn.ComparisonOperator' , AlertTemplatess[i].get('Escalations.Warn.ComparisonOperator'))
-			if AlertTemplatess[i].get('Escalations.Critical.Statistics') is not None:
-				self.add_query_param('AlertTemplates.' + str(i + 1) + '.Escalations.Critical.Statistics' , AlertTemplatess[i].get('Escalations.Critical.Statistics'))
-			if AlertTemplatess[i].get('Escalations.Info.Times') is not None:
-				self.add_query_param('AlertTemplates.' + str(i + 1) + '.Escalations.Info.Times' , AlertTemplatess[i].get('Escalations.Info.Times'))
-			if AlertTemplatess[i].get('RuleName') is not None:
-				self.add_query_param('AlertTemplates.' + str(i + 1) + '.RuleName' , AlertTemplatess[i].get('RuleName'))
-			if AlertTemplatess[i].get('Escalations.Info.Statistics') is not None:
-				self.add_query_param('AlertTemplates.' + str(i + 1) + '.Escalations.Info.Statistics' , AlertTemplatess[i].get('Escalations.Info.Statistics'))
-			if AlertTemplatess[i].get('Escalations.Critical.Times') is not None:
-				self.add_query_param('AlertTemplates.' + str(i + 1) + '.Escalations.Critical.Times' , AlertTemplatess[i].get('Escalations.Critical.Times'))
-			if AlertTemplatess[i].get('Escalations.Info.ComparisonOperator') is not None:
-				self.add_query_param('AlertTemplates.' + str(i + 1) + '.Escalations.Info.ComparisonOperator' , AlertTemplatess[i].get('Escalations.Info.ComparisonOperator'))
-			if AlertTemplatess[i].get('Escalations.Warn.Statistics') is not None:
-				self.add_query_param('AlertTemplates.' + str(i + 1) + '.Escalations.Warn.Statistics' , AlertTemplatess[i].get('Escalations.Warn.Statistics'))
-			if AlertTemplatess[i].get('Escalations.Info.Threshold') is not None:
-				self.add_query_param('AlertTemplates.' + str(i + 1) + '.Escalations.Info.Threshold' , AlertTemplatess[i].get('Escalations.Info.Threshold'))
-			if AlertTemplatess[i].get('Namespace') is not None:
-				self.add_query_param('AlertTemplates.' + str(i + 1) + '.Namespace' , AlertTemplatess[i].get('Namespace'))
-			if AlertTemplatess[i].get('Selector') is not None:
-				self.add_query_param('AlertTemplates.' + str(i + 1) + '.Selector' , AlertTemplatess[i].get('Selector'))
-			if AlertTemplatess[i].get('MetricName') is not None:
-				self.add_query_param('AlertTemplates.' + str(i + 1) + '.MetricName' , AlertTemplatess[i].get('MetricName'))
-			if AlertTemplatess[i].get('Category') is not None:
-				self.add_query_param('AlertTemplates.' + str(i + 1) + '.Category' , AlertTemplatess[i].get('Category'))
-			if AlertTemplatess[i].get('Escalations.Critical.ComparisonOperator') is not None:
-				self.add_query_param('AlertTemplates.' + str(i + 1) + '.Escalations.Critical.ComparisonOperator' , AlertTemplatess[i].get('Escalations.Critical.ComparisonOperator'))
-			if AlertTemplatess[i].get('Escalations.Warn.Times') is not None:
-				self.add_query_param('AlertTemplates.' + str(i + 1) + '.Escalations.Warn.Times' , AlertTemplatess[i].get('Escalations.Warn.Times'))
-			if AlertTemplatess[i].get('Escalations.Critical.Threshold') is not None:
-				self.add_query_param('AlertTemplates.' + str(i + 1) + '.Escalations.Critical.Threshold' , AlertTemplatess[i].get('Escalations.Critical.Threshold'))
+	def set_AlertTemplatess(self, AlertTemplatess):
+		for depth1 in range(len(AlertTemplatess)):
+			if AlertTemplatess[depth1].get('Period') is not None:
+				self.add_query_param('AlertTemplates.' + str(depth1 + 1) + '.Period', AlertTemplatess[depth1].get('Period'))
+			if AlertTemplatess[depth1].get('Escalations.Warn.Threshold') is not None:
+				self.add_query_param('AlertTemplates.' + str(depth1 + 1) + '.Escalations.Warn.Threshold', AlertTemplatess[depth1].get('Escalations.Warn.Threshold'))
+			if AlertTemplatess[depth1].get('Webhook') is not None:
+				self.add_query_param('AlertTemplates.' + str(depth1 + 1) + '.Webhook', AlertTemplatess[depth1].get('Webhook'))
+			if AlertTemplatess[depth1].get('Escalations.Warn.ComparisonOperator') is not None:
+				self.add_query_param('AlertTemplates.' + str(depth1 + 1) + '.Escalations.Warn.ComparisonOperator', AlertTemplatess[depth1].get('Escalations.Warn.ComparisonOperator'))
+			if AlertTemplatess[depth1].get('Escalations.Critical.Statistics') is not None:
+				self.add_query_param('AlertTemplates.' + str(depth1 + 1) + '.Escalations.Critical.Statistics', AlertTemplatess[depth1].get('Escalations.Critical.Statistics'))
+			if AlertTemplatess[depth1].get('Escalations.Info.Times') is not None:
+				self.add_query_param('AlertTemplates.' + str(depth1 + 1) + '.Escalations.Info.Times', AlertTemplatess[depth1].get('Escalations.Info.Times'))
+			if AlertTemplatess[depth1].get('RuleName') is not None:
+				self.add_query_param('AlertTemplates.' + str(depth1 + 1) + '.RuleName', AlertTemplatess[depth1].get('RuleName'))
+			if AlertTemplatess[depth1].get('Escalations.Info.Statistics') is not None:
+				self.add_query_param('AlertTemplates.' + str(depth1 + 1) + '.Escalations.Info.Statistics', AlertTemplatess[depth1].get('Escalations.Info.Statistics'))
+			if AlertTemplatess[depth1].get('Escalations.Critical.Times') is not None:
+				self.add_query_param('AlertTemplates.' + str(depth1 + 1) + '.Escalations.Critical.Times', AlertTemplatess[depth1].get('Escalations.Critical.Times'))
+			if AlertTemplatess[depth1].get('Escalations.Info.ComparisonOperator') is not None:
+				self.add_query_param('AlertTemplates.' + str(depth1 + 1) + '.Escalations.Info.ComparisonOperator', AlertTemplatess[depth1].get('Escalations.Info.ComparisonOperator'))
+			if AlertTemplatess[depth1].get('Escalations.Warn.Statistics') is not None:
+				self.add_query_param('AlertTemplates.' + str(depth1 + 1) + '.Escalations.Warn.Statistics', AlertTemplatess[depth1].get('Escalations.Warn.Statistics'))
+			if AlertTemplatess[depth1].get('Escalations.Info.Threshold') is not None:
+				self.add_query_param('AlertTemplates.' + str(depth1 + 1) + '.Escalations.Info.Threshold', AlertTemplatess[depth1].get('Escalations.Info.Threshold'))
+			if AlertTemplatess[depth1].get('Namespace') is not None:
+				self.add_query_param('AlertTemplates.' + str(depth1 + 1) + '.Namespace', AlertTemplatess[depth1].get('Namespace'))
+			if AlertTemplatess[depth1].get('Selector') is not None:
+				self.add_query_param('AlertTemplates.' + str(depth1 + 1) + '.Selector', AlertTemplatess[depth1].get('Selector'))
+			if AlertTemplatess[depth1].get('MetricName') is not None:
+				self.add_query_param('AlertTemplates.' + str(depth1 + 1) + '.MetricName', AlertTemplatess[depth1].get('MetricName'))
+			if AlertTemplatess[depth1].get('Category') is not None:
+				self.add_query_param('AlertTemplates.' + str(depth1 + 1) + '.Category', AlertTemplatess[depth1].get('Category'))
+			if AlertTemplatess[depth1].get('Escalations.Critical.ComparisonOperator') is not None:
+				self.add_query_param('AlertTemplates.' + str(depth1 + 1) + '.Escalations.Critical.ComparisonOperator', AlertTemplatess[depth1].get('Escalations.Critical.ComparisonOperator'))
+			if AlertTemplatess[depth1].get('Escalations.Warn.Times') is not None:
+				self.add_query_param('AlertTemplates.' + str(depth1 + 1) + '.Escalations.Warn.Times', AlertTemplatess[depth1].get('Escalations.Warn.Times'))
+			if AlertTemplatess[depth1].get('Escalations.Critical.Threshold') is not None:
+				self.add_query_param('AlertTemplates.' + str(depth1 + 1) + '.Escalations.Critical.Threshold', AlertTemplatess[depth1].get('Escalations.Critical.Threshold'))

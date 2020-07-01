@@ -23,6 +23,7 @@ class PutContactRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Cms', '2019-01-01', 'PutContact','cms')
+		self.set_method('POST')
 
 	def get_ChannelsDingWebHook(self):
 		return self.get_query_params().get('Channels.DingWebHook')

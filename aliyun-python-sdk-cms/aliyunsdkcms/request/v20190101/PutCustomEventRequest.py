@@ -23,17 +23,18 @@ class PutCustomEventRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Cms', '2019-01-01', 'PutCustomEvent','cms')
+		self.set_method('POST')
 
 	def get_EventInfos(self):
 		return self.get_query_params().get('EventInfos')
 
-	def set_EventInfos(self,EventInfos):
-		for i in range(len(EventInfos)):	
-			if EventInfos[i].get('GroupId') is not None:
-				self.add_query_param('EventInfo.' + str(i + 1) + '.GroupId' , EventInfos[i].get('GroupId'))
-			if EventInfos[i].get('Time') is not None:
-				self.add_query_param('EventInfo.' + str(i + 1) + '.Time' , EventInfos[i].get('Time'))
-			if EventInfos[i].get('EventName') is not None:
-				self.add_query_param('EventInfo.' + str(i + 1) + '.EventName' , EventInfos[i].get('EventName'))
-			if EventInfos[i].get('Content') is not None:
-				self.add_query_param('EventInfo.' + str(i + 1) + '.Content' , EventInfos[i].get('Content'))
+	def set_EventInfos(self, EventInfos):
+		for depth1 in range(len(EventInfos)):
+			if EventInfos[depth1].get('GroupId') is not None:
+				self.add_query_param('EventInfo.' + str(depth1 + 1) + '.GroupId', EventInfos[depth1].get('GroupId'))
+			if EventInfos[depth1].get('Time') is not None:
+				self.add_query_param('EventInfo.' + str(depth1 + 1) + '.Time', EventInfos[depth1].get('Time'))
+			if EventInfos[depth1].get('EventName') is not None:
+				self.add_query_param('EventInfo.' + str(depth1 + 1) + '.EventName', EventInfos[depth1].get('EventName'))
+			if EventInfos[depth1].get('Content') is not None:
+				self.add_query_param('EventInfo.' + str(depth1 + 1) + '.Content', EventInfos[depth1].get('Content'))

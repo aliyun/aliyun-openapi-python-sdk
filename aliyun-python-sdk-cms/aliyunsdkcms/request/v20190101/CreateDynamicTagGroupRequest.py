@@ -23,6 +23,7 @@ class CreateDynamicTagGroupRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Cms', '2019-01-01', 'CreateDynamicTagGroup','cms')
+		self.set_method('POST')
 
 	def get_EnableSubscribeEvent(self):
 		return self.get_query_params().get('EnableSubscribeEvent')
@@ -45,29 +46,28 @@ class CreateDynamicTagGroupRequest(RpcRequest):
 	def get_MatchExpresss(self):
 		return self.get_query_params().get('MatchExpresss')
 
-	def set_MatchExpresss(self,MatchExpresss):
-		for i in range(len(MatchExpresss)):	
-			if MatchExpresss[i].get('TagValue') is not None:
-				self.add_query_param('MatchExpress.' + str(i + 1) + '.TagValue' , MatchExpresss[i].get('TagValue'))
-			if MatchExpresss[i].get('TagValueMatchFunction') is not None:
-				self.add_query_param('MatchExpress.' + str(i + 1) + '.TagValueMatchFunction' , MatchExpresss[i].get('TagValueMatchFunction'))
-
+	def set_MatchExpresss(self, MatchExpresss):
+		for depth1 in range(len(MatchExpresss)):
+			if MatchExpresss[depth1].get('TagValue') is not None:
+				self.add_query_param('MatchExpress.' + str(depth1 + 1) + '.TagValue', MatchExpresss[depth1].get('TagValue'))
+			if MatchExpresss[depth1].get('TagValueMatchFunction') is not None:
+				self.add_query_param('MatchExpress.' + str(depth1 + 1) + '.TagValueMatchFunction', MatchExpresss[depth1].get('TagValueMatchFunction'))
 
 	def get_ContactGroupLists(self):
 		return self.get_query_params().get('ContactGroupLists')
 
-	def set_ContactGroupLists(self,ContactGroupLists):
-		for i in range(len(ContactGroupLists)):	
-			if ContactGroupLists[i] is not None:
-				self.add_query_param('ContactGroupList.' + str(i + 1) , ContactGroupLists[i]);
+	def set_ContactGroupLists(self, ContactGroupLists):
+		for depth1 in range(len(ContactGroupLists)):
+			if ContactGroupLists[depth1] is not None:
+				self.add_query_param('ContactGroupList.' + str(depth1 + 1) , ContactGroupLists[depth1])
 
 	def get_TemplateIdLists(self):
 		return self.get_query_params().get('TemplateIdLists')
 
-	def set_TemplateIdLists(self,TemplateIdLists):
-		for i in range(len(TemplateIdLists)):	
-			if TemplateIdLists[i] is not None:
-				self.add_query_param('TemplateIdList.' + str(i + 1) , TemplateIdLists[i]);
+	def set_TemplateIdLists(self, TemplateIdLists):
+		for depth1 in range(len(TemplateIdLists)):
+			if TemplateIdLists[depth1] is not None:
+				self.add_query_param('TemplateIdList.' + str(depth1 + 1) , TemplateIdLists[depth1])
 
 	def get_TagKey(self):
 		return self.get_query_params().get('TagKey')

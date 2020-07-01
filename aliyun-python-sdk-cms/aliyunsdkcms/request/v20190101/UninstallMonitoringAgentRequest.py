@@ -23,6 +23,7 @@ class UninstallMonitoringAgentRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Cms', '2019-01-01', 'UninstallMonitoringAgent','cms')
+		self.set_method('POST')
 
 	def get_InstanceId(self):
 		return self.get_query_params().get('InstanceId')

@@ -19,16 +19,26 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class DeleteHostAvailabilityRequest(RpcRequest):
+class ModifyHostInfoRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cms', '2019-01-01', 'DeleteHostAvailability','cms')
+		RpcRequest.__init__(self, 'Cms', '2019-01-01', 'ModifyHostInfo','cms')
 		self.set_method('POST')
 
-	def get_Ids(self):
-		return self.get_query_params().get('Ids')
+	def get_IP(self):
+		return self.get_query_params().get('IP')
 
-	def set_Ids(self, Ids):
-		for depth1 in range(len(Ids)):
-			if Ids[depth1] is not None:
-				self.add_query_param('Id.' + str(depth1 + 1) , Ids[depth1])
+	def set_IP(self,IP):
+		self.add_query_param('IP',IP)
+
+	def get_HostName(self):
+		return self.get_query_params().get('HostName')
+
+	def set_HostName(self,HostName):
+		self.add_query_param('HostName',HostName)
+
+	def get_InstanceId(self):
+		return self.get_query_params().get('InstanceId')
+
+	def set_InstanceId(self,InstanceId):
+		self.add_query_param('InstanceId',InstanceId)

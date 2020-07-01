@@ -23,6 +23,13 @@ class DescribeContactListRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Cms', '2019-01-01', 'DescribeContactList','cms')
+		self.set_method('POST')
+
+	def get_ChanelType(self):
+		return self.get_query_params().get('ChanelType')
+
+	def set_ChanelType(self,ChanelType):
+		self.add_query_param('ChanelType',ChanelType)
 
 	def get_PageNumber(self):
 		return self.get_query_params().get('PageNumber')
@@ -41,3 +48,9 @@ class DescribeContactListRequest(RpcRequest):
 
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
+
+	def get_ChanelValue(self):
+		return self.get_query_params().get('ChanelValue')
+
+	def set_ChanelValue(self,ChanelValue):
+		self.add_query_param('ChanelValue',ChanelValue)

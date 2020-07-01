@@ -23,11 +23,12 @@ class DescribeUnhealthyHostAvailabilityRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Cms', '2019-01-01', 'DescribeUnhealthyHostAvailability','cms')
+		self.set_method('POST')
 
 	def get_Ids(self):
 		return self.get_query_params().get('Ids')
 
-	def set_Ids(self,Ids):
-		for i in range(len(Ids)):	
-			if Ids[i] is not None:
-				self.add_query_param('Id.' + str(i + 1) , Ids[i]);
+	def set_Ids(self, Ids):
+		for depth1 in range(len(Ids)):
+			if Ids[depth1] is not None:
+				self.add_query_param('Id.' + str(depth1 + 1) , Ids[depth1])

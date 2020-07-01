@@ -23,6 +23,7 @@ class PutContactGroupRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Cms', '2019-01-01', 'PutContactGroup','cms')
+		self.set_method('POST')
 
 	def get_ContactGroupName(self):
 		return self.get_query_params().get('ContactGroupName')
@@ -39,7 +40,7 @@ class PutContactGroupRequest(RpcRequest):
 	def get_ContactNamess(self):
 		return self.get_query_params().get('ContactNamess')
 
-	def set_ContactNamess(self,ContactNamess):
-		for i in range(len(ContactNamess)):	
-			if ContactNamess[i] is not None:
-				self.add_query_param('ContactNames.' + str(i + 1) , ContactNamess[i]);
+	def set_ContactNamess(self, ContactNamess):
+		for depth1 in range(len(ContactNamess)):
+			if ContactNamess[depth1] is not None:
+				self.add_query_param('ContactNames.' + str(depth1 + 1) , ContactNamess[depth1])

@@ -34,10 +34,10 @@ class PutExporterRuleRequest(RpcRequest):
 	def get_DstNamess(self):
 		return self.get_query_params().get('DstNamess')
 
-	def set_DstNamess(self,DstNamess):
-		for i in range(len(DstNamess)):	
-			if DstNamess[i] is not None:
-				self.add_query_param('DstNames.' + str(i + 1) , DstNamess[i]);
+	def set_DstNamess(self, DstNamess):
+		for depth1 in range(len(DstNamess)):
+			if DstNamess[depth1] is not None:
+				self.add_query_param('DstNames.' + str(depth1 + 1) , DstNamess[depth1])
 
 	def get_Namespace(self):
 		return self.get_query_params().get('Namespace')

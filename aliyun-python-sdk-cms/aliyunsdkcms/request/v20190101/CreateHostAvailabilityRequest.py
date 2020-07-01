@@ -23,6 +23,7 @@ class CreateHostAvailabilityRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Cms', '2019-01-01', 'CreateHostAvailability','cms')
+		self.set_method('POST')
 
 	def get_TaskOptionHttpMethod(self):
 		return self.get_query_params().get('TaskOption.HttpMethod')
@@ -33,19 +34,18 @@ class CreateHostAvailabilityRequest(RpcRequest):
 	def get_AlertConfigEscalationLists(self):
 		return self.get_query_params().get('AlertConfigEscalationLists')
 
-	def set_AlertConfigEscalationLists(self,AlertConfigEscalationLists):
-		for i in range(len(AlertConfigEscalationLists)):	
-			if AlertConfigEscalationLists[i].get('Times') is not None:
-				self.add_query_param('AlertConfigEscalationList.' + str(i + 1) + '.Times' , AlertConfigEscalationLists[i].get('Times'))
-			if AlertConfigEscalationLists[i].get('MetricName') is not None:
-				self.add_query_param('AlertConfigEscalationList.' + str(i + 1) + '.MetricName' , AlertConfigEscalationLists[i].get('MetricName'))
-			if AlertConfigEscalationLists[i].get('Value') is not None:
-				self.add_query_param('AlertConfigEscalationList.' + str(i + 1) + '.Value' , AlertConfigEscalationLists[i].get('Value'))
-			if AlertConfigEscalationLists[i].get('Operator') is not None:
-				self.add_query_param('AlertConfigEscalationList.' + str(i + 1) + '.Operator' , AlertConfigEscalationLists[i].get('Operator'))
-			if AlertConfigEscalationLists[i].get('Aggregate') is not None:
-				self.add_query_param('AlertConfigEscalationList.' + str(i + 1) + '.Aggregate' , AlertConfigEscalationLists[i].get('Aggregate'))
-
+	def set_AlertConfigEscalationLists(self, AlertConfigEscalationLists):
+		for depth1 in range(len(AlertConfigEscalationLists)):
+			if AlertConfigEscalationLists[depth1].get('Times') is not None:
+				self.add_query_param('AlertConfigEscalationList.' + str(depth1 + 1) + '.Times', AlertConfigEscalationLists[depth1].get('Times'))
+			if AlertConfigEscalationLists[depth1].get('MetricName') is not None:
+				self.add_query_param('AlertConfigEscalationList.' + str(depth1 + 1) + '.MetricName', AlertConfigEscalationLists[depth1].get('MetricName'))
+			if AlertConfigEscalationLists[depth1].get('Value') is not None:
+				self.add_query_param('AlertConfigEscalationList.' + str(depth1 + 1) + '.Value', AlertConfigEscalationLists[depth1].get('Value'))
+			if AlertConfigEscalationLists[depth1].get('Operator') is not None:
+				self.add_query_param('AlertConfigEscalationList.' + str(depth1 + 1) + '.Operator', AlertConfigEscalationLists[depth1].get('Operator'))
+			if AlertConfigEscalationLists[depth1].get('Aggregate') is not None:
+				self.add_query_param('AlertConfigEscalationList.' + str(depth1 + 1) + '.Aggregate', AlertConfigEscalationLists[depth1].get('Aggregate'))
 
 	def get_TaskName(self):
 		return self.get_query_params().get('TaskName')
@@ -92,10 +92,10 @@ class CreateHostAvailabilityRequest(RpcRequest):
 	def get_InstanceLists(self):
 		return self.get_query_params().get('InstanceLists')
 
-	def set_InstanceLists(self,InstanceLists):
-		for i in range(len(InstanceLists)):	
-			if InstanceLists[i] is not None:
-				self.add_query_param('InstanceList.' + str(i + 1) , InstanceLists[i]);
+	def set_InstanceLists(self, InstanceLists):
+		for depth1 in range(len(InstanceLists)):
+			if InstanceLists[depth1] is not None:
+				self.add_query_param('InstanceList.' + str(depth1 + 1) , InstanceLists[depth1])
 
 	def get_TaskType(self):
 		return self.get_query_params().get('TaskType')

@@ -23,14 +23,15 @@ class InstallMonitoringAgentRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Cms', '2019-01-01', 'InstallMonitoringAgent','cms')
+		self.set_method('POST')
 
 	def get_InstanceIdss(self):
 		return self.get_query_params().get('InstanceIdss')
 
-	def set_InstanceIdss(self,InstanceIdss):
-		for i in range(len(InstanceIdss)):	
-			if InstanceIdss[i] is not None:
-				self.add_query_param('InstanceIds.' + str(i + 1) , InstanceIdss[i]);
+	def set_InstanceIdss(self, InstanceIdss):
+		for depth1 in range(len(InstanceIdss)):
+			if InstanceIdss[depth1] is not None:
+				self.add_query_param('InstanceIds.' + str(depth1 + 1) , InstanceIdss[depth1])
 
 	def get_Force(self):
 		return self.get_query_params().get('Force')

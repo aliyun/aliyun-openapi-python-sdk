@@ -23,11 +23,12 @@ class DisableMetricRulesRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Cms', '2019-01-01', 'DisableMetricRules','cms')
+		self.set_method('POST')
 
 	def get_RuleIds(self):
 		return self.get_query_params().get('RuleIds')
 
-	def set_RuleIds(self,RuleIds):
-		for i in range(len(RuleIds)):	
-			if RuleIds[i] is not None:
-				self.add_query_param('RuleId.' + str(i + 1) , RuleIds[i]);
+	def set_RuleIds(self, RuleIds):
+		for depth1 in range(len(RuleIds)):
+			if RuleIds[depth1] is not None:
+				self.add_query_param('RuleId.' + str(depth1 + 1) , RuleIds[depth1])

@@ -23,29 +23,31 @@ class ModifyGroupMonitoringAgentProcessRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Cms', '2019-01-01', 'ModifyGroupMonitoringAgentProcess','cms')
+		self.set_method('POST')
 
 	def get_AlertConfigs(self):
 		return self.get_query_params().get('AlertConfigs')
 
-	def set_AlertConfigs(self,AlertConfigs):
-		for i in range(len(AlertConfigs)):	
-			if AlertConfigs[i].get('Times') is not None:
-				self.add_query_param('AlertConfig.' + str(i + 1) + '.Times' , AlertConfigs[i].get('Times'))
-			if AlertConfigs[i].get('NoEffectiveInterval') is not None:
-				self.add_query_param('AlertConfig.' + str(i + 1) + '.NoEffectiveInterval' , AlertConfigs[i].get('NoEffectiveInterval'))
-			if AlertConfigs[i].get('SilenceTime') is not None:
-				self.add_query_param('AlertConfig.' + str(i + 1) + '.SilenceTime' , AlertConfigs[i].get('SilenceTime'))
-			if AlertConfigs[i].get('Threshold') is not None:
-				self.add_query_param('AlertConfig.' + str(i + 1) + '.Threshold' , AlertConfigs[i].get('Threshold'))
-			if AlertConfigs[i].get('EffectiveInterval') is not None:
-				self.add_query_param('AlertConfig.' + str(i + 1) + '.EffectiveInterval' , AlertConfigs[i].get('EffectiveInterval'))
-			if AlertConfigs[i].get('ComparisonOperator') is not None:
-				self.add_query_param('AlertConfig.' + str(i + 1) + '.ComparisonOperator' , AlertConfigs[i].get('ComparisonOperator'))
-			if AlertConfigs[i].get('EscalationsLevel') is not None:
-				self.add_query_param('AlertConfig.' + str(i + 1) + '.EscalationsLevel' , AlertConfigs[i].get('EscalationsLevel'))
-			if AlertConfigs[i].get('Statistics') is not None:
-				self.add_query_param('AlertConfig.' + str(i + 1) + '.Statistics' , AlertConfigs[i].get('Statistics'))
-
+	def set_AlertConfigs(self, AlertConfigs):
+		for depth1 in range(len(AlertConfigs)):
+			if AlertConfigs[depth1].get('Times') is not None:
+				self.add_query_param('AlertConfig.' + str(depth1 + 1) + '.Times', AlertConfigs[depth1].get('Times'))
+			if AlertConfigs[depth1].get('NoEffectiveInterval') is not None:
+				self.add_query_param('AlertConfig.' + str(depth1 + 1) + '.NoEffectiveInterval', AlertConfigs[depth1].get('NoEffectiveInterval'))
+			if AlertConfigs[depth1].get('Webhook') is not None:
+				self.add_query_param('AlertConfig.' + str(depth1 + 1) + '.Webhook', AlertConfigs[depth1].get('Webhook'))
+			if AlertConfigs[depth1].get('SilenceTime') is not None:
+				self.add_query_param('AlertConfig.' + str(depth1 + 1) + '.SilenceTime', AlertConfigs[depth1].get('SilenceTime'))
+			if AlertConfigs[depth1].get('Threshold') is not None:
+				self.add_query_param('AlertConfig.' + str(depth1 + 1) + '.Threshold', AlertConfigs[depth1].get('Threshold'))
+			if AlertConfigs[depth1].get('EffectiveInterval') is not None:
+				self.add_query_param('AlertConfig.' + str(depth1 + 1) + '.EffectiveInterval', AlertConfigs[depth1].get('EffectiveInterval'))
+			if AlertConfigs[depth1].get('ComparisonOperator') is not None:
+				self.add_query_param('AlertConfig.' + str(depth1 + 1) + '.ComparisonOperator', AlertConfigs[depth1].get('ComparisonOperator'))
+			if AlertConfigs[depth1].get('EscalationsLevel') is not None:
+				self.add_query_param('AlertConfig.' + str(depth1 + 1) + '.EscalationsLevel', AlertConfigs[depth1].get('EscalationsLevel'))
+			if AlertConfigs[depth1].get('Statistics') is not None:
+				self.add_query_param('AlertConfig.' + str(depth1 + 1) + '.Statistics', AlertConfigs[depth1].get('Statistics'))
 
 	def get_GroupId(self):
 		return self.get_query_params().get('GroupId')

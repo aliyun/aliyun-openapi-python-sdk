@@ -23,14 +23,15 @@ class DeleteMetricRuleTargetsRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Cms', '2019-01-01', 'DeleteMetricRuleTargets','cms')
+		self.set_method('POST')
 
 	def get_TargetIdss(self):
 		return self.get_query_params().get('TargetIdss')
 
-	def set_TargetIdss(self,TargetIdss):
-		for i in range(len(TargetIdss)):	
-			if TargetIdss[i] is not None:
-				self.add_query_param('TargetIds.' + str(i + 1) , TargetIdss[i]);
+	def set_TargetIdss(self, TargetIdss):
+		for depth1 in range(len(TargetIdss)):
+			if TargetIdss[depth1] is not None:
+				self.add_query_param('TargetIds.' + str(depth1 + 1) , TargetIdss[depth1])
 
 	def get_RuleId(self):
 		return self.get_query_params().get('RuleId')
