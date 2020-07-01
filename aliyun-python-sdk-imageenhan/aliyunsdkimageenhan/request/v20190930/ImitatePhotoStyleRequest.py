@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkimageenhan.endpoint import endpoint_data
 
-class RecolorImageRequest(RpcRequest):
+class ImitatePhotoStyleRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'imageenhan', '2019-09-30', 'RecolorImage','imageenhan')
+		RpcRequest.__init__(self, 'imageenhan', '2019-09-30', 'ImitatePhotoStyle','imageenhan')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,34 +31,14 @@ class RecolorImageRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_ColorTemplates(self):
-		return self.get_body_params().get('ColorTemplates')
+	def get_StyleUrl(self):
+		return self.get_body_params().get('StyleUrl')
 
-	def set_ColorTemplates(self, ColorTemplates):
-		for depth1 in range(len(ColorTemplates)):
-			if ColorTemplates[depth1].get('Color') is not None:
-				self.add_body_params('ColorTemplate.' + str(depth1 + 1) + '.Color', ColorTemplates[depth1].get('Color'))
+	def set_StyleUrl(self,StyleUrl):
+		self.add_body_params('StyleUrl', StyleUrl)
 
-	def get_Url(self):
-		return self.get_body_params().get('Url')
+	def get_ImageURL(self):
+		return self.get_body_params().get('ImageURL')
 
-	def set_Url(self,Url):
-		self.add_body_params('Url', Url)
-
-	def get_Mode(self):
-		return self.get_body_params().get('Mode')
-
-	def set_Mode(self,Mode):
-		self.add_body_params('Mode', Mode)
-
-	def get_ColorCount(self):
-		return self.get_body_params().get('ColorCount')
-
-	def set_ColorCount(self,ColorCount):
-		self.add_body_params('ColorCount', ColorCount)
-
-	def get_RefUrl(self):
-		return self.get_body_params().get('RefUrl')
-
-	def set_RefUrl(self,RefUrl):
-		self.add_body_params('RefUrl', RefUrl)
+	def set_ImageURL(self,ImageURL):
+		self.add_body_params('ImageURL', ImageURL)

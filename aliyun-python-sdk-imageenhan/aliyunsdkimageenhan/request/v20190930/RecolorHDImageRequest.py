@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkimageenhan.endpoint import endpoint_data
 
-class RecolorImageRequest(RpcRequest):
+class RecolorHDImageRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'imageenhan', '2019-09-30', 'RecolorImage','imageenhan')
+		RpcRequest.__init__(self, 'imageenhan', '2019-09-30', 'RecolorHDImage','imageenhan')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -38,6 +38,12 @@ class RecolorImageRequest(RpcRequest):
 		for depth1 in range(len(ColorTemplates)):
 			if ColorTemplates[depth1].get('Color') is not None:
 				self.add_body_params('ColorTemplate.' + str(depth1 + 1) + '.Color', ColorTemplates[depth1].get('Color'))
+
+	def get_Degree(self):
+		return self.get_body_params().get('Degree')
+
+	def set_Degree(self,Degree):
+		self.add_body_params('Degree', Degree)
 
 	def get_Url(self):
 		return self.get_body_params().get('Url')
