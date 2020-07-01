@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkimageprocess.endpoint import endpoint_data
 
-class DetectCovid19CadRequest(RpcRequest):
+class DetectLungNoduleRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'imageprocess', '2020-03-20', 'DetectCovid19Cad','imageprocess')
+		RpcRequest.__init__(self, 'imageprocess', '2020-03-20', 'DetectLungNodule','imageprocess')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
