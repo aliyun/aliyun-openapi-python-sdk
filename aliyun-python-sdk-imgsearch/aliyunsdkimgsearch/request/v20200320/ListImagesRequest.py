@@ -24,6 +24,7 @@ class ListImagesRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'imgsearch', '2020-03-20', 'ListImages','imgsearch')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
