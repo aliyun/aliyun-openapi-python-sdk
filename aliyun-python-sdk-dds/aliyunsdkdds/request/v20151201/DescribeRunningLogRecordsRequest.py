@@ -23,7 +23,7 @@ from aliyunsdkdds.endpoint import endpoint_data
 class DescribeRunningLogRecordsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dds', '2015-12-01', 'DescribeRunningLogRecords','dds')
+		RpcRequest.__init__(self, 'Dds', '2015-12-01', 'DescribeRunningLogRecords','Dds')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -79,6 +79,12 @@ class DescribeRunningLogRecordsRequest(RpcRequest):
 	def set_NodeId(self,NodeId):
 		self.add_query_param('NodeId',NodeId)
 
+	def get_SQLId(self):
+		return self.get_query_params().get('SQLId')
+
+	def set_SQLId(self,SQLId):
+		self.add_query_param('SQLId',SQLId)
+
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -108,3 +114,9 @@ class DescribeRunningLogRecordsRequest(RpcRequest):
 
 	def set_DBName(self,DBName):
 		self.add_query_param('DBName',DBName)
+
+	def get_OrderType(self):
+		return self.get_query_params().get('OrderType')
+
+	def set_OrderType(self,OrderType):
+		self.add_query_param('OrderType',OrderType)

@@ -23,7 +23,7 @@ from aliyunsdkdds.endpoint import endpoint_data
 class DescribeAvailableTimeRangeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dds', '2015-12-01', 'DescribeAvailableTimeRange','dds')
+		RpcRequest.__init__(self, 'Dds', '2015-12-01', 'DescribeAvailableTimeRange','Dds')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())

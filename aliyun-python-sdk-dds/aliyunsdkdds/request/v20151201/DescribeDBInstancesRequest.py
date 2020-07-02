@@ -23,7 +23,7 @@ from aliyunsdkdds.endpoint import endpoint_data
 class DescribeDBInstancesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dds', '2015-12-01', 'DescribeDBInstances','dds')
+		RpcRequest.__init__(self, 'Dds', '2015-12-01', 'DescribeDBInstances','Dds')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -60,6 +60,12 @@ class DescribeDBInstancesRequest(RpcRequest):
 
 	def set_ReplicationFactor(self,ReplicationFactor):
 		self.add_query_param('ReplicationFactor',ReplicationFactor)
+
+	def get_ResourceGroupId(self):
+		return self.get_query_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self,ResourceGroupId):
+		self.add_query_param('ResourceGroupId',ResourceGroupId)
 
 	def get_Expired(self):
 		return self.get_query_params().get('Expired')

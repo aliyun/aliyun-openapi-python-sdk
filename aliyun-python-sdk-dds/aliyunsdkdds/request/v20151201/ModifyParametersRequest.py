@@ -23,7 +23,7 @@ from aliyunsdkdds.endpoint import endpoint_data
 class ModifyParametersRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dds', '2015-12-01', 'ModifyParameters','dds')
+		RpcRequest.__init__(self, 'Dds', '2015-12-01', 'ModifyParameters','Dds')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -78,3 +78,9 @@ class ModifyParametersRequest(RpcRequest):
 
 	def set_Parameters(self,Parameters):
 		self.add_query_param('Parameters',Parameters)
+
+	def get_CharacterType(self):
+		return self.get_query_params().get('CharacterType')
+
+	def set_CharacterType(self,CharacterType):
+		self.add_query_param('CharacterType',CharacterType)
