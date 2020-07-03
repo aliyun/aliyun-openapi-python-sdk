@@ -23,7 +23,7 @@ from aliyunsdkdataworks_public.endpoint import endpoint_data
 class GetFileRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'GetFile')
+		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'GetFile','dide')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
