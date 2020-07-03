@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkivpd.endpoint import endpoint_data
 
-class MakeSuperResolutionImageRequest(RpcRequest):
+class UpdateUserBucketConfigRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ivpd', '2019-06-25', 'MakeSuperResolutionImage')
+		RpcRequest.__init__(self, 'ivpd', '2019-06-25', 'UpdateUserBucketConfig')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,8 +31,12 @@ class MakeSuperResolutionImageRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_Url(self):
-		return self.get_body_params().get('Url')
+	def get_Datas(self):
+		return self.get_body_params().get('Datas')
 
-	def set_Url(self,Url):
-		self.add_body_params('Url', Url)
+	def set_Datas(self, Datas):
+		for depth1 in range(len(Datas)):
+			if Datas[depth1].get('Bucket') is not None:
+				self.add_body_params('Data.' + str(depth1 + 1) + '.Bucket', Datas[depth1].get('Bucket'))
+			if Datas[depth1].get('Region') is not None:
+				self.add_body_params('Data.' + str(depth1 + 1) + '.Region', Datas[depth1].get('Region'))

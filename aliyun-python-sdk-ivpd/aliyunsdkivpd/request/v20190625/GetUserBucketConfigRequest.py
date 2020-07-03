@@ -20,19 +20,12 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkivpd.endpoint import endpoint_data
 
-class MakeSuperResolutionImageRequest(RpcRequest):
+class GetUserBucketConfigRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ivpd', '2019-06-25', 'MakeSuperResolutionImage')
+		RpcRequest.__init__(self, 'ivpd', '2019-06-25', 'GetUserBucketConfig')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
-
-
-	def get_Url(self):
-		return self.get_body_params().get('Url')
-
-	def set_Url(self,Url):
-		self.add_body_params('Url', Url)
