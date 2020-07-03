@@ -24,6 +24,7 @@ class OnsTraceGetResultRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ons', '2019-02-14', 'OnsTraceGetResult','ons')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):

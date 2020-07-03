@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkons.endpoint import endpoint_data
 
-class OnsTopicListRequest(RpcRequest):
+class ListTagResourcesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ons', '2019-02-14', 'OnsTopicList','ons')
+		RpcRequest.__init__(self, 'Ons', '2019-02-14', 'ListTagResources','ons')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,17 +31,31 @@ class OnsTopicListRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_ResourceIds(self):
+		return self.get_query_params().get('ResourceIds')
+
+	def set_ResourceIds(self, ResourceIds):
+		for depth1 in range(len(ResourceIds)):
+			if ResourceIds[depth1] is not None:
+				self.add_query_param('ResourceId.' + str(depth1 + 1) , ResourceIds[depth1])
+
+	def get_ResourceType(self):
+		return self.get_query_params().get('ResourceType')
+
+	def set_ResourceType(self,ResourceType):
+		self.add_query_param('ResourceType',ResourceType)
+
 	def get_InstanceId(self):
 		return self.get_query_params().get('InstanceId')
 
 	def set_InstanceId(self,InstanceId):
 		self.add_query_param('InstanceId',InstanceId)
 
-	def get_Topic(self):
-		return self.get_query_params().get('Topic')
+	def get_NextToken(self):
+		return self.get_query_params().get('NextToken')
 
-	def set_Topic(self,Topic):
-		self.add_query_param('Topic',Topic)
+	def set_NextToken(self,NextToken):
+		self.add_query_param('NextToken',NextToken)
 
 	def get_Tags(self):
 		return self.get_query_params().get('Tags')
