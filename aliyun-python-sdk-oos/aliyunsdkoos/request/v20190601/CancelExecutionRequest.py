@@ -23,7 +23,7 @@ from aliyunsdkoos.endpoint import endpoint_data
 class CancelExecutionRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'oos', '2019-06-01', 'CancelExecution','oos')
+		RpcRequest.__init__(self, 'oos', '2019-06-01', 'CancelExecution')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())

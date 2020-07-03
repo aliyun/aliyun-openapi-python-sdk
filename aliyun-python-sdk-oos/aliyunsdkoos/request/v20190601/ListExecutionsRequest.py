@@ -23,7 +23,7 @@ from aliyunsdkoos.endpoint import endpoint_data
 class ListExecutionsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'oos', '2019-06-01', 'ListExecutions','oos')
+		RpcRequest.__init__(self, 'oos', '2019-06-01', 'ListExecutions')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -85,6 +85,12 @@ class ListExecutionsRequest(RpcRequest):
 	def set_SortOrder(self,SortOrder):
 		self.add_query_param('SortOrder',SortOrder)
 
+	def get_ResourceId(self):
+		return self.get_query_params().get('ResourceId')
+
+	def set_ResourceId(self,ResourceId):
+		self.add_query_param('ResourceId',ResourceId)
+
 	def get_StartDateAfter(self):
 		return self.get_query_params().get('StartDateAfter')
 
@@ -132,6 +138,12 @@ class ListExecutionsRequest(RpcRequest):
 
 	def set_Category(self,Category):
 		self.add_query_param('Category',Category)
+
+	def get_ResourceTemplateName(self):
+		return self.get_query_params().get('ResourceTemplateName')
+
+	def set_ResourceTemplateName(self,ResourceTemplateName):
+		self.add_query_param('ResourceTemplateName',ResourceTemplateName)
 
 	def get_Status(self):
 		return self.get_query_params().get('Status')
