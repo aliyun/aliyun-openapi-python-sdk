@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdataworks_public.endpoint import endpoint_data
 
-class ListNodesRequest(RpcRequest):
+class CreateDagTestRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'ListNodes','dide')
+		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'CreateDagTest','dide')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,50 +31,32 @@ class ListNodesRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_Owner(self):
-		return self.get_body_params().get('Owner')
-
-	def set_Owner(self,Owner):
-		self.add_body_params('Owner', Owner)
-
 	def get_ProjectEnv(self):
 		return self.get_body_params().get('ProjectEnv')
 
 	def set_ProjectEnv(self,ProjectEnv):
 		self.add_body_params('ProjectEnv', ProjectEnv)
 
-	def get_BizName(self):
-		return self.get_body_params().get('BizName')
+	def get_Bizdate(self):
+		return self.get_body_params().get('Bizdate')
 
-	def set_BizName(self,BizName):
-		self.add_body_params('BizName', BizName)
+	def set_Bizdate(self,Bizdate):
+		self.add_body_params('Bizdate', Bizdate)
 
-	def get_PageNumber(self):
-		return self.get_body_params().get('PageNumber')
+	def get_Name(self):
+		return self.get_body_params().get('Name')
 
-	def set_PageNumber(self,PageNumber):
-		self.add_body_params('PageNumber', PageNumber)
+	def set_Name(self,Name):
+		self.add_body_params('Name', Name)
 
-	def get_NodeName(self):
-		return self.get_body_params().get('NodeName')
+	def get_NodeParams(self):
+		return self.get_body_params().get('NodeParams')
 
-	def set_NodeName(self,NodeName):
-		self.add_body_params('NodeName', NodeName)
+	def set_NodeParams(self,NodeParams):
+		self.add_body_params('NodeParams', NodeParams)
 
-	def get_ProgramType(self):
-		return self.get_body_params().get('ProgramType')
+	def get_NodeId(self):
+		return self.get_body_params().get('NodeId')
 
-	def set_ProgramType(self,ProgramType):
-		self.add_body_params('ProgramType', ProgramType)
-
-	def get_PageSize(self):
-		return self.get_body_params().get('PageSize')
-
-	def set_PageSize(self,PageSize):
-		self.add_body_params('PageSize', PageSize)
-
-	def get_ProjectId(self):
-		return self.get_body_params().get('ProjectId')
-
-	def set_ProjectId(self,ProjectId):
-		self.add_body_params('ProjectId', ProjectId)
+	def set_NodeId(self,NodeId):
+		self.add_body_params('NodeId', NodeId)

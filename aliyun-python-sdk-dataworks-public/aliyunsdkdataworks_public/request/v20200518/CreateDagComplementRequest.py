@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdataworks_public.endpoint import endpoint_data
 
-class CreateNodeTestRequest(RpcRequest):
+class CreateDagComplementRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'CreateNodeTest','dide')
+		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'CreateDagComplement','dide')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -37,11 +37,23 @@ class CreateNodeTestRequest(RpcRequest):
 	def set_ProjectEnv(self,ProjectEnv):
 		self.add_body_params('ProjectEnv', ProjectEnv)
 
+	def get_StartBizDate(self):
+		return self.get_body_params().get('StartBizDate')
+
+	def set_StartBizDate(self,StartBizDate):
+		self.add_body_params('StartBizDate', StartBizDate)
+
 	def get_Parallelism(self):
 		return self.get_body_params().get('Parallelism')
 
 	def set_Parallelism(self,Parallelism):
 		self.add_body_params('Parallelism', Parallelism)
+
+	def get_RootNodeId(self):
+		return self.get_body_params().get('RootNodeId')
+
+	def set_RootNodeId(self,RootNodeId):
+		self.add_body_params('RootNodeId', RootNodeId)
 
 	def get_BizBeginTime(self):
 		return self.get_body_params().get('BizBeginTime')
@@ -49,17 +61,17 @@ class CreateNodeTestRequest(RpcRequest):
 	def set_BizBeginTime(self,BizBeginTime):
 		self.add_body_params('BizBeginTime', BizBeginTime)
 
+	def get_EndBizDate(self):
+		return self.get_body_params().get('EndBizDate')
+
+	def set_EndBizDate(self,EndBizDate):
+		self.add_body_params('EndBizDate', EndBizDate)
+
 	def get_IncludeNodeIds(self):
 		return self.get_body_params().get('IncludeNodeIds')
 
 	def set_IncludeNodeIds(self,IncludeNodeIds):
 		self.add_body_params('IncludeNodeIds', IncludeNodeIds)
-
-	def get_Bizdate(self):
-		return self.get_body_params().get('Bizdate')
-
-	def set_Bizdate(self,Bizdate):
-		self.add_body_params('Bizdate', Bizdate)
 
 	def get_BizEndTime(self):
 		return self.get_body_params().get('BizEndTime')
@@ -79,14 +91,8 @@ class CreateNodeTestRequest(RpcRequest):
 	def set_ExcludeNodeIds(self,ExcludeNodeIds):
 		self.add_body_params('ExcludeNodeIds', ExcludeNodeIds)
 
-	def get_NodeId(self):
-		return self.get_body_params().get('NodeId')
+	def get_NodeParams(self):
+		return self.get_body_params().get('NodeParams')
 
-	def set_NodeId(self,NodeId):
-		self.add_body_params('NodeId', NodeId)
-
-	def get_NodeProjectId(self):
-		return self.get_body_params().get('NodeProjectId')
-
-	def set_NodeProjectId(self,NodeProjectId):
-		self.add_body_params('NodeProjectId', NodeProjectId)
+	def set_NodeParams(self,NodeParams):
+		self.add_body_params('NodeParams', NodeParams)

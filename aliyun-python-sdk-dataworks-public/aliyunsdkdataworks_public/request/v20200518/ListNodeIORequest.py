@@ -37,14 +37,14 @@ class ListNodeIORequest(RpcRequest):
 	def set_ProjectEnv(self,ProjectEnv):
 		self.add_body_params('ProjectEnv', ProjectEnv)
 
-	def get_Type(self):
-		return self.get_body_params().get('Type')
-
-	def set_Type(self,Type):
-		self.add_body_params('Type', Type)
-
 	def get_NodeId(self):
 		return self.get_body_params().get('NodeId')
 
 	def set_NodeId(self,NodeId):
 		self.add_body_params('NodeId', NodeId)
+
+	def get_IoType(self):
+		return self.get_body_params().get('IoType')
+
+	def set_IoType(self,IoType):
+		self.add_body_params('IoType', IoType)

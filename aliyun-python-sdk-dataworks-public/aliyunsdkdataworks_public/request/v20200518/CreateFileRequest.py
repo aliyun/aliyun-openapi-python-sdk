@@ -37,6 +37,12 @@ class CreateFileRequest(RpcRequest):
 	def set_FileType(self,FileType):
 		self.add_body_params('FileType', FileType)
 
+	def get_DependentNodeIdList(self):
+		return self.get_body_params().get('DependentNodeIdList')
+
+	def set_DependentNodeIdList(self,DependentNodeIdList):
+		self.add_body_params('DependentNodeIdList', DependentNodeIdList)
+
 	def get_Content(self):
 		return self.get_body_params().get('Content')
 
@@ -78,12 +84,6 @@ class CreateFileRequest(RpcRequest):
 
 	def set_AutoRerunIntervalMillis(self,AutoRerunIntervalMillis):
 		self.add_body_params('AutoRerunIntervalMillis', AutoRerunIntervalMillis)
-
-	def get_DependentCloudUuidList(self):
-		return self.get_body_params().get('DependentCloudUuidList')
-
-	def set_DependentCloudUuidList(self,DependentCloudUuidList):
-		self.add_body_params('DependentCloudUuidList', DependentCloudUuidList)
 
 	def get_InputList(self):
 		return self.get_body_params().get('InputList')
