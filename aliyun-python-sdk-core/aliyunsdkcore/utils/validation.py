@@ -12,6 +12,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+import re
+
 from aliyunsdkcore.acs_exception.exceptions import ClientException
 import aliyunsdkcore.acs_exception.error_code as error_code
 
@@ -21,3 +23,10 @@ def assert_integer_positive(integer, name):
         return
     raise ClientException(error_code.SDK_INVALID_PARAMETER,
                           "{0} should be a positive integer.".format(name))
+
+
+def validate_pattern(prop, prop_name, pattern):
+    match_obj = re.search(pattern, prop, re.M | re.I)
+    if not match_obj:
+        raise ClientException(error_code.SDK_INVALID_PARAMETER,
+                              prop_name + ' is not match')

@@ -474,6 +474,19 @@ class AcsClient:
         return body
 
     def _resolve_endpoint(self, request):
+        if self._region_id:
+            aliyunsdkcore.utils.validation.validate_pattern(
+                self._region_id, 'region_id', '^[a-zA-Z0-9_-]+$'
+            )
+        if request.product_suffix:
+            aliyunsdkcore.utils.validation.validate_pattern(
+                request.product_suffix, 'suffix', '^[a-zA-Z0-9_-]+$'
+            )
+        if request.request_network:
+            aliyunsdkcore.utils.validation.validate_pattern(
+                request.request_network, 'network', '^[a-zA-Z0-9_-]+$'
+            )
+
         resolve_request = ResolveEndpointRequest(
             self._region_id,
             request.get_product(),
