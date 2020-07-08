@@ -14,6 +14,7 @@ class TestDefaultEndpointResolver(unittest.TestCase):
         resolver = DefaultEndpointResolver(None)
         # can not be resolved
         request = ResolveEndpointRequest("mars", "ecs", "", "")
+        request.product_suffix = 'api'
         with self.assertRaises(ClientException) as ex:
             resolver.resolve(request)
         self.assertEqual(ex.exception.error_code, "SDK.EndpointResolvingError")
