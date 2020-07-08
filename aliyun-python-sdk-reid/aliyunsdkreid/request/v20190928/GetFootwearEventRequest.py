@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkreid.endpoint import endpoint_data
 
-class DescribeOverviewDataRequest(RpcRequest):
+class GetFootwearEventRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'reid', '2019-09-28', 'DescribeOverviewData','1.1.8.2')
+		RpcRequest.__init__(self, 'reid', '2019-09-28', 'GetFootwearEvent','1.1.8.2')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -37,8 +37,8 @@ class DescribeOverviewDataRequest(RpcRequest):
 	def set_Date(self,Date):
 		self.add_body_params('Date', Date)
 
-	def get_StoreIds(self):
-		return self.get_body_params().get('StoreIds')
+	def get_StoreId(self):
+		return self.get_body_params().get('StoreId')
 
-	def set_StoreIds(self,StoreIds):
-		self.add_body_params('StoreIds', StoreIds)
+	def set_StoreId(self,StoreId):
+		self.add_body_params('StoreId', StoreId)
