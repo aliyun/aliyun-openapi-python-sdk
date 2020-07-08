@@ -1,3 +1,6 @@
+2020-07-08 Version: 0.3.0
+- Support hotword and hint.
+
 2020-05-27 Version: 0.2.0
 - Add app-group-management and quota-updating APIs.
 - Add app management APIs.
