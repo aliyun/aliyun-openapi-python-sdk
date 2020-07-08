@@ -23,7 +23,7 @@ from aliyunsdkvcs.endpoint import endpoint_data
 class CreateVideoComposeTaskRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Vcs', '2020-05-15', 'CreateVideoComposeTask','vcs')
+		RpcRequest.__init__(self, 'Vcs', '2020-05-15', 'CreateVideoComposeTask')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -43,17 +43,23 @@ class CreateVideoComposeTaskRequest(RpcRequest):
 	def set_DomainName(self,DomainName):
 		self.add_body_params('DomainName', DomainName)
 
-	def get_PicUrlList(self):
-		return self.get_body_params().get('PicUrlList')
+	def get_VideoFrameRate(self):
+		return self.get_body_params().get('VideoFrameRate')
 
-	def set_PicUrlList(self,PicUrlList):
-		self.add_body_params('PicUrlList', PicUrlList)
+	def set_VideoFrameRate(self,VideoFrameRate):
+		self.add_body_params('VideoFrameRate', VideoFrameRate)
 
-	def get_AudioUrl(self):
-		return self.get_body_params().get('AudioUrl')
+	def get_ImageFileNames(self):
+		return self.get_body_params().get('ImageFileNames')
 
-	def set_AudioUrl(self,AudioUrl):
-		self.add_body_params('AudioUrl', AudioUrl)
+	def set_ImageFileNames(self,ImageFileNames):
+		self.add_body_params('ImageFileNames', ImageFileNames)
+
+	def get_AudioFileName(self):
+		return self.get_body_params().get('AudioFileName')
+
+	def set_AudioFileName(self,AudioFileName):
+		self.add_body_params('AudioFileName', AudioFileName)
 
 	def get_BucketName(self):
 		return self.get_body_params().get('BucketName')
@@ -66,12 +72,6 @@ class CreateVideoComposeTaskRequest(RpcRequest):
 
 	def set_ImageParameters(self,ImageParameters):
 		self.add_body_params('ImageParameters', ImageParameters)
-
-	def get_VideoRate(self):
-		return self.get_body_params().get('VideoRate')
-
-	def set_VideoRate(self,VideoRate):
-		self.add_body_params('VideoRate', VideoRate)
 
 	def get_VideoFormat(self):
 		return self.get_body_params().get('VideoFormat')
