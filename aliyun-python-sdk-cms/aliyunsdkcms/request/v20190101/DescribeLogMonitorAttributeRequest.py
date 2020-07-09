@@ -19,20 +19,14 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class ModifyHostInfoRequest(RpcRequest):
+class DescribeLogMonitorAttributeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cms', '2019-01-01', 'ModifyHostInfo','cms')
-		self.set_method('POST')
+		RpcRequest.__init__(self, 'Cms', '2019-01-01', 'DescribeLogMonitorAttribute','cms')
+		self.set_method('GET')
 
-	def get_HostName(self):
-		return self.get_query_params().get('HostName')
+	def get_MetricName(self):
+		return self.get_query_params().get('MetricName')
 
-	def set_HostName(self,HostName):
-		self.add_query_param('HostName',HostName)
-
-	def get_InstanceId(self):
-		return self.get_query_params().get('InstanceId')
-
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
+	def set_MetricName(self,MetricName):
+		self.add_query_param('MetricName',MetricName)

@@ -55,12 +55,6 @@ class DescribeCustomEventAttributeRequest(RpcRequest):
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
 
-	def get_Level(self):
-		return self.get_query_params().get('Level')
-
-	def set_Level(self,Level):
-		self.add_query_param('Level',Level)
-
 	def get_GroupId(self):
 		return self.get_query_params().get('GroupId')
 

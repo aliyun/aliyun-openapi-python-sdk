@@ -19,20 +19,14 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class ModifyHostInfoRequest(RpcRequest):
+class DeleteLogMonitorRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cms', '2019-01-01', 'ModifyHostInfo','cms')
+		RpcRequest.__init__(self, 'Cms', '2019-01-01', 'DeleteLogMonitor','cms')
 		self.set_method('POST')
 
-	def get_HostName(self):
-		return self.get_query_params().get('HostName')
+	def get_LogId(self):
+		return self.get_query_params().get('LogId')
 
-	def set_HostName(self,HostName):
-		self.add_query_param('HostName',HostName)
-
-	def get_InstanceId(self):
-		return self.get_query_params().get('InstanceId')
-
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
+	def set_LogId(self,LogId):
+		self.add_query_param('LogId',LogId)

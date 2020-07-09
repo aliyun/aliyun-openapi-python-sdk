@@ -19,17 +19,11 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class DescribeCustomEventCountRequest(RpcRequest):
+class DescribeLogMonitorListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cms', '2019-01-01', 'DescribeCustomEventCount','cms')
+		RpcRequest.__init__(self, 'Cms', '2019-01-01', 'DescribeLogMonitorList','cms')
 		self.set_method('POST')
-
-	def get_EventId(self):
-		return self.get_query_params().get('EventId')
-
-	def set_EventId(self,EventId):
-		self.add_query_param('EventId',EventId)
 
 	def get_GroupId(self):
 		return self.get_query_params().get('GroupId')
@@ -37,26 +31,20 @@ class DescribeCustomEventCountRequest(RpcRequest):
 	def set_GroupId(self,GroupId):
 		self.add_query_param('GroupId',GroupId)
 
-	def get_EndTime(self):
-		return self.get_query_params().get('EndTime')
+	def get_PageNumber(self):
+		return self.get_query_params().get('PageNumber')
 
-	def set_EndTime(self,EndTime):
-		self.add_query_param('EndTime',EndTime)
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)
 
-	def get_StartTime(self):
-		return self.get_query_params().get('StartTime')
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
 
-	def set_StartTime(self,StartTime):
-		self.add_query_param('StartTime',StartTime)
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
 
-	def get_SearchKeywords(self):
-		return self.get_query_params().get('SearchKeywords')
+	def get_SearchValue(self):
+		return self.get_query_params().get('SearchValue')
 
-	def set_SearchKeywords(self,SearchKeywords):
-		self.add_query_param('SearchKeywords',SearchKeywords)
-
-	def get_Name(self):
-		return self.get_query_params().get('Name')
-
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)
+	def set_SearchValue(self,SearchValue):
+		self.add_query_param('SearchValue',SearchValue)
