@@ -66,7 +66,8 @@ class NewEndpointTest(SDKTestBase):
 
         self._endpoint_resolver = ChainedEndpointResolver(resolver_chain)
 
-    def resolve(self, region_id, product_code, location_service_code=None, endpoint_type=None):
+    def resolve(self, region_id, product_code, location_service_code=None,
+                endpoint_type=None):
         request = ResolveEndpointRequest(region_id, product_code,
                                          location_service_code, endpoint_type)
         return self._endpoint_resolver.resolve(request)

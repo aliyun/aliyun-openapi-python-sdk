@@ -76,7 +76,7 @@ class LocalConfigRegionalEndpointResolver(EndpointResolverBase):
             return json.loads(fp.read())
 
     def resolve(self, request):
-        if request.is_open_api_endpoint():
+        if request.is_open_api_endpoint() and request.endpoint_regional is None:
             return self.fetch_endpoint_entry(request)
         else:
             return None
