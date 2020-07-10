@@ -23,7 +23,7 @@ from aliyunsdkvcs.endpoint import endpoint_data
 class CreateVideoComposeTaskRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Vcs', '2020-05-15', 'CreateVideoComposeTask')
+		RpcRequest.__init__(self, 'Vcs', '2020-05-15', 'CreateVideoComposeTask','vcs')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())

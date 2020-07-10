@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkvcs.endpoint import endpoint_data
 
-class SearchFaceRequest(RpcRequest):
+class ListBodyAlgorithmResultsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Vcs', '2020-05-15', 'SearchFace','vcs')
+		RpcRequest.__init__(self, 'Vcs', '2020-05-15', 'ListBodyAlgorithmResults','vcs')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,44 +31,50 @@ class SearchFaceRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_AlgorithmType(self):
+		return self.get_body_params().get('AlgorithmType')
+
+	def set_AlgorithmType(self,AlgorithmType):
+		self.add_body_params('AlgorithmType', AlgorithmType)
+
 	def get_CorpId(self):
 		return self.get_body_params().get('CorpId')
 
 	def set_CorpId(self,CorpId):
 		self.add_body_params('CorpId', CorpId)
 
-	def get_GbId(self):
-		return self.get_body_params().get('GbId')
+	def get_CapStyle(self):
+		return self.get_body_params().get('CapStyle')
 
-	def set_GbId(self,GbId):
-		self.add_body_params('GbId', GbId)
+	def set_CapStyle(self,CapStyle):
+		self.add_body_params('CapStyle', CapStyle)
 
-	def get_StartTimeStamp(self):
-		return self.get_body_params().get('StartTimeStamp')
+	def get_EndTime(self):
+		return self.get_body_params().get('EndTime')
 
-	def set_StartTimeStamp(self,StartTimeStamp):
-		self.add_body_params('StartTimeStamp', StartTimeStamp)
+	def set_EndTime(self,EndTime):
+		self.add_body_params('EndTime', EndTime)
 
-	def get_EndTimeStamp(self):
-		return self.get_body_params().get('EndTimeStamp')
+	def get_StartTime(self):
+		return self.get_body_params().get('StartTime')
 
-	def set_EndTimeStamp(self,EndTimeStamp):
-		self.add_body_params('EndTimeStamp', EndTimeStamp)
+	def set_StartTime(self,StartTime):
+		self.add_body_params('StartTime', StartTime)
 
-	def get_PageNo(self):
-		return self.get_body_params().get('PageNo')
+	def get_PageNumber(self):
+		return self.get_body_params().get('PageNumber')
 
-	def set_PageNo(self,PageNo):
-		self.add_body_params('PageNo', PageNo)
+	def set_PageNumber(self,PageNumber):
+		self.add_body_params('PageNumber', PageNumber)
+
+	def get_DataSourceId(self):
+		return self.get_body_params().get('DataSourceId')
+
+	def set_DataSourceId(self,DataSourceId):
+		self.add_body_params('DataSourceId', DataSourceId)
 
 	def get_PageSize(self):
 		return self.get_body_params().get('PageSize')
 
 	def set_PageSize(self,PageSize):
 		self.add_body_params('PageSize', PageSize)
-
-	def get_OptionList(self):
-		return self.get_body_params().get('OptionList')
-
-	def set_OptionList(self,OptionList):
-		self.add_body_params('OptionList', OptionList)
