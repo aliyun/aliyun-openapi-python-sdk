@@ -76,3 +76,9 @@ class ModifyImageSharePermissionRequest(RpcRequest):
 		for depth1 in range(len(RemoveAccounts)):
 			if RemoveAccounts[depth1] is not None:
 				self.add_query_param('RemoveAccount.' + str(depth1 + 1) , RemoveAccounts[depth1])
+
+	def get_LaunchPermission(self, LaunchPermission):
+		self.get_query_param().get('LaunchPermission')
+
+	def set_LaunchPermission(self, LaunchPermission):
+		self.add_query_param('LaunchPermission', LaunchPermission)
