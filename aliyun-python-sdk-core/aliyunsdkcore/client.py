@@ -416,7 +416,7 @@ class AcsClient:
     def _parse_error_info_from_response_body(response_body):
         error_code_to_return = error_code.SDK_UNKNOWN_SERVER_ERROR
         # TODO handle if response_body is too big
-        error_message_to_return = "ServerResponseBody: " + str(response_body)
+        error_message_to_return = "ServerResponseBody: %s" % (response_body)
         try:
             body_obj = json.loads(response_body)
             if 'Code' in body_obj:
