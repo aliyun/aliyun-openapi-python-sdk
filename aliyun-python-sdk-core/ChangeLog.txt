@@ -1,4 +1,7 @@
-2020-06-18 Version 2.13.20
+2020-07-13 Version 2.13.22
+1, Fixed the problem of unicode encoding for Chinese characters.
+
+2020-06-18 Version 2.13.21
 1, Fixed endpoint resolve.
 
 2020-06-18 Version 2.13.20
