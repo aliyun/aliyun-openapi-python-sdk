@@ -23,7 +23,8 @@ from aliyunsdkalidns.endpoint import endpoint_data
 class AddGtmAddressPoolRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'AddGtmAddressPool','alidns')
+		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'AddGtmAddressPool','Alidns')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -69,15 +70,14 @@ class AddGtmAddressPoolRequest(RpcRequest):
 	def get_Addrs(self):
 		return self.get_query_params().get('Addrs')
 
-	def set_Addrs(self,Addrs):
-		for i in range(len(Addrs)):	
-			if Addrs[i].get('Mode') is not None:
-				self.add_query_param('Addr.' + str(i + 1) + '.Mode' , Addrs[i].get('Mode'))
-			if Addrs[i].get('LbaWeight') is not None:
-				self.add_query_param('Addr.' + str(i + 1) + '.LbaWeight' , Addrs[i].get('LbaWeight'))
-			if Addrs[i].get('Value') is not None:
-				self.add_query_param('Addr.' + str(i + 1) + '.Value' , Addrs[i].get('Value'))
-
+	def set_Addrs(self, Addrs):
+		for depth1 in range(len(Addrs)):
+			if Addrs[depth1].get('Mode') is not None:
+				self.add_query_param('Addr.' + str(depth1 + 1) + '.Mode', Addrs[depth1].get('Mode'))
+			if Addrs[depth1].get('LbaWeight') is not None:
+				self.add_query_param('Addr.' + str(depth1 + 1) + '.LbaWeight', Addrs[depth1].get('LbaWeight'))
+			if Addrs[depth1].get('Value') is not None:
+				self.add_query_param('Addr.' + str(depth1 + 1) + '.Value', Addrs[depth1].get('Value'))
 
 	def get_MonitorStatus(self):
 		return self.get_query_params().get('MonitorStatus')
@@ -112,9 +112,9 @@ class AddGtmAddressPoolRequest(RpcRequest):
 	def get_IspCityNodes(self):
 		return self.get_query_params().get('IspCityNodes')
 
-	def set_IspCityNodes(self,IspCityNodes):
-		for i in range(len(IspCityNodes)):	
-			if IspCityNodes[i].get('CityCode') is not None:
-				self.add_query_param('IspCityNode.' + str(i + 1) + '.CityCode' , IspCityNodes[i].get('CityCode'))
-			if IspCityNodes[i].get('IspCode') is not None:
-				self.add_query_param('IspCityNode.' + str(i + 1) + '.IspCode' , IspCityNodes[i].get('IspCode'))
+	def set_IspCityNodes(self, IspCityNodes):
+		for depth1 in range(len(IspCityNodes)):
+			if IspCityNodes[depth1].get('CityCode') is not None:
+				self.add_query_param('IspCityNode.' + str(depth1 + 1) + '.CityCode', IspCityNodes[depth1].get('CityCode'))
+			if IspCityNodes[depth1].get('IspCode') is not None:
+				self.add_query_param('IspCityNode.' + str(depth1 + 1) + '.IspCode', IspCityNodes[depth1].get('IspCode'))

@@ -23,7 +23,8 @@ from aliyunsdkalidns.endpoint import endpoint_data
 class UpdateCustomLineRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'UpdateCustomLine','alidns')
+		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'UpdateCustomLine','Alidns')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -39,13 +40,12 @@ class UpdateCustomLineRequest(RpcRequest):
 	def get_IpSegments(self):
 		return self.get_query_params().get('IpSegments')
 
-	def set_IpSegments(self,IpSegments):
-		for i in range(len(IpSegments)):	
-			if IpSegments[i].get('EndIp') is not None:
-				self.add_query_param('IpSegment.' + str(i + 1) + '.EndIp' , IpSegments[i].get('EndIp'))
-			if IpSegments[i].get('StartIp') is not None:
-				self.add_query_param('IpSegment.' + str(i + 1) + '.StartIp' , IpSegments[i].get('StartIp'))
-
+	def set_IpSegments(self, IpSegments):
+		for depth1 in range(len(IpSegments)):
+			if IpSegments[depth1].get('EndIp') is not None:
+				self.add_query_param('IpSegment.' + str(depth1 + 1) + '.EndIp', IpSegments[depth1].get('EndIp'))
+			if IpSegments[depth1].get('StartIp') is not None:
+				self.add_query_param('IpSegment.' + str(depth1 + 1) + '.StartIp', IpSegments[depth1].get('StartIp'))
 
 	def get_LineName(self):
 		return self.get_query_params().get('LineName')

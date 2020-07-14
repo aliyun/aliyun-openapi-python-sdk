@@ -23,7 +23,8 @@ from aliyunsdkalidns.endpoint import endpoint_data
 class UpdateDomainGroupRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'UpdateDomainGroup','alidns')
+		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'UpdateDomainGroup','Alidns')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):

@@ -23,7 +23,8 @@ from aliyunsdkalidns.endpoint import endpoint_data
 class UpdateGtmMonitorRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'UpdateGtmMonitor','alidns')
+		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'UpdateGtmMonitor','Alidns')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -75,9 +76,9 @@ class UpdateGtmMonitorRequest(RpcRequest):
 	def get_IspCityNodes(self):
 		return self.get_query_params().get('IspCityNodes')
 
-	def set_IspCityNodes(self,IspCityNodes):
-		for i in range(len(IspCityNodes)):	
-			if IspCityNodes[i].get('CityCode') is not None:
-				self.add_query_param('IspCityNode.' + str(i + 1) + '.CityCode' , IspCityNodes[i].get('CityCode'))
-			if IspCityNodes[i].get('IspCode') is not None:
-				self.add_query_param('IspCityNode.' + str(i + 1) + '.IspCode' , IspCityNodes[i].get('IspCode'))
+	def set_IspCityNodes(self, IspCityNodes):
+		for depth1 in range(len(IspCityNodes)):
+			if IspCityNodes[depth1].get('CityCode') is not None:
+				self.add_query_param('IspCityNode.' + str(depth1 + 1) + '.CityCode', IspCityNodes[depth1].get('CityCode'))
+			if IspCityNodes[depth1].get('IspCode') is not None:
+				self.add_query_param('IspCityNode.' + str(depth1 + 1) + '.IspCode', IspCityNodes[depth1].get('IspCode'))
