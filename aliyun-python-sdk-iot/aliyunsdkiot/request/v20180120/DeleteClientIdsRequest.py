@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkiot.endpoint import endpoint_data
 
-class UpdateDeviceShadowRequest(RpcRequest):
+class DeleteClientIdsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'UpdateDeviceShadow','iot')
+		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'DeleteClientIds','iot')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,32 +31,14 @@ class UpdateDeviceShadowRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_ShadowMessage(self):
-		return self.get_query_params().get('ShadowMessage')
+	def get_IotId(self):
+		return self.get_query_params().get('IotId')
 
-	def set_ShadowMessage(self,ShadowMessage):
-		self.add_query_param('ShadowMessage',ShadowMessage)
+	def set_IotId(self,IotId):
+		self.add_query_param('IotId',IotId)
 
 	def get_IotInstanceId(self):
 		return self.get_query_params().get('IotInstanceId')
 
 	def set_IotInstanceId(self,IotInstanceId):
 		self.add_query_param('IotInstanceId',IotInstanceId)
-
-	def get_ProductKey(self):
-		return self.get_query_params().get('ProductKey')
-
-	def set_ProductKey(self,ProductKey):
-		self.add_query_param('ProductKey',ProductKey)
-
-	def get_DeltaUpdate(self):
-		return self.get_query_params().get('DeltaUpdate')
-
-	def set_DeltaUpdate(self,DeltaUpdate):
-		self.add_query_param('DeltaUpdate',DeltaUpdate)
-
-	def get_DeviceName(self):
-		return self.get_query_params().get('DeviceName')
-
-	def set_DeviceName(self,DeviceName):
-		self.add_query_param('DeviceName',DeviceName)

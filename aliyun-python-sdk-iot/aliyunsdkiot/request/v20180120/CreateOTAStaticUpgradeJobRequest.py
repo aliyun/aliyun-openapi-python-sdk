@@ -55,6 +55,12 @@ class CreateOTAStaticUpgradeJobRequest(RpcRequest):
 	def set_TargetSelection(self,TargetSelection):
 		self.add_query_param('TargetSelection',TargetSelection)
 
+	def get_ScheduleFinishTime(self):
+		return self.get_query_params().get('ScheduleFinishTime')
+
+	def set_ScheduleFinishTime(self,ScheduleFinishTime):
+		self.add_query_param('ScheduleFinishTime',ScheduleFinishTime)
+
 	def get_GrayPercent(self):
 		return self.get_query_params().get('GrayPercent')
 
