@@ -23,7 +23,6 @@ from aliyunsdkcore.endpoint.local_config_regional_endpoint_resolver \
 class EndpointResolverRules(LocalConfigRegionalEndpointResolver):
     def __init__(self, *args, **kwargs):
         LocalConfigRegionalEndpointResolver.__init__(self)
-        self.region_headers = ['cn', 'ap', 'eu', 'rus', 'us', 'me']
         self.product_code_valid = False
         self.region_id_valid = False
         self.endpoint_map = None
@@ -58,11 +57,6 @@ class EndpointResolverRules(LocalConfigRegionalEndpointResolver):
 
             endpoint = "".join(list(filter(lambda x: x, endpoint_param_list)))
         return endpoint
-
-    def verify_region_id(self, region_id):
-        region = region_id.split('-')
-        if len(region) >= 2 and region[0] in self.region_headers:
-            return True
 
     def is_product_code_valid(self, request):
         return self.product_code_valid

@@ -25,6 +25,7 @@ import logging
 import jmespath
 import copy
 import platform
+import sys
 
 import aliyunsdkcore
 from aliyunsdkcore.vendored.six.moves.urllib.parse import urlencode
@@ -54,6 +55,10 @@ from aliyunsdkcore.vendored.requests.structures import OrderedDict
 """
 Acs default client module.
 """
+
+if sys.version_info.major == 2:
+    reload(sys)
+    sys.setdefaultencoding('utf-8')
 
 DEFAULT_READ_TIMEOUT = 10
 DEFAULT_CONNECTION_TIMEOUT = 5
@@ -397,7 +402,7 @@ class AcsClient:
         params = copy.deepcopy(request.get_query_params())
         params.pop('AccessKeyId', None)
         logger.debug('Request received. Product:%s Endpoint:%s Params: %s',
-                     request.get_product(), endpoint, str(params))
+                     request.get_product(), endpoint, params)
 
         # Do the actual network thing
         try:
@@ -406,7 +411,7 @@ class AcsClient:
 
             exception = ClientException(error_code.SDK_HTTP_ERROR, str(e))
             logger.error("HttpError occurred. Host:%s SDK-Version:%s ClientException:%s",
-                         endpoint, aliyunsdkcore.__version__, str(exception))
+                         endpoint, aliyunsdkcore.__version__, exception)
             return None, None, None, exception
 
         exception = self._get_server_exception(status, body, endpoint, request.string_to_sign)
@@ -456,7 +461,7 @@ class AcsClient:
                 request_id=request_id)
 
             logger.error("ServerException occurred. Host:%s SDK-Version:%s ServerException:%s",
-                         endpoint, aliyunsdkcore.__version__, str(exception))
+                         endpoint, aliyunsdkcore.__version__, exception)
 
             return exception
 

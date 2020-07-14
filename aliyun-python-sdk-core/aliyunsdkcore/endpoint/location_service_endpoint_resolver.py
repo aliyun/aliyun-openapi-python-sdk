@@ -124,9 +124,7 @@ class LocationServiceEndpointResolver(EndpointResolverBase):
         return False
 
     def is_region_id_valid(self, request):
-        if request.location_service_code:
-            return request.region_id not in self._invalid_region_ids
-        return False
+        return self.verify_region_id(request.region_id.lower())
 
     def get_endpoint_key_from_request(self, request):
         return self._make_endpoint_entry_key(

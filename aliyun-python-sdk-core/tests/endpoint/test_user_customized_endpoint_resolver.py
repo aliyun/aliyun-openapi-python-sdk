@@ -15,7 +15,7 @@ class TestUserCustomizedEndpointResolver(unittest.TestCase):
             "ecs", "cn-huhehaote"), "ecs.cn-huhehaote")
         request = ResolveEndpointRequest("cn-huhehaote", "ecs", "", "")
         self.assertEqual(resolver.resolve(request), None)
-        self.assertFalse(resolver.is_region_id_valid(request))
+        self.assertTrue(resolver.is_region_id_valid(request))
         resolver.put_endpoint_entry(
             "cn-huhehaote", "ecs", "my-endpoint-for-cnhuhehaote-ecs")
         request = ResolveEndpointRequest("cn-huhehaote", "ecs", "", "")
