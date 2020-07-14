@@ -30,6 +30,6 @@ class TestLocalConfigGlobalEndpointResolver(unittest.TestCase):
         self.assertEqual(resolver._make_endpoint_entry_key("ram"), "ram")
         request = ResolveEndpointRequest("cn-huhehaote", "ram", "", "")
         self.assertEqual(resolver.resolve(request), None)
-        self.assertFalse(resolver.is_region_id_valid(request))
+        self.assertTrue(resolver.is_region_id_valid(request))
         request = ResolveEndpointRequest("cn-huhehaote", "ram", "", "innerAPI")
         self.assertEqual(resolver.resolve(request), None)

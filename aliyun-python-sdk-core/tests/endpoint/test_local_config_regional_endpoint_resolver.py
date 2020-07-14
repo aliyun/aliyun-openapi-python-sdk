@@ -41,14 +41,14 @@ class TestLocalConfigRegionalEndpointResolver(unittest.TestCase):
 
         request = ResolveEndpointRequest("cn-huhehaote", "ecs", "", "")
         self.assertEqual(resolver.resolve(request), None)
-        self.assertFalse(resolver.is_region_id_valid(request))
+        self.assertTrue(resolver.is_region_id_valid(request))
 
         resolver.put_endpoint_entry(
             "ecs.cn-huhehaote", "my-endpoint-for-cnhuhehaote-ecs")
         request = ResolveEndpointRequest("cn-huhehaote", "ecs", "", "")
         self.assertEqual(resolver.resolve(request),
                          "my-endpoint-for-cnhuhehaote-ecs")
-        self.assertFalse(resolver.is_region_id_valid(request))
+        self.assertTrue(resolver.is_region_id_valid(request))
 
         request = ResolveEndpointRequest("cn-huhehaote", "ecs", "", "innerAPI")
         self.assertEqual(resolver.resolve(request), None)

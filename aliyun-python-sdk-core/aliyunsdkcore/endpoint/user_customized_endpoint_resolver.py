@@ -40,7 +40,7 @@ class UserCustomizedEndpointResolver(EndpointResolverBase):
         return product_code.lower() + "." + region_id.lower()
 
     def is_region_id_valid(self, request):
-        return request.region_id in self._valid_region_ids
+        return self.verify_region_id(request.region_id.lower())
 
     def reset(self):
         self.endpoints_data = dict()

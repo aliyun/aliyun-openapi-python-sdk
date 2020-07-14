@@ -24,6 +24,7 @@ class EndpointResolverBase(EndpointResolver):
 
     def __init__(self):
         EndpointResolver.__init__(self)
+        self.region_headers = ['cn', 'ap', 'eu', 'rus', 'us', 'me']
         self.endpoints_data = dict()
 
     def fetch_endpoint_entry(self, request):
@@ -48,3 +49,8 @@ class EndpointResolverBase(EndpointResolver):
     def get_valid_region_ids_by_product(self, product_code):
         # Only local config can tell
         return None
+
+    def verify_region_id(self, region_id):
+        region = region_id.split('-')
+        if len(region) >= 2 and region[0] in self.region_headers:
+            return True

@@ -88,7 +88,7 @@ class LocalConfigRegionalEndpointResolver(EndpointResolverBase):
         return self._get_normalized_product_code(product_code) + "." + region_id.lower()
 
     def is_region_id_valid(self, request):
-        return request.region_id in self._valid_region_ids
+        return self.verify_region_id(request.region_id.lower())
 
     def get_valid_region_ids_by_product(self, product_code):
         code = self._get_normalized_product_code(product_code)

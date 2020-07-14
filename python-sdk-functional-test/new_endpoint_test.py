@@ -147,36 +147,6 @@ class NewEndpointTest(SDKTestBase):
             self.resolve("mars-ningbo", "abc")
         )
 
-    def test_global_endpoint_comes_from_local_config(self):
-        test_config = """
-            {
-                "regional_endpoints" : {
-                    "abc" : {
-                        "mars-ningbo" : "ecs.mars-ningbo.aliyuncs.com"
-                    }
-                },
-                "global_endpoints" : {
-                    "abc" : "ecs.mars.aliyuncs.com"
-                },
-                "regions" : ["mars-ningbo", "mars-hangzhou", "mars-shanghai"]
-            }
-        """
-
-        self.init_env(test_config)
-
-        self.assertEqual(
-            "ecs.mars-ningbo.aliyuncs.com",
-            self.resolve("mars-ningbo", "abc")
-        )
-        self.assertEqual(
-            "ecs.mars.aliyuncs.com",
-            self.resolve("mars-hangzhou", "abc")
-        )
-        self.assertEqual(
-            "ecs.mars.aliyuncs.com",
-            self.resolve("mars-shanghai", "abc")
-        )
-
     def test_endpoint_comes_from_location_service(self):
         self.init_env("{}")  # empty local config
         with patch.object(
