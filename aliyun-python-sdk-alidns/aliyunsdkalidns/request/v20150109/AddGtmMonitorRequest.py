@@ -23,7 +23,7 @@ from aliyunsdkalidns.endpoint import endpoint_data
 class AddGtmMonitorRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'AddGtmMonitor','Alidns')
+		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'AddGtmMonitor','alidns')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())

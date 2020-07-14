@@ -23,7 +23,7 @@ from aliyunsdkalidns.endpoint import endpoint_data
 class DescribeGtmRecoveryPlansRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'DescribeGtmRecoveryPlans','Alidns')
+		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'DescribeGtmRecoveryPlans','alidns')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())

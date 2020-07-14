@@ -23,7 +23,7 @@ from aliyunsdkalidns.endpoint import endpoint_data
 class DescribeBatchResultDetailRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'DescribeBatchResultDetail','Alidns')
+		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'DescribeBatchResultDetail','alidns')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())

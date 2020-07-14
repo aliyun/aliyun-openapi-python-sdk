@@ -23,7 +23,7 @@ from aliyunsdkalidns.endpoint import endpoint_data
 class DescribeDomainGroupsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'DescribeDomainGroups','Alidns')
+		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'DescribeDomainGroups','alidns')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())

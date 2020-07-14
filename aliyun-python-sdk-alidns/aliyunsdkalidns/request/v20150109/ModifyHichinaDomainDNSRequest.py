@@ -23,7 +23,7 @@ from aliyunsdkalidns.endpoint import endpoint_data
 class ModifyHichinaDomainDNSRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'ModifyHichinaDomainDNS','Alidns')
+		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'ModifyHichinaDomainDNS','alidns')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())

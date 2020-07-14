@@ -23,7 +23,7 @@ from aliyunsdkalidns.endpoint import endpoint_data
 class DescribeDnsProductInstancesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'DescribeDnsProductInstances','Alidns')
+		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'DescribeDnsProductInstances','alidns')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())

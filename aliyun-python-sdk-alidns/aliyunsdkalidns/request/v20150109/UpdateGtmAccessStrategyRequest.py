@@ -23,7 +23,7 @@ from aliyunsdkalidns.endpoint import endpoint_data
 class UpdateGtmAccessStrategyRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'UpdateGtmAccessStrategy','Alidns')
+		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'UpdateGtmAccessStrategy','alidns')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
