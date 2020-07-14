@@ -67,6 +67,12 @@ class InitDeviceRequest(RpcRequest):
 	def set_CertifyId(self,CertifyId):
 		self.add_query_param('CertifyId',CertifyId)
 
+	def get_WebUmidToken(self):
+		return self.get_body_params().get('WebUmidToken')
+
+	def set_WebUmidToken(self,WebUmidToken):
+		self.add_body_params('WebUmidToken', WebUmidToken)
+
 	def get_OuterOrderNo(self):
 		return self.get_query_params().get('OuterOrderNo')
 
@@ -78,6 +84,12 @@ class InitDeviceRequest(RpcRequest):
 
 	def set_ProduceNode(self,ProduceNode):
 		self.add_query_param('ProduceNode',ProduceNode)
+
+	def get_UaToken(self):
+		return self.get_body_params().get('UaToken')
+
+	def set_UaToken(self,UaToken):
+		self.add_body_params('UaToken', UaToken)
 
 	def get_ProductName(self):
 		return self.get_query_params().get('ProductName')
