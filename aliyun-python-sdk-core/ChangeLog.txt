@@ -1,3 +1,6 @@
+2020-07-14 Version 2.13.23
+1, Replace the old verify region_id rule.
+
 2020-07-13 Version 2.13.22
 1, Fixed the problem of unicode encoding for Chinese characters.
 
