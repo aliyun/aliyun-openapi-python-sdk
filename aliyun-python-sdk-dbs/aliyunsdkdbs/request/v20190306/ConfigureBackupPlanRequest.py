@@ -121,6 +121,12 @@ class ConfigureBackupPlanRequest(RpcRequest):
 	def set_CrossAliyunId(self,CrossAliyunId):
 		self.add_query_param('CrossAliyunId',CrossAliyunId)
 
+	def get_AutoStartBackup(self):
+		return self.get_query_params().get('AutoStartBackup')
+
+	def set_AutoStartBackup(self,AutoStartBackup):
+		self.add_query_param('AutoStartBackup',AutoStartBackup)
+
 	def get_SourceEndpointPassword(self):
 		return self.get_query_params().get('SourceEndpointPassword')
 

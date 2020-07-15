@@ -60,3 +60,9 @@ class DescribeRestoreRangeInfoRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_RecentlyRestore(self):
+		return self.get_query_params().get('RecentlyRestore')
+
+	def set_RecentlyRestore(self,RecentlyRestore):
+		self.add_query_param('RecentlyRestore',RecentlyRestore)

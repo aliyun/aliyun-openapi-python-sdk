@@ -43,6 +43,12 @@ class DescribeFullBackupListRequest(RpcRequest):
 	def set_BackupPlanId(self,BackupPlanId):
 		self.add_query_param('BackupPlanId',BackupPlanId)
 
+	def get_BackupSetId(self):
+		return self.get_query_params().get('BackupSetId')
+
+	def set_BackupSetId(self,BackupSetId):
+		self.add_query_param('BackupSetId',BackupSetId)
+
 	def get_PageNum(self):
 		return self.get_query_params().get('PageNum')
 
