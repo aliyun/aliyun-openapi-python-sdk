@@ -43,6 +43,12 @@ class ModifyImageSharePermissionRequest(RpcRequest):
 	def set_ImageId(self,ImageId):
 		self.add_query_param('ImageId',ImageId)
 
+	def get_LaunchPermission(self):
+		return self.get_query_params().get('LaunchPermission')
+
+	def set_LaunchPermission(self,LaunchPermission):
+		self.add_query_param('LaunchPermission',LaunchPermission)
+
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 

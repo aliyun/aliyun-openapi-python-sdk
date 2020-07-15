@@ -73,6 +73,12 @@ class ImportImageRequest(RpcRequest):
 	def set_ResourceGroupId(self,ResourceGroupId):
 		self.add_query_param('ResourceGroupId',ResourceGroupId)
 
+	def get_BootMode(self):
+		return self.get_query_params().get('BootMode')
+
+	def set_BootMode(self,BootMode):
+		self.add_query_param('BootMode',BootMode)
+
 	def get_ImageName(self):
 		return self.get_query_params().get('ImageName')
 
