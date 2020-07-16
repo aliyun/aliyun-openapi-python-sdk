@@ -20,13 +20,26 @@
 from aliyunsdkcore.request import RoaRequest
 from aliyunsdkopensearch.endpoint import endpoint_data
 
-class DescribeRegionsRequest(RoaRequest):
+class ListSlowQueryQueriesRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'OpenSearch', '2017-12-25', 'DescribeRegions','opensearch')
-		self.set_uri_pattern('/v4/openapi/regions')
+		RoaRequest.__init__(self, 'OpenSearch', '2017-12-25', 'ListSlowQueryQueries','opensearch')
+		self.set_uri_pattern('/v4/openapi/app-groups/[appGroupIdentity]/optimizers/slow-query/categories/[categoryIndex]/queries')
 		self.set_method('GET')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
+
+	def get_categoryIndex(self):
+		return self.get_path_params().get('categoryIndex')
+
+	def set_categoryIndex(self,categoryIndex):
+		self.add_path_param('categoryIndex',categoryIndex)
+
+	def get_appGroupIdentity(self):
+		return self.get_path_params().get('appGroupIdentity')
+
+	def set_appGroupIdentity(self,appGroupIdentity):
+		self.add_path_param('appGroupIdentity',appGroupIdentity)

@@ -20,13 +20,32 @@
 from aliyunsdkcore.request import RoaRequest
 from aliyunsdkopensearch.endpoint import endpoint_data
 
-class DescribeRegionsRequest(RoaRequest):
+class DescribeAppGroupDataReportRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'OpenSearch', '2017-12-25', 'DescribeRegions','opensearch')
-		self.set_uri_pattern('/v4/openapi/regions')
+		RoaRequest.__init__(self, 'OpenSearch', '2017-12-25', 'DescribeAppGroupDataReport','opensearch')
+		self.set_uri_pattern('/v4/openapi/app-groups/[appGroupIdentity]/data-report')
 		self.set_method('GET')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
+
+	def get_endTime(self):
+		return self.get_query_params().get('endTime')
+
+	def set_endTime(self,endTime):
+		self.add_query_param('endTime',endTime)
+
+	def get_startTime(self):
+		return self.get_query_params().get('startTime')
+
+	def set_startTime(self,startTime):
+		self.add_query_param('startTime',startTime)
+
+	def get_appGroupIdentity(self):
+		return self.get_path_params().get('appGroupIdentity')
+
+	def set_appGroupIdentity(self,appGroupIdentity):
+		self.add_path_param('appGroupIdentity',appGroupIdentity)

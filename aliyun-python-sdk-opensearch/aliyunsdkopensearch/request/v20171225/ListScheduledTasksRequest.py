@@ -20,13 +20,38 @@
 from aliyunsdkcore.request import RoaRequest
 from aliyunsdkopensearch.endpoint import endpoint_data
 
-class DescribeRegionsRequest(RoaRequest):
+class ListScheduledTasksRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'OpenSearch', '2017-12-25', 'DescribeRegions','opensearch')
-		self.set_uri_pattern('/v4/openapi/regions')
+		RoaRequest.__init__(self, 'OpenSearch', '2017-12-25', 'ListScheduledTasks','opensearch')
+		self.set_uri_pattern('/v4/openapi/app-groups/[appGroupIdentity]/scheduled-tasks')
 		self.set_method('GET')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
+
+	def get_pageSize(self):
+		return self.get_query_params().get('pageSize')
+
+	def set_pageSize(self,pageSize):
+		self.add_query_param('pageSize',pageSize)
+
+	def get_type(self):
+		return self.get_query_params().get('type')
+
+	def set_type(self,type):
+		self.add_query_param('type',type)
+
+	def get_appGroupIdentity(self):
+		return self.get_path_params().get('appGroupIdentity')
+
+	def set_appGroupIdentity(self,appGroupIdentity):
+		self.add_path_param('appGroupIdentity',appGroupIdentity)
+
+	def get_pageNumber(self):
+		return self.get_query_params().get('pageNumber')
+
+	def set_pageNumber(self,pageNumber):
+		self.add_query_param('pageNumber',pageNumber)
