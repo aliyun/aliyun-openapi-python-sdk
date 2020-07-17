@@ -70,9 +70,9 @@ class CreateDBNodesRequest(RpcRequest):
 	def get_DBNodes(self):
 		return self.get_query_params().get('DBNodes')
 
-	def set_DBNodes(self,DBNodes):
-		for i in range(len(DBNodes)):	
-			if DBNodes[i].get('TargetClass') is not None:
-				self.add_query_param('DBNode.' + str(i + 1) + '.TargetClass' , DBNodes[i].get('TargetClass'))
-			if DBNodes[i].get('ZoneId') is not None:
-				self.add_query_param('DBNode.' + str(i + 1) + '.ZoneId' , DBNodes[i].get('ZoneId'))
+	def set_DBNodes(self, DBNodes):
+		for depth1 in range(len(DBNodes)):
+			if DBNodes[depth1].get('TargetClass') is not None:
+				self.add_query_param('DBNode.' + str(depth1 + 1) + '.TargetClass', DBNodes[depth1].get('TargetClass'))
+			if DBNodes[depth1].get('ZoneId') is not None:
+				self.add_query_param('DBNode.' + str(depth1 + 1) + '.ZoneId', DBNodes[depth1].get('ZoneId'))

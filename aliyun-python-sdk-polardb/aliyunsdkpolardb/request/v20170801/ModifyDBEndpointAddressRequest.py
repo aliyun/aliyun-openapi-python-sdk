@@ -85,6 +85,12 @@ class ModifyDBEndpointAddressRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
+	def get_Port(self):
+		return self.get_query_params().get('Port')
+
+	def set_Port(self,Port):
+		self.add_query_param('Port',Port)
+
 	def get_NetType(self):
 		return self.get_query_params().get('NetType')
 

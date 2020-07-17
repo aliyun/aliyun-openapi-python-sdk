@@ -40,10 +40,10 @@ class DeleteDBNodesRequest(RpcRequest):
 	def get_DBNodeIds(self):
 		return self.get_query_params().get('DBNodeIds')
 
-	def set_DBNodeIds(self,DBNodeIds):
-		for i in range(len(DBNodeIds)):	
-			if DBNodeIds[i] is not None:
-				self.add_query_param('DBNodeId.' + str(i + 1) , DBNodeIds[i]);
+	def set_DBNodeIds(self, DBNodeIds):
+		for depth1 in range(len(DBNodeIds)):
+			if DBNodeIds[depth1] is not None:
+				self.add_query_param('DBNodeId.' + str(depth1 + 1) , DBNodeIds[depth1])
 
 	def get_ClientToken(self):
 		return self.get_query_params().get('ClientToken')

@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkpolardb.endpoint import endpoint_data
 
-class ModifyDBClusterMigrationRequest(RpcRequest):
+class DescribeDBClusterAuditLogCollectorRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'polardb', '2017-08-01', 'ModifyDBClusterMigration','polardb')
+		RpcRequest.__init__(self, 'polardb', '2017-08-01', 'DescribeDBClusterAuditLogCollector','polardb')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -36,18 +36,6 @@ class ModifyDBClusterMigrationRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_SecurityToken(self):
-		return self.get_query_params().get('SecurityToken')
-
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)
-
-	def get_NewMasterInstanceId(self):
-		return self.get_query_params().get('NewMasterInstanceId')
-
-	def set_NewMasterInstanceId(self,NewMasterInstanceId):
-		self.add_query_param('NewMasterInstanceId',NewMasterInstanceId)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -66,18 +54,6 @@ class ModifyDBClusterMigrationRequest(RpcRequest):
 
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
-
-	def get_SourceRDSDBInstanceId(self):
-		return self.get_query_params().get('SourceRDSDBInstanceId')
-
-	def set_SourceRDSDBInstanceId(self,SourceRDSDBInstanceId):
-		self.add_query_param('SourceRDSDBInstanceId',SourceRDSDBInstanceId)
-
-	def get_SwapConnectionString(self):
-		return self.get_query_params().get('SwapConnectionString')
-
-	def set_SwapConnectionString(self,SwapConnectionString):
-		self.add_query_param('SwapConnectionString',SwapConnectionString)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
