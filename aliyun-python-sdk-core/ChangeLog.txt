@@ -1,3 +1,7 @@
+2020-07-20 Version 2.13.24
+1, Delete code that affects external programs.
+2, Improve python2 compatibility
+
 2020-07-14 Version 2.13.23
 1, Replace the old verify region_id rule.
 
