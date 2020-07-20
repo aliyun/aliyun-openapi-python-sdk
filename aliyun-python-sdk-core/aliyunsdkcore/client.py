@@ -50,15 +50,12 @@ import aliyunsdkcore.utils.parameter_helper
 import aliyunsdkcore.utils.validation
 from aliyunsdkcore.vendored.requests.structures import CaseInsensitiveDict
 from aliyunsdkcore.vendored.requests.structures import OrderedDict
+from aliyunsdkcore import compat
 
 
 """
 Acs default client module.
 """
-
-if sys.version_info.major == 2:
-    reload(sys)
-    sys.setdefaultencoding('utf-8')
 
 DEFAULT_READ_TIMEOUT = 10
 DEFAULT_CONNECTION_TIMEOUT = 5
@@ -409,9 +406,10 @@ class AcsClient:
             status, headers, body = http_response.get_response_object()
         except IOError as e:
 
-            exception = ClientException(error_code.SDK_HTTP_ERROR, str(e))
-            logger.error("HttpError occurred. Host:%s SDK-Version:%s ClientException:%s",
+            exception = ClientException(error_code.SDK_HTTP_ERROR, compat.ensure_string('%s' % e))
+            msg = "HttpError occurred. Host:%s SDK-Version:%s ClientException:%s" % (
                          endpoint, aliyunsdkcore.__version__, exception)
+            logger.error(compat.ensure_string(msg))
             return None, None, None, exception
 
         exception = self._get_server_exception(status, body, endpoint, request.string_to_sign)
@@ -421,7 +419,7 @@ class AcsClient:
     def _parse_error_info_from_response_body(response_body):
         error_code_to_return = error_code.SDK_UNKNOWN_SERVER_ERROR
         # TODO handle if response_body is too big
-        error_message_to_return = "ServerResponseBody: %s" % (response_body)
+        error_message_to_return = compat.ensure_string("ServerResponseBody: %s" % (response_body,))
         try:
             body_obj = json.loads(response_body)
             if 'Code' in body_obj:
@@ -460,8 +458,9 @@ class AcsClient:
                 http_status=http_status,
                 request_id=request_id)
 
-            logger.error("ServerException occurred. Host:%s SDK-Version:%s ServerException:%s",
+            msg = "ServerException occurred. Host:%s SDK-Version:%s ServerException:%s" % (
                          endpoint, aliyunsdkcore.__version__, exception)
+            logger.error(compat.ensure_string(msg))
 
             return exception
 
