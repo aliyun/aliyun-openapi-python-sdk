@@ -24,6 +24,7 @@ class ModifyDBClusterRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'adb', '2019-03-15', 'ModifyDBCluster','ads')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -35,6 +36,12 @@ class ModifyDBClusterRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+
+	def get_StorageResource(self):
+		return self.get_query_params().get('StorageResource')
+
+	def set_StorageResource(self,StorageResource):
+		self.add_query_param('StorageResource',StorageResource)
 
 	def get_DBNodeClass(self):
 		return self.get_query_params().get('DBNodeClass')
@@ -78,8 +85,20 @@ class ModifyDBClusterRequest(RpcRequest):
 	def set_DBNodeStorage(self,DBNodeStorage):
 		self.add_query_param('DBNodeStorage',DBNodeStorage)
 
+	def get_ExecutorCount(self):
+		return self.get_query_params().get('ExecutorCount')
+
+	def set_ExecutorCount(self,ExecutorCount):
+		self.add_query_param('ExecutorCount',ExecutorCount)
+
 	def get_ModifyType(self):
 		return self.get_query_params().get('ModifyType')
 
 	def set_ModifyType(self,ModifyType):
 		self.add_query_param('ModifyType',ModifyType)
+
+	def get_ComputeResource(self):
+		return self.get_query_params().get('ComputeResource')
+
+	def set_ComputeResource(self,ComputeResource):
+		self.add_query_param('ComputeResource',ComputeResource)

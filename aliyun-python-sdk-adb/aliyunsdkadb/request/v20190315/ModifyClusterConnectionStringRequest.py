@@ -20,10 +20,11 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkadb.endpoint import endpoint_data
 
-class DescribeLogStoreKeysRequest(RpcRequest):
+class ModifyClusterConnectionStringRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'adb', '2019-03-15', 'DescribeLogStoreKeys','ads')
+		RpcRequest.__init__(self, 'adb', '2019-03-15', 'ModifyClusterConnectionString','ads')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -36,23 +37,23 @@ class DescribeLogStoreKeysRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_ProjectName(self):
-		return self.get_query_params().get('ProjectName')
+	def get_ConnectionStringPrefix(self):
+		return self.get_query_params().get('ConnectionStringPrefix')
 
-	def set_ProjectName(self,ProjectName):
-		self.add_query_param('ProjectName',ProjectName)
-
-	def get_LogStoreName(self):
-		return self.get_query_params().get('LogStoreName')
-
-	def set_LogStoreName(self,LogStoreName):
-		self.add_query_param('LogStoreName',LogStoreName)
+	def set_ConnectionStringPrefix(self,ConnectionStringPrefix):
+		self.add_query_param('ConnectionStringPrefix',ConnectionStringPrefix)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+
+	def get_DBClusterId(self):
+		return self.get_query_params().get('DBClusterId')
+
+	def set_DBClusterId(self,DBClusterId):
+		self.add_query_param('DBClusterId',DBClusterId)
 
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
@@ -65,3 +66,15 @@ class DescribeLogStoreKeysRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_CurrentConnectionString(self):
+		return self.get_query_params().get('CurrentConnectionString')
+
+	def set_CurrentConnectionString(self,CurrentConnectionString):
+		self.add_query_param('CurrentConnectionString',CurrentConnectionString)
+
+	def get_Port(self):
+		return self.get_query_params().get('Port')
+
+	def set_Port(self,Port):
+		self.add_query_param('Port',Port)

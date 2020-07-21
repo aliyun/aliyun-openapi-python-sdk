@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkadb.endpoint import endpoint_data
 
-class DeleteDBClusterRequest(RpcRequest):
+class DescribeAuditLogRecordsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'adb', '2019-03-15', 'DeleteDBCluster','ads')
+		RpcRequest.__init__(self, 'adb', '2019-03-15', 'DescribeAuditLogRecords','ads')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -36,6 +36,36 @@ class DeleteDBClusterRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+
+	def get_StartTime(self):
+		return self.get_query_params().get('StartTime')
+
+	def set_StartTime(self,StartTime):
+		self.add_query_param('StartTime',StartTime)
+
+	def get_PageNumber(self):
+		return self.get_query_params().get('PageNumber')
+
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)
+
+	def get_HostAddress(self):
+		return self.get_query_params().get('HostAddress')
+
+	def set_HostAddress(self,HostAddress):
+		self.add_query_param('HostAddress',HostAddress)
+
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
+
+	def get_SqlType(self):
+		return self.get_query_params().get('SqlType')
+
+	def set_SqlType(self,SqlType):
+		self.add_query_param('SqlType',SqlType)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -55,8 +85,44 @@ class DeleteDBClusterRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
+	def get_QueryKeyword(self):
+		return self.get_query_params().get('QueryKeyword')
+
+	def set_QueryKeyword(self,QueryKeyword):
+		self.add_query_param('QueryKeyword',QueryKeyword)
+
+	def get_EndTime(self):
+		return self.get_query_params().get('EndTime')
+
+	def set_EndTime(self,EndTime):
+		self.add_query_param('EndTime',EndTime)
+
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_DBName(self):
+		return self.get_query_params().get('DBName')
+
+	def set_DBName(self,DBName):
+		self.add_query_param('DBName',DBName)
+
+	def get_Succeed(self):
+		return self.get_query_params().get('Succeed')
+
+	def set_Succeed(self,Succeed):
+		self.add_query_param('Succeed',Succeed)
+
+	def get_User(self):
+		return self.get_query_params().get('User')
+
+	def set_User(self,User):
+		self.add_query_param('User',User)
+
+	def get_OrderType(self):
+		return self.get_query_params().get('OrderType')
+
+	def set_OrderType(self,OrderType):
+		self.add_query_param('OrderType',OrderType)

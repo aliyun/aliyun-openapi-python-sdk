@@ -24,6 +24,7 @@ class ResetAccountPasswordRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'adb', '2019-03-15', 'ResetAccountPassword','ads')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -35,6 +36,12 @@ class ResetAccountPasswordRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+
+	def get_AccountType(self):
+		return self.get_query_params().get('AccountType')
+
+	def set_AccountType(self,AccountType):
+		self.add_query_param('AccountType',AccountType)
 
 	def get_AccountName(self):
 		return self.get_query_params().get('AccountName')

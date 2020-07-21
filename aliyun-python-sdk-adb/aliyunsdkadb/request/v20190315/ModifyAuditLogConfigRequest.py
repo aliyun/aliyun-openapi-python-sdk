@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkadb.endpoint import endpoint_data
 
-class DeleteDBClusterRequest(RpcRequest):
+class ModifyAuditLogConfigRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'adb', '2019-03-15', 'DeleteDBCluster','ads')
+		RpcRequest.__init__(self, 'adb', '2019-03-15', 'ModifyAuditLogConfig','ads')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -60,3 +60,9 @@ class DeleteDBClusterRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_AuditLogStatus(self):
+		return self.get_query_params().get('AuditLogStatus')
+
+	def set_AuditLogStatus(self,AuditLogStatus):
+		self.add_query_param('AuditLogStatus',AuditLogStatus)

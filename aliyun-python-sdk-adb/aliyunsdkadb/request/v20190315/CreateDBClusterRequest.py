@@ -24,6 +24,7 @@ class CreateDBClusterRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'adb', '2019-03-15', 'CreateDBCluster','ads')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -47,6 +48,30 @@ class CreateDBClusterRequest(RpcRequest):
 
 	def set_ClientToken(self,ClientToken):
 		self.add_query_param('ClientToken',ClientToken)
+
+	def get_StorageType(self):
+		return self.get_query_params().get('StorageType')
+
+	def set_StorageType(self,StorageType):
+		self.add_query_param('StorageType',StorageType)
+
+	def get_Mode(self):
+		return self.get_query_params().get('Mode')
+
+	def set_Mode(self,Mode):
+		self.add_query_param('Mode',Mode)
+
+	def get_ResourceGroupId(self):
+		return self.get_query_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self,ResourceGroupId):
+		self.add_query_param('ResourceGroupId',ResourceGroupId)
+
+	def get_StorageResource(self):
+		return self.get_query_params().get('StorageResource')
+
+	def set_StorageResource(self,StorageResource):
+		self.add_query_param('StorageResource',StorageResource)
 
 	def get_DBClusterCategory(self):
 		return self.get_query_params().get('DBClusterCategory')
@@ -120,6 +145,12 @@ class CreateDBClusterRequest(RpcRequest):
 	def set_DBNodeStorage(self,DBNodeStorage):
 		self.add_query_param('DBNodeStorage',DBNodeStorage)
 
+	def get_ExecutorCount(self):
+		return self.get_query_params().get('ExecutorCount')
+
+	def set_ExecutorCount(self,ExecutorCount):
+		self.add_query_param('ExecutorCount',ExecutorCount)
+
 	def get_VPCId(self):
 		return self.get_query_params().get('VPCId')
 
@@ -131,6 +162,12 @@ class CreateDBClusterRequest(RpcRequest):
 
 	def set_ZoneId(self,ZoneId):
 		self.add_query_param('ZoneId',ZoneId)
+
+	def get_ComputeResource(self):
+		return self.get_query_params().get('ComputeResource')
+
+	def set_ComputeResource(self,ComputeResource):
+		self.add_query_param('ComputeResource',ComputeResource)
 
 	def get_PayType(self):
 		return self.get_query_params().get('PayType')
