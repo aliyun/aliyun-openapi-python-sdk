@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkvcs.endpoint import endpoint_data
 
-class AddDataSourceRequest(RpcRequest):
+class SaveVideoSummaryTaskVideoRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Vcs', '2020-05-15', 'AddDataSource')
+		RpcRequest.__init__(self, 'Vcs', '2020-05-15', 'SaveVideoSummaryTaskVideo')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,32 +31,20 @@ class AddDataSourceRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_DataSourceType(self):
-		return self.get_body_params().get('DataSourceType')
-
-	def set_DataSourceType(self,DataSourceType):
-		self.add_body_params('DataSourceType', DataSourceType)
-
 	def get_CorpId(self):
 		return self.get_body_params().get('CorpId')
 
 	def set_CorpId(self,CorpId):
 		self.add_body_params('CorpId', CorpId)
 
-	def get_Description(self):
-		return self.get_body_params().get('Description')
+	def get_SaveVideo(self):
+		return self.get_body_params().get('SaveVideo')
 
-	def set_Description(self,Description):
-		self.add_body_params('Description', Description)
+	def set_SaveVideo(self,SaveVideo):
+		self.add_body_params('SaveVideo', SaveVideo)
 
-	def get_DataSourceName(self):
-		return self.get_body_params().get('DataSourceName')
+	def get_TaskId(self):
+		return self.get_body_params().get('TaskId')
 
-	def set_DataSourceName(self,DataSourceName):
-		self.add_body_params('DataSourceName', DataSourceName)
-
-	def get_FileRetentionDays(self):
-		return self.get_body_params().get('FileRetentionDays')
-
-	def set_FileRetentionDays(self,FileRetentionDays):
-		self.add_body_params('FileRetentionDays', FileRetentionDays)
+	def set_TaskId(self,TaskId):
+		self.add_body_params('TaskId', TaskId)
