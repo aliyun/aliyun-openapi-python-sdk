@@ -23,13 +23,19 @@ from aliyunsdkvcs.endpoint import endpoint_data
 class CreateCorpRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Vcs', '2020-05-15', 'CreateCorp','vcs')
+		RpcRequest.__init__(self, 'Vcs', '2020-05-15', 'CreateCorp')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+
+	def get_AlgorithmType(self):
+		return self.get_body_params().get('AlgorithmType')
+
+	def set_AlgorithmType(self,AlgorithmType):
+		self.add_body_params('AlgorithmType', AlgorithmType)
 
 	def get_ParentCorpId(self):
 		return self.get_body_params().get('ParentCorpId')

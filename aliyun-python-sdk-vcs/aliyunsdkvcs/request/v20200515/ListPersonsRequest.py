@@ -23,7 +23,7 @@ from aliyunsdkvcs.endpoint import endpoint_data
 class ListPersonsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Vcs', '2020-05-15', 'ListPersons','vcs')
+		RpcRequest.__init__(self, 'Vcs', '2020-05-15', 'ListPersons')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,11 +31,29 @@ class ListPersonsRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_AlgorithmType(self):
+		return self.get_body_params().get('AlgorithmType')
+
+	def set_AlgorithmType(self,AlgorithmType):
+		self.add_body_params('AlgorithmType', AlgorithmType)
+
 	def get_CorpId(self):
 		return self.get_body_params().get('CorpId')
 
 	def set_CorpId(self,CorpId):
 		self.add_body_params('CorpId', CorpId)
+
+	def get_EndTime(self):
+		return self.get_body_params().get('EndTime')
+
+	def set_EndTime(self,EndTime):
+		self.add_body_params('EndTime', EndTime)
+
+	def get_StartTime(self):
+		return self.get_body_params().get('StartTime')
+
+	def set_StartTime(self,StartTime):
+		self.add_body_params('StartTime', StartTime)
 
 	def get_PageNo(self):
 		return self.get_body_params().get('PageNo')
