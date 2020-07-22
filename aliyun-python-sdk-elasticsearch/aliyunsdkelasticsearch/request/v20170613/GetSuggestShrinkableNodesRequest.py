@@ -32,6 +32,12 @@ class GetSuggestShrinkableNodesRequest(RoaRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_ignoreStatus(self):
+		return self.get_query_params().get('ignoreStatus')
+
+	def set_ignoreStatus(self,ignoreStatus):
+		self.add_query_param('ignoreStatus',ignoreStatus)
+
 	def get_InstanceId(self):
 		return self.get_path_params().get('InstanceId')
 

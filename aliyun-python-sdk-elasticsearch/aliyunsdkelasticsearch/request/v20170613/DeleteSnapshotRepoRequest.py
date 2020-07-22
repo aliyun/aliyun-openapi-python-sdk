@@ -38,6 +38,12 @@ class DeleteSnapshotRepoRequest(RoaRequest):
 	def set_InstanceId(self,InstanceId):
 		self.add_path_param('InstanceId',InstanceId)
 
+	def get_clientToken(self):
+		return self.get_query_params().get('clientToken')
+
+	def set_clientToken(self,clientToken):
+		self.add_query_param('clientToken',clientToken)
+
 	def get_repoPath(self):
 		return self.get_query_params().get('repoPath')
 

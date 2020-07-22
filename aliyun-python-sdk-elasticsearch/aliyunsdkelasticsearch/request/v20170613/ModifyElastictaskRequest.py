@@ -20,11 +20,11 @@
 from aliyunsdkcore.request import RoaRequest
 from aliyunsdkelasticsearch.endpoint import endpoint_data
 
-class ValidateShrinkNodesRequest(RoaRequest):
+class ModifyElastictaskRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'elasticsearch', '2017-06-13', 'ValidateShrinkNodes','elasticsearch')
-		self.set_uri_pattern('/openapi/instances/[InstanceId]/validate-shrink-nodes')
+		RoaRequest.__init__(self, 'elasticsearch', '2017-06-13', 'ModifyElastictask','elasticsearch')
+		self.set_uri_pattern('/openapi/instances/[InstanceId]/elastic-task')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -32,20 +32,8 @@ class ValidateShrinkNodesRequest(RoaRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_ignoreStatus(self):
-		return self.get_query_params().get('ignoreStatus')
-
-	def set_ignoreStatus(self,ignoreStatus):
-		self.add_query_param('ignoreStatus',ignoreStatus)
-
 	def get_InstanceId(self):
 		return self.get_path_params().get('InstanceId')
 
 	def set_InstanceId(self,InstanceId):
 		self.add_path_param('InstanceId',InstanceId)
-
-	def get_nodeType(self):
-		return self.get_query_params().get('nodeType')
-
-	def set_nodeType(self,nodeType):
-		self.add_query_param('nodeType',nodeType)
