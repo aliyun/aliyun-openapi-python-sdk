@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkr_kvstore.endpoint import endpoint_data
 
-class ModifyAuditLogConfigRequest(RpcRequest):
+class ModifyAccountPasswordRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'R-kvstore', '2015-01-01', 'ModifyAuditLogConfig','redisa')
+		RpcRequest.__init__(self, 'R-kvstore', '2015-01-01', 'ModifyAccountPassword','redisa')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -37,17 +37,29 @@ class ModifyAuditLogConfigRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_AccountName(self):
+		return self.get_query_params().get('AccountName')
+
+	def set_AccountName(self,AccountName):
+		self.add_query_param('AccountName',AccountName)
+
+	def get_NewAccountPassword(self):
+		return self.get_query_params().get('NewAccountPassword')
+
+	def set_NewAccountPassword(self,NewAccountPassword):
+		self.add_query_param('NewAccountPassword',NewAccountPassword)
+
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
 
 	def set_SecurityToken(self,SecurityToken):
 		self.add_query_param('SecurityToken',SecurityToken)
 
-	def get_Retention(self):
-		return self.get_query_params().get('Retention')
+	def get_OldAccountPassword(self):
+		return self.get_query_params().get('OldAccountPassword')
 
-	def set_Retention(self,Retention):
-		self.add_query_param('Retention',Retention)
+	def set_OldAccountPassword(self,OldAccountPassword):
+		self.add_query_param('OldAccountPassword',OldAccountPassword)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
