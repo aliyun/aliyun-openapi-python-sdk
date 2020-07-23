@@ -24,6 +24,7 @@ class BindAxbRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Dyplsapi', '2017-05-25', 'BindAxb','dypls')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -53,6 +54,12 @@ class BindAxbRequest(RpcRequest):
 
 	def set_RingConfig(self,RingConfig):
 		self.add_query_param('RingConfig',RingConfig)
+
+	def get_ASRStatus(self):
+		return self.get_query_params().get('ASRStatus')
+
+	def set_ASRStatus(self,ASRStatus):
+		self.add_query_param('ASRStatus',ASRStatus)
 
 	def get_PhoneNoB(self):
 		return self.get_query_params().get('PhoneNoB')
@@ -113,6 +120,12 @@ class BindAxbRequest(RpcRequest):
 
 	def set_OutId(self,OutId):
 		self.add_query_param('OutId',OutId)
+
+	def get_ASRModelId(self):
+		return self.get_query_params().get('ASRModelId')
+
+	def set_ASRModelId(self,ASRModelId):
+		self.add_query_param('ASRModelId',ASRModelId)
 
 	def get_CallRestrict(self):
 		return self.get_query_params().get('CallRestrict')

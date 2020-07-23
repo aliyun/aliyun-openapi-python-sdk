@@ -24,6 +24,7 @@ class QuerySubscriptionDetailRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Dyplsapi', '2017-05-25', 'QuerySubscriptionDetail','dypls')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):

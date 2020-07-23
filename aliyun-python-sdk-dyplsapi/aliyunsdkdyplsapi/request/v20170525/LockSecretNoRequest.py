@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdyplsapi.endpoint import endpoint_data
 
-class OperateBlackNoRequest(RpcRequest):
+class LockSecretNoRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dyplsapi', '2017-05-25', 'OperateBlackNo','dypls')
+		RpcRequest.__init__(self, 'Dyplsapi', '2017-05-25', 'LockSecretNo','dypls')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -36,12 +36,6 @@ class OperateBlackNoRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_Tips(self):
-		return self.get_query_params().get('Tips')
-
-	def set_Tips(self,Tips):
-		self.add_query_param('Tips',Tips)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -61,14 +55,8 @@ class OperateBlackNoRequest(RpcRequest):
 	def set_PoolKey(self,PoolKey):
 		self.add_query_param('PoolKey',PoolKey)
 
-	def get_BlackNo(self):
-		return self.get_query_params().get('BlackNo')
+	def get_SecretNo(self):
+		return self.get_query_params().get('SecretNo')
 
-	def set_BlackNo(self,BlackNo):
-		self.add_query_param('BlackNo',BlackNo)
-
-	def get_OperateType(self):
-		return self.get_query_params().get('OperateType')
-
-	def set_OperateType(self,OperateType):
-		self.add_query_param('OperateType',OperateType)
+	def set_SecretNo(self,SecretNo):
+		self.add_query_param('SecretNo',SecretNo)

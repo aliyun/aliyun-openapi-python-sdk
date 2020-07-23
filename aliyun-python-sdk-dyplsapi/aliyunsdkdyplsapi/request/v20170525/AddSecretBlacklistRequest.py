@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdyplsapi.endpoint import endpoint_data
 
-class OperateBlackNoRequest(RpcRequest):
+class AddSecretBlacklistRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dyplsapi', '2017-05-25', 'OperateBlackNo','dypls')
+		RpcRequest.__init__(self, 'Dyplsapi', '2017-05-25', 'AddSecretBlacklist','dypls')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,29 +31,17 @@ class OperateBlackNoRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_ResourceOwnerId(self):
-		return self.get_query_params().get('ResourceOwnerId')
+	def get_BlackType(self):
+		return self.get_query_params().get('BlackType')
 
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+	def set_BlackType(self,BlackType):
+		self.add_query_param('BlackType',BlackType)
 
-	def get_Tips(self):
-		return self.get_query_params().get('Tips')
+	def get_Remark(self):
+		return self.get_query_params().get('Remark')
 
-	def set_Tips(self,Tips):
-		self.add_query_param('Tips',Tips)
-
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
-
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
+	def set_Remark(self,Remark):
+		self.add_query_param('Remark',Remark)
 
 	def get_PoolKey(self):
 		return self.get_query_params().get('PoolKey')
@@ -66,9 +54,3 @@ class OperateBlackNoRequest(RpcRequest):
 
 	def set_BlackNo(self,BlackNo):
 		self.add_query_param('BlackNo',BlackNo)
-
-	def get_OperateType(self):
-		return self.get_query_params().get('OperateType')
-
-	def set_OperateType(self,OperateType):
-		self.add_query_param('OperateType',OperateType)
