@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkkms.endpoint import endpoint_data
 
-class AsymmetricEncryptRequest(RpcRequest):
+class ExportDataKeyRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Kms', '2016-01-20', 'AsymmetricEncrypt','kms-service')
+		RpcRequest.__init__(self, 'Kms', '2016-01-20', 'ExportDataKey','kms-service')
 		self.set_protocol_type('https')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
@@ -32,26 +32,32 @@ class AsymmetricEncryptRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_KeyVersionId(self):
-		return self.get_query_params().get('KeyVersionId')
+	def get_EncryptionContext(self):
+		return self.get_query_params().get('EncryptionContext')
 
-	def set_KeyVersionId(self,KeyVersionId):
-		self.add_query_param('KeyVersionId',KeyVersionId)
+	def set_EncryptionContext(self,EncryptionContext):
+		self.add_query_param('EncryptionContext',EncryptionContext)
 
-	def get_KeyId(self):
-		return self.get_query_params().get('KeyId')
+	def get_WrappingAlgorithm(self):
+		return self.get_query_params().get('WrappingAlgorithm')
 
-	def set_KeyId(self,KeyId):
-		self.add_query_param('KeyId',KeyId)
+	def set_WrappingAlgorithm(self,WrappingAlgorithm):
+		self.add_query_param('WrappingAlgorithm',WrappingAlgorithm)
 
-	def get_Plaintext(self):
-		return self.get_query_params().get('Plaintext')
+	def get_CiphertextBlob(self):
+		return self.get_query_params().get('CiphertextBlob')
 
-	def set_Plaintext(self,Plaintext):
-		self.add_query_param('Plaintext',Plaintext)
+	def set_CiphertextBlob(self,CiphertextBlob):
+		self.add_query_param('CiphertextBlob',CiphertextBlob)
 
-	def get_Algorithm(self):
-		return self.get_query_params().get('Algorithm')
+	def get_PublicKeyBlob(self):
+		return self.get_query_params().get('PublicKeyBlob')
 
-	def set_Algorithm(self,Algorithm):
-		self.add_query_param('Algorithm',Algorithm)
+	def set_PublicKeyBlob(self,PublicKeyBlob):
+		self.add_query_param('PublicKeyBlob',PublicKeyBlob)
+
+	def get_WrappingKeySpec(self):
+		return self.get_query_params().get('WrappingKeySpec')
+
+	def set_WrappingKeySpec(self,WrappingKeySpec):
+		self.add_query_param('WrappingKeySpec',WrappingKeySpec)

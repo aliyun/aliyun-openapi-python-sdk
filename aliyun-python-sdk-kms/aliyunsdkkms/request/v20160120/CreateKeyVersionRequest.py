@@ -23,8 +23,9 @@ from aliyunsdkkms.endpoint import endpoint_data
 class CreateKeyVersionRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Kms', '2016-01-20', 'CreateKeyVersion','kms')
+		RpcRequest.__init__(self, 'Kms', '2016-01-20', 'CreateKeyVersion','kms-service')
 		self.set_protocol_type('https')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
