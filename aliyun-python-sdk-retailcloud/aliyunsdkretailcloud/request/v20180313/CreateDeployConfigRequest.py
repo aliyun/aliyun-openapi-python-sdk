@@ -83,6 +83,12 @@ class CreateDeployConfigRequest(RpcRequest):
 			if SecretLists[depth1] is not None:
 				self.add_query_param('SecretList.' + str(depth1 + 1) , SecretLists[depth1])
 
+	def get_CronJob(self):
+		return self.get_query_params().get('CronJob')
+
+	def set_CronJob(self,CronJob):
+		self.add_query_param('CronJob',CronJob)
+
 	def get_Deployment(self):
 		return self.get_query_params().get('Deployment')
 

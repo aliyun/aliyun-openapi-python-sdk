@@ -77,6 +77,12 @@ class UpdateDeployConfigRequest(RpcRequest):
 	def set_Id(self,Id):
 		self.add_query_param('Id',Id)
 
+	def get_CronJob(self):
+		return self.get_query_params().get('CronJob')
+
+	def set_CronJob(self,CronJob):
+		self.add_query_param('CronJob',CronJob)
+
 	def get_Deployment(self):
 		return self.get_query_params().get('Deployment')
 
