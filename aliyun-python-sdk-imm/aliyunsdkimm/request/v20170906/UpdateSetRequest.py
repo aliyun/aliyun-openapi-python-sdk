@@ -22,7 +22,7 @@ from aliyunsdkcore.request import RpcRequest
 class UpdateSetRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'imm', '2017-09-06', 'UpdateSet','imm')
+		RpcRequest.__init__(self, 'imm', '2017-09-06', 'UpdateSet')
 		self.set_method('POST')
 
 	def get_Project(self):

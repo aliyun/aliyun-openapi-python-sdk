@@ -19,10 +19,10 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class DeleteImageJobRequest(RpcRequest):
+class GetImageCroppingSuggestionsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'imm', '2017-09-06', 'DeleteImageJob')
+		RpcRequest.__init__(self, 'imm', '2017-09-06', 'GetImageCroppingSuggestions')
 		self.set_method('POST')
 
 	def get_Project(self):
@@ -31,14 +31,14 @@ class DeleteImageJobRequest(RpcRequest):
 	def set_Project(self,Project):
 		self.add_query_param('Project',Project)
 
-	def get_JobId(self):
-		return self.get_query_params().get('JobId')
+	def get_AspectRatios(self):
+		return self.get_query_params().get('AspectRatios')
 
-	def set_JobId(self,JobId):
-		self.add_query_param('JobId',JobId)
+	def set_AspectRatios(self,AspectRatios):
+		self.add_query_param('AspectRatios',AspectRatios)
 
-	def get_JobType(self):
-		return self.get_query_params().get('JobType')
+	def get_ImageUri(self):
+		return self.get_query_params().get('ImageUri')
 
-	def set_JobType(self,JobType):
-		self.add_query_param('JobType',JobType)
+	def set_ImageUri(self,ImageUri):
+		self.add_query_param('ImageUri',ImageUri)

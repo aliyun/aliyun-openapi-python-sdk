@@ -22,7 +22,7 @@ from aliyunsdkcore.request import RpcRequest
 class CreateVideoAbstractTaskRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'imm', '2017-09-06', 'CreateVideoAbstractTask','imm')
+		RpcRequest.__init__(self, 'imm', '2017-09-06', 'CreateVideoAbstractTask')
 		self.set_method('POST')
 
 	def get_TargetVideoUri(self):

@@ -22,7 +22,7 @@ from aliyunsdkcore.request import RpcRequest
 class SearchDocIndexRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'imm', '2017-09-06', 'SearchDocIndex','imm')
+		RpcRequest.__init__(self, 'imm', '2017-09-06', 'SearchDocIndex')
 		self.set_method('POST')
 
 	def get_ModifiedTimeEnd(self):

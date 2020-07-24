@@ -22,7 +22,7 @@ from aliyunsdkcore.request import RpcRequest
 class ListProjectsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'imm', '2017-09-06', 'ListProjects','imm')
+		RpcRequest.__init__(self, 'imm', '2017-09-06', 'ListProjects')
 		self.set_method('POST')
 
 	def get_MaxKeys(self):

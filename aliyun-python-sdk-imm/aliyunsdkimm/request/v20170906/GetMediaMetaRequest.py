@@ -22,7 +22,7 @@ from aliyunsdkcore.request import RpcRequest
 class GetMediaMetaRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'imm', '2017-09-06', 'GetMediaMeta','imm')
+		RpcRequest.__init__(self, 'imm', '2017-09-06', 'GetMediaMeta')
 		self.set_method('POST')
 
 	def get_MediaUri(self):

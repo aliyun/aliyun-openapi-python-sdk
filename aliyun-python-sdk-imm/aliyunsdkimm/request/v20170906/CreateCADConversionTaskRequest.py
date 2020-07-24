@@ -22,7 +22,7 @@ from aliyunsdkcore.request import RpcRequest
 class CreateCADConversionTaskRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'imm', '2017-09-06', 'CreateCADConversionTask','imm')
+		RpcRequest.__init__(self, 'imm', '2017-09-06', 'CreateCADConversionTask')
 		self.set_method('POST')
 
 	def get_SrcType(self):

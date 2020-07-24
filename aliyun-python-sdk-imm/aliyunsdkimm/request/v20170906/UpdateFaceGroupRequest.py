@@ -22,7 +22,7 @@ from aliyunsdkcore.request import RpcRequest
 class UpdateFaceGroupRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'imm', '2017-09-06', 'UpdateFaceGroup','imm')
+		RpcRequest.__init__(self, 'imm', '2017-09-06', 'UpdateFaceGroup')
 		self.set_method('POST')
 
 	def get_Project(self):
@@ -31,17 +31,59 @@ class UpdateFaceGroupRequest(RpcRequest):
 	def set_Project(self,Project):
 		self.add_query_param('Project',Project)
 
+	def get_ExternalId(self):
+		return self.get_query_params().get('ExternalId')
+
+	def set_ExternalId(self,ExternalId):
+		self.add_query_param('ExternalId',ExternalId)
+
 	def get_GroupId(self):
 		return self.get_query_params().get('GroupId')
 
 	def set_GroupId(self,GroupId):
 		self.add_query_param('GroupId',GroupId)
 
+	def get_RemarksB(self):
+		return self.get_query_params().get('RemarksB')
+
+	def set_RemarksB(self,RemarksB):
+		self.add_query_param('RemarksB',RemarksB)
+
+	def get_RemarksA(self):
+		return self.get_query_params().get('RemarksA')
+
+	def set_RemarksA(self,RemarksA):
+		self.add_query_param('RemarksA',RemarksA)
+
 	def get_GroupName(self):
 		return self.get_query_params().get('GroupName')
 
 	def set_GroupName(self,GroupName):
 		self.add_query_param('GroupName',GroupName)
+
+	def get_RemarksArrayA(self):
+		return self.get_query_params().get('RemarksArrayA')
+
+	def set_RemarksArrayA(self,RemarksArrayA):
+		self.add_query_param('RemarksArrayA',RemarksArrayA)
+
+	def get_RemarksArrayB(self):
+		return self.get_query_params().get('RemarksArrayB')
+
+	def set_RemarksArrayB(self,RemarksArrayB):
+		self.add_query_param('RemarksArrayB',RemarksArrayB)
+
+	def get_RemarksD(self):
+		return self.get_query_params().get('RemarksD')
+
+	def set_RemarksD(self,RemarksD):
+		self.add_query_param('RemarksD',RemarksD)
+
+	def get_RemarksC(self):
+		return self.get_query_params().get('RemarksC')
+
+	def set_RemarksC(self,RemarksC):
+		self.add_query_param('RemarksC',RemarksC)
 
 	def get_SetId(self):
 		return self.get_query_params().get('SetId')

@@ -22,5 +22,5 @@ from aliyunsdkcore.request import RpcRequest
 class DescribeRegionsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'imm', '2017-09-06', 'DescribeRegions','imm')
+		RpcRequest.__init__(self, 'imm', '2017-09-06', 'DescribeRegions')
 		self.set_method('POST')

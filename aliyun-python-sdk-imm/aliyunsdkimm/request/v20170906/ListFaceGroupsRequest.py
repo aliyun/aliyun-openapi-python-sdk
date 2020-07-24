@@ -22,7 +22,7 @@ from aliyunsdkcore.request import RpcRequest
 class ListFaceGroupsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'imm', '2017-09-06', 'ListFaceGroups','imm')
+		RpcRequest.__init__(self, 'imm', '2017-09-06', 'ListFaceGroups')
 		self.set_method('POST')
 
 	def get_Project(self):
@@ -31,11 +31,29 @@ class ListFaceGroupsRequest(RpcRequest):
 	def set_Project(self,Project):
 		self.add_query_param('Project',Project)
 
+	def get_RemarksBQuery(self):
+		return self.get_query_params().get('RemarksBQuery')
+
+	def set_RemarksBQuery(self,RemarksBQuery):
+		self.add_query_param('RemarksBQuery',RemarksBQuery)
+
+	def get_ExternalId(self):
+		return self.get_query_params().get('ExternalId')
+
+	def set_ExternalId(self,ExternalId):
+		self.add_query_param('ExternalId',ExternalId)
+
 	def get_Limit(self):
 		return self.get_query_params().get('Limit')
 
 	def set_Limit(self,Limit):
 		self.add_query_param('Limit',Limit)
+
+	def get_RemarksArrayBQuery(self):
+		return self.get_query_params().get('RemarksArrayBQuery')
+
+	def set_RemarksArrayBQuery(self,RemarksArrayBQuery):
+		self.add_query_param('RemarksArrayBQuery',RemarksArrayBQuery)
 
 	def get_Order(self):
 		return self.get_query_params().get('Order')
@@ -43,11 +61,29 @@ class ListFaceGroupsRequest(RpcRequest):
 	def set_Order(self,Order):
 		self.add_query_param('Order',Order)
 
+	def get_RemarksAQuery(self):
+		return self.get_query_params().get('RemarksAQuery')
+
+	def set_RemarksAQuery(self,RemarksAQuery):
+		self.add_query_param('RemarksAQuery',RemarksAQuery)
+
 	def get_OrderBy(self):
 		return self.get_query_params().get('OrderBy')
 
 	def set_OrderBy(self,OrderBy):
 		self.add_query_param('OrderBy',OrderBy)
+
+	def get_RemarksDQuery(self):
+		return self.get_query_params().get('RemarksDQuery')
+
+	def set_RemarksDQuery(self,RemarksDQuery):
+		self.add_query_param('RemarksDQuery',RemarksDQuery)
+
+	def get_RemarksArrayAQuery(self):
+		return self.get_query_params().get('RemarksArrayAQuery')
+
+	def set_RemarksArrayAQuery(self,RemarksArrayAQuery):
+		self.add_query_param('RemarksArrayAQuery',RemarksArrayAQuery)
 
 	def get_Marker(self):
 		return self.get_query_params().get('Marker')
@@ -60,3 +96,9 @@ class ListFaceGroupsRequest(RpcRequest):
 
 	def set_SetId(self,SetId):
 		self.add_query_param('SetId',SetId)
+
+	def get_RemarksCQuery(self):
+		return self.get_query_params().get('RemarksCQuery')
+
+	def set_RemarksCQuery(self,RemarksCQuery):
+		self.add_query_param('RemarksCQuery',RemarksCQuery)
