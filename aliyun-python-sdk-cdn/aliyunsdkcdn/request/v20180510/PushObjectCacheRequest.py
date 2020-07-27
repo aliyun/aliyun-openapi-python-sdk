@@ -31,26 +31,26 @@ class PushObjectCacheRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_Area(self):
-		return self.get_query_params().get('Area')
-
-	def set_Area(self,Area):
-		self.add_query_param('Area',Area)
-
 	def get_ObjectPath(self):
 		return self.get_query_params().get('ObjectPath')
 
 	def set_ObjectPath(self,ObjectPath):
 		self.add_query_param('ObjectPath',ObjectPath)
 
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
 
 	def set_SecurityToken(self,SecurityToken):
 		self.add_query_param('SecurityToken',SecurityToken)
+
+	def get_Area(self):
+		return self.get_query_params().get('Area')
+
+	def set_Area(self,Area):
+		self.add_query_param('Area',Area)
+
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)

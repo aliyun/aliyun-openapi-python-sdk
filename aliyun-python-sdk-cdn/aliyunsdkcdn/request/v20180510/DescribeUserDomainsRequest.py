@@ -83,6 +83,12 @@ class DescribeUserDomainsRequest(RpcRequest):
 			if Tags[depth1].get('Key') is not None:
 				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tags[depth1].get('Key'))
 
+	def get_Coverage(self):
+		return self.get_query_params().get('Coverage')
+
+	def set_Coverage(self,Coverage):
+		self.add_query_param('Coverage',Coverage)
+
 	def get_DomainName(self):
 		return self.get_query_params().get('DomainName')
 

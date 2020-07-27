@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcdn.endpoint import endpoint_data
 
-class SetUserGreenManagerConfigRequest(RpcRequest):
+class DescribeActiveVersionOfConfigGroupRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'SetUserGreenManagerConfig')
+		RpcRequest.__init__(self, 'Cdn', '2018-05-10', 'DescribeActiveVersionOfConfigGroup')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -37,20 +37,14 @@ class SetUserGreenManagerConfigRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_SecurityToken(self):
-		return self.get_query_params().get('SecurityToken')
+	def get_Env(self):
+		return self.get_query_params().get('Env')
 
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)
+	def set_Env(self,Env):
+		self.add_query_param('Env',Env)
 
-	def get_Quota(self):
-		return self.get_query_params().get('Quota')
+	def get_ConfigGroupId(self):
+		return self.get_query_params().get('ConfigGroupId')
 
-	def set_Quota(self,Quota):
-		self.add_query_param('Quota',Quota)
-
-	def get_Ratio(self):
-		return self.get_query_params().get('Ratio')
-
-	def set_Ratio(self,Ratio):
-		self.add_query_param('Ratio',Ratio)
+	def set_ConfigGroupId(self,ConfigGroupId):
+		self.add_query_param('ConfigGroupId',ConfigGroupId)

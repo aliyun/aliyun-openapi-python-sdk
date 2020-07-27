@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcdn.endpoint import endpoint_data
 
-class DeleteLiveStreamTranscodeRequest(RpcRequest):
+class DescribeRefreshTaskByIdRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'DeleteLiveStreamTranscode')
+		RpcRequest.__init__(self, 'Cdn', '2018-05-10', 'DescribeRefreshTaskById')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,38 +31,26 @@ class DeleteLiveStreamTranscodeRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_Template(self):
-		return self.get_query_params().get('Template')
+	def get_PageNumber(self):
+		return self.get_query_params().get('PageNumber')
 
-	def set_Template(self,Template):
-		self.add_query_param('Template',Template)
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)
 
-	def get_SecurityToken(self):
-		return self.get_query_params().get('SecurityToken')
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
 
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
 
-	def get_App(self):
-		return self.get_query_params().get('App')
+	def get_TaskId(self):
+		return self.get_query_params().get('TaskId')
 
-	def set_App(self,App):
-		self.add_query_param('App',App)
-
-	def get_OwnerAccount(self):
-		return self.get_query_params().get('OwnerAccount')
-
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
+	def set_TaskId(self,TaskId):
+		self.add_query_param('TaskId',TaskId)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
-
-	def get_Domain(self):
-		return self.get_query_params().get('Domain')
-
-	def set_Domain(self,Domain):
-		self.add_query_param('Domain',Domain)

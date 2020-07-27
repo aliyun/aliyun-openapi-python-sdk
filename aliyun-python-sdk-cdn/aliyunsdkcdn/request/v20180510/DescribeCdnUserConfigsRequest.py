@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcdn.endpoint import endpoint_data
 
-class DeleteLiveDomainMappingRequest(RpcRequest):
+class DescribeCdnUserConfigsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'DeleteLiveDomainMapping')
+		RpcRequest.__init__(self, 'Cdn', '2018-05-10', 'DescribeCdnUserConfigs')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,26 +31,14 @@ class DeleteLiveDomainMappingRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_FunctionName(self):
+		return self.get_query_params().get('FunctionName')
+
+	def set_FunctionName(self,FunctionName):
+		self.add_query_param('FunctionName',FunctionName)
+
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
-
-	def get_PullDomain(self):
-		return self.get_query_params().get('PullDomain')
-
-	def set_PullDomain(self,PullDomain):
-		self.add_query_param('PullDomain',PullDomain)
-
-	def get_SecurityToken(self):
-		return self.get_query_params().get('SecurityToken')
-
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)
-
-	def get_PushDomain(self):
-		return self.get_query_params().get('PushDomain')
-
-	def set_PushDomain(self,PushDomain):
-		self.add_query_param('PushDomain',PushDomain)

@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcdn.endpoint import endpoint_data
 
-class DeleteLiveAppRecordConfigRequest(RpcRequest):
+class DescribeDomainNamesOfVersionRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'DeleteLiveAppRecordConfig')
+		RpcRequest.__init__(self, 'Cdn', '2018-05-10', 'DescribeDomainNamesOfVersion')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,26 +31,26 @@ class DeleteLiveAppRecordConfigRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_DomainName(self):
-		return self.get_query_params().get('DomainName')
+	def get_VersionId(self):
+		return self.get_query_params().get('VersionId')
 
-	def set_DomainName(self,DomainName):
-		self.add_query_param('DomainName',DomainName)
+	def set_VersionId(self,VersionId):
+		self.add_query_param('VersionId',VersionId)
+
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
+
+	def get_PageIndex(self):
+		return self.get_query_params().get('PageIndex')
+
+	def set_PageIndex(self,PageIndex):
+		self.add_query_param('PageIndex',PageIndex)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
-
-	def get_AppName(self):
-		return self.get_query_params().get('AppName')
-
-	def set_AppName(self,AppName):
-		self.add_query_param('AppName',AppName)
-
-	def get_SecurityToken(self):
-		return self.get_query_params().get('SecurityToken')
-
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)
