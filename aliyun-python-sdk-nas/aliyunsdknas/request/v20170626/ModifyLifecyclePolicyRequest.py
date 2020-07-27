@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdknas.endpoint import endpoint_data
 
-class DescribeAutoSnapshotTasksRequest(RpcRequest):
+class ModifyLifecyclePolicyRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'NAS', '2017-06-26', 'DescribeAutoSnapshotTasks','nas')
+		RpcRequest.__init__(self, 'NAS', '2017-06-26', 'ModifyLifecyclePolicy','nas')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,32 +31,32 @@ class DescribeAutoSnapshotTasksRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_FileSystemType(self):
-		return self.get_query_params().get('FileSystemType')
+	def get_StorageType(self):
+		return self.get_query_params().get('StorageType')
 
-	def set_FileSystemType(self,FileSystemType):
-		self.add_query_param('FileSystemType',FileSystemType)
+	def set_StorageType(self,StorageType):
+		self.add_query_param('StorageType',StorageType)
 
-	def get_PageNumber(self):
-		return self.get_query_params().get('PageNumber')
+	def get_Path(self):
+		return self.get_query_params().get('Path')
 
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
+	def set_Path(self,Path):
+		self.add_query_param('Path',Path)
 
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
+	def get_LifecyclePolicyName(self):
+		return self.get_query_params().get('LifecyclePolicyName')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
+	def set_LifecyclePolicyName(self,LifecyclePolicyName):
+		self.add_query_param('LifecyclePolicyName',LifecyclePolicyName)
 
-	def get_FileSystemIds(self):
-		return self.get_query_params().get('FileSystemIds')
+	def get_FileSystemId(self):
+		return self.get_query_params().get('FileSystemId')
 
-	def set_FileSystemIds(self,FileSystemIds):
-		self.add_query_param('FileSystemIds',FileSystemIds)
+	def set_FileSystemId(self,FileSystemId):
+		self.add_query_param('FileSystemId',FileSystemId)
 
-	def get_AutoSnapshotPolicyIds(self):
-		return self.get_query_params().get('AutoSnapshotPolicyIds')
+	def get_LifecycleRuleName(self):
+		return self.get_query_params().get('LifecycleRuleName')
 
-	def set_AutoSnapshotPolicyIds(self,AutoSnapshotPolicyIds):
-		self.add_query_param('AutoSnapshotPolicyIds',AutoSnapshotPolicyIds)
+	def set_LifecycleRuleName(self,LifecycleRuleName):
+		self.add_query_param('LifecycleRuleName',LifecycleRuleName)

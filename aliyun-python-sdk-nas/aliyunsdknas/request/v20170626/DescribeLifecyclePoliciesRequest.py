@@ -20,22 +20,16 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdknas.endpoint import endpoint_data
 
-class DescribeAutoSnapshotTasksRequest(RpcRequest):
+class DescribeLifecyclePoliciesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'NAS', '2017-06-26', 'DescribeAutoSnapshotTasks','nas')
-		self.set_method('POST')
+		RpcRequest.__init__(self, 'NAS', '2017-06-26', 'DescribeLifecyclePolicies','nas')
+		self.set_method('GET')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_FileSystemType(self):
-		return self.get_query_params().get('FileSystemType')
-
-	def set_FileSystemType(self,FileSystemType):
-		self.add_query_param('FileSystemType',FileSystemType)
 
 	def get_PageNumber(self):
 		return self.get_query_params().get('PageNumber')
@@ -49,14 +43,8 @@ class DescribeAutoSnapshotTasksRequest(RpcRequest):
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
 
-	def get_FileSystemIds(self):
-		return self.get_query_params().get('FileSystemIds')
+	def get_FileSystemId(self):
+		return self.get_query_params().get('FileSystemId')
 
-	def set_FileSystemIds(self,FileSystemIds):
-		self.add_query_param('FileSystemIds',FileSystemIds)
-
-	def get_AutoSnapshotPolicyIds(self):
-		return self.get_query_params().get('AutoSnapshotPolicyIds')
-
-	def set_AutoSnapshotPolicyIds(self,AutoSnapshotPolicyIds):
-		self.add_query_param('AutoSnapshotPolicyIds',AutoSnapshotPolicyIds)
+	def set_FileSystemId(self,FileSystemId):
+		self.add_query_param('FileSystemId',FileSystemId)

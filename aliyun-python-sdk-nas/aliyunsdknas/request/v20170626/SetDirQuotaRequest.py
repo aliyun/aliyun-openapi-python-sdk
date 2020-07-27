@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdknas.endpoint import endpoint_data
 
-class DeleteLDAPConfigRequest(RpcRequest):
+class SetDirQuotaRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'NAS', '2017-06-26', 'DeleteLDAPConfig','nas')
+		RpcRequest.__init__(self, 'NAS', '2017-06-26', 'SetDirQuota','nas')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,8 +31,44 @@ class DeleteLDAPConfigRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_QuotaType(self):
+		return self.get_query_params().get('QuotaType')
+
+	def set_QuotaType(self,QuotaType):
+		self.add_query_param('QuotaType',QuotaType)
+
+	def get_UserId(self):
+		return self.get_query_params().get('UserId')
+
+	def set_UserId(self,UserId):
+		self.add_query_param('UserId',UserId)
+
+	def get_FileCountLimit(self):
+		return self.get_query_params().get('FileCountLimit')
+
+	def set_FileCountLimit(self,FileCountLimit):
+		self.add_query_param('FileCountLimit',FileCountLimit)
+
+	def get_Path(self):
+		return self.get_query_params().get('Path')
+
+	def set_Path(self,Path):
+		self.add_query_param('Path',Path)
+
+	def get_SizeLimit(self):
+		return self.get_query_params().get('SizeLimit')
+
+	def set_SizeLimit(self,SizeLimit):
+		self.add_query_param('SizeLimit',SizeLimit)
+
 	def get_FileSystemId(self):
 		return self.get_query_params().get('FileSystemId')
 
 	def set_FileSystemId(self,FileSystemId):
 		self.add_query_param('FileSystemId',FileSystemId)
+
+	def get_UserType(self):
+		return self.get_query_params().get('UserType')
+
+	def set_UserType(self,UserType):
+		self.add_query_param('UserType',UserType)
