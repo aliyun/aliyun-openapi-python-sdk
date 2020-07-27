@@ -49,6 +49,12 @@ class DescribeBackupPolicyRequest(RpcRequest):
 	def set_BackupPolicyMode(self,BackupPolicyMode):
 		self.add_query_param('BackupPolicyMode',BackupPolicyMode)
 
+	def get_ReleasedKeepPolicy(self):
+		return self.get_query_params().get('ReleasedKeepPolicy')
+
+	def set_ReleasedKeepPolicy(self,ReleasedKeepPolicy):
+		self.add_query_param('ReleasedKeepPolicy',ReleasedKeepPolicy)
+
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 

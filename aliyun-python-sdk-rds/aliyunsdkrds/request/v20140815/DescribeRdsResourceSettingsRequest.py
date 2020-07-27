@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkrds.endpoint import endpoint_data
 
-class DeleteDBInstanceRequest(RpcRequest):
+class DescribeRdsResourceSettingsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'DeleteDBInstance','rds')
+		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'DescribeRdsResourceSettings','rds')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -37,29 +37,17 @@ class DeleteDBInstanceRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_DBInstanceId(self):
-		return self.get_query_params().get('DBInstanceId')
-
-	def set_DBInstanceId(self,DBInstanceId):
-		self.add_query_param('DBInstanceId',DBInstanceId)
-
-	def get_ReleasedKeepPolicy(self):
-		return self.get_query_params().get('ReleasedKeepPolicy')
-
-	def set_ReleasedKeepPolicy(self,ReleasedKeepPolicy):
-		self.add_query_param('ReleasedKeepPolicy',ReleasedKeepPolicy)
-
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
-	def get_OwnerAccount(self):
-		return self.get_query_params().get('OwnerAccount')
+	def get_ResourceNiche(self):
+		return self.get_query_params().get('ResourceNiche')
 
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
+	def set_ResourceNiche(self,ResourceNiche):
+		self.add_query_param('ResourceNiche',ResourceNiche)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')

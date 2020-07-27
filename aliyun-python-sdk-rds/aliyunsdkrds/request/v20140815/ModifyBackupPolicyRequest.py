@@ -61,6 +61,12 @@ class ModifyBackupPolicyRequest(RpcRequest):
 	def set_BackupLog(self,BackupLog):
 		self.add_query_param('BackupLog',BackupLog)
 
+	def get_BackupInterval(self):
+		return self.get_query_params().get('BackupInterval')
+
+	def set_BackupInterval(self,BackupInterval):
+		self.add_query_param('BackupInterval',BackupInterval)
+
 	def get_HighSpaceUsageProtection(self):
 		return self.get_query_params().get('HighSpaceUsageProtection')
 
@@ -156,6 +162,12 @@ class ModifyBackupPolicyRequest(RpcRequest):
 
 	def set_ArchiveBackupRetentionPeriod(self,ArchiveBackupRetentionPeriod):
 		self.add_query_param('ArchiveBackupRetentionPeriod',ArchiveBackupRetentionPeriod)
+
+	def get_Category(self):
+		return self.get_query_params().get('Category')
+
+	def set_Category(self,Category):
+		self.add_query_param('Category',Category)
 
 	def get_LogBackupRetentionPeriod(self):
 		return self.get_query_params().get('LogBackupRetentionPeriod')

@@ -73,6 +73,12 @@ class DescribeDedicatedHostsRequest(RpcRequest):
 	def set_OrderId(self,OrderId):
 		self.add_query_param('OrderId',OrderId)
 
+	def get_DedicatedHostId(self):
+		return self.get_query_params().get('DedicatedHostId')
+
+	def set_DedicatedHostId(self,DedicatedHostId):
+		self.add_query_param('DedicatedHostId',DedicatedHostId)
+
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 

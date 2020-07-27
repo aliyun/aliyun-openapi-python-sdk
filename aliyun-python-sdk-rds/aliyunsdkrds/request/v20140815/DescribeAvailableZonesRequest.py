@@ -49,6 +49,12 @@ class DescribeAvailableZonesRequest(RpcRequest):
 	def set_Engine(self,Engine):
 		self.add_query_param('Engine',Engine)
 
+	def get_InstanceChargeType(self):
+		return self.get_query_params().get('InstanceChargeType')
+
+	def set_InstanceChargeType(self,InstanceChargeType):
+		self.add_query_param('InstanceChargeType',InstanceChargeType)
+
 	def get_ZoneId(self):
 		return self.get_query_params().get('ZoneId')
 

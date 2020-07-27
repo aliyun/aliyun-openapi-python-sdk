@@ -61,6 +61,12 @@ class CreateReadOnlyDBInstanceRequest(RpcRequest):
 	def set_ResourceGroupId(self,ResourceGroupId):
 		self.add_query_param('ResourceGroupId',ResourceGroupId)
 
+	def get_TddlRegionConfig(self):
+		return self.get_query_params().get('TddlRegionConfig')
+
+	def set_TddlRegionConfig(self,TddlRegionConfig):
+		self.add_query_param('TddlRegionConfig',TddlRegionConfig)
+
 	def get_TargetDedicatedHostIdForMaster(self):
 		return self.get_query_params().get('TargetDedicatedHostIdForMaster')
 
@@ -79,6 +85,12 @@ class CreateReadOnlyDBInstanceRequest(RpcRequest):
 	def set_DBInstanceDescription(self,DBInstanceDescription):
 		self.add_query_param('DBInstanceDescription',DBInstanceDescription)
 
+	def get_GdnInstanceName(self):
+		return self.get_query_params().get('GdnInstanceName')
+
+	def set_GdnInstanceName(self,GdnInstanceName):
+		self.add_query_param('GdnInstanceName',GdnInstanceName)
+
 	def get_DBInstanceStorageType(self):
 		return self.get_query_params().get('DBInstanceStorageType')
 
@@ -90,6 +102,12 @@ class CreateReadOnlyDBInstanceRequest(RpcRequest):
 
 	def set_DedicatedHostGroupId(self,DedicatedHostGroupId):
 		self.add_query_param('DedicatedHostGroupId',DedicatedHostGroupId)
+
+	def get_TddlBizType(self):
+		return self.get_query_params().get('TddlBizType')
+
+	def set_TddlBizType(self,TddlBizType):
+		self.add_query_param('TddlBizType',TddlBizType)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')

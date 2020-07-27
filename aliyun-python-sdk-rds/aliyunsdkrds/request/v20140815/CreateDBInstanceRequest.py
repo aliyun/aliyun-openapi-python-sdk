@@ -169,6 +169,18 @@ class CreateDBInstanceRequest(RpcRequest):
 	def set_TargetDedicatedHostIdForSlave(self,TargetDedicatedHostIdForSlave):
 		self.add_query_param('TargetDedicatedHostIdForSlave',TargetDedicatedHostIdForSlave)
 
+	def get_ZoneIdSlave1(self):
+		return self.get_query_params().get('ZoneIdSlave1')
+
+	def set_ZoneIdSlave1(self,ZoneIdSlave1):
+		self.add_query_param('ZoneIdSlave1',ZoneIdSlave1)
+
+	def get_ZoneIdSlave2(self):
+		return self.get_query_params().get('ZoneIdSlave2')
+
+	def set_ZoneIdSlave2(self,ZoneIdSlave2):
+		self.add_query_param('ZoneIdSlave2',ZoneIdSlave2)
+
 	def get_DBIsIgnoreCase(self):
 		return self.get_query_params().get('DBIsIgnoreCase')
 
