@@ -32,19 +32,19 @@ class ListSparkJobRequest(RpcRequest):
 
 
 	def get_PageNumber(self):
-		return self.get_body_params().get('PageNumber')
+		return self.get_query_params().get('PageNumber')
 
 	def set_PageNumber(self,PageNumber):
-		self.add_body_params('PageNumber', PageNumber)
+		self.add_query_param('PageNumber',PageNumber)
 
 	def get_PageSize(self):
-		return self.get_body_params().get('PageSize')
+		return self.get_query_params().get('PageSize')
 
 	def set_PageSize(self,PageSize):
-		self.add_body_params('PageSize', PageSize)
+		self.add_query_param('PageSize',PageSize)
 
 	def get_VcName(self):
-		return self.get_body_params().get('VcName')
+		return self.get_query_params().get('VcName')
 
 	def set_VcName(self,VcName):
-		self.add_body_params('VcName', VcName)
+		self.add_query_param('VcName',VcName)

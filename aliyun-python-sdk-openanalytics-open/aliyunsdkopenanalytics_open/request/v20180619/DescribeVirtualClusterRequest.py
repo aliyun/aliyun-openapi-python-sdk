@@ -32,7 +32,7 @@ class DescribeVirtualClusterRequest(RpcRequest):
 
 
 	def get_Name(self):
-		return self.get_body_params().get('Name')
+		return self.get_query_params().get('Name')
 
 	def set_Name(self,Name):
-		self.add_body_params('Name', Name)
+		self.add_query_param('Name',Name)
