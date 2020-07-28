@@ -1,3 +1,6 @@
+2020-07-28 Version 2.13.25
+1, Improve exception message.
+
 2020-07-20 Version 2.13.24
 1, Delete code that affects external programs.
 2, Improve python2 compatibility
