@@ -23,7 +23,7 @@ from aliyunsdkedas.endpoint import endpoint_data
 class UpdateK8sApplicationConfigRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'UpdateK8sApplicationConfig','Edas')
+		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'UpdateK8sApplicationConfig','edas')
 		self.set_uri_pattern('/pop/v5/k8s/acs/k8s_app_configuration')
 		self.set_method('PUT')
 		if hasattr(self, "endpoint_map"):
@@ -32,11 +32,23 @@ class UpdateK8sApplicationConfigRequest(RoaRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_MemoryRequest(self):
+		return self.get_query_params().get('MemoryRequest')
+
+	def set_MemoryRequest(self,MemoryRequest):
+		self.add_query_param('MemoryRequest',MemoryRequest)
+
 	def get_AppId(self):
 		return self.get_query_params().get('AppId')
 
 	def set_AppId(self,AppId):
 		self.add_query_param('AppId',AppId)
+
+	def get_CpuRequest(self):
+		return self.get_query_params().get('CpuRequest')
+
+	def set_CpuRequest(self,CpuRequest):
+		self.add_query_param('CpuRequest',CpuRequest)
 
 	def get_MemoryLimit(self):
 		return self.get_query_params().get('MemoryLimit')
@@ -61,3 +73,15 @@ class UpdateK8sApplicationConfigRequest(RoaRequest):
 
 	def set_McpuLimit(self,McpuLimit):
 		self.add_query_param('McpuLimit',McpuLimit)
+
+	def get_McpuRequest(self):
+		return self.get_query_params().get('McpuRequest')
+
+	def set_McpuRequest(self,McpuRequest):
+		self.add_query_param('McpuRequest',McpuRequest)
+
+	def get_Timeout(self):
+		return self.get_query_params().get('Timeout')
+
+	def set_Timeout(self,Timeout):
+		self.add_query_param('Timeout',Timeout)

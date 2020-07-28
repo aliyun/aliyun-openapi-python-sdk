@@ -23,10 +23,17 @@ from aliyunsdkedas.endpoint import endpoint_data
 class ListApplicationRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'ListApplication','Edas')
+		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'ListApplication','edas')
 		self.set_uri_pattern('/pop/v5/app/app_list')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
+
+	def get_ClusterId(self):
+		return self.get_query_params().get('ClusterId')
+
+	def set_ClusterId(self,ClusterId):
+		self.add_query_param('ClusterId',ClusterId)

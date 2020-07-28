@@ -20,29 +20,29 @@
 from aliyunsdkcore.request import RoaRequest
 from aliyunsdkedas.endpoint import endpoint_data
 
-class ListClusterMembersRequest(RoaRequest):
+class ConvertK8sResourceRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'ListClusterMembers','edas')
-		self.set_uri_pattern('/pop/v5/resource/cluster_member_list')
-		self.set_method('GET')
+		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'ConvertK8sResource','edas')
+		self.set_uri_pattern('/pop/v5/oam/k8s_resource_convert')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
+	def get_Namespace(self):
+		return self.get_query_params().get('Namespace')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
+	def set_Namespace(self,Namespace):
+		self.add_query_param('Namespace',Namespace)
 
-	def get_CurrentPage(self):
-		return self.get_query_params().get('CurrentPage')
+	def get_ResourceName(self):
+		return self.get_query_params().get('ResourceName')
 
-	def set_CurrentPage(self,CurrentPage):
-		self.add_query_param('CurrentPage',CurrentPage)
+	def set_ResourceName(self,ResourceName):
+		self.add_query_param('ResourceName',ResourceName)
 
 	def get_ClusterId(self):
 		return self.get_query_params().get('ClusterId')
@@ -50,8 +50,8 @@ class ListClusterMembersRequest(RoaRequest):
 	def set_ClusterId(self,ClusterId):
 		self.add_query_param('ClusterId',ClusterId)
 
-	def get_EcsList(self):
-		return self.get_query_params().get('EcsList')
+	def get_ResourceType(self):
+		return self.get_query_params().get('ResourceType')
 
-	def set_EcsList(self,EcsList):
-		self.add_query_param('EcsList',EcsList)
+	def set_ResourceType(self,ResourceType):
+		self.add_query_param('ResourceType',ResourceType)

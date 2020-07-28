@@ -23,7 +23,7 @@ from aliyunsdkedas.endpoint import endpoint_data
 class QuerySlsLogStoreListRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'QuerySlsLogStoreList','Edas')
+		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'QuerySlsLogStoreList','edas')
 		self.set_uri_pattern('/pop/v5/k8s/sls/query_sls_log_store_list')
 		self.set_method('GET')
 		if hasattr(self, "endpoint_map"):

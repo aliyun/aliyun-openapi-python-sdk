@@ -23,7 +23,7 @@ from aliyunsdkedas.endpoint import endpoint_data
 class UnbindSlbRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'UnbindSlb','Edas')
+		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'UnbindSlb','edas')
 		self.set_uri_pattern('/pop/app/unbind_slb_json')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):

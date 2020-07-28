@@ -23,7 +23,7 @@ from aliyunsdkedas.endpoint import endpoint_data
 class ListDeployGroupRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'ListDeployGroup','Edas')
+		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'ListDeployGroup','edas')
 		self.set_uri_pattern('/pop/v5/app/deploy_group_list')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):

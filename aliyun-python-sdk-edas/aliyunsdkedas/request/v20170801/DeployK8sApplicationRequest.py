@@ -23,7 +23,7 @@ from aliyunsdkedas.endpoint import endpoint_data
 class DeployK8sApplicationRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'DeployK8sApplication','Edas')
+		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'DeployK8sApplication','edas')
 		self.set_uri_pattern('/pop/v5/k8s/acs/k8s_apps')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
@@ -43,6 +43,18 @@ class DeployK8sApplicationRequest(RoaRequest):
 
 	def set_WebContainer(self,WebContainer):
 		self.add_query_param('WebContainer',WebContainer)
+
+	def get_EnableAhas(self):
+		return self.get_query_params().get('EnableAhas')
+
+	def set_EnableAhas(self,EnableAhas):
+		self.add_query_param('EnableAhas',EnableAhas)
+
+	def get_SlsConfigs(self):
+		return self.get_query_params().get('SlsConfigs')
+
+	def set_SlsConfigs(self,SlsConfigs):
+		self.add_query_param('SlsConfigs',SlsConfigs)
 
 	def get_Readiness(self):
 		return self.get_query_params().get('Readiness')
@@ -158,6 +170,12 @@ class DeployK8sApplicationRequest(RoaRequest):
 	def set_CpuRequest(self,CpuRequest):
 		self.add_query_param('CpuRequest',CpuRequest)
 
+	def get_WebContainerConfig(self):
+		return self.get_query_params().get('WebContainerConfig')
+
+	def set_WebContainerConfig(self,WebContainerConfig):
+		self.add_query_param('WebContainerConfig',WebContainerConfig)
+
 	def get_LocalVolume(self):
 		return self.get_query_params().get('LocalVolume')
 
@@ -212,6 +230,12 @@ class DeployK8sApplicationRequest(RoaRequest):
 	def set_AppId(self,AppId):
 		self.add_query_param('AppId',AppId)
 
+	def get_BatchTimeout(self):
+		return self.get_query_params().get('BatchTimeout')
+
+	def set_BatchTimeout(self,BatchTimeout):
+		self.add_query_param('BatchTimeout',BatchTimeout)
+
 	def get_McpuRequest(self):
 		return self.get_query_params().get('McpuRequest')
 
@@ -241,3 +265,9 @@ class DeployK8sApplicationRequest(RoaRequest):
 
 	def set_PostStart(self,PostStart):
 		self.add_query_param('PostStart',PostStart)
+
+	def get_JavaStartUpConfig(self):
+		return self.get_query_params().get('JavaStartUpConfig')
+
+	def set_JavaStartUpConfig(self,JavaStartUpConfig):
+		self.add_query_param('JavaStartUpConfig',JavaStartUpConfig)

@@ -23,7 +23,7 @@ from aliyunsdkedas.endpoint import endpoint_data
 class InsertK8sApplicationRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'InsertK8sApplication','Edas')
+		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'InsertK8sApplication','edas')
 		self.set_uri_pattern('/pop/v5/k8s/acs/create_k8s_app')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
@@ -56,11 +56,23 @@ class InsertK8sApplicationRequest(RoaRequest):
 	def set_WebContainer(self,WebContainer):
 		self.add_query_param('WebContainer',WebContainer)
 
+	def get_EnableAhas(self):
+		return self.get_query_params().get('EnableAhas')
+
+	def set_EnableAhas(self,EnableAhas):
+		self.add_query_param('EnableAhas',EnableAhas)
+
 	def get_IntranetSlbId(self):
 		return self.get_query_params().get('IntranetSlbId')
 
 	def set_IntranetSlbId(self,IntranetSlbId):
 		self.add_query_param('IntranetSlbId',IntranetSlbId)
+
+	def get_SlsConfigs(self):
+		return self.get_query_params().get('SlsConfigs')
+
+	def set_SlsConfigs(self,SlsConfigs):
+		self.add_query_param('SlsConfigs',SlsConfigs)
 
 	def get_CommandArgs(self):
 		return self.get_query_params().get('CommandArgs')
@@ -109,6 +121,12 @@ class InsertK8sApplicationRequest(RoaRequest):
 
 	def set_StorageType(self,StorageType):
 		self.add_query_param('StorageType',StorageType)
+
+	def get_Timeout(self):
+		return self.get_query_params().get('Timeout')
+
+	def set_Timeout(self,Timeout):
+		self.add_query_param('Timeout',Timeout)
 
 	def get_LimitMem(self):
 		return self.get_query_params().get('LimitMem')
@@ -200,6 +218,12 @@ class InsertK8sApplicationRequest(RoaRequest):
 	def set_LimitCpu(self,LimitCpu):
 		self.add_query_param('LimitCpu',LimitCpu)
 
+	def get_WebContainerConfig(self):
+		return self.get_query_params().get('WebContainerConfig')
+
+	def set_WebContainerConfig(self,WebContainerConfig):
+		self.add_query_param('WebContainerConfig',WebContainerConfig)
+
 	def get_ClusterId(self):
 		return self.get_query_params().get('ClusterId')
 
@@ -289,3 +313,9 @@ class InsertK8sApplicationRequest(RoaRequest):
 
 	def set_PostStart(self,PostStart):
 		self.add_query_param('PostStart',PostStart)
+
+	def get_JavaStartUpConfig(self):
+		return self.get_query_params().get('JavaStartUpConfig')
+
+	def set_JavaStartUpConfig(self,JavaStartUpConfig):
+		self.add_query_param('JavaStartUpConfig',JavaStartUpConfig)

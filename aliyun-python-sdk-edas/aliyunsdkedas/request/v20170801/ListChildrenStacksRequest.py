@@ -20,17 +20,23 @@
 from aliyunsdkcore.request import RoaRequest
 from aliyunsdkedas.endpoint import endpoint_data
 
-class ListClusterMembersRequest(RoaRequest):
+class ListChildrenStacksRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'ListClusterMembers','edas')
-		self.set_uri_pattern('/pop/v5/resource/cluster_member_list')
+		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'ListChildrenStacks','edas')
+		self.set_uri_pattern('/pop/v5/s2i/list_children_stack')
 		self.set_method('GET')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+
+	def get_StackId(self):
+		return self.get_query_params().get('StackId')
+
+	def set_StackId(self,StackId):
+		self.add_query_param('StackId',StackId)
 
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
@@ -43,15 +49,3 @@ class ListClusterMembersRequest(RoaRequest):
 
 	def set_CurrentPage(self,CurrentPage):
 		self.add_query_param('CurrentPage',CurrentPage)
-
-	def get_ClusterId(self):
-		return self.get_query_params().get('ClusterId')
-
-	def set_ClusterId(self,ClusterId):
-		self.add_query_param('ClusterId',ClusterId)
-
-	def get_EcsList(self):
-		return self.get_query_params().get('EcsList')
-
-	def set_EcsList(self,EcsList):
-		self.add_query_param('EcsList',EcsList)
