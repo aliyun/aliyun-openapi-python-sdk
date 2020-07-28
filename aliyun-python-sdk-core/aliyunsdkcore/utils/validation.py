@@ -29,4 +29,4 @@ def validate_pattern(prop, prop_name, pattern):
     match_obj = re.search(pattern, prop, re.M | re.I)
     if not match_obj:
         raise ClientException(error_code.SDK_INVALID_PARAMETER,
-                              prop_name + ' is not match')
+                              'The parameter %s not match with %s' % (prop_name, pattern))
