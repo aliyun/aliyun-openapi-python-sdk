@@ -20,11 +20,11 @@
 from aliyunsdkcore.request import RoaRequest
 from aliyunsdkairec.endpoint import endpoint_data
 
-class QueryDataMessageRequest(RoaRequest):
+class QueryDataMessageStatisticsRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'Airec', '2018-10-12', 'QueryDataMessage','airec')
-		self.set_uri_pattern('/openapi/instances/[InstanceId]/tables/[Table]/data-message')
+		RoaRequest.__init__(self, 'Airec', '2018-10-12', 'QueryDataMessageStatistics','airec')
+		self.set_uri_pattern('/openapi/instances/[InstanceId]/tables/[Table]/data-message-statistics')
 		self.set_method('GET')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -86,12 +86,6 @@ class QueryDataMessageRequest(RoaRequest):
 	def set_CmdType(self,CmdType):
 		self.add_query_param('CmdType',CmdType)
 
-	def get_Size(self):
-		return self.get_query_params().get('Size')
-
-	def set_Size(self,Size):
-		self.add_query_param('Size',Size)
-
 	def get_SceneId(self):
 		return self.get_query_params().get('SceneId')
 
@@ -103,12 +97,6 @@ class QueryDataMessageRequest(RoaRequest):
 
 	def set_BhvType(self,BhvType):
 		self.add_query_param('BhvType',BhvType)
-
-	def get_Page(self):
-		return self.get_query_params().get('Page')
-
-	def set_Page(self,Page):
-		self.add_query_param('Page',Page)
 
 	def get_Table(self):
 		return self.get_path_params().get('Table')

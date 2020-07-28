@@ -37,3 +37,9 @@ class ListScenesRequest(RoaRequest):
 
 	def set_InstanceId(self,InstanceId):
 		self.add_path_param('InstanceId',InstanceId)
+
+	def get_Status(self):
+		return self.get_query_params().get('Status')
+
+	def set_Status(self,Status):
+		self.add_query_param('Status',Status)

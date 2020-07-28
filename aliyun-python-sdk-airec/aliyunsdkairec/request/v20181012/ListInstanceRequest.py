@@ -38,8 +38,26 @@ class ListInstanceRequest(RoaRequest):
 	def set_size(self,size):
 		self.add_query_param('size',size)
 
+	def get_Name(self):
+		return self.get_query_params().get('Name')
+
+	def set_Name(self,Name):
+		self.add_query_param('Name',Name)
+
+	def get_ExpiredTime(self):
+		return self.get_query_params().get('ExpiredTime')
+
+	def set_ExpiredTime(self,ExpiredTime):
+		self.add_query_param('ExpiredTime',ExpiredTime)
+
 	def get_page(self):
 		return self.get_query_params().get('page')
 
 	def set_page(self,page):
 		self.add_query_param('page',page)
+
+	def get_Status(self):
+		return self.get_query_params().get('Status')
+
+	def set_Status(self,Status):
+		self.add_query_param('Status',Status)
