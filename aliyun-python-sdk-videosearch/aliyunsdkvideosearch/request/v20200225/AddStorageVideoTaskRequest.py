@@ -23,6 +23,7 @@ class AddStorageVideoTaskRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'videosearch', '2020-02-25', 'AddStorageVideoTask')
+		self.set_method('POST')
 
 	def get_ClientToken(self):
 		return self.get_query_params().get('ClientToken')
