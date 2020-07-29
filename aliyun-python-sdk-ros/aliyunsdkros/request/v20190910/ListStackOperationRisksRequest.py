@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkros.endpoint import endpoint_data
 
-class GetStackRequest(RpcRequest):
+class ListStackOperationRisksRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ROS', '2019-09-10', 'GetStack','ros')
+		RpcRequest.__init__(self, 'ROS', '2019-09-10', 'ListStackOperationRisks','ros')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -42,3 +42,29 @@ class GetStackRequest(RpcRequest):
 
 	def set_StackId(self,StackId):
 		self.add_query_param('StackId',StackId)
+
+	def get_RetainResourcess(self):
+		return self.get_query_params().get('RetainResourcess')
+
+	def set_RetainResourcess(self, RetainResourcess):
+		for depth1 in range(len(RetainResourcess)):
+			if RetainResourcess[depth1] is not None:
+				self.add_query_param('RetainResources.' + str(depth1 + 1) , RetainResourcess[depth1])
+
+	def get_RetainAllResources(self):
+		return self.get_query_params().get('RetainAllResources')
+
+	def set_RetainAllResources(self,RetainAllResources):
+		self.add_query_param('RetainAllResources',RetainAllResources)
+
+	def get_RamRoleName(self):
+		return self.get_query_params().get('RamRoleName')
+
+	def set_RamRoleName(self,RamRoleName):
+		self.add_query_param('RamRoleName',RamRoleName)
+
+	def get_OperationType(self):
+		return self.get_query_params().get('OperationType')
+
+	def set_OperationType(self,OperationType):
+		self.add_query_param('OperationType',OperationType)

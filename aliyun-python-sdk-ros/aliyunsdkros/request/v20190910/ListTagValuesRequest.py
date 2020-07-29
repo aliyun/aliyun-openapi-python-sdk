@@ -17,14 +17,13 @@
 # specific language governing permissions and limitations
 # under the License.
 
-from aliyunsdkcore.request import RoaRequest
+from aliyunsdkcore.request import RpcRequest
 from aliyunsdkros.endpoint import endpoint_data
 
-class SetStackPolicyRequest(RoaRequest):
+class ListTagValuesRequest(RpcRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'ROS', '2015-09-01', 'SetStackPolicy','ROS')
-		self.set_uri_pattern('/stacks/[StackName]/[StackId]/policy')
+		RpcRequest.__init__(self, 'ROS', '2019-09-10', 'ListTagValues','ros')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -32,14 +31,20 @@ class SetStackPolicyRequest(RoaRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_StackId(self):
-		return self.get_path_params().get('StackId')
+	def get_NextToken(self):
+		return self.get_query_params().get('NextToken')
 
-	def set_StackId(self,StackId):
-		self.add_path_param('StackId',StackId)
+	def set_NextToken(self,NextToken):
+		self.add_query_param('NextToken',NextToken)
 
-	def get_StackName(self):
-		return self.get_path_params().get('StackName')
+	def get_Key(self):
+		return self.get_query_params().get('Key')
 
-	def set_StackName(self,StackName):
-		self.add_path_param('StackName',StackName)
+	def set_Key(self,Key):
+		self.add_query_param('Key',Key)
+
+	def get_ResourceType(self):
+		return self.get_query_params().get('ResourceType')
+
+	def set_ResourceType(self,ResourceType):
+		self.add_query_param('ResourceType',ResourceType)

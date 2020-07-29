@@ -23,7 +23,8 @@ from aliyunsdkros.endpoint import endpoint_data
 class ListStackResourceDriftsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ROS', '2019-09-10', 'ListStackResourceDrifts','ROS')
+		RpcRequest.__init__(self, 'ROS', '2019-09-10', 'ListStackResourceDrifts','ros')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -45,10 +46,10 @@ class ListStackResourceDriftsRequest(RpcRequest):
 	def get_ResourceDriftStatuss(self):
 		return self.get_query_params().get('ResourceDriftStatuss')
 
-	def set_ResourceDriftStatuss(self,ResourceDriftStatuss):
-		for i in range(len(ResourceDriftStatuss)):	
-			if ResourceDriftStatuss[i] is not None:
-				self.add_query_param('ResourceDriftStatus.' + str(i + 1) , ResourceDriftStatuss[i]);
+	def set_ResourceDriftStatuss(self, ResourceDriftStatuss):
+		for depth1 in range(len(ResourceDriftStatuss)):
+			if ResourceDriftStatuss[depth1] is not None:
+				self.add_query_param('ResourceDriftStatus.' + str(depth1 + 1) , ResourceDriftStatuss[depth1])
 
 	def get_MaxResults(self):
 		return self.get_query_params().get('MaxResults')

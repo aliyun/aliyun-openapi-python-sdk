@@ -23,7 +23,8 @@ from aliyunsdkros.endpoint import endpoint_data
 class DetectStackGroupDriftRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ROS', '2019-09-10', 'DetectStackGroupDrift','ROS')
+		RpcRequest.__init__(self, 'ROS', '2019-09-10', 'DetectStackGroupDrift','ros')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):

@@ -23,7 +23,8 @@ from aliyunsdkros.endpoint import endpoint_data
 class ListStackEventsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ROS', '2019-09-10', 'ListStackEvents','ROS')
+		RpcRequest.__init__(self, 'ROS', '2019-09-10', 'ListStackEvents','ros')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -51,23 +52,23 @@ class ListStackEventsRequest(RpcRequest):
 	def get_LogicalResourceIds(self):
 		return self.get_query_params().get('LogicalResourceIds')
 
-	def set_LogicalResourceIds(self,LogicalResourceIds):
-		for i in range(len(LogicalResourceIds)):	
-			if LogicalResourceIds[i] is not None:
-				self.add_query_param('LogicalResourceId.' + str(i + 1) , LogicalResourceIds[i]);
+	def set_LogicalResourceIds(self, LogicalResourceIds):
+		for depth1 in range(len(LogicalResourceIds)):
+			if LogicalResourceIds[depth1] is not None:
+				self.add_query_param('LogicalResourceId.' + str(depth1 + 1) , LogicalResourceIds[depth1])
 
 	def get_ResourceTypes(self):
 		return self.get_query_params().get('ResourceTypes')
 
-	def set_ResourceTypes(self,ResourceTypes):
-		for i in range(len(ResourceTypes)):	
-			if ResourceTypes[i] is not None:
-				self.add_query_param('ResourceType.' + str(i + 1) , ResourceTypes[i]);
+	def set_ResourceTypes(self, ResourceTypes):
+		for depth1 in range(len(ResourceTypes)):
+			if ResourceTypes[depth1] is not None:
+				self.add_query_param('ResourceType.' + str(depth1 + 1) , ResourceTypes[depth1])
 
 	def get_Statuss(self):
 		return self.get_query_params().get('Statuss')
 
-	def set_Statuss(self,Statuss):
-		for i in range(len(Statuss)):	
-			if Statuss[i] is not None:
-				self.add_query_param('Status.' + str(i + 1) , Statuss[i]);
+	def set_Statuss(self, Statuss):
+		for depth1 in range(len(Statuss)):
+			if Statuss[depth1] is not None:
+				self.add_query_param('Status.' + str(depth1 + 1) , Statuss[depth1])

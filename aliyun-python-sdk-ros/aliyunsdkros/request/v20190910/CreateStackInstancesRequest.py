@@ -23,7 +23,8 @@ from aliyunsdkros.endpoint import endpoint_data
 class CreateStackInstancesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ROS', '2019-09-10', 'CreateStackInstances','ROS')
+		RpcRequest.__init__(self, 'ROS', '2019-09-10', 'CreateStackInstances','ros')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -69,9 +70,9 @@ class CreateStackInstancesRequest(RpcRequest):
 	def get_ParameterOverridess(self):
 		return self.get_query_params().get('ParameterOverridess')
 
-	def set_ParameterOverridess(self,ParameterOverridess):
-		for i in range(len(ParameterOverridess)):	
-			if ParameterOverridess[i].get('ParameterValue') is not None:
-				self.add_query_param('ParameterOverrides.' + str(i + 1) + '.ParameterValue' , ParameterOverridess[i].get('ParameterValue'))
-			if ParameterOverridess[i].get('ParameterKey') is not None:
-				self.add_query_param('ParameterOverrides.' + str(i + 1) + '.ParameterKey' , ParameterOverridess[i].get('ParameterKey'))
+	def set_ParameterOverridess(self, ParameterOverridess):
+		for depth1 in range(len(ParameterOverridess)):
+			if ParameterOverridess[depth1].get('ParameterValue') is not None:
+				self.add_query_param('ParameterOverrides.' + str(depth1 + 1) + '.ParameterValue', ParameterOverridess[depth1].get('ParameterValue'))
+			if ParameterOverridess[depth1].get('ParameterKey') is not None:
+				self.add_query_param('ParameterOverrides.' + str(depth1 + 1) + '.ParameterKey', ParameterOverridess[depth1].get('ParameterKey'))

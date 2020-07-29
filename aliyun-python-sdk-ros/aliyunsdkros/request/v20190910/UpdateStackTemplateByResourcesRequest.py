@@ -23,7 +23,8 @@ from aliyunsdkros.endpoint import endpoint_data
 class UpdateStackTemplateByResourcesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ROS', '2019-09-10', 'UpdateStackTemplateByResources','ROS')
+		RpcRequest.__init__(self, 'ROS', '2019-09-10', 'UpdateStackTemplateByResources','ros')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -45,10 +46,10 @@ class UpdateStackTemplateByResourcesRequest(RpcRequest):
 	def get_LogicalResourceIds(self):
 		return self.get_query_params().get('LogicalResourceIds')
 
-	def set_LogicalResourceIds(self,LogicalResourceIds):
-		for i in range(len(LogicalResourceIds)):	
-			if LogicalResourceIds[i] is not None:
-				self.add_query_param('LogicalResourceId.' + str(i + 1) , LogicalResourceIds[i]);
+	def set_LogicalResourceIds(self, LogicalResourceIds):
+		for depth1 in range(len(LogicalResourceIds)):
+			if LogicalResourceIds[depth1] is not None:
+				self.add_query_param('LogicalResourceId.' + str(depth1 + 1) , LogicalResourceIds[depth1])
 
 	def get_DryRun(self):
 		return self.get_query_params().get('DryRun')

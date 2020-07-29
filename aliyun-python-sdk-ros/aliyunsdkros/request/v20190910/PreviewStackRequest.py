@@ -23,7 +23,8 @@ from aliyunsdkros.endpoint import endpoint_data
 class PreviewStackRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ROS', '2019-09-10', 'PreviewStack','ROS')
+		RpcRequest.__init__(self, 'ROS', '2019-09-10', 'PreviewStack','ros')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -81,9 +82,9 @@ class PreviewStackRequest(RpcRequest):
 	def get_Parameterss(self):
 		return self.get_query_params().get('Parameterss')
 
-	def set_Parameterss(self,Parameterss):
-		for i in range(len(Parameterss)):	
-			if Parameterss[i].get('ParameterValue') is not None:
-				self.add_query_param('Parameters.' + str(i + 1) + '.ParameterValue' , Parameterss[i].get('ParameterValue'))
-			if Parameterss[i].get('ParameterKey') is not None:
-				self.add_query_param('Parameters.' + str(i + 1) + '.ParameterKey' , Parameterss[i].get('ParameterKey'))
+	def set_Parameterss(self, Parameterss):
+		for depth1 in range(len(Parameterss)):
+			if Parameterss[depth1].get('ParameterValue') is not None:
+				self.add_query_param('Parameters.' + str(depth1 + 1) + '.ParameterValue', Parameterss[depth1].get('ParameterValue'))
+			if Parameterss[depth1].get('ParameterKey') is not None:
+				self.add_query_param('Parameters.' + str(depth1 + 1) + '.ParameterKey', Parameterss[depth1].get('ParameterKey'))

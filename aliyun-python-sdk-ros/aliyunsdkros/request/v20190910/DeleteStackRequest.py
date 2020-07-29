@@ -23,7 +23,8 @@ from aliyunsdkros.endpoint import endpoint_data
 class DeleteStackRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ROS', '2019-09-10', 'DeleteStack','ROS')
+		RpcRequest.__init__(self, 'ROS', '2019-09-10', 'DeleteStack','ros')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -39,10 +40,10 @@ class DeleteStackRequest(RpcRequest):
 	def get_RetainResourcess(self):
 		return self.get_query_params().get('RetainResourcess')
 
-	def set_RetainResourcess(self,RetainResourcess):
-		for i in range(len(RetainResourcess)):	
-			if RetainResourcess[i] is not None:
-				self.add_query_param('RetainResources.' + str(i + 1) , RetainResourcess[i]);
+	def set_RetainResourcess(self, RetainResourcess):
+		for depth1 in range(len(RetainResourcess)):
+			if RetainResourcess[depth1] is not None:
+				self.add_query_param('RetainResources.' + str(depth1 + 1) , RetainResourcess[depth1])
 
 	def get_RetainAllResources(self):
 		return self.get_query_params().get('RetainAllResources')

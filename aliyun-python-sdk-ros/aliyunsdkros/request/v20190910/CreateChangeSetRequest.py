@@ -23,7 +23,8 @@ from aliyunsdkros.endpoint import endpoint_data
 class CreateChangeSetRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ROS', '2019-09-10', 'CreateChangeSet','ROS')
+		RpcRequest.__init__(self, 'ROS', '2019-09-10', 'CreateChangeSet','ros')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -63,13 +64,12 @@ class CreateChangeSetRequest(RpcRequest):
 	def get_Parameterss(self):
 		return self.get_query_params().get('Parameterss')
 
-	def set_Parameterss(self,Parameterss):
-		for i in range(len(Parameterss)):	
-			if Parameterss[i].get('ParameterValue') is not None:
-				self.add_query_param('Parameters.' + str(i + 1) + '.ParameterValue' , Parameterss[i].get('ParameterValue'))
-			if Parameterss[i].get('ParameterKey') is not None:
-				self.add_query_param('Parameters.' + str(i + 1) + '.ParameterKey' , Parameterss[i].get('ParameterKey'))
-
+	def set_Parameterss(self, Parameterss):
+		for depth1 in range(len(Parameterss)):
+			if Parameterss[depth1].get('ParameterValue') is not None:
+				self.add_query_param('Parameters.' + str(depth1 + 1) + '.ParameterValue', Parameterss[depth1].get('ParameterValue'))
+			if Parameterss[depth1].get('ParameterKey') is not None:
+				self.add_query_param('Parameters.' + str(depth1 + 1) + '.ParameterKey', Parameterss[depth1].get('ParameterKey'))
 
 	def get_ClientToken(self):
 		return self.get_query_params().get('ClientToken')
@@ -104,10 +104,22 @@ class CreateChangeSetRequest(RpcRequest):
 	def get_NotificationURLss(self):
 		return self.get_query_params().get('NotificationURLss')
 
-	def set_NotificationURLss(self,NotificationURLss):
-		for i in range(len(NotificationURLss)):	
-			if NotificationURLss[i] is not None:
-				self.add_query_param('NotificationURLs.' + str(i + 1) , NotificationURLss[i]);
+	def set_NotificationURLss(self, NotificationURLss):
+		for depth1 in range(len(NotificationURLss)):
+			if NotificationURLss[depth1] is not None:
+				self.add_query_param('NotificationURLs.' + str(depth1 + 1) , NotificationURLss[depth1])
+
+	def get_ResourcesToImports(self):
+		return self.get_query_params().get('ResourcesToImports')
+
+	def set_ResourcesToImports(self, ResourcesToImports):
+		for depth1 in range(len(ResourcesToImports)):
+			if ResourcesToImports[depth1].get('ResourceIdentifier') is not None:
+				self.add_query_param('ResourcesToImport.' + str(depth1 + 1) + '.ResourceIdentifier', ResourcesToImports[depth1].get('ResourceIdentifier'))
+			if ResourcesToImports[depth1].get('LogicalResourceId') is not None:
+				self.add_query_param('ResourcesToImport.' + str(depth1 + 1) + '.LogicalResourceId', ResourcesToImports[depth1].get('LogicalResourceId'))
+			if ResourcesToImports[depth1].get('ResourceType') is not None:
+				self.add_query_param('ResourcesToImport.' + str(depth1 + 1) + '.ResourceType', ResourcesToImports[depth1].get('ResourceType'))
 
 	def get_StackPolicyBody(self):
 		return self.get_query_params().get('StackPolicyBody')
@@ -132,6 +144,12 @@ class CreateChangeSetRequest(RpcRequest):
 
 	def set_UsePreviousParameters(self,UsePreviousParameters):
 		self.add_query_param('UsePreviousParameters',UsePreviousParameters)
+
+	def get_ReplacementOption(self):
+		return self.get_query_params().get('ReplacementOption')
+
+	def set_ReplacementOption(self,ReplacementOption):
+		self.add_query_param('ReplacementOption',ReplacementOption)
 
 	def get_StackPolicyURL(self):
 		return self.get_query_params().get('StackPolicyURL')

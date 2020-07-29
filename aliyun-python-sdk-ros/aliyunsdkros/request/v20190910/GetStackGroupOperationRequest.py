@@ -23,7 +23,8 @@ from aliyunsdkros.endpoint import endpoint_data
 class GetStackGroupOperationRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ROS', '2019-09-10', 'GetStackGroupOperation','ROS')
+		RpcRequest.__init__(self, 'ROS', '2019-09-10', 'GetStackGroupOperation','ros')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):

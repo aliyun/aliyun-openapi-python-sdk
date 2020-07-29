@@ -23,7 +23,8 @@ from aliyunsdkros.endpoint import endpoint_data
 class ListChangeSetsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ROS', '2019-09-10', 'ListChangeSets','ROS')
+		RpcRequest.__init__(self, 'ROS', '2019-09-10', 'ListChangeSets','ros')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -51,18 +52,18 @@ class ListChangeSetsRequest(RpcRequest):
 	def get_ExecutionStatuss(self):
 		return self.get_query_params().get('ExecutionStatuss')
 
-	def set_ExecutionStatuss(self,ExecutionStatuss):
-		for i in range(len(ExecutionStatuss)):	
-			if ExecutionStatuss[i] is not None:
-				self.add_query_param('ExecutionStatus.' + str(i + 1) , ExecutionStatuss[i]);
+	def set_ExecutionStatuss(self, ExecutionStatuss):
+		for depth1 in range(len(ExecutionStatuss)):
+			if ExecutionStatuss[depth1] is not None:
+				self.add_query_param('ExecutionStatus.' + str(depth1 + 1) , ExecutionStatuss[depth1])
 
 	def get_ChangeSetNames(self):
 		return self.get_query_params().get('ChangeSetNames')
 
-	def set_ChangeSetNames(self,ChangeSetNames):
-		for i in range(len(ChangeSetNames)):	
-			if ChangeSetNames[i] is not None:
-				self.add_query_param('ChangeSetName.' + str(i + 1) , ChangeSetNames[i]);
+	def set_ChangeSetNames(self, ChangeSetNames):
+		for depth1 in range(len(ChangeSetNames)):
+			if ChangeSetNames[depth1] is not None:
+				self.add_query_param('ChangeSetName.' + str(depth1 + 1) , ChangeSetNames[depth1])
 
 	def get_ChangeSetId(self):
 		return self.get_query_params().get('ChangeSetId')
@@ -73,7 +74,7 @@ class ListChangeSetsRequest(RpcRequest):
 	def get_Statuss(self):
 		return self.get_query_params().get('Statuss')
 
-	def set_Statuss(self,Statuss):
-		for i in range(len(Statuss)):	
-			if Statuss[i] is not None:
-				self.add_query_param('Status.' + str(i + 1) , Statuss[i]);
+	def set_Statuss(self, Statuss):
+		for depth1 in range(len(Statuss)):
+			if Statuss[depth1] is not None:
+				self.add_query_param('Status.' + str(depth1 + 1) , Statuss[depth1])

@@ -23,7 +23,8 @@ from aliyunsdkros.endpoint import endpoint_data
 class ListStacksRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ROS', '2019-09-10', 'ListStacks','ROS')
+		RpcRequest.__init__(self, 'ROS', '2019-09-10', 'ListStacks','ros')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -57,21 +58,20 @@ class ListStacksRequest(RpcRequest):
 	def get_StackNames(self):
 		return self.get_query_params().get('StackNames')
 
-	def set_StackNames(self,StackNames):
-		for i in range(len(StackNames)):	
-			if StackNames[i] is not None:
-				self.add_query_param('StackName.' + str(i + 1) , StackNames[i]);
+	def set_StackNames(self, StackNames):
+		for depth1 in range(len(StackNames)):
+			if StackNames[depth1] is not None:
+				self.add_query_param('StackName.' + str(depth1 + 1) , StackNames[depth1])
 
 	def get_Tags(self):
 		return self.get_query_params().get('Tags')
 
-	def set_Tags(self,Tags):
-		for i in range(len(Tags)):	
-			if Tags[i].get('Value') is not None:
-				self.add_query_param('Tag.' + str(i + 1) + '.Value' , Tags[i].get('Value'))
-			if Tags[i].get('Key') is not None:
-				self.add_query_param('Tag.' + str(i + 1) + '.Key' , Tags[i].get('Key'))
-
+	def set_Tags(self, Tags):
+		for depth1 in range(len(Tags)):
+			if Tags[depth1].get('Value') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tags[depth1].get('Value'))
+			if Tags[depth1].get('Key') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tags[depth1].get('Key'))
 
 	def get_ParentStackId(self):
 		return self.get_query_params().get('ParentStackId')
@@ -82,7 +82,7 @@ class ListStacksRequest(RpcRequest):
 	def get_Statuss(self):
 		return self.get_query_params().get('Statuss')
 
-	def set_Statuss(self,Statuss):
-		for i in range(len(Statuss)):	
-			if Statuss[i] is not None:
-				self.add_query_param('Status.' + str(i + 1) , Statuss[i]);
+	def set_Statuss(self, Statuss):
+		for depth1 in range(len(Statuss)):
+			if Statuss[depth1] is not None:
+				self.add_query_param('Status.' + str(depth1 + 1) , Statuss[depth1])
