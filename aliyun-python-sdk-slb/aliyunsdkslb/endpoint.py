@@ -40,7 +40,7 @@ class EndpointData():
 			"cn-wuhan": "slb.aliyuncs.com",
 			"us-west-1": "slb.aliyuncs.com",
 			"cn-shenzhen": "slb.aliyuncs.com",
-			"cn-zhengzhou-nebula-1": "slb-api.cn-qingdao-nebula.aliyuncs.com",
+			"cn-zhengzhou-nebula-1": "slb.aliyuncs.com",
 			"rus-west-1-pop": "slb.aliyuncs.com",
 			"cn-shanghai-et15-b01": "slb.aliyuncs.com",
 			"cn-hangzhou-bj-b01": "slb.aliyuncs.com",

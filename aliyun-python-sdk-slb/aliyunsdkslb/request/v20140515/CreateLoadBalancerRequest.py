@@ -97,6 +97,12 @@ class CreateLoadBalancerRequest(RpcRequest):
 	def set_PricingCycle(self,PricingCycle):
 		self.add_query_param('PricingCycle',PricingCycle)
 
+	def get_ModificationProtectionReason(self):
+		return self.get_query_params().get('ModificationProtectionReason')
+
+	def set_ModificationProtectionReason(self,ModificationProtectionReason):
+		self.add_query_param('ModificationProtectionReason',ModificationProtectionReason)
+
 	def get_ClientToken(self):
 		return self.get_query_params().get('ClientToken')
 
@@ -150,6 +156,12 @@ class CreateLoadBalancerRequest(RpcRequest):
 
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
+
+	def get_ModificationProtectionStatus(self):
+		return self.get_query_params().get('ModificationProtectionStatus')
+
+	def set_ModificationProtectionStatus(self,ModificationProtectionStatus):
+		self.add_query_param('ModificationProtectionStatus',ModificationProtectionStatus)
 
 	def get_VpcId(self):
 		return self.get_query_params().get('VpcId')
