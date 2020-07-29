@@ -20,7 +20,7 @@ from mock import MagicMock, patch
 from aliyunsdkcore.client import AcsClient
 from aliyunsdkecs.request.v20140526.DescribeRegionsRequest import DescribeRegionsRequest
 from aliyunsdkram.request.v20150501.ListAccessKeysRequest import ListAccessKeysRequest
-from aliyunsdkros.request.v20150901.DescribeResourcesRequest import DescribeResourcesRequest
+from aliyunsdkcs.request.v20151215.DescribeApiVersionRequest import DescribeApiVersionRequest
 from aliyunsdkcloudapi.request.v20160714.DescribeApisRequest import DescribeApisRequest
 import aliyunsdkcore.acs_exception.error_code as error_code
 
@@ -338,14 +338,8 @@ class NewEndpointTest(SDKTestBase):
         response = self.client.do_action_with_exception(request)
 
     def test_call_roa_request_with_client(self):
-        request = DescribeResourcesRequest()
-        request.set_StackId("StackId")
-        request.set_StackName("StackName")
-        try:
-            response = self.client.do_action_with_exception(request)
-            assert False
-        except ServerException as e:
-            self.assertEqual("StackNotFound", e.get_error_code())
+        request = DescribeApiVersionRequest()
+        self.client.do_action_with_exception(request)
 
     def test_location_service_code_not_equals_product_code(self):
         request = DescribeApisRequest()
