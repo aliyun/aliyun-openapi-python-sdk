@@ -70,15 +70,14 @@ class GenerateVideoRequest(RpcRequest):
 	def get_FileLists(self):
 		return self.get_body_params().get('FileLists')
 
-	def set_FileLists(self,FileLists):
-		for i in range(len(FileLists)):	
-			if FileLists[i].get('FileName') is not None:
-				self.add_body_params('FileList.' + str(i + 1) + '.FileName' , FileLists[i].get('FileName'))
-			if FileLists[i].get('FileUrl') is not None:
-				self.add_body_params('FileList.' + str(i + 1) + '.FileUrl' , FileLists[i].get('FileUrl'))
-			if FileLists[i].get('Type') is not None:
-				self.add_body_params('FileList.' + str(i + 1) + '.Type' , FileLists[i].get('Type'))
-
+	def set_FileLists(self, FileLists):
+		for depth1 in range(len(FileLists)):
+			if FileLists[depth1].get('FileName') is not None:
+				self.add_body_params('FileList.' + str(depth1 + 1) + '.FileName', FileLists[depth1].get('FileName'))
+			if FileLists[depth1].get('FileUrl') is not None:
+				self.add_body_params('FileList.' + str(depth1 + 1) + '.FileUrl', FileLists[depth1].get('FileUrl'))
+			if FileLists[depth1].get('Type') is not None:
+				self.add_body_params('FileList.' + str(depth1 + 1) + '.Type', FileLists[depth1].get('Type'))
 
 	def get_Mute(self):
 		return self.get_body_params().get('Mute')

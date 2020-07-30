@@ -34,17 +34,16 @@ class EraseVideoLogoRequest(RpcRequest):
 	def get_Boxess(self):
 		return self.get_body_params().get('Boxess')
 
-	def set_Boxess(self,Boxess):
-		for i in range(len(Boxess)):	
-			if Boxess[i].get('W') is not None:
-				self.add_body_params('Boxes.' + str(i + 1) + '.W' , Boxess[i].get('W'))
-			if Boxess[i].get('H') is not None:
-				self.add_body_params('Boxes.' + str(i + 1) + '.H' , Boxess[i].get('H'))
-			if Boxess[i].get('X') is not None:
-				self.add_body_params('Boxes.' + str(i + 1) + '.X' , Boxess[i].get('X'))
-			if Boxess[i].get('Y') is not None:
-				self.add_body_params('Boxes.' + str(i + 1) + '.Y' , Boxess[i].get('Y'))
-
+	def set_Boxess(self, Boxess):
+		for depth1 in range(len(Boxess)):
+			if Boxess[depth1].get('W') is not None:
+				self.add_body_params('Boxes.' + str(depth1 + 1) + '.W', Boxess[depth1].get('W'))
+			if Boxess[depth1].get('H') is not None:
+				self.add_body_params('Boxes.' + str(depth1 + 1) + '.H', Boxess[depth1].get('H'))
+			if Boxess[depth1].get('X') is not None:
+				self.add_body_params('Boxes.' + str(depth1 + 1) + '.X', Boxess[depth1].get('X'))
+			if Boxess[depth1].get('Y') is not None:
+				self.add_body_params('Boxes.' + str(depth1 + 1) + '.Y', Boxess[depth1].get('Y'))
 
 	def get_VideoUrl(self):
 		return self.get_body_params().get('VideoUrl')
