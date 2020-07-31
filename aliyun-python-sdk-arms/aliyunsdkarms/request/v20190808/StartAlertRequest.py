@@ -36,9 +36,3 @@ class StartAlertRequest(RpcRequest):
 
 	def set_AlertId(self,AlertId):
 		self.add_query_param('AlertId',AlertId)
-
-	def get_ProxyUserId(self):
-		return self.get_query_params().get('ProxyUserId')
-
-	def set_ProxyUserId(self,ProxyUserId):
-		self.add_query_param('ProxyUserId',ProxyUserId)

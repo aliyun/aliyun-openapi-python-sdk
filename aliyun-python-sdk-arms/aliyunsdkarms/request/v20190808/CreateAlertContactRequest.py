@@ -37,12 +37,6 @@ class CreateAlertContactRequest(RpcRequest):
 	def set_PhoneNum(self,PhoneNum):
 		self.add_query_param('PhoneNum',PhoneNum)
 
-	def get_ProxyUserId(self):
-		return self.get_query_params().get('ProxyUserId')
-
-	def set_ProxyUserId(self,ProxyUserId):
-		self.add_query_param('ProxyUserId',ProxyUserId)
-
 	def get_ContactName(self):
 		return self.get_query_params().get('ContactName')
 

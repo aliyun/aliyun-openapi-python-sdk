@@ -36,9 +36,3 @@ class DeleteAlertContactRequest(RpcRequest):
 
 	def set_ContactId(self,ContactId):
 		self.add_query_param('ContactId',ContactId)
-
-	def get_ProxyUserId(self):
-		return self.get_query_params().get('ProxyUserId')
-
-	def set_ProxyUserId(self,ProxyUserId):
-		self.add_query_param('ProxyUserId',ProxyUserId)

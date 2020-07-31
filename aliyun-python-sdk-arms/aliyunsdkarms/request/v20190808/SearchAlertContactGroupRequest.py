@@ -48,9 +48,3 @@ class SearchAlertContactGroupRequest(RpcRequest):
 
 	def set_ContactGroupName(self,ContactGroupName):
 		self.add_query_param('ContactGroupName',ContactGroupName)
-
-	def get_ProxyUserId(self):
-		return self.get_query_params().get('ProxyUserId')
-
-	def set_ProxyUserId(self,ProxyUserId):
-		self.add_query_param('ProxyUserId',ProxyUserId)

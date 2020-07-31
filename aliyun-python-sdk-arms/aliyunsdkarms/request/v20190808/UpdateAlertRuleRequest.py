@@ -37,12 +37,6 @@ class UpdateAlertRuleRequest(RpcRequest):
 	def set_IsAutoStart(self,IsAutoStart):
 		self.add_query_param('IsAutoStart',IsAutoStart)
 
-	def get_ProxyUserId(self):
-		return self.get_query_params().get('ProxyUserId')
-
-	def set_ProxyUserId(self,ProxyUserId):
-		self.add_query_param('ProxyUserId',ProxyUserId)
-
 	def get_ContactGroupIds(self):
 		return self.get_query_params().get('ContactGroupIds')
 

@@ -37,6 +37,12 @@ class DeleteTraceAppRequest(RpcRequest):
 	def set_AppId(self,AppId):
 		self.add_query_param('AppId',AppId)
 
+	def get_Pid(self):
+		return self.get_query_params().get('Pid')
+
+	def set_Pid(self,Pid):
+		self.add_query_param('Pid',Pid)
+
 	def get_Type(self):
 		return self.get_query_params().get('Type')
 

@@ -42,3 +42,9 @@ class GetStackRequest(RpcRequest):
 
 	def set_RpcID(self,RpcID):
 		self.add_query_param('RpcID',RpcID)
+
+	def get_Pid(self):
+		return self.get_query_params().get('Pid')
+
+	def set_Pid(self,Pid):
+		self.add_query_param('Pid',Pid)

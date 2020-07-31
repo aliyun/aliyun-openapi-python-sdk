@@ -49,12 +49,6 @@ class SearchAlertRulesRequest(RpcRequest):
 	def set_Pid(self,Pid):
 		self.add_query_param('Pid',Pid)
 
-	def get_ProxyUserId(self):
-		return self.get_query_params().get('ProxyUserId')
-
-	def set_ProxyUserId(self,ProxyUserId):
-		self.add_query_param('ProxyUserId',ProxyUserId)
-
 	def get_Title(self):
 		return self.get_query_params().get('Title')
 

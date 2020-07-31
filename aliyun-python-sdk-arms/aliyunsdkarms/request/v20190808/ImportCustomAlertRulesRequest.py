@@ -43,14 +43,8 @@ class ImportCustomAlertRulesRequest(RpcRequest):
 	def set_ContactGroupIds(self,ContactGroupIds):
 		self.add_query_param('ContactGroupIds',ContactGroupIds)
 
-	def get_ProxyUserId(self):
-		return self.get_query_params().get('ProxyUserId')
+	def get_TemplateAlertConfig(self):
+		return self.get_query_params().get('TemplateAlertConfig')
 
-	def set_ProxyUserId(self,ProxyUserId):
-		self.add_query_param('ProxyUserId',ProxyUserId)
-
-	def get_TemplageAlertConfig(self):
-		return self.get_query_params().get('TemplageAlertConfig')
-
-	def set_TemplageAlertConfig(self,TemplageAlertConfig):
-		self.add_query_param('TemplageAlertConfig',TemplageAlertConfig)
+	def set_TemplateAlertConfig(self,TemplateAlertConfig):
+		self.add_query_param('TemplateAlertConfig',TemplateAlertConfig)

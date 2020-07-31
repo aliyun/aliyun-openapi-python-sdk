@@ -36,9 +36,3 @@ class DeleteAlertRulesRequest(RpcRequest):
 
 	def set_AlertIds(self,AlertIds):
 		self.add_query_param('AlertIds',AlertIds)
-
-	def get_ProxyUserId(self):
-		return self.get_query_params().get('ProxyUserId')
-
-	def set_ProxyUserId(self,ProxyUserId):
-		self.add_query_param('ProxyUserId',ProxyUserId)
