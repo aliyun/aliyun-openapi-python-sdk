@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkalinlp.endpoint import endpoint_data
 
-class GetWeChEcomRequest(RpcRequest):
+class GetWsCustomizedChEcomCommentRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'alinlp', '2020-06-29', 'GetWeChEcom','alinlp')
+		RpcRequest.__init__(self, 'alinlp', '2020-06-29', 'GetWsCustomizedChEcomComment','alinlp')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,23 +31,11 @@ class GetWeChEcomRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_Type(self):
-		return self.get_body_params().get('Type')
-
-	def set_Type(self,Type):
-		self.add_body_params('Type', Type)
-
 	def get_ServiceCode(self):
 		return self.get_body_params().get('ServiceCode')
 
 	def set_ServiceCode(self,ServiceCode):
 		self.add_body_params('ServiceCode', ServiceCode)
-
-	def get_Size(self):
-		return self.get_body_params().get('Size')
-
-	def set_Size(self,Size):
-		self.add_body_params('Size', Size)
 
 	def get_TokenizerId(self):
 		return self.get_body_params().get('TokenizerId')
@@ -61,8 +49,8 @@ class GetWeChEcomRequest(RpcRequest):
 	def set_Text(self,Text):
 		self.add_body_params('Text', Text)
 
-	def get_Operation(self):
-		return self.get_body_params().get('Operation')
+	def get_OutType(self):
+		return self.get_body_params().get('OutType')
 
-	def set_Operation(self,Operation):
-		self.add_body_params('Operation', Operation)
+	def set_OutType(self,OutType):
+		self.add_body_params('OutType', OutType)
