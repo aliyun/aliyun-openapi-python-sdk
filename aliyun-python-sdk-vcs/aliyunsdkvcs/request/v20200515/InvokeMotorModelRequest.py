@@ -43,6 +43,12 @@ class InvokeMotorModelRequest(RpcRequest):
 	def set_CorpId(self,CorpId):
 		self.add_body_params('CorpId', CorpId)
 
+	def get_PicUrl(self):
+		return self.get_body_params().get('PicUrl')
+
+	def set_PicUrl(self,PicUrl):
+		self.add_body_params('PicUrl', PicUrl)
+
 	def get_PicId(self):
 		return self.get_body_params().get('PicId')
 
