@@ -1,3 +1,6 @@
+2020-08-03 Version: 1.1.0
+- Add source picture url for Monitor.
+
 2020-07-22 Version: 1.0.9.2
 - Add SourceId for SearchFace.
 
