@@ -24,6 +24,7 @@ class DescribeUpdatePackageResultRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Green', '2017-08-23', 'DescribeUpdatePackageResult','green')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):

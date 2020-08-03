@@ -24,6 +24,7 @@ class UploadImageToLibRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Green', '2017-08-23', 'UploadImageToLib','green')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -35,6 +36,12 @@ class UploadImageToLibRequest(RpcRequest):
 
 	def set_Images(self,Images):
 		self.add_query_param('Images',Images)
+
+	def get_Urls(self):
+		return self.get_query_params().get('Urls')
+
+	def set_Urls(self,Urls):
+		self.add_query_param('Urls',Urls)
 
 	def get_SourceIp(self):
 		return self.get_query_params().get('SourceIp')

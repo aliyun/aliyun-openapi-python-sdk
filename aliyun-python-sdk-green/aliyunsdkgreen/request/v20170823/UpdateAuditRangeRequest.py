@@ -24,6 +24,7 @@ class UpdateAuditRangeRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Green', '2017-08-23', 'UpdateAuditRange','green')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -35,9 +36,3 @@ class UpdateAuditRangeRequest(RpcRequest):
 
 	def set_AuditRange(self,AuditRange):
 		self.add_query_param('AuditRange',AuditRange)
-
-	def get_SourceIp(self):
-		return self.get_query_params().get('SourceIp')
-
-	def set_SourceIp(self,SourceIp):
-		self.add_query_param('SourceIp',SourceIp)

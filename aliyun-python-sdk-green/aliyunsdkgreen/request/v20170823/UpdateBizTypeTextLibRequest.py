@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkgreen.endpoint import endpoint_data
 
-class MarkOssResultRequest(RpcRequest):
+class UpdateBizTypeTextLibRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Green', '2017-08-23', 'MarkOssResult','green')
+		RpcRequest.__init__(self, 'Green', '2017-08-23', 'UpdateBizTypeTextLib','green')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -37,38 +37,38 @@ class MarkOssResultRequest(RpcRequest):
 	def set_Scene(self,Scene):
 		self.add_query_param('Scene',Scene)
 
-	def get_SourceIp(self):
-		return self.get_query_params().get('SourceIp')
+	def get_White(self):
+		return self.get_query_params().get('White')
 
-	def set_SourceIp(self,SourceIp):
-		self.add_query_param('SourceIp',SourceIp)
+	def set_White(self,White):
+		self.add_query_param('White',White)
 
-	def get_Lang(self):
-		return self.get_query_params().get('Lang')
+	def get_Review(self):
+		return self.get_query_params().get('Review')
 
-	def set_Lang(self,Lang):
-		self.add_query_param('Lang',Lang)
+	def set_Review(self,Review):
+		self.add_query_param('Review',Review)
 
-	def get_Stock(self):
-		return self.get_query_params().get('Stock')
+	def get_Ignore(self):
+		return self.get_query_params().get('Ignore')
 
-	def set_Stock(self,Stock):
-		self.add_query_param('Stock',Stock)
+	def set_Ignore(self,Ignore):
+		self.add_query_param('Ignore',Ignore)
+
+	def get_BizTypeName(self):
+		return self.get_query_params().get('BizTypeName')
+
+	def set_BizTypeName(self,BizTypeName):
+		self.add_query_param('BizTypeName',BizTypeName)
+
+	def get_Black(self):
+		return self.get_query_params().get('Black')
+
+	def set_Black(self,Black):
+		self.add_query_param('Black',Black)
 
 	def get_ResourceType(self):
 		return self.get_query_params().get('ResourceType')
 
 	def set_ResourceType(self,ResourceType):
 		self.add_query_param('ResourceType',ResourceType)
-
-	def get_Ids(self):
-		return self.get_query_params().get('Ids')
-
-	def set_Ids(self,Ids):
-		self.add_query_param('Ids',Ids)
-
-	def get_Operation(self):
-		return self.get_query_params().get('Operation')
-
-	def set_Operation(self,Operation):
-		self.add_query_param('Operation',Operation)

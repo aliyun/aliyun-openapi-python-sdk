@@ -24,6 +24,7 @@ class DescribeViewContentRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Green', '2017-08-23', 'DescribeViewContent','green')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -47,12 +48,6 @@ class DescribeViewContentRequest(RpcRequest):
 
 	def set_Scene(self,Scene):
 		self.add_query_param('Scene',Scene)
-
-	def get_SourceIp(self):
-		return self.get_query_params().get('SourceIp')
-
-	def set_SourceIp(self,SourceIp):
-		self.add_query_param('SourceIp',SourceIp)
 
 	def get_LibType(self):
 		return self.get_query_params().get('LibType')

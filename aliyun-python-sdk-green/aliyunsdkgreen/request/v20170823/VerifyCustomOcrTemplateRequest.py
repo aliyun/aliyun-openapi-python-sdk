@@ -24,6 +24,7 @@ class VerifyCustomOcrTemplateRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Green', '2017-08-23', 'VerifyCustomOcrTemplate','green')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -35,12 +36,6 @@ class VerifyCustomOcrTemplateRequest(RpcRequest):
 
 	def set_TestImgUrl(self,TestImgUrl):
 		self.add_query_param('TestImgUrl',TestImgUrl)
-
-	def get_SourceIp(self):
-		return self.get_query_params().get('SourceIp')
-
-	def set_SourceIp(self,SourceIp):
-		self.add_query_param('SourceIp',SourceIp)
 
 	def get_Id(self):
 		return self.get_query_params().get('Id')

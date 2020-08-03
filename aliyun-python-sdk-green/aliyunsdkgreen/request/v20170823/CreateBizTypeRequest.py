@@ -24,6 +24,7 @@ class CreateBizTypeRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Green', '2017-08-23', 'CreateBizType','green')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -36,11 +37,11 @@ class CreateBizTypeRequest(RpcRequest):
 	def set_BizTypeImport(self,BizTypeImport):
 		self.add_query_param('BizTypeImport',BizTypeImport)
 
-	def get_SourceIp(self):
-		return self.get_query_params().get('SourceIp')
+	def get_CiteTemplate(self):
+		return self.get_query_params().get('CiteTemplate')
 
-	def set_SourceIp(self,SourceIp):
-		self.add_query_param('SourceIp',SourceIp)
+	def set_CiteTemplate(self,CiteTemplate):
+		self.add_query_param('CiteTemplate',CiteTemplate)
 
 	def get_IndustryInfo(self):
 		return self.get_query_params().get('IndustryInfo')

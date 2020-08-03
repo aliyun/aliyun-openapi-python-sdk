@@ -24,6 +24,7 @@ class UpdateCustomOcrTemplateRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Green', '2017-08-23', 'UpdateCustomOcrTemplate','green')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -35,12 +36,6 @@ class UpdateCustomOcrTemplateRequest(RpcRequest):
 
 	def set_RecognizeArea(self,RecognizeArea):
 		self.add_query_param('RecognizeArea',RecognizeArea)
-
-	def get_SourceIp(self):
-		return self.get_query_params().get('SourceIp')
-
-	def set_SourceIp(self,SourceIp):
-		self.add_query_param('SourceIp',SourceIp)
 
 	def get_ReferArea(self):
 		return self.get_query_params().get('ReferArea')

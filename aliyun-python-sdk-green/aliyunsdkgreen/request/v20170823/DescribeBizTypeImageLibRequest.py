@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkgreen.endpoint import endpoint_data
 
-class UpdateWebsiteInstanceKeyUrlRequest(RpcRequest):
+class DescribeBizTypeImageLibRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Green', '2017-08-23', 'UpdateWebsiteInstanceKeyUrl','green')
+		RpcRequest.__init__(self, 'Green', '2017-08-23', 'DescribeBizTypeImageLib','green')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,26 +31,20 @@ class UpdateWebsiteInstanceKeyUrlRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_Urls(self):
-		return self.get_query_params().get('Urls')
+	def get_ResourceType(self):
+		return self.get_query_params().get('ResourceType')
 
-	def set_Urls(self,Urls):
-		self.add_query_param('Urls',Urls)
+	def set_ResourceType(self,ResourceType):
+		self.add_query_param('ResourceType',ResourceType)
 
-	def get_InstanceId(self):
-		return self.get_query_params().get('InstanceId')
+	def get_Scene(self):
+		return self.get_query_params().get('Scene')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
+	def set_Scene(self,Scene):
+		self.add_query_param('Scene',Scene)
 
-	def get_SourceIp(self):
-		return self.get_query_params().get('SourceIp')
+	def get_BizTypeName(self):
+		return self.get_query_params().get('BizTypeName')
 
-	def set_SourceIp(self,SourceIp):
-		self.add_query_param('SourceIp',SourceIp)
-
-	def get_Lang(self):
-		return self.get_query_params().get('Lang')
-
-	def set_Lang(self,Lang):
-		self.add_query_param('Lang',Lang)
+	def set_BizTypeName(self,BizTypeName):
+		self.add_query_param('BizTypeName',BizTypeName)

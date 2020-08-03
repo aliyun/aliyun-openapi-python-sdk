@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkgreen.endpoint import endpoint_data
 
-class UpdateWebsiteInstanceKeyUrlRequest(RpcRequest):
+class DescribeUsageBillRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Green', '2017-08-23', 'UpdateWebsiteInstanceKeyUrl','green')
+		RpcRequest.__init__(self, 'Green', '2017-08-23', 'DescribeUsageBill','green')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,26 +31,32 @@ class UpdateWebsiteInstanceKeyUrlRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_Urls(self):
-		return self.get_query_params().get('Urls')
+	def get_TotalCount(self):
+		return self.get_query_params().get('TotalCount')
 
-	def set_Urls(self,Urls):
-		self.add_query_param('Urls',Urls)
+	def set_TotalCount(self,TotalCount):
+		self.add_query_param('TotalCount',TotalCount)
 
-	def get_InstanceId(self):
-		return self.get_query_params().get('InstanceId')
+	def get_CurrentPage(self):
+		return self.get_query_params().get('CurrentPage')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
+	def set_CurrentPage(self,CurrentPage):
+		self.add_query_param('CurrentPage',CurrentPage)
 
-	def get_SourceIp(self):
-		return self.get_query_params().get('SourceIp')
+	def get_Type(self):
+		return self.get_query_params().get('Type')
 
-	def set_SourceIp(self,SourceIp):
-		self.add_query_param('SourceIp',SourceIp)
+	def set_Type(self,Type):
+		self.add_query_param('Type',Type)
 
-	def get_Lang(self):
-		return self.get_query_params().get('Lang')
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
 
-	def set_Lang(self,Lang):
-		self.add_query_param('Lang',Lang)
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
+
+	def get_Day(self):
+		return self.get_query_params().get('Day')
+
+	def set_Day(self,Day):
+		self.add_query_param('Day',Day)

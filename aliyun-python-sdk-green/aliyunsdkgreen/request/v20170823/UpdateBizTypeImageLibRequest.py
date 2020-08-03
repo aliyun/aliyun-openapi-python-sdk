@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkgreen.endpoint import endpoint_data
 
-class UpdateWebsiteInstanceKeyUrlRequest(RpcRequest):
+class UpdateBizTypeImageLibRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Green', '2017-08-23', 'UpdateWebsiteInstanceKeyUrl','green')
+		RpcRequest.__init__(self, 'Green', '2017-08-23', 'UpdateBizTypeImageLib','green')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,26 +31,38 @@ class UpdateWebsiteInstanceKeyUrlRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_Urls(self):
-		return self.get_query_params().get('Urls')
+	def get_Scene(self):
+		return self.get_query_params().get('Scene')
 
-	def set_Urls(self,Urls):
-		self.add_query_param('Urls',Urls)
+	def set_Scene(self,Scene):
+		self.add_query_param('Scene',Scene)
 
-	def get_InstanceId(self):
-		return self.get_query_params().get('InstanceId')
+	def get_White(self):
+		return self.get_query_params().get('White')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
+	def set_White(self,White):
+		self.add_query_param('White',White)
 
-	def get_SourceIp(self):
-		return self.get_query_params().get('SourceIp')
+	def get_Review(self):
+		return self.get_query_params().get('Review')
 
-	def set_SourceIp(self,SourceIp):
-		self.add_query_param('SourceIp',SourceIp)
+	def set_Review(self,Review):
+		self.add_query_param('Review',Review)
 
-	def get_Lang(self):
-		return self.get_query_params().get('Lang')
+	def get_BizTypeName(self):
+		return self.get_query_params().get('BizTypeName')
 
-	def set_Lang(self,Lang):
-		self.add_query_param('Lang',Lang)
+	def set_BizTypeName(self,BizTypeName):
+		self.add_query_param('BizTypeName',BizTypeName)
+
+	def get_Black(self):
+		return self.get_query_params().get('Black')
+
+	def set_Black(self,Black):
+		self.add_query_param('Black',Black)
+
+	def get_ResourceType(self):
+		return self.get_query_params().get('ResourceType')
+
+	def set_ResourceType(self,ResourceType):
+		self.add_query_param('ResourceType',ResourceType)

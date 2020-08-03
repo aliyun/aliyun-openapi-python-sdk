@@ -37,12 +37,6 @@ class ImportKeywordsRequest(RpcRequest):
 	def set_KeywordLibId(self,KeywordLibId):
 		self.add_query_param('KeywordLibId',KeywordLibId)
 
-	def get_SourceIp(self):
-		return self.get_query_params().get('SourceIp')
-
-	def set_SourceIp(self,SourceIp):
-		self.add_query_param('SourceIp',SourceIp)
-
 	def get_KeywordsObject(self):
 		return self.get_query_params().get('KeywordsObject')
 
