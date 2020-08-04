@@ -24,6 +24,7 @@ class DescribePlanogramEslDevicesRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'cloudesl', '2020-02-01', 'DescribePlanogramEslDevices','cloudesl')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -47,3 +48,9 @@ class DescribePlanogramEslDevicesRequest(RpcRequest):
 
 	def set_Shelf(self,Shelf):
 		self.add_body_params('Shelf', Shelf)
+
+	def get_EslBarCode(self):
+		return self.get_body_params().get('EslBarCode')
+
+	def set_EslBarCode(self,EslBarCode):
+		self.add_body_params('EslBarCode', EslBarCode)

@@ -24,6 +24,7 @@ class DescribePlanogramShelvesRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'cloudesl', '2020-02-01', 'DescribePlanogramShelves','cloudesl')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -35,3 +36,15 @@ class DescribePlanogramShelvesRequest(RpcRequest):
 
 	def set_StoreId(self,StoreId):
 		self.add_body_params('StoreId', StoreId)
+
+	def get_PageNumber(self):
+		return self.get_body_params().get('PageNumber')
+
+	def set_PageNumber(self,PageNumber):
+		self.add_body_params('PageNumber', PageNumber)
+
+	def get_PageSize(self):
+		return self.get_body_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_body_params('PageSize', PageSize)

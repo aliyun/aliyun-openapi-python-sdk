@@ -24,11 +24,18 @@ class AddUserRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'cloudesl', '2020-02-01', 'AddUser','cloudesl')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+
+	def get_ClientToken(self):
+		return self.get_body_params().get('ClientToken')
+
+	def set_ClientToken(self,ClientToken):
+		self.add_body_params('ClientToken', ClientToken)
 
 	def get_UserId(self):
 		return self.get_body_params().get('UserId')

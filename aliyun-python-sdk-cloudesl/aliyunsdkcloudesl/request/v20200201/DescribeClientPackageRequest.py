@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcloudesl.endpoint import endpoint_data
 
-class UpdateEslDeviceLightRequest(RpcRequest):
+class DescribeClientPackageRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'cloudesl', '2020-02-01', 'UpdateEslDeviceLight','cloudesl')
+		RpcRequest.__init__(self, 'cloudesl', '2020-02-01', 'DescribeClientPackage','cloudesl')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,38 +31,8 @@ class UpdateEslDeviceLightRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_LightUpTime(self):
-		return self.get_body_params().get('LightUpTime')
+	def get_ClientType(self):
+		return self.get_body_params().get('ClientType')
 
-	def set_LightUpTime(self,LightUpTime):
-		self.add_body_params('LightUpTime', LightUpTime)
-
-	def get_StoreId(self):
-		return self.get_body_params().get('StoreId')
-
-	def set_StoreId(self,StoreId):
-		self.add_body_params('StoreId', StoreId)
-
-	def get_Frequency(self):
-		return self.get_body_params().get('Frequency')
-
-	def set_Frequency(self,Frequency):
-		self.add_body_params('Frequency', Frequency)
-
-	def get_EslBarCode(self):
-		return self.get_body_params().get('EslBarCode')
-
-	def set_EslBarCode(self,EslBarCode):
-		self.add_body_params('EslBarCode', EslBarCode)
-
-	def get_LedColor(self):
-		return self.get_body_params().get('LedColor')
-
-	def set_LedColor(self,LedColor):
-		self.add_body_params('LedColor', LedColor)
-
-	def get_ItemBarCode(self):
-		return self.get_body_params().get('ItemBarCode')
-
-	def set_ItemBarCode(self,ItemBarCode):
-		self.add_body_params('ItemBarCode', ItemBarCode)
+	def set_ClientType(self,ClientType):
+		self.add_body_params('ClientType', ClientType)

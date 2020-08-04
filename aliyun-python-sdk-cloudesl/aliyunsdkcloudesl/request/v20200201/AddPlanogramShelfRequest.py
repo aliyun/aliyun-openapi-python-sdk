@@ -24,11 +24,18 @@ class AddPlanogramShelfRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'cloudesl', '2020-02-01', 'AddPlanogramShelf','cloudesl')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+
+	def get_ClientToken(self):
+		return self.get_body_params().get('ClientToken')
+
+	def set_ClientToken(self,ClientToken):
+		self.add_body_params('ClientToken', ClientToken)
 
 	def get_ShelfType(self):
 		return self.get_body_params().get('ShelfType')
@@ -47,3 +54,15 @@ class AddPlanogramShelfRequest(RpcRequest):
 
 	def set_Shelf(self,Shelf):
 		self.add_body_params('Shelf', Shelf)
+
+	def get_Zone(self):
+		return self.get_body_params().get('Zone')
+
+	def set_Zone(self,Zone):
+		self.add_body_params('Zone', Zone)
+
+	def get_Category(self):
+		return self.get_body_params().get('Category')
+
+	def set_Category(self,Category):
+		self.add_body_params('Category', Category)

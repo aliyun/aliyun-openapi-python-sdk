@@ -24,6 +24,7 @@ class BatchInsertItemsRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'cloudesl', '2020-02-01', 'BatchInsertItems','cloudesl')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -39,105 +40,105 @@ class BatchInsertItemsRequest(RpcRequest):
 	def get_ItemInfos(self):
 		return self.get_body_params().get('ItemInfos')
 
-	def set_ItemInfos(self,ItemInfos):
-		for i in range(len(ItemInfos)):	
-			if ItemInfos[i].get('MemberPrice') is not None:
-				self.add_body_params('ItemInfo.' + str(i + 1) + '.MemberPrice' , ItemInfos[i].get('MemberPrice'))
-			if ItemInfos[i].get('ActionPrice') is not None:
-				self.add_body_params('ItemInfo.' + str(i + 1) + '.ActionPrice' , ItemInfos[i].get('ActionPrice'))
-			if ItemInfos[i].get('BeSourceCode') is not None:
-				self.add_body_params('ItemInfo.' + str(i + 1) + '.BeSourceCode' , ItemInfos[i].get('BeSourceCode'))
-			if ItemInfos[i].get('BrandName') is not None:
-				self.add_body_params('ItemInfo.' + str(i + 1) + '.BrandName' , ItemInfos[i].get('BrandName'))
-			if ItemInfos[i].get('PromotionStart') is not None:
-				self.add_body_params('ItemInfo.' + str(i + 1) + '.PromotionStart' , ItemInfos[i].get('PromotionStart'))
-			if ItemInfos[i].get('PriceUnit') is not None:
-				self.add_body_params('ItemInfo.' + str(i + 1) + '.PriceUnit' , ItemInfos[i].get('PriceUnit'))
-			if ItemInfos[i].get('Rank') is not None:
-				self.add_body_params('ItemInfo.' + str(i + 1) + '.Rank' , ItemInfos[i].get('Rank'))
-			if ItemInfos[i].get('ItemInfoIndex') is not None:
-				self.add_body_params('ItemInfo.' + str(i + 1) + '.ItemInfoIndex' , ItemInfos[i].get('ItemInfoIndex'))
-			if ItemInfos[i].get('ItemBarCode') is not None:
-				self.add_body_params('ItemInfo.' + str(i + 1) + '.ItemBarCode' , ItemInfos[i].get('ItemBarCode'))
-			if ItemInfos[i].get('CustomizeFeatureK') is not None:
-				self.add_body_params('ItemInfo.' + str(i + 1) + '.CustomizeFeatureK' , ItemInfos[i].get('CustomizeFeatureK'))
-			if ItemInfos[i].get('CustomizeFeatureL') is not None:
-				self.add_body_params('ItemInfo.' + str(i + 1) + '.CustomizeFeatureL' , ItemInfos[i].get('CustomizeFeatureL'))
-			if ItemInfos[i].get('CustomizeFeatureM') is not None:
-				self.add_body_params('ItemInfo.' + str(i + 1) + '.CustomizeFeatureM' , ItemInfos[i].get('CustomizeFeatureM'))
-			if ItemInfos[i].get('BePromotion') is not None:
-				self.add_body_params('ItemInfo.' + str(i + 1) + '.BePromotion' , ItemInfos[i].get('BePromotion'))
-			if ItemInfos[i].get('CustomizeFeatureN') is not None:
-				self.add_body_params('ItemInfo.' + str(i + 1) + '.CustomizeFeatureN' , ItemInfos[i].get('CustomizeFeatureN'))
-			if ItemInfos[i].get('CustomizeFeatureO') is not None:
-				self.add_body_params('ItemInfo.' + str(i + 1) + '.CustomizeFeatureO' , ItemInfos[i].get('CustomizeFeatureO'))
-			if ItemInfos[i].get('PromotionEnd') is not None:
-				self.add_body_params('ItemInfo.' + str(i + 1) + '.PromotionEnd' , ItemInfos[i].get('PromotionEnd'))
-			if ItemInfos[i].get('ItemTitle') is not None:
-				self.add_body_params('ItemInfo.' + str(i + 1) + '.ItemTitle' , ItemInfos[i].get('ItemTitle'))
-			if ItemInfos[i].get('CustomizeFeatureC') is not None:
-				self.add_body_params('ItemInfo.' + str(i + 1) + '.CustomizeFeatureC' , ItemInfos[i].get('CustomizeFeatureC'))
-			if ItemInfos[i].get('CustomizeFeatureD') is not None:
-				self.add_body_params('ItemInfo.' + str(i + 1) + '.CustomizeFeatureD' , ItemInfos[i].get('CustomizeFeatureD'))
-			if ItemInfos[i].get('ItemQrCode') is not None:
-				self.add_body_params('ItemInfo.' + str(i + 1) + '.ItemQrCode' , ItemInfos[i].get('ItemQrCode'))
-			if ItemInfos[i].get('CustomizeFeatureE') is not None:
-				self.add_body_params('ItemInfo.' + str(i + 1) + '.CustomizeFeatureE' , ItemInfos[i].get('CustomizeFeatureE'))
-			if ItemInfos[i].get('InventoryStatus') is not None:
-				self.add_body_params('ItemInfo.' + str(i + 1) + '.InventoryStatus' , ItemInfos[i].get('InventoryStatus'))
-			if ItemInfos[i].get('PromotionReason') is not None:
-				self.add_body_params('ItemInfo.' + str(i + 1) + '.PromotionReason' , ItemInfos[i].get('PromotionReason'))
-			if ItemInfos[i].get('CustomizeFeatureF') is not None:
-				self.add_body_params('ItemInfo.' + str(i + 1) + '.CustomizeFeatureF' , ItemInfos[i].get('CustomizeFeatureF'))
-			if ItemInfos[i].get('CustomizeFeatureG') is not None:
-				self.add_body_params('ItemInfo.' + str(i + 1) + '.CustomizeFeatureG' , ItemInfos[i].get('CustomizeFeatureG'))
-			if ItemInfos[i].get('CustomizeFeatureH') is not None:
-				self.add_body_params('ItemInfo.' + str(i + 1) + '.CustomizeFeatureH' , ItemInfos[i].get('CustomizeFeatureH'))
-			if ItemInfos[i].get('CustomizeFeatureI') is not None:
-				self.add_body_params('ItemInfo.' + str(i + 1) + '.CustomizeFeatureI' , ItemInfos[i].get('CustomizeFeatureI'))
-			if ItemInfos[i].get('CustomizeFeatureJ') is not None:
-				self.add_body_params('ItemInfo.' + str(i + 1) + '.CustomizeFeatureJ' , ItemInfos[i].get('CustomizeFeatureJ'))
-			if ItemInfos[i].get('CustomizeFeatureA') is not None:
-				self.add_body_params('ItemInfo.' + str(i + 1) + '.CustomizeFeatureA' , ItemInfos[i].get('CustomizeFeatureA'))
-			if ItemInfos[i].get('CustomizeFeatureB') is not None:
-				self.add_body_params('ItemInfo.' + str(i + 1) + '.CustomizeFeatureB' , ItemInfos[i].get('CustomizeFeatureB'))
-			if ItemInfos[i].get('SuggestPrice') is not None:
-				self.add_body_params('ItemInfo.' + str(i + 1) + '.SuggestPrice' , ItemInfos[i].get('SuggestPrice'))
-			if ItemInfos[i].get('ForestFirstId') is not None:
-				self.add_body_params('ItemInfo.' + str(i + 1) + '.ForestFirstId' , ItemInfos[i].get('ForestFirstId'))
-			if ItemInfos[i].get('ProductionPlace') is not None:
-				self.add_body_params('ItemInfo.' + str(i + 1) + '.ProductionPlace' , ItemInfos[i].get('ProductionPlace'))
-			if ItemInfos[i].get('Manufacturer') is not None:
-				self.add_body_params('ItemInfo.' + str(i + 1) + '.Manufacturer' , ItemInfos[i].get('Manufacturer'))
-			if ItemInfos[i].get('SourceCode') is not None:
-				self.add_body_params('ItemInfo.' + str(i + 1) + '.SourceCode' , ItemInfos[i].get('SourceCode'))
-			if ItemInfos[i].get('ItemId') is not None:
-				self.add_body_params('ItemInfo.' + str(i + 1) + '.ItemId' , ItemInfos[i].get('ItemId'))
-			if ItemInfos[i].get('SalesPrice') is not None:
-				self.add_body_params('ItemInfo.' + str(i + 1) + '.SalesPrice' , ItemInfos[i].get('SalesPrice'))
-			if ItemInfos[i].get('OriginalPrice') is not None:
-				self.add_body_params('ItemInfo.' + str(i + 1) + '.OriginalPrice' , ItemInfos[i].get('OriginalPrice'))
-			if ItemInfos[i].get('ItemShortTitle') is not None:
-				self.add_body_params('ItemInfo.' + str(i + 1) + '.ItemShortTitle' , ItemInfos[i].get('ItemShortTitle'))
-			if ItemInfos[i].get('ForestSecondId') is not None:
-				self.add_body_params('ItemInfo.' + str(i + 1) + '.ForestSecondId' , ItemInfos[i].get('ForestSecondId'))
-			if ItemInfos[i].get('ItemPicUrl') is not None:
-				self.add_body_params('ItemInfo.' + str(i + 1) + '.ItemPicUrl' , ItemInfos[i].get('ItemPicUrl'))
-			if ItemInfos[i].get('SupplierName') is not None:
-				self.add_body_params('ItemInfo.' + str(i + 1) + '.SupplierName' , ItemInfos[i].get('SupplierName'))
-			if ItemInfos[i].get('Material') is not None:
-				self.add_body_params('ItemInfo.' + str(i + 1) + '.Material' , ItemInfos[i].get('Material'))
-			if ItemInfos[i].get('ModelNumber') is not None:
-				self.add_body_params('ItemInfo.' + str(i + 1) + '.ModelNumber' , ItemInfos[i].get('ModelNumber'))
-			if ItemInfos[i].get('SaleSpec') is not None:
-				self.add_body_params('ItemInfo.' + str(i + 1) + '.SaleSpec' , ItemInfos[i].get('SaleSpec'))
-			if ItemInfos[i].get('CategoryName') is not None:
-				self.add_body_params('ItemInfo.' + str(i + 1) + '.CategoryName' , ItemInfos[i].get('CategoryName'))
-			if ItemInfos[i].get('TaxFee') is not None:
-				self.add_body_params('ItemInfo.' + str(i + 1) + '.TaxFee' , ItemInfos[i].get('TaxFee'))
-			if ItemInfos[i].get('EnergyEfficiency') is not None:
-				self.add_body_params('ItemInfo.' + str(i + 1) + '.EnergyEfficiency' , ItemInfos[i].get('EnergyEfficiency'))
-			if ItemInfos[i].get('PromotionText') is not None:
-				self.add_body_params('ItemInfo.' + str(i + 1) + '.PromotionText' , ItemInfos[i].get('PromotionText'))
-			if ItemInfos[i].get('SkuId') is not None:
-				self.add_body_params('ItemInfo.' + str(i + 1) + '.SkuId' , ItemInfos[i].get('SkuId'))
+	def set_ItemInfos(self, ItemInfos):
+		for depth1 in range(len(ItemInfos)):
+			if ItemInfos[depth1].get('MemberPrice') is not None:
+				self.add_body_params('ItemInfo.' + str(depth1 + 1) + '.MemberPrice', ItemInfos[depth1].get('MemberPrice'))
+			if ItemInfos[depth1].get('ActionPrice') is not None:
+				self.add_body_params('ItemInfo.' + str(depth1 + 1) + '.ActionPrice', ItemInfos[depth1].get('ActionPrice'))
+			if ItemInfos[depth1].get('BeSourceCode') is not None:
+				self.add_body_params('ItemInfo.' + str(depth1 + 1) + '.BeSourceCode', ItemInfos[depth1].get('BeSourceCode'))
+			if ItemInfos[depth1].get('BrandName') is not None:
+				self.add_body_params('ItemInfo.' + str(depth1 + 1) + '.BrandName', ItemInfos[depth1].get('BrandName'))
+			if ItemInfos[depth1].get('PromotionStart') is not None:
+				self.add_body_params('ItemInfo.' + str(depth1 + 1) + '.PromotionStart', ItemInfos[depth1].get('PromotionStart'))
+			if ItemInfos[depth1].get('PriceUnit') is not None:
+				self.add_body_params('ItemInfo.' + str(depth1 + 1) + '.PriceUnit', ItemInfos[depth1].get('PriceUnit'))
+			if ItemInfos[depth1].get('Rank') is not None:
+				self.add_body_params('ItemInfo.' + str(depth1 + 1) + '.Rank', ItemInfos[depth1].get('Rank'))
+			if ItemInfos[depth1].get('ItemInfoIndex') is not None:
+				self.add_body_params('ItemInfo.' + str(depth1 + 1) + '.ItemInfoIndex', ItemInfos[depth1].get('ItemInfoIndex'))
+			if ItemInfos[depth1].get('ItemBarCode') is not None:
+				self.add_body_params('ItemInfo.' + str(depth1 + 1) + '.ItemBarCode', ItemInfos[depth1].get('ItemBarCode'))
+			if ItemInfos[depth1].get('CustomizeFeatureK') is not None:
+				self.add_body_params('ItemInfo.' + str(depth1 + 1) + '.CustomizeFeatureK', ItemInfos[depth1].get('CustomizeFeatureK'))
+			if ItemInfos[depth1].get('CustomizeFeatureL') is not None:
+				self.add_body_params('ItemInfo.' + str(depth1 + 1) + '.CustomizeFeatureL', ItemInfos[depth1].get('CustomizeFeatureL'))
+			if ItemInfos[depth1].get('CustomizeFeatureM') is not None:
+				self.add_body_params('ItemInfo.' + str(depth1 + 1) + '.CustomizeFeatureM', ItemInfos[depth1].get('CustomizeFeatureM'))
+			if ItemInfos[depth1].get('BePromotion') is not None:
+				self.add_body_params('ItemInfo.' + str(depth1 + 1) + '.BePromotion', ItemInfos[depth1].get('BePromotion'))
+			if ItemInfos[depth1].get('CustomizeFeatureN') is not None:
+				self.add_body_params('ItemInfo.' + str(depth1 + 1) + '.CustomizeFeatureN', ItemInfos[depth1].get('CustomizeFeatureN'))
+			if ItemInfos[depth1].get('CustomizeFeatureO') is not None:
+				self.add_body_params('ItemInfo.' + str(depth1 + 1) + '.CustomizeFeatureO', ItemInfos[depth1].get('CustomizeFeatureO'))
+			if ItemInfos[depth1].get('PromotionEnd') is not None:
+				self.add_body_params('ItemInfo.' + str(depth1 + 1) + '.PromotionEnd', ItemInfos[depth1].get('PromotionEnd'))
+			if ItemInfos[depth1].get('ItemTitle') is not None:
+				self.add_body_params('ItemInfo.' + str(depth1 + 1) + '.ItemTitle', ItemInfos[depth1].get('ItemTitle'))
+			if ItemInfos[depth1].get('CustomizeFeatureC') is not None:
+				self.add_body_params('ItemInfo.' + str(depth1 + 1) + '.CustomizeFeatureC', ItemInfos[depth1].get('CustomizeFeatureC'))
+			if ItemInfos[depth1].get('CustomizeFeatureD') is not None:
+				self.add_body_params('ItemInfo.' + str(depth1 + 1) + '.CustomizeFeatureD', ItemInfos[depth1].get('CustomizeFeatureD'))
+			if ItemInfos[depth1].get('ItemQrCode') is not None:
+				self.add_body_params('ItemInfo.' + str(depth1 + 1) + '.ItemQrCode', ItemInfos[depth1].get('ItemQrCode'))
+			if ItemInfos[depth1].get('CustomizeFeatureE') is not None:
+				self.add_body_params('ItemInfo.' + str(depth1 + 1) + '.CustomizeFeatureE', ItemInfos[depth1].get('CustomizeFeatureE'))
+			if ItemInfos[depth1].get('InventoryStatus') is not None:
+				self.add_body_params('ItemInfo.' + str(depth1 + 1) + '.InventoryStatus', ItemInfos[depth1].get('InventoryStatus'))
+			if ItemInfos[depth1].get('PromotionReason') is not None:
+				self.add_body_params('ItemInfo.' + str(depth1 + 1) + '.PromotionReason', ItemInfos[depth1].get('PromotionReason'))
+			if ItemInfos[depth1].get('CustomizeFeatureF') is not None:
+				self.add_body_params('ItemInfo.' + str(depth1 + 1) + '.CustomizeFeatureF', ItemInfos[depth1].get('CustomizeFeatureF'))
+			if ItemInfos[depth1].get('CustomizeFeatureG') is not None:
+				self.add_body_params('ItemInfo.' + str(depth1 + 1) + '.CustomizeFeatureG', ItemInfos[depth1].get('CustomizeFeatureG'))
+			if ItemInfos[depth1].get('CustomizeFeatureH') is not None:
+				self.add_body_params('ItemInfo.' + str(depth1 + 1) + '.CustomizeFeatureH', ItemInfos[depth1].get('CustomizeFeatureH'))
+			if ItemInfos[depth1].get('CustomizeFeatureI') is not None:
+				self.add_body_params('ItemInfo.' + str(depth1 + 1) + '.CustomizeFeatureI', ItemInfos[depth1].get('CustomizeFeatureI'))
+			if ItemInfos[depth1].get('CustomizeFeatureJ') is not None:
+				self.add_body_params('ItemInfo.' + str(depth1 + 1) + '.CustomizeFeatureJ', ItemInfos[depth1].get('CustomizeFeatureJ'))
+			if ItemInfos[depth1].get('CustomizeFeatureA') is not None:
+				self.add_body_params('ItemInfo.' + str(depth1 + 1) + '.CustomizeFeatureA', ItemInfos[depth1].get('CustomizeFeatureA'))
+			if ItemInfos[depth1].get('CustomizeFeatureB') is not None:
+				self.add_body_params('ItemInfo.' + str(depth1 + 1) + '.CustomizeFeatureB', ItemInfos[depth1].get('CustomizeFeatureB'))
+			if ItemInfos[depth1].get('SuggestPrice') is not None:
+				self.add_body_params('ItemInfo.' + str(depth1 + 1) + '.SuggestPrice', ItemInfos[depth1].get('SuggestPrice'))
+			if ItemInfos[depth1].get('ForestFirstId') is not None:
+				self.add_body_params('ItemInfo.' + str(depth1 + 1) + '.ForestFirstId', ItemInfos[depth1].get('ForestFirstId'))
+			if ItemInfos[depth1].get('ProductionPlace') is not None:
+				self.add_body_params('ItemInfo.' + str(depth1 + 1) + '.ProductionPlace', ItemInfos[depth1].get('ProductionPlace'))
+			if ItemInfos[depth1].get('Manufacturer') is not None:
+				self.add_body_params('ItemInfo.' + str(depth1 + 1) + '.Manufacturer', ItemInfos[depth1].get('Manufacturer'))
+			if ItemInfos[depth1].get('SourceCode') is not None:
+				self.add_body_params('ItemInfo.' + str(depth1 + 1) + '.SourceCode', ItemInfos[depth1].get('SourceCode'))
+			if ItemInfos[depth1].get('ItemId') is not None:
+				self.add_body_params('ItemInfo.' + str(depth1 + 1) + '.ItemId', ItemInfos[depth1].get('ItemId'))
+			if ItemInfos[depth1].get('SalesPrice') is not None:
+				self.add_body_params('ItemInfo.' + str(depth1 + 1) + '.SalesPrice', ItemInfos[depth1].get('SalesPrice'))
+			if ItemInfos[depth1].get('OriginalPrice') is not None:
+				self.add_body_params('ItemInfo.' + str(depth1 + 1) + '.OriginalPrice', ItemInfos[depth1].get('OriginalPrice'))
+			if ItemInfos[depth1].get('ItemShortTitle') is not None:
+				self.add_body_params('ItemInfo.' + str(depth1 + 1) + '.ItemShortTitle', ItemInfos[depth1].get('ItemShortTitle'))
+			if ItemInfos[depth1].get('ForestSecondId') is not None:
+				self.add_body_params('ItemInfo.' + str(depth1 + 1) + '.ForestSecondId', ItemInfos[depth1].get('ForestSecondId'))
+			if ItemInfos[depth1].get('ItemPicUrl') is not None:
+				self.add_body_params('ItemInfo.' + str(depth1 + 1) + '.ItemPicUrl', ItemInfos[depth1].get('ItemPicUrl'))
+			if ItemInfos[depth1].get('SupplierName') is not None:
+				self.add_body_params('ItemInfo.' + str(depth1 + 1) + '.SupplierName', ItemInfos[depth1].get('SupplierName'))
+			if ItemInfos[depth1].get('Material') is not None:
+				self.add_body_params('ItemInfo.' + str(depth1 + 1) + '.Material', ItemInfos[depth1].get('Material'))
+			if ItemInfos[depth1].get('ModelNumber') is not None:
+				self.add_body_params('ItemInfo.' + str(depth1 + 1) + '.ModelNumber', ItemInfos[depth1].get('ModelNumber'))
+			if ItemInfos[depth1].get('SaleSpec') is not None:
+				self.add_body_params('ItemInfo.' + str(depth1 + 1) + '.SaleSpec', ItemInfos[depth1].get('SaleSpec'))
+			if ItemInfos[depth1].get('CategoryName') is not None:
+				self.add_body_params('ItemInfo.' + str(depth1 + 1) + '.CategoryName', ItemInfos[depth1].get('CategoryName'))
+			if ItemInfos[depth1].get('TaxFee') is not None:
+				self.add_body_params('ItemInfo.' + str(depth1 + 1) + '.TaxFee', ItemInfos[depth1].get('TaxFee'))
+			if ItemInfos[depth1].get('EnergyEfficiency') is not None:
+				self.add_body_params('ItemInfo.' + str(depth1 + 1) + '.EnergyEfficiency', ItemInfos[depth1].get('EnergyEfficiency'))
+			if ItemInfos[depth1].get('PromotionText') is not None:
+				self.add_body_params('ItemInfo.' + str(depth1 + 1) + '.PromotionText', ItemInfos[depth1].get('PromotionText'))
+			if ItemInfos[depth1].get('SkuId') is not None:
+				self.add_body_params('ItemInfo.' + str(depth1 + 1) + '.SkuId', ItemInfos[depth1].get('SkuId'))
