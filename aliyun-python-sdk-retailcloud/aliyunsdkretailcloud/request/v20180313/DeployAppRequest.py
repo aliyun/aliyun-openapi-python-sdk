@@ -67,6 +67,12 @@ class DeployAppRequest(RpcRequest):
 	def set_EnvId(self,EnvId):
 		self.add_query_param('EnvId',EnvId)
 
+	def get_UpdateStrategyType(self):
+		return self.get_query_params().get('UpdateStrategyType')
+
+	def set_UpdateStrategyType(self,UpdateStrategyType):
+		self.add_query_param('UpdateStrategyType',UpdateStrategyType)
+
 	def get_PauseType(self):
 		return self.get_query_params().get('PauseType')
 
