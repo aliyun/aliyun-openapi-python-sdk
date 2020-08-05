@@ -20,11 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkunimkt.endpoint import endpoint_data
 
-class GetImageUrlRequest(RpcRequest):
+class ChargeLaunchRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'UniMkt', '2018-12-07', 'GetImageUrl','uniMkt')
-		self.set_protocol_type('https')
+		RpcRequest.__init__(self, 'UniMkt', '2018-12-12', 'ChargeLaunch','uniMkt')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -32,8 +31,26 @@ class GetImageUrlRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_CommodityId(self):
-		return self.get_query_params().get('CommodityId')
+	def get_Extra(self):
+		return self.get_query_params().get('Extra')
 
-	def set_CommodityId(self,CommodityId):
-		self.add_query_param('CommodityId',CommodityId)
+	def set_Extra(self,Extra):
+		self.add_query_param('Extra',Extra)
+
+	def get_AlipayOpenId(self):
+		return self.get_query_params().get('AlipayOpenId')
+
+	def set_AlipayOpenId(self,AlipayOpenId):
+		self.add_query_param('AlipayOpenId',AlipayOpenId)
+
+	def get_ChannelId(self):
+		return self.get_query_params().get('ChannelId')
+
+	def set_ChannelId(self,ChannelId):
+		self.add_query_param('ChannelId',ChannelId)
+
+	def get_OuterCode(self):
+		return self.get_query_params().get('OuterCode')
+
+	def set_OuterCode(self,OuterCode):
+		self.add_query_param('OuterCode',OuterCode)

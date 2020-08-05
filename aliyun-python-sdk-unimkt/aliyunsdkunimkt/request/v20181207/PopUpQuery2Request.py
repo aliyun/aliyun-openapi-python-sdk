@@ -23,7 +23,7 @@ from aliyunsdkunimkt.endpoint import endpoint_data
 class PopUpQuery2Request(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'UniMkt', '2018-12-07', 'PopUpQuery2')
+		RpcRequest.__init__(self, 'UniMkt', '2018-12-07', 'PopUpQuery2','uniMkt')
 		self.set_protocol_type('https')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):

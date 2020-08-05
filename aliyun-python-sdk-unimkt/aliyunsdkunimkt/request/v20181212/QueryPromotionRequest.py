@@ -23,7 +23,7 @@ from aliyunsdkunimkt.endpoint import endpoint_data
 class QueryPromotionRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'UniMkt', '2018-12-12', 'QueryPromotion')
+		RpcRequest.__init__(self, 'UniMkt', '2018-12-12', 'QueryPromotion','uniMkt')
 		self.set_protocol_type('https')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
@@ -43,6 +43,12 @@ class QueryPromotionRequest(RpcRequest):
 
 	def set_AlipayOpenId(self,AlipayOpenId):
 		self.add_body_params('AlipayOpenId', AlipayOpenId)
+
+	def get_UserId(self):
+		return self.get_body_params().get('UserId')
+
+	def set_UserId(self,UserId):
+		self.add_body_params('UserId', UserId)
 
 	def get_ChannelId(self):
 		return self.get_body_params().get('ChannelId')

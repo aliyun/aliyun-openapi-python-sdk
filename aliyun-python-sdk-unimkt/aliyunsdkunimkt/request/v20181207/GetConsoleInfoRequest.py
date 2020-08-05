@@ -23,7 +23,7 @@ from aliyunsdkunimkt.endpoint import endpoint_data
 class GetConsoleInfoRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'UniMkt', '2018-12-07', 'GetConsoleInfo')
+		RpcRequest.__init__(self, 'UniMkt', '2018-12-07', 'GetConsoleInfo','uniMkt')
 		self.set_protocol_type('https')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
