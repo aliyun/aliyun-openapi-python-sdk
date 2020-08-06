@@ -99,6 +99,12 @@ class CreateOTAStaticUpgradeJobRequest(RpcRequest):
 	def set_ScheduleTime(self,ScheduleTime):
 		self.add_query_param('ScheduleTime',ScheduleTime)
 
+	def get_OverwriteMode(self):
+		return self.get_query_params().get('OverwriteMode')
+
+	def set_OverwriteMode(self,OverwriteMode):
+		self.add_query_param('OverwriteMode',OverwriteMode)
+
 	def get_MaximumPerMinute(self):
 		return self.get_query_params().get('MaximumPerMinute')
 

@@ -31,6 +31,12 @@ class CreateOTADynamicUpgradeJobRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_DynamicMode(self):
+		return self.get_query_params().get('DynamicMode')
+
+	def set_DynamicMode(self,DynamicMode):
+		self.add_query_param('DynamicMode',DynamicMode)
+
 	def get_RetryCount(self):
 		return self.get_query_params().get('RetryCount')
 
@@ -74,6 +80,12 @@ class CreateOTADynamicUpgradeJobRequest(RpcRequest):
 		for depth1 in range(len(SrcVersions)):
 			if SrcVersions[depth1] is not None:
 				self.add_query_param('SrcVersion.' + str(depth1 + 1) , SrcVersions[depth1])
+
+	def get_OverwriteMode(self):
+		return self.get_query_params().get('OverwriteMode')
+
+	def set_OverwriteMode(self,OverwriteMode):
+		self.add_query_param('OverwriteMode',OverwriteMode)
 
 	def get_MaximumPerMinute(self):
 		return self.get_query_params().get('MaximumPerMinute')
