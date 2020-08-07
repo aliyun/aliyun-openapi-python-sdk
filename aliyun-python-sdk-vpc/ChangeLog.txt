@@ -1,3 +1,6 @@
+2020-08-07 Version: 3.0.5
+- Support networkACL.
+
 2020-02-28 Version: 3.0.9
 - Supported for eip operation idempotence.
 

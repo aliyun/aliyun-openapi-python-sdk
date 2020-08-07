@@ -23,7 +23,8 @@ from aliyunsdkvpc.endpoint import endpoint_data
 class DescribeVpnRouteEntriesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'DescribeVpnRouteEntries','Vpc')
+		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'DescribeVpnRouteEntries','vpc')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -47,6 +48,12 @@ class DescribeVpnRouteEntriesRequest(RpcRequest):
 
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
+
+	def get_RouteEntryType(self):
+		return self.get_query_params().get('RouteEntryType')
+
+	def set_RouteEntryType(self,RouteEntryType):
+		self.add_query_param('RouteEntryType',RouteEntryType)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')

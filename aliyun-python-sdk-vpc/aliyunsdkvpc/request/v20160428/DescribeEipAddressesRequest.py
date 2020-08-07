@@ -23,7 +23,8 @@ from aliyunsdkvpc.endpoint import endpoint_data
 class DescribeEipAddressesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'DescribeEipAddresses','Vpc')
+		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'DescribeEipAddresses','vpc')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -107,6 +108,12 @@ class DescribeEipAddressesRequest(RpcRequest):
 
 	def set_SegmentInstanceId(self,SegmentInstanceId):
 		self.add_query_param('SegmentInstanceId',SegmentInstanceId)
+
+	def get_DryRun(self):
+		return self.get_query_params().get('DryRun')
+
+	def set_DryRun(self,DryRun):
+		self.add_query_param('DryRun',DryRun)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')

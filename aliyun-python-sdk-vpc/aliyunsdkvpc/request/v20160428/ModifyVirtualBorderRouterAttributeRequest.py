@@ -23,7 +23,8 @@ from aliyunsdkvpc.endpoint import endpoint_data
 class ModifyVirtualBorderRouterAttributeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'ModifyVirtualBorderRouterAttribute','Vpc')
+		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'ModifyVirtualBorderRouterAttribute','vpc')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -60,6 +61,12 @@ class ModifyVirtualBorderRouterAttributeRequest(RpcRequest):
 	def set_ClientToken(self,ClientToken):
 		self.add_query_param('ClientToken',ClientToken)
 
+	def get_EnableIpv6(self):
+		return self.get_query_params().get('EnableIpv6')
+
+	def set_EnableIpv6(self,EnableIpv6):
+		self.add_query_param('EnableIpv6',EnableIpv6)
+
 	def get_Description(self):
 		return self.get_query_params().get('Description')
 
@@ -77,6 +84,12 @@ class ModifyVirtualBorderRouterAttributeRequest(RpcRequest):
 
 	def set_PeerGatewayIp(self,PeerGatewayIp):
 		self.add_query_param('PeerGatewayIp',PeerGatewayIp)
+
+	def get_PeerIpv6GatewayIp(self):
+		return self.get_query_params().get('PeerIpv6GatewayIp')
+
+	def set_PeerIpv6GatewayIp(self,PeerIpv6GatewayIp):
+		self.add_query_param('PeerIpv6GatewayIp',PeerIpv6GatewayIp)
 
 	def get_DetectMultiplier(self):
 		return self.get_query_params().get('DetectMultiplier')
@@ -102,6 +115,12 @@ class ModifyVirtualBorderRouterAttributeRequest(RpcRequest):
 	def set_MinTxInterval(self,MinTxInterval):
 		self.add_query_param('MinTxInterval',MinTxInterval)
 
+	def get_PeeringIpv6SubnetMask(self):
+		return self.get_query_params().get('PeeringIpv6SubnetMask')
+
+	def set_PeeringIpv6SubnetMask(self,PeeringIpv6SubnetMask):
+		self.add_query_param('PeeringIpv6SubnetMask',PeeringIpv6SubnetMask)
+
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -125,6 +144,12 @@ class ModifyVirtualBorderRouterAttributeRequest(RpcRequest):
 
 	def set_MinRxInterval(self,MinRxInterval):
 		self.add_query_param('MinRxInterval',MinRxInterval)
+
+	def get_LocalIpv6GatewayIp(self):
+		return self.get_query_params().get('LocalIpv6GatewayIp')
+
+	def set_LocalIpv6GatewayIp(self,LocalIpv6GatewayIp):
+		self.add_query_param('LocalIpv6GatewayIp',LocalIpv6GatewayIp)
 
 	def get_Name(self):
 		return self.get_query_params().get('Name')

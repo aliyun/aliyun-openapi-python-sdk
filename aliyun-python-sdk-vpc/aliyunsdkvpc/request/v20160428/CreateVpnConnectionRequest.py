@@ -23,7 +23,8 @@ from aliyunsdkvpc.endpoint import endpoint_data
 class CreateVpnConnectionRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'CreateVpnConnection','Vpc')
+		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'CreateVpnConnection','vpc')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -59,6 +60,12 @@ class CreateVpnConnectionRequest(RpcRequest):
 
 	def set_IpsecConfig(self,IpsecConfig):
 		self.add_query_param('IpsecConfig',IpsecConfig)
+
+	def get_BgpConfig(self):
+		return self.get_query_params().get('BgpConfig')
+
+	def set_BgpConfig(self,BgpConfig):
+		self.add_query_param('BgpConfig',BgpConfig)
 
 	def get_HealthCheckConfig(self):
 		return self.get_query_params().get('HealthCheckConfig')
@@ -114,8 +121,20 @@ class CreateVpnConnectionRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
+	def get_EnableDpd(self):
+		return self.get_query_params().get('EnableDpd')
+
+	def set_EnableDpd(self,EnableDpd):
+		self.add_query_param('EnableDpd',EnableDpd)
+
 	def get_Name(self):
 		return self.get_query_params().get('Name')
 
 	def set_Name(self,Name):
 		self.add_query_param('Name',Name)
+
+	def get_EnableNatTraversal(self):
+		return self.get_query_params().get('EnableNatTraversal')
+
+	def set_EnableNatTraversal(self,EnableNatTraversal):
+		self.add_query_param('EnableNatTraversal',EnableNatTraversal)

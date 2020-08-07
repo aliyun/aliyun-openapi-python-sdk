@@ -23,7 +23,8 @@ from aliyunsdkvpc.endpoint import endpoint_data
 class DescribeVSwitchesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'DescribeVSwitches','Vpc')
+		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'DescribeVSwitches','vpc')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -95,6 +96,12 @@ class DescribeVSwitchesRequest(RpcRequest):
 
 	def set_VSwitchId(self,VSwitchId):
 		self.add_query_param('VSwitchId',VSwitchId)
+
+	def get_VSwitchOwnerId(self):
+		return self.get_query_params().get('VSwitchOwnerId')
+
+	def set_VSwitchOwnerId(self,VSwitchOwnerId):
+		self.add_query_param('VSwitchOwnerId',VSwitchOwnerId)
 
 	def get_VpcId(self):
 		return self.get_query_params().get('VpcId')

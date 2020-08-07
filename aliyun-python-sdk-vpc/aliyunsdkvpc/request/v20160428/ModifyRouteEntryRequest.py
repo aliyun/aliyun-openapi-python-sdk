@@ -23,7 +23,8 @@ from aliyunsdkvpc.endpoint import endpoint_data
 class ModifyRouteEntryRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'ModifyRouteEntry','Vpc')
+		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'ModifyRouteEntry','vpc')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -35,6 +36,12 @@ class ModifyRouteEntryRequest(RpcRequest):
 
 	def set_RouteEntryName(self,RouteEntryName):
 		self.add_query_param('RouteEntryName',RouteEntryName)
+
+	def get_Description(self):
+		return self.get_query_params().get('Description')
+
+	def set_Description(self,Description):
+		self.add_query_param('Description',Description)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')

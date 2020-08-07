@@ -23,7 +23,8 @@ from aliyunsdkvpc.endpoint import endpoint_data
 class ApplyPhysicalConnectionLOARequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'ApplyPhysicalConnectionLOA','Vpc')
+		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'ApplyPhysicalConnectionLOA','vpc')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -105,15 +106,15 @@ class ApplyPhysicalConnectionLOARequest(RpcRequest):
 	def get_PMInfos(self):
 		return self.get_query_params().get('PMInfos')
 
-	def set_PMInfos(self,PMInfos):
-		for i in range(len(PMInfos)):	
-			if PMInfos[i].get('PMCertificateNo') is not None:
-				self.add_query_param('PMInfo.' + str(i + 1) + '.PMCertificateNo' , PMInfos[i].get('PMCertificateNo'))
-			if PMInfos[i].get('PMName') is not None:
-				self.add_query_param('PMInfo.' + str(i + 1) + '.PMName' , PMInfos[i].get('PMName'))
-			if PMInfos[i].get('PMCertificateType') is not None:
-				self.add_query_param('PMInfo.' + str(i + 1) + '.PMCertificateType' , PMInfos[i].get('PMCertificateType'))
-			if PMInfos[i].get('PMContactInfo') is not None:
-				self.add_query_param('PMInfo.' + str(i + 1) + '.PMContactInfo' , PMInfos[i].get('PMContactInfo'))
-			if PMInfos[i].get('PMGender') is not None:
-				self.add_query_param('PMInfo.' + str(i + 1) + '.PMGender' , PMInfos[i].get('PMGender'))
+	def set_PMInfos(self, PMInfos):
+		for depth1 in range(len(PMInfos)):
+			if PMInfos[depth1].get('PMCertificateNo') is not None:
+				self.add_query_param('PMInfo.' + str(depth1 + 1) + '.PMCertificateNo', PMInfos[depth1].get('PMCertificateNo'))
+			if PMInfos[depth1].get('PMName') is not None:
+				self.add_query_param('PMInfo.' + str(depth1 + 1) + '.PMName', PMInfos[depth1].get('PMName'))
+			if PMInfos[depth1].get('PMCertificateType') is not None:
+				self.add_query_param('PMInfo.' + str(depth1 + 1) + '.PMCertificateType', PMInfos[depth1].get('PMCertificateType'))
+			if PMInfos[depth1].get('PMContactInfo') is not None:
+				self.add_query_param('PMInfo.' + str(depth1 + 1) + '.PMContactInfo', PMInfos[depth1].get('PMContactInfo'))
+			if PMInfos[depth1].get('PMGender') is not None:
+				self.add_query_param('PMInfo.' + str(depth1 + 1) + '.PMGender', PMInfos[depth1].get('PMGender'))

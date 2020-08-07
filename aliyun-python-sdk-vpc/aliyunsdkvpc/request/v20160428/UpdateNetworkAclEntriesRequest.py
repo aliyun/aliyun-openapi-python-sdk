@@ -23,7 +23,8 @@ from aliyunsdkvpc.endpoint import endpoint_data
 class UpdateNetworkAclEntriesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'UpdateNetworkAclEntries','Vpc')
+		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'UpdateNetworkAclEntries','vpc')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -39,25 +40,24 @@ class UpdateNetworkAclEntriesRequest(RpcRequest):
 	def get_EgressAclEntriess(self):
 		return self.get_query_params().get('EgressAclEntriess')
 
-	def set_EgressAclEntriess(self,EgressAclEntriess):
-		for i in range(len(EgressAclEntriess)):	
-			if EgressAclEntriess[i].get('NetworkAclEntryName') is not None:
-				self.add_query_param('EgressAclEntries.' + str(i + 1) + '.NetworkAclEntryName' , EgressAclEntriess[i].get('NetworkAclEntryName'))
-			if EgressAclEntriess[i].get('NetworkAclEntryId') is not None:
-				self.add_query_param('EgressAclEntries.' + str(i + 1) + '.NetworkAclEntryId' , EgressAclEntriess[i].get('NetworkAclEntryId'))
-			if EgressAclEntriess[i].get('Policy') is not None:
-				self.add_query_param('EgressAclEntries.' + str(i + 1) + '.Policy' , EgressAclEntriess[i].get('Policy'))
-			if EgressAclEntriess[i].get('Protocol') is not None:
-				self.add_query_param('EgressAclEntries.' + str(i + 1) + '.Protocol' , EgressAclEntriess[i].get('Protocol'))
-			if EgressAclEntriess[i].get('DestinationCidrIp') is not None:
-				self.add_query_param('EgressAclEntries.' + str(i + 1) + '.DestinationCidrIp' , EgressAclEntriess[i].get('DestinationCidrIp'))
-			if EgressAclEntriess[i].get('Port') is not None:
-				self.add_query_param('EgressAclEntries.' + str(i + 1) + '.Port' , EgressAclEntriess[i].get('Port'))
-			if EgressAclEntriess[i].get('EntryType') is not None:
-				self.add_query_param('EgressAclEntries.' + str(i + 1) + '.EntryType' , EgressAclEntriess[i].get('EntryType'))
-			if EgressAclEntriess[i].get('Description') is not None:
-				self.add_query_param('EgressAclEntries.' + str(i + 1) + '.Description' , EgressAclEntriess[i].get('Description'))
-
+	def set_EgressAclEntriess(self, EgressAclEntriess):
+		for depth1 in range(len(EgressAclEntriess)):
+			if EgressAclEntriess[depth1].get('NetworkAclEntryName') is not None:
+				self.add_query_param('EgressAclEntries.' + str(depth1 + 1) + '.NetworkAclEntryName', EgressAclEntriess[depth1].get('NetworkAclEntryName'))
+			if EgressAclEntriess[depth1].get('NetworkAclEntryId') is not None:
+				self.add_query_param('EgressAclEntries.' + str(depth1 + 1) + '.NetworkAclEntryId', EgressAclEntriess[depth1].get('NetworkAclEntryId'))
+			if EgressAclEntriess[depth1].get('Policy') is not None:
+				self.add_query_param('EgressAclEntries.' + str(depth1 + 1) + '.Policy', EgressAclEntriess[depth1].get('Policy'))
+			if EgressAclEntriess[depth1].get('Protocol') is not None:
+				self.add_query_param('EgressAclEntries.' + str(depth1 + 1) + '.Protocol', EgressAclEntriess[depth1].get('Protocol'))
+			if EgressAclEntriess[depth1].get('DestinationCidrIp') is not None:
+				self.add_query_param('EgressAclEntries.' + str(depth1 + 1) + '.DestinationCidrIp', EgressAclEntriess[depth1].get('DestinationCidrIp'))
+			if EgressAclEntriess[depth1].get('Port') is not None:
+				self.add_query_param('EgressAclEntries.' + str(depth1 + 1) + '.Port', EgressAclEntriess[depth1].get('Port'))
+			if EgressAclEntriess[depth1].get('EntryType') is not None:
+				self.add_query_param('EgressAclEntries.' + str(depth1 + 1) + '.EntryType', EgressAclEntriess[depth1].get('EntryType'))
+			if EgressAclEntriess[depth1].get('Description') is not None:
+				self.add_query_param('EgressAclEntries.' + str(depth1 + 1) + '.Description', EgressAclEntriess[depth1].get('Description'))
 
 	def get_ClientToken(self):
 		return self.get_query_params().get('ClientToken')
@@ -98,21 +98,21 @@ class UpdateNetworkAclEntriesRequest(RpcRequest):
 	def get_IngressAclEntriess(self):
 		return self.get_query_params().get('IngressAclEntriess')
 
-	def set_IngressAclEntriess(self,IngressAclEntriess):
-		for i in range(len(IngressAclEntriess)):	
-			if IngressAclEntriess[i].get('NetworkAclEntryName') is not None:
-				self.add_query_param('IngressAclEntries.' + str(i + 1) + '.NetworkAclEntryName' , IngressAclEntriess[i].get('NetworkAclEntryName'))
-			if IngressAclEntriess[i].get('NetworkAclEntryId') is not None:
-				self.add_query_param('IngressAclEntries.' + str(i + 1) + '.NetworkAclEntryId' , IngressAclEntriess[i].get('NetworkAclEntryId'))
-			if IngressAclEntriess[i].get('Policy') is not None:
-				self.add_query_param('IngressAclEntries.' + str(i + 1) + '.Policy' , IngressAclEntriess[i].get('Policy'))
-			if IngressAclEntriess[i].get('Protocol') is not None:
-				self.add_query_param('IngressAclEntries.' + str(i + 1) + '.Protocol' , IngressAclEntriess[i].get('Protocol'))
-			if IngressAclEntriess[i].get('SourceCidrIp') is not None:
-				self.add_query_param('IngressAclEntries.' + str(i + 1) + '.SourceCidrIp' , IngressAclEntriess[i].get('SourceCidrIp'))
-			if IngressAclEntriess[i].get('Port') is not None:
-				self.add_query_param('IngressAclEntries.' + str(i + 1) + '.Port' , IngressAclEntriess[i].get('Port'))
-			if IngressAclEntriess[i].get('EntryType') is not None:
-				self.add_query_param('IngressAclEntries.' + str(i + 1) + '.EntryType' , IngressAclEntriess[i].get('EntryType'))
-			if IngressAclEntriess[i].get('Description') is not None:
-				self.add_query_param('IngressAclEntries.' + str(i + 1) + '.Description' , IngressAclEntriess[i].get('Description'))
+	def set_IngressAclEntriess(self, IngressAclEntriess):
+		for depth1 in range(len(IngressAclEntriess)):
+			if IngressAclEntriess[depth1].get('NetworkAclEntryName') is not None:
+				self.add_query_param('IngressAclEntries.' + str(depth1 + 1) + '.NetworkAclEntryName', IngressAclEntriess[depth1].get('NetworkAclEntryName'))
+			if IngressAclEntriess[depth1].get('NetworkAclEntryId') is not None:
+				self.add_query_param('IngressAclEntries.' + str(depth1 + 1) + '.NetworkAclEntryId', IngressAclEntriess[depth1].get('NetworkAclEntryId'))
+			if IngressAclEntriess[depth1].get('Policy') is not None:
+				self.add_query_param('IngressAclEntries.' + str(depth1 + 1) + '.Policy', IngressAclEntriess[depth1].get('Policy'))
+			if IngressAclEntriess[depth1].get('Protocol') is not None:
+				self.add_query_param('IngressAclEntries.' + str(depth1 + 1) + '.Protocol', IngressAclEntriess[depth1].get('Protocol'))
+			if IngressAclEntriess[depth1].get('SourceCidrIp') is not None:
+				self.add_query_param('IngressAclEntries.' + str(depth1 + 1) + '.SourceCidrIp', IngressAclEntriess[depth1].get('SourceCidrIp'))
+			if IngressAclEntriess[depth1].get('Port') is not None:
+				self.add_query_param('IngressAclEntries.' + str(depth1 + 1) + '.Port', IngressAclEntriess[depth1].get('Port'))
+			if IngressAclEntriess[depth1].get('EntryType') is not None:
+				self.add_query_param('IngressAclEntries.' + str(depth1 + 1) + '.EntryType', IngressAclEntriess[depth1].get('EntryType'))
+			if IngressAclEntriess[depth1].get('Description') is not None:
+				self.add_query_param('IngressAclEntries.' + str(depth1 + 1) + '.Description', IngressAclEntriess[depth1].get('Description'))

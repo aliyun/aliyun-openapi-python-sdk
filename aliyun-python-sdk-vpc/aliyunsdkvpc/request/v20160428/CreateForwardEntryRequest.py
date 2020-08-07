@@ -23,7 +23,8 @@ from aliyunsdkvpc.endpoint import endpoint_data
 class CreateForwardEntryRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'CreateForwardEntry','Vpc')
+		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'CreateForwardEntry','vpc')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -95,6 +96,12 @@ class CreateForwardEntryRequest(RpcRequest):
 
 	def set_InternalPort(self,InternalPort):
 		self.add_query_param('InternalPort',InternalPort)
+
+	def get_PortBreak(self):
+		return self.get_query_params().get('PortBreak')
+
+	def set_PortBreak(self,PortBreak):
+		self.add_query_param('PortBreak',PortBreak)
 
 	def get_ExternalPort(self):
 		return self.get_query_params().get('ExternalPort')

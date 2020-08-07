@@ -23,7 +23,8 @@ from aliyunsdkvpc.endpoint import endpoint_data
 class CreateBgpPeerRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'CreateBgpPeer','Vpc')
+		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'CreateBgpPeer','vpc')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -53,6 +54,18 @@ class CreateBgpPeerRequest(RpcRequest):
 
 	def set_PeerIpAddress(self,PeerIpAddress):
 		self.add_query_param('PeerIpAddress',PeerIpAddress)
+
+	def get_BfdMultiHop(self):
+		return self.get_query_params().get('BfdMultiHop')
+
+	def set_BfdMultiHop(self,BfdMultiHop):
+		self.add_query_param('BfdMultiHop',BfdMultiHop)
+
+	def get_IpVersion(self):
+		return self.get_query_params().get('IpVersion')
+
+	def set_IpVersion(self,IpVersion):
+		self.add_query_param('IpVersion',IpVersion)
 
 	def get_EnableBfd(self):
 		return self.get_query_params().get('EnableBfd')

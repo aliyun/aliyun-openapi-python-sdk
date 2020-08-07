@@ -23,7 +23,8 @@ from aliyunsdkvpc.endpoint import endpoint_data
 class TerminateVirtualBorderRouterRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'TerminateVirtualBorderRouter','Vpc')
+		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'TerminateVirtualBorderRouter','vpc')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):

@@ -23,7 +23,8 @@ from aliyunsdkvpc.endpoint import endpoint_data
 class ModifyVpcAttributeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'ModifyVpcAttribute','Vpc')
+		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'ModifyVpcAttribute','vpc')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -71,6 +72,12 @@ class ModifyVpcAttributeRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_Ipv6CidrBlock(self):
+		return self.get_query_params().get('Ipv6CidrBlock')
+
+	def set_Ipv6CidrBlock(self,Ipv6CidrBlock):
+		self.add_query_param('Ipv6CidrBlock',Ipv6CidrBlock)
 
 	def get_VpcId(self):
 		return self.get_query_params().get('VpcId')

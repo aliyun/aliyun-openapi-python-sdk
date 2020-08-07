@@ -23,7 +23,8 @@ from aliyunsdkvpc.endpoint import endpoint_data
 class DescribeNatGatewaysRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'DescribeNatGateways','Vpc')
+		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'DescribeNatGateways','vpc')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -77,6 +78,12 @@ class DescribeNatGatewaysRequest(RpcRequest):
 
 	def set_InstanceChargeType(self,InstanceChargeType):
 		self.add_query_param('InstanceChargeType',InstanceChargeType)
+
+	def get_DryRun(self):
+		return self.get_query_params().get('DryRun')
+
+	def set_DryRun(self,DryRun):
+		self.add_query_param('DryRun',DryRun)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')

@@ -23,7 +23,8 @@ from aliyunsdkvpc.endpoint import endpoint_data
 class CreateBgpGroupRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'CreateBgpGroup','Vpc')
+		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'CreateBgpGroup','vpc')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -65,6 +66,12 @@ class CreateBgpGroupRequest(RpcRequest):
 
 	def set_IsFakeAsn(self,IsFakeAsn):
 		self.add_query_param('IsFakeAsn',IsFakeAsn)
+
+	def get_IpVersion(self):
+		return self.get_query_params().get('IpVersion')
+
+	def set_IpVersion(self,IpVersion):
+		self.add_query_param('IpVersion',IpVersion)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')

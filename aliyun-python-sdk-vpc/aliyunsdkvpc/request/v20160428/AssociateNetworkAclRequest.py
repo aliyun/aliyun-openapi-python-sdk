@@ -23,7 +23,8 @@ from aliyunsdkvpc.endpoint import endpoint_data
 class AssociateNetworkAclRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'AssociateNetworkAcl','Vpc')
+		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'AssociateNetworkAcl','vpc')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -51,13 +52,12 @@ class AssociateNetworkAclRequest(RpcRequest):
 	def get_Resources(self):
 		return self.get_query_params().get('Resources')
 
-	def set_Resources(self,Resources):
-		for i in range(len(Resources)):	
-			if Resources[i].get('ResourceType') is not None:
-				self.add_query_param('Resource.' + str(i + 1) + '.ResourceType' , Resources[i].get('ResourceType'))
-			if Resources[i].get('ResourceId') is not None:
-				self.add_query_param('Resource.' + str(i + 1) + '.ResourceId' , Resources[i].get('ResourceId'))
-
+	def set_Resources(self, Resources):
+		for depth1 in range(len(Resources)):
+			if Resources[depth1].get('ResourceType') is not None:
+				self.add_query_param('Resource.' + str(depth1 + 1) + '.ResourceType', Resources[depth1].get('ResourceType'))
+			if Resources[depth1].get('ResourceId') is not None:
+				self.add_query_param('Resource.' + str(depth1 + 1) + '.ResourceId', Resources[depth1].get('ResourceId'))
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')

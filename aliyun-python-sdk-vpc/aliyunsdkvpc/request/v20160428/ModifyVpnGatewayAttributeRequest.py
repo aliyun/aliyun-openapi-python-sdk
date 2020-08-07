@@ -23,7 +23,8 @@ from aliyunsdkvpc.endpoint import endpoint_data
 class ModifyVpnGatewayAttributeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'ModifyVpnGatewayAttribute','Vpc')
+		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'ModifyVpnGatewayAttribute','vpc')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -53,6 +54,12 @@ class ModifyVpnGatewayAttributeRequest(RpcRequest):
 
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+
+	def get_AutoPropagate(self):
+		return self.get_query_params().get('AutoPropagate')
+
+	def set_AutoPropagate(self,AutoPropagate):
+		self.add_query_param('AutoPropagate',AutoPropagate)
 
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')

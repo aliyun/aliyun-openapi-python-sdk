@@ -23,7 +23,8 @@ from aliyunsdkvpc.endpoint import endpoint_data
 class DescribeVpcsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'DescribeVpcs','Vpc')
+		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'DescribeVpcs','vpc')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -35,6 +36,12 @@ class DescribeVpcsRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+
+	def get_VpcOwnerId(self):
+		return self.get_query_params().get('VpcOwnerId')
+
+	def set_VpcOwnerId(self,VpcOwnerId):
+		self.add_query_param('VpcOwnerId',VpcOwnerId)
 
 	def get_PageNumber(self):
 		return self.get_query_params().get('PageNumber')
@@ -71,6 +78,12 @@ class DescribeVpcsRequest(RpcRequest):
 
 	def set_DryRun(self,DryRun):
 		self.add_query_param('DryRun',DryRun)
+
+	def get_DhcpOptionsSetId(self):
+		return self.get_query_params().get('DhcpOptionsSetId')
+
+	def set_DhcpOptionsSetId(self,DhcpOptionsSetId):
+		self.add_query_param('DhcpOptionsSetId',DhcpOptionsSetId)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')

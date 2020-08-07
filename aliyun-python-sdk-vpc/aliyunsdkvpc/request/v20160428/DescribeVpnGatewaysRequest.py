@@ -23,7 +23,8 @@ from aliyunsdkvpc.endpoint import endpoint_data
 class DescribeVpnGatewaysRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'DescribeVpnGateways','Vpc')
+		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'DescribeVpnGateways','vpc')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -36,6 +37,12 @@ class DescribeVpnGatewaysRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_IncludeReservationData(self):
+		return self.get_query_params().get('IncludeReservationData')
+
+	def set_IncludeReservationData(self,IncludeReservationData):
+		self.add_query_param('IncludeReservationData',IncludeReservationData)
+
 	def get_PageNumber(self):
 		return self.get_query_params().get('PageNumber')
 
@@ -47,6 +54,16 @@ class DescribeVpnGatewaysRequest(RpcRequest):
 
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
+
+	def get_Tags(self):
+		return self.get_query_params().get('Tags')
+
+	def set_Tags(self, Tags):
+		for depth1 in range(len(Tags)):
+			if Tags[depth1].get('Value') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tags[depth1].get('Value'))
+			if Tags[depth1].get('Key') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tags[depth1].get('Key'))
 
 	def get_BusinessStatus(self):
 		return self.get_query_params().get('BusinessStatus')

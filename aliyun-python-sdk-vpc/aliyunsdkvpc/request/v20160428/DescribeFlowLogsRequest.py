@@ -23,7 +23,8 @@ from aliyunsdkvpc.endpoint import endpoint_data
 class DescribeFlowLogsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'DescribeFlowLogs','Vpc')
+		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'DescribeFlowLogs','vpc')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -95,6 +96,12 @@ class DescribeFlowLogsRequest(RpcRequest):
 
 	def set_ResourceType(self,ResourceType):
 		self.add_query_param('ResourceType',ResourceType)
+
+	def get_VpcId(self):
+		return self.get_query_params().get('VpcId')
+
+	def set_VpcId(self,VpcId):
+		self.add_query_param('VpcId',VpcId)
 
 	def get_TrafficType(self):
 		return self.get_query_params().get('TrafficType')
