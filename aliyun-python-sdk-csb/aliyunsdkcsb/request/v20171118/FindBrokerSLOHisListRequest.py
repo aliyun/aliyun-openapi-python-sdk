@@ -24,6 +24,7 @@ class FindBrokerSLOHisListRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'CSB', '2017-11-18', 'FindBrokerSLOHisList')
+		self.set_method('GET')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -35,3 +36,15 @@ class FindBrokerSLOHisListRequest(RpcRequest):
 
 	def set_CsbId(self,CsbId):
 		self.add_query_param('CsbId',CsbId)
+
+	def get_BeginDdHHmm(self):
+		return self.get_query_params().get('BeginDdHHmm')
+
+	def set_BeginDdHHmm(self,BeginDdHHmm):
+		self.add_query_param('BeginDdHHmm',BeginDdHHmm)
+
+	def get_EndDdHHmm(self):
+		return self.get_query_params().get('EndDdHHmm')
+
+	def set_EndDdHHmm(self,EndDdHHmm):
+		self.add_query_param('EndDdHHmm',EndDdHHmm)

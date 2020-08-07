@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcsb.endpoint import endpoint_data
 
-class FindServiceCredentialStatisticalDataRequest(RpcRequest):
+class FindOtherInstanceListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'CSB', '2017-11-18', 'FindServiceCredentialStatisticalData')
+		RpcRequest.__init__(self, 'CSB', '2017-11-18', 'FindOtherInstanceList')
 		self.set_method('GET')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,32 +31,20 @@ class FindServiceCredentialStatisticalDataRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_CsbId(self):
-		return self.get_query_params().get('CsbId')
+	def get_PageNum(self):
+		return self.get_query_params().get('PageNum')
 
-	def set_CsbId(self,CsbId):
-		self.add_query_param('CsbId',CsbId)
+	def set_PageNum(self,PageNum):
+		self.add_query_param('PageNum',PageNum)
 
-	def get_EndTime(self):
-		return self.get_query_params().get('EndTime')
+	def get_SearchTxt(self):
+		return self.get_query_params().get('SearchTxt')
 
-	def set_EndTime(self,EndTime):
-		self.add_query_param('EndTime',EndTime)
+	def set_SearchTxt(self,SearchTxt):
+		self.add_query_param('SearchTxt',SearchTxt)
 
-	def get_StartTime(self):
-		return self.get_query_params().get('StartTime')
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
 
-	def set_StartTime(self,StartTime):
-		self.add_query_param('StartTime',StartTime)
-
-	def get_CredentialName(self):
-		return self.get_query_params().get('CredentialName')
-
-	def set_CredentialName(self,CredentialName):
-		self.add_query_param('CredentialName',CredentialName)
-
-	def get_ServiceNameVersion(self):
-		return self.get_query_params().get('ServiceNameVersion')
-
-	def set_ServiceNameVersion(self,ServiceNameVersion):
-		self.add_query_param('ServiceNameVersion',ServiceNameVersion)
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)

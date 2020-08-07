@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcsb.endpoint import endpoint_data
 
-class FindServiceCredentialStatisticalDataRequest(RpcRequest):
+class CheckSLRDeleteRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'CSB', '2017-11-18', 'FindServiceCredentialStatisticalData')
+		RpcRequest.__init__(self, 'CSB', '2017-11-18', 'CheckSLRDelete')
 		self.set_method('GET')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,32 +31,32 @@ class FindServiceCredentialStatisticalDataRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_CsbId(self):
-		return self.get_query_params().get('CsbId')
+	def get_DeletionTaskId(self):
+		return self.get_query_params().get('DeletionTaskId')
 
-	def set_CsbId(self,CsbId):
-		self.add_query_param('CsbId',CsbId)
+	def set_DeletionTaskId(self,DeletionTaskId):
+		self.add_query_param('DeletionTaskId',DeletionTaskId)
 
-	def get_EndTime(self):
-		return self.get_query_params().get('EndTime')
+	def get_AccountId(self):
+		return self.get_query_params().get('AccountId')
 
-	def set_EndTime(self,EndTime):
-		self.add_query_param('EndTime',EndTime)
+	def set_AccountId(self,AccountId):
+		self.add_query_param('AccountId',AccountId)
 
-	def get_StartTime(self):
-		return self.get_query_params().get('StartTime')
+	def get_SPIRegionId(self):
+		return self.get_query_params().get('SPIRegionId')
 
-	def set_StartTime(self,StartTime):
-		self.add_query_param('StartTime',StartTime)
+	def set_SPIRegionId(self,SPIRegionId):
+		self.add_query_param('SPIRegionId',SPIRegionId)
 
-	def get_CredentialName(self):
-		return self.get_query_params().get('CredentialName')
+	def get_RoleArn(self):
+		return self.get_query_params().get('RoleArn')
 
-	def set_CredentialName(self,CredentialName):
-		self.add_query_param('CredentialName',CredentialName)
+	def set_RoleArn(self,RoleArn):
+		self.add_query_param('RoleArn',RoleArn)
 
-	def get_ServiceNameVersion(self):
-		return self.get_query_params().get('ServiceNameVersion')
+	def get_ServiceName(self):
+		return self.get_query_params().get('ServiceName')
 
-	def set_ServiceNameVersion(self,ServiceNameVersion):
-		self.add_query_param('ServiceNameVersion',ServiceNameVersion)
+	def set_ServiceName(self,ServiceName):
+		self.add_query_param('ServiceName',ServiceName)

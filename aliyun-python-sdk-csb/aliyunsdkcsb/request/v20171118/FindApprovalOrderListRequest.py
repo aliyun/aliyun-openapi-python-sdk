@@ -25,6 +25,7 @@ class FindApprovalOrderListRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'CSB', '2017-11-18', 'FindApprovalOrderList')
 		self.set_protocol_type('https')
+		self.set_method('GET')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -48,6 +49,12 @@ class FindApprovalOrderListRequest(RpcRequest):
 
 	def set_PageNum(self,PageNum):
 		self.add_query_param('PageNum',PageNum)
+
+	def get_CredentialGroupName(self):
+		return self.get_query_params().get('CredentialGroupName')
+
+	def set_CredentialGroupName(self,CredentialGroupName):
+		self.add_query_param('CredentialGroupName',CredentialGroupName)
 
 	def get_Alias(self):
 		return self.get_query_params().get('Alias')

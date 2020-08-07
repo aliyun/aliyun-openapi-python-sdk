@@ -25,6 +25,7 @@ class FindCredentialsListRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'CSB', '2017-11-18', 'FindCredentialsList')
 		self.set_protocol_type('https')
+		self.set_method('GET')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):

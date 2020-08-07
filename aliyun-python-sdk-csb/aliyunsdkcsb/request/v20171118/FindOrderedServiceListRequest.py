@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcsb.endpoint import endpoint_data
 
-class FindProjectListRequest(RpcRequest):
+class FindOrderedServiceListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'CSB', '2017-11-18', 'FindProjectList')
+		RpcRequest.__init__(self, 'CSB', '2017-11-18', 'FindOrderedServiceList')
 		self.set_protocol_type('https')
 		self.set_method('GET')
 		if hasattr(self, "endpoint_map"):
@@ -38,6 +38,12 @@ class FindProjectListRequest(RpcRequest):
 	def set_ProjectName(self,ProjectName):
 		self.add_query_param('ProjectName',ProjectName)
 
+	def get_ShowDelOrder(self):
+		return self.get_query_params().get('ShowDelOrder')
+
+	def set_ShowDelOrder(self,ShowDelOrder):
+		self.add_query_param('ShowDelOrder',ShowDelOrder)
+
 	def get_CsbId(self):
 		return self.get_query_params().get('CsbId')
 
@@ -49,3 +55,39 @@ class FindProjectListRequest(RpcRequest):
 
 	def set_PageNum(self,PageNum):
 		self.add_query_param('PageNum',PageNum)
+
+	def get_CredentialGroupName(self):
+		return self.get_query_params().get('CredentialGroupName')
+
+	def set_CredentialGroupName(self,CredentialGroupName):
+		self.add_query_param('CredentialGroupName',CredentialGroupName)
+
+	def get_AccessKey(self):
+		return self.get_query_params().get('AccessKey')
+
+	def set_AccessKey(self,AccessKey):
+		self.add_query_param('AccessKey',AccessKey)
+
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
+
+	def get_ServiceName(self):
+		return self.get_query_params().get('ServiceName')
+
+	def set_ServiceName(self,ServiceName):
+		self.add_query_param('ServiceName',ServiceName)
+
+	def get_ServiceId(self):
+		return self.get_query_params().get('ServiceId')
+
+	def set_ServiceId(self,ServiceId):
+		self.add_query_param('ServiceId',ServiceId)
+
+	def get_ProjectId(self):
+		return self.get_query_params().get('ProjectId')
+
+	def set_ProjectId(self,ProjectId):
+		self.add_query_param('ProjectId',ProjectId)
