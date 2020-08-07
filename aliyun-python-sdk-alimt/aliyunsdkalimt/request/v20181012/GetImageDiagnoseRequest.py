@@ -20,19 +20,25 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkalimt.endpoint import endpoint_data
 
-class GetDocTranslateTaskRequest(RpcRequest):
+class GetImageDiagnoseRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'alimt', '2018-10-12', 'GetDocTranslateTask')
-		self.set_method('GET')
+		RpcRequest.__init__(self, 'alimt', '2018-10-12', 'GetImageDiagnose')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_TaskId(self):
-		return self.get_query_params().get('TaskId')
+	def get_Url(self):
+		return self.get_body_params().get('Url')
 
-	def set_TaskId(self,TaskId):
-		self.add_query_param('TaskId',TaskId)
+	def set_Url(self,Url):
+		self.add_body_params('Url', Url)
+
+	def get_Extra(self):
+		return self.get_body_params().get('Extra')
+
+	def set_Extra(self,Extra):
+		self.add_body_params('Extra', Extra)

@@ -20,19 +20,43 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkalimt.endpoint import endpoint_data
 
-class GetDocTranslateTaskRequest(RpcRequest):
+class GetTitleDiagnoseRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'alimt', '2018-10-12', 'GetDocTranslateTask')
-		self.set_method('GET')
+		RpcRequest.__init__(self, 'alimt', '2018-10-12', 'GetTitleDiagnose')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_TaskId(self):
-		return self.get_query_params().get('TaskId')
+	def get_Language(self):
+		return self.get_body_params().get('Language')
 
-	def set_TaskId(self,TaskId):
-		self.add_query_param('TaskId',TaskId)
+	def set_Language(self,Language):
+		self.add_body_params('Language', Language)
+
+	def get_Title(self):
+		return self.get_body_params().get('Title')
+
+	def set_Title(self,Title):
+		self.add_body_params('Title', Title)
+
+	def get_Platform(self):
+		return self.get_body_params().get('Platform')
+
+	def set_Platform(self,Platform):
+		self.add_body_params('Platform', Platform)
+
+	def get_Extra(self):
+		return self.get_body_params().get('Extra')
+
+	def set_Extra(self,Extra):
+		self.add_body_params('Extra', Extra)
+
+	def get_CategoryId(self):
+		return self.get_body_params().get('CategoryId')
+
+	def set_CategoryId(self,CategoryId):
+		self.add_body_params('CategoryId', CategoryId)

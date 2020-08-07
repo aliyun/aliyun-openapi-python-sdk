@@ -23,7 +23,7 @@ from aliyunsdkalimt.endpoint import endpoint_data
 class TranslateECommerceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'alimt', '2018-10-12', 'TranslateECommerce','alimt')
+		RpcRequest.__init__(self, 'alimt', '2018-10-12', 'TranslateECommerce')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
