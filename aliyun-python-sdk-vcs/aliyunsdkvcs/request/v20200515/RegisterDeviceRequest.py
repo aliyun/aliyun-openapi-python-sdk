@@ -37,6 +37,12 @@ class RegisterDeviceRequest(RpcRequest):
 	def set_DeviceTimeStamp(self,DeviceTimeStamp):
 		self.add_body_params('DeviceTimeStamp', DeviceTimeStamp)
 
+	def get_DeviceSn(self):
+		return self.get_body_params().get('DeviceSn')
+
+	def set_DeviceSn(self,DeviceSn):
+		self.add_body_params('DeviceSn', DeviceSn)
+
 	def get_DeviceId(self):
 		return self.get_body_params().get('DeviceId')
 
@@ -48,9 +54,3 @@ class RegisterDeviceRequest(RpcRequest):
 
 	def set_ServerId(self,ServerId):
 		self.add_body_params('ServerId', ServerId)
-
-	def get_DeviceSerialNumber(self):
-		return self.get_body_params().get('DeviceSerialNumber')
-
-	def set_DeviceSerialNumber(self,DeviceSerialNumber):
-		self.add_body_params('DeviceSerialNumber', DeviceSerialNumber)

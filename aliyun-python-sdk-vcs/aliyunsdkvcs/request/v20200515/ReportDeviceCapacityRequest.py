@@ -44,6 +44,8 @@ class ReportDeviceCapacityRequest(RpcRequest):
 				self.add_body_params('StreamCapacities.' + str(depth1 + 1) + '.EncodeFormat', StreamCapacitiess[depth1].get('EncodeFormat'))
 			if StreamCapacitiess[depth1].get('MaxFrameRate') is not None:
 				self.add_body_params('StreamCapacities.' + str(depth1 + 1) + '.MaxFrameRate', StreamCapacitiess[depth1].get('MaxFrameRate'))
+			if StreamCapacitiess[depth1].get('GovLengthRange') is not None:
+				self.add_body_params('StreamCapacities.' + str(depth1 + 1) + '.GovLengthRange', StreamCapacitiess[depth1].get('GovLengthRange'))
 			if StreamCapacitiess[depth1].get('Resolution') is not None:
 				self.add_body_params('StreamCapacities.' + str(depth1 + 1) + '.Resolution', StreamCapacitiess[depth1].get('Resolution'))
 

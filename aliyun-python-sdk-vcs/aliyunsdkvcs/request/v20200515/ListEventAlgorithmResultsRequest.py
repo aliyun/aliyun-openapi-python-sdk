@@ -37,6 +37,12 @@ class ListEventAlgorithmResultsRequest(RpcRequest):
 	def set_CorpId(self,CorpId):
 		self.add_body_params('CorpId', CorpId)
 
+	def get_ExtendValue(self):
+		return self.get_body_params().get('ExtendValue')
+
+	def set_ExtendValue(self,ExtendValue):
+		self.add_body_params('ExtendValue', ExtendValue)
+
 	def get_EndTime(self):
 		return self.get_body_params().get('EndTime')
 
