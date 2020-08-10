@@ -31,6 +31,12 @@ class CreateProjectMemberRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_RoleCode(self):
+		return self.get_query_params().get('RoleCode')
+
+	def set_RoleCode(self,RoleCode):
+		self.add_query_param('RoleCode',RoleCode)
+
 	def get_ClientToken(self):
 		return self.get_query_params().get('ClientToken')
 
