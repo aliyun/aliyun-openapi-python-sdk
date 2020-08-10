@@ -61,6 +61,12 @@ class ReportDeviceCapacityRequest(RpcRequest):
 	def set_PresetNum(self,PresetNum):
 		self.add_body_params('PresetNum', PresetNum)
 
+	def get_DeviceTimeStamp(self):
+		return self.get_body_params().get('DeviceTimeStamp')
+
+	def set_DeviceTimeStamp(self,DeviceTimeStamp):
+		self.add_body_params('DeviceTimeStamp', DeviceTimeStamp)
+
 	def get_DeviceSn(self):
 		return self.get_body_params().get('DeviceSn')
 
