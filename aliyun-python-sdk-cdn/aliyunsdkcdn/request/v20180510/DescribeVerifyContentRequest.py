@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcdn.endpoint import endpoint_data
 
-class DescribeRefreshTaskByIdRequest(RpcRequest):
+class DescribeVerifyContentRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cdn', '2018-05-10', 'DescribeRefreshTaskById')
+		RpcRequest.__init__(self, 'Cdn', '2018-05-10', 'DescribeVerifyContent')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,11 +31,11 @@ class DescribeRefreshTaskByIdRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_TaskId(self):
-		return self.get_query_params().get('TaskId')
+	def get_DomainName(self):
+		return self.get_query_params().get('DomainName')
 
-	def set_TaskId(self,TaskId):
-		self.add_query_param('TaskId',TaskId)
+	def set_DomainName(self,DomainName):
+		self.add_query_param('DomainName',DomainName)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
