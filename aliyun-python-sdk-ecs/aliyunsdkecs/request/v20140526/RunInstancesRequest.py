@@ -31,35 +31,11 @@ class RunInstancesRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_LaunchTemplateName(self):
-		return self.get_query_params().get('LaunchTemplateName')
-
-	def set_LaunchTemplateName(self,LaunchTemplateName):
-		self.add_query_param('LaunchTemplateName',LaunchTemplateName)
-
-	def get_ResourceOwnerId(self):
-		return self.get_query_params().get('ResourceOwnerId')
-
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
 	def get_UniqueSuffix(self):
 		return self.get_query_params().get('UniqueSuffix')
 
 	def set_UniqueSuffix(self,UniqueSuffix):
 		self.add_query_param('UniqueSuffix',UniqueSuffix)
-
-	def get_HpcClusterId(self):
-		return self.get_query_params().get('HpcClusterId')
-
-	def set_HpcClusterId(self,HpcClusterId):
-		self.add_query_param('HpcClusterId',HpcClusterId)
-
-	def get_HttpPutResponseHopLimit(self):
-		return self.get_query_params().get('HttpPutResponseHopLimit')
-
-	def set_HttpPutResponseHopLimit(self,HttpPutResponseHopLimit):
-		self.add_query_param('HttpPutResponseHopLimit',HttpPutResponseHopLimit)
 
 	def get_SecurityEnhancementStrategy(self):
 		return self.get_query_params().get('SecurityEnhancementStrategy')
@@ -67,23 +43,11 @@ class RunInstancesRequest(RpcRequest):
 	def set_SecurityEnhancementStrategy(self,SecurityEnhancementStrategy):
 		self.add_query_param('SecurityEnhancementStrategy',SecurityEnhancementStrategy)
 
-	def get_KeyPairName(self):
-		return self.get_query_params().get('KeyPairName')
-
-	def set_KeyPairName(self,KeyPairName):
-		self.add_query_param('KeyPairName',KeyPairName)
-
 	def get_MinAmount(self):
 		return self.get_query_params().get('MinAmount')
 
 	def set_MinAmount(self,MinAmount):
 		self.add_query_param('MinAmount',MinAmount)
-
-	def get_SpotPriceLimit(self):
-		return self.get_query_params().get('SpotPriceLimit')
-
-	def set_SpotPriceLimit(self,SpotPriceLimit):
-		self.add_query_param('SpotPriceLimit',SpotPriceLimit)
 
 	def get_DeletionProtection(self):
 		return self.get_query_params().get('DeletionProtection')
@@ -115,33 +79,11 @@ class RunInstancesRequest(RpcRequest):
 	def set_DeploymentSetGroupNo(self,DeploymentSetGroupNo):
 		self.add_query_param('DeploymentSetGroupNo',DeploymentSetGroupNo)
 
-	def get_StorageSetPartitionNumber(self):
-		return self.get_query_params().get('StorageSetPartitionNumber')
-
-	def set_StorageSetPartitionNumber(self,StorageSetPartitionNumber):
-		self.add_query_param('StorageSetPartitionNumber',StorageSetPartitionNumber)
-
-	def get_Tags(self):
-		return self.get_query_params().get('Tags')
-
-	def set_Tags(self, Tags):
-		for depth1 in range(len(Tags)):
-			if Tags[depth1].get('Key') is not None:
-				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tags[depth1].get('Key'))
-			if Tags[depth1].get('Value') is not None:
-				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tags[depth1].get('Value'))
-
 	def get_SystemDiskAutoSnapshotPolicyId(self):
 		return self.get_query_params().get('SystemDisk.AutoSnapshotPolicyId')
 
 	def set_SystemDiskAutoSnapshotPolicyId(self,SystemDiskAutoSnapshotPolicyId):
 		self.add_query_param('SystemDisk.AutoSnapshotPolicyId',SystemDiskAutoSnapshotPolicyId)
-
-	def get_AutoRenewPeriod(self):
-		return self.get_query_params().get('AutoRenewPeriod')
-
-	def set_AutoRenewPeriod(self,AutoRenewPeriod):
-		self.add_query_param('AutoRenewPeriod',AutoRenewPeriod)
 
 	def get_CpuOptionsCore(self):
 		return self.get_query_params().get('CpuOptions.Core')
@@ -161,18 +103,6 @@ class RunInstancesRequest(RpcRequest):
 	def set_DryRun(self,DryRun):
 		self.add_query_param('DryRun',DryRun)
 
-	def get_LaunchTemplateId(self):
-		return self.get_query_params().get('LaunchTemplateId')
-
-	def set_LaunchTemplateId(self,LaunchTemplateId):
-		self.add_query_param('LaunchTemplateId',LaunchTemplateId)
-
-	def get_Ipv6AddressCount(self):
-		return self.get_query_params().get('Ipv6AddressCount')
-
-	def set_Ipv6AddressCount(self,Ipv6AddressCount):
-		self.add_query_param('Ipv6AddressCount',Ipv6AddressCount)
-
 	def get_CpuOptionsNuma(self):
 		return self.get_query_params().get('CpuOptions.Numa')
 
@@ -184,12 +114,6 @@ class RunInstancesRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
-
-	def get_VSwitchId(self):
-		return self.get_query_params().get('VSwitchId')
-
-	def set_VSwitchId(self,VSwitchId):
-		self.add_query_param('VSwitchId',VSwitchId)
 
 	def get_SpotStrategy(self):
 		return self.get_query_params().get('SpotStrategy')
@@ -209,12 +133,6 @@ class RunInstancesRequest(RpcRequest):
 	def set_PeriodUnit(self,PeriodUnit):
 		self.add_query_param('PeriodUnit',PeriodUnit)
 
-	def get_InstanceName(self):
-		return self.get_query_params().get('InstanceName')
-
-	def set_InstanceName(self,InstanceName):
-		self.add_query_param('InstanceName',InstanceName)
-
 	def get_AutoRenew(self):
 		return self.get_query_params().get('AutoRenew')
 
@@ -226,20 +144,6 @@ class RunInstancesRequest(RpcRequest):
 
 	def set_InternetChargeType(self,InternetChargeType):
 		self.add_query_param('InternetChargeType',InternetChargeType)
-
-	def get_ZoneId(self):
-		return self.get_query_params().get('ZoneId')
-
-	def set_ZoneId(self,ZoneId):
-		self.add_query_param('ZoneId',ZoneId)
-
-	def get_Ipv6Addresss(self):
-		return self.get_query_params().get('Ipv6Addresss')
-
-	def set_Ipv6Addresss(self, Ipv6Addresss):
-		for depth1 in range(len(Ipv6Addresss)):
-			if Ipv6Addresss[depth1] is not None:
-				self.add_query_param('Ipv6Address.' + str(depth1 + 1) , Ipv6Addresss[depth1])
 
 	def get_InternetMaxBandwidthIn(self):
 		return self.get_query_params().get('InternetMaxBandwidthIn')
@@ -265,12 +169,6 @@ class RunInstancesRequest(RpcRequest):
 	def set_SpotInterruptionBehavior(self,SpotInterruptionBehavior):
 		self.add_query_param('SpotInterruptionBehavior',SpotInterruptionBehavior)
 
-	def get_ClientToken(self):
-		return self.get_query_params().get('ClientToken')
-
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
-
 	def get_IoOptimized(self):
 		return self.get_query_params().get('IoOptimized')
 
@@ -282,6 +180,182 @@ class RunInstancesRequest(RpcRequest):
 
 	def set_SecurityGroupId(self,SecurityGroupId):
 		self.add_query_param('SecurityGroupId',SecurityGroupId)
+
+	def get_SystemDiskPerformanceLevel(self):
+		return self.get_query_params().get('SystemDisk.PerformanceLevel')
+
+	def set_SystemDiskPerformanceLevel(self,SystemDiskPerformanceLevel):
+		self.add_query_param('SystemDisk.PerformanceLevel',SystemDiskPerformanceLevel)
+
+	def get_PasswordInherit(self):
+		return self.get_query_params().get('PasswordInherit')
+
+	def set_PasswordInherit(self,PasswordInherit):
+		self.add_query_param('PasswordInherit',PasswordInherit)
+
+	def get_InstanceType(self):
+		return self.get_query_params().get('InstanceType')
+
+	def set_InstanceType(self,InstanceType):
+		self.add_query_param('InstanceType',InstanceType)
+
+	def get_Arns(self):
+		return self.get_query_params().get('Arns')
+
+	def set_Arns(self, Arns):
+		for depth1 in range(len(Arns)):
+			if Arns[depth1].get('AssumeRoleFor') is not None:
+				self.add_query_param('Arn.' + str(depth1 + 1) + '.AssumeRoleFor', Arns[depth1].get('AssumeRoleFor'))
+			if Arns[depth1].get('Rolearn') is not None:
+				self.add_query_param('Arn.' + str(depth1 + 1) + '.Rolearn', Arns[depth1].get('Rolearn'))
+			if Arns[depth1].get('RoleType') is not None:
+				self.add_query_param('Arn.' + str(depth1 + 1) + '.RoleType', Arns[depth1].get('RoleType'))
+
+	def get_ResourceOwnerAccount(self):
+		return self.get_query_params().get('ResourceOwnerAccount')
+
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+
+	def get_SystemDiskDiskName(self):
+		return self.get_query_params().get('SystemDisk.DiskName')
+
+	def set_SystemDiskDiskName(self,SystemDiskDiskName):
+		self.add_query_param('SystemDisk.DiskName',SystemDiskDiskName)
+
+	def get_DedicatedHostId(self):
+		return self.get_query_params().get('DedicatedHostId')
+
+	def set_DedicatedHostId(self,DedicatedHostId):
+		self.add_query_param('DedicatedHostId',DedicatedHostId)
+
+	def get_SecurityGroupIdss(self):
+		return self.get_query_params().get('SecurityGroupIdss')
+
+	def set_SecurityGroupIdss(self, SecurityGroupIdss):
+		for depth1 in range(len(SecurityGroupIdss)):
+			if SecurityGroupIdss[depth1] is not None:
+				self.add_query_param('SecurityGroupIds.' + str(depth1 + 1) , SecurityGroupIdss[depth1])
+
+	def get_SpotDuration(self):
+		return self.get_query_params().get('SpotDuration')
+
+	def set_SpotDuration(self,SpotDuration):
+		self.add_query_param('SpotDuration',SpotDuration)
+
+	def get_SystemDiskSize(self):
+		return self.get_query_params().get('SystemDisk.Size')
+
+	def set_SystemDiskSize(self,SystemDiskSize):
+		self.add_query_param('SystemDisk.Size',SystemDiskSize)
+
+	def get_ImageFamily(self):
+		return self.get_query_params().get('ImageFamily')
+
+	def set_ImageFamily(self,ImageFamily):
+		self.add_query_param('ImageFamily',ImageFamily)
+
+	def get_LaunchTemplateName(self):
+		return self.get_query_params().get('LaunchTemplateName')
+
+	def set_LaunchTemplateName(self,LaunchTemplateName):
+		self.add_query_param('LaunchTemplateName',LaunchTemplateName)
+
+	def get_ResourceOwnerId(self):
+		return self.get_query_params().get('ResourceOwnerId')
+
+	def set_ResourceOwnerId(self,ResourceOwnerId):
+		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+
+	def get_HpcClusterId(self):
+		return self.get_query_params().get('HpcClusterId')
+
+	def set_HpcClusterId(self,HpcClusterId):
+		self.add_query_param('HpcClusterId',HpcClusterId)
+
+	def get_HttpPutResponseHopLimit(self):
+		return self.get_query_params().get('HttpPutResponseHopLimit')
+
+	def set_HttpPutResponseHopLimit(self,HttpPutResponseHopLimit):
+		self.add_query_param('HttpPutResponseHopLimit',HttpPutResponseHopLimit)
+
+	def get_KeyPairName(self):
+		return self.get_query_params().get('KeyPairName')
+
+	def set_KeyPairName(self,KeyPairName):
+		self.add_query_param('KeyPairName',KeyPairName)
+
+	def get_SpotPriceLimit(self):
+		return self.get_query_params().get('SpotPriceLimit')
+
+	def set_SpotPriceLimit(self,SpotPriceLimit):
+		self.add_query_param('SpotPriceLimit',SpotPriceLimit)
+
+	def get_StorageSetPartitionNumber(self):
+		return self.get_query_params().get('StorageSetPartitionNumber')
+
+	def set_StorageSetPartitionNumber(self,StorageSetPartitionNumber):
+		self.add_query_param('StorageSetPartitionNumber',StorageSetPartitionNumber)
+
+	def get_Tags(self):
+		return self.get_query_params().get('Tags')
+
+	def set_Tags(self, Tags):
+		for depth1 in range(len(Tags)):
+			if Tags[depth1].get('Key') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tags[depth1].get('Key'))
+			if Tags[depth1].get('Value') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tags[depth1].get('Value'))
+
+	def get_AutoRenewPeriod(self):
+		return self.get_query_params().get('AutoRenewPeriod')
+
+	def set_AutoRenewPeriod(self,AutoRenewPeriod):
+		self.add_query_param('AutoRenewPeriod',AutoRenewPeriod)
+
+	def get_LaunchTemplateId(self):
+		return self.get_query_params().get('LaunchTemplateId')
+
+	def set_LaunchTemplateId(self,LaunchTemplateId):
+		self.add_query_param('LaunchTemplateId',LaunchTemplateId)
+
+	def get_Ipv6AddressCount(self):
+		return self.get_query_params().get('Ipv6AddressCount')
+
+	def set_Ipv6AddressCount(self,Ipv6AddressCount):
+		self.add_query_param('Ipv6AddressCount',Ipv6AddressCount)
+
+	def get_VSwitchId(self):
+		return self.get_query_params().get('VSwitchId')
+
+	def set_VSwitchId(self,VSwitchId):
+		self.add_query_param('VSwitchId',VSwitchId)
+
+	def get_InstanceName(self):
+		return self.get_query_params().get('InstanceName')
+
+	def set_InstanceName(self,InstanceName):
+		self.add_query_param('InstanceName',InstanceName)
+
+	def get_ZoneId(self):
+		return self.get_query_params().get('ZoneId')
+
+	def set_ZoneId(self,ZoneId):
+		self.add_query_param('ZoneId',ZoneId)
+
+	def get_Ipv6Addresss(self):
+		return self.get_query_params().get('Ipv6Addresss')
+
+	def set_Ipv6Addresss(self, Ipv6Addresss):
+		for depth1 in range(len(Ipv6Addresss)):
+			if Ipv6Addresss[depth1] is not None:
+				self.add_query_param('Ipv6Address.' + str(depth1 + 1) , Ipv6Addresss[depth1])
+
+	def get_ClientToken(self):
+		return self.get_query_params().get('ClientToken')
+
+	def set_ClientToken(self,ClientToken):
+		self.add_query_param('ClientToken',ClientToken)
 
 	def get_InternetMaxBandwidthOut(self):
 		return self.get_query_params().get('InternetMaxBandwidthOut')
@@ -307,35 +381,17 @@ class RunInstancesRequest(RpcRequest):
 	def set_SystemDiskCategory(self,SystemDiskCategory):
 		self.add_query_param('SystemDisk.Category',SystemDiskCategory)
 
-	def get_SystemDiskPerformanceLevel(self):
-		return self.get_query_params().get('SystemDisk.PerformanceLevel')
-
-	def set_SystemDiskPerformanceLevel(self,SystemDiskPerformanceLevel):
-		self.add_query_param('SystemDisk.PerformanceLevel',SystemDiskPerformanceLevel)
-
 	def get_UserData(self):
 		return self.get_query_params().get('UserData')
 
 	def set_UserData(self,UserData):
 		self.add_query_param('UserData',UserData)
 
-	def get_PasswordInherit(self):
-		return self.get_query_params().get('PasswordInherit')
-
-	def set_PasswordInherit(self,PasswordInherit):
-		self.add_query_param('PasswordInherit',PasswordInherit)
-
 	def get_HttpEndpoint(self):
 		return self.get_query_params().get('HttpEndpoint')
 
 	def set_HttpEndpoint(self,HttpEndpoint):
 		self.add_query_param('HttpEndpoint',HttpEndpoint)
-
-	def get_InstanceType(self):
-		return self.get_query_params().get('InstanceType')
-
-	def set_InstanceType(self,InstanceType):
-		self.add_query_param('InstanceType',InstanceType)
 
 	def get_InstanceChargeType(self):
 		return self.get_query_params().get('InstanceChargeType')
@@ -375,12 +431,6 @@ class RunInstancesRequest(RpcRequest):
 	def set_Amount(self,Amount):
 		self.add_query_param('Amount',Amount)
 
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
-
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
 
@@ -392,12 +442,6 @@ class RunInstancesRequest(RpcRequest):
 
 	def set_Tenancy(self,Tenancy):
 		self.add_query_param('Tenancy',Tenancy)
-
-	def get_SystemDiskDiskName(self):
-		return self.get_query_params().get('SystemDisk.DiskName')
-
-	def set_SystemDiskDiskName(self,SystemDiskDiskName):
-		self.add_query_param('SystemDisk.DiskName',SystemDiskDiskName)
 
 	def get_RamRoleName(self):
 		return self.get_query_params().get('RamRoleName')
@@ -411,31 +455,11 @@ class RunInstancesRequest(RpcRequest):
 	def set_AutoReleaseTime(self,AutoReleaseTime):
 		self.add_query_param('AutoReleaseTime',AutoReleaseTime)
 
-	def get_DedicatedHostId(self):
-		return self.get_query_params().get('DedicatedHostId')
-
-	def set_DedicatedHostId(self,DedicatedHostId):
-		self.add_query_param('DedicatedHostId',DedicatedHostId)
-
 	def get_CreditSpecification(self):
 		return self.get_query_params().get('CreditSpecification')
 
 	def set_CreditSpecification(self,CreditSpecification):
 		self.add_query_param('CreditSpecification',CreditSpecification)
-
-	def get_SecurityGroupIdss(self):
-		return self.get_query_params().get('SecurityGroupIdss')
-
-	def set_SecurityGroupIdss(self, SecurityGroupIdss):
-		for depth1 in range(len(SecurityGroupIdss)):
-			if SecurityGroupIdss[depth1] is not None:
-				self.add_query_param('SecurityGroupIds.' + str(depth1 + 1) , SecurityGroupIdss[depth1])
-
-	def get_SpotDuration(self):
-		return self.get_query_params().get('SpotDuration')
-
-	def set_SpotDuration(self,SpotDuration):
-		self.add_query_param('SpotDuration',SpotDuration)
 
 	def get_DataDisks(self):
 		return self.get_query_params().get('DataDisks')
@@ -478,18 +502,6 @@ class RunInstancesRequest(RpcRequest):
 
 	def set_StorageSetId(self,StorageSetId):
 		self.add_query_param('StorageSetId',StorageSetId)
-
-	def get_SystemDiskSize(self):
-		return self.get_query_params().get('SystemDisk.Size')
-
-	def set_SystemDiskSize(self,SystemDiskSize):
-		self.add_query_param('SystemDisk.Size',SystemDiskSize)
-
-	def get_ImageFamily(self):
-		return self.get_query_params().get('ImageFamily')
-
-	def set_ImageFamily(self,ImageFamily):
-		self.add_query_param('ImageFamily',ImageFamily)
 
 	def get_HttpTokens(self):
 		return self.get_query_params().get('HttpTokens')

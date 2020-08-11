@@ -49,6 +49,12 @@ class CopySnapshotRequest(RpcRequest):
 	def set_DestinationRegionId(self,DestinationRegionId):
 		self.add_query_param('DestinationRegionId',DestinationRegionId)
 
+	def get_ResourceGroupId(self):
+		return self.get_query_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self,ResourceGroupId):
+		self.add_query_param('ResourceGroupId',ResourceGroupId)
+
 	def get_Tags(self):
 		return self.get_query_params().get('Tags')
 

@@ -94,3 +94,9 @@ class DescribeStorageCapacityUnitsRequest(RpcRequest):
 		for depth1 in range(len(Statuss)):
 			if Statuss[depth1] is not None:
 				self.add_query_param('Status.' + str(depth1 + 1) , Statuss[depth1])
+
+	def get_AllocationType(self):
+		return self.get_query_params().get('AllocationType')
+
+	def set_AllocationType(self,AllocationType):
+		self.add_query_param('AllocationType',AllocationType)
