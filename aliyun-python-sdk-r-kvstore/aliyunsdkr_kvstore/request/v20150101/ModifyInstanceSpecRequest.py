@@ -73,6 +73,12 @@ class ModifyInstanceSpecRequest(RpcRequest):
 	def set_AutoPay(self,AutoPay):
 		self.add_query_param('AutoPay',AutoPay)
 
+	def get_MajorVersion(self):
+		return self.get_query_params().get('MajorVersion')
+
+	def set_MajorVersion(self,MajorVersion):
+		self.add_query_param('MajorVersion',MajorVersion)
+
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
