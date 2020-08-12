@@ -19,17 +19,11 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class CreateCredentialRequest(RpcRequest):
+class GetPipelineLogRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'devops-rdc', '2020-03-03', 'CreateCredential')
+		RpcRequest.__init__(self, 'devops-rdc', '2020-03-03', 'GetPipelineLog')
 		self.set_method('POST')
-
-	def get_Type(self):
-		return self.get_body_params().get('Type')
-
-	def set_Type(self,Type):
-		self.add_body_params('Type', Type)
 
 	def get_UserPk(self):
 		return self.get_body_params().get('UserPk')
@@ -43,20 +37,14 @@ class CreateCredentialRequest(RpcRequest):
 	def set_OrgId(self,OrgId):
 		self.add_body_params('OrgId', OrgId)
 
-	def get_Password(self):
-		return self.get_body_params().get('Password')
+	def get_PipelineId(self):
+		return self.get_body_params().get('PipelineId')
 
-	def set_Password(self,Password):
-		self.add_body_params('Password', Password)
+	def set_PipelineId(self,PipelineId):
+		self.add_body_params('PipelineId', PipelineId)
 
-	def get_Name(self):
-		return self.get_body_params().get('Name')
+	def get_JobId(self):
+		return self.get_body_params().get('JobId')
 
-	def set_Name(self,Name):
-		self.add_body_params('Name', Name)
-
-	def get_UserName(self):
-		return self.get_body_params().get('UserName')
-
-	def set_UserName(self,UserName):
-		self.add_body_params('UserName', UserName)
+	def set_JobId(self,JobId):
+		self.add_body_params('JobId', JobId)
