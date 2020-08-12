@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkvcs.endpoint import endpoint_data
 
-class CreateCorpRequest(RpcRequest):
+class DeleteCorpGroupRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Vcs', '2020-05-15', 'CreateCorp','vcs')
+		RpcRequest.__init__(self, 'Vcs', '2020-05-15', 'DeleteCorpGroup','vcs')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,38 +31,14 @@ class CreateCorpRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_AlgorithmType(self):
-		return self.get_body_params().get('AlgorithmType')
+	def get_CorpId(self):
+		return self.get_body_params().get('CorpId')
 
-	def set_AlgorithmType(self,AlgorithmType):
-		self.add_body_params('AlgorithmType', AlgorithmType)
+	def set_CorpId(self,CorpId):
+		self.add_body_params('CorpId', CorpId)
 
-	def get_IsvSubId(self):
-		return self.get_body_params().get('IsvSubId')
+	def get_GroupId(self):
+		return self.get_body_params().get('GroupId')
 
-	def set_IsvSubId(self,IsvSubId):
-		self.add_body_params('IsvSubId', IsvSubId)
-
-	def get_ParentCorpId(self):
-		return self.get_body_params().get('ParentCorpId')
-
-	def set_ParentCorpId(self,ParentCorpId):
-		self.add_body_params('ParentCorpId', ParentCorpId)
-
-	def get_Description(self):
-		return self.get_body_params().get('Description')
-
-	def set_Description(self,Description):
-		self.add_body_params('Description', Description)
-
-	def get_AppName(self):
-		return self.get_body_params().get('AppName')
-
-	def set_AppName(self,AppName):
-		self.add_body_params('AppName', AppName)
-
-	def get_CorpName(self):
-		return self.get_body_params().get('CorpName')
-
-	def set_CorpName(self,CorpName):
-		self.add_body_params('CorpName', CorpName)
+	def set_GroupId(self,GroupId):
+		self.add_body_params('GroupId', GroupId)

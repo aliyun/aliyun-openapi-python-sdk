@@ -31,6 +31,12 @@ class UpdateCorpRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_IsvSubId(self):
+		return self.get_body_params().get('IsvSubId')
+
+	def set_IsvSubId(self,IsvSubId):
+		self.add_body_params('IsvSubId', IsvSubId)
+
 	def get_CorpId(self):
 		return self.get_body_params().get('CorpId')
 
