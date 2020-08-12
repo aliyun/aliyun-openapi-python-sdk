@@ -18,9 +18,7 @@
  under the License.
 '''
 
-import logging
 import os
-import platform
 
 from setuptools import setup, find_packages
 
@@ -45,15 +43,9 @@ with open("README.rst") as fp:
     LONG_DESCRIPTION = fp.read()
 
 requires = [
-    "jmespath>=0.9.3,<1.0.0"
+    "jmespath>=0.9.3,<1.0.0",
+    "cryptography>=2.9.2"
 ]
-
-if platform.system() != "Windows":
-    requires.append("pycryptodome>=3.4.7")
-else:
-    logging.warning(
-        "auth type [publicKeyId] is disabled because "
-        "'pycrypto' not support windows, we will resolve this soon")
 
 setup_args = {
     'version': VERSION,

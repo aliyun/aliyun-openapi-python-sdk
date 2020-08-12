@@ -14,7 +14,7 @@ install:
   - pip install coverage
   - pip install pycodestyle
   - pip install mock
-  - pip install jmespath
+  - pip install jmespath cryptography
 
 script:
   - make lint
