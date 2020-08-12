@@ -17,9 +17,10 @@
 
 # coding=utf-8
 
-import platform
-from aliyunsdkcore.acs_exception import exceptions
-from aliyunsdkcore.acs_exception import error_code
+from cryptography.hazmat.backends import default_backend
+from cryptography.hazmat.primitives import hashes
+from cryptography.hazmat.primitives.asymmetric import padding
+from cryptography.hazmat.primitives.serialization import load_der_private_key
 
 from aliyunsdkcore.compat import ensure_string
 from aliyunsdkcore.compat import ensure_bytes
@@ -28,23 +29,19 @@ from aliyunsdkcore.compat import b64_decode_bytes
 
 
 def get_sign_string(source, access_secret):
-    if platform.system() != "Windows":
-        from Crypto.Signature import PKCS1_v1_5
-        from Crypto.Hash import SHA256
-        from Crypto.PublicKey import RSA
-
-        key = RSA.importKey(b64_decode_bytes(ensure_bytes(access_secret)))
-        h = SHA256.new(ensure_bytes(source))
-        signer = PKCS1_v1_5.new(key)
-        signed_bytes = signer.sign(h)
-        signed_base64 = b64_encode_bytes(signed_bytes)
-        signature = ensure_string(signed_base64).replace('\n', '')
-        return signature
-    else:
-        message = "auth type [publicKeyId] is disabled in Windows " \
-                  "because 'pycrypto' is not supported, we will resolve " \
-                  "this soon"
-        raise exceptions.ClientException(error_code.SDK_NOT_SUPPORT, message)
+    key = load_der_private_key(
+        b64_decode_bytes(ensure_bytes(access_secret)),
+        password=None,
+        backend=default_backend()
+    )
+    signed_bytes = key.sign(
+        ensure_bytes(source),
+        padding.PKCS1v15(),
+        hashes.SHA256()
+    )
+    signed_base64 = b64_encode_bytes(signed_bytes)
+    signature = ensure_string(signed_base64).replace('\n', '')
+    return signature
 
 
 def get_signer_name():

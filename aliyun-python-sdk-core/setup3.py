@@ -20,8 +20,6 @@
 
 from setuptools import setup, find_packages
 import os
-import platform
-import logging
 
 """
 Setup module for core.
@@ -47,16 +45,9 @@ with open("README.rst") as fp:
 
 
 requires = [
-    "jmespath>=0.9.3,<1.0.0"
+    "jmespath>=0.9.3,<1.0.0",
+    "cryptography>=2.9.2"
 ]
-
-if platform.system() != "Windows":
-    requires.append("pycryptodome>=3.4.7")
-else:
-    logging.warning(
-        "auth type [publicKeyId] is disabled because "
-        "'pycrypto' not support windows, we will resolve this soon")
-
 
 setup_args = {
     'version': VERSION,
