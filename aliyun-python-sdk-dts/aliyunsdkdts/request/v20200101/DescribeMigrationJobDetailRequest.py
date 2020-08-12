@@ -18,11 +18,18 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkdts.endpoint import endpoint_data
 
 class DescribeMigrationJobDetailRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Dts', '2020-01-01', 'DescribeMigrationJobDetail','dts')
+		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_ClientToken(self):
 		return self.get_query_params().get('ClientToken')
@@ -48,18 +55,6 @@ class DescribeMigrationJobDetailRequest(RpcRequest):
 	def set_PageNum(self,PageNum):
 		self.add_query_param('PageNum',PageNum)
 
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_MigrationModeStructureInitialization(self):
-		return self.get_query_params().get('MigrationMode.StructureInitialization')
-
-	def set_MigrationModeStructureInitialization(self,MigrationModeStructureInitialization):
-		self.add_query_param('MigrationMode.StructureInitialization',MigrationModeStructureInitialization)
-
 	def get_AccountId(self):
 		return self.get_query_params().get('AccountId')
 
@@ -77,3 +72,15 @@ class DescribeMigrationJobDetailRequest(RpcRequest):
 
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
+
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
+
+	def get_MigrationModeStructureInitialization(self):
+		return self.get_query_params().get('MigrationMode.StructureInitialization')
+
+	def set_MigrationModeStructureInitialization(self,MigrationModeStructureInitialization):
+		self.add_query_param('MigrationMode.StructureInitialization',MigrationModeStructureInitialization)

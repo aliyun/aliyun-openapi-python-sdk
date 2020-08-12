@@ -18,11 +18,36 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkdts.endpoint import endpoint_data
 
 class ConfigureSynchronizationJobAlertRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Dts', '2020-01-01', 'ConfigureSynchronizationJobAlert','dts')
+		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
+
+	def get_SynchronizationJobId(self):
+		return self.get_query_params().get('SynchronizationJobId')
+
+	def set_SynchronizationJobId(self,SynchronizationJobId):
+		self.add_query_param('SynchronizationJobId',SynchronizationJobId)
+
+	def get_AccountId(self):
+		return self.get_query_params().get('AccountId')
+
+	def set_AccountId(self,AccountId):
+		self.add_query_param('AccountId',AccountId)
+
+	def get_DelayAlertPhone(self):
+		return self.get_query_params().get('DelayAlertPhone')
+
+	def set_DelayAlertPhone(self,DelayAlertPhone):
+		self.add_query_param('DelayAlertPhone',DelayAlertPhone)
 
 	def get_DelayOverSeconds(self):
 		return self.get_query_params().get('DelayOverSeconds')
@@ -42,29 +67,11 @@ class ConfigureSynchronizationJobAlertRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_SynchronizationJobId(self):
-		return self.get_query_params().get('SynchronizationJobId')
-
-	def set_SynchronizationJobId(self,SynchronizationJobId):
-		self.add_query_param('SynchronizationJobId',SynchronizationJobId)
-
-	def get_AccountId(self):
-		return self.get_query_params().get('AccountId')
-
-	def set_AccountId(self,AccountId):
-		self.add_query_param('AccountId',AccountId)
-
 	def get_ErrorAlertPhone(self):
 		return self.get_query_params().get('ErrorAlertPhone')
 
 	def set_ErrorAlertPhone(self,ErrorAlertPhone):
 		self.add_query_param('ErrorAlertPhone',ErrorAlertPhone)
-
-	def get_DelayAlertPhone(self):
-		return self.get_query_params().get('DelayAlertPhone')
-
-	def set_DelayAlertPhone(self,DelayAlertPhone):
-		self.add_query_param('DelayAlertPhone',DelayAlertPhone)
 
 	def get_ErrorAlertStatus(self):
 		return self.get_query_params().get('ErrorAlertStatus')

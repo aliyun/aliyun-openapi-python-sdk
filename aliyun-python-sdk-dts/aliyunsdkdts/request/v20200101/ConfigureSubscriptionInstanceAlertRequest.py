@@ -18,11 +18,18 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkdts.endpoint import endpoint_data
 
 class ConfigureSubscriptionInstanceAlertRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Dts', '2020-01-01', 'ConfigureSubscriptionInstanceAlert','dts')
+		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_DelayOverSeconds(self):
 		return self.get_query_params().get('DelayOverSeconds')
