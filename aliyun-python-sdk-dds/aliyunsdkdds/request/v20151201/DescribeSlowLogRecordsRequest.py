@@ -49,6 +49,12 @@ class DescribeSlowLogRecordsRequest(RpcRequest):
 	def set_PageNumber(self,PageNumber):
 		self.add_query_param('PageNumber',PageNumber)
 
+	def get_ResourceGroupId(self):
+		return self.get_query_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self,ResourceGroupId):
+		self.add_query_param('ResourceGroupId',ResourceGroupId)
+
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
 
@@ -72,12 +78,6 @@ class DescribeSlowLogRecordsRequest(RpcRequest):
 
 	def set_NodeId(self,NodeId):
 		self.add_query_param('NodeId',NodeId)
-
-	def get_SQLId(self):
-		return self.get_query_params().get('SQLId')
-
-	def set_SQLId(self,SQLId):
-		self.add_query_param('SQLId',SQLId)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')

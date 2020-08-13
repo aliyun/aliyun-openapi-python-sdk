@@ -37,6 +37,12 @@ class SwitchDBInstanceHARequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_SwitchMode(self):
+		return self.get_query_params().get('SwitchMode')
+
+	def set_SwitchMode(self,SwitchMode):
+		self.add_query_param('SwitchMode',SwitchMode)
+
 	def get_RoleIds(self):
 		return self.get_query_params().get('RoleIds')
 

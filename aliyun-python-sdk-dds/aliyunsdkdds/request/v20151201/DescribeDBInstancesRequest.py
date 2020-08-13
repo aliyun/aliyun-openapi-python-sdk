@@ -137,6 +137,12 @@ class DescribeDBInstancesRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
+	def get_ConnectionDomain(self):
+		return self.get_query_params().get('ConnectionDomain')
+
+	def set_ConnectionDomain(self,ConnectionDomain):
+		self.add_query_param('ConnectionDomain',ConnectionDomain)
+
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 

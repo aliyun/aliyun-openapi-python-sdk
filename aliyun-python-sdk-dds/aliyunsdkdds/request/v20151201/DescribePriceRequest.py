@@ -49,6 +49,12 @@ class DescribePriceRequest(RpcRequest):
 	def set_CouponNo(self,CouponNo):
 		self.add_query_param('CouponNo',CouponNo)
 
+	def get_ResourceGroupId(self):
+		return self.get_query_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self,ResourceGroupId):
+		self.add_query_param('ResourceGroupId',ResourceGroupId)
+
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
 
