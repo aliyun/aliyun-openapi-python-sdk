@@ -49,6 +49,12 @@ class QueryBillOverviewRequest(RpcRequest):
 	def set_BillingCycle(self,BillingCycle):
 		self.add_query_param('BillingCycle',BillingCycle)
 
+	def get_BillOwnerId(self):
+		return self.get_query_params().get('BillOwnerId')
+
+	def set_BillOwnerId(self,BillOwnerId):
+		self.add_query_param('BillOwnerId',BillOwnerId)
+
 	def get_ProductType(self):
 		return self.get_query_params().get('ProductType')
 

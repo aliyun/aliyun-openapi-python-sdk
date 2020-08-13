@@ -79,6 +79,12 @@ class QueryBillRequest(RpcRequest):
 	def set_PageNum(self,PageNum):
 		self.add_query_param('PageNum',PageNum)
 
+	def get_BillOwnerId(self):
+		return self.get_query_params().get('BillOwnerId')
+
+	def set_BillOwnerId(self,BillOwnerId):
+		self.add_query_param('BillOwnerId',BillOwnerId)
+
 	def get_ProductType(self):
 		return self.get_query_params().get('ProductType')
 

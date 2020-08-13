@@ -42,6 +42,8 @@ class AllocateCostUnitResourceRequest(RpcRequest):
 				self.add_query_param('ResourceInstanceList.' + str(depth1 + 1) + '.CommodityCode', ResourceInstanceLists[depth1].get('CommodityCode'))
 			if ResourceInstanceLists[depth1].get('ResourceUserId') is not None:
 				self.add_query_param('ResourceInstanceList.' + str(depth1 + 1) + '.ResourceUserId', ResourceInstanceLists[depth1].get('ResourceUserId'))
+			if ResourceInstanceLists[depth1].get('ApportionCode') is not None:
+				self.add_query_param('ResourceInstanceList.' + str(depth1 + 1) + '.ApportionCode', ResourceInstanceLists[depth1].get('ApportionCode'))
 
 	def get_FromUnitId(self):
 		return self.get_query_params().get('FromUnitId')
