@@ -49,6 +49,12 @@ class CheckCreateDdrDBInstanceRequest(RpcRequest):
 	def set_SourceDBInstanceName(self,SourceDBInstanceName):
 		self.add_query_param('SourceDBInstanceName',SourceDBInstanceName)
 
+	def get_BinlogRole(self):
+		return self.get_query_params().get('BinlogRole')
+
+	def set_BinlogRole(self,BinlogRole):
+		self.add_query_param('BinlogRole',BinlogRole)
+
 	def get_EngineVersion(self):
 		return self.get_query_params().get('EngineVersion')
 
@@ -85,6 +91,12 @@ class CheckCreateDdrDBInstanceRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
+	def get_BinlogPosition(self):
+		return self.get_query_params().get('BinlogPosition')
+
+	def set_BinlogPosition(self,BinlogPosition):
+		self.add_query_param('BinlogPosition',BinlogPosition)
+
 	def get_DBInstanceClass(self):
 		return self.get_query_params().get('DBInstanceClass')
 
@@ -96,6 +108,12 @@ class CheckCreateDdrDBInstanceRequest(RpcRequest):
 
 	def set_RestoreType(self,RestoreType):
 		self.add_query_param('RestoreType',RestoreType)
+
+	def get_BinlogName(self):
+		return self.get_query_params().get('BinlogName')
+
+	def set_BinlogName(self,BinlogName):
+		self.add_query_param('BinlogName',BinlogName)
 
 	def get_SourceRegion(self):
 		return self.get_query_params().get('SourceRegion')

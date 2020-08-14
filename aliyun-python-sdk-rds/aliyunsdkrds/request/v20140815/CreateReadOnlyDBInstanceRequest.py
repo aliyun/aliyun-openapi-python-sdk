@@ -49,6 +49,12 @@ class CreateReadOnlyDBInstanceRequest(RpcRequest):
 	def set_ClientToken(self,ClientToken):
 		self.add_query_param('ClientToken',ClientToken)
 
+	def get_InstructionSetArch(self):
+		return self.get_query_params().get('InstructionSetArch')
+
+	def set_InstructionSetArch(self,InstructionSetArch):
+		self.add_query_param('InstructionSetArch',InstructionSetArch)
+
 	def get_EngineVersion(self):
 		return self.get_query_params().get('EngineVersion')
 

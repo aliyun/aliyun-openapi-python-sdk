@@ -145,6 +145,12 @@ class CreateDBInstanceRequest(RpcRequest):
 	def set_ZoneId(self,ZoneId):
 		self.add_query_param('ZoneId',ZoneId)
 
+	def get_StorageAutoScale(self):
+		return self.get_query_params().get('StorageAutoScale')
+
+	def set_StorageAutoScale(self,StorageAutoScale):
+		self.add_query_param('StorageAutoScale',StorageAutoScale)
+
 	def get_InstanceNetworkType(self):
 		return self.get_query_params().get('InstanceNetworkType')
 
@@ -222,6 +228,24 @@ class CreateDBInstanceRequest(RpcRequest):
 
 	def set_UsedTime(self,UsedTime):
 		self.add_query_param('UsedTime',UsedTime)
+
+	def get_TargetMinorVersion(self):
+		return self.get_query_params().get('TargetMinorVersion')
+
+	def set_TargetMinorVersion(self,TargetMinorVersion):
+		self.add_query_param('TargetMinorVersion',TargetMinorVersion)
+
+	def get_StorageUpperBound(self):
+		return self.get_query_params().get('StorageUpperBound')
+
+	def set_StorageUpperBound(self,StorageUpperBound):
+		self.add_query_param('StorageUpperBound',StorageUpperBound)
+
+	def get_StorageThreshold(self):
+		return self.get_query_params().get('StorageThreshold')
+
+	def set_StorageThreshold(self,StorageThreshold):
+		self.add_query_param('StorageThreshold',StorageThreshold)
 
 	def get_VPCId(self):
 		return self.get_query_params().get('VPCId')
