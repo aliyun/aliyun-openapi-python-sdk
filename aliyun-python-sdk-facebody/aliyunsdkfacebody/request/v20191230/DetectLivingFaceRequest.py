@@ -23,7 +23,7 @@ from aliyunsdkfacebody.endpoint import endpoint_data
 class DetectLivingFaceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'facebody', '2019-12-30', 'DetectLivingFace','facebody')
+		RpcRequest.__init__(self, 'facebody', '2019-12-30', 'DetectLivingFace')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())

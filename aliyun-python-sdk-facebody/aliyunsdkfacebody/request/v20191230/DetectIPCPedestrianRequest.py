@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkfacebody.endpoint import endpoint_data
 
-class DetectBodyCountRequest(RpcRequest):
+class DetectIPCPedestrianRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'facebody', '2019-12-30', 'DetectBodyCount')
+		RpcRequest.__init__(self, 'facebody', '2019-12-30', 'DetectIPCPedestrian')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,8 +31,20 @@ class DetectBodyCountRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_ImageURL(self):
-		return self.get_body_params().get('ImageURL')
+	def get_ImageData(self):
+		return self.get_body_params().get('ImageData')
 
-	def set_ImageURL(self,ImageURL):
-		self.add_body_params('ImageURL', ImageURL)
+	def set_ImageData(self,ImageData):
+		self.add_body_params('ImageData', ImageData)
+
+	def get_Width(self):
+		return self.get_body_params().get('Width')
+
+	def set_Width(self,Width):
+		self.add_body_params('Width', Width)
+
+	def get_Height(self):
+		return self.get_body_params().get('Height')
+
+	def set_Height(self,Height):
+		self.add_body_params('Height', Height)
