@@ -20,12 +20,12 @@
 from aliyunsdkcore.request import RoaRequest
 from aliyunsdkopensearch.endpoint import endpoint_data
 
-class CreateModelRequest(RoaRequest):
+class GetValidationErrorRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'OpenSearch', '2017-12-25', 'CreateModel','opensearch')
-		self.set_uri_pattern('/v4/openapi/app-groups/[appGroupIdentity]/algorithm/models')
-		self.set_method('POST')
+		RoaRequest.__init__(self, 'OpenSearch', '2017-12-25', 'GetValidationError','opensearch')
+		self.set_uri_pattern('/v4/openapi/app-groups/[appGroupIdentity]/algorithm/data/validation-error')
+		self.set_method('GET')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -37,3 +37,9 @@ class CreateModelRequest(RoaRequest):
 
 	def set_appGroupIdentity(self,appGroupIdentity):
 		self.add_path_param('appGroupIdentity',appGroupIdentity)
+
+	def get_errorCode(self):
+		return self.get_query_params().get('errorCode')
+
+	def set_errorCode(self,errorCode):
+		self.add_query_param('errorCode',errorCode)

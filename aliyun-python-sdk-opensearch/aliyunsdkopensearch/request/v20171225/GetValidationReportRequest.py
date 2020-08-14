@@ -20,17 +20,23 @@
 from aliyunsdkcore.request import RoaRequest
 from aliyunsdkopensearch.endpoint import endpoint_data
 
-class CreateModelRequest(RoaRequest):
+class GetValidationReportRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'OpenSearch', '2017-12-25', 'CreateModel','opensearch')
-		self.set_uri_pattern('/v4/openapi/app-groups/[appGroupIdentity]/algorithm/models')
-		self.set_method('POST')
+		RoaRequest.__init__(self, 'OpenSearch', '2017-12-25', 'GetValidationReport','opensearch')
+		self.set_uri_pattern('/v4/openapi/app-groups/[appGroupIdentity]/algorithm/data/validation-report')
+		self.set_method('GET')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+
+	def get_type(self):
+		return self.get_query_params().get('type')
+
+	def set_type(self,type):
+		self.add_query_param('type',type)
 
 	def get_appGroupIdentity(self):
 		return self.get_path_params().get('appGroupIdentity')

@@ -24,7 +24,7 @@ class GetModelProgressRequest(RoaRequest):
 
 	def __init__(self):
 		RoaRequest.__init__(self, 'OpenSearch', '2017-12-25', 'GetModelProgress','opensearch')
-		self.set_uri_pattern('/v4/openapi/app-groups/[appGroupIdentity]/simple-models/[modelId]/progress')
+		self.set_uri_pattern('/v4/openapi/app-groups/[appGroupIdentity]/algorithm/models/[modelName]/progress')
 		self.set_method('GET')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -32,11 +32,11 @@ class GetModelProgressRequest(RoaRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_modelId(self):
-		return self.get_path_params().get('modelId')
+	def get_modelName(self):
+		return self.get_path_params().get('modelName')
 
-	def set_modelId(self,modelId):
-		self.add_path_param('modelId',modelId)
+	def set_modelName(self,modelName):
+		self.add_path_param('modelName',modelName)
 
 	def get_appGroupIdentity(self):
 		return self.get_path_params().get('appGroupIdentity')
