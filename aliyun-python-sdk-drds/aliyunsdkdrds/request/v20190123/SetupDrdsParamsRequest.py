@@ -18,11 +18,18 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkdrds.endpoint import endpoint_data
 
 class SetupDrdsParamsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Drds', '2019-01-23', 'SetupDrdsParams','drds')
+		RpcRequest.__init__(self, 'Drds', '2019-01-23', 'SetupDrdsParams','Drds')
+		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_ParamLevel(self):
 		return self.get_query_params().get('ParamLevel')
@@ -33,19 +40,18 @@ class SetupDrdsParamsRequest(RpcRequest):
 	def get_Datas(self):
 		return self.get_query_params().get('Datas')
 
-	def set_Datas(self,Datas):
-		for i in range(len(Datas)):	
-			if Datas[i].get('ParamType') is not None:
-				self.add_query_param('Data.' + str(i + 1) + '.ParamType' , Datas[i].get('ParamType'))
-			if Datas[i].get('DbName') is not None:
-				self.add_query_param('Data.' + str(i + 1) + '.DbName' , Datas[i].get('DbName'))
-			if Datas[i].get('ParamRanges') is not None:
-				self.add_query_param('Data.' + str(i + 1) + '.ParamRanges' , Datas[i].get('ParamRanges'))
-			if Datas[i].get('ParamVariableName') is not None:
-				self.add_query_param('Data.' + str(i + 1) + '.ParamVariableName' , Datas[i].get('ParamVariableName'))
-			if Datas[i].get('ParamValue') is not None:
-				self.add_query_param('Data.' + str(i + 1) + '.ParamValue' , Datas[i].get('ParamValue'))
-
+	def set_Datas(self, Datas):
+		for depth1 in range(len(Datas)):
+			if Datas[depth1].get('ParamType') is not None:
+				self.add_query_param('Data.' + str(depth1 + 1) + '.ParamType', Datas[depth1].get('ParamType'))
+			if Datas[depth1].get('DbName') is not None:
+				self.add_query_param('Data.' + str(depth1 + 1) + '.DbName', Datas[depth1].get('DbName'))
+			if Datas[depth1].get('ParamRanges') is not None:
+				self.add_query_param('Data.' + str(depth1 + 1) + '.ParamRanges', Datas[depth1].get('ParamRanges'))
+			if Datas[depth1].get('ParamVariableName') is not None:
+				self.add_query_param('Data.' + str(depth1 + 1) + '.ParamVariableName', Datas[depth1].get('ParamVariableName'))
+			if Datas[depth1].get('ParamValue') is not None:
+				self.add_query_param('Data.' + str(depth1 + 1) + '.ParamValue', Datas[depth1].get('ParamValue'))
 
 	def get_DrdsInstanceId(self):
 		return self.get_query_params().get('DrdsInstanceId')

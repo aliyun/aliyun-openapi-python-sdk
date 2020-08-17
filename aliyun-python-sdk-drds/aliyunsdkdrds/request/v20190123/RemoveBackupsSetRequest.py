@@ -18,11 +18,18 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkdrds.endpoint import endpoint_data
 
 class RemoveBackupsSetRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Drds', '2019-01-23', 'RemoveBackupsSet','drds')
+		RpcRequest.__init__(self, 'Drds', '2019-01-23', 'RemoveBackupsSet','Drds')
+		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_BackupId(self):
 		return self.get_query_params().get('BackupId')

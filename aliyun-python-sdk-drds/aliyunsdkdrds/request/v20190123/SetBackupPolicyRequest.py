@@ -18,17 +18,18 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkdrds.endpoint import endpoint_data
 
 class SetBackupPolicyRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Drds', '2019-01-23', 'SetBackupPolicy','drds')
+		RpcRequest.__init__(self, 'Drds', '2019-01-23', 'SetBackupPolicy','Drds')
+		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_PreferredBackupPeriod(self):
-		return self.get_query_params().get('PreferredBackupPeriod')
-
-	def set_PreferredBackupPeriod(self,PreferredBackupPeriod):
-		self.add_query_param('PreferredBackupPeriod',PreferredBackupPeriod)
 
 	def get_BackupDbNames(self):
 		return self.get_query_params().get('BackupDbNames')
@@ -36,17 +37,11 @@ class SetBackupPolicyRequest(RpcRequest):
 	def set_BackupDbNames(self,BackupDbNames):
 		self.add_query_param('BackupDbNames',BackupDbNames)
 
-	def get_DataBackupRetentionPeriod(self):
-		return self.get_query_params().get('DataBackupRetentionPeriod')
+	def get_BackupLog(self):
+		return self.get_query_params().get('BackupLog')
 
-	def set_DataBackupRetentionPeriod(self,DataBackupRetentionPeriod):
-		self.add_query_param('DataBackupRetentionPeriod',DataBackupRetentionPeriod)
-
-	def get_PreferredBackupStartTime(self):
-		return self.get_query_params().get('PreferredBackupStartTime')
-
-	def set_PreferredBackupStartTime(self,PreferredBackupStartTime):
-		self.add_query_param('PreferredBackupStartTime',PreferredBackupStartTime)
+	def set_BackupLog(self,BackupLog):
+		self.add_query_param('BackupLog',BackupLog)
 
 	def get_PreferredBackupEndTime(self):
 		return self.get_query_params().get('PreferredBackupEndTime')
@@ -54,17 +49,17 @@ class SetBackupPolicyRequest(RpcRequest):
 	def set_PreferredBackupEndTime(self,PreferredBackupEndTime):
 		self.add_query_param('PreferredBackupEndTime',PreferredBackupEndTime)
 
-	def get_BackupMode(self):
-		return self.get_query_params().get('BackupMode')
+	def get_PreferredBackupPeriod(self):
+		return self.get_query_params().get('PreferredBackupPeriod')
 
-	def set_BackupMode(self,BackupMode):
-		self.add_query_param('BackupMode',BackupMode)
+	def set_PreferredBackupPeriod(self,PreferredBackupPeriod):
+		self.add_query_param('PreferredBackupPeriod',PreferredBackupPeriod)
 
-	def get_BackupLog(self):
-		return self.get_query_params().get('BackupLog')
+	def get_PreferredBackupStartTime(self):
+		return self.get_query_params().get('PreferredBackupStartTime')
 
-	def set_BackupLog(self,BackupLog):
-		self.add_query_param('BackupLog',BackupLog)
+	def set_PreferredBackupStartTime(self,PreferredBackupStartTime):
+		self.add_query_param('PreferredBackupStartTime',PreferredBackupStartTime)
 
 	def get_BackupLevel(self):
 		return self.get_query_params().get('BackupLevel')
@@ -77,6 +72,18 @@ class SetBackupPolicyRequest(RpcRequest):
 
 	def set_DrdsInstanceId(self,DrdsInstanceId):
 		self.add_query_param('DrdsInstanceId',DrdsInstanceId)
+
+	def get_DataBackupRetentionPeriod(self):
+		return self.get_query_params().get('DataBackupRetentionPeriod')
+
+	def set_DataBackupRetentionPeriod(self,DataBackupRetentionPeriod):
+		self.add_query_param('DataBackupRetentionPeriod',DataBackupRetentionPeriod)
+
+	def get_BackupMode(self):
+		return self.get_query_params().get('BackupMode')
+
+	def set_BackupMode(self,BackupMode):
+		self.add_query_param('BackupMode',BackupMode)
 
 	def get_LogBackupRetentionPeriod(self):
 		return self.get_query_params().get('LogBackupRetentionPeriod')

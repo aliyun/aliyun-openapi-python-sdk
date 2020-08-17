@@ -18,11 +18,30 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkdrds.endpoint import endpoint_data
 
 class SubmitCleanTaskRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Drds', '2019-01-23', 'SubmitCleanTask','drds')
+		RpcRequest.__init__(self, 'Drds', '2019-01-23', 'SubmitCleanTask','Drds')
+		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
+
+	def get_DrdsInstanceId(self):
+		return self.get_query_params().get('DrdsInstanceId')
+
+	def set_DrdsInstanceId(self,DrdsInstanceId):
+		self.add_query_param('DrdsInstanceId',DrdsInstanceId)
+
+	def get_ExpandType(self):
+		return self.get_query_params().get('ExpandType')
+
+	def set_ExpandType(self,ExpandType):
+		self.add_query_param('ExpandType',ExpandType)
 
 	def get_JobId(self):
 		return self.get_query_params().get('JobId')
@@ -41,15 +60,3 @@ class SubmitCleanTaskRequest(RpcRequest):
 
 	def set_ParentJobId(self,ParentJobId):
 		self.add_query_param('ParentJobId',ParentJobId)
-
-	def get_DrdsInstanceId(self):
-		return self.get_query_params().get('DrdsInstanceId')
-
-	def set_DrdsInstanceId(self,DrdsInstanceId):
-		self.add_query_param('DrdsInstanceId',DrdsInstanceId)
-
-	def get_ExpandType(self):
-		return self.get_query_params().get('ExpandType')
-
-	def set_ExpandType(self,ExpandType):
-		self.add_query_param('ExpandType',ExpandType)

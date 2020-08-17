@@ -18,17 +18,18 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkdrds.endpoint import endpoint_data
 
 class SetupBroadcastTablesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Drds', '2019-01-23', 'SetupBroadcastTables','drds')
+		RpcRequest.__init__(self, 'Drds', '2019-01-23', 'SetupBroadcastTables','Drds')
+		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_DbName(self):
-		return self.get_query_params().get('DbName')
-
-	def set_DbName(self,DbName):
-		self.add_query_param('DbName',DbName)
 
 	def get_Active(self):
 		return self.get_query_params().get('Active')
@@ -36,16 +37,22 @@ class SetupBroadcastTablesRequest(RpcRequest):
 	def set_Active(self,Active):
 		self.add_query_param('Active',Active)
 
-	def get_TableNames(self):
-		return self.get_query_params().get('TableNames')
-
-	def set_TableNames(self,TableNames):
-		for i in range(len(TableNames)):	
-			if TableNames[i] is not None:
-				self.add_query_param('TableName.' + str(i + 1) , TableNames[i]);
-
 	def get_DrdsInstanceId(self):
 		return self.get_query_params().get('DrdsInstanceId')
 
 	def set_DrdsInstanceId(self,DrdsInstanceId):
 		self.add_query_param('DrdsInstanceId',DrdsInstanceId)
+
+	def get_DbName(self):
+		return self.get_query_params().get('DbName')
+
+	def set_DbName(self,DbName):
+		self.add_query_param('DbName',DbName)
+
+	def get_TableNames(self):
+		return self.get_query_params().get('TableNames')
+
+	def set_TableNames(self, TableNames):
+		for depth1 in range(len(TableNames)):
+			if TableNames[depth1] is not None:
+				self.add_query_param('TableName.' + str(depth1 + 1) , TableNames[depth1])

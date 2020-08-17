@@ -18,11 +18,18 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkdrds.endpoint import endpoint_data
 
 class CreateDrdsDBRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Drds', '2019-01-23', 'CreateDrdsDB','drds')
+		RpcRequest.__init__(self, 'Drds', '2019-01-23', 'CreateDrdsDB','Drds')
+		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_Encode(self):
 		return self.get_query_params().get('Encode')
@@ -30,17 +37,19 @@ class CreateDrdsDBRequest(RpcRequest):
 	def set_Encode(self,Encode):
 		self.add_query_param('Encode',Encode)
 
-	def get_InstDbNames(self):
-		return self.get_query_params().get('InstDbNames')
+	def get_RdsInstances(self):
+		return self.get_query_params().get('RdsInstances')
 
-	def set_InstDbNames(self,InstDbNames):
-		for i in range(len(InstDbNames)):	
-			for j in range(len(InstDbNames[i].get('ShardDbNames'))):
-				if InstDbNames[i].get('ShardDbNames')[j] is not None:
-					self.add_query_param('InstDbName.' + str(i + 1) + '.ShardDbName.'+str(j + 1), InstDbNames[i].get('ShardDbNames')[j])
-			if InstDbNames[i].get('DbInstanceId') is not None:
-				self.add_query_param('InstDbName.' + str(i + 1) + '.DbInstanceId' , InstDbNames[i].get('DbInstanceId'))
+	def set_RdsInstances(self, RdsInstances):
+		for depth1 in range(len(RdsInstances)):
+			if RdsInstances[depth1] is not None:
+				self.add_query_param('RdsInstance.' + str(depth1 + 1) , RdsInstances[depth1])
 
+	def get_Type(self):
+		return self.get_query_params().get('Type')
+
+	def set_Type(self,Type):
+		self.add_query_param('Type',Type)
 
 	def get_Password(self):
 		return self.get_query_params().get('Password')
@@ -51,47 +60,20 @@ class CreateDrdsDBRequest(RpcRequest):
 	def get_RdsSuperAccounts(self):
 		return self.get_query_params().get('RdsSuperAccounts')
 
-	def set_RdsSuperAccounts(self,RdsSuperAccounts):
-		for i in range(len(RdsSuperAccounts)):	
-			if RdsSuperAccounts[i].get('Password') is not None:
-				self.add_query_param('RdsSuperAccount.' + str(i + 1) + '.Password' , RdsSuperAccounts[i].get('Password'))
-			if RdsSuperAccounts[i].get('AccountName') is not None:
-				self.add_query_param('RdsSuperAccount.' + str(i + 1) + '.AccountName' , RdsSuperAccounts[i].get('AccountName'))
-			if RdsSuperAccounts[i].get('DbInstanceId') is not None:
-				self.add_query_param('RdsSuperAccount.' + str(i + 1) + '.DbInstanceId' , RdsSuperAccounts[i].get('DbInstanceId'))
-
-
-	def get_DbName(self):
-		return self.get_query_params().get('DbName')
-
-	def set_DbName(self,DbName):
-		self.add_query_param('DbName',DbName)
+	def set_RdsSuperAccounts(self, RdsSuperAccounts):
+		for depth1 in range(len(RdsSuperAccounts)):
+			if RdsSuperAccounts[depth1].get('Password') is not None:
+				self.add_query_param('RdsSuperAccount.' + str(depth1 + 1) + '.Password', RdsSuperAccounts[depth1].get('Password'))
+			if RdsSuperAccounts[depth1].get('AccountName') is not None:
+				self.add_query_param('RdsSuperAccount.' + str(depth1 + 1) + '.AccountName', RdsSuperAccounts[depth1].get('AccountName'))
+			if RdsSuperAccounts[depth1].get('DbInstanceId') is not None:
+				self.add_query_param('RdsSuperAccount.' + str(depth1 + 1) + '.DbInstanceId', RdsSuperAccounts[depth1].get('DbInstanceId'))
 
 	def get_AccountName(self):
 		return self.get_query_params().get('AccountName')
 
 	def set_AccountName(self,AccountName):
 		self.add_query_param('AccountName',AccountName)
-
-	def get_RdsInstances(self):
-		return self.get_query_params().get('RdsInstances')
-
-	def set_RdsInstances(self,RdsInstances):
-		for i in range(len(RdsInstances)):	
-			if RdsInstances[i] is not None:
-				self.add_query_param('RdsInstance.' + str(i + 1) , RdsInstances[i]);
-
-	def get_Type(self):
-		return self.get_query_params().get('Type')
-
-	def set_Type(self,Type):
-		self.add_query_param('Type',Type)
-
-	def get_DbInstType(self):
-		return self.get_query_params().get('DbInstType')
-
-	def set_DbInstType(self,DbInstType):
-		self.add_query_param('DbInstType',DbInstType)
 
 	def get_DrdsInstanceId(self):
 		return self.get_query_params().get('DrdsInstanceId')
@@ -104,3 +86,27 @@ class CreateDrdsDBRequest(RpcRequest):
 
 	def set_DbInstanceIsCreating(self,DbInstanceIsCreating):
 		self.add_query_param('DbInstanceIsCreating',DbInstanceIsCreating)
+
+	def get_InstDbNames(self):
+		return self.get_query_params().get('InstDbNames')
+
+	def set_InstDbNames(self, InstDbNames):
+		for depth1 in range(len(InstDbNames)):
+			if InstDbNames[depth1].get('ShardDbName') is not None:
+				for depth2 in range(len(InstDbNames[depth1].get('ShardDbName'))):
+					if InstDbNames[depth1].get('ShardDbName')[depth2] is not None:
+						self.add_query_param('InstDbName.' + str(depth1 + 1) + '.ShardDbName.' + str(depth2 + 1) , InstDbNames[depth1].get('ShardDbName')[depth2])
+			if InstDbNames[depth1].get('DbInstanceId') is not None:
+				self.add_query_param('InstDbName.' + str(depth1 + 1) + '.DbInstanceId', InstDbNames[depth1].get('DbInstanceId'))
+
+	def get_DbName(self):
+		return self.get_query_params().get('DbName')
+
+	def set_DbName(self,DbName):
+		self.add_query_param('DbName',DbName)
+
+	def get_DbInstType(self):
+		return self.get_query_params().get('DbInstType')
+
+	def set_DbInstType(self,DbInstType):
+		self.add_query_param('DbInstType',DbInstType)

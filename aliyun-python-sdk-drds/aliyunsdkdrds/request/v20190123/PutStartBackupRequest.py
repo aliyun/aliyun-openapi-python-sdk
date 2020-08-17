@@ -18,23 +18,24 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkdrds.endpoint import endpoint_data
 
 class PutStartBackupRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Drds', '2019-01-23', 'PutStartBackup','drds')
+		RpcRequest.__init__(self, 'Drds', '2019-01-23', 'PutStartBackup','Drds')
+		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_BackupDbNames(self):
 		return self.get_query_params().get('BackupDbNames')
 
 	def set_BackupDbNames(self,BackupDbNames):
 		self.add_query_param('BackupDbNames',BackupDbNames)
-
-	def get_BackupMode(self):
-		return self.get_query_params().get('BackupMode')
-
-	def set_BackupMode(self,BackupMode):
-		self.add_query_param('BackupMode',BackupMode)
 
 	def get_BackupLevel(self):
 		return self.get_query_params().get('BackupLevel')
@@ -47,3 +48,9 @@ class PutStartBackupRequest(RpcRequest):
 
 	def set_DrdsInstanceId(self,DrdsInstanceId):
 		self.add_query_param('DrdsInstanceId',DrdsInstanceId)
+
+	def get_BackupMode(self):
+		return self.get_query_params().get('BackupMode')
+
+	def set_BackupMode(self,BackupMode):
+		self.add_query_param('BackupMode',BackupMode)

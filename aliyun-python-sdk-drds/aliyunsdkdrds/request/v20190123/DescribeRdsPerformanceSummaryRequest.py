@@ -18,19 +18,26 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkdrds.endpoint import endpoint_data
 
 class DescribeRdsPerformanceSummaryRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Drds', '2019-01-23', 'DescribeRdsPerformanceSummary','drds')
+		RpcRequest.__init__(self, 'Drds', '2019-01-23', 'DescribeRdsPerformanceSummary','Drds')
+		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_RdsInstanceIds(self):
 		return self.get_query_params().get('RdsInstanceIds')
 
-	def set_RdsInstanceIds(self,RdsInstanceIds):
-		for i in range(len(RdsInstanceIds)):	
-			if RdsInstanceIds[i] is not None:
-				self.add_query_param('RdsInstanceId.' + str(i + 1) , RdsInstanceIds[i]);
+	def set_RdsInstanceIds(self, RdsInstanceIds):
+		for depth1 in range(len(RdsInstanceIds)):
+			if RdsInstanceIds[depth1] is not None:
+				self.add_query_param('RdsInstanceId.' + str(depth1 + 1) , RdsInstanceIds[depth1])
 
 	def get_DrdsInstanceId(self):
 		return self.get_query_params().get('DrdsInstanceId')

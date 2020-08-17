@@ -18,11 +18,24 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkdrds.endpoint import endpoint_data
 
 class DeleteShardTasksRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Drds', '2019-01-23', 'DeleteShardTasks','drds')
+		RpcRequest.__init__(self, 'Drds', '2019-01-23', 'DeleteShardTasks','Drds')
+		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
+
+	def get_DrdsInstanceId(self):
+		return self.get_query_params().get('DrdsInstanceId')
+
+	def set_DrdsInstanceId(self,DrdsInstanceId):
+		self.add_query_param('DrdsInstanceId',DrdsInstanceId)
 
 	def get_DbName(self):
 		return self.get_query_params().get('DbName')
@@ -33,16 +46,9 @@ class DeleteShardTasksRequest(RpcRequest):
 	def get_TableNames(self):
 		return self.get_query_params().get('TableNames')
 
-	def set_TableNames(self,TableNames):
-		for i in range(len(TableNames)):	
-			if TableNames[i].get('SourceTableName') is not None:
-				self.add_query_param('TableName.' + str(i + 1) + '.SourceTableName' , TableNames[i].get('SourceTableName'))
-			if TableNames[i].get('TargetTableName') is not None:
-				self.add_query_param('TableName.' + str(i + 1) + '.TargetTableName' , TableNames[i].get('TargetTableName'))
-
-
-	def get_DrdsInstanceId(self):
-		return self.get_query_params().get('DrdsInstanceId')
-
-	def set_DrdsInstanceId(self,DrdsInstanceId):
-		self.add_query_param('DrdsInstanceId',DrdsInstanceId)
+	def set_TableNames(self, TableNames):
+		for depth1 in range(len(TableNames)):
+			if TableNames[depth1].get('SourceTableName') is not None:
+				self.add_query_param('TableName.' + str(depth1 + 1) + '.SourceTableName', TableNames[depth1].get('SourceTableName'))
+			if TableNames[depth1].get('TargetTableName') is not None:
+				self.add_query_param('TableName.' + str(depth1 + 1) + '.TargetTableName', TableNames[depth1].get('TargetTableName'))

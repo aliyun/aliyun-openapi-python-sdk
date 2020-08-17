@@ -18,23 +18,18 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkdrds.endpoint import endpoint_data
 
 class ModifyPolarDbReadWeightRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Drds', '2019-01-23', 'ModifyPolarDbReadWeight','drds')
+		RpcRequest.__init__(self, 'Drds', '2019-01-23', 'ModifyPolarDbReadWeight','Drds')
+		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_DbName(self):
-		return self.get_query_params().get('DbName')
-
-	def set_DbName(self,DbName):
-		self.add_query_param('DbName',DbName)
-
-	def get_DbInstanceId(self):
-		return self.get_query_params().get('DbInstanceId')
-
-	def set_DbInstanceId(self,DbInstanceId):
-		self.add_query_param('DbInstanceId',DbInstanceId)
 
 	def get_Weights(self):
 		return self.get_query_params().get('Weights')
@@ -53,3 +48,15 @@ class ModifyPolarDbReadWeightRequest(RpcRequest):
 
 	def set_DbNodeIds(self,DbNodeIds):
 		self.add_query_param('DbNodeIds',DbNodeIds)
+
+	def get_DbName(self):
+		return self.get_query_params().get('DbName')
+
+	def set_DbName(self,DbName):
+		self.add_query_param('DbName',DbName)
+
+	def get_DbInstanceId(self):
+		return self.get_query_params().get('DbInstanceId')
+
+	def set_DbInstanceId(self,DbInstanceId):
+		self.add_query_param('DbInstanceId',DbInstanceId)

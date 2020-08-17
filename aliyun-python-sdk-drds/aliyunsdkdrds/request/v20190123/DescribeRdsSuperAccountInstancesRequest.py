@@ -18,28 +18,35 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkdrds.endpoint import endpoint_data
 
 class DescribeRdsSuperAccountInstancesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Drds', '2019-01-23', 'DescribeRdsSuperAccountInstances','drds')
+		RpcRequest.__init__(self, 'Drds', '2019-01-23', 'DescribeRdsSuperAccountInstances','Drds')
+		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_RdsInstances(self):
 		return self.get_query_params().get('RdsInstances')
 
-	def set_RdsInstances(self,RdsInstances):
-		for i in range(len(RdsInstances)):	
-			if RdsInstances[i] is not None:
-				self.add_query_param('RdsInstance.' + str(i + 1) , RdsInstances[i]);
-
-	def get_DbInstType(self):
-		return self.get_query_params().get('DbInstType')
-
-	def set_DbInstType(self,DbInstType):
-		self.add_query_param('DbInstType',DbInstType)
+	def set_RdsInstances(self, RdsInstances):
+		for depth1 in range(len(RdsInstances)):
+			if RdsInstances[depth1] is not None:
+				self.add_query_param('RdsInstance.' + str(depth1 + 1) , RdsInstances[depth1])
 
 	def get_DrdsInstanceId(self):
 		return self.get_query_params().get('DrdsInstanceId')
 
 	def set_DrdsInstanceId(self,DrdsInstanceId):
 		self.add_query_param('DrdsInstanceId',DrdsInstanceId)
+
+	def get_DbInstType(self):
+		return self.get_query_params().get('DbInstType')
+
+	def set_DbInstType(self,DbInstType):
+		self.add_query_param('DbInstType',DbInstType)

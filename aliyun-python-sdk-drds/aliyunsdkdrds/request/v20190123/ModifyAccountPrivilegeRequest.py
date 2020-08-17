@@ -18,17 +18,18 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkdrds.endpoint import endpoint_data
 
 class ModifyAccountPrivilegeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Drds', '2019-01-23', 'ModifyAccountPrivilege','drds')
+		RpcRequest.__init__(self, 'Drds', '2019-01-23', 'ModifyAccountPrivilege','Drds')
+		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_AccountName(self):
-		return self.get_query_params().get('AccountName')
-
-	def set_AccountName(self,AccountName):
-		self.add_query_param('AccountName',AccountName)
 
 	def get_DrdsInstanceId(self):
 		return self.get_query_params().get('DrdsInstanceId')
@@ -36,12 +37,18 @@ class ModifyAccountPrivilegeRequest(RpcRequest):
 	def set_DrdsInstanceId(self,DrdsInstanceId):
 		self.add_query_param('DrdsInstanceId',DrdsInstanceId)
 
+	def get_AccountName(self):
+		return self.get_query_params().get('AccountName')
+
+	def set_AccountName(self,AccountName):
+		self.add_query_param('AccountName',AccountName)
+
 	def get_DbPrivileges(self):
 		return self.get_query_params().get('DbPrivileges')
 
-	def set_DbPrivileges(self,DbPrivileges):
-		for i in range(len(DbPrivileges)):	
-			if DbPrivileges[i].get('DbName') is not None:
-				self.add_query_param('DbPrivilege.' + str(i + 1) + '.DbName' , DbPrivileges[i].get('DbName'))
-			if DbPrivileges[i].get('Privilege') is not None:
-				self.add_query_param('DbPrivilege.' + str(i + 1) + '.Privilege' , DbPrivileges[i].get('Privilege'))
+	def set_DbPrivileges(self, DbPrivileges):
+		for depth1 in range(len(DbPrivileges)):
+			if DbPrivileges[depth1].get('DbName') is not None:
+				self.add_query_param('DbPrivilege.' + str(depth1 + 1) + '.DbName', DbPrivileges[depth1].get('DbName'))
+			if DbPrivileges[depth1].get('Privilege') is not None:
+				self.add_query_param('DbPrivilege.' + str(depth1 + 1) + '.Privilege', DbPrivileges[depth1].get('Privilege'))

@@ -18,29 +18,24 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkdrds.endpoint import endpoint_data
 
 class ValidateShardTaskRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Drds', '2019-01-23', 'ValidateShardTask','drds')
+		RpcRequest.__init__(self, 'Drds', '2019-01-23', 'ValidateShardTask','Drds')
+		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_TaskType(self):
 		return self.get_query_params().get('TaskType')
 
 	def set_TaskType(self,TaskType):
 		self.add_query_param('TaskType',TaskType)
-
-	def get_DbName(self):
-		return self.get_query_params().get('DbName')
-
-	def set_DbName(self,DbName):
-		self.add_query_param('DbName',DbName)
-
-	def get_SourceTableName(self):
-		return self.get_query_params().get('SourceTableName')
-
-	def set_SourceTableName(self,SourceTableName):
-		self.add_query_param('SourceTableName',SourceTableName)
 
 	def get_TargetTableName(self):
 		return self.get_query_params().get('TargetTableName')
@@ -53,3 +48,15 @@ class ValidateShardTaskRequest(RpcRequest):
 
 	def set_DrdsInstanceId(self,DrdsInstanceId):
 		self.add_query_param('DrdsInstanceId',DrdsInstanceId)
+
+	def get_DbName(self):
+		return self.get_query_params().get('DbName')
+
+	def set_DbName(self,DbName):
+		self.add_query_param('DbName',DbName)
+
+	def get_SourceTableName(self):
+		return self.get_query_params().get('SourceTableName')
+
+	def set_SourceTableName(self,SourceTableName):
+		self.add_query_param('SourceTableName',SourceTableName)

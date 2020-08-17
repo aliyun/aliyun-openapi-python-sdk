@@ -18,23 +18,24 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkdrds.endpoint import endpoint_data
 
 class ReleaseHiStoreInstanceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Drds', '2019-01-23', 'ReleaseHiStoreInstance','drds')
+		RpcRequest.__init__(self, 'Drds', '2019-01-23', 'ReleaseHiStoreInstance','Drds')
+		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_HistoreInstanceId(self):
 		return self.get_query_params().get('HistoreInstanceId')
 
 	def set_HistoreInstanceId(self,HistoreInstanceId):
 		self.add_query_param('HistoreInstanceId',HistoreInstanceId)
-
-	def get_DrdsPassword(self):
-		return self.get_query_params().get('DrdsPassword')
-
-	def set_DrdsPassword(self,DrdsPassword):
-		self.add_query_param('DrdsPassword',DrdsPassword)
 
 	def get_DrdsInstanceId(self):
 		return self.get_query_params().get('DrdsInstanceId')
