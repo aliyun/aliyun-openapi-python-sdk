@@ -43,6 +43,12 @@ class CreateProjectTaskRequest(RpcRequest):
 	def set_ExecutorId(self,ExecutorId):
 		self.add_body_params('ExecutorId', ExecutorId)
 
+	def get_TaskFlowStatusId(self):
+		return self.get_body_params().get('TaskFlowStatusId')
+
+	def set_TaskFlowStatusId(self,TaskFlowStatusId):
+		self.add_body_params('TaskFlowStatusId', TaskFlowStatusId)
+
 	def get_StartDate(self):
 		return self.get_body_params().get('StartDate')
 
@@ -84,12 +90,6 @@ class CreateProjectTaskRequest(RpcRequest):
 
 	def set_DueDate(self,DueDate):
 		self.add_body_params('DueDate', DueDate)
-
-	def get_TasFlowStatusId(self):
-		return self.get_body_params().get('TasFlowStatusId')
-
-	def set_TasFlowStatusId(self,TasFlowStatusId):
-		self.add_body_params('TasFlowStatusId', TasFlowStatusId)
 
 	def get_ScenarioFieldConfigId(self):
 		return self.get_body_params().get('ScenarioFieldConfigId')
