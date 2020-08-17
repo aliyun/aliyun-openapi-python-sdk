@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkivpd.endpoint import endpoint_data
 
-class GetJobStatusRequest(RpcRequest):
+class HighlightGameVideoRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ivpd', '2019-06-25', 'GetJobStatus','ivpd')
+		RpcRequest.__init__(self, 'ivpd', '2019-06-25', 'HighlightGameVideo','ivpd')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,8 +31,14 @@ class GetJobStatusRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_JobId(self):
-		return self.get_body_params().get('JobId')
+	def get_Async(self):
+		return self.get_body_params().get('Async')
 
-	def set_JobId(self,JobId):
-		self.add_body_params('JobId', JobId)
+	def set_Async(self,Async):
+		self.add_body_params('Async', Async)
+
+	def get_VideoUrl(self):
+		return self.get_body_params().get('VideoUrl')
+
+	def set_VideoUrl(self,VideoUrl):
+		self.add_body_params('VideoUrl', VideoUrl)

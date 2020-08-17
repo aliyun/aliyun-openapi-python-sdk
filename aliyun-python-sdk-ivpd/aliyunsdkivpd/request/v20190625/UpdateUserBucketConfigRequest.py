@@ -23,7 +23,7 @@ from aliyunsdkivpd.endpoint import endpoint_data
 class UpdateUserBucketConfigRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ivpd', '2019-06-25', 'UpdateUserBucketConfig')
+		RpcRequest.__init__(self, 'ivpd', '2019-06-25', 'UpdateUserBucketConfig','ivpd')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
