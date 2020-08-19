@@ -23,7 +23,7 @@ from aliyunsdklive.endpoint import endpoint_data
 class AddLiveAppSnapshotConfigRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'live', '2016-11-01', 'AddLiveAppSnapshotConfig','live')
+		RpcRequest.__init__(self, 'live', '2016-11-01', 'AddLiveAppSnapshotConfig')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -84,3 +84,9 @@ class AddLiveAppSnapshotConfigRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_Callback(self):
+		return self.get_query_params().get('Callback')
+
+	def set_Callback(self,Callback):
+		self.add_query_param('Callback',Callback)

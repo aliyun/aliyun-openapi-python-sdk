@@ -23,7 +23,7 @@ from aliyunsdklive.endpoint import endpoint_data
 class ListLiveRealtimeLogDeliveryRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'live', '2016-11-01', 'ListLiveRealtimeLogDelivery','live')
+		RpcRequest.__init__(self, 'live', '2016-11-01', 'ListLiveRealtimeLogDelivery')
 		self.set_method('GET')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())

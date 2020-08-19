@@ -23,7 +23,7 @@ from aliyunsdklive.endpoint import endpoint_data
 class SetCasterSceneConfigRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'live', '2016-11-01', 'SetCasterSceneConfig','live')
+		RpcRequest.__init__(self, 'live', '2016-11-01', 'SetCasterSceneConfig')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())

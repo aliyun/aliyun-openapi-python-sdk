@@ -23,7 +23,7 @@ from aliyunsdklive.endpoint import endpoint_data
 class DeleteCasterEpisodeGroupRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'live', '2016-11-01', 'DeleteCasterEpisodeGroup','live')
+		RpcRequest.__init__(self, 'live', '2016-11-01', 'DeleteCasterEpisodeGroup')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())

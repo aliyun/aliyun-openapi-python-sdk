@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdklive.endpoint import endpoint_data
 
-class AddCustomLiveStreamTranscodeRequest(RpcRequest):
+class AddRtsLiveStreamTranscodeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'live', '2016-11-01', 'AddCustomLiveStreamTranscode')
+		RpcRequest.__init__(self, 'live', '2016-11-01', 'AddRtsLiveStreamTranscode')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -37,11 +37,23 @@ class AddCustomLiveStreamTranscodeRequest(RpcRequest):
 	def set_Template(self,Template):
 		self.add_query_param('Template',Template)
 
+	def get_DeleteBframes(self):
+		return self.get_query_params().get('DeleteBframes')
+
+	def set_DeleteBframes(self,DeleteBframes):
+		self.add_query_param('DeleteBframes',DeleteBframes)
+
 	def get_Gop(self):
 		return self.get_query_params().get('Gop')
 
 	def set_Gop(self,Gop):
 		self.add_query_param('Gop',Gop)
+
+	def get_Opus(self):
+		return self.get_query_params().get('Opus')
+
+	def set_Opus(self,Opus):
+		self.add_query_param('Opus',Opus)
 
 	def get_AudioCodec(self):
 		return self.get_query_params().get('AudioCodec')

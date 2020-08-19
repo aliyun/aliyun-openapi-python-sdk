@@ -23,7 +23,7 @@ from aliyunsdklive.endpoint import endpoint_data
 class DescribeBoardsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'live', '2016-11-01', 'DescribeBoards','live')
+		RpcRequest.__init__(self, 'live', '2016-11-01', 'DescribeBoards')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
