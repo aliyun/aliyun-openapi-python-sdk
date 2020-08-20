@@ -68,10 +68,10 @@ class ConfigureSubscriptionInstanceRequest(RpcRequest):
 		self.add_query_param('AccountId',AccountId)
 
 	def get_SubscriptionObject(self):
-		return self.get_query_params().get('SubscriptionObject')
+		return self.get_body_params().get('SubscriptionObject')
 
 	def set_SubscriptionObject(self,SubscriptionObject):
-		self.add_query_param('SubscriptionObject',SubscriptionObject)
+		self.add_body_params('SubscriptionObject', SubscriptionObject)
 
 	def get_SubscriptionInstanceVSwitchId(self):
 		return self.get_query_params().get('SubscriptionInstance.VSwitchId')

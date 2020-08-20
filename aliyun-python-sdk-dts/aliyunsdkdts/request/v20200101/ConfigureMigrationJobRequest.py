@@ -74,10 +74,10 @@ class ConfigureMigrationJobRequest(RpcRequest):
 		self.add_query_param('DestinationEndpoint.Password',DestinationEndpointPassword)
 
 	def get_MigrationObject(self):
-		return self.get_query_params().get('MigrationObject')
+		return self.get_body_params().get('MigrationObject')
 
 	def set_MigrationObject(self,MigrationObject):
-		self.add_query_param('MigrationObject',MigrationObject)
+		self.add_body_params('MigrationObject', MigrationObject)
 
 	def get_MigrationModeDataIntialization(self):
 		return self.get_query_params().get('MigrationMode.DataIntialization')

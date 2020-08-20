@@ -56,10 +56,10 @@ class ConfigureSynchronizationJobRequest(RpcRequest):
 		self.add_query_param('SourceEndpoint.IP',SourceEndpointIP)
 
 	def get_SynchronizationObjects(self):
-		return self.get_query_params().get('SynchronizationObjects')
+		return self.get_body_params().get('SynchronizationObjects')
 
 	def set_SynchronizationObjects(self,SynchronizationObjects):
-		self.add_query_param('SynchronizationObjects',SynchronizationObjects)
+		self.add_body_params('SynchronizationObjects', SynchronizationObjects)
 
 	def get_DestinationEndpointPassword(self):
 		return self.get_query_params().get('DestinationEndpoint.Password')
