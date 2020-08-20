@@ -23,13 +23,19 @@ from aliyunsdkreid.endpoint import endpoint_data
 class DescribeCursorRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'reid', '2019-09-28', 'DescribeCursor','1.1.8.2')
+		RpcRequest.__init__(self, 'reid', '2019-09-28', 'DescribeCursor','1.1.8.3')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+
+	def get_PartitionIndex(self):
+		return self.get_body_params().get('PartitionIndex')
+
+	def set_PartitionIndex(self,PartitionIndex):
+		self.add_body_params('PartitionIndex', PartitionIndex)
 
 	def get_StoreId(self):
 		return self.get_body_params().get('StoreId')

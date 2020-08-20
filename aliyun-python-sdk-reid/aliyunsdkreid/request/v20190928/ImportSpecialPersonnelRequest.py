@@ -23,7 +23,7 @@ from aliyunsdkreid.endpoint import endpoint_data
 class ImportSpecialPersonnelRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'reid', '2019-09-28', 'ImportSpecialPersonnel','1.1.8.2')
+		RpcRequest.__init__(self, 'reid', '2019-09-28', 'ImportSpecialPersonnel','1.1.8.3')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
