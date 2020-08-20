@@ -193,11 +193,23 @@ class CreateInstanceRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
+	def get_GlobalInstance(self):
+		return self.get_query_params().get('GlobalInstance')
+
+	def set_GlobalInstance(self,GlobalInstance):
+		self.add_query_param('GlobalInstance',GlobalInstance)
+
 	def get_Token(self):
 		return self.get_query_params().get('Token')
 
 	def set_Token(self,Token):
 		self.add_query_param('Token',Token)
+
+	def get_GlobalInstanceId(self):
+		return self.get_query_params().get('GlobalInstanceId')
+
+	def set_GlobalInstanceId(self,GlobalInstanceId):
+		self.add_query_param('GlobalInstanceId',GlobalInstanceId)
 
 	def get_VpcId(self):
 		return self.get_query_params().get('VpcId')

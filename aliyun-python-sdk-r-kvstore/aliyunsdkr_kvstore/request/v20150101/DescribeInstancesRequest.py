@@ -125,6 +125,12 @@ class DescribeInstancesRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
+	def get_GlobalInstance(self):
+		return self.get_query_params().get('GlobalInstance')
+
+	def set_GlobalInstance(self,GlobalInstance):
+		self.add_query_param('GlobalInstance',GlobalInstance)
+
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 

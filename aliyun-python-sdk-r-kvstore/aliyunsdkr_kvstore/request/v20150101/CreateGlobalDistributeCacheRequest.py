@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkr_kvstore.endpoint import endpoint_data
 
-class DeleteInstanceRequest(RpcRequest):
+class CreateGlobalDistributeCacheRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'R-kvstore', '2015-01-01', 'DeleteInstance','redisa')
+		RpcRequest.__init__(self, 'R-kvstore', '2015-01-01', 'CreateGlobalDistributeCache','redisa')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -61,14 +61,8 @@ class DeleteInstanceRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_GlobalInstanceId(self):
-		return self.get_query_params().get('GlobalInstanceId')
+	def get_SeedSubInstanceId(self):
+		return self.get_query_params().get('SeedSubInstanceId')
 
-	def set_GlobalInstanceId(self,GlobalInstanceId):
-		self.add_query_param('GlobalInstanceId',GlobalInstanceId)
-
-	def get_InstanceId(self):
-		return self.get_query_params().get('InstanceId')
-
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
+	def set_SeedSubInstanceId(self,SeedSubInstanceId):
+		self.add_query_param('SeedSubInstanceId',SeedSubInstanceId)
