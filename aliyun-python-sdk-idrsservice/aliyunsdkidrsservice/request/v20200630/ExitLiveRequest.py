@@ -18,12 +18,18 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkidrsservice.endpoint import endpoint_data
 
 class ExitLiveRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'idrsservice', '2020-06-30', 'ExitLive','idrsservice')
 		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_Channel(self):
 		return self.get_query_params().get('Channel')
