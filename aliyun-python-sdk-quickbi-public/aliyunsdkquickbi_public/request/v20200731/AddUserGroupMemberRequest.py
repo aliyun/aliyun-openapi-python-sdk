@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkquickbi_public.endpoint import endpoint_data
 
-class QueryDataServiceRequest(RpcRequest):
+class AddUserGroupMemberRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'quickbi-public', '2020-01-07', 'QueryDataService','quickbi')
+		RpcRequest.__init__(self, 'quickbi-public', '2020-07-31', 'AddUserGroupMember','quickbi')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,20 +31,14 @@ class QueryDataServiceRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_ReturnFields(self):
-		return self.get_query_params().get('ReturnFields')
+	def get_UserIdList(self):
+		return self.get_query_params().get('UserIdList')
 
-	def set_ReturnFields(self,ReturnFields):
-		self.add_query_param('ReturnFields',ReturnFields)
+	def set_UserIdList(self,UserIdList):
+		self.add_query_param('UserIdList',UserIdList)
 
-	def get_Conditions(self):
-		return self.get_query_params().get('Conditions')
+	def get_UserGroupId(self):
+		return self.get_query_params().get('UserGroupId')
 
-	def set_Conditions(self,Conditions):
-		self.add_query_param('Conditions',Conditions)
-
-	def get_ServiceId(self):
-		return self.get_query_params().get('ServiceId')
-
-	def set_ServiceId(self,ServiceId):
-		self.add_query_param('ServiceId',ServiceId)
+	def set_UserGroupId(self,UserGroupId):
+		self.add_query_param('UserGroupId',UserGroupId)
