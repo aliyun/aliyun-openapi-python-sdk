@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkmultimediaai.endpoint import endpoint_data
 
-class ListFaceImagesRequest(RpcRequest):
+class GetTemplateRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'multimediaai', '2019-08-10', 'ListFaceImages')
+		RpcRequest.__init__(self, 'multimediaai', '2019-08-10', 'GetTemplate')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,26 +31,8 @@ class ListFaceImagesRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_FaceGroupId(self):
-		return self.get_query_params().get('FaceGroupId')
+	def get_TemplateId(self):
+		return self.get_query_params().get('TemplateId')
 
-	def set_FaceGroupId(self,FaceGroupId):
-		self.add_query_param('FaceGroupId',FaceGroupId)
-
-	def get_FacePersonId(self):
-		return self.get_query_params().get('FacePersonId')
-
-	def set_FacePersonId(self,FacePersonId):
-		self.add_query_param('FacePersonId',FacePersonId)
-
-	def get_PageNumber(self):
-		return self.get_query_params().get('PageNumber')
-
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
-
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
+	def set_TemplateId(self,TemplateId):
+		self.add_query_param('TemplateId',TemplateId)

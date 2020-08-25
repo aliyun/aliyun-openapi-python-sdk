@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkmultimediaai.endpoint import endpoint_data
 
-class ListFaceImagesRequest(RpcRequest):
+class UpdateTemplateRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'multimediaai', '2019-08-10', 'ListFaceImages')
+		RpcRequest.__init__(self, 'multimediaai', '2019-08-10', 'UpdateTemplate')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,26 +31,32 @@ class ListFaceImagesRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_FaceGroupId(self):
-		return self.get_query_params().get('FaceGroupId')
+	def get_TemplateId(self):
+		return self.get_query_params().get('TemplateId')
 
-	def set_FaceGroupId(self,FaceGroupId):
-		self.add_query_param('FaceGroupId',FaceGroupId)
+	def set_TemplateId(self,TemplateId):
+		self.add_query_param('TemplateId',TemplateId)
 
-	def get_FacePersonId(self):
-		return self.get_query_params().get('FacePersonId')
+	def get_Type(self):
+		return self.get_query_params().get('Type')
 
-	def set_FacePersonId(self,FacePersonId):
-		self.add_query_param('FacePersonId',FacePersonId)
+	def set_Type(self,Type):
+		self.add_query_param('Type',Type)
 
-	def get_PageNumber(self):
-		return self.get_query_params().get('PageNumber')
+	def get_Content(self):
+		return self.get_query_params().get('Content')
 
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
+	def set_Content(self,Content):
+		self.add_query_param('Content',Content)
 
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
+	def get_TemplateName(self):
+		return self.get_query_params().get('TemplateName')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
+	def set_TemplateName(self,TemplateName):
+		self.add_query_param('TemplateName',TemplateName)
+
+	def get_IsDefault(self):
+		return self.get_query_params().get('IsDefault')
+
+	def set_IsDefault(self,IsDefault):
+		self.add_query_param('IsDefault',IsDefault)

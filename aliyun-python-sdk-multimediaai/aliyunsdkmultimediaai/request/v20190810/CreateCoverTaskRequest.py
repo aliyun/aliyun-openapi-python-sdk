@@ -24,6 +24,7 @@ class CreateCoverTaskRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'multimediaai', '2019-08-10', 'CreateCoverTask')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -41,6 +42,12 @@ class CreateCoverTaskRequest(RpcRequest):
 
 	def set_VideoUrl(self,VideoUrl):
 		self.add_query_param('VideoUrl',VideoUrl)
+
+	def get_Scales(self):
+		return self.get_body_params().get('Scales')
+
+	def set_Scales(self,Scales):
+		self.add_body_params('Scales', Scales)
 
 	def get_VideoName(self):
 		return self.get_query_params().get('VideoName')
