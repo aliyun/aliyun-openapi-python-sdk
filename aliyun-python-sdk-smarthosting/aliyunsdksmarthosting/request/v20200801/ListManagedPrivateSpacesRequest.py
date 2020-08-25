@@ -23,7 +23,7 @@ from aliyunsdksmarthosting.endpoint import endpoint_data
 class ListManagedPrivateSpacesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'SmartHosting', '2020-08-01', 'ListManagedPrivateSpaces','SmartHosting')
+		RpcRequest.__init__(self, 'SmartHosting', '2020-08-01', 'ListManagedPrivateSpaces','smarthosting')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
