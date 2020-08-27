@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkvcs.endpoint import endpoint_data
 
-class CreateVideoSummaryTaskRequest(RpcRequest):
+class BindUserRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Vcs', '2020-05-15', 'CreateVideoSummaryTask')
+		RpcRequest.__init__(self, 'Vcs', '2020-05-15', 'BindUser')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,38 +31,32 @@ class CreateVideoSummaryTaskRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_IsvSubId(self):
+		return self.get_body_params().get('IsvSubId')
+
+	def set_IsvSubId(self,IsvSubId):
+		self.add_body_params('IsvSubId', IsvSubId)
+
 	def get_CorpId(self):
 		return self.get_body_params().get('CorpId')
 
 	def set_CorpId(self,CorpId):
 		self.add_body_params('CorpId', CorpId)
 
-	def get_LiveVideoSummary(self):
-		return self.get_body_params().get('LiveVideoSummary')
+	def get_UserId(self):
+		return self.get_body_params().get('UserId')
 
-	def set_LiveVideoSummary(self,LiveVideoSummary):
-		self.add_body_params('LiveVideoSummary', LiveVideoSummary)
+	def set_UserId(self,UserId):
+		self.add_body_params('UserId', UserId)
 
-	def get_StartTimeStamp(self):
-		return self.get_body_params().get('StartTimeStamp')
+	def get_MatchingRate(self):
+		return self.get_body_params().get('MatchingRate')
 
-	def set_StartTimeStamp(self,StartTimeStamp):
-		self.add_body_params('StartTimeStamp', StartTimeStamp)
+	def set_MatchingRate(self,MatchingRate):
+		self.add_body_params('MatchingRate', MatchingRate)
 
-	def get_DeviceId(self):
-		return self.get_body_params().get('DeviceId')
+	def get_PersonId(self):
+		return self.get_body_params().get('PersonId')
 
-	def set_DeviceId(self,DeviceId):
-		self.add_body_params('DeviceId', DeviceId)
-
-	def get_EndTimeStamp(self):
-		return self.get_body_params().get('EndTimeStamp')
-
-	def set_EndTimeStamp(self,EndTimeStamp):
-		self.add_body_params('EndTimeStamp', EndTimeStamp)
-
-	def get_OptionList(self):
-		return self.get_body_params().get('OptionList')
-
-	def set_OptionList(self,OptionList):
-		self.add_body_params('OptionList', OptionList)
+	def set_PersonId(self,PersonId):
+		self.add_body_params('PersonId', PersonId)

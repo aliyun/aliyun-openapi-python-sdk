@@ -23,13 +23,19 @@ from aliyunsdkvcs.endpoint import endpoint_data
 class ListCorpGroupMetricsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Vcs', '2020-05-15', 'ListCorpGroupMetrics','vcs')
+		RpcRequest.__init__(self, 'Vcs', '2020-05-15', 'ListCorpGroupMetrics')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+
+	def get_CorpId(self):
+		return self.get_body_params().get('CorpId')
+
+	def set_CorpId(self,CorpId):
+		self.add_body_params('CorpId', CorpId)
 
 	def get_GroupId(self):
 		return self.get_body_params().get('GroupId')
@@ -49,11 +55,23 @@ class ListCorpGroupMetricsRequest(RpcRequest):
 	def set_StartTime(self,StartTime):
 		self.add_body_params('StartTime', StartTime)
 
+	def get_DeviceId(self):
+		return self.get_body_params().get('DeviceId')
+
+	def set_DeviceId(self,DeviceId):
+		self.add_body_params('DeviceId', DeviceId)
+
 	def get_PageNumber(self):
 		return self.get_body_params().get('PageNumber')
 
 	def set_PageNumber(self,PageNumber):
 		self.add_body_params('PageNumber', PageNumber)
+
+	def get_DeviceGroup(self):
+		return self.get_body_params().get('DeviceGroup')
+
+	def set_DeviceGroup(self,DeviceGroup):
+		self.add_body_params('DeviceGroup', DeviceGroup)
 
 	def get_TagCode(self):
 		return self.get_body_params().get('TagCode')
@@ -66,3 +84,9 @@ class ListCorpGroupMetricsRequest(RpcRequest):
 
 	def set_PageSize(self,PageSize):
 		self.add_body_params('PageSize', PageSize)
+
+	def get_UserGroup(self):
+		return self.get_body_params().get('UserGroup')
+
+	def set_UserGroup(self,UserGroup):
+		self.add_body_params('UserGroup', UserGroup)

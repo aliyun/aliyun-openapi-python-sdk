@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkvcs.endpoint import endpoint_data
 
-class StopMonitorRequest(RpcRequest):
+class UploadImageRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Vcs', '2020-05-15', 'StopMonitor')
+		RpcRequest.__init__(self, 'Vcs', '2020-05-15', 'UploadImage')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,14 +31,8 @@ class StopMonitorRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_AlgorithmVendor(self):
-		return self.get_body_params().get('AlgorithmVendor')
+	def get_ImageUrl(self):
+		return self.get_body_params().get('ImageUrl')
 
-	def set_AlgorithmVendor(self,AlgorithmVendor):
-		self.add_body_params('AlgorithmVendor', AlgorithmVendor)
-
-	def get_TaskId(self):
-		return self.get_body_params().get('TaskId')
-
-	def set_TaskId(self,TaskId):
-		self.add_body_params('TaskId', TaskId)
+	def set_ImageUrl(self,ImageUrl):
+		self.add_body_params('ImageUrl', ImageUrl)

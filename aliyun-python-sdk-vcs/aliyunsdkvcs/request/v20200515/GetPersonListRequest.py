@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkvcs.endpoint import endpoint_data
 
-class StopMonitorRequest(RpcRequest):
+class GetPersonListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Vcs', '2020-05-15', 'StopMonitor')
+		RpcRequest.__init__(self, 'Vcs', '2020-05-15', 'GetPersonList')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,14 +31,26 @@ class StopMonitorRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_AlgorithmVendor(self):
-		return self.get_body_params().get('AlgorithmVendor')
+	def get_FaceImageUrl(self):
+		return self.get_body_params().get('FaceImageUrl')
 
-	def set_AlgorithmVendor(self,AlgorithmVendor):
-		self.add_body_params('AlgorithmVendor', AlgorithmVendor)
+	def set_FaceImageUrl(self,FaceImageUrl):
+		self.add_body_params('FaceImageUrl', FaceImageUrl)
 
-	def get_TaskId(self):
-		return self.get_body_params().get('TaskId')
+	def get_PageNumber(self):
+		return self.get_body_params().get('PageNumber')
 
-	def set_TaskId(self,TaskId):
-		self.add_body_params('TaskId', TaskId)
+	def set_PageNumber(self,PageNumber):
+		self.add_body_params('PageNumber', PageNumber)
+
+	def get_CorpIdList(self):
+		return self.get_body_params().get('CorpIdList')
+
+	def set_CorpIdList(self,CorpIdList):
+		self.add_body_params('CorpIdList', CorpIdList)
+
+	def get_PageSize(self):
+		return self.get_body_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_body_params('PageSize', PageSize)
