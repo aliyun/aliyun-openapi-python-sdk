@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,11 +18,11 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-class GetOnlineServiceResultRequest(RpcRequest):
+
+class GetServiceResultAsyncRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'industry-brain', '2018-07-12', 'GetOnlineServiceResult')
-		self.set_protocol_type('https');
+		RpcRequest.__init__(self, 'industry-brain', '2019-06-29', 'GetServiceResultAsync')
 		self.set_method('POST')
 
 	def get_ServiceId(self):
@@ -30,3 +30,9 @@ class GetOnlineServiceResultRequest(RpcRequest):
 
 	def set_ServiceId(self,ServiceId):
 		self.add_query_param('ServiceId',ServiceId)
+
+	def get_TaskId(self):
+		return self.get_query_params().get('TaskId')
+
+	def set_TaskId(self,TaskId):
+		self.add_query_param('TaskId',TaskId)
