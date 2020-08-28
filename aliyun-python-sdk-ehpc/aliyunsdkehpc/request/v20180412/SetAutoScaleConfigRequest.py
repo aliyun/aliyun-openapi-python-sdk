@@ -132,6 +132,8 @@ class SetAutoScaleConfigRequest(RpcRequest):
 				self.add_query_param('Queues.' + str(depth1 + 1) + '.MaxNodesInQueue', Queuess[depth1].get('MaxNodesInQueue'))
 			if Queuess[depth1].get('InstanceType') is not None:
 				self.add_query_param('Queues.' + str(depth1 + 1) + '.InstanceType', Queuess[depth1].get('InstanceType'))
+			if Queuess[depth1].get('QueueImageId') is not None:
+				self.add_query_param('Queues.' + str(depth1 + 1) + '.QueueImageId', Queuess[depth1].get('QueueImageId'))
 			if Queuess[depth1].get('EnableAutoGrow') is not None:
 				self.add_query_param('Queues.' + str(depth1 + 1) + '.EnableAutoGrow', Queuess[depth1].get('EnableAutoGrow'))
 			if Queuess[depth1].get('SpotPriceLimit') is not None:

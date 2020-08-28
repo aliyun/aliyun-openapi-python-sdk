@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkehpc.endpoint import endpoint_data
 
-class DescribeGWSInstancesRequest(RpcRequest):
+class AddSecurityGroupRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'EHPC', '2018-04-12', 'DescribeGWSInstances')
+		RpcRequest.__init__(self, 'EHPC', '2018-04-12', 'AddSecurityGroup')
 		self.set_method('GET')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,38 +31,20 @@ class DescribeGWSInstancesRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_ClientToken(self):
+		return self.get_query_params().get('ClientToken')
+
+	def set_ClientToken(self,ClientToken):
+		self.add_query_param('ClientToken',ClientToken)
+
+	def get_SecurityGroupId(self):
+		return self.get_query_params().get('SecurityGroupId')
+
+	def set_SecurityGroupId(self,SecurityGroupId):
+		self.add_query_param('SecurityGroupId',SecurityGroupId)
+
 	def get_ClusterId(self):
 		return self.get_query_params().get('ClusterId')
 
 	def set_ClusterId(self,ClusterId):
 		self.add_query_param('ClusterId',ClusterId)
-
-	def get_PageNumber(self):
-		return self.get_query_params().get('PageNumber')
-
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
-
-	def get_InstanceId(self):
-		return self.get_query_params().get('InstanceId')
-
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
-
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_UserUid(self):
-		return self.get_query_params().get('UserUid')
-
-	def set_UserUid(self,UserUid):
-		self.add_query_param('UserUid',UserUid)
-
-	def get_UserName(self):
-		return self.get_query_params().get('UserName')
-
-	def set_UserName(self,UserName):
-		self.add_query_param('UserName',UserName)

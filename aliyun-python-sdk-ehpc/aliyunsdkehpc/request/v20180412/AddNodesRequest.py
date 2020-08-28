@@ -37,6 +37,12 @@ class AddNodesRequest(RpcRequest):
 	def set_ImageId(self,ImageId):
 		self.add_query_param('ImageId',ImageId)
 
+	def get_ClientToken(self):
+		return self.get_query_params().get('ClientToken')
+
+	def set_ClientToken(self,ClientToken):
+		self.add_query_param('ClientToken',ClientToken)
+
 	def get_AllocatePublicAddress(self):
 		return self.get_query_params().get('AllocatePublicAddress')
 

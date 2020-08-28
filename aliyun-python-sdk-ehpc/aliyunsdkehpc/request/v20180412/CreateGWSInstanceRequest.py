@@ -97,6 +97,12 @@ class CreateGWSInstanceRequest(RpcRequest):
 	def set_WorkMode(self,WorkMode):
 		self.add_query_param('WorkMode',WorkMode)
 
+	def get_VSwitchId(self):
+		return self.get_query_params().get('VSwitchId')
+
+	def set_VSwitchId(self,VSwitchId):
+		self.add_query_param('VSwitchId',VSwitchId)
+
 	def get_PeriodUnit(self):
 		return self.get_query_params().get('PeriodUnit')
 

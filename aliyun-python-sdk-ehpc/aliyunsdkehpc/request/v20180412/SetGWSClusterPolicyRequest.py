@@ -60,3 +60,15 @@ class SetGWSClusterPolicyRequest(RpcRequest):
 
 	def set_UsbRedirect(self,UsbRedirect):
 		self.add_query_param('UsbRedirect',UsbRedirect)
+
+	def get_AsyncMode(self):
+		return self.get_query_params().get('AsyncMode')
+
+	def set_AsyncMode(self,AsyncMode):
+		self.add_query_param('AsyncMode',AsyncMode)
+
+	def get_UdpPort(self):
+		return self.get_query_params().get('UdpPort')
+
+	def set_UdpPort(self,UdpPort):
+		self.add_query_param('UdpPort',UdpPort)

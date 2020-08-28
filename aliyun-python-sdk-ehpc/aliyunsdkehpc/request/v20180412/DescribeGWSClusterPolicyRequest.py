@@ -36,3 +36,15 @@ class DescribeGWSClusterPolicyRequest(RpcRequest):
 
 	def set_ClusterId(self,ClusterId):
 		self.add_query_param('ClusterId',ClusterId)
+
+	def get_AsyncMode(self):
+		return self.get_query_params().get('AsyncMode')
+
+	def set_AsyncMode(self,AsyncMode):
+		self.add_query_param('AsyncMode',AsyncMode)
+
+	def get_TaskId(self):
+		return self.get_query_params().get('TaskId')
+
+	def set_TaskId(self,TaskId):
+		self.add_query_param('TaskId',TaskId)

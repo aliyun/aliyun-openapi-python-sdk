@@ -37,6 +37,12 @@ class CreateGWSClusterRequest(RpcRequest):
 	def set_ClusterType(self,ClusterType):
 		self.add_query_param('ClusterType',ClusterType)
 
+	def get_VSwitchId(self):
+		return self.get_query_params().get('VSwitchId')
+
+	def set_VSwitchId(self,VSwitchId):
+		self.add_query_param('VSwitchId',VSwitchId)
+
 	def get_VpcId(self):
 		return self.get_query_params().get('VpcId')
 

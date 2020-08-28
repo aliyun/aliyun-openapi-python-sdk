@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkehpc.endpoint import endpoint_data
 
-class DescribeGWSInstancesRequest(RpcRequest):
+class ListTasksRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'EHPC', '2018-04-12', 'DescribeGWSInstances')
+		RpcRequest.__init__(self, 'EHPC', '2018-04-12', 'ListTasks')
 		self.set_method('GET')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -43,11 +43,11 @@ class DescribeGWSInstancesRequest(RpcRequest):
 	def set_PageNumber(self,PageNumber):
 		self.add_query_param('PageNumber',PageNumber)
 
-	def get_InstanceId(self):
-		return self.get_query_params().get('InstanceId')
+	def get_Archived(self):
+		return self.get_query_params().get('Archived')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
+	def set_Archived(self,Archived):
+		self.add_query_param('Archived',Archived)
 
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
@@ -55,14 +55,8 @@ class DescribeGWSInstancesRequest(RpcRequest):
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
 
-	def get_UserUid(self):
-		return self.get_query_params().get('UserUid')
+	def get_TaskId(self):
+		return self.get_query_params().get('TaskId')
 
-	def set_UserUid(self,UserUid):
-		self.add_query_param('UserUid',UserUid)
-
-	def get_UserName(self):
-		return self.get_query_params().get('UserName')
-
-	def set_UserName(self,UserName):
-		self.add_query_param('UserName',UserName)
+	def set_TaskId(self,TaskId):
+		self.add_query_param('TaskId',TaskId)

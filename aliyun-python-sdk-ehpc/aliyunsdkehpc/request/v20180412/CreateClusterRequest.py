@@ -111,6 +111,12 @@ class CreateClusterRequest(RpcRequest):
 	def set_EcsOrderLoginCount(self,EcsOrderLoginCount):
 		self.add_query_param('EcsOrder.Login.Count',EcsOrderLoginCount)
 
+	def get_WithoutElasticIp(self):
+		return self.get_query_params().get('WithoutElasticIp')
+
+	def set_WithoutElasticIp(self,WithoutElasticIp):
+		self.add_query_param('WithoutElasticIp',WithoutElasticIp)
+
 	def get_RemoteVisEnable(self):
 		return self.get_query_params().get('RemoteVisEnable')
 
@@ -222,6 +228,12 @@ class CreateClusterRequest(RpcRequest):
 
 	def set_ImageId(self,ImageId):
 		self.add_query_param('ImageId',ImageId)
+
+	def get_ClientToken(self):
+		return self.get_query_params().get('ClientToken')
+
+	def set_ClientToken(self,ClientToken):
+		self.add_query_param('ClientToken',ClientToken)
 
 	def get_EhpcVersion(self):
 		return self.get_query_params().get('EhpcVersion')
