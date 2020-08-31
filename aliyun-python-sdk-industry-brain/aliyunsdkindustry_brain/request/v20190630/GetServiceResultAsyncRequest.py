@@ -19,44 +19,20 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class AsyncResponsePostRequest(RpcRequest):
+class GetServiceResultAsyncRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'industry-brain', '2019-06-29', 'AsyncResponsePost')
-		self.set_method('POST')
+		RpcRequest.__init__(self, 'industry-brain', '2019-06-30', 'GetServiceResultAsync')
+		self.set_method('GET')
 
-	def get_Data(self):
-		return self.get_query_params().get('Data')
+	def get_ServiceId(self):
+		return self.get_query_params().get('ServiceId')
 
-	def set_Data(self,Data):
-		self.add_query_param('Data',Data)
-
-	def get_Context(self):
-		return self.get_query_params().get('Context')
-
-	def set_Context(self,Context):
-		self.add_query_param('Context',Context)
-
-	def get_Progress(self):
-		return self.get_query_params().get('Progress')
-
-	def set_Progress(self,Progress):
-		self.add_query_param('Progress',Progress)
-
-	def get_Message(self):
-		return self.get_query_params().get('Message')
-
-	def set_Message(self,Message):
-		self.add_query_param('Message',Message)
+	def set_ServiceId(self,ServiceId):
+		self.add_query_param('ServiceId',ServiceId)
 
 	def get_TaskId(self):
 		return self.get_query_params().get('TaskId')
 
 	def set_TaskId(self,TaskId):
 		self.add_query_param('TaskId',TaskId)
-
-	def get_Status(self):
-		return self.get_query_params().get('Status')
-
-	def set_Status(self,Status):
-		self.add_query_param('Status',Status)

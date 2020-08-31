@@ -19,29 +19,17 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class InvokeServiceRequest(RpcRequest):
+class InvokeServiceAsyncRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'industry-brain', '2019-06-29', 'InvokeService')
+		RpcRequest.__init__(self, 'industry-brain', '2019-06-30', 'InvokeServiceAsync')
 		self.set_method('POST')
 
-	def get_RequestParams(self):
-		return self.get_query_params().get('RequestParams')
+	def get_IsShowInput(self):
+		return self.get_query_params().get('IsShowInput')
 
-	def set_RequestParams(self,RequestParams):
-		self.add_query_param('RequestParams',RequestParams)
-
-	def get_ShowBizInfo(self):
-		return self.get_query_params().get('ShowBizInfo')
-
-	def set_ShowBizInfo(self,ShowBizInfo):
-		self.add_query_param('ShowBizInfo',ShowBizInfo)
-
-	def get_ForceInvokeConfiguration(self):
-		return self.get_query_params().get('ForceInvokeConfiguration')
-
-	def set_ForceInvokeConfiguration(self,ForceInvokeConfiguration):
-		self.add_query_param('ForceInvokeConfiguration',ForceInvokeConfiguration)
+	def set_IsShowInput(self,IsShowInput):
+		self.add_query_param('IsShowInput',IsShowInput)
 
 	def get_Context(self):
 		return self.get_query_params().get('Context')
@@ -55,14 +43,14 @@ class InvokeServiceRequest(RpcRequest):
 	def set_ServiceId(self,ServiceId):
 		self.add_query_param('ServiceId',ServiceId)
 
+	def get_Params(self):
+		return self.get_query_params().get('Params')
+
+	def set_Params(self,Params):
+		self.add_query_param('Params',Params)
+
 	def get_RequestData(self):
 		return self.get_query_params().get('RequestData')
 
 	def set_RequestData(self,RequestData):
 		self.add_query_param('RequestData',RequestData)
-
-	def get_ShowParams(self):
-		return self.get_query_params().get('ShowParams')
-
-	def set_ShowParams(self,ShowParams):
-		self.add_query_param('ShowParams',ShowParams)

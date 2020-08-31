@@ -19,26 +19,20 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class GetAlgorithmHistoryResultRequest(RpcRequest):
+class GetPointReckoningValueRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'industry-brain', '2019-06-29', 'GetAlgorithmHistoryResult')
-		self.set_method('GET')
+		RpcRequest.__init__(self, 'industry-brain', '2019-06-30', 'GetPointReckoningValue')
+		self.set_method('POST')
 
-	def get_EndTime(self):
-		return self.get_query_params().get('EndTime')
+	def get_TimeType(self):
+		return self.get_query_params().get('TimeType')
 
-	def set_EndTime(self,EndTime):
-		self.add_query_param('EndTime',EndTime)
+	def set_TimeType(self,TimeType):
+		self.add_query_param('TimeType',TimeType)
 
-	def get_StartTime(self):
-		return self.get_query_params().get('StartTime')
+	def get_TemplateId(self):
+		return self.get_query_params().get('TemplateId')
 
-	def set_StartTime(self,StartTime):
-		self.add_query_param('StartTime',StartTime)
-
-	def get_ServiceId(self):
-		return self.get_query_params().get('ServiceId')
-
-	def set_ServiceId(self,ServiceId):
-		self.add_query_param('ServiceId',ServiceId)
+	def set_TemplateId(self,TemplateId):
+		self.add_query_param('TemplateId',TemplateId)

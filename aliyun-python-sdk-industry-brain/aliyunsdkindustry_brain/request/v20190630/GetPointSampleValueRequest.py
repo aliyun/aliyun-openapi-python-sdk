@@ -19,32 +19,20 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class InvokeServiceAsyncRequest(RpcRequest):
+class GetPointSampleValueRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'industry-brain', '2019-06-29', 'InvokeServiceAsync')
+		RpcRequest.__init__(self, 'industry-brain', '2019-06-30', 'GetPointSampleValue')
 		self.set_method('POST')
 
-	def get_IsShowInput(self):
-		return self.get_query_params().get('IsShowInput')
+	def get_TimeType(self):
+		return self.get_query_params().get('TimeType')
 
-	def set_IsShowInput(self,IsShowInput):
-		self.add_query_param('IsShowInput',IsShowInput)
+	def set_TimeType(self,TimeType):
+		self.add_query_param('TimeType',TimeType)
 
-	def get_ServiceId(self):
-		return self.get_query_params().get('ServiceId')
+	def get_TemplateId(self):
+		return self.get_query_params().get('TemplateId')
 
-	def set_ServiceId(self,ServiceId):
-		self.add_query_param('ServiceId',ServiceId)
-
-	def get_Params(self):
-		return self.get_query_params().get('Params')
-
-	def set_Params(self,Params):
-		self.add_query_param('Params',Params)
-
-	def get_RequestData(self):
-		return self.get_query_params().get('RequestData')
-
-	def set_RequestData(self,RequestData):
-		self.add_query_param('RequestData',RequestData)
+	def set_TemplateId(self,TemplateId):
+		self.add_query_param('TemplateId',TemplateId)
