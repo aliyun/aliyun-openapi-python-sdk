@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkvcs.endpoint import endpoint_data
 
-class DeleteCorpGroupRequest(RpcRequest):
+class GetCatalogListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Vcs', '2020-05-15', 'DeleteCorpGroup','vcs')
+		RpcRequest.__init__(self, 'Vcs', '2020-05-15', 'GetCatalogList','vcs')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,14 +31,14 @@ class DeleteCorpGroupRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_IsvSubId(self):
+		return self.get_query_params().get('IsvSubId')
+
+	def set_IsvSubId(self,IsvSubId):
+		self.add_query_param('IsvSubId',IsvSubId)
+
 	def get_CorpId(self):
-		return self.get_body_params().get('CorpId')
+		return self.get_query_params().get('CorpId')
 
 	def set_CorpId(self,CorpId):
-		self.add_body_params('CorpId', CorpId)
-
-	def get_GroupId(self):
-		return self.get_body_params().get('GroupId')
-
-	def set_GroupId(self,GroupId):
-		self.add_body_params('GroupId', GroupId)
+		self.add_query_param('CorpId',CorpId)

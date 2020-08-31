@@ -23,7 +23,7 @@ from aliyunsdkvcs.endpoint import endpoint_data
 class ListUserGroupsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Vcs', '2020-05-15', 'ListUserGroups')
+		RpcRequest.__init__(self, 'Vcs', '2020-05-15', 'ListUserGroups','vcs')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())

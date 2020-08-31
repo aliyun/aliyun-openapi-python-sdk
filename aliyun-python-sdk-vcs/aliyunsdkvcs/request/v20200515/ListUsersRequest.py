@@ -23,13 +23,19 @@ from aliyunsdkvcs.endpoint import endpoint_data
 class ListUsersRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Vcs', '2020-05-15', 'ListUsers')
+		RpcRequest.__init__(self, 'Vcs', '2020-05-15', 'ListUsers','vcs')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+
+	def get_UserList(self):
+		return self.get_body_params().get('UserList')
+
+	def set_UserList(self,UserList):
+		self.add_body_params('UserList', UserList)
 
 	def get_CorpId(self):
 		return self.get_body_params().get('CorpId')
@@ -60,6 +66,12 @@ class ListUsersRequest(RpcRequest):
 
 	def set_FaceImageUrl(self,FaceImageUrl):
 		self.add_body_params('FaceImageUrl', FaceImageUrl)
+
+	def get_PersonList(self):
+		return self.get_body_params().get('PersonList')
+
+	def set_PersonList(self,PersonList):
+		self.add_body_params('PersonList', PersonList)
 
 	def get_PageNumber(self):
 		return self.get_body_params().get('PageNumber')
@@ -114,6 +126,12 @@ class ListUsersRequest(RpcRequest):
 
 	def set_Age(self,Age):
 		self.add_body_params('Age', Age)
+
+	def get_MatchingRateThreshold(self):
+		return self.get_body_params().get('MatchingRateThreshold')
+
+	def set_MatchingRateThreshold(self,MatchingRateThreshold):
+		self.add_body_params('MatchingRateThreshold', MatchingRateThreshold)
 
 	def get_UserName(self):
 		return self.get_body_params().get('UserName')

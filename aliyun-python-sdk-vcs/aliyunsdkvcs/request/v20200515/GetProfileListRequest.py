@@ -20,16 +20,22 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkvcs.endpoint import endpoint_data
 
-class CreateUserRequest(RpcRequest):
+class GetProfileListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Vcs', '2020-05-15', 'CreateUser','vcs')
+		RpcRequest.__init__(self, 'Vcs', '2020-05-15', 'GetProfileList','vcs')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+
+	def get_ProfileIdList(self):
+		return self.get_body_params().get('ProfileIdList')
+
+	def set_ProfileIdList(self,ProfileIdList):
+		self.add_body_params('ProfileIdList', ProfileIdList)
 
 	def get_CorpId(self):
 		return self.get_body_params().get('CorpId')
@@ -55,17 +61,35 @@ class CreateUserRequest(RpcRequest):
 	def set_IdNumber(self,IdNumber):
 		self.add_body_params('IdNumber', IdNumber)
 
-	def get_FaceImageUrl(self):
-		return self.get_body_params().get('FaceImageUrl')
+	def get_PageNumber(self):
+		return self.get_body_params().get('PageNumber')
 
-	def set_FaceImageUrl(self,FaceImageUrl):
-		self.add_body_params('FaceImageUrl', FaceImageUrl)
+	def set_PageNumber(self,PageNumber):
+		self.add_body_params('PageNumber', PageNumber)
 
-	def get_Attachment(self):
-		return self.get_body_params().get('Attachment')
+	def get_FaceUrl(self):
+		return self.get_body_params().get('FaceUrl')
 
-	def set_Attachment(self,Attachment):
-		self.add_body_params('Attachment', Attachment)
+	def set_FaceUrl(self,FaceUrl):
+		self.add_body_params('FaceUrl', FaceUrl)
+
+	def get_PageSize(self):
+		return self.get_body_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_body_params('PageSize', PageSize)
+
+	def get_PersonIdList(self):
+		return self.get_body_params().get('PersonIdList')
+
+	def set_PersonIdList(self,PersonIdList):
+		self.add_body_params('PersonIdList', PersonIdList)
+
+	def get_LiveAddress(self):
+		return self.get_body_params().get('LiveAddress')
+
+	def set_LiveAddress(self,LiveAddress):
+		self.add_body_params('LiveAddress', LiveAddress)
 
 	def get_IsvSubId(self):
 		return self.get_body_params().get('IsvSubId')
@@ -73,17 +97,11 @@ class CreateUserRequest(RpcRequest):
 	def set_IsvSubId(self,IsvSubId):
 		self.add_body_params('IsvSubId', IsvSubId)
 
-	def get_Address(self):
-		return self.get_body_params().get('Address')
+	def get_SceneType(self):
+		return self.get_body_params().get('SceneType')
 
-	def set_Address(self,Address):
-		self.add_body_params('Address', Address)
-
-	def get_UserGroupId(self):
-		return self.get_body_params().get('UserGroupId')
-
-	def set_UserGroupId(self,UserGroupId):
-		self.add_body_params('UserGroupId', UserGroupId)
+	def set_SceneType(self,SceneType):
+		self.add_body_params('SceneType', SceneType)
 
 	def get_PhoneNo(self):
 		return self.get_body_params().get('PhoneNo')
@@ -91,20 +109,26 @@ class CreateUserRequest(RpcRequest):
 	def set_PhoneNo(self,PhoneNo):
 		self.add_body_params('PhoneNo', PhoneNo)
 
+	def get_CatalogId(self):
+		return self.get_body_params().get('CatalogId')
+
+	def set_CatalogId(self,CatalogId):
+		self.add_body_params('CatalogId', CatalogId)
+
+	def get_Name(self):
+		return self.get_body_params().get('Name')
+
+	def set_Name(self,Name):
+		self.add_body_params('Name', Name)
+
 	def get_BizId(self):
 		return self.get_body_params().get('BizId')
 
 	def set_BizId(self,BizId):
 		self.add_body_params('BizId', BizId)
 
-	def get_Age(self):
-		return self.get_body_params().get('Age')
+	def get_MatchingRateThreshold(self):
+		return self.get_body_params().get('MatchingRateThreshold')
 
-	def set_Age(self,Age):
-		self.add_body_params('Age', Age)
-
-	def get_UserName(self):
-		return self.get_body_params().get('UserName')
-
-	def set_UserName(self,UserName):
-		self.add_body_params('UserName', UserName)
+	def set_MatchingRateThreshold(self,MatchingRateThreshold):
+		self.add_body_params('MatchingRateThreshold', MatchingRateThreshold)

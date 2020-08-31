@@ -23,7 +23,7 @@ from aliyunsdkvcs.endpoint import endpoint_data
 class GetPersonListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Vcs', '2020-05-15', 'GetPersonList')
+		RpcRequest.__init__(self, 'Vcs', '2020-05-15', 'GetPersonList','vcs')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,11 +31,17 @@ class GetPersonListRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_FaceImageUrl(self):
-		return self.get_body_params().get('FaceImageUrl')
+	def get_CorpId(self):
+		return self.get_body_params().get('CorpId')
 
-	def set_FaceImageUrl(self,FaceImageUrl):
-		self.add_body_params('FaceImageUrl', FaceImageUrl)
+	def set_CorpId(self,CorpId):
+		self.add_body_params('CorpId', CorpId)
+
+	def get_FaceMatchingRateThreshold(self):
+		return self.get_body_params().get('FaceMatchingRateThreshold')
+
+	def set_FaceMatchingRateThreshold(self,FaceMatchingRateThreshold):
+		self.add_body_params('FaceMatchingRateThreshold', FaceMatchingRateThreshold)
 
 	def get_PageNumber(self):
 		return self.get_body_params().get('PageNumber')
@@ -49,8 +55,20 @@ class GetPersonListRequest(RpcRequest):
 	def set_CorpIdList(self,CorpIdList):
 		self.add_body_params('CorpIdList', CorpIdList)
 
+	def get_FaceUrl(self):
+		return self.get_body_params().get('FaceUrl')
+
+	def set_FaceUrl(self,FaceUrl):
+		self.add_body_params('FaceUrl', FaceUrl)
+
 	def get_PageSize(self):
 		return self.get_body_params().get('PageSize')
 
 	def set_PageSize(self,PageSize):
 		self.add_body_params('PageSize', PageSize)
+
+	def get_PersonIdList(self):
+		return self.get_body_params().get('PersonIdList')
+
+	def set_PersonIdList(self,PersonIdList):
+		self.add_body_params('PersonIdList', PersonIdList)
