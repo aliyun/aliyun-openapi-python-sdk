@@ -23,7 +23,7 @@ from aliyunsdkvcs.endpoint import endpoint_data
 class DeleteUserGroupRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Vcs', '2020-05-15', 'DeleteUserGroup','vcs')
+		RpcRequest.__init__(self, 'Vcs', '2020-05-15', 'DeleteUserGroup')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())

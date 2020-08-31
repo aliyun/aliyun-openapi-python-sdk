@@ -23,7 +23,7 @@ from aliyunsdkvcs.endpoint import endpoint_data
 class DeleteProfileCatalogRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Vcs', '2020-05-15', 'DeleteProfileCatalog','vcs')
+		RpcRequest.__init__(self, 'Vcs', '2020-05-15', 'DeleteProfileCatalog')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())

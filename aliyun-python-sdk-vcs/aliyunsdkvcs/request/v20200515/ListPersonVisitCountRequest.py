@@ -23,7 +23,7 @@ from aliyunsdkvcs.endpoint import endpoint_data
 class ListPersonVisitCountRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Vcs', '2020-05-15', 'ListPersonVisitCount','vcs')
+		RpcRequest.__init__(self, 'Vcs', '2020-05-15', 'ListPersonVisitCount')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -43,6 +43,12 @@ class ListPersonVisitCountRequest(RpcRequest):
 	def set_EndTime(self,EndTime):
 		self.add_body_params('EndTime', EndTime)
 
+	def get_CountType(self):
+		return self.get_body_params().get('CountType')
+
+	def set_CountType(self,CountType):
+		self.add_body_params('CountType', CountType)
+
 	def get_StartTime(self):
 		return self.get_body_params().get('StartTime')
 
@@ -61,11 +67,23 @@ class ListPersonVisitCountRequest(RpcRequest):
 	def set_TimeAggregateType(self,TimeAggregateType):
 		self.add_body_params('TimeAggregateType', TimeAggregateType)
 
+	def get_MaxVal(self):
+		return self.get_body_params().get('MaxVal')
+
+	def set_MaxVal(self,MaxVal):
+		self.add_body_params('MaxVal', MaxVal)
+
 	def get_TagCode(self):
 		return self.get_body_params().get('TagCode')
 
 	def set_TagCode(self,TagCode):
 		self.add_body_params('TagCode', TagCode)
+
+	def get_MinVal(self):
+		return self.get_body_params().get('MinVal')
+
+	def set_MinVal(self,MinVal):
+		self.add_body_params('MinVal', MinVal)
 
 	def get_PageSize(self):
 		return self.get_body_params().get('PageSize')
