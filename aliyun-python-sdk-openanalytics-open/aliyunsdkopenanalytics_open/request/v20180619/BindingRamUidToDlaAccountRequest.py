@@ -20,19 +20,37 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkopenanalytics_open.endpoint import endpoint_data
 
-class ListVirtualClustersRequest(RpcRequest):
+class BindingRamUidToDlaAccountRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'openanalytics-open', '2018-06-19', 'ListVirtualClusters','openanalytics')
-		self.set_method('GET')
+		RpcRequest.__init__(self, 'openanalytics-open', '2018-06-19', 'BindingRamUidToDlaAccount','openanalytics')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_Type(self):
-		return self.get_body_params().get('Type')
+	def get_AccountName(self):
+		return self.get_body_params().get('AccountName')
 
-	def set_Type(self,Type):
-		self.add_body_params('Type', Type)
+	def set_AccountName(self,AccountName):
+		self.add_body_params('AccountName', AccountName)
+
+	def get_RamUid(self):
+		return self.get_body_params().get('RamUid')
+
+	def set_RamUid(self,RamUid):
+		self.add_body_params('RamUid', RamUid)
+
+	def get_IsShort(self):
+		return self.get_body_params().get('IsShort')
+
+	def set_IsShort(self,IsShort):
+		self.add_body_params('IsShort', IsShort)
+
+	def get_IsServiceUser(self):
+		return self.get_body_params().get('IsServiceUser')
+
+	def set_IsServiceUser(self,IsServiceUser):
+		self.add_body_params('IsServiceUser', IsServiceUser)

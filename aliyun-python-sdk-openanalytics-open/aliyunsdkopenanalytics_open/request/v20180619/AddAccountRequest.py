@@ -31,6 +31,12 @@ class AddAccountRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_RamUid(self):
+		return self.get_body_params().get('RamUid')
+
+	def set_RamUid(self,RamUid):
+		self.add_body_params('RamUid', RamUid)
+
 	def get_IsShort(self):
 		return self.get_body_params().get('IsShort')
 
