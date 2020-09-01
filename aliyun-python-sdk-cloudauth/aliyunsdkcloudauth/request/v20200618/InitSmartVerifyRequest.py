@@ -37,6 +37,12 @@ class InitSmartVerifyRequest(RpcRequest):
 	def set_Ip(self,Ip):
 		self.add_body_params('Ip', Ip)
 
+	def get_CertName(self):
+		return self.get_body_params().get('CertName')
+
+	def set_CertName(self,CertName):
+		self.add_body_params('CertName', CertName)
+
 	def get_Mobile(self):
 		return self.get_body_params().get('Mobile')
 
@@ -54,6 +60,12 @@ class InitSmartVerifyRequest(RpcRequest):
 
 	def set_Mode(self,Mode):
 		self.add_body_params('Mode', Mode)
+
+	def get_CertNo(self):
+		return self.get_body_params().get('CertNo')
+
+	def set_CertNo(self,CertNo):
+		self.add_body_params('CertNo', CertNo)
 
 	def get_OuterOrderNo(self):
 		return self.get_body_params().get('OuterOrderNo')
@@ -78,3 +90,9 @@ class InitSmartVerifyRequest(RpcRequest):
 
 	def set_MetaInfo(self,MetaInfo):
 		self.add_body_params('MetaInfo', MetaInfo)
+
+	def get_Ocr(self):
+		return self.get_body_params().get('Ocr')
+
+	def set_Ocr(self,Ocr):
+		self.add_body_params('Ocr', Ocr)
