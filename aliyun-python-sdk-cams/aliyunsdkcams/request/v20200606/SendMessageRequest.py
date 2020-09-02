@@ -38,28 +38,46 @@ class SendMessageRequest(RpcRequest):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
 	def get_TemplateBodyParams(self):
-		return self.get_query_params().get('TemplateBodyParams')
+		return self.get_body_params().get('TemplateBodyParams')
 
 	def set_TemplateBodyParams(self,TemplateBodyParams):
-		self.add_query_param('TemplateBodyParams',TemplateBodyParams)
+		self.add_body_params('TemplateBodyParams', TemplateBodyParams)
+
+	def get_Link(self):
+		return self.get_body_params().get('Link')
+
+	def set_Link(self,Link):
+		self.add_body_params('Link', Link)
+
+	def get_Caption(self):
+		return self.get_body_params().get('Caption')
+
+	def set_Caption(self,Caption):
+		self.add_body_params('Caption', Caption)
 
 	def get_Type(self):
-		return self.get_query_params().get('Type')
+		return self.get_body_params().get('Type')
 
 	def set_Type(self,Type):
-		self.add_query_param('Type',Type)
+		self.add_body_params('Type', Type)
+
+	def get_Body(self):
+		return self.get_body_params().get('Body')
+
+	def set_Body(self,Body):
+		self.add_body_params('Body', Body)
 
 	def get_ChannelType(self):
-		return self.get_query_params().get('ChannelType')
+		return self.get_body_params().get('ChannelType')
 
 	def set_ChannelType(self,ChannelType):
-		self.add_query_param('ChannelType',ChannelType)
+		self.add_body_params('ChannelType', ChannelType)
 
 	def get__From(self):
-		return self.get_query_params().get('From')
+		return self.get_body_params().get('From')
 
 	def set__From(self,_From):
-		self.add_query_param('From',_From)
+		self.add_body_params('From', _From)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -74,13 +92,19 @@ class SendMessageRequest(RpcRequest):
 		self.add_query_param('OwnerId',OwnerId)
 
 	def get_To(self):
-		return self.get_query_params().get('To')
+		return self.get_body_params().get('To')
 
 	def set_To(self,To):
-		self.add_query_param('To',To)
+		self.add_body_params('To', To)
 
 	def get_TemplateCode(self):
-		return self.get_query_params().get('TemplateCode')
+		return self.get_body_params().get('TemplateCode')
 
 	def set_TemplateCode(self,TemplateCode):
-		self.add_query_param('TemplateCode',TemplateCode)
+		self.add_body_params('TemplateCode', TemplateCode)
+
+	def get_MediaType(self):
+		return self.get_body_params().get('MediaType')
+
+	def set_MediaType(self,MediaType):
+		self.add_body_params('MediaType', MediaType)
