@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkretailcloud.endpoint import endpoint_data
 
-class BatchAddServersRequest(RpcRequest):
+class SyncPodInfoRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'retailcloud', '2018-03-13', 'BatchAddServers')
+		RpcRequest.__init__(self, 'retailcloud', '2018-03-13', 'SyncPodInfo')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,20 +31,38 @@ class BatchAddServersRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_InstanceId(self):
-		return self.get_query_params().get('InstanceId')
+	def get_Reason(self):
+		return self.get_query_params().get('Reason')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
+	def set_Reason(self,Reason):
+		self.add_query_param('Reason',Reason)
 
-	def get_VpcId(self):
-		return self.get_query_params().get('VpcId')
+	def get_RequestId(self):
+		return self.get_query_params().get('RequestId')
 
-	def set_VpcId(self,VpcId):
-		self.add_query_param('VpcId',VpcId)
+	def set_RequestId(self,RequestId):
+		self.add_query_param('RequestId',RequestId)
 
-	def get_Sign(self):
-		return self.get_query_params().get('Sign')
+	def get_PodName(self):
+		return self.get_query_params().get('PodName')
 
-	def set_Sign(self,Sign):
-		self.add_query_param('Sign',Sign)
+	def set_PodName(self,PodName):
+		self.add_query_param('PodName',PodName)
+
+	def get_SideCarType(self):
+		return self.get_query_params().get('SideCarType')
+
+	def set_SideCarType(self,SideCarType):
+		self.add_query_param('SideCarType',SideCarType)
+
+	def get_TaskId(self):
+		return self.get_query_params().get('TaskId')
+
+	def set_TaskId(self,TaskId):
+		self.add_query_param('TaskId',TaskId)
+
+	def get_Status(self):
+		return self.get_query_params().get('Status')
+
+	def set_Status(self,Status):
+		self.add_query_param('Status',Status)
