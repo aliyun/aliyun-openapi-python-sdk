@@ -56,6 +56,8 @@ class MassPushRequest(RpcRequest):
 				self.add_body_params('PushTask.' + str(depth1 + 1) + '.PushTime', PushTasks[depth1].get('PushTime'))
 			if PushTasks[depth1].get('SendSpeed') is not None:
 				self.add_body_params('PushTask.' + str(depth1 + 1) + '.SendSpeed', PushTasks[depth1].get('SendSpeed'))
+			if PushTasks[depth1].get('AndroidNotificationHuaweiChannel') is not None:
+				self.add_body_params('PushTask.' + str(depth1 + 1) + '.AndroidNotificationHuaweiChannel', PushTasks[depth1].get('AndroidNotificationHuaweiChannel'))
 			if PushTasks[depth1].get('AndroidPopupActivity') is not None:
 				self.add_body_params('PushTask.' + str(depth1 + 1) + '.AndroidPopupActivity', PushTasks[depth1].get('AndroidPopupActivity'))
 			if PushTasks[depth1].get('iOSRemindBody') is not None:

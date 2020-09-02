@@ -67,6 +67,12 @@ class PushRequest(RpcRequest):
 	def set_SendSpeed(self,SendSpeed):
 		self.add_query_param('SendSpeed',SendSpeed)
 
+	def get_AndroidNotificationHuaweiChannel(self):
+		return self.get_query_params().get('AndroidNotificationHuaweiChannel')
+
+	def set_AndroidNotificationHuaweiChannel(self,AndroidNotificationHuaweiChannel):
+		self.add_query_param('AndroidNotificationHuaweiChannel',AndroidNotificationHuaweiChannel)
+
 	def get_AndroidPopupActivity(self):
 		return self.get_query_params().get('AndroidPopupActivity')
 
