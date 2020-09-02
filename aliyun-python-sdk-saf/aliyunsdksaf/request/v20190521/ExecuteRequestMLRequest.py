@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdksaf.endpoint import endpoint_data
 
-class ExecuteRequestSGRequest(RpcRequest):
+class ExecuteRequestMLRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'saf', '2019-05-21', 'ExecuteRequestSG','saf')
+		RpcRequest.__init__(self, 'saf', '2019-05-21', 'ExecuteRequestML','saf')
 		self.set_protocol_type('https')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
