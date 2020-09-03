@@ -23,7 +23,7 @@ from aliyunsdkreid.endpoint import endpoint_data
 class DescribeCameraStatisticsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'reid', '2019-09-28', 'DescribeCameraStatistics','1.1.8.3')
+		RpcRequest.__init__(self, 'reid', '2019-09-28', 'DescribeCameraStatistics','1.1.8.4')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -48,3 +48,9 @@ class DescribeCameraStatisticsRequest(RpcRequest):
 
 	def set_EndTimestamp(self,EndTimestamp):
 		self.add_body_params('EndTimestamp', EndTimestamp)
+
+	def get_LocationId(self):
+		return self.get_body_params().get('LocationId')
+
+	def set_LocationId(self,LocationId):
+		self.add_body_params('LocationId', LocationId)
