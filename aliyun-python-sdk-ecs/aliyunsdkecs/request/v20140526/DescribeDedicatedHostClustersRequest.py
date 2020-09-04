@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkecs.endpoint import endpoint_data
 
-class DescribeReservedInstancesRequest(RpcRequest):
+class DescribeDedicatedHostClustersRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'DescribeReservedInstances','ecs')
+		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'DescribeDedicatedHostClusters','ecs')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,11 +31,23 @@ class DescribeReservedInstancesRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_DedicatedHostClusterName(self):
+		return self.get_query_params().get('DedicatedHostClusterName')
+
+	def set_DedicatedHostClusterName(self,DedicatedHostClusterName):
+		self.add_query_param('DedicatedHostClusterName',DedicatedHostClusterName)
+
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+
+	def get_DedicatedHostClusterIds(self):
+		return self.get_query_params().get('DedicatedHostClusterIds')
+
+	def set_DedicatedHostClusterIds(self,DedicatedHostClusterIds):
+		self.add_query_param('DedicatedHostClusterIds',DedicatedHostClusterIds)
 
 	def get_PageNumber(self):
 		return self.get_query_params().get('PageNumber')
@@ -43,29 +55,23 @@ class DescribeReservedInstancesRequest(RpcRequest):
 	def set_PageNumber(self,PageNumber):
 		self.add_query_param('PageNumber',PageNumber)
 
+	def get_ResourceGroupId(self):
+		return self.get_query_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self,ResourceGroupId):
+		self.add_query_param('ResourceGroupId',ResourceGroupId)
+
 	def get_LockReason(self):
 		return self.get_query_params().get('LockReason')
 
 	def set_LockReason(self,LockReason):
 		self.add_query_param('LockReason',LockReason)
 
-	def get_Scope(self):
-		return self.get_query_params().get('Scope')
-
-	def set_Scope(self,Scope):
-		self.add_query_param('Scope',Scope)
-
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
 
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
-
-	def get_InstanceType(self):
-		return self.get_query_params().get('InstanceType')
-
-	def set_InstanceType(self,InstanceType):
-		self.add_query_param('InstanceType',InstanceType)
 
 	def get_Tags(self):
 		return self.get_query_params().get('Tags')
@@ -89,31 +95,11 @@ class DescribeReservedInstancesRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
-	def get_InstanceTypeFamily(self):
-		return self.get_query_params().get('InstanceTypeFamily')
-
-	def set_InstanceTypeFamily(self,InstanceTypeFamily):
-		self.add_query_param('InstanceTypeFamily',InstanceTypeFamily)
-
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
-
-	def get_ReservedInstanceIds(self):
-		return self.get_query_params().get('ReservedInstanceIds')
-
-	def set_ReservedInstanceIds(self, ReservedInstanceIds):
-		for depth1 in range(len(ReservedInstanceIds)):
-			if ReservedInstanceIds[depth1] is not None:
-				self.add_query_param('ReservedInstanceId.' + str(depth1 + 1) , ReservedInstanceIds[depth1])
-
-	def get_OfferingType(self):
-		return self.get_query_params().get('OfferingType')
-
-	def set_OfferingType(self,OfferingType):
-		self.add_query_param('OfferingType',OfferingType)
 
 	def get_ZoneId(self):
 		return self.get_query_params().get('ZoneId')
@@ -121,22 +107,8 @@ class DescribeReservedInstancesRequest(RpcRequest):
 	def set_ZoneId(self,ZoneId):
 		self.add_query_param('ZoneId',ZoneId)
 
-	def get_ReservedInstanceName(self):
-		return self.get_query_params().get('ReservedInstanceName')
+	def get_Status(self):
+		return self.get_query_params().get('Status')
 
-	def set_ReservedInstanceName(self,ReservedInstanceName):
-		self.add_query_param('ReservedInstanceName',ReservedInstanceName)
-
-	def get_Statuss(self):
-		return self.get_query_params().get('Statuss')
-
-	def set_Statuss(self, Statuss):
-		for depth1 in range(len(Statuss)):
-			if Statuss[depth1] is not None:
-				self.add_query_param('Status.' + str(depth1 + 1) , Statuss[depth1])
-
-	def get_AllocationType(self):
-		return self.get_query_params().get('AllocationType')
-
-	def set_AllocationType(self,AllocationType):
-		self.add_query_param('AllocationType',AllocationType)
+	def set_Status(self,Status):
+		self.add_query_param('Status',Status)

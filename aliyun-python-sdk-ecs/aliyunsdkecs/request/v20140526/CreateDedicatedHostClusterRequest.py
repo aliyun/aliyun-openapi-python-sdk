@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkecs.endpoint import endpoint_data
 
-class AttachNetworkInterfaceRequest(RpcRequest):
+class CreateDedicatedHostClusterRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'AttachNetworkInterface','ecs')
+		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'CreateDedicatedHostCluster','ecs')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,17 +31,45 @@ class AttachNetworkInterfaceRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_DedicatedHostClusterName(self):
+		return self.get_query_params().get('DedicatedHostClusterName')
+
+	def set_DedicatedHostClusterName(self,DedicatedHostClusterName):
+		self.add_query_param('DedicatedHostClusterName',DedicatedHostClusterName)
+
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_TrunkNetworkInstanceId(self):
-		return self.get_query_params().get('TrunkNetworkInstanceId')
+	def get_Description(self):
+		return self.get_query_params().get('Description')
 
-	def set_TrunkNetworkInstanceId(self,TrunkNetworkInstanceId):
-		self.add_query_param('TrunkNetworkInstanceId',TrunkNetworkInstanceId)
+	def set_Description(self,Description):
+		self.add_query_param('Description',Description)
+
+	def get_ResourceGroupId(self):
+		return self.get_query_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self,ResourceGroupId):
+		self.add_query_param('ResourceGroupId',ResourceGroupId)
+
+	def get_Tags(self):
+		return self.get_query_params().get('Tags')
+
+	def set_Tags(self, Tags):
+		for depth1 in range(len(Tags)):
+			if Tags[depth1].get('Key') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tags[depth1].get('Key'))
+			if Tags[depth1].get('Value') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tags[depth1].get('Value'))
+
+	def get_DryRun(self):
+		return self.get_query_params().get('DryRun')
+
+	def set_DryRun(self,DryRun):
+		self.add_query_param('DryRun',DryRun)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -55,26 +83,14 @@ class AttachNetworkInterfaceRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
-	def get_WaitForNetworkConfigurationReady(self):
-		return self.get_query_params().get('WaitForNetworkConfigurationReady')
-
-	def set_WaitForNetworkConfigurationReady(self,WaitForNetworkConfigurationReady):
-		self.add_query_param('WaitForNetworkConfigurationReady',WaitForNetworkConfigurationReady)
-
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_InstanceId(self):
-		return self.get_query_params().get('InstanceId')
+	def get_ZoneId(self):
+		return self.get_query_params().get('ZoneId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
-
-	def get_NetworkInterfaceId(self):
-		return self.get_query_params().get('NetworkInterfaceId')
-
-	def set_NetworkInterfaceId(self,NetworkInterfaceId):
-		self.add_query_param('NetworkInterfaceId',NetworkInterfaceId)
+	def set_ZoneId(self,ZoneId):
+		self.add_query_param('ZoneId',ZoneId)

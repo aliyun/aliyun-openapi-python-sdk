@@ -169,6 +169,12 @@ class RunInstancesRequest(RpcRequest):
 	def set_SpotInterruptionBehavior(self,SpotInterruptionBehavior):
 		self.add_query_param('SpotInterruptionBehavior',SpotInterruptionBehavior)
 
+	def get_NetworkInterfaceQueueNumber(self):
+		return self.get_query_params().get('NetworkInterfaceQueueNumber')
+
+	def set_NetworkInterfaceQueueNumber(self,NetworkInterfaceQueueNumber):
+		self.add_query_param('NetworkInterfaceQueueNumber',NetworkInterfaceQueueNumber)
+
 	def get_IoOptimized(self):
 		return self.get_query_params().get('IoOptimized')
 
@@ -418,6 +424,8 @@ class RunInstancesRequest(RpcRequest):
 				self.add_query_param('NetworkInterface.' + str(depth1 + 1) + '.NetworkInterfaceName', NetworkInterfaces[depth1].get('NetworkInterfaceName'))
 			if NetworkInterfaces[depth1].get('Description') is not None:
 				self.add_query_param('NetworkInterface.' + str(depth1 + 1) + '.Description', NetworkInterfaces[depth1].get('Description'))
+			if NetworkInterfaces[depth1].get('QueueNumber') is not None:
+				self.add_query_param('NetworkInterface.' + str(depth1 + 1) + '.QueueNumber', NetworkInterfaces[depth1].get('QueueNumber'))
 
 	def get_DeploymentSetId(self):
 		return self.get_query_params().get('DeploymentSetId')

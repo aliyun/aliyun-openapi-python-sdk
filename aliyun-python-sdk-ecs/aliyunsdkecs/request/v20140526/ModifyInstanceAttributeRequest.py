@@ -43,6 +43,12 @@ class ModifyInstanceAttributeRequest(RpcRequest):
 	def set_Recyclable(self,Recyclable):
 		self.add_query_param('Recyclable',Recyclable)
 
+	def get_NetworkInterfaceQueueNumber(self):
+		return self.get_query_params().get('NetworkInterfaceQueueNumber')
+
+	def set_NetworkInterfaceQueueNumber(self,NetworkInterfaceQueueNumber):
+		self.add_query_param('NetworkInterfaceQueueNumber',NetworkInterfaceQueueNumber)
+
 	def get_Description(self):
 		return self.get_query_params().get('Description')
 

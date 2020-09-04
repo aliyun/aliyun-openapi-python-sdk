@@ -43,11 +43,23 @@ class ModifyDedicatedHostAttributeRequest(RpcRequest):
 	def set_Description(self,Description):
 		self.add_query_param('Description',Description)
 
+	def get_CpuOverCommitRatio(self):
+		return self.get_query_params().get('CpuOverCommitRatio')
+
+	def set_CpuOverCommitRatio(self,CpuOverCommitRatio):
+		self.add_query_param('CpuOverCommitRatio',CpuOverCommitRatio)
+
 	def get_ActionOnMaintenance(self):
 		return self.get_query_params().get('ActionOnMaintenance')
 
 	def set_ActionOnMaintenance(self,ActionOnMaintenance):
 		self.add_query_param('ActionOnMaintenance',ActionOnMaintenance)
+
+	def get_DedicatedHostClusterId(self):
+		return self.get_query_params().get('DedicatedHostClusterId')
+
+	def set_DedicatedHostClusterId(self,DedicatedHostClusterId):
+		self.add_query_param('DedicatedHostClusterId',DedicatedHostClusterId)
 
 	def get_DedicatedHostName(self):
 		return self.get_query_params().get('DedicatedHostName')

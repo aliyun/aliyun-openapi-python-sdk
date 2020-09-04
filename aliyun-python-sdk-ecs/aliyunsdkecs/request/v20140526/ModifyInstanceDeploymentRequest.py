@@ -43,6 +43,12 @@ class ModifyInstanceDeploymentRequest(RpcRequest):
 	def set_DeploymentSetGroupNo(self,DeploymentSetGroupNo):
 		self.add_query_param('DeploymentSetGroupNo',DeploymentSetGroupNo)
 
+	def get_DedicatedHostClusterId(self):
+		return self.get_query_params().get('DedicatedHostClusterId')
+
+	def set_DedicatedHostClusterId(self,DedicatedHostClusterId):
+		self.add_query_param('DedicatedHostClusterId',DedicatedHostClusterId)
+
 	def get_InstanceType(self):
 		return self.get_query_params().get('InstanceType')
 
