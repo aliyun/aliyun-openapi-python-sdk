@@ -37,6 +37,18 @@ class IndexVideoRequest(RpcRequest):
 	def set_ExternalId(self,ExternalId):
 		self.add_query_param('ExternalId',ExternalId)
 
+	def get_NotifyEndpoint(self):
+		return self.get_query_params().get('NotifyEndpoint')
+
+	def set_NotifyEndpoint(self,NotifyEndpoint):
+		self.add_query_param('NotifyEndpoint',NotifyEndpoint)
+
+	def get_NotifyTopicName(self):
+		return self.get_query_params().get('NotifyTopicName')
+
+	def set_NotifyTopicName(self,NotifyTopicName):
+		self.add_query_param('NotifyTopicName',NotifyTopicName)
+
 	def get_RemarksB(self):
 		return self.get_query_params().get('RemarksB')
 
