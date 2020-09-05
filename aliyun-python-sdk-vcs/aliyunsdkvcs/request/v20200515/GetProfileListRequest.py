@@ -23,7 +23,7 @@ from aliyunsdkvcs.endpoint import endpoint_data
 class GetProfileListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Vcs', '2020-05-15', 'GetProfileList')
+		RpcRequest.__init__(self, 'Vcs', '2020-05-15', 'GetProfileList','vcs')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -66,6 +66,12 @@ class GetProfileListRequest(RpcRequest):
 
 	def set_PageNumber(self,PageNumber):
 		self.add_body_params('PageNumber', PageNumber)
+
+	def get_FaceImageId(self):
+		return self.get_body_params().get('FaceImageId')
+
+	def set_FaceImageId(self,FaceImageId):
+		self.add_body_params('FaceImageId', FaceImageId)
 
 	def get_FaceUrl(self):
 		return self.get_body_params().get('FaceUrl')

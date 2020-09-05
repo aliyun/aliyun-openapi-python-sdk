@@ -23,7 +23,7 @@ from aliyunsdkvcs.endpoint import endpoint_data
 class GetPersonListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Vcs', '2020-05-15', 'GetPersonList')
+		RpcRequest.__init__(self, 'Vcs', '2020-05-15', 'GetPersonList','vcs')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())

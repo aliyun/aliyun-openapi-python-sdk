@@ -23,13 +23,25 @@ from aliyunsdkvcs.endpoint import endpoint_data
 class GetDeviceLiveUrlRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Vcs', '2020-05-15', 'GetDeviceLiveUrl')
+		RpcRequest.__init__(self, 'Vcs', '2020-05-15', 'GetDeviceLiveUrl','vcs')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+
+	def get_OutProtocol(self):
+		return self.get_body_params().get('OutProtocol')
+
+	def set_OutProtocol(self,OutProtocol):
+		self.add_body_params('OutProtocol', OutProtocol)
+
+	def get_StreamType(self):
+		return self.get_body_params().get('StreamType')
+
+	def set_StreamType(self,StreamType):
+		self.add_body_params('StreamType', StreamType)
 
 	def get_CorpId(self):
 		return self.get_body_params().get('CorpId')
@@ -42,3 +54,9 @@ class GetDeviceLiveUrlRequest(RpcRequest):
 
 	def set_GbId(self,GbId):
 		self.add_body_params('GbId', GbId)
+
+	def get_DeviceId(self):
+		return self.get_body_params().get('DeviceId')
+
+	def set_DeviceId(self,DeviceId):
+		self.add_body_params('DeviceId', DeviceId)
