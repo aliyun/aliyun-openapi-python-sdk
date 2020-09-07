@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkvpc.endpoint import endpoint_data
 
-class AllocateEipSegmentAddressRequest(RpcRequest):
+class ListPhysicalConnectionFeaturesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'AllocateEipSegmentAddress','vpc')
+		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'ListPhysicalConnectionFeatures','vpc')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -43,35 +43,11 @@ class AllocateEipSegmentAddressRequest(RpcRequest):
 	def set_ClientToken(self,ClientToken):
 		self.add_query_param('ClientToken',ClientToken)
 
-	def get_Isp(self):
-		return self.get_query_params().get('Isp')
-
-	def set_Isp(self,Isp):
-		self.add_query_param('Isp',Isp)
-
-	def get_ResourceGroupId(self):
-		return self.get_query_params().get('ResourceGroupId')
-
-	def set_ResourceGroupId(self,ResourceGroupId):
-		self.add_query_param('ResourceGroupId',ResourceGroupId)
-
-	def get_Netmode(self):
-		return self.get_query_params().get('Netmode')
-
-	def set_Netmode(self,Netmode):
-		self.add_query_param('Netmode',Netmode)
-
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_Bandwidth(self):
-		return self.get_query_params().get('Bandwidth')
-
-	def set_Bandwidth(self,Bandwidth):
-		self.add_query_param('Bandwidth',Bandwidth)
 
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
@@ -79,20 +55,14 @@ class AllocateEipSegmentAddressRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
-	def get_EipMask(self):
-		return self.get_query_params().get('EipMask')
-
-	def set_EipMask(self,EipMask):
-		self.add_query_param('EipMask',EipMask)
-
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_InternetChargeType(self):
-		return self.get_query_params().get('InternetChargeType')
+	def get_PhysicalConnectionId(self):
+		return self.get_query_params().get('PhysicalConnectionId')
 
-	def set_InternetChargeType(self,InternetChargeType):
-		self.add_query_param('InternetChargeType',InternetChargeType)
+	def set_PhysicalConnectionId(self,PhysicalConnectionId):
+		self.add_query_param('PhysicalConnectionId',PhysicalConnectionId)

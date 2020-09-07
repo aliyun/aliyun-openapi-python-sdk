@@ -31,6 +31,12 @@ class ModifyRouteEntryRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_ResourceOwnerId(self):
+		return self.get_query_params().get('ResourceOwnerId')
+
+	def set_ResourceOwnerId(self,ResourceOwnerId):
+		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+
 	def get_RouteEntryName(self):
 		return self.get_query_params().get('RouteEntryName')
 
