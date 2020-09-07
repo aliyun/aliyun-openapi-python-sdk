@@ -23,7 +23,7 @@ from aliyunsdkedas.endpoint import endpoint_data
 class InsertApplicationRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'InsertApplication','edas')
+		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'InsertApplication','Edas')
 		self.set_uri_pattern('/pop/v5/changeorder/co_create_app')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):

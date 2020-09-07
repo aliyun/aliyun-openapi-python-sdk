@@ -20,11 +20,11 @@
 from aliyunsdkcore.request import RoaRequest
 from aliyunsdkedas.endpoint import endpoint_data
 
-class BindK8sSlbRequest(RoaRequest):
+class ScaleoutApplicationWithNewInstancesRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'BindK8sSlb','Edas')
-		self.set_uri_pattern('/pop/v5/k8s/acs/k8s_slb_binding')
+		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'ScaleoutApplicationWithNewInstances','Edas')
+		self.set_uri_pattern('/pop/v5/scaling/scale_out')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -32,29 +32,17 @@ class BindK8sSlbRequest(RoaRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_ServicePortInfos(self):
-		return self.get_query_params().get('ServicePortInfos')
+	def get_TemplateVersion(self):
+		return self.get_query_params().get('TemplateVersion')
 
-	def set_ServicePortInfos(self,ServicePortInfos):
-		self.add_query_param('ServicePortInfos',ServicePortInfos)
+	def set_TemplateVersion(self,TemplateVersion):
+		self.add_query_param('TemplateVersion',TemplateVersion)
 
-	def get_SlbId(self):
-		return self.get_query_params().get('SlbId')
+	def get_TemplateInstanceId(self):
+		return self.get_query_params().get('TemplateInstanceId')
 
-	def set_SlbId(self,SlbId):
-		self.add_query_param('SlbId',SlbId)
-
-	def get_SlbProtocol(self):
-		return self.get_query_params().get('SlbProtocol')
-
-	def set_SlbProtocol(self,SlbProtocol):
-		self.add_query_param('SlbProtocol',SlbProtocol)
-
-	def get_Port(self):
-		return self.get_query_params().get('Port')
-
-	def set_Port(self,Port):
-		self.add_query_param('Port',Port)
+	def set_TemplateInstanceId(self,TemplateInstanceId):
+		self.add_query_param('TemplateInstanceId',TemplateInstanceId)
 
 	def get_AppId(self):
 		return self.get_query_params().get('AppId')
@@ -62,20 +50,26 @@ class BindK8sSlbRequest(RoaRequest):
 	def set_AppId(self,AppId):
 		self.add_query_param('AppId',AppId)
 
-	def get_ClusterId(self):
-		return self.get_query_params().get('ClusterId')
+	def get_GroupId(self):
+		return self.get_query_params().get('GroupId')
 
-	def set_ClusterId(self,ClusterId):
-		self.add_query_param('ClusterId',ClusterId)
+	def set_GroupId(self,GroupId):
+		self.add_query_param('GroupId',GroupId)
 
-	def get_Type(self):
-		return self.get_query_params().get('Type')
+	def get_ScalingNum(self):
+		return self.get_query_params().get('ScalingNum')
 
-	def set_Type(self,Type):
-		self.add_query_param('Type',Type)
+	def set_ScalingNum(self,ScalingNum):
+		self.add_query_param('ScalingNum',ScalingNum)
 
-	def get_TargetPort(self):
-		return self.get_query_params().get('TargetPort')
+	def get_TemplateId(self):
+		return self.get_query_params().get('TemplateId')
 
-	def set_TargetPort(self,TargetPort):
-		self.add_query_param('TargetPort',TargetPort)
+	def set_TemplateId(self,TemplateId):
+		self.add_query_param('TemplateId',TemplateId)
+
+	def get_ScalingPolicy(self):
+		return self.get_query_params().get('ScalingPolicy')
+
+	def set_ScalingPolicy(self,ScalingPolicy):
+		self.add_query_param('ScalingPolicy',ScalingPolicy)

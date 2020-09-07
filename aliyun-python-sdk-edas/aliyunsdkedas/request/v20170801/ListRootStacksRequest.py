@@ -23,7 +23,7 @@ from aliyunsdkedas.endpoint import endpoint_data
 class ListRootStacksRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'ListRootStacks','edas')
+		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'ListRootStacks','Edas')
 		self.set_uri_pattern('/pop/v5/s2i/list_root_stack')
 		self.set_method('GET')
 		if hasattr(self, "endpoint_map"):

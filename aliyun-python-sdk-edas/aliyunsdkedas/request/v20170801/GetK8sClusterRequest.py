@@ -20,11 +20,11 @@
 from aliyunsdkcore.request import RoaRequest
 from aliyunsdkedas.endpoint import endpoint_data
 
-class InsertConfigCenterRequest(RoaRequest):
+class GetK8sClusterRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'InsertConfigCenter','Edas')
-		self.set_uri_pattern('/pop/v5/configCenter')
+		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'GetK8sCluster','Edas')
+		self.set_uri_pattern('/pop/v5/k8s_clusters')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -32,32 +32,26 @@ class InsertConfigCenterRequest(RoaRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_DataId(self):
-		return self.get_query_params().get('DataId')
+	def get_ClusterType(self):
+		return self.get_query_params().get('ClusterType')
 
-	def set_DataId(self,DataId):
-		self.add_query_param('DataId',DataId)
+	def set_ClusterType(self,ClusterType):
+		self.add_query_param('ClusterType',ClusterType)
 
-	def get_Data(self):
-		return self.get_query_params().get('Data')
+	def get_RegionTag(self):
+		return self.get_query_params().get('RegionTag')
 
-	def set_Data(self,Data):
-		self.add_query_param('Data',Data)
+	def set_RegionTag(self,RegionTag):
+		self.add_query_param('RegionTag',RegionTag)
 
-	def get_AppName(self):
-		return self.get_query_params().get('AppName')
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
 
-	def set_AppName(self,AppName):
-		self.add_query_param('AppName',AppName)
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
 
-	def get_LogicalRegionId(self):
-		return self.get_query_params().get('LogicalRegionId')
+	def get_CurrentPage(self):
+		return self.get_query_params().get('CurrentPage')
 
-	def set_LogicalRegionId(self,LogicalRegionId):
-		self.add_query_param('LogicalRegionId',LogicalRegionId)
-
-	def get_Group(self):
-		return self.get_query_params().get('Group')
-
-	def set_Group(self,Group):
-		self.add_query_param('Group',Group)
+	def set_CurrentPage(self,CurrentPage):
+		self.add_query_param('CurrentPage',CurrentPage)

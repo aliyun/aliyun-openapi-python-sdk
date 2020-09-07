@@ -23,7 +23,7 @@ from aliyunsdkedas.endpoint import endpoint_data
 class ListApplicationEcuRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'ListApplicationEcu','edas')
+		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'ListApplicationEcu','Edas')
 		self.set_uri_pattern('/pop/v5/resource/ecu_list')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):

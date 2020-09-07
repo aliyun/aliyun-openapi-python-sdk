@@ -23,7 +23,7 @@ from aliyunsdkedas.endpoint import endpoint_data
 class GetChangeOrderInfoRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'GetChangeOrderInfo','edas')
+		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'GetChangeOrderInfo','Edas')
 		self.set_uri_pattern('/pop/v5/changeorder/change_order_info')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):

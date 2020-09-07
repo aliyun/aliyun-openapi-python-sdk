@@ -23,7 +23,7 @@ from aliyunsdkedas.endpoint import endpoint_data
 class InsertRoleRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'InsertRole','edas')
+		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'InsertRole','Edas')
 		self.set_uri_pattern('/pop/v5/account/create_role')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):

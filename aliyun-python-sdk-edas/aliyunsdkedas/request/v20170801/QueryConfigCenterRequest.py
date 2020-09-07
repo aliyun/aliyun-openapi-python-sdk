@@ -23,7 +23,7 @@ from aliyunsdkedas.endpoint import endpoint_data
 class QueryConfigCenterRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'QueryConfigCenter','edas')
+		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'QueryConfigCenter','Edas')
 		self.set_uri_pattern('/pop/v5/configCenter')
 		self.set_method('GET')
 		if hasattr(self, "endpoint_map"):

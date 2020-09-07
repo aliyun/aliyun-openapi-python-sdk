@@ -23,7 +23,7 @@ from aliyunsdkedas.endpoint import endpoint_data
 class ListHistoryDeployVersionRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'ListHistoryDeployVersion','edas')
+		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'ListHistoryDeployVersion','Edas')
 		self.set_uri_pattern('/pop/v5/app/deploy_history_version_list')
 		self.set_method('GET')
 		if hasattr(self, "endpoint_map"):

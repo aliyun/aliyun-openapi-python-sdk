@@ -23,7 +23,7 @@ from aliyunsdkedas.endpoint import endpoint_data
 class AuthorizeRoleRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'AuthorizeRole','edas')
+		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'AuthorizeRole','Edas')
 		self.set_uri_pattern('/pop/v5/account/authorize_role')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
