@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkoos.endpoint import endpoint_data
 
-class ListTagResourcesRequest(RpcRequest):
+class GetSecretParameterRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'oos', '2019-06-01', 'ListTagResources','oos')
+		RpcRequest.__init__(self, 'oos', '2019-06-01', 'GetSecretParameter','oos')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,26 +31,20 @@ class ListTagResourcesRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_ResourceType(self):
-		return self.get_query_params().get('ResourceType')
+	def get_WithDecryption(self):
+		return self.get_query_params().get('WithDecryption')
 
-	def set_ResourceType(self,ResourceType):
-		self.add_query_param('ResourceType',ResourceType)
+	def set_WithDecryption(self,WithDecryption):
+		self.add_query_param('WithDecryption',WithDecryption)
 
-	def get_Tags(self):
-		return self.get_query_params().get('Tags')
+	def get_ParameterVersion(self):
+		return self.get_query_params().get('ParameterVersion')
 
-	def set_Tags(self,Tags):
-		self.add_query_param('Tags',Tags)
+	def set_ParameterVersion(self,ParameterVersion):
+		self.add_query_param('ParameterVersion',ParameterVersion)
 
-	def get_NextToken(self):
-		return self.get_query_params().get('NextToken')
+	def get_Name(self):
+		return self.get_query_params().get('Name')
 
-	def set_NextToken(self,NextToken):
-		self.add_query_param('NextToken',NextToken)
-
-	def get_ResourceIds(self):
-		return self.get_query_params().get('ResourceIds')
-
-	def set_ResourceIds(self,ResourceIds):
-		self.add_query_param('ResourceIds',ResourceIds)
+	def set_Name(self,Name):
+		self.add_query_param('Name',Name)

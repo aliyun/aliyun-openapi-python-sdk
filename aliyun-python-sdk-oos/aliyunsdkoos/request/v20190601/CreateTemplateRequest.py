@@ -23,7 +23,7 @@ from aliyunsdkoos.endpoint import endpoint_data
 class CreateTemplateRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'oos', '2019-06-01', 'CreateTemplate')
+		RpcRequest.__init__(self, 'oos', '2019-06-01', 'CreateTemplate','oos')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
