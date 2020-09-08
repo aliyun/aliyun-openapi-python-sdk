@@ -49,6 +49,12 @@ class CreateAsyncPredictRequest(RpcRequest):
 	def set_DetailTag(self,DetailTag):
 		self.add_body_params('DetailTag', DetailTag)
 
+	def get_FetchContent(self):
+		return self.get_body_params().get('FetchContent')
+
+	def set_FetchContent(self,FetchContent):
+		self.add_body_params('FetchContent', FetchContent)
+
 	def get_Content(self):
 		return self.get_body_params().get('Content')
 
