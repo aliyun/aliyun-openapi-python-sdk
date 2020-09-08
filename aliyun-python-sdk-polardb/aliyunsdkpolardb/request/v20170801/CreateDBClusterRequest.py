@@ -43,23 +43,11 @@ class CreateDBClusterRequest(RpcRequest):
 	def set_DBClusterDescription(self,DBClusterDescription):
 		self.add_query_param('DBClusterDescription',DBClusterDescription)
 
-	def get_ClientToken(self):
-		return self.get_query_params().get('ClientToken')
-
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
-
 	def get_CreationCategory(self):
 		return self.get_query_params().get('CreationCategory')
 
 	def set_CreationCategory(self,CreationCategory):
 		self.add_query_param('CreationCategory',CreationCategory)
-
-	def get_ClusterNetworkType(self):
-		return self.get_query_params().get('ClusterNetworkType')
-
-	def set_ClusterNetworkType(self,ClusterNetworkType):
-		self.add_query_param('ClusterNetworkType',ClusterNetworkType)
 
 	def get_ResourceGroupId(self):
 		return self.get_query_params().get('ResourceGroupId')
@@ -73,12 +61,6 @@ class CreateDBClusterRequest(RpcRequest):
 	def set_DBNodeClass(self,DBNodeClass):
 		self.add_query_param('DBNodeClass',DBNodeClass)
 
-	def get_GDNId(self):
-		return self.get_query_params().get('GDNId')
-
-	def set_GDNId(self,GDNId):
-		self.add_query_param('GDNId',GDNId)
-
 	def get_CreationOption(self):
 		return self.get_query_params().get('CreationOption')
 
@@ -91,35 +73,23 @@ class CreateDBClusterRequest(RpcRequest):
 	def set_SourceResourceId(self,SourceResourceId):
 		self.add_query_param('SourceResourceId',SourceResourceId)
 
+	def get_BackupRetentionPolicyOnClusterDeletion(self):
+		return self.get_query_params().get('BackupRetentionPolicyOnClusterDeletion')
+
+	def set_BackupRetentionPolicyOnClusterDeletion(self,BackupRetentionPolicyOnClusterDeletion):
+		self.add_query_param('BackupRetentionPolicyOnClusterDeletion',BackupRetentionPolicyOnClusterDeletion)
+
 	def get_Period(self):
 		return self.get_query_params().get('Period')
 
 	def set_Period(self,Period):
 		self.add_query_param('Period',Period)
 
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
-
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_OwnerAccount(self):
-		return self.get_query_params().get('OwnerAccount')
-
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
-
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
-
-	def get_UsedTime(self):
-		return self.get_query_params().get('UsedTime')
-
-	def set_UsedTime(self,UsedTime):
-		self.add_query_param('UsedTime',UsedTime)
 
 	def get_VSwitchId(self):
 		return self.get_query_params().get('VSwitchId')
@@ -139,6 +109,66 @@ class CreateDBClusterRequest(RpcRequest):
 	def set_AutoRenew(self,AutoRenew):
 		self.add_query_param('AutoRenew',AutoRenew)
 
+	def get_ZoneId(self):
+		return self.get_query_params().get('ZoneId')
+
+	def set_ZoneId(self,ZoneId):
+		self.add_query_param('ZoneId',ZoneId)
+
+	def get_TDEStatus(self):
+		return self.get_query_params().get('TDEStatus')
+
+	def set_TDEStatus(self,TDEStatus):
+		self.add_query_param('TDEStatus',TDEStatus)
+
+	def get_LowerCaseTableNames(self):
+		return self.get_query_params().get('LowerCaseTableNames')
+
+	def set_LowerCaseTableNames(self,LowerCaseTableNames):
+		self.add_query_param('LowerCaseTableNames',LowerCaseTableNames)
+
+	def get_ClientToken(self):
+		return self.get_query_params().get('ClientToken')
+
+	def set_ClientToken(self,ClientToken):
+		self.add_query_param('ClientToken',ClientToken)
+
+	def get_DefaultTimeZone(self):
+		return self.get_query_params().get('DefaultTimeZone')
+
+	def set_DefaultTimeZone(self,DefaultTimeZone):
+		self.add_query_param('DefaultTimeZone',DefaultTimeZone)
+
+	def get_ClusterNetworkType(self):
+		return self.get_query_params().get('ClusterNetworkType')
+
+	def set_ClusterNetworkType(self,ClusterNetworkType):
+		self.add_query_param('ClusterNetworkType',ClusterNetworkType)
+
+	def get_GDNId(self):
+		return self.get_query_params().get('GDNId')
+
+	def set_GDNId(self,GDNId):
+		self.add_query_param('GDNId',GDNId)
+
+	def get_ResourceOwnerAccount(self):
+		return self.get_query_params().get('ResourceOwnerAccount')
+
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+
+	def get_OwnerAccount(self):
+		return self.get_query_params().get('OwnerAccount')
+
+	def set_OwnerAccount(self,OwnerAccount):
+		self.add_query_param('OwnerAccount',OwnerAccount)
+
+	def get_UsedTime(self):
+		return self.get_query_params().get('UsedTime')
+
+	def set_UsedTime(self,UsedTime):
+		self.add_query_param('UsedTime',UsedTime)
+
 	def get_VPCId(self):
 		return self.get_query_params().get('VPCId')
 
@@ -151,12 +181,6 @@ class CreateDBClusterRequest(RpcRequest):
 	def set_DBType(self,DBType):
 		self.add_query_param('DBType',DBType)
 
-	def get_ZoneId(self):
-		return self.get_query_params().get('ZoneId')
-
-	def set_ZoneId(self,ZoneId):
-		self.add_query_param('ZoneId',ZoneId)
-
 	def get_DBVersion(self):
 		return self.get_query_params().get('DBVersion')
 
@@ -168,12 +192,6 @@ class CreateDBClusterRequest(RpcRequest):
 
 	def set_CloneDataPoint(self,CloneDataPoint):
 		self.add_query_param('CloneDataPoint',CloneDataPoint)
-
-	def get_TDEStatus(self):
-		return self.get_query_params().get('TDEStatus')
-
-	def set_TDEStatus(self,TDEStatus):
-		self.add_query_param('TDEStatus',TDEStatus)
 
 	def get_PayType(self):
 		return self.get_query_params().get('PayType')
