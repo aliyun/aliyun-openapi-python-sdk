@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkimageprocess.endpoint import endpoint_data
 
-class DetectCovid19CadRequest(RpcRequest):
+class DetectKneeKeypointXRayRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'imageprocess', '2020-03-20', 'DetectCovid19Cad','imageprocess')
+		RpcRequest.__init__(self, 'imageprocess', '2020-03-20', 'DetectKneeKeypointXRay','imageprocess')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,10 +31,32 @@ class DetectCovid19CadRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_URLLists(self):
-		return self.get_body_params().get('URLList')
+	def get_DataFormat(self):
+		return self.get_body_params().get('DataFormat')
 
-	def set_URLLists(self, URLLists):
-		for depth1 in range(len(URLLists)):
-			if URLLists[depth1].get('URL') is not None:
-				self.add_body_params('URLList.' + str(depth1 + 1) + '.URL', URLLists[depth1].get('URL'))
+	def set_DataFormat(self,DataFormat):
+		self.add_body_params('DataFormat', DataFormat)
+
+	def get_OrgId(self):
+		return self.get_body_params().get('OrgId')
+
+	def set_OrgId(self,OrgId):
+		self.add_body_params('OrgId', OrgId)
+
+	def get_OrgName(self):
+		return self.get_body_params().get('OrgName')
+
+	def set_OrgName(self,OrgName):
+		self.add_body_params('OrgName', OrgName)
+
+	def get_ImageUrl(self):
+		return self.get_body_params().get('ImageUrl')
+
+	def set_ImageUrl(self,ImageUrl):
+		self.add_body_params('ImageUrl', ImageUrl)
+
+	def get_TracerId(self):
+		return self.get_body_params().get('TracerId')
+
+	def set_TracerId(self,TracerId):
+		self.add_body_params('TracerId', TracerId)

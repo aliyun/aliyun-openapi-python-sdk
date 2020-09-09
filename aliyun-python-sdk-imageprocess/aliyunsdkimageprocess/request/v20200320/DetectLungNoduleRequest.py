@@ -32,7 +32,7 @@ class DetectLungNoduleRequest(RpcRequest):
 
 
 	def get_URLLists(self):
-		return self.get_body_params().get('URLLists')
+		return self.get_body_params().get('URLList')
 
 	def set_URLLists(self, URLLists):
 		for depth1 in range(len(URLLists)):
