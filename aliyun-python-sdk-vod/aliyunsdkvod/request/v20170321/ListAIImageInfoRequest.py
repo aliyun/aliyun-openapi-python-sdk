@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkvod.endpoint import endpoint_data
 
-class SubmitAIMediaAuditJobRequest(RpcRequest):
+class ListAIImageInfoRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'vod', '2017-03-21', 'SubmitAIMediaAuditJob','vod')
+		RpcRequest.__init__(self, 'vod', '2017-03-21', 'ListAIImageInfo','vod')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -37,44 +37,20 @@ class SubmitAIMediaAuditJobRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_UserData(self):
-		return self.get_query_params().get('UserData')
-
-	def set_UserData(self,UserData):
-		self.add_query_param('UserData',UserData)
-
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
+	def get_VideoId(self):
+		return self.get_query_params().get('VideoId')
+
+	def set_VideoId(self,VideoId):
+		self.add_query_param('VideoId',VideoId)
+
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
-
-	def get_MediaId(self):
-		return self.get_query_params().get('MediaId')
-
-	def set_MediaId(self,MediaId):
-		self.add_query_param('MediaId',MediaId)
-
-	def get_TemplateId(self):
-		return self.get_query_params().get('TemplateId')
-
-	def set_TemplateId(self,TemplateId):
-		self.add_query_param('TemplateId',TemplateId)
-
-	def get_MediaAuditConfiguration(self):
-		return self.get_query_params().get('MediaAuditConfiguration')
-
-	def set_MediaAuditConfiguration(self,MediaAuditConfiguration):
-		self.add_query_param('MediaAuditConfiguration',MediaAuditConfiguration)
-
-	def get_MediaType(self):
-		return self.get_query_params().get('MediaType')
-
-	def set_MediaType(self,MediaType):
-		self.add_query_param('MediaType',MediaType)
