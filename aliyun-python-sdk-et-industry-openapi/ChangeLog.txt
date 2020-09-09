@@ -1,3 +1,6 @@
+2020-09-09 Version: 3.6
+- Python version.
+
 2020-09-09 Version: 3.x
 - Python version.
 
