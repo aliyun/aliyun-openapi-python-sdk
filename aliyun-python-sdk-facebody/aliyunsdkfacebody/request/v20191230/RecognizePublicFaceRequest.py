@@ -32,7 +32,7 @@ class RecognizePublicFaceRequest(RpcRequest):
 
 
 	def get_Tasks(self):
-		return self.get_body_params().get('Tasks')
+		return self.get_body_params().get('Task')
 
 	def set_Tasks(self, Tasks):
 		for depth1 in range(len(Tasks)):

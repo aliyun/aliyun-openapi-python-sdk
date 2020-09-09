@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkfacebody.endpoint import endpoint_data
 
-class RecognizeActionRequest(RpcRequest):
+class DetectChefCapRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'facebody', '2019-12-30', 'RecognizeAction','facebody')
+		RpcRequest.__init__(self, 'facebody', '2019-12-30', 'DetectChefCap','facebody')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,22 +31,8 @@ class RecognizeActionRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_URLLists(self):
-		return self.get_body_params().get('URLList')
+	def get_ImageURL(self):
+		return self.get_body_params().get('ImageURL')
 
-	def set_URLLists(self, URLLists):
-		for depth1 in range(len(URLLists)):
-			if URLLists[depth1].get('URL') is not None:
-				self.add_body_params('URLList.' + str(depth1 + 1) + '.URL', URLLists[depth1].get('URL'))
-
-	def get_Type(self):
-		return self.get_body_params().get('Type')
-
-	def set_Type(self,Type):
-		self.add_body_params('Type', Type)
-
-	def get_VideoUrl(self):
-		return self.get_body_params().get('VideoUrl')
-
-	def set_VideoUrl(self,VideoUrl):
-		self.add_body_params('VideoUrl', VideoUrl)
+	def set_ImageURL(self,ImageURL):
+		self.add_body_params('ImageURL', ImageURL)
