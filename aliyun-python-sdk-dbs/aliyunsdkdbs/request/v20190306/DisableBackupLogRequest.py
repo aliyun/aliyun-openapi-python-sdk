@@ -20,22 +20,16 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdbs.endpoint import endpoint_data
 
-class ModifyBackupStrategyRequest(RpcRequest):
+class DisableBackupLogRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dbs', '2019-03-06', 'ModifyBackupStrategy','cbs')
+		RpcRequest.__init__(self, 'Dbs', '2019-03-06', 'DisableBackupLog','cbs')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_BackupLogIntervalSeconds(self):
-		return self.get_query_params().get('BackupLogIntervalSeconds')
-
-	def set_BackupLogIntervalSeconds(self,BackupLogIntervalSeconds):
-		self.add_query_param('BackupLogIntervalSeconds',BackupLogIntervalSeconds)
 
 	def get_ClientToken(self):
 		return self.get_query_params().get('ClientToken')
@@ -54,21 +48,3 @@ class ModifyBackupStrategyRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
-
-	def get_BackupPeriod(self):
-		return self.get_query_params().get('BackupPeriod')
-
-	def set_BackupPeriod(self,BackupPeriod):
-		self.add_query_param('BackupPeriod',BackupPeriod)
-
-	def get_BackupStartTime(self):
-		return self.get_query_params().get('BackupStartTime')
-
-	def set_BackupStartTime(self,BackupStartTime):
-		self.add_query_param('BackupStartTime',BackupStartTime)
-
-	def get_BackupStrategyType(self):
-		return self.get_query_params().get('BackupStrategyType')
-
-	def set_BackupStrategyType(self,BackupStrategyType):
-		self.add_query_param('BackupStrategyType',BackupStrategyType)

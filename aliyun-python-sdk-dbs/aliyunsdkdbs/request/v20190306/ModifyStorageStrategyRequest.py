@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdbs.endpoint import endpoint_data
 
-class ModifyBackupStrategyRequest(RpcRequest):
+class ModifyStorageStrategyRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dbs', '2019-03-06', 'ModifyBackupStrategy','cbs')
+		RpcRequest.__init__(self, 'Dbs', '2019-03-06', 'ModifyStorageStrategy','cbs')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,11 +31,11 @@ class ModifyBackupStrategyRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_BackupLogIntervalSeconds(self):
-		return self.get_query_params().get('BackupLogIntervalSeconds')
+	def get_DuplicationArchivePeriod(self):
+		return self.get_query_params().get('DuplicationArchivePeriod')
 
-	def set_BackupLogIntervalSeconds(self,BackupLogIntervalSeconds):
-		self.add_query_param('BackupLogIntervalSeconds',BackupLogIntervalSeconds)
+	def set_DuplicationArchivePeriod(self,DuplicationArchivePeriod):
+		self.add_query_param('DuplicationArchivePeriod',DuplicationArchivePeriod)
 
 	def get_ClientToken(self):
 		return self.get_query_params().get('ClientToken')
@@ -55,20 +55,14 @@ class ModifyBackupStrategyRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_BackupPeriod(self):
-		return self.get_query_params().get('BackupPeriod')
+	def get_BackupRetentionPeriod(self):
+		return self.get_query_params().get('BackupRetentionPeriod')
 
-	def set_BackupPeriod(self,BackupPeriod):
-		self.add_query_param('BackupPeriod',BackupPeriod)
+	def set_BackupRetentionPeriod(self,BackupRetentionPeriod):
+		self.add_query_param('BackupRetentionPeriod',BackupRetentionPeriod)
 
-	def get_BackupStartTime(self):
-		return self.get_query_params().get('BackupStartTime')
+	def get_DuplicationInfrequentAccessPeriod(self):
+		return self.get_query_params().get('DuplicationInfrequentAccessPeriod')
 
-	def set_BackupStartTime(self,BackupStartTime):
-		self.add_query_param('BackupStartTime',BackupStartTime)
-
-	def get_BackupStrategyType(self):
-		return self.get_query_params().get('BackupStrategyType')
-
-	def set_BackupStrategyType(self,BackupStrategyType):
-		self.add_query_param('BackupStrategyType',BackupStrategyType)
+	def set_DuplicationInfrequentAccessPeriod(self,DuplicationInfrequentAccessPeriod):
+		self.add_query_param('DuplicationInfrequentAccessPeriod',DuplicationInfrequentAccessPeriod)

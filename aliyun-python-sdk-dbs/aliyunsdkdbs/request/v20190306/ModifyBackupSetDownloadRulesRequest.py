@@ -79,6 +79,12 @@ class ModifyBackupSetDownloadRulesRequest(RpcRequest):
 	def set_IncrementDataFormat(self,IncrementDataFormat):
 		self.add_query_param('IncrementDataFormat',IncrementDataFormat)
 
+	def get_BackupSetDownloadTargetTypeLocation(self):
+		return self.get_query_params().get('BackupSetDownloadTargetTypeLocation')
+
+	def set_BackupSetDownloadTargetTypeLocation(self,BackupSetDownloadTargetTypeLocation):
+		self.add_query_param('BackupSetDownloadTargetTypeLocation',BackupSetDownloadTargetTypeLocation)
+
 	def get_BackupSetDownloadDir(self):
 		return self.get_query_params().get('BackupSetDownloadDir')
 
