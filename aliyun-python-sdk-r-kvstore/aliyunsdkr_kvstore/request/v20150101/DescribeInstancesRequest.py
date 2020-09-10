@@ -97,8 +97,14 @@ class DescribeInstancesRequest(RpcRequest):
 	def set_InstanceType(self,InstanceType):
 		self.add_query_param('InstanceType',InstanceType)
 
+	def get_EditionType(self):
+		return self.get_query_params().get('EditionType')
+
+	def set_EditionType(self,EditionType):
+		self.add_query_param('EditionType',EditionType)
+
 	def get_Tags(self):
-		return self.get_query_params().get('Tags')
+		return self.get_query_params().get('Tag')
 
 	def set_Tags(self, Tags):
 		for depth1 in range(len(Tags)):
