@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdms_enterprise.endpoint import endpoint_data
 
-class ListLogicTablesRequest(RpcRequest):
+class ExecuteScriptRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'dms-enterprise', '2018-11-01', 'ListLogicTables','dmsenterprise')
+		RpcRequest.__init__(self, 'dms-enterprise', '2018-11-01', 'ExecuteScript','dmsenterprise')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,32 +31,26 @@ class ListLogicTablesRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_SearchName(self):
-		return self.get_query_params().get('SearchName')
+	def get_DbId(self):
+		return self.get_query_params().get('DbId')
 
-	def set_SearchName(self,SearchName):
-		self.add_query_param('SearchName',SearchName)
+	def set_DbId(self,DbId):
+		self.add_query_param('DbId',DbId)
 
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
+	def get_Logic(self):
+		return self.get_query_params().get('Logic')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
+	def set_Logic(self,Logic):
+		self.add_query_param('Logic',Logic)
 
-	def get_DatabaseId(self):
-		return self.get_query_params().get('DatabaseId')
+	def get_Script(self):
+		return self.get_query_params().get('Script')
 
-	def set_DatabaseId(self,DatabaseId):
-		self.add_query_param('DatabaseId',DatabaseId)
+	def set_Script(self,Script):
+		self.add_query_param('Script',Script)
 
 	def get_Tid(self):
 		return self.get_query_params().get('Tid')
 
 	def set_Tid(self,Tid):
 		self.add_query_param('Tid',Tid)
-
-	def get_PageNumber(self):
-		return self.get_query_params().get('PageNumber')
-
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
