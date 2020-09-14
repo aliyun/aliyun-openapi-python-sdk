@@ -23,7 +23,7 @@ from aliyunsdkedas.endpoint import endpoint_data
 class ImportK8sClusterRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'ImportK8sCluster','Edas')
+		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'ImportK8sCluster','edas')
 		self.set_uri_pattern('/pop/v5/import_k8s_cluster')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
@@ -37,6 +37,12 @@ class ImportK8sClusterRequest(RoaRequest):
 
 	def set_Mode(self,Mode):
 		self.add_query_param('Mode',Mode)
+
+	def get_EnableAsm(self):
+		return self.get_query_params().get('EnableAsm')
+
+	def set_EnableAsm(self,EnableAsm):
+		self.add_query_param('EnableAsm',EnableAsm)
 
 	def get_NamespaceId(self):
 		return self.get_query_params().get('NamespaceId')

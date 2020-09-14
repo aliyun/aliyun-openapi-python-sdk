@@ -23,7 +23,7 @@ from aliyunsdkedas.endpoint import endpoint_data
 class QueryMigrateRegionListRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'QueryMigrateRegionList','Edas')
+		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'QueryMigrateRegionList','edas')
 		self.set_uri_pattern('/pop/v5/resource/migrate_region_select')
 		self.set_method('GET')
 		if hasattr(self, "endpoint_map"):

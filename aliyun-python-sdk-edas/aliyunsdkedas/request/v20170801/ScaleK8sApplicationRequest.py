@@ -23,7 +23,7 @@ from aliyunsdkedas.endpoint import endpoint_data
 class ScaleK8sApplicationRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'ScaleK8sApplication','Edas')
+		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'ScaleK8sApplication','edas')
 		self.set_uri_pattern('/pop/v5/k8s/acs/k8s_apps')
 		self.set_method('PUT')
 		if hasattr(self, "endpoint_map"):

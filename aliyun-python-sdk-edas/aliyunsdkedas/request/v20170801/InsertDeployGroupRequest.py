@@ -23,7 +23,7 @@ from aliyunsdkedas.endpoint import endpoint_data
 class InsertDeployGroupRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'InsertDeployGroup','Edas')
+		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'InsertDeployGroup','edas')
 		self.set_uri_pattern('/pop/v5/deploy_group')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
@@ -43,3 +43,9 @@ class InsertDeployGroupRequest(RoaRequest):
 
 	def set_GroupName(self,GroupName):
 		self.add_query_param('GroupName',GroupName)
+
+	def get_InitPackageVersionId(self):
+		return self.get_query_params().get('InitPackageVersionId')
+
+	def set_InitPackageVersionId(self,InitPackageVersionId):
+		self.add_query_param('InitPackageVersionId',InitPackageVersionId)
