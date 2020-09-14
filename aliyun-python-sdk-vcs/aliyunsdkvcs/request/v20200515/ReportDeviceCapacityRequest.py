@@ -32,7 +32,7 @@ class ReportDeviceCapacityRequest(RpcRequest):
 
 
 	def get_StreamCapacitiess(self):
-		return self.get_body_params().get('StreamCapacitiess')
+		return self.get_body_params().get('StreamCapacities')
 
 	def set_StreamCapacitiess(self, StreamCapacitiess):
 		for depth1 in range(len(StreamCapacitiess)):

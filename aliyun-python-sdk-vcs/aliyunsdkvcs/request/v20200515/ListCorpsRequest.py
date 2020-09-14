@@ -42,3 +42,9 @@ class ListCorpsRequest(RpcRequest):
 
 	def set_PageSize(self,PageSize):
 		self.add_body_params('PageSize', PageSize)
+
+	def get_CorpName(self):
+		return self.get_body_params().get('CorpName')
+
+	def set_CorpName(self,CorpName):
+		self.add_body_params('CorpName', CorpName)
