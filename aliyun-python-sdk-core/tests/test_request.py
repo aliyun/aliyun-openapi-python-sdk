@@ -52,7 +52,9 @@ class TestRequest(unittest.TestCase):
         r.set_content("content")
         self.assertEqual(r.get_content(), "content")
         # headers
-        self.assertDictEqual(r.get_headers(), {'x-sdk-invoke-type': 'normal'})
+        self.assertDictEqual(r.get_headers(), {'x-acs-action': 'new action name',
+                                               'x-acs-version': 'version',
+                                               'x-sdk-invoke-type': 'normal'})
         r.set_headers({})
         self.assertDictEqual(r.get_headers(), {})
         r.add_header("key", "value")
@@ -197,7 +199,9 @@ class TestRequest(unittest.TestCase):
         r.set_content("content")
         self.assertEqual(r.get_content(), "content")
         # headers
-        self.assertDictEqual(r.get_headers(), {'x-sdk-invoke-type': 'normal'})
+        self.assertDictEqual(r.get_headers(), {'x-acs-action': 'new action name',
+                                               'x-acs-version': 'version',
+                                               'x-sdk-invoke-type': 'normal'})
         r.set_headers({})
         self.assertDictEqual(r.get_headers(), {})
         r.add_header("key", "value")
@@ -346,7 +350,10 @@ class TestRequest(unittest.TestCase):
         r.set_content("content")
         self.assertEqual(r.get_content(), "content")
         # headers
-        self.assertDictEqual(r.get_headers(), {'x-sdk-invoke-type': 'common'})
+        self.assertDictEqual(r.get_headers(), {
+            'x-acs-action': 'new action name',
+            'x-sdk-invoke-type': 'common'
+        })
         r.set_headers({})
         self.assertDictEqual(r.get_headers(), {})
         r.add_header("key", "value")
@@ -474,6 +481,7 @@ class TestRequest(unittest.TestCase):
     def test_common_request_get_signed_header(self, mock_get_rfc_2616_date):
         r = CommonRequest()
         r.set_version("version")
+        r.set_action_name('action_name')
         r.set_uri_pattern('/users/[userid]')
         r.set_path_params({"userid": "jacksontian"})
         r.set_product('product')
@@ -485,8 +493,9 @@ class TestRequest(unittest.TestCase):
         mock_get_rfc_2616_date.assert_called_once_with()
         self.assertDictEqual(headers, {
             'Accept': 'application/octet-stream',
-            'Authorization': 'acs accesskeyid:Lq1u0OzLW/uqLQswxwhne97Umlw=',
+            'Authorization': 'acs accesskeyid:j73ZHar0vd0+MGaKFlGK9JyBnEo=',
             'Date': '2018-12-04T03:25:29Z',
+            'x-acs-action': 'action_name',
             'x-acs-region-id': 'regionid',
             'x-acs-signature-method': 'HMAC-SHA1',
             'x-acs-signature-version': '1.0',

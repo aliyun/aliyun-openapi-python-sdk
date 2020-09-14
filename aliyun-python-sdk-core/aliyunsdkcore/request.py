@@ -96,6 +96,10 @@ class AcsRequest:
         self._params = {}
         self._method = method
         self._header = {}
+        if action_name is not None:
+            self.add_header('x-acs-action', action_name)
+        if version is not None:
+            self.add_header('x-acs-version', version)
         self._body_params = {}
         self._uri_pattern = None
         self._uri_params = None
@@ -162,9 +166,11 @@ class AcsRequest:
         self._product = product
 
     def set_version(self, version):
+        self._header['x-acs-version'] = version
         self._version = version
 
     def set_action_name(self, action_name):
+        self._header['x-acs-action'] = action_name
         self._action_name = action_name
 
     def set_accept_format(self, accept_format):
@@ -453,7 +459,7 @@ class RoaRequest(AcsRequest):
 class CommonRequest(AcsRequest):
     def __init__(self, domain=None, version=None, action_name=None, uri_pattern=None, product=None,
                  location_endpoint_type='openAPI'):
-        super(CommonRequest, self).__init__(product)
+        super(CommonRequest, self).__init__(product, version, action_name)
 
         self.request = None
         self.endpoint = domain
@@ -483,18 +489,6 @@ class CommonRequest(AcsRequest):
 
     def get_domain(self):
         return self.endpoint
-
-    def set_version(self, version):
-        self._version = version
-
-    def get_version(self):
-        return self._version
-
-    def set_action_name(self, action_name):
-        self._action_name = action_name
-
-    def get_action_name(self):
-        return self._action_name
 
     def set_uri_pattern(self, uri_pattern):
         self._uri_pattern = uri_pattern

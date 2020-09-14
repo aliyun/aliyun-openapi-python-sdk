@@ -13,7 +13,9 @@ class TestAccessKeySigner(unittest.TestCase):
         signer = AccessKeySigner(credential)
         request = RpcRequest("product", "version", "action_name")
         headers, url = signer.sign('cn-hangzhou', request)
-        self.assertEqual(headers, {'x-sdk-invoke-type': 'normal'})
+        self.assertDictEqual(request.get_headers(), {'x-acs-action': 'action_name',
+                                                     'x-acs-version': 'version',
+                                                     'x-sdk-invoke-type': 'normal'})
         # self.assertEqual(url, '/?SignatureVersion=1.0'
         #                       '&Format=None'
         #                       '&Timestamp=2018-12-02T11%3A03%3A01Z'
