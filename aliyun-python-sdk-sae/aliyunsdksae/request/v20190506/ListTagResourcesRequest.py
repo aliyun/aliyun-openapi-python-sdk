@@ -23,7 +23,7 @@ from aliyunsdksae.endpoint import endpoint_data
 class ListTagResourcesRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'sae', '2019-05-06', 'ListTagResources')
+		RoaRequest.__init__(self, 'sae', '2019-05-06', 'ListTagResources','serverless')
 		self.set_uri_pattern('/tags')
 		self.set_method('GET')
 		if hasattr(self, "endpoint_map"):

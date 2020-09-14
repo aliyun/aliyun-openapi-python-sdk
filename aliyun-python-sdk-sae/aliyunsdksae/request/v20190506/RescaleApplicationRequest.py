@@ -23,7 +23,7 @@ from aliyunsdksae.endpoint import endpoint_data
 class RescaleApplicationRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'sae', '2019-05-06', 'RescaleApplication')
+		RoaRequest.__init__(self, 'sae', '2019-05-06', 'RescaleApplication','serverless')
 		self.set_uri_pattern('/pop/v1/sam/app/rescaleApplication')
 		self.set_method('PUT')
 		if hasattr(self, "endpoint_map"):

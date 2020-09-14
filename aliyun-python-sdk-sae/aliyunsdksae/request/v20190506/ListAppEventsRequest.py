@@ -23,7 +23,7 @@ from aliyunsdksae.endpoint import endpoint_data
 class ListAppEventsRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'sae', '2019-05-06', 'ListAppEvents')
+		RoaRequest.__init__(self, 'sae', '2019-05-06', 'ListAppEvents','serverless')
 		self.set_uri_pattern('/pop/v1/sam/app/listAppEvents')
 		self.set_method('GET')
 		if hasattr(self, "endpoint_map"):

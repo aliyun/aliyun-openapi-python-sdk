@@ -20,13 +20,32 @@
 from aliyunsdkcore.request import RoaRequest
 from aliyunsdksae.endpoint import endpoint_data
 
-class DescribeInstanceSpecificationsRequest(RoaRequest):
+class UpdateConfigMapRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'sae', '2019-05-06', 'DescribeInstanceSpecifications','serverless')
-		self.set_uri_pattern('/pop/v1/paas/quota/instanceSpecifications')
-		self.set_method('GET')
+		RoaRequest.__init__(self, 'sae', '2019-05-06', 'UpdateConfigMap','serverless')
+		self.set_uri_pattern('/pop/v1/sam/configmap/configMap')
+		self.set_method('PUT')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
+
+	def get_Data(self):
+		return self.get_body_params().get('Data')
+
+	def set_Data(self,Data):
+		self.add_body_params('Data', Data)
+
+	def get_Description(self):
+		return self.get_body_params().get('Description')
+
+	def set_Description(self,Description):
+		self.add_body_params('Description', Description)
+
+	def get_ConfigMapId(self):
+		return self.get_query_params().get('ConfigMapId')
+
+	def set_ConfigMapId(self,ConfigMapId):
+		self.add_query_param('ConfigMapId',ConfigMapId)

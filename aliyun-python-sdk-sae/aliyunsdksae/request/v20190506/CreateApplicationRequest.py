@@ -23,7 +23,7 @@ from aliyunsdksae.endpoint import endpoint_data
 class CreateApplicationRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'sae', '2019-05-06', 'CreateApplication')
+		RoaRequest.__init__(self, 'sae', '2019-05-06', 'CreateApplication','serverless')
 		self.set_uri_pattern('/pop/v1/sam/app/createApplication')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
@@ -86,17 +86,35 @@ class CreateApplicationRequest(RoaRequest):
 	def set_MountHost(self,MountHost):
 		self.add_query_param('MountHost',MountHost)
 
+	def get_AutoConfig(self):
+		return self.get_query_params().get('AutoConfig')
+
+	def set_AutoConfig(self,AutoConfig):
+		self.add_query_param('AutoConfig',AutoConfig)
+
 	def get_Liveness(self):
 		return self.get_query_params().get('Liveness')
 
 	def set_Liveness(self,Liveness):
 		self.add_query_param('Liveness',Liveness)
 
+	def get_SecurityGroupId(self):
+		return self.get_query_params().get('SecurityGroupId')
+
+	def set_SecurityGroupId(self,SecurityGroupId):
+		self.add_query_param('SecurityGroupId',SecurityGroupId)
+
 	def get_Envs(self):
 		return self.get_query_params().get('Envs')
 
 	def set_Envs(self,Envs):
 		self.add_query_param('Envs',Envs)
+
+	def get_PhpArmsConfigLocation(self):
+		return self.get_query_params().get('PhpArmsConfigLocation')
+
+	def set_PhpArmsConfigLocation(self,PhpArmsConfigLocation):
+		self.add_query_param('PhpArmsConfigLocation',PhpArmsConfigLocation)
 
 	def get_PackageVersion(self):
 		return self.get_query_params().get('PackageVersion')
@@ -151,6 +169,24 @@ class CreateApplicationRequest(RoaRequest):
 
 	def set_PackageUrl(self,PackageUrl):
 		self.add_query_param('PackageUrl',PackageUrl)
+
+	def get_TerminationGracePeriodSeconds(self):
+		return self.get_query_params().get('TerminationGracePeriodSeconds')
+
+	def set_TerminationGracePeriodSeconds(self,TerminationGracePeriodSeconds):
+		self.add_query_param('TerminationGracePeriodSeconds',TerminationGracePeriodSeconds)
+
+	def get_ConfigMapMountDesc(self):
+		return self.get_body_params().get('ConfigMapMountDesc')
+
+	def set_ConfigMapMountDesc(self,ConfigMapMountDesc):
+		self.add_body_params('ConfigMapMountDesc', ConfigMapMountDesc)
+
+	def get_PhpConfig(self):
+		return self.get_body_params().get('PhpConfig')
+
+	def set_PhpConfig(self,PhpConfig):
+		self.add_body_params('PhpConfig', PhpConfig)
 
 	def get_PreStop(self):
 		return self.get_query_params().get('PreStop')
@@ -217,6 +253,12 @@ class CreateApplicationRequest(RoaRequest):
 
 	def set_PackageType(self,PackageType):
 		self.add_query_param('PackageType',PackageType)
+
+	def get_PhpConfigLocation(self):
+		return self.get_query_params().get('PhpConfigLocation')
+
+	def set_PhpConfigLocation(self,PhpConfigLocation):
+		self.add_query_param('PhpConfigLocation',PhpConfigLocation)
 
 	def get_PostStart(self):
 		return self.get_query_params().get('PostStart')

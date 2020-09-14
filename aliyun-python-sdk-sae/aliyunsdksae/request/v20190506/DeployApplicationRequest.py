@@ -23,7 +23,7 @@ from aliyunsdksae.endpoint import endpoint_data
 class DeployApplicationRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'sae', '2019-05-06', 'DeployApplication')
+		RoaRequest.__init__(self, 'sae', '2019-05-06', 'DeployApplication','serverless')
 		self.set_uri_pattern('/pop/v1/sam/app/deployApplication')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
@@ -49,6 +49,12 @@ class DeployApplicationRequest(RoaRequest):
 
 	def set_JarStartArgs(self,JarStartArgs):
 		self.add_query_param('JarStartArgs',JarStartArgs)
+
+	def get_EnableAhas(self):
+		return self.get_query_params().get('EnableAhas')
+
+	def set_EnableAhas(self,EnableAhas):
+		self.add_query_param('EnableAhas',EnableAhas)
 
 	def get_SlsConfigs(self):
 		return self.get_query_params().get('SlsConfigs')
@@ -98,6 +104,12 @@ class DeployApplicationRequest(RoaRequest):
 	def set_Envs(self,Envs):
 		self.add_query_param('Envs',Envs)
 
+	def get_PhpArmsConfigLocation(self):
+		return self.get_query_params().get('PhpArmsConfigLocation')
+
+	def set_PhpArmsConfigLocation(self,PhpArmsConfigLocation):
+		self.add_query_param('PhpArmsConfigLocation',PhpArmsConfigLocation)
+
 	def get_PackageVersion(self):
 		return self.get_query_params().get('PackageVersion')
 
@@ -133,6 +145,24 @@ class DeployApplicationRequest(RoaRequest):
 
 	def set_PackageUrl(self,PackageUrl):
 		self.add_query_param('PackageUrl',PackageUrl)
+
+	def get_TerminationGracePeriodSeconds(self):
+		return self.get_query_params().get('TerminationGracePeriodSeconds')
+
+	def set_TerminationGracePeriodSeconds(self,TerminationGracePeriodSeconds):
+		self.add_query_param('TerminationGracePeriodSeconds',TerminationGracePeriodSeconds)
+
+	def get_ConfigMapMountDesc(self):
+		return self.get_body_params().get('ConfigMapMountDesc')
+
+	def set_ConfigMapMountDesc(self,ConfigMapMountDesc):
+		self.add_body_params('ConfigMapMountDesc', ConfigMapMountDesc)
+
+	def get_PhpConfig(self):
+		return self.get_body_params().get('PhpConfig')
+
+	def set_PhpConfig(self,PhpConfig):
+		self.add_body_params('PhpConfig', PhpConfig)
 
 	def get_PreStop(self):
 		return self.get_query_params().get('PreStop')
@@ -187,6 +217,12 @@ class DeployApplicationRequest(RoaRequest):
 
 	def set_ImageUrl(self,ImageUrl):
 		self.add_query_param('ImageUrl',ImageUrl)
+
+	def get_PhpConfigLocation(self):
+		return self.get_query_params().get('PhpConfigLocation')
+
+	def set_PhpConfigLocation(self,PhpConfigLocation):
+		self.add_query_param('PhpConfigLocation',PhpConfigLocation)
 
 	def get_PostStart(self):
 		return self.get_query_params().get('PostStart')

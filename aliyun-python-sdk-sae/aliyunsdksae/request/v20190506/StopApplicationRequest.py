@@ -23,7 +23,7 @@ from aliyunsdksae.endpoint import endpoint_data
 class StopApplicationRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'sae', '2019-05-06', 'StopApplication')
+		RoaRequest.__init__(self, 'sae', '2019-05-06', 'StopApplication','serverless')
 		self.set_uri_pattern('/pop/v1/sam/app/stopApplication')
 		self.set_method('PUT')
 		if hasattr(self, "endpoint_map"):

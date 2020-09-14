@@ -23,7 +23,7 @@ from aliyunsdksae.endpoint import endpoint_data
 class RollbackApplicationRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'sae', '2019-05-06', 'RollbackApplication')
+		RoaRequest.__init__(self, 'sae', '2019-05-06', 'RollbackApplication','serverless')
 		self.set_uri_pattern('/pop/v1/sam/app/rollbackApplication')
 		self.set_method('PUT')
 		if hasattr(self, "endpoint_map"):

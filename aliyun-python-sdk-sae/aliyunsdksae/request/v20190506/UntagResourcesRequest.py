@@ -23,7 +23,7 @@ from aliyunsdksae.endpoint import endpoint_data
 class UntagResourcesRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'sae', '2019-05-06', 'UntagResources')
+		RoaRequest.__init__(self, 'sae', '2019-05-06', 'UntagResources','serverless')
 		self.set_uri_pattern('/tags')
 		self.set_method('DELETE')
 		if hasattr(self, "endpoint_map"):

@@ -20,26 +20,20 @@
 from aliyunsdkcore.request import RoaRequest
 from aliyunsdksae.endpoint import endpoint_data
 
-class UpdateApplicationVswitchesRequest(RoaRequest):
+class ListNamespacedConfigMapsRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'sae', '2019-05-06', 'UpdateApplicationVswitches')
-		self.set_uri_pattern('/pop/v1/sam/app/updateAppVswitches')
-		self.set_method('PUT')
+		RoaRequest.__init__(self, 'sae', '2019-05-06', 'ListNamespacedConfigMaps','serverless')
+		self.set_uri_pattern('/pop/v1/sam/configmap/listNamespacedConfigMaps')
+		self.set_method('GET')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_VSwitchId(self):
-		return self.get_query_params().get('VSwitchId')
+	def get_NamespaceId(self):
+		return self.get_query_params().get('NamespaceId')
 
-	def set_VSwitchId(self,VSwitchId):
-		self.add_query_param('VSwitchId',VSwitchId)
-
-	def get_AppId(self):
-		return self.get_query_params().get('AppId')
-
-	def set_AppId(self,AppId):
-		self.add_query_param('AppId',AppId)
+	def set_NamespaceId(self,NamespaceId):
+		self.add_query_param('NamespaceId',NamespaceId)

@@ -23,7 +23,7 @@ from aliyunsdksae.endpoint import endpoint_data
 class CreateIngressRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'sae', '2019-05-06', 'CreateIngress')
+		RoaRequest.__init__(self, 'sae', '2019-05-06', 'CreateIngress','serverless')
 		self.set_uri_pattern('/pop/v1/sam/ingress/Ingress')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
@@ -57,10 +57,10 @@ class CreateIngressRequest(RoaRequest):
 		self.add_query_param('Description',Description)
 
 	def get_Rules(self):
-		return self.get_query_params().get('Rules')
+		return self.get_body_params().get('Rules')
 
 	def set_Rules(self,Rules):
-		self.add_query_param('Rules',Rules)
+		self.add_body_params('Rules', Rules)
 
 	def get_CertId(self):
 		return self.get_query_params().get('CertId')

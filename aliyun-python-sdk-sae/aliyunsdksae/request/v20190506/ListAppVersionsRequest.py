@@ -23,7 +23,7 @@ from aliyunsdksae.endpoint import endpoint_data
 class ListAppVersionsRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'sae', '2019-05-06', 'ListAppVersions')
+		RoaRequest.__init__(self, 'sae', '2019-05-06', 'ListAppVersions','serverless')
 		self.set_uri_pattern('/pop/v1/sam/app/listAppVersions')
 		self.set_method('GET')
 		if hasattr(self, "endpoint_map"):
