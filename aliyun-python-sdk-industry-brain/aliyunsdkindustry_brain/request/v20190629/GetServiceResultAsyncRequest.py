@@ -19,26 +19,20 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class GetAlgorithmHistoryResultRequest(RpcRequest):
+class GetServiceResultAsyncRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'industry-brain', '2019-06-30', 'GetAlgorithmHistoryResult')
-		self.set_method('GET')
-
-	def get_EndTime(self):
-		return self.get_query_params().get('EndTime')
-
-	def set_EndTime(self,EndTime):
-		self.add_query_param('EndTime',EndTime)
-
-	def get_StartTime(self):
-		return self.get_query_params().get('StartTime')
-
-	def set_StartTime(self,StartTime):
-		self.add_query_param('StartTime',StartTime)
+		RpcRequest.__init__(self, 'industry-brain', '2019-06-29', 'GetServiceResultAsync')
+		self.set_method('POST')
 
 	def get_ServiceId(self):
 		return self.get_query_params().get('ServiceId')
 
 	def set_ServiceId(self,ServiceId):
 		self.add_query_param('ServiceId',ServiceId)
+
+	def get_TaskId(self):
+		return self.get_query_params().get('TaskId')
+
+	def set_TaskId(self,TaskId):
+		self.add_query_param('TaskId',TaskId)
