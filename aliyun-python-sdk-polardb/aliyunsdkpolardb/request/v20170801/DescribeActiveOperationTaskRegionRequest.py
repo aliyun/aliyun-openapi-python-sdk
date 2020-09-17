@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkpolardb.endpoint import endpoint_data
 
-class UntagResourcesRequest(RpcRequest):
+class DescribeActiveOperationTaskRegionRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'polardb', '2017-08-01', 'UntagResources','polardb')
+		RpcRequest.__init__(self, 'polardb', '2017-08-01', 'DescribeActiveOperationTaskRegion','polardb')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -37,19 +37,23 @@ class UntagResourcesRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_All(self):
-		return self.get_query_params().get('All')
+	def get_IsHistory(self):
+		return self.get_query_params().get('IsHistory')
 
-	def set_All(self,All):
-		self.add_query_param('All',All)
+	def set_IsHistory(self,IsHistory):
+		self.add_query_param('IsHistory',IsHistory)
 
-	def get_ResourceIds(self):
-		return self.get_query_params().get('ResourceId')
+	def get_SecurityToken(self):
+		return self.get_query_params().get('SecurityToken')
 
-	def set_ResourceIds(self, ResourceIds):
-		for depth1 in range(len(ResourceIds)):
-			if ResourceIds[depth1] is not None:
-				self.add_query_param('ResourceId.' + str(depth1 + 1) , ResourceIds[depth1])
+	def set_SecurityToken(self,SecurityToken):
+		self.add_query_param('SecurityToken',SecurityToken)
+
+	def get_TaskType(self):
+		return self.get_query_params().get('TaskType')
+
+	def set_TaskType(self,TaskType):
+		self.add_query_param('TaskType',TaskType)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -68,17 +72,3 @@ class UntagResourcesRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
-
-	def get_ResourceType(self):
-		return self.get_query_params().get('ResourceType')
-
-	def set_ResourceType(self,ResourceType):
-		self.add_query_param('ResourceType',ResourceType)
-
-	def get_TagKeys(self):
-		return self.get_query_params().get('TagKey')
-
-	def set_TagKeys(self, TagKeys):
-		for depth1 in range(len(TagKeys)):
-			if TagKeys[depth1] is not None:
-				self.add_query_param('TagKey.' + str(depth1 + 1) , TagKeys[depth1])

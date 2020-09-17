@@ -38,7 +38,7 @@ class DeleteDBNodesRequest(RpcRequest):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
 	def get_DBNodeIds(self):
-		return self.get_query_params().get('DBNodeIds')
+		return self.get_query_params().get('DBNodeId')
 
 	def set_DBNodeIds(self, DBNodeIds):
 		for depth1 in range(len(DBNodeIds)):

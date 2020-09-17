@@ -68,7 +68,7 @@ class CreateDBNodesRequest(RpcRequest):
 		self.add_query_param('OwnerId',OwnerId)
 
 	def get_DBNodes(self):
-		return self.get_query_params().get('DBNodes')
+		return self.get_query_params().get('DBNode')
 
 	def set_DBNodes(self, DBNodes):
 		for depth1 in range(len(DBNodes)):

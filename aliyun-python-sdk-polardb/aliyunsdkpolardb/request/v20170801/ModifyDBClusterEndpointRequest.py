@@ -79,6 +79,12 @@ class ModifyDBClusterEndpointRequest(RpcRequest):
 	def set_EndpointConfig(self,EndpointConfig):
 		self.add_query_param('EndpointConfig',EndpointConfig)
 
+	def get_DBEndpointDescription(self):
+		return self.get_query_params().get('DBEndpointDescription')
+
+	def set_DBEndpointDescription(self,DBEndpointDescription):
+		self.add_query_param('DBEndpointDescription',DBEndpointDescription)
+
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
