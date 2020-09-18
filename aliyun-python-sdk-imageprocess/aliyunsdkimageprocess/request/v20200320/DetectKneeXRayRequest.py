@@ -42,3 +42,15 @@ class DetectKneeXRayRequest(RpcRequest):
 
 	def set_Url(self,Url):
 		self.add_body_params('Url', Url)
+
+	def get_OrgId(self):
+		return self.get_body_params().get('OrgId')
+
+	def set_OrgId(self,OrgId):
+		self.add_body_params('OrgId', OrgId)
+
+	def get_OrgName(self):
+		return self.get_body_params().get('OrgName')
+
+	def set_OrgName(self,OrgName):
+		self.add_body_params('OrgName', OrgName)

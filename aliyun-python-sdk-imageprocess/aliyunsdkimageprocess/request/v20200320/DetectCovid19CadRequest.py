@@ -31,6 +31,12 @@ class DetectCovid19CadRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_DataFormat(self):
+		return self.get_body_params().get('DataFormat')
+
+	def set_DataFormat(self,DataFormat):
+		self.add_body_params('DataFormat', DataFormat)
+
 	def get_URLLists(self):
 		return self.get_body_params().get('URLList')
 
@@ -38,3 +44,15 @@ class DetectCovid19CadRequest(RpcRequest):
 		for depth1 in range(len(URLLists)):
 			if URLLists[depth1].get('URL') is not None:
 				self.add_body_params('URLList.' + str(depth1 + 1) + '.URL', URLLists[depth1].get('URL'))
+
+	def get_OrgId(self):
+		return self.get_body_params().get('OrgId')
+
+	def set_OrgId(self,OrgId):
+		self.add_body_params('OrgId', OrgId)
+
+	def get_OrgName(self):
+		return self.get_body_params().get('OrgName')
+
+	def set_OrgName(self,OrgName):
+		self.add_body_params('OrgName', OrgName)
