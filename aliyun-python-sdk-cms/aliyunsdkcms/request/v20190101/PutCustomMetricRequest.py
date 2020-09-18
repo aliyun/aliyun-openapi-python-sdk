@@ -26,7 +26,7 @@ class PutCustomMetricRequest(RpcRequest):
 		self.set_method('POST')
 
 	def get_MetricLists(self):
-		return self.get_query_params().get('MetricLists')
+		return self.get_query_params().get('MetricList')
 
 	def set_MetricLists(self, MetricLists):
 		for depth1 in range(len(MetricLists)):

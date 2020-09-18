@@ -26,7 +26,7 @@ class InstallMonitoringAgentRequest(RpcRequest):
 		self.set_method('POST')
 
 	def get_InstanceIdss(self):
-		return self.get_query_params().get('InstanceIdss')
+		return self.get_query_params().get('InstanceIds')
 
 	def set_InstanceIdss(self, InstanceIdss):
 		for depth1 in range(len(InstanceIdss)):

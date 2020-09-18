@@ -26,7 +26,7 @@ class ModifyGroupMonitoringAgentProcessRequest(RpcRequest):
 		self.set_method('POST')
 
 	def get_AlertConfigs(self):
-		return self.get_query_params().get('AlertConfigs')
+		return self.get_query_params().get('AlertConfig')
 
 	def set_AlertConfigs(self, AlertConfigs):
 		for depth1 in range(len(AlertConfigs)):

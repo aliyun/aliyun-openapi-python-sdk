@@ -26,7 +26,7 @@ class DeleteMetricRuleTargetsRequest(RpcRequest):
 		self.set_method('POST')
 
 	def get_TargetIdss(self):
-		return self.get_query_params().get('TargetIdss')
+		return self.get_query_params().get('TargetIds')
 
 	def set_TargetIdss(self, TargetIdss):
 		for depth1 in range(len(TargetIdss)):

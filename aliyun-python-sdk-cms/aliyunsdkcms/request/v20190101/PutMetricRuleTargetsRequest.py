@@ -26,7 +26,7 @@ class PutMetricRuleTargetsRequest(RpcRequest):
 		self.set_method('POST')
 
 	def get_Targetss(self):
-		return self.get_query_params().get('Targetss')
+		return self.get_query_params().get('Targets')
 
 	def set_Targetss(self, Targetss):
 		for depth1 in range(len(Targetss)):

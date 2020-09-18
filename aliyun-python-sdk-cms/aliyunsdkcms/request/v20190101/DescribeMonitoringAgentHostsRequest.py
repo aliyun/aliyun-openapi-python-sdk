@@ -43,12 +43,6 @@ class DescribeMonitoringAgentHostsRequest(RpcRequest):
 	def set_HostName(self,HostName):
 		self.add_query_param('HostName',HostName)
 
-	def get_InstanceIds(self):
-		return self.get_query_params().get('InstanceIds')
-
-	def set_InstanceIds(self,InstanceIds):
-		self.add_query_param('InstanceIds',InstanceIds)
-
 	def get_InstanceRegionId(self):
 		return self.get_query_params().get('InstanceRegionId')
 
@@ -61,8 +55,26 @@ class DescribeMonitoringAgentHostsRequest(RpcRequest):
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
 
+	def get_AliyunHost(self):
+		return self.get_query_params().get('AliyunHost')
+
+	def set_AliyunHost(self,AliyunHost):
+		self.add_query_param('AliyunHost',AliyunHost)
+
 	def get_KeyWord(self):
 		return self.get_query_params().get('KeyWord')
 
 	def set_KeyWord(self,KeyWord):
 		self.add_query_param('KeyWord',KeyWord)
+
+	def get_InstanceIds(self):
+		return self.get_query_params().get('InstanceIds')
+
+	def set_InstanceIds(self,InstanceIds):
+		self.add_query_param('InstanceIds',InstanceIds)
+
+	def get_Status(self):
+		return self.get_query_params().get('Status')
+
+	def set_Status(self,Status):
+		self.add_query_param('Status',Status)

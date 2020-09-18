@@ -32,7 +32,7 @@ class DeleteEventRuleTargetsRequest(RpcRequest):
 		self.add_query_param('RuleName',RuleName)
 
 	def get_Idss(self):
-		return self.get_query_params().get('Idss')
+		return self.get_query_params().get('Ids')
 
 	def set_Idss(self, Idss):
 		for depth1 in range(len(Idss)):

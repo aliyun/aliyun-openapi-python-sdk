@@ -26,7 +26,7 @@ class PutEventRuleTargetsRequest(RpcRequest):
 		self.set_method('POST')
 
 	def get_WebhookParameterss(self):
-		return self.get_query_params().get('WebhookParameterss')
+		return self.get_query_params().get('WebhookParameters')
 
 	def set_WebhookParameterss(self, WebhookParameterss):
 		for depth1 in range(len(WebhookParameterss)):
@@ -40,7 +40,7 @@ class PutEventRuleTargetsRequest(RpcRequest):
 				self.add_query_param('WebhookParameters.' + str(depth1 + 1) + '.Url', WebhookParameterss[depth1].get('Url'))
 
 	def get_ContactParameterss(self):
-		return self.get_query_params().get('ContactParameterss')
+		return self.get_query_params().get('ContactParameters')
 
 	def set_ContactParameterss(self, ContactParameterss):
 		for depth1 in range(len(ContactParameterss)):
@@ -52,7 +52,7 @@ class PutEventRuleTargetsRequest(RpcRequest):
 				self.add_query_param('ContactParameters.' + str(depth1 + 1) + '.ContactGroupName', ContactParameterss[depth1].get('ContactGroupName'))
 
 	def get_SlsParameterss(self):
-		return self.get_query_params().get('SlsParameterss')
+		return self.get_query_params().get('SlsParameters')
 
 	def set_SlsParameterss(self, SlsParameterss):
 		for depth1 in range(len(SlsParameterss)):
@@ -72,7 +72,7 @@ class PutEventRuleTargetsRequest(RpcRequest):
 		self.add_query_param('RuleName',RuleName)
 
 	def get_MnsParameterss(self):
-		return self.get_query_params().get('MnsParameterss')
+		return self.get_query_params().get('MnsParameters')
 
 	def set_MnsParameterss(self, MnsParameterss):
 		for depth1 in range(len(MnsParameterss)):
@@ -84,7 +84,7 @@ class PutEventRuleTargetsRequest(RpcRequest):
 				self.add_query_param('MnsParameters.' + str(depth1 + 1) + '.Queue', MnsParameterss[depth1].get('Queue'))
 
 	def get_FcParameterss(self):
-		return self.get_query_params().get('FcParameterss')
+		return self.get_query_params().get('FcParameters')
 
 	def set_FcParameterss(self, FcParameterss):
 		for depth1 in range(len(FcParameterss)):

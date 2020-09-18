@@ -55,6 +55,12 @@ class PutContactRequest(RpcRequest):
 	def set_Describe(self,Describe):
 		self.add_query_param('Describe',Describe)
 
+	def get_Lang(self):
+		return self.get_query_params().get('Lang')
+
+	def set_Lang(self,Lang):
+		self.add_query_param('Lang',Lang)
+
 	def get_ChannelsSMS(self):
 		return self.get_query_params().get('Channels.SMS')
 

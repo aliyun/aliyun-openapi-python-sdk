@@ -26,7 +26,7 @@ class DeleteEventRulesRequest(RpcRequest):
 		self.set_method('POST')
 
 	def get_RuleNamess(self):
-		return self.get_query_params().get('RuleNamess')
+		return self.get_query_params().get('RuleNames')
 
 	def set_RuleNamess(self, RuleNamess):
 		for depth1 in range(len(RuleNamess)):

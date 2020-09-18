@@ -26,7 +26,7 @@ class CreateGroupMonitoringAgentProcessRequest(RpcRequest):
 		self.set_method('POST')
 
 	def get_AlertConfigs(self):
-		return self.get_query_params().get('AlertConfigs')
+		return self.get_query_params().get('AlertConfig')
 
 	def set_AlertConfigs(self, AlertConfigs):
 		for depth1 in range(len(AlertConfigs)):
@@ -68,7 +68,7 @@ class CreateGroupMonitoringAgentProcessRequest(RpcRequest):
 		self.add_query_param('MatchExpressFilterRelation',MatchExpressFilterRelation)
 
 	def get_MatchExpresss(self):
-		return self.get_query_params().get('MatchExpresss')
+		return self.get_query_params().get('MatchExpress')
 
 	def set_MatchExpresss(self, MatchExpresss):
 		for depth1 in range(len(MatchExpresss)):

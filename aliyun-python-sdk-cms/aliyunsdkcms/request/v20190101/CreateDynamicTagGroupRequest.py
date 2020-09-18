@@ -44,7 +44,7 @@ class CreateDynamicTagGroupRequest(RpcRequest):
 		self.add_query_param('EnableInstallAgent',EnableInstallAgent)
 
 	def get_MatchExpresss(self):
-		return self.get_query_params().get('MatchExpresss')
+		return self.get_query_params().get('MatchExpress')
 
 	def set_MatchExpresss(self, MatchExpresss):
 		for depth1 in range(len(MatchExpresss)):
@@ -54,7 +54,7 @@ class CreateDynamicTagGroupRequest(RpcRequest):
 				self.add_query_param('MatchExpress.' + str(depth1 + 1) + '.TagValueMatchFunction', MatchExpresss[depth1].get('TagValueMatchFunction'))
 
 	def get_ContactGroupLists(self):
-		return self.get_query_params().get('ContactGroupLists')
+		return self.get_query_params().get('ContactGroupList')
 
 	def set_ContactGroupLists(self, ContactGroupLists):
 		for depth1 in range(len(ContactGroupLists)):
@@ -62,7 +62,7 @@ class CreateDynamicTagGroupRequest(RpcRequest):
 				self.add_query_param('ContactGroupList.' + str(depth1 + 1) , ContactGroupLists[depth1])
 
 	def get_TemplateIdLists(self):
-		return self.get_query_params().get('TemplateIdLists')
+		return self.get_query_params().get('TemplateIdList')
 
 	def set_TemplateIdLists(self, TemplateIdLists):
 		for depth1 in range(len(TemplateIdLists)):

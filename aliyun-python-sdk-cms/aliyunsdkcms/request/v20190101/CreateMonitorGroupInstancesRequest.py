@@ -26,7 +26,7 @@ class CreateMonitorGroupInstancesRequest(RpcRequest):
 		self.set_method('POST')
 
 	def get_Instancess(self):
-		return self.get_query_params().get('Instancess')
+		return self.get_query_params().get('Instances')
 
 	def set_Instancess(self, Instancess):
 		for depth1 in range(len(Instancess)):

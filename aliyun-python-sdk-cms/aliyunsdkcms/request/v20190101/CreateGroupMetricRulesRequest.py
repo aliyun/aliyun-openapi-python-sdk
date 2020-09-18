@@ -32,7 +32,7 @@ class CreateGroupMetricRulesRequest(RpcRequest):
 		self.add_query_param('GroupId',GroupId)
 
 	def get_GroupMetricRuless(self):
-		return self.get_query_params().get('GroupMetricRuless')
+		return self.get_query_params().get('GroupMetricRules')
 
 	def set_GroupMetricRuless(self, GroupMetricRuless):
 		for depth1 in range(len(GroupMetricRuless)):

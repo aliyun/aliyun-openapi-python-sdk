@@ -32,7 +32,7 @@ class PutExporterRuleRequest(RpcRequest):
 		self.add_query_param('RuleName',RuleName)
 
 	def get_DstNamess(self):
-		return self.get_query_params().get('DstNamess')
+		return self.get_query_params().get('DstNames')
 
 	def set_DstNamess(self, DstNamess):
 		for depth1 in range(len(DstNamess)):

@@ -25,11 +25,23 @@ class PutContactGroupRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Cms', '2019-01-01', 'PutContactGroup','cms')
 		self.set_method('POST')
 
+	def get_EnableSubscribed(self):
+		return self.get_query_params().get('EnableSubscribed')
+
+	def set_EnableSubscribed(self,EnableSubscribed):
+		self.add_query_param('EnableSubscribed',EnableSubscribed)
+
 	def get_ContactGroupName(self):
 		return self.get_query_params().get('ContactGroupName')
 
 	def set_ContactGroupName(self,ContactGroupName):
 		self.add_query_param('ContactGroupName',ContactGroupName)
+
+	def get_EnabledWeeklyReport(self):
+		return self.get_query_params().get('EnabledWeeklyReport')
+
+	def set_EnabledWeeklyReport(self,EnabledWeeklyReport):
+		self.add_query_param('EnabledWeeklyReport',EnabledWeeklyReport)
 
 	def get_Describe(self):
 		return self.get_query_params().get('Describe')
@@ -38,7 +50,7 @@ class PutContactGroupRequest(RpcRequest):
 		self.add_query_param('Describe',Describe)
 
 	def get_ContactNamess(self):
-		return self.get_query_params().get('ContactNamess')
+		return self.get_query_params().get('ContactNames')
 
 	def set_ContactNamess(self, ContactNamess):
 		for depth1 in range(len(ContactNamess)):

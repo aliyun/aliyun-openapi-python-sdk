@@ -36,3 +36,15 @@ class DescribeSiteMonitorISPCityListRequest(RpcRequest):
 
 	def set_Isp(self,Isp):
 		self.add_query_param('Isp',Isp)
+
+	def get_IPV4(self):
+		return self.get_query_params().get('IPV4')
+
+	def set_IPV4(self,IPV4):
+		self.add_query_param('IPV4',IPV4)
+
+	def get_IPV6(self):
+		return self.get_query_params().get('IPV6')
+
+	def set_IPV6(self,IPV6):
+		self.add_query_param('IPV6',IPV6)

@@ -26,7 +26,7 @@ class PutCustomEventRequest(RpcRequest):
 		self.set_method('POST')
 
 	def get_EventInfos(self):
-		return self.get_query_params().get('EventInfos')
+		return self.get_query_params().get('EventInfo')
 
 	def set_EventInfos(self, EventInfos):
 		for depth1 in range(len(EventInfos)):

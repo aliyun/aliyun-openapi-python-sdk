@@ -26,7 +26,7 @@ class DeleteMetricRulesRequest(RpcRequest):
 		self.set_method('POST')
 
 	def get_Ids(self):
-		return self.get_query_params().get('Ids')
+		return self.get_query_params().get('Id')
 
 	def set_Ids(self, Ids):
 		for depth1 in range(len(Ids)):

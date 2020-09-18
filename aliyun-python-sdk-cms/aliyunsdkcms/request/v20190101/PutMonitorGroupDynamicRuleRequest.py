@@ -26,7 +26,7 @@ class PutMonitorGroupDynamicRuleRequest(RpcRequest):
 		self.set_method('POST')
 
 	def get_GroupRuless(self):
-		return self.get_query_params().get('GroupRuless')
+		return self.get_query_params().get('GroupRules')
 
 	def set_GroupRuless(self, GroupRuless):
 		for depth1 in range(len(GroupRuless)):

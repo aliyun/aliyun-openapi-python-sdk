@@ -26,7 +26,7 @@ class AddTagsRequest(RpcRequest):
 		self.set_method('POST')
 
 	def get_GroupIdss(self):
-		return self.get_query_params().get('GroupIdss')
+		return self.get_query_params().get('GroupIds')
 
 	def set_GroupIdss(self, GroupIdss):
 		for depth1 in range(len(GroupIdss)):
@@ -34,7 +34,7 @@ class AddTagsRequest(RpcRequest):
 				self.add_query_param('GroupIds.' + str(depth1 + 1) , GroupIdss[depth1])
 
 	def get_Tags(self):
-		return self.get_query_params().get('Tags')
+		return self.get_query_params().get('Tag')
 
 	def set_Tags(self, Tags):
 		for depth1 in range(len(Tags)):

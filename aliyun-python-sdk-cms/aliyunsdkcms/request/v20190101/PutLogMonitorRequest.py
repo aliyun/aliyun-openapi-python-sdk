@@ -38,7 +38,7 @@ class PutLogMonitorRequest(RpcRequest):
 		self.add_query_param('SlsProject',SlsProject)
 
 	def get_ValueFilters(self):
-		return self.get_query_params().get('ValueFilters')
+		return self.get_query_params().get('ValueFilter')
 
 	def set_ValueFilters(self, ValueFilters):
 		for depth1 in range(len(ValueFilters)):
@@ -92,7 +92,7 @@ class PutLogMonitorRequest(RpcRequest):
 		self.add_query_param('Unit',Unit)
 
 	def get_Groupbyss(self):
-		return self.get_query_params().get('Groupbyss')
+		return self.get_query_params().get('Groupbys')
 
 	def set_Groupbyss(self, Groupbyss):
 		for depth1 in range(len(Groupbyss)):
@@ -108,7 +108,7 @@ class PutLogMonitorRequest(RpcRequest):
 		self.add_query_param('LogId',LogId)
 
 	def get_Aggregatess(self):
-		return self.get_query_params().get('Aggregatess')
+		return self.get_query_params().get('Aggregates')
 
 	def set_Aggregatess(self, Aggregatess):
 		for depth1 in range(len(Aggregatess)):

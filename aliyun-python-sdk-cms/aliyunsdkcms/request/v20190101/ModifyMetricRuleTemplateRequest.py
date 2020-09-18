@@ -50,7 +50,7 @@ class ModifyMetricRuleTemplateRequest(RpcRequest):
 		self.add_query_param('Name',Name)
 
 	def get_AlertTemplatess(self):
-		return self.get_query_params().get('AlertTemplatess')
+		return self.get_query_params().get('AlertTemplates')
 
 	def set_AlertTemplatess(self, AlertTemplatess):
 		for depth1 in range(len(AlertTemplatess)):

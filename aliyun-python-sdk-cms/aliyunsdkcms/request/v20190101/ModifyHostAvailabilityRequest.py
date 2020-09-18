@@ -32,7 +32,7 @@ class ModifyHostAvailabilityRequest(RpcRequest):
 		self.add_query_param('TaskOption.HttpMethod',TaskOptionHttpMethod)
 
 	def get_AlertConfigEscalationLists(self):
-		return self.get_query_params().get('AlertConfigEscalationLists')
+		return self.get_query_params().get('AlertConfigEscalationList')
 
 	def set_AlertConfigEscalationLists(self, AlertConfigEscalationLists):
 		for depth1 in range(len(AlertConfigEscalationLists)):
@@ -96,7 +96,7 @@ class ModifyHostAvailabilityRequest(RpcRequest):
 		self.add_query_param('Id',Id)
 
 	def get_InstanceLists(self):
-		return self.get_query_params().get('InstanceLists')
+		return self.get_query_params().get('InstanceList')
 
 	def set_InstanceLists(self, InstanceLists):
 		for depth1 in range(len(InstanceLists)):

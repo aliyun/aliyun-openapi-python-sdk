@@ -26,7 +26,7 @@ class PutResourceMetricRulesRequest(RpcRequest):
 		self.set_method('POST')
 
 	def get_Ruless(self):
-		return self.get_query_params().get('Ruless')
+		return self.get_query_params().get('Rules')
 
 	def set_Ruless(self, Ruless):
 		for depth1 in range(len(Ruless)):

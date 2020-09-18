@@ -26,7 +26,7 @@ class EnableMetricRulesRequest(RpcRequest):
 		self.set_method('POST')
 
 	def get_RuleIds(self):
-		return self.get_query_params().get('RuleIds')
+		return self.get_query_params().get('RuleId')
 
 	def set_RuleIds(self, RuleIds):
 		for depth1 in range(len(RuleIds)):

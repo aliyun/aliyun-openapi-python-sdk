@@ -44,7 +44,7 @@ class PutEventRuleRequest(RpcRequest):
 		self.add_query_param('RuleName',RuleName)
 
 	def get_EventPatterns(self):
-		return self.get_query_params().get('EventPatterns')
+		return self.get_query_params().get('EventPattern')
 
 	def set_EventPatterns(self, EventPatterns):
 		for depth1 in range(len(EventPatterns)):
