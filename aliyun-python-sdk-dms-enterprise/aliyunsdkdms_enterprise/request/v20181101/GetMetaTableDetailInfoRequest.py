@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdms_enterprise.endpoint import endpoint_data
 
-class ListTablesRequest(RpcRequest):
+class GetMetaTableDetailInfoRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'dms-enterprise', '2018-11-01', 'ListTables','dmsenterprise')
+		RpcRequest.__init__(self, 'dms-enterprise', '2018-11-01', 'GetMetaTableDetailInfo','dmsenterprise')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,38 +31,14 @@ class ListTablesRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_SearchName(self):
-		return self.get_query_params().get('SearchName')
+	def get_TableGuid(self):
+		return self.get_query_params().get('TableGuid')
 
-	def set_SearchName(self,SearchName):
-		self.add_query_param('SearchName',SearchName)
-
-	def get_ReturnGuid(self):
-		return self.get_query_params().get('ReturnGuid')
-
-	def set_ReturnGuid(self,ReturnGuid):
-		self.add_query_param('ReturnGuid',ReturnGuid)
-
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_DatabaseId(self):
-		return self.get_query_params().get('DatabaseId')
-
-	def set_DatabaseId(self,DatabaseId):
-		self.add_query_param('DatabaseId',DatabaseId)
+	def set_TableGuid(self,TableGuid):
+		self.add_query_param('TableGuid',TableGuid)
 
 	def get_Tid(self):
 		return self.get_query_params().get('Tid')
 
 	def set_Tid(self,Tid):
 		self.add_query_param('Tid',Tid)
-
-	def get_PageNumber(self):
-		return self.get_query_params().get('PageNumber')
-
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)

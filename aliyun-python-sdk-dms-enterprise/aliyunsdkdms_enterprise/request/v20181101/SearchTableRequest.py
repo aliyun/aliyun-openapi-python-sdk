@@ -31,23 +31,11 @@ class SearchTableRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_SearchTarget(self):
-		return self.get_query_params().get('SearchTarget')
+	def get_ReturnGuid(self):
+		return self.get_query_params().get('ReturnGuid')
 
-	def set_SearchTarget(self,SearchTarget):
-		self.add_query_param('SearchTarget',SearchTarget)
-
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_EnvType(self):
-		return self.get_query_params().get('EnvType')
-
-	def set_EnvType(self,EnvType):
-		self.add_query_param('EnvType',EnvType)
+	def set_ReturnGuid(self,ReturnGuid):
+		self.add_query_param('ReturnGuid',ReturnGuid)
 
 	def get_SearchKey(self):
 		return self.get_query_params().get('SearchKey')
@@ -72,3 +60,27 @@ class SearchTableRequest(RpcRequest):
 
 	def set_PageNumber(self,PageNumber):
 		self.add_query_param('PageNumber',PageNumber)
+
+	def get_SearchTarget(self):
+		return self.get_query_params().get('SearchTarget')
+
+	def set_SearchTarget(self,SearchTarget):
+		self.add_query_param('SearchTarget',SearchTarget)
+
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
+
+	def get_EnvType(self):
+		return self.get_query_params().get('EnvType')
+
+	def set_EnvType(self,EnvType):
+		self.add_query_param('EnvType',EnvType)
+
+	def get_DbType(self):
+		return self.get_query_params().get('DbType')
+
+	def set_DbType(self,DbType):
+		self.add_query_param('DbType',DbType)

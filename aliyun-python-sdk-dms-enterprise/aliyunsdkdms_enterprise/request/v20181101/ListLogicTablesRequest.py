@@ -37,6 +37,12 @@ class ListLogicTablesRequest(RpcRequest):
 	def set_SearchName(self,SearchName):
 		self.add_query_param('SearchName',SearchName)
 
+	def get_ReturnGuid(self):
+		return self.get_query_params().get('ReturnGuid')
+
+	def set_ReturnGuid(self,ReturnGuid):
+		self.add_query_param('ReturnGuid',ReturnGuid)
+
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
 

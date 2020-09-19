@@ -151,6 +151,12 @@ class RegisterInstanceRequest(RpcRequest):
 	def set_DbaUid(self,DbaUid):
 		self.add_query_param('DbaUid',DbaUid)
 
+	def get_SkipTest(self):
+		return self.get_query_params().get('SkipTest')
+
+	def set_SkipTest(self,SkipTest):
+		self.add_query_param('SkipTest',SkipTest)
+
 	def get_SafeRule(self):
 		return self.get_query_params().get('SafeRule')
 
