@@ -55,6 +55,12 @@ class CreateCorpRequest(RpcRequest):
 	def set_Description(self,Description):
 		self.add_body_params('Description', Description)
 
+	def get_IconPath(self):
+		return self.get_body_params().get('IconPath')
+
+	def set_IconPath(self,IconPath):
+		self.add_body_params('IconPath', IconPath)
+
 	def get_AppName(self):
 		return self.get_body_params().get('AppName')
 

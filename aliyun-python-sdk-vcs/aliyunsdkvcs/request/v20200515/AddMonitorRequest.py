@@ -49,11 +49,41 @@ class AddMonitorRequest(RpcRequest):
 	def set_Description(self,Description):
 		self.add_body_params('Description', Description)
 
+	def get_NotifierAppSecret(self):
+		return self.get_body_params().get('NotifierAppSecret')
+
+	def set_NotifierAppSecret(self,NotifierAppSecret):
+		self.add_body_params('NotifierAppSecret', NotifierAppSecret)
+
+	def get_NotifierExtendValues(self):
+		return self.get_body_params().get('NotifierExtendValues')
+
+	def set_NotifierExtendValues(self,NotifierExtendValues):
+		self.add_body_params('NotifierExtendValues', NotifierExtendValues)
+
+	def get_NotifierUrl(self):
+		return self.get_body_params().get('NotifierUrl')
+
+	def set_NotifierUrl(self,NotifierUrl):
+		self.add_body_params('NotifierUrl', NotifierUrl)
+
+	def get_NotifierType(self):
+		return self.get_body_params().get('NotifierType')
+
+	def set_NotifierType(self,NotifierType):
+		self.add_body_params('NotifierType', NotifierType)
+
 	def get_BatchIndicator(self):
 		return self.get_body_params().get('BatchIndicator')
 
 	def set_BatchIndicator(self,BatchIndicator):
 		self.add_body_params('BatchIndicator', BatchIndicator)
+
+	def get_NotifierTimeOut(self):
+		return self.get_body_params().get('NotifierTimeOut')
+
+	def set_NotifierTimeOut(self,NotifierTimeOut):
+		self.add_body_params('NotifierTimeOut', NotifierTimeOut)
 
 	def get_AlgorithmVendor(self):
 		return self.get_body_params().get('AlgorithmVendor')

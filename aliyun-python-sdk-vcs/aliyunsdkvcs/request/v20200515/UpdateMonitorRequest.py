@@ -73,6 +73,12 @@ class UpdateMonitorRequest(RpcRequest):
 	def set_RuleExpression(self,RuleExpression):
 		self.add_body_params('RuleExpression', RuleExpression)
 
+	def get_NotifierTimeOut(self):
+		return self.get_body_params().get('NotifierTimeOut')
+
+	def set_NotifierTimeOut(self,NotifierTimeOut):
+		self.add_body_params('NotifierTimeOut', NotifierTimeOut)
+
 	def get_TaskId(self):
 		return self.get_body_params().get('TaskId')
 
@@ -97,11 +103,35 @@ class UpdateMonitorRequest(RpcRequest):
 	def set_AttributeValueList(self,AttributeValueList):
 		self.add_body_params('AttributeValueList', AttributeValueList)
 
+	def get_NotifierAppSecret(self):
+		return self.get_body_params().get('NotifierAppSecret')
+
+	def set_NotifierAppSecret(self,NotifierAppSecret):
+		self.add_body_params('NotifierAppSecret', NotifierAppSecret)
+
+	def get_NotifierExtendValues(self):
+		return self.get_body_params().get('NotifierExtendValues')
+
+	def set_NotifierExtendValues(self,NotifierExtendValues):
+		self.add_body_params('NotifierExtendValues', NotifierExtendValues)
+
 	def get_DeviceList(self):
 		return self.get_body_params().get('DeviceList')
 
 	def set_DeviceList(self,DeviceList):
 		self.add_body_params('DeviceList', DeviceList)
+
+	def get_NotifierUrl(self):
+		return self.get_body_params().get('NotifierUrl')
+
+	def set_NotifierUrl(self,NotifierUrl):
+		self.add_body_params('NotifierUrl', NotifierUrl)
+
+	def get_NotifierType(self):
+		return self.get_body_params().get('NotifierType')
+
+	def set_NotifierType(self,NotifierType):
+		self.add_body_params('NotifierType', NotifierType)
 
 	def get_AlgorithmVendor(self):
 		return self.get_body_params().get('AlgorithmVendor')
