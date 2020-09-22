@@ -23,7 +23,7 @@ from aliyunsdkemr.endpoint import endpoint_data
 class ModifyScalingRuleRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'ModifyScalingRule','emr')
+		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'ModifyScalingRule')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -56,7 +56,7 @@ class ModifyScalingRuleRequest(RpcRequest):
 		self.add_query_param('RecurrenceEndTime',RecurrenceEndTime)
 
 	def get_CloudWatchTriggers(self):
-		return self.get_query_params().get('CloudWatchTriggers')
+		return self.get_query_params().get('CloudWatchTrigger')
 
 	def set_CloudWatchTriggers(self, CloudWatchTriggers):
 		for depth1 in range(len(CloudWatchTriggers)):
@@ -134,7 +134,7 @@ class ModifyScalingRuleRequest(RpcRequest):
 		self.add_query_param('HostGroupId',HostGroupId)
 
 	def get_SchedulerTriggers(self):
-		return self.get_query_params().get('SchedulerTriggers')
+		return self.get_query_params().get('SchedulerTrigger')
 
 	def set_SchedulerTriggers(self, SchedulerTriggers):
 		for depth1 in range(len(SchedulerTriggers)):

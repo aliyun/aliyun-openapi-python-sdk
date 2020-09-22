@@ -23,7 +23,7 @@ from aliyunsdkemr.endpoint import endpoint_data
 class ResizeClusterV2Request(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'ResizeClusterV2','emr')
+		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'ResizeClusterV2')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -56,7 +56,7 @@ class ResizeClusterV2Request(RpcRequest):
 		self.add_query_param('VswitchId',VswitchId)
 
 	def get_HostComponentInfos(self):
-		return self.get_query_params().get('HostComponentInfos')
+		return self.get_query_params().get('HostComponentInfo')
 
 	def set_HostComponentInfos(self, HostComponentInfos):
 		for depth1 in range(len(HostComponentInfos)):
@@ -70,7 +70,7 @@ class ResizeClusterV2Request(RpcRequest):
 				self.add_query_param('HostComponentInfo.' + str(depth1 + 1) + '.ServiceName', HostComponentInfos[depth1].get('ServiceName'))
 
 	def get_HostGroups(self):
-		return self.get_query_params().get('HostGroups')
+		return self.get_query_params().get('HostGroup')
 
 	def set_HostGroups(self, HostGroups):
 		for depth1 in range(len(HostGroups)):
@@ -112,3 +112,15 @@ class ResizeClusterV2Request(RpcRequest):
 				self.add_query_param('HostGroup.' + str(depth1 + 1) + '.HostPassword', HostGroups[depth1].get('HostPassword'))
 			if HostGroups[depth1].get('HostGroupType') is not None:
 				self.add_query_param('HostGroup.' + str(depth1 + 1) + '.HostGroupType', HostGroups[depth1].get('HostGroupType'))
+
+	def get_PromotionInfos(self):
+		return self.get_query_params().get('PromotionInfo')
+
+	def set_PromotionInfos(self, PromotionInfos):
+		for depth1 in range(len(PromotionInfos)):
+			if PromotionInfos[depth1].get('PromotionOptionCode') is not None:
+				self.add_query_param('PromotionInfo.' + str(depth1 + 1) + '.PromotionOptionCode', PromotionInfos[depth1].get('PromotionOptionCode'))
+			if PromotionInfos[depth1].get('ProductCode') is not None:
+				self.add_query_param('PromotionInfo.' + str(depth1 + 1) + '.ProductCode', PromotionInfos[depth1].get('ProductCode'))
+			if PromotionInfos[depth1].get('PromotionOptionNo') is not None:
+				self.add_query_param('PromotionInfo.' + str(depth1 + 1) + '.PromotionOptionNo', PromotionInfos[depth1].get('PromotionOptionNo'))

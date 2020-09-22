@@ -23,7 +23,7 @@ from aliyunsdkemr.endpoint import endpoint_data
 class CreateUserRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'CreateUser','emr')
+		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'CreateUser')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -50,7 +50,7 @@ class CreateUserRequest(RpcRequest):
 		self.add_query_param('Description',Description)
 
 	def get_UserAccountParamLists(self):
-		return self.get_query_params().get('UserAccountParamLists')
+		return self.get_query_params().get('UserAccountParamList')
 
 	def set_UserAccountParamLists(self, UserAccountParamLists):
 		for depth1 in range(len(UserAccountParamLists)):
@@ -62,7 +62,7 @@ class CreateUserRequest(RpcRequest):
 				self.add_query_param('UserAccountParamList.' + str(depth1 + 1) + '.AccountPassword', UserAccountParamLists[depth1].get('AccountPassword'))
 
 	def get_GroupIdLists(self):
-		return self.get_query_params().get('GroupIdLists')
+		return self.get_query_params().get('GroupIdList')
 
 	def set_GroupIdLists(self, GroupIdLists):
 		for depth1 in range(len(GroupIdLists)):
@@ -70,7 +70,7 @@ class CreateUserRequest(RpcRequest):
 				self.add_query_param('GroupIdList.' + str(depth1 + 1) , GroupIdLists[depth1])
 
 	def get_RoleIdLists(self):
-		return self.get_query_params().get('RoleIdLists')
+		return self.get_query_params().get('RoleIdList')
 
 	def set_RoleIdLists(self, RoleIdLists):
 		for depth1 in range(len(RoleIdLists)):

@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkemr.endpoint import endpoint_data
 
-class ListDatasourceInstancesRequest(RpcRequest):
+class AddScalingConfigItemV2Request(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'ListDatasourceInstances','emr')
+		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'AddScalingConfigItemV2')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,11 +31,11 @@ class ListDatasourceInstancesRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_DatasourceType(self):
-		return self.get_query_params().get('DatasourceType')
+	def get_ConfigItemType(self):
+		return self.get_query_params().get('ConfigItemType')
 
-	def set_DatasourceType(self,DatasourceType):
-		self.add_query_param('DatasourceType',DatasourceType)
+	def set_ConfigItemType(self,ConfigItemType):
+		self.add_query_param('ConfigItemType',ConfigItemType)
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -43,8 +43,20 @@ class ListDatasourceInstancesRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_TargetClusterId(self):
-		return self.get_query_params().get('TargetClusterId')
+	def get_ScalingGroupBizId(self):
+		return self.get_query_params().get('ScalingGroupBizId')
 
-	def set_TargetClusterId(self,TargetClusterId):
-		self.add_query_param('TargetClusterId',TargetClusterId)
+	def set_ScalingGroupBizId(self,ScalingGroupBizId):
+		self.add_query_param('ScalingGroupBizId',ScalingGroupBizId)
+
+	def get_ResourceGroupId(self):
+		return self.get_query_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self,ResourceGroupId):
+		self.add_query_param('ResourceGroupId',ResourceGroupId)
+
+	def get_ConfigItemInformation(self):
+		return self.get_query_params().get('ConfigItemInformation')
+
+	def set_ConfigItemInformation(self,ConfigItemInformation):
+		self.add_query_param('ConfigItemInformation',ConfigItemInformation)

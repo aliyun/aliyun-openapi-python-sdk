@@ -23,7 +23,7 @@ from aliyunsdkemr.endpoint import endpoint_data
 class CreateClusterV2Request(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'CreateClusterV2','emr')
+		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'CreateClusterV2')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -98,7 +98,7 @@ class CreateClusterV2Request(RpcRequest):
 		self.add_query_param('ResourceGroupId',ResourceGroupId)
 
 	def get_HostComponentInfos(self):
-		return self.get_query_params().get('HostComponentInfos')
+		return self.get_query_params().get('HostComponentInfo')
 
 	def set_HostComponentInfos(self, HostComponentInfos):
 		for depth1 in range(len(HostComponentInfos)):
@@ -118,7 +118,7 @@ class CreateClusterV2Request(RpcRequest):
 		self.add_query_param('ClickHouseConf',ClickHouseConf)
 
 	def get_BootstrapActions(self):
-		return self.get_query_params().get('BootstrapActions')
+		return self.get_query_params().get('BootstrapAction')
 
 	def set_BootstrapActions(self, BootstrapActions):
 		for depth1 in range(len(BootstrapActions)):
@@ -142,7 +142,7 @@ class CreateClusterV2Request(RpcRequest):
 		self.add_query_param('EmrVer',EmrVer)
 
 	def get_Tags(self):
-		return self.get_query_params().get('Tags')
+		return self.get_query_params().get('Tag')
 
 	def set_Tags(self, Tags):
 		for depth1 in range(len(Tags)):
@@ -200,7 +200,7 @@ class CreateClusterV2Request(RpcRequest):
 		self.add_query_param('AutoRenew',AutoRenew)
 
 	def get_OptionSoftWareLists(self):
-		return self.get_query_params().get('OptionSoftWareLists')
+		return self.get_query_params().get('OptionSoftWareList')
 
 	def set_OptionSoftWareLists(self, OptionSoftWareLists):
 		for depth1 in range(len(OptionSoftWareLists)):
@@ -268,7 +268,7 @@ class CreateClusterV2Request(RpcRequest):
 		self.add_query_param('UseLocalMetaDb',UseLocalMetaDb)
 
 	def get_UserInfos(self):
-		return self.get_query_params().get('UserInfos')
+		return self.get_query_params().get('UserInfo')
 
 	def set_UserInfos(self, UserInfos):
 		for depth1 in range(len(UserInfos)):
@@ -303,8 +303,20 @@ class CreateClusterV2Request(RpcRequest):
 	def set_VpcId(self,VpcId):
 		self.add_query_param('VpcId',VpcId)
 
+	def get_PromotionInfos(self):
+		return self.get_query_params().get('PromotionInfo')
+
+	def set_PromotionInfos(self, PromotionInfos):
+		for depth1 in range(len(PromotionInfos)):
+			if PromotionInfos[depth1].get('PromotionOptionCode') is not None:
+				self.add_query_param('PromotionInfo.' + str(depth1 + 1) + '.PromotionOptionCode', PromotionInfos[depth1].get('PromotionOptionCode'))
+			if PromotionInfos[depth1].get('ProductCode') is not None:
+				self.add_query_param('PromotionInfo.' + str(depth1 + 1) + '.ProductCode', PromotionInfos[depth1].get('ProductCode'))
+			if PromotionInfos[depth1].get('PromotionOptionNo') is not None:
+				self.add_query_param('PromotionInfo.' + str(depth1 + 1) + '.PromotionOptionNo', PromotionInfos[depth1].get('PromotionOptionNo'))
+
 	def get_HostGroups(self):
-		return self.get_query_params().get('HostGroups')
+		return self.get_query_params().get('HostGroup')
 
 	def set_HostGroups(self, HostGroups):
 		for depth1 in range(len(HostGroups)):
@@ -352,7 +364,7 @@ class CreateClusterV2Request(RpcRequest):
 		self.add_query_param('ChargeType',ChargeType)
 
 	def get_ServiceInfos(self):
-		return self.get_query_params().get('ServiceInfos')
+		return self.get_query_params().get('ServiceInfo')
 
 	def set_ServiceInfos(self, ServiceInfos):
 		for depth1 in range(len(ServiceInfos)):
@@ -362,7 +374,7 @@ class CreateClusterV2Request(RpcRequest):
 				self.add_query_param('ServiceInfo.' + str(depth1 + 1) + '.ServiceName', ServiceInfos[depth1].get('ServiceName'))
 
 	def get_Configs(self):
-		return self.get_query_params().get('Configs')
+		return self.get_query_params().get('Config')
 
 	def set_Configs(self, Configs):
 		for depth1 in range(len(Configs)):

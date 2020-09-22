@@ -23,7 +23,7 @@ from aliyunsdkemr.endpoint import endpoint_data
 class ModifyClusterTemplateRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'ModifyClusterTemplate','emr')
+		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'ModifyClusterTemplate')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -92,7 +92,7 @@ class ModifyClusterTemplateRequest(RpcRequest):
 		self.add_query_param('ResourceGroupId',ResourceGroupId)
 
 	def get_BootstrapActions(self):
-		return self.get_query_params().get('BootstrapActions')
+		return self.get_query_params().get('BootstrapAction')
 
 	def set_BootstrapActions(self, BootstrapActions):
 		for depth1 in range(len(BootstrapActions)):
@@ -114,6 +114,16 @@ class ModifyClusterTemplateRequest(RpcRequest):
 
 	def set_EmrVer(self,EmrVer):
 		self.add_query_param('EmrVer',EmrVer)
+
+	def get_Tags(self):
+		return self.get_query_params().get('Tag')
+
+	def set_Tags(self, Tags):
+		for depth1 in range(len(Tags)):
+			if Tags[depth1].get('Value') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tags[depth1].get('Value'))
+			if Tags[depth1].get('Key') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tags[depth1].get('Key'))
 
 	def get_IsOpenPublicIp(self):
 		return self.get_query_params().get('IsOpenPublicIp')
@@ -152,7 +162,7 @@ class ModifyClusterTemplateRequest(RpcRequest):
 		self.add_query_param('AutoRenew',AutoRenew)
 
 	def get_OptionSoftWareLists(self):
-		return self.get_query_params().get('OptionSoftWareLists')
+		return self.get_query_params().get('OptionSoftWareList')
 
 	def set_OptionSoftWareLists(self, OptionSoftWareLists):
 		for depth1 in range(len(OptionSoftWareLists)):
@@ -238,7 +248,7 @@ class ModifyClusterTemplateRequest(RpcRequest):
 		self.add_query_param('BizId',BizId)
 
 	def get_HostGroups(self):
-		return self.get_query_params().get('HostGroups')
+		return self.get_query_params().get('HostGroup')
 
 	def set_HostGroups(self, HostGroups):
 		for depth1 in range(len(HostGroups)):
@@ -286,7 +296,7 @@ class ModifyClusterTemplateRequest(RpcRequest):
 		self.add_query_param('ChargeType',ChargeType)
 
 	def get_Configs(self):
-		return self.get_query_params().get('Configs')
+		return self.get_query_params().get('Config')
 
 	def set_Configs(self, Configs):
 		for depth1 in range(len(Configs)):

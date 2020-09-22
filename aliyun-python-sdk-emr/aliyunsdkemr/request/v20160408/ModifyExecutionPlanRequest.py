@@ -23,7 +23,7 @@ from aliyunsdkemr.endpoint import endpoint_data
 class ModifyExecutionPlanRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'ModifyExecutionPlan','emr')
+		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'ModifyExecutionPlan')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -74,7 +74,7 @@ class ModifyExecutionPlanRequest(RpcRequest):
 		self.add_query_param('StartTime',StartTime)
 
 	def get_BootstrapActions(self):
-		return self.get_query_params().get('BootstrapActions')
+		return self.get_query_params().get('BootstrapAction')
 
 	def set_BootstrapActions(self, BootstrapActions):
 		for depth1 in range(len(BootstrapActions)):
@@ -128,7 +128,7 @@ class ModifyExecutionPlanRequest(RpcRequest):
 		self.add_query_param('VSwitchId',VSwitchId)
 
 	def get_OptionSoftWareLists(self):
-		return self.get_query_params().get('OptionSoftWareLists')
+		return self.get_query_params().get('OptionSoftWareList')
 
 	def set_OptionSoftWareLists(self, OptionSoftWareLists):
 		for depth1 in range(len(OptionSoftWareLists)):
@@ -142,7 +142,7 @@ class ModifyExecutionPlanRequest(RpcRequest):
 		self.add_query_param('NetType',NetType)
 
 	def get_EcsOrders(self):
-		return self.get_query_params().get('EcsOrders')
+		return self.get_query_params().get('EcsOrder')
 
 	def set_EcsOrders(self, EcsOrders):
 		for depth1 in range(len(EcsOrders)):
@@ -204,7 +204,7 @@ class ModifyExecutionPlanRequest(RpcRequest):
 		self.add_query_param('EasEnable',EasEnable)
 
 	def get_JobIdLists(self):
-		return self.get_query_params().get('JobIdLists')
+		return self.get_query_params().get('JobIdList')
 
 	def set_JobIdLists(self, JobIdLists):
 		for depth1 in range(len(JobIdLists)):
@@ -266,7 +266,7 @@ class ModifyExecutionPlanRequest(RpcRequest):
 		self.add_query_param('Strategy',Strategy)
 
 	def get_Configs(self):
-		return self.get_query_params().get('Configs')
+		return self.get_query_params().get('Config')
 
 	def set_Configs(self, Configs):
 		for depth1 in range(len(Configs)):

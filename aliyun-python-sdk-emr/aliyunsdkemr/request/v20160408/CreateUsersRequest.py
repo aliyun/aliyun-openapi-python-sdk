@@ -23,7 +23,7 @@ from aliyunsdkemr.endpoint import endpoint_data
 class CreateUsersRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'CreateUsers','emr')
+		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'CreateUsers')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -44,7 +44,7 @@ class CreateUsersRequest(RpcRequest):
 		self.add_query_param('ClusterId',ClusterId)
 
 	def get_UserInfos(self):
-		return self.get_query_params().get('UserInfos')
+		return self.get_query_params().get('UserInfo')
 
 	def set_UserInfos(self, UserInfos):
 		for depth1 in range(len(UserInfos)):

@@ -23,7 +23,7 @@ from aliyunsdkemr.endpoint import endpoint_data
 class ListBackupsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'ListBackups','emr')
+		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'ListBackups')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -92,7 +92,7 @@ class ListBackupsRequest(RpcRequest):
 		self.add_query_param('CurrentSize',CurrentSize)
 
 	def get_BackupIds(self):
-		return self.get_query_params().get('BackupIds')
+		return self.get_query_params().get('BackupId')
 
 	def set_BackupIds(self, BackupIds):
 		for depth1 in range(len(BackupIds)):

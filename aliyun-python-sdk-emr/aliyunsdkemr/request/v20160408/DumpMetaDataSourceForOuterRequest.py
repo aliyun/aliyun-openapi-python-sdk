@@ -23,7 +23,7 @@ from aliyunsdkemr.endpoint import endpoint_data
 class DumpMetaDataSourceForOuterRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'DumpMetaDataSourceForOuter','emr')
+		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'DumpMetaDataSourceForOuter')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -62,7 +62,7 @@ class DumpMetaDataSourceForOuterRequest(RpcRequest):
 		self.add_query_param('DumpAllTable',DumpAllTable)
 
 	def get_PartitionValuess(self):
-		return self.get_query_params().get('PartitionValuess')
+		return self.get_query_params().get('PartitionValues')
 
 	def set_PartitionValuess(self, PartitionValuess):
 		for depth1 in range(len(PartitionValuess)):

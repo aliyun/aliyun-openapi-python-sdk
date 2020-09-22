@@ -23,7 +23,7 @@ from aliyunsdkemr.endpoint import endpoint_data
 class CreateResourcePoolRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'CreateResourcePool','emr')
+		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'CreateResourcePool')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -68,7 +68,7 @@ class CreateResourcePoolRequest(RpcRequest):
 		self.add_query_param('Name',Name)
 
 	def get_Configs(self):
-		return self.get_query_params().get('Configs')
+		return self.get_query_params().get('Config')
 
 	def set_Configs(self, Configs):
 		for depth1 in range(len(Configs)):

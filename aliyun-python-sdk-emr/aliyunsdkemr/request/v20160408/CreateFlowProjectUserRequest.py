@@ -23,7 +23,7 @@ from aliyunsdkemr.endpoint import endpoint_data
 class CreateFlowProjectUserRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'CreateFlowProjectUser','emr')
+		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'CreateFlowProjectUser')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -38,7 +38,7 @@ class CreateFlowProjectUserRequest(RpcRequest):
 		self.add_query_param('ProjectId',ProjectId)
 
 	def get_Users(self):
-		return self.get_query_params().get('Users')
+		return self.get_query_params().get('User')
 
 	def set_Users(self, Users):
 		for depth1 in range(len(Users)):

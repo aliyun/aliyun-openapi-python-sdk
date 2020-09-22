@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkemr.endpoint import endpoint_data
 
-class ListClusterSupportServiceRequest(RpcRequest):
+class ModifyScalingConfigItemV2Request(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'ListClusterSupportService','emr')
+		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'ModifyScalingConfigItemV2')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,14 +31,38 @@ class ListClusterSupportServiceRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_ConfigItemBizId(self):
+		return self.get_query_params().get('ConfigItemBizId')
+
+	def set_ConfigItemBizId(self,ConfigItemBizId):
+		self.add_query_param('ConfigItemBizId',ConfigItemBizId)
+
+	def get_ConfigItemType(self):
+		return self.get_query_params().get('ConfigItemType')
+
+	def set_ConfigItemType(self,ConfigItemType):
+		self.add_query_param('ConfigItemType',ConfigItemType)
+
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_ClusterId(self):
-		return self.get_query_params().get('ClusterId')
+	def get_ScalingGroupBizId(self):
+		return self.get_query_params().get('ScalingGroupBizId')
 
-	def set_ClusterId(self,ClusterId):
-		self.add_query_param('ClusterId',ClusterId)
+	def set_ScalingGroupBizId(self,ScalingGroupBizId):
+		self.add_query_param('ScalingGroupBizId',ScalingGroupBizId)
+
+	def get_ResourceGroupId(self):
+		return self.get_query_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self,ResourceGroupId):
+		self.add_query_param('ResourceGroupId',ResourceGroupId)
+
+	def get_ConfigItemInformation(self):
+		return self.get_query_params().get('ConfigItemInformation')
+
+	def set_ConfigItemInformation(self,ConfigItemInformation):
+		self.add_query_param('ConfigItemInformation',ConfigItemInformation)

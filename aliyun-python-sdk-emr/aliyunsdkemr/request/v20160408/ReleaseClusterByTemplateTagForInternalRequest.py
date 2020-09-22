@@ -23,7 +23,7 @@ from aliyunsdkemr.endpoint import endpoint_data
 class ReleaseClusterByTemplateTagForInternalRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'ReleaseClusterByTemplateTagForInternal','emr')
+		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'ReleaseClusterByTemplateTagForInternal')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -32,7 +32,7 @@ class ReleaseClusterByTemplateTagForInternalRequest(RpcRequest):
 
 
 	def get_TemplateTagSets(self):
-		return self.get_query_params().get('TemplateTagSets')
+		return self.get_query_params().get('TemplateTagSet')
 
 	def set_TemplateTagSets(self, TemplateTagSets):
 		for depth1 in range(len(TemplateTagSets)):

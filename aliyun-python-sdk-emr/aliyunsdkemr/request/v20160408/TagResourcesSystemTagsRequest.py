@@ -23,7 +23,7 @@ from aliyunsdkemr.endpoint import endpoint_data
 class TagResourcesSystemTagsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'TagResourcesSystemTags','emr')
+		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'TagResourcesSystemTags')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -38,7 +38,7 @@ class TagResourcesSystemTagsRequest(RpcRequest):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
 	def get_ResourceIds(self):
-		return self.get_query_params().get('ResourceIds')
+		return self.get_query_params().get('ResourceId')
 
 	def set_ResourceIds(self, ResourceIds):
 		for depth1 in range(len(ResourceIds)):
@@ -64,7 +64,7 @@ class TagResourcesSystemTagsRequest(RpcRequest):
 		self.add_query_param('Scope',Scope)
 
 	def get_Tags(self):
-		return self.get_query_params().get('Tags')
+		return self.get_query_params().get('Tag')
 
 	def set_Tags(self, Tags):
 		for depth1 in range(len(Tags)):

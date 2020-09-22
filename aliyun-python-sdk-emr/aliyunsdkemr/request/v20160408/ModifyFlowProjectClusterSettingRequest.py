@@ -23,7 +23,7 @@ from aliyunsdkemr.endpoint import endpoint_data
 class ModifyFlowProjectClusterSettingRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'ModifyFlowProjectClusterSetting','emr')
+		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'ModifyFlowProjectClusterSetting')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -32,7 +32,7 @@ class ModifyFlowProjectClusterSettingRequest(RpcRequest):
 
 
 	def get_UserLists(self):
-		return self.get_query_params().get('UserLists')
+		return self.get_query_params().get('UserList')
 
 	def set_UserLists(self, UserLists):
 		for depth1 in range(len(UserLists)):
@@ -40,7 +40,7 @@ class ModifyFlowProjectClusterSettingRequest(RpcRequest):
 				self.add_query_param('UserList.' + str(depth1 + 1) , UserLists[depth1])
 
 	def get_HostLists(self):
-		return self.get_query_params().get('HostLists')
+		return self.get_query_params().get('HostList')
 
 	def set_HostLists(self, HostLists):
 		for depth1 in range(len(HostLists)):
@@ -66,7 +66,7 @@ class ModifyFlowProjectClusterSettingRequest(RpcRequest):
 		self.add_query_param('DefaultUser',DefaultUser)
 
 	def get_QueueLists(self):
-		return self.get_query_params().get('QueueLists')
+		return self.get_query_params().get('QueueList')
 
 	def set_QueueLists(self, QueueLists):
 		for depth1 in range(len(QueueLists)):

@@ -23,7 +23,7 @@ from aliyunsdkemr.endpoint import endpoint_data
 class AddClusterServiceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'AddClusterService','emr')
+		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'AddClusterService')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -44,7 +44,7 @@ class AddClusterServiceRequest(RpcRequest):
 		self.add_query_param('ClusterId',ClusterId)
 
 	def get_Services(self):
-		return self.get_query_params().get('Services')
+		return self.get_query_params().get('Service')
 
 	def set_Services(self, Services):
 		for depth1 in range(len(Services)):

@@ -23,7 +23,7 @@ from aliyunsdkemr.endpoint import endpoint_data
 class ListClusterHostRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'ListClusterHost','emr')
+		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'ListClusterHost')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -44,7 +44,7 @@ class ListClusterHostRequest(RpcRequest):
 		self.add_query_param('HostInstanceId',HostInstanceId)
 
 	def get_StatusLists(self):
-		return self.get_query_params().get('StatusLists')
+		return self.get_query_params().get('StatusList')
 
 	def set_StatusLists(self, StatusLists):
 		for depth1 in range(len(StatusLists)):

@@ -23,7 +23,7 @@ from aliyunsdkemr.endpoint import endpoint_data
 class ListExecutionPlanInstancesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'ListExecutionPlanInstances','emr')
+		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'ListExecutionPlanInstances')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -44,7 +44,7 @@ class ListExecutionPlanInstancesRequest(RpcRequest):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
 	def get_ExecutionPlanIdLists(self):
-		return self.get_query_params().get('ExecutionPlanIdLists')
+		return self.get_query_params().get('ExecutionPlanIdList')
 
 	def set_ExecutionPlanIdLists(self, ExecutionPlanIdLists):
 		for depth1 in range(len(ExecutionPlanIdLists)):
@@ -52,7 +52,7 @@ class ListExecutionPlanInstancesRequest(RpcRequest):
 				self.add_query_param('ExecutionPlanIdList.' + str(depth1 + 1) , ExecutionPlanIdLists[depth1])
 
 	def get_StatusLists(self):
-		return self.get_query_params().get('StatusLists')
+		return self.get_query_params().get('StatusList')
 
 	def set_StatusLists(self, StatusLists):
 		for depth1 in range(len(StatusLists)):

@@ -23,7 +23,7 @@ from aliyunsdkemr.endpoint import endpoint_data
 class CreateFlowForWebRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'CreateFlowForWeb','emr')
+		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'CreateFlowForWeb')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -48,6 +48,12 @@ class CreateFlowForWebRequest(RpcRequest):
 
 	def set_AlertUserGroupBizId(self,AlertUserGroupBizId):
 		self.add_query_param('AlertUserGroupBizId',AlertUserGroupBizId)
+
+	def get_Lifecycle(self):
+		return self.get_query_params().get('Lifecycle')
+
+	def set_Lifecycle(self,Lifecycle):
+		self.add_query_param('Lifecycle',Lifecycle)
 
 	def get_HostName(self):
 		return self.get_query_params().get('HostName')
@@ -85,6 +91,12 @@ class CreateFlowForWebRequest(RpcRequest):
 	def set_ParentFlowList(self,ParentFlowList):
 		self.add_query_param('ParentFlowList',ParentFlowList)
 
+	def get_LogArchiveLocation(self):
+		return self.get_query_params().get('LogArchiveLocation')
+
+	def set_LogArchiveLocation(self,LogArchiveLocation):
+		self.add_query_param('LogArchiveLocation',LogArchiveLocation)
+
 	def get_AlertDingDingGroupBizId(self):
 		return self.get_query_params().get('AlertDingDingGroupBizId')
 
@@ -114,6 +126,12 @@ class CreateFlowForWebRequest(RpcRequest):
 
 	def set_Name(self,Name):
 		self.add_query_param('Name',Name)
+
+	def get_Namespace(self):
+		return self.get_query_params().get('Namespace')
+
+	def set_Namespace(self,Namespace):
+		self.add_query_param('Namespace',Namespace)
 
 	def get_ParentCategory(self):
 		return self.get_query_params().get('ParentCategory')

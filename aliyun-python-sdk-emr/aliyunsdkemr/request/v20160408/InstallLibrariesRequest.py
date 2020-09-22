@@ -23,7 +23,7 @@ from aliyunsdkemr.endpoint import endpoint_data
 class InstallLibrariesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'InstallLibraries','emr')
+		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'InstallLibraries')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -44,7 +44,7 @@ class InstallLibrariesRequest(RpcRequest):
 		self.add_query_param('LibraryBizId',LibraryBizId)
 
 	def get_ClusterBizIdLists(self):
-		return self.get_query_params().get('ClusterBizIdLists')
+		return self.get_query_params().get('ClusterBizIdList')
 
 	def set_ClusterBizIdLists(self, ClusterBizIdLists):
 		for depth1 in range(len(ClusterBizIdLists)):

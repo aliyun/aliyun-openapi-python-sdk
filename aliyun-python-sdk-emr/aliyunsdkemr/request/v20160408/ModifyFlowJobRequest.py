@@ -23,13 +23,19 @@ from aliyunsdkemr.endpoint import endpoint_data
 class ModifyFlowJobRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'ModifyFlowJob','emr')
+		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'ModifyFlowJob')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+
+	def get_RetryPolicy(self):
+		return self.get_query_params().get('RetryPolicy')
+
+	def set_RetryPolicy(self,RetryPolicy):
+		self.add_query_param('RetryPolicy',RetryPolicy)
 
 	def get_RunConf(self):
 		return self.get_query_params().get('RunConf')
@@ -50,7 +56,7 @@ class ModifyFlowJobRequest(RpcRequest):
 		self.add_query_param('ParamConf',ParamConf)
 
 	def get_ResourceLists(self):
-		return self.get_query_params().get('ResourceLists')
+		return self.get_query_params().get('ResourceList')
 
 	def set_ResourceLists(self, ResourceLists):
 		for depth1 in range(len(ResourceLists)):
