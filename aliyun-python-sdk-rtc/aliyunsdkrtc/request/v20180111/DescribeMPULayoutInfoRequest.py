@@ -20,15 +20,22 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkrtc.endpoint import endpoint_data
 
-class GetTaskStatusRequest(RpcRequest):
+class DescribeMPULayoutInfoRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'rtc', '2018-01-11', 'GetTaskStatus','rtc')
+		RpcRequest.__init__(self, 'rtc', '2018-01-11', 'DescribeMPULayoutInfo','rtc')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+
+	def get_LayoutId(self):
+		return self.get_query_params().get('LayoutId')
+
+	def set_LayoutId(self,LayoutId):
+		self.add_query_param('LayoutId',LayoutId)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
@@ -41,15 +48,3 @@ class GetTaskStatusRequest(RpcRequest):
 
 	def set_AppId(self,AppId):
 		self.add_query_param('AppId',AppId)
-
-	def get_ChannelId(self):
-		return self.get_query_params().get('ChannelId')
-
-	def set_ChannelId(self,ChannelId):
-		self.add_query_param('ChannelId',ChannelId)
-
-	def get_TaskId(self):
-		return self.get_query_params().get('TaskId')
-
-	def set_TaskId(self,TaskId):
-		self.add_query_param('TaskId',TaskId)

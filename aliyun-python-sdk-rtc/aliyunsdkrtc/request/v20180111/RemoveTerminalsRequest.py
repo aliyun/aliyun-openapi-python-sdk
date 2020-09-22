@@ -24,6 +24,7 @@ class RemoveTerminalsRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'rtc', '2018-01-11', 'RemoveTerminals','rtc')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -31,12 +32,12 @@ class RemoveTerminalsRequest(RpcRequest):
 
 
 	def get_TerminalIdss(self):
-		return self.get_query_params().get('TerminalIdss')
+		return self.get_query_params().get('TerminalIds')
 
-	def set_TerminalIdss(self,TerminalIdss):
-		for i in range(len(TerminalIdss)):	
-			if TerminalIdss[i] is not None:
-				self.add_query_param('TerminalIds.' + str(i + 1) , TerminalIdss[i]);
+	def set_TerminalIdss(self, TerminalIdss):
+		for depth1 in range(len(TerminalIdss)):
+			if TerminalIdss[depth1] is not None:
+				self.add_query_param('TerminalIds.' + str(depth1 + 1) , TerminalIdss[depth1])
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')

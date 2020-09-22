@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkrtc.endpoint import endpoint_data
 
-class UpdateMPULayoutRequest(RpcRequest):
+class UpdateRecordTemplateRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'rtc', '2018-01-11', 'UpdateMPULayout','rtc')
+		RpcRequest.__init__(self, 'rtc', '2018-01-11', 'UpdateRecordTemplate','rtc')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,17 +31,19 @@ class UpdateMPULayoutRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_UserPaness(self):
-		return self.get_query_params().get('UserPanes')
+	def get_Formatss(self):
+		return self.get_query_params().get('Formats')
 
-	def set_UserPaness(self, UserPaness):
-		for depth1 in range(len(UserPaness)):
-			if UserPaness[depth1].get('PaneId') is not None:
-				self.add_query_param('UserPanes.' + str(depth1 + 1) + '.PaneId', UserPaness[depth1].get('PaneId'))
-			if UserPaness[depth1].get('UserId') is not None:
-				self.add_query_param('UserPanes.' + str(depth1 + 1) + '.UserId', UserPaness[depth1].get('UserId'))
-			if UserPaness[depth1].get('SourceType') is not None:
-				self.add_query_param('UserPanes.' + str(depth1 + 1) + '.SourceType', UserPaness[depth1].get('SourceType'))
+	def set_Formatss(self, Formatss):
+		for depth1 in range(len(Formatss)):
+			if Formatss[depth1] is not None:
+				self.add_query_param('Formats.' + str(depth1 + 1) , Formatss[depth1])
+
+	def get_OssFilePrefix(self):
+		return self.get_query_params().get('OssFilePrefix')
+
+	def set_OssFilePrefix(self,OssFilePrefix):
+		self.add_query_param('OssFilePrefix',OssFilePrefix)
 
 	def get_BackgroundColor(self):
 		return self.get_query_params().get('BackgroundColor')
@@ -49,11 +51,11 @@ class UpdateMPULayoutRequest(RpcRequest):
 	def set_BackgroundColor(self,BackgroundColor):
 		self.add_query_param('BackgroundColor',BackgroundColor)
 
-	def get_CropMode(self):
-		return self.get_query_params().get('CropMode')
+	def get_TaskProfile(self):
+		return self.get_query_params().get('TaskProfile')
 
-	def set_CropMode(self,CropMode):
-		self.add_query_param('CropMode',CropMode)
+	def set_TaskProfile(self,TaskProfile):
+		self.add_query_param('TaskProfile',TaskProfile)
 
 	def get_LayoutIdss(self):
 		return self.get_query_params().get('LayoutIds')
@@ -63,11 +65,23 @@ class UpdateMPULayoutRequest(RpcRequest):
 			if LayoutIdss[depth1] is not None:
 				self.add_query_param('LayoutIds.' + str(depth1 + 1) , LayoutIdss[depth1])
 
-	def get_TaskId(self):
-		return self.get_query_params().get('TaskId')
+	def get_OssBucket(self):
+		return self.get_query_params().get('OssBucket')
 
-	def set_TaskId(self,TaskId):
-		self.add_query_param('TaskId',TaskId)
+	def set_OssBucket(self,OssBucket):
+		self.add_query_param('OssBucket',OssBucket)
+
+	def get_MnsQueue(self):
+		return self.get_query_params().get('MnsQueue')
+
+	def set_MnsQueue(self,MnsQueue):
+		self.add_query_param('MnsQueue',MnsQueue)
+
+	def get_FileSplitInterval(self):
+		return self.get_query_params().get('FileSplitInterval')
+
+	def set_FileSplitInterval(self,FileSplitInterval):
+		self.add_query_param('FileSplitInterval',FileSplitInterval)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
@@ -75,8 +89,26 @@ class UpdateMPULayoutRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
+	def get_TemplateId(self):
+		return self.get_query_params().get('TemplateId')
+
+	def set_TemplateId(self,TemplateId):
+		self.add_query_param('TemplateId',TemplateId)
+
 	def get_AppId(self):
 		return self.get_query_params().get('AppId')
 
 	def set_AppId(self,AppId):
 		self.add_query_param('AppId',AppId)
+
+	def get_Name(self):
+		return self.get_query_params().get('Name')
+
+	def set_Name(self,Name):
+		self.add_query_param('Name',Name)
+
+	def get_MediaEncode(self):
+		return self.get_query_params().get('MediaEncode')
+
+	def set_MediaEncode(self,MediaEncode):
+		self.add_query_param('MediaEncode',MediaEncode)

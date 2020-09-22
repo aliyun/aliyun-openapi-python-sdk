@@ -20,34 +20,36 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkrtc.endpoint import endpoint_data
 
-class StartTaskRequest(RpcRequest):
+class DescribeRecordTemplatesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'rtc', '2018-01-11', 'StartTask','rtc')
+		RpcRequest.__init__(self, 'rtc', '2018-01-11', 'DescribeRecordTemplates','rtc')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_MixPaness(self):
-		return self.get_query_params().get('MixPaness')
+	def get_TemplateIdss(self):
+		return self.get_query_params().get('TemplateIds')
 
-	def set_MixPaness(self,MixPaness):
-		for i in range(len(MixPaness)):	
-			if MixPaness[i].get('PaneId') is not None:
-				self.add_query_param('MixPanes.' + str(i + 1) + '.PaneId' , MixPaness[i].get('PaneId'))
-			if MixPaness[i].get('UserId') is not None:
-				self.add_query_param('MixPanes.' + str(i + 1) + '.UserId' , MixPaness[i].get('UserId'))
-			if MixPaness[i].get('SourceType') is not None:
-				self.add_query_param('MixPanes.' + str(i + 1) + '.SourceType' , MixPaness[i].get('SourceType'))
+	def set_TemplateIdss(self, TemplateIdss):
+		for depth1 in range(len(TemplateIdss)):
+			if TemplateIdss[depth1] is not None:
+				self.add_query_param('TemplateIds.' + str(depth1 + 1) , TemplateIdss[depth1])
 
+	def get_PageNum(self):
+		return self.get_query_params().get('PageNum')
 
-	def get_IdempotentId(self):
-		return self.get_query_params().get('IdempotentId')
+	def set_PageNum(self,PageNum):
+		self.add_query_param('PageNum',PageNum)
 
-	def set_IdempotentId(self,IdempotentId):
-		self.add_query_param('IdempotentId',IdempotentId)
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
@@ -55,20 +57,8 @@ class StartTaskRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_TemplateId(self):
-		return self.get_query_params().get('TemplateId')
-
-	def set_TemplateId(self,TemplateId):
-		self.add_query_param('TemplateId',TemplateId)
-
 	def get_AppId(self):
 		return self.get_query_params().get('AppId')
 
 	def set_AppId(self,AppId):
 		self.add_query_param('AppId',AppId)
-
-	def get_ChannelId(self):
-		return self.get_query_params().get('ChannelId')
-
-	def set_ChannelId(self,ChannelId):
-		self.add_query_param('ChannelId',ChannelId)

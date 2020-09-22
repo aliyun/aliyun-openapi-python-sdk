@@ -24,6 +24,7 @@ class CreateChannelRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'rtc', '2018-01-11', 'CreateChannel','rtc')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):

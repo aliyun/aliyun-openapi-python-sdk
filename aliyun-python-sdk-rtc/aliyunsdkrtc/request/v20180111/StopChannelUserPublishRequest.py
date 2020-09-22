@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkrtc.endpoint import endpoint_data
 
-class ReceiveNotifyRequest(RpcRequest):
+class StopChannelUserPublishRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'rtc', '2018-01-11', 'ReceiveNotify','rtc')
+		RpcRequest.__init__(self, 'rtc', '2018-01-11', 'StopChannelUserPublish','rtc')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,23 +31,11 @@ class ReceiveNotifyRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_TraceId(self):
-		return self.get_query_params().get('TraceId')
+	def get_UserId(self):
+		return self.get_query_params().get('UserId')
 
-	def set_TraceId(self,TraceId):
-		self.add_query_param('TraceId',TraceId)
-
-	def get_Content(self):
-		return self.get_query_params().get('Content')
-
-	def set_Content(self,Content):
-		self.add_query_param('Content',Content)
-
-	def get_Event(self):
-		return self.get_query_params().get('Event')
-
-	def set_Event(self,Event):
-		self.add_query_param('Event',Event)
+	def set_UserId(self,UserId):
+		self.add_query_param('UserId',UserId)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
@@ -55,14 +43,14 @@ class ReceiveNotifyRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_ContentType(self):
-		return self.get_query_params().get('ContentType')
+	def get_AppId(self):
+		return self.get_query_params().get('AppId')
 
-	def set_ContentType(self,ContentType):
-		self.add_query_param('ContentType',ContentType)
+	def set_AppId(self,AppId):
+		self.add_query_param('AppId',AppId)
 
-	def get_BizId(self):
-		return self.get_query_params().get('BizId')
+	def get_ChannelId(self):
+		return self.get_query_params().get('ChannelId')
 
-	def set_BizId(self,BizId):
-		self.add_query_param('BizId',BizId)
+	def set_ChannelId(self,ChannelId):
+		self.add_query_param('ChannelId',ChannelId)

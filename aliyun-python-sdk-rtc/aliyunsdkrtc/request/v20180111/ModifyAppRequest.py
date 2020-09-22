@@ -24,23 +24,24 @@ class ModifyAppRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'rtc', '2018-01-11', 'ModifyApp','rtc')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
 	def get_AppName(self):
 		return self.get_query_params().get('AppName')
 
 	def set_AppName(self,AppName):
 		self.add_query_param('AppName',AppName)
+
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
 
 	def get_AppId(self):
 		return self.get_query_params().get('AppId')

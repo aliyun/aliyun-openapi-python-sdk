@@ -20,28 +20,16 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkrtc.endpoint import endpoint_data
 
-class UpdateMPULayoutRequest(RpcRequest):
+class CreateMPURuleRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'rtc', '2018-01-11', 'UpdateMPULayout','rtc')
+		RpcRequest.__init__(self, 'rtc', '2018-01-11', 'CreateMPURule','rtc')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_UserPaness(self):
-		return self.get_query_params().get('UserPanes')
-
-	def set_UserPaness(self, UserPaness):
-		for depth1 in range(len(UserPaness)):
-			if UserPaness[depth1].get('PaneId') is not None:
-				self.add_query_param('UserPanes.' + str(depth1 + 1) + '.PaneId', UserPaness[depth1].get('PaneId'))
-			if UserPaness[depth1].get('UserId') is not None:
-				self.add_query_param('UserPanes.' + str(depth1 + 1) + '.UserId', UserPaness[depth1].get('UserId'))
-			if UserPaness[depth1].get('SourceType') is not None:
-				self.add_query_param('UserPanes.' + str(depth1 + 1) + '.SourceType', UserPaness[depth1].get('SourceType'))
 
 	def get_BackgroundColor(self):
 		return self.get_query_params().get('BackgroundColor')
@@ -55,6 +43,18 @@ class UpdateMPULayoutRequest(RpcRequest):
 	def set_CropMode(self,CropMode):
 		self.add_query_param('CropMode',CropMode)
 
+	def get_ChannelPrefix(self):
+		return self.get_query_params().get('ChannelPrefix')
+
+	def set_ChannelPrefix(self,ChannelPrefix):
+		self.add_query_param('ChannelPrefix',ChannelPrefix)
+
+	def get_TaskProfile(self):
+		return self.get_query_params().get('TaskProfile')
+
+	def set_TaskProfile(self,TaskProfile):
+		self.add_query_param('TaskProfile',TaskProfile)
+
 	def get_LayoutIdss(self):
 		return self.get_query_params().get('LayoutIds')
 
@@ -63,11 +63,11 @@ class UpdateMPULayoutRequest(RpcRequest):
 			if LayoutIdss[depth1] is not None:
 				self.add_query_param('LayoutIds.' + str(depth1 + 1) , LayoutIdss[depth1])
 
-	def get_TaskId(self):
-		return self.get_query_params().get('TaskId')
+	def get_PlayDomain(self):
+		return self.get_query_params().get('PlayDomain')
 
-	def set_TaskId(self,TaskId):
-		self.add_query_param('TaskId',TaskId)
+	def set_PlayDomain(self,PlayDomain):
+		self.add_query_param('PlayDomain',PlayDomain)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
@@ -80,3 +80,15 @@ class UpdateMPULayoutRequest(RpcRequest):
 
 	def set_AppId(self,AppId):
 		self.add_query_param('AppId',AppId)
+
+	def get_MediaEncode(self):
+		return self.get_query_params().get('MediaEncode')
+
+	def set_MediaEncode(self,MediaEncode):
+		self.add_query_param('MediaEncode',MediaEncode)
+
+	def get_CallBack(self):
+		return self.get_query_params().get('CallBack')
+
+	def set_CallBack(self,CallBack):
+		self.add_query_param('CallBack',CallBack)

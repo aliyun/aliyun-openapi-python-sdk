@@ -24,6 +24,7 @@ class DescribeRtcUserListRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'rtc', '2018-01-11', 'DescribeRtcUserList','rtc')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -36,6 +37,12 @@ class DescribeRtcUserListRequest(RpcRequest):
 	def set_StartTime(self,StartTime):
 		self.add_query_param('StartTime',StartTime)
 
+	def get_SubUser(self):
+		return self.get_query_params().get('SubUser')
+
+	def set_SubUser(self,SubUser):
+		self.add_query_param('SubUser',SubUser)
+
 	def get_EndTime(self):
 		return self.get_query_params().get('EndTime')
 
@@ -47,6 +54,12 @@ class DescribeRtcUserListRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_PubUser(self):
+		return self.get_query_params().get('PubUser')
+
+	def set_PubUser(self,PubUser):
+		self.add_query_param('PubUser',PubUser)
 
 	def get_AppId(self):
 		return self.get_query_params().get('AppId')

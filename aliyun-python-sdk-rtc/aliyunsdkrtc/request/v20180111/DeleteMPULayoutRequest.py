@@ -20,27 +20,28 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkrtc.endpoint import endpoint_data
 
-class DeleteTemplateRequest(RpcRequest):
+class DeleteMPULayoutRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'rtc', '2018-01-11', 'DeleteTemplate','rtc')
+		RpcRequest.__init__(self, 'rtc', '2018-01-11', 'DeleteMPULayout','rtc')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_LayoutId(self):
+		return self.get_query_params().get('LayoutId')
+
+	def set_LayoutId(self,LayoutId):
+		self.add_query_param('LayoutId',LayoutId)
+
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
-
-	def get_TemplateId(self):
-		return self.get_query_params().get('TemplateId')
-
-	def set_TemplateId(self,TemplateId):
-		self.add_query_param('TemplateId',TemplateId)
 
 	def get_AppId(self):
 		return self.get_query_params().get('AppId')

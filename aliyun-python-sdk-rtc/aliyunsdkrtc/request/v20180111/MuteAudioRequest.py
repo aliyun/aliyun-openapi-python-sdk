@@ -24,6 +24,7 @@ class MuteAudioRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'rtc', '2018-01-11', 'MuteAudio','rtc')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -31,12 +32,12 @@ class MuteAudioRequest(RpcRequest):
 
 
 	def get_ParticipantIdss(self):
-		return self.get_query_params().get('ParticipantIdss')
+		return self.get_query_params().get('ParticipantIds')
 
-	def set_ParticipantIdss(self,ParticipantIdss):
-		for i in range(len(ParticipantIdss)):	
-			if ParticipantIdss[i] is not None:
-				self.add_query_param('ParticipantIds.' + str(i + 1) , ParticipantIdss[i]);
+	def set_ParticipantIdss(self, ParticipantIdss):
+		for depth1 in range(len(ParticipantIdss)):
+			if ParticipantIdss[depth1] is not None:
+				self.add_query_param('ParticipantIds.' + str(depth1 + 1) , ParticipantIdss[depth1])
 
 	def get_ConferenceId(self):
 		return self.get_query_params().get('ConferenceId')
