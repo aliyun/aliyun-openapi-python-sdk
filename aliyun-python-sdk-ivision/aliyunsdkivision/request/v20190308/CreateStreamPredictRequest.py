@@ -24,6 +24,7 @@ class CreateStreamPredictRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'ivision', '2019-03-08', 'CreateStreamPredict','ivision')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -54,12 +55,6 @@ class CreateStreamPredictRequest(RpcRequest):
 	def set_Output(self,Output):
 		self.add_query_param('Output',Output)
 
-	def get_ShowLog(self):
-		return self.get_query_params().get('ShowLog')
-
-	def set_ShowLog(self,ShowLog):
-		self.add_query_param('ShowLog',ShowLog)
-
 	def get_StreamType(self):
 		return self.get_query_params().get('StreamType')
 
@@ -77,6 +72,12 @@ class CreateStreamPredictRequest(RpcRequest):
 
 	def set_StreamId(self,StreamId):
 		self.add_query_param('StreamId',StreamId)
+
+	def get_PredictTemplateId(self):
+		return self.get_query_params().get('PredictTemplateId')
+
+	def set_PredictTemplateId(self,PredictTemplateId):
+		self.add_query_param('PredictTemplateId',PredictTemplateId)
 
 	def get_DetectIntervals(self):
 		return self.get_query_params().get('DetectIntervals')

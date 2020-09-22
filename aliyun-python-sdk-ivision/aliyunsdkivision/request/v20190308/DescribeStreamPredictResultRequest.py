@@ -24,6 +24,7 @@ class DescribeStreamPredictResultRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'ivision', '2019-03-08', 'DescribeStreamPredictResult','ivision')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -59,12 +60,6 @@ class DescribeStreamPredictResultRequest(RpcRequest):
 
 	def set_ProbabilityThreshold(self,ProbabilityThreshold):
 		self.add_query_param('ProbabilityThreshold',ProbabilityThreshold)
-
-	def get_ShowLog(self):
-		return self.get_query_params().get('ShowLog')
-
-	def set_ShowLog(self,ShowLog):
-		self.add_query_param('ShowLog',ShowLog)
 
 	def get_ModelId(self):
 		return self.get_query_params().get('ModelId')

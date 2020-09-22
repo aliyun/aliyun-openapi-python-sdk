@@ -24,6 +24,7 @@ class DescribeStreamPredictsRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'ivision', '2019-03-08', 'DescribeStreamPredicts','ivision')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -47,12 +48,6 @@ class DescribeStreamPredictsRequest(RpcRequest):
 
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
-
-	def get_ShowLog(self):
-		return self.get_query_params().get('ShowLog')
-
-	def set_ShowLog(self,ShowLog):
-		self.add_query_param('ShowLog',ShowLog)
 
 	def get_ModelId(self):
 		return self.get_query_params().get('ModelId')

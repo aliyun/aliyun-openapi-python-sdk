@@ -24,6 +24,7 @@ class DeleteStreamPredictRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'ivision', '2019-03-08', 'DeleteStreamPredict','ivision')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -35,12 +36,6 @@ class DeleteStreamPredictRequest(RpcRequest):
 
 	def set_PredictId(self,PredictId):
 		self.add_query_param('PredictId',PredictId)
-
-	def get_ShowLog(self):
-		return self.get_query_params().get('ShowLog')
-
-	def set_ShowLog(self,ShowLog):
-		self.add_query_param('ShowLog',ShowLog)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
