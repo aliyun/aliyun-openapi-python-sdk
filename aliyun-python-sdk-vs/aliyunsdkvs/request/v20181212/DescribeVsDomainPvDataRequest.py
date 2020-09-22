@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkvs.endpoint import endpoint_data
 
-class CreateStreamSnapshotRequest(RpcRequest):
+class DescribeVsDomainPvDataRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'vs', '2018-12-12', 'CreateStreamSnapshot','vs')
+		RpcRequest.__init__(self, 'vs', '2018-12-12', 'DescribeVsDomainPvData','vs')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,20 +31,26 @@ class CreateStreamSnapshotRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_Id(self):
-		return self.get_query_params().get('Id')
+	def get_StartTime(self):
+		return self.get_query_params().get('StartTime')
 
-	def set_Id(self,Id):
-		self.add_query_param('Id',Id)
+	def set_StartTime(self,StartTime):
+		self.add_query_param('StartTime',StartTime)
+
+	def get_DomainName(self):
+		return self.get_query_params().get('DomainName')
+
+	def set_DomainName(self,DomainName):
+		self.add_query_param('DomainName',DomainName)
+
+	def get_EndTime(self):
+		return self.get_query_params().get('EndTime')
+
+	def set_EndTime(self,EndTime):
+		self.add_query_param('EndTime',EndTime)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
-
-	def get_Location(self):
-		return self.get_query_params().get('Location')
-
-	def set_Location(self,Location):
-		self.add_query_param('Location',Location)

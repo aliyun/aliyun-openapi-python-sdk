@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkvs.endpoint import endpoint_data
 
-class CreateStreamSnapshotRequest(RpcRequest):
+class StartParentPlatformRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'vs', '2018-12-12', 'CreateStreamSnapshot','vs')
+		RpcRequest.__init__(self, 'vs', '2018-12-12', 'StartParentPlatform','vs')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -42,9 +42,3 @@ class CreateStreamSnapshotRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
-
-	def get_Location(self):
-		return self.get_query_params().get('Location')
-
-	def set_Location(self,Location):
-		self.add_query_param('Location',Location)
