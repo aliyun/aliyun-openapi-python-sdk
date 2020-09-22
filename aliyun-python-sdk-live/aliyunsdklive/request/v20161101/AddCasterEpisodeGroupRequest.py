@@ -23,7 +23,7 @@ from aliyunsdklive.endpoint import endpoint_data
 class AddCasterEpisodeGroupRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'live', '2016-11-01', 'AddCasterEpisodeGroup')
+		RpcRequest.__init__(self, 'live', '2016-11-01', 'AddCasterEpisodeGroup','live')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -50,7 +50,7 @@ class AddCasterEpisodeGroupRequest(RpcRequest):
 		self.add_query_param('SideOutputUrl',SideOutputUrl)
 
 	def get_Items(self):
-		return self.get_query_params().get('Items')
+		return self.get_query_params().get('Item')
 
 	def set_Items(self, Items):
 		for depth1 in range(len(Items)):

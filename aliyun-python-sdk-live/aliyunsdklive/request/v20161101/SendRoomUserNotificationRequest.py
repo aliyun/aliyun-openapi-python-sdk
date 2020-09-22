@@ -23,7 +23,7 @@ from aliyunsdklive.endpoint import endpoint_data
 class SendRoomUserNotificationRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'live', '2016-11-01', 'SendRoomUserNotification')
+		RpcRequest.__init__(self, 'live', '2016-11-01', 'SendRoomUserNotification','live')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())

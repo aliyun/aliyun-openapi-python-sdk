@@ -23,7 +23,7 @@ from aliyunsdklive.endpoint import endpoint_data
 class AddCustomLiveStreamTranscodeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'live', '2016-11-01', 'AddCustomLiveStreamTranscode')
+		RpcRequest.__init__(self, 'live', '2016-11-01', 'AddCustomLiveStreamTranscode','live')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -36,6 +36,12 @@ class AddCustomLiveStreamTranscodeRequest(RpcRequest):
 
 	def set_Template(self,Template):
 		self.add_query_param('Template',Template)
+
+	def get_Lazy(self):
+		return self.get_query_params().get('Lazy')
+
+	def set_Lazy(self,Lazy):
+		self.add_query_param('Lazy',Lazy)
 
 	def get_Gop(self):
 		return self.get_query_params().get('Gop')

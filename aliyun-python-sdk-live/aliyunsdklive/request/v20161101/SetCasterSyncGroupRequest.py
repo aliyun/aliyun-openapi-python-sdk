@@ -23,7 +23,7 @@ from aliyunsdklive.endpoint import endpoint_data
 class SetCasterSyncGroupRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'live', '2016-11-01', 'SetCasterSyncGroup')
+		RpcRequest.__init__(self, 'live', '2016-11-01', 'SetCasterSyncGroup','live')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -44,7 +44,7 @@ class SetCasterSyncGroupRequest(RpcRequest):
 		self.add_query_param('OwnerId',OwnerId)
 
 	def get_SyncGroups(self):
-		return self.get_query_params().get('SyncGroups')
+		return self.get_query_params().get('SyncGroup')
 
 	def set_SyncGroups(self, SyncGroups):
 		for depth1 in range(len(SyncGroups)):

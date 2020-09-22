@@ -23,7 +23,7 @@ from aliyunsdklive.endpoint import endpoint_data
 class UpdateCasterSceneAudioRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'live', '2016-11-01', 'UpdateCasterSceneAudio')
+		RpcRequest.__init__(self, 'live', '2016-11-01', 'UpdateCasterSceneAudio','live')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -44,7 +44,7 @@ class UpdateCasterSceneAudioRequest(RpcRequest):
 		self.add_query_param('OwnerId',OwnerId)
 
 	def get_AudioLayers(self):
-		return self.get_query_params().get('AudioLayers')
+		return self.get_query_params().get('AudioLayer')
 
 	def set_AudioLayers(self, AudioLayers):
 		for depth1 in range(len(AudioLayers)):
@@ -62,7 +62,7 @@ class UpdateCasterSceneAudioRequest(RpcRequest):
 		self.add_query_param('SceneId',SceneId)
 
 	def get_MixLists(self):
-		return self.get_query_params().get('MixLists')
+		return self.get_query_params().get('MixList')
 
 	def set_MixLists(self, MixLists):
 		for depth1 in range(len(MixLists)):

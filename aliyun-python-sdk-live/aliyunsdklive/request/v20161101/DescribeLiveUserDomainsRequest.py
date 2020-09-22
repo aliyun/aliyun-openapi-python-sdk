@@ -23,7 +23,7 @@ from aliyunsdklive.endpoint import endpoint_data
 class DescribeLiveUserDomainsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'live', '2016-11-01', 'DescribeLiveUserDomains')
+		RpcRequest.__init__(self, 'live', '2016-11-01', 'DescribeLiveUserDomains','live')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -56,7 +56,7 @@ class DescribeLiveUserDomainsRequest(RpcRequest):
 		self.add_query_param('RegionName',RegionName)
 
 	def get_Tags(self):
-		return self.get_query_params().get('Tags')
+		return self.get_query_params().get('Tag')
 
 	def set_Tags(self, Tags):
 		for depth1 in range(len(Tags)):

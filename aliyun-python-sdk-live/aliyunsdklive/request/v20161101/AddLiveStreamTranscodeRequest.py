@@ -23,7 +23,7 @@ from aliyunsdklive.endpoint import endpoint_data
 class AddLiveStreamTranscodeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'live', '2016-11-01', 'AddLiveStreamTranscode')
+		RpcRequest.__init__(self, 'live', '2016-11-01', 'AddLiveStreamTranscode','live')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -37,17 +37,29 @@ class AddLiveStreamTranscodeRequest(RpcRequest):
 	def set_Template(self,Template):
 		self.add_query_param('Template',Template)
 
-	def get_SecurityToken(self):
-		return self.get_query_params().get('SecurityToken')
+	def get_Lazy(self):
+		return self.get_query_params().get('Lazy')
 
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)
+	def set_Lazy(self,Lazy):
+		self.add_query_param('Lazy',Lazy)
+
+	def get_Mix(self):
+		return self.get_query_params().get('Mix')
+
+	def set_Mix(self,Mix):
+		self.add_query_param('Mix',Mix)
 
 	def get_App(self):
 		return self.get_query_params().get('App')
 
 	def set_App(self,App):
 		self.add_query_param('App',App)
+
+	def get_Watermark(self):
+		return self.get_query_params().get('Watermark')
+
+	def set_Watermark(self,Watermark):
+		self.add_query_param('Watermark',Watermark)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
@@ -60,3 +72,15 @@ class AddLiveStreamTranscodeRequest(RpcRequest):
 
 	def set_Domain(self,Domain):
 		self.add_query_param('Domain',Domain)
+
+	def get_WaterPattern(self):
+		return self.get_query_params().get('WaterPattern')
+
+	def set_WaterPattern(self,WaterPattern):
+		self.add_query_param('WaterPattern',WaterPattern)
+
+	def get_OnlyAudio(self):
+		return self.get_query_params().get('OnlyAudio')
+
+	def set_OnlyAudio(self,OnlyAudio):
+		self.add_query_param('OnlyAudio',OnlyAudio)

@@ -23,7 +23,7 @@ from aliyunsdklive.endpoint import endpoint_data
 class ModifyCasterProgramRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'live', '2016-11-01', 'ModifyCasterProgram')
+		RpcRequest.__init__(self, 'live', '2016-11-01', 'ModifyCasterProgram','live')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -32,7 +32,7 @@ class ModifyCasterProgramRequest(RpcRequest):
 
 
 	def get_Episodes(self):
-		return self.get_query_params().get('Episodes')
+		return self.get_query_params().get('Episode')
 
 	def set_Episodes(self, Episodes):
 		for depth1 in range(len(Episodes)):
