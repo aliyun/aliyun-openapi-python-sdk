@@ -86,7 +86,7 @@ class CreateDiskRequest(RpcRequest):
 		self.add_query_param('StorageSetPartitionNumber',StorageSetPartitionNumber)
 
 	def get_Tags(self):
-		return self.get_query_params().get('Tags')
+		return self.get_query_params().get('Tag')
 
 	def set_Tags(self, Tags):
 		for depth1 in range(len(Tags)):
@@ -96,7 +96,7 @@ class CreateDiskRequest(RpcRequest):
 				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tags[depth1].get('Key'))
 
 	def get_Arns(self):
-		return self.get_query_params().get('Arns')
+		return self.get_query_params().get('Arn')
 
 	def set_Arns(self, Arns):
 		for depth1 in range(len(Arns)):

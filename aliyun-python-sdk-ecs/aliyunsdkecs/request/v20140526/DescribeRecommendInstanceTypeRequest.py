@@ -104,7 +104,7 @@ class DescribeRecommendInstanceTypeRequest(RpcRequest):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
 	def get_InstanceTypeFamilys(self):
-		return self.get_query_params().get('InstanceTypeFamilys')
+		return self.get_query_params().get('InstanceTypeFamily')
 
 	def set_InstanceTypeFamilys(self, InstanceTypeFamilys):
 		for depth1 in range(len(InstanceTypeFamilys)):

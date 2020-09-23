@@ -92,7 +92,7 @@ class CreateAutoProvisioningGroupRequest(RpcRequest):
 		self.add_query_param('ExcessCapacityTerminationPolicy',ExcessCapacityTerminationPolicy)
 
 	def get_LaunchTemplateConfigs(self):
-		return self.get_query_params().get('LaunchTemplateConfigs')
+		return self.get_query_params().get('LaunchTemplateConfig')
 
 	def set_LaunchTemplateConfigs(self, LaunchTemplateConfigs):
 		for depth1 in range(len(LaunchTemplateConfigs)):

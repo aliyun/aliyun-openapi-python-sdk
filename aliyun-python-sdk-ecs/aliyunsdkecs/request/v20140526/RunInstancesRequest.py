@@ -206,7 +206,7 @@ class RunInstancesRequest(RpcRequest):
 		self.add_query_param('InstanceType',InstanceType)
 
 	def get_Arns(self):
-		return self.get_query_params().get('Arns')
+		return self.get_query_params().get('Arn')
 
 	def set_Arns(self, Arns):
 		for depth1 in range(len(Arns)):
@@ -236,7 +236,7 @@ class RunInstancesRequest(RpcRequest):
 		self.add_query_param('DedicatedHostId',DedicatedHostId)
 
 	def get_SecurityGroupIdss(self):
-		return self.get_query_params().get('SecurityGroupIdss')
+		return self.get_query_params().get('SecurityGroupIds')
 
 	def set_SecurityGroupIdss(self, SecurityGroupIdss):
 		for depth1 in range(len(SecurityGroupIdss)):
@@ -304,7 +304,7 @@ class RunInstancesRequest(RpcRequest):
 		self.add_query_param('StorageSetPartitionNumber',StorageSetPartitionNumber)
 
 	def get_Tags(self):
-		return self.get_query_params().get('Tags')
+		return self.get_query_params().get('Tag')
 
 	def set_Tags(self, Tags):
 		for depth1 in range(len(Tags)):
@@ -350,7 +350,7 @@ class RunInstancesRequest(RpcRequest):
 		self.add_query_param('ZoneId',ZoneId)
 
 	def get_Ipv6Addresss(self):
-		return self.get_query_params().get('Ipv6Addresss')
+		return self.get_query_params().get('Ipv6Address')
 
 	def set_Ipv6Addresss(self, Ipv6Addresss):
 		for depth1 in range(len(Ipv6Addresss)):
@@ -406,7 +406,7 @@ class RunInstancesRequest(RpcRequest):
 		self.add_query_param('InstanceChargeType',InstanceChargeType)
 
 	def get_NetworkInterfaces(self):
-		return self.get_query_params().get('NetworkInterfaces')
+		return self.get_query_params().get('NetworkInterface')
 
 	def set_NetworkInterfaces(self, NetworkInterfaces):
 		for depth1 in range(len(NetworkInterfaces)):
@@ -470,7 +470,7 @@ class RunInstancesRequest(RpcRequest):
 		self.add_query_param('CreditSpecification',CreditSpecification)
 
 	def get_DataDisks(self):
-		return self.get_query_params().get('DataDisks')
+		return self.get_query_params().get('DataDisk')
 
 	def set_DataDisks(self, DataDisks):
 		for depth1 in range(len(DataDisks)):

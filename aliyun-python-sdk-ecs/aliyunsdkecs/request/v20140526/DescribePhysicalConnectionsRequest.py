@@ -80,7 +80,7 @@ class DescribePhysicalConnectionsRequest(RpcRequest):
 		self.add_query_param('OwnerId',OwnerId)
 
 	def get_Filters(self):
-		return self.get_query_params().get('Filters')
+		return self.get_query_params().get('Filter')
 
 	def set_Filters(self, Filters):
 		for depth1 in range(len(Filters)):

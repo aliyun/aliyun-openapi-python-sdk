@@ -56,7 +56,7 @@ class ModifyDiskAttributeRequest(RpcRequest):
 		self.add_query_param('DeleteAutoSnapshot',DeleteAutoSnapshot)
 
 	def get_DiskIdss(self):
-		return self.get_query_params().get('DiskIdss')
+		return self.get_query_params().get('DiskIds')
 
 	def set_DiskIdss(self, DiskIdss):
 		for depth1 in range(len(DiskIdss)):

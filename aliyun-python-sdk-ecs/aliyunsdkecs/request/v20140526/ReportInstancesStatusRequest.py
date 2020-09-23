@@ -56,7 +56,7 @@ class ReportInstancesStatusRequest(RpcRequest):
 		self.add_query_param('StartTime',StartTime)
 
 	def get_DiskIds(self):
-		return self.get_query_params().get('DiskIds')
+		return self.get_query_params().get('DiskId')
 
 	def set_DiskIds(self, DiskIds):
 		for depth1 in range(len(DiskIds)):
@@ -88,7 +88,7 @@ class ReportInstancesStatusRequest(RpcRequest):
 		self.add_query_param('OwnerId',OwnerId)
 
 	def get_InstanceIds(self):
-		return self.get_query_params().get('InstanceIds')
+		return self.get_query_params().get('InstanceId')
 
 	def set_InstanceIds(self, InstanceIds):
 		for depth1 in range(len(InstanceIds)):
@@ -96,7 +96,7 @@ class ReportInstancesStatusRequest(RpcRequest):
 				self.add_query_param('InstanceId.' + str(depth1 + 1) , InstanceIds[depth1])
 
 	def get_Devices(self):
-		return self.get_query_params().get('Devices')
+		return self.get_query_params().get('Device')
 
 	def set_Devices(self, Devices):
 		for depth1 in range(len(Devices)):

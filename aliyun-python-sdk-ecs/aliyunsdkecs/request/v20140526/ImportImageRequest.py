@@ -32,7 +32,7 @@ class ImportImageRequest(RpcRequest):
 
 
 	def get_DiskDeviceMappings(self):
-		return self.get_query_params().get('DiskDeviceMappings')
+		return self.get_query_params().get('DiskDeviceMapping')
 
 	def set_DiskDeviceMappings(self, DiskDeviceMappings):
 		for depth1 in range(len(DiskDeviceMappings)):
@@ -86,7 +86,7 @@ class ImportImageRequest(RpcRequest):
 		self.add_query_param('ImageName',ImageName)
 
 	def get_Tags(self):
-		return self.get_query_params().get('Tags')
+		return self.get_query_params().get('Tag')
 
 	def set_Tags(self, Tags):
 		for depth1 in range(len(Tags)):

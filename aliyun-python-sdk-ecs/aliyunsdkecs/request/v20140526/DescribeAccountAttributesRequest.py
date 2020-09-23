@@ -38,7 +38,7 @@ class DescribeAccountAttributesRequest(RpcRequest):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
 	def get_AttributeNames(self):
-		return self.get_query_params().get('AttributeNames')
+		return self.get_query_params().get('AttributeName')
 
 	def set_AttributeNames(self, AttributeNames):
 		for depth1 in range(len(AttributeNames)):

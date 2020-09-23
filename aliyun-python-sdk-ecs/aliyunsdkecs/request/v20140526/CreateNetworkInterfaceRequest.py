@@ -86,7 +86,7 @@ class CreateNetworkInterfaceRequest(RpcRequest):
 		self.add_query_param('InstanceType',InstanceType)
 
 	def get_Tags(self):
-		return self.get_query_params().get('Tags')
+		return self.get_query_params().get('Tag')
 
 	def set_Tags(self, Tags):
 		for depth1 in range(len(Tags)):
@@ -126,7 +126,7 @@ class CreateNetworkInterfaceRequest(RpcRequest):
 		self.add_query_param('OwnerId',OwnerId)
 
 	def get_SecurityGroupIdss(self):
-		return self.get_query_params().get('SecurityGroupIdss')
+		return self.get_query_params().get('SecurityGroupIds')
 
 	def set_SecurityGroupIdss(self, SecurityGroupIdss):
 		for depth1 in range(len(SecurityGroupIdss)):
@@ -140,7 +140,7 @@ class CreateNetworkInterfaceRequest(RpcRequest):
 		self.add_query_param('VSwitchId',VSwitchId)
 
 	def get_PrivateIpAddresss(self):
-		return self.get_query_params().get('PrivateIpAddresss')
+		return self.get_query_params().get('PrivateIpAddress')
 
 	def set_PrivateIpAddresss(self, PrivateIpAddresss):
 		for depth1 in range(len(PrivateIpAddresss)):

@@ -68,7 +68,7 @@ class AssignIpv6AddressesRequest(RpcRequest):
 		self.add_query_param('NetworkInterfaceId',NetworkInterfaceId)
 
 	def get_Ipv6Addresss(self):
-		return self.get_query_params().get('Ipv6Addresss')
+		return self.get_query_params().get('Ipv6Address')
 
 	def set_Ipv6Addresss(self, Ipv6Addresss):
 		for depth1 in range(len(Ipv6Addresss)):

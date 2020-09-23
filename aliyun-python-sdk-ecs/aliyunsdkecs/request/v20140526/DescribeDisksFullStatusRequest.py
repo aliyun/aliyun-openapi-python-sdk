@@ -32,7 +32,7 @@ class DescribeDisksFullStatusRequest(RpcRequest):
 
 
 	def get_EventIds(self):
-		return self.get_query_params().get('EventIds')
+		return self.get_query_params().get('EventId')
 
 	def set_EventIds(self, EventIds):
 		for depth1 in range(len(EventIds)):
@@ -64,7 +64,7 @@ class DescribeDisksFullStatusRequest(RpcRequest):
 		self.add_query_param('PageSize',PageSize)
 
 	def get_DiskIds(self):
-		return self.get_query_params().get('DiskIds')
+		return self.get_query_params().get('DiskId')
 
 	def set_DiskIds(self, DiskIds):
 		for depth1 in range(len(DiskIds)):

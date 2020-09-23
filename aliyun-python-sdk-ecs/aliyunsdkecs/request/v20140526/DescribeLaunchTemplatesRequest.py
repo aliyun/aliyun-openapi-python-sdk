@@ -32,7 +32,7 @@ class DescribeLaunchTemplatesRequest(RpcRequest):
 
 
 	def get_LaunchTemplateNames(self):
-		return self.get_query_params().get('LaunchTemplateNames')
+		return self.get_query_params().get('LaunchTemplateName')
 
 	def set_LaunchTemplateNames(self, LaunchTemplateNames):
 		for depth1 in range(len(LaunchTemplateNames)):
@@ -58,7 +58,7 @@ class DescribeLaunchTemplatesRequest(RpcRequest):
 		self.add_query_param('PageSize',PageSize)
 
 	def get_TemplateTags(self):
-		return self.get_query_params().get('TemplateTags')
+		return self.get_query_params().get('TemplateTag')
 
 	def set_TemplateTags(self, TemplateTags):
 		for depth1 in range(len(TemplateTags)):
@@ -68,7 +68,7 @@ class DescribeLaunchTemplatesRequest(RpcRequest):
 				self.add_query_param('TemplateTag.' + str(depth1 + 1) + '.Value', TemplateTags[depth1].get('Value'))
 
 	def get_LaunchTemplateIds(self):
-		return self.get_query_params().get('LaunchTemplateIds')
+		return self.get_query_params().get('LaunchTemplateId')
 
 	def set_LaunchTemplateIds(self, LaunchTemplateIds):
 		for depth1 in range(len(LaunchTemplateIds)):

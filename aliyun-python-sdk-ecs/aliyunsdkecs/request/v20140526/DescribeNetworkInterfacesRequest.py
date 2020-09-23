@@ -80,7 +80,7 @@ class DescribeNetworkInterfacesRequest(RpcRequest):
 		self.add_query_param('PageSize',PageSize)
 
 	def get_Tags(self):
-		return self.get_query_params().get('Tags')
+		return self.get_query_params().get('Tag')
 
 	def set_Tags(self, Tags):
 		for depth1 in range(len(Tags)):
@@ -120,7 +120,7 @@ class DescribeNetworkInterfacesRequest(RpcRequest):
 		self.add_query_param('VSwitchId',VSwitchId)
 
 	def get_PrivateIpAddresss(self):
-		return self.get_query_params().get('PrivateIpAddresss')
+		return self.get_query_params().get('PrivateIpAddress')
 
 	def set_PrivateIpAddresss(self, PrivateIpAddresss):
 		for depth1 in range(len(PrivateIpAddresss)):
@@ -152,7 +152,7 @@ class DescribeNetworkInterfacesRequest(RpcRequest):
 		self.add_query_param('MaxResults',MaxResults)
 
 	def get_NetworkInterfaceIds(self):
-		return self.get_query_params().get('NetworkInterfaceIds')
+		return self.get_query_params().get('NetworkInterfaceId')
 
 	def set_NetworkInterfaceIds(self, NetworkInterfaceIds):
 		for depth1 in range(len(NetworkInterfaceIds)):

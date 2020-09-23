@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkecs.endpoint import endpoint_data
 
-class DescribeHaVipsRequest(RpcRequest):
+class DescribeSendFileResultsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'DescribeHaVips','ecs')
+		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'DescribeSendFileResults','ecs')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -49,6 +49,12 @@ class DescribeHaVipsRequest(RpcRequest):
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
 
+	def get_InvokeId(self):
+		return self.get_query_params().get('InvokeId')
+
+	def set_InvokeId(self,InvokeId):
+		self.add_query_param('InvokeId',InvokeId)
+
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -67,14 +73,14 @@ class DescribeHaVipsRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_Filters(self):
-		return self.get_query_params().get('Filter')
+	def get_InstanceId(self):
+		return self.get_query_params().get('InstanceId')
 
-	def set_Filters(self, Filters):
-		for depth1 in range(len(Filters)):
-			if Filters[depth1].get('Value') is not None:
-				for depth2 in range(len(Filters[depth1].get('Value'))):
-					if Filters[depth1].get('Value')[depth2] is not None:
-						self.add_query_param('Filter.' + str(depth1 + 1) + '.Value.' + str(depth2 + 1) , Filters[depth1].get('Value')[depth2])
-			if Filters[depth1].get('Key') is not None:
-				self.add_query_param('Filter.' + str(depth1 + 1) + '.Key', Filters[depth1].get('Key'))
+	def set_InstanceId(self,InstanceId):
+		self.add_query_param('InstanceId',InstanceId)
+
+	def get_Name(self):
+		return self.get_query_params().get('Name')
+
+	def set_Name(self,Name):
+		self.add_query_param('Name',Name)

@@ -32,7 +32,7 @@ class DescribeInstanceHistoryEventsRequest(RpcRequest):
 
 
 	def get_EventIds(self):
-		return self.get_query_params().get('EventIds')
+		return self.get_query_params().get('EventId')
 
 	def set_EventIds(self, EventIds):
 		for depth1 in range(len(EventIds)):
@@ -70,7 +70,7 @@ class DescribeInstanceHistoryEventsRequest(RpcRequest):
 		self.add_query_param('PageSize',PageSize)
 
 	def get_InstanceEventCycleStatuss(self):
-		return self.get_query_params().get('InstanceEventCycleStatuss')
+		return self.get_query_params().get('InstanceEventCycleStatus')
 
 	def set_InstanceEventCycleStatuss(self, InstanceEventCycleStatuss):
 		for depth1 in range(len(InstanceEventCycleStatuss)):
@@ -84,7 +84,7 @@ class DescribeInstanceHistoryEventsRequest(RpcRequest):
 		self.add_query_param('EventPublishTime.End',EventPublishTimeEnd)
 
 	def get_InstanceEventTypes(self):
-		return self.get_query_params().get('InstanceEventTypes')
+		return self.get_query_params().get('InstanceEventType')
 
 	def set_InstanceEventTypes(self, InstanceEventTypes):
 		for depth1 in range(len(InstanceEventTypes)):

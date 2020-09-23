@@ -50,7 +50,7 @@ class CreateNatGatewayRequest(RpcRequest):
 		self.add_query_param('Description',Description)
 
 	def get_BandwidthPackages(self):
-		return self.get_query_params().get('BandwidthPackages')
+		return self.get_query_params().get('BandwidthPackage')
 
 	def set_BandwidthPackages(self, BandwidthPackages):
 		for depth1 in range(len(BandwidthPackages)):

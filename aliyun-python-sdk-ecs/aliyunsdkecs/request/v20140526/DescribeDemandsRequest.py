@@ -56,7 +56,7 @@ class DescribeDemandsRequest(RpcRequest):
 		self.add_query_param('InstanceType',InstanceType)
 
 	def get_Tags(self):
-		return self.get_query_params().get('Tags')
+		return self.get_query_params().get('Tag')
 
 	def set_Tags(self, Tags):
 		for depth1 in range(len(Tags)):
@@ -102,7 +102,7 @@ class DescribeDemandsRequest(RpcRequest):
 		self.add_query_param('OwnerId',OwnerId)
 
 	def get_DemandStatuss(self):
-		return self.get_query_params().get('DemandStatuss')
+		return self.get_query_params().get('DemandStatus')
 
 	def set_DemandStatuss(self, DemandStatuss):
 		for depth1 in range(len(DemandStatuss)):

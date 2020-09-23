@@ -74,7 +74,7 @@ class DeleteRouteEntryRequest(RpcRequest):
 		self.add_query_param('OwnerId',OwnerId)
 
 	def get_NextHopLists(self):
-		return self.get_query_params().get('NextHopLists')
+		return self.get_query_params().get('NextHopList')
 
 	def set_NextHopLists(self, NextHopLists):
 		for depth1 in range(len(NextHopLists)):

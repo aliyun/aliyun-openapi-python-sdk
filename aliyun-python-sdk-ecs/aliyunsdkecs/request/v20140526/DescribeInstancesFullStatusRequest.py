@@ -32,7 +32,7 @@ class DescribeInstancesFullStatusRequest(RpcRequest):
 
 
 	def get_EventIds(self):
-		return self.get_query_params().get('EventIds')
+		return self.get_query_params().get('EventId')
 
 	def set_EventIds(self, EventIds):
 		for depth1 in range(len(EventIds)):
@@ -64,7 +64,7 @@ class DescribeInstancesFullStatusRequest(RpcRequest):
 		self.add_query_param('EventPublishTime.End',EventPublishTimeEnd)
 
 	def get_InstanceEventTypes(self):
-		return self.get_query_params().get('InstanceEventTypes')
+		return self.get_query_params().get('InstanceEventType')
 
 	def set_InstanceEventTypes(self, InstanceEventTypes):
 		for depth1 in range(len(InstanceEventTypes)):
@@ -102,7 +102,7 @@ class DescribeInstancesFullStatusRequest(RpcRequest):
 		self.add_query_param('EventPublishTime.Start',EventPublishTimeStart)
 
 	def get_InstanceIds(self):
-		return self.get_query_params().get('InstanceIds')
+		return self.get_query_params().get('InstanceId')
 
 	def set_InstanceIds(self, InstanceIds):
 		for depth1 in range(len(InstanceIds)):

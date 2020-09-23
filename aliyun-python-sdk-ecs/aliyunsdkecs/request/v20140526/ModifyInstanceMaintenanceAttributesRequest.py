@@ -38,7 +38,7 @@ class ModifyInstanceMaintenanceAttributesRequest(RpcRequest):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
 	def get_MaintenanceWindows(self):
-		return self.get_query_params().get('MaintenanceWindows')
+		return self.get_query_params().get('MaintenanceWindow')
 
 	def set_MaintenanceWindows(self, MaintenanceWindows):
 		for depth1 in range(len(MaintenanceWindows)):
@@ -72,7 +72,7 @@ class ModifyInstanceMaintenanceAttributesRequest(RpcRequest):
 		self.add_query_param('OwnerId',OwnerId)
 
 	def get_InstanceIds(self):
-		return self.get_query_params().get('InstanceIds')
+		return self.get_query_params().get('InstanceId')
 
 	def set_InstanceIds(self, InstanceIds):
 		for depth1 in range(len(InstanceIds)):

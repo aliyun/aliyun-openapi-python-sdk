@@ -110,7 +110,7 @@ class DescribeImagesRequest(RpcRequest):
 		self.add_query_param('InstanceType',InstanceType)
 
 	def get_Tags(self):
-		return self.get_query_params().get('Tags')
+		return self.get_query_params().get('Tag')
 
 	def set_Tags(self, Tags):
 		for depth1 in range(len(Tags)):
@@ -162,7 +162,7 @@ class DescribeImagesRequest(RpcRequest):
 		self.add_query_param('OwnerId',OwnerId)
 
 	def get_Filters(self):
-		return self.get_query_params().get('Filters')
+		return self.get_query_params().get('Filter')
 
 	def set_Filters(self, Filters):
 		for depth1 in range(len(Filters)):

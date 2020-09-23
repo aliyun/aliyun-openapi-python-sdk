@@ -68,7 +68,7 @@ class ModifyImageSharePermissionRequest(RpcRequest):
 		self.add_query_param('OwnerId',OwnerId)
 
 	def get_AddAccounts(self):
-		return self.get_query_params().get('AddAccounts')
+		return self.get_query_params().get('AddAccount')
 
 	def set_AddAccounts(self, AddAccounts):
 		for depth1 in range(len(AddAccounts)):
@@ -76,7 +76,7 @@ class ModifyImageSharePermissionRequest(RpcRequest):
 				self.add_query_param('AddAccount.' + str(depth1 + 1) , AddAccounts[depth1])
 
 	def get_RemoveAccounts(self):
-		return self.get_query_params().get('RemoveAccounts')
+		return self.get_query_params().get('RemoveAccount')
 
 	def set_RemoveAccounts(self, RemoveAccounts):
 		for depth1 in range(len(RemoveAccounts)):

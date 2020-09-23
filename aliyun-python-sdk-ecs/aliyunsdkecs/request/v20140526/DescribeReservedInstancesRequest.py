@@ -68,7 +68,7 @@ class DescribeReservedInstancesRequest(RpcRequest):
 		self.add_query_param('InstanceType',InstanceType)
 
 	def get_Tags(self):
-		return self.get_query_params().get('Tags')
+		return self.get_query_params().get('Tag')
 
 	def set_Tags(self, Tags):
 		for depth1 in range(len(Tags)):
@@ -102,7 +102,7 @@ class DescribeReservedInstancesRequest(RpcRequest):
 		self.add_query_param('OwnerId',OwnerId)
 
 	def get_ReservedInstanceIds(self):
-		return self.get_query_params().get('ReservedInstanceIds')
+		return self.get_query_params().get('ReservedInstanceId')
 
 	def set_ReservedInstanceIds(self, ReservedInstanceIds):
 		for depth1 in range(len(ReservedInstanceIds)):
@@ -128,7 +128,7 @@ class DescribeReservedInstancesRequest(RpcRequest):
 		self.add_query_param('ReservedInstanceName',ReservedInstanceName)
 
 	def get_Statuss(self):
-		return self.get_query_params().get('Statuss')
+		return self.get_query_params().get('Status')
 
 	def set_Statuss(self, Statuss):
 		for depth1 in range(len(Statuss)):

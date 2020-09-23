@@ -38,7 +38,7 @@ class ModifyInstanceVpcAttributeRequest(RpcRequest):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
 	def get_SecurityGroupIds(self):
-		return self.get_query_params().get('SecurityGroupIds')
+		return self.get_query_params().get('SecurityGroupId')
 
 	def set_SecurityGroupIds(self, SecurityGroupIds):
 		for depth1 in range(len(SecurityGroupIds)):

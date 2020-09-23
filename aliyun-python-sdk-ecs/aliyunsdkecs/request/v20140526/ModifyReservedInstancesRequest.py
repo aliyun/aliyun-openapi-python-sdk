@@ -38,7 +38,7 @@ class ModifyReservedInstancesRequest(RpcRequest):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
 	def get_Configurations(self):
-		return self.get_query_params().get('Configurations')
+		return self.get_query_params().get('Configuration')
 
 	def set_Configurations(self, Configurations):
 		for depth1 in range(len(Configurations)):
@@ -72,7 +72,7 @@ class ModifyReservedInstancesRequest(RpcRequest):
 		self.add_query_param('OwnerId',OwnerId)
 
 	def get_ReservedInstanceIds(self):
-		return self.get_query_params().get('ReservedInstanceIds')
+		return self.get_query_params().get('ReservedInstanceId')
 
 	def set_ReservedInstanceIds(self, ReservedInstanceIds):
 		for depth1 in range(len(ReservedInstanceIds)):

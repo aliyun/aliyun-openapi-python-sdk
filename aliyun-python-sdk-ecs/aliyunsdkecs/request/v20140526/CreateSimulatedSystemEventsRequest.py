@@ -62,7 +62,7 @@ class CreateSimulatedSystemEventsRequest(RpcRequest):
 		self.add_query_param('OwnerId',OwnerId)
 
 	def get_InstanceIds(self):
-		return self.get_query_params().get('InstanceIds')
+		return self.get_query_params().get('InstanceId')
 
 	def set_InstanceIds(self, InstanceIds):
 		for depth1 in range(len(InstanceIds)):

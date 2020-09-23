@@ -92,7 +92,7 @@ class CreateLaunchTemplateVersionRequest(RpcRequest):
 		self.add_query_param('SystemDisk.Iops',SystemDiskIops)
 
 	def get_Tags(self):
-		return self.get_query_params().get('Tags')
+		return self.get_query_params().get('Tag')
 
 	def set_Tags(self, Tags):
 		for depth1 in range(len(Tags)):
@@ -228,7 +228,7 @@ class CreateLaunchTemplateVersionRequest(RpcRequest):
 		self.add_query_param('EnableVmOsConfig',EnableVmOsConfig)
 
 	def get_NetworkInterfaces(self):
-		return self.get_query_params().get('NetworkInterfaces')
+		return self.get_query_params().get('NetworkInterface')
 
 	def set_NetworkInterfaces(self, NetworkInterfaces):
 		for depth1 in range(len(NetworkInterfaces)):
@@ -280,7 +280,7 @@ class CreateLaunchTemplateVersionRequest(RpcRequest):
 		self.add_query_param('SpotDuration',SpotDuration)
 
 	def get_DataDisks(self):
-		return self.get_query_params().get('DataDisks')
+		return self.get_query_params().get('DataDisk')
 
 	def set_DataDisks(self, DataDisks):
 		for depth1 in range(len(DataDisks)):

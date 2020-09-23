@@ -68,7 +68,7 @@ class AssignPrivateIpAddressesRequest(RpcRequest):
 		self.add_query_param('OwnerId',OwnerId)
 
 	def get_PrivateIpAddresss(self):
-		return self.get_query_params().get('PrivateIpAddresss')
+		return self.get_query_params().get('PrivateIpAddress')
 
 	def set_PrivateIpAddresss(self, PrivateIpAddresss):
 		for depth1 in range(len(PrivateIpAddresss)):

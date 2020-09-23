@@ -32,7 +32,7 @@ class CancelSimulatedSystemEventsRequest(RpcRequest):
 
 
 	def get_EventIds(self):
-		return self.get_query_params().get('EventIds')
+		return self.get_query_params().get('EventId')
 
 	def set_EventIds(self, EventIds):
 		for depth1 in range(len(EventIds)):

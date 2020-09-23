@@ -44,7 +44,7 @@ class RemoveBandwidthPackageIpsRequest(RpcRequest):
 		self.add_query_param('ClientToken',ClientToken)
 
 	def get_RemovedIpAddressess(self):
-		return self.get_query_params().get('RemovedIpAddressess')
+		return self.get_query_params().get('RemovedIpAddresses')
 
 	def set_RemovedIpAddressess(self, RemovedIpAddressess):
 		for depth1 in range(len(RemovedIpAddressess)):

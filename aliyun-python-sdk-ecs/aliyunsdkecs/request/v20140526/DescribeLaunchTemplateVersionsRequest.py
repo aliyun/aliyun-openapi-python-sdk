@@ -98,7 +98,7 @@ class DescribeLaunchTemplateVersionsRequest(RpcRequest):
 		self.add_query_param('OwnerId',OwnerId)
 
 	def get_LaunchTemplateVersions(self):
-		return self.get_query_params().get('LaunchTemplateVersions')
+		return self.get_query_params().get('LaunchTemplateVersion')
 
 	def set_LaunchTemplateVersions(self, LaunchTemplateVersions):
 		for depth1 in range(len(LaunchTemplateVersions)):
