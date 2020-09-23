@@ -32,6 +32,12 @@ class CreateClusterRequest(RoaRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_private_zone(self):
+		return self.get_body_params().get('private_zone')
+
+	def set_private_zone(self,private_zone):
+		self.add_body_params('private_zone', private_zone)
+
 	def get_proxy_mode(self):
 		return self.get_body_params().get('proxy_mode')
 
@@ -44,17 +50,17 @@ class CreateClusterRequest(RoaRequest):
 	def set_master_system_disk_category(self,master_system_disk_category):
 		self.add_body_params('master_system_disk_category', master_system_disk_category)
 
-	def get_cloud_monitor_flags(self):
-		return self.get_body_params().get('cloud_monitor_flags')
-
-	def set_cloud_monitor_flags(self,cloud_monitor_flags):
-		self.add_body_params('cloud_monitor_flags', cloud_monitor_flags)
-
 	def get_master_period(self):
 		return self.get_body_params().get('master_period')
 
 	def set_master_period(self,master_period):
 		self.add_body_params('master_period', master_period)
+
+	def get_cloud_monitor_flags(self):
+		return self.get_body_params().get('cloud_monitor_flags')
+
+	def set_cloud_monitor_flags(self,cloud_monitor_flags):
+		self.add_body_params('cloud_monitor_flags', cloud_monitor_flags)
 
 	def get_ssh_flags(self):
 		return self.get_body_params().get('ssh_flags')
@@ -98,17 +104,23 @@ class CreateClusterRequest(RoaRequest):
 	def set_platform(self,platform):
 		self.add_body_params('platform', platform)
 
+	def get_service_cidr(self):
+		return self.get_body_params().get('service_cidr')
+
+	def set_service_cidr(self,service_cidr):
+		self.add_body_params('service_cidr', service_cidr)
+
 	def get_node_port_range(self):
 		return self.get_body_params().get('node_port_range')
 
 	def set_node_port_range(self,node_port_range):
 		self.add_body_params('node_port_range', node_port_range)
 
-	def get_service_cidr(self):
-		return self.get_body_params().get('service_cidr')
+	def get_zone_id(self):
+		return self.get_body_params().get('zone_id')
 
-	def set_service_cidr(self,service_cidr):
-		self.add_body_params('service_cidr', service_cidr)
+	def set_zone_id(self,zone_id):
+		self.add_body_params('zone_id', zone_id)
 
 	def get_login_password(self):
 		return self.get_body_params().get('login_password')
@@ -121,6 +133,12 @@ class CreateClusterRequest(RoaRequest):
 
 	def set_kubernetes_version(self,kubernetes_version):
 		self.add_body_params('kubernetes_version', kubernetes_version)
+
+	def get_is_enterprise_security_group(self):
+		return self.get_body_params().get('is_enterprise_security_group')
+
+	def set_is_enterprise_security_group(self,is_enterprise_security_group):
+		self.add_body_params('is_enterprise_security_group', is_enterprise_security_group)
 
 	def get_master_period_unit(self):
 		return self.get_body_params().get('master_period_unit')
@@ -158,17 +176,17 @@ class CreateClusterRequest(RoaRequest):
 	def set_key_pair(self,key_pair):
 		self.add_body_params('key_pair', key_pair)
 
-	def get_worker_data_disk(self):
-		return self.get_body_params().get('worker_data_disk')
-
-	def set_worker_data_disk(self,worker_data_disk):
-		self.add_body_params('worker_data_disk', worker_data_disk)
-
 	def get_master_auto_renew(self):
 		return self.get_body_params().get('master_auto_renew')
 
 	def set_master_auto_renew(self,master_auto_renew):
 		self.add_body_params('master_auto_renew', master_auto_renew)
+
+	def get_profile(self):
+		return self.get_body_params().get('profile')
+
+	def set_profile(self,profile):
+		self.add_body_params('profile', profile)
 
 	def get_region_id(self):
 		return self.get_body_params().get('region_id')
@@ -188,11 +206,11 @@ class CreateClusterRequest(RoaRequest):
 	def set_worker_system_disk_category(self,worker_system_disk_category):
 		self.add_body_params('worker_system_disk_category', worker_system_disk_category)
 
-	def get_runtime(self):
-		return self.get_body_params().get('runtime')
+	def get_user_data(self):
+		return self.get_body_params().get('user_data')
 
-	def set_runtime(self,runtime):
-		self.add_body_params('runtime', runtime)
+	def set_user_data(self,user_data):
+		self.add_body_params('user_data', user_data)
 
 	def get_worker_period_unit(self):
 		return self.get_body_params().get('worker_period_unit')
@@ -236,11 +254,23 @@ class CreateClusterRequest(RoaRequest):
 	def set_timeout_mins(self,timeout_mins):
 		self.add_body_params('timeout_mins', timeout_mins)
 
+	def get_images_id(self):
+		return self.get_body_params().get('images_id')
+
+	def set_images_id(self,images_id):
+		self.add_body_params('images_id', images_id)
+
 	def get_worker_system_disk_size(self):
 		return self.get_body_params().get('worker_system_disk_size')
 
 	def set_worker_system_disk_size(self,worker_system_disk_size):
 		self.add_body_params('worker_system_disk_size', worker_system_disk_size)
+
+	def get_vpcid(self):
+		return self.get_body_params().get('vpcid')
+
+	def set_vpcid(self,vpcid):
+		self.add_body_params('vpcid', vpcid)
 
 	def get_os_type(self):
 		return self.get_body_params().get('os_type')
@@ -253,12 +283,6 @@ class CreateClusterRequest(RoaRequest):
 
 	def set_cpu_policy(self,cpu_policy):
 		self.add_body_params('cpu_policy', cpu_policy)
-
-	def get_vpcid(self):
-		return self.get_body_params().get('vpcid')
-
-	def set_vpcid(self,vpcid):
-		self.add_body_params('vpcid', vpcid)
 
 	def get_name(self):
 		return self.get_body_params().get('name')

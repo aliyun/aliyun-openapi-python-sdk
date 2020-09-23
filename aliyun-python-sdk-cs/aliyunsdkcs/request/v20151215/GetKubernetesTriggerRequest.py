@@ -20,13 +20,38 @@
 from aliyunsdkcore.request import RoaRequest
 from aliyunsdkcs.endpoint import endpoint_data
 
-class DescribeApiVersionRequest(RoaRequest):
+class GetKubernetesTriggerRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'CS', '2015-12-15', 'DescribeApiVersion')
-		self.set_uri_pattern('/version')
+		RoaRequest.__init__(self, 'CS', '2015-12-15', 'GetKubernetesTrigger')
+		self.set_uri_pattern('/triggers/[ClusterId]')
 		self.set_method('GET')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
+
+	def get_Namespace(self):
+		return self.get_query_params().get('Namespace')
+
+	def set_Namespace(self,Namespace):
+		self.add_query_param('Namespace',Namespace)
+
+	def get_Name(self):
+		return self.get_query_params().get('Name')
+
+	def set_Name(self,Name):
+		self.add_query_param('Name',Name)
+
+	def get_ClusterId(self):
+		return self.get_path_params().get('ClusterId')
+
+	def set_ClusterId(self,ClusterId):
+		self.add_path_param('ClusterId',ClusterId)
+
+	def get_Type(self):
+		return self.get_query_params().get('Type')
+
+	def set_Type(self,Type):
+		self.add_query_param('Type',Type)

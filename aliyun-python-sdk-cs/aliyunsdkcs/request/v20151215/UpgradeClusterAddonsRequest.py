@@ -32,20 +32,8 @@ class UpgradeClusterAddonsRequest(RoaRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_component_name(self):
-		return self.get_body_params().get('component_name')
-
-	def set_component_name(self,component_name):
-		self.add_body_params('component_name', component_name)
-
 	def get_ClusterId(self):
 		return self.get_path_params().get('ClusterId')
 
 	def set_ClusterId(self,ClusterId):
 		self.add_path_param('ClusterId',ClusterId)
-
-	def get_version(self):
-		return self.get_body_params().get('version')
-
-	def set_version(self,version):
-		self.add_body_params('version', version)

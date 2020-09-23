@@ -20,13 +20,38 @@
 from aliyunsdkcore.request import RoaRequest
 from aliyunsdkcs.endpoint import endpoint_data
 
-class DeleteTriggerHookRequest(RoaRequest):
+class DescribeClustersV1Request(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'CS', '2015-12-15', 'DeleteTriggerHook')
-		self.set_uri_pattern('/api/v2/hook/trigger')
-		self.set_method('POST')
+		RoaRequest.__init__(self, 'CS', '2015-12-15', 'DescribeClustersV1')
+		self.set_uri_pattern('/api/v1/clusters')
+		self.set_method('GET')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
+
+	def get_ClusterType(self):
+		return self.get_query_params().get('ClusterType')
+
+	def set_ClusterType(self,ClusterType):
+		self.add_query_param('ClusterType',ClusterType)
+
+	def get_page_number(self):
+		return self.get_query_params().get('page_number')
+
+	def set_page_number(self,page_number):
+		self.add_query_param('page_number',page_number)
+
+	def get_Name(self):
+		return self.get_query_params().get('Name')
+
+	def set_Name(self,Name):
+		self.add_query_param('Name',Name)
+
+	def get_page_size(self):
+		return self.get_query_params().get('page_size')
+
+	def set_page_size(self,page_size):
+		self.add_query_param('page_size',page_size)

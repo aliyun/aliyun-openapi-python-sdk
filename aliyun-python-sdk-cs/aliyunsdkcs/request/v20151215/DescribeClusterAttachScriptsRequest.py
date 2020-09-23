@@ -37,3 +37,9 @@ class DescribeClusterAttachScriptsRequest(RoaRequest):
 
 	def set_ClusterId(self,ClusterId):
 		self.add_path_param('ClusterId',ClusterId)
+
+	def get_arch(self):
+		return self.get_body_params().get('arch')
+
+	def set_arch(self,arch):
+		self.add_body_params('arch', arch)

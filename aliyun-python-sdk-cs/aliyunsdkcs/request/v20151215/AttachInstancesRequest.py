@@ -56,14 +56,38 @@ class AttachInstancesRequest(RoaRequest):
 	def set_cpu_policy(self,cpu_policy):
 		self.add_body_params('cpu_policy', cpu_policy)
 
+	def get_is_edge_worker(self):
+		return self.get_body_params().get('is_edge_worker')
+
+	def set_is_edge_worker(self,is_edge_worker):
+		self.add_body_params('is_edge_worker', is_edge_worker)
+
 	def get_ClusterId(self):
 		return self.get_path_params().get('ClusterId')
 
 	def set_ClusterId(self,ClusterId):
 		self.add_path_param('ClusterId',ClusterId)
 
+	def get_user_data(self):
+		return self.get_body_params().get('user_data')
+
+	def set_user_data(self,user_data):
+		self.add_body_params('user_data', user_data)
+
+	def get_image_id(self):
+		return self.get_body_params().get('image_id')
+
+	def set_image_id(self,image_id):
+		self.add_body_params('image_id', image_id)
+
 	def get_format_disk(self):
 		return self.get_body_params().get('format_disk')
 
 	def set_format_disk(self,format_disk):
 		self.add_body_params('format_disk', format_disk)
+
+	def get_nodepool_id(self):
+		return self.get_body_params().get('nodepool_id')
+
+	def set_nodepool_id(self,nodepool_id):
+		self.add_body_params('nodepool_id', nodepool_id)

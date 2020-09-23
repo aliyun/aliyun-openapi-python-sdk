@@ -32,12 +32,6 @@ class UnInstallClusterAddonsRequest(RoaRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_name(self):
-		return self.get_body_params().get('name')
-
-	def set_name(self,name):
-		self.add_body_params('name', name)
-
 	def get_ClusterId(self):
 		return self.get_path_params().get('ClusterId')
 

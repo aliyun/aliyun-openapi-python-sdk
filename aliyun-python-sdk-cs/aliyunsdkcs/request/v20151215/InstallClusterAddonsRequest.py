@@ -32,38 +32,8 @@ class InstallClusterAddonsRequest(RoaRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_name(self):
-		return self.get_body_params().get('name')
-
-	def set_name(self,name):
-		self.add_body_params('name', name)
-
-	def get_disabled(self):
-		return self.get_body_params().get('disabled')
-
-	def set_disabled(self,disabled):
-		self.add_body_params('disabled', disabled)
-
 	def get_ClusterId(self):
 		return self.get_path_params().get('ClusterId')
 
 	def set_ClusterId(self,ClusterId):
 		self.add_path_param('ClusterId',ClusterId)
-
-	def get_version(self):
-		return self.get_body_params().get('version')
-
-	def set_version(self,version):
-		self.add_body_params('version', version)
-
-	def get_config(self):
-		return self.get_body_params().get('config')
-
-	def set_config(self,config):
-		self.add_body_params('config', config)
-
-	def get_required(self):
-		return self.get_body_params().get('required')
-
-	def set_required(self,required):
-		self.add_body_params('required', required)

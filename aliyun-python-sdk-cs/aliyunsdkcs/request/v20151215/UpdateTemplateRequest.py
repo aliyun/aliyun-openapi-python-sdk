@@ -20,38 +20,50 @@
 from aliyunsdkcore.request import RoaRequest
 from aliyunsdkcs.endpoint import endpoint_data
 
-class UpgradeClusterRequest(RoaRequest):
+class UpdateTemplateRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'CS', '2015-12-15', 'UpgradeCluster')
-		self.set_uri_pattern('/api/v2/clusters/[ClusterId]/upgrade')
-		self.set_method('POST')
+		RoaRequest.__init__(self, 'CS', '2015-12-15', 'UpdateTemplate')
+		self.set_uri_pattern('/templates/[TemplateId]')
+		self.set_method('PUT')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_component_name(self):
-		return self.get_body_params().get('component_name')
+	def get_template(self):
+		return self.get_body_params().get('template')
 
-	def set_component_name(self,component_name):
-		self.add_body_params('component_name', component_name)
+	def set_template(self,template):
+		self.add_body_params('template', template)
 
-	def get_ClusterId(self):
-		return self.get_path_params().get('ClusterId')
+	def get_name(self):
+		return self.get_body_params().get('name')
 
-	def set_ClusterId(self,ClusterId):
-		self.add_path_param('ClusterId',ClusterId)
+	def set_name(self,name):
+		self.add_body_params('name', name)
 
-	def get_version(self):
-		return self.get_body_params().get('version')
+	def get_description(self):
+		return self.get_body_params().get('description')
 
-	def set_version(self,version):
-		self.add_body_params('version', version)
+	def set_description(self,description):
+		self.add_body_params('description', description)
 
-	def get_next_version(self):
-		return self.get_body_params().get('next_version')
+	def get_template_type(self):
+		return self.get_body_params().get('template_type')
 
-	def set_next_version(self,next_version):
-		self.add_body_params('next_version', next_version)
+	def set_template_type(self,template_type):
+		self.add_body_params('template_type', template_type)
+
+	def get_TemplateId(self):
+		return self.get_path_params().get('TemplateId')
+
+	def set_TemplateId(self,TemplateId):
+		self.add_path_param('TemplateId',TemplateId)
+
+	def get_tags(self):
+		return self.get_body_params().get('tags')
+
+	def set_tags(self,tags):
+		self.add_body_params('tags', tags)

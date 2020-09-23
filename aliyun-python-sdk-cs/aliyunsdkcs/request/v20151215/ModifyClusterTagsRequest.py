@@ -37,15 +37,3 @@ class ModifyClusterTagsRequest(RoaRequest):
 
 	def set_ClusterId(self,ClusterId):
 		self.add_path_param('ClusterId',ClusterId)
-
-	def get_value(self):
-		return self.get_body_params().get('value')
-
-	def set_value(self,value):
-		self.add_body_params('value', value)
-
-	def get_key(self):
-		return self.get_body_params().get('key')
-
-	def set_key(self,key):
-		self.add_body_params('key', key)

@@ -20,11 +20,11 @@
 from aliyunsdkcore.request import RoaRequest
 from aliyunsdkcs.endpoint import endpoint_data
 
-class UpgradeClusterRequest(RoaRequest):
+class CreateKubernetesTriggerRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'CS', '2015-12-15', 'UpgradeCluster')
-		self.set_uri_pattern('/api/v2/clusters/[ClusterId]/upgrade')
+		RoaRequest.__init__(self, 'CS', '2015-12-15', 'CreateKubernetesTrigger')
+		self.set_uri_pattern('/triggers')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -32,26 +32,20 @@ class UpgradeClusterRequest(RoaRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_component_name(self):
-		return self.get_body_params().get('component_name')
-
-	def set_component_name(self,component_name):
-		self.add_body_params('component_name', component_name)
-
 	def get_ClusterId(self):
-		return self.get_path_params().get('ClusterId')
+		return self.get_body_params().get('ClusterId')
 
 	def set_ClusterId(self,ClusterId):
-		self.add_path_param('ClusterId',ClusterId)
+		self.add_body_params('ClusterId', ClusterId)
 
-	def get_version(self):
-		return self.get_body_params().get('version')
+	def get_Type(self):
+		return self.get_body_params().get('Type')
 
-	def set_version(self,version):
-		self.add_body_params('version', version)
+	def set_Type(self,Type):
+		self.add_body_params('Type', Type)
 
-	def get_next_version(self):
-		return self.get_body_params().get('next_version')
+	def get_ProjectId(self):
+		return self.get_body_params().get('ProjectId')
 
-	def set_next_version(self,next_version):
-		self.add_body_params('next_version', next_version)
+	def set_ProjectId(self,ProjectId):
+		self.add_body_params('ProjectId', ProjectId)

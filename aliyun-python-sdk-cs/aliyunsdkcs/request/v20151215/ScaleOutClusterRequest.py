@@ -68,6 +68,12 @@ class ScaleOutClusterRequest(RoaRequest):
 	def set_ClusterId(self,ClusterId):
 		self.add_path_param('ClusterId',ClusterId)
 
+	def get_user_data(self):
+		return self.get_body_params().get('user_data')
+
+	def set_user_data(self,user_data):
+		self.add_body_params('user_data', user_data)
+
 	def get_worker_period_unit(self):
 		return self.get_body_params().get('worker_period_unit')
 
@@ -115,6 +121,12 @@ class ScaleOutClusterRequest(RoaRequest):
 
 	def set_disable_rollback(self,disable_rollback):
 		self.add_body_params('disable_rollback', disable_rollback)
+
+	def get_image_id(self):
+		return self.get_body_params().get('image_id')
+
+	def set_image_id(self,image_id):
+		self.add_body_params('image_id', image_id)
 
 	def get_worker_instance_charge_type(self):
 		return self.get_body_params().get('worker_instance_charge_type')
