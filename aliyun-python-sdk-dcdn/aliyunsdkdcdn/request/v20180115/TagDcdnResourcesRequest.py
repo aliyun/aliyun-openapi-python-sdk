@@ -32,7 +32,7 @@ class TagDcdnResourcesRequest(RpcRequest):
 
 
 	def get_Tags(self):
-		return self.get_query_params().get('Tags')
+		return self.get_query_params().get('Tag')
 
 	def set_Tags(self, Tags):
 		for depth1 in range(len(Tags)):
@@ -42,7 +42,7 @@ class TagDcdnResourcesRequest(RpcRequest):
 				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tags[depth1].get('Value'))
 
 	def get_ResourceIds(self):
-		return self.get_query_params().get('ResourceIds')
+		return self.get_query_params().get('ResourceId')
 
 	def set_ResourceIds(self, ResourceIds):
 		for depth1 in range(len(ResourceIds)):
