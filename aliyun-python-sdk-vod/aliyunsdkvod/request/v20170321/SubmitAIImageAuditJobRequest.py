@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkvod.endpoint import endpoint_data
 
-class AddVodDomainRequest(RpcRequest):
+class SubmitAIImageAuditJobRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'vod', '2017-03-21', 'AddVodDomain','vod')
+		RpcRequest.__init__(self, 'vod', '2017-03-21', 'SubmitAIImageAuditJob','vod')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,29 +31,17 @@ class AddVodDomainRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_Sources(self):
-		return self.get_query_params().get('Sources')
+	def get_ResourceOwnerId(self):
+		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_Sources(self,Sources):
-		self.add_query_param('Sources',Sources)
+	def set_ResourceOwnerId(self,ResourceOwnerId):
+		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_SecurityToken(self):
-		return self.get_query_params().get('SecurityToken')
+	def get_ResourceOwnerAccount(self):
+		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)
-
-	def get_Scope(self):
-		return self.get_query_params().get('Scope')
-
-	def set_Scope(self,Scope):
-		self.add_query_param('Scope',Scope)
-
-	def get_TopLevelDomain(self):
-		return self.get_query_params().get('TopLevelDomain')
-
-	def set_TopLevelDomain(self,TopLevelDomain):
-		self.add_query_param('TopLevelDomain',TopLevelDomain)
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
@@ -61,20 +49,26 @@ class AddVodDomainRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
-	def get_DomainName(self):
-		return self.get_query_params().get('DomainName')
-
-	def set_DomainName(self,DomainName):
-		self.add_query_param('DomainName',DomainName)
-
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_CheckUrl(self):
-		return self.get_query_params().get('CheckUrl')
+	def get_MediaId(self):
+		return self.get_query_params().get('MediaId')
 
-	def set_CheckUrl(self,CheckUrl):
-		self.add_query_param('CheckUrl',CheckUrl)
+	def set_MediaId(self,MediaId):
+		self.add_query_param('MediaId',MediaId)
+
+	def get_TemplateId(self):
+		return self.get_query_params().get('TemplateId')
+
+	def set_TemplateId(self,TemplateId):
+		self.add_query_param('TemplateId',TemplateId)
+
+	def get_MediaAuditConfiguration(self):
+		return self.get_query_params().get('MediaAuditConfiguration')
+
+	def set_MediaAuditConfiguration(self,MediaAuditConfiguration):
+		self.add_query_param('MediaAuditConfiguration',MediaAuditConfiguration)
