@@ -51,7 +51,7 @@ class SubmitVerificationRequest(RpcRequest):
 		self.add_query_param('SourceIp',SourceIp)
 
 	def get_Materials(self):
-		return self.get_body_params().get('Materials')
+		return self.get_body_params().get('Material')
 
 	def set_Materials(self, Materials):
 		for depth1 in range(len(Materials)):

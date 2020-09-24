@@ -24,7 +24,6 @@ class SubmitMaterialsRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Cloudauth', '2018-09-16', 'SubmitMaterials','cloudauth')
-		self.set_protocol_type('https')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -51,7 +50,7 @@ class SubmitMaterialsRequest(RpcRequest):
 		self.add_query_param('SourceIp',SourceIp)
 
 	def get_Materials(self):
-		return self.get_body_params().get('Materials')
+		return self.get_body_params().get('Material')
 
 	def set_Materials(self, Materials):
 		for depth1 in range(len(Materials)):
