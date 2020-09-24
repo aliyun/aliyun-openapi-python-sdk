@@ -32,7 +32,7 @@ class TagResourcesRequest(RpcRequest):
 
 
 	def get_ResourceIds(self):
-		return self.get_query_params().get('ResourceIds')
+		return self.get_query_params().get('ResourceId')
 
 	def set_ResourceIds(self, ResourceIds):
 		for depth1 in range(len(ResourceIds)):
@@ -40,7 +40,7 @@ class TagResourcesRequest(RpcRequest):
 				self.add_query_param('ResourceId.' + str(depth1 + 1) , ResourceIds[depth1])
 
 	def get_Tags(self):
-		return self.get_query_params().get('Tags')
+		return self.get_query_params().get('Tag')
 
 	def set_Tags(self, Tags):
 		for depth1 in range(len(Tags)):
