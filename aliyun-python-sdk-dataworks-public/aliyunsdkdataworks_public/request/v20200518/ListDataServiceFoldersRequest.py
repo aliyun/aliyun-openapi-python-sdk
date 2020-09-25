@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdataworks_public.endpoint import endpoint_data
 
-class GetMetaDBTableListRequest(RpcRequest):
+class ListDataServiceFoldersRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'GetMetaDBTableList','dide')
+		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'ListDataServiceFolders','dide')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,38 +31,38 @@ class GetMetaDBTableListRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_DataSourceType(self):
-		return self.get_query_params().get('DataSourceType')
+	def get_FolderNameKeyword(self):
+		return self.get_body_params().get('FolderNameKeyword')
 
-	def set_DataSourceType(self,DataSourceType):
-		self.add_query_param('DataSourceType',DataSourceType)
+	def set_FolderNameKeyword(self,FolderNameKeyword):
+		self.add_body_params('FolderNameKeyword', FolderNameKeyword)
 
-	def get_DatabaseName(self):
-		return self.get_query_params().get('DatabaseName')
+	def get_GroupId(self):
+		return self.get_body_params().get('GroupId')
 
-	def set_DatabaseName(self,DatabaseName):
-		self.add_query_param('DatabaseName',DatabaseName)
+	def set_GroupId(self,GroupId):
+		self.add_body_params('GroupId', GroupId)
 
 	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
+		return self.get_body_params().get('PageSize')
 
 	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
+		self.add_body_params('PageSize', PageSize)
 
-	def get_ClusterId(self):
-		return self.get_query_params().get('ClusterId')
+	def get_TenantId(self):
+		return self.get_body_params().get('TenantId')
 
-	def set_ClusterId(self,ClusterId):
-		self.add_query_param('ClusterId',ClusterId)
+	def set_TenantId(self,TenantId):
+		self.add_body_params('TenantId', TenantId)
 
-	def get_AppGuid(self):
-		return self.get_query_params().get('AppGuid')
+	def get_ProjectId(self):
+		return self.get_body_params().get('ProjectId')
 
-	def set_AppGuid(self,AppGuid):
-		self.add_query_param('AppGuid',AppGuid)
+	def set_ProjectId(self,ProjectId):
+		self.add_body_params('ProjectId', ProjectId)
 
 	def get_PageNumber(self):
-		return self.get_query_params().get('PageNumber')
+		return self.get_body_params().get('PageNumber')
 
 	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
+		self.add_body_params('PageNumber', PageNumber)

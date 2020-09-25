@@ -103,6 +103,12 @@ class CreateFileRequest(RpcRequest):
 	def set_ParaValue(self,ParaValue):
 		self.add_body_params('ParaValue', ParaValue)
 
+	def get_ResourceGroupIdentifier(self):
+		return self.get_body_params().get('ResourceGroupIdentifier')
+
+	def set_ResourceGroupIdentifier(self,ResourceGroupIdentifier):
+		self.add_body_params('ResourceGroupIdentifier', ResourceGroupIdentifier)
+
 	def get_AutoRerunTimes(self):
 		return self.get_body_params().get('AutoRerunTimes')
 

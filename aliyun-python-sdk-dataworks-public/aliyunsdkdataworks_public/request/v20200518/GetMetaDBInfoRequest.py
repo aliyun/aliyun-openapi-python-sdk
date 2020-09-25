@@ -31,6 +31,24 @@ class GetMetaDBInfoRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_DataSourceType(self):
+		return self.get_query_params().get('DataSourceType')
+
+	def set_DataSourceType(self,DataSourceType):
+		self.add_query_param('DataSourceType',DataSourceType)
+
+	def get_DatabaseName(self):
+		return self.get_query_params().get('DatabaseName')
+
+	def set_DatabaseName(self,DatabaseName):
+		self.add_query_param('DatabaseName',DatabaseName)
+
+	def get_ClusterId(self):
+		return self.get_query_params().get('ClusterId')
+
+	def set_ClusterId(self,ClusterId):
+		self.add_query_param('ClusterId',ClusterId)
+
 	def get_AppGuid(self):
 		return self.get_query_params().get('AppGuid')
 

@@ -20,43 +20,37 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdataworks_public.endpoint import endpoint_data
 
-class GetMetaTableBasicInfoRequest(RpcRequest):
+class DeleteTableRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'GetMetaTableBasicInfo','dide')
-		self.set_method('GET')
+		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'DeleteTable','dide')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_DataSourceType(self):
-		return self.get_query_params().get('DataSourceType')
+	def get_EnvType(self):
+		return self.get_query_params().get('EnvType')
 
-	def set_DataSourceType(self,DataSourceType):
-		self.add_query_param('DataSourceType',DataSourceType)
-
-	def get_TableGuid(self):
-		return self.get_query_params().get('TableGuid')
-
-	def set_TableGuid(self,TableGuid):
-		self.add_query_param('TableGuid',TableGuid)
-
-	def get_DatabaseName(self):
-		return self.get_query_params().get('DatabaseName')
-
-	def set_DatabaseName(self,DatabaseName):
-		self.add_query_param('DatabaseName',DatabaseName)
-
-	def get_ClusterId(self):
-		return self.get_query_params().get('ClusterId')
-
-	def set_ClusterId(self,ClusterId):
-		self.add_query_param('ClusterId',ClusterId)
+	def set_EnvType(self,EnvType):
+		self.add_query_param('EnvType',EnvType)
 
 	def get_TableName(self):
 		return self.get_query_params().get('TableName')
 
 	def set_TableName(self,TableName):
 		self.add_query_param('TableName',TableName)
+
+	def get_AppGuid(self):
+		return self.get_query_params().get('AppGuid')
+
+	def set_AppGuid(self,AppGuid):
+		self.add_query_param('AppGuid',AppGuid)
+
+	def get_ProjectId(self):
+		return self.get_query_params().get('ProjectId')
+
+	def set_ProjectId(self,ProjectId):
+		self.add_query_param('ProjectId',ProjectId)

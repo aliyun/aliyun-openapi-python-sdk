@@ -20,43 +20,49 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdataworks_public.endpoint import endpoint_data
 
-class GetMetaTableBasicInfoRequest(RpcRequest):
+class GetNodeTypeListInfoRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'GetMetaTableBasicInfo','dide')
-		self.set_method('GET')
+		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'GetNodeTypeListInfo','dide')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_DataSourceType(self):
-		return self.get_query_params().get('DataSourceType')
+	def get_PageSize(self):
+		return self.get_body_params().get('PageSize')
 
-	def set_DataSourceType(self,DataSourceType):
-		self.add_query_param('DataSourceType',DataSourceType)
+	def set_PageSize(self,PageSize):
+		self.add_body_params('PageSize', PageSize)
 
-	def get_TableGuid(self):
-		return self.get_query_params().get('TableGuid')
+	def get_Keyword(self):
+		return self.get_body_params().get('Keyword')
 
-	def set_TableGuid(self,TableGuid):
-		self.add_query_param('TableGuid',TableGuid)
+	def set_Keyword(self,Keyword):
+		self.add_body_params('Keyword', Keyword)
 
-	def get_DatabaseName(self):
-		return self.get_query_params().get('DatabaseName')
+	def get_Locale(self):
+		return self.get_body_params().get('Locale')
 
-	def set_DatabaseName(self,DatabaseName):
-		self.add_query_param('DatabaseName',DatabaseName)
+	def set_Locale(self,Locale):
+		self.add_body_params('Locale', Locale)
 
-	def get_ClusterId(self):
-		return self.get_query_params().get('ClusterId')
+	def get_ProjectId(self):
+		return self.get_body_params().get('ProjectId')
 
-	def set_ClusterId(self,ClusterId):
-		self.add_query_param('ClusterId',ClusterId)
+	def set_ProjectId(self,ProjectId):
+		self.add_body_params('ProjectId', ProjectId)
 
-	def get_TableName(self):
-		return self.get_query_params().get('TableName')
+	def get_ProjectIdentifier(self):
+		return self.get_body_params().get('ProjectIdentifier')
 
-	def set_TableName(self,TableName):
-		self.add_query_param('TableName',TableName)
+	def set_ProjectIdentifier(self,ProjectIdentifier):
+		self.add_body_params('ProjectIdentifier', ProjectIdentifier)
+
+	def get_PageNumber(self):
+		return self.get_body_params().get('PageNumber')
+
+	def set_PageNumber(self,PageNumber):
+		self.add_body_params('PageNumber', PageNumber)

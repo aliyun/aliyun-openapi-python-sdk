@@ -31,11 +31,41 @@ class GetMetaColumnLineageRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_DataSourceType(self):
+		return self.get_query_params().get('DataSourceType')
+
+	def set_DataSourceType(self,DataSourceType):
+		self.add_query_param('DataSourceType',DataSourceType)
+
+	def get_ClusterId(self):
+		return self.get_query_params().get('ClusterId')
+
+	def set_ClusterId(self,ClusterId):
+		self.add_query_param('ClusterId',ClusterId)
+
+	def get_PageNum(self):
+		return self.get_query_params().get('PageNum')
+
+	def set_PageNum(self,PageNum):
+		self.add_query_param('PageNum',PageNum)
+
+	def get_ColumnName(self):
+		return self.get_query_params().get('ColumnName')
+
+	def set_ColumnName(self,ColumnName):
+		self.add_query_param('ColumnName',ColumnName)
+
 	def get_ColumnGuid(self):
 		return self.get_query_params().get('ColumnGuid')
 
 	def set_ColumnGuid(self,ColumnGuid):
 		self.add_query_param('ColumnGuid',ColumnGuid)
+
+	def get_DatabaseName(self):
+		return self.get_query_params().get('DatabaseName')
+
+	def set_DatabaseName(self,DatabaseName):
+		self.add_query_param('DatabaseName',DatabaseName)
 
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
@@ -43,11 +73,11 @@ class GetMetaColumnLineageRequest(RpcRequest):
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
 
-	def get_PageNum(self):
-		return self.get_query_params().get('PageNum')
+	def get_TableName(self):
+		return self.get_query_params().get('TableName')
 
-	def set_PageNum(self,PageNum):
-		self.add_query_param('PageNum',PageNum)
+	def set_TableName(self,TableName):
+		self.add_query_param('TableName',TableName)
 
 	def get_Direction(self):
 		return self.get_query_params().get('Direction')

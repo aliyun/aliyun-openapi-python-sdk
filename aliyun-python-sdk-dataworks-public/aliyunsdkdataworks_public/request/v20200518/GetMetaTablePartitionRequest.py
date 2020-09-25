@@ -31,11 +31,35 @@ class GetMetaTablePartitionRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_DataSourceType(self):
+		return self.get_query_params().get('DataSourceType')
+
+	def set_DataSourceType(self,DataSourceType):
+		self.add_query_param('DataSourceType',DataSourceType)
+
+	def get_ClusterId(self):
+		return self.get_query_params().get('ClusterId')
+
+	def set_ClusterId(self,ClusterId):
+		self.add_query_param('ClusterId',ClusterId)
+
+	def get_PageNumber(self):
+		return self.get_query_params().get('PageNumber')
+
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)
+
 	def get_TableGuid(self):
 		return self.get_query_params().get('TableGuid')
 
 	def set_TableGuid(self,TableGuid):
 		self.add_query_param('TableGuid',TableGuid)
+
+	def get_DatabaseName(self):
+		return self.get_query_params().get('DatabaseName')
+
+	def set_DatabaseName(self,DatabaseName):
+		self.add_query_param('DatabaseName',DatabaseName)
 
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
@@ -43,8 +67,8 @@ class GetMetaTablePartitionRequest(RpcRequest):
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
 
-	def get_PageNumber(self):
-		return self.get_query_params().get('PageNumber')
+	def get_TableName(self):
+		return self.get_query_params().get('TableName')
 
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
+	def set_TableName(self,TableName):
+		self.add_query_param('TableName',TableName)

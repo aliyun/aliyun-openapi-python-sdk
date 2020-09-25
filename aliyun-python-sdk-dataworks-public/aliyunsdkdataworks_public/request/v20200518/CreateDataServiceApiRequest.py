@@ -85,6 +85,12 @@ class CreateDataServiceApiRequest(RpcRequest):
 	def set_Timeout(self,Timeout):
 		self.add_body_params('Timeout', Timeout)
 
+	def get_FolderId(self):
+		return self.get_body_params().get('FolderId')
+
+	def set_FolderId(self,FolderId):
+		self.add_body_params('FolderId', FolderId)
+
 	def get_RegistrationDetails(self):
 		return self.get_body_params().get('RegistrationDetails')
 

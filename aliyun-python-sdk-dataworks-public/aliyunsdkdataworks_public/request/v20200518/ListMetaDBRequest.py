@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdataworks_public.endpoint import endpoint_data
 
-class GetMetaTableColumnRequest(RpcRequest):
+class ListMetaDBRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'GetMetaTableColumn','dide')
+		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'ListMetaDB','dide')
 		self.set_method('GET')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -37,38 +37,8 @@ class GetMetaTableColumnRequest(RpcRequest):
 	def set_DataSourceType(self,DataSourceType):
 		self.add_query_param('DataSourceType',DataSourceType)
 
-	def get_ClusterId(self):
-		return self.get_query_params().get('ClusterId')
+	def get_ProjectId(self):
+		return self.get_query_params().get('ProjectId')
 
-	def set_ClusterId(self,ClusterId):
-		self.add_query_param('ClusterId',ClusterId)
-
-	def get_PageNum(self):
-		return self.get_query_params().get('PageNum')
-
-	def set_PageNum(self,PageNum):
-		self.add_query_param('PageNum',PageNum)
-
-	def get_TableGuid(self):
-		return self.get_query_params().get('TableGuid')
-
-	def set_TableGuid(self,TableGuid):
-		self.add_query_param('TableGuid',TableGuid)
-
-	def get_DatabaseName(self):
-		return self.get_query_params().get('DatabaseName')
-
-	def set_DatabaseName(self,DatabaseName):
-		self.add_query_param('DatabaseName',DatabaseName)
-
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_TableName(self):
-		return self.get_query_params().get('TableName')
-
-	def set_TableName(self,TableName):
-		self.add_query_param('TableName',TableName)
+	def set_ProjectId(self,ProjectId):
+		self.add_query_param('ProjectId',ProjectId)

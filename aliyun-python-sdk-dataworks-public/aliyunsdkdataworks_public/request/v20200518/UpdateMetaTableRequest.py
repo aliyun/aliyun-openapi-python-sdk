@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdataworks_public.endpoint import endpoint_data
 
-class GetMetaTableLineageRequest(RpcRequest):
+class UpdateMetaTableRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'GetMetaTableLineage','dide')
+		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'UpdateMetaTable','dide')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,17 +31,23 @@ class GetMetaTableLineageRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_DataSourceType(self):
-		return self.get_query_params().get('DataSourceType')
+	def get_Visibility(self):
+		return self.get_query_params().get('Visibility')
 
-	def set_DataSourceType(self,DataSourceType):
-		self.add_query_param('DataSourceType',DataSourceType)
+	def set_Visibility(self,Visibility):
+		self.add_query_param('Visibility',Visibility)
 
-	def get_ClusterId(self):
-		return self.get_query_params().get('ClusterId')
+	def get_Caption(self):
+		return self.get_query_params().get('Caption')
 
-	def set_ClusterId(self,ClusterId):
-		self.add_query_param('ClusterId',ClusterId)
+	def set_Caption(self,Caption):
+		self.add_query_param('Caption',Caption)
+
+	def get_NewOwnerId(self):
+		return self.get_query_params().get('NewOwnerId')
+
+	def set_NewOwnerId(self,NewOwnerId):
+		self.add_query_param('NewOwnerId',NewOwnerId)
 
 	def get_TableGuid(self):
 		return self.get_query_params().get('TableGuid')
@@ -49,23 +55,23 @@ class GetMetaTableLineageRequest(RpcRequest):
 	def set_TableGuid(self,TableGuid):
 		self.add_query_param('TableGuid',TableGuid)
 
-	def get_NextPrimaryKey(self):
-		return self.get_query_params().get('NextPrimaryKey')
+	def get_AddedLabels(self):
+		return self.get_body_params().get('AddedLabels')
 
-	def set_NextPrimaryKey(self,NextPrimaryKey):
-		self.add_query_param('NextPrimaryKey',NextPrimaryKey)
+	def set_AddedLabels(self,AddedLabels):
+		self.add_body_params('AddedLabels', AddedLabels)
 
-	def get_DatabaseName(self):
-		return self.get_query_params().get('DatabaseName')
+	def get_RemovedLabels(self):
+		return self.get_body_params().get('RemovedLabels')
 
-	def set_DatabaseName(self,DatabaseName):
-		self.add_query_param('DatabaseName',DatabaseName)
+	def set_RemovedLabels(self,RemovedLabels):
+		self.add_body_params('RemovedLabels', RemovedLabels)
 
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
+	def get_EnvType(self):
+		return self.get_query_params().get('EnvType')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
+	def set_EnvType(self,EnvType):
+		self.add_query_param('EnvType',EnvType)
 
 	def get_TableName(self):
 		return self.get_query_params().get('TableName')
@@ -73,8 +79,14 @@ class GetMetaTableLineageRequest(RpcRequest):
 	def set_TableName(self,TableName):
 		self.add_query_param('TableName',TableName)
 
-	def get_Direction(self):
-		return self.get_query_params().get('Direction')
+	def get_ProjectId(self):
+		return self.get_query_params().get('ProjectId')
 
-	def set_Direction(self,Direction):
-		self.add_query_param('Direction',Direction)
+	def set_ProjectId(self,ProjectId):
+		self.add_query_param('ProjectId',ProjectId)
+
+	def get_CategoryId(self):
+		return self.get_query_params().get('CategoryId')
+
+	def set_CategoryId(self,CategoryId):
+		self.add_query_param('CategoryId',CategoryId)
