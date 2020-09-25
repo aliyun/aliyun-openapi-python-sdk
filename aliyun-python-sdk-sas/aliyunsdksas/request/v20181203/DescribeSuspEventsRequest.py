@@ -31,17 +31,41 @@ class DescribeSuspEventsRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_TargetType(self):
+		return self.get_query_params().get('TargetType')
+
+	def set_TargetType(self,TargetType):
+		self.add_query_param('TargetType',TargetType)
+
 	def get_Remark(self):
 		return self.get_query_params().get('Remark')
 
 	def set_Remark(self,Remark):
 		self.add_query_param('Remark',Remark)
 
+	def get_Source(self):
+		return self.get_query_params().get('Source')
+
+	def set_Source(self,Source):
+		self.add_query_param('Source',Source)
+
+	def get_ContainerFieldName(self):
+		return self.get_query_params().get('ContainerFieldName')
+
+	def set_ContainerFieldName(self,ContainerFieldName):
+		self.add_query_param('ContainerFieldName',ContainerFieldName)
+
 	def get_SourceIp(self):
 		return self.get_query_params().get('SourceIp')
 
 	def set_SourceIp(self,SourceIp):
 		self.add_query_param('SourceIp',SourceIp)
+
+	def get_ContainerFieldValue(self):
+		return self.get_query_params().get('ContainerFieldValue')
+
+	def set_ContainerFieldValue(self,ContainerFieldValue):
+		self.add_query_param('ContainerFieldValue',ContainerFieldValue)
 
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
@@ -67,6 +91,18 @@ class DescribeSuspEventsRequest(RpcRequest):
 	def set_AlarmUniqueInfo(self,AlarmUniqueInfo):
 		self.add_query_param('AlarmUniqueInfo',AlarmUniqueInfo)
 
+	def get_UniqueInfo(self):
+		return self.get_query_params().get('UniqueInfo')
+
+	def set_UniqueInfo(self,UniqueInfo):
+		self.add_query_param('UniqueInfo',UniqueInfo)
+
+	def get_GroupId(self):
+		return self.get_query_params().get('GroupId')
+
+	def set_GroupId(self,GroupId):
+		self.add_query_param('GroupId',GroupId)
+
 	def get_Dealed(self):
 		return self.get_query_params().get('Dealed')
 
@@ -78,6 +114,20 @@ class DescribeSuspEventsRequest(RpcRequest):
 
 	def set_CurrentPage(self,CurrentPage):
 		self.add_query_param('CurrentPage',CurrentPage)
+
+	def get_ClusterId(self):
+		return self.get_query_params().get('ClusterId')
+
+	def set_ClusterId(self,ClusterId):
+		self.add_query_param('ClusterId',ClusterId)
+
+	def get_OperateErrorCodeLists(self):
+		return self.get_query_params().get('OperateErrorCodeList')
+
+	def set_OperateErrorCodeLists(self, OperateErrorCodeLists):
+		for depth1 in range(len(OperateErrorCodeLists)):
+			if OperateErrorCodeLists[depth1] is not None:
+				self.add_query_param('OperateErrorCodeList.' + str(depth1 + 1) , OperateErrorCodeLists[depth1])
 
 	def get_Name(self):
 		return self.get_query_params().get('Name')
@@ -96,3 +146,15 @@ class DescribeSuspEventsRequest(RpcRequest):
 
 	def set_ParentEventTypes(self,ParentEventTypes):
 		self.add_query_param('ParentEventTypes',ParentEventTypes)
+
+	def get_Status(self):
+		return self.get_query_params().get('Status')
+
+	def set_Status(self,Status):
+		self.add_query_param('Status',Status)
+
+	def get_Uuids(self):
+		return self.get_query_params().get('Uuids')
+
+	def set_Uuids(self,Uuids):
+		self.add_query_param('Uuids',Uuids)

@@ -31,6 +31,12 @@ class DescribeAlarmEventListRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_TargetType(self):
+		return self.get_query_params().get('TargetType')
+
+	def set_TargetType(self,TargetType):
+		self.add_query_param('TargetType',TargetType)
+
 	def get_AlarmEventType(self):
 		return self.get_query_params().get('AlarmEventType')
 
@@ -43,6 +49,12 @@ class DescribeAlarmEventListRequest(RpcRequest):
 	def set_Remark(self,Remark):
 		self.add_query_param('Remark',Remark)
 
+	def get_ContainerFieldName(self):
+		return self.get_query_params().get('ContainerFieldName')
+
+	def set_ContainerFieldName(self,ContainerFieldName):
+		self.add_query_param('ContainerFieldName',ContainerFieldName)
+
 	def get_AlarmEventName(self):
 		return self.get_query_params().get('AlarmEventName')
 
@@ -54,6 +66,12 @@ class DescribeAlarmEventListRequest(RpcRequest):
 
 	def set_SourceIp(self,SourceIp):
 		self.add_query_param('SourceIp',SourceIp)
+
+	def get_ContainerFieldValue(self):
+		return self.get_query_params().get('ContainerFieldValue')
+
+	def set_ContainerFieldValue(self,ContainerFieldValue):
+		self.add_query_param('ContainerFieldValue',ContainerFieldValue)
 
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
@@ -91,8 +109,14 @@ class DescribeAlarmEventListRequest(RpcRequest):
 	def set_CurrentPage(self,CurrentPage):
 		self.add_query_param('CurrentPage',CurrentPage)
 
+	def get_ClusterId(self):
+		return self.get_query_params().get('ClusterId')
+
+	def set_ClusterId(self,ClusterId):
+		self.add_query_param('ClusterId',ClusterId)
+
 	def get_OperateErrorCodeLists(self):
-		return self.get_query_params().get('OperateErrorCodeLists')
+		return self.get_query_params().get('OperateErrorCodeList')
 
 	def set_OperateErrorCodeLists(self, OperateErrorCodeLists):
 		for depth1 in range(len(OperateErrorCodeLists)):

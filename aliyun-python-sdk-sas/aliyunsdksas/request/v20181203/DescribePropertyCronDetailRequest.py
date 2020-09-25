@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdksas.endpoint import endpoint_data
 
-class DescribeCloudCenterInstancesRequest(RpcRequest):
+class DescribePropertyCronDetailRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeCloudCenterInstances','sas')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribePropertyCronDetail','sas')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,23 +31,23 @@ class DescribeCloudCenterInstancesRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_Criteria(self):
-		return self.get_query_params().get('Criteria')
+	def get_Remark(self):
+		return self.get_query_params().get('Remark')
 
-	def set_Criteria(self,Criteria):
-		self.add_query_param('Criteria',Criteria)
+	def set_Remark(self,Remark):
+		self.add_query_param('Remark',Remark)
 
-	def get_Importance(self):
-		return self.get_query_params().get('Importance')
+	def get_Source(self):
+		return self.get_query_params().get('Source')
 
-	def set_Importance(self,Importance):
-		self.add_query_param('Importance',Importance)
+	def set_Source(self,Source):
+		self.add_query_param('Source',Source)
 
-	def get_NoPage(self):
-		return self.get_query_params().get('NoPage')
+	def get_Uuid(self):
+		return self.get_query_params().get('Uuid')
 
-	def set_NoPage(self,NoPage):
-		self.add_query_param('NoPage',NoPage)
+	def set_Uuid(self,Uuid):
+		self.add_query_param('Uuid',Uuid)
 
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
@@ -55,20 +55,14 @@ class DescribeCloudCenterInstancesRequest(RpcRequest):
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
 
-	def get_LogicalExp(self):
-		return self.get_query_params().get('LogicalExp')
-
-	def set_LogicalExp(self,LogicalExp):
-		self.add_query_param('LogicalExp',LogicalExp)
-
 	def get_CurrentPage(self):
 		return self.get_query_params().get('CurrentPage')
 
 	def set_CurrentPage(self,CurrentPage):
 		self.add_query_param('CurrentPage',CurrentPage)
 
-	def get_MachineTypes(self):
-		return self.get_query_params().get('MachineTypes')
+	def get_User(self):
+		return self.get_query_params().get('User')
 
-	def set_MachineTypes(self,MachineTypes):
-		self.add_query_param('MachineTypes',MachineTypes)
+	def set_User(self,User):
+		self.add_query_param('User',User)

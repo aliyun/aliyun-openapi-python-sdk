@@ -56,7 +56,7 @@ class CreateAntiBruteForceRuleRequest(RpcRequest):
 		self.add_query_param('SourceIp',SourceIp)
 
 	def get_UuidLists(self):
-		return self.get_query_params().get('UuidLists')
+		return self.get_query_params().get('UuidList')
 
 	def set_UuidLists(self, UuidLists):
 		for depth1 in range(len(UuidLists)):

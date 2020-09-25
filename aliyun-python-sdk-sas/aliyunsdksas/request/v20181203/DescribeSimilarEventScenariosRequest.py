@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdksas.endpoint import endpoint_data
 
-class ModifyAntiBruteForceRuleRequest(RpcRequest):
+class DescribeSimilarEventScenariosRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'ModifyAntiBruteForceRule','sas')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeSimilarEventScenarios','sas')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -37,52 +37,14 @@ class ModifyAntiBruteForceRuleRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_ForbiddenTime(self):
-		return self.get_query_params().get('ForbiddenTime')
-
-	def set_ForbiddenTime(self,ForbiddenTime):
-		self.add_query_param('ForbiddenTime',ForbiddenTime)
-
-	def get_FailCount(self):
-		return self.get_query_params().get('FailCount')
-
-	def set_FailCount(self,FailCount):
-		self.add_query_param('FailCount',FailCount)
-
 	def get_SourceIp(self):
 		return self.get_query_params().get('SourceIp')
 
 	def set_SourceIp(self,SourceIp):
 		self.add_query_param('SourceIp',SourceIp)
 
-	def get_UuidLists(self):
-		return self.get_query_params().get('UuidList')
+	def get_SecurityEventId(self):
+		return self.get_query_params().get('SecurityEventId')
 
-	def set_UuidLists(self, UuidLists):
-		for depth1 in range(len(UuidLists)):
-			if UuidLists[depth1] is not None:
-				self.add_query_param('UuidList.' + str(depth1 + 1) , UuidLists[depth1])
-
-	def get_Id(self):
-		return self.get_query_params().get('Id')
-
-	def set_Id(self,Id):
-		self.add_query_param('Id',Id)
-
-	def get_Name(self):
-		return self.get_query_params().get('Name')
-
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)
-
-	def get_Span(self):
-		return self.get_query_params().get('Span')
-
-	def set_Span(self,Span):
-		self.add_query_param('Span',Span)
-
-	def get_DefaultRule(self):
-		return self.get_query_params().get('DefaultRule')
-
-	def set_DefaultRule(self,DefaultRule):
-		self.add_query_param('DefaultRule',DefaultRule)
+	def set_SecurityEventId(self,SecurityEventId):
+		self.add_query_param('SecurityEventId',SecurityEventId)

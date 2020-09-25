@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdksas.endpoint import endpoint_data
 
-class StartBaselineSecurityCheckRequest(RpcRequest):
+class DescribeWebLockConfigListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'StartBaselineSecurityCheck','sas')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeWebLockConfigList','sas')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,25 +31,11 @@ class StartBaselineSecurityCheckRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_ResourceOwnerId(self):
-		return self.get_query_params().get('ResourceOwnerId')
+	def get_Uuid(self):
+		return self.get_query_params().get('Uuid')
 
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_ItemIdss(self):
-		return self.get_query_params().get('ItemIds')
-
-	def set_ItemIdss(self, ItemIdss):
-		for depth1 in range(len(ItemIdss)):
-			if ItemIdss[depth1] is not None:
-				self.add_query_param('ItemIds.' + str(depth1 + 1) , ItemIdss[depth1])
-
-	def get_Type(self):
-		return self.get_query_params().get('Type')
-
-	def set_Type(self,Type):
-		self.add_query_param('Type',Type)
+	def set_Uuid(self,Uuid):
+		self.add_query_param('Uuid',Uuid)
 
 	def get_SourceIp(self):
 		return self.get_query_params().get('SourceIp')

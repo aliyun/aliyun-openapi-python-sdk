@@ -31,6 +31,12 @@ class HandleSimilarSecurityEventsRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_MarkMissParam(self):
+		return self.get_query_params().get('MarkMissParam')
+
+	def set_MarkMissParam(self,MarkMissParam):
+		self.add_query_param('MarkMissParam',MarkMissParam)
+
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 

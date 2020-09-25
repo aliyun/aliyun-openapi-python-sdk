@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdksas.endpoint import endpoint_data
 
-class DescribeCloudCenterInstancesRequest(RpcRequest):
+class DescribeSuspEventQuaraFilesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeCloudCenterInstances','sas')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeSuspEventQuaraFiles','sas')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,23 +31,23 @@ class DescribeCloudCenterInstancesRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_Criteria(self):
-		return self.get_query_params().get('Criteria')
+	def get_CurrentPage(self):
+		return self.get_query_params().get('CurrentPage')
 
-	def set_Criteria(self,Criteria):
-		self.add_query_param('Criteria',Criteria)
+	def set_CurrentPage(self,CurrentPage):
+		self.add_query_param('CurrentPage',CurrentPage)
 
-	def get_Importance(self):
-		return self.get_query_params().get('Importance')
+	def get_SourceIp(self):
+		return self.get_query_params().get('SourceIp')
 
-	def set_Importance(self,Importance):
-		self.add_query_param('Importance',Importance)
+	def set_SourceIp(self,SourceIp):
+		self.add_query_param('SourceIp',SourceIp)
 
-	def get_NoPage(self):
-		return self.get_query_params().get('NoPage')
+	def get_QuaraTag(self):
+		return self.get_query_params().get('QuaraTag')
 
-	def set_NoPage(self,NoPage):
-		self.add_query_param('NoPage',NoPage)
+	def set_QuaraTag(self,QuaraTag):
+		self.add_query_param('QuaraTag',QuaraTag)
 
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
@@ -55,20 +55,14 @@ class DescribeCloudCenterInstancesRequest(RpcRequest):
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
 
-	def get_LogicalExp(self):
-		return self.get_query_params().get('LogicalExp')
+	def get__From(self):
+		return self.get_query_params().get('From')
 
-	def set_LogicalExp(self,LogicalExp):
-		self.add_query_param('LogicalExp',LogicalExp)
+	def set__From(self,_From):
+		self.add_query_param('From',_From)
 
-	def get_CurrentPage(self):
-		return self.get_query_params().get('CurrentPage')
+	def get_Status(self):
+		return self.get_query_params().get('Status')
 
-	def set_CurrentPage(self,CurrentPage):
-		self.add_query_param('CurrentPage',CurrentPage)
-
-	def get_MachineTypes(self):
-		return self.get_query_params().get('MachineTypes')
-
-	def set_MachineTypes(self,MachineTypes):
-		self.add_query_param('MachineTypes',MachineTypes)
+	def set_Status(self,Status):
+		self.add_query_param('Status',Status)

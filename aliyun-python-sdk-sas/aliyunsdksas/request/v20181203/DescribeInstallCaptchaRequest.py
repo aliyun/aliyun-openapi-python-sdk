@@ -20,36 +20,16 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdksas.endpoint import endpoint_data
 
-class StartBaselineSecurityCheckRequest(RpcRequest):
+class DescribeInstallCaptchaRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'StartBaselineSecurityCheck','sas')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeInstallCaptcha','sas')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ResourceOwnerId(self):
-		return self.get_query_params().get('ResourceOwnerId')
-
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_ItemIdss(self):
-		return self.get_query_params().get('ItemIds')
-
-	def set_ItemIdss(self, ItemIdss):
-		for depth1 in range(len(ItemIdss)):
-			if ItemIdss[depth1] is not None:
-				self.add_query_param('ItemIds.' + str(depth1 + 1) , ItemIdss[depth1])
-
-	def get_Type(self):
-		return self.get_query_params().get('Type')
-
-	def set_Type(self,Type):
-		self.add_query_param('Type',Type)
 
 	def get_SourceIp(self):
 		return self.get_query_params().get('SourceIp')
@@ -62,3 +42,9 @@ class StartBaselineSecurityCheckRequest(RpcRequest):
 
 	def set_Lang(self,Lang):
 		self.add_query_param('Lang',Lang)
+
+	def get_Deadline(self):
+		return self.get_query_params().get('Deadline')
+
+	def set_Deadline(self,Deadline):
+		self.add_query_param('Deadline',Deadline)

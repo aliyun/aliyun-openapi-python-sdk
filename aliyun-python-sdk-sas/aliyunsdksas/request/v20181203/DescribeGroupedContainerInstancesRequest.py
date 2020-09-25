@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdksas.endpoint import endpoint_data
 
-class DescribeCloudCenterInstancesRequest(RpcRequest):
+class DescribeGroupedContainerInstancesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeCloudCenterInstances','sas')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeGroupedContainerInstances','sas')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -37,17 +37,11 @@ class DescribeCloudCenterInstancesRequest(RpcRequest):
 	def set_Criteria(self,Criteria):
 		self.add_query_param('Criteria',Criteria)
 
-	def get_Importance(self):
-		return self.get_query_params().get('Importance')
+	def get_GroupField(self):
+		return self.get_query_params().get('GroupField')
 
-	def set_Importance(self,Importance):
-		self.add_query_param('Importance',Importance)
-
-	def get_NoPage(self):
-		return self.get_query_params().get('NoPage')
-
-	def set_NoPage(self,NoPage):
-		self.add_query_param('NoPage',NoPage)
+	def set_GroupField(self,GroupField):
+		self.add_query_param('GroupField',GroupField)
 
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
@@ -61,14 +55,14 @@ class DescribeCloudCenterInstancesRequest(RpcRequest):
 	def set_LogicalExp(self,LogicalExp):
 		self.add_query_param('LogicalExp',LogicalExp)
 
+	def get_FieldValue(self):
+		return self.get_query_params().get('FieldValue')
+
+	def set_FieldValue(self,FieldValue):
+		self.add_query_param('FieldValue',FieldValue)
+
 	def get_CurrentPage(self):
 		return self.get_query_params().get('CurrentPage')
 
 	def set_CurrentPage(self,CurrentPage):
 		self.add_query_param('CurrentPage',CurrentPage)
-
-	def get_MachineTypes(self):
-		return self.get_query_params().get('MachineTypes')
-
-	def set_MachineTypes(self,MachineTypes):
-		self.add_query_param('MachineTypes',MachineTypes)
