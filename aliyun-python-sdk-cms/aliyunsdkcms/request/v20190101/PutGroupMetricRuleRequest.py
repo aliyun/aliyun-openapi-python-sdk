@@ -103,6 +103,12 @@ class PutGroupMetricRuleRequest(RpcRequest):
 	def set_EscalationsWarnThreshold(self,EscalationsWarnThreshold):
 		self.add_query_param('Escalations.Warn.Threshold',EscalationsWarnThreshold)
 
+	def get_ContactGroups(self):
+		return self.get_query_params().get('ContactGroups')
+
+	def set_ContactGroups(self,ContactGroups):
+		self.add_query_param('ContactGroups',ContactGroups)
+
 	def get_EscalationsCriticalStatistics(self):
 		return self.get_query_params().get('Escalations.Critical.Statistics')
 
