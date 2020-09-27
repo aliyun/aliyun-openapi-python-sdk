@@ -19,26 +19,14 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class GetImageCroppingSuggestionsRequest(RpcRequest):
+class OpenImmServiceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'imm', '2017-09-06', 'GetImageCroppingSuggestions','imm')
+		RpcRequest.__init__(self, 'imm', '2017-09-06', 'OpenImmService','imm')
 		self.set_method('POST')
 
-	def get_Project(self):
-		return self.get_query_params().get('Project')
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
 
-	def set_Project(self,Project):
-		self.add_query_param('Project',Project)
-
-	def get_AspectRatios(self):
-		return self.get_query_params().get('AspectRatios')
-
-	def set_AspectRatios(self,AspectRatios):
-		self.add_query_param('AspectRatios',AspectRatios)
-
-	def get_ImageUri(self):
-		return self.get_query_params().get('ImageUri')
-
-	def set_ImageUri(self,ImageUri):
-		self.add_query_param('ImageUri',ImageUri)
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)

@@ -22,7 +22,7 @@ from aliyunsdkcore.request import RpcRequest
 class CreateVideoAnalyseTaskRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'imm', '2017-09-06', 'CreateVideoAnalyseTask')
+		RpcRequest.__init__(self, 'imm', '2017-09-06', 'CreateVideoAnalyseTask','imm')
 		self.set_method('POST')
 
 	def get_Project(self):

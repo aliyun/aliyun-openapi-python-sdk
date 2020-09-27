@@ -22,7 +22,7 @@ from aliyunsdkcore.request import RpcRequest
 class DetectImageTextsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'imm', '2017-09-06', 'DetectImageTexts')
+		RpcRequest.__init__(self, 'imm', '2017-09-06', 'DetectImageTexts','imm')
 		self.set_method('POST')
 
 	def get_Project(self):

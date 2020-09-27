@@ -22,7 +22,7 @@ from aliyunsdkcore.request import RpcRequest
 class DeleteVideoRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'imm', '2017-09-06', 'DeleteVideo')
+		RpcRequest.__init__(self, 'imm', '2017-09-06', 'DeleteVideo','imm')
 		self.set_method('POST')
 
 	def get_Project(self):

@@ -22,7 +22,7 @@ from aliyunsdkcore.request import RpcRequest
 class GetDRMLicenseRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'imm', '2017-09-06', 'GetDRMLicense')
+		RpcRequest.__init__(self, 'imm', '2017-09-06', 'GetDRMLicense','imm')
 		self.set_method('POST')
 
 	def get_Project(self):

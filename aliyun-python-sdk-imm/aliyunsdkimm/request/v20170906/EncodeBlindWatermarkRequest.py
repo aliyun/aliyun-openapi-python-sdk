@@ -22,7 +22,7 @@ from aliyunsdkcore.request import RpcRequest
 class EncodeBlindWatermarkRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'imm', '2017-09-06', 'EncodeBlindWatermark')
+		RpcRequest.__init__(self, 'imm', '2017-09-06', 'EncodeBlindWatermark','imm')
 		self.set_method('POST')
 
 	def get_ImageQuality(self):

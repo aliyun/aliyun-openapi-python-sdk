@@ -22,7 +22,7 @@ from aliyunsdkcore.request import RpcRequest
 class DeleteImageRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'imm', '2017-09-06', 'DeleteImage')
+		RpcRequest.__init__(self, 'imm', '2017-09-06', 'DeleteImage','imm')
 		self.set_method('POST')
 
 	def get_Project(self):
