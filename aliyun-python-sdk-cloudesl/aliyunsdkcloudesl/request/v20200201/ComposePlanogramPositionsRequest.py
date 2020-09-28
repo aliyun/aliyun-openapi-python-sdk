@@ -37,6 +37,12 @@ class ComposePlanogramPositionsRequest(RpcRequest):
 	def set_ActionType(self,ActionType):
 		self.add_body_params('ActionType', ActionType)
 
+	def get_ExtraParams(self):
+		return self.get_body_params().get('ExtraParams')
+
+	def set_ExtraParams(self,ExtraParams):
+		self.add_body_params('ExtraParams', ExtraParams)
+
 	def get_StoreId(self):
 		return self.get_body_params().get('StoreId')
 
@@ -68,7 +74,7 @@ class ComposePlanogramPositionsRequest(RpcRequest):
 		self.add_body_params('Shelf', Shelf)
 
 	def get_ShelfPositionInfos(self):
-		return self.get_body_params().get('ShelfPositionInfos')
+		return self.get_body_params().get('ShelfPositionInfo')
 
 	def set_ShelfPositionInfos(self, ShelfPositionInfos):
 		for depth1 in range(len(ShelfPositionInfos)):

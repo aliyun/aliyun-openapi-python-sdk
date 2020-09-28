@@ -31,6 +31,12 @@ class AddPlanogramShelfRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_ExtraParams(self):
+		return self.get_body_params().get('ExtraParams')
+
+	def set_ExtraParams(self,ExtraParams):
+		self.add_body_params('ExtraParams', ExtraParams)
+
 	def get_ClientToken(self):
 		return self.get_body_params().get('ClientToken')
 
@@ -49,17 +55,17 @@ class AddPlanogramShelfRequest(RpcRequest):
 	def set_StoreId(self,StoreId):
 		self.add_body_params('StoreId', StoreId)
 
-	def get_Shelf(self):
-		return self.get_body_params().get('Shelf')
-
-	def set_Shelf(self,Shelf):
-		self.add_body_params('Shelf', Shelf)
-
 	def get_Zone(self):
 		return self.get_body_params().get('Zone')
 
 	def set_Zone(self,Zone):
 		self.add_body_params('Zone', Zone)
+
+	def get_Shelf(self):
+		return self.get_body_params().get('Shelf')
+
+	def set_Shelf(self,Shelf):
+		self.add_body_params('Shelf', Shelf)
 
 	def get_Category(self):
 		return self.get_body_params().get('Category')

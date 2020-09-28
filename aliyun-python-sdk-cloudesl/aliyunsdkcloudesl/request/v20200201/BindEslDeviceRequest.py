@@ -31,11 +31,11 @@ class BindEslDeviceRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_Column(self):
-		return self.get_body_params().get('Column')
+	def get_ExtraParams(self):
+		return self.get_body_params().get('ExtraParams')
 
-	def set_Column(self,Column):
-		self.add_body_params('Column', Column)
+	def set_ExtraParams(self,ExtraParams):
+		self.add_body_params('ExtraParams', ExtraParams)
 
 	def get_StoreId(self):
 		return self.get_body_params().get('StoreId')
@@ -49,12 +49,6 @@ class BindEslDeviceRequest(RpcRequest):
 	def set_Layer(self,Layer):
 		self.add_body_params('Layer', Layer)
 
-	def get_Shelf(self):
-		return self.get_body_params().get('Shelf')
-
-	def set_Shelf(self,Shelf):
-		self.add_body_params('Shelf', Shelf)
-
 	def get_EslBarCode(self):
 		return self.get_body_params().get('EslBarCode')
 
@@ -66,3 +60,15 @@ class BindEslDeviceRequest(RpcRequest):
 
 	def set_ItemBarCode(self,ItemBarCode):
 		self.add_body_params('ItemBarCode', ItemBarCode)
+
+	def get_Column(self):
+		return self.get_body_params().get('Column')
+
+	def set_Column(self,Column):
+		self.add_body_params('Column', Column)
+
+	def get_Shelf(self):
+		return self.get_body_params().get('Shelf')
+
+	def set_Shelf(self,Shelf):
+		self.add_body_params('Shelf', Shelf)

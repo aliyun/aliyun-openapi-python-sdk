@@ -31,6 +31,12 @@ class DescribePlanogramRailsRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_ExtraParams(self):
+		return self.get_body_params().get('ExtraParams')
+
+	def set_ExtraParams(self,ExtraParams):
+		self.add_body_params('ExtraParams', ExtraParams)
+
 	def get_StoreId(self):
 		return self.get_body_params().get('StoreId')
 
@@ -49,6 +55,12 @@ class DescribePlanogramRailsRequest(RpcRequest):
 	def set_PageNumber(self,PageNumber):
 		self.add_body_params('PageNumber', PageNumber)
 
+	def get_PageSize(self):
+		return self.get_body_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_body_params('PageSize', PageSize)
+
 	def get_Shelf(self):
 		return self.get_body_params().get('Shelf')
 
@@ -60,9 +72,3 @@ class DescribePlanogramRailsRequest(RpcRequest):
 
 	def set_RailCode(self,RailCode):
 		self.add_body_params('RailCode', RailCode)
-
-	def get_PageSize(self):
-		return self.get_body_params().get('PageSize')
-
-	def set_PageSize(self,PageSize):
-		self.add_body_params('PageSize', PageSize)

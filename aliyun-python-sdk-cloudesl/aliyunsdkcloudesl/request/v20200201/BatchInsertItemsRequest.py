@@ -31,6 +31,12 @@ class BatchInsertItemsRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_ExtraParams(self):
+		return self.get_body_params().get('ExtraParams')
+
+	def set_ExtraParams(self,ExtraParams):
+		self.add_body_params('ExtraParams', ExtraParams)
+
 	def get_StoreId(self):
 		return self.get_body_params().get('StoreId')
 
@@ -38,7 +44,7 @@ class BatchInsertItemsRequest(RpcRequest):
 		self.add_body_params('StoreId', StoreId)
 
 	def get_ItemInfos(self):
-		return self.get_body_params().get('ItemInfos')
+		return self.get_body_params().get('ItemInfo')
 
 	def set_ItemInfos(self, ItemInfos):
 		for depth1 in range(len(ItemInfos)):

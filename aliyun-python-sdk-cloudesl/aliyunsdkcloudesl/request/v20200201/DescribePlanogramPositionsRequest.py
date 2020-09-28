@@ -31,6 +31,12 @@ class DescribePlanogramPositionsRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_ExtraParams(self):
+		return self.get_body_params().get('ExtraParams')
+
+	def set_ExtraParams(self,ExtraParams):
+		self.add_body_params('ExtraParams', ExtraParams)
+
 	def get_StoreId(self):
 		return self.get_body_params().get('StoreId')
 

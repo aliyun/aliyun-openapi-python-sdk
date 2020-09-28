@@ -31,11 +31,11 @@ class DescribeBindersRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_ItemTitle(self):
-		return self.get_body_params().get('ItemTitle')
+	def get_ExtraParams(self):
+		return self.get_body_params().get('ExtraParams')
 
-	def set_ItemTitle(self,ItemTitle):
-		self.add_body_params('ItemTitle', ItemTitle)
+	def set_ExtraParams(self,ExtraParams):
+		self.add_body_params('ExtraParams', ExtraParams)
 
 	def get_StoreId(self):
 		return self.get_body_params().get('StoreId')
@@ -66,3 +66,9 @@ class DescribeBindersRequest(RpcRequest):
 
 	def set_ItemBarCode(self,ItemBarCode):
 		self.add_body_params('ItemBarCode', ItemBarCode)
+
+	def get_ItemTitle(self):
+		return self.get_body_params().get('ItemTitle')
+
+	def set_ItemTitle(self,ItemTitle):
+		self.add_body_params('ItemTitle', ItemTitle)

@@ -36,3 +36,9 @@ class DescribeClientPackageRequest(RpcRequest):
 
 	def set_ClientType(self,ClientType):
 		self.add_body_params('ClientType', ClientType)
+
+	def get_ExtraParams(self):
+		return self.get_body_params().get('ExtraParams')
+
+	def set_ExtraParams(self,ExtraParams):
+		self.add_body_params('ExtraParams', ExtraParams)
