@@ -49,6 +49,12 @@ class DescribeDomainBasicConfigsRequest(RpcRequest):
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
 
+	def get_AccessType(self):
+		return self.get_query_params().get('AccessType')
+
+	def set_AccessType(self,AccessType):
+		self.add_query_param('AccessType',AccessType)
+
 	def get_InstanceId(self):
 		return self.get_query_params().get('InstanceId')
 
