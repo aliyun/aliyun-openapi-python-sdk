@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkhbase.endpoint import endpoint_data
 
-class ResizeNodeCountRequest(RpcRequest):
+class ModifyMultiZoneClusterNodeTypeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'HBase', '2019-01-01', 'ResizeNodeCount','hbase')
+		RpcRequest.__init__(self, 'HBase', '2019-01-01', 'ModifyMultiZoneClusterNodeType','hbase')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,26 +31,26 @@ class ResizeNodeCountRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_LogInstanceType(self):
+		return self.get_query_params().get('LogInstanceType')
+
+	def set_LogInstanceType(self,LogInstanceType):
+		self.add_query_param('LogInstanceType',LogInstanceType)
+
 	def get_ClusterId(self):
 		return self.get_query_params().get('ClusterId')
 
 	def set_ClusterId(self,ClusterId):
 		self.add_query_param('ClusterId',ClusterId)
 
-	def get_VSwitchId(self):
-		return self.get_query_params().get('VSwitchId')
+	def get_MasterInstanceType(self):
+		return self.get_query_params().get('MasterInstanceType')
 
-	def set_VSwitchId(self,VSwitchId):
-		self.add_query_param('VSwitchId',VSwitchId)
+	def set_MasterInstanceType(self,MasterInstanceType):
+		self.add_query_param('MasterInstanceType',MasterInstanceType)
 
-	def get_NodeCount(self):
-		return self.get_query_params().get('NodeCount')
+	def get_CoreInstanceType(self):
+		return self.get_query_params().get('CoreInstanceType')
 
-	def set_NodeCount(self,NodeCount):
-		self.add_query_param('NodeCount',NodeCount)
-
-	def get_ZoneId(self):
-		return self.get_query_params().get('ZoneId')
-
-	def set_ZoneId(self,ZoneId):
-		self.add_query_param('ZoneId',ZoneId)
+	def set_CoreInstanceType(self,CoreInstanceType):
+		self.add_query_param('CoreInstanceType',CoreInstanceType)

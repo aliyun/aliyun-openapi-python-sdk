@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkhbase.endpoint import endpoint_data
 
-class ResizeNodeCountRequest(RpcRequest):
+class ResizeMultiZoneClusterDiskSizeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'HBase', '2019-01-01', 'ResizeNodeCount','hbase')
+		RpcRequest.__init__(self, 'HBase', '2019-01-01', 'ResizeMultiZoneClusterDiskSize','hbase')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -37,20 +37,14 @@ class ResizeNodeCountRequest(RpcRequest):
 	def set_ClusterId(self,ClusterId):
 		self.add_query_param('ClusterId',ClusterId)
 
-	def get_VSwitchId(self):
-		return self.get_query_params().get('VSwitchId')
+	def get_LogDiskSize(self):
+		return self.get_query_params().get('LogDiskSize')
 
-	def set_VSwitchId(self,VSwitchId):
-		self.add_query_param('VSwitchId',VSwitchId)
+	def set_LogDiskSize(self,LogDiskSize):
+		self.add_query_param('LogDiskSize',LogDiskSize)
 
-	def get_NodeCount(self):
-		return self.get_query_params().get('NodeCount')
+	def get_CoreDiskSize(self):
+		return self.get_query_params().get('CoreDiskSize')
 
-	def set_NodeCount(self,NodeCount):
-		self.add_query_param('NodeCount',NodeCount)
-
-	def get_ZoneId(self):
-		return self.get_query_params().get('ZoneId')
-
-	def set_ZoneId(self,ZoneId):
-		self.add_query_param('ZoneId',ZoneId)
+	def set_CoreDiskSize(self,CoreDiskSize):
+		self.add_query_param('CoreDiskSize',CoreDiskSize)
