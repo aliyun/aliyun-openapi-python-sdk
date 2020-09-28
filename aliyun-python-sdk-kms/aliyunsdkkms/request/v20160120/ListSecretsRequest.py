@@ -23,7 +23,7 @@ from aliyunsdkkms.endpoint import endpoint_data
 class ListSecretsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Kms', '2016-01-20', 'ListSecrets','kms-service')
+		RpcRequest.__init__(self, 'Kms', '2016-01-20', 'ListSecrets','kms')
 		self.set_protocol_type('https')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
@@ -37,6 +37,12 @@ class ListSecretsRequest(RpcRequest):
 
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
+
+	def get_Filters(self):
+		return self.get_query_params().get('Filters')
+
+	def set_Filters(self,Filters):
+		self.add_query_param('Filters',Filters)
 
 	def get_FetchTags(self):
 		return self.get_query_params().get('FetchTags')
