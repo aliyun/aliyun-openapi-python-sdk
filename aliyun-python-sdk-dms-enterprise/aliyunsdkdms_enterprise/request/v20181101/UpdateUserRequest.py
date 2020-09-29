@@ -37,12 +37,6 @@ class UpdateUserRequest(RpcRequest):
 	def set_RoleNames(self,RoleNames):
 		self.add_query_param('RoleNames',RoleNames)
 
-	def get_Uid(self):
-		return self.get_query_params().get('Uid')
-
-	def set_Uid(self,Uid):
-		self.add_query_param('Uid',Uid)
-
 	def get_MaxResultCount(self):
 		return self.get_query_params().get('MaxResultCount')
 
@@ -72,3 +66,9 @@ class UpdateUserRequest(RpcRequest):
 
 	def set_Tid(self,Tid):
 		self.add_query_param('Tid',Tid)
+
+	def get_Uid(self):
+		return self.get_query_params().get('Uid')
+
+	def set_Uid(self,Uid):
+		self.add_query_param('Uid',Uid)

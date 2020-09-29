@@ -31,6 +31,18 @@ class ListDatabaseUserPermssionsRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_Tid(self):
+		return self.get_query_params().get('Tid')
+
+	def set_Tid(self,Tid):
+		self.add_query_param('Tid',Tid)
+
+	def get_PageNumber(self):
+		return self.get_query_params().get('PageNumber')
+
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)
+
 	def get_PermType(self):
 		return self.get_query_params().get('PermType')
 
@@ -54,18 +66,6 @@ class ListDatabaseUserPermssionsRequest(RpcRequest):
 
 	def set_Logic(self,Logic):
 		self.add_query_param('Logic',Logic)
-
-	def get_Tid(self):
-		return self.get_query_params().get('Tid')
-
-	def set_Tid(self,Tid):
-		self.add_query_param('Tid',Tid)
-
-	def get_PageNumber(self):
-		return self.get_query_params().get('PageNumber')
-
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
 
 	def get_UserName(self):
 		return self.get_query_params().get('UserName')

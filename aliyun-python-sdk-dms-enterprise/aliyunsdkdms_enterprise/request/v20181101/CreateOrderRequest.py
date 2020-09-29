@@ -50,10 +50,10 @@ class CreateOrderRequest(RpcRequest):
 		self.add_query_param('Tid',Tid)
 
 	def get_PluginParam(self):
-		return self.get_query_params().get('PluginParam')
+		return self.get_body_params().get('PluginParam')
 
 	def set_PluginParam(self,PluginParam):
-		self.add_query_param('PluginParam',PluginParam)
+		self.add_body_params('PluginParam', PluginParam)
 
 	def get_RelatedUserList(self):
 		return self.get_query_params().get('RelatedUserList')

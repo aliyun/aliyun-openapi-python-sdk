@@ -37,24 +37,6 @@ class ListSensitiveColumnsRequest(RpcRequest):
 	def set_SchemaName(self,SchemaName):
 		self.add_query_param('SchemaName',SchemaName)
 
-	def get_SecurityLevel(self):
-		return self.get_query_params().get('SecurityLevel')
-
-	def set_SecurityLevel(self,SecurityLevel):
-		self.add_query_param('SecurityLevel',SecurityLevel)
-
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_TableName(self):
-		return self.get_query_params().get('TableName')
-
-	def set_TableName(self,TableName):
-		self.add_query_param('TableName',TableName)
-
 	def get_ColumnName(self):
 		return self.get_query_params().get('ColumnName')
 
@@ -72,3 +54,21 @@ class ListSensitiveColumnsRequest(RpcRequest):
 
 	def set_PageNumber(self,PageNumber):
 		self.add_query_param('PageNumber',PageNumber)
+
+	def get_SecurityLevel(self):
+		return self.get_query_params().get('SecurityLevel')
+
+	def set_SecurityLevel(self,SecurityLevel):
+		self.add_query_param('SecurityLevel',SecurityLevel)
+
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
+
+	def get_TableName(self):
+		return self.get_query_params().get('TableName')
+
+	def set_TableName(self,TableName):
+		self.add_query_param('TableName',TableName)
