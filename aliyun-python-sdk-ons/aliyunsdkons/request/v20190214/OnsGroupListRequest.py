@@ -23,7 +23,7 @@ from aliyunsdkons.endpoint import endpoint_data
 class OnsGroupListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ons', '2019-02-14', 'OnsGroupList','ons')
+		RpcRequest.__init__(self, 'Ons', '2019-02-14', 'OnsGroupList')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -50,7 +50,7 @@ class OnsGroupListRequest(RpcRequest):
 		self.add_query_param('GroupType',GroupType)
 
 	def get_Tags(self):
-		return self.get_query_params().get('Tags')
+		return self.get_query_params().get('Tag')
 
 	def set_Tags(self, Tags):
 		for depth1 in range(len(Tags)):

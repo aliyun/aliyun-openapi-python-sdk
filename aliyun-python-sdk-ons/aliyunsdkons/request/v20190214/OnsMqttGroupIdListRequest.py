@@ -23,7 +23,7 @@ from aliyunsdkons.endpoint import endpoint_data
 class OnsMqttGroupIdListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ons', '2019-02-14', 'OnsMqttGroupIdList','ons')
+		RpcRequest.__init__(self, 'Ons', '2019-02-14', 'OnsMqttGroupIdList')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
