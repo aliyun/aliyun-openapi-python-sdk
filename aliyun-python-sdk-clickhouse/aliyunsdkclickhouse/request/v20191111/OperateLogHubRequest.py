@@ -140,7 +140,7 @@ class OperateLogHubRequest(RpcRequest):
 		self.add_query_param('FilterDirty',FilterDirty)
 
 	def get_LogHubStoress(self):
-		return self.get_query_params().get('LogHubStoress')
+		return self.get_query_params().get('LogHubStores')
 
 	def set_LogHubStoress(self, LogHubStoress):
 		for depth1 in range(len(LogHubStoress)):

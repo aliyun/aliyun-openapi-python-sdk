@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkclickhouse.endpoint import endpoint_data
 
-class DescribeDBClustersRequest(RpcRequest):
+class DescribeSlowLogRecordsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'clickhouse', '2019-11-11', 'DescribeDBClusters','clickhouse')
+		RpcRequest.__init__(self, 'clickhouse', '2019-11-11', 'DescribeSlowLogRecords','clickhouse')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -37,17 +37,17 @@ class DescribeDBClustersRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_DBClusterDescription(self):
-		return self.get_query_params().get('DBClusterDescription')
+	def get_QueryDurationMs(self):
+		return self.get_query_params().get('QueryDurationMs')
 
-	def set_DBClusterDescription(self,DBClusterDescription):
-		self.add_query_param('DBClusterDescription',DBClusterDescription)
+	def set_QueryDurationMs(self,QueryDurationMs):
+		self.add_query_param('QueryDurationMs',QueryDurationMs)
 
-	def get_DBClusterStatus(self):
-		return self.get_query_params().get('DBClusterStatus')
+	def get_StartTime(self):
+		return self.get_query_params().get('StartTime')
 
-	def set_DBClusterStatus(self,DBClusterStatus):
-		self.add_query_param('DBClusterStatus',DBClusterStatus)
+	def set_StartTime(self,StartTime):
+		self.add_query_param('StartTime',StartTime)
 
 	def get_PageNumber(self):
 		return self.get_query_params().get('PageNumber')
@@ -61,21 +61,17 @@ class DescribeDBClustersRequest(RpcRequest):
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
 
-	def get_Tags(self):
-		return self.get_query_params().get('Tag')
-
-	def set_Tags(self, Tags):
-		for depth1 in range(len(Tags)):
-			if Tags[depth1].get('Value') is not None:
-				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tags[depth1].get('Value'))
-			if Tags[depth1].get('Key') is not None:
-				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tags[depth1].get('Key'))
-
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+
+	def get_DBClusterId(self):
+		return self.get_query_params().get('DBClusterId')
+
+	def set_DBClusterId(self,DBClusterId):
+		self.add_query_param('DBClusterId',DBClusterId)
 
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
@@ -83,14 +79,14 @@ class DescribeDBClustersRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
+	def get_EndTime(self):
+		return self.get_query_params().get('EndTime')
+
+	def set_EndTime(self,EndTime):
+		self.add_query_param('EndTime',EndTime)
+
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
-
-	def get_DBClusterIds(self):
-		return self.get_query_params().get('DBClusterIds')
-
-	def set_DBClusterIds(self,DBClusterIds):
-		self.add_query_param('DBClusterIds',DBClusterIds)

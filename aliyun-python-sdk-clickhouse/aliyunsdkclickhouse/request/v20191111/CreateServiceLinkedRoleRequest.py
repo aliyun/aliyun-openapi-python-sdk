@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkclickhouse.endpoint import endpoint_data
 
-class DescribeDBClustersRequest(RpcRequest):
+class CreateServiceLinkedRoleRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'clickhouse', '2019-11-11', 'DescribeDBClusters','clickhouse')
+		RpcRequest.__init__(self, 'clickhouse', '2019-11-11', 'CreateServiceLinkedRole','clickhouse')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -36,40 +36,6 @@ class DescribeDBClustersRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_DBClusterDescription(self):
-		return self.get_query_params().get('DBClusterDescription')
-
-	def set_DBClusterDescription(self,DBClusterDescription):
-		self.add_query_param('DBClusterDescription',DBClusterDescription)
-
-	def get_DBClusterStatus(self):
-		return self.get_query_params().get('DBClusterStatus')
-
-	def set_DBClusterStatus(self,DBClusterStatus):
-		self.add_query_param('DBClusterStatus',DBClusterStatus)
-
-	def get_PageNumber(self):
-		return self.get_query_params().get('PageNumber')
-
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
-
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_Tags(self):
-		return self.get_query_params().get('Tag')
-
-	def set_Tags(self, Tags):
-		for depth1 in range(len(Tags)):
-			if Tags[depth1].get('Value') is not None:
-				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tags[depth1].get('Value'))
-			if Tags[depth1].get('Key') is not None:
-				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tags[depth1].get('Key'))
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -88,9 +54,3 @@ class DescribeDBClustersRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
-
-	def get_DBClusterIds(self):
-		return self.get_query_params().get('DBClusterIds')
-
-	def set_DBClusterIds(self,DBClusterIds):
-		self.add_query_param('DBClusterIds',DBClusterIds)
