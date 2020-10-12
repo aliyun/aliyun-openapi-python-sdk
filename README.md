@@ -12,6 +12,8 @@ The Alibaba Cloud Python Software Development Kit (SDK) allows you to access Ali
 
 This document introduces how to obtain and call Alibaba Cloud Python SDK.
 
+## Troubleshoot
+[Troubleshoot](https://troubleshoot.api.aliyun.com/?source=github_sdk) Provide OpenAPI diagnosis service to help developers locate quickly and provide solutions for developers through `RequestID` or `error message`.
 
 ## Online Demo
 
