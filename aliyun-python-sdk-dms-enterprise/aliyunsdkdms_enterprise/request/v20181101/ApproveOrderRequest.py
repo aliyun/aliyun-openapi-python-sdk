@@ -37,6 +37,12 @@ class ApproveOrderRequest(RpcRequest):
 	def set_ApprovalType(self,ApprovalType):
 		self.add_query_param('ApprovalType',ApprovalType)
 
+	def get_Comment(self):
+		return self.get_query_params().get('Comment')
+
+	def set_Comment(self,Comment):
+		self.add_query_param('Comment',Comment)
+
 	def get_Tid(self):
 		return self.get_query_params().get('Tid')
 
