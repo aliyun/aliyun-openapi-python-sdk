@@ -19,12 +19,12 @@
 
 from aliyunsdkcore.request import RoaRequest
 
-class DeleteRepositoryGroupRequest(RoaRequest):
+class GetRepositoryInfoRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'codeup', '2020-04-14', 'DeleteRepositoryGroup')
-		self.set_uri_pattern('/api/v3/groups/[GroupId]/remove')
-		self.set_method('POST')
+		RoaRequest.__init__(self, 'codeup', '2020-04-14', 'GetRepositoryInfo')
+		self.set_uri_pattern('/api/v3/projects/info')
+		self.set_method('GET')
 
 	def get_OrganizationId(self):
 		return self.get_query_params().get('OrganizationId')
@@ -32,17 +32,11 @@ class DeleteRepositoryGroupRequest(RoaRequest):
 	def set_OrganizationId(self,OrganizationId):
 		self.add_query_param('OrganizationId',OrganizationId)
 
-	def get_SubUserId(self):
-		return self.get_query_params().get('SubUserId')
+	def get_Identity(self):
+		return self.get_query_params().get('Identity')
 
-	def set_SubUserId(self,SubUserId):
-		self.add_query_param('SubUserId',SubUserId)
-
-	def get_GroupId(self):
-		return self.get_path_params().get('GroupId')
-
-	def set_GroupId(self,GroupId):
-		self.add_path_param('GroupId',GroupId)
+	def set_Identity(self,Identity):
+		self.add_query_param('Identity',Identity)
 
 	def get_AccessToken(self):
 		return self.get_query_params().get('AccessToken')

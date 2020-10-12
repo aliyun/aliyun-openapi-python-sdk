@@ -24,7 +24,7 @@ class DeleteRepositoryRequest(RoaRequest):
 	def __init__(self):
 		RoaRequest.__init__(self, 'codeup', '2020-04-14', 'DeleteRepository')
 		self.set_uri_pattern('/api/v3/projects/[ProjectId]/remove')
-		self.set_method('DELETE')
+		self.set_method('POST')
 
 	def get_OrganizationId(self):
 		return self.get_query_params().get('OrganizationId')

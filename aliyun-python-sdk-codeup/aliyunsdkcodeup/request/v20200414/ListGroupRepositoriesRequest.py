@@ -19,12 +19,24 @@
 
 from aliyunsdkcore.request import RoaRequest
 
-class DeleteRepositoryGroupRequest(RoaRequest):
+class ListGroupRepositoriesRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'codeup', '2020-04-14', 'DeleteRepositoryGroup')
-		self.set_uri_pattern('/api/v3/groups/[GroupId]/remove')
-		self.set_method('POST')
+		RoaRequest.__init__(self, 'codeup', '2020-04-14', 'ListGroupRepositories')
+		self.set_uri_pattern('/api/v3/groups/[Identity]/projects')
+		self.set_method('GET')
+
+	def get_AccessToken(self):
+		return self.get_query_params().get('AccessToken')
+
+	def set_AccessToken(self,AccessToken):
+		self.add_query_param('AccessToken',AccessToken)
+
+	def get_IsMember(self):
+		return self.get_query_params().get('IsMember')
+
+	def set_IsMember(self,IsMember):
+		self.add_query_param('IsMember',IsMember)
 
 	def get_OrganizationId(self):
 		return self.get_query_params().get('OrganizationId')
@@ -32,20 +44,32 @@ class DeleteRepositoryGroupRequest(RoaRequest):
 	def set_OrganizationId(self,OrganizationId):
 		self.add_query_param('OrganizationId',OrganizationId)
 
+	def get_Search(self):
+		return self.get_query_params().get('Search')
+
+	def set_Search(self,Search):
+		self.add_query_param('Search',Search)
+
 	def get_SubUserId(self):
 		return self.get_query_params().get('SubUserId')
 
 	def set_SubUserId(self,SubUserId):
 		self.add_query_param('SubUserId',SubUserId)
 
-	def get_GroupId(self):
-		return self.get_path_params().get('GroupId')
+	def get_Identity(self):
+		return self.get_path_params().get('Identity')
 
-	def set_GroupId(self,GroupId):
-		self.add_path_param('GroupId',GroupId)
+	def set_Identity(self,Identity):
+		self.add_path_param('Identity',Identity)
 
-	def get_AccessToken(self):
-		return self.get_query_params().get('AccessToken')
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
 
-	def set_AccessToken(self,AccessToken):
-		self.add_query_param('AccessToken',AccessToken)
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
+
+	def get_Page(self):
+		return self.get_query_params().get('Page')
+
+	def set_Page(self,Page):
+		self.add_query_param('Page',Page)

@@ -19,12 +19,12 @@
 
 from aliyunsdkcore.request import RoaRequest
 
-class DeleteRepositoryGroupRequest(RoaRequest):
+class MergeMergeRequestRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'codeup', '2020-04-14', 'DeleteRepositoryGroup')
-		self.set_uri_pattern('/api/v3/groups/[GroupId]/remove')
-		self.set_method('POST')
+		RoaRequest.__init__(self, 'codeup', '2020-04-14', 'MergeMergeRequest')
+		self.set_uri_pattern('/api/v3/projects/[ProjectId]/merge_request/[MergeRequestId]/merge')
+		self.set_method('PUT')
 
 	def get_OrganizationId(self):
 		return self.get_query_params().get('OrganizationId')
@@ -38,14 +38,20 @@ class DeleteRepositoryGroupRequest(RoaRequest):
 	def set_SubUserId(self,SubUserId):
 		self.add_query_param('SubUserId',SubUserId)
 
-	def get_GroupId(self):
-		return self.get_path_params().get('GroupId')
+	def get_MergeRequestId(self):
+		return self.get_path_params().get('MergeRequestId')
 
-	def set_GroupId(self,GroupId):
-		self.add_path_param('GroupId',GroupId)
+	def set_MergeRequestId(self,MergeRequestId):
+		self.add_path_param('MergeRequestId',MergeRequestId)
 
 	def get_AccessToken(self):
 		return self.get_query_params().get('AccessToken')
 
 	def set_AccessToken(self,AccessToken):
 		self.add_query_param('AccessToken',AccessToken)
+
+	def get_ProjectId(self):
+		return self.get_path_params().get('ProjectId')
+
+	def set_ProjectId(self,ProjectId):
+		self.add_path_param('ProjectId',ProjectId)

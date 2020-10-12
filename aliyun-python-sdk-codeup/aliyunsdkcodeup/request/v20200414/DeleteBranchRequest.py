@@ -19,12 +19,12 @@
 
 from aliyunsdkcore.request import RoaRequest
 
-class DeleteRepositoryGroupRequest(RoaRequest):
+class DeleteBranchRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'codeup', '2020-04-14', 'DeleteRepositoryGroup')
-		self.set_uri_pattern('/api/v3/groups/[GroupId]/remove')
-		self.set_method('POST')
+		RoaRequest.__init__(self, 'codeup', '2020-04-14', 'DeleteBranch')
+		self.set_uri_pattern('/api/v3/projects/[ProjectId]/repository/branches/[BranchName]')
+		self.set_method('DELETE')
 
 	def get_OrganizationId(self):
 		return self.get_query_params().get('OrganizationId')
@@ -38,14 +38,20 @@ class DeleteRepositoryGroupRequest(RoaRequest):
 	def set_SubUserId(self,SubUserId):
 		self.add_query_param('SubUserId',SubUserId)
 
-	def get_GroupId(self):
-		return self.get_path_params().get('GroupId')
-
-	def set_GroupId(self,GroupId):
-		self.add_path_param('GroupId',GroupId)
-
 	def get_AccessToken(self):
 		return self.get_query_params().get('AccessToken')
 
 	def set_AccessToken(self,AccessToken):
 		self.add_query_param('AccessToken',AccessToken)
+
+	def get_ProjectId(self):
+		return self.get_path_params().get('ProjectId')
+
+	def set_ProjectId(self,ProjectId):
+		self.add_path_param('ProjectId',ProjectId)
+
+	def get_BranchName(self):
+		return self.get_path_params().get('BranchName')
+
+	def set_BranchName(self,BranchName):
+		self.add_path_param('BranchName',BranchName)
