@@ -20,7 +20,6 @@ from mock import MagicMock, patch
 from aliyunsdkcore.client import AcsClient
 from aliyunsdkecs.request.v20140526.DescribeRegionsRequest import DescribeRegionsRequest
 from aliyunsdkram.request.v20150501.ListAccessKeysRequest import ListAccessKeysRequest
-from aliyunsdkcs.request.v20151215.DescribeApiVersionRequest import DescribeApiVersionRequest
 from aliyunsdkcloudapi.request.v20160714.DescribeApisRequest import DescribeApisRequest
 import aliyunsdkcore.acs_exception.error_code as error_code
 
@@ -336,10 +335,6 @@ class NewEndpointTest(SDKTestBase):
     def test_call_rpc_request_with_client(self):
         request = DescribeRegionsRequest()
         response = self.client.do_action_with_exception(request)
-
-    def test_call_roa_request_with_client(self):
-        request = DescribeApiVersionRequest()
-        self.client.do_action_with_exception(request)
 
     def test_location_service_code_not_equals_product_code(self):
         request = DescribeApisRequest()
