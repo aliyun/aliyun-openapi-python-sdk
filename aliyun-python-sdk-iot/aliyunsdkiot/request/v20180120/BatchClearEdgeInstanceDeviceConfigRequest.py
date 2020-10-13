@@ -32,7 +32,7 @@ class BatchClearEdgeInstanceDeviceConfigRequest(RpcRequest):
 
 
 	def get_IotIdss(self):
-		return self.get_query_params().get('IotIdss')
+		return self.get_query_params().get('IotIds')
 
 	def set_IotIdss(self, IotIdss):
 		for depth1 in range(len(IotIdss)):

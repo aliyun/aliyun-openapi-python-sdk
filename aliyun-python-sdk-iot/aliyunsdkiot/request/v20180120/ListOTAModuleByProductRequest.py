@@ -20,30 +20,28 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkiot.endpoint import endpoint_data
 
-class BatchBindDeviceToEdgeInstanceWithDriverRequest(RpcRequest):
+class ListOTAModuleByProductRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'BatchBindDeviceToEdgeInstanceWithDriver','iot')
-		self.set_method('POST')
+		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'ListOTAModuleByProduct','iot')
+		self.set_method('GET')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_DriverId(self):
-		return self.get_query_params().get('DriverId')
+	def get_ResourceGroupId(self):
+		return self.get_query_params().get('ResourceGroupId')
 
-	def set_DriverId(self,DriverId):
-		self.add_query_param('DriverId',DriverId)
+	def set_ResourceGroupId(self,ResourceGroupId):
+		self.add_query_param('ResourceGroupId',ResourceGroupId)
 
-	def get_IotIdss(self):
-		return self.get_query_params().get('IotIds')
+	def get_IotId(self):
+		return self.get_query_params().get('IotId')
 
-	def set_IotIdss(self, IotIdss):
-		for depth1 in range(len(IotIdss)):
-			if IotIdss[depth1] is not None:
-				self.add_query_param('IotIds.' + str(depth1 + 1) , IotIdss[depth1])
+	def set_IotId(self,IotId):
+		self.add_query_param('IotId',IotId)
 
 	def get_IotInstanceId(self):
 		return self.get_query_params().get('IotInstanceId')
@@ -51,8 +49,14 @@ class BatchBindDeviceToEdgeInstanceWithDriverRequest(RpcRequest):
 	def set_IotInstanceId(self,IotInstanceId):
 		self.add_query_param('IotInstanceId',IotInstanceId)
 
-	def get_InstanceId(self):
-		return self.get_query_params().get('InstanceId')
+	def get_ProductKey(self):
+		return self.get_query_params().get('ProductKey')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
+	def set_ProductKey(self,ProductKey):
+		self.add_query_param('ProductKey',ProductKey)
+
+	def get_DeviceName(self):
+		return self.get_query_params().get('DeviceName')
+
+	def set_DeviceName(self,DeviceName):
+		self.add_query_param('DeviceName',DeviceName)

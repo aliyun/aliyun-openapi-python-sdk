@@ -32,7 +32,7 @@ class BatchSetEdgeInstanceDeviceConfigRequest(RpcRequest):
 
 
 	def get_DeviceConfigss(self):
-		return self.get_query_params().get('DeviceConfigss')
+		return self.get_query_params().get('DeviceConfigs')
 
 	def set_DeviceConfigss(self, DeviceConfigss):
 		for depth1 in range(len(DeviceConfigss)):

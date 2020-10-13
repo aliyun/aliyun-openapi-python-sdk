@@ -56,7 +56,7 @@ class CancelOTATaskByDeviceRequest(RpcRequest):
 		self.add_query_param('ProductKey',ProductKey)
 
 	def get_DeviceNames(self):
-		return self.get_query_params().get('DeviceNames')
+		return self.get_query_params().get('DeviceName')
 
 	def set_DeviceNames(self, DeviceNames):
 		for depth1 in range(len(DeviceNames)):

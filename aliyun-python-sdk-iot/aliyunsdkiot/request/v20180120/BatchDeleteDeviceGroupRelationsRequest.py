@@ -44,7 +44,7 @@ class BatchDeleteDeviceGroupRelationsRequest(RpcRequest):
 		self.add_query_param('GroupId',GroupId)
 
 	def get_Devices(self):
-		return self.get_query_params().get('Devices')
+		return self.get_query_params().get('Device')
 
 	def set_Devices(self, Devices):
 		for depth1 in range(len(Devices)):

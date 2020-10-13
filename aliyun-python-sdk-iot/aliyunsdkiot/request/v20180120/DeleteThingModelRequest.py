@@ -38,7 +38,7 @@ class DeleteThingModelRequest(RpcRequest):
 		self.add_query_param('ResourceGroupId',ResourceGroupId)
 
 	def get_PropertyIdentifiers(self):
-		return self.get_query_params().get('PropertyIdentifiers')
+		return self.get_query_params().get('PropertyIdentifier')
 
 	def set_PropertyIdentifiers(self, PropertyIdentifiers):
 		for depth1 in range(len(PropertyIdentifiers)):
@@ -52,7 +52,7 @@ class DeleteThingModelRequest(RpcRequest):
 		self.add_query_param('IotInstanceId',IotInstanceId)
 
 	def get_ServiceIdentifiers(self):
-		return self.get_query_params().get('ServiceIdentifiers')
+		return self.get_query_params().get('ServiceIdentifier')
 
 	def set_ServiceIdentifiers(self, ServiceIdentifiers):
 		for depth1 in range(len(ServiceIdentifiers)):
@@ -66,7 +66,7 @@ class DeleteThingModelRequest(RpcRequest):
 		self.add_query_param('ProductKey',ProductKey)
 
 	def get_EventIdentifiers(self):
-		return self.get_query_params().get('EventIdentifiers')
+		return self.get_query_params().get('EventIdentifier')
 
 	def set_EventIdentifiers(self, EventIdentifiers):
 		for depth1 in range(len(EventIdentifiers)):

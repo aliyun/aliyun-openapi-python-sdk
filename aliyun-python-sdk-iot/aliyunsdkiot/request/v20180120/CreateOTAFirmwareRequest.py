@@ -37,6 +37,12 @@ class CreateOTAFirmwareRequest(RpcRequest):
 	def set_SignMethod(self,SignMethod):
 		self.add_query_param('SignMethod',SignMethod)
 
+	def get_NeedToVerify(self):
+		return self.get_query_params().get('NeedToVerify')
+
+	def set_NeedToVerify(self,NeedToVerify):
+		self.add_query_param('NeedToVerify',NeedToVerify)
+
 	def get_Type(self):
 		return self.get_query_params().get('Type')
 

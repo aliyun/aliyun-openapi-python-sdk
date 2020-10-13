@@ -32,7 +32,7 @@ class CreateDataAPIServiceRequest(RpcRequest):
 
 
 	def get_RequestParams(self):
-		return self.get_body_params().get('RequestParams')
+		return self.get_body_params().get('RequestParam')
 
 	def set_RequestParams(self, RequestParams):
 		for depth1 in range(len(RequestParams)):
@@ -66,7 +66,7 @@ class CreateDataAPIServiceRequest(RpcRequest):
 		self.add_body_params('TemplateSql', TemplateSql)
 
 	def get_ResponseParams(self):
-		return self.get_body_params().get('ResponseParams')
+		return self.get_body_params().get('ResponseParam')
 
 	def set_ResponseParams(self, ResponseParams):
 		for depth1 in range(len(ResponseParams)):

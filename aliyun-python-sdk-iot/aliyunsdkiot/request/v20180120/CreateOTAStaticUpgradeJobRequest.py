@@ -61,11 +61,27 @@ class CreateOTAStaticUpgradeJobRequest(RpcRequest):
 	def set_ScheduleFinishTime(self,ScheduleFinishTime):
 		self.add_query_param('ScheduleFinishTime',ScheduleFinishTime)
 
+	def get_Tags(self):
+		return self.get_query_params().get('Tag')
+
+	def set_Tags(self, Tags):
+		for depth1 in range(len(Tags)):
+			if Tags[depth1].get('Value') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tags[depth1].get('Value'))
+			if Tags[depth1].get('Key') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tags[depth1].get('Key'))
+
 	def get_GrayPercent(self):
 		return self.get_query_params().get('GrayPercent')
 
 	def set_GrayPercent(self,GrayPercent):
 		self.add_query_param('GrayPercent',GrayPercent)
+
+	def get_DnListFileUrl(self):
+		return self.get_query_params().get('DnListFileUrl')
+
+	def set_DnListFileUrl(self,DnListFileUrl):
+		self.add_query_param('DnListFileUrl',DnListFileUrl)
 
 	def get_FirmwareId(self):
 		return self.get_query_params().get('FirmwareId')
@@ -86,7 +102,7 @@ class CreateOTAStaticUpgradeJobRequest(RpcRequest):
 		self.add_query_param('RetryInterval',RetryInterval)
 
 	def get_SrcVersions(self):
-		return self.get_query_params().get('SrcVersions')
+		return self.get_query_params().get('SrcVersion')
 
 	def set_SrcVersions(self, SrcVersions):
 		for depth1 in range(len(SrcVersions)):
@@ -112,7 +128,7 @@ class CreateOTAStaticUpgradeJobRequest(RpcRequest):
 		self.add_query_param('MaximumPerMinute',MaximumPerMinute)
 
 	def get_TargetDeviceNames(self):
-		return self.get_query_params().get('TargetDeviceNames')
+		return self.get_query_params().get('TargetDeviceName')
 
 	def set_TargetDeviceNames(self, TargetDeviceNames):
 		for depth1 in range(len(TargetDeviceNames)):

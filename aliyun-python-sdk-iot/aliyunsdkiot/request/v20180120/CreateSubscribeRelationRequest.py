@@ -67,8 +67,20 @@ class CreateSubscribeRelationRequest(RpcRequest):
 	def set_DeviceStatusChangeFlag(self,DeviceStatusChangeFlag):
 		self.add_query_param('DeviceStatusChangeFlag',DeviceStatusChangeFlag)
 
+	def get_OtaVersionFlag(self):
+		return self.get_query_params().get('OtaVersionFlag')
+
+	def set_OtaVersionFlag(self,OtaVersionFlag):
+		self.add_query_param('OtaVersionFlag',OtaVersionFlag)
+
+	def get_DeviceTagFlag(self):
+		return self.get_query_params().get('DeviceTagFlag')
+
+	def set_DeviceTagFlag(self,DeviceTagFlag):
+		self.add_query_param('DeviceTagFlag',DeviceTagFlag)
+
 	def get_ConsumerGroupIdss(self):
-		return self.get_query_params().get('ConsumerGroupIdss')
+		return self.get_query_params().get('ConsumerGroupIds')
 
 	def set_ConsumerGroupIdss(self, ConsumerGroupIdss):
 		for depth1 in range(len(ConsumerGroupIdss)):
@@ -92,6 +104,12 @@ class CreateSubscribeRelationRequest(RpcRequest):
 
 	def set_FoundDeviceListFlag(self,FoundDeviceListFlag):
 		self.add_query_param('FoundDeviceListFlag',FoundDeviceListFlag)
+
+	def get_OtaJobFlag(self):
+		return self.get_query_params().get('OtaJobFlag')
+
+	def set_OtaJobFlag(self,OtaJobFlag):
+		self.add_query_param('OtaJobFlag',OtaJobFlag)
 
 	def get_DeviceDataFlag(self):
 		return self.get_query_params().get('DeviceDataFlag')

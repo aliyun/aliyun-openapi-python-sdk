@@ -44,7 +44,7 @@ class BatchAddThingTopoRequest(RpcRequest):
 		self.add_query_param('IotInstanceId',IotInstanceId)
 
 	def get_TopoAddItems(self):
-		return self.get_query_params().get('TopoAddItems')
+		return self.get_query_params().get('TopoAddItem')
 
 	def set_TopoAddItems(self, TopoAddItems):
 		for depth1 in range(len(TopoAddItems)):

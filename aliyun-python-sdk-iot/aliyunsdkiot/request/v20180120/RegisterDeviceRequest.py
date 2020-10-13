@@ -31,6 +31,12 @@ class RegisterDeviceRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_LoraNodeType(self):
+		return self.get_query_params().get('LoraNodeType')
+
+	def set_LoraNodeType(self,LoraNodeType):
+		self.add_query_param('LoraNodeType',LoraNodeType)
+
 	def get_IotInstanceId(self):
 		return self.get_query_params().get('IotInstanceId')
 
@@ -61,8 +67,20 @@ class RegisterDeviceRequest(RpcRequest):
 	def set_DevEui(self,DevEui):
 		self.add_query_param('DevEui',DevEui)
 
+	def get_JoinEui(self):
+		return self.get_query_params().get('JoinEui')
+
+	def set_JoinEui(self,JoinEui):
+		self.add_query_param('JoinEui',JoinEui)
+
 	def get_DeviceName(self):
 		return self.get_query_params().get('DeviceName')
 
 	def set_DeviceName(self,DeviceName):
 		self.add_query_param('DeviceName',DeviceName)
+
+	def get_AppKey(self):
+		return self.get_query_params().get('AppKey')
+
+	def set_AppKey(self,AppKey):
+		self.add_query_param('AppKey',AppKey)

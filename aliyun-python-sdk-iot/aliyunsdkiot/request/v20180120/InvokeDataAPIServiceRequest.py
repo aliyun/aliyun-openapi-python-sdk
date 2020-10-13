@@ -32,7 +32,7 @@ class InvokeDataAPIServiceRequest(RpcRequest):
 
 
 	def get_Params(self):
-		return self.get_body_params().get('Params')
+		return self.get_body_params().get('Param')
 
 	def set_Params(self, Params):
 		for depth1 in range(len(Params)):

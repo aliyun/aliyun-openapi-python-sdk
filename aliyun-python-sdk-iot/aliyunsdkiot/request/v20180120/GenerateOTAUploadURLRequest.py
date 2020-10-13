@@ -31,6 +31,12 @@ class GenerateOTAUploadURLRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_FileSuffix(self):
+		return self.get_query_params().get('FileSuffix')
+
+	def set_FileSuffix(self,FileSuffix):
+		self.add_query_param('FileSuffix',FileSuffix)
+
 	def get_IotInstanceId(self):
 		return self.get_query_params().get('IotInstanceId')
 

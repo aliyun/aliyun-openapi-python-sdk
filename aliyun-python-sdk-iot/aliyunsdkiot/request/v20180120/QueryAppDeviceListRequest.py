@@ -38,7 +38,7 @@ class QueryAppDeviceListRequest(RpcRequest):
 		self.add_query_param('CurrentPage',CurrentPage)
 
 	def get_TagLists(self):
-		return self.get_query_params().get('TagLists')
+		return self.get_query_params().get('TagList')
 
 	def set_TagLists(self, TagLists):
 		for depth1 in range(len(TagLists)):
@@ -48,7 +48,7 @@ class QueryAppDeviceListRequest(RpcRequest):
 				self.add_query_param('TagList.' + str(depth1 + 1) + '.TagValue', TagLists[depth1].get('TagValue'))
 
 	def get_ProductKeyLists(self):
-		return self.get_query_params().get('ProductKeyLists')
+		return self.get_query_params().get('ProductKeyList')
 
 	def set_ProductKeyLists(self, ProductKeyLists):
 		for depth1 in range(len(ProductKeyLists)):
@@ -56,7 +56,7 @@ class QueryAppDeviceListRequest(RpcRequest):
 				self.add_query_param('ProductKeyList.' + str(depth1 + 1) , ProductKeyLists[depth1])
 
 	def get_CategoryKeyLists(self):
-		return self.get_query_params().get('CategoryKeyLists')
+		return self.get_query_params().get('CategoryKeyList')
 
 	def set_CategoryKeyLists(self, CategoryKeyLists):
 		for depth1 in range(len(CategoryKeyLists)):

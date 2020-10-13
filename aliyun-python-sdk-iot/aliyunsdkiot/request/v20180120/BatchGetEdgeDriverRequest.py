@@ -32,7 +32,7 @@ class BatchGetEdgeDriverRequest(RpcRequest):
 
 
 	def get_DriverIdss(self):
-		return self.get_query_params().get('DriverIdss')
+		return self.get_query_params().get('DriverIds')
 
 	def set_DriverIdss(self, DriverIdss):
 		for depth1 in range(len(DriverIdss)):

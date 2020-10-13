@@ -56,7 +56,7 @@ class QueryDevicePropertiesDataRequest(RpcRequest):
 		self.add_query_param('PageSize',PageSize)
 
 	def get_Identifiers(self):
-		return self.get_query_params().get('Identifiers')
+		return self.get_query_params().get('Identifier')
 
 	def set_Identifiers(self, Identifiers):
 		for depth1 in range(len(Identifiers)):

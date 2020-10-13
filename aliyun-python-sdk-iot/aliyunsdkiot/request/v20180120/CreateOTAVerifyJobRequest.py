@@ -56,7 +56,7 @@ class CreateOTAVerifyJobRequest(RpcRequest):
 		self.add_query_param('ProductKey',ProductKey)
 
 	def get_TargetDeviceNames(self):
-		return self.get_query_params().get('TargetDeviceNames')
+		return self.get_query_params().get('TargetDeviceName')
 
 	def set_TargetDeviceNames(self, TargetDeviceNames):
 		for depth1 in range(len(TargetDeviceNames)):

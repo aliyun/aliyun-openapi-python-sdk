@@ -44,7 +44,7 @@ class QueryDeviceDesiredPropertyRequest(RpcRequest):
 		self.add_query_param('IotInstanceId',IotInstanceId)
 
 	def get_Identifiers(self):
-		return self.get_query_params().get('Identifiers')
+		return self.get_query_params().get('Identifier')
 
 	def set_Identifiers(self, Identifiers):
 		for depth1 in range(len(Identifiers)):

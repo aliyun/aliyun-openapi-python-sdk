@@ -38,7 +38,7 @@ class DeleteProductTagsRequest(RpcRequest):
 		self.add_query_param('IotInstanceId',IotInstanceId)
 
 	def get_ProductTagKeys(self):
-		return self.get_query_params().get('ProductTagKeys')
+		return self.get_query_params().get('ProductTagKey')
 
 	def set_ProductTagKeys(self, ProductTagKeys):
 		for depth1 in range(len(ProductTagKeys)):

@@ -32,7 +32,7 @@ class CreateEdgeInstanceChannelRequest(RpcRequest):
 
 
 	def get_Configss(self):
-		return self.get_query_params().get('Configss')
+		return self.get_query_params().get('Configs')
 
 	def set_Configss(self, Configss):
 		for depth1 in range(len(Configss)):

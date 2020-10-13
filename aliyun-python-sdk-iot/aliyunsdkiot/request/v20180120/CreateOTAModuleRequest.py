@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkiot.endpoint import endpoint_data
 
-class BatchBindDeviceToEdgeInstanceWithDriverRequest(RpcRequest):
+class CreateOTAModuleRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'BatchBindDeviceToEdgeInstanceWithDriver','iot')
+		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'CreateOTAModule','iot')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,28 +31,32 @@ class BatchBindDeviceToEdgeInstanceWithDriverRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_DriverId(self):
-		return self.get_query_params().get('DriverId')
-
-	def set_DriverId(self,DriverId):
-		self.add_query_param('DriverId',DriverId)
-
-	def get_IotIdss(self):
-		return self.get_query_params().get('IotIds')
-
-	def set_IotIdss(self, IotIdss):
-		for depth1 in range(len(IotIdss)):
-			if IotIdss[depth1] is not None:
-				self.add_query_param('IotIds.' + str(depth1 + 1) , IotIdss[depth1])
-
 	def get_IotInstanceId(self):
 		return self.get_query_params().get('IotInstanceId')
 
 	def set_IotInstanceId(self,IotInstanceId):
 		self.add_query_param('IotInstanceId',IotInstanceId)
 
-	def get_InstanceId(self):
-		return self.get_query_params().get('InstanceId')
+	def get_ModuleName(self):
+		return self.get_query_params().get('ModuleName')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
+	def set_ModuleName(self,ModuleName):
+		self.add_query_param('ModuleName',ModuleName)
+
+	def get_ProductKey(self):
+		return self.get_query_params().get('ProductKey')
+
+	def set_ProductKey(self,ProductKey):
+		self.add_query_param('ProductKey',ProductKey)
+
+	def get_AliasName(self):
+		return self.get_query_params().get('AliasName')
+
+	def set_AliasName(self,AliasName):
+		self.add_query_param('AliasName',AliasName)
+
+	def get_Desc(self):
+		return self.get_query_params().get('Desc')
+
+	def set_Desc(self,Desc):
+		self.add_query_param('Desc',Desc)

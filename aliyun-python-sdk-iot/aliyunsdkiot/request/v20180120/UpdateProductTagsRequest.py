@@ -44,7 +44,7 @@ class UpdateProductTagsRequest(RpcRequest):
 		self.add_query_param('ProductKey',ProductKey)
 
 	def get_ProductTags(self):
-		return self.get_query_params().get('ProductTags')
+		return self.get_query_params().get('ProductTag')
 
 	def set_ProductTags(self, ProductTags):
 		for depth1 in range(len(ProductTags)):

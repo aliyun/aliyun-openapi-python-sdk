@@ -38,7 +38,7 @@ class CreateLoRaNodesTaskRequest(RpcRequest):
 		self.add_query_param('IotInstanceId',IotInstanceId)
 
 	def get_DeviceInfos(self):
-		return self.get_query_params().get('DeviceInfos')
+		return self.get_query_params().get('DeviceInfo')
 
 	def set_DeviceInfos(self, DeviceInfos):
 		for depth1 in range(len(DeviceInfos)):
