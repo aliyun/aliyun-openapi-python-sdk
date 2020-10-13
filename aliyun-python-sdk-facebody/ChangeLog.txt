@@ -1,3 +1,6 @@
+2020-10-13 Version: 1.2.1
+- Release PedestrianDetectAttribute.
+
 2020-09-17 Version: 1.1.9.ROA
 - Add Api DetectIPCPedestrianOptimized.
 
