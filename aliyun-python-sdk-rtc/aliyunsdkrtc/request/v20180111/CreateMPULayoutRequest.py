@@ -63,6 +63,12 @@ class CreateMPULayoutRequest(RpcRequest):
 	def set_AppId(self,AppId):
 		self.add_query_param('AppId',AppId)
 
+	def get_Name(self):
+		return self.get_query_params().get('Name')
+
+	def set_Name(self,Name):
+		self.add_query_param('Name',Name)
+
 	def get_AudioMixCount(self):
 		return self.get_query_params().get('AudioMixCount')
 
