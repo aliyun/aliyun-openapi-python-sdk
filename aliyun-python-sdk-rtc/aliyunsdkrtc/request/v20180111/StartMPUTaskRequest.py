@@ -48,6 +48,38 @@ class StartMPUTaskRequest(RpcRequest):
 				self.add_query_param('UserPanes.' + str(depth1 + 1) + '.UserId', UserPaness[depth1].get('UserId'))
 			if UserPaness[depth1].get('SourceType') is not None:
 				self.add_query_param('UserPanes.' + str(depth1 + 1) + '.SourceType', UserPaness[depth1].get('SourceType'))
+			if UserPaness[depth1].get('Images') is not None:
+				for depth2 in range(len(UserPaness[depth1].get('Images'))):
+					if UserPaness[depth1].get('Images')[depth2].get('Url') is not None:
+						self.add_query_param('UserPanes.' + str(depth1 + 1) + '.Images.' + str(depth2 + 1) + '.Url', UserPaness[depth1].get('Images')[depth2].get('Url'))
+					if UserPaness[depth1].get('Images')[depth2].get('Display') is not None:
+						self.add_query_param('UserPanes.' + str(depth1 + 1) + '.Images.' + str(depth2 + 1) + '.Display', UserPaness[depth1].get('Images')[depth2].get('Display'))
+					if UserPaness[depth1].get('Images')[depth2].get('X') is not None:
+						self.add_query_param('UserPanes.' + str(depth1 + 1) + '.Images.' + str(depth2 + 1) + '.X', UserPaness[depth1].get('Images')[depth2].get('X'))
+					if UserPaness[depth1].get('Images')[depth2].get('Y') is not None:
+						self.add_query_param('UserPanes.' + str(depth1 + 1) + '.Images.' + str(depth2 + 1) + '.Y', UserPaness[depth1].get('Images')[depth2].get('Y'))
+					if UserPaness[depth1].get('Images')[depth2].get('Width') is not None:
+						self.add_query_param('UserPanes.' + str(depth1 + 1) + '.Images.' + str(depth2 + 1) + '.Width', UserPaness[depth1].get('Images')[depth2].get('Width'))
+					if UserPaness[depth1].get('Images')[depth2].get('Height') is not None:
+						self.add_query_param('UserPanes.' + str(depth1 + 1) + '.Images.' + str(depth2 + 1) + '.Height', UserPaness[depth1].get('Images')[depth2].get('Height'))
+					if UserPaness[depth1].get('Images')[depth2].get('ZOrder') is not None:
+						self.add_query_param('UserPanes.' + str(depth1 + 1) + '.Images.' + str(depth2 + 1) + '.ZOrder', UserPaness[depth1].get('Images')[depth2].get('ZOrder'))
+			if UserPaness[depth1].get('Texts') is not None:
+				for depth2 in range(len(UserPaness[depth1].get('Texts'))):
+					if UserPaness[depth1].get('Texts')[depth2].get('Text') is not None:
+						self.add_query_param('UserPanes.' + str(depth1 + 1) + '.Texts.' + str(depth2 + 1) + '.Text', UserPaness[depth1].get('Texts')[depth2].get('Text'))
+					if UserPaness[depth1].get('Texts')[depth2].get('X') is not None:
+						self.add_query_param('UserPanes.' + str(depth1 + 1) + '.Texts.' + str(depth2 + 1) + '.X', UserPaness[depth1].get('Texts')[depth2].get('X'))
+					if UserPaness[depth1].get('Texts')[depth2].get('Y') is not None:
+						self.add_query_param('UserPanes.' + str(depth1 + 1) + '.Texts.' + str(depth2 + 1) + '.Y', UserPaness[depth1].get('Texts')[depth2].get('Y'))
+					if UserPaness[depth1].get('Texts')[depth2].get('FontType') is not None:
+						self.add_query_param('UserPanes.' + str(depth1 + 1) + '.Texts.' + str(depth2 + 1) + '.FontType', UserPaness[depth1].get('Texts')[depth2].get('FontType'))
+					if UserPaness[depth1].get('Texts')[depth2].get('FontSize') is not None:
+						self.add_query_param('UserPanes.' + str(depth1 + 1) + '.Texts.' + str(depth2 + 1) + '.FontSize', UserPaness[depth1].get('Texts')[depth2].get('FontSize'))
+					if UserPaness[depth1].get('Texts')[depth2].get('FontColor') is not None:
+						self.add_query_param('UserPanes.' + str(depth1 + 1) + '.Texts.' + str(depth2 + 1) + '.FontColor', UserPaness[depth1].get('Texts')[depth2].get('FontColor'))
+					if UserPaness[depth1].get('Texts')[depth2].get('ZOrder') is not None:
+						self.add_query_param('UserPanes.' + str(depth1 + 1) + '.Texts.' + str(depth2 + 1) + '.ZOrder', UserPaness[depth1].get('Texts')[depth2].get('ZOrder'))
 
 	def get_RtpExtInfo(self):
 		return self.get_query_params().get('RtpExtInfo')
@@ -105,6 +137,28 @@ class StartMPUTaskRequest(RpcRequest):
 	def set_VadInterval(self,VadInterval):
 		self.add_query_param('VadInterval',VadInterval)
 
+	def get_Watermarkss(self):
+		return self.get_query_params().get('Watermarks')
+
+	def set_Watermarkss(self, Watermarkss):
+		for depth1 in range(len(Watermarkss)):
+			if Watermarkss[depth1].get('Url') is not None:
+				self.add_query_param('Watermarks.' + str(depth1 + 1) + '.Url', Watermarkss[depth1].get('Url'))
+			if Watermarkss[depth1].get('Alpha') is not None:
+				self.add_query_param('Watermarks.' + str(depth1 + 1) + '.Alpha', Watermarkss[depth1].get('Alpha'))
+			if Watermarkss[depth1].get('Display') is not None:
+				self.add_query_param('Watermarks.' + str(depth1 + 1) + '.Display', Watermarkss[depth1].get('Display'))
+			if Watermarkss[depth1].get('X') is not None:
+				self.add_query_param('Watermarks.' + str(depth1 + 1) + '.X', Watermarkss[depth1].get('X'))
+			if Watermarkss[depth1].get('Y') is not None:
+				self.add_query_param('Watermarks.' + str(depth1 + 1) + '.Y', Watermarkss[depth1].get('Y'))
+			if Watermarkss[depth1].get('Width') is not None:
+				self.add_query_param('Watermarks.' + str(depth1 + 1) + '.Width', Watermarkss[depth1].get('Width'))
+			if Watermarkss[depth1].get('Height') is not None:
+				self.add_query_param('Watermarks.' + str(depth1 + 1) + '.Height', Watermarkss[depth1].get('Height'))
+			if Watermarkss[depth1].get('ZOrder') is not None:
+				self.add_query_param('Watermarks.' + str(depth1 + 1) + '.ZOrder', Watermarkss[depth1].get('ZOrder'))
+
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
@@ -124,6 +178,26 @@ class StartMPUTaskRequest(RpcRequest):
 
 	def set_AppId(self,AppId):
 		self.add_query_param('AppId',AppId)
+
+	def get_Backgroundss(self):
+		return self.get_query_params().get('Backgrounds')
+
+	def set_Backgroundss(self, Backgroundss):
+		for depth1 in range(len(Backgroundss)):
+			if Backgroundss[depth1].get('Url') is not None:
+				self.add_query_param('Backgrounds.' + str(depth1 + 1) + '.Url', Backgroundss[depth1].get('Url'))
+			if Backgroundss[depth1].get('Display') is not None:
+				self.add_query_param('Backgrounds.' + str(depth1 + 1) + '.Display', Backgroundss[depth1].get('Display'))
+			if Backgroundss[depth1].get('X') is not None:
+				self.add_query_param('Backgrounds.' + str(depth1 + 1) + '.X', Backgroundss[depth1].get('X'))
+			if Backgroundss[depth1].get('Y') is not None:
+				self.add_query_param('Backgrounds.' + str(depth1 + 1) + '.Y', Backgroundss[depth1].get('Y'))
+			if Backgroundss[depth1].get('Width') is not None:
+				self.add_query_param('Backgrounds.' + str(depth1 + 1) + '.Width', Backgroundss[depth1].get('Width'))
+			if Backgroundss[depth1].get('Height') is not None:
+				self.add_query_param('Backgrounds.' + str(depth1 + 1) + '.Height', Backgroundss[depth1].get('Height'))
+			if Backgroundss[depth1].get('ZOrder') is not None:
+				self.add_query_param('Backgrounds.' + str(depth1 + 1) + '.ZOrder', Backgroundss[depth1].get('ZOrder'))
 
 	def get_TimeStampRef(self):
 		return self.get_query_params().get('TimeStampRef')
