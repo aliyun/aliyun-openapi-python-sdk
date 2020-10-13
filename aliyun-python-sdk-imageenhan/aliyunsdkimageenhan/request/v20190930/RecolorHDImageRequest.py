@@ -32,7 +32,7 @@ class RecolorHDImageRequest(RpcRequest):
 
 
 	def get_ColorTemplates(self):
-		return self.get_body_params().get('ColorTemplates')
+		return self.get_body_params().get('ColorTemplate')
 
 	def set_ColorTemplates(self, ColorTemplates):
 		for depth1 in range(len(ColorTemplates)):
