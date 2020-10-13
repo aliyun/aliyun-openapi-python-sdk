@@ -31,6 +31,12 @@ class ExecuteNodeToolRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_ExecuteNodes(self):
+		return self.get_query_params().get('ExecuteNodes')
+
+	def set_ExecuteNodes(self,ExecuteNodes):
+		self.add_query_param('ExecuteNodes',ExecuteNodes)
+
 	def get_DataCenterId(self):
 		return self.get_query_params().get('DataCenterId')
 

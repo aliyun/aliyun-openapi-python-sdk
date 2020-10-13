@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcassandra.endpoint import endpoint_data
 
-class TagResourcesRequest(RpcRequest):
+class DescribeNodeToolExecutionHistoryRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cassandra', '2019-01-01', 'TagResources','Cassandra')
+		RpcRequest.__init__(self, 'Cassandra', '2019-01-01', 'DescribeNodeToolExecutionHistory','Cassandra')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,20 +31,20 @@ class TagResourcesRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_ResourceIds(self):
-		return self.get_query_params().get('ResourceId')
+	def get_ClusterId(self):
+		return self.get_query_params().get('ClusterId')
 
-	def set_ResourceIds(self, ResourceIds):
-		for depth1 in range(len(ResourceIds)):
-			if ResourceIds[depth1] is not None:
-				self.add_query_param('ResourceId.' + str(depth1 + 1) , ResourceIds[depth1])
+	def set_ClusterId(self,ClusterId):
+		self.add_query_param('ClusterId',ClusterId)
 
-	def get_Tags(self):
-		return self.get_query_params().get('Tag')
+	def get_JobId(self):
+		return self.get_query_params().get('JobId')
 
-	def set_Tags(self, Tags):
-		for depth1 in range(len(Tags)):
-			if Tags[depth1].get('Value') is not None:
-				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tags[depth1].get('Value'))
-			if Tags[depth1].get('Key') is not None:
-				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tags[depth1].get('Key'))
+	def set_JobId(self,JobId):
+		self.add_query_param('JobId',JobId)
+
+	def get_DcId(self):
+		return self.get_query_params().get('DcId')
+
+	def set_DcId(self,DcId):
+		self.add_query_param('DcId',DcId)
