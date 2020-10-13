@@ -23,7 +23,7 @@ from aliyunsdkreid.endpoint import endpoint_data
 class GetFootwearEventRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'reid', '2019-09-28', 'GetFootwearEvent','1.1.8.4')
+		RpcRequest.__init__(self, 'reid', '2019-09-28', 'GetFootwearEvent','1.1.8.5')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
