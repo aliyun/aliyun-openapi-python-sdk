@@ -73,11 +73,23 @@ class DescribePriceRequest(RpcRequest):
 	def set_DataDisk1PerformanceLevel(self,DataDisk1PerformanceLevel):
 		self.add_query_param('DataDisk.1.PerformanceLevel',DataDisk1PerformanceLevel)
 
+	def get_AssuranceTimes(self):
+		return self.get_query_params().get('AssuranceTimes')
+
+	def set_AssuranceTimes(self,AssuranceTimes):
+		self.add_query_param('AssuranceTimes',AssuranceTimes)
+
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_InstanceCpuCoreCount(self):
+		return self.get_query_params().get('InstanceCpuCoreCount')
+
+	def set_InstanceCpuCoreCount(self,InstanceCpuCoreCount):
+		self.add_query_param('InstanceCpuCoreCount',InstanceCpuCoreCount)
 
 	def get_InternetChargeType(self):
 		return self.get_query_params().get('InternetChargeType')
@@ -96,6 +108,14 @@ class DescribePriceRequest(RpcRequest):
 
 	def set_InstanceAmount(self,InstanceAmount):
 		self.add_query_param('InstanceAmount',InstanceAmount)
+
+	def get_InstanceTypeLists(self):
+		return self.get_query_params().get('InstanceTypeList')
+
+	def set_InstanceTypeLists(self, InstanceTypeLists):
+		for depth1 in range(len(InstanceTypeLists)):
+			if InstanceTypeLists[depth1] is not None:
+				self.add_query_param('InstanceTypeList.' + str(depth1 + 1) , InstanceTypeLists[depth1])
 
 	def get_DataDisk3PerformanceLevel(self):
 		return self.get_query_params().get('DataDisk.3.PerformanceLevel')

@@ -37,6 +37,14 @@ class DescribeInstanceTypesRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_InstanceTypess(self):
+		return self.get_query_params().get('InstanceTypes')
+
+	def set_InstanceTypess(self, InstanceTypess):
+		for depth1 in range(len(InstanceTypess)):
+			if InstanceTypess[depth1] is not None:
+				self.add_query_param('InstanceTypes.' + str(depth1 + 1) , InstanceTypess[depth1])
+
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 

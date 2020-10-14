@@ -79,6 +79,12 @@ class CreateInstanceRequest(RpcRequest):
 	def set_ResourceGroupId(self,ResourceGroupId):
 		self.add_query_param('ResourceGroupId',ResourceGroupId)
 
+	def get_PrivatePoolOptionsMatchCriteria(self):
+		return self.get_query_params().get('PrivatePoolOptions.MatchCriteria')
+
+	def set_PrivatePoolOptionsMatchCriteria(self,PrivatePoolOptionsMatchCriteria):
+		self.add_query_param('PrivatePoolOptions.MatchCriteria',PrivatePoolOptionsMatchCriteria)
+
 	def get_HostName(self):
 		return self.get_query_params().get('HostName')
 
@@ -112,6 +118,12 @@ class CreateInstanceRequest(RpcRequest):
 				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tags[depth1].get('Value'))
 			if Tags[depth1].get('Key') is not None:
 				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tags[depth1].get('Key'))
+
+	def get_PrivatePoolOptionsId(self):
+		return self.get_query_params().get('PrivatePoolOptions.Id')
+
+	def set_PrivatePoolOptionsId(self,PrivatePoolOptionsId):
+		self.add_query_param('PrivatePoolOptions.Id',PrivatePoolOptionsId)
 
 	def get_AutoRenewPeriod(self):
 		return self.get_query_params().get('AutoRenewPeriod')
