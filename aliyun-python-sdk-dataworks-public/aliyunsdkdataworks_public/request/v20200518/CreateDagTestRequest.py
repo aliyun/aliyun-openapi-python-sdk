@@ -23,7 +23,7 @@ from aliyunsdkdataworks_public.endpoint import endpoint_data
 class CreateDagTestRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'CreateDagTest','dide')
+		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'CreateDagTest')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())

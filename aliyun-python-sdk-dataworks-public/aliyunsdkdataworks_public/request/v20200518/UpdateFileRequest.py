@@ -23,7 +23,7 @@ from aliyunsdkdataworks_public.endpoint import endpoint_data
 class UpdateFileRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'UpdateFile','dide')
+		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'UpdateFile')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -85,6 +85,12 @@ class UpdateFileRequest(RpcRequest):
 	def set_AutoRerunIntervalMillis(self,AutoRerunIntervalMillis):
 		self.add_body_params('AutoRerunIntervalMillis', AutoRerunIntervalMillis)
 
+	def get_Owner(self):
+		return self.get_body_params().get('Owner')
+
+	def set_Owner(self,Owner):
+		self.add_body_params('Owner', Owner)
+
 	def get_InputList(self):
 		return self.get_body_params().get('InputList')
 
@@ -96,6 +102,12 @@ class UpdateFileRequest(RpcRequest):
 
 	def set_RerunMode(self,RerunMode):
 		self.add_body_params('RerunMode', RerunMode)
+
+	def get_ConnectionName(self):
+		return self.get_body_params().get('ConnectionName')
+
+	def set_ConnectionName(self,ConnectionName):
+		self.add_body_params('ConnectionName', ConnectionName)
 
 	def get_ParaValue(self):
 		return self.get_body_params().get('ParaValue')

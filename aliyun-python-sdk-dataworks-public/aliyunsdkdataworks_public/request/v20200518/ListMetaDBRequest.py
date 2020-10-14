@@ -23,7 +23,7 @@ from aliyunsdkdataworks_public.endpoint import endpoint_data
 class ListMetaDBRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'ListMetaDB','dide')
+		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'ListMetaDB')
 		self.set_method('GET')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())

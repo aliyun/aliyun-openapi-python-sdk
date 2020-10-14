@@ -23,7 +23,8 @@ from aliyunsdkdataworks_public.endpoint import endpoint_data
 class CreateQualityEntityRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'CreateQualityEntity','dide')
+		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'CreateQualityEntity')
+		self.set_protocol_type('https')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())

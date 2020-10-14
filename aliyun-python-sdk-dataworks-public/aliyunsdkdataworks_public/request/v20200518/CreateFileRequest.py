@@ -23,7 +23,7 @@ from aliyunsdkdataworks_public.endpoint import endpoint_data
 class CreateFileRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'CreateFile','dide')
+		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'CreateFile')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -54,6 +54,12 @@ class CreateFileRequest(RpcRequest):
 
 	def set_ProjectIdentifier(self,ProjectIdentifier):
 		self.add_body_params('ProjectIdentifier', ProjectIdentifier)
+
+	def get_ResourceGroupId(self):
+		return self.get_body_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self,ResourceGroupId):
+		self.add_body_params('ResourceGroupId', ResourceGroupId)
 
 	def get_ProjectId(self):
 		return self.get_body_params().get('ProjectId')
@@ -96,6 +102,12 @@ class CreateFileRequest(RpcRequest):
 
 	def set_RerunMode(self,RerunMode):
 		self.add_body_params('RerunMode', RerunMode)
+
+	def get_ConnectionName(self):
+		return self.get_body_params().get('ConnectionName')
+
+	def set_ConnectionName(self,ConnectionName):
+		self.add_body_params('ConnectionName', ConnectionName)
 
 	def get_ParaValue(self):
 		return self.get_body_params().get('ParaValue')
