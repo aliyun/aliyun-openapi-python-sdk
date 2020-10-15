@@ -20,34 +20,16 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdas.endpoint import endpoint_data
 
-class DescribeDiagnosticReportListRequest(RpcRequest):
+class DescribeCacheAnalysisJobsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'DAS', '2020-01-16', 'DescribeDiagnosticReportList','hdm')
+		RpcRequest.__init__(self, 'DAS', '2020-01-16', 'DescribeCacheAnalysisJobs','hdm')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_skipAuth(self):
-		return self.get_query_params().get('skipAuth')
-
-	def set_skipAuth(self,skipAuth):
-		self.add_query_param('skipAuth',skipAuth)
-
-	def get___context(self):
-		return self.get_query_params().get('__context')
-
-	def set___context(self,__context):
-		self.add_query_param('__context',__context)
-
-	def get_signature(self):
-		return self.get_query_params().get('signature')
-
-	def set_signature(self,signature):
-		self.add_query_param('signature',signature)
 
 	def get_EndTime(self):
 		return self.get_query_params().get('EndTime')
@@ -61,23 +43,11 @@ class DescribeDiagnosticReportListRequest(RpcRequest):
 	def set_StartTime(self,StartTime):
 		self.add_query_param('StartTime',StartTime)
 
-	def get_UserId(self):
-		return self.get_query_params().get('UserId')
+	def get_InstanceId(self):
+		return self.get_query_params().get('InstanceId')
 
-	def set_UserId(self,UserId):
-		self.add_query_param('UserId',UserId)
-
-	def get_Uid(self):
-		return self.get_query_params().get('Uid')
-
-	def set_Uid(self,Uid):
-		self.add_query_param('Uid',Uid)
-
-	def get_accessKey(self):
-		return self.get_query_params().get('accessKey')
-
-	def set_accessKey(self,accessKey):
-		self.add_query_param('accessKey',accessKey)
+	def set_InstanceId(self,InstanceId):
+		self.add_query_param('InstanceId',InstanceId)
 
 	def get_PageNo(self):
 		return self.get_query_params().get('PageNo')
@@ -90,15 +60,3 @@ class DescribeDiagnosticReportListRequest(RpcRequest):
 
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
-
-	def get_DBInstanceId(self):
-		return self.get_query_params().get('DBInstanceId')
-
-	def set_DBInstanceId(self,DBInstanceId):
-		self.add_query_param('DBInstanceId',DBInstanceId)
-
-	def get_timestamp(self):
-		return self.get_query_params().get('timestamp')
-
-	def set_timestamp(self,timestamp):
-		self.add_query_param('timestamp',timestamp)
