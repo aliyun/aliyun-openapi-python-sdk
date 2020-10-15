@@ -32,7 +32,7 @@ class UntagResourcesRequest(RpcRequest):
 
 
 	def get_ResourceARNs(self):
-		return self.get_query_params().get('ResourceARNs')
+		return self.get_query_params().get('ResourceARN')
 
 	def set_ResourceARNs(self, ResourceARNs):
 		for depth1 in range(len(ResourceARNs)):
@@ -58,7 +58,7 @@ class UntagResourcesRequest(RpcRequest):
 		self.add_query_param('OwnerId',OwnerId)
 
 	def get_TagKeys(self):
-		return self.get_query_params().get('TagKeys')
+		return self.get_query_params().get('TagKey')
 
 	def set_TagKeys(self, TagKeys):
 		for depth1 in range(len(TagKeys)):
