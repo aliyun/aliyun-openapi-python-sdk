@@ -56,7 +56,7 @@ class QueryMetricRequest(RpcRequest):
 		self.add_query_param('StartTime',StartTime)
 
 	def get_Filterss(self):
-		return self.get_query_params().get('Filterss')
+		return self.get_query_params().get('Filters')
 
 	def set_Filterss(self, Filterss):
 		for depth1 in range(len(Filterss)):
@@ -78,7 +78,7 @@ class QueryMetricRequest(RpcRequest):
 		self.add_query_param('ProxyUserId',ProxyUserId)
 
 	def get_Measuress(self):
-		return self.get_query_params().get('Measuress')
+		return self.get_query_params().get('Measures')
 
 	def set_Measuress(self, Measuress):
 		for depth1 in range(len(Measuress)):
@@ -104,7 +104,7 @@ class QueryMetricRequest(RpcRequest):
 		self.add_query_param('Limit',Limit)
 
 	def get_Dimensionss(self):
-		return self.get_query_params().get('Dimensionss')
+		return self.get_query_params().get('Dimensions')
 
 	def set_Dimensionss(self, Dimensionss):
 		for depth1 in range(len(Dimensionss)):

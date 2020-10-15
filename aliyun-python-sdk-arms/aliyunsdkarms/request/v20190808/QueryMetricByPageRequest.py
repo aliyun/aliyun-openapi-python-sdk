@@ -31,12 +31,6 @@ class QueryMetricByPageRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_ConsistencyQueryStrategy(self):
-		return self.get_query_params().get('ConsistencyQueryStrategy')
-
-	def set_ConsistencyQueryStrategy(self,ConsistencyQueryStrategy):
-		self.add_query_param('ConsistencyQueryStrategy',ConsistencyQueryStrategy)
-
 	def get_EndTime(self):
 		return self.get_query_params().get('EndTime')
 
@@ -62,7 +56,7 @@ class QueryMetricByPageRequest(RpcRequest):
 		self.add_query_param('StartTime',StartTime)
 
 	def get_Filterss(self):
-		return self.get_query_params().get('Filterss')
+		return self.get_query_params().get('Filters')
 
 	def set_Filterss(self, Filterss):
 		for depth1 in range(len(Filterss)):
@@ -71,20 +65,8 @@ class QueryMetricByPageRequest(RpcRequest):
 			if Filterss[depth1].get('Key') is not None:
 				self.add_query_param('Filters.' + str(depth1 + 1) + '.Key', Filterss[depth1].get('Key'))
 
-	def get_ConsistencyDataKey(self):
-		return self.get_query_params().get('ConsistencyDataKey')
-
-	def set_ConsistencyDataKey(self,ConsistencyDataKey):
-		self.add_query_param('ConsistencyDataKey',ConsistencyDataKey)
-
-	def get_ProxyUserId(self):
-		return self.get_query_params().get('ProxyUserId')
-
-	def set_ProxyUserId(self,ProxyUserId):
-		self.add_query_param('ProxyUserId',ProxyUserId)
-
 	def get_Measuress(self):
-		return self.get_query_params().get('Measuress')
+		return self.get_query_params().get('Measures')
 
 	def set_Measuress(self, Measuress):
 		for depth1 in range(len(Measuress)):
@@ -110,7 +92,7 @@ class QueryMetricByPageRequest(RpcRequest):
 		self.add_query_param('PageSize',PageSize)
 
 	def get_Dimensionss(self):
-		return self.get_query_params().get('Dimensionss')
+		return self.get_query_params().get('Dimensions')
 
 	def set_Dimensionss(self, Dimensionss):
 		for depth1 in range(len(Dimensionss)):

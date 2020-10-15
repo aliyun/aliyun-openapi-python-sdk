@@ -62,7 +62,7 @@ class QueryDatasetRequest(RpcRequest):
 		self.add_query_param('MaxTime',MaxTime)
 
 	def get_OptionalDimss(self):
-		return self.get_query_params().get('OptionalDimss')
+		return self.get_query_params().get('OptionalDims')
 
 	def set_OptionalDimss(self, OptionalDimss):
 		for depth1 in range(len(OptionalDimss)):
@@ -74,7 +74,7 @@ class QueryDatasetRequest(RpcRequest):
 				self.add_query_param('OptionalDims.' + str(depth1 + 1) + '.Key', OptionalDimss[depth1].get('Key'))
 
 	def get_Measuress(self):
-		return self.get_query_params().get('Measuress')
+		return self.get_query_params().get('Measures')
 
 	def set_Measuress(self, Measuress):
 		for depth1 in range(len(Measuress)):
@@ -118,7 +118,7 @@ class QueryDatasetRequest(RpcRequest):
 		self.add_query_param('DatasetId',DatasetId)
 
 	def get_RequiredDimss(self):
-		return self.get_query_params().get('RequiredDimss')
+		return self.get_query_params().get('RequiredDims')
 
 	def set_RequiredDimss(self, RequiredDimss):
 		for depth1 in range(len(RequiredDimss)):
@@ -130,7 +130,7 @@ class QueryDatasetRequest(RpcRequest):
 				self.add_query_param('RequiredDims.' + str(depth1 + 1) + '.Key', RequiredDimss[depth1].get('Key'))
 
 	def get_Dimensionss(self):
-		return self.get_query_params().get('Dimensionss')
+		return self.get_query_params().get('Dimensions')
 
 	def set_Dimensionss(self, Dimensionss):
 		for depth1 in range(len(Dimensionss)):

@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkarms.endpoint import endpoint_data
 
-class SearchAlertContactRequest(RpcRequest):
+class CreateWehookRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ARMS', '2019-08-08', 'SearchAlertContact','arms')
+		RpcRequest.__init__(self, 'ARMS', '2019-08-08', 'CreateWehook','arms')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,38 +31,38 @@ class SearchAlertContactRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_CurrentPage(self):
-		return self.get_query_params().get('CurrentPage')
+	def get_Headers(self):
+		return self.get_query_params().get('Headers')
 
-	def set_CurrentPage(self,CurrentPage):
-		self.add_query_param('CurrentPage',CurrentPage)
+	def set_Headers(self,Headers):
+		self.add_query_param('Headers',Headers)
 
-	def get_ContactIds(self):
-		return self.get_query_params().get('ContactIds')
+	def get_Method(self):
+		return self.get_query_params().get('Method')
 
-	def set_ContactIds(self,ContactIds):
-		self.add_query_param('ContactIds',ContactIds)
+	def set_Method(self,Method):
+		self.add_query_param('Method',Method)
+
+	def get_Params(self):
+		return self.get_query_params().get('Params')
+
+	def set_Params(self,Params):
+		self.add_query_param('Params',Params)
+
+	def get_Body(self):
+		return self.get_query_params().get('Body')
+
+	def set_Body(self,Body):
+		self.add_query_param('Body',Body)
+
+	def get_Url(self):
+		return self.get_query_params().get('Url')
+
+	def set_Url(self,Url):
+		self.add_query_param('Url',Url)
 
 	def get_ContactName(self):
 		return self.get_query_params().get('ContactName')
 
 	def set_ContactName(self,ContactName):
 		self.add_query_param('ContactName',ContactName)
-
-	def get_Phone(self):
-		return self.get_query_params().get('Phone')
-
-	def set_Phone(self,Phone):
-		self.add_query_param('Phone',Phone)
-
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_Email(self):
-		return self.get_query_params().get('Email')
-
-	def set_Email(self,Email):
-		self.add_query_param('Email',Email)

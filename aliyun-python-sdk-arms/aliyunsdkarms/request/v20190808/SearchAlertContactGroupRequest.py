@@ -31,20 +31,32 @@ class SearchAlertContactGroupRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_ContactName(self):
-		return self.get_query_params().get('ContactName')
-
-	def set_ContactName(self,ContactName):
-		self.add_query_param('ContactName',ContactName)
-
 	def get_ContactId(self):
 		return self.get_query_params().get('ContactId')
 
 	def set_ContactId(self,ContactId):
 		self.add_query_param('ContactId',ContactId)
 
+	def get_IsDetail(self):
+		return self.get_query_params().get('IsDetail')
+
+	def set_IsDetail(self,IsDetail):
+		self.add_query_param('IsDetail',IsDetail)
+
 	def get_ContactGroupName(self):
 		return self.get_query_params().get('ContactGroupName')
 
 	def set_ContactGroupName(self,ContactGroupName):
 		self.add_query_param('ContactGroupName',ContactGroupName)
+
+	def get_ContactName(self):
+		return self.get_query_params().get('ContactName')
+
+	def set_ContactName(self,ContactName):
+		self.add_query_param('ContactName',ContactName)
+
+	def get_ContactGroupIds(self):
+		return self.get_query_params().get('ContactGroupIds')
+
+	def set_ContactGroupIds(self,ContactGroupIds):
+		self.add_query_param('ContactGroupIds',ContactGroupIds)

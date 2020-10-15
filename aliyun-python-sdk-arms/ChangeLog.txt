@@ -1,3 +1,6 @@
+2020-10-15 Version: 2.5.16
+- Add SaveTraceAppConfig api.
+
 2020-08-24 Version: 2.5.15
 - Edit QueryMetricByPage api.
 

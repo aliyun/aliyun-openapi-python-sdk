@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkarms.endpoint import endpoint_data
 
-class SearchAlertContactRequest(RpcRequest):
+class SaveTraceAppConfigRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ARMS', '2019-08-08', 'SearchAlertContact','arms')
+		RpcRequest.__init__(self, 'ARMS', '2019-08-08', 'SaveTraceAppConfig','arms')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,38 +31,18 @@ class SearchAlertContactRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_CurrentPage(self):
-		return self.get_query_params().get('CurrentPage')
+	def get_Settingss(self):
+		return self.get_query_params().get('Settings')
 
-	def set_CurrentPage(self,CurrentPage):
-		self.add_query_param('CurrentPage',CurrentPage)
+	def set_Settingss(self, Settingss):
+		for depth1 in range(len(Settingss)):
+			if Settingss[depth1].get('Value') is not None:
+				self.add_query_param('Settings.' + str(depth1 + 1) + '.Value', Settingss[depth1].get('Value'))
+			if Settingss[depth1].get('Key') is not None:
+				self.add_query_param('Settings.' + str(depth1 + 1) + '.Key', Settingss[depth1].get('Key'))
 
-	def get_ContactIds(self):
-		return self.get_query_params().get('ContactIds')
+	def get_Pid(self):
+		return self.get_query_params().get('Pid')
 
-	def set_ContactIds(self,ContactIds):
-		self.add_query_param('ContactIds',ContactIds)
-
-	def get_ContactName(self):
-		return self.get_query_params().get('ContactName')
-
-	def set_ContactName(self,ContactName):
-		self.add_query_param('ContactName',ContactName)
-
-	def get_Phone(self):
-		return self.get_query_params().get('Phone')
-
-	def set_Phone(self,Phone):
-		self.add_query_param('Phone',Phone)
-
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_Email(self):
-		return self.get_query_params().get('Email')
-
-	def set_Email(self,Email):
-		self.add_query_param('Email',Email)
+	def set_Pid(self,Pid):
+		self.add_query_param('Pid',Pid)

@@ -32,7 +32,7 @@ class GetMultipleTraceRequest(RpcRequest):
 
 
 	def get_TraceIDss(self):
-		return self.get_query_params().get('TraceIDss')
+		return self.get_query_params().get('TraceIDs')
 
 	def set_TraceIDss(self, TraceIDss):
 		for depth1 in range(len(TraceIDss)):

@@ -62,7 +62,7 @@ class SearchTracesRequest(RpcRequest):
 		self.add_query_param('ServiceIp',ServiceIp)
 
 	def get_ExclusionFilterss(self):
-		return self.get_query_params().get('ExclusionFilterss')
+		return self.get_query_params().get('ExclusionFilters')
 
 	def set_ExclusionFilterss(self, ExclusionFilterss):
 		for depth1 in range(len(ExclusionFilterss)):
@@ -84,7 +84,7 @@ class SearchTracesRequest(RpcRequest):
 		self.add_query_param('ServiceName',ServiceName)
 
 	def get_Tags(self):
-		return self.get_query_params().get('Tags')
+		return self.get_query_params().get('Tag')
 
 	def set_Tags(self, Tags):
 		for depth1 in range(len(Tags)):
