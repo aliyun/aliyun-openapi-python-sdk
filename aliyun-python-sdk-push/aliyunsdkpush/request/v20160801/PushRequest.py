@@ -193,6 +193,12 @@ class PushRequest(RpcRequest):
 	def set_AndroidMusic(self,AndroidMusic):
 		self.add_query_param('AndroidMusic',AndroidMusic)
 
+	def get_iOSNotificationCollapseId(self):
+		return self.get_query_params().get('iOSNotificationCollapseId')
+
+	def set_iOSNotificationCollapseId(self,iOSNotificationCollapseId):
+		self.add_query_param('iOSNotificationCollapseId',iOSNotificationCollapseId)
+
 	def get_PushType(self):
 		return self.get_query_params().get('PushType')
 
@@ -288,6 +294,12 @@ class PushRequest(RpcRequest):
 
 	def set_SmsSignName(self,SmsSignName):
 		self.add_query_param('SmsSignName',SmsSignName)
+
+	def get_AndroidNotificationNotifyId(self):
+		return self.get_query_params().get('AndroidNotificationNotifyId')
+
+	def set_AndroidNotificationNotifyId(self,AndroidNotificationNotifyId):
+		self.add_query_param('AndroidNotificationNotifyId',AndroidNotificationNotifyId)
 
 	def get_AppKey(self):
 		return self.get_query_params().get('AppKey')

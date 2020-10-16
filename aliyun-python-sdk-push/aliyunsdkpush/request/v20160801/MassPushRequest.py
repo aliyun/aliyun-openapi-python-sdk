@@ -32,7 +32,7 @@ class MassPushRequest(RpcRequest):
 
 
 	def get_PushTasks(self):
-		return self.get_body_params().get('PushTasks')
+		return self.get_body_params().get('PushTask')
 
 	def set_PushTasks(self, PushTasks):
 		for depth1 in range(len(PushTasks)):
@@ -108,6 +108,8 @@ class MassPushRequest(RpcRequest):
 				self.add_body_params('PushTask.' + str(depth1 + 1) + '.iOSSubtitle', PushTasks[depth1].get('iOSSubtitle'))
 			if PushTasks[depth1].get('iOSRemind') is not None:
 				self.add_body_params('PushTask.' + str(depth1 + 1) + '.iOSRemind', PushTasks[depth1].get('iOSRemind'))
+			if PushTasks[depth1].get('AndroidNotificationNotifyId') is not None:
+				self.add_body_params('PushTask.' + str(depth1 + 1) + '.AndroidNotificationNotifyId', PushTasks[depth1].get('AndroidNotificationNotifyId'))
 			if PushTasks[depth1].get('TargetValue') is not None:
 				self.add_body_params('PushTask.' + str(depth1 + 1) + '.TargetValue', PushTasks[depth1].get('TargetValue'))
 			if PushTasks[depth1].get('AndroidMusic') is not None:
@@ -116,6 +118,8 @@ class MassPushRequest(RpcRequest):
 				self.add_body_params('PushTask.' + str(depth1 + 1) + '.AndroidXiaoMiActivity', PushTasks[depth1].get('AndroidXiaoMiActivity'))
 			if PushTasks[depth1].get('AndroidXiaoMiNotifyTitle') is not None:
 				self.add_body_params('PushTask.' + str(depth1 + 1) + '.AndroidXiaoMiNotifyTitle', PushTasks[depth1].get('AndroidXiaoMiNotifyTitle'))
+			if PushTasks[depth1].get('iOSNotificationCollapseId') is not None:
+				self.add_body_params('PushTask.' + str(depth1 + 1) + '.iOSNotificationCollapseId', PushTasks[depth1].get('iOSNotificationCollapseId'))
 			if PushTasks[depth1].get('PushType') is not None:
 				self.add_body_params('PushTask.' + str(depth1 + 1) + '.PushType', PushTasks[depth1].get('PushType'))
 
