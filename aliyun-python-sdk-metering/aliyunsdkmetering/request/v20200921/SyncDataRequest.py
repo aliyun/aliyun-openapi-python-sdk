@@ -18,6 +18,7 @@
 # under the License.
 
 from aliyunsdkcore.request import RoaRequest
+from aliyunsdkmetering.endpoint import endpoint_data
 
 class SyncDataRequest(RoaRequest):
 
@@ -25,6 +26,11 @@ class SyncDataRequest(RoaRequest):
 		RoaRequest.__init__(self, 'Metering', '2020-09-21', 'SyncData','pai')
 		self.set_uri_pattern('/api/dataSync')
 		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_InstanceId(self):
 		return self.get_query_params().get('InstanceId')
