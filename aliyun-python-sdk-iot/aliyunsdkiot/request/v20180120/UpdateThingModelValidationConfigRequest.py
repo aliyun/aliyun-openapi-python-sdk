@@ -20,16 +20,22 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkiot.endpoint import endpoint_data
 
-class ListOTAModuleByProductRequest(RpcRequest):
+class UpdateThingModelValidationConfigRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'ListOTAModuleByProduct','iot')
-		self.set_method('GET')
+		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'UpdateThingModelValidationConfig','iot')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+
+	def get_ValidateType(self):
+		return self.get_query_params().get('ValidateType')
+
+	def set_ValidateType(self,ValidateType):
+		self.add_query_param('ValidateType',ValidateType)
 
 	def get_IotInstanceId(self):
 		return self.get_query_params().get('IotInstanceId')
