@@ -24,7 +24,7 @@ class SaveSortScriptFileRequest(RoaRequest):
 
 	def __init__(self):
 		RoaRequest.__init__(self, 'OpenSearch', '2017-12-25', 'SaveSortScriptFile','opensearch')
-		self.set_uri_pattern('/v4/openapi/app-groups/[appGroupIdentity]/apps/[appVersionId]/sort-scripts/[scriptName]/files/src/UserScorer.cava')
+		self.set_uri_pattern('/v4/openapi/app-groups/[appGroupIdentity]/apps/[appVersionId]/sort-scripts/[scriptName]/files/src/[fileName]')
 		self.set_method('PUT')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -37,6 +37,12 @@ class SaveSortScriptFileRequest(RoaRequest):
 
 	def set_appVersionId(self,appVersionId):
 		self.add_path_param('appVersionId',appVersionId)
+
+	def get_fileName(self):
+		return self.get_path_params().get('fileName')
+
+	def set_fileName(self,fileName):
+		self.add_path_param('fileName',fileName)
 
 	def get_scriptName(self):
 		return self.get_path_params().get('scriptName')

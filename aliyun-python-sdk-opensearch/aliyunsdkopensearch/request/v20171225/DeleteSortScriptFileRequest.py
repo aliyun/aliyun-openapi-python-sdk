@@ -20,12 +20,12 @@
 from aliyunsdkcore.request import RoaRequest
 from aliyunsdkopensearch.endpoint import endpoint_data
 
-class GetSortScriptFileRequest(RoaRequest):
+class DeleteSortScriptFileRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'OpenSearch', '2017-12-25', 'GetSortScriptFile','opensearch')
+		RoaRequest.__init__(self, 'OpenSearch', '2017-12-25', 'DeleteSortScriptFile','opensearch')
 		self.set_uri_pattern('/v4/openapi/app-groups/[appGroupIdentity]/apps/[appVersionId]/sort-scripts/[scriptName]/files/src/[fileName]')
-		self.set_method('GET')
+		self.set_method('DELETE')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):

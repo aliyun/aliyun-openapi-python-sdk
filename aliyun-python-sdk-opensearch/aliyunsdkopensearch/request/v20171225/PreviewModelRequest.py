@@ -20,11 +20,11 @@
 from aliyunsdkcore.request import RoaRequest
 from aliyunsdkopensearch.endpoint import endpoint_data
 
-class GetSortScriptFileRequest(RoaRequest):
+class PreviewModelRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'OpenSearch', '2017-12-25', 'GetSortScriptFile','opensearch')
-		self.set_uri_pattern('/v4/openapi/app-groups/[appGroupIdentity]/apps/[appVersionId]/sort-scripts/[scriptName]/files/src/[fileName]')
+		RoaRequest.__init__(self, 'OpenSearch', '2017-12-25', 'PreviewModel','opensearch')
+		self.set_uri_pattern('/v4/openapi/app-groups/[appGroupIdentity]/algorithm/models/[modelName]/actions/preview')
 		self.set_method('GET')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -32,23 +32,17 @@ class GetSortScriptFileRequest(RoaRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_appVersionId(self):
-		return self.get_path_params().get('appVersionId')
+	def get_modelName(self):
+		return self.get_path_params().get('modelName')
 
-	def set_appVersionId(self,appVersionId):
-		self.add_path_param('appVersionId',appVersionId)
+	def set_modelName(self,modelName):
+		self.add_path_param('modelName',modelName)
 
-	def get_fileName(self):
-		return self.get_path_params().get('fileName')
+	def get_query(self):
+		return self.get_query_params().get('query')
 
-	def set_fileName(self,fileName):
-		self.add_path_param('fileName',fileName)
-
-	def get_scriptName(self):
-		return self.get_path_params().get('scriptName')
-
-	def set_scriptName(self,scriptName):
-		self.add_path_param('scriptName',scriptName)
+	def set_query(self,query):
+		self.add_query_param('query',query)
 
 	def get_appGroupIdentity(self):
 		return self.get_path_params().get('appGroupIdentity')
