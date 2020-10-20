@@ -127,8 +127,20 @@ class InitFaceVerifyRequest(RpcRequest):
 	def set_OssBucketName(self,OssBucketName):
 		self.add_query_param('OssBucketName',OssBucketName)
 
+	def get_CallbackToken(self):
+		return self.get_query_params().get('CallbackToken')
+
+	def set_CallbackToken(self,CallbackToken):
+		self.add_query_param('CallbackToken',CallbackToken)
+
 	def get_ReturnUrl(self):
 		return self.get_query_params().get('ReturnUrl')
 
 	def set_ReturnUrl(self,ReturnUrl):
 		self.add_query_param('ReturnUrl',ReturnUrl)
+
+	def get_CallbackUrl(self):
+		return self.get_query_params().get('CallbackUrl')
+
+	def set_CallbackUrl(self,CallbackUrl):
+		self.add_query_param('CallbackUrl',CallbackUrl)

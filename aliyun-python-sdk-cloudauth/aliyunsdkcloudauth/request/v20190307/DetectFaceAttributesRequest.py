@@ -31,6 +31,12 @@ class DetectFaceAttributesRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_BizType(self):
+		return self.get_body_params().get('BizType')
+
+	def set_BizType(self,BizType):
+		self.add_body_params('BizType', BizType)
+
 	def get_MaterialValue(self):
 		return self.get_body_params().get('MaterialValue')
 
