@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkvcs.endpoint import endpoint_data
 
-class CreateVideoSummaryTaskRequest(RpcRequest):
+class ListPersonTraceDetailsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Vcs', '2020-05-15', 'CreateVideoSummaryTask')
+		RpcRequest.__init__(self, 'Vcs', '2020-05-15', 'ListPersonTraceDetails')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -37,32 +37,44 @@ class CreateVideoSummaryTaskRequest(RpcRequest):
 	def set_CorpId(self,CorpId):
 		self.add_body_params('CorpId', CorpId)
 
-	def get_LiveVideoSummary(self):
-		return self.get_body_params().get('LiveVideoSummary')
+	def get_EndTime(self):
+		return self.get_body_params().get('EndTime')
 
-	def set_LiveVideoSummary(self,LiveVideoSummary):
-		self.add_body_params('LiveVideoSummary', LiveVideoSummary)
+	def set_EndTime(self,EndTime):
+		self.add_body_params('EndTime', EndTime)
 
-	def get_StartTimeStamp(self):
-		return self.get_body_params().get('StartTimeStamp')
+	def get_StartTime(self):
+		return self.get_body_params().get('StartTime')
 
-	def set_StartTimeStamp(self,StartTimeStamp):
-		self.add_body_params('StartTimeStamp', StartTimeStamp)
+	def set_StartTime(self,StartTime):
+		self.add_body_params('StartTime', StartTime)
 
-	def get_DeviceId(self):
-		return self.get_body_params().get('DeviceId')
+	def get_PageNumber(self):
+		return self.get_body_params().get('PageNumber')
 
-	def set_DeviceId(self,DeviceId):
-		self.add_body_params('DeviceId', DeviceId)
+	def set_PageNumber(self,PageNumber):
+		self.add_body_params('PageNumber', PageNumber)
 
-	def get_EndTimeStamp(self):
-		return self.get_body_params().get('EndTimeStamp')
+	def get_SubId(self):
+		return self.get_body_params().get('SubId')
 
-	def set_EndTimeStamp(self,EndTimeStamp):
-		self.add_body_params('EndTimeStamp', EndTimeStamp)
+	def set_SubId(self,SubId):
+		self.add_body_params('SubId', SubId)
 
-	def get_OptionList(self):
-		return self.get_body_params().get('OptionList')
+	def get_PageSize(self):
+		return self.get_body_params().get('PageSize')
 
-	def set_OptionList(self,OptionList):
-		self.add_body_params('OptionList', OptionList)
+	def set_PageSize(self,PageSize):
+		self.add_body_params('PageSize', PageSize)
+
+	def get_PersonId(self):
+		return self.get_body_params().get('PersonId')
+
+	def set_PersonId(self,PersonId):
+		self.add_body_params('PersonId', PersonId)
+
+	def get_IsvId(self):
+		return self.get_body_params().get('IsvId')
+
+	def set_IsvId(self,IsvId):
+		self.add_body_params('IsvId', IsvId)
