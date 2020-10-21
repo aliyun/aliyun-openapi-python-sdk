@@ -23,7 +23,8 @@ from aliyunsdkmts.endpoint import endpoint_data
 class QuerySubtitleJobListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Mts', '2014-06-18', 'QuerySubtitleJobList')
+		RpcRequest.__init__(self, 'Mts', '2014-06-18', 'QuerySubtitleJobList','mts')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):

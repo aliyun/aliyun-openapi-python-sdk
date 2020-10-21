@@ -23,7 +23,8 @@ from aliyunsdkmts.endpoint import endpoint_data
 class SubmitMediaCensorJobRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Mts', '2014-06-18', 'SubmitMediaCensorJob')
+		RpcRequest.__init__(self, 'Mts', '2014-06-18', 'SubmitMediaCensorJob','mts')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):

@@ -23,7 +23,8 @@ from aliyunsdkmts.endpoint import endpoint_data
 class CheckResourceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Mts', '2014-06-18', 'CheckResource')
+		RpcRequest.__init__(self, 'Mts', '2014-06-18', 'CheckResource','mts')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):

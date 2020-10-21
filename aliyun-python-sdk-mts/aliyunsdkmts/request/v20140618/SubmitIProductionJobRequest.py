@@ -23,7 +23,8 @@ from aliyunsdkmts.endpoint import endpoint_data
 class SubmitIProductionJobRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Mts', '2014-06-18', 'SubmitIProductionJob')
+		RpcRequest.__init__(self, 'Mts', '2014-06-18', 'SubmitIProductionJob','mts')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -41,6 +42,12 @@ class SubmitIProductionJobRequest(RpcRequest):
 
 	def set_JobParams(self,JobParams):
 		self.add_query_param('JobParams',JobParams)
+
+	def get_Output(self):
+		return self.get_query_params().get('Output')
+
+	def set_Output(self,Output):
+		self.add_query_param('Output',Output)
 
 	def get_UserData(self):
 		return self.get_query_params().get('UserData')
@@ -89,6 +96,12 @@ class SubmitIProductionJobRequest(RpcRequest):
 
 	def set_PipelineId(self,PipelineId):
 		self.add_query_param('PipelineId',PipelineId)
+
+	def get_Input(self):
+		return self.get_query_params().get('Input')
+
+	def set_Input(self,Input):
+		self.add_query_param('Input',Input)
 
 	def get_ScheduleParams(self):
 		return self.get_query_params().get('ScheduleParams')

@@ -23,7 +23,8 @@ from aliyunsdkmts.endpoint import endpoint_data
 class SubmitTagJobRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Mts', '2014-06-18', 'SubmitTagJob')
+		RpcRequest.__init__(self, 'Mts', '2014-06-18', 'SubmitTagJob','mts')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
