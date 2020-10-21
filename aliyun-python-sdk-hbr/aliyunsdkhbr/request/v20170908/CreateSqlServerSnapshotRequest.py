@@ -18,16 +18,18 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkhbr.endpoint import endpoint_data
+
 class CreateSqlServerSnapshotRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'hbr', '2017-09-08', 'CreateSqlServerSnapshot','hbr')
+		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ExpireTime(self):
-		return self.get_query_params().get('ExpireTime')
-
-	def set_ExpireTime(self,ExpireTime):
-		self.add_query_param('ExpireTime',ExpireTime)
 
 	def get_VaultId(self):
 		return self.get_query_params().get('VaultId')
@@ -41,35 +43,17 @@ class CreateSqlServerSnapshotRequest(RpcRequest):
 	def set_SnapshotName(self,SnapshotName):
 		self.add_query_param('SnapshotName',SnapshotName)
 
-	def get_ClusterId(self):
-		return self.get_query_params().get('ClusterId')
-
-	def set_ClusterId(self,ClusterId):
-		self.add_query_param('ClusterId',ClusterId)
-
 	def get_StartTime(self):
 		return self.get_query_params().get('StartTime')
 
 	def set_StartTime(self,StartTime):
 		self.add_query_param('StartTime',StartTime)
 
-	def get_Token(self):
-		return self.get_query_params().get('Token')
-
-	def set_Token(self,Token):
-		self.add_query_param('Token',Token)
-
 	def get_SnapshotHash(self):
 		return self.get_query_params().get('SnapshotHash')
 
 	def set_SnapshotHash(self,SnapshotHash):
 		self.add_query_param('SnapshotHash',SnapshotHash)
-
-	def get_DatabaseName(self):
-		return self.get_query_params().get('DatabaseName')
-
-	def set_DatabaseName(self,DatabaseName):
-		self.add_query_param('DatabaseName',DatabaseName)
 
 	def get_CompleteTime(self):
 		return self.get_query_params().get('CompleteTime')
@@ -83,18 +67,6 @@ class CreateSqlServerSnapshotRequest(RpcRequest):
 	def set_ParentSnapshotHash(self,ParentSnapshotHash):
 		self.add_query_param('ParentSnapshotHash',ParentSnapshotHash)
 
-	def get_PlanId(self):
-		return self.get_query_params().get('PlanId')
-
-	def set_PlanId(self,PlanId):
-		self.add_query_param('PlanId',PlanId)
-
-	def get_DatabaseId(self):
-		return self.get_query_params().get('DatabaseId')
-
-	def set_DatabaseId(self,DatabaseId):
-		self.add_query_param('DatabaseId',DatabaseId)
-
 	def get_BackupType(self):
 		return self.get_query_params().get('BackupType')
 
@@ -106,6 +78,42 @@ class CreateSqlServerSnapshotRequest(RpcRequest):
 
 	def set_BytesTotal(self,BytesTotal):
 		self.add_query_param('BytesTotal',BytesTotal)
+
+	def get_ExpireTime(self):
+		return self.get_query_params().get('ExpireTime')
+
+	def set_ExpireTime(self,ExpireTime):
+		self.add_query_param('ExpireTime',ExpireTime)
+
+	def get_ClusterId(self):
+		return self.get_query_params().get('ClusterId')
+
+	def set_ClusterId(self,ClusterId):
+		self.add_query_param('ClusterId',ClusterId)
+
+	def get_Token(self):
+		return self.get_query_params().get('Token')
+
+	def set_Token(self,Token):
+		self.add_query_param('Token',Token)
+
+	def get_DatabaseName(self):
+		return self.get_query_params().get('DatabaseName')
+
+	def set_DatabaseName(self,DatabaseName):
+		self.add_query_param('DatabaseName',DatabaseName)
+
+	def get_PlanId(self):
+		return self.get_query_params().get('PlanId')
+
+	def set_PlanId(self,PlanId):
+		self.add_query_param('PlanId',PlanId)
+
+	def get_DatabaseId(self):
+		return self.get_query_params().get('DatabaseId')
+
+	def set_DatabaseId(self,DatabaseId):
+		self.add_query_param('DatabaseId',DatabaseId)
 
 	def get_Status(self):
 		return self.get_query_params().get('Status')

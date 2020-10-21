@@ -18,11 +18,19 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkhbr.endpoint import endpoint_data
+
 class DescribeHanaMetadataRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'hbr', '2017-09-08', 'DescribeHanaMetadata','hbr')
 		self.set_protocol_type('https')
+		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_EndSnapshotId(self):
 		return self.get_query_params().get('EndSnapshotId')
@@ -36,29 +44,11 @@ class DescribeHanaMetadataRequest(RpcRequest):
 	def set_ClientId(self,ClientId):
 		self.add_query_param('ClientId',ClientId)
 
-	def get_EndPaths(self):
-		return self.get_query_params().get('EndPaths')
-
-	def set_EndPaths(self,EndPaths):
-		self.add_query_param('EndPaths',EndPaths)
-
 	def get_VaultId(self):
 		return self.get_query_params().get('VaultId')
 
 	def set_VaultId(self,VaultId):
 		self.add_query_param('VaultId',VaultId)
-
-	def get_EndTags(self):
-		return self.get_query_params().get('EndTags')
-
-	def set_EndTags(self,EndTags):
-		self.add_query_param('EndTags',EndTags)
-
-	def get_StartTags(self):
-		return self.get_query_params().get('StartTags')
-
-	def set_StartTags(self,StartTags):
-		self.add_query_param('StartTags',StartTags)
 
 	def get_ClusterId(self):
 		return self.get_query_params().get('ClusterId')
@@ -89,3 +79,21 @@ class DescribeHanaMetadataRequest(RpcRequest):
 
 	def set_StartSnapshotId(self,StartSnapshotId):
 		self.add_query_param('StartSnapshotId',StartSnapshotId)
+
+	def get_EndPaths(self):
+		return self.get_query_params().get('EndPaths')
+
+	def set_EndPaths(self,EndPaths):
+		self.add_query_param('EndPaths',EndPaths)
+
+	def get_EndTags(self):
+		return self.get_query_params().get('EndTags')
+
+	def set_EndTags(self,EndTags):
+		self.add_query_param('EndTags',EndTags)
+
+	def get_StartTags(self):
+		return self.get_query_params().get('StartTags')
+
+	def set_StartTags(self,StartTags):
+		self.add_query_param('StartTags',StartTags)

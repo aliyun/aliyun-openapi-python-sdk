@@ -18,22 +18,24 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkhbr.endpoint import endpoint_data
+
 class UpdateSqlServerSnapshotRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'hbr', '2017-09-08', 'UpdateSqlServerSnapshot','hbr')
+		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_ErrorMessage(self):
 		return self.get_query_params().get('ErrorMessage')
 
 	def set_ErrorMessage(self,ErrorMessage):
 		self.add_query_param('ErrorMessage',ErrorMessage)
-
-	def get_SnapshotHash(self):
-		return self.get_query_params().get('SnapshotHash')
-
-	def set_SnapshotHash(self,SnapshotHash):
-		self.add_query_param('SnapshotHash',SnapshotHash)
 
 	def get_ExpireTime(self):
 		return self.get_query_params().get('ExpireTime')
@@ -53,17 +55,29 @@ class UpdateSqlServerSnapshotRequest(RpcRequest):
 	def set_VaultId(self,VaultId):
 		self.add_query_param('VaultId',VaultId)
 
-	def get_Percentage(self):
-		return self.get_query_params().get('Percentage')
-
-	def set_Percentage(self,Percentage):
-		self.add_query_param('Percentage',Percentage)
-
 	def get_ClusterId(self):
 		return self.get_query_params().get('ClusterId')
 
 	def set_ClusterId(self,ClusterId):
 		self.add_query_param('ClusterId',ClusterId)
+
+	def get_Token(self):
+		return self.get_query_params().get('Token')
+
+	def set_Token(self,Token):
+		self.add_query_param('Token',Token)
+
+	def get_SnapshotHash(self):
+		return self.get_query_params().get('SnapshotHash')
+
+	def set_SnapshotHash(self,SnapshotHash):
+		self.add_query_param('SnapshotHash',SnapshotHash)
+
+	def get_Percentage(self):
+		return self.get_query_params().get('Percentage')
+
+	def set_Percentage(self,Percentage):
+		self.add_query_param('Percentage',Percentage)
 
 	def get_DatabaseId(self):
 		return self.get_query_params().get('DatabaseId')
@@ -76,12 +90,6 @@ class UpdateSqlServerSnapshotRequest(RpcRequest):
 
 	def set_BytesTotal(self,BytesTotal):
 		self.add_query_param('BytesTotal',BytesTotal)
-
-	def get_Token(self):
-		return self.get_query_params().get('Token')
-
-	def set_Token(self,Token):
-		self.add_query_param('Token',Token)
 
 	def get_Status(self):
 		return self.get_query_params().get('Status')

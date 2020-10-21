@@ -18,11 +18,19 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkhbr.endpoint import endpoint_data
+
 class CreateSnapshotRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'hbr', '2017-09-08', 'CreateSnapshot','hbr')
 		self.set_protocol_type('https')
+		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_ClientId(self):
 		return self.get_query_params().get('ClientId')
@@ -42,12 +50,6 @@ class CreateSnapshotRequest(RpcRequest):
 	def set_SnapshotName(self,SnapshotName):
 		self.add_query_param('SnapshotName',SnapshotName)
 
-	def get_UserAccountId(self):
-		return self.get_query_params().get('UserAccountId')
-
-	def set_UserAccountId(self,UserAccountId):
-		self.add_query_param('UserAccountId',UserAccountId)
-
 	def get_Source(self):
 		return self.get_query_params().get('Source')
 
@@ -65,6 +67,30 @@ class CreateSnapshotRequest(RpcRequest):
 
 	def set_ContainerSnapshotId(self,ContainerSnapshotId):
 		self.add_query_param('ContainerSnapshotId',ContainerSnapshotId)
+
+	def get_JobId(self):
+		return self.get_query_params().get('JobId')
+
+	def set_JobId(self,JobId):
+		self.add_query_param('JobId',JobId)
+
+	def get_Extra(self):
+		return self.get_query_params().get('Extra')
+
+	def set_Extra(self,Extra):
+		self.add_query_param('Extra',Extra)
+
+	def get_SourceType(self):
+		return self.get_query_params().get('SourceType')
+
+	def set_SourceType(self,SourceType):
+		self.add_query_param('SourceType',SourceType)
+
+	def get_Retention(self):
+		return self.get_query_params().get('Retention')
+
+	def set_Retention(self,Retention):
+		self.add_query_param('Retention',Retention)
 
 	def get_ServerId(self):
 		return self.get_query_params().get('ServerId')
@@ -84,38 +110,14 @@ class CreateSnapshotRequest(RpcRequest):
 	def set_SnapshotOption(self,SnapshotOption):
 		self.add_query_param('SnapshotOption',SnapshotOption)
 
-	def get_JobId(self):
-		return self.get_query_params().get('JobId')
-
-	def set_JobId(self,JobId):
-		self.add_query_param('JobId',JobId)
-
 	def get_SnapshotType(self):
 		return self.get_query_params().get('SnapshotType')
 
 	def set_SnapshotType(self,SnapshotType):
 		self.add_query_param('SnapshotType',SnapshotType)
 
-	def get_Extra(self):
-		return self.get_query_params().get('Extra')
-
-	def set_Extra(self,Extra):
-		self.add_query_param('Extra',Extra)
-
-	def get_SourceType(self):
-		return self.get_query_params().get('SourceType')
-
-	def set_SourceType(self,SourceType):
-		self.add_query_param('SourceType',SourceType)
-
 	def get_PlanId(self):
 		return self.get_query_params().get('PlanId')
 
 	def set_PlanId(self,PlanId):
 		self.add_query_param('PlanId',PlanId)
-
-	def get_Retention(self):
-		return self.get_query_params().get('Retention')
-
-	def set_Retention(self,Retention):
-		self.add_query_param('Retention',Retention)

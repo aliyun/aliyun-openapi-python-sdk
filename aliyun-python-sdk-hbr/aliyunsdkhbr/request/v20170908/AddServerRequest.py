@@ -18,17 +18,19 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkhbr.endpoint import endpoint_data
+
 class AddServerRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'hbr', '2017-09-08', 'AddServer','hbr')
 		self.set_protocol_type('https')
+		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_Password(self):
-		return self.get_query_params().get('Password')
-
-	def set_Password(self,Password):
-		self.add_query_param('Password',Password)
 
 	def get_ClientId(self):
 		return self.get_query_params().get('ClientId')
@@ -48,29 +50,35 @@ class AddServerRequest(RpcRequest):
 	def set_VaultId(self,VaultId):
 		self.add_query_param('VaultId',VaultId)
 
-	def get_Host(self):
-		return self.get_query_params().get('Host')
-
-	def set_Host(self,Host):
-		self.add_query_param('Host',Host)
-
 	def get_Description(self):
 		return self.get_query_params().get('Description')
 
 	def set_Description(self,Description):
 		self.add_query_param('Description',Description)
 
-	def get_DetailInfo(self):
-		return self.get_query_params().get('DetailInfo')
-
-	def set_DetailInfo(self,DetailInfo):
-		self.add_query_param('DetailInfo',DetailInfo)
-
 	def get_Token(self):
 		return self.get_query_params().get('Token')
 
 	def set_Token(self,Token):
 		self.add_query_param('Token',Token)
+
+	def get_Password(self):
+		return self.get_query_params().get('Password')
+
+	def set_Password(self,Password):
+		self.add_query_param('Password',Password)
+
+	def get_Host(self):
+		return self.get_query_params().get('Host')
+
+	def set_Host(self,Host):
+		self.add_query_param('Host',Host)
+
+	def get_DetailInfo(self):
+		return self.get_query_params().get('DetailInfo')
+
+	def set_DetailInfo(self,DetailInfo):
+		self.add_query_param('DetailInfo',DetailInfo)
 
 	def get_Username(self):
 		return self.get_query_params().get('Username')

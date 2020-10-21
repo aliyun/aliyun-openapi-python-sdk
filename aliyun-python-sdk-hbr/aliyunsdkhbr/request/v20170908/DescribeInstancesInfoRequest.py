@@ -18,11 +18,19 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkhbr.endpoint import endpoint_data
+
 class DescribeInstancesInfoRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'hbr', '2017-09-08', 'DescribeInstancesInfo','hbr')
 		self.set_protocol_type('https')
+		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_InnerIpAddresses(self):
 		return self.get_query_params().get('InnerIpAddresses')
@@ -30,35 +38,11 @@ class DescribeInstancesInfoRequest(RpcRequest):
 	def set_InnerIpAddresses(self,InnerIpAddresses):
 		self.add_query_param('InnerIpAddresses',InnerIpAddresses)
 
-	def get_InstanceName(self):
-		return self.get_query_params().get('InstanceName')
-
-	def set_InstanceName(self,InstanceName):
-		self.add_query_param('InstanceName',InstanceName)
-
 	def get_PrivateIpAddresses(self):
 		return self.get_query_params().get('PrivateIpAddresses')
 
 	def set_PrivateIpAddresses(self,PrivateIpAddresses):
 		self.add_query_param('PrivateIpAddresses',PrivateIpAddresses)
-
-	def get_InstanceIds(self):
-		return self.get_query_params().get('InstanceIds')
-
-	def set_InstanceIds(self,InstanceIds):
-		self.add_query_param('InstanceIds',InstanceIds)
-
-	def get_VpcId(self):
-		return self.get_query_params().get('VpcId')
-
-	def set_VpcId(self,VpcId):
-		self.add_query_param('VpcId',VpcId)
-
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
 
 	def get_NetworkType(self):
 		return self.get_query_params().get('NetworkType')
@@ -77,3 +61,27 @@ class DescribeInstancesInfoRequest(RpcRequest):
 
 	def set_Token(self,Token):
 		self.add_query_param('Token',Token)
+
+	def get_InstanceName(self):
+		return self.get_query_params().get('InstanceName')
+
+	def set_InstanceName(self,InstanceName):
+		self.add_query_param('InstanceName',InstanceName)
+
+	def get_InstanceIds(self):
+		return self.get_query_params().get('InstanceIds')
+
+	def set_InstanceIds(self,InstanceIds):
+		self.add_query_param('InstanceIds',InstanceIds)
+
+	def get_VpcId(self):
+		return self.get_query_params().get('VpcId')
+
+	def set_VpcId(self,VpcId):
+		self.add_query_param('VpcId',VpcId)
+
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)

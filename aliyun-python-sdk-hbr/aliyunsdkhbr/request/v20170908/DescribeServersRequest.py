@@ -18,11 +18,19 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkhbr.endpoint import endpoint_data
+
 class DescribeServersRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'hbr', '2017-09-08', 'DescribeServers','hbr')
 		self.set_protocol_type('https')
+		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_ClientId(self):
 		return self.get_query_params().get('ClientId')
@@ -48,18 +56,6 @@ class DescribeServersRequest(RpcRequest):
 	def set_ServerStatus(self,ServerStatus):
 		self.add_query_param('ServerStatus',ServerStatus)
 
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_IsRemoved(self):
-		return self.get_query_params().get('IsRemoved')
-
-	def set_IsRemoved(self,IsRemoved):
-		self.add_query_param('IsRemoved',IsRemoved)
-
 	def get_ServerId(self):
 		return self.get_query_params().get('ServerId')
 
@@ -77,3 +73,15 @@ class DescribeServersRequest(RpcRequest):
 
 	def set_Token(self,Token):
 		self.add_query_param('Token',Token)
+
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
+
+	def get_IsRemoved(self):
+		return self.get_query_params().get('IsRemoved')
+
+	def set_IsRemoved(self,IsRemoved):
+		self.add_query_param('IsRemoved',IsRemoved)

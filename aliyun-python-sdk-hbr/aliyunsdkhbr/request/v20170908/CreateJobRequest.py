@@ -18,11 +18,19 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkhbr.endpoint import endpoint_data
+
 class CreateJobRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'hbr', '2017-09-08', 'CreateJob','hbr')
 		self.set_protocol_type('https')
+		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_ClientId(self):
 		return self.get_query_params().get('ClientId')
@@ -30,17 +38,23 @@ class CreateJobRequest(RpcRequest):
 	def set_ClientId(self,ClientId):
 		self.add_query_param('ClientId',ClientId)
 
-	def get_PolicyId(self):
-		return self.get_query_params().get('PolicyId')
-
-	def set_PolicyId(self,PolicyId):
-		self.add_query_param('PolicyId',PolicyId)
-
 	def get_VaultId(self):
 		return self.get_query_params().get('VaultId')
 
 	def set_VaultId(self,VaultId):
 		self.add_query_param('VaultId',VaultId)
+
+	def get_Source(self):
+		return self.get_query_params().get('Source')
+
+	def set_Source(self,Source):
+		self.add_query_param('Source',Source)
+
+	def get_PolicyId(self):
+		return self.get_query_params().get('PolicyId')
+
+	def set_PolicyId(self,PolicyId):
+		self.add_query_param('PolicyId',PolicyId)
 
 	def get_JobOption(self):
 		return self.get_query_params().get('JobOption')
@@ -54,29 +68,35 @@ class CreateJobRequest(RpcRequest):
 	def set_SourceType(self,SourceType):
 		self.add_query_param('SourceType',SourceType)
 
-	def get_UserAccountId(self):
-		return self.get_query_params().get('UserAccountId')
+	def get_Exclude(self):
+		return self.get_query_params().get('Exclude')
 
-	def set_UserAccountId(self,UserAccountId):
-		self.add_query_param('UserAccountId',UserAccountId)
-
-	def get_Source(self):
-		return self.get_query_params().get('Source')
-
-	def set_Source(self,Source):
-		self.add_query_param('Source',Source)
-
-	def get_JobType(self):
-		return self.get_query_params().get('JobType')
-
-	def set_JobType(self,JobType):
-		self.add_query_param('JobType',JobType)
+	def set_Exclude(self,Exclude):
+		self.add_query_param('Exclude',Exclude)
 
 	def get_JobName(self):
 		return self.get_query_params().get('JobName')
 
 	def set_JobName(self,JobName):
 		self.add_query_param('JobName',JobName)
+
+	def get_Retention(self):
+		return self.get_query_params().get('Retention')
+
+	def set_Retention(self,Retention):
+		self.add_query_param('Retention',Retention)
+
+	def get_Include(self):
+		return self.get_query_params().get('Include')
+
+	def set_Include(self,Include):
+		self.add_query_param('Include',Include)
+
+	def get_JobType(self):
+		return self.get_query_params().get('JobType')
+
+	def set_JobType(self,JobType):
+		self.add_query_param('JobType',JobType)
 
 	def get_Token(self):
 		return self.get_query_params().get('Token')

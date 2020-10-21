@@ -18,11 +18,19 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkhbr.endpoint import endpoint_data
+
 class DeleteSnapshotRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'hbr', '2017-09-08', 'DeleteSnapshot','hbr')
 		self.set_protocol_type('https')
+		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_ClientId(self):
 		return self.get_query_params().get('ClientId')
@@ -42,14 +50,20 @@ class DeleteSnapshotRequest(RpcRequest):
 	def set_VaultId(self,VaultId):
 		self.add_query_param('VaultId',VaultId)
 
-	def get_UserAccountId(self):
-		return self.get_query_params().get('UserAccountId')
-
-	def set_UserAccountId(self,UserAccountId):
-		self.add_query_param('UserAccountId',UserAccountId)
-
 	def get_Token(self):
 		return self.get_query_params().get('Token')
 
 	def set_Token(self,Token):
 		self.add_query_param('Token',Token)
+
+	def get_InstanceId(self):
+		return self.get_query_params().get('InstanceId')
+
+	def set_InstanceId(self,InstanceId):
+		self.add_query_param('InstanceId',InstanceId)
+
+	def get_SourceType(self):
+		return self.get_query_params().get('SourceType')
+
+	def set_SourceType(self,SourceType):
+		self.add_query_param('SourceType',SourceType)

@@ -18,11 +18,19 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkhbr.endpoint import endpoint_data
+
 class ReportStatisticsRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'hbr', '2017-09-08', 'ReportStatistics','hbr')
 		self.set_protocol_type('https')
+		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_StatisticsType(self):
 		return self.get_query_params().get('StatisticsType')
@@ -42,20 +50,14 @@ class ReportStatisticsRequest(RpcRequest):
 	def set_VaultId(self,VaultId):
 		self.add_query_param('VaultId',VaultId)
 
-	def get_UserAccountId(self):
-		return self.get_query_params().get('UserAccountId')
+	def get_Token(self):
+		return self.get_query_params().get('Token')
 
-	def set_UserAccountId(self,UserAccountId):
-		self.add_query_param('UserAccountId',UserAccountId)
+	def set_Token(self,Token):
+		self.add_query_param('Token',Token)
 
 	def get_Detail(self):
 		return self.get_query_params().get('Detail')
 
 	def set_Detail(self,Detail):
 		self.add_query_param('Detail',Detail)
-
-	def get_Token(self):
-		return self.get_query_params().get('Token')
-
-	def set_Token(self,Token):
-		self.add_query_param('Token',Token)

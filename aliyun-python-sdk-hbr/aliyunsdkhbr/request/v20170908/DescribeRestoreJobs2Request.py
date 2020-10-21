@@ -18,10 +18,36 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkhbr.endpoint import endpoint_data
+
 class DescribeRestoreJobs2Request(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'hbr', '2017-09-08', 'DescribeRestoreJobs2','hbr')
+		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
+
+	def get_Filterss(self):
+		return self.get_query_params().get('Filters')
+
+	def set_Filterss(self, Filterss):
+		for depth1 in range(len(Filterss)):
+			if Filterss[depth1].get('Values') is not None:
+				for depth2 in range(len(Filterss[depth1].get('Values'))):
+					if Filterss[depth1].get('Values')[depth2] is not None:
+						self.add_query_param('Filters.' + str(depth1 + 1) + '.Values.' + str(depth2 + 1) , Filterss[depth1].get('Values')[depth2])
+			if Filterss[depth1].get('Key') is not None:
+				self.add_query_param('Filters.' + str(depth1 + 1) + '.Key', Filterss[depth1].get('Key'))
+
+	def get_PageNumber(self):
+		return self.get_query_params().get('PageNumber')
+
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)
 
 	def get_RestoreType(self):
 		return self.get_query_params().get('RestoreType')
@@ -34,21 +60,3 @@ class DescribeRestoreJobs2Request(RpcRequest):
 
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
-
-	def get_Filterss(self):
-		return self.get_query_params().get('Filterss')
-
-	def set_Filterss(self,Filterss):
-		for i in range(len(Filterss)):	
-			for j in range(len(Filterss[i].get('Valuess'))):
-				if Filterss[i].get('Valuess')[j] is not None:
-					self.add_query_param('Filters.' + str(i + 1) + '.Values.'+str(j + 1), Filterss[i].get('Valuess')[j])
-			if Filterss[i].get('Key') is not None:
-				self.add_query_param('Filters.' + str(i + 1) + '.Key' , Filterss[i].get('Key'))
-
-
-	def get_PageNumber(self):
-		return self.get_query_params().get('PageNumber')
-
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)

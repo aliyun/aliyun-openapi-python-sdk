@@ -18,10 +18,18 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkhbr.endpoint import endpoint_data
+
 class UpdateSqlServerRestoreRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'hbr', '2017-09-08', 'UpdateSqlServerRestore','hbr')
+		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_ErrorMessage(self):
 		return self.get_query_params().get('ErrorMessage')
@@ -35,12 +43,6 @@ class UpdateSqlServerRestoreRequest(RpcRequest):
 	def set_VaultId(self,VaultId):
 		self.add_query_param('VaultId',VaultId)
 
-	def get_Percentage(self):
-		return self.get_query_params().get('Percentage')
-
-	def set_Percentage(self,Percentage):
-		self.add_query_param('Percentage',Percentage)
-
 	def get_RestoreId(self):
 		return self.get_query_params().get('RestoreId')
 
@@ -53,17 +55,23 @@ class UpdateSqlServerRestoreRequest(RpcRequest):
 	def set_ClusterId(self,ClusterId):
 		self.add_query_param('ClusterId',ClusterId)
 
-	def get_BytesTotal(self):
-		return self.get_query_params().get('BytesTotal')
-
-	def set_BytesTotal(self,BytesTotal):
-		self.add_query_param('BytesTotal',BytesTotal)
-
 	def get_Token(self):
 		return self.get_query_params().get('Token')
 
 	def set_Token(self,Token):
 		self.add_query_param('Token',Token)
+
+	def get_Percentage(self):
+		return self.get_query_params().get('Percentage')
+
+	def set_Percentage(self,Percentage):
+		self.add_query_param('Percentage',Percentage)
+
+	def get_BytesTotal(self):
+		return self.get_query_params().get('BytesTotal')
+
+	def set_BytesTotal(self,BytesTotal):
+		self.add_query_param('BytesTotal',BytesTotal)
 
 	def get_Status(self):
 		return self.get_query_params().get('Status')

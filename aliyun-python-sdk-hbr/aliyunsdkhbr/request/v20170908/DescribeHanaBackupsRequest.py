@@ -18,11 +18,19 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkhbr.endpoint import endpoint_data
+
 class DescribeHanaBackupsRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'hbr', '2017-09-08', 'DescribeHanaBackups','hbr')
 		self.set_protocol_type('https')
+		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_RecoveryPointInTime(self):
 		return self.get_query_params().get('RecoveryPointInTime')
@@ -48,12 +56,6 @@ class DescribeHanaBackupsRequest(RpcRequest):
 	def set_IncludeLog(self,IncludeLog):
 		self.add_query_param('IncludeLog',IncludeLog)
 
-	def get_ClusterId(self):
-		return self.get_query_params().get('ClusterId')
-
-	def set_ClusterId(self,ClusterId):
-		self.add_query_param('ClusterId',ClusterId)
-
 	def get_Source(self):
 		return self.get_query_params().get('Source')
 
@@ -65,12 +67,6 @@ class DescribeHanaBackupsRequest(RpcRequest):
 
 	def set_PageNumber(self,PageNumber):
 		self.add_query_param('PageNumber',PageNumber)
-
-	def get_Token(self):
-		return self.get_query_params().get('Token')
-
-	def set_Token(self,Token):
-		self.add_query_param('Token',Token)
 
 	def get_Mode(self):
 		return self.get_query_params().get('Mode')
@@ -84,6 +80,24 @@ class DescribeHanaBackupsRequest(RpcRequest):
 	def set_IncludeIncremental(self,IncludeIncremental):
 		self.add_query_param('IncludeIncremental',IncludeIncremental)
 
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
+
+	def get_ClusterId(self):
+		return self.get_query_params().get('ClusterId')
+
+	def set_ClusterId(self,ClusterId):
+		self.add_query_param('ClusterId',ClusterId)
+
+	def get_Token(self):
+		return self.get_query_params().get('Token')
+
+	def set_Token(self,Token):
+		self.add_query_param('Token',Token)
+
 	def get_UseBackint(self):
 		return self.get_query_params().get('UseBackint')
 
@@ -95,12 +109,6 @@ class DescribeHanaBackupsRequest(RpcRequest):
 
 	def set_DatabaseName(self,DatabaseName):
 		self.add_query_param('DatabaseName',DatabaseName)
-
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
 
 	def get_VolumeId(self):
 		return self.get_query_params().get('VolumeId')

@@ -18,29 +18,25 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkhbr.endpoint import endpoint_data
+
 class UpdateHanaAlertConfigRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'hbr', '2017-09-08', 'UpdateHanaAlertConfig','hbr')
 		self.set_protocol_type('https')
+		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_AlertSetting(self):
-		return self.get_query_params().get('AlertSetting')
-
-	def set_AlertSetting(self,AlertSetting):
-		self.add_query_param('AlertSetting',AlertSetting)
 
 	def get_VaultId(self):
 		return self.get_query_params().get('VaultId')
 
 	def set_VaultId(self,VaultId):
 		self.add_query_param('VaultId',VaultId)
-
-	def get_ContactGroupIds(self):
-		return self.get_query_params().get('ContactGroupIds')
-
-	def set_ContactGroupIds(self,ContactGroupIds):
-		self.add_query_param('ContactGroupIds',ContactGroupIds)
 
 	def get_ClusterId(self):
 		return self.get_query_params().get('ClusterId')
@@ -59,3 +55,15 @@ class UpdateHanaAlertConfigRequest(RpcRequest):
 
 	def set_Token(self,Token):
 		self.add_query_param('Token',Token)
+
+	def get_AlertSetting(self):
+		return self.get_query_params().get('AlertSetting')
+
+	def set_AlertSetting(self,AlertSetting):
+		self.add_query_param('AlertSetting',AlertSetting)
+
+	def get_ContactGroupIds(self):
+		return self.get_query_params().get('ContactGroupIds')
+
+	def set_ContactGroupIds(self,ContactGroupIds):
+		self.add_query_param('ContactGroupIds',ContactGroupIds)

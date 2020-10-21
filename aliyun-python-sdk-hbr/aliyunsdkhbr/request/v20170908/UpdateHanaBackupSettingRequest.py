@@ -18,11 +18,19 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkhbr.endpoint import endpoint_data
+
 class UpdateHanaBackupSettingRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'hbr', '2017-09-08', 'UpdateHanaBackupSetting','hbr')
 		self.set_protocol_type('https')
+		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_LogBackupParameterFile(self):
 		return self.get_query_params().get('LogBackupParameterFile')
@@ -36,29 +44,11 @@ class UpdateHanaBackupSettingRequest(RpcRequest):
 	def set_VaultId(self,VaultId):
 		self.add_query_param('VaultId',VaultId)
 
-	def get_LogBackupUsingBackint(self):
-		return self.get_query_params().get('LogBackupUsingBackint')
-
-	def set_LogBackupUsingBackint(self,LogBackupUsingBackint):
-		self.add_query_param('LogBackupUsingBackint',LogBackupUsingBackint)
-
 	def get_LogBackupTimeout(self):
 		return self.get_query_params().get('LogBackupTimeout')
 
 	def set_LogBackupTimeout(self,LogBackupTimeout):
 		self.add_query_param('LogBackupTimeout',LogBackupTimeout)
-
-	def get_CatalogBackupUsingBackint(self):
-		return self.get_query_params().get('CatalogBackupUsingBackint')
-
-	def set_CatalogBackupUsingBackint(self,CatalogBackupUsingBackint):
-		self.add_query_param('CatalogBackupUsingBackint',CatalogBackupUsingBackint)
-
-	def get_DatabaseName(self):
-		return self.get_query_params().get('DatabaseName')
-
-	def set_DatabaseName(self,DatabaseName):
-		self.add_query_param('DatabaseName',DatabaseName)
 
 	def get_DataBackupParameterFile(self):
 		return self.get_query_params().get('DataBackupParameterFile')
@@ -83,6 +73,24 @@ class UpdateHanaBackupSettingRequest(RpcRequest):
 
 	def set_Token(self,Token):
 		self.add_query_param('Token',Token)
+
+	def get_LogBackupUsingBackint(self):
+		return self.get_query_params().get('LogBackupUsingBackint')
+
+	def set_LogBackupUsingBackint(self,LogBackupUsingBackint):
+		self.add_query_param('LogBackupUsingBackint',LogBackupUsingBackint)
+
+	def get_CatalogBackupUsingBackint(self):
+		return self.get_query_params().get('CatalogBackupUsingBackint')
+
+	def set_CatalogBackupUsingBackint(self,CatalogBackupUsingBackint):
+		self.add_query_param('CatalogBackupUsingBackint',CatalogBackupUsingBackint)
+
+	def get_DatabaseName(self):
+		return self.get_query_params().get('DatabaseName')
+
+	def set_DatabaseName(self,DatabaseName):
+		self.add_query_param('DatabaseName',DatabaseName)
 
 	def get_CatalogBackupParameterFile(self):
 		return self.get_query_params().get('CatalogBackupParameterFile')

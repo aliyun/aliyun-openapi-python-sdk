@@ -18,29 +18,25 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkhbr.endpoint import endpoint_data
+
 class DescribeJobsRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'hbr', '2017-09-08', 'DescribeJobs','hbr')
 		self.set_protocol_type('https')
+		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_JobId(self):
-		return self.get_query_params().get('JobId')
-
-	def set_JobId(self,JobId):
-		self.add_query_param('JobId',JobId)
 
 	def get_ClientId(self):
 		return self.get_query_params().get('ClientId')
 
 	def set_ClientId(self,ClientId):
 		self.add_query_param('ClientId',ClientId)
-
-	def get_PolicyId(self):
-		return self.get_query_params().get('PolicyId')
-
-	def set_PolicyId(self,PolicyId):
-		self.add_query_param('PolicyId',PolicyId)
 
 	def get_VaultId(self):
 		return self.get_query_params().get('VaultId')
@@ -54,29 +50,35 @@ class DescribeJobsRequest(RpcRequest):
 	def set_JobStatus(self,JobStatus):
 		self.add_query_param('JobStatus',JobStatus)
 
+	def get_PageNumber(self):
+		return self.get_query_params().get('PageNumber')
+
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)
+
+	def get_JobId(self):
+		return self.get_query_params().get('JobId')
+
+	def set_JobId(self,JobId):
+		self.add_query_param('JobId',JobId)
+
+	def get_PolicyId(self):
+		return self.get_query_params().get('PolicyId')
+
+	def set_PolicyId(self,PolicyId):
+		self.add_query_param('PolicyId',PolicyId)
+
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
 
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
 
-	def get_UserAccountId(self):
-		return self.get_query_params().get('UserAccountId')
-
-	def set_UserAccountId(self,UserAccountId):
-		self.add_query_param('UserAccountId',UserAccountId)
-
 	def get_JobType(self):
 		return self.get_query_params().get('JobType')
 
 	def set_JobType(self,JobType):
 		self.add_query_param('JobType',JobType)
-
-	def get_PageNumber(self):
-		return self.get_query_params().get('PageNumber')
-
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
 
 	def get_Token(self):
 		return self.get_query_params().get('Token')

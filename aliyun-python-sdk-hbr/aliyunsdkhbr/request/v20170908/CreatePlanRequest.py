@@ -18,11 +18,19 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkhbr.endpoint import endpoint_data
+
 class CreatePlanRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'hbr', '2017-09-08', 'CreatePlan','hbr')
 		self.set_protocol_type('https')
+		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_DiffPolicyId(self):
 		return self.get_query_params().get('DiffPolicyId')
@@ -66,18 +74,6 @@ class CreatePlanRequest(RpcRequest):
 	def set_Source(self,Source):
 		self.add_query_param('Source',Source)
 
-	def get_ServerId(self):
-		return self.get_query_params().get('ServerId')
-
-	def set_ServerId(self,ServerId):
-		self.add_query_param('ServerId',ServerId)
-
-	def get_Token(self):
-		return self.get_query_params().get('Token')
-
-	def set_Token(self,Token):
-		self.add_query_param('Token',Token)
-
 	def get_PlanName(self):
 		return self.get_query_params().get('PlanName')
 
@@ -101,3 +97,15 @@ class CreatePlanRequest(RpcRequest):
 
 	def set_Retention(self,Retention):
 		self.add_query_param('Retention',Retention)
+
+	def get_ServerId(self):
+		return self.get_query_params().get('ServerId')
+
+	def set_ServerId(self,ServerId):
+		self.add_query_param('ServerId',ServerId)
+
+	def get_Token(self):
+		return self.get_query_params().get('Token')
+
+	def set_Token(self,Token):
+		self.add_query_param('Token',Token)

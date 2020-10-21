@@ -18,23 +18,19 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkhbr.endpoint import endpoint_data
+
 class UpdateHanaRestoreRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'hbr', '2017-09-08', 'UpdateHanaRestore','hbr')
 		self.set_protocol_type('https')
+		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_Phase(self):
-		return self.get_query_params().get('Phase')
-
-	def set_Phase(self,Phase):
-		self.add_query_param('Phase',Phase)
-
-	def get_UtcReachedTime(self):
-		return self.get_query_params().get('UtcReachedTime')
-
-	def set_UtcReachedTime(self,UtcReachedTime):
-		self.add_query_param('UtcReachedTime',UtcReachedTime)
 
 	def get_SysEndTime(self):
 		return self.get_query_params().get('SysEndTime')
@@ -53,6 +49,54 @@ class UpdateHanaRestoreRequest(RpcRequest):
 
 	def set_SysStartTime(self,SysStartTime):
 		self.add_query_param('SysStartTime',SysStartTime)
+
+	def get_DatabaseRestoreId(self):
+		return self.get_query_params().get('DatabaseRestoreId')
+
+	def set_DatabaseRestoreId(self,DatabaseRestoreId):
+		self.add_query_param('DatabaseRestoreId',DatabaseRestoreId)
+
+	def get_MaxProgress(self):
+		return self.get_query_params().get('MaxProgress')
+
+	def set_MaxProgress(self,MaxProgress):
+		self.add_query_param('MaxProgress',MaxProgress)
+
+	def get_CurrentPhase(self):
+		return self.get_query_params().get('CurrentPhase')
+
+	def set_CurrentPhase(self,CurrentPhase):
+		self.add_query_param('CurrentPhase',CurrentPhase)
+
+	def get_UtcStartTime(self):
+		return self.get_query_params().get('UtcStartTime')
+
+	def set_UtcStartTime(self,UtcStartTime):
+		self.add_query_param('UtcStartTime',UtcStartTime)
+
+	def get_ServiceName(self):
+		return self.get_query_params().get('ServiceName')
+
+	def set_ServiceName(self,ServiceName):
+		self.add_query_param('ServiceName',ServiceName)
+
+	def get_State(self):
+		return self.get_query_params().get('State')
+
+	def set_State(self,State):
+		self.add_query_param('State',State)
+
+	def get_Phase(self):
+		return self.get_query_params().get('Phase')
+
+	def set_Phase(self,Phase):
+		self.add_query_param('Phase',Phase)
+
+	def get_UtcReachedTime(self):
+		return self.get_query_params().get('UtcReachedTime')
+
+	def set_UtcReachedTime(self,UtcReachedTime):
+		self.add_query_param('UtcReachedTime',UtcReachedTime)
 
 	def get_RestoreId(self):
 		return self.get_query_params().get('RestoreId')
@@ -78,18 +122,6 @@ class UpdateHanaRestoreRequest(RpcRequest):
 	def set_Message(self,Message):
 		self.add_query_param('Message',Message)
 
-	def get_DatabaseRestoreId(self):
-		return self.get_query_params().get('DatabaseRestoreId')
-
-	def set_DatabaseRestoreId(self,DatabaseRestoreId):
-		self.add_query_param('DatabaseRestoreId',DatabaseRestoreId)
-
-	def get_MaxProgress(self):
-		return self.get_query_params().get('MaxProgress')
-
-	def set_MaxProgress(self,MaxProgress):
-		self.add_query_param('MaxProgress',MaxProgress)
-
 	def get_CurrentProgress(self):
 		return self.get_query_params().get('CurrentProgress')
 
@@ -107,30 +139,6 @@ class UpdateHanaRestoreRequest(RpcRequest):
 
 	def set_Token(self,Token):
 		self.add_query_param('Token',Token)
-
-	def get_CurrentPhase(self):
-		return self.get_query_params().get('CurrentPhase')
-
-	def set_CurrentPhase(self,CurrentPhase):
-		self.add_query_param('CurrentPhase',CurrentPhase)
-
-	def get_UtcStartTime(self):
-		return self.get_query_params().get('UtcStartTime')
-
-	def set_UtcStartTime(self,UtcStartTime):
-		self.add_query_param('UtcStartTime',UtcStartTime)
-
-	def get_ServiceName(self):
-		return self.get_query_params().get('ServiceName')
-
-	def set_ServiceName(self,ServiceName):
-		self.add_query_param('ServiceName',ServiceName)
-
-	def get_State(self):
-		return self.get_query_params().get('State')
-
-	def set_State(self,State):
-		self.add_query_param('State',State)
 
 	def get_SysReachedTime(self):
 		return self.get_query_params().get('SysReachedTime')

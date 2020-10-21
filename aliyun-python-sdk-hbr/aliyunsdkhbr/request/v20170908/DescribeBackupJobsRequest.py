@@ -18,29 +18,25 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkhbr.endpoint import endpoint_data
+
 class DescribeBackupJobsRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'hbr', '2017-09-08', 'DescribeBackupJobs','hbr')
 		self.set_protocol_type('https')
+		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_VaultRegionId(self):
-		return self.get_query_params().get('VaultRegionId')
-
-	def set_VaultRegionId(self,VaultRegionId):
-		self.add_query_param('VaultRegionId',VaultRegionId)
 
 	def get_VaultId(self):
 		return self.get_query_params().get('VaultId')
 
 	def set_VaultId(self,VaultId):
 		self.add_query_param('VaultId',VaultId)
-
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
 
 	def get_JobType(self):
 		return self.get_query_params().get('JobType')
@@ -59,3 +55,15 @@ class DescribeBackupJobsRequest(RpcRequest):
 
 	def set_Token(self,Token):
 		self.add_query_param('Token',Token)
+
+	def get_VaultRegionId(self):
+		return self.get_query_params().get('VaultRegionId')
+
+	def set_VaultRegionId(self,VaultRegionId):
+		self.add_query_param('VaultRegionId',VaultRegionId)
+
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)

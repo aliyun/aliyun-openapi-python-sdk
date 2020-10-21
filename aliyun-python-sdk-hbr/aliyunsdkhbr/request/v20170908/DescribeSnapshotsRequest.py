@@ -18,11 +18,19 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkhbr.endpoint import endpoint_data
+
 class DescribeSnapshotsRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'hbr', '2017-09-08', 'DescribeSnapshots','hbr')
 		self.set_protocol_type('https')
+		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_ClientId(self):
 		return self.get_query_params().get('ClientId')
@@ -48,12 +56,6 @@ class DescribeSnapshotsRequest(RpcRequest):
 	def set_VaultId(self,VaultId):
 		self.add_query_param('VaultId',VaultId)
 
-	def get_UserAccountId(self):
-		return self.get_query_params().get('UserAccountId')
-
-	def set_UserAccountId(self,UserAccountId):
-		self.add_query_param('UserAccountId',UserAccountId)
-
 	def get_Source(self):
 		return self.get_query_params().get('Source')
 
@@ -72,29 +74,35 @@ class DescribeSnapshotsRequest(RpcRequest):
 	def set_ContainerSnapshotId(self,ContainerSnapshotId):
 		self.add_query_param('ContainerSnapshotId',ContainerSnapshotId)
 
-	def get_ServerId(self):
-		return self.get_query_params().get('ServerId')
-
-	def set_ServerId(self,ServerId):
-		self.add_query_param('ServerId',ServerId)
-
 	def get_PageNumber(self):
 		return self.get_query_params().get('PageNumber')
 
 	def set_PageNumber(self,PageNumber):
 		self.add_query_param('PageNumber',PageNumber)
 
-	def get_Token(self):
-		return self.get_query_params().get('Token')
-
-	def set_Token(self,Token):
-		self.add_query_param('Token',Token)
-
 	def get_JobId(self):
 		return self.get_query_params().get('JobId')
 
 	def set_JobId(self,JobId):
 		self.add_query_param('JobId',JobId)
+
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
+
+	def get_ServerId(self):
+		return self.get_query_params().get('ServerId')
+
+	def set_ServerId(self,ServerId):
+		self.add_query_param('ServerId',ServerId)
+
+	def get_Token(self):
+		return self.get_query_params().get('Token')
+
+	def set_Token(self,Token):
+		self.add_query_param('Token',Token)
 
 	def get_CompleteTimeBefore(self):
 		return self.get_query_params().get('CompleteTimeBefore')
@@ -113,12 +121,6 @@ class DescribeSnapshotsRequest(RpcRequest):
 
 	def set_CompleteTimeAfter(self,CompleteTimeAfter):
 		self.add_query_param('CompleteTimeAfter',CompleteTimeAfter)
-
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
 
 	def get_PlanId(self):
 		return self.get_query_params().get('PlanId')

@@ -18,17 +18,19 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkhbr.endpoint import endpoint_data
+
 class CreatePolicyRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'hbr', '2017-09-08', 'CreatePolicy','hbr')
 		self.set_protocol_type('https')
+		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_Schedule(self):
-		return self.get_query_params().get('Schedule')
-
-	def set_Schedule(self,Schedule):
-		self.add_query_param('Schedule',Schedule)
 
 	def get_ClientId(self):
 		return self.get_query_params().get('ClientId')
@@ -42,29 +44,35 @@ class CreatePolicyRequest(RpcRequest):
 	def set_VaultId(self,VaultId):
 		self.add_query_param('VaultId',VaultId)
 
-	def get_PolicyName(self):
-		return self.get_query_params().get('PolicyName')
-
-	def set_PolicyName(self,PolicyName):
-		self.add_query_param('PolicyName',PolicyName)
-
 	def get_Source(self):
 		return self.get_query_params().get('Source')
 
 	def set_Source(self,Source):
 		self.add_query_param('Source',Source)
 
-	def get_Retention(self):
-		return self.get_query_params().get('Retention')
-
-	def set_Retention(self,Retention):
-		self.add_query_param('Retention',Retention)
-
 	def get_Token(self):
 		return self.get_query_params().get('Token')
 
 	def set_Token(self,Token):
 		self.add_query_param('Token',Token)
+
+	def get_Schedule(self):
+		return self.get_query_params().get('Schedule')
+
+	def set_Schedule(self,Schedule):
+		self.add_query_param('Schedule',Schedule)
+
+	def get_PolicyName(self):
+		return self.get_query_params().get('PolicyName')
+
+	def set_PolicyName(self,PolicyName):
+		self.add_query_param('PolicyName',PolicyName)
+
+	def get_Retention(self):
+		return self.get_query_params().get('Retention')
+
+	def set_Retention(self,Retention):
+		self.add_query_param('Retention',Retention)
 
 	def get_Status(self):
 		return self.get_query_params().get('Status')

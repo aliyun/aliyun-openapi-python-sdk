@@ -18,11 +18,25 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkhbr.endpoint import endpoint_data
+
 class UpdateRestoreRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'hbr', '2017-09-08', 'UpdateRestore','hbr')
 		self.set_protocol_type('https')
+		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
+
+	def get_ErrorMessage(self):
+		return self.get_query_params().get('ErrorMessage')
+
+	def set_ErrorMessage(self,ErrorMessage):
+		self.add_query_param('ErrorMessage',ErrorMessage)
 
 	def get_ActualBytes(self):
 		return self.get_query_params().get('ActualBytes')
@@ -42,41 +56,17 @@ class UpdateRestoreRequest(RpcRequest):
 	def set_VaultId(self,VaultId):
 		self.add_query_param('VaultId',VaultId)
 
-	def get_RestoreId(self):
-		return self.get_query_params().get('RestoreId')
-
-	def set_RestoreId(self,RestoreId):
-		self.add_query_param('RestoreId',RestoreId)
-
-	def get_UserAccountId(self):
-		return self.get_query_params().get('UserAccountId')
-
-	def set_UserAccountId(self,UserAccountId):
-		self.add_query_param('UserAccountId',UserAccountId)
-
 	def get_ExitCode(self):
 		return self.get_query_params().get('ExitCode')
 
 	def set_ExitCode(self,ExitCode):
 		self.add_query_param('ExitCode',ExitCode)
 
-	def get_Token(self):
-		return self.get_query_params().get('Token')
-
-	def set_Token(self,Token):
-		self.add_query_param('Token',Token)
-
 	def get_Duration(self):
 		return self.get_query_params().get('Duration')
 
 	def set_Duration(self,Duration):
 		self.add_query_param('Duration',Duration)
-
-	def get_ItemsDone(self):
-		return self.get_query_params().get('ItemsDone')
-
-	def set_ItemsDone(self,ItemsDone):
-		self.add_query_param('ItemsDone',ItemsDone)
 
 	def get_ItemsTotal(self):
 		return self.get_query_params().get('ItemsTotal')
@@ -90,6 +80,36 @@ class UpdateRestoreRequest(RpcRequest):
 	def set_CompleteTime(self,CompleteTime):
 		self.add_query_param('CompleteTime',CompleteTime)
 
+	def get_BytesTotal(self):
+		return self.get_query_params().get('BytesTotal')
+
+	def set_BytesTotal(self,BytesTotal):
+		self.add_query_param('BytesTotal',BytesTotal)
+
+	def get_ErrorFile(self):
+		return self.get_query_params().get('ErrorFile')
+
+	def set_ErrorFile(self,ErrorFile):
+		self.add_query_param('ErrorFile',ErrorFile)
+
+	def get_RestoreId(self):
+		return self.get_query_params().get('RestoreId')
+
+	def set_RestoreId(self,RestoreId):
+		self.add_query_param('RestoreId',RestoreId)
+
+	def get_Token(self):
+		return self.get_query_params().get('Token')
+
+	def set_Token(self,Token):
+		self.add_query_param('Token',Token)
+
+	def get_ItemsDone(self):
+		return self.get_query_params().get('ItemsDone')
+
+	def set_ItemsDone(self,ItemsDone):
+		self.add_query_param('ItemsDone',ItemsDone)
+
 	def get_ErrorCount(self):
 		return self.get_query_params().get('ErrorCount')
 
@@ -101,12 +121,6 @@ class UpdateRestoreRequest(RpcRequest):
 
 	def set_BytesDone(self,BytesDone):
 		self.add_query_param('BytesDone',BytesDone)
-
-	def get_BytesTotal(self):
-		return self.get_query_params().get('BytesTotal')
-
-	def set_BytesTotal(self,BytesTotal):
-		self.add_query_param('BytesTotal',BytesTotal)
 
 	def get_Status(self):
 		return self.get_query_params().get('Status')

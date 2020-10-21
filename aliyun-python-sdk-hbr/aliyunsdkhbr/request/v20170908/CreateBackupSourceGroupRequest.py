@@ -18,25 +18,44 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkhbr.endpoint import endpoint_data
+
 class CreateBackupSourceGroupRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'hbr', '2017-09-08', 'CreateBackupSourceGroup','hbr')
+		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_BackupSources(self):
-		return self.get_query_params().get('BackupSources')
+		return self.get_query_params().get('BackupSource')
 
-	def set_BackupSources(self,BackupSources):
-		for i in range(len(BackupSources)):	
-			if BackupSources[i].get('BackupSourceId') is not None:
-				self.add_query_param('BackupSource.' + str(i + 1) + '.BackupSourceId' , BackupSources[i].get('BackupSourceId'))
-			if BackupSources[i].get('DatabaseName') is not None:
-				self.add_query_param('BackupSource.' + str(i + 1) + '.DatabaseName' , BackupSources[i].get('DatabaseName'))
-			if BackupSources[i].get('Description') is not None:
-				self.add_query_param('BackupSource.' + str(i + 1) + '.Description' , BackupSources[i].get('Description'))
-			if BackupSources[i].get('ClusterId') is not None:
-				self.add_query_param('BackupSource.' + str(i + 1) + '.ClusterId' , BackupSources[i].get('ClusterId'))
+	def set_BackupSources(self, BackupSources):
+		for depth1 in range(len(BackupSources)):
+			if BackupSources[depth1].get('BackupSourceId') is not None:
+				self.add_query_param('BackupSource.' + str(depth1 + 1) + '.BackupSourceId', BackupSources[depth1].get('BackupSourceId'))
+			if BackupSources[depth1].get('DatabaseName') is not None:
+				self.add_query_param('BackupSource.' + str(depth1 + 1) + '.DatabaseName', BackupSources[depth1].get('DatabaseName'))
+			if BackupSources[depth1].get('Description') is not None:
+				self.add_query_param('BackupSource.' + str(depth1 + 1) + '.Description', BackupSources[depth1].get('Description'))
+			if BackupSources[depth1].get('ClusterId') is not None:
+				self.add_query_param('BackupSource.' + str(depth1 + 1) + '.ClusterId', BackupSources[depth1].get('ClusterId'))
 
+	def get_Description(self):
+		return self.get_query_params().get('Description')
+
+	def set_Description(self,Description):
+		self.add_query_param('Description',Description)
+
+	def get_ClusterId(self):
+		return self.get_query_params().get('ClusterId')
+
+	def set_ClusterId(self,ClusterId):
+		self.add_query_param('ClusterId',ClusterId)
 
 	def get_ImplicitlyCreateBackupSources(self):
 		return self.get_query_params().get('ImplicitlyCreateBackupSources')
@@ -45,30 +64,18 @@ class CreateBackupSourceGroupRequest(RpcRequest):
 		self.add_query_param('ImplicitlyCreateBackupSources',ImplicitlyCreateBackupSources)
 
 	def get_BackupSourceIds(self):
-		return self.get_query_params().get('BackupSourceIds')
+		return self.get_query_params().get('BackupSourceId')
 
-	def set_BackupSourceIds(self,BackupSourceIds):
-		for i in range(len(BackupSourceIds)):	
-			if BackupSourceIds[i] is not None:
-				self.add_query_param('BackupSourceId.' + str(i + 1) , BackupSourceIds[i]);
-
-	def get_Description(self):
-		return self.get_query_params().get('Description')
-
-	def set_Description(self,Description):
-		self.add_query_param('Description',Description)
+	def set_BackupSourceIds(self, BackupSourceIds):
+		for depth1 in range(len(BackupSourceIds)):
+			if BackupSourceIds[depth1] is not None:
+				self.add_query_param('BackupSourceId.' + str(depth1 + 1) , BackupSourceIds[depth1])
 
 	def get_SourceType(self):
 		return self.get_query_params().get('SourceType')
 
 	def set_SourceType(self,SourceType):
 		self.add_query_param('SourceType',SourceType)
-
-	def get_ClusterId(self):
-		return self.get_query_params().get('ClusterId')
-
-	def set_ClusterId(self,ClusterId):
-		self.add_query_param('ClusterId',ClusterId)
 
 	def get_BackupSourceGroupId(self):
 		return self.get_query_params().get('BackupSourceGroupId')

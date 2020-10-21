@@ -18,10 +18,18 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkhbr.endpoint import endpoint_data
+
 class UpdateBackupJobRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'hbr', '2017-09-08', 'UpdateBackupJob','hbr')
+		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_ErrorMessage(self):
 		return self.get_query_params().get('ErrorMessage')
@@ -29,29 +37,29 @@ class UpdateBackupJobRequest(RpcRequest):
 	def set_ErrorMessage(self,ErrorMessage):
 		self.add_query_param('ErrorMessage',ErrorMessage)
 
-	def get_JobId(self):
-		return self.get_query_params().get('JobId')
-
-	def set_JobId(self,JobId):
-		self.add_query_param('JobId',JobId)
-
 	def get_ExpireTime(self):
 		return self.get_query_params().get('ExpireTime')
 
 	def set_ExpireTime(self,ExpireTime):
 		self.add_query_param('ExpireTime',ExpireTime)
 
+	def get_Token(self):
+		return self.get_query_params().get('Token')
+
+	def set_Token(self,Token):
+		self.add_query_param('Token',Token)
+
+	def get_JobId(self):
+		return self.get_query_params().get('JobId')
+
+	def set_JobId(self,JobId):
+		self.add_query_param('JobId',JobId)
+
 	def get_Progress(self):
 		return self.get_query_params().get('Progress')
 
 	def set_Progress(self,Progress):
 		self.add_query_param('Progress',Progress)
-
-	def get_UserAccountId(self):
-		return self.get_query_params().get('UserAccountId')
-
-	def set_UserAccountId(self,UserAccountId):
-		self.add_query_param('UserAccountId',UserAccountId)
 
 	def get_BytesDone(self):
 		return self.get_query_params().get('BytesDone')
@@ -70,9 +78,3 @@ class UpdateBackupJobRequest(RpcRequest):
 
 	def set_Status(self,Status):
 		self.add_query_param('Status',Status)
-
-	def get_Token(self):
-		return self.get_query_params().get('Token')
-
-	def set_Token(self,Token):
-		self.add_query_param('Token',Token)

@@ -18,11 +18,19 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkhbr.endpoint import endpoint_data
+
 class UpdateJobRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'hbr', '2017-09-08', 'UpdateJob','hbr')
 		self.set_protocol_type('https')
+		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_CurrentSnapshotId(self):
 		return self.get_query_params().get('CurrentSnapshotId')
@@ -48,23 +56,11 @@ class UpdateJobRequest(RpcRequest):
 	def set_JobStatus(self,JobStatus):
 		self.add_query_param('JobStatus',JobStatus)
 
-	def get_UserAccountId(self):
-		return self.get_query_params().get('UserAccountId')
-
-	def set_UserAccountId(self,UserAccountId):
-		self.add_query_param('UserAccountId',UserAccountId)
-
 	def get_Source(self):
 		return self.get_query_params().get('Source')
 
 	def set_Source(self,Source):
 		self.add_query_param('Source',Source)
-
-	def get_Token(self):
-		return self.get_query_params().get('Token')
-
-	def set_Token(self,Token):
-		self.add_query_param('Token',Token)
 
 	def get_JobId(self):
 		return self.get_query_params().get('JobId')
@@ -72,29 +68,23 @@ class UpdateJobRequest(RpcRequest):
 	def set_JobId(self,JobId):
 		self.add_query_param('JobId',JobId)
 
-	def get_Schedule(self):
-		return self.get_query_params().get('Schedule')
-
-	def set_Schedule(self,Schedule):
-		self.add_query_param('Schedule',Schedule)
-
 	def get_PolicyId(self):
 		return self.get_query_params().get('PolicyId')
 
 	def set_PolicyId(self,PolicyId):
 		self.add_query_param('PolicyId',PolicyId)
 
-	def get_LastSnapshotId(self):
-		return self.get_query_params().get('LastSnapshotId')
-
-	def set_LastSnapshotId(self,LastSnapshotId):
-		self.add_query_param('LastSnapshotId',LastSnapshotId)
-
 	def get_JobOption(self):
 		return self.get_query_params().get('JobOption')
 
 	def set_JobOption(self,JobOption):
 		self.add_query_param('JobOption',JobOption)
+
+	def get_Exclude(self):
+		return self.get_body_params().get('Exclude')
+
+	def set_Exclude(self,Exclude):
+		self.add_body_params('Exclude', Exclude)
 
 	def get_JobName(self):
 		return self.get_query_params().get('JobName')
@@ -107,3 +97,27 @@ class UpdateJobRequest(RpcRequest):
 
 	def set_Retention(self,Retention):
 		self.add_query_param('Retention',Retention)
+
+	def get_Include(self):
+		return self.get_body_params().get('Include')
+
+	def set_Include(self,Include):
+		self.add_body_params('Include', Include)
+
+	def get_Token(self):
+		return self.get_query_params().get('Token')
+
+	def set_Token(self,Token):
+		self.add_query_param('Token',Token)
+
+	def get_Schedule(self):
+		return self.get_query_params().get('Schedule')
+
+	def set_Schedule(self,Schedule):
+		self.add_query_param('Schedule',Schedule)
+
+	def get_LastSnapshotId(self):
+		return self.get_query_params().get('LastSnapshotId')
+
+	def set_LastSnapshotId(self,LastSnapshotId):
+		self.add_query_param('LastSnapshotId',LastSnapshotId)

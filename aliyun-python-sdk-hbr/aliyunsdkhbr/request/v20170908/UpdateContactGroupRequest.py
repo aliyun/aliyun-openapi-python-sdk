@@ -18,23 +18,25 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkhbr.endpoint import endpoint_data
+
 class UpdateContactGroupRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'hbr', '2017-09-08', 'UpdateContactGroup','hbr')
 		self.set_protocol_type('https')
+		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_ContactGroupId(self):
 		return self.get_query_params().get('ContactGroupId')
 
 	def set_ContactGroupId(self,ContactGroupId):
 		self.add_query_param('ContactGroupId',ContactGroupId)
-
-	def get_DisplayName(self):
-		return self.get_query_params().get('DisplayName')
-
-	def set_DisplayName(self,DisplayName):
-		self.add_query_param('DisplayName',DisplayName)
 
 	def get_ContactIds(self):
 		return self.get_query_params().get('ContactIds')
@@ -47,3 +49,9 @@ class UpdateContactGroupRequest(RpcRequest):
 
 	def set_Token(self,Token):
 		self.add_query_param('Token',Token)
+
+	def get_DisplayName(self):
+		return self.get_query_params().get('DisplayName')
+
+	def set_DisplayName(self,DisplayName):
+		self.add_query_param('DisplayName',DisplayName)

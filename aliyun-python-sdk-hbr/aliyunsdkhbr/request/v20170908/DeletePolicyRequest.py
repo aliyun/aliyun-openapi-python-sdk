@@ -18,23 +18,25 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkhbr.endpoint import endpoint_data
+
 class DeletePolicyRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'hbr', '2017-09-08', 'DeletePolicy','hbr')
 		self.set_protocol_type('https')
+		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_ClientId(self):
 		return self.get_query_params().get('ClientId')
 
 	def set_ClientId(self,ClientId):
 		self.add_query_param('ClientId',ClientId)
-
-	def get_PolicyId(self):
-		return self.get_query_params().get('PolicyId')
-
-	def set_PolicyId(self,PolicyId):
-		self.add_query_param('PolicyId',PolicyId)
 
 	def get_VaultId(self):
 		return self.get_query_params().get('VaultId')
@@ -47,3 +49,9 @@ class DeletePolicyRequest(RpcRequest):
 
 	def set_Token(self,Token):
 		self.add_query_param('Token',Token)
+
+	def get_PolicyId(self):
+		return self.get_query_params().get('PolicyId')
+
+	def set_PolicyId(self,PolicyId):
+		self.add_query_param('PolicyId',PolicyId)

@@ -18,11 +18,19 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkhbr.endpoint import endpoint_data
+
 class DescribeClientVersionRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'hbr', '2017-09-08', 'DescribeClientVersion','hbr')
 		self.set_protocol_type('https')
+		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_ClientType(self):
 		return self.get_query_params().get('ClientType')
@@ -36,20 +44,14 @@ class DescribeClientVersionRequest(RpcRequest):
 	def set_CurrentVersion(self,CurrentVersion):
 		self.add_query_param('CurrentVersion',CurrentVersion)
 
-	def get_PlatformType(self):
-		return self.get_query_params().get('PlatformType')
-
-	def set_PlatformType(self,PlatformType):
-		self.add_query_param('PlatformType',PlatformType)
-
-	def get_UserAccountId(self):
-		return self.get_query_params().get('UserAccountId')
-
-	def set_UserAccountId(self,UserAccountId):
-		self.add_query_param('UserAccountId',UserAccountId)
-
 	def get_Token(self):
 		return self.get_query_params().get('Token')
 
 	def set_Token(self,Token):
 		self.add_query_param('Token',Token)
+
+	def get_PlatformType(self):
+		return self.get_query_params().get('PlatformType')
+
+	def set_PlatformType(self,PlatformType):
+		self.add_query_param('PlatformType',PlatformType)

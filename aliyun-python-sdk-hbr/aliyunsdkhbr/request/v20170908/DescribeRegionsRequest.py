@@ -18,14 +18,21 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkhbr.endpoint import endpoint_data
+
 class DescribeRegionsRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'hbr', '2017-09-08', 'DescribeRegions','hbr')
-		self.set_protocol_type('https')
+		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_Token(self):
-		return self.get_query_params().get('Token')
 
-	def set_Token(self,Token):
-		self.add_query_param('Token',Token)
+	def get_NeedVaultCount(self):
+		return self.get_query_params().get('NeedVaultCount')
+
+	def set_NeedVaultCount(self,NeedVaultCount):
+		self.add_query_param('NeedVaultCount',NeedVaultCount)

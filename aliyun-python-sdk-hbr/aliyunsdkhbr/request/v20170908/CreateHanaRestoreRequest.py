@@ -18,11 +18,18 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkhbr.endpoint import endpoint_data
+
 class CreateHanaRestoreRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'hbr', '2017-09-08', 'CreateHanaRestore','hbr')
-		self.set_protocol_type('https')
+		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_SidAdmin(self):
 		return self.get_query_params().get('SidAdmin')
@@ -48,23 +55,11 @@ class CreateHanaRestoreRequest(RpcRequest):
 	def set_VaultId(self,VaultId):
 		self.add_query_param('VaultId',VaultId)
 
-	def get_BackupId(self):
-		return self.get_query_params().get('BackupId')
-
-	def set_BackupId(self,BackupId):
-		self.add_query_param('BackupId',BackupId)
-
 	def get_LogPaths(self):
 		return self.get_query_params().get('LogPaths')
 
 	def set_LogPaths(self,LogPaths):
 		self.add_query_param('LogPaths',LogPaths)
-
-	def get_ClusterId(self):
-		return self.get_query_params().get('ClusterId')
-
-	def set_ClusterId(self,ClusterId):
-		self.add_query_param('ClusterId',ClusterId)
 
 	def get_Source(self):
 		return self.get_query_params().get('Source')
@@ -78,18 +73,6 @@ class CreateHanaRestoreRequest(RpcRequest):
 	def set_ClearLog(self,ClearLog):
 		self.add_query_param('ClearLog',ClearLog)
 
-	def get_ExtraOptions(self):
-		return self.get_query_params().get('ExtraOptions')
-
-	def set_ExtraOptions(self,ExtraOptions):
-		self.add_query_param('ExtraOptions',ExtraOptions)
-
-	def get_Token(self):
-		return self.get_query_params().get('Token')
-
-	def set_Token(self,Token):
-		self.add_query_param('Token',Token)
-
 	def get_Mode(self):
 		return self.get_query_params().get('Mode')
 
@@ -102,17 +85,41 @@ class CreateHanaRestoreRequest(RpcRequest):
 	def set_CheckAccess(self,CheckAccess):
 		self.add_query_param('CheckAccess',CheckAccess)
 
-	def get_UseDelta(self):
-		return self.get_query_params().get('UseDelta')
-
-	def set_UseDelta(self,UseDelta):
-		self.add_query_param('UseDelta',UseDelta)
-
 	def get_MasterClientId(self):
 		return self.get_query_params().get('MasterClientId')
 
 	def set_MasterClientId(self,MasterClientId):
 		self.add_query_param('MasterClientId',MasterClientId)
+
+	def get_BackupId(self):
+		return self.get_query_params().get('BackupId')
+
+	def set_BackupId(self,BackupId):
+		self.add_query_param('BackupId',BackupId)
+
+	def get_ClusterId(self):
+		return self.get_query_params().get('ClusterId')
+
+	def set_ClusterId(self,ClusterId):
+		self.add_query_param('ClusterId',ClusterId)
+
+	def get_ExtraOptions(self):
+		return self.get_query_params().get('ExtraOptions')
+
+	def set_ExtraOptions(self,ExtraOptions):
+		self.add_query_param('ExtraOptions',ExtraOptions)
+
+	def get_Token(self):
+		return self.get_query_params().get('Token')
+
+	def set_Token(self,Token):
+		self.add_query_param('Token',Token)
+
+	def get_UseDelta(self):
+		return self.get_query_params().get('UseDelta')
+
+	def set_UseDelta(self,UseDelta):
+		self.add_query_param('UseDelta',UseDelta)
 
 	def get_UseCatalog(self):
 		return self.get_query_params().get('UseCatalog')

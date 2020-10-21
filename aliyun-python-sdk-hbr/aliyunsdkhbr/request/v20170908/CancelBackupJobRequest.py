@@ -18,10 +18,24 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkhbr.endpoint import endpoint_data
+
 class CancelBackupJobRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'hbr', '2017-09-08', 'CancelBackupJob','hbr')
+		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
+
+	def get_VaultId(self):
+		return self.get_query_params().get('VaultId')
+
+	def set_VaultId(self,VaultId):
+		self.add_query_param('VaultId',VaultId)
 
 	def get_JobId(self):
 		return self.get_query_params().get('JobId')

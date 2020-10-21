@@ -18,29 +18,25 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkhbr.endpoint import endpoint_data
+
 class ActivateClientRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'hbr', '2017-09-08', 'ActivateClient','hbr')
 		self.set_protocol_type('https')
+		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_HostName(self):
-		return self.get_query_params().get('HostName')
-
-	def set_HostName(self,HostName):
-		self.add_query_param('HostName',HostName)
 
 	def get_ClientId(self):
 		return self.get_query_params().get('ClientId')
 
 	def set_ClientId(self,ClientId):
 		self.add_query_param('ClientId',ClientId)
-
-	def get_ExpireInSeconds(self):
-		return self.get_query_params().get('ExpireInSeconds')
-
-	def set_ExpireInSeconds(self,ExpireInSeconds):
-		self.add_query_param('ExpireInSeconds',ExpireInSeconds)
 
 	def get_ClientVersion(self):
 		return self.get_query_params().get('ClientVersion')
@@ -54,18 +50,6 @@ class ActivateClientRequest(RpcRequest):
 	def set_VaultId(self,VaultId):
 		self.add_query_param('VaultId',VaultId)
 
-	def get_PlatformType(self):
-		return self.get_query_params().get('PlatformType')
-
-	def set_PlatformType(self,PlatformType):
-		self.add_query_param('PlatformType',PlatformType)
-
-	def get_UserAccountId(self):
-		return self.get_query_params().get('UserAccountId')
-
-	def set_UserAccountId(self,UserAccountId):
-		self.add_query_param('UserAccountId',UserAccountId)
-
 	def get_NetworkType(self):
 		return self.get_query_params().get('NetworkType')
 
@@ -77,3 +61,21 @@ class ActivateClientRequest(RpcRequest):
 
 	def set_Token(self,Token):
 		self.add_query_param('Token',Token)
+
+	def get_HostName(self):
+		return self.get_query_params().get('HostName')
+
+	def set_HostName(self,HostName):
+		self.add_query_param('HostName',HostName)
+
+	def get_ExpireInSeconds(self):
+		return self.get_query_params().get('ExpireInSeconds')
+
+	def set_ExpireInSeconds(self,ExpireInSeconds):
+		self.add_query_param('ExpireInSeconds',ExpireInSeconds)
+
+	def get_PlatformType(self):
+		return self.get_query_params().get('PlatformType')
+
+	def set_PlatformType(self,PlatformType):
+		self.add_query_param('PlatformType',PlatformType)

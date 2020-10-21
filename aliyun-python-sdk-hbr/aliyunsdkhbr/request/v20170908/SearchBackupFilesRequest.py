@@ -18,11 +18,19 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkhbr.endpoint import endpoint_data
+
 class SearchBackupFilesRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'hbr', '2017-09-08', 'SearchBackupFiles','hbr')
 		self.set_protocol_type('https')
+		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_ClientId(self):
 		return self.get_query_params().get('ClientId')
@@ -36,23 +44,11 @@ class SearchBackupFilesRequest(RpcRequest):
 	def set_VaultId(self,VaultId):
 		self.add_query_param('VaultId',VaultId)
 
-	def get_NextToken(self):
-		return self.get_query_params().get('NextToken')
-
-	def set_NextToken(self,NextToken):
-		self.add_query_param('NextToken',NextToken)
-
 	def get_Query(self):
 		return self.get_query_params().get('Query')
 
 	def set_Query(self,Query):
 		self.add_query_param('Query',Query)
-
-	def get_Limit(self):
-		return self.get_query_params().get('Limit')
-
-	def set_Limit(self,Limit):
-		self.add_query_param('Limit',Limit)
 
 	def get_PageNumber(self):
 		return self.get_query_params().get('PageNumber')
@@ -65,3 +61,15 @@ class SearchBackupFilesRequest(RpcRequest):
 
 	def set_Token(self,Token):
 		self.add_query_param('Token',Token)
+
+	def get_NextToken(self):
+		return self.get_query_params().get('NextToken')
+
+	def set_NextToken(self,NextToken):
+		self.add_query_param('NextToken',NextToken)
+
+	def get_Limit(self):
+		return self.get_query_params().get('Limit')
+
+	def set_Limit(self,Limit):
+		self.add_query_param('Limit',Limit)

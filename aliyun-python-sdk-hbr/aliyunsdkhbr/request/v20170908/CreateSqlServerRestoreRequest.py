@@ -18,16 +18,18 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkhbr.endpoint import endpoint_data
+
 class CreateSqlServerRestoreRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'hbr', '2017-09-08', 'CreateSqlServerRestore','hbr')
+		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_TargetDatabaseName(self):
-		return self.get_query_params().get('TargetDatabaseName')
-
-	def set_TargetDatabaseName(self,TargetDatabaseName):
-		self.add_query_param('TargetDatabaseName',TargetDatabaseName)
 
 	def get_SnapshotId(self):
 		return self.get_query_params().get('SnapshotId')
@@ -40,6 +42,24 @@ class CreateSqlServerRestoreRequest(RpcRequest):
 
 	def set_VaultId(self,VaultId):
 		self.add_query_param('VaultId',VaultId)
+
+	def get_ClusterId(self):
+		return self.get_query_params().get('ClusterId')
+
+	def set_ClusterId(self,ClusterId):
+		self.add_query_param('ClusterId',ClusterId)
+
+	def get_Token(self):
+		return self.get_query_params().get('Token')
+
+	def set_Token(self,Token):
+		self.add_query_param('Token',Token)
+
+	def get_TargetDatabaseName(self):
+		return self.get_query_params().get('TargetDatabaseName')
+
+	def set_TargetDatabaseName(self,TargetDatabaseName):
+		self.add_query_param('TargetDatabaseName',TargetDatabaseName)
 
 	def get_FileDestination(self):
 		return self.get_query_params().get('FileDestination')
@@ -59,23 +79,11 @@ class CreateSqlServerRestoreRequest(RpcRequest):
 	def set_SourceClusterId(self,SourceClusterId):
 		self.add_query_param('SourceClusterId',SourceClusterId)
 
-	def get_ClusterId(self):
-		return self.get_query_params().get('ClusterId')
-
-	def set_ClusterId(self,ClusterId):
-		self.add_query_param('ClusterId',ClusterId)
-
 	def get_ReplaceDatabase(self):
 		return self.get_query_params().get('ReplaceDatabase')
 
 	def set_ReplaceDatabase(self,ReplaceDatabase):
 		self.add_query_param('ReplaceDatabase',ReplaceDatabase)
-
-	def get_Token(self):
-		return self.get_query_params().get('Token')
-
-	def set_Token(self,Token):
-		self.add_query_param('Token',Token)
 
 	def get_PointInTime(self):
 		return self.get_query_params().get('PointInTime')

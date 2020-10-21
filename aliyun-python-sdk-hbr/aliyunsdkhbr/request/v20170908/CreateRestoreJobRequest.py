@@ -18,22 +18,18 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkhbr.endpoint import endpoint_data
+
 class CreateRestoreJobRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'hbr', '2017-09-08', 'CreateRestoreJob','hbr')
+		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_RestoreType(self):
-		return self.get_query_params().get('RestoreType')
-
-	def set_RestoreType(self,RestoreType):
-		self.add_query_param('RestoreType',RestoreType)
-
-	def get_SnapshotHash(self):
-		return self.get_query_params().get('SnapshotHash')
-
-	def set_SnapshotHash(self,SnapshotHash):
-		self.add_query_param('SnapshotHash',SnapshotHash)
 
 	def get_TargetPrefix(self):
 		return self.get_query_params().get('TargetPrefix')
@@ -59,6 +55,18 @@ class CreateRestoreJobRequest(RpcRequest):
 	def set_VaultId(self,VaultId):
 		self.add_query_param('VaultId',VaultId)
 
+	def get_SnapshotHash(self):
+		return self.get_query_params().get('SnapshotHash')
+
+	def set_SnapshotHash(self,SnapshotHash):
+		self.add_query_param('SnapshotHash',SnapshotHash)
+
+	def get_TargetClientId(self):
+		return self.get_body_params().get('TargetClientId')
+
+	def set_TargetClientId(self,TargetClientId):
+		self.add_body_params('TargetClientId', TargetClientId)
+
 	def get_Options(self):
 		return self.get_query_params().get('Options')
 
@@ -71,6 +79,30 @@ class CreateRestoreJobRequest(RpcRequest):
 	def set_SourceType(self,SourceType):
 		self.add_query_param('SourceType',SourceType)
 
+	def get_TargetBucket(self):
+		return self.get_query_params().get('TargetBucket')
+
+	def set_TargetBucket(self,TargetBucket):
+		self.add_query_param('TargetBucket',TargetBucket)
+
+	def get_UdmDetail(self):
+		return self.get_query_params().get('UdmDetail')
+
+	def set_UdmDetail(self,UdmDetail):
+		self.add_query_param('UdmDetail',UdmDetail)
+
+	def get_RestoreType(self):
+		return self.get_query_params().get('RestoreType')
+
+	def set_RestoreType(self,RestoreType):
+		self.add_query_param('RestoreType',RestoreType)
+
+	def get_TargetInstanceId(self):
+		return self.get_body_params().get('TargetInstanceId')
+
+	def set_TargetInstanceId(self,TargetInstanceId):
+		self.add_body_params('TargetInstanceId', TargetInstanceId)
+
 	def get_TargetFileSystemId(self):
 		return self.get_query_params().get('TargetFileSystemId')
 
@@ -78,13 +110,13 @@ class CreateRestoreJobRequest(RpcRequest):
 		self.add_query_param('TargetFileSystemId',TargetFileSystemId)
 
 	def get_TargetPath(self):
-		return self.get_query_params().get('TargetPath')
+		return self.get_body_params().get('TargetPath')
 
 	def set_TargetPath(self,TargetPath):
-		self.add_query_param('TargetPath',TargetPath)
+		self.add_body_params('TargetPath', TargetPath)
 
-	def get_TargetBucket(self):
-		return self.get_query_params().get('TargetBucket')
+	def get_UdmRegionId(self):
+		return self.get_query_params().get('UdmRegionId')
 
-	def set_TargetBucket(self,TargetBucket):
-		self.add_query_param('TargetBucket',TargetBucket)
+	def set_UdmRegionId(self,UdmRegionId):
+		self.add_query_param('UdmRegionId',UdmRegionId)

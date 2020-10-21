@@ -18,23 +18,19 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkhbr.endpoint import endpoint_data
+
 class CreateContactRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'hbr', '2017-09-08', 'CreateContact','hbr')
 		self.set_protocol_type('https')
+		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_EmailVerifyCode(self):
-		return self.get_query_params().get('EmailVerifyCode')
-
-	def set_EmailVerifyCode(self,EmailVerifyCode):
-		self.add_query_param('EmailVerifyCode',EmailVerifyCode)
-
-	def get_Name(self):
-		return self.get_query_params().get('Name')
-
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)
 
 	def get_Mobile(self):
 		return self.get_query_params().get('Mobile')
@@ -54,14 +50,26 @@ class CreateContactRequest(RpcRequest):
 	def set_MobileVerifyCode(self,MobileVerifyCode):
 		self.add_query_param('MobileVerifyCode',MobileVerifyCode)
 
-	def get_Email(self):
-		return self.get_query_params().get('Email')
-
-	def set_Email(self,Email):
-		self.add_query_param('Email',Email)
-
 	def get_Token(self):
 		return self.get_query_params().get('Token')
 
 	def set_Token(self,Token):
 		self.add_query_param('Token',Token)
+
+	def get_EmailVerifyCode(self):
+		return self.get_query_params().get('EmailVerifyCode')
+
+	def set_EmailVerifyCode(self,EmailVerifyCode):
+		self.add_query_param('EmailVerifyCode',EmailVerifyCode)
+
+	def get_Name(self):
+		return self.get_query_params().get('Name')
+
+	def set_Name(self,Name):
+		self.add_query_param('Name',Name)
+
+	def get_Email(self):
+		return self.get_query_params().get('Email')
+
+	def set_Email(self,Email):
+		self.add_query_param('Email',Email)

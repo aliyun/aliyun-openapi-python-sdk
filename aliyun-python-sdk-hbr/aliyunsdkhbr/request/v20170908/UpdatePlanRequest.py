@@ -18,11 +18,19 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkhbr.endpoint import endpoint_data
+
 class UpdatePlanRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'hbr', '2017-09-08', 'UpdatePlan','hbr')
 		self.set_protocol_type('https')
+		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_DiffPolicyId(self):
 		return self.get_query_params().get('DiffPolicyId')
@@ -48,35 +56,29 @@ class UpdatePlanRequest(RpcRequest):
 	def set_VaultId(self,VaultId):
 		self.add_query_param('VaultId',VaultId)
 
-	def get_PlanStatus(self):
-		return self.get_query_params().get('PlanStatus')
-
-	def set_PlanStatus(self,PlanStatus):
-		self.add_query_param('PlanStatus',PlanStatus)
-
 	def get_IncPolicyId(self):
 		return self.get_query_params().get('IncPolicyId')
 
 	def set_IncPolicyId(self,IncPolicyId):
 		self.add_query_param('IncPolicyId',IncPolicyId)
 
-	def get_PlanName(self):
-		return self.get_query_params().get('PlanName')
-
-	def set_PlanName(self,PlanName):
-		self.add_query_param('PlanName',PlanName)
-
-	def get_PlanId(self):
-		return self.get_query_params().get('PlanId')
-
-	def set_PlanId(self,PlanId):
-		self.add_query_param('PlanId',PlanId)
-
 	def get_Source(self):
 		return self.get_query_params().get('Source')
 
 	def set_Source(self,Source):
 		self.add_query_param('Source',Source)
+
+	def get_PlanStatus(self):
+		return self.get_query_params().get('PlanStatus')
+
+	def set_PlanStatus(self,PlanStatus):
+		self.add_query_param('PlanStatus',PlanStatus)
+
+	def get_PlanName(self):
+		return self.get_query_params().get('PlanName')
+
+	def set_PlanName(self,PlanName):
+		self.add_query_param('PlanName',PlanName)
 
 	def get_FullPolicyId(self):
 		return self.get_query_params().get('FullPolicyId')
@@ -95,3 +97,9 @@ class UpdatePlanRequest(RpcRequest):
 
 	def set_Token(self,Token):
 		self.add_query_param('Token',Token)
+
+	def get_PlanId(self):
+		return self.get_query_params().get('PlanId')
+
+	def set_PlanId(self,PlanId):
+		self.add_query_param('PlanId',PlanId)

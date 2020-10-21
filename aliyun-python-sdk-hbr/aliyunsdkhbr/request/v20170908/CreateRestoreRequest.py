@@ -18,11 +18,19 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkhbr.endpoint import endpoint_data
+
 class CreateRestoreRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'hbr', '2017-09-08', 'CreateRestore','hbr')
 		self.set_protocol_type('https')
+		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_ClientId(self):
 		return self.get_query_params().get('ClientId')
@@ -54,17 +62,29 @@ class CreateRestoreRequest(RpcRequest):
 	def set_VaultId(self,VaultId):
 		self.add_query_param('VaultId',VaultId)
 
-	def get_Includes(self):
-		return self.get_query_params().get('Includes')
-
-	def set_Includes(self,Includes):
-		self.add_query_param('Includes',Includes)
-
 	def get_Source(self):
 		return self.get_query_params().get('Source')
 
 	def set_Source(self,Source):
 		self.add_query_param('Source',Source)
+
+	def get_SnapshotHash(self):
+		return self.get_query_params().get('SnapshotHash')
+
+	def set_SnapshotHash(self,SnapshotHash):
+		self.add_query_param('SnapshotHash',SnapshotHash)
+
+	def get_Extra(self):
+		return self.get_query_params().get('Extra')
+
+	def set_Extra(self,Extra):
+		self.add_query_param('Extra',Extra)
+
+	def get_Includes(self):
+		return self.get_query_params().get('Includes')
+
+	def set_Includes(self,Includes):
+		self.add_query_param('Includes',Includes)
 
 	def get_ServerId(self):
 		return self.get_query_params().get('ServerId')
@@ -90,23 +110,11 @@ class CreateRestoreRequest(RpcRequest):
 	def set_Target(self,Target):
 		self.add_query_param('Target',Target)
 
-	def get_SnapshotHash(self):
-		return self.get_query_params().get('SnapshotHash')
-
-	def set_SnapshotHash(self,SnapshotHash):
-		self.add_query_param('SnapshotHash',SnapshotHash)
-
 	def get_RestoreType(self):
 		return self.get_query_params().get('RestoreType')
 
 	def set_RestoreType(self,RestoreType):
 		self.add_query_param('RestoreType',RestoreType)
-
-	def get_Extra(self):
-		return self.get_query_params().get('Extra')
-
-	def set_Extra(self,Extra):
-		self.add_query_param('Extra',Extra)
 
 	def get_ContainerRestoreId(self):
 		return self.get_query_params().get('ContainerRestoreId')

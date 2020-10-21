@@ -18,22 +18,18 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkhbr.endpoint import endpoint_data
+
 class CreateSqlServerInstanceRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'hbr', '2017-09-08', 'CreateSqlServerInstance','hbr')
+		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_WindowsLogin(self):
-		return self.get_query_params().get('WindowsLogin')
-
-	def set_WindowsLogin(self,WindowsLogin):
-		self.add_query_param('WindowsLogin',WindowsLogin)
-
-	def get_SqlServerType(self):
-		return self.get_query_params().get('SqlServerType')
-
-	def set_SqlServerType(self,SqlServerType):
-		self.add_query_param('SqlServerType',SqlServerType)
 
 	def get_WindowsPassword(self):
 		return self.get_query_params().get('WindowsPassword')
@@ -65,14 +61,26 @@ class CreateSqlServerInstanceRequest(RpcRequest):
 	def set_SqlPassword(self,SqlPassword):
 		self.add_query_param('SqlPassword',SqlPassword)
 
-	def get_ServerName(self):
-		return self.get_query_params().get('ServerName')
-
-	def set_ServerName(self,ServerName):
-		self.add_query_param('ServerName',ServerName)
-
 	def get_Token(self):
 		return self.get_query_params().get('Token')
 
 	def set_Token(self,Token):
 		self.add_query_param('Token',Token)
+
+	def get_WindowsLogin(self):
+		return self.get_query_params().get('WindowsLogin')
+
+	def set_WindowsLogin(self,WindowsLogin):
+		self.add_query_param('WindowsLogin',WindowsLogin)
+
+	def get_SqlServerType(self):
+		return self.get_query_params().get('SqlServerType')
+
+	def set_SqlServerType(self,SqlServerType):
+		self.add_query_param('SqlServerType',SqlServerType)
+
+	def get_ServerName(self):
+		return self.get_query_params().get('ServerName')
+
+	def set_ServerName(self,ServerName):
+		self.add_query_param('ServerName',ServerName)

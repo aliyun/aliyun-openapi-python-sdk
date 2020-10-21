@@ -18,35 +18,25 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkhbr.endpoint import endpoint_data
+
 class CreateClientRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'hbr', '2017-09-08', 'CreateClient','hbr')
 		self.set_protocol_type('https')
+		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_SourceTypes(self):
-		return self.get_query_params().get('SourceTypes')
-
-	def set_SourceTypes(self,SourceTypes):
-		self.add_query_param('SourceTypes',SourceTypes)
 
 	def get_ClientType(self):
 		return self.get_query_params().get('ClientType')
 
 	def set_ClientType(self,ClientType):
 		self.add_query_param('ClientType',ClientType)
-
-	def get_AlertSetting(self):
-		return self.get_query_params().get('AlertSetting')
-
-	def set_AlertSetting(self,AlertSetting):
-		self.add_query_param('AlertSetting',AlertSetting)
-
-	def get_InstanceId(self):
-		return self.get_query_params().get('InstanceId')
-
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
 
 	def get_VaultId(self):
 		return self.get_query_params().get('VaultId')
@@ -60,23 +50,41 @@ class CreateClientRequest(RpcRequest):
 	def set_ContactId(self,ContactId):
 		self.add_query_param('ContactId',ContactId)
 
+	def get_NetworkType(self):
+		return self.get_query_params().get('NetworkType')
+
+	def set_NetworkType(self,NetworkType):
+		self.add_query_param('NetworkType',NetworkType)
+
+	def get_AlertSetting(self):
+		return self.get_query_params().get('AlertSetting')
+
+	def set_AlertSetting(self,AlertSetting):
+		self.add_query_param('AlertSetting',AlertSetting)
+
+	def get_VaultRegionId(self):
+		return self.get_query_params().get('VaultRegionId')
+
+	def set_VaultRegionId(self,VaultRegionId):
+		self.add_query_param('VaultRegionId',VaultRegionId)
+
 	def get_ClientName(self):
 		return self.get_query_params().get('ClientName')
 
 	def set_ClientName(self,ClientName):
 		self.add_query_param('ClientName',ClientName)
 
-	def get_PlatformType(self):
-		return self.get_query_params().get('PlatformType')
+	def get_UseHttps(self):
+		return self.get_query_params().get('UseHttps')
 
-	def set_PlatformType(self,PlatformType):
-		self.add_query_param('PlatformType',PlatformType)
+	def set_UseHttps(self,UseHttps):
+		self.add_query_param('UseHttps',UseHttps)
 
-	def get_NetworkType(self):
-		return self.get_query_params().get('NetworkType')
+	def get_SourceTypes(self):
+		return self.get_query_params().get('SourceTypes')
 
-	def set_NetworkType(self,NetworkType):
-		self.add_query_param('NetworkType',NetworkType)
+	def set_SourceTypes(self,SourceTypes):
+		self.add_query_param('SourceTypes',SourceTypes)
 
 	def get_ClusterId(self):
 		return self.get_query_params().get('ClusterId')
@@ -89,3 +97,15 @@ class CreateClientRequest(RpcRequest):
 
 	def set_Token(self,Token):
 		self.add_query_param('Token',Token)
+
+	def get_InstanceId(self):
+		return self.get_query_params().get('InstanceId')
+
+	def set_InstanceId(self,InstanceId):
+		self.add_query_param('InstanceId',InstanceId)
+
+	def get_PlatformType(self):
+		return self.get_query_params().get('PlatformType')
+
+	def set_PlatformType(self,PlatformType):
+		self.add_query_param('PlatformType',PlatformType)
