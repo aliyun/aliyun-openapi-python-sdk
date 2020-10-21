@@ -116,6 +116,12 @@ class DeployApplicationRequest(RoaRequest):
 	def set_PackageVersion(self,PackageVersion):
 		self.add_query_param('PackageVersion',PackageVersion)
 
+	def get_TomcatConfig(self):
+		return self.get_query_params().get('TomcatConfig')
+
+	def set_TomcatConfig(self,TomcatConfig):
+		self.add_query_param('TomcatConfig',TomcatConfig)
+
 	def get_CustomHostAlias(self):
 		return self.get_query_params().get('CustomHostAlias')
 
