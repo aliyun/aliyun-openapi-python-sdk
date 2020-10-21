@@ -72,9 +72,3 @@ class ListPersonTraceDetailsRequest(RpcRequest):
 
 	def set_PersonId(self,PersonId):
 		self.add_body_params('PersonId', PersonId)
-
-	def get_IsvId(self):
-		return self.get_body_params().get('IsvId')
-
-	def set_IsvId(self,IsvId):
-		self.add_body_params('IsvId', IsvId)
