@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkr_kvstore.endpoint import endpoint_data
 
-class DescribeAvailableResourceRequest(RpcRequest):
+class AddShardingNodeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'R-kvstore', '2015-01-01', 'DescribeAvailableResource','redisa')
+		RpcRequest.__init__(self, 'R-kvstore', '2015-01-01', 'AddShardingNode','redisa')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -37,11 +37,11 @@ class DescribeAvailableResourceRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_ResourceGroupId(self):
-		return self.get_query_params().get('ResourceGroupId')
+	def get_CouponNo(self):
+		return self.get_query_params().get('CouponNo')
 
-	def set_ResourceGroupId(self,ResourceGroupId):
-		self.add_query_param('ResourceGroupId',ResourceGroupId)
+	def set_CouponNo(self,CouponNo):
+		self.add_query_param('CouponNo',CouponNo)
 
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
@@ -49,17 +49,23 @@ class DescribeAvailableResourceRequest(RpcRequest):
 	def set_SecurityToken(self,SecurityToken):
 		self.add_query_param('SecurityToken',SecurityToken)
 
-	def get_Engine(self):
-		return self.get_query_params().get('Engine')
+	def get_ShardCount(self):
+		return self.get_query_params().get('ShardCount')
 
-	def set_Engine(self,Engine):
-		self.add_query_param('Engine',Engine)
+	def set_ShardCount(self,ShardCount):
+		self.add_query_param('ShardCount',ShardCount)
 
-	def get_InstanceChargeType(self):
-		return self.get_query_params().get('InstanceChargeType')
+	def get_BusinessInfo(self):
+		return self.get_query_params().get('BusinessInfo')
 
-	def set_InstanceChargeType(self,InstanceChargeType):
-		self.add_query_param('InstanceChargeType',InstanceChargeType)
+	def set_BusinessInfo(self,BusinessInfo):
+		self.add_query_param('BusinessInfo',BusinessInfo)
+
+	def get_AutoPay(self):
+		return self.get_query_params().get('AutoPay')
+
+	def set_AutoPay(self,AutoPay):
+		self.add_query_param('AutoPay',AutoPay)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -85,20 +91,8 @@ class DescribeAvailableResourceRequest(RpcRequest):
 	def set_InstanceId(self,InstanceId):
 		self.add_query_param('InstanceId',InstanceId)
 
-	def get_AcceptLanguage(self):
-		return self.get_query_params().get('AcceptLanguage')
+	def get_ShardClass(self):
+		return self.get_query_params().get('ShardClass')
 
-	def set_AcceptLanguage(self,AcceptLanguage):
-		self.add_query_param('AcceptLanguage',AcceptLanguage)
-
-	def get_ZoneId(self):
-		return self.get_query_params().get('ZoneId')
-
-	def set_ZoneId(self,ZoneId):
-		self.add_query_param('ZoneId',ZoneId)
-
-	def get_OrderType(self):
-		return self.get_query_params().get('OrderType')
-
-	def set_OrderType(self,OrderType):
-		self.add_query_param('OrderType',OrderType)
+	def set_ShardClass(self,ShardClass):
+		self.add_query_param('ShardClass',ShardClass)
