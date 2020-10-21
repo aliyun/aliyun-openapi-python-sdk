@@ -55,6 +55,12 @@ class ModifyAccessRuleRequest(RpcRequest):
 	def set_AccessRuleId(self,AccessRuleId):
 		self.add_query_param('AccessRuleId',AccessRuleId)
 
+	def get_Ipv6SourceCidrIp(self):
+		return self.get_query_params().get('Ipv6SourceCidrIp')
+
+	def set_Ipv6SourceCidrIp(self,Ipv6SourceCidrIp):
+		self.add_query_param('Ipv6SourceCidrIp',Ipv6SourceCidrIp)
+
 	def get_SourceCidrIp(self):
 		return self.get_query_params().get('SourceCidrIp')
 

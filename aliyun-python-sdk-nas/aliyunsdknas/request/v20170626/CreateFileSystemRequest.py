@@ -120,3 +120,9 @@ class CreateFileSystemRequest(RpcRequest):
 
 	def set_ChargeType(self,ChargeType):
 		self.add_query_param('ChargeType',ChargeType)
+
+	def get_KmsKeyId(self):
+		return self.get_query_params().get('KmsKeyId')
+
+	def set_KmsKeyId(self,KmsKeyId):
+		self.add_query_param('KmsKeyId',KmsKeyId)

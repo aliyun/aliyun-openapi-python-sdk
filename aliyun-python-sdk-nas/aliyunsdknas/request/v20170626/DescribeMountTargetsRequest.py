@@ -54,3 +54,9 @@ class DescribeMountTargetsRequest(RpcRequest):
 
 	def set_MountTargetDomain(self,MountTargetDomain):
 		self.add_query_param('MountTargetDomain',MountTargetDomain)
+
+	def get_DualStackMountTargetDomain(self):
+		return self.get_query_params().get('DualStackMountTargetDomain')
+
+	def set_DualStackMountTargetDomain(self,DualStackMountTargetDomain):
+		self.add_query_param('DualStackMountTargetDomain',DualStackMountTargetDomain)

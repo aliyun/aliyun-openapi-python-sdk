@@ -49,6 +49,12 @@ class ModifyMountTargetRequest(RpcRequest):
 	def set_AccessGroupName(self,AccessGroupName):
 		self.add_query_param('AccessGroupName',AccessGroupName)
 
+	def get_DualStackMountTargetDomain(self):
+		return self.get_query_params().get('DualStackMountTargetDomain')
+
+	def set_DualStackMountTargetDomain(self,DualStackMountTargetDomain):
+		self.add_query_param('DualStackMountTargetDomain',DualStackMountTargetDomain)
+
 	def get_Status(self):
 		return self.get_query_params().get('Status')
 

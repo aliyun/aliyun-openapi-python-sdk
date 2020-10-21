@@ -37,6 +37,12 @@ class CreateMountTargetRequest(RpcRequest):
 	def set_SecurityGroupId(self,SecurityGroupId):
 		self.add_query_param('SecurityGroupId',SecurityGroupId)
 
+	def get_EnableIpv6(self):
+		return self.get_query_params().get('EnableIpv6')
+
+	def set_EnableIpv6(self,EnableIpv6):
+		self.add_query_param('EnableIpv6',EnableIpv6)
+
 	def get_NetworkType(self):
 		return self.get_query_params().get('NetworkType')
 
@@ -48,6 +54,12 @@ class CreateMountTargetRequest(RpcRequest):
 
 	def set_FileSystemId(self,FileSystemId):
 		self.add_query_param('FileSystemId',FileSystemId)
+
+	def get_DryRun(self):
+		return self.get_query_params().get('DryRun')
+
+	def set_DryRun(self,DryRun):
+		self.add_query_param('DryRun',DryRun)
 
 	def get_AccessGroupName(self):
 		return self.get_query_params().get('AccessGroupName')
