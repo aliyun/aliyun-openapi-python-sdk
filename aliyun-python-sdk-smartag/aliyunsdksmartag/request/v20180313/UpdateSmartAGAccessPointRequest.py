@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdksmartag.endpoint import endpoint_data
 
-class DescribeCloudConnectNetworksRequest(RpcRequest):
+class UpdateSmartAGAccessPointRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Smartag', '2018-03-13', 'DescribeCloudConnectNetworks','smartag')
+		RpcRequest.__init__(self, 'Smartag', '2018-03-13', 'UpdateSmartAGAccessPoint','smartag')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,39 +31,17 @@ class DescribeCloudConnectNetworksRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_AccessPointId(self):
+		return self.get_query_params().get('AccessPointId')
+
+	def set_AccessPointId(self,AccessPointId):
+		self.add_query_param('AccessPointId',AccessPointId)
+
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_CcnId(self):
-		return self.get_query_params().get('CcnId')
-
-	def set_CcnId(self,CcnId):
-		self.add_query_param('CcnId',CcnId)
-
-	def get_PageNumber(self):
-		return self.get_query_params().get('PageNumber')
-
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
-
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_Tags(self):
-		return self.get_query_params().get('Tag')
-
-	def set_Tags(self, Tags):
-		for depth1 in range(len(Tags)):
-			if Tags[depth1].get('Value') is not None:
-				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tags[depth1].get('Value'))
-			if Tags[depth1].get('Key') is not None:
-				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tags[depth1].get('Key'))
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -83,8 +61,8 @@ class DescribeCloudConnectNetworksRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_Name(self):
-		return self.get_query_params().get('Name')
+	def get_SmartAGId(self):
+		return self.get_query_params().get('SmartAGId')
 
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)
+	def set_SmartAGId(self,SmartAGId):
+		self.add_query_param('SmartAGId',SmartAGId)

@@ -38,7 +38,7 @@ class ModifyClientUserDNSRequest(RpcRequest):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
 	def get_RecoveredDNSs(self):
-		return self.get_query_params().get('RecoveredDNSs')
+		return self.get_query_params().get('RecoveredDNS')
 
 	def set_RecoveredDNSs(self, RecoveredDNSs):
 		for depth1 in range(len(RecoveredDNSs)):
@@ -46,7 +46,7 @@ class ModifyClientUserDNSRequest(RpcRequest):
 				self.add_query_param('RecoveredDNS.' + str(depth1 + 1) , RecoveredDNSs[depth1])
 
 	def get_AppDNSs(self):
-		return self.get_query_params().get('AppDNSs')
+		return self.get_query_params().get('AppDNS')
 
 	def set_AppDNSs(self, AppDNSs):
 		for depth1 in range(len(AppDNSs)):

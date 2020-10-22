@@ -79,6 +79,12 @@ class ModifySagWanRequest(RpcRequest):
 	def set_IPType(self,IPType):
 		self.add_query_param('IPType',IPType)
 
+	def get_Priority(self):
+		return self.get_query_params().get('Priority')
+
+	def set_Priority(self,Priority):
+		self.add_query_param('Priority',Priority)
+
 	def get_SmartAGId(self):
 		return self.get_query_params().get('SmartAGId')
 

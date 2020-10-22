@@ -44,7 +44,7 @@ class AttachNetworkOptimizationSagsRequest(RpcRequest):
 		self.add_query_param('NetworkOptId',NetworkOptId)
 
 	def get_SmartAGIdss(self):
-		return self.get_query_params().get('SmartAGIdss')
+		return self.get_query_params().get('SmartAGIds')
 
 	def set_SmartAGIdss(self, SmartAGIdss):
 		for depth1 in range(len(SmartAGIdss)):

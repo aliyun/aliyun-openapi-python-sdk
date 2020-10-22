@@ -38,7 +38,7 @@ class DescribeSagOnlineClientStatisticsRequest(RpcRequest):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
 	def get_SmartAGIdss(self):
-		return self.get_query_params().get('SmartAGIdss')
+		return self.get_query_params().get('SmartAGIds')
 
 	def set_SmartAGIdss(self, SmartAGIdss):
 		for depth1 in range(len(SmartAGIdss)):

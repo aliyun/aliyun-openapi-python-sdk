@@ -38,7 +38,7 @@ class DescribeSagVbrRelationsRequest(RpcRequest):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
 	def get_VbrInstanceIdss(self):
-		return self.get_query_params().get('VbrInstanceIdss')
+		return self.get_query_params().get('VbrInstanceIds')
 
 	def set_VbrInstanceIdss(self, VbrInstanceIdss):
 		for depth1 in range(len(VbrInstanceIdss)):

@@ -44,7 +44,7 @@ class UnicomOrderConfirmRequest(RpcRequest):
 		self.add_query_param('TmsCode',TmsCode)
 
 	def get_OrderItems(self):
-		return self.get_query_params().get('OrderItems')
+		return self.get_query_params().get('OrderItem')
 
 	def set_OrderItems(self, OrderItems):
 		for depth1 in range(len(OrderItems)):

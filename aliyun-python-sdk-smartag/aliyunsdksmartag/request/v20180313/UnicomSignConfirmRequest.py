@@ -50,7 +50,7 @@ class UnicomSignConfirmRequest(RpcRequest):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
 	def get_TmsOrders(self):
-		return self.get_query_params().get('TmsOrders')
+		return self.get_query_params().get('TmsOrder')
 
 	def set_TmsOrders(self, TmsOrders):
 		for depth1 in range(len(TmsOrders)):

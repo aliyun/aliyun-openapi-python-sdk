@@ -97,6 +97,14 @@ class DescribeSmartAccessGatewaysRequest(RpcRequest):
 	def set_HardwareType(self,HardwareType):
 		self.add_query_param('HardwareType',HardwareType)
 
+	def get_SmartAGIdss(self):
+		return self.get_query_params().get('SmartAGIds')
+
+	def set_SmartAGIdss(self, SmartAGIdss):
+		for depth1 in range(len(SmartAGIdss)):
+			if SmartAGIdss[depth1] is not None:
+				self.add_query_param('SmartAGIds.' + str(depth1 + 1) , SmartAGIdss[depth1])
+
 	def get_SerialNumber(self):
 		return self.get_query_params().get('SerialNumber')
 
@@ -138,12 +146,6 @@ class DescribeSmartAccessGatewaysRequest(RpcRequest):
 
 	def set_Name(self,Name):
 		self.add_query_param('Name',Name)
-
-	def get_SmartAGId(self):
-		return self.get_query_params().get('SmartAGId')
-
-	def set_SmartAGId(self,SmartAGId):
-		self.add_query_param('SmartAGId',SmartAGId)
 
 	def get_Status(self):
 		return self.get_query_params().get('Status')

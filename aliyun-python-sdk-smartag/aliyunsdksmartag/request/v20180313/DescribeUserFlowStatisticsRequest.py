@@ -38,7 +38,7 @@ class DescribeUserFlowStatisticsRequest(RpcRequest):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
 	def get_UserNamess(self):
-		return self.get_query_params().get('UserNamess')
+		return self.get_query_params().get('UserNames')
 
 	def set_UserNamess(self, UserNamess):
 		for depth1 in range(len(UserNamess)):
