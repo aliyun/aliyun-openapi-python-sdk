@@ -67,6 +67,12 @@ class ListPersonTraceDetailsRequest(RpcRequest):
 	def set_PageSize(self,PageSize):
 		self.add_body_params('PageSize', PageSize)
 
+	def get_DataSourceId(self):
+		return self.get_body_params().get('DataSourceId')
+
+	def set_DataSourceId(self,DataSourceId):
+		self.add_body_params('DataSourceId', DataSourceId)
+
 	def get_PersonId(self):
 		return self.get_body_params().get('PersonId')
 
