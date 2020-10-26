@@ -44,7 +44,7 @@ class ModifyAlarmRequest(RpcRequest):
 		self.add_query_param('Description',Description)
 
 	def get_AlarmActions(self):
-		return self.get_query_params().get('AlarmActions')
+		return self.get_query_params().get('AlarmAction')
 
 	def set_AlarmActions(self, AlarmActions):
 		for depth1 in range(len(AlarmActions)):
@@ -56,6 +56,12 @@ class ModifyAlarmRequest(RpcRequest):
 
 	def set_Threshold(self,Threshold):
 		self.add_query_param('Threshold',Threshold)
+
+	def get_Effective(self):
+		return self.get_query_params().get('Effective')
+
+	def set_Effective(self,Effective):
+		self.add_query_param('Effective',Effective)
 
 	def get_EvaluationCount(self):
 		return self.get_query_params().get('EvaluationCount')
@@ -70,7 +76,7 @@ class ModifyAlarmRequest(RpcRequest):
 		self.add_query_param('MetricName',MetricName)
 
 	def get_Dimensions(self):
-		return self.get_query_params().get('Dimensions')
+		return self.get_query_params().get('Dimension')
 
 	def set_Dimensions(self, Dimensions):
 		for depth1 in range(len(Dimensions)):

@@ -62,7 +62,7 @@ class AttachVServerGroupsRequest(RpcRequest):
 		self.add_query_param('OwnerId',OwnerId)
 
 	def get_VServerGroups(self):
-		return self.get_query_params().get('VServerGroups')
+		return self.get_query_params().get('VServerGroup')
 
 	def set_VServerGroups(self, VServerGroups):
 		for depth1 in range(len(VServerGroups)):

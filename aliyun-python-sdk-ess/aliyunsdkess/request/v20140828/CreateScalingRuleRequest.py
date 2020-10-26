@@ -32,7 +32,7 @@ class CreateScalingRuleRequest(RpcRequest):
 
 
 	def get_StepAdjustments(self):
-		return self.get_query_params().get('StepAdjustments')
+		return self.get_query_params().get('StepAdjustment')
 
 	def set_StepAdjustments(self, StepAdjustments):
 		for depth1 in range(len(StepAdjustments)):
@@ -78,6 +78,12 @@ class CreateScalingRuleRequest(RpcRequest):
 
 	def set_PredictiveValueBehavior(self,PredictiveValueBehavior):
 		self.add_query_param('PredictiveValueBehavior',PredictiveValueBehavior)
+
+	def get_ScaleInEvaluationCount(self):
+		return self.get_query_params().get('ScaleInEvaluationCount')
+
+	def set_ScaleInEvaluationCount(self,ScaleInEvaluationCount):
+		self.add_query_param('ScaleInEvaluationCount',ScaleInEvaluationCount)
 
 	def get_ScalingRuleType(self):
 		return self.get_query_params().get('ScalingRuleType')
@@ -144,6 +150,12 @@ class CreateScalingRuleRequest(RpcRequest):
 
 	def set_PredictiveValueBuffer(self,PredictiveValueBuffer):
 		self.add_query_param('PredictiveValueBuffer',PredictiveValueBuffer)
+
+	def get_ScaleOutEvaluationCount(self):
+		return self.get_query_params().get('ScaleOutEvaluationCount')
+
+	def set_ScaleOutEvaluationCount(self,ScaleOutEvaluationCount):
+		self.add_query_param('ScaleOutEvaluationCount',ScaleOutEvaluationCount)
 
 	def get_MinAdjustmentMagnitude(self):
 		return self.get_query_params().get('MinAdjustmentMagnitude')

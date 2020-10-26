@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkess.endpoint import endpoint_data
 
-class DetachLoadBalancersRequest(RpcRequest):
+class DescribeLifecycleActionsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ess', '2014-08-28', 'DetachLoadBalancers','ess')
+		RpcRequest.__init__(self, 'Ess', '2014-08-28', 'DescribeLifecycleActions','ess')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,25 +31,17 @@ class DetachLoadBalancersRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_ClientToken(self):
-		return self.get_query_params().get('ClientToken')
+	def get_LifecycleActionStatus(self):
+		return self.get_query_params().get('LifecycleActionStatus')
 
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
+	def set_LifecycleActionStatus(self,LifecycleActionStatus):
+		self.add_query_param('LifecycleActionStatus',LifecycleActionStatus)
 
-	def get_ScalingGroupId(self):
-		return self.get_query_params().get('ScalingGroupId')
+	def get_NextToken(self):
+		return self.get_query_params().get('NextToken')
 
-	def set_ScalingGroupId(self,ScalingGroupId):
-		self.add_query_param('ScalingGroupId',ScalingGroupId)
-
-	def get_LoadBalancers(self):
-		return self.get_query_params().get('LoadBalancer')
-
-	def set_LoadBalancers(self, LoadBalancers):
-		for depth1 in range(len(LoadBalancers)):
-			if LoadBalancers[depth1] is not None:
-				self.add_query_param('LoadBalancer.' + str(depth1 + 1) , LoadBalancers[depth1])
+	def set_NextToken(self,NextToken):
+		self.add_query_param('NextToken',NextToken)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -63,8 +55,14 @@ class DetachLoadBalancersRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_ForceDetach(self):
-		return self.get_query_params().get('ForceDetach')
+	def get_ScalingActivityId(self):
+		return self.get_query_params().get('ScalingActivityId')
 
-	def set_ForceDetach(self,ForceDetach):
-		self.add_query_param('ForceDetach',ForceDetach)
+	def set_ScalingActivityId(self,ScalingActivityId):
+		self.add_query_param('ScalingActivityId',ScalingActivityId)
+
+	def get_MaxResults(self):
+		return self.get_query_params().get('MaxResults')
+
+	def set_MaxResults(self,MaxResults):
+		self.add_query_param('MaxResults',MaxResults)

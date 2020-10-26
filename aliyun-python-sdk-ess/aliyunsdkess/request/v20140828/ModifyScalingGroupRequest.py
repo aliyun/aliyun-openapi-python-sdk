@@ -44,7 +44,7 @@ class ModifyScalingGroupRequest(RpcRequest):
 		self.add_query_param('ScalingGroupId',ScalingGroupId)
 
 	def get_VSwitchIdss(self):
-		return self.get_query_params().get('VSwitchIdss')
+		return self.get_query_params().get('VSwitchIds')
 
 	def set_VSwitchIdss(self, VSwitchIdss):
 		for depth1 in range(len(VSwitchIdss)):
@@ -128,6 +128,12 @@ class ModifyScalingGroupRequest(RpcRequest):
 
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
+
+	def get_CompensateWithOnDemand(self):
+		return self.get_query_params().get('CompensateWithOnDemand')
+
+	def set_CompensateWithOnDemand(self,CompensateWithOnDemand):
+		self.add_query_param('CompensateWithOnDemand',CompensateWithOnDemand)
 
 	def get_SpotInstancePools(self):
 		return self.get_query_params().get('SpotInstancePools')

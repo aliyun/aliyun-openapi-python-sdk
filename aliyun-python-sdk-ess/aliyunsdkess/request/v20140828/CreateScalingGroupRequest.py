@@ -32,7 +32,7 @@ class CreateScalingGroupRequest(RpcRequest):
 
 
 	def get_VSwitchIdss(self):
-		return self.get_query_params().get('VSwitchIdss')
+		return self.get_query_params().get('VSwitchIds')
 
 	def set_VSwitchIdss(self, VSwitchIdss):
 		for depth1 in range(len(VSwitchIdss)):
@@ -46,7 +46,7 @@ class CreateScalingGroupRequest(RpcRequest):
 		self.add_query_param('SpotInstanceRemedy',SpotInstanceRemedy)
 
 	def get_Tags(self):
-		return self.get_query_params().get('Tags')
+		return self.get_query_params().get('Tag')
 
 	def set_Tags(self, Tags):
 		for depth1 in range(len(Tags)):
@@ -85,6 +85,12 @@ class CreateScalingGroupRequest(RpcRequest):
 	def set_DesiredCapacity(self,DesiredCapacity):
 		self.add_query_param('DesiredCapacity',DesiredCapacity)
 
+	def get_CompensateWithOnDemand(self):
+		return self.get_query_params().get('CompensateWithOnDemand')
+
+	def set_CompensateWithOnDemand(self,CompensateWithOnDemand):
+		self.add_query_param('CompensateWithOnDemand',CompensateWithOnDemand)
+
 	def get_MinSize(self):
 		return self.get_query_params().get('MinSize')
 
@@ -116,7 +122,7 @@ class CreateScalingGroupRequest(RpcRequest):
 		self.add_query_param('MaxSize',MaxSize)
 
 	def get_LifecycleHooks(self):
-		return self.get_query_params().get('LifecycleHooks')
+		return self.get_query_params().get('LifecycleHook')
 
 	def set_LifecycleHooks(self, LifecycleHooks):
 		for depth1 in range(len(LifecycleHooks)):
@@ -218,7 +224,7 @@ class CreateScalingGroupRequest(RpcRequest):
 		self.add_query_param('ScalingPolicy',ScalingPolicy)
 
 	def get_VServerGroups(self):
-		return self.get_query_params().get('VServerGroups')
+		return self.get_query_params().get('VServerGroup')
 
 	def set_VServerGroups(self, VServerGroups):
 		for depth1 in range(len(VServerGroups)):

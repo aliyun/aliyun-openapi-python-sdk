@@ -44,7 +44,7 @@ class SuspendProcessesRequest(RpcRequest):
 		self.add_query_param('ScalingGroupId',ScalingGroupId)
 
 	def get_Processs(self):
-		return self.get_query_params().get('Processs')
+		return self.get_query_params().get('Process')
 
 	def set_Processs(self, Processs):
 		for depth1 in range(len(Processs)):

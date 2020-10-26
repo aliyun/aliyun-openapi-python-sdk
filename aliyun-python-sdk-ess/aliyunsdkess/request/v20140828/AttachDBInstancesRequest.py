@@ -56,7 +56,7 @@ class AttachDBInstancesRequest(RpcRequest):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
 	def get_DBInstances(self):
-		return self.get_query_params().get('DBInstances')
+		return self.get_query_params().get('DBInstance')
 
 	def set_DBInstances(self, DBInstances):
 		for depth1 in range(len(DBInstances)):

@@ -62,7 +62,7 @@ class DescribeLifecycleHooksRequest(RpcRequest):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
 	def get_LifecycleHookIds(self):
-		return self.get_query_params().get('LifecycleHookIds')
+		return self.get_query_params().get('LifecycleHookId')
 
 	def set_LifecycleHookIds(self, LifecycleHookIds):
 		for depth1 in range(len(LifecycleHookIds)):

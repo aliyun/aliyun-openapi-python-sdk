@@ -50,7 +50,7 @@ class AttachLoadBalancersRequest(RpcRequest):
 		self.add_query_param('ForceAttach',ForceAttach)
 
 	def get_LoadBalancers(self):
-		return self.get_query_params().get('LoadBalancers')
+		return self.get_query_params().get('LoadBalancer')
 
 	def set_LoadBalancers(self, LoadBalancers):
 		for depth1 in range(len(LoadBalancers)):

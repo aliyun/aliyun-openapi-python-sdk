@@ -121,6 +121,12 @@ class DescribeScheduledTasksRequest(RpcRequest):
 	def set_ScheduledTaskId20(self,ScheduledTaskId20):
 		self.add_query_param('ScheduledTaskId.20',ScheduledTaskId20)
 
+	def get_ScalingGroupId(self):
+		return self.get_query_params().get('ScalingGroupId')
+
+	def set_ScalingGroupId(self,ScalingGroupId):
+		self.add_query_param('ScalingGroupId',ScalingGroupId)
+
 	def get_ScheduledTaskName13(self):
 		return self.get_query_params().get('ScheduledTaskName.13')
 

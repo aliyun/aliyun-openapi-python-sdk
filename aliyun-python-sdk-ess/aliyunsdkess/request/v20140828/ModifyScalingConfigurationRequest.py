@@ -44,7 +44,7 @@ class ModifyScalingConfigurationRequest(RpcRequest):
 		self.add_query_param('KeyPairName',KeyPairName)
 
 	def get_SpotPriceLimits(self):
-		return self.get_query_params().get('SpotPriceLimits')
+		return self.get_query_params().get('SpotPriceLimit')
 
 	def set_SpotPriceLimits(self, SpotPriceLimits):
 		for depth1 in range(len(SpotPriceLimits)):
@@ -58,6 +58,12 @@ class ModifyScalingConfigurationRequest(RpcRequest):
 
 	def set_ResourceGroupId(self,ResourceGroupId):
 		self.add_query_param('ResourceGroupId',ResourceGroupId)
+
+	def get_PrivatePoolOptionsMatchCriteria(self):
+		return self.get_query_params().get('PrivatePoolOptions.MatchCriteria')
+
+	def set_PrivatePoolOptionsMatchCriteria(self,PrivatePoolOptionsMatchCriteria):
+		self.add_query_param('PrivatePoolOptions.MatchCriteria',PrivatePoolOptionsMatchCriteria)
 
 	def get_HostName(self):
 		return self.get_query_params().get('HostName')
@@ -76,6 +82,12 @@ class ModifyScalingConfigurationRequest(RpcRequest):
 
 	def set_SystemDiskAutoSnapshotPolicyId(self,SystemDiskAutoSnapshotPolicyId):
 		self.add_query_param('SystemDisk.AutoSnapshotPolicyId',SystemDiskAutoSnapshotPolicyId)
+
+	def get_PrivatePoolOptionsId(self):
+		return self.get_query_params().get('PrivatePoolOptions.Id')
+
+	def set_PrivatePoolOptionsId(self,PrivatePoolOptionsId):
+		self.add_query_param('PrivatePoolOptions.Id',PrivatePoolOptionsId)
 
 	def get_Ipv6AddressCount(self):
 		return self.get_query_params().get('Ipv6AddressCount')
@@ -162,7 +174,7 @@ class ModifyScalingConfigurationRequest(RpcRequest):
 		self.add_query_param('IoOptimized',IoOptimized)
 
 	def get_InstanceTypess(self):
-		return self.get_query_params().get('InstanceTypess')
+		return self.get_query_params().get('InstanceTypes')
 
 	def set_InstanceTypess(self, InstanceTypess):
 		for depth1 in range(len(InstanceTypess)):
@@ -210,6 +222,12 @@ class ModifyScalingConfigurationRequest(RpcRequest):
 
 	def set_Override(self,Override):
 		self.add_query_param('Override',Override)
+
+	def get_SchedulerOptions(self):
+		return self.get_query_params().get('SchedulerOptions')
+
+	def set_SchedulerOptions(self,SchedulerOptions):
+		self.add_query_param('SchedulerOptions',SchedulerOptions)
 
 	def get_DeploymentSetId(self):
 		return self.get_query_params().get('DeploymentSetId')
@@ -260,7 +278,7 @@ class ModifyScalingConfigurationRequest(RpcRequest):
 		self.add_query_param('CreditSpecification',CreditSpecification)
 
 	def get_SecurityGroupIdss(self):
-		return self.get_query_params().get('SecurityGroupIdss')
+		return self.get_query_params().get('SecurityGroupIds')
 
 	def set_SecurityGroupIdss(self, SecurityGroupIdss):
 		for depth1 in range(len(SecurityGroupIdss)):
@@ -268,7 +286,7 @@ class ModifyScalingConfigurationRequest(RpcRequest):
 				self.add_query_param('SecurityGroupIds.' + str(depth1 + 1) , SecurityGroupIdss[depth1])
 
 	def get_DataDisks(self):
-		return self.get_query_params().get('DataDisks')
+		return self.get_query_params().get('DataDisk')
 
 	def set_DataDisks(self, DataDisks):
 		for depth1 in range(len(DataDisks)):

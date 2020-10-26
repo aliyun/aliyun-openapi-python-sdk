@@ -56,7 +56,7 @@ class ModifyNotificationConfigurationRequest(RpcRequest):
 		self.add_query_param('OwnerId',OwnerId)
 
 	def get_NotificationTypes(self):
-		return self.get_query_params().get('NotificationTypes')
+		return self.get_query_params().get('NotificationType')
 
 	def set_NotificationTypes(self, NotificationTypes):
 		for depth1 in range(len(NotificationTypes)):

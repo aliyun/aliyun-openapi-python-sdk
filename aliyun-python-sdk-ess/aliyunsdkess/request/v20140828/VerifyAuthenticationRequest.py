@@ -49,6 +49,12 @@ class VerifyAuthenticationRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
+	def get_OnlyCheck(self):
+		return self.get_query_params().get('OnlyCheck')
+
+	def set_OnlyCheck(self,OnlyCheck):
+		self.add_query_param('OnlyCheck',OnlyCheck)
+
 	def get_Uid(self):
 		return self.get_query_params().get('Uid')
 
