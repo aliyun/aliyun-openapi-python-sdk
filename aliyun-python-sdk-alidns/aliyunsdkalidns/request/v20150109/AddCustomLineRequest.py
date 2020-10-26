@@ -38,7 +38,7 @@ class AddCustomLineRequest(RpcRequest):
 		self.add_query_param('DomainName',DomainName)
 
 	def get_IpSegments(self):
-		return self.get_query_params().get('IpSegments')
+		return self.get_query_params().get('IpSegment')
 
 	def set_IpSegments(self, IpSegments):
 		for depth1 in range(len(IpSegments)):

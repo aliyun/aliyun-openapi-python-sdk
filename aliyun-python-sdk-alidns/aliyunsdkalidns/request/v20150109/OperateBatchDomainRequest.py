@@ -32,7 +32,7 @@ class OperateBatchDomainRequest(RpcRequest):
 
 
 	def get_DomainRecordInfos(self):
-		return self.get_query_params().get('DomainRecordInfos')
+		return self.get_query_params().get('DomainRecordInfo')
 
 	def set_DomainRecordInfos(self, DomainRecordInfos):
 		for depth1 in range(len(DomainRecordInfos)):

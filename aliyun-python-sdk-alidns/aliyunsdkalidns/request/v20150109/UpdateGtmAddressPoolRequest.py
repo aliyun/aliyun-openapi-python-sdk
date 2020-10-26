@@ -62,7 +62,7 @@ class UpdateGtmAddressPoolRequest(RpcRequest):
 		self.add_query_param('Lang',Lang)
 
 	def get_Addrs(self):
-		return self.get_query_params().get('Addrs')
+		return self.get_query_params().get('Addr')
 
 	def set_Addrs(self, Addrs):
 		for depth1 in range(len(Addrs)):

@@ -74,7 +74,7 @@ class AddGtmMonitorRequest(RpcRequest):
 		self.add_query_param('Lang',Lang)
 
 	def get_IspCityNodes(self):
-		return self.get_query_params().get('IspCityNodes')
+		return self.get_query_params().get('IspCityNode')
 
 	def set_IspCityNodes(self, IspCityNodes):
 		for depth1 in range(len(IspCityNodes)):
