@@ -23,7 +23,8 @@ from aliyunsdkxtrace.endpoint import endpoint_data
 class GetTraceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'xtrace', '2019-08-08', 'GetTrace','xtrace')
+		RpcRequest.__init__(self, 'xtrace', '2019-08-08', 'GetTrace')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):

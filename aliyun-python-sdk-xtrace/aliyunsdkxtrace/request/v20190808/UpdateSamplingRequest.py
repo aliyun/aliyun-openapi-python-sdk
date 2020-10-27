@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkxtrace.endpoint import endpoint_data
 
-class ListServicesRequest(RpcRequest):
+class UpdateSamplingRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'xtrace', '2019-08-08', 'ListServices')
+		RpcRequest.__init__(self, 'xtrace', '2019-08-08', 'UpdateSampling')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,8 +31,14 @@ class ListServicesRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_AppType(self):
-		return self.get_query_params().get('AppType')
+	def get_Sampling(self):
+		return self.get_query_params().get('Sampling')
 
-	def set_AppType(self,AppType):
-		self.add_query_param('AppType',AppType)
+	def set_Sampling(self,Sampling):
+		self.add_query_param('Sampling',Sampling)
+
+	def get_ProxyUserId(self):
+		return self.get_query_params().get('ProxyUserId')
+
+	def set_ProxyUserId(self,ProxyUserId):
+		self.add_query_param('ProxyUserId',ProxyUserId)

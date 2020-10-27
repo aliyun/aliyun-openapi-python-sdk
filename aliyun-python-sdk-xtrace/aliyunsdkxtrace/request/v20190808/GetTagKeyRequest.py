@@ -23,7 +23,8 @@ from aliyunsdkxtrace.endpoint import endpoint_data
 class GetTagKeyRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'xtrace', '2019-08-08', 'GetTagKey','xtrace')
+		RpcRequest.__init__(self, 'xtrace', '2019-08-08', 'GetTagKey')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):

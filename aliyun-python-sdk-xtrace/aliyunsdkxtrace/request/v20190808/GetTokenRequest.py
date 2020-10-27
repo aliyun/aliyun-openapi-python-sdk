@@ -23,7 +23,8 @@ from aliyunsdkxtrace.endpoint import endpoint_data
 class GetTokenRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'xtrace', '2019-08-08', 'GetToken','xtrace')
+		RpcRequest.__init__(self, 'xtrace', '2019-08-08', 'GetToken')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -35,3 +36,9 @@ class GetTokenRequest(RpcRequest):
 
 	def set_AppType(self,AppType):
 		self.add_query_param('AppType',AppType)
+
+	def get_ProxyUserId(self):
+		return self.get_query_params().get('ProxyUserId')
+
+	def set_ProxyUserId(self,ProxyUserId):
+		self.add_query_param('ProxyUserId',ProxyUserId)
