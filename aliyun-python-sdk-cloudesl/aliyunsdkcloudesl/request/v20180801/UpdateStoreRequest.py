@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcloudesl.endpoint import endpoint_data
 
-class UpdateUserRequest(RpcRequest):
+class UpdateStoreRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'cloudesl', '2020-02-01', 'UpdateUser','cloudesl')
+		RpcRequest.__init__(self, 'cloudesl', '2018-08-01', 'UpdateStore','cloudesl')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,26 +31,44 @@ class UpdateUserRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_ExtraParams(self):
-		return self.get_body_params().get('ExtraParams')
+	def get_Comments(self):
+		return self.get_query_params().get('Comments')
 
-	def set_ExtraParams(self,ExtraParams):
-		self.add_body_params('ExtraParams', ExtraParams)
+	def set_Comments(self,Comments):
+		self.add_query_param('Comments',Comments)
 
-	def get_DingTalkUserId(self):
-		return self.get_body_params().get('DingTalkUserId')
+	def get_StoreName(self):
+		return self.get_query_params().get('StoreName')
 
-	def set_DingTalkUserId(self,DingTalkUserId):
-		self.add_body_params('DingTalkUserId', DingTalkUserId)
+	def set_StoreName(self,StoreName):
+		self.add_query_param('StoreName',StoreName)
 
-	def get_UserId(self):
-		return self.get_body_params().get('UserId')
+	def get_Groups(self):
+		return self.get_query_params().get('Groups')
 
-	def set_UserId(self,UserId):
-		self.add_body_params('UserId', UserId)
+	def set_Groups(self,Groups):
+		self.add_query_param('Groups',Groups)
 
-	def get_DingTalkCompanyId(self):
-		return self.get_body_params().get('DingTalkCompanyId')
+	def get_StoreId(self):
+		return self.get_query_params().get('StoreId')
 
-	def set_DingTalkCompanyId(self,DingTalkCompanyId):
-		self.add_body_params('DingTalkCompanyId', DingTalkCompanyId)
+	def set_StoreId(self,StoreId):
+		self.add_query_param('StoreId',StoreId)
+
+	def get_Phone(self):
+		return self.get_query_params().get('Phone')
+
+	def set_Phone(self,Phone):
+		self.add_query_param('Phone',Phone)
+
+	def get_OutId(self):
+		return self.get_query_params().get('OutId')
+
+	def set_OutId(self,OutId):
+		self.add_query_param('OutId',OutId)
+
+	def get_Brand(self):
+		return self.get_query_params().get('Brand')
+
+	def set_Brand(self,Brand):
+		self.add_query_param('Brand',Brand)

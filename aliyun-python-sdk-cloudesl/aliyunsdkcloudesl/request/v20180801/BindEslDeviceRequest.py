@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcloudesl.endpoint import endpoint_data
 
-class AssociatePlanogramRailRequest(RpcRequest):
+class BindEslDeviceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'cloudesl', '2020-02-01', 'AssociatePlanogramRail','cloudesl')
+		RpcRequest.__init__(self, 'cloudesl', '2018-08-01', 'BindEslDevice','cloudesl')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,32 +31,20 @@ class AssociatePlanogramRailRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_ExtraParams(self):
-		return self.get_body_params().get('ExtraParams')
-
-	def set_ExtraParams(self,ExtraParams):
-		self.add_body_params('ExtraParams', ExtraParams)
-
 	def get_StoreId(self):
-		return self.get_body_params().get('StoreId')
+		return self.get_query_params().get('StoreId')
 
 	def set_StoreId(self,StoreId):
-		self.add_body_params('StoreId', StoreId)
+		self.add_query_param('StoreId',StoreId)
 
-	def get_Layer(self):
-		return self.get_body_params().get('Layer')
+	def get_EslBarCode(self):
+		return self.get_query_params().get('EslBarCode')
 
-	def set_Layer(self,Layer):
-		self.add_body_params('Layer', Layer)
+	def set_EslBarCode(self,EslBarCode):
+		self.add_query_param('EslBarCode',EslBarCode)
 
-	def get_Shelf(self):
-		return self.get_body_params().get('Shelf')
+	def get_ItemBarCode(self):
+		return self.get_query_params().get('ItemBarCode')
 
-	def set_Shelf(self,Shelf):
-		self.add_body_params('Shelf', Shelf)
-
-	def get_RailCode(self):
-		return self.get_body_params().get('RailCode')
-
-	def set_RailCode(self,RailCode):
-		self.add_body_params('RailCode', RailCode)
+	def set_ItemBarCode(self,ItemBarCode):
+		self.add_query_param('ItemBarCode',ItemBarCode)

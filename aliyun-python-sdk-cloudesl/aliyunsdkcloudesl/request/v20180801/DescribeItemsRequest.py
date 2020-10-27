@@ -23,7 +23,7 @@ from aliyunsdkcloudesl.endpoint import endpoint_data
 class DescribeItemsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'cloudesl', '2020-02-01', 'DescribeItems','cloudesl')
+		RpcRequest.__init__(self, 'cloudesl', '2018-08-01', 'DescribeItems','cloudesl')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,56 +31,50 @@ class DescribeItemsRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_ExtraParams(self):
-		return self.get_body_params().get('ExtraParams')
-
-	def set_ExtraParams(self,ExtraParams):
-		self.add_body_params('ExtraParams', ExtraParams)
-
 	def get_StoreId(self):
-		return self.get_body_params().get('StoreId')
+		return self.get_query_params().get('StoreId')
 
 	def set_StoreId(self,StoreId):
-		self.add_body_params('StoreId', StoreId)
+		self.add_query_param('StoreId',StoreId)
 
 	def get_PageNumber(self):
-		return self.get_body_params().get('PageNumber')
+		return self.get_query_params().get('PageNumber')
 
 	def set_PageNumber(self,PageNumber):
-		self.add_body_params('PageNumber', PageNumber)
+		self.add_query_param('PageNumber',PageNumber)
 
 	def get_ItemId(self):
-		return self.get_body_params().get('ItemId')
+		return self.get_query_params().get('ItemId')
 
 	def set_ItemId(self,ItemId):
-		self.add_body_params('ItemId', ItemId)
+		self.add_query_param('ItemId',ItemId)
 
 	def get_PageSize(self):
-		return self.get_body_params().get('PageSize')
+		return self.get_query_params().get('PageSize')
 
 	def set_PageSize(self,PageSize):
-		self.add_body_params('PageSize', PageSize)
+		self.add_query_param('PageSize',PageSize)
 
 	def get_ItemBarCode(self):
-		return self.get_body_params().get('ItemBarCode')
+		return self.get_query_params().get('ItemBarCode')
 
 	def set_ItemBarCode(self,ItemBarCode):
-		self.add_body_params('ItemBarCode', ItemBarCode)
+		self.add_query_param('ItemBarCode',ItemBarCode)
 
 	def get_BePromotion(self):
-		return self.get_body_params().get('BePromotion')
+		return self.get_query_params().get('BePromotion')
 
 	def set_BePromotion(self,BePromotion):
-		self.add_body_params('BePromotion', BePromotion)
+		self.add_query_param('BePromotion',BePromotion)
 
 	def get_ItemTitle(self):
-		return self.get_body_params().get('ItemTitle')
+		return self.get_query_params().get('ItemTitle')
 
 	def set_ItemTitle(self,ItemTitle):
-		self.add_body_params('ItemTitle', ItemTitle)
+		self.add_query_param('ItemTitle',ItemTitle)
 
 	def get_SkuId(self):
-		return self.get_body_params().get('SkuId')
+		return self.get_query_params().get('SkuId')
 
 	def set_SkuId(self,SkuId):
-		self.add_body_params('SkuId', SkuId)
+		self.add_query_param('SkuId',SkuId)

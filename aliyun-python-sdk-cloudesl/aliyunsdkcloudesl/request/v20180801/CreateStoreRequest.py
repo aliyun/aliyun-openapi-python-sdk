@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcloudesl.endpoint import endpoint_data
 
-class UpdateStoreRequest(RpcRequest):
+class CreateStoreRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'cloudesl', '2020-02-01', 'UpdateStore','cloudesl')
+		RpcRequest.__init__(self, 'cloudesl', '2018-08-01', 'CreateStore','cloudesl')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,32 +31,50 @@ class UpdateStoreRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_ExtraParams(self):
-		return self.get_body_params().get('ExtraParams')
-
-	def set_ExtraParams(self,ExtraParams):
-		self.add_body_params('ExtraParams', ExtraParams)
-
 	def get_StoreName(self):
-		return self.get_body_params().get('StoreName')
+		return self.get_query_params().get('StoreName')
 
 	def set_StoreName(self,StoreName):
-		self.add_body_params('StoreName', StoreName)
+		self.add_query_param('StoreName',StoreName)
 
-	def get_StoreId(self):
-		return self.get_body_params().get('StoreId')
+	def get_ParentId(self):
+		return self.get_query_params().get('ParentId')
 
-	def set_StoreId(self,StoreId):
-		self.add_body_params('StoreId', StoreId)
+	def set_ParentId(self,ParentId):
+		self.add_query_param('ParentId',ParentId)
 
-	def get_UserStoreCode(self):
-		return self.get_body_params().get('UserStoreCode')
+	def get_CompanyId(self):
+		return self.get_query_params().get('CompanyId')
 
-	def set_UserStoreCode(self,UserStoreCode):
-		self.add_body_params('UserStoreCode', UserStoreCode)
+	def set_CompanyId(self,CompanyId):
+		self.add_query_param('CompanyId',CompanyId)
+
+	def get_Brand(self):
+		return self.get_query_params().get('Brand')
+
+	def set_Brand(self,Brand):
+		self.add_query_param('Brand',Brand)
+
+	def get_Comments(self):
+		return self.get_query_params().get('Comments')
+
+	def set_Comments(self,Comments):
+		self.add_query_param('Comments',Comments)
+
+	def get_Groups(self):
+		return self.get_query_params().get('Groups')
+
+	def set_Groups(self,Groups):
+		self.add_query_param('Groups',Groups)
 
 	def get_Phone(self):
-		return self.get_body_params().get('Phone')
+		return self.get_query_params().get('Phone')
 
 	def set_Phone(self,Phone):
-		self.add_body_params('Phone', Phone)
+		self.add_query_param('Phone',Phone)
+
+	def get_OutId(self):
+		return self.get_query_params().get('OutId')
+
+	def set_OutId(self,OutId):
+		self.add_query_param('OutId',OutId)

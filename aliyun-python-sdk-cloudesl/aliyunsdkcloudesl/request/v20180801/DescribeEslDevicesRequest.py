@@ -23,7 +23,7 @@ from aliyunsdkcloudesl.endpoint import endpoint_data
 class DescribeEslDevicesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'cloudesl', '2020-02-01', 'DescribeEslDevices','cloudesl')
+		RpcRequest.__init__(self, 'cloudesl', '2018-08-01', 'DescribeEslDevices','cloudesl')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,56 +31,74 @@ class DescribeEslDevicesRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_ExtraParams(self):
-		return self.get_body_params().get('ExtraParams')
-
-	def set_ExtraParams(self,ExtraParams):
-		self.add_body_params('ExtraParams', ExtraParams)
-
-	def get_Type(self):
-		return self.get_body_params().get('Type')
-
-	def set_Type(self,Type):
-		self.add_body_params('Type', Type)
-
 	def get_StoreId(self):
-		return self.get_body_params().get('StoreId')
+		return self.get_query_params().get('StoreId')
 
 	def set_StoreId(self,StoreId):
-		self.add_body_params('StoreId', StoreId)
+		self.add_query_param('StoreId',StoreId)
+
+	def get_Type(self):
+		return self.get_query_params().get('Type')
+
+	def set_Type(self,Type):
+		self.add_query_param('Type',Type)
+
+	def get_Mac(self):
+		return self.get_query_params().get('Mac')
+
+	def set_Mac(self,Mac):
+		self.add_query_param('Mac',Mac)
 
 	def get_PageNumber(self):
-		return self.get_body_params().get('PageNumber')
+		return self.get_query_params().get('PageNumber')
 
 	def set_PageNumber(self,PageNumber):
-		self.add_body_params('PageNumber', PageNumber)
+		self.add_query_param('PageNumber',PageNumber)
 
 	def get_EslBarCode(self):
-		return self.get_body_params().get('EslBarCode')
+		return self.get_query_params().get('EslBarCode')
 
 	def set_EslBarCode(self,EslBarCode):
-		self.add_body_params('EslBarCode', EslBarCode)
+		self.add_query_param('EslBarCode',EslBarCode)
+
+	def get_Vendor(self):
+		return self.get_query_params().get('Vendor')
+
+	def set_Vendor(self,Vendor):
+		self.add_query_param('Vendor',Vendor)
 
 	def get_PageSize(self):
-		return self.get_body_params().get('PageSize')
+		return self.get_query_params().get('PageSize')
 
 	def set_PageSize(self,PageSize):
-		self.add_body_params('PageSize', PageSize)
+		self.add_query_param('PageSize',PageSize)
 
-	def get_EslStatus(self):
-		return self.get_body_params().get('EslStatus')
+	def get_ItemBarCode(self):
+		return self.get_query_params().get('ItemBarCode')
 
-	def set_EslStatus(self,EslStatus):
-		self.add_body_params('EslStatus', EslStatus)
+	def set_ItemBarCode(self,ItemBarCode):
+		self.add_query_param('ItemBarCode',ItemBarCode)
 
 	def get_ToBatteryLevel(self):
-		return self.get_body_params().get('ToBatteryLevel')
+		return self.get_query_params().get('ToBatteryLevel')
 
 	def set_ToBatteryLevel(self,ToBatteryLevel):
-		self.add_body_params('ToBatteryLevel', ToBatteryLevel)
+		self.add_query_param('ToBatteryLevel',ToBatteryLevel)
 
 	def get_FromBatteryLevel(self):
-		return self.get_body_params().get('FromBatteryLevel')
+		return self.get_query_params().get('FromBatteryLevel')
 
 	def set_FromBatteryLevel(self,FromBatteryLevel):
-		self.add_body_params('FromBatteryLevel', FromBatteryLevel)
+		self.add_query_param('FromBatteryLevel',FromBatteryLevel)
+
+	def get_ShelfCode(self):
+		return self.get_query_params().get('ShelfCode')
+
+	def set_ShelfCode(self,ShelfCode):
+		self.add_query_param('ShelfCode',ShelfCode)
+
+	def get_BeBind(self):
+		return self.get_query_params().get('BeBind')
+
+	def set_BeBind(self,BeBind):
+		self.add_query_param('BeBind',BeBind)

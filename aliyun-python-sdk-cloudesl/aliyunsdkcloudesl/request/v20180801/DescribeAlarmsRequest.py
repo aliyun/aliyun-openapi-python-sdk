@@ -23,7 +23,7 @@ from aliyunsdkcloudesl.endpoint import endpoint_data
 class DescribeAlarmsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'cloudesl', '2020-02-01', 'DescribeAlarms','cloudesl')
+		RpcRequest.__init__(self, 'cloudesl', '2018-08-01', 'DescribeAlarms','cloudesl')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,56 +31,56 @@ class DescribeAlarmsRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_ExtraParams(self):
-		return self.get_body_params().get('ExtraParams')
-
-	def set_ExtraParams(self,ExtraParams):
-		self.add_body_params('ExtraParams', ExtraParams)
-
 	def get_StoreId(self):
-		return self.get_body_params().get('StoreId')
+		return self.get_query_params().get('StoreId')
 
 	def set_StoreId(self,StoreId):
-		self.add_body_params('StoreId', StoreId)
+		self.add_query_param('StoreId',StoreId)
 
 	def get_PageNumber(self):
-		return self.get_body_params().get('PageNumber')
+		return self.get_query_params().get('PageNumber')
 
 	def set_PageNumber(self,PageNumber):
-		self.add_body_params('PageNumber', PageNumber)
+		self.add_query_param('PageNumber',PageNumber)
+
+	def get_FromAlarmTime(self):
+		return self.get_query_params().get('FromAlarmTime')
+
+	def set_FromAlarmTime(self,FromAlarmTime):
+		self.add_query_param('FromAlarmTime',FromAlarmTime)
 
 	def get_PageSize(self):
-		return self.get_body_params().get('PageSize')
+		return self.get_query_params().get('PageSize')
 
 	def set_PageSize(self,PageSize):
-		self.add_body_params('PageSize', PageSize)
+		self.add_query_param('PageSize',PageSize)
+
+	def get_ToAlarmTime(self):
+		return self.get_query_params().get('ToAlarmTime')
+
+	def set_ToAlarmTime(self,ToAlarmTime):
+		self.add_query_param('ToAlarmTime',ToAlarmTime)
 
 	def get_AlarmType(self):
-		return self.get_body_params().get('AlarmType')
+		return self.get_query_params().get('AlarmType')
 
 	def set_AlarmType(self,AlarmType):
-		self.add_body_params('AlarmType', AlarmType)
+		self.add_query_param('AlarmType',AlarmType)
 
 	def get_AlarmStatus(self):
-		return self.get_body_params().get('AlarmStatus')
+		return self.get_query_params().get('AlarmStatus')
 
 	def set_AlarmStatus(self,AlarmStatus):
-		self.add_body_params('AlarmStatus', AlarmStatus)
+		self.add_query_param('AlarmStatus',AlarmStatus)
 
 	def get_ErrorType(self):
-		return self.get_body_params().get('ErrorType')
+		return self.get_query_params().get('ErrorType')
 
 	def set_ErrorType(self,ErrorType):
-		self.add_body_params('ErrorType', ErrorType)
+		self.add_query_param('ErrorType',ErrorType)
 
 	def get_AlarmId(self):
-		return self.get_body_params().get('AlarmId')
+		return self.get_query_params().get('AlarmId')
 
 	def set_AlarmId(self,AlarmId):
-		self.add_body_params('AlarmId', AlarmId)
-
-	def get_DeviceMac(self):
-		return self.get_body_params().get('DeviceMac')
-
-	def set_DeviceMac(self,DeviceMac):
-		self.add_body_params('DeviceMac', DeviceMac)
+		self.add_query_param('AlarmId',AlarmId)

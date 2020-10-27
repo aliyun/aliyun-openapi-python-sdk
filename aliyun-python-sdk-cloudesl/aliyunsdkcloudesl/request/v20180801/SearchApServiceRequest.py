@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcloudesl.endpoint import endpoint_data
 
-class DescribeClientPackageRequest(RpcRequest):
+class SearchApServiceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'cloudesl', '2020-02-01', 'DescribeClientPackage','cloudesl')
+		RpcRequest.__init__(self, 'cloudesl', '2018-08-01', 'SearchApService','cloudesl')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,14 +31,32 @@ class DescribeClientPackageRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_ClientType(self):
-		return self.get_body_params().get('ClientType')
+	def get_ApMac(self):
+		return self.get_query_params().get('ApMac')
 
-	def set_ClientType(self,ClientType):
-		self.add_body_params('ClientType', ClientType)
+	def set_ApMac(self,ApMac):
+		self.add_query_param('ApMac',ApMac)
 
-	def get_ExtraParams(self):
-		return self.get_body_params().get('ExtraParams')
+	def get_StoreId(self):
+		return self.get_query_params().get('StoreId')
 
-	def set_ExtraParams(self,ExtraParams):
-		self.add_body_params('ExtraParams', ExtraParams)
+	def set_StoreId(self,StoreId):
+		self.add_query_param('StoreId',StoreId)
+
+	def get_PageNumber(self):
+		return self.get_query_params().get('PageNumber')
+
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)
+
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
+
+	def get_Activated(self):
+		return self.get_query_params().get('Activated')
+
+	def set_Activated(self,Activated):
+		self.add_query_param('Activated',Activated)
