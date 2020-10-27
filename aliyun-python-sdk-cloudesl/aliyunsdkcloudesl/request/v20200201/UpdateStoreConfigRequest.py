@@ -37,6 +37,12 @@ class UpdateStoreConfigRequest(RpcRequest):
 	def set_ExtraParams(self,ExtraParams):
 		self.add_body_params('ExtraParams', ExtraParams)
 
+	def get_StoreId(self):
+		return self.get_body_params().get('StoreId')
+
+	def set_StoreId(self,StoreId):
+		self.add_body_params('StoreId', StoreId)
+
 	def get_EnableNotification(self):
 		return self.get_body_params().get('EnableNotification')
 
@@ -48,12 +54,6 @@ class UpdateStoreConfigRequest(RpcRequest):
 
 	def set_NotificationWebHook(self,NotificationWebHook):
 		self.add_body_params('NotificationWebHook', NotificationWebHook)
-
-	def get_StoreId(self):
-		return self.get_body_params().get('StoreId')
-
-	def set_StoreId(self,StoreId):
-		self.add_body_params('StoreId', StoreId)
 
 	def get_NotificationSilentTimes(self):
 		return self.get_body_params().get('NotificationSilentTimes')

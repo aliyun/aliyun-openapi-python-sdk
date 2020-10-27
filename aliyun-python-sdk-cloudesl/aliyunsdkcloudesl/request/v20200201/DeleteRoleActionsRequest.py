@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcloudesl.endpoint import endpoint_data
 
-class UpdateStoreRequest(RpcRequest):
+class DeleteRoleActionsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'cloudesl', '2020-02-01', 'UpdateStore','cloudesl')
+		RpcRequest.__init__(self, 'cloudesl', '2020-02-01', 'DeleteRoleActions','cloudesl')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,32 +31,20 @@ class UpdateStoreRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_RoleCode(self):
+		return self.get_body_params().get('RoleCode')
+
+	def set_RoleCode(self,RoleCode):
+		self.add_body_params('RoleCode', RoleCode)
+
 	def get_ExtraParams(self):
 		return self.get_body_params().get('ExtraParams')
 
 	def set_ExtraParams(self,ExtraParams):
 		self.add_body_params('ExtraParams', ExtraParams)
 
-	def get_StoreName(self):
-		return self.get_body_params().get('StoreName')
+	def get_AccessControlLists(self):
+		return self.get_body_params().get('AccessControlLists')
 
-	def set_StoreName(self,StoreName):
-		self.add_body_params('StoreName', StoreName)
-
-	def get_StoreId(self):
-		return self.get_body_params().get('StoreId')
-
-	def set_StoreId(self,StoreId):
-		self.add_body_params('StoreId', StoreId)
-
-	def get_UserStoreCode(self):
-		return self.get_body_params().get('UserStoreCode')
-
-	def set_UserStoreCode(self,UserStoreCode):
-		self.add_body_params('UserStoreCode', UserStoreCode)
-
-	def get_Phone(self):
-		return self.get_body_params().get('Phone')
-
-	def set_Phone(self,Phone):
-		self.add_body_params('Phone', Phone)
+	def set_AccessControlLists(self,AccessControlLists):
+		self.add_body_params('AccessControlLists', AccessControlLists)

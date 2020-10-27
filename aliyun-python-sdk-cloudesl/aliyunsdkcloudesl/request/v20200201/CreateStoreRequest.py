@@ -55,14 +55,14 @@ class CreateStoreRequest(RpcRequest):
 	def set_ParentId(self,ParentId):
 		self.add_body_params('ParentId', ParentId)
 
-	def get_Phone(self):
-		return self.get_body_params().get('Phone')
-
-	def set_Phone(self,Phone):
-		self.add_body_params('Phone', Phone)
-
 	def get_UserStoreCode(self):
 		return self.get_body_params().get('UserStoreCode')
 
 	def set_UserStoreCode(self,UserStoreCode):
 		self.add_body_params('UserStoreCode', UserStoreCode)
+
+	def get_Phone(self):
+		return self.get_body_params().get('Phone')
+
+	def set_Phone(self,Phone):
+		self.add_body_params('Phone', Phone)

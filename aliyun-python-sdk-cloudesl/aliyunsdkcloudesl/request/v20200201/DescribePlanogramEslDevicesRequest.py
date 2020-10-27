@@ -49,14 +49,14 @@ class DescribePlanogramEslDevicesRequest(RpcRequest):
 	def set_Layer(self,Layer):
 		self.add_body_params('Layer', Layer)
 
-	def get_Shelf(self):
-		return self.get_body_params().get('Shelf')
-
-	def set_Shelf(self,Shelf):
-		self.add_body_params('Shelf', Shelf)
-
 	def get_EslBarCode(self):
 		return self.get_body_params().get('EslBarCode')
 
 	def set_EslBarCode(self,EslBarCode):
 		self.add_body_params('EslBarCode', EslBarCode)
+
+	def get_Shelf(self):
+		return self.get_body_params().get('Shelf')
+
+	def set_Shelf(self,Shelf):
+		self.add_body_params('Shelf', Shelf)

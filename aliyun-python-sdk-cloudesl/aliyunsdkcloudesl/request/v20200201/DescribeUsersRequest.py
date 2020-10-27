@@ -37,12 +37,6 @@ class DescribeUsersRequest(RpcRequest):
 	def set_ExtraParams(self,ExtraParams):
 		self.add_body_params('ExtraParams', ExtraParams)
 
-	def get_UserType(self):
-		return self.get_body_params().get('UserType')
-
-	def set_UserType(self,UserType):
-		self.add_body_params('UserType', UserType)
-
 	def get_UserId(self):
 		return self.get_body_params().get('UserId')
 
@@ -60,6 +54,12 @@ class DescribeUsersRequest(RpcRequest):
 
 	def set_PageSize(self,PageSize):
 		self.add_body_params('PageSize', PageSize)
+
+	def get_UserType(self):
+		return self.get_body_params().get('UserType')
+
+	def set_UserType(self,UserType):
+		self.add_body_params('UserType', UserType)
 
 	def get_UserName(self):
 		return self.get_body_params().get('UserName')
