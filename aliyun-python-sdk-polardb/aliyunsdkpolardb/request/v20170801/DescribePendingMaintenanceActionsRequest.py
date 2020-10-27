@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkpolardb.endpoint import endpoint_data
 
-class ModifyActiveOperationTaskRequest(RpcRequest):
+class DescribePendingMaintenanceActionsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'polardb', '2017-08-01', 'ModifyActiveOperationTask','polardb')
+		RpcRequest.__init__(self, 'polardb', '2017-08-01', 'DescribePendingMaintenanceActions','polardb')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -37,17 +37,17 @@ class ModifyActiveOperationTaskRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_IsHistory(self):
+		return self.get_query_params().get('IsHistory')
+
+	def set_IsHistory(self,IsHistory):
+		self.add_query_param('IsHistory',IsHistory)
+
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
 
 	def set_SecurityToken(self,SecurityToken):
 		self.add_query_param('SecurityToken',SecurityToken)
-
-	def get_SwitchTime(self):
-		return self.get_query_params().get('SwitchTime')
-
-	def set_SwitchTime(self,SwitchTime):
-		self.add_query_param('SwitchTime',SwitchTime)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -66,9 +66,3 @@ class ModifyActiveOperationTaskRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
-
-	def get_Ids(self):
-		return self.get_query_params().get('Ids')
-
-	def set_Ids(self,Ids):
-		self.add_query_param('Ids',Ids)
