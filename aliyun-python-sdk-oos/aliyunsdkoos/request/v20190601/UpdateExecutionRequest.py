@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkoos.endpoint import endpoint_data
 
-class CreateParameterRequest(RpcRequest):
+class UpdateExecutionRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'oos', '2019-06-01', 'CreateParameter','oos')
+		RpcRequest.__init__(self, 'oos', '2019-06-01', 'UpdateExecution','oos')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -37,32 +37,14 @@ class CreateParameterRequest(RpcRequest):
 	def set_ClientToken(self,ClientToken):
 		self.add_query_param('ClientToken',ClientToken)
 
-	def get_Description(self):
-		return self.get_query_params().get('Description')
+	def get_ExecutionId(self):
+		return self.get_query_params().get('ExecutionId')
 
-	def set_Description(self,Description):
-		self.add_query_param('Description',Description)
+	def set_ExecutionId(self,ExecutionId):
+		self.add_query_param('ExecutionId',ExecutionId)
 
-	def get_Type(self):
-		return self.get_query_params().get('Type')
+	def get_Parameters(self):
+		return self.get_query_params().get('Parameters')
 
-	def set_Type(self,Type):
-		self.add_query_param('Type',Type)
-
-	def get_Constraints(self):
-		return self.get_query_params().get('Constraints')
-
-	def set_Constraints(self,Constraints):
-		self.add_query_param('Constraints',Constraints)
-
-	def get_Name(self):
-		return self.get_query_params().get('Name')
-
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)
-
-	def get_Value(self):
-		return self.get_query_params().get('Value')
-
-	def set_Value(self,Value):
-		self.add_query_param('Value',Value)
+	def set_Parameters(self,Parameters):
+		self.add_query_param('Parameters',Parameters)

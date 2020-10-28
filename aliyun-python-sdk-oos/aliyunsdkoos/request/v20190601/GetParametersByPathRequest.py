@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkoos.endpoint import endpoint_data
 
-class CreateParameterRequest(RpcRequest):
+class GetParametersByPathRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'oos', '2019-06-01', 'CreateParameter','oos')
+		RpcRequest.__init__(self, 'oos', '2019-06-01', 'GetParametersByPath','oos')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,38 +31,26 @@ class CreateParameterRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_ClientToken(self):
-		return self.get_query_params().get('ClientToken')
+	def get_Recursive(self):
+		return self.get_query_params().get('Recursive')
 
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
+	def set_Recursive(self,Recursive):
+		self.add_query_param('Recursive',Recursive)
 
-	def get_Description(self):
-		return self.get_query_params().get('Description')
+	def get_Path(self):
+		return self.get_query_params().get('Path')
 
-	def set_Description(self,Description):
-		self.add_query_param('Description',Description)
+	def set_Path(self,Path):
+		self.add_query_param('Path',Path)
 
-	def get_Type(self):
-		return self.get_query_params().get('Type')
+	def get_NextToken(self):
+		return self.get_query_params().get('NextToken')
 
-	def set_Type(self,Type):
-		self.add_query_param('Type',Type)
+	def set_NextToken(self,NextToken):
+		self.add_query_param('NextToken',NextToken)
 
-	def get_Constraints(self):
-		return self.get_query_params().get('Constraints')
+	def get_MaxResults(self):
+		return self.get_query_params().get('MaxResults')
 
-	def set_Constraints(self,Constraints):
-		self.add_query_param('Constraints',Constraints)
-
-	def get_Name(self):
-		return self.get_query_params().get('Name')
-
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)
-
-	def get_Value(self):
-		return self.get_query_params().get('Value')
-
-	def set_Value(self,Value):
-		self.add_query_param('Value',Value)
+	def set_MaxResults(self,MaxResults):
+		self.add_query_param('MaxResults',MaxResults)

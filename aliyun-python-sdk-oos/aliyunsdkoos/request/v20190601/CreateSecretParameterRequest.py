@@ -55,6 +55,12 @@ class CreateSecretParameterRequest(RpcRequest):
 	def set_Type(self,Type):
 		self.add_query_param('Type',Type)
 
+	def get_Constraints(self):
+		return self.get_query_params().get('Constraints')
+
+	def set_Constraints(self,Constraints):
+		self.add_query_param('Constraints',Constraints)
+
 	def get_Name(self):
 		return self.get_query_params().get('Name')
 
