@@ -32,7 +32,7 @@ class SubmitHotExpandPreCheckTaskRequest(RpcRequest):
 
 
 	def get_TableLists(self):
-		return self.get_query_params().get('TableLists')
+		return self.get_query_params().get('TableList')
 
 	def set_TableLists(self, TableLists):
 		for depth1 in range(len(TableLists)):

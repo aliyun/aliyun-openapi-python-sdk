@@ -50,7 +50,7 @@ class CreateEvaluateTaskRequest(RpcRequest):
 		self.add_query_param('DataGrowthScale',DataGrowthScale)
 
 	def get_DbInfos(self):
-		return self.get_query_params().get('DbInfos')
+		return self.get_query_params().get('DbInfo')
 
 	def set_DbInfos(self, DbInfos):
 		for depth1 in range(len(DbInfos)):

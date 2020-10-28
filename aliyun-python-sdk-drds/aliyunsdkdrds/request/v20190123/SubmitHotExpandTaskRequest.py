@@ -32,7 +32,7 @@ class SubmitHotExpandTaskRequest(RpcRequest):
 
 
 	def get_Mappings(self):
-		return self.get_query_params().get('Mappings')
+		return self.get_query_params().get('Mapping')
 
 	def set_Mappings(self, Mappings):
 		for depth1 in range(len(Mappings)):
@@ -58,7 +58,7 @@ class SubmitHotExpandTaskRequest(RpcRequest):
 		self.add_query_param('TaskDesc',TaskDesc)
 
 	def get_SupperAccountMappings(self):
-		return self.get_query_params().get('SupperAccountMappings')
+		return self.get_query_params().get('SupperAccountMapping')
 
 	def set_SupperAccountMappings(self, SupperAccountMappings):
 		for depth1 in range(len(SupperAccountMappings)):
@@ -70,7 +70,7 @@ class SubmitHotExpandTaskRequest(RpcRequest):
 				self.add_query_param('SupperAccountMapping.' + str(depth1 + 1) + '.SupperPassword', SupperAccountMappings[depth1].get('SupperPassword'))
 
 	def get_ExtendedMappings(self):
-		return self.get_query_params().get('ExtendedMappings')
+		return self.get_query_params().get('ExtendedMapping')
 
 	def set_ExtendedMappings(self, ExtendedMappings):
 		for depth1 in range(len(ExtendedMappings)):
@@ -92,7 +92,7 @@ class SubmitHotExpandTaskRequest(RpcRequest):
 		self.add_query_param('DrdsInstanceId',DrdsInstanceId)
 
 	def get_InstanceDbMappings(self):
-		return self.get_query_params().get('InstanceDbMappings')
+		return self.get_query_params().get('InstanceDbMapping')
 
 	def set_InstanceDbMappings(self, InstanceDbMappings):
 		for depth1 in range(len(InstanceDbMappings)):

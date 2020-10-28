@@ -44,7 +44,7 @@ class ModifyAccountPrivilegeRequest(RpcRequest):
 		self.add_query_param('AccountName',AccountName)
 
 	def get_DbPrivileges(self):
-		return self.get_query_params().get('DbPrivileges')
+		return self.get_query_params().get('DbPrivilege')
 
 	def set_DbPrivileges(self, DbPrivileges):
 		for depth1 in range(len(DbPrivileges)):

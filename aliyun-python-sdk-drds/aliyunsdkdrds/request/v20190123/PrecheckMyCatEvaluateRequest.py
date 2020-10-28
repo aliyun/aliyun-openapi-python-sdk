@@ -80,7 +80,7 @@ class PrecheckMyCatEvaluateRequest(RpcRequest):
 		self.add_query_param('RuleUrl',RuleUrl)
 
 	def get_ImportDbLists(self):
-		return self.get_query_params().get('ImportDbLists')
+		return self.get_query_params().get('ImportDbList')
 
 	def set_ImportDbLists(self, ImportDbLists):
 		for depth1 in range(len(ImportDbLists)):

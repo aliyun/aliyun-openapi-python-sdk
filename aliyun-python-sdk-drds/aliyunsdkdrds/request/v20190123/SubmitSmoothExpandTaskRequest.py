@@ -44,7 +44,7 @@ class SubmitSmoothExpandTaskRequest(RpcRequest):
 		self.add_query_param('DbInstanceIsCreating',DbInstanceIsCreating)
 
 	def get_RdsSuperInstancess(self):
-		return self.get_query_params().get('RdsSuperInstancess')
+		return self.get_query_params().get('RdsSuperInstances')
 
 	def set_RdsSuperInstancess(self, RdsSuperInstancess):
 		for depth1 in range(len(RdsSuperInstancess)):
@@ -62,7 +62,7 @@ class SubmitSmoothExpandTaskRequest(RpcRequest):
 		self.add_query_param('DbName',DbName)
 
 	def get_TransferTaskInfoss(self):
-		return self.get_query_params().get('TransferTaskInfoss')
+		return self.get_query_params().get('TransferTaskInfos')
 
 	def set_TransferTaskInfoss(self, TransferTaskInfoss):
 		for depth1 in range(len(TransferTaskInfoss)):

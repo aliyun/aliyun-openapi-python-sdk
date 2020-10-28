@@ -38,7 +38,7 @@ class SetupDrdsParamsRequest(RpcRequest):
 		self.add_query_param('ParamLevel',ParamLevel)
 
 	def get_Datas(self):
-		return self.get_query_params().get('Datas')
+		return self.get_query_params().get('Data')
 
 	def set_Datas(self, Datas):
 		for depth1 in range(len(Datas)):

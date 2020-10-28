@@ -44,7 +44,7 @@ class DeleteShardTasksRequest(RpcRequest):
 		self.add_query_param('DbName',DbName)
 
 	def get_TableNames(self):
-		return self.get_query_params().get('TableNames')
+		return self.get_query_params().get('TableName')
 
 	def set_TableNames(self, TableNames):
 		for depth1 in range(len(TableNames)):

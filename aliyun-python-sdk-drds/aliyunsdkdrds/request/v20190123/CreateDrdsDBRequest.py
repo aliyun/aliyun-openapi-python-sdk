@@ -38,7 +38,7 @@ class CreateDrdsDBRequest(RpcRequest):
 		self.add_query_param('Encode',Encode)
 
 	def get_RdsInstances(self):
-		return self.get_query_params().get('RdsInstances')
+		return self.get_query_params().get('RdsInstance')
 
 	def set_RdsInstances(self, RdsInstances):
 		for depth1 in range(len(RdsInstances)):
@@ -58,7 +58,7 @@ class CreateDrdsDBRequest(RpcRequest):
 		self.add_query_param('Password',Password)
 
 	def get_RdsSuperAccounts(self):
-		return self.get_query_params().get('RdsSuperAccounts')
+		return self.get_query_params().get('RdsSuperAccount')
 
 	def set_RdsSuperAccounts(self, RdsSuperAccounts):
 		for depth1 in range(len(RdsSuperAccounts)):
@@ -88,7 +88,7 @@ class CreateDrdsDBRequest(RpcRequest):
 		self.add_query_param('DbInstanceIsCreating',DbInstanceIsCreating)
 
 	def get_InstDbNames(self):
-		return self.get_query_params().get('InstDbNames')
+		return self.get_query_params().get('InstDbName')
 
 	def set_InstDbNames(self, InstDbNames):
 		for depth1 in range(len(InstDbNames)):

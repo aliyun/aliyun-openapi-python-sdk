@@ -32,7 +32,7 @@ class DescribeRdsPerformanceSummaryRequest(RpcRequest):
 
 
 	def get_RdsInstanceIds(self):
-		return self.get_query_params().get('RdsInstanceIds')
+		return self.get_query_params().get('RdsInstanceId')
 
 	def set_RdsInstanceIds(self, RdsInstanceIds):
 		for depth1 in range(len(RdsInstanceIds)):

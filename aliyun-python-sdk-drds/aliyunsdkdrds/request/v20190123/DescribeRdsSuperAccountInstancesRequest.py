@@ -32,7 +32,7 @@ class DescribeRdsSuperAccountInstancesRequest(RpcRequest):
 
 
 	def get_RdsInstances(self):
-		return self.get_query_params().get('RdsInstances')
+		return self.get_query_params().get('RdsInstance')
 
 	def set_RdsInstances(self, RdsInstances):
 		for depth1 in range(len(RdsInstances)):
