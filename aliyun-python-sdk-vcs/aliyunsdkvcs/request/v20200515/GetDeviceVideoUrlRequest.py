@@ -23,7 +23,7 @@ from aliyunsdkvcs.endpoint import endpoint_data
 class GetDeviceVideoUrlRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Vcs', '2020-05-15', 'GetDeviceVideoUrl')
+		RpcRequest.__init__(self, 'Vcs', '2020-05-15', 'GetDeviceVideoUrl','vcs')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())

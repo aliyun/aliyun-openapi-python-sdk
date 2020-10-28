@@ -23,7 +23,7 @@ from aliyunsdkvcs.endpoint import endpoint_data
 class ListSubscribeDeviceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Vcs', '2020-05-15', 'ListSubscribeDevice')
+		RpcRequest.__init__(self, 'Vcs', '2020-05-15', 'ListSubscribeDevice','vcs')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,14 +31,14 @@ class ListSubscribeDeviceRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
 	def get_PageNum(self):
 		return self.get_query_params().get('PageNum')
 
 	def set_PageNum(self,PageNum):
 		self.add_query_param('PageNum',PageNum)
+
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)

@@ -23,7 +23,7 @@ from aliyunsdkvcs.endpoint import endpoint_data
 class SubscribeSpaceEventRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Vcs', '2020-05-15', 'SubscribeSpaceEvent')
+		RpcRequest.__init__(self, 'Vcs', '2020-05-15', 'SubscribeSpaceEvent','vcs')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,14 +31,14 @@ class SubscribeSpaceEventRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_SpaceId(self):
-		return self.get_query_params().get('SpaceId')
-
-	def set_SpaceId(self,SpaceId):
-		self.add_query_param('SpaceId',SpaceId)
-
 	def get_PushConfig(self):
 		return self.get_query_params().get('PushConfig')
 
 	def set_PushConfig(self,PushConfig):
 		self.add_query_param('PushConfig',PushConfig)
+
+	def get_SpaceId(self):
+		return self.get_query_params().get('SpaceId')
+
+	def set_SpaceId(self,SpaceId):
+		self.add_query_param('SpaceId',SpaceId)
