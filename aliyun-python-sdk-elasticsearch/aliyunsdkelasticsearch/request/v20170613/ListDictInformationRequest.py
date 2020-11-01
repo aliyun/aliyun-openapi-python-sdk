@@ -20,11 +20,11 @@
 from aliyunsdkcore.request import RoaRequest
 from aliyunsdkelasticsearch.endpoint import endpoint_data
 
-class DescribePipelineManagementConfigRequest(RoaRequest):
+class ListDictInformationRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'elasticsearch', '2017-06-13', 'DescribePipelineManagementConfig','elasticsearch')
-		self.set_uri_pattern('/openapi/logstashes/[InstanceId]/pipeline-management-config')
+		RoaRequest.__init__(self, 'elasticsearch', '2017-06-13', 'ListDictInformation','elasticsearch')
+		self.set_uri_pattern('/openapi/instances/[InstanceId]/dict/_info')
 		self.set_method('GET')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -38,8 +38,20 @@ class DescribePipelineManagementConfigRequest(RoaRequest):
 	def set_InstanceId(self,InstanceId):
 		self.add_path_param('InstanceId',InstanceId)
 
-	def get_clientToken(self):
-		return self.get_query_params().get('clientToken')
+	def get_analyzerType(self):
+		return self.get_query_params().get('analyzerType')
 
-	def set_clientToken(self,clientToken):
-		self.add_query_param('clientToken',clientToken)
+	def set_analyzerType(self,analyzerType):
+		self.add_query_param('analyzerType',analyzerType)
+
+	def get_bucketName(self):
+		return self.get_query_params().get('bucketName')
+
+	def set_bucketName(self,bucketName):
+		self.add_query_param('bucketName',bucketName)
+
+	def get_key(self):
+		return self.get_query_params().get('key')
+
+	def set_key(self,key):
+		self.add_query_param('key',key)

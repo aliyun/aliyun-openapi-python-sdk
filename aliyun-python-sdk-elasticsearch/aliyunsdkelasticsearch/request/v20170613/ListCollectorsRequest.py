@@ -20,11 +20,11 @@
 from aliyunsdkcore.request import RoaRequest
 from aliyunsdkelasticsearch.endpoint import endpoint_data
 
-class DescribePipelineManagementConfigRequest(RoaRequest):
+class ListCollectorsRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'elasticsearch', '2017-06-13', 'DescribePipelineManagementConfig','elasticsearch')
-		self.set_uri_pattern('/openapi/logstashes/[InstanceId]/pipeline-management-config')
+		RoaRequest.__init__(self, 'elasticsearch', '2017-06-13', 'ListCollectors','elasticsearch')
+		self.set_uri_pattern('/openapi/collectors')
 		self.set_method('GET')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -32,14 +32,32 @@ class DescribePipelineManagementConfigRequest(RoaRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_InstanceId(self):
-		return self.get_path_params().get('InstanceId')
+	def get_instanceId(self):
+		return self.get_query_params().get('instanceId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_path_param('InstanceId',InstanceId)
+	def set_instanceId(self,instanceId):
+		self.add_query_param('instanceId',instanceId)
 
-	def get_clientToken(self):
-		return self.get_query_params().get('clientToken')
+	def get_size(self):
+		return self.get_query_params().get('size')
 
-	def set_clientToken(self,clientToken):
-		self.add_query_param('clientToken',clientToken)
+	def set_size(self,size):
+		self.add_query_param('size',size)
+
+	def get_name(self):
+		return self.get_query_params().get('name')
+
+	def set_name(self,name):
+		self.add_query_param('name',name)
+
+	def get_page(self):
+		return self.get_query_params().get('page')
+
+	def set_page(self,page):
+		self.add_query_param('page',page)
+
+	def get_resId(self):
+		return self.get_query_params().get('resId')
+
+	def set_resId(self,resId):
+		self.add_query_param('resId',resId)

@@ -20,12 +20,12 @@
 from aliyunsdkcore.request import RoaRequest
 from aliyunsdkelasticsearch.endpoint import endpoint_data
 
-class DescribePipelineManagementConfigRequest(RoaRequest):
+class RunPipelinesRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'elasticsearch', '2017-06-13', 'DescribePipelineManagementConfig','elasticsearch')
-		self.set_uri_pattern('/openapi/logstashes/[InstanceId]/pipeline-management-config')
-		self.set_method('GET')
+		RoaRequest.__init__(self, 'elasticsearch', '2017-06-13', 'RunPipelines','elasticsearch')
+		self.set_uri_pattern('/openapi/logstashes/[InstanceId]/pipelines/action/run')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -38,8 +38,8 @@ class DescribePipelineManagementConfigRequest(RoaRequest):
 	def set_InstanceId(self,InstanceId):
 		self.add_path_param('InstanceId',InstanceId)
 
-	def get_clientToken(self):
-		return self.get_query_params().get('clientToken')
+	def get_ClientToken(self):
+		return self.get_query_params().get('ClientToken')
 
-	def set_clientToken(self,clientToken):
-		self.add_query_param('clientToken',clientToken)
+	def set_ClientToken(self,ClientToken):
+		self.add_query_param('ClientToken',ClientToken)

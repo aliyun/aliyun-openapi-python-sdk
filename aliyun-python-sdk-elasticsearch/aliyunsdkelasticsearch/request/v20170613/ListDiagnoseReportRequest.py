@@ -20,11 +20,11 @@
 from aliyunsdkcore.request import RoaRequest
 from aliyunsdkelasticsearch.endpoint import endpoint_data
 
-class DescribePipelineManagementConfigRequest(RoaRequest):
+class ListDiagnoseReportRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'elasticsearch', '2017-06-13', 'DescribePipelineManagementConfig','elasticsearch')
-		self.set_uri_pattern('/openapi/logstashes/[InstanceId]/pipeline-management-config')
+		RoaRequest.__init__(self, 'elasticsearch', '2017-06-13', 'ListDiagnoseReport','elasticsearch')
+		self.set_uri_pattern('/openapi/diagnosis/instances/[InstanceId]/reports')
 		self.set_method('GET')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -38,8 +38,44 @@ class DescribePipelineManagementConfigRequest(RoaRequest):
 	def set_InstanceId(self,InstanceId):
 		self.add_path_param('InstanceId',InstanceId)
 
-	def get_clientToken(self):
-		return self.get_query_params().get('clientToken')
+	def get_size(self):
+		return self.get_query_params().get('size')
 
-	def set_clientToken(self,clientToken):
-		self.add_query_param('clientToken',clientToken)
+	def set_size(self,size):
+		self.add_query_param('size',size)
+
+	def get_endTime(self):
+		return self.get_query_params().get('endTime')
+
+	def set_endTime(self,endTime):
+		self.add_query_param('endTime',endTime)
+
+	def get_startTime(self):
+		return self.get_query_params().get('startTime')
+
+	def set_startTime(self,startTime):
+		self.add_query_param('startTime',startTime)
+
+	def get_page(self):
+		return self.get_query_params().get('page')
+
+	def set_page(self,page):
+		self.add_query_param('page',page)
+
+	def get_detail(self):
+		return self.get_query_params().get('detail')
+
+	def set_detail(self,detail):
+		self.add_query_param('detail',detail)
+
+	def get_trigger(self):
+		return self.get_query_params().get('trigger')
+
+	def set_trigger(self,trigger):
+		self.add_query_param('trigger',trigger)
+
+	def get_lang(self):
+		return self.get_query_params().get('lang')
+
+	def set_lang(self,lang):
+		self.add_query_param('lang',lang)
