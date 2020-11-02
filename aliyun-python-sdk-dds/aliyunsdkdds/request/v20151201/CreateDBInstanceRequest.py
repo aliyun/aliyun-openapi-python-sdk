@@ -193,6 +193,12 @@ class CreateDBInstanceRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
+	def get_ClusterId(self):
+		return self.get_query_params().get('ClusterId')
+
+	def set_ClusterId(self,ClusterId):
+		self.add_query_param('ClusterId',ClusterId)
+
 	def get_AccountPassword(self):
 		return self.get_query_params().get('AccountPassword')
 

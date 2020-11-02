@@ -110,7 +110,7 @@ class DescribeDBInstancesRequest(RpcRequest):
 		self.add_query_param('DBInstanceStatus',DBInstanceStatus)
 
 	def get_Tags(self):
-		return self.get_query_params().get('Tags')
+		return self.get_query_params().get('Tag')
 
 	def set_Tags(self, Tags):
 		for depth1 in range(len(Tags)):

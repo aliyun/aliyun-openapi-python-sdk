@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdds.endpoint import endpoint_data
 
-class CreateShardingDBInstanceRequest(RpcRequest):
+class CreateServerlessDBInstanceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dds', '2015-12-01', 'CreateShardingDBInstance','Dds')
+		RpcRequest.__init__(self, 'Dds', '2015-12-01', 'CreateServerlessDBInstance','Dds')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -37,11 +37,23 @@ class CreateShardingDBInstanceRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_DBInstanceStorage(self):
+		return self.get_query_params().get('DBInstanceStorage')
+
+	def set_DBInstanceStorage(self,DBInstanceStorage):
+		self.add_query_param('DBInstanceStorage',DBInstanceStorage)
+
 	def get_ClientToken(self):
 		return self.get_query_params().get('ClientToken')
 
 	def set_ClientToken(self,ClientToken):
 		self.add_query_param('ClientToken',ClientToken)
+
+	def get_PeriodPriceType(self):
+		return self.get_query_params().get('PeriodPriceType')
+
+	def set_PeriodPriceType(self,PeriodPriceType):
+		self.add_query_param('PeriodPriceType',PeriodPriceType)
 
 	def get_EngineVersion(self):
 		return self.get_query_params().get('EngineVersion')
@@ -55,21 +67,17 @@ class CreateShardingDBInstanceRequest(RpcRequest):
 	def set_NetworkType(self,NetworkType):
 		self.add_query_param('NetworkType',NetworkType)
 
-	def get_ReplicaSets(self):
-		return self.get_query_params().get('ReplicaSet')
-
-	def set_ReplicaSets(self, ReplicaSets):
-		for depth1 in range(len(ReplicaSets)):
-			if ReplicaSets[depth1].get('Storage') is not None:
-				self.add_query_param('ReplicaSet.' + str(depth1 + 1) + '.Storage', ReplicaSets[depth1].get('Storage'))
-			if ReplicaSets[depth1].get('Class') is not None:
-				self.add_query_param('ReplicaSet.' + str(depth1 + 1) + '.Class', ReplicaSets[depth1].get('Class'))
-
 	def get_StorageEngine(self):
 		return self.get_query_params().get('StorageEngine')
 
 	def set_StorageEngine(self,StorageEngine):
 		self.add_query_param('StorageEngine',StorageEngine)
+
+	def get_ResourceGroupId(self):
+		return self.get_query_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self,ResourceGroupId):
+		self.add_query_param('ResourceGroupId',ResourceGroupId)
 
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
@@ -95,23 +103,11 @@ class CreateShardingDBInstanceRequest(RpcRequest):
 	def set_Period(self,Period):
 		self.add_query_param('Period',Period)
 
-	def get_RestoreTime(self):
-		return self.get_query_params().get('RestoreTime')
-
-	def set_RestoreTime(self,RestoreTime):
-		self.add_query_param('RestoreTime',RestoreTime)
-
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_SrcDBInstanceId(self):
-		return self.get_query_params().get('SrcDBInstanceId')
-
-	def set_SrcDBInstanceId(self,SrcDBInstanceId):
-		self.add_query_param('SrcDBInstanceId',SrcDBInstanceId)
 
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
@@ -119,29 +115,11 @@ class CreateShardingDBInstanceRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
-	def get_ConfigServers(self):
-		return self.get_query_params().get('ConfigServer')
-
-	def set_ConfigServers(self, ConfigServers):
-		for depth1 in range(len(ConfigServers)):
-			if ConfigServers[depth1].get('Storage') is not None:
-				self.add_query_param('ConfigServer.' + str(depth1 + 1) + '.Storage', ConfigServers[depth1].get('Storage'))
-			if ConfigServers[depth1].get('Class') is not None:
-				self.add_query_param('ConfigServer.' + str(depth1 + 1) + '.Class', ConfigServers[depth1].get('Class'))
-
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
-
-	def get_Mongoss(self):
-		return self.get_query_params().get('Mongos')
-
-	def set_Mongoss(self, Mongoss):
-		for depth1 in range(len(Mongoss)):
-			if Mongoss[depth1].get('Class') is not None:
-				self.add_query_param('Mongos.' + str(depth1 + 1) + '.Class', Mongoss[depth1].get('Class'))
 
 	def get_SecurityIPList(self):
 		return self.get_query_params().get('SecurityIPList')
@@ -178,12 +156,6 @@ class CreateShardingDBInstanceRequest(RpcRequest):
 
 	def set_ZoneId(self,ZoneId):
 		self.add_query_param('ZoneId',ZoneId)
-
-	def get_ProtocolType(self):
-		return self.get_query_params().get('ProtocolType')
-
-	def set_ProtocolType(self,ProtocolType):
-		self.add_query_param('ProtocolType',ProtocolType)
 
 	def get_ChargeType(self):
 		return self.get_query_params().get('ChargeType')
