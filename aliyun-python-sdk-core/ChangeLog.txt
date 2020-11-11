@@ -1,3 +1,6 @@
+2020-11-11 Version 2.13.27
+1, Fix the problem of request parameter reuse.
+
 2020-09-14 Version 2.13.26
 1, Add x-acs-action and x-acs-version to header.
 
