@@ -318,7 +318,7 @@ class RpcRequest(AcsRequest):
         return req_params
 
     def get_url(self, region_id, access_key_id, access_key_secret):
-        sign_params = self._get_sign_params()
+        sign_params = dict(self._get_sign_params())
         if 'RegionId' not in iterkeys(sign_params):
             sign_params['RegionId'] = region_id
         url, string_to_sign = rpc_signer.get_signed_url(
@@ -422,7 +422,7 @@ class RoaRequest(AcsRequest):
         :param secret: String
         :return: Dict
         """
-        sign_params = self._get_sign_params()
+        sign_params = dict(self._get_sign_params())
         if self.get_content() is not None:
             self.add_header(
                 'Content-MD5', md5_sum(self.get_content()))
