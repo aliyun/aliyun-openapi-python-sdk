@@ -24,6 +24,7 @@ class ModifyReplicationJobAttributeRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'smc', '2019-06-01', 'ModifyReplicationJobAttribute','smc')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -72,11 +73,53 @@ class ModifyReplicationJobAttributeRequest(RpcRequest):
 	def set_InstanceType(self,InstanceType):
 		self.add_query_param('InstanceType',InstanceType)
 
+	def get_ContainerRepository(self):
+		return self.get_query_params().get('ContainerRepository')
+
+	def set_ContainerRepository(self,ContainerRepository):
+		self.add_query_param('ContainerRepository',ContainerRepository)
+
+	def get_ContainerTag(self):
+		return self.get_query_params().get('ContainerTag')
+
+	def set_ContainerTag(self,ContainerTag):
+		self.add_query_param('ContainerTag',ContainerTag)
+
+	def get_ContainerNamespace(self):
+		return self.get_query_params().get('ContainerNamespace')
+
+	def set_ContainerNamespace(self,ContainerNamespace):
+		self.add_query_param('ContainerNamespace',ContainerNamespace)
+
+	def get_LaunchTemplateId(self):
+		return self.get_query_params().get('LaunchTemplateId')
+
+	def set_LaunchTemplateId(self,LaunchTemplateId):
+		self.add_query_param('LaunchTemplateId',LaunchTemplateId)
+
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+
+	def get_SystemDiskParts(self):
+		return self.get_query_params().get('SystemDiskPart')
+
+	def set_SystemDiskParts(self, SystemDiskParts):
+		for depth1 in range(len(SystemDiskParts)):
+			if SystemDiskParts[depth1].get('SizeBytes') is not None:
+				self.add_query_param('SystemDiskPart.' + str(depth1 + 1) + '.SizeBytes', SystemDiskParts[depth1].get('SizeBytes'))
+			if SystemDiskParts[depth1].get('Block') is not None:
+				self.add_query_param('SystemDiskPart.' + str(depth1 + 1) + '.Block', SystemDiskParts[depth1].get('Block'))
+			if SystemDiskParts[depth1].get('Device') is not None:
+				self.add_query_param('SystemDiskPart.' + str(depth1 + 1) + '.Device', SystemDiskParts[depth1].get('Device'))
+
+	def get_ValidTime(self):
+		return self.get_query_params().get('ValidTime')
+
+	def set_ValidTime(self,ValidTime):
+		self.add_query_param('ValidTime',ValidTime)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
@@ -85,15 +128,28 @@ class ModifyReplicationJobAttributeRequest(RpcRequest):
 		self.add_query_param('OwnerId',OwnerId)
 
 	def get_DataDisks(self):
-		return self.get_query_params().get('DataDisks')
+		return self.get_query_params().get('DataDisk')
 
-	def set_DataDisks(self,DataDisks):
-		for i in range(len(DataDisks)):	
-			if DataDisks[i].get('Size') is not None:
-				self.add_query_param('DataDisk.' + str(i + 1) + '.Size' , DataDisks[i].get('Size'))
-			if DataDisks[i].get('Index') is not None:
-				self.add_query_param('DataDisk.' + str(i + 1) + '.Index' , DataDisks[i].get('Index'))
+	def set_DataDisks(self, DataDisks):
+		for depth1 in range(len(DataDisks)):
+			if DataDisks[depth1].get('Size') is not None:
+				self.add_query_param('DataDisk.' + str(depth1 + 1) + '.Size', DataDisks[depth1].get('Size'))
+			if DataDisks[depth1].get('Part') is not None:
+				for depth2 in range(len(DataDisks[depth1].get('Part'))):
+					if DataDisks[depth1].get('Part')[depth2].get('SizeBytes') is not None:
+						self.add_query_param('DataDisk.' + str(depth1 + 1) + '.Part.' + str(depth2 + 1) + '.SizeBytes', DataDisks[depth1].get('Part')[depth2].get('SizeBytes'))
+					if DataDisks[depth1].get('Part')[depth2].get('Block') is not None:
+						self.add_query_param('DataDisk.' + str(depth1 + 1) + '.Part.' + str(depth2 + 1) + '.Block', DataDisks[depth1].get('Part')[depth2].get('Block'))
+					if DataDisks[depth1].get('Part')[depth2].get('Device') is not None:
+						self.add_query_param('DataDisk.' + str(depth1 + 1) + '.Part.' + str(depth2 + 1) + '.Device', DataDisks[depth1].get('Part')[depth2].get('Device'))
+			if DataDisks[depth1].get('Index') is not None:
+				self.add_query_param('DataDisk.' + str(depth1 + 1) + '.Index', DataDisks[depth1].get('Index'))
 
+	def get_LaunchTemplateVersion(self):
+		return self.get_query_params().get('LaunchTemplateVersion')
+
+	def set_LaunchTemplateVersion(self,LaunchTemplateVersion):
+		self.add_query_param('LaunchTemplateVersion',LaunchTemplateVersion)
 
 	def get_ScheduledStartTime(self):
 		return self.get_query_params().get('ScheduledStartTime')
@@ -106,6 +162,12 @@ class ModifyReplicationJobAttributeRequest(RpcRequest):
 
 	def set_InstanceId(self,InstanceId):
 		self.add_query_param('InstanceId',InstanceId)
+
+	def get_InstanceRamRole(self):
+		return self.get_query_params().get('InstanceRamRole')
+
+	def set_InstanceRamRole(self,InstanceRamRole):
+		self.add_query_param('InstanceRamRole',InstanceRamRole)
 
 	def get_Name(self):
 		return self.get_query_params().get('Name')

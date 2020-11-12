@@ -24,6 +24,7 @@ class DescribeSourceServersRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'smc', '2019-06-01', 'DescribeSourceServers','smc')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -55,12 +56,12 @@ class DescribeSourceServersRequest(RpcRequest):
 		self.add_query_param('State',State)
 
 	def get_SourceIds(self):
-		return self.get_query_params().get('SourceIds')
+		return self.get_query_params().get('SourceId')
 
-	def set_SourceIds(self,SourceIds):
-		for i in range(len(SourceIds)):	
-			if SourceIds[i] is not None:
-				self.add_query_param('SourceId.' + str(i + 1) , SourceIds[i]);
+	def set_SourceIds(self, SourceIds):
+		for depth1 in range(len(SourceIds)):
+			if SourceIds[depth1] is not None:
+				self.add_query_param('SourceId.' + str(depth1 + 1) , SourceIds[depth1])
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')

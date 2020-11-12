@@ -24,6 +24,7 @@ class DescribeReplicationJobsRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'smc', '2019-06-01', 'DescribeReplicationJobs','smc')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -37,12 +38,12 @@ class DescribeReplicationJobsRequest(RpcRequest):
 		self.add_query_param('PageNumber',PageNumber)
 
 	def get_JobIds(self):
-		return self.get_query_params().get('JobIds')
+		return self.get_query_params().get('JobId')
 
-	def set_JobIds(self,JobIds):
-		for i in range(len(JobIds)):	
-			if JobIds[i] is not None:
-				self.add_query_param('JobId.' + str(i + 1) , JobIds[i]);
+	def set_JobIds(self, JobIds):
+		for depth1 in range(len(JobIds)):
+			if JobIds[depth1] is not None:
+				self.add_query_param('JobId.' + str(depth1 + 1) , JobIds[depth1])
 
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
@@ -51,12 +52,12 @@ class DescribeReplicationJobsRequest(RpcRequest):
 		self.add_query_param('PageSize',PageSize)
 
 	def get_SourceIds(self):
-		return self.get_query_params().get('SourceIds')
+		return self.get_query_params().get('SourceId')
 
-	def set_SourceIds(self,SourceIds):
-		for i in range(len(SourceIds)):	
-			if SourceIds[i] is not None:
-				self.add_query_param('SourceId.' + str(i + 1) , SourceIds[i]);
+	def set_SourceIds(self, SourceIds):
+		for depth1 in range(len(SourceIds)):
+			if SourceIds[depth1] is not None:
+				self.add_query_param('SourceId.' + str(depth1 + 1) , SourceIds[depth1])
 
 	def get_BusinessStatus(self):
 		return self.get_query_params().get('BusinessStatus')
