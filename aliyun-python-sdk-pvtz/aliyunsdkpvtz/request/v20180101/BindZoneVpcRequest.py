@@ -24,6 +24,7 @@ class BindZoneVpcRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'pvtz', '2018-01-01', 'BindZoneVpc','pvtz')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -49,11 +50,11 @@ class BindZoneVpcRequest(RpcRequest):
 		self.add_query_param('Lang',Lang)
 
 	def get_Vpcss(self):
-		return self.get_query_params().get('Vpcss')
+		return self.get_query_params().get('Vpcs')
 
-	def set_Vpcss(self,Vpcss):
-		for i in range(len(Vpcss)):	
-			if Vpcss[i].get('RegionId') is not None:
-				self.add_query_param('Vpcs.' + str(i + 1) + '.RegionId' , Vpcss[i].get('RegionId'))
-			if Vpcss[i].get('VpcId') is not None:
-				self.add_query_param('Vpcs.' + str(i + 1) + '.VpcId' , Vpcss[i].get('VpcId'))
+	def set_Vpcss(self, Vpcss):
+		for depth1 in range(len(Vpcss)):
+			if Vpcss[depth1].get('RegionId') is not None:
+				self.add_query_param('Vpcs.' + str(depth1 + 1) + '.RegionId', Vpcss[depth1].get('RegionId'))
+			if Vpcss[depth1].get('VpcId') is not None:
+				self.add_query_param('Vpcs.' + str(depth1 + 1) + '.VpcId', Vpcss[depth1].get('VpcId'))

@@ -24,6 +24,7 @@ class DescribeRequestGraphRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'pvtz', '2018-01-01', 'DescribeRequestGraph','pvtz')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -42,6 +43,12 @@ class DescribeRequestGraphRequest(RpcRequest):
 	def set_EndTimestamp(self,EndTimestamp):
 		self.add_query_param('EndTimestamp',EndTimestamp)
 
+	def get_BizType(self):
+		return self.get_query_params().get('BizType')
+
+	def set_BizType(self,BizType):
+		self.add_query_param('BizType',BizType)
+
 	def get_VpcId(self):
 		return self.get_query_params().get('VpcId')
 
@@ -53,6 +60,12 @@ class DescribeRequestGraphRequest(RpcRequest):
 
 	def set_UserClientIp(self,UserClientIp):
 		self.add_query_param('UserClientIp',UserClientIp)
+
+	def get_BizId(self):
+		return self.get_query_params().get('BizId')
+
+	def set_BizId(self,BizId):
+		self.add_query_param('BizId',BizId)
 
 	def get_ZoneId(self):
 		return self.get_query_params().get('ZoneId')

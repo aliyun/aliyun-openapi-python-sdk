@@ -24,6 +24,7 @@ class UpdateZoneRemarkRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'pvtz', '2018-01-01', 'UpdateZoneRemark','pvtz')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
