@@ -18,11 +18,18 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkactiontrail.endpoint import endpoint_data
 
 class CreateTrailRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Actiontrail', '2017-12-04', 'CreateTrail','actiontrail')
+		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_SlsProjectArn(self):
 		return self.get_query_params().get('SlsProjectArn')
@@ -36,11 +43,23 @@ class CreateTrailRequest(RpcRequest):
 	def set_SlsWriteRoleArn(self,SlsWriteRoleArn):
 		self.add_query_param('SlsWriteRoleArn',SlsWriteRoleArn)
 
+	def get_IsOrganizationTrail(self):
+		return self.get_query_params().get('IsOrganizationTrail')
+
+	def set_IsOrganizationTrail(self,IsOrganizationTrail):
+		self.add_query_param('IsOrganizationTrail',IsOrganizationTrail)
+
 	def get_OssKeyPrefix(self):
 		return self.get_query_params().get('OssKeyPrefix')
 
 	def set_OssKeyPrefix(self,OssKeyPrefix):
 		self.add_query_param('OssKeyPrefix',OssKeyPrefix)
+
+	def get_MnsTopicArn(self):
+		return self.get_query_params().get('MnsTopicArn')
+
+	def set_MnsTopicArn(self,MnsTopicArn):
+		self.add_query_param('MnsTopicArn',MnsTopicArn)
 
 	def get_RoleName(self):
 		return self.get_query_params().get('RoleName')

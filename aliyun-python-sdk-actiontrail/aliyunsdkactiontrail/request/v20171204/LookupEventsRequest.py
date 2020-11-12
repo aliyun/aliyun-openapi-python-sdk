@@ -18,11 +18,18 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkactiontrail.endpoint import endpoint_data
 
 class LookupEventsRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Actiontrail', '2017-12-04', 'LookupEvents','actiontrail')
+		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_Request(self):
 		return self.get_query_params().get('Request')

@@ -18,11 +18,18 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkactiontrail.endpoint import endpoint_data
 
 class UpdateTrailRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Actiontrail', '2017-12-04', 'UpdateTrail','actiontrail')
+		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_SlsProjectArn(self):
 		return self.get_query_params().get('SlsProjectArn')
@@ -41,6 +48,12 @@ class UpdateTrailRequest(RpcRequest):
 
 	def set_OssKeyPrefix(self,OssKeyPrefix):
 		self.add_query_param('OssKeyPrefix',OssKeyPrefix)
+
+	def get_MnsTopicArn(self):
+		return self.get_query_params().get('MnsTopicArn')
+
+	def set_MnsTopicArn(self,MnsTopicArn):
+		self.add_query_param('MnsTopicArn',MnsTopicArn)
 
 	def get_RoleName(self):
 		return self.get_query_params().get('RoleName')
