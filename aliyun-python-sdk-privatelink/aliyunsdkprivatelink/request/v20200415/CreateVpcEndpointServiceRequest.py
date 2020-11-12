@@ -44,6 +44,12 @@ class CreateVpcEndpointServiceRequest(RpcRequest):
 	def set_ClientToken(self,ClientToken):
 		self.add_query_param('ClientToken',ClientToken)
 
+	def get_Payer(self):
+		return self.get_query_params().get('Payer')
+
+	def set_Payer(self,Payer):
+		self.add_query_param('Payer',Payer)
+
 	def get_DryRun(self):
 		return self.get_query_params().get('DryRun')
 
