@@ -20,19 +20,31 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkopenanalytics_open.endpoint import endpoint_data
 
-class ListResourcesSpecRequest(RpcRequest):
+class CreateInstanceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'openanalytics-open', '2018-06-19', 'ListResourcesSpec','openanalytics')
-		self.set_method('GET')
+		RpcRequest.__init__(self, 'openanalytics-open', '2018-06-19', 'CreateInstance','openanalytics')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_Type(self):
-		return self.get_query_params().get('Type')
+	def get_ChargeType(self):
+		return self.get_body_params().get('ChargeType')
 
-	def set_Type(self,Type):
-		self.add_query_param('Type',Type)
+	def set_ChargeType(self,ChargeType):
+		self.add_body_params('ChargeType', ChargeType)
+
+	def get_InstanceType(self):
+		return self.get_body_params().get('InstanceType')
+
+	def set_InstanceType(self,InstanceType):
+		self.add_body_params('InstanceType', InstanceType)
+
+	def get_Component(self):
+		return self.get_body_params().get('Component')
+
+	def set_Component(self,Component):
+		self.add_body_params('Component', Component)

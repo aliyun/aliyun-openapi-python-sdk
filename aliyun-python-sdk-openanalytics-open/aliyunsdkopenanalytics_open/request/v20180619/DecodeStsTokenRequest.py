@@ -20,19 +20,25 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkopenanalytics_open.endpoint import endpoint_data
 
-class ListResourcesSpecRequest(RpcRequest):
+class DecodeStsTokenRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'openanalytics-open', '2018-06-19', 'ListResourcesSpec','openanalytics')
-		self.set_method('GET')
+		RpcRequest.__init__(self, 'openanalytics-open', '2018-06-19', 'DecodeStsToken','openanalytics')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_Type(self):
-		return self.get_query_params().get('Type')
+	def get_AccessKey(self):
+		return self.get_query_params().get('AccessKey')
 
-	def set_Type(self,Type):
-		self.add_query_param('Type',Type)
+	def set_AccessKey(self,AccessKey):
+		self.add_query_param('AccessKey',AccessKey)
+
+	def get_Token(self):
+		return self.get_query_params().get('Token')
+
+	def set_Token(self,Token):
+		self.add_query_param('Token',Token)

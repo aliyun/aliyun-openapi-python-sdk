@@ -20,19 +20,25 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkopenanalytics_open.endpoint import endpoint_data
 
-class ListResourcesSpecRequest(RpcRequest):
+class DropDatabaseRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'openanalytics-open', '2018-06-19', 'ListResourcesSpec','openanalytics')
-		self.set_method('GET')
+		RpcRequest.__init__(self, 'openanalytics-open', '2020-09-28', 'DropDatabase','openanalytics')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_Type(self):
-		return self.get_query_params().get('Type')
+	def get_Cascade(self):
+		return self.get_query_params().get('Cascade')
 
-	def set_Type(self,Type):
-		self.add_query_param('Type',Type)
+	def set_Cascade(self,Cascade):
+		self.add_query_param('Cascade',Cascade)
+
+	def get_Name(self):
+		return self.get_query_params().get('Name')
+
+	def set_Name(self,Name):
+		self.add_query_param('Name',Name)

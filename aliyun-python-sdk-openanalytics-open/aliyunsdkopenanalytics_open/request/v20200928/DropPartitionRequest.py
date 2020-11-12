@@ -20,19 +20,31 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkopenanalytics_open.endpoint import endpoint_data
 
-class ListResourcesSpecRequest(RpcRequest):
+class DropPartitionRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'openanalytics-open', '2018-06-19', 'ListResourcesSpec','openanalytics')
-		self.set_method('GET')
+		RpcRequest.__init__(self, 'openanalytics-open', '2020-09-28', 'DropPartition','openanalytics')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_Type(self):
-		return self.get_query_params().get('Type')
+	def get_DbName(self):
+		return self.get_query_params().get('DbName')
 
-	def set_Type(self,Type):
-		self.add_query_param('Type',Type)
+	def set_DbName(self,DbName):
+		self.add_query_param('DbName',DbName)
+
+	def get_PartValues(self):
+		return self.get_query_params().get('PartValues')
+
+	def set_PartValues(self,PartValues):
+		self.add_query_param('PartValues',PartValues)
+
+	def get_TableName(self):
+		return self.get_query_params().get('TableName')
+
+	def set_TableName(self,TableName):
+		self.add_query_param('TableName',TableName)
