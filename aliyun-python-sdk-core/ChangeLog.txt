@@ -1,3 +1,6 @@
+2020-11-12 Version 2.13.28
+1, Fix ROA signature error caused by URL not carrying regionId.
+
 2020-11-11 Version 2.13.27
 1, Fix the problem of request parameter reuse.
 
