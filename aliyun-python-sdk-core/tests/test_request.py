@@ -271,7 +271,7 @@ class TestRequest(unittest.TestCase):
         r.set_uri_pattern('/users/[user]')
         r.set_path_params({'user': 'jacksontian'})
         url = r.get_url("regionid", "accesskeyid", "secret")
-        self.assertEqual(url, "/users/jacksontian")
+        self.assertEqual(url, "/users/jacksontian?RegionId=regionid")
 
     @patch("aliyunsdkcore.utils.parameter_helper.get_rfc_2616_date")
     def test_get_signed_header(self, mock_get_rfc_2616_date):
@@ -475,7 +475,7 @@ class TestRequest(unittest.TestCase):
         r.trans_to_acs_request()
         self.assertEqual(r.get_style(), "ROA")
         url = r.get_url("regionid", "accesskeyid", "secret")
-        self.assertEqual(url, "/users/jacksontian")
+        self.assertEqual(url, "/users/jacksontian?RegionId=regionid")
 
     @patch("aliyunsdkcore.utils.parameter_helper.get_rfc_2616_date")
     def test_common_request_get_signed_header(self, mock_get_rfc_2616_date):
@@ -486,7 +486,7 @@ class TestRequest(unittest.TestCase):
         r.set_path_params({"userid": "jacksontian"})
         r.set_product('product')
         r.trans_to_acs_request()
-        self.assertEqual(r.get_url("regionid", "accesskeyid", "secret"), "/users/jacksontian")
+        self.assertEqual(r.get_url("regionid", "accesskeyid", "secret"), "/users/jacksontian?RegionId=regionid")
         self.assertEqual(r.get_style(), "ROA")
         mock_get_rfc_2616_date.return_value = "2018-12-04T03:25:29Z"
         headers = r.get_signed_header("regionid", "accesskeyid", "secret")

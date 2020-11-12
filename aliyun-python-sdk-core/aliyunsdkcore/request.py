@@ -448,7 +448,9 @@ class RoaRequest(AcsRequest):
         :param region_id: String
         :return: String
         """
-        sign_params = self.get_query_params()
+        sign_params = dict(self.get_query_params())
+        if 'RegionId' not in sign_params.keys():
+            sign_params['RegionId'] = region_id
         url = roa_signer.get_url(
             self.get_uri_pattern(),
             sign_params,

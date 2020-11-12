@@ -242,10 +242,11 @@ class AcsClient:
                             specific_signer=None):
         body_params = request.get_body_params()
         if body_params:
-            if request.get_headers().get('Content-Type') == format_type.APPLICATION_JSON:
+            content_type = request.get_headers().get('Content-Type')
+            if content_type and format_type.APPLICATION_JSON in content_type:
                 body = json.dumps(body_params)
                 request.set_content(body)
-            elif request.get_headers().get('Content-Type') == format_type.APPLICATION_XML:
+            elif content_type and format_type.APPLICATION_XML in content_type:
                 body = aliyunsdkcore.utils.parameter_helper.to_xml(body_params)
                 request.set_content(body)
             else:
