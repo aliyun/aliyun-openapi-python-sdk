@@ -32,18 +32,17 @@ class ScanTextRequest(RpcRequest):
 
 
 	def get_Labelss(self):
-		return self.get_body_params().get('Labelss')
+		return self.get_body_params().get('Labels')
 
-	def set_Labelss(self,Labelss):
-		for i in range(len(Labelss)):	
-			if Labelss[i].get('Label') is not None:
-				self.add_body_params('Labels.' + str(i + 1) + '.Label' , Labelss[i].get('Label'))
-
+	def set_Labelss(self, Labelss):
+		for depth1 in range(len(Labelss)):
+			if Labelss[depth1].get('Label') is not None:
+				self.add_body_params('Labels.' + str(depth1 + 1) + '.Label', Labelss[depth1].get('Label'))
 
 	def get_Taskss(self):
-		return self.get_body_params().get('Taskss')
+		return self.get_body_params().get('Tasks')
 
-	def set_Taskss(self,Taskss):
-		for i in range(len(Taskss)):	
-			if Taskss[i].get('Content') is not None:
-				self.add_body_params('Tasks.' + str(i + 1) + '.Content' , Taskss[i].get('Content'))
+	def set_Taskss(self, Taskss):
+		for depth1 in range(len(Taskss)):
+			if Taskss[depth1].get('Content') is not None:
+				self.add_body_params('Tasks.' + str(depth1 + 1) + '.Content', Taskss[depth1].get('Content'))
