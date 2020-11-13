@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkfacebody.endpoint import endpoint_data
 
-class ExtractPedestrianFeatureAttributeRequest(RpcRequest):
+class CountCrowdRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'facebody', '2019-12-30', 'ExtractPedestrianFeatureAttribute','facebody')
+		RpcRequest.__init__(self, 'facebody', '2019-12-30', 'CountCrowd','facebody')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,19 +31,11 @@ class ExtractPedestrianFeatureAttributeRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_UrlLists(self):
-		return self.get_body_params().get('UrlList')
+	def get_IsShow(self):
+		return self.get_body_params().get('IsShow')
 
-	def set_UrlLists(self, UrlLists):
-		for depth1 in range(len(UrlLists)):
-			if UrlLists[depth1].get('Url') is not None:
-				self.add_body_params('UrlList.' + str(depth1 + 1) + '.Url', UrlLists[depth1].get('Url'))
-
-	def get_Mode(self):
-		return self.get_body_params().get('Mode')
-
-	def set_Mode(self,Mode):
-		self.add_body_params('Mode', Mode)
+	def set_IsShow(self,IsShow):
+		self.add_body_params('IsShow', IsShow)
 
 	def get_ImageURL(self):
 		return self.get_body_params().get('ImageURL')
