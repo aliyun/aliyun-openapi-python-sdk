@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkocr.endpoint import endpoint_data
 
-class RecognizeQrCodeRequest(RpcRequest):
+class DetectCardScreenshotRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ocr', '2019-12-30', 'RecognizeQrCode','ocr')
+		RpcRequest.__init__(self, 'ocr', '2019-12-30', 'DetectCardScreenshot','ocr')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,10 +31,8 @@ class RecognizeQrCodeRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_Taskss(self):
-		return self.get_body_params().get('Tasks')
+	def get_ImageURL(self):
+		return self.get_body_params().get('ImageURL')
 
-	def set_Taskss(self, Taskss):
-		for depth1 in range(len(Taskss)):
-			if Taskss[depth1].get('ImageURL') is not None:
-				self.add_body_params('Tasks.' + str(depth1 + 1) + '.ImageURL', Taskss[depth1].get('ImageURL'))
+	def set_ImageURL(self,ImageURL):
+		self.add_body_params('ImageURL', ImageURL)
