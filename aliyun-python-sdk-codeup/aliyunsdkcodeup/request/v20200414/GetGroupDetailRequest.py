@@ -19,11 +19,11 @@
 
 from aliyunsdkcore.request import RoaRequest
 
-class GetBranchInfoRequest(RoaRequest):
+class GetGroupDetailRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'codeup', '2020-04-14', 'GetBranchInfo')
-		self.set_uri_pattern('/api/v3/projects/[ProjectId]/repository/branches/detail')
+		RoaRequest.__init__(self, 'codeup', '2020-04-14', 'GetGroupDetail')
+		self.set_uri_pattern('/api/v3/groups/detail')
 		self.set_method('GET')
 
 	def get_OrganizationId(self):
@@ -38,20 +38,14 @@ class GetBranchInfoRequest(RoaRequest):
 	def set_SubUserId(self,SubUserId):
 		self.add_query_param('SubUserId',SubUserId)
 
+	def get_GroupId(self):
+		return self.get_query_params().get('GroupId')
+
+	def set_GroupId(self,GroupId):
+		self.add_query_param('GroupId',GroupId)
+
 	def get_AccessToken(self):
 		return self.get_query_params().get('AccessToken')
 
 	def set_AccessToken(self,AccessToken):
 		self.add_query_param('AccessToken',AccessToken)
-
-	def get_ProjectId(self):
-		return self.get_path_params().get('ProjectId')
-
-	def set_ProjectId(self,ProjectId):
-		self.add_path_param('ProjectId',ProjectId)
-
-	def get_BranchName(self):
-		return self.get_query_params().get('BranchName')
-
-	def set_BranchName(self,BranchName):
-		self.add_query_param('BranchName',BranchName)

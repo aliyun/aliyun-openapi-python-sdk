@@ -23,7 +23,7 @@ class DeleteBranchRequest(RoaRequest):
 
 	def __init__(self):
 		RoaRequest.__init__(self, 'codeup', '2020-04-14', 'DeleteBranch')
-		self.set_uri_pattern('/api/v3/projects/[ProjectId]/repository/branches/[BranchName]')
+		self.set_uri_pattern('/api/v3/projects/[ProjectId]/repository/branches/delete')
 		self.set_method('DELETE')
 
 	def get_OrganizationId(self):
@@ -51,7 +51,7 @@ class DeleteBranchRequest(RoaRequest):
 		self.add_path_param('ProjectId',ProjectId)
 
 	def get_BranchName(self):
-		return self.get_path_params().get('BranchName')
+		return self.get_query_params().get('BranchName')
 
 	def set_BranchName(self,BranchName):
-		self.add_path_param('BranchName',BranchName)
+		self.add_query_param('BranchName',BranchName)
