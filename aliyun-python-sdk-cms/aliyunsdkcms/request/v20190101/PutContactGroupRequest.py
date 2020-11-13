@@ -37,12 +37,6 @@ class PutContactGroupRequest(RpcRequest):
 	def set_ContactGroupName(self,ContactGroupName):
 		self.add_query_param('ContactGroupName',ContactGroupName)
 
-	def get_EnabledWeeklyReport(self):
-		return self.get_query_params().get('EnabledWeeklyReport')
-
-	def set_EnabledWeeklyReport(self,EnabledWeeklyReport):
-		self.add_query_param('EnabledWeeklyReport',EnabledWeeklyReport)
-
 	def get_Describe(self):
 		return self.get_query_params().get('Describe')
 
