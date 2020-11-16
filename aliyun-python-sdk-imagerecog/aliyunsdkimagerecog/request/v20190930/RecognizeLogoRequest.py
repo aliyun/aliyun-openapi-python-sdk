@@ -32,7 +32,7 @@ class RecognizeLogoRequest(RpcRequest):
 
 
 	def get_Taskss(self):
-		return self.get_body_params().get('Taskss')
+		return self.get_body_params().get('Tasks')
 
 	def set_Taskss(self, Taskss):
 		for depth1 in range(len(Taskss)):
