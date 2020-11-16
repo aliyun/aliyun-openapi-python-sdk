@@ -23,7 +23,7 @@ from aliyunsdkecs.endpoint import endpoint_data
 class RunInstancesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'RunInstances','ecs')
+		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'RunInstances')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -290,6 +290,12 @@ class RunInstancesRequest(RpcRequest):
 
 	def set_HttpPutResponseHopLimit(self,HttpPutResponseHopLimit):
 		self.add_query_param('HttpPutResponseHopLimit',HttpPutResponseHopLimit)
+
+	def get_Isp(self):
+		return self.get_query_params().get('Isp')
+
+	def set_Isp(self,Isp):
+		self.add_query_param('Isp',Isp)
 
 	def get_KeyPairName(self):
 		return self.get_query_params().get('KeyPairName')

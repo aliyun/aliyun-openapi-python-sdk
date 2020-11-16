@@ -23,7 +23,7 @@ from aliyunsdkecs.endpoint import endpoint_data
 class DescribePriceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'DescribePrice','ecs')
+		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'DescribePrice')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -48,6 +48,12 @@ class DescribePriceRequest(RpcRequest):
 
 	def set_DataDisk3Category(self,DataDisk3Category):
 		self.add_query_param('DataDisk.3.Category',DataDisk3Category)
+
+	def get_Isp(self):
+		return self.get_query_params().get('Isp')
+
+	def set_Isp(self,Isp):
+		self.add_query_param('Isp',Isp)
 
 	def get_DataDisk4Size(self):
 		return self.get_query_params().get('DataDisk.4.Size')

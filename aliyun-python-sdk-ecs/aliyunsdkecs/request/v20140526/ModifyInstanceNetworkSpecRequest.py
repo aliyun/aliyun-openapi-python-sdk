@@ -23,7 +23,7 @@ from aliyunsdkecs.endpoint import endpoint_data
 class ModifyInstanceNetworkSpecRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'ModifyInstanceNetworkSpec','ecs')
+		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'ModifyInstanceNetworkSpec')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -42,6 +42,12 @@ class ModifyInstanceNetworkSpecRequest(RpcRequest):
 
 	def set_ClientToken(self,ClientToken):
 		self.add_query_param('ClientToken',ClientToken)
+
+	def get_ISP(self):
+		return self.get_query_params().get('ISP')
+
+	def set_ISP(self,ISP):
+		self.add_query_param('ISP',ISP)
 
 	def get_InternetMaxBandwidthOut(self):
 		return self.get_query_params().get('InternetMaxBandwidthOut')
