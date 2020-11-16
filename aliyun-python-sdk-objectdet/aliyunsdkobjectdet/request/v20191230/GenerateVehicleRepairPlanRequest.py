@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkobjectdet.endpoint import endpoint_data
 
-class DetectMainBodyRequest(RpcRequest):
+class GenerateVehicleRepairPlanRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'objectdet', '2019-12-30', 'DetectMainBody','objectdet')
+		RpcRequest.__init__(self, 'objectdet', '2019-12-30', 'GenerateVehicleRepairPlan','objectdet')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,8 +31,12 @@ class DetectMainBodyRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_ImageURL(self):
-		return self.get_query_params().get('ImageURL')
+	def get_DamageImageLists(self):
+		return self.get_body_params().get('DamageImageList')
 
-	def set_ImageURL(self,ImageURL):
-		self.add_query_param('ImageURL',ImageURL)
+	def set_DamageImageLists(self, DamageImageLists):
+		for depth1 in range(len(DamageImageLists)):
+			if DamageImageLists[depth1].get('ImageUrl') is not None:
+				self.add_body_params('DamageImageList.' + str(depth1 + 1) + '.ImageUrl', DamageImageLists[depth1].get('ImageUrl'))
+			if DamageImageLists[depth1].get('CreateTimeStamp') is not None:
+				self.add_body_params('DamageImageList.' + str(depth1 + 1) + '.CreateTimeStamp', DamageImageLists[depth1].get('CreateTimeStamp'))
