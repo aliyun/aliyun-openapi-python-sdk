@@ -68,7 +68,7 @@ class GenerateVideoRequest(RpcRequest):
 		self.add_body_params('DurationAdaption', DurationAdaption)
 
 	def get_FileLists(self):
-		return self.get_body_params().get('FileLists')
+		return self.get_body_params().get('FileList')
 
 	def set_FileLists(self, FileLists):
 		for depth1 in range(len(FileLists)):

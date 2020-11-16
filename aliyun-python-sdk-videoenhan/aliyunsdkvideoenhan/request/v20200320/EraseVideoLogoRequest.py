@@ -32,7 +32,7 @@ class EraseVideoLogoRequest(RpcRequest):
 
 
 	def get_Boxess(self):
-		return self.get_body_params().get('Boxess')
+		return self.get_body_params().get('Boxes')
 
 	def set_Boxess(self, Boxess):
 		for depth1 in range(len(Boxess)):
