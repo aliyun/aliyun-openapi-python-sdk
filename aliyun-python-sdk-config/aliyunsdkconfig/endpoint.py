@@ -23,7 +23,6 @@ class EndpointData():
 		self.endpoint_map = {
 			"cn-shanghai": "config.cn-shanghai.aliyuncs.com",
 			"ap-southeast-1": "config.ap-southeast-1.aliyuncs.com",
-			"cn-hangzhou": "config.cn-hangzhou.aliyuncs.com",
 		}
 		self.endpoint_regional = "central"
 

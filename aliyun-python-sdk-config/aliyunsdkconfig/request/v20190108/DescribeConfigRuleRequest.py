@@ -23,7 +23,7 @@ from aliyunsdkconfig.endpoint import endpoint_data
 class DescribeConfigRuleRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Config', '2019-01-08', 'DescribeConfigRule','config')
+		RpcRequest.__init__(self, 'Config', '2019-01-08', 'DescribeConfigRule','Config')
 		self.set_method('GET')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())

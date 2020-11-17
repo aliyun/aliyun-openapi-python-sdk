@@ -23,7 +23,7 @@ from aliyunsdkconfig.endpoint import endpoint_data
 class ListConfigRulesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Config', '2019-01-08', 'ListConfigRules','config')
+		RpcRequest.__init__(self, 'Config', '2019-01-08', 'ListConfigRules','Config')
 		self.set_method('GET')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -49,12 +49,6 @@ class ListConfigRulesRequest(RpcRequest):
 	def set_ConfigRuleState(self,ConfigRuleState):
 		self.add_query_param('ConfigRuleState',ConfigRuleState)
 
-	def get_RiskLevel(self):
-		return self.get_query_params().get('RiskLevel')
-
-	def set_RiskLevel(self,RiskLevel):
-		self.add_query_param('RiskLevel',RiskLevel)
-
 	def get_PageNumber(self):
 		return self.get_query_params().get('PageNumber')
 
@@ -72,6 +66,12 @@ class ListConfigRulesRequest(RpcRequest):
 
 	def set_ComplianceType(self,ComplianceType):
 		self.add_query_param('ComplianceType',ComplianceType)
+
+	def get_RiskLevel(self):
+		return self.get_query_params().get('RiskLevel')
+
+	def set_RiskLevel(self,RiskLevel):
+		self.add_query_param('RiskLevel',RiskLevel)
 
 	def get_MemberId(self):
 		return self.get_query_params().get('MemberId')
