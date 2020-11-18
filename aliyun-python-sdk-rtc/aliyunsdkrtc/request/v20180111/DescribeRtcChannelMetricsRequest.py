@@ -20,16 +20,40 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkrtc.endpoint import endpoint_data
 
-class DescribeMAURuleRequest(RpcRequest):
+class DescribeRtcChannelMetricsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'rtc', '2018-01-11', 'DescribeMAURule','rtc')
+		RpcRequest.__init__(self, 'rtc', '2018-01-11', 'DescribeRtcChannelMetrics','rtc')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+
+	def get_StartTime(self):
+		return self.get_query_params().get('StartTime')
+
+	def set_StartTime(self,StartTime):
+		self.add_query_param('StartTime',StartTime)
+
+	def get_SubUid(self):
+		return self.get_query_params().get('SubUid')
+
+	def set_SubUid(self,SubUid):
+		self.add_query_param('SubUid',SubUid)
+
+	def get_PubUid(self):
+		return self.get_query_params().get('PubUid')
+
+	def set_PubUid(self,PubUid):
+		self.add_query_param('PubUid',PubUid)
+
+	def get_EndTime(self):
+		return self.get_query_params().get('EndTime')
+
+	def set_EndTime(self,EndTime):
+		self.add_query_param('EndTime',EndTime)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
@@ -42,3 +66,9 @@ class DescribeMAURuleRequest(RpcRequest):
 
 	def set_AppId(self,AppId):
 		self.add_query_param('AppId',AppId)
+
+	def get_ChannelId(self):
+		return self.get_query_params().get('ChannelId')
+
+	def set_ChannelId(self,ChannelId):
+		self.add_query_param('ChannelId',ChannelId)

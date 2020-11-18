@@ -20,16 +20,48 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkrtc.endpoint import endpoint_data
 
-class EnableMAURuleRequest(RpcRequest):
+class DescribeRecordTasksRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'rtc', '2018-01-11', 'EnableMAURule','rtc')
+		RpcRequest.__init__(self, 'rtc', '2018-01-11', 'DescribeRecordTasks','rtc')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+
+	def get_StartTime(self):
+		return self.get_query_params().get('StartTime')
+
+	def set_StartTime(self,StartTime):
+		self.add_query_param('StartTime',StartTime)
+
+	def get_TaskIdss(self):
+		return self.get_query_params().get('TaskIds')
+
+	def set_TaskIdss(self, TaskIdss):
+		for depth1 in range(len(TaskIdss)):
+			if TaskIdss[depth1] is not None:
+				self.add_query_param('TaskIds.' + str(depth1 + 1) , TaskIdss[depth1])
+
+	def get_PageNum(self):
+		return self.get_query_params().get('PageNum')
+
+	def set_PageNum(self,PageNum):
+		self.add_query_param('PageNum',PageNum)
+
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
+
+	def get_EndTime(self):
+		return self.get_query_params().get('EndTime')
+
+	def set_EndTime(self,EndTime):
+		self.add_query_param('EndTime',EndTime)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
@@ -43,8 +75,14 @@ class EnableMAURuleRequest(RpcRequest):
 	def set_AppId(self,AppId):
 		self.add_query_param('AppId',AppId)
 
-	def get_RuleId(self):
-		return self.get_query_params().get('RuleId')
+	def get_ChannelId(self):
+		return self.get_query_params().get('ChannelId')
 
-	def set_RuleId(self,RuleId):
-		self.add_query_param('RuleId',RuleId)
+	def set_ChannelId(self,ChannelId):
+		self.add_query_param('ChannelId',ChannelId)
+
+	def get_Status(self):
+		return self.get_query_params().get('Status')
+
+	def set_Status(self,Status):
+		self.add_query_param('Status',Status)

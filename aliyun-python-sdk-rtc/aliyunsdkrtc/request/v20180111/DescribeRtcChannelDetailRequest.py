@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkrtc.endpoint import endpoint_data
 
-class DisableMAURuleRequest(RpcRequest):
+class DescribeRtcChannelDetailRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'rtc', '2018-01-11', 'DisableMAURule','rtc')
+		RpcRequest.__init__(self, 'rtc', '2018-01-11', 'DescribeRtcChannelDetail','rtc')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,11 +31,35 @@ class DisableMAURuleRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_StartTime(self):
+		return self.get_query_params().get('StartTime')
+
+	def set_StartTime(self,StartTime):
+		self.add_query_param('StartTime',StartTime)
+
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
+
+	def get_EndTime(self):
+		return self.get_query_params().get('EndTime')
+
+	def set_EndTime(self,EndTime):
+		self.add_query_param('EndTime',EndTime)
+
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_PageNo(self):
+		return self.get_query_params().get('PageNo')
+
+	def set_PageNo(self,PageNo):
+		self.add_query_param('PageNo',PageNo)
 
 	def get_AppId(self):
 		return self.get_query_params().get('AppId')
@@ -43,8 +67,8 @@ class DisableMAURuleRequest(RpcRequest):
 	def set_AppId(self,AppId):
 		self.add_query_param('AppId',AppId)
 
-	def get_RuleId(self):
-		return self.get_query_params().get('RuleId')
+	def get_ChannelId(self):
+		return self.get_query_params().get('ChannelId')
 
-	def set_RuleId(self,RuleId):
-		self.add_query_param('RuleId',RuleId)
+	def set_ChannelId(self,ChannelId):
+		self.add_query_param('ChannelId',ChannelId)

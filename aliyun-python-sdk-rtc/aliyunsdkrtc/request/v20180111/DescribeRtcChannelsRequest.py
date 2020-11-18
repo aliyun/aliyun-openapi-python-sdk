@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkrtc.endpoint import endpoint_data
 
-class CreateMAURuleRequest(RpcRequest):
+class DescribeRtcChannelsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'rtc', '2018-01-11', 'CreateMAURule','rtc')
+		RpcRequest.__init__(self, 'rtc', '2018-01-11', 'DescribeRtcChannels','rtc')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,17 +31,23 @@ class CreateMAURuleRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_UseridPrefix(self):
-		return self.get_query_params().get('UseridPrefix')
+	def get_StartTime(self):
+		return self.get_query_params().get('StartTime')
 
-	def set_UseridPrefix(self,UseridPrefix):
-		self.add_query_param('UseridPrefix',UseridPrefix)
+	def set_StartTime(self,StartTime):
+		self.add_query_param('StartTime',StartTime)
 
-	def get_ChannelPrefix(self):
-		return self.get_query_params().get('ChannelPrefix')
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
 
-	def set_ChannelPrefix(self,ChannelPrefix):
-		self.add_query_param('ChannelPrefix',ChannelPrefix)
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
+
+	def get_EndTime(self):
+		return self.get_query_params().get('EndTime')
+
+	def set_EndTime(self,EndTime):
+		self.add_query_param('EndTime',EndTime)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
@@ -49,11 +55,11 @@ class CreateMAURuleRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_MauTemplateId(self):
-		return self.get_query_params().get('MauTemplateId')
+	def get_PageNo(self):
+		return self.get_query_params().get('PageNo')
 
-	def set_MauTemplateId(self,MauTemplateId):
-		self.add_query_param('MauTemplateId',MauTemplateId)
+	def set_PageNo(self,PageNo):
+		self.add_query_param('PageNo',PageNo)
 
 	def get_AppId(self):
 		return self.get_query_params().get('AppId')
@@ -61,8 +67,8 @@ class CreateMAURuleRequest(RpcRequest):
 	def set_AppId(self,AppId):
 		self.add_query_param('AppId',AppId)
 
-	def get_CallBack(self):
-		return self.get_query_params().get('CallBack')
+	def get_ChannelId(self):
+		return self.get_query_params().get('ChannelId')
 
-	def set_CallBack(self,CallBack):
-		self.add_query_param('CallBack',CallBack)
+	def set_ChannelId(self,ChannelId):
+		self.add_query_param('ChannelId',ChannelId)

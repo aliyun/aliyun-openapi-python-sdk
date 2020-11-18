@@ -83,6 +83,34 @@ class UpdateRecordTemplateRequest(RpcRequest):
 	def set_FileSplitInterval(self,FileSplitInterval):
 		self.add_query_param('FileSplitInterval',FileSplitInterval)
 
+	def get_HttpCallbackUrl(self):
+		return self.get_query_params().get('HttpCallbackUrl')
+
+	def set_HttpCallbackUrl(self,HttpCallbackUrl):
+		self.add_query_param('HttpCallbackUrl',HttpCallbackUrl)
+
+	def get_Watermarkss(self):
+		return self.get_query_params().get('Watermarks')
+
+	def set_Watermarkss(self, Watermarkss):
+		for depth1 in range(len(Watermarkss)):
+			if Watermarkss[depth1].get('Url') is not None:
+				self.add_query_param('Watermarks.' + str(depth1 + 1) + '.Url', Watermarkss[depth1].get('Url'))
+			if Watermarkss[depth1].get('Alpha') is not None:
+				self.add_query_param('Watermarks.' + str(depth1 + 1) + '.Alpha', Watermarkss[depth1].get('Alpha'))
+			if Watermarkss[depth1].get('Display') is not None:
+				self.add_query_param('Watermarks.' + str(depth1 + 1) + '.Display', Watermarkss[depth1].get('Display'))
+			if Watermarkss[depth1].get('X') is not None:
+				self.add_query_param('Watermarks.' + str(depth1 + 1) + '.X', Watermarkss[depth1].get('X'))
+			if Watermarkss[depth1].get('Y') is not None:
+				self.add_query_param('Watermarks.' + str(depth1 + 1) + '.Y', Watermarkss[depth1].get('Y'))
+			if Watermarkss[depth1].get('Width') is not None:
+				self.add_query_param('Watermarks.' + str(depth1 + 1) + '.Width', Watermarkss[depth1].get('Width'))
+			if Watermarkss[depth1].get('Height') is not None:
+				self.add_query_param('Watermarks.' + str(depth1 + 1) + '.Height', Watermarkss[depth1].get('Height'))
+			if Watermarkss[depth1].get('ZOrder') is not None:
+				self.add_query_param('Watermarks.' + str(depth1 + 1) + '.ZOrder', Watermarkss[depth1].get('ZOrder'))
+
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
@@ -100,6 +128,26 @@ class UpdateRecordTemplateRequest(RpcRequest):
 
 	def set_AppId(self,AppId):
 		self.add_query_param('AppId',AppId)
+
+	def get_Backgroundss(self):
+		return self.get_query_params().get('Backgrounds')
+
+	def set_Backgroundss(self, Backgroundss):
+		for depth1 in range(len(Backgroundss)):
+			if Backgroundss[depth1].get('Url') is not None:
+				self.add_query_param('Backgrounds.' + str(depth1 + 1) + '.Url', Backgroundss[depth1].get('Url'))
+			if Backgroundss[depth1].get('Display') is not None:
+				self.add_query_param('Backgrounds.' + str(depth1 + 1) + '.Display', Backgroundss[depth1].get('Display'))
+			if Backgroundss[depth1].get('X') is not None:
+				self.add_query_param('Backgrounds.' + str(depth1 + 1) + '.X', Backgroundss[depth1].get('X'))
+			if Backgroundss[depth1].get('Y') is not None:
+				self.add_query_param('Backgrounds.' + str(depth1 + 1) + '.Y', Backgroundss[depth1].get('Y'))
+			if Backgroundss[depth1].get('Width') is not None:
+				self.add_query_param('Backgrounds.' + str(depth1 + 1) + '.Width', Backgroundss[depth1].get('Width'))
+			if Backgroundss[depth1].get('Height') is not None:
+				self.add_query_param('Backgrounds.' + str(depth1 + 1) + '.Height', Backgroundss[depth1].get('Height'))
+			if Backgroundss[depth1].get('ZOrder') is not None:
+				self.add_query_param('Backgrounds.' + str(depth1 + 1) + '.ZOrder', Backgroundss[depth1].get('ZOrder'))
 
 	def get_Name(self):
 		return self.get_query_params().get('Name')

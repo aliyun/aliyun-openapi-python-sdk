@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkrtc.endpoint import endpoint_data
 
-class StartRecordTaskRequest(RpcRequest):
+class UpdateRecordTaskRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'rtc', '2018-01-11', 'StartRecordTask','rtc')
+		RpcRequest.__init__(self, 'rtc', '2018-01-11', 'UpdateRecordTask','rtc')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
