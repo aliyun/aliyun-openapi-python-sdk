@@ -55,6 +55,12 @@ class UpdateOssIncrementCheckSettingRequest(RpcRequest):
 	def set_SourceIp(self,SourceIp):
 		self.add_query_param('SourceIp',SourceIp)
 
+	def get_CallbackId(self):
+		return self.get_query_params().get('CallbackId')
+
+	def set_CallbackId(self,CallbackId):
+		self.add_query_param('CallbackId',CallbackId)
+
 	def get_ImageScanLimit(self):
 		return self.get_query_params().get('ImageScanLimit')
 

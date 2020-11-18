@@ -43,6 +43,12 @@ class DescribeOssResultItemsRequest(RpcRequest):
 	def set_MaxScore(self,MaxScore):
 		self.add_query_param('MaxScore',MaxScore)
 
+	def get_StockTaskId(self):
+		return self.get_query_params().get('StockTaskId')
+
+	def set_StockTaskId(self,StockTaskId):
+		self.add_query_param('StockTaskId',StockTaskId)
+
 	def get_StartDate(self):
 		return self.get_query_params().get('StartDate')
 

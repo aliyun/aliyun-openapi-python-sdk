@@ -67,6 +67,12 @@ class DescribeViewContentRequest(RpcRequest):
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
 
+	def get_Keyword(self):
+		return self.get_query_params().get('Keyword')
+
+	def set_Keyword(self,Keyword):
+		self.add_query_param('Keyword',Keyword)
+
 	def get_TaskId(self):
 		return self.get_query_params().get('TaskId')
 
