@@ -31,6 +31,12 @@ class CreateDomainRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_IpFollowStatus(self):
+		return self.get_query_params().get('IpFollowStatus')
+
+	def set_IpFollowStatus(self,IpFollowStatus):
+		self.add_query_param('IpFollowStatus',IpFollowStatus)
+
 	def get_ResourceGroupId(self):
 		return self.get_query_params().get('ResourceGroupId')
 
@@ -55,6 +61,12 @@ class CreateDomainRequest(RpcRequest):
 	def set_WriteTime(self,WriteTime):
 		self.add_query_param('WriteTime',WriteTime)
 
+	def get_AccessType(self):
+		return self.get_query_params().get('AccessType')
+
+	def set_AccessType(self,AccessType):
+		self.add_query_param('AccessType',AccessType)
+
 	def get_LogHeaders(self):
 		return self.get_query_params().get('LogHeaders')
 
@@ -72,6 +84,12 @@ class CreateDomainRequest(RpcRequest):
 
 	def set_ClusterType(self,ClusterType):
 		self.add_query_param('ClusterType',ClusterType)
+
+	def get_CloudNativeInstances(self):
+		return self.get_query_params().get('CloudNativeInstances')
+
+	def set_CloudNativeInstances(self,CloudNativeInstances):
+		self.add_query_param('CloudNativeInstances',CloudNativeInstances)
 
 	def get_HttpsRedirect(self):
 		return self.get_query_params().get('HttpsRedirect')

@@ -60,9 +60,3 @@ class CreateCertificateRequest(RpcRequest):
 
 	def set_CertificateName(self,CertificateName):
 		self.add_query_param('CertificateName',CertificateName)
-
-	def get_HttpsCertId(self):
-		return self.get_query_params().get('HttpsCertId')
-
-	def set_HttpsCertId(self,HttpsCertId):
-		self.add_query_param('HttpsCertId',HttpsCertId)

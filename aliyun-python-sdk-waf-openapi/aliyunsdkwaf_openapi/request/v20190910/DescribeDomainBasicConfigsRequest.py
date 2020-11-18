@@ -55,6 +55,12 @@ class DescribeDomainBasicConfigsRequest(RpcRequest):
 	def set_AccessType(self,AccessType):
 		self.add_query_param('AccessType',AccessType)
 
+	def get_CloudNativeProductId(self):
+		return self.get_query_params().get('CloudNativeProductId')
+
+	def set_CloudNativeProductId(self,CloudNativeProductId):
+		self.add_query_param('CloudNativeProductId',CloudNativeProductId)
+
 	def get_InstanceId(self):
 		return self.get_query_params().get('InstanceId')
 

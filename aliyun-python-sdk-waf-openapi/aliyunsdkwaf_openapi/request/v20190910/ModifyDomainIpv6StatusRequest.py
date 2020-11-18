@@ -31,12 +31,6 @@ class ModifyDomainIpv6StatusRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_WafVersion(self):
-		return self.get_query_params().get('WafVersion')
-
-	def set_WafVersion(self,WafVersion):
-		self.add_query_param('WafVersion',WafVersion)
-
 	def get_Enabled(self):
 		return self.get_query_params().get('Enabled')
 
