@@ -21,7 +21,7 @@
 class EndpointData():
 	def __init__(self):
 		self.endpoint_map = {
-			"cn-shanghai": "hdm-api.aliyuncs.com",
+			"cn-shanghai": "das.cn-shanghai.aliyuncs.com",
 		}
 		self.endpoint_regional = "central"
 

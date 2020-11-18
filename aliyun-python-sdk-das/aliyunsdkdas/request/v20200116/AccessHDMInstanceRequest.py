@@ -23,7 +23,7 @@ from aliyunsdkdas.endpoint import endpoint_data
 class AccessHDMInstanceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'DAS', '2020-01-16', 'AccessHDMInstance','hdm')
+		RpcRequest.__init__(self, 'DAS', '2020-01-16', 'AccessHDMInstance','das')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
