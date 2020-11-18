@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkhbase.endpoint import endpoint_data
 
-class AddUserHdfsInfoRequest(RpcRequest):
+class UpgradeMinorVersionRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'HBase', '2019-01-01', 'AddUserHdfsInfo','hbase')
+		RpcRequest.__init__(self, 'HBase', '2019-01-01', 'UpgradeMinorVersion','hbase')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,17 +31,11 @@ class AddUserHdfsInfoRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_ExtInfo(self):
-		return self.get_query_params().get('ExtInfo')
+	def get_Components(self):
+		return self.get_query_params().get('Components')
 
-	def set_ExtInfo(self,ExtInfo):
-		self.add_query_param('ExtInfo',ExtInfo)
-
-	def get_ClientToken(self):
-		return self.get_query_params().get('ClientToken')
-
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
+	def set_Components(self,Components):
+		self.add_query_param('Components',Components)
 
 	def get_ClusterId(self):
 		return self.get_query_params().get('ClusterId')
