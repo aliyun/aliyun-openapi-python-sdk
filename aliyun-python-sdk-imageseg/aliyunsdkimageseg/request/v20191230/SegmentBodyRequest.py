@@ -31,6 +31,12 @@ class SegmentBodyRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_ReturnForm(self):
+		return self.get_query_params().get('ReturnForm')
+
+	def set_ReturnForm(self,ReturnForm):
+		self.add_query_param('ReturnForm',ReturnForm)
+
 	def get_Async(self):
 		return self.get_body_params().get('Async')
 
