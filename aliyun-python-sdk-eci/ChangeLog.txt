@@ -1,3 +1,6 @@
+2020-11-19 Version: 1.1.0
+1, support automatchimagecache cache reuse
+
 2020-03-16 Version: 1.0.9
 1, support create spot
 2, support create flexVolume
