@@ -1,4 +1,4 @@
-# Licensed to the Apache Software Foundation (ASF) under one
+`# Licensed to the Apache Software Foundation (ASF) under one
 # or more contributor license agreements.  See the NOTICE file
 # distributed with this work for additional information
 # regarding copyright ownership.  The ASF licenses this file
@@ -122,3 +122,9 @@ class CreateImageCacheRequest(RpcRequest):
 
 	def set_RetentionDays(self, RetentionDays):
 		self.add_query_param('RetentionDays', RetentionDays)
+
+	def get_AutoMatchImageCache(self):
+		return self.get_query_params().get('AutoMatchImageCache')
+
+	def set_AutoMatchImageCache(self, AutoMatchImageCache):
+		self.add_query_param('AutoMatchImageCache', AutoMatchImageCache)
