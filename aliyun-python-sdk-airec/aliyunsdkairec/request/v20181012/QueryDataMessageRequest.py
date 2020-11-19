@@ -38,6 +38,12 @@ class QueryDataMessageRequest(RoaRequest):
 	def set_TraceId(self,TraceId):
 		self.add_query_param('TraceId',TraceId)
 
+	def get_MessageSource(self):
+		return self.get_query_params().get('MessageSource')
+
+	def set_MessageSource(self,MessageSource):
+		self.add_query_param('MessageSource',MessageSource)
+
 	def get_EndTime(self):
 		return self.get_query_params().get('EndTime')
 
