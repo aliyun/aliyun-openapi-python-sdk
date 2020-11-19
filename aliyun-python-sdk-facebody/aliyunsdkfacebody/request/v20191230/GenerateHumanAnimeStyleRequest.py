@@ -31,8 +31,14 @@ class GenerateHumanAnimeStyleRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_AlgoType(self):
+		return self.get_query_params().get('AlgoType')
+
+	def set_AlgoType(self,AlgoType):
+		self.add_query_param('AlgoType',AlgoType)
+
 	def get_ImageURL(self):
-		return self.get_body_params().get('ImageURL')
+		return self.get_query_params().get('ImageURL')
 
 	def set_ImageURL(self,ImageURL):
-		self.add_body_params('ImageURL', ImageURL)
+		self.add_query_param('ImageURL',ImageURL)
