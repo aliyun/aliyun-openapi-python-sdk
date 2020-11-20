@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkaliyuncvc.endpoint import endpoint_data
 
-class CreateLiveRequest(RpcRequest):
+class JoinMeetingRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'aliyuncvc', '2019-10-30', 'CreateLive','aliyuncvc')
+		RpcRequest.__init__(self, 'aliyuncvc', '2020-03-30', 'JoinMeeting','aliyuncvc')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -37,20 +37,8 @@ class CreateLiveRequest(RpcRequest):
 	def set_UserId(self,UserId):
 		self.add_body_params('UserId', UserId)
 
-	def get_OpenPasswordFlag(self):
-		return self.get_body_params().get('OpenPasswordFlag')
+	def get_MeetingCode(self):
+		return self.get_body_params().get('MeetingCode')
 
-	def set_OpenPasswordFlag(self,OpenPasswordFlag):
-		self.add_body_params('OpenPasswordFlag', OpenPasswordFlag)
-
-	def get_Password(self):
-		return self.get_body_params().get('Password')
-
-	def set_Password(self,Password):
-		self.add_body_params('Password', Password)
-
-	def get_LiveName(self):
-		return self.get_body_params().get('LiveName')
-
-	def set_LiveName(self,LiveName):
-		self.add_body_params('LiveName', LiveName)
+	def set_MeetingCode(self,MeetingCode):
+		self.add_body_params('MeetingCode', MeetingCode)

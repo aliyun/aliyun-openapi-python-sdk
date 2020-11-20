@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkaliyuncvc.endpoint import endpoint_data
 
-class CreateLiveRequest(RpcRequest):
+class SendMeetingCommandRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'aliyuncvc', '2019-10-30', 'CreateLive','aliyuncvc')
+		RpcRequest.__init__(self, 'aliyuncvc', '2019-10-30', 'SendMeetingCommand','aliyuncvc')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,26 +31,32 @@ class CreateLiveRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_UserId(self):
-		return self.get_body_params().get('UserId')
+	def get_OperatorMemberUUID(self):
+		return self.get_body_params().get('OperatorMemberUUID')
 
-	def set_UserId(self,UserId):
-		self.add_body_params('UserId', UserId)
+	def set_OperatorMemberUUID(self,OperatorMemberUUID):
+		self.add_body_params('OperatorMemberUUID', OperatorMemberUUID)
 
-	def get_OpenPasswordFlag(self):
-		return self.get_body_params().get('OpenPasswordFlag')
+	def get_MemberUUID(self):
+		return self.get_query_params().get('MemberUUID')
 
-	def set_OpenPasswordFlag(self,OpenPasswordFlag):
-		self.add_body_params('OpenPasswordFlag', OpenPasswordFlag)
+	def set_MemberUUID(self,MemberUUID):
+		self.add_query_param('MemberUUID',MemberUUID)
 
-	def get_Password(self):
-		return self.get_body_params().get('Password')
+	def get_SendType(self):
+		return self.get_body_params().get('SendType')
 
-	def set_Password(self,Password):
-		self.add_body_params('Password', Password)
+	def set_SendType(self,SendType):
+		self.add_body_params('SendType', SendType)
 
-	def get_LiveName(self):
-		return self.get_body_params().get('LiveName')
+	def get_Command(self):
+		return self.get_body_params().get('Command')
 
-	def set_LiveName(self,LiveName):
-		self.add_body_params('LiveName', LiveName)
+	def set_Command(self,Command):
+		self.add_body_params('Command', Command)
+
+	def get_MeetingUUID(self):
+		return self.get_query_params().get('MeetingUUID')
+
+	def set_MeetingUUID(self,MeetingUUID):
+		self.add_query_param('MeetingUUID',MeetingUUID)

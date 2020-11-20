@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkaliyuncvc.endpoint import endpoint_data
 
-class CreateLiveRequest(RpcRequest):
+class CreateUserRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'aliyuncvc', '2019-10-30', 'CreateLive','aliyuncvc')
+		RpcRequest.__init__(self, 'aliyuncvc', '2020-03-30', 'CreateUser','aliyuncvc')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,26 +31,14 @@ class CreateLiveRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_UserId(self):
-		return self.get_body_params().get('UserId')
+	def get_Count(self):
+		return self.get_body_params().get('Count')
 
-	def set_UserId(self,UserId):
-		self.add_body_params('UserId', UserId)
+	def set_Count(self,Count):
+		self.add_body_params('Count', Count)
 
-	def get_OpenPasswordFlag(self):
-		return self.get_body_params().get('OpenPasswordFlag')
+	def get_UserInfo(self):
+		return self.get_body_params().get('UserInfo')
 
-	def set_OpenPasswordFlag(self,OpenPasswordFlag):
-		self.add_body_params('OpenPasswordFlag', OpenPasswordFlag)
-
-	def get_Password(self):
-		return self.get_body_params().get('Password')
-
-	def set_Password(self,Password):
-		self.add_body_params('Password', Password)
-
-	def get_LiveName(self):
-		return self.get_body_params().get('LiveName')
-
-	def set_LiveName(self,LiveName):
-		self.add_body_params('LiveName', LiveName)
+	def set_UserInfo(self,UserInfo):
+		self.add_body_params('UserInfo', UserInfo)

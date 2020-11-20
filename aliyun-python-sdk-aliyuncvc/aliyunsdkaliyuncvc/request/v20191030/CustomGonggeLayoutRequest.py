@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkaliyuncvc.endpoint import endpoint_data
 
-class CreateLiveRequest(RpcRequest):
+class CustomGonggeLayoutRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'aliyuncvc', '2019-10-30', 'CreateLive','aliyuncvc')
+		RpcRequest.__init__(self, 'aliyuncvc', '2019-10-30', 'CustomGonggeLayout','aliyuncvc')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,26 +31,14 @@ class CreateLiveRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_UserId(self):
-		return self.get_body_params().get('UserId')
+	def get_MeetingUUID(self):
+		return self.get_body_params().get('MeetingUUID')
 
-	def set_UserId(self,UserId):
-		self.add_body_params('UserId', UserId)
+	def set_MeetingUUID(self,MeetingUUID):
+		self.add_body_params('MeetingUUID', MeetingUUID)
 
-	def get_OpenPasswordFlag(self):
-		return self.get_body_params().get('OpenPasswordFlag')
+	def get_LayoutSolution(self):
+		return self.get_body_params().get('LayoutSolution')
 
-	def set_OpenPasswordFlag(self,OpenPasswordFlag):
-		self.add_body_params('OpenPasswordFlag', OpenPasswordFlag)
-
-	def get_Password(self):
-		return self.get_body_params().get('Password')
-
-	def set_Password(self,Password):
-		self.add_body_params('Password', Password)
-
-	def get_LiveName(self):
-		return self.get_body_params().get('LiveName')
-
-	def set_LiveName(self,LiveName):
-		self.add_body_params('LiveName', LiveName)
+	def set_LayoutSolution(self,LayoutSolution):
+		self.add_body_params('LayoutSolution', LayoutSolution)
