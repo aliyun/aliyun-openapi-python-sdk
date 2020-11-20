@@ -486,7 +486,10 @@ class TestRequest(unittest.TestCase):
         r.set_path_params({"userid": "jacksontian"})
         r.set_product('product')
         r.trans_to_acs_request()
-        self.assertEqual(r.get_url("regionid", "accesskeyid", "secret"), "/users/jacksontian?RegionId=regionid")
+        self.assertEqual(
+            r.get_url("regionid", "accesskeyid", "secret"),
+            "/users/jacksontian?RegionId=regionid"
+        )
         self.assertEqual(r.get_style(), "ROA")
         mock_get_rfc_2616_date.return_value = "2018-12-04T03:25:29Z"
         headers = r.get_signed_header("regionid", "accesskeyid", "secret")

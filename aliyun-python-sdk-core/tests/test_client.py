@@ -80,3 +80,33 @@ class TestAcsClient(unittest.TestCase):
             client._resolve_endpoint(req)
         except Exception as e:
             self.assertEqual('The parameter region_id not match with ^[a-zA-Z0-9_-]+$', e.message)
+
+    def test_json_content_type(self):
+        client = AcsClient("id", "aks", region_id='cn-hangzhou', port=51352)
+        request = RpcRequest(
+            'sts',
+            '2020',
+            'test'
+        )
+        request.endpoint = 'localhost'
+        request.set_method('POST')
+        request.set_content_type('application/json')
+        request.add_body_params('key', 'value')
+        response = self.do_request(client, request)
+        headers = dict(response.headers._headers)
+        self.assertEqual('application/json', headers['Content-Type'])
+
+    def test_xml_content_type(self):
+        client = AcsClient("id", "aks", region_id='cn-hangzhou', port=51352)
+        request = RpcRequest(
+            'sts',
+            '2020',
+            'test'
+        )
+        request.endpoint = 'localhost'
+        request.set_method('POST')
+        request.add_body_params('key', 'value')
+        request.set_content_type('application/xml')
+        response = self.do_request(client, request)
+        headers = dict(response.headers._headers)
+        self.assertEqual('application/xml', headers['Content-Type'])
