@@ -31,12 +31,12 @@ logger = logging.getLogger(__name__)
 
 
 class EcsRamRoleSigner(Signer):
-    _REFRESH_SCALE = 0.8
+    _SESSION_PERIOD = 3600
+    _REFRESH_SCALE = 0.9
 
     def __init__(self, ecs_ram_role_credential):
         self._credential = ecs_ram_role_credential
         self._last_update_time = 0
-        self._expiration = 0
 
     def sign(self, region_id, request):
         self._check_session_credential()
@@ -51,7 +51,7 @@ class EcsRamRoleSigner(Signer):
 
     def _check_session_credential(self):
         now = int(time.time())
-        if now - self._last_update_time > (self._expiration * self._REFRESH_SCALE):
+        if now - self._last_update_time > (self._SESSION_PERIOD * self._REFRESH_SCALE):
             self._refresh_session_ak_and_sk()
 
     def _refresh_session_ak_and_sk(self):
@@ -69,9 +69,4 @@ class EcsRamRoleSigner(Signer):
         session_sk = response.get("AccessKeySecret")
         token = response.get("SecurityToken")
         self._session_credential = session_ak, session_sk, token
-        expiration = response.get("Expiration")
-        if expiration:
-            self._expiration = time.mktime(time.strptime(expiration, '%Y-%m-%dT%H:%M:%SZ'))
-        else:
-            self._expiration = expiration
         self._last_update_time = int(time.time())
