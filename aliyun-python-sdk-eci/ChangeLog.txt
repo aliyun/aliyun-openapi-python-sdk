@@ -1,3 +1,7 @@
+2020-11-20 Version: 1.1.1
+1, delete template
+2, fix createimagecache
+
 2020-11-19 Version: 1.1.0
 1, support automatchimagecache cache reuse
 
