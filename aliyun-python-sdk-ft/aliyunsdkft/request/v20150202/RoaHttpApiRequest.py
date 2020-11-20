@@ -17,15 +17,16 @@
 # specific language governing permissions and limitations
 # under the License.
 
-from aliyunsdkcore.request import RpcRequest
+from aliyunsdkcore.request import RoaRequest
+from aliyunsdkft.endpoint import endpoint_data
 
-class FtGatedLaunchPolicy4Request(RpcRequest):
+class RoaHttpApiRequest(RoaRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ft', '2018-07-13', 'FtGatedLaunchPolicy4')
-
-	def get_IsGatedLaunch(self):
-		return self.get_query_params().get('IsGatedLaunch')
-
-	def set_IsGatedLaunch(self,IsGatedLaunch):
-		self.add_query_param('IsGatedLaunch',IsGatedLaunch)
+		RoaRequest.__init__(self, 'Ft', '2015-02-02', 'RoaHttpApi')
+		self.set_uri_pattern('/web/getData')
+		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())

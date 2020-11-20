@@ -17,21 +17,16 @@
 # specific language governing permissions and limitations
 # under the License.
 
-from aliyunsdkcore.request import RpcRequest
+from aliyunsdkcore.request import RoaRequest
+from aliyunsdkft.endpoint import endpoint_data
 
-class FtDynamicAddressDubboRequest(RpcRequest):
+class RoaCommonRequest(RoaRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ft', '2018-07-13', 'FtDynamicAddressDubbo')
-
-	def get_IntValue(self):
-		return self.get_query_params().get('IntValue')
-
-	def set_IntValue(self,IntValue):
-		self.add_query_param('IntValue',IntValue)
-
-	def get_StringValue(self):
-		return self.get_query_params().get('StringValue')
-
-	def set_StringValue(self,StringValue):
-		self.add_query_param('StringValue',StringValue)
+		RoaRequest.__init__(self, 'Ft', '2015-02-02', 'RoaCommon')
+		self.set_uri_pattern('/RoaCommon')
+		self.set_method('GET')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())

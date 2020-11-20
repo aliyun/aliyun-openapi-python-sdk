@@ -17,15 +17,16 @@
 # specific language governing permissions and limitations
 # under the License.
 
-from aliyunsdkcore.request import RpcRequest
+from aliyunsdkcore.request import RoaRequest
+from aliyunsdkft.endpoint import endpoint_data
 
-class FtEagleEyeRequest(RpcRequest):
+class RoaAnonymousApiRequest(RoaRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ft', '2018-07-13', 'FtEagleEye')
-
-	def get_Name(self):
-		return self.get_query_params().get('Name')
-
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)
+		RoaRequest.__init__(self, 'Ft', '2015-02-02', 'RoaAnonymousApi')
+		self.set_uri_pattern('/RoaAnonymousApi')
+		self.set_method('GET')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
