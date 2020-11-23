@@ -1,4 +1,5 @@
 # coding=utf-8
+import sys
 
 from tests import unittest, MyServer
 
@@ -93,8 +94,14 @@ class TestAcsClient(unittest.TestCase):
         request.set_content_type('application/json')
         request.add_body_params('key', 'value')
         response = self.do_request(client, request)
-        headers = dict(response.headers._headers)
-        self.assertEqual('application/json', headers['Content-Type'])
+        if sys.version_info.major == 2:
+            headers = {
+                item.split(':')[0]: item.split(':')[1]
+                for item in response.headers.headers
+            }
+        else:
+            headers = dict(response.headers._headers)
+        self.assertEqual('application/json', headers['Content-Type'].strip('\r\n '))
 
     def test_xml_content_type(self):
         client = AcsClient("id", "aks", region_id='cn-hangzhou', port=51352)
@@ -108,5 +115,11 @@ class TestAcsClient(unittest.TestCase):
         request.add_body_params('key', 'value')
         request.set_content_type('application/xml')
         response = self.do_request(client, request)
-        headers = dict(response.headers._headers)
-        self.assertEqual('application/xml', headers['Content-Type'])
+        if sys.version_info.major == 2:
+            headers = {
+                item.split(':')[0]: item.split(':')[1]
+                for item in response.headers.headers
+            }
+        else:
+            headers = dict(response.headers._headers)
+        self.assertEqual('application/xml', headers['Content-Type'].strip('\r\n '))
