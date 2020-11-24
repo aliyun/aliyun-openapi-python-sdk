@@ -31,6 +31,12 @@ class SearchFaceRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_DbNames(self):
+		return self.get_query_params().get('DbNames')
+
+	def set_DbNames(self,DbNames):
+		self.add_query_param('DbNames',DbNames)
+
 	def get_DbName(self):
 		return self.get_body_params().get('DbName')
 
