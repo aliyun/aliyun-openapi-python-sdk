@@ -31,12 +31,6 @@ class CreateLiveRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_Memo(self):
-		return self.get_body_params().get('Memo')
-
-	def set_Memo(self,Memo):
-		self.add_body_params('Memo', Memo)
-
 	def get_UserId(self):
 		return self.get_body_params().get('UserId')
 

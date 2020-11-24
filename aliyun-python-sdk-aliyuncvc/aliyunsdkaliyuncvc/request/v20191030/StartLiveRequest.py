@@ -37,8 +37,20 @@ class StartLiveRequest(RpcRequest):
 	def set_LiveUUID(self,LiveUUID):
 		self.add_body_params('LiveUUID', LiveUUID)
 
+	def get_PushInfo(self):
+		return self.get_body_params().get('PushInfo')
+
+	def set_PushInfo(self,PushInfo):
+		self.add_body_params('PushInfo', PushInfo)
+
 	def get_UserId(self):
 		return self.get_body_params().get('UserId')
 
 	def set_UserId(self,UserId):
 		self.add_body_params('UserId', UserId)
+
+	def get_LayoutInfo(self):
+		return self.get_body_params().get('LayoutInfo')
+
+	def set_LayoutInfo(self,LayoutInfo):
+		self.add_body_params('LayoutInfo', LayoutInfo)

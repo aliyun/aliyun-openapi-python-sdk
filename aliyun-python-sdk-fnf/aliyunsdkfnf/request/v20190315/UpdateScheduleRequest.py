@@ -23,7 +23,7 @@ from aliyunsdkfnf.endpoint import endpoint_data
 class UpdateScheduleRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'fnf', '2019-03-15', 'UpdateSchedule')
+		RpcRequest.__init__(self, 'fnf', '2019-03-15', 'UpdateSchedule','fnf')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())

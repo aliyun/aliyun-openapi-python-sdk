@@ -36,6 +36,13 @@ class MyServer:
                 _self.end_headers()
                 _self.wfile.write(b"{}")
 
+            def do_POST(_self):
+                _self.protocol_version = 'HTTP/1.1'
+                self._headers = _self.headers
+                _self.send_response(200)
+                _self.send_header("Content-type", "application/json")
+                _self.end_headers()
+
         self.server = HTTPServer(("", 51352), ServerHandler)
 
         def thread_func():

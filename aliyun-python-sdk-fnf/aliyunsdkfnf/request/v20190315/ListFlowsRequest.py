@@ -23,7 +23,7 @@ from aliyunsdkfnf.endpoint import endpoint_data
 class ListFlowsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'fnf', '2019-03-15', 'ListFlows')
+		RpcRequest.__init__(self, 'fnf', '2019-03-15', 'ListFlows','fnf')
 		self.set_method('GET')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
