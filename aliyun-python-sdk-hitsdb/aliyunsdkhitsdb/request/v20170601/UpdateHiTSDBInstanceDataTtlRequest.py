@@ -23,7 +23,7 @@ from aliyunsdkhitsdb.endpoint import endpoint_data
 class UpdateHiTSDBInstanceDataTtlRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'hitsdb', '2017-06-01', 'UpdateHiTSDBInstanceDataTtl','tsdb')
+		RpcRequest.__init__(self, 'hitsdb', '2017-06-01', 'UpdateHiTSDBInstanceDataTtl','hitsdb')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())

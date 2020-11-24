@@ -23,7 +23,7 @@ from aliyunsdkhitsdb.endpoint import endpoint_data
 class ModifyHiTSDBInstanceSecurityIpListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'hitsdb', '2017-06-01', 'ModifyHiTSDBInstanceSecurityIpList','tsdb')
+		RpcRequest.__init__(self, 'hitsdb', '2017-06-01', 'ModifyHiTSDBInstanceSecurityIpList','hitsdb')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
