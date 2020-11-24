@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkhitsdb.endpoint import endpoint_data
 
-class GetInstanceIpWhiteListRequest(RpcRequest):
+class UpdateHiTSDBInstanceDataTtlRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'hitsdb', '2020-06-15', 'GetInstanceIpWhiteList','hitsdb')
+		RpcRequest.__init__(self, 'hitsdb', '2017-06-01', 'UpdateHiTSDBInstanceDataTtl','tsdb')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,11 +31,29 @@ class GetInstanceIpWhiteListRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_ReverseVpcIp(self):
+		return self.get_query_params().get('ReverseVpcIp')
+
+	def set_ReverseVpcIp(self,ReverseVpcIp):
+		self.add_query_param('ReverseVpcIp',ReverseVpcIp)
+
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+
+	def get_ReverseVpcPort(self):
+		return self.get_query_params().get('ReverseVpcPort')
+
+	def set_ReverseVpcPort(self,ReverseVpcPort):
+		self.add_query_param('ReverseVpcPort',ReverseVpcPort)
+
+	def get_PassWord(self):
+		return self.get_query_params().get('PassWord')
+
+	def set_PassWord(self,PassWord):
+		self.add_query_param('PassWord',PassWord)
 
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
@@ -61,14 +79,20 @@ class GetInstanceIpWhiteListRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_GroupName(self):
-		return self.get_query_params().get('GroupName')
+	def get_Ttl(self):
+		return self.get_query_params().get('Ttl')
 
-	def set_GroupName(self,GroupName):
-		self.add_query_param('GroupName',GroupName)
+	def set_Ttl(self,Ttl):
+		self.add_query_param('Ttl',Ttl)
 
 	def get_InstanceId(self):
 		return self.get_query_params().get('InstanceId')
 
 	def set_InstanceId(self,InstanceId):
 		self.add_query_param('InstanceId',InstanceId)
+
+	def get_UserName(self):
+		return self.get_query_params().get('UserName')
+
+	def set_UserName(self,UserName):
+		self.add_query_param('UserName',UserName)
