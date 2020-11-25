@@ -23,7 +23,7 @@ from aliyunsdkecs.endpoint import endpoint_data
 class DescribeCapacityReservationsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'DescribeCapacityReservations')
+		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'DescribeCapacityReservations','ecs')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
