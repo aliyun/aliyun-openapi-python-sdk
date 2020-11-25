@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,7 +18,9 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+
 class GetAccountInfoRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Httpdns', '2016-02-01', 'GetAccountInfo','httpdns')
+		RpcRequest.__init__(self, 'Httpdns', '2016-02-01', 'GetAccountInfo')
+		self.set_method('POST')
