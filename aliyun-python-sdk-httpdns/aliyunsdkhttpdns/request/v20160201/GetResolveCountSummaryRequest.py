@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,19 +18,21 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+
 class GetResolveCountSummaryRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Httpdns', '2016-02-01', 'GetResolveCountSummary','httpdns')
-
-	def get_Granularity(self):
-		return self.get_query_params().get('Granularity')
-
-	def set_Granularity(self,Granularity):
-		self.add_query_param('Granularity',Granularity)
+		RpcRequest.__init__(self, 'Httpdns', '2016-02-01', 'GetResolveCountSummary')
+		self.set_method('POST')
 
 	def get_TimeSpan(self):
 		return self.get_query_params().get('TimeSpan')
 
 	def set_TimeSpan(self,TimeSpan):
 		self.add_query_param('TimeSpan',TimeSpan)
+
+	def get_Granularity(self):
+		return self.get_query_params().get('Granularity')
+
+	def set_Granularity(self,Granularity):
+		self.add_query_param('Granularity',Granularity)

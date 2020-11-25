@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,19 +18,21 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+
 class AddDomainRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Httpdns', '2016-02-01', 'AddDomain','httpdns')
-
-	def get_AccountId(self):
-		return self.get_query_params().get('AccountId')
-
-	def set_AccountId(self,AccountId):
-		self.add_query_param('AccountId',AccountId)
+		RpcRequest.__init__(self, 'Httpdns', '2016-02-01', 'AddDomain')
+		self.set_method('POST')
 
 	def get_DomainName(self):
 		return self.get_query_params().get('DomainName')
 
 	def set_DomainName(self,DomainName):
 		self.add_query_param('DomainName',DomainName)
+
+	def get_AccountId(self):
+		return self.get_query_params().get('AccountId')
+
+	def set_AccountId(self,AccountId):
+		self.add_query_param('AccountId',AccountId)
