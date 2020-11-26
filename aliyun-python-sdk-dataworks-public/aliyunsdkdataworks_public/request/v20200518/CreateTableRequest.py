@@ -131,6 +131,12 @@ class CreateTableRequest(RpcRequest):
 	def set_Location(self,Location):
 		self.add_query_param('Location',Location)
 
+	def get_Comment(self):
+		return self.get_query_params().get('Comment')
+
+	def set_Comment(self,Comment):
+		self.add_query_param('Comment',Comment)
+
 	def get_TableName(self):
 		return self.get_query_params().get('TableName')
 
