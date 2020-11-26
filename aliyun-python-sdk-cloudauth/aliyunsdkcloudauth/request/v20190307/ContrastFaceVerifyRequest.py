@@ -115,6 +115,12 @@ class ContrastFaceVerifyRequest(RpcRequest):
 	def set_Mobile(self,Mobile):
 		self.add_body_params('Mobile', Mobile)
 
+	def get_FaceContrastFile(self):
+		return self.get_body_params().get('FaceContrastFile')
+
+	def set_FaceContrastFile(self,FaceContrastFile):
+		self.add_body_params('FaceContrastFile', FaceContrastFile)
+
 	def get_SceneId(self):
 		return self.get_body_params().get('SceneId')
 
