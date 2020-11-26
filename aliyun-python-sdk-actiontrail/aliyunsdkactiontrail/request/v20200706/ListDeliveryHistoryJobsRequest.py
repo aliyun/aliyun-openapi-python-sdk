@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkactiontrail.endpoint import endpoint_data
 
-class DeleteTrailRequest(RpcRequest):
+class ListDeliveryHistoryJobsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Actiontrail', '2017-12-04', 'DeleteTrail','actiontrail')
+		RpcRequest.__init__(self, 'Actiontrail', '2020-07-06', 'ListDeliveryHistoryJobs','actiontrail')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,8 +31,14 @@ class DeleteTrailRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_Name(self):
-		return self.get_query_params().get('Name')
+	def get_PageNumber(self):
+		return self.get_query_params().get('PageNumber')
 
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)
+
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
