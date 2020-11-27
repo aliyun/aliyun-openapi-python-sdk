@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkkms.endpoint import endpoint_data
 
-class AsymmetricEncryptRequest(RpcRequest):
+class CreateCertificateRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Kms', '2016-01-20', 'AsymmetricEncrypt','kms-service')
+		RpcRequest.__init__(self, 'Kms', '2016-01-20', 'CreateCertificate','kms-service')
 		self.set_protocol_type('https')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
@@ -32,26 +32,26 @@ class AsymmetricEncryptRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_KeyVersionId(self):
-		return self.get_query_params().get('KeyVersionId')
+	def get_ProtectionLevel(self):
+		return self.get_query_params().get('ProtectionLevel')
 
-	def set_KeyVersionId(self,KeyVersionId):
-		self.add_query_param('KeyVersionId',KeyVersionId)
+	def set_ProtectionLevel(self,ProtectionLevel):
+		self.add_query_param('ProtectionLevel',ProtectionLevel)
 
-	def get_KeyId(self):
-		return self.get_query_params().get('KeyId')
+	def get_Subject(self):
+		return self.get_query_params().get('Subject')
 
-	def set_KeyId(self,KeyId):
-		self.add_query_param('KeyId',KeyId)
+	def set_Subject(self,Subject):
+		self.add_query_param('Subject',Subject)
 
-	def get_Plaintext(self):
-		return self.get_query_params().get('Plaintext')
+	def get_SubjectAlternativeNames(self):
+		return self.get_query_params().get('SubjectAlternativeNames')
 
-	def set_Plaintext(self,Plaintext):
-		self.add_query_param('Plaintext',Plaintext)
+	def set_SubjectAlternativeNames(self,SubjectAlternativeNames):
+		self.add_query_param('SubjectAlternativeNames',SubjectAlternativeNames)
 
-	def get_Algorithm(self):
-		return self.get_query_params().get('Algorithm')
+	def get_KeySpec(self):
+		return self.get_query_params().get('KeySpec')
 
-	def set_Algorithm(self,Algorithm):
-		self.add_query_param('Algorithm',Algorithm)
+	def set_KeySpec(self,KeySpec):
+		self.add_query_param('KeySpec',KeySpec)

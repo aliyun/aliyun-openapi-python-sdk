@@ -23,7 +23,7 @@ from aliyunsdkkms.endpoint import endpoint_data
 class TagResourceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Kms', '2016-01-20', 'TagResource','kms')
+		RpcRequest.__init__(self, 'Kms', '2016-01-20', 'TagResource','kms-service')
 		self.set_protocol_type('https')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
@@ -31,6 +31,12 @@ class TagResourceRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+
+	def get_CertificateId(self):
+		return self.get_query_params().get('CertificateId')
+
+	def set_CertificateId(self,CertificateId):
+		self.add_query_param('CertificateId',CertificateId)
 
 	def get_KeyId(self):
 		return self.get_query_params().get('KeyId')

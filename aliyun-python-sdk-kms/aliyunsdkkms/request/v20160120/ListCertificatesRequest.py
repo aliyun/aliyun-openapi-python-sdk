@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkkms.endpoint import endpoint_data
 
-class AsymmetricEncryptRequest(RpcRequest):
+class ListCertificatesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Kms', '2016-01-20', 'AsymmetricEncrypt','kms-service')
+		RpcRequest.__init__(self, 'Kms', '2016-01-20', 'ListCertificates','kms-service')
 		self.set_protocol_type('https')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
@@ -32,26 +32,32 @@ class AsymmetricEncryptRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_KeyVersionId(self):
-		return self.get_query_params().get('KeyVersionId')
+	def get_Subject(self):
+		return self.get_query_params().get('Subject')
 
-	def set_KeyVersionId(self,KeyVersionId):
-		self.add_query_param('KeyVersionId',KeyVersionId)
+	def set_Subject(self,Subject):
+		self.add_query_param('Subject',Subject)
 
-	def get_KeyId(self):
-		return self.get_query_params().get('KeyId')
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
 
-	def set_KeyId(self,KeyId):
-		self.add_query_param('KeyId',KeyId)
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
 
-	def get_Plaintext(self):
-		return self.get_query_params().get('Plaintext')
+	def get_Issuer(self):
+		return self.get_query_params().get('Issuer')
 
-	def set_Plaintext(self,Plaintext):
-		self.add_query_param('Plaintext',Plaintext)
+	def set_Issuer(self,Issuer):
+		self.add_query_param('Issuer',Issuer)
 
-	def get_Algorithm(self):
-		return self.get_query_params().get('Algorithm')
+	def get_PageNumber(self):
+		return self.get_query_params().get('PageNumber')
 
-	def set_Algorithm(self,Algorithm):
-		self.add_query_param('Algorithm',Algorithm)
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)
+
+	def get_Status(self):
+		return self.get_query_params().get('Status')
+
+	def set_Status(self,Status):
+		self.add_query_param('Status',Status)

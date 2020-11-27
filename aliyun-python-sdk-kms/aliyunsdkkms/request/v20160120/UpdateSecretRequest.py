@@ -23,7 +23,7 @@ from aliyunsdkkms.endpoint import endpoint_data
 class UpdateSecretRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Kms', '2016-01-20', 'UpdateSecret','kms')
+		RpcRequest.__init__(self, 'Kms', '2016-01-20', 'UpdateSecret','kms-service')
 		self.set_protocol_type('https')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):

@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkkms.endpoint import endpoint_data
 
-class AsymmetricEncryptRequest(RpcRequest):
+class GetCertificateRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Kms', '2016-01-20', 'AsymmetricEncrypt','kms-service')
+		RpcRequest.__init__(self, 'Kms', '2016-01-20', 'GetCertificate','kms-service')
 		self.set_protocol_type('https')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
@@ -32,26 +32,8 @@ class AsymmetricEncryptRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_KeyVersionId(self):
-		return self.get_query_params().get('KeyVersionId')
+	def get_CertificateId(self):
+		return self.get_query_params().get('CertificateId')
 
-	def set_KeyVersionId(self,KeyVersionId):
-		self.add_query_param('KeyVersionId',KeyVersionId)
-
-	def get_KeyId(self):
-		return self.get_query_params().get('KeyId')
-
-	def set_KeyId(self,KeyId):
-		self.add_query_param('KeyId',KeyId)
-
-	def get_Plaintext(self):
-		return self.get_query_params().get('Plaintext')
-
-	def set_Plaintext(self,Plaintext):
-		self.add_query_param('Plaintext',Plaintext)
-
-	def get_Algorithm(self):
-		return self.get_query_params().get('Algorithm')
-
-	def set_Algorithm(self,Algorithm):
-		self.add_query_param('Algorithm',Algorithm)
+	def set_CertificateId(self,CertificateId):
+		self.add_query_param('CertificateId',CertificateId)

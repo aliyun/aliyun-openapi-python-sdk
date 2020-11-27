@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkkms.endpoint import endpoint_data
 
-class AsymmetricEncryptRequest(RpcRequest):
+class CertificatePublicKeyVerifyRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Kms', '2016-01-20', 'AsymmetricEncrypt','kms-service')
+		RpcRequest.__init__(self, 'Kms', '2016-01-20', 'CertificatePublicKeyVerify','kms-service')
 		self.set_protocol_type('https')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
@@ -32,23 +32,29 @@ class AsymmetricEncryptRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_KeyVersionId(self):
-		return self.get_query_params().get('KeyVersionId')
+	def get_SignatureValue(self):
+		return self.get_query_params().get('SignatureValue')
 
-	def set_KeyVersionId(self,KeyVersionId):
-		self.add_query_param('KeyVersionId',KeyVersionId)
+	def set_SignatureValue(self,SignatureValue):
+		self.add_query_param('SignatureValue',SignatureValue)
 
-	def get_KeyId(self):
-		return self.get_query_params().get('KeyId')
+	def get_MessageType(self):
+		return self.get_query_params().get('MessageType')
 
-	def set_KeyId(self,KeyId):
-		self.add_query_param('KeyId',KeyId)
+	def set_MessageType(self,MessageType):
+		self.add_query_param('MessageType',MessageType)
 
-	def get_Plaintext(self):
-		return self.get_query_params().get('Plaintext')
+	def get_CertificateId(self):
+		return self.get_query_params().get('CertificateId')
 
-	def set_Plaintext(self,Plaintext):
-		self.add_query_param('Plaintext',Plaintext)
+	def set_CertificateId(self,CertificateId):
+		self.add_query_param('CertificateId',CertificateId)
+
+	def get_Message(self):
+		return self.get_query_params().get('Message')
+
+	def set_Message(self,Message):
+		self.add_query_param('Message',Message)
 
 	def get_Algorithm(self):
 		return self.get_query_params().get('Algorithm')
