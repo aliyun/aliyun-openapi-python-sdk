@@ -101,6 +101,24 @@ class UpdateMPULayoutRequest(RpcRequest):
 	def set_TaskId(self,TaskId):
 		self.add_query_param('TaskId',TaskId)
 
+	def get_ClockWidgetss(self):
+		return self.get_query_params().get('ClockWidgets')
+
+	def set_ClockWidgetss(self, ClockWidgetss):
+		for depth1 in range(len(ClockWidgetss)):
+			if ClockWidgetss[depth1].get('X') is not None:
+				self.add_query_param('ClockWidgets.' + str(depth1 + 1) + '.X', ClockWidgetss[depth1].get('X'))
+			if ClockWidgetss[depth1].get('Y') is not None:
+				self.add_query_param('ClockWidgets.' + str(depth1 + 1) + '.Y', ClockWidgetss[depth1].get('Y'))
+			if ClockWidgetss[depth1].get('FontType') is not None:
+				self.add_query_param('ClockWidgets.' + str(depth1 + 1) + '.FontType', ClockWidgetss[depth1].get('FontType'))
+			if ClockWidgetss[depth1].get('FontSize') is not None:
+				self.add_query_param('ClockWidgets.' + str(depth1 + 1) + '.FontSize', ClockWidgetss[depth1].get('FontSize'))
+			if ClockWidgetss[depth1].get('FontColor') is not None:
+				self.add_query_param('ClockWidgets.' + str(depth1 + 1) + '.FontColor', ClockWidgetss[depth1].get('FontColor'))
+			if ClockWidgetss[depth1].get('ZOrder') is not None:
+				self.add_query_param('ClockWidgets.' + str(depth1 + 1) + '.ZOrder', ClockWidgetss[depth1].get('ZOrder'))
+
 	def get_Watermarkss(self):
 		return self.get_query_params().get('Watermarks')
 

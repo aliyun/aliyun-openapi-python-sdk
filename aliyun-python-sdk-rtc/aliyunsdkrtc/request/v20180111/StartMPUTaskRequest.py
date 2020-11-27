@@ -81,23 +81,11 @@ class StartMPUTaskRequest(RpcRequest):
 					if UserPaness[depth1].get('Texts')[depth2].get('ZOrder') is not None:
 						self.add_query_param('UserPanes.' + str(depth1 + 1) + '.Texts.' + str(depth2 + 1) + '.ZOrder', UserPaness[depth1].get('Texts')[depth2].get('ZOrder'))
 
-	def get_RtpExtInfo(self):
-		return self.get_query_params().get('RtpExtInfo')
-
-	def set_RtpExtInfo(self,RtpExtInfo):
-		self.add_query_param('RtpExtInfo',RtpExtInfo)
-
 	def get_BackgroundColor(self):
 		return self.get_query_params().get('BackgroundColor')
 
 	def set_BackgroundColor(self,BackgroundColor):
 		self.add_query_param('BackgroundColor',BackgroundColor)
-
-	def get_CropMode(self):
-		return self.get_query_params().get('CropMode')
-
-	def set_CropMode(self,CropMode):
-		self.add_query_param('CropMode',CropMode)
 
 	def get_ReportVad(self):
 		return self.get_query_params().get('ReportVad')
@@ -105,19 +93,11 @@ class StartMPUTaskRequest(RpcRequest):
 	def set_ReportVad(self,ReportVad):
 		self.add_query_param('ReportVad',ReportVad)
 
-	def get_TaskProfile(self):
-		return self.get_query_params().get('TaskProfile')
+	def get_SourceType(self):
+		return self.get_query_params().get('SourceType')
 
-	def set_TaskProfile(self,TaskProfile):
-		self.add_query_param('TaskProfile',TaskProfile)
-
-	def get_LayoutIdss(self):
-		return self.get_query_params().get('LayoutIds')
-
-	def set_LayoutIdss(self, LayoutIdss):
-		for depth1 in range(len(LayoutIdss)):
-			if LayoutIdss[depth1] is not None:
-				self.add_query_param('LayoutIds.' + str(depth1 + 1) , LayoutIdss[depth1])
+	def set_SourceType(self,SourceType):
+		self.add_query_param('SourceType',SourceType)
 
 	def get_TaskId(self):
 		return self.get_query_params().get('TaskId')
@@ -125,11 +105,23 @@ class StartMPUTaskRequest(RpcRequest):
 	def set_TaskId(self,TaskId):
 		self.add_query_param('TaskId',TaskId)
 
-	def get_StreamURL(self):
-		return self.get_query_params().get('StreamURL')
+	def get_ClockWidgetss(self):
+		return self.get_query_params().get('ClockWidgets')
 
-	def set_StreamURL(self,StreamURL):
-		self.add_query_param('StreamURL',StreamURL)
+	def set_ClockWidgetss(self, ClockWidgetss):
+		for depth1 in range(len(ClockWidgetss)):
+			if ClockWidgetss[depth1].get('X') is not None:
+				self.add_query_param('ClockWidgets.' + str(depth1 + 1) + '.X', ClockWidgetss[depth1].get('X'))
+			if ClockWidgetss[depth1].get('Y') is not None:
+				self.add_query_param('ClockWidgets.' + str(depth1 + 1) + '.Y', ClockWidgetss[depth1].get('Y'))
+			if ClockWidgetss[depth1].get('FontType') is not None:
+				self.add_query_param('ClockWidgets.' + str(depth1 + 1) + '.FontType', ClockWidgetss[depth1].get('FontType'))
+			if ClockWidgetss[depth1].get('FontSize') is not None:
+				self.add_query_param('ClockWidgets.' + str(depth1 + 1) + '.FontSize', ClockWidgetss[depth1].get('FontSize'))
+			if ClockWidgetss[depth1].get('FontColor') is not None:
+				self.add_query_param('ClockWidgets.' + str(depth1 + 1) + '.FontColor', ClockWidgetss[depth1].get('FontColor'))
+			if ClockWidgetss[depth1].get('ZOrder') is not None:
+				self.add_query_param('ClockWidgets.' + str(depth1 + 1) + '.ZOrder', ClockWidgetss[depth1].get('ZOrder'))
 
 	def get_VadInterval(self):
 		return self.get_query_params().get('VadInterval')
@@ -164,6 +156,50 @@ class StartMPUTaskRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_MediaEncode(self):
+		return self.get_query_params().get('MediaEncode')
+
+	def set_MediaEncode(self,MediaEncode):
+		self.add_query_param('MediaEncode',MediaEncode)
+
+	def get_RtpExtInfo(self):
+		return self.get_query_params().get('RtpExtInfo')
+
+	def set_RtpExtInfo(self,RtpExtInfo):
+		self.add_query_param('RtpExtInfo',RtpExtInfo)
+
+	def get_CropMode(self):
+		return self.get_query_params().get('CropMode')
+
+	def set_CropMode(self,CropMode):
+		self.add_query_param('CropMode',CropMode)
+
+	def get_TaskProfile(self):
+		return self.get_query_params().get('TaskProfile')
+
+	def set_TaskProfile(self,TaskProfile):
+		self.add_query_param('TaskProfile',TaskProfile)
+
+	def get_LayoutIdss(self):
+		return self.get_query_params().get('LayoutIds')
+
+	def set_LayoutIdss(self, LayoutIdss):
+		for depth1 in range(len(LayoutIdss)):
+			if LayoutIdss[depth1] is not None:
+				self.add_query_param('LayoutIds.' + str(depth1 + 1) , LayoutIdss[depth1])
+
+	def get_StreamURL(self):
+		return self.get_query_params().get('StreamURL')
+
+	def set_StreamURL(self,StreamURL):
+		self.add_query_param('StreamURL',StreamURL)
+
+	def get_StreamType(self):
+		return self.get_query_params().get('StreamType')
+
+	def set_StreamType(self,StreamType):
+		self.add_query_param('StreamType',StreamType)
 
 	def get_SubSpecUserss(self):
 		return self.get_query_params().get('SubSpecUsers')
@@ -205,11 +241,11 @@ class StartMPUTaskRequest(RpcRequest):
 	def set_TimeStampRef(self,TimeStampRef):
 		self.add_query_param('TimeStampRef',TimeStampRef)
 
-	def get_MediaEncode(self):
-		return self.get_query_params().get('MediaEncode')
+	def get_MixMode(self):
+		return self.get_query_params().get('MixMode')
 
-	def set_MediaEncode(self,MediaEncode):
-		self.add_query_param('MediaEncode',MediaEncode)
+	def set_MixMode(self,MixMode):
+		self.add_query_param('MixMode',MixMode)
 
 	def get_ChannelId(self):
 		return self.get_query_params().get('ChannelId')
