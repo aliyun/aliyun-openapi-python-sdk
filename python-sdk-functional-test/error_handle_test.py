@@ -14,7 +14,7 @@ class ErrorHandleTest(SDKTestBase):
 
     def test_server_timeout(self):
         acs_client = AcsClient(self.access_key_id, self.access_key_secret,
-                               "cn-hangzhou", timeout=0.001)
+                               "cn-hangzhou", connect_timeout=10, timeout=0.001)
         from aliyunsdkecs.request.v20140526.CreateInstanceRequest import CreateInstanceRequest
         request = CreateInstanceRequest()
         request.set_ImageId("coreos_1745_7_0_64_30G_alibase_20180705.vhd")
