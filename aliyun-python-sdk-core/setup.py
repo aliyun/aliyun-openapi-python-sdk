@@ -19,6 +19,7 @@
 '''
 
 import os
+import sys
 
 from setuptools import setup, find_packages
 
@@ -42,9 +43,13 @@ VERSION = __import__(PACKAGE).__version__
 with open("README.rst") as fp:
     LONG_DESCRIPTION = fp.read()
 
+cryptography_version = "cryptography>=2.9.2, <3.3"
+if sys.version_info[0:2] == (3, 4):
+    cryptography_version = "cryptography<=2.8"
+
 requires = [
     "jmespath>=0.9.3,<1.0.0",
-    "cryptography>=2.9.2"
+    cryptography_version
 ]
 
 setup_args = {
@@ -66,14 +71,13 @@ setup_args = {
         'Intended Audience :: Developers',
         'License :: OSI Approved :: Apache Software License',
         'Programming Language :: Python',
-        'Programming Language :: Python :: 2.6',
         'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.3',
         'Programming Language :: Python :: 3.4',
         'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.7',
+        'Programming Language :: Python :: 3.8'
         'Topic :: Software Development',
     )
 }

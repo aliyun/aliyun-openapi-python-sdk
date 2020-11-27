@@ -43,12 +43,12 @@ This document introduces how to obtain and call Alibaba Cloud Python SDK.
 
 - To use Alibaba Cloud Python SDK to access the APIs of a product, you must first activate the product on the [Alibaba Cloud console](https://home.console.aliyun.com/?spm=5176.doc52740.2.4.QKZk8w) if required.
 
-- Alibaba Cloud Python SDK requires 2.6.x, 2.7.x, and Python 3.x.
+- Alibaba Cloud Python SDK requires 2.7.x, and Python 3.x.
 
 
 ## Install Python SDK
 
-Alibaba Cloud Python SDK supports Python 2.6.x, 2.7.x, and Python 3.x. Run ``python --version`` to check your version of Python.
+Alibaba Cloud Python SDK supports Python 2.7.x, and Python 3.x. Run ``python --version`` to check your version of Python.
 
 You can install the Alibaba Cloud Python SDK using the following two methods. Regardless of which method and cloud service are used, the core library `aliyun-python-sdk-core` must be installed.
 
