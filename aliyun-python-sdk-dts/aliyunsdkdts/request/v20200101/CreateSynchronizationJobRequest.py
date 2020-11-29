@@ -91,6 +91,12 @@ class CreateSynchronizationJobRequest(RpcRequest):
 	def set_UsedTime(self,UsedTime):
 		self.add_query_param('UsedTime',UsedTime)
 
+	def get_DBInstanceCount(self):
+		return self.get_query_params().get('DBInstanceCount')
+
+	def set_DBInstanceCount(self,DBInstanceCount):
+		self.add_query_param('DBInstanceCount',DBInstanceCount)
+
 	def get_SourceRegion(self):
 		return self.get_query_params().get('SourceRegion')
 
