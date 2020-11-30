@@ -23,7 +23,7 @@ from aliyunsdkedas.endpoint import endpoint_data
 class DeleteUserDefineRegionRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'DeleteUserDefineRegion','edas')
+		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'DeleteUserDefineRegion','Edas')
 		self.set_uri_pattern('/pop/v5/user_region_def')
 		self.set_method('DELETE')
 		if hasattr(self, "endpoint_map"):

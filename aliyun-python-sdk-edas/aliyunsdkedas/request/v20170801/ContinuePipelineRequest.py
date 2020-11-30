@@ -23,7 +23,7 @@ from aliyunsdkedas.endpoint import endpoint_data
 class ContinuePipelineRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'ContinuePipeline','edas')
+		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'ContinuePipeline','Edas')
 		self.set_uri_pattern('/pop/v5/changeorder/pipeline_batch_confirm')
 		self.set_method('GET')
 		if hasattr(self, "endpoint_map"):

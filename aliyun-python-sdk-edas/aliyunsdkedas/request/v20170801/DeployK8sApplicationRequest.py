@@ -23,7 +23,7 @@ from aliyunsdkedas.endpoint import endpoint_data
 class DeployK8sApplicationRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'DeployK8sApplication','edas')
+		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'DeployK8sApplication','Edas')
 		self.set_uri_pattern('/pop/v5/k8s/acs/k8s_apps')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
@@ -133,6 +133,12 @@ class DeployK8sApplicationRequest(RoaRequest):
 
 	def set_DeployAcrossZones(self,DeployAcrossZones):
 		self.add_query_param('DeployAcrossZones',DeployAcrossZones)
+
+	def get_DeployAcrossNodes(self):
+		return self.get_query_params().get('DeployAcrossNodes')
+
+	def set_DeployAcrossNodes(self,DeployAcrossNodes):
+		self.add_query_param('DeployAcrossNodes',DeployAcrossNodes)
 
 	def get_MemoryRequest(self):
 		return self.get_query_params().get('MemoryRequest')
@@ -259,6 +265,12 @@ class DeployK8sApplicationRequest(RoaRequest):
 
 	def set_RuntimeClassName(self,RuntimeClassName):
 		self.add_query_param('RuntimeClassName',RuntimeClassName)
+
+	def get_TrafficControlStrategy(self):
+		return self.get_query_params().get('TrafficControlStrategy')
+
+	def set_TrafficControlStrategy(self,TrafficControlStrategy):
+		self.add_query_param('TrafficControlStrategy',TrafficControlStrategy)
 
 	def get_PostStart(self):
 		return self.get_query_params().get('PostStart')

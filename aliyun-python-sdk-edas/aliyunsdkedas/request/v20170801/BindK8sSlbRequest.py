@@ -23,7 +23,7 @@ from aliyunsdkedas.endpoint import endpoint_data
 class BindK8sSlbRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'BindK8sSlb','edas')
+		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'BindK8sSlb','Edas')
 		self.set_uri_pattern('/pop/v5/k8s/acs/k8s_slb_binding')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
@@ -31,6 +31,12 @@ class BindK8sSlbRequest(RoaRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+
+	def get_Scheduler(self):
+		return self.get_query_params().get('Scheduler')
+
+	def set_Scheduler(self,Scheduler):
+		self.add_query_param('Scheduler',Scheduler)
 
 	def get_ServicePortInfos(self):
 		return self.get_query_params().get('ServicePortInfos')
@@ -61,6 +67,12 @@ class BindK8sSlbRequest(RoaRequest):
 
 	def set_AppId(self,AppId):
 		self.add_query_param('AppId',AppId)
+
+	def get_Specification(self):
+		return self.get_query_params().get('Specification')
+
+	def set_Specification(self,Specification):
+		self.add_query_param('Specification',Specification)
 
 	def get_ClusterId(self):
 		return self.get_query_params().get('ClusterId')

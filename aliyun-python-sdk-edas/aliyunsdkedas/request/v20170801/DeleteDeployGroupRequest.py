@@ -23,7 +23,7 @@ from aliyunsdkedas.endpoint import endpoint_data
 class DeleteDeployGroupRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'DeleteDeployGroup','edas')
+		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'DeleteDeployGroup','Edas')
 		self.set_uri_pattern('/pop/v5/deploy_group')
 		self.set_method('DELETE')
 		if hasattr(self, "endpoint_map"):

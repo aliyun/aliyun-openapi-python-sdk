@@ -23,7 +23,7 @@ from aliyunsdkedas.endpoint import endpoint_data
 class DeployApplicationRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'DeployApplication','edas')
+		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'DeployApplication','Edas')
 		self.set_uri_pattern('/pop/v5/changeorder/co_deploy')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
@@ -80,6 +80,12 @@ class DeployApplicationRequest(RoaRequest):
 	def set_PackageVersion(self,PackageVersion):
 		self.add_query_param('PackageVersion',PackageVersion)
 
+	def get_Gray(self):
+		return self.get_query_params().get('Gray')
+
+	def set_Gray(self,Gray):
+		self.add_query_param('Gray',Gray)
+
 	def get_AppId(self):
 		return self.get_query_params().get('AppId')
 
@@ -97,6 +103,12 @@ class DeployApplicationRequest(RoaRequest):
 
 	def set_WarUrl(self,WarUrl):
 		self.add_query_param('WarUrl',WarUrl)
+
+	def get_TrafficControlStrategy(self):
+		return self.get_query_params().get('TrafficControlStrategy')
+
+	def set_TrafficControlStrategy(self,TrafficControlStrategy):
+		self.add_query_param('TrafficControlStrategy',TrafficControlStrategy)
 
 	def get_Desc(self):
 		return self.get_query_params().get('Desc')
