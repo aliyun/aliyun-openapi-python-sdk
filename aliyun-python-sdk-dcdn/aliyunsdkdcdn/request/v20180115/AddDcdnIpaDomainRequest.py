@@ -43,6 +43,12 @@ class AddDcdnIpaDomainRequest(RpcRequest):
 	def set_ResourceGroupId(self,ResourceGroupId):
 		self.add_query_param('ResourceGroupId',ResourceGroupId)
 
+	def get_Protocol(self):
+		return self.get_query_params().get('Protocol')
+
+	def set_Protocol(self,Protocol):
+		self.add_query_param('Protocol',Protocol)
+
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
 
