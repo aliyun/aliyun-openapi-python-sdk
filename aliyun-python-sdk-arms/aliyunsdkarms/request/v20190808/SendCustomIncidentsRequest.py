@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkarms.endpoint import endpoint_data
 
-class CreateWehookRequest(RpcRequest):
+class SendCustomIncidentsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ARMS', '2019-08-08', 'CreateWehook','arms')
+		RpcRequest.__init__(self, 'ARMS', '2019-08-08', 'SendCustomIncidents','arms')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,38 +31,14 @@ class CreateWehookRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_HttpHeaders(self):
-		return self.get_query_params().get('HttpHeaders')
+	def get_Incidents(self):
+		return self.get_query_params().get('Incidents')
 
-	def set_HttpHeaders(self,HttpHeaders):
-		self.add_query_param('HttpHeaders',HttpHeaders)
+	def set_Incidents(self,Incidents):
+		self.add_query_param('Incidents',Incidents)
 
-	def get_Method(self):
-		return self.get_query_params().get('Method')
+	def get_ProductType(self):
+		return self.get_query_params().get('ProductType')
 
-	def set_Method(self,Method):
-		self.add_query_param('Method',Method)
-
-	def get_HttpParams(self):
-		return self.get_query_params().get('HttpParams')
-
-	def set_HttpParams(self,HttpParams):
-		self.add_query_param('HttpParams',HttpParams)
-
-	def get_Body(self):
-		return self.get_query_params().get('Body')
-
-	def set_Body(self,Body):
-		self.add_query_param('Body',Body)
-
-	def get_Url(self):
-		return self.get_query_params().get('Url')
-
-	def set_Url(self,Url):
-		self.add_query_param('Url',Url)
-
-	def get_ContactName(self):
-		return self.get_query_params().get('ContactName')
-
-	def set_ContactName(self,ContactName):
-		self.add_query_param('ContactName',ContactName)
+	def set_ProductType(self,ProductType):
+		self.add_query_param('ProductType',ProductType)

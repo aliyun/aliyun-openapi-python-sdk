@@ -31,11 +31,11 @@ class UpdateWebhookRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_Headers(self):
-		return self.get_query_params().get('Headers')
+	def get_HttpHeaders(self):
+		return self.get_query_params().get('HttpHeaders')
 
-	def set_Headers(self,Headers):
-		self.add_query_param('Headers',Headers)
+	def set_HttpHeaders(self,HttpHeaders):
+		self.add_query_param('HttpHeaders',HttpHeaders)
 
 	def get_Method(self):
 		return self.get_query_params().get('Method')
@@ -49,11 +49,11 @@ class UpdateWebhookRequest(RpcRequest):
 	def set_ContactId(self,ContactId):
 		self.add_query_param('ContactId',ContactId)
 
-	def get_Params(self):
-		return self.get_query_params().get('Params')
+	def get_HttpParams(self):
+		return self.get_query_params().get('HttpParams')
 
-	def set_Params(self,Params):
-		self.add_query_param('Params',Params)
+	def set_HttpParams(self,HttpParams):
+		self.add_query_param('HttpParams',HttpParams)
 
 	def get_Body(self):
 		return self.get_query_params().get('Body')
