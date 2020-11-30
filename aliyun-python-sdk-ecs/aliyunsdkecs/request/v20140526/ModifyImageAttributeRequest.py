@@ -61,6 +61,12 @@ class ModifyImageAttributeRequest(RpcRequest):
 	def set_ImageName(self,ImageName):
 		self.add_query_param('ImageName',ImageName)
 
+	def get_LicenseType(self):
+		return self.get_query_params().get('LicenseType')
+
+	def set_LicenseType(self,LicenseType):
+		self.add_query_param('LicenseType',LicenseType)
+
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 

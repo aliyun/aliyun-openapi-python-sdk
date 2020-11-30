@@ -61,18 +61,6 @@ class DescribeSnapshotsRequest(RpcRequest):
 	def set_SnapshotLinkId(self,SnapshotLinkId):
 		self.add_query_param('SnapshotLinkId',SnapshotLinkId)
 
-	def get_SnapshotName(self):
-		return self.get_query_params().get('SnapshotName')
-
-	def set_SnapshotName(self,SnapshotName):
-		self.add_query_param('SnapshotName',SnapshotName)
-
-	def get_PageNumber(self):
-		return self.get_query_params().get('PageNumber')
-
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
-
 	def get_ResourceGroupId(self):
 		return self.get_query_params().get('ResourceGroupId')
 
@@ -84,18 +72,6 @@ class DescribeSnapshotsRequest(RpcRequest):
 
 	def set_Filter1Key(self,Filter1Key):
 		self.add_query_param('Filter.1.Key',Filter1Key)
-
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_DiskId(self):
-		return self.get_query_params().get('DiskId')
-
-	def set_DiskId(self,DiskId):
-		self.add_query_param('DiskId',DiskId)
 
 	def get_Tags(self):
 		return self.get_query_params().get('Tag')
@@ -112,6 +88,66 @@ class DescribeSnapshotsRequest(RpcRequest):
 
 	def set_DryRun(self,DryRun):
 		self.add_query_param('DryRun',DryRun)
+
+	def get_Filter1Value(self):
+		return self.get_query_params().get('Filter.1.Value')
+
+	def set_Filter1Value(self,Filter1Value):
+		self.add_query_param('Filter.1.Value',Filter1Value)
+
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
+
+	def get_InstanceId(self):
+		return self.get_query_params().get('InstanceId')
+
+	def set_InstanceId(self,InstanceId):
+		self.add_query_param('InstanceId',InstanceId)
+
+	def get_MaxResults(self):
+		return self.get_query_params().get('MaxResults')
+
+	def set_MaxResults(self,MaxResults):
+		self.add_query_param('MaxResults',MaxResults)
+
+	def get_Status(self):
+		return self.get_query_params().get('Status')
+
+	def set_Status(self,Status):
+		self.add_query_param('Status',Status)
+
+	def get_SnapshotName(self):
+		return self.get_query_params().get('SnapshotName')
+
+	def set_SnapshotName(self,SnapshotName):
+		self.add_query_param('SnapshotName',SnapshotName)
+
+	def get_PageNumber(self):
+		return self.get_query_params().get('PageNumber')
+
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)
+
+	def get_NextToken(self):
+		return self.get_query_params().get('NextToken')
+
+	def set_NextToken(self,NextToken):
+		self.add_query_param('NextToken',NextToken)
+
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
+
+	def get_DiskId(self):
+		return self.get_query_params().get('DiskId')
+
+	def set_DiskId(self,DiskId):
+		self.add_query_param('DiskId',DiskId)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -131,29 +167,11 @@ class DescribeSnapshotsRequest(RpcRequest):
 	def set_SourceDiskType(self,SourceDiskType):
 		self.add_query_param('SourceDiskType',SourceDiskType)
 
-	def get_Filter1Value(self):
-		return self.get_query_params().get('Filter.1.Value')
-
-	def set_Filter1Value(self,Filter1Value):
-		self.add_query_param('Filter.1.Value',Filter1Value)
-
 	def get_Filter2Key(self):
 		return self.get_query_params().get('Filter.2.Key')
 
 	def set_Filter2Key(self,Filter2Key):
 		self.add_query_param('Filter.2.Key',Filter2Key)
-
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_InstanceId(self):
-		return self.get_query_params().get('InstanceId')
-
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
 
 	def get_Encrypted(self):
 		return self.get_query_params().get('Encrypted')
@@ -178,9 +196,3 @@ class DescribeSnapshotsRequest(RpcRequest):
 
 	def set_Category(self,Category):
 		self.add_query_param('Category',Category)
-
-	def get_Status(self):
-		return self.get_query_params().get('Status')
-
-	def set_Status(self,Status):
-		self.add_query_param('Status',Status)

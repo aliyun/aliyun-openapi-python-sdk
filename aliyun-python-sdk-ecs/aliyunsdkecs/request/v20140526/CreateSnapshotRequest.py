@@ -43,6 +43,12 @@ class CreateSnapshotRequest(RpcRequest):
 	def set_ClientToken(self,ClientToken):
 		self.add_query_param('ClientToken',ClientToken)
 
+	def get_InstantAccess(self):
+		return self.get_query_params().get('InstantAccess')
+
+	def set_InstantAccess(self,InstantAccess):
+		self.add_query_param('InstantAccess',InstantAccess)
+
 	def get_Description(self):
 		return self.get_query_params().get('Description')
 
@@ -60,6 +66,12 @@ class CreateSnapshotRequest(RpcRequest):
 
 	def set_ResourceGroupId(self,ResourceGroupId):
 		self.add_query_param('ResourceGroupId',ResourceGroupId)
+
+	def get_InstantAccessRetentionDays(self):
+		return self.get_query_params().get('InstantAccessRetentionDays')
+
+	def set_InstantAccessRetentionDays(self,InstantAccessRetentionDays):
+		self.add_query_param('InstantAccessRetentionDays',InstantAccessRetentionDays)
 
 	def get_DiskId(self):
 		return self.get_query_params().get('DiskId')

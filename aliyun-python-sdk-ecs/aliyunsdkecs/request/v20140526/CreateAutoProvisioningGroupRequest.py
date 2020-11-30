@@ -40,6 +40,8 @@ class CreateAutoProvisioningGroupRequest(RpcRequest):
 				self.add_query_param('LaunchConfiguration.DataDisk.' + str(depth1 + 1) + '.Size', LaunchConfigurationDataDisks[depth1].get('Size'))
 			if LaunchConfigurationDataDisks[depth1].get('Category') is not None:
 				self.add_query_param('LaunchConfiguration.DataDisk.' + str(depth1 + 1) + '.Category', LaunchConfigurationDataDisks[depth1].get('Category'))
+			if LaunchConfigurationDataDisks[depth1].get('PerformanceLevel') is not None:
+				self.add_query_param('LaunchConfiguration.DataDisk.' + str(depth1 + 1) + '.PerformanceLevel', LaunchConfigurationDataDisks[depth1].get('PerformanceLevel'))
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -58,6 +60,12 @@ class CreateAutoProvisioningGroupRequest(RpcRequest):
 
 	def set_AutoProvisioningGroupType(self,AutoProvisioningGroupType):
 		self.add_query_param('AutoProvisioningGroupType',AutoProvisioningGroupType)
+
+	def get_LaunchConfigurationSystemDiskPerformanceLevel(self):
+		return self.get_query_params().get('LaunchConfiguration.SystemDiskPerformanceLevel')
+
+	def set_LaunchConfigurationSystemDiskPerformanceLevel(self,LaunchConfigurationSystemDiskPerformanceLevel):
+		self.add_query_param('LaunchConfiguration.SystemDiskPerformanceLevel',LaunchConfigurationSystemDiskPerformanceLevel)
 
 	def get_ResourceGroupId(self):
 		return self.get_query_params().get('ResourceGroupId')
@@ -182,6 +190,12 @@ class CreateAutoProvisioningGroupRequest(RpcRequest):
 
 	def set_LaunchConfigurationUserData(self,LaunchConfigurationUserData):
 		self.add_query_param('LaunchConfiguration.UserData',LaunchConfigurationUserData)
+
+	def get_LaunchConfigurationCreditSpecification(self):
+		return self.get_query_params().get('LaunchConfiguration.CreditSpecification')
+
+	def set_LaunchConfigurationCreditSpecification(self,LaunchConfigurationCreditSpecification):
+		self.add_query_param('LaunchConfiguration.CreditSpecification',LaunchConfigurationCreditSpecification)
 
 	def get_LaunchConfigurationInstanceName(self):
 		return self.get_query_params().get('LaunchConfiguration.InstanceName')
