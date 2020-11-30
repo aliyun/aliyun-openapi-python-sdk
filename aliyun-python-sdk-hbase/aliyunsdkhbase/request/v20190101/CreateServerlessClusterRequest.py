@@ -31,6 +31,12 @@ class CreateServerlessClusterRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_ClientType(self):
+		return self.get_query_params().get('ClientType')
+
+	def set_ClientType(self,ClientType):
+		self.add_query_param('ClientType',ClientType)
+
 	def get_ClusterName(self):
 		return self.get_query_params().get('ClusterName')
 
