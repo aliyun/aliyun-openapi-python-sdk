@@ -38,12 +38,12 @@ class CancelJobsRequest(RpcRequest):
 		self.add_query_param('All',All)
 
 	def get_JobReferenceIds(self):
-		return self.get_query_params().get('JobReferenceIds')
+		return self.get_query_params().get('JobReferenceId')
 
-	def set_JobReferenceIds(self,JobReferenceIds):
-		for i in range(len(JobReferenceIds)):	
-			if JobReferenceIds[i] is not None:
-				self.add_query_param('JobReferenceId.' + str(i + 1) , JobReferenceIds[i]);
+	def set_JobReferenceIds(self, JobReferenceIds):
+		for depth1 in range(len(JobReferenceIds)):
+			if JobReferenceIds[depth1] is not None:
+				self.add_query_param('JobReferenceId.' + str(depth1 + 1) , JobReferenceIds[depth1])
 
 	def get_GroupId(self):
 		return self.get_query_params().get('GroupId')
@@ -52,12 +52,12 @@ class CancelJobsRequest(RpcRequest):
 		self.add_query_param('GroupId',GroupId)
 
 	def get_JobIds(self):
-		return self.get_query_params().get('JobIds')
+		return self.get_query_params().get('JobId')
 
-	def set_JobIds(self,JobIds):
-		for i in range(len(JobIds)):	
-			if JobIds[i] is not None:
-				self.add_query_param('JobId.' + str(i + 1) , JobIds[i]);
+	def set_JobIds(self, JobIds):
+		for depth1 in range(len(JobIds)):
+			if JobIds[depth1] is not None:
+				self.add_query_param('JobId.' + str(depth1 + 1) , JobIds[depth1])
 
 	def get_InstanceId(self):
 		return self.get_query_params().get('InstanceId')

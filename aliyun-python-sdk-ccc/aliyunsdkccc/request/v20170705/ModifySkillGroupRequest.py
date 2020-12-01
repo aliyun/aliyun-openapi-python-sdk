@@ -50,20 +50,20 @@ class ModifySkillGroupRequest(RpcRequest):
 		self.add_query_param('RoutingStrategy',RoutingStrategy)
 
 	def get_UserIds(self):
-		return self.get_query_params().get('UserIds')
+		return self.get_query_params().get('UserId')
 
-	def set_UserIds(self,UserIds):
-		for i in range(len(UserIds)):	
-			if UserIds[i] is not None:
-				self.add_query_param('UserId.' + str(i + 1) , UserIds[i]);
+	def set_UserIds(self, UserIds):
+		for depth1 in range(len(UserIds)):
+			if UserIds[depth1] is not None:
+				self.add_query_param('UserId.' + str(depth1 + 1) , UserIds[depth1])
 
 	def get_SkillLevels(self):
-		return self.get_query_params().get('SkillLevels')
+		return self.get_query_params().get('SkillLevel')
 
-	def set_SkillLevels(self,SkillLevels):
-		for i in range(len(SkillLevels)):	
-			if SkillLevels[i] is not None:
-				self.add_query_param('SkillLevel.' + str(i + 1) , SkillLevels[i]);
+	def set_SkillLevels(self, SkillLevels):
+		for depth1 in range(len(SkillLevels)):
+			if SkillLevels[depth1] is not None:
+				self.add_query_param('SkillLevel.' + str(depth1 + 1) , SkillLevels[depth1])
 
 	def get_InstanceId(self):
 		return self.get_query_params().get('InstanceId')
@@ -72,12 +72,12 @@ class ModifySkillGroupRequest(RpcRequest):
 		self.add_query_param('InstanceId',InstanceId)
 
 	def get_OutboundPhoneNumberIds(self):
-		return self.get_query_params().get('OutboundPhoneNumberIds')
+		return self.get_query_params().get('OutboundPhoneNumberId')
 
-	def set_OutboundPhoneNumberIds(self,OutboundPhoneNumberIds):
-		for i in range(len(OutboundPhoneNumberIds)):	
-			if OutboundPhoneNumberIds[i] is not None:
-				self.add_query_param('OutboundPhoneNumberId.' + str(i + 1) , OutboundPhoneNumberIds[i]);
+	def set_OutboundPhoneNumberIds(self, OutboundPhoneNumberIds):
+		for depth1 in range(len(OutboundPhoneNumberIds)):
+			if OutboundPhoneNumberIds[depth1] is not None:
+				self.add_query_param('OutboundPhoneNumberId.' + str(depth1 + 1) , OutboundPhoneNumberIds[depth1])
 
 	def get_SkillGroupId(self):
 		return self.get_query_params().get('SkillGroupId')

@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkccc.endpoint import endpoint_data
 
-class DeletePhoneTagsRequest(RpcRequest):
+class DisableTrunkProvidersRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'CCC', '2017-07-05', 'DeletePhoneTags')
+		RpcRequest.__init__(self, 'CCC', '2017-07-05', 'DisableTrunkProviders')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,16 +31,10 @@ class DeletePhoneTagsRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_InstanceId(self):
-		return self.get_query_params().get('InstanceId')
+	def get_ProviderNames(self):
+		return self.get_query_params().get('ProviderName')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
-
-	def get_PhoneNumberLists(self):
-		return self.get_query_params().get('PhoneNumberList')
-
-	def set_PhoneNumberLists(self, PhoneNumberLists):
-		for depth1 in range(len(PhoneNumberLists)):
-			if PhoneNumberLists[depth1] is not None:
-				self.add_query_param('PhoneNumberList.' + str(depth1 + 1) , PhoneNumberLists[depth1])
+	def set_ProviderNames(self, ProviderNames):
+		for depth1 in range(len(ProviderNames)):
+			if ProviderNames[depth1] is not None:
+				self.add_query_param('ProviderName.' + str(depth1 + 1) , ProviderNames[depth1])

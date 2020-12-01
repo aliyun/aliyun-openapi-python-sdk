@@ -44,12 +44,12 @@ class ListAgentEventsRequest(RpcRequest):
 		self.add_query_param('StopTime',StopTime)
 
 	def get_RamIds(self):
-		return self.get_query_params().get('RamIds')
+		return self.get_query_params().get('RamId')
 
-	def set_RamIds(self,RamIds):
-		for i in range(len(RamIds)):	
-			if RamIds[i] is not None:
-				self.add_query_param('RamId.' + str(i + 1) , RamIds[i]);
+	def set_RamIds(self, RamIds):
+		for depth1 in range(len(RamIds)):
+			if RamIds[depth1] is not None:
+				self.add_query_param('RamId.' + str(depth1 + 1) , RamIds[depth1])
 
 	def get_InstanceId(self):
 		return self.get_query_params().get('InstanceId')
@@ -58,9 +58,9 @@ class ListAgentEventsRequest(RpcRequest):
 		self.add_query_param('InstanceId',InstanceId)
 
 	def get_Events(self):
-		return self.get_query_params().get('Events')
+		return self.get_query_params().get('Event')
 
-	def set_Events(self,Events):
-		for i in range(len(Events)):	
-			if Events[i] is not None:
-				self.add_query_param('Event.' + str(i + 1) , Events[i]);
+	def set_Events(self, Events):
+		for depth1 in range(len(Events)):
+			if Events[depth1] is not None:
+				self.add_query_param('Event.' + str(depth1 + 1) , Events[depth1])

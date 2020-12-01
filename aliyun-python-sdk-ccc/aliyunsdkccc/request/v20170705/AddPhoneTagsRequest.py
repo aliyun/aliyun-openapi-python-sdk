@@ -62,18 +62,24 @@ class AddPhoneTagsRequest(RpcRequest):
 		self.add_query_param('Provider',Provider)
 
 	def get_PhoneNumberLists(self):
-		return self.get_query_params().get('PhoneNumberLists')
+		return self.get_query_params().get('PhoneNumberList')
 
-	def set_PhoneNumberLists(self,PhoneNumberLists):
-		for i in range(len(PhoneNumberLists)):	
-			if PhoneNumberLists[i] is not None:
-				self.add_query_param('PhoneNumberList.' + str(i + 1) , PhoneNumberLists[i]);
+	def set_PhoneNumberLists(self, PhoneNumberLists):
+		for depth1 in range(len(PhoneNumberLists)):
+			if PhoneNumberLists[depth1] is not None:
+				self.add_query_param('PhoneNumberList.' + str(depth1 + 1) , PhoneNumberLists[depth1])
 
 	def get_ServiceTag(self):
 		return self.get_query_params().get('ServiceTag')
 
 	def set_ServiceTag(self,ServiceTag):
 		self.add_query_param('ServiceTag',ServiceTag)
+
+	def get_SipTag(self):
+		return self.get_query_params().get('SipTag')
+
+	def set_SipTag(self,SipTag):
+		self.add_query_param('SipTag',SipTag)
 
 	def get_RegionNameCity(self):
 		return self.get_query_params().get('RegionNameCity')

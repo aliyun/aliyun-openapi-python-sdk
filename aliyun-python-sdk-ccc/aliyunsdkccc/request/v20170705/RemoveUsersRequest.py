@@ -38,9 +38,9 @@ class RemoveUsersRequest(RpcRequest):
 		self.add_query_param('InstanceId',InstanceId)
 
 	def get_UserIds(self):
-		return self.get_query_params().get('UserIds')
+		return self.get_query_params().get('UserId')
 
-	def set_UserIds(self,UserIds):
-		for i in range(len(UserIds)):	
-			if UserIds[i] is not None:
-				self.add_query_param('UserId.' + str(i + 1) , UserIds[i]);
+	def set_UserIds(self, UserIds):
+		for depth1 in range(len(UserIds)):
+			if UserIds[depth1] is not None:
+				self.add_query_param('UserId.' + str(depth1 + 1) , UserIds[depth1])

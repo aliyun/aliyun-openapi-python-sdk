@@ -38,12 +38,12 @@ class ModifyPhoneTagsRequest(RpcRequest):
 		self.add_query_param('InstanceId',InstanceId)
 
 	def get_SkillGroupIdLists(self):
-		return self.get_query_params().get('SkillGroupIdLists')
+		return self.get_query_params().get('SkillGroupIdList')
 
-	def set_SkillGroupIdLists(self,SkillGroupIdLists):
-		for i in range(len(SkillGroupIdLists)):	
-			if SkillGroupIdLists[i] is not None:
-				self.add_query_param('SkillGroupIdList.' + str(i + 1) , SkillGroupIdLists[i]);
+	def set_SkillGroupIdLists(self, SkillGroupIdLists):
+		for depth1 in range(len(SkillGroupIdLists)):
+			if SkillGroupIdLists[depth1] is not None:
+				self.add_query_param('SkillGroupIdList.' + str(depth1 + 1) , SkillGroupIdLists[depth1])
 
 	def get_ServiceTag(self):
 		return self.get_query_params().get('ServiceTag')

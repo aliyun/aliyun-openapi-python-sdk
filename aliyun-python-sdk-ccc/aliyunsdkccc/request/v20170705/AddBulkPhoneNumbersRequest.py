@@ -44,12 +44,12 @@ class AddBulkPhoneNumbersRequest(RpcRequest):
 		self.add_query_param('Usage',Usage)
 
 	def get_PhoneNumbers(self):
-		return self.get_query_params().get('PhoneNumbers')
+		return self.get_query_params().get('PhoneNumber')
 
-	def set_PhoneNumbers(self,PhoneNumbers):
-		for i in range(len(PhoneNumbers)):	
-			if PhoneNumbers[i] is not None:
-				self.add_query_param('PhoneNumber.' + str(i + 1) , PhoneNumbers[i]);
+	def set_PhoneNumbers(self, PhoneNumbers):
+		for depth1 in range(len(PhoneNumbers)):
+			if PhoneNumbers[depth1] is not None:
+				self.add_query_param('PhoneNumber.' + str(depth1 + 1) , PhoneNumbers[depth1])
 
 	def get_InstanceId(self):
 		return self.get_query_params().get('InstanceId')
@@ -58,9 +58,9 @@ class AddBulkPhoneNumbersRequest(RpcRequest):
 		self.add_query_param('InstanceId',InstanceId)
 
 	def get_SkillGroupIds(self):
-		return self.get_query_params().get('SkillGroupIds')
+		return self.get_query_params().get('SkillGroupId')
 
-	def set_SkillGroupIds(self,SkillGroupIds):
-		for i in range(len(SkillGroupIds)):	
-			if SkillGroupIds[i] is not None:
-				self.add_query_param('SkillGroupId.' + str(i + 1) , SkillGroupIds[i]);
+	def set_SkillGroupIds(self, SkillGroupIds):
+		for depth1 in range(len(SkillGroupIds)):
+			if SkillGroupIds[depth1] is not None:
+				self.add_query_param('SkillGroupId.' + str(depth1 + 1) , SkillGroupIds[depth1])

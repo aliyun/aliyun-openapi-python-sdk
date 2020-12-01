@@ -50,12 +50,12 @@ class PickGlobalOutboundNumbersRequest(RpcRequest):
 		self.add_query_param('InstanceId',InstanceId)
 
 	def get_SkillGroupIds(self):
-		return self.get_query_params().get('SkillGroupIds')
+		return self.get_query_params().get('SkillGroupId')
 
-	def set_SkillGroupIds(self,SkillGroupIds):
-		for i in range(len(SkillGroupIds)):	
-			if SkillGroupIds[i] is not None:
-				self.add_query_param('SkillGroupId.' + str(i + 1) , SkillGroupIds[i]);
+	def set_SkillGroupIds(self, SkillGroupIds):
+		for depth1 in range(len(SkillGroupIds)):
+			if SkillGroupIds[depth1] is not None:
+				self.add_query_param('SkillGroupId.' + str(depth1 + 1) , SkillGroupIds[depth1])
 
 	def get_CalleeNumber(self):
 		return self.get_query_params().get('CalleeNumber')

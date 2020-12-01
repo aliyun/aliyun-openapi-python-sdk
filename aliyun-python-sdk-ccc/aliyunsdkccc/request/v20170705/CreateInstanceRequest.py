@@ -32,20 +32,20 @@ class CreateInstanceRequest(RpcRequest):
 
 
 	def get_PhoneNumberss(self):
-		return self.get_query_params().get('PhoneNumberss')
+		return self.get_query_params().get('PhoneNumbers')
 
-	def set_PhoneNumberss(self,PhoneNumberss):
-		for i in range(len(PhoneNumberss)):	
-			if PhoneNumberss[i] is not None:
-				self.add_query_param('PhoneNumbers.' + str(i + 1) , PhoneNumberss[i]);
+	def set_PhoneNumberss(self, PhoneNumberss):
+		for depth1 in range(len(PhoneNumberss)):
+			if PhoneNumberss[depth1] is not None:
+				self.add_query_param('PhoneNumbers.' + str(depth1 + 1) , PhoneNumberss[depth1])
 
 	def get_UserObjects(self):
-		return self.get_query_params().get('UserObjects')
+		return self.get_query_params().get('UserObject')
 
-	def set_UserObjects(self,UserObjects):
-		for i in range(len(UserObjects)):	
-			if UserObjects[i] is not None:
-				self.add_query_param('UserObject.' + str(i + 1) , UserObjects[i]);
+	def set_UserObjects(self, UserObjects):
+		for depth1 in range(len(UserObjects)):
+			if UserObjects[depth1] is not None:
+				self.add_query_param('UserObject.' + str(depth1 + 1) , UserObjects[depth1])
 
 	def get_DomainName(self):
 		return self.get_query_params().get('DomainName')
@@ -72,12 +72,12 @@ class CreateInstanceRequest(RpcRequest):
 		self.add_query_param('StorageMaxDays',StorageMaxDays)
 
 	def get_AdminRamIds(self):
-		return self.get_query_params().get('AdminRamIds')
+		return self.get_query_params().get('AdminRamId')
 
-	def set_AdminRamIds(self,AdminRamIds):
-		for i in range(len(AdminRamIds)):	
-			if AdminRamIds[i] is not None:
-				self.add_query_param('AdminRamId.' + str(i + 1) , AdminRamIds[i]);
+	def set_AdminRamIds(self, AdminRamIds):
+		for depth1 in range(len(AdminRamIds)):
+			if AdminRamIds[depth1] is not None:
+				self.add_query_param('AdminRamId.' + str(depth1 + 1) , AdminRamIds[depth1])
 
 	def get_Name(self):
 		return self.get_query_params().get('Name')

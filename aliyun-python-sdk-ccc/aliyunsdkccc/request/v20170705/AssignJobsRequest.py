@@ -38,20 +38,20 @@ class AssignJobsRequest(RpcRequest):
 		self.add_query_param('GroupId',GroupId)
 
 	def get_JobsJsons(self):
-		return self.get_query_params().get('JobsJsons')
+		return self.get_query_params().get('JobsJson')
 
-	def set_JobsJsons(self,JobsJsons):
-		for i in range(len(JobsJsons)):	
-			if JobsJsons[i] is not None:
-				self.add_query_param('JobsJson.' + str(i + 1) , JobsJsons[i]);
+	def set_JobsJsons(self, JobsJsons):
+		for depth1 in range(len(JobsJsons)):
+			if JobsJsons[depth1] is not None:
+				self.add_query_param('JobsJson.' + str(depth1 + 1) , JobsJsons[depth1])
 
 	def get_CallingNumbers(self):
-		return self.get_query_params().get('CallingNumbers')
+		return self.get_query_params().get('CallingNumber')
 
-	def set_CallingNumbers(self,CallingNumbers):
-		for i in range(len(CallingNumbers)):	
-			if CallingNumbers[i] is not None:
-				self.add_query_param('CallingNumber.' + str(i + 1) , CallingNumbers[i]);
+	def set_CallingNumbers(self, CallingNumbers):
+		for depth1 in range(len(CallingNumbers)):
+			if CallingNumbers[depth1] is not None:
+				self.add_query_param('CallingNumber.' + str(depth1 + 1) , CallingNumbers[depth1])
 
 	def get_InstanceId(self):
 		return self.get_query_params().get('InstanceId')

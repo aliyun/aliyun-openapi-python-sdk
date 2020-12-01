@@ -32,12 +32,12 @@ class ModifySkillGroupOfUserRequest(RpcRequest):
 
 
 	def get_RoleIds(self):
-		return self.get_query_params().get('RoleIds')
+		return self.get_query_params().get('RoleId')
 
-	def set_RoleIds(self,RoleIds):
-		for i in range(len(RoleIds)):	
-			if RoleIds[i] is not None:
-				self.add_query_param('RoleId.' + str(i + 1) , RoleIds[i]);
+	def set_RoleIds(self, RoleIds):
+		for depth1 in range(len(RoleIds)):
+			if RoleIds[depth1] is not None:
+				self.add_query_param('RoleId.' + str(depth1 + 1) , RoleIds[depth1])
 
 	def get_UserId(self):
 		return self.get_query_params().get('UserId')
@@ -46,12 +46,12 @@ class ModifySkillGroupOfUserRequest(RpcRequest):
 		self.add_query_param('UserId',UserId)
 
 	def get_SkillLevels(self):
-		return self.get_query_params().get('SkillLevels')
+		return self.get_query_params().get('SkillLevel')
 
-	def set_SkillLevels(self,SkillLevels):
-		for i in range(len(SkillLevels)):	
-			if SkillLevels[i] is not None:
-				self.add_query_param('SkillLevel.' + str(i + 1) , SkillLevels[i]);
+	def set_SkillLevels(self, SkillLevels):
+		for depth1 in range(len(SkillLevels)):
+			if SkillLevels[depth1] is not None:
+				self.add_query_param('SkillLevel.' + str(depth1 + 1) , SkillLevels[depth1])
 
 	def get_InstanceId(self):
 		return self.get_query_params().get('InstanceId')
@@ -60,9 +60,9 @@ class ModifySkillGroupOfUserRequest(RpcRequest):
 		self.add_query_param('InstanceId',InstanceId)
 
 	def get_SkillGroupIds(self):
-		return self.get_query_params().get('SkillGroupIds')
+		return self.get_query_params().get('SkillGroupId')
 
-	def set_SkillGroupIds(self,SkillGroupIds):
-		for i in range(len(SkillGroupIds)):	
-			if SkillGroupIds[i] is not None:
-				self.add_query_param('SkillGroupId.' + str(i + 1) , SkillGroupIds[i]);
+	def set_SkillGroupIds(self, SkillGroupIds):
+		for depth1 in range(len(SkillGroupIds)):
+			if SkillGroupIds[depth1] is not None:
+				self.add_query_param('SkillGroupId.' + str(depth1 + 1) , SkillGroupIds[depth1])

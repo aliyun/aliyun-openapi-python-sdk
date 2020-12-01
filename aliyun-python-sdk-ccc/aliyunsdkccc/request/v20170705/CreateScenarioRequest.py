@@ -32,12 +32,12 @@ class CreateScenarioRequest(RpcRequest):
 
 
 	def get_SurveysJsons(self):
-		return self.get_query_params().get('SurveysJsons')
+		return self.get_query_params().get('SurveysJson')
 
-	def set_SurveysJsons(self,SurveysJsons):
-		for i in range(len(SurveysJsons)):	
-			if SurveysJsons[i] is not None:
-				self.add_query_param('SurveysJson.' + str(i + 1) , SurveysJsons[i]);
+	def set_SurveysJsons(self, SurveysJsons):
+		for depth1 in range(len(SurveysJsons)):
+			if SurveysJsons[depth1] is not None:
+				self.add_query_param('SurveysJson.' + str(depth1 + 1) , SurveysJsons[depth1])
 
 	def get_Description(self):
 		return self.get_query_params().get('Description')

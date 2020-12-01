@@ -44,12 +44,12 @@ class ModifySkillGroupOutboundNumbersRequest(RpcRequest):
 		self.add_query_param('InstanceId',InstanceId)
 
 	def get_OutboundPhoneNumberIds(self):
-		return self.get_query_params().get('OutboundPhoneNumberIds')
+		return self.get_query_params().get('OutboundPhoneNumberId')
 
-	def set_OutboundPhoneNumberIds(self,OutboundPhoneNumberIds):
-		for i in range(len(OutboundPhoneNumberIds)):	
-			if OutboundPhoneNumberIds[i] is not None:
-				self.add_query_param('OutboundPhoneNumberId.' + str(i + 1) , OutboundPhoneNumberIds[i]);
+	def set_OutboundPhoneNumberIds(self, OutboundPhoneNumberIds):
+		for depth1 in range(len(OutboundPhoneNumberIds)):
+			if OutboundPhoneNumberIds[depth1] is not None:
+				self.add_query_param('OutboundPhoneNumberId.' + str(depth1 + 1) , OutboundPhoneNumberIds[depth1])
 
 	def get_SkillGroupId(self):
 		return self.get_query_params().get('SkillGroupId')

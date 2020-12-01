@@ -38,9 +38,9 @@ class GetSmsConfigRequest(RpcRequest):
 		self.add_query_param('InstanceId',InstanceId)
 
 	def get_Scenarios(self):
-		return self.get_query_params().get('Scenarios')
+		return self.get_query_params().get('Scenario')
 
-	def set_Scenarios(self,Scenarios):
-		for i in range(len(Scenarios)):	
-			if Scenarios[i] is not None:
-				self.add_query_param('Scenario.' + str(i + 1) , Scenarios[i]);
+	def set_Scenarios(self, Scenarios):
+		for depth1 in range(len(Scenarios)):
+			if Scenarios[depth1] is not None:
+				self.add_query_param('Scenario.' + str(depth1 + 1) , Scenarios[depth1])

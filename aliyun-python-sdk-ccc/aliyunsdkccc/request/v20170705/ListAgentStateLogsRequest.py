@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkccc.endpoint import endpoint_data
 
-class ListPhoneTagsRequest(RpcRequest):
+class ListAgentStateLogsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'CCC', '2017-07-05', 'ListPhoneTags')
+		RpcRequest.__init__(self, 'CCC', '2017-07-05', 'ListAgentStateLogs')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,31 +31,29 @@ class ListPhoneTagsRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_NumberGroupIdss(self):
-		return self.get_query_params().get('NumberGroupIds')
+	def get_EndTime(self):
+		return self.get_query_params().get('EndTime')
 
-	def set_NumberGroupIdss(self, NumberGroupIdss):
-		for depth1 in range(len(NumberGroupIdss)):
-			if NumberGroupIdss[depth1] is not None:
-				self.add_query_param('NumberGroupIds.' + str(depth1 + 1) , NumberGroupIdss[depth1])
+	def set_EndTime(self,EndTime):
+		self.add_query_param('EndTime',EndTime)
 
-	def get_CurrentPage(self):
-		return self.get_query_params().get('CurrentPage')
+	def get_StartTime(self):
+		return self.get_query_params().get('StartTime')
 
-	def set_CurrentPage(self,CurrentPage):
-		self.add_query_param('CurrentPage',CurrentPage)
+	def set_StartTime(self,StartTime):
+		self.add_query_param('StartTime',StartTime)
 
-	def get_OutboundOnly(self):
-		return self.get_query_params().get('OutboundOnly')
+	def get_RamId(self):
+		return self.get_query_params().get('RamId')
 
-	def set_OutboundOnly(self,OutboundOnly):
-		self.add_query_param('OutboundOnly',OutboundOnly)
+	def set_RamId(self,RamId):
+		self.add_query_param('RamId',RamId)
 
-	def get_Number(self):
-		return self.get_query_params().get('Number')
+	def get_PageNumber(self):
+		return self.get_query_params().get('PageNumber')
 
-	def set_Number(self,Number):
-		self.add_query_param('Number',Number)
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)
 
 	def get_InstanceId(self):
 		return self.get_query_params().get('InstanceId')

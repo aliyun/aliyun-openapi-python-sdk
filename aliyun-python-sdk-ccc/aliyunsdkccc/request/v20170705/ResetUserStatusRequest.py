@@ -36,3 +36,11 @@ class ResetUserStatusRequest(RpcRequest):
 
 	def set_InstanceId(self,InstanceId):
 		self.add_query_param('InstanceId',InstanceId)
+
+	def get_RamIdLists(self):
+		return self.get_query_params().get('RamIdList')
+
+	def set_RamIdLists(self, RamIdLists):
+		for depth1 in range(len(RamIdLists)):
+			if RamIdLists[depth1] is not None:
+				self.add_query_param('RamIdList.' + str(depth1 + 1) , RamIdLists[depth1])

@@ -38,12 +38,12 @@ class PickLocalNumberRequest(RpcRequest):
 		self.add_query_param('InstanceId',InstanceId)
 
 	def get_CandidateNumbers(self):
-		return self.get_query_params().get('CandidateNumbers')
+		return self.get_query_params().get('CandidateNumber')
 
-	def set_CandidateNumbers(self,CandidateNumbers):
-		for i in range(len(CandidateNumbers)):	
-			if CandidateNumbers[i] is not None:
-				self.add_query_param('CandidateNumber.' + str(i + 1) , CandidateNumbers[i]);
+	def set_CandidateNumbers(self, CandidateNumbers):
+		for depth1 in range(len(CandidateNumbers)):
+			if CandidateNumbers[depth1] is not None:
+				self.add_query_param('CandidateNumber.' + str(depth1 + 1) , CandidateNumbers[depth1])
 
 	def get_CalleeNumber(self):
 		return self.get_query_params().get('CalleeNumber')

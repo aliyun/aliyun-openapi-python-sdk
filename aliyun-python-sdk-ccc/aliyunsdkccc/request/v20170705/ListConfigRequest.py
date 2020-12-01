@@ -38,9 +38,9 @@ class ListConfigRequest(RpcRequest):
 		self.add_query_param('InstanceId',InstanceId)
 
 	def get_ConfigItems(self):
-		return self.get_query_params().get('ConfigItems')
+		return self.get_query_params().get('ConfigItem')
 
-	def set_ConfigItems(self,ConfigItems):
-		for i in range(len(ConfigItems)):	
-			if ConfigItems[i] is not None:
-				self.add_query_param('ConfigItem.' + str(i + 1) , ConfigItems[i]);
+	def set_ConfigItems(self, ConfigItems):
+		for depth1 in range(len(ConfigItems)):
+			if ConfigItems[depth1] is not None:
+				self.add_query_param('ConfigItem.' + str(depth1 + 1) , ConfigItems[depth1])
