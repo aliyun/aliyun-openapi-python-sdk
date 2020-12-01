@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkopenanalytics_open.endpoint import endpoint_data
 
-class CreateUserNetConfigRequest(RpcRequest):
+class UpgradeInstanceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'openanalytics-open', '2018-06-19', 'CreateUserNetConfig','openanalytics')
+		RpcRequest.__init__(self, 'openanalytics-open', '2018-06-19', 'UpgradeInstance','openanalytics')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,20 +31,26 @@ class CreateUserNetConfigRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_SwitchId(self):
-		return self.get_body_params().get('SwitchId')
+	def get_InstanceId(self):
+		return self.get_body_params().get('InstanceId')
 
-	def set_SwitchId(self,SwitchId):
-		self.add_body_params('SwitchId', SwitchId)
+	def set_InstanceId(self,InstanceId):
+		self.add_body_params('InstanceId', InstanceId)
 
-	def get_SecurityGroupId(self):
-		return self.get_body_params().get('SecurityGroupId')
+	def get_ChargeType(self):
+		return self.get_body_params().get('ChargeType')
 
-	def set_SecurityGroupId(self,SecurityGroupId):
-		self.add_body_params('SecurityGroupId', SecurityGroupId)
+	def set_ChargeType(self,ChargeType):
+		self.add_body_params('ChargeType', ChargeType)
 
-	def get_VcName(self):
-		return self.get_body_params().get('VcName')
+	def get_InstanceType(self):
+		return self.get_body_params().get('InstanceType')
 
-	def set_VcName(self,VcName):
-		self.add_body_params('VcName', VcName)
+	def set_InstanceType(self,InstanceType):
+		self.add_body_params('InstanceType', InstanceType)
+
+	def get_Component(self):
+		return self.get_body_params().get('Component')
+
+	def set_Component(self,Component):
+		self.add_body_params('Component', Component)
