@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkvoicenavigator.endpoint import endpoint_data
 
-class RollbackInstanceRequest(RpcRequest):
+class AssociateChatbotInstanceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'VoiceNavigator', '2018-06-12', 'RollbackInstance','voicebot')
+		RpcRequest.__init__(self, 'VoiceNavigator', '2018-06-12', 'AssociateChatbotInstance','voicebot')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,14 +31,20 @@ class RollbackInstanceRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_TargetVersion(self):
-		return self.get_query_params().get('TargetVersion')
-
-	def set_TargetVersion(self,TargetVersion):
-		self.add_query_param('TargetVersion',TargetVersion)
-
 	def get_InstanceId(self):
 		return self.get_query_params().get('InstanceId')
 
 	def set_InstanceId(self,InstanceId):
 		self.add_query_param('InstanceId',InstanceId)
+
+	def get_ChatbotInstanceId(self):
+		return self.get_query_params().get('ChatbotInstanceId')
+
+	def set_ChatbotInstanceId(self,ChatbotInstanceId):
+		self.add_query_param('ChatbotInstanceId',ChatbotInstanceId)
+
+	def get_ChatbotName(self):
+		return self.get_query_params().get('ChatbotName')
+
+	def set_ChatbotName(self,ChatbotName):
+		self.add_query_param('ChatbotName',ChatbotName)

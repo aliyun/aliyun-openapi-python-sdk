@@ -20,10 +20,11 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkvoicenavigator.endpoint import endpoint_data
 
-class ListNavigationScriptsRequest(RpcRequest):
+class ListChatbotInstancesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'VoiceNavigator', '2018-06-12', 'ListNavigationScripts','voicebot')
+		RpcRequest.__init__(self, 'VoiceNavigator', '2018-06-12', 'ListChatbotInstances','voicebot')
+		self.set_method('GET')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -47,9 +48,3 @@ class ListNavigationScriptsRequest(RpcRequest):
 
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
-
-	def get_CategoryId(self):
-		return self.get_query_params().get('CategoryId')
-
-	def set_CategoryId(self,CategoryId):
-		self.add_query_param('CategoryId',CategoryId)

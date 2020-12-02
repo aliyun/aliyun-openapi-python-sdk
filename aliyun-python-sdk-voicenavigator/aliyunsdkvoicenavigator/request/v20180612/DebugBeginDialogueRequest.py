@@ -24,11 +24,24 @@ class DebugBeginDialogueRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'VoiceNavigator', '2018-06-12', 'DebugBeginDialogue','voicebot')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+
+	def get_ConversationId(self):
+		return self.get_query_params().get('ConversationId')
+
+	def set_ConversationId(self,ConversationId):
+		self.add_query_param('ConversationId',ConversationId)
+
+	def get_InitialContext(self):
+		return self.get_query_params().get('InitialContext')
+
+	def set_InitialContext(self,InitialContext):
+		self.add_query_param('InitialContext',InitialContext)
 
 	def get_CallingNumber(self):
 		return self.get_query_params().get('CallingNumber')
@@ -47,15 +60,3 @@ class DebugBeginDialogueRequest(RpcRequest):
 
 	def set_CalledNumber(self,CalledNumber):
 		self.add_query_param('CalledNumber',CalledNumber)
-
-	def get_ConversationId(self):
-		return self.get_query_params().get('ConversationId')
-
-	def set_ConversationId(self,ConversationId):
-		self.add_query_param('ConversationId',ConversationId)
-
-	def get_InitialContext(self):
-		return self.get_query_params().get('InitialContext')
-
-	def set_InitialContext(self,InitialContext):
-		self.add_query_param('InitialContext',InitialContext)
