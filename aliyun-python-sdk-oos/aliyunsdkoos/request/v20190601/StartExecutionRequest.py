@@ -79,6 +79,12 @@ class StartExecutionRequest(RpcRequest):
 	def set_Tags(self,Tags):
 		self.add_query_param('Tags',Tags)
 
+	def get_TemplateContent(self):
+		return self.get_query_params().get('TemplateContent')
+
+	def set_TemplateContent(self,TemplateContent):
+		self.add_query_param('TemplateContent',TemplateContent)
+
 	def get_ParentExecutionId(self):
 		return self.get_query_params().get('ParentExecutionId')
 
