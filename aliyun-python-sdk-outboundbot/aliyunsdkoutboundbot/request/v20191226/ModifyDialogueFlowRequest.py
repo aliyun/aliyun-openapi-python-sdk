@@ -31,6 +31,12 @@ class ModifyDialogueFlowRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_IsDrafted(self):
+		return self.get_query_params().get('IsDrafted')
+
+	def set_IsDrafted(self,IsDrafted):
+		self.add_query_param('IsDrafted',IsDrafted)
+
 	def get_ScriptId(self):
 		return self.get_query_params().get('ScriptId')
 

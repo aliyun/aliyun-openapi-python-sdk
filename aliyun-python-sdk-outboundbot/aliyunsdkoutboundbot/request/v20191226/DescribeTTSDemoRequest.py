@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkoutboundbot.endpoint import endpoint_data
 
-class ModifyJobGroupRequest(RpcRequest):
+class DescribeTTSDemoRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'OutboundBot', '2019-12-26', 'ModifyJobGroup','outboundbot')
+		RpcRequest.__init__(self, 'OutboundBot', '2019-12-26', 'DescribeTTSDemo','outboundbot')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,19 +31,17 @@ class ModifyJobGroupRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_Description(self):
-		return self.get_query_params().get('Description')
+	def get_Voice(self):
+		return self.get_query_params().get('Voice')
 
-	def set_Description(self,Description):
-		self.add_query_param('Description',Description)
+	def set_Voice(self,Voice):
+		self.add_query_param('Voice',Voice)
 
-	def get_CallingNumbers(self):
-		return self.get_query_params().get('CallingNumber')
+	def get_Volume(self):
+		return self.get_query_params().get('Volume')
 
-	def set_CallingNumbers(self, CallingNumbers):
-		for depth1 in range(len(CallingNumbers)):
-			if CallingNumbers[depth1] is not None:
-				self.add_query_param('CallingNumber.' + str(depth1 + 1) , CallingNumbers[depth1])
+	def set_Volume(self,Volume):
+		self.add_query_param('Volume',Volume)
 
 	def get_ScriptId(self):
 		return self.get_query_params().get('ScriptId')
@@ -57,26 +55,14 @@ class ModifyJobGroupRequest(RpcRequest):
 	def set_InstanceId(self,InstanceId):
 		self.add_query_param('InstanceId',InstanceId)
 
-	def get_StrategyJson(self):
-		return self.get_query_params().get('StrategyJson')
+	def get_Text(self):
+		return self.get_query_params().get('Text')
 
-	def set_StrategyJson(self,StrategyJson):
-		self.add_query_param('StrategyJson',StrategyJson)
+	def set_Text(self,Text):
+		self.add_query_param('Text',Text)
 
-	def get_JobGroupId(self):
-		return self.get_query_params().get('JobGroupId')
+	def get_SpeechRate(self):
+		return self.get_query_params().get('SpeechRate')
 
-	def set_JobGroupId(self,JobGroupId):
-		self.add_query_param('JobGroupId',JobGroupId)
-
-	def get_Name(self):
-		return self.get_query_params().get('Name')
-
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)
-
-	def get_ScenarioId(self):
-		return self.get_query_params().get('ScenarioId')
-
-	def set_ScenarioId(self,ScenarioId):
-		self.add_query_param('ScenarioId',ScenarioId)
+	def set_SpeechRate(self,SpeechRate):
+		self.add_query_param('SpeechRate',SpeechRate)

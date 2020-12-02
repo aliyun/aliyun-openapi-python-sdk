@@ -32,7 +32,7 @@ class DescribeJobGroupRequest(RpcRequest):
 
 
 	def get_BriefTypess(self):
-		return self.get_query_params().get('BriefTypess')
+		return self.get_query_params().get('BriefTypes')
 
 	def set_BriefTypess(self, BriefTypess):
 		for depth1 in range(len(BriefTypess)):

@@ -38,7 +38,7 @@ class StartJobRequest(RpcRequest):
 		self.add_query_param('JobJson',JobJson)
 
 	def get_CallingNumbers(self):
-		return self.get_query_params().get('CallingNumbers')
+		return self.get_query_params().get('CallingNumber')
 
 	def set_CallingNumbers(self, CallingNumbers):
 		for depth1 in range(len(CallingNumbers)):

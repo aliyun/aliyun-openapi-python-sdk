@@ -32,7 +32,7 @@ class AssignJobsRequest(RpcRequest):
 
 
 	def get_JobsJsons(self):
-		return self.get_query_params().get('JobsJsons')
+		return self.get_query_params().get('JobsJson')
 
 	def set_JobsJsons(self, JobsJsons):
 		for depth1 in range(len(JobsJsons)):
@@ -40,7 +40,7 @@ class AssignJobsRequest(RpcRequest):
 				self.add_query_param('JobsJson.' + str(depth1 + 1) , JobsJsons[depth1])
 
 	def get_CallingNumbers(self):
-		return self.get_query_params().get('CallingNumbers')
+		return self.get_query_params().get('CallingNumber')
 
 	def set_CallingNumbers(self, CallingNumbers):
 		for depth1 in range(len(CallingNumbers)):

@@ -32,7 +32,7 @@ class ListJobsRequest(RpcRequest):
 
 
 	def get_JobIds(self):
-		return self.get_query_params().get('JobIds')
+		return self.get_query_params().get('JobId')
 
 	def set_JobIds(self, JobIds):
 		for depth1 in range(len(JobIds)):

@@ -32,7 +32,7 @@ class QueryScriptsByStatusRequest(RpcRequest):
 
 
 	def get_StatusLists(self):
-		return self.get_query_params().get('StatusLists')
+		return self.get_query_params().get('StatusList')
 
 	def set_StatusLists(self, StatusLists):
 		for depth1 in range(len(StatusLists)):
