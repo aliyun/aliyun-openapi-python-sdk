@@ -31,6 +31,18 @@ class UpdateServiceConfigurationRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_LiveRecordMaxClient(self):
+		return self.get_query_params().get('LiveRecordMaxClient')
+
+	def set_LiveRecordMaxClient(self,LiveRecordMaxClient):
+		self.add_query_param('LiveRecordMaxClient',LiveRecordMaxClient)
+
+	def get_LiveRecordVideoResolution(self):
+		return self.get_query_params().get('LiveRecordVideoResolution')
+
+	def set_LiveRecordVideoResolution(self,LiveRecordVideoResolution):
+		self.add_query_param('LiveRecordVideoResolution',LiveRecordVideoResolution)
+
 	def get_TaskItemQueueSize(self):
 		return self.get_query_params().get('TaskItemQueueSize')
 

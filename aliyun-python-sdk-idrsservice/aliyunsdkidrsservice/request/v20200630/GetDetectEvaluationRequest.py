@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkidrsservice.endpoint import endpoint_data
 
-class CreateStatisticsTaskRequest(RpcRequest):
+class GetDetectEvaluationRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'idrsservice', '2020-06-30', 'CreateStatisticsTask','idrsservice')
+		RpcRequest.__init__(self, 'idrsservice', '2020-06-30', 'GetDetectEvaluation','idrsservice')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,28 +31,14 @@ class CreateStatisticsTaskRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_ClientToken(self):
-		return self.get_query_params().get('ClientToken')
+	def get_EndTime(self):
+		return self.get_query_params().get('EndTime')
 
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
+	def set_EndTime(self,EndTime):
+		self.add_query_param('EndTime',EndTime)
 
-	def get_DepartmentIds(self):
-		return self.get_query_params().get('DepartmentId')
+	def get_StartTime(self):
+		return self.get_query_params().get('StartTime')
 
-	def set_DepartmentIds(self, DepartmentIds):
-		for depth1 in range(len(DepartmentIds)):
-			if DepartmentIds[depth1] is not None:
-				self.add_query_param('DepartmentId.' + str(depth1 + 1) , DepartmentIds[depth1])
-
-	def get_DateTo(self):
-		return self.get_query_params().get('DateTo')
-
-	def set_DateTo(self,DateTo):
-		self.add_query_param('DateTo',DateTo)
-
-	def get_DateFrom(self):
-		return self.get_query_params().get('DateFrom')
-
-	def set_DateFrom(self,DateFrom):
-		self.add_query_param('DateFrom',DateFrom)
+	def set_StartTime(self,StartTime):
+		self.add_query_param('StartTime',StartTime)

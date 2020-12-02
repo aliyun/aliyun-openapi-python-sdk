@@ -42,3 +42,9 @@ class JoinLiveRequest(RpcRequest):
 
 	def set_UserId(self,UserId):
 		self.add_query_param('UserId',UserId)
+
+	def get_RtcCode(self):
+		return self.get_query_params().get('RtcCode')
+
+	def set_RtcCode(self,RtcCode):
+		self.add_query_param('RtcCode',RtcCode)

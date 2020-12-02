@@ -32,7 +32,7 @@ class GetStatisticsRequest(RpcRequest):
 
 
 	def get_DepartmentIds(self):
-		return self.get_query_params().get('DepartmentIds')
+		return self.get_query_params().get('DepartmentId')
 
 	def set_DepartmentIds(self, DepartmentIds):
 		for depth1 in range(len(DepartmentIds)):

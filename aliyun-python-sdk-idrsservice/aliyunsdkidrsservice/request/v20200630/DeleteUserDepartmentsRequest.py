@@ -32,7 +32,7 @@ class DeleteUserDepartmentsRequest(RpcRequest):
 
 
 	def get_DepartmentIds(self):
-		return self.get_query_params().get('DepartmentIds')
+		return self.get_query_params().get('DepartmentId')
 
 	def set_DepartmentIds(self, DepartmentIds):
 		for depth1 in range(len(DepartmentIds)):
@@ -40,7 +40,7 @@ class DeleteUserDepartmentsRequest(RpcRequest):
 				self.add_query_param('DepartmentId.' + str(depth1 + 1) , DepartmentIds[depth1])
 
 	def get_UserIds(self):
-		return self.get_body_params().get('UserIds')
+		return self.get_body_params().get('UserId')
 
 	def set_UserIds(self, UserIds):
 		for depth1 in range(len(UserIds)):

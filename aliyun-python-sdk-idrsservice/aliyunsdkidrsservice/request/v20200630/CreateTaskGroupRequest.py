@@ -44,7 +44,7 @@ class CreateTaskGroupRequest(RpcRequest):
 		self.add_query_param('ExpireAt',ExpireAt)
 
 	def get_Days(self):
-		return self.get_query_params().get('Days')
+		return self.get_query_params().get('Day')
 
 	def set_Days(self, Days):
 		for depth1 in range(len(Days)):
@@ -70,7 +70,7 @@ class CreateTaskGroupRequest(RpcRequest):
 		self.add_query_param('GroupName',GroupName)
 
 	def get_VideoUrls(self):
-		return self.get_query_params().get('VideoUrls')
+		return self.get_query_params().get('VideoUrl')
 
 	def set_VideoUrls(self, VideoUrls):
 		for depth1 in range(len(VideoUrls)):
