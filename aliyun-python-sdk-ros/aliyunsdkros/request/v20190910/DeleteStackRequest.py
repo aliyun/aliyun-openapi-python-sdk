@@ -38,7 +38,7 @@ class DeleteStackRequest(RpcRequest):
 		self.add_query_param('StackId',StackId)
 
 	def get_RetainResourcess(self):
-		return self.get_query_params().get('RetainResourcess')
+		return self.get_query_params().get('RetainResources')
 
 	def set_RetainResourcess(self, RetainResourcess):
 		for depth1 in range(len(RetainResourcess)):

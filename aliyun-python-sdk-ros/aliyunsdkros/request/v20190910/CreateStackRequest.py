@@ -56,7 +56,7 @@ class CreateStackRequest(RpcRequest):
 		self.add_query_param('DisableRollback',DisableRollback)
 
 	def get_Parameterss(self):
-		return self.get_query_params().get('Parameterss')
+		return self.get_query_params().get('Parameters')
 
 	def set_Parameterss(self, Parameterss):
 		for depth1 in range(len(Parameterss)):
@@ -84,7 +84,7 @@ class CreateStackRequest(RpcRequest):
 		self.add_query_param('TemplateURL',TemplateURL)
 
 	def get_NotificationURLss(self):
-		return self.get_query_params().get('NotificationURLss')
+		return self.get_query_params().get('NotificationURLs')
 
 	def set_NotificationURLss(self, NotificationURLss):
 		for depth1 in range(len(NotificationURLss)):
@@ -102,6 +102,12 @@ class CreateStackRequest(RpcRequest):
 
 	def set_RamRoleName(self,RamRoleName):
 		self.add_query_param('RamRoleName',RamRoleName)
+
+	def get_CreateOption(self):
+		return self.get_query_params().get('CreateOption')
+
+	def set_CreateOption(self,CreateOption):
+		self.add_query_param('CreateOption',CreateOption)
 
 	def get_StackPolicyURL(self):
 		return self.get_query_params().get('StackPolicyURL')

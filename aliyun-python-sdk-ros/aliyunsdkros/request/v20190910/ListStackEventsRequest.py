@@ -50,7 +50,7 @@ class ListStackEventsRequest(RpcRequest):
 		self.add_query_param('PageSize',PageSize)
 
 	def get_LogicalResourceIds(self):
-		return self.get_query_params().get('LogicalResourceIds')
+		return self.get_query_params().get('LogicalResourceId')
 
 	def set_LogicalResourceIds(self, LogicalResourceIds):
 		for depth1 in range(len(LogicalResourceIds)):
@@ -58,7 +58,7 @@ class ListStackEventsRequest(RpcRequest):
 				self.add_query_param('LogicalResourceId.' + str(depth1 + 1) , LogicalResourceIds[depth1])
 
 	def get_ResourceTypes(self):
-		return self.get_query_params().get('ResourceTypes')
+		return self.get_query_params().get('ResourceType')
 
 	def set_ResourceTypes(self, ResourceTypes):
 		for depth1 in range(len(ResourceTypes)):
@@ -66,7 +66,7 @@ class ListStackEventsRequest(RpcRequest):
 				self.add_query_param('ResourceType.' + str(depth1 + 1) , ResourceTypes[depth1])
 
 	def get_Statuss(self):
-		return self.get_query_params().get('Statuss')
+		return self.get_query_params().get('Status')
 
 	def set_Statuss(self, Statuss):
 		for depth1 in range(len(Statuss)):

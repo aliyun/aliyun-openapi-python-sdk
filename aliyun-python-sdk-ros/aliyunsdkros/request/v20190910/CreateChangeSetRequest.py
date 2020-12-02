@@ -62,7 +62,7 @@ class CreateChangeSetRequest(RpcRequest):
 		self.add_query_param('DisableRollback',DisableRollback)
 
 	def get_Parameterss(self):
-		return self.get_query_params().get('Parameterss')
+		return self.get_query_params().get('Parameters')
 
 	def set_Parameterss(self, Parameterss):
 		for depth1 in range(len(Parameterss)):
@@ -102,7 +102,7 @@ class CreateChangeSetRequest(RpcRequest):
 		self.add_query_param('TemplateURL',TemplateURL)
 
 	def get_NotificationURLss(self):
-		return self.get_query_params().get('NotificationURLss')
+		return self.get_query_params().get('NotificationURLs')
 
 	def set_NotificationURLss(self, NotificationURLss):
 		for depth1 in range(len(NotificationURLss)):
@@ -110,7 +110,7 @@ class CreateChangeSetRequest(RpcRequest):
 				self.add_query_param('NotificationURLs.' + str(depth1 + 1) , NotificationURLss[depth1])
 
 	def get_ResourcesToImports(self):
-		return self.get_query_params().get('ResourcesToImports')
+		return self.get_query_params().get('ResourcesToImport')
 
 	def set_ResourcesToImports(self, ResourcesToImports):
 		for depth1 in range(len(ResourcesToImports)):

@@ -68,7 +68,7 @@ class CreateStackGroupRequest(RpcRequest):
 		self.add_query_param('StackGroupName',StackGroupName)
 
 	def get_Parameterss(self):
-		return self.get_query_params().get('Parameterss')
+		return self.get_query_params().get('Parameters')
 
 	def set_Parameterss(self, Parameterss):
 		for depth1 in range(len(Parameterss)):

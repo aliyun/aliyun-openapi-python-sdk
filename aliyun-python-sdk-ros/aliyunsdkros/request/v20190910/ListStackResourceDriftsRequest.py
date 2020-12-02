@@ -44,7 +44,7 @@ class ListStackResourceDriftsRequest(RpcRequest):
 		self.add_query_param('NextToken',NextToken)
 
 	def get_ResourceDriftStatuss(self):
-		return self.get_query_params().get('ResourceDriftStatuss')
+		return self.get_query_params().get('ResourceDriftStatus')
 
 	def set_ResourceDriftStatuss(self, ResourceDriftStatuss):
 		for depth1 in range(len(ResourceDriftStatuss)):

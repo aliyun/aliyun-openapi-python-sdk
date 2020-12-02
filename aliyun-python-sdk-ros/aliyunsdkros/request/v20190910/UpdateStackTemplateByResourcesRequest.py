@@ -44,7 +44,7 @@ class UpdateStackTemplateByResourcesRequest(RpcRequest):
 		self.add_query_param('StackId',StackId)
 
 	def get_LogicalResourceIds(self):
-		return self.get_query_params().get('LogicalResourceIds')
+		return self.get_query_params().get('LogicalResourceId')
 
 	def set_LogicalResourceIds(self, LogicalResourceIds):
 		for depth1 in range(len(LogicalResourceIds)):

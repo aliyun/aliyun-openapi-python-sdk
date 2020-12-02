@@ -37,6 +37,12 @@ class CreateStackInstancesRequest(RpcRequest):
 	def set_ClientToken(self,ClientToken):
 		self.add_query_param('ClientToken',ClientToken)
 
+	def get_TimeoutInMinutes(self):
+		return self.get_query_params().get('TimeoutInMinutes')
+
+	def set_TimeoutInMinutes(self,TimeoutInMinutes):
+		self.add_query_param('TimeoutInMinutes',TimeoutInMinutes)
+
 	def get_StackGroupName(self):
 		return self.get_query_params().get('StackGroupName')
 
@@ -55,6 +61,12 @@ class CreateStackInstancesRequest(RpcRequest):
 	def set_OperationPreferences(self,OperationPreferences):
 		self.add_query_param('OperationPreferences',OperationPreferences)
 
+	def get_DisableRollback(self):
+		return self.get_query_params().get('DisableRollback')
+
+	def set_DisableRollback(self,DisableRollback):
+		self.add_query_param('DisableRollback',DisableRollback)
+
 	def get_RegionIds(self):
 		return self.get_query_params().get('RegionIds')
 
@@ -68,7 +80,7 @@ class CreateStackInstancesRequest(RpcRequest):
 		self.add_query_param('AccountIds',AccountIds)
 
 	def get_ParameterOverridess(self):
-		return self.get_query_params().get('ParameterOverridess')
+		return self.get_query_params().get('ParameterOverrides')
 
 	def set_ParameterOverridess(self, ParameterOverridess):
 		for depth1 in range(len(ParameterOverridess)):

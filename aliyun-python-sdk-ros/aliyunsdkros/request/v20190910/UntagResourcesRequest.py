@@ -38,7 +38,7 @@ class UntagResourcesRequest(RpcRequest):
 		self.add_query_param('All',All)
 
 	def get_ResourceIds(self):
-		return self.get_query_params().get('ResourceIds')
+		return self.get_query_params().get('ResourceId')
 
 	def set_ResourceIds(self, ResourceIds):
 		for depth1 in range(len(ResourceIds)):
@@ -52,7 +52,7 @@ class UntagResourcesRequest(RpcRequest):
 		self.add_query_param('ResourceType',ResourceType)
 
 	def get_TagKeys(self):
-		return self.get_query_params().get('TagKeys')
+		return self.get_query_params().get('TagKey')
 
 	def set_TagKeys(self, TagKeys):
 		for depth1 in range(len(TagKeys)):

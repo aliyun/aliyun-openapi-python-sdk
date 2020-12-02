@@ -50,7 +50,7 @@ class ListChangeSetsRequest(RpcRequest):
 		self.add_query_param('PageSize',PageSize)
 
 	def get_ExecutionStatuss(self):
-		return self.get_query_params().get('ExecutionStatuss')
+		return self.get_query_params().get('ExecutionStatus')
 
 	def set_ExecutionStatuss(self, ExecutionStatuss):
 		for depth1 in range(len(ExecutionStatuss)):
@@ -58,7 +58,7 @@ class ListChangeSetsRequest(RpcRequest):
 				self.add_query_param('ExecutionStatus.' + str(depth1 + 1) , ExecutionStatuss[depth1])
 
 	def get_ChangeSetNames(self):
-		return self.get_query_params().get('ChangeSetNames')
+		return self.get_query_params().get('ChangeSetName')
 
 	def set_ChangeSetNames(self, ChangeSetNames):
 		for depth1 in range(len(ChangeSetNames)):
@@ -72,7 +72,7 @@ class ListChangeSetsRequest(RpcRequest):
 		self.add_query_param('ChangeSetId',ChangeSetId)
 
 	def get_Statuss(self):
-		return self.get_query_params().get('Statuss')
+		return self.get_query_params().get('Status')
 
 	def set_Statuss(self, Statuss):
 		for depth1 in range(len(Statuss)):

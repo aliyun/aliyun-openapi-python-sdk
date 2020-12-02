@@ -68,7 +68,7 @@ class ContinueCreateStackRequest(RpcRequest):
 		self.add_query_param('RamRoleName',RamRoleName)
 
 	def get_Parameterss(self):
-		return self.get_query_params().get('Parameterss')
+		return self.get_query_params().get('Parameters')
 
 	def set_Parameterss(self, Parameterss):
 		for depth1 in range(len(Parameterss)):
@@ -78,7 +78,7 @@ class ContinueCreateStackRequest(RpcRequest):
 				self.add_query_param('Parameters.' + str(depth1 + 1) + '.ParameterKey', Parameterss[depth1].get('ParameterKey'))
 
 	def get_RecreatingResourcess(self):
-		return self.get_query_params().get('RecreatingResourcess')
+		return self.get_query_params().get('RecreatingResources')
 
 	def set_RecreatingResourcess(self, RecreatingResourcess):
 		for depth1 in range(len(RecreatingResourcess)):

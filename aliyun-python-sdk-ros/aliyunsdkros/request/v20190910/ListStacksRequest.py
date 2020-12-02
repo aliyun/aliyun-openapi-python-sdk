@@ -56,7 +56,7 @@ class ListStacksRequest(RpcRequest):
 		self.add_query_param('PageSize',PageSize)
 
 	def get_StackNames(self):
-		return self.get_query_params().get('StackNames')
+		return self.get_query_params().get('StackName')
 
 	def set_StackNames(self, StackNames):
 		for depth1 in range(len(StackNames)):
@@ -64,7 +64,7 @@ class ListStacksRequest(RpcRequest):
 				self.add_query_param('StackName.' + str(depth1 + 1) , StackNames[depth1])
 
 	def get_Tags(self):
-		return self.get_query_params().get('Tags')
+		return self.get_query_params().get('Tag')
 
 	def set_Tags(self, Tags):
 		for depth1 in range(len(Tags)):
@@ -80,7 +80,7 @@ class ListStacksRequest(RpcRequest):
 		self.add_query_param('ParentStackId',ParentStackId)
 
 	def get_Statuss(self):
-		return self.get_query_params().get('Statuss')
+		return self.get_query_params().get('Status')
 
 	def set_Statuss(self, Statuss):
 		for depth1 in range(len(Statuss)):
