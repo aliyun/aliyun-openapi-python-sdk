@@ -31,6 +31,18 @@ class CreateDBInstanceRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_NetworkType(self):
+		return self.get_query_params().get('NetworkType')
+
+	def set_NetworkType(self,NetworkType):
+		self.add_query_param('NetworkType',NetworkType)
+
+	def get_EngineVersion(self):
+		return self.get_query_params().get('EngineVersion')
+
+	def set_EngineVersion(self,EngineVersion):
+		self.add_query_param('EngineVersion',EngineVersion)
+
 	def get_ResourceGroupId(self):
 		return self.get_query_params().get('ResourceGroupId')
 
@@ -43,23 +55,17 @@ class CreateDBInstanceRequest(RpcRequest):
 	def set_DBNodeClass(self,DBNodeClass):
 		self.add_query_param('DBNodeClass',DBNodeClass)
 
-	def get_DBInstanceDescription(self):
-		return self.get_query_params().get('DBInstanceDescription')
-
-	def set_DBInstanceDescription(self,DBInstanceDescription):
-		self.add_query_param('DBInstanceDescription',DBInstanceDescription)
-
 	def get_Period(self):
 		return self.get_query_params().get('Period')
 
 	def set_Period(self,Period):
 		self.add_query_param('Period',Period)
 
-	def get_SecurityIPList(self):
-		return self.get_query_params().get('SecurityIPList')
+	def get_IsReadDBInstance(self):
+		return self.get_query_params().get('IsReadDBInstance')
 
-	def set_SecurityIPList(self,SecurityIPList):
-		self.add_query_param('SecurityIPList',SecurityIPList)
+	def set_IsReadDBInstance(self,IsReadDBInstance):
+		self.add_query_param('IsReadDBInstance',IsReadDBInstance)
 
 	def get_VSwitchId(self):
 		return self.get_query_params().get('VSwitchId')
@@ -79,11 +85,11 @@ class CreateDBInstanceRequest(RpcRequest):
 	def set_ZoneId(self,ZoneId):
 		self.add_query_param('ZoneId',ZoneId)
 
-	def get_InstanceNetworkType(self):
-		return self.get_query_params().get('InstanceNetworkType')
+	def get_PrimaryDBInstanceName(self):
+		return self.get_query_params().get('PrimaryDBInstanceName')
 
-	def set_InstanceNetworkType(self,InstanceNetworkType):
-		self.add_query_param('InstanceNetworkType',InstanceNetworkType)
+	def set_PrimaryDBInstanceName(self,PrimaryDBInstanceName):
+		self.add_query_param('PrimaryDBInstanceName',PrimaryDBInstanceName)
 
 	def get_ClientToken(self):
 		return self.get_query_params().get('ClientToken')
