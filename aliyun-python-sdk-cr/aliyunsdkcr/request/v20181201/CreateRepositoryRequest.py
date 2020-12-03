@@ -43,6 +43,12 @@ class CreateRepositoryRequest(RpcRequest):
 	def set_Summary(self,Summary):
 		self.add_query_param('Summary',Summary)
 
+	def get_TagImmutability(self):
+		return self.get_query_params().get('TagImmutability')
+
+	def set_TagImmutability(self,TagImmutability):
+		self.add_query_param('TagImmutability',TagImmutability)
+
 	def get_InstanceId(self):
 		return self.get_query_params().get('InstanceId')
 

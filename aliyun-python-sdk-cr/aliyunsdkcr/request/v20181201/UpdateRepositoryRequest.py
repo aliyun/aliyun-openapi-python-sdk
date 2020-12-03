@@ -49,6 +49,12 @@ class UpdateRepositoryRequest(RpcRequest):
 	def set_RepoId(self,RepoId):
 		self.add_query_param('RepoId',RepoId)
 
+	def get_TagImmutability(self):
+		return self.get_query_params().get('TagImmutability')
+
+	def set_TagImmutability(self,TagImmutability):
+		self.add_query_param('TagImmutability',TagImmutability)
+
 	def get_InstanceId(self):
 		return self.get_query_params().get('InstanceId')
 
