@@ -35,6 +35,30 @@ class DescribeContainerGroupPriceRequest(RpcRequest):
 	def set_Memory(self,Memory):
 		self.add_query_param('Memory',Memory)
 
+	def get_InstanceType(self):
+		return self.get_query_params().get('InstanceType')
+
+	def set_InstanceType(self, InstanceType):
+		self.add_query_param('InstanceType', InstanceType)
+
+	def get_SpotStrategy(self):
+		return self.get_query_params().get('SpotStrategy')
+
+	def set_SpotStrategy(self, SpotStrategy):
+		self.add_query_param('SpotStrategy', SpotStrategy)
+
+	def get_SpotPriceLimit(self):
+		return self.get_query_params().get('SpotPriceLimit')
+
+	def set_SpotPriceLimit(self, SpotPriceLimit):
+		self.add_query_param('SpotPriceLimit', SpotPriceLimit)
+
+	def get_ZoneId(self):
+		return self.get_query_params().get('ZoneId')
+
+	def set_ZoneId(self, ZoneId):
+		self.add_query_param('ZoneId', ZoneId)
+
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
