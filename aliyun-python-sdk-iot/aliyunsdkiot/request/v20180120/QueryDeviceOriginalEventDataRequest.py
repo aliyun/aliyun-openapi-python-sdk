@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkiot.endpoint import endpoint_data
 
-class QueryThingModelExtendConfigPublishedRequest(RpcRequest):
+class QueryDeviceOriginalEventDataRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'QueryThingModelExtendConfigPublished','iot')
+		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'QueryDeviceOriginalEventData','iot')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,11 +31,47 @@ class QueryThingModelExtendConfigPublishedRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_NextPageToken(self):
+		return self.get_query_params().get('NextPageToken')
+
+	def set_NextPageToken(self,NextPageToken):
+		self.add_query_param('NextPageToken',NextPageToken)
+
+	def get_StartTime(self):
+		return self.get_query_params().get('StartTime')
+
+	def set_StartTime(self,StartTime):
+		self.add_query_param('StartTime',StartTime)
+
+	def get_IotId(self):
+		return self.get_query_params().get('IotId')
+
+	def set_IotId(self,IotId):
+		self.add_query_param('IotId',IotId)
+
 	def get_IotInstanceId(self):
 		return self.get_query_params().get('IotInstanceId')
 
 	def set_IotInstanceId(self,IotInstanceId):
 		self.add_query_param('IotInstanceId',IotInstanceId)
+
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
+
+	def get_Identifier(self):
+		return self.get_query_params().get('Identifier')
+
+	def set_Identifier(self,Identifier):
+		self.add_query_param('Identifier',Identifier)
+
+	def get_EndTime(self):
+		return self.get_query_params().get('EndTime')
+
+	def set_EndTime(self,EndTime):
+		self.add_query_param('EndTime',EndTime)
 
 	def get_ProductKey(self):
 		return self.get_query_params().get('ProductKey')
@@ -43,8 +79,14 @@ class QueryThingModelExtendConfigPublishedRequest(RpcRequest):
 	def set_ProductKey(self,ProductKey):
 		self.add_query_param('ProductKey',ProductKey)
 
-	def get_ModelVersion(self):
-		return self.get_query_params().get('ModelVersion')
+	def get_Asc(self):
+		return self.get_query_params().get('Asc')
 
-	def set_ModelVersion(self,ModelVersion):
-		self.add_query_param('ModelVersion',ModelVersion)
+	def set_Asc(self,Asc):
+		self.add_query_param('Asc',Asc)
+
+	def get_DeviceName(self):
+		return self.get_query_params().get('DeviceName')
+
+	def set_DeviceName(self,DeviceName):
+		self.add_query_param('DeviceName',DeviceName)

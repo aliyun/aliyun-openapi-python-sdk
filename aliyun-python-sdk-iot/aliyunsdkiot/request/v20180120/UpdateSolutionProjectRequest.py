@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkiot.endpoint import endpoint_data
 
-class QueryThingModelExtendConfigPublishedRequest(RpcRequest):
+class UpdateSolutionProjectRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'QueryThingModelExtendConfigPublished','iot')
+		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'UpdateSolutionProject','iot')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,20 +31,32 @@ class QueryThingModelExtendConfigPublishedRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_IotInstanceId(self):
-		return self.get_query_params().get('IotInstanceId')
+	def get_Code(self):
+		return self.get_body_params().get('Code')
 
-	def set_IotInstanceId(self,IotInstanceId):
-		self.add_query_param('IotInstanceId',IotInstanceId)
+	def set_Code(self,Code):
+		self.add_body_params('Code', Code)
 
-	def get_ProductKey(self):
-		return self.get_query_params().get('ProductKey')
+	def get_Description(self):
+		return self.get_body_params().get('Description')
 
-	def set_ProductKey(self,ProductKey):
-		self.add_query_param('ProductKey',ProductKey)
+	def set_Description(self,Description):
+		self.add_body_params('Description', Description)
 
-	def get_ModelVersion(self):
-		return self.get_query_params().get('ModelVersion')
+	def get_Type(self):
+		return self.get_body_params().get('Type')
 
-	def set_ModelVersion(self,ModelVersion):
-		self.add_query_param('ModelVersion',ModelVersion)
+	def set_Type(self,Type):
+		self.add_body_params('Type', Type)
+
+	def get_Name(self):
+		return self.get_body_params().get('Name')
+
+	def set_Name(self,Name):
+		self.add_body_params('Name', Name)
+
+	def get_Status(self):
+		return self.get_body_params().get('Status')
+
+	def set_Status(self,Status):
+		self.add_body_params('Status', Status)

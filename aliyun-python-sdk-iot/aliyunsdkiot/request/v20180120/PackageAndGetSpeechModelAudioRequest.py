@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkiot.endpoint import endpoint_data
 
-class QueryThingModelExtendConfigPublishedRequest(RpcRequest):
+class PackageAndGetSpeechModelAudioRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'QueryThingModelExtendConfigPublished','iot')
+		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'PackageAndGetSpeechModelAudio','iot')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,20 +31,16 @@ class QueryThingModelExtendConfigPublishedRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_IotInstanceId(self):
-		return self.get_query_params().get('IotInstanceId')
+	def get_ProjectCode(self):
+		return self.get_body_params().get('ProjectCode')
 
-	def set_IotInstanceId(self,IotInstanceId):
-		self.add_query_param('IotInstanceId',IotInstanceId)
+	def set_ProjectCode(self,ProjectCode):
+		self.add_body_params('ProjectCode', ProjectCode)
 
-	def get_ProductKey(self):
-		return self.get_query_params().get('ProductKey')
+	def get_SpeechModelCodeLists(self):
+		return self.get_body_params().get('SpeechModelCodeList')
 
-	def set_ProductKey(self,ProductKey):
-		self.add_query_param('ProductKey',ProductKey)
-
-	def get_ModelVersion(self):
-		return self.get_query_params().get('ModelVersion')
-
-	def set_ModelVersion(self,ModelVersion):
-		self.add_query_param('ModelVersion',ModelVersion)
+	def set_SpeechModelCodeLists(self, SpeechModelCodeLists):
+		for depth1 in range(len(SpeechModelCodeLists)):
+			if SpeechModelCodeLists[depth1] is not None:
+				self.add_body_params('SpeechModelCodeList.' + str(depth1 + 1) , SpeechModelCodeLists[depth1])

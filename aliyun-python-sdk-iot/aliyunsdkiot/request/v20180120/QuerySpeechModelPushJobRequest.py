@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkiot.endpoint import endpoint_data
 
-class QueryThingModelExtendConfigPublishedRequest(RpcRequest):
+class QuerySpeechModelPushJobRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'QueryThingModelExtendConfigPublished','iot')
+		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'QuerySpeechModelPushJob','iot')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,20 +31,34 @@ class QueryThingModelExtendConfigPublishedRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_IotInstanceId(self):
-		return self.get_query_params().get('IotInstanceId')
+	def get_StatusLists(self):
+		return self.get_body_params().get('StatusList')
 
-	def set_IotInstanceId(self,IotInstanceId):
-		self.add_query_param('IotInstanceId',IotInstanceId)
+	def set_StatusLists(self, StatusLists):
+		for depth1 in range(len(StatusLists)):
+			if StatusLists[depth1] is not None:
+				self.add_body_params('StatusList.' + str(depth1 + 1) , StatusLists[depth1])
 
-	def get_ProductKey(self):
-		return self.get_query_params().get('ProductKey')
+	def get_ProjectCode(self):
+		return self.get_body_params().get('ProjectCode')
 
-	def set_ProductKey(self,ProductKey):
-		self.add_query_param('ProductKey',ProductKey)
+	def set_ProjectCode(self,ProjectCode):
+		self.add_body_params('ProjectCode', ProjectCode)
 
-	def get_ModelVersion(self):
-		return self.get_query_params().get('ModelVersion')
+	def get_PageId(self):
+		return self.get_body_params().get('PageId')
 
-	def set_ModelVersion(self,ModelVersion):
-		self.add_query_param('ModelVersion',ModelVersion)
+	def set_PageId(self,PageId):
+		self.add_body_params('PageId', PageId)
+
+	def get_PageSize(self):
+		return self.get_body_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_body_params('PageSize', PageSize)
+
+	def get_PushMode(self):
+		return self.get_body_params().get('PushMode')
+
+	def set_PushMode(self,PushMode):
+		self.add_body_params('PushMode', PushMode)

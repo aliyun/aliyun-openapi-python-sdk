@@ -31,12 +31,6 @@ class QueryAppDeviceListRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_CurrentPage(self):
-		return self.get_query_params().get('CurrentPage')
-
-	def set_CurrentPage(self,CurrentPage):
-		self.add_query_param('CurrentPage',CurrentPage)
-
 	def get_TagLists(self):
 		return self.get_query_params().get('TagList')
 
@@ -55,14 +49,6 @@ class QueryAppDeviceListRequest(RpcRequest):
 			if ProductKeyLists[depth1] is not None:
 				self.add_query_param('ProductKeyList.' + str(depth1 + 1) , ProductKeyLists[depth1])
 
-	def get_CategoryKeyLists(self):
-		return self.get_query_params().get('CategoryKeyList')
-
-	def set_CategoryKeyLists(self, CategoryKeyLists):
-		for depth1 in range(len(CategoryKeyLists)):
-			if CategoryKeyLists[depth1] is not None:
-				self.add_query_param('CategoryKeyList.' + str(depth1 + 1) , CategoryKeyLists[depth1])
-
 	def get_IotInstanceId(self):
 		return self.get_query_params().get('IotInstanceId')
 
@@ -74,6 +60,20 @@ class QueryAppDeviceListRequest(RpcRequest):
 
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
+
+	def get_CurrentPage(self):
+		return self.get_query_params().get('CurrentPage')
+
+	def set_CurrentPage(self,CurrentPage):
+		self.add_query_param('CurrentPage',CurrentPage)
+
+	def get_CategoryKeyLists(self):
+		return self.get_query_params().get('CategoryKeyList')
+
+	def set_CategoryKeyLists(self, CategoryKeyLists):
+		for depth1 in range(len(CategoryKeyLists)):
+			if CategoryKeyLists[depth1] is not None:
+				self.add_query_param('CategoryKeyList.' + str(depth1 + 1) , CategoryKeyLists[depth1])
 
 	def get_AppKey(self):
 		return self.get_query_params().get('AppKey')

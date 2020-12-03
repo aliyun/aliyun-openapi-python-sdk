@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkiot.endpoint import endpoint_data
 
-class QueryThingModelExtendConfigPublishedRequest(RpcRequest):
+class QuerySpeechModelPushDeviceJobRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'QueryThingModelExtendConfigPublished','iot')
+		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'QuerySpeechModelPushDeviceJob','iot')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,20 +31,32 @@ class QueryThingModelExtendConfigPublishedRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_IotInstanceId(self):
-		return self.get_query_params().get('IotInstanceId')
+	def get_PageId(self):
+		return self.get_body_params().get('PageId')
 
-	def set_IotInstanceId(self,IotInstanceId):
-		self.add_query_param('IotInstanceId',IotInstanceId)
+	def set_PageId(self,PageId):
+		self.add_body_params('PageId', PageId)
 
-	def get_ProductKey(self):
-		return self.get_query_params().get('ProductKey')
+	def get_PageSize(self):
+		return self.get_body_params().get('PageSize')
 
-	def set_ProductKey(self,ProductKey):
-		self.add_query_param('ProductKey',ProductKey)
+	def set_PageSize(self,PageSize):
+		self.add_body_params('PageSize', PageSize)
 
-	def get_ModelVersion(self):
-		return self.get_query_params().get('ModelVersion')
+	def get_JobCode(self):
+		return self.get_body_params().get('JobCode')
 
-	def set_ModelVersion(self,ModelVersion):
-		self.add_query_param('ModelVersion',ModelVersion)
+	def set_JobCode(self,JobCode):
+		self.add_body_params('JobCode', JobCode)
+
+	def get_DeviceName(self):
+		return self.get_body_params().get('DeviceName')
+
+	def set_DeviceName(self,DeviceName):
+		self.add_body_params('DeviceName', DeviceName)
+
+	def get_Status(self):
+		return self.get_body_params().get('Status')
+
+	def set_Status(self,Status):
+		self.add_body_params('Status', Status)

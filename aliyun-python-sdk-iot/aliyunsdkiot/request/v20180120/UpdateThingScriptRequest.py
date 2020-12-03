@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkiot.endpoint import endpoint_data
 
-class QueryThingModelExtendConfigPublishedRequest(RpcRequest):
+class UpdateThingScriptRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'QueryThingModelExtendConfigPublished','iot')
+		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'UpdateThingScript','iot')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -37,14 +37,20 @@ class QueryThingModelExtendConfigPublishedRequest(RpcRequest):
 	def set_IotInstanceId(self,IotInstanceId):
 		self.add_query_param('IotInstanceId',IotInstanceId)
 
+	def get_ScriptType(self):
+		return self.get_query_params().get('ScriptType')
+
+	def set_ScriptType(self,ScriptType):
+		self.add_query_param('ScriptType',ScriptType)
+
 	def get_ProductKey(self):
 		return self.get_query_params().get('ProductKey')
 
 	def set_ProductKey(self,ProductKey):
 		self.add_query_param('ProductKey',ProductKey)
 
-	def get_ModelVersion(self):
-		return self.get_query_params().get('ModelVersion')
+	def get_ScriptContent(self):
+		return self.get_query_params().get('ScriptContent')
 
-	def set_ModelVersion(self,ModelVersion):
-		self.add_query_param('ModelVersion',ModelVersion)
+	def set_ScriptContent(self,ScriptContent):
+		self.add_query_param('ScriptContent',ScriptContent)
