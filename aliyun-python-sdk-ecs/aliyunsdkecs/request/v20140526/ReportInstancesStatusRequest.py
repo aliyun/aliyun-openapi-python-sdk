@@ -23,7 +23,7 @@ from aliyunsdkecs.endpoint import endpoint_data
 class ReportInstancesStatusRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'ReportInstancesStatus','ecs')
+		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'ReportInstancesStatus')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -54,6 +54,12 @@ class ReportInstancesStatusRequest(RpcRequest):
 
 	def set_StartTime(self,StartTime):
 		self.add_query_param('StartTime',StartTime)
+
+	def get_IssueCategory(self):
+		return self.get_query_params().get('IssueCategory')
+
+	def set_IssueCategory(self,IssueCategory):
+		self.add_query_param('IssueCategory',IssueCategory)
 
 	def get_DiskIds(self):
 		return self.get_query_params().get('DiskId')

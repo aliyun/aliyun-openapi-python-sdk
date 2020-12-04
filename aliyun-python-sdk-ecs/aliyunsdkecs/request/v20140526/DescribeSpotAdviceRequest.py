@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkecs.endpoint import endpoint_data
 
-class DescribeUserBusinessBehaviorRequest(RpcRequest):
+class DescribeSpotAdviceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'DescribeUserBusinessBehavior')
+		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'DescribeSpotAdvice')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -36,6 +36,24 @@ class DescribeUserBusinessBehaviorRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+
+	def get_Memory(self):
+		return self.get_query_params().get('Memory')
+
+	def set_Memory(self,Memory):
+		self.add_query_param('Memory',Memory)
+
+	def get_MinCores(self):
+		return self.get_query_params().get('MinCores')
+
+	def set_MinCores(self,MinCores):
+		self.add_query_param('MinCores',MinCores)
+
+	def get_Cores(self):
+		return self.get_query_params().get('Cores')
+
+	def set_Cores(self,Cores):
+		self.add_query_param('Cores',Cores)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -55,8 +73,14 @@ class DescribeUserBusinessBehaviorRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_statusKey(self):
-		return self.get_query_params().get('statusKey')
+	def get_ZoneId(self):
+		return self.get_query_params().get('ZoneId')
 
-	def set_statusKey(self,statusKey):
-		self.add_query_param('statusKey',statusKey)
+	def set_ZoneId(self,ZoneId):
+		self.add_query_param('ZoneId',ZoneId)
+
+	def get_MinMemory(self):
+		return self.get_query_params().get('MinMemory')
+
+	def set_MinMemory(self,MinMemory):
+		self.add_query_param('MinMemory',MinMemory)
