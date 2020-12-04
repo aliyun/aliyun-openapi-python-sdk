@@ -61,6 +61,12 @@ class UpdateOssStockStatusRequest(RpcRequest):
 	def set_VideoAutoFreezeSceneList(self,VideoAutoFreezeSceneList):
 		self.add_query_param('VideoAutoFreezeSceneList',VideoAutoFreezeSceneList)
 
+	def get_AudioMaxSize(self):
+		return self.get_query_params().get('AudioMaxSize')
+
+	def set_AudioMaxSize(self,AudioMaxSize):
+		self.add_query_param('AudioMaxSize',AudioMaxSize)
+
 	def get_Lang(self):
 		return self.get_query_params().get('Lang')
 
@@ -72,6 +78,12 @@ class UpdateOssStockStatusRequest(RpcRequest):
 
 	def set_ImageAutoFreeze(self,ImageAutoFreeze):
 		self.add_query_param('ImageAutoFreeze',ImageAutoFreeze)
+
+	def get_AudioAutoFreezeSceneList(self):
+		return self.get_query_params().get('AudioAutoFreezeSceneList')
+
+	def set_AudioAutoFreezeSceneList(self,AudioAutoFreezeSceneList):
+		self.add_query_param('AudioAutoFreezeSceneList',AudioAutoFreezeSceneList)
 
 	def get_VideoMaxSize(self):
 		return self.get_query_params().get('VideoMaxSize')

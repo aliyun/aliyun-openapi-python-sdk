@@ -43,11 +43,23 @@ class UpdateOssIncrementCheckSettingRequest(RpcRequest):
 	def set_ImageSceneList(self,ImageSceneList):
 		self.add_query_param('ImageSceneList',ImageSceneList)
 
+	def get_AudioSceneList(self):
+		return self.get_query_params().get('AudioSceneList')
+
+	def set_AudioSceneList(self,AudioSceneList):
+		self.add_query_param('AudioSceneList',AudioSceneList)
+
 	def get_VideoFrameInterval(self):
 		return self.get_query_params().get('VideoFrameInterval')
 
 	def set_VideoFrameInterval(self,VideoFrameInterval):
 		self.add_query_param('VideoFrameInterval',VideoFrameInterval)
+
+	def get_AudioAutoFreezeOpened(self):
+		return self.get_query_params().get('AudioAutoFreezeOpened')
+
+	def set_AudioAutoFreezeOpened(self,AudioAutoFreezeOpened):
+		self.add_query_param('AudioAutoFreezeOpened',AudioAutoFreezeOpened)
 
 	def get_SourceIp(self):
 		return self.get_query_params().get('SourceIp')
@@ -73,6 +85,12 @@ class UpdateOssIncrementCheckSettingRequest(RpcRequest):
 	def set_VideoAutoFreezeSceneList(self,VideoAutoFreezeSceneList):
 		self.add_query_param('VideoAutoFreezeSceneList',VideoAutoFreezeSceneList)
 
+	def get_AudioMaxSize(self):
+		return self.get_query_params().get('AudioMaxSize')
+
+	def set_AudioMaxSize(self,AudioMaxSize):
+		self.add_query_param('AudioMaxSize',AudioMaxSize)
+
 	def get_Lang(self):
 		return self.get_query_params().get('Lang')
 
@@ -84,6 +102,12 @@ class UpdateOssIncrementCheckSettingRequest(RpcRequest):
 
 	def set_ImageAutoFreeze(self,ImageAutoFreeze):
 		self.add_query_param('ImageAutoFreeze',ImageAutoFreeze)
+
+	def get_AudioAntispamFreezeConfig(self):
+		return self.get_query_params().get('AudioAntispamFreezeConfig')
+
+	def set_AudioAntispamFreezeConfig(self,AudioAntispamFreezeConfig):
+		self.add_query_param('AudioAntispamFreezeConfig',AudioAntispamFreezeConfig)
 
 	def get_VideoMaxSize(self):
 		return self.get_query_params().get('VideoMaxSize')

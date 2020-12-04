@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkgreen.endpoint import endpoint_data
 
-class DescribeOssStockStatusRequest(RpcRequest):
+class DescribeCloudMonitorServicesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Green', '2017-08-23', 'DescribeOssStockStatus','green')
+		RpcRequest.__init__(self, 'Green', '2017-08-23', 'DescribeCloudMonitorServices','green')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,20 +31,20 @@ class DescribeOssStockStatusRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_StockTaskId(self):
-		return self.get_query_params().get('StockTaskId')
-
-	def set_StockTaskId(self,StockTaskId):
-		self.add_query_param('StockTaskId',StockTaskId)
-
 	def get_SourceIp(self):
 		return self.get_query_params().get('SourceIp')
 
 	def set_SourceIp(self,SourceIp):
 		self.add_query_param('SourceIp',SourceIp)
 
-	def get_Lang(self):
-		return self.get_query_params().get('Lang')
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
 
-	def set_Lang(self,Lang):
-		self.add_query_param('Lang',Lang)
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
+
+	def get_Page(self):
+		return self.get_query_params().get('Page')
+
+	def set_Page(self,Page):
+		self.add_query_param('Page',Page)
