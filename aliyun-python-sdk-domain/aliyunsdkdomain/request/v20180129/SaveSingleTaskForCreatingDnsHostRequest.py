@@ -23,7 +23,7 @@ from aliyunsdkdomain.endpoint import endpoint_data
 class SaveSingleTaskForCreatingDnsHostRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Domain', '2018-01-29', 'SaveSingleTaskForCreatingDnsHost','domain')
+		RpcRequest.__init__(self, 'Domain', '2018-01-29', 'SaveSingleTaskForCreatingDnsHost')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -32,7 +32,7 @@ class SaveSingleTaskForCreatingDnsHostRequest(RpcRequest):
 
 
 	def get_Ips(self):
-		return self.get_query_params().get('Ips')
+		return self.get_query_params().get('Ip')
 
 	def set_Ips(self, Ips):
 		for depth1 in range(len(Ips)):

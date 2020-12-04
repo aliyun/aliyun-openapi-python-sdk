@@ -23,7 +23,7 @@ from aliyunsdkdomain.endpoint import endpoint_data
 class SaveBatchTaskForCreatingOrderRenewRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Domain', '2018-01-29', 'SaveBatchTaskForCreatingOrderRenew','domain')
+		RpcRequest.__init__(self, 'Domain', '2018-01-29', 'SaveBatchTaskForCreatingOrderRenew')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -56,7 +56,7 @@ class SaveBatchTaskForCreatingOrderRenewRequest(RpcRequest):
 		self.add_query_param('UserClientIp',UserClientIp)
 
 	def get_OrderRenewParams(self):
-		return self.get_query_params().get('OrderRenewParams')
+		return self.get_query_params().get('OrderRenewParam')
 
 	def set_OrderRenewParams(self, OrderRenewParams):
 		for depth1 in range(len(OrderRenewParams)):

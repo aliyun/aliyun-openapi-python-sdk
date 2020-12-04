@@ -23,7 +23,7 @@ from aliyunsdkdomain.endpoint import endpoint_data
 class SaveBatchTaskForCreatingOrderActivateRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Domain', '2018-01-29', 'SaveBatchTaskForCreatingOrderActivate','domain')
+		RpcRequest.__init__(self, 'Domain', '2018-01-29', 'SaveBatchTaskForCreatingOrderActivate')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -32,7 +32,7 @@ class SaveBatchTaskForCreatingOrderActivateRequest(RpcRequest):
 
 
 	def get_OrderActivateParams(self):
-		return self.get_query_params().get('OrderActivateParams')
+		return self.get_query_params().get('OrderActivateParam')
 
 	def set_OrderActivateParams(self, OrderActivateParams):
 		for depth1 in range(len(OrderActivateParams)):

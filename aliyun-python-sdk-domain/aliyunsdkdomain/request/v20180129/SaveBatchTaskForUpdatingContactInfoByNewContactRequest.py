@@ -23,7 +23,7 @@ from aliyunsdkdomain.endpoint import endpoint_data
 class SaveBatchTaskForUpdatingContactInfoByNewContactRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Domain', '2018-01-29', 'SaveBatchTaskForUpdatingContactInfoByNewContact','domain')
+		RpcRequest.__init__(self, 'Domain', '2018-01-29', 'SaveBatchTaskForUpdatingContactInfoByNewContact')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -128,7 +128,7 @@ class SaveBatchTaskForUpdatingContactInfoByNewContactRequest(RpcRequest):
 		self.add_query_param('RegistrantType',RegistrantType)
 
 	def get_DomainNames(self):
-		return self.get_query_params().get('DomainNames')
+		return self.get_query_params().get('DomainName')
 
 	def set_DomainNames(self, DomainNames):
 		for depth1 in range(len(DomainNames)):

@@ -23,7 +23,7 @@ from aliyunsdkdomain.endpoint import endpoint_data
 class SaveBatchTaskForCreatingOrderRedeemRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Domain', '2018-01-29', 'SaveBatchTaskForCreatingOrderRedeem','domain')
+		RpcRequest.__init__(self, 'Domain', '2018-01-29', 'SaveBatchTaskForCreatingOrderRedeem')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -50,7 +50,7 @@ class SaveBatchTaskForCreatingOrderRedeemRequest(RpcRequest):
 		self.add_query_param('PromotionNo',PromotionNo)
 
 	def get_OrderRedeemParams(self):
-		return self.get_query_params().get('OrderRedeemParams')
+		return self.get_query_params().get('OrderRedeemParam')
 
 	def set_OrderRedeemParams(self, OrderRedeemParams):
 		for depth1 in range(len(OrderRedeemParams)):
