@@ -31,8 +31,20 @@ class ListDashboardsRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_ClusterType(self):
+		return self.get_query_params().get('ClusterType')
+
+	def set_ClusterType(self,ClusterType):
+		self.add_query_param('ClusterType',ClusterType)
+
 	def get_ClusterId(self):
 		return self.get_query_params().get('ClusterId')
 
 	def set_ClusterId(self,ClusterId):
 		self.add_query_param('ClusterId',ClusterId)
+
+	def get_Title(self):
+		return self.get_query_params().get('Title')
+
+	def set_Title(self,Title):
+		self.add_query_param('Title',Title)
