@@ -32,14 +32,32 @@ class TriggerNetworkRequest(RoaRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_actionType(self):
+		return self.get_body_params().get('actionType')
+
+	def set_actionType(self,actionType):
+		self.add_body_params('actionType', actionType)
+
 	def get_InstanceId(self):
 		return self.get_path_params().get('InstanceId')
 
 	def set_InstanceId(self,InstanceId):
 		self.add_path_param('InstanceId',InstanceId)
 
+	def get_nodeType(self):
+		return self.get_body_params().get('nodeType')
+
+	def set_nodeType(self,nodeType):
+		self.add_body_params('nodeType', nodeType)
+
 	def get_clientToken(self):
 		return self.get_query_params().get('clientToken')
 
 	def set_clientToken(self,clientToken):
 		self.add_query_param('clientToken',clientToken)
+
+	def get_networkType(self):
+		return self.get_body_params().get('networkType')
+
+	def set_networkType(self,networkType):
+		self.add_body_params('networkType', networkType)

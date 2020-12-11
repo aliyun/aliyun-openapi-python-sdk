@@ -49,3 +49,15 @@ class UpgradeEngineVersionRequest(RoaRequest):
 
 	def set_clientToken(self,clientToken):
 		self.add_query_param('clientToken',clientToken)
+
+	def get_type(self):
+		return self.get_body_params().get('type')
+
+	def set_type(self,type):
+		self.add_body_params('type', type)
+
+	def get_version(self):
+		return self.get_body_params().get('version')
+
+	def set_version(self,version):
+		self.add_body_params('version', version)

@@ -20,11 +20,11 @@
 from aliyunsdkcore.request import RoaRequest
 from aliyunsdkelasticsearch.endpoint import endpoint_data
 
-class ModifyWhiteIpsRequest(RoaRequest):
+class GetEmonMonitorDataRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'elasticsearch', '2017-06-13', 'ModifyWhiteIps','elasticsearch')
-		self.set_uri_pattern('/openapi/instances/[InstanceId]/actions/modify-white-ips')
+		RoaRequest.__init__(self, 'elasticsearch', '2017-06-13', 'GetEmonMonitorData','elasticsearch')
+		self.set_uri_pattern('/openapi/emon/projects/[ProjectId]/metrics/query')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -32,26 +32,8 @@ class ModifyWhiteIpsRequest(RoaRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_InstanceId(self):
-		return self.get_path_params().get('InstanceId')
+	def get_ProjectId(self):
+		return self.get_path_params().get('ProjectId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_path_param('InstanceId',InstanceId)
-
-	def get_nodeType(self):
-		return self.get_body_params().get('nodeType')
-
-	def set_nodeType(self,nodeType):
-		self.add_body_params('nodeType', nodeType)
-
-	def get_clientToken(self):
-		return self.get_query_params().get('clientToken')
-
-	def set_clientToken(self,clientToken):
-		self.add_query_param('clientToken',clientToken)
-
-	def get_networkType(self):
-		return self.get_body_params().get('networkType')
-
-	def set_networkType(self,networkType):
-		self.add_body_params('networkType', networkType)
+	def set_ProjectId(self,ProjectId):
+		self.add_path_param('ProjectId',ProjectId)

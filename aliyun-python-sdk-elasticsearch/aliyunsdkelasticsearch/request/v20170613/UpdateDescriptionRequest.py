@@ -43,3 +43,9 @@ class UpdateDescriptionRequest(RoaRequest):
 
 	def set_clientToken(self,clientToken):
 		self.add_query_param('clientToken',clientToken)
+
+	def get_description(self):
+		return self.get_body_params().get('description')
+
+	def set_description(self,description):
+		self.add_body_params('description', description)
