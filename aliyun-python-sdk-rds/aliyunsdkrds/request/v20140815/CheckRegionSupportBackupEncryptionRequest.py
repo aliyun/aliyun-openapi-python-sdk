@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkrds.endpoint import endpoint_data
 
-class UpgradeDBInstanceKernelVersionRequest(RpcRequest):
+class CheckRegionSupportBackupEncryptionRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'UpgradeDBInstanceKernelVersion','rds')
+		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'CheckRegionSupportBackupEncryption','rds')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -37,38 +37,8 @@ class UpgradeDBInstanceKernelVersionRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_DBInstanceId(self):
-		return self.get_query_params().get('DBInstanceId')
+	def get_DBInstanceID(self):
+		return self.get_query_params().get('DBInstanceID')
 
-	def set_DBInstanceId(self,DBInstanceId):
-		self.add_query_param('DBInstanceId',DBInstanceId)
-
-	def get_SwitchTime(self):
-		return self.get_query_params().get('SwitchTime')
-
-	def set_SwitchTime(self,SwitchTime):
-		self.add_query_param('SwitchTime',SwitchTime)
-
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
-
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_TargetMinorVersion(self):
-		return self.get_query_params().get('TargetMinorVersion')
-
-	def set_TargetMinorVersion(self,TargetMinorVersion):
-		self.add_query_param('TargetMinorVersion',TargetMinorVersion)
-
-	def get_UpgradeTime(self):
-		return self.get_query_params().get('UpgradeTime')
-
-	def set_UpgradeTime(self,UpgradeTime):
-		self.add_query_param('UpgradeTime',UpgradeTime)
+	def set_DBInstanceID(self,DBInstanceID):
+		self.add_query_param('DBInstanceID',DBInstanceID)

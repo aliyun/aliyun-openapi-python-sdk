@@ -49,6 +49,12 @@ class MigrateDBInstanceRequest(RpcRequest):
 	def set_TargetDedicatedHostIdForSlave(self,TargetDedicatedHostIdForSlave):
 		self.add_query_param('TargetDedicatedHostIdForSlave',TargetDedicatedHostIdForSlave)
 
+	def get_ZoneIdForFollower(self):
+		return self.get_query_params().get('ZoneIdForFollower')
+
+	def set_ZoneIdForFollower(self,ZoneIdForFollower):
+		self.add_query_param('ZoneIdForFollower',ZoneIdForFollower)
+
 	def get_EffectiveTime(self):
 		return self.get_query_params().get('EffectiveTime')
 
@@ -78,6 +84,12 @@ class MigrateDBInstanceRequest(RpcRequest):
 
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+
+	def get_ZoneIdForLog(self):
+		return self.get_query_params().get('ZoneIdForLog')
+
+	def set_ZoneIdForLog(self,ZoneIdForLog):
+		self.add_query_param('ZoneIdForLog',ZoneIdForLog)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')

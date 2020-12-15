@@ -37,6 +37,12 @@ class RebuildDBInstanceRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_RebuildNodeType(self):
+		return self.get_query_params().get('RebuildNodeType')
+
+	def set_RebuildNodeType(self,RebuildNodeType):
+		self.add_query_param('RebuildNodeType',RebuildNodeType)
+
 	def get_DBInstanceId(self):
 		return self.get_query_params().get('DBInstanceId')
 
