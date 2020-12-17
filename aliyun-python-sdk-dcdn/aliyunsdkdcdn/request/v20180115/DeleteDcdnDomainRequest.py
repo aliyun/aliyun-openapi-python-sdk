@@ -49,12 +49,6 @@ class DeleteDcdnDomainRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_ResourceGroupId(self):
-		return self.get_query_params().get('ResourceGroupId')
-
-	def set_ResourceGroupId(self,ResourceGroupId):
-		self.add_query_param('ResourceGroupId',ResourceGroupId)
-
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
 
