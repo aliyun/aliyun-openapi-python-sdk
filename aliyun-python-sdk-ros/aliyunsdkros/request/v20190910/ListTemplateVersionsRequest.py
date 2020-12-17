@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkros.endpoint import endpoint_data
 
-class GetTemplateSummaryRequest(RpcRequest):
+class ListTemplateVersionsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ROS', '2019-09-10', 'GetTemplateSummary','ros')
+		RpcRequest.__init__(self, 'ROS', '2019-09-10', 'ListTemplateVersions','ros')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,35 +31,11 @@ class GetTemplateSummaryRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_TemplateBody(self):
-		return self.get_query_params().get('TemplateBody')
+	def get_NextToken(self):
+		return self.get_query_params().get('NextToken')
 
-	def set_TemplateBody(self,TemplateBody):
-		self.add_query_param('TemplateBody',TemplateBody)
-
-	def get_StackId(self):
-		return self.get_query_params().get('StackId')
-
-	def set_StackId(self,StackId):
-		self.add_query_param('StackId',StackId)
-
-	def get_TemplateURL(self):
-		return self.get_query_params().get('TemplateURL')
-
-	def set_TemplateURL(self,TemplateURL):
-		self.add_query_param('TemplateURL',TemplateURL)
-
-	def get_TemplateVersion(self):
-		return self.get_query_params().get('TemplateVersion')
-
-	def set_TemplateVersion(self,TemplateVersion):
-		self.add_query_param('TemplateVersion',TemplateVersion)
-
-	def get_StackGroupName(self):
-		return self.get_query_params().get('StackGroupName')
-
-	def set_StackGroupName(self,StackGroupName):
-		self.add_query_param('StackGroupName',StackGroupName)
+	def set_NextToken(self,NextToken):
+		self.add_query_param('NextToken',NextToken)
 
 	def get_TemplateId(self):
 		return self.get_query_params().get('TemplateId')
@@ -67,8 +43,8 @@ class GetTemplateSummaryRequest(RpcRequest):
 	def set_TemplateId(self,TemplateId):
 		self.add_query_param('TemplateId',TemplateId)
 
-	def get_ChangeSetId(self):
-		return self.get_query_params().get('ChangeSetId')
+	def get_MaxResults(self):
+		return self.get_query_params().get('MaxResults')
 
-	def set_ChangeSetId(self,ChangeSetId):
-		self.add_query_param('ChangeSetId',ChangeSetId)
+	def set_MaxResults(self,MaxResults):
+		self.add_query_param('MaxResults',MaxResults)

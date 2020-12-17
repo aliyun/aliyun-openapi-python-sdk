@@ -43,11 +43,23 @@ class UpdateStackRequest(RpcRequest):
 	def set_StackPolicyDuringUpdateBody(self,StackPolicyDuringUpdateBody):
 		self.add_query_param('StackPolicyDuringUpdateBody',StackPolicyDuringUpdateBody)
 
+	def get_TemplateVersion(self):
+		return self.get_query_params().get('TemplateVersion')
+
+	def set_TemplateVersion(self,TemplateVersion):
+		self.add_query_param('TemplateVersion',TemplateVersion)
+
 	def get_DisableRollback(self):
 		return self.get_query_params().get('DisableRollback')
 
 	def set_DisableRollback(self,DisableRollback):
 		self.add_query_param('DisableRollback',DisableRollback)
+
+	def get_TemplateId(self):
+		return self.get_query_params().get('TemplateId')
+
+	def set_TemplateId(self,TemplateId):
+		self.add_query_param('TemplateId',TemplateId)
 
 	def get_Parameterss(self):
 		return self.get_query_params().get('Parameters')

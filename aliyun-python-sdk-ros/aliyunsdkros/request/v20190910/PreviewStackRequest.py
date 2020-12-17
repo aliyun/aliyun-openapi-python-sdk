@@ -31,6 +31,46 @@ class PreviewStackRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_TimeoutInMinutes(self):
+		return self.get_query_params().get('TimeoutInMinutes')
+
+	def set_TimeoutInMinutes(self,TimeoutInMinutes):
+		self.add_query_param('TimeoutInMinutes',TimeoutInMinutes)
+
+	def get_TemplateVersion(self):
+		return self.get_query_params().get('TemplateVersion')
+
+	def set_TemplateVersion(self,TemplateVersion):
+		self.add_query_param('TemplateVersion',TemplateVersion)
+
+	def get_StackName(self):
+		return self.get_query_params().get('StackName')
+
+	def set_StackName(self,StackName):
+		self.add_query_param('StackName',StackName)
+
+	def get_DisableRollback(self):
+		return self.get_query_params().get('DisableRollback')
+
+	def set_DisableRollback(self,DisableRollback):
+		self.add_query_param('DisableRollback',DisableRollback)
+
+	def get_TemplateId(self):
+		return self.get_query_params().get('TemplateId')
+
+	def set_TemplateId(self,TemplateId):
+		self.add_query_param('TemplateId',TemplateId)
+
+	def get_Parameterss(self):
+		return self.get_query_params().get('Parameters')
+
+	def set_Parameterss(self, Parameterss):
+		for depth1 in range(len(Parameterss)):
+			if Parameterss[depth1].get('ParameterValue') is not None:
+				self.add_query_param('Parameters.' + str(depth1 + 1) + '.ParameterValue', Parameterss[depth1].get('ParameterValue'))
+			if Parameterss[depth1].get('ParameterKey') is not None:
+				self.add_query_param('Parameters.' + str(depth1 + 1) + '.ParameterKey', Parameterss[depth1].get('ParameterKey'))
+
 	def get_ClientToken(self):
 		return self.get_query_params().get('ClientToken')
 
@@ -43,23 +83,11 @@ class PreviewStackRequest(RpcRequest):
 	def set_TemplateBody(self,TemplateBody):
 		self.add_query_param('TemplateBody',TemplateBody)
 
-	def get_TimeoutInMinutes(self):
-		return self.get_query_params().get('TimeoutInMinutes')
-
-	def set_TimeoutInMinutes(self,TimeoutInMinutes):
-		self.add_query_param('TimeoutInMinutes',TimeoutInMinutes)
-
 	def get_TemplateURL(self):
 		return self.get_query_params().get('TemplateURL')
 
 	def set_TemplateURL(self,TemplateURL):
 		self.add_query_param('TemplateURL',TemplateURL)
-
-	def get_StackName(self):
-		return self.get_query_params().get('StackName')
-
-	def set_StackName(self,StackName):
-		self.add_query_param('StackName',StackName)
 
 	def get_StackPolicyBody(self):
 		return self.get_query_params().get('StackPolicyBody')
@@ -67,24 +95,8 @@ class PreviewStackRequest(RpcRequest):
 	def set_StackPolicyBody(self,StackPolicyBody):
 		self.add_query_param('StackPolicyBody',StackPolicyBody)
 
-	def get_DisableRollback(self):
-		return self.get_query_params().get('DisableRollback')
-
-	def set_DisableRollback(self,DisableRollback):
-		self.add_query_param('DisableRollback',DisableRollback)
-
 	def get_StackPolicyURL(self):
 		return self.get_query_params().get('StackPolicyURL')
 
 	def set_StackPolicyURL(self,StackPolicyURL):
 		self.add_query_param('StackPolicyURL',StackPolicyURL)
-
-	def get_Parameterss(self):
-		return self.get_query_params().get('Parameters')
-
-	def set_Parameterss(self, Parameterss):
-		for depth1 in range(len(Parameterss)):
-			if Parameterss[depth1].get('ParameterValue') is not None:
-				self.add_query_param('Parameters.' + str(depth1 + 1) + '.ParameterValue', Parameterss[depth1].get('ParameterValue'))
-			if Parameterss[depth1].get('ParameterKey') is not None:
-				self.add_query_param('Parameters.' + str(depth1 + 1) + '.ParameterKey', Parameterss[depth1].get('ParameterKey'))

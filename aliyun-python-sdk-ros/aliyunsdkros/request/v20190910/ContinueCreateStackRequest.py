@@ -55,6 +55,12 @@ class ContinueCreateStackRequest(RpcRequest):
 	def set_Mode(self,Mode):
 		self.add_query_param('Mode',Mode)
 
+	def get_TemplateVersion(self):
+		return self.get_query_params().get('TemplateVersion')
+
+	def set_TemplateVersion(self,TemplateVersion):
+		self.add_query_param('TemplateVersion',TemplateVersion)
+
 	def get_DryRun(self):
 		return self.get_query_params().get('DryRun')
 
@@ -66,6 +72,12 @@ class ContinueCreateStackRequest(RpcRequest):
 
 	def set_RamRoleName(self,RamRoleName):
 		self.add_query_param('RamRoleName',RamRoleName)
+
+	def get_TemplateId(self):
+		return self.get_query_params().get('TemplateId')
+
+	def set_TemplateId(self,TemplateId):
+		self.add_query_param('TemplateId',TemplateId)
 
 	def get_Parameterss(self):
 		return self.get_query_params().get('Parameters')

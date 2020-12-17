@@ -49,6 +49,18 @@ class GetTemplateEstimateCostRequest(RpcRequest):
 	def set_TemplateURL(self,TemplateURL):
 		self.add_query_param('TemplateURL',TemplateURL)
 
+	def get_TemplateVersion(self):
+		return self.get_query_params().get('TemplateVersion')
+
+	def set_TemplateVersion(self,TemplateVersion):
+		self.add_query_param('TemplateVersion',TemplateVersion)
+
+	def get_TemplateId(self):
+		return self.get_query_params().get('TemplateId')
+
+	def set_TemplateId(self,TemplateId):
+		self.add_query_param('TemplateId',TemplateId)
+
 	def get_Parameterss(self):
 		return self.get_query_params().get('Parameters')
 

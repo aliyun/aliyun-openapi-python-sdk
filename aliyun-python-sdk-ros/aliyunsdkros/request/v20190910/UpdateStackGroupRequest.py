@@ -31,6 +31,12 @@ class UpdateStackGroupRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_TemplateVersion(self):
+		return self.get_query_params().get('TemplateVersion')
+
+	def set_TemplateVersion(self,TemplateVersion):
+		self.add_query_param('TemplateVersion',TemplateVersion)
+
 	def get_StackGroupName(self):
 		return self.get_query_params().get('StackGroupName')
 
@@ -42,6 +48,12 @@ class UpdateStackGroupRequest(RpcRequest):
 
 	def set_RegionIds(self,RegionIds):
 		self.add_query_param('RegionIds',RegionIds)
+
+	def get_TemplateId(self):
+		return self.get_query_params().get('TemplateId')
+
+	def set_TemplateId(self,TemplateId):
+		self.add_query_param('TemplateId',TemplateId)
 
 	def get_Parameterss(self):
 		return self.get_query_params().get('Parameters')

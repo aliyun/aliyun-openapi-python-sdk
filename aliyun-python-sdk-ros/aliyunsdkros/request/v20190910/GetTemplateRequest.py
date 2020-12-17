@@ -37,6 +37,30 @@ class GetTemplateRequest(RpcRequest):
 	def set_StackId(self,StackId):
 		self.add_query_param('StackId',StackId)
 
+	def get_TemplateVersion(self):
+		return self.get_query_params().get('TemplateVersion')
+
+	def set_TemplateVersion(self,TemplateVersion):
+		self.add_query_param('TemplateVersion',TemplateVersion)
+
+	def get_StackGroupName(self):
+		return self.get_query_params().get('StackGroupName')
+
+	def set_StackGroupName(self,StackGroupName):
+		self.add_query_param('StackGroupName',StackGroupName)
+
+	def get_TemplateStage(self):
+		return self.get_query_params().get('TemplateStage')
+
+	def set_TemplateStage(self,TemplateStage):
+		self.add_query_param('TemplateStage',TemplateStage)
+
+	def get_IncludePermission(self):
+		return self.get_query_params().get('IncludePermission')
+
+	def set_IncludePermission(self,IncludePermission):
+		self.add_query_param('IncludePermission',IncludePermission)
+
 	def get_TemplateId(self):
 		return self.get_query_params().get('TemplateId')
 
