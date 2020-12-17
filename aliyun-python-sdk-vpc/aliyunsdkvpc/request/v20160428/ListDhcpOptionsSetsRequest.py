@@ -44,7 +44,7 @@ class ListDhcpOptionsSetsRequest(RpcRequest):
 		self.add_query_param('NextToken',NextToken)
 
 	def get_DhcpOptionsSetIds(self):
-		return self.get_query_params().get('DhcpOptionsSetIds')
+		return self.get_query_params().get('DhcpOptionsSetId')
 
 	def set_DhcpOptionsSetIds(self, DhcpOptionsSetIds):
 		for depth1 in range(len(DhcpOptionsSetIds)):

@@ -104,7 +104,7 @@ class ApplyPhysicalConnectionLOARequest(RpcRequest):
 		self.add_query_param('CompanyName',CompanyName)
 
 	def get_PMInfos(self):
-		return self.get_query_params().get('PMInfos')
+		return self.get_query_params().get('PMInfo')
 
 	def set_PMInfos(self, PMInfos):
 		for depth1 in range(len(PMInfos)):

@@ -67,22 +67,6 @@ class CreateNatGatewayRequest(RpcRequest):
 	def set_NatType(self,NatType):
 		self.add_query_param('NatType',NatType)
 
-	def get_BandwidthPackages(self):
-		return self.get_query_params().get('BandwidthPackages')
-
-	def set_BandwidthPackages(self, BandwidthPackages):
-		for depth1 in range(len(BandwidthPackages)):
-			if BandwidthPackages[depth1].get('Bandwidth') is not None:
-				self.add_query_param('BandwidthPackage.' + str(depth1 + 1) + '.Bandwidth', BandwidthPackages[depth1].get('Bandwidth'))
-			if BandwidthPackages[depth1].get('Zone') is not None:
-				self.add_query_param('BandwidthPackage.' + str(depth1 + 1) + '.Zone', BandwidthPackages[depth1].get('Zone'))
-			if BandwidthPackages[depth1].get('InternetChargeType') is not None:
-				self.add_query_param('BandwidthPackage.' + str(depth1 + 1) + '.InternetChargeType', BandwidthPackages[depth1].get('InternetChargeType'))
-			if BandwidthPackages[depth1].get('ISP') is not None:
-				self.add_query_param('BandwidthPackage.' + str(depth1 + 1) + '.ISP', BandwidthPackages[depth1].get('ISP'))
-			if BandwidthPackages[depth1].get('IpCount') is not None:
-				self.add_query_param('BandwidthPackage.' + str(depth1 + 1) + '.IpCount', BandwidthPackages[depth1].get('IpCount'))
-
 	def get_InstanceChargeType(self):
 		return self.get_query_params().get('InstanceChargeType')
 

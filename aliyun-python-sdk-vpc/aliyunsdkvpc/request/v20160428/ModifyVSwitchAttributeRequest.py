@@ -37,6 +37,12 @@ class ModifyVSwitchAttributeRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_EnableIPv6(self):
+		return self.get_query_params().get('EnableIPv6')
+
+	def set_EnableIPv6(self,EnableIPv6):
+		self.add_query_param('EnableIPv6',EnableIPv6)
+
 	def get_Description(self):
 		return self.get_query_params().get('Description')
 

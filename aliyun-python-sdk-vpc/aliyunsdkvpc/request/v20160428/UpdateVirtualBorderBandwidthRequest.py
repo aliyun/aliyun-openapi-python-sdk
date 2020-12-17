@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkvpc.endpoint import endpoint_data
 
-class CreateBandwidthPackageRequest(RpcRequest):
+class UpdateVirtualBorderBandwidthRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'CreateBandwidthPackage','vpc')
+		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'UpdateVirtualBorderBandwidth','vpc')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -43,41 +43,23 @@ class CreateBandwidthPackageRequest(RpcRequest):
 	def set_ClientToken(self,ClientToken):
 		self.add_query_param('ClientToken',ClientToken)
 
-	def get_ISP(self):
-		return self.get_query_params().get('ISP')
+	def get_VirtualBorderRouterId(self):
+		return self.get_query_params().get('VirtualBorderRouterId')
 
-	def set_ISP(self,ISP):
-		self.add_query_param('ISP',ISP)
-
-	def get_Description(self):
-		return self.get_query_params().get('Description')
-
-	def set_Description(self,Description):
-		self.add_query_param('Description',Description)
-
-	def get_Zone(self):
-		return self.get_query_params().get('Zone')
-
-	def set_Zone(self,Zone):
-		self.add_query_param('Zone',Zone)
-
-	def get_NatGatewayId(self):
-		return self.get_query_params().get('NatGatewayId')
-
-	def set_NatGatewayId(self,NatGatewayId):
-		self.add_query_param('NatGatewayId',NatGatewayId)
-
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
-
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+	def set_VirtualBorderRouterId(self,VirtualBorderRouterId):
+		self.add_query_param('VirtualBorderRouterId',VirtualBorderRouterId)
 
 	def get_Bandwidth(self):
 		return self.get_query_params().get('Bandwidth')
 
 	def set_Bandwidth(self,Bandwidth):
 		self.add_query_param('Bandwidth',Bandwidth)
+
+	def get_ResourceOwnerAccount(self):
+		return self.get_query_params().get('ResourceOwnerAccount')
+
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
@@ -90,21 +72,3 @@ class CreateBandwidthPackageRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
-
-	def get_InternetChargeType(self):
-		return self.get_query_params().get('InternetChargeType')
-
-	def set_InternetChargeType(self,InternetChargeType):
-		self.add_query_param('InternetChargeType',InternetChargeType)
-
-	def get_Name(self):
-		return self.get_query_params().get('Name')
-
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)
-
-	def get_IpCount(self):
-		return self.get_query_params().get('IpCount')
-
-	def set_IpCount(self,IpCount):
-		self.add_query_param('IpCount',IpCount)

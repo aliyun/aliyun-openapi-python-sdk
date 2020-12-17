@@ -1,3 +1,6 @@
+2020-12-17 Version: 3.0.12
+- NAT CONVERT RESERVATION SUPPORT.
+
 2020-09-07 Version: 3.0.11
 - Generated 2016-04-28 for `Vpc`.
 

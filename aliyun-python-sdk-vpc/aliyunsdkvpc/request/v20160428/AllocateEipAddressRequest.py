@@ -49,6 +49,12 @@ class AllocateEipAddressRequest(RpcRequest):
 	def set_ISP(self,ISP):
 		self.add_query_param('ISP',ISP)
 
+	def get_Description(self):
+		return self.get_query_params().get('Description')
+
+	def set_Description(self,Description):
+		self.add_query_param('Description',Description)
+
 	def get_ResourceGroupId(self):
 		return self.get_query_params().get('ResourceGroupId')
 
@@ -114,6 +120,12 @@ class AllocateEipAddressRequest(RpcRequest):
 
 	def set_InternetChargeType(self,InternetChargeType):
 		self.add_query_param('InternetChargeType',InternetChargeType)
+
+	def get_Name(self):
+		return self.get_query_params().get('Name')
+
+	def set_Name(self,Name):
+		self.add_query_param('Name',Name)
 
 	def get_PricingCycle(self):
 		return self.get_query_params().get('PricingCycle')

@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkvpc.endpoint import endpoint_data
 
-class AddBandwidthPackageIpsRequest(RpcRequest):
+class GetNatGatewayAttributeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'AddBandwidthPackageIps','vpc')
+		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'GetNatGatewayAttribute','vpc')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -37,17 +37,11 @@ class AddBandwidthPackageIpsRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_ClientToken(self):
-		return self.get_query_params().get('ClientToken')
+	def get_NatGatewayId(self):
+		return self.get_query_params().get('NatGatewayId')
 
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
-
-	def get_BandwidthPackageId(self):
-		return self.get_query_params().get('BandwidthPackageId')
-
-	def set_BandwidthPackageId(self,BandwidthPackageId):
-		self.add_query_param('BandwidthPackageId',BandwidthPackageId)
+	def set_NatGatewayId(self,NatGatewayId):
+		self.add_query_param('NatGatewayId',NatGatewayId)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -66,9 +60,3 @@ class AddBandwidthPackageIpsRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
-
-	def get_IpCount(self):
-		return self.get_query_params().get('IpCount')
-
-	def set_IpCount(self,IpCount):
-		self.add_query_param('IpCount',IpCount)

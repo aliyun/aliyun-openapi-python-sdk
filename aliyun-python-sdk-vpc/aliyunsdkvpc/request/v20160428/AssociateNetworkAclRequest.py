@@ -50,7 +50,7 @@ class AssociateNetworkAclRequest(RpcRequest):
 		self.add_query_param('NetworkAclId',NetworkAclId)
 
 	def get_Resources(self):
-		return self.get_query_params().get('Resources')
+		return self.get_query_params().get('Resource')
 
 	def set_Resources(self, Resources):
 		for depth1 in range(len(Resources)):

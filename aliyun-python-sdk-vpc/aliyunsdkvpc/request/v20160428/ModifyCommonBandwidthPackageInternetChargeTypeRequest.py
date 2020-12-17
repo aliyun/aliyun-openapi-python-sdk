@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkvpc.endpoint import endpoint_data
 
-class RemoveBandwidthPackageIpsRequest(RpcRequest):
+class ModifyCommonBandwidthPackageInternetChargeTypeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'RemoveBandwidthPackageIps','vpc')
+		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'ModifyCommonBandwidthPackageInternetChargeType','vpc')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -37,19 +37,11 @@ class RemoveBandwidthPackageIpsRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_ClientToken(self):
-		return self.get_query_params().get('ClientToken')
+	def get_InstanceChargeType(self):
+		return self.get_query_params().get('InstanceChargeType')
 
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
-
-	def get_RemovedIpAddressess(self):
-		return self.get_query_params().get('RemovedIpAddressess')
-
-	def set_RemovedIpAddressess(self, RemovedIpAddressess):
-		for depth1 in range(len(RemovedIpAddressess)):
-			if RemovedIpAddressess[depth1] is not None:
-				self.add_query_param('RemovedIpAddresses.' + str(depth1 + 1) , RemovedIpAddressess[depth1])
+	def set_InstanceChargeType(self,InstanceChargeType):
+		self.add_query_param('InstanceChargeType',InstanceChargeType)
 
 	def get_BandwidthPackageId(self):
 		return self.get_query_params().get('BandwidthPackageId')
@@ -57,11 +49,23 @@ class RemoveBandwidthPackageIpsRequest(RpcRequest):
 	def set_BandwidthPackageId(self,BandwidthPackageId):
 		self.add_query_param('BandwidthPackageId',BandwidthPackageId)
 
+	def get_AutoPay(self):
+		return self.get_query_params().get('AutoPay')
+
+	def set_AutoPay(self,AutoPay):
+		self.add_query_param('AutoPay',AutoPay)
+
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+
+	def get_Bandwidth(self):
+		return self.get_query_params().get('Bandwidth')
+
+	def set_Bandwidth(self,Bandwidth):
+		self.add_query_param('Bandwidth',Bandwidth)
 
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
@@ -74,3 +78,15 @@ class RemoveBandwidthPackageIpsRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_InternetChargeType(self):
+		return self.get_query_params().get('InternetChargeType')
+
+	def set_InternetChargeType(self,InternetChargeType):
+		self.add_query_param('InternetChargeType',InternetChargeType)
+
+	def get_Ratio(self):
+		return self.get_query_params().get('Ratio')
+
+	def set_Ratio(self,Ratio):
+		self.add_query_param('Ratio',Ratio)

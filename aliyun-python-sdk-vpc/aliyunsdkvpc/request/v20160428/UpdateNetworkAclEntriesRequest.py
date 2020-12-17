@@ -38,7 +38,7 @@ class UpdateNetworkAclEntriesRequest(RpcRequest):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
 	def get_EgressAclEntriess(self):
-		return self.get_query_params().get('EgressAclEntriess')
+		return self.get_query_params().get('EgressAclEntries')
 
 	def set_EgressAclEntriess(self, EgressAclEntriess):
 		for depth1 in range(len(EgressAclEntriess)):
@@ -96,7 +96,7 @@ class UpdateNetworkAclEntriesRequest(RpcRequest):
 		self.add_query_param('OwnerId',OwnerId)
 
 	def get_IngressAclEntriess(self):
-		return self.get_query_params().get('IngressAclEntriess')
+		return self.get_query_params().get('IngressAclEntries')
 
 	def set_IngressAclEntriess(self, IngressAclEntriess):
 		for depth1 in range(len(IngressAclEntriess)):
