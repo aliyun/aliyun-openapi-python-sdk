@@ -23,7 +23,7 @@ from aliyunsdkkms.endpoint import endpoint_data
 class CreateSecretRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Kms', '2016-01-20', 'CreateSecret','kms-service')
+		RpcRequest.__init__(self, 'Kms', '2016-01-20', 'CreateSecret','kms')
 		self.set_protocol_type('https')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
@@ -31,6 +31,12 @@ class CreateSecretRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+
+	def get_SecretType(self):
+		return self.get_query_params().get('SecretType')
+
+	def set_SecretType(self,SecretType):
+		self.add_query_param('SecretType',SecretType)
 
 	def get_VersionId(self):
 		return self.get_query_params().get('VersionId')
@@ -50,11 +56,23 @@ class CreateSecretRequest(RpcRequest):
 	def set_Description(self,Description):
 		self.add_query_param('Description',Description)
 
+	def get_RotationInterval(self):
+		return self.get_query_params().get('RotationInterval')
+
+	def set_RotationInterval(self,RotationInterval):
+		self.add_query_param('RotationInterval',RotationInterval)
+
 	def get_SecretName(self):
 		return self.get_query_params().get('SecretName')
 
 	def set_SecretName(self,SecretName):
 		self.add_query_param('SecretName',SecretName)
+
+	def get_EnableAutomaticRotation(self):
+		return self.get_query_params().get('EnableAutomaticRotation')
+
+	def set_EnableAutomaticRotation(self,EnableAutomaticRotation):
+		self.add_query_param('EnableAutomaticRotation',EnableAutomaticRotation)
 
 	def get_EncryptionKeyId(self):
 		return self.get_query_params().get('EncryptionKeyId')
@@ -73,3 +91,9 @@ class CreateSecretRequest(RpcRequest):
 
 	def set_Tags(self,Tags):
 		self.add_query_param('Tags',Tags)
+
+	def get_ExtendedConfig(self):
+		return self.get_query_params().get('ExtendedConfig')
+
+	def set_ExtendedConfig(self,ExtendedConfig):
+		self.add_query_param('ExtendedConfig',ExtendedConfig)
