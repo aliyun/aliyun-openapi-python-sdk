@@ -73,6 +73,12 @@ class CreateECSDBInstanceRequest(RpcRequest):
 	def set_Engine(self,Engine):
 		self.add_query_param('Engine',Engine)
 
+	def get_EncryptionType(self):
+		return self.get_query_params().get('EncryptionType')
+
+	def set_EncryptionType(self,EncryptionType):
+		self.add_query_param('EncryptionType',EncryptionType)
+
 	def get_DBInstanceDescription(self):
 		return self.get_query_params().get('DBInstanceDescription')
 
@@ -84,6 +90,12 @@ class CreateECSDBInstanceRequest(RpcRequest):
 
 	def set_Period(self,Period):
 		self.add_query_param('Period',Period)
+
+	def get_EncryptionKey(self):
+		return self.get_query_params().get('EncryptionKey')
+
+	def set_EncryptionKey(self,EncryptionKey):
+		self.add_query_param('EncryptionKey',EncryptionKey)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
