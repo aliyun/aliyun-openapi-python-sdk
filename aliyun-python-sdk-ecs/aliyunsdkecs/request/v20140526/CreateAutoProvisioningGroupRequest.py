@@ -42,6 +42,20 @@ class CreateAutoProvisioningGroupRequest(RpcRequest):
 				self.add_query_param('LaunchConfiguration.DataDisk.' + str(depth1 + 1) + '.Category', LaunchConfigurationDataDisks[depth1].get('Category'))
 			if LaunchConfigurationDataDisks[depth1].get('PerformanceLevel') is not None:
 				self.add_query_param('LaunchConfiguration.DataDisk.' + str(depth1 + 1) + '.PerformanceLevel', LaunchConfigurationDataDisks[depth1].get('PerformanceLevel'))
+			if LaunchConfigurationDataDisks[depth1].get('Device') is not None:
+				self.add_query_param('LaunchConfiguration.DataDisk.' + str(depth1 + 1) + '.Device', LaunchConfigurationDataDisks[depth1].get('Device'))
+			if LaunchConfigurationDataDisks[depth1].get('SnapshotId') is not None:
+				self.add_query_param('LaunchConfiguration.DataDisk.' + str(depth1 + 1) + '.SnapshotId', LaunchConfigurationDataDisks[depth1].get('SnapshotId'))
+			if LaunchConfigurationDataDisks[depth1].get('DeleteWithInstance') is not None:
+				self.add_query_param('LaunchConfiguration.DataDisk.' + str(depth1 + 1) + '.DeleteWithInstance', LaunchConfigurationDataDisks[depth1].get('DeleteWithInstance'))
+			if LaunchConfigurationDataDisks[depth1].get('Encrypted') is not None:
+				self.add_query_param('LaunchConfiguration.DataDisk.' + str(depth1 + 1) + '.Encrypted', LaunchConfigurationDataDisks[depth1].get('Encrypted'))
+			if LaunchConfigurationDataDisks[depth1].get('KmsKeyId') is not None:
+				self.add_query_param('LaunchConfiguration.DataDisk.' + str(depth1 + 1) + '.KmsKeyId', LaunchConfigurationDataDisks[depth1].get('KmsKeyId'))
+			if LaunchConfigurationDataDisks[depth1].get('DiskName') is not None:
+				self.add_query_param('LaunchConfiguration.DataDisk.' + str(depth1 + 1) + '.DiskName', LaunchConfigurationDataDisks[depth1].get('DiskName'))
+			if LaunchConfigurationDataDisks[depth1].get('Description') is not None:
+				self.add_query_param('LaunchConfiguration.DataDisk.' + str(depth1 + 1) + '.Description', LaunchConfigurationDataDisks[depth1].get('Description'))
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
