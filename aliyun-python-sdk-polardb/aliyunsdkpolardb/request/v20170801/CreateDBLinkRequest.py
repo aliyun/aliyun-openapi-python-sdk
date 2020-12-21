@@ -49,11 +49,23 @@ class CreateDBLinkRequest(RpcRequest):
 	def set_TargetDBName(self,TargetDBName):
 		self.add_query_param('TargetDBName',TargetDBName)
 
+	def get_TargetIp(self):
+		return self.get_query_params().get('TargetIp')
+
+	def set_TargetIp(self,TargetIp):
+		self.add_query_param('TargetIp',TargetIp)
+
 	def get_DBLinkName(self):
 		return self.get_query_params().get('DBLinkName')
 
 	def set_DBLinkName(self,DBLinkName):
 		self.add_query_param('DBLinkName',DBLinkName)
+
+	def get_TargetPort(self):
+		return self.get_query_params().get('TargetPort')
+
+	def set_TargetPort(self,TargetPort):
+		self.add_query_param('TargetPort',TargetPort)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -96,3 +108,9 @@ class CreateDBLinkRequest(RpcRequest):
 
 	def set_TargetDBAccount(self,TargetDBAccount):
 		self.add_query_param('TargetDBAccount',TargetDBAccount)
+
+	def get_VpcId(self):
+		return self.get_query_params().get('VpcId')
+
+	def set_VpcId(self,VpcId):
+		self.add_query_param('VpcId',VpcId)

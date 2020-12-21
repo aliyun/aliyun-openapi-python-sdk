@@ -43,6 +43,12 @@ class CreateDBNodesRequest(RpcRequest):
 	def set_ClientToken(self,ClientToken):
 		self.add_query_param('ClientToken',ClientToken)
 
+	def get_EndpointBindList(self):
+		return self.get_query_params().get('EndpointBindList')
+
+	def set_EndpointBindList(self,EndpointBindList):
+		self.add_query_param('EndpointBindList',EndpointBindList)
+
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
