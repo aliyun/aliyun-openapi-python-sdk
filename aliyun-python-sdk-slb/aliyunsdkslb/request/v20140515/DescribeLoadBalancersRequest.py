@@ -55,12 +55,6 @@ class DescribeLoadBalancersRequest(RpcRequest):
 	def set_MasterZoneId(self,MasterZoneId):
 		self.add_query_param('MasterZoneId',MasterZoneId)
 
-	def get_PageNumber(self):
-		return self.get_query_params().get('PageNumber')
-
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
-
 	def get_ResourceGroupId(self):
 		return self.get_query_params().get('ResourceGroupId')
 
@@ -73,41 +67,11 @@ class DescribeLoadBalancersRequest(RpcRequest):
 	def set_LoadBalancerName(self,LoadBalancerName):
 		self.add_query_param('LoadBalancerName',LoadBalancerName)
 
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_AddressType(self):
-		return self.get_query_params().get('AddressType')
-
-	def set_AddressType(self,AddressType):
-		self.add_query_param('AddressType',AddressType)
-
 	def get_SlaveZoneId(self):
 		return self.get_query_params().get('SlaveZoneId')
 
 	def set_SlaveZoneId(self,SlaveZoneId):
 		self.add_query_param('SlaveZoneId',SlaveZoneId)
-
-	def get_Address(self):
-		return self.get_query_params().get('Address')
-
-	def set_Address(self,Address):
-		self.add_query_param('Address',Address)
-
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
-
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_OwnerAccount(self):
-		return self.get_query_params().get('OwnerAccount')
-
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
@@ -120,12 +84,6 @@ class DescribeLoadBalancersRequest(RpcRequest):
 
 	def set_ServerId(self,ServerId):
 		self.add_query_param('ServerId',ServerId)
-
-	def get_LoadBalancerStatus(self):
-		return self.get_query_params().get('LoadBalancerStatus')
-
-	def set_LoadBalancerStatus(self,LoadBalancerStatus):
-		self.add_query_param('LoadBalancerStatus',LoadBalancerStatus)
 
 	def get_Tags(self):
 		return self.get_query_params().get('Tags')
@@ -156,6 +114,48 @@ class DescribeLoadBalancersRequest(RpcRequest):
 
 	def set_InternetChargeType(self,InternetChargeType):
 		self.add_query_param('InternetChargeType',InternetChargeType)
+
+	def get_PageNumber(self):
+		return self.get_query_params().get('PageNumber')
+
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)
+
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
+
+	def get_AddressType(self):
+		return self.get_query_params().get('AddressType')
+
+	def set_AddressType(self,AddressType):
+		self.add_query_param('AddressType',AddressType)
+
+	def get_Address(self):
+		return self.get_query_params().get('Address')
+
+	def set_Address(self,Address):
+		self.add_query_param('Address',Address)
+
+	def get_ResourceOwnerAccount(self):
+		return self.get_query_params().get('ResourceOwnerAccount')
+
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+
+	def get_OwnerAccount(self):
+		return self.get_query_params().get('OwnerAccount')
+
+	def set_OwnerAccount(self,OwnerAccount):
+		self.add_query_param('OwnerAccount',OwnerAccount)
+
+	def get_LoadBalancerStatus(self):
+		return self.get_query_params().get('LoadBalancerStatus')
+
+	def set_LoadBalancerStatus(self,LoadBalancerStatus):
+		self.add_query_param('LoadBalancerStatus',LoadBalancerStatus)
 
 	def get_VpcId(self):
 		return self.get_query_params().get('VpcId')

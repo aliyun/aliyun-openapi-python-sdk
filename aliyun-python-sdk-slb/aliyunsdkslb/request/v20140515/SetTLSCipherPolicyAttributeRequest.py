@@ -50,7 +50,7 @@ class SetTLSCipherPolicyAttributeRequest(RpcRequest):
 		self.add_query_param('TLSCipherPolicyId',TLSCipherPolicyId)
 
 	def get_Cipherss(self):
-		return self.get_query_params().get('Cipherss')
+		return self.get_query_params().get('Ciphers')
 
 	def set_Cipherss(self, Cipherss):
 		for depth1 in range(len(Cipherss)):
@@ -58,7 +58,7 @@ class SetTLSCipherPolicyAttributeRequest(RpcRequest):
 				self.add_query_param('Ciphers.' + str(depth1 + 1) , Cipherss[depth1])
 
 	def get_TLSVersionss(self):
-		return self.get_query_params().get('TLSVersionss')
+		return self.get_query_params().get('TLSVersions')
 
 	def set_TLSVersionss(self, TLSVersionss):
 		for depth1 in range(len(TLSVersionss)):
