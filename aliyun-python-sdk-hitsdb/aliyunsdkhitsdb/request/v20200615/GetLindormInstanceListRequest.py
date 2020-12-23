@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkhitsdb.endpoint import endpoint_data
 
-class RenameHiTSDBInstanceAliasRequest(RpcRequest):
+class GetLindormInstanceListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'hitsdb', '2017-06-01', 'RenameHiTSDBInstanceAlias','hitsdb')
+		RpcRequest.__init__(self, 'hitsdb', '2020-06-15', 'GetLindormInstanceList','hitsdb')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -37,11 +37,35 @@ class RenameHiTSDBInstanceAliasRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_SupportEngine(self):
+		return self.get_query_params().get('SupportEngine')
+
+	def set_SupportEngine(self,SupportEngine):
+		self.add_query_param('SupportEngine',SupportEngine)
+
+	def get_PageNumber(self):
+		return self.get_query_params().get('PageNumber')
+
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)
+
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
 
 	def set_SecurityToken(self,SecurityToken):
 		self.add_query_param('SecurityToken',SecurityToken)
+
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
+
+	def get_QueryStr(self):
+		return self.get_query_params().get('QueryStr')
+
+	def set_QueryStr(self,QueryStr):
+		self.add_query_param('QueryStr',QueryStr)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -55,20 +79,14 @@ class RenameHiTSDBInstanceAliasRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
-	def get_InstanceAlias(self):
-		return self.get_query_params().get('InstanceAlias')
-
-	def set_InstanceAlias(self,InstanceAlias):
-		self.add_query_param('InstanceAlias',InstanceAlias)
-
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_InstanceId(self):
-		return self.get_query_params().get('InstanceId')
+	def get_ServiceType(self):
+		return self.get_query_params().get('ServiceType')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
+	def set_ServiceType(self,ServiceType):
+		self.add_query_param('ServiceType',ServiceType)

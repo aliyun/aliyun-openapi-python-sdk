@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkhitsdb.endpoint import endpoint_data
 
-class SwitchHiTSDBInstancePublicNetRequest(RpcRequest):
+class UpdateInstanceIpWhiteListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'hitsdb', '2017-06-01', 'SwitchHiTSDBInstancePublicNet','hitsdb')
+		RpcRequest.__init__(self, 'hitsdb', '2020-06-15', 'UpdateInstanceIpWhiteList','hitsdb')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -43,12 +43,6 @@ class SwitchHiTSDBInstancePublicNetRequest(RpcRequest):
 	def set_SecurityToken(self,SecurityToken):
 		self.add_query_param('SecurityToken',SecurityToken)
 
-	def get_SwitchAction(self):
-		return self.get_query_params().get('SwitchAction')
-
-	def set_SwitchAction(self,SwitchAction):
-		self.add_query_param('SwitchAction',SwitchAction)
-
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -66,6 +60,18 @@ class SwitchHiTSDBInstancePublicNetRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_GroupName(self):
+		return self.get_query_params().get('GroupName')
+
+	def set_GroupName(self,GroupName):
+		self.add_query_param('GroupName',GroupName)
+
+	def get_SecurityIpList(self):
+		return self.get_query_params().get('SecurityIpList')
+
+	def set_SecurityIpList(self,SecurityIpList):
+		self.add_query_param('SecurityIpList',SecurityIpList)
 
 	def get_InstanceId(self):
 		return self.get_query_params().get('InstanceId')
