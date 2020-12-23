@@ -31,6 +31,12 @@ class DetectPedestrianIntrusionRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_DetectRegion(self):
+		return self.get_body_params().get('DetectRegion')
+
+	def set_DetectRegion(self,DetectRegion):
+		self.add_body_params('DetectRegion', DetectRegion)
+
 	def get_RegionType(self):
 		return self.get_body_params().get('RegionType')
 
@@ -42,9 +48,3 @@ class DetectPedestrianIntrusionRequest(RpcRequest):
 
 	def set_ImageURL(self,ImageURL):
 		self.add_body_params('ImageURL', ImageURL)
-
-	def get_Region(self):
-		return self.get_body_params().get('Region')
-
-	def set_Region(self,Region):
-		self.add_body_params('Region', Region)
