@@ -49,6 +49,12 @@ class CreateClusterRequest(RpcRequest):
 	def set_EngineVersion(self,EngineVersion):
 		self.add_query_param('EngineVersion',EngineVersion)
 
+	def get_ResourceGroupId(self):
+		return self.get_query_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self,ResourceGroupId):
+		self.add_query_param('ResourceGroupId',ResourceGroupId)
+
 	def get_Engine(self):
 		return self.get_query_params().get('Engine')
 

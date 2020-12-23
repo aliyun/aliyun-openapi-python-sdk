@@ -55,6 +55,12 @@ class CreateMultiZoneClusterRequest(RpcRequest):
 	def set_LogDiskType(self,LogDiskType):
 		self.add_query_param('LogDiskType',LogDiskType)
 
+	def get_ResourceGroupId(self):
+		return self.get_query_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self,ResourceGroupId):
+		self.add_query_param('ResourceGroupId',ResourceGroupId)
+
 	def get_PrimaryVSwitchId(self):
 		return self.get_query_params().get('PrimaryVSwitchId')
 

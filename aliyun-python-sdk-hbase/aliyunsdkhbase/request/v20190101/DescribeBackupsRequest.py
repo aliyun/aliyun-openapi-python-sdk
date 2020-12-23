@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkhbase.endpoint import endpoint_data
 
-class DescribeInstancesRequest(RpcRequest):
+class DescribeBackupsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'HBase', '2019-01-01', 'DescribeInstances','hbase')
+		RpcRequest.__init__(self, 'HBase', '2019-01-01', 'DescribeBackups','hbase')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,11 +31,11 @@ class DescribeInstancesRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_ClusterName(self):
-		return self.get_query_params().get('ClusterName')
+	def get_StartTime(self):
+		return self.get_query_params().get('StartTime')
 
-	def set_ClusterName(self,ClusterName):
-		self.add_query_param('ClusterName',ClusterName)
+	def set_StartTime(self,StartTime):
+		self.add_query_param('StartTime',StartTime)
 
 	def get_PageNumber(self):
 		return self.get_query_params().get('PageNumber')
@@ -43,30 +43,38 @@ class DescribeInstancesRequest(RpcRequest):
 	def set_PageNumber(self,PageNumber):
 		self.add_query_param('PageNumber',PageNumber)
 
-	def get_ResourceGroupId(self):
-		return self.get_query_params().get('ResourceGroupId')
-
-	def set_ResourceGroupId(self,ResourceGroupId):
-		self.add_query_param('ResourceGroupId',ResourceGroupId)
-
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
 
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
 
-	def get_Tags(self):
-		return self.get_query_params().get('Tag')
+	def get_StartTimeUTC(self):
+		return self.get_query_params().get('StartTimeUTC')
 
-	def set_Tags(self, Tags):
-		for depth1 in range(len(Tags)):
-			if Tags[depth1].get('Value') is not None:
-				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tags[depth1].get('Value'))
-			if Tags[depth1].get('Key') is not None:
-				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tags[depth1].get('Key'))
+	def set_StartTimeUTC(self,StartTimeUTC):
+		self.add_query_param('StartTimeUTC',StartTimeUTC)
 
-	def get_DbType(self):
-		return self.get_query_params().get('DbType')
+	def get_BackupId(self):
+		return self.get_query_params().get('BackupId')
 
-	def set_DbType(self,DbType):
-		self.add_query_param('DbType',DbType)
+	def set_BackupId(self,BackupId):
+		self.add_query_param('BackupId',BackupId)
+
+	def get_EndTime(self):
+		return self.get_query_params().get('EndTime')
+
+	def set_EndTime(self,EndTime):
+		self.add_query_param('EndTime',EndTime)
+
+	def get_ClusterId(self):
+		return self.get_query_params().get('ClusterId')
+
+	def set_ClusterId(self,ClusterId):
+		self.add_query_param('ClusterId',ClusterId)
+
+	def get_EndTimeUTC(self):
+		return self.get_query_params().get('EndTimeUTC')
+
+	def set_EndTimeUTC(self,EndTimeUTC):
+		self.add_query_param('EndTimeUTC',EndTimeUTC)
