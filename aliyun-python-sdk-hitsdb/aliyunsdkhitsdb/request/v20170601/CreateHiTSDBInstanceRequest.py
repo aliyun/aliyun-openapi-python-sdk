@@ -37,18 +37,6 @@ class CreateHiTSDBInstanceRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_ConnectionString(self):
-		return self.get_query_params().get('ConnectionString')
-
-	def set_ConnectionString(self,ConnectionString):
-		self.add_query_param('ConnectionString',ConnectionString)
-
-	def get_ClientToken(self):
-		return self.get_query_params().get('ClientToken')
-
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
-
 	def get_InstanceClass(self):
 		return self.get_query_params().get('InstanceClass')
 
