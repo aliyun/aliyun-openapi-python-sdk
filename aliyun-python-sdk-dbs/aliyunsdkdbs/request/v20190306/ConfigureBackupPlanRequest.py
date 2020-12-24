@@ -115,6 +115,12 @@ class ConfigureBackupPlanRequest(RpcRequest):
 	def set_DuplicationArchivePeriod(self,DuplicationArchivePeriod):
 		self.add_query_param('DuplicationArchivePeriod',DuplicationArchivePeriod)
 
+	def get_BackupLogIntervalSeconds(self):
+		return self.get_query_params().get('BackupLogIntervalSeconds')
+
+	def set_BackupLogIntervalSeconds(self,BackupLogIntervalSeconds):
+		self.add_query_param('BackupLogIntervalSeconds',BackupLogIntervalSeconds)
+
 	def get_CrossAliyunId(self):
 		return self.get_query_params().get('CrossAliyunId')
 
@@ -138,6 +144,12 @@ class ConfigureBackupPlanRequest(RpcRequest):
 
 	def set_BackupObjects(self,BackupObjects):
 		self.add_query_param('BackupObjects',BackupObjects)
+
+	def get_BackupRateLimit(self):
+		return self.get_query_params().get('BackupRateLimit')
+
+	def set_BackupRateLimit(self,BackupRateLimit):
+		self.add_query_param('BackupRateLimit',BackupRateLimit)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
