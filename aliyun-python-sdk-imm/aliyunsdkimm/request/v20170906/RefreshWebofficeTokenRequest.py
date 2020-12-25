@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkimm.endpoint import endpoint_data
 
-class CreateGroupFacesJobRequest(RpcRequest):
+class RefreshWebofficeTokenRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'imm', '2017-09-06', 'CreateGroupFacesJob')
+		RpcRequest.__init__(self, 'imm', '2017-09-06', 'RefreshWebofficeToken')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -37,20 +37,14 @@ class CreateGroupFacesJobRequest(RpcRequest):
 	def set_Project(self,Project):
 		self.add_query_param('Project',Project)
 
-	def get_NotifyEndpoint(self):
-		return self.get_query_params().get('NotifyEndpoint')
+	def get_AccessToken(self):
+		return self.get_query_params().get('AccessToken')
 
-	def set_NotifyEndpoint(self,NotifyEndpoint):
-		self.add_query_param('NotifyEndpoint',NotifyEndpoint)
+	def set_AccessToken(self,AccessToken):
+		self.add_query_param('AccessToken',AccessToken)
 
-	def get_NotifyTopicName(self):
-		return self.get_query_params().get('NotifyTopicName')
+	def get_RefreshToken(self):
+		return self.get_query_params().get('RefreshToken')
 
-	def set_NotifyTopicName(self,NotifyTopicName):
-		self.add_query_param('NotifyTopicName',NotifyTopicName)
-
-	def get_SetId(self):
-		return self.get_query_params().get('SetId')
-
-	def set_SetId(self,SetId):
-		self.add_query_param('SetId',SetId)
+	def set_RefreshToken(self,RefreshToken):
+		self.add_query_param('RefreshToken',RefreshToken)

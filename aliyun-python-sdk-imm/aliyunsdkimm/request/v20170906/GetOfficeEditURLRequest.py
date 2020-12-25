@@ -23,7 +23,7 @@ from aliyunsdkimm.endpoint import endpoint_data
 class GetOfficeEditURLRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'imm', '2017-09-06', 'GetOfficeEditURL','imm')
+		RpcRequest.__init__(self, 'imm', '2017-09-06', 'GetOfficeEditURL')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())

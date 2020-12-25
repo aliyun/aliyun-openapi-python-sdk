@@ -23,7 +23,7 @@ from aliyunsdkimm.endpoint import endpoint_data
 class UpdateImageRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'imm', '2017-09-06', 'UpdateImage','imm')
+		RpcRequest.__init__(self, 'imm', '2017-09-06', 'UpdateImage')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())

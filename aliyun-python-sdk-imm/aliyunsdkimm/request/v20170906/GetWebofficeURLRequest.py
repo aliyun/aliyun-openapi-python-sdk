@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkimm.endpoint import endpoint_data
 
-class IndexVideoRequest(RpcRequest):
+class GetWebofficeURLRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'imm', '2017-09-06', 'IndexVideo')
+		RpcRequest.__init__(self, 'imm', '2017-09-06', 'GetWebofficeURL')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,17 +31,23 @@ class IndexVideoRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_SrcType(self):
+		return self.get_query_params().get('SrcType')
+
+	def set_SrcType(self,SrcType):
+		self.add_query_param('SrcType',SrcType)
+
 	def get_Project(self):
 		return self.get_query_params().get('Project')
 
 	def set_Project(self,Project):
 		self.add_query_param('Project',Project)
 
-	def get_ExternalId(self):
-		return self.get_query_params().get('ExternalId')
+	def get_File(self):
+		return self.get_query_params().get('File')
 
-	def set_ExternalId(self,ExternalId):
-		self.add_query_param('ExternalId',ExternalId)
+	def set_File(self,File):
+		self.add_query_param('File',File)
 
 	def get_NotifyEndpoint(self):
 		return self.get_query_params().get('NotifyEndpoint')
@@ -49,50 +55,26 @@ class IndexVideoRequest(RpcRequest):
 	def set_NotifyEndpoint(self,NotifyEndpoint):
 		self.add_query_param('NotifyEndpoint',NotifyEndpoint)
 
+	def get_FileID(self):
+		return self.get_query_params().get('FileID')
+
+	def set_FileID(self,FileID):
+		self.add_query_param('FileID',FileID)
+
 	def get_NotifyTopicName(self):
 		return self.get_query_params().get('NotifyTopicName')
 
 	def set_NotifyTopicName(self,NotifyTopicName):
 		self.add_query_param('NotifyTopicName',NotifyTopicName)
 
-	def get_RemarksB(self):
-		return self.get_query_params().get('RemarksB')
+	def get_Permission(self):
+		return self.get_query_params().get('Permission')
 
-	def set_RemarksB(self,RemarksB):
-		self.add_query_param('RemarksB',RemarksB)
+	def set_Permission(self,Permission):
+		self.add_query_param('Permission',Permission)
 
-	def get_RemarksA(self):
-		return self.get_query_params().get('RemarksA')
+	def get_User(self):
+		return self.get_query_params().get('User')
 
-	def set_RemarksA(self,RemarksA):
-		self.add_query_param('RemarksA',RemarksA)
-
-	def get_VideoUri(self):
-		return self.get_query_params().get('VideoUri')
-
-	def set_VideoUri(self,VideoUri):
-		self.add_query_param('VideoUri',VideoUri)
-
-	def get_RemarksD(self):
-		return self.get_query_params().get('RemarksD')
-
-	def set_RemarksD(self,RemarksD):
-		self.add_query_param('RemarksD',RemarksD)
-
-	def get_RemarksC(self):
-		return self.get_query_params().get('RemarksC')
-
-	def set_RemarksC(self,RemarksC):
-		self.add_query_param('RemarksC',RemarksC)
-
-	def get_SetId(self):
-		return self.get_query_params().get('SetId')
-
-	def set_SetId(self,SetId):
-		self.add_query_param('SetId',SetId)
-
-	def get_TgtUri(self):
-		return self.get_query_params().get('TgtUri')
-
-	def set_TgtUri(self,TgtUri):
-		self.add_query_param('TgtUri',TgtUri)
+	def set_User(self,User):
+		self.add_query_param('User',User)

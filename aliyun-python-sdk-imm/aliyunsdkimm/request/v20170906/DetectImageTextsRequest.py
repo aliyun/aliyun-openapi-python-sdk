@@ -23,7 +23,7 @@ from aliyunsdkimm.endpoint import endpoint_data
 class DetectImageTextsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'imm', '2017-09-06', 'DetectImageTexts','imm')
+		RpcRequest.__init__(self, 'imm', '2017-09-06', 'DetectImageTexts')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())

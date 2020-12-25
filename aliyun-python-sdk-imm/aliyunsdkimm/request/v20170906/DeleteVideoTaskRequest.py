@@ -23,7 +23,7 @@ from aliyunsdkimm.endpoint import endpoint_data
 class DeleteVideoTaskRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'imm', '2017-09-06', 'DeleteVideoTask','imm')
+		RpcRequest.__init__(self, 'imm', '2017-09-06', 'DeleteVideoTask')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())

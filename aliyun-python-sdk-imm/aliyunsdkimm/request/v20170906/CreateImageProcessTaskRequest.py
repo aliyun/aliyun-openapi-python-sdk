@@ -23,7 +23,7 @@ from aliyunsdkimm.endpoint import endpoint_data
 class CreateImageProcessTaskRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'imm', '2017-09-06', 'CreateImageProcessTask','imm')
+		RpcRequest.__init__(self, 'imm', '2017-09-06', 'CreateImageProcessTask')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
