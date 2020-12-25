@@ -23,7 +23,7 @@ from aliyunsdkcbn.endpoint import endpoint_data
 class CreateCenRouteMapRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cbn', '2017-09-12', 'CreateCenRouteMap','Cbn')
+		RpcRequest.__init__(self, 'Cbn', '2017-09-12', 'CreateCenRouteMap','cbn')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -56,7 +56,7 @@ class CreateCenRouteMapRequest(RpcRequest):
 		self.add_query_param('NextPriority',NextPriority)
 
 	def get_DestinationCidrBlockss(self):
-		return self.get_query_params().get('DestinationCidrBlockss')
+		return self.get_query_params().get('DestinationCidrBlocks')
 
 	def set_DestinationCidrBlockss(self, DestinationCidrBlockss):
 		for depth1 in range(len(DestinationCidrBlockss)):
@@ -64,7 +64,7 @@ class CreateCenRouteMapRequest(RpcRequest):
 				self.add_query_param('DestinationCidrBlocks.' + str(depth1 + 1) , DestinationCidrBlockss[depth1])
 
 	def get_SourceInstanceIdss(self):
-		return self.get_query_params().get('SourceInstanceIdss')
+		return self.get_query_params().get('SourceInstanceIds')
 
 	def set_SourceInstanceIdss(self, SourceInstanceIdss):
 		for depth1 in range(len(SourceInstanceIdss)):
@@ -72,7 +72,7 @@ class CreateCenRouteMapRequest(RpcRequest):
 				self.add_query_param('SourceInstanceIds.' + str(depth1 + 1) , SourceInstanceIdss[depth1])
 
 	def get_SourceRegionIdss(self):
-		return self.get_query_params().get('SourceRegionIdss')
+		return self.get_query_params().get('SourceRegionIds')
 
 	def set_SourceRegionIdss(self, SourceRegionIdss):
 		for depth1 in range(len(SourceRegionIdss)):
@@ -80,7 +80,7 @@ class CreateCenRouteMapRequest(RpcRequest):
 				self.add_query_param('SourceRegionIds.' + str(depth1 + 1) , SourceRegionIdss[depth1])
 
 	def get_MatchAsnss(self):
-		return self.get_query_params().get('MatchAsnss')
+		return self.get_query_params().get('MatchAsns')
 
 	def set_MatchAsnss(self, MatchAsnss):
 		for depth1 in range(len(MatchAsnss)):
@@ -106,7 +106,7 @@ class CreateCenRouteMapRequest(RpcRequest):
 		self.add_query_param('Priority',Priority)
 
 	def get_DestinationChildInstanceTypess(self):
-		return self.get_query_params().get('DestinationChildInstanceTypess')
+		return self.get_query_params().get('DestinationChildInstanceTypes')
 
 	def set_DestinationChildInstanceTypess(self, DestinationChildInstanceTypess):
 		for depth1 in range(len(DestinationChildInstanceTypess)):
@@ -114,7 +114,7 @@ class CreateCenRouteMapRequest(RpcRequest):
 				self.add_query_param('DestinationChildInstanceTypes.' + str(depth1 + 1) , DestinationChildInstanceTypess[depth1])
 
 	def get_SourceRouteTableIdss(self):
-		return self.get_query_params().get('SourceRouteTableIdss')
+		return self.get_query_params().get('SourceRouteTableIds')
 
 	def set_SourceRouteTableIdss(self, SourceRouteTableIdss):
 		for depth1 in range(len(SourceRouteTableIdss)):
@@ -122,7 +122,7 @@ class CreateCenRouteMapRequest(RpcRequest):
 				self.add_query_param('SourceRouteTableIds.' + str(depth1 + 1) , SourceRouteTableIdss[depth1])
 
 	def get_SourceChildInstanceTypess(self):
-		return self.get_query_params().get('SourceChildInstanceTypess')
+		return self.get_query_params().get('SourceChildInstanceTypes')
 
 	def set_SourceChildInstanceTypess(self, SourceChildInstanceTypess):
 		for depth1 in range(len(SourceChildInstanceTypess)):
@@ -136,7 +136,7 @@ class CreateCenRouteMapRequest(RpcRequest):
 		self.add_query_param('CommunityOperateMode',CommunityOperateMode)
 
 	def get_OperateCommunitySets(self):
-		return self.get_query_params().get('OperateCommunitySets')
+		return self.get_query_params().get('OperateCommunitySet')
 
 	def set_OperateCommunitySets(self, OperateCommunitySets):
 		for depth1 in range(len(OperateCommunitySets)):
@@ -144,7 +144,7 @@ class CreateCenRouteMapRequest(RpcRequest):
 				self.add_query_param('OperateCommunitySet.' + str(depth1 + 1) , OperateCommunitySets[depth1])
 
 	def get_RouteTypess(self):
-		return self.get_query_params().get('RouteTypess')
+		return self.get_query_params().get('RouteTypes')
 
 	def set_RouteTypess(self, RouteTypess):
 		for depth1 in range(len(RouteTypess)):
@@ -176,7 +176,7 @@ class CreateCenRouteMapRequest(RpcRequest):
 		self.add_query_param('SourceInstanceIdsReverseMatch',SourceInstanceIdsReverseMatch)
 
 	def get_DestinationRouteTableIdss(self):
-		return self.get_query_params().get('DestinationRouteTableIdss')
+		return self.get_query_params().get('DestinationRouteTableIds')
 
 	def set_DestinationRouteTableIdss(self, DestinationRouteTableIdss):
 		for depth1 in range(len(DestinationRouteTableIdss)):
@@ -190,7 +190,7 @@ class CreateCenRouteMapRequest(RpcRequest):
 		self.add_query_param('TransmitDirection',TransmitDirection)
 
 	def get_DestinationInstanceIdss(self):
-		return self.get_query_params().get('DestinationInstanceIdss')
+		return self.get_query_params().get('DestinationInstanceIds')
 
 	def set_DestinationInstanceIdss(self, DestinationInstanceIdss):
 		for depth1 in range(len(DestinationInstanceIdss)):
@@ -216,7 +216,7 @@ class CreateCenRouteMapRequest(RpcRequest):
 		self.add_query_param('DestinationInstanceIdsReverseMatch',DestinationInstanceIdsReverseMatch)
 
 	def get_PrependAsPaths(self):
-		return self.get_query_params().get('PrependAsPaths')
+		return self.get_query_params().get('PrependAsPath')
 
 	def set_PrependAsPaths(self, PrependAsPaths):
 		for depth1 in range(len(PrependAsPaths)):
@@ -230,7 +230,7 @@ class CreateCenRouteMapRequest(RpcRequest):
 		self.add_query_param('AsPathMatchMode',AsPathMatchMode)
 
 	def get_MatchCommunitySets(self):
-		return self.get_query_params().get('MatchCommunitySets')
+		return self.get_query_params().get('MatchCommunitySet')
 
 	def set_MatchCommunitySets(self, MatchCommunitySets):
 		for depth1 in range(len(MatchCommunitySets)):

@@ -23,7 +23,7 @@ from aliyunsdkcbn.endpoint import endpoint_data
 class UnroutePrivateZoneInCenToVpcRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cbn', '2017-09-12', 'UnroutePrivateZoneInCenToVpc','Cbn')
+		RpcRequest.__init__(self, 'Cbn', '2017-09-12', 'UnroutePrivateZoneInCenToVpc','cbn')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())

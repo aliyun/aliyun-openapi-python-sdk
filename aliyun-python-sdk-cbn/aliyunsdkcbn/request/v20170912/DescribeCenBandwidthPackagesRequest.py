@@ -23,7 +23,7 @@ from aliyunsdkcbn.endpoint import endpoint_data
 class DescribeCenBandwidthPackagesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cbn', '2017-09-12', 'DescribeCenBandwidthPackages','Cbn')
+		RpcRequest.__init__(self, 'Cbn', '2017-09-12', 'DescribeCenBandwidthPackages','cbn')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -80,7 +80,7 @@ class DescribeCenBandwidthPackagesRequest(RpcRequest):
 		self.add_query_param('OwnerId',OwnerId)
 
 	def get_Filters(self):
-		return self.get_query_params().get('Filters')
+		return self.get_query_params().get('Filter')
 
 	def set_Filters(self, Filters):
 		for depth1 in range(len(Filters)):

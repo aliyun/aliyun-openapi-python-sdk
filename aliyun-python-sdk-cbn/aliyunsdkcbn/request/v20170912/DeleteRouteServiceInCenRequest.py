@@ -23,7 +23,7 @@ from aliyunsdkcbn.endpoint import endpoint_data
 class DeleteRouteServiceInCenRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cbn', '2017-09-12', 'DeleteRouteServiceInCen','Cbn')
+		RpcRequest.__init__(self, 'Cbn', '2017-09-12', 'DeleteRouteServiceInCen','cbn')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())

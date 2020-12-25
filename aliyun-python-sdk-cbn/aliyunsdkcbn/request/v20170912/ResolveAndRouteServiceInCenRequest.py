@@ -23,7 +23,7 @@ from aliyunsdkcbn.endpoint import endpoint_data
 class ResolveAndRouteServiceInCenRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cbn', '2017-09-12', 'ResolveAndRouteServiceInCen','Cbn')
+		RpcRequest.__init__(self, 'Cbn', '2017-09-12', 'ResolveAndRouteServiceInCen','cbn')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -92,7 +92,7 @@ class ResolveAndRouteServiceInCenRequest(RpcRequest):
 		self.add_query_param('OwnerId',OwnerId)
 
 	def get_AccessRegionIdss(self):
-		return self.get_query_params().get('AccessRegionIdss')
+		return self.get_query_params().get('AccessRegionIds')
 
 	def set_AccessRegionIdss(self, AccessRegionIdss):
 		for depth1 in range(len(AccessRegionIdss)):

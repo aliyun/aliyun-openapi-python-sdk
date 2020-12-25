@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcbn.endpoint import endpoint_data
 
-class DescribeRouteServicesInCenRequest(RpcRequest):
+class DeleteCenChildInstanceRouteEntryToCenRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cbn', '2017-09-12', 'DescribeRouteServicesInCen','cbn')
+		RpcRequest.__init__(self, 'Cbn', '2017-09-12', 'DeleteCenChildInstanceRouteEntryToCen','cbn')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -43,41 +43,17 @@ class DescribeRouteServicesInCenRequest(RpcRequest):
 	def set_CenId(self,CenId):
 		self.add_query_param('CenId',CenId)
 
-	def get_AccessRegionId(self):
-		return self.get_query_params().get('AccessRegionId')
+	def get_ChildInstanceRegionId(self):
+		return self.get_query_params().get('ChildInstanceRegionId')
 
-	def set_AccessRegionId(self,AccessRegionId):
-		self.add_query_param('AccessRegionId',AccessRegionId)
+	def set_ChildInstanceRegionId(self,ChildInstanceRegionId):
+		self.add_query_param('ChildInstanceRegionId',ChildInstanceRegionId)
 
-	def get_PageNumber(self):
-		return self.get_query_params().get('PageNumber')
+	def get_RouteTableId(self):
+		return self.get_query_params().get('RouteTableId')
 
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
-
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_Host(self):
-		return self.get_query_params().get('Host')
-
-	def set_Host(self,Host):
-		self.add_query_param('Host',Host)
-
-	def get_HostRegionId(self):
-		return self.get_query_params().get('HostRegionId')
-
-	def set_HostRegionId(self,HostRegionId):
-		self.add_query_param('HostRegionId',HostRegionId)
-
-	def get_HostVpcId(self):
-		return self.get_query_params().get('HostVpcId')
-
-	def set_HostVpcId(self,HostVpcId):
-		self.add_query_param('HostVpcId',HostVpcId)
+	def set_RouteTableId(self,RouteTableId):
+		self.add_query_param('RouteTableId',RouteTableId)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -91,8 +67,32 @@ class DescribeRouteServicesInCenRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
+	def get_DestinationCidrBlock(self):
+		return self.get_query_params().get('DestinationCidrBlock')
+
+	def set_DestinationCidrBlock(self,DestinationCidrBlock):
+		self.add_query_param('DestinationCidrBlock',DestinationCidrBlock)
+
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_ChildInstanceType(self):
+		return self.get_query_params().get('ChildInstanceType')
+
+	def set_ChildInstanceType(self,ChildInstanceType):
+		self.add_query_param('ChildInstanceType',ChildInstanceType)
+
+	def get_ChildInstanceId(self):
+		return self.get_query_params().get('ChildInstanceId')
+
+	def set_ChildInstanceId(self,ChildInstanceId):
+		self.add_query_param('ChildInstanceId',ChildInstanceId)
+
+	def get_ChildInstanceAliUid(self):
+		return self.get_query_params().get('ChildInstanceAliUid')
+
+	def set_ChildInstanceAliUid(self,ChildInstanceAliUid):
+		self.add_query_param('ChildInstanceAliUid',ChildInstanceAliUid)
