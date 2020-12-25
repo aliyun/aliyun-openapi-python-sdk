@@ -23,7 +23,7 @@ from aliyunsdkemr.endpoint import endpoint_data
 class ListFlowInstanceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'ListFlowInstance')
+		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'ListFlowInstance','emr')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -38,6 +38,12 @@ class ListFlowInstanceRequest(RpcRequest):
 		for depth1 in range(len(StatusLists)):
 			if StatusLists[depth1] is not None:
 				self.add_query_param('StatusList.' + str(depth1 + 1) , StatusLists[depth1])
+
+	def get_NodeInstanceId(self):
+		return self.get_query_params().get('NodeInstanceId')
+
+	def set_NodeInstanceId(self,NodeInstanceId):
+		self.add_query_param('NodeInstanceId',NodeInstanceId)
 
 	def get_PageNumber(self):
 		return self.get_query_params().get('PageNumber')

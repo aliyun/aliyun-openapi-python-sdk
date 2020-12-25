@@ -23,7 +23,7 @@ from aliyunsdkemr.endpoint import endpoint_data
 class DetachAndReleaseClusterEniRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'DetachAndReleaseClusterEni')
+		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'DetachAndReleaseClusterEni','emr')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())

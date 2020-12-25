@@ -23,7 +23,7 @@ from aliyunsdkemr.endpoint import endpoint_data
 class CreateExecutionPlanRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'CreateExecutionPlan')
+		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'CreateExecutionPlan','emr')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -80,10 +80,16 @@ class CreateExecutionPlanRequest(RpcRequest):
 		for depth1 in range(len(BootstrapActions)):
 			if BootstrapActions[depth1].get('Path') is not None:
 				self.add_query_param('BootstrapAction.' + str(depth1 + 1) + '.Path', BootstrapActions[depth1].get('Path'))
+			if BootstrapActions[depth1].get('ExecutionTarget') is not None:
+				self.add_query_param('BootstrapAction.' + str(depth1 + 1) + '.ExecutionTarget', BootstrapActions[depth1].get('ExecutionTarget'))
+			if BootstrapActions[depth1].get('ExecutionMoment') is not None:
+				self.add_query_param('BootstrapAction.' + str(depth1 + 1) + '.ExecutionMoment', BootstrapActions[depth1].get('ExecutionMoment'))
 			if BootstrapActions[depth1].get('Arg') is not None:
 				self.add_query_param('BootstrapAction.' + str(depth1 + 1) + '.Arg', BootstrapActions[depth1].get('Arg'))
 			if BootstrapActions[depth1].get('Name') is not None:
 				self.add_query_param('BootstrapAction.' + str(depth1 + 1) + '.Name', BootstrapActions[depth1].get('Name'))
+			if BootstrapActions[depth1].get('ExecutionFailStrategy') is not None:
+				self.add_query_param('BootstrapAction.' + str(depth1 + 1) + '.ExecutionFailStrategy', BootstrapActions[depth1].get('ExecutionFailStrategy'))
 
 	def get_EmrVer(self):
 		return self.get_query_params().get('EmrVer')

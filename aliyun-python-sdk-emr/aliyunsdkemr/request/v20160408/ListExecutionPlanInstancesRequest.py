@@ -23,7 +23,7 @@ from aliyunsdkemr.endpoint import endpoint_data
 class ListExecutionPlanInstancesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'ListExecutionPlanInstances')
+		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'ListExecutionPlanInstances','emr')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())

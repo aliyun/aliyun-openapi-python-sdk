@@ -23,7 +23,7 @@ from aliyunsdkemr.endpoint import endpoint_data
 class DescribeFlowCategoryTreeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'DescribeFlowCategoryTree')
+		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'DescribeFlowCategoryTree','emr')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())

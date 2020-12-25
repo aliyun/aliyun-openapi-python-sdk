@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkemr.endpoint import endpoint_data
 
-class DescribeEmrMainVersionRequest(RpcRequest):
+class ListMetaDataSourceClusterForOuterRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'DescribeEmrMainVersion')
+		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'ListMetaDataSourceClusterForOuter','emr')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -37,8 +37,36 @@ class DescribeEmrMainVersionRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_EmrVersion(self):
-		return self.get_query_params().get('EmrVersion')
+	def get_ClusterIds(self):
+		return self.get_query_params().get('ClusterId')
 
-	def set_EmrVersion(self,EmrVersion):
-		self.add_query_param('EmrVersion',EmrVersion)
+	def set_ClusterIds(self, ClusterIds):
+		for depth1 in range(len(ClusterIds)):
+			if ClusterIds[depth1] is not None:
+				self.add_query_param('ClusterId.' + str(depth1 + 1) , ClusterIds[depth1])
+
+	def get_UserId(self):
+		return self.get_query_params().get('UserId')
+
+	def set_UserId(self,UserId):
+		self.add_query_param('UserId',UserId)
+
+	def get_PageNumber(self):
+		return self.get_query_params().get('PageNumber')
+
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)
+
+	def get_DataSourceIds(self):
+		return self.get_query_params().get('DataSourceId')
+
+	def set_DataSourceIds(self, DataSourceIds):
+		for depth1 in range(len(DataSourceIds)):
+			if DataSourceIds[depth1] is not None:
+				self.add_query_param('DataSourceId.' + str(depth1 + 1) , DataSourceIds[depth1])
+
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)

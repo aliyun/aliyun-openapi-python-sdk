@@ -23,7 +23,7 @@ from aliyunsdkemr.endpoint import endpoint_data
 class ListScalingActivityV2Request(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'ListScalingActivityV2')
+		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'ListScalingActivityV2','emr')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -61,11 +61,23 @@ class ListScalingActivityV2Request(RpcRequest):
 	def set_PageNumber(self,PageNumber):
 		self.add_query_param('PageNumber',PageNumber)
 
+	def get_HostGroupName(self):
+		return self.get_query_params().get('HostGroupName')
+
+	def set_HostGroupName(self,HostGroupName):
+		self.add_query_param('HostGroupName',HostGroupName)
+
 	def get_ScalingGroupBizId(self):
 		return self.get_query_params().get('ScalingGroupBizId')
 
 	def set_ScalingGroupBizId(self,ScalingGroupBizId):
 		self.add_query_param('ScalingGroupBizId',ScalingGroupBizId)
+
+	def get_ScalingRuleName(self):
+		return self.get_query_params().get('ScalingRuleName')
+
+	def set_ScalingRuleName(self,ScalingRuleName):
+		self.add_query_param('ScalingRuleName',ScalingRuleName)
 
 	def get_ResourceGroupId(self):
 		return self.get_query_params().get('ResourceGroupId')
@@ -102,3 +114,9 @@ class ListScalingActivityV2Request(RpcRequest):
 
 	def set_HostGroupId(self,HostGroupId):
 		self.add_query_param('HostGroupId',HostGroupId)
+
+	def get_Status(self):
+		return self.get_query_params().get('Status')
+
+	def set_Status(self,Status):
+		self.add_query_param('Status',Status)

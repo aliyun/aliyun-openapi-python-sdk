@@ -23,7 +23,7 @@ from aliyunsdkemr.endpoint import endpoint_data
 class ListBackupsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'ListBackups')
+		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'ListBackups','emr')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())

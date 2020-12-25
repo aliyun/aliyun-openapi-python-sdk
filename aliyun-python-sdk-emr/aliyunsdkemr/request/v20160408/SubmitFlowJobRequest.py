@@ -23,7 +23,7 @@ from aliyunsdkemr.endpoint import endpoint_data
 class SubmitFlowJobRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'SubmitFlowJob')
+		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'SubmitFlowJob','emr')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -60,6 +60,12 @@ class SubmitFlowJobRequest(RpcRequest):
 
 	def set_Namespace(self,Namespace):
 		self.add_query_param('Namespace',Namespace)
+
+	def get_JobInstanceId(self):
+		return self.get_query_params().get('JobInstanceId')
+
+	def set_JobInstanceId(self,JobInstanceId):
+		self.add_query_param('JobInstanceId',JobInstanceId)
 
 	def get_ProjectId(self):
 		return self.get_query_params().get('ProjectId')

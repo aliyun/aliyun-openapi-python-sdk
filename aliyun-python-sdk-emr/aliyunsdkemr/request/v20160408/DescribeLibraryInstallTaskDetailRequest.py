@@ -23,7 +23,7 @@ from aliyunsdkemr.endpoint import endpoint_data
 class DescribeLibraryInstallTaskDetailRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'DescribeLibraryInstallTaskDetail')
+		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'DescribeLibraryInstallTaskDetail','emr')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
