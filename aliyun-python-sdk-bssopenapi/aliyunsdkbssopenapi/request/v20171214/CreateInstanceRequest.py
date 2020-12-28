@@ -74,7 +74,7 @@ class CreateInstanceRequest(RpcRequest):
 		self.add_query_param('RenewPeriod',RenewPeriod)
 
 	def get_Parameters(self):
-		return self.get_query_params().get('Parameters')
+		return self.get_query_params().get('Parameter')
 
 	def set_Parameters(self, Parameters):
 		for depth1 in range(len(Parameters)):

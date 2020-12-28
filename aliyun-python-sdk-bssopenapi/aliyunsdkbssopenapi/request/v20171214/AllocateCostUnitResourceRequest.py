@@ -32,7 +32,7 @@ class AllocateCostUnitResourceRequest(RpcRequest):
 
 
 	def get_ResourceInstanceLists(self):
-		return self.get_query_params().get('ResourceInstanceLists')
+		return self.get_query_params().get('ResourceInstanceList')
 
 	def set_ResourceInstanceLists(self, ResourceInstanceLists):
 		for depth1 in range(len(ResourceInstanceLists)):
@@ -40,10 +40,10 @@ class AllocateCostUnitResourceRequest(RpcRequest):
 				self.add_query_param('ResourceInstanceList.' + str(depth1 + 1) + '.ResourceId', ResourceInstanceLists[depth1].get('ResourceId'))
 			if ResourceInstanceLists[depth1].get('CommodityCode') is not None:
 				self.add_query_param('ResourceInstanceList.' + str(depth1 + 1) + '.CommodityCode', ResourceInstanceLists[depth1].get('CommodityCode'))
-			if ResourceInstanceLists[depth1].get('ResourceUserId') is not None:
-				self.add_query_param('ResourceInstanceList.' + str(depth1 + 1) + '.ResourceUserId', ResourceInstanceLists[depth1].get('ResourceUserId'))
 			if ResourceInstanceLists[depth1].get('ApportionCode') is not None:
 				self.add_query_param('ResourceInstanceList.' + str(depth1 + 1) + '.ApportionCode', ResourceInstanceLists[depth1].get('ApportionCode'))
+			if ResourceInstanceLists[depth1].get('ResourceUserId') is not None:
+				self.add_query_param('ResourceInstanceList.' + str(depth1 + 1) + '.ResourceUserId', ResourceInstanceLists[depth1].get('ResourceUserId'))
 
 	def get_FromUnitId(self):
 		return self.get_query_params().get('FromUnitId')

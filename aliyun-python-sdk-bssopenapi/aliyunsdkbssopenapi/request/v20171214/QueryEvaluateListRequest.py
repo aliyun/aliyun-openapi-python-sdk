@@ -80,7 +80,7 @@ class QueryEvaluateListRequest(RpcRequest):
 		self.add_query_param('BillCycle',BillCycle)
 
 	def get_BizTypeLists(self):
-		return self.get_query_params().get('BizTypeLists')
+		return self.get_query_params().get('BizTypeList')
 
 	def set_BizTypeLists(self, BizTypeLists):
 		for depth1 in range(len(BizTypeLists)):

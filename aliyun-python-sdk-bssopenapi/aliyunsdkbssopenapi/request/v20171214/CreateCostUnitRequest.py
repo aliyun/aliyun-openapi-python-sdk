@@ -32,7 +32,7 @@ class CreateCostUnitRequest(RpcRequest):
 
 
 	def get_UnitEntityLists(self):
-		return self.get_query_params().get('UnitEntityLists')
+		return self.get_query_params().get('UnitEntityList')
 
 	def set_UnitEntityLists(self, UnitEntityLists):
 		for depth1 in range(len(UnitEntityLists)):

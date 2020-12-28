@@ -44,7 +44,7 @@ class GetPayAsYouGoPriceRequest(RpcRequest):
 		self.add_query_param('SubscriptionType',SubscriptionType)
 
 	def get_ModuleLists(self):
-		return self.get_query_params().get('ModuleLists')
+		return self.get_query_params().get('ModuleList')
 
 	def set_ModuleLists(self, ModuleLists):
 		for depth1 in range(len(ModuleLists)):

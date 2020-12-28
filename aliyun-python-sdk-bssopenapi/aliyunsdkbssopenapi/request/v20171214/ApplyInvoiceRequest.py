@@ -80,7 +80,7 @@ class ApplyInvoiceRequest(RpcRequest):
 		self.add_query_param('CustomerId',CustomerId)
 
 	def get_SelectedIdss(self):
-		return self.get_query_params().get('SelectedIdss')
+		return self.get_query_params().get('SelectedIds')
 
 	def set_SelectedIdss(self, SelectedIdss):
 		for depth1 in range(len(SelectedIdss)):
