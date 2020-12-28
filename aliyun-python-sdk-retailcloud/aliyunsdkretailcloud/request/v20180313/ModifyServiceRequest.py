@@ -23,7 +23,7 @@ from aliyunsdkretailcloud.endpoint import endpoint_data
 class ModifyServiceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'retailcloud', '2018-03-13', 'ModifyService')
+		RpcRequest.__init__(self, 'retailcloud', '2018-03-13', 'ModifyService','retailcloud')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -38,7 +38,7 @@ class ModifyServiceRequest(RpcRequest):
 		self.add_query_param('Name',Name)
 
 	def get_PortMappingss(self):
-		return self.get_body_params().get('PortMappingss')
+		return self.get_body_params().get('PortMappings')
 
 	def set_PortMappingss(self, PortMappingss):
 		for depth1 in range(len(PortMappingss)):

@@ -23,7 +23,7 @@ from aliyunsdkretailcloud.endpoint import endpoint_data
 class RemoveClusterNodeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'retailcloud', '2018-03-13', 'RemoveClusterNode')
+		RpcRequest.__init__(self, 'retailcloud', '2018-03-13', 'RemoveClusterNode','retailcloud')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -32,7 +32,7 @@ class RemoveClusterNodeRequest(RpcRequest):
 
 
 	def get_EcsInstanceIdLists(self):
-		return self.get_query_params().get('EcsInstanceIdLists')
+		return self.get_query_params().get('EcsInstanceIdList')
 
 	def set_EcsInstanceIdLists(self, EcsInstanceIdLists):
 		for depth1 in range(len(EcsInstanceIdLists)):

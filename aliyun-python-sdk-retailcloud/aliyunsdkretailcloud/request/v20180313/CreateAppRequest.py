@@ -23,7 +23,7 @@ from aliyunsdkretailcloud.endpoint import endpoint_data
 class CreateAppRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'retailcloud', '2018-03-13', 'CreateApp')
+		RpcRequest.__init__(self, 'retailcloud', '2018-03-13', 'CreateApp','retailcloud')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -62,7 +62,7 @@ class CreateAppRequest(RpcRequest):
 		self.add_body_params('Title', Title)
 
 	def get_MiddleWareIdLists(self):
-		return self.get_body_params().get('MiddleWareIdLists')
+		return self.get_body_params().get('MiddleWareIdList')
 
 	def set_MiddleWareIdLists(self, MiddleWareIdLists):
 		for depth1 in range(len(MiddleWareIdLists)):
@@ -82,7 +82,7 @@ class CreateAppRequest(RpcRequest):
 		self.add_body_params('ServiceType', ServiceType)
 
 	def get_UserRoless(self):
-		return self.get_body_params().get('UserRoless')
+		return self.get_body_params().get('UserRoles')
 
 	def set_UserRoless(self, UserRoless):
 		for depth1 in range(len(UserRoless)):

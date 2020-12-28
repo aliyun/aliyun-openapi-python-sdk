@@ -23,7 +23,7 @@ from aliyunsdkretailcloud.endpoint import endpoint_data
 class CreateClusterRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'retailcloud', '2018-03-13', 'CreateCluster')
+		RpcRequest.__init__(self, 'retailcloud', '2018-03-13', 'CreateCluster','retailcloud')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -44,7 +44,7 @@ class CreateClusterRequest(RpcRequest):
 		self.add_query_param('CreateWithLogIntegration',CreateWithLogIntegration)
 
 	def get_Vswitchidss(self):
-		return self.get_query_params().get('Vswitchidss')
+		return self.get_query_params().get('Vswitchids')
 
 	def set_Vswitchidss(self, Vswitchidss):
 		for depth1 in range(len(Vswitchidss)):

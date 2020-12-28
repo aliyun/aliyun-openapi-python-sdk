@@ -23,7 +23,7 @@ from aliyunsdkretailcloud.endpoint import endpoint_data
 class ListPodsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'retailcloud', '2018-03-13', 'ListPods')
+		RpcRequest.__init__(self, 'retailcloud', '2018-03-13', 'ListPods','retailcloud')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -32,7 +32,7 @@ class ListPodsRequest(RpcRequest):
 
 
 	def get_StatusLists(self):
-		return self.get_body_params().get('StatusLists')
+		return self.get_body_params().get('StatusList')
 
 	def set_StatusLists(self, StatusLists):
 		for depth1 in range(len(StatusLists)):
@@ -58,7 +58,7 @@ class ListPodsRequest(RpcRequest):
 		self.add_query_param('PageNumber',PageNumber)
 
 	def get_ResultLists(self):
-		return self.get_body_params().get('ResultLists')
+		return self.get_body_params().get('ResultList')
 
 	def set_ResultLists(self, ResultLists):
 		for depth1 in range(len(ResultLists)):

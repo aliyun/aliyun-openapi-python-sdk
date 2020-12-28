@@ -23,7 +23,7 @@ from aliyunsdkretailcloud.endpoint import endpoint_data
 class UpdateDeployConfigRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'retailcloud', '2018-03-13', 'UpdateDeployConfig')
+		RpcRequest.__init__(self, 'retailcloud', '2018-03-13', 'UpdateDeployConfig','retailcloud')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -38,7 +38,7 @@ class UpdateDeployConfigRequest(RpcRequest):
 		self.add_query_param('CodePath',CodePath)
 
 	def get_ConfigMapLists(self):
-		return self.get_query_params().get('ConfigMapLists')
+		return self.get_query_params().get('ConfigMapList')
 
 	def set_ConfigMapLists(self, ConfigMapLists):
 		for depth1 in range(len(ConfigMapLists)):
@@ -64,7 +64,7 @@ class UpdateDeployConfigRequest(RpcRequest):
 		self.add_query_param('AppId',AppId)
 
 	def get_SecretLists(self):
-		return self.get_query_params().get('SecretLists')
+		return self.get_query_params().get('SecretList')
 
 	def set_SecretLists(self, SecretLists):
 		for depth1 in range(len(SecretLists)):

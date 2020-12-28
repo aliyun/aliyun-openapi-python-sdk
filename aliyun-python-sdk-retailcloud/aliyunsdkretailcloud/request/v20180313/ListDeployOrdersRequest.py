@@ -23,7 +23,7 @@ from aliyunsdkretailcloud.endpoint import endpoint_data
 class ListDeployOrdersRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'retailcloud', '2018-03-13', 'ListDeployOrders')
+		RpcRequest.__init__(self, 'retailcloud', '2018-03-13', 'ListDeployOrders','retailcloud')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -38,7 +38,7 @@ class ListDeployOrdersRequest(RpcRequest):
 		self.add_query_param('StartTimeGreaterThanOrEqualTo',StartTimeGreaterThanOrEqualTo)
 
 	def get_StatusLists(self):
-		return self.get_body_params().get('StatusLists')
+		return self.get_body_params().get('StatusList')
 
 	def set_StatusLists(self, StatusLists):
 		for depth1 in range(len(StatusLists)):
@@ -70,7 +70,7 @@ class ListDeployOrdersRequest(RpcRequest):
 		self.add_query_param('PauseType',PauseType)
 
 	def get_ResultLists(self):
-		return self.get_body_params().get('ResultLists')
+		return self.get_body_params().get('ResultList')
 
 	def set_ResultLists(self, ResultLists):
 		for depth1 in range(len(ResultLists)):
