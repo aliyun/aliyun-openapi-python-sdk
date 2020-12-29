@@ -37,6 +37,12 @@ class AttachInstanceRamRoleRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_Policy(self):
+		return self.get_query_params().get('Policy')
+
+	def set_Policy(self,Policy):
+		self.add_query_param('Policy',Policy)
+
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 

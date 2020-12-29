@@ -141,6 +141,12 @@ class CreateLaunchTemplateRequest(RpcRequest):
 	def set_SpotStrategy(self,SpotStrategy):
 		self.add_query_param('SpotStrategy',SpotStrategy)
 
+	def get_PrivateIpAddress(self):
+		return self.get_query_params().get('PrivateIpAddress')
+
+	def set_PrivateIpAddress(self,PrivateIpAddress):
+		self.add_query_param('PrivateIpAddress',PrivateIpAddress)
+
 	def get_InstanceName(self):
 		return self.get_query_params().get('InstanceName')
 
@@ -170,6 +176,12 @@ class CreateLaunchTemplateRequest(RpcRequest):
 
 	def set_VersionDescription(self,VersionDescription):
 		self.add_query_param('VersionDescription',VersionDescription)
+
+	def get_SystemDiskDeleteWithInstance(self):
+		return self.get_query_params().get('SystemDisk.DeleteWithInstance')
+
+	def set_SystemDiskDeleteWithInstance(self,SystemDiskDeleteWithInstance):
+		self.add_query_param('SystemDisk.DeleteWithInstance',SystemDiskDeleteWithInstance)
 
 	def get_ImageId(self):
 		return self.get_query_params().get('ImageId')
@@ -206,6 +218,12 @@ class CreateLaunchTemplateRequest(RpcRequest):
 
 	def set_SystemDiskCategory(self,SystemDiskCategory):
 		self.add_query_param('SystemDisk.Category',SystemDiskCategory)
+
+	def get_SystemDiskPerformanceLevel(self):
+		return self.get_query_params().get('SystemDisk.PerformanceLevel')
+
+	def set_SystemDiskPerformanceLevel(self,SystemDiskPerformanceLevel):
+		self.add_query_param('SystemDisk.PerformanceLevel',SystemDiskPerformanceLevel)
 
 	def get_UserData(self):
 		return self.get_query_params().get('UserData')
@@ -252,6 +270,10 @@ class CreateLaunchTemplateRequest(RpcRequest):
 				self.add_query_param('NetworkInterface.' + str(depth1 + 1) + '.NetworkInterfaceName', NetworkInterfaces[depth1].get('NetworkInterfaceName'))
 			if NetworkInterfaces[depth1].get('Description') is not None:
 				self.add_query_param('NetworkInterface.' + str(depth1 + 1) + '.Description', NetworkInterfaces[depth1].get('Description'))
+			if NetworkInterfaces[depth1].get('SecurityGroupIds') is not None:
+				for depth2 in range(len(NetworkInterfaces[depth1].get('SecurityGroupIds'))):
+					if NetworkInterfaces[depth1].get('SecurityGroupIds')[depth2] is not None:
+						self.add_query_param('NetworkInterface.' + str(depth1 + 1) + '.SecurityGroupIds.' + str(depth2 + 1) , NetworkInterfaces[depth1].get('SecurityGroupIds')[depth2])
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -289,6 +311,14 @@ class CreateLaunchTemplateRequest(RpcRequest):
 	def set_SpotDuration(self,SpotDuration):
 		self.add_query_param('SpotDuration',SpotDuration)
 
+	def get_SecurityGroupIdss(self):
+		return self.get_query_params().get('SecurityGroupIds')
+
+	def set_SecurityGroupIdss(self, SecurityGroupIdss):
+		for depth1 in range(len(SecurityGroupIdss)):
+			if SecurityGroupIdss[depth1] is not None:
+				self.add_query_param('SecurityGroupIds.' + str(depth1 + 1) , SecurityGroupIdss[depth1])
+
 	def get_DataDisks(self):
 		return self.get_query_params().get('DataDisk')
 
@@ -310,6 +340,8 @@ class CreateLaunchTemplateRequest(RpcRequest):
 				self.add_query_param('DataDisk.' + str(depth1 + 1) + '.DeleteWithInstance', DataDisks[depth1].get('DeleteWithInstance'))
 			if DataDisks[depth1].get('Device') is not None:
 				self.add_query_param('DataDisk.' + str(depth1 + 1) + '.Device', DataDisks[depth1].get('Device'))
+			if DataDisks[depth1].get('PerformanceLevel') is not None:
+				self.add_query_param('DataDisk.' + str(depth1 + 1) + '.PerformanceLevel', DataDisks[depth1].get('PerformanceLevel'))
 
 	def get_SystemDiskSize(self):
 		return self.get_query_params().get('SystemDisk.Size')
