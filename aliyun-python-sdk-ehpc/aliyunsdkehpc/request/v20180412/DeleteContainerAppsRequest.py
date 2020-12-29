@@ -32,7 +32,7 @@ class DeleteContainerAppsRequest(RpcRequest):
 
 
 	def get_ContainerApps(self):
-		return self.get_query_params().get('ContainerApps')
+		return self.get_query_params().get('ContainerApp')
 
 	def set_ContainerApps(self, ContainerApps):
 		for depth1 in range(len(ContainerApps)):

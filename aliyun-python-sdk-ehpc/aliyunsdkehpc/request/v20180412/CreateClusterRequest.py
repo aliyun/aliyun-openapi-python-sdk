@@ -32,7 +32,7 @@ class CreateClusterRequest(RpcRequest):
 
 
 	def get_AdditionalVolumess(self):
-		return self.get_query_params().get('AdditionalVolumess')
+		return self.get_query_params().get('AdditionalVolumes')
 
 	def set_AdditionalVolumess(self, AdditionalVolumess):
 		for depth1 in range(len(AdditionalVolumess)):
@@ -166,7 +166,7 @@ class CreateClusterRequest(RpcRequest):
 		self.add_query_param('ComputeSpotStrategy',ComputeSpotStrategy)
 
 	def get_PostInstallScripts(self):
-		return self.get_query_params().get('PostInstallScripts')
+		return self.get_query_params().get('PostInstallScript')
 
 	def set_PostInstallScripts(self, PostInstallScripts):
 		for depth1 in range(len(PostInstallScripts)):
@@ -228,6 +228,12 @@ class CreateClusterRequest(RpcRequest):
 
 	def set_ImageId(self,ImageId):
 		self.add_query_param('ImageId',ImageId)
+
+	def get_SystemDiskLevel(self):
+		return self.get_query_params().get('SystemDiskLevel')
+
+	def set_SystemDiskLevel(self,SystemDiskLevel):
+		self.add_query_param('SystemDiskLevel',SystemDiskLevel)
 
 	def get_ClientToken(self):
 		return self.get_query_params().get('ClientToken')
@@ -302,7 +308,7 @@ class CreateClusterRequest(RpcRequest):
 		self.add_query_param('OsTag',OsTag)
 
 	def get_Applications(self):
-		return self.get_query_params().get('Applications')
+		return self.get_query_params().get('Application')
 
 	def set_Applications(self, Applications):
 		for depth1 in range(len(Applications)):

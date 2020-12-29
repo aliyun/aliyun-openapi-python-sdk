@@ -43,6 +43,12 @@ class SubmitJobRequest(RpcRequest):
 	def set_RunasUserPassword(self,RunasUserPassword):
 		self.add_query_param('RunasUserPassword',RunasUserPassword)
 
+	def get_ClockTime(self):
+		return self.get_query_params().get('ClockTime')
+
+	def set_ClockTime(self,ClockTime):
+		self.add_query_param('ClockTime',ClockTime)
+
 	def get_CommandLine(self):
 		return self.get_query_params().get('CommandLine')
 
@@ -72,6 +78,12 @@ class SubmitJobRequest(RpcRequest):
 
 	def set_PackagePath(self,PackagePath):
 		self.add_query_param('PackagePath',PackagePath)
+
+	def get_Mem(self):
+		return self.get_query_params().get('Mem')
+
+	def set_Mem(self,Mem):
+		self.add_query_param('Mem',Mem)
 
 	def get_StdoutRedirectPath(self):
 		return self.get_query_params().get('StdoutRedirectPath')
@@ -109,11 +121,35 @@ class SubmitJobRequest(RpcRequest):
 	def set_ReRunable(self,ReRunable):
 		self.add_query_param('ReRunable',ReRunable)
 
+	def get_Thread(self):
+		return self.get_query_params().get('Thread')
+
+	def set_Thread(self,Thread):
+		self.add_query_param('Thread',Thread)
+
 	def get_Priority(self):
 		return self.get_query_params().get('Priority')
 
 	def set_Priority(self,Priority):
 		self.add_query_param('Priority',Priority)
+
+	def get_Gpu(self):
+		return self.get_query_params().get('Gpu')
+
+	def set_Gpu(self,Gpu):
+		self.add_query_param('Gpu',Gpu)
+
+	def get_Node(self):
+		return self.get_query_params().get('Node')
+
+	def set_Node(self,Node):
+		self.add_query_param('Node',Node)
+
+	def get_Task(self):
+		return self.get_query_params().get('Task')
+
+	def set_Task(self,Task):
+		self.add_query_param('Task',Task)
 
 	def get_InputFileUrl(self):
 		return self.get_query_params().get('InputFileUrl')

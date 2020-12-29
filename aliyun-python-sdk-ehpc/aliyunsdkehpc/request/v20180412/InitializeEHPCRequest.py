@@ -20,33 +20,12 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkehpc.endpoint import endpoint_data
 
-class StopNodesRequest(RpcRequest):
+class InitializeEHPCRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'EHPC', '2018-04-12', 'StopNodes')
+		RpcRequest.__init__(self, 'EHPC', '2018-04-12', 'InitializeEHPC')
 		self.set_method('GET')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
-
-
-	def get_Role(self):
-		return self.get_query_params().get('Role')
-
-	def set_Role(self,Role):
-		self.add_query_param('Role',Role)
-
-	def get_Instances(self):
-		return self.get_query_params().get('Instance')
-
-	def set_Instances(self, Instances):
-		for depth1 in range(len(Instances)):
-			if Instances[depth1].get('Id') is not None:
-				self.add_query_param('Instance.' + str(depth1 + 1) + '.Id', Instances[depth1].get('Id'))
-
-	def get_ClusterId(self):
-		return self.get_query_params().get('ClusterId')
-
-	def set_ClusterId(self,ClusterId):
-		self.add_query_param('ClusterId',ClusterId)

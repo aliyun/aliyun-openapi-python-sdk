@@ -37,6 +37,12 @@ class AddNodesRequest(RpcRequest):
 	def set_ImageId(self,ImageId):
 		self.add_query_param('ImageId',ImageId)
 
+	def get_SystemDiskLevel(self):
+		return self.get_query_params().get('SystemDiskLevel')
+
+	def set_SystemDiskLevel(self,SystemDiskLevel):
+		self.add_query_param('SystemDiskLevel',SystemDiskLevel)
+
 	def get_ClientToken(self):
 		return self.get_query_params().get('ClientToken')
 

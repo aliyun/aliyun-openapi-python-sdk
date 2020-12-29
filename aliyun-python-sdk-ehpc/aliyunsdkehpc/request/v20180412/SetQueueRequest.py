@@ -44,7 +44,7 @@ class SetQueueRequest(RpcRequest):
 		self.add_query_param('ClusterId',ClusterId)
 
 	def get_Nodes(self):
-		return self.get_query_params().get('Nodes')
+		return self.get_query_params().get('Node')
 
 	def set_Nodes(self, Nodes):
 		for depth1 in range(len(Nodes)):

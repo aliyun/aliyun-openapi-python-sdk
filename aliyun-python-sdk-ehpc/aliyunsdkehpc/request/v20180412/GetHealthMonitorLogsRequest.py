@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkehpc.endpoint import endpoint_data
 
-class StopNodesRequest(RpcRequest):
+class GetHealthMonitorLogsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'EHPC', '2018-04-12', 'StopNodes')
+		RpcRequest.__init__(self, 'EHPC', '2018-04-12', 'GetHealthMonitorLogs')
 		self.set_method('GET')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,22 +31,32 @@ class StopNodesRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_Role(self):
-		return self.get_query_params().get('Role')
+	def get_EndTime(self):
+		return self.get_query_params().get('EndTime')
 
-	def set_Role(self,Role):
-		self.add_query_param('Role',Role)
-
-	def get_Instances(self):
-		return self.get_query_params().get('Instance')
-
-	def set_Instances(self, Instances):
-		for depth1 in range(len(Instances)):
-			if Instances[depth1].get('Id') is not None:
-				self.add_query_param('Instance.' + str(depth1 + 1) + '.Id', Instances[depth1].get('Id'))
+	def set_EndTime(self,EndTime):
+		self.add_query_param('EndTime',EndTime)
 
 	def get_ClusterId(self):
 		return self.get_query_params().get('ClusterId')
 
 	def set_ClusterId(self,ClusterId):
 		self.add_query_param('ClusterId',ClusterId)
+
+	def get_StartTime(self):
+		return self.get_query_params().get('StartTime')
+
+	def set_StartTime(self,StartTime):
+		self.add_query_param('StartTime',StartTime)
+
+	def get_EnableReverse(self):
+		return self.get_query_params().get('EnableReverse')
+
+	def set_EnableReverse(self,EnableReverse):
+		self.add_query_param('EnableReverse',EnableReverse)
+
+	def get_Filter(self):
+		return self.get_query_params().get('Filter')
+
+	def set_Filter(self,Filter):
+		self.add_query_param('Filter',Filter)

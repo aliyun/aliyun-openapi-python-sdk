@@ -38,7 +38,7 @@ class DeleteUsersRequest(RpcRequest):
 		self.add_query_param('ClusterId',ClusterId)
 
 	def get_Users(self):
-		return self.get_query_params().get('Users')
+		return self.get_query_params().get('User')
 
 	def set_Users(self, Users):
 		for depth1 in range(len(Users)):

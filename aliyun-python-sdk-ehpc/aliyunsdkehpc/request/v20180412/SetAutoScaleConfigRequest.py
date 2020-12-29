@@ -104,7 +104,7 @@ class SetAutoScaleConfigRequest(RpcRequest):
 		self.add_query_param('ShrinkIntervalInMinutes',ShrinkIntervalInMinutes)
 
 	def get_Queuess(self):
-		return self.get_query_params().get('Queuess')
+		return self.get_query_params().get('Queues')
 
 	def set_Queuess(self, Queuess):
 		for depth1 in range(len(Queuess)):

@@ -43,6 +43,12 @@ class ApplyNodesRequest(RpcRequest):
 	def set_Memory(self,Memory):
 		self.add_query_param('Memory',Memory)
 
+	def get_SystemDiskLevel(self):
+		return self.get_query_params().get('SystemDiskLevel')
+
+	def set_SystemDiskLevel(self,SystemDiskLevel):
+		self.add_query_param('SystemDiskLevel',SystemDiskLevel)
+
 	def get_AllocatePublicAddress(self):
 		return self.get_query_params().get('AllocatePublicAddress')
 
@@ -80,7 +86,7 @@ class ApplyNodesRequest(RpcRequest):
 		self.add_query_param('SystemDiskSize',SystemDiskSize)
 
 	def get_ZoneInfoss(self):
-		return self.get_query_params().get('ZoneInfoss')
+		return self.get_query_params().get('ZoneInfos')
 
 	def set_ZoneInfoss(self, ZoneInfoss):
 		for depth1 in range(len(ZoneInfoss)):
@@ -138,7 +144,7 @@ class ApplyNodesRequest(RpcRequest):
 		self.add_query_param('InternetChargeType',InternetChargeType)
 
 	def get_InstanceTypeModels(self):
-		return self.get_query_params().get('InstanceTypeModels')
+		return self.get_query_params().get('InstanceTypeModel')
 
 	def set_InstanceTypeModels(self, InstanceTypeModels):
 		for depth1 in range(len(InstanceTypeModels)):

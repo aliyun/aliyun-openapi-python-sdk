@@ -92,7 +92,7 @@ class CreateHybridClusterRequest(RpcRequest):
 		self.add_query_param('ComputeSpotStrategy',ComputeSpotStrategy)
 
 	def get_PostInstallScripts(self):
-		return self.get_query_params().get('PostInstallScripts')
+		return self.get_query_params().get('PostInstallScript')
 
 	def set_PostInstallScripts(self, PostInstallScripts):
 		for depth1 in range(len(PostInstallScripts)):
@@ -210,7 +210,7 @@ class CreateHybridClusterRequest(RpcRequest):
 		self.add_query_param('OsTag',OsTag)
 
 	def get_Nodess(self):
-		return self.get_query_params().get('Nodess')
+		return self.get_query_params().get('Nodes')
 
 	def set_Nodess(self, Nodess):
 		for depth1 in range(len(Nodess)):
@@ -226,7 +226,7 @@ class CreateHybridClusterRequest(RpcRequest):
 				self.add_query_param('Nodes.' + str(depth1 + 1) + '.SchedulerType', Nodess[depth1].get('SchedulerType'))
 
 	def get_Applications(self):
-		return self.get_query_params().get('Applications')
+		return self.get_query_params().get('Application')
 
 	def set_Applications(self, Applications):
 		for depth1 in range(len(Applications)):

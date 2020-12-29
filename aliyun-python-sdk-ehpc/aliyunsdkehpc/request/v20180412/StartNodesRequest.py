@@ -38,7 +38,7 @@ class StartNodesRequest(RpcRequest):
 		self.add_query_param('Role',Role)
 
 	def get_Instances(self):
-		return self.get_query_params().get('Instances')
+		return self.get_query_params().get('Instance')
 
 	def set_Instances(self, Instances):
 		for depth1 in range(len(Instances)):

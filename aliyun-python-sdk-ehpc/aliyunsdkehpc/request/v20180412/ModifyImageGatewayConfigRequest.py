@@ -32,7 +32,7 @@ class ModifyImageGatewayConfigRequest(RpcRequest):
 
 
 	def get_Repos(self):
-		return self.get_query_params().get('Repos')
+		return self.get_query_params().get('Repo')
 
 	def set_Repos(self, Repos):
 		for depth1 in range(len(Repos)):

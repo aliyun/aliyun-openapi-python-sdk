@@ -32,7 +32,7 @@ class DescribePriceRequest(RpcRequest):
 
 
 	def get_Commoditiess(self):
-		return self.get_query_params().get('Commoditiess')
+		return self.get_query_params().get('Commodities')
 
 	def set_Commoditiess(self, Commoditiess):
 		for depth1 in range(len(Commoditiess)):

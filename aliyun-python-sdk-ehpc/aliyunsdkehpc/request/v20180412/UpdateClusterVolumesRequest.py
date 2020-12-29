@@ -32,7 +32,7 @@ class UpdateClusterVolumesRequest(RpcRequest):
 
 
 	def get_AdditionalVolumess(self):
-		return self.get_query_params().get('AdditionalVolumess')
+		return self.get_query_params().get('AdditionalVolumes')
 
 	def set_AdditionalVolumess(self, AdditionalVolumess):
 		for depth1 in range(len(AdditionalVolumess)):

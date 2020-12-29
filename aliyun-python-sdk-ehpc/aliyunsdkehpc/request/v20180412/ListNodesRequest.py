@@ -49,6 +49,18 @@ class ListNodesRequest(RpcRequest):
 	def set_PageNumber(self,PageNumber):
 		self.add_query_param('PageNumber',PageNumber)
 
+	def get_Filter(self):
+		return self.get_query_params().get('Filter')
+
+	def set_Filter(self,Filter):
+		self.add_query_param('Filter',Filter)
+
+	def get_PrivateIpAddress(self):
+		return self.get_query_params().get('PrivateIpAddress')
+
+	def set_PrivateIpAddress(self,PrivateIpAddress):
+		self.add_query_param('PrivateIpAddress',PrivateIpAddress)
+
 	def get_Sequence(self):
 		return self.get_query_params().get('Sequence')
 
@@ -66,3 +78,9 @@ class ListNodesRequest(RpcRequest):
 
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
+
+	def get_SortBy(self):
+		return self.get_query_params().get('SortBy')
+
+	def set_SortBy(self,SortBy):
+		self.add_query_param('SortBy',SortBy)
