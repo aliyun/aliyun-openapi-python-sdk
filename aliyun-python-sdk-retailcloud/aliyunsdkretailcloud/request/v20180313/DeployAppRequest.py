@@ -23,19 +23,13 @@ from aliyunsdkretailcloud.endpoint import endpoint_data
 class DeployAppRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'retailcloud', '2018-03-13', 'DeployApp','retailcloud')
+		RpcRequest.__init__(self, 'retailcloud', '2018-03-13', 'DeployApp')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_DeployPacketId(self):
-		return self.get_query_params().get('DeployPacketId')
-
-	def set_DeployPacketId(self,DeployPacketId):
-		self.add_query_param('DeployPacketId',DeployPacketId)
 
 	def get_DeployPacketUrl(self):
 		return self.get_query_params().get('DeployPacketUrl')
@@ -48,12 +42,6 @@ class DeployAppRequest(RpcRequest):
 
 	def set_TotalPartitions(self,TotalPartitions):
 		self.add_query_param('TotalPartitions',TotalPartitions)
-
-	def get_Name(self):
-		return self.get_query_params().get('Name')
-
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)
 
 	def get_Description(self):
 		return self.get_query_params().get('Description')
@@ -78,6 +66,34 @@ class DeployAppRequest(RpcRequest):
 
 	def set_PauseType(self,PauseType):
 		self.add_query_param('PauseType',PauseType)
+
+	def get_DeployPacketId(self):
+		return self.get_query_params().get('DeployPacketId')
+
+	def set_DeployPacketId(self,DeployPacketId):
+		self.add_query_param('DeployPacketId',DeployPacketId)
+
+	def get_ContainerImageLists(self):
+		return self.get_query_params().get('ContainerImageList')
+
+	def set_ContainerImageLists(self, ContainerImageLists):
+		for depth1 in range(len(ContainerImageLists)):
+			if ContainerImageLists[depth1] is not None:
+				self.add_query_param('ContainerImageList.' + str(depth1 + 1) , ContainerImageLists[depth1])
+
+	def get_Name(self):
+		return self.get_query_params().get('Name')
+
+	def set_Name(self,Name):
+		self.add_query_param('Name',Name)
+
+	def get_InitContainerImageLists(self):
+		return self.get_query_params().get('InitContainerImageList')
+
+	def set_InitContainerImageLists(self, InitContainerImageLists):
+		for depth1 in range(len(InitContainerImageLists)):
+			if InitContainerImageLists[depth1] is not None:
+				self.add_query_param('InitContainerImageList.' + str(depth1 + 1) , InitContainerImageLists[depth1])
 
 	def get_ArmsFlag(self):
 		return self.get_query_params().get('ArmsFlag')
