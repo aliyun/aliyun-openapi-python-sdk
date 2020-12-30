@@ -66,9 +66,3 @@ class DescribeEngineVersionRequest(RpcRequest):
 
 	def set_InstanceId(self,InstanceId):
 		self.add_query_param('InstanceId',InstanceId)
-
-	def get_Parameters(self):
-		return self.get_query_params().get('Parameters')
-
-	def set_Parameters(self,Parameters):
-		self.add_query_param('Parameters',Parameters)

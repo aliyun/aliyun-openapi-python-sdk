@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkr_kvstore.endpoint import endpoint_data
 
-class DescribeGlobalDistributeCacheRequest(RpcRequest):
+class ModifyActiveOperationTaskRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'R-kvstore', '2015-01-01', 'DescribeGlobalDistributeCache','redisa')
+		RpcRequest.__init__(self, 'R-kvstore', '2015-01-01', 'ModifyActiveOperationTask','redisa')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -37,23 +37,17 @@ class DescribeGlobalDistributeCacheRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_PageNumber(self):
-		return self.get_query_params().get('PageNumber')
-
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
-
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
 
 	def set_SecurityToken(self,SecurityToken):
 		self.add_query_param('SecurityToken',SecurityToken)
 
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
+	def get_SwitchTime(self):
+		return self.get_query_params().get('SwitchTime')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
+	def set_SwitchTime(self,SwitchTime):
+		self.add_query_param('SwitchTime',SwitchTime)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -73,14 +67,8 @@ class DescribeGlobalDistributeCacheRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_SubInstanceId(self):
-		return self.get_query_params().get('SubInstanceId')
+	def get_Ids(self):
+		return self.get_query_params().get('Ids')
 
-	def set_SubInstanceId(self,SubInstanceId):
-		self.add_query_param('SubInstanceId',SubInstanceId)
-
-	def get_GlobalInstanceId(self):
-		return self.get_query_params().get('GlobalInstanceId')
-
-	def set_GlobalInstanceId(self,GlobalInstanceId):
-		self.add_query_param('GlobalInstanceId',GlobalInstanceId)
+	def set_Ids(self,Ids):
+		self.add_query_param('Ids',Ids)

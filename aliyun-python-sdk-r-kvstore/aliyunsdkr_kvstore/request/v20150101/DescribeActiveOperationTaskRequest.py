@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkr_kvstore.endpoint import endpoint_data
 
-class DescribeGlobalDistributeCacheRequest(RpcRequest):
+class DescribeActiveOperationTaskRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'R-kvstore', '2015-01-01', 'DescribeGlobalDistributeCache','redisa')
+		RpcRequest.__init__(self, 'R-kvstore', '2015-01-01', 'DescribeActiveOperationTask','redisa')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -43,6 +43,12 @@ class DescribeGlobalDistributeCacheRequest(RpcRequest):
 	def set_PageNumber(self,PageNumber):
 		self.add_query_param('PageNumber',PageNumber)
 
+	def get_IsHistory(self):
+		return self.get_query_params().get('IsHistory')
+
+	def set_IsHistory(self,IsHistory):
+		self.add_query_param('IsHistory',IsHistory)
+
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
 
@@ -54,6 +60,12 @@ class DescribeGlobalDistributeCacheRequest(RpcRequest):
 
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
+
+	def get_TaskType(self):
+		return self.get_query_params().get('TaskType')
+
+	def set_TaskType(self,TaskType):
+		self.add_query_param('TaskType',TaskType)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -73,14 +85,8 @@ class DescribeGlobalDistributeCacheRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_SubInstanceId(self):
-		return self.get_query_params().get('SubInstanceId')
+	def get_Region(self):
+		return self.get_query_params().get('Region')
 
-	def set_SubInstanceId(self,SubInstanceId):
-		self.add_query_param('SubInstanceId',SubInstanceId)
-
-	def get_GlobalInstanceId(self):
-		return self.get_query_params().get('GlobalInstanceId')
-
-	def set_GlobalInstanceId(self,GlobalInstanceId):
-		self.add_query_param('GlobalInstanceId',GlobalInstanceId)
+	def set_Region(self,Region):
+		self.add_query_param('Region',Region)
