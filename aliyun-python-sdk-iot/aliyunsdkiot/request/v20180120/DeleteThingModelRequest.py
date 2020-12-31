@@ -72,3 +72,9 @@ class DeleteThingModelRequest(RpcRequest):
 		for depth1 in range(len(EventIdentifiers)):
 			if EventIdentifiers[depth1] is not None:
 				self.add_query_param('EventIdentifier.' + str(depth1 + 1) , EventIdentifiers[depth1])
+
+	def get_FunctionBlockId(self):
+		return self.get_query_params().get('FunctionBlockId')
+
+	def set_FunctionBlockId(self,FunctionBlockId):
+		self.add_query_param('FunctionBlockId',FunctionBlockId)

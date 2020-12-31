@@ -62,3 +62,9 @@ class QueryDeviceDesiredPropertyRequest(RpcRequest):
 
 	def set_DeviceName(self,DeviceName):
 		self.add_query_param('DeviceName',DeviceName)
+
+	def get_FunctionBlockId(self):
+		return self.get_query_params().get('FunctionBlockId')
+
+	def set_FunctionBlockId(self,FunctionBlockId):
+		self.add_query_param('FunctionBlockId',FunctionBlockId)

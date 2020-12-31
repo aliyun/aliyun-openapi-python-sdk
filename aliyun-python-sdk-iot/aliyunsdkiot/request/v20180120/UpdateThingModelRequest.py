@@ -43,6 +43,12 @@ class UpdateThingModelRequest(RpcRequest):
 	def set_Identifier(self,Identifier):
 		self.add_query_param('Identifier',Identifier)
 
+	def get_FunctionBlockName(self):
+		return self.get_query_params().get('FunctionBlockName')
+
+	def set_FunctionBlockName(self,FunctionBlockName):
+		self.add_query_param('FunctionBlockName',FunctionBlockName)
+
 	def get_ProductKey(self):
 		return self.get_query_params().get('ProductKey')
 
@@ -54,3 +60,9 @@ class UpdateThingModelRequest(RpcRequest):
 
 	def set_ThingModelJson(self,ThingModelJson):
 		self.add_query_param('ThingModelJson',ThingModelJson)
+
+	def get_FunctionBlockId(self):
+		return self.get_query_params().get('FunctionBlockId')
+
+	def set_FunctionBlockId(self,FunctionBlockId):
+		self.add_query_param('FunctionBlockId',FunctionBlockId)

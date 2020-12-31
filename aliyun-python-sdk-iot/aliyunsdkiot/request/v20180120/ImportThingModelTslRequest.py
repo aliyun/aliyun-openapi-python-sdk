@@ -43,6 +43,12 @@ class ImportThingModelTslRequest(RpcRequest):
 	def set_IotInstanceId(self,IotInstanceId):
 		self.add_query_param('IotInstanceId',IotInstanceId)
 
+	def get_FunctionBlockName(self):
+		return self.get_query_params().get('FunctionBlockName')
+
+	def set_FunctionBlockName(self,FunctionBlockName):
+		self.add_query_param('FunctionBlockName',FunctionBlockName)
+
 	def get_ProductKey(self):
 		return self.get_query_params().get('ProductKey')
 
@@ -60,3 +66,9 @@ class ImportThingModelTslRequest(RpcRequest):
 
 	def set_TslStr(self,TslStr):
 		self.add_query_param('TslStr',TslStr)
+
+	def get_FunctionBlockId(self):
+		return self.get_query_params().get('FunctionBlockId')
+
+	def set_FunctionBlockId(self,FunctionBlockId):
+		self.add_query_param('FunctionBlockId',FunctionBlockId)

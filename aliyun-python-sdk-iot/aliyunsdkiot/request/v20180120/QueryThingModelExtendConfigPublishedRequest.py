@@ -48,3 +48,9 @@ class QueryThingModelExtendConfigPublishedRequest(RpcRequest):
 
 	def set_ModelVersion(self,ModelVersion):
 		self.add_query_param('ModelVersion',ModelVersion)
+
+	def get_FunctionBlockId(self):
+		return self.get_query_params().get('FunctionBlockId')
+
+	def set_FunctionBlockId(self,FunctionBlockId):
+		self.add_query_param('FunctionBlockId',FunctionBlockId)

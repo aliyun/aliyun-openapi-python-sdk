@@ -67,6 +67,12 @@ class CreateProductRequest(RpcRequest):
 	def set_ResourceGroupId(self,ResourceGroupId):
 		self.add_query_param('ResourceGroupId',ResourceGroupId)
 
+	def get_ValidateType(self):
+		return self.get_query_params().get('ValidateType')
+
+	def set_ValidateType(self,ValidateType):
+		self.add_query_param('ValidateType',ValidateType)
+
 	def get_IotInstanceId(self):
 		return self.get_query_params().get('IotInstanceId')
 

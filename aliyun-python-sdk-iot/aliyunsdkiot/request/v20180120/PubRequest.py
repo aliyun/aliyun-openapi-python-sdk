@@ -31,6 +31,16 @@ class PubRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_UserProps(self):
+		return self.get_query_params().get('UserProp')
+
+	def set_UserProps(self, UserProps):
+		for depth1 in range(len(UserProps)):
+			if UserProps[depth1].get('Value') is not None:
+				self.add_query_param('UserProp.' + str(depth1 + 1) + '.Value', UserProps[depth1].get('Value'))
+			if UserProps[depth1].get('Key') is not None:
+				self.add_query_param('UserProp.' + str(depth1 + 1) + '.Key', UserProps[depth1].get('Key'))
+
 	def get_MessageContent(self):
 		return self.get_query_params().get('MessageContent')
 
@@ -43,11 +53,23 @@ class PubRequest(RpcRequest):
 	def set_Qos(self,Qos):
 		self.add_query_param('Qos',Qos)
 
+	def get_CorrelationData(self):
+		return self.get_query_params().get('CorrelationData')
+
+	def set_CorrelationData(self,CorrelationData):
+		self.add_query_param('CorrelationData',CorrelationData)
+
 	def get_IotInstanceId(self):
 		return self.get_query_params().get('IotInstanceId')
 
 	def set_IotInstanceId(self,IotInstanceId):
 		self.add_query_param('IotInstanceId',IotInstanceId)
+
+	def get_ResponseTopic(self):
+		return self.get_query_params().get('ResponseTopic')
+
+	def set_ResponseTopic(self,ResponseTopic):
+		self.add_query_param('ResponseTopic',ResponseTopic)
 
 	def get_TopicFullName(self):
 		return self.get_query_params().get('TopicFullName')
