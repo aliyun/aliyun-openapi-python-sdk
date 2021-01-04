@@ -55,6 +55,12 @@ class DescribeRecordStatisticsRequest(RpcRequest):
 	def set_EndDate(self,EndDate):
 		self.add_query_param('EndDate',EndDate)
 
+	def get_DomainType(self):
+		return self.get_query_params().get('DomainType')
+
+	def set_DomainType(self,DomainType):
+		self.add_query_param('DomainType',DomainType)
+
 	def get_Lang(self):
 		return self.get_query_params().get('Lang')
 

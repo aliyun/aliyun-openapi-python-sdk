@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkalidns.endpoint import endpoint_data
 
-class DescribeDomainStatisticsRequest(RpcRequest):
+class DescribeDnsGtmInstancesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'DescribeDomainStatistics','alidns')
+		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'DescribeDnsGtmInstances','alidns')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,32 +31,32 @@ class DescribeDomainStatisticsRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_DomainName(self):
-		return self.get_query_params().get('DomainName')
+	def get_PageNumber(self):
+		return self.get_query_params().get('PageNumber')
 
-	def set_DomainName(self,DomainName):
-		self.add_query_param('DomainName',DomainName)
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)
 
-	def get_StartDate(self):
-		return self.get_query_params().get('StartDate')
+	def get_ResourceGroupId(self):
+		return self.get_query_params().get('ResourceGroupId')
 
-	def set_StartDate(self,StartDate):
-		self.add_query_param('StartDate',StartDate)
+	def set_ResourceGroupId(self,ResourceGroupId):
+		self.add_query_param('ResourceGroupId',ResourceGroupId)
 
-	def get_EndDate(self):
-		return self.get_query_params().get('EndDate')
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
 
-	def set_EndDate(self,EndDate):
-		self.add_query_param('EndDate',EndDate)
-
-	def get_DomainType(self):
-		return self.get_query_params().get('DomainType')
-
-	def set_DomainType(self,DomainType):
-		self.add_query_param('DomainType',DomainType)
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
 
 	def get_Lang(self):
 		return self.get_query_params().get('Lang')
 
 	def set_Lang(self,Lang):
 		self.add_query_param('Lang',Lang)
+
+	def get_Keyword(self):
+		return self.get_query_params().get('Keyword')
+
+	def set_Keyword(self,Keyword):
+		self.add_query_param('Keyword',Keyword)

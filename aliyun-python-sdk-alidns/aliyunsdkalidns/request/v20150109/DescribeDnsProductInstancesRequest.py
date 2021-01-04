@@ -37,6 +37,12 @@ class DescribeDnsProductInstancesRequest(RpcRequest):
 	def set_PageNumber(self,PageNumber):
 		self.add_query_param('PageNumber',PageNumber)
 
+	def get_DomainType(self):
+		return self.get_query_params().get('DomainType')
+
+	def set_DomainType(self,DomainType):
+		self.add_query_param('DomainType',DomainType)
+
 	def get_UserClientIp(self):
 		return self.get_query_params().get('UserClientIp')
 
