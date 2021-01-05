@@ -23,7 +23,7 @@ from aliyunsdkimm.endpoint import endpoint_data
 class RefreshOfficePreviewTokenRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'imm', '2017-09-06', 'RefreshOfficePreviewToken')
+		RpcRequest.__init__(self, 'imm', '2017-09-06', 'RefreshOfficePreviewToken','imm')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
