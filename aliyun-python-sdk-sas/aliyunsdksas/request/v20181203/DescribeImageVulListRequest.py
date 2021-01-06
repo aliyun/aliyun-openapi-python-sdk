@@ -31,6 +31,54 @@ class DescribeImageVulListRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_Type(self):
+		return self.get_query_params().get('Type')
+
+	def set_Type(self,Type):
+		self.add_query_param('Type',Type)
+
+	def get_ContainerFieldName(self):
+		return self.get_query_params().get('ContainerFieldName')
+
+	def set_ContainerFieldName(self,ContainerFieldName):
+		self.add_query_param('ContainerFieldName',ContainerFieldName)
+
+	def get_Tag(self):
+		return self.get_query_params().get('Tag')
+
+	def set_Tag(self,Tag):
+		self.add_query_param('Tag',Tag)
+
+	def get_AliasName(self):
+		return self.get_query_params().get('AliasName')
+
+	def set_AliasName(self,AliasName):
+		self.add_query_param('AliasName',AliasName)
+
+	def get_InstanceId(self):
+		return self.get_query_params().get('InstanceId')
+
+	def set_InstanceId(self,InstanceId):
+		self.add_query_param('InstanceId',InstanceId)
+
+	def get_Name(self):
+		return self.get_query_params().get('Name')
+
+	def set_Name(self,Name):
+		self.add_query_param('Name',Name)
+
+	def get_Necessity(self):
+		return self.get_query_params().get('Necessity')
+
+	def set_Necessity(self,Necessity):
+		self.add_query_param('Necessity',Necessity)
+
+	def get_Uuids(self):
+		return self.get_query_params().get('Uuids')
+
+	def set_Uuids(self,Uuids):
+		self.add_query_param('Uuids',Uuids)
+
 	def get_RepoId(self):
 		return self.get_query_params().get('RepoId')
 
@@ -43,11 +91,17 @@ class DescribeImageVulListRequest(RpcRequest):
 	def set_StatusList(self,StatusList):
 		self.add_query_param('StatusList',StatusList)
 
-	def get_Type(self):
-		return self.get_query_params().get('Type')
+	def get_TargetType(self):
+		return self.get_query_params().get('TargetType')
 
-	def set_Type(self,Type):
-		self.add_query_param('Type',Type)
+	def set_TargetType(self,TargetType):
+		self.add_query_param('TargetType',TargetType)
+
+	def get_ContainerFieldValue(self):
+		return self.get_query_params().get('ContainerFieldValue')
+
+	def set_ContainerFieldValue(self,ContainerFieldValue):
+		self.add_query_param('ContainerFieldValue',ContainerFieldValue)
 
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
@@ -60,12 +114,6 @@ class DescribeImageVulListRequest(RpcRequest):
 
 	def set_Digest(self,Digest):
 		self.add_query_param('Digest',Digest)
-
-	def get_Tag(self):
-		return self.get_query_params().get('Tag')
-
-	def set_Tag(self,Tag):
-		self.add_query_param('Tag',Tag)
 
 	def get_Lang(self):
 		return self.get_query_params().get('Lang')
@@ -85,38 +133,8 @@ class DescribeImageVulListRequest(RpcRequest):
 	def set_CurrentPage(self,CurrentPage):
 		self.add_query_param('CurrentPage',CurrentPage)
 
-	def get_AliasName(self):
-		return self.get_query_params().get('AliasName')
-
-	def set_AliasName(self,AliasName):
-		self.add_query_param('AliasName',AliasName)
-
-	def get_InstanceId(self):
-		return self.get_query_params().get('InstanceId')
-
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
-
 	def get_RepoName(self):
 		return self.get_query_params().get('RepoName')
 
 	def set_RepoName(self,RepoName):
 		self.add_query_param('RepoName',RepoName)
-
-	def get_Name(self):
-		return self.get_query_params().get('Name')
-
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)
-
-	def get_Necessity(self):
-		return self.get_query_params().get('Necessity')
-
-	def set_Necessity(self,Necessity):
-		self.add_query_param('Necessity',Necessity)
-
-	def get_Uuids(self):
-		return self.get_query_params().get('Uuids')
-
-	def set_Uuids(self,Uuids):
-		self.add_query_param('Uuids',Uuids)

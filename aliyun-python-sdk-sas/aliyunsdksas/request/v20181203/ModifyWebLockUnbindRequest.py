@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdksas.endpoint import endpoint_data
 
-class ModifyWebLockStatusRequest(RpcRequest):
+class ModifyWebLockUnbindRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'ModifyWebLockStatus','sas')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'ModifyWebLockUnbind','sas')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -36,21 +36,3 @@ class ModifyWebLockStatusRequest(RpcRequest):
 
 	def set_Uuid(self,Uuid):
 		self.add_query_param('Uuid',Uuid)
-
-	def get_SourceIp(self):
-		return self.get_query_params().get('SourceIp')
-
-	def set_SourceIp(self,SourceIp):
-		self.add_query_param('SourceIp',SourceIp)
-
-	def get_Lang(self):
-		return self.get_query_params().get('Lang')
-
-	def set_Lang(self,Lang):
-		self.add_query_param('Lang',Lang)
-
-	def get_Status(self):
-		return self.get_query_params().get('Status')
-
-	def set_Status(self,Status):
-		self.add_query_param('Status',Status)

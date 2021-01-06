@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdksas.endpoint import endpoint_data
 
-class RefreshContainerAssertsRequest(RpcRequest):
+class AddVpcHoneyPotRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'RefreshContainerAsserts','sas')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'AddVpcHoneyPot','sas')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,8 +31,14 @@ class RefreshContainerAssertsRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_AssetType(self):
-		return self.get_query_params().get('AssetType')
+	def get_VpcSwitchId(self):
+		return self.get_query_params().get('VpcSwitchId')
 
-	def set_AssetType(self,AssetType):
-		self.add_query_param('AssetType',AssetType)
+	def set_VpcSwitchId(self,VpcSwitchId):
+		self.add_query_param('VpcSwitchId',VpcSwitchId)
+
+	def get_VpcId(self):
+		return self.get_query_params().get('VpcId')
+
+	def set_VpcId(self,VpcId):
+		self.add_query_param('VpcId',VpcId)

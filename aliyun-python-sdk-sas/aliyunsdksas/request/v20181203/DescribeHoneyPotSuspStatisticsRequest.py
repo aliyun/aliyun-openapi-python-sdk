@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdksas.endpoint import endpoint_data
 
-class DescribeCheckEcsWarningsRequest(RpcRequest):
+class DescribeHoneyPotSuspStatisticsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeCheckEcsWarnings','sas')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeHoneyPotSuspStatistics','sas')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,8 +31,20 @@ class DescribeCheckEcsWarningsRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_SourceIp(self):
-		return self.get_query_params().get('SourceIp')
+	def get_StatisticsDays(self):
+		return self.get_query_params().get('StatisticsDays')
 
-	def set_SourceIp(self,SourceIp):
-		self.add_query_param('SourceIp',SourceIp)
+	def set_StatisticsDays(self,StatisticsDays):
+		self.add_query_param('StatisticsDays',StatisticsDays)
+
+	def get_StatisticsKeyType(self):
+		return self.get_query_params().get('StatisticsKeyType')
+
+	def set_StatisticsKeyType(self,StatisticsKeyType):
+		self.add_query_param('StatisticsKeyType',StatisticsKeyType)
+
+	def get__From(self):
+		return self.get_query_params().get('From')
+
+	def set__From(self,_From):
+		self.add_query_param('From',_From)

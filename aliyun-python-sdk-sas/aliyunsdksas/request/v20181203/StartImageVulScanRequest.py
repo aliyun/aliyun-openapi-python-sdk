@@ -67,6 +67,14 @@ class StartImageVulScanRequest(RpcRequest):
 	def set_ImageTag(self,ImageTag):
 		self.add_query_param('ImageTag',ImageTag)
 
+	def get_RegistryTypess(self):
+		return self.get_query_params().get('RegistryTypes')
+
+	def set_RegistryTypess(self, RegistryTypess):
+		for depth1 in range(len(RegistryTypess)):
+			if RegistryTypess[depth1] is not None:
+				self.add_query_param('RegistryTypes.' + str(depth1 + 1) , RegistryTypess[depth1])
+
 	def get_RepoInstanceId(self):
 		return self.get_query_params().get('RepoInstanceId')
 

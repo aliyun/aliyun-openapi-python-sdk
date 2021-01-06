@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdksas.endpoint import endpoint_data
 
-class DescribeCheckEcsWarningsRequest(RpcRequest):
+class DescribeAccesskeyLeakListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeCheckEcsWarnings','sas')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeAccesskeyLeakList','sas')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,8 +31,38 @@ class DescribeCheckEcsWarningsRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_Query(self):
+		return self.get_query_params().get('Query')
+
+	def set_Query(self,Query):
+		self.add_query_param('Query',Query)
+
+	def get_StartTs(self):
+		return self.get_query_params().get('StartTs')
+
+	def set_StartTs(self,StartTs):
+		self.add_query_param('StartTs',StartTs)
+
+	def get_CurrentPage(self):
+		return self.get_query_params().get('CurrentPage')
+
+	def set_CurrentPage(self,CurrentPage):
+		self.add_query_param('CurrentPage',CurrentPage)
+
 	def get_SourceIp(self):
 		return self.get_query_params().get('SourceIp')
 
 	def set_SourceIp(self,SourceIp):
 		self.add_query_param('SourceIp',SourceIp)
+
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
+
+	def get_Status(self):
+		return self.get_query_params().get('Status')
+
+	def set_Status(self,Status):
+		self.add_query_param('Status',Status)

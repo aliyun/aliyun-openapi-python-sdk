@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdksas.endpoint import endpoint_data
 
-class DescribeStratetyRequest(RpcRequest):
+class DescribeExposedInstanceCriteriaRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeStratety','sas')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeExposedInstanceCriteria','sas')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,20 +31,8 @@ class DescribeStratetyRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_SourceIp(self):
-		return self.get_query_params().get('SourceIp')
+	def get_Value(self):
+		return self.get_query_params().get('Value')
 
-	def set_SourceIp(self,SourceIp):
-		self.add_query_param('SourceIp',SourceIp)
-
-	def get_StrategyIds(self):
-		return self.get_query_params().get('StrategyIds')
-
-	def set_StrategyIds(self,StrategyIds):
-		self.add_query_param('StrategyIds',StrategyIds)
-
-	def get_Lang(self):
-		return self.get_query_params().get('Lang')
-
-	def set_Lang(self,Lang):
-		self.add_query_param('Lang',Lang)
+	def set_Value(self,Value):
+		self.add_query_param('Value',Value)

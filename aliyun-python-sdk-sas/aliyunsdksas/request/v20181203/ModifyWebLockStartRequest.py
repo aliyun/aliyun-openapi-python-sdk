@@ -78,3 +78,9 @@ class ModifyWebLockStartRequest(RpcRequest):
 
 	def set_InclusiveFileType(self,InclusiveFileType):
 		self.add_query_param('InclusiveFileType',InclusiveFileType)
+
+	def get_DefenceMode(self):
+		return self.get_query_params().get('DefenceMode')
+
+	def set_DefenceMode(self,DefenceMode):
+		self.add_query_param('DefenceMode',DefenceMode)
