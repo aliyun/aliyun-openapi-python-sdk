@@ -31,6 +31,12 @@ class DescribeRegionsRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_Engine(self):
+		return self.get_query_params().get('Engine')
+
+	def set_Engine(self,Engine):
+		self.add_query_param('Engine',Engine)
+
 	def get_AcceptLanguage(self):
 		return self.get_query_params().get('AcceptLanguage')
 

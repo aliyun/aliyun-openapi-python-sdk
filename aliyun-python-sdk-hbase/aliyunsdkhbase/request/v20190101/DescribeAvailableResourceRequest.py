@@ -31,6 +31,30 @@ class DescribeAvailableResourceRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_EngineVersion(self):
+		return self.get_query_params().get('EngineVersion')
+
+	def set_EngineVersion(self,EngineVersion):
+		self.add_query_param('EngineVersion',EngineVersion)
+
+	def get_Engine(self):
+		return self.get_query_params().get('Engine')
+
+	def set_Engine(self,Engine):
+		self.add_query_param('Engine',Engine)
+
+	def get_DiskType(self):
+		return self.get_query_params().get('DiskType')
+
+	def set_DiskType(self,DiskType):
+		self.add_query_param('DiskType',DiskType)
+
+	def get_CoreInstanceType(self):
+		return self.get_query_params().get('CoreInstanceType')
+
+	def set_CoreInstanceType(self,CoreInstanceType):
+		self.add_query_param('CoreInstanceType',CoreInstanceType)
+
 	def get_ZoneId(self):
 		return self.get_query_params().get('ZoneId')
 
