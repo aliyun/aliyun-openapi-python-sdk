@@ -37,6 +37,12 @@ class DetectLungNoduleRequest(RpcRequest):
 	def set_DataFormat(self,DataFormat):
 		self.add_body_params('DataFormat', DataFormat)
 
+	def get_Threshold(self):
+		return self.get_body_params().get('Threshold')
+
+	def set_Threshold(self,Threshold):
+		self.add_body_params('Threshold', Threshold)
+
 	def get_URLLists(self):
 		return self.get_body_params().get('URLList')
 
