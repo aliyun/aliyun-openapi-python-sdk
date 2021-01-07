@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdbs.endpoint import endpoint_data
 
-class StartTaskRequest(RpcRequest):
+class DescribeDLAServiceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dbs', '2019-03-06', 'StartTask','cbs')
+		RpcRequest.__init__(self, 'Dbs', '2019-03-06', 'DescribeDLAService','cbs')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -37,14 +37,14 @@ class StartTaskRequest(RpcRequest):
 	def set_ClientToken(self,ClientToken):
 		self.add_query_param('ClientToken',ClientToken)
 
+	def get_BackupPlanId(self):
+		return self.get_query_params().get('BackupPlanId')
+
+	def set_BackupPlanId(self,BackupPlanId):
+		self.add_query_param('BackupPlanId',BackupPlanId)
+
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
-
-	def get_TaskId(self):
-		return self.get_query_params().get('TaskId')
-
-	def set_TaskId(self,TaskId):
-		self.add_query_param('TaskId',TaskId)
