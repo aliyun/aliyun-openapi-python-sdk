@@ -42,6 +42,12 @@ class DescribeImageCachesRequest(RpcRequest):
 	def set_SnapshotId(self,SnapshotId):
 		self.add_query_param('SnapshotId',SnapshotId)
 
+	def get_ResourceGroupId(self):
+		return self.get_query_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self, ResourceGroupId):
+		self.add_query_param('ResourceGroupId', ResourceGroupId)
+
 	def get_ImageCacheName(self):
 		return self.get_query_params().get('ImageCacheName')
 

@@ -35,6 +35,12 @@ class DescribeContainerGroupsRequest(RpcRequest):
 	def set_ContainerGroupIds(self,ContainerGroupIds):
 		self.add_query_param('ContainerGroupIds',ContainerGroupIds)
 
+	def get_ResourceGroupId(self):
+		return self.get_query_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self, ResourceGroupId):
+		self.add_query_param('ResourceGroupId', ResourceGroupId)
+
 	def get_NextToken(self):
 		return self.get_query_params().get('NextToken')
 
