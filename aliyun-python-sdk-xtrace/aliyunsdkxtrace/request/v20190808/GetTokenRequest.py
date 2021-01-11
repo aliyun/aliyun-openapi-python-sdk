@@ -42,3 +42,9 @@ class GetTokenRequest(RpcRequest):
 
 	def set_ProxyUserId(self,ProxyUserId):
 		self.add_query_param('ProxyUserId',ProxyUserId)
+
+	def get_IsForce(self):
+		return self.get_query_params().get('IsForce')
+
+	def set_IsForce(self,IsForce):
+		self.add_query_param('IsForce',IsForce)

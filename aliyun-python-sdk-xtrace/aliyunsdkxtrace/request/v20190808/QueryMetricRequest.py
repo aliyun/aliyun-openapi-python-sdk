@@ -49,10 +49,10 @@ class QueryMetricRequest(RpcRequest):
 	def set_StartTime(self,StartTime):
 		self.add_query_param('StartTime',StartTime)
 
-	def get_Filterss(self):
+	def get_Filters(self):
 		return self.get_query_params().get('Filters')
 
-	def set_Filterss(self, Filterss):
+	def set_Filters(self, Filterss):
 		for depth1 in range(len(Filterss)):
 			if Filterss[depth1].get('Value') is not None:
 				self.add_query_param('Filters.' + str(depth1 + 1) + '.Value', Filterss[depth1].get('Value'))
@@ -65,10 +65,10 @@ class QueryMetricRequest(RpcRequest):
 	def set_ProxyUserId(self,ProxyUserId):
 		self.add_query_param('ProxyUserId',ProxyUserId)
 
-	def get_Measuress(self):
+	def get_Measures(self):
 		return self.get_query_params().get('Measures')
 
-	def set_Measuress(self, Measuress):
+	def set_Measures(self, Measuress):
 		for depth1 in range(len(Measuress)):
 			if Measuress[depth1] is not None:
 				self.add_query_param('Measures.' + str(depth1 + 1) , Measuress[depth1])
@@ -91,10 +91,10 @@ class QueryMetricRequest(RpcRequest):
 	def set_Limit(self,Limit):
 		self.add_query_param('Limit',Limit)
 
-	def get_Dimensionss(self):
+	def get_Dimensions(self):
 		return self.get_query_params().get('Dimensions')
 
-	def set_Dimensionss(self, Dimensionss):
+	def set_Dimensions(self, Dimensionss):
 		for depth1 in range(len(Dimensionss)):
 			if Dimensionss[depth1] is not None:
 				self.add_query_param('Dimensions.' + str(depth1 + 1) , Dimensionss[depth1])
