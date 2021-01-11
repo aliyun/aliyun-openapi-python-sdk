@@ -43,6 +43,12 @@ class ModifyDBNodeClassRequest(RpcRequest):
 	def set_ClientToken(self,ClientToken):
 		self.add_query_param('ClientToken',ClientToken)
 
+	def get_PlannedEndTime(self):
+		return self.get_query_params().get('PlannedEndTime')
+
+	def set_PlannedEndTime(self,PlannedEndTime):
+		self.add_query_param('PlannedEndTime',PlannedEndTime)
+
 	def get_DBNodeTargetClass(self):
 		return self.get_query_params().get('DBNodeTargetClass')
 
@@ -72,6 +78,12 @@ class ModifyDBNodeClassRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_PlannedStartTime(self):
+		return self.get_query_params().get('PlannedStartTime')
+
+	def set_PlannedStartTime(self,PlannedStartTime):
+		self.add_query_param('PlannedStartTime',PlannedStartTime)
 
 	def get_ModifyType(self):
 		return self.get_query_params().get('ModifyType')

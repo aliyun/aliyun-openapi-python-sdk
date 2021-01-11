@@ -37,6 +37,12 @@ class UpgradeDBClusterMinorVersionRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_PlannedEndTime(self):
+		return self.get_query_params().get('PlannedEndTime')
+
+	def set_PlannedEndTime(self,PlannedEndTime):
+		self.add_query_param('PlannedEndTime',PlannedEndTime)
+
 	def get_SwitchTimeMode(self):
 		return self.get_query_params().get('SwitchTimeMode')
 
@@ -66,3 +72,15 @@ class UpgradeDBClusterMinorVersionRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_PlannedStartTime(self):
+		return self.get_query_params().get('PlannedStartTime')
+
+	def set_PlannedStartTime(self,PlannedStartTime):
+		self.add_query_param('PlannedStartTime',PlannedStartTime)
+
+	def get_FromTimeService(self):
+		return self.get_query_params().get('FromTimeService')
+
+	def set_FromTimeService(self,FromTimeService):
+		self.add_query_param('FromTimeService',FromTimeService)

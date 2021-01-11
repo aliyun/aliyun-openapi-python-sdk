@@ -49,6 +49,12 @@ class CreateDBNodesRequest(RpcRequest):
 	def set_EndpointBindList(self,EndpointBindList):
 		self.add_query_param('EndpointBindList',EndpointBindList)
 
+	def get_PlannedEndTime(self):
+		return self.get_query_params().get('PlannedEndTime')
+
+	def set_PlannedEndTime(self,PlannedEndTime):
+		self.add_query_param('PlannedEndTime',PlannedEndTime)
+
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -73,10 +79,16 @@ class CreateDBNodesRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_DBNodes(self):
+	def get_PlannedStartTime(self):
+		return self.get_query_params().get('PlannedStartTime')
+
+	def set_PlannedStartTime(self,PlannedStartTime):
+		self.add_query_param('PlannedStartTime',PlannedStartTime)
+
+	def get_DBNode(self):
 		return self.get_query_params().get('DBNode')
 
-	def set_DBNodes(self, DBNodes):
+	def set_DBNode(self, DBNodes):
 		for depth1 in range(len(DBNodes)):
 			if DBNodes[depth1].get('TargetClass') is not None:
 				self.add_query_param('DBNode.' + str(depth1 + 1) + '.TargetClass', DBNodes[depth1].get('TargetClass'))
