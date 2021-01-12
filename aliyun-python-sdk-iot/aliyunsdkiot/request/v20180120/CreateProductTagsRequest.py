@@ -43,10 +43,10 @@ class CreateProductTagsRequest(RpcRequest):
 	def set_ProductKey(self,ProductKey):
 		self.add_query_param('ProductKey',ProductKey)
 
-	def get_ProductTags(self):
+	def get_ProductTag(self):
 		return self.get_query_params().get('ProductTag')
 
-	def set_ProductTags(self, ProductTags):
+	def set_ProductTag(self, ProductTags):
 		for depth1 in range(len(ProductTags)):
 			if ProductTags[depth1].get('TagValue') is not None:
 				self.add_query_param('ProductTag.' + str(depth1 + 1) + '.TagValue', ProductTags[depth1].get('TagValue'))

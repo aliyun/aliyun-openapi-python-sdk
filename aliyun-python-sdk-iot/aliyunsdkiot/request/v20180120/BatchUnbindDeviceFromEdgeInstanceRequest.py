@@ -31,10 +31,10 @@ class BatchUnbindDeviceFromEdgeInstanceRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_IotIdss(self):
+	def get_IotIds(self):
 		return self.get_query_params().get('IotIds')
 
-	def set_IotIdss(self, IotIdss):
+	def set_IotIds(self, IotIdss):
 		for depth1 in range(len(IotIdss)):
 			if IotIdss[depth1] is not None:
 				self.add_query_param('IotIds.' + str(depth1 + 1) , IotIdss[depth1])

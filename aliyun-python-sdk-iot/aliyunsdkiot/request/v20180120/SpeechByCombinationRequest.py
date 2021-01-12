@@ -37,10 +37,10 @@ class SpeechByCombinationRequest(RpcRequest):
 	def set_IotId(self,IotId):
 		self.add_body_params('IotId', IotId)
 
-	def get_CombinationLists(self):
+	def get_CombinationList(self):
 		return self.get_body_params().get('CombinationList')
 
-	def set_CombinationLists(self, CombinationLists):
+	def set_CombinationList(self, CombinationLists):
 		for depth1 in range(len(CombinationLists)):
 			if CombinationLists[depth1] is not None:
 				self.add_body_params('CombinationList.' + str(depth1 + 1) , CombinationLists[depth1])

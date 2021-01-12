@@ -31,10 +31,10 @@ class InvokeDataAPIServiceRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_Params(self):
+	def get_Param(self):
 		return self.get_body_params().get('Param')
 
-	def set_Params(self, Params):
+	def set_Param(self, Params):
 		for depth1 in range(len(Params)):
 			if Params[depth1].get('ParamType') is not None:
 				self.add_body_params('Param.' + str(depth1 + 1) + '.ParamType', Params[depth1].get('ParamType'))

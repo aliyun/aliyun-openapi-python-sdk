@@ -31,10 +31,10 @@ class SetEdgeInstanceDriverConfigsRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_Configss(self):
+	def get_Configs(self):
 		return self.get_query_params().get('Configs')
 
-	def set_Configss(self, Configss):
+	def set_Configs(self, Configss):
 		for depth1 in range(len(Configss)):
 			if Configss[depth1].get('Format') is not None:
 				self.add_query_param('Configs.' + str(depth1 + 1) + '.Format', Configss[depth1].get('Format'))

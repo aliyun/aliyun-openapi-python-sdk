@@ -79,6 +79,12 @@ class UpdateRuleRequest(RpcRequest):
 	def set_Name(self,Name):
 		self.add_query_param('Name',Name)
 
+	def get_Topic(self):
+		return self.get_query_params().get('Topic')
+
+	def set_Topic(self,Topic):
+		self.add_query_param('Topic',Topic)
+
 	def get_RuleId(self):
 		return self.get_query_params().get('RuleId')
 

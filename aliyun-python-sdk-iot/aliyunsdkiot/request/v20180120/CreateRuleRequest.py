@@ -90,3 +90,9 @@ class CreateRuleRequest(RpcRequest):
 
 	def set_Name(self,Name):
 		self.add_query_param('Name',Name)
+
+	def get_Topic(self):
+		return self.get_query_params().get('Topic')
+
+	def set_Topic(self,Topic):
+		self.add_query_param('Topic',Topic)

@@ -43,10 +43,10 @@ class QueryDeviceByTagsRequest(RpcRequest):
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
 
-	def get_Tags(self):
+	def get_Tag(self):
 		return self.get_query_params().get('Tag')
 
-	def set_Tags(self, Tags):
+	def set_Tag(self, Tags):
 		for depth1 in range(len(Tags)):
 			if Tags[depth1].get('TagValue') is not None:
 				self.add_query_param('Tag.' + str(depth1 + 1) + '.TagValue', Tags[depth1].get('TagValue'))

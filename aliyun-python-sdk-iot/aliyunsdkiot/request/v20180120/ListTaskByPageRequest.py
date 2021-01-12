@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkiot.endpoint import endpoint_data
 
-class BatchClearEdgeInstanceDeviceConfigRequest(RpcRequest):
+class ListTaskByPageRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'BatchClearEdgeInstanceDeviceConfig','iot')
+		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'ListTaskByPage','iot')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,13 +31,11 @@ class BatchClearEdgeInstanceDeviceConfigRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_IotIds(self):
-		return self.get_query_params().get('IotIds')
+	def get_JobId(self):
+		return self.get_query_params().get('JobId')
 
-	def set_IotIds(self, IotIdss):
-		for depth1 in range(len(IotIdss)):
-			if IotIdss[depth1] is not None:
-				self.add_query_param('IotIds.' + str(depth1 + 1) , IotIdss[depth1])
+	def set_JobId(self,JobId):
+		self.add_query_param('JobId',JobId)
 
 	def get_IotInstanceId(self):
 		return self.get_query_params().get('IotInstanceId')
@@ -45,8 +43,38 @@ class BatchClearEdgeInstanceDeviceConfigRequest(RpcRequest):
 	def set_IotInstanceId(self,IotInstanceId):
 		self.add_query_param('IotInstanceId',IotInstanceId)
 
-	def get_InstanceId(self):
-		return self.get_query_params().get('InstanceId')
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
+
+	def get_JobName(self):
+		return self.get_query_params().get('JobName')
+
+	def set_JobName(self,JobName):
+		self.add_query_param('JobName',JobName)
+
+	def get_PageNo(self):
+		return self.get_query_params().get('PageNo')
+
+	def set_PageNo(self,PageNo):
+		self.add_query_param('PageNo',PageNo)
+
+	def get_DeviceName(self):
+		return self.get_query_params().get('DeviceName')
+
+	def set_DeviceName(self,DeviceName):
+		self.add_query_param('DeviceName',DeviceName)
+
+	def get_Device(self):
+		return self.get_query_params().get('Device')
+
+	def set_Device(self,Device):
+		self.add_query_param('Device',Device)
+
+	def get_Status(self):
+		return self.get_query_params().get('Status')
+
+	def set_Status(self,Status):
+		self.add_query_param('Status',Status)

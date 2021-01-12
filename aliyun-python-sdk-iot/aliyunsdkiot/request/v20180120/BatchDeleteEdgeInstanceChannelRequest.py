@@ -49,10 +49,10 @@ class BatchDeleteEdgeInstanceChannelRequest(RpcRequest):
 	def set_InstanceId(self,InstanceId):
 		self.add_query_param('InstanceId',InstanceId)
 
-	def get_ChannelIdss(self):
+	def get_ChannelIds(self):
 		return self.get_query_params().get('ChannelIds')
 
-	def set_ChannelIdss(self, ChannelIdss):
+	def set_ChannelIds(self, ChannelIdss):
 		for depth1 in range(len(ChannelIdss)):
 			if ChannelIdss[depth1] is not None:
 				self.add_query_param('ChannelIds.' + str(depth1 + 1) , ChannelIdss[depth1])

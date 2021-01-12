@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkiot.endpoint import endpoint_data
 
-class BatchClearEdgeInstanceDeviceConfigRequest(RpcRequest):
+class ListJobRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'BatchClearEdgeInstanceDeviceConfig','iot')
+		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'ListJob','iot')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,22 +31,26 @@ class BatchClearEdgeInstanceDeviceConfigRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_IotIds(self):
-		return self.get_query_params().get('IotIds')
-
-	def set_IotIds(self, IotIdss):
-		for depth1 in range(len(IotIdss)):
-			if IotIdss[depth1] is not None:
-				self.add_query_param('IotIds.' + str(depth1 + 1) , IotIdss[depth1])
-
 	def get_IotInstanceId(self):
 		return self.get_query_params().get('IotInstanceId')
 
 	def set_IotInstanceId(self,IotInstanceId):
 		self.add_query_param('IotInstanceId',IotInstanceId)
 
-	def get_InstanceId(self):
-		return self.get_query_params().get('InstanceId')
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
+
+	def get_CurrentPage(self):
+		return self.get_query_params().get('CurrentPage')
+
+	def set_CurrentPage(self,CurrentPage):
+		self.add_query_param('CurrentPage',CurrentPage)
+
+	def get_Status(self):
+		return self.get_query_params().get('Status')
+
+	def set_Status(self,Status):
+		self.add_query_param('Status',Status)

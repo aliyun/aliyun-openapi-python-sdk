@@ -31,10 +31,10 @@ class BatchSetEdgeInstanceDeviceConfigRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_DeviceConfigss(self):
+	def get_DeviceConfigs(self):
 		return self.get_query_params().get('DeviceConfigs')
 
-	def set_DeviceConfigss(self, DeviceConfigss):
+	def set_DeviceConfigs(self, DeviceConfigss):
 		for depth1 in range(len(DeviceConfigss)):
 			if DeviceConfigss[depth1].get('IotId') is not None:
 				self.add_query_param('DeviceConfigs.' + str(depth1 + 1) + '.IotId', DeviceConfigss[depth1].get('IotId'))

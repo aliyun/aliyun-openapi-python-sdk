@@ -31,10 +31,10 @@ class BatchCheckDeviceNamesRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_DeviceNameLists(self):
+	def get_DeviceNameList(self):
 		return self.get_query_params().get('DeviceNameList')
 
-	def set_DeviceNameLists(self, DeviceNameLists):
+	def set_DeviceNameList(self, DeviceNameLists):
 		for depth1 in range(len(DeviceNameLists)):
 			if DeviceNameLists[depth1].get('DeviceNickname') is not None:
 				self.add_query_param('DeviceNameList.' + str(depth1 + 1) + '.DeviceNickname', DeviceNameLists[depth1].get('DeviceNickname'))
@@ -53,10 +53,10 @@ class BatchCheckDeviceNamesRequest(RpcRequest):
 	def set_ProductKey(self,ProductKey):
 		self.add_query_param('ProductKey',ProductKey)
 
-	def get_DeviceNames(self):
+	def get_DeviceName(self):
 		return self.get_query_params().get('DeviceName')
 
-	def set_DeviceNames(self, DeviceNames):
+	def set_DeviceName(self, DeviceNames):
 		for depth1 in range(len(DeviceNames)):
 			if DeviceNames[depth1] is not None:
 				self.add_query_param('DeviceName.' + str(depth1 + 1) , DeviceNames[depth1])

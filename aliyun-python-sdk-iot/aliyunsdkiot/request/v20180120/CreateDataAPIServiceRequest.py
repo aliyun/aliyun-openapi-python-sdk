@@ -31,10 +31,10 @@ class CreateDataAPIServiceRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_RequestParams(self):
+	def get_RequestParam(self):
 		return self.get_body_params().get('RequestParam')
 
-	def set_RequestParams(self, RequestParams):
+	def set_RequestParam(self, RequestParams):
 		for depth1 in range(len(RequestParams)):
 			if RequestParams[depth1].get('Name') is not None:
 				self.add_body_params('RequestParam.' + str(depth1 + 1) + '.Name', RequestParams[depth1].get('Name'))
@@ -65,10 +65,10 @@ class CreateDataAPIServiceRequest(RpcRequest):
 	def set_TemplateSql(self,TemplateSql):
 		self.add_body_params('TemplateSql', TemplateSql)
 
-	def get_ResponseParams(self):
+	def get_ResponseParam(self):
 		return self.get_body_params().get('ResponseParam')
 
-	def set_ResponseParams(self, ResponseParams):
+	def set_ResponseParam(self, ResponseParams):
 		for depth1 in range(len(ResponseParams)):
 			if ResponseParams[depth1].get('Name') is not None:
 				self.add_body_params('ResponseParam.' + str(depth1 + 1) + '.Name', ResponseParams[depth1].get('Name'))

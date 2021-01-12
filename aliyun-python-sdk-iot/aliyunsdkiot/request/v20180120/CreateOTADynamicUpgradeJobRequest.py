@@ -55,10 +55,10 @@ class CreateOTADynamicUpgradeJobRequest(RpcRequest):
 	def set_IotInstanceId(self,IotInstanceId):
 		self.add_query_param('IotInstanceId',IotInstanceId)
 
-	def get_Tags(self):
+	def get_Tag(self):
 		return self.get_query_params().get('Tag')
 
-	def set_Tags(self, Tags):
+	def set_Tag(self, Tags):
 		for depth1 in range(len(Tags)):
 			if Tags[depth1].get('Value') is not None:
 				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tags[depth1].get('Value'))
@@ -83,10 +83,10 @@ class CreateOTADynamicUpgradeJobRequest(RpcRequest):
 	def set_RetryInterval(self,RetryInterval):
 		self.add_query_param('RetryInterval',RetryInterval)
 
-	def get_SrcVersions(self):
+	def get_SrcVersion(self):
 		return self.get_query_params().get('SrcVersion')
 
-	def set_SrcVersions(self, SrcVersions):
+	def set_SrcVersion(self, SrcVersions):
 		for depth1 in range(len(SrcVersions)):
 			if SrcVersions[depth1] is not None:
 				self.add_query_param('SrcVersion.' + str(depth1 + 1) , SrcVersions[depth1])

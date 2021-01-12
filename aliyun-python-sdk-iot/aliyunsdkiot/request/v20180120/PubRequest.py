@@ -31,10 +31,10 @@ class PubRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_UserProps(self):
+	def get_UserProp(self):
 		return self.get_query_params().get('UserProp')
 
-	def set_UserProps(self, UserProps):
+	def set_UserProp(self, UserProps):
 		for depth1 in range(len(UserProps)):
 			if UserProps[depth1].get('Value') is not None:
 				self.add_query_param('UserProp.' + str(depth1 + 1) + '.Value', UserProps[depth1].get('Value'))
