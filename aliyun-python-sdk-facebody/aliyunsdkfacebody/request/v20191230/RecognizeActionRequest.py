@@ -31,10 +31,10 @@ class RecognizeActionRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_URLLists(self):
+	def get_URLList(self):
 		return self.get_body_params().get('URLList')
 
-	def set_URLLists(self, URLLists):
+	def set_URLList(self, URLLists):
 		for depth1 in range(len(URLLists)):
 			if URLLists[depth1].get('URL') is not None:
 				self.add_body_params('URLList.' + str(depth1 + 1) + '.URL', URLLists[depth1].get('URL'))

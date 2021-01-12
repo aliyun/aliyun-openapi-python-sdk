@@ -42,3 +42,9 @@ class ExtractPedestrianFeatureAttrRequest(RpcRequest):
 
 	def set_ImageURL(self,ImageURL):
 		self.add_body_params('ImageURL', ImageURL)
+
+	def get_ServiceVersion(self):
+		return self.get_body_params().get('ServiceVersion')
+
+	def set_ServiceVersion(self,ServiceVersion):
+		self.add_body_params('ServiceVersion', ServiceVersion)

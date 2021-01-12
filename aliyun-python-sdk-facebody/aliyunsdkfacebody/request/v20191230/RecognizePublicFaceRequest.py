@@ -31,10 +31,10 @@ class RecognizePublicFaceRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_Tasks(self):
+	def get_Task(self):
 		return self.get_body_params().get('Task')
 
-	def set_Tasks(self, Tasks):
+	def set_Task(self, Tasks):
 		for depth1 in range(len(Tasks)):
 			if Tasks[depth1].get('ImageURL') is not None:
 				self.add_body_params('Task.' + str(depth1 + 1) + '.ImageURL', Tasks[depth1].get('ImageURL'))

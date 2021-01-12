@@ -31,10 +31,10 @@ class DetectLivingFaceRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_Taskss(self):
+	def get_Tasks(self):
 		return self.get_body_params().get('Tasks')
 
-	def set_Taskss(self, Taskss):
+	def set_Tasks(self, Taskss):
 		for depth1 in range(len(Taskss)):
 			if Taskss[depth1].get('ImageURL') is not None:
 				self.add_body_params('Tasks.' + str(depth1 + 1) + '.ImageURL', Taskss[depth1].get('ImageURL'))

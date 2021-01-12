@@ -31,10 +31,10 @@ class ExtractPedestrianFeatureAttributeRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_UrlLists(self):
+	def get_UrlList(self):
 		return self.get_body_params().get('UrlList')
 
-	def set_UrlLists(self, UrlLists):
+	def set_UrlList(self, UrlLists):
 		for depth1 in range(len(UrlLists)):
 			if UrlLists[depth1].get('Url') is not None:
 				self.add_body_params('UrlList.' + str(depth1 + 1) + '.Url', UrlLists[depth1].get('Url'))
