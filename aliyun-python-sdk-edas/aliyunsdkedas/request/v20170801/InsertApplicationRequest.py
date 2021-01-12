@@ -44,6 +44,12 @@ class InsertApplicationRequest(RoaRequest):
 	def set_EcuInfo(self,EcuInfo):
 		self.add_query_param('EcuInfo',EcuInfo)
 
+	def get_MinHeapSize(self):
+		return self.get_query_params().get('MinHeapSize')
+
+	def set_MinHeapSize(self,MinHeapSize):
+		self.add_query_param('MinHeapSize',MinHeapSize)
+
 	def get_BuildPackId(self):
 		return self.get_query_params().get('BuildPackId')
 
@@ -68,6 +74,12 @@ class InsertApplicationRequest(RoaRequest):
 	def set_ReservedPortStr(self,ReservedPortStr):
 		self.add_query_param('ReservedPortStr',ReservedPortStr)
 
+	def get_JvmOptions(self):
+		return self.get_query_params().get('JvmOptions')
+
+	def set_JvmOptions(self,JvmOptions):
+		self.add_query_param('JvmOptions',JvmOptions)
+
 	def get_Description(self):
 		return self.get_query_params().get('Description')
 
@@ -80,11 +92,23 @@ class InsertApplicationRequest(RoaRequest):
 	def set_Cpu(self,Cpu):
 		self.add_query_param('Cpu',Cpu)
 
+	def get_MaxPermSize(self):
+		return self.get_query_params().get('MaxPermSize')
+
+	def set_MaxPermSize(self,MaxPermSize):
+		self.add_query_param('MaxPermSize',MaxPermSize)
+
 	def get_ClusterId(self):
 		return self.get_query_params().get('ClusterId')
 
 	def set_ClusterId(self,ClusterId):
 		self.add_query_param('ClusterId',ClusterId)
+
+	def get_MaxHeapSize(self):
+		return self.get_query_params().get('MaxHeapSize')
+
+	def set_MaxHeapSize(self,MaxHeapSize):
+		self.add_query_param('MaxHeapSize',MaxHeapSize)
 
 	def get_ApplicationName(self):
 		return self.get_query_params().get('ApplicationName')
@@ -115,3 +139,9 @@ class InsertApplicationRequest(RoaRequest):
 
 	def set_PackageType(self,PackageType):
 		self.add_query_param('PackageType',PackageType)
+
+	def get_Hooks(self):
+		return self.get_query_params().get('Hooks')
+
+	def set_Hooks(self,Hooks):
+		self.add_query_param('Hooks',Hooks)

@@ -20,17 +20,29 @@
 from aliyunsdkcore.request import RoaRequest
 from aliyunsdkedas.endpoint import endpoint_data
 
-class SynchronizeResourceRequest(RoaRequest):
+class UpdateK8sServiceRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'SynchronizeResource','Edas')
-		self.set_uri_pattern('/pop/v5/resource/pop_sync_resource')
-		self.set_method('GET')
+		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'UpdateK8sService','Edas')
+		self.set_uri_pattern('/pop/v5/k8s/acs/k8s_service')
+		self.set_method('PUT')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+
+	def get_AppId(self):
+		return self.get_query_params().get('AppId')
+
+	def set_AppId(self,AppId):
+		self.add_query_param('AppId',AppId)
+
+	def get_Name(self):
+		return self.get_query_params().get('Name')
+
+	def set_Name(self,Name):
+		self.add_query_param('Name',Name)
 
 	def get_Type(self):
 		return self.get_query_params().get('Type')
@@ -38,8 +50,8 @@ class SynchronizeResourceRequest(RoaRequest):
 	def set_Type(self,Type):
 		self.add_query_param('Type',Type)
 
-	def get_ResourceIds(self):
-		return self.get_query_params().get('ResourceIds')
+	def get_ServicePorts(self):
+		return self.get_query_params().get('ServicePorts')
 
-	def set_ResourceIds(self,ResourceIds):
-		self.add_query_param('ResourceIds',ResourceIds)
+	def set_ServicePorts(self,ServicePorts):
+		self.add_query_param('ServicePorts',ServicePorts)

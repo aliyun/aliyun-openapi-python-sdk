@@ -20,11 +20,11 @@
 from aliyunsdkcore.request import RoaRequest
 from aliyunsdkedas.endpoint import endpoint_data
 
-class SynchronizeResourceRequest(RoaRequest):
+class ListSwimmingLaneGroupRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'SynchronizeResource','Edas')
-		self.set_uri_pattern('/pop/v5/resource/pop_sync_resource')
+		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'ListSwimmingLaneGroup','Edas')
+		self.set_uri_pattern('/pop/v5/trafficmgnt/swimming_lane_groups')
 		self.set_method('GET')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -32,14 +32,8 @@ class SynchronizeResourceRequest(RoaRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_Type(self):
-		return self.get_query_params().get('Type')
+	def get_LogicalRegionId(self):
+		return self.get_query_params().get('LogicalRegionId')
 
-	def set_Type(self,Type):
-		self.add_query_param('Type',Type)
-
-	def get_ResourceIds(self):
-		return self.get_query_params().get('ResourceIds')
-
-	def set_ResourceIds(self,ResourceIds):
-		self.add_query_param('ResourceIds',ResourceIds)
+	def set_LogicalRegionId(self,LogicalRegionId):
+		self.add_query_param('LogicalRegionId',LogicalRegionId)

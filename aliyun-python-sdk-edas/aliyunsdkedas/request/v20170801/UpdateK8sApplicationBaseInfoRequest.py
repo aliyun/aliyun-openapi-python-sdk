@@ -44,8 +44,20 @@ class UpdateK8sApplicationBaseInfoRequest(RoaRequest):
 	def set_AppId(self,AppId):
 		self.add_query_param('AppId',AppId)
 
+	def get_PhoneNumber(self):
+		return self.get_query_params().get('PhoneNumber')
+
+	def set_PhoneNumber(self,PhoneNumber):
+		self.add_query_param('PhoneNumber',PhoneNumber)
+
 	def get_Description(self):
 		return self.get_query_params().get('Description')
 
 	def set_Description(self,Description):
 		self.add_query_param('Description',Description)
+
+	def get_Email(self):
+		return self.get_query_params().get('Email')
+
+	def set_Email(self,Email):
+		self.add_query_param('Email',Email)

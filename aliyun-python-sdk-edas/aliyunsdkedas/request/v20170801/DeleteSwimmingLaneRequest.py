@@ -20,26 +20,20 @@
 from aliyunsdkcore.request import RoaRequest
 from aliyunsdkedas.endpoint import endpoint_data
 
-class SynchronizeResourceRequest(RoaRequest):
+class DeleteSwimmingLaneRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'SynchronizeResource','Edas')
-		self.set_uri_pattern('/pop/v5/resource/pop_sync_resource')
-		self.set_method('GET')
+		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'DeleteSwimmingLane','Edas')
+		self.set_uri_pattern('/pop/v5/trafficmgnt/swimming_lanes')
+		self.set_method('DELETE')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_Type(self):
-		return self.get_query_params().get('Type')
+	def get_LaneId(self):
+		return self.get_query_params().get('LaneId')
 
-	def set_Type(self,Type):
-		self.add_query_param('Type',Type)
-
-	def get_ResourceIds(self):
-		return self.get_query_params().get('ResourceIds')
-
-	def set_ResourceIds(self,ResourceIds):
-		self.add_query_param('ResourceIds',ResourceIds)
+	def set_LaneId(self,LaneId):
+		self.add_query_param('LaneId',LaneId)

@@ -38,8 +38,8 @@ class GetK8sApplicationRequest(RoaRequest):
 	def set_AppId(self,AppId):
 		self.add_query_param('AppId',AppId)
 
-	def get__From(self):
+	def get_From(self):
 		return self.get_query_params().get('From')
 
-	def set__From(self,_From):
+	def set_From(self,_From):
 		self.add_query_param('From',_From)

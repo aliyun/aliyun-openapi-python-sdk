@@ -50,6 +50,12 @@ class UpdateK8sSlbRequest(RoaRequest):
 	def set_SlbProtocol(self,SlbProtocol):
 		self.add_query_param('SlbProtocol',SlbProtocol)
 
+	def get_SlbName(self):
+		return self.get_query_params().get('SlbName')
+
+	def set_SlbName(self,SlbName):
+		self.add_query_param('SlbName',SlbName)
+
 	def get_Port(self):
 		return self.get_query_params().get('Port')
 

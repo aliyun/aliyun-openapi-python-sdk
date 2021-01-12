@@ -32,6 +32,12 @@ class UnbindK8sSlbRequest(RoaRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_SlbName(self):
+		return self.get_query_params().get('SlbName')
+
+	def set_SlbName(self,SlbName):
+		self.add_query_param('SlbName',SlbName)
+
 	def get_AppId(self):
 		return self.get_query_params().get('AppId')
 
