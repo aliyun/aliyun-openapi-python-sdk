@@ -25,6 +25,8 @@ class EndpointData():
 			"cn-beijing": "cn-beijing.fnf.aliyuncs.com",
 			"cn-shanghai": "cn-shanghai.fnf.aliyuncs.com",
 			"cn-hangzhou": "cn-hangzhou.fnf.aliyuncs.com",
+			"ap-southeast-1": "ap-southeast-1.fnf.aliyuncs.com",
+			"us-west-1": "us-west-1.fnf.aliyuncs.com",
 		}
 		self.endpoint_regional = "regional"
 
