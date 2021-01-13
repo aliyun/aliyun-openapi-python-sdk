@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkr_kvstore.endpoint import endpoint_data
 
-class UntagResourcesRequest(RpcRequest):
+class SwitchInstanceHARequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'R-kvstore', '2015-01-01', 'UntagResources','redisa')
+		RpcRequest.__init__(self, 'R-kvstore', '2015-01-01', 'SwitchInstanceHA','redisa')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -37,19 +37,23 @@ class UntagResourcesRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_All(self):
-		return self.get_query_params().get('All')
+	def get_SwitchMode(self):
+		return self.get_query_params().get('SwitchMode')
 
-	def set_All(self,All):
-		self.add_query_param('All',All)
+	def set_SwitchMode(self,SwitchMode):
+		self.add_query_param('SwitchMode',SwitchMode)
 
-	def get_ResourceId(self):
-		return self.get_query_params().get('ResourceId')
+	def get_SecurityToken(self):
+		return self.get_query_params().get('SecurityToken')
 
-	def set_ResourceId(self, ResourceIds):
-		for depth1 in range(len(ResourceIds)):
-			if ResourceIds[depth1] is not None:
-				self.add_query_param('ResourceId.' + str(depth1 + 1) , ResourceIds[depth1])
+	def set_SecurityToken(self,SecurityToken):
+		self.add_query_param('SecurityToken',SecurityToken)
+
+	def get_NodeId(self):
+		return self.get_query_params().get('NodeId')
+
+	def set_NodeId(self,NodeId):
+		self.add_query_param('NodeId',NodeId)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -69,16 +73,14 @@ class UntagResourcesRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_ResourceType(self):
-		return self.get_query_params().get('ResourceType')
+	def get_InstanceId(self):
+		return self.get_query_params().get('InstanceId')
 
-	def set_ResourceType(self,ResourceType):
-		self.add_query_param('ResourceType',ResourceType)
+	def set_InstanceId(self,InstanceId):
+		self.add_query_param('InstanceId',InstanceId)
 
-	def get_TagKey(self):
-		return self.get_query_params().get('TagKey')
+	def get_SwitchType(self):
+		return self.get_query_params().get('SwitchType')
 
-	def set_TagKey(self, TagKeys):
-		for depth1 in range(len(TagKeys)):
-			if TagKeys[depth1] is not None:
-				self.add_query_param('TagKey.' + str(depth1 + 1) , TagKeys[depth1])
+	def set_SwitchType(self,SwitchType):
+		self.add_query_param('SwitchType',SwitchType)

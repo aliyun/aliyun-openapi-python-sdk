@@ -67,6 +67,12 @@ class ModifyInstanceSpecRequest(RpcRequest):
 	def set_EffectiveTime(self,EffectiveTime):
 		self.add_query_param('EffectiveTime',EffectiveTime)
 
+	def get_SourceBiz(self):
+		return self.get_query_params().get('SourceBiz')
+
+	def set_SourceBiz(self,SourceBiz):
+		self.add_query_param('SourceBiz',SourceBiz)
+
 	def get_BusinessInfo(self):
 		return self.get_query_params().get('BusinessInfo')
 
