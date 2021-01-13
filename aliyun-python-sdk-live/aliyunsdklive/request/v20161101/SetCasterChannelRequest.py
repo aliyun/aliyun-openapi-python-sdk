@@ -61,12 +61,6 @@ class SetCasterChannelRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_ReloadFlag(self):
-		return self.get_query_params().get('ReloadFlag')
-
-	def set_ReloadFlag(self,ReloadFlag):
-		self.add_query_param('ReloadFlag',ReloadFlag)
-
 	def get_ChannelId(self):
 		return self.get_query_params().get('ChannelId')
 

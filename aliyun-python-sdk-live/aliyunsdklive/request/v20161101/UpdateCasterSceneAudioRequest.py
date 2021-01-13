@@ -43,10 +43,10 @@ class UpdateCasterSceneAudioRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_AudioLayers(self):
+	def get_AudioLayer(self):
 		return self.get_query_params().get('AudioLayer')
 
-	def set_AudioLayers(self, AudioLayers):
+	def set_AudioLayer(self, AudioLayers):
 		for depth1 in range(len(AudioLayers)):
 			if AudioLayers[depth1].get('VolumeRate') is not None:
 				self.add_query_param('AudioLayer.' + str(depth1 + 1) + '.VolumeRate', AudioLayers[depth1].get('VolumeRate'))
@@ -61,10 +61,10 @@ class UpdateCasterSceneAudioRequest(RpcRequest):
 	def set_SceneId(self,SceneId):
 		self.add_query_param('SceneId',SceneId)
 
-	def get_MixLists(self):
+	def get_MixList(self):
 		return self.get_query_params().get('MixList')
 
-	def set_MixLists(self, MixLists):
+	def set_MixList(self, MixLists):
 		for depth1 in range(len(MixLists)):
 			if MixLists[depth1] is not None:
 				self.add_query_param('MixList.' + str(depth1 + 1) , MixLists[depth1])

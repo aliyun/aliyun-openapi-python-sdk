@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdklive.endpoint import endpoint_data
 
-class SetLiveLazyPullStreamInfoConfigRequest(RpcRequest):
+class VerifyLiveDomainOwnerRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'live', '2016-11-01', 'SetLiveLazyPullStreamInfoConfig','live')
+		RpcRequest.__init__(self, 'live', '2016-11-01', 'VerifyLiveDomainOwner','live')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,11 +31,11 @@ class SetLiveLazyPullStreamInfoConfigRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_AppName(self):
-		return self.get_query_params().get('AppName')
+	def get_VerifyType(self):
+		return self.get_query_params().get('VerifyType')
 
-	def set_AppName(self,AppName):
-		self.add_query_param('AppName',AppName)
+	def set_VerifyType(self,VerifyType):
+		self.add_query_param('VerifyType',VerifyType)
 
 	def get_DomainName(self):
 		return self.get_query_params().get('DomainName')
@@ -43,26 +43,8 @@ class SetLiveLazyPullStreamInfoConfigRequest(RpcRequest):
 	def set_DomainName(self,DomainName):
 		self.add_query_param('DomainName',DomainName)
 
-	def get_PullDomainName(self):
-		return self.get_query_params().get('PullDomainName')
-
-	def set_PullDomainName(self,PullDomainName):
-		self.add_query_param('PullDomainName',PullDomainName)
-
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
-
-	def get_PullAppName(self):
-		return self.get_query_params().get('PullAppName')
-
-	def set_PullAppName(self,PullAppName):
-		self.add_query_param('PullAppName',PullAppName)
-
-	def get_PullProtocol(self):
-		return self.get_query_params().get('PullProtocol')
-
-	def set_PullProtocol(self,PullProtocol):
-		self.add_query_param('PullProtocol',PullProtocol)

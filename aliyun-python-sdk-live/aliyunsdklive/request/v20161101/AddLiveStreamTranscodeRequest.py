@@ -43,23 +43,17 @@ class AddLiveStreamTranscodeRequest(RpcRequest):
 	def set_Lazy(self,Lazy):
 		self.add_query_param('Lazy',Lazy)
 
-	def get_Mix(self):
-		return self.get_query_params().get('Mix')
-
-	def set_Mix(self,Mix):
-		self.add_query_param('Mix',Mix)
-
 	def get_App(self):
 		return self.get_query_params().get('App')
 
 	def set_App(self,App):
 		self.add_query_param('App',App)
 
-	def get_Watermark(self):
-		return self.get_query_params().get('Watermark')
+	def get_EncryptParameters(self):
+		return self.get_query_params().get('EncryptParameters')
 
-	def set_Watermark(self,Watermark):
-		self.add_query_param('Watermark',Watermark)
+	def set_EncryptParameters(self,EncryptParameters):
+		self.add_query_param('EncryptParameters',EncryptParameters)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
@@ -72,15 +66,3 @@ class AddLiveStreamTranscodeRequest(RpcRequest):
 
 	def set_Domain(self,Domain):
 		self.add_query_param('Domain',Domain)
-
-	def get_WaterPattern(self):
-		return self.get_query_params().get('WaterPattern')
-
-	def set_WaterPattern(self,WaterPattern):
-		self.add_query_param('WaterPattern',WaterPattern)
-
-	def get_OnlyAudio(self):
-		return self.get_query_params().get('OnlyAudio')
-
-	def set_OnlyAudio(self,OnlyAudio):
-		self.add_query_param('OnlyAudio',OnlyAudio)
