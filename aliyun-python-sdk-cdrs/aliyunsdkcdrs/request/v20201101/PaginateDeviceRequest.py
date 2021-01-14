@@ -19,32 +19,32 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class CreateProjectRequest(RpcRequest):
+class PaginateDeviceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'CDRS', '2020-11-01', 'CreateProject')
+		RpcRequest.__init__(self, 'CDRS', '2020-11-01', 'PaginateDevice')
 		self.set_method('POST')
 
-	def get_Icon(self):
-		return self.get_body_params().get('Icon')
+	def get_CorpId(self):
+		return self.get_body_params().get('CorpId')
 
-	def set_Icon(self,Icon):
-		self.add_body_params('Icon', Icon)
+	def set_CorpId(self,CorpId):
+		self.add_body_params('CorpId', CorpId)
 
-	def get_Description(self):
-		return self.get_body_params().get('Description')
+	def get_PageNumber(self):
+		return self.get_body_params().get('PageNumber')
 
-	def set_Description(self,Description):
-		self.add_body_params('Description', Description)
+	def set_PageNumber(self,PageNumber):
+		self.add_body_params('PageNumber', PageNumber)
 
-	def get_Name(self):
-		return self.get_body_params().get('Name')
+	def get_CountTotalNum(self):
+		return self.get_body_params().get('CountTotalNum')
 
-	def set_Name(self,Name):
-		self.add_body_params('Name', Name)
+	def set_CountTotalNum(self,CountTotalNum):
+		self.add_body_params('CountTotalNum', CountTotalNum)
 
-	def get_AggregateSceneCode(self):
-		return self.get_body_params().get('AggregateSceneCode')
+	def get_PageSize(self):
+		return self.get_body_params().get('PageSize')
 
-	def set_AggregateSceneCode(self,AggregateSceneCode):
-		self.add_body_params('AggregateSceneCode', AggregateSceneCode)
+	def set_PageSize(self,PageSize):
+		self.add_body_params('PageSize', PageSize)

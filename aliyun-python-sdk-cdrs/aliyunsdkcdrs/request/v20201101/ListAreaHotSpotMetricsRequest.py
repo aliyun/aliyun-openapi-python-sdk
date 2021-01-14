@@ -19,17 +19,11 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class ListPersonResultRequest(RpcRequest):
+class ListAreaHotSpotMetricsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'CDRS', '2020-11-01', 'ListPersonResult')
+		RpcRequest.__init__(self, 'CDRS', '2020-11-01', 'ListAreaHotSpotMetrics')
 		self.set_method('POST')
-
-	def get_Profession(self):
-		return self.get_body_params().get('Profession')
-
-	def set_Profession(self,Profession):
-		self.add_body_params('Profession', Profession)
 
 	def get_Schema(self):
 		return self.get_body_params().get('Schema')
@@ -43,12 +37,6 @@ class ListPersonResultRequest(RpcRequest):
 	def set_CorpId(self,CorpId):
 		self.add_body_params('CorpId', CorpId)
 
-	def get_Gender(self):
-		return self.get_body_params().get('Gender')
-
-	def set_Gender(self,Gender):
-		self.add_body_params('Gender', Gender)
-
 	def get_EndTime(self):
 		return self.get_body_params().get('EndTime')
 
@@ -60,6 +48,12 @@ class ListPersonResultRequest(RpcRequest):
 
 	def set_StartTime(self,StartTime):
 		self.add_body_params('StartTime', StartTime)
+
+	def get_DeviceId(self):
+		return self.get_body_params().get('DeviceId')
+
+	def set_DeviceId(self,DeviceId):
+		self.add_body_params('DeviceId', DeviceId)
 
 	def get_PageNumber(self):
 		return self.get_body_params().get('PageNumber')
@@ -73,8 +67,8 @@ class ListPersonResultRequest(RpcRequest):
 	def set_PageSize(self,PageSize):
 		self.add_body_params('PageSize', PageSize)
 
-	def get_Age(self):
-		return self.get_body_params().get('Age')
+	def get_PersonId(self):
+		return self.get_body_params().get('PersonId')
 
-	def set_Age(self,Age):
-		self.add_body_params('Age', Age)
+	def set_PersonId(self,PersonId):
+		self.add_body_params('PersonId', PersonId)

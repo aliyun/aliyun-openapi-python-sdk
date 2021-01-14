@@ -19,32 +19,14 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class CreateProjectRequest(RpcRequest):
+class ListDeviceRelationRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'CDRS', '2020-11-01', 'CreateProject')
+		RpcRequest.__init__(self, 'CDRS', '2020-11-01', 'ListDeviceRelation')
 		self.set_method('POST')
 
-	def get_Icon(self):
-		return self.get_body_params().get('Icon')
+	def get_DeviceId(self):
+		return self.get_body_params().get('DeviceId')
 
-	def set_Icon(self,Icon):
-		self.add_body_params('Icon', Icon)
-
-	def get_Description(self):
-		return self.get_body_params().get('Description')
-
-	def set_Description(self,Description):
-		self.add_body_params('Description', Description)
-
-	def get_Name(self):
-		return self.get_body_params().get('Name')
-
-	def set_Name(self,Name):
-		self.add_body_params('Name', Name)
-
-	def get_AggregateSceneCode(self):
-		return self.get_body_params().get('AggregateSceneCode')
-
-	def set_AggregateSceneCode(self,AggregateSceneCode):
-		self.add_body_params('AggregateSceneCode', AggregateSceneCode)
+	def set_DeviceId(self,DeviceId):
+		self.add_body_params('DeviceId', DeviceId)

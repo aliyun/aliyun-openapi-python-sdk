@@ -19,17 +19,11 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class ListPersonResultRequest(RpcRequest):
+class ListCorpMetricsStatisticRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'CDRS', '2020-11-01', 'ListPersonResult')
+		RpcRequest.__init__(self, 'CDRS', '2020-11-01', 'ListCorpMetricsStatistic')
 		self.set_method('POST')
-
-	def get_Profession(self):
-		return self.get_body_params().get('Profession')
-
-	def set_Profession(self,Profession):
-		self.add_body_params('Profession', Profession)
 
 	def get_Schema(self):
 		return self.get_body_params().get('Schema')
@@ -42,12 +36,6 @@ class ListPersonResultRequest(RpcRequest):
 
 	def set_CorpId(self,CorpId):
 		self.add_body_params('CorpId', CorpId)
-
-	def get_Gender(self):
-		return self.get_body_params().get('Gender')
-
-	def set_Gender(self,Gender):
-		self.add_body_params('Gender', Gender)
 
 	def get_EndTime(self):
 		return self.get_body_params().get('EndTime')
@@ -67,14 +55,32 @@ class ListPersonResultRequest(RpcRequest):
 	def set_PageNumber(self,PageNumber):
 		self.add_body_params('PageNumber', PageNumber)
 
+	def get_DeviceGroupList(self):
+		return self.get_body_params().get('DeviceGroupList')
+
+	def set_DeviceGroupList(self,DeviceGroupList):
+		self.add_body_params('DeviceGroupList', DeviceGroupList)
+
+	def get_TagCode(self):
+		return self.get_body_params().get('TagCode')
+
+	def set_TagCode(self,TagCode):
+		self.add_body_params('TagCode', TagCode)
+
+	def get_UserGroupList(self):
+		return self.get_body_params().get('UserGroupList')
+
+	def set_UserGroupList(self,UserGroupList):
+		self.add_body_params('UserGroupList', UserGroupList)
+
 	def get_PageSize(self):
 		return self.get_body_params().get('PageSize')
 
 	def set_PageSize(self,PageSize):
 		self.add_body_params('PageSize', PageSize)
 
-	def get_Age(self):
-		return self.get_body_params().get('Age')
+	def get_DeviceIdList(self):
+		return self.get_body_params().get('DeviceIdList')
 
-	def set_Age(self,Age):
-		self.add_body_params('Age', Age)
+	def set_DeviceIdList(self,DeviceIdList):
+		self.add_body_params('DeviceIdList', DeviceIdList)

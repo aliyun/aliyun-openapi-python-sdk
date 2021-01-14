@@ -48,3 +48,9 @@ class UpdateProjectRequest(RpcRequest):
 
 	def set_Name(self,Name):
 		self.add_body_params('Name', Name)
+
+	def get_AggregateSceneCode(self):
+		return self.get_body_params().get('AggregateSceneCode')
+
+	def set_AggregateSceneCode(self,AggregateSceneCode):
+		self.add_body_params('AggregateSceneCode', AggregateSceneCode)

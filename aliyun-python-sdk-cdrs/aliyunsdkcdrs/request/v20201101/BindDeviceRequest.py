@@ -31,10 +31,10 @@ class BindDeviceRequest(RpcRequest):
 	def set_CorpId(self,CorpId):
 		self.add_body_params('CorpId', CorpId)
 
-	def get_Devicess(self):
+	def get_Devices(self):
 		return self.get_body_params().get('Devices')
 
-	def set_Devicess(self, Devicess):
+	def set_Devices(self, Devicess):
 		for depth1 in range(len(Devicess)):
 			if Devicess[depth1].get('CorpId') is not None:
 				self.add_body_params('Devices.' + str(depth1 + 1) + '.CorpId', Devicess[depth1].get('CorpId'))
