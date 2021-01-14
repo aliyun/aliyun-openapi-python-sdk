@@ -62,11 +62,11 @@ class InsertApplicationRequest(RoaRequest):
 	def set_ComponentIds(self,ComponentIds):
 		self.add_query_param('ComponentIds',ComponentIds)
 
-	def get_HealthCheckURL(self):
-		return self.get_query_params().get('HealthCheckURL')
+	def get_HealthCheckUrl(self):
+		return self.get_query_params().get('HealthCheckUrl')
 
-	def set_HealthCheckURL(self,HealthCheckURL):
-		self.add_query_param('HealthCheckURL',HealthCheckURL)
+	def set_HealthCheckUrl(self,HealthCheckUrl):
+		self.add_query_param('HealthCheckUrl',HealthCheckUrl)
 
 	def get_ReservedPortStr(self):
 		return self.get_query_params().get('ReservedPortStr')
@@ -110,6 +110,12 @@ class InsertApplicationRequest(RoaRequest):
 	def set_MaxHeapSize(self,MaxHeapSize):
 		self.add_query_param('MaxHeapSize',MaxHeapSize)
 
+	def get_EnablePortCheck(self):
+		return self.get_query_params().get('EnablePortCheck')
+
+	def set_EnablePortCheck(self,EnablePortCheck):
+		self.add_query_param('EnablePortCheck',EnablePortCheck)
+
 	def get_ApplicationName(self):
 		return self.get_query_params().get('ApplicationName')
 
@@ -133,6 +139,12 @@ class InsertApplicationRequest(RoaRequest):
 
 	def set_LogicalRegionId(self,LogicalRegionId):
 		self.add_query_param('LogicalRegionId',LogicalRegionId)
+
+	def get_EnableUrlCheck(self):
+		return self.get_query_params().get('EnableUrlCheck')
+
+	def set_EnableUrlCheck(self,EnableUrlCheck):
+		self.add_query_param('EnableUrlCheck',EnableUrlCheck)
 
 	def get_PackageType(self):
 		return self.get_query_params().get('PackageType')
