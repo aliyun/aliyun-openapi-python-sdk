@@ -31,12 +31,6 @@ class GetUserRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_Uid(self):
-		return self.get_query_params().get('Uid')
-
-	def set_Uid(self,Uid):
-		self.add_query_param('Uid',Uid)
-
 	def get_UserId(self):
 		return self.get_query_params().get('UserId')
 
@@ -48,3 +42,9 @@ class GetUserRequest(RpcRequest):
 
 	def set_Tid(self,Tid):
 		self.add_query_param('Tid',Tid)
+
+	def get_Uid(self):
+		return self.get_query_params().get('Uid')
+
+	def set_Uid(self,Uid):
+		self.add_query_param('Uid',Uid)

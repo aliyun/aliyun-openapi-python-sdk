@@ -31,18 +31,6 @@ class GetInstanceRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_Port(self):
-		return self.get_query_params().get('Port')
-
-	def set_Port(self,Port):
-		self.add_query_param('Port',Port)
-
-	def get_Host(self):
-		return self.get_query_params().get('Host')
-
-	def set_Host(self,Host):
-		self.add_query_param('Host',Host)
-
 	def get_Tid(self):
 		return self.get_query_params().get('Tid')
 
@@ -54,3 +42,15 @@ class GetInstanceRequest(RpcRequest):
 
 	def set_Sid(self,Sid):
 		self.add_query_param('Sid',Sid)
+
+	def get_Port(self):
+		return self.get_query_params().get('Port')
+
+	def set_Port(self,Port):
+		self.add_query_param('Port',Port)
+
+	def get_Host(self):
+		return self.get_query_params().get('Host')
+
+	def set_Host(self,Host):
+		self.add_query_param('Host',Host)

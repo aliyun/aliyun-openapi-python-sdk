@@ -31,23 +31,11 @@ class ListUsersRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_UserState(self):
-		return self.get_query_params().get('UserState')
-
-	def set_UserState(self,UserState):
-		self.add_query_param('UserState',UserState)
-
 	def get_Role(self):
 		return self.get_query_params().get('Role')
 
 	def set_Role(self,Role):
 		self.add_query_param('Role',Role)
-
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
 
 	def get_SearchKey(self):
 		return self.get_query_params().get('SearchKey')
@@ -66,3 +54,15 @@ class ListUsersRequest(RpcRequest):
 
 	def set_PageNumber(self,PageNumber):
 		self.add_query_param('PageNumber',PageNumber)
+
+	def get_UserState(self):
+		return self.get_query_params().get('UserState')
+
+	def set_UserState(self,UserState):
+		self.add_query_param('UserState',UserState)
+
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
