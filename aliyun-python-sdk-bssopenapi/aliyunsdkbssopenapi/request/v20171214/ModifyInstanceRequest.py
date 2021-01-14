@@ -73,10 +73,10 @@ class ModifyInstanceRequest(RpcRequest):
 	def set_ModifyType(self,ModifyType):
 		self.add_query_param('ModifyType',ModifyType)
 
-	def get_Parameters(self):
+	def get_Parameter(self):
 		return self.get_query_params().get('Parameter')
 
-	def set_Parameters(self, Parameters):
+	def set_Parameter(self, Parameters):
 		for depth1 in range(len(Parameters)):
 			if Parameters[depth1].get('Code') is not None:
 				self.add_query_param('Parameter.' + str(depth1 + 1) + '.Code', Parameters[depth1].get('Code'))

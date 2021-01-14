@@ -49,10 +49,10 @@ class GetSubscriptionPriceRequest(RpcRequest):
 	def set_SubscriptionType(self,SubscriptionType):
 		self.add_query_param('SubscriptionType',SubscriptionType)
 
-	def get_ModuleLists(self):
+	def get_ModuleList(self):
 		return self.get_query_params().get('ModuleList')
 
-	def set_ModuleLists(self, ModuleLists):
+	def set_ModuleList(self, ModuleLists):
 		for depth1 in range(len(ModuleLists)):
 			if ModuleLists[depth1].get('ModuleCode') is not None:
 				self.add_query_param('ModuleList.' + str(depth1 + 1) + '.ModuleCode', ModuleLists[depth1].get('ModuleCode'))

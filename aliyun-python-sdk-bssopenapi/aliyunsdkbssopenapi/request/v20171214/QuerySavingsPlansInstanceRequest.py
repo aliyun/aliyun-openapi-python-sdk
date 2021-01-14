@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkbssopenapi.endpoint import endpoint_data
 
-class QueryAccountBillRequest(RpcRequest):
+class QuerySavingsPlansInstanceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'QueryAccountBill')
+		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'QuerySavingsPlansInstance')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,17 +31,23 @@ class QueryAccountBillRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_ProductCode(self):
-		return self.get_query_params().get('ProductCode')
+	def get_EndTime(self):
+		return self.get_query_params().get('EndTime')
 
-	def set_ProductCode(self,ProductCode):
-		self.add_query_param('ProductCode',ProductCode)
+	def set_EndTime(self,EndTime):
+		self.add_query_param('EndTime',EndTime)
 
-	def get_BillingCycle(self):
-		return self.get_query_params().get('BillingCycle')
+	def get_StartTime(self):
+		return self.get_query_params().get('StartTime')
 
-	def set_BillingCycle(self,BillingCycle):
-		self.add_query_param('BillingCycle',BillingCycle)
+	def set_StartTime(self,StartTime):
+		self.add_query_param('StartTime',StartTime)
+
+	def get_Locale(self):
+		return self.get_query_params().get('Locale')
+
+	def set_Locale(self,Locale):
+		self.add_query_param('Locale',Locale)
 
 	def get_PageNum(self):
 		return self.get_query_params().get('PageNum')
@@ -49,35 +55,17 @@ class QueryAccountBillRequest(RpcRequest):
 	def set_PageNum(self,PageNum):
 		self.add_query_param('PageNum',PageNum)
 
-	def get_OwnerID(self):
-		return self.get_query_params().get('OwnerID')
+	def get_InstanceId(self):
+		return self.get_query_params().get('InstanceId')
 
-	def set_OwnerID(self,OwnerID):
-		self.add_query_param('OwnerID',OwnerID)
+	def set_InstanceId(self,InstanceId):
+		self.add_query_param('InstanceId',InstanceId)
 
-	def get_BillOwnerId(self):
-		return self.get_query_params().get('BillOwnerId')
+	def get_RequestId(self):
+		return self.get_query_params().get('RequestId')
 
-	def set_BillOwnerId(self,BillOwnerId):
-		self.add_query_param('BillOwnerId',BillOwnerId)
-
-	def get_BillingDate(self):
-		return self.get_query_params().get('BillingDate')
-
-	def set_BillingDate(self,BillingDate):
-		self.add_query_param('BillingDate',BillingDate)
-
-	def get_IsGroupByProduct(self):
-		return self.get_query_params().get('IsGroupByProduct')
-
-	def set_IsGroupByProduct(self,IsGroupByProduct):
-		self.add_query_param('IsGroupByProduct',IsGroupByProduct)
-
-	def get_Granularity(self):
-		return self.get_query_params().get('Granularity')
-
-	def set_Granularity(self,Granularity):
-		self.add_query_param('Granularity',Granularity)
+	def set_RequestId(self,RequestId):
+		self.add_query_param('RequestId',RequestId)
 
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
