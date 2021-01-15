@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdts.endpoint import endpoint_data
 
-class TagResourcesRequest(RpcRequest):
+class DescribeDTSIPRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dts', '2020-01-01', 'TagResources','dts')
+		RpcRequest.__init__(self, 'Dts', '2020-01-01', 'DescribeDTSIP','dts')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,26 +31,14 @@ class TagResourcesRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_Tag(self):
-		return self.get_query_params().get('Tag')
+	def get_SourceEndpointRegion(self):
+		return self.get_query_params().get('SourceEndpointRegion')
 
-	def set_Tag(self, Tags):
-		for depth1 in range(len(Tags)):
-			if Tags[depth1].get('Value') is not None:
-				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tags[depth1].get('Value'))
-			if Tags[depth1].get('Key') is not None:
-				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tags[depth1].get('Key'))
+	def set_SourceEndpointRegion(self,SourceEndpointRegion):
+		self.add_query_param('SourceEndpointRegion',SourceEndpointRegion)
 
-	def get_ResourceId(self):
-		return self.get_query_params().get('ResourceId')
+	def get_DestinationEndpointRegion(self):
+		return self.get_query_params().get('DestinationEndpointRegion')
 
-	def set_ResourceId(self, ResourceIds):
-		for depth1 in range(len(ResourceIds)):
-			if ResourceIds[depth1] is not None:
-				self.add_query_param('ResourceId.' + str(depth1 + 1) , ResourceIds[depth1])
-
-	def get_ResourceType(self):
-		return self.get_query_params().get('ResourceType')
-
-	def set_ResourceType(self,ResourceType):
-		self.add_query_param('ResourceType',ResourceType)
+	def set_DestinationEndpointRegion(self,DestinationEndpointRegion):
+		self.add_query_param('DestinationEndpointRegion',DestinationEndpointRegion)
