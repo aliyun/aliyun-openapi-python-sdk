@@ -32,6 +32,12 @@ class ListAppGroupsRequest(RoaRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_resourceGroupId(self):
+		return self.get_query_params().get('resourceGroupId')
+
+	def set_resourceGroupId(self,resourceGroupId):
+		self.add_query_param('resourceGroupId',resourceGroupId)
+
 	def get_instanceId(self):
 		return self.get_query_params().get('instanceId')
 

@@ -20,11 +20,11 @@
 from aliyunsdkcore.request import RoaRequest
 from aliyunsdkopensearch.endpoint import endpoint_data
 
-class DescribeUserAnalyzerRequest(RoaRequest):
+class GetScriptFileNamesRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'OpenSearch', '2017-12-25', 'DescribeUserAnalyzer','opensearch')
-		self.set_uri_pattern('/v4/openapi/user-analyzers/[name]')
+		RoaRequest.__init__(self, 'OpenSearch', '2017-12-25', 'GetScriptFileNames','opensearch')
+		self.set_uri_pattern('/v4/openapi/app-groups/[appGroupIdentity]/apps/[appVersionId]/sort-scripts/[scriptName]/file-names')
 		self.set_method('GET')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -32,14 +32,20 @@ class DescribeUserAnalyzerRequest(RoaRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_with(self):
-		return self.get_query_params().get('with')
+	def get_appVersionId(self):
+		return self.get_path_params().get('appVersionId')
 
-	def set_with(self,_with):
-		self.add_query_param('with',_with)
+	def set_appVersionId(self,appVersionId):
+		self.add_path_param('appVersionId',appVersionId)
 
-	def get_name(self):
-		return self.get_path_params().get('name')
+	def get_scriptName(self):
+		return self.get_path_params().get('scriptName')
 
-	def set_name(self,name):
-		self.add_path_param('name',name)
+	def set_scriptName(self,scriptName):
+		self.add_path_param('scriptName',scriptName)
+
+	def get_appGroupIdentity(self):
+		return self.get_path_params().get('appGroupIdentity')
+
+	def set_appGroupIdentity(self,appGroupIdentity):
+		self.add_path_param('appGroupIdentity',appGroupIdentity)
