@@ -23,7 +23,7 @@ from aliyunsdkedas.endpoint import endpoint_data
 class DelegateAdminRoleRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'DelegateAdminRole','Edas')
+		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'DelegateAdminRole','edas')
 		self.set_uri_pattern('/pop/v5/account/delegate_admin_role')
 		self.set_method('PUT')
 		if hasattr(self, "endpoint_map"):

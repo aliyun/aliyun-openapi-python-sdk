@@ -23,7 +23,7 @@ from aliyunsdkedas.endpoint import endpoint_data
 class ListRoleRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'ListRole','Edas')
+		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'ListRole','edas')
 		self.set_uri_pattern('/pop/v5/account/role_list')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):

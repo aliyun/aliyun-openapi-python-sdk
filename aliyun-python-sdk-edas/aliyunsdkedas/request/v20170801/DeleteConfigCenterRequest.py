@@ -23,7 +23,7 @@ from aliyunsdkedas.endpoint import endpoint_data
 class DeleteConfigCenterRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'DeleteConfigCenter','Edas')
+		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'DeleteConfigCenter','edas')
 		self.set_uri_pattern('/pop/v5/configCenter')
 		self.set_method('DELETE')
 		if hasattr(self, "endpoint_map"):

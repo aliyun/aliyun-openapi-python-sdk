@@ -23,7 +23,7 @@ from aliyunsdkedas.endpoint import endpoint_data
 class ListOperationLogsRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'ListOperationLogs','Edas')
+		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'ListOperationLogs','edas')
 		self.set_uri_pattern('/pop/v5/operationlog/log_list')
 		self.set_method('GET')
 		if hasattr(self, "endpoint_map"):

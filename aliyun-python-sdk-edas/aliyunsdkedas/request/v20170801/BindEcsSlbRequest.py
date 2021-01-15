@@ -23,7 +23,7 @@ from aliyunsdkedas.endpoint import endpoint_data
 class BindEcsSlbRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'BindEcsSlb','Edas')
+		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'BindEcsSlb','edas')
 		self.set_uri_pattern('/pop/v5/app/slb/bind_slb')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):

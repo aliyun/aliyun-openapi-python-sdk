@@ -23,7 +23,7 @@ from aliyunsdkedas.endpoint import endpoint_data
 class ListComponentsRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'ListComponents','Edas')
+		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'ListComponents','edas')
 		self.set_uri_pattern('/pop/v5/resource/components')
 		self.set_method('GET')
 		if hasattr(self, "endpoint_map"):
