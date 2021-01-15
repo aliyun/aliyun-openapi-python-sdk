@@ -25,12 +25,6 @@ class ListCorpTrackDetailRequest(RpcRequest):
 		RpcRequest.__init__(self, 'CDRS', '2020-11-01', 'ListCorpTrackDetail')
 		self.set_method('POST')
 
-	def get_Schema(self):
-		return self.get_body_params().get('Schema')
-
-	def set_Schema(self,Schema):
-		self.add_body_params('Schema', Schema)
-
 	def get_CorpId(self):
 		return self.get_body_params().get('CorpId')
 
