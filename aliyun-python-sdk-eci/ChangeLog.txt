@@ -1,5 +1,5 @@
-2020-12-30 Version: 1.1.4
-1, describe support specity resourceGroupId
+2021-01-15 Version: 1.1.4
+1, support specity resourceGroupId and custom systemdisk
 
 2020-12-03 Version: 1.1.3
 1, describePrice support spot
