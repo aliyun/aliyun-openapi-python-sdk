@@ -19,12 +19,12 @@
 
 from aliyunsdkcore.request import RoaRequest
 
-class GetUserInfoRequest(RoaRequest):
+class EnableRepositoryDeployKeyRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'codeup', '2020-04-14', 'GetUserInfo')
-		self.set_uri_pattern('/api/v3/user/current')
-		self.set_method('GET')
+		RoaRequest.__init__(self, 'codeup', '2020-04-14', 'EnableRepositoryDeployKey')
+		self.set_uri_pattern('/api/v3/projects/[ProjectId]/keys/[KeyId]/enable')
+		self.set_method('POST')
 
 	def get_OrganizationId(self):
 		return self.get_query_params().get('OrganizationId')
@@ -32,8 +32,26 @@ class GetUserInfoRequest(RoaRequest):
 	def set_OrganizationId(self,OrganizationId):
 		self.add_query_param('OrganizationId',OrganizationId)
 
+	def get_SubUserId(self):
+		return self.get_query_params().get('SubUserId')
+
+	def set_SubUserId(self,SubUserId):
+		self.add_query_param('SubUserId',SubUserId)
+
 	def get_AccessToken(self):
 		return self.get_query_params().get('AccessToken')
 
 	def set_AccessToken(self,AccessToken):
 		self.add_query_param('AccessToken',AccessToken)
+
+	def get_KeyId(self):
+		return self.get_path_params().get('KeyId')
+
+	def set_KeyId(self,KeyId):
+		self.add_path_param('KeyId',KeyId)
+
+	def get_ProjectId(self):
+		return self.get_path_params().get('ProjectId')
+
+	def set_ProjectId(self,ProjectId):
+		self.add_path_param('ProjectId',ProjectId)

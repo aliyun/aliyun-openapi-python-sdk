@@ -19,12 +19,12 @@
 
 from aliyunsdkcore.request import RoaRequest
 
-class GetUserInfoRequest(RoaRequest):
+class CreateRepositoryProtectedBranchRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'codeup', '2020-04-14', 'GetUserInfo')
-		self.set_uri_pattern('/api/v3/user/current')
-		self.set_method('GET')
+		RoaRequest.__init__(self, 'codeup', '2020-04-14', 'CreateRepositoryProtectedBranch')
+		self.set_uri_pattern('/api/v4/projects/[ProjectId]/repository/protect_branches')
+		self.set_method('POST')
 
 	def get_OrganizationId(self):
 		return self.get_query_params().get('OrganizationId')
@@ -37,3 +37,9 @@ class GetUserInfoRequest(RoaRequest):
 
 	def set_AccessToken(self,AccessToken):
 		self.add_query_param('AccessToken',AccessToken)
+
+	def get_ProjectId(self):
+		return self.get_path_params().get('ProjectId')
+
+	def set_ProjectId(self,ProjectId):
+		self.add_path_param('ProjectId',ProjectId)
