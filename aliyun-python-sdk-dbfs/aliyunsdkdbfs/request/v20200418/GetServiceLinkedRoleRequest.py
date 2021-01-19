@@ -18,21 +18,14 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkdbfs.endpoint import endpoint_data
 
-class AttachDbfsRequest(RpcRequest):
+class GetServiceLinkedRoleRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'DBFS', '2020-02-19', 'AttachDbfs')
+		RpcRequest.__init__(self, 'DBFS', '2020-04-18', 'GetServiceLinkedRole')
 		self.set_method('POST')
-
-	def get_ECSInstanceId(self):
-		return self.get_query_params().get('ECSInstanceId')
-
-	def set_ECSInstanceId(self,ECSInstanceId):
-		self.add_query_param('ECSInstanceId',ECSInstanceId)
-
-	def get_FsId(self):
-		return self.get_query_params().get('FsId')
-
-	def set_FsId(self,FsId):
-		self.add_query_param('FsId',FsId)
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())

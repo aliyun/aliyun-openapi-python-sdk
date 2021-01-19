@@ -18,24 +18,18 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkdbfs.endpoint import endpoint_data
 
-class ResizeDbfsRequest(RpcRequest):
+class GetDbfsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'DBFS', '2020-02-19', 'ResizeDbfs')
+		RpcRequest.__init__(self, 'DBFS', '2020-04-18', 'GetDbfs')
 		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ClientToken(self):
-		return self.get_query_params().get('ClientToken')
-
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
-
-	def get_NewSizeG(self):
-		return self.get_query_params().get('NewSizeG')
-
-	def set_NewSizeG(self,NewSizeG):
-		self.add_query_param('NewSizeG',NewSizeG)
 
 	def get_FsId(self):
 		return self.get_query_params().get('FsId')

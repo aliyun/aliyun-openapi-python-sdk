@@ -18,15 +18,27 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkdbfs.endpoint import endpoint_data
 
-class GetDbfsRequest(RpcRequest):
+class TagDbfsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'DBFS', '2020-02-19', 'GetDbfs')
-		self.set_method('GET')
+		RpcRequest.__init__(self, 'DBFS', '2020-04-18', 'TagDbfs')
+		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_FsId(self):
-		return self.get_query_params().get('FsId')
 
-	def set_FsId(self,FsId):
-		self.add_query_param('FsId',FsId)
+	def get_Tags(self):
+		return self.get_query_params().get('Tags')
+
+	def set_Tags(self,Tags):
+		self.add_query_param('Tags',Tags)
+
+	def get_DbfsId(self):
+		return self.get_query_params().get('DbfsId')
+
+	def set_DbfsId(self,DbfsId):
+		self.add_query_param('DbfsId',DbfsId)

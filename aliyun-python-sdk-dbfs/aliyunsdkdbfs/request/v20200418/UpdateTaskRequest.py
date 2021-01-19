@@ -18,21 +18,27 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkdbfs.endpoint import endpoint_data
 
-class DetachDbfsRequest(RpcRequest):
+class UpdateTaskRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'DBFS', '2020-02-19', 'DetachDbfs')
+		RpcRequest.__init__(self, 'DBFS', '2020-04-18', 'UpdateTask')
 		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ECSInstanceId(self):
-		return self.get_query_params().get('ECSInstanceId')
 
-	def set_ECSInstanceId(self,ECSInstanceId):
-		self.add_query_param('ECSInstanceId',ECSInstanceId)
+	def get_TaskProgress(self):
+		return self.get_query_params().get('TaskProgress')
 
-	def get_FsId(self):
-		return self.get_query_params().get('FsId')
+	def set_TaskProgress(self,TaskProgress):
+		self.add_query_param('TaskProgress',TaskProgress)
 
-	def set_FsId(self,FsId):
-		self.add_query_param('FsId',FsId)
+	def get_TaskIds(self):
+		return self.get_query_params().get('TaskIds')
+
+	def set_TaskIds(self,TaskIds):
+		self.add_query_param('TaskIds',TaskIds)

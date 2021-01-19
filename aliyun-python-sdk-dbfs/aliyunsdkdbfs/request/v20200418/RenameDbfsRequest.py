@@ -18,24 +18,18 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkdbfs.endpoint import endpoint_data
 
-class CreateDbfsRequest(RpcRequest):
+class RenameDbfsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'DBFS', '2020-02-19', 'CreateDbfs')
+		RpcRequest.__init__(self, 'DBFS', '2020-04-18', 'RenameDbfs')
 		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_SizeG(self):
-		return self.get_query_params().get('SizeG')
-
-	def set_SizeG(self,SizeG):
-		self.add_query_param('SizeG',SizeG)
-
-	def get_ClientToken(self):
-		return self.get_query_params().get('ClientToken')
-
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
 
 	def get_FsName(self):
 		return self.get_query_params().get('FsName')
@@ -43,14 +37,8 @@ class CreateDbfsRequest(RpcRequest):
 	def set_FsName(self,FsName):
 		self.add_query_param('FsName',FsName)
 
-	def get_ZoneId(self):
-		return self.get_query_params().get('ZoneId')
+	def get_FsId(self):
+		return self.get_query_params().get('FsId')
 
-	def set_ZoneId(self,ZoneId):
-		self.add_query_param('ZoneId',ZoneId)
-
-	def get_Category(self):
-		return self.get_query_params().get('Category')
-
-	def set_Category(self,Category):
-		self.add_query_param('Category',Category)
+	def set_FsId(self,FsId):
+		self.add_query_param('FsId',FsId)
