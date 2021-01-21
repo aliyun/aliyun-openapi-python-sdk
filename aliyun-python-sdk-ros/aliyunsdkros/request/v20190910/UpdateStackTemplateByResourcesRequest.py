@@ -43,10 +43,10 @@ class UpdateStackTemplateByResourcesRequest(RpcRequest):
 	def set_StackId(self,StackId):
 		self.add_query_param('StackId',StackId)
 
-	def get_LogicalResourceIds(self):
+	def get_LogicalResourceId(self):
 		return self.get_query_params().get('LogicalResourceId')
 
-	def set_LogicalResourceIds(self, LogicalResourceIds):
+	def set_LogicalResourceId(self, LogicalResourceIds):
 		for depth1 in range(len(LogicalResourceIds)):
 			if LogicalResourceIds[depth1] is not None:
 				self.add_query_param('LogicalResourceId.' + str(depth1 + 1) , LogicalResourceIds[depth1])

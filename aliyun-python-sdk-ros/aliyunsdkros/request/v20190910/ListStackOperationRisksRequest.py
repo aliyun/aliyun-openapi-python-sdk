@@ -43,10 +43,10 @@ class ListStackOperationRisksRequest(RpcRequest):
 	def set_StackId(self,StackId):
 		self.add_query_param('StackId',StackId)
 
-	def get_RetainResourcess(self):
+	def get_RetainResources(self):
 		return self.get_query_params().get('RetainResources')
 
-	def set_RetainResourcess(self, RetainResourcess):
+	def set_RetainResources(self, RetainResourcess):
 		for depth1 in range(len(RetainResourcess)):
 			if RetainResourcess[depth1] is not None:
 				self.add_query_param('RetainResources.' + str(depth1 + 1) , RetainResourcess[depth1])

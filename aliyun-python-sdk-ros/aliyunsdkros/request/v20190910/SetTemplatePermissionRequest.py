@@ -55,10 +55,10 @@ class SetTemplatePermissionRequest(RpcRequest):
 	def set_ShareOption(self,ShareOption):
 		self.add_query_param('ShareOption',ShareOption)
 
-	def get_AccountIdss(self):
+	def get_AccountIds(self):
 		return self.get_query_params().get('AccountIds')
 
-	def set_AccountIdss(self, AccountIdss):
+	def set_AccountIds(self, AccountIdss):
 		for depth1 in range(len(AccountIdss)):
 			if AccountIdss[depth1] is not None:
 				self.add_query_param('AccountIds.' + str(depth1 + 1) , AccountIdss[depth1])

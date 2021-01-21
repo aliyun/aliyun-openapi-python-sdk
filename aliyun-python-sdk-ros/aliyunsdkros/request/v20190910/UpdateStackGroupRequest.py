@@ -55,10 +55,10 @@ class UpdateStackGroupRequest(RpcRequest):
 	def set_TemplateId(self,TemplateId):
 		self.add_query_param('TemplateId',TemplateId)
 
-	def get_Parameterss(self):
+	def get_Parameters(self):
 		return self.get_query_params().get('Parameters')
 
-	def set_Parameterss(self, Parameterss):
+	def set_Parameters(self, Parameterss):
 		for depth1 in range(len(Parameterss)):
 			if Parameterss[depth1].get('ParameterValue') is not None:
 				self.add_query_param('Parameters.' + str(depth1 + 1) + '.ParameterValue', Parameterss[depth1].get('ParameterValue'))

@@ -79,20 +79,20 @@ class ContinueCreateStackRequest(RpcRequest):
 	def set_TemplateId(self,TemplateId):
 		self.add_query_param('TemplateId',TemplateId)
 
-	def get_Parameterss(self):
+	def get_Parameters(self):
 		return self.get_query_params().get('Parameters')
 
-	def set_Parameterss(self, Parameterss):
+	def set_Parameters(self, Parameterss):
 		for depth1 in range(len(Parameterss)):
 			if Parameterss[depth1].get('ParameterValue') is not None:
 				self.add_query_param('Parameters.' + str(depth1 + 1) + '.ParameterValue', Parameterss[depth1].get('ParameterValue'))
 			if Parameterss[depth1].get('ParameterKey') is not None:
 				self.add_query_param('Parameters.' + str(depth1 + 1) + '.ParameterKey', Parameterss[depth1].get('ParameterKey'))
 
-	def get_RecreatingResourcess(self):
+	def get_RecreatingResources(self):
 		return self.get_query_params().get('RecreatingResources')
 
-	def set_RecreatingResourcess(self, RecreatingResourcess):
+	def set_RecreatingResources(self, RecreatingResourcess):
 		for depth1 in range(len(RecreatingResourcess)):
 			if RecreatingResourcess[depth1] is not None:
 				self.add_query_param('RecreatingResources.' + str(depth1 + 1) , RecreatingResourcess[depth1])

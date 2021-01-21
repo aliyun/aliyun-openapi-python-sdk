@@ -67,10 +67,20 @@ class CreateStackRequest(RpcRequest):
 	def set_TemplateId(self,TemplateId):
 		self.add_query_param('TemplateId',TemplateId)
 
-	def get_Parameterss(self):
+	def get_Tags(self):
+		return self.get_query_params().get('Tags')
+
+	def set_Tags(self, Tagss):
+		for depth1 in range(len(Tagss)):
+			if Tagss[depth1].get('Value') is not None:
+				self.add_query_param('Tags.' + str(depth1 + 1) + '.Value', Tagss[depth1].get('Value'))
+			if Tagss[depth1].get('Key') is not None:
+				self.add_query_param('Tags.' + str(depth1 + 1) + '.Key', Tagss[depth1].get('Key'))
+
+	def get_Parameters(self):
 		return self.get_query_params().get('Parameters')
 
-	def set_Parameterss(self, Parameterss):
+	def set_Parameters(self, Parameterss):
 		for depth1 in range(len(Parameterss)):
 			if Parameterss[depth1].get('ParameterValue') is not None:
 				self.add_query_param('Parameters.' + str(depth1 + 1) + '.ParameterValue', Parameterss[depth1].get('ParameterValue'))
@@ -95,10 +105,10 @@ class CreateStackRequest(RpcRequest):
 	def set_TemplateURL(self,TemplateURL):
 		self.add_query_param('TemplateURL',TemplateURL)
 
-	def get_NotificationURLss(self):
+	def get_NotificationURLs(self):
 		return self.get_query_params().get('NotificationURLs')
 
-	def set_NotificationURLss(self, NotificationURLss):
+	def set_NotificationURLs(self, NotificationURLss):
 		for depth1 in range(len(NotificationURLss)):
 			if NotificationURLss[depth1] is not None:
 				self.add_query_param('NotificationURLs.' + str(depth1 + 1) , NotificationURLss[depth1])

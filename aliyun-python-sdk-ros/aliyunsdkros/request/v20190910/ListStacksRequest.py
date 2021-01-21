@@ -55,18 +55,18 @@ class ListStacksRequest(RpcRequest):
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
 
-	def get_StackNames(self):
+	def get_StackName(self):
 		return self.get_query_params().get('StackName')
 
-	def set_StackNames(self, StackNames):
+	def set_StackName(self, StackNames):
 		for depth1 in range(len(StackNames)):
 			if StackNames[depth1] is not None:
 				self.add_query_param('StackName.' + str(depth1 + 1) , StackNames[depth1])
 
-	def get_Tags(self):
+	def get_Tag(self):
 		return self.get_query_params().get('Tag')
 
-	def set_Tags(self, Tags):
+	def set_Tag(self, Tags):
 		for depth1 in range(len(Tags)):
 			if Tags[depth1].get('Value') is not None:
 				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tags[depth1].get('Value'))
@@ -79,10 +79,10 @@ class ListStacksRequest(RpcRequest):
 	def set_ParentStackId(self,ParentStackId):
 		self.add_query_param('ParentStackId',ParentStackId)
 
-	def get_Statuss(self):
+	def get_Status(self):
 		return self.get_query_params().get('Status')
 
-	def set_Statuss(self, Statuss):
+	def set_Status(self, Statuss):
 		for depth1 in range(len(Statuss)):
 			if Statuss[depth1] is not None:
 				self.add_query_param('Status.' + str(depth1 + 1) , Statuss[depth1])
