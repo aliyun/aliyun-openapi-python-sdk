@@ -20,9 +20,7 @@
 
 class EndpointData():
 	def __init__(self):
-		self.endpoint_map = {
-			"cn-hangzhou": "privatelink-center.cn-hangzhou.aliyuncs.com",
-		}
+		self.endpoint_map = {}
 		self.endpoint_regional = "regional"
 
 	def getEndpointMap(self):

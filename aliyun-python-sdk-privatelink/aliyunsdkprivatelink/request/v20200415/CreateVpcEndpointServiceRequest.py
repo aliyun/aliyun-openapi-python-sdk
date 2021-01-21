@@ -56,10 +56,10 @@ class CreateVpcEndpointServiceRequest(RpcRequest):
 	def set_DryRun(self,DryRun):
 		self.add_query_param('DryRun',DryRun)
 
-	def get_Resources(self):
+	def get_Resource(self):
 		return self.get_query_params().get('Resource')
 
-	def set_Resources(self, Resources):
+	def set_Resource(self, Resources):
 		for depth1 in range(len(Resources)):
 			if Resources[depth1].get('ResourceId') is not None:
 				self.add_query_param('Resource.' + str(depth1 + 1) + '.ResourceId', Resources[depth1].get('ResourceId'))
