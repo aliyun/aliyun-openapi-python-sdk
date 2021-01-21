@@ -67,10 +67,10 @@ class DescribeInstanceMaintenanceAttributesRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_InstanceIds(self):
+	def get_InstanceId(self):
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceIds(self, InstanceIds):
+	def set_InstanceId(self, InstanceIds):
 		for depth1 in range(len(InstanceIds)):
 			if InstanceIds[depth1] is not None:
 				self.add_query_param('InstanceId.' + str(depth1 + 1) , InstanceIds[depth1])

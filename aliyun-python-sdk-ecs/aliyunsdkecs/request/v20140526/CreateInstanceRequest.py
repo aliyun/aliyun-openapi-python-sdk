@@ -109,10 +109,10 @@ class CreateInstanceRequest(RpcRequest):
 	def set_StorageSetPartitionNumber(self,StorageSetPartitionNumber):
 		self.add_query_param('StorageSetPartitionNumber',StorageSetPartitionNumber)
 
-	def get_Tags(self):
+	def get_Tag(self):
 		return self.get_query_params().get('Tag')
 
-	def set_Tags(self, Tags):
+	def set_Tag(self, Tags):
 		for depth1 in range(len(Tags)):
 			if Tags[depth1].get('Value') is not None:
 				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tags[depth1].get('Value'))
@@ -305,10 +305,10 @@ class CreateInstanceRequest(RpcRequest):
 	def set_InstanceType(self,InstanceType):
 		self.add_query_param('InstanceType',InstanceType)
 
-	def get_Arns(self):
+	def get_Arn(self):
 		return self.get_query_params().get('Arn')
 
-	def set_Arns(self, Arns):
+	def set_Arn(self, Arns):
 		for depth1 in range(len(Arns)):
 			if Arns[depth1].get('Rolearn') is not None:
 				self.add_query_param('Arn.' + str(depth1 + 1) + '.Rolearn', Arns[depth1].get('Rolearn'))
@@ -389,10 +389,10 @@ class CreateInstanceRequest(RpcRequest):
 	def set_SpotDuration(self,SpotDuration):
 		self.add_query_param('SpotDuration',SpotDuration)
 
-	def get_DataDisks(self):
+	def get_DataDisk(self):
 		return self.get_query_params().get('DataDisk')
 
-	def set_DataDisks(self, DataDisks):
+	def set_DataDisk(self, DataDisks):
 		for depth1 in range(len(DataDisks)):
 			if DataDisks[depth1].get('DiskName') is not None:
 				self.add_query_param('DataDisk.' + str(depth1 + 1) + '.DiskName', DataDisks[depth1].get('DiskName'))

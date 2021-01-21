@@ -49,10 +49,10 @@ class DescribeStorageCapacityUnitsRequest(RpcRequest):
 	def set_Capacity(self,Capacity):
 		self.add_query_param('Capacity',Capacity)
 
-	def get_StorageCapacityUnitIds(self):
+	def get_StorageCapacityUnitId(self):
 		return self.get_query_params().get('StorageCapacityUnitId')
 
-	def set_StorageCapacityUnitIds(self, StorageCapacityUnitIds):
+	def set_StorageCapacityUnitId(self, StorageCapacityUnitIds):
 		for depth1 in range(len(StorageCapacityUnitIds)):
 			if StorageCapacityUnitIds[depth1] is not None:
 				self.add_query_param('StorageCapacityUnitId.' + str(depth1 + 1) , StorageCapacityUnitIds[depth1])
@@ -87,10 +87,10 @@ class DescribeStorageCapacityUnitsRequest(RpcRequest):
 	def set_Name(self,Name):
 		self.add_query_param('Name',Name)
 
-	def get_Statuss(self):
+	def get_Status(self):
 		return self.get_query_params().get('Status')
 
-	def set_Statuss(self, Statuss):
+	def set_Status(self, Statuss):
 		for depth1 in range(len(Statuss)):
 			if Statuss[depth1] is not None:
 				self.add_query_param('Status.' + str(depth1 + 1) , Statuss[depth1])

@@ -211,10 +211,10 @@ class RunInstancesRequest(RpcRequest):
 	def set_InstanceType(self,InstanceType):
 		self.add_query_param('InstanceType',InstanceType)
 
-	def get_Arns(self):
+	def get_Arn(self):
 		return self.get_query_params().get('Arn')
 
-	def set_Arns(self, Arns):
+	def set_Arn(self, Arns):
 		for depth1 in range(len(Arns)):
 			if Arns[depth1].get('AssumeRoleFor') is not None:
 				self.add_query_param('Arn.' + str(depth1 + 1) + '.AssumeRoleFor', Arns[depth1].get('AssumeRoleFor'))
@@ -229,6 +229,12 @@ class RunInstancesRequest(RpcRequest):
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
+	def get_SchedulerOptionsDedicatedHostClusterId(self):
+		return self.get_query_params().get('SchedulerOptions.DedicatedHostClusterId')
+
+	def set_SchedulerOptionsDedicatedHostClusterId(self,SchedulerOptionsDedicatedHostClusterId):
+		self.add_query_param('SchedulerOptions.DedicatedHostClusterId',SchedulerOptionsDedicatedHostClusterId)
+
 	def get_SystemDiskDiskName(self):
 		return self.get_query_params().get('SystemDisk.DiskName')
 
@@ -241,10 +247,10 @@ class RunInstancesRequest(RpcRequest):
 	def set_DedicatedHostId(self,DedicatedHostId):
 		self.add_query_param('DedicatedHostId',DedicatedHostId)
 
-	def get_SecurityGroupIdss(self):
+	def get_SecurityGroupIds(self):
 		return self.get_query_params().get('SecurityGroupIds')
 
-	def set_SecurityGroupIdss(self, SecurityGroupIdss):
+	def set_SecurityGroupIds(self, SecurityGroupIdss):
 		for depth1 in range(len(SecurityGroupIdss)):
 			if SecurityGroupIdss[depth1] is not None:
 				self.add_query_param('SecurityGroupIds.' + str(depth1 + 1) , SecurityGroupIdss[depth1])
@@ -315,10 +321,10 @@ class RunInstancesRequest(RpcRequest):
 	def set_StorageSetPartitionNumber(self,StorageSetPartitionNumber):
 		self.add_query_param('StorageSetPartitionNumber',StorageSetPartitionNumber)
 
-	def get_Tags(self):
+	def get_Tag(self):
 		return self.get_query_params().get('Tag')
 
-	def set_Tags(self, Tags):
+	def set_Tag(self, Tags):
 		for depth1 in range(len(Tags)):
 			if Tags[depth1].get('Key') is not None:
 				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tags[depth1].get('Key'))
@@ -367,10 +373,10 @@ class RunInstancesRequest(RpcRequest):
 	def set_ZoneId(self,ZoneId):
 		self.add_query_param('ZoneId',ZoneId)
 
-	def get_Ipv6Addresss(self):
+	def get_Ipv6Address(self):
 		return self.get_query_params().get('Ipv6Address')
 
-	def set_Ipv6Addresss(self, Ipv6Addresss):
+	def set_Ipv6Address(self, Ipv6Addresss):
 		for depth1 in range(len(Ipv6Addresss)):
 			if Ipv6Addresss[depth1] is not None:
 				self.add_query_param('Ipv6Address.' + str(depth1 + 1) , Ipv6Addresss[depth1])
@@ -423,10 +429,10 @@ class RunInstancesRequest(RpcRequest):
 	def set_InstanceChargeType(self,InstanceChargeType):
 		self.add_query_param('InstanceChargeType',InstanceChargeType)
 
-	def get_NetworkInterfaces(self):
+	def get_NetworkInterface(self):
 		return self.get_query_params().get('NetworkInterface')
 
-	def set_NetworkInterfaces(self, NetworkInterfaces):
+	def set_NetworkInterface(self, NetworkInterfaces):
 		for depth1 in range(len(NetworkInterfaces)):
 			if NetworkInterfaces[depth1].get('PrimaryIpAddress') is not None:
 				self.add_query_param('NetworkInterface.' + str(depth1 + 1) + '.PrimaryIpAddress', NetworkInterfaces[depth1].get('PrimaryIpAddress'))
@@ -487,10 +493,10 @@ class RunInstancesRequest(RpcRequest):
 	def set_CreditSpecification(self,CreditSpecification):
 		self.add_query_param('CreditSpecification',CreditSpecification)
 
-	def get_DataDisks(self):
+	def get_DataDisk(self):
 		return self.get_query_params().get('DataDisk')
 
-	def set_DataDisks(self, DataDisks):
+	def set_DataDisk(self, DataDisks):
 		for depth1 in range(len(DataDisks)):
 			if DataDisks[depth1].get('Size') is not None:
 				self.add_query_param('DataDisk.' + str(depth1 + 1) + '.Size', DataDisks[depth1].get('Size'))

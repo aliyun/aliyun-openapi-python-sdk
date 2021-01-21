@@ -31,10 +31,10 @@ class CreateImageRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_DiskDeviceMappings(self):
+	def get_DiskDeviceMapping(self):
 		return self.get_query_params().get('DiskDeviceMapping')
 
-	def set_DiskDeviceMappings(self, DiskDeviceMappings):
+	def set_DiskDeviceMapping(self, DiskDeviceMappings):
 		for depth1 in range(len(DiskDeviceMappings)):
 			if DiskDeviceMappings[depth1].get('SnapshotId') is not None:
 				self.add_query_param('DiskDeviceMapping.' + str(depth1 + 1) + '.SnapshotId', DiskDeviceMappings[depth1].get('SnapshotId'))
@@ -87,10 +87,10 @@ class CreateImageRequest(RpcRequest):
 	def set_ImageName(self,ImageName):
 		self.add_query_param('ImageName',ImageName)
 
-	def get_Tags(self):
+	def get_Tag(self):
 		return self.get_query_params().get('Tag')
 
-	def set_Tags(self, Tags):
+	def set_Tag(self, Tags):
 		for depth1 in range(len(Tags)):
 			if Tags[depth1].get('Value') is not None:
 				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tags[depth1].get('Value'))

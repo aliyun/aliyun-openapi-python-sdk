@@ -91,10 +91,10 @@ class CreateLaunchTemplateVersionRequest(RpcRequest):
 	def set_SystemDiskIops(self,SystemDiskIops):
 		self.add_query_param('SystemDisk.Iops',SystemDiskIops)
 
-	def get_Tags(self):
+	def get_Tag(self):
 		return self.get_query_params().get('Tag')
 
-	def set_Tags(self, Tags):
+	def set_Tag(self, Tags):
 		for depth1 in range(len(Tags)):
 			if Tags[depth1].get('Key') is not None:
 				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tags[depth1].get('Key'))
@@ -245,10 +245,10 @@ class CreateLaunchTemplateVersionRequest(RpcRequest):
 	def set_EnableVmOsConfig(self,EnableVmOsConfig):
 		self.add_query_param('EnableVmOsConfig',EnableVmOsConfig)
 
-	def get_NetworkInterfaces(self):
+	def get_NetworkInterface(self):
 		return self.get_query_params().get('NetworkInterface')
 
-	def set_NetworkInterfaces(self, NetworkInterfaces):
+	def set_NetworkInterface(self, NetworkInterfaces):
 		for depth1 in range(len(NetworkInterfaces)):
 			if NetworkInterfaces[depth1].get('PrimaryIpAddress') is not None:
 				self.add_query_param('NetworkInterface.' + str(depth1 + 1) + '.PrimaryIpAddress', NetworkInterfaces[depth1].get('PrimaryIpAddress'))
@@ -301,18 +301,18 @@ class CreateLaunchTemplateVersionRequest(RpcRequest):
 	def set_SpotDuration(self,SpotDuration):
 		self.add_query_param('SpotDuration',SpotDuration)
 
-	def get_SecurityGroupIdss(self):
+	def get_SecurityGroupIds(self):
 		return self.get_query_params().get('SecurityGroupIds')
 
-	def set_SecurityGroupIdss(self, SecurityGroupIdss):
+	def set_SecurityGroupIds(self, SecurityGroupIdss):
 		for depth1 in range(len(SecurityGroupIdss)):
 			if SecurityGroupIdss[depth1] is not None:
 				self.add_query_param('SecurityGroupIds.' + str(depth1 + 1) , SecurityGroupIdss[depth1])
 
-	def get_DataDisks(self):
+	def get_DataDisk(self):
 		return self.get_query_params().get('DataDisk')
 
-	def set_DataDisks(self, DataDisks):
+	def set_DataDisk(self, DataDisks):
 		for depth1 in range(len(DataDisks)):
 			if DataDisks[depth1].get('Size') is not None:
 				self.add_query_param('DataDisk.' + str(depth1 + 1) + '.Size', DataDisks[depth1].get('Size'))

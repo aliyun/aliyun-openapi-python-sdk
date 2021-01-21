@@ -115,10 +115,10 @@ class DescribePriceRequest(RpcRequest):
 	def set_InstanceAmount(self,InstanceAmount):
 		self.add_query_param('InstanceAmount',InstanceAmount)
 
-	def get_InstanceTypeLists(self):
+	def get_InstanceTypeList(self):
 		return self.get_query_params().get('InstanceTypeList')
 
-	def set_InstanceTypeLists(self, InstanceTypeLists):
+	def set_InstanceTypeList(self, InstanceTypeLists):
 		for depth1 in range(len(InstanceTypeLists)):
 			if InstanceTypeLists[depth1] is not None:
 				self.add_query_param('InstanceTypeList.' + str(depth1 + 1) , InstanceTypeLists[depth1])

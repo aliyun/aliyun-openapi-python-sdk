@@ -43,10 +43,10 @@ class DeleteLaunchTemplateVersionRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_DeleteVersions(self):
+	def get_DeleteVersion(self):
 		return self.get_query_params().get('DeleteVersion')
 
-	def set_DeleteVersions(self, DeleteVersions):
+	def set_DeleteVersion(self, DeleteVersions):
 		for depth1 in range(len(DeleteVersions)):
 			if DeleteVersions[depth1] is not None:
 				self.add_query_param('DeleteVersion.' + str(depth1 + 1) , DeleteVersions[depth1])

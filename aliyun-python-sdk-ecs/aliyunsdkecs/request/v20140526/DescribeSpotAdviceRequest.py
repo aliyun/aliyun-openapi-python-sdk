@@ -49,10 +49,10 @@ class DescribeSpotAdviceRequest(RpcRequest):
 	def set_Memory(self,Memory):
 		self.add_query_param('Memory',Memory)
 
-	def get_InstanceTypess(self):
+	def get_InstanceTypes(self):
 		return self.get_query_params().get('InstanceTypes')
 
-	def set_InstanceTypess(self, InstanceTypess):
+	def set_InstanceTypes(self, InstanceTypess):
 		for depth1 in range(len(InstanceTypess)):
 			if InstanceTypess[depth1] is not None:
 				self.add_query_param('InstanceTypes.' + str(depth1 + 1) , InstanceTypess[depth1])

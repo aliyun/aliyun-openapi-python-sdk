@@ -97,10 +97,10 @@ class DescribeInstancesRequest(RpcRequest):
 	def set_DeviceAvailable(self,DeviceAvailable):
 		self.add_query_param('DeviceAvailable',DeviceAvailable)
 
-	def get_Tags(self):
+	def get_Tag(self):
 		return self.get_query_params().get('Tag')
 
-	def set_Tags(self, Tags):
+	def set_Tag(self, Tags):
 		for depth1 in range(len(Tags)):
 			if Tags[depth1].get('Value') is not None:
 				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tags[depth1].get('Value'))
@@ -143,10 +143,10 @@ class DescribeInstancesRequest(RpcRequest):
 	def set_VSwitchId(self,VSwitchId):
 		self.add_query_param('VSwitchId',VSwitchId)
 
-	def get_AdditionalAttributess(self):
+	def get_AdditionalAttributes(self):
 		return self.get_query_params().get('AdditionalAttributes')
 
-	def set_AdditionalAttributess(self, AdditionalAttributess):
+	def set_AdditionalAttributes(self, AdditionalAttributess):
 		for depth1 in range(len(AdditionalAttributess)):
 			if AdditionalAttributess[depth1] is not None:
 				self.add_query_param('AdditionalAttributes.' + str(depth1 + 1) , AdditionalAttributess[depth1])
@@ -174,6 +174,12 @@ class DescribeInstancesRequest(RpcRequest):
 
 	def set_ZoneId(self,ZoneId):
 		self.add_query_param('ZoneId',ZoneId)
+
+	def get_MaxResults(self):
+		return self.get_query_params().get('MaxResults')
+
+	def set_MaxResults(self,MaxResults):
+		self.add_query_param('MaxResults',MaxResults)
 
 	def get_InstanceNetworkType(self):
 		return self.get_query_params().get('InstanceNetworkType')
@@ -222,6 +228,12 @@ class DescribeInstancesRequest(RpcRequest):
 
 	def set_PageNumber(self,PageNumber):
 		self.add_query_param('PageNumber',PageNumber)
+
+	def get_NextToken(self):
+		return self.get_query_params().get('NextToken')
+
+	def set_NextToken(self,NextToken):
+		self.add_query_param('NextToken',NextToken)
 
 	def get_RdmaIpAddresses(self):
 		return self.get_query_params().get('RdmaIpAddresses')

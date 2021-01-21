@@ -79,10 +79,10 @@ class DescribeNetworkInterfacesRequest(RpcRequest):
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
 
-	def get_Tags(self):
+	def get_Tag(self):
 		return self.get_query_params().get('Tag')
 
-	def set_Tags(self, Tags):
+	def set_Tag(self, Tags):
 		for depth1 in range(len(Tags)):
 			if Tags[depth1].get('Key') is not None:
 				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tags[depth1].get('Key'))
@@ -119,10 +119,10 @@ class DescribeNetworkInterfacesRequest(RpcRequest):
 	def set_VSwitchId(self,VSwitchId):
 		self.add_query_param('VSwitchId',VSwitchId)
 
-	def get_PrivateIpAddresss(self):
+	def get_PrivateIpAddress(self):
 		return self.get_query_params().get('PrivateIpAddress')
 
-	def set_PrivateIpAddresss(self, PrivateIpAddresss):
+	def set_PrivateIpAddress(self, PrivateIpAddresss):
 		for depth1 in range(len(PrivateIpAddresss)):
 			if PrivateIpAddresss[depth1] is not None:
 				self.add_query_param('PrivateIpAddress.' + str(depth1 + 1) , PrivateIpAddresss[depth1])
@@ -151,10 +151,10 @@ class DescribeNetworkInterfacesRequest(RpcRequest):
 	def set_MaxResults(self,MaxResults):
 		self.add_query_param('MaxResults',MaxResults)
 
-	def get_NetworkInterfaceIds(self):
+	def get_NetworkInterfaceId(self):
 		return self.get_query_params().get('NetworkInterfaceId')
 
-	def set_NetworkInterfaceIds(self, NetworkInterfaceIds):
+	def set_NetworkInterfaceId(self, NetworkInterfaceIds):
 		for depth1 in range(len(NetworkInterfaceIds)):
 			if NetworkInterfaceIds[depth1] is not None:
 				self.add_query_param('NetworkInterfaceId.' + str(depth1 + 1) , NetworkInterfaceIds[depth1])

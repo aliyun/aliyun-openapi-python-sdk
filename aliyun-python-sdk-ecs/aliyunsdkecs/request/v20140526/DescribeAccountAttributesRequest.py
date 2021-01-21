@@ -37,10 +37,10 @@ class DescribeAccountAttributesRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_AttributeNames(self):
+	def get_AttributeName(self):
 		return self.get_query_params().get('AttributeName')
 
-	def set_AttributeNames(self, AttributeNames):
+	def set_AttributeName(self, AttributeNames):
 		for depth1 in range(len(AttributeNames)):
 			if AttributeNames[depth1] is not None:
 				self.add_query_param('AttributeName.' + str(depth1 + 1) , AttributeNames[depth1])

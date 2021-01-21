@@ -67,10 +67,10 @@ class DescribeHaVipsRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_Filters(self):
+	def get_Filter(self):
 		return self.get_query_params().get('Filter')
 
-	def set_Filters(self, Filters):
+	def set_Filter(self, Filters):
 		for depth1 in range(len(Filters)):
 			if Filters[depth1].get('Value') is not None:
 				for depth2 in range(len(Filters[depth1].get('Value'))):

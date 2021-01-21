@@ -31,10 +31,10 @@ class DescribeInstanceHistoryEventsRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_EventIds(self):
+	def get_EventId(self):
 		return self.get_query_params().get('EventId')
 
-	def set_EventIds(self, EventIds):
+	def set_EventId(self, EventIds):
 		for depth1 in range(len(EventIds)):
 			if EventIds[depth1] is not None:
 				self.add_query_param('EventId.' + str(depth1 + 1) , EventIds[depth1])
@@ -69,10 +69,10 @@ class DescribeInstanceHistoryEventsRequest(RpcRequest):
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
 
-	def get_InstanceEventCycleStatuss(self):
+	def get_InstanceEventCycleStatus(self):
 		return self.get_query_params().get('InstanceEventCycleStatus')
 
-	def set_InstanceEventCycleStatuss(self, InstanceEventCycleStatuss):
+	def set_InstanceEventCycleStatus(self, InstanceEventCycleStatuss):
 		for depth1 in range(len(InstanceEventCycleStatuss)):
 			if InstanceEventCycleStatuss[depth1] is not None:
 				self.add_query_param('InstanceEventCycleStatus.' + str(depth1 + 1) , InstanceEventCycleStatuss[depth1])
@@ -83,10 +83,10 @@ class DescribeInstanceHistoryEventsRequest(RpcRequest):
 	def set_EventPublishTimeEnd(self,EventPublishTimeEnd):
 		self.add_query_param('EventPublishTime.End',EventPublishTimeEnd)
 
-	def get_InstanceEventTypes(self):
+	def get_InstanceEventType(self):
 		return self.get_query_params().get('InstanceEventType')
 
-	def set_InstanceEventTypes(self, InstanceEventTypes):
+	def set_InstanceEventType(self, InstanceEventTypes):
 		for depth1 in range(len(InstanceEventTypes)):
 			if InstanceEventTypes[depth1] is not None:
 				self.add_query_param('InstanceEventType.' + str(depth1 + 1) , InstanceEventTypes[depth1])

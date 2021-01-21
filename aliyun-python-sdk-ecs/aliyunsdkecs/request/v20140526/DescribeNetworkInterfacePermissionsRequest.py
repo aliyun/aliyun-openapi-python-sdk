@@ -49,10 +49,10 @@ class DescribeNetworkInterfacePermissionsRequest(RpcRequest):
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
 
-	def get_NetworkInterfacePermissionIds(self):
+	def get_NetworkInterfacePermissionId(self):
 		return self.get_query_params().get('NetworkInterfacePermissionId')
 
-	def set_NetworkInterfacePermissionIds(self, NetworkInterfacePermissionIds):
+	def set_NetworkInterfacePermissionId(self, NetworkInterfacePermissionIds):
 		for depth1 in range(len(NetworkInterfacePermissionIds)):
 			if NetworkInterfacePermissionIds[depth1] is not None:
 				self.add_query_param('NetworkInterfacePermissionId.' + str(depth1 + 1) , NetworkInterfacePermissionIds[depth1])

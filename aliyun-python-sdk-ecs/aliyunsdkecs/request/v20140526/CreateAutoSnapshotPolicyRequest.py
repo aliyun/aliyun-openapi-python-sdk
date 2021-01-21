@@ -55,10 +55,10 @@ class CreateAutoSnapshotPolicyRequest(RpcRequest):
 	def set_repeatWeekdays(self,repeatWeekdays):
 		self.add_query_param('repeatWeekdays',repeatWeekdays)
 
-	def get_Tags(self):
+	def get_Tag(self):
 		return self.get_query_params().get('Tag')
 
-	def set_Tags(self, Tags):
+	def set_Tag(self, Tags):
 		for depth1 in range(len(Tags)):
 			if Tags[depth1].get('Value') is not None:
 				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tags[depth1].get('Value'))

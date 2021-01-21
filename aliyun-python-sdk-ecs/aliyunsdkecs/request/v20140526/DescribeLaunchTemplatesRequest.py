@@ -31,10 +31,10 @@ class DescribeLaunchTemplatesRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_LaunchTemplateNames(self):
+	def get_LaunchTemplateName(self):
 		return self.get_query_params().get('LaunchTemplateName')
 
-	def set_LaunchTemplateNames(self, LaunchTemplateNames):
+	def set_LaunchTemplateName(self, LaunchTemplateNames):
 		for depth1 in range(len(LaunchTemplateNames)):
 			if LaunchTemplateNames[depth1] is not None:
 				self.add_query_param('LaunchTemplateName.' + str(depth1 + 1) , LaunchTemplateNames[depth1])
@@ -57,20 +57,20 @@ class DescribeLaunchTemplatesRequest(RpcRequest):
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
 
-	def get_TemplateTags(self):
+	def get_TemplateTag(self):
 		return self.get_query_params().get('TemplateTag')
 
-	def set_TemplateTags(self, TemplateTags):
+	def set_TemplateTag(self, TemplateTags):
 		for depth1 in range(len(TemplateTags)):
 			if TemplateTags[depth1].get('Key') is not None:
 				self.add_query_param('TemplateTag.' + str(depth1 + 1) + '.Key', TemplateTags[depth1].get('Key'))
 			if TemplateTags[depth1].get('Value') is not None:
 				self.add_query_param('TemplateTag.' + str(depth1 + 1) + '.Value', TemplateTags[depth1].get('Value'))
 
-	def get_LaunchTemplateIds(self):
+	def get_LaunchTemplateId(self):
 		return self.get_query_params().get('LaunchTemplateId')
 
-	def set_LaunchTemplateIds(self, LaunchTemplateIds):
+	def set_LaunchTemplateId(self, LaunchTemplateIds):
 		for depth1 in range(len(LaunchTemplateIds)):
 			if LaunchTemplateIds[depth1] is not None:
 				self.add_query_param('LaunchTemplateId.' + str(depth1 + 1) , LaunchTemplateIds[depth1])

@@ -31,20 +31,20 @@ class TagResourcesRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_Tags(self):
+	def get_Tag(self):
 		return self.get_query_params().get('Tag')
 
-	def set_Tags(self, Tags):
+	def set_Tag(self, Tags):
 		for depth1 in range(len(Tags)):
 			if Tags[depth1].get('Key') is not None:
 				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tags[depth1].get('Key'))
 			if Tags[depth1].get('Value') is not None:
 				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tags[depth1].get('Value'))
 
-	def get_ResourceIds(self):
+	def get_ResourceId(self):
 		return self.get_query_params().get('ResourceId')
 
-	def set_ResourceIds(self, ResourceIds):
+	def set_ResourceId(self, ResourceIds):
 		for depth1 in range(len(ResourceIds)):
 			if ResourceIds[depth1] is not None:
 				self.add_query_param('ResourceId.' + str(depth1 + 1) , ResourceIds[depth1])

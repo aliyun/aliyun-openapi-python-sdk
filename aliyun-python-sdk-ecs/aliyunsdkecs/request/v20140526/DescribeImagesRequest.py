@@ -109,10 +109,10 @@ class DescribeImagesRequest(RpcRequest):
 	def set_InstanceType(self,InstanceType):
 		self.add_query_param('InstanceType',InstanceType)
 
-	def get_Tags(self):
+	def get_Tag(self):
 		return self.get_query_params().get('Tag')
 
-	def set_Tags(self, Tags):
+	def set_Tag(self, Tags):
 		for depth1 in range(len(Tags)):
 			if Tags[depth1].get('Value') is not None:
 				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tags[depth1].get('Value'))
@@ -161,10 +161,10 @@ class DescribeImagesRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_Filters(self):
+	def get_Filter(self):
 		return self.get_query_params().get('Filter')
 
-	def set_Filters(self, Filters):
+	def set_Filter(self, Filters):
 		for depth1 in range(len(Filters)):
 			if Filters[depth1].get('Value') is not None:
 				self.add_query_param('Filter.' + str(depth1 + 1) + '.Value', Filters[depth1].get('Value'))

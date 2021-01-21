@@ -31,10 +31,10 @@ class CreateAutoProvisioningGroupRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_LaunchConfigurationDataDisks(self):
+	def get_LaunchConfigurationDataDisk(self):
 		return self.get_query_params().get('LaunchConfiguration.DataDisk')
 
-	def set_LaunchConfigurationDataDisks(self, LaunchConfigurationDataDisks):
+	def set_LaunchConfigurationDataDisk(self, LaunchConfigurationDataDisks):
 		for depth1 in range(len(LaunchConfigurationDataDisks)):
 			if LaunchConfigurationDataDisks[depth1].get('Size') is not None:
 				self.add_query_param('LaunchConfiguration.DataDisk.' + str(depth1 + 1) + '.Size', LaunchConfigurationDataDisks[depth1].get('Size'))
@@ -117,18 +117,18 @@ class CreateAutoProvisioningGroupRequest(RpcRequest):
 	def set_LaunchConfigurationKeyPairName(self,LaunchConfigurationKeyPairName):
 		self.add_query_param('LaunchConfiguration.KeyPairName',LaunchConfigurationKeyPairName)
 
-	def get_SystemDiskConfigs(self):
+	def get_SystemDiskConfig(self):
 		return self.get_query_params().get('SystemDiskConfig')
 
-	def set_SystemDiskConfigs(self, SystemDiskConfigs):
+	def set_SystemDiskConfig(self, SystemDiskConfigs):
 		for depth1 in range(len(SystemDiskConfigs)):
 			if SystemDiskConfigs[depth1].get('DiskCategory') is not None:
 				self.add_query_param('SystemDiskConfig.' + str(depth1 + 1) + '.DiskCategory', SystemDiskConfigs[depth1].get('DiskCategory'))
 
-	def get_DataDiskConfigs(self):
+	def get_DataDiskConfig(self):
 		return self.get_query_params().get('DataDiskConfig')
 
-	def set_DataDiskConfigs(self, DataDiskConfigs):
+	def set_DataDiskConfig(self, DataDiskConfigs):
 		for depth1 in range(len(DataDiskConfigs)):
 			if DataDiskConfigs[depth1].get('DiskCategory') is not None:
 				self.add_query_param('DataDiskConfig.' + str(depth1 + 1) + '.DiskCategory', DataDiskConfigs[depth1].get('DiskCategory'))
@@ -259,10 +259,10 @@ class CreateAutoProvisioningGroupRequest(RpcRequest):
 	def set_ExcessCapacityTerminationPolicy(self,ExcessCapacityTerminationPolicy):
 		self.add_query_param('ExcessCapacityTerminationPolicy',ExcessCapacityTerminationPolicy)
 
-	def get_LaunchTemplateConfigs(self):
+	def get_LaunchTemplateConfig(self):
 		return self.get_query_params().get('LaunchTemplateConfig')
 
-	def set_LaunchTemplateConfigs(self, LaunchTemplateConfigs):
+	def set_LaunchTemplateConfig(self, LaunchTemplateConfigs):
 		for depth1 in range(len(LaunchTemplateConfigs)):
 			if LaunchTemplateConfigs[depth1].get('InstanceType') is not None:
 				self.add_query_param('LaunchTemplateConfig.' + str(depth1 + 1) + '.InstanceType', LaunchTemplateConfigs[depth1].get('InstanceType'))
@@ -299,10 +299,10 @@ class CreateAutoProvisioningGroupRequest(RpcRequest):
 	def set_LaunchConfigurationSecurityEnhancementStrategy(self,LaunchConfigurationSecurityEnhancementStrategy):
 		self.add_query_param('LaunchConfiguration.SecurityEnhancementStrategy',LaunchConfigurationSecurityEnhancementStrategy)
 
-	def get_LaunchConfigurationTags(self):
+	def get_LaunchConfigurationTag(self):
 		return self.get_query_params().get('LaunchConfiguration.Tag')
 
-	def set_LaunchConfigurationTags(self, LaunchConfigurationTags):
+	def set_LaunchConfigurationTag(self, LaunchConfigurationTags):
 		for depth1 in range(len(LaunchConfigurationTags)):
 			if LaunchConfigurationTags[depth1].get('Key') is not None:
 				self.add_query_param('LaunchConfiguration.Tag.' + str(depth1 + 1) + '.Key', LaunchConfigurationTags[depth1].get('Key'))
