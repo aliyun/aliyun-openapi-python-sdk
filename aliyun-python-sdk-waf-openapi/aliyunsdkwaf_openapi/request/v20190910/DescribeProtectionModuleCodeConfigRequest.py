@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkwaf_openapi.endpoint import endpoint_data
 
-class ModifyDomainClusterTypeRequest(RpcRequest):
+class DescribeProtectionModuleCodeConfigRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'waf-openapi', '2019-09-10', 'ModifyDomainClusterType','waf')
+		RpcRequest.__init__(self, 'waf-openapi', '2019-09-10', 'DescribeProtectionModuleCodeConfig','waf')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,11 +31,17 @@ class ModifyDomainClusterTypeRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_ClusterType(self):
-		return self.get_query_params().get('ClusterType')
+	def get_CodeValue(self):
+		return self.get_query_params().get('CodeValue')
 
-	def set_ClusterType(self,ClusterType):
-		self.add_query_param('ClusterType',ClusterType)
+	def set_CodeValue(self,CodeValue):
+		self.add_query_param('CodeValue',CodeValue)
+
+	def get_ResourceGroupId(self):
+		return self.get_query_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self,ResourceGroupId):
+		self.add_query_param('ResourceGroupId',ResourceGroupId)
 
 	def get_InstanceId(self):
 		return self.get_query_params().get('InstanceId')
@@ -43,8 +49,20 @@ class ModifyDomainClusterTypeRequest(RpcRequest):
 	def set_InstanceId(self,InstanceId):
 		self.add_query_param('InstanceId',InstanceId)
 
-	def get_Domain(self):
-		return self.get_query_params().get('Domain')
+	def get_SourceIp(self):
+		return self.get_query_params().get('SourceIp')
 
-	def set_Domain(self,Domain):
-		self.add_query_param('Domain',Domain)
+	def set_SourceIp(self,SourceIp):
+		self.add_query_param('SourceIp',SourceIp)
+
+	def get_CodeType(self):
+		return self.get_query_params().get('CodeType')
+
+	def set_CodeType(self,CodeType):
+		self.add_query_param('CodeType',CodeType)
+
+	def get_Lang(self):
+		return self.get_query_params().get('Lang')
+
+	def set_Lang(self,Lang):
+		self.add_query_param('Lang',Lang)
