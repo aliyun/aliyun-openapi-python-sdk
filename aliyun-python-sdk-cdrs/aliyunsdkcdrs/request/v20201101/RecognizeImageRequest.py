@@ -25,11 +25,23 @@ class RecognizeImageRequest(RpcRequest):
 		RpcRequest.__init__(self, 'CDRS', '2020-11-01', 'RecognizeImage')
 		self.set_method('POST')
 
+	def get_RequireCropImage(self):
+		return self.get_body_params().get('RequireCropImage')
+
+	def set_RequireCropImage(self,RequireCropImage):
+		self.add_body_params('RequireCropImage', RequireCropImage)
+
 	def get_CorpId(self):
 		return self.get_body_params().get('CorpId')
 
 	def set_CorpId(self,CorpId):
 		self.add_body_params('CorpId', CorpId)
+
+	def get_RecognizeType(self):
+		return self.get_body_params().get('RecognizeType')
+
+	def set_RecognizeType(self,RecognizeType):
+		self.add_body_params('RecognizeType', RecognizeType)
 
 	def get_Vendor(self):
 		return self.get_body_params().get('Vendor')
