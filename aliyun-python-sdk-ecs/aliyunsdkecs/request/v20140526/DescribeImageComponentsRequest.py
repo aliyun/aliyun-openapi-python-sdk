@@ -37,10 +37,10 @@ class DescribeImageComponentsRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_ImageComponentId(self):
+	def get_ImageComponentIds(self):
 		return self.get_query_params().get('ImageComponentId')
 
-	def set_ImageComponentId(self, ImageComponentIds):
+	def set_ImageComponentIds(self, ImageComponentIds):
 		for depth1 in range(len(ImageComponentIds)):
 			if ImageComponentIds[depth1] is not None:
 				self.add_query_param('ImageComponentId.' + str(depth1 + 1) , ImageComponentIds[depth1])
@@ -57,10 +57,10 @@ class DescribeImageComponentsRequest(RpcRequest):
 	def set_NextToken(self,NextToken):
 		self.add_query_param('NextToken',NextToken)
 
-	def get_Tag(self):
+	def get_Tags(self):
 		return self.get_query_params().get('Tag')
 
-	def set_Tag(self, Tags):
+	def set_Tags(self, Tags):
 		for depth1 in range(len(Tags)):
 			if Tags[depth1].get('Key') is not None:
 				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tags[depth1].get('Key'))

@@ -97,10 +97,10 @@ class DescribeLaunchTemplateVersionsRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_LaunchTemplateVersion(self):
+	def get_LaunchTemplateVersions(self):
 		return self.get_query_params().get('LaunchTemplateVersion')
 
-	def set_LaunchTemplateVersion(self, LaunchTemplateVersions):
+	def set_LaunchTemplateVersions(self, LaunchTemplateVersions):
 		for depth1 in range(len(LaunchTemplateVersions)):
 			if LaunchTemplateVersions[depth1] is not None:
 				self.add_query_param('LaunchTemplateVersion.' + str(depth1 + 1) , LaunchTemplateVersions[depth1])

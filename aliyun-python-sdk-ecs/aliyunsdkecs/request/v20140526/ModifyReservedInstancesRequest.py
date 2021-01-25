@@ -37,10 +37,10 @@ class ModifyReservedInstancesRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_Configuration(self):
+	def get_Configurations(self):
 		return self.get_query_params().get('Configuration')
 
-	def set_Configuration(self, Configurations):
+	def set_Configurations(self, Configurations):
 		for depth1 in range(len(Configurations)):
 			if Configurations[depth1].get('ZoneId') is not None:
 				self.add_query_param('Configuration.' + str(depth1 + 1) + '.ZoneId', Configurations[depth1].get('ZoneId'))
@@ -71,10 +71,10 @@ class ModifyReservedInstancesRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_ReservedInstanceId(self):
+	def get_ReservedInstanceIds(self):
 		return self.get_query_params().get('ReservedInstanceId')
 
-	def set_ReservedInstanceId(self, ReservedInstanceIds):
+	def set_ReservedInstanceIds(self, ReservedInstanceIds):
 		for depth1 in range(len(ReservedInstanceIds)):
 			if ReservedInstanceIds[depth1] is not None:
 				self.add_query_param('ReservedInstanceId.' + str(depth1 + 1) , ReservedInstanceIds[depth1])

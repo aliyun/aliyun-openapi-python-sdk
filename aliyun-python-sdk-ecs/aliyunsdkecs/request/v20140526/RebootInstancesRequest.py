@@ -73,10 +73,10 @@ class RebootInstancesRequest(RpcRequest):
 	def set_ForceReboot(self,ForceReboot):
 		self.add_query_param('ForceReboot',ForceReboot)
 
-	def get_InstanceId(self):
+	def get_InstanceIds(self):
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceId(self, InstanceIds):
+	def set_InstanceIds(self, InstanceIds):
 		for depth1 in range(len(InstanceIds)):
 			if InstanceIds[depth1] is not None:
 				self.add_query_param('InstanceId.' + str(depth1 + 1) , InstanceIds[depth1])

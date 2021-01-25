@@ -67,10 +67,10 @@ class CreateImageComponentRequest(RpcRequest):
 	def set_ResourceGroupId(self,ResourceGroupId):
 		self.add_query_param('ResourceGroupId',ResourceGroupId)
 
-	def get_Tag(self):
+	def get_Tags(self):
 		return self.get_query_params().get('Tag')
 
-	def set_Tag(self, Tags):
+	def set_Tags(self, Tags):
 		for depth1 in range(len(Tags)):
 			if Tags[depth1].get('Key') is not None:
 				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tags[depth1].get('Key'))

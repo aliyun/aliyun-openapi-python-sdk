@@ -49,10 +49,10 @@ class CreateImagePipelineRequest(RpcRequest):
 	def set_ClientToken(self,ClientToken):
 		self.add_query_param('ClientToken',ClientToken)
 
-	def get_ToRegionId(self):
+	def get_ToRegionIds(self):
 		return self.get_query_params().get('ToRegionId')
 
-	def set_ToRegionId(self, ToRegionIds):
+	def set_ToRegionIds(self, ToRegionIds):
 		for depth1 in range(len(ToRegionIds)):
 			if ToRegionIds[depth1] is not None:
 				self.add_query_param('ToRegionId.' + str(depth1 + 1) , ToRegionIds[depth1])
@@ -93,10 +93,10 @@ class CreateImagePipelineRequest(RpcRequest):
 	def set_InstanceType(self,InstanceType):
 		self.add_query_param('InstanceType',InstanceType)
 
-	def get_Tag(self):
+	def get_Tags(self):
 		return self.get_query_params().get('Tag')
 
-	def set_Tag(self, Tags):
+	def set_Tags(self, Tags):
 		for depth1 in range(len(Tags)):
 			if Tags[depth1].get('Key') is not None:
 				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tags[depth1].get('Key'))
@@ -133,10 +133,10 @@ class CreateImagePipelineRequest(RpcRequest):
 	def set_VSwitchId(self,VSwitchId):
 		self.add_query_param('VSwitchId',VSwitchId)
 
-	def get_AddAccount(self):
+	def get_AddAccounts(self):
 		return self.get_query_params().get('AddAccount')
 
-	def set_AddAccount(self, AddAccounts):
+	def set_AddAccounts(self, AddAccounts):
 		for depth1 in range(len(AddAccounts)):
 			if AddAccounts[depth1] is not None:
 				self.add_query_param('AddAccount.' + str(depth1 + 1) , AddAccounts[depth1])

@@ -37,10 +37,10 @@ class ModifyInstanceMaintenanceAttributesRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_MaintenanceWindow(self):
+	def get_MaintenanceWindows(self):
 		return self.get_query_params().get('MaintenanceWindow')
 
-	def set_MaintenanceWindow(self, MaintenanceWindows):
+	def set_MaintenanceWindows(self, MaintenanceWindows):
 		for depth1 in range(len(MaintenanceWindows)):
 			if MaintenanceWindows[depth1].get('StartTime') is not None:
 				self.add_query_param('MaintenanceWindow.' + str(depth1 + 1) + '.StartTime', MaintenanceWindows[depth1].get('StartTime'))
@@ -71,10 +71,10 @@ class ModifyInstanceMaintenanceAttributesRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_InstanceId(self):
+	def get_InstanceIds(self):
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceId(self, InstanceIds):
+	def set_InstanceIds(self, InstanceIds):
 		for depth1 in range(len(InstanceIds)):
 			if InstanceIds[depth1] is not None:
 				self.add_query_param('InstanceId.' + str(depth1 + 1) , InstanceIds[depth1])

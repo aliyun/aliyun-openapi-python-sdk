@@ -61,10 +61,10 @@ class UnassignIpv6AddressesRequest(RpcRequest):
 	def set_NetworkInterfaceId(self,NetworkInterfaceId):
 		self.add_query_param('NetworkInterfaceId',NetworkInterfaceId)
 
-	def get_Ipv6Address(self):
+	def get_Ipv6Addresss(self):
 		return self.get_query_params().get('Ipv6Address')
 
-	def set_Ipv6Address(self, Ipv6Addresss):
+	def set_Ipv6Addresss(self, Ipv6Addresss):
 		for depth1 in range(len(Ipv6Addresss)):
 			if Ipv6Addresss[depth1] is not None:
 				self.add_query_param('Ipv6Address.' + str(depth1 + 1) , Ipv6Addresss[depth1])

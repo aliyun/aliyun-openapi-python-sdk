@@ -85,10 +85,10 @@ class CreateRouteEntryRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_NextHopList(self):
+	def get_NextHopLists(self):
 		return self.get_query_params().get('NextHopList')
 
-	def set_NextHopList(self, NextHopLists):
+	def set_NextHopLists(self, NextHopLists):
 		for depth1 in range(len(NextHopLists)):
 			if NextHopLists[depth1].get('NextHopId') is not None:
 				self.add_query_param('NextHopList.' + str(depth1 + 1) + '.NextHopId', NextHopLists[depth1].get('NextHopId'))

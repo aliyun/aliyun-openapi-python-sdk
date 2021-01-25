@@ -43,10 +43,10 @@ class RemoveBandwidthPackageIpsRequest(RpcRequest):
 	def set_ClientToken(self,ClientToken):
 		self.add_query_param('ClientToken',ClientToken)
 
-	def get_RemovedIpAddresses(self):
+	def get_RemovedIpAddressess(self):
 		return self.get_query_params().get('RemovedIpAddresses')
 
-	def set_RemovedIpAddresses(self, RemovedIpAddressess):
+	def set_RemovedIpAddressess(self, RemovedIpAddressess):
 		for depth1 in range(len(RemovedIpAddressess)):
 			if RemovedIpAddressess[depth1] is not None:
 				self.add_query_param('RemovedIpAddresses.' + str(depth1 + 1) , RemovedIpAddressess[depth1])

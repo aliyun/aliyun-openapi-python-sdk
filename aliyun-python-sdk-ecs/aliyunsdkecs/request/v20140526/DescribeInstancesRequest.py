@@ -97,10 +97,10 @@ class DescribeInstancesRequest(RpcRequest):
 	def set_DeviceAvailable(self,DeviceAvailable):
 		self.add_query_param('DeviceAvailable',DeviceAvailable)
 
-	def get_Tag(self):
+	def get_Tags(self):
 		return self.get_query_params().get('Tag')
 
-	def set_Tag(self, Tags):
+	def set_Tags(self, Tags):
 		for depth1 in range(len(Tags)):
 			if Tags[depth1].get('Value') is not None:
 				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tags[depth1].get('Value'))
@@ -143,10 +143,10 @@ class DescribeInstancesRequest(RpcRequest):
 	def set_VSwitchId(self,VSwitchId):
 		self.add_query_param('VSwitchId',VSwitchId)
 
-	def get_AdditionalAttributes(self):
+	def get_AdditionalAttributess(self):
 		return self.get_query_params().get('AdditionalAttributes')
 
-	def set_AdditionalAttributes(self, AdditionalAttributess):
+	def set_AdditionalAttributess(self, AdditionalAttributess):
 		for depth1 in range(len(AdditionalAttributess)):
 			if AdditionalAttributess[depth1] is not None:
 				self.add_query_param('AdditionalAttributes.' + str(depth1 + 1) , AdditionalAttributess[depth1])

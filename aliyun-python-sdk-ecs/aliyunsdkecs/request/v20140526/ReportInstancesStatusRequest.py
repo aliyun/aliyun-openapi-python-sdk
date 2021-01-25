@@ -61,10 +61,10 @@ class ReportInstancesStatusRequest(RpcRequest):
 	def set_IssueCategory(self,IssueCategory):
 		self.add_query_param('IssueCategory',IssueCategory)
 
-	def get_DiskId(self):
+	def get_DiskIds(self):
 		return self.get_query_params().get('DiskId')
 
-	def set_DiskId(self, DiskIds):
+	def set_DiskIds(self, DiskIds):
 		for depth1 in range(len(DiskIds)):
 			if DiskIds[depth1] is not None:
 				self.add_query_param('DiskId.' + str(depth1 + 1) , DiskIds[depth1])
@@ -93,18 +93,18 @@ class ReportInstancesStatusRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_InstanceId(self):
+	def get_InstanceIds(self):
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceId(self, InstanceIds):
+	def set_InstanceIds(self, InstanceIds):
 		for depth1 in range(len(InstanceIds)):
 			if InstanceIds[depth1] is not None:
 				self.add_query_param('InstanceId.' + str(depth1 + 1) , InstanceIds[depth1])
 
-	def get_Device(self):
+	def get_Devices(self):
 		return self.get_query_params().get('Device')
 
-	def set_Device(self, Devices):
+	def set_Devices(self, Devices):
 		for depth1 in range(len(Devices)):
 			if Devices[depth1] is not None:
 				self.add_query_param('Device.' + str(depth1 + 1) , Devices[depth1])

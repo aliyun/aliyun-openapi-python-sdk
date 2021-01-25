@@ -43,20 +43,20 @@ class ListTagResourcesRequest(RpcRequest):
 	def set_NextToken(self,NextToken):
 		self.add_query_param('NextToken',NextToken)
 
-	def get_Tag(self):
+	def get_Tags(self):
 		return self.get_query_params().get('Tag')
 
-	def set_Tag(self, Tags):
+	def set_Tags(self, Tags):
 		for depth1 in range(len(Tags)):
 			if Tags[depth1].get('Key') is not None:
 				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tags[depth1].get('Key'))
 			if Tags[depth1].get('Value') is not None:
 				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tags[depth1].get('Value'))
 
-	def get_ResourceId(self):
+	def get_ResourceIds(self):
 		return self.get_query_params().get('ResourceId')
 
-	def set_ResourceId(self, ResourceIds):
+	def set_ResourceIds(self, ResourceIds):
 		for depth1 in range(len(ResourceIds)):
 			if ResourceIds[depth1] is not None:
 				self.add_query_param('ResourceId.' + str(depth1 + 1) , ResourceIds[depth1])
@@ -79,10 +79,10 @@ class ListTagResourcesRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_TagFilter(self):
+	def get_TagFilters(self):
 		return self.get_query_params().get('TagFilter')
 
-	def set_TagFilter(self, TagFilters):
+	def set_TagFilters(self, TagFilters):
 		for depth1 in range(len(TagFilters)):
 			if TagFilters[depth1].get('TagKey') is not None:
 				self.add_query_param('TagFilter.' + str(depth1 + 1) + '.TagKey', TagFilters[depth1].get('TagKey'))

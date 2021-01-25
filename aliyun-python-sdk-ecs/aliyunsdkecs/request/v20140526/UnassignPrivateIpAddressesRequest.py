@@ -55,10 +55,10 @@ class UnassignPrivateIpAddressesRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_PrivateIpAddress(self):
+	def get_PrivateIpAddresss(self):
 		return self.get_query_params().get('PrivateIpAddress')
 
-	def set_PrivateIpAddress(self, PrivateIpAddresss):
+	def set_PrivateIpAddresss(self, PrivateIpAddresss):
 		for depth1 in range(len(PrivateIpAddresss)):
 			if PrivateIpAddresss[depth1] is not None:
 				self.add_query_param('PrivateIpAddress.' + str(depth1 + 1) , PrivateIpAddresss[depth1])

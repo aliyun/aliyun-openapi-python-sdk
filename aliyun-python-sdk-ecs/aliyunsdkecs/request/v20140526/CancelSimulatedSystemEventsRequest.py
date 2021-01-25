@@ -31,10 +31,10 @@ class CancelSimulatedSystemEventsRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_EventId(self):
+	def get_EventIds(self):
 		return self.get_query_params().get('EventId')
 
-	def set_EventId(self, EventIds):
+	def set_EventIds(self, EventIds):
 		for depth1 in range(len(EventIds)):
 			if EventIds[depth1] is not None:
 				self.add_query_param('EventId.' + str(depth1 + 1) , EventIds[depth1])

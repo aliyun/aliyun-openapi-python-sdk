@@ -61,10 +61,10 @@ class CreateElasticityAssuranceRequest(RpcRequest):
 	def set_PrivatePoolOptionsMatchCriteria(self,PrivatePoolOptionsMatchCriteria):
 		self.add_query_param('PrivatePoolOptions.MatchCriteria',PrivatePoolOptionsMatchCriteria)
 
-	def get_InstanceType(self):
+	def get_InstanceTypes(self):
 		return self.get_query_params().get('InstanceType')
 
-	def set_InstanceType(self, InstanceTypes):
+	def set_InstanceTypes(self, InstanceTypes):
 		for depth1 in range(len(InstanceTypes)):
 			if InstanceTypes[depth1] is not None:
 				self.add_query_param('InstanceType.' + str(depth1 + 1) , InstanceTypes[depth1])
@@ -117,10 +117,10 @@ class CreateElasticityAssuranceRequest(RpcRequest):
 	def set_PeriodUnit(self,PeriodUnit):
 		self.add_query_param('PeriodUnit',PeriodUnit)
 
-	def get_ZoneId(self):
+	def get_ZoneIds(self):
 		return self.get_query_params().get('ZoneId')
 
-	def set_ZoneId(self, ZoneIds):
+	def set_ZoneIds(self, ZoneIds):
 		for depth1 in range(len(ZoneIds)):
 			if ZoneIds[depth1] is not None:
 				self.add_query_param('ZoneId.' + str(depth1 + 1) , ZoneIds[depth1])

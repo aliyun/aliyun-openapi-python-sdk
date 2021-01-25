@@ -49,10 +49,10 @@ class DescribeAutoProvisioningGroupsRequest(RpcRequest):
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
 
-	def get_AutoProvisioningGroupStatus(self):
+	def get_AutoProvisioningGroupStatuss(self):
 		return self.get_query_params().get('AutoProvisioningGroupStatus')
 
-	def set_AutoProvisioningGroupStatus(self, AutoProvisioningGroupStatuss):
+	def set_AutoProvisioningGroupStatuss(self, AutoProvisioningGroupStatuss):
 		for depth1 in range(len(AutoProvisioningGroupStatuss)):
 			if AutoProvisioningGroupStatuss[depth1] is not None:
 				self.add_query_param('AutoProvisioningGroupStatus.' + str(depth1 + 1) , AutoProvisioningGroupStatuss[depth1])
@@ -75,10 +75,10 @@ class DescribeAutoProvisioningGroupsRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_AutoProvisioningGroupId(self):
+	def get_AutoProvisioningGroupIds(self):
 		return self.get_query_params().get('AutoProvisioningGroupId')
 
-	def set_AutoProvisioningGroupId(self, AutoProvisioningGroupIds):
+	def set_AutoProvisioningGroupIds(self, AutoProvisioningGroupIds):
 		for depth1 in range(len(AutoProvisioningGroupIds)):
 			if AutoProvisioningGroupIds[depth1] is not None:
 				self.add_query_param('AutoProvisioningGroupId.' + str(depth1 + 1) , AutoProvisioningGroupIds[depth1])

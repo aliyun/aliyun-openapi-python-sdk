@@ -109,10 +109,10 @@ class CreateCapacityReservationRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_ZoneId(self):
+	def get_ZoneIds(self):
 		return self.get_query_params().get('ZoneId')
 
-	def set_ZoneId(self, ZoneIds):
+	def set_ZoneIds(self, ZoneIds):
 		for depth1 in range(len(ZoneIds)):
 			if ZoneIds[depth1] is not None:
 				self.add_query_param('ZoneId.' + str(depth1 + 1) , ZoneIds[depth1])

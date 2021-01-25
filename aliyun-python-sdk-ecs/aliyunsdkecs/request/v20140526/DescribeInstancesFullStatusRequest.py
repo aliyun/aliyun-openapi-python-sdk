@@ -31,10 +31,10 @@ class DescribeInstancesFullStatusRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_EventId(self):
+	def get_EventIds(self):
 		return self.get_query_params().get('EventId')
 
-	def set_EventId(self, EventIds):
+	def set_EventIds(self, EventIds):
 		for depth1 in range(len(EventIds)):
 			if EventIds[depth1] is not None:
 				self.add_query_param('EventId.' + str(depth1 + 1) , EventIds[depth1])
@@ -63,10 +63,10 @@ class DescribeInstancesFullStatusRequest(RpcRequest):
 	def set_EventPublishTimeEnd(self,EventPublishTimeEnd):
 		self.add_query_param('EventPublishTime.End',EventPublishTimeEnd)
 
-	def get_InstanceEventType(self):
+	def get_InstanceEventTypes(self):
 		return self.get_query_params().get('InstanceEventType')
 
-	def set_InstanceEventType(self, InstanceEventTypes):
+	def set_InstanceEventTypes(self, InstanceEventTypes):
 		for depth1 in range(len(InstanceEventTypes)):
 			if InstanceEventTypes[depth1] is not None:
 				self.add_query_param('InstanceEventType.' + str(depth1 + 1) , InstanceEventTypes[depth1])
@@ -101,10 +101,10 @@ class DescribeInstancesFullStatusRequest(RpcRequest):
 	def set_EventPublishTimeStart(self,EventPublishTimeStart):
 		self.add_query_param('EventPublishTime.Start',EventPublishTimeStart)
 
-	def get_InstanceId(self):
+	def get_InstanceIds(self):
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceId(self, InstanceIds):
+	def set_InstanceIds(self, InstanceIds):
 		for depth1 in range(len(InstanceIds)):
 			if InstanceIds[depth1] is not None:
 				self.add_query_param('InstanceId.' + str(depth1 + 1) , InstanceIds[depth1])

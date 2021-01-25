@@ -85,20 +85,20 @@ class CreateDiskRequest(RpcRequest):
 	def set_StorageSetPartitionNumber(self,StorageSetPartitionNumber):
 		self.add_query_param('StorageSetPartitionNumber',StorageSetPartitionNumber)
 
-	def get_Tag(self):
+	def get_Tags(self):
 		return self.get_query_params().get('Tag')
 
-	def set_Tag(self, Tags):
+	def set_Tags(self, Tags):
 		for depth1 in range(len(Tags)):
 			if Tags[depth1].get('Value') is not None:
 				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tags[depth1].get('Value'))
 			if Tags[depth1].get('Key') is not None:
 				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tags[depth1].get('Key'))
 
-	def get_Arn(self):
+	def get_Arns(self):
 		return self.get_query_params().get('Arn')
 
-	def set_Arn(self, Arns):
+	def set_Arns(self, Arns):
 		for depth1 in range(len(Arns)):
 			if Arns[depth1].get('Rolearn') is not None:
 				self.add_query_param('Arn.' + str(depth1 + 1) + '.Rolearn', Arns[depth1].get('Rolearn'))

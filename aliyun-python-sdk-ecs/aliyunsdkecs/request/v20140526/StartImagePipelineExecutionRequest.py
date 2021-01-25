@@ -49,10 +49,10 @@ class StartImagePipelineExecutionRequest(RpcRequest):
 	def set_ClientToken(self,ClientToken):
 		self.add_query_param('ClientToken',ClientToken)
 
-	def get_TemplateTag(self):
+	def get_TemplateTags(self):
 		return self.get_query_params().get('TemplateTag')
 
-	def set_TemplateTag(self, TemplateTags):
+	def set_TemplateTags(self, TemplateTags):
 		for depth1 in range(len(TemplateTags)):
 			if TemplateTags[depth1].get('Key') is not None:
 				self.add_query_param('TemplateTag.' + str(depth1 + 1) + '.Key', TemplateTags[depth1].get('Key'))

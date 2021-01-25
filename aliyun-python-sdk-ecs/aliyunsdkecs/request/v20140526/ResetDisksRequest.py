@@ -55,10 +55,10 @@ class ResetDisksRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_Disk(self):
+	def get_Disks(self):
 		return self.get_query_params().get('Disk')
 
-	def set_Disk(self, Disks):
+	def set_Disks(self, Disks):
 		for depth1 in range(len(Disks)):
 			if Disks[depth1].get('DiskId') is not None:
 				self.add_query_param('Disk.' + str(depth1 + 1) + '.DiskId', Disks[depth1].get('DiskId'))

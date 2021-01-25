@@ -55,6 +55,22 @@ class ModifyAutoProvisioningGroupRequest(RpcRequest):
 	def set_ExcessCapacityTerminationPolicy(self,ExcessCapacityTerminationPolicy):
 		self.add_query_param('ExcessCapacityTerminationPolicy',ExcessCapacityTerminationPolicy)
 
+	def get_LaunchTemplateConfigs(self):
+		return self.get_query_params().get('LaunchTemplateConfig')
+
+	def set_LaunchTemplateConfigs(self, LaunchTemplateConfigs):
+		for depth1 in range(len(LaunchTemplateConfigs)):
+			if LaunchTemplateConfigs[depth1].get('InstanceType') is not None:
+				self.add_query_param('LaunchTemplateConfig.' + str(depth1 + 1) + '.InstanceType', LaunchTemplateConfigs[depth1].get('InstanceType'))
+			if LaunchTemplateConfigs[depth1].get('MaxPrice') is not None:
+				self.add_query_param('LaunchTemplateConfig.' + str(depth1 + 1) + '.MaxPrice', LaunchTemplateConfigs[depth1].get('MaxPrice'))
+			if LaunchTemplateConfigs[depth1].get('VSwitchId') is not None:
+				self.add_query_param('LaunchTemplateConfig.' + str(depth1 + 1) + '.VSwitchId', LaunchTemplateConfigs[depth1].get('VSwitchId'))
+			if LaunchTemplateConfigs[depth1].get('WeightedCapacity') is not None:
+				self.add_query_param('LaunchTemplateConfig.' + str(depth1 + 1) + '.WeightedCapacity', LaunchTemplateConfigs[depth1].get('WeightedCapacity'))
+			if LaunchTemplateConfigs[depth1].get('Priority') is not None:
+				self.add_query_param('LaunchTemplateConfig.' + str(depth1 + 1) + '.Priority', LaunchTemplateConfigs[depth1].get('Priority'))
+
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
