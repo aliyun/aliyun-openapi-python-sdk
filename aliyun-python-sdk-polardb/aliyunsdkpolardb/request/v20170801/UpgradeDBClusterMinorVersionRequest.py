@@ -43,12 +43,6 @@ class UpgradeDBClusterMinorVersionRequest(RpcRequest):
 	def set_PlannedEndTime(self,PlannedEndTime):
 		self.add_query_param('PlannedEndTime',PlannedEndTime)
 
-	def get_SwitchTimeMode(self):
-		return self.get_query_params().get('SwitchTimeMode')
-
-	def set_SwitchTimeMode(self,SwitchTimeMode):
-		self.add_query_param('SwitchTimeMode',SwitchTimeMode)
-
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 

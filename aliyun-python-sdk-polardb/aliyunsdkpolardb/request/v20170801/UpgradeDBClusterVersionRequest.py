@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkpolardb.endpoint import endpoint_data
 
-class CreateDBNodesRequest(RpcRequest):
+class UpgradeDBClusterVersionRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'polardb', '2017-08-01', 'CreateDBNodes','polardb')
+		RpcRequest.__init__(self, 'polardb', '2017-08-01', 'UpgradeDBClusterVersion','polardb')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -36,18 +36,6 @@ class CreateDBNodesRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_ClientToken(self):
-		return self.get_query_params().get('ClientToken')
-
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
-
-	def get_EndpointBindList(self):
-		return self.get_query_params().get('EndpointBindList')
-
-	def set_EndpointBindList(self,EndpointBindList):
-		self.add_query_param('EndpointBindList',EndpointBindList)
 
 	def get_PlannedEndTime(self):
 		return self.get_query_params().get('PlannedEndTime')
@@ -85,12 +73,8 @@ class CreateDBNodesRequest(RpcRequest):
 	def set_PlannedStartTime(self,PlannedStartTime):
 		self.add_query_param('PlannedStartTime',PlannedStartTime)
 
-	def get_DBNodes(self):
-		return self.get_query_params().get('DBNode')
+	def get_FromTimeService(self):
+		return self.get_query_params().get('FromTimeService')
 
-	def set_DBNodes(self, DBNodes):
-		for depth1 in range(len(DBNodes)):
-			if DBNodes[depth1].get('TargetClass') is not None:
-				self.add_query_param('DBNode.' + str(depth1 + 1) + '.TargetClass', DBNodes[depth1].get('TargetClass'))
-			if DBNodes[depth1].get('ZoneId') is not None:
-				self.add_query_param('DBNode.' + str(depth1 + 1) + '.ZoneId', DBNodes[depth1].get('ZoneId'))
+	def set_FromTimeService(self,FromTimeService):
+		self.add_query_param('FromTimeService',FromTimeService)

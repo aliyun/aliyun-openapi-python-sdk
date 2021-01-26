@@ -37,6 +37,12 @@ class ModifyDBClusterPrimaryZoneRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_PlannedEndTime(self):
+		return self.get_query_params().get('PlannedEndTime')
+
+	def set_PlannedEndTime(self,PlannedEndTime):
+		self.add_query_param('PlannedEndTime',PlannedEndTime)
+
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -67,8 +73,20 @@ class ModifyDBClusterPrimaryZoneRequest(RpcRequest):
 	def set_VSwitchId(self,VSwitchId):
 		self.add_query_param('VSwitchId',VSwitchId)
 
+	def get_PlannedStartTime(self):
+		return self.get_query_params().get('PlannedStartTime')
+
+	def set_PlannedStartTime(self,PlannedStartTime):
+		self.add_query_param('PlannedStartTime',PlannedStartTime)
+
 	def get_ZoneId(self):
 		return self.get_query_params().get('ZoneId')
 
 	def set_ZoneId(self,ZoneId):
 		self.add_query_param('ZoneId',ZoneId)
+
+	def get_FromTimeService(self):
+		return self.get_query_params().get('FromTimeService')
+
+	def set_FromTimeService(self,FromTimeService):
+		self.add_query_param('FromTimeService',FromTimeService)
