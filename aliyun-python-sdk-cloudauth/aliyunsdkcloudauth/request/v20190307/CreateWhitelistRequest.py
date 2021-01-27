@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcloudauth.endpoint import endpoint_data
 
-class DescribeSmartVerifyRequest(RpcRequest):
+class CreateWhitelistRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cloudauth', '2020-06-18', 'DescribeSmartVerify','cloudauth')
+		RpcRequest.__init__(self, 'Cloudauth', '2019-03-07', 'CreateWhitelist','cloudauth')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,20 +31,38 @@ class DescribeSmartVerifyRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_CertifyId(self):
-		return self.get_body_params().get('CertifyId')
+	def get_ValidDay(self):
+		return self.get_query_params().get('ValidDay')
 
-	def set_CertifyId(self,CertifyId):
-		self.add_body_params('CertifyId', CertifyId)
+	def set_ValidDay(self,ValidDay):
+		self.add_query_param('ValidDay',ValidDay)
 
-	def get_PictureReturnType(self):
-		return self.get_body_params().get('PictureReturnType')
+	def get_BizType(self):
+		return self.get_query_params().get('BizType')
 
-	def set_PictureReturnType(self,PictureReturnType):
-		self.add_body_params('PictureReturnType', PictureReturnType)
+	def set_BizType(self,BizType):
+		self.add_query_param('BizType',BizType)
 
-	def get_SceneId(self):
-		return self.get_body_params().get('SceneId')
+	def get_IdCardNum(self):
+		return self.get_query_params().get('IdCardNum')
 
-	def set_SceneId(self,SceneId):
-		self.add_body_params('SceneId', SceneId)
+	def set_IdCardNum(self,IdCardNum):
+		self.add_query_param('IdCardNum',IdCardNum)
+
+	def get_SourceIp(self):
+		return self.get_query_params().get('SourceIp')
+
+	def set_SourceIp(self,SourceIp):
+		self.add_query_param('SourceIp',SourceIp)
+
+	def get_BizId(self):
+		return self.get_query_params().get('BizId')
+
+	def set_BizId(self,BizId):
+		self.add_query_param('BizId',BizId)
+
+	def get_Lang(self):
+		return self.get_query_params().get('Lang')
+
+	def set_Lang(self,Lang):
+		self.add_query_param('Lang',Lang)

@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcloudauth.endpoint import endpoint_data
 
-class DescribeSmartVerifyRequest(RpcRequest):
+class DeleteWhitelistRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cloudauth', '2020-06-18', 'DescribeSmartVerify','cloudauth')
+		RpcRequest.__init__(self, 'Cloudauth', '2019-03-07', 'DeleteWhitelist','cloudauth')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,20 +31,20 @@ class DescribeSmartVerifyRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_CertifyId(self):
-		return self.get_body_params().get('CertifyId')
+	def get_SourceIp(self):
+		return self.get_query_params().get('SourceIp')
 
-	def set_CertifyId(self,CertifyId):
-		self.add_body_params('CertifyId', CertifyId)
+	def set_SourceIp(self,SourceIp):
+		self.add_query_param('SourceIp',SourceIp)
 
-	def get_PictureReturnType(self):
-		return self.get_body_params().get('PictureReturnType')
+	def get_Ids(self):
+		return self.get_query_params().get('Ids')
 
-	def set_PictureReturnType(self,PictureReturnType):
-		self.add_body_params('PictureReturnType', PictureReturnType)
+	def set_Ids(self,Ids):
+		self.add_query_param('Ids',Ids)
 
-	def get_SceneId(self):
-		return self.get_body_params().get('SceneId')
+	def get_Lang(self):
+		return self.get_query_params().get('Lang')
 
-	def set_SceneId(self,SceneId):
-		self.add_body_params('SceneId', SceneId)
+	def set_Lang(self,Lang):
+		self.add_query_param('Lang',Lang)
