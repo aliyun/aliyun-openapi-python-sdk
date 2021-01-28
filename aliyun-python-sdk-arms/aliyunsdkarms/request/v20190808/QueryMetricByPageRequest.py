@@ -85,6 +85,14 @@ class QueryMetricByPageRequest(RpcRequest):
 	def set_Metric(self,Metric):
 		self.add_query_param('Metric',Metric)
 
+	def get_CustomFilterss(self):
+		return self.get_query_params().get('CustomFilters')
+
+	def set_CustomFilterss(self, CustomFilterss):
+		for depth1 in range(len(CustomFilterss)):
+			if CustomFilterss[depth1] is not None:
+				self.add_query_param('CustomFilters.' + str(depth1 + 1) , CustomFilterss[depth1])
+
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
 
