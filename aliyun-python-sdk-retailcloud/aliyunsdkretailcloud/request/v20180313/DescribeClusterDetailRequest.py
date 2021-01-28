@@ -20,25 +20,19 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkretailcloud.endpoint import endpoint_data
 
-class DescribeAppEnvironmentDetailRequest(RpcRequest):
+class DescribeClusterDetailRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'retailcloud', '2018-03-13', 'DescribeAppEnvironmentDetail','retailcloud')
-		self.set_method('GET')
+		RpcRequest.__init__(self, 'retailcloud', '2018-03-13', 'DescribeClusterDetail','retailcloud')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_AppId(self):
-		return self.get_query_params().get('AppId')
+	def get_ClusterInstanceId(self):
+		return self.get_query_params().get('ClusterInstanceId')
 
-	def set_AppId(self,AppId):
-		self.add_query_param('AppId',AppId)
-
-	def get_EnvId(self):
-		return self.get_query_params().get('EnvId')
-
-	def set_EnvId(self,EnvId):
-		self.add_query_param('EnvId',EnvId)
+	def set_ClusterInstanceId(self,ClusterInstanceId):
+		self.add_query_param('ClusterInstanceId',ClusterInstanceId)
