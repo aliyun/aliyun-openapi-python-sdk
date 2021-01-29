@@ -55,6 +55,12 @@ class SearchAggregateObjectRequest(RpcRequest):
 	def set_Vendor(self,Vendor):
 		self.add_body_params('Vendor', Vendor)
 
+	def get_RequireTotalCount(self):
+		return self.get_body_params().get('RequireTotalCount')
+
+	def set_RequireTotalCount(self,RequireTotalCount):
+		self.add_body_params('RequireTotalCount', RequireTotalCount)
+
 	def get_PageSize(self):
 		return self.get_body_params().get('PageSize')
 

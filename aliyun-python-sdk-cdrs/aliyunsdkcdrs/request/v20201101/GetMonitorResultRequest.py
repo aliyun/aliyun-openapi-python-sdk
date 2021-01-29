@@ -19,10 +19,10 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class BindDeviceRequest(RpcRequest):
+class GetMonitorResultRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'CDRS', '2020-11-01', 'BindDevice')
+		RpcRequest.__init__(self, 'CDRS', '2020-11-01', 'GetMonitorResult')
 		self.set_method('POST')
 
 	def get_CorpId(self):
@@ -31,12 +31,32 @@ class BindDeviceRequest(RpcRequest):
 	def set_CorpId(self,CorpId):
 		self.add_body_params('CorpId', CorpId)
 
-	def get_Devicess(self):
-		return self.get_body_params().get('Devices')
+	def get_EndTime(self):
+		return self.get_body_params().get('EndTime')
 
-	def set_Devicess(self, Devicess):
-		for depth1 in range(len(Devicess)):
-			if Devicess[depth1].get('CorpId') is not None:
-				self.add_body_params('Devices.' + str(depth1 + 1) + '.CorpId', Devicess[depth1].get('CorpId'))
-			if Devicess[depth1].get('DeviceId') is not None:
-				self.add_body_params('Devices.' + str(depth1 + 1) + '.DeviceId', Devicess[depth1].get('DeviceId'))
+	def set_EndTime(self,EndTime):
+		self.add_body_params('EndTime', EndTime)
+
+	def get_StartTime(self):
+		return self.get_body_params().get('StartTime')
+
+	def set_StartTime(self,StartTime):
+		self.add_body_params('StartTime', StartTime)
+
+	def get_AlgorithmVendor(self):
+		return self.get_body_params().get('AlgorithmVendor')
+
+	def set_AlgorithmVendor(self,AlgorithmVendor):
+		self.add_body_params('AlgorithmVendor', AlgorithmVendor)
+
+	def get_MinRecordId(self):
+		return self.get_body_params().get('MinRecordId')
+
+	def set_MinRecordId(self,MinRecordId):
+		self.add_body_params('MinRecordId', MinRecordId)
+
+	def get_TaskId(self):
+		return self.get_body_params().get('TaskId')
+
+	def set_TaskId(self,TaskId):
+		self.add_body_params('TaskId', TaskId)
