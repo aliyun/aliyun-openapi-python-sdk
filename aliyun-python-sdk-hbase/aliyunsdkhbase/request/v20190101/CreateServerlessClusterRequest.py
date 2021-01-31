@@ -79,6 +79,12 @@ class CreateServerlessClusterRequest(RpcRequest):
 	def set_Period(self,Period):
 		self.add_query_param('Period',Period)
 
+	def get_DiskType(self):
+		return self.get_query_params().get('DiskType')
+
+	def set_DiskType(self,DiskType):
+		self.add_query_param('DiskType',DiskType)
+
 	def get_VSwitchId(self):
 		return self.get_query_params().get('VSwitchId')
 
