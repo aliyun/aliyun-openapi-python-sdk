@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkonsmqtt.endpoint import endpoint_data
 
-class BatchQuerySessionByClientIdsRequest(RpcRequest):
+class RefreshDeviceCredentialRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'OnsMqtt', '2020-04-20', 'BatchQuerySessionByClientIds','onsmqtt')
+		RpcRequest.__init__(self, 'OnsMqtt', '2020-04-20', 'RefreshDeviceCredential','onsmqtt')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,13 +31,11 @@ class BatchQuerySessionByClientIdsRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_ClientIdLists(self):
-		return self.get_query_params().get('ClientIdList')
+	def get_ClientId(self):
+		return self.get_query_params().get('ClientId')
 
-	def set_ClientIdLists(self, ClientIdLists):
-		for depth1 in range(len(ClientIdLists)):
-			if ClientIdLists[depth1] is not None:
-				self.add_query_param('ClientIdList.' + str(depth1 + 1) , ClientIdLists[depth1])
+	def set_ClientId(self,ClientId):
+		self.add_query_param('ClientId',ClientId)
 
 	def get_InstanceId(self):
 		return self.get_query_params().get('InstanceId')
