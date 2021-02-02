@@ -37,6 +37,12 @@ class DescribeRunningLogRecordsRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_RoleId(self):
+		return self.get_query_params().get('RoleId')
+
+	def set_RoleId(self,RoleId):
+		self.add_query_param('RoleId',RoleId)
+
 	def get_StartTime(self):
 		return self.get_query_params().get('StartTime')
 

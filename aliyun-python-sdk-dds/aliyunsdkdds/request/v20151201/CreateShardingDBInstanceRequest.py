@@ -60,6 +60,8 @@ class CreateShardingDBInstanceRequest(RpcRequest):
 
 	def set_ReplicaSets(self, ReplicaSets):
 		for depth1 in range(len(ReplicaSets)):
+			if ReplicaSets[depth1].get('ReadonlyReplicas') is not None:
+				self.add_query_param('ReplicaSet.' + str(depth1 + 1) + '.ReadonlyReplicas', ReplicaSets[depth1].get('ReadonlyReplicas'))
 			if ReplicaSets[depth1].get('Storage') is not None:
 				self.add_query_param('ReplicaSet.' + str(depth1 + 1) + '.Storage', ReplicaSets[depth1].get('Storage'))
 			if ReplicaSets[depth1].get('Class') is not None:
@@ -135,14 +137,6 @@ class CreateShardingDBInstanceRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_Mongoss(self):
-		return self.get_query_params().get('Mongos')
-
-	def set_Mongoss(self, Mongoss):
-		for depth1 in range(len(Mongoss)):
-			if Mongoss[depth1].get('Class') is not None:
-				self.add_query_param('Mongos.' + str(depth1 + 1) + '.Class', Mongoss[depth1].get('Class'))
-
 	def get_SecurityIPList(self):
 		return self.get_query_params().get('SecurityIPList')
 
@@ -154,6 +148,14 @@ class CreateShardingDBInstanceRequest(RpcRequest):
 
 	def set_VSwitchId(self,VSwitchId):
 		self.add_query_param('VSwitchId',VSwitchId)
+
+	def get_Mongoss(self):
+		return self.get_query_params().get('Mongos')
+
+	def set_Mongoss(self, Mongoss):
+		for depth1 in range(len(Mongoss)):
+			if Mongoss[depth1].get('Class') is not None:
+				self.add_query_param('Mongos.' + str(depth1 + 1) + '.Class', Mongoss[depth1].get('Class'))
 
 	def get_AccountPassword(self):
 		return self.get_query_params().get('AccountPassword')
