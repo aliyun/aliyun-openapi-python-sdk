@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkquickbi_public.endpoint import endpoint_data
 
-class QueryOrganizationWorkspaceListRequest(RpcRequest):
+class AddShareReportRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'quickbi-public', '2020-08-03', 'QueryOrganizationWorkspaceList','quickbi')
+		RpcRequest.__init__(self, 'quickbi-public', '2020-08-04', 'AddShareReport','quickbi')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,26 +31,32 @@ class QueryOrganizationWorkspaceListRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
+	def get_ShareToType(self):
+		return self.get_query_params().get('ShareToType')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
+	def set_ShareToType(self,ShareToType):
+		self.add_query_param('ShareToType',ShareToType)
 
-	def get_Keyword(self):
-		return self.get_query_params().get('Keyword')
+	def get_WorksId(self):
+		return self.get_query_params().get('WorksId')
 
-	def set_Keyword(self,Keyword):
-		self.add_query_param('Keyword',Keyword)
+	def set_WorksId(self,WorksId):
+		self.add_query_param('WorksId',WorksId)
 
-	def get_PageNum(self):
-		return self.get_query_params().get('PageNum')
+	def get_ShareToId(self):
+		return self.get_query_params().get('ShareToId')
 
-	def set_PageNum(self,PageNum):
-		self.add_query_param('PageNum',PageNum)
+	def set_ShareToId(self,ShareToId):
+		self.add_query_param('ShareToId',ShareToId)
 
-	def get_UserId(self):
-		return self.get_query_params().get('UserId')
+	def get_AuthPoint(self):
+		return self.get_query_params().get('AuthPoint')
 
-	def set_UserId(self,UserId):
-		self.add_query_param('UserId',UserId)
+	def set_AuthPoint(self,AuthPoint):
+		self.add_query_param('AuthPoint',AuthPoint)
+
+	def get_ExpireDate(self):
+		return self.get_query_params().get('ExpireDate')
+
+	def set_ExpireDate(self,ExpireDate):
+		self.add_query_param('ExpireDate',ExpireDate)

@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkquickbi_public.endpoint import endpoint_data
 
-class QueryOrganizationWorkspaceListRequest(RpcRequest):
+class DeleteRowLevelPermissionRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'quickbi-public', '2020-08-03', 'QueryOrganizationWorkspaceList','quickbi')
+		RpcRequest.__init__(self, 'quickbi-public', '2020-08-05', 'DeleteRowLevelPermission','quickbi')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,26 +31,32 @@ class QueryOrganizationWorkspaceListRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
+	def get_TargetTypes(self):
+		return self.get_query_params().get('TargetTypes')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
+	def set_TargetTypes(self,TargetTypes):
+		self.add_query_param('TargetTypes',TargetTypes)
 
-	def get_Keyword(self):
-		return self.get_query_params().get('Keyword')
+	def get_TargetIds(self):
+		return self.get_query_params().get('TargetIds')
 
-	def set_Keyword(self,Keyword):
-		self.add_query_param('Keyword',Keyword)
+	def set_TargetIds(self,TargetIds):
+		self.add_query_param('TargetIds',TargetIds)
 
-	def get_PageNum(self):
-		return self.get_query_params().get('PageNum')
+	def get_ColumnIds(self):
+		return self.get_query_params().get('ColumnIds')
 
-	def set_PageNum(self,PageNum):
-		self.add_query_param('PageNum',PageNum)
+	def set_ColumnIds(self,ColumnIds):
+		self.add_query_param('ColumnIds',ColumnIds)
 
-	def get_UserId(self):
-		return self.get_query_params().get('UserId')
+	def get_DatasetId(self):
+		return self.get_query_params().get('DatasetId')
 
-	def set_UserId(self,UserId):
-		self.add_query_param('UserId',UserId)
+	def set_DatasetId(self,DatasetId):
+		self.add_query_param('DatasetId',DatasetId)
+
+	def get_DeleteType(self):
+		return self.get_query_params().get('DeleteType')
+
+	def set_DeleteType(self,DeleteType):
+		self.add_query_param('DeleteType',DeleteType)

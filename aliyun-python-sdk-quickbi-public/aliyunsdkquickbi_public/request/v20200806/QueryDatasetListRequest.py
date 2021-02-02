@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkquickbi_public.endpoint import endpoint_data
 
-class QueryOrganizationWorkspaceListRequest(RpcRequest):
+class QueryDatasetListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'quickbi-public', '2020-08-03', 'QueryOrganizationWorkspaceList','quickbi')
+		RpcRequest.__init__(self, 'quickbi-public', '2020-08-06', 'QueryDatasetList','quickbi')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -37,6 +37,18 @@ class QueryOrganizationWorkspaceListRequest(RpcRequest):
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
 
+	def get_DirectoryId(self):
+		return self.get_query_params().get('DirectoryId')
+
+	def set_DirectoryId(self,DirectoryId):
+		self.add_query_param('DirectoryId',DirectoryId)
+
+	def get_WithChildren(self):
+		return self.get_query_params().get('WithChildren')
+
+	def set_WithChildren(self,WithChildren):
+		self.add_query_param('WithChildren',WithChildren)
+
 	def get_Keyword(self):
 		return self.get_query_params().get('Keyword')
 
@@ -49,8 +61,8 @@ class QueryOrganizationWorkspaceListRequest(RpcRequest):
 	def set_PageNum(self,PageNum):
 		self.add_query_param('PageNum',PageNum)
 
-	def get_UserId(self):
-		return self.get_query_params().get('UserId')
+	def get_WorkspaceId(self):
+		return self.get_query_params().get('WorkspaceId')
 
-	def set_UserId(self,UserId):
-		self.add_query_param('UserId',UserId)
+	def set_WorkspaceId(self,WorkspaceId):
+		self.add_query_param('WorkspaceId',WorkspaceId)

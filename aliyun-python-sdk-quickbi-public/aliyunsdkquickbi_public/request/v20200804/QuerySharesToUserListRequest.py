@@ -20,34 +20,16 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkquickbi_public.endpoint import endpoint_data
 
-class QueryOrganizationWorkspaceListRequest(RpcRequest):
+class QuerySharesToUserListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'quickbi-public', '2020-08-03', 'QueryOrganizationWorkspaceList','quickbi')
+		RpcRequest.__init__(self, 'quickbi-public', '2020-08-04', 'QuerySharesToUserList','quickbi')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_Keyword(self):
-		return self.get_query_params().get('Keyword')
-
-	def set_Keyword(self,Keyword):
-		self.add_query_param('Keyword',Keyword)
-
-	def get_PageNum(self):
-		return self.get_query_params().get('PageNum')
-
-	def set_PageNum(self,PageNum):
-		self.add_query_param('PageNum',PageNum)
 
 	def get_UserId(self):
 		return self.get_query_params().get('UserId')
