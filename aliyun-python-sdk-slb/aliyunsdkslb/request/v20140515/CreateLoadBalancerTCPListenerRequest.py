@@ -115,6 +115,12 @@ class CreateLoadBalancerTCPListenerRequest(RpcRequest):
 	def set_healthCheckInterval(self,healthCheckInterval):
 		self.add_query_param('healthCheckInterval',healthCheckInterval)
 
+	def get_ConnectionDrain(self):
+		return self.get_query_params().get('ConnectionDrain')
+
+	def set_ConnectionDrain(self,ConnectionDrain):
+		self.add_query_param('ConnectionDrain',ConnectionDrain)
+
 	def get_HealthCheckConnectTimeout(self):
 		return self.get_query_params().get('HealthCheckConnectTimeout')
 
@@ -174,6 +180,12 @@ class CreateLoadBalancerTCPListenerRequest(RpcRequest):
 
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
+
+	def get_ConnectionDrainTimeout(self):
+		return self.get_query_params().get('ConnectionDrainTimeout')
+
+	def set_ConnectionDrainTimeout(self,ConnectionDrainTimeout):
+		self.add_query_param('ConnectionDrainTimeout',ConnectionDrainTimeout)
 
 	def get_HealthCheckConnectPort(self):
 		return self.get_query_params().get('HealthCheckConnectPort')
