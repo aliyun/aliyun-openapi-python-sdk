@@ -32,6 +32,9 @@ This document introduces how to obtain and call Alibaba Cloud Python SDK.
 - [Proxy Configurations](./docs/4-Proxy-EN.md)
 - [Log](./docs/5-Log-EN.md)
 - [Endpoint](./docs/6-Endpoint-EN.md)
+- [Https](./docs/7-Https-EN.md)
+- [Debug](./docs/8-Debug-EN.md)
+- [Exception](./docs/9-Exception-EN.md)
 
 ## Prerequisites
 
