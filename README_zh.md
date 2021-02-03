@@ -29,6 +29,10 @@
 - [代理配置](./docs/4-Proxy-CN.md)
 - [日志](./docs/5-Log-CN.md)
 - [域名](./docs/6-Endpoint-CN.md)
+- [Https配置](./docs/7-Https-CN.md)
+- [调试](./docs/8-Debug-CN.md)
+- [异常](./docs/9-Exception-CN.md)
+
 
 ## 环境准备
 
