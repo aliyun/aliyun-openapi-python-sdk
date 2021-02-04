@@ -22,7 +22,7 @@ from aliyunsdkcore.request import RpcRequest
 class RevokeFeedbackRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'safconsole', '2021-01-12', 'RevokeFeedback','safconsole')
+		RpcRequest.__init__(self, 'safconsole', '2021-01-12', 'RevokeFeedback','saf')
 		self.set_method('POST')
 
 	def get_SampleType(self):

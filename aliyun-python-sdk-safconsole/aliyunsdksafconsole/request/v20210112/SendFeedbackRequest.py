@@ -22,7 +22,7 @@ from aliyunsdkcore.request import RpcRequest
 class SendFeedbackRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'safconsole', '2021-01-12', 'SendFeedback','safconsole')
+		RpcRequest.__init__(self, 'safconsole', '2021-01-12', 'SendFeedback','saf')
 		self.set_method('POST')
 
 	def get_RiskLabel(self):
