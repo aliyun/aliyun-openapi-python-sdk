@@ -20,25 +20,19 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkimagerecog.endpoint import endpoint_data
 
-class TaggingImageRequest(RpcRequest):
+class GetAsyncJobResultRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'imagerecog', '2019-09-30', 'TaggingImage','imagerecog')
-		self.set_method('POST')
+		RpcRequest.__init__(self, 'imagerecog', '2019-09-30', 'GetAsyncJobResult','imagerecog')
+		self.set_method('GET')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_Async(self):
-		return self.get_body_params().get('Async')
+	def get_JobId(self):
+		return self.get_query_params().get('JobId')
 
-	def set_Async(self,Async):
-		self.add_body_params('Async', Async)
-
-	def get_ImageURL(self):
-		return self.get_body_params().get('ImageURL')
-
-	def set_ImageURL(self,ImageURL):
-		self.add_body_params('ImageURL', ImageURL)
+	def set_JobId(self,JobId):
+		self.add_query_param('JobId',JobId)
