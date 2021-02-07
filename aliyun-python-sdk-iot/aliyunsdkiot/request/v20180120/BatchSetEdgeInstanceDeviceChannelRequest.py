@@ -37,10 +37,10 @@ class BatchSetEdgeInstanceDeviceChannelRequest(RpcRequest):
 	def set_DriverId(self,DriverId):
 		self.add_query_param('DriverId',DriverId)
 
-	def get_IotIds(self):
+	def get_IotIdss(self):
 		return self.get_query_params().get('IotIds')
 
-	def set_IotIds(self, IotIdss):
+	def set_IotIdss(self, IotIdss):
 		for depth1 in range(len(IotIdss)):
 			if IotIdss[depth1] is not None:
 				self.add_query_param('IotIds.' + str(depth1 + 1) , IotIdss[depth1])

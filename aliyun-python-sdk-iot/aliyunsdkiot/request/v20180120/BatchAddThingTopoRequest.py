@@ -43,10 +43,10 @@ class BatchAddThingTopoRequest(RpcRequest):
 	def set_IotInstanceId(self,IotInstanceId):
 		self.add_query_param('IotInstanceId',IotInstanceId)
 
-	def get_TopoAddItem(self):
+	def get_TopoAddItems(self):
 		return self.get_query_params().get('TopoAddItem')
 
-	def set_TopoAddItem(self, TopoAddItems):
+	def set_TopoAddItems(self, TopoAddItems):
 		for depth1 in range(len(TopoAddItems)):
 			if TopoAddItems[depth1].get('ClientId') is not None:
 				self.add_query_param('TopoAddItem.' + str(depth1 + 1) + '.ClientId', TopoAddItems[depth1].get('ClientId'))

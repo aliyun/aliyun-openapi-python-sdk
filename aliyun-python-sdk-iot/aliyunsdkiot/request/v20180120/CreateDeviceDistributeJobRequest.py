@@ -43,10 +43,10 @@ class CreateDeviceDistributeJobRequest(RpcRequest):
 	def set_TargetAliyunId(self,TargetAliyunId):
 		self.add_body_params('TargetAliyunId', TargetAliyunId)
 
-	def get_TargetInstanceConfig(self):
+	def get_TargetInstanceConfigs(self):
 		return self.get_body_params().get('TargetInstanceConfig')
 
-	def set_TargetInstanceConfig(self, TargetInstanceConfigs):
+	def set_TargetInstanceConfigs(self, TargetInstanceConfigs):
 		for depth1 in range(len(TargetInstanceConfigs)):
 			if TargetInstanceConfigs[depth1].get('TargetInstanceId') is not None:
 				self.add_body_params('TargetInstanceConfig.' + str(depth1 + 1) + '.TargetInstanceId', TargetInstanceConfigs[depth1].get('TargetInstanceId'))
@@ -57,10 +57,10 @@ class CreateDeviceDistributeJobRequest(RpcRequest):
 	def set_ProductKey(self,ProductKey):
 		self.add_body_params('ProductKey', ProductKey)
 
-	def get_DeviceName(self):
+	def get_DeviceNames(self):
 		return self.get_body_params().get('DeviceName')
 
-	def set_DeviceName(self, DeviceNames):
+	def set_DeviceNames(self, DeviceNames):
 		for depth1 in range(len(DeviceNames)):
 			if DeviceNames[depth1] is not None:
 				self.add_body_params('DeviceName.' + str(depth1 + 1) , DeviceNames[depth1])

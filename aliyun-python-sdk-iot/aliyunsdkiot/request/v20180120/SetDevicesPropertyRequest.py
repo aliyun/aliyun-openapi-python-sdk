@@ -43,10 +43,10 @@ class SetDevicesPropertyRequest(RpcRequest):
 	def set_ProductKey(self,ProductKey):
 		self.add_query_param('ProductKey',ProductKey)
 
-	def get_DeviceName(self):
+	def get_DeviceNames(self):
 		return self.get_query_params().get('DeviceName')
 
-	def set_DeviceName(self, DeviceNames):
+	def set_DeviceNames(self, DeviceNames):
 		for depth1 in range(len(DeviceNames)):
 			if DeviceNames[depth1] is not None:
 				self.add_query_param('DeviceName.' + str(depth1 + 1) , DeviceNames[depth1])

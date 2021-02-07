@@ -31,20 +31,20 @@ class QueryAppDeviceListRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_TagList(self):
+	def get_TagLists(self):
 		return self.get_query_params().get('TagList')
 
-	def set_TagList(self, TagLists):
+	def set_TagLists(self, TagLists):
 		for depth1 in range(len(TagLists)):
 			if TagLists[depth1].get('TagName') is not None:
 				self.add_query_param('TagList.' + str(depth1 + 1) + '.TagName', TagLists[depth1].get('TagName'))
 			if TagLists[depth1].get('TagValue') is not None:
 				self.add_query_param('TagList.' + str(depth1 + 1) + '.TagValue', TagLists[depth1].get('TagValue'))
 
-	def get_ProductKeyList(self):
+	def get_ProductKeyLists(self):
 		return self.get_query_params().get('ProductKeyList')
 
-	def set_ProductKeyList(self, ProductKeyLists):
+	def set_ProductKeyLists(self, ProductKeyLists):
 		for depth1 in range(len(ProductKeyLists)):
 			if ProductKeyLists[depth1] is not None:
 				self.add_query_param('ProductKeyList.' + str(depth1 + 1) , ProductKeyLists[depth1])
@@ -67,10 +67,10 @@ class QueryAppDeviceListRequest(RpcRequest):
 	def set_CurrentPage(self,CurrentPage):
 		self.add_query_param('CurrentPage',CurrentPage)
 
-	def get_CategoryKeyList(self):
+	def get_CategoryKeyLists(self):
 		return self.get_query_params().get('CategoryKeyList')
 
-	def set_CategoryKeyList(self, CategoryKeyLists):
+	def set_CategoryKeyLists(self, CategoryKeyLists):
 		for depth1 in range(len(CategoryKeyLists)):
 			if CategoryKeyLists[depth1] is not None:
 				self.add_query_param('CategoryKeyList.' + str(depth1 + 1) , CategoryKeyLists[depth1])

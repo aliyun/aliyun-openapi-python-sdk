@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkiot.endpoint import endpoint_data
 
-class TransformClientIdRequest(RpcRequest):
+class SyncSpeechByCombinationRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'TransformClientId','iot')
+		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'SyncSpeechByCombination','iot')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,20 +31,34 @@ class TransformClientIdRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_ClientId(self):
-		return self.get_query_params().get('ClientId')
-
-	def set_ClientId(self,ClientId):
-		self.add_query_param('ClientId',ClientId)
-
 	def get_IotId(self):
-		return self.get_query_params().get('IotId')
+		return self.get_body_params().get('IotId')
 
 	def set_IotId(self,IotId):
-		self.add_query_param('IotId',IotId)
+		self.add_body_params('IotId', IotId)
+
+	def get_CombinationLists(self):
+		return self.get_body_params().get('CombinationList')
+
+	def set_CombinationLists(self, CombinationLists):
+		for depth1 in range(len(CombinationLists)):
+			if CombinationLists[depth1] is not None:
+				self.add_body_params('CombinationList.' + str(depth1 + 1) , CombinationLists[depth1])
 
 	def get_IotInstanceId(self):
-		return self.get_query_params().get('IotInstanceId')
+		return self.get_body_params().get('IotInstanceId')
 
 	def set_IotInstanceId(self,IotInstanceId):
-		self.add_query_param('IotInstanceId',IotInstanceId)
+		self.add_body_params('IotInstanceId', IotInstanceId)
+
+	def get_ProductKey(self):
+		return self.get_body_params().get('ProductKey')
+
+	def set_ProductKey(self,ProductKey):
+		self.add_body_params('ProductKey', ProductKey)
+
+	def get_DeviceName(self):
+		return self.get_body_params().get('DeviceName')
+
+	def set_DeviceName(self,DeviceName):
+		self.add_body_params('DeviceName', DeviceName)

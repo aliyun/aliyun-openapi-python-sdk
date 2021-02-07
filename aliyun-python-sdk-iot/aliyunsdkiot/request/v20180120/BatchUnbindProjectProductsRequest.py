@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkiot.endpoint import endpoint_data
 
-class DeleteClientIdsRequest(RpcRequest):
+class BatchUnbindProjectProductsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'DeleteClientIds','iot')
+		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'BatchUnbindProjectProducts','iot')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,14 +31,22 @@ class DeleteClientIdsRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_IotId(self):
-		return self.get_query_params().get('IotId')
+	def get_ProductKeyss(self):
+		return self.get_body_params().get('ProductKeys')
 
-	def set_IotId(self,IotId):
-		self.add_query_param('IotId',IotId)
+	def set_ProductKeyss(self, ProductKeyss):
+		for depth1 in range(len(ProductKeyss)):
+			if ProductKeyss[depth1] is not None:
+				self.add_body_params('ProductKeys.' + str(depth1 + 1) , ProductKeyss[depth1])
 
 	def get_IotInstanceId(self):
-		return self.get_query_params().get('IotInstanceId')
+		return self.get_body_params().get('IotInstanceId')
 
 	def set_IotInstanceId(self,IotInstanceId):
-		self.add_query_param('IotInstanceId',IotInstanceId)
+		self.add_body_params('IotInstanceId', IotInstanceId)
+
+	def get_ProjectId(self):
+		return self.get_body_params().get('ProjectId')
+
+	def set_ProjectId(self,ProjectId):
+		self.add_body_params('ProjectId', ProjectId)

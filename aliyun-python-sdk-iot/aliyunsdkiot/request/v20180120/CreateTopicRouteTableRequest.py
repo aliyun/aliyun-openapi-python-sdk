@@ -37,10 +37,10 @@ class CreateTopicRouteTableRequest(RpcRequest):
 	def set_IotInstanceId(self,IotInstanceId):
 		self.add_query_param('IotInstanceId',IotInstanceId)
 
-	def get_DstTopic(self):
+	def get_DstTopics(self):
 		return self.get_query_params().get('DstTopic')
 
-	def set_DstTopic(self, DstTopics):
+	def set_DstTopics(self, DstTopics):
 		for depth1 in range(len(DstTopics)):
 			if DstTopics[depth1] is not None:
 				self.add_query_param('DstTopic.' + str(depth1 + 1) , DstTopics[depth1])

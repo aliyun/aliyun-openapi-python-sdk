@@ -37,10 +37,10 @@ class CreateLoRaNodesTaskRequest(RpcRequest):
 	def set_IotInstanceId(self,IotInstanceId):
 		self.add_query_param('IotInstanceId',IotInstanceId)
 
-	def get_DeviceInfo(self):
+	def get_DeviceInfos(self):
 		return self.get_query_params().get('DeviceInfo')
 
-	def set_DeviceInfo(self, DeviceInfos):
+	def set_DeviceInfos(self, DeviceInfos):
 		for depth1 in range(len(DeviceInfos)):
 			if DeviceInfos[depth1].get('PinCode') is not None:
 				self.add_query_param('DeviceInfo.' + str(depth1 + 1) + '.PinCode', DeviceInfos[depth1].get('PinCode'))

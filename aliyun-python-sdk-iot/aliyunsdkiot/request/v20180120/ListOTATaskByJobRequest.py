@@ -55,10 +55,10 @@ class ListOTATaskByJobRequest(RpcRequest):
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
 
-	def get_DeviceNames(self):
+	def get_DeviceNamess(self):
 		return self.get_query_params().get('DeviceNames')
 
-	def set_DeviceNames(self, DeviceNamess):
+	def set_DeviceNamess(self, DeviceNamess):
 		for depth1 in range(len(DeviceNamess)):
 			if DeviceNamess[depth1] is not None:
 				self.add_query_param('DeviceNames.' + str(depth1 + 1) , DeviceNamess[depth1])

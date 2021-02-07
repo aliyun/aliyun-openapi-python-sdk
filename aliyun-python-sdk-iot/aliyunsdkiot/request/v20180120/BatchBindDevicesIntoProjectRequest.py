@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkiot.endpoint import endpoint_data
 
-class BatchBindDeviceToEdgeInstanceWithDriverRequest(RpcRequest):
+class BatchBindDevicesIntoProjectRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'BatchBindDeviceToEdgeInstanceWithDriver','iot')
+		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'BatchBindDevicesIntoProject','iot')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,28 +31,24 @@ class BatchBindDeviceToEdgeInstanceWithDriverRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_DriverId(self):
-		return self.get_query_params().get('DriverId')
-
-	def set_DriverId(self,DriverId):
-		self.add_query_param('DriverId',DriverId)
-
-	def get_IotIdss(self):
-		return self.get_query_params().get('IotIds')
-
-	def set_IotIdss(self, IotIdss):
-		for depth1 in range(len(IotIdss)):
-			if IotIdss[depth1] is not None:
-				self.add_query_param('IotIds.' + str(depth1 + 1) , IotIdss[depth1])
-
 	def get_IotInstanceId(self):
-		return self.get_query_params().get('IotInstanceId')
+		return self.get_body_params().get('IotInstanceId')
 
 	def set_IotInstanceId(self,IotInstanceId):
-		self.add_query_param('IotInstanceId',IotInstanceId)
+		self.add_body_params('IotInstanceId', IotInstanceId)
 
-	def get_InstanceId(self):
-		return self.get_query_params().get('InstanceId')
+	def get_ProjectId(self):
+		return self.get_body_params().get('ProjectId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
+	def set_ProjectId(self,ProjectId):
+		self.add_body_params('ProjectId', ProjectId)
+
+	def get_Devicess(self):
+		return self.get_body_params().get('Devices')
+
+	def set_Devicess(self, Devicess):
+		for depth1 in range(len(Devicess)):
+			if Devicess[depth1].get('DeviceName') is not None:
+				self.add_body_params('Devices.' + str(depth1 + 1) + '.DeviceName', Devicess[depth1].get('DeviceName'))
+			if Devicess[depth1].get('ProductKey') is not None:
+				self.add_body_params('Devices.' + str(depth1 + 1) + '.ProductKey', Devicess[depth1].get('ProductKey'))

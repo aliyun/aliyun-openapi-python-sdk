@@ -31,10 +31,10 @@ class BatchGetEdgeDriverRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_DriverIds(self):
+	def get_DriverIdss(self):
 		return self.get_query_params().get('DriverIds')
 
-	def set_DriverIds(self, DriverIdss):
+	def set_DriverIdss(self, DriverIdss):
 		for depth1 in range(len(DriverIdss)):
 			if DriverIdss[depth1] is not None:
 				self.add_query_param('DriverIds.' + str(depth1 + 1) , DriverIdss[depth1])
