@@ -79,6 +79,12 @@ class RunCommandRequest(RpcRequest):
 	def set_ContentEncoding(self,ContentEncoding):
 		self.add_query_param('ContentEncoding',ContentEncoding)
 
+	def get_WindowsPasswordName(self):
+		return self.get_query_params().get('WindowsPasswordName')
+
+	def set_WindowsPasswordName(self,WindowsPasswordName):
+		self.add_query_param('WindowsPasswordName',WindowsPasswordName)
+
 	def get_KeepCommand(self):
 		return self.get_query_params().get('KeepCommand')
 

@@ -78,3 +78,9 @@ class ModifyInstanceMaintenanceAttributesRequest(RpcRequest):
 		for depth1 in range(len(InstanceIds)):
 			if InstanceIds[depth1] is not None:
 				self.add_query_param('InstanceId.' + str(depth1 + 1) , InstanceIds[depth1])
+
+	def get_NotifyOnMaintenance(self):
+		return self.get_query_params().get('NotifyOnMaintenance')
+
+	def set_NotifyOnMaintenance(self,NotifyOnMaintenance):
+		self.add_query_param('NotifyOnMaintenance',NotifyOnMaintenance)
