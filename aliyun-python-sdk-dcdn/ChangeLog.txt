@@ -4,6 +4,9 @@
 2021-02-19 Version: 2.0.3
 - Sync cdn APIs.
 
+2021-02-19 Version: 2.0.3
+- Sync cdn APIs.
+
 2020-12-17 Version: 2.1.2
 - Update DeleteDcdnDomain.
 
