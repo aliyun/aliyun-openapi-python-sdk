@@ -127,6 +127,12 @@ class UpdateMonitorRequest(RpcRequest):
 	def set_NotifierType(self,NotifierType):
 		self.add_body_params('NotifierType', NotifierType)
 
+	def get_PicExtendList(self):
+		return self.get_body_params().get('PicExtendList')
+
+	def set_PicExtendList(self,PicExtendList):
+		self.add_body_params('PicExtendList', PicExtendList)
+
 	def get_AlgorithmVendor(self):
 		return self.get_body_params().get('AlgorithmVendor')
 
