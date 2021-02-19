@@ -1,3 +1,6 @@
+2021-02-19 Version: 1.2.13
+- Release GenerateHumanSketchStyle MergeImageFace AddFaceImageTemplate QueryFaceImageTemplate DeleteFaceImageTemplate.
+
 2021-02-08 Version: 1.2.15
 - Update PedestrianDetectAttribute.
 
