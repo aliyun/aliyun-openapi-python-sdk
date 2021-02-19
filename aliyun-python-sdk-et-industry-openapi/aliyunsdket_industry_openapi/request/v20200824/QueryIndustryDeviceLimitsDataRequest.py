@@ -19,11 +19,11 @@
 
 from aliyunsdkcore.request import RoaRequest
 
-class UploadIndustryDeviceDataRequest(RoaRequest):
+class QueryIndustryDeviceLimitsDataRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'et-industry-openapi', '2020-08-24', 'UploadIndustryDeviceData')
-		self.set_uri_pattern('/api/igate/timeseries/upload/pop/multifieldbatch')
+		RoaRequest.__init__(self, 'et-industry-openapi', '2020-08-24', 'QueryIndustryDeviceLimitsData')
+		self.set_uri_pattern('/api/igate/timeseries/query/pop/multifieldrange')
 		self.set_method('POST')
 
 	def get_Request(self):
