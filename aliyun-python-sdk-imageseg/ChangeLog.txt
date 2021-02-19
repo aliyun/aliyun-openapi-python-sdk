@@ -1,6 +1,9 @@
 2021-02-19 Version: 1.1.8
 - Update SegmentAnimal SegmentCommonImage.
 
+2021-02-19 Version: 1.1.8
+- Update SegmentAnimal SegmentCommonImage.
+
 2020-12-22 Version: 1.1.8
 - Update SegmentAnimal SegmentCommonImage.
 
