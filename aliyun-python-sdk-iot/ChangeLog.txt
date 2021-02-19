@@ -1,3 +1,9 @@
+2021-02-19 Version: 8.16.0
+- Support data retrieval of Ota module.
+- Added script management API,including CreateThingScript,UpdateThingScript,GetThingScript.
+- Update OTA API, including DeleteOTAModule,UpdateOTAModule,ListOTATaskByJob.
+- Add OTA API, ListOTAModuleVersionsByDevice.
+
 2021-02-08 Version: 8.21.1
 - Fix IoT Studio BatchBindDevicesIntoProject API return datatype.
 - Fix IoT Studio BatchBindProductsIntoProject API return datatype.
