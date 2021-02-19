@@ -42,6 +42,8 @@ class UpdateMPULayoutRequest(RpcRequest):
 				self.add_query_param('UserPanes.' + str(depth1 + 1) + '.UserId', UserPaness[depth1].get('UserId'))
 			if UserPaness[depth1].get('SourceType') is not None:
 				self.add_query_param('UserPanes.' + str(depth1 + 1) + '.SourceType', UserPaness[depth1].get('SourceType'))
+			if UserPaness[depth1].get('SegmentType') is not None:
+				self.add_query_param('UserPanes.' + str(depth1 + 1) + '.SegmentType', UserPaness[depth1].get('SegmentType'))
 			if UserPaness[depth1].get('Images') is not None:
 				for depth2 in range(len(UserPaness[depth1].get('Images'))):
 					if UserPaness[depth1].get('Images')[depth2].get('Url') is not None:
