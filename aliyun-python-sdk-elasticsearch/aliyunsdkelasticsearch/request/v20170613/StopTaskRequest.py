@@ -20,11 +20,11 @@
 from aliyunsdkcore.request import RoaRequest
 from aliyunsdkelasticsearch.endpoint import endpoint_data
 
-class UpdateInstanceRequest(RoaRequest):
+class StopTaskRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'elasticsearch', '2017-06-13', 'UpdateInstance','elasticsearch')
-		self.set_uri_pattern('/openapi/instances/[InstanceId]')
+		RoaRequest.__init__(self, 'elasticsearch', '2017-06-13', 'StopTask','elasticsearch')
+		self.set_uri_pattern('/openapi/eflow/tasks/[taskId]/actions/stop')
 		self.set_method('PUT')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -32,26 +32,8 @@ class UpdateInstanceRequest(RoaRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_ignoreStatus(self):
-		return self.get_query_params().get('ignoreStatus')
+	def get_taskId(self):
+		return self.get_path_params().get('taskId')
 
-	def set_ignoreStatus(self,ignoreStatus):
-		self.add_query_param('ignoreStatus',ignoreStatus)
-
-	def get_InstanceId(self):
-		return self.get_path_params().get('InstanceId')
-
-	def set_InstanceId(self,InstanceId):
-		self.add_path_param('InstanceId',InstanceId)
-
-	def get_clientToken(self):
-		return self.get_query_params().get('clientToken')
-
-	def set_clientToken(self,clientToken):
-		self.add_query_param('clientToken',clientToken)
-
-	def get_orderActionType(self):
-		return self.get_query_params().get('orderActionType')
-
-	def set_orderActionType(self,orderActionType):
-		self.add_query_param('orderActionType',orderActionType)
+	def set_taskId(self,taskId):
+		self.add_path_param('taskId',taskId)

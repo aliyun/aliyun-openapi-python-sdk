@@ -20,38 +20,20 @@
 from aliyunsdkcore.request import RoaRequest
 from aliyunsdkelasticsearch.endpoint import endpoint_data
 
-class UpdateInstanceRequest(RoaRequest):
+class CreatePipelineRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'elasticsearch', '2017-06-13', 'UpdateInstance','elasticsearch')
-		self.set_uri_pattern('/openapi/instances/[InstanceId]')
-		self.set_method('PUT')
+		RoaRequest.__init__(self, 'elasticsearch', '2017-06-13', 'CreatePipeline','elasticsearch')
+		self.set_uri_pattern('/openapi/projects/[ProjectId]/pipelines')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_ignoreStatus(self):
-		return self.get_query_params().get('ignoreStatus')
+	def get_ProjectId(self):
+		return self.get_path_params().get('ProjectId')
 
-	def set_ignoreStatus(self,ignoreStatus):
-		self.add_query_param('ignoreStatus',ignoreStatus)
-
-	def get_InstanceId(self):
-		return self.get_path_params().get('InstanceId')
-
-	def set_InstanceId(self,InstanceId):
-		self.add_path_param('InstanceId',InstanceId)
-
-	def get_clientToken(self):
-		return self.get_query_params().get('clientToken')
-
-	def set_clientToken(self,clientToken):
-		self.add_query_param('clientToken',clientToken)
-
-	def get_orderActionType(self):
-		return self.get_query_params().get('orderActionType')
-
-	def set_orderActionType(self,orderActionType):
-		self.add_query_param('orderActionType',orderActionType)
+	def set_ProjectId(self,ProjectId):
+		self.add_path_param('ProjectId',ProjectId)

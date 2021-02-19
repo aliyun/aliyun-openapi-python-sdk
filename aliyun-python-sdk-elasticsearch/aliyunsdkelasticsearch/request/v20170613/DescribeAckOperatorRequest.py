@@ -20,38 +20,20 @@
 from aliyunsdkcore.request import RoaRequest
 from aliyunsdkelasticsearch.endpoint import endpoint_data
 
-class UpdateInstanceRequest(RoaRequest):
+class DescribeAckOperatorRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'elasticsearch', '2017-06-13', 'UpdateInstance','elasticsearch')
-		self.set_uri_pattern('/openapi/instances/[InstanceId]')
-		self.set_method('PUT')
+		RoaRequest.__init__(self, 'elasticsearch', '2017-06-13', 'DescribeAckOperator','elasticsearch')
+		self.set_uri_pattern('/openapi/ack-clusters/[ClusterId]/operator')
+		self.set_method('GET')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_ignoreStatus(self):
-		return self.get_query_params().get('ignoreStatus')
+	def get_ClusterId(self):
+		return self.get_path_params().get('ClusterId')
 
-	def set_ignoreStatus(self,ignoreStatus):
-		self.add_query_param('ignoreStatus',ignoreStatus)
-
-	def get_InstanceId(self):
-		return self.get_path_params().get('InstanceId')
-
-	def set_InstanceId(self,InstanceId):
-		self.add_path_param('InstanceId',InstanceId)
-
-	def get_clientToken(self):
-		return self.get_query_params().get('clientToken')
-
-	def set_clientToken(self,clientToken):
-		self.add_query_param('clientToken',clientToken)
-
-	def get_orderActionType(self):
-		return self.get_query_params().get('orderActionType')
-
-	def set_orderActionType(self,orderActionType):
-		self.add_query_param('orderActionType',orderActionType)
+	def set_ClusterId(self,ClusterId):
+		self.add_path_param('ClusterId',ClusterId)

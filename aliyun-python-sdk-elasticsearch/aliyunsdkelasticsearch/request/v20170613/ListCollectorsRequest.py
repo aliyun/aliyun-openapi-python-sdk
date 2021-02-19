@@ -50,6 +50,12 @@ class ListCollectorsRequest(RoaRequest):
 	def set_name(self,name):
 		self.add_query_param('name',name)
 
+	def get_sourceType(self):
+		return self.get_query_params().get('sourceType')
+
+	def set_sourceType(self,sourceType):
+		self.add_query_param('sourceType',sourceType)
+
 	def get_page(self):
 		return self.get_query_params().get('page')
 
