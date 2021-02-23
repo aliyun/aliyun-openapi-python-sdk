@@ -23,7 +23,7 @@ from aliyunsdkretailcloud.endpoint import endpoint_data
 class ListAppResourceAllocsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'retailcloud', '2018-03-13', 'ListAppResourceAllocs','retailcloud')
+		RpcRequest.__init__(self, 'retailcloud', '2018-03-13', 'ListAppResourceAllocs')
 		self.set_method('GET')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())

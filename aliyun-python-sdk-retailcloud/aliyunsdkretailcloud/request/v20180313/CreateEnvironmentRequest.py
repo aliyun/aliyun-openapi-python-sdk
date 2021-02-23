@@ -23,7 +23,7 @@ from aliyunsdkretailcloud.endpoint import endpoint_data
 class CreateEnvironmentRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'retailcloud', '2018-03-13', 'CreateEnvironment','retailcloud')
+		RpcRequest.__init__(self, 'retailcloud', '2018-03-13', 'CreateEnvironment')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -60,6 +60,12 @@ class CreateEnvironmentRequest(RpcRequest):
 
 	def set_AppSchemaId(self,AppSchemaId):
 		self.add_query_param('AppSchemaId',AppSchemaId)
+
+	def get_ClusterId(self):
+		return self.get_query_params().get('ClusterId')
+
+	def set_ClusterId(self,ClusterId):
+		self.add_query_param('ClusterId',ClusterId)
 
 	def get_Region(self):
 		return self.get_query_params().get('Region')
