@@ -50,12 +50,6 @@ class CreateAppGroupRequest(RpcRequest):
 	def set_NamespaceSource(self,NamespaceSource):
 		self.add_query_param('NamespaceSource',NamespaceSource)
 
-	def get_MetricsThresholdJson(self):
-		return self.get_query_params().get('MetricsThresholdJson')
-
-	def set_MetricsThresholdJson(self,MetricsThresholdJson):
-		self.add_query_param('MetricsThresholdJson',MetricsThresholdJson)
-
 	def get_GroupId(self):
 		return self.get_query_params().get('GroupId')
 

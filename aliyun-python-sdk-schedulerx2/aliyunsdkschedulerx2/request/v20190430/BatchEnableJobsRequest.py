@@ -20,11 +20,11 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkschedulerx2.endpoint import endpoint_data
 
-class DeleteJobRequest(RpcRequest):
+class BatchEnableJobsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'schedulerx2', '2019-04-30', 'DeleteJob')
-		self.set_method('GET')
+		RpcRequest.__init__(self, 'schedulerx2', '2019-04-30', 'BatchEnableJobs')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -43,14 +43,16 @@ class DeleteJobRequest(RpcRequest):
 	def set_GroupId(self,GroupId):
 		self.add_query_param('GroupId',GroupId)
 
-	def get_JobId(self):
-		return self.get_query_params().get('JobId')
-
-	def set_JobId(self,JobId):
-		self.add_query_param('JobId',JobId)
-
 	def get_Namespace(self):
 		return self.get_query_params().get('Namespace')
 
 	def set_Namespace(self,Namespace):
 		self.add_query_param('Namespace',Namespace)
+
+	def get_JobIdLists(self):
+		return self.get_body_params().get('JobIdList')
+
+	def set_JobIdLists(self, JobIdLists):
+		for depth1 in range(len(JobIdLists)):
+			if JobIdLists[depth1] is not None:
+				self.add_body_params('JobIdList.' + str(depth1 + 1) , JobIdLists[depth1])

@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkschedulerx2.endpoint import endpoint_data
 
-class DeleteJobRequest(RpcRequest):
+class ListGroupsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'schedulerx2', '2019-04-30', 'DeleteJob')
+		RpcRequest.__init__(self, 'schedulerx2', '2019-04-30', 'ListGroups')
 		self.set_method('GET')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -36,18 +36,6 @@ class DeleteJobRequest(RpcRequest):
 
 	def set_NamespaceSource(self,NamespaceSource):
 		self.add_query_param('NamespaceSource',NamespaceSource)
-
-	def get_GroupId(self):
-		return self.get_query_params().get('GroupId')
-
-	def set_GroupId(self,GroupId):
-		self.add_query_param('GroupId',GroupId)
-
-	def get_JobId(self):
-		return self.get_query_params().get('JobId')
-
-	def set_JobId(self,JobId):
-		self.add_query_param('JobId',JobId)
 
 	def get_Namespace(self):
 		return self.get_query_params().get('Namespace')
