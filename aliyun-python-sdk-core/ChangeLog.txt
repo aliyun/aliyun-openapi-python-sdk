@@ -1,3 +1,6 @@
+2020-02-24 Version 2.13.31
+1, Specify cryptography version (>=2.6.0) in `setup.py`, This fix is ​​for CVE-2021-23840.
+
 2020-11-30 Version 2.13.30
 1, Add README and LICENSE to the python package.
 2, Bump urllib3 from 1.21 to 1.24.3 to fix CVE-2018-20060, CVE-2019-11236, CVE-2019-11324 vulnerabilities.
