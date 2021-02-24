@@ -43,13 +43,9 @@ VERSION = __import__(PACKAGE).__version__
 with open("README.rst") as fp:
     LONG_DESCRIPTION = fp.read()
 
-cryptography_version = "cryptography>=2.9.2, <3.3"
-if sys.version_info[0:2] == (3, 4):
-    cryptography_version = "cryptography<=2.8"
-
 requires = [
     "jmespath>=0.9.3,<1.0.0",
-    cryptography_version
+    "cryptography>=2.6.0"
 ]
 
 setup_args = {
