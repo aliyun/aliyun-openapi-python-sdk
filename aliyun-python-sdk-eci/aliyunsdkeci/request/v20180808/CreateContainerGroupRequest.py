@@ -592,7 +592,7 @@ class CreateContainerGroupRequest(RpcRequest):
 		self.add_query_param('SpotPriceLimit', SpotPriceLimit)
 
 	def get_EphemeralStorage(self):
-	return self.get_query_params().get('EphemeralStorage')
+		return self.get_query_params().get('EphemeralStorage')
 
 	def set_EphemeralStorage(self, EphemeralStorage):
 		self.add_query_param('EphemeralStorage', EphemeralStorage)
