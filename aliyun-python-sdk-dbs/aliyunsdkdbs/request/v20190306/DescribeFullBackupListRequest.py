@@ -61,6 +61,18 @@ class DescribeFullBackupListRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
+	def get_StartTimestamp(self):
+		return self.get_query_params().get('StartTimestamp')
+
+	def set_StartTimestamp(self,StartTimestamp):
+		self.add_query_param('StartTimestamp',StartTimestamp)
+
+	def get_EndTimestamp(self):
+		return self.get_query_params().get('EndTimestamp')
+
+	def set_EndTimestamp(self,EndTimestamp):
+		self.add_query_param('EndTimestamp',EndTimestamp)
+
 	def get_ShowStorageType(self):
 		return self.get_query_params().get('ShowStorageType')
 
