@@ -26,6 +26,12 @@ class GetUserInfoRequest(RoaRequest):
 		self.set_uri_pattern('/api/v3/user/current')
 		self.set_method('GET')
 
+	def get_OrganizationId(self):
+		return self.get_query_params().get('OrganizationId')
+
+	def set_OrganizationId(self,OrganizationId):
+		self.add_query_param('OrganizationId',OrganizationId)
+
 	def get_AccessToken(self):
 		return self.get_query_params().get('AccessToken')
 

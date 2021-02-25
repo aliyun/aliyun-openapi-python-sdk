@@ -31,6 +31,18 @@ class ListPersonTrackRequest(RpcRequest):
 	def set_CorpId(self,CorpId):
 		self.add_body_params('CorpId', CorpId)
 
+	def get_AggregateDimension(self):
+		return self.get_body_params().get('AggregateDimension')
+
+	def set_AggregateDimension(self,AggregateDimension):
+		self.add_body_params('AggregateDimension', AggregateDimension)
+
+	def get_ImageSourceType(self):
+		return self.get_body_params().get('ImageSourceType')
+
+	def set_ImageSourceType(self,ImageSourceType):
+		self.add_body_params('ImageSourceType', ImageSourceType)
+
 	def get_EndTime(self):
 		return self.get_body_params().get('EndTime')
 

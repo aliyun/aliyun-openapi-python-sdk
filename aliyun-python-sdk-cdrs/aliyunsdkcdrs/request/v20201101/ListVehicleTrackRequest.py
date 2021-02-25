@@ -48,3 +48,15 @@ class ListVehicleTrackRequest(RpcRequest):
 
 	def set_StartTime(self,StartTime):
 		self.add_body_params('StartTime', StartTime)
+
+	def get_PageNumber(self):
+		return self.get_body_params().get('PageNumber')
+
+	def set_PageNumber(self,PageNumber):
+		self.add_body_params('PageNumber', PageNumber)
+
+	def get_PageSize(self):
+		return self.get_body_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_body_params('PageSize', PageSize)

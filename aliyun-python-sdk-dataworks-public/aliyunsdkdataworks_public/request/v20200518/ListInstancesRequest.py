@@ -49,6 +49,18 @@ class ListInstancesRequest(RpcRequest):
 	def set_BizName(self,BizName):
 		self.add_body_params('BizName', BizName)
 
+	def get_BeginBizdate(self):
+		return self.get_body_params().get('BeginBizdate')
+
+	def set_BeginBizdate(self,BeginBizdate):
+		self.add_body_params('BeginBizdate', BeginBizdate)
+
+	def get_EndBizdate(self):
+		return self.get_body_params().get('EndBizdate')
+
+	def set_EndBizdate(self,EndBizdate):
+		self.add_body_params('EndBizdate', EndBizdate)
+
 	def get_DagId(self):
 		return self.get_body_params().get('DagId')
 
@@ -72,6 +84,12 @@ class ListInstancesRequest(RpcRequest):
 
 	def set_ProgramType(self,ProgramType):
 		self.add_body_params('ProgramType', ProgramType)
+
+	def get_Bizdate(self):
+		return self.get_body_params().get('Bizdate')
+
+	def set_Bizdate(self,Bizdate):
+		self.add_body_params('Bizdate', Bizdate)
 
 	def get_PageSize(self):
 		return self.get_body_params().get('PageSize')

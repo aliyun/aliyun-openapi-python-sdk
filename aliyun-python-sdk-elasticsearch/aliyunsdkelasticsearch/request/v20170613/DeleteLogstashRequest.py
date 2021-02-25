@@ -43,3 +43,9 @@ class DeleteLogstashRequest(RoaRequest):
 
 	def set_clientToken(self,clientToken):
 		self.add_query_param('clientToken',clientToken)
+
+	def get_deleteType(self):
+		return self.get_query_params().get('deleteType')
+
+	def set_deleteType(self,deleteType):
+		self.add_query_param('deleteType',deleteType)

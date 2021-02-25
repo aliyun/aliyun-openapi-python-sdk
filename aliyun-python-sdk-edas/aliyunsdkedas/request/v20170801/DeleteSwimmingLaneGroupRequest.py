@@ -23,7 +23,7 @@ from aliyunsdkedas.endpoint import endpoint_data
 class DeleteSwimmingLaneGroupRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'DeleteSwimmingLaneGroup','Edas')
+		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'DeleteSwimmingLaneGroup','edas')
 		self.set_uri_pattern('/pop/v5/trafficmgnt/swimming_lane_groups')
 		self.set_method('DELETE')
 		if hasattr(self, "endpoint_map"):

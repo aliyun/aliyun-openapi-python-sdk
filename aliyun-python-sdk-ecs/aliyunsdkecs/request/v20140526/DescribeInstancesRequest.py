@@ -175,6 +175,12 @@ class DescribeInstancesRequest(RpcRequest):
 	def set_ZoneId(self,ZoneId):
 		self.add_query_param('ZoneId',ZoneId)
 
+	def get_MaxResults(self):
+		return self.get_query_params().get('MaxResults')
+
+	def set_MaxResults(self,MaxResults):
+		self.add_query_param('MaxResults',MaxResults)
+
 	def get_InstanceNetworkType(self):
 		return self.get_query_params().get('InstanceNetworkType')
 
@@ -222,6 +228,12 @@ class DescribeInstancesRequest(RpcRequest):
 
 	def set_PageNumber(self,PageNumber):
 		self.add_query_param('PageNumber',PageNumber)
+
+	def get_NextToken(self):
+		return self.get_query_params().get('NextToken')
+
+	def set_NextToken(self,NextToken):
+		self.add_query_param('NextToken',NextToken)
 
 	def get_RdmaIpAddresses(self):
 		return self.get_query_params().get('RdmaIpAddresses')

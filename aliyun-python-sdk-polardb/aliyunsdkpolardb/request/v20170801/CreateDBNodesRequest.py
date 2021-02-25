@@ -85,10 +85,10 @@ class CreateDBNodesRequest(RpcRequest):
 	def set_PlannedStartTime(self,PlannedStartTime):
 		self.add_query_param('PlannedStartTime',PlannedStartTime)
 
-	def get_DBNode(self):
+	def get_DBNodes(self):
 		return self.get_query_params().get('DBNode')
 
-	def set_DBNode(self, DBNodes):
+	def set_DBNodes(self, DBNodes):
 		for depth1 in range(len(DBNodes)):
 			if DBNodes[depth1].get('TargetClass') is not None:
 				self.add_query_param('DBNode.' + str(depth1 + 1) + '.TargetClass', DBNodes[depth1].get('TargetClass'))

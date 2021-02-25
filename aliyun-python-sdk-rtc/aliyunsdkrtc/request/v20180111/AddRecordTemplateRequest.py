@@ -65,6 +65,24 @@ class AddRecordTemplateRequest(RpcRequest):
 			if LayoutIdss[depth1] is not None:
 				self.add_query_param('LayoutIds.' + str(depth1 + 1) , LayoutIdss[depth1])
 
+	def get_ClockWidgetss(self):
+		return self.get_query_params().get('ClockWidgets')
+
+	def set_ClockWidgetss(self, ClockWidgetss):
+		for depth1 in range(len(ClockWidgetss)):
+			if ClockWidgetss[depth1].get('X') is not None:
+				self.add_query_param('ClockWidgets.' + str(depth1 + 1) + '.X', ClockWidgetss[depth1].get('X'))
+			if ClockWidgetss[depth1].get('Y') is not None:
+				self.add_query_param('ClockWidgets.' + str(depth1 + 1) + '.Y', ClockWidgetss[depth1].get('Y'))
+			if ClockWidgetss[depth1].get('FontType') is not None:
+				self.add_query_param('ClockWidgets.' + str(depth1 + 1) + '.FontType', ClockWidgetss[depth1].get('FontType'))
+			if ClockWidgetss[depth1].get('FontSize') is not None:
+				self.add_query_param('ClockWidgets.' + str(depth1 + 1) + '.FontSize', ClockWidgetss[depth1].get('FontSize'))
+			if ClockWidgetss[depth1].get('FontColor') is not None:
+				self.add_query_param('ClockWidgets.' + str(depth1 + 1) + '.FontColor', ClockWidgetss[depth1].get('FontColor'))
+			if ClockWidgetss[depth1].get('ZOrder') is not None:
+				self.add_query_param('ClockWidgets.' + str(depth1 + 1) + '.ZOrder', ClockWidgetss[depth1].get('ZOrder'))
+
 	def get_OssBucket(self):
 		return self.get_query_params().get('OssBucket')
 

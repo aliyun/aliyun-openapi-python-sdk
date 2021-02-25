@@ -43,10 +43,10 @@ class BatchAddDeviceGroupRelationsRequest(RpcRequest):
 	def set_GroupId(self,GroupId):
 		self.add_query_param('GroupId',GroupId)
 
-	def get_Device(self):
+	def get_Devices(self):
 		return self.get_query_params().get('Device')
 
-	def set_Device(self, Devices):
+	def set_Devices(self, Devices):
 		for depth1 in range(len(Devices)):
 			if Devices[depth1].get('DeviceName') is not None:
 				self.add_query_param('Device.' + str(depth1 + 1) + '.DeviceName', Devices[depth1].get('DeviceName'))

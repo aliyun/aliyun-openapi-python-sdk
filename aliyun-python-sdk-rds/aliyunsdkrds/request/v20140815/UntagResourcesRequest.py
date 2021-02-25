@@ -43,10 +43,10 @@ class UntagResourcesRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_ResourceId(self):
+	def get_ResourceIds(self):
 		return self.get_query_params().get('ResourceId')
 
-	def set_ResourceId(self, ResourceIds):
+	def set_ResourceIds(self, ResourceIds):
 		for depth1 in range(len(ResourceIds)):
 			if ResourceIds[depth1] is not None:
 				self.add_query_param('ResourceId.' + str(depth1 + 1) , ResourceIds[depth1])
@@ -69,10 +69,10 @@ class UntagResourcesRequest(RpcRequest):
 	def set_ResourceType(self,ResourceType):
 		self.add_query_param('ResourceType',ResourceType)
 
-	def get_TagKey(self):
+	def get_TagKeys(self):
 		return self.get_query_params().get('TagKey')
 
-	def set_TagKey(self, TagKeys):
+	def set_TagKeys(self, TagKeys):
 		for depth1 in range(len(TagKeys)):
 			if TagKeys[depth1] is not None:
 				self.add_query_param('TagKey.' + str(depth1 + 1) , TagKeys[depth1])

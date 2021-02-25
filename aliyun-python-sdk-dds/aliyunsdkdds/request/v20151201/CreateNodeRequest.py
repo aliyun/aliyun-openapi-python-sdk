@@ -49,6 +49,12 @@ class CreateNodeRequest(RpcRequest):
 	def set_ClientToken(self,ClientToken):
 		self.add_query_param('ClientToken',ClientToken)
 
+	def get_ReadonlyReplicas(self):
+		return self.get_query_params().get('ReadonlyReplicas')
+
+	def set_ReadonlyReplicas(self,ReadonlyReplicas):
+		self.add_query_param('ReadonlyReplicas',ReadonlyReplicas)
+
 	def get_NodeClass(self):
 		return self.get_query_params().get('NodeClass')
 

@@ -97,6 +97,12 @@ class DescribeRecommendInstanceTypeRequest(RpcRequest):
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
+	def get_ZoneMatchMode(self):
+		return self.get_query_params().get('ZoneMatchMode')
+
+	def set_ZoneMatchMode(self,ZoneMatchMode):
+		self.add_query_param('ZoneMatchMode',ZoneMatchMode)
+
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
 

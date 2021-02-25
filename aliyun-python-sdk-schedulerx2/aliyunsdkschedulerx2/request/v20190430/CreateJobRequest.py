@@ -24,7 +24,6 @@ class CreateJobRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'schedulerx2', '2019-04-30', 'CreateJob')
-		self.set_protocol_type('https')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -177,7 +176,7 @@ class CreateJobRequest(RpcRequest):
 		self.add_body_params('TimeoutEnable', TimeoutEnable)
 
 	def get_ContactInfos(self):
-		return self.get_body_params().get('ContactInfos')
+		return self.get_body_params().get('ContactInfo')
 
 	def set_ContactInfos(self, ContactInfos):
 		for depth1 in range(len(ContactInfos)):

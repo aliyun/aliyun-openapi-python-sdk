@@ -23,7 +23,7 @@ from aliyunsdkedas.endpoint import endpoint_data
 class ListFlowControlsRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'ListFlowControls','Edas')
+		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'ListFlowControls','edas')
 		self.set_uri_pattern('/pop/v5/app/flowControls')
 		self.set_method('GET')
 		if hasattr(self, "endpoint_map"):

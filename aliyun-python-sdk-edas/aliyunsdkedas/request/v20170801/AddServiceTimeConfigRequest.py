@@ -23,7 +23,7 @@ from aliyunsdkedas.endpoint import endpoint_data
 class AddServiceTimeConfigRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'AddServiceTimeConfig','Edas')
+		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'AddServiceTimeConfig','edas')
 		self.set_uri_pattern('/pop/sp/api/timeout/add')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):

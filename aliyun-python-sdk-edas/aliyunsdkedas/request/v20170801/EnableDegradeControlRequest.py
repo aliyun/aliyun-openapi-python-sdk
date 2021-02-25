@@ -23,7 +23,7 @@ from aliyunsdkedas.endpoint import endpoint_data
 class EnableDegradeControlRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'EnableDegradeControl','Edas')
+		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'EnableDegradeControl','edas')
 		self.set_uri_pattern('/pop/v5/degradecontrol/enable')
 		self.set_method('PUT')
 		if hasattr(self, "endpoint_map"):

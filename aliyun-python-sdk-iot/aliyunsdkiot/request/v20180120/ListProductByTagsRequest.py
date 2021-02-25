@@ -49,10 +49,10 @@ class ListProductByTagsRequest(RpcRequest):
 	def set_CurrentPage(self,CurrentPage):
 		self.add_query_param('CurrentPage',CurrentPage)
 
-	def get_ProductTag(self):
+	def get_ProductTags(self):
 		return self.get_query_params().get('ProductTag')
 
-	def set_ProductTag(self, ProductTags):
+	def set_ProductTags(self, ProductTags):
 		for depth1 in range(len(ProductTags)):
 			if ProductTags[depth1].get('TagValue') is not None:
 				self.add_query_param('ProductTag.' + str(depth1 + 1) + '.TagValue', ProductTags[depth1].get('TagValue'))

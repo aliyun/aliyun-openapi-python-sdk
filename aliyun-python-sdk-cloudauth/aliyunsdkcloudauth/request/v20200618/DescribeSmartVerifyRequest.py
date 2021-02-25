@@ -31,14 +31,20 @@ class DescribeSmartVerifyRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_SceneId(self):
-		return self.get_body_params().get('SceneId')
-
-	def set_SceneId(self,SceneId):
-		self.add_body_params('SceneId', SceneId)
-
 	def get_CertifyId(self):
 		return self.get_body_params().get('CertifyId')
 
 	def set_CertifyId(self,CertifyId):
 		self.add_body_params('CertifyId', CertifyId)
+
+	def get_PictureReturnType(self):
+		return self.get_body_params().get('PictureReturnType')
+
+	def set_PictureReturnType(self,PictureReturnType):
+		self.add_body_params('PictureReturnType', PictureReturnType)
+
+	def get_SceneId(self):
+		return self.get_body_params().get('SceneId')
+
+	def set_SceneId(self,SceneId):
+		self.add_body_params('SceneId', SceneId)

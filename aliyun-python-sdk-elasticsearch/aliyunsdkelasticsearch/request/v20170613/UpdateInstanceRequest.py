@@ -49,3 +49,9 @@ class UpdateInstanceRequest(RoaRequest):
 
 	def set_clientToken(self,clientToken):
 		self.add_query_param('clientToken',clientToken)
+
+	def get_orderActionType(self):
+		return self.get_query_params().get('orderActionType')
+
+	def set_orderActionType(self,orderActionType):
+		self.add_query_param('orderActionType',orderActionType)

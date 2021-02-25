@@ -31,12 +31,6 @@ class ListPersonResultRequest(RpcRequest):
 	def set_Profession(self,Profession):
 		self.add_body_params('Profession', Profession)
 
-	def get_Schema(self):
-		return self.get_body_params().get('Schema')
-
-	def set_Schema(self,Schema):
-		self.add_body_params('Schema', Schema)
-
 	def get_CorpId(self):
 		return self.get_body_params().get('CorpId')
 

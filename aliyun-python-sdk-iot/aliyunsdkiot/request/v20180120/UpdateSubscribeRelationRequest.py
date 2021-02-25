@@ -79,10 +79,10 @@ class UpdateSubscribeRelationRequest(RpcRequest):
 	def set_DeviceTagFlag(self,DeviceTagFlag):
 		self.add_query_param('DeviceTagFlag',DeviceTagFlag)
 
-	def get_ConsumerGroupIds(self):
+	def get_ConsumerGroupIdss(self):
 		return self.get_query_params().get('ConsumerGroupIds')
 
-	def set_ConsumerGroupIds(self, ConsumerGroupIdss):
+	def set_ConsumerGroupIdss(self, ConsumerGroupIdss):
 		for depth1 in range(len(ConsumerGroupIdss)):
 			if ConsumerGroupIdss[depth1] is not None:
 				self.add_query_param('ConsumerGroupIds.' + str(depth1 + 1) , ConsumerGroupIdss[depth1])

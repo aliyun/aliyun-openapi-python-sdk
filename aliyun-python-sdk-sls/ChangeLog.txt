@@ -1,0 +1,3 @@
+2021-01-18 Version: 1.0.8
+- OpenSlsService and GetSlsService support RAM subaccount.
+

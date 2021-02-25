@@ -49,6 +49,12 @@ class InvokeCommandRequest(RpcRequest):
 	def set_Frequency(self,Frequency):
 		self.add_query_param('Frequency',Frequency)
 
+	def get_WindowsPasswordName(self):
+		return self.get_query_params().get('WindowsPasswordName')
+
+	def set_WindowsPasswordName(self,WindowsPasswordName):
+		self.add_query_param('WindowsPasswordName',WindowsPasswordName)
+
 	def get_Timed(self):
 		return self.get_query_params().get('Timed')
 

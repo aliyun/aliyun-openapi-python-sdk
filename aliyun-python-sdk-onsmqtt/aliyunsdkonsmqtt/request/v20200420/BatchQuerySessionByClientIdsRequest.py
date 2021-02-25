@@ -32,7 +32,7 @@ class BatchQuerySessionByClientIdsRequest(RpcRequest):
 
 
 	def get_ClientIdLists(self):
-		return self.get_query_params().get('ClientIdLists')
+		return self.get_query_params().get('ClientIdList')
 
 	def set_ClientIdLists(self, ClientIdLists):
 		for depth1 in range(len(ClientIdLists)):

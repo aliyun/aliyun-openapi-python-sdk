@@ -23,7 +23,7 @@ from aliyunsdkedas.endpoint import endpoint_data
 class DeleteEcuRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'DeleteEcu','Edas')
+		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'DeleteEcu','edas')
 		self.set_uri_pattern('/pop/v5/resource/delete_ecu')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):

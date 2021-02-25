@@ -56,10 +56,10 @@ class GetFileBlobsRequest(RoaRequest):
 	def set_FilePath(self,FilePath):
 		self.add_query_param('FilePath',FilePath)
 
-	def get__From(self):
+	def get_From(self):
 		return self.get_query_params().get('From')
 
-	def set__From(self,_From):
+	def set_From(self,_From):
 		self.add_query_param('From',_From)
 
 	def get_To(self):

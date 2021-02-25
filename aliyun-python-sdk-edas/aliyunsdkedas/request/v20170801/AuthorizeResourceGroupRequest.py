@@ -23,7 +23,7 @@ from aliyunsdkedas.endpoint import endpoint_data
 class AuthorizeResourceGroupRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'AuthorizeResourceGroup','Edas')
+		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'AuthorizeResourceGroup','edas')
 		self.set_uri_pattern('/pop/v5/account/authorize_res_group')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):

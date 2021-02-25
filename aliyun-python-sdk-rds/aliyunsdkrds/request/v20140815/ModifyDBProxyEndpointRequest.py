@@ -67,11 +67,35 @@ class ModifyDBProxyEndpointRequest(RpcRequest):
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
+	def get_DbEndpointAliases(self):
+		return self.get_query_params().get('DbEndpointAliases')
+
+	def set_DbEndpointAliases(self,DbEndpointAliases):
+		self.add_query_param('DbEndpointAliases',DbEndpointAliases)
+
+	def get_DbEndpointOperator(self):
+		return self.get_query_params().get('DbEndpointOperator')
+
+	def set_DbEndpointOperator(self,DbEndpointOperator):
+		self.add_query_param('DbEndpointOperator',DbEndpointOperator)
+
+	def get_DbEndpointType(self):
+		return self.get_query_params().get('DbEndpointType')
+
+	def set_DbEndpointType(self,DbEndpointType):
+		self.add_query_param('DbEndpointType',DbEndpointType)
+
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_DbEndpointReadWriteMode(self):
+		return self.get_query_params().get('DbEndpointReadWriteMode')
+
+	def set_DbEndpointReadWriteMode(self,DbEndpointReadWriteMode):
+		self.add_query_param('DbEndpointReadWriteMode',DbEndpointReadWriteMode)
 
 	def get_DBProxyEndpointId(self):
 		return self.get_query_params().get('DBProxyEndpointId')

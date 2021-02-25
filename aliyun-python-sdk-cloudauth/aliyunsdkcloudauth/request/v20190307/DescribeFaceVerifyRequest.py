@@ -31,14 +31,20 @@ class DescribeFaceVerifyRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_SceneId(self):
-		return self.get_query_params().get('SceneId')
-
-	def set_SceneId(self,SceneId):
-		self.add_query_param('SceneId',SceneId)
-
 	def get_CertifyId(self):
 		return self.get_query_params().get('CertifyId')
 
 	def set_CertifyId(self,CertifyId):
 		self.add_query_param('CertifyId',CertifyId)
+
+	def get_PictureReturnType(self):
+		return self.get_query_params().get('PictureReturnType')
+
+	def set_PictureReturnType(self,PictureReturnType):
+		self.add_query_param('PictureReturnType',PictureReturnType)
+
+	def get_SceneId(self):
+		return self.get_query_params().get('SceneId')
+
+	def set_SceneId(self,SceneId):
+		self.add_query_param('SceneId',SceneId)

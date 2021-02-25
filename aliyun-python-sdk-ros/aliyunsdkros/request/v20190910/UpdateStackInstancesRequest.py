@@ -73,10 +73,10 @@ class UpdateStackInstancesRequest(RpcRequest):
 	def set_AccountIds(self,AccountIds):
 		self.add_query_param('AccountIds',AccountIds)
 
-	def get_ParameterOverridess(self):
+	def get_ParameterOverrides(self):
 		return self.get_query_params().get('ParameterOverrides')
 
-	def set_ParameterOverridess(self, ParameterOverridess):
+	def set_ParameterOverrides(self, ParameterOverridess):
 		for depth1 in range(len(ParameterOverridess)):
 			if ParameterOverridess[depth1].get('ParameterValue') is not None:
 				self.add_query_param('ParameterOverrides.' + str(depth1 + 1) + '.ParameterValue', ParameterOverridess[depth1].get('ParameterValue'))

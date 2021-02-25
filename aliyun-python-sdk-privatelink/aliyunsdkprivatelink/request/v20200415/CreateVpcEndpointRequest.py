@@ -38,18 +38,18 @@ class CreateVpcEndpointRequest(RpcRequest):
 	def set_ClientToken(self,ClientToken):
 		self.add_query_param('ClientToken',ClientToken)
 
-	def get_SecurityGroupIds(self):
+	def get_SecurityGroupId(self):
 		return self.get_query_params().get('SecurityGroupId')
 
-	def set_SecurityGroupIds(self, SecurityGroupIds):
+	def set_SecurityGroupId(self, SecurityGroupIds):
 		for depth1 in range(len(SecurityGroupIds)):
 			if SecurityGroupIds[depth1] is not None:
 				self.add_query_param('SecurityGroupId.' + str(depth1 + 1) , SecurityGroupIds[depth1])
 
-	def get_Zones(self):
+	def get_Zone(self):
 		return self.get_query_params().get('Zone')
 
-	def set_Zones(self, Zones):
+	def set_Zone(self, Zones):
 		for depth1 in range(len(Zones)):
 			if Zones[depth1].get('VSwitchId') is not None:
 				self.add_query_param('Zone.' + str(depth1 + 1) + '.VSwitchId', Zones[depth1].get('VSwitchId'))

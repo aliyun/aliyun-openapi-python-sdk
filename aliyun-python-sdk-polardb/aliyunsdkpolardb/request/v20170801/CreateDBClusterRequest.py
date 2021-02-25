@@ -103,6 +103,12 @@ class CreateDBClusterRequest(RpcRequest):
 	def set_SecurityIPList(self,SecurityIPList):
 		self.add_query_param('SecurityIPList',SecurityIPList)
 
+	def get_DBMinorVersion(self):
+		return self.get_query_params().get('DBMinorVersion')
+
+	def set_DBMinorVersion(self,DBMinorVersion):
+		self.add_query_param('DBMinorVersion',DBMinorVersion)
+
 	def get_AutoRenew(self):
 		return self.get_query_params().get('AutoRenew')
 

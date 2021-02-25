@@ -23,7 +23,7 @@ from aliyunsdkedas.endpoint import endpoint_data
 class DeleteK8sServiceRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'DeleteK8sService','Edas')
+		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'DeleteK8sService','edas')
 		self.set_uri_pattern('/pop/v5/k8s/acs/k8s_service')
 		self.set_method('DELETE')
 		if hasattr(self, "endpoint_map"):

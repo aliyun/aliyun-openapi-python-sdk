@@ -75,6 +75,12 @@ class StartRecordTaskRequest(RpcRequest):
 					if UserPaness[depth1].get('Texts')[depth2].get('ZOrder') is not None:
 						self.add_query_param('UserPanes.' + str(depth1 + 1) + '.Texts.' + str(depth2 + 1) + '.ZOrder', UserPaness[depth1].get('Texts')[depth2].get('ZOrder'))
 
+	def get_TaskProfile(self):
+		return self.get_query_params().get('TaskProfile')
+
+	def set_TaskProfile(self,TaskProfile):
+		self.add_query_param('TaskProfile',TaskProfile)
+
 	def get_TaskId(self):
 		return self.get_query_params().get('TaskId')
 
@@ -106,6 +112,12 @@ class StartRecordTaskRequest(RpcRequest):
 
 	def set_AppId(self,AppId):
 		self.add_query_param('AppId',AppId)
+
+	def get_MediaEncode(self):
+		return self.get_query_params().get('MediaEncode')
+
+	def set_MediaEncode(self,MediaEncode):
+		self.add_query_param('MediaEncode',MediaEncode)
 
 	def get_ChannelId(self):
 		return self.get_query_params().get('ChannelId')

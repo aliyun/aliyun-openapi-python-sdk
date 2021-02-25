@@ -61,12 +61,6 @@ class CreateServerlessDBInstanceRequest(RpcRequest):
 	def set_EngineVersion(self,EngineVersion):
 		self.add_query_param('EngineVersion',EngineVersion)
 
-	def get_NetworkType(self):
-		return self.get_query_params().get('NetworkType')
-
-	def set_NetworkType(self,NetworkType):
-		self.add_query_param('NetworkType',NetworkType)
-
 	def get_StorageEngine(self):
 		return self.get_query_params().get('StorageEngine')
 
@@ -156,9 +150,3 @@ class CreateServerlessDBInstanceRequest(RpcRequest):
 
 	def set_ZoneId(self,ZoneId):
 		self.add_query_param('ZoneId',ZoneId)
-
-	def get_ChargeType(self):
-		return self.get_query_params().get('ChargeType')
-
-	def set_ChargeType(self,ChargeType):
-		self.add_query_param('ChargeType',ChargeType)

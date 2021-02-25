@@ -229,6 +229,12 @@ class RunInstancesRequest(RpcRequest):
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
+	def get_SchedulerOptionsDedicatedHostClusterId(self):
+		return self.get_query_params().get('SchedulerOptions.DedicatedHostClusterId')
+
+	def set_SchedulerOptionsDedicatedHostClusterId(self,SchedulerOptionsDedicatedHostClusterId):
+		self.add_query_param('SchedulerOptions.DedicatedHostClusterId',SchedulerOptionsDedicatedHostClusterId)
+
 	def get_SystemDiskDiskName(self):
 		return self.get_query_params().get('SystemDisk.DiskName')
 

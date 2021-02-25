@@ -37,10 +37,10 @@ class BatchUpdateDeviceNicknameRequest(RpcRequest):
 	def set_IotInstanceId(self,IotInstanceId):
 		self.add_query_param('IotInstanceId',IotInstanceId)
 
-	def get_DeviceNicknameInfo(self):
+	def get_DeviceNicknameInfos(self):
 		return self.get_query_params().get('DeviceNicknameInfo')
 
-	def set_DeviceNicknameInfo(self, DeviceNicknameInfos):
+	def set_DeviceNicknameInfos(self, DeviceNicknameInfos):
 		for depth1 in range(len(DeviceNicknameInfos)):
 			if DeviceNicknameInfos[depth1].get('IotId') is not None:
 				self.add_query_param('DeviceNicknameInfo.' + str(depth1 + 1) + '.IotId', DeviceNicknameInfos[depth1].get('IotId'))

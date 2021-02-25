@@ -31,20 +31,26 @@ class ConvertInstanceRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_ClusterId(self):
-		return self.get_query_params().get('ClusterId')
-
-	def set_ClusterId(self,ClusterId):
-		self.add_query_param('ClusterId',ClusterId)
-
 	def get_Duration(self):
 		return self.get_query_params().get('Duration')
 
 	def set_Duration(self,Duration):
 		self.add_query_param('Duration',Duration)
 
+	def get_ClusterId(self):
+		return self.get_query_params().get('ClusterId')
+
+	def set_ClusterId(self,ClusterId):
+		self.add_query_param('ClusterId',ClusterId)
+
 	def get_PricingCycle(self):
 		return self.get_query_params().get('PricingCycle')
 
 	def set_PricingCycle(self,PricingCycle):
 		self.add_query_param('PricingCycle',PricingCycle)
+
+	def get_PayType(self):
+		return self.get_query_params().get('PayType')
+
+	def set_PayType(self,PayType):
+		self.add_query_param('PayType',PayType)

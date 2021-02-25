@@ -1,3 +1,18 @@
+2021-02-19 Version: 1.8.0.1
+- Add update task api.
+
+2021-02-19 Version: 1.8.0.1
+- Add update task api.
+
+2021-02-02 Version: 1.9.0
+- Add.
+
+2021-02-01 Version: 1.1.0
+- Add.
+
+2021-01-21 Version: 1.0.9
+- Add.
+
 2020-12-16 Version: 1.0.8.2-release
 - Support show pipeline history.
 - Support show log details.

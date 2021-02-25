@@ -61,6 +61,12 @@ class CreateEnvironmentRequest(RpcRequest):
 	def set_AppSchemaId(self,AppSchemaId):
 		self.add_query_param('AppSchemaId',AppSchemaId)
 
+	def get_ClusterId(self):
+		return self.get_query_params().get('ClusterId')
+
+	def set_ClusterId(self,ClusterId):
+		self.add_query_param('ClusterId',ClusterId)
+
 	def get_Region(self):
 		return self.get_query_params().get('Region')
 

@@ -37,10 +37,10 @@ class DeleteThingModelRequest(RpcRequest):
 	def set_ResourceGroupId(self,ResourceGroupId):
 		self.add_query_param('ResourceGroupId',ResourceGroupId)
 
-	def get_PropertyIdentifier(self):
+	def get_PropertyIdentifiers(self):
 		return self.get_query_params().get('PropertyIdentifier')
 
-	def set_PropertyIdentifier(self, PropertyIdentifiers):
+	def set_PropertyIdentifiers(self, PropertyIdentifiers):
 		for depth1 in range(len(PropertyIdentifiers)):
 			if PropertyIdentifiers[depth1] is not None:
 				self.add_query_param('PropertyIdentifier.' + str(depth1 + 1) , PropertyIdentifiers[depth1])
@@ -51,10 +51,10 @@ class DeleteThingModelRequest(RpcRequest):
 	def set_IotInstanceId(self,IotInstanceId):
 		self.add_query_param('IotInstanceId',IotInstanceId)
 
-	def get_ServiceIdentifier(self):
+	def get_ServiceIdentifiers(self):
 		return self.get_query_params().get('ServiceIdentifier')
 
-	def set_ServiceIdentifier(self, ServiceIdentifiers):
+	def set_ServiceIdentifiers(self, ServiceIdentifiers):
 		for depth1 in range(len(ServiceIdentifiers)):
 			if ServiceIdentifiers[depth1] is not None:
 				self.add_query_param('ServiceIdentifier.' + str(depth1 + 1) , ServiceIdentifiers[depth1])
@@ -65,10 +65,10 @@ class DeleteThingModelRequest(RpcRequest):
 	def set_ProductKey(self,ProductKey):
 		self.add_query_param('ProductKey',ProductKey)
 
-	def get_EventIdentifier(self):
+	def get_EventIdentifiers(self):
 		return self.get_query_params().get('EventIdentifier')
 
-	def set_EventIdentifier(self, EventIdentifiers):
+	def set_EventIdentifiers(self, EventIdentifiers):
 		for depth1 in range(len(EventIdentifiers)):
 			if EventIdentifiers[depth1] is not None:
 				self.add_query_param('EventIdentifier.' + str(depth1 + 1) , EventIdentifiers[depth1])

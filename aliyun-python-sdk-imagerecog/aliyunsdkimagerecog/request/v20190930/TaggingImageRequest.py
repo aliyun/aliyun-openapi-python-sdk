@@ -31,6 +31,12 @@ class TaggingImageRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_Async(self):
+		return self.get_body_params().get('Async')
+
+	def set_Async(self,Async):
+		self.add_body_params('Async', Async)
+
 	def get_ImageURL(self):
 		return self.get_body_params().get('ImageURL')
 

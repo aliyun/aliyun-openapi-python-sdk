@@ -49,6 +49,12 @@ class VerifyDeviceRequest(RpcRequest):
 	def set_AppVersion(self,AppVersion):
 		self.add_query_param('AppVersion',AppVersion)
 
+	def get_DeviceToken(self):
+		return self.get_body_params().get('DeviceToken')
+
+	def set_DeviceToken(self,DeviceToken):
+		self.add_body_params('DeviceToken', DeviceToken)
+
 	def get_CertifyId(self):
 		return self.get_query_params().get('CertifyId')
 
