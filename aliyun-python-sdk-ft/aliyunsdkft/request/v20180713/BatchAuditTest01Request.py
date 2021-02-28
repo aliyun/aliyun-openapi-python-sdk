@@ -17,16 +17,40 @@
 # specific language governing permissions and limitations
 # under the License.
 
-from aliyunsdkcore.request import RoaRequest
+from aliyunsdkcore.request import RpcRequest
 from aliyunsdkft.endpoint import endpoint_data
 
-class StartService2Request(RoaRequest):
+class BatchAuditTest01Request(RpcRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'Ft', '2015-02-02', 'StartService2')
-		self.set_uri_pattern('/service/open')
+		RpcRequest.__init__(self, 'Ft', '2018-07-13', 'BatchAuditTest01')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
+
+	def get_Demo01(self):
+		return self.get_query_params().get('Demo01')
+
+	def set_Demo01(self,Demo01):
+		self.add_query_param('Demo01',Demo01)
+
+	def get_Test010101(self):
+		return self.get_body_params().get('Test010101')
+
+	def set_Test010101(self,Test010101):
+		self.add_body_params('Test010101', Test010101)
+
+	def get_Name(self):
+		return self.get_query_params().get('Name')
+
+	def set_Name(self,Name):
+		self.add_query_param('Name',Name)
+
+	def get_BatchAuditTest01(self):
+		return self.get_query_params().get('BatchAuditTest01')
+
+	def set_BatchAuditTest01(self,BatchAuditTest01):
+		self.add_query_param('BatchAuditTest01',BatchAuditTest01)

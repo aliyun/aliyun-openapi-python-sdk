@@ -17,16 +17,22 @@
 # specific language governing permissions and limitations
 # under the License.
 
-from aliyunsdkcore.request import RoaRequest
+from aliyunsdkcore.request import RpcRequest
 from aliyunsdkft.endpoint import endpoint_data
 
-class ValidateAkProvenRequest(RoaRequest):
+class FtFlowSpecialRequest(RpcRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'Ft', '2015-02-02', 'ValidateAkProven')
-		self.set_uri_pattern('/ak/proven')
+		RpcRequest.__init__(self, 'Ft', '2018-07-13', 'FtFlowSpecial')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
+
+	def get_Name(self):
+		return self.get_query_params().get('Name')
+
+	def set_Name(self,Name):
+		self.add_query_param('Name',Name)

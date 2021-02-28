@@ -17,16 +17,46 @@
 # specific language governing permissions and limitations
 # under the License.
 
-from aliyunsdkcore.request import RoaRequest
+from aliyunsdkcore.request import RpcRequest
 from aliyunsdkft.endpoint import endpoint_data
 
-class RoaGzipRequest(RoaRequest):
+class FtDynamicAddressHttpVpcRequest(RpcRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'Ft', '2015-02-02', 'RoaGzip')
-		self.set_uri_pattern('/RoaGzip')
+		RpcRequest.__init__(self, 'Ft', '2018-07-13', 'FtDynamicAddressHttpVpc')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
+
+	def get_P1(self):
+		return self.get_query_params().get('P1')
+
+	def set_P1(self,P1):
+		self.add_query_param('P1',P1)
+
+	def get_StringValue(self):
+		return self.get_query_params().get('StringValue')
+
+	def set_StringValue(self,StringValue):
+		self.add_query_param('StringValue',StringValue)
+
+	def get_OtherParam(self):
+		return self.get_query_params().get('OtherParam')
+
+	def set_OtherParam(self,OtherParam):
+		self.add_query_param('OtherParam',OtherParam)
+
+	def get_BooleanParam(self):
+		return self.get_query_params().get('BooleanParam')
+
+	def set_BooleanParam(self,BooleanParam):
+		self.add_query_param('BooleanParam',BooleanParam)
+
+	def get_DefaultValue(self):
+		return self.get_query_params().get('DefaultValue')
+
+	def set_DefaultValue(self,DefaultValue):
+		self.add_query_param('DefaultValue',DefaultValue)

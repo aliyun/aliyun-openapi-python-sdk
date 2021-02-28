@@ -17,16 +17,22 @@
 # specific language governing permissions and limitations
 # under the License.
 
-from aliyunsdkcore.request import RoaRequest
+from aliyunsdkcore.request import RpcRequest
 from aliyunsdkft.endpoint import endpoint_data
 
-class RoaCommonRequest(RoaRequest):
+class TestFlowStrategy01Request(RpcRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'Ft', '2015-02-02', 'RoaCommon')
-		self.set_uri_pattern('/RoaCommon')
-		self.set_method('GET')
+		RpcRequest.__init__(self, 'Ft', '2018-07-13', 'TestFlowStrategy01')
+		self.set_method('PUT')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
+
+	def get_Names(self):
+		return self.get_body_params().get('Names')
+
+	def set_Names(self,Names):
+		self.add_body_params('Names', Names)

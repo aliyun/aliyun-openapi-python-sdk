@@ -17,14 +17,13 @@
 # specific language governing permissions and limitations
 # under the License.
 
-from aliyunsdkcore.request import RoaRequest
+from aliyunsdkcore.request import RpcRequest
 from aliyunsdkft.endpoint import endpoint_data
 
-class RoaDynamicHostHttpApiRequest(RoaRequest):
+class FtIpFlowControlRequest(RpcRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'Ft', '2015-02-02', 'RoaDynamicHostHttpApi')
-		self.set_uri_pattern('/web/getData/dynamic')
+		RpcRequest.__init__(self, 'Ft', '2018-07-13', 'FtIpFlowControl')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -32,20 +31,8 @@ class RoaDynamicHostHttpApiRequest(RoaRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_proxy_original_security_transport(self):
-		return self.get_query_params().get('proxy_original_security_transport')
+	def get_Name(self):
+		return self.get_query_params().get('Name')
 
-	def set_proxy_original_security_transport(self,proxy_original_security_transport):
-		self.add_query_param('proxy_original_security_transport',proxy_original_security_transport)
-
-	def get_proxy_original_source_ip(self):
-		return self.get_query_params().get('proxy_original_source_ip')
-
-	def set_proxy_original_source_ip(self,proxy_original_source_ip):
-		self.add_query_param('proxy_original_source_ip',proxy_original_source_ip)
-
-	def get_xacsstatuscode(self):
-		return self.get_headers().get('x-acs-status-code')
-
-	def set_xacsstatuscode(self,xacsstatuscode):
-		self.add_header('x-acs-status-code',xacsstatuscode)
+	def set_Name(self,Name):
+		self.add_query_param('Name',Name)
