@@ -42,3 +42,15 @@ class ListServerlessTopNAppsRequest(RpcRequest):
 
 	def set_OrderBy(self,OrderBy):
 		self.add_query_param('OrderBy',OrderBy)
+
+	def get_EndTime(self):
+		return self.get_query_params().get('EndTime')
+
+	def set_EndTime(self,EndTime):
+		self.add_query_param('EndTime',EndTime)
+
+	def get_StartTime(self):
+		return self.get_query_params().get('StartTime')
+
+	def set_StartTime(self,StartTime):
+		self.add_query_param('StartTime',StartTime)
