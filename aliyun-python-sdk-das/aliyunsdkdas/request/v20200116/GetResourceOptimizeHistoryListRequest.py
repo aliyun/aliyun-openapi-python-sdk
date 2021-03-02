@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdas.endpoint import endpoint_data
 
-class CreateCacheAnalysisJobRequest(RpcRequest):
+class GetResourceOptimizeHistoryListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'DAS', '2020-01-16', 'CreateCacheAnalysisJob','das')
+		RpcRequest.__init__(self, 'DAS', '2020-01-16', 'GetResourceOptimizeHistoryList','das')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,11 +31,29 @@ class CreateCacheAnalysisJobRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_BackupSetId(self):
-		return self.get_query_params().get('BackupSetId')
+	def get___context(self):
+		return self.get_query_params().get('__context')
 
-	def set_BackupSetId(self,BackupSetId):
-		self.add_query_param('BackupSetId',BackupSetId)
+	def set___context(self,__context):
+		self.add_query_param('__context',__context)
+
+	def get_Signature(self):
+		return self.get_query_params().get('Signature')
+
+	def set_Signature(self,Signature):
+		self.add_query_param('Signature',Signature)
+
+	def get_UserId(self):
+		return self.get_query_params().get('UserId')
+
+	def set_UserId(self,UserId):
+		self.add_query_param('UserId',UserId)
+
+	def get_Uid(self):
+		return self.get_query_params().get('Uid')
+
+	def set_Uid(self,Uid):
+		self.add_query_param('Uid',Uid)
 
 	def get_InstanceId(self):
 		return self.get_query_params().get('InstanceId')
@@ -43,8 +61,20 @@ class CreateCacheAnalysisJobRequest(RpcRequest):
 	def set_InstanceId(self,InstanceId):
 		self.add_query_param('InstanceId',InstanceId)
 
-	def get_NodeId(self):
-		return self.get_query_params().get('NodeId')
+	def get_AccessKey(self):
+		return self.get_query_params().get('AccessKey')
 
-	def set_NodeId(self,NodeId):
-		self.add_query_param('NodeId',NodeId)
+	def set_AccessKey(self,AccessKey):
+		self.add_query_param('AccessKey',AccessKey)
+
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
+
+	def get_Page(self):
+		return self.get_query_params().get('Page')
+
+	def set_Page(self,Page):
+		self.add_query_param('Page',Page)
