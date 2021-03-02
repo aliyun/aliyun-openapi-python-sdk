@@ -19,20 +19,32 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class DescribeGtmInstanceSystemCnameRequest(RpcRequest):
+class DescribeDnsCacheDomainsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'DescribeGtmInstanceSystemCname','alidns')
+		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'DescribeDnsCacheDomains','alidns')
 		self.set_method('POST')
 
-	def get_InstanceId(self):
-		return self.get_query_params().get('InstanceId')
+	def get_PageNumber(self):
+		return self.get_query_params().get('PageNumber')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)
+
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
 
 	def get_Lang(self):
 		return self.get_query_params().get('Lang')
 
 	def set_Lang(self,Lang):
 		self.add_query_param('Lang',Lang)
+
+	def get_Keyword(self):
+		return self.get_query_params().get('Keyword')
+
+	def set_Keyword(self,Keyword):
+		self.add_query_param('Keyword',Keyword)

@@ -18,18 +18,18 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-from aliyunsdkalidns.endpoint import endpoint_data
 
 class DescribeDNSSLBSubDomainsRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'DescribeDNSSLBSubDomains','alidns')
 		self.set_method('POST')
-		if hasattr(self, "endpoint_map"):
-			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
-		if hasattr(self, "endpoint_regional"):
-			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_Rr(self):
+		return self.get_query_params().get('Rr')
+
+	def set_Rr(self,Rr):
+		self.add_query_param('Rr',Rr)
 
 	def get_DomainName(self):
 		return self.get_query_params().get('DomainName')

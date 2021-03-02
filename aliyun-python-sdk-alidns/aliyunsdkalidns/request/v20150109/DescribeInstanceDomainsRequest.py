@@ -18,18 +18,12 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-from aliyunsdkalidns.endpoint import endpoint_data
 
 class DescribeInstanceDomainsRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'DescribeInstanceDomains','alidns')
 		self.set_method('POST')
-		if hasattr(self, "endpoint_map"):
-			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
-		if hasattr(self, "endpoint_regional"):
-			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
-
 
 	def get_PageNumber(self):
 		return self.get_query_params().get('PageNumber')

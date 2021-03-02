@@ -19,17 +19,17 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class DescribeGtmInstanceSystemCnameRequest(RpcRequest):
+class DeleteDnsCacheDomainRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'DescribeGtmInstanceSystemCname','alidns')
+		RpcRequest.__init__(self, 'Alidns', '2015-01-09', 'DeleteDnsCacheDomain','alidns')
 		self.set_method('POST')
 
-	def get_InstanceId(self):
-		return self.get_query_params().get('InstanceId')
+	def get_DomainName(self):
+		return self.get_query_params().get('DomainName')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
+	def set_DomainName(self,DomainName):
+		self.add_query_param('DomainName',DomainName)
 
 	def get_Lang(self):
 		return self.get_query_params().get('Lang')
