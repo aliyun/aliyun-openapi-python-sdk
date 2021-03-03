@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdms_enterprise.endpoint import endpoint_data
 
-class ExecuteScriptRequest(RpcRequest):
+class SubmitStructSyncOrderApprovalRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'dms-enterprise', '2018-11-01', 'ExecuteScript','dmsenterprise')
+		RpcRequest.__init__(self, 'dms-enterprise', '2018-11-01', 'SubmitStructSyncOrderApproval','dmsenterprise')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,26 +31,14 @@ class ExecuteScriptRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_Script(self):
-		return self.get_query_params().get('Script')
+	def get_OrderId(self):
+		return self.get_query_params().get('OrderId')
 
-	def set_Script(self,Script):
-		self.add_query_param('Script',Script)
+	def set_OrderId(self,OrderId):
+		self.add_query_param('OrderId',OrderId)
 
 	def get_Tid(self):
 		return self.get_query_params().get('Tid')
 
 	def set_Tid(self,Tid):
 		self.add_query_param('Tid',Tid)
-
-	def get_DbId(self):
-		return self.get_query_params().get('DbId')
-
-	def set_DbId(self,DbId):
-		self.add_query_param('DbId',DbId)
-
-	def get_Logic(self):
-		return self.get_query_params().get('Logic')
-
-	def set_Logic(self,Logic):
-		self.add_query_param('Logic',Logic)

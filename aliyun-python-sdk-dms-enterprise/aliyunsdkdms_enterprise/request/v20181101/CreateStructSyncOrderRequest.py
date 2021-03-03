@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdms_enterprise.endpoint import endpoint_data
 
-class ExecuteScriptRequest(RpcRequest):
+class CreateStructSyncOrderRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'dms-enterprise', '2018-11-01', 'ExecuteScript','dmsenterprise')
+		RpcRequest.__init__(self, 'dms-enterprise', '2018-11-01', 'CreateStructSyncOrder','dmsenterprise')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,26 +31,32 @@ class ExecuteScriptRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_Script(self):
-		return self.get_query_params().get('Script')
-
-	def set_Script(self,Script):
-		self.add_query_param('Script',Script)
-
 	def get_Tid(self):
 		return self.get_query_params().get('Tid')
 
 	def set_Tid(self,Tid):
 		self.add_query_param('Tid',Tid)
 
-	def get_DbId(self):
-		return self.get_query_params().get('DbId')
+	def get_AttachmentKey(self):
+		return self.get_query_params().get('AttachmentKey')
 
-	def set_DbId(self,DbId):
-		self.add_query_param('DbId',DbId)
+	def set_AttachmentKey(self,AttachmentKey):
+		self.add_query_param('AttachmentKey',AttachmentKey)
 
-	def get_Logic(self):
-		return self.get_query_params().get('Logic')
+	def get_Param(self):
+		return self.get_query_params().get('Param')
 
-	def set_Logic(self,Logic):
-		self.add_query_param('Logic',Logic)
+	def set_Param(self,Param):
+		self.add_query_param('Param',Param)
+
+	def get_Comment(self):
+		return self.get_query_params().get('Comment')
+
+	def set_Comment(self,Comment):
+		self.add_query_param('Comment',Comment)
+
+	def get_RelatedUserList(self):
+		return self.get_query_params().get('RelatedUserList')
+
+	def set_RelatedUserList(self,RelatedUserList):
+		self.add_query_param('RelatedUserList',RelatedUserList)

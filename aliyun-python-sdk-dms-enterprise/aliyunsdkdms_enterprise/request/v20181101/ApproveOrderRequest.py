@@ -31,18 +31,6 @@ class ApproveOrderRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_ApprovalType(self):
-		return self.get_query_params().get('ApprovalType')
-
-	def set_ApprovalType(self,ApprovalType):
-		self.add_query_param('ApprovalType',ApprovalType)
-
-	def get_Comment(self):
-		return self.get_query_params().get('Comment')
-
-	def set_Comment(self,Comment):
-		self.add_query_param('Comment',Comment)
-
 	def get_Tid(self):
 		return self.get_query_params().get('Tid')
 
@@ -54,3 +42,15 @@ class ApproveOrderRequest(RpcRequest):
 
 	def set_WorkflowInstanceId(self,WorkflowInstanceId):
 		self.add_query_param('WorkflowInstanceId',WorkflowInstanceId)
+
+	def get_ApprovalType(self):
+		return self.get_query_params().get('ApprovalType')
+
+	def set_ApprovalType(self,ApprovalType):
+		self.add_query_param('ApprovalType',ApprovalType)
+
+	def get_Comment(self):
+		return self.get_query_params().get('Comment')
+
+	def set_Comment(self,Comment):
+		self.add_query_param('Comment',Comment)
