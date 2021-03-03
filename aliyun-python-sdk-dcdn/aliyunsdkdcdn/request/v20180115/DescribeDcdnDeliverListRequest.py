@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdcdn.endpoint import endpoint_data
 
-class ModifyDcdnServiceRequest(RpcRequest):
+class DescribeDcdnDeliverListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'dcdn', '2018-01-15', 'ModifyDcdnService')
+		RpcRequest.__init__(self, 'dcdn', '2018-01-15', 'DescribeDcdnDeliverList')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,26 +31,20 @@ class ModifyDcdnServiceRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_WebsocketBillType(self):
-		return self.get_query_params().get('WebsocketBillType')
+	def get_DeliverId(self):
+		return self.get_query_params().get('DeliverId')
 
-	def set_WebsocketBillType(self,WebsocketBillType):
-		self.add_query_param('WebsocketBillType',WebsocketBillType)
-
-	def get_BillType(self):
-		return self.get_query_params().get('BillType')
-
-	def set_BillType(self,BillType):
-		self.add_query_param('BillType',BillType)
-
-	def get_SecurityToken(self):
-		return self.get_query_params().get('SecurityToken')
-
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)
+	def set_DeliverId(self,DeliverId):
+		self.add_query_param('DeliverId',DeliverId)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_Status(self):
+		return self.get_query_params().get('Status')
+
+	def set_Status(self,Status):
+		self.add_query_param('Status',Status)
