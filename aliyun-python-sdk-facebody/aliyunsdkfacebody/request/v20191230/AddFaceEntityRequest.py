@@ -17,14 +17,13 @@
 # specific language governing permissions and limitations
 # under the License.
 
-from aliyunsdkcore.request import RoaRequest
+from aliyunsdkcore.request import RpcRequest
 from aliyunsdkfacebody.endpoint import endpoint_data
 
-class DetectIPCPedestrianOptimizedRequest(RoaRequest):
+class AddFaceEntityRequest(RpcRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'facebody', '2020-09-10', 'DetectIPCPedestrianOptimized','facebody')
-		self.set_uri_pattern('/viapi/k8s/facebody/detect-ipc-pedestrian-optimized')
+		RpcRequest.__init__(self, 'facebody', '2019-12-30', 'AddFaceEntity','facebody')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -32,20 +31,20 @@ class DetectIPCPedestrianOptimizedRequest(RoaRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_imageData(self):
-		return self.get_body_params().get('imageData')
+	def get_EntityId(self):
+		return self.get_body_params().get('EntityId')
 
-	def set_imageData(self,imageData):
-		self.add_body_params('imageData', imageData)
+	def set_EntityId(self,EntityId):
+		self.add_body_params('EntityId', EntityId)
 
-	def get_width(self):
-		return self.get_body_params().get('width')
+	def get_Labels(self):
+		return self.get_body_params().get('Labels')
 
-	def set_width(self,width):
-		self.add_body_params('width', width)
+	def set_Labels(self,Labels):
+		self.add_body_params('Labels', Labels)
 
-	def get_height(self):
-		return self.get_body_params().get('height')
+	def get_DbName(self):
+		return self.get_body_params().get('DbName')
 
-	def set_height(self,height):
-		self.add_body_params('height', height)
+	def set_DbName(self,DbName):
+		self.add_body_params('DbName', DbName)
