@@ -151,6 +151,12 @@ class CreateDBClusterRequest(RpcRequest):
 	def set_ClusterNetworkType(self,ClusterNetworkType):
 		self.add_query_param('ClusterNetworkType',ClusterNetworkType)
 
+	def get_ParameterGroupId(self):
+		return self.get_query_params().get('ParameterGroupId')
+
+	def set_ParameterGroupId(self,ParameterGroupId):
+		self.add_query_param('ParameterGroupId',ParameterGroupId)
+
 	def get_GDNId(self):
 		return self.get_query_params().get('GDNId')
 

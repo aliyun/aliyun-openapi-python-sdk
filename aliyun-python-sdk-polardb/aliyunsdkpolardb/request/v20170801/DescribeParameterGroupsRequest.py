@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkpolardb.endpoint import endpoint_data
 
-class ModifyBackupPolicyRequest(RpcRequest):
+class DescribeParameterGroupsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'polardb', '2017-08-01', 'ModifyBackupPolicy','polardb')
+		RpcRequest.__init__(self, 'polardb', '2017-08-01', 'DescribeParameterGroups','polardb')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -37,41 +37,11 @@ class ModifyBackupPolicyRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_DataLevel2BackupRetentionPeriod(self):
-		return self.get_query_params().get('DataLevel2BackupRetentionPeriod')
-
-	def set_DataLevel2BackupRetentionPeriod(self,DataLevel2BackupRetentionPeriod):
-		self.add_query_param('DataLevel2BackupRetentionPeriod',DataLevel2BackupRetentionPeriod)
-
-	def get_PreferredBackupPeriod(self):
-		return self.get_query_params().get('PreferredBackupPeriod')
-
-	def set_PreferredBackupPeriod(self,PreferredBackupPeriod):
-		self.add_query_param('PreferredBackupPeriod',PreferredBackupPeriod)
-
-	def get_DataLevel1BackupRetentionPeriod(self):
-		return self.get_query_params().get('DataLevel1BackupRetentionPeriod')
-
-	def set_DataLevel1BackupRetentionPeriod(self,DataLevel1BackupRetentionPeriod):
-		self.add_query_param('DataLevel1BackupRetentionPeriod',DataLevel1BackupRetentionPeriod)
-
-	def get_BackupRetentionPolicyOnClusterDeletion(self):
-		return self.get_query_params().get('BackupRetentionPolicyOnClusterDeletion')
-
-	def set_BackupRetentionPolicyOnClusterDeletion(self,BackupRetentionPolicyOnClusterDeletion):
-		self.add_query_param('BackupRetentionPolicyOnClusterDeletion',BackupRetentionPolicyOnClusterDeletion)
-
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_DBClusterId(self):
-		return self.get_query_params().get('DBClusterId')
-
-	def set_DBClusterId(self,DBClusterId):
-		self.add_query_param('DBClusterId',DBClusterId)
 
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
@@ -85,14 +55,14 @@ class ModifyBackupPolicyRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_PreferredBackupTime(self):
-		return self.get_query_params().get('PreferredBackupTime')
+	def get_DBType(self):
+		return self.get_query_params().get('DBType')
 
-	def set_PreferredBackupTime(self,PreferredBackupTime):
-		self.add_query_param('PreferredBackupTime',PreferredBackupTime)
+	def set_DBType(self,DBType):
+		self.add_query_param('DBType',DBType)
 
-	def get_BackupFrequency(self):
-		return self.get_query_params().get('BackupFrequency')
+	def get_DBVersion(self):
+		return self.get_query_params().get('DBVersion')
 
-	def set_BackupFrequency(self,BackupFrequency):
-		self.add_query_param('BackupFrequency',BackupFrequency)
+	def set_DBVersion(self,DBVersion):
+		self.add_query_param('DBVersion',DBVersion)
