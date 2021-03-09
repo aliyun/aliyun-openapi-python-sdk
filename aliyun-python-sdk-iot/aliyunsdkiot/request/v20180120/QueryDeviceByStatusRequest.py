@@ -23,7 +23,7 @@ from aliyunsdkiot.endpoint import endpoint_data
 class QueryDeviceByStatusRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'QueryDeviceByStatus','iot')
+		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'QueryDeviceByStatus')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -60,12 +60,6 @@ class QueryDeviceByStatusRequest(RpcRequest):
 
 	def set_ProductKey(self,ProductKey):
 		self.add_query_param('ProductKey',ProductKey)
-
-	def get_BizTenantId(self):
-		return self.get_query_params().get('BizTenantId')
-
-	def set_BizTenantId(self,BizTenantId):
-		self.add_query_param('BizTenantId',BizTenantId)
 
 	def get_Status(self):
 		return self.get_query_params().get('Status')
