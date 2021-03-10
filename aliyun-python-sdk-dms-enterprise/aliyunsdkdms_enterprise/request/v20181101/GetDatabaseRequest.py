@@ -23,40 +23,36 @@ from aliyunsdkdms_enterprise.endpoint import endpoint_data
 class GetDatabaseRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'dms-enterprise', '2018-11-01', 'GetDatabase','dmsenterprise')
+		RpcRequest.__init__(self, 'dms-enterprise', '2018-11-01', 'GetDatabase')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_SchemaName(self):
+	def get_SchemaName(self): # String
 		return self.get_query_params().get('SchemaName')
 
-	def set_SchemaName(self,SchemaName):
-		self.add_query_param('SchemaName',SchemaName)
-
-	def get_Port(self):
-		return self.get_query_params().get('Port')
-
-	def set_Port(self,Port):
-		self.add_query_param('Port',Port)
-
-	def get_Host(self):
-		return self.get_query_params().get('Host')
-
-	def set_Host(self,Host):
-		self.add_query_param('Host',Host)
-
-	def get_Tid(self):
+	def set_SchemaName(self, SchemaName):  # String
+		self.add_query_param('SchemaName', SchemaName)
+	def get_Tid(self): # Long
 		return self.get_query_params().get('Tid')
 
-	def set_Tid(self,Tid):
-		self.add_query_param('Tid',Tid)
-
-	def get_Sid(self):
+	def set_Tid(self, Tid):  # Long
+		self.add_query_param('Tid', Tid)
+	def get_Sid(self): # String
 		return self.get_query_params().get('Sid')
 
-	def set_Sid(self,Sid):
-		self.add_query_param('Sid',Sid)
+	def set_Sid(self, Sid):  # String
+		self.add_query_param('Sid', Sid)
+	def get_Port(self): # Integer
+		return self.get_query_params().get('Port')
+
+	def set_Port(self, Port):  # Integer
+		self.add_query_param('Port', Port)
+	def get_Host(self): # String
+		return self.get_query_params().get('Host')
+
+	def set_Host(self, Host):  # String
+		self.add_query_param('Host', Host)

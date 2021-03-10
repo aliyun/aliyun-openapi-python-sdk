@@ -23,40 +23,36 @@ from aliyunsdkdms_enterprise.endpoint import endpoint_data
 class GetStructSyncJobAnalyzeResultRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'dms-enterprise', '2018-11-01', 'GetStructSyncJobAnalyzeResult','dmsenterprise')
+		RpcRequest.__init__(self, 'dms-enterprise', '2018-11-01', 'GetStructSyncJobAnalyzeResult')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_OrderId(self):
+	def get_OrderId(self): # Long
 		return self.get_query_params().get('OrderId')
 
-	def set_OrderId(self,OrderId):
-		self.add_query_param('OrderId',OrderId)
-
-	def get_CompareType(self):
+	def set_OrderId(self, OrderId):  # Long
+		self.add_query_param('OrderId', OrderId)
+	def get_CompareType(self): # String
 		return self.get_query_params().get('CompareType')
 
-	def set_CompareType(self,CompareType):
-		self.add_query_param('CompareType',CompareType)
-
-	def get_PageNumber(self):
+	def set_CompareType(self, CompareType):  # String
+		self.add_query_param('CompareType', CompareType)
+	def get_PageNumber(self): # Long
 		return self.get_query_params().get('PageNumber')
 
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
-
-	def get_Tid(self):
+	def set_PageNumber(self, PageNumber):  # Long
+		self.add_query_param('PageNumber', PageNumber)
+	def get_Tid(self): # Long
 		return self.get_query_params().get('Tid')
 
-	def set_Tid(self,Tid):
-		self.add_query_param('Tid',Tid)
-
-	def get_PageSize(self):
+	def set_Tid(self, Tid):  # Long
+		self.add_query_param('Tid', Tid)
+	def get_PageSize(self): # Long
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
+	def set_PageSize(self, PageSize):  # Long
+		self.add_query_param('PageSize', PageSize)

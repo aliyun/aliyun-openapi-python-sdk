@@ -23,34 +23,31 @@ from aliyunsdkdms_enterprise.endpoint import endpoint_data
 class ApproveOrderRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'dms-enterprise', '2018-11-01', 'ApproveOrder','dmsenterprise')
+		RpcRequest.__init__(self, 'dms-enterprise', '2018-11-01', 'ApproveOrder')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Tid(self):
+	def get_Tid(self): # Long
 		return self.get_query_params().get('Tid')
 
-	def set_Tid(self,Tid):
-		self.add_query_param('Tid',Tid)
-
-	def get_WorkflowInstanceId(self):
+	def set_Tid(self, Tid):  # Long
+		self.add_query_param('Tid', Tid)
+	def get_WorkflowInstanceId(self): # Long
 		return self.get_query_params().get('WorkflowInstanceId')
 
-	def set_WorkflowInstanceId(self,WorkflowInstanceId):
-		self.add_query_param('WorkflowInstanceId',WorkflowInstanceId)
-
-	def get_ApprovalType(self):
+	def set_WorkflowInstanceId(self, WorkflowInstanceId):  # Long
+		self.add_query_param('WorkflowInstanceId', WorkflowInstanceId)
+	def get_ApprovalType(self): # String
 		return self.get_query_params().get('ApprovalType')
 
-	def set_ApprovalType(self,ApprovalType):
-		self.add_query_param('ApprovalType',ApprovalType)
-
-	def get_Comment(self):
+	def set_ApprovalType(self, ApprovalType):  # String
+		self.add_query_param('ApprovalType', ApprovalType)
+	def get_Comment(self): # String
 		return self.get_query_params().get('Comment')
 
-	def set_Comment(self,Comment):
-		self.add_query_param('Comment',Comment)
+	def set_Comment(self, Comment):  # String
+		self.add_query_param('Comment', Comment)

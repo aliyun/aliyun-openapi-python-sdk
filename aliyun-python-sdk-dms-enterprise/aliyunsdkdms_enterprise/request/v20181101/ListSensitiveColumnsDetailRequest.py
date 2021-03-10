@@ -23,34 +23,31 @@ from aliyunsdkdms_enterprise.endpoint import endpoint_data
 class ListSensitiveColumnsDetailRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'dms-enterprise', '2018-11-01', 'ListSensitiveColumnsDetail','dmsenterprise')
+		RpcRequest.__init__(self, 'dms-enterprise', '2018-11-01', 'ListSensitiveColumnsDetail')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_SchemaName(self):
+	def get_SchemaName(self): # String
 		return self.get_query_params().get('SchemaName')
 
-	def set_SchemaName(self,SchemaName):
-		self.add_query_param('SchemaName',SchemaName)
-
-	def get_TableName(self):
-		return self.get_query_params().get('TableName')
-
-	def set_TableName(self,TableName):
-		self.add_query_param('TableName',TableName)
-
-	def get_ColumnName(self):
+	def set_SchemaName(self, SchemaName):  # String
+		self.add_query_param('SchemaName', SchemaName)
+	def get_ColumnName(self): # String
 		return self.get_query_params().get('ColumnName')
 
-	def set_ColumnName(self,ColumnName):
-		self.add_query_param('ColumnName',ColumnName)
-
-	def get_Tid(self):
+	def set_ColumnName(self, ColumnName):  # String
+		self.add_query_param('ColumnName', ColumnName)
+	def get_Tid(self): # Long
 		return self.get_query_params().get('Tid')
 
-	def set_Tid(self,Tid):
-		self.add_query_param('Tid',Tid)
+	def set_Tid(self, Tid):  # Long
+		self.add_query_param('Tid', Tid)
+	def get_TableName(self): # String
+		return self.get_query_params().get('TableName')
+
+	def set_TableName(self, TableName):  # String
+		self.add_query_param('TableName', TableName)

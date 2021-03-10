@@ -23,28 +23,26 @@ from aliyunsdkdms_enterprise.endpoint import endpoint_data
 class GetUserRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'dms-enterprise', '2018-11-01', 'GetUser','dmsenterprise')
+		RpcRequest.__init__(self, 'dms-enterprise', '2018-11-01', 'GetUser')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_UserId(self):
+	def get_UserId(self): # String
 		return self.get_query_params().get('UserId')
 
-	def set_UserId(self,UserId):
-		self.add_query_param('UserId',UserId)
-
-	def get_Tid(self):
+	def set_UserId(self, UserId):  # String
+		self.add_query_param('UserId', UserId)
+	def get_Tid(self): # Long
 		return self.get_query_params().get('Tid')
 
-	def set_Tid(self,Tid):
-		self.add_query_param('Tid',Tid)
-
-	def get_Uid(self):
+	def set_Tid(self, Tid):  # Long
+		self.add_query_param('Tid', Tid)
+	def get_Uid(self): # String
 		return self.get_query_params().get('Uid')
 
-	def set_Uid(self,Uid):
-		self.add_query_param('Uid',Uid)
+	def set_Uid(self, Uid):  # String
+		self.add_query_param('Uid', Uid)

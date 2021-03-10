@@ -23,52 +23,46 @@ from aliyunsdkdms_enterprise.endpoint import endpoint_data
 class UpdateUserRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'dms-enterprise', '2018-11-01', 'UpdateUser','dmsenterprise')
+		RpcRequest.__init__(self, 'dms-enterprise', '2018-11-01', 'UpdateUser')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_RoleNames(self):
+	def get_RoleNames(self): # String
 		return self.get_query_params().get('RoleNames')
 
-	def set_RoleNames(self,RoleNames):
-		self.add_query_param('RoleNames',RoleNames)
-
-	def get_MaxResultCount(self):
+	def set_RoleNames(self, RoleNames):  # String
+		self.add_query_param('RoleNames', RoleNames)
+	def get_MaxResultCount(self): # Long
 		return self.get_query_params().get('MaxResultCount')
 
-	def set_MaxResultCount(self,MaxResultCount):
-		self.add_query_param('MaxResultCount',MaxResultCount)
-
-	def get_MaxExecuteCount(self):
+	def set_MaxResultCount(self, MaxResultCount):  # Long
+		self.add_query_param('MaxResultCount', MaxResultCount)
+	def get_MaxExecuteCount(self): # Long
 		return self.get_query_params().get('MaxExecuteCount')
 
-	def set_MaxExecuteCount(self,MaxExecuteCount):
-		self.add_query_param('MaxExecuteCount',MaxExecuteCount)
-
-	def get_UserNick(self):
+	def set_MaxExecuteCount(self, MaxExecuteCount):  # Long
+		self.add_query_param('MaxExecuteCount', MaxExecuteCount)
+	def get_UserNick(self): # String
 		return self.get_query_params().get('UserNick')
 
-	def set_UserNick(self,UserNick):
-		self.add_query_param('UserNick',UserNick)
-
-	def get_Mobile(self):
+	def set_UserNick(self, UserNick):  # String
+		self.add_query_param('UserNick', UserNick)
+	def get_Mobile(self): # String
 		return self.get_query_params().get('Mobile')
 
-	def set_Mobile(self,Mobile):
-		self.add_query_param('Mobile',Mobile)
-
-	def get_Tid(self):
+	def set_Mobile(self, Mobile):  # String
+		self.add_query_param('Mobile', Mobile)
+	def get_Tid(self): # Long
 		return self.get_query_params().get('Tid')
 
-	def set_Tid(self,Tid):
-		self.add_query_param('Tid',Tid)
-
-	def get_Uid(self):
+	def set_Tid(self, Tid):  # Long
+		self.add_query_param('Tid', Tid)
+	def get_Uid(self): # Long
 		return self.get_query_params().get('Uid')
 
-	def set_Uid(self,Uid):
-		self.add_query_param('Uid',Uid)
+	def set_Uid(self, Uid):  # Long
+		self.add_query_param('Uid', Uid)

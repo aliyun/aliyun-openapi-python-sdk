@@ -23,70 +23,61 @@ from aliyunsdkdms_enterprise.endpoint import endpoint_data
 class ListOrdersRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'dms-enterprise', '2018-11-01', 'ListOrders','dmsenterprise')
+		RpcRequest.__init__(self, 'dms-enterprise', '2018-11-01', 'ListOrders')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_OrderStatus(self):
+	def get_OrderStatus(self): # String
 		return self.get_query_params().get('OrderStatus')
 
-	def set_OrderStatus(self,OrderStatus):
-		self.add_query_param('OrderStatus',OrderStatus)
-
-	def get_SearchContent(self):
+	def set_OrderStatus(self, OrderStatus):  # String
+		self.add_query_param('OrderStatus', OrderStatus)
+	def get_SearchContent(self): # String
 		return self.get_query_params().get('SearchContent')
 
-	def set_SearchContent(self,SearchContent):
-		self.add_query_param('SearchContent',SearchContent)
-
-	def get_SearchDateType(self):
+	def set_SearchContent(self, SearchContent):  # String
+		self.add_query_param('SearchContent', SearchContent)
+	def get_SearchDateType(self): # String
 		return self.get_query_params().get('SearchDateType')
 
-	def set_SearchDateType(self,SearchDateType):
-		self.add_query_param('SearchDateType',SearchDateType)
-
-	def get_EndTime(self):
+	def set_SearchDateType(self, SearchDateType):  # String
+		self.add_query_param('SearchDateType', SearchDateType)
+	def get_EndTime(self): # String
 		return self.get_query_params().get('EndTime')
 
-	def set_EndTime(self,EndTime):
-		self.add_query_param('EndTime',EndTime)
-
-	def get_StartTime(self):
+	def set_EndTime(self, EndTime):  # String
+		self.add_query_param('EndTime', EndTime)
+	def get_StartTime(self): # String
 		return self.get_query_params().get('StartTime')
 
-	def set_StartTime(self,StartTime):
-		self.add_query_param('StartTime',StartTime)
-
-	def get_Tid(self):
+	def set_StartTime(self, StartTime):  # String
+		self.add_query_param('StartTime', StartTime)
+	def get_Tid(self): # Long
 		return self.get_query_params().get('Tid')
 
-	def set_Tid(self,Tid):
-		self.add_query_param('Tid',Tid)
-
-	def get_PageNumber(self):
+	def set_Tid(self, Tid):  # Long
+		self.add_query_param('Tid', Tid)
+	def get_PageNumber(self): # Integer
 		return self.get_query_params().get('PageNumber')
 
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
-
-	def get_PluginType(self):
+	def set_PageNumber(self, PageNumber):  # Integer
+		self.add_query_param('PageNumber', PageNumber)
+	def get_PluginType(self): # String
 		return self.get_query_params().get('PluginType')
 
-	def set_PluginType(self,PluginType):
-		self.add_query_param('PluginType',PluginType)
-
-	def get_PageSize(self):
+	def set_PluginType(self, PluginType):  # String
+		self.add_query_param('PluginType', PluginType)
+	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_OrderResultType(self):
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
+	def get_OrderResultType(self): # String
 		return self.get_query_params().get('OrderResultType')
 
-	def set_OrderResultType(self,OrderResultType):
-		self.add_query_param('OrderResultType',OrderResultType)
+	def set_OrderResultType(self, OrderResultType):  # String
+		self.add_query_param('OrderResultType', OrderResultType)

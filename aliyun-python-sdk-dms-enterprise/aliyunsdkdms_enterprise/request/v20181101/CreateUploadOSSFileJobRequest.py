@@ -19,38 +19,36 @@
 
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdms_enterprise.endpoint import endpoint_data
+import json
 
 class CreateUploadOSSFileJobRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'dms-enterprise', '2018-11-01', 'CreateUploadOSSFileJob','dmsenterprise')
+		RpcRequest.__init__(self, 'dms-enterprise', '2018-11-01', 'CreateUploadOSSFileJob')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_FileSource(self):
+	def get_FileSource(self): # String
 		return self.get_query_params().get('FileSource')
 
-	def set_FileSource(self,FileSource):
-		self.add_query_param('FileSource',FileSource)
-
-	def get_Tid(self):
+	def set_FileSource(self, FileSource):  # String
+		self.add_query_param('FileSource', FileSource)
+	def get_Tid(self): # Long
 		return self.get_query_params().get('Tid')
 
-	def set_Tid(self,Tid):
-		self.add_query_param('Tid',Tid)
-
-	def get_FileName(self):
+	def set_Tid(self, Tid):  # Long
+		self.add_query_param('Tid', Tid)
+	def get_FileName(self): # String
 		return self.get_query_params().get('FileName')
 
-	def set_FileName(self,FileName):
-		self.add_query_param('FileName',FileName)
-
-	def get_UploadTarget(self):
+	def set_FileName(self, FileName):  # String
+		self.add_query_param('FileName', FileName)
+	def get_UploadTarget(self): # Struct
 		return self.get_query_params().get('UploadTarget')
 
-	def set_UploadTarget(self,UploadTarget):
-		self.add_query_param('UploadTarget',UploadTarget)
+	def set_UploadTarget(self, UploadTarget):  # Struct
+		self.add_query_param("UploadTarget", json.dumps(UploadTarget))

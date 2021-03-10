@@ -23,46 +23,41 @@ from aliyunsdkdms_enterprise.endpoint import endpoint_data
 class ListLogicTablesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'dms-enterprise', '2018-11-01', 'ListLogicTables','dmsenterprise')
+		RpcRequest.__init__(self, 'dms-enterprise', '2018-11-01', 'ListLogicTables')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_SearchName(self):
+	def get_SearchName(self): # String
 		return self.get_query_params().get('SearchName')
 
-	def set_SearchName(self,SearchName):
-		self.add_query_param('SearchName',SearchName)
-
-	def get_ReturnGuid(self):
+	def set_SearchName(self, SearchName):  # String
+		self.add_query_param('SearchName', SearchName)
+	def get_ReturnGuid(self): # Boolean
 		return self.get_query_params().get('ReturnGuid')
 
-	def set_ReturnGuid(self,ReturnGuid):
-		self.add_query_param('ReturnGuid',ReturnGuid)
-
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_DatabaseId(self):
-		return self.get_query_params().get('DatabaseId')
-
-	def set_DatabaseId(self,DatabaseId):
-		self.add_query_param('DatabaseId',DatabaseId)
-
-	def get_Tid(self):
+	def set_ReturnGuid(self, ReturnGuid):  # Boolean
+		self.add_query_param('ReturnGuid', ReturnGuid)
+	def get_Tid(self): # Long
 		return self.get_query_params().get('Tid')
 
-	def set_Tid(self,Tid):
-		self.add_query_param('Tid',Tid)
-
-	def get_PageNumber(self):
+	def set_Tid(self, Tid):  # Long
+		self.add_query_param('Tid', Tid)
+	def get_PageNumber(self): # Integer
 		return self.get_query_params().get('PageNumber')
 
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
+	def set_PageNumber(self, PageNumber):  # Integer
+		self.add_query_param('PageNumber', PageNumber)
+	def get_PageSize(self): # Integer
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
+	def get_DatabaseId(self): # String
+		return self.get_query_params().get('DatabaseId')
+
+	def set_DatabaseId(self, DatabaseId):  # String
+		self.add_query_param('DatabaseId', DatabaseId)

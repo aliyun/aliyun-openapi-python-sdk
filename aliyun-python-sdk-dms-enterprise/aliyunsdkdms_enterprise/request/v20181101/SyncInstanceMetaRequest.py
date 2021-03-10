@@ -23,28 +23,26 @@ from aliyunsdkdms_enterprise.endpoint import endpoint_data
 class SyncInstanceMetaRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'dms-enterprise', '2018-11-01', 'SyncInstanceMeta','dmsenterprise')
+		RpcRequest.__init__(self, 'dms-enterprise', '2018-11-01', 'SyncInstanceMeta')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_InstanceId(self):
-		return self.get_query_params().get('InstanceId')
-
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
-
-	def get_IgnoreTable(self):
+	def get_IgnoreTable(self): # Boolean
 		return self.get_query_params().get('IgnoreTable')
 
-	def set_IgnoreTable(self,IgnoreTable):
-		self.add_query_param('IgnoreTable',IgnoreTable)
-
-	def get_Tid(self):
+	def set_IgnoreTable(self, IgnoreTable):  # Boolean
+		self.add_query_param('IgnoreTable', IgnoreTable)
+	def get_Tid(self): # Long
 		return self.get_query_params().get('Tid')
 
-	def set_Tid(self,Tid):
-		self.add_query_param('Tid',Tid)
+	def set_Tid(self, Tid):  # Long
+		self.add_query_param('Tid', Tid)
+	def get_InstanceId(self): # String
+		return self.get_query_params().get('InstanceId')
+
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)

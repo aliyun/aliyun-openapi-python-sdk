@@ -19,11 +19,12 @@
 
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdms_enterprise.endpoint import endpoint_data
+import json
 
-class ListDatabaseUserPermssionsRequest(RpcRequest):
+class CreateDataImportOrderRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'dms-enterprise', '2018-11-01', 'ListDatabaseUserPermssions')
+		RpcRequest.__init__(self, 'dms-enterprise', '2018-11-01', 'CreateDataImportOrder')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,33 +37,23 @@ class ListDatabaseUserPermssionsRequest(RpcRequest):
 
 	def set_Tid(self, Tid):  # Long
 		self.add_query_param('Tid', Tid)
-	def get_PageNumber(self): # Integer
-		return self.get_query_params().get('PageNumber')
+	def get_AttachmentKey(self): # String
+		return self.get_query_params().get('AttachmentKey')
 
-	def set_PageNumber(self, PageNumber):  # Integer
-		self.add_query_param('PageNumber', PageNumber)
-	def get_PermType(self): # String
-		return self.get_query_params().get('PermType')
+	def set_AttachmentKey(self, AttachmentKey):  # String
+		self.add_query_param('AttachmentKey', AttachmentKey)
+	def get_Param(self): # Struct
+		return self.get_query_params().get('Param')
 
-	def set_PermType(self, PermType):  # String
-		self.add_query_param('PermType', PermType)
-	def get_DbId(self): # String
-		return self.get_query_params().get('DbId')
+	def set_Param(self, Param):  # Struct
+		self.add_query_param("Param", json.dumps(Param))
+	def get_Comment(self): # String
+		return self.get_query_params().get('Comment')
 
-	def set_DbId(self, DbId):  # String
-		self.add_query_param('DbId', DbId)
-	def get_PageSize(self): # Integer
-		return self.get_query_params().get('PageSize')
+	def set_Comment(self, Comment):  # String
+		self.add_query_param('Comment', Comment)
+	def get_RelatedUserList(self): # Array
+		return self.get_query_params().get('RelatedUserList')
 
-	def set_PageSize(self, PageSize):  # Integer
-		self.add_query_param('PageSize', PageSize)
-	def get_Logic(self): # Boolean
-		return self.get_query_params().get('Logic')
-
-	def set_Logic(self, Logic):  # Boolean
-		self.add_query_param('Logic', Logic)
-	def get_UserName(self): # String
-		return self.get_query_params().get('UserName')
-
-	def set_UserName(self, UserName):  # String
-		self.add_query_param('UserName', UserName)
+	def set_RelatedUserList(self, RelatedUserList):  # Array
+		self.add_query_param("RelatedUserList", json.dumps(RelatedUserList))
