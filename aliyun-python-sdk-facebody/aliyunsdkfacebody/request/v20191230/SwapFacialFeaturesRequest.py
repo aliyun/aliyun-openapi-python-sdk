@@ -37,11 +37,23 @@ class SwapFacialFeaturesRequest(RpcRequest):
 	def set_TargetImageURL(self,TargetImageURL):
 		self.add_body_params('TargetImageURL', TargetImageURL)
 
+	def get_SourceImageData(self):
+		return self.get_body_params().get('SourceImageData')
+
+	def set_SourceImageData(self,SourceImageData):
+		self.add_body_params('SourceImageData', SourceImageData)
+
 	def get_SourceImageURL(self):
 		return self.get_body_params().get('SourceImageURL')
 
 	def set_SourceImageURL(self,SourceImageURL):
 		self.add_body_params('SourceImageURL', SourceImageURL)
+
+	def get_TargetImageData(self):
+		return self.get_body_params().get('TargetImageData')
+
+	def set_TargetImageData(self,TargetImageData):
+		self.add_body_params('TargetImageData', TargetImageData)
 
 	def get_EditPart(self):
 		return self.get_body_params().get('EditPart')

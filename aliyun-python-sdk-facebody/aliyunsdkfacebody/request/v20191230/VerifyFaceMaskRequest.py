@@ -31,6 +31,18 @@ class VerifyFaceMaskRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_RefData(self):
+		return self.get_body_params().get('RefData')
+
+	def set_RefData(self,RefData):
+		self.add_body_params('RefData', RefData)
+
+	def get_ImageData(self):
+		return self.get_body_params().get('ImageData')
+
+	def set_ImageData(self,ImageData):
+		self.add_body_params('ImageData', ImageData)
+
 	def get_ImageURL(self):
 		return self.get_body_params().get('ImageURL')
 

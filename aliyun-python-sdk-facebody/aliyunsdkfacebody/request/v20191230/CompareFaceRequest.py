@@ -31,6 +31,18 @@ class CompareFaceRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_ImageDataA(self):
+		return self.get_body_params().get('ImageDataA')
+
+	def set_ImageDataA(self,ImageDataA):
+		self.add_body_params('ImageDataA', ImageDataA)
+
+	def get_ImageDataB(self):
+		return self.get_body_params().get('ImageDataB')
+
+	def set_ImageDataB(self,ImageDataB):
+		self.add_body_params('ImageDataB', ImageDataB)
+
 	def get_QualityScoreThreshold(self):
 		return self.get_body_params().get('QualityScoreThreshold')
 

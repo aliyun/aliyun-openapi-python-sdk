@@ -31,20 +31,26 @@ class DetectIPCPedestrianRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_Height(self):
+		return self.get_body_params().get('Height')
+
+	def set_Height(self,Height):
+		self.add_body_params('Height', Height)
+
 	def get_ImageData(self):
 		return self.get_body_params().get('ImageData')
 
 	def set_ImageData(self,ImageData):
 		self.add_body_params('ImageData', ImageData)
 
+	def get_ImageURL(self):
+		return self.get_body_params().get('ImageURL')
+
+	def set_ImageURL(self,ImageURL):
+		self.add_body_params('ImageURL', ImageURL)
+
 	def get_Width(self):
 		return self.get_body_params().get('Width')
 
 	def set_Width(self,Width):
 		self.add_body_params('Width', Width)
-
-	def get_Height(self):
-		return self.get_body_params().get('Height')
-
-	def set_Height(self,Height):
-		self.add_body_params('Height', Height)

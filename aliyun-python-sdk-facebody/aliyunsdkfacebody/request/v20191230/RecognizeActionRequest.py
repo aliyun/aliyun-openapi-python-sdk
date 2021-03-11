@@ -31,19 +31,27 @@ class RecognizeActionRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_URLLists(self):
-		return self.get_body_params().get('URLList')
-
-	def set_URLLists(self, URLLists):
-		for depth1 in range(len(URLLists)):
-			if URLLists[depth1].get('URL') is not None:
-				self.add_body_params('URLList.' + str(depth1 + 1) + '.URL', URLLists[depth1].get('URL'))
-
 	def get_Type(self):
 		return self.get_body_params().get('Type')
 
 	def set_Type(self,Type):
 		self.add_body_params('Type', Type)
+
+	def get_VideoData(self):
+		return self.get_body_params().get('VideoData')
+
+	def set_VideoData(self,VideoData):
+		self.add_body_params('VideoData', VideoData)
+
+	def get_URLLists(self):
+		return self.get_body_params().get('URLList')
+
+	def set_URLLists(self, URLLists):
+		for depth1 in range(len(URLLists)):
+			if URLLists[depth1].get('imageData') is not None:
+				self.add_body_params('URLList.' + str(depth1 + 1) + '.imageData', URLLists[depth1].get('imageData'))
+			if URLLists[depth1].get('URL') is not None:
+				self.add_body_params('URLList.' + str(depth1 + 1) + '.URL', URLLists[depth1].get('URL'))
 
 	def get_VideoUrl(self):
 		return self.get_body_params().get('VideoUrl')
