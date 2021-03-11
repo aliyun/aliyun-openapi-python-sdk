@@ -31,6 +31,12 @@ class DescribeDNSSLBSubDomainsRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_Rr(self):
+		return self.get_query_params().get('Rr')
+
+	def set_Rr(self,Rr):
+		self.add_query_param('Rr',Rr)
+
 	def get_DomainName(self):
 		return self.get_query_params().get('DomainName')
 

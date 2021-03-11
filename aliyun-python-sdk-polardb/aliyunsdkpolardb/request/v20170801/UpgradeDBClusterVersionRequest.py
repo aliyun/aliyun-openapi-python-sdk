@@ -37,6 +37,12 @@ class UpgradeDBClusterVersionRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_UpgradeType(self):
+		return self.get_query_params().get('UpgradeType')
+
+	def set_UpgradeType(self,UpgradeType):
+		self.add_query_param('UpgradeType',UpgradeType)
+
 	def get_PlannedEndTime(self):
 		return self.get_query_params().get('PlannedEndTime')
 

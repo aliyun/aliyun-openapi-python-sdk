@@ -67,6 +67,12 @@ class UpdateFaceGroupRequest(RpcRequest):
 	def set_GroupName(self,GroupName):
 		self.add_query_param('GroupName',GroupName)
 
+	def get_ResetItems(self):
+		return self.get_query_params().get('ResetItems')
+
+	def set_ResetItems(self,ResetItems):
+		self.add_query_param('ResetItems',ResetItems)
+
 	def get_RemarksArrayA(self):
 		return self.get_query_params().get('RemarksArrayA')
 

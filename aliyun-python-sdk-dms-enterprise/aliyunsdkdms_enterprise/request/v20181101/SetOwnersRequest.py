@@ -23,34 +23,31 @@ from aliyunsdkdms_enterprise.endpoint import endpoint_data
 class SetOwnersRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'dms-enterprise', '2018-11-01', 'SetOwners','dmsenterprise')
+		RpcRequest.__init__(self, 'dms-enterprise', '2018-11-01', 'SetOwners')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ResourceId(self):
+	def get_ResourceId(self): # String
 		return self.get_query_params().get('ResourceId')
 
-	def set_ResourceId(self,ResourceId):
-		self.add_query_param('ResourceId',ResourceId)
-
-	def get_OwnerIds(self):
+	def set_ResourceId(self, ResourceId):  # String
+		self.add_query_param('ResourceId', ResourceId)
+	def get_OwnerIds(self): # String
 		return self.get_query_params().get('OwnerIds')
 
-	def set_OwnerIds(self,OwnerIds):
-		self.add_query_param('OwnerIds',OwnerIds)
-
-	def get_OwnerType(self):
-		return self.get_query_params().get('OwnerType')
-
-	def set_OwnerType(self,OwnerType):
-		self.add_query_param('OwnerType',OwnerType)
-
-	def get_Tid(self):
+	def set_OwnerIds(self, OwnerIds):  # String
+		self.add_query_param('OwnerIds', OwnerIds)
+	def get_Tid(self): # Long
 		return self.get_query_params().get('Tid')
 
-	def set_Tid(self,Tid):
-		self.add_query_param('Tid',Tid)
+	def set_Tid(self, Tid):  # Long
+		self.add_query_param('Tid', Tid)
+	def get_OwnerType(self): # String
+		return self.get_query_params().get('OwnerType')
+
+	def set_OwnerType(self, OwnerType):  # String
+		self.add_query_param('OwnerType', OwnerType)

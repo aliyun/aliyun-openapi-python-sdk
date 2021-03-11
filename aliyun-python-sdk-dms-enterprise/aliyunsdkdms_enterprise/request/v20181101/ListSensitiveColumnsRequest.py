@@ -23,52 +23,46 @@ from aliyunsdkdms_enterprise.endpoint import endpoint_data
 class ListSensitiveColumnsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'dms-enterprise', '2018-11-01', 'ListSensitiveColumns','dmsenterprise')
+		RpcRequest.__init__(self, 'dms-enterprise', '2018-11-01', 'ListSensitiveColumns')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_SchemaName(self):
+	def get_SchemaName(self): # String
 		return self.get_query_params().get('SchemaName')
 
-	def set_SchemaName(self,SchemaName):
-		self.add_query_param('SchemaName',SchemaName)
-
-	def get_ColumnName(self):
+	def set_SchemaName(self, SchemaName):  # String
+		self.add_query_param('SchemaName', SchemaName)
+	def get_ColumnName(self): # String
 		return self.get_query_params().get('ColumnName')
 
-	def set_ColumnName(self,ColumnName):
-		self.add_query_param('ColumnName',ColumnName)
-
-	def get_Tid(self):
+	def set_ColumnName(self, ColumnName):  # String
+		self.add_query_param('ColumnName', ColumnName)
+	def get_Tid(self): # Long
 		return self.get_query_params().get('Tid')
 
-	def set_Tid(self,Tid):
-		self.add_query_param('Tid',Tid)
-
-	def get_PageNumber(self):
+	def set_Tid(self, Tid):  # Long
+		self.add_query_param('Tid', Tid)
+	def get_PageNumber(self): # Integer
 		return self.get_query_params().get('PageNumber')
 
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
-
-	def get_SecurityLevel(self):
+	def set_PageNumber(self, PageNumber):  # Integer
+		self.add_query_param('PageNumber', PageNumber)
+	def get_SecurityLevel(self): # String
 		return self.get_query_params().get('SecurityLevel')
 
-	def set_SecurityLevel(self,SecurityLevel):
-		self.add_query_param('SecurityLevel',SecurityLevel)
-
-	def get_PageSize(self):
+	def set_SecurityLevel(self, SecurityLevel):  # String
+		self.add_query_param('SecurityLevel', SecurityLevel)
+	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_TableName(self):
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
+	def get_TableName(self): # String
 		return self.get_query_params().get('TableName')
 
-	def set_TableName(self,TableName):
-		self.add_query_param('TableName',TableName)
+	def set_TableName(self, TableName):  # String
+		self.add_query_param('TableName', TableName)

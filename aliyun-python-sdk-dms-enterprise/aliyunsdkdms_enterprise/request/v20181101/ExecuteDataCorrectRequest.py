@@ -23,28 +23,26 @@ from aliyunsdkdms_enterprise.endpoint import endpoint_data
 class ExecuteDataCorrectRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'dms-enterprise', '2018-11-01', 'ExecuteDataCorrect','dmsenterprise')
+		RpcRequest.__init__(self, 'dms-enterprise', '2018-11-01', 'ExecuteDataCorrect')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ActionDetail(self):
-		return self.get_query_params().get('ActionDetail')
-
-	def set_ActionDetail(self,ActionDetail):
-		self.add_query_param('ActionDetail',ActionDetail)
-
-	def get_OrderId(self):
+	def get_OrderId(self): # Long
 		return self.get_query_params().get('OrderId')
 
-	def set_OrderId(self,OrderId):
-		self.add_query_param('OrderId',OrderId)
-
-	def get_Tid(self):
+	def set_OrderId(self, OrderId):  # Long
+		self.add_query_param('OrderId', OrderId)
+	def get_Tid(self): # String
 		return self.get_query_params().get('Tid')
 
-	def set_Tid(self,Tid):
-		self.add_query_param('Tid',Tid)
+	def set_Tid(self, Tid):  # String
+		self.add_query_param('Tid', Tid)
+	def get_ActionDetail(self): # Json
+		return self.get_query_params().get('ActionDetail')
+
+	def set_ActionDetail(self, ActionDetail):  # Json
+		self.add_query_param('ActionDetail', ActionDetail)

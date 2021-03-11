@@ -31,6 +31,12 @@ class CreateCacheAnalysisJobRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_BackupSetId(self):
+		return self.get_query_params().get('BackupSetId')
+
+	def set_BackupSetId(self,BackupSetId):
+		self.add_query_param('BackupSetId',BackupSetId)
+
 	def get_InstanceId(self):
 		return self.get_query_params().get('InstanceId')
 

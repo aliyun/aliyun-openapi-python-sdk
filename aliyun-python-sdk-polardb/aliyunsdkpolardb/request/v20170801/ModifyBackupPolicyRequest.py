@@ -90,3 +90,9 @@ class ModifyBackupPolicyRequest(RpcRequest):
 
 	def set_PreferredBackupTime(self,PreferredBackupTime):
 		self.add_query_param('PreferredBackupTime',PreferredBackupTime)
+
+	def get_BackupFrequency(self):
+		return self.get_query_params().get('BackupFrequency')
+
+	def set_BackupFrequency(self,BackupFrequency):
+		self.add_query_param('BackupFrequency',BackupFrequency)

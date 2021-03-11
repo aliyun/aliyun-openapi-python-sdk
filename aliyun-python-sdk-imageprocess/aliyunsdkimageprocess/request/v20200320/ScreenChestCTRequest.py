@@ -31,6 +31,12 @@ class ScreenChestCTRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_OrgName(self):
+		return self.get_body_params().get('OrgName')
+
+	def set_OrgName(self,OrgName):
+		self.add_body_params('OrgName', OrgName)
+
 	def get_DataFormat(self):
 		return self.get_body_params().get('DataFormat')
 
@@ -50,9 +56,3 @@ class ScreenChestCTRequest(RpcRequest):
 
 	def set_OrgId(self,OrgId):
 		self.add_body_params('OrgId', OrgId)
-
-	def get_OrgName(self):
-		return self.get_body_params().get('OrgName')
-
-	def set_OrgName(self,OrgName):
-		self.add_body_params('OrgName', OrgName)

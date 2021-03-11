@@ -23,64 +23,56 @@ from aliyunsdkdms_enterprise.endpoint import endpoint_data
 class ListUserPermissionsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'dms-enterprise', '2018-11-01', 'ListUserPermissions','dmsenterprise')
+		RpcRequest.__init__(self, 'dms-enterprise', '2018-11-01', 'ListUserPermissions')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_UserId(self):
+	def get_UserId(self): # String
 		return self.get_query_params().get('UserId')
 
-	def set_UserId(self,UserId):
-		self.add_query_param('UserId',UserId)
-
-	def get_Tid(self):
+	def set_UserId(self, UserId):  # String
+		self.add_query_param('UserId', UserId)
+	def get_Tid(self): # Long
 		return self.get_query_params().get('Tid')
 
-	def set_Tid(self,Tid):
-		self.add_query_param('Tid',Tid)
-
-	def get_PageNumber(self):
+	def set_Tid(self, Tid):  # Long
+		self.add_query_param('Tid', Tid)
+	def get_PageNumber(self): # Integer
 		return self.get_query_params().get('PageNumber')
 
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
-
-	def get_PermType(self):
+	def set_PageNumber(self, PageNumber):  # Integer
+		self.add_query_param('PageNumber', PageNumber)
+	def get_PermType(self): # String
 		return self.get_query_params().get('PermType')
 
-	def set_PermType(self,PermType):
-		self.add_query_param('PermType',PermType)
-
-	def get_DatabaseName(self):
+	def set_PermType(self, PermType):  # String
+		self.add_query_param('PermType', PermType)
+	def get_DatabaseName(self): # String
 		return self.get_query_params().get('DatabaseName')
 
-	def set_DatabaseName(self,DatabaseName):
-		self.add_query_param('DatabaseName',DatabaseName)
-
-	def get_EnvType(self):
+	def set_DatabaseName(self, DatabaseName):  # String
+		self.add_query_param('DatabaseName', DatabaseName)
+	def get_EnvType(self): # String
 		return self.get_query_params().get('EnvType')
 
-	def set_EnvType(self,EnvType):
-		self.add_query_param('EnvType',EnvType)
-
-	def get_DbType(self):
+	def set_EnvType(self, EnvType):  # String
+		self.add_query_param('EnvType', EnvType)
+	def get_DbType(self): # String
 		return self.get_query_params().get('DbType')
 
-	def set_DbType(self,DbType):
-		self.add_query_param('DbType',DbType)
-
-	def get_PageSize(self):
+	def set_DbType(self, DbType):  # String
+		self.add_query_param('DbType', DbType)
+	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_Logic(self):
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
+	def get_Logic(self): # Boolean
 		return self.get_query_params().get('Logic')
 
-	def set_Logic(self,Logic):
-		self.add_query_param('Logic',Logic)
+	def set_Logic(self, Logic):  # Boolean
+		self.add_query_param('Logic', Logic)

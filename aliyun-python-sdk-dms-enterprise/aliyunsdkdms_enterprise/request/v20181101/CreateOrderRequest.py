@@ -23,40 +23,41 @@ from aliyunsdkdms_enterprise.endpoint import endpoint_data
 class CreateOrderRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'dms-enterprise', '2018-11-01', 'CreateOrder','dmsenterprise')
+		RpcRequest.__init__(self, 'dms-enterprise', '2018-11-01', 'CreateOrder')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_PluginType(self):
-		return self.get_query_params().get('PluginType')
-
-	def set_PluginType(self,PluginType):
-		self.add_query_param('PluginType',PluginType)
-
-	def get_Comment(self):
-		return self.get_query_params().get('Comment')
-
-	def set_Comment(self,Comment):
-		self.add_query_param('Comment',Comment)
-
-	def get_Tid(self):
+	def get_Tid(self): # Long
 		return self.get_query_params().get('Tid')
 
-	def set_Tid(self,Tid):
-		self.add_query_param('Tid',Tid)
+	def set_Tid(self, Tid):  # Long
+		self.add_query_param('Tid', Tid)
+	def get_PluginType(self): # String
+		return self.get_query_params().get('PluginType')
 
-	def get_PluginParam(self):
+	def set_PluginType(self, PluginType):  # String
+		self.add_query_param('PluginType', PluginType)
+	def get_AttachmentKey(self): # String
+		return self.get_query_params().get('AttachmentKey')
+
+	def set_AttachmentKey(self, AttachmentKey):  # String
+		self.add_query_param('AttachmentKey', AttachmentKey)
+	def get_Comment(self): # String
+		return self.get_query_params().get('Comment')
+
+	def set_Comment(self, Comment):  # String
+		self.add_query_param('Comment', Comment)
+	def get_PluginParam(self): # Json
 		return self.get_body_params().get('PluginParam')
 
-	def set_PluginParam(self,PluginParam):
+	def set_PluginParam(self, PluginParam):  # Json
 		self.add_body_params('PluginParam', PluginParam)
-
-	def get_RelatedUserList(self):
+	def get_RelatedUserList(self): # String
 		return self.get_query_params().get('RelatedUserList')
 
-	def set_RelatedUserList(self,RelatedUserList):
-		self.add_query_param('RelatedUserList',RelatedUserList)
+	def set_RelatedUserList(self, RelatedUserList):  # String
+		self.add_query_param('RelatedUserList', RelatedUserList)

@@ -31,6 +31,12 @@ class SetDNSSLBStatusRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_Line(self):
+		return self.get_query_params().get('Line')
+
+	def set_Line(self,Line):
+		self.add_query_param('Line',Line)
+
 	def get_DomainName(self):
 		return self.get_query_params().get('DomainName')
 

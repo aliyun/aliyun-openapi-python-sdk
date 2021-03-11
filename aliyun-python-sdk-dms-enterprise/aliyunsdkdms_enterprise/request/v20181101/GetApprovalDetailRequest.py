@@ -23,22 +23,21 @@ from aliyunsdkdms_enterprise.endpoint import endpoint_data
 class GetApprovalDetailRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'dms-enterprise', '2018-11-01', 'GetApprovalDetail','dmsenterprise')
+		RpcRequest.__init__(self, 'dms-enterprise', '2018-11-01', 'GetApprovalDetail')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Tid(self):
+	def get_Tid(self): # Long
 		return self.get_query_params().get('Tid')
 
-	def set_Tid(self,Tid):
-		self.add_query_param('Tid',Tid)
-
-	def get_WorkflowInstanceId(self):
+	def set_Tid(self, Tid):  # Long
+		self.add_query_param('Tid', Tid)
+	def get_WorkflowInstanceId(self): # Long
 		return self.get_query_params().get('WorkflowInstanceId')
 
-	def set_WorkflowInstanceId(self,WorkflowInstanceId):
-		self.add_query_param('WorkflowInstanceId',WorkflowInstanceId)
+	def set_WorkflowInstanceId(self, WorkflowInstanceId):  # Long
+		self.add_query_param('WorkflowInstanceId', WorkflowInstanceId)
