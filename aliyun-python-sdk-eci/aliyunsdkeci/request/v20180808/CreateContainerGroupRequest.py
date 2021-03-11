@@ -597,3 +597,23 @@ class CreateContainerGroupRequest(RpcRequest):
 	def set_EphemeralStorage(self, EphemeralStorage):
 		self.add_query_param('EphemeralStorage', EphemeralStorage)
 
+	def get_AcrRegistryInfos(self):
+		return self.get_query_params().get('AcrRegistryInfos')
+
+	def set_AcrRegistryInfos(self, AcrRegistryInfos):
+		if AcrRegistryInfos is not None:
+			for i in range(len(AcrRegistryInfos)):
+				if AcrRegistryInfos[i].get('Domains') is not None:
+					for j in range(len(AcrRegistryInfos[i].get('Domains'))):
+						self.add_query_param('AcrRegistryInfo.' + str(i + 1) + 'Domain.' + str(j + 1),
+											 AcrRegistryInfos[i].get('Domains')[j])
+				if AcrRegistryInfos[i].get('InstanceName') is not None:
+					self.add_query_param('AcrRegistryInfo.' + str(i + 1) + '.InstanceName',
+										 AcrRegistryInfos[i].get('InstanceName'))
+				if AcrRegistryInfos[i].get('InstanceId') is not None:
+					self.add_query_param('AcrRegistryInfo.' + str(i + 1) + '.InstanceId',
+										 AcrRegistryInfos[i].get('InstanceId'))
+				if AcrRegistryInfos[i].get('RegionId') is not None:
+					self.add_query_param('AcrRegistryInfo.' + str(i + 1) + '.RegionId',
+										 AcrRegistryInfos[i].get('RegionId'))
+
