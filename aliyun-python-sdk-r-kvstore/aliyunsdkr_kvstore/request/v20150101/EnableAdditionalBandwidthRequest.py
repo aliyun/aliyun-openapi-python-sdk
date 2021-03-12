@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkr_kvstore.endpoint import endpoint_data
 
-class ModifyIntranetAttributeRequest(RpcRequest):
+class EnableAdditionalBandwidthRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'R-kvstore', '2015-01-01', 'ModifyIntranetAttribute','redisa')
+		RpcRequest.__init__(self, 'R-kvstore', '2015-01-01', 'EnableAdditionalBandwidth','redisa')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -37,6 +37,12 @@ class ModifyIntranetAttributeRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_CouponNo(self):
+		return self.get_query_params().get('CouponNo')
+
+	def set_CouponNo(self,CouponNo):
+		self.add_query_param('CouponNo',CouponNo)
+
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
 
@@ -49,17 +55,29 @@ class ModifyIntranetAttributeRequest(RpcRequest):
 	def set_NodeId(self,NodeId):
 		self.add_query_param('NodeId',NodeId)
 
+	def get_OrderTimeLength(self):
+		return self.get_query_params().get('OrderTimeLength')
+
+	def set_OrderTimeLength(self,OrderTimeLength):
+		self.add_query_param('OrderTimeLength',OrderTimeLength)
+
+	def get_AutoPay(self):
+		return self.get_query_params().get('AutoPay')
+
+	def set_AutoPay(self,AutoPay):
+		self.add_query_param('AutoPay',AutoPay)
+
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
-	def get_BandWidth(self):
-		return self.get_query_params().get('BandWidth')
+	def get_Bandwidth(self):
+		return self.get_query_params().get('Bandwidth')
 
-	def set_BandWidth(self,BandWidth):
-		self.add_query_param('BandWidth',BandWidth)
+	def set_Bandwidth(self,Bandwidth):
+		self.add_query_param('Bandwidth',Bandwidth)
 
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
