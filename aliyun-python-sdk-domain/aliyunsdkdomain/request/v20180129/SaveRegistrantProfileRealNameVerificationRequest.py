@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdomain.endpoint import endpoint_data
 
-class SaveTaskForUpdatingRegistrantInfoByIdentityCredentialRequest(RpcRequest):
+class SaveRegistrantProfileRealNameVerificationRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Domain', '2018-01-29', 'SaveTaskForUpdatingRegistrantInfoByIdentityCredential','domain')
+		RpcRequest.__init__(self, 'Domain', '2018-01-29', 'SaveRegistrantProfileRealNameVerification','domain')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -49,17 +49,17 @@ class SaveTaskForUpdatingRegistrantInfoByIdentityCredentialRequest(RpcRequest):
 	def set_City(self,City):
 		self.add_query_param('City',City)
 
+	def get_RegistrantProfileId(self):
+		return self.get_query_params().get('RegistrantProfileId')
+
+	def set_RegistrantProfileId(self,RegistrantProfileId):
+		self.add_query_param('RegistrantProfileId',RegistrantProfileId)
+
 	def get_IdentityCredential(self):
-		return self.get_body_params().get('IdentityCredential')
+		return self.get_query_params().get('IdentityCredential')
 
 	def set_IdentityCredential(self,IdentityCredential):
-		self.add_body_params('IdentityCredential', IdentityCredential)
-
-	def get_TransferOutProhibited(self):
-		return self.get_query_params().get('TransferOutProhibited')
-
-	def set_TransferOutProhibited(self,TransferOutProhibited):
-		self.add_query_param('TransferOutProhibited',TransferOutProhibited)
+		self.add_query_param('IdentityCredential',IdentityCredential)
 
 	def get_ZhCity(self):
 		return self.get_query_params().get('ZhCity')
@@ -133,13 +133,11 @@ class SaveTaskForUpdatingRegistrantInfoByIdentityCredentialRequest(RpcRequest):
 	def set_RegistrantType(self,RegistrantType):
 		self.add_query_param('RegistrantType',RegistrantType)
 
-	def get_DomainNames(self):
-		return self.get_query_params().get('DomainName')
+	def get_RegistrantProfileType(self):
+		return self.get_query_params().get('RegistrantProfileType')
 
-	def set_DomainNames(self, DomainNames):
-		for depth1 in range(len(DomainNames)):
-			if DomainNames[depth1] is not None:
-				self.add_query_param('DomainName.' + str(depth1 + 1) , DomainNames[depth1])
+	def set_RegistrantProfileType(self,RegistrantProfileType):
+		self.add_query_param('RegistrantProfileType',RegistrantProfileType)
 
 	def get_Telephone(self):
 		return self.get_query_params().get('Telephone')
