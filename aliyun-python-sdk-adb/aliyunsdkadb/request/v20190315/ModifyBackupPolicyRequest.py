@@ -37,6 +37,12 @@ class ModifyBackupPolicyRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_EnableBackupLog(self):
+		return self.get_query_params().get('EnableBackupLog')
+
+	def set_EnableBackupLog(self,EnableBackupLog):
+		self.add_query_param('EnableBackupLog',EnableBackupLog)
+
 	def get_PreferredBackupPeriod(self):
 		return self.get_query_params().get('PreferredBackupPeriod')
 
@@ -78,3 +84,9 @@ class ModifyBackupPolicyRequest(RpcRequest):
 
 	def set_BackupRetentionPeriod(self,BackupRetentionPeriod):
 		self.add_query_param('BackupRetentionPeriod',BackupRetentionPeriod)
+
+	def get_LogBackupRetentionPeriod(self):
+		return self.get_query_params().get('LogBackupRetentionPeriod')
+
+	def set_LogBackupRetentionPeriod(self,LogBackupRetentionPeriod):
+		self.add_query_param('LogBackupRetentionPeriod',LogBackupRetentionPeriod)

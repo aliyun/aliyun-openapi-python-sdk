@@ -43,12 +43,6 @@ class CreateDBClusterRequest(RpcRequest):
 	def set_DBClusterDescription(self,DBClusterDescription):
 		self.add_query_param('DBClusterDescription',DBClusterDescription)
 
-	def get_ClientToken(self):
-		return self.get_query_params().get('ClientToken')
-
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
-
 	def get_StorageType(self):
 		return self.get_query_params().get('StorageType')
 
@@ -66,6 +60,60 @@ class CreateDBClusterRequest(RpcRequest):
 
 	def set_ResourceGroupId(self,ResourceGroupId):
 		self.add_query_param('ResourceGroupId',ResourceGroupId)
+
+	def get_Period(self):
+		return self.get_query_params().get('Period')
+
+	def set_Period(self,Period):
+		self.add_query_param('Period',Period)
+
+	def get_BackupSetID(self):
+		return self.get_query_params().get('BackupSetID')
+
+	def set_BackupSetID(self,BackupSetID):
+		self.add_query_param('BackupSetID',BackupSetID)
+
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
+
+	def get_DBNodeGroupCount(self):
+		return self.get_query_params().get('DBNodeGroupCount')
+
+	def set_DBNodeGroupCount(self,DBNodeGroupCount):
+		self.add_query_param('DBNodeGroupCount',DBNodeGroupCount)
+
+	def get_VSwitchId(self):
+		return self.get_query_params().get('VSwitchId')
+
+	def set_VSwitchId(self,VSwitchId):
+		self.add_query_param('VSwitchId',VSwitchId)
+
+	def get_ZoneId(self):
+		return self.get_query_params().get('ZoneId')
+
+	def set_ZoneId(self,ZoneId):
+		self.add_query_param('ZoneId',ZoneId)
+
+	def get_ComputeResource(self):
+		return self.get_query_params().get('ComputeResource')
+
+	def set_ComputeResource(self,ComputeResource):
+		self.add_query_param('ComputeResource',ComputeResource)
+
+	def get_SourceDBInstanceName(self):
+		return self.get_query_params().get('SourceDBInstanceName')
+
+	def set_SourceDBInstanceName(self,SourceDBInstanceName):
+		self.add_query_param('SourceDBInstanceName',SourceDBInstanceName)
+
+	def get_ClientToken(self):
+		return self.get_query_params().get('ClientToken')
+
+	def set_ClientToken(self,ClientToken):
+		self.add_query_param('ClientToken',ClientToken)
 
 	def get_StorageResource(self):
 		return self.get_query_params().get('StorageResource')
@@ -85,11 +133,11 @@ class CreateDBClusterRequest(RpcRequest):
 	def set_DBClusterNetworkType(self,DBClusterNetworkType):
 		self.add_query_param('DBClusterNetworkType',DBClusterNetworkType)
 
-	def get_Period(self):
-		return self.get_query_params().get('Period')
+	def get_RestoreTime(self):
+		return self.get_query_params().get('RestoreTime')
 
-	def set_Period(self,Period):
-		self.add_query_param('Period',Period)
+	def set_RestoreTime(self,RestoreTime):
+		self.add_query_param('RestoreTime',RestoreTime)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -115,29 +163,17 @@ class CreateDBClusterRequest(RpcRequest):
 	def set_DBClusterClass(self,DBClusterClass):
 		self.add_query_param('DBClusterClass',DBClusterClass)
 
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_DBNodeGroupCount(self):
-		return self.get_query_params().get('DBNodeGroupCount')
-
-	def set_DBNodeGroupCount(self,DBNodeGroupCount):
-		self.add_query_param('DBNodeGroupCount',DBNodeGroupCount)
-
 	def get_UsedTime(self):
 		return self.get_query_params().get('UsedTime')
 
 	def set_UsedTime(self,UsedTime):
 		self.add_query_param('UsedTime',UsedTime)
 
-	def get_VSwitchId(self):
-		return self.get_query_params().get('VSwitchId')
+	def get_RestoreType(self):
+		return self.get_query_params().get('RestoreType')
 
-	def set_VSwitchId(self,VSwitchId):
-		self.add_query_param('VSwitchId',VSwitchId)
+	def set_RestoreType(self,RestoreType):
+		self.add_query_param('RestoreType',RestoreType)
 
 	def get_DBNodeStorage(self):
 		return self.get_query_params().get('DBNodeStorage')
@@ -156,18 +192,6 @@ class CreateDBClusterRequest(RpcRequest):
 
 	def set_VPCId(self,VPCId):
 		self.add_query_param('VPCId',VPCId)
-
-	def get_ZoneId(self):
-		return self.get_query_params().get('ZoneId')
-
-	def set_ZoneId(self,ZoneId):
-		self.add_query_param('ZoneId',ZoneId)
-
-	def get_ComputeResource(self):
-		return self.get_query_params().get('ComputeResource')
-
-	def set_ComputeResource(self,ComputeResource):
-		self.add_query_param('ComputeResource',ComputeResource)
 
 	def get_PayType(self):
 		return self.get_query_params().get('PayType')

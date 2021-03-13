@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkadb.endpoint import endpoint_data
 
-class ModifyDBClusterRequest(RpcRequest):
+class CreateElasticPlanRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'adb', '2019-03-15', 'ModifyDBCluster','ads')
+		RpcRequest.__init__(self, 'adb', '2019-03-15', 'CreateElasticPlan','ads')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -37,29 +37,41 @@ class ModifyDBClusterRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_Mode(self):
-		return self.get_query_params().get('Mode')
+	def get_ElasticPlanTimeStart(self):
+		return self.get_query_params().get('ElasticPlanTimeStart')
 
-	def set_Mode(self,Mode):
-		self.add_query_param('Mode',Mode)
+	def set_ElasticPlanTimeStart(self,ElasticPlanTimeStart):
+		self.add_query_param('ElasticPlanTimeStart',ElasticPlanTimeStart)
 
-	def get_StorageResource(self):
-		return self.get_query_params().get('StorageResource')
+	def get_ElasticPlanEndDay(self):
+		return self.get_query_params().get('ElasticPlanEndDay')
 
-	def set_StorageResource(self,StorageResource):
-		self.add_query_param('StorageResource',StorageResource)
+	def set_ElasticPlanEndDay(self,ElasticPlanEndDay):
+		self.add_query_param('ElasticPlanEndDay',ElasticPlanEndDay)
 
-	def get_DBNodeClass(self):
-		return self.get_query_params().get('DBNodeClass')
+	def get_ElasticPlanWeeklyRepeat(self):
+		return self.get_query_params().get('ElasticPlanWeeklyRepeat')
 
-	def set_DBNodeClass(self,DBNodeClass):
-		self.add_query_param('DBNodeClass',DBNodeClass)
+	def set_ElasticPlanWeeklyRepeat(self,ElasticPlanWeeklyRepeat):
+		self.add_query_param('ElasticPlanWeeklyRepeat',ElasticPlanWeeklyRepeat)
 
-	def get_DBClusterCategory(self):
-		return self.get_query_params().get('DBClusterCategory')
+	def get_ElasticPlanEnable(self):
+		return self.get_query_params().get('ElasticPlanEnable')
 
-	def set_DBClusterCategory(self,DBClusterCategory):
-		self.add_query_param('DBClusterCategory',DBClusterCategory)
+	def set_ElasticPlanEnable(self,ElasticPlanEnable):
+		self.add_query_param('ElasticPlanEnable',ElasticPlanEnable)
+
+	def get_ElasticPlanTimeEnd(self):
+		return self.get_query_params().get('ElasticPlanTimeEnd')
+
+	def set_ElasticPlanTimeEnd(self,ElasticPlanTimeEnd):
+		self.add_query_param('ElasticPlanTimeEnd',ElasticPlanTimeEnd)
+
+	def get_ElasticPlanStartDay(self):
+		return self.get_query_params().get('ElasticPlanStartDay')
+
+	def set_ElasticPlanStartDay(self,ElasticPlanStartDay):
+		self.add_query_param('ElasticPlanStartDay',ElasticPlanStartDay)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -85,38 +97,20 @@ class ModifyDBClusterRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_DBNodeGroupCount(self):
-		return self.get_query_params().get('DBNodeGroupCount')
+	def get_ElasticPlanName(self):
+		return self.get_query_params().get('ElasticPlanName')
 
-	def set_DBNodeGroupCount(self,DBNodeGroupCount):
-		self.add_query_param('DBNodeGroupCount',DBNodeGroupCount)
+	def set_ElasticPlanName(self,ElasticPlanName):
+		self.add_query_param('ElasticPlanName',ElasticPlanName)
 
-	def get_DBNodeStorage(self):
-		return self.get_query_params().get('DBNodeStorage')
+	def get_ResourcePoolName(self):
+		return self.get_query_params().get('ResourcePoolName')
 
-	def set_DBNodeStorage(self,DBNodeStorage):
-		self.add_query_param('DBNodeStorage',DBNodeStorage)
+	def set_ResourcePoolName(self,ResourcePoolName):
+		self.add_query_param('ResourcePoolName',ResourcePoolName)
 
-	def get_ExecutorCount(self):
-		return self.get_query_params().get('ExecutorCount')
+	def get_ElasticPlanNodeNum(self):
+		return self.get_query_params().get('ElasticPlanNodeNum')
 
-	def set_ExecutorCount(self,ExecutorCount):
-		self.add_query_param('ExecutorCount',ExecutorCount)
-
-	def get_ModifyType(self):
-		return self.get_query_params().get('ModifyType')
-
-	def set_ModifyType(self,ModifyType):
-		self.add_query_param('ModifyType',ModifyType)
-
-	def get_ComputeResource(self):
-		return self.get_query_params().get('ComputeResource')
-
-	def set_ComputeResource(self,ComputeResource):
-		self.add_query_param('ComputeResource',ComputeResource)
-
-	def get_ElasticIOResource(self):
-		return self.get_query_params().get('ElasticIOResource')
-
-	def set_ElasticIOResource(self,ElasticIOResource):
-		self.add_query_param('ElasticIOResource',ElasticIOResource)
+	def set_ElasticPlanNodeNum(self,ElasticPlanNodeNum):
+		self.add_query_param('ElasticPlanNodeNum',ElasticPlanNodeNum)

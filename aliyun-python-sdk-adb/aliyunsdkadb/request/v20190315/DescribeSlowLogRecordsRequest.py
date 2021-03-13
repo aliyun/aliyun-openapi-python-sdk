@@ -37,6 +37,12 @@ class DescribeSlowLogRecordsRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_Range(self):
+		return self.get_query_params().get('Range')
+
+	def set_Range(self,Range):
+		self.add_query_param('Range',Range)
+
 	def get_StartTime(self):
 		return self.get_query_params().get('StartTime')
 
@@ -54,6 +60,18 @@ class DescribeSlowLogRecordsRequest(RpcRequest):
 
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
+
+	def get_State(self):
+		return self.get_query_params().get('State')
+
+	def set_State(self,State):
+		self.add_query_param('State',State)
+
+	def get_Order(self):
+		return self.get_query_params().get('Order')
+
+	def set_Order(self,Order):
+		self.add_query_param('Order',Order)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -90,3 +108,9 @@ class DescribeSlowLogRecordsRequest(RpcRequest):
 
 	def set_DBName(self,DBName):
 		self.add_query_param('DBName',DBName)
+
+	def get_ProcessID(self):
+		return self.get_query_params().get('ProcessID')
+
+	def set_ProcessID(self,ProcessID):
+		self.add_query_param('ProcessID',ProcessID)
