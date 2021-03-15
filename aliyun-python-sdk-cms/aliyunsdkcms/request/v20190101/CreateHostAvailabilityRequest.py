@@ -31,6 +31,12 @@ class CreateHostAvailabilityRequest(RpcRequest):
 	def set_TaskOptionHttpMethod(self,TaskOptionHttpMethod):
 		self.add_query_param('TaskOption.HttpMethod',TaskOptionHttpMethod)
 
+	def get_TaskOptionHttpHeader(self):
+		return self.get_query_params().get('TaskOption.HttpHeader')
+
+	def set_TaskOptionHttpHeader(self,TaskOptionHttpHeader):
+		self.add_query_param('TaskOption.HttpHeader',TaskOptionHttpHeader)
+
 	def get_AlertConfigEscalationLists(self):
 		return self.get_query_params().get('AlertConfigEscalationList')
 
@@ -126,6 +132,12 @@ class CreateHostAvailabilityRequest(RpcRequest):
 
 	def set_TaskScope(self,TaskScope):
 		self.add_query_param('TaskScope',TaskScope)
+
+	def get_TaskOptionHttpPostContent(self):
+		return self.get_query_params().get('TaskOption.HttpPostContent')
+
+	def set_TaskOptionHttpPostContent(self,TaskOptionHttpPostContent):
+		self.add_query_param('TaskOption.HttpPostContent',TaskOptionHttpPostContent)
 
 	def get_AlertConfigStartTime(self):
 		return self.get_query_params().get('AlertConfig.StartTime')

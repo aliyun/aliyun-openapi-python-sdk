@@ -19,14 +19,14 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class DescribeFolderListRequest(RpcRequest):
+class DescribeMonitorResourceQuotaAttributeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cms', '2019-01-01', 'DescribeFolderList','cms')
-		self.set_method('GET')
+		RpcRequest.__init__(self, 'Cms', '2019-01-01', 'DescribeMonitorResourceQuotaAttribute','cms')
+		self.set_method('POST')
 
-	def get_AppName(self):
-		return self.get_query_params().get('AppName')
+	def get_ShowUsed(self):
+		return self.get_query_params().get('ShowUsed')
 
-	def set_AppName(self,AppName):
-		self.add_query_param('AppName',AppName)
+	def set_ShowUsed(self,ShowUsed):
+		self.add_query_param('ShowUsed',ShowUsed)

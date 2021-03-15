@@ -1,3 +1,6 @@
+2021-03-15 Version: 7.0.20
+- Increase availability monitoring increase HTP header.
+
 2020-11-13 Version: 7.0.18
 - Fix the paging type parameter of DescribeMetricRuleList API.
 

@@ -37,6 +37,12 @@ class DescribeAlertingMetricRuleResourcesRequest(RpcRequest):
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
 
+	def get_Namespace(self):
+		return self.get_query_params().get('Namespace')
+
+	def set_Namespace(self,Namespace):
+		self.add_query_param('Namespace',Namespace)
+
 	def get_Page(self):
 		return self.get_query_params().get('Page')
 
