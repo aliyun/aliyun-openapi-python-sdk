@@ -97,6 +97,12 @@ class DescribeImageVulListRequest(RpcRequest):
 	def set_TargetType(self,TargetType):
 		self.add_query_param('TargetType',TargetType)
 
+	def get_RepoNamespace(self):
+		return self.get_query_params().get('RepoNamespace')
+
+	def set_RepoNamespace(self,RepoNamespace):
+		self.add_query_param('RepoNamespace',RepoNamespace)
+
 	def get_ContainerFieldValue(self):
 		return self.get_query_params().get('ContainerFieldValue')
 
@@ -138,3 +144,15 @@ class DescribeImageVulListRequest(RpcRequest):
 
 	def set_RepoName(self,RepoName):
 		self.add_query_param('RepoName',RepoName)
+
+	def get_RepoInstanceId(self):
+		return self.get_query_params().get('RepoInstanceId')
+
+	def set_RepoInstanceId(self,RepoInstanceId):
+		self.add_query_param('RepoInstanceId',RepoInstanceId)
+
+	def get_RepoRegionId(self):
+		return self.get_query_params().get('RepoRegionId')
+
+	def set_RepoRegionId(self,RepoRegionId):
+		self.add_query_param('RepoRegionId',RepoRegionId)

@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdksas.endpoint import endpoint_data
 
-class DescribeSuspEventDetailRequest(RpcRequest):
+class DescribeEmgVulItemRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeSuspEventDetail','sas')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeEmgVulItem','sas')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,26 +31,38 @@ class DescribeSuspEventDetailRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_SuspiciousEventId(self):
-		return self.get_query_params().get('SuspiciousEventId')
+	def get_ScanType(self):
+		return self.get_query_params().get('ScanType')
 
-	def set_SuspiciousEventId(self,SuspiciousEventId):
-		self.add_query_param('SuspiciousEventId',SuspiciousEventId)
+	def set_ScanType(self,ScanType):
+		self.add_query_param('ScanType',ScanType)
 
-	def get_SourceIp(self):
-		return self.get_query_params().get('SourceIp')
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
 
-	def set_SourceIp(self,SourceIp):
-		self.add_query_param('SourceIp',SourceIp)
-
-	def get_From(self):
-		return self.get_query_params().get('From')
-
-	def set_From(self,_From):
-		self.add_query_param('From',_From)
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
 
 	def get_Lang(self):
 		return self.get_query_params().get('Lang')
 
 	def set_Lang(self,Lang):
 		self.add_query_param('Lang',Lang)
+
+	def get_CurrentPage(self):
+		return self.get_query_params().get('CurrentPage')
+
+	def set_CurrentPage(self,CurrentPage):
+		self.add_query_param('CurrentPage',CurrentPage)
+
+	def get_VulName(self):
+		return self.get_query_params().get('VulName')
+
+	def set_VulName(self,VulName):
+		self.add_query_param('VulName',VulName)
+
+	def get_RiskStatus(self):
+		return self.get_query_params().get('RiskStatus')
+
+	def set_RiskStatus(self,RiskStatus):
+		self.add_query_param('RiskStatus',RiskStatus)

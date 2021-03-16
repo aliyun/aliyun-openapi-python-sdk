@@ -55,10 +55,10 @@ class OperationSuspEventsRequest(RpcRequest):
 	def set_WarnType(self,WarnType):
 		self.add_query_param('WarnType',WarnType)
 
-	def get__From(self):
+	def get_From(self):
 		return self.get_query_params().get('From')
 
-	def set__From(self,_From):
+	def set_From(self,_From):
 		self.add_query_param('From',_From)
 
 	def get_Operation(self):

@@ -61,6 +61,12 @@ class CreateSasOrderRequest(RpcRequest):
 	def set_SasWebguardOrderNum(self,SasWebguardOrderNum):
 		self.add_query_param('SasWebguardOrderNum',SasWebguardOrderNum)
 
+	def get_ContainerImageScan(self):
+		return self.get_query_params().get('ContainerImageScan')
+
+	def set_ContainerImageScan(self,ContainerImageScan):
+		self.add_query_param('ContainerImageScan',ContainerImageScan)
+
 	def get_AutoRenewPeriod(self):
 		return self.get_query_params().get('AutoRenewPeriod')
 
@@ -96,6 +102,12 @@ class CreateSasOrderRequest(RpcRequest):
 
 	def set_SasSc(self,SasSc):
 		self.add_query_param('SasSc',SasSc)
+
+	def get_Vcore(self):
+		return self.get_query_params().get('Vcore')
+
+	def set_Vcore(self,Vcore):
+		self.add_query_param('Vcore',Vcore)
 
 	def get_SasSlsStorage(self):
 		return self.get_query_params().get('SasSlsStorage')

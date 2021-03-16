@@ -31,6 +31,84 @@ class DescribeImageGroupedVulListRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_Type(self):
+		return self.get_query_params().get('Type')
+
+	def set_Type(self,Type):
+		self.add_query_param('Type',Type)
+
+	def get_LastTsEnd(self):
+		return self.get_query_params().get('LastTsEnd')
+
+	def set_LastTsEnd(self,LastTsEnd):
+		self.add_query_param('LastTsEnd',LastTsEnd)
+
+	def get_CreateTsStart(self):
+		return self.get_query_params().get('CreateTsStart')
+
+	def set_CreateTsStart(self,CreateTsStart):
+		self.add_query_param('CreateTsStart',CreateTsStart)
+
+	def get_ImageTag(self):
+		return self.get_query_params().get('ImageTag')
+
+	def set_ImageTag(self,ImageTag):
+		self.add_query_param('ImageTag',ImageTag)
+
+	def get_Level(self):
+		return self.get_query_params().get('Level')
+
+	def set_Level(self,Level):
+		self.add_query_param('Level',Level)
+
+	def get_GroupId(self):
+		return self.get_query_params().get('GroupId')
+
+	def set_GroupId(self,GroupId):
+		self.add_query_param('GroupId',GroupId)
+
+	def get_OrderBy(self):
+		return self.get_query_params().get('OrderBy')
+
+	def set_OrderBy(self,OrderBy):
+		self.add_query_param('OrderBy',OrderBy)
+
+	def get_AliasName(self):
+		return self.get_query_params().get('AliasName')
+
+	def set_AliasName(self,AliasName):
+		self.add_query_param('AliasName',AliasName)
+
+	def get_PatchId(self):
+		return self.get_query_params().get('PatchId')
+
+	def set_PatchId(self,PatchId):
+		self.add_query_param('PatchId',PatchId)
+
+	def get_Name(self):
+		return self.get_query_params().get('Name')
+
+	def set_Name(self,Name):
+		self.add_query_param('Name',Name)
+
+	def get_CreateTsEnd(self):
+		return self.get_query_params().get('CreateTsEnd')
+
+	def set_CreateTsEnd(self,CreateTsEnd):
+		self.add_query_param('CreateTsEnd',CreateTsEnd)
+
+	def get_Necessity(self):
+		return self.get_query_params().get('Necessity')
+
+	def set_Necessity(self,Necessity):
+		self.add_query_param('Necessity',Necessity)
+
+	def get_Uuids(self):
+		return self.get_query_params().get('Uuids')
+
+	def set_Uuids(self,Uuids):
+		self.add_query_param('Uuids',Uuids)
+
 	def get_RepoId(self):
 		return self.get_query_params().get('RepoId')
 
@@ -55,24 +133,6 @@ class DescribeImageGroupedVulListRequest(RpcRequest):
 	def set_Remark(self,Remark):
 		self.add_query_param('Remark',Remark)
 
-	def get_Type(self):
-		return self.get_query_params().get('Type')
-
-	def set_Type(self,Type):
-		self.add_query_param('Type',Type)
-
-	def get_LastTsEnd(self):
-		return self.get_query_params().get('LastTsEnd')
-
-	def set_LastTsEnd(self,LastTsEnd):
-		self.add_query_param('LastTsEnd',LastTsEnd)
-
-	def get_CreateTsStart(self):
-		return self.get_query_params().get('CreateTsStart')
-
-	def set_CreateTsStart(self,CreateTsStart):
-		self.add_query_param('CreateTsStart',CreateTsStart)
-
 	def get_RepoNamespace(self):
 		return self.get_query_params().get('RepoNamespace')
 
@@ -91,11 +151,11 @@ class DescribeImageGroupedVulListRequest(RpcRequest):
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
 
-	def get_ImageTag(self):
-		return self.get_query_params().get('ImageTag')
+	def get_Lang(self):
+		return self.get_query_params().get('Lang')
 
-	def set_ImageTag(self,ImageTag):
-		self.add_query_param('ImageTag',ImageTag)
+	def set_Lang(self,Lang):
+		self.add_query_param('Lang',Lang)
 
 	def get_LastTsStart(self):
 		return self.get_query_params().get('LastTsStart')
@@ -109,24 +169,6 @@ class DescribeImageGroupedVulListRequest(RpcRequest):
 	def set_Direction(self,Direction):
 		self.add_query_param('Direction',Direction)
 
-	def get_Level(self):
-		return self.get_query_params().get('Level')
-
-	def set_Level(self,Level):
-		self.add_query_param('Level',Level)
-
-	def get_GroupId(self):
-		return self.get_query_params().get('GroupId')
-
-	def set_GroupId(self,GroupId):
-		self.add_query_param('GroupId',GroupId)
-
-	def get_OrderBy(self):
-		return self.get_query_params().get('OrderBy')
-
-	def set_OrderBy(self,OrderBy):
-		self.add_query_param('OrderBy',OrderBy)
-
 	def get_Dealed(self):
 		return self.get_query_params().get('Dealed')
 
@@ -138,18 +180,6 @@ class DescribeImageGroupedVulListRequest(RpcRequest):
 
 	def set_CurrentPage(self,CurrentPage):
 		self.add_query_param('CurrentPage',CurrentPage)
-
-	def get_AliasName(self):
-		return self.get_query_params().get('AliasName')
-
-	def set_AliasName(self,AliasName):
-		self.add_query_param('AliasName',AliasName)
-
-	def get_PatchId(self):
-		return self.get_query_params().get('PatchId')
-
-	def set_PatchId(self,PatchId):
-		self.add_query_param('PatchId',PatchId)
 
 	def get_SearchTags(self):
 		return self.get_query_params().get('SearchTags')
@@ -163,12 +193,6 @@ class DescribeImageGroupedVulListRequest(RpcRequest):
 	def set_RepoName(self,RepoName):
 		self.add_query_param('RepoName',RepoName)
 
-	def get_Name(self):
-		return self.get_query_params().get('Name')
-
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)
-
 	def get_RepoInstanceId(self):
 		return self.get_query_params().get('RepoInstanceId')
 
@@ -180,24 +204,6 @@ class DescribeImageGroupedVulListRequest(RpcRequest):
 
 	def set_ImageLayer(self,ImageLayer):
 		self.add_query_param('ImageLayer',ImageLayer)
-
-	def get_CreateTsEnd(self):
-		return self.get_query_params().get('CreateTsEnd')
-
-	def set_CreateTsEnd(self,CreateTsEnd):
-		self.add_query_param('CreateTsEnd',CreateTsEnd)
-
-	def get_Necessity(self):
-		return self.get_query_params().get('Necessity')
-
-	def set_Necessity(self,Necessity):
-		self.add_query_param('Necessity',Necessity)
-
-	def get_Uuids(self):
-		return self.get_query_params().get('Uuids')
-
-	def set_Uuids(self,Uuids):
-		self.add_query_param('Uuids',Uuids)
 
 	def get_RepoRegionId(self):
 		return self.get_query_params().get('RepoRegionId')

@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdksas.endpoint import endpoint_data
 
-class DescribeSuspEventDetailRequest(RpcRequest):
+class DescribeScanTaskProgressRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeSuspEventDetail','sas')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeScanTaskProgress','sas')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,26 +31,8 @@ class DescribeSuspEventDetailRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_SuspiciousEventId(self):
-		return self.get_query_params().get('SuspiciousEventId')
+	def get_TaskId(self):
+		return self.get_query_params().get('TaskId')
 
-	def set_SuspiciousEventId(self,SuspiciousEventId):
-		self.add_query_param('SuspiciousEventId',SuspiciousEventId)
-
-	def get_SourceIp(self):
-		return self.get_query_params().get('SourceIp')
-
-	def set_SourceIp(self,SourceIp):
-		self.add_query_param('SourceIp',SourceIp)
-
-	def get_From(self):
-		return self.get_query_params().get('From')
-
-	def set_From(self,_From):
-		self.add_query_param('From',_From)
-
-	def get_Lang(self):
-		return self.get_query_params().get('Lang')
-
-	def set_Lang(self,Lang):
-		self.add_query_param('Lang',Lang)
+	def set_TaskId(self,TaskId):
+		self.add_query_param('TaskId',TaskId)

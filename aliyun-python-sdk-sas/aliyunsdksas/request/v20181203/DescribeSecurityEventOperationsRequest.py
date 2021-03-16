@@ -43,6 +43,12 @@ class DescribeSecurityEventOperationsRequest(RpcRequest):
 	def set_SourceIp(self,SourceIp):
 		self.add_query_param('SourceIp',SourceIp)
 
+	def get_Lang(self):
+		return self.get_query_params().get('Lang')
+
+	def set_Lang(self,Lang):
+		self.add_query_param('Lang',Lang)
+
 	def get_SecurityEventId(self):
 		return self.get_query_params().get('SecurityEventId')
 

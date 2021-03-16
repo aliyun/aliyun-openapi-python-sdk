@@ -21,7 +21,6 @@
 class EndpointData():
 	def __init__(self):
 		self.endpoint_map = {
-			"cn-shanghai-et2-b01": "tds.cn-shanghai-et2-b01.aliyuncs.com",
 			"ap-southeast-3": "tds.ap-southeast-3.aliyuncs.com",
 			"cn-hangzhou": "tds.aliyuncs.com",
 		}

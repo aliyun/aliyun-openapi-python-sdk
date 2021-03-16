@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdksas.endpoint import endpoint_data
 
-class DescribeSuspEventDetailRequest(RpcRequest):
+class DescribeFrontVulPatchListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeSuspEventDetail','sas')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeFrontVulPatchList','sas')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,26 +31,20 @@ class DescribeSuspEventDetailRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_SuspiciousEventId(self):
-		return self.get_query_params().get('SuspiciousEventId')
+	def get_Type(self):
+		return self.get_query_params().get('Type')
 
-	def set_SuspiciousEventId(self,SuspiciousEventId):
-		self.add_query_param('SuspiciousEventId',SuspiciousEventId)
+	def set_Type(self,Type):
+		self.add_query_param('Type',Type)
 
-	def get_SourceIp(self):
-		return self.get_query_params().get('SourceIp')
+	def get_OperateType(self):
+		return self.get_query_params().get('OperateType')
 
-	def set_SourceIp(self,SourceIp):
-		self.add_query_param('SourceIp',SourceIp)
+	def set_OperateType(self,OperateType):
+		self.add_query_param('OperateType',OperateType)
 
-	def get_From(self):
-		return self.get_query_params().get('From')
+	def get_Info(self):
+		return self.get_query_params().get('Info')
 
-	def set_From(self,_From):
-		self.add_query_param('From',_From)
-
-	def get_Lang(self):
-		return self.get_query_params().get('Lang')
-
-	def set_Lang(self,Lang):
-		self.add_query_param('Lang',Lang)
+	def set_Info(self,Info):
+		self.add_query_param('Info',Info)

@@ -43,8 +43,8 @@ class DescribeHoneyPotSuspStatisticsRequest(RpcRequest):
 	def set_StatisticsKeyType(self,StatisticsKeyType):
 		self.add_query_param('StatisticsKeyType',StatisticsKeyType)
 
-	def get__From(self):
+	def get_From(self):
 		return self.get_query_params().get('From')
 
-	def set__From(self,_From):
+	def set_From(self,_From):
 		self.add_query_param('From',_From)

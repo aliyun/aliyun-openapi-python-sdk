@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdksas.endpoint import endpoint_data
 
-class DescribeSuspEventDetailRequest(RpcRequest):
+class DescribeAlarmEventStackInfoRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeSuspEventDetail','sas')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeAlarmEventStackInfo','sas')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,23 +31,29 @@ class DescribeSuspEventDetailRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_SuspiciousEventId(self):
-		return self.get_query_params().get('SuspiciousEventId')
+	def get_UniqueInfo(self):
+		return self.get_query_params().get('UniqueInfo')
 
-	def set_SuspiciousEventId(self,SuspiciousEventId):
-		self.add_query_param('SuspiciousEventId',SuspiciousEventId)
+	def set_UniqueInfo(self,UniqueInfo):
+		self.add_query_param('UniqueInfo',UniqueInfo)
+
+	def get_Uuid(self):
+		return self.get_query_params().get('Uuid')
+
+	def set_Uuid(self,Uuid):
+		self.add_query_param('Uuid',Uuid)
+
+	def get_EventName(self):
+		return self.get_query_params().get('EventName')
+
+	def set_EventName(self,EventName):
+		self.add_query_param('EventName',EventName)
 
 	def get_SourceIp(self):
 		return self.get_query_params().get('SourceIp')
 
 	def set_SourceIp(self,SourceIp):
 		self.add_query_param('SourceIp',SourceIp)
-
-	def get_From(self):
-		return self.get_query_params().get('From')
-
-	def set_From(self,_From):
-		self.add_query_param('From',_From)
 
 	def get_Lang(self):
 		return self.get_query_params().get('Lang')

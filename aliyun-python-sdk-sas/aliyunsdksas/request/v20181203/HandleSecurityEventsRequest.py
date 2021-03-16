@@ -68,3 +68,9 @@ class HandleSecurityEventsRequest(RpcRequest):
 
 	def set_OperationParams(self,OperationParams):
 		self.add_query_param('OperationParams',OperationParams)
+
+	def get_MarkBatch(self):
+		return self.get_query_params().get('MarkBatch')
+
+	def set_MarkBatch(self,MarkBatch):
+		self.add_query_param('MarkBatch',MarkBatch)

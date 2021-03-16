@@ -79,10 +79,10 @@ class DescribeAlarmEventListRequest(RpcRequest):
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
 
-	def get__From(self):
+	def get_From(self):
 		return self.get_query_params().get('From')
 
-	def set__From(self,_From):
+	def set_From(self,_From):
 		self.add_query_param('From',_From)
 
 	def get_Lang(self):

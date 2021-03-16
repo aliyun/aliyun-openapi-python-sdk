@@ -31,35 +31,17 @@ class DescribeExposedInstanceListRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_ExposureType(self):
-		return self.get_query_params().get('ExposureType')
-
-	def set_ExposureType(self,ExposureType):
-		self.add_query_param('ExposureType',ExposureType)
-
 	def get_ExposurePort(self):
 		return self.get_query_params().get('ExposurePort')
 
 	def set_ExposurePort(self,ExposurePort):
 		self.add_query_param('ExposurePort',ExposurePort)
 
-	def get_Uuid(self):
-		return self.get_query_params().get('Uuid')
-
-	def set_Uuid(self,Uuid):
-		self.add_query_param('Uuid',Uuid)
-
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
 
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
-
-	def get__From(self):
-		return self.get_query_params().get('From')
-
-	def set__From(self,_From):
-		self.add_query_param('From',_From)
 
 	def get_VulStatus(self):
 		return self.get_query_params().get('VulStatus')

@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdksas.endpoint import endpoint_data
 
-class DescribeSuspEventQuaraFilesRequest(RpcRequest):
+class DescribeExposedStatisticsDetailRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeSuspEventQuaraFiles','sas')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeExposedStatisticsDetail','sas')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,38 +31,32 @@ class DescribeSuspEventQuaraFilesRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_StatisticsType(self):
+		return self.get_query_params().get('StatisticsType')
+
+	def set_StatisticsType(self,StatisticsType):
+		self.add_query_param('StatisticsType',StatisticsType)
+
+	def get_StatisticsTypeGatewayType(self):
+		return self.get_query_params().get('StatisticsTypeGatewayType')
+
+	def set_StatisticsTypeGatewayType(self,StatisticsTypeGatewayType):
+		self.add_query_param('StatisticsTypeGatewayType',StatisticsTypeGatewayType)
+
 	def get_CurrentPage(self):
 		return self.get_query_params().get('CurrentPage')
 
 	def set_CurrentPage(self,CurrentPage):
 		self.add_query_param('CurrentPage',CurrentPage)
 
-	def get_SourceIp(self):
-		return self.get_query_params().get('SourceIp')
+	def get_StatisticsTypeInstanceValue(self):
+		return self.get_query_params().get('StatisticsTypeInstanceValue')
 
-	def set_SourceIp(self,SourceIp):
-		self.add_query_param('SourceIp',SourceIp)
-
-	def get_QuaraTag(self):
-		return self.get_query_params().get('QuaraTag')
-
-	def set_QuaraTag(self,QuaraTag):
-		self.add_query_param('QuaraTag',QuaraTag)
+	def set_StatisticsTypeInstanceValue(self,StatisticsTypeInstanceValue):
+		self.add_query_param('StatisticsTypeInstanceValue',StatisticsTypeInstanceValue)
 
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
 
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
-
-	def get_From(self):
-		return self.get_query_params().get('From')
-
-	def set_From(self,_From):
-		self.add_query_param('From',_From)
-
-	def get_Status(self):
-		return self.get_query_params().get('Status')
-
-	def set_Status(self,Status):
-		self.add_query_param('Status',Status)
