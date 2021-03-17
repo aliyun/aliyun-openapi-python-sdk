@@ -37,6 +37,12 @@ class DescribeAvailableResourceRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_ProductType(self):
+		return self.get_query_params().get('ProductType')
+
+	def set_ProductType(self,ProductType):
+		self.add_query_param('ProductType',ProductType)
+
 	def get_ResourceGroupId(self):
 		return self.get_query_params().get('ResourceGroupId')
 

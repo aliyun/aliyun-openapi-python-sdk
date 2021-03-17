@@ -49,6 +49,12 @@ class EnableAdditionalBandwidthRequest(RpcRequest):
 	def set_SecurityToken(self,SecurityToken):
 		self.add_query_param('SecurityToken',SecurityToken)
 
+	def get_SourceBiz(self):
+		return self.get_query_params().get('SourceBiz')
+
+	def set_SourceBiz(self,SourceBiz):
+		self.add_query_param('SourceBiz',SourceBiz)
+
 	def get_NodeId(self):
 		return self.get_query_params().get('NodeId')
 
