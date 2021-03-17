@@ -31,6 +31,18 @@ class MakeSuperResolutionImageRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_UpscaleFactor(self):
+		return self.get_body_params().get('UpscaleFactor')
+
+	def set_UpscaleFactor(self,UpscaleFactor):
+		self.add_body_params('UpscaleFactor', UpscaleFactor)
+
+	def get_Mode(self):
+		return self.get_body_params().get('Mode')
+
+	def set_Mode(self,Mode):
+		self.add_body_params('Mode', Mode)
+
 	def get_Url(self):
 		return self.get_body_params().get('Url')
 
