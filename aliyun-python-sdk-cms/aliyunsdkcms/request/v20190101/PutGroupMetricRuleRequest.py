@@ -127,6 +127,12 @@ class PutGroupMetricRuleRequest(RpcRequest):
 	def set_EscalationsInfoTimes(self,EscalationsInfoTimes):
 		self.add_query_param('Escalations.Info.Times',EscalationsInfoTimes)
 
+	def get_ExtraDimensionJson(self):
+		return self.get_query_params().get('ExtraDimensionJson')
+
+	def set_ExtraDimensionJson(self,ExtraDimensionJson):
+		self.add_query_param('ExtraDimensionJson',ExtraDimensionJson)
+
 	def get_EscalationsCriticalTimes(self):
 		return self.get_query_params().get('Escalations.Critical.Times')
 
