@@ -1,3 +1,7 @@
+2021-03-18 Version: 2.5.26
+- Edit GetTrace api.
+- Edit GetMultipleTrace api.
+
 2021-03-01 Version: 2.5.25
 - Mod ListServerlessTopNApps.
 
