@@ -37,6 +37,18 @@ class ListTableLevelRequest(RpcRequest):
 	def set_LevelType(self,LevelType):
 		self.add_query_param('LevelType',LevelType)
 
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
+
+	def get_PageNum(self):
+		return self.get_query_params().get('PageNum')
+
+	def set_PageNum(self,PageNum):
+		self.add_query_param('PageNum',PageNum)
+
 	def get_ProjectId(self):
 		return self.get_query_params().get('ProjectId')
 

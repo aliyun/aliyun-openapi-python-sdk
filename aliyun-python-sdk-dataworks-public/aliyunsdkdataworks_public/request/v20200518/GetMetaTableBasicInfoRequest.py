@@ -37,6 +37,12 @@ class GetMetaTableBasicInfoRequest(RpcRequest):
 	def set_DataSourceType(self,DataSourceType):
 		self.add_query_param('DataSourceType',DataSourceType)
 
+	def get_Extension(self):
+		return self.get_query_params().get('Extension')
+
+	def set_Extension(self,Extension):
+		self.add_query_param('Extension',Extension)
+
 	def get_TableGuid(self):
 		return self.get_query_params().get('TableGuid')
 

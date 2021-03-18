@@ -56,12 +56,8 @@ class UpdateTableRequest(RpcRequest):
 				self.add_body_params('Columns.' + str(depth1 + 1) + '.ColumnNameCn', Columnss[depth1].get('ColumnNameCn'))
 			if Columnss[depth1].get('Length') is not None:
 				self.add_body_params('Columns.' + str(depth1 + 1) + '.Length', Columnss[depth1].get('Length'))
-			if Columnss[depth1].get('IsNullable') is not None:
-				self.add_body_params('Columns.' + str(depth1 + 1) + '.IsNullable', Columnss[depth1].get('IsNullable'))
 			if Columnss[depth1].get('Comment') is not None:
 				self.add_body_params('Columns.' + str(depth1 + 1) + '.Comment', Columnss[depth1].get('Comment'))
-			if Columnss[depth1].get('IsPrimaryKey') is not None:
-				self.add_body_params('Columns.' + str(depth1 + 1) + '.IsPrimaryKey', Columnss[depth1].get('IsPrimaryKey'))
 			if Columnss[depth1].get('ColumnName') is not None:
 				self.add_body_params('Columns.' + str(depth1 + 1) + '.ColumnName', Columnss[depth1].get('ColumnName'))
 			if Columnss[depth1].get('ColumnType') is not None:
@@ -119,17 +115,17 @@ class UpdateTableRequest(RpcRequest):
 	def set_EnvType(self,EnvType):
 		self.add_body_params('EnvType', EnvType)
 
-	def get_HasPart(self):
-		return self.get_query_params().get('HasPart')
-
-	def set_HasPart(self,HasPart):
-		self.add_query_param('HasPart',HasPart)
-
 	def get_Location(self):
 		return self.get_query_params().get('Location')
 
 	def set_Location(self,Location):
 		self.add_query_param('Location',Location)
+
+	def get_HasPart(self):
+		return self.get_query_params().get('HasPart')
+
+	def set_HasPart(self,HasPart):
+		self.add_query_param('HasPart',HasPart)
 
 	def get_TableName(self):
 		return self.get_query_params().get('TableName')
