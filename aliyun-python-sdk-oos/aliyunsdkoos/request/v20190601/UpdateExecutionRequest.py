@@ -23,7 +23,7 @@ from aliyunsdkoos.endpoint import endpoint_data
 class UpdateExecutionRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'oos', '2019-06-01', 'UpdateExecution','oos')
+		RpcRequest.__init__(self, 'oos', '2019-06-01', 'UpdateExecution')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())

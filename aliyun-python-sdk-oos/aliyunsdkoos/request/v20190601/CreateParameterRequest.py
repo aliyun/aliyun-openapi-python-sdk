@@ -23,7 +23,7 @@ from aliyunsdkoos.endpoint import endpoint_data
 class CreateParameterRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'oos', '2019-06-01', 'CreateParameter','oos')
+		RpcRequest.__init__(self, 'oos', '2019-06-01', 'CreateParameter')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -54,6 +54,12 @@ class CreateParameterRequest(RpcRequest):
 
 	def set_Constraints(self,Constraints):
 		self.add_query_param('Constraints',Constraints)
+
+	def get_Tags(self):
+		return self.get_query_params().get('Tags')
+
+	def set_Tags(self,Tags):
+		self.add_query_param('Tags',Tags)
 
 	def get_Name(self):
 		return self.get_query_params().get('Name')

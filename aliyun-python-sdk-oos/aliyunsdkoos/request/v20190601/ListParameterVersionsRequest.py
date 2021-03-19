@@ -23,7 +23,7 @@ from aliyunsdkoos.endpoint import endpoint_data
 class ListParameterVersionsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'oos', '2019-06-01', 'ListParameterVersions','oos')
+		RpcRequest.__init__(self, 'oos', '2019-06-01', 'ListParameterVersions')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())

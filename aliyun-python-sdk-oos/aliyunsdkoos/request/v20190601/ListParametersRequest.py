@@ -23,7 +23,7 @@ from aliyunsdkoos.endpoint import endpoint_data
 class ListParametersRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'oos', '2019-06-01', 'ListParameters','oos')
+		RpcRequest.__init__(self, 'oos', '2019-06-01', 'ListParameters')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -55,6 +55,18 @@ class ListParametersRequest(RpcRequest):
 	def set_NextToken(self,NextToken):
 		self.add_query_param('NextToken',NextToken)
 
+	def get_SortOrder(self):
+		return self.get_query_params().get('SortOrder')
+
+	def set_SortOrder(self,SortOrder):
+		self.add_query_param('SortOrder',SortOrder)
+
+	def get_Tags(self):
+		return self.get_query_params().get('Tags')
+
+	def set_Tags(self,Tags):
+		self.add_query_param('Tags',Tags)
+
 	def get_Name(self):
 		return self.get_query_params().get('Name')
 
@@ -66,12 +78,6 @@ class ListParametersRequest(RpcRequest):
 
 	def set_MaxResults(self,MaxResults):
 		self.add_query_param('MaxResults',MaxResults)
-
-	def get_SortOrder(self):
-		return self.get_query_params().get('SortOrder')
-
-	def set_SortOrder(self,SortOrder):
-		self.add_query_param('SortOrder',SortOrder)
 
 	def get_SortField(self):
 		return self.get_query_params().get('SortField')

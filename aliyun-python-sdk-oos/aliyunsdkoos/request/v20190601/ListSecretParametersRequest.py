@@ -23,7 +23,7 @@ from aliyunsdkoos.endpoint import endpoint_data
 class ListSecretParametersRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'oos', '2019-06-01', 'ListSecretParameters','oos')
+		RpcRequest.__init__(self, 'oos', '2019-06-01', 'ListSecretParameters')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -36,6 +36,12 @@ class ListSecretParametersRequest(RpcRequest):
 
 	def set_Recursive(self,Recursive):
 		self.add_query_param('Recursive',Recursive)
+
+	def get_Tags(self):
+		return self.get_query_params().get('Tags')
+
+	def set_Tags(self,Tags):
+		self.add_query_param('Tags',Tags)
 
 	def get_Path(self):
 		return self.get_query_params().get('Path')
