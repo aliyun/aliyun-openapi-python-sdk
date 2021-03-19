@@ -31,11 +31,17 @@ class ListDashboardsRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_ClusterType(self):
-		return self.get_query_params().get('ClusterType')
+	def get_Product(self):
+		return self.get_query_params().get('Product')
 
-	def set_ClusterType(self,ClusterType):
-		self.add_query_param('ClusterType',ClusterType)
+	def set_Product(self,Product):
+		self.add_query_param('Product',Product)
+
+	def get_RecreateSwitch(self):
+		return self.get_query_params().get('RecreateSwitch')
+
+	def set_RecreateSwitch(self,RecreateSwitch):
+		self.add_query_param('RecreateSwitch',RecreateSwitch)
 
 	def get_ClusterId(self):
 		return self.get_query_params().get('ClusterId')
@@ -48,3 +54,9 @@ class ListDashboardsRequest(RpcRequest):
 
 	def set_Title(self,Title):
 		self.add_query_param('Title',Title)
+
+	def get_ClusterType(self):
+		return self.get_query_params().get('ClusterType')
+
+	def set_ClusterType(self,ClusterType):
+		self.add_query_param('ClusterType',ClusterType)

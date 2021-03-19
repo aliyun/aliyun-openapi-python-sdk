@@ -37,6 +37,18 @@ class OpenVClusterRequest(RpcRequest):
 	def set_ClusterType(self,ClusterType):
 		self.add_query_param('ClusterType',ClusterType)
 
+	def get_Product(self):
+		return self.get_query_params().get('Product')
+
+	def set_Product(self,Product):
+		self.add_query_param('Product',Product)
+
+	def get_RecreateSwitch(self):
+		return self.get_query_params().get('RecreateSwitch')
+
+	def set_RecreateSwitch(self,RecreateSwitch):
+		self.add_query_param('RecreateSwitch',RecreateSwitch)
+
 	def get_Length(self):
 		return self.get_query_params().get('Length')
 
