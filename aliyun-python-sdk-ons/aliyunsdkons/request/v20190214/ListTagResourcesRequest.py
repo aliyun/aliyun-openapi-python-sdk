@@ -23,7 +23,7 @@ from aliyunsdkons.endpoint import endpoint_data
 class ListTagResourcesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ons', '2019-02-14', 'ListTagResources')
+		RpcRequest.__init__(self, 'Ons', '2019-02-14', 'ListTagResources','ons')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
