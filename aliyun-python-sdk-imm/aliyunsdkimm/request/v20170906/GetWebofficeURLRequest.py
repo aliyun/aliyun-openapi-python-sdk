@@ -49,6 +49,12 @@ class GetWebofficeURLRequest(RpcRequest):
 	def set_File(self,File):
 		self.add_query_param('File',File)
 
+	def get_Hidecmb(self):
+		return self.get_query_params().get('Hidecmb')
+
+	def set_Hidecmb(self,Hidecmb):
+		self.add_query_param('Hidecmb',Hidecmb)
+
 	def get_NotifyEndpoint(self):
 		return self.get_query_params().get('NotifyEndpoint')
 
@@ -60,6 +66,12 @@ class GetWebofficeURLRequest(RpcRequest):
 
 	def set_FileID(self,FileID):
 		self.add_query_param('FileID',FileID)
+
+	def get_Watermark(self):
+		return self.get_query_params().get('Watermark')
+
+	def set_Watermark(self,Watermark):
+		self.add_query_param('Watermark',Watermark)
 
 	def get_NotifyTopicName(self):
 		return self.get_query_params().get('NotifyTopicName')
