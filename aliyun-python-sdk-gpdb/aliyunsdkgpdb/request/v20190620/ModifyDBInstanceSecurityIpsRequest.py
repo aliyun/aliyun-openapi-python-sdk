@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkgpdb.endpoint import endpoint_data
 
-class ReleaseInstancePublicConnectionRequest(RpcRequest):
+class ModifyDBInstanceSecurityIpsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'gpdb', '2016-05-03', 'ReleaseInstancePublicConnection','gpdb')
+		RpcRequest.__init__(self, 'gpdb', '2019-06-20', 'ModifyDBInstanceSecurityIps','gpdb')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,20 +31,26 @@ class ReleaseInstancePublicConnectionRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_AddressType(self):
-		return self.get_query_params().get('AddressType')
+	def get_InstanceId(self):
+		return self.get_query_params().get('InstanceId')
 
-	def set_AddressType(self,AddressType):
-		self.add_query_param('AddressType',AddressType)
+	def set_InstanceId(self,InstanceId):
+		self.add_query_param('InstanceId',InstanceId)
 
-	def get_DBInstanceId(self):
-		return self.get_query_params().get('DBInstanceId')
+	def get_WhileList(self):
+		return self.get_query_params().get('WhileList')
 
-	def set_DBInstanceId(self,DBInstanceId):
-		self.add_query_param('DBInstanceId',DBInstanceId)
+	def set_WhileList(self,WhileList):
+		self.add_query_param('WhileList',WhileList)
 
-	def get_CurrentConnectionString(self):
-		return self.get_query_params().get('CurrentConnectionString')
+	def get_AliUid(self):
+		return self.get_query_params().get('AliUid')
 
-	def set_CurrentConnectionString(self,CurrentConnectionString):
-		self.add_query_param('CurrentConnectionString',CurrentConnectionString)
+	def set_AliUid(self,AliUid):
+		self.add_query_param('AliUid',AliUid)
+
+	def get_GroupName(self):
+		return self.get_query_params().get('GroupName')
+
+	def set_GroupName(self,GroupName):
+		self.add_query_param('GroupName',GroupName)

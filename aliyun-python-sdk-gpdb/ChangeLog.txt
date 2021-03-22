@@ -1,3 +1,6 @@
+2021-03-22 Version: 1.0.6
+- Add update config and modify ssl sdk.
+
 2020-12-18 Version: 1.0.5
 - Support encryption cloud disk sdk.
 

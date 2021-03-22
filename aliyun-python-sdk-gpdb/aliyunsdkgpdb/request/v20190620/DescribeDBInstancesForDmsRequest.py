@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkgpdb.endpoint import endpoint_data
 
-class ReleaseInstancePublicConnectionRequest(RpcRequest):
+class DescribeDBInstancesForDmsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'gpdb', '2016-05-03', 'ReleaseInstancePublicConnection','gpdb')
+		RpcRequest.__init__(self, 'gpdb', '2019-06-20', 'DescribeDBInstancesForDms','gpdb')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,20 +31,8 @@ class ReleaseInstancePublicConnectionRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_AddressType(self):
-		return self.get_query_params().get('AddressType')
+	def get_AliUid(self):
+		return self.get_query_params().get('AliUid')
 
-	def set_AddressType(self,AddressType):
-		self.add_query_param('AddressType',AddressType)
-
-	def get_DBInstanceId(self):
-		return self.get_query_params().get('DBInstanceId')
-
-	def set_DBInstanceId(self,DBInstanceId):
-		self.add_query_param('DBInstanceId',DBInstanceId)
-
-	def get_CurrentConnectionString(self):
-		return self.get_query_params().get('CurrentConnectionString')
-
-	def set_CurrentConnectionString(self,CurrentConnectionString):
-		self.add_query_param('CurrentConnectionString',CurrentConnectionString)
+	def set_AliUid(self,AliUid):
+		self.add_query_param('AliUid',AliUid)

@@ -43,6 +43,12 @@ class AllocateInstancePublicConnectionRequest(RpcRequest):
 	def set_ConnectionStringPrefix(self,ConnectionStringPrefix):
 		self.add_query_param('ConnectionStringPrefix',ConnectionStringPrefix)
 
+	def get_AddressType(self):
+		return self.get_query_params().get('AddressType')
+
+	def set_AddressType(self,AddressType):
+		self.add_query_param('AddressType',AddressType)
+
 	def get_DBInstanceId(self):
 		return self.get_query_params().get('DBInstanceId')
 

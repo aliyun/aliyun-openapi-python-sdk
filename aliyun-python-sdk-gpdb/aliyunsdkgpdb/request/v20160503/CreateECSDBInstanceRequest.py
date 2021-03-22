@@ -55,6 +55,12 @@ class CreateECSDBInstanceRequest(RpcRequest):
 	def set_SegStorageType(self,SegStorageType):
 		self.add_query_param('SegStorageType',SegStorageType)
 
+	def get_MasterNodeNum(self):
+		return self.get_query_params().get('MasterNodeNum')
+
+	def set_MasterNodeNum(self,MasterNodeNum):
+		self.add_query_param('MasterNodeNum',MasterNodeNum)
+
 	def get_EngineVersion(self):
 		return self.get_query_params().get('EngineVersion')
 
