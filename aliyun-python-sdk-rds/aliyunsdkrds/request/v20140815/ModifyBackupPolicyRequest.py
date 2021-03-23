@@ -157,6 +157,12 @@ class ModifyBackupPolicyRequest(RpcRequest):
 	def set_BackupRetentionPeriod(self,BackupRetentionPeriod):
 		self.add_query_param('BackupRetentionPeriod',BackupRetentionPeriod)
 
+	def get_BackupMethod(self):
+		return self.get_query_params().get('BackupMethod')
+
+	def set_BackupMethod(self,BackupMethod):
+		self.add_query_param('BackupMethod',BackupMethod)
+
 	def get_ArchiveBackupRetentionPeriod(self):
 		return self.get_query_params().get('ArchiveBackupRetentionPeriod')
 
