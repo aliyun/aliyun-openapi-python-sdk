@@ -10,6 +10,7 @@ from aliyunsdkcore.http.protocol_type import HTTPS
 
 from aliyunsdkcore.client import AcsClient
 from aliyunsdkcore.request import CommonRequest
+from aliyunsdkcore.acs_exception.exceptions import ClientException
 
 
 class TestHttpResponse(unittest.TestCase):
@@ -32,6 +33,20 @@ class TestHttpResponse(unittest.TestCase):
     def init_client():
         return AcsClient("access_key_id", "access_key_secret",
                          timeout=120, port=51352)
+
+    def test_proxy(self):
+        os.environ.setdefault('HTTPS_PROXY', '127.0.0.1')
+        os.environ.setdefault('HTTP_PROXY', '127.0.0.1')
+        client = self.init_client()
+        request = CommonRequest(
+            domain="ecs.aliyuncs.com",
+            version="2014-05-26",
+            action_name="DescribeRegions")
+        try:
+            self.do_request(client, request)
+            assert False
+        except Exception as e:
+            self.assertIsInstance(e, ClientException)
 
     def test_http_debug(self):
         os.environ.setdefault('DEBUG', 'SDK')

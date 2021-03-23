@@ -123,10 +123,11 @@ class HttpResponse(HttpRequest):
             proxy_http = os.environ.get(
                 'HTTP_PROXY') or os.environ.get('http_proxy')
 
-            proxies = {
-                "http": proxy_http,
-                "https": proxy_https,
-            }
+            proxies = {}
+            if proxy_http:
+                proxies['http'] = proxy_http
+            if proxy_https:
+                proxies['https'] = proxy_https
 
             response = s.send(prepped, proxies=proxies,
                               timeout=(self.__connect_timeout, self.__read_timeout),
