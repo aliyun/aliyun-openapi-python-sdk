@@ -31,6 +31,12 @@ class ListRecentCallDetailRecordsRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_Criteria(self):
+		return self.get_query_params().get('Criteria')
+
+	def set_Criteria(self,Criteria):
+		self.add_query_param('Criteria',Criteria)
+
 	def get_EndTime(self):
 		return self.get_query_params().get('EndTime')
 
