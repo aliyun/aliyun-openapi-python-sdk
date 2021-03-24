@@ -18,18 +18,12 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-from aliyunsdksas.endpoint import endpoint_data
 
 class DescribeAccesskeyLeakListRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeAccesskeyLeakList','sas')
 		self.set_method('POST')
-		if hasattr(self, "endpoint_map"):
-			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
-		if hasattr(self, "endpoint_regional"):
-			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
-
 
 	def get_Query(self):
 		return self.get_query_params().get('Query')
@@ -48,12 +42,6 @@ class DescribeAccesskeyLeakListRequest(RpcRequest):
 
 	def set_CurrentPage(self,CurrentPage):
 		self.add_query_param('CurrentPage',CurrentPage)
-
-	def get_SourceIp(self):
-		return self.get_query_params().get('SourceIp')
-
-	def set_SourceIp(self,SourceIp):
-		self.add_query_param('SourceIp',SourceIp)
 
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
