@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkbssopenapi.endpoint import endpoint_data
 
-class QuerySettleBillRequest(RpcRequest):
+class DescribeInstanceBillRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'QuerySettleBill')
+		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'DescribeInstanceBill')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -43,35 +43,11 @@ class QuerySettleBillRequest(RpcRequest):
 	def set_IsHideZeroCharge(self,IsHideZeroCharge):
 		self.add_query_param('IsHideZeroCharge',IsHideZeroCharge)
 
-	def get_IsDisplayLocalCurrency(self):
-		return self.get_query_params().get('IsDisplayLocalCurrency')
-
-	def set_IsDisplayLocalCurrency(self,IsDisplayLocalCurrency):
-		self.add_query_param('IsDisplayLocalCurrency',IsDisplayLocalCurrency)
-
 	def get_SubscriptionType(self):
 		return self.get_query_params().get('SubscriptionType')
 
 	def set_SubscriptionType(self,SubscriptionType):
 		self.add_query_param('SubscriptionType',SubscriptionType)
-
-	def get_BillingCycle(self):
-		return self.get_query_params().get('BillingCycle')
-
-	def set_BillingCycle(self,BillingCycle):
-		self.add_query_param('BillingCycle',BillingCycle)
-
-	def get_Type(self):
-		return self.get_query_params().get('Type')
-
-	def set_Type(self,Type):
-		self.add_query_param('Type',Type)
-
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
 
 	def get_BillOwnerId(self):
 		return self.get_query_params().get('BillOwnerId')
@@ -85,17 +61,47 @@ class QuerySettleBillRequest(RpcRequest):
 	def set_ProductType(self,ProductType):
 		self.add_query_param('ProductType',ProductType)
 
-	def get_RecordID(self):
-		return self.get_query_params().get('RecordID')
-
-	def set_RecordID(self,RecordID):
-		self.add_query_param('RecordID',RecordID)
-
 	def get_NextToken(self):
 		return self.get_query_params().get('NextToken')
 
 	def set_NextToken(self,NextToken):
 		self.add_query_param('NextToken',NextToken)
+
+	def get_BillingCycle(self):
+		return self.get_query_params().get('BillingCycle')
+
+	def set_BillingCycle(self,BillingCycle):
+		self.add_query_param('BillingCycle',BillingCycle)
+
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
+
+	def get_BillingDate(self):
+		return self.get_query_params().get('BillingDate')
+
+	def set_BillingDate(self,BillingDate):
+		self.add_query_param('BillingDate',BillingDate)
+
+	def get_IsBillingItem(self):
+		return self.get_query_params().get('IsBillingItem')
+
+	def set_IsBillingItem(self,IsBillingItem):
+		self.add_query_param('IsBillingItem',IsBillingItem)
+
+	def get_InstanceID(self):
+		return self.get_query_params().get('InstanceID')
+
+	def set_InstanceID(self,InstanceID):
+		self.add_query_param('InstanceID',InstanceID)
+
+	def get_Granularity(self):
+		return self.get_query_params().get('Granularity')
+
+	def set_Granularity(self,Granularity):
+		self.add_query_param('Granularity',Granularity)
 
 	def get_MaxResults(self):
 		return self.get_query_params().get('MaxResults')

@@ -61,12 +61,6 @@ class QuerySavingsPlansInstanceRequest(RpcRequest):
 	def set_InstanceId(self,InstanceId):
 		self.add_query_param('InstanceId',InstanceId)
 
-	def get_RequestId(self):
-		return self.get_query_params().get('RequestId')
-
-	def set_RequestId(self,RequestId):
-		self.add_query_param('RequestId',RequestId)
-
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
 

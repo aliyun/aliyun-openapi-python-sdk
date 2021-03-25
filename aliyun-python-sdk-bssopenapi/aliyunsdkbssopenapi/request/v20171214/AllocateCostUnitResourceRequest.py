@@ -31,10 +31,10 @@ class AllocateCostUnitResourceRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_ResourceInstanceList(self):
+	def get_ResourceInstanceLists(self):
 		return self.get_query_params().get('ResourceInstanceList')
 
-	def set_ResourceInstanceList(self, ResourceInstanceLists):
+	def set_ResourceInstanceLists(self, ResourceInstanceLists):
 		for depth1 in range(len(ResourceInstanceLists)):
 			if ResourceInstanceLists[depth1].get('ResourceId') is not None:
 				self.add_query_param('ResourceInstanceList.' + str(depth1 + 1) + '.ResourceId', ResourceInstanceLists[depth1].get('ResourceId'))

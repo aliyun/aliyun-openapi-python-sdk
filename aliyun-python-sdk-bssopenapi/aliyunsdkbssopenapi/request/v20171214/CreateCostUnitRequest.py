@@ -31,10 +31,10 @@ class CreateCostUnitRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_UnitEntityList(self):
+	def get_UnitEntityLists(self):
 		return self.get_query_params().get('UnitEntityList')
 
-	def set_UnitEntityList(self, UnitEntityLists):
+	def set_UnitEntityLists(self, UnitEntityLists):
 		for depth1 in range(len(UnitEntityLists)):
 			if UnitEntityLists[depth1].get('UnitName') is not None:
 				self.add_query_param('UnitEntityList.' + str(depth1 + 1) + '.UnitName', UnitEntityLists[depth1].get('UnitName'))

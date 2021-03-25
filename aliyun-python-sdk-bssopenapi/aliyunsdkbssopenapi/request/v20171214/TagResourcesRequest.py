@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkbssopenapi.endpoint import endpoint_data
 
-class ModifyCostUnitRequest(RpcRequest):
+class TagResourcesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'ModifyCostUnit')
+		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'TagResources')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,14 +31,26 @@ class ModifyCostUnitRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_UnitEntityLists(self):
-		return self.get_query_params().get('UnitEntityList')
+	def get_ResourceIds(self):
+		return self.get_query_params().get('ResourceId')
 
-	def set_UnitEntityLists(self, UnitEntityLists):
-		for depth1 in range(len(UnitEntityLists)):
-			if UnitEntityLists[depth1].get('NewUnitName') is not None:
-				self.add_query_param('UnitEntityList.' + str(depth1 + 1) + '.NewUnitName', UnitEntityLists[depth1].get('NewUnitName'))
-			if UnitEntityLists[depth1].get('UnitId') is not None:
-				self.add_query_param('UnitEntityList.' + str(depth1 + 1) + '.UnitId', UnitEntityLists[depth1].get('UnitId'))
-			if UnitEntityLists[depth1].get('OwnerUid') is not None:
-				self.add_query_param('UnitEntityList.' + str(depth1 + 1) + '.OwnerUid', UnitEntityLists[depth1].get('OwnerUid'))
+	def set_ResourceIds(self, ResourceIds):
+		for depth1 in range(len(ResourceIds)):
+			if ResourceIds[depth1] is not None:
+				self.add_query_param('ResourceId.' + str(depth1 + 1) , ResourceIds[depth1])
+
+	def get_Tags(self):
+		return self.get_query_params().get('Tag')
+
+	def set_Tags(self, Tags):
+		for depth1 in range(len(Tags)):
+			if Tags[depth1].get('Value') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tags[depth1].get('Value'))
+			if Tags[depth1].get('Key') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tags[depth1].get('Key'))
+
+	def get_ResourceType(self):
+		return self.get_query_params().get('ResourceType')
+
+	def set_ResourceType(self,ResourceType):
+		self.add_query_param('ResourceType',ResourceType)

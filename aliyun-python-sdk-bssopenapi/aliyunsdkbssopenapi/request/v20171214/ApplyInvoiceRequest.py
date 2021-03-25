@@ -79,10 +79,10 @@ class ApplyInvoiceRequest(RpcRequest):
 	def set_CustomerId(self,CustomerId):
 		self.add_query_param('CustomerId',CustomerId)
 
-	def get_SelectedIds(self):
+	def get_SelectedIdss(self):
 		return self.get_query_params().get('SelectedIds')
 
-	def set_SelectedIds(self, SelectedIdss):
+	def set_SelectedIdss(self, SelectedIdss):
 		for depth1 in range(len(SelectedIdss)):
 			if SelectedIdss[depth1] is not None:
 				self.add_query_param('SelectedIds.' + str(depth1 + 1) , SelectedIdss[depth1])

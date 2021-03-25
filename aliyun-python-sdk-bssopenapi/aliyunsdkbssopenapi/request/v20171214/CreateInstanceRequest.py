@@ -55,6 +55,12 @@ class CreateInstanceRequest(RpcRequest):
 	def set_SubscriptionType(self,SubscriptionType):
 		self.add_query_param('SubscriptionType',SubscriptionType)
 
+	def get_Logistics(self):
+		return self.get_query_params().get('Logistics')
+
+	def set_Logistics(self,Logistics):
+		self.add_query_param('Logistics',Logistics)
+
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
@@ -73,10 +79,10 @@ class CreateInstanceRequest(RpcRequest):
 	def set_RenewPeriod(self,RenewPeriod):
 		self.add_query_param('RenewPeriod',RenewPeriod)
 
-	def get_Parameter(self):
+	def get_Parameters(self):
 		return self.get_query_params().get('Parameter')
 
-	def set_Parameter(self, Parameters):
+	def set_Parameters(self, Parameters):
 		for depth1 in range(len(Parameters)):
 			if Parameters[depth1].get('Code') is not None:
 				self.add_query_param('Parameter.' + str(depth1 + 1) + '.Code', Parameters[depth1].get('Code'))

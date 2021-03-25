@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkbssopenapi.endpoint import endpoint_data
 
-class ModifyInstanceRequest(RpcRequest):
+class DescribeSplitItemBillRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'ModifyInstance')
+		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'DescribeSplitItemBill')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,17 +31,17 @@ class ModifyInstanceRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_SplitItemID(self):
+		return self.get_query_params().get('SplitItemID')
+
+	def set_SplitItemID(self,SplitItemID):
+		self.add_query_param('SplitItemID',SplitItemID)
+
 	def get_ProductCode(self):
 		return self.get_query_params().get('ProductCode')
 
 	def set_ProductCode(self,ProductCode):
 		self.add_query_param('ProductCode',ProductCode)
-
-	def get_ClientToken(self):
-		return self.get_query_params().get('ClientToken')
-
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
 
 	def get_SubscriptionType(self):
 		return self.get_query_params().get('SubscriptionType')
@@ -49,11 +49,35 @@ class ModifyInstanceRequest(RpcRequest):
 	def set_SubscriptionType(self,SubscriptionType):
 		self.add_query_param('SubscriptionType',SubscriptionType)
 
+	def get_BillingCycle(self):
+		return self.get_query_params().get('BillingCycle')
+
+	def set_BillingCycle(self,BillingCycle):
+		self.add_query_param('BillingCycle',BillingCycle)
+
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_BillOwnerId(self):
+		return self.get_query_params().get('BillOwnerId')
+
+	def set_BillOwnerId(self,BillOwnerId):
+		self.add_query_param('BillOwnerId',BillOwnerId)
+
+	def get_TagFilters(self):
+		return self.get_query_params().get('TagFilter')
+
+	def set_TagFilters(self, TagFilters):
+		for depth1 in range(len(TagFilters)):
+			if TagFilters[depth1].get('TagValues') is not None:
+				for depth2 in range(len(TagFilters[depth1].get('TagValues'))):
+					if TagFilters[depth1].get('TagValues')[depth2] is not None:
+						self.add_query_param('TagFilter.' + str(depth1 + 1) + '.TagValues.' + str(depth2 + 1) , TagFilters[depth1].get('TagValues')[depth2])
+			if TagFilters[depth1].get('TagKey') is not None:
+				self.add_query_param('TagFilter.' + str(depth1 + 1) + '.TagKey', TagFilters[depth1].get('TagKey'))
 
 	def get_ProductType(self):
 		return self.get_query_params().get('ProductType')
@@ -61,24 +85,20 @@ class ModifyInstanceRequest(RpcRequest):
 	def set_ProductType(self,ProductType):
 		self.add_query_param('ProductType',ProductType)
 
-	def get_InstanceId(self):
-		return self.get_query_params().get('InstanceId')
+	def get_InstanceID(self):
+		return self.get_query_params().get('InstanceID')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
+	def set_InstanceID(self,InstanceID):
+		self.add_query_param('InstanceID',InstanceID)
 
-	def get_ModifyType(self):
-		return self.get_query_params().get('ModifyType')
+	def get_NextToken(self):
+		return self.get_query_params().get('NextToken')
 
-	def set_ModifyType(self,ModifyType):
-		self.add_query_param('ModifyType',ModifyType)
+	def set_NextToken(self,NextToken):
+		self.add_query_param('NextToken',NextToken)
 
-	def get_Parameters(self):
-		return self.get_query_params().get('Parameter')
+	def get_MaxResults(self):
+		return self.get_query_params().get('MaxResults')
 
-	def set_Parameters(self, Parameters):
-		for depth1 in range(len(Parameters)):
-			if Parameters[depth1].get('Code') is not None:
-				self.add_query_param('Parameter.' + str(depth1 + 1) + '.Code', Parameters[depth1].get('Code'))
-			if Parameters[depth1].get('Value') is not None:
-				self.add_query_param('Parameter.' + str(depth1 + 1) + '.Value', Parameters[depth1].get('Value'))
+	def set_MaxResults(self,MaxResults):
+		self.add_query_param('MaxResults',MaxResults)

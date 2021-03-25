@@ -79,10 +79,10 @@ class QueryEvaluateListRequest(RpcRequest):
 	def set_BillCycle(self,BillCycle):
 		self.add_query_param('BillCycle',BillCycle)
 
-	def get_BizTypeList(self):
+	def get_BizTypeLists(self):
 		return self.get_query_params().get('BizTypeList')
 
-	def set_BizTypeList(self, BizTypeLists):
+	def set_BizTypeLists(self, BizTypeLists):
 		for depth1 in range(len(BizTypeLists)):
 			if BizTypeLists[depth1] is not None:
 				self.add_query_param('BizTypeList.' + str(depth1 + 1) , BizTypeLists[depth1])
