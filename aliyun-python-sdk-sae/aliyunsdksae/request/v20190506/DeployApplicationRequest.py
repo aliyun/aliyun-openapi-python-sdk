@@ -33,10 +33,10 @@ class DeployApplicationRequest(RoaRequest):
 
 
 	def get_NasId(self):
-		return self.get_path_params().get('NasId')
+		return self.get_query_params().get('NasId')
 
 	def set_NasId(self,NasId):
-		self.add_path_param('NasId',NasId)
+		self.add_query_param('NasId',NasId)
 
 	def get_WebContainer(self):
 		return self.get_query_params().get('WebContainer')
@@ -68,6 +68,12 @@ class DeployApplicationRequest(RoaRequest):
 	def set_CommandArgs(self,CommandArgs):
 		self.add_query_param('CommandArgs',CommandArgs)
 
+	def get_AcrAssumeRoleArn(self):
+		return self.get_query_params().get('AcrAssumeRoleArn')
+
+	def set_AcrAssumeRoleArn(self,AcrAssumeRoleArn):
+		self.add_query_param('AcrAssumeRoleArn',AcrAssumeRoleArn)
+
 	def get_Readiness(self):
 		return self.get_query_params().get('Readiness')
 
@@ -81,10 +87,10 @@ class DeployApplicationRequest(RoaRequest):
 		self.add_query_param('Timezone',Timezone)
 
 	def get_MountHost(self):
-		return self.get_path_params().get('MountHost')
+		return self.get_query_params().get('MountHost')
 
 	def set_MountHost(self,MountHost):
-		self.add_path_param('MountHost',MountHost)
+		self.add_query_param('MountHost',MountHost)
 
 	def get_BatchWaitTime(self):
 		return self.get_query_params().get('BatchWaitTime')
@@ -189,10 +195,10 @@ class DeployApplicationRequest(RoaRequest):
 		self.add_query_param('UpdateStrategy',UpdateStrategy)
 
 	def get_MountDesc(self):
-		return self.get_path_params().get('MountDesc')
+		return self.get_query_params().get('MountDesc')
 
 	def set_MountDesc(self,MountDesc):
-		self.add_path_param('MountDesc',MountDesc)
+		self.add_query_param('MountDesc',MountDesc)
 
 	def get_Jdk(self):
 		return self.get_query_params().get('Jdk')
@@ -223,6 +229,12 @@ class DeployApplicationRequest(RoaRequest):
 
 	def set_ImageUrl(self,ImageUrl):
 		self.add_query_param('ImageUrl',ImageUrl)
+
+	def get_AutoEnableApplicationScalingRule(self):
+		return self.get_query_params().get('AutoEnableApplicationScalingRule')
+
+	def set_AutoEnableApplicationScalingRule(self,AutoEnableApplicationScalingRule):
+		self.add_query_param('AutoEnableApplicationScalingRule',AutoEnableApplicationScalingRule)
 
 	def get_PhpConfigLocation(self):
 		return self.get_query_params().get('PhpConfigLocation')

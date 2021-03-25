@@ -20,29 +20,29 @@
 from aliyunsdkcore.request import RoaRequest
 from aliyunsdksae.endpoint import endpoint_data
 
-class RollbackApplicationRequest(RoaRequest):
+class CreateApplicationScalingRuleRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'sae', '2019-05-06', 'RollbackApplication','serverless')
-		self.set_uri_pattern('/pop/v1/sam/app/rollbackApplication')
-		self.set_method('PUT')
+		RoaRequest.__init__(self, 'sae', '2019-05-06', 'CreateApplicationScalingRule','serverless')
+		self.set_uri_pattern('/pop/v1/sam/scale/applicationScalingRule')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_MinReadyInstances(self):
-		return self.get_query_params().get('MinReadyInstances')
+	def get_ScalingRuleName(self):
+		return self.get_query_params().get('ScalingRuleName')
 
-	def set_MinReadyInstances(self,MinReadyInstances):
-		self.add_query_param('MinReadyInstances',MinReadyInstances)
+	def set_ScalingRuleName(self,ScalingRuleName):
+		self.add_query_param('ScalingRuleName',ScalingRuleName)
 
-	def get_VersionId(self):
-		return self.get_query_params().get('VersionId')
+	def get_ScalingRuleTimer(self):
+		return self.get_query_params().get('ScalingRuleTimer')
 
-	def set_VersionId(self,VersionId):
-		self.add_query_param('VersionId',VersionId)
+	def set_ScalingRuleTimer(self,ScalingRuleTimer):
+		self.add_query_param('ScalingRuleTimer',ScalingRuleTimer)
 
 	def get_AppId(self):
 		return self.get_query_params().get('AppId')
@@ -50,20 +50,8 @@ class RollbackApplicationRequest(RoaRequest):
 	def set_AppId(self,AppId):
 		self.add_query_param('AppId',AppId)
 
-	def get_BatchWaitTime(self):
-		return self.get_query_params().get('BatchWaitTime')
+	def get_ScalingRuleType(self):
+		return self.get_query_params().get('ScalingRuleType')
 
-	def set_BatchWaitTime(self,BatchWaitTime):
-		self.add_query_param('BatchWaitTime',BatchWaitTime)
-
-	def get_AutoEnableApplicationScalingRule(self):
-		return self.get_query_params().get('AutoEnableApplicationScalingRule')
-
-	def set_AutoEnableApplicationScalingRule(self,AutoEnableApplicationScalingRule):
-		self.add_query_param('AutoEnableApplicationScalingRule',AutoEnableApplicationScalingRule)
-
-	def get_UpdateStrategy(self):
-		return self.get_query_params().get('UpdateStrategy')
-
-	def set_UpdateStrategy(self,UpdateStrategy):
-		self.add_query_param('UpdateStrategy',UpdateStrategy)
+	def set_ScalingRuleType(self,ScalingRuleType):
+		self.add_query_param('ScalingRuleType',ScalingRuleType)

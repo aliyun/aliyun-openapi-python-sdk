@@ -68,6 +68,12 @@ class CreateApplicationRequest(RoaRequest):
 	def set_CommandArgs(self,CommandArgs):
 		self.add_query_param('CommandArgs',CommandArgs)
 
+	def get_AcrAssumeRoleArn(self):
+		return self.get_query_params().get('AcrAssumeRoleArn')
+
+	def set_AcrAssumeRoleArn(self,AcrAssumeRoleArn):
+		self.add_query_param('AcrAssumeRoleArn',AcrAssumeRoleArn)
+
 	def get_Readiness(self):
 		return self.get_query_params().get('Readiness')
 
