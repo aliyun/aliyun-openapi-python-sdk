@@ -137,6 +137,12 @@ class DescribeInstancesRequest(RpcRequest):
 	def set_GlobalInstance(self,GlobalInstance):
 		self.add_query_param('GlobalInstance',GlobalInstance)
 
+	def get_PrivateIp(self):
+		return self.get_query_params().get('PrivateIp')
+
+	def set_PrivateIp(self,PrivateIp):
+		self.add_query_param('PrivateIp',PrivateIp)
+
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 

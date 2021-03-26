@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkr_kvstore.endpoint import endpoint_data
 
-class AddShardingNodeRequest(RpcRequest):
+class RenewAdditionalBandwidthRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'R-kvstore', '2015-01-01', 'AddShardingNode','redisa')
+		RpcRequest.__init__(self, 'R-kvstore', '2015-01-01', 'RenewAdditionalBandwidth','redisa')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -55,17 +55,11 @@ class AddShardingNodeRequest(RpcRequest):
 	def set_SourceBiz(self,SourceBiz):
 		self.add_query_param('SourceBiz',SourceBiz)
 
-	def get_ShardCount(self):
-		return self.get_query_params().get('ShardCount')
+	def get_OrderTimeLength(self):
+		return self.get_query_params().get('OrderTimeLength')
 
-	def set_ShardCount(self,ShardCount):
-		self.add_query_param('ShardCount',ShardCount)
-
-	def get_BusinessInfo(self):
-		return self.get_query_params().get('BusinessInfo')
-
-	def set_BusinessInfo(self,BusinessInfo):
-		self.add_query_param('BusinessInfo',BusinessInfo)
+	def set_OrderTimeLength(self,OrderTimeLength):
+		self.add_query_param('OrderTimeLength',OrderTimeLength)
 
 	def get_AutoPay(self):
 		return self.get_query_params().get('AutoPay')
@@ -96,9 +90,3 @@ class AddShardingNodeRequest(RpcRequest):
 
 	def set_InstanceId(self,InstanceId):
 		self.add_query_param('InstanceId',InstanceId)
-
-	def get_ShardClass(self):
-		return self.get_query_params().get('ShardClass')
-
-	def set_ShardClass(self,ShardClass):
-		self.add_query_param('ShardClass',ShardClass)
