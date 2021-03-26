@@ -23,7 +23,7 @@ from aliyunsdkarms.endpoint import endpoint_data
 class GetMultipleTraceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ARMS', '2019-08-08', 'GetMultipleTrace','arms')
+		RpcRequest.__init__(self, 'ARMS', '2019-08-08', 'GetMultipleTrace')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
