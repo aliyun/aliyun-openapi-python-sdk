@@ -20,8 +20,7 @@
 import os
 import logging
 
-from aliyunsdkcore.vendored.requests import Request, Session
-from aliyunsdkcore.vendored.requests.packages import urllib3
+from aliyunsdkcore.vendored.requests import Session, Request
 from aliyunsdkcore.http.http_request import HttpRequest
 from aliyunsdkcore.http import protocol_type as PT
 
@@ -49,7 +48,9 @@ class HttpResponse(HttpRequest):
             cert_file=None,
             read_timeout=None,
             connect_timeout=None,
-            verify=None):
+            verify=None,
+            session=None
+    ):
         HttpRequest.__init__(
             self,
             host=host,
@@ -66,6 +67,9 @@ class HttpResponse(HttpRequest):
         self.__read_timeout = read_timeout
         self.__connect_timeout = connect_timeout
         self.__verify = verify
+        self.__session = session
+        if session is None:
+            self.__session = Session()
         self.set_body(content)
 
     def set_ssl_enable(self, enable):
@@ -98,45 +102,50 @@ class HttpResponse(HttpRequest):
         return os.environ.get('ALIBABA_CLOUD_CA_BUNDLE', True)
 
     def get_response_object(self):
-        with Session() as s:
-            current_protocol = 'https://' if self.get_ssl_enabled() else 'http://'
-            host = self.get_host()
-            if host.startswith('https://') or\
-                    not host.startswith('https://') and current_protocol == 'https://':
-                port = ':%s' % self.__port if self.__port != 80 and self.__port != 443 else ''
-            else:
-                port = ':%s' % self.__port if self.__port != 80 else ''
+        current_protocol = 'https://' if self.get_ssl_enabled() else 'http://'
+        host = self.get_host()
+        if host.startswith('https://') or\
+                not host.startswith('https://') and current_protocol == 'https://':
+            port = ':%s' % self.__port if self.__port != 80 and self.__port != 443 else ''
+        else:
+            port = ':%s' % self.__port if self.__port != 80 else ''
 
-            if host.startswith('http://') or host.startswith('https://'):
-                url = host + port + self.get_url()
-            else:
-                url = current_protocol + host + port + self.get_url()
+        if host.startswith('http://') or host.startswith('https://'):
+            url = host + port + self.get_url()
+        else:
+            url = current_protocol + host + port + self.get_url()
 
-            req = Request(method=self.get_method(), url=url,
-                          data=self.get_body(),
-                          headers=self.get_headers(),
-                          )
-            prepped = s.prepare_request(req)
+        self.__session.cookies.clear()
 
-            proxy_https = os.environ.get('HTTPS_PROXY') or os.environ.get(
-                'https_proxy')
-            proxy_http = os.environ.get(
-                'HTTP_PROXY') or os.environ.get('http_proxy')
+        req = Request(method=self.get_method(), url=url,
+                      data=self.get_body(),
+                      headers=self.get_headers(),
+                      )
+        prepped = self.__session.prepare_request(req)
 
-            proxies = {}
-            if proxy_http:
-                proxies['http'] = proxy_http
-            if proxy_https:
-                proxies['https'] = proxy_https
+        proxy_https = os.environ.get('HTTPS_PROXY') or os.environ.get(
+            'https_proxy')
+        proxy_http = os.environ.get(
+            'HTTP_PROXY') or os.environ.get('http_proxy')
 
-            response = s.send(prepped, proxies=proxies,
-                              timeout=(self.__connect_timeout, self.__read_timeout),
-                              allow_redirects=False, verify=self.get_verify_value(), cert=None)
+        proxies = {}
+        if proxy_http:
+            proxies['http'] = proxy_http
+        if proxy_https:
+            proxies['https'] = proxy_https
 
-            http_debug = os.environ.get('DEBUG')
+        response = self.__session.send(
+            prepped,
+            proxies=proxies,
+            timeout=(self.__connect_timeout, self.__read_timeout),
+            allow_redirects=False,
+            verify=self.get_verify_value()
+        )
 
-            if http_debug is not None and http_debug.lower() == 'sdk':
-                # http debug information
-                self.do_http_debug(prepped, response)
+        http_debug = os.environ.get('DEBUG')
 
-            return response.status_code, response.headers, response.content
+        if http_debug is not None and http_debug.lower() == 'sdk':
+            # http debug information
+            self.do_http_debug(prepped, response)
+
+        return response.status_code, response.headers, response.content
