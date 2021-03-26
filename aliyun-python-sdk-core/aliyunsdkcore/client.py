@@ -52,6 +52,9 @@ from aliyunsdkcore.vendored.requests.structures import CaseInsensitiveDict
 from aliyunsdkcore.vendored.requests.structures import OrderedDict
 from aliyunsdkcore import compat
 
+from aliyunsdkcore.vendored.requests import Session
+from aliyunsdkcore.vendored.requests.adapters import HTTPAdapter
+
 
 """
 Acs default client module.
@@ -59,6 +62,8 @@ Acs default client module.
 
 DEFAULT_READ_TIMEOUT = 10
 DEFAULT_CONNECTION_TIMEOUT = 5
+# number of keep-alive connections
+DEFAULT_POOL_CONNECTIONS = 10
 
 # TODO: replace it with TimeoutHandler
 _api_timeout_config_data = aliyunsdkcore.utils._load_json_from_data_dir("timeout_config.json")
@@ -85,7 +90,9 @@ class AcsClient:
             session_period=3600,
             credential=None,
             debug=False,
-            verify=None):
+            verify=None,
+            pool_size=10
+    ):
         """
         constructor for AcsClient
         :param ak: String, access key id
@@ -93,6 +100,10 @@ class AcsClient:
         :param region_id: String, region id
         :param auto_retry: Boolean
         :param max_retry_time: Number
+        :param pool_size:
+            In a multithreaded environment,
+            you should set the maxsize of the pool to a higher number,
+            such as the number of threads.
         :return:
         """
 
@@ -118,6 +129,10 @@ class AcsClient:
         self._signer = SignerFactory.get_signer(
             credential, region_id, self._implementation_of_do_action, debug)
         self._endpoint_resolver = DefaultEndpointResolver(self)
+
+        self.session = Session()
+        self.session.mount('https://', HTTPAdapter(DEFAULT_POOL_CONNECTIONS, pool_size))
+        self.session.mount('http://', HTTPAdapter(DEFAULT_POOL_CONNECTIONS, pool_size))
 
         if self._auto_retry:
             self._retry_policy = retry_policy.get_default_retry_policy(
@@ -223,6 +238,10 @@ class AcsClient:
                 user_agent[key] = value
         return user_agent
 
+    def __del__(self):
+        if self.session:
+            self.session.close()
+
     def handle_extra_agent(self, request):
         client_agent = self.client_user_agent()
         request_agent = request.request_user_agent()
@@ -286,7 +305,9 @@ class AcsClient:
             self._port,
             read_timeout=read_timeout,
             connect_timeout=connect_timeout,
-            verify=self.get_verify())
+            verify=self.get_verify(),
+            session=self.session
+        )
         if body_params:
             response.set_content(body, "utf-8", request.get_headers().get('Content-Type'))
         return response
