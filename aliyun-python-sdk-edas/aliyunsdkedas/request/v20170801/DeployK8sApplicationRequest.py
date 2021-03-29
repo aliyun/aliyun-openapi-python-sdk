@@ -23,7 +23,7 @@ from aliyunsdkedas.endpoint import endpoint_data
 class DeployK8sApplicationRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'DeployK8sApplication','edas')
+		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'DeployK8sApplication','Edas')
 		self.set_uri_pattern('/pop/v5/k8s/acs/k8s_apps')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
@@ -241,6 +241,12 @@ class DeployK8sApplicationRequest(RoaRequest):
 
 	def set_BatchTimeout(self,BatchTimeout):
 		self.add_query_param('BatchTimeout',BatchTimeout)
+
+	def get_PvcMountDescs(self):
+		return self.get_query_params().get('PvcMountDescs')
+
+	def set_PvcMountDescs(self,PvcMountDescs):
+		self.add_query_param('PvcMountDescs',PvcMountDescs)
 
 	def get_McpuRequest(self):
 		return self.get_query_params().get('McpuRequest')

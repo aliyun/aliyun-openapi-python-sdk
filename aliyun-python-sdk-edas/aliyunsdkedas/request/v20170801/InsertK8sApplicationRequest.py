@@ -23,7 +23,7 @@ from aliyunsdkedas.endpoint import endpoint_data
 class InsertK8sApplicationRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'InsertK8sApplication','edas')
+		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'InsertK8sApplication','Edas')
 		self.set_uri_pattern('/pop/v5/k8s/acs/create_k8s_app')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
@@ -307,6 +307,12 @@ class InsertK8sApplicationRequest(RoaRequest):
 
 	def set_ImageUrl(self,ImageUrl):
 		self.add_query_param('ImageUrl',ImageUrl)
+
+	def get_PvcMountDescs(self):
+		return self.get_query_params().get('PvcMountDescs')
+
+	def set_PvcMountDescs(self,PvcMountDescs):
+		self.add_query_param('PvcMountDescs',PvcMountDescs)
 
 	def get_Namespace(self):
 		return self.get_query_params().get('Namespace')

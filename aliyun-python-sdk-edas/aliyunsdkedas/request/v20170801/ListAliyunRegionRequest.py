@@ -23,7 +23,7 @@ from aliyunsdkedas.endpoint import endpoint_data
 class ListAliyunRegionRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'ListAliyunRegion','edas')
+		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'ListAliyunRegion','Edas')
 		self.set_uri_pattern('/pop/v5/resource/region_list')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):

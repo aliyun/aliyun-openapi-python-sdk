@@ -23,7 +23,7 @@ from aliyunsdkedas.endpoint import endpoint_data
 class ListConsumedServicesRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'ListConsumedServices','edas')
+		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'ListConsumedServices','Edas')
 		self.set_uri_pattern('/pop/v5/service/listConsumedServices')
 		self.set_method('GET')
 		if hasattr(self, "endpoint_map"):

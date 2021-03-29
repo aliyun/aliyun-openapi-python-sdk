@@ -23,7 +23,7 @@ from aliyunsdkedas.endpoint import endpoint_data
 class UpdateSwimmingLaneGroupRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'UpdateSwimmingLaneGroup','edas')
+		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'UpdateSwimmingLaneGroup','Edas')
 		self.set_uri_pattern('/pop/v5/trafficmgnt/swimming_lane_groups')
 		self.set_method('PUT')
 		if hasattr(self, "endpoint_map"):

@@ -23,7 +23,7 @@ from aliyunsdkedas.endpoint import endpoint_data
 class InsertSwimmingLaneRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'InsertSwimmingLane','edas')
+		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'InsertSwimmingLane','Edas')
 		self.set_uri_pattern('/pop/v5/trafficmgnt/swimming_lanes')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):

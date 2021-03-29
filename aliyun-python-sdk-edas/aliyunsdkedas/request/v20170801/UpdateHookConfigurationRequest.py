@@ -23,7 +23,7 @@ from aliyunsdkedas.endpoint import endpoint_data
 class UpdateHookConfigurationRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'UpdateHookConfiguration','edas')
+		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'UpdateHookConfiguration','Edas')
 		self.set_uri_pattern('/pop/app/config_app_hook_json')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):

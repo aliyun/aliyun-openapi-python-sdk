@@ -23,7 +23,7 @@ from aliyunsdkedas.endpoint import endpoint_data
 class GetK8sServicesRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'GetK8sServices','edas')
+		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'GetK8sServices','Edas')
 		self.set_uri_pattern('/pop/v5/k8s/acs/k8s_service')
 		self.set_method('GET')
 		if hasattr(self, "endpoint_map"):

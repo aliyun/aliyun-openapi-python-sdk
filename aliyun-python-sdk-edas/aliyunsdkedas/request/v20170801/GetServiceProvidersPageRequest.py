@@ -23,7 +23,7 @@ from aliyunsdkedas.endpoint import endpoint_data
 class GetServiceProvidersPageRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'GetServiceProvidersPage','edas')
+		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'GetServiceProvidersPage','Edas')
 		self.set_uri_pattern('/pop/sp/api/mseForOam/getServiceProvidersPage')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):

@@ -23,7 +23,7 @@ from aliyunsdkedas.endpoint import endpoint_data
 class ListStatusRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'ListStatus','edas')
+		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'ListStatus','Edas')
 		self.set_uri_pattern('/pop/sp/api/mse/status/list')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):

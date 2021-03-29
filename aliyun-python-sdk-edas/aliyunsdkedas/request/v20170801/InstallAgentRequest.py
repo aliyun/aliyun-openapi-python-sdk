@@ -23,7 +23,7 @@ from aliyunsdkedas.endpoint import endpoint_data
 class InstallAgentRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'InstallAgent','edas')
+		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'InstallAgent','Edas')
 		self.set_uri_pattern('/pop/v5/ecss/install_agent')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
