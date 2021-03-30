@@ -55,6 +55,12 @@ class UpdateBizTypeSettingRequest(RpcRequest):
 	def set_BizTypeName(self,BizTypeName):
 		self.add_query_param('BizTypeName',BizTypeName)
 
+	def get_Live(self):
+		return self.get_query_params().get('Live')
+
+	def set_Live(self,Live):
+		self.add_query_param('Live',Live)
+
 	def get_Ad(self):
 		return self.get_query_params().get('Ad')
 

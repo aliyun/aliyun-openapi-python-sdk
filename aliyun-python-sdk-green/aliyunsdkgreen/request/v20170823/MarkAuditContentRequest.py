@@ -31,6 +31,12 @@ class MarkAuditContentRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_BizTypes(self):
+		return self.get_query_params().get('BizTypes')
+
+	def set_BizTypes(self,BizTypes):
+		self.add_query_param('BizTypes',BizTypes)
+
 	def get_AuditIllegalReasons(self):
 		return self.get_query_params().get('AuditIllegalReasons')
 

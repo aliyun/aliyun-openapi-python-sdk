@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkgreen.endpoint import endpoint_data
 
-class CreateBizTypeRequest(RpcRequest):
+class DescribeBizTypeImageLibRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Green', '2017-08-23', 'CreateBizType','green')
+		RpcRequest.__init__(self, 'Green', '2017-08-23', 'DescribeBizTypeImageLib','green')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,29 +31,17 @@ class CreateBizTypeRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_Description(self):
-		return self.get_query_params().get('Description')
+	def get_ResourceType(self):
+		return self.get_query_params().get('ResourceType')
 
-	def set_Description(self,Description):
-		self.add_query_param('Description',Description)
+	def set_ResourceType(self,ResourceType):
+		self.add_query_param('ResourceType',ResourceType)
 
-	def get_BizTypeImport(self):
-		return self.get_query_params().get('BizTypeImport')
+	def get_Scene(self):
+		return self.get_query_params().get('Scene')
 
-	def set_BizTypeImport(self,BizTypeImport):
-		self.add_query_param('BizTypeImport',BizTypeImport)
-
-	def get_CiteTemplate(self):
-		return self.get_query_params().get('CiteTemplate')
-
-	def set_CiteTemplate(self,CiteTemplate):
-		self.add_query_param('CiteTemplate',CiteTemplate)
-
-	def get_IndustryInfo(self):
-		return self.get_query_params().get('IndustryInfo')
-
-	def set_IndustryInfo(self,IndustryInfo):
-		self.add_query_param('IndustryInfo',IndustryInfo)
+	def set_Scene(self,Scene):
+		self.add_query_param('Scene',Scene)
 
 	def get_BizTypeName(self):
 		return self.get_query_params().get('BizTypeName')

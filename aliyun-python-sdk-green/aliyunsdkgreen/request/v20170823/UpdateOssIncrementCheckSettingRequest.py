@@ -37,6 +37,12 @@ class UpdateOssIncrementCheckSettingRequest(RpcRequest):
 	def set_VideoSceneList(self,VideoSceneList):
 		self.add_query_param('VideoSceneList',VideoSceneList)
 
+	def get_ScanImageNoFileType(self):
+		return self.get_query_params().get('ScanImageNoFileType')
+
+	def set_ScanImageNoFileType(self,ScanImageNoFileType):
+		self.add_query_param('ScanImageNoFileType',ScanImageNoFileType)
+
 	def get_ImageSceneList(self):
 		return self.get_query_params().get('ImageSceneList')
 

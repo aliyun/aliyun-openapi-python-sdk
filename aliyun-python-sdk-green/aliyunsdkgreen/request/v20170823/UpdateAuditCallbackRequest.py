@@ -37,6 +37,12 @@ class UpdateAuditCallbackRequest(RpcRequest):
 	def set_Seed(self,Seed):
 		self.add_query_param('Seed',Seed)
 
+	def get_CryptType(self):
+		return self.get_query_params().get('CryptType')
+
+	def set_CryptType(self,CryptType):
+		self.add_query_param('CryptType',CryptType)
+
 	def get_Callback(self):
 		return self.get_query_params().get('Callback')
 
