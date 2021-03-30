@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdbs.endpoint import endpoint_data
 
-class CloseDLAServiceRequest(RpcRequest):
+class DescribeLogicalBackupSetRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dbs', '2019-03-06', 'CloseDLAService','cbs')
+		RpcRequest.__init__(self, 'Dbs', '2019-03-06', 'DescribeLogicalBackupSet','cbs')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -42,6 +42,12 @@ class CloseDLAServiceRequest(RpcRequest):
 
 	def set_BackupPlanId(self,BackupPlanId):
 		self.add_query_param('BackupPlanId',BackupPlanId)
+
+	def get_BackupsetId(self):
+		return self.get_query_params().get('BackupsetId')
+
+	def set_BackupsetId(self,BackupsetId):
+		self.add_query_param('BackupsetId',BackupsetId)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')

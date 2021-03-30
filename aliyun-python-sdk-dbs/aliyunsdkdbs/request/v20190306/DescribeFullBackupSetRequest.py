@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdbs.endpoint import endpoint_data
 
-class CreateDLAServiceRequest(RpcRequest):
+class DescribeFullBackupSetRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dbs', '2019-03-06', 'CreateDLAService','cbs')
+		RpcRequest.__init__(self, 'Dbs', '2019-03-06', 'DescribeFullBackupSet','cbs')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -37,23 +37,17 @@ class CreateDLAServiceRequest(RpcRequest):
 	def set_ClientToken(self,ClientToken):
 		self.add_query_param('ClientToken',ClientToken)
 
-	def get_AutoAdd(self):
-		return self.get_query_params().get('AutoAdd')
-
-	def set_AutoAdd(self,AutoAdd):
-		self.add_query_param('AutoAdd',AutoAdd)
-
-	def get_BackupSetIds(self):
-		return self.get_query_params().get('BackupSetIds')
-
-	def set_BackupSetIds(self,BackupSetIds):
-		self.add_query_param('BackupSetIds',BackupSetIds)
-
 	def get_BackupPlanId(self):
 		return self.get_query_params().get('BackupPlanId')
 
 	def set_BackupPlanId(self,BackupPlanId):
 		self.add_query_param('BackupPlanId',BackupPlanId)
+
+	def get_BackupsetId(self):
+		return self.get_query_params().get('BackupsetId')
+
+	def set_BackupsetId(self,BackupsetId):
+		self.add_query_param('BackupsetId',BackupsetId)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
