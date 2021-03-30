@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkopenanalytics_open.endpoint import endpoint_data
 
-class ListSparkJobRequest(RpcRequest):
+class UntagResourcesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'openanalytics-open', '2018-06-19', 'ListSparkJob','openanalytics')
+		RpcRequest.__init__(self, 'openanalytics-open', '2018-06-19', 'UntagResources','openanalytics')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,26 +31,30 @@ class ListSparkJobRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_PageNumber(self):
-		return self.get_query_params().get('PageNumber')
+	def get_All(self):
+		return self.get_query_params().get('All')
 
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
+	def set_All(self,All):
+		self.add_query_param('All',All)
 
-	def get_Condition(self):
-		return self.get_query_params().get('Condition')
+	def get_ResourceIds(self):
+		return self.get_query_params().get('ResourceId')
 
-	def set_Condition(self,Condition):
-		self.add_query_param('Condition',Condition)
+	def set_ResourceIds(self, ResourceIds):
+		for depth1 in range(len(ResourceIds)):
+			if ResourceIds[depth1] is not None:
+				self.add_query_param('ResourceId.' + str(depth1 + 1) , ResourceIds[depth1])
 
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
+	def get_ResourceType(self):
+		return self.get_query_params().get('ResourceType')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
+	def set_ResourceType(self,ResourceType):
+		self.add_query_param('ResourceType',ResourceType)
 
-	def get_VcName(self):
-		return self.get_query_params().get('VcName')
+	def get_TagKeys(self):
+		return self.get_query_params().get('TagKey')
 
-	def set_VcName(self,VcName):
-		self.add_query_param('VcName',VcName)
+	def set_TagKeys(self, TagKeys):
+		for depth1 in range(len(TagKeys)):
+			if TagKeys[depth1] is not None:
+				self.add_query_param('TagKey.' + str(depth1 + 1) , TagKeys[depth1])
