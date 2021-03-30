@@ -31,18 +31,6 @@ class UpdateTableRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_Visibility(self):
-		return self.get_query_params().get('Visibility')
-
-	def set_Visibility(self,Visibility):
-		self.add_query_param('Visibility',Visibility)
-
-	def get_PhysicsLevelId(self):
-		return self.get_query_params().get('PhysicsLevelId')
-
-	def set_PhysicsLevelId(self,PhysicsLevelId):
-		self.add_query_param('PhysicsLevelId',PhysicsLevelId)
-
 	def get_Columnss(self):
 		return self.get_body_params().get('Columns')
 
@@ -62,12 +50,6 @@ class UpdateTableRequest(RpcRequest):
 				self.add_body_params('Columns.' + str(depth1 + 1) + '.ColumnName', Columnss[depth1].get('ColumnName'))
 			if Columnss[depth1].get('ColumnType') is not None:
 				self.add_body_params('Columns.' + str(depth1 + 1) + '.ColumnType', Columnss[depth1].get('ColumnType'))
-
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
 
 	def get_LifeCycle(self):
 		return self.get_query_params().get('LifeCycle')
@@ -97,29 +79,11 @@ class UpdateTableRequest(RpcRequest):
 	def set_Endpoint(self,Endpoint):
 		self.add_body_params('Endpoint', Endpoint)
 
-	def get_IsView(self):
-		return self.get_query_params().get('IsView')
-
-	def set_IsView(self,IsView):
-		self.add_query_param('IsView',IsView)
-
-	def get_ExternalTableType(self):
-		return self.get_query_params().get('ExternalTableType')
-
-	def set_ExternalTableType(self,ExternalTableType):
-		self.add_query_param('ExternalTableType',ExternalTableType)
-
 	def get_EnvType(self):
 		return self.get_body_params().get('EnvType')
 
 	def set_EnvType(self,EnvType):
 		self.add_body_params('EnvType', EnvType)
-
-	def get_Location(self):
-		return self.get_query_params().get('Location')
-
-	def set_Location(self,Location):
-		self.add_query_param('Location',Location)
 
 	def get_HasPart(self):
 		return self.get_query_params().get('HasPart')
@@ -150,6 +114,48 @@ class UpdateTableRequest(RpcRequest):
 
 	def set_CategoryId(self,CategoryId):
 		self.add_query_param('CategoryId',CategoryId)
+
+	def get_Visibility(self):
+		return self.get_query_params().get('Visibility')
+
+	def set_Visibility(self,Visibility):
+		self.add_query_param('Visibility',Visibility)
+
+	def get_PhysicsLevelId(self):
+		return self.get_query_params().get('PhysicsLevelId')
+
+	def set_PhysicsLevelId(self,PhysicsLevelId):
+		self.add_query_param('PhysicsLevelId',PhysicsLevelId)
+
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
+
+	def get_IsView(self):
+		return self.get_query_params().get('IsView')
+
+	def set_IsView(self,IsView):
+		self.add_query_param('IsView',IsView)
+
+	def get_ExternalTableType(self):
+		return self.get_query_params().get('ExternalTableType')
+
+	def set_ExternalTableType(self,ExternalTableType):
+		self.add_query_param('ExternalTableType',ExternalTableType)
+
+	def get_Location(self):
+		return self.get_query_params().get('Location')
+
+	def set_Location(self,Location):
+		self.add_query_param('Location',Location)
+
+	def get_Comment(self):
+		return self.get_query_params().get('Comment')
+
+	def set_Comment(self,Comment):
+		self.add_query_param('Comment',Comment)
 
 	def get_CreateIfNotExists(self):
 		return self.get_query_params().get('CreateIfNotExists')

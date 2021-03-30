@@ -55,6 +55,12 @@ class CreateImportMigrationRequest(RpcRequest):
 	def set_CalculateEngineMap(self,CalculateEngineMap):
 		self.add_body_params('CalculateEngineMap', CalculateEngineMap)
 
+	def get_PackageFile(self):
+		return self.get_body_params().get('PackageFile')
+
+	def set_PackageFile(self,PackageFile):
+		self.add_body_params('PackageFile', PackageFile)
+
 	def get_Name(self):
 		return self.get_body_params().get('Name')
 
@@ -72,9 +78,3 @@ class CreateImportMigrationRequest(RpcRequest):
 
 	def set_ProjectId(self,ProjectId):
 		self.add_body_params('ProjectId', ProjectId)
-
-	def get_PackageOssDownloadLink(self):
-		return self.get_body_params().get('PackageOssDownloadLink')
-
-	def set_PackageOssDownloadLink(self,PackageOssDownloadLink):
-		self.add_body_params('PackageOssDownloadLink', PackageOssDownloadLink)
