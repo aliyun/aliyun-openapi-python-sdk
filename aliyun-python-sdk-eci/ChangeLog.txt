@@ -1,3 +1,6 @@
+2021-03-31 Version: 1.1.6
+1, completion create request args
+
 2021-03-11 Version: 1.1.5
 1, support acrRegistryInfos
 

@@ -617,3 +617,82 @@ class CreateContainerGroupRequest(RpcRequest):
 					self.add_query_param('AcrRegistryInfo.' + str(i + 1) + '.RegionId',
 										 AcrRegistryInfos[i].get('RegionId'))
 
+	def get_Ipv6AddressCount(self):
+		return self.get_query_params().get('Ipv6AddressCount')
+
+	def set_Ipv6AddressCount(self, Ipv6AddressCount):
+		self.add_query_param('Ipv6AddressCount', Ipv6AddressCount)
+
+	def get_ActiveDeadlineSeconds(self):
+		return self.get_query_params().get('ActiveDeadlineSeconds')
+
+	def set_ActiveDeadlineSeconds(self, ActiveDeadlineSeconds):
+		self.add_query_param('ActiveDeadlineSeconds', ActiveDeadlineSeconds)
+
+	def get_ScheduleStrategy(self):
+		return self.get_query_params().get('ScheduleStrategy')
+
+	def set_ScheduleStrategy(self, ScheduleStrategy):
+		self.add_query_param('ScheduleStrategy', ScheduleStrategy)
+
+	def get_CorePattern(self):
+		return self.get_query_params().get('CorePattern')
+
+	def set_CorePattern(self, CorePattern):
+		self.add_query_param('CorePattern', CorePattern)
+
+	def get_AutoCreateEip(self):
+		return self.get_query_params().get('AutoCreateEip')
+
+	def set_AutoCreateEip(self, AutoCreateEip):
+		self.add_query_param('AutoCreateEip', AutoCreateEip)
+
+	def get_EipBandwidth(self):
+		return self.get_query_params().get('EipBandwidth')
+
+	def set_EipBandwidth(self, EipBandwidth):
+		self.add_query_param('EipBandwidth', EipBandwidth)
+
+	def get_EipISP(self):
+		return self.get_query_params().get('EipISP')
+
+	def set_EipISP(self, EipISP):
+		self.add_query_param('EipISP', EipISP)
+
+	def get_EipCommonBandwidthPackage(self):
+		return self.get_query_params().get('EipCommonBandwidthPackage')
+
+	def set_EipCommonBandwidthPackage(self, EipCommonBandwidthPackage):
+		self.add_query_param('EipCommonBandwidthPackage', EipCommonBandwidthPackage)
+
+	def get_HostName(self):
+		return self.get_query_params().get('HostName')
+
+	def set_HostName(self, HostName):
+		self.add_query_param('HostName', HostName)
+
+	def get_CpuOptionsCore(self):
+		return self.get_query_params().get('CpuOptionsCore')
+
+	def set_CpuOptionsCore(self, CpuOptionsCore):
+		self.add_query_param('CpuOptionsCore', CpuOptionsCore)
+
+	def get_CpuOptionsHt(self):
+		return self.get_query_params().get('CpuOptionsHt')
+
+	def set_CpuOptionsHt(self, CpuOptionsHt):
+		self.add_query_param('CpuOptionsHt', CpuOptionsHt)
+
+	def get_Arns(self):
+		return self.get_query_params().get('ImageRegistryCredentials')
+
+	def set_Arns(self, Arns):
+		if Arns is not None:
+			for i in range(len(Arns)):
+				if Arns[i].get('RoleArn') is not None:
+					self.add_query_param('Arns.' + str(i + 1) + '.RoleArn', Arns[i].get('RoleArn'))
+				if Arns[i].get('RoleType') is not None:
+					self.add_query_param('Arns.' + str(i + 1) + '.RoleType', Arns[i].get('RoleType'))
+				if Arns[i].get('AssumeRoleFor') is not None:
+					self.add_query_param('Arns.' + str(i + 1) + '.AssumeRoleFor', Arns[i].get('AssumeRoleFor'))
+
