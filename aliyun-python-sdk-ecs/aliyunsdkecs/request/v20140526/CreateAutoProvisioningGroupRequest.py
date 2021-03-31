@@ -309,6 +309,12 @@ class CreateAutoProvisioningGroupRequest(RpcRequest):
 			if LaunchConfigurationTags[depth1].get('Value') is not None:
 				self.add_query_param('LaunchConfiguration.Tag.' + str(depth1 + 1) + '.Value', LaunchConfigurationTags[depth1].get('Value'))
 
+	def get_LaunchConfigurationDeploymentSetId(self):
+		return self.get_query_params().get('LaunchConfiguration.DeploymentSetId')
+
+	def set_LaunchConfigurationDeploymentSetId(self,LaunchConfigurationDeploymentSetId):
+		self.add_query_param('LaunchConfiguration.DeploymentSetId',LaunchConfigurationDeploymentSetId)
+
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 

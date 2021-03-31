@@ -67,6 +67,12 @@ class DescribeRenewalPriceRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
+	def get_ExpectedRenewDay(self):
+		return self.get_query_params().get('ExpectedRenewDay')
+
+	def set_ExpectedRenewDay(self,ExpectedRenewDay):
+		self.add_query_param('ExpectedRenewDay',ExpectedRenewDay)
+
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 

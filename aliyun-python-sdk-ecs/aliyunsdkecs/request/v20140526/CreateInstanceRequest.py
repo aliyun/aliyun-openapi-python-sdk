@@ -263,6 +263,12 @@ class CreateInstanceRequest(RpcRequest):
 	def set_InternetMaxBandwidthOut(self,InternetMaxBandwidthOut):
 		self.add_query_param('InternetMaxBandwidthOut',InternetMaxBandwidthOut)
 
+	def get_HibernationOptionsConfigured(self):
+		return self.get_query_params().get('HibernationOptions.Configured')
+
+	def set_HibernationOptionsConfigured(self,HibernationOptionsConfigured):
+		self.add_query_param('HibernationOptions.Configured',HibernationOptionsConfigured)
+
 	def get_Description(self):
 		return self.get_query_params().get('Description')
 

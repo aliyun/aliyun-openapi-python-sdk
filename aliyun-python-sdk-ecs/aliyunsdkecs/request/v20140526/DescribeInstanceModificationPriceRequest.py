@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkecs.endpoint import endpoint_data
 
-class DescribeCloudAssistantStatusRequest(RpcRequest):
+class DescribeInstanceModificationPriceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'DescribeCloudAssistantStatus','ecs')
+		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'DescribeInstanceModificationPrice','ecs')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -37,17 +37,17 @@ class DescribeCloudAssistantStatusRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_PageNumber(self):
-		return self.get_query_params().get('PageNumber')
+	def get_SystemDiskCategory(self):
+		return self.get_query_params().get('SystemDisk.Category')
 
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
+	def set_SystemDiskCategory(self,SystemDiskCategory):
+		self.add_query_param('SystemDisk.Category',SystemDiskCategory)
 
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
+	def get_InstanceType(self):
+		return self.get_query_params().get('InstanceType')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
+	def set_InstanceType(self,InstanceType):
+		self.add_query_param('InstanceType',InstanceType)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -61,22 +61,26 @@ class DescribeCloudAssistantStatusRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
-	def get_OSType(self):
-		return self.get_query_params().get('OSType')
-
-	def set_OSType(self,OSType):
-		self.add_query_param('OSType',OSType)
-
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_InstanceIds(self):
+	def get_DataDisks(self):
+		return self.get_query_params().get('DataDisk')
+
+	def set_DataDisks(self, DataDisks):
+		for depth1 in range(len(DataDisks)):
+			if DataDisks[depth1].get('Size') is not None:
+				self.add_query_param('DataDisk.' + str(depth1 + 1) + '.Size', DataDisks[depth1].get('Size'))
+			if DataDisks[depth1].get('Category') is not None:
+				self.add_query_param('DataDisk.' + str(depth1 + 1) + '.Category', DataDisks[depth1].get('Category'))
+			if DataDisks[depth1].get('PerformanceLevel') is not None:
+				self.add_query_param('DataDisk.' + str(depth1 + 1) + '.PerformanceLevel', DataDisks[depth1].get('PerformanceLevel'))
+
+	def get_InstanceId(self):
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceIds(self, InstanceIds):
-		for depth1 in range(len(InstanceIds)):
-			if InstanceIds[depth1] is not None:
-				self.add_query_param('InstanceId.' + str(depth1 + 1) , InstanceIds[depth1])
+	def set_InstanceId(self,InstanceId):
+		self.add_query_param('InstanceId',InstanceId)

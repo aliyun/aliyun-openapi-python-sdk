@@ -195,6 +195,12 @@ class DescribePriceRequest(RpcRequest):
 	def set_InstanceType(self,InstanceType):
 		self.add_query_param('InstanceType',InstanceType)
 
+	def get_DedicatedHostType(self):
+		return self.get_query_params().get('DedicatedHostType')
+
+	def set_DedicatedHostType(self,DedicatedHostType):
+		self.add_query_param('DedicatedHostType',DedicatedHostType)
+
 	def get_DataDisk2Category(self):
 		return self.get_query_params().get('DataDisk.2.Category')
 

@@ -193,6 +193,12 @@ class RunInstancesRequest(RpcRequest):
 	def set_SecurityGroupId(self,SecurityGroupId):
 		self.add_query_param('SecurityGroupId',SecurityGroupId)
 
+	def get_HibernationOptionsConfigured(self):
+		return self.get_query_params().get('HibernationOptions.Configured')
+
+	def set_HibernationOptionsConfigured(self,HibernationOptionsConfigured):
+		self.add_query_param('HibernationOptions.Configured',HibernationOptionsConfigured)
+
 	def get_SystemDiskPerformanceLevel(self):
 		return self.get_query_params().get('SystemDisk.PerformanceLevel')
 
@@ -355,6 +361,14 @@ class RunInstancesRequest(RpcRequest):
 	def set_Ipv6AddressCount(self,Ipv6AddressCount):
 		self.add_query_param('Ipv6AddressCount',Ipv6AddressCount)
 
+	def get_HostNamess(self):
+		return self.get_query_params().get('HostNames')
+
+	def set_HostNamess(self, HostNamess):
+		for depth1 in range(len(HostNamess)):
+			if HostNamess[depth1] is not None:
+				self.add_query_param('HostNames.' + str(depth1 + 1) , HostNamess[depth1])
+
 	def get_VSwitchId(self):
 		return self.get_query_params().get('VSwitchId')
 
@@ -410,6 +424,12 @@ class RunInstancesRequest(RpcRequest):
 
 	def set_SystemDiskCategory(self,SystemDiskCategory):
 		self.add_query_param('SystemDisk.Category',SystemDiskCategory)
+
+	def get_SecurityOptionsTrustedSystemMode(self):
+		return self.get_query_params().get('SecurityOptions.TrustedSystemMode')
+
+	def set_SecurityOptionsTrustedSystemMode(self,SecurityOptionsTrustedSystemMode):
+		self.add_query_param('SecurityOptions.TrustedSystemMode',SecurityOptionsTrustedSystemMode)
 
 	def get_UserData(self):
 		return self.get_query_params().get('UserData')

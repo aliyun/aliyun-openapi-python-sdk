@@ -69,6 +69,14 @@ class DescribeSnapshotGroupsRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
+	def get_AdditionalAttributess(self):
+		return self.get_query_params().get('AdditionalAttributes')
+
+	def set_AdditionalAttributess(self, AdditionalAttributess):
+		for depth1 in range(len(AdditionalAttributess)):
+			if AdditionalAttributess[depth1] is not None:
+				self.add_query_param('AdditionalAttributes.' + str(depth1 + 1) , AdditionalAttributess[depth1])
+
 	def get_InstanceId(self):
 		return self.get_query_params().get('InstanceId')
 

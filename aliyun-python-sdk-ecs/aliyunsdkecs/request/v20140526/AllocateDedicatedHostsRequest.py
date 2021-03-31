@@ -61,6 +61,12 @@ class AllocateDedicatedHostsRequest(RpcRequest):
 	def set_ResourceGroupId(self,ResourceGroupId):
 		self.add_query_param('ResourceGroupId',ResourceGroupId)
 
+	def get_MinQuantity(self):
+		return self.get_query_params().get('MinQuantity')
+
+	def set_MinQuantity(self,MinQuantity):
+		self.add_query_param('MinQuantity',MinQuantity)
+
 	def get_ActionOnMaintenance(self):
 		return self.get_query_params().get('ActionOnMaintenance')
 
