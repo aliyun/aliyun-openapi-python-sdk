@@ -1,6 +1,3 @@
-2021-03-09 Version: 1.0.0-20210309
-- Generated 2018-01-20 for `Iot`.
-
 2021-02-19 Version: 8.19.0
 - Add support for IoT jobs, including job management and query APIs like CreateJob, UpdateJob, QueryJob, CancelJob, ListTask, QueryTask, QueryJobStatistics etc.
 
