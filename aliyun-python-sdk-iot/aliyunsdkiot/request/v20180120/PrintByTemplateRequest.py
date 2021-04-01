@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkiot.endpoint import endpoint_data
 
-class DeleteConsumerGroupSubscribeRelationRequest(RpcRequest):
+class PrintByTemplateRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'DeleteConsumerGroupSubscribeRelation','iot')
+		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'PrintByTemplate','iot')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,20 +31,44 @@ class DeleteConsumerGroupSubscribeRelationRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_ConsumerGroupId(self):
-		return self.get_query_params().get('ConsumerGroupId')
+	def get_ProjectCode(self):
+		return self.get_body_params().get('ProjectCode')
 
-	def set_ConsumerGroupId(self,ConsumerGroupId):
-		self.add_query_param('ConsumerGroupId',ConsumerGroupId)
+	def set_ProjectCode(self,ProjectCode):
+		self.add_body_params('ProjectCode', ProjectCode)
+
+	def get_TemplateBizCode(self):
+		return self.get_body_params().get('TemplateBizCode')
+
+	def set_TemplateBizCode(self,TemplateBizCode):
+		self.add_body_params('TemplateBizCode', TemplateBizCode)
+
+	def get_IotId(self):
+		return self.get_body_params().get('IotId')
+
+	def set_IotId(self,IotId):
+		self.add_body_params('IotId', IotId)
 
 	def get_IotInstanceId(self):
-		return self.get_query_params().get('IotInstanceId')
+		return self.get_body_params().get('IotInstanceId')
 
 	def set_IotInstanceId(self,IotInstanceId):
-		self.add_query_param('IotInstanceId',IotInstanceId)
+		self.add_body_params('IotInstanceId', IotInstanceId)
 
 	def get_ProductKey(self):
-		return self.get_query_params().get('ProductKey')
+		return self.get_body_params().get('ProductKey')
 
 	def set_ProductKey(self,ProductKey):
-		self.add_query_param('ProductKey',ProductKey)
+		self.add_body_params('ProductKey', ProductKey)
+
+	def get_ParamsJsonString(self):
+		return self.get_body_params().get('ParamsJsonString')
+
+	def set_ParamsJsonString(self,ParamsJsonString):
+		self.add_body_params('ParamsJsonString', ParamsJsonString)
+
+	def get_DeviceName(self):
+		return self.get_body_params().get('DeviceName')
+
+	def set_DeviceName(self,DeviceName):
+		self.add_body_params('DeviceName', DeviceName)
