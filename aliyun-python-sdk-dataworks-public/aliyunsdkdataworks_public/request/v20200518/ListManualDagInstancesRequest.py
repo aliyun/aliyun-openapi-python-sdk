@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdataworks_public.endpoint import endpoint_data
 
-class ListResourceGroupsRequest(RpcRequest):
+class ListManualDagInstancesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'ListResourceGroups')
+		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'ListManualDagInstances')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,20 +31,20 @@ class ListResourceGroupsRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_BizExtKey(self):
-		return self.get_query_params().get('BizExtKey')
+	def get_ProjectEnv(self):
+		return self.get_body_params().get('ProjectEnv')
 
-	def set_BizExtKey(self,BizExtKey):
-		self.add_query_param('BizExtKey',BizExtKey)
+	def set_ProjectEnv(self,ProjectEnv):
+		self.add_body_params('ProjectEnv', ProjectEnv)
 
-	def get_ResourceGroupType(self):
-		return self.get_query_params().get('ResourceGroupType')
+	def get_ProjectName(self):
+		return self.get_body_params().get('ProjectName')
 
-	def set_ResourceGroupType(self,ResourceGroupType):
-		self.add_query_param('ResourceGroupType',ResourceGroupType)
+	def set_ProjectName(self,ProjectName):
+		self.add_body_params('ProjectName', ProjectName)
 
-	def get_Keyword(self):
-		return self.get_query_params().get('Keyword')
+	def get_DagId(self):
+		return self.get_body_params().get('DagId')
 
-	def set_Keyword(self,Keyword):
-		self.add_query_param('Keyword',Keyword)
+	def set_DagId(self,DagId):
+		self.add_body_params('DagId', DagId)

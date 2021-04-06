@@ -20,31 +20,43 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdataworks_public.endpoint import endpoint_data
 
-class ListResourceGroupsRequest(RpcRequest):
+class UpdateDataSourceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'ListResourceGroups')
-		self.set_method('POST')
+		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'UpdateDataSource')
+		self.set_method('PUT')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_BizExtKey(self):
-		return self.get_query_params().get('BizExtKey')
+	def get_EnvType(self):
+		return self.get_query_params().get('EnvType')
 
-	def set_BizExtKey(self,BizExtKey):
-		self.add_query_param('BizExtKey',BizExtKey)
+	def set_EnvType(self,EnvType):
+		self.add_query_param('EnvType',EnvType)
 
-	def get_ResourceGroupType(self):
-		return self.get_query_params().get('ResourceGroupType')
+	def get_DataSourceId(self):
+		return self.get_query_params().get('DataSourceId')
 
-	def set_ResourceGroupType(self,ResourceGroupType):
-		self.add_query_param('ResourceGroupType',ResourceGroupType)
+	def set_DataSourceId(self,DataSourceId):
+		self.add_query_param('DataSourceId',DataSourceId)
 
-	def get_Keyword(self):
-		return self.get_query_params().get('Keyword')
+	def get_Description(self):
+		return self.get_query_params().get('Description')
 
-	def set_Keyword(self,Keyword):
-		self.add_query_param('Keyword',Keyword)
+	def set_Description(self,Description):
+		self.add_query_param('Description',Description)
+
+	def get_Content(self):
+		return self.get_query_params().get('Content')
+
+	def set_Content(self,Content):
+		self.add_query_param('Content',Content)
+
+	def get_Status(self):
+		return self.get_query_params().get('Status')
+
+	def set_Status(self,Status):
+		self.add_query_param('Status',Status)

@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdataworks_public.endpoint import endpoint_data
 
-class ListResourceGroupsRequest(RpcRequest):
+class ListSuccessInstanceAmountRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'ListResourceGroups')
+		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'ListSuccessInstanceAmount')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,20 +31,8 @@ class ListResourceGroupsRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_BizExtKey(self):
-		return self.get_query_params().get('BizExtKey')
+	def get_ProjectId(self):
+		return self.get_body_params().get('ProjectId')
 
-	def set_BizExtKey(self,BizExtKey):
-		self.add_query_param('BizExtKey',BizExtKey)
-
-	def get_ResourceGroupType(self):
-		return self.get_query_params().get('ResourceGroupType')
-
-	def set_ResourceGroupType(self,ResourceGroupType):
-		self.add_query_param('ResourceGroupType',ResourceGroupType)
-
-	def get_Keyword(self):
-		return self.get_query_params().get('Keyword')
-
-	def set_Keyword(self,Keyword):
-		self.add_query_param('Keyword',Keyword)
+	def set_ProjectId(self,ProjectId):
+		self.add_body_params('ProjectId', ProjectId)

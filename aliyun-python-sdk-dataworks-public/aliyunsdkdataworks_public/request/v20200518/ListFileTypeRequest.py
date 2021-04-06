@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdataworks_public.endpoint import endpoint_data
 
-class ListResourceGroupsRequest(RpcRequest):
+class ListFileTypeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'ListResourceGroups')
+		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'ListFileType')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,20 +31,38 @@ class ListResourceGroupsRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_BizExtKey(self):
-		return self.get_query_params().get('BizExtKey')
+	def get_PageSize(self):
+		return self.get_body_params().get('PageSize')
 
-	def set_BizExtKey(self,BizExtKey):
-		self.add_query_param('BizExtKey',BizExtKey)
-
-	def get_ResourceGroupType(self):
-		return self.get_query_params().get('ResourceGroupType')
-
-	def set_ResourceGroupType(self,ResourceGroupType):
-		self.add_query_param('ResourceGroupType',ResourceGroupType)
+	def set_PageSize(self,PageSize):
+		self.add_body_params('PageSize', PageSize)
 
 	def get_Keyword(self):
-		return self.get_query_params().get('Keyword')
+		return self.get_body_params().get('Keyword')
 
 	def set_Keyword(self,Keyword):
-		self.add_query_param('Keyword',Keyword)
+		self.add_body_params('Keyword', Keyword)
+
+	def get_Locale(self):
+		return self.get_body_params().get('Locale')
+
+	def set_Locale(self,Locale):
+		self.add_body_params('Locale', Locale)
+
+	def get_ProjectId(self):
+		return self.get_body_params().get('ProjectId')
+
+	def set_ProjectId(self,ProjectId):
+		self.add_body_params('ProjectId', ProjectId)
+
+	def get_ProjectIdentifier(self):
+		return self.get_body_params().get('ProjectIdentifier')
+
+	def set_ProjectIdentifier(self,ProjectIdentifier):
+		self.add_body_params('ProjectIdentifier', ProjectIdentifier)
+
+	def get_PageNumber(self):
+		return self.get_body_params().get('PageNumber')
+
+	def set_PageNumber(self,PageNumber):
+		self.add_body_params('PageNumber', PageNumber)

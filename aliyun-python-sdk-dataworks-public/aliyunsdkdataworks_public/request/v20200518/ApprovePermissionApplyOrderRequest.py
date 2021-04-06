@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdataworks_public.endpoint import endpoint_data
 
-class ListResourceGroupsRequest(RpcRequest):
+class ApprovePermissionApplyOrderRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'ListResourceGroups')
+		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'ApprovePermissionApplyOrder')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,20 +31,20 @@ class ListResourceGroupsRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_BizExtKey(self):
-		return self.get_query_params().get('BizExtKey')
+	def get_FlowId(self):
+		return self.get_query_params().get('FlowId')
 
-	def set_BizExtKey(self,BizExtKey):
-		self.add_query_param('BizExtKey',BizExtKey)
+	def set_FlowId(self,FlowId):
+		self.add_query_param('FlowId',FlowId)
 
-	def get_ResourceGroupType(self):
-		return self.get_query_params().get('ResourceGroupType')
+	def get_ApproveComment(self):
+		return self.get_query_params().get('ApproveComment')
 
-	def set_ResourceGroupType(self,ResourceGroupType):
-		self.add_query_param('ResourceGroupType',ResourceGroupType)
+	def set_ApproveComment(self,ApproveComment):
+		self.add_query_param('ApproveComment',ApproveComment)
 
-	def get_Keyword(self):
-		return self.get_query_params().get('Keyword')
+	def get_ApproveAction(self):
+		return self.get_query_params().get('ApproveAction')
 
-	def set_Keyword(self,Keyword):
-		self.add_query_param('Keyword',Keyword)
+	def set_ApproveAction(self,ApproveAction):
+		self.add_query_param('ApproveAction',ApproveAction)
