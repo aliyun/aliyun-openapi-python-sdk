@@ -31,6 +31,18 @@ class DetectHipKeypointXRayRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_OrgName(self):
+		return self.get_body_params().get('OrgName')
+
+	def set_OrgName(self,OrgName):
+		self.add_body_params('OrgName', OrgName)
+
+	def get_TracerId(self):
+		return self.get_body_params().get('TracerId')
+
+	def set_TracerId(self,TracerId):
+		self.add_body_params('TracerId', TracerId)
+
 	def get_DataFormat(self):
 		return self.get_body_params().get('DataFormat')
 
@@ -43,20 +55,8 @@ class DetectHipKeypointXRayRequest(RpcRequest):
 	def set_OrgId(self,OrgId):
 		self.add_body_params('OrgId', OrgId)
 
-	def get_OrgName(self):
-		return self.get_body_params().get('OrgName')
-
-	def set_OrgName(self,OrgName):
-		self.add_body_params('OrgName', OrgName)
-
 	def get_ImageUrl(self):
 		return self.get_body_params().get('ImageUrl')
 
 	def set_ImageUrl(self,ImageUrl):
 		self.add_body_params('ImageUrl', ImageUrl)
-
-	def get_TracerId(self):
-		return self.get_body_params().get('TracerId')
-
-	def set_TracerId(self,TracerId):
-		self.add_body_params('TracerId', TracerId)
