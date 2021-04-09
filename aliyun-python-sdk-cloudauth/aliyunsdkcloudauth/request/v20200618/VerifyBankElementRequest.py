@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcloudauth.endpoint import endpoint_data
 
-class ElementSmartVerifyRequest(RpcRequest):
+class VerifyBankElementRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cloudauth', '2020-06-18', 'ElementSmartVerify','cloudauth')
+		RpcRequest.__init__(self, 'Cloudauth', '2020-06-18', 'VerifyBankElement','cloudauth')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,23 +31,35 @@ class ElementSmartVerifyRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_CertFile(self):
-		return self.get_body_params().get('CertFile')
+	def get_IdName(self):
+		return self.get_body_params().get('IdName')
 
-	def set_CertFile(self,CertFile):
-		self.add_body_params('CertFile', CertFile)
+	def set_IdName(self,IdName):
+		self.add_body_params('IdName', IdName)
 
-	def get_CertNationalEmblemUrl(self):
-		return self.get_body_params().get('CertNationalEmblemUrl')
+	def get_Mobile(self):
+		return self.get_body_params().get('Mobile')
 
-	def set_CertNationalEmblemUrl(self,CertNationalEmblemUrl):
-		self.add_body_params('CertNationalEmblemUrl', CertNationalEmblemUrl)
+	def set_Mobile(self,Mobile):
+		self.add_body_params('Mobile', Mobile)
 
-	def get_CertName(self):
-		return self.get_body_params().get('CertName')
+	def get_BankCardUrl(self):
+		return self.get_body_params().get('BankCardUrl')
 
-	def set_CertName(self,CertName):
-		self.add_body_params('CertName', CertName)
+	def set_BankCardUrl(self,BankCardUrl):
+		self.add_body_params('BankCardUrl', BankCardUrl)
+
+	def get_IdNo(self):
+		return self.get_body_params().get('IdNo')
+
+	def set_IdNo(self,IdNo):
+		self.add_body_params('IdNo', IdNo)
+
+	def get_BankCardNo(self):
+		return self.get_body_params().get('BankCardNo')
+
+	def set_BankCardNo(self,BankCardNo):
+		self.add_body_params('BankCardNo', BankCardNo)
 
 	def get_Mode(self):
 		return self.get_body_params().get('Mode')
@@ -55,29 +67,17 @@ class ElementSmartVerifyRequest(RpcRequest):
 	def set_Mode(self,Mode):
 		self.add_body_params('Mode', Mode)
 
-	def get_CertNo(self):
-		return self.get_body_params().get('CertNo')
-
-	def set_CertNo(self,CertNo):
-		self.add_body_params('CertNo', CertNo)
-
 	def get_OuterOrderNo(self):
 		return self.get_body_params().get('OuterOrderNo')
 
 	def set_OuterOrderNo(self,OuterOrderNo):
 		self.add_body_params('OuterOrderNo', OuterOrderNo)
 
-	def get_CertUrl(self):
-		return self.get_body_params().get('CertUrl')
+	def get_BankCardFile(self):
+		return self.get_body_params().get('BankCardFile')
 
-	def set_CertUrl(self,CertUrl):
-		self.add_body_params('CertUrl', CertUrl)
-
-	def get_CertType(self):
-		return self.get_body_params().get('CertType')
-
-	def set_CertType(self,CertType):
-		self.add_body_params('CertType', CertType)
+	def set_BankCardFile(self,BankCardFile):
+		self.add_body_params('BankCardFile', BankCardFile)
 
 	def get_SceneId(self):
 		return self.get_body_params().get('SceneId')

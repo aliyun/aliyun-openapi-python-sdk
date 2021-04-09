@@ -31,6 +31,12 @@ class InitSmartVerifyRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_IdName(self):
+		return self.get_body_params().get('IdName')
+
+	def set_IdName(self,IdName):
+		self.add_body_params('IdName', IdName)
+
 	def get_UserId(self):
 		return self.get_body_params().get('UserId')
 
@@ -114,6 +120,12 @@ class InitSmartVerifyRequest(RpcRequest):
 
 	def set_Mobile(self,Mobile):
 		self.add_body_params('Mobile', Mobile)
+
+	def get_IdNo(self):
+		return self.get_body_params().get('IdNo')
+
+	def set_IdNo(self,IdNo):
+		self.add_body_params('IdNo', IdNo)
 
 	def get_SceneId(self):
 		return self.get_body_params().get('SceneId')
