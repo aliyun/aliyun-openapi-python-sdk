@@ -23,7 +23,7 @@ from aliyunsdkqualitycheck.endpoint import endpoint_data
 class DeleteDataSetRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Qualitycheck', '2019-01-15', 'DeleteDataSet','Qualitycheck')
+		RpcRequest.__init__(self, 'Qualitycheck', '2019-01-15', 'DeleteDataSet')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())

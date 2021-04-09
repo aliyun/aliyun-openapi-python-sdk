@@ -23,7 +23,7 @@ from aliyunsdkqualitycheck.endpoint import endpoint_data
 class UpdateUserRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Qualitycheck', '2019-01-15', 'UpdateUser','Qualitycheck')
+		RpcRequest.__init__(self, 'Qualitycheck', '2019-01-15', 'UpdateUser')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
