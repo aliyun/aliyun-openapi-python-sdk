@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkopenanalytics_open.endpoint import endpoint_data
 
-class GrantPrivilegesRequest(RpcRequest):
+class SubmitSparkSQLRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'openanalytics-open', '2020-09-28', 'GrantPrivileges','openanalytics')
+		RpcRequest.__init__(self, 'openanalytics-open', '2018-06-19', 'SubmitSparkSQL','openanalytics')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,8 +31,14 @@ class GrantPrivilegesRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_PrivilegeBag(self):
-		return self.get_query_params().get('PrivilegeBag')
+	def get_Sql(self):
+		return self.get_body_params().get('Sql')
 
-	def set_PrivilegeBag(self,PrivilegeBag):
-		self.add_query_param('PrivilegeBag',PrivilegeBag)
+	def set_Sql(self,Sql):
+		self.add_body_params('Sql', Sql)
+
+	def get_VcName(self):
+		return self.get_body_params().get('VcName')
+
+	def set_VcName(self,VcName):
+		self.add_body_params('VcName', VcName)
