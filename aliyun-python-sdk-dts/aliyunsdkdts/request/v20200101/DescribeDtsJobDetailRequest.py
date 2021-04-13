@@ -36,3 +36,15 @@ class DescribeDtsJobDetailRequest(RpcRequest):
 
 	def set_DtsJobId(self,DtsJobId):
 		self.add_query_param('DtsJobId',DtsJobId)
+
+	def get_DtsInstanceID(self):
+		return self.get_query_params().get('DtsInstanceID')
+
+	def set_DtsInstanceID(self,DtsInstanceID):
+		self.add_query_param('DtsInstanceID',DtsInstanceID)
+
+	def get_SynchronizationDirection(self):
+		return self.get_query_params().get('SynchronizationDirection')
+
+	def set_SynchronizationDirection(self,SynchronizationDirection):
+		self.add_query_param('SynchronizationDirection',SynchronizationDirection)
