@@ -17,23 +17,15 @@
 # specific language governing permissions and limitations
 # under the License.
 
-from aliyunsdkcore.request import RoaRequest
+from aliyunsdkcore.request import RpcRequest
 from aliyunsdkgreen.endpoint import endpoint_data
 
-class PostAsyncScanResultsRequest(RoaRequest):
+class DescribeAuditCallbackListRequest(RpcRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'Green', '2018-05-09', 'PostAsyncScanResults','green')
-		self.set_uri_pattern('/green/post/results')
+		RpcRequest.__init__(self, 'Green', '2017-08-23', 'DescribeAuditCallbackList','green')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
-
-
-	def get_ClientInfo(self):
-		return self.get_query_params().get('ClientInfo')
-
-	def set_ClientInfo(self,ClientInfo):
-		self.add_query_param('ClientInfo',ClientInfo)

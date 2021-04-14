@@ -17,14 +17,13 @@
 # specific language governing permissions and limitations
 # under the License.
 
-from aliyunsdkcore.request import RoaRequest
+from aliyunsdkcore.request import RpcRequest
 from aliyunsdkgreen.endpoint import endpoint_data
 
-class PostAsyncScanRequest(RoaRequest):
+class CreateAuditCallbackRequest(RpcRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'Green', '2018-05-09', 'PostAsyncScan','green')
-		self.set_uri_pattern('/green/post/asyncscan')
+		RpcRequest.__init__(self, 'Green', '2017-08-23', 'CreateAuditCallback','green')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -32,8 +31,32 @@ class PostAsyncScanRequest(RoaRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_ClientInfo(self):
-		return self.get_query_params().get('ClientInfo')
+	def get_CallbackTypes(self):
+		return self.get_query_params().get('CallbackTypes')
 
-	def set_ClientInfo(self,ClientInfo):
-		self.add_query_param('ClientInfo',ClientInfo)
+	def set_CallbackTypes(self,CallbackTypes):
+		self.add_query_param('CallbackTypes',CallbackTypes)
+
+	def get_CallbackSuggestions(self):
+		return self.get_query_params().get('CallbackSuggestions')
+
+	def set_CallbackSuggestions(self,CallbackSuggestions):
+		self.add_query_param('CallbackSuggestions',CallbackSuggestions)
+
+	def get_Url(self):
+		return self.get_query_params().get('Url')
+
+	def set_Url(self,Url):
+		self.add_query_param('Url',Url)
+
+	def get_CryptType(self):
+		return self.get_query_params().get('CryptType')
+
+	def set_CryptType(self,CryptType):
+		self.add_query_param('CryptType',CryptType)
+
+	def get_Name(self):
+		return self.get_query_params().get('Name')
+
+	def set_Name(self,Name):
+		self.add_query_param('Name',Name)
