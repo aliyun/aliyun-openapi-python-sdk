@@ -23,7 +23,7 @@ from aliyunsdkopenanalytics_open.endpoint import endpoint_data
 class AddEndPointRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'openanalytics-open', '2018-06-19', 'AddEndPoint','openanalytics')
+		RpcRequest.__init__(self, 'openanalytics-open', '2018-06-19', 'AddEndPoint','openanalytics-cap')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())

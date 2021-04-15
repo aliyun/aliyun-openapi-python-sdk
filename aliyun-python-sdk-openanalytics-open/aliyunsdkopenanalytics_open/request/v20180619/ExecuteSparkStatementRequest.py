@@ -20,12 +20,31 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkopenanalytics_open.endpoint import endpoint_data
 
-class UnSubscribeRegionRequest(RpcRequest):
+class ExecuteSparkStatementRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'openanalytics-open', '2018-06-19', 'UnSubscribeRegion','openanalytics-cap')
+		RpcRequest.__init__(self, 'openanalytics-open', '2018-06-19', 'ExecuteSparkStatement','openanalytics-cap')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
+
+	def get_Code(self):
+		return self.get_body_params().get('Code')
+
+	def set_Code(self,Code):
+		self.add_body_params('Code', Code)
+
+	def get_Kind(self):
+		return self.get_body_params().get('Kind')
+
+	def set_Kind(self,Kind):
+		self.add_body_params('Kind', Kind)
+
+	def get_JobId(self):
+		return self.get_body_params().get('JobId')
+
+	def set_JobId(self,JobId):
+		self.add_body_params('JobId', JobId)
