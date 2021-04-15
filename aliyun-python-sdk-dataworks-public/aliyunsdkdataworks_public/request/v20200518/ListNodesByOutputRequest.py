@@ -42,9 +42,3 @@ class ListNodesByOutputRequest(RpcRequest):
 
 	def set_Outputs(self,Outputs):
 		self.add_body_params('Outputs', Outputs)
-
-	def get_OutputNodeListAsMap(self):
-		return self.get_body_params().get('OutputNodeListAsMap')
-
-	def set_OutputNodeListAsMap(self,OutputNodeListAsMap):
-		self.add_body_params('OutputNodeListAsMap', OutputNodeListAsMap)
