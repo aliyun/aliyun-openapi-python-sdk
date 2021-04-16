@@ -23,7 +23,7 @@ from aliyunsdkreid_cloud.endpoint import endpoint_data
 class ImportSpecialPersonnelRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'reid_cloud', '2020-10-29', 'ImportSpecialPersonnel','1.1.9')
+		RpcRequest.__init__(self, 'reid_cloud', '2020-10-29', 'ImportSpecialPersonnel','1.2.0')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -48,6 +48,12 @@ class ImportSpecialPersonnelRequest(RpcRequest):
 
 	def set_ExternalId(self,ExternalId):
 		self.add_body_params('ExternalId', ExternalId)
+
+	def get_Source(self):
+		return self.get_body_params().get('Source')
+
+	def set_Source(self,Source):
+		self.add_body_params('Source', Source)
 
 	def get_PersonType(self):
 		return self.get_body_params().get('PersonType')

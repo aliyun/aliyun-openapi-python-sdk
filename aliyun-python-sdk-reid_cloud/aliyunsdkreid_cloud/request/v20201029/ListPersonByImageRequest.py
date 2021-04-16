@@ -23,7 +23,7 @@ from aliyunsdkreid_cloud.endpoint import endpoint_data
 class ListPersonByImageRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'reid_cloud', '2020-10-29', 'ListPersonByImage','1.1.9')
+		RpcRequest.__init__(self, 'reid_cloud', '2020-10-29', 'ListPersonByImage','1.2.0')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())

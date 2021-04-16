@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkreid_cloud.endpoint import endpoint_data
 
-class DescribeHeatMapRequest(RpcRequest):
+class ListSpecialPersonnelByImageRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'reid_cloud', '2020-10-29', 'DescribeHeatMap','1.2.0')
+		RpcRequest.__init__(self, 'reid_cloud', '2020-10-29', 'ListSpecialPersonnelByImage','1.2.0')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,11 +31,11 @@ class DescribeHeatMapRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_Date(self):
-		return self.get_body_params().get('Date')
+	def get_Source(self):
+		return self.get_body_params().get('Source')
 
-	def set_Date(self,Date):
-		self.add_body_params('Date', Date)
+	def set_Source(self,Source):
+		self.add_body_params('Source', Source)
 
 	def get_StoreId(self):
 		return self.get_body_params().get('StoreId')
@@ -43,8 +43,14 @@ class DescribeHeatMapRequest(RpcRequest):
 	def set_StoreId(self,StoreId):
 		self.add_body_params('StoreId', StoreId)
 
-	def get_EmapId(self):
-		return self.get_body_params().get('EmapId')
+	def get_PersonType(self):
+		return self.get_body_params().get('PersonType')
 
-	def set_EmapId(self,EmapId):
-		self.add_body_params('EmapId', EmapId)
+	def set_PersonType(self,PersonType):
+		self.add_body_params('PersonType', PersonType)
+
+	def get_ImageUrl(self):
+		return self.get_body_params().get('ImageUrl')
+
+	def set_ImageUrl(self,ImageUrl):
+		self.add_body_params('ImageUrl', ImageUrl)
