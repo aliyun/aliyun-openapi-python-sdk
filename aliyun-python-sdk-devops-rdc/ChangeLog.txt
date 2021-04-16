@@ -1,3 +1,6 @@
+2021-04-16 Version: 1.9.3
+- Support devops organization deletion.
+
 2021-02-19 Version: 1.8.0.1
 - Add update task api.
 
