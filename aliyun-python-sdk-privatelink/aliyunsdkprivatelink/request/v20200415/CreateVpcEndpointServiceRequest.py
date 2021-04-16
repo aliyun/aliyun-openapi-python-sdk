@@ -50,21 +50,27 @@ class CreateVpcEndpointServiceRequest(RpcRequest):
 	def set_Payer(self,Payer):
 		self.add_query_param('Payer',Payer)
 
+	def get_ZoneAffinityEnabled(self):
+		return self.get_query_params().get('ZoneAffinityEnabled')
+
+	def set_ZoneAffinityEnabled(self,ZoneAffinityEnabled):
+		self.add_query_param('ZoneAffinityEnabled',ZoneAffinityEnabled)
+
 	def get_DryRun(self):
 		return self.get_query_params().get('DryRun')
 
 	def set_DryRun(self,DryRun):
 		self.add_query_param('DryRun',DryRun)
 
-	def get_Resource(self):
+	def get_Resources(self):
 		return self.get_query_params().get('Resource')
 
-	def set_Resource(self, Resources):
+	def set_Resources(self, Resources):
 		for depth1 in range(len(Resources)):
-			if Resources[depth1].get('ResourceId') is not None:
-				self.add_query_param('Resource.' + str(depth1 + 1) + '.ResourceId', Resources[depth1].get('ResourceId'))
 			if Resources[depth1].get('ResourceType') is not None:
 				self.add_query_param('Resource.' + str(depth1 + 1) + '.ResourceType', Resources[depth1].get('ResourceType'))
+			if Resources[depth1].get('ResourceId') is not None:
+				self.add_query_param('Resource.' + str(depth1 + 1) + '.ResourceId', Resources[depth1].get('ResourceId'))
 
 	def get_ServiceDescription(self):
 		return self.get_query_params().get('ServiceDescription')

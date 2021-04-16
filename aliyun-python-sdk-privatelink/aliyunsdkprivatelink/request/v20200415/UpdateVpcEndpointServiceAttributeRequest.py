@@ -50,6 +50,12 @@ class UpdateVpcEndpointServiceAttributeRequest(RpcRequest):
 	def set_ConnectBandwidth(self,ConnectBandwidth):
 		self.add_query_param('ConnectBandwidth',ConnectBandwidth)
 
+	def get_ZoneAffinityEnabled(self):
+		return self.get_query_params().get('ZoneAffinityEnabled')
+
+	def set_ZoneAffinityEnabled(self,ZoneAffinityEnabled):
+		self.add_query_param('ZoneAffinityEnabled',ZoneAffinityEnabled)
+
 	def get_DryRun(self):
 		return self.get_query_params().get('DryRun')
 
