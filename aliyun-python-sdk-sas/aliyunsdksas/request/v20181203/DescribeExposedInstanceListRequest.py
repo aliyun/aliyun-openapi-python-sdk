@@ -78,3 +78,9 @@ class DescribeExposedInstanceListRequest(RpcRequest):
 
 	def set_InstanceName(self,InstanceName):
 		self.add_query_param('InstanceName',InstanceName)
+
+	def get_HealthStatus(self):
+		return self.get_query_params().get('HealthStatus')
+
+	def set_HealthStatus(self,HealthStatus):
+		self.add_query_param('HealthStatus',HealthStatus)
