@@ -23,7 +23,7 @@ from aliyunsdkreid_cloud.endpoint import endpoint_data
 class DescribeCameraStatisticsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'reid_cloud', '2020-10-29', 'DescribeCameraStatistics','1.2.0')
+		RpcRequest.__init__(self, 'reid_cloud', '2020-10-29', 'DescribeCameraStatistics','1.2.1')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
