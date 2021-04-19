@@ -49,6 +49,12 @@ class StartBack2BackCallRequest(RpcRequest):
 	def set_UserId(self,UserId):
 		self.add_query_param('UserId',UserId)
 
+	def get_DeviceId(self):
+		return self.get_query_params().get('DeviceId')
+
+	def set_DeviceId(self,DeviceId):
+		self.add_query_param('DeviceId',DeviceId)
+
 	def get_AdditionalBroker(self):
 		return self.get_query_params().get('AdditionalBroker')
 
