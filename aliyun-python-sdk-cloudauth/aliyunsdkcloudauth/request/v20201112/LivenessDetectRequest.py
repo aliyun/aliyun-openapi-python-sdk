@@ -20,11 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcloudauth.endpoint import endpoint_data
 
-class CompareFacesRequest(RpcRequest):
+class LivenessDetectRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cloudauth', '2019-03-07', 'CompareFaces','cloudauth')
-		self.set_protocol_type('https')
+		RpcRequest.__init__(self, 'Cloudauth', '2020-11-12', 'LivenessDetect','cloudauth')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -32,26 +31,32 @@ class CompareFacesRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_SourceImageType(self):
-		return self.get_body_params().get('SourceImageType')
+	def get_MediaCategory(self):
+		return self.get_body_params().get('MediaCategory')
 
-	def set_SourceImageType(self,SourceImageType):
-		self.add_body_params('SourceImageType', SourceImageType)
+	def set_MediaCategory(self,MediaCategory):
+		self.add_body_params('MediaCategory', MediaCategory)
 
-	def get_TargetImageType(self):
-		return self.get_body_params().get('TargetImageType')
+	def get_MediaUrl(self):
+		return self.get_body_params().get('MediaUrl')
 
-	def set_TargetImageType(self,TargetImageType):
-		self.add_body_params('TargetImageType', TargetImageType)
+	def set_MediaUrl(self,MediaUrl):
+		self.add_body_params('MediaUrl', MediaUrl)
 
-	def get_TargetImageValue(self):
-		return self.get_body_params().get('TargetImageValue')
+	def get_BizType(self):
+		return self.get_body_params().get('BizType')
 
-	def set_TargetImageValue(self,TargetImageValue):
-		self.add_body_params('TargetImageValue', TargetImageValue)
+	def set_BizType(self,BizType):
+		self.add_body_params('BizType', BizType)
 
-	def get_SourceImageValue(self):
-		return self.get_body_params().get('SourceImageValue')
+	def get_BizId(self):
+		return self.get_body_params().get('BizId')
 
-	def set_SourceImageValue(self,SourceImageValue):
-		self.add_body_params('SourceImageValue', SourceImageValue)
+	def set_BizId(self,BizId):
+		self.add_body_params('BizId', BizId)
+
+	def get_MediaFile(self):
+		return self.get_body_params().get('MediaFile')
+
+	def set_MediaFile(self,MediaFile):
+		self.add_body_params('MediaFile', MediaFile)
