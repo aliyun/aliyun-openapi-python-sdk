@@ -55,6 +55,12 @@ class CreateOfficeConversionTaskRequest(RpcRequest):
 	def set_PdfVector(self,PdfVector):
 		self.add_query_param('PdfVector',PdfVector)
 
+	def get_UserData(self):
+		return self.get_query_params().get('UserData')
+
+	def set_UserData(self,UserData):
+		self.add_query_param('UserData',UserData)
+
 	def get_Password(self):
 		return self.get_query_params().get('Password')
 
