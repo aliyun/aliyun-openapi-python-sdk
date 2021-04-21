@@ -49,6 +49,12 @@ class CreateDbfsRequest(RpcRequest):
 	def set_ClientToken(self,ClientToken):
 		self.add_query_param('ClientToken',ClientToken)
 
+	def get_UsedScene(self):
+		return self.get_query_params().get('UsedScene')
+
+	def set_UsedScene(self,UsedScene):
+		self.add_query_param('UsedScene',UsedScene)
+
 	def get_FsName(self):
 		return self.get_query_params().get('FsName')
 

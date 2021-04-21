@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdbfs.endpoint import endpoint_data
 
-class AttachDbfsRequest(RpcRequest):
+class OpreateConstantsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'DBFS', '2020-04-18', 'AttachDbfs')
+		RpcRequest.__init__(self, 'DBFS', '2020-04-18', 'OpreateConstants')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,20 +31,20 @@ class AttachDbfsRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_ECSInstanceId(self):
-		return self.get_query_params().get('ECSInstanceId')
+	def get_PageNumber(self):
+		return self.get_query_params().get('PageNumber')
 
-	def set_ECSInstanceId(self,ECSInstanceId):
-		self.add_query_param('ECSInstanceId',ECSInstanceId)
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)
 
-	def get_ServerUrl(self):
-		return self.get_query_params().get('ServerUrl')
+	def get_ConstantsData(self):
+		return self.get_query_params().get('ConstantsData')
 
-	def set_ServerUrl(self,ServerUrl):
-		self.add_query_param('ServerUrl',ServerUrl)
+	def set_ConstantsData(self,ConstantsData):
+		self.add_query_param('ConstantsData',ConstantsData)
 
-	def get_FsId(self):
-		return self.get_query_params().get('FsId')
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
 
-	def set_FsId(self,FsId):
-		self.add_query_param('FsId',FsId)
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
