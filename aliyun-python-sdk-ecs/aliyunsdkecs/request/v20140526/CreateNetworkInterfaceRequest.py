@@ -119,6 +119,12 @@ class CreateNetworkInterfaceRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
+	def get_QueuePairNumber(self):
+		return self.get_query_params().get('QueuePairNumber')
+
+	def set_QueuePairNumber(self,QueuePairNumber):
+		self.add_query_param('QueuePairNumber',QueuePairNumber)
+
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
@@ -132,6 +138,12 @@ class CreateNetworkInterfaceRequest(RpcRequest):
 		for depth1 in range(len(SecurityGroupIdss)):
 			if SecurityGroupIdss[depth1] is not None:
 				self.add_query_param('SecurityGroupIds.' + str(depth1 + 1) , SecurityGroupIdss[depth1])
+
+	def get_NetworkInterfaceTrafficMode(self):
+		return self.get_query_params().get('NetworkInterfaceTrafficMode')
+
+	def set_NetworkInterfaceTrafficMode(self,NetworkInterfaceTrafficMode):
+		self.add_query_param('NetworkInterfaceTrafficMode',NetworkInterfaceTrafficMode)
 
 	def get_VSwitchId(self):
 		return self.get_query_params().get('VSwitchId')

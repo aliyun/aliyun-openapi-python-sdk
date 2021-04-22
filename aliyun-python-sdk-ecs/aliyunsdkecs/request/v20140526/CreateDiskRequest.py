@@ -113,6 +113,12 @@ class CreateDiskRequest(RpcRequest):
 	def set_AdvancedFeatures(self,AdvancedFeatures):
 		self.add_query_param('AdvancedFeatures',AdvancedFeatures)
 
+	def get_DedicatedBlockStorageClusterId(self):
+		return self.get_query_params().get('DedicatedBlockStorageClusterId')
+
+	def set_DedicatedBlockStorageClusterId(self,DedicatedBlockStorageClusterId):
+		self.add_query_param('DedicatedBlockStorageClusterId',DedicatedBlockStorageClusterId)
+
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 

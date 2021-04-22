@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkecs.endpoint import endpoint_data
 
-class InvokeCommandRequest(RpcRequest):
+class CreateDiskReplicaPairRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'InvokeCommand','ecs')
+		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'CreateDiskReplicaPair','ecs')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -37,35 +37,35 @@ class InvokeCommandRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_CommandId(self):
-		return self.get_query_params().get('CommandId')
+	def get_PairName(self):
+		return self.get_query_params().get('PairName')
 
-	def set_CommandId(self,CommandId):
-		self.add_query_param('CommandId',CommandId)
+	def set_PairName(self,PairName):
+		self.add_query_param('PairName',PairName)
 
-	def get_Frequency(self):
-		return self.get_query_params().get('Frequency')
+	def get_DestinationRegionId(self):
+		return self.get_query_params().get('DestinationRegionId')
 
-	def set_Frequency(self,Frequency):
-		self.add_query_param('Frequency',Frequency)
+	def set_DestinationRegionId(self,DestinationRegionId):
+		self.add_query_param('DestinationRegionId',DestinationRegionId)
 
-	def get_RepeatMode(self):
-		return self.get_query_params().get('RepeatMode')
+	def get_Description(self):
+		return self.get_query_params().get('Description')
 
-	def set_RepeatMode(self,RepeatMode):
-		self.add_query_param('RepeatMode',RepeatMode)
+	def set_Description(self,Description):
+		self.add_query_param('Description',Description)
 
-	def get_WindowsPasswordName(self):
-		return self.get_query_params().get('WindowsPasswordName')
+	def get_DiskId(self):
+		return self.get_query_params().get('DiskId')
 
-	def set_WindowsPasswordName(self,WindowsPasswordName):
-		self.add_query_param('WindowsPasswordName',WindowsPasswordName)
+	def set_DiskId(self,DiskId):
+		self.add_query_param('DiskId',DiskId)
 
-	def get_Timed(self):
-		return self.get_query_params().get('Timed')
+	def get_AsyncCycle(self):
+		return self.get_query_params().get('AsyncCycle')
 
-	def set_Timed(self,Timed):
-		self.add_query_param('Timed',Timed)
+	def set_AsyncCycle(self,AsyncCycle):
+		self.add_query_param('AsyncCycle',AsyncCycle)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -85,22 +85,8 @@ class InvokeCommandRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_InstanceIds(self):
-		return self.get_query_params().get('InstanceId')
+	def get_DestinationDiskId(self):
+		return self.get_query_params().get('DestinationDiskId')
 
-	def set_InstanceIds(self, InstanceIds):
-		for depth1 in range(len(InstanceIds)):
-			if InstanceIds[depth1] is not None:
-				self.add_query_param('InstanceId.' + str(depth1 + 1) , InstanceIds[depth1])
-
-	def get_Parameters(self):
-		return self.get_query_params().get('Parameters')
-
-	def set_Parameters(self,Parameters):
-		self.add_query_param('Parameters',Parameters)
-
-	def get_Username(self):
-		return self.get_query_params().get('Username')
-
-	def set_Username(self,Username):
-		self.add_query_param('Username',Username)
+	def set_DestinationDiskId(self,DestinationDiskId):
+		self.add_query_param('DestinationDiskId',DestinationDiskId)
