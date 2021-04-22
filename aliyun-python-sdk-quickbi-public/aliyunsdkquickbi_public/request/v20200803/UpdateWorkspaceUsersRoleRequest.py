@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkquickbi_public.endpoint import endpoint_data
 
-class SwitchRowLevelTypeRequest(RpcRequest):
+class UpdateWorkspaceUsersRoleRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'quickbi-public', '2020-08-05', 'SwitchRowLevelType','quickbi')
+		RpcRequest.__init__(self, 'quickbi-public', '2020-08-03', 'UpdateWorkspaceUsersRole','quickbi')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,14 +31,20 @@ class SwitchRowLevelTypeRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_DatasetId(self):
-		return self.get_query_params().get('DatasetId')
+	def get_UserIds(self):
+		return self.get_query_params().get('UserIds')
 
-	def set_DatasetId(self,DatasetId):
-		self.add_query_param('DatasetId',DatasetId)
+	def set_UserIds(self,UserIds):
+		self.add_query_param('UserIds',UserIds)
 
-	def get_Type(self):
-		return self.get_query_params().get('Type')
+	def get_RoleId(self):
+		return self.get_query_params().get('RoleId')
 
-	def set_Type(self,Type):
-		self.add_query_param('Type',Type)
+	def set_RoleId(self,RoleId):
+		self.add_query_param('RoleId',RoleId)
+
+	def get_WorkspaceId(self):
+		return self.get_query_params().get('WorkspaceId')
+
+	def set_WorkspaceId(self,WorkspaceId):
+		self.add_query_param('WorkspaceId',WorkspaceId)

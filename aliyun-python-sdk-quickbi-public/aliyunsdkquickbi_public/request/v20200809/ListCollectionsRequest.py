@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkquickbi_public.endpoint import endpoint_data
 
-class DeleteRowLevelByTagRequest(RpcRequest):
+class ListCollectionsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'quickbi-public', '2020-08-05', 'DeleteRowLevelByTag','quickbi')
+		RpcRequest.__init__(self, 'quickbi-public', '2020-08-09', 'ListCollections','quickbi')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,14 +31,8 @@ class DeleteRowLevelByTagRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_ColumnIds(self):
-		return self.get_query_params().get('ColumnIds')
+	def get_UserId(self):
+		return self.get_query_params().get('UserId')
 
-	def set_ColumnIds(self,ColumnIds):
-		self.add_query_param('ColumnIds',ColumnIds)
-
-	def get_DatasetId(self):
-		return self.get_query_params().get('DatasetId')
-
-	def set_DatasetId(self,DatasetId):
-		self.add_query_param('DatasetId',DatasetId)
+	def set_UserId(self,UserId):
+		self.add_query_param('UserId',UserId)

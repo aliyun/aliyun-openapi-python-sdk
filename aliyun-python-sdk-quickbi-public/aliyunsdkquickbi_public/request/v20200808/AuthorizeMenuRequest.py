@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkquickbi_public.endpoint import endpoint_data
 
-class DeleteRowLevelPermissionRequest(RpcRequest):
+class AuthorizeMenuRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'quickbi-public', '2020-08-05', 'DeleteRowLevelPermission','quickbi')
+		RpcRequest.__init__(self, 'quickbi-public', '2020-08-08', 'AuthorizeMenu','quickbi')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,32 +31,26 @@ class DeleteRowLevelPermissionRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_TargetTypes(self):
-		return self.get_query_params().get('TargetTypes')
+	def get_DataPortalId(self):
+		return self.get_query_params().get('DataPortalId')
 
-	def set_TargetTypes(self,TargetTypes):
-		self.add_query_param('TargetTypes',TargetTypes)
+	def set_DataPortalId(self,DataPortalId):
+		self.add_query_param('DataPortalId',DataPortalId)
 
-	def get_TargetIds(self):
-		return self.get_query_params().get('TargetIds')
+	def get_UserIds(self):
+		return self.get_query_params().get('UserIds')
 
-	def set_TargetIds(self,TargetIds):
-		self.add_query_param('TargetIds',TargetIds)
+	def set_UserIds(self,UserIds):
+		self.add_query_param('UserIds',UserIds)
 
-	def get_ColumnIds(self):
-		return self.get_query_params().get('ColumnIds')
+	def get_UserGroupIds(self):
+		return self.get_query_params().get('UserGroupIds')
 
-	def set_ColumnIds(self,ColumnIds):
-		self.add_query_param('ColumnIds',ColumnIds)
+	def set_UserGroupIds(self,UserGroupIds):
+		self.add_query_param('UserGroupIds',UserGroupIds)
 
-	def get_DatasetId(self):
-		return self.get_query_params().get('DatasetId')
+	def get_MenuIds(self):
+		return self.get_query_params().get('MenuIds')
 
-	def set_DatasetId(self,DatasetId):
-		self.add_query_param('DatasetId',DatasetId)
-
-	def get_DeleteType(self):
-		return self.get_query_params().get('DeleteType')
-
-	def set_DeleteType(self,DeleteType):
-		self.add_query_param('DeleteType',DeleteType)
+	def set_MenuIds(self,MenuIds):
+		self.add_query_param('MenuIds',MenuIds)

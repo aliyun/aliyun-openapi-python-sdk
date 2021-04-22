@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkquickbi_public.endpoint import endpoint_data
 
-class SwitchColumnRowLevelControlRequest(RpcRequest):
+class SaveFavoritesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'quickbi-public', '2020-08-05', 'SwitchColumnRowLevelControl','quickbi')
+		RpcRequest.__init__(self, 'quickbi-public', '2020-08-09', 'SaveFavorites','quickbi')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,20 +31,14 @@ class SwitchColumnRowLevelControlRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_ColumnIds(self):
-		return self.get_query_params().get('ColumnIds')
+	def get_WorksId(self):
+		return self.get_query_params().get('WorksId')
 
-	def set_ColumnIds(self,ColumnIds):
-		self.add_query_param('ColumnIds',ColumnIds)
+	def set_WorksId(self,WorksId):
+		self.add_query_param('WorksId',WorksId)
 
-	def get_DatasetId(self):
-		return self.get_query_params().get('DatasetId')
+	def get_UserId(self):
+		return self.get_query_params().get('UserId')
 
-	def set_DatasetId(self,DatasetId):
-		self.add_query_param('DatasetId',DatasetId)
-
-	def get_Open(self):
-		return self.get_query_params().get('Open')
-
-	def set_Open(self,Open):
-		self.add_query_param('Open',Open)
+	def set_UserId(self,UserId):
+		self.add_query_param('UserId',UserId)

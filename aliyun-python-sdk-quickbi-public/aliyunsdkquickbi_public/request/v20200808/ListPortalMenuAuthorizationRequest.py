@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkquickbi_public.endpoint import endpoint_data
 
-class AddRowLevelPermissionRequest(RpcRequest):
+class ListPortalMenuAuthorizationRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'quickbi-public', '2020-08-05', 'AddRowLevelPermission','quickbi')
+		RpcRequest.__init__(self, 'quickbi-public', '2020-08-08', 'ListPortalMenuAuthorization','quickbi')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,32 +31,8 @@ class AddRowLevelPermissionRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_TargetIds(self):
-		return self.get_query_params().get('TargetIds')
+	def get_DataPortalId(self):
+		return self.get_query_params().get('DataPortalId')
 
-	def set_TargetIds(self,TargetIds):
-		self.add_query_param('TargetIds',TargetIds)
-
-	def get_TargetType(self):
-		return self.get_query_params().get('TargetType')
-
-	def set_TargetType(self,TargetType):
-		self.add_query_param('TargetType',TargetType)
-
-	def get_ColumnIds(self):
-		return self.get_query_params().get('ColumnIds')
-
-	def set_ColumnIds(self,ColumnIds):
-		self.add_query_param('ColumnIds',ColumnIds)
-
-	def get_DatasetId(self):
-		return self.get_query_params().get('DatasetId')
-
-	def set_DatasetId(self,DatasetId):
-		self.add_query_param('DatasetId',DatasetId)
-
-	def get_ColumnValues(self):
-		return self.get_query_params().get('ColumnValues')
-
-	def set_ColumnValues(self,ColumnValues):
-		self.add_query_param('ColumnValues',ColumnValues)
+	def set_DataPortalId(self,DataPortalId):
+		self.add_query_param('DataPortalId',DataPortalId)
