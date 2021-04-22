@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdms_enterprise.endpoint import endpoint_data
 
-class ListDBTaskSQLJobRequest(RpcRequest):
+class GetPhysicalDatabaseRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'dms-enterprise', '2018-11-01', 'ListDBTaskSQLJob','dms-enterprise')
+		RpcRequest.__init__(self, 'dms-enterprise', '2018-11-01', 'GetPhysicalDatabase','dms-enterprise')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,23 +31,13 @@ class ListDBTaskSQLJobRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_DBTaskGroupId(self): # Long
-		return self.get_query_params().get('DBTaskGroupId')
+	def get_DbId(self): # Long
+		return self.get_query_params().get('DbId')
 
-	def set_DBTaskGroupId(self, DBTaskGroupId):  # Long
-		self.add_query_param('DBTaskGroupId', DBTaskGroupId)
-	def get_PageNumber(self): # Long
-		return self.get_query_params().get('PageNumber')
-
-	def set_PageNumber(self, PageNumber):  # Long
-		self.add_query_param('PageNumber', PageNumber)
+	def set_DbId(self, DbId):  # Long
+		self.add_query_param('DbId', DbId)
 	def get_Tid(self): # Long
 		return self.get_query_params().get('Tid')
 
 	def set_Tid(self, Tid):  # Long
 		self.add_query_param('Tid', Tid)
-	def get_PageSize(self): # Long
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self, PageSize):  # Long
-		self.add_query_param('PageSize', PageSize)

@@ -23,7 +23,7 @@ from aliyunsdkdms_enterprise.endpoint import endpoint_data
 class GetTableTopologyRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'dms-enterprise', '2018-11-01', 'GetTableTopology')
+		RpcRequest.__init__(self, 'dms-enterprise', '2018-11-01', 'GetTableTopology','dms-enterprise')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
