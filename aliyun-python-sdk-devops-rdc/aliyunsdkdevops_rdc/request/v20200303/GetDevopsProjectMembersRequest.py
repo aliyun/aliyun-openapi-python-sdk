@@ -25,6 +25,12 @@ class GetDevopsProjectMembersRequest(RpcRequest):
 		RpcRequest.__init__(self, 'devops-rdc', '2020-03-03', 'GetDevopsProjectMembers')
 		self.set_method('POST')
 
+	def get_PageSize(self):
+		return self.get_body_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_body_params('PageSize', PageSize)
+
 	def get_ProjectId(self):
 		return self.get_body_params().get('ProjectId')
 
@@ -36,3 +42,9 @@ class GetDevopsProjectMembersRequest(RpcRequest):
 
 	def set_OrgId(self,OrgId):
 		self.add_body_params('OrgId', OrgId)
+
+	def get_PageToken(self):
+		return self.get_body_params().get('PageToken')
+
+	def set_PageToken(self,PageToken):
+		self.add_body_params('PageToken', PageToken)
