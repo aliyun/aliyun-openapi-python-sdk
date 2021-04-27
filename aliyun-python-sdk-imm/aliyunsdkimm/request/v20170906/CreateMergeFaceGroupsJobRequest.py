@@ -43,6 +43,12 @@ class CreateMergeFaceGroupsJobRequest(RpcRequest):
 	def set_NotifyEndpoint(self,NotifyEndpoint):
 		self.add_query_param('NotifyEndpoint',NotifyEndpoint)
 
+	def get_CustomMessage(self):
+		return self.get_query_params().get('CustomMessage')
+
+	def set_CustomMessage(self,CustomMessage):
+		self.add_query_param('CustomMessage',CustomMessage)
+
 	def get_GroupIdFrom(self):
 		return self.get_query_params().get('GroupIdFrom')
 
