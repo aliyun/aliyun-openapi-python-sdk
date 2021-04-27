@@ -20,11 +20,11 @@
 from aliyunsdkcore.request import RoaRequest
 from aliyunsdkedas.endpoint import endpoint_data
 
-class ListK8sIngressRulesRequest(RoaRequest):
+class DescribeAppInstanceListRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'ListK8sIngressRules','Edas')
-		self.set_uri_pattern('/pop/v5/k8s/acs/k8s_ingress')
+		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'DescribeAppInstanceList','Edas')
+		self.set_uri_pattern('/pop/v5/oam/app_instance_list')
 		self.set_method('GET')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -32,20 +32,14 @@ class ListK8sIngressRulesRequest(RoaRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_Condition(self):
-		return self.get_query_params().get('Condition')
+	def get_AppId(self):
+		return self.get_query_params().get('AppId')
 
-	def set_Condition(self,Condition):
-		self.add_query_param('Condition',Condition)
+	def set_AppId(self,AppId):
+		self.add_query_param('AppId',AppId)
 
-	def get_Namespace(self):
-		return self.get_query_params().get('Namespace')
+	def get_WithNodeInfo(self):
+		return self.get_query_params().get('WithNodeInfo')
 
-	def set_Namespace(self,Namespace):
-		self.add_query_param('Namespace',Namespace)
-
-	def get_ClusterId(self):
-		return self.get_query_params().get('ClusterId')
-
-	def set_ClusterId(self,ClusterId):
-		self.add_query_param('ClusterId',ClusterId)
+	def set_WithNodeInfo(self,WithNodeInfo):
+		self.add_query_param('WithNodeInfo',WithNodeInfo)

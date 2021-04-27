@@ -20,11 +20,11 @@
 from aliyunsdkcore.request import RoaRequest
 from aliyunsdkedas.endpoint import endpoint_data
 
-class QueryMonitorInfoRequest(RoaRequest):
+class ListK8sConfigMapsRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'QueryMonitorInfo','Edas')
-		self.set_uri_pattern('/pop/v5/monitor/queryMonitorInfo')
+		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'ListK8sConfigMaps','Edas')
+		self.set_uri_pattern('/pop/v5/k8s/acs/k8s_config_map')
 		self.set_method('GET')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -32,38 +32,38 @@ class QueryMonitorInfoRequest(RoaRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_Metric(self):
-		return self.get_query_params().get('Metric')
+	def get_Condition(self):
+		return self.get_query_params().get('Condition')
 
-	def set_Metric(self,Metric):
-		self.add_query_param('Metric',Metric)
+	def set_Condition(self,Condition):
+		self.add_query_param('Condition',Condition)
 
-	def get_Aggregator(self):
-		return self.get_query_params().get('Aggregator')
+	def get_PageNo(self):
+		return self.get_query_params().get('PageNo')
 
-	def set_Aggregator(self,Aggregator):
-		self.add_query_param('Aggregator',Aggregator)
+	def set_PageNo(self,PageNo):
+		self.add_query_param('PageNo',PageNo)
 
-	def get_Start(self):
-		return self.get_query_params().get('Start')
+	def get_Namespace(self):
+		return self.get_query_params().get('Namespace')
 
-	def set_Start(self,Start):
-		self.add_query_param('Start',Start)
+	def set_Namespace(self,Namespace):
+		self.add_query_param('Namespace',Namespace)
 
-	def get_End(self):
-		return self.get_query_params().get('End')
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
 
-	def set_End(self,End):
-		self.add_query_param('End',End)
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
 
-	def get_Interval(self):
-		return self.get_query_params().get('Interval')
+	def get_ClusterId(self):
+		return self.get_query_params().get('ClusterId')
 
-	def set_Interval(self,Interval):
-		self.add_query_param('Interval',Interval)
+	def set_ClusterId(self,ClusterId):
+		self.add_query_param('ClusterId',ClusterId)
 
-	def get_Tags(self):
-		return self.get_query_params().get('Tags')
+	def get_ShowRelatedApps(self):
+		return self.get_query_params().get('ShowRelatedApps')
 
-	def set_Tags(self,Tags):
-		self.add_query_param('Tags',Tags)
+	def set_ShowRelatedApps(self,ShowRelatedApps):
+		self.add_query_param('ShowRelatedApps',ShowRelatedApps)

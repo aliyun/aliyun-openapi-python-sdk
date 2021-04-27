@@ -20,29 +20,17 @@
 from aliyunsdkcore.request import RoaRequest
 from aliyunsdkedas.endpoint import endpoint_data
 
-class ListK8sSecretsRequest(RoaRequest):
+class DeleteK8sConfigMapRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'ListK8sSecrets','Edas')
-		self.set_uri_pattern('/pop/v5/k8s/acs/k8s_secret')
-		self.set_method('GET')
+		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'DeleteK8sConfigMap','Edas')
+		self.set_uri_pattern('/pop/v5/k8s/acs/k8s_config_map')
+		self.set_method('DELETE')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Condition(self):
-		return self.get_query_params().get('Condition')
-
-	def set_Condition(self,Condition):
-		self.add_query_param('Condition',Condition)
-
-	def get_PageNo(self):
-		return self.get_query_params().get('PageNo')
-
-	def set_PageNo(self,PageNo):
-		self.add_query_param('PageNo',PageNo)
 
 	def get_Namespace(self):
 		return self.get_query_params().get('Namespace')
@@ -50,20 +38,14 @@ class ListK8sSecretsRequest(RoaRequest):
 	def set_Namespace(self,Namespace):
 		self.add_query_param('Namespace',Namespace)
 
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
+	def get_Name(self):
+		return self.get_query_params().get('Name')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
+	def set_Name(self,Name):
+		self.add_query_param('Name',Name)
 
 	def get_ClusterId(self):
 		return self.get_query_params().get('ClusterId')
 
 	def set_ClusterId(self,ClusterId):
 		self.add_query_param('ClusterId',ClusterId)
-
-	def get_ShowRelatedApps(self):
-		return self.get_query_params().get('ShowRelatedApps')
-
-	def set_ShowRelatedApps(self,ShowRelatedApps):
-		self.add_query_param('ShowRelatedApps',ShowRelatedApps)

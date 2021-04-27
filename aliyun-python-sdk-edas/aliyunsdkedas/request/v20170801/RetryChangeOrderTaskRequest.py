@@ -20,11 +20,11 @@
 from aliyunsdkcore.request import RoaRequest
 from aliyunsdkedas.endpoint import endpoint_data
 
-class ListK8sIngressRulesRequest(RoaRequest):
+class RetryChangeOrderTaskRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'ListK8sIngressRules','Edas')
-		self.set_uri_pattern('/pop/v5/k8s/acs/k8s_ingress')
+		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'RetryChangeOrderTask','Edas')
+		self.set_uri_pattern('/pop/v5/changeorder/task_retry')
 		self.set_method('GET')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -32,20 +32,14 @@ class ListK8sIngressRulesRequest(RoaRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_Condition(self):
-		return self.get_query_params().get('Condition')
+	def get_RetryStatus(self):
+		return self.get_query_params().get('RetryStatus')
 
-	def set_Condition(self,Condition):
-		self.add_query_param('Condition',Condition)
+	def set_RetryStatus(self,RetryStatus):
+		self.add_query_param('RetryStatus',RetryStatus)
 
-	def get_Namespace(self):
-		return self.get_query_params().get('Namespace')
+	def get_TaskId(self):
+		return self.get_query_params().get('TaskId')
 
-	def set_Namespace(self,Namespace):
-		self.add_query_param('Namespace',Namespace)
-
-	def get_ClusterId(self):
-		return self.get_query_params().get('ClusterId')
-
-	def set_ClusterId(self,ClusterId):
-		self.add_query_param('ClusterId',ClusterId)
+	def set_TaskId(self,TaskId):
+		self.add_query_param('TaskId',TaskId)

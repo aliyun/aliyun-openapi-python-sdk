@@ -50,12 +50,6 @@ class UpdateK8sIngressRuleRequest(RoaRequest):
 	def set_IngressConf(self,IngressConf):
 		self.add_query_param('IngressConf',IngressConf)
 
-	def get_Rules(self):
-		return self.get_query_params().get('Rules')
-
-	def set_Rules(self,Rules):
-		self.add_query_param('Rules',Rules)
-
 	def get_ClusterId(self):
 		return self.get_query_params().get('ClusterId')
 
