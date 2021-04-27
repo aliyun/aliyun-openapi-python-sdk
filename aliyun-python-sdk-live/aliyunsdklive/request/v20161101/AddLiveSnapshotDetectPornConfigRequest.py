@@ -43,10 +43,10 @@ class AddLiveSnapshotDetectPornConfigRequest(RpcRequest):
 	def set_OssObject(self,OssObject):
 		self.add_query_param('OssObject',OssObject)
 
-	def get_Scene(self):
+	def get_Scenes(self):
 		return self.get_query_params().get('Scene')
 
-	def set_Scene(self, Scenes):
+	def set_Scenes(self, Scenes):
 		for depth1 in range(len(Scenes)):
 			if Scenes[depth1] is not None:
 				self.add_query_param('Scene.' + str(depth1 + 1) , Scenes[depth1])

@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdklive.endpoint import endpoint_data
 
-class UnTagLiveResourcesRequest(RpcRequest):
+class EditPlaylistRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'live', '2016-11-01', 'UnTagLiveResources','live')
+		RpcRequest.__init__(self, 'live', '2016-11-01', 'EditPlaylist','live')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,19 +31,17 @@ class UnTagLiveResourcesRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_All(self):
-		return self.get_query_params().get('All')
+	def get_ProgramItems(self):
+		return self.get_query_params().get('ProgramItems')
 
-	def set_All(self,All):
-		self.add_query_param('All',All)
+	def set_ProgramItems(self,ProgramItems):
+		self.add_query_param('ProgramItems',ProgramItems)
 
-	def get_ResourceIds(self):
-		return self.get_query_params().get('ResourceId')
+	def get_ProgramId(self):
+		return self.get_query_params().get('ProgramId')
 
-	def set_ResourceIds(self, ResourceIds):
-		for depth1 in range(len(ResourceIds)):
-			if ResourceIds[depth1] is not None:
-				self.add_query_param('ResourceId.' + str(depth1 + 1) , ResourceIds[depth1])
+	def set_ProgramId(self,ProgramId):
+		self.add_query_param('ProgramId',ProgramId)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
@@ -51,16 +49,8 @@ class UnTagLiveResourcesRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_ResourceType(self):
-		return self.get_query_params().get('ResourceType')
+	def get_ProgramConfig(self):
+		return self.get_query_params().get('ProgramConfig')
 
-	def set_ResourceType(self,ResourceType):
-		self.add_query_param('ResourceType',ResourceType)
-
-	def get_TagKeys(self):
-		return self.get_query_params().get('TagKey')
-
-	def set_TagKeys(self, TagKeys):
-		for depth1 in range(len(TagKeys)):
-			if TagKeys[depth1] is not None:
-				self.add_query_param('TagKey.' + str(depth1 + 1) , TagKeys[depth1])
+	def set_ProgramConfig(self,ProgramConfig):
+		self.add_query_param('ProgramConfig',ProgramConfig)

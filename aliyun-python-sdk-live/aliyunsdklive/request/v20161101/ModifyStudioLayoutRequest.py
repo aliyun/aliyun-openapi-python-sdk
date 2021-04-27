@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdklive.endpoint import endpoint_data
 
-class SetCasterSceneConfigRequest(RpcRequest):
+class ModifyStudioLayoutRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'live', '2016-11-01', 'SetCasterSceneConfig','live')
+		RpcRequest.__init__(self, 'live', '2016-11-01', 'ModifyStudioLayout','live')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,19 +31,35 @@ class SetCasterSceneConfigRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_ScreenInputConfigList(self):
+		return self.get_query_params().get('ScreenInputConfigList')
+
+	def set_ScreenInputConfigList(self,ScreenInputConfigList):
+		self.add_query_param('ScreenInputConfigList',ScreenInputConfigList)
+
 	def get_LayoutId(self):
 		return self.get_query_params().get('LayoutId')
 
 	def set_LayoutId(self,LayoutId):
 		self.add_query_param('LayoutId',LayoutId)
 
-	def get_ComponentIds(self):
-		return self.get_query_params().get('ComponentId')
+	def get_LayoutName(self):
+		return self.get_query_params().get('LayoutName')
 
-	def set_ComponentIds(self, ComponentIds):
-		for depth1 in range(len(ComponentIds)):
-			if ComponentIds[depth1] is not None:
-				self.add_query_param('ComponentId.' + str(depth1 + 1) , ComponentIds[depth1])
+	def set_LayoutName(self,LayoutName):
+		self.add_query_param('LayoutName',LayoutName)
+
+	def get_LayerOrderConfigList(self):
+		return self.get_query_params().get('LayerOrderConfigList')
+
+	def set_LayerOrderConfigList(self,LayerOrderConfigList):
+		self.add_query_param('LayerOrderConfigList',LayerOrderConfigList)
+
+	def get_MediaInputConfigList(self):
+		return self.get_query_params().get('MediaInputConfigList')
+
+	def set_MediaInputConfigList(self,MediaInputConfigList):
+		self.add_query_param('MediaInputConfigList',MediaInputConfigList)
 
 	def get_CasterId(self):
 		return self.get_query_params().get('CasterId')
@@ -51,14 +67,20 @@ class SetCasterSceneConfigRequest(RpcRequest):
 	def set_CasterId(self,CasterId):
 		self.add_query_param('CasterId',CasterId)
 
+	def get_BgImageConfig(self):
+		return self.get_query_params().get('BgImageConfig')
+
+	def set_BgImageConfig(self,BgImageConfig):
+		self.add_query_param('BgImageConfig',BgImageConfig)
+
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_SceneId(self):
-		return self.get_query_params().get('SceneId')
+	def get_CommonConfig(self):
+		return self.get_query_params().get('CommonConfig')
 
-	def set_SceneId(self,SceneId):
-		self.add_query_param('SceneId',SceneId)
+	def set_CommonConfig(self,CommonConfig):
+		self.add_query_param('CommonConfig',CommonConfig)

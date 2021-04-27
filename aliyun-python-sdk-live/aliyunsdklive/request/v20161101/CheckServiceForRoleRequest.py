@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdklive.endpoint import endpoint_data
 
-class UnTagLiveResourcesRequest(RpcRequest):
+class CheckServiceForRoleRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'live', '2016-11-01', 'UnTagLiveResources','live')
+		RpcRequest.__init__(self, 'live', '2016-11-01', 'CheckServiceForRole','live')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,36 +31,32 @@ class UnTagLiveResourcesRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_All(self):
-		return self.get_query_params().get('All')
+	def get_AccountId(self):
+		return self.get_query_params().get('AccountId')
 
-	def set_All(self,All):
-		self.add_query_param('All',All)
+	def set_AccountId(self,AccountId):
+		self.add_query_param('AccountId',AccountId)
 
-	def get_ResourceIds(self):
-		return self.get_query_params().get('ResourceId')
+	def get_SPIRegionId(self):
+		return self.get_query_params().get('SPIRegionId')
 
-	def set_ResourceIds(self, ResourceIds):
-		for depth1 in range(len(ResourceIds)):
-			if ResourceIds[depth1] is not None:
-				self.add_query_param('ResourceId.' + str(depth1 + 1) , ResourceIds[depth1])
+	def set_SPIRegionId(self,SPIRegionId):
+		self.add_query_param('SPIRegionId',SPIRegionId)
 
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
+	def get_RoleArn(self):
+		return self.get_query_params().get('RoleArn')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
+	def set_RoleArn(self,RoleArn):
+		self.add_query_param('RoleArn',RoleArn)
 
-	def get_ResourceType(self):
-		return self.get_query_params().get('ResourceType')
+	def get_DeletionTaskId(self):
+		return self.get_query_params().get('DeletionTaskId')
 
-	def set_ResourceType(self,ResourceType):
-		self.add_query_param('ResourceType',ResourceType)
+	def set_DeletionTaskId(self,DeletionTaskId):
+		self.add_query_param('DeletionTaskId',DeletionTaskId)
 
-	def get_TagKeys(self):
-		return self.get_query_params().get('TagKey')
+	def get_ServiceName(self):
+		return self.get_query_params().get('ServiceName')
 
-	def set_TagKeys(self, TagKeys):
-		for depth1 in range(len(TagKeys)):
-			if TagKeys[depth1] is not None:
-				self.add_query_param('TagKey.' + str(depth1 + 1) , TagKeys[depth1])
+	def set_ServiceName(self,ServiceName):
+		self.add_query_param('ServiceName',ServiceName)

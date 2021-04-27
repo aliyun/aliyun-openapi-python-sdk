@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdklive.endpoint import endpoint_data
 
-class UnTagLiveResourcesRequest(RpcRequest):
+class AddDRMCertificateRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'live', '2016-11-01', 'UnTagLiveResources','live')
+		RpcRequest.__init__(self, 'live', '2016-11-01', 'AddDRMCertificate','live')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,19 +31,29 @@ class UnTagLiveResourcesRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_All(self):
-		return self.get_query_params().get('All')
+	def get_ServCert(self):
+		return self.get_query_params().get('ServCert')
 
-	def set_All(self,All):
-		self.add_query_param('All',All)
+	def set_ServCert(self,ServCert):
+		self.add_query_param('ServCert',ServCert)
 
-	def get_ResourceIds(self):
-		return self.get_query_params().get('ResourceId')
+	def get_Description(self):
+		return self.get_query_params().get('Description')
 
-	def set_ResourceIds(self, ResourceIds):
-		for depth1 in range(len(ResourceIds)):
-			if ResourceIds[depth1] is not None:
-				self.add_query_param('ResourceId.' + str(depth1 + 1) , ResourceIds[depth1])
+	def set_Description(self,Description):
+		self.add_query_param('Description',Description)
+
+	def get_PrivateKey(self):
+		return self.get_query_params().get('PrivateKey')
+
+	def set_PrivateKey(self,PrivateKey):
+		self.add_query_param('PrivateKey',PrivateKey)
+
+	def get_CertName(self):
+		return self.get_query_params().get('CertName')
+
+	def set_CertName(self,CertName):
+		self.add_query_param('CertName',CertName)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
@@ -51,16 +61,14 @@ class UnTagLiveResourcesRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_ResourceType(self):
-		return self.get_query_params().get('ResourceType')
+	def get_Ask(self):
+		return self.get_query_params().get('Ask')
 
-	def set_ResourceType(self,ResourceType):
-		self.add_query_param('ResourceType',ResourceType)
+	def set_Ask(self,Ask):
+		self.add_query_param('Ask',Ask)
 
-	def get_TagKeys(self):
-		return self.get_query_params().get('TagKey')
+	def get_Passphrase(self):
+		return self.get_query_params().get('Passphrase')
 
-	def set_TagKeys(self, TagKeys):
-		for depth1 in range(len(TagKeys)):
-			if TagKeys[depth1] is not None:
-				self.add_query_param('TagKey.' + str(depth1 + 1) , TagKeys[depth1])
+	def set_Passphrase(self,Passphrase):
+		self.add_query_param('Passphrase',Passphrase)

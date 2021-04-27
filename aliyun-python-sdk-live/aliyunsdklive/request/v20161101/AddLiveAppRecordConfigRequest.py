@@ -91,10 +91,10 @@ class AddLiveAppRecordConfigRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_RecordFormat(self):
+	def get_RecordFormats(self):
 		return self.get_query_params().get('RecordFormat')
 
-	def set_RecordFormat(self, RecordFormats):
+	def set_RecordFormats(self, RecordFormats):
 		for depth1 in range(len(RecordFormats)):
 			if RecordFormats[depth1].get('SliceOssObjectPrefix') is not None:
 				self.add_query_param('RecordFormat.' + str(depth1 + 1) + '.SliceOssObjectPrefix', RecordFormats[depth1].get('SliceOssObjectPrefix'))
