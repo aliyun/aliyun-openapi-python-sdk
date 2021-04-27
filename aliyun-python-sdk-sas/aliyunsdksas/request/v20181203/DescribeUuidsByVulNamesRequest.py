@@ -18,18 +18,36 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdksas.endpoint import endpoint_data
 
 class DescribeUuidsByVulNamesRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeUuidsByVulNames','sas')
 		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
+
+	def get_StatusList(self):
+		return self.get_query_params().get('StatusList')
+
+	def set_StatusList(self,StatusList):
+		self.add_query_param('StatusList',StatusList)
 
 	def get_TargetType(self):
 		return self.get_query_params().get('TargetType')
 
 	def set_TargetType(self,TargetType):
 		self.add_query_param('TargetType',TargetType)
+
+	def get_Remark(self):
+		return self.get_query_params().get('Remark')
+
+	def set_Remark(self,Remark):
+		self.add_query_param('Remark',Remark)
 
 	def get_Type(self):
 		return self.get_query_params().get('Type')
@@ -104,9 +122,3 @@ class DescribeUuidsByVulNamesRequest(RpcRequest):
 
 	def set_Necessity(self,Necessity):
 		self.add_query_param('Necessity',Necessity)
-
-	def get_Status(self):
-		return self.get_query_params().get('Status')
-
-	def set_Status(self,Status):
-		self.add_query_param('Status',Status)

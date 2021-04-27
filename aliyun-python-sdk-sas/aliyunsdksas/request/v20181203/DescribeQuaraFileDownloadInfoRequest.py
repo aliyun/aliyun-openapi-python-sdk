@@ -20,22 +20,16 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdksas.endpoint import endpoint_data
 
-class DescribeSuspEventDetailRequest(RpcRequest):
+class DescribeQuaraFileDownloadInfoRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeSuspEventDetail','sas')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeQuaraFileDownloadInfo','sas')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_SuspiciousEventId(self):
-		return self.get_query_params().get('SuspiciousEventId')
-
-	def set_SuspiciousEventId(self,SuspiciousEventId):
-		self.add_query_param('SuspiciousEventId',SuspiciousEventId)
 
 	def get_SourceIp(self):
 		return self.get_query_params().get('SourceIp')
@@ -49,8 +43,8 @@ class DescribeSuspEventDetailRequest(RpcRequest):
 	def set_From(self,_From):
 		self.add_query_param('From',_From)
 
-	def get_Lang(self):
-		return self.get_query_params().get('Lang')
+	def get_QuaraFileId(self):
+		return self.get_query_params().get('QuaraFileId')
 
-	def set_Lang(self,Lang):
-		self.add_query_param('Lang',Lang)
+	def set_QuaraFileId(self,QuaraFileId):
+		self.add_query_param('QuaraFileId',QuaraFileId)
