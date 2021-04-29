@@ -23,7 +23,7 @@ from aliyunsdkarms.endpoint import endpoint_data
 class ListClusterFromGrafanaRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ARMS', '2019-08-08', 'ListClusterFromGrafana')
+		RpcRequest.__init__(self, 'ARMS', '2019-08-08', 'ListClusterFromGrafana','arms')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())

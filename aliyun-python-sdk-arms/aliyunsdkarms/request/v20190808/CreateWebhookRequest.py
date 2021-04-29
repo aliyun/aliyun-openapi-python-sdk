@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkarms.endpoint import endpoint_data
 
-class ListScenarioRequest(RpcRequest):
+class CreateWebhookRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ARMS', '2019-08-08', 'ListScenario','arms')
+		RpcRequest.__init__(self, 'ARMS', '2019-08-08', 'CreateWebhook','arms')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,26 +31,38 @@ class ListScenarioRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_Scenario(self):
-		return self.get_query_params().get('Scenario')
+	def get_HttpHeaders(self):
+		return self.get_query_params().get('HttpHeaders')
 
-	def set_Scenario(self,Scenario):
-		self.add_query_param('Scenario',Scenario)
+	def set_HttpHeaders(self,HttpHeaders):
+		self.add_query_param('HttpHeaders',HttpHeaders)
 
-	def get_AppId(self):
-		return self.get_query_params().get('AppId')
+	def get_Method(self):
+		return self.get_query_params().get('Method')
 
-	def set_AppId(self,AppId):
-		self.add_query_param('AppId',AppId)
+	def set_Method(self,Method):
+		self.add_query_param('Method',Method)
 
-	def get_Name(self):
-		return self.get_query_params().get('Name')
+	def get_HttpParams(self):
+		return self.get_query_params().get('HttpParams')
 
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)
+	def set_HttpParams(self,HttpParams):
+		self.add_query_param('HttpParams',HttpParams)
 
-	def get_Sign(self):
-		return self.get_query_params().get('Sign')
+	def get_Body(self):
+		return self.get_query_params().get('Body')
 
-	def set_Sign(self,Sign):
-		self.add_query_param('Sign',Sign)
+	def set_Body(self,Body):
+		self.add_query_param('Body',Body)
+
+	def get_Url(self):
+		return self.get_query_params().get('Url')
+
+	def set_Url(self,Url):
+		self.add_query_param('Url',Url)
+
+	def get_ContactName(self):
+		return self.get_query_params().get('ContactName')
+
+	def set_ContactName(self,ContactName):
+		self.add_query_param('ContactName',ContactName)

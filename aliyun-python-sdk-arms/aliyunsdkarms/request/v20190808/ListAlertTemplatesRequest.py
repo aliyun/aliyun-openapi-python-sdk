@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkarms.endpoint import endpoint_data
 
-class ListScenarioRequest(RpcRequest):
+class ListAlertTemplatesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ARMS', '2019-08-08', 'ListScenario','arms')
+		RpcRequest.__init__(self, 'ARMS', '2019-08-08', 'ListAlertTemplates','arms')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,17 +31,29 @@ class ListScenarioRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_Scenario(self):
-		return self.get_query_params().get('Scenario')
+	def get_AlertProvider(self):
+		return self.get_query_params().get('AlertProvider')
 
-	def set_Scenario(self,Scenario):
-		self.add_query_param('Scenario',Scenario)
+	def set_AlertProvider(self,AlertProvider):
+		self.add_query_param('AlertProvider',AlertProvider)
 
-	def get_AppId(self):
-		return self.get_query_params().get('AppId')
+	def get_TemplateProvider(self):
+		return self.get_query_params().get('TemplateProvider')
 
-	def set_AppId(self,AppId):
-		self.add_query_param('AppId',AppId)
+	def set_TemplateProvider(self,TemplateProvider):
+		self.add_query_param('TemplateProvider',TemplateProvider)
+
+	def get_Type(self):
+		return self.get_query_params().get('Type')
+
+	def set_Type(self,Type):
+		self.add_query_param('Type',Type)
+
+	def get_Labels(self):
+		return self.get_query_params().get('Labels')
+
+	def set_Labels(self,Labels):
+		self.add_query_param('Labels',Labels)
 
 	def get_Name(self):
 		return self.get_query_params().get('Name')
@@ -49,8 +61,8 @@ class ListScenarioRequest(RpcRequest):
 	def set_Name(self,Name):
 		self.add_query_param('Name',Name)
 
-	def get_Sign(self):
-		return self.get_query_params().get('Sign')
+	def get_Status(self):
+		return self.get_query_params().get('Status')
 
-	def set_Sign(self,Sign):
-		self.add_query_param('Sign',Sign)
+	def set_Status(self,Status):
+		self.add_query_param('Status',Status)

@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkarms.endpoint import endpoint_data
 
-class CreatePrometheusAlertRuleRequest(RpcRequest):
+class UpdateAlertTemplateRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ARMS', '2019-08-08', 'CreatePrometheusAlertRule','arms')
+		RpcRequest.__init__(self, 'ARMS', '2019-08-08', 'UpdateAlertTemplate','arms')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,35 +31,17 @@ class CreatePrometheusAlertRuleRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_Expression(self):
-		return self.get_query_params().get('Expression')
-
-	def set_Expression(self,Expression):
-		self.add_query_param('Expression',Expression)
-
-	def get_AlertName(self):
-		return self.get_query_params().get('AlertName')
-
-	def set_AlertName(self,AlertName):
-		self.add_query_param('AlertName',AlertName)
-
 	def get_Annotations(self):
 		return self.get_query_params().get('Annotations')
 
 	def set_Annotations(self,Annotations):
 		self.add_query_param('Annotations',Annotations)
 
-	def get_ClusterId(self):
-		return self.get_query_params().get('ClusterId')
+	def get_Rule(self):
+		return self.get_query_params().get('Rule')
 
-	def set_ClusterId(self,ClusterId):
-		self.add_query_param('ClusterId',ClusterId)
-
-	def get_DispatchRuleId(self):
-		return self.get_query_params().get('DispatchRuleId')
-
-	def set_DispatchRuleId(self,DispatchRuleId):
-		self.add_query_param('DispatchRuleId',DispatchRuleId)
+	def set_Rule(self,Rule):
+		self.add_query_param('Rule',Rule)
 
 	def get_Type(self):
 		return self.get_query_params().get('Type')
@@ -79,14 +61,26 @@ class CreatePrometheusAlertRuleRequest(RpcRequest):
 	def set_Labels(self,Labels):
 		self.add_query_param('Labels',Labels)
 
-	def get_Duration(self):
-		return self.get_query_params().get('Duration')
+	def get_Name(self):
+		return self.get_query_params().get('Name')
 
-	def set_Duration(self,Duration):
-		self.add_query_param('Duration',Duration)
+	def set_Name(self,Name):
+		self.add_query_param('Name',Name)
 
-	def get_NotifyType(self):
-		return self.get_query_params().get('NotifyType')
+	def get_Id(self):
+		return self.get_query_params().get('Id')
 
-	def set_NotifyType(self,NotifyType):
-		self.add_query_param('NotifyType',NotifyType)
+	def set_Id(self,Id):
+		self.add_query_param('Id',Id)
+
+	def get_MatchExpressions(self):
+		return self.get_query_params().get('MatchExpressions')
+
+	def set_MatchExpressions(self,MatchExpressions):
+		self.add_query_param('MatchExpressions',MatchExpressions)
+
+	def get_Status(self):
+		return self.get_query_params().get('Status')
+
+	def set_Status(self,Status):
+		self.add_query_param('Status',Status)

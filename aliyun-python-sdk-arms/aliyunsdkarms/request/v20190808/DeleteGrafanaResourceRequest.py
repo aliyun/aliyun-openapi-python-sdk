@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkarms.endpoint import endpoint_data
 
-class ListScenarioRequest(RpcRequest):
+class DeleteGrafanaResourceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ARMS', '2019-08-08', 'ListScenario','arms')
+		RpcRequest.__init__(self, 'ARMS', '2019-08-08', 'DeleteGrafanaResource','arms')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,26 +31,20 @@ class ListScenarioRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_Scenario(self):
-		return self.get_query_params().get('Scenario')
+	def get_ClusterName(self):
+		return self.get_body_params().get('ClusterName')
 
-	def set_Scenario(self,Scenario):
-		self.add_query_param('Scenario',Scenario)
+	def set_ClusterName(self,ClusterName):
+		self.add_body_params('ClusterName', ClusterName)
 
-	def get_AppId(self):
-		return self.get_query_params().get('AppId')
+	def get_ClusterId(self):
+		return self.get_body_params().get('ClusterId')
 
-	def set_AppId(self,AppId):
-		self.add_query_param('AppId',AppId)
+	def set_ClusterId(self,ClusterId):
+		self.add_body_params('ClusterId', ClusterId)
 
-	def get_Name(self):
-		return self.get_query_params().get('Name')
+	def get_UserId(self):
+		return self.get_body_params().get('UserId')
 
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)
-
-	def get_Sign(self):
-		return self.get_query_params().get('Sign')
-
-	def set_Sign(self,Sign):
-		self.add_query_param('Sign',Sign)
+	def set_UserId(self,UserId):
+		self.add_body_params('UserId', UserId)
