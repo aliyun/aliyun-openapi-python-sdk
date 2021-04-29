@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkr_kvstore.endpoint import endpoint_data
 
-class MigrateToOtherZoneRequest(RpcRequest):
+class TransformInstanceChargeTypeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'R-kvstore', '2015-01-01', 'MigrateToOtherZone','redisa')
+		RpcRequest.__init__(self, 'R-kvstore', '2015-01-01', 'TransformInstanceChargeType','redisa')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -37,29 +37,23 @@ class MigrateToOtherZoneRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_SecondaryZoneId(self):
-		return self.get_query_params().get('SecondaryZoneId')
-
-	def set_SecondaryZoneId(self,SecondaryZoneId):
-		self.add_query_param('SecondaryZoneId',SecondaryZoneId)
-
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
 
 	def set_SecurityToken(self,SecurityToken):
 		self.add_query_param('SecurityToken',SecurityToken)
 
-	def get_EffectiveTime(self):
-		return self.get_query_params().get('EffectiveTime')
+	def get_Period(self):
+		return self.get_query_params().get('Period')
 
-	def set_EffectiveTime(self,EffectiveTime):
-		self.add_query_param('EffectiveTime',EffectiveTime)
+	def set_Period(self,Period):
+		self.add_query_param('Period',Period)
 
-	def get_DBInstanceId(self):
-		return self.get_query_params().get('DBInstanceId')
+	def get_AutoPay(self):
+		return self.get_query_params().get('AutoPay')
 
-	def set_DBInstanceId(self,DBInstanceId):
-		self.add_query_param('DBInstanceId',DBInstanceId)
+	def set_AutoPay(self,AutoPay):
+		self.add_query_param('AutoPay',AutoPay)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -79,14 +73,14 @@ class MigrateToOtherZoneRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_VSwitchId(self):
-		return self.get_query_params().get('VSwitchId')
+	def get_InstanceId(self):
+		return self.get_query_params().get('InstanceId')
 
-	def set_VSwitchId(self,VSwitchId):
-		self.add_query_param('VSwitchId',VSwitchId)
+	def set_InstanceId(self,InstanceId):
+		self.add_query_param('InstanceId',InstanceId)
 
-	def get_ZoneId(self):
-		return self.get_query_params().get('ZoneId')
+	def get_ChargeType(self):
+		return self.get_query_params().get('ChargeType')
 
-	def set_ZoneId(self,ZoneId):
-		self.add_query_param('ZoneId',ZoneId)
+	def set_ChargeType(self,ChargeType):
+		self.add_query_param('ChargeType',ChargeType)

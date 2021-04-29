@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkr_kvstore.endpoint import endpoint_data
 
-class MigrateToOtherZoneRequest(RpcRequest):
+class CreateInstancesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'R-kvstore', '2015-01-01', 'MigrateToOtherZone','redisa')
+		RpcRequest.__init__(self, 'R-kvstore', '2015-01-01', 'CreateInstances','redisa')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -37,11 +37,23 @@ class MigrateToOtherZoneRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_SecondaryZoneId(self):
-		return self.get_query_params().get('SecondaryZoneId')
+	def get_Instances(self):
+		return self.get_query_params().get('Instances')
 
-	def set_SecondaryZoneId(self,SecondaryZoneId):
-		self.add_query_param('SecondaryZoneId',SecondaryZoneId)
+	def set_Instances(self,Instances):
+		self.add_query_param('Instances',Instances)
+
+	def get_CouponNo(self):
+		return self.get_query_params().get('CouponNo')
+
+	def set_CouponNo(self,CouponNo):
+		self.add_query_param('CouponNo',CouponNo)
+
+	def get_EngineVersion(self):
+		return self.get_query_params().get('EngineVersion')
+
+	def set_EngineVersion(self,EngineVersion):
+		self.add_query_param('EngineVersion',EngineVersion)
 
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
@@ -49,17 +61,35 @@ class MigrateToOtherZoneRequest(RpcRequest):
 	def set_SecurityToken(self,SecurityToken):
 		self.add_query_param('SecurityToken',SecurityToken)
 
-	def get_EffectiveTime(self):
-		return self.get_query_params().get('EffectiveTime')
+	def get_RebuildInstance(self):
+		return self.get_query_params().get('RebuildInstance')
 
-	def set_EffectiveTime(self,EffectiveTime):
-		self.add_query_param('EffectiveTime',EffectiveTime)
+	def set_RebuildInstance(self,RebuildInstance):
+		self.add_query_param('RebuildInstance',RebuildInstance)
 
-	def get_DBInstanceId(self):
-		return self.get_query_params().get('DBInstanceId')
+	def get_BusinessInfo(self):
+		return self.get_query_params().get('BusinessInfo')
 
-	def set_DBInstanceId(self,DBInstanceId):
-		self.add_query_param('DBInstanceId',DBInstanceId)
+	def set_BusinessInfo(self,BusinessInfo):
+		self.add_query_param('BusinessInfo',BusinessInfo)
+
+	def get_AgentId(self):
+		return self.get_query_params().get('AgentId')
+
+	def set_AgentId(self,AgentId):
+		self.add_query_param('AgentId',AgentId)
+
+	def get_RestoreTime(self):
+		return self.get_query_params().get('RestoreTime')
+
+	def set_RestoreTime(self,RestoreTime):
+		self.add_query_param('RestoreTime',RestoreTime)
+
+	def get_AutoPay(self):
+		return self.get_query_params().get('AutoPay')
+
+	def set_AutoPay(self,AutoPay):
+		self.add_query_param('AutoPay',AutoPay)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -79,14 +109,20 @@ class MigrateToOtherZoneRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_VSwitchId(self):
-		return self.get_query_params().get('VSwitchId')
+	def get_Token(self):
+		return self.get_query_params().get('Token')
 
-	def set_VSwitchId(self,VSwitchId):
-		self.add_query_param('VSwitchId',VSwitchId)
+	def set_Token(self,Token):
+		self.add_query_param('Token',Token)
 
-	def get_ZoneId(self):
-		return self.get_query_params().get('ZoneId')
+	def get_PrivateIpAddress(self):
+		return self.get_query_params().get('PrivateIpAddress')
 
-	def set_ZoneId(self,ZoneId):
-		self.add_query_param('ZoneId',ZoneId)
+	def set_PrivateIpAddress(self,PrivateIpAddress):
+		self.add_query_param('PrivateIpAddress',PrivateIpAddress)
+
+	def get_AutoRenew(self):
+		return self.get_query_params().get('AutoRenew')
+
+	def set_AutoRenew(self,AutoRenew):
+		self.add_query_param('AutoRenew',AutoRenew)
