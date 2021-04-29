@@ -1,3 +1,4 @@
+# coding=utf-8
 # Licensed to the Apache Software Foundation (ASF) under one
 # or more contributor license agreements.  See the NOTICE file
 # distributed with this work for additional information
@@ -17,18 +18,34 @@
 # specific language governing permissions and limitations
 # under the License.
 
-# coding=utf-8
 
-
+import base64
 import socket
 try:
     from http.client import HTTPConnection, BadStatusLine, HTTPSConnection
 except ImportError:
     from httplib import HTTPConnection, BadStatusLine, HTTPSConnection
 from aliyunsdkdybaseapi.mns.mns_exception import *
-from urllib.parse import urlparse
+try:
+    from urllib.parse import urlparse, unquote
+except ImportError:
+    from urllib import unquote
+    import urlparse
 
 import os
+
+
+def _basic_auth_str(username, password):
+    if isinstance(username, str):
+        username = username.encode()
+
+    if isinstance(password, str):
+        password = password.encode()
+
+    authstr = 'Basic ' + base64.b64encode(b':'.join((username, password))).strip().decode()
+
+    return authstr
+
 
 class MNSHTTPConnection(HTTPConnection):
     def __init__(self, host, port=None, strict=None, connection_timeout=60):
@@ -135,6 +152,9 @@ class MNSHttp:
             if proxy:
                 url = urlparse(proxy)
                 self.conn.close()
+                if url.username:
+                    req_inter.header['Proxy-Authorization'] = _basic_auth_str(unquote(url.username),
+                                                             unquote(url.password))
                 if self.is_https:
                     self.conn = MNSHTTPSConnection(url.hostname, url.port)
                 else:
@@ -145,7 +165,8 @@ class MNSHttp:
                     self.conn.close()
                     self.conn = self._new_conn()
 
-            self.conn.request(req_inter.method, req_inter.uri, req_inter.data, req_inter.header)
+            self.conn.request(req_inter.method, 'http://%s%s' % (self.host, req_inter.uri), req_inter.data,
+                              req_inter.header)
             self.conn.sock.setsockopt(socket.IPPROTO_TCP, socket.TCP_NODELAY, 1)
             try:
                 http_resp = self.conn.getresponse()
