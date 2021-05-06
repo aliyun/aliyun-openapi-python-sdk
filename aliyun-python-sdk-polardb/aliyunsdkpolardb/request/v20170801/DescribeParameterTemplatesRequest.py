@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkpolardb.endpoint import endpoint_data
 
-class DescribeSQLExplorerPolicyRequest(RpcRequest):
+class DescribeParameterTemplatesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'polardb', '2017-08-01', 'DescribeSQLExplorerPolicy','polardb')
+		RpcRequest.__init__(self, 'polardb', '2017-08-01', 'DescribeParameterTemplates','polardb')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -36,12 +36,6 @@ class DescribeSQLExplorerPolicyRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_DBInstanceId(self):
-		return self.get_query_params().get('DBInstanceId')
-
-	def set_DBInstanceId(self,DBInstanceId):
-		self.add_query_param('DBInstanceId',DBInstanceId)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -60,3 +54,15 @@ class DescribeSQLExplorerPolicyRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_DBType(self):
+		return self.get_query_params().get('DBType')
+
+	def set_DBType(self,DBType):
+		self.add_query_param('DBType',DBType)
+
+	def get_DBVersion(self):
+		return self.get_query_params().get('DBVersion')
+
+	def set_DBVersion(self,DBVersion):
+		self.add_query_param('DBVersion',DBVersion)
