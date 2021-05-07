@@ -1,3 +1,6 @@
+2021-05-07 Version: 2.5.11
+- Support interface DescribeDBInstanceEncryptionKey for DB Instance Cloud Disk Encryption.
+
 2021-03-23 Version: 2.5.10
 - Update Open API.
 
