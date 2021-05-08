@@ -23,7 +23,7 @@ from aliyunsdkiot.endpoint import endpoint_data
 class QueryThingModelExtendConfigPublishedRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'QueryThingModelExtendConfigPublished','iot')
+		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'QueryThingModelExtendConfigPublished')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())

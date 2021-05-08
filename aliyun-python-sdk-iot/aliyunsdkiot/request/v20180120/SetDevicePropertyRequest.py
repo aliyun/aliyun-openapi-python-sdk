@@ -23,7 +23,7 @@ from aliyunsdkiot.endpoint import endpoint_data
 class SetDevicePropertyRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'SetDeviceProperty','iot')
+		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'SetDeviceProperty')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
