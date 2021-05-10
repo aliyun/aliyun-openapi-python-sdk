@@ -1,3 +1,6 @@
+2021-05-10 Version: 2.2.5
+- Delete API.
+
 2021-05-10 Version: 2.2.4
 - Delete API.
 
