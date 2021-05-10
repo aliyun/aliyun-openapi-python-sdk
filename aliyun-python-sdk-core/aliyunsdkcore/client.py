@@ -91,7 +91,8 @@ class AcsClient:
             credential=None,
             debug=False,
             verify=None,
-            pool_size=10
+            pool_size=10,
+            proxy=None
     ):
         """
         constructor for AcsClient
@@ -139,6 +140,8 @@ class AcsClient:
                 max_retry_times=self._max_retry_num)
         else:
             self._retry_policy = retry_policy.NO_RETRY_POLICY
+
+        self.proxy = proxy
 
     def get_region_id(self):
         return self._region_id
@@ -306,7 +309,8 @@ class AcsClient:
             read_timeout=read_timeout,
             connect_timeout=connect_timeout,
             verify=self.get_verify(),
-            session=self.session
+            session=self.session,
+            proxy=self.proxy
         )
         if body_params:
             response.set_content(body, "utf-8", request.get_headers().get('Content-Type'))
