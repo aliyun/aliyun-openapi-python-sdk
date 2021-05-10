@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcdn.endpoint import endpoint_data
 
-class ModifyPathCacheExpiredConfigRequest(RpcRequest):
+class DescribeCdnDeliverListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'ModifyPathCacheExpiredConfig')
+		RpcRequest.__init__(self, 'Cdn', '2018-05-10', 'DescribeCdnDeliverList')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,29 +31,11 @@ class ModifyPathCacheExpiredConfigRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_SecurityToken(self):
-		return self.get_query_params().get('SecurityToken')
+	def get_DeliverId(self):
+		return self.get_query_params().get('DeliverId')
 
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)
-
-	def get_DomainName(self):
-		return self.get_query_params().get('DomainName')
-
-	def set_DomainName(self,DomainName):
-		self.add_query_param('DomainName',DomainName)
-
-	def get_Weight(self):
-		return self.get_query_params().get('Weight')
-
-	def set_Weight(self,Weight):
-		self.add_query_param('Weight',Weight)
-
-	def get_CacheContent(self):
-		return self.get_query_params().get('CacheContent')
-
-	def set_CacheContent(self,CacheContent):
-		self.add_query_param('CacheContent',CacheContent)
+	def set_DeliverId(self,DeliverId):
+		self.add_query_param('DeliverId',DeliverId)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
@@ -61,14 +43,8 @@ class ModifyPathCacheExpiredConfigRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_TTL(self):
-		return self.get_query_params().get('TTL')
+	def get_Status(self):
+		return self.get_query_params().get('Status')
 
-	def set_TTL(self,TTL):
-		self.add_query_param('TTL',TTL)
-
-	def get_ConfigID(self):
-		return self.get_query_params().get('ConfigID')
-
-	def set_ConfigID(self,ConfigID):
-		self.add_query_param('ConfigID',ConfigID)
+	def set_Status(self,Status):
+		self.add_query_param('Status',Status)

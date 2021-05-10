@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcdn.endpoint import endpoint_data
 
-class SetErrorPageConfigRequest(RpcRequest):
+class DescribeCdnReportListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cdn', '2018-05-10', 'SetErrorPageConfig')
+		RpcRequest.__init__(self, 'Cdn', '2018-05-10', 'DescribeCdnReportList')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,32 +31,26 @@ class SetErrorPageConfigRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_PageType(self):
-		return self.get_query_params().get('PageType')
+	def get_ReportId(self):
+		return self.get_query_params().get('ReportId')
 
-	def set_PageType(self,PageType):
-		self.add_query_param('PageType',PageType)
+	def set_ReportId(self,ReportId):
+		self.add_query_param('ReportId',ReportId)
 
-	def get_SecurityToken(self):
-		return self.get_query_params().get('SecurityToken')
+	def get_Permission(self):
+		return self.get_query_params().get('Permission')
 
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)
-
-	def get_DomainName(self):
-		return self.get_query_params().get('DomainName')
-
-	def set_DomainName(self,DomainName):
-		self.add_query_param('DomainName',DomainName)
-
-	def get_CustomPageUrl(self):
-		return self.get_query_params().get('CustomPageUrl')
-
-	def set_CustomPageUrl(self,CustomPageUrl):
-		self.add_query_param('CustomPageUrl',CustomPageUrl)
+	def set_Permission(self,Permission):
+		self.add_query_param('Permission',Permission)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_Status(self):
+		return self.get_query_params().get('Status')
+
+	def set_Status(self,Status):
+		self.add_query_param('Status',Status)

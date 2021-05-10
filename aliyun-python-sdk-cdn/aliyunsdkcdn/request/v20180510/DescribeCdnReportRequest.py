@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcdn.endpoint import endpoint_data
 
-class AddLiveStreamTranscodeRequest(RpcRequest):
+class DescribeCdnReportRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'AddLiveStreamTranscode')
+		RpcRequest.__init__(self, 'Cdn', '2018-05-10', 'DescribeCdnReport')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,35 +31,35 @@ class AddLiveStreamTranscodeRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_Template(self):
-		return self.get_query_params().get('Template')
+	def get_ReportId(self):
+		return self.get_query_params().get('ReportId')
 
-	def set_Template(self,Template):
-		self.add_query_param('Template',Template)
+	def set_ReportId(self,ReportId):
+		self.add_query_param('ReportId',ReportId)
 
-	def get_SecurityToken(self):
-		return self.get_query_params().get('SecurityToken')
+	def get_StartTime(self):
+		return self.get_query_params().get('StartTime')
 
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)
+	def set_StartTime(self,StartTime):
+		self.add_query_param('StartTime',StartTime)
 
-	def get_Record(self):
-		return self.get_query_params().get('Record')
+	def get_Area(self):
+		return self.get_query_params().get('Area')
 
-	def set_Record(self,Record):
-		self.add_query_param('Record',Record)
+	def set_Area(self,Area):
+		self.add_query_param('Area',Area)
 
-	def get_App(self):
-		return self.get_query_params().get('App')
+	def get_DomainName(self):
+		return self.get_query_params().get('DomainName')
 
-	def set_App(self,App):
-		self.add_query_param('App',App)
+	def set_DomainName(self,DomainName):
+		self.add_query_param('DomainName',DomainName)
 
-	def get_OwnerAccount(self):
-		return self.get_query_params().get('OwnerAccount')
+	def get_EndTime(self):
+		return self.get_query_params().get('EndTime')
 
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
+	def set_EndTime(self,EndTime):
+		self.add_query_param('EndTime',EndTime)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
@@ -67,14 +67,14 @@ class AddLiveStreamTranscodeRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_Domain(self):
-		return self.get_query_params().get('Domain')
+	def get_HttpCode(self):
+		return self.get_query_params().get('HttpCode')
 
-	def set_Domain(self,Domain):
-		self.add_query_param('Domain',Domain)
+	def set_HttpCode(self,HttpCode):
+		self.add_query_param('HttpCode',HttpCode)
 
-	def get_Snapshot(self):
-		return self.get_query_params().get('Snapshot')
+	def get_IsOverseas(self):
+		return self.get_query_params().get('IsOverseas')
 
-	def set_Snapshot(self,Snapshot):
-		self.add_query_param('Snapshot',Snapshot)
+	def set_IsOverseas(self,IsOverseas):
+		self.add_query_param('IsOverseas',IsOverseas)

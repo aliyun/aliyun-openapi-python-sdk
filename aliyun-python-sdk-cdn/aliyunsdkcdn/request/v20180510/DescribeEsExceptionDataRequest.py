@@ -20,16 +20,28 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcdn.endpoint import endpoint_data
 
-class ListDomainsByLogConfigIdRequest(RpcRequest):
+class DescribeEsExceptionDataRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cdn', '2014-11-11', 'ListDomainsByLogConfigId')
-		self.set_method('GET')
+		RpcRequest.__init__(self, 'Cdn', '2018-05-10', 'DescribeEsExceptionData')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+
+	def get_StartTime(self):
+		return self.get_query_params().get('StartTime')
+
+	def set_StartTime(self,StartTime):
+		self.add_query_param('StartTime',StartTime)
+
+	def get_EndTime(self):
+		return self.get_query_params().get('EndTime')
+
+	def set_EndTime(self,EndTime):
+		self.add_query_param('EndTime',EndTime)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
@@ -37,8 +49,8 @@ class ListDomainsByLogConfigIdRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_ConfigId(self):
-		return self.get_query_params().get('ConfigId')
+	def get_RuleId(self):
+		return self.get_query_params().get('RuleId')
 
-	def set_ConfigId(self,ConfigId):
-		self.add_query_param('ConfigId',ConfigId)
+	def set_RuleId(self,RuleId):
+		self.add_query_param('RuleId',RuleId)
