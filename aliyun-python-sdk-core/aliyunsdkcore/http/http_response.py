@@ -49,7 +49,8 @@ class HttpResponse(HttpRequest):
             read_timeout=None,
             connect_timeout=None,
             verify=None,
-            session=None
+            session=None,
+            proxy=None
     ):
         HttpRequest.__init__(
             self,
@@ -71,6 +72,7 @@ class HttpResponse(HttpRequest):
         if session is None:
             self.__session = Session()
         self.set_body(content)
+        self.proxy = proxy
 
     def set_ssl_enable(self, enable):
         self.__ssl_enable = enable
@@ -122,21 +124,22 @@ class HttpResponse(HttpRequest):
                       headers=self.get_headers(),
                       )
         prepped = self.__session.prepare_request(req)
+        if not self.proxy:
+            proxy_https = os.environ.get('HTTPS_PROXY') or os.environ.get(
+                'https_proxy')
+            proxy_http = os.environ.get(
+                'HTTP_PROXY') or os.environ.get('http_proxy')
 
-        proxy_https = os.environ.get('HTTPS_PROXY') or os.environ.get(
-            'https_proxy')
-        proxy_http = os.environ.get(
-            'HTTP_PROXY') or os.environ.get('http_proxy')
+            self.proxy = {}
+            if proxy_http:
+                self.proxy['http'] = proxy_http
+            if proxy_https:
+                self.proxy['https'] = proxy_https
 
-        proxies = {}
-        if proxy_http:
-            proxies['http'] = proxy_http
-        if proxy_https:
-            proxies['https'] = proxy_https
 
         response = self.__session.send(
             prepped,
-            proxies=proxies,
+            proxies=self.proxy,
             timeout=(self.__connect_timeout, self.__read_timeout),
             allow_redirects=False,
             verify=self.get_verify_value()
