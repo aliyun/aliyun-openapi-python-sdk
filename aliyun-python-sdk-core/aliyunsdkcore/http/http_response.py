@@ -136,7 +136,6 @@ class HttpResponse(HttpRequest):
             if proxy_https:
                 self.proxy['https'] = proxy_https
 
-
         response = self.__session.send(
             prepped,
             proxies=self.proxy,
