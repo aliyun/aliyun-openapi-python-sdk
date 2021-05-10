@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkscdn.endpoint import endpoint_data
 
-class DescribeScdnDdosTrafficInfoRequest(RpcRequest):
+class SetScdnDDoSInfoRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'scdn', '2017-11-15', 'DescribeScdnDdosTrafficInfo')
+		RpcRequest.__init__(self, 'scdn', '2017-11-15', 'SetScdnDDoSInfo')
 		self.set_method('GET')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,26 +31,14 @@ class DescribeScdnDdosTrafficInfoRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_Line(self):
-		return self.get_query_params().get('Line')
-
-	def set_Line(self,Line):
-		self.add_query_param('Line',Line)
-
-	def get_StartTime(self):
-		return self.get_query_params().get('StartTime')
-
-	def set_StartTime(self,StartTime):
-		self.add_query_param('StartTime',StartTime)
-
-	def get_EndTime(self):
-		return self.get_query_params().get('EndTime')
-
-	def set_EndTime(self,EndTime):
-		self.add_query_param('EndTime',EndTime)
-
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_ElasticBandwidth(self):
+		return self.get_query_params().get('ElasticBandwidth')
+
+	def set_ElasticBandwidth(self,ElasticBandwidth):
+		self.add_query_param('ElasticBandwidth',ElasticBandwidth)
