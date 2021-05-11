@@ -73,18 +73,6 @@ class CreateInstancesRequest(RpcRequest):
 	def set_BusinessInfo(self,BusinessInfo):
 		self.add_query_param('BusinessInfo',BusinessInfo)
 
-	def get_AgentId(self):
-		return self.get_query_params().get('AgentId')
-
-	def set_AgentId(self,AgentId):
-		self.add_query_param('AgentId',AgentId)
-
-	def get_RestoreTime(self):
-		return self.get_query_params().get('RestoreTime')
-
-	def set_RestoreTime(self,RestoreTime):
-		self.add_query_param('RestoreTime',RestoreTime)
-
 	def get_AutoPay(self):
 		return self.get_query_params().get('AutoPay')
 
@@ -114,12 +102,6 @@ class CreateInstancesRequest(RpcRequest):
 
 	def set_Token(self,Token):
 		self.add_query_param('Token',Token)
-
-	def get_PrivateIpAddress(self):
-		return self.get_query_params().get('PrivateIpAddress')
-
-	def set_PrivateIpAddress(self,PrivateIpAddress):
-		self.add_query_param('PrivateIpAddress',PrivateIpAddress)
 
 	def get_AutoRenew(self):
 		return self.get_query_params().get('AutoRenew')
