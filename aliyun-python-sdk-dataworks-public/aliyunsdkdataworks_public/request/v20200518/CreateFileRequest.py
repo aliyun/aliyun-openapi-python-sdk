@@ -43,12 +43,6 @@ class CreateFileRequest(RpcRequest):
 	def set_DependentNodeIdList(self,DependentNodeIdList):
 		self.add_body_params('DependentNodeIdList', DependentNodeIdList)
 
-	def get_AutoParse(self):
-		return self.get_body_params().get('AutoParse')
-
-	def set_AutoParse(self,AutoParse):
-		self.add_body_params('AutoParse', AutoParse)
-
 	def get_Content(self):
 		return self.get_body_params().get('Content')
 
