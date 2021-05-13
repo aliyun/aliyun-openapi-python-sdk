@@ -20,12 +20,12 @@
 from aliyunsdkcore.request import RoaRequest
 from aliyunsdkelasticsearch.endpoint import endpoint_data
 
-class ListInstanceIndicesRequest(RoaRequest):
+class CloseManagedIndexRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'elasticsearch', '2017-06-13', 'ListInstanceIndices','elasticsearch')
-		self.set_uri_pattern('/openapi/instances/[InstanceId]/indices')
-		self.set_method('GET')
+		RoaRequest.__init__(self, 'elasticsearch', '2017-06-13', 'CloseManagedIndex','elasticsearch')
+		self.set_uri_pattern('/openapi/instances/[InstanceId]/indices/[Index]/close-managed')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -38,20 +38,14 @@ class ListInstanceIndicesRequest(RoaRequest):
 	def set_InstanceId(self,InstanceId):
 		self.add_path_param('InstanceId',InstanceId)
 
-	def get_isManaged(self):
-		return self.get_query_params().get('isManaged')
+	def get_ClientToken(self):
+		return self.get_query_params().get('ClientToken')
 
-	def set_isManaged(self,isManaged):
-		self.add_query_param('isManaged',isManaged)
+	def set_ClientToken(self,ClientToken):
+		self.add_query_param('ClientToken',ClientToken)
 
-	def get_name(self):
-		return self.get_query_params().get('name')
+	def get_Index(self):
+		return self.get_path_params().get('Index')
 
-	def set_name(self,name):
-		self.add_query_param('name',name)
-
-	def get_lang(self):
-		return self.get_query_params().get('lang')
-
-	def set_lang(self,lang):
-		self.add_query_param('lang',lang)
+	def set_Index(self,Index):
+		self.add_path_param('Index',Index)

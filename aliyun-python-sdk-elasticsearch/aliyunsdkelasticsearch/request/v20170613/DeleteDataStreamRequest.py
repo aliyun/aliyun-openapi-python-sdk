@@ -20,17 +20,23 @@
 from aliyunsdkcore.request import RoaRequest
 from aliyunsdkelasticsearch.endpoint import endpoint_data
 
-class ListInstanceIndicesRequest(RoaRequest):
+class DeleteDataStreamRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'elasticsearch', '2017-06-13', 'ListInstanceIndices','elasticsearch')
-		self.set_uri_pattern('/openapi/instances/[InstanceId]/indices')
-		self.set_method('GET')
+		RoaRequest.__init__(self, 'elasticsearch', '2017-06-13', 'DeleteDataStream','elasticsearch')
+		self.set_uri_pattern('/openapi/instances/[InstanceId]/data-streams/[DataStream]')
+		self.set_method('DELETE')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+
+	def get_DataStream(self):
+		return self.get_path_params().get('DataStream')
+
+	def set_DataStream(self,DataStream):
+		self.add_path_param('DataStream',DataStream)
 
 	def get_InstanceId(self):
 		return self.get_path_params().get('InstanceId')
@@ -38,20 +44,8 @@ class ListInstanceIndicesRequest(RoaRequest):
 	def set_InstanceId(self,InstanceId):
 		self.add_path_param('InstanceId',InstanceId)
 
-	def get_isManaged(self):
-		return self.get_query_params().get('isManaged')
+	def get_ClientToken(self):
+		return self.get_query_params().get('ClientToken')
 
-	def set_isManaged(self,isManaged):
-		self.add_query_param('isManaged',isManaged)
-
-	def get_name(self):
-		return self.get_query_params().get('name')
-
-	def set_name(self,name):
-		self.add_query_param('name',name)
-
-	def get_lang(self):
-		return self.get_query_params().get('lang')
-
-	def set_lang(self,lang):
-		self.add_query_param('lang',lang)
+	def set_ClientToken(self,ClientToken):
+		self.add_query_param('ClientToken',ClientToken)
