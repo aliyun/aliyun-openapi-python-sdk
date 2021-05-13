@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkddoscoo.endpoint import endpoint_data
 
-class ModifyWebRuleRequest(RpcRequest):
+class ModifyPortRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ddoscoo', '2020-01-01', 'ModifyWebRule')
+		RpcRequest.__init__(self, 'ddoscoo', '2020-01-01', 'ModifyPort')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,23 +31,23 @@ class ModifyWebRuleRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_HttpsExt(self):
-		return self.get_query_params().get('HttpsExt')
+	def get_BackendPort(self):
+		return self.get_query_params().get('BackendPort')
 
-	def set_HttpsExt(self,HttpsExt):
-		self.add_query_param('HttpsExt',HttpsExt)
+	def set_BackendPort(self,BackendPort):
+		self.add_query_param('BackendPort',BackendPort)
 
-	def get_ResourceGroupId(self):
-		return self.get_query_params().get('ResourceGroupId')
+	def get_FrontendProtocol(self):
+		return self.get_query_params().get('FrontendProtocol')
 
-	def set_ResourceGroupId(self,ResourceGroupId):
-		self.add_query_param('ResourceGroupId',ResourceGroupId)
+	def set_FrontendProtocol(self,FrontendProtocol):
+		self.add_query_param('FrontendProtocol',FrontendProtocol)
 
-	def get_RsType(self):
-		return self.get_query_params().get('RsType')
+	def get_InstanceId(self):
+		return self.get_query_params().get('InstanceId')
 
-	def set_RsType(self,RsType):
-		self.add_query_param('RsType',RsType)
+	def set_InstanceId(self,InstanceId):
+		self.add_query_param('InstanceId',InstanceId)
 
 	def get_RealServerss(self):
 		return self.get_query_params().get('RealServers')
@@ -57,22 +57,8 @@ class ModifyWebRuleRequest(RpcRequest):
 			if RealServerss[depth1] is not None:
 				self.add_query_param('RealServers.' + str(depth1 + 1) , RealServerss[depth1])
 
-	def get_ProxyTypes(self):
-		return self.get_query_params().get('ProxyTypes')
+	def get_FrontendPort(self):
+		return self.get_query_params().get('FrontendPort')
 
-	def set_ProxyTypes(self,ProxyTypes):
-		self.add_query_param('ProxyTypes',ProxyTypes)
-
-	def get_InstanceIdss(self):
-		return self.get_query_params().get('InstanceIds')
-
-	def set_InstanceIdss(self, InstanceIdss):
-		for depth1 in range(len(InstanceIdss)):
-			if InstanceIdss[depth1] is not None:
-				self.add_query_param('InstanceIds.' + str(depth1 + 1) , InstanceIdss[depth1])
-
-	def get_Domain(self):
-		return self.get_query_params().get('Domain')
-
-	def set_Domain(self,Domain):
-		self.add_query_param('Domain',Domain)
+	def set_FrontendPort(self,FrontendPort):
+		self.add_query_param('FrontendPort',FrontendPort)

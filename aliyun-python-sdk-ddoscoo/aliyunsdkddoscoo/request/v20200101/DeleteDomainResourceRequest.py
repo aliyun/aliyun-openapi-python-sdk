@@ -20,54 +20,16 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkddoscoo.endpoint import endpoint_data
 
-class CreateWebRuleRequest(RpcRequest):
+class DeleteDomainResourceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ddoscoo', '2020-01-01', 'CreateWebRule')
+		RpcRequest.__init__(self, 'ddoscoo', '2020-01-01', 'DeleteDomainResource')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_HttpsExt(self):
-		return self.get_query_params().get('HttpsExt')
-
-	def set_HttpsExt(self,HttpsExt):
-		self.add_query_param('HttpsExt',HttpsExt)
-
-	def get_Rules(self):
-		return self.get_query_params().get('Rules')
-
-	def set_Rules(self,Rules):
-		self.add_query_param('Rules',Rules)
-
-	def get_ResourceGroupId(self):
-		return self.get_query_params().get('ResourceGroupId')
-
-	def set_ResourceGroupId(self,ResourceGroupId):
-		self.add_query_param('ResourceGroupId',ResourceGroupId)
-
-	def get_RsType(self):
-		return self.get_query_params().get('RsType')
-
-	def set_RsType(self,RsType):
-		self.add_query_param('RsType',RsType)
-
-	def get_DefenseId(self):
-		return self.get_query_params().get('DefenseId')
-
-	def set_DefenseId(self,DefenseId):
-		self.add_query_param('DefenseId',DefenseId)
-
-	def get_InstanceIdss(self):
-		return self.get_query_params().get('InstanceIds')
-
-	def set_InstanceIdss(self, InstanceIdss):
-		for depth1 in range(len(InstanceIdss)):
-			if InstanceIdss[depth1] is not None:
-				self.add_query_param('InstanceIds.' + str(depth1 + 1) , InstanceIdss[depth1])
 
 	def get_Domain(self):
 		return self.get_query_params().get('Domain')

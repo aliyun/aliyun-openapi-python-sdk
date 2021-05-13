@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkddoscoo.endpoint import endpoint_data
 
-class ModifyWebRuleRequest(RpcRequest):
+class ModifyDomainResourceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ddoscoo', '2020-01-01', 'ModifyWebRule')
+		RpcRequest.__init__(self, 'ddoscoo', '2020-01-01', 'ModifyDomainResource')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -36,12 +36,6 @@ class ModifyWebRuleRequest(RpcRequest):
 
 	def set_HttpsExt(self,HttpsExt):
 		self.add_query_param('HttpsExt',HttpsExt)
-
-	def get_ResourceGroupId(self):
-		return self.get_query_params().get('ResourceGroupId')
-
-	def set_ResourceGroupId(self,ResourceGroupId):
-		self.add_query_param('ResourceGroupId',ResourceGroupId)
 
 	def get_RsType(self):
 		return self.get_query_params().get('RsType')
@@ -57,11 +51,17 @@ class ModifyWebRuleRequest(RpcRequest):
 			if RealServerss[depth1] is not None:
 				self.add_query_param('RealServers.' + str(depth1 + 1) , RealServerss[depth1])
 
-	def get_ProxyTypes(self):
+	def get_ProxyTypess(self):
 		return self.get_query_params().get('ProxyTypes')
 
-	def set_ProxyTypes(self,ProxyTypes):
-		self.add_query_param('ProxyTypes',ProxyTypes)
+	def set_ProxyTypess(self, ProxyTypess):
+		for depth1 in range(len(ProxyTypess)):
+			if ProxyTypess[depth1].get('ProxyPorts') is not None:
+				for depth2 in range(len(ProxyTypess[depth1].get('ProxyPorts'))):
+					if ProxyTypess[depth1].get('ProxyPorts')[depth2] is not None:
+						self.add_query_param('ProxyTypes.' + str(depth1 + 1) + '.ProxyPorts.' + str(depth2 + 1) , ProxyTypess[depth1].get('ProxyPorts')[depth2])
+			if ProxyTypess[depth1].get('ProxyType') is not None:
+				self.add_query_param('ProxyTypes.' + str(depth1 + 1) + '.ProxyType', ProxyTypess[depth1].get('ProxyType'))
 
 	def get_InstanceIdss(self):
 		return self.get_query_params().get('InstanceIds')
