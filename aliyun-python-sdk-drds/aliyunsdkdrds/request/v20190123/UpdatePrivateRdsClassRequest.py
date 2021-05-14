@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdrds.endpoint import endpoint_data
 
-class DescribeDrdsDBsRequest(RpcRequest):
+class UpdatePrivateRdsClassRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Drds', '2017-10-16', 'DescribeDrdsDBs','Drds')
+		RpcRequest.__init__(self, 'Drds', '2019-01-23', 'UpdatePrivateRdsClass','drds')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,8 +31,38 @@ class DescribeDrdsDBsRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_Storage(self):
+		return self.get_query_params().get('Storage')
+
+	def set_Storage(self,Storage):
+		self.add_query_param('Storage',Storage)
+
+	def get_AutoUseCoupon(self):
+		return self.get_query_params().get('AutoUseCoupon')
+
+	def set_AutoUseCoupon(self,AutoUseCoupon):
+		self.add_query_param('AutoUseCoupon',AutoUseCoupon)
+
 	def get_DrdsInstanceId(self):
 		return self.get_query_params().get('DrdsInstanceId')
 
 	def set_DrdsInstanceId(self,DrdsInstanceId):
 		self.add_query_param('DrdsInstanceId',DrdsInstanceId)
+
+	def get_RdsClass(self):
+		return self.get_query_params().get('RdsClass')
+
+	def set_RdsClass(self,RdsClass):
+		self.add_query_param('RdsClass',RdsClass)
+
+	def get_PrePayDuration(self):
+		return self.get_query_params().get('PrePayDuration')
+
+	def set_PrePayDuration(self,PrePayDuration):
+		self.add_query_param('PrePayDuration',PrePayDuration)
+
+	def get_DBInstanceId(self):
+		return self.get_query_params().get('DBInstanceId')
+
+	def set_DBInstanceId(self,DBInstanceId):
+		self.add_query_param('DBInstanceId',DBInstanceId)
