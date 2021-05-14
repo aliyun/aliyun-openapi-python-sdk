@@ -31,6 +31,12 @@ class GenerateHumanSketchStyleRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_ReturnType(self):
+		return self.get_body_params().get('ReturnType')
+
+	def set_ReturnType(self,ReturnType):
+		self.add_body_params('ReturnType', ReturnType)
+
 	def get_ImageURL(self):
 		return self.get_body_params().get('ImageURL')
 

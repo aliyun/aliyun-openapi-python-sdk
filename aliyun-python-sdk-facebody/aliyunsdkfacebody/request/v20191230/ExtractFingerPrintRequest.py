@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkfacebody.endpoint import endpoint_data
 
-class GetRealPersonVerificationResultRequest(RpcRequest):
+class ExtractFingerPrintRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'facebody', '2019-12-30', 'GetRealPersonVerificationResult','facebody')
+		RpcRequest.__init__(self, 'facebody', '2019-12-30', 'ExtractFingerPrint','facebody')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,14 +31,14 @@ class GetRealPersonVerificationResultRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_MaterialHash(self):
-		return self.get_body_params().get('MaterialHash')
+	def get_ImageData(self):
+		return self.get_body_params().get('ImageData')
 
-	def set_MaterialHash(self,MaterialHash):
-		self.add_body_params('MaterialHash', MaterialHash)
+	def set_ImageData(self,ImageData):
+		self.add_body_params('ImageData', ImageData)
 
-	def get_VerificationToken(self):
-		return self.get_body_params().get('VerificationToken')
+	def get_ImageURL(self):
+		return self.get_body_params().get('ImageURL')
 
-	def set_VerificationToken(self,VerificationToken):
-		self.add_body_params('VerificationToken', VerificationToken)
+	def set_ImageURL(self,ImageURL):
+		self.add_body_params('ImageURL', ImageURL)
