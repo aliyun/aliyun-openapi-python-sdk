@@ -67,6 +67,12 @@ class EnableAdditionalBandwidthRequest(RpcRequest):
 	def set_OrderTimeLength(self,OrderTimeLength):
 		self.add_query_param('OrderTimeLength',OrderTimeLength)
 
+	def get_AutoRenewPeriod(self):
+		return self.get_query_params().get('AutoRenewPeriod')
+
+	def set_AutoRenewPeriod(self,AutoRenewPeriod):
+		self.add_query_param('AutoRenewPeriod',AutoRenewPeriod)
+
 	def get_AutoPay(self):
 		return self.get_query_params().get('AutoPay')
 
@@ -102,3 +108,9 @@ class EnableAdditionalBandwidthRequest(RpcRequest):
 
 	def set_InstanceId(self,InstanceId):
 		self.add_query_param('InstanceId',InstanceId)
+
+	def get_AutoRenew(self):
+		return self.get_query_params().get('AutoRenew')
+
+	def set_AutoRenew(self,AutoRenew):
+		self.add_query_param('AutoRenew',AutoRenew)
