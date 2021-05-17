@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdksas.endpoint import endpoint_data
 
-class ModifyOperateVulRequest(RpcRequest):
+class ModifyWebLockStatusRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'ModifyOperateVul','sas')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'ModifyWebLockStatus','sas')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,26 +31,26 @@ class ModifyOperateVulRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_Reason(self):
-		return self.get_query_params().get('Reason')
+	def get_Uuid(self):
+		return self.get_query_params().get('Uuid')
 
-	def set_Reason(self,Reason):
-		self.add_query_param('Reason',Reason)
+	def set_Uuid(self,Uuid):
+		self.add_query_param('Uuid',Uuid)
 
-	def get_Type(self):
-		return self.get_query_params().get('Type')
+	def get_SourceIp(self):
+		return self.get_query_params().get('SourceIp')
 
-	def set_Type(self,Type):
-		self.add_query_param('Type',Type)
+	def set_SourceIp(self,SourceIp):
+		self.add_query_param('SourceIp',SourceIp)
 
-	def get_Info(self):
-		return self.get_query_params().get('Info')
+	def get_Lang(self):
+		return self.get_query_params().get('Lang')
 
-	def set_Info(self,Info):
-		self.add_query_param('Info',Info)
+	def set_Lang(self,Lang):
+		self.add_query_param('Lang',Lang)
 
-	def get_OperateType(self):
-		return self.get_query_params().get('OperateType')
+	def get_Status(self):
+		return self.get_query_params().get('Status')
 
-	def set_OperateType(self,OperateType):
-		self.add_query_param('OperateType',OperateType)
+	def set_Status(self,Status):
+		self.add_query_param('Status',Status)
