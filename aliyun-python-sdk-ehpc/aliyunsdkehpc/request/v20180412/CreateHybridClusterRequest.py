@@ -37,6 +37,12 @@ class CreateHybridClusterRequest(RpcRequest):
 	def set_KeyPairName(self,KeyPairName):
 		self.add_query_param('KeyPairName',KeyPairName)
 
+	def get_MultiOs(self):
+		return self.get_query_params().get('MultiOs')
+
+	def set_MultiOs(self,MultiOs):
+		self.add_query_param('MultiOs',MultiOs)
+
 	def get_SecurityGroupName(self):
 		return self.get_query_params().get('SecurityGroupName')
 

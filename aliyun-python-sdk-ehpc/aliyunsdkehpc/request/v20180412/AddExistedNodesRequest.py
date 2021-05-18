@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkehpc.endpoint import endpoint_data
 
-class ListCustomImagesRequest(RpcRequest):
+class AddExistedNodesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'EHPC', '2018-04-12', 'ListCustomImages')
+		RpcRequest.__init__(self, 'EHPC', '2018-04-12', 'AddExistedNodes')
 		self.set_method('GET')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,26 +31,40 @@ class ListCustomImagesRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_ImageId(self):
+		return self.get_query_params().get('ImageId')
+
+	def set_ImageId(self,ImageId):
+		self.add_query_param('ImageId',ImageId)
+
+	def get_Instances(self):
+		return self.get_query_params().get('Instance')
+
+	def set_Instances(self, Instances):
+		for depth1 in range(len(Instances)):
+			if Instances[depth1].get('Id') is not None:
+				self.add_query_param('Instance.' + str(depth1 + 1) + '.Id', Instances[depth1].get('Id'))
+
+	def get_ClientToken(self):
+		return self.get_query_params().get('ClientToken')
+
+	def set_ClientToken(self,ClientToken):
+		self.add_query_param('ClientToken',ClientToken)
+
 	def get_ClusterId(self):
 		return self.get_query_params().get('ClusterId')
 
 	def set_ClusterId(self,ClusterId):
 		self.add_query_param('ClusterId',ClusterId)
 
+	def get_JobQueue(self):
+		return self.get_query_params().get('JobQueue')
+
+	def set_JobQueue(self,JobQueue):
+		self.add_query_param('JobQueue',JobQueue)
+
 	def get_ImageOwnerAlias(self):
 		return self.get_query_params().get('ImageOwnerAlias')
 
 	def set_ImageOwnerAlias(self,ImageOwnerAlias):
 		self.add_query_param('ImageOwnerAlias',ImageOwnerAlias)
-
-	def get_BaseOsTag(self):
-		return self.get_query_params().get('BaseOsTag')
-
-	def set_BaseOsTag(self,BaseOsTag):
-		self.add_query_param('BaseOsTag',BaseOsTag)
-
-	def get_InstanceType(self):
-		return self.get_query_params().get('InstanceType')
-
-	def set_InstanceType(self,InstanceType):
-		self.add_query_param('InstanceType',InstanceType)
