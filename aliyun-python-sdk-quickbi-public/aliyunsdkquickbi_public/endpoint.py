@@ -20,13 +20,7 @@
 
 class EndpointData():
 	def __init__(self):
-		self.endpoint_map = {
-			"cn-hongkong": "quickbi-public-share.aliyuncs.com",
-			"ap-southeast-1": "quickbi-public-share.aliyuncs.com",
-			"ap-southeast-3": "quickbi-public-share.aliyuncs.com",
-			"eu-central-1": "quickbi-public-share.aliyuncs.com",
-			"cn-hangzhou": "quickbi-public-share.aliyuncs.com",
-		}
+		self.endpoint_map = {}
 		self.endpoint_regional = "central"
 
 	def getEndpointMap(self):
