@@ -67,6 +67,12 @@ class ApplyNodesRequest(RpcRequest):
 	def set_ResourceAmountType(self,ResourceAmountType):
 		self.add_query_param('ResourceAmountType',ResourceAmountType)
 
+	def get_StrictResourceProvision(self):
+		return self.get_query_params().get('StrictResourceProvision')
+
+	def set_StrictResourceProvision(self,StrictResourceProvision):
+		self.add_query_param('StrictResourceProvision',StrictResourceProvision)
+
 	def get_SystemDiskType(self):
 		return self.get_query_params().get('SystemDiskType')
 
