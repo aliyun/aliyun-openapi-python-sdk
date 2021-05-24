@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdts.endpoint import endpoint_data
 
-class SkipPreCheckRequest(RpcRequest):
+class TransferPayTypeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dts', '2020-01-01', 'SkipPreCheck','dts')
+		RpcRequest.__init__(self, 'Dts', '2020-01-01', 'TransferPayType','dts')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,32 +31,32 @@ class SkipPreCheckRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_SkipPreCheckItems(self):
-		return self.get_query_params().get('SkipPreCheckItems')
+	def get_Period(self):
+		return self.get_query_params().get('Period')
 
-	def set_SkipPreCheckItems(self,SkipPreCheckItems):
-		self.add_query_param('SkipPreCheckItems',SkipPreCheckItems)
+	def set_Period(self,Period):
+		self.add_query_param('Period',Period)
 
-	def get_Skip(self):
-		return self.get_query_params().get('Skip')
+	def get_BuyCount(self):
+		return self.get_query_params().get('BuyCount')
 
-	def set_Skip(self,Skip):
-		self.add_query_param('Skip',Skip)
+	def set_BuyCount(self,BuyCount):
+		self.add_query_param('BuyCount',BuyCount)
 
-	def get_JobId(self):
-		return self.get_query_params().get('JobId')
+	def get_InstanceClass(self):
+		return self.get_query_params().get('InstanceClass')
 
-	def set_JobId(self,JobId):
-		self.add_query_param('JobId',JobId)
-
-	def get_SkipPreCheckNames(self):
-		return self.get_query_params().get('SkipPreCheckNames')
-
-	def set_SkipPreCheckNames(self,SkipPreCheckNames):
-		self.add_query_param('SkipPreCheckNames',SkipPreCheckNames)
+	def set_InstanceClass(self,InstanceClass):
+		self.add_query_param('InstanceClass',InstanceClass)
 
 	def get_DtsJobId(self):
 		return self.get_query_params().get('DtsJobId')
 
 	def set_DtsJobId(self,DtsJobId):
 		self.add_query_param('DtsJobId',DtsJobId)
+
+	def get_ChargeType(self):
+		return self.get_query_params().get('ChargeType')
+
+	def set_ChargeType(self,ChargeType):
+		self.add_query_param('ChargeType',ChargeType)

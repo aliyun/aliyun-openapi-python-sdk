@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdts.endpoint import endpoint_data
 
-class DescribeDtsJobsRequest(RpcRequest):
+class DescribeDtsJobLogsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dts', '2020-01-01', 'DescribeDtsJobs','dts')
+		RpcRequest.__init__(self, 'Dts', '2020-01-01', 'DescribeDtsJobLogs','dts')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,11 +31,17 @@ class DescribeDtsJobsRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_OrderDirection(self):
-		return self.get_query_params().get('OrderDirection')
+	def get_EndTime(self):
+		return self.get_query_params().get('EndTime')
 
-	def set_OrderDirection(self,OrderDirection):
-		self.add_query_param('OrderDirection',OrderDirection)
+	def set_EndTime(self,EndTime):
+		self.add_query_param('EndTime',EndTime)
+
+	def get_StartTime(self):
+		return self.get_query_params().get('StartTime')
+
+	def set_StartTime(self,StartTime):
+		self.add_query_param('StartTime',StartTime)
 
 	def get_Type(self):
 		return self.get_query_params().get('Type')
@@ -49,47 +55,17 @@ class DescribeDtsJobsRequest(RpcRequest):
 	def set_PageNumber(self,PageNumber):
 		self.add_query_param('PageNumber',PageNumber)
 
-	def get_OrderColumn(self):
-		return self.get_query_params().get('OrderColumn')
-
-	def set_OrderColumn(self,OrderColumn):
-		self.add_query_param('OrderColumn',OrderColumn)
-
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
 
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
 
-	def get_GroupId(self):
-		return self.get_query_params().get('GroupId')
+	def get_DtsJobId(self):
+		return self.get_query_params().get('DtsJobId')
 
-	def set_GroupId(self,GroupId):
-		self.add_query_param('GroupId',GroupId)
-
-	def get_Params(self):
-		return self.get_query_params().get('Params')
-
-	def set_Params(self,Params):
-		self.add_query_param('Params',Params)
-
-	def get_JobType(self):
-		return self.get_query_params().get('JobType')
-
-	def set_JobType(self,JobType):
-		self.add_query_param('JobType',JobType)
-
-	def get_Tags(self):
-		return self.get_query_params().get('Tags')
-
-	def set_Tags(self,Tags):
-		self.add_query_param('Tags',Tags)
-
-	def get_Region(self):
-		return self.get_query_params().get('Region')
-
-	def set_Region(self,Region):
-		self.add_query_param('Region',Region)
+	def set_DtsJobId(self,DtsJobId):
+		self.add_query_param('DtsJobId',DtsJobId)
 
 	def get_Status(self):
 		return self.get_query_params().get('Status')

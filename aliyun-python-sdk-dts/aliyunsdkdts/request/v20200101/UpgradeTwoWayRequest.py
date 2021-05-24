@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdts.endpoint import endpoint_data
 
-class SkipPreCheckRequest(RpcRequest):
+class UpgradeTwoWayRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dts', '2020-01-01', 'SkipPreCheck','dts')
+		RpcRequest.__init__(self, 'Dts', '2020-01-01', 'UpgradeTwoWay','dts')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,32 +31,14 @@ class SkipPreCheckRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_SkipPreCheckItems(self):
-		return self.get_query_params().get('SkipPreCheckItems')
+	def get_InstanceClass(self):
+		return self.get_query_params().get('InstanceClass')
 
-	def set_SkipPreCheckItems(self,SkipPreCheckItems):
-		self.add_query_param('SkipPreCheckItems',SkipPreCheckItems)
+	def set_InstanceClass(self,InstanceClass):
+		self.add_query_param('InstanceClass',InstanceClass)
 
-	def get_Skip(self):
-		return self.get_query_params().get('Skip')
+	def get_InstanceId(self):
+		return self.get_query_params().get('InstanceId')
 
-	def set_Skip(self,Skip):
-		self.add_query_param('Skip',Skip)
-
-	def get_JobId(self):
-		return self.get_query_params().get('JobId')
-
-	def set_JobId(self,JobId):
-		self.add_query_param('JobId',JobId)
-
-	def get_SkipPreCheckNames(self):
-		return self.get_query_params().get('SkipPreCheckNames')
-
-	def set_SkipPreCheckNames(self,SkipPreCheckNames):
-		self.add_query_param('SkipPreCheckNames',SkipPreCheckNames)
-
-	def get_DtsJobId(self):
-		return self.get_query_params().get('DtsJobId')
-
-	def set_DtsJobId(self,DtsJobId):
-		self.add_query_param('DtsJobId',DtsJobId)
+	def set_InstanceId(self,InstanceId):
+		self.add_query_param('InstanceId',InstanceId)
