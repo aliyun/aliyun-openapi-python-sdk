@@ -23,7 +23,7 @@ from aliyunsdkopenanalytics_open.endpoint import endpoint_data
 class SetAllowIPRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'openanalytics-open', '2018-06-19', 'SetAllowIP','openanalytics-cap')
+		RpcRequest.__init__(self, 'openanalytics-open', '2018-06-19', 'SetAllowIP','openanalytics')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())

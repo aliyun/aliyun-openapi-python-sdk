@@ -23,7 +23,7 @@ from aliyunsdkopenanalytics_open.endpoint import endpoint_data
 class CancelQueryByIdRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'openanalytics-open', '2018-06-19', 'CancelQueryById','openanalytics-cap')
+		RpcRequest.__init__(self, 'openanalytics-open', '2018-06-19', 'CancelQueryById','openanalytics')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())

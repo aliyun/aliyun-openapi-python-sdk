@@ -1,3 +1,8 @@
+2021-05-26 Version: 2.0.5
+- GetJobAttemptLog.
+- GetJobAttemptList.
+- Add a new field in GetjobDetail output.
+
 2021-04-15 Version: 2.0.4
 - Support Spark REPL.
 

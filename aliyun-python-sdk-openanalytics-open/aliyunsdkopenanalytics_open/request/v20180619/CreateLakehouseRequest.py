@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkopenanalytics_open.endpoint import endpoint_data
 
-class UntagResourcesRequest(RpcRequest):
+class CreateLakehouseRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'openanalytics-open', '2018-06-19', 'UntagResources','openanalytics')
+		RpcRequest.__init__(self, 'openanalytics-open', '2018-06-19', 'CreateLakehouse','openanalytics')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,30 +31,8 @@ class UntagResourcesRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_All(self):
-		return self.get_query_params().get('All')
+	def get_Lakehouse(self):
+		return self.get_body_params().get('Lakehouse')
 
-	def set_All(self,All):
-		self.add_query_param('All',All)
-
-	def get_ResourceIds(self):
-		return self.get_query_params().get('ResourceId')
-
-	def set_ResourceIds(self, ResourceIds):
-		for depth1 in range(len(ResourceIds)):
-			if ResourceIds[depth1] is not None:
-				self.add_query_param('ResourceId.' + str(depth1 + 1) , ResourceIds[depth1])
-
-	def get_ResourceType(self):
-		return self.get_query_params().get('ResourceType')
-
-	def set_ResourceType(self,ResourceType):
-		self.add_query_param('ResourceType',ResourceType)
-
-	def get_TagKeys(self):
-		return self.get_query_params().get('TagKey')
-
-	def set_TagKeys(self, TagKeys):
-		for depth1 in range(len(TagKeys)):
-			if TagKeys[depth1] is not None:
-				self.add_query_param('TagKey.' + str(depth1 + 1) , TagKeys[depth1])
+	def set_Lakehouse(self,Lakehouse):
+		self.add_body_params('Lakehouse', Lakehouse)
