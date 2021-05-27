@@ -61,6 +61,12 @@ class CreateDomainRequest(RpcRequest):
 	def set_WriteTime(self,WriteTime):
 		self.add_query_param('WriteTime',WriteTime)
 
+	def get_AccessHeaderMode(self):
+		return self.get_query_params().get('AccessHeaderMode')
+
+	def set_AccessHeaderMode(self,AccessHeaderMode):
+		self.add_query_param('AccessHeaderMode',AccessHeaderMode)
+
 	def get_AccessType(self):
 		return self.get_query_params().get('AccessType')
 
@@ -72,6 +78,12 @@ class CreateDomainRequest(RpcRequest):
 
 	def set_LogHeaders(self,LogHeaders):
 		self.add_query_param('LogHeaders',LogHeaders)
+
+	def get_AccessHeaders(self):
+		return self.get_query_params().get('AccessHeaders')
+
+	def set_AccessHeaders(self,AccessHeaders):
+		self.add_query_param('AccessHeaders',AccessHeaders)
 
 	def get_ConnectionTime(self):
 		return self.get_query_params().get('ConnectionTime')
