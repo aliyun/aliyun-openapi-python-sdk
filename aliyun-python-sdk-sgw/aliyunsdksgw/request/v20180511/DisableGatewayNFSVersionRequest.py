@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdksgw.endpoint import endpoint_data
 
-class DeleteGatewayRequest(RpcRequest):
+class DisableGatewayNFSVersionRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'sgw', '2018-05-11', 'DeleteGateway','hcs_sgw')
+		RpcRequest.__init__(self, 'sgw', '2018-05-11', 'DisableGatewayNFSVersion','hcs_sgw')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,11 +31,11 @@ class DeleteGatewayRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_ReasonDetail(self):
-		return self.get_query_params().get('ReasonDetail')
+	def get_NFSVersion(self):
+		return self.get_query_params().get('NFSVersion')
 
-	def set_ReasonDetail(self,ReasonDetail):
-		self.add_query_param('ReasonDetail',ReasonDetail)
+	def set_NFSVersion(self,NFSVersion):
+		self.add_query_param('NFSVersion',NFSVersion)
 
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
@@ -48,9 +48,3 @@ class DeleteGatewayRequest(RpcRequest):
 
 	def set_GatewayId(self,GatewayId):
 		self.add_query_param('GatewayId',GatewayId)
-
-	def get_ReasonType(self):
-		return self.get_query_params().get('ReasonType')
-
-	def set_ReasonType(self,ReasonType):
-		self.add_query_param('ReasonType',ReasonType)

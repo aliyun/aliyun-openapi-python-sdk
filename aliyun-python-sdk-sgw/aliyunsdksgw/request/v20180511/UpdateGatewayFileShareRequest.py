@@ -67,6 +67,12 @@ class UpdateGatewayFileShareRequest(RpcRequest):
 	def set_ReadWriteClientList(self,ReadWriteClientList):
 		self.add_query_param('ReadWriteClientList',ReadWriteClientList)
 
+	def get_BypassCacheRead(self):
+		return self.get_query_params().get('BypassCacheRead')
+
+	def set_BypassCacheRead(self,BypassCacheRead):
+		self.add_query_param('BypassCacheRead',BypassCacheRead)
+
 	def get_BackendLimit(self):
 		return self.get_query_params().get('BackendLimit')
 

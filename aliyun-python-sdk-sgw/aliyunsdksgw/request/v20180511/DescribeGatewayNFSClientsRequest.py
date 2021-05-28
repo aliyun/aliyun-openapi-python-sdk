@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdksgw.endpoint import endpoint_data
 
-class DeleteGatewayRequest(RpcRequest):
+class DescribeGatewayNFSClientsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'sgw', '2018-05-11', 'DeleteGateway','hcs_sgw')
+		RpcRequest.__init__(self, 'sgw', '2018-05-11', 'DescribeGatewayNFSClients','hcs_sgw')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,11 +31,11 @@ class DeleteGatewayRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_ReasonDetail(self):
-		return self.get_query_params().get('ReasonDetail')
+	def get_PageNumber(self):
+		return self.get_query_params().get('PageNumber')
 
-	def set_ReasonDetail(self,ReasonDetail):
-		self.add_query_param('ReasonDetail',ReasonDetail)
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)
 
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
@@ -43,14 +43,14 @@ class DeleteGatewayRequest(RpcRequest):
 	def set_SecurityToken(self,SecurityToken):
 		self.add_query_param('SecurityToken',SecurityToken)
 
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
+
 	def get_GatewayId(self):
 		return self.get_query_params().get('GatewayId')
 
 	def set_GatewayId(self,GatewayId):
 		self.add_query_param('GatewayId',GatewayId)
-
-	def get_ReasonType(self):
-		return self.get_query_params().get('ReasonType')
-
-	def set_ReasonType(self,ReasonType):
-		self.add_query_param('ReasonType',ReasonType)
