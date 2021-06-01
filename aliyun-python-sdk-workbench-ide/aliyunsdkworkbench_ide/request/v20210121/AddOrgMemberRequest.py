@@ -19,17 +19,23 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class DeleteAppRequest(RpcRequest):
+class AddOrgMemberRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Workbench-ide', '2021-01-21', 'DeleteApp')
+		RpcRequest.__init__(self, 'Workbench-ide', '2021-01-21', 'AddOrgMember')
 		self.set_method('POST')
 
-	def get_AppId(self):
-		return self.get_query_params().get('AppId')
+	def get_Uid(self):
+		return self.get_query_params().get('Uid')
 
-	def set_AppId(self,AppId):
-		self.add_query_param('AppId',AppId)
+	def set_Uid(self,Uid):
+		self.add_query_param('Uid',Uid)
+
+	def get_Role(self):
+		return self.get_query_params().get('Role')
+
+	def set_Role(self,Role):
+		self.add_query_param('Role',Role)
 
 	def get_CurrentOrgId(self):
 		return self.get_query_params().get('CurrentOrgId')
@@ -37,8 +43,8 @@ class DeleteAppRequest(RpcRequest):
 	def set_CurrentOrgId(self,CurrentOrgId):
 		self.add_query_param('CurrentOrgId',CurrentOrgId)
 
-	def get_IsCleanCodeRepo(self):
-		return self.get_query_params().get('IsCleanCodeRepo')
+	def get_AccountType(self):
+		return self.get_query_params().get('AccountType')
 
-	def set_IsCleanCodeRepo(self,IsCleanCodeRepo):
-		self.add_query_param('IsCleanCodeRepo',IsCleanCodeRepo)
+	def set_AccountType(self,AccountType):
+		self.add_query_param('AccountType',AccountType)

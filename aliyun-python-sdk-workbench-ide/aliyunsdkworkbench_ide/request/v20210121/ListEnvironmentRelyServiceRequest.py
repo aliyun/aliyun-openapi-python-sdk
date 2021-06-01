@@ -19,17 +19,11 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class DeleteAppRequest(RpcRequest):
+class ListEnvironmentRelyServiceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Workbench-ide', '2021-01-21', 'DeleteApp')
+		RpcRequest.__init__(self, 'Workbench-ide', '2021-01-21', 'ListEnvironmentRelyService')
 		self.set_method('POST')
-
-	def get_AppId(self):
-		return self.get_query_params().get('AppId')
-
-	def set_AppId(self,AppId):
-		self.add_query_param('AppId',AppId)
 
 	def get_CurrentOrgId(self):
 		return self.get_query_params().get('CurrentOrgId')
@@ -37,8 +31,8 @@ class DeleteAppRequest(RpcRequest):
 	def set_CurrentOrgId(self,CurrentOrgId):
 		self.add_query_param('CurrentOrgId',CurrentOrgId)
 
-	def get_IsCleanCodeRepo(self):
-		return self.get_query_params().get('IsCleanCodeRepo')
+	def get_EnvId(self):
+		return self.get_query_params().get('EnvId')
 
-	def set_IsCleanCodeRepo(self,IsCleanCodeRepo):
-		self.add_query_param('IsCleanCodeRepo',IsCleanCodeRepo)
+	def set_EnvId(self,EnvId):
+		self.add_query_param('EnvId',EnvId)

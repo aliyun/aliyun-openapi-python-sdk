@@ -19,17 +19,17 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class DeleteAppRequest(RpcRequest):
+class ListEnvironmentRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Workbench-ide', '2021-01-21', 'DeleteApp')
+		RpcRequest.__init__(self, 'Workbench-ide', '2021-01-21', 'ListEnvironment')
 		self.set_method('POST')
 
-	def get_AppId(self):
-		return self.get_query_params().get('AppId')
+	def get_ProductId(self):
+		return self.get_query_params().get('ProductId')
 
-	def set_AppId(self,AppId):
-		self.add_query_param('AppId',AppId)
+	def set_ProductId(self,ProductId):
+		self.add_query_param('ProductId',ProductId)
 
 	def get_CurrentOrgId(self):
 		return self.get_query_params().get('CurrentOrgId')
@@ -37,8 +37,14 @@ class DeleteAppRequest(RpcRequest):
 	def set_CurrentOrgId(self,CurrentOrgId):
 		self.add_query_param('CurrentOrgId',CurrentOrgId)
 
-	def get_IsCleanCodeRepo(self):
-		return self.get_query_params().get('IsCleanCodeRepo')
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
 
-	def set_IsCleanCodeRepo(self,IsCleanCodeRepo):
-		self.add_query_param('IsCleanCodeRepo',IsCleanCodeRepo)
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
+
+	def get_Page(self):
+		return self.get_query_params().get('Page')
+
+	def set_Page(self,Page):
+		self.add_query_param('Page',Page)
