@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkkms.endpoint import endpoint_data
 
-class CreateCertificateRequest(RpcRequest):
+class SetDeletionProtectionRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Kms', '2016-01-20', 'CreateCertificate','kms')
+		RpcRequest.__init__(self, 'Kms', '2016-01-20', 'SetDeletionProtection','kms')
 		self.set_protocol_type('https')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
@@ -32,26 +32,20 @@ class CreateCertificateRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_ExportablePrivateKey(self):
-		return self.get_query_params().get('ExportablePrivateKey')
+	def get_EnableDeletionProtection(self):
+		return self.get_query_params().get('EnableDeletionProtection')
 
-	def set_ExportablePrivateKey(self,ExportablePrivateKey):
-		self.add_query_param('ExportablePrivateKey',ExportablePrivateKey)
+	def set_EnableDeletionProtection(self,EnableDeletionProtection):
+		self.add_query_param('EnableDeletionProtection',EnableDeletionProtection)
 
-	def get_Subject(self):
-		return self.get_query_params().get('Subject')
+	def get_ProtectedResourceArn(self):
+		return self.get_query_params().get('ProtectedResourceArn')
 
-	def set_Subject(self,Subject):
-		self.add_query_param('Subject',Subject)
+	def set_ProtectedResourceArn(self,ProtectedResourceArn):
+		self.add_query_param('ProtectedResourceArn',ProtectedResourceArn)
 
-	def get_SubjectAlternativeNames(self):
-		return self.get_query_params().get('SubjectAlternativeNames')
+	def get_DeletionProtectionDescription(self):
+		return self.get_query_params().get('DeletionProtectionDescription')
 
-	def set_SubjectAlternativeNames(self,SubjectAlternativeNames):
-		self.add_query_param('SubjectAlternativeNames',SubjectAlternativeNames)
-
-	def get_KeySpec(self):
-		return self.get_query_params().get('KeySpec')
-
-	def set_KeySpec(self,KeySpec):
-		self.add_query_param('KeySpec',KeySpec)
+	def set_DeletionProtectionDescription(self,DeletionProtectionDescription):
+		self.add_query_param('DeletionProtectionDescription',DeletionProtectionDescription)
