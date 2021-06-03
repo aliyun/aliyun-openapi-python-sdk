@@ -22,7 +22,7 @@ from aliyunsdkcore.request import RpcRequest
 class GetPipelineInstanceInfoRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'devops-rdc', '2020-03-03', 'GetPipelineInstanceInfo','1.9.6')
+		RpcRequest.__init__(self, 'devops-rdc', '2020-03-03', 'GetPipelineInstanceInfo')
 		self.set_method('POST')
 
 	def get_FlowInstanceId(self):

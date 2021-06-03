@@ -22,7 +22,7 @@ from aliyunsdkcore.request import RpcRequest
 class UpdateTaskDetailRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'devops-rdc', '2020-03-03', 'UpdateTaskDetail','1.9.6')
+		RpcRequest.__init__(self, 'devops-rdc', '2020-03-03', 'UpdateTaskDetail')
 		self.set_method('POST')
 
 	def get_Note(self):

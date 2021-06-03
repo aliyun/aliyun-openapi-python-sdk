@@ -22,7 +22,7 @@ from aliyunsdkcore.request import RpcRequest
 class GetUserNameRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'devops-rdc', '2020-03-03', 'GetUserName','1.9.6')
+		RpcRequest.__init__(self, 'devops-rdc', '2020-03-03', 'GetUserName')
 		self.set_method('POST')
 
 	def get_UserId(self):
