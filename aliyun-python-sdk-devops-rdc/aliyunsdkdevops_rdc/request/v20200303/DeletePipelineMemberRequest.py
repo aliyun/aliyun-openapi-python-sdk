@@ -22,7 +22,7 @@ from aliyunsdkcore.request import RpcRequest
 class DeletePipelineMemberRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'devops-rdc', '2020-03-03', 'DeletePipelineMember')
+		RpcRequest.__init__(self, 'devops-rdc', '2020-03-03', 'DeletePipelineMember','1.9.6')
 		self.set_method('POST')
 
 	def get_UserPk(self):

@@ -22,7 +22,7 @@ from aliyunsdkcore.request import RpcRequest
 class DeleteDevopsProjectRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'devops-rdc', '2020-03-03', 'DeleteDevopsProject')
+		RpcRequest.__init__(self, 'devops-rdc', '2020-03-03', 'DeleteDevopsProject','1.9.6')
 		self.set_method('POST')
 
 	def get_ProjectId(self):

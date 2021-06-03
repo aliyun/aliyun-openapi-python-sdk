@@ -22,7 +22,7 @@ from aliyunsdkcore.request import RpcRequest
 class GetLastWorkspaceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'devops-rdc', '2020-03-03', 'GetLastWorkspace')
+		RpcRequest.__init__(self, 'devops-rdc', '2020-03-03', 'GetLastWorkspace','1.9.6')
 		self.set_method('POST')
 
 	def get_RealPk(self):
