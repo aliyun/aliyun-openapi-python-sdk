@@ -20,26 +20,26 @@
 from aliyunsdkcore.request import RoaRequest
 from aliyunsdkelasticsearch.endpoint import endpoint_data
 
-class DeleteProjectRequest(RoaRequest):
+class PostEmonTryAlarmRuleRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'elasticsearch', '2017-06-13', 'DeleteProject','elasticsearch')
-		self.set_uri_pattern('/openapi/projects/[Id]')
-		self.set_method('DELETE')
+		RoaRequest.__init__(self, 'elasticsearch', '2017-06-13', 'PostEmonTryAlarmRule','elasticsearch')
+		self.set_uri_pattern('/openapi/emon/projects/[ProjectId]/alarm-groups/[AlarmGroupId]/alarm-rules/_test')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_clientToken(self):
-		return self.get_query_params().get('clientToken')
+	def get_AlarmGroupId(self):
+		return self.get_path_params().get('AlarmGroupId')
 
-	def set_clientToken(self,clientToken):
-		self.add_query_param('clientToken',clientToken)
+	def set_AlarmGroupId(self,AlarmGroupId):
+		self.add_path_param('AlarmGroupId',AlarmGroupId)
 
-	def get_Id(self):
-		return self.get_path_params().get('Id')
+	def get_ProjectId(self):
+		return self.get_path_params().get('ProjectId')
 
-	def set_Id(self,Id):
-		self.add_path_param('Id',Id)
+	def set_ProjectId(self,ProjectId):
+		self.add_path_param('ProjectId',ProjectId)

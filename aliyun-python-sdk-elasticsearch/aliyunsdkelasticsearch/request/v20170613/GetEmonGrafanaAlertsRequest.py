@@ -20,20 +20,20 @@
 from aliyunsdkcore.request import RoaRequest
 from aliyunsdkelasticsearch.endpoint import endpoint_data
 
-class CreateProjectRequest(RoaRequest):
+class GetEmonGrafanaAlertsRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'elasticsearch', '2017-06-13', 'CreateProject','elasticsearch')
-		self.set_uri_pattern('/openapi/projects')
-		self.set_method('POST')
+		RoaRequest.__init__(self, 'elasticsearch', '2017-06-13', 'GetEmonGrafanaAlerts','elasticsearch')
+		self.set_uri_pattern('/openapi/emon/projects/[ProjectId]/grafana/proxy/api/alerts')
+		self.set_method('GET')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_clientToken(self):
-		return self.get_query_params().get('clientToken')
+	def get_ProjectId(self):
+		return self.get_path_params().get('ProjectId')
 
-	def set_clientToken(self,clientToken):
-		self.add_query_param('clientToken',clientToken)
+	def set_ProjectId(self,ProjectId):
+		self.add_path_param('ProjectId',ProjectId)

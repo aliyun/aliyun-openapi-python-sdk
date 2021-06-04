@@ -20,26 +20,20 @@
 from aliyunsdkcore.request import RoaRequest
 from aliyunsdkelasticsearch.endpoint import endpoint_data
 
-class RollbackInstanceRequest(RoaRequest):
+class GetEmonGrafanaDashboardsRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'elasticsearch', '2017-06-13', 'RollbackInstance','elasticsearch')
-		self.set_uri_pattern('/openapi/instances/[InstanceId]/actions/rollback')
-		self.set_method('POST')
+		RoaRequest.__init__(self, 'elasticsearch', '2017-06-13', 'GetEmonGrafanaDashboards','elasticsearch')
+		self.set_uri_pattern('/openapi/emon/projects/[ProjectId]/grafana/proxy/api/search')
+		self.set_method('GET')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_InstanceId(self):
-		return self.get_path_params().get('InstanceId')
+	def get_ProjectId(self):
+		return self.get_path_params().get('ProjectId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_path_param('InstanceId',InstanceId)
-
-	def get_clientToken(self):
-		return self.get_query_params().get('clientToken')
-
-	def set_clientToken(self,clientToken):
-		self.add_query_param('clientToken',clientToken)
+	def set_ProjectId(self,ProjectId):
+		self.add_path_param('ProjectId',ProjectId)

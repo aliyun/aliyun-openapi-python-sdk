@@ -44,12 +44,6 @@ class ListInstanceRequest(RoaRequest):
 	def set_instanceCategory(self,instanceCategory):
 		self.add_query_param('instanceCategory',instanceCategory)
 
-	def get_ownerId(self):
-		return self.get_query_params().get('ownerId')
-
-	def set_ownerId(self,ownerId):
-		self.add_query_param('ownerId',ownerId)
-
 	def get_tags(self):
 		return self.get_query_params().get('tags')
 
