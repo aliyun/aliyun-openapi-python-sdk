@@ -102,8 +102,8 @@ class DescribeInstancesRequest(RpcRequest):
 
 	def set_Tags(self, Tags):
 		for depth1 in range(len(Tags)):
-			if Tags[depth1].get('Value') is not None:
-				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tags[depth1].get('Value'))
+			if Tags[depth1].get('value') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.value', Tags[depth1].get('value'))
 			if Tags[depth1].get('Key') is not None:
 				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tags[depth1].get('Key'))
 
@@ -180,6 +180,14 @@ class DescribeInstancesRequest(RpcRequest):
 
 	def set_MaxResults(self,MaxResults):
 		self.add_query_param('MaxResults',MaxResults)
+
+	def get_Ipv6Addresss(self):
+		return self.get_query_params().get('Ipv6Address')
+
+	def set_Ipv6Addresss(self, Ipv6Addresss):
+		for depth1 in range(len(Ipv6Addresss)):
+			if Ipv6Addresss[depth1] is not None:
+				self.add_query_param('Ipv6Address.' + str(depth1 + 1) , Ipv6Addresss[depth1])
 
 	def get_InstanceNetworkType(self):
 		return self.get_query_params().get('InstanceNetworkType')

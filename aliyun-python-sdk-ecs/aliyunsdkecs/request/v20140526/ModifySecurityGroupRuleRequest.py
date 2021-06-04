@@ -43,6 +43,12 @@ class ModifySecurityGroupRuleRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_SourcePrefixListId(self):
+		return self.get_query_params().get('SourcePrefixListId')
+
+	def set_SourcePrefixListId(self,SourcePrefixListId):
+		self.add_query_param('SourcePrefixListId',SourcePrefixListId)
+
 	def get_SourcePortRange(self):
 		return self.get_query_params().get('SourcePortRange')
 

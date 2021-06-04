@@ -67,6 +67,12 @@ class DescribeInvocationsRequest(RpcRequest):
 	def set_ContentEncoding(self,ContentEncoding):
 		self.add_query_param('ContentEncoding',ContentEncoding)
 
+	def get_RepeatMode(self):
+		return self.get_query_params().get('RepeatMode')
+
+	def set_RepeatMode(self,RepeatMode):
+		self.add_query_param('RepeatMode',RepeatMode)
+
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
 

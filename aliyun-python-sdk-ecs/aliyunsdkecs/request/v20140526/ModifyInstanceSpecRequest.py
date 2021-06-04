@@ -106,8 +106,8 @@ class ModifyInstanceSpecRequest(RpcRequest):
 	def get_Async(self):
 		return self.get_query_params().get('Async')
 
-	def set_Async(self,Async):
-		self.add_query_param('Async',Async)
+	def set_Async(self,_Async):
+		self.add_query_param('Async',_Async)
 
 	def get_InstanceId(self):
 		return self.get_query_params().get('InstanceId')

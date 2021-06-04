@@ -222,12 +222,12 @@ class RunInstancesRequest(RpcRequest):
 
 	def set_Arns(self, Arns):
 		for depth1 in range(len(Arns)):
-			if Arns[depth1].get('AssumeRoleFor') is not None:
-				self.add_query_param('Arn.' + str(depth1 + 1) + '.AssumeRoleFor', Arns[depth1].get('AssumeRoleFor'))
-			if Arns[depth1].get('Rolearn') is not None:
-				self.add_query_param('Arn.' + str(depth1 + 1) + '.Rolearn', Arns[depth1].get('Rolearn'))
 			if Arns[depth1].get('RoleType') is not None:
 				self.add_query_param('Arn.' + str(depth1 + 1) + '.RoleType', Arns[depth1].get('RoleType'))
+			if Arns[depth1].get('Rolearn') is not None:
+				self.add_query_param('Arn.' + str(depth1 + 1) + '.Rolearn', Arns[depth1].get('Rolearn'))
+			if Arns[depth1].get('AssumeRoleFor') is not None:
+				self.add_query_param('Arn.' + str(depth1 + 1) + '.AssumeRoleFor', Arns[depth1].get('AssumeRoleFor'))
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -253,6 +253,12 @@ class RunInstancesRequest(RpcRequest):
 	def set_DedicatedHostId(self,DedicatedHostId):
 		self.add_query_param('DedicatedHostId',DedicatedHostId)
 
+	def get_SpotDuration(self):
+		return self.get_query_params().get('SpotDuration')
+
+	def set_SpotDuration(self,SpotDuration):
+		self.add_query_param('SpotDuration',SpotDuration)
+
 	def get_SecurityGroupIdss(self):
 		return self.get_query_params().get('SecurityGroupIds')
 
@@ -260,12 +266,6 @@ class RunInstancesRequest(RpcRequest):
 		for depth1 in range(len(SecurityGroupIdss)):
 			if SecurityGroupIdss[depth1] is not None:
 				self.add_query_param('SecurityGroupIds.' + str(depth1 + 1) , SecurityGroupIdss[depth1])
-
-	def get_SpotDuration(self):
-		return self.get_query_params().get('SpotDuration')
-
-	def set_SpotDuration(self,SpotDuration):
-		self.add_query_param('SpotDuration',SpotDuration)
 
 	def get_SystemDiskSize(self):
 		return self.get_query_params().get('SystemDisk.Size')
@@ -449,33 +449,33 @@ class RunInstancesRequest(RpcRequest):
 	def set_InstanceChargeType(self,InstanceChargeType):
 		self.add_query_param('InstanceChargeType',InstanceChargeType)
 
-	def get_NetworkInterfaces(self):
-		return self.get_query_params().get('NetworkInterface')
-
-	def set_NetworkInterfaces(self, NetworkInterfaces):
-		for depth1 in range(len(NetworkInterfaces)):
-			if NetworkInterfaces[depth1].get('PrimaryIpAddress') is not None:
-				self.add_query_param('NetworkInterface.' + str(depth1 + 1) + '.PrimaryIpAddress', NetworkInterfaces[depth1].get('PrimaryIpAddress'))
-			if NetworkInterfaces[depth1].get('VSwitchId') is not None:
-				self.add_query_param('NetworkInterface.' + str(depth1 + 1) + '.VSwitchId', NetworkInterfaces[depth1].get('VSwitchId'))
-			if NetworkInterfaces[depth1].get('SecurityGroupId') is not None:
-				self.add_query_param('NetworkInterface.' + str(depth1 + 1) + '.SecurityGroupId', NetworkInterfaces[depth1].get('SecurityGroupId'))
-			if NetworkInterfaces[depth1].get('SecurityGroupIds') is not None:
-				for depth2 in range(len(NetworkInterfaces[depth1].get('SecurityGroupIds'))):
-					if NetworkInterfaces[depth1].get('SecurityGroupIds')[depth2] is not None:
-						self.add_query_param('NetworkInterface.' + str(depth1 + 1) + '.SecurityGroupIds.' + str(depth2 + 1) , NetworkInterfaces[depth1].get('SecurityGroupIds')[depth2])
-			if NetworkInterfaces[depth1].get('NetworkInterfaceName') is not None:
-				self.add_query_param('NetworkInterface.' + str(depth1 + 1) + '.NetworkInterfaceName', NetworkInterfaces[depth1].get('NetworkInterfaceName'))
-			if NetworkInterfaces[depth1].get('Description') is not None:
-				self.add_query_param('NetworkInterface.' + str(depth1 + 1) + '.Description', NetworkInterfaces[depth1].get('Description'))
-			if NetworkInterfaces[depth1].get('QueueNumber') is not None:
-				self.add_query_param('NetworkInterface.' + str(depth1 + 1) + '.QueueNumber', NetworkInterfaces[depth1].get('QueueNumber'))
-
 	def get_DeploymentSetId(self):
 		return self.get_query_params().get('DeploymentSetId')
 
 	def set_DeploymentSetId(self,DeploymentSetId):
 		self.add_query_param('DeploymentSetId',DeploymentSetId)
+
+	def get_NetworkInterfaces(self):
+		return self.get_query_params().get('NetworkInterface')
+
+	def set_NetworkInterfaces(self, NetworkInterfaces):
+		for depth1 in range(len(NetworkInterfaces)):
+			if NetworkInterfaces[depth1].get('VSwitchId') is not None:
+				self.add_query_param('NetworkInterface.' + str(depth1 + 1) + '.VSwitchId', NetworkInterfaces[depth1].get('VSwitchId'))
+			if NetworkInterfaces[depth1].get('NetworkInterfaceName') is not None:
+				self.add_query_param('NetworkInterface.' + str(depth1 + 1) + '.NetworkInterfaceName', NetworkInterfaces[depth1].get('NetworkInterfaceName'))
+			if NetworkInterfaces[depth1].get('Description') is not None:
+				self.add_query_param('NetworkInterface.' + str(depth1 + 1) + '.Description', NetworkInterfaces[depth1].get('Description'))
+			if NetworkInterfaces[depth1].get('SecurityGroupId') is not None:
+				self.add_query_param('NetworkInterface.' + str(depth1 + 1) + '.SecurityGroupId', NetworkInterfaces[depth1].get('SecurityGroupId'))
+			if NetworkInterfaces[depth1].get('PrimaryIpAddress') is not None:
+				self.add_query_param('NetworkInterface.' + str(depth1 + 1) + '.PrimaryIpAddress', NetworkInterfaces[depth1].get('PrimaryIpAddress'))
+			if NetworkInterfaces[depth1].get('QueueNumber') is not None:
+				self.add_query_param('NetworkInterface.' + str(depth1 + 1) + '.QueueNumber', NetworkInterfaces[depth1].get('QueueNumber'))
+			if NetworkInterfaces[depth1].get('SecurityGroupIds') is not None:
+				for depth2 in range(len(NetworkInterfaces[depth1].get('SecurityGroupIds'))):
+					if NetworkInterfaces[depth1].get('SecurityGroupIds')[depth2] is not None:
+						self.add_query_param('NetworkInterface.' + str(depth1 + 1) + '.SecurityGroupIds.' + str(depth2 + 1) , NetworkInterfaces[depth1].get('SecurityGroupIds')[depth2])
 
 	def get_Amount(self):
 		return self.get_query_params().get('Amount')
@@ -513,41 +513,41 @@ class RunInstancesRequest(RpcRequest):
 	def set_CreditSpecification(self,CreditSpecification):
 		self.add_query_param('CreditSpecification',CreditSpecification)
 
-	def get_DataDisks(self):
-		return self.get_query_params().get('DataDisk')
-
-	def set_DataDisks(self, DataDisks):
-		for depth1 in range(len(DataDisks)):
-			if DataDisks[depth1].get('Size') is not None:
-				self.add_query_param('DataDisk.' + str(depth1 + 1) + '.Size', DataDisks[depth1].get('Size'))
-			if DataDisks[depth1].get('SnapshotId') is not None:
-				self.add_query_param('DataDisk.' + str(depth1 + 1) + '.SnapshotId', DataDisks[depth1].get('SnapshotId'))
-			if DataDisks[depth1].get('Category') is not None:
-				self.add_query_param('DataDisk.' + str(depth1 + 1) + '.Category', DataDisks[depth1].get('Category'))
-			if DataDisks[depth1].get('Encrypted') is not None:
-				self.add_query_param('DataDisk.' + str(depth1 + 1) + '.Encrypted', DataDisks[depth1].get('Encrypted'))
-			if DataDisks[depth1].get('KMSKeyId') is not None:
-				self.add_query_param('DataDisk.' + str(depth1 + 1) + '.KMSKeyId', DataDisks[depth1].get('KMSKeyId'))
-			if DataDisks[depth1].get('DiskName') is not None:
-				self.add_query_param('DataDisk.' + str(depth1 + 1) + '.DiskName', DataDisks[depth1].get('DiskName'))
-			if DataDisks[depth1].get('Description') is not None:
-				self.add_query_param('DataDisk.' + str(depth1 + 1) + '.Description', DataDisks[depth1].get('Description'))
-			if DataDisks[depth1].get('Device') is not None:
-				self.add_query_param('DataDisk.' + str(depth1 + 1) + '.Device', DataDisks[depth1].get('Device'))
-			if DataDisks[depth1].get('DeleteWithInstance') is not None:
-				self.add_query_param('DataDisk.' + str(depth1 + 1) + '.DeleteWithInstance', DataDisks[depth1].get('DeleteWithInstance'))
-			if DataDisks[depth1].get('PerformanceLevel') is not None:
-				self.add_query_param('DataDisk.' + str(depth1 + 1) + '.PerformanceLevel', DataDisks[depth1].get('PerformanceLevel'))
-			if DataDisks[depth1].get('AutoSnapshotPolicyId') is not None:
-				self.add_query_param('DataDisk.' + str(depth1 + 1) + '.AutoSnapshotPolicyId', DataDisks[depth1].get('AutoSnapshotPolicyId'))
-			if DataDisks[depth1].get('EncryptAlgorithm') is not None:
-				self.add_query_param('DataDisk.' + str(depth1 + 1) + '.EncryptAlgorithm', DataDisks[depth1].get('EncryptAlgorithm'))
-
 	def get_LaunchTemplateVersion(self):
 		return self.get_query_params().get('LaunchTemplateVersion')
 
 	def set_LaunchTemplateVersion(self,LaunchTemplateVersion):
 		self.add_query_param('LaunchTemplateVersion',LaunchTemplateVersion)
+
+	def get_DataDisks(self):
+		return self.get_query_params().get('DataDisk')
+
+	def set_DataDisks(self, DataDisks):
+		for depth1 in range(len(DataDisks)):
+			if DataDisks[depth1].get('PerformanceLevel') is not None:
+				self.add_query_param('DataDisk.' + str(depth1 + 1) + '.PerformanceLevel', DataDisks[depth1].get('PerformanceLevel'))
+			if DataDisks[depth1].get('AutoSnapshotPolicyId') is not None:
+				self.add_query_param('DataDisk.' + str(depth1 + 1) + '.AutoSnapshotPolicyId', DataDisks[depth1].get('AutoSnapshotPolicyId'))
+			if DataDisks[depth1].get('Encrypted') is not None:
+				self.add_query_param('DataDisk.' + str(depth1 + 1) + '.Encrypted', DataDisks[depth1].get('Encrypted'))
+			if DataDisks[depth1].get('Description') is not None:
+				self.add_query_param('DataDisk.' + str(depth1 + 1) + '.Description', DataDisks[depth1].get('Description'))
+			if DataDisks[depth1].get('SnapshotId') is not None:
+				self.add_query_param('DataDisk.' + str(depth1 + 1) + '.SnapshotId', DataDisks[depth1].get('SnapshotId'))
+			if DataDisks[depth1].get('Device') is not None:
+				self.add_query_param('DataDisk.' + str(depth1 + 1) + '.Device', DataDisks[depth1].get('Device'))
+			if DataDisks[depth1].get('Size') is not None:
+				self.add_query_param('DataDisk.' + str(depth1 + 1) + '.Size', DataDisks[depth1].get('Size'))
+			if DataDisks[depth1].get('DiskName') is not None:
+				self.add_query_param('DataDisk.' + str(depth1 + 1) + '.DiskName', DataDisks[depth1].get('DiskName'))
+			if DataDisks[depth1].get('Category') is not None:
+				self.add_query_param('DataDisk.' + str(depth1 + 1) + '.Category', DataDisks[depth1].get('Category'))
+			if DataDisks[depth1].get('EncryptAlgorithm') is not None:
+				self.add_query_param('DataDisk.' + str(depth1 + 1) + '.EncryptAlgorithm', DataDisks[depth1].get('EncryptAlgorithm'))
+			if DataDisks[depth1].get('DeleteWithInstance') is not None:
+				self.add_query_param('DataDisk.' + str(depth1 + 1) + '.DeleteWithInstance', DataDisks[depth1].get('DeleteWithInstance'))
+			if DataDisks[depth1].get('KMSKeyId') is not None:
+				self.add_query_param('DataDisk.' + str(depth1 + 1) + '.KMSKeyId', DataDisks[depth1].get('KMSKeyId'))
 
 	def get_StorageSetId(self):
 		return self.get_query_params().get('StorageSetId')

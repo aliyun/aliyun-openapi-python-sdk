@@ -55,6 +55,12 @@ class ModifySecurityGroupEgressRuleRequest(RpcRequest):
 	def set_ClientToken(self,ClientToken):
 		self.add_query_param('ClientToken',ClientToken)
 
+	def get_DestPrefixListId(self):
+		return self.get_query_params().get('DestPrefixListId')
+
+	def set_DestPrefixListId(self,DestPrefixListId):
+		self.add_query_param('DestPrefixListId',DestPrefixListId)
+
 	def get_SecurityGroupId(self):
 		return self.get_query_params().get('SecurityGroupId')
 

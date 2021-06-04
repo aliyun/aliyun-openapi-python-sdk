@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkecs.endpoint import endpoint_data
 
-class ResetDisksRequest(RpcRequest):
+class ModifyPrefixListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'ResetDisks','ecs')
+		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'ModifyPrefixList','ecs')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -36,6 +36,28 @@ class ResetDisksRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+
+	def get_Description(self):
+		return self.get_query_params().get('Description')
+
+	def set_Description(self,Description):
+		self.add_query_param('Description',Description)
+
+	def get_PrefixListId(self):
+		return self.get_query_params().get('PrefixListId')
+
+	def set_PrefixListId(self,PrefixListId):
+		self.add_query_param('PrefixListId',PrefixListId)
+
+	def get_AddEntrys(self):
+		return self.get_query_params().get('AddEntry')
+
+	def set_AddEntrys(self, AddEntrys):
+		for depth1 in range(len(AddEntrys)):
+			if AddEntrys[depth1].get('Cidr') is not None:
+				self.add_query_param('AddEntry.' + str(depth1 + 1) + '.Cidr', AddEntrys[depth1].get('Cidr'))
+			if AddEntrys[depth1].get('Description') is not None:
+				self.add_query_param('AddEntry.' + str(depth1 + 1) + '.Description', AddEntrys[depth1].get('Description'))
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -55,12 +77,16 @@ class ResetDisksRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_Disks(self):
-		return self.get_query_params().get('Disk')
+	def get_PrefixListName(self):
+		return self.get_query_params().get('PrefixListName')
 
-	def set_Disks(self, Disks):
-		for depth1 in range(len(Disks)):
-			if Disks[depth1].get('SnapshotId') is not None:
-				self.add_query_param('Disk.' + str(depth1 + 1) + '.SnapshotId', Disks[depth1].get('SnapshotId'))
-			if Disks[depth1].get('DiskId') is not None:
-				self.add_query_param('Disk.' + str(depth1 + 1) + '.DiskId', Disks[depth1].get('DiskId'))
+	def set_PrefixListName(self,PrefixListName):
+		self.add_query_param('PrefixListName',PrefixListName)
+
+	def get_RemoveEntrys(self):
+		return self.get_query_params().get('RemoveEntry')
+
+	def set_RemoveEntrys(self, RemoveEntrys):
+		for depth1 in range(len(RemoveEntrys)):
+			if RemoveEntrys[depth1].get('Cidr') is not None:
+				self.add_query_param('RemoveEntry.' + str(depth1 + 1) + '.Cidr', RemoveEntrys[depth1].get('Cidr'))
