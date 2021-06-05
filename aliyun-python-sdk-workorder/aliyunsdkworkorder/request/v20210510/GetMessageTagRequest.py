@@ -20,36 +20,12 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkworkorder.endpoint import endpoint_data
 
-class ReplyTicketRequest(RpcRequest):
+class GetMessageTagRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Workorder', '2020-03-26', 'ReplyTicket','workorder')
+		RpcRequest.__init__(self, 'Workorder', '2021-05-10', 'GetMessageTag')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
-
-
-	def get_Language(self):
-		return self.get_query_params().get('Language')
-
-	def set_Language(self,Language):
-		self.add_query_param('Language',Language)
-
-	def get_TicketId(self):
-		return self.get_query_params().get('TicketId')
-
-	def set_TicketId(self,TicketId):
-		self.add_query_param('TicketId',TicketId)
-
-	def get_Content(self):
-		return self.get_query_params().get('Content')
-
-	def set_Content(self,Content):
-		self.add_query_param('Content',Content)
-
-	def get_SecretContent(self):
-		return self.get_query_params().get('SecretContent')
-
-	def set_SecretContent(self,SecretContent):
-		self.add_query_param('SecretContent',SecretContent)
