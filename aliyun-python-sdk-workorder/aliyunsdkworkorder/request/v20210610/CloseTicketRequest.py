@@ -23,7 +23,7 @@ from aliyunsdkworkorder.endpoint import endpoint_data
 class CloseTicketRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Workorder', '2021-05-10', 'CloseTicket')
+		RpcRequest.__init__(self, 'Workorder', '2021-06-10', 'CloseTicket')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())

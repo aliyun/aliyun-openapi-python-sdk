@@ -23,7 +23,7 @@ from aliyunsdkworkorder.endpoint import endpoint_data
 class ListTicketsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Workorder', '2021-05-10', 'ListTickets')
+		RpcRequest.__init__(self, 'Workorder', '2021-06-10', 'ListTickets')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,19 +31,19 @@ class ListTicketsRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_BeginDate(self):
-		return self.get_query_params().get('BeginDate')
-
-	def set_BeginDate(self,BeginDate):
-		self.add_query_param('BeginDate',BeginDate)
-
 	def get_StatusLists(self):
-		return self.get_query_params().get('StatusList')
+		return self.get_body_params().get('StatusList')
 
 	def set_StatusLists(self, StatusLists):
 		for depth1 in range(len(StatusLists)):
 			if StatusLists[depth1] is not None:
-				self.add_query_param('StatusList.' + str(depth1 + 1) , StatusLists[depth1])
+				self.add_body_params('StatusList.' + str(depth1 + 1) , StatusLists[depth1])
+
+	def get_StartDate(self):
+		return self.get_body_params().get('StartDate')
+
+	def set_StartDate(self,StartDate):
+		self.add_body_params('StartDate', StartDate)
 
 	def get_PageNumber(self):
 		return self.get_query_params().get('PageNumber')
@@ -52,10 +52,10 @@ class ListTicketsRequest(RpcRequest):
 		self.add_query_param('PageNumber',PageNumber)
 
 	def get_EndDate(self):
-		return self.get_query_params().get('EndDate')
+		return self.get_body_params().get('EndDate')
 
 	def set_EndDate(self,EndDate):
-		self.add_query_param('EndDate',EndDate)
+		self.add_body_params('EndDate', EndDate)
 
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
@@ -64,13 +64,13 @@ class ListTicketsRequest(RpcRequest):
 		self.add_query_param('PageSize',PageSize)
 
 	def get_Keyword(self):
-		return self.get_query_params().get('Keyword')
+		return self.get_body_params().get('Keyword')
 
 	def set_Keyword(self,Keyword):
-		self.add_query_param('Keyword',Keyword)
+		self.add_body_params('Keyword', Keyword)
 
 	def get_TicketId(self):
-		return self.get_query_params().get('TicketId')
+		return self.get_body_params().get('TicketId')
 
 	def set_TicketId(self,TicketId):
-		self.add_query_param('TicketId',TicketId)
+		self.add_body_params('TicketId', TicketId)

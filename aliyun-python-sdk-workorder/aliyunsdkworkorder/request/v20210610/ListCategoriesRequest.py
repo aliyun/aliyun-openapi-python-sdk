@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkworkorder.endpoint import endpoint_data
 
-class ReplyTicketRequest(RpcRequest):
+class ListCategoriesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Workorder', '2021-05-10', 'ReplyTicket')
+		RpcRequest.__init__(self, 'Workorder', '2021-06-10', 'ListCategories')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,20 +31,14 @@ class ReplyTicketRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_SecContent(self):
-		return self.get_body_params().get('SecContent')
+	def get_ProductId(self):
+		return self.get_body_params().get('ProductId')
 
-	def set_SecContent(self,SecContent):
-		self.add_body_params('SecContent', SecContent)
+	def set_ProductId(self,ProductId):
+		self.add_body_params('ProductId', ProductId)
 
-	def get_Content(self):
-		return self.get_body_params().get('Content')
+	def get_Name(self):
+		return self.get_body_params().get('Name')
 
-	def set_Content(self,Content):
-		self.add_body_params('Content', Content)
-
-	def get_TicketId(self):
-		return self.get_body_params().get('TicketId')
-
-	def set_TicketId(self,TicketId):
-		self.add_body_params('TicketId', TicketId)
+	def set_Name(self,Name):
+		self.add_body_params('Name', Name)

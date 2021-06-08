@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkworkorder.endpoint import endpoint_data
 
-class ListTicketNotesRequest(RpcRequest):
+class ListProductsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Workorder', '2021-05-10', 'ListTicketNotes')
+		RpcRequest.__init__(self, 'Workorder', '2021-06-10', 'ListProducts')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,8 +31,8 @@ class ListTicketNotesRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_TicketId(self):
-		return self.get_query_params().get('TicketId')
+	def get_Name(self):
+		return self.get_query_params().get('Name')
 
-	def set_TicketId(self,TicketId):
-		self.add_query_param('TicketId',TicketId)
+	def set_Name(self,Name):
+		self.add_query_param('Name',Name)
