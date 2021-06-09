@@ -43,6 +43,18 @@ class CreateOTAStaticUpgradeJobRequest(RpcRequest):
 	def set_TimeoutInMinutes(self,TimeoutInMinutes):
 		self.add_query_param('TimeoutInMinutes',TimeoutInMinutes)
 
+	def get_NeedConfirm(self):
+		return self.get_query_params().get('NeedConfirm')
+
+	def set_NeedConfirm(self,NeedConfirm):
+		self.add_query_param('NeedConfirm',NeedConfirm)
+
+	def get_NeedPush(self):
+		return self.get_query_params().get('NeedPush')
+
+	def set_NeedPush(self,NeedPush):
+		self.add_query_param('NeedPush',NeedPush)
+
 	def get_IotInstanceId(self):
 		return self.get_query_params().get('IotInstanceId')
 

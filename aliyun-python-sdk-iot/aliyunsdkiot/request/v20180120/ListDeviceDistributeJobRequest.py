@@ -37,6 +37,12 @@ class ListDeviceDistributeJobRequest(RpcRequest):
 	def set_JobId(self,JobId):
 		self.add_body_params('JobId', JobId)
 
+	def get_NextToken(self):
+		return self.get_query_params().get('NextToken')
+
+	def set_NextToken(self,NextToken):
+		self.add_query_param('NextToken',NextToken)
+
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
 

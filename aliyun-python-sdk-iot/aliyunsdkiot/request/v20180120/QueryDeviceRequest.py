@@ -31,6 +31,12 @@ class QueryDeviceRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_NextToken(self):
+		return self.get_query_params().get('NextToken')
+
+	def set_NextToken(self,NextToken):
+		self.add_query_param('NextToken',NextToken)
+
 	def get_IotInstanceId(self):
 		return self.get_query_params().get('IotInstanceId')
 

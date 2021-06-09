@@ -43,6 +43,12 @@ class CancelOTATaskByJobRequest(RpcRequest):
 	def set_JobId(self,JobId):
 		self.add_query_param('JobId',JobId)
 
+	def get_CancelUnconfirmedTask(self):
+		return self.get_query_params().get('CancelUnconfirmedTask')
+
+	def set_CancelUnconfirmedTask(self,CancelUnconfirmedTask):
+		self.add_query_param('CancelUnconfirmedTask',CancelUnconfirmedTask)
+
 	def get_IotInstanceId(self):
 		return self.get_query_params().get('IotInstanceId')
 

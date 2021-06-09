@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkiot.endpoint import endpoint_data
 
-class CreateOTAVerifyJobRequest(RpcRequest):
+class ConfirmOTATaskRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'CreateOTAVerifyJob','iot')
+		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'ConfirmOTATask','iot')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,46 +31,16 @@ class CreateOTAVerifyJobRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_TimeoutInMinutes(self):
-		return self.get_query_params().get('TimeoutInMinutes')
-
-	def set_TimeoutInMinutes(self,TimeoutInMinutes):
-		self.add_query_param('TimeoutInMinutes',TimeoutInMinutes)
-
-	def get_NeedConfirm(self):
-		return self.get_query_params().get('NeedConfirm')
-
-	def set_NeedConfirm(self,NeedConfirm):
-		self.add_query_param('NeedConfirm',NeedConfirm)
-
-	def get_NeedPush(self):
-		return self.get_query_params().get('NeedPush')
-
-	def set_NeedPush(self,NeedPush):
-		self.add_query_param('NeedPush',NeedPush)
-
 	def get_IotInstanceId(self):
 		return self.get_query_params().get('IotInstanceId')
 
 	def set_IotInstanceId(self,IotInstanceId):
 		self.add_query_param('IotInstanceId',IotInstanceId)
 
-	def get_FirmwareId(self):
-		return self.get_query_params().get('FirmwareId')
+	def get_TaskIds(self):
+		return self.get_query_params().get('TaskId')
 
-	def set_FirmwareId(self,FirmwareId):
-		self.add_query_param('FirmwareId',FirmwareId)
-
-	def get_ProductKey(self):
-		return self.get_query_params().get('ProductKey')
-
-	def set_ProductKey(self,ProductKey):
-		self.add_query_param('ProductKey',ProductKey)
-
-	def get_TargetDeviceNames(self):
-		return self.get_query_params().get('TargetDeviceName')
-
-	def set_TargetDeviceNames(self, TargetDeviceNames):
-		for depth1 in range(len(TargetDeviceNames)):
-			if TargetDeviceNames[depth1] is not None:
-				self.add_query_param('TargetDeviceName.' + str(depth1 + 1) , TargetDeviceNames[depth1])
+	def set_TaskIds(self, TaskIds):
+		for depth1 in range(len(TaskIds)):
+			if TaskIds[depth1] is not None:
+				self.add_query_param('TaskId.' + str(depth1 + 1) , TaskIds[depth1])
