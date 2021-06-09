@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkhitsdb.endpoint import endpoint_data
 
-class GetLindormInstanceEngineListRequest(RpcRequest):
+class RestartHiTSDBInstanceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'hitsdb', '2020-06-15', 'GetLindormInstanceEngineList','hitsdb')
+		RpcRequest.__init__(self, 'hitsdb', '2017-06-01', 'RestartHiTSDBInstance','hitsdb')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
