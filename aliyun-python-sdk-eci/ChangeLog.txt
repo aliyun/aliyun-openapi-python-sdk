@@ -1,3 +1,6 @@
+2021-06-09 Version: 1.1.7
+1, support spot duration
+
 2021-03-31 Version: 1.1.6
 1, completion create request args
 

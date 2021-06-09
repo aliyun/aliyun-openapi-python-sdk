@@ -128,3 +128,10 @@ class CreateImageCacheRequest(RpcRequest):
 
 	def set_AutoMatchImageCache(self, AutoMatchImageCache):
 		self.add_query_param('AutoMatchImageCache', AutoMatchImageCache)
+
+	def get_Flash(self):
+		return self.get_query_params().get("Flash")
+
+	def set_Flash(self, Flash):
+		self.add_query_param("Flash", Flash)
+
