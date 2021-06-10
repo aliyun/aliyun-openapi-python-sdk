@@ -37,6 +37,18 @@ class AssociateVpcCidrBlockRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_Ipv6Isp(self):
+		return self.get_query_params().get('Ipv6Isp')
+
+	def set_Ipv6Isp(self,Ipv6Isp):
+		self.add_query_param('Ipv6Isp',Ipv6Isp)
+
+	def get_IpVersion(self):
+		return self.get_query_params().get('IpVersion')
+
+	def set_IpVersion(self,IpVersion):
+		self.add_query_param('IpVersion',IpVersion)
+
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 

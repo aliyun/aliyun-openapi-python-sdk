@@ -55,6 +55,12 @@ class ModifyVpcAttributeRequest(RpcRequest):
 	def set_VpcName(self,VpcName):
 		self.add_query_param('VpcName',VpcName)
 
+	def get_Ipv6Isp(self):
+		return self.get_query_params().get('Ipv6Isp')
+
+	def set_Ipv6Isp(self,Ipv6Isp):
+		self.add_query_param('Ipv6Isp',Ipv6Isp)
+
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 

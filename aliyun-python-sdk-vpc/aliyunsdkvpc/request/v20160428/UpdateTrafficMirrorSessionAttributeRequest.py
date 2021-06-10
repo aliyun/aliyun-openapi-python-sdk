@@ -20,16 +20,22 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkvpc.endpoint import endpoint_data
 
-class CreateVpcRequest(RpcRequest):
+class UpdateTrafficMirrorSessionAttributeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'CreateVpc','vpc')
+		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'UpdateTrafficMirrorSessionAttribute','vpc')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+
+	def get_TrafficMirrorTargetType(self):
+		return self.get_query_params().get('TrafficMirrorTargetType')
+
+	def set_TrafficMirrorTargetType(self,TrafficMirrorTargetType):
+		self.add_query_param('TrafficMirrorTargetType',TrafficMirrorTargetType)
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -43,47 +49,35 @@ class CreateVpcRequest(RpcRequest):
 	def set_ClientToken(self,ClientToken):
 		self.add_query_param('ClientToken',ClientToken)
 
-	def get_EnableIpv6(self):
-		return self.get_query_params().get('EnableIpv6')
+	def get_Enabled(self):
+		return self.get_query_params().get('Enabled')
 
-	def set_EnableIpv6(self,EnableIpv6):
-		self.add_query_param('EnableIpv6',EnableIpv6)
+	def set_Enabled(self,Enabled):
+		self.add_query_param('Enabled',Enabled)
 
-	def get_Description(self):
-		return self.get_query_params().get('Description')
+	def get_TrafficMirrorSessionName(self):
+		return self.get_query_params().get('TrafficMirrorSessionName')
 
-	def set_Description(self,Description):
-		self.add_query_param('Description',Description)
+	def set_TrafficMirrorSessionName(self,TrafficMirrorSessionName):
+		self.add_query_param('TrafficMirrorSessionName',TrafficMirrorSessionName)
 
-	def get_VpcName(self):
-		return self.get_query_params().get('VpcName')
+	def get_TrafficMirrorSessionDescription(self):
+		return self.get_query_params().get('TrafficMirrorSessionDescription')
 
-	def set_VpcName(self,VpcName):
-		self.add_query_param('VpcName',VpcName)
-
-	def get_ResourceGroupId(self):
-		return self.get_query_params().get('ResourceGroupId')
-
-	def set_ResourceGroupId(self,ResourceGroupId):
-		self.add_query_param('ResourceGroupId',ResourceGroupId)
-
-	def get_Ipv6Isp(self):
-		return self.get_query_params().get('Ipv6Isp')
-
-	def set_Ipv6Isp(self,Ipv6Isp):
-		self.add_query_param('Ipv6Isp',Ipv6Isp)
-
-	def get_UserCidr(self):
-		return self.get_query_params().get('UserCidr')
-
-	def set_UserCidr(self,UserCidr):
-		self.add_query_param('UserCidr',UserCidr)
+	def set_TrafficMirrorSessionDescription(self,TrafficMirrorSessionDescription):
+		self.add_query_param('TrafficMirrorSessionDescription',TrafficMirrorSessionDescription)
 
 	def get_DryRun(self):
 		return self.get_query_params().get('DryRun')
 
 	def set_DryRun(self,DryRun):
 		self.add_query_param('DryRun',DryRun)
+
+	def get_TrafficMirrorSessionId(self):
+		return self.get_query_params().get('TrafficMirrorSessionId')
+
+	def set_TrafficMirrorSessionId(self,TrafficMirrorSessionId):
+		self.add_query_param('TrafficMirrorSessionId',TrafficMirrorSessionId)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -97,20 +91,32 @@ class CreateVpcRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
+	def get_Priority(self):
+		return self.get_query_params().get('Priority')
+
+	def set_Priority(self,Priority):
+		self.add_query_param('Priority',Priority)
+
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_Ipv6CidrBlock(self):
-		return self.get_query_params().get('Ipv6CidrBlock')
+	def get_TrafficMirrorTargetId(self):
+		return self.get_query_params().get('TrafficMirrorTargetId')
 
-	def set_Ipv6CidrBlock(self,Ipv6CidrBlock):
-		self.add_query_param('Ipv6CidrBlock',Ipv6CidrBlock)
+	def set_TrafficMirrorTargetId(self,TrafficMirrorTargetId):
+		self.add_query_param('TrafficMirrorTargetId',TrafficMirrorTargetId)
 
-	def get_CidrBlock(self):
-		return self.get_query_params().get('CidrBlock')
+	def get_TrafficMirrorFilterId(self):
+		return self.get_query_params().get('TrafficMirrorFilterId')
 
-	def set_CidrBlock(self,CidrBlock):
-		self.add_query_param('CidrBlock',CidrBlock)
+	def set_TrafficMirrorFilterId(self,TrafficMirrorFilterId):
+		self.add_query_param('TrafficMirrorFilterId',TrafficMirrorFilterId)
+
+	def get_VirtualNetworkId(self):
+		return self.get_query_params().get('VirtualNetworkId')
+
+	def set_VirtualNetworkId(self,VirtualNetworkId):
+		self.add_query_param('VirtualNetworkId',VirtualNetworkId)

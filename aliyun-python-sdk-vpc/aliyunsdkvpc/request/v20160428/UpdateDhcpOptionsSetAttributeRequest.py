@@ -31,6 +31,12 @@ class UpdateDhcpOptionsSetAttributeRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_BootFileName(self):
+		return self.get_query_params().get('BootFileName')
+
+	def set_BootFileName(self,BootFileName):
+		self.add_query_param('BootFileName',BootFileName)
+
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
@@ -42,6 +48,12 @@ class UpdateDhcpOptionsSetAttributeRequest(RpcRequest):
 
 	def set_ClientToken(self,ClientToken):
 		self.add_query_param('ClientToken',ClientToken)
+
+	def get_TFTPServerName(self):
+		return self.get_query_params().get('TFTPServerName')
+
+	def set_TFTPServerName(self,TFTPServerName):
+		self.add_query_param('TFTPServerName',TFTPServerName)
 
 	def get_DomainNameServers(self):
 		return self.get_query_params().get('DomainNameServers')

@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkvpc.endpoint import endpoint_data
 
-class DescribeZonesRequest(RpcRequest):
+class CreateVbrHaRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'DescribeZones','vpc')
+		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'CreateVbrHa','vpc')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -36,6 +36,30 @@ class DescribeZonesRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+
+	def get_ClientToken(self):
+		return self.get_query_params().get('ClientToken')
+
+	def set_ClientToken(self,ClientToken):
+		self.add_query_param('ClientToken',ClientToken)
+
+	def get_Description(self):
+		return self.get_query_params().get('Description')
+
+	def set_Description(self,Description):
+		self.add_query_param('Description',Description)
+
+	def get_VbrId(self):
+		return self.get_query_params().get('VbrId')
+
+	def set_VbrId(self,VbrId):
+		self.add_query_param('VbrId',VbrId)
+
+	def get_DryRun(self):
+		return self.get_query_params().get('DryRun')
+
+	def set_DryRun(self,DryRun):
+		self.add_query_param('DryRun',DryRun)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -55,14 +79,14 @@ class DescribeZonesRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_AcceptLanguage(self):
-		return self.get_query_params().get('AcceptLanguage')
+	def get_PeerVbrId(self):
+		return self.get_query_params().get('PeerVbrId')
 
-	def set_AcceptLanguage(self,AcceptLanguage):
-		self.add_query_param('AcceptLanguage',AcceptLanguage)
+	def set_PeerVbrId(self,PeerVbrId):
+		self.add_query_param('PeerVbrId',PeerVbrId)
 
-	def get_ZoneType(self):
-		return self.get_query_params().get('ZoneType')
+	def get_Name(self):
+		return self.get_query_params().get('Name')
 
-	def set_ZoneType(self,ZoneType):
-		self.add_query_param('ZoneType',ZoneType)
+	def set_Name(self,Name):
+		self.add_query_param('Name',Name)

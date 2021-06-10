@@ -73,6 +73,12 @@ class CreateVSwitchRequest(RpcRequest):
 	def set_Ipv6CidrBlock(self,Ipv6CidrBlock):
 		self.add_query_param('Ipv6CidrBlock',Ipv6CidrBlock)
 
+	def get_VpcIpv6CidrBlock(self):
+		return self.get_query_params().get('VpcIpv6CidrBlock')
+
+	def set_VpcIpv6CidrBlock(self,VpcIpv6CidrBlock):
+		self.add_query_param('VpcIpv6CidrBlock',VpcIpv6CidrBlock)
+
 	def get_VpcId(self):
 		return self.get_query_params().get('VpcId')
 

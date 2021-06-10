@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkvpc.endpoint import endpoint_data
 
-class CreateVpcRequest(RpcRequest):
+class UpdateTrafficMirrorFilterRuleAttributeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'CreateVpc','vpc')
+		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'UpdateTrafficMirrorFilterRuleAttribute','vpc')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,11 +31,23 @@ class CreateVpcRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_SourcePortRange(self):
+		return self.get_query_params().get('SourcePortRange')
+
+	def set_SourcePortRange(self,SourcePortRange):
+		self.add_query_param('SourcePortRange',SourcePortRange)
+
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+
+	def get_DestinationPortRange(self):
+		return self.get_query_params().get('DestinationPortRange')
+
+	def set_DestinationPortRange(self,DestinationPortRange):
+		self.add_query_param('DestinationPortRange',DestinationPortRange)
 
 	def get_ClientToken(self):
 		return self.get_query_params().get('ClientToken')
@@ -43,41 +55,23 @@ class CreateVpcRequest(RpcRequest):
 	def set_ClientToken(self,ClientToken):
 		self.add_query_param('ClientToken',ClientToken)
 
-	def get_EnableIpv6(self):
-		return self.get_query_params().get('EnableIpv6')
+	def get_RuleAction(self):
+		return self.get_query_params().get('RuleAction')
 
-	def set_EnableIpv6(self,EnableIpv6):
-		self.add_query_param('EnableIpv6',EnableIpv6)
+	def set_RuleAction(self,RuleAction):
+		self.add_query_param('RuleAction',RuleAction)
 
-	def get_Description(self):
-		return self.get_query_params().get('Description')
+	def get_Protocol(self):
+		return self.get_query_params().get('Protocol')
 
-	def set_Description(self,Description):
-		self.add_query_param('Description',Description)
+	def set_Protocol(self,Protocol):
+		self.add_query_param('Protocol',Protocol)
 
-	def get_VpcName(self):
-		return self.get_query_params().get('VpcName')
+	def get_SourceCidrBlock(self):
+		return self.get_query_params().get('SourceCidrBlock')
 
-	def set_VpcName(self,VpcName):
-		self.add_query_param('VpcName',VpcName)
-
-	def get_ResourceGroupId(self):
-		return self.get_query_params().get('ResourceGroupId')
-
-	def set_ResourceGroupId(self,ResourceGroupId):
-		self.add_query_param('ResourceGroupId',ResourceGroupId)
-
-	def get_Ipv6Isp(self):
-		return self.get_query_params().get('Ipv6Isp')
-
-	def set_Ipv6Isp(self,Ipv6Isp):
-		self.add_query_param('Ipv6Isp',Ipv6Isp)
-
-	def get_UserCidr(self):
-		return self.get_query_params().get('UserCidr')
-
-	def set_UserCidr(self,UserCidr):
-		self.add_query_param('UserCidr',UserCidr)
+	def set_SourceCidrBlock(self,SourceCidrBlock):
+		self.add_query_param('SourceCidrBlock',SourceCidrBlock)
 
 	def get_DryRun(self):
 		return self.get_query_params().get('DryRun')
@@ -91,11 +85,23 @@ class CreateVpcRequest(RpcRequest):
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
+	def get_DestinationCidrBlock(self):
+		return self.get_query_params().get('DestinationCidrBlock')
+
+	def set_DestinationCidrBlock(self,DestinationCidrBlock):
+		self.add_query_param('DestinationCidrBlock',DestinationCidrBlock)
+
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
 
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
+
+	def get_Priority(self):
+		return self.get_query_params().get('Priority')
+
+	def set_Priority(self,Priority):
+		self.add_query_param('Priority',Priority)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
@@ -103,14 +109,8 @@ class CreateVpcRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_Ipv6CidrBlock(self):
-		return self.get_query_params().get('Ipv6CidrBlock')
+	def get_TrafficMirrorFilterRuleId(self):
+		return self.get_query_params().get('TrafficMirrorFilterRuleId')
 
-	def set_Ipv6CidrBlock(self,Ipv6CidrBlock):
-		self.add_query_param('Ipv6CidrBlock',Ipv6CidrBlock)
-
-	def get_CidrBlock(self):
-		return self.get_query_params().get('CidrBlock')
-
-	def set_CidrBlock(self,CidrBlock):
-		self.add_query_param('CidrBlock',CidrBlock)
+	def set_TrafficMirrorFilterRuleId(self,TrafficMirrorFilterRuleId):
+		self.add_query_param('TrafficMirrorFilterRuleId',TrafficMirrorFilterRuleId)

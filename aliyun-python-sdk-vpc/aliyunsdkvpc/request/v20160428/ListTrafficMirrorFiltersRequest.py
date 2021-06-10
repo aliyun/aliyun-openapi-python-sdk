@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkvpc.endpoint import endpoint_data
 
-class DescribeZonesRequest(RpcRequest):
+class ListTrafficMirrorFiltersRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'DescribeZones','vpc')
+		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'ListTrafficMirrorFilters','vpc')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -36,6 +36,26 @@ class DescribeZonesRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+
+	def get_TrafficMirrorFilterIdss(self):
+		return self.get_query_params().get('TrafficMirrorFilterIds')
+
+	def set_TrafficMirrorFilterIdss(self, TrafficMirrorFilterIdss):
+		for depth1 in range(len(TrafficMirrorFilterIdss)):
+			if TrafficMirrorFilterIdss[depth1] is not None:
+				self.add_query_param('TrafficMirrorFilterIds.' + str(depth1 + 1) , TrafficMirrorFilterIdss[depth1])
+
+	def get_TrafficMirrorFilterName(self):
+		return self.get_query_params().get('TrafficMirrorFilterName')
+
+	def set_TrafficMirrorFilterName(self,TrafficMirrorFilterName):
+		self.add_query_param('TrafficMirrorFilterName',TrafficMirrorFilterName)
+
+	def get_NextToken(self):
+		return self.get_query_params().get('NextToken')
+
+	def set_NextToken(self,NextToken):
+		self.add_query_param('NextToken',NextToken)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -55,14 +75,8 @@ class DescribeZonesRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_AcceptLanguage(self):
-		return self.get_query_params().get('AcceptLanguage')
+	def get_MaxResults(self):
+		return self.get_query_params().get('MaxResults')
 
-	def set_AcceptLanguage(self,AcceptLanguage):
-		self.add_query_param('AcceptLanguage',AcceptLanguage)
-
-	def get_ZoneType(self):
-		return self.get_query_params().get('ZoneType')
-
-	def set_ZoneType(self,ZoneType):
-		self.add_query_param('ZoneType',ZoneType)
+	def set_MaxResults(self,MaxResults):
+		self.add_query_param('MaxResults',MaxResults)
