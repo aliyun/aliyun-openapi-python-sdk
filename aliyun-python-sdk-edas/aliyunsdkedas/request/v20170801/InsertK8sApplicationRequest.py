@@ -212,6 +212,12 @@ class InsertK8sApplicationRequest(RoaRequest):
 	def set_Timeout(self,Timeout):
 		self.add_query_param('Timeout',Timeout)
 
+	def get_EnvFroms(self):
+		return self.get_query_params().get('EnvFroms')
+
+	def set_EnvFroms(self,EnvFroms):
+		self.add_query_param('EnvFroms',EnvFroms)
+
 	def get_LimitMem(self):
 		return self.get_query_params().get('LimitMem')
 

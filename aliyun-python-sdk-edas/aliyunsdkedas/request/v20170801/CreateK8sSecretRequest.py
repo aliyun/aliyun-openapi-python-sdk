@@ -56,8 +56,20 @@ class CreateK8sSecretRequest(RoaRequest):
 	def set_ClusterId(self,ClusterId):
 		self.add_body_params('ClusterId', ClusterId)
 
+	def get_CertId(self):
+		return self.get_body_params().get('CertId')
+
+	def set_CertId(self,CertId):
+		self.add_body_params('CertId', CertId)
+
 	def get_Type(self):
 		return self.get_body_params().get('Type')
 
 	def set_Type(self,Type):
 		self.add_body_params('Type', Type)
+
+	def get_CertRegionId(self):
+		return self.get_body_params().get('CertRegionId')
+
+	def set_CertRegionId(self,CertRegionId):
+		self.add_body_params('CertRegionId', CertRegionId)
