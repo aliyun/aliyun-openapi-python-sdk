@@ -23,7 +23,7 @@ from aliyunsdkactiontrail.endpoint import endpoint_data
 class UpdateTrailRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Actiontrail', '2017-12-04', 'UpdateTrail','actiontrail')
+		RpcRequest.__init__(self, 'Actiontrail', '2020-07-06', 'UpdateTrail','actiontrail')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -49,17 +49,11 @@ class UpdateTrailRequest(RpcRequest):
 	def set_OssKeyPrefix(self,OssKeyPrefix):
 		self.add_query_param('OssKeyPrefix',OssKeyPrefix)
 
-	def get_MnsTopicArn(self):
-		return self.get_query_params().get('MnsTopicArn')
+	def get_OssWriteRoleArn(self):
+		return self.get_query_params().get('OssWriteRoleArn')
 
-	def set_MnsTopicArn(self,MnsTopicArn):
-		self.add_query_param('MnsTopicArn',MnsTopicArn)
-
-	def get_RoleName(self):
-		return self.get_query_params().get('RoleName')
-
-	def set_RoleName(self,RoleName):
-		self.add_query_param('RoleName',RoleName)
+	def set_OssWriteRoleArn(self,OssWriteRoleArn):
+		self.add_query_param('OssWriteRoleArn',OssWriteRoleArn)
 
 	def get_EventRW(self):
 		return self.get_query_params().get('EventRW')

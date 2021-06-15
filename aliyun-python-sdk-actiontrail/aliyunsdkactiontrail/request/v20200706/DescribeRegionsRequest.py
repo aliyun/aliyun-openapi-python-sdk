@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkactiontrail.endpoint import endpoint_data
 
-class GetTrailStatusRequest(RpcRequest):
+class DescribeRegionsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Actiontrail', '2017-12-04', 'GetTrailStatus','actiontrail')
+		RpcRequest.__init__(self, 'Actiontrail', '2020-07-06', 'DescribeRegions','actiontrail')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,14 +31,8 @@ class GetTrailStatusRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_Name(self):
-		return self.get_query_params().get('Name')
+	def get_AcceptLanguage(self):
+		return self.get_query_params().get('AcceptLanguage')
 
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)
-
-	def get_IsOrganizationTrail(self):
-		return self.get_query_params().get('IsOrganizationTrail')
-
-	def set_IsOrganizationTrail(self,IsOrganizationTrail):
-		self.add_query_param('IsOrganizationTrail',IsOrganizationTrail)
+	def set_AcceptLanguage(self,AcceptLanguage):
+		self.add_query_param('AcceptLanguage',AcceptLanguage)

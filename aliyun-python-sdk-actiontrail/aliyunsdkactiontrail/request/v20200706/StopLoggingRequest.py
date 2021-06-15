@@ -20,25 +20,19 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkactiontrail.endpoint import endpoint_data
 
-class DescribeTrailsRequest(RpcRequest):
+class StopLoggingRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Actiontrail', '2017-12-04', 'DescribeTrails','actiontrail')
-		self.set_method('POST')
+		RpcRequest.__init__(self, 'Actiontrail', '2020-07-06', 'StopLogging','actiontrail')
+		self.set_method('GET')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_IncludeShadowTrails(self):
-		return self.get_query_params().get('IncludeShadowTrails')
+	def get_Name(self):
+		return self.get_query_params().get('Name')
 
-	def set_IncludeShadowTrails(self,IncludeShadowTrails):
-		self.add_query_param('IncludeShadowTrails',IncludeShadowTrails)
-
-	def get_NameList(self):
-		return self.get_query_params().get('NameList')
-
-	def set_NameList(self,NameList):
-		self.add_query_param('NameList',NameList)
+	def set_Name(self,Name):
+		self.add_query_param('Name',Name)

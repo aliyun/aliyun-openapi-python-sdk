@@ -20,11 +20,11 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkactiontrail.endpoint import endpoint_data
 
-class StartLoggingRequest(RpcRequest):
+class DeleteTrailRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Actiontrail', '2017-12-04', 'StartLogging','actiontrail')
-		self.set_method('GET')
+		RpcRequest.__init__(self, 'Actiontrail', '2020-07-06', 'DeleteTrail','actiontrail')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
