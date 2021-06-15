@@ -43,6 +43,12 @@ class ModifyDBClusterSSLRequest(RpcRequest):
 	def set_DBEndpointId(self,DBEndpointId):
 		self.add_query_param('DBEndpointId',DBEndpointId)
 
+	def get_SSLAutoRotate(self):
+		return self.get_query_params().get('SSLAutoRotate')
+
+	def set_SSLAutoRotate(self,SSLAutoRotate):
+		self.add_query_param('SSLAutoRotate',SSLAutoRotate)
+
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 

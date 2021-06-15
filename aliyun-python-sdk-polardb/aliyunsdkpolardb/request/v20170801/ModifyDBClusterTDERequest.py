@@ -73,6 +73,12 @@ class ModifyDBClusterTDERequest(RpcRequest):
 	def set_RoleArn(self,RoleArn):
 		self.add_query_param('RoleArn',RoleArn)
 
+	def get_EncryptNewTables(self):
+		return self.get_query_params().get('EncryptNewTables')
+
+	def set_EncryptNewTables(self,EncryptNewTables):
+		self.add_query_param('EncryptNewTables',EncryptNewTables)
+
 	def get_TDEStatus(self):
 		return self.get_query_params().get('TDEStatus')
 
