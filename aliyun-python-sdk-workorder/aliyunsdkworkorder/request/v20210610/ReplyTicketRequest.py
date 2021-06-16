@@ -31,17 +31,17 @@ class ReplyTicketRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_SecContent(self):
-		return self.get_body_params().get('SecContent')
-
-	def set_SecContent(self,SecContent):
-		self.add_body_params('SecContent', SecContent)
-
 	def get_Content(self):
 		return self.get_body_params().get('Content')
 
 	def set_Content(self,Content):
 		self.add_body_params('Content', Content)
+
+	def get_Encrypt(self):
+		return self.get_body_params().get('Encrypt')
+
+	def set_Encrypt(self,Encrypt):
+		self.add_body_params('Encrypt', Encrypt)
 
 	def get_TicketId(self):
 		return self.get_body_params().get('TicketId')
