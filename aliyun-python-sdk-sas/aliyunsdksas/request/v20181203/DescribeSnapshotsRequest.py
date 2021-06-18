@@ -90,3 +90,9 @@ class DescribeSnapshotsRequest(RpcRequest):
 
 	def set_MachineRegion(self,MachineRegion):
 		self.add_query_param('MachineRegion',MachineRegion)
+
+	def get_IsAliYunEcs(self):
+		return self.get_query_params().get('IsAliYunEcs')
+
+	def set_IsAliYunEcs(self,IsAliYunEcs):
+		self.add_query_param('IsAliYunEcs',IsAliYunEcs)

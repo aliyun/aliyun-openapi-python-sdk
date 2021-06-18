@@ -69,6 +69,12 @@ class ModifyBackupPolicyRequest(RpcRequest):
 	def set_PolicyVersion(self,PolicyVersion):
 		self.add_query_param('PolicyVersion',PolicyVersion)
 
+	def get_PolicyRegionId(self):
+		return self.get_query_params().get('PolicyRegionId')
+
+	def set_PolicyRegionId(self,PolicyRegionId):
+		self.add_query_param('PolicyRegionId',PolicyRegionId)
+
 	def get_Name(self):
 		return self.get_query_params().get('Name')
 

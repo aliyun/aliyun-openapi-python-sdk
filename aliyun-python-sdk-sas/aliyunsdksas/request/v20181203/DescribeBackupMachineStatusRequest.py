@@ -37,12 +37,6 @@ class DescribeBackupMachineStatusRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_PolicyVersion(self):
-		return self.get_query_params().get('PolicyVersion')
-
-	def set_PolicyVersion(self,PolicyVersion):
-		self.add_query_param('PolicyVersion',PolicyVersion)
-
 	def get_Uuid(self):
 		return self.get_query_params().get('Uuid')
 
@@ -60,3 +54,9 @@ class DescribeBackupMachineStatusRequest(RpcRequest):
 
 	def set_PolicyId(self,PolicyId):
 		self.add_query_param('PolicyId',PolicyId)
+
+	def get_PolicyVersion(self):
+		return self.get_query_params().get('PolicyVersion')
+
+	def set_PolicyVersion(self,PolicyVersion):
+		self.add_query_param('PolicyVersion',PolicyVersion)

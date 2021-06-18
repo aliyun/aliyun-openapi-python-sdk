@@ -37,12 +37,6 @@ class DescribeBackupPolicyRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_PolicyVersion(self):
-		return self.get_query_params().get('PolicyVersion')
-
-	def set_PolicyVersion(self,PolicyVersion):
-		self.add_query_param('PolicyVersion',PolicyVersion)
-
 	def get_SourceIp(self):
 		return self.get_query_params().get('SourceIp')
 
@@ -54,3 +48,9 @@ class DescribeBackupPolicyRequest(RpcRequest):
 
 	def set_Id(self,Id):
 		self.add_query_param('Id',Id)
+
+	def get_PolicyVersion(self):
+		return self.get_query_params().get('PolicyVersion')
+
+	def set_PolicyVersion(self,PolicyVersion):
+		self.add_query_param('PolicyVersion',PolicyVersion)

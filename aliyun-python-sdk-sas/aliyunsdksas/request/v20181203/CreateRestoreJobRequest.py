@@ -43,6 +43,12 @@ class CreateRestoreJobRequest(RpcRequest):
 	def set_SnapshotId(self,SnapshotId):
 		self.add_query_param('SnapshotId',SnapshotId)
 
+	def get_VaultId(self):
+		return self.get_query_params().get('VaultId')
+
+	def set_VaultId(self,VaultId):
+		self.add_query_param('VaultId',VaultId)
+
 	def get_Uuid(self):
 		return self.get_query_params().get('Uuid')
 
@@ -61,17 +67,17 @@ class CreateRestoreJobRequest(RpcRequest):
 	def set_SourceIp(self,SourceIp):
 		self.add_query_param('SourceIp',SourceIp)
 
+	def get_SourceType(self):
+		return self.get_query_params().get('SourceType')
+
+	def set_SourceType(self,SourceType):
+		self.add_query_param('SourceType',SourceType)
+
 	def get_SnapshotVersion(self):
 		return self.get_query_params().get('SnapshotVersion')
 
 	def set_SnapshotVersion(self,SnapshotVersion):
 		self.add_query_param('SnapshotVersion',SnapshotVersion)
-
-	def get_PolicyVersion(self):
-		return self.get_query_params().get('PolicyVersion')
-
-	def set_PolicyVersion(self,PolicyVersion):
-		self.add_query_param('PolicyVersion',PolicyVersion)
 
 	def get_Includes(self):
 		return self.get_query_params().get('Includes')
@@ -84,9 +90,3 @@ class CreateRestoreJobRequest(RpcRequest):
 
 	def set_Target(self,Target):
 		self.add_query_param('Target',Target)
-
-	def get_InstanceId(self):
-		return self.get_query_params().get('InstanceId')
-
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)

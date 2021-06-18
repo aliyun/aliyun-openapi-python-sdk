@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdksas.endpoint import endpoint_data
 
-class DeleteBackupPolicyRequest(RpcRequest):
+class CreateAssetRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DeleteBackupPolicy','sas')
+		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'CreateAsset','sas')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,26 +31,38 @@ class DeleteBackupPolicyRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_ResourceOwnerId(self):
-		return self.get_query_params().get('ResourceOwnerId')
+	def get_InternetIp(self):
+		return self.get_query_params().get('InternetIp')
 
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+	def set_InternetIp(self,InternetIp):
+		self.add_query_param('InternetIp',InternetIp)
 
-	def get_SourceIp(self):
-		return self.get_query_params().get('SourceIp')
+	def get_OsName(self):
+		return self.get_query_params().get('OsName')
 
-	def set_SourceIp(self,SourceIp):
-		self.add_query_param('SourceIp',SourceIp)
+	def set_OsName(self,OsName):
+		self.add_query_param('OsName',OsName)
 
-	def get_Id(self):
-		return self.get_query_params().get('Id')
+	def get_Os(self):
+		return self.get_query_params().get('Os')
 
-	def set_Id(self,Id):
-		self.add_query_param('Id',Id)
+	def set_Os(self,Os):
+		self.add_query_param('Os',Os)
 
-	def get_PolicyVersion(self):
-		return self.get_query_params().get('PolicyVersion')
+	def get_InstanceName(self):
+		return self.get_query_params().get('InstanceName')
 
-	def set_PolicyVersion(self,PolicyVersion):
-		self.add_query_param('PolicyVersion',PolicyVersion)
+	def set_InstanceName(self,InstanceName):
+		self.add_query_param('InstanceName',InstanceName)
+
+	def get_IntranetIp(self):
+		return self.get_query_params().get('IntranetIp')
+
+	def set_IntranetIp(self,IntranetIp):
+		self.add_query_param('IntranetIp',IntranetIp)
+
+	def get_Status(self):
+		return self.get_query_params().get('Status')
+
+	def set_Status(self,Status):
+		self.add_query_param('Status',Status)

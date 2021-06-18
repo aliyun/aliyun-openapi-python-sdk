@@ -37,12 +37,6 @@ class UninstallBackupClientRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_PolicyVersion(self):
-		return self.get_query_params().get('PolicyVersion')
-
-	def set_PolicyVersion(self,PolicyVersion):
-		self.add_query_param('PolicyVersion',PolicyVersion)
-
 	def get_Uuid(self):
 		return self.get_query_params().get('Uuid')
 
@@ -62,3 +56,9 @@ class UninstallBackupClientRequest(RpcRequest):
 		for depth1 in range(len(UuidLists)):
 			if UuidLists[depth1] is not None:
 				self.add_query_param('UuidList.' + str(depth1 + 1) , UuidLists[depth1])
+
+	def get_PolicyVersion(self):
+		return self.get_query_params().get('PolicyVersion')
+
+	def set_PolicyVersion(self,PolicyVersion):
+		self.add_query_param('PolicyVersion',PolicyVersion)
