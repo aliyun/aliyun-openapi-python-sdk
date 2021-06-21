@@ -23,7 +23,7 @@ from aliyunsdkga.endpoint import endpoint_data
 class CreateIpSetsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ga', '2019-11-20', 'CreateIpSets','ga')
+		RpcRequest.__init__(self, 'Ga', '2019-11-20', 'CreateIpSets','gaplus')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
