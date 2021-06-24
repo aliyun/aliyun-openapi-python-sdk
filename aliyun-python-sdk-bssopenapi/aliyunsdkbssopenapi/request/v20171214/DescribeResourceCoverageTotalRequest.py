@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkbssopenapi.endpoint import endpoint_data
 
-class SubscribeBillToOSSRequest(RpcRequest):
+class DescribeResourceCoverageTotalRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'SubscribeBillToOSS')
+		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'DescribeResourceCoverageTotal')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,32 +31,32 @@ class SubscribeBillToOSSRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_BucketOwnerId(self):
-		return self.get_query_params().get('BucketOwnerId')
+	def get_PeriodType(self):
+		return self.get_query_params().get('PeriodType')
 
-	def set_BucketOwnerId(self,BucketOwnerId):
-		self.add_query_param('BucketOwnerId',BucketOwnerId)
+	def set_PeriodType(self,PeriodType):
+		self.add_query_param('PeriodType',PeriodType)
 
-	def get_SubscribeType(self):
-		return self.get_query_params().get('SubscribeType')
+	def get_BillOwnerId(self):
+		return self.get_query_params().get('BillOwnerId')
 
-	def set_SubscribeType(self,SubscribeType):
-		self.add_query_param('SubscribeType',SubscribeType)
+	def set_BillOwnerId(self,BillOwnerId):
+		self.add_query_param('BillOwnerId',BillOwnerId)
 
-	def get_SubscribeBucket(self):
-		return self.get_query_params().get('SubscribeBucket')
+	def get_ResourceType(self):
+		return self.get_query_params().get('ResourceType')
 
-	def set_SubscribeBucket(self,SubscribeBucket):
-		self.add_query_param('SubscribeBucket',SubscribeBucket)
+	def set_ResourceType(self,ResourceType):
+		self.add_query_param('ResourceType',ResourceType)
 
-	def get_BeginBillingCycle(self):
-		return self.get_query_params().get('BeginBillingCycle')
+	def get_StartPeriod(self):
+		return self.get_query_params().get('StartPeriod')
 
-	def set_BeginBillingCycle(self,BeginBillingCycle):
-		self.add_query_param('BeginBillingCycle',BeginBillingCycle)
+	def set_StartPeriod(self,StartPeriod):
+		self.add_query_param('StartPeriod',StartPeriod)
 
-	def get_MultAccountRelSubscribe(self):
-		return self.get_query_params().get('MultAccountRelSubscribe')
+	def get_EndPeriod(self):
+		return self.get_query_params().get('EndPeriod')
 
-	def set_MultAccountRelSubscribe(self,MultAccountRelSubscribe):
-		self.add_query_param('MultAccountRelSubscribe',MultAccountRelSubscribe)
+	def set_EndPeriod(self,EndPeriod):
+		self.add_query_param('EndPeriod',EndPeriod)

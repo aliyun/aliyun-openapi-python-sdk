@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkbssopenapi.endpoint import endpoint_data
 
-class SubscribeBillToOSSRequest(RpcRequest):
+class SetAllExpirationDayRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'SubscribeBillToOSS')
+		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'SetAllExpirationDay')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,32 +31,14 @@ class SubscribeBillToOSSRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_BucketOwnerId(self):
-		return self.get_query_params().get('BucketOwnerId')
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
 
-	def set_BucketOwnerId(self,BucketOwnerId):
-		self.add_query_param('BucketOwnerId',BucketOwnerId)
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
 
-	def get_SubscribeType(self):
-		return self.get_query_params().get('SubscribeType')
+	def get_UnifyExpireDay(self):
+		return self.get_query_params().get('UnifyExpireDay')
 
-	def set_SubscribeType(self,SubscribeType):
-		self.add_query_param('SubscribeType',SubscribeType)
-
-	def get_SubscribeBucket(self):
-		return self.get_query_params().get('SubscribeBucket')
-
-	def set_SubscribeBucket(self,SubscribeBucket):
-		self.add_query_param('SubscribeBucket',SubscribeBucket)
-
-	def get_BeginBillingCycle(self):
-		return self.get_query_params().get('BeginBillingCycle')
-
-	def set_BeginBillingCycle(self,BeginBillingCycle):
-		self.add_query_param('BeginBillingCycle',BeginBillingCycle)
-
-	def get_MultAccountRelSubscribe(self):
-		return self.get_query_params().get('MultAccountRelSubscribe')
-
-	def set_MultAccountRelSubscribe(self,MultAccountRelSubscribe):
-		self.add_query_param('MultAccountRelSubscribe',MultAccountRelSubscribe)
+	def set_UnifyExpireDay(self,UnifyExpireDay):
+		self.add_query_param('UnifyExpireDay',UnifyExpireDay)

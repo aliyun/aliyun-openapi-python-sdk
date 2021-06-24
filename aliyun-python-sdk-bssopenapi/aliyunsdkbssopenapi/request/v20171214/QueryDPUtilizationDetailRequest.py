@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkbssopenapi.endpoint import endpoint_data
 
-class QuerySavingsPlansInstanceRequest(RpcRequest):
+class QueryDPUtilizationDetailRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'QuerySavingsPlansInstance')
+		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'QueryDPUtilizationDetail')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,11 +31,41 @@ class QuerySavingsPlansInstanceRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_DeductedInstanceId(self):
+		return self.get_query_params().get('DeductedInstanceId')
+
+	def set_DeductedInstanceId(self,DeductedInstanceId):
+		self.add_query_param('DeductedInstanceId',DeductedInstanceId)
+
+	def get_LastToken(self):
+		return self.get_query_params().get('LastToken')
+
+	def set_LastToken(self,LastToken):
+		self.add_query_param('LastToken',LastToken)
+
+	def get_InstanceSpec(self):
+		return self.get_query_params().get('InstanceSpec')
+
+	def set_InstanceSpec(self,InstanceSpec):
+		self.add_query_param('InstanceSpec',InstanceSpec)
+
 	def get_EndTime(self):
 		return self.get_query_params().get('EndTime')
 
 	def set_EndTime(self,EndTime):
 		self.add_query_param('EndTime',EndTime)
+
+	def get_IncludeShare(self):
+		return self.get_query_params().get('IncludeShare')
+
+	def set_IncludeShare(self,IncludeShare):
+		self.add_query_param('IncludeShare',IncludeShare)
+
+	def get_CommodityCode(self):
+		return self.get_query_params().get('CommodityCode')
+
+	def set_CommodityCode(self,CommodityCode):
+		self.add_query_param('CommodityCode',CommodityCode)
 
 	def get_StartTime(self):
 		return self.get_query_params().get('StartTime')
@@ -43,36 +73,14 @@ class QuerySavingsPlansInstanceRequest(RpcRequest):
 	def set_StartTime(self,StartTime):
 		self.add_query_param('StartTime',StartTime)
 
-	def get_Locale(self):
-		return self.get_query_params().get('Locale')
-
-	def set_Locale(self,Locale):
-		self.add_query_param('Locale',Locale)
-
-	def get_PageNum(self):
-		return self.get_query_params().get('PageNum')
-
-	def set_PageNum(self,PageNum):
-		self.add_query_param('PageNum',PageNum)
-
 	def get_InstanceId(self):
 		return self.get_query_params().get('InstanceId')
 
 	def set_InstanceId(self,InstanceId):
 		self.add_query_param('InstanceId',InstanceId)
 
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
+	def get_Limit(self):
+		return self.get_query_params().get('Limit')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_Tags(self):
-		return self.get_query_params().get('Tag')
-
-	def set_Tags(self, Tags):
-		for depth1 in range(len(Tags)):
-			if Tags[depth1].get('Value') is not None:
-				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tags[depth1].get('Value'))
-			if Tags[depth1].get('Key') is not None:
-				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tags[depth1].get('Key'))
+	def set_Limit(self,Limit):
+		self.add_query_param('Limit',Limit)

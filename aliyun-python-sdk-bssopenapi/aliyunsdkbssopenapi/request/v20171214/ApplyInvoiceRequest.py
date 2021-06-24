@@ -86,3 +86,9 @@ class ApplyInvoiceRequest(RpcRequest):
 		for depth1 in range(len(SelectedIdss)):
 			if SelectedIdss[depth1] is not None:
 				self.add_query_param('SelectedIds.' + str(depth1 + 1) , SelectedIdss[depth1])
+
+	def get_UserRemark(self):
+		return self.get_query_params().get('UserRemark')
+
+	def set_UserRemark(self,UserRemark):
+		self.add_query_param('UserRemark',UserRemark)
