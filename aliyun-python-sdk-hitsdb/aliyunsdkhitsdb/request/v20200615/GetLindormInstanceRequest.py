@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkhitsdb.endpoint import endpoint_data
 
-class ModifyHiTSDBInstanceSecurityIpListRequest(RpcRequest):
+class GetLindormInstanceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'hitsdb', '2017-06-01', 'ModifyHiTSDBInstanceSecurityIpList','hitsdb')
+		RpcRequest.__init__(self, 'hitsdb', '2020-06-15', 'GetLindormInstance','hitsdb')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -60,18 +60,6 @@ class ModifyHiTSDBInstanceSecurityIpListRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
-
-	def get_GroupName(self):
-		return self.get_query_params().get('GroupName')
-
-	def set_GroupName(self,GroupName):
-		self.add_query_param('GroupName',GroupName)
-
-	def get_SecurityIpList(self):
-		return self.get_query_params().get('SecurityIpList')
-
-	def set_SecurityIpList(self,SecurityIpList):
-		self.add_query_param('SecurityIpList',SecurityIpList)
 
 	def get_InstanceId(self):
 		return self.get_query_params().get('InstanceId')
