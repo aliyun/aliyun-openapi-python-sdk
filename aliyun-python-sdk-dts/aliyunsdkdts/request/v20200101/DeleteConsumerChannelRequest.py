@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdts.endpoint import endpoint_data
 
-class TransferPayTypeRequest(RpcRequest):
+class DeleteConsumerChannelRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dts', '2020-01-01', 'TransferPayType','dts')
+		RpcRequest.__init__(self, 'Dts', '2020-01-01', 'DeleteConsumerChannel','dts')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,17 +31,11 @@ class TransferPayTypeRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_Period(self):
-		return self.get_query_params().get('Period')
+	def get_ConsumerGroupId(self):
+		return self.get_query_params().get('ConsumerGroupId')
 
-	def set_Period(self,Period):
-		self.add_query_param('Period',Period)
-
-	def get_BuyCount(self):
-		return self.get_query_params().get('BuyCount')
-
-	def set_BuyCount(self,BuyCount):
-		self.add_query_param('BuyCount',BuyCount)
+	def set_ConsumerGroupId(self,ConsumerGroupId):
+		self.add_query_param('ConsumerGroupId',ConsumerGroupId)
 
 	def get_DtsJobId(self):
 		return self.get_query_params().get('DtsJobId')
@@ -49,8 +43,8 @@ class TransferPayTypeRequest(RpcRequest):
 	def set_DtsJobId(self,DtsJobId):
 		self.add_query_param('DtsJobId',DtsJobId)
 
-	def get_ChargeType(self):
-		return self.get_query_params().get('ChargeType')
+	def get_DtsInstanceId(self):
+		return self.get_query_params().get('DtsInstanceId')
 
-	def set_ChargeType(self,ChargeType):
-		self.add_query_param('ChargeType',ChargeType)
+	def set_DtsInstanceId(self,DtsInstanceId):
+		self.add_query_param('DtsInstanceId',DtsInstanceId)

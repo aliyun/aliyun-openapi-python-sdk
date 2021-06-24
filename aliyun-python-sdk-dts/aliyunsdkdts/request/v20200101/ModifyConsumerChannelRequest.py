@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdts.endpoint import endpoint_data
 
-class DescribeDtsJobLogsRequest(RpcRequest):
+class ModifyConsumerChannelRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dts', '2020-01-01', 'DescribeDtsJobLogs','dts')
+		RpcRequest.__init__(self, 'Dts', '2020-01-01', 'ModifyConsumerChannel','dts')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,35 +31,29 @@ class DescribeDtsJobLogsRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_EndTime(self):
-		return self.get_query_params().get('EndTime')
+	def get_ConsumerGroupName(self):
+		return self.get_query_params().get('ConsumerGroupName')
 
-	def set_EndTime(self,EndTime):
-		self.add_query_param('EndTime',EndTime)
+	def set_ConsumerGroupName(self,ConsumerGroupName):
+		self.add_query_param('ConsumerGroupName',ConsumerGroupName)
 
-	def get_StartTime(self):
-		return self.get_query_params().get('StartTime')
+	def get_ConsumerGroupId(self):
+		return self.get_query_params().get('ConsumerGroupId')
 
-	def set_StartTime(self,StartTime):
-		self.add_query_param('StartTime',StartTime)
+	def set_ConsumerGroupId(self,ConsumerGroupId):
+		self.add_query_param('ConsumerGroupId',ConsumerGroupId)
 
-	def get_Type(self):
-		return self.get_query_params().get('Type')
+	def get_ConsumerGroupPassword(self):
+		return self.get_query_params().get('ConsumerGroupPassword')
 
-	def set_Type(self,Type):
-		self.add_query_param('Type',Type)
+	def set_ConsumerGroupPassword(self,ConsumerGroupPassword):
+		self.add_query_param('ConsumerGroupPassword',ConsumerGroupPassword)
 
-	def get_PageNumber(self):
-		return self.get_query_params().get('PageNumber')
+	def get_ConsumerGroupUserName(self):
+		return self.get_query_params().get('ConsumerGroupUserName')
 
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
-
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
+	def set_ConsumerGroupUserName(self,ConsumerGroupUserName):
+		self.add_query_param('ConsumerGroupUserName',ConsumerGroupUserName)
 
 	def get_DtsJobId(self):
 		return self.get_query_params().get('DtsJobId')
@@ -67,8 +61,8 @@ class DescribeDtsJobLogsRequest(RpcRequest):
 	def set_DtsJobId(self,DtsJobId):
 		self.add_query_param('DtsJobId',DtsJobId)
 
-	def get_Status(self):
-		return self.get_query_params().get('Status')
+	def get_DtsInstanceId(self):
+		return self.get_query_params().get('DtsInstanceId')
 
-	def set_Status(self,Status):
-		self.add_query_param('Status',Status)
+	def set_DtsInstanceId(self,DtsInstanceId):
+		self.add_query_param('DtsInstanceId',DtsInstanceId)

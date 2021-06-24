@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdts.endpoint import endpoint_data
 
-class TransferPayTypeRequest(RpcRequest):
+class RenewInstanceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dts', '2020-01-01', 'TransferPayType','dts')
+		RpcRequest.__init__(self, 'Dts', '2020-01-01', 'RenewInstance','dts')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())

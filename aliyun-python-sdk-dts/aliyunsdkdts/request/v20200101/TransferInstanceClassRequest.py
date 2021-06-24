@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdts.endpoint import endpoint_data
 
-class PreviewSqlRequest(RpcRequest):
+class TransferInstanceClassRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dts', '2020-01-01', 'PreviewSql','dts')
+		RpcRequest.__init__(self, 'Dts', '2020-01-01', 'TransferInstanceClass','dts')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,8 +31,20 @@ class PreviewSqlRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_EtlCalculator(self):
-		return self.get_query_params().get('EtlCalculator')
+	def get_InstanceClass(self):
+		return self.get_query_params().get('InstanceClass')
 
-	def set_EtlCalculator(self,EtlCalculator):
-		self.add_query_param('EtlCalculator',EtlCalculator)
+	def set_InstanceClass(self,InstanceClass):
+		self.add_query_param('InstanceClass',InstanceClass)
+
+	def get_DtsJobId(self):
+		return self.get_query_params().get('DtsJobId')
+
+	def set_DtsJobId(self,DtsJobId):
+		self.add_query_param('DtsJobId',DtsJobId)
+
+	def get_OrderType(self):
+		return self.get_query_params().get('OrderType')
+
+	def set_OrderType(self,OrderType):
+		self.add_query_param('OrderType',OrderType)
