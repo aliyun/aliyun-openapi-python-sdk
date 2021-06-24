@@ -23,7 +23,7 @@ from aliyunsdknas.endpoint import endpoint_data
 class CreateLifecyclePolicyRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'NAS', '2017-06-26', 'CreateLifecyclePolicy','nas')
+		RpcRequest.__init__(self, 'NAS', '2017-06-26', 'CreateLifecyclePolicy')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -60,3 +60,11 @@ class CreateLifecyclePolicyRequest(RpcRequest):
 
 	def set_LifecycleRuleName(self,LifecycleRuleName):
 		self.add_query_param('LifecycleRuleName',LifecycleRuleName)
+
+	def get_Pathss(self):
+		return self.get_query_params().get('Paths')
+
+	def set_Pathss(self, Pathss):
+		for depth1 in range(len(Pathss)):
+			if Pathss[depth1] is not None:
+				self.add_query_param('Paths.' + str(depth1 + 1) , Pathss[depth1])
