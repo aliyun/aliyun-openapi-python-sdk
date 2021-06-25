@@ -31,12 +31,6 @@ class DescribeSplitItemBillRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_SplitItemID(self):
-		return self.get_query_params().get('SplitItemID')
-
-	def set_SplitItemID(self,SplitItemID):
-		self.add_query_param('SplitItemID',SplitItemID)
-
 	def get_ProductCode(self):
 		return self.get_query_params().get('ProductCode')
 
@@ -48,6 +42,30 @@ class DescribeSplitItemBillRequest(RpcRequest):
 
 	def set_SubscriptionType(self,SubscriptionType):
 		self.add_query_param('SubscriptionType',SubscriptionType)
+
+	def get_BillOwnerId(self):
+		return self.get_query_params().get('BillOwnerId')
+
+	def set_BillOwnerId(self,BillOwnerId):
+		self.add_query_param('BillOwnerId',BillOwnerId)
+
+	def get_ProductType(self):
+		return self.get_query_params().get('ProductType')
+
+	def set_ProductType(self,ProductType):
+		self.add_query_param('ProductType',ProductType)
+
+	def get_NextToken(self):
+		return self.get_query_params().get('NextToken')
+
+	def set_NextToken(self,NextToken):
+		self.add_query_param('NextToken',NextToken)
+
+	def get_SplitItemID(self):
+		return self.get_query_params().get('SplitItemID')
+
+	def set_SplitItemID(self,SplitItemID):
+		self.add_query_param('SplitItemID',SplitItemID)
 
 	def get_BillingCycle(self):
 		return self.get_query_params().get('BillingCycle')
@@ -61,12 +79,6 @@ class DescribeSplitItemBillRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_BillOwnerId(self):
-		return self.get_query_params().get('BillOwnerId')
-
-	def set_BillOwnerId(self,BillOwnerId):
-		self.add_query_param('BillOwnerId',BillOwnerId)
-
 	def get_TagFilters(self):
 		return self.get_query_params().get('TagFilter')
 
@@ -79,11 +91,11 @@ class DescribeSplitItemBillRequest(RpcRequest):
 			if TagFilters[depth1].get('TagKey') is not None:
 				self.add_query_param('TagFilter.' + str(depth1 + 1) + '.TagKey', TagFilters[depth1].get('TagKey'))
 
-	def get_ProductType(self):
-		return self.get_query_params().get('ProductType')
+	def get_BillingDate(self):
+		return self.get_query_params().get('BillingDate')
 
-	def set_ProductType(self,ProductType):
-		self.add_query_param('ProductType',ProductType)
+	def set_BillingDate(self,BillingDate):
+		self.add_query_param('BillingDate',BillingDate)
 
 	def get_InstanceID(self):
 		return self.get_query_params().get('InstanceID')
@@ -91,11 +103,11 @@ class DescribeSplitItemBillRequest(RpcRequest):
 	def set_InstanceID(self,InstanceID):
 		self.add_query_param('InstanceID',InstanceID)
 
-	def get_NextToken(self):
-		return self.get_query_params().get('NextToken')
+	def get_Granularity(self):
+		return self.get_query_params().get('Granularity')
 
-	def set_NextToken(self,NextToken):
-		self.add_query_param('NextToken',NextToken)
+	def set_Granularity(self,Granularity):
+		self.add_query_param('Granularity',Granularity)
 
 	def get_MaxResults(self):
 		return self.get_query_params().get('MaxResults')
