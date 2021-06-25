@@ -20,37 +20,19 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkoutboundbot.endpoint import endpoint_data
 
-class ListMediaRequest(RpcRequest):
+class ListJobGroupsAsyncRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'OutboundBot', '2019-12-26', 'ListMedia','outboundbot')
-		self.set_method('POST')
+		RpcRequest.__init__(self, 'OutboundBot', '2019-12-26', 'ListJobGroupsAsync','outboundbot')
+		self.set_method('GET')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_PageNumber(self):
-		return self.get_query_params().get('PageNumber')
+	def get_AsyncTaskId(self):
+		return self.get_query_params().get('AsyncTaskId')
 
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
-
-	def get_InstanceId(self):
-		return self.get_query_params().get('InstanceId')
-
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
-
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_NamePrefix(self):
-		return self.get_query_params().get('NamePrefix')
-
-	def set_NamePrefix(self,NamePrefix):
-		self.add_query_param('NamePrefix',NamePrefix)
+	def set_AsyncTaskId(self,AsyncTaskId):
+		self.add_query_param('AsyncTaskId',AsyncTaskId)

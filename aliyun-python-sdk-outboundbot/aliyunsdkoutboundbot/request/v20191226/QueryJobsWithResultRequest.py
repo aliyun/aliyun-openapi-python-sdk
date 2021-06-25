@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkoutboundbot.endpoint import endpoint_data
 
-class ListJobGroupsRequest(RpcRequest):
+class QueryJobsWithResultRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'OutboundBot', '2019-12-26', 'ListJobGroups','outboundbot')
+		RpcRequest.__init__(self, 'OutboundBot', '2019-12-26', 'QueryJobsWithResult','outboundbot')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,29 +31,17 @@ class ListJobGroupsRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_AsyncQuery(self):
-		return self.get_query_params().get('AsyncQuery')
+	def get_HasReachedEndOfFlowFilter(self):
+		return self.get_query_params().get('HasReachedEndOfFlowFilter')
 
-	def set_AsyncQuery(self,AsyncQuery):
-		self.add_query_param('AsyncQuery',AsyncQuery)
+	def set_HasReachedEndOfFlowFilter(self,HasReachedEndOfFlowFilter):
+		self.add_query_param('HasReachedEndOfFlowFilter',HasReachedEndOfFlowFilter)
 
-	def get_SearchText(self):
-		return self.get_query_params().get('SearchText')
+	def get_HasAnsweredFilter(self):
+		return self.get_query_params().get('HasAnsweredFilter')
 
-	def set_SearchText(self,SearchText):
-		self.add_query_param('SearchText',SearchText)
-
-	def get_EndTime(self):
-		return self.get_query_params().get('EndTime')
-
-	def set_EndTime(self,EndTime):
-		self.add_query_param('EndTime',EndTime)
-
-	def get_StartTime(self):
-		return self.get_query_params().get('StartTime')
-
-	def set_StartTime(self,StartTime):
-		self.add_query_param('StartTime',StartTime)
+	def set_HasAnsweredFilter(self,HasAnsweredFilter):
+		self.add_query_param('HasAnsweredFilter',HasAnsweredFilter)
 
 	def get_PageNumber(self):
 		return self.get_query_params().get('PageNumber')
@@ -61,20 +49,38 @@ class ListJobGroupsRequest(RpcRequest):
 	def set_PageNumber(self,PageNumber):
 		self.add_query_param('PageNumber',PageNumber)
 
+	def get_QueryText(self):
+		return self.get_query_params().get('QueryText')
+
+	def set_QueryText(self,QueryText):
+		self.add_query_param('QueryText',QueryText)
+
+	def get_HasHangUpByRejectionFilter(self):
+		return self.get_query_params().get('HasHangUpByRejectionFilter')
+
+	def set_HasHangUpByRejectionFilter(self,HasHangUpByRejectionFilter):
+		self.add_query_param('HasHangUpByRejectionFilter',HasHangUpByRejectionFilter)
+
 	def get_InstanceId(self):
 		return self.get_query_params().get('InstanceId')
 
 	def set_InstanceId(self,InstanceId):
 		self.add_query_param('InstanceId',InstanceId)
 
-	def get_JobGroupStatusFilter(self):
-		return self.get_query_params().get('JobGroupStatusFilter')
+	def get_JobStatusFilter(self):
+		return self.get_query_params().get('JobStatusFilter')
 
-	def set_JobGroupStatusFilter(self,JobGroupStatusFilter):
-		self.add_query_param('JobGroupStatusFilter',JobGroupStatusFilter)
+	def set_JobStatusFilter(self,JobStatusFilter):
+		self.add_query_param('JobStatusFilter',JobStatusFilter)
 
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
 
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
+
+	def get_JobGroupId(self):
+		return self.get_query_params().get('JobGroupId')
+
+	def set_JobGroupId(self,JobGroupId):
+		self.add_query_param('JobGroupId',JobGroupId)

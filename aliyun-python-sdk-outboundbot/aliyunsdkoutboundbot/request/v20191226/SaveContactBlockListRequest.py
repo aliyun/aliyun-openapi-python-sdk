@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkoutboundbot.endpoint import endpoint_data
 
-class ListInstancesRequest(RpcRequest):
+class SaveContactBlockListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'OutboundBot', '2019-12-26', 'ListInstances','outboundbot')
+		RpcRequest.__init__(self, 'OutboundBot', '2019-12-26', 'SaveContactBlockList','outboundbot')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,18 +31,22 @@ class ListInstancesRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_ResourceGroupId(self):
-		return self.get_query_params().get('ResourceGroupId')
+	def get_ContactBlockListLists(self):
+		return self.get_query_params().get('ContactBlockListList')
 
-	def set_ResourceGroupId(self,ResourceGroupId):
-		self.add_query_param('ResourceGroupId',ResourceGroupId)
+	def set_ContactBlockListLists(self, ContactBlockListLists):
+		for depth1 in range(len(ContactBlockListLists)):
+			if ContactBlockListLists[depth1] is not None:
+				self.add_query_param('ContactBlockListList.' + str(depth1 + 1) , ContactBlockListLists[depth1])
 
-	def get_Tags(self):
-		return self.get_query_params().get('Tag')
+	def get_InstanceId(self):
+		return self.get_query_params().get('InstanceId')
 
-	def set_Tags(self, Tags):
-		for depth1 in range(len(Tags)):
-			if Tags[depth1].get('Value') is not None:
-				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tags[depth1].get('Value'))
-			if Tags[depth1].get('Key') is not None:
-				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tags[depth1].get('Key'))
+	def set_InstanceId(self,InstanceId):
+		self.add_query_param('InstanceId',InstanceId)
+
+	def get_ContactBlockListsJson(self):
+		return self.get_query_params().get('ContactBlockListsJson')
+
+	def set_ContactBlockListsJson(self,ContactBlockListsJson):
+		self.add_query_param('ContactBlockListsJson',ContactBlockListsJson)

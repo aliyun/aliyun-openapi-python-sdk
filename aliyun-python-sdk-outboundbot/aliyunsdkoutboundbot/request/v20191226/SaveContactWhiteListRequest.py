@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkoutboundbot.endpoint import endpoint_data
 
-class ListInstancesRequest(RpcRequest):
+class SaveContactWhiteListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'OutboundBot', '2019-12-26', 'ListInstances','outboundbot')
+		RpcRequest.__init__(self, 'OutboundBot', '2019-12-26', 'SaveContactWhiteList','outboundbot')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,18 +31,22 @@ class ListInstancesRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_ResourceGroupId(self):
-		return self.get_query_params().get('ResourceGroupId')
+	def get_ContactWhiteListLists(self):
+		return self.get_query_params().get('ContactWhiteListList')
 
-	def set_ResourceGroupId(self,ResourceGroupId):
-		self.add_query_param('ResourceGroupId',ResourceGroupId)
+	def set_ContactWhiteListLists(self, ContactWhiteListLists):
+		for depth1 in range(len(ContactWhiteListLists)):
+			if ContactWhiteListLists[depth1] is not None:
+				self.add_query_param('ContactWhiteListList.' + str(depth1 + 1) , ContactWhiteListLists[depth1])
 
-	def get_Tags(self):
-		return self.get_query_params().get('Tag')
+	def get_ContactWhiteListsJson(self):
+		return self.get_query_params().get('ContactWhiteListsJson')
 
-	def set_Tags(self, Tags):
-		for depth1 in range(len(Tags)):
-			if Tags[depth1].get('Value') is not None:
-				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tags[depth1].get('Value'))
-			if Tags[depth1].get('Key') is not None:
-				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tags[depth1].get('Key'))
+	def set_ContactWhiteListsJson(self,ContactWhiteListsJson):
+		self.add_query_param('ContactWhiteListsJson',ContactWhiteListsJson)
+
+	def get_InstanceId(self):
+		return self.get_query_params().get('InstanceId')
+
+	def set_InstanceId(self,InstanceId):
+		self.add_query_param('InstanceId',InstanceId)

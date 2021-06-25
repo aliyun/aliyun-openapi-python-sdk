@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkoutboundbot.endpoint import endpoint_data
 
-class AssignJobsRequest(RpcRequest):
+class CreateBatchRepeatJobRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'OutboundBot', '2019-12-26', 'AssignJobs','outboundbot')
+		RpcRequest.__init__(self, 'OutboundBot', '2019-12-26', 'CreateBatchRepeatJob','outboundbot')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,13 +31,17 @@ class AssignJobsRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_JobsJsons(self):
-		return self.get_query_params().get('JobsJson')
+	def get_Description(self):
+		return self.get_query_params().get('Description')
 
-	def set_JobsJsons(self, JobsJsons):
-		for depth1 in range(len(JobsJsons)):
-			if JobsJsons[depth1] is not None:
-				self.add_query_param('JobsJson.' + str(depth1 + 1) , JobsJsons[depth1])
+	def set_Description(self,Description):
+		self.add_query_param('Description',Description)
+
+	def get_ScriptId(self):
+		return self.get_query_params().get('ScriptId')
+
+	def set_ScriptId(self,ScriptId):
+		self.add_query_param('ScriptId',ScriptId)
 
 	def get_CallingNumbers(self):
 		return self.get_query_params().get('CallingNumber')
@@ -53,17 +57,11 @@ class AssignJobsRequest(RpcRequest):
 	def set_InstanceId(self,InstanceId):
 		self.add_query_param('InstanceId',InstanceId)
 
-	def get_RosterType(self):
-		return self.get_query_params().get('RosterType')
+	def get_FilterStatus(self):
+		return self.get_query_params().get('FilterStatus')
 
-	def set_RosterType(self,RosterType):
-		self.add_query_param('RosterType',RosterType)
-
-	def get_JobDataParsingTaskId(self):
-		return self.get_query_params().get('JobDataParsingTaskId')
-
-	def set_JobDataParsingTaskId(self,JobDataParsingTaskId):
-		self.add_query_param('JobDataParsingTaskId',JobDataParsingTaskId)
+	def set_FilterStatus(self,FilterStatus):
+		self.add_query_param('FilterStatus',FilterStatus)
 
 	def get_StrategyJson(self):
 		return self.get_query_params().get('StrategyJson')
@@ -71,14 +69,14 @@ class AssignJobsRequest(RpcRequest):
 	def set_StrategyJson(self,StrategyJson):
 		self.add_query_param('StrategyJson',StrategyJson)
 
-	def get_JobGroupId(self):
-		return self.get_query_params().get('JobGroupId')
+	def get_Name(self):
+		return self.get_query_params().get('Name')
 
-	def set_JobGroupId(self,JobGroupId):
-		self.add_query_param('JobGroupId',JobGroupId)
+	def set_Name(self,Name):
+		self.add_query_param('Name',Name)
 
-	def get_IsAsynchrony(self):
-		return self.get_query_params().get('IsAsynchrony')
+	def get_SourceGroupId(self):
+		return self.get_query_params().get('SourceGroupId')
 
-	def set_IsAsynchrony(self,IsAsynchrony):
-		self.add_query_param('IsAsynchrony',IsAsynchrony)
+	def set_SourceGroupId(self,SourceGroupId):
+		self.add_query_param('SourceGroupId',SourceGroupId)
