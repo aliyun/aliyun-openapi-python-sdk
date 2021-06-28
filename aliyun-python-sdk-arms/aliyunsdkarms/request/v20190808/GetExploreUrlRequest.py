@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkarms.endpoint import endpoint_data
 
-class GetTraceRequest(RpcRequest):
+class GetExploreUrlRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ARMS', '2019-08-08', 'GetTrace','arms')
+		RpcRequest.__init__(self, 'ARMS', '2019-08-08', 'GetExploreUrl','arms')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,20 +31,20 @@ class GetTraceRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_TraceID(self):
-		return self.get_query_params().get('TraceID')
+	def get_Expression(self):
+		return self.get_query_params().get('Expression')
 
-	def set_TraceID(self,TraceID):
-		self.add_query_param('TraceID',TraceID)
+	def set_Expression(self,Expression):
+		self.add_query_param('Expression',Expression)
 
-	def get_EndTime(self):
-		return self.get_query_params().get('EndTime')
+	def get_ClusterId(self):
+		return self.get_query_params().get('ClusterId')
 
-	def set_EndTime(self,EndTime):
-		self.add_query_param('EndTime',EndTime)
+	def set_ClusterId(self,ClusterId):
+		self.add_query_param('ClusterId',ClusterId)
 
-	def get_StartTime(self):
-		return self.get_query_params().get('StartTime')
+	def get_Type(self):
+		return self.get_query_params().get('Type')
 
-	def set_StartTime(self,StartTime):
-		self.add_query_param('StartTime',StartTime)
+	def set_Type(self,Type):
+		self.add_query_param('Type',Type)

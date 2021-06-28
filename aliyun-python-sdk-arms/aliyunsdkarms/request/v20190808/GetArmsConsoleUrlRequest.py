@@ -20,31 +20,12 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkarms.endpoint import endpoint_data
 
-class GetTraceRequest(RpcRequest):
+class GetArmsConsoleUrlRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ARMS', '2019-08-08', 'GetTrace','arms')
-		self.set_method('POST')
+		RpcRequest.__init__(self, 'ARMS', '2019-08-08', 'GetArmsConsoleUrl','arms')
+		self.set_method('GET')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
-
-
-	def get_TraceID(self):
-		return self.get_query_params().get('TraceID')
-
-	def set_TraceID(self,TraceID):
-		self.add_query_param('TraceID',TraceID)
-
-	def get_EndTime(self):
-		return self.get_query_params().get('EndTime')
-
-	def set_EndTime(self,EndTime):
-		self.add_query_param('EndTime',EndTime)
-
-	def get_StartTime(self):
-		return self.get_query_params().get('StartTime')
-
-	def set_StartTime(self,StartTime):
-		self.add_query_param('StartTime',StartTime)
