@@ -103,6 +103,12 @@ class CreateOTAFirmwareRequest(RpcRequest):
 	def set_SrcVersion(self,SrcVersion):
 		self.add_query_param('SrcVersion',SrcVersion)
 
+	def get_Udi(self):
+		return self.get_query_params().get('Udi')
+
+	def set_Udi(self,Udi):
+		self.add_query_param('Udi',Udi)
+
 	def get_DestVersion(self):
 		return self.get_query_params().get('DestVersion')
 
