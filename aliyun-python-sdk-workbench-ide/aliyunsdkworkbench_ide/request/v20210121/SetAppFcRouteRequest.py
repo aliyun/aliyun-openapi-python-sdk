@@ -19,17 +19,17 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class RemoveOrgMemberRequest(RpcRequest):
+class SetAppFcRouteRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Workbench-ide', '2021-01-21', 'RemoveOrgMember')
+		RpcRequest.__init__(self, 'Workbench-ide', '2021-01-21', 'SetAppFcRoute')
 		self.set_method('POST')
 
-	def get_Uid(self):
-		return self.get_query_params().get('Uid')
+	def get_AppId(self):
+		return self.get_query_params().get('AppId')
 
-	def set_Uid(self,Uid):
-		self.add_query_param('Uid',Uid)
+	def set_AppId(self,AppId):
+		self.add_query_param('AppId',AppId)
 
 	def get_CurrentOrgId(self):
 		return self.get_query_params().get('CurrentOrgId')
@@ -37,8 +37,14 @@ class RemoveOrgMemberRequest(RpcRequest):
 	def set_CurrentOrgId(self,CurrentOrgId):
 		self.add_query_param('CurrentOrgId',CurrentOrgId)
 
-	def get_MemberId(self):
-		return self.get_query_params().get('MemberId')
+	def get_RouteLists(self):
+		return self.get_query_params().get('RouteList')
 
-	def set_MemberId(self,MemberId):
-		self.add_query_param('MemberId',MemberId)
+	def set_RouteLists(self, RouteLists):
+		for depth1 in range(len(RouteLists)):
+			if RouteLists[depth1].get('Handler') is not None:
+				self.add_query_param('RouteList.' + str(depth1 + 1) + '.Handler', RouteLists[depth1].get('Handler'))
+			if RouteLists[depth1].get('HttpMethod') is not None:
+				self.add_query_param('RouteList.' + str(depth1 + 1) + '.HttpMethod', RouteLists[depth1].get('HttpMethod'))
+			if RouteLists[depth1].get('Uri') is not None:
+				self.add_query_param('RouteList.' + str(depth1 + 1) + '.Uri', RouteLists[depth1].get('Uri'))

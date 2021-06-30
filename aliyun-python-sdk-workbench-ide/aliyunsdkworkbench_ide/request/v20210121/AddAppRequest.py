@@ -43,6 +43,12 @@ class AddAppRequest(RpcRequest):
 	def set_CurrentOrgId(self,CurrentOrgId):
 		self.add_query_param('CurrentOrgId',CurrentOrgId)
 
+	def get_ComputeType(self):
+		return self.get_query_params().get('ComputeType')
+
+	def set_ComputeType(self,ComputeType):
+		self.add_query_param('ComputeType',ComputeType)
+
 	def get_AppDescription(self):
 		return self.get_query_params().get('AppDescription')
 
