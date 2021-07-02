@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdataworks_public.endpoint import endpoint_data
 
-class QueryPublicModelEngineRequest(RpcRequest):
+class SetConnectionShareRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'QueryPublicModelEngine')
+		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'SetConnectionShare')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,14 +31,32 @@ class QueryPublicModelEngineRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_Text(self):
-		return self.get_body_params().get('Text')
+	def get_ProjectPermissions(self):
+		return self.get_query_params().get('ProjectPermissions')
 
-	def set_Text(self,Text):
-		self.add_body_params('Text', Text)
+	def set_ProjectPermissions(self,ProjectPermissions):
+		self.add_query_param('ProjectPermissions',ProjectPermissions)
+
+	def get_DatasourceName(self):
+		return self.get_query_params().get('DatasourceName')
+
+	def set_DatasourceName(self,DatasourceName):
+		self.add_query_param('DatasourceName',DatasourceName)
+
+	def get_UserPermissions(self):
+		return self.get_query_params().get('UserPermissions')
+
+	def set_UserPermissions(self,UserPermissions):
+		self.add_query_param('UserPermissions',UserPermissions)
+
+	def get_EnvType(self):
+		return self.get_query_params().get('EnvType')
+
+	def set_EnvType(self,EnvType):
+		self.add_query_param('EnvType',EnvType)
 
 	def get_ProjectId(self):
-		return self.get_body_params().get('ProjectId')
+		return self.get_query_params().get('ProjectId')
 
 	def set_ProjectId(self,ProjectId):
-		self.add_body_params('ProjectId', ProjectId)
+		self.add_query_param('ProjectId',ProjectId)
