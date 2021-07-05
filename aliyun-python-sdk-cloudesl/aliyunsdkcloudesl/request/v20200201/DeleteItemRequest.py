@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcloudesl.endpoint import endpoint_data
 
-class UpdateUserRequest(RpcRequest):
+class DeleteItemRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'cloudesl', '2020-02-01', 'UpdateUser','cloudesl')
+		RpcRequest.__init__(self, 'cloudesl', '2020-02-01', 'DeleteItem','cloudesl')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,26 +31,20 @@ class UpdateUserRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_ExtraParams(self):
-		return self.get_body_params().get('ExtraParams')
+	def get_StoreId(self):
+		return self.get_body_params().get('StoreId')
 
-	def set_ExtraParams(self,ExtraParams):
-		self.add_body_params('ExtraParams', ExtraParams)
+	def set_StoreId(self,StoreId):
+		self.add_body_params('StoreId', StoreId)
 
-	def get_DingTalkUserId(self):
-		return self.get_body_params().get('DingTalkUserId')
+	def get_ItemBarCode(self):
+		return self.get_body_params().get('ItemBarCode')
 
-	def set_DingTalkUserId(self,DingTalkUserId):
-		self.add_body_params('DingTalkUserId', DingTalkUserId)
+	def set_ItemBarCode(self,ItemBarCode):
+		self.add_body_params('ItemBarCode', ItemBarCode)
 
-	def get_UserId(self):
-		return self.get_body_params().get('UserId')
+	def get_UnbindEslDevice(self):
+		return self.get_body_params().get('UnbindEslDevice')
 
-	def set_UserId(self,UserId):
-		self.add_body_params('UserId', UserId)
-
-	def get_DingTalkCompanyId(self):
-		return self.get_body_params().get('DingTalkCompanyId')
-
-	def set_DingTalkCompanyId(self,DingTalkCompanyId):
-		self.add_body_params('DingTalkCompanyId', DingTalkCompanyId)
+	def set_UnbindEslDevice(self,UnbindEslDevice):
+		self.add_body_params('UnbindEslDevice', UnbindEslDevice)
