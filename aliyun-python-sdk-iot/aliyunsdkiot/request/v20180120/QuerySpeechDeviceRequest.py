@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkiot.endpoint import endpoint_data
 
-class TestSpeechRequest(RpcRequest):
+class QuerySpeechDeviceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'TestSpeech','iot')
+		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'QuerySpeechDevice','iot')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,11 +31,11 @@ class TestSpeechRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_Voice(self):
-		return self.get_body_params().get('Voice')
+	def get_AvailableSpaceScope(self):
+		return self.get_body_params().get('AvailableSpaceScope')
 
-	def set_Voice(self,Voice):
-		self.add_body_params('Voice', Voice)
+	def set_AvailableSpaceScope(self,AvailableSpaceScope):
+		self.add_body_params('AvailableSpaceScope', AvailableSpaceScope)
 
 	def get_ProjectCode(self):
 		return self.get_body_params().get('ProjectCode')
@@ -43,11 +43,11 @@ class TestSpeechRequest(RpcRequest):
 	def set_ProjectCode(self,ProjectCode):
 		self.add_body_params('ProjectCode', ProjectCode)
 
-	def get_AudioFormat(self):
-		return self.get_body_params().get('AudioFormat')
+	def get_PageId(self):
+		return self.get_body_params().get('PageId')
 
-	def set_AudioFormat(self,AudioFormat):
-		self.add_body_params('AudioFormat', AudioFormat)
+	def set_PageId(self,PageId):
+		self.add_body_params('PageId', PageId)
 
 	def get_IotInstanceId(self):
 		return self.get_body_params().get('IotInstanceId')
@@ -55,26 +55,20 @@ class TestSpeechRequest(RpcRequest):
 	def set_IotInstanceId(self,IotInstanceId):
 		self.add_body_params('IotInstanceId', IotInstanceId)
 
-	def get_Text(self):
-		return self.get_body_params().get('Text')
+	def get_PageSize(self):
+		return self.get_body_params().get('PageSize')
 
-	def set_Text(self,Text):
-		self.add_body_params('Text', Text)
+	def set_PageSize(self,PageSize):
+		self.add_body_params('PageSize', PageSize)
 
-	def get_SpeechType(self):
-		return self.get_body_params().get('SpeechType')
+	def get_AvailableSpace(self):
+		return self.get_body_params().get('AvailableSpace')
 
-	def set_SpeechType(self,SpeechType):
-		self.add_body_params('SpeechType', SpeechType)
+	def set_AvailableSpace(self,AvailableSpace):
+		self.add_body_params('AvailableSpace', AvailableSpace)
 
-	def get_Volume(self):
-		return self.get_body_params().get('Volume')
+	def get_DeviceName(self):
+		return self.get_body_params().get('DeviceName')
 
-	def set_Volume(self,Volume):
-		self.add_body_params('Volume', Volume)
-
-	def get_SpeechRate(self):
-		return self.get_body_params().get('SpeechRate')
-
-	def set_SpeechRate(self,SpeechRate):
-		self.add_body_params('SpeechRate', SpeechRate)
+	def set_DeviceName(self,DeviceName):
+		self.add_body_params('DeviceName', DeviceName)

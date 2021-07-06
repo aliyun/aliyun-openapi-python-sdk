@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkiot.endpoint import endpoint_data
 
-class SyncSpeechByCombinationRequest(RpcRequest):
+class SubscribeTopicRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'SyncSpeechByCombination','iot')
+		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'SubscribeTopic','iot')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,40 +31,28 @@ class SyncSpeechByCombinationRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_AudioFormat(self):
-		return self.get_body_params().get('AudioFormat')
-
-	def set_AudioFormat(self,AudioFormat):
-		self.add_body_params('AudioFormat', AudioFormat)
-
-	def get_IotId(self):
-		return self.get_body_params().get('IotId')
-
-	def set_IotId(self,IotId):
-		self.add_body_params('IotId', IotId)
-
-	def get_CombinationLists(self):
-		return self.get_body_params().get('CombinationList')
-
-	def set_CombinationLists(self, CombinationLists):
-		for depth1 in range(len(CombinationLists)):
-			if CombinationLists[depth1] is not None:
-				self.add_body_params('CombinationList.' + str(depth1 + 1) , CombinationLists[depth1])
-
 	def get_IotInstanceId(self):
-		return self.get_body_params().get('IotInstanceId')
+		return self.get_query_params().get('IotInstanceId')
 
 	def set_IotInstanceId(self,IotInstanceId):
-		self.add_body_params('IotInstanceId', IotInstanceId)
+		self.add_query_param('IotInstanceId',IotInstanceId)
 
 	def get_ProductKey(self):
-		return self.get_body_params().get('ProductKey')
+		return self.get_query_params().get('ProductKey')
 
 	def set_ProductKey(self,ProductKey):
-		self.add_body_params('ProductKey', ProductKey)
+		self.add_query_param('ProductKey',ProductKey)
+
+	def get_Topics(self):
+		return self.get_query_params().get('Topic')
+
+	def set_Topics(self, Topics):
+		for depth1 in range(len(Topics)):
+			if Topics[depth1] is not None:
+				self.add_query_param('Topic.' + str(depth1 + 1) , Topics[depth1])
 
 	def get_DeviceName(self):
-		return self.get_body_params().get('DeviceName')
+		return self.get_query_params().get('DeviceName')
 
 	def set_DeviceName(self,DeviceName):
-		self.add_body_params('DeviceName', DeviceName)
+		self.add_query_param('DeviceName',DeviceName)

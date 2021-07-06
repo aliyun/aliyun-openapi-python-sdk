@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkiot.endpoint import endpoint_data
 
-class TestSpeechRequest(RpcRequest):
+class DeleteDeviceSpeechRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'TestSpeech','iot')
+		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'DeleteDeviceSpeech','iot')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,23 +31,11 @@ class TestSpeechRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_Voice(self):
-		return self.get_body_params().get('Voice')
+	def get_IotId(self):
+		return self.get_body_params().get('IotId')
 
-	def set_Voice(self,Voice):
-		self.add_body_params('Voice', Voice)
-
-	def get_ProjectCode(self):
-		return self.get_body_params().get('ProjectCode')
-
-	def set_ProjectCode(self,ProjectCode):
-		self.add_body_params('ProjectCode', ProjectCode)
-
-	def get_AudioFormat(self):
-		return self.get_body_params().get('AudioFormat')
-
-	def set_AudioFormat(self,AudioFormat):
-		self.add_body_params('AudioFormat', AudioFormat)
+	def set_IotId(self,IotId):
+		self.add_body_params('IotId', IotId)
 
 	def get_IotInstanceId(self):
 		return self.get_body_params().get('IotInstanceId')
@@ -55,26 +43,12 @@ class TestSpeechRequest(RpcRequest):
 	def set_IotInstanceId(self,IotInstanceId):
 		self.add_body_params('IotInstanceId', IotInstanceId)
 
-	def get_Text(self):
-		return self.get_body_params().get('Text')
+	def get_DeviceSpeechLists(self):
+		return self.get_body_params().get('DeviceSpeechList')
 
-	def set_Text(self,Text):
-		self.add_body_params('Text', Text)
-
-	def get_SpeechType(self):
-		return self.get_body_params().get('SpeechType')
-
-	def set_SpeechType(self,SpeechType):
-		self.add_body_params('SpeechType', SpeechType)
-
-	def get_Volume(self):
-		return self.get_body_params().get('Volume')
-
-	def set_Volume(self,Volume):
-		self.add_body_params('Volume', Volume)
-
-	def get_SpeechRate(self):
-		return self.get_body_params().get('SpeechRate')
-
-	def set_SpeechRate(self,SpeechRate):
-		self.add_body_params('SpeechRate', SpeechRate)
+	def set_DeviceSpeechLists(self, DeviceSpeechLists):
+		for depth1 in range(len(DeviceSpeechLists)):
+			if DeviceSpeechLists[depth1].get('BizCode') is not None:
+				self.add_body_params('DeviceSpeechList.' + str(depth1 + 1) + '.BizCode', DeviceSpeechLists[depth1].get('BizCode'))
+			if DeviceSpeechLists[depth1].get('AudioFormat') is not None:
+				self.add_body_params('DeviceSpeechList.' + str(depth1 + 1) + '.AudioFormat', DeviceSpeechLists[depth1].get('AudioFormat'))

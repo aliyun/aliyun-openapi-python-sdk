@@ -31,6 +31,12 @@ class SpeechByCombinationRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_AudioFormat(self):
+		return self.get_body_params().get('AudioFormat')
+
+	def set_AudioFormat(self,AudioFormat):
+		self.add_body_params('AudioFormat', AudioFormat)
+
 	def get_IotId(self):
 		return self.get_body_params().get('IotId')
 

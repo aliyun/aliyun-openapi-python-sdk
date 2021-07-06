@@ -43,6 +43,12 @@ class CreateSpeechRequest(RpcRequest):
 	def set_ProjectCode(self,ProjectCode):
 		self.add_body_params('ProjectCode', ProjectCode)
 
+	def get_AudioFormat(self):
+		return self.get_body_params().get('AudioFormat')
+
+	def set_AudioFormat(self,AudioFormat):
+		self.add_body_params('AudioFormat', AudioFormat)
+
 	def get_IotInstanceId(self):
 		return self.get_body_params().get('IotInstanceId')
 
