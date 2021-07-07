@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkr_kvstore.endpoint import endpoint_data
 
-class DescribeParameterTemplatesRequest(RpcRequest):
+class RemoveSubInstanceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'R-kvstore', '2015-01-01', 'DescribeParameterTemplates','redisa')
+		RpcRequest.__init__(self, 'R-kvstore', '2015-01-01', 'RemoveSubInstance','redisa')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -37,29 +37,11 @@ class DescribeParameterTemplatesRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_EngineVersion(self):
-		return self.get_query_params().get('EngineVersion')
-
-	def set_EngineVersion(self,EngineVersion):
-		self.add_query_param('EngineVersion',EngineVersion)
-
-	def get_ResourceGroupId(self):
-		return self.get_query_params().get('ResourceGroupId')
-
-	def set_ResourceGroupId(self,ResourceGroupId):
-		self.add_query_param('ResourceGroupId',ResourceGroupId)
-
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
 
 	def set_SecurityToken(self,SecurityToken):
 		self.add_query_param('SecurityToken',SecurityToken)
-
-	def get_Engine(self):
-		return self.get_query_params().get('Engine')
-
-	def set_Engine(self,Engine):
-		self.add_query_param('Engine',Engine)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -84,9 +66,3 @@ class DescribeParameterTemplatesRequest(RpcRequest):
 
 	def set_InstanceId(self,InstanceId):
 		self.add_query_param('InstanceId',InstanceId)
-
-	def get_CharacterType(self):
-		return self.get_query_params().get('CharacterType')
-
-	def set_CharacterType(self,CharacterType):
-		self.add_query_param('CharacterType',CharacterType)
