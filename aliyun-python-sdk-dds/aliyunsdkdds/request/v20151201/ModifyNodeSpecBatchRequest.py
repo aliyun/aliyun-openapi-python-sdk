@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdds.endpoint import endpoint_data
 
-class CreateNodeRequest(RpcRequest):
+class ModifyNodeSpecBatchRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dds', '2015-12-01', 'CreateNode','Dds')
+		RpcRequest.__init__(self, 'Dds', '2015-12-01', 'ModifyNodeSpecBatch','Dds')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -37,23 +37,17 @@ class CreateNodeRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_NodeType(self):
-		return self.get_query_params().get('NodeType')
-
-	def set_NodeType(self,NodeType):
-		self.add_query_param('NodeType',NodeType)
-
 	def get_ClientToken(self):
 		return self.get_query_params().get('ClientToken')
 
 	def set_ClientToken(self,ClientToken):
 		self.add_query_param('ClientToken',ClientToken)
 
-	def get_ReadonlyReplicas(self):
-		return self.get_query_params().get('ReadonlyReplicas')
+	def get_NodesInfo(self):
+		return self.get_query_params().get('NodesInfo')
 
-	def set_ReadonlyReplicas(self,ReadonlyReplicas):
-		self.add_query_param('ReadonlyReplicas',ReadonlyReplicas)
+	def set_NodesInfo(self,NodesInfo):
+		self.add_query_param('NodesInfo',NodesInfo)
 
 	def get_CouponNo(self):
 		return self.get_query_params().get('CouponNo')
@@ -61,17 +55,17 @@ class CreateNodeRequest(RpcRequest):
 	def set_CouponNo(self,CouponNo):
 		self.add_query_param('CouponNo',CouponNo)
 
-	def get_NodeClass(self):
-		return self.get_query_params().get('NodeClass')
-
-	def set_NodeClass(self,NodeClass):
-		self.add_query_param('NodeClass',NodeClass)
-
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
 
 	def set_SecurityToken(self,SecurityToken):
 		self.add_query_param('SecurityToken',SecurityToken)
+
+	def get_EffectiveTime(self):
+		return self.get_query_params().get('EffectiveTime')
+
+	def set_EffectiveTime(self,EffectiveTime):
+		self.add_query_param('EffectiveTime',EffectiveTime)
 
 	def get_DBInstanceId(self):
 		return self.get_query_params().get('DBInstanceId')
@@ -103,12 +97,6 @@ class CreateNodeRequest(RpcRequest):
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
-	def get_NodeStorage(self):
-		return self.get_query_params().get('NodeStorage')
-
-	def set_NodeStorage(self,NodeStorage):
-		self.add_query_param('NodeStorage',NodeStorage)
-
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
 
@@ -120,3 +108,9 @@ class CreateNodeRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_OrderType(self):
+		return self.get_query_params().get('OrderType')
+
+	def set_OrderType(self,OrderType):
+		self.add_query_param('OrderType',OrderType)

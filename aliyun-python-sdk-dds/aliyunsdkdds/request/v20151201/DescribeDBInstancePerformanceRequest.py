@@ -23,7 +23,7 @@ from aliyunsdkdds.endpoint import endpoint_data
 class DescribeDBInstancePerformanceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dds', '2015-12-01', 'DescribeDBInstancePerformance')
+		RpcRequest.__init__(self, 'Dds', '2015-12-01', 'DescribeDBInstancePerformance','Dds')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())

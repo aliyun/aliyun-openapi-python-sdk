@@ -23,7 +23,7 @@ from aliyunsdkdds.endpoint import endpoint_data
 class ModifyDBInstanceTDERequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dds', '2015-12-01', 'ModifyDBInstanceTDE')
+		RpcRequest.__init__(self, 'Dds', '2015-12-01', 'ModifyDBInstanceTDE','Dds')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
