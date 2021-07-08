@@ -43,6 +43,12 @@ class CreateClusterRequest(RpcRequest):
 	def set_ClusterName(self,ClusterName):
 		self.add_query_param('ClusterName',ClusterName)
 
+	def get_ResourceGroupId(self):
+		return self.get_query_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self,ResourceGroupId):
+		self.add_query_param('ResourceGroupId',ResourceGroupId)
+
 	def get_Password(self):
 		return self.get_query_params().get('Password')
 

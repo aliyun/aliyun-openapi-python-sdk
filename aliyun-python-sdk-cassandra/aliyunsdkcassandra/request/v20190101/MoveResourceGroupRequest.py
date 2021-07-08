@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcassandra.endpoint import endpoint_data
 
-class AllocatePublicContactPointsRequest(RpcRequest):
+class MoveResourceGroupRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cassandra', '2019-01-01', 'AllocatePublicContactPoints','Cassandra')
+		RpcRequest.__init__(self, 'Cassandra', '2019-01-01', 'MoveResourceGroup','Cassandra')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,20 +31,14 @@ class AllocatePublicContactPointsRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_ClientToken(self):
-		return self.get_query_params().get('ClientToken')
-
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
-
-	def get_DataCenterId(self):
-		return self.get_query_params().get('DataCenterId')
-
-	def set_DataCenterId(self,DataCenterId):
-		self.add_query_param('DataCenterId',DataCenterId)
-
 	def get_ClusterId(self):
 		return self.get_query_params().get('ClusterId')
 
 	def set_ClusterId(self,ClusterId):
 		self.add_query_param('ClusterId',ClusterId)
+
+	def get_NewResourceGroupId(self):
+		return self.get_query_params().get('NewResourceGroupId')
+
+	def set_NewResourceGroupId(self,NewResourceGroupId):
+		self.add_query_param('NewResourceGroupId',NewResourceGroupId)
