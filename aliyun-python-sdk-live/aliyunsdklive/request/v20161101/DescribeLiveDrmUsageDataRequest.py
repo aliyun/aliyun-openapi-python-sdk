@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdklive.endpoint import endpoint_data
 
-class DescribeLiveRealtimeDeliveryAccRequest(RpcRequest):
+class DescribeLiveDrmUsageDataRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'live', '2016-11-01', 'DescribeLiveRealtimeDeliveryAcc','live')
+		RpcRequest.__init__(self, 'live', '2016-11-01', 'DescribeLiveDrmUsageData','live')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,17 +31,17 @@ class DescribeLiveRealtimeDeliveryAccRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_Project(self):
-		return self.get_query_params().get('Project')
-
-	def set_Project(self,Project):
-		self.add_query_param('Project',Project)
-
 	def get_StartTime(self):
 		return self.get_query_params().get('StartTime')
 
 	def set_StartTime(self,StartTime):
 		self.add_query_param('StartTime',StartTime)
+
+	def get_SplitBy(self):
+		return self.get_query_params().get('SplitBy')
+
+	def set_SplitBy(self,SplitBy):
+		self.add_query_param('SplitBy',SplitBy)
 
 	def get_DomainName(self):
 		return self.get_query_params().get('DomainName')
@@ -66,9 +66,3 @@ class DescribeLiveRealtimeDeliveryAccRequest(RpcRequest):
 
 	def set_Interval(self,Interval):
 		self.add_query_param('Interval',Interval)
-
-	def get_LogStore(self):
-		return self.get_query_params().get('LogStore')
-
-	def set_LogStore(self,LogStore):
-		self.add_query_param('LogStore',LogStore)

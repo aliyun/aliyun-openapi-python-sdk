@@ -20,28 +20,34 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdklive.endpoint import endpoint_data
 
-class DescribeLiveRealtimeDeliveryAccRequest(RpcRequest):
+class UpdateLivePullStreamInfoConfigRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'live', '2016-11-01', 'DescribeLiveRealtimeDeliveryAcc','live')
-		self.set_method('POST')
+		RpcRequest.__init__(self, 'live', '2016-11-01', 'UpdateLivePullStreamInfoConfig','live')
+		self.set_method('GET')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_Project(self):
-		return self.get_query_params().get('Project')
-
-	def set_Project(self,Project):
-		self.add_query_param('Project',Project)
-
 	def get_StartTime(self):
 		return self.get_query_params().get('StartTime')
 
 	def set_StartTime(self,StartTime):
 		self.add_query_param('StartTime',StartTime)
+
+	def get_AppName(self):
+		return self.get_query_params().get('AppName')
+
+	def set_AppName(self,AppName):
+		self.add_query_param('AppName',AppName)
+
+	def get_StreamName(self):
+		return self.get_query_params().get('StreamName')
+
+	def set_StreamName(self,StreamName):
+		self.add_query_param('StreamName',StreamName)
 
 	def get_DomainName(self):
 		return self.get_query_params().get('DomainName')
@@ -61,14 +67,8 @@ class DescribeLiveRealtimeDeliveryAccRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_Interval(self):
-		return self.get_query_params().get('Interval')
+	def get_SourceUrl(self):
+		return self.get_query_params().get('SourceUrl')
 
-	def set_Interval(self,Interval):
-		self.add_query_param('Interval',Interval)
-
-	def get_LogStore(self):
-		return self.get_query_params().get('LogStore')
-
-	def set_LogStore(self,LogStore):
-		self.add_query_param('LogStore',LogStore)
+	def set_SourceUrl(self,SourceUrl):
+		self.add_query_param('SourceUrl',SourceUrl)
