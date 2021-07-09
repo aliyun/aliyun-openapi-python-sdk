@@ -25,86 +25,73 @@ class UpdateDevopsProjectTaskRequest(RpcRequest):
 		RpcRequest.__init__(self, 'devops-rdc', '2020-03-03', 'UpdateDevopsProjectTask')
 		self.set_method('POST')
 
-	def get_Note(self):
+	def get_Note(self): # String
 		return self.get_body_params().get('Note')
 
-	def set_Note(self,Note):
+	def set_Note(self, Note):  # String
 		self.add_body_params('Note', Note)
-
-	def get_Visible(self):
+	def get_Visible(self): # String
 		return self.get_body_params().get('Visible')
 
-	def set_Visible(self,Visible):
+	def set_Visible(self, Visible):  # String
 		self.add_body_params('Visible', Visible)
-
-	def get_ExecutorId(self):
+	def get_ExecutorId(self): # String
 		return self.get_body_params().get('ExecutorId')
 
-	def set_ExecutorId(self,ExecutorId):
+	def set_ExecutorId(self, ExecutorId):  # String
 		self.add_body_params('ExecutorId', ExecutorId)
-
-	def get_TaskFlowStatusId(self):
+	def get_TaskFlowStatusId(self): # String
 		return self.get_body_params().get('TaskFlowStatusId')
 
-	def set_TaskFlowStatusId(self,TaskFlowStatusId):
+	def set_TaskFlowStatusId(self, TaskFlowStatusId):  # String
 		self.add_body_params('TaskFlowStatusId', TaskFlowStatusId)
-
-	def get_ScenarioFiieldConfigId(self):
+	def get_ScenarioFiieldConfigId(self): # String
 		return self.get_body_params().get('ScenarioFiieldConfigId')
 
-	def set_ScenarioFiieldConfigId(self,ScenarioFiieldConfigId):
+	def set_ScenarioFiieldConfigId(self, ScenarioFiieldConfigId):  # String
 		self.add_body_params('ScenarioFiieldConfigId', ScenarioFiieldConfigId)
-
-	def get_StartDate(self):
+	def get_StartDate(self): # String
 		return self.get_body_params().get('StartDate')
 
-	def set_StartDate(self,StartDate):
+	def set_StartDate(self, StartDate):  # String
 		self.add_body_params('StartDate', StartDate)
-
-	def get_Priority(self):
+	def get_Priority(self): # Integer
 		return self.get_body_params().get('Priority')
 
-	def set_Priority(self,Priority):
+	def set_Priority(self, Priority):  # Integer
 		self.add_body_params('Priority', Priority)
-
-	def get_ParentTaskId(self):
+	def get_ParentTaskId(self): # String
 		return self.get_body_params().get('ParentTaskId')
 
-	def set_ParentTaskId(self,ParentTaskId):
+	def set_ParentTaskId(self, ParentTaskId):  # String
 		self.add_body_params('ParentTaskId', ParentTaskId)
-
-	def get_OrgId(self):
+	def get_OrgId(self): # String
 		return self.get_body_params().get('OrgId')
 
-	def set_OrgId(self,OrgId):
+	def set_OrgId(self, OrgId):  # String
 		self.add_body_params('OrgId', OrgId)
-
-	def get_Content(self):
+	def get_Content(self): # String
 		return self.get_body_params().get('Content')
 
-	def set_Content(self,Content):
+	def set_Content(self, Content):  # String
 		self.add_body_params('Content', Content)
-
-	def get_SprintId(self):
+	def get_SprintId(self): # String
 		return self.get_body_params().get('SprintId')
 
-	def set_SprintId(self,SprintId):
+	def set_SprintId(self, SprintId):  # String
 		self.add_body_params('SprintId', SprintId)
-
-	def get_DueDate(self):
+	def get_DueDate(self): # String
 		return self.get_body_params().get('DueDate')
 
-	def set_DueDate(self,DueDate):
+	def set_DueDate(self, DueDate):  # String
 		self.add_body_params('DueDate', DueDate)
-
-	def get_ProjectId(self):
+	def get_ProjectId(self): # String
 		return self.get_body_params().get('ProjectId')
 
-	def set_ProjectId(self,ProjectId):
+	def set_ProjectId(self, ProjectId):  # String
 		self.add_body_params('ProjectId', ProjectId)
-
-	def get_TaskId(self):
+	def get_TaskId(self): # String
 		return self.get_body_params().get('TaskId')
 
-	def set_TaskId(self,TaskId):
+	def set_TaskId(self, TaskId):  # String
 		self.add_body_params('TaskId', TaskId)

@@ -25,44 +25,38 @@ class CreateDevopsProjectSprintRequest(RpcRequest):
 		RpcRequest.__init__(self, 'devops-rdc', '2020-03-03', 'CreateDevopsProjectSprint')
 		self.set_method('POST')
 
-	def get_ExecutorId(self):
+	def get_ExecutorId(self): # String
 		return self.get_body_params().get('ExecutorId')
 
-	def set_ExecutorId(self,ExecutorId):
+	def set_ExecutorId(self, ExecutorId):  # String
 		self.add_body_params('ExecutorId', ExecutorId)
-
-	def get_Description(self):
+	def get_Description(self): # String
 		return self.get_body_params().get('Description')
 
-	def set_Description(self,Description):
+	def set_Description(self, Description):  # String
 		self.add_body_params('Description', Description)
-
-	def get_StartDate(self):
+	def get_StartDate(self): # String
 		return self.get_body_params().get('StartDate')
 
-	def set_StartDate(self,StartDate):
+	def set_StartDate(self, StartDate):  # String
 		self.add_body_params('StartDate', StartDate)
-
-	def get_OrgId(self):
+	def get_OrgId(self): # String
 		return self.get_body_params().get('OrgId')
 
-	def set_OrgId(self,OrgId):
+	def set_OrgId(self, OrgId):  # String
 		self.add_body_params('OrgId', OrgId)
-
-	def get_DueDate(self):
+	def get_DueDate(self): # String
 		return self.get_body_params().get('DueDate')
 
-	def set_DueDate(self,DueDate):
+	def set_DueDate(self, DueDate):  # String
 		self.add_body_params('DueDate', DueDate)
-
-	def get_Name(self):
+	def get_Name(self): # String
 		return self.get_body_params().get('Name')
 
-	def set_Name(self,Name):
+	def set_Name(self, Name):  # String
 		self.add_body_params('Name', Name)
-
-	def get_ProjectId(self):
+	def get_ProjectId(self): # String
 		return self.get_body_params().get('ProjectId')
 
-	def set_ProjectId(self,ProjectId):
+	def set_ProjectId(self, ProjectId):  # String
 		self.add_body_params('ProjectId', ProjectId)

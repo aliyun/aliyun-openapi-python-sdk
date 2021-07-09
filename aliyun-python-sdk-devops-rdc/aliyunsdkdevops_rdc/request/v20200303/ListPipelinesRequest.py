@@ -25,74 +25,63 @@ class ListPipelinesRequest(RpcRequest):
 		RpcRequest.__init__(self, 'devops-rdc', '2020-03-03', 'ListPipelines')
 		self.set_method('POST')
 
-	def get_PipelineName(self):
+	def get_PipelineName(self): # String
 		return self.get_body_params().get('PipelineName')
 
-	def set_PipelineName(self,PipelineName):
+	def set_PipelineName(self, PipelineName):  # String
 		self.add_body_params('PipelineName', PipelineName)
-
-	def get_ResultStatusList(self):
+	def get_ResultStatusList(self): # String
 		return self.get_body_params().get('ResultStatusList')
 
-	def set_ResultStatusList(self,ResultStatusList):
+	def set_ResultStatusList(self, ResultStatusList):  # String
 		self.add_body_params('ResultStatusList', ResultStatusList)
-
-	def get_Creators(self):
+	def get_Creators(self): # String
 		return self.get_body_params().get('Creators')
 
-	def set_Creators(self,Creators):
+	def set_Creators(self, Creators):  # String
 		self.add_body_params('Creators', Creators)
-
-	def get_ExecuteEndTime(self):
+	def get_ExecuteEndTime(self): # String
 		return self.get_body_params().get('ExecuteEndTime')
 
-	def set_ExecuteEndTime(self,ExecuteEndTime):
+	def set_ExecuteEndTime(self, ExecuteEndTime):  # String
 		self.add_body_params('ExecuteEndTime', ExecuteEndTime)
-
-	def get_UserPk(self):
+	def get_UserPk(self): # String
 		return self.get_body_params().get('UserPk')
 
-	def set_UserPk(self,UserPk):
+	def set_UserPk(self, UserPk):  # String
 		self.add_body_params('UserPk', UserPk)
-
-	def get_OrgId(self):
+	def get_OrgId(self): # String
 		return self.get_query_params().get('OrgId')
 
-	def set_OrgId(self,OrgId):
-		self.add_query_param('OrgId',OrgId)
-
-	def get_CreateStartTime(self):
+	def set_OrgId(self, OrgId):  # String
+		self.add_query_param('OrgId', OrgId)
+	def get_CreateStartTime(self): # String
 		return self.get_body_params().get('CreateStartTime')
 
-	def set_CreateStartTime(self,CreateStartTime):
+	def set_CreateStartTime(self, CreateStartTime):  # String
 		self.add_body_params('CreateStartTime', CreateStartTime)
-
-	def get_Operators(self):
+	def get_Operators(self): # String
 		return self.get_body_params().get('Operators')
 
-	def set_Operators(self,Operators):
+	def set_Operators(self, Operators):  # String
 		self.add_body_params('Operators', Operators)
-
-	def get_PageSize(self):
+	def get_PageSize(self): # Integer
 		return self.get_body_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
+	def set_PageSize(self, PageSize):  # Integer
 		self.add_body_params('PageSize', PageSize)
-
-	def get_ExecuteStartTime(self):
+	def get_ExecuteStartTime(self): # String
 		return self.get_body_params().get('ExecuteStartTime')
 
-	def set_ExecuteStartTime(self,ExecuteStartTime):
+	def set_ExecuteStartTime(self, ExecuteStartTime):  # String
 		self.add_body_params('ExecuteStartTime', ExecuteStartTime)
-
-	def get_PageStart(self):
+	def get_PageStart(self): # Integer
 		return self.get_body_params().get('PageStart')
 
-	def set_PageStart(self,PageStart):
+	def set_PageStart(self, PageStart):  # Integer
 		self.add_body_params('PageStart', PageStart)
-
-	def get_CreateEndTime(self):
+	def get_CreateEndTime(self): # String
 		return self.get_body_params().get('CreateEndTime')
 
-	def set_CreateEndTime(self,CreateEndTime):
+	def set_CreateEndTime(self, CreateEndTime):  # String
 		self.add_body_params('CreateEndTime', CreateEndTime)

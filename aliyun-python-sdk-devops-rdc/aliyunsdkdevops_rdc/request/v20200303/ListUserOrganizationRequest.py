@@ -25,8 +25,8 @@ class ListUserOrganizationRequest(RpcRequest):
 		RpcRequest.__init__(self, 'devops-rdc', '2020-03-03', 'ListUserOrganization')
 		self.set_method('POST')
 
-	def get_RealPk(self):
+	def get_RealPk(self): # String
 		return self.get_body_params().get('RealPk')
 
-	def set_RealPk(self,RealPk):
+	def set_RealPk(self, RealPk):  # String
 		self.add_body_params('RealPk', RealPk)

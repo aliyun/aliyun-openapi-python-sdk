@@ -25,26 +25,23 @@ class CreateDevopsOrganizationRequest(RpcRequest):
 		RpcRequest.__init__(self, 'devops-rdc', '2020-03-03', 'CreateDevopsOrganization')
 		self.set_method('POST')
 
-	def get_OrgName(self):
+	def get_OrgName(self): # String
 		return self.get_body_params().get('OrgName')
 
-	def set_OrgName(self,OrgName):
+	def set_OrgName(self, OrgName):  # String
 		self.add_body_params('OrgName', OrgName)
-
-	def get_Source(self):
+	def get_Source(self): # String
 		return self.get_body_params().get('Source')
 
-	def set_Source(self,Source):
+	def set_Source(self, Source):  # String
 		self.add_body_params('Source', Source)
-
-	def get_RealPk(self):
+	def get_RealPk(self): # String
 		return self.get_body_params().get('RealPk')
 
-	def set_RealPk(self,RealPk):
+	def set_RealPk(self, RealPk):  # String
 		self.add_body_params('RealPk', RealPk)
-
-	def get_DesiredMemberCount(self):
+	def get_DesiredMemberCount(self): # Integer
 		return self.get_body_params().get('DesiredMemberCount')
 
-	def set_DesiredMemberCount(self,DesiredMemberCount):
+	def set_DesiredMemberCount(self, DesiredMemberCount):  # Integer
 		self.add_body_params('DesiredMemberCount', DesiredMemberCount)

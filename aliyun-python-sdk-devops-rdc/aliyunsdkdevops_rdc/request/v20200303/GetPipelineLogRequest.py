@@ -25,26 +25,23 @@ class GetPipelineLogRequest(RpcRequest):
 		RpcRequest.__init__(self, 'devops-rdc', '2020-03-03', 'GetPipelineLog')
 		self.set_method('POST')
 
-	def get_UserPk(self):
+	def get_UserPk(self): # String
 		return self.get_body_params().get('UserPk')
 
-	def set_UserPk(self,UserPk):
+	def set_UserPk(self, UserPk):  # String
 		self.add_body_params('UserPk', UserPk)
-
-	def get_OrgId(self):
+	def get_OrgId(self): # String
 		return self.get_body_params().get('OrgId')
 
-	def set_OrgId(self,OrgId):
+	def set_OrgId(self, OrgId):  # String
 		self.add_body_params('OrgId', OrgId)
-
-	def get_PipelineId(self):
+	def get_PipelineId(self): # Long
 		return self.get_body_params().get('PipelineId')
 
-	def set_PipelineId(self,PipelineId):
+	def set_PipelineId(self, PipelineId):  # Long
 		self.add_body_params('PipelineId', PipelineId)
-
-	def get_JobId(self):
+	def get_JobId(self): # Long
 		return self.get_body_params().get('JobId')
 
-	def set_JobId(self,JobId):
+	def set_JobId(self, JobId):  # Long
 		self.add_body_params('JobId', JobId)

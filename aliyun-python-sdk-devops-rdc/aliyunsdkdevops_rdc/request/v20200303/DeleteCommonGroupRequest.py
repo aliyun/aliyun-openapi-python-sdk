@@ -25,20 +25,18 @@ class DeleteCommonGroupRequest(RpcRequest):
 		RpcRequest.__init__(self, 'devops-rdc', '2020-03-03', 'DeleteCommonGroup')
 		self.set_method('POST')
 
-	def get_ProjectId(self):
+	def get_ProjectId(self): # String
 		return self.get_body_params().get('ProjectId')
 
-	def set_ProjectId(self,ProjectId):
+	def set_ProjectId(self, ProjectId):  # String
 		self.add_body_params('ProjectId', ProjectId)
-
-	def get_CommonGroupId(self):
+	def get_CommonGroupId(self): # String
 		return self.get_body_params().get('CommonGroupId')
 
-	def set_CommonGroupId(self,CommonGroupId):
+	def set_CommonGroupId(self, CommonGroupId):  # String
 		self.add_body_params('CommonGroupId', CommonGroupId)
-
-	def get_OrgId(self):
+	def get_OrgId(self): # String
 		return self.get_body_params().get('OrgId')
 
-	def set_OrgId(self,OrgId):
+	def set_OrgId(self, OrgId):  # String
 		self.add_body_params('OrgId', OrgId)

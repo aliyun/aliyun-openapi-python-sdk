@@ -25,14 +25,13 @@ class ListDevopsProjectTaskFlowStatusRequest(RpcRequest):
 		RpcRequest.__init__(self, 'devops-rdc', '2020-03-03', 'ListDevopsProjectTaskFlowStatus')
 		self.set_method('POST')
 
-	def get_TaskFlowId(self):
+	def get_TaskFlowId(self): # String
 		return self.get_body_params().get('TaskFlowId')
 
-	def set_TaskFlowId(self,TaskFlowId):
+	def set_TaskFlowId(self, TaskFlowId):  # String
 		self.add_body_params('TaskFlowId', TaskFlowId)
-
-	def get_OrgId(self):
+	def get_OrgId(self): # String
 		return self.get_body_params().get('OrgId')
 
-	def set_OrgId(self,OrgId):
+	def set_OrgId(self, OrgId):  # String
 		self.add_body_params('OrgId', OrgId)

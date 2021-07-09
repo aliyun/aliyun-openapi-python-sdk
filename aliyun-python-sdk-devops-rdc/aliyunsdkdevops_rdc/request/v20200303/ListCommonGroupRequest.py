@@ -25,26 +25,23 @@ class ListCommonGroupRequest(RpcRequest):
 		RpcRequest.__init__(self, 'devops-rdc', '2020-03-03', 'ListCommonGroup')
 		self.set_method('POST')
 
-	def get_All(self):
+	def get_All(self): # Boolean
 		return self.get_body_params().get('All')
 
-	def set_All(self,All):
+	def set_All(self, All):  # Boolean
 		self.add_body_params('All', All)
-
-	def get_SmartGroupId(self):
+	def get_SmartGroupId(self): # String
 		return self.get_body_params().get('SmartGroupId')
 
-	def set_SmartGroupId(self,SmartGroupId):
+	def set_SmartGroupId(self, SmartGroupId):  # String
 		self.add_body_params('SmartGroupId', SmartGroupId)
-
-	def get_ProjectId(self):
+	def get_ProjectId(self): # String
 		return self.get_body_params().get('ProjectId')
 
-	def set_ProjectId(self,ProjectId):
+	def set_ProjectId(self, ProjectId):  # String
 		self.add_body_params('ProjectId', ProjectId)
-
-	def get_OrgId(self):
+	def get_OrgId(self): # String
 		return self.get_body_params().get('OrgId')
 
-	def set_OrgId(self,OrgId):
+	def set_OrgId(self, OrgId):  # String
 		self.add_body_params('OrgId', OrgId)

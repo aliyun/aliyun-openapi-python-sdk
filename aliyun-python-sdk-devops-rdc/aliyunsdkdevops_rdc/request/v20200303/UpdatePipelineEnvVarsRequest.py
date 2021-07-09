@@ -19,19 +19,24 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class GetLastWorkspaceRequest(RpcRequest):
+class UpdatePipelineEnvVarsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'devops-rdc', '2020-03-03', 'GetLastWorkspace')
+		RpcRequest.__init__(self, 'devops-rdc', '2020-03-03', 'UpdatePipelineEnvVars')
 		self.set_method('POST')
 
-	def get_RealPk(self): # String
-		return self.get_body_params().get('RealPk')
+	def get_EnvVars(self): # String
+		return self.get_query_params().get('EnvVars')
 
-	def set_RealPk(self, RealPk):  # String
-		self.add_body_params('RealPk', RealPk)
+	def set_EnvVars(self, EnvVars):  # String
+		self.add_query_param('EnvVars', EnvVars)
 	def get_OrgId(self): # String
-		return self.get_body_params().get('OrgId')
+		return self.get_query_params().get('OrgId')
 
 	def set_OrgId(self, OrgId):  # String
-		self.add_body_params('OrgId', OrgId)
+		self.add_query_param('OrgId', OrgId)
+	def get_PipelineId(self): # Long
+		return self.get_query_params().get('PipelineId')
+
+	def set_PipelineId(self, PipelineId):  # Long
+		self.add_query_param('PipelineId', PipelineId)

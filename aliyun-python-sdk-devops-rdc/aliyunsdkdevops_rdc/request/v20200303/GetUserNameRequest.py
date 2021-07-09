@@ -25,14 +25,13 @@ class GetUserNameRequest(RpcRequest):
 		RpcRequest.__init__(self, 'devops-rdc', '2020-03-03', 'GetUserName')
 		self.set_method('POST')
 
-	def get_UserId(self):
+	def get_UserId(self): # String
 		return self.get_body_params().get('UserId')
 
-	def set_UserId(self,UserId):
+	def set_UserId(self, UserId):  # String
 		self.add_body_params('UserId', UserId)
-
-	def get_OrgId(self):
+	def get_OrgId(self): # String
 		return self.get_body_params().get('OrgId')
 
-	def set_OrgId(self,OrgId):
+	def set_OrgId(self, OrgId):  # String
 		self.add_body_params('OrgId', OrgId)

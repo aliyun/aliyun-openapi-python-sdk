@@ -19,19 +19,24 @@
 
 from aliyunsdkcore.request import RpcRequest
 
-class GetLastWorkspaceRequest(RpcRequest):
+class ListPipelineTemplatesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'devops-rdc', '2020-03-03', 'GetLastWorkspace')
-		self.set_method('POST')
+		RpcRequest.__init__(self, 'devops-rdc', '2020-03-03', 'ListPipelineTemplates')
+		self.set_method('GET')
 
-	def get_RealPk(self): # String
-		return self.get_body_params().get('RealPk')
+	def get_PageStart(self): # Integer
+		return self.get_query_params().get('PageStart')
 
-	def set_RealPk(self, RealPk):  # String
-		self.add_body_params('RealPk', RealPk)
+	def set_PageStart(self, PageStart):  # Integer
+		self.add_query_param('PageStart', PageStart)
+	def get_PageNum(self): # Integer
+		return self.get_query_params().get('PageNum')
+
+	def set_PageNum(self, PageNum):  # Integer
+		self.add_query_param('PageNum', PageNum)
 	def get_OrgId(self): # String
-		return self.get_body_params().get('OrgId')
+		return self.get_query_params().get('OrgId')
 
 	def set_OrgId(self, OrgId):  # String
-		self.add_body_params('OrgId', OrgId)
+		self.add_query_param('OrgId', OrgId)

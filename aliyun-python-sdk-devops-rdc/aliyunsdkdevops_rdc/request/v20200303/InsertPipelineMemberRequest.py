@@ -25,32 +25,28 @@ class InsertPipelineMemberRequest(RpcRequest):
 		RpcRequest.__init__(self, 'devops-rdc', '2020-03-03', 'InsertPipelineMember')
 		self.set_method('POST')
 
-	def get_RoleName(self):
+	def get_RoleName(self): # String
 		return self.get_body_params().get('RoleName')
 
-	def set_RoleName(self,RoleName):
+	def set_RoleName(self, RoleName):  # String
 		self.add_body_params('RoleName', RoleName)
-
-	def get_UserPk(self):
+	def get_UserPk(self): # String
 		return self.get_body_params().get('UserPk')
 
-	def set_UserPk(self,UserPk):
+	def set_UserPk(self, UserPk):  # String
 		self.add_body_params('UserPk', UserPk)
-
-	def get_UserId(self):
+	def get_UserId(self): # String
 		return self.get_body_params().get('UserId')
 
-	def set_UserId(self,UserId):
+	def set_UserId(self, UserId):  # String
 		self.add_body_params('UserId', UserId)
-
-	def get_OrgId(self):
+	def get_OrgId(self): # String
 		return self.get_query_params().get('OrgId')
 
-	def set_OrgId(self,OrgId):
-		self.add_query_param('OrgId',OrgId)
-
-	def get_PipelineId(self):
+	def set_OrgId(self, OrgId):  # String
+		self.add_query_param('OrgId', OrgId)
+	def get_PipelineId(self): # Long
 		return self.get_query_params().get('PipelineId')
 
-	def set_PipelineId(self,PipelineId):
-		self.add_query_param('PipelineId',PipelineId)
+	def set_PipelineId(self, PipelineId):  # Long
+		self.add_query_param('PipelineId', PipelineId)

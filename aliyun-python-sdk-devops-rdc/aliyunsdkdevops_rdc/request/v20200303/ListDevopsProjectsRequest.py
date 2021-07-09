@@ -25,32 +25,28 @@ class ListDevopsProjectsRequest(RpcRequest):
 		RpcRequest.__init__(self, 'devops-rdc', '2020-03-03', 'ListDevopsProjects')
 		self.set_method('POST')
 
-	def get_SelectBy(self):
+	def get_SelectBy(self): # String
 		return self.get_body_params().get('SelectBy')
 
-	def set_SelectBy(self,SelectBy):
+	def set_SelectBy(self, SelectBy):  # String
 		self.add_body_params('SelectBy', SelectBy)
-
-	def get_PageSize(self):
+	def get_PageSize(self): # Integer
 		return self.get_body_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
+	def set_PageSize(self, PageSize):  # Integer
 		self.add_body_params('PageSize', PageSize)
-
-	def get_OrderBy(self):
+	def get_OrderBy(self): # String
 		return self.get_body_params().get('OrderBy')
 
-	def set_OrderBy(self,OrderBy):
+	def set_OrderBy(self, OrderBy):  # String
 		self.add_body_params('OrderBy', OrderBy)
-
-	def get_OrgId(self):
+	def get_OrgId(self): # String
 		return self.get_body_params().get('OrgId')
 
-	def set_OrgId(self,OrgId):
+	def set_OrgId(self, OrgId):  # String
 		self.add_body_params('OrgId', OrgId)
-
-	def get_PageToken(self):
+	def get_PageToken(self): # String
 		return self.get_body_params().get('PageToken')
 
-	def set_PageToken(self,PageToken):
+	def set_PageToken(self, PageToken):  # String
 		self.add_body_params('PageToken', PageToken)
