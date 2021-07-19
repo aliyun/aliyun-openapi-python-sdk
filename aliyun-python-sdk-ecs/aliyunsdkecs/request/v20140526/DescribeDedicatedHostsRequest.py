@@ -67,6 +67,12 @@ class DescribeDedicatedHostsRequest(RpcRequest):
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
 
+	def get_DedicatedHostClusterId(self):
+		return self.get_query_params().get('DedicatedHostClusterId')
+
+	def set_DedicatedHostClusterId(self,DedicatedHostClusterId):
+		self.add_query_param('DedicatedHostClusterId',DedicatedHostClusterId)
+
 	def get_DedicatedHostType(self):
 		return self.get_query_params().get('DedicatedHostType')
 

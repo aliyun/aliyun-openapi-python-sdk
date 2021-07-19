@@ -395,6 +395,12 @@ class RunInstancesRequest(RpcRequest):
 			if Ipv6Addresss[depth1] is not None:
 				self.add_query_param('Ipv6Address.' + str(depth1 + 1) , Ipv6Addresss[depth1])
 
+	def get_SecurityOptionsConfidentialComputingMode(self):
+		return self.get_query_params().get('SecurityOptions.ConfidentialComputingMode')
+
+	def set_SecurityOptionsConfidentialComputingMode(self,SecurityOptionsConfidentialComputingMode):
+		self.add_query_param('SecurityOptions.ConfidentialComputingMode',SecurityOptionsConfidentialComputingMode)
+
 	def get_ClientToken(self):
 		return self.get_query_params().get('ClientToken')
 
