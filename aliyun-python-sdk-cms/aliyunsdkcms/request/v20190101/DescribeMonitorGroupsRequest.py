@@ -55,6 +55,12 @@ class DescribeMonitorGroupsRequest(RpcRequest):
 	def set_PageNumber(self,PageNumber):
 		self.add_query_param('PageNumber',PageNumber)
 
+	def get_GroupFounderTagKey(self):
+		return self.get_query_params().get('GroupFounderTagKey')
+
+	def set_GroupFounderTagKey(self,GroupFounderTagKey):
+		self.add_query_param('GroupFounderTagKey',GroupFounderTagKey)
+
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
 
@@ -70,6 +76,12 @@ class DescribeMonitorGroupsRequest(RpcRequest):
 				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tags[depth1].get('Value'))
 			if Tags[depth1].get('Key') is not None:
 				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tags[depth1].get('Key'))
+
+	def get_GroupFounderTagValue(self):
+		return self.get_query_params().get('GroupFounderTagValue')
+
+	def set_GroupFounderTagValue(self,GroupFounderTagValue):
+		self.add_query_param('GroupFounderTagValue',GroupFounderTagValue)
 
 	def get_Keyword(self):
 		return self.get_query_params().get('Keyword')

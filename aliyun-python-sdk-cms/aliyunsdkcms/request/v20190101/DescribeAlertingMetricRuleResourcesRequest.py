@@ -54,3 +54,9 @@ class DescribeAlertingMetricRuleResourcesRequest(RpcRequest):
 
 	def set_RuleId(self,RuleId):
 		self.add_query_param('RuleId',RuleId)
+
+	def get_Dimensions(self):
+		return self.get_query_params().get('Dimensions')
+
+	def set_Dimensions(self,Dimensions):
+		self.add_query_param('Dimensions',Dimensions)
