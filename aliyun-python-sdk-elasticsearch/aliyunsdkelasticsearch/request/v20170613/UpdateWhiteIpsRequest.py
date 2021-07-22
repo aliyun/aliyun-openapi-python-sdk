@@ -32,6 +32,12 @@ class UpdateWhiteIpsRequest(RoaRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_modifyMode(self):
+		return self.get_query_params().get('modifyMode')
+
+	def set_modifyMode(self,modifyMode):
+		self.add_query_param('modifyMode',modifyMode)
+
 	def get_InstanceId(self):
 		return self.get_path_params().get('InstanceId')
 

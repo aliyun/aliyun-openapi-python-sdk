@@ -20,23 +20,17 @@
 from aliyunsdkcore.request import RoaRequest
 from aliyunsdkelasticsearch.endpoint import endpoint_data
 
-class ListInstanceIndicesRequest(RoaRequest):
+class CreateVpcEndpointRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'elasticsearch', '2017-06-13', 'ListInstanceIndices','elasticsearch')
-		self.set_uri_pattern('/openapi/instances/[InstanceId]/indices')
-		self.set_method('GET')
+		RoaRequest.__init__(self, 'elasticsearch', '2017-06-13', 'CreateVpcEndpoint','elasticsearch')
+		self.set_uri_pattern('/openapi/instances/[InstanceId]/vpc-endpoints')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_all(self):
-		return self.get_query_params().get('all')
-
-	def set_all(self,all):
-		self.add_query_param('all',all)
 
 	def get_InstanceId(self):
 		return self.get_path_params().get('InstanceId')
@@ -44,14 +38,14 @@ class ListInstanceIndicesRequest(RoaRequest):
 	def set_InstanceId(self,InstanceId):
 		self.add_path_param('InstanceId',InstanceId)
 
-	def get_isManaged(self):
-		return self.get_query_params().get('isManaged')
+	def get_dryRun(self):
+		return self.get_query_params().get('dryRun')
 
-	def set_isManaged(self,isManaged):
-		self.add_query_param('isManaged',isManaged)
+	def set_dryRun(self,dryRun):
+		self.add_query_param('dryRun',dryRun)
 
-	def get_name(self):
-		return self.get_query_params().get('name')
+	def get_ClientToken(self):
+		return self.get_query_params().get('ClientToken')
 
-	def set_name(self,name):
-		self.add_query_param('name',name)
+	def set_ClientToken(self,ClientToken):
+		self.add_query_param('ClientToken',ClientToken)
