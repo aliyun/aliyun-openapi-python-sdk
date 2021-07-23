@@ -37,6 +37,12 @@ class ListCallDetailRecordsRequest(RpcRequest):
 	def set_ContactId(self,ContactId):
 		self.add_query_param('ContactId',ContactId)
 
+	def get_Criteria(self):
+		return self.get_query_params().get('Criteria')
+
+	def set_Criteria(self,Criteria):
+		self.add_query_param('Criteria',Criteria)
+
 	def get_OrderByField(self):
 		return self.get_query_params().get('OrderByField')
 
@@ -78,6 +84,12 @@ class ListCallDetailRecordsRequest(RpcRequest):
 
 	def set_SortOrder(self,SortOrder):
 		self.add_query_param('SortOrder',SortOrder)
+
+	def get_SatisfactionDescriptionList(self):
+		return self.get_query_params().get('SatisfactionDescriptionList')
+
+	def set_SatisfactionDescriptionList(self,SatisfactionDescriptionList):
+		self.add_query_param('SatisfactionDescriptionList',SatisfactionDescriptionList)
 
 	def get_AgentId(self):
 		return self.get_query_params().get('AgentId')
