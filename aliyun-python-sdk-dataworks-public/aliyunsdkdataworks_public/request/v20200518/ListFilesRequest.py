@@ -84,3 +84,9 @@ class ListFilesRequest(RpcRequest):
 
 	def set_UseType(self,UseType):
 		self.add_body_params('UseType', UseType)
+
+	def get_NodeId(self):
+		return self.get_body_params().get('NodeId')
+
+	def set_NodeId(self,NodeId):
+		self.add_body_params('NodeId', NodeId)

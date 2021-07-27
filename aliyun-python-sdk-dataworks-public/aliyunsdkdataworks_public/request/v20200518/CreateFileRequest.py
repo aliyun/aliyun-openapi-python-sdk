@@ -174,3 +174,9 @@ class CreateFileRequest(RpcRequest):
 
 	def set_AutoParsing(self,AutoParsing):
 		self.add_body_params('AutoParsing', AutoParsing)
+
+	def get_SchedulerType(self):
+		return self.get_body_params().get('SchedulerType')
+
+	def set_SchedulerType(self,SchedulerType):
+		self.add_body_params('SchedulerType', SchedulerType)
