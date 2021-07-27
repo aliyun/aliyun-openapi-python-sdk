@@ -37,6 +37,12 @@ class DescribeImagesRequest(RpcRequest):
 	def set_ActionType(self,ActionType):
 		self.add_query_param('ActionType',ActionType)
 
+	def get_ImageOwnerId(self):
+		return self.get_query_params().get('ImageOwnerId')
+
+	def set_ImageOwnerId(self,ImageOwnerId):
+		self.add_query_param('ImageOwnerId',ImageOwnerId)
+
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
@@ -96,6 +102,12 @@ class DescribeImagesRequest(RpcRequest):
 
 	def set_IsSupportCloudinit(self,IsSupportCloudinit):
 		self.add_query_param('IsSupportCloudinit',IsSupportCloudinit)
+
+	def get_IsPublic(self):
+		return self.get_query_params().get('IsPublic')
+
+	def set_IsPublic(self,IsPublic):
+		self.add_query_param('IsPublic',IsPublic)
 
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')

@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkecs.endpoint import endpoint_data
 
-class ModifyImageSharePermissionRequest(RpcRequest):
+class StartTerminalSessionRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'ModifyImageSharePermission','ecs')
+		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'StartTerminalSession','ecs')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -36,24 +36,6 @@ class ModifyImageSharePermissionRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_ImageId(self):
-		return self.get_query_params().get('ImageId')
-
-	def set_ImageId(self,ImageId):
-		self.add_query_param('ImageId',ImageId)
-
-	def get_IsPublic(self):
-		return self.get_query_params().get('IsPublic')
-
-	def set_IsPublic(self,IsPublic):
-		self.add_query_param('IsPublic',IsPublic)
-
-	def get_LaunchPermission(self):
-		return self.get_query_params().get('LaunchPermission')
-
-	def set_LaunchPermission(self,LaunchPermission):
-		self.add_query_param('LaunchPermission',LaunchPermission)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -73,18 +55,10 @@ class ModifyImageSharePermissionRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_AddAccounts(self):
-		return self.get_query_params().get('AddAccount')
+	def get_InstanceIds(self):
+		return self.get_query_params().get('InstanceId')
 
-	def set_AddAccounts(self, AddAccounts):
-		for depth1 in range(len(AddAccounts)):
-			if AddAccounts[depth1] is not None:
-				self.add_query_param('AddAccount.' + str(depth1 + 1) , AddAccounts[depth1])
-
-	def get_RemoveAccounts(self):
-		return self.get_query_params().get('RemoveAccount')
-
-	def set_RemoveAccounts(self, RemoveAccounts):
-		for depth1 in range(len(RemoveAccounts)):
-			if RemoveAccounts[depth1] is not None:
-				self.add_query_param('RemoveAccount.' + str(depth1 + 1) , RemoveAccounts[depth1])
+	def set_InstanceIds(self, InstanceIds):
+		for depth1 in range(len(InstanceIds)):
+			if InstanceIds[depth1] is not None:
+				self.add_query_param('InstanceId.' + str(depth1 + 1) , InstanceIds[depth1])
