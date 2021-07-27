@@ -74,3 +74,9 @@ class CreateDynamicTagGroupRequest(RpcRequest):
 
 	def set_TagKey(self,TagKey):
 		self.add_query_param('TagKey',TagKey)
+
+	def get_TagRegionId(self):
+		return self.get_query_params().get('TagRegionId')
+
+	def set_TagRegionId(self,TagRegionId):
+		self.add_query_param('TagRegionId',TagRegionId)
