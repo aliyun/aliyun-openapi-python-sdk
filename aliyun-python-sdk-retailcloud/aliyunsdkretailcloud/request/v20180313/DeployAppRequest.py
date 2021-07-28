@@ -23,7 +23,7 @@ from aliyunsdkretailcloud.endpoint import endpoint_data
 class DeployAppRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'retailcloud', '2018-03-13', 'DeployApp')
+		RpcRequest.__init__(self, 'retailcloud', '2018-03-13', 'DeployApp','retailcloud')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -94,6 +94,12 @@ class DeployAppRequest(RpcRequest):
 		for depth1 in range(len(InitContainerImageLists)):
 			if InitContainerImageLists[depth1] is not None:
 				self.add_query_param('InitContainerImageList.' + str(depth1 + 1) , InitContainerImageLists[depth1])
+
+	def get_DefaultPacketOfAppGroup(self):
+		return self.get_query_params().get('DefaultPacketOfAppGroup')
+
+	def set_DefaultPacketOfAppGroup(self,DefaultPacketOfAppGroup):
+		self.add_query_param('DefaultPacketOfAppGroup',DefaultPacketOfAppGroup)
 
 	def get_ArmsFlag(self):
 		return self.get_query_params().get('ArmsFlag')
