@@ -37,11 +37,23 @@ class DescribeEaisRequest(RpcRequest):
 	def set_ElasticAcceleratedInstanceIds(self,ElasticAcceleratedInstanceIds):
 		self.add_query_param('ElasticAcceleratedInstanceIds',ElasticAcceleratedInstanceIds)
 
+	def get_PageNumber(self):
+		return self.get_query_params().get('PageNumber')
+
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)
+
 	def get_InstanceName(self):
 		return self.get_query_params().get('InstanceName')
 
 	def set_InstanceName(self,InstanceName):
 		self.add_query_param('InstanceName',InstanceName)
+
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
 
 	def get_InstanceType(self):
 		return self.get_query_params().get('InstanceType')
