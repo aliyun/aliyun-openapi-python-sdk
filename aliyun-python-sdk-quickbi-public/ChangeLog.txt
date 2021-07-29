@@ -1,3 +1,6 @@
+2021-07-29 Version: 1.6.0
+- Add api ListByUserGroupId, and update DeleteUser Api.
+
 2021-05-19 Version: 1.5.1
 - Fixed enpoint error.
 

@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkquickbi_public.endpoint import endpoint_data
 
-class DeleteUserRequest(RpcRequest):
+class ListByUserGroupIdRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'quickbi-public', '2020-08-01', 'DeleteUser','quickbi')
+		RpcRequest.__init__(self, 'quickbi-public', '2020-07-31', 'ListByUserGroupId','quickbi')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,14 +31,8 @@ class DeleteUserRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_TransferUserId(self):
-		return self.get_query_params().get('TransferUserId')
+	def get_UserGroupIds(self):
+		return self.get_query_params().get('UserGroupIds')
 
-	def set_TransferUserId(self,TransferUserId):
-		self.add_query_param('TransferUserId',TransferUserId)
-
-	def get_UserId(self):
-		return self.get_query_params().get('UserId')
-
-	def set_UserId(self,UserId):
-		self.add_query_param('UserId',UserId)
+	def set_UserGroupIds(self,UserGroupIds):
+		self.add_query_param('UserGroupIds',UserGroupIds)
