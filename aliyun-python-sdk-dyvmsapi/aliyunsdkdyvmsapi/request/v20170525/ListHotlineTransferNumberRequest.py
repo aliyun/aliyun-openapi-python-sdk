@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdyvmsapi.endpoint import endpoint_data
 
-class VoipGetTokenRequest(RpcRequest):
+class ListHotlineTransferNumberRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dyvmsapi', '2017-05-25', 'VoipGetToken','dyvms')
+		RpcRequest.__init__(self, 'Dyvmsapi', '2017-05-25', 'ListHotlineTransferNumber','dyvms')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -37,11 +37,23 @@ class VoipGetTokenRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_VoipId(self):
-		return self.get_query_params().get('VoipId')
+	def get_HotlineNumber(self):
+		return self.get_query_params().get('HotlineNumber')
 
-	def set_VoipId(self,VoipId):
-		self.add_query_param('VoipId',VoipId)
+	def set_HotlineNumber(self,HotlineNumber):
+		self.add_query_param('HotlineNumber',HotlineNumber)
+
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
+
+	def get_QualificationId(self):
+		return self.get_query_params().get('QualificationId')
+
+	def set_QualificationId(self,QualificationId):
+		self.add_query_param('QualificationId',QualificationId)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -55,14 +67,8 @@ class VoipGetTokenRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_DeviceId(self):
-		return self.get_query_params().get('DeviceId')
+	def get_PageNo(self):
+		return self.get_query_params().get('PageNo')
 
-	def set_DeviceId(self,DeviceId):
-		self.add_query_param('DeviceId',DeviceId)
-
-	def get_IsCustomAccount(self):
-		return self.get_query_params().get('IsCustomAccount')
-
-	def set_IsCustomAccount(self,IsCustomAccount):
-		self.add_query_param('IsCustomAccount',IsCustomAccount)
+	def set_PageNo(self,PageNo):
+		self.add_query_param('PageNo',PageNo)

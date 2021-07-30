@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdyvmsapi.endpoint import endpoint_data
 
-class VoipGetTokenRequest(RpcRequest):
+class SendVerificationRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dyvmsapi', '2017-05-25', 'VoipGetToken','dyvms')
+		RpcRequest.__init__(self, 'Dyvmsapi', '2017-05-25', 'SendVerification','dyvms')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -37,11 +37,11 @@ class VoipGetTokenRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_VoipId(self):
-		return self.get_query_params().get('VoipId')
+	def get_VerifyType(self):
+		return self.get_query_params().get('VerifyType')
 
-	def set_VoipId(self,VoipId):
-		self.add_query_param('VoipId',VoipId)
+	def set_VerifyType(self,VerifyType):
+		self.add_query_param('VerifyType',VerifyType)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -55,14 +55,14 @@ class VoipGetTokenRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_DeviceId(self):
-		return self.get_query_params().get('DeviceId')
+	def get_Target(self):
+		return self.get_query_params().get('Target')
 
-	def set_DeviceId(self,DeviceId):
-		self.add_query_param('DeviceId',DeviceId)
+	def set_Target(self,Target):
+		self.add_query_param('Target',Target)
 
-	def get_IsCustomAccount(self):
-		return self.get_query_params().get('IsCustomAccount')
+	def get_BizType(self):
+		return self.get_query_params().get('BizType')
 
-	def set_IsCustomAccount(self,IsCustomAccount):
-		self.add_query_param('IsCustomAccount',IsCustomAccount)
+	def set_BizType(self,BizType):
+		self.add_query_param('BizType',BizType)

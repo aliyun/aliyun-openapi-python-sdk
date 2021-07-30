@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdyvmsapi.endpoint import endpoint_data
 
-class BatchRobotSmartCallRequest(RpcRequest):
+class CreateCallTaskRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dyvmsapi', '2017-05-25', 'BatchRobotSmartCall','dyvms')
+		RpcRequest.__init__(self, 'Dyvmsapi', '2017-05-25', 'CreateCallTask','dyvms')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -37,17 +37,17 @@ class BatchRobotSmartCallRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_EarlyMediaAsr(self):
-		return self.get_query_params().get('EarlyMediaAsr')
+	def get_ScheduleType(self):
+		return self.get_query_params().get('ScheduleType')
 
-	def set_EarlyMediaAsr(self,EarlyMediaAsr):
-		self.add_query_param('EarlyMediaAsr',EarlyMediaAsr)
+	def set_ScheduleType(self,ScheduleType):
+		self.add_query_param('ScheduleType',ScheduleType)
 
-	def get_TtsParamHead(self):
-		return self.get_query_params().get('TtsParamHead')
+	def get_Data(self):
+		return self.get_query_params().get('Data')
 
-	def set_TtsParamHead(self,TtsParamHead):
-		self.add_query_param('TtsParamHead',TtsParamHead)
+	def set_Data(self,Data):
+		self.add_query_param('Data',Data)
 
 	def get_TaskName(self):
 		return self.get_query_params().get('TaskName')
@@ -55,29 +55,23 @@ class BatchRobotSmartCallRequest(RpcRequest):
 	def set_TaskName(self,TaskName):
 		self.add_query_param('TaskName',TaskName)
 
-	def get_TtsParam(self):
-		return self.get_query_params().get('TtsParam')
+	def get_StopTime(self):
+		return self.get_query_params().get('StopTime')
 
-	def set_TtsParam(self,TtsParam):
-		self.add_query_param('TtsParam',TtsParam)
+	def set_StopTime(self,StopTime):
+		self.add_query_param('StopTime',StopTime)
 
-	def get_CalledNumber(self):
-		return self.get_query_params().get('CalledNumber')
+	def get_DataType(self):
+		return self.get_query_params().get('DataType')
 
-	def set_CalledNumber(self,CalledNumber):
-		self.add_query_param('CalledNumber',CalledNumber)
+	def set_DataType(self,DataType):
+		self.add_query_param('DataType',DataType)
 
-	def get_CalledShowNumber(self):
-		return self.get_query_params().get('CalledShowNumber')
+	def get_TemplateName(self):
+		return self.get_query_params().get('TemplateName')
 
-	def set_CalledShowNumber(self,CalledShowNumber):
-		self.add_query_param('CalledShowNumber',CalledShowNumber)
-
-	def get_IsSelfLine(self):
-		return self.get_query_params().get('IsSelfLine')
-
-	def set_IsSelfLine(self,IsSelfLine):
-		self.add_query_param('IsSelfLine',IsSelfLine)
+	def set_TemplateName(self,TemplateName):
+		self.add_query_param('TemplateName',TemplateName)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -85,32 +79,38 @@ class BatchRobotSmartCallRequest(RpcRequest):
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
+	def get_Resource(self):
+		return self.get_query_params().get('Resource')
+
+	def set_Resource(self,Resource):
+		self.add_query_param('Resource',Resource)
+
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_DialogId(self):
-		return self.get_query_params().get('DialogId')
+	def get_ResourceType(self):
+		return self.get_query_params().get('ResourceType')
 
-	def set_DialogId(self,DialogId):
-		self.add_query_param('DialogId',DialogId)
+	def set_ResourceType(self,ResourceType):
+		self.add_query_param('ResourceType',ResourceType)
 
-	def get_ScheduleTime(self):
-		return self.get_query_params().get('ScheduleTime')
+	def get_BizType(self):
+		return self.get_query_params().get('BizType')
 
-	def set_ScheduleTime(self,ScheduleTime):
-		self.add_query_param('ScheduleTime',ScheduleTime)
+	def set_BizType(self,BizType):
+		self.add_query_param('BizType',BizType)
 
-	def get_CorpName(self):
-		return self.get_query_params().get('CorpName')
+	def get_FireTime(self):
+		return self.get_query_params().get('FireTime')
 
-	def set_CorpName(self,CorpName):
-		self.add_query_param('CorpName',CorpName)
+	def set_FireTime(self,FireTime):
+		self.add_query_param('FireTime',FireTime)
 
-	def get_ScheduleCall(self):
-		return self.get_query_params().get('ScheduleCall')
+	def get_TemplateCode(self):
+		return self.get_query_params().get('TemplateCode')
 
-	def set_ScheduleCall(self,ScheduleCall):
-		self.add_query_param('ScheduleCall',ScheduleCall)
+	def set_TemplateCode(self,TemplateCode):
+		self.add_query_param('TemplateCode',TemplateCode)

@@ -24,6 +24,7 @@ class QueryRobotTaskCallListRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Dyvmsapi', '2017-05-25', 'QueryRobotTaskCallList','dyvms')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):

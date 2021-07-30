@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdyvmsapi.endpoint import endpoint_data
 
-class VoipGetTokenRequest(RpcRequest):
+class SetTransferCalleePoolConfigRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dyvmsapi', '2017-05-25', 'VoipGetToken','dyvms')
+		RpcRequest.__init__(self, 'Dyvmsapi', '2017-05-25', 'SetTransferCalleePoolConfig','dyvms')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -37,11 +37,33 @@ class VoipGetTokenRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_VoipId(self):
-		return self.get_query_params().get('VoipId')
+	def get_PhoneNumber(self):
+		return self.get_query_params().get('PhoneNumber')
 
-	def set_VoipId(self,VoipId):
-		self.add_query_param('VoipId',VoipId)
+	def set_PhoneNumber(self,PhoneNumber):
+		self.add_query_param('PhoneNumber',PhoneNumber)
+
+	def get_Detailss(self):
+		return self.get_query_params().get('Details')
+
+	def set_Detailss(self, Detailss):
+		for depth1 in range(len(Detailss)):
+			if Detailss[depth1].get('Caller') is not None:
+				self.add_query_param('Details.' + str(depth1 + 1) + '.Caller', Detailss[depth1].get('Caller'))
+			if Detailss[depth1].get('Called') is not None:
+				self.add_query_param('Details.' + str(depth1 + 1) + '.Called', Detailss[depth1].get('Called'))
+
+	def get_CalledRouteMode(self):
+		return self.get_query_params().get('CalledRouteMode')
+
+	def set_CalledRouteMode(self,CalledRouteMode):
+		self.add_query_param('CalledRouteMode',CalledRouteMode)
+
+	def get_QualificationId(self):
+		return self.get_query_params().get('QualificationId')
+
+	def set_QualificationId(self,QualificationId):
+		self.add_query_param('QualificationId',QualificationId)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -54,15 +76,3 @@ class VoipGetTokenRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
-
-	def get_DeviceId(self):
-		return self.get_query_params().get('DeviceId')
-
-	def set_DeviceId(self,DeviceId):
-		self.add_query_param('DeviceId',DeviceId)
-
-	def get_IsCustomAccount(self):
-		return self.get_query_params().get('IsCustomAccount')
-
-	def set_IsCustomAccount(self,IsCustomAccount):
-		self.add_query_param('IsCustomAccount',IsCustomAccount)

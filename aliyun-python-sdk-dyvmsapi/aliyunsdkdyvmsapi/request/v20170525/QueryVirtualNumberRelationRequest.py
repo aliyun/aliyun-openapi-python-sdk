@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdyvmsapi.endpoint import endpoint_data
 
-class VoipGetTokenRequest(RpcRequest):
+class QueryVirtualNumberRelationRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dyvmsapi', '2017-05-25', 'VoipGetToken','dyvms')
+		RpcRequest.__init__(self, 'Dyvmsapi', '2017-05-25', 'QueryVirtualNumberRelation','dyvms')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,17 +31,47 @@ class VoipGetTokenRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_SpecId(self):
+		return self.get_query_params().get('SpecId')
+
+	def set_SpecId(self,SpecId):
+		self.add_query_param('SpecId',SpecId)
+
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_VoipId(self):
-		return self.get_query_params().get('VoipId')
+	def get_RouteType(self):
+		return self.get_query_params().get('RouteType')
 
-	def set_VoipId(self,VoipId):
-		self.add_query_param('VoipId',VoipId)
+	def set_RouteType(self,RouteType):
+		self.add_query_param('RouteType',RouteType)
+
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
+
+	def get_RelatedNum(self):
+		return self.get_query_params().get('RelatedNum')
+
+	def set_RelatedNum(self,RelatedNum):
+		self.add_query_param('RelatedNum',RelatedNum)
+
+	def get_RegionNameCity(self):
+		return self.get_query_params().get('RegionNameCity')
+
+	def set_RegionNameCity(self,RegionNameCity):
+		self.add_query_param('RegionNameCity',RegionNameCity)
+
+	def get_QualificationId(self):
+		return self.get_query_params().get('QualificationId')
+
+	def set_QualificationId(self,QualificationId):
+		self.add_query_param('QualificationId',QualificationId)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -49,20 +79,26 @@ class VoipGetTokenRequest(RpcRequest):
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
+	def get_ProdCode(self):
+		return self.get_query_params().get('ProdCode')
+
+	def set_ProdCode(self,ProdCode):
+		self.add_query_param('ProdCode',ProdCode)
+
+	def get_PhoneNum(self):
+		return self.get_query_params().get('PhoneNum')
+
+	def set_PhoneNum(self,PhoneNum):
+		self.add_query_param('PhoneNum',PhoneNum)
+
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_DeviceId(self):
-		return self.get_query_params().get('DeviceId')
+	def get_PageNo(self):
+		return self.get_query_params().get('PageNo')
 
-	def set_DeviceId(self,DeviceId):
-		self.add_query_param('DeviceId',DeviceId)
-
-	def get_IsCustomAccount(self):
-		return self.get_query_params().get('IsCustomAccount')
-
-	def set_IsCustomAccount(self,IsCustomAccount):
-		self.add_query_param('IsCustomAccount',IsCustomAccount)
+	def set_PageNo(self,PageNo):
+		self.add_query_param('PageNo',PageNo)

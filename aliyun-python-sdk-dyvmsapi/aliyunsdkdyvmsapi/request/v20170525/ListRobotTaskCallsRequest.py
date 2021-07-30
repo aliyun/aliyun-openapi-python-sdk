@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdyvmsapi.endpoint import endpoint_data
 
-class QueryRobotTaskListRequest(RpcRequest):
+class ListRobotTaskCallsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dyvmsapi', '2017-05-25', 'QueryRobotTaskList','dyvms')
+		RpcRequest.__init__(self, 'Dyvmsapi', '2017-05-25', 'ListRobotTaskCalls','dyvms')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -37,11 +37,23 @@ class QueryRobotTaskListRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_TaskName(self):
-		return self.get_query_params().get('TaskName')
+	def get_Called(self):
+		return self.get_query_params().get('Called')
 
-	def set_TaskName(self,TaskName):
-		self.add_query_param('TaskName',TaskName)
+	def set_Called(self,Called):
+		self.add_query_param('Called',Called)
+
+	def get_DialogCountTo(self):
+		return self.get_query_params().get('DialogCountTo')
+
+	def set_DialogCountTo(self,DialogCountTo):
+		self.add_query_param('DialogCountTo',DialogCountTo)
+
+	def get_DurationFrom(self):
+		return self.get_query_params().get('DurationFrom')
+
+	def set_DurationFrom(self,DurationFrom):
+		self.add_query_param('DurationFrom',DurationFrom)
 
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
@@ -49,11 +61,35 @@ class QueryRobotTaskListRequest(RpcRequest):
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
 
+	def get_TaskId(self):
+		return self.get_query_params().get('TaskId')
+
+	def set_TaskId(self,TaskId):
+		self.add_query_param('TaskId',TaskId)
+
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+
+	def get_DialogCountFrom(self):
+		return self.get_query_params().get('DialogCountFrom')
+
+	def set_DialogCountFrom(self,DialogCountFrom):
+		self.add_query_param('DialogCountFrom',DialogCountFrom)
+
+	def get_DurationTo(self):
+		return self.get_query_params().get('DurationTo')
+
+	def set_DurationTo(self,DurationTo):
+		self.add_query_param('DurationTo',DurationTo)
+
+	def get_HangupDirection(self):
+		return self.get_query_params().get('HangupDirection')
+
+	def set_HangupDirection(self,HangupDirection):
+		self.add_query_param('HangupDirection',HangupDirection)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
@@ -67,14 +103,8 @@ class QueryRobotTaskListRequest(RpcRequest):
 	def set_PageNo(self,PageNo):
 		self.add_query_param('PageNo',PageNo)
 
-	def get_Time(self):
-		return self.get_query_params().get('Time')
+	def get_CallResult(self):
+		return self.get_query_params().get('CallResult')
 
-	def set_Time(self,Time):
-		self.add_query_param('Time',Time)
-
-	def get_Status(self):
-		return self.get_query_params().get('Status')
-
-	def set_Status(self,Status):
-		self.add_query_param('Status',Status)
+	def set_CallResult(self,CallResult):
+		self.add_query_param('CallResult',CallResult)
