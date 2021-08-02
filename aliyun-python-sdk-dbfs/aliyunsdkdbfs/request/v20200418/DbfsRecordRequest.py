@@ -31,6 +31,12 @@ class DbfsRecordRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_Data(self):
+		return self.get_query_params().get('Data')
+
+	def set_Data(self,Data):
+		self.add_query_param('Data',Data)
+
 	def get_PageNumber(self):
 		return self.get_query_params().get('PageNumber')
 
@@ -42,9 +48,3 @@ class DbfsRecordRequest(RpcRequest):
 
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
-
-	def get_BatchStrategyNo(self):
-		return self.get_query_params().get('BatchStrategyNo')
-
-	def set_BatchStrategyNo(self,BatchStrategyNo):
-		self.add_query_param('BatchStrategyNo',BatchStrategyNo)
