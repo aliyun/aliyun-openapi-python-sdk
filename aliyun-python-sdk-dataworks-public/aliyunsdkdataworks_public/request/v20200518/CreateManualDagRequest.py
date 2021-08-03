@@ -43,23 +43,35 @@ class CreateManualDagRequest(RpcRequest):
 	def set_ProjectName(self,ProjectName):
 		self.add_body_params('ProjectName', ProjectName)
 
+	def get_DagParameters(self):
+		return self.get_body_params().get('DagParameters')
+
+	def set_DagParameters(self,DagParameters):
+		self.add_body_params('DagParameters', DagParameters)
+
+	def get_IncludeNodeIds(self):
+		return self.get_body_params().get('IncludeNodeIds')
+
+	def set_IncludeNodeIds(self,IncludeNodeIds):
+		self.add_body_params('IncludeNodeIds', IncludeNodeIds)
+
 	def get_BizDate(self):
 		return self.get_body_params().get('BizDate')
 
 	def set_BizDate(self,BizDate):
 		self.add_body_params('BizDate', BizDate)
 
+	def get_ExcludeNodeIds(self):
+		return self.get_body_params().get('ExcludeNodeIds')
+
+	def set_ExcludeNodeIds(self,ExcludeNodeIds):
+		self.add_body_params('ExcludeNodeIds', ExcludeNodeIds)
+
 	def get_FlowName(self):
 		return self.get_body_params().get('FlowName')
 
 	def set_FlowName(self,FlowName):
 		self.add_body_params('FlowName', FlowName)
-
-	def get_DagParameters(self):
-		return self.get_body_params().get('DagParameters')
-
-	def set_DagParameters(self,DagParameters):
-		self.add_body_params('DagParameters', DagParameters)
 
 	def get_NodeParameters(self):
 		return self.get_body_params().get('NodeParameters')

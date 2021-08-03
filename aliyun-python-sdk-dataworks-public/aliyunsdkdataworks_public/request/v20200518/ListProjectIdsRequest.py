@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdataworks_public.endpoint import endpoint_data
 
-class TopTenElapsedTimeInstanceRequest(RpcRequest):
+class ListProjectIdsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'TopTenElapsedTimeInstance')
+		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'ListProjectIds')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,8 +31,8 @@ class TopTenElapsedTimeInstanceRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_ProjectId(self):
-		return self.get_body_params().get('ProjectId')
+	def get_UserId(self):
+		return self.get_query_params().get('UserId')
 
-	def set_ProjectId(self,ProjectId):
-		self.add_body_params('ProjectId', ProjectId)
+	def set_UserId(self,UserId):
+		self.add_query_param('UserId',UserId)
