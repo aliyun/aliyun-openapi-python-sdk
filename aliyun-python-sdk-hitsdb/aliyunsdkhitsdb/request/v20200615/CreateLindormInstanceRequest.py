@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkhitsdb.endpoint import endpoint_data
 
-class CreateHiTSDBInstanceRequest(RpcRequest):
+class CreateLindormInstanceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'hitsdb', '2017-06-01', 'CreateHiTSDBInstance','hitsdb')
+		RpcRequest.__init__(self, 'hitsdb', '2020-06-15', 'CreateLindormInstance','hitsdb')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -37,11 +37,17 @@ class CreateHiTSDBInstanceRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_InstanceClass(self):
-		return self.get_query_params().get('InstanceClass')
+	def get_TsdbSpec(self):
+		return self.get_query_params().get('TsdbSpec')
 
-	def set_InstanceClass(self,InstanceClass):
-		self.add_query_param('InstanceClass',InstanceClass)
+	def set_TsdbSpec(self,TsdbSpec):
+		self.add_query_param('TsdbSpec',TsdbSpec)
+
+	def get_FilestoreSpec(self):
+		return self.get_query_params().get('FilestoreSpec')
+
+	def set_FilestoreSpec(self,FilestoreSpec):
+		self.add_query_param('FilestoreSpec',FilestoreSpec)
 
 	def get_Duration(self):
 		return self.get_query_params().get('Duration')
@@ -55,17 +61,47 @@ class CreateHiTSDBInstanceRequest(RpcRequest):
 	def set_SecurityToken(self,SecurityToken):
 		self.add_query_param('SecurityToken',SecurityToken)
 
+	def get_TsdbNum(self):
+		return self.get_query_params().get('TsdbNum')
+
+	def set_TsdbNum(self,TsdbNum):
+		self.add_query_param('TsdbNum',TsdbNum)
+
 	def get_DiskCategory(self):
 		return self.get_query_params().get('DiskCategory')
 
 	def set_DiskCategory(self,DiskCategory):
 		self.add_query_param('DiskCategory',DiskCategory)
 
+	def get_LindormSpec(self):
+		return self.get_query_params().get('LindormSpec')
+
+	def set_LindormSpec(self,LindormSpec):
+		self.add_query_param('LindormSpec',LindormSpec)
+
+	def get_SolrNum(self):
+		return self.get_query_params().get('SolrNum')
+
+	def set_SolrNum(self,SolrNum):
+		self.add_query_param('SolrNum',SolrNum)
+
+	def get_ColdStorage(self):
+		return self.get_query_params().get('ColdStorage')
+
+	def set_ColdStorage(self,ColdStorage):
+		self.add_query_param('ColdStorage',ColdStorage)
+
 	def get_InstanceStorage(self):
 		return self.get_query_params().get('InstanceStorage')
 
 	def set_InstanceStorage(self,InstanceStorage):
 		self.add_query_param('InstanceStorage',InstanceStorage)
+
+	def get_SolrSpec(self):
+		return self.get_query_params().get('SolrSpec')
+
+	def set_SolrSpec(self,SolrSpec):
+		self.add_query_param('SolrSpec',SolrSpec)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -85,11 +121,29 @@ class CreateHiTSDBInstanceRequest(RpcRequest):
 	def set_InstanceAlias(self,InstanceAlias):
 		self.add_query_param('InstanceAlias',InstanceAlias)
 
+	def get_FilestoreNum(self):
+		return self.get_query_params().get('FilestoreNum')
+
+	def set_FilestoreNum(self,FilestoreNum):
+		self.add_query_param('FilestoreNum',FilestoreNum)
+
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_LindormNum(self):
+		return self.get_query_params().get('LindormNum')
+
+	def set_LindormNum(self,LindormNum):
+		self.add_query_param('LindormNum',LindormNum)
+
+	def get_CoreSpec(self):
+		return self.get_query_params().get('CoreSpec')
+
+	def set_CoreSpec(self,CoreSpec):
+		self.add_query_param('CoreSpec',CoreSpec)
 
 	def get_VSwitchId(self):
 		return self.get_query_params().get('VSwitchId')
@@ -108,12 +162,6 @@ class CreateHiTSDBInstanceRequest(RpcRequest):
 
 	def set_ZoneId(self,ZoneId):
 		self.add_query_param('ZoneId',ZoneId)
-
-	def get_AppKey(self):
-		return self.get_query_params().get('AppKey')
-
-	def set_AppKey(self,AppKey):
-		self.add_query_param('AppKey',AppKey)
 
 	def get_PayType(self):
 		return self.get_query_params().get('PayType')

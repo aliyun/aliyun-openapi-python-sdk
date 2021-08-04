@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkhitsdb.endpoint import endpoint_data
 
-class SwitchHiTSDBInstancePublicNetRequest(RpcRequest):
+class GetLindormInstanceEngineListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'hitsdb', '2017-06-01', 'SwitchHiTSDBInstancePublicNet','hitsdb')
+		RpcRequest.__init__(self, 'hitsdb', '2020-06-15', 'GetLindormInstanceEngineList','hitsdb')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -42,12 +42,6 @@ class SwitchHiTSDBInstancePublicNetRequest(RpcRequest):
 
 	def set_SecurityToken(self,SecurityToken):
 		self.add_query_param('SecurityToken',SecurityToken)
-
-	def get_SwitchAction(self):
-		return self.get_query_params().get('SwitchAction')
-
-	def set_SwitchAction(self,SwitchAction):
-		self.add_query_param('SwitchAction',SwitchAction)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
