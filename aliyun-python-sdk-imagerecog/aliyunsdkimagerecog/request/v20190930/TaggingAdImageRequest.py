@@ -20,16 +20,22 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkimagerecog.endpoint import endpoint_data
 
-class TaggingImageRequest(RpcRequest):
+class TaggingAdImageRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'imagerecog', '2019-09-30', 'TaggingImage','imagerecog')
+		RpcRequest.__init__(self, 'imagerecog', '2019-09-30', 'TaggingAdImage','imagerecog')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+
+	def get_ImageType(self):
+		return self.get_body_params().get('ImageType')
+
+	def set_ImageType(self,ImageType):
+		self.add_body_params('ImageType', ImageType)
 
 	def get_ImageURL(self):
 		return self.get_body_params().get('ImageURL')
