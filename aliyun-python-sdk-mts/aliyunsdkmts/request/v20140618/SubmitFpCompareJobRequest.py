@@ -25,68 +25,59 @@ class SubmitFpCompareJobRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Mts', '2014-06-18', 'SubmitFpCompareJob','mts')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ResourceOwnerId(self):
+	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_FpDBId(self):
+	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
+		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_FpDBId(self): # String
 		return self.get_query_params().get('FpDBId')
 
-	def set_FpDBId(self,FpDBId):
-		self.add_query_param('FpDBId',FpDBId)
-
-	def get_MasterMedia(self):
+	def set_FpDBId(self, FpDBId):  # String
+		self.add_query_param('FpDBId', FpDBId)
+	def get_MasterMedia(self): # String
 		return self.get_query_params().get('MasterMedia')
 
-	def set_MasterMedia(self,MasterMedia):
-		self.add_query_param('MasterMedia',MasterMedia)
-
-	def get_UserData(self):
+	def set_MasterMedia(self, MasterMedia):  # String
+		self.add_query_param('MasterMedia', MasterMedia)
+	def get_UserData(self): # String
 		return self.get_query_params().get('UserData')
 
-	def set_UserData(self,UserData):
-		self.add_query_param('UserData',UserData)
-
-	def get_QueryMedia(self):
+	def set_UserData(self, UserData):  # String
+		self.add_query_param('UserData', UserData)
+	def get_QueryMedia(self): # String
 		return self.get_query_params().get('QueryMedia')
 
-	def set_QueryMedia(self,QueryMedia):
-		self.add_query_param('QueryMedia',QueryMedia)
-
-	def get_ResourceOwnerAccount(self):
+	def set_QueryMedia(self, QueryMedia):  # String
+		self.add_query_param('QueryMedia', QueryMedia)
+	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_OwnerAccount(self):
+	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
+		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_OwnerAccount(self): # String
 		return self.get_query_params().get('OwnerAccount')
 
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
-
-	def get_OwnerId(self):
+	def set_OwnerAccount(self, OwnerAccount):  # String
+		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_PipelineId(self):
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_PipelineId(self): # String
 		return self.get_query_params().get('PipelineId')
 
-	def set_PipelineId(self,PipelineId):
-		self.add_query_param('PipelineId',PipelineId)
-
-	def get_MatchedFrameStorage(self):
+	def set_PipelineId(self, PipelineId):  # String
+		self.add_query_param('PipelineId', PipelineId)
+	def get_MatchedFrameStorage(self): # String
 		return self.get_query_params().get('MatchedFrameStorage')
 
-	def set_MatchedFrameStorage(self,MatchedFrameStorage):
-		self.add_query_param('MatchedFrameStorage',MatchedFrameStorage)
+	def set_MatchedFrameStorage(self, MatchedFrameStorage):  # String
+		self.add_query_param('MatchedFrameStorage', MatchedFrameStorage)
