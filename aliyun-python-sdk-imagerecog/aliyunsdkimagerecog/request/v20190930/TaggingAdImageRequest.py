@@ -31,12 +31,6 @@ class TaggingAdImageRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_ImageType(self):
-		return self.get_body_params().get('ImageType')
-
-	def set_ImageType(self,ImageType):
-		self.add_body_params('ImageType', ImageType)
-
 	def get_ImageURL(self):
 		return self.get_body_params().get('ImageURL')
 
