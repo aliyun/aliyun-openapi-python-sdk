@@ -60,3 +60,9 @@ class DescribePreCheckStatusRequest(RpcRequest):
 
 	def set_DtsJobId(self,DtsJobId):
 		self.add_query_param('DtsJobId',DtsJobId)
+
+	def get_StructPhase(self):
+		return self.get_query_params().get('StructPhase')
+
+	def set_StructPhase(self,StructPhase):
+		self.add_query_param('StructPhase',StructPhase)
