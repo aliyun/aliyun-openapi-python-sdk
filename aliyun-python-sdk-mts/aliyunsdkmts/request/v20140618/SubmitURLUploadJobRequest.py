@@ -52,3 +52,8 @@ class SubmitURLUploadJobRequest(RpcRequest):
 
 	def set_UserData(self, UserData):  # String
 		self.add_query_param('UserData', UserData)
+	def get_Region(self): # String
+		return self.get_query_params().get('Region')
+
+	def set_Region(self, Region):  # String
+		self.add_query_param('Region', Region)
