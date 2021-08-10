@@ -97,6 +97,12 @@ class CreateECSDBInstanceRequest(RpcRequest):
 	def set_Period(self,Period):
 		self.add_query_param('Period',Period)
 
+	def get_BackupId(self):
+		return self.get_query_params().get('BackupId')
+
+	def set_BackupId(self,BackupId):
+		self.add_query_param('BackupId',BackupId)
+
 	def get_EncryptionKey(self):
 		return self.get_query_params().get('EncryptionKey')
 
@@ -156,3 +162,9 @@ class CreateECSDBInstanceRequest(RpcRequest):
 
 	def set_InstanceNetworkType(self,InstanceNetworkType):
 		self.add_query_param('InstanceNetworkType',InstanceNetworkType)
+
+	def get_SrcDbInstanceName(self):
+		return self.get_query_params().get('SrcDbInstanceName')
+
+	def set_SrcDbInstanceName(self,SrcDbInstanceName):
+		self.add_query_param('SrcDbInstanceName',SrcDbInstanceName)
