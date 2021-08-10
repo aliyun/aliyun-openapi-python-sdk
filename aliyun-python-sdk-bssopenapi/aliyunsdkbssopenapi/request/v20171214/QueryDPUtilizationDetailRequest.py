@@ -49,6 +49,12 @@ class QueryDPUtilizationDetailRequest(RpcRequest):
 	def set_InstanceSpec(self,InstanceSpec):
 		self.add_query_param('InstanceSpec',InstanceSpec)
 
+	def get_ProdCode(self):
+		return self.get_query_params().get('ProdCode')
+
+	def set_ProdCode(self,ProdCode):
+		self.add_query_param('ProdCode',ProdCode)
+
 	def get_EndTime(self):
 		return self.get_query_params().get('EndTime')
 
