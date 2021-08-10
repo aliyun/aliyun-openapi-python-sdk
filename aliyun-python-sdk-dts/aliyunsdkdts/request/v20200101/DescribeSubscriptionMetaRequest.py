@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdts.endpoint import endpoint_data
 
-class DescribeConsumerChannelRequest(RpcRequest):
+class DescribeSubscriptionMetaRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dts', '2020-01-01', 'DescribeConsumerChannel','dts')
+		RpcRequest.__init__(self, 'Dts', '2020-01-01', 'DescribeSubscriptionMeta','dts')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,29 +31,23 @@ class DescribeConsumerChannelRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_PageNumber(self):
-		return self.get_query_params().get('PageNumber')
+	def get_Topics(self):
+		return self.get_query_params().get('Topics')
 
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
+	def set_Topics(self,Topics):
+		self.add_query_param('Topics',Topics)
 
-	def get_ParentChannelId(self):
-		return self.get_query_params().get('ParentChannelId')
+	def get_Sid(self):
+		return self.get_query_params().get('Sid')
 
-	def set_ParentChannelId(self,ParentChannelId):
-		self.add_query_param('ParentChannelId',ParentChannelId)
+	def set_Sid(self,Sid):
+		self.add_query_param('Sid',Sid)
 
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
+	def get_SubMigrationJobIds(self):
+		return self.get_query_params().get('SubMigrationJobIds')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_DtsJobId(self):
-		return self.get_query_params().get('DtsJobId')
-
-	def set_DtsJobId(self,DtsJobId):
-		self.add_query_param('DtsJobId',DtsJobId)
+	def set_SubMigrationJobIds(self,SubMigrationJobIds):
+		self.add_query_param('SubMigrationJobIds',SubMigrationJobIds)
 
 	def get_DtsInstanceId(self):
 		return self.get_query_params().get('DtsInstanceId')
