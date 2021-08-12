@@ -18,12 +18,18 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdksas.endpoint import endpoint_data
 
 class DescribeBackupPoliciesRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeBackupPolicies','sas')
 		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -31,29 +37,35 @@ class DescribeBackupPoliciesRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_CurrentPage(self):
-		return self.get_query_params().get('CurrentPage')
-
-	def set_CurrentPage(self,CurrentPage):
-		self.add_query_param('CurrentPage',CurrentPage)
-
 	def get_SourceIp(self):
 		return self.get_query_params().get('SourceIp')
 
 	def set_SourceIp(self,SourceIp):
 		self.add_query_param('SourceIp',SourceIp)
 
-	def get_Name(self):
-		return self.get_query_params().get('Name')
+	def get_MachineRemark(self):
+		return self.get_query_params().get('MachineRemark')
 
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)
+	def set_MachineRemark(self,MachineRemark):
+		self.add_query_param('MachineRemark',MachineRemark)
 
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
 
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
+
+	def get_CurrentPage(self):
+		return self.get_query_params().get('CurrentPage')
+
+	def set_CurrentPage(self,CurrentPage):
+		self.add_query_param('CurrentPage',CurrentPage)
+
+	def get_Name(self):
+		return self.get_query_params().get('Name')
+
+	def set_Name(self,Name):
+		self.add_query_param('Name',Name)
 
 	def get_Status(self):
 		return self.get_query_params().get('Status')

@@ -31,6 +31,12 @@ class DescribeAvailableZonesRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_DBInstanceName(self):
+		return self.get_query_params().get('DBInstanceName')
+
+	def set_DBInstanceName(self,DBInstanceName):
+		self.add_query_param('DBInstanceName',DBInstanceName)
+
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
@@ -48,12 +54,6 @@ class DescribeAvailableZonesRequest(RpcRequest):
 
 	def set_Engine(self,Engine):
 		self.add_query_param('Engine',Engine)
-
-	def get_InstanceChargeType(self):
-		return self.get_query_params().get('InstanceChargeType')
-
-	def set_InstanceChargeType(self,InstanceChargeType):
-		self.add_query_param('InstanceChargeType',InstanceChargeType)
 
 	def get_DispenseMode(self):
 		return self.get_query_params().get('DispenseMode')

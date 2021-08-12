@@ -37,17 +37,41 @@ class ListNodesRequest(RpcRequest):
 	def set_Role(self,Role):
 		self.add_query_param('Role',Role)
 
+	def get_PageNumber(self):
+		return self.get_query_params().get('PageNumber')
+
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)
+
+	def get_HostName(self):
+		return self.get_query_params().get('HostName')
+
+	def set_HostName(self,HostName):
+		self.add_query_param('HostName',HostName)
+
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
+
+	def get_HostNamePrefix(self):
+		return self.get_query_params().get('HostNamePrefix')
+
+	def set_HostNamePrefix(self,HostNamePrefix):
+		self.add_query_param('HostNamePrefix',HostNamePrefix)
+
 	def get_ClusterId(self):
 		return self.get_query_params().get('ClusterId')
 
 	def set_ClusterId(self,ClusterId):
 		self.add_query_param('ClusterId',ClusterId)
 
-	def get_PageNumber(self):
-		return self.get_query_params().get('PageNumber')
+	def get_HostNameSuffix(self):
+		return self.get_query_params().get('HostNameSuffix')
 
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
+	def set_HostNameSuffix(self,HostNameSuffix):
+		self.add_query_param('HostNameSuffix',HostNameSuffix)
 
 	def get_Filter(self):
 		return self.get_query_params().get('Filter')
@@ -66,18 +90,6 @@ class ListNodesRequest(RpcRequest):
 
 	def set_Sequence(self,Sequence):
 		self.add_query_param('Sequence',Sequence)
-
-	def get_HostName(self):
-		return self.get_query_params().get('HostName')
-
-	def set_HostName(self,HostName):
-		self.add_query_param('HostName',HostName)
-
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
 
 	def get_SortBy(self):
 		return self.get_query_params().get('SortBy')

@@ -25,110 +25,93 @@ class UpdateTaskDetailRequest(RpcRequest):
 		RpcRequest.__init__(self, 'devops-rdc', '2020-03-03', 'UpdateTaskDetail')
 		self.set_method('POST')
 
-	def get_Note(self):
+	def get_Note(self): # String
 		return self.get_body_params().get('Note')
 
-	def set_Note(self,Note):
+	def set_Note(self, Note):  # String
 		self.add_body_params('Note', Note)
-
-	def get_ExecutorId(self):
+	def get_ExecutorId(self): # String
 		return self.get_body_params().get('ExecutorId')
 
-	def set_ExecutorId(self,ExecutorId):
+	def set_ExecutorId(self, ExecutorId):  # String
 		self.add_body_params('ExecutorId', ExecutorId)
-
-	def get_StartDate(self):
+	def get_StartDate(self): # String
 		return self.get_body_params().get('StartDate')
 
-	def set_StartDate(self,StartDate):
+	def set_StartDate(self, StartDate):  # String
 		self.add_body_params('StartDate', StartDate)
-
-	def get_DelInvolvers(self):
+	def get_DelInvolvers(self): # String
 		return self.get_body_params().get('DelInvolvers')
 
-	def set_DelInvolvers(self,DelInvolvers):
+	def set_DelInvolvers(self, DelInvolvers):  # String
 		self.add_body_params('DelInvolvers', DelInvolvers)
-
-	def get_Content(self):
+	def get_Content(self): # String
 		return self.get_body_params().get('Content')
 
-	def set_Content(self,Content):
+	def set_Content(self, Content):  # String
 		self.add_body_params('Content', Content)
-
-	def get_SprintId(self):
+	def get_SprintId(self): # String
 		return self.get_body_params().get('SprintId')
 
-	def set_SprintId(self,SprintId):
+	def set_SprintId(self, SprintId):  # String
 		self.add_body_params('SprintId', SprintId)
-
-	def get_CustomFieldId(self):
+	def get_CustomFieldId(self): # String
 		return self.get_body_params().get('CustomFieldId')
 
-	def set_CustomFieldId(self,CustomFieldId):
+	def set_CustomFieldId(self, CustomFieldId):  # String
 		self.add_body_params('CustomFieldId', CustomFieldId)
-
-	def get_ProjectId(self):
+	def get_ProjectId(self): # String
 		return self.get_body_params().get('ProjectId')
 
-	def set_ProjectId(self,ProjectId):
+	def set_ProjectId(self, ProjectId):  # String
 		self.add_body_params('ProjectId', ProjectId)
-
-	def get_TaskId(self):
+	def get_TaskId(self): # String
 		return self.get_body_params().get('TaskId')
 
-	def set_TaskId(self,TaskId):
+	def set_TaskId(self, TaskId):  # String
 		self.add_body_params('TaskId', TaskId)
-
-	def get_TaskFlowStatusId(self):
+	def get_TaskFlowStatusId(self): # String
 		return self.get_body_params().get('TaskFlowStatusId')
 
-	def set_TaskFlowStatusId(self,TaskFlowStatusId):
+	def set_TaskFlowStatusId(self, TaskFlowStatusId):  # String
 		self.add_body_params('TaskFlowStatusId', TaskFlowStatusId)
-
-	def get_TagIds(self):
+	def get_TagIds(self): # String
 		return self.get_body_params().get('TagIds')
 
-	def set_TagIds(self,TagIds):
+	def set_TagIds(self, TagIds):  # String
 		self.add_body_params('TagIds', TagIds)
-
-	def get_AddInvolvers(self):
+	def get_AddInvolvers(self): # String
 		return self.get_body_params().get('AddInvolvers')
 
-	def set_AddInvolvers(self,AddInvolvers):
+	def set_AddInvolvers(self, AddInvolvers):  # String
 		self.add_body_params('AddInvolvers', AddInvolvers)
-
-	def get_Priority(self):
+	def get_Priority(self): # Long
 		return self.get_body_params().get('Priority')
 
-	def set_Priority(self,Priority):
+	def set_Priority(self, Priority):  # Long
 		self.add_body_params('Priority', Priority)
-
-	def get_OrgId(self):
+	def get_OrgId(self): # String
 		return self.get_body_params().get('OrgId')
 
-	def set_OrgId(self,OrgId):
+	def set_OrgId(self, OrgId):  # String
 		self.add_body_params('OrgId', OrgId)
-
-	def get_DueDate(self):
+	def get_DueDate(self): # String
 		return self.get_body_params().get('DueDate')
 
-	def set_DueDate(self,DueDate):
+	def set_DueDate(self, DueDate):  # String
 		self.add_body_params('DueDate', DueDate)
-
-	def get_WorkTimes(self):
+	def get_WorkTimes(self): # Long
 		return self.get_body_params().get('WorkTimes')
 
-	def set_WorkTimes(self,WorkTimes):
+	def set_WorkTimes(self, WorkTimes):  # Long
 		self.add_body_params('WorkTimes', WorkTimes)
-
-	def get_StoryPoint(self):
+	def get_StoryPoint(self): # String
 		return self.get_body_params().get('StoryPoint')
 
-	def set_StoryPoint(self,StoryPoint):
+	def set_StoryPoint(self, StoryPoint):  # String
 		self.add_body_params('StoryPoint', StoryPoint)
-
-	def get_CustomFieldValues(self):
+	def get_CustomFieldValues(self): # String
 		return self.get_body_params().get('CustomFieldValues')
 
-	def set_CustomFieldValues(self,CustomFieldValues):
+	def set_CustomFieldValues(self, CustomFieldValues):  # String
 		self.add_body_params('CustomFieldValues', CustomFieldValues)

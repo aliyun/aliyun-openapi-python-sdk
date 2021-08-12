@@ -31,6 +31,12 @@ class AllocatePublicContactPointsRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_ClientToken(self):
+		return self.get_query_params().get('ClientToken')
+
+	def set_ClientToken(self,ClientToken):
+		self.add_query_param('ClientToken',ClientToken)
+
 	def get_DataCenterId(self):
 		return self.get_query_params().get('DataCenterId')
 

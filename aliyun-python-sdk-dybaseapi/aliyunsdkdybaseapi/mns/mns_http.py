@@ -1,3 +1,4 @@
+# coding=utf-8
 # Licensed to the Apache Software Foundation (ASF) under one
 # or more contributor license agreements.  See the NOTICE file
 # distributed with this work for additional information
@@ -17,15 +18,33 @@
 # specific language governing permissions and limitations
 # under the License.
 
-# coding=utf-8
 
-
+import base64
 import socket
 try:
     from http.client import HTTPConnection, BadStatusLine, HTTPSConnection
 except ImportError:
     from httplib import HTTPConnection, BadStatusLine, HTTPSConnection
 from aliyunsdkdybaseapi.mns.mns_exception import *
+try:
+    from urllib.parse import urlparse, unquote
+except ImportError:
+    from urllib import unquote
+    import urlparse
+
+import os
+
+
+def _basic_auth_str(username, password):
+    if isinstance(username, str):
+        username = username.encode()
+
+    if isinstance(password, str):
+        password = password.encode()
+
+    authstr = 'Basic ' + base64.b64encode(b':'.join((username, password))).strip().decode()
+
+    return authstr
 
 
 class MNSHTTPConnection(HTTPConnection):
@@ -79,11 +98,7 @@ class MNSHTTPSConnection(HTTPSConnection):
 
 
 class MNSHttp:
-    def __init__(self, host, connection_timeout = 60, keep_alive = True, logger=None, is_https=False):
-        if is_https:
-            self.conn = MNSHTTPSConnection(host)
-        else:
-            self.conn = MNSHTTPConnection(host, connection_timeout=connection_timeout)
+    def __init__(self, host, connection_timeout=60, keep_alive = True, logger=None, is_https=False):
         self.host = host
         self.is_https = is_https
         self.connection_timeout = connection_timeout
@@ -91,8 +106,16 @@ class MNSHttp:
         self.request_size = 0
         self.response_size = 0
         self.logger = logger
+        self.proxy = None
+        self.conn = self._new_conn()
         if self.logger:
             self.logger.info("InitMNSHttp KeepAlive:%s ConnectionTime:%s" % (self.keep_alive, self.connection_timeout))
+
+    def _new_conn(self):
+        if self.is_https:
+            return MNSHTTPSConnection(self.host)
+        else:
+            return MNSHTTPConnection(self.host, connection_timeout=self.connection_timeout)
 
     def set_log_level(self, log_level):
         if self.logger:
@@ -100,6 +123,12 @@ class MNSHttp:
 
     def close_log(self):
         self.logger = None
+
+    def get_env_proxy(self):
+        if self.is_https:
+            return os.getenv('https_proxy') or os.getenv('HTTPS_PROXY')
+        else:
+            return os.getenv('http_proxy') or os.getenv('HTTP_PROXY')
 
     def set_connection_timeout(self, connection_timeout):
         self.connection_timeout = connection_timeout
@@ -118,7 +147,26 @@ class MNSHttp:
         try:
             if self.logger:
                 self.logger.debug("SendRequest %s" % req_inter)
-            self.conn.request(req_inter.method, req_inter.uri, req_inter.data, req_inter.header)
+
+            proxy = self.get_env_proxy()
+            if proxy:
+                url = urlparse(proxy)
+                self.conn.close()
+                if url.username:
+                    req_inter.header['Proxy-Authorization'] = _basic_auth_str(unquote(url.username),
+                                                             unquote(url.password))
+                if self.is_https:
+                    self.conn = MNSHTTPSConnection(url.hostname, url.port)
+                else:
+                    self.conn = MNSHTTPConnection(url.hostname, url.port, connection_timeout=self.connection_timeout)
+                self.conn.set_tunnel(self.host, headers=req_inter.header)
+            else:
+                if self.conn.host != self.host:
+                    self.conn.close()
+                    self.conn = self._new_conn()
+
+            self.conn.request(req_inter.method, 'http://%s%s' % (self.host, req_inter.uri), req_inter.data,
+                              req_inter.header)
             self.conn.sock.setsockopt(socket.IPPROTO_TCP, socket.TCP_NODELAY, 1)
             try:
                 http_resp = self.conn.getresponse()

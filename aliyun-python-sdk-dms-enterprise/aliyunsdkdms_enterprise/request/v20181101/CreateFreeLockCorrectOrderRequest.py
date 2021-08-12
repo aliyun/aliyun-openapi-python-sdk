@@ -24,7 +24,7 @@ import json
 class CreateFreeLockCorrectOrderRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'dms-enterprise', '2018-11-01', 'CreateFreeLockCorrectOrder')
+		RpcRequest.__init__(self, 'dms-enterprise', '2018-11-01', 'CreateFreeLockCorrectOrder','dms-enterprise')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

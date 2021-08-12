@@ -31,6 +31,18 @@ class ListJobGroupsRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_AsyncQuery(self):
+		return self.get_query_params().get('AsyncQuery')
+
+	def set_AsyncQuery(self,AsyncQuery):
+		self.add_query_param('AsyncQuery',AsyncQuery)
+
+	def get_SearchText(self):
+		return self.get_query_params().get('SearchText')
+
+	def set_SearchText(self,SearchText):
+		self.add_query_param('SearchText',SearchText)
+
 	def get_EndTime(self):
 		return self.get_query_params().get('EndTime')
 
@@ -54,6 +66,12 @@ class ListJobGroupsRequest(RpcRequest):
 
 	def set_InstanceId(self,InstanceId):
 		self.add_query_param('InstanceId',InstanceId)
+
+	def get_JobGroupStatusFilter(self):
+		return self.get_query_params().get('JobGroupStatusFilter')
+
+	def set_JobGroupStatusFilter(self,JobGroupStatusFilter):
+		self.add_query_param('JobGroupStatusFilter',JobGroupStatusFilter)
 
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')

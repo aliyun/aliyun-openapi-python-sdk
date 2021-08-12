@@ -60,3 +60,9 @@ class AcceptInquiredSystemEventRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_Choice(self):
+		return self.get_query_params().get('Choice')
+
+	def set_Choice(self,Choice):
+		self.add_query_param('Choice',Choice)

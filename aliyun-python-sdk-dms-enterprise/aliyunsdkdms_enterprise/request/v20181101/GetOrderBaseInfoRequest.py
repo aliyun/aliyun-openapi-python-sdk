@@ -23,7 +23,7 @@ from aliyunsdkdms_enterprise.endpoint import endpoint_data
 class GetOrderBaseInfoRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'dms-enterprise', '2018-11-01', 'GetOrderBaseInfo')
+		RpcRequest.__init__(self, 'dms-enterprise', '2018-11-01', 'GetOrderBaseInfo','dms-enterprise')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

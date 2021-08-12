@@ -25,20 +25,18 @@ class BatchInsertMembersRequest(RpcRequest):
 		RpcRequest.__init__(self, 'devops-rdc', '2020-03-03', 'BatchInsertMembers')
 		self.set_method('POST')
 
-	def get_Members(self):
+	def get_Members(self): # String
 		return self.get_body_params().get('Members')
 
-	def set_Members(self,Members):
+	def set_Members(self, Members):  # String
 		self.add_body_params('Members', Members)
-
-	def get_RealPk(self):
+	def get_RealPk(self): # String
 		return self.get_body_params().get('RealPk')
 
-	def set_RealPk(self,RealPk):
+	def set_RealPk(self, RealPk):  # String
 		self.add_body_params('RealPk', RealPk)
-
-	def get_OrgId(self):
+	def get_OrgId(self): # String
 		return self.get_body_params().get('OrgId')
 
-	def set_OrgId(self,OrgId):
+	def set_OrgId(self, OrgId):  # String
 		self.add_body_params('OrgId', OrgId)

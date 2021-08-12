@@ -37,6 +37,12 @@ class CreateSnapshotGroupRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_InstantAccess(self):
+		return self.get_query_params().get('InstantAccess')
+
+	def set_InstantAccess(self,InstantAccess):
+		self.add_query_param('InstantAccess',InstantAccess)
+
 	def get_ExcludeDiskIds(self):
 		return self.get_query_params().get('ExcludeDiskId')
 
@@ -44,12 +50,6 @@ class CreateSnapshotGroupRequest(RpcRequest):
 		for depth1 in range(len(ExcludeDiskIds)):
 			if ExcludeDiskIds[depth1] is not None:
 				self.add_query_param('ExcludeDiskId.' + str(depth1 + 1) , ExcludeDiskIds[depth1])
-
-	def get_InstantAccess(self):
-		return self.get_query_params().get('InstantAccess')
-
-	def set_InstantAccess(self,InstantAccess):
-		self.add_query_param('InstantAccess',InstantAccess)
 
 	def get_Description(self):
 		return self.get_query_params().get('Description')

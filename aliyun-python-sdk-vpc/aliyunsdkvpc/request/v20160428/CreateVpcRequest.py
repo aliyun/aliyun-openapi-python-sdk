@@ -67,6 +67,12 @@ class CreateVpcRequest(RpcRequest):
 	def set_ResourceGroupId(self,ResourceGroupId):
 		self.add_query_param('ResourceGroupId',ResourceGroupId)
 
+	def get_Ipv6Isp(self):
+		return self.get_query_params().get('Ipv6Isp')
+
+	def set_Ipv6Isp(self,Ipv6Isp):
+		self.add_query_param('Ipv6Isp',Ipv6Isp)
+
 	def get_UserCidr(self):
 		return self.get_query_params().get('UserCidr')
 

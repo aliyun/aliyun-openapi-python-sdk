@@ -1,3 +1,9 @@
+2021-04-29 Version: 1.0.8
+- Add Proxy-Authorization.
+
+2021-04-28 Version: 1.0.7
+- MNS SDK support http proxy.
+
 2020-06-15 Version: 1.0.6
 - Fix ModuleNotFoundError.
 

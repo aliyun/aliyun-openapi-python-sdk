@@ -43,10 +43,10 @@ class SetCasterSyncGroupRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_SyncGroup(self):
+	def get_SyncGroups(self):
 		return self.get_query_params().get('SyncGroup')
 
-	def set_SyncGroup(self, SyncGroups):
+	def set_SyncGroups(self, SyncGroups):
 		for depth1 in range(len(SyncGroups)):
 			if SyncGroups[depth1].get('Mode') is not None:
 				self.add_query_param('SyncGroup.' + str(depth1 + 1) + '.Mode', SyncGroups[depth1].get('Mode'))

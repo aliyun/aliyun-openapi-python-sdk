@@ -50,6 +50,12 @@ class AddZoneToVpcEndpointRequest(RpcRequest):
 	def set_DryRun(self,DryRun):
 		self.add_query_param('DryRun',DryRun)
 
+	def get_ip(self):
+		return self.get_query_params().get('ip')
+
+	def set_ip(self,ip):
+		self.add_query_param('ip',ip)
+
 	def get_VSwitchId(self):
 		return self.get_query_params().get('VSwitchId')
 

@@ -91,6 +91,12 @@ class SetLoadBalancerHTTPListenerAttributeRequest(RpcRequest):
 	def set_Cookie(self,Cookie):
 		self.add_query_param('Cookie',Cookie)
 
+	def get_HealthCheckMethod(self):
+		return self.get_query_params().get('HealthCheckMethod')
+
+	def set_HealthCheckMethod(self,HealthCheckMethod):
+		self.add_query_param('HealthCheckMethod',HealthCheckMethod)
+
 	def get_HealthCheckDomain(self):
 		return self.get_query_params().get('HealthCheckDomain')
 

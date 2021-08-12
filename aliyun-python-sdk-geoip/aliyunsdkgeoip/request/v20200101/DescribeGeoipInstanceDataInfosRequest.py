@@ -25,6 +25,12 @@ class DescribeGeoipInstanceDataInfosRequest(RpcRequest):
 		RpcRequest.__init__(self, 'geoip', '2020-01-01', 'DescribeGeoipInstanceDataInfos','geoip')
 		self.set_method('POST')
 
+	def get_LocationDataType(self):
+		return self.get_query_params().get('LocationDataType')
+
+	def set_LocationDataType(self,LocationDataType):
+		self.add_query_param('LocationDataType',LocationDataType)
+
 	def get_InstanceId(self):
 		return self.get_query_params().get('InstanceId')
 

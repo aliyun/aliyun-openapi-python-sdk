@@ -55,6 +55,12 @@ class ModifySslVpnServerRequest(RpcRequest):
 	def set_LocalSubnet(self,LocalSubnet):
 		self.add_query_param('LocalSubnet',LocalSubnet)
 
+	def get_IDaaSRegionId(self):
+		return self.get_query_params().get('IDaaSRegionId')
+
+	def set_IDaaSRegionId(self,IDaaSRegionId):
+		self.add_query_param('IDaaSRegionId',IDaaSRegionId)
+
 	def get_EnableMultiFactorAuth(self):
 		return self.get_query_params().get('EnableMultiFactorAuth')
 

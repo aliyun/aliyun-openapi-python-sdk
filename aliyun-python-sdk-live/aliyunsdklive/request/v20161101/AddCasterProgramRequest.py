@@ -31,10 +31,10 @@ class AddCasterProgramRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_Episode(self):
+	def get_Episodes(self):
 		return self.get_query_params().get('Episode')
 
-	def set_Episode(self, Episodes):
+	def set_Episodes(self, Episodes):
 		for depth1 in range(len(Episodes)):
 			if Episodes[depth1].get('EpisodeType') is not None:
 				self.add_query_param('Episode.' + str(depth1 + 1) + '.EpisodeType', Episodes[depth1].get('EpisodeType'))

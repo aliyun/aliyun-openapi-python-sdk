@@ -84,12 +84,12 @@ class ListTagResourcesRequest(RpcRequest):
 
 	def set_TagFilters(self, TagFilters):
 		for depth1 in range(len(TagFilters)):
-			if TagFilters[depth1].get('TagKey') is not None:
-				self.add_query_param('TagFilter.' + str(depth1 + 1) + '.TagKey', TagFilters[depth1].get('TagKey'))
 			if TagFilters[depth1].get('TagValues') is not None:
 				for depth2 in range(len(TagFilters[depth1].get('TagValues'))):
 					if TagFilters[depth1].get('TagValues')[depth2] is not None:
 						self.add_query_param('TagFilter.' + str(depth1 + 1) + '.TagValues.' + str(depth2 + 1) , TagFilters[depth1].get('TagValues')[depth2])
+			if TagFilters[depth1].get('TagKey') is not None:
+				self.add_query_param('TagFilter.' + str(depth1 + 1) + '.TagKey', TagFilters[depth1].get('TagKey'))
 
 	def get_ResourceType(self):
 		return self.get_query_params().get('ResourceType')

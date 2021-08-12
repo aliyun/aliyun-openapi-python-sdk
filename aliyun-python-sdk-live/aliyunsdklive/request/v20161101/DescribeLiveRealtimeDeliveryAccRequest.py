@@ -43,6 +43,12 @@ class DescribeLiveRealtimeDeliveryAccRequest(RpcRequest):
 	def set_StartTime(self,StartTime):
 		self.add_query_param('StartTime',StartTime)
 
+	def get_DomainName(self):
+		return self.get_query_params().get('DomainName')
+
+	def set_DomainName(self,DomainName):
+		self.add_query_param('DomainName',DomainName)
+
 	def get_EndTime(self):
 		return self.get_query_params().get('EndTime')
 

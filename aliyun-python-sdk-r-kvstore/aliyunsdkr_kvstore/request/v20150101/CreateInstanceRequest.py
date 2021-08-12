@@ -37,6 +37,12 @@ class CreateInstanceRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_SecondaryZoneId(self):
+		return self.get_query_params().get('SecondaryZoneId')
+
+	def set_SecondaryZoneId(self,SecondaryZoneId):
+		self.add_query_param('SecondaryZoneId',SecondaryZoneId)
+
 	def get_CouponNo(self):
 		return self.get_query_params().get('CouponNo')
 
@@ -73,6 +79,16 @@ class CreateInstanceRequest(RpcRequest):
 	def set_SecurityToken(self,SecurityToken):
 		self.add_query_param('SecurityToken',SecurityToken)
 
+	def get_Tags(self):
+		return self.get_query_params().get('Tag')
+
+	def set_Tags(self, Tags):
+		for depth1 in range(len(Tags)):
+			if Tags[depth1].get('Value') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tags[depth1].get('Value'))
+			if Tags[depth1].get('Key') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tags[depth1].get('Key'))
+
 	def get_BusinessInfo(self):
 		return self.get_query_params().get('BusinessInfo')
 
@@ -90,6 +106,12 @@ class CreateInstanceRequest(RpcRequest):
 
 	def set_Period(self,Period):
 		self.add_query_param('Period',Period)
+
+	def get_DryRun(self):
+		return self.get_query_params().get('DryRun')
+
+	def set_DryRun(self,DryRun):
+		self.add_query_param('DryRun',DryRun)
 
 	def get_BackupId(self):
 		return self.get_query_params().get('BackupId')
@@ -127,17 +149,17 @@ class CreateInstanceRequest(RpcRequest):
 	def set_AutoRenew(self,AutoRenew):
 		self.add_query_param('AutoRenew',AutoRenew)
 
+	def get_Port(self):
+		return self.get_query_params().get('Port')
+
+	def set_Port(self,Port):
+		self.add_query_param('Port',Port)
+
 	def get_ZoneId(self):
 		return self.get_query_params().get('ZoneId')
 
 	def set_ZoneId(self,ZoneId):
 		self.add_query_param('ZoneId',ZoneId)
-
-	def get_NodeType(self):
-		return self.get_query_params().get('NodeType')
-
-	def set_NodeType(self,NodeType):
-		self.add_query_param('NodeType',NodeType)
 
 	def get_AutoUseCoupon(self):
 		return self.get_query_params().get('AutoUseCoupon')
@@ -222,9 +244,3 @@ class CreateInstanceRequest(RpcRequest):
 
 	def set_ChargeType(self,ChargeType):
 		self.add_query_param('ChargeType',ChargeType)
-
-	def get_Config(self):
-		return self.get_query_params().get('Config')
-
-	def set_Config(self,Config):
-		self.add_query_param('Config',Config)

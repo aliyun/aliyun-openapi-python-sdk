@@ -23,13 +23,19 @@ from aliyunsdkiot.endpoint import endpoint_data
 class QueryDeviceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'QueryDevice')
+		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'QueryDevice','iot')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+
+	def get_NextToken(self):
+		return self.get_query_params().get('NextToken')
+
+	def set_NextToken(self,NextToken):
+		self.add_query_param('NextToken',NextToken)
 
 	def get_IotInstanceId(self):
 		return self.get_query_params().get('IotInstanceId')

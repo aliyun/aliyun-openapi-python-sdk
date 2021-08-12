@@ -25,14 +25,13 @@ class GetDevopsProjectTaskInfoRequest(RpcRequest):
 		RpcRequest.__init__(self, 'devops-rdc', '2020-03-03', 'GetDevopsProjectTaskInfo')
 		self.set_method('POST')
 
-	def get_OrgId(self):
+	def get_OrgId(self): # String
 		return self.get_body_params().get('OrgId')
 
-	def set_OrgId(self,OrgId):
+	def set_OrgId(self, OrgId):  # String
 		self.add_body_params('OrgId', OrgId)
-
-	def get_TaskId(self):
+	def get_TaskId(self): # String
 		return self.get_body_params().get('TaskId')
 
-	def set_TaskId(self,TaskId):
+	def set_TaskId(self, TaskId):  # String
 		self.add_body_params('TaskId', TaskId)

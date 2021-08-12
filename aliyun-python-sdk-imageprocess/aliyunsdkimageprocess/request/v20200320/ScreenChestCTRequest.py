@@ -37,6 +37,12 @@ class ScreenChestCTRequest(RpcRequest):
 	def set_OrgName(self,OrgName):
 		self.add_body_params('OrgName', OrgName)
 
+	def get_Mask(self):
+		return self.get_body_params().get('Mask')
+
+	def set_Mask(self,Mask):
+		self.add_body_params('Mask', Mask)
+
 	def get_DataFormat(self):
 		return self.get_body_params().get('DataFormat')
 

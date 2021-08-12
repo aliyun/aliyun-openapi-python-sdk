@@ -24,6 +24,7 @@ class IvrCallRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Dyvmsapi', '2017-05-25', 'IvrCall','dyvms')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -73,17 +74,16 @@ class IvrCallRequest(RpcRequest):
 		self.add_query_param('CalledShowNumber',CalledShowNumber)
 
 	def get_MenuKeyMaps(self):
-		return self.get_query_params().get('MenuKeyMaps')
+		return self.get_query_params().get('MenuKeyMap')
 
-	def set_MenuKeyMaps(self,MenuKeyMaps):
-		for i in range(len(MenuKeyMaps)):	
-			if MenuKeyMaps[i].get('Code') is not None:
-				self.add_query_param('MenuKeyMap.' + str(i + 1) + '.Code' , MenuKeyMaps[i].get('Code'))
-			if MenuKeyMaps[i].get('TtsParams') is not None:
-				self.add_query_param('MenuKeyMap.' + str(i + 1) + '.TtsParams' , MenuKeyMaps[i].get('TtsParams'))
-			if MenuKeyMaps[i].get('Key') is not None:
-				self.add_query_param('MenuKeyMap.' + str(i + 1) + '.Key' , MenuKeyMaps[i].get('Key'))
-
+	def set_MenuKeyMaps(self, MenuKeyMaps):
+		for depth1 in range(len(MenuKeyMaps)):
+			if MenuKeyMaps[depth1].get('Code') is not None:
+				self.add_query_param('MenuKeyMap.' + str(depth1 + 1) + '.Code', MenuKeyMaps[depth1].get('Code'))
+			if MenuKeyMaps[depth1].get('TtsParams') is not None:
+				self.add_query_param('MenuKeyMap.' + str(depth1 + 1) + '.TtsParams', MenuKeyMaps[depth1].get('TtsParams'))
+			if MenuKeyMaps[depth1].get('Key') is not None:
+				self.add_query_param('MenuKeyMap.' + str(depth1 + 1) + '.Key', MenuKeyMaps[depth1].get('Key'))
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')

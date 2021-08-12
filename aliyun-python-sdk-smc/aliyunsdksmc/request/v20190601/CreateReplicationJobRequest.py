@@ -65,6 +65,12 @@ class CreateReplicationJobRequest(RpcRequest):
 	def set_NetMode(self,NetMode):
 		self.add_query_param('NetMode',NetMode)
 
+	def get_LicenseType(self):
+		return self.get_query_params().get('LicenseType')
+
+	def set_LicenseType(self,LicenseType):
+		self.add_query_param('LicenseType',LicenseType)
+
 	def get_ContainerNamespace(self):
 		return self.get_query_params().get('ContainerNamespace')
 

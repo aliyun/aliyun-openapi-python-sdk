@@ -31,10 +31,10 @@ class ModifyCasterLayoutRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_BlendList(self):
+	def get_BlendLists(self):
 		return self.get_query_params().get('BlendList')
 
-	def set_BlendList(self, BlendLists):
+	def set_BlendLists(self, BlendLists):
 		for depth1 in range(len(BlendLists)):
 			if BlendLists[depth1] is not None:
 				self.add_query_param('BlendList.' + str(depth1 + 1) , BlendLists[depth1])
@@ -57,10 +57,10 @@ class ModifyCasterLayoutRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_AudioLayer(self):
+	def get_AudioLayers(self):
 		return self.get_query_params().get('AudioLayer')
 
-	def set_AudioLayer(self, AudioLayers):
+	def set_AudioLayers(self, AudioLayers):
 		for depth1 in range(len(AudioLayers)):
 			if AudioLayers[depth1].get('VolumeRate') is not None:
 				self.add_query_param('AudioLayer.' + str(depth1 + 1) + '.VolumeRate', AudioLayers[depth1].get('VolumeRate'))
@@ -69,10 +69,10 @@ class ModifyCasterLayoutRequest(RpcRequest):
 			if AudioLayers[depth1].get('FixedDelayDuration') is not None:
 				self.add_query_param('AudioLayer.' + str(depth1 + 1) + '.FixedDelayDuration', AudioLayers[depth1].get('FixedDelayDuration'))
 
-	def get_VideoLayer(self):
+	def get_VideoLayers(self):
 		return self.get_query_params().get('VideoLayer')
 
-	def set_VideoLayer(self, VideoLayers):
+	def set_VideoLayers(self, VideoLayers):
 		for depth1 in range(len(VideoLayers)):
 			if VideoLayers[depth1].get('FillMode') is not None:
 				self.add_query_param('VideoLayer.' + str(depth1 + 1) + '.FillMode', VideoLayers[depth1].get('FillMode'))
@@ -89,10 +89,10 @@ class ModifyCasterLayoutRequest(RpcRequest):
 			if VideoLayers[depth1].get('FixedDelayDuration') is not None:
 				self.add_query_param('VideoLayer.' + str(depth1 + 1) + '.FixedDelayDuration', VideoLayers[depth1].get('FixedDelayDuration'))
 
-	def get_MixList(self):
+	def get_MixLists(self):
 		return self.get_query_params().get('MixList')
 
-	def set_MixList(self, MixLists):
+	def set_MixLists(self, MixLists):
 		for depth1 in range(len(MixLists)):
 			if MixLists[depth1] is not None:
 				self.add_query_param('MixList.' + str(depth1 + 1) , MixLists[depth1])

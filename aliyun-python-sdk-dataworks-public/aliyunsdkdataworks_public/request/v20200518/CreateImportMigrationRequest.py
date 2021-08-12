@@ -78,3 +78,9 @@ class CreateImportMigrationRequest(RpcRequest):
 
 	def set_ProjectId(self,ProjectId):
 		self.add_body_params('ProjectId', ProjectId)
+
+	def get_ResourceGroupMap(self):
+		return self.get_body_params().get('ResourceGroupMap')
+
+	def set_ResourceGroupMap(self,ResourceGroupMap):
+		self.add_body_params('ResourceGroupMap', ResourceGroupMap)

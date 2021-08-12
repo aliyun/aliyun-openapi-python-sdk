@@ -168,3 +168,15 @@ class CreateFileRequest(RpcRequest):
 
 	def set_FileDescription(self,FileDescription):
 		self.add_body_params('FileDescription', FileDescription)
+
+	def get_AutoParsing(self):
+		return self.get_body_params().get('AutoParsing')
+
+	def set_AutoParsing(self,AutoParsing):
+		self.add_body_params('AutoParsing', AutoParsing)
+
+	def get_SchedulerType(self):
+		return self.get_body_params().get('SchedulerType')
+
+	def set_SchedulerType(self,SchedulerType):
+		self.add_body_params('SchedulerType', SchedulerType)

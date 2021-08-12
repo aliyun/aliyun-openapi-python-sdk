@@ -62,6 +62,12 @@ class InsertK8sApplicationRequest(RoaRequest):
 	def set_StorageType(self,StorageType):
 		self.add_query_param('StorageType',StorageType)
 
+	def get_ConfigMountDescs(self):
+		return self.get_query_params().get('ConfigMountDescs')
+
+	def set_ConfigMountDescs(self,ConfigMountDescs):
+		self.add_query_param('ConfigMountDescs',ConfigMountDescs)
+
 	def get_AppName(self):
 		return self.get_query_params().get('AppName')
 
@@ -146,6 +152,12 @@ class InsertK8sApplicationRequest(RoaRequest):
 	def set_WebContainer(self,WebContainer):
 		self.add_query_param('WebContainer',WebContainer)
 
+	def get_EnableAsm(self):
+		return self.get_query_params().get('EnableAsm')
+
+	def set_EnableAsm(self,EnableAsm):
+		self.add_query_param('EnableAsm',EnableAsm)
+
 	def get_EnableAhas(self):
 		return self.get_query_params().get('EnableAhas')
 
@@ -176,6 +188,12 @@ class InsertK8sApplicationRequest(RoaRequest):
 	def set_Liveness(self,Liveness):
 		self.add_query_param('Liveness',Liveness)
 
+	def get_CsClusterId(self):
+		return self.get_query_params().get('CsClusterId')
+
+	def set_CsClusterId(self,CsClusterId):
+		self.add_query_param('CsClusterId',CsClusterId)
+
 	def get_InternetSlbPort(self):
 		return self.get_query_params().get('InternetSlbPort')
 
@@ -193,6 +211,12 @@ class InsertK8sApplicationRequest(RoaRequest):
 
 	def set_Timeout(self,Timeout):
 		self.add_query_param('Timeout',Timeout)
+
+	def get_EnvFroms(self):
+		return self.get_query_params().get('EnvFroms')
+
+	def set_EnvFroms(self,EnvFroms):
+		self.add_query_param('EnvFroms',EnvFroms)
 
 	def get_LimitMem(self):
 		return self.get_query_params().get('LimitMem')

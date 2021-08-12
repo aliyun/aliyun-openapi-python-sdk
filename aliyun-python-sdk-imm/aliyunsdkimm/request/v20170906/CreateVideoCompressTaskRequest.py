@@ -72,3 +72,9 @@ class CreateVideoCompressTaskRequest(RpcRequest):
 
 	def set_VideoUri(self,VideoUri):
 		self.add_query_param('VideoUri',VideoUri)
+
+	def get_TargetSegment(self):
+		return self.get_query_params().get('TargetSegment')
+
+	def set_TargetSegment(self,TargetSegment):
+		self.add_query_param('TargetSegment',TargetSegment)

@@ -79,6 +79,12 @@ class AddNodesRequest(RpcRequest):
 	def set_SystemDiskType(self,SystemDiskType):
 		self.add_query_param('SystemDiskType',SystemDiskType)
 
+	def get_MinCount(self):
+		return self.get_query_params().get('MinCount')
+
+	def set_MinCount(self,MinCount):
+		self.add_query_param('MinCount',MinCount)
+
 	def get_SystemDiskSize(self):
 		return self.get_query_params().get('SystemDiskSize')
 

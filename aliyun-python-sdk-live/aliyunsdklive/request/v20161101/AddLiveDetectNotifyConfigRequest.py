@@ -31,18 +31,6 @@ class AddLiveDetectNotifyConfigRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_DomainName(self):
-		return self.get_query_params().get('DomainName')
-
-	def set_DomainName(self,DomainName):
-		self.add_query_param('DomainName',DomainName)
-
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
 
@@ -54,3 +42,15 @@ class AddLiveDetectNotifyConfigRequest(RpcRequest):
 
 	def set_NotifyUrl(self,NotifyUrl):
 		self.add_query_param('NotifyUrl',NotifyUrl)
+
+	def get_DomainName(self):
+		return self.get_query_params().get('DomainName')
+
+	def set_DomainName(self,DomainName):
+		self.add_query_param('DomainName',DomainName)
+
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)

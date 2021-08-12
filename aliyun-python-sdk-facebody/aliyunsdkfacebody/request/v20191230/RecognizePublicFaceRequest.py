@@ -38,3 +38,5 @@ class RecognizePublicFaceRequest(RpcRequest):
 		for depth1 in range(len(Tasks)):
 			if Tasks[depth1].get('ImageURL') is not None:
 				self.add_body_params('Task.' + str(depth1 + 1) + '.ImageURL', Tasks[depth1].get('ImageURL'))
+			if Tasks[depth1].get('ImageData') is not None:
+				self.add_body_params('Task.' + str(depth1 + 1) + '.ImageData', Tasks[depth1].get('ImageData'))

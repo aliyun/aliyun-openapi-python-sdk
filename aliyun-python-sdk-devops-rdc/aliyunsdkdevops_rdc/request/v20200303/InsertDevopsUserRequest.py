@@ -25,26 +25,23 @@ class InsertDevopsUserRequest(RpcRequest):
 		RpcRequest.__init__(self, 'devops-rdc', '2020-03-03', 'InsertDevopsUser')
 		self.set_method('POST')
 
-	def get_Phone(self):
+	def get_Phone(self): # String
 		return self.get_body_params().get('Phone')
 
-	def set_Phone(self,Phone):
+	def set_Phone(self, Phone):  # String
 		self.add_body_params('Phone', Phone)
-
-	def get_UserPk(self):
+	def get_UserPk(self): # String
 		return self.get_body_params().get('UserPk')
 
-	def set_UserPk(self,UserPk):
+	def set_UserPk(self, UserPk):  # String
 		self.add_body_params('UserPk', UserPk)
-
-	def get_Email(self):
+	def get_Email(self): # String
 		return self.get_body_params().get('Email')
 
-	def set_Email(self,Email):
+	def set_Email(self, Email):  # String
 		self.add_body_params('Email', Email)
-
-	def get_UserName(self):
+	def get_UserName(self): # String
 		return self.get_body_params().get('UserName')
 
-	def set_UserName(self,UserName):
+	def set_UserName(self, UserName):  # String
 		self.add_body_params('UserName', UserName)

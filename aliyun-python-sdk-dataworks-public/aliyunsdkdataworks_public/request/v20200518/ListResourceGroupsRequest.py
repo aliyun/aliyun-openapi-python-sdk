@@ -31,6 +31,12 @@ class ListResourceGroupsRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_BizExtKey(self):
+		return self.get_query_params().get('BizExtKey')
+
+	def set_BizExtKey(self,BizExtKey):
+		self.add_query_param('BizExtKey',BizExtKey)
+
 	def get_ResourceGroupType(self):
 		return self.get_query_params().get('ResourceGroupType')
 

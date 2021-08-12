@@ -55,6 +55,12 @@ class CreateNodeRequest(RpcRequest):
 	def set_ReadonlyReplicas(self,ReadonlyReplicas):
 		self.add_query_param('ReadonlyReplicas',ReadonlyReplicas)
 
+	def get_CouponNo(self):
+		return self.get_query_params().get('CouponNo')
+
+	def set_CouponNo(self,CouponNo):
+		self.add_query_param('CouponNo',CouponNo)
+
 	def get_NodeClass(self):
 		return self.get_query_params().get('NodeClass')
 
@@ -72,6 +78,12 @@ class CreateNodeRequest(RpcRequest):
 
 	def set_DBInstanceId(self,DBInstanceId):
 		self.add_query_param('DBInstanceId',DBInstanceId)
+
+	def get_BusinessInfo(self):
+		return self.get_query_params().get('BusinessInfo')
+
+	def set_BusinessInfo(self,BusinessInfo):
+		self.add_query_param('BusinessInfo',BusinessInfo)
 
 	def get_AutoPay(self):
 		return self.get_query_params().get('AutoPay')

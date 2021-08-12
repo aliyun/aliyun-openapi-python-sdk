@@ -61,6 +61,12 @@ class CreateAppRequest(RpcRequest):
 	def set_Title(self,Title):
 		self.add_body_params('Title', Title)
 
+	def get_GroupName(self):
+		return self.get_body_params().get('GroupName')
+
+	def set_GroupName(self,GroupName):
+		self.add_body_params('GroupName', GroupName)
+
 	def get_MiddleWareIdLists(self):
 		return self.get_body_params().get('MiddleWareIdList')
 

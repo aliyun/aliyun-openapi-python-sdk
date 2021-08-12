@@ -37,6 +37,12 @@ class MigrateToOtherZoneRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_SecondaryZoneId(self):
+		return self.get_query_params().get('SecondaryZoneId')
+
+	def set_SecondaryZoneId(self,SecondaryZoneId):
+		self.add_query_param('SecondaryZoneId',SecondaryZoneId)
+
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
 

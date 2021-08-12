@@ -56,6 +56,12 @@ class ListVpcEndpointServicesRequest(RpcRequest):
 	def set_NextToken(self,NextToken):
 		self.add_query_param('NextToken',NextToken)
 
+	def get_ZoneAffinityEnabled(self):
+		return self.get_query_params().get('ZoneAffinityEnabled')
+
+	def set_ZoneAffinityEnabled(self,ZoneAffinityEnabled):
+		self.add_query_param('ZoneAffinityEnabled',ZoneAffinityEnabled)
+
 	def get_ServiceName(self):
 		return self.get_query_params().get('ServiceName')
 

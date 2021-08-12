@@ -32,11 +32,11 @@ class CreateCertificateRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_ProtectionLevel(self):
-		return self.get_query_params().get('ProtectionLevel')
+	def get_ExportablePrivateKey(self):
+		return self.get_query_params().get('ExportablePrivateKey')
 
-	def set_ProtectionLevel(self,ProtectionLevel):
-		self.add_query_param('ProtectionLevel',ProtectionLevel)
+	def set_ExportablePrivateKey(self,ExportablePrivateKey):
+		self.add_query_param('ExportablePrivateKey',ExportablePrivateKey)
 
 	def get_Subject(self):
 		return self.get_query_params().get('Subject')

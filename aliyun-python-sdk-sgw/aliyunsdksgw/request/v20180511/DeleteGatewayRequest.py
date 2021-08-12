@@ -31,6 +31,12 @@ class DeleteGatewayRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_ReasonDetail(self):
+		return self.get_query_params().get('ReasonDetail')
+
+	def set_ReasonDetail(self,ReasonDetail):
+		self.add_query_param('ReasonDetail',ReasonDetail)
+
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
 
@@ -42,3 +48,9 @@ class DeleteGatewayRequest(RpcRequest):
 
 	def set_GatewayId(self,GatewayId):
 		self.add_query_param('GatewayId',GatewayId)
+
+	def get_ReasonType(self):
+		return self.get_query_params().get('ReasonType')
+
+	def set_ReasonType(self,ReasonType):
+		self.add_query_param('ReasonType',ReasonType)

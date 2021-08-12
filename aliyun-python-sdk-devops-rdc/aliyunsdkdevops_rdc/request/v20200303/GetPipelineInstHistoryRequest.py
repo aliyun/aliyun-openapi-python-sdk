@@ -25,44 +25,38 @@ class GetPipelineInstHistoryRequest(RpcRequest):
 		RpcRequest.__init__(self, 'devops-rdc', '2020-03-03', 'GetPipelineInstHistory')
 		self.set_method('POST')
 
-	def get_EndTime(self):
+	def get_EndTime(self): # String
 		return self.get_body_params().get('EndTime')
 
-	def set_EndTime(self,EndTime):
+	def set_EndTime(self, EndTime):  # String
 		self.add_body_params('EndTime', EndTime)
-
-	def get_StartTime(self):
+	def get_StartTime(self): # String
 		return self.get_body_params().get('StartTime')
 
-	def set_StartTime(self,StartTime):
+	def set_StartTime(self, StartTime):  # String
 		self.add_body_params('StartTime', StartTime)
-
-	def get_UserPk(self):
+	def get_UserPk(self): # String
 		return self.get_body_params().get('UserPk')
 
-	def set_UserPk(self,UserPk):
+	def set_UserPk(self, UserPk):  # String
 		self.add_body_params('UserPk', UserPk)
-
-	def get_OrgId(self):
+	def get_OrgId(self): # String
 		return self.get_body_params().get('OrgId')
 
-	def set_OrgId(self,OrgId):
+	def set_OrgId(self, OrgId):  # String
 		self.add_body_params('OrgId', OrgId)
-
-	def get_PipelineId(self):
+	def get_PipelineId(self): # Long
 		return self.get_body_params().get('PipelineId')
 
-	def set_PipelineId(self,PipelineId):
+	def set_PipelineId(self, PipelineId):  # Long
 		self.add_body_params('PipelineId', PipelineId)
-
-	def get_PageSize(self):
+	def get_PageSize(self): # Long
 		return self.get_body_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
+	def set_PageSize(self, PageSize):  # Long
 		self.add_body_params('PageSize', PageSize)
-
-	def get_PageStart(self):
+	def get_PageStart(self): # Long
 		return self.get_body_params().get('PageStart')
 
-	def set_PageStart(self,PageStart):
+	def set_PageStart(self, PageStart):  # Long
 		self.add_body_params('PageStart', PageStart)

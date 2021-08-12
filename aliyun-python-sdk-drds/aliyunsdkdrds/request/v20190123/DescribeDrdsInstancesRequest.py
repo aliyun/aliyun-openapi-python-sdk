@@ -23,7 +23,7 @@ from aliyunsdkdrds.endpoint import endpoint_data
 class DescribeDrdsInstancesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Drds', '2019-01-23', 'DescribeDrdsInstances','Drds')
+		RpcRequest.__init__(self, 'Drds', '2019-01-23', 'DescribeDrdsInstances','drds')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -36,6 +36,12 @@ class DescribeDrdsInstancesRequest(RpcRequest):
 
 	def set_Description(self,Description):
 		self.add_query_param('Description',Description)
+
+	def get_ProductVersion(self):
+		return self.get_query_params().get('ProductVersion')
+
+	def set_ProductVersion(self,ProductVersion):
+		self.add_query_param('ProductVersion',ProductVersion)
 
 	def get_Type(self):
 		return self.get_query_params().get('Type')

@@ -37,6 +37,12 @@ class ElementSmartVerifyRequest(RpcRequest):
 	def set_CertFile(self,CertFile):
 		self.add_body_params('CertFile', CertFile)
 
+	def get_CertNationalEmblemUrl(self):
+		return self.get_body_params().get('CertNationalEmblemUrl')
+
+	def set_CertNationalEmblemUrl(self,CertNationalEmblemUrl):
+		self.add_body_params('CertNationalEmblemUrl', CertNationalEmblemUrl)
+
 	def get_CertName(self):
 		return self.get_body_params().get('CertName')
 

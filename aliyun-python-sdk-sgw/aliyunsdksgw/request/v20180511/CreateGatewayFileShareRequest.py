@@ -49,6 +49,12 @@ class CreateGatewayFileShareRequest(RpcRequest):
 	def set_ReadWriteClientList(self,ReadWriteClientList):
 		self.add_query_param('ReadWriteClientList',ReadWriteClientList)
 
+	def get_BypassCacheRead(self):
+		return self.get_query_params().get('BypassCacheRead')
+
+	def set_BypassCacheRead(self,BypassCacheRead):
+		self.add_query_param('BypassCacheRead',BypassCacheRead)
+
 	def get_BackendLimit(self):
 		return self.get_query_params().get('BackendLimit')
 
@@ -204,6 +210,12 @@ class CreateGatewayFileShareRequest(RpcRequest):
 
 	def set_PollingInterval(self,PollingInterval):
 		self.add_query_param('PollingInterval',PollingInterval)
+
+	def get_ServerSideAlgorithm(self):
+		return self.get_query_params().get('ServerSideAlgorithm')
+
+	def set_ServerSideAlgorithm(self,ServerSideAlgorithm):
+		self.add_query_param('ServerSideAlgorithm',ServerSideAlgorithm)
 
 	def get_ServerSideCmk(self):
 		return self.get_query_params().get('ServerSideCmk')

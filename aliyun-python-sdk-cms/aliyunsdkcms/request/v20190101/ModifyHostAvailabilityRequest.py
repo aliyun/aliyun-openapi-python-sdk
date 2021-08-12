@@ -77,6 +77,12 @@ class ModifyHostAvailabilityRequest(RpcRequest):
 	def set_TaskOptionHttpNegative(self,TaskOptionHttpNegative):
 		self.add_query_param('TaskOption.HttpNegative',TaskOptionHttpNegative)
 
+	def get_TaskOptionInterval(self):
+		return self.get_query_params().get('TaskOption.Interval')
+
+	def set_TaskOptionInterval(self,TaskOptionInterval):
+		self.add_query_param('TaskOption.Interval',TaskOptionInterval)
+
 	def get_AlertConfigNotifyType(self):
 		return self.get_query_params().get('AlertConfig.NotifyType')
 

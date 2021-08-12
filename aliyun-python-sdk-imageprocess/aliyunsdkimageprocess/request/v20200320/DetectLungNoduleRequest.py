@@ -31,17 +31,23 @@ class DetectLungNoduleRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_DataFormat(self):
-		return self.get_body_params().get('DataFormat')
-
-	def set_DataFormat(self,DataFormat):
-		self.add_body_params('DataFormat', DataFormat)
-
 	def get_Threshold(self):
 		return self.get_body_params().get('Threshold')
 
 	def set_Threshold(self,Threshold):
 		self.add_body_params('Threshold', Threshold)
+
+	def get_OrgName(self):
+		return self.get_body_params().get('OrgName')
+
+	def set_OrgName(self,OrgName):
+		self.add_body_params('OrgName', OrgName)
+
+	def get_DataFormat(self):
+		return self.get_body_params().get('DataFormat')
+
+	def set_DataFormat(self,DataFormat):
+		self.add_body_params('DataFormat', DataFormat)
 
 	def get_URLLists(self):
 		return self.get_body_params().get('URLList')
@@ -56,9 +62,3 @@ class DetectLungNoduleRequest(RpcRequest):
 
 	def set_OrgId(self,OrgId):
 		self.add_body_params('OrgId', OrgId)
-
-	def get_OrgName(self):
-		return self.get_body_params().get('OrgName')
-
-	def set_OrgName(self,OrgName):
-		self.add_body_params('OrgName', OrgName)

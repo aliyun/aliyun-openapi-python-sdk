@@ -32,14 +32,26 @@ class ListInstanceIndicesRequest(RoaRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_all(self):
+		return self.get_query_params().get('all')
+
+	def set_all(self,all):
+		self.add_query_param('all',all)
+
 	def get_InstanceId(self):
 		return self.get_path_params().get('InstanceId')
 
 	def set_InstanceId(self,InstanceId):
 		self.add_path_param('InstanceId',InstanceId)
 
-	def get_lang(self):
-		return self.get_query_params().get('lang')
+	def get_isManaged(self):
+		return self.get_query_params().get('isManaged')
 
-	def set_lang(self,lang):
-		self.add_query_param('lang',lang)
+	def set_isManaged(self,isManaged):
+		self.add_query_param('isManaged',isManaged)
+
+	def get_name(self):
+		return self.get_query_params().get('name')
+
+	def set_name(self,name):
+		self.add_query_param('name',name)

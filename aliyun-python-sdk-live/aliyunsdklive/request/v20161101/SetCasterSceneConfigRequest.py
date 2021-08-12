@@ -37,10 +37,10 @@ class SetCasterSceneConfigRequest(RpcRequest):
 	def set_LayoutId(self,LayoutId):
 		self.add_query_param('LayoutId',LayoutId)
 
-	def get_ComponentId(self):
+	def get_ComponentIds(self):
 		return self.get_query_params().get('ComponentId')
 
-	def set_ComponentId(self, ComponentIds):
+	def set_ComponentIds(self, ComponentIds):
 		for depth1 in range(len(ComponentIds)):
 			if ComponentIds[depth1] is not None:
 				self.add_query_param('ComponentId.' + str(depth1 + 1) , ComponentIds[depth1])

@@ -72,12 +72,12 @@ class DescribeInstanceModificationPriceRequest(RpcRequest):
 
 	def set_DataDisks(self, DataDisks):
 		for depth1 in range(len(DataDisks)):
+			if DataDisks[depth1].get('PerformanceLevel') is not None:
+				self.add_query_param('DataDisk.' + str(depth1 + 1) + '.PerformanceLevel', DataDisks[depth1].get('PerformanceLevel'))
 			if DataDisks[depth1].get('Size') is not None:
 				self.add_query_param('DataDisk.' + str(depth1 + 1) + '.Size', DataDisks[depth1].get('Size'))
 			if DataDisks[depth1].get('Category') is not None:
 				self.add_query_param('DataDisk.' + str(depth1 + 1) + '.Category', DataDisks[depth1].get('Category'))
-			if DataDisks[depth1].get('PerformanceLevel') is not None:
-				self.add_query_param('DataDisk.' + str(depth1 + 1) + '.PerformanceLevel', DataDisks[depth1].get('PerformanceLevel'))
 
 	def get_InstanceId(self):
 		return self.get_query_params().get('InstanceId')

@@ -79,6 +79,12 @@ class ModifyVSwitchAttributeRequest(RpcRequest):
 	def set_VSwitchId(self,VSwitchId):
 		self.add_query_param('VSwitchId',VSwitchId)
 
+	def get_VpcIpv6CidrBlock(self):
+		return self.get_query_params().get('VpcIpv6CidrBlock')
+
+	def set_VpcIpv6CidrBlock(self,VpcIpv6CidrBlock):
+		self.add_query_param('VpcIpv6CidrBlock',VpcIpv6CidrBlock)
+
 	def get_VSwitchName(self):
 		return self.get_query_params().get('VSwitchName')
 

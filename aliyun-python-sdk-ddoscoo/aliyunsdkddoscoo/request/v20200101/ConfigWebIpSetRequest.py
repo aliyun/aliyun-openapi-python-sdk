@@ -31,6 +31,12 @@ class ConfigWebIpSetRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_ResourceGroupId(self):
+		return self.get_query_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self,ResourceGroupId):
+		self.add_query_param('ResourceGroupId',ResourceGroupId)
+
 	def get_BlackLists(self):
 		return self.get_query_params().get('BlackList')
 
@@ -46,12 +52,6 @@ class ConfigWebIpSetRequest(RpcRequest):
 		for depth1 in range(len(WhiteLists)):
 			if WhiteLists[depth1] is not None:
 				self.add_query_param('WhiteList.' + str(depth1 + 1) , WhiteLists[depth1])
-
-	def get_ResourceGroupId(self):
-		return self.get_query_params().get('ResourceGroupId')
-
-	def set_ResourceGroupId(self,ResourceGroupId):
-		self.add_query_param('ResourceGroupId',ResourceGroupId)
 
 	def get_Domain(self):
 		return self.get_query_params().get('Domain')

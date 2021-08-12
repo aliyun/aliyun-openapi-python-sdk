@@ -49,6 +49,12 @@ class SubscribeBillToOSSRequest(RpcRequest):
 	def set_SubscribeBucket(self,SubscribeBucket):
 		self.add_query_param('SubscribeBucket',SubscribeBucket)
 
+	def get_BeginBillingCycle(self):
+		return self.get_query_params().get('BeginBillingCycle')
+
+	def set_BeginBillingCycle(self,BeginBillingCycle):
+		self.add_query_param('BeginBillingCycle',BeginBillingCycle)
+
 	def get_MultAccountRelSubscribe(self):
 		return self.get_query_params().get('MultAccountRelSubscribe')
 

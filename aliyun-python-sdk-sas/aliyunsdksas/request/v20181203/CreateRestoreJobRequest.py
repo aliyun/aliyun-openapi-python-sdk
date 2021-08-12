@@ -18,12 +18,18 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdksas.endpoint import endpoint_data
 
 class CreateRestoreJobRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'CreateRestoreJob','sas')
 		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -36,6 +42,12 @@ class CreateRestoreJobRequest(RpcRequest):
 
 	def set_SnapshotId(self,SnapshotId):
 		self.add_query_param('SnapshotId',SnapshotId)
+
+	def get_VaultId(self):
+		return self.get_query_params().get('VaultId')
+
+	def set_VaultId(self,VaultId):
+		self.add_query_param('VaultId',VaultId)
 
 	def get_Uuid(self):
 		return self.get_query_params().get('Uuid')
@@ -55,17 +67,17 @@ class CreateRestoreJobRequest(RpcRequest):
 	def set_SourceIp(self,SourceIp):
 		self.add_query_param('SourceIp',SourceIp)
 
+	def get_SourceType(self):
+		return self.get_query_params().get('SourceType')
+
+	def set_SourceType(self,SourceType):
+		self.add_query_param('SourceType',SourceType)
+
 	def get_SnapshotVersion(self):
 		return self.get_query_params().get('SnapshotVersion')
 
 	def set_SnapshotVersion(self,SnapshotVersion):
 		self.add_query_param('SnapshotVersion',SnapshotVersion)
-
-	def get_PolicyVersion(self):
-		return self.get_query_params().get('PolicyVersion')
-
-	def set_PolicyVersion(self,PolicyVersion):
-		self.add_query_param('PolicyVersion',PolicyVersion)
 
 	def get_Includes(self):
 		return self.get_query_params().get('Includes')
@@ -78,9 +90,3 @@ class CreateRestoreJobRequest(RpcRequest):
 
 	def set_Target(self,Target):
 		self.add_query_param('Target',Target)
-
-	def get_InstanceId(self):
-		return self.get_query_params().get('InstanceId')
-
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)

@@ -63,6 +63,12 @@ class DescribeInstanceHistoryEventsRequest(RpcRequest):
 	def set_ImpactLevel(self,ImpactLevel):
 		self.add_query_param('ImpactLevel',ImpactLevel)
 
+	def get_ResourceGroupId(self):
+		return self.get_query_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self,ResourceGroupId):
+		self.add_query_param('ResourceGroupId',ResourceGroupId)
+
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
 
@@ -77,11 +83,29 @@ class DescribeInstanceHistoryEventsRequest(RpcRequest):
 			if InstanceEventCycleStatuss[depth1] is not None:
 				self.add_query_param('InstanceEventCycleStatus.' + str(depth1 + 1) , InstanceEventCycleStatuss[depth1])
 
+	def get_Tags(self):
+		return self.get_query_params().get('Tag')
+
+	def set_Tags(self, Tags):
+		for depth1 in range(len(Tags)):
+			if Tags[depth1].get('Key') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tags[depth1].get('Key'))
+			if Tags[depth1].get('Value') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tags[depth1].get('Value'))
+
 	def get_EventPublishTimeEnd(self):
 		return self.get_query_params().get('EventPublishTime.End')
 
 	def set_EventPublishTimeEnd(self,EventPublishTimeEnd):
 		self.add_query_param('EventPublishTime.End',EventPublishTimeEnd)
+
+	def get_ResourceIds(self):
+		return self.get_query_params().get('ResourceId')
+
+	def set_ResourceIds(self, ResourceIds):
+		for depth1 in range(len(ResourceIds)):
+			if ResourceIds[depth1] is not None:
+				self.add_query_param('ResourceId.' + str(depth1 + 1) , ResourceIds[depth1])
 
 	def get_InstanceEventTypes(self):
 		return self.get_query_params().get('InstanceEventType')
@@ -114,6 +138,12 @@ class DescribeInstanceHistoryEventsRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_ResourceType(self):
+		return self.get_query_params().get('ResourceType')
+
+	def set_ResourceType(self,ResourceType):
+		self.add_query_param('ResourceType',ResourceType)
 
 	def get_EventPublishTimeStart(self):
 		return self.get_query_params().get('EventPublishTime.Start')

@@ -49,10 +49,10 @@ class AddCasterEpisodeGroupRequest(RpcRequest):
 	def set_SideOutputUrl(self,SideOutputUrl):
 		self.add_query_param('SideOutputUrl',SideOutputUrl)
 
-	def get_Item(self):
+	def get_Items(self):
 		return self.get_query_params().get('Item')
 
-	def set_Item(self, Items):
+	def set_Items(self, Items):
 		for depth1 in range(len(Items)):
 			if Items[depth1].get('ItemName') is not None:
 				self.add_query_param('Item.' + str(depth1 + 1) + '.ItemName', Items[depth1].get('ItemName'))

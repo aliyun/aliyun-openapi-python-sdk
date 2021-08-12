@@ -23,7 +23,7 @@ from aliyunsdkiot.endpoint import endpoint_data
 class CreateOTAFirmwareRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'CreateOTAFirmware')
+		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'CreateOTAFirmware','iot')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -102,6 +102,12 @@ class CreateOTAFirmwareRequest(RpcRequest):
 
 	def set_SrcVersion(self,SrcVersion):
 		self.add_query_param('SrcVersion',SrcVersion)
+
+	def get_Udi(self):
+		return self.get_query_params().get('Udi')
+
+	def set_Udi(self,Udi):
+		self.add_query_param('Udi',Udi)
 
 	def get_DestVersion(self):
 		return self.get_query_params().get('DestVersion')

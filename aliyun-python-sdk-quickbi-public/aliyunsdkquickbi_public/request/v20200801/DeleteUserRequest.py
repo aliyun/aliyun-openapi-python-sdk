@@ -31,6 +31,12 @@ class DeleteUserRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_TransferUserId(self):
+		return self.get_query_params().get('TransferUserId')
+
+	def set_TransferUserId(self,TransferUserId):
+		self.add_query_param('TransferUserId',TransferUserId)
+
 	def get_UserId(self):
 		return self.get_query_params().get('UserId')
 

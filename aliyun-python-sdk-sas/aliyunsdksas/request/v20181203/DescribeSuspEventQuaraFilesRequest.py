@@ -18,30 +18,24 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdksas.endpoint import endpoint_data
 
 class DescribeSuspEventQuaraFilesRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeSuspEventQuaraFiles','sas')
 		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_CurrentPage(self):
-		return self.get_query_params().get('CurrentPage')
-
-	def set_CurrentPage(self,CurrentPage):
-		self.add_query_param('CurrentPage',CurrentPage)
 
 	def get_SourceIp(self):
 		return self.get_query_params().get('SourceIp')
 
 	def set_SourceIp(self,SourceIp):
 		self.add_query_param('SourceIp',SourceIp)
-
-	def get_QuaraTag(self):
-		return self.get_query_params().get('QuaraTag')
-
-	def set_QuaraTag(self,QuaraTag):
-		self.add_query_param('QuaraTag',QuaraTag)
 
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
@@ -54,6 +48,24 @@ class DescribeSuspEventQuaraFilesRequest(RpcRequest):
 
 	def set_From(self,_From):
 		self.add_query_param('From',_From)
+
+	def get_GroupId(self):
+		return self.get_query_params().get('GroupId')
+
+	def set_GroupId(self,GroupId):
+		self.add_query_param('GroupId',GroupId)
+
+	def get_CurrentPage(self):
+		return self.get_query_params().get('CurrentPage')
+
+	def set_CurrentPage(self,CurrentPage):
+		self.add_query_param('CurrentPage',CurrentPage)
+
+	def get_QuaraTag(self):
+		return self.get_query_params().get('QuaraTag')
+
+	def set_QuaraTag(self,QuaraTag):
+		self.add_query_param('QuaraTag',QuaraTag)
 
 	def get_Status(self):
 		return self.get_query_params().get('Status')

@@ -1,3 +1,18 @@
+2021-05-23 Version: 20210523.0.0
+- New API- GetDrdsDbRdsRelationInfo, which can get private RDS list under certain DB out of DRDS instance ID and DB name.
+
+2021-05-14 Version: 20210515.0.0
+- Support Private RDS management through OpenAPI.
+- ManagePrivateRds to do RDS information query and some management.
+- DescribeDrdsRdsInstances to find RDS under a certain DRDS instance.
+- UpdatePrivateRdsClass to Upgrade or Downgrade your Private RDS class.
+
+2021-05-14 Version: 1.1.0
+- Support Private RDS management through OpenAPI.
+- ManagePrivateRds to do RDS information query and some management.
+- DescribeDrdsRdsInstances to find RDS under a certain DRDS instance.
+- UpdatePrivateRdsClass to Upgrade or Downgrade your Private RDS class.
+
 2020-10-28 Version: 20201028
 - Supported golang sdk.
 - Fixed some bugs for drds.

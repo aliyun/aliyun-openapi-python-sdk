@@ -37,6 +37,12 @@ class AttachDbfsRequest(RpcRequest):
 	def set_ECSInstanceId(self,ECSInstanceId):
 		self.add_query_param('ECSInstanceId',ECSInstanceId)
 
+	def get_ServerUrl(self):
+		return self.get_query_params().get('ServerUrl')
+
+	def set_ServerUrl(self,ServerUrl):
+		self.add_query_param('ServerUrl',ServerUrl)
+
 	def get_FsId(self):
 		return self.get_query_params().get('FsId')
 

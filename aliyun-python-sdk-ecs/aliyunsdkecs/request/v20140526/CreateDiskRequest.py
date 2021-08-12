@@ -85,15 +85,27 @@ class CreateDiskRequest(RpcRequest):
 	def set_StorageSetPartitionNumber(self,StorageSetPartitionNumber):
 		self.add_query_param('StorageSetPartitionNumber',StorageSetPartitionNumber)
 
+	def get_MultiAttach(self):
+		return self.get_query_params().get('MultiAttach')
+
+	def set_MultiAttach(self,MultiAttach):
+		self.add_query_param('MultiAttach',MultiAttach)
+
 	def get_Tags(self):
 		return self.get_query_params().get('Tag')
 
 	def set_Tags(self, Tags):
 		for depth1 in range(len(Tags)):
-			if Tags[depth1].get('Value') is not None:
-				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tags[depth1].get('Value'))
+			if Tags[depth1].get('value') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.value', Tags[depth1].get('value'))
 			if Tags[depth1].get('Key') is not None:
 				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tags[depth1].get('Key'))
+
+	def get_AdvancedFeatures(self):
+		return self.get_query_params().get('AdvancedFeatures')
+
+	def set_AdvancedFeatures(self,AdvancedFeatures):
+		self.add_query_param('AdvancedFeatures',AdvancedFeatures)
 
 	def get_Arns(self):
 		return self.get_query_params().get('Arn')
@@ -107,11 +119,11 @@ class CreateDiskRequest(RpcRequest):
 			if Arns[depth1].get('AssumeRoleFor') is not None:
 				self.add_query_param('Arn.' + str(depth1 + 1) + '.AssumeRoleFor', Arns[depth1].get('AssumeRoleFor'))
 
-	def get_AdvancedFeatures(self):
-		return self.get_query_params().get('AdvancedFeatures')
+	def get_DedicatedBlockStorageClusterId(self):
+		return self.get_query_params().get('DedicatedBlockStorageClusterId')
 
-	def set_AdvancedFeatures(self,AdvancedFeatures):
-		self.add_query_param('AdvancedFeatures',AdvancedFeatures)
+	def set_DedicatedBlockStorageClusterId(self,DedicatedBlockStorageClusterId):
+		self.add_query_param('DedicatedBlockStorageClusterId',DedicatedBlockStorageClusterId)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')

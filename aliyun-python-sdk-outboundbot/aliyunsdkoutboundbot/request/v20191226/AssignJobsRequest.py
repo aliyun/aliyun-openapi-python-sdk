@@ -53,6 +53,18 @@ class AssignJobsRequest(RpcRequest):
 	def set_InstanceId(self,InstanceId):
 		self.add_query_param('InstanceId',InstanceId)
 
+	def get_RosterType(self):
+		return self.get_query_params().get('RosterType')
+
+	def set_RosterType(self,RosterType):
+		self.add_query_param('RosterType',RosterType)
+
+	def get_JobDataParsingTaskId(self):
+		return self.get_query_params().get('JobDataParsingTaskId')
+
+	def set_JobDataParsingTaskId(self,JobDataParsingTaskId):
+		self.add_query_param('JobDataParsingTaskId',JobDataParsingTaskId)
+
 	def get_StrategyJson(self):
 		return self.get_query_params().get('StrategyJson')
 
@@ -64,3 +76,9 @@ class AssignJobsRequest(RpcRequest):
 
 	def set_JobGroupId(self,JobGroupId):
 		self.add_query_param('JobGroupId',JobGroupId)
+
+	def get_IsAsynchrony(self):
+		return self.get_query_params().get('IsAsynchrony')
+
+	def set_IsAsynchrony(self,IsAsynchrony):
+		self.add_query_param('IsAsynchrony',IsAsynchrony)

@@ -37,23 +37,29 @@ class AddCustomLiveStreamTranscodeRequest(RpcRequest):
 	def set_Template(self,Template):
 		self.add_query_param('Template',Template)
 
-	def get_Lazy(self):
-		return self.get_query_params().get('Lazy')
-
-	def set_Lazy(self,Lazy):
-		self.add_query_param('Lazy',Lazy)
-
 	def get_Gop(self):
 		return self.get_query_params().get('Gop')
 
 	def set_Gop(self,Gop):
 		self.add_query_param('Gop',Gop)
 
+	def get_KmsKeyExpireInterval(self):
+		return self.get_query_params().get('KmsKeyExpireInterval')
+
+	def set_KmsKeyExpireInterval(self,KmsKeyExpireInterval):
+		self.add_query_param('KmsKeyExpireInterval',KmsKeyExpireInterval)
+
 	def get_AudioCodec(self):
 		return self.get_query_params().get('AudioCodec')
 
 	def set_AudioCodec(self,AudioCodec):
 		self.add_query_param('AudioCodec',AudioCodec)
+
+	def get_KmsUID(self):
+		return self.get_query_params().get('KmsUID')
+
+	def set_KmsUID(self,KmsUID):
+		self.add_query_param('KmsUID',KmsUID)
 
 	def get_TemplateType(self):
 		return self.get_query_params().get('TemplateType')
@@ -78,6 +84,12 @@ class AddCustomLiveStreamTranscodeRequest(RpcRequest):
 
 	def set_App(self,App):
 		self.add_query_param('App',App)
+
+	def get_EncryptParameters(self):
+		return self.get_query_params().get('EncryptParameters')
+
+	def set_EncryptParameters(self,EncryptParameters):
+		self.add_query_param('EncryptParameters',EncryptParameters)
 
 	def get_AudioChannelNum(self):
 		return self.get_query_params().get('AudioChannelNum')
@@ -132,3 +144,9 @@ class AddCustomLiveStreamTranscodeRequest(RpcRequest):
 
 	def set_VideoBitrate(self,VideoBitrate):
 		self.add_query_param('VideoBitrate',VideoBitrate)
+
+	def get_KmsKeyID(self):
+		return self.get_query_params().get('KmsKeyID')
+
+	def set_KmsKeyID(self,KmsKeyID):
+		self.add_query_param('KmsKeyID',KmsKeyID)

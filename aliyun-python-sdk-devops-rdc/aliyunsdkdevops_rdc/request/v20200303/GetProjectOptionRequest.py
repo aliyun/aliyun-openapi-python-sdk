@@ -25,26 +25,23 @@ class GetProjectOptionRequest(RpcRequest):
 		RpcRequest.__init__(self, 'devops-rdc', '2020-03-03', 'GetProjectOption')
 		self.set_method('POST')
 
-	def get_Query(self):
+	def get_Query(self): # String
 		return self.get_body_params().get('Query')
 
-	def set_Query(self,Query):
+	def set_Query(self, Query):  # String
 		self.add_body_params('Query', Query)
-
-	def get_Type(self):
+	def get_Type(self): # String
 		return self.get_body_params().get('Type')
 
-	def set_Type(self,Type):
+	def set_Type(self, Type):  # String
 		self.add_body_params('Type', Type)
-
-	def get_ProjectId(self):
+	def get_ProjectId(self): # String
 		return self.get_body_params().get('ProjectId')
 
-	def set_ProjectId(self,ProjectId):
+	def set_ProjectId(self, ProjectId):  # String
 		self.add_body_params('ProjectId', ProjectId)
-
-	def get_OrgId(self):
+	def get_OrgId(self): # String
 		return self.get_body_params().get('OrgId')
 
-	def set_OrgId(self,OrgId):
+	def set_OrgId(self, OrgId):  # String
 		self.add_body_params('OrgId', OrgId)

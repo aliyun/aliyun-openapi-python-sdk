@@ -37,6 +37,12 @@ class CreateTairInstanceRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_SecondaryZoneId(self):
+		return self.get_query_params().get('SecondaryZoneId')
+
+	def set_SecondaryZoneId(self,SecondaryZoneId):
+		self.add_query_param('SecondaryZoneId',SecondaryZoneId)
+
 	def get_CouponNo(self):
 		return self.get_query_params().get('CouponNo')
 
@@ -192,6 +198,12 @@ class CreateTairInstanceRequest(RpcRequest):
 
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
+
+	def get_GlobalInstanceId(self):
+		return self.get_query_params().get('GlobalInstanceId')
+
+	def set_GlobalInstanceId(self,GlobalInstanceId):
+		self.add_query_param('GlobalInstanceId',GlobalInstanceId)
 
 	def get_VpcId(self):
 		return self.get_query_params().get('VpcId')

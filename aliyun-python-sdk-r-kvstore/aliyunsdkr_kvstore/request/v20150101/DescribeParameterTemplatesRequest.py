@@ -79,6 +79,12 @@ class DescribeParameterTemplatesRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
+	def get_InstanceId(self):
+		return self.get_query_params().get('InstanceId')
+
+	def set_InstanceId(self,InstanceId):
+		self.add_query_param('InstanceId',InstanceId)
+
 	def get_CharacterType(self):
 		return self.get_query_params().get('CharacterType')
 

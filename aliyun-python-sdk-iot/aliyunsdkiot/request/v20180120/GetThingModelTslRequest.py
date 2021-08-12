@@ -23,7 +23,7 @@ from aliyunsdkiot.endpoint import endpoint_data
 class GetThingModelTslRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'GetThingModelTsl')
+		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'GetThingModelTsl','iot')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -36,12 +36,6 @@ class GetThingModelTslRequest(RpcRequest):
 
 	def set_Simple(self,Simple):
 		self.add_query_param('Simple',Simple)
-
-	def get_ResourceGroupId(self):
-		return self.get_query_params().get('ResourceGroupId')
-
-	def set_ResourceGroupId(self,ResourceGroupId):
-		self.add_query_param('ResourceGroupId',ResourceGroupId)
 
 	def get_IotInstanceId(self):
 		return self.get_query_params().get('IotInstanceId')

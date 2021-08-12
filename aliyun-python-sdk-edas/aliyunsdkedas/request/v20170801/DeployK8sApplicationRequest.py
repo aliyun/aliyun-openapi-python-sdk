@@ -104,6 +104,18 @@ class DeployK8sApplicationRequest(RoaRequest):
 	def set_StorageType(self,StorageType):
 		self.add_query_param('StorageType',StorageType)
 
+	def get_EnvFroms(self):
+		return self.get_query_params().get('EnvFroms')
+
+	def set_EnvFroms(self,EnvFroms):
+		self.add_query_param('EnvFroms',EnvFroms)
+
+	def get_ConfigMountDescs(self):
+		return self.get_query_params().get('ConfigMountDescs')
+
+	def set_ConfigMountDescs(self,ConfigMountDescs):
+		self.add_query_param('ConfigMountDescs',ConfigMountDescs)
+
 	def get_EdasContainerVersion(self):
 		return self.get_query_params().get('EdasContainerVersion')
 

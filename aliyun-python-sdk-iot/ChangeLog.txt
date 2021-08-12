@@ -1,5 +1,36 @@
-2021-03-09 Version: 1.0.0-20210309
+2021-07-06 Version: 8.27.0
+- Add SubscribeTopic.
+
+2021-06-30 Version: 8.26.0
+- Add RerunJob.
+- Add Message API, QueryMessageInfo.
+- Update OTA API, including CreateOTAFirmware, QueryOTAFirmware.
+
+2021-06-09 Version: 8.25.0
+- Update TMP API, including QueryDevice, CreateThingModel, UpdateThingModel, ImportThingModelTsl, BatchPickThingModel, ListDeviceDistributeJob.
+- Add TMP API, including QueryDeviceInfo.
+- Update OTA API, including CreateOTAVerifyJob, CreateOTAStaticUpgradeJob, CreateOTADynamicUpgradeJob, CancelOTATaskByJob, QueryOTAJob.
+- Add OTA API, including ListOTAUnfinishedTaskByDevice,ConfirmOTATask.
+
+2021-05-18 Version: 8.24.0
+- Add IoT Studio SetStudioProjectCooperation API.
+- Add IoT Studio QueryStudioProjectList API.
+- Add IoT Studio QueryStudioAppList API.
+- Add IoT Studio QueryStudioAppPageListOpen API.
+- Add IoT Studio QueryStudioAppDomainListOpen API.
+- Add IoT Studio DeleteStudioAppDomainOpen API.
+- Add IoT Studio CreateStudioAppDomainOpen API.
+- Add IoT Studio GetStudioAppTokenOpen API.
+- Add IoT Studio SetupStudioAppAuthModeOpen API.
+- Add IoT Studio RefreshStudioAppTokenOpen API.
+- Add IoT Studio PublishStudioApp API.
+
+2021-05-08 Version: 8.23.0
 - Generated 2018-01-20 for `Iot`.
+
+2021-04-01 Version: 8.22.0
+- Add data service api, including ListAnalyticsData.
+- Update file uploading api, including GenerateFileUploadURL.
 
 2021-02-19 Version: 8.19.0
 - Add support for IoT jobs, including job management and query APIs like CreateJob, UpdateJob, QueryJob, CancelJob, ListTask, QueryTask, QueryJobStatistics etc.

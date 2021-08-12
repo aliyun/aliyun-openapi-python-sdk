@@ -25,6 +25,12 @@ class DescribeDynamicTagRuleListRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Cms', '2019-01-01', 'DescribeDynamicTagRuleList','cms')
 		self.set_method('POST')
 
+	def get_TagValue(self):
+		return self.get_query_params().get('TagValue')
+
+	def set_TagValue(self,TagValue):
+		self.add_query_param('TagValue',TagValue)
+
 	def get_PageNumber(self):
 		return self.get_query_params().get('PageNumber')
 
@@ -42,3 +48,9 @@ class DescribeDynamicTagRuleListRequest(RpcRequest):
 
 	def set_TagKey(self,TagKey):
 		self.add_query_param('TagKey',TagKey)
+
+	def get_TagRegionId(self):
+		return self.get_query_params().get('TagRegionId')
+
+	def set_TagRegionId(self,TagRegionId):
+		self.add_query_param('TagRegionId',TagRegionId)

@@ -79,6 +79,12 @@ class QueryPushRecordsRequest(RpcRequest):
 	def set_AppKey(self,AppKey):
 		self.add_query_param('AppKey',AppKey)
 
+	def get_Page(self):
+		return self.get_query_params().get('Page')
+
+	def set_Page(self,Page):
+		self.add_query_param('Page',Page)
+
 	def get_PushType(self):
 		return self.get_query_params().get('PushType')
 

@@ -31,6 +31,12 @@ class ListCustomImagesRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_ClusterId(self):
+		return self.get_query_params().get('ClusterId')
+
+	def set_ClusterId(self,ClusterId):
+		self.add_query_param('ClusterId',ClusterId)
+
 	def get_ImageOwnerAlias(self):
 		return self.get_query_params().get('ImageOwnerAlias')
 

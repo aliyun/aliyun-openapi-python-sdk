@@ -123,3 +123,21 @@ class TestAcsClient(unittest.TestCase):
         else:
             headers = dict(response.headers._headers)
         self.assertEqual('application/xml', headers['Content-Type'].strip('\r\n '))
+
+    def test_http_proxy(self):
+        client = AcsClient(
+            "id",
+            "aks",
+            region_id='cn-hangzhou',
+            proxy={'http': 'http://127.0.0.1:8080'}
+        )
+        request = RpcRequest(
+            'sts',
+            '2020',
+            'test'
+        )
+        try:
+            client.do_action_with_exception(request)
+        except ClientException as e:
+            self.assertEqual(e.get_error_code(), 'SDK.HttpError')
+            self.assertIn('Cannot connect to proxy', e.message)

@@ -139,6 +139,12 @@ class ConfigureDtsJobRequest(RpcRequest):
 	def set_DtsInstanceId(self,DtsInstanceId):
 		self.add_query_param('DtsInstanceId',DtsInstanceId)
 
+	def get_SynchronizationDirection(self):
+		return self.get_query_params().get('SynchronizationDirection')
+
+	def set_SynchronizationDirection(self,SynchronizationDirection):
+		self.add_query_param('SynchronizationDirection',SynchronizationDirection)
+
 	def get_SourceEndpointRegion(self):
 		return self.get_query_params().get('SourceEndpointRegion')
 

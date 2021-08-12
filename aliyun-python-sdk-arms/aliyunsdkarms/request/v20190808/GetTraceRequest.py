@@ -23,7 +23,7 @@ from aliyunsdkarms.endpoint import endpoint_data
 class GetTraceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ARMS', '2019-08-08', 'GetTrace')
+		RpcRequest.__init__(self, 'ARMS', '2019-08-08', 'GetTrace','arms')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -36,3 +36,15 @@ class GetTraceRequest(RpcRequest):
 
 	def set_TraceID(self,TraceID):
 		self.add_query_param('TraceID',TraceID)
+
+	def get_EndTime(self):
+		return self.get_query_params().get('EndTime')
+
+	def set_EndTime(self,EndTime):
+		self.add_query_param('EndTime',EndTime)
+
+	def get_StartTime(self):
+		return self.get_query_params().get('StartTime')
+
+	def set_StartTime(self,StartTime):
+		self.add_query_param('StartTime',StartTime)

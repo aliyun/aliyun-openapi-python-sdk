@@ -97,11 +97,23 @@ class DescribePriceRequest(RpcRequest):
 	def set_InstanceCpuCoreCount(self,InstanceCpuCoreCount):
 		self.add_query_param('InstanceCpuCoreCount',InstanceCpuCoreCount)
 
+	def get_SpotStrategy(self):
+		return self.get_query_params().get('SpotStrategy')
+
+	def set_SpotStrategy(self,SpotStrategy):
+		self.add_query_param('SpotStrategy',SpotStrategy)
+
 	def get_InternetChargeType(self):
 		return self.get_query_params().get('InternetChargeType')
 
 	def set_InternetChargeType(self,InternetChargeType):
 		self.add_query_param('InternetChargeType',InternetChargeType)
+
+	def get_ZoneId(self):
+		return self.get_query_params().get('ZoneId')
+
+	def set_ZoneId(self,ZoneId):
+		self.add_query_param('ZoneId',ZoneId)
 
 	def get_InstanceNetworkType(self):
 		return self.get_query_params().get('InstanceNetworkType')
@@ -236,6 +248,12 @@ class DescribePriceRequest(RpcRequest):
 
 	def set_DataDisk2Size(self,DataDisk2Size):
 		self.add_query_param('DataDisk.2.Size',DataDisk2Size)
+
+	def get_SpotDuration(self):
+		return self.get_query_params().get('SpotDuration')
+
+	def set_SpotDuration(self,SpotDuration):
+		self.add_query_param('SpotDuration',SpotDuration)
 
 	def get_ResourceType(self):
 		return self.get_query_params().get('ResourceType')

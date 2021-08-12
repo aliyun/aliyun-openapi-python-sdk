@@ -61,10 +61,10 @@ class DescribeVpnSslServerLogsRequest(RpcRequest):
 	def set_VpnSslServerId(self,VpnSslServerId):
 		self.add_query_param('VpnSslServerId',VpnSslServerId)
 
-	def get__From(self):
+	def get_From(self):
 		return self.get_query_params().get('From')
 
-	def set__From(self,_From):
+	def set_From(self,_From):
 		self.add_query_param('From',_From)
 
 	def get_SslVpnClientCertId(self):

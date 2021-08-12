@@ -31,6 +31,12 @@ class ModifyWebRuleRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_HttpsExt(self):
+		return self.get_query_params().get('HttpsExt')
+
+	def set_HttpsExt(self,HttpsExt):
+		self.add_query_param('HttpsExt',HttpsExt)
+
 	def get_ResourceGroupId(self):
 		return self.get_query_params().get('ResourceGroupId')
 

@@ -90,8 +90,8 @@ class DescribeDisksRequest(RpcRequest):
 
 	def set_Tags(self, Tags):
 		for depth1 in range(len(Tags)):
-			if Tags[depth1].get('Value') is not None:
-				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tags[depth1].get('Value'))
+			if Tags[depth1].get('value') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.value', Tags[depth1].get('value'))
 			if Tags[depth1].get('Key') is not None:
 				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tags[depth1].get('Key'))
 
@@ -186,6 +186,12 @@ class DescribeDisksRequest(RpcRequest):
 
 	def set_DiskIds(self,DiskIds):
 		self.add_query_param('DiskIds',DiskIds)
+
+	def get_MultiAttach(self):
+		return self.get_query_params().get('MultiAttach')
+
+	def set_MultiAttach(self,MultiAttach):
+		self.add_query_param('MultiAttach',MultiAttach)
 
 	def get_DeleteWithInstance(self):
 		return self.get_query_params().get('DeleteWithInstance')

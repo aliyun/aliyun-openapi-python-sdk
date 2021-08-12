@@ -18,24 +18,24 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdksas.endpoint import endpoint_data
 
 class DescribeBackupPolicyRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Sas', '2018-12-03', 'DescribeBackupPolicy','sas')
 		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_PolicyVersion(self):
-		return self.get_query_params().get('PolicyVersion')
-
-	def set_PolicyVersion(self,PolicyVersion):
-		self.add_query_param('PolicyVersion',PolicyVersion)
 
 	def get_SourceIp(self):
 		return self.get_query_params().get('SourceIp')
@@ -48,3 +48,9 @@ class DescribeBackupPolicyRequest(RpcRequest):
 
 	def set_Id(self,Id):
 		self.add_query_param('Id',Id)
+
+	def get_PolicyVersion(self):
+		return self.get_query_params().get('PolicyVersion')
+
+	def set_PolicyVersion(self,PolicyVersion):
+		self.add_query_param('PolicyVersion',PolicyVersion)

@@ -25,38 +25,33 @@ class CreateCredentialRequest(RpcRequest):
 		RpcRequest.__init__(self, 'devops-rdc', '2020-03-03', 'CreateCredential')
 		self.set_method('POST')
 
-	def get_Type(self):
+	def get_Type(self): # String
 		return self.get_body_params().get('Type')
 
-	def set_Type(self,Type):
+	def set_Type(self, Type):  # String
 		self.add_body_params('Type', Type)
-
-	def get_UserPk(self):
+	def get_UserPk(self): # String
 		return self.get_body_params().get('UserPk')
 
-	def set_UserPk(self,UserPk):
+	def set_UserPk(self, UserPk):  # String
 		self.add_body_params('UserPk', UserPk)
-
-	def get_OrgId(self):
+	def get_OrgId(self): # String
 		return self.get_body_params().get('OrgId')
 
-	def set_OrgId(self,OrgId):
+	def set_OrgId(self, OrgId):  # String
 		self.add_body_params('OrgId', OrgId)
-
-	def get_Password(self):
+	def get_Password(self): # String
 		return self.get_body_params().get('Password')
 
-	def set_Password(self,Password):
+	def set_Password(self, Password):  # String
 		self.add_body_params('Password', Password)
-
-	def get_Name(self):
+	def get_Name(self): # String
 		return self.get_body_params().get('Name')
 
-	def set_Name(self,Name):
+	def set_Name(self, Name):  # String
 		self.add_body_params('Name', Name)
-
-	def get_UserName(self):
+	def get_UserName(self): # String
 		return self.get_body_params().get('UserName')
 
-	def set_UserName(self,UserName):
+	def set_UserName(self, UserName):  # String
 		self.add_body_params('UserName', UserName)

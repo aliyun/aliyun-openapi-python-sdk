@@ -23,7 +23,7 @@ from aliyunsdkdms_enterprise.endpoint import endpoint_data
 class ListDBTaskSQLJobRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'dms-enterprise', '2018-11-01', 'ListDBTaskSQLJob')
+		RpcRequest.__init__(self, 'dms-enterprise', '2018-11-01', 'ListDBTaskSQLJob','dms-enterprise')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):

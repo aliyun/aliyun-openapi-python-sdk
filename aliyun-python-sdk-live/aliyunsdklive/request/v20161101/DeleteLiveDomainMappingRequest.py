@@ -31,18 +31,6 @@ class DeleteLiveDomainMappingRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_PullDomain(self):
-		return self.get_query_params().get('PullDomain')
-
-	def set_PullDomain(self,PullDomain):
-		self.add_query_param('PullDomain',PullDomain)
-
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
 
@@ -54,3 +42,15 @@ class DeleteLiveDomainMappingRequest(RpcRequest):
 
 	def set_PushDomain(self,PushDomain):
 		self.add_query_param('PushDomain',PushDomain)
+
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
+
+	def get_PullDomain(self):
+		return self.get_query_params().get('PullDomain')
+
+	def set_PullDomain(self,PullDomain):
+		self.add_query_param('PullDomain',PullDomain)

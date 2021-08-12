@@ -79,6 +79,12 @@ class CreateClusterRequest(RpcRequest):
 	def set_DiskSize(self,DiskSize):
 		self.add_query_param('DiskSize',DiskSize)
 
+	def get_EncryptionKey(self):
+		return self.get_query_params().get('EncryptionKey')
+
+	def set_EncryptionKey(self,EncryptionKey):
+		self.add_query_param('EncryptionKey',EncryptionKey)
+
 	def get_MasterInstanceType(self):
 		return self.get_query_params().get('MasterInstanceType')
 

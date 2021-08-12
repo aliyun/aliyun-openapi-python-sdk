@@ -113,11 +113,23 @@ class CreateNetworkInterfaceRequest(RpcRequest):
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
+	def get_Ipv6AddressCount(self):
+		return self.get_query_params().get('Ipv6AddressCount')
+
+	def set_Ipv6AddressCount(self,Ipv6AddressCount):
+		self.add_query_param('Ipv6AddressCount',Ipv6AddressCount)
+
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
 
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
+
+	def get_QueuePairNumber(self):
+		return self.get_query_params().get('QueuePairNumber')
+
+	def set_QueuePairNumber(self,QueuePairNumber):
+		self.add_query_param('QueuePairNumber',QueuePairNumber)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
@@ -132,6 +144,12 @@ class CreateNetworkInterfaceRequest(RpcRequest):
 		for depth1 in range(len(SecurityGroupIdss)):
 			if SecurityGroupIdss[depth1] is not None:
 				self.add_query_param('SecurityGroupIds.' + str(depth1 + 1) , SecurityGroupIdss[depth1])
+
+	def get_NetworkInterfaceTrafficMode(self):
+		return self.get_query_params().get('NetworkInterfaceTrafficMode')
+
+	def set_NetworkInterfaceTrafficMode(self,NetworkInterfaceTrafficMode):
+		self.add_query_param('NetworkInterfaceTrafficMode',NetworkInterfaceTrafficMode)
 
 	def get_VSwitchId(self):
 		return self.get_query_params().get('VSwitchId')
@@ -152,3 +170,11 @@ class CreateNetworkInterfaceRequest(RpcRequest):
 
 	def set_PrimaryIpAddress(self,PrimaryIpAddress):
 		self.add_query_param('PrimaryIpAddress',PrimaryIpAddress)
+
+	def get_Ipv6Addresss(self):
+		return self.get_query_params().get('Ipv6Address')
+
+	def set_Ipv6Addresss(self, Ipv6Addresss):
+		for depth1 in range(len(Ipv6Addresss)):
+			if Ipv6Addresss[depth1] is not None:
+				self.add_query_param('Ipv6Address.' + str(depth1 + 1) , Ipv6Addresss[depth1])

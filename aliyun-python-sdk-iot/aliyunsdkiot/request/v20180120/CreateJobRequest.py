@@ -23,7 +23,7 @@ from aliyunsdkiot.endpoint import endpoint_data
 class CreateJobRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'CreateJob')
+		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'CreateJob','iot')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -84,3 +84,9 @@ class CreateJobRequest(RpcRequest):
 
 	def set_JobFile(self,JobFile):
 		self.add_query_param('JobFile',JobFile)
+
+	def get_ScheduledTime(self):
+		return self.get_query_params().get('ScheduledTime')
+
+	def set_ScheduledTime(self,ScheduledTime):
+		self.add_query_param('ScheduledTime',ScheduledTime)

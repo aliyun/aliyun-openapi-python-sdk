@@ -42,6 +42,8 @@ class MassPushRequest(RpcRequest):
 				self.add_body_params('PushTask.' + str(depth1 + 1) + '.AndroidExtParameters', PushTasks[depth1].get('AndroidExtParameters'))
 			if PushTasks[depth1].get('iOSBadge') is not None:
 				self.add_body_params('PushTask.' + str(depth1 + 1) + '.iOSBadge', PushTasks[depth1].get('iOSBadge'))
+			if PushTasks[depth1].get('AndroidBigBody') is not None:
+				self.add_body_params('PushTask.' + str(depth1 + 1) + '.AndroidBigBody', PushTasks[depth1].get('AndroidBigBody'))
 			if PushTasks[depth1].get('iOSBadgeAutoIncrement') is not None:
 				self.add_body_params('PushTask.' + str(depth1 + 1) + '.iOSBadgeAutoIncrement', PushTasks[depth1].get('iOSBadgeAutoIncrement'))
 			if PushTasks[depth1].get('AndroidOpenType') is not None:
@@ -62,6 +64,8 @@ class MassPushRequest(RpcRequest):
 				self.add_body_params('PushTask.' + str(depth1 + 1) + '.AndroidPopupActivity', PushTasks[depth1].get('AndroidPopupActivity'))
 			if PushTasks[depth1].get('iOSRemindBody') is not None:
 				self.add_body_params('PushTask.' + str(depth1 + 1) + '.iOSRemindBody', PushTasks[depth1].get('iOSRemindBody'))
+			if PushTasks[depth1].get('AndroidRenderStyle') is not None:
+				self.add_body_params('PushTask.' + str(depth1 + 1) + '.AndroidRenderStyle', PushTasks[depth1].get('AndroidRenderStyle'))
 			if PushTasks[depth1].get('iOSExtParameters') is not None:
 				self.add_body_params('PushTask.' + str(depth1 + 1) + '.iOSExtParameters', PushTasks[depth1].get('iOSExtParameters'))
 			if PushTasks[depth1].get('AndroidNotifyType') is not None:
@@ -94,6 +98,8 @@ class MassPushRequest(RpcRequest):
 				self.add_body_params('PushTask.' + str(depth1 + 1) + '.JobKey', PushTasks[depth1].get('JobKey'))
 			if PushTasks[depth1].get('Target') is not None:
 				self.add_body_params('PushTask.' + str(depth1 + 1) + '.Target', PushTasks[depth1].get('Target'))
+			if PushTasks[depth1].get('AndroidBigTitle') is not None:
+				self.add_body_params('PushTask.' + str(depth1 + 1) + '.AndroidBigTitle', PushTasks[depth1].get('AndroidBigTitle'))
 			if PushTasks[depth1].get('AndroidOpenUrl') is not None:
 				self.add_body_params('PushTask.' + str(depth1 + 1) + '.AndroidOpenUrl', PushTasks[depth1].get('AndroidOpenUrl'))
 			if PushTasks[depth1].get('AndroidNotificationChannel') is not None:
@@ -106,6 +112,8 @@ class MassPushRequest(RpcRequest):
 				self.add_body_params('PushTask.' + str(depth1 + 1) + '.AndroidXiaoMiNotifyBody', PushTasks[depth1].get('AndroidXiaoMiNotifyBody'))
 			if PushTasks[depth1].get('iOSSubtitle') is not None:
 				self.add_body_params('PushTask.' + str(depth1 + 1) + '.iOSSubtitle', PushTasks[depth1].get('iOSSubtitle'))
+			if PushTasks[depth1].get('AndroidXiaomiBigPictureUrl') is not None:
+				self.add_body_params('PushTask.' + str(depth1 + 1) + '.AndroidXiaomiBigPictureUrl', PushTasks[depth1].get('AndroidXiaomiBigPictureUrl'))
 			if PushTasks[depth1].get('iOSRemind') is not None:
 				self.add_body_params('PushTask.' + str(depth1 + 1) + '.iOSRemind', PushTasks[depth1].get('iOSRemind'))
 			if PushTasks[depth1].get('AndroidNotificationNotifyId') is not None:

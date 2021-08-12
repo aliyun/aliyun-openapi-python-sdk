@@ -43,12 +43,6 @@ class ModifyDBClusterParametersRequest(RpcRequest):
 	def set_ParameterGroupId(self,ParameterGroupId):
 		self.add_query_param('ParameterGroupId',ParameterGroupId)
 
-	def get_EffectiveTime(self):
-		return self.get_query_params().get('EffectiveTime')
-
-	def set_EffectiveTime(self,EffectiveTime):
-		self.add_query_param('EffectiveTime',EffectiveTime)
-
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 

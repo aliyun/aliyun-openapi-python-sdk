@@ -31,12 +31,6 @@ class DescribeDomainOverviewRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_EndTime(self):
-		return self.get_query_params().get('EndTime')
-
-	def set_EndTime(self,EndTime):
-		self.add_query_param('EndTime',EndTime)
-
 	def get_StartTime(self):
 		return self.get_query_params().get('StartTime')
 
@@ -48,6 +42,12 @@ class DescribeDomainOverviewRequest(RpcRequest):
 
 	def set_ResourceGroupId(self,ResourceGroupId):
 		self.add_query_param('ResourceGroupId',ResourceGroupId)
+
+	def get_EndTime(self):
+		return self.get_query_params().get('EndTime')
+
+	def set_EndTime(self,EndTime):
+		self.add_query_param('EndTime',EndTime)
 
 	def get_Domain(self):
 		return self.get_query_params().get('Domain')

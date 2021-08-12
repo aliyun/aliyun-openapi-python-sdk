@@ -159,6 +159,14 @@ class DescribeNetworkInterfacesRequest(RpcRequest):
 			if NetworkInterfaceIds[depth1] is not None:
 				self.add_query_param('NetworkInterfaceId.' + str(depth1 + 1) , NetworkInterfaceIds[depth1])
 
+	def get_Ipv6Addresss(self):
+		return self.get_query_params().get('Ipv6Address')
+
+	def set_Ipv6Addresss(self, Ipv6Addresss):
+		for depth1 in range(len(Ipv6Addresss)):
+			if Ipv6Addresss[depth1] is not None:
+				self.add_query_param('Ipv6Address.' + str(depth1 + 1) , Ipv6Addresss[depth1])
+
 	def get_Status(self):
 		return self.get_query_params().get('Status')
 

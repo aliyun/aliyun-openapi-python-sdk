@@ -37,11 +37,23 @@ class RestoreInstanceRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_FilterKey(self):
+		return self.get_query_params().get('FilterKey')
+
+	def set_FilterKey(self,FilterKey):
+		self.add_query_param('FilterKey',FilterKey)
+
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
 
 	def set_SecurityToken(self,SecurityToken):
 		self.add_query_param('SecurityToken',SecurityToken)
+
+	def get_RestoreTime(self):
+		return self.get_query_params().get('RestoreTime')
+
+	def set_RestoreTime(self,RestoreTime):
+		self.add_query_param('RestoreTime',RestoreTime)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -66,6 +78,12 @@ class RestoreInstanceRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_RestoreType(self):
+		return self.get_query_params().get('RestoreType')
+
+	def set_RestoreType(self,RestoreType):
+		self.add_query_param('RestoreType',RestoreType)
 
 	def get_InstanceId(self):
 		return self.get_query_params().get('InstanceId')

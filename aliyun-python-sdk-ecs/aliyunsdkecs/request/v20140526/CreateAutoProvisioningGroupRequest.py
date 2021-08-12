@@ -36,26 +36,26 @@ class CreateAutoProvisioningGroupRequest(RpcRequest):
 
 	def set_LaunchConfigurationDataDisks(self, LaunchConfigurationDataDisks):
 		for depth1 in range(len(LaunchConfigurationDataDisks)):
-			if LaunchConfigurationDataDisks[depth1].get('Size') is not None:
-				self.add_query_param('LaunchConfiguration.DataDisk.' + str(depth1 + 1) + '.Size', LaunchConfigurationDataDisks[depth1].get('Size'))
-			if LaunchConfigurationDataDisks[depth1].get('Category') is not None:
-				self.add_query_param('LaunchConfiguration.DataDisk.' + str(depth1 + 1) + '.Category', LaunchConfigurationDataDisks[depth1].get('Category'))
 			if LaunchConfigurationDataDisks[depth1].get('PerformanceLevel') is not None:
 				self.add_query_param('LaunchConfiguration.DataDisk.' + str(depth1 + 1) + '.PerformanceLevel', LaunchConfigurationDataDisks[depth1].get('PerformanceLevel'))
-			if LaunchConfigurationDataDisks[depth1].get('Device') is not None:
-				self.add_query_param('LaunchConfiguration.DataDisk.' + str(depth1 + 1) + '.Device', LaunchConfigurationDataDisks[depth1].get('Device'))
+			if LaunchConfigurationDataDisks[depth1].get('KmsKeyId') is not None:
+				self.add_query_param('LaunchConfiguration.DataDisk.' + str(depth1 + 1) + '.KmsKeyId', LaunchConfigurationDataDisks[depth1].get('KmsKeyId'))
+			if LaunchConfigurationDataDisks[depth1].get('Description') is not None:
+				self.add_query_param('LaunchConfiguration.DataDisk.' + str(depth1 + 1) + '.Description', LaunchConfigurationDataDisks[depth1].get('Description'))
 			if LaunchConfigurationDataDisks[depth1].get('SnapshotId') is not None:
 				self.add_query_param('LaunchConfiguration.DataDisk.' + str(depth1 + 1) + '.SnapshotId', LaunchConfigurationDataDisks[depth1].get('SnapshotId'))
+			if LaunchConfigurationDataDisks[depth1].get('Size') is not None:
+				self.add_query_param('LaunchConfiguration.DataDisk.' + str(depth1 + 1) + '.Size', LaunchConfigurationDataDisks[depth1].get('Size'))
+			if LaunchConfigurationDataDisks[depth1].get('Device') is not None:
+				self.add_query_param('LaunchConfiguration.DataDisk.' + str(depth1 + 1) + '.Device', LaunchConfigurationDataDisks[depth1].get('Device'))
+			if LaunchConfigurationDataDisks[depth1].get('DiskName') is not None:
+				self.add_query_param('LaunchConfiguration.DataDisk.' + str(depth1 + 1) + '.DiskName', LaunchConfigurationDataDisks[depth1].get('DiskName'))
+			if LaunchConfigurationDataDisks[depth1].get('Category') is not None:
+				self.add_query_param('LaunchConfiguration.DataDisk.' + str(depth1 + 1) + '.Category', LaunchConfigurationDataDisks[depth1].get('Category'))
 			if LaunchConfigurationDataDisks[depth1].get('DeleteWithInstance') is not None:
 				self.add_query_param('LaunchConfiguration.DataDisk.' + str(depth1 + 1) + '.DeleteWithInstance', LaunchConfigurationDataDisks[depth1].get('DeleteWithInstance'))
 			if LaunchConfigurationDataDisks[depth1].get('Encrypted') is not None:
 				self.add_query_param('LaunchConfiguration.DataDisk.' + str(depth1 + 1) + '.Encrypted', LaunchConfigurationDataDisks[depth1].get('Encrypted'))
-			if LaunchConfigurationDataDisks[depth1].get('KmsKeyId') is not None:
-				self.add_query_param('LaunchConfiguration.DataDisk.' + str(depth1 + 1) + '.KmsKeyId', LaunchConfigurationDataDisks[depth1].get('KmsKeyId'))
-			if LaunchConfigurationDataDisks[depth1].get('DiskName') is not None:
-				self.add_query_param('LaunchConfiguration.DataDisk.' + str(depth1 + 1) + '.DiskName', LaunchConfigurationDataDisks[depth1].get('DiskName'))
-			if LaunchConfigurationDataDisks[depth1].get('Description') is not None:
-				self.add_query_param('LaunchConfiguration.DataDisk.' + str(depth1 + 1) + '.Description', LaunchConfigurationDataDisks[depth1].get('Description'))
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -80,6 +80,14 @@ class CreateAutoProvisioningGroupRequest(RpcRequest):
 
 	def set_LaunchConfigurationSystemDiskPerformanceLevel(self,LaunchConfigurationSystemDiskPerformanceLevel):
 		self.add_query_param('LaunchConfiguration.SystemDiskPerformanceLevel',LaunchConfigurationSystemDiskPerformanceLevel)
+
+	def get_LaunchConfigurationHostNamess(self):
+		return self.get_query_params().get('LaunchConfiguration.HostNames')
+
+	def set_LaunchConfigurationHostNamess(self, LaunchConfigurationHostNamess):
+		for depth1 in range(len(LaunchConfigurationHostNamess)):
+			if LaunchConfigurationHostNamess[depth1] is not None:
+				self.add_query_param('LaunchConfiguration.HostNames.' + str(depth1 + 1) , LaunchConfigurationHostNamess[depth1])
 
 	def get_ResourceGroupId(self):
 		return self.get_query_params().get('ResourceGroupId')
@@ -168,6 +176,12 @@ class CreateAutoProvisioningGroupRequest(RpcRequest):
 
 	def set_LaunchConfigurationHostName(self,LaunchConfigurationHostName):
 		self.add_query_param('LaunchConfiguration.HostName',LaunchConfigurationHostName)
+
+	def get_MinTargetCapacity(self):
+		return self.get_query_params().get('MinTargetCapacity')
+
+	def set_MinTargetCapacity(self,MinTargetCapacity):
+		self.add_query_param('MinTargetCapacity',MinTargetCapacity)
 
 	def get_MaxSpotPrice(self):
 		return self.get_query_params().get('MaxSpotPrice')
@@ -264,16 +278,16 @@ class CreateAutoProvisioningGroupRequest(RpcRequest):
 
 	def set_LaunchTemplateConfigs(self, LaunchTemplateConfigs):
 		for depth1 in range(len(LaunchTemplateConfigs)):
-			if LaunchTemplateConfigs[depth1].get('InstanceType') is not None:
-				self.add_query_param('LaunchTemplateConfig.' + str(depth1 + 1) + '.InstanceType', LaunchTemplateConfigs[depth1].get('InstanceType'))
-			if LaunchTemplateConfigs[depth1].get('MaxPrice') is not None:
-				self.add_query_param('LaunchTemplateConfig.' + str(depth1 + 1) + '.MaxPrice', LaunchTemplateConfigs[depth1].get('MaxPrice'))
 			if LaunchTemplateConfigs[depth1].get('VSwitchId') is not None:
 				self.add_query_param('LaunchTemplateConfig.' + str(depth1 + 1) + '.VSwitchId', LaunchTemplateConfigs[depth1].get('VSwitchId'))
-			if LaunchTemplateConfigs[depth1].get('WeightedCapacity') is not None:
-				self.add_query_param('LaunchTemplateConfig.' + str(depth1 + 1) + '.WeightedCapacity', LaunchTemplateConfigs[depth1].get('WeightedCapacity'))
+			if LaunchTemplateConfigs[depth1].get('MaxPrice') is not None:
+				self.add_query_param('LaunchTemplateConfig.' + str(depth1 + 1) + '.MaxPrice', LaunchTemplateConfigs[depth1].get('MaxPrice'))
 			if LaunchTemplateConfigs[depth1].get('Priority') is not None:
 				self.add_query_param('LaunchTemplateConfig.' + str(depth1 + 1) + '.Priority', LaunchTemplateConfigs[depth1].get('Priority'))
+			if LaunchTemplateConfigs[depth1].get('InstanceType') is not None:
+				self.add_query_param('LaunchTemplateConfig.' + str(depth1 + 1) + '.InstanceType', LaunchTemplateConfigs[depth1].get('InstanceType'))
+			if LaunchTemplateConfigs[depth1].get('WeightedCapacity') is not None:
+				self.add_query_param('LaunchTemplateConfig.' + str(depth1 + 1) + '.WeightedCapacity', LaunchTemplateConfigs[depth1].get('WeightedCapacity'))
 
 	def get_LaunchConfigurationRamRoleName(self):
 		return self.get_query_params().get('LaunchConfiguration.RamRoleName')

@@ -115,6 +115,12 @@ class CreateReadOnlyDBInstanceRequest(RpcRequest):
 	def set_TddlBizType(self,TddlBizType):
 		self.add_query_param('TddlBizType',TddlBizType)
 
+	def get_Period(self):
+		return self.get_query_params().get('Period')
+
+	def set_Period(self,Period):
+		self.add_query_param('Period',Period)
+
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -133,6 +139,12 @@ class CreateReadOnlyDBInstanceRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
+	def get_UsedTime(self):
+		return self.get_query_params().get('UsedTime')
+
+	def set_UsedTime(self,UsedTime):
+		self.add_query_param('UsedTime',UsedTime)
+
 	def get_DBInstanceClass(self):
 		return self.get_query_params().get('DBInstanceClass')
 
@@ -150,6 +162,12 @@ class CreateReadOnlyDBInstanceRequest(RpcRequest):
 
 	def set_PrivateIpAddress(self,PrivateIpAddress):
 		self.add_query_param('PrivateIpAddress',PrivateIpAddress)
+
+	def get_AutoRenew(self):
+		return self.get_query_params().get('AutoRenew')
+
+	def set_AutoRenew(self,AutoRenew):
+		self.add_query_param('AutoRenew',AutoRenew)
 
 	def get_VPCId(self):
 		return self.get_query_params().get('VPCId')

@@ -181,6 +181,12 @@ class PushRequest(RpcRequest):
 	def set_iOSSubtitle(self,iOSSubtitle):
 		self.add_query_param('iOSSubtitle',iOSSubtitle)
 
+	def get_AndroidXiaomiBigPictureUrl(self):
+		return self.get_query_params().get('AndroidXiaomiBigPictureUrl')
+
+	def set_AndroidXiaomiBigPictureUrl(self,AndroidXiaomiBigPictureUrl):
+		self.add_query_param('AndroidXiaomiBigPictureUrl',AndroidXiaomiBigPictureUrl)
+
 	def get_iOSRemind(self):
 		return self.get_query_params().get('iOSRemind')
 
@@ -217,6 +223,12 @@ class PushRequest(RpcRequest):
 	def set_iOSBadge(self,iOSBadge):
 		self.add_query_param('iOSBadge',iOSBadge)
 
+	def get_AndroidBigBody(self):
+		return self.get_query_params().get('AndroidBigBody')
+
+	def set_AndroidBigBody(self,AndroidBigBody):
+		self.add_query_param('AndroidBigBody',AndroidBigBody)
+
 	def get_iOSBadgeAutoIncrement(self):
 		return self.get_query_params().get('iOSBadgeAutoIncrement')
 
@@ -240,6 +252,12 @@ class PushRequest(RpcRequest):
 
 	def set_SmsDelaySecs(self,SmsDelaySecs):
 		self.add_query_param('SmsDelaySecs',SmsDelaySecs)
+
+	def get_AndroidRenderStyle(self):
+		return self.get_query_params().get('AndroidRenderStyle')
+
+	def set_AndroidRenderStyle(self,AndroidRenderStyle):
+		self.add_query_param('AndroidRenderStyle',AndroidRenderStyle)
 
 	def get_iOSExtParameters(self):
 		return self.get_query_params().get('iOSExtParameters')
@@ -270,6 +288,12 @@ class PushRequest(RpcRequest):
 
 	def set_Target(self,Target):
 		self.add_query_param('Target',Target)
+
+	def get_AndroidBigTitle(self):
+		return self.get_query_params().get('AndroidBigTitle')
+
+	def set_AndroidBigTitle(self,AndroidBigTitle):
+		self.add_query_param('AndroidBigTitle',AndroidBigTitle)
 
 	def get_AndroidNotificationChannel(self):
 		return self.get_query_params().get('AndroidNotificationChannel')

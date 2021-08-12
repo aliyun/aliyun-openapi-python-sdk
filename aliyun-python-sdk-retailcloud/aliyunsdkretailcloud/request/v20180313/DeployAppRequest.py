@@ -95,6 +95,12 @@ class DeployAppRequest(RpcRequest):
 			if InitContainerImageLists[depth1] is not None:
 				self.add_query_param('InitContainerImageList.' + str(depth1 + 1) , InitContainerImageLists[depth1])
 
+	def get_DefaultPacketOfAppGroup(self):
+		return self.get_query_params().get('DefaultPacketOfAppGroup')
+
+	def set_DefaultPacketOfAppGroup(self,DefaultPacketOfAppGroup):
+		self.add_query_param('DefaultPacketOfAppGroup',DefaultPacketOfAppGroup)
+
 	def get_ArmsFlag(self):
 		return self.get_query_params().get('ArmsFlag')
 

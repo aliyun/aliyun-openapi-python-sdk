@@ -37,12 +37,6 @@ class DescribeLiveLazyPullStreamConfigRequest(RpcRequest):
 	def set_AppName(self,AppName):
 		self.add_query_param('AppName',AppName)
 
-	def get_LiveapiRequestFrom(self):
-		return self.get_query_params().get('LiveapiRequestFrom')
-
-	def set_LiveapiRequestFrom(self,LiveapiRequestFrom):
-		self.add_query_param('LiveapiRequestFrom',LiveapiRequestFrom)
-
 	def get_DomainName(self):
 		return self.get_query_params().get('DomainName')
 

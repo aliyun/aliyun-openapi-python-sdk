@@ -31,14 +31,14 @@ class GetRealPersonVerificationResultRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_VerificationToken(self):
-		return self.get_body_params().get('VerificationToken')
-
-	def set_VerificationToken(self,VerificationToken):
-		self.add_body_params('VerificationToken', VerificationToken)
-
 	def get_MaterialHash(self):
 		return self.get_body_params().get('MaterialHash')
 
 	def set_MaterialHash(self,MaterialHash):
 		self.add_body_params('MaterialHash', MaterialHash)
+
+	def get_VerificationToken(self):
+		return self.get_body_params().get('VerificationToken')
+
+	def set_VerificationToken(self,VerificationToken):
+		self.add_body_params('VerificationToken', VerificationToken)

@@ -23,19 +23,13 @@ from aliyunsdkarms.endpoint import endpoint_data
 class ListPrometheusAlertTemplatesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ARMS', '2019-08-08', 'ListPrometheusAlertTemplates')
+		RpcRequest.__init__(self, 'ARMS', '2019-08-08', 'ListPrometheusAlertTemplates','arms')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ProductCode(self):
-		return self.get_query_params().get('ProductCode')
-
-	def set_ProductCode(self,ProductCode):
-		self.add_query_param('ProductCode',ProductCode)
 
 	def get_ClusterId(self):
 		return self.get_query_params().get('ClusterId')

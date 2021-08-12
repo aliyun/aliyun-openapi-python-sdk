@@ -32,6 +32,12 @@ class ListK8sIngressRulesRequest(RoaRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_Condition(self):
+		return self.get_query_params().get('Condition')
+
+	def set_Condition(self,Condition):
+		self.add_query_param('Condition',Condition)
+
 	def get_Namespace(self):
 		return self.get_query_params().get('Namespace')
 

@@ -50,12 +50,6 @@ class CompareFacesRequest(RpcRequest):
 	def set_TargetImageValue(self,TargetImageValue):
 		self.add_body_params('TargetImageValue', TargetImageValue)
 
-	def get_BizType(self):
-		return self.get_body_params().get('BizType')
-
-	def set_BizType(self,BizType):
-		self.add_body_params('BizType', BizType)
-
 	def get_SourceImageValue(self):
 		return self.get_body_params().get('SourceImageValue')
 

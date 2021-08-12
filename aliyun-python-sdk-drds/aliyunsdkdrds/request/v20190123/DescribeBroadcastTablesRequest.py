@@ -23,7 +23,7 @@ from aliyunsdkdrds.endpoint import endpoint_data
 class DescribeBroadcastTablesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Drds', '2019-01-23', 'DescribeBroadcastTables','Drds')
+		RpcRequest.__init__(self, 'Drds', '2019-01-23', 'DescribeBroadcastTables','drds')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())

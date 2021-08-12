@@ -25,6 +25,18 @@ class CreateSiteMonitorRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Cms', '2019-01-01', 'CreateSiteMonitor','cms')
 		self.set_method('POST')
 
+	def get_TaskName(self):
+		return self.get_query_params().get('TaskName')
+
+	def set_TaskName(self,TaskName):
+		self.add_query_param('TaskName',TaskName)
+
+	def get_AlertIds(self):
+		return self.get_query_params().get('AlertIds')
+
+	def set_AlertIds(self,AlertIds):
+		self.add_query_param('AlertIds',AlertIds)
+
 	def get_Address(self):
 		return self.get_query_params().get('Address')
 
@@ -36,12 +48,6 @@ class CreateSiteMonitorRequest(RpcRequest):
 
 	def set_TaskType(self,TaskType):
 		self.add_query_param('TaskType',TaskType)
-
-	def get_TaskName(self):
-		return self.get_query_params().get('TaskName')
-
-	def set_TaskName(self,TaskName):
-		self.add_query_param('TaskName',TaskName)
 
 	def get_IspCities(self):
 		return self.get_query_params().get('IspCities')
@@ -55,11 +61,11 @@ class CreateSiteMonitorRequest(RpcRequest):
 	def set_OptionsJson(self,OptionsJson):
 		self.add_query_param('OptionsJson',OptionsJson)
 
-	def get_AlertIds(self):
-		return self.get_query_params().get('AlertIds')
+	def get_IntervalUnit(self):
+		return self.get_query_params().get('IntervalUnit')
 
-	def set_AlertIds(self,AlertIds):
-		self.add_query_param('AlertIds',AlertIds)
+	def set_IntervalUnit(self,IntervalUnit):
+		self.add_query_param('IntervalUnit',IntervalUnit)
 
 	def get_Interval(self):
 		return self.get_query_params().get('Interval')

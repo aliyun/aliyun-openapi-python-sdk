@@ -1,3 +1,13 @@
+2021-08-11 Version: 3.3.23
+- SubmitURLUploadJob.
+- GetJobInfo.
+
+2021-08-09 Version: 3.3.21
+- SubmitURLUploadJob.
+
+2021-08-06 Version: 3.3.20
+- SubmitURLUploadJob.
+
 2020-10-21 Version: 2.7.6
 - Add custom person interfaces, support registration, update etc.
 - Optimize updateSmarttagTemplate interface, set some parameters as optional.

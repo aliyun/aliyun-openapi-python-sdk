@@ -36,3 +36,9 @@ class DeleteAppRequest(RpcRequest):
 
 	def set_CurrentOrgId(self,CurrentOrgId):
 		self.add_query_param('CurrentOrgId',CurrentOrgId)
+
+	def get_IsCleanCodeRepo(self):
+		return self.get_query_params().get('IsCleanCodeRepo')
+
+	def set_IsCleanCodeRepo(self,IsCleanCodeRepo):
+		self.add_query_param('IsCleanCodeRepo',IsCleanCodeRepo)

@@ -37,6 +37,12 @@ class ListCallDetailRecordsRequest(RpcRequest):
 	def set_ContactId(self,ContactId):
 		self.add_query_param('ContactId',ContactId)
 
+	def get_Criteria(self):
+		return self.get_query_params().get('Criteria')
+
+	def set_Criteria(self,Criteria):
+		self.add_query_param('Criteria',Criteria)
+
 	def get_OrderByField(self):
 		return self.get_query_params().get('OrderByField')
 
@@ -61,6 +67,12 @@ class ListCallDetailRecordsRequest(RpcRequest):
 	def set_CalledNumber(self,CalledNumber):
 		self.add_query_param('CalledNumber',CalledNumber)
 
+	def get_SatisfactionList(self):
+		return self.get_query_params().get('SatisfactionList')
+
+	def set_SatisfactionList(self,SatisfactionList):
+		self.add_query_param('SatisfactionList',SatisfactionList)
+
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
 
@@ -73,11 +85,11 @@ class ListCallDetailRecordsRequest(RpcRequest):
 	def set_SortOrder(self,SortOrder):
 		self.add_query_param('SortOrder',SortOrder)
 
-	def get_WithRecording(self):
-		return self.get_query_params().get('WithRecording')
+	def get_SatisfactionDescriptionList(self):
+		return self.get_query_params().get('SatisfactionDescriptionList')
 
-	def set_WithRecording(self,WithRecording):
-		self.add_query_param('WithRecording',WithRecording)
+	def set_SatisfactionDescriptionList(self,SatisfactionDescriptionList):
+		self.add_query_param('SatisfactionDescriptionList',SatisfactionDescriptionList)
 
 	def get_AgentId(self):
 		return self.get_query_params().get('AgentId')
@@ -90,6 +102,12 @@ class ListCallDetailRecordsRequest(RpcRequest):
 
 	def set_ContactType(self,ContactType):
 		self.add_query_param('ContactType',ContactType)
+
+	def get_SatisfactionSurveyChannel(self):
+		return self.get_query_params().get('SatisfactionSurveyChannel')
+
+	def set_SatisfactionSurveyChannel(self,SatisfactionSurveyChannel):
+		self.add_query_param('SatisfactionSurveyChannel',SatisfactionSurveyChannel)
 
 	def get_EndTime(self):
 		return self.get_query_params().get('EndTime')

@@ -115,6 +115,12 @@ class ModifyVpnConnectionAttributeRequest(RpcRequest):
 	def set_EnableDpd(self,EnableDpd):
 		self.add_query_param('EnableDpd',EnableDpd)
 
+	def get_RemoteCaCertificate(self):
+		return self.get_query_params().get('RemoteCaCertificate')
+
+	def set_RemoteCaCertificate(self,RemoteCaCertificate):
+		self.add_query_param('RemoteCaCertificate',RemoteCaCertificate)
+
 	def get_VpnConnectionId(self):
 		return self.get_query_params().get('VpnConnectionId')
 

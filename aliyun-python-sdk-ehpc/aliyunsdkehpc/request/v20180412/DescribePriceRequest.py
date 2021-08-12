@@ -46,6 +46,8 @@ class DescribePriceRequest(RpcRequest):
 				self.add_query_param('Commodities.' + str(depth1 + 1) + '.SystemDiskCategory', Commoditiess[depth1].get('SystemDiskCategory'))
 			if Commoditiess[depth1].get('InternetChargeType') is not None:
 				self.add_query_param('Commodities.' + str(depth1 + 1) + '.InternetChargeType', Commoditiess[depth1].get('InternetChargeType'))
+			if Commoditiess[depth1].get('SystemDiskPerformanceLevel') is not None:
+				self.add_query_param('Commodities.' + str(depth1 + 1) + '.SystemDiskPerformanceLevel', Commoditiess[depth1].get('SystemDiskPerformanceLevel'))
 			if Commoditiess[depth1].get('SystemDiskSize') is not None:
 				self.add_query_param('Commodities.' + str(depth1 + 1) + '.SystemDiskSize', Commoditiess[depth1].get('SystemDiskSize'))
 			if Commoditiess[depth1].get('InternetMaxBandWidthOut') is not None:

@@ -24,6 +24,7 @@ class SmartCallRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Dyvmsapi', '2017-05-25', 'SmartCall','dyvms')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -137,6 +138,12 @@ class SmartCallRequest(RpcRequest):
 
 	def set_TtsVolume(self,TtsVolume):
 		self.add_query_param('TtsVolume',TtsVolume)
+
+	def get_StreamAsr(self):
+		return self.get_query_params().get('StreamAsr')
+
+	def set_StreamAsr(self,StreamAsr):
+		self.add_query_param('StreamAsr',StreamAsr)
 
 	def get_Volume(self):
 		return self.get_query_params().get('Volume')
