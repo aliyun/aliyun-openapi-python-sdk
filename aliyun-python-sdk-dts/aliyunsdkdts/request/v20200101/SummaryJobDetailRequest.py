@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdts.endpoint import endpoint_data
 
-class ModifyDtsJobRequest(RpcRequest):
+class SummaryJobDetailRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dts', '2020-01-01', 'ModifyDtsJob','dts')
+		RpcRequest.__init__(self, 'Dts', '2020-01-01', 'SummaryJobDetail','dts')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,23 +31,17 @@ class ModifyDtsJobRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_DbList(self):
-		return self.get_body_params().get('DbList')
+	def get_JobCode(self):
+		return self.get_query_params().get('JobCode')
 
-	def set_DbList(self,DbList):
-		self.add_body_params('DbList', DbList)
+	def set_JobCode(self,JobCode):
+		self.add_query_param('JobCode',JobCode)
 
-	def get_ClientToken(self):
-		return self.get_query_params().get('ClientToken')
+	def get_DtsJobId(self):
+		return self.get_query_params().get('DtsJobId')
 
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
-
-	def get_EtlOperatorColumnReference(self):
-		return self.get_body_params().get('EtlOperatorColumnReference')
-
-	def set_EtlOperatorColumnReference(self,EtlOperatorColumnReference):
-		self.add_body_params('EtlOperatorColumnReference', EtlOperatorColumnReference)
+	def set_DtsJobId(self,DtsJobId):
+		self.add_query_param('DtsJobId',DtsJobId)
 
 	def get_DtsInstanceId(self):
 		return self.get_query_params().get('DtsInstanceId')
