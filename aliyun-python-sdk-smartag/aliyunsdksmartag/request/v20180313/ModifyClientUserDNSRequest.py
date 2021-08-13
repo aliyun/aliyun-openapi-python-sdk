@@ -25,54 +25,44 @@ class ModifyClientUserDNSRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Smartag', '2018-03-13', 'ModifyClientUserDNS','smartag')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ResourceOwnerId(self):
+	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_RecoveredDNSs(self):
+	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
+		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_RecoveredDNSs(self): # RepeatList
 		return self.get_query_params().get('RecoveredDNS')
 
-	def set_RecoveredDNSs(self, RecoveredDNSs):
-		for depth1 in range(len(RecoveredDNSs)):
-			if RecoveredDNSs[depth1] is not None:
-				self.add_query_param('RecoveredDNS.' + str(depth1 + 1) , RecoveredDNSs[depth1])
-
-	def get_AppDNSs(self):
+	def set_RecoveredDNSs(self, RecoveredDNS):  # RepeatList
+		pass
+	def get_AppDNSs(self): # RepeatList
 		return self.get_query_params().get('AppDNS')
 
-	def set_AppDNSs(self, AppDNSs):
-		for depth1 in range(len(AppDNSs)):
-			if AppDNSs[depth1] is not None:
-				self.add_query_param('AppDNS.' + str(depth1 + 1) , AppDNSs[depth1])
-
-	def get_ResourceOwnerAccount(self):
+	def set_AppDNSs(self, AppDNS):  # RepeatList
+		pass
+	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_OwnerAccount(self):
+	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
+		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_OwnerAccount(self): # String
 		return self.get_query_params().get('OwnerAccount')
 
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
-
-	def get_OwnerId(self):
+	def set_OwnerAccount(self, OwnerAccount):  # String
+		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_SmartAGId(self):
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_SmartAGId(self): # String
 		return self.get_query_params().get('SmartAGId')
 
-	def set_SmartAGId(self,SmartAGId):
-		self.add_query_param('SmartAGId',SmartAGId)
+	def set_SmartAGId(self, SmartAGId):  # String
+		self.add_query_param('SmartAGId', SmartAGId)

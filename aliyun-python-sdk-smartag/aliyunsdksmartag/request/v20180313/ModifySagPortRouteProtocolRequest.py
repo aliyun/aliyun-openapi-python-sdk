@@ -25,74 +25,64 @@ class ModifySagPortRouteProtocolRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Smartag', '2018-03-13', 'ModifySagPortRouteProtocol','smartag')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ResourceOwnerId(self):
+	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_RemoteIp(self):
+	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
+		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_RemoteIp(self): # String
 		return self.get_query_params().get('RemoteIp')
 
-	def set_RemoteIp(self,RemoteIp):
-		self.add_query_param('RemoteIp',RemoteIp)
-
-	def get_Vlan(self):
+	def set_RemoteIp(self, RemoteIp):  # String
+		self.add_query_param('RemoteIp', RemoteIp)
+	def get_Vlan(self): # String
 		return self.get_query_params().get('Vlan')
 
-	def set_Vlan(self,Vlan):
-		self.add_query_param('Vlan',Vlan)
-
-	def get_RemoteAs(self):
+	def set_Vlan(self, Vlan):  # String
+		self.add_query_param('Vlan', Vlan)
+	def get_RemoteAs(self): # String
 		return self.get_query_params().get('RemoteAs')
 
-	def set_RemoteAs(self,RemoteAs):
-		self.add_query_param('RemoteAs',RemoteAs)
-
-	def get_RouteProtocol(self):
+	def set_RemoteAs(self, RemoteAs):  # String
+		self.add_query_param('RemoteAs', RemoteAs)
+	def get_RouteProtocol(self): # String
 		return self.get_query_params().get('RouteProtocol')
 
-	def set_RouteProtocol(self,RouteProtocol):
-		self.add_query_param('RouteProtocol',RouteProtocol)
-
-	def get_ResourceOwnerAccount(self):
+	def set_RouteProtocol(self, RouteProtocol):  # String
+		self.add_query_param('RouteProtocol', RouteProtocol)
+	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_OwnerAccount(self):
+	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
+		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_OwnerAccount(self): # String
 		return self.get_query_params().get('OwnerAccount')
 
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
-
-	def get_OwnerId(self):
+	def set_OwnerAccount(self, OwnerAccount):  # String
+		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_SmartAGId(self):
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_SmartAGId(self): # String
 		return self.get_query_params().get('SmartAGId')
 
-	def set_SmartAGId(self,SmartAGId):
-		self.add_query_param('SmartAGId',SmartAGId)
-
-	def get_SmartAGSn(self):
+	def set_SmartAGId(self, SmartAGId):  # String
+		self.add_query_param('SmartAGId', SmartAGId)
+	def get_SmartAGSn(self): # String
 		return self.get_query_params().get('SmartAGSn')
 
-	def set_SmartAGSn(self,SmartAGSn):
-		self.add_query_param('SmartAGSn',SmartAGSn)
-
-	def get_PortName(self):
+	def set_SmartAGSn(self, SmartAGSn):  # String
+		self.add_query_param('SmartAGSn', SmartAGSn)
+	def get_PortName(self): # String
 		return self.get_query_params().get('PortName')
 
-	def set_PortName(self,PortName):
-		self.add_query_param('PortName',PortName)
+	def set_PortName(self, PortName):  # String
+		self.add_query_param('PortName', PortName)

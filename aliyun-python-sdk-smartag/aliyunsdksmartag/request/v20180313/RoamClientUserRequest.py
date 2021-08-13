@@ -25,56 +25,49 @@ class RoamClientUserRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Smartag', '2018-03-13', 'RoamClientUser','smartag')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ResourceOwnerId(self):
+	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_OriginSmartAGId(self):
+	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
+		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_OriginSmartAGId(self): # String
 		return self.get_query_params().get('OriginSmartAGId')
 
-	def set_OriginSmartAGId(self,OriginSmartAGId):
-		self.add_query_param('OriginSmartAGId',OriginSmartAGId)
-
-	def get_ResourceOwnerAccount(self):
+	def set_OriginSmartAGId(self, OriginSmartAGId):  # String
+		self.add_query_param('OriginSmartAGId', OriginSmartAGId)
+	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_TargetSmartAGId(self):
+	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
+		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_TargetSmartAGId(self): # String
 		return self.get_query_params().get('TargetSmartAGId')
 
-	def set_TargetSmartAGId(self,TargetSmartAGId):
-		self.add_query_param('TargetSmartAGId',TargetSmartAGId)
-
-	def get_OwnerAccount(self):
+	def set_TargetSmartAGId(self, TargetSmartAGId):  # String
+		self.add_query_param('TargetSmartAGId', TargetSmartAGId)
+	def get_OwnerAccount(self): # String
 		return self.get_query_params().get('OwnerAccount')
 
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
-
-	def get_OwnerId(self):
+	def set_OwnerAccount(self, OwnerAccount):  # String
+		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_OriginRegionId(self):
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_OriginRegionId(self): # String
 		return self.get_query_params().get('OriginRegionId')
 
-	def set_OriginRegionId(self,OriginRegionId):
-		self.add_query_param('OriginRegionId',OriginRegionId)
-
-	def get_UserName(self):
+	def set_OriginRegionId(self, OriginRegionId):  # String
+		self.add_query_param('OriginRegionId', OriginRegionId)
+	def get_UserName(self): # String
 		return self.get_query_params().get('UserName')
 
-	def set_UserName(self,UserName):
-		self.add_query_param('UserName',UserName)
+	def set_UserName(self, UserName):  # String
+		self.add_query_param('UserName', UserName)

@@ -20,43 +20,19 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdksmartag.endpoint import endpoint_data
 
-class DeleteNetworkOptimizationRequest(RpcRequest):
+class GetQosAttributeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Smartag', '2018-03-13', 'DeleteNetworkOptimization','smartag')
+		RpcRequest.__init__(self, 'Smartag', '2018-03-13', 'GetQosAttribute','smartag')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_QosId(self): # String
+		return self.get_query_params().get('QosId')
 
-	def get_ResourceOwnerId(self):
-		return self.get_query_params().get('ResourceOwnerId')
-
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_NetworkOptId(self):
-		return self.get_query_params().get('NetworkOptId')
-
-	def set_NetworkOptId(self,NetworkOptId):
-		self.add_query_param('NetworkOptId',NetworkOptId)
-
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
-
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_OwnerAccount(self):
-		return self.get_query_params().get('OwnerAccount')
-
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
-
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
+	def set_QosId(self, QosId):  # String
+		self.add_query_param('QosId', QosId)

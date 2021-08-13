@@ -25,92 +25,79 @@ class CreateQosCarRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Smartag', '2018-03-13', 'CreateQosCar','smartag')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ResourceOwnerId(self):
+	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_MinBandwidthAbs(self):
+	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
+		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_MinBandwidthAbs(self): # Integer
 		return self.get_query_params().get('MinBandwidthAbs')
 
-	def set_MinBandwidthAbs(self,MinBandwidthAbs):
-		self.add_query_param('MinBandwidthAbs',MinBandwidthAbs)
-
-	def get_Description(self):
+	def set_MinBandwidthAbs(self, MinBandwidthAbs):  # Integer
+		self.add_query_param('MinBandwidthAbs', MinBandwidthAbs)
+	def get_Description(self): # String
 		return self.get_query_params().get('Description')
 
-	def set_Description(self,Description):
-		self.add_query_param('Description',Description)
-
-	def get_PercentSourceType(self):
+	def set_Description(self, Description):  # String
+		self.add_query_param('Description', Description)
+	def get_PercentSourceType(self): # String
 		return self.get_query_params().get('PercentSourceType')
 
-	def set_PercentSourceType(self,PercentSourceType):
-		self.add_query_param('PercentSourceType',PercentSourceType)
-
-	def get_QosId(self):
+	def set_PercentSourceType(self, PercentSourceType):  # String
+		self.add_query_param('PercentSourceType', PercentSourceType)
+	def get_QosId(self): # String
 		return self.get_query_params().get('QosId')
 
-	def set_QosId(self,QosId):
-		self.add_query_param('QosId',QosId)
-
-	def get_MaxBandwidthAbs(self):
+	def set_QosId(self, QosId):  # String
+		self.add_query_param('QosId', QosId)
+	def get_MaxBandwidthAbs(self): # Integer
 		return self.get_query_params().get('MaxBandwidthAbs')
 
-	def set_MaxBandwidthAbs(self,MaxBandwidthAbs):
-		self.add_query_param('MaxBandwidthAbs',MaxBandwidthAbs)
-
-	def get_ResourceOwnerAccount(self):
+	def set_MaxBandwidthAbs(self, MaxBandwidthAbs):  # Integer
+		self.add_query_param('MaxBandwidthAbs', MaxBandwidthAbs)
+	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_MaxBandwidthPercent(self):
+	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
+		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_MaxBandwidthPercent(self): # Integer
 		return self.get_query_params().get('MaxBandwidthPercent')
 
-	def set_MaxBandwidthPercent(self,MaxBandwidthPercent):
-		self.add_query_param('MaxBandwidthPercent',MaxBandwidthPercent)
-
-	def get_OwnerAccount(self):
+	def set_MaxBandwidthPercent(self, MaxBandwidthPercent):  # Integer
+		self.add_query_param('MaxBandwidthPercent', MaxBandwidthPercent)
+	def get_OwnerAccount(self): # String
 		return self.get_query_params().get('OwnerAccount')
 
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
-
-	def get_OwnerId(self):
+	def set_OwnerAccount(self, OwnerAccount):  # String
+		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_Priority(self):
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_Priority(self): # Integer
 		return self.get_query_params().get('Priority')
 
-	def set_Priority(self,Priority):
-		self.add_query_param('Priority',Priority)
-
-	def get_MinBandwidthPercent(self):
+	def set_Priority(self, Priority):  # Integer
+		self.add_query_param('Priority', Priority)
+	def get_MinBandwidthPercent(self): # Integer
 		return self.get_query_params().get('MinBandwidthPercent')
 
-	def set_MinBandwidthPercent(self,MinBandwidthPercent):
-		self.add_query_param('MinBandwidthPercent',MinBandwidthPercent)
-
-	def get_LimitType(self):
+	def set_MinBandwidthPercent(self, MinBandwidthPercent):  # Integer
+		self.add_query_param('MinBandwidthPercent', MinBandwidthPercent)
+	def get_LimitType(self): # String
 		return self.get_query_params().get('LimitType')
 
-	def set_LimitType(self,LimitType):
-		self.add_query_param('LimitType',LimitType)
-
-	def get_Name(self):
+	def set_LimitType(self, LimitType):  # String
+		self.add_query_param('LimitType', LimitType)
+	def get_Name(self): # String
 		return self.get_query_params().get('Name')
 
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)
+	def set_Name(self, Name):  # String
+		self.add_query_param('Name', Name)

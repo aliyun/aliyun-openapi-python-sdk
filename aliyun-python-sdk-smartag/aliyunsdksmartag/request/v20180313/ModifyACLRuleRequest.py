@@ -25,110 +25,104 @@ class ModifyACLRuleRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Smartag', '2018-03-13', 'ModifyACLRule','smartag')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_DpiGroupIdss(self): # RepeatList
+		return self.get_query_params().get('DpiGroupIds')
 
-	def get_ResourceOwnerId(self):
+	def set_DpiGroupIdss(self, DpiGroupIds):  # RepeatList
+		pass
+	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_SourcePortRange(self):
+	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
+		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_SourcePortRange(self): # String
 		return self.get_query_params().get('SourcePortRange')
 
-	def set_SourcePortRange(self,SourcePortRange):
-		self.add_query_param('SourcePortRange',SourcePortRange)
-
-	def get_SourceCidr(self):
+	def set_SourcePortRange(self, SourcePortRange):  # String
+		self.add_query_param('SourcePortRange', SourcePortRange)
+	def get_SourceCidr(self): # String
 		return self.get_query_params().get('SourceCidr')
 
-	def set_SourceCidr(self,SourceCidr):
-		self.add_query_param('SourceCidr',SourceCidr)
-
-	def get_Description(self):
+	def set_SourceCidr(self, SourceCidr):  # String
+		self.add_query_param('SourceCidr', SourceCidr)
+	def get_Description(self): # String
 		return self.get_query_params().get('Description')
 
-	def set_Description(self,Description):
-		self.add_query_param('Description',Description)
-
-	def get_Type(self):
+	def set_Description(self, Description):  # String
+		self.add_query_param('Description', Description)
+	def get_Type(self): # String
 		return self.get_query_params().get('Type')
 
-	def set_Type(self,Type):
-		self.add_query_param('Type',Type)
-
-	def get_DestCidr(self):
+	def set_Type(self, Type):  # String
+		self.add_query_param('Type', Type)
+	def get_DestCidr(self): # String
 		return self.get_query_params().get('DestCidr')
 
-	def set_DestCidr(self,DestCidr):
-		self.add_query_param('DestCidr',DestCidr)
+	def set_DestCidr(self, DestCidr):  # String
+		self.add_query_param('DestCidr', DestCidr)
+	def get_DpiSignatureIdss(self): # RepeatList
+		return self.get_query_params().get('DpiSignatureIds')
 
-	def get_Direction(self):
+	def set_DpiSignatureIdss(self, DpiSignatureIds):  # RepeatList
+		pass
+	def get_Direction(self): # String
 		return self.get_query_params().get('Direction')
 
-	def set_Direction(self,Direction):
-		self.add_query_param('Direction',Direction)
-
-	def get_Policy(self):
+	def set_Direction(self, Direction):  # String
+		self.add_query_param('Direction', Direction)
+	def get_Policy(self): # String
 		return self.get_query_params().get('Policy')
 
-	def set_Policy(self,Policy):
-		self.add_query_param('Policy',Policy)
-
-	def get_AclId(self):
+	def set_Policy(self, Policy):  # String
+		self.add_query_param('Policy', Policy)
+	def get_AclId(self): # String
 		return self.get_query_params().get('AclId')
 
-	def set_AclId(self,AclId):
-		self.add_query_param('AclId',AclId)
-
-	def get_ResourceOwnerAccount(self):
+	def set_AclId(self, AclId):  # String
+		self.add_query_param('AclId', AclId)
+	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_IpProtocol(self):
+	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
+		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_IpProtocol(self): # String
 		return self.get_query_params().get('IpProtocol')
 
-	def set_IpProtocol(self,IpProtocol):
-		self.add_query_param('IpProtocol',IpProtocol)
-
-	def get_OwnerAccount(self):
+	def set_IpProtocol(self, IpProtocol):  # String
+		self.add_query_param('IpProtocol', IpProtocol)
+	def get_OwnerAccount(self): # String
 		return self.get_query_params().get('OwnerAccount')
 
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
-
-	def get_OwnerId(self):
+	def set_OwnerAccount(self, OwnerAccount):  # String
+		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_Priority(self):
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_Priority(self): # Integer
 		return self.get_query_params().get('Priority')
 
-	def set_Priority(self,Priority):
-		self.add_query_param('Priority',Priority)
-
-	def get_AcrId(self):
+	def set_Priority(self, Priority):  # Integer
+		self.add_query_param('Priority', Priority)
+	def get_AcrId(self): # String
 		return self.get_query_params().get('AcrId')
 
-	def set_AcrId(self,AcrId):
-		self.add_query_param('AcrId',AcrId)
-
-	def get_DestPortRange(self):
+	def set_AcrId(self, AcrId):  # String
+		self.add_query_param('AcrId', AcrId)
+	def get_DestPortRange(self): # String
 		return self.get_query_params().get('DestPortRange')
 
-	def set_DestPortRange(self,DestPortRange):
-		self.add_query_param('DestPortRange',DestPortRange)
-
-	def get_Name(self):
+	def set_DestPortRange(self, DestPortRange):  # String
+		self.add_query_param('DestPortRange', DestPortRange)
+	def get_Name(self): # String
 		return self.get_query_params().get('Name')
 
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)
+	def set_Name(self, Name):  # String
+		self.add_query_param('Name', Name)
