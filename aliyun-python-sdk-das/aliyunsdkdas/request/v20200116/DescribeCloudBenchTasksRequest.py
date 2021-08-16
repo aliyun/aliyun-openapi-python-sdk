@@ -20,16 +20,22 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdas.endpoint import endpoint_data
 
-class GetEventOverviewRequest(RpcRequest):
+class DescribeCloudBenchTasksRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'DAS', '2020-01-16', 'GetEventOverview','das')
+		RpcRequest.__init__(self, 'DAS', '2020-01-16', 'DescribeCloudBenchTasks','das')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+
+	def get_TaskType(self):
+		return self.get_query_params().get('TaskType')
+
+	def set_TaskType(self,TaskType):
+		self.add_query_param('TaskType',TaskType)
 
 	def get_EndTime(self):
 		return self.get_query_params().get('EndTime')
@@ -43,26 +49,20 @@ class GetEventOverviewRequest(RpcRequest):
 	def set_StartTime(self,StartTime):
 		self.add_query_param('StartTime',StartTime)
 
-	def get_Tags(self):
-		return self.get_query_params().get('Tags')
+	def get_PageNo(self):
+		return self.get_query_params().get('PageNo')
 
-	def set_Tags(self,Tags):
-		self.add_query_param('Tags',Tags)
+	def set_PageNo(self,PageNo):
+		self.add_query_param('PageNo',PageNo)
 
-	def get_InstanceId(self):
-		return self.get_query_params().get('InstanceId')
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
 
-	def get_MinLevel(self):
-		return self.get_query_params().get('MinLevel')
+	def get_Status(self):
+		return self.get_query_params().get('Status')
 
-	def set_MinLevel(self,MinLevel):
-		self.add_query_param('MinLevel',MinLevel)
-
-	def get_TicketId(self):
-		return self.get_query_params().get('TicketId')
-
-	def set_TicketId(self,TicketId):
-		self.add_query_param('TicketId',TicketId)
+	def set_Status(self,Status):
+		self.add_query_param('Status',Status)

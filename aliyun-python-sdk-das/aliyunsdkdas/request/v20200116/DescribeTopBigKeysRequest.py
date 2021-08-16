@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdas.endpoint import endpoint_data
 
-class GetEventOverviewRequest(RpcRequest):
+class DescribeTopBigKeysRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'DAS', '2020-01-16', 'GetEventOverview','das')
+		RpcRequest.__init__(self, 'DAS', '2020-01-16', 'DescribeTopBigKeys','das')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -43,11 +43,11 @@ class GetEventOverviewRequest(RpcRequest):
 	def set_StartTime(self,StartTime):
 		self.add_query_param('StartTime',StartTime)
 
-	def get_Tags(self):
-		return self.get_query_params().get('Tags')
+	def get_ConsoleContext(self):
+		return self.get_query_params().get('ConsoleContext')
 
-	def set_Tags(self,Tags):
-		self.add_query_param('Tags',Tags)
+	def set_ConsoleContext(self,ConsoleContext):
+		self.add_query_param('ConsoleContext',ConsoleContext)
 
 	def get_InstanceId(self):
 		return self.get_query_params().get('InstanceId')
@@ -55,14 +55,8 @@ class GetEventOverviewRequest(RpcRequest):
 	def set_InstanceId(self,InstanceId):
 		self.add_query_param('InstanceId',InstanceId)
 
-	def get_MinLevel(self):
-		return self.get_query_params().get('MinLevel')
+	def get_NodeId(self):
+		return self.get_query_params().get('NodeId')
 
-	def set_MinLevel(self,MinLevel):
-		self.add_query_param('MinLevel',MinLevel)
-
-	def get_TicketId(self):
-		return self.get_query_params().get('TicketId')
-
-	def set_TicketId(self,TicketId):
-		self.add_query_param('TicketId',TicketId)
+	def set_NodeId(self,NodeId):
+		self.add_query_param('NodeId',NodeId)

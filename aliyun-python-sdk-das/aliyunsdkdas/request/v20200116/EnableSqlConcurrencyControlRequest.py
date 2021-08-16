@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdas.endpoint import endpoint_data
 
-class GetEventOverviewRequest(RpcRequest):
+class EnableSqlConcurrencyControlRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'DAS', '2020-01-16', 'GetEventOverview','das')
+		RpcRequest.__init__(self, 'DAS', '2020-01-16', 'EnableSqlConcurrencyControl','das')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,23 +31,23 @@ class GetEventOverviewRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_EndTime(self):
-		return self.get_query_params().get('EndTime')
+	def get_SqlType(self):
+		return self.get_query_params().get('SqlType')
 
-	def set_EndTime(self,EndTime):
-		self.add_query_param('EndTime',EndTime)
+	def set_SqlType(self,SqlType):
+		self.add_query_param('SqlType',SqlType)
 
-	def get_StartTime(self):
-		return self.get_query_params().get('StartTime')
+	def get_SqlKeywords(self):
+		return self.get_query_params().get('SqlKeywords')
 
-	def set_StartTime(self,StartTime):
-		self.add_query_param('StartTime',StartTime)
+	def set_SqlKeywords(self,SqlKeywords):
+		self.add_query_param('SqlKeywords',SqlKeywords)
 
-	def get_Tags(self):
-		return self.get_query_params().get('Tags')
+	def get_ConsoleContext(self):
+		return self.get_query_params().get('ConsoleContext')
 
-	def set_Tags(self,Tags):
-		self.add_query_param('Tags',Tags)
+	def set_ConsoleContext(self,ConsoleContext):
+		self.add_query_param('ConsoleContext',ConsoleContext)
 
 	def get_InstanceId(self):
 		return self.get_query_params().get('InstanceId')
@@ -55,14 +55,14 @@ class GetEventOverviewRequest(RpcRequest):
 	def set_InstanceId(self,InstanceId):
 		self.add_query_param('InstanceId',InstanceId)
 
-	def get_MinLevel(self):
-		return self.get_query_params().get('MinLevel')
+	def get_ConcurrencyControlTime(self):
+		return self.get_query_params().get('ConcurrencyControlTime')
 
-	def set_MinLevel(self,MinLevel):
-		self.add_query_param('MinLevel',MinLevel)
+	def set_ConcurrencyControlTime(self,ConcurrencyControlTime):
+		self.add_query_param('ConcurrencyControlTime',ConcurrencyControlTime)
 
-	def get_TicketId(self):
-		return self.get_query_params().get('TicketId')
+	def get_MaxConcurrency(self):
+		return self.get_query_params().get('MaxConcurrency')
 
-	def set_TicketId(self,TicketId):
-		self.add_query_param('TicketId',TicketId)
+	def set_MaxConcurrency(self,MaxConcurrency):
+		self.add_query_param('MaxConcurrency',MaxConcurrency)
