@@ -25,122 +25,104 @@ class ModifyHealthCheckRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Smartag', '2018-03-13', 'ModifyHealthCheck','smartag')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ProbeInterval(self):
+	def get_ProbeInterval(self): # Integer
 		return self.get_query_params().get('ProbeInterval')
 
-	def set_ProbeInterval(self,ProbeInterval):
-		self.add_query_param('ProbeInterval',ProbeInterval)
-
-	def get_ResourceOwnerId(self):
+	def set_ProbeInterval(self, ProbeInterval):  # Integer
+		self.add_query_param('ProbeInterval', ProbeInterval)
+	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_DstPort(self):
+	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
+		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_DstPort(self): # Integer
 		return self.get_query_params().get('DstPort')
 
-	def set_DstPort(self,DstPort):
-		self.add_query_param('DstPort',DstPort)
-
-	def get_Description(self):
+	def set_DstPort(self, DstPort):  # Integer
+		self.add_query_param('DstPort', DstPort)
+	def get_Description(self): # String
 		return self.get_query_params().get('Description')
 
-	def set_Description(self,Description):
-		self.add_query_param('Description',Description)
-
-	def get_HcInstanceId(self):
+	def set_Description(self, Description):  # String
+		self.add_query_param('Description', Description)
+	def get_HcInstanceId(self): # String
 		return self.get_query_params().get('HcInstanceId')
 
-	def set_HcInstanceId(self,HcInstanceId):
-		self.add_query_param('HcInstanceId',HcInstanceId)
-
-	def get_Type(self):
+	def set_HcInstanceId(self, HcInstanceId):  # String
+		self.add_query_param('HcInstanceId', HcInstanceId)
+	def get_Type(self): # String
 		return self.get_query_params().get('Type')
 
-	def set_Type(self,Type):
-		self.add_query_param('Type',Type)
-
-	def get_FailCountThreshold(self):
+	def set_Type(self, Type):  # String
+		self.add_query_param('Type', Type)
+	def get_FailCountThreshold(self): # Integer
 		return self.get_query_params().get('FailCountThreshold')
 
-	def set_FailCountThreshold(self,FailCountThreshold):
-		self.add_query_param('FailCountThreshold',FailCountThreshold)
-
-	def get_ProbeTimeout(self):
+	def set_FailCountThreshold(self, FailCountThreshold):  # Integer
+		self.add_query_param('FailCountThreshold', FailCountThreshold)
+	def get_ProbeTimeout(self): # Integer
 		return self.get_query_params().get('ProbeTimeout')
 
-	def set_ProbeTimeout(self,ProbeTimeout):
-		self.add_query_param('ProbeTimeout',ProbeTimeout)
-
-	def get_RttFailThreshold(self):
+	def set_ProbeTimeout(self, ProbeTimeout):  # Integer
+		self.add_query_param('ProbeTimeout', ProbeTimeout)
+	def get_RttFailThreshold(self): # Integer
 		return self.get_query_params().get('RttFailThreshold')
 
-	def set_RttFailThreshold(self,RttFailThreshold):
-		self.add_query_param('RttFailThreshold',RttFailThreshold)
-
-	def get_RttThreshold(self):
+	def set_RttFailThreshold(self, RttFailThreshold):  # Integer
+		self.add_query_param('RttFailThreshold', RttFailThreshold)
+	def get_RttThreshold(self): # Integer
 		return self.get_query_params().get('RttThreshold')
 
-	def set_RttThreshold(self,RttThreshold):
-		self.add_query_param('RttThreshold',RttThreshold)
-
-	def get_ResourceOwnerAccount(self):
+	def set_RttThreshold(self, RttThreshold):  # Integer
+		self.add_query_param('RttThreshold', RttThreshold)
+	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_OwnerAccount(self):
+	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
+		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_OwnerAccount(self): # String
 		return self.get_query_params().get('OwnerAccount')
 
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
-
-	def get_DstIpAddr(self):
+	def set_OwnerAccount(self, OwnerAccount):  # String
+		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_DstIpAddr(self): # String
 		return self.get_query_params().get('DstIpAddr')
 
-	def set_DstIpAddr(self,DstIpAddr):
-		self.add_query_param('DstIpAddr',DstIpAddr)
-
-	def get_OwnerId(self):
+	def set_DstIpAddr(self, DstIpAddr):  # String
+		self.add_query_param('DstIpAddr', DstIpAddr)
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_SrcIpAddr(self):
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_SrcIpAddr(self): # String
 		return self.get_query_params().get('SrcIpAddr')
 
-	def set_SrcIpAddr(self,SrcIpAddr):
-		self.add_query_param('SrcIpAddr',SrcIpAddr)
-
-	def get_Name(self):
+	def set_SrcIpAddr(self, SrcIpAddr):  # String
+		self.add_query_param('SrcIpAddr', SrcIpAddr)
+	def get_Name(self): # String
 		return self.get_query_params().get('Name')
 
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)
-
-	def get_SmartAGId(self):
+	def set_Name(self, Name):  # String
+		self.add_query_param('Name', Name)
+	def get_SmartAGId(self): # String
 		return self.get_query_params().get('SmartAGId')
 
-	def set_SmartAGId(self,SmartAGId):
-		self.add_query_param('SmartAGId',SmartAGId)
-
-	def get_SrcPort(self):
+	def set_SmartAGId(self, SmartAGId):  # String
+		self.add_query_param('SmartAGId', SmartAGId)
+	def get_SrcPort(self): # Integer
 		return self.get_query_params().get('SrcPort')
 
-	def set_SrcPort(self,SrcPort):
-		self.add_query_param('SrcPort',SrcPort)
-
-	def get_ProbeCount(self):
+	def set_SrcPort(self, SrcPort):  # Integer
+		self.add_query_param('SrcPort', SrcPort)
+	def get_ProbeCount(self): # Integer
 		return self.get_query_params().get('ProbeCount')
 
-	def set_ProbeCount(self,ProbeCount):
-		self.add_query_param('ProbeCount',ProbeCount)
+	def set_ProbeCount(self, ProbeCount):  # Integer
+		self.add_query_param('ProbeCount', ProbeCount)

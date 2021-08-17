@@ -43,11 +43,11 @@ class ModifyDtsJobRequest(RpcRequest):
 	def set_ClientToken(self,ClientToken):
 		self.add_query_param('ClientToken',ClientToken)
 
-	def get_Reserve(self):
-		return self.get_body_params().get('Reserve')
+	def get_EtlOperatorColumnReference(self):
+		return self.get_body_params().get('EtlOperatorColumnReference')
 
-	def set_Reserve(self,Reserve):
-		self.add_body_params('Reserve', Reserve)
+	def set_EtlOperatorColumnReference(self,EtlOperatorColumnReference):
+		self.add_body_params('EtlOperatorColumnReference', EtlOperatorColumnReference)
 
 	def get_DtsInstanceId(self):
 		return self.get_query_params().get('DtsInstanceId')

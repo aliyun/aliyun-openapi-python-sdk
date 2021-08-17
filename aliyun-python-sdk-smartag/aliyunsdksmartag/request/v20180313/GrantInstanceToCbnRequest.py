@@ -25,50 +25,49 @@ class GrantInstanceToCbnRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Smartag', '2018-03-13', 'GrantInstanceToCbn','smartag')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ResourceOwnerId(self):
+	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_CcnInstanceId(self):
+	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
+		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_CcnInstanceId(self): # String
 		return self.get_query_params().get('CcnInstanceId')
 
-	def set_CcnInstanceId(self,CcnInstanceId):
-		self.add_query_param('CcnInstanceId',CcnInstanceId)
+	def set_CcnInstanceId(self, CcnInstanceId):  # String
+		self.add_query_param('CcnInstanceId', CcnInstanceId)
+	def get_GrantTrafficService(self): # Boolean
+		return self.get_query_params().get('GrantTrafficService')
 
-	def get_ResourceOwnerAccount(self):
+	def set_GrantTrafficService(self, GrantTrafficService):  # Boolean
+		self.add_query_param('GrantTrafficService', GrantTrafficService)
+	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_OwnerAccount(self):
+	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
+		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_OwnerAccount(self): # String
 		return self.get_query_params().get('OwnerAccount')
 
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
-
-	def get_OwnerId(self):
+	def set_OwnerAccount(self, OwnerAccount):  # String
+		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_CenUid(self):
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_CenUid(self): # Long
 		return self.get_query_params().get('CenUid')
 
-	def set_CenUid(self,CenUid):
-		self.add_query_param('CenUid',CenUid)
-
-	def get_CenInstanceId(self):
+	def set_CenUid(self, CenUid):  # Long
+		self.add_query_param('CenUid', CenUid)
+	def get_CenInstanceId(self): # String
 		return self.get_query_params().get('CenInstanceId')
 
-	def set_CenInstanceId(self,CenInstanceId):
-		self.add_query_param('CenInstanceId',CenInstanceId)
+	def set_CenInstanceId(self, CenInstanceId):  # String
+		self.add_query_param('CenInstanceId', CenInstanceId)

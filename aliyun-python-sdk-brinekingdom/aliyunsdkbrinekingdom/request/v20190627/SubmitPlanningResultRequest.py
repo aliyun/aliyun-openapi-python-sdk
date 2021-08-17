@@ -23,8 +23,9 @@ from aliyunsdkbrinekingdom.endpoint import endpoint_data
 class SubmitPlanningResultRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'brinekingdom', '2019-06-27', 'SubmitPlanningResult','python')
+		RpcRequest.__init__(self, 'brinekingdom', '2019-06-27', 'SubmitPlanningResult')
 		self.set_protocol_type('https')
+		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -62,49 +63,49 @@ class SubmitPlanningResultRequest(RpcRequest):
 		self.add_query_param('DemandCount',DemandCount)
 
 	def get_ResourceMethods(self):
-		return self.get_query_params().get('ResourceMethods')
+		return self.get_query_params().get('ResourceMethod')
 
-	def set_ResourceMethods(self,ResourceMethods):
-		for i in range(len(ResourceMethods)):	
-			if ResourceMethods[i].get('FinalAvzone') is not None:
-				self.add_query_param('ResourceMethod.' + str(i + 1) + '.FinalAvzone' , ResourceMethods[i].get('FinalAvzone'))
-			if ResourceMethods[i].get('Cluster') is not None:
-				self.add_query_param('ResourceMethod.' + str(i + 1) + '.Cluster' , ResourceMethods[i].get('Cluster'))
-			if ResourceMethods[i].get('ConvertHostCnt') is not None:
-				self.add_query_param('ResourceMethod.' + str(i + 1) + '.ConvertHostCnt' , ResourceMethods[i].get('ConvertHostCnt'))
-			if ResourceMethods[i].get('BufferCnt') is not None:
-				self.add_query_param('ResourceMethod.' + str(i + 1) + '.BufferCnt' , ResourceMethods[i].get('BufferCnt'))
-			for j in range(len(ResourceMethods[i].get('SupplyPlans'))):
-				if ResourceMethods[i].get('SupplyPlans')[j] is not None:
-					if ResourceMethods[i].get('SupplyPlans')[j].get('SafeZone') is not None:
-						self.add_query_param('ResourceMethod.' + str(i + 1) + '.SupplyPlan.'+str(j + 1)+ '.SafeZone', ResourceMethods[i].get('SupplyPlans')[j].get('SafeZone'))
-					if ResourceMethods[i].get('SupplyPlans')[j].get('NetArch') is not None:
-						self.add_query_param('ResourceMethod.' + str(i + 1) + '.SupplyPlan.'+str(j + 1)+ '.NetArch', ResourceMethods[i].get('SupplyPlans')[j].get('NetArch'))
-					if ResourceMethods[i].get('SupplyPlans')[j].get('SupplyType') is not None:
-						self.add_query_param('ResourceMethod.' + str(i + 1) + '.SupplyPlan.'+str(j + 1)+ '.SupplyType', ResourceMethods[i].get('SupplyPlans')[j].get('SupplyType'))
-					if ResourceMethods[i].get('SupplyPlans')[j].get('LogicZone') is not None:
-						self.add_query_param('ResourceMethod.' + str(i + 1) + '.SupplyPlan.'+str(j + 1)+ '.LogicZone', ResourceMethods[i].get('SupplyPlans')[j].get('LogicZone'))
-					if ResourceMethods[i].get('SupplyPlans')[j].get('SupplyAmount') is not None:
-						self.add_query_param('ResourceMethod.' + str(i + 1) + '.SupplyPlan.'+str(j + 1)+ '.SupplyAmount', ResourceMethods[i].get('SupplyPlans')[j].get('SupplyAmount'))
-					if ResourceMethods[i].get('SupplyPlans')[j].get('SupplyDate') is not None:
-						self.add_query_param('ResourceMethod.' + str(i + 1) + '.SupplyPlan.'+str(j + 1)+ '.SupplyDate', ResourceMethods[i].get('SupplyPlans')[j].get('SupplyDate'))
-					if ResourceMethods[i].get('SupplyPlans')[j].get('Nic') is not None:
-						self.add_query_param('ResourceMethod.' + str(i + 1) + '.SupplyPlan.'+str(j + 1)+ '.Nic', ResourceMethods[i].get('SupplyPlans')[j].get('Nic'))
-					if ResourceMethods[i].get('SupplyPlans')[j].get('ClassZone') is not None:
-						self.add_query_param('ResourceMethod.' + str(i + 1) + '.SupplyPlan.'+str(j + 1)+ '.ClassZone', ResourceMethods[i].get('SupplyPlans')[j].get('ClassZone'))
-					if ResourceMethods[i].get('SupplyPlans')[j].get('ConvertHostType') is not None:
-						self.add_query_param('ResourceMethod.' + str(i + 1) + '.SupplyPlan.'+str(j + 1)+ '.ConvertHostType', ResourceMethods[i].get('SupplyPlans')[j].get('ConvertHostType'))
-					if ResourceMethods[i].get('SupplyPlans')[j].get('Product3') is not None:
-						self.add_query_param('ResourceMethod.' + str(i + 1) + '.SupplyPlan.'+str(j + 1)+ '.Product3', ResourceMethods[i].get('SupplyPlans')[j].get('Product3'))
-			if ResourceMethods[i].get('RoomCode') is not None:
-				self.add_query_param('ResourceMethod.' + str(i + 1) + '.RoomCode' , ResourceMethods[i].get('RoomCode'))
-			if ResourceMethods[i].get('Comment') is not None:
-				self.add_query_param('ResourceMethod.' + str(i + 1) + '.Comment' , ResourceMethods[i].get('Comment'))
-			if ResourceMethods[i].get('Region') is not None:
-				self.add_query_param('ResourceMethod.' + str(i + 1) + '.Region' , ResourceMethods[i].get('Region'))
-			if ResourceMethods[i].get('ConvertHostType') is not None:
-				self.add_query_param('ResourceMethod.' + str(i + 1) + '.ConvertHostType' , ResourceMethods[i].get('ConvertHostType'))
-			if ResourceMethods[i].get('Azone') is not None:
-				self.add_query_param('ResourceMethod.' + str(i + 1) + '.Azone' , ResourceMethods[i].get('Azone'))
-			if ResourceMethods[i].get('GapCnt') is not None:
-				self.add_query_param('ResourceMethod.' + str(i + 1) + '.GapCnt' , ResourceMethods[i].get('GapCnt'))
+	def set_ResourceMethods(self, ResourceMethods):
+		for depth1 in range(len(ResourceMethods)):
+			if ResourceMethods[depth1].get('FinalAvzone') is not None:
+				self.add_query_param('ResourceMethod.' + str(depth1 + 1) + '.FinalAvzone', ResourceMethods[depth1].get('FinalAvzone'))
+			if ResourceMethods[depth1].get('Cluster') is not None:
+				self.add_query_param('ResourceMethod.' + str(depth1 + 1) + '.Cluster', ResourceMethods[depth1].get('Cluster'))
+			if ResourceMethods[depth1].get('ConvertHostCnt') is not None:
+				self.add_query_param('ResourceMethod.' + str(depth1 + 1) + '.ConvertHostCnt', ResourceMethods[depth1].get('ConvertHostCnt'))
+			if ResourceMethods[depth1].get('BufferCnt') is not None:
+				self.add_query_param('ResourceMethod.' + str(depth1 + 1) + '.BufferCnt', ResourceMethods[depth1].get('BufferCnt'))
+			if ResourceMethods[depth1].get('SupplyPlan') is not None:
+				for depth2 in range(len(ResourceMethods[depth1].get('SupplyPlan'))):
+					if ResourceMethods[depth1].get('SupplyPlan')[depth2].get('SafeZone') is not None:
+						self.add_query_param('ResourceMethod.' + str(depth1 + 1) + '.SupplyPlan.' + str(depth2 + 1) + '.SafeZone', ResourceMethods[depth1].get('SupplyPlan')[depth2].get('SafeZone'))
+					if ResourceMethods[depth1].get('SupplyPlan')[depth2].get('NetArch') is not None:
+						self.add_query_param('ResourceMethod.' + str(depth1 + 1) + '.SupplyPlan.' + str(depth2 + 1) + '.NetArch', ResourceMethods[depth1].get('SupplyPlan')[depth2].get('NetArch'))
+					if ResourceMethods[depth1].get('SupplyPlan')[depth2].get('SupplyType') is not None:
+						self.add_query_param('ResourceMethod.' + str(depth1 + 1) + '.SupplyPlan.' + str(depth2 + 1) + '.SupplyType', ResourceMethods[depth1].get('SupplyPlan')[depth2].get('SupplyType'))
+					if ResourceMethods[depth1].get('SupplyPlan')[depth2].get('LogicZone') is not None:
+						self.add_query_param('ResourceMethod.' + str(depth1 + 1) + '.SupplyPlan.' + str(depth2 + 1) + '.LogicZone', ResourceMethods[depth1].get('SupplyPlan')[depth2].get('LogicZone'))
+					if ResourceMethods[depth1].get('SupplyPlan')[depth2].get('SupplyAmount') is not None:
+						self.add_query_param('ResourceMethod.' + str(depth1 + 1) + '.SupplyPlan.' + str(depth2 + 1) + '.SupplyAmount', ResourceMethods[depth1].get('SupplyPlan')[depth2].get('SupplyAmount'))
+					if ResourceMethods[depth1].get('SupplyPlan')[depth2].get('SupplyDate') is not None:
+						self.add_query_param('ResourceMethod.' + str(depth1 + 1) + '.SupplyPlan.' + str(depth2 + 1) + '.SupplyDate', ResourceMethods[depth1].get('SupplyPlan')[depth2].get('SupplyDate'))
+					if ResourceMethods[depth1].get('SupplyPlan')[depth2].get('Nic') is not None:
+						self.add_query_param('ResourceMethod.' + str(depth1 + 1) + '.SupplyPlan.' + str(depth2 + 1) + '.Nic', ResourceMethods[depth1].get('SupplyPlan')[depth2].get('Nic'))
+					if ResourceMethods[depth1].get('SupplyPlan')[depth2].get('ClassZone') is not None:
+						self.add_query_param('ResourceMethod.' + str(depth1 + 1) + '.SupplyPlan.' + str(depth2 + 1) + '.ClassZone', ResourceMethods[depth1].get('SupplyPlan')[depth2].get('ClassZone'))
+					if ResourceMethods[depth1].get('SupplyPlan')[depth2].get('ConvertHostType') is not None:
+						self.add_query_param('ResourceMethod.' + str(depth1 + 1) + '.SupplyPlan.' + str(depth2 + 1) + '.ConvertHostType', ResourceMethods[depth1].get('SupplyPlan')[depth2].get('ConvertHostType'))
+					if ResourceMethods[depth1].get('SupplyPlan')[depth2].get('Product3') is not None:
+						self.add_query_param('ResourceMethod.' + str(depth1 + 1) + '.SupplyPlan.' + str(depth2 + 1) + '.Product3', ResourceMethods[depth1].get('SupplyPlan')[depth2].get('Product3'))
+			if ResourceMethods[depth1].get('RoomCode') is not None:
+				self.add_query_param('ResourceMethod.' + str(depth1 + 1) + '.RoomCode', ResourceMethods[depth1].get('RoomCode'))
+			if ResourceMethods[depth1].get('Comment') is not None:
+				self.add_query_param('ResourceMethod.' + str(depth1 + 1) + '.Comment', ResourceMethods[depth1].get('Comment'))
+			if ResourceMethods[depth1].get('Region') is not None:
+				self.add_query_param('ResourceMethod.' + str(depth1 + 1) + '.Region', ResourceMethods[depth1].get('Region'))
+			if ResourceMethods[depth1].get('ConvertHostType') is not None:
+				self.add_query_param('ResourceMethod.' + str(depth1 + 1) + '.ConvertHostType', ResourceMethods[depth1].get('ConvertHostType'))
+			if ResourceMethods[depth1].get('Azone') is not None:
+				self.add_query_param('ResourceMethod.' + str(depth1 + 1) + '.Azone', ResourceMethods[depth1].get('Azone'))
+			if ResourceMethods[depth1].get('GapCnt') is not None:
+				self.add_query_param('ResourceMethod.' + str(depth1 + 1) + '.GapCnt', ResourceMethods[depth1].get('GapCnt'))

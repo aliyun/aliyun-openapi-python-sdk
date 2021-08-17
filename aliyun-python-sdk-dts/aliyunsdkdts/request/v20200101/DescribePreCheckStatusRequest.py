@@ -55,6 +55,12 @@ class DescribePreCheckStatusRequest(RpcRequest):
 	def set_JobCode(self,JobCode):
 		self.add_query_param('JobCode',JobCode)
 
+	def get_Name(self):
+		return self.get_query_params().get('Name')
+
+	def set_Name(self,Name):
+		self.add_query_param('Name',Name)
+
 	def get_DtsJobId(self):
 		return self.get_query_params().get('DtsJobId')
 

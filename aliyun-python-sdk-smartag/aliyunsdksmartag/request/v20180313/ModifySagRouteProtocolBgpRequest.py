@@ -25,68 +25,59 @@ class ModifySagRouteProtocolBgpRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Smartag', '2018-03-13', 'ModifySagRouteProtocolBgp','smartag')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ResourceOwnerId(self):
+	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_KeepAlive(self):
+	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
+		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_KeepAlive(self): # Integer
 		return self.get_query_params().get('KeepAlive')
 
-	def set_KeepAlive(self,KeepAlive):
-		self.add_query_param('KeepAlive',KeepAlive)
-
-	def get_HoldTime(self):
+	def set_KeepAlive(self, KeepAlive):  # Integer
+		self.add_query_param('KeepAlive', KeepAlive)
+	def get_HoldTime(self): # Integer
 		return self.get_query_params().get('HoldTime')
 
-	def set_HoldTime(self,HoldTime):
-		self.add_query_param('HoldTime',HoldTime)
-
-	def get_ResourceOwnerAccount(self):
+	def set_HoldTime(self, HoldTime):  # Integer
+		self.add_query_param('HoldTime', HoldTime)
+	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_OwnerAccount(self):
+	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
+		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_OwnerAccount(self): # String
 		return self.get_query_params().get('OwnerAccount')
 
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
-
-	def get_OwnerId(self):
+	def set_OwnerAccount(self, OwnerAccount):  # String
+		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_RouterId(self):
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_RouterId(self): # String
 		return self.get_query_params().get('RouterId')
 
-	def set_RouterId(self,RouterId):
-		self.add_query_param('RouterId',RouterId)
-
-	def get_LocalAs(self):
+	def set_RouterId(self, RouterId):  # String
+		self.add_query_param('RouterId', RouterId)
+	def get_LocalAs(self): # Integer
 		return self.get_query_params().get('LocalAs')
 
-	def set_LocalAs(self,LocalAs):
-		self.add_query_param('LocalAs',LocalAs)
-
-	def get_SmartAGId(self):
+	def set_LocalAs(self, LocalAs):  # Integer
+		self.add_query_param('LocalAs', LocalAs)
+	def get_SmartAGId(self): # String
 		return self.get_query_params().get('SmartAGId')
 
-	def set_SmartAGId(self,SmartAGId):
-		self.add_query_param('SmartAGId',SmartAGId)
-
-	def get_SmartAGSn(self):
+	def set_SmartAGId(self, SmartAGId):  # String
+		self.add_query_param('SmartAGId', SmartAGId)
+	def get_SmartAGSn(self): # String
 		return self.get_query_params().get('SmartAGSn')
 
-	def set_SmartAGSn(self,SmartAGSn):
-		self.add_query_param('SmartAGSn',SmartAGSn)
+	def set_SmartAGSn(self, SmartAGSn):  # String
+		self.add_query_param('SmartAGSn', SmartAGSn)

@@ -25,62 +25,54 @@ class ModifyCloudConnectNetworkRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Smartag', '2018-03-13', 'ModifyCloudConnectNetwork','smartag')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ResourceOwnerId(self):
+	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_CcnId(self):
+	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
+		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_CcnId(self): # String
 		return self.get_query_params().get('CcnId')
 
-	def set_CcnId(self,CcnId):
-		self.add_query_param('CcnId',CcnId)
-
-	def get_Description(self):
+	def set_CcnId(self, CcnId):  # String
+		self.add_query_param('CcnId', CcnId)
+	def get_Description(self): # String
 		return self.get_query_params().get('Description')
 
-	def set_Description(self,Description):
-		self.add_query_param('Description',Description)
-
-	def get_ResourceOwnerAccount(self):
+	def set_Description(self, Description):  # String
+		self.add_query_param('Description', Description)
+	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_OwnerAccount(self):
+	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
+		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_OwnerAccount(self): # String
 		return self.get_query_params().get('OwnerAccount')
 
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
-
-	def get_OwnerId(self):
+	def set_OwnerAccount(self, OwnerAccount):  # String
+		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_Name(self):
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_Name(self): # String
 		return self.get_query_params().get('Name')
 
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)
-
-	def get_CidrBlock(self):
+	def set_Name(self, Name):  # String
+		self.add_query_param('Name', Name)
+	def get_CidrBlock(self): # String
 		return self.get_query_params().get('CidrBlock')
 
-	def set_CidrBlock(self,CidrBlock):
-		self.add_query_param('CidrBlock',CidrBlock)
-
-	def get_InterworkingStatus(self):
+	def set_CidrBlock(self, CidrBlock):  # String
+		self.add_query_param('CidrBlock', CidrBlock)
+	def get_InterworkingStatus(self): # String
 		return self.get_query_params().get('InterworkingStatus')
 
-	def set_InterworkingStatus(self,InterworkingStatus):
-		self.add_query_param('InterworkingStatus',InterworkingStatus)
+	def set_InterworkingStatus(self, InterworkingStatus):  # String
+		self.add_query_param('InterworkingStatus', InterworkingStatus)

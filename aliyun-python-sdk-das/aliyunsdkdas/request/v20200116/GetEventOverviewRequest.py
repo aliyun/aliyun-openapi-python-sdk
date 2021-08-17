@@ -43,6 +43,12 @@ class GetEventOverviewRequest(RpcRequest):
 	def set_StartTime(self,StartTime):
 		self.add_query_param('StartTime',StartTime)
 
+	def get_Tags(self):
+		return self.get_query_params().get('Tags')
+
+	def set_Tags(self,Tags):
+		self.add_query_param('Tags',Tags)
+
 	def get_InstanceId(self):
 		return self.get_query_params().get('InstanceId')
 
@@ -54,3 +60,9 @@ class GetEventOverviewRequest(RpcRequest):
 
 	def set_MinLevel(self,MinLevel):
 		self.add_query_param('MinLevel',MinLevel)
+
+	def get_TicketId(self):
+		return self.get_query_params().get('TicketId')
+
+	def set_TicketId(self,TicketId):
+		self.add_query_param('TicketId',TicketId)

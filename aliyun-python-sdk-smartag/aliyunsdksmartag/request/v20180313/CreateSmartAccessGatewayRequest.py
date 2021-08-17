@@ -25,158 +25,139 @@ class CreateSmartAccessGatewayRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Smartag', '2018-03-13', 'CreateSmartAccessGateway','smartag')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_MaxBandWidth(self):
-		return self.get_query_params().get('MaxBandWidth')
-
-	def set_MaxBandWidth(self,MaxBandWidth):
-		self.add_query_param('MaxBandWidth',MaxBandWidth)
-
-	def get_ResourceOwnerId(self):
+	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_Description(self):
-		return self.get_query_params().get('Description')
-
-	def set_Description(self,Description):
-		self.add_query_param('Description',Description)
-
-	def get_ReceiverTown(self):
+	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
+		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_ReceiverTown(self): # String
 		return self.get_query_params().get('ReceiverTown')
 
-	def set_ReceiverTown(self,ReceiverTown):
-		self.add_query_param('ReceiverTown',ReceiverTown)
-
-	def get_ReceiverDistrict(self):
+	def set_ReceiverTown(self, ReceiverTown):  # String
+		self.add_query_param('ReceiverTown', ReceiverTown)
+	def get_ReceiverDistrict(self): # String
 		return self.get_query_params().get('ReceiverDistrict')
 
-	def set_ReceiverDistrict(self,ReceiverDistrict):
-		self.add_query_param('ReceiverDistrict',ReceiverDistrict)
-
-	def get_ReceiverAddress(self):
-		return self.get_query_params().get('ReceiverAddress')
-
-	def set_ReceiverAddress(self,ReceiverAddress):
-		self.add_query_param('ReceiverAddress',ReceiverAddress)
-
-	def get_BuyerMessage(self):
+	def set_ReceiverDistrict(self, ReceiverDistrict):  # String
+		self.add_query_param('ReceiverDistrict', ReceiverDistrict)
+	def get_BuyerMessage(self): # String
 		return self.get_query_params().get('BuyerMessage')
 
-	def set_BuyerMessage(self,BuyerMessage):
-		self.add_query_param('BuyerMessage',BuyerMessage)
-
-	def get_HardWareSpec(self):
-		return self.get_query_params().get('HardWareSpec')
-
-	def set_HardWareSpec(self,HardWareSpec):
-		self.add_query_param('HardWareSpec',HardWareSpec)
-
-	def get_ReceiverEmail(self):
-		return self.get_query_params().get('ReceiverEmail')
-
-	def set_ReceiverEmail(self,ReceiverEmail):
-		self.add_query_param('ReceiverEmail',ReceiverEmail)
-
-	def get_ReceiverState(self):
+	def set_BuyerMessage(self, BuyerMessage):  # String
+		self.add_query_param('BuyerMessage', BuyerMessage)
+	def get_ReceiverState(self): # String
 		return self.get_query_params().get('ReceiverState')
 
-	def set_ReceiverState(self,ReceiverState):
-		self.add_query_param('ReceiverState',ReceiverState)
-
-	def get_ReceiverCity(self):
-		return self.get_query_params().get('ReceiverCity')
-
-	def set_ReceiverCity(self,ReceiverCity):
-		self.add_query_param('ReceiverCity',ReceiverCity)
-
-	def get_Period(self):
+	def set_ReceiverState(self, ReceiverState):  # String
+		self.add_query_param('ReceiverState', ReceiverState)
+	def get_Period(self): # Integer
 		return self.get_query_params().get('Period')
 
-	def set_Period(self,Period):
-		self.add_query_param('Period',Period)
-
-	def get_AutoPay(self):
-		return self.get_query_params().get('AutoPay')
-
-	def set_AutoPay(self,AutoPay):
-		self.add_query_param('AutoPay',AutoPay)
-
-	def get_ReceiverMobile(self):
-		return self.get_query_params().get('ReceiverMobile')
-
-	def set_ReceiverMobile(self,ReceiverMobile):
-		self.add_query_param('ReceiverMobile',ReceiverMobile)
-
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
-
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_OwnerAccount(self):
-		return self.get_query_params().get('OwnerAccount')
-
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
-
-	def get_OwnerId(self):
+	def set_Period(self, Period):  # Integer
+		self.add_query_param('Period', Period)
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_ReceiverPhone(self):
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_ReceiverPhone(self): # String
 		return self.get_query_params().get('ReceiverPhone')
 
-	def set_ReceiverPhone(self,ReceiverPhone):
-		self.add_query_param('ReceiverPhone',ReceiverPhone)
-
-	def get_ReceiverName(self):
-		return self.get_query_params().get('ReceiverName')
-
-	def set_ReceiverName(self,ReceiverName):
-		self.add_query_param('ReceiverName',ReceiverName)
-
-	def get_HaType(self):
+	def set_ReceiverPhone(self, ReceiverPhone):  # String
+		self.add_query_param('ReceiverPhone', ReceiverPhone)
+	def get_HaType(self): # String
 		return self.get_query_params().get('HaType')
 
-	def set_HaType(self,HaType):
-		self.add_query_param('HaType',HaType)
-
-	def get_Name(self):
+	def set_HaType(self, HaType):  # String
+		self.add_query_param('HaType', HaType)
+	def get_Name(self): # String
 		return self.get_query_params().get('Name')
 
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)
-
-	def get_AlreadyHaveSag(self):
-		return self.get_query_params().get('AlreadyHaveSag')
-
-	def set_AlreadyHaveSag(self,AlreadyHaveSag):
-		self.add_query_param('AlreadyHaveSag',AlreadyHaveSag)
-
-	def get_ReceiverCountry(self):
+	def set_Name(self, Name):  # String
+		self.add_query_param('Name', Name)
+	def get_ReceiverCountry(self): # String
 		return self.get_query_params().get('ReceiverCountry')
 
-	def set_ReceiverCountry(self,ReceiverCountry):
-		self.add_query_param('ReceiverCountry',ReceiverCountry)
+	def set_ReceiverCountry(self, ReceiverCountry):  # String
+		self.add_query_param('ReceiverCountry', ReceiverCountry)
+	def get_MaxBandWidth(self): # Integer
+		return self.get_query_params().get('MaxBandWidth')
 
-	def get_ChargeType(self):
+	def set_MaxBandWidth(self, MaxBandWidth):  # Integer
+		self.add_query_param('MaxBandWidth', MaxBandWidth)
+	def get_Description(self): # String
+		return self.get_query_params().get('Description')
+
+	def set_Description(self, Description):  # String
+		self.add_query_param('Description', Description)
+	def get_ReceiverAddress(self): # String
+		return self.get_query_params().get('ReceiverAddress')
+
+	def set_ReceiverAddress(self, ReceiverAddress):  # String
+		self.add_query_param('ReceiverAddress', ReceiverAddress)
+	def get_HardWareSpec(self): # String
+		return self.get_query_params().get('HardWareSpec')
+
+	def set_HardWareSpec(self, HardWareSpec):  # String
+		self.add_query_param('HardWareSpec', HardWareSpec)
+	def get_ReceiverEmail(self): # String
+		return self.get_query_params().get('ReceiverEmail')
+
+	def set_ReceiverEmail(self, ReceiverEmail):  # String
+		self.add_query_param('ReceiverEmail', ReceiverEmail)
+	def get_ReceiverCity(self): # String
+		return self.get_query_params().get('ReceiverCity')
+
+	def set_ReceiverCity(self, ReceiverCity):  # String
+		self.add_query_param('ReceiverCity', ReceiverCity)
+	def get_AutoPay(self): # Boolean
+		return self.get_query_params().get('AutoPay')
+
+	def set_AutoPay(self, AutoPay):  # Boolean
+		self.add_query_param('AutoPay', AutoPay)
+	def get_CPEVersion(self): # String
+		return self.get_query_params().get('CPEVersion')
+
+	def set_CPEVersion(self, CPEVersion):  # String
+		self.add_query_param('CPEVersion', CPEVersion)
+	def get_ReceiverMobile(self): # String
+		return self.get_query_params().get('ReceiverMobile')
+
+	def set_ReceiverMobile(self, ReceiverMobile):  # String
+		self.add_query_param('ReceiverMobile', ReceiverMobile)
+	def get_ResourceOwnerAccount(self): # String
+		return self.get_query_params().get('ResourceOwnerAccount')
+
+	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
+		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_OwnerAccount(self): # String
+		return self.get_query_params().get('OwnerAccount')
+
+	def set_OwnerAccount(self, OwnerAccount):  # String
+		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_ReceiverName(self): # String
+		return self.get_query_params().get('ReceiverName')
+
+	def set_ReceiverName(self, ReceiverName):  # String
+		self.add_query_param('ReceiverName', ReceiverName)
+	def get_AlreadyHaveSag(self): # Boolean
+		return self.get_query_params().get('AlreadyHaveSag')
+
+	def set_AlreadyHaveSag(self, AlreadyHaveSag):  # Boolean
+		self.add_query_param('AlreadyHaveSag', AlreadyHaveSag)
+	def get_ChargeType(self): # String
 		return self.get_query_params().get('ChargeType')
 
-	def set_ChargeType(self,ChargeType):
-		self.add_query_param('ChargeType',ChargeType)
-
-	def get_ReceiverZip(self):
+	def set_ChargeType(self, ChargeType):  # String
+		self.add_query_param('ChargeType', ChargeType)
+	def get_ReceiverZip(self): # String
 		return self.get_query_params().get('ReceiverZip')
 
-	def set_ReceiverZip(self,ReceiverZip):
-		self.add_query_param('ReceiverZip',ReceiverZip)
+	def set_ReceiverZip(self, ReceiverZip):  # String
+		self.add_query_param('ReceiverZip', ReceiverZip)

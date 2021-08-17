@@ -18,12 +18,12 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
-from aliyunsdksmartag.endpoint import endpoint_data
+from aliyunsdkdbfs.endpoint import endpoint_data
 
-class OrchestrateSagECRouteBackupRequest(RpcRequest):
+class DescribeDbfsSpecificationsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Smartag', '2018-03-13', 'OrchestrateSagECRouteBackup','smartag')
+		RpcRequest.__init__(self, 'DBFS', '2020-04-18', 'DescribeDbfsSpecifications')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,26 +31,14 @@ class OrchestrateSagECRouteBackupRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_ResourceOwnerId(self):
-		return self.get_query_params().get('ResourceOwnerId')
+	def get_EcsInstanceType(self):
+		return self.get_query_params().get('EcsInstanceType')
 
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+	def set_EcsInstanceType(self,EcsInstanceType):
+		self.add_query_param('EcsInstanceType',EcsInstanceType)
 
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
+	def get_Category(self):
+		return self.get_query_params().get('Category')
 
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_OwnerAccount(self):
-		return self.get_query_params().get('OwnerAccount')
-
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
-
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
+	def set_Category(self,Category):
+		self.add_query_param('Category',Category)
