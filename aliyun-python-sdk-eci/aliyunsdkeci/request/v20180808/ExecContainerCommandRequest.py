@@ -70,3 +70,15 @@ class ExecContainerCommandRequest(RpcRequest):
 
 	def set_TTY(self, TTY):
 		self.add_query_param('TTY', TTY)
+
+	def get_Stdin(self):
+		return self.get_query_params().get('Stdin')
+
+	def set_Stdin(self, Stdin):
+		self.add_query_param('Stdin', Stdin)
+
+	def get_Sync(self):
+		return self.get_query_params().get('Sync')
+
+	def set_Sync(self, Sync):
+		self.add_query_param('Sync', Sync)
