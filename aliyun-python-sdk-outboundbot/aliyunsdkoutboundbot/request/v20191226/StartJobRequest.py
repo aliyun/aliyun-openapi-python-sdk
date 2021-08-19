@@ -45,6 +45,12 @@ class StartJobRequest(RpcRequest):
 			if CallingNumbers[depth1] is not None:
 				self.add_query_param('CallingNumber.' + str(depth1 + 1) , CallingNumbers[depth1])
 
+	def get_ScriptId(self):
+		return self.get_query_params().get('ScriptId')
+
+	def set_ScriptId(self,ScriptId):
+		self.add_query_param('ScriptId',ScriptId)
+
 	def get_InstanceId(self):
 		return self.get_query_params().get('InstanceId')
 

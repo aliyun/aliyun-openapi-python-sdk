@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkoutboundbot.endpoint import endpoint_data
 
-class ModifyInstanceRequest(RpcRequest):
+class TerminateCallRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'OutboundBot', '2019-12-26', 'ModifyInstance','outboundbot')
+		RpcRequest.__init__(self, 'OutboundBot', '2019-12-26', 'TerminateCall','outboundbot')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,34 +31,14 @@ class ModifyInstanceRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_MaxConcurrentConversation(self):
-		return self.get_query_params().get('MaxConcurrentConversation')
+	def get_CallId(self):
+		return self.get_query_params().get('CallId')
 
-	def set_MaxConcurrentConversation(self,MaxConcurrentConversation):
-		self.add_query_param('MaxConcurrentConversation',MaxConcurrentConversation)
-
-	def get_CallingNumbers(self):
-		return self.get_query_params().get('CallingNumber')
-
-	def set_CallingNumbers(self, CallingNumbers):
-		for depth1 in range(len(CallingNumbers)):
-			if CallingNumbers[depth1] is not None:
-				self.add_query_param('CallingNumber.' + str(depth1 + 1) , CallingNumbers[depth1])
+	def set_CallId(self,CallId):
+		self.add_query_param('CallId',CallId)
 
 	def get_InstanceId(self):
 		return self.get_query_params().get('InstanceId')
 
 	def set_InstanceId(self,InstanceId):
 		self.add_query_param('InstanceId',InstanceId)
-
-	def get_InstanceName(self):
-		return self.get_query_params().get('InstanceName')
-
-	def set_InstanceName(self,InstanceName):
-		self.add_query_param('InstanceName',InstanceName)
-
-	def get_InstanceDescription(self):
-		return self.get_query_params().get('InstanceDescription')
-
-	def set_InstanceDescription(self,InstanceDescription):
-		self.add_query_param('InstanceDescription',InstanceDescription)

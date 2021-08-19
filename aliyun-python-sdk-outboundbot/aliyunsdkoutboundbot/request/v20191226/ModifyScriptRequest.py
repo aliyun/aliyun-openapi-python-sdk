@@ -31,6 +31,12 @@ class ModifyScriptRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_TtsConfig(self):
+		return self.get_query_params().get('TtsConfig')
+
+	def set_TtsConfig(self,TtsConfig):
+		self.add_query_param('TtsConfig',TtsConfig)
+
 	def get_Industry(self):
 		return self.get_query_params().get('Industry')
 
@@ -55,6 +61,32 @@ class ModifyScriptRequest(RpcRequest):
 	def set_ScriptId(self,ScriptId):
 		self.add_query_param('ScriptId',ScriptId)
 
+	def get_ScriptWaveforms(self):
+		return self.get_query_params().get('ScriptWaveform')
+
+	def set_ScriptWaveforms(self, ScriptWaveforms):
+		for depth1 in range(len(ScriptWaveforms)):
+			if ScriptWaveforms[depth1] is not None:
+				self.add_query_param('ScriptWaveform.' + str(depth1 + 1) , ScriptWaveforms[depth1])
+
+	def get_AsrConfig(self):
+		return self.get_query_params().get('AsrConfig')
+
+	def set_AsrConfig(self,AsrConfig):
+		self.add_query_param('AsrConfig',AsrConfig)
+
+	def get_MiniPlaybackEnabled(self):
+		return self.get_query_params().get('MiniPlaybackEnabled')
+
+	def set_MiniPlaybackEnabled(self,MiniPlaybackEnabled):
+		self.add_query_param('MiniPlaybackEnabled',MiniPlaybackEnabled)
+
+	def get_ChatbotId(self):
+		return self.get_query_params().get('ChatbotId')
+
+	def set_ChatbotId(self,ChatbotId):
+		self.add_query_param('ChatbotId',ChatbotId)
+
 	def get_InstanceId(self):
 		return self.get_query_params().get('InstanceId')
 
@@ -66,3 +98,11 @@ class ModifyScriptRequest(RpcRequest):
 
 	def set_ScriptDescription(self,ScriptDescription):
 		self.add_query_param('ScriptDescription',ScriptDescription)
+
+	def get_ScriptContents(self):
+		return self.get_query_params().get('ScriptContent')
+
+	def set_ScriptContents(self, ScriptContents):
+		for depth1 in range(len(ScriptContents)):
+			if ScriptContents[depth1] is not None:
+				self.add_query_param('ScriptContent.' + str(depth1 + 1) , ScriptContents[depth1])
