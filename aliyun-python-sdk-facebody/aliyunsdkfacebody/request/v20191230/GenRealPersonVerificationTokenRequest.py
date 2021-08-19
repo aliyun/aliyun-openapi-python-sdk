@@ -31,6 +31,12 @@ class GenRealPersonVerificationTokenRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_MetaInfo(self):
+		return self.get_body_params().get('MetaInfo')
+
+	def set_MetaInfo(self,MetaInfo):
+		self.add_body_params('MetaInfo', MetaInfo)
+
 	def get_CertificateNumber(self):
 		return self.get_body_params().get('CertificateNumber')
 
@@ -42,9 +48,3 @@ class GenRealPersonVerificationTokenRequest(RpcRequest):
 
 	def set_CertificateName(self,CertificateName):
 		self.add_body_params('CertificateName', CertificateName)
-
-	def get_MetaInfo(self):
-		return self.get_body_params().get('MetaInfo')
-
-	def set_MetaInfo(self,MetaInfo):
-		self.add_body_params('MetaInfo', MetaInfo)
