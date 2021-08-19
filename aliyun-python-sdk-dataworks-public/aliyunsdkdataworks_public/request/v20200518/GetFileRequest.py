@@ -37,6 +37,12 @@ class GetFileRequest(RpcRequest):
 	def set_ProjectId(self,ProjectId):
 		self.add_body_params('ProjectId', ProjectId)
 
+	def get_NodeId(self):
+		return self.get_body_params().get('NodeId')
+
+	def set_NodeId(self,NodeId):
+		self.add_body_params('NodeId', NodeId)
+
 	def get_ProjectIdentifier(self):
 		return self.get_body_params().get('ProjectIdentifier')
 
