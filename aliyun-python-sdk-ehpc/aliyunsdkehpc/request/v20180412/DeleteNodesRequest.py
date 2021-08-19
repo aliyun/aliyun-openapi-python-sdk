@@ -45,6 +45,12 @@ class DeleteNodesRequest(RpcRequest):
 	def set_ClusterId(self,ClusterId):
 		self.add_query_param('ClusterId',ClusterId)
 
+	def get_Sync(self):
+		return self.get_query_params().get('Sync')
+
+	def set_Sync(self,Sync):
+		self.add_query_param('Sync',Sync)
+
 	def get_ReleaseInstance(self):
 		return self.get_query_params().get('ReleaseInstance')
 

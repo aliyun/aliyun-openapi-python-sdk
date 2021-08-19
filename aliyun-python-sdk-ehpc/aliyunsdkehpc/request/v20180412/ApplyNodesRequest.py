@@ -143,11 +143,23 @@ class ApplyNodesRequest(RpcRequest):
 	def set_InstanceFamilyLevel(self,InstanceFamilyLevel):
 		self.add_query_param('InstanceFamilyLevel',InstanceFamilyLevel)
 
+	def get_Round(self):
+		return self.get_query_params().get('Round')
+
+	def set_Round(self,Round):
+		self.add_query_param('Round',Round)
+
 	def get_InternetChargeType(self):
 		return self.get_query_params().get('InternetChargeType')
 
 	def set_InternetChargeType(self,InternetChargeType):
 		self.add_query_param('InternetChargeType',InternetChargeType)
+
+	def get_Interval(self):
+		return self.get_query_params().get('Interval')
+
+	def set_Interval(self,Interval):
+		self.add_query_param('Interval',Interval)
 
 	def get_InstanceTypeModels(self):
 		return self.get_query_params().get('InstanceTypeModel')

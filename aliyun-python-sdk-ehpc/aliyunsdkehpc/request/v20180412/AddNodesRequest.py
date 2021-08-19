@@ -145,6 +145,12 @@ class AddNodesRequest(RpcRequest):
 	def set_HostNameSuffix(self,HostNameSuffix):
 		self.add_query_param('HostNameSuffix',HostNameSuffix)
 
+	def get_Sync(self):
+		return self.get_query_params().get('Sync')
+
+	def set_Sync(self,Sync):
+		self.add_query_param('Sync',Sync)
+
 	def get_VSwitchId(self):
 		return self.get_query_params().get('VSwitchId')
 

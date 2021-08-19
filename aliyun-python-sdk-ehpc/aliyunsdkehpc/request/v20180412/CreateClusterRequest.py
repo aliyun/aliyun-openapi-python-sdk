@@ -307,6 +307,12 @@ class CreateClusterRequest(RpcRequest):
 	def set_OsTag(self,OsTag):
 		self.add_query_param('OsTag',OsTag)
 
+	def get_ClusterVersion(self):
+		return self.get_query_params().get('ClusterVersion')
+
+	def set_ClusterVersion(self,ClusterVersion):
+		self.add_query_param('ClusterVersion',ClusterVersion)
+
 	def get_IsComputeEss(self):
 		return self.get_query_params().get('IsComputeEss')
 

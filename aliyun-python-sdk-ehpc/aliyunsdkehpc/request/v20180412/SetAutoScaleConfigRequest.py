@@ -108,12 +108,10 @@ class SetAutoScaleConfigRequest(RpcRequest):
 
 	def set_Queuess(self, Queuess):
 		for depth1 in range(len(Queuess)):
-			if Queuess[depth1].get('SpotStrategy') is not None:
-				self.add_query_param('Queues.' + str(depth1 + 1) + '.SpotStrategy', Queuess[depth1].get('SpotStrategy'))
 			if Queuess[depth1].get('QueueName') is not None:
 				self.add_query_param('Queues.' + str(depth1 + 1) + '.QueueName', Queuess[depth1].get('QueueName'))
-			if Queuess[depth1].get('MinNodesInQueue') is not None:
-				self.add_query_param('Queues.' + str(depth1 + 1) + '.MinNodesInQueue', Queuess[depth1].get('MinNodesInQueue'))
+			if Queuess[depth1].get('SystemDiskLevel') is not None:
+				self.add_query_param('Queues.' + str(depth1 + 1) + '.SystemDiskLevel', Queuess[depth1].get('SystemDiskLevel'))
 			if Queuess[depth1].get('InstanceTypes') is not None:
 				for depth2 in range(len(Queuess[depth1].get('InstanceTypes'))):
 					if Queuess[depth1].get('InstanceTypes')[depth2].get('SpotStrategy') is not None:
@@ -124,22 +122,32 @@ class SetAutoScaleConfigRequest(RpcRequest):
 						self.add_query_param('Queues.' + str(depth1 + 1) + '.InstanceTypes.' + str(depth2 + 1) + '.InstanceType', Queuess[depth1].get('InstanceTypes')[depth2].get('InstanceType'))
 					if Queuess[depth1].get('InstanceTypes')[depth2].get('ZoneId') is not None:
 						self.add_query_param('Queues.' + str(depth1 + 1) + '.InstanceTypes.' + str(depth2 + 1) + '.ZoneId', Queuess[depth1].get('InstanceTypes')[depth2].get('ZoneId'))
-					if Queuess[depth1].get('InstanceTypes')[depth2].get('HostNamePrefix') is not None:
-						self.add_query_param('Queues.' + str(depth1 + 1) + '.InstanceTypes.' + str(depth2 + 1) + '.HostNamePrefix', Queuess[depth1].get('InstanceTypes')[depth2].get('HostNamePrefix'))
 					if Queuess[depth1].get('InstanceTypes')[depth2].get('SpotPriceLimit') is not None:
 						self.add_query_param('Queues.' + str(depth1 + 1) + '.InstanceTypes.' + str(depth2 + 1) + '.SpotPriceLimit', Queuess[depth1].get('InstanceTypes')[depth2].get('SpotPriceLimit'))
-			if Queuess[depth1].get('MaxNodesInQueue') is not None:
-				self.add_query_param('Queues.' + str(depth1 + 1) + '.MaxNodesInQueue', Queuess[depth1].get('MaxNodesInQueue'))
-			if Queuess[depth1].get('InstanceType') is not None:
-				self.add_query_param('Queues.' + str(depth1 + 1) + '.InstanceType', Queuess[depth1].get('InstanceType'))
-			if Queuess[depth1].get('QueueImageId') is not None:
-				self.add_query_param('Queues.' + str(depth1 + 1) + '.QueueImageId', Queuess[depth1].get('QueueImageId'))
 			if Queuess[depth1].get('EnableAutoGrow') is not None:
 				self.add_query_param('Queues.' + str(depth1 + 1) + '.EnableAutoGrow', Queuess[depth1].get('EnableAutoGrow'))
 			if Queuess[depth1].get('SpotPriceLimit') is not None:
 				self.add_query_param('Queues.' + str(depth1 + 1) + '.SpotPriceLimit', Queuess[depth1].get('SpotPriceLimit'))
+			if Queuess[depth1].get('HostNameSuffix') is not None:
+				self.add_query_param('Queues.' + str(depth1 + 1) + '.HostNameSuffix', Queuess[depth1].get('HostNameSuffix'))
 			if Queuess[depth1].get('EnableAutoShrink') is not None:
 				self.add_query_param('Queues.' + str(depth1 + 1) + '.EnableAutoShrink', Queuess[depth1].get('EnableAutoShrink'))
+			if Queuess[depth1].get('SpotStrategy') is not None:
+				self.add_query_param('Queues.' + str(depth1 + 1) + '.SpotStrategy', Queuess[depth1].get('SpotStrategy'))
+			if Queuess[depth1].get('MinNodesInQueue') is not None:
+				self.add_query_param('Queues.' + str(depth1 + 1) + '.MinNodesInQueue', Queuess[depth1].get('MinNodesInQueue'))
+			if Queuess[depth1].get('SystemDiskCategory') is not None:
+				self.add_query_param('Queues.' + str(depth1 + 1) + '.SystemDiskCategory', Queuess[depth1].get('SystemDiskCategory'))
+			if Queuess[depth1].get('MaxNodesInQueue') is not None:
+				self.add_query_param('Queues.' + str(depth1 + 1) + '.MaxNodesInQueue', Queuess[depth1].get('MaxNodesInQueue'))
+			if Queuess[depth1].get('SystemDiskSize') is not None:
+				self.add_query_param('Queues.' + str(depth1 + 1) + '.SystemDiskSize', Queuess[depth1].get('SystemDiskSize'))
+			if Queuess[depth1].get('InstanceType') is not None:
+				self.add_query_param('Queues.' + str(depth1 + 1) + '.InstanceType', Queuess[depth1].get('InstanceType'))
+			if Queuess[depth1].get('QueueImageId') is not None:
+				self.add_query_param('Queues.' + str(depth1 + 1) + '.QueueImageId', Queuess[depth1].get('QueueImageId'))
+			if Queuess[depth1].get('HostNamePrefix') is not None:
+				self.add_query_param('Queues.' + str(depth1 + 1) + '.HostNamePrefix', Queuess[depth1].get('HostNamePrefix'))
 
 	def get_GrowIntervalInMinutes(self):
 		return self.get_query_params().get('GrowIntervalInMinutes')

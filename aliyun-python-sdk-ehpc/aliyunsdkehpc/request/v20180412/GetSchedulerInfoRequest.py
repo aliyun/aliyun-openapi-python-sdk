@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkehpc.endpoint import endpoint_data
 
-class UnbindAccountToClusterUserRequest(RpcRequest):
+class GetSchedulerInfoRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'EHPC', '2018-04-12', 'UnbindAccountToClusterUser')
+		RpcRequest.__init__(self, 'EHPC', '2018-04-12', 'GetSchedulerInfo')
 		self.set_method('GET')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -37,14 +37,10 @@ class UnbindAccountToClusterUserRequest(RpcRequest):
 	def set_ClusterId(self,ClusterId):
 		self.add_query_param('ClusterId',ClusterId)
 
-	def get_AccountUid(self):
-		return self.get_query_params().get('AccountUid')
+	def get_Schedulers(self):
+		return self.get_query_params().get('Scheduler')
 
-	def set_AccountUid(self,AccountUid):
-		self.add_query_param('AccountUid',AccountUid)
-
-	def get_UserName(self):
-		return self.get_query_params().get('UserName')
-
-	def set_UserName(self,UserName):
-		self.add_query_param('UserName',UserName)
+	def set_Schedulers(self, Schedulers):
+		for depth1 in range(len(Schedulers)):
+			if Schedulers[depth1].get('SchedName') is not None:
+				self.add_query_param('Scheduler.' + str(depth1 + 1) + '.SchedName', Schedulers[depth1].get('SchedName'))
