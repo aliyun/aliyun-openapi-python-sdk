@@ -45,6 +45,12 @@ class DescribeInstanceTypesRequest(RpcRequest):
 			if InstanceTypess[depth1] is not None:
 				self.add_query_param('InstanceTypes.' + str(depth1 + 1) , InstanceTypess[depth1])
 
+	def get_NextToken(self):
+		return self.get_query_params().get('NextToken')
+
+	def set_NextToken(self,NextToken):
+		self.add_query_param('NextToken',NextToken)
+
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -68,3 +74,9 @@ class DescribeInstanceTypesRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_MaxResults(self):
+		return self.get_query_params().get('MaxResults')
+
+	def set_MaxResults(self,MaxResults):
+		self.add_query_param('MaxResults',MaxResults)

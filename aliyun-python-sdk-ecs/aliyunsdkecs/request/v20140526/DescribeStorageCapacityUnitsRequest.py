@@ -63,6 +63,16 @@ class DescribeStorageCapacityUnitsRequest(RpcRequest):
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
 
+	def get_Tags(self):
+		return self.get_query_params().get('Tag')
+
+	def set_Tags(self, Tags):
+		for depth1 in range(len(Tags)):
+			if Tags[depth1].get('Key') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tags[depth1].get('Key'))
+			if Tags[depth1].get('Value') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tags[depth1].get('Value'))
+
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -87,6 +97,12 @@ class DescribeStorageCapacityUnitsRequest(RpcRequest):
 	def set_Name(self,Name):
 		self.add_query_param('Name',Name)
 
+	def get_AllocationType(self):
+		return self.get_query_params().get('AllocationType')
+
+	def set_AllocationType(self,AllocationType):
+		self.add_query_param('AllocationType',AllocationType)
+
 	def get_Statuss(self):
 		return self.get_query_params().get('Status')
 
@@ -94,9 +110,3 @@ class DescribeStorageCapacityUnitsRequest(RpcRequest):
 		for depth1 in range(len(Statuss)):
 			if Statuss[depth1] is not None:
 				self.add_query_param('Status.' + str(depth1 + 1) , Statuss[depth1])
-
-	def get_AllocationType(self):
-		return self.get_query_params().get('AllocationType')
-
-	def set_AllocationType(self,AllocationType):
-		self.add_query_param('AllocationType',AllocationType)

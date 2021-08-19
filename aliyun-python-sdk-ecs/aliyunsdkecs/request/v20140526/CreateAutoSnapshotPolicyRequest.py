@@ -55,6 +55,12 @@ class CreateAutoSnapshotPolicyRequest(RpcRequest):
 	def set_repeatWeekdays(self,repeatWeekdays):
 		self.add_query_param('repeatWeekdays',repeatWeekdays)
 
+	def get_ResourceGroupId(self):
+		return self.get_query_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self,ResourceGroupId):
+		self.add_query_param('ResourceGroupId',ResourceGroupId)
+
 	def get_Tags(self):
 		return self.get_query_params().get('Tag')
 
