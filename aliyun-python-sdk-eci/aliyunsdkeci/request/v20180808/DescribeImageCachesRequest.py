@@ -54,12 +54,6 @@ class DescribeImageCachesRequest(RpcRequest):
 	def set_ImageCacheName(self,ImageCacheName):
 		self.add_query_param('ImageCacheName',ImageCacheName)
 
-	def get_Image(self):
-		return self.get_query_params().get('Image')
-
-	def set_Image(self,Image):
-		self.add_query_param('Image',Image)
-
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
