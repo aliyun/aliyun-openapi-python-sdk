@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkreid_cloud.endpoint import endpoint_data
 
-class DescribeIpcLiveAddressRequest(RpcRequest):
+class DescribeCustomerFlowByLocationOfflineRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'reid_cloud', '2020-10-29', 'DescribeIpcLiveAddress','1.2.2')
+		RpcRequest.__init__(self, 'reid_cloud', '2020-10-29', 'DescribeCustomerFlowByLocationOffline','1.2.2')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,20 +31,14 @@ class DescribeIpcLiveAddressRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_IpcId(self):
-		return self.get_body_params().get('IpcId')
+	def get_StartDate(self):
+		return self.get_body_params().get('StartDate')
 
-	def set_IpcId(self,IpcId):
-		self.add_body_params('IpcId', IpcId)
+	def set_StartDate(self,StartDate):
+		self.add_body_params('StartDate', StartDate)
 
 	def get_StoreId(self):
 		return self.get_body_params().get('StoreId')
 
 	def set_StoreId(self,StoreId):
 		self.add_body_params('StoreId', StoreId)
-
-	def get_ProtocolType(self):
-		return self.get_body_params().get('ProtocolType')
-
-	def set_ProtocolType(self,ProtocolType):
-		self.add_body_params('ProtocolType', ProtocolType)
