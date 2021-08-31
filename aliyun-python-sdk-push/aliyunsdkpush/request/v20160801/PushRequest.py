@@ -127,6 +127,12 @@ class PushRequest(RpcRequest):
 	def set_ExpireTime(self,ExpireTime):
 		self.add_query_param('ExpireTime',ExpireTime)
 
+	def get_AndroidImageUrl(self):
+		return self.get_query_params().get('AndroidImageUrl')
+
+	def set_AndroidImageUrl(self,AndroidImageUrl):
+		self.add_query_param('AndroidImageUrl',AndroidImageUrl)
+
 	def get_AndroidNotificationVivoChannel(self):
 		return self.get_query_params().get('AndroidNotificationVivoChannel')
 
@@ -156,6 +162,12 @@ class PushRequest(RpcRequest):
 
 	def set_SmsParams(self,SmsParams):
 		self.add_query_param('SmsParams',SmsParams)
+
+	def get_AndroidInboxBody(self):
+		return self.get_query_params().get('AndroidInboxBody')
+
+	def set_AndroidInboxBody(self,AndroidInboxBody):
+		self.add_query_param('AndroidInboxBody',AndroidInboxBody)
 
 	def get_JobKey(self):
 		return self.get_query_params().get('JobKey')
@@ -192,6 +204,12 @@ class PushRequest(RpcRequest):
 
 	def set_iOSRemind(self,iOSRemind):
 		self.add_query_param('iOSRemind',iOSRemind)
+
+	def get_iOSNotificationThreadId(self):
+		return self.get_query_params().get('iOSNotificationThreadId')
+
+	def set_iOSNotificationThreadId(self,iOSNotificationThreadId):
+		self.add_query_param('iOSNotificationThreadId',iOSNotificationThreadId)
 
 	def get_AndroidMusic(self):
 		return self.get_query_params().get('AndroidMusic')
@@ -265,6 +283,12 @@ class PushRequest(RpcRequest):
 	def set_iOSExtParameters(self,iOSExtParameters):
 		self.add_query_param('iOSExtParameters',iOSExtParameters)
 
+	def get_AndroidXiaomiImageUrl(self):
+		return self.get_query_params().get('AndroidXiaomiImageUrl')
+
+	def set_AndroidXiaomiImageUrl(self,AndroidXiaomiImageUrl):
+		self.add_query_param('AndroidXiaomiImageUrl',AndroidXiaomiImageUrl)
+
 	def get_SmsTemplateName(self):
 		return self.get_query_params().get('SmsTemplateName')
 
@@ -276,6 +300,12 @@ class PushRequest(RpcRequest):
 
 	def set_AndroidPopupBody(self,AndroidPopupBody):
 		self.add_query_param('AndroidPopupBody',AndroidPopupBody)
+
+	def get_AndroidBigPictureUrl(self):
+		return self.get_query_params().get('AndroidBigPictureUrl')
+
+	def set_AndroidBigPictureUrl(self,AndroidBigPictureUrl):
+		self.add_query_param('AndroidBigPictureUrl',AndroidBigPictureUrl)
 
 	def get_iOSSilentNotification(self):
 		return self.get_query_params().get('iOSSilentNotification')
