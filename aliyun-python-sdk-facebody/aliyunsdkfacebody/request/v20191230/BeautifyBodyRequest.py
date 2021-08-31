@@ -55,6 +55,12 @@ class BeautifyBodyRequest(RpcRequest):
 	def set_OriginalWidth(self,OriginalWidth):
 		self.add_body_params('OriginalWidth', OriginalWidth)
 
+	def get_IsPregnant(self):
+		return self.get_body_params().get('IsPregnant')
+
+	def set_IsPregnant(self,IsPregnant):
+		self.add_body_params('IsPregnant', IsPregnant)
+
 	def get_FaceList(self):
 		return self.get_body_params().get('FaceList')
 
