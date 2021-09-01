@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdksls.endpoint import endpoint_data
 
-class SetAlertActionPolicyRequest(RpcRequest):
+class SetAlertCenterResourceByConsoleRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sls', '2019-10-23', 'SetAlertActionPolicy')
+		RpcRequest.__init__(self, 'Sls', '2019-10-23', 'SetAlertCenterResourceByConsole')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -37,20 +37,14 @@ class SetAlertActionPolicyRequest(RpcRequest):
 	def set_App(self,App):
 		self.add_body_params('App', App)
 
-	def get_PolicyId(self):
-		return self.get_body_params().get('PolicyId')
+	def get_Language(self):
+		return self.get_body_params().get('Language')
 
-	def set_PolicyId(self,PolicyId):
-		self.add_body_params('PolicyId', PolicyId)
+	def set_Language(self,Language):
+		self.add_body_params('Language', Language)
 
-	def get_PolicyName(self):
-		return self.get_body_params().get('PolicyName')
+	def get_Region(self):
+		return self.get_body_params().get('Region')
 
-	def set_PolicyName(self,PolicyName):
-		self.add_body_params('PolicyName', PolicyName)
-
-	def get_Policy(self):
-		return self.get_body_params().get('Policy')
-
-	def set_Policy(self,Policy):
-		self.add_body_params('Policy', Policy)
+	def set_Region(self,Region):
+		self.add_body_params('Region', Region)

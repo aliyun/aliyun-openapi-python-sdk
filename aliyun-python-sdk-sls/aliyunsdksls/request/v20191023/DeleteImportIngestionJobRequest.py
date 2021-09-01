@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdksls.endpoint import endpoint_data
 
-class DeleteLogResourceRequest(RpcRequest):
+class DeleteImportIngestionJobRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sls', '2018-06-13', 'DeleteLogResource')
+		RpcRequest.__init__(self, 'Sls', '2019-10-23', 'DeleteImportIngestionJob')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,20 +31,20 @@ class DeleteLogResourceRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_Project(self):
-		return self.get_query_params().get('Project')
+	def get_Namespace(self):
+		return self.get_body_params().get('Namespace')
 
-	def set_Project(self,Project):
-		self.add_query_param('Project',Project)
+	def set_Namespace(self,Namespace):
+		self.add_body_params('Namespace', Namespace)
 
 	def get_Region(self):
-		return self.get_query_params().get('Region')
+		return self.get_body_params().get('Region')
 
 	def set_Region(self,Region):
-		self.add_query_param('Region',Region)
+		self.add_body_params('Region', Region)
 
-	def get_Logstore(self):
-		return self.get_query_params().get('Logstore')
+	def get_JobName(self):
+		return self.get_body_params().get('JobName')
 
-	def set_Logstore(self,Logstore):
-		self.add_query_param('Logstore',Logstore)
+	def set_JobName(self,JobName):
+		self.add_body_params('JobName', JobName)
