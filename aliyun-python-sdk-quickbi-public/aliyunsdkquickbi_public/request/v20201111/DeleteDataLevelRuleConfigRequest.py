@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkquickbi_public.endpoint import endpoint_data
 
-class ListPortalMenusRequest(RpcRequest):
+class DeleteDataLevelRuleConfigRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'quickbi-public', '2020-08-08', 'ListPortalMenus','quickbi')
+		RpcRequest.__init__(self, 'quickbi-public', '2020-11-11', 'DeleteDataLevelRuleConfig','quickbi')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,14 +31,14 @@ class ListPortalMenusRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_DataPortalId(self):
-		return self.get_query_params().get('DataPortalId')
+	def get_RuleId(self):
+		return self.get_query_params().get('RuleId')
 
-	def set_DataPortalId(self,DataPortalId):
-		self.add_query_param('DataPortalId',DataPortalId)
+	def set_RuleId(self,RuleId):
+		self.add_query_param('RuleId',RuleId)
 
-	def get_UserId(self):
-		return self.get_query_params().get('UserId')
+	def get_CubeId(self):
+		return self.get_query_params().get('CubeId')
 
-	def set_UserId(self,UserId):
-		self.add_query_param('UserId',UserId)
+	def set_CubeId(self,CubeId):
+		self.add_query_param('CubeId',CubeId)
