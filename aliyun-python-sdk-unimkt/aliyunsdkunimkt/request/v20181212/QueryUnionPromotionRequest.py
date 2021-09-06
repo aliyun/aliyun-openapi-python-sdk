@@ -23,7 +23,7 @@ from aliyunsdkunimkt.endpoint import endpoint_data
 class QueryUnionPromotionRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'UniMkt', '2018-12-12', 'QueryUnionPromotion','uniMkt')
+		RpcRequest.__init__(self, 'UniMkt', '2018-12-12', 'QueryUnionPromotion')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -36,6 +36,12 @@ class QueryUnionPromotionRequest(RpcRequest):
 
 	def set_UnionBizType(self,UnionBizType):
 		self.add_query_param('UnionBizType',UnionBizType)
+
+	def get_ProxyChannelId(self):
+		return self.get_query_params().get('ProxyChannelId')
+
+	def set_ProxyChannelId(self,ProxyChannelId):
+		self.add_query_param('ProxyChannelId',ProxyChannelId)
 
 	def get_UserNick(self):
 		return self.get_query_params().get('UserNick')

@@ -23,7 +23,7 @@ from aliyunsdkunimkt.endpoint import endpoint_data
 class CreateUnionTaskRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'UniMkt', '2018-12-12', 'CreateUnionTask','uniMkt')
+		RpcRequest.__init__(self, 'UniMkt', '2018-12-12', 'CreateUnionTask')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -36,6 +36,12 @@ class CreateUnionTaskRequest(RpcRequest):
 
 	def set_TaskType(self,TaskType):
 		self.add_query_param('TaskType',TaskType)
+
+	def get_CustomCreativeType(self):
+		return self.get_query_params().get('CustomCreativeType')
+
+	def set_CustomCreativeType(self,CustomCreativeType):
+		self.add_query_param('CustomCreativeType',CustomCreativeType)
 
 	def get_TaskBizType(self):
 		return self.get_query_params().get('TaskBizType')
@@ -90,6 +96,12 @@ class CreateUnionTaskRequest(RpcRequest):
 
 	def set_ProxyUserId(self,ProxyUserId):
 		self.add_query_param('ProxyUserId',ProxyUserId)
+
+	def get_ContentUrl(self):
+		return self.get_query_params().get('ContentUrl')
+
+	def set_ContentUrl(self,ContentUrl):
+		self.add_query_param('ContentUrl',ContentUrl)
 
 	def get_TaskRuleType(self):
 		return self.get_query_params().get('TaskRuleType')

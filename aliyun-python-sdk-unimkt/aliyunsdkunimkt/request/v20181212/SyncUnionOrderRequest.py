@@ -23,13 +23,19 @@ from aliyunsdkunimkt.endpoint import endpoint_data
 class SyncUnionOrderRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'UniMkt', '2018-12-12', 'SyncUnionOrder','uniMkt')
+		RpcRequest.__init__(self, 'UniMkt', '2018-12-12', 'SyncUnionOrder')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+
+	def get_ProxyChannelId(self):
+		return self.get_query_params().get('ProxyChannelId')
+
+	def set_ProxyChannelId(self,ProxyChannelId):
+		self.add_query_param('ProxyChannelId',ProxyChannelId)
 
 	def get_TaskType(self):
 		return self.get_query_params().get('TaskType')
@@ -96,6 +102,12 @@ class SyncUnionOrderRequest(RpcRequest):
 
 	def set_TaskRuleType(self,TaskRuleType):
 		self.add_query_param('TaskRuleType',TaskRuleType)
+
+	def get_V(self):
+		return self.get_query_params().get('V')
+
+	def set_V(self,V):
+		self.add_query_param('V',V)
 
 	def get_IndustryLabelBagId(self):
 		return self.get_query_params().get('IndustryLabelBagId')

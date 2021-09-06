@@ -23,7 +23,7 @@ from aliyunsdkunimkt.endpoint import endpoint_data
 class ChangeSlotStatusRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'UniMkt', '2018-12-12', 'ChangeSlotStatus','uniMkt')
+		RpcRequest.__init__(self, 'UniMkt', '2018-12-12', 'ChangeSlotStatus')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
