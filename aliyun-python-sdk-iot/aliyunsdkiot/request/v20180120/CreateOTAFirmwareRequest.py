@@ -37,6 +37,22 @@ class CreateOTAFirmwareRequest(RpcRequest):
 	def set_SignMethod(self,SignMethod):
 		self.add_query_param('SignMethod',SignMethod)
 
+	def get_MultiFiless(self):
+		return self.get_query_params().get('MultiFiles')
+
+	def set_MultiFiless(self, MultiFiless):
+		for depth1 in range(len(MultiFiless)):
+			if MultiFiless[depth1].get('Size') is not None:
+				self.add_query_param('MultiFiles.' + str(depth1 + 1) + '.Size', MultiFiless[depth1].get('Size'))
+			if MultiFiless[depth1].get('Name') is not None:
+				self.add_query_param('MultiFiles.' + str(depth1 + 1) + '.Name', MultiFiless[depth1].get('Name'))
+			if MultiFiless[depth1].get('SignValue') is not None:
+				self.add_query_param('MultiFiles.' + str(depth1 + 1) + '.SignValue', MultiFiless[depth1].get('SignValue'))
+			if MultiFiless[depth1].get('FileMd5') is not None:
+				self.add_query_param('MultiFiles.' + str(depth1 + 1) + '.FileMd5', MultiFiless[depth1].get('FileMd5'))
+			if MultiFiless[depth1].get('Url') is not None:
+				self.add_query_param('MultiFiles.' + str(depth1 + 1) + '.Url', MultiFiless[depth1].get('Url'))
+
 	def get_NeedToVerify(self):
 		return self.get_query_params().get('NeedToVerify')
 
