@@ -61,6 +61,12 @@ class DescribeSQLLogsRequest(RpcRequest):
 	def set_SourceIP(self,SourceIP):
 		self.add_query_param('SourceIP',SourceIP)
 
+	def get_MinExecuteCost(self):
+		return self.get_query_params().get('MinExecuteCost')
+
+	def set_MinExecuteCost(self,MinExecuteCost):
+		self.add_query_param('MinExecuteCost',MinExecuteCost)
+
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
 
@@ -72,6 +78,12 @@ class DescribeSQLLogsRequest(RpcRequest):
 
 	def set_DBInstanceId(self,DBInstanceId):
 		self.add_query_param('DBInstanceId',DBInstanceId)
+
+	def get_MaxExecuteCost(self):
+		return self.get_query_params().get('MaxExecuteCost')
+
+	def set_MaxExecuteCost(self,MaxExecuteCost):
+		self.add_query_param('MaxExecuteCost',MaxExecuteCost)
 
 	def get_ExecuteCost(self):
 		return self.get_query_params().get('ExecuteCost')
