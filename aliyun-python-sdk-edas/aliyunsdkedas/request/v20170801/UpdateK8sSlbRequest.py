@@ -68,6 +68,12 @@ class UpdateK8sSlbRequest(RoaRequest):
 	def set_AppId(self,AppId):
 		self.add_query_param('AppId',AppId)
 
+	def get_DisableForceOverride(self):
+		return self.get_query_params().get('DisableForceOverride')
+
+	def set_DisableForceOverride(self,DisableForceOverride):
+		self.add_query_param('DisableForceOverride',DisableForceOverride)
+
 	def get_Specification(self):
 		return self.get_query_params().get('Specification')
 

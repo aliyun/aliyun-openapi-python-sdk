@@ -260,6 +260,12 @@ class DeployK8sApplicationRequest(RoaRequest):
 	def set_PvcMountDescs(self,PvcMountDescs):
 		self.add_query_param('PvcMountDescs',PvcMountDescs)
 
+	def get_EmptyDirs(self):
+		return self.get_query_params().get('EmptyDirs')
+
+	def set_EmptyDirs(self,EmptyDirs):
+		self.add_query_param('EmptyDirs',EmptyDirs)
+
 	def get_McpuRequest(self):
 		return self.get_query_params().get('McpuRequest')
 

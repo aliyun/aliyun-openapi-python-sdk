@@ -104,6 +104,12 @@ class InsertK8sApplicationRequest(RoaRequest):
 	def set_PreStop(self,PreStop):
 		self.add_query_param('PreStop',PreStop)
 
+	def get_BuildPackId(self):
+		return self.get_query_params().get('BuildPackId')
+
+	def set_BuildPackId(self,BuildPackId):
+		self.add_query_param('BuildPackId',BuildPackId)
+
 	def get_LocalVolume(self):
 		return self.get_query_params().get('LocalVolume')
 
@@ -115,6 +121,12 @@ class InsertK8sApplicationRequest(RoaRequest):
 
 	def set_UseBodyEncoding(self,UseBodyEncoding):
 		self.add_query_param('UseBodyEncoding',UseBodyEncoding)
+
+	def get_EmptyDirs(self):
+		return self.get_query_params().get('EmptyDirs')
+
+	def set_EmptyDirs(self,EmptyDirs):
+		self.add_query_param('EmptyDirs',EmptyDirs)
 
 	def get_PackageType(self):
 		return self.get_query_params().get('PackageType')

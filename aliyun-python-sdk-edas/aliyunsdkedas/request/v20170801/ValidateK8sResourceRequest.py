@@ -20,11 +20,11 @@
 from aliyunsdkcore.request import RoaRequest
 from aliyunsdkedas.endpoint import endpoint_data
 
-class UnbindSlbRequest(RoaRequest):
+class ValidateK8sResourceRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'UnbindSlb','Edas')
-		self.set_uri_pattern('/pop/app/unbind_slb_json')
+		RoaRequest.__init__(self, 'Edas', '2017-08-01', 'ValidateK8sResource','Edas')
+		self.set_uri_pattern('/pop/v5/k8s/acs/validate_k8s_resource')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -32,26 +32,32 @@ class UnbindSlbRequest(RoaRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_SlbId(self):
-		return self.get_query_params().get('SlbId')
+	def get_Kind(self):
+		return self.get_body_params().get('Kind')
 
-	def set_SlbId(self,SlbId):
-		self.add_query_param('SlbId',SlbId)
+	def set_Kind(self,Kind):
+		self.add_body_params('Kind', Kind)
 
 	def get_AppId(self):
-		return self.get_query_params().get('AppId')
+		return self.get_body_params().get('AppId')
 
 	def set_AppId(self,AppId):
-		self.add_query_param('AppId',AppId)
+		self.add_body_params('AppId', AppId)
 
-	def get_DeleteListener(self):
-		return self.get_query_params().get('DeleteListener')
+	def get_Namespace(self):
+		return self.get_body_params().get('Namespace')
 
-	def set_DeleteListener(self,DeleteListener):
-		self.add_query_param('DeleteListener',DeleteListener)
+	def set_Namespace(self,Namespace):
+		self.add_body_params('Namespace', Namespace)
 
-	def get_Type(self):
-		return self.get_query_params().get('Type')
+	def get_Format(self):
+		return self.get_body_params().get('Format')
 
-	def set_Type(self,Type):
-		self.add_query_param('Type',Type)
+	def set_Format(self,Format):
+		self.add_body_params('Format', Format)
+
+	def get_Content(self):
+		return self.get_body_params().get('Content')
+
+	def set_Content(self,Content):
+		self.add_body_params('Content', Content)
