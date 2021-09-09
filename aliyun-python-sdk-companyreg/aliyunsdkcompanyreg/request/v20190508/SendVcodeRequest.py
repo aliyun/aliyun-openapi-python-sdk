@@ -18,20 +18,21 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkcompanyreg.endpoint import endpoint_data
 
 class SendVcodeRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'companyreg', '2019-05-08', 'SendVcode','companyreg')
+		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_Mobile(self):
 		return self.get_query_params().get('Mobile')
 
 	def set_Mobile(self,Mobile):
 		self.add_query_param('Mobile',Mobile)
-
-	def get_BizCode(self):
-		return self.get_query_params().get('BizCode')
-
-	def set_BizCode(self,BizCode):
-		self.add_query_param('BizCode',BizCode)

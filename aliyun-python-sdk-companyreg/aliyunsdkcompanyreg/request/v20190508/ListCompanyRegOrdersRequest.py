@@ -18,23 +18,30 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkcompanyreg.endpoint import endpoint_data
 
 class ListCompanyRegOrdersRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'companyreg', '2019-05-08', 'ListCompanyRegOrders','companyreg')
+		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
+
+	def get_NotBizStatus(self):
+		return self.get_query_params().get('NotBizStatus')
+
+	def set_NotBizStatus(self,NotBizStatus):
+		self.add_query_param('NotBizStatus',NotBizStatus)
 
 	def get_PageNum(self):
 		return self.get_query_params().get('PageNum')
 
 	def set_PageNum(self,PageNum):
 		self.add_query_param('PageNum',PageNum)
-
-	def get_BizCode(self):
-		return self.get_query_params().get('BizCode')
-
-	def set_BizCode(self,BizCode):
-		self.add_query_param('BizCode',BizCode)
 
 	def get_BizStatus(self):
 		return self.get_query_params().get('BizStatus')

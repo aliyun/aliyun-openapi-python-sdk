@@ -1,3 +1,6 @@
+2021-09-09 Version: 1.2.0
+- Public version.
+
 2019-09-19 Version: 1.0.2
 - Add bizSubCode and so on.
 

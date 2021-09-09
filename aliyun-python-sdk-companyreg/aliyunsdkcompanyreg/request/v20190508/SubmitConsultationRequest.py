@@ -18,11 +18,18 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkcompanyreg.endpoint import endpoint_data
 
 class SubmitConsultationRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'companyreg', '2019-05-08', 'SubmitConsultation','companyreg')
+		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_Data(self):
 		return self.get_query_params().get('Data')
@@ -35,12 +42,6 @@ class SubmitConsultationRequest(RpcRequest):
 
 	def set_Vcode(self,Vcode):
 		self.add_query_param('Vcode',Vcode)
-
-	def get_BizCode(self):
-		return self.get_query_params().get('BizCode')
-
-	def set_BizCode(self,BizCode):
-		self.add_query_param('BizCode',BizCode)
 
 	def get_ConsultRequestId(self):
 		return self.get_query_params().get('ConsultRequestId')

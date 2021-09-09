@@ -18,11 +18,18 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkcompanyreg.endpoint import endpoint_data
 
 class ProcessCompanyRegOrderRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'companyreg', '2019-05-08', 'ProcessCompanyRegOrder','companyreg')
+		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_ActionType(self):
 		return self.get_query_params().get('ActionType')
@@ -36,23 +43,11 @@ class ProcessCompanyRegOrderRequest(RpcRequest):
 	def set_ActionRequestId(self,ActionRequestId):
 		self.add_query_param('ActionRequestId',ActionRequestId)
 
-	def get_OperatorType(self):
-		return self.get_query_params().get('OperatorType')
-
-	def set_OperatorType(self,OperatorType):
-		self.add_query_param('OperatorType',OperatorType)
-
 	def get_ActionInfo(self):
 		return self.get_query_params().get('ActionInfo')
 
 	def set_ActionInfo(self,ActionInfo):
 		self.add_query_param('ActionInfo',ActionInfo)
-
-	def get_BizCode(self):
-		return self.get_query_params().get('BizCode')
-
-	def set_BizCode(self,BizCode):
-		self.add_query_param('BizCode',BizCode)
 
 	def get_BizId(self):
 		return self.get_query_params().get('BizId')

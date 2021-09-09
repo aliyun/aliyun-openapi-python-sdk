@@ -18,23 +18,24 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkcompanyreg.endpoint import endpoint_data
 
 class GenerateCompanyRegUploadPolicyRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'companyreg', '2019-05-08', 'GenerateCompanyRegUploadPolicy','companyreg')
+		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_Data(self):
 		return self.get_query_params().get('Data')
 
 	def set_Data(self,Data):
 		self.add_query_param('Data',Data)
-
-	def get_BizCode(self):
-		return self.get_query_params().get('BizCode')
-
-	def set_BizCode(self,BizCode):
-		self.add_query_param('BizCode',BizCode)
 
 	def get_BizSubCode(self):
 		return self.get_query_params().get('BizSubCode')

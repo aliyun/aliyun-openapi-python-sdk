@@ -18,11 +18,18 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkcompanyreg.endpoint import endpoint_data
 
 class GetCompanyRegOrderRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'companyreg', '2019-05-08', 'GetCompanyRegOrder','companyreg')
+		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_ActionTypes(self):
 		return self.get_query_params().get('ActionTypes')
@@ -30,23 +37,11 @@ class GetCompanyRegOrderRequest(RpcRequest):
 	def set_ActionTypes(self,ActionTypes):
 		self.add_query_param('ActionTypes',ActionTypes)
 
-	def get_BizCode(self):
-		return self.get_query_params().get('BizCode')
-
-	def set_BizCode(self,BizCode):
-		self.add_query_param('BizCode',BizCode)
-
 	def get_BizId(self):
 		return self.get_query_params().get('BizId')
 
 	def set_BizId(self,BizId):
 		self.add_query_param('BizId',BizId)
-
-	def get_MaxOperationSize(self):
-		return self.get_query_params().get('MaxOperationSize')
-
-	def set_MaxOperationSize(self,MaxOperationSize):
-		self.add_query_param('MaxOperationSize',MaxOperationSize)
 
 	def get_BizSubCode(self):
 		return self.get_query_params().get('BizSubCode')
