@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcloudauth.endpoint import endpoint_data
 
-class DescribeDeviceInfoRequest(RpcRequest):
+class DescribeWhitelistSettingRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cloudauth', '2018-09-16', 'DescribeDeviceInfo','cloudauth')
+		RpcRequest.__init__(self, 'Cloudauth', '2019-03-07', 'DescribeWhitelistSetting')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,11 +31,23 @@ class DescribeDeviceInfoRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_UserDeviceId(self):
-		return self.get_query_params().get('UserDeviceId')
+	def get_ValidEndDate(self):
+		return self.get_query_params().get('ValidEndDate')
 
-	def set_UserDeviceId(self,UserDeviceId):
-		self.add_query_param('UserDeviceId',UserDeviceId)
+	def set_ValidEndDate(self,ValidEndDate):
+		self.add_query_param('ValidEndDate',ValidEndDate)
+
+	def get_CertifyId(self):
+		return self.get_query_params().get('CertifyId')
+
+	def set_CertifyId(self,CertifyId):
+		self.add_query_param('CertifyId',CertifyId)
+
+	def get_CertNo(self):
+		return self.get_query_params().get('CertNo')
+
+	def set_CertNo(self,CertNo):
+		self.add_query_param('CertNo',CertNo)
 
 	def get_SourceIp(self):
 		return self.get_query_params().get('SourceIp')
@@ -55,38 +67,32 @@ class DescribeDeviceInfoRequest(RpcRequest):
 	def set_Lang(self,Lang):
 		self.add_query_param('Lang',Lang)
 
-	def get_ExpiredStartDay(self):
-		return self.get_query_params().get('ExpiredStartDay')
-
-	def set_ExpiredStartDay(self,ExpiredStartDay):
-		self.add_query_param('ExpiredStartDay',ExpiredStartDay)
-
-	def get_TotalCount(self):
-		return self.get_query_params().get('TotalCount')
-
-	def set_TotalCount(self,TotalCount):
-		self.add_query_param('TotalCount',TotalCount)
-
 	def get_CurrentPage(self):
 		return self.get_query_params().get('CurrentPage')
 
 	def set_CurrentPage(self,CurrentPage):
 		self.add_query_param('CurrentPage',CurrentPage)
 
-	def get_DeviceId(self):
-		return self.get_query_params().get('DeviceId')
+	def get_ServiceCode(self):
+		return self.get_query_params().get('ServiceCode')
 
-	def set_DeviceId(self,DeviceId):
-		self.add_query_param('DeviceId',DeviceId)
+	def set_ServiceCode(self,ServiceCode):
+		self.add_query_param('ServiceCode',ServiceCode)
 
-	def get_BizType(self):
-		return self.get_query_params().get('BizType')
+	def get_SceneId(self):
+		return self.get_query_params().get('SceneId')
 
-	def set_BizType(self,BizType):
-		self.add_query_param('BizType',BizType)
+	def set_SceneId(self,SceneId):
+		self.add_query_param('SceneId',SceneId)
 
-	def get_ExpiredEndDay(self):
-		return self.get_query_params().get('ExpiredEndDay')
+	def get_ValidStartDate(self):
+		return self.get_query_params().get('ValidStartDate')
 
-	def set_ExpiredEndDay(self,ExpiredEndDay):
-		self.add_query_param('ExpiredEndDay',ExpiredEndDay)
+	def set_ValidStartDate(self,ValidStartDate):
+		self.add_query_param('ValidStartDate',ValidStartDate)
+
+	def get_Status(self):
+		return self.get_query_params().get('Status')
+
+	def set_Status(self,Status):
+		self.add_query_param('Status',Status)

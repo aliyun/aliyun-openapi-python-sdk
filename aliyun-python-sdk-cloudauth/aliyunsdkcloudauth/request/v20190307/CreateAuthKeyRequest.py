@@ -23,7 +23,7 @@ from aliyunsdkcloudauth.endpoint import endpoint_data
 class CreateAuthKeyRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cloudauth', '2019-03-07', 'CreateAuthKey','cloudauth')
+		RpcRequest.__init__(self, 'Cloudauth', '2019-03-07', 'CreateAuthKey')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())

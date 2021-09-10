@@ -23,7 +23,7 @@ from aliyunsdkcloudauth.endpoint import endpoint_data
 class ContrastFaceVerifyRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cloudauth', '2019-03-07', 'ContrastFaceVerify','cloudauth')
+		RpcRequest.__init__(self, 'Cloudauth', '2019-03-07', 'ContrastFaceVerify')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -132,3 +132,9 @@ class ContrastFaceVerifyRequest(RpcRequest):
 
 	def set_OssBucketName(self,OssBucketName):
 		self.add_body_params('OssBucketName', OssBucketName)
+
+	def get_Crop(self):
+		return self.get_body_params().get('Crop')
+
+	def set_Crop(self,Crop):
+		self.add_body_params('Crop', Crop)

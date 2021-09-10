@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcloudauth.endpoint import endpoint_data
 
-class SubmitMaterialsRequest(RpcRequest):
+class DeleteWhitelistSettingRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cloudauth', '2018-09-16', 'SubmitMaterials','cloudauth')
+		RpcRequest.__init__(self, 'Cloudauth', '2019-03-07', 'DeleteWhitelistSetting')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,30 +31,26 @@ class SubmitMaterialsRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_ResourceOwnerId(self):
-		return self.get_query_params().get('ResourceOwnerId')
-
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_VerifyToken(self):
-		return self.get_body_params().get('VerifyToken')
-
-	def set_VerifyToken(self,VerifyToken):
-		self.add_body_params('VerifyToken', VerifyToken)
-
 	def get_SourceIp(self):
 		return self.get_query_params().get('SourceIp')
 
 	def set_SourceIp(self,SourceIp):
 		self.add_query_param('SourceIp',SourceIp)
 
-	def get_Materials(self):
-		return self.get_body_params().get('Material')
+	def get_Lang(self):
+		return self.get_query_params().get('Lang')
 
-	def set_Materials(self, Materials):
-		for depth1 in range(len(Materials)):
-			if Materials[depth1].get('MaterialType') is not None:
-				self.add_body_params('Material.' + str(depth1 + 1) + '.MaterialType', Materials[depth1].get('MaterialType'))
-			if Materials[depth1].get('Value') is not None:
-				self.add_body_params('Material.' + str(depth1 + 1) + '.Value', Materials[depth1].get('Value'))
+	def set_Lang(self,Lang):
+		self.add_query_param('Lang',Lang)
+
+	def get_ServiceCode(self):
+		return self.get_query_params().get('ServiceCode')
+
+	def set_ServiceCode(self,ServiceCode):
+		self.add_query_param('ServiceCode',ServiceCode)
+
+	def get_Ids(self):
+		return self.get_query_params().get('Ids')
+
+	def set_Ids(self,Ids):
+		self.add_query_param('Ids',Ids)

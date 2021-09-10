@@ -23,7 +23,7 @@ from aliyunsdkcloudauth.endpoint import endpoint_data
 class InitFaceVerifyRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cloudauth', '2019-03-07', 'InitFaceVerify','cloudauth')
+		RpcRequest.__init__(self, 'Cloudauth', '2019-03-07', 'InitFaceVerify')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -144,3 +144,9 @@ class InitFaceVerifyRequest(RpcRequest):
 
 	def set_CallbackUrl(self,CallbackUrl):
 		self.add_query_param('CallbackUrl',CallbackUrl)
+
+	def get_Crop(self):
+		return self.get_body_params().get('Crop')
+
+	def set_Crop(self,Crop):
+		self.add_body_params('Crop', Crop)
