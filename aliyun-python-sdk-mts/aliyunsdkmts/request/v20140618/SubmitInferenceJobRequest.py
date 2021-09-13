@@ -25,24 +25,26 @@ class SubmitInferenceJobRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Mts', '2014-06-18', 'SubmitInferenceJob','mts')
 		self.set_method('POST')
-
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_Input(self): # String
+
+	def get_Input(self):
 		return self.get_query_params().get('Input')
 
-	def set_Input(self, Input):  # String
-		self.add_query_param('Input', Input)
-	def get_ModelType(self): # String
+	def set_Input(self,Input):
+		self.add_query_param('Input',Input)
+
+	def get_ModelType(self):
 		return self.get_query_params().get('ModelType')
 
-	def set_ModelType(self, ModelType):  # String
-		self.add_query_param('ModelType', ModelType)
-	def get_ServerName(self): # String
+	def set_ModelType(self,ModelType):
+		self.add_query_param('ModelType',ModelType)
+
+	def get_ServerName(self):
 		return self.get_query_params().get('ServerName')
 
-	def set_ServerName(self, ServerName):  # String
-		self.add_query_param('ServerName', ServerName)
+	def set_ServerName(self,ServerName):
+		self.add_query_param('ServerName',ServerName)

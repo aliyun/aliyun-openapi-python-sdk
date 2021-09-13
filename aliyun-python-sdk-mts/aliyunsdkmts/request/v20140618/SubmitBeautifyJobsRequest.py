@@ -25,49 +25,56 @@ class SubmitBeautifyJobsRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Mts', '2014-06-18', 'SubmitBeautifyJobs','mts')
 		self.set_method('POST')
-
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ResourceOwnerId(self): # Long
+
+	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
-		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_BeautifyConfig(self): # String
+	def set_ResourceOwnerId(self,ResourceOwnerId):
+		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+
+	def get_BeautifyConfig(self):
 		return self.get_query_params().get('BeautifyConfig')
 
-	def set_BeautifyConfig(self, BeautifyConfig):  # String
-		self.add_query_param('BeautifyConfig', BeautifyConfig)
-	def get_UserData(self): # String
+	def set_BeautifyConfig(self,BeautifyConfig):
+		self.add_query_param('BeautifyConfig',BeautifyConfig)
+
+	def get_UserData(self):
 		return self.get_query_params().get('UserData')
 
-	def set_UserData(self, UserData):  # String
-		self.add_query_param('UserData', UserData)
-	def get_ResourceOwnerAccount(self): # String
+	def set_UserData(self,UserData):
+		self.add_query_param('UserData',UserData)
+
+	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
-		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
-	def get_OwnerAccount(self): # String
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+
+	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
 
-	def set_OwnerAccount(self, OwnerAccount):  # String
-		self.add_query_param('OwnerAccount', OwnerAccount)
-	def get_OwnerId(self): # Long
+	def set_OwnerAccount(self,OwnerAccount):
+		self.add_query_param('OwnerAccount',OwnerAccount)
+
+	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self, OwnerId):  # Long
-		self.add_query_param('OwnerId', OwnerId)
-	def get_PipelineId(self): # String
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
+
+	def get_PipelineId(self):
 		return self.get_query_params().get('PipelineId')
 
-	def set_PipelineId(self, PipelineId):  # String
-		self.add_query_param('PipelineId', PipelineId)
-	def get_Async(self): # Boolean
+	def set_PipelineId(self,PipelineId):
+		self.add_query_param('PipelineId',PipelineId)
+
+	def get_Async(self):
 		return self.get_query_params().get('Async')
 
-	def set_Async(self, _Async):  # Boolean
-		self.add_query_param('Async', _Async)
+	def set_Async(self,_Async):
+		self.add_query_param('Async',_Async)

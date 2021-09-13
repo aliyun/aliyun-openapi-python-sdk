@@ -25,49 +25,56 @@ class SubmitInnerJobRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Mts', '2014-06-18', 'SubmitInnerJob','mts')
 		self.set_method('POST')
-
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ResourceOwnerId(self): # Long
+
+	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
-		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_Video(self): # String
+	def set_ResourceOwnerId(self,ResourceOwnerId):
+		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+
+	def get_Video(self):
 		return self.get_query_params().get('Video')
 
-	def set_Video(self, Video):  # String
-		self.add_query_param('Video', Video)
-	def get_Uid(self): # Long
+	def set_Video(self,Video):
+		self.add_query_param('Video',Video)
+
+	def get_Uid(self):
 		return self.get_query_params().get('Uid')
 
-	def set_Uid(self, Uid):  # Long
-		self.add_query_param('Uid', Uid)
-	def get_Images(self): # String
+	def set_Uid(self,Uid):
+		self.add_query_param('Uid',Uid)
+
+	def get_Images(self):
 		return self.get_query_params().get('Images')
 
-	def set_Images(self, Images):  # String
-		self.add_query_param('Images', Images)
-	def get_ResourceOwnerAccount(self): # String
+	def set_Images(self,Images):
+		self.add_query_param('Images',Images)
+
+	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
-		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
-	def get_OwnerId(self): # Long
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+
+	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self, OwnerId):  # Long
-		self.add_query_param('OwnerId', OwnerId)
-	def get_PipelineId(self): # String
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
+
+	def get_PipelineId(self):
 		return self.get_query_params().get('PipelineId')
 
-	def set_PipelineId(self, PipelineId):  # String
-		self.add_query_param('PipelineId', PipelineId)
-	def get_Config(self): # String
+	def set_PipelineId(self,PipelineId):
+		self.add_query_param('PipelineId',PipelineId)
+
+	def get_Config(self):
 		return self.get_query_params().get('Config')
 
-	def set_Config(self, Config):  # String
-		self.add_query_param('Config', Config)
+	def set_Config(self,Config):
+		self.add_query_param('Config',Config)

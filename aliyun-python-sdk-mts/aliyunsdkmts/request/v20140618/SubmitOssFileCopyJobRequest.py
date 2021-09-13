@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkmts.endpoint import endpoint_data
 
-class DeleteCategoryRequest(RpcRequest):
+class SubmitOssFileCopyJobRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Mts', '2014-06-18', 'DeleteCategory','mts')
+		RpcRequest.__init__(self, 'Mts', '2014-06-18', 'SubmitOssFileCopyJob','mts')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,32 +31,32 @@ class DeleteCategoryRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_ResourceOwnerId(self):
-		return self.get_query_params().get('ResourceOwnerId')
+	def get_TargetStorage(self):
+		return self.get_query_params().get('TargetStorage')
 
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+	def set_TargetStorage(self,TargetStorage):
+		self.add_query_param('TargetStorage',TargetStorage)
 
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
+	def get_Notify(self):
+		return self.get_query_params().get('Notify')
 
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+	def set_Notify(self,Notify):
+		self.add_query_param('Notify',Notify)
 
-	def get_OwnerAccount(self):
-		return self.get_query_params().get('OwnerAccount')
+	def get_UserData(self):
+		return self.get_query_params().get('UserData')
 
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
+	def set_UserData(self,UserData):
+		self.add_query_param('UserData',UserData)
 
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
+	def get_SourceStorage(self):
+		return self.get_query_params().get('SourceStorage')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
+	def set_SourceStorage(self,SourceStorage):
+		self.add_query_param('SourceStorage',SourceStorage)
 
-	def get_CateId(self):
-		return self.get_query_params().get('CateId')
+	def get_Region(self):
+		return self.get_query_params().get('Region')
 
-	def set_CateId(self,CateId):
-		self.add_query_param('CateId',CateId)
+	def set_Region(self,Region):
+		self.add_query_param('Region',Region)

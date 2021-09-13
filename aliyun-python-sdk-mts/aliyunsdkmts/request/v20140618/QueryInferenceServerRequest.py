@@ -25,29 +25,32 @@ class QueryInferenceServerRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Mts', '2014-06-18', 'QueryInferenceServer','mts')
 		self.set_method('POST')
-
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_CreateTime(self): # Long
+
+	def get_CreateTime(self):
 		return self.get_query_params().get('CreateTime')
 
-	def set_CreateTime(self, CreateTime):  # Long
-		self.add_query_param('CreateTime', CreateTime)
-	def get_MaxPageSize(self): # Long
+	def set_CreateTime(self,CreateTime):
+		self.add_query_param('CreateTime',CreateTime)
+
+	def get_MaxPageSize(self):
 		return self.get_query_params().get('MaxPageSize')
 
-	def set_MaxPageSize(self, MaxPageSize):  # Long
-		self.add_query_param('MaxPageSize', MaxPageSize)
-	def get_PageNumber(self): # Long
+	def set_MaxPageSize(self,MaxPageSize):
+		self.add_query_param('MaxPageSize',MaxPageSize)
+
+	def get_PageNumber(self):
 		return self.get_query_params().get('PageNumber')
 
-	def set_PageNumber(self, PageNumber):  # Long
-		self.add_query_param('PageNumber', PageNumber)
-	def get_ModelType(self): # String
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)
+
+	def get_ModelType(self):
 		return self.get_query_params().get('ModelType')
 
-	def set_ModelType(self, ModelType):  # String
-		self.add_query_param('ModelType', ModelType)
+	def set_ModelType(self,ModelType):
+		self.add_query_param('ModelType',ModelType)

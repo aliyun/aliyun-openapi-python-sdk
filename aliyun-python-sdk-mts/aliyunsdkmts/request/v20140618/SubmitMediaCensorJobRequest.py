@@ -25,69 +25,80 @@ class SubmitMediaCensorJobRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Mts', '2014-06-18', 'SubmitMediaCensorJob','mts')
 		self.set_method('POST')
-
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ResourceOwnerId(self): # Long
+
+	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
-		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_Description(self): # String
+	def set_ResourceOwnerId(self,ResourceOwnerId):
+		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+
+	def get_Description(self):
 		return self.get_query_params().get('Description')
 
-	def set_Description(self, Description):  # String
-		self.add_query_param('Description', Description)
-	def get_Title(self): # String
+	def set_Description(self,Description):
+		self.add_query_param('Description',Description)
+
+	def get_Title(self):
 		return self.get_query_params().get('Title')
 
-	def set_Title(self, Title):  # String
-		self.add_query_param('Title', Title)
-	def get_VideoCensorConfig(self): # String
+	def set_Title(self,Title):
+		self.add_query_param('Title',Title)
+
+	def get_VideoCensorConfig(self):
 		return self.get_query_params().get('VideoCensorConfig')
 
-	def set_VideoCensorConfig(self, VideoCensorConfig):  # String
-		self.add_query_param('VideoCensorConfig', VideoCensorConfig)
-	def get_UserData(self): # String
+	def set_VideoCensorConfig(self,VideoCensorConfig):
+		self.add_query_param('VideoCensorConfig',VideoCensorConfig)
+
+	def get_UserData(self):
 		return self.get_query_params().get('UserData')
 
-	def set_UserData(self, UserData):  # String
-		self.add_query_param('UserData', UserData)
-	def get_CoverImages(self): # String
+	def set_UserData(self,UserData):
+		self.add_query_param('UserData',UserData)
+
+	def get_CoverImages(self):
 		return self.get_query_params().get('CoverImages')
 
-	def set_CoverImages(self, CoverImages):  # String
-		self.add_query_param('CoverImages', CoverImages)
-	def get_ResourceOwnerAccount(self): # String
+	def set_CoverImages(self,CoverImages):
+		self.add_query_param('CoverImages',CoverImages)
+
+	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
-		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
-	def get_OwnerAccount(self): # String
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+
+	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
 
-	def set_OwnerAccount(self, OwnerAccount):  # String
-		self.add_query_param('OwnerAccount', OwnerAccount)
-	def get_OwnerId(self): # Long
+	def set_OwnerAccount(self,OwnerAccount):
+		self.add_query_param('OwnerAccount',OwnerAccount)
+
+	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self, OwnerId):  # Long
-		self.add_query_param('OwnerId', OwnerId)
-	def get_PipelineId(self): # String
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
+
+	def get_PipelineId(self):
 		return self.get_query_params().get('PipelineId')
 
-	def set_PipelineId(self, PipelineId):  # String
-		self.add_query_param('PipelineId', PipelineId)
-	def get_Input(self): # String
+	def set_PipelineId(self,PipelineId):
+		self.add_query_param('PipelineId',PipelineId)
+
+	def get_Input(self):
 		return self.get_query_params().get('Input')
 
-	def set_Input(self, Input):  # String
-		self.add_query_param('Input', Input)
-	def get_Barrages(self): # String
+	def set_Input(self,Input):
+		self.add_query_param('Input',Input)
+
+	def get_Barrages(self):
 		return self.get_query_params().get('Barrages')
 
-	def set_Barrages(self, Barrages):  # String
-		self.add_query_param('Barrages', Barrages)
+	def set_Barrages(self,Barrages):
+		self.add_query_param('Barrages',Barrages)

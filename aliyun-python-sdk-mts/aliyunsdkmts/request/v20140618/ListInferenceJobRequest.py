@@ -25,24 +25,26 @@ class ListInferenceJobRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Mts', '2014-06-18', 'ListInferenceJob','mts')
 		self.set_method('POST')
-
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_MaxPageSize(self): # Long
+
+	def get_MaxPageSize(self):
 		return self.get_query_params().get('MaxPageSize')
 
-	def set_MaxPageSize(self, MaxPageSize):  # Long
-		self.add_query_param('MaxPageSize', MaxPageSize)
-	def get_PageNumber(self): # Long
+	def set_MaxPageSize(self,MaxPageSize):
+		self.add_query_param('MaxPageSize',MaxPageSize)
+
+	def get_PageNumber(self):
 		return self.get_query_params().get('PageNumber')
 
-	def set_PageNumber(self, PageNumber):  # Long
-		self.add_query_param('PageNumber', PageNumber)
-	def get_ServerName(self): # String
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)
+
+	def get_ServerName(self):
 		return self.get_query_params().get('ServerName')
 
-	def set_ServerName(self, ServerName):  # String
-		self.add_query_param('ServerName', ServerName)
+	def set_ServerName(self,ServerName):
+		self.add_query_param('ServerName',ServerName)

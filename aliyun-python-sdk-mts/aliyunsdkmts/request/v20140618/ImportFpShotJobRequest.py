@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkmts.endpoint import endpoint_data
 
-class DeleteCategoryRequest(RpcRequest):
+class ImportFpShotJobRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Mts', '2014-06-18', 'DeleteCategory','mts')
+		RpcRequest.__init__(self, 'Mts', '2014-06-18', 'ImportFpShotJob','mts')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -37,11 +37,29 @@ class DeleteCategoryRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_FpDBId(self):
+		return self.get_query_params().get('FpDBId')
+
+	def set_FpDBId(self,FpDBId):
+		self.add_query_param('FpDBId',FpDBId)
+
+	def get_UserData(self):
+		return self.get_query_params().get('UserData')
+
+	def set_UserData(self,UserData):
+		self.add_query_param('UserData',UserData)
+
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+
+	def get_FpImportConfig(self):
+		return self.get_query_params().get('FpImportConfig')
+
+	def set_FpImportConfig(self,FpImportConfig):
+		self.add_query_param('FpImportConfig',FpImportConfig)
 
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
@@ -55,8 +73,14 @@ class DeleteCategoryRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_CateId(self):
-		return self.get_query_params().get('CateId')
+	def get_PipelineId(self):
+		return self.get_query_params().get('PipelineId')
 
-	def set_CateId(self,CateId):
-		self.add_query_param('CateId',CateId)
+	def set_PipelineId(self,PipelineId):
+		self.add_query_param('PipelineId',PipelineId)
+
+	def get_Input(self):
+		return self.get_query_params().get('Input')
+
+	def set_Input(self,Input):
+		self.add_query_param('Input',Input)

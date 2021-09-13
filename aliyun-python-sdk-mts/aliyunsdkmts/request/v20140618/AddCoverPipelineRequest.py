@@ -25,49 +25,56 @@ class AddCoverPipelineRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Mts', '2014-06-18', 'AddCoverPipeline','mts')
 		self.set_method('POST')
-
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ResourceOwnerId(self): # Long
+
+	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
-		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_Role(self): # String
+	def set_ResourceOwnerId(self,ResourceOwnerId):
+		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+
+	def get_Role(self):
 		return self.get_query_params().get('Role')
 
-	def set_Role(self, Role):  # String
-		self.add_query_param('Role', Role)
-	def get_ResourceOwnerAccount(self): # String
+	def set_Role(self,Role):
+		self.add_query_param('Role',Role)
+
+	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
-		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
-	def get_OwnerAccount(self): # String
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+
+	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
 
-	def set_OwnerAccount(self, OwnerAccount):  # String
-		self.add_query_param('OwnerAccount', OwnerAccount)
-	def get_NotifyConfig(self): # String
+	def set_OwnerAccount(self,OwnerAccount):
+		self.add_query_param('OwnerAccount',OwnerAccount)
+
+	def get_NotifyConfig(self):
 		return self.get_query_params().get('NotifyConfig')
 
-	def set_NotifyConfig(self, NotifyConfig):  # String
-		self.add_query_param('NotifyConfig', NotifyConfig)
-	def get_OwnerId(self): # Long
+	def set_NotifyConfig(self,NotifyConfig):
+		self.add_query_param('NotifyConfig',NotifyConfig)
+
+	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self, OwnerId):  # Long
-		self.add_query_param('OwnerId', OwnerId)
-	def get_Priority(self): # String
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
+
+	def get_Priority(self):
 		return self.get_query_params().get('Priority')
 
-	def set_Priority(self, Priority):  # String
-		self.add_query_param('Priority', Priority)
-	def get_Name(self): # String
+	def set_Priority(self,Priority):
+		self.add_query_param('Priority',Priority)
+
+	def get_Name(self):
 		return self.get_query_params().get('Name')
 
-	def set_Name(self, Name):  # String
-		self.add_query_param('Name', Name)
+	def set_Name(self,Name):
+		self.add_query_param('Name',Name)
