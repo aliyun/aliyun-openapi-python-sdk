@@ -49,6 +49,12 @@ class MakeCallRequest(RpcRequest):
 	def set_DeviceId(self,DeviceId):
 		self.add_query_param('DeviceId',DeviceId)
 
+	def get_Tags(self):
+		return self.get_query_params().get('Tags')
+
+	def set_Tags(self,Tags):
+		self.add_query_param('Tags',Tags)
+
 	def get_TimeoutSeconds(self):
 		return self.get_query_params().get('TimeoutSeconds')
 

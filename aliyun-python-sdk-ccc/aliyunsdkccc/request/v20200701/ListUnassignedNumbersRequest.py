@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkccc.endpoint import endpoint_data
 
-class StartBack2BackCallRequest(RpcRequest):
+class ListUnassignedNumbersRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'CCC', '2020-07-01', 'StartBack2BackCall','CCC')
+		RpcRequest.__init__(self, 'CCC', '2020-07-01', 'ListUnassignedNumbers','CCC')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,44 +31,26 @@ class StartBack2BackCallRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_Callee(self):
-		return self.get_query_params().get('Callee')
+	def get_PageNumber(self):
+		return self.get_query_params().get('PageNumber')
 
-	def set_Callee(self,Callee):
-		self.add_query_param('Callee',Callee)
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)
 
-	def get_Broker(self):
-		return self.get_query_params().get('Broker')
+	def get_SearchPattern(self):
+		return self.get_query_params().get('SearchPattern')
 
-	def set_Broker(self,Broker):
-		self.add_query_param('Broker',Broker)
-
-	def get_AdditionalBroker(self):
-		return self.get_query_params().get('AdditionalBroker')
-
-	def set_AdditionalBroker(self,AdditionalBroker):
-		self.add_query_param('AdditionalBroker',AdditionalBroker)
-
-	def get_Tags(self):
-		return self.get_query_params().get('Tags')
-
-	def set_Tags(self,Tags):
-		self.add_query_param('Tags',Tags)
-
-	def get_TimeoutSeconds(self):
-		return self.get_query_params().get('TimeoutSeconds')
-
-	def set_TimeoutSeconds(self,TimeoutSeconds):
-		self.add_query_param('TimeoutSeconds',TimeoutSeconds)
-
-	def get_Caller(self):
-		return self.get_query_params().get('Caller')
-
-	def set_Caller(self,Caller):
-		self.add_query_param('Caller',Caller)
+	def set_SearchPattern(self,SearchPattern):
+		self.add_query_param('SearchPattern',SearchPattern)
 
 	def get_InstanceId(self):
 		return self.get_query_params().get('InstanceId')
 
 	def set_InstanceId(self,InstanceId):
 		self.add_query_param('InstanceId',InstanceId)
+
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)

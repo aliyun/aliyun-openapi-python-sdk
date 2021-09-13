@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkccc.endpoint import endpoint_data
 
-class StartBack2BackCallRequest(RpcRequest):
+class StartPredictiveCallRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'CCC', '2020-07-01', 'StartBack2BackCall','CCC')
+		RpcRequest.__init__(self, 'CCC', '2020-07-01', 'StartPredictiveCall','CCC')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,23 +31,23 @@ class StartBack2BackCallRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_ContactFlowId(self):
+		return self.get_query_params().get('ContactFlowId')
+
+	def set_ContactFlowId(self,ContactFlowId):
+		self.add_query_param('ContactFlowId',ContactFlowId)
+
 	def get_Callee(self):
 		return self.get_query_params().get('Callee')
 
 	def set_Callee(self,Callee):
 		self.add_query_param('Callee',Callee)
 
-	def get_Broker(self):
-		return self.get_query_params().get('Broker')
+	def get_ContactFlowVariables(self):
+		return self.get_query_params().get('ContactFlowVariables')
 
-	def set_Broker(self,Broker):
-		self.add_query_param('Broker',Broker)
-
-	def get_AdditionalBroker(self):
-		return self.get_query_params().get('AdditionalBroker')
-
-	def set_AdditionalBroker(self,AdditionalBroker):
-		self.add_query_param('AdditionalBroker',AdditionalBroker)
+	def set_ContactFlowVariables(self,ContactFlowVariables):
+		self.add_query_param('ContactFlowVariables',ContactFlowVariables)
 
 	def get_Tags(self):
 		return self.get_query_params().get('Tags')
