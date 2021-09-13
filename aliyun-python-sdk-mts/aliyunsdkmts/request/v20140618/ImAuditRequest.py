@@ -25,50 +25,44 @@ class ImAuditRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Mts', '2014-06-18', 'ImAudit','mts')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ResourceOwnerId(self):
+	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_Images(self):
+	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
+		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_Images(self): # String
 		return self.get_query_params().get('Images')
 
-	def set_Images(self,Images):
-		self.add_query_param('Images',Images)
-
-	def get_ResourceOwnerAccount(self):
+	def set_Images(self, Images):  # String
+		self.add_query_param('Images', Images)
+	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_OwnerId(self):
+	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
+		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_BizType(self):
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_BizType(self): # String
 		return self.get_query_params().get('BizType')
 
-	def set_BizType(self,BizType):
-		self.add_query_param('BizType',BizType)
-
-	def get_Contents(self):
+	def set_BizType(self, BizType):  # String
+		self.add_query_param('BizType', BizType)
+	def get_Contents(self): # String
 		return self.get_query_params().get('Contents')
 
-	def set_Contents(self,Contents):
-		self.add_query_param('Contents',Contents)
-
-	def get_Scenes(self):
+	def set_Contents(self, Contents):  # String
+		self.add_query_param('Contents', Contents)
+	def get_Scenes(self): # String
 		return self.get_query_params().get('Scenes')
 
-	def set_Scenes(self,Scenes):
-		self.add_query_param('Scenes',Scenes)
+	def set_Scenes(self, Scenes):  # String
+		self.add_query_param('Scenes', Scenes)

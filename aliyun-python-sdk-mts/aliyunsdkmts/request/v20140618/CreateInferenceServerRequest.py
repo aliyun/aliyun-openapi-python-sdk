@@ -25,44 +25,39 @@ class CreateInferenceServerRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Mts', '2014-06-18', 'CreateInferenceServer','mts')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_PipelineId(self):
+	def get_PipelineId(self): # String
 		return self.get_query_params().get('PipelineId')
 
-	def set_PipelineId(self,PipelineId):
-		self.add_query_param('PipelineId',PipelineId)
-
-	def get_UserData(self):
+	def set_PipelineId(self, PipelineId):  # String
+		self.add_query_param('PipelineId', PipelineId)
+	def get_UserData(self): # String
 		return self.get_query_params().get('UserData')
 
-	def set_UserData(self,UserData):
-		self.add_query_param('UserData',UserData)
-
-	def get_ModelType(self):
+	def set_UserData(self, UserData):  # String
+		self.add_query_param('UserData', UserData)
+	def get_ModelType(self): # String
 		return self.get_query_params().get('ModelType')
 
-	def set_ModelType(self,ModelType):
-		self.add_query_param('ModelType',ModelType)
-
-	def get_FunctionName(self):
+	def set_ModelType(self, ModelType):  # String
+		self.add_query_param('ModelType', ModelType)
+	def get_FunctionName(self): # String
 		return self.get_query_params().get('FunctionName')
 
-	def set_FunctionName(self,FunctionName):
-		self.add_query_param('FunctionName',FunctionName)
-
-	def get_TestId(self):
+	def set_FunctionName(self, FunctionName):  # String
+		self.add_query_param('FunctionName', FunctionName)
+	def get_TestId(self): # String
 		return self.get_query_params().get('TestId')
 
-	def set_TestId(self,TestId):
-		self.add_query_param('TestId',TestId)
-
-	def get_ModelPath(self):
+	def set_TestId(self, TestId):  # String
+		self.add_query_param('TestId', TestId)
+	def get_ModelPath(self): # String
 		return self.get_query_params().get('ModelPath')
 
-	def set_ModelPath(self,ModelPath):
-		self.add_query_param('ModelPath',ModelPath)
+	def set_ModelPath(self, ModelPath):  # String
+		self.add_query_param('ModelPath', ModelPath)

@@ -19,44 +19,41 @@
 
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkmts.endpoint import endpoint_data
+import json
 
 class SubmitOssFileCopyJobRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Mts', '2014-06-18', 'SubmitOssFileCopyJob','mts')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_TargetStorage(self):
+	def get_TargetStorage(self): # Struct
 		return self.get_query_params().get('TargetStorage')
 
-	def set_TargetStorage(self,TargetStorage):
-		self.add_query_param('TargetStorage',TargetStorage)
-
-	def get_Notify(self):
+	def set_TargetStorage(self, TargetStorage):  # Struct
+		self.add_query_param("TargetStorage", json.dumps(TargetStorage))
+	def get_Notify(self): # String
 		return self.get_query_params().get('Notify')
 
-	def set_Notify(self,Notify):
-		self.add_query_param('Notify',Notify)
-
-	def get_UserData(self):
+	def set_Notify(self, Notify):  # String
+		self.add_query_param('Notify', Notify)
+	def get_UserData(self): # String
 		return self.get_query_params().get('UserData')
 
-	def set_UserData(self,UserData):
-		self.add_query_param('UserData',UserData)
-
-	def get_SourceStorage(self):
+	def set_UserData(self, UserData):  # String
+		self.add_query_param('UserData', UserData)
+	def get_SourceStorage(self): # Struct
 		return self.get_query_params().get('SourceStorage')
 
-	def set_SourceStorage(self,SourceStorage):
-		self.add_query_param('SourceStorage',SourceStorage)
-
-	def get_Region(self):
+	def set_SourceStorage(self, SourceStorage):  # Struct
+		self.add_query_param("SourceStorage", json.dumps(SourceStorage))
+	def get_Region(self): # String
 		return self.get_query_params().get('Region')
 
-	def set_Region(self,Region):
-		self.add_query_param('Region',Region)
+	def set_Region(self, Region):  # String
+		self.add_query_param('Region', Region)

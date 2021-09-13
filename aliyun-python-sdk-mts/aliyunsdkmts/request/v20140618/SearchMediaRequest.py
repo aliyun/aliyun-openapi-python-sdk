@@ -25,92 +25,79 @@ class SearchMediaRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Mts', '2014-06-18', 'SearchMedia','mts')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ResourceOwnerId(self):
+	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_Description(self):
+	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
+		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_Description(self): # String
 		return self.get_query_params().get('Description')
 
-	def set_Description(self,Description):
-		self.add_query_param('Description',Description)
-
-	def get_Title(self):
+	def set_Description(self, Description):  # String
+		self.add_query_param('Description', Description)
+	def get_Title(self): # String
 		return self.get_query_params().get('Title')
 
-	def set_Title(self,Title):
-		self.add_query_param('Title',Title)
-
-	def get_PageNumber(self):
+	def set_Title(self, Title):  # String
+		self.add_query_param('Title', Title)
+	def get_PageNumber(self): # Long
 		return self.get_query_params().get('PageNumber')
 
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
-
-	def get_CateId(self):
+	def set_PageNumber(self, PageNumber):  # Long
+		self.add_query_param('PageNumber', PageNumber)
+	def get_CateId(self): # String
 		return self.get_query_params().get('CateId')
 
-	def set_CateId(self,CateId):
-		self.add_query_param('CateId',CateId)
-
-	def get_PageSize(self):
+	def set_CateId(self, CateId):  # String
+		self.add_query_param('CateId', CateId)
+	def get_PageSize(self): # Long
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_From(self):
+	def set_PageSize(self, PageSize):  # Long
+		self.add_query_param('PageSize', PageSize)
+	def get_From(self): # String
 		return self.get_query_params().get('From')
 
-	def set_From(self,_From):
-		self.add_query_param('From',_From)
-
-	def get_Tag(self):
+	def set_From(self, _From):  # String
+		self.add_query_param('From', _From)
+	def get_Tag(self): # String
 		return self.get_query_params().get('Tag')
 
-	def set_Tag(self,Tag):
-		self.add_query_param('Tag',Tag)
-
-	def get_KeyWord(self):
+	def set_Tag(self, Tag):  # String
+		self.add_query_param('Tag', Tag)
+	def get_KeyWord(self): # String
 		return self.get_query_params().get('KeyWord')
 
-	def set_KeyWord(self,KeyWord):
-		self.add_query_param('KeyWord',KeyWord)
-
-	def get_ResourceOwnerAccount(self):
+	def set_KeyWord(self, KeyWord):  # String
+		self.add_query_param('KeyWord', KeyWord)
+	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_OwnerAccount(self):
+	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
+		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_OwnerAccount(self): # String
 		return self.get_query_params().get('OwnerAccount')
 
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
-
-	def get_OwnerId(self):
+	def set_OwnerAccount(self, OwnerAccount):  # String
+		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_SortBy(self):
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_SortBy(self): # String
 		return self.get_query_params().get('SortBy')
 
-	def set_SortBy(self,SortBy):
-		self.add_query_param('SortBy',SortBy)
-
-	def get_To(self):
+	def set_SortBy(self, SortBy):  # String
+		self.add_query_param('SortBy', SortBy)
+	def get_To(self): # String
 		return self.get_query_params().get('To')
 
-	def set_To(self,To):
-		self.add_query_param('To',To)
+	def set_To(self, To):  # String
+		self.add_query_param('To', To)

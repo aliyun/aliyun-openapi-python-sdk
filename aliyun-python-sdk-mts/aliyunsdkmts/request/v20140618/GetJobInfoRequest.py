@@ -25,14 +25,14 @@ class GetJobInfoRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Mts', '2014-06-18', 'GetJobInfo','mts')
 		self.set_method('GET')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_jobId(self):
+	def get_jobId(self): # String
 		return self.get_query_params().get('jobId')
 
-	def set_jobId(self,jobId):
-		self.add_query_param('jobId',jobId)
+	def set_jobId(self, jobId):  # String
+		self.add_query_param('jobId', jobId)

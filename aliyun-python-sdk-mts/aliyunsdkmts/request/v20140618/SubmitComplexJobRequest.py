@@ -25,74 +25,64 @@ class SubmitComplexJobRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Mts', '2014-06-18', 'SubmitComplexJob','mts')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ResourceOwnerId(self):
+	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_TranscodeOutput(self):
+	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
+		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_TranscodeOutput(self): # String
 		return self.get_query_params().get('TranscodeOutput')
 
-	def set_TranscodeOutput(self,TranscodeOutput):
-		self.add_query_param('TranscodeOutput',TranscodeOutput)
-
-	def get_Inputs(self):
+	def set_TranscodeOutput(self, TranscodeOutput):  # String
+		self.add_query_param('TranscodeOutput', TranscodeOutput)
+	def get_Inputs(self): # String
 		return self.get_query_params().get('Inputs')
 
-	def set_Inputs(self,Inputs):
-		self.add_query_param('Inputs',Inputs)
-
-	def get_OutputLocation(self):
+	def set_Inputs(self, Inputs):  # String
+		self.add_query_param('Inputs', Inputs)
+	def get_OutputLocation(self): # String
 		return self.get_query_params().get('OutputLocation')
 
-	def set_OutputLocation(self,OutputLocation):
-		self.add_query_param('OutputLocation',OutputLocation)
-
-	def get_UserData(self):
+	def set_OutputLocation(self, OutputLocation):  # String
+		self.add_query_param('OutputLocation', OutputLocation)
+	def get_UserData(self): # String
 		return self.get_query_params().get('UserData')
 
-	def set_UserData(self,UserData):
-		self.add_query_param('UserData',UserData)
-
-	def get_ResourceOwnerAccount(self):
+	def set_UserData(self, UserData):  # String
+		self.add_query_param('UserData', UserData)
+	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_OwnerAccount(self):
+	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
+		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_OwnerAccount(self): # String
 		return self.get_query_params().get('OwnerAccount')
 
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
-
-	def get_OwnerId(self):
+	def set_OwnerAccount(self, OwnerAccount):  # String
+		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_PipelineId(self):
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_PipelineId(self): # String
 		return self.get_query_params().get('PipelineId')
 
-	def set_PipelineId(self,PipelineId):
-		self.add_query_param('PipelineId',PipelineId)
-
-	def get_OutputBucket(self):
+	def set_PipelineId(self, PipelineId):  # String
+		self.add_query_param('PipelineId', PipelineId)
+	def get_OutputBucket(self): # String
 		return self.get_query_params().get('OutputBucket')
 
-	def set_OutputBucket(self,OutputBucket):
-		self.add_query_param('OutputBucket',OutputBucket)
-
-	def get_ComplexConfigs(self):
+	def set_OutputBucket(self, OutputBucket):  # String
+		self.add_query_param('OutputBucket', OutputBucket)
+	def get_ComplexConfigs(self): # String
 		return self.get_query_params().get('ComplexConfigs')
 
-	def set_ComplexConfigs(self,ComplexConfigs):
-		self.add_query_param('ComplexConfigs',ComplexConfigs)
+	def set_ComplexConfigs(self, ComplexConfigs):  # String
+		self.add_query_param('ComplexConfigs', ComplexConfigs)
