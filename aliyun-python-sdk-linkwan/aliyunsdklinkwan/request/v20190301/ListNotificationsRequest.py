@@ -1,0 +1,83 @@
+# Licensed to the Apache Software Foundation (ASF) under one
+# or more contributor license agreements.  See the NOTICE file
+# distributed with this work for additional information
+# regarding copyright ownership.  The ASF licenses this file
+# to you under the Apache License, Version 2.0 (the
+# "License"); you may not use this file except in compliance
+# with the License.  You may obtain a copy of the License at
+#
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+#
+# Unless required by applicable law or agreed to in writing,
+# software distributed under the License is distributed on an
+# "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+# KIND, either express or implied.  See the License for the
+# specific language governing permissions and limitations
+# under the License.
+
+from aliyunsdkcore.request import RpcRequest
+from aliyunsdklinkwan.endpoint import endpoint_data
+
+class ListNotificationsRequest(RpcRequest):
+
+	def __init__(self):
+		RpcRequest.__init__(self, 'LinkWAN', '2019-03-01', 'ListNotifications','linkwan')
+		self.set_protocol_type('https')
+		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
+
+	def get_EndMillis(self):
+		return self.get_query_params().get('EndMillis')
+
+	def set_EndMillis(self,EndMillis):
+		self.add_query_param('EndMillis',EndMillis)
+
+	def get_Limit(self):
+		return self.get_query_params().get('Limit')
+
+	def set_Limit(self,Limit):
+		self.add_query_param('Limit',Limit)
+
+	def get_Offset(self):
+		return self.get_query_params().get('Offset')
+
+	def set_Offset(self,Offset):
+		self.add_query_param('Offset',Offset)
+
+	def get_Ascending(self):
+		return self.get_query_params().get('Ascending')
+
+	def set_Ascending(self,Ascending):
+		self.add_query_param('Ascending',Ascending)
+
+	def get_HandleState(self):
+		return self.get_query_params().get('HandleState')
+
+	def set_HandleState(self,HandleState):
+		self.add_query_param('HandleState',HandleState)
+
+	def get_Categorys(self):
+		return self.get_query_params().get('Category')
+
+	def set_Categorys(self, Categorys):
+		for depth1 in range(len(Categorys)):
+			if Categorys[depth1] is not None:
+				self.add_query_param('Category.' + str(depth1 + 1) , Categorys[depth1])
+
+	def get_BeginMillis(self):
+		return self.get_query_params().get('BeginMillis')
+
+	def set_BeginMillis(self,BeginMillis):
+		self.add_query_param('BeginMillis',BeginMillis)
+
+	def get_SortingField(self):
+		return self.get_query_params().get('SortingField')
+
+	def set_SortingField(self,SortingField):
+		self.add_query_param('SortingField',SortingField)
