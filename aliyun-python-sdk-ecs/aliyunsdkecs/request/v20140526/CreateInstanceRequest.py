@@ -97,6 +97,12 @@ class CreateInstanceRequest(RpcRequest):
 	def set_Password(self,Password):
 		self.add_query_param('Password',Password)
 
+	def get_SystemDisk(self):
+		return self.get_query_params().get('SystemDisk')
+
+	def set_SystemDisk(self,SystemDisk):
+		self.add_query_param('SystemDisk',SystemDisk)
+
 	def get_DeploymentSetGroupNo(self):
 		return self.get_query_params().get('DeploymentSetGroupNo')
 
@@ -414,6 +420,8 @@ class CreateInstanceRequest(RpcRequest):
 				self.add_query_param('DataDisk.' + str(depth1 + 1) + '.EncryptAlgorithm', DataDisks[depth1].get('EncryptAlgorithm'))
 			if DataDisks[depth1].get('Description') is not None:
 				self.add_query_param('DataDisk.' + str(depth1 + 1) + '.Description', DataDisks[depth1].get('Description'))
+			if DataDisks[depth1].get('StorageClusterId') is not None:
+				self.add_query_param('DataDisk.' + str(depth1 + 1) + '.StorageClusterId', DataDisks[depth1].get('StorageClusterId'))
 			if DataDisks[depth1].get('Category') is not None:
 				self.add_query_param('DataDisk.' + str(depth1 + 1) + '.Category', DataDisks[depth1].get('Category'))
 			if DataDisks[depth1].get('KMSKeyId') is not None:

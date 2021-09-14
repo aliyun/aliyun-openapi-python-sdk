@@ -37,11 +37,27 @@ class DescribeSnapshotGroupsRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_ResourceGroupId(self):
+		return self.get_query_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self,ResourceGroupId):
+		self.add_query_param('ResourceGroupId',ResourceGroupId)
+
 	def get_NextToken(self):
 		return self.get_query_params().get('NextToken')
 
 	def set_NextToken(self,NextToken):
 		self.add_query_param('NextToken',NextToken)
+
+	def get_Tags(self):
+		return self.get_query_params().get('Tag')
+
+	def set_Tags(self, Tags):
+		for depth1 in range(len(Tags)):
+			if Tags[depth1].get('Key') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tags[depth1].get('Key'))
+			if Tags[depth1].get('Value') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tags[depth1].get('Value'))
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')

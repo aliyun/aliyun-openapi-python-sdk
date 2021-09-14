@@ -79,6 +79,12 @@ class RunInstancesRequest(RpcRequest):
 	def set_Password(self,Password):
 		self.add_query_param('Password',Password)
 
+	def get_SystemDisk(self):
+		return self.get_query_params().get('SystemDisk')
+
+	def set_SystemDisk(self,SystemDisk):
+		self.add_query_param('SystemDisk',SystemDisk)
+
 	def get_DeploymentSetGroupNo(self):
 		return self.get_query_params().get('DeploymentSetGroupNo')
 
@@ -554,6 +560,8 @@ class RunInstancesRequest(RpcRequest):
 				self.add_query_param('DataDisk.' + str(depth1 + 1) + '.DeleteWithInstance', DataDisks[depth1].get('DeleteWithInstance'))
 			if DataDisks[depth1].get('KMSKeyId') is not None:
 				self.add_query_param('DataDisk.' + str(depth1 + 1) + '.KMSKeyId', DataDisks[depth1].get('KMSKeyId'))
+			if DataDisks[depth1].get('StorageClusterId') is not None:
+				self.add_query_param('DataDisk.' + str(depth1 + 1) + '.StorageClusterId', DataDisks[depth1].get('StorageClusterId'))
 
 	def get_StorageSetId(self):
 		return self.get_query_params().get('StorageSetId')

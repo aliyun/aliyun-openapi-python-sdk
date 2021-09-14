@@ -67,6 +67,12 @@ class DescribeImageComponentsRequest(RpcRequest):
 			if Tags[depth1].get('Value') is not None:
 				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tags[depth1].get('Value'))
 
+	def get_Owner(self):
+		return self.get_query_params().get('Owner')
+
+	def set_Owner(self,Owner):
+		self.add_query_param('Owner',Owner)
+
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 

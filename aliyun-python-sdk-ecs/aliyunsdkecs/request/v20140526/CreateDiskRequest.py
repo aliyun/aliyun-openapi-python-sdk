@@ -119,12 +119,6 @@ class CreateDiskRequest(RpcRequest):
 			if Arns[depth1].get('AssumeRoleFor') is not None:
 				self.add_query_param('Arn.' + str(depth1 + 1) + '.AssumeRoleFor', Arns[depth1].get('AssumeRoleFor'))
 
-	def get_DedicatedBlockStorageClusterId(self):
-		return self.get_query_params().get('DedicatedBlockStorageClusterId')
-
-	def set_DedicatedBlockStorageClusterId(self,DedicatedBlockStorageClusterId):
-		self.add_query_param('DedicatedBlockStorageClusterId',DedicatedBlockStorageClusterId)
-
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -178,6 +172,12 @@ class CreateDiskRequest(RpcRequest):
 
 	def set_ZoneId(self,ZoneId):
 		self.add_query_param('ZoneId',ZoneId)
+
+	def get_StorageClusterId(self):
+		return self.get_query_params().get('StorageClusterId')
+
+	def set_StorageClusterId(self,StorageClusterId):
+		self.add_query_param('StorageClusterId',StorageClusterId)
 
 	def get_KMSKeyId(self):
 		return self.get_query_params().get('KMSKeyId')

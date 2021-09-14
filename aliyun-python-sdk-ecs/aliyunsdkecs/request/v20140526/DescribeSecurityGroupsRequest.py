@@ -79,6 +79,12 @@ class DescribeSecurityGroupsRequest(RpcRequest):
 	def set_ResourceGroupId(self,ResourceGroupId):
 		self.add_query_param('ResourceGroupId',ResourceGroupId)
 
+	def get_NextToken(self):
+		return self.get_query_params().get('NextToken')
+
+	def set_NextToken(self,NextToken):
+		self.add_query_param('NextToken',NextToken)
+
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
 
@@ -90,8 +96,8 @@ class DescribeSecurityGroupsRequest(RpcRequest):
 
 	def set_Tags(self, Tags):
 		for depth1 in range(len(Tags)):
-			if Tags[depth1].get('Value') is not None:
-				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tags[depth1].get('Value'))
+			if Tags[depth1].get('value') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.value', Tags[depth1].get('value'))
 			if Tags[depth1].get('Key') is not None:
 				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tags[depth1].get('Key'))
 
@@ -136,3 +142,9 @@ class DescribeSecurityGroupsRequest(RpcRequest):
 
 	def set_VpcId(self,VpcId):
 		self.add_query_param('VpcId',VpcId)
+
+	def get_MaxResults(self):
+		return self.get_query_params().get('MaxResults')
+
+	def set_MaxResults(self,MaxResults):
+		self.add_query_param('MaxResults',MaxResults)

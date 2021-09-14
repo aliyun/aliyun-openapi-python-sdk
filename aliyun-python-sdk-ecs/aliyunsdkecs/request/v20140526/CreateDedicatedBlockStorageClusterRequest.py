@@ -55,6 +55,12 @@ class CreateDedicatedBlockStorageClusterRequest(RpcRequest):
 	def set_Description(self,Description):
 		self.add_query_param('Description',Description)
 
+	def get_Type(self):
+		return self.get_query_params().get('Type')
+
+	def set_Type(self,Type):
+		self.add_query_param('Type',Type)
+
 	def get_Capacity(self):
 		return self.get_query_params().get('Capacity')
 
@@ -78,12 +84,6 @@ class CreateDedicatedBlockStorageClusterRequest(RpcRequest):
 
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_PerformanceLevel(self):
-		return self.get_query_params().get('PerformanceLevel')
-
-	def set_PerformanceLevel(self,PerformanceLevel):
-		self.add_query_param('PerformanceLevel',PerformanceLevel)
 
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')

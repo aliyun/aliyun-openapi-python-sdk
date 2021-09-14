@@ -55,6 +55,12 @@ class ModifyDedicatedHostAutoRenewAttributeRequest(RpcRequest):
 	def set_RenewalStatus(self,RenewalStatus):
 		self.add_query_param('RenewalStatus',RenewalStatus)
 
+	def get_AutoRenewWithEcs(self):
+		return self.get_query_params().get('AutoRenewWithEcs')
+
+	def set_AutoRenewWithEcs(self,AutoRenewWithEcs):
+		self.add_query_param('AutoRenewWithEcs',AutoRenewWithEcs)
+
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 

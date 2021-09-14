@@ -57,11 +57,35 @@ class CreateSnapshotGroupRequest(RpcRequest):
 	def set_Description(self,Description):
 		self.add_query_param('Description',Description)
 
+	def get_ResourceGroupId(self):
+		return self.get_query_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self,ResourceGroupId):
+		self.add_query_param('ResourceGroupId',ResourceGroupId)
+
 	def get_InstantAccessRetentionDays(self):
 		return self.get_query_params().get('InstantAccessRetentionDays')
 
 	def set_InstantAccessRetentionDays(self,InstantAccessRetentionDays):
 		self.add_query_param('InstantAccessRetentionDays',InstantAccessRetentionDays)
+
+	def get_DiskIds(self):
+		return self.get_query_params().get('DiskId')
+
+	def set_DiskIds(self, DiskIds):
+		for depth1 in range(len(DiskIds)):
+			if DiskIds[depth1] is not None:
+				self.add_query_param('DiskId.' + str(depth1 + 1) , DiskIds[depth1])
+
+	def get_Tags(self):
+		return self.get_query_params().get('Tag')
+
+	def set_Tags(self, Tags):
+		for depth1 in range(len(Tags)):
+			if Tags[depth1].get('Key') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tags[depth1].get('Key'))
+			if Tags[depth1].get('Value') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tags[depth1].get('Value'))
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
