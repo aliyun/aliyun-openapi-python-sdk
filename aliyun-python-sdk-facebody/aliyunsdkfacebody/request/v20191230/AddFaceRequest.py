@@ -37,11 +37,29 @@ class AddFaceRequest(RpcRequest):
 	def set_EntityId(self,EntityId):
 		self.add_body_params('EntityId', EntityId)
 
+	def get_QualityScoreThreshold(self):
+		return self.get_body_params().get('QualityScoreThreshold')
+
+	def set_QualityScoreThreshold(self,QualityScoreThreshold):
+		self.add_body_params('QualityScoreThreshold', QualityScoreThreshold)
+
+	def get_SimilarityScoreThresholdBetweenEntity(self):
+		return self.get_body_params().get('SimilarityScoreThresholdBetweenEntity')
+
+	def set_SimilarityScoreThresholdBetweenEntity(self,SimilarityScoreThresholdBetweenEntity):
+		self.add_body_params('SimilarityScoreThresholdBetweenEntity', SimilarityScoreThresholdBetweenEntity)
+
 	def get_ExtraData(self):
 		return self.get_body_params().get('ExtraData')
 
 	def set_ExtraData(self,ExtraData):
 		self.add_body_params('ExtraData', ExtraData)
+
+	def get_SimilarityScoreThresholdInEntity(self):
+		return self.get_body_params().get('SimilarityScoreThresholdInEntity')
+
+	def set_SimilarityScoreThresholdInEntity(self,SimilarityScoreThresholdInEntity):
+		self.add_body_params('SimilarityScoreThresholdInEntity', SimilarityScoreThresholdInEntity)
 
 	def get_DbName(self):
 		return self.get_body_params().get('DbName')

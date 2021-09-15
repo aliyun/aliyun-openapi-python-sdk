@@ -31,6 +31,12 @@ class SearchFaceRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_QualityScoreThreshold(self):
+		return self.get_body_params().get('QualityScoreThreshold')
+
+	def set_QualityScoreThreshold(self,QualityScoreThreshold):
+		self.add_body_params('QualityScoreThreshold', QualityScoreThreshold)
+
 	def get_Limit(self):
 		return self.get_body_params().get('Limit')
 
@@ -38,10 +44,10 @@ class SearchFaceRequest(RpcRequest):
 		self.add_body_params('Limit', Limit)
 
 	def get_DbNames(self):
-		return self.get_query_params().get('DbNames')
+		return self.get_body_params().get('DbNames')
 
 	def set_DbNames(self,DbNames):
-		self.add_query_param('DbNames',DbNames)
+		self.add_body_params('DbNames', DbNames)
 
 	def get_DbName(self):
 		return self.get_body_params().get('DbName')
