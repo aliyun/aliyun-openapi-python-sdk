@@ -37,6 +37,14 @@ class AddLiveAppRecordConfigRequest(RpcRequest):
 	def set_OssEndpoint(self,OssEndpoint):
 		self.add_query_param('OssEndpoint',OssEndpoint)
 
+	def get_TranscodeTemplatess(self):
+		return self.get_query_params().get('TranscodeTemplates')
+
+	def set_TranscodeTemplatess(self, TranscodeTemplatess):
+		for depth1 in range(len(TranscodeTemplatess)):
+			if TranscodeTemplatess[depth1] is not None:
+				self.add_query_param('TranscodeTemplates.' + str(depth1 + 1) , TranscodeTemplatess[depth1])
+
 	def get_StartTime(self):
 		return self.get_query_params().get('StartTime')
 
@@ -54,6 +62,22 @@ class AddLiveAppRecordConfigRequest(RpcRequest):
 
 	def set_SecurityToken(self,SecurityToken):
 		self.add_query_param('SecurityToken',SecurityToken)
+
+	def get_TranscodeRecordFormats(self):
+		return self.get_query_params().get('TranscodeRecordFormat')
+
+	def set_TranscodeRecordFormats(self, TranscodeRecordFormats):
+		for depth1 in range(len(TranscodeRecordFormats)):
+			if TranscodeRecordFormats[depth1].get('SliceOssObjectPrefix') is not None:
+				self.add_query_param('TranscodeRecordFormat.' + str(depth1 + 1) + '.SliceOssObjectPrefix', TranscodeRecordFormats[depth1].get('SliceOssObjectPrefix'))
+			if TranscodeRecordFormats[depth1].get('SliceDuration') is not None:
+				self.add_query_param('TranscodeRecordFormat.' + str(depth1 + 1) + '.SliceDuration', TranscodeRecordFormats[depth1].get('SliceDuration'))
+			if TranscodeRecordFormats[depth1].get('Format') is not None:
+				self.add_query_param('TranscodeRecordFormat.' + str(depth1 + 1) + '.Format', TranscodeRecordFormats[depth1].get('Format'))
+			if TranscodeRecordFormats[depth1].get('OssObjectPrefix') is not None:
+				self.add_query_param('TranscodeRecordFormat.' + str(depth1 + 1) + '.OssObjectPrefix', TranscodeRecordFormats[depth1].get('OssObjectPrefix'))
+			if TranscodeRecordFormats[depth1].get('CycleDuration') is not None:
+				self.add_query_param('TranscodeRecordFormat.' + str(depth1 + 1) + '.CycleDuration', TranscodeRecordFormats[depth1].get('CycleDuration'))
 
 	def get_OnDemand(self):
 		return self.get_query_params().get('OnDemand')
@@ -98,6 +122,8 @@ class AddLiveAppRecordConfigRequest(RpcRequest):
 		for depth1 in range(len(RecordFormats)):
 			if RecordFormats[depth1].get('SliceOssObjectPrefix') is not None:
 				self.add_query_param('RecordFormat.' + str(depth1 + 1) + '.SliceOssObjectPrefix', RecordFormats[depth1].get('SliceOssObjectPrefix'))
+			if RecordFormats[depth1].get('SliceDuration') is not None:
+				self.add_query_param('RecordFormat.' + str(depth1 + 1) + '.SliceDuration', RecordFormats[depth1].get('SliceDuration'))
 			if RecordFormats[depth1].get('Format') is not None:
 				self.add_query_param('RecordFormat.' + str(depth1 + 1) + '.Format', RecordFormats[depth1].get('Format'))
 			if RecordFormats[depth1].get('OssObjectPrefix') is not None:

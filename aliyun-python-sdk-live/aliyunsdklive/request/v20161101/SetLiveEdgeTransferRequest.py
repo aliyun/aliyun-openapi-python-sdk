@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdklive.endpoint import endpoint_data
 
-class SetCasterChannelRequest(RpcRequest):
+class SetLiveEdgeTransferRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'live', '2016-11-01', 'SetCasterChannel','live')
+		RpcRequest.__init__(self, 'live', '2016-11-01', 'SetLiveEdgeTransfer','live')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,35 +31,35 @@ class SetCasterChannelRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_FaceBeauty(self):
-		return self.get_query_params().get('FaceBeauty')
+	def get_TransferArgs(self):
+		return self.get_query_params().get('TransferArgs')
 
-	def set_FaceBeauty(self,FaceBeauty):
-		self.add_query_param('FaceBeauty',FaceBeauty)
+	def set_TransferArgs(self,TransferArgs):
+		self.add_query_param('TransferArgs',TransferArgs)
 
-	def get_SeekOffset(self):
-		return self.get_query_params().get('SeekOffset')
+	def get_AppName(self):
+		return self.get_query_params().get('AppName')
 
-	def set_SeekOffset(self,SeekOffset):
-		self.add_query_param('SeekOffset',SeekOffset)
+	def set_AppName(self,AppName):
+		self.add_query_param('AppName',AppName)
 
-	def get_PlayStatus(self):
-		return self.get_query_params().get('PlayStatus')
+	def get_StreamName(self):
+		return self.get_query_params().get('StreamName')
 
-	def set_PlayStatus(self,PlayStatus):
-		self.add_query_param('PlayStatus',PlayStatus)
+	def set_StreamName(self,StreamName):
+		self.add_query_param('StreamName',StreamName)
 
-	def get_ResourceId(self):
-		return self.get_query_params().get('ResourceId')
+	def get_TargetDomainList(self):
+		return self.get_query_params().get('TargetDomainList')
 
-	def set_ResourceId(self,ResourceId):
-		self.add_query_param('ResourceId',ResourceId)
+	def set_TargetDomainList(self,TargetDomainList):
+		self.add_query_param('TargetDomainList',TargetDomainList)
 
-	def get_CasterId(self):
-		return self.get_query_params().get('CasterId')
+	def get_DomainName(self):
+		return self.get_query_params().get('DomainName')
 
-	def set_CasterId(self,CasterId):
-		self.add_query_param('CasterId',CasterId)
+	def set_DomainName(self,DomainName):
+		self.add_query_param('DomainName',DomainName)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
@@ -67,8 +67,8 @@ class SetCasterChannelRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_ChannelId(self):
-		return self.get_query_params().get('ChannelId')
+	def get_HttpDns(self):
+		return self.get_query_params().get('HttpDns')
 
-	def set_ChannelId(self,ChannelId):
-		self.add_query_param('ChannelId',ChannelId)
+	def set_HttpDns(self,HttpDns):
+		self.add_query_param('HttpDns',HttpDns)

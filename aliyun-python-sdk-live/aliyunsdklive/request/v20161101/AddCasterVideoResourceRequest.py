@@ -31,6 +31,12 @@ class AddCasterVideoResourceRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_InputType(self):
+		return self.get_query_params().get('InputType')
+
+	def set_InputType(self,InputType):
+		self.add_query_param('InputType',InputType)
+
 	def get_EndOffset(self):
 		return self.get_query_params().get('EndOffset')
 
@@ -66,6 +72,12 @@ class AddCasterVideoResourceRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_StreamMonitor(self):
+		return self.get_query_params().get('StreamMonitor')
+
+	def set_StreamMonitor(self,StreamMonitor):
+		self.add_query_param('StreamMonitor',StreamMonitor)
 
 	def get_BeginOffset(self):
 		return self.get_query_params().get('BeginOffset')

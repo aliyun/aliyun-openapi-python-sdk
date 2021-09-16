@@ -58,3 +58,7 @@ class SetCasterSyncGroupRequest(RpcRequest):
 				for depth2 in range(len(SyncGroups[depth1].get('ResourceIds'))):
 					if SyncGroups[depth1].get('ResourceIds')[depth2] is not None:
 						self.add_query_param('SyncGroup.' + str(depth1 + 1) + '.ResourceIds.' + str(depth2 + 1) , SyncGroups[depth1].get('ResourceIds')[depth2])
+			if SyncGroups[depth1].get('SyncOffsets') is not None:
+				for depth2 in range(len(SyncGroups[depth1].get('SyncOffsets'))):
+					if SyncGroups[depth1].get('SyncOffsets')[depth2] is not None:
+						self.add_query_param('SyncGroup.' + str(depth1 + 1) + '.SyncOffsets.' + str(depth2 + 1) , SyncGroups[depth1].get('SyncOffsets')[depth2])

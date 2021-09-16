@@ -31,6 +31,12 @@ class SetLiveStreamsNotifyUrlConfigRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_NotifyReqAuth(self):
+		return self.get_query_params().get('NotifyReqAuth')
+
+	def set_NotifyReqAuth(self,NotifyReqAuth):
+		self.add_query_param('NotifyReqAuth',NotifyReqAuth)
+
 	def get_NotifyUrl(self):
 		return self.get_query_params().get('NotifyUrl')
 
@@ -48,3 +54,9 @@ class SetLiveStreamsNotifyUrlConfigRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_NotifyAuthKey(self):
+		return self.get_query_params().get('NotifyAuthKey')
+
+	def set_NotifyAuthKey(self,NotifyAuthKey):
+		self.add_query_param('NotifyAuthKey',NotifyAuthKey)
