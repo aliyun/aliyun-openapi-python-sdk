@@ -56,6 +56,8 @@ class MassPushRequest(RpcRequest):
 				self.add_body_params('PushTask.' + str(depth1 + 1) + '.AndroidNotifyType', PushTasks[depth1].get('AndroidNotifyType'))
 			if PushTasks[depth1].get('AndroidPopupTitle') is not None:
 				self.add_body_params('PushTask.' + str(depth1 + 1) + '.AndroidPopupTitle', PushTasks[depth1].get('AndroidPopupTitle'))
+			if PushTasks[depth1].get('AndroidMessageHuaweiCategory') is not None:
+				self.add_body_params('PushTask.' + str(depth1 + 1) + '.AndroidMessageHuaweiCategory', PushTasks[depth1].get('AndroidMessageHuaweiCategory'))
 			if PushTasks[depth1].get('iOSMusic') is not None:
 				self.add_body_params('PushTask.' + str(depth1 + 1) + '.iOSMusic', PushTasks[depth1].get('iOSMusic'))
 			if PushTasks[depth1].get('iOSApnsEnv') is not None:
@@ -96,6 +98,8 @@ class MassPushRequest(RpcRequest):
 				self.add_body_params('PushTask.' + str(depth1 + 1) + '.AndroidMusic', PushTasks[depth1].get('AndroidMusic'))
 			if PushTasks[depth1].get('iOSNotificationCollapseId') is not None:
 				self.add_body_params('PushTask.' + str(depth1 + 1) + '.iOSNotificationCollapseId', PushTasks[depth1].get('iOSNotificationCollapseId'))
+			if PushTasks[depth1].get('AndroidMessageHuaweiUrgency') is not None:
+				self.add_body_params('PushTask.' + str(depth1 + 1) + '.AndroidMessageHuaweiUrgency', PushTasks[depth1].get('AndroidMessageHuaweiUrgency'))
 			if PushTasks[depth1].get('PushType') is not None:
 				self.add_body_params('PushTask.' + str(depth1 + 1) + '.PushType', PushTasks[depth1].get('PushType'))
 			if PushTasks[depth1].get('AndroidExtParameters') is not None:
@@ -122,6 +126,8 @@ class MassPushRequest(RpcRequest):
 				self.add_body_params('PushTask.' + str(depth1 + 1) + '.AndroidBigPictureUrl', PushTasks[depth1].get('AndroidBigPictureUrl'))
 			if PushTasks[depth1].get('iOSSilentNotification') is not None:
 				self.add_body_params('PushTask.' + str(depth1 + 1) + '.iOSSilentNotification', PushTasks[depth1].get('iOSSilentNotification'))
+			if PushTasks[depth1].get('SendChannels') is not None:
+				self.add_body_params('PushTask.' + str(depth1 + 1) + '.SendChannels', PushTasks[depth1].get('SendChannels'))
 			if PushTasks[depth1].get('Target') is not None:
 				self.add_body_params('PushTask.' + str(depth1 + 1) + '.Target', PushTasks[depth1].get('Target'))
 			if PushTasks[depth1].get('AndroidBigTitle') is not None:

@@ -97,6 +97,12 @@ class PushRequest(RpcRequest):
 	def set_AndroidPopupTitle(self,AndroidPopupTitle):
 		self.add_query_param('AndroidPopupTitle',AndroidPopupTitle)
 
+	def get_AndroidMessageHuaweiCategory(self):
+		return self.get_query_params().get('AndroidMessageHuaweiCategory')
+
+	def set_AndroidMessageHuaweiCategory(self,AndroidMessageHuaweiCategory):
+		self.add_query_param('AndroidMessageHuaweiCategory',AndroidMessageHuaweiCategory)
+
 	def get_iOSMusic(self):
 		return self.get_query_params().get('iOSMusic')
 
@@ -223,6 +229,12 @@ class PushRequest(RpcRequest):
 	def set_iOSNotificationCollapseId(self,iOSNotificationCollapseId):
 		self.add_query_param('iOSNotificationCollapseId',iOSNotificationCollapseId)
 
+	def get_AndroidMessageHuaweiUrgency(self):
+		return self.get_query_params().get('AndroidMessageHuaweiUrgency')
+
+	def set_AndroidMessageHuaweiUrgency(self,AndroidMessageHuaweiUrgency):
+		self.add_query_param('AndroidMessageHuaweiUrgency',AndroidMessageHuaweiUrgency)
+
 	def get_PushType(self):
 		return self.get_query_params().get('PushType')
 
@@ -312,6 +324,12 @@ class PushRequest(RpcRequest):
 
 	def set_iOSSilentNotification(self,iOSSilentNotification):
 		self.add_query_param('iOSSilentNotification',iOSSilentNotification)
+
+	def get_SendChannels(self):
+		return self.get_query_params().get('SendChannels')
+
+	def set_SendChannels(self,SendChannels):
+		self.add_query_param('SendChannels',SendChannels)
 
 	def get_Target(self):
 		return self.get_query_params().get('Target')
