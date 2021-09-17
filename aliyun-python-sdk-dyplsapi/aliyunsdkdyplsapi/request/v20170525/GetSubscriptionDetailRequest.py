@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdyplsapi.endpoint import endpoint_data
 
-class OperateBlackNoRequest(RpcRequest):
+class GetSubscriptionDetailRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dyplsapi', '2017-05-25', 'OperateBlackNo')
+		RpcRequest.__init__(self, 'Dyplsapi', '2017-05-25', 'GetSubscriptionDetail')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,11 +36,16 @@ class OperateBlackNoRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_Tips(self): # String
-		return self.get_query_params().get('Tips')
+	def get_SubsId(self): # Long
+		return self.get_query_params().get('SubsId')
 
-	def set_Tips(self, Tips):  # String
-		self.add_query_param('Tips', Tips)
+	def set_SubsId(self, SubsId):  # Long
+		self.add_query_param('SubsId', SubsId)
+	def get_SecretNo(self): # String
+		return self.get_query_params().get('SecretNo')
+
+	def set_SecretNo(self, SecretNo):  # String
+		self.add_query_param('SecretNo', SecretNo)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -56,13 +61,3 @@ class OperateBlackNoRequest(RpcRequest):
 
 	def set_PoolKey(self, PoolKey):  # String
 		self.add_query_param('PoolKey', PoolKey)
-	def get_BlackNo(self): # String
-		return self.get_query_params().get('BlackNo')
-
-	def set_BlackNo(self, BlackNo):  # String
-		self.add_query_param('BlackNo', BlackNo)
-	def get_OperateType(self): # String
-		return self.get_query_params().get('OperateType')
-
-	def set_OperateType(self, OperateType):  # String
-		self.add_query_param('OperateType', OperateType)

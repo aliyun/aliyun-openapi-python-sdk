@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdyplsapi.endpoint import endpoint_data
 
-class OperateBlackNoRequest(RpcRequest):
+class GetTotalPublicUrlRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dyplsapi', '2017-05-25', 'OperateBlackNo')
+		RpcRequest.__init__(self, 'Dyplsapi', '2017-05-25', 'GetTotalPublicUrl')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,38 +31,38 @@ class OperateBlackNoRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_CallId(self): # String
+		return self.get_query_params().get('CallId')
+
+	def set_CallId(self, CallId):  # String
+		self.add_query_param('CallId', CallId)
 	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_Tips(self): # String
-		return self.get_query_params().get('Tips')
-
-	def set_Tips(self, Tips):  # String
-		self.add_query_param('Tips', Tips)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
 	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
 		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_CheckSubs(self): # Boolean
+		return self.get_query_params().get('CheckSubs')
+
+	def set_CheckSubs(self, CheckSubs):  # Boolean
+		self.add_query_param('CheckSubs', CheckSubs)
 	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
-	def get_PoolKey(self): # String
-		return self.get_query_params().get('PoolKey')
+	def get_CallTime(self): # String
+		return self.get_query_params().get('CallTime')
 
-	def set_PoolKey(self, PoolKey):  # String
-		self.add_query_param('PoolKey', PoolKey)
-	def get_BlackNo(self): # String
-		return self.get_query_params().get('BlackNo')
+	def set_CallTime(self, CallTime):  # String
+		self.add_query_param('CallTime', CallTime)
+	def get_PartnerKey(self): # String
+		return self.get_query_params().get('PartnerKey')
 
-	def set_BlackNo(self, BlackNo):  # String
-		self.add_query_param('BlackNo', BlackNo)
-	def get_OperateType(self): # String
-		return self.get_query_params().get('OperateType')
-
-	def set_OperateType(self, OperateType):  # String
-		self.add_query_param('OperateType', OperateType)
+	def set_PartnerKey(self, PartnerKey):  # String
+		self.add_query_param('PartnerKey', PartnerKey)

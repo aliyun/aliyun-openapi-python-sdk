@@ -23,112 +23,101 @@ from aliyunsdkdyplsapi.endpoint import endpoint_data
 class BindAxbRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dyplsapi', '2017-05-25', 'BindAxb','dypls')
+		RpcRequest.__init__(self, 'Dyplsapi', '2017-05-25', 'BindAxb')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ResourceOwnerId(self):
+	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_CallDisplayType(self):
+	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
+		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_CallDisplayType(self): # Integer
 		return self.get_query_params().get('CallDisplayType')
 
-	def set_CallDisplayType(self,CallDisplayType):
-		self.add_query_param('CallDisplayType',CallDisplayType)
+	def set_CallDisplayType(self, CallDisplayType):  # Integer
+		self.add_query_param('CallDisplayType', CallDisplayType)
+	def get_CallTimeout(self): # Integer
+		return self.get_query_params().get('CallTimeout')
 
-	def get_PhoneNoX(self):
+	def set_CallTimeout(self, CallTimeout):  # Integer
+		self.add_query_param('CallTimeout', CallTimeout)
+	def get_PhoneNoX(self): # String
 		return self.get_query_params().get('PhoneNoX')
 
-	def set_PhoneNoX(self,PhoneNoX):
-		self.add_query_param('PhoneNoX',PhoneNoX)
-
-	def get_RingConfig(self):
+	def set_PhoneNoX(self, PhoneNoX):  # String
+		self.add_query_param('PhoneNoX', PhoneNoX)
+	def get_RingConfig(self): # String
 		return self.get_query_params().get('RingConfig')
 
-	def set_RingConfig(self,RingConfig):
-		self.add_query_param('RingConfig',RingConfig)
-
-	def get_ASRStatus(self):
+	def set_RingConfig(self, RingConfig):  # String
+		self.add_query_param('RingConfig', RingConfig)
+	def get_ASRStatus(self): # Boolean
 		return self.get_query_params().get('ASRStatus')
 
-	def set_ASRStatus(self,ASRStatus):
-		self.add_query_param('ASRStatus',ASRStatus)
-
-	def get_PhoneNoB(self):
+	def set_ASRStatus(self, ASRStatus):  # Boolean
+		self.add_query_param('ASRStatus', ASRStatus)
+	def get_PhoneNoB(self): # String
 		return self.get_query_params().get('PhoneNoB')
 
-	def set_PhoneNoB(self,PhoneNoB):
-		self.add_query_param('PhoneNoB',PhoneNoB)
-
-	def get_PhoneNoA(self):
+	def set_PhoneNoB(self, PhoneNoB):  # String
+		self.add_query_param('PhoneNoB', PhoneNoB)
+	def get_PhoneNoA(self): # String
 		return self.get_query_params().get('PhoneNoA')
 
-	def set_PhoneNoA(self,PhoneNoA):
-		self.add_query_param('PhoneNoA',PhoneNoA)
-
-	def get_ExpectCity(self):
+	def set_PhoneNoA(self, PhoneNoA):  # String
+		self.add_query_param('PhoneNoA', PhoneNoA)
+	def get_ExpectCity(self): # String
 		return self.get_query_params().get('ExpectCity')
 
-	def set_ExpectCity(self,ExpectCity):
-		self.add_query_param('ExpectCity',ExpectCity)
-
-	def get_ResourceOwnerAccount(self):
+	def set_ExpectCity(self, ExpectCity):  # String
+		self.add_query_param('ExpectCity', ExpectCity)
+	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_OwnerId(self):
+	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
+		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_OutOrderId(self):
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_OutOrderId(self): # String
 		return self.get_query_params().get('OutOrderId')
 
-	def set_OutOrderId(self,OutOrderId):
-		self.add_query_param('OutOrderId',OutOrderId)
-
-	def get_PoolKey(self):
+	def set_OutOrderId(self, OutOrderId):  # String
+		self.add_query_param('OutOrderId', OutOrderId)
+	def get_PoolKey(self): # String
 		return self.get_query_params().get('PoolKey')
 
-	def set_PoolKey(self,PoolKey):
-		self.add_query_param('PoolKey',PoolKey)
-
-	def get_Expiration(self):
+	def set_PoolKey(self, PoolKey):  # String
+		self.add_query_param('PoolKey', PoolKey)
+	def get_Expiration(self): # String
 		return self.get_query_params().get('Expiration')
 
-	def set_Expiration(self,Expiration):
-		self.add_query_param('Expiration',Expiration)
-
-	def get_IsRecordingEnabled(self):
+	def set_Expiration(self, Expiration):  # String
+		self.add_query_param('Expiration', Expiration)
+	def get_IsRecordingEnabled(self): # Boolean
 		return self.get_query_params().get('IsRecordingEnabled')
 
-	def set_IsRecordingEnabled(self,IsRecordingEnabled):
-		self.add_query_param('IsRecordingEnabled',IsRecordingEnabled)
-
-	def get_OutId(self):
+	def set_IsRecordingEnabled(self, IsRecordingEnabled):  # Boolean
+		self.add_query_param('IsRecordingEnabled', IsRecordingEnabled)
+	def get_OutId(self): # String
 		return self.get_query_params().get('OutId')
 
-	def set_OutId(self,OutId):
-		self.add_query_param('OutId',OutId)
-
-	def get_ASRModelId(self):
+	def set_OutId(self, OutId):  # String
+		self.add_query_param('OutId', OutId)
+	def get_ASRModelId(self): # String
 		return self.get_query_params().get('ASRModelId')
 
-	def set_ASRModelId(self,ASRModelId):
-		self.add_query_param('ASRModelId',ASRModelId)
-
-	def get_CallRestrict(self):
+	def set_ASRModelId(self, ASRModelId):  # String
+		self.add_query_param('ASRModelId', ASRModelId)
+	def get_CallRestrict(self): # String
 		return self.get_query_params().get('CallRestrict')
 
-	def set_CallRestrict(self,CallRestrict):
-		self.add_query_param('CallRestrict',CallRestrict)
+	def set_CallRestrict(self, CallRestrict):  # String
+		self.add_query_param('CallRestrict', CallRestrict)
