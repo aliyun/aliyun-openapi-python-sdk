@@ -37,12 +37,6 @@ class SubmitMediaDNADeleteJobRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_FpDBId(self):
-		return self.get_query_params().get('FpDBId')
-
-	def set_FpDBId(self,FpDBId):
-		self.add_query_param('FpDBId',FpDBId)
-
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 

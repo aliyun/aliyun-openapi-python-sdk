@@ -20,46 +20,22 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkvod.endpoint import endpoint_data
 
-class CreateMediaDNALibRequest(RpcRequest):
+class DescribeVodDomainRealtimeLogDeliveryRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'vod', '2017-03-21', 'CreateMediaDNALib','vod')
-		self.set_method('POST')
+		RpcRequest.__init__(self, 'vod', '2017-03-21', 'DescribeVodDomainRealtimeLogDelivery','vod')
+		self.set_method('GET')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_ResourceOwnerId(self):
-		return self.get_query_params().get('ResourceOwnerId')
+	def get_DomainName(self):
+		return self.get_query_params().get('DomainName')
 
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_ModelType(self):
-		return self.get_query_params().get('ModelType')
-
-	def set_ModelType(self,ModelType):
-		self.add_query_param('ModelType',ModelType)
-
-	def get_LibRegion(self):
-		return self.get_query_params().get('LibRegion')
-
-	def set_LibRegion(self,LibRegion):
-		self.add_query_param('LibRegion',LibRegion)
-
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
-
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_OwnerAccount(self):
-		return self.get_query_params().get('OwnerAccount')
-
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
+	def set_DomainName(self,DomainName):
+		self.add_query_param('DomainName',DomainName)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')

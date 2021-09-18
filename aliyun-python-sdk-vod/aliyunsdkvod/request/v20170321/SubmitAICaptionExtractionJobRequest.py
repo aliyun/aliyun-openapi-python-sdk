@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkvod.endpoint import endpoint_data
 
-class GetDRMCertInfoRequest(RpcRequest):
+class SubmitAICaptionExtractionJobRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'vod', '2017-03-21', 'GetDRMCertInfo','vod')
+		RpcRequest.__init__(self, 'vod', '2017-03-21', 'SubmitAICaptionExtractionJob','vod')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,11 +31,11 @@ class GetDRMCertInfoRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
+	def get_JobConfig(self):
+		return self.get_query_params().get('JobConfig')
 
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+	def set_JobConfig(self,JobConfig):
+		self.add_query_param('JobConfig',JobConfig)
 
 	def get_VideoId(self):
 		return self.get_query_params().get('VideoId')
@@ -43,14 +43,14 @@ class GetDRMCertInfoRequest(RpcRequest):
 	def set_VideoId(self,VideoId):
 		self.add_query_param('VideoId',VideoId)
 
-	def get_CertId(self):
-		return self.get_query_params().get('CertId')
+	def get_AIPipelineId(self):
+		return self.get_query_params().get('AIPipelineId')
 
-	def set_CertId(self,CertId):
-		self.add_query_param('CertId',CertId)
+	def set_AIPipelineId(self,AIPipelineId):
+		self.add_query_param('AIPipelineId',AIPipelineId)
 
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
+	def get_UserData(self):
+		return self.get_query_params().get('UserData')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
+	def set_UserData(self,UserData):
+		self.add_query_param('UserData',UserData)

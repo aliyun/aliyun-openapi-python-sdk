@@ -31,12 +31,6 @@ class SubmitSnapshotJobRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_ResourceOwnerId(self):
-		return self.get_query_params().get('ResourceOwnerId')
-
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
 	def get_UserData(self):
 		return self.get_query_params().get('UserData')
 
@@ -67,12 +61,6 @@ class SubmitSnapshotJobRequest(RpcRequest):
 	def set_Height(self,Height):
 		self.add_query_param('Height',Height)
 
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
-
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
 	def get_Count(self):
 		return self.get_query_params().get('Count')
 
@@ -85,23 +73,11 @@ class SubmitSnapshotJobRequest(RpcRequest):
 	def set_VideoId(self,VideoId):
 		self.add_query_param('VideoId',VideoId)
 
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
 	def get_Width(self):
 		return self.get_query_params().get('Width')
 
 	def set_Width(self,Width):
 		self.add_query_param('Width',Width)
-
-	def get_FileUrl(self):
-		return self.get_query_params().get('FileUrl')
-
-	def set_FileUrl(self,FileUrl):
-		self.add_query_param('FileUrl',FileUrl)
 
 	def get_Interval(self):
 		return self.get_query_params().get('Interval')

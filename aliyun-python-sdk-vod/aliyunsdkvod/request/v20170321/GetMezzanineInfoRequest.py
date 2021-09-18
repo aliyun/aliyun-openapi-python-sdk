@@ -31,12 +31,6 @@ class GetMezzanineInfoRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_ResourceOwnerId(self):
-		return self.get_query_params().get('ResourceOwnerId')
-
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
 	def get_OutputType(self):
 		return self.get_query_params().get('OutputType')
 
@@ -49,29 +43,11 @@ class GetMezzanineInfoRequest(RpcRequest):
 	def set_AuthTimeout(self,AuthTimeout):
 		self.add_query_param('AuthTimeout',AuthTimeout)
 
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
-
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
 	def get_VideoId(self):
 		return self.get_query_params().get('VideoId')
 
 	def set_VideoId(self,VideoId):
 		self.add_query_param('VideoId',VideoId)
-
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_PreviewSegment(self):
-		return self.get_query_params().get('PreviewSegment')
-
-	def set_PreviewSegment(self,PreviewSegment):
-		self.add_query_param('PreviewSegment',PreviewSegment)
 
 	def get_AdditionType(self):
 		return self.get_query_params().get('AdditionType')

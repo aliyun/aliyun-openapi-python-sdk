@@ -31,12 +31,6 @@ class ListLiveRecordVideoRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_ResourceOwnerId(self):
-		return self.get_query_params().get('ResourceOwnerId')
-
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
 	def get_StartTime(self):
 		return self.get_query_params().get('StartTime')
 
@@ -61,18 +55,6 @@ class ListLiveRecordVideoRequest(RpcRequest):
 	def set_StreamName(self,StreamName):
 		self.add_query_param('StreamName',StreamName)
 
-	def get_QueryType(self):
-		return self.get_query_params().get('QueryType')
-
-	def set_QueryType(self,QueryType):
-		self.add_query_param('QueryType',QueryType)
-
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
-
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
 	def get_DomainName(self):
 		return self.get_query_params().get('DomainName')
 
@@ -84,12 +66,6 @@ class ListLiveRecordVideoRequest(RpcRequest):
 
 	def set_EndTime(self,EndTime):
 		self.add_query_param('EndTime',EndTime)
-
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
 
 	def get_PageNo(self):
 		return self.get_query_params().get('PageNo')

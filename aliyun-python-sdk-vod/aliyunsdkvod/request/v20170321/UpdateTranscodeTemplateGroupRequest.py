@@ -37,30 +37,6 @@ class UpdateTranscodeTemplateGroupRequest(RpcRequest):
 	def set_TranscodeTemplateList(self,TranscodeTemplateList):
 		self.add_query_param('TranscodeTemplateList',TranscodeTemplateList)
 
-	def get_ResourceOwnerId(self):
-		return self.get_query_params().get('ResourceOwnerId')
-
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_Locked(self):
-		return self.get_query_params().get('Locked')
-
-	def set_Locked(self,Locked):
-		self.add_query_param('Locked',Locked)
-
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
-
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
 	def get_TranscodeTemplateGroupId(self):
 		return self.get_query_params().get('TranscodeTemplateGroupId')
 
@@ -72,3 +48,9 @@ class UpdateTranscodeTemplateGroupRequest(RpcRequest):
 
 	def set_Name(self,Name):
 		self.add_query_param('Name',Name)
+
+	def get_Locked(self):
+		return self.get_query_params().get('Locked')
+
+	def set_Locked(self,Locked):
+		self.add_query_param('Locked',Locked)

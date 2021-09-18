@@ -31,35 +31,11 @@ class GetUploadDetailsRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_ResourceOwnerId(self):
-		return self.get_query_params().get('ResourceOwnerId')
-
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_ResourceRealOwnerId(self):
-		return self.get_query_params().get('ResourceRealOwnerId')
-
-	def set_ResourceRealOwnerId(self,ResourceRealOwnerId):
-		self.add_query_param('ResourceRealOwnerId',ResourceRealOwnerId)
-
 	def get_MediaIds(self):
 		return self.get_query_params().get('MediaIds')
 
 	def set_MediaIds(self,MediaIds):
 		self.add_query_param('MediaIds',MediaIds)
-
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
-
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
 
 	def get_MediaType(self):
 		return self.get_query_params().get('MediaType')

@@ -73,12 +73,6 @@ class SubmitAIJobRequest(RpcRequest):
 	def set_MediaId(self,MediaId):
 		self.add_query_param('MediaId',MediaId)
 
-	def get_Input(self):
-		return self.get_query_params().get('Input')
-
-	def set_Input(self,Input):
-		self.add_query_param('Input',Input)
-
 	def get_Config(self):
 		return self.get_query_params().get('Config')
 

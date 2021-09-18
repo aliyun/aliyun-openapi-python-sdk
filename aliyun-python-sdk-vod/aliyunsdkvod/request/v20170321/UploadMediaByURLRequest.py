@@ -31,18 +31,6 @@ class UploadMediaByURLRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_ResourceOwnerId(self):
-		return self.get_query_params().get('ResourceOwnerId')
-
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_MessageCallback(self):
-		return self.get_query_params().get('MessageCallback')
-
-	def set_MessageCallback(self,MessageCallback):
-		self.add_query_param('MessageCallback',MessageCallback)
-
 	def get_StorageLocation(self):
 		return self.get_query_params().get('StorageLocation')
 
@@ -60,24 +48,6 @@ class UploadMediaByURLRequest(RpcRequest):
 
 	def set_WorkflowId(self,WorkflowId):
 		self.add_query_param('WorkflowId',WorkflowId)
-
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
-
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_Priority(self):
-		return self.get_query_params().get('Priority')
-
-	def set_Priority(self,Priority):
-		self.add_query_param('Priority',Priority)
 
 	def get_TemplateGroupId(self):
 		return self.get_query_params().get('TemplateGroupId')

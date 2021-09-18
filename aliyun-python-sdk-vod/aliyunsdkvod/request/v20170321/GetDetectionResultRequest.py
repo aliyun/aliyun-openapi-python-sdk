@@ -20,37 +20,43 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkvod.endpoint import endpoint_data
 
-class ListDNADBRequest(RpcRequest):
+class GetDetectionResultRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'vod', '2017-03-21', 'ListDNADB','vod')
-		self.set_method('POST')
+		RpcRequest.__init__(self, 'vod', '2017-03-21', 'GetDetectionResult','vod')
+		self.set_method('GET')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_ResourceOwnerId(self):
-		return self.get_query_params().get('ResourceOwnerId')
+	def get_CountByPage(self):
+		return self.get_query_params().get('CountByPage')
 
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+	def set_CountByPage(self,CountByPage):
+		self.add_query_param('CountByPage',CountByPage)
 
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
+	def get_Desensitization(self):
+		return self.get_query_params().get('Desensitization')
 
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+	def set_Desensitization(self,Desensitization):
+		self.add_query_param('Desensitization',Desensitization)
 
-	def get_OwnerAccount(self):
-		return self.get_query_params().get('OwnerAccount')
+	def get_JobId(self):
+		return self.get_query_params().get('JobId')
 
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
+	def set_JobId(self,JobId):
+		self.add_query_param('JobId',JobId)
 
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
+	def get_Page(self):
+		return self.get_query_params().get('Page')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
+	def set_Page(self,Page):
+		self.add_query_param('Page',Page)
+
+	def get_Status(self):
+		return self.get_query_params().get('Status')
+
+	def set_Status(self,Status):
+		self.add_query_param('Status',Status)

@@ -31,12 +31,6 @@ class GetPlayInfoRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_ResourceOwnerId(self):
-		return self.get_query_params().get('ResourceOwnerId')
-
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
 	def get_Formats(self):
 		return self.get_query_params().get('Formats')
 
@@ -79,26 +73,20 @@ class GetPlayInfoRequest(RpcRequest):
 	def set_StreamType(self,StreamType):
 		self.add_query_param('StreamType',StreamType)
 
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
-
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
 	def get_VideoId(self):
 		return self.get_query_params().get('VideoId')
 
 	def set_VideoId(self,VideoId):
 		self.add_query_param('VideoId',VideoId)
 
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
 	def get_ResultType(self):
 		return self.get_query_params().get('ResultType')
 
 	def set_ResultType(self,ResultType):
 		self.add_query_param('ResultType',ResultType)
+
+	def get_AdditionType(self):
+		return self.get_query_params().get('AdditionType')
+
+	def set_AdditionType(self,AdditionType):
+		self.add_query_param('AdditionType',AdditionType)

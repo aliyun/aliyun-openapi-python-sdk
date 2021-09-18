@@ -31,6 +31,12 @@ class UnTagVodResourcesRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_All(self):
+		return self.get_query_params().get('All')
+
+	def set_All(self,All):
+		self.add_query_param('All',All)
+
 	def get_ResourceIds(self):
 		return self.get_query_params().get('ResourceId')
 

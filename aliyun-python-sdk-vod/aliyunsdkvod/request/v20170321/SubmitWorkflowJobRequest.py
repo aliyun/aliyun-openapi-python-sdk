@@ -31,38 +31,14 @@ class SubmitWorkflowJobRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_ResourceOwnerId(self):
-		return self.get_query_params().get('ResourceOwnerId')
-
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_WorkflowId(self):
-		return self.get_query_params().get('WorkflowId')
-
-	def set_WorkflowId(self,WorkflowId):
-		self.add_query_param('WorkflowId',WorkflowId)
-
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
-
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
 	def get_MediaId(self):
 		return self.get_query_params().get('MediaId')
 
 	def set_MediaId(self,MediaId):
 		self.add_query_param('MediaId',MediaId)
 
-	def get_FileUrl(self):
-		return self.get_query_params().get('FileUrl')
+	def get_WorkflowId(self):
+		return self.get_query_params().get('WorkflowId')
 
-	def set_FileUrl(self,FileUrl):
-		self.add_query_param('FileUrl',FileUrl)
+	def set_WorkflowId(self,WorkflowId):
+		self.add_query_param('WorkflowId',WorkflowId)

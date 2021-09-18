@@ -37,29 +37,11 @@ class SetMessageCallbackRequest(RpcRequest):
 	def set_AuthKey(self,AuthKey):
 		self.add_query_param('AuthKey',AuthKey)
 
-	def get_ResourceOwnerId(self):
-		return self.get_query_params().get('ResourceOwnerId')
-
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_ResourceRealOwnerId(self):
-		return self.get_query_params().get('ResourceRealOwnerId')
-
-	def set_ResourceRealOwnerId(self,ResourceRealOwnerId):
-		self.add_query_param('ResourceRealOwnerId',ResourceRealOwnerId)
-
 	def get_CallbackType(self):
 		return self.get_query_params().get('CallbackType')
 
 	def set_CallbackType(self,CallbackType):
 		self.add_query_param('CallbackType',CallbackType)
-
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
-
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
@@ -78,12 +60,6 @@ class SetMessageCallbackRequest(RpcRequest):
 
 	def set_MnsQueueName(self,MnsQueueName):
 		self.add_query_param('MnsQueueName',MnsQueueName)
-
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
 
 	def get_MnsEndpoint(self):
 		return self.get_query_params().get('MnsEndpoint')

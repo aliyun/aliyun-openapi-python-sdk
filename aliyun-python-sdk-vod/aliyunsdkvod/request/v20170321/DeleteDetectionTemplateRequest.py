@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkvod.endpoint import endpoint_data
 
-class GetDRMLicenseRequest(RpcRequest):
+class DeleteDetectionTemplateRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'vod', '2017-03-21', 'GetDRMLicense','vod')
+		RpcRequest.__init__(self, 'vod', '2017-03-21', 'DeleteDetectionTemplate','vod')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,38 +31,8 @@ class GetDRMLicenseRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_CDMData(self):
-		return self.get_query_params().get('CDMData')
+	def get_TemplateId(self):
+		return self.get_query_params().get('TemplateId')
 
-	def set_CDMData(self,CDMData):
-		self.add_query_param('CDMData',CDMData)
-
-	def get_CertId(self):
-		return self.get_query_params().get('CertId')
-
-	def set_CertId(self,CertId):
-		self.add_query_param('CertId',CertId)
-
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
-
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_VideoId(self):
-		return self.get_query_params().get('VideoId')
-
-	def set_VideoId(self,VideoId):
-		self.add_query_param('VideoId',VideoId)
-
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_DRMType(self):
-		return self.get_query_params().get('DRMType')
-
-	def set_DRMType(self,DRMType):
-		self.add_query_param('DRMType',DRMType)
+	def set_TemplateId(self,TemplateId):
+		self.add_query_param('TemplateId',TemplateId)

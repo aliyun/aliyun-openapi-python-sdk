@@ -72,9 +72,3 @@ class SetVodDomainCertificateRequest(RpcRequest):
 
 	def set_SSLPub(self,SSLPub):
 		self.add_query_param('SSLPub',SSLPub)
-
-	def get_Region(self):
-		return self.get_query_params().get('Region')
-
-	def set_Region(self,Region):
-		self.add_query_param('Region',Region)

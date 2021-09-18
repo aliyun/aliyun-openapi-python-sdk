@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkvod.endpoint import endpoint_data
 
-class GetDNADBRequest(RpcRequest):
+class CancelUrlUploadJobsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'vod', '2017-03-21', 'GetDNADB','vod')
+		RpcRequest.__init__(self, 'vod', '2017-03-21', 'CancelUrlUploadJobs','vod')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,32 +31,14 @@ class GetDNADBRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_ResourceOwnerId(self):
-		return self.get_query_params().get('ResourceOwnerId')
+	def get_JobIds(self):
+		return self.get_query_params().get('JobIds')
 
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+	def set_JobIds(self,JobIds):
+		self.add_query_param('JobIds',JobIds)
 
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
+	def get_UploadUrls(self):
+		return self.get_query_params().get('UploadUrls')
 
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_OwnerAccount(self):
-		return self.get_query_params().get('OwnerAccount')
-
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
-
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_DBId(self):
-		return self.get_query_params().get('DBId')
-
-	def set_DBId(self,DBId):
-		self.add_query_param('DBId',DBId)
+	def set_UploadUrls(self,UploadUrls):
+		self.add_query_param('UploadUrls',UploadUrls)

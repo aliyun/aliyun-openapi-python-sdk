@@ -31,18 +31,6 @@ class CreateUploadVideoRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_ResourceOwnerId(self):
-		return self.get_query_params().get('ResourceOwnerId')
-
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_TranscodeMode(self):
-		return self.get_query_params().get('TranscodeMode')
-
-	def set_TranscodeMode(self,TranscodeMode):
-		self.add_query_param('TranscodeMode',TranscodeMode)
-
 	def get_Description(self):
 		return self.get_query_params().get('Description')
 
@@ -90,30 +78,6 @@ class CreateUploadVideoRequest(RpcRequest):
 
 	def set_WorkflowId(self,WorkflowId):
 		self.add_query_param('WorkflowId',WorkflowId)
-
-	def get_CustomMediaInfo(self):
-		return self.get_query_params().get('CustomMediaInfo')
-
-	def set_CustomMediaInfo(self,CustomMediaInfo):
-		self.add_query_param('CustomMediaInfo',CustomMediaInfo)
-
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
-
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_IP(self):
-		return self.get_query_params().get('IP')
-
-	def set_IP(self,IP):
-		self.add_query_param('IP',IP)
-
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
 
 	def get_Tags(self):
 		return self.get_query_params().get('Tags')

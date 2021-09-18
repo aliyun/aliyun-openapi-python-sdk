@@ -31,35 +31,17 @@ class MoveAppResourceRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_ResourceOwnerId(self):
-		return self.get_query_params().get('ResourceOwnerId')
+	def get_ResourceType(self):
+		return self.get_query_params().get('ResourceType')
 
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+	def set_ResourceType(self,ResourceType):
+		self.add_query_param('ResourceType',ResourceType)
 
 	def get_TargetAppId(self):
 		return self.get_query_params().get('TargetAppId')
 
 	def set_TargetAppId(self,TargetAppId):
 		self.add_query_param('TargetAppId',TargetAppId)
-
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
-
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_ResourceType(self):
-		return self.get_query_params().get('ResourceType')
-
-	def set_ResourceType(self,ResourceType):
-		self.add_query_param('ResourceType',ResourceType)
 
 	def get_ResourceIds(self):
 		return self.get_query_params().get('ResourceIds')

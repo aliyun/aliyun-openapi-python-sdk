@@ -37,23 +37,11 @@ class DescribeVodUserDomainsRequest(RpcRequest):
 	def set_PageNumber(self,PageNumber):
 		self.add_query_param('PageNumber',PageNumber)
 
-	def get_CheckDomainShow(self):
-		return self.get_query_params().get('CheckDomainShow')
-
-	def set_CheckDomainShow(self,CheckDomainShow):
-		self.add_query_param('CheckDomainShow',CheckDomainShow)
-
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
 
 	def set_SecurityToken(self,SecurityToken):
 		self.add_query_param('SecurityToken',SecurityToken)
-
-	def get_CdnType(self):
-		return self.get_query_params().get('CdnType')
-
-	def set_CdnType(self,CdnType):
-		self.add_query_param('CdnType',CdnType)
 
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
@@ -71,12 +59,6 @@ class DescribeVodUserDomainsRequest(RpcRequest):
 			if Tags[depth1].get('Key') is not None:
 				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tags[depth1].get('Key'))
 
-	def get_FuncFilter(self):
-		return self.get_query_params().get('FuncFilter')
-
-	def set_FuncFilter(self,FuncFilter):
-		self.add_query_param('FuncFilter',FuncFilter)
-
 	def get_DomainName(self):
 		return self.get_query_params().get('DomainName')
 
@@ -88,12 +70,6 @@ class DescribeVodUserDomainsRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
-
-	def get_FuncId(self):
-		return self.get_query_params().get('FuncId')
-
-	def set_FuncId(self,FuncId):
-		self.add_query_param('FuncId',FuncId)
 
 	def get_DomainStatus(self):
 		return self.get_query_params().get('DomainStatus')

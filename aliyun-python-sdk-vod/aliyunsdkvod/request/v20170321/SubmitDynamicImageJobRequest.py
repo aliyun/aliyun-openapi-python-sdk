@@ -31,23 +31,11 @@ class SubmitDynamicImageJobRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_ResourceOwnerId(self):
-		return self.get_query_params().get('ResourceOwnerId')
-
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
 	def get_DynamicImageTemplateId(self):
 		return self.get_query_params().get('DynamicImageTemplateId')
 
 	def set_DynamicImageTemplateId(self,DynamicImageTemplateId):
 		self.add_query_param('DynamicImageTemplateId',DynamicImageTemplateId)
-
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
-
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
 	def get_VideoId(self):
 		return self.get_query_params().get('VideoId')
@@ -60,9 +48,3 @@ class SubmitDynamicImageJobRequest(RpcRequest):
 
 	def set_OverrideParams(self,OverrideParams):
 		self.add_query_param('OverrideParams',OverrideParams)
-
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)

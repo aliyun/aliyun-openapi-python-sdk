@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkvod.endpoint import endpoint_data
 
-class CreateDNADBRequest(RpcRequest):
+class SetCrossdomainContentRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'vod', '2017-03-21', 'CreateDNADB','vod')
+		RpcRequest.__init__(self, 'vod', '2017-03-21', 'SetCrossdomainContent','vod')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -37,23 +37,23 @@ class CreateDNADBRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_ClientToken(self):
-		return self.get_query_params().get('ClientToken')
+	def get_ResourceRealOwnerId(self):
+		return self.get_query_params().get('ResourceRealOwnerId')
 
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
+	def set_ResourceRealOwnerId(self,ResourceRealOwnerId):
+		self.add_query_param('ResourceRealOwnerId',ResourceRealOwnerId)
 
-	def get_DBRegion(self):
-		return self.get_query_params().get('DBRegion')
+	def get_Content(self):
+		return self.get_query_params().get('Content')
 
-	def set_DBRegion(self,DBRegion):
-		self.add_query_param('DBRegion',DBRegion)
+	def set_Content(self,Content):
+		self.add_query_param('Content',Content)
 
-	def get_DBDescription(self):
-		return self.get_query_params().get('DBDescription')
+	def get_StorageLocation(self):
+		return self.get_query_params().get('StorageLocation')
 
-	def set_DBDescription(self,DBDescription):
-		self.add_query_param('DBDescription',DBDescription)
+	def set_StorageLocation(self,StorageLocation):
+		self.add_query_param('StorageLocation',StorageLocation)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -61,20 +61,14 @@ class CreateDNADBRequest(RpcRequest):
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
+	def get_OwnerAccount(self):
+		return self.get_query_params().get('OwnerAccount')
+
+	def set_OwnerAccount(self,OwnerAccount):
+		self.add_query_param('OwnerAccount',OwnerAccount)
+
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
-
-	def get_DBName(self):
-		return self.get_query_params().get('DBName')
-
-	def set_DBName(self,DBName):
-		self.add_query_param('DBName',DBName)
-
-	def get_DBType(self):
-		return self.get_query_params().get('DBType')
-
-	def set_DBType(self,DBType):
-		self.add_query_param('DBType',DBType)

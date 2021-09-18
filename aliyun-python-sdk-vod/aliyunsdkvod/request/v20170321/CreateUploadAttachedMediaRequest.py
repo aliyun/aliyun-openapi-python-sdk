@@ -31,18 +31,6 @@ class CreateUploadAttachedMediaRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_ResourceOwnerId(self):
-		return self.get_query_params().get('ResourceOwnerId')
-
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_Icon(self):
-		return self.get_query_params().get('Icon')
-
-	def set_Icon(self,Icon):
-		self.add_query_param('Icon',Icon)
-
 	def get_Description(self):
 		return self.get_query_params().get('Description')
 
@@ -79,29 +67,11 @@ class CreateUploadAttachedMediaRequest(RpcRequest):
 	def set_UserData(self,UserData):
 		self.add_query_param('UserData',UserData)
 
-	def get_CateId(self):
-		return self.get_query_params().get('CateId')
-
-	def set_CateId(self,CateId):
-		self.add_query_param('CateId',CateId)
-
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
-
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
 	def get_CateIds(self):
 		return self.get_query_params().get('CateIds')
 
 	def set_CateIds(self,CateIds):
 		self.add_query_param('CateIds',CateIds)
-
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
 
 	def get_Tags(self):
 		return self.get_query_params().get('Tags')

@@ -31,12 +31,6 @@ class CreateUploadImageRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_ResourceOwnerId(self):
-		return self.get_query_params().get('ResourceOwnerId')
-
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
 	def get_Description(self):
 		return self.get_query_params().get('Description')
 
@@ -73,35 +67,17 @@ class CreateUploadImageRequest(RpcRequest):
 	def set_ImageType(self,ImageType):
 		self.add_query_param('ImageType',ImageType)
 
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
-
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
 	def get_ImageExt(self):
 		return self.get_query_params().get('ImageExt')
 
 	def set_ImageExt(self,ImageExt):
 		self.add_query_param('ImageExt',ImageExt)
 
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
 	def get_Tags(self):
 		return self.get_query_params().get('Tags')
 
 	def set_Tags(self,Tags):
 		self.add_query_param('Tags',Tags)
-
-	def get_OriginalFileName(self):
-		return self.get_query_params().get('OriginalFileName')
-
-	def set_OriginalFileName(self,OriginalFileName):
-		self.add_query_param('OriginalFileName',OriginalFileName)
 
 	def get_AppId(self):
 		return self.get_query_params().get('AppId')
