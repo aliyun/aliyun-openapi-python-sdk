@@ -37,3 +37,9 @@ class DeleteAliasRequest(RpcRequest):
 
 	def set_AliasName(self,AliasName):
 		self.add_query_param('AliasName',AliasName)
+
+	def get_SecurityToken(self):
+		return self.get_query_params().get('SecurityToken')
+
+	def set_SecurityToken(self,SecurityToken):
+		self.add_query_param('SecurityToken',SecurityToken)

@@ -73,3 +73,9 @@ class CreateKeyRequest(RpcRequest):
 
 	def set_EnableAutomaticRotation(self,EnableAutomaticRotation):
 		self.add_query_param('EnableAutomaticRotation',EnableAutomaticRotation)
+
+	def get_SecurityToken(self):
+		return self.get_query_params().get('SecurityToken')
+
+	def set_SecurityToken(self,SecurityToken):
+		self.add_query_param('SecurityToken',SecurityToken)

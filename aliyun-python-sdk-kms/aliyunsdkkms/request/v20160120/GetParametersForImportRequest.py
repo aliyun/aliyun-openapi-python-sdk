@@ -49,3 +49,9 @@ class GetParametersForImportRequest(RpcRequest):
 
 	def set_WrappingKeySpec(self,WrappingKeySpec):
 		self.add_query_param('WrappingKeySpec',WrappingKeySpec)
+
+	def get_SecurityToken(self):
+		return self.get_query_params().get('SecurityToken')
+
+	def set_SecurityToken(self,SecurityToken):
+		self.add_query_param('SecurityToken',SecurityToken)
