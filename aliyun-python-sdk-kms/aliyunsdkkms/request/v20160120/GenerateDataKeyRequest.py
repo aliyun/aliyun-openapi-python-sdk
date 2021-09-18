@@ -55,3 +55,9 @@ class GenerateDataKeyRequest(RpcRequest):
 
 	def set_NumberOfBytes(self,NumberOfBytes):
 		self.add_query_param('NumberOfBytes',NumberOfBytes)
+
+	def get_SecurityToken(self):
+		return self.get_query_params().get('SecurityToken')
+
+	def set_SecurityToken(self,SecurityToken):
+		self.add_query_param('SecurityToken',SecurityToken)

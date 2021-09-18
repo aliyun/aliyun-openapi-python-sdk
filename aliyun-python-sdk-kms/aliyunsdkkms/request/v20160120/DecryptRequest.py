@@ -43,3 +43,9 @@ class DecryptRequest(RpcRequest):
 
 	def set_CiphertextBlob(self,CiphertextBlob):
 		self.add_query_param('CiphertextBlob',CiphertextBlob)
+
+	def get_SecurityToken(self):
+		return self.get_query_params().get('SecurityToken')
+
+	def set_SecurityToken(self,SecurityToken):
+		self.add_query_param('SecurityToken',SecurityToken)

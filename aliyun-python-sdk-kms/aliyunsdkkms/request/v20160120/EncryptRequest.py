@@ -49,3 +49,9 @@ class EncryptRequest(RpcRequest):
 
 	def set_Plaintext(self,Plaintext):
 		self.add_query_param('Plaintext',Plaintext)
+
+	def get_SecurityToken(self):
+		return self.get_query_params().get('SecurityToken')
+
+	def set_SecurityToken(self,SecurityToken):
+		self.add_query_param('SecurityToken',SecurityToken)
