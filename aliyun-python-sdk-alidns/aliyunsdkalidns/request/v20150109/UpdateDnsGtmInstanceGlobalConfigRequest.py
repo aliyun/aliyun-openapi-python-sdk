@@ -54,6 +54,8 @@ class UpdateDnsGtmInstanceGlobalConfigRequest(RpcRequest):
 
 	def set_AlertConfigs(self, AlertConfigs):
 		for depth1 in range(len(AlertConfigs)):
+			if AlertConfigs[depth1].get('DingtalkNotice') is not None:
+				self.add_query_param('AlertConfig.' + str(depth1 + 1) + '.DingtalkNotice', AlertConfigs[depth1].get('DingtalkNotice'))
 			if AlertConfigs[depth1].get('SmsNotice') is not None:
 				self.add_query_param('AlertConfig.' + str(depth1 + 1) + '.SmsNotice', AlertConfigs[depth1].get('SmsNotice'))
 			if AlertConfigs[depth1].get('NoticeType') is not None:
@@ -79,6 +81,12 @@ class UpdateDnsGtmInstanceGlobalConfigRequest(RpcRequest):
 	def set_Ttl(self,Ttl):
 		self.add_query_param('Ttl',Ttl)
 
+	def get_ForceUpdate(self):
+		return self.get_query_params().get('ForceUpdate')
+
+	def set_ForceUpdate(self,ForceUpdate):
+		self.add_query_param('ForceUpdate',ForceUpdate)
+
 	def get_InstanceId(self):
 		return self.get_query_params().get('InstanceId')
 
@@ -90,6 +98,12 @@ class UpdateDnsGtmInstanceGlobalConfigRequest(RpcRequest):
 
 	def set_InstanceName(self,InstanceName):
 		self.add_query_param('InstanceName',InstanceName)
+
+	def get_PublicRr(self):
+		return self.get_query_params().get('PublicRr')
+
+	def set_PublicRr(self,PublicRr):
+		self.add_query_param('PublicRr',PublicRr)
 
 	def get_PublicZoneName(self):
 		return self.get_query_params().get('PublicZoneName')

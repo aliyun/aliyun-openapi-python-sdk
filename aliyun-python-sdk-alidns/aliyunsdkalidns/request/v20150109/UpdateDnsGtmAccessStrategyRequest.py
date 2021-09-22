@@ -134,3 +134,9 @@ class UpdateDnsGtmAccessStrategyRequest(RpcRequest):
 				self.add_query_param('FailoverAddrPool.' + str(depth1 + 1) + '.Id', FailoverAddrPools[depth1].get('Id'))
 			if FailoverAddrPools[depth1].get('LbaWeight') is not None:
 				self.add_query_param('FailoverAddrPool.' + str(depth1 + 1) + '.LbaWeight', FailoverAddrPools[depth1].get('LbaWeight'))
+
+	def get_AccessMode(self):
+		return self.get_query_params().get('AccessMode')
+
+	def set_AccessMode(self,AccessMode):
+		self.add_query_param('AccessMode',AccessMode)
