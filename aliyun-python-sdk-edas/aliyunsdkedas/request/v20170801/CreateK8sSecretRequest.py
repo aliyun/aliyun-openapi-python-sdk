@@ -32,6 +32,12 @@ class CreateK8sSecretRequest(RoaRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_Base64Encoded(self):
+		return self.get_body_params().get('Base64Encoded')
+
+	def set_Base64Encoded(self,Base64Encoded):
+		self.add_body_params('Base64Encoded', Base64Encoded)
+
 	def get_Data(self):
 		return self.get_body_params().get('Data')
 
