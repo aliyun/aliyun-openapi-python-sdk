@@ -23,40 +23,36 @@ from aliyunsdkdypnsapi.endpoint import endpoint_data
 class GetAuthTokenRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dypnsapi', '2017-05-25', 'GetAuthToken','dypns')
+		RpcRequest.__init__(self, 'Dypnsapi', '2017-05-25', 'GetAuthToken')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ResourceOwnerId(self):
+	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_ResourceOwnerAccount(self):
+	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
+		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_Origin(self):
+	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
+		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_Origin(self): # String
 		return self.get_query_params().get('Origin')
 
-	def set_Origin(self,Origin):
-		self.add_query_param('Origin',Origin)
-
-	def get_OwnerId(self):
+	def set_Origin(self, Origin):  # String
+		self.add_query_param('Origin', Origin)
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_Url(self):
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_Url(self): # String
 		return self.get_query_params().get('Url')
 
-	def set_Url(self,Url):
-		self.add_query_param('Url',Url)
+	def set_Url(self, Url):  # String
+		self.add_query_param('Url', Url)

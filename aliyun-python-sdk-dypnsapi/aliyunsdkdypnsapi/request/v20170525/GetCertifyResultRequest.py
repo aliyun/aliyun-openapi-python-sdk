@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdypnsapi.endpoint import endpoint_data
 
-class DescribeVerifySchemeRequest(RpcRequest):
+class GetCertifyResultRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dypnsapi', '2017-05-25', 'DescribeVerifyScheme')
+		RpcRequest.__init__(self, 'Dypnsapi', '2017-05-25', 'GetCertifyResult')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -46,13 +46,8 @@ class DescribeVerifySchemeRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
-	def get_SchemeCode(self): # String
-		return self.get_query_params().get('SchemeCode')
+	def get_Token(self): # String
+		return self.get_query_params().get('Token')
 
-	def set_SchemeCode(self, SchemeCode):  # String
-		self.add_query_param('SchemeCode', SchemeCode)
-	def get_CustomerId(self): # Long
-		return self.get_query_params().get('CustomerId')
-
-	def set_CustomerId(self, CustomerId):  # Long
-		self.add_query_param('CustomerId', CustomerId)
+	def set_Token(self, Token):  # String
+		self.add_query_param('Token', Token)

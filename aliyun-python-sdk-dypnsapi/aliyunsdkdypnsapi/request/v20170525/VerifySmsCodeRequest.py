@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdypnsapi.endpoint import endpoint_data
 
-class DescribeVerifySchemeRequest(RpcRequest):
+class VerifySmsCodeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dypnsapi', '2017-05-25', 'DescribeVerifyScheme')
+		RpcRequest.__init__(self, 'Dypnsapi', '2017-05-25', 'VerifySmsCode')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,28 +31,18 @@ class DescribeVerifySchemeRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ResourceOwnerId(self): # Long
-		return self.get_query_params().get('ResourceOwnerId')
+	def get_SmsToken(self): # String
+		return self.get_query_params().get('SmsToken')
 
-	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
-		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_ResourceOwnerAccount(self): # String
-		return self.get_query_params().get('ResourceOwnerAccount')
+	def set_SmsToken(self, SmsToken):  # String
+		self.add_query_param('SmsToken', SmsToken)
+	def get_PhoneNumber(self): # String
+		return self.get_query_params().get('PhoneNumber')
 
-	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
-		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
-	def get_OwnerId(self): # Long
-		return self.get_query_params().get('OwnerId')
+	def set_PhoneNumber(self, PhoneNumber):  # String
+		self.add_query_param('PhoneNumber', PhoneNumber)
+	def get_SmsCode(self): # String
+		return self.get_query_params().get('SmsCode')
 
-	def set_OwnerId(self, OwnerId):  # Long
-		self.add_query_param('OwnerId', OwnerId)
-	def get_SchemeCode(self): # String
-		return self.get_query_params().get('SchemeCode')
-
-	def set_SchemeCode(self, SchemeCode):  # String
-		self.add_query_param('SchemeCode', SchemeCode)
-	def get_CustomerId(self): # Long
-		return self.get_query_params().get('CustomerId')
-
-	def set_CustomerId(self, CustomerId):  # Long
-		self.add_query_param('CustomerId', CustomerId)
+	def set_SmsCode(self, SmsCode):  # String
+		self.add_query_param('SmsCode', SmsCode)

@@ -23,47 +23,42 @@ from aliyunsdkdypnsapi.endpoint import endpoint_data
 class VerifyMobileRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dypnsapi', '2017-05-25', 'VerifyMobile','dypns')
+		RpcRequest.__init__(self, 'Dypnsapi', '2017-05-25', 'VerifyMobile')
 		self.set_protocol_type('https')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ResourceOwnerId(self):
+	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_PhoneNumber(self):
+	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
+		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_PhoneNumber(self): # String
 		return self.get_query_params().get('PhoneNumber')
 
-	def set_PhoneNumber(self,PhoneNumber):
-		self.add_query_param('PhoneNumber',PhoneNumber)
-
-	def get_AccessCode(self):
+	def set_PhoneNumber(self, PhoneNumber):  # String
+		self.add_query_param('PhoneNumber', PhoneNumber)
+	def get_AccessCode(self): # String
 		return self.get_query_params().get('AccessCode')
 
-	def set_AccessCode(self,AccessCode):
-		self.add_query_param('AccessCode',AccessCode)
-
-	def get_ResourceOwnerAccount(self):
+	def set_AccessCode(self, AccessCode):  # String
+		self.add_query_param('AccessCode', AccessCode)
+	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_OwnerId(self):
+	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
+		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_OutId(self):
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_OutId(self): # String
 		return self.get_query_params().get('OutId')
 
-	def set_OutId(self,OutId):
-		self.add_query_param('OutId',OutId)
+	def set_OutId(self, OutId):  # String
+		self.add_query_param('OutId', OutId)

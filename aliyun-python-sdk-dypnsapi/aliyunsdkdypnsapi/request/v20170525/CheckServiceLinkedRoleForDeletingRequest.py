@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdypnsapi.endpoint import endpoint_data
 
-class DescribeVerifySchemeRequest(RpcRequest):
+class CheckServiceLinkedRoleForDeletingRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dypnsapi', '2017-05-25', 'DescribeVerifyScheme')
+		RpcRequest.__init__(self, 'Dypnsapi', '2017-05-25', 'CheckServiceLinkedRoleForDeleting')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,6 +36,21 @@ class DescribeVerifySchemeRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_DeletionTaskId(self): # String
+		return self.get_query_params().get('DeletionTaskId')
+
+	def set_DeletionTaskId(self, DeletionTaskId):  # String
+		self.add_query_param('DeletionTaskId', DeletionTaskId)
+	def get_AccountId(self): # String
+		return self.get_query_params().get('AccountId')
+
+	def set_AccountId(self, AccountId):  # String
+		self.add_query_param('AccountId', AccountId)
+	def get_ServiceName(self): # String
+		return self.get_query_params().get('ServiceName')
+
+	def set_ServiceName(self, ServiceName):  # String
+		self.add_query_param('ServiceName', ServiceName)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -46,13 +61,13 @@ class DescribeVerifySchemeRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
-	def get_SchemeCode(self): # String
-		return self.get_query_params().get('SchemeCode')
+	def get_SPIRegionId(self): # String
+		return self.get_query_params().get('SPIRegionId')
 
-	def set_SchemeCode(self, SchemeCode):  # String
-		self.add_query_param('SchemeCode', SchemeCode)
-	def get_CustomerId(self): # Long
-		return self.get_query_params().get('CustomerId')
+	def set_SPIRegionId(self, SPIRegionId):  # String
+		self.add_query_param('SPIRegionId', SPIRegionId)
+	def get_RoleArn(self): # String
+		return self.get_query_params().get('RoleArn')
 
-	def set_CustomerId(self, CustomerId):  # Long
-		self.add_query_param('CustomerId', CustomerId)
+	def set_RoleArn(self, RoleArn):  # String
+		self.add_query_param('RoleArn', RoleArn)

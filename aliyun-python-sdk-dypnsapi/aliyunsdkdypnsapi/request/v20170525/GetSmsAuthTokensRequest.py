@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdypnsapi.endpoint import endpoint_data
 
-class DescribeVerifySchemeRequest(RpcRequest):
+class GetSmsAuthTokensRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dypnsapi', '2017-05-25', 'DescribeVerifyScheme')
+		RpcRequest.__init__(self, 'Dypnsapi', '2017-05-25', 'GetSmsAuthTokens')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,23 +36,53 @@ class DescribeVerifySchemeRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_BundleId(self): # String
+		return self.get_query_params().get('BundleId')
+
+	def set_BundleId(self, BundleId):  # String
+		self.add_query_param('BundleId', BundleId)
+	def get_SignName(self): # String
+		return self.get_query_params().get('SignName')
+
+	def set_SignName(self, SignName):  # String
+		self.add_query_param('SignName', SignName)
+	def get_SceneCode(self): # String
+		return self.get_query_params().get('SceneCode')
+
+	def set_SceneCode(self, SceneCode):  # String
+		self.add_query_param('SceneCode', SceneCode)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
 	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
 		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_SmsCodeExpire(self): # Integer
+		return self.get_query_params().get('SmsCodeExpire')
+
+	def set_SmsCodeExpire(self, SmsCodeExpire):  # Integer
+		self.add_query_param('SmsCodeExpire', SmsCodeExpire)
+	def get_PackageName(self): # String
+		return self.get_query_params().get('PackageName')
+
+	def set_PackageName(self, PackageName):  # String
+		self.add_query_param('PackageName', PackageName)
+	def get_OsType(self): # String
+		return self.get_query_params().get('OsType')
+
+	def set_OsType(self, OsType):  # String
+		self.add_query_param('OsType', OsType)
 	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
-	def get_SchemeCode(self): # String
-		return self.get_query_params().get('SchemeCode')
+	def get_SmsTemplateCode(self): # String
+		return self.get_query_params().get('SmsTemplateCode')
 
-	def set_SchemeCode(self, SchemeCode):  # String
-		self.add_query_param('SchemeCode', SchemeCode)
-	def get_CustomerId(self): # Long
-		return self.get_query_params().get('CustomerId')
+	def set_SmsTemplateCode(self, SmsTemplateCode):  # String
+		self.add_query_param('SmsTemplateCode', SmsTemplateCode)
+	def get_Expire(self): # Long
+		return self.get_query_params().get('Expire')
 
-	def set_CustomerId(self, CustomerId):  # Long
-		self.add_query_param('CustomerId', CustomerId)
+	def set_Expire(self, Expire):  # Long
+		self.add_query_param('Expire', Expire)
