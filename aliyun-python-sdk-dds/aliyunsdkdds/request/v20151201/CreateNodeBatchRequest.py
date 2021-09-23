@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdds.endpoint import endpoint_data
 
-class CheckRecoveryConditionRequest(RpcRequest):
+class CreateNodeBatchRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dds', '2015-12-01', 'CheckRecoveryCondition','dds')
+		RpcRequest.__init__(self, 'Dds', '2015-12-01', 'CreateNodeBatch','dds')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -37,17 +37,23 @@ class CheckRecoveryConditionRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_ResourceGroupId(self):
-		return self.get_query_params().get('ResourceGroupId')
+	def get_ClientToken(self):
+		return self.get_query_params().get('ClientToken')
 
-	def set_ResourceGroupId(self,ResourceGroupId):
-		self.add_query_param('ResourceGroupId',ResourceGroupId)
+	def set_ClientToken(self,ClientToken):
+		self.add_query_param('ClientToken',ClientToken)
 
-	def get_DatabaseNames(self):
-		return self.get_query_params().get('DatabaseNames')
+	def get_NodesInfo(self):
+		return self.get_query_params().get('NodesInfo')
 
-	def set_DatabaseNames(self,DatabaseNames):
-		self.add_query_param('DatabaseNames',DatabaseNames)
+	def set_NodesInfo(self,NodesInfo):
+		self.add_query_param('NodesInfo',NodesInfo)
+
+	def get_CouponNo(self):
+		return self.get_query_params().get('CouponNo')
+
+	def set_CouponNo(self,CouponNo):
+		self.add_query_param('CouponNo',CouponNo)
 
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
@@ -55,11 +61,29 @@ class CheckRecoveryConditionRequest(RpcRequest):
 	def set_SecurityToken(self,SecurityToken):
 		self.add_query_param('SecurityToken',SecurityToken)
 
-	def get_RestoreTime(self):
-		return self.get_query_params().get('RestoreTime')
+	def get_DBInstanceId(self):
+		return self.get_query_params().get('DBInstanceId')
 
-	def set_RestoreTime(self,RestoreTime):
-		self.add_query_param('RestoreTime',RestoreTime)
+	def set_DBInstanceId(self,DBInstanceId):
+		self.add_query_param('DBInstanceId',DBInstanceId)
+
+	def get_BusinessInfo(self):
+		return self.get_query_params().get('BusinessInfo')
+
+	def set_BusinessInfo(self,BusinessInfo):
+		self.add_query_param('BusinessInfo',BusinessInfo)
+
+	def get_AutoPay(self):
+		return self.get_query_params().get('AutoPay')
+
+	def set_AutoPay(self,AutoPay):
+		self.add_query_param('AutoPay',AutoPay)
+
+	def get_FromApp(self):
+		return self.get_query_params().get('FromApp')
+
+	def set_FromApp(self,FromApp):
+		self.add_query_param('FromApp',FromApp)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -72,18 +96,6 @@ class CheckRecoveryConditionRequest(RpcRequest):
 
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
-
-	def get_BackupId(self):
-		return self.get_query_params().get('BackupId')
-
-	def set_BackupId(self,BackupId):
-		self.add_query_param('BackupId',BackupId)
-
-	def get_SourceDBInstance(self):
-		return self.get_query_params().get('SourceDBInstance')
-
-	def set_SourceDBInstance(self,SourceDBInstance):
-		self.add_query_param('SourceDBInstance',SourceDBInstance)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')

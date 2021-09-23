@@ -23,7 +23,7 @@ from aliyunsdkdds.endpoint import endpoint_data
 class DescribeAvailableResourceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dds', '2015-12-01', 'DescribeAvailableResource','Dds')
+		RpcRequest.__init__(self, 'Dds', '2015-12-01', 'DescribeAvailableResource','dds')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -36,6 +36,12 @@ class DescribeAvailableResourceRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+
+	def get_ResourceGroupId(self):
+		return self.get_query_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self,ResourceGroupId):
+		self.add_query_param('ResourceGroupId',ResourceGroupId)
 
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
@@ -66,6 +72,12 @@ class DescribeAvailableResourceRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_DbType(self):
+		return self.get_query_params().get('DbType')
+
+	def set_DbType(self,DbType):
+		self.add_query_param('DbType',DbType)
 
 	def get_ZoneId(self):
 		return self.get_query_params().get('ZoneId')

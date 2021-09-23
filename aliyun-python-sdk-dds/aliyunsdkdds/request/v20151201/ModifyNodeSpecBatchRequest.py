@@ -23,7 +23,7 @@ from aliyunsdkdds.endpoint import endpoint_data
 class ModifyNodeSpecBatchRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dds', '2015-12-01', 'ModifyNodeSpecBatch','Dds')
+		RpcRequest.__init__(self, 'Dds', '2015-12-01', 'ModifyNodeSpecBatch','dds')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -84,12 +84,6 @@ class ModifyNodeSpecBatchRequest(RpcRequest):
 
 	def set_AutoPay(self,AutoPay):
 		self.add_query_param('AutoPay',AutoPay)
-
-	def get_FromApp(self):
-		return self.get_query_params().get('FromApp')
-
-	def set_FromApp(self,FromApp):
-		self.add_query_param('FromApp',FromApp)
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
