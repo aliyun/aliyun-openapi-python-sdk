@@ -23,7 +23,7 @@ from aliyunsdkvs.endpoint import endpoint_data
 class DescribePurchasedDevicesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'vs', '2018-12-12', 'DescribePurchasedDevices','vs')
+		RpcRequest.__init__(self, 'vs', '2018-12-12', 'DescribePurchasedDevices')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())

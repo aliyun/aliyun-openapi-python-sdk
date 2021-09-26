@@ -23,7 +23,7 @@ from aliyunsdkvs.endpoint import endpoint_data
 class BatchUnbindDirectoriesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'vs', '2018-12-12', 'BatchUnbindDirectories','vs')
+		RpcRequest.__init__(self, 'vs', '2018-12-12', 'BatchUnbindDirectories')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())

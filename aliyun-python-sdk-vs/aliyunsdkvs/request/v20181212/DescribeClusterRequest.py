@@ -23,7 +23,7 @@ from aliyunsdkvs.endpoint import endpoint_data
 class DescribeClusterRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'vs', '2018-12-12', 'DescribeCluster','vs')
+		RpcRequest.__init__(self, 'vs', '2018-12-12', 'DescribeCluster')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
