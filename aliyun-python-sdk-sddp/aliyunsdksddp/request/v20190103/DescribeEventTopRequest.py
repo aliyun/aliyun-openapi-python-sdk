@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdksddp.endpoint import endpoint_data
 
-class DescribeRulesRequest(RpcRequest):
+class DescribeEventTopRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sddp', '2019-01-03', 'DescribeRules')
+		RpcRequest.__init__(self, 'Sddp', '2019-01-03', 'DescribeEventTop')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,29 +31,41 @@ class DescribeRulesRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_WarnLevel(self):
-		return self.get_query_params().get('WarnLevel')
-
-	def set_WarnLevel(self,WarnLevel):
-		self.add_query_param('WarnLevel',WarnLevel)
-
 	def get_ProductCode(self):
 		return self.get_query_params().get('ProductCode')
 
 	def set_ProductCode(self,ProductCode):
 		self.add_query_param('ProductCode',ProductCode)
 
-	def get_ProductId(self):
-		return self.get_query_params().get('ProductId')
+	def get_StartTime(self):
+		return self.get_query_params().get('StartTime')
 
-	def set_ProductId(self,ProductId):
-		self.add_query_param('ProductId',ProductId)
+	def set_StartTime(self,StartTime):
+		self.add_query_param('StartTime',StartTime)
 
-	def get_RiskLevelId(self):
-		return self.get_query_params().get('RiskLevelId')
+	def get_UserId(self):
+		return self.get_query_params().get('UserId')
 
-	def set_RiskLevelId(self,RiskLevelId):
-		self.add_query_param('RiskLevelId',RiskLevelId)
+	def set_UserId(self,UserId):
+		self.add_query_param('UserId',UserId)
+
+	def get_TypeCode(self):
+		return self.get_query_params().get('TypeCode')
+
+	def set_TypeCode(self,TypeCode):
+		self.add_query_param('TypeCode',TypeCode)
+
+	def get_SubTypeCode(self):
+		return self.get_query_params().get('SubTypeCode')
+
+	def set_SubTypeCode(self,SubTypeCode):
+		self.add_query_param('SubTypeCode',SubTypeCode)
+
+	def get_TargetProductCode(self):
+		return self.get_query_params().get('TargetProductCode')
+
+	def set_TargetProductCode(self,TargetProductCode):
+		self.add_query_param('TargetProductCode',TargetProductCode)
 
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
@@ -67,29 +79,17 @@ class DescribeRulesRequest(RpcRequest):
 	def set_Lang(self,Lang):
 		self.add_query_param('Lang',Lang)
 
-	def get_KeywordCompatible(self):
-		return self.get_query_params().get('KeywordCompatible')
+	def get_DealUserId(self):
+		return self.get_query_params().get('DealUserId')
 
-	def set_KeywordCompatible(self,KeywordCompatible):
-		self.add_query_param('KeywordCompatible',KeywordCompatible)
+	def set_DealUserId(self,DealUserId):
+		self.add_query_param('DealUserId',DealUserId)
 
-	def get_RuleType(self):
-		return self.get_query_params().get('RuleType')
+	def get_EndTime(self):
+		return self.get_query_params().get('EndTime')
 
-	def set_RuleType(self,RuleType):
-		self.add_query_param('RuleType',RuleType)
-
-	def get_GroupId(self):
-		return self.get_query_params().get('GroupId')
-
-	def set_GroupId(self,GroupId):
-		self.add_query_param('GroupId',GroupId)
-
-	def get_ContentCategory(self):
-		return self.get_query_params().get('ContentCategory')
-
-	def set_ContentCategory(self,ContentCategory):
-		self.add_query_param('ContentCategory',ContentCategory)
+	def set_EndTime(self,EndTime):
+		self.add_query_param('EndTime',EndTime)
 
 	def get_CurrentPage(self):
 		return self.get_query_params().get('CurrentPage')
@@ -97,26 +97,20 @@ class DescribeRulesRequest(RpcRequest):
 	def set_CurrentPage(self,CurrentPage):
 		self.add_query_param('CurrentPage',CurrentPage)
 
-	def get_CustomType(self):
-		return self.get_query_params().get('CustomType')
+	def get_InstanceName(self):
+		return self.get_query_params().get('InstanceName')
 
-	def set_CustomType(self,CustomType):
-		self.add_query_param('CustomType',CustomType)
-
-	def get_Name(self):
-		return self.get_query_params().get('Name')
-
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)
-
-	def get_Category(self):
-		return self.get_query_params().get('Category')
-
-	def set_Category(self,Category):
-		self.add_query_param('Category',Category)
+	def set_InstanceName(self,InstanceName):
+		self.add_query_param('InstanceName',InstanceName)
 
 	def get_Status(self):
 		return self.get_query_params().get('Status')
 
 	def set_Status(self,Status):
 		self.add_query_param('Status',Status)
+
+	def get_UserName(self):
+		return self.get_query_params().get('UserName')
+
+	def set_UserName(self,UserName):
+		self.add_query_param('UserName',UserName)

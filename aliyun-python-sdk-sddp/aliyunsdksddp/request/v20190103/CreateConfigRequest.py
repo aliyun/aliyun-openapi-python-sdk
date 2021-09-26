@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,10 +18,18 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdksddp.endpoint import endpoint_data
+
 class CreateConfigRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sddp', '2019-01-03', 'CreateConfig','sddp')
+		RpcRequest.__init__(self, 'Sddp', '2019-01-03', 'CreateConfig')
+		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_Code(self):
 		return self.get_query_params().get('Code')
@@ -29,29 +37,11 @@ class CreateConfigRequest(RpcRequest):
 	def set_Code(self,Code):
 		self.add_query_param('Code',Code)
 
-	def get_SourceIp(self):
-		return self.get_query_params().get('SourceIp')
-
-	def set_SourceIp(self,SourceIp):
-		self.add_query_param('SourceIp',SourceIp)
-
-	def get_FeatureType(self):
-		return self.get_query_params().get('FeatureType')
-
-	def set_FeatureType(self,FeatureType):
-		self.add_query_param('FeatureType',FeatureType)
-
 	def get_Description(self):
 		return self.get_query_params().get('Description')
 
 	def set_Description(self,Description):
 		self.add_query_param('Description',Description)
-
-	def get_ConfigList(self):
-		return self.get_query_params().get('ConfigList')
-
-	def set_ConfigList(self,ConfigList):
-		self.add_query_param('ConfigList',ConfigList)
 
 	def get_Lang(self):
 		return self.get_query_params().get('Lang')

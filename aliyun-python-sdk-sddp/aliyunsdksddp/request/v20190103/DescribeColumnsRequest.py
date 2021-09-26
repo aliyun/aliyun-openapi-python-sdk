@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,34 +18,42 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdksddp.endpoint import endpoint_data
+
 class DescribeColumnsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sddp', '2019-01-03', 'DescribeColumns','sddp')
+		RpcRequest.__init__(self, 'Sddp', '2019-01-03', 'DescribeColumns')
+		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_SourceIp(self):
-		return self.get_query_params().get('SourceIp')
 
-	def set_SourceIp(self,SourceIp):
-		self.add_query_param('SourceIp',SourceIp)
+	def get_ProductCode(self):
+		return self.get_query_params().get('ProductCode')
 
-	def get_FeatureType(self):
-		return self.get_query_params().get('FeatureType')
+	def set_ProductCode(self,ProductCode):
+		self.add_query_param('ProductCode',ProductCode)
 
-	def set_FeatureType(self,FeatureType):
-		self.add_query_param('FeatureType',FeatureType)
+	def get_RuleName(self):
+		return self.get_query_params().get('RuleName')
 
-	def get_RiskLevels(self):
-		return self.get_query_params().get('RiskLevels')
+	def set_RuleName(self,RuleName):
+		self.add_query_param('RuleName',RuleName)
 
-	def set_RiskLevels(self,RiskLevels):
-		self.add_query_param('RiskLevels',RiskLevels)
+	def get_RiskLevelId(self):
+		return self.get_query_params().get('RiskLevelId')
 
-	def get_Name(self):
-		return self.get_query_params().get('Name')
+	def set_RiskLevelId(self,RiskLevelId):
+		self.add_query_param('RiskLevelId',RiskLevelId)
 
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)
+	def get_SensLevelName(self):
+		return self.get_query_params().get('SensLevelName')
+
+	def set_SensLevelName(self,SensLevelName):
+		self.add_query_param('SensLevelName',SensLevelName)
 
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
@@ -59,23 +67,41 @@ class DescribeColumnsRequest(RpcRequest):
 	def set_TableId(self,TableId):
 		self.add_query_param('TableId',TableId)
 
+	def get_Lang(self):
+		return self.get_query_params().get('Lang')
+
+	def set_Lang(self,Lang):
+		self.add_query_param('Lang',Lang)
+
+	def get_TableName(self):
+		return self.get_query_params().get('TableName')
+
+	def set_TableName(self,TableName):
+		self.add_query_param('TableName',TableName)
+
 	def get_CurrentPage(self):
 		return self.get_query_params().get('CurrentPage')
 
 	def set_CurrentPage(self,CurrentPage):
 		self.add_query_param('CurrentPage',CurrentPage)
 
-	def get_QueryName(self):
-		return self.get_query_params().get('QueryName')
+	def get_InstanceId(self):
+		return self.get_query_params().get('InstanceId')
 
-	def set_QueryName(self,QueryName):
-		self.add_query_param('QueryName',QueryName)
+	def set_InstanceId(self,InstanceId):
+		self.add_query_param('InstanceId',InstanceId)
 
-	def get_Lang(self):
-		return self.get_query_params().get('Lang')
+	def get_InstanceName(self):
+		return self.get_query_params().get('InstanceName')
 
-	def set_Lang(self,Lang):
-		self.add_query_param('Lang',Lang)
+	def set_InstanceName(self,InstanceName):
+		self.add_query_param('InstanceName',InstanceName)
+
+	def get_Name(self):
+		return self.get_query_params().get('Name')
+
+	def set_Name(self,Name):
+		self.add_query_param('Name',Name)
 
 	def get_RuleId(self):
 		return self.get_query_params().get('RuleId')

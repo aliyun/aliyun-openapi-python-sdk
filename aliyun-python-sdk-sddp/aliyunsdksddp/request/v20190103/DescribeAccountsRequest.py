@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,10 +18,18 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdksddp.endpoint import endpoint_data
+
 class DescribeAccountsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sddp', '2019-01-03', 'DescribeAccounts','sddp')
+		RpcRequest.__init__(self, 'Sddp', '2019-01-03', 'DescribeAccounts')
+		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_ProductCode(self):
 		return self.get_query_params().get('ProductCode')
@@ -29,65 +37,17 @@ class DescribeAccountsRequest(RpcRequest):
 	def set_ProductCode(self,ProductCode):
 		self.add_query_param('ProductCode',ProductCode)
 
-	def get_LoginName(self):
-		return self.get_query_params().get('LoginName')
-
-	def set_LoginName(self,LoginName):
-		self.add_query_param('LoginName',LoginName)
-
-	def get_FeatureType(self):
-		return self.get_query_params().get('FeatureType')
-
-	def set_FeatureType(self,FeatureType):
-		self.add_query_param('FeatureType',FeatureType)
-
-	def get_ColumnId(self):
-		return self.get_query_params().get('ColumnId')
-
-	def set_ColumnId(self,ColumnId):
-		self.add_query_param('ColumnId',ColumnId)
-
 	def get_PackageId(self):
 		return self.get_query_params().get('PackageId')
 
 	def set_PackageId(self,PackageId):
 		self.add_query_param('PackageId',PackageId)
 
-	def get_CurrentPage(self):
-		return self.get_query_params().get('CurrentPage')
-
-	def set_CurrentPage(self,CurrentPage):
-		self.add_query_param('CurrentPage',CurrentPage)
-
-	def get_InstanceId(self):
-		return self.get_query_params().get('InstanceId')
-
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
-
-	def get_SourceIp(self):
-		return self.get_query_params().get('SourceIp')
-
-	def set_SourceIp(self,SourceIp):
-		self.add_query_param('SourceIp',SourceIp)
-
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
 
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
-
-	def get_DepartId(self):
-		return self.get_query_params().get('DepartId')
-
-	def set_DepartId(self,DepartId):
-		self.add_query_param('DepartId',DepartId)
-
-	def get_OperationId(self):
-		return self.get_query_params().get('OperationId')
-
-	def set_OperationId(self,OperationId):
-		self.add_query_param('OperationId',OperationId)
 
 	def get_TableId(self):
 		return self.get_query_params().get('TableId')
@@ -112,3 +72,45 @@ class DescribeAccountsRequest(RpcRequest):
 
 	def set_QueryType(self,QueryType):
 		self.add_query_param('QueryType',QueryType)
+
+	def get_LoginName(self):
+		return self.get_query_params().get('LoginName')
+
+	def set_LoginName(self,LoginName):
+		self.add_query_param('LoginName',LoginName)
+
+	def get_FeatureType(self):
+		return self.get_query_params().get('FeatureType')
+
+	def set_FeatureType(self,FeatureType):
+		self.add_query_param('FeatureType',FeatureType)
+
+	def get_ColumnId(self):
+		return self.get_query_params().get('ColumnId')
+
+	def set_ColumnId(self,ColumnId):
+		self.add_query_param('ColumnId',ColumnId)
+
+	def get_CurrentPage(self):
+		return self.get_query_params().get('CurrentPage')
+
+	def set_CurrentPage(self,CurrentPage):
+		self.add_query_param('CurrentPage',CurrentPage)
+
+	def get_InstanceId(self):
+		return self.get_query_params().get('InstanceId')
+
+	def set_InstanceId(self,InstanceId):
+		self.add_query_param('InstanceId',InstanceId)
+
+	def get_DepartId(self):
+		return self.get_query_params().get('DepartId')
+
+	def set_DepartId(self,DepartId):
+		self.add_query_param('DepartId',DepartId)
+
+	def get_OperationId(self):
+		return self.get_query_params().get('OperationId')
+
+	def set_OperationId(self,OperationId):
+		self.add_query_param('OperationId',OperationId)

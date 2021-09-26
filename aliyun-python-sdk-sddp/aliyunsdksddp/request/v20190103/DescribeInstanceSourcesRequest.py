@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdksddp.endpoint import endpoint_data
 
-class DescribePackagesRequest(RpcRequest):
+class DescribeInstanceSourcesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sddp', '2019-01-03', 'DescribePackages')
+		RpcRequest.__init__(self, 'Sddp', '2019-01-03', 'DescribeInstanceSources')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -37,12 +37,6 @@ class DescribePackagesRequest(RpcRequest):
 	def set_ProductId(self,ProductId):
 		self.add_query_param('ProductId',ProductId)
 
-	def get_RiskLevelId(self):
-		return self.get_query_params().get('RiskLevelId')
-
-	def set_RiskLevelId(self,RiskLevelId):
-		self.add_query_param('RiskLevelId',RiskLevelId)
-
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
 
@@ -55,11 +49,29 @@ class DescribePackagesRequest(RpcRequest):
 	def set_Lang(self,Lang):
 		self.add_query_param('Lang',Lang)
 
+	def get_ServiceRegionId(self):
+		return self.get_query_params().get('ServiceRegionId')
+
+	def set_ServiceRegionId(self,ServiceRegionId):
+		self.add_query_param('ServiceRegionId',ServiceRegionId)
+
+	def get_EngineType(self):
+		return self.get_query_params().get('EngineType')
+
+	def set_EngineType(self,EngineType):
+		self.add_query_param('EngineType',EngineType)
+
 	def get_CurrentPage(self):
 		return self.get_query_params().get('CurrentPage')
 
 	def set_CurrentPage(self,CurrentPage):
 		self.add_query_param('CurrentPage',CurrentPage)
+
+	def get_Authed(self):
+		return self.get_query_params().get('Authed')
+
+	def set_Authed(self,Authed):
+		self.add_query_param('Authed',Authed)
 
 	def get_InstanceId(self):
 		return self.get_query_params().get('InstanceId')
@@ -67,14 +79,8 @@ class DescribePackagesRequest(RpcRequest):
 	def set_InstanceId(self,InstanceId):
 		self.add_query_param('InstanceId',InstanceId)
 
-	def get_Name(self):
-		return self.get_query_params().get('Name')
+	def get_DbName(self):
+		return self.get_query_params().get('DbName')
 
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)
-
-	def get_RuleId(self):
-		return self.get_query_params().get('RuleId')
-
-	def set_RuleId(self,RuleId):
-		self.add_query_param('RuleId',RuleId)
+	def set_DbName(self,DbName):
+		self.add_query_param('DbName',DbName)

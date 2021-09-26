@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdksddp.endpoint import endpoint_data
 
-class ModifyDefaultLevelRequest(RpcRequest):
+class DescribeUserCountRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sddp', '2019-01-03', 'ModifyDefaultLevel')
+		RpcRequest.__init__(self, 'Sddp', '2019-01-03', 'DescribeUserCount')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,20 +31,8 @@ class ModifyDefaultLevelRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_DefaultId(self):
-		return self.get_query_params().get('DefaultId')
-
-	def set_DefaultId(self,DefaultId):
-		self.add_query_param('DefaultId',DefaultId)
-
 	def get_Lang(self):
 		return self.get_query_params().get('Lang')
 
 	def set_Lang(self,Lang):
 		self.add_query_param('Lang',Lang)
-
-	def get_SensitiveIds(self):
-		return self.get_query_params().get('SensitiveIds')
-
-	def set_SensitiveIds(self,SensitiveIds):
-		self.add_query_param('SensitiveIds',SensitiveIds)

@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdksddp.endpoint import endpoint_data
 
-class ModifyDefaultLevelRequest(RpcRequest):
+class DescribeDataMaskingTasksRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sddp', '2019-01-03', 'ModifyDefaultLevel')
+		RpcRequest.__init__(self, 'Sddp', '2019-01-03', 'DescribeDataMaskingTasks')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,11 +31,23 @@ class ModifyDefaultLevelRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_DefaultId(self):
-		return self.get_query_params().get('DefaultId')
+	def get_SearchKey(self):
+		return self.get_query_params().get('SearchKey')
 
-	def set_DefaultId(self,DefaultId):
-		self.add_query_param('DefaultId',DefaultId)
+	def set_SearchKey(self,SearchKey):
+		self.add_query_param('SearchKey',SearchKey)
+
+	def get_StartTime(self):
+		return self.get_query_params().get('StartTime')
+
+	def set_StartTime(self,StartTime):
+		self.add_query_param('StartTime',StartTime)
+
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
 
 	def get_Lang(self):
 		return self.get_query_params().get('Lang')
@@ -43,8 +55,20 @@ class ModifyDefaultLevelRequest(RpcRequest):
 	def set_Lang(self,Lang):
 		self.add_query_param('Lang',Lang)
 
-	def get_SensitiveIds(self):
-		return self.get_query_params().get('SensitiveIds')
+	def get_EndTime(self):
+		return self.get_query_params().get('EndTime')
 
-	def set_SensitiveIds(self,SensitiveIds):
-		self.add_query_param('SensitiveIds',SensitiveIds)
+	def set_EndTime(self,EndTime):
+		self.add_query_param('EndTime',EndTime)
+
+	def get_CurrentPage(self):
+		return self.get_query_params().get('CurrentPage')
+
+	def set_CurrentPage(self,CurrentPage):
+		self.add_query_param('CurrentPage',CurrentPage)
+
+	def get_DstType(self):
+		return self.get_query_params().get('DstType')
+
+	def set_DstType(self,DstType):
+		self.add_query_param('DstType',DstType)

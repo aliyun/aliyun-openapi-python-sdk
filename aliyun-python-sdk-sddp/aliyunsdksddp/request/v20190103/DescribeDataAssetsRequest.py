@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,28 +18,18 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdksddp.endpoint import endpoint_data
+
 class DescribeDataAssetsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sddp', '2019-01-03', 'DescribeDataAssets','sddp')
+		RpcRequest.__init__(self, 'Sddp', '2019-01-03', 'DescribeDataAssets')
+		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_RangeId(self):
-		return self.get_query_params().get('RangeId')
-
-	def set_RangeId(self,RangeId):
-		self.add_query_param('RangeId',RangeId)
-
-	def get_SourceIp(self):
-		return self.get_query_params().get('SourceIp')
-
-	def set_SourceIp(self,SourceIp):
-		self.add_query_param('SourceIp',SourceIp)
-
-	def get_FeatureType(self):
-		return self.get_query_params().get('FeatureType')
-
-	def set_FeatureType(self,FeatureType):
-		self.add_query_param('FeatureType',FeatureType)
 
 	def get_RiskLevels(self):
 		return self.get_query_params().get('RiskLevels')
@@ -47,11 +37,11 @@ class DescribeDataAssetsRequest(RpcRequest):
 	def set_RiskLevels(self,RiskLevels):
 		self.add_query_param('RiskLevels',RiskLevels)
 
-	def get_Name(self):
-		return self.get_query_params().get('Name')
+	def get_RangeId(self):
+		return self.get_query_params().get('RangeId')
 
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)
+	def set_RangeId(self,RangeId):
+		self.add_query_param('RangeId',RangeId)
 
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
@@ -59,17 +49,23 @@ class DescribeDataAssetsRequest(RpcRequest):
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
 
+	def get_Lang(self):
+		return self.get_query_params().get('Lang')
+
+	def set_Lang(self,Lang):
+		self.add_query_param('Lang',Lang)
+
 	def get_CurrentPage(self):
 		return self.get_query_params().get('CurrentPage')
 
 	def set_CurrentPage(self,CurrentPage):
 		self.add_query_param('CurrentPage',CurrentPage)
 
-	def get_Lang(self):
-		return self.get_query_params().get('Lang')
+	def get_Name(self):
+		return self.get_query_params().get('Name')
 
-	def set_Lang(self,Lang):
-		self.add_query_param('Lang',Lang)
+	def set_Name(self,Name):
+		self.add_query_param('Name',Name)
 
 	def get_RuleId(self):
 		return self.get_query_params().get('RuleId')

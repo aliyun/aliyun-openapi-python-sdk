@@ -6,8 +6,8 @@
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
 #
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 #
 # Unless required by applicable law or agreed to in writing,
@@ -18,34 +18,24 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdksddp.endpoint import endpoint_data
+
 class DescribeEventsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sddp', '2019-01-03', 'DescribeEvents','sddp')
+		RpcRequest.__init__(self, 'Sddp', '2019-01-03', 'DescribeEvents')
+		self.set_method('POST')
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 
 	def get_ProductCode(self):
 		return self.get_query_params().get('ProductCode')
 
 	def set_ProductCode(self,ProductCode):
 		self.add_query_param('ProductCode',ProductCode)
-
-	def get_FeatureType(self):
-		return self.get_query_params().get('FeatureType')
-
-	def set_FeatureType(self,FeatureType):
-		self.add_query_param('FeatureType',FeatureType)
-
-	def get_EndTime(self):
-		return self.get_query_params().get('EndTime')
-
-	def set_EndTime(self,EndTime):
-		self.add_query_param('EndTime',EndTime)
-
-	def get_CurrentPage(self):
-		return self.get_query_params().get('CurrentPage')
-
-	def set_CurrentPage(self,CurrentPage):
-		self.add_query_param('CurrentPage',CurrentPage)
 
 	def get_StartTime(self):
 		return self.get_query_params().get('StartTime')
@@ -71,12 +61,6 @@ class DescribeEventsRequest(RpcRequest):
 	def set_SubTypeCode(self,SubTypeCode):
 		self.add_query_param('SubTypeCode',SubTypeCode)
 
-	def get_SourceIp(self):
-		return self.get_query_params().get('SourceIp')
-
-	def set_SourceIp(self,SourceIp):
-		self.add_query_param('SourceIp',SourceIp)
-
 	def get_TargetProductCode(self):
 		return self.get_query_params().get('TargetProductCode')
 
@@ -89,11 +73,11 @@ class DescribeEventsRequest(RpcRequest):
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
 
-	def get_DepartId(self):
-		return self.get_query_params().get('DepartId')
+	def get_Id(self):
+		return self.get_query_params().get('Id')
 
-	def set_DepartId(self,DepartId):
-		self.add_query_param('DepartId',DepartId)
+	def set_Id(self,Id):
+		self.add_query_param('Id',Id)
 
 	def get_Lang(self):
 		return self.get_query_params().get('Lang')
@@ -107,8 +91,32 @@ class DescribeEventsRequest(RpcRequest):
 	def set_DealUserId(self,DealUserId):
 		self.add_query_param('DealUserId',DealUserId)
 
+	def get_EndTime(self):
+		return self.get_query_params().get('EndTime')
+
+	def set_EndTime(self,EndTime):
+		self.add_query_param('EndTime',EndTime)
+
+	def get_CurrentPage(self):
+		return self.get_query_params().get('CurrentPage')
+
+	def set_CurrentPage(self,CurrentPage):
+		self.add_query_param('CurrentPage',CurrentPage)
+
+	def get_InstanceName(self):
+		return self.get_query_params().get('InstanceName')
+
+	def set_InstanceName(self,InstanceName):
+		self.add_query_param('InstanceName',InstanceName)
+
 	def get_Status(self):
 		return self.get_query_params().get('Status')
 
 	def set_Status(self,Status):
 		self.add_query_param('Status',Status)
+
+	def get_UserName(self):
+		return self.get_query_params().get('UserName')
+
+	def set_UserName(self,UserName):
+		self.add_query_param('UserName',UserName)
