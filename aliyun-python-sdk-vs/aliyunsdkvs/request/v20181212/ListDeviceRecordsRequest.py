@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkvs.endpoint import endpoint_data
 
-class SetPresetRequest(RpcRequest):
+class ListDeviceRecordsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'vs', '2018-12-12', 'SetPreset','vs')
+		RpcRequest.__init__(self, 'vs', '2018-12-12', 'ListDeviceRecords','vs')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,26 +31,38 @@ class SetPresetRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_SubProtocol(self):
-		return self.get_query_params().get('SubProtocol')
+	def get_PageNum(self):
+		return self.get_query_params().get('PageNum')
 
-	def set_SubProtocol(self,SubProtocol):
-		self.add_query_param('SubProtocol',SubProtocol)
+	def set_PageNum(self,PageNum):
+		self.add_query_param('PageNum',PageNum)
 
-	def get_Id(self):
-		return self.get_query_params().get('Id')
+	def get_SearchCriteria(self):
+		return self.get_query_params().get('SearchCriteria')
 
-	def set_Id(self,Id):
-		self.add_query_param('Id',Id)
+	def set_SearchCriteria(self,SearchCriteria):
+		self.add_query_param('SearchCriteria',SearchCriteria)
 
-	def get_PresetId(self):
-		return self.get_query_params().get('PresetId')
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
 
-	def set_PresetId(self,PresetId):
-		self.add_query_param('PresetId',PresetId)
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
+
+	def get_StreamId(self):
+		return self.get_query_params().get('StreamId')
+
+	def set_StreamId(self,StreamId):
+		self.add_query_param('StreamId',StreamId)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_DeviceId(self):
+		return self.get_query_params().get('DeviceId')
+
+	def set_DeviceId(self,DeviceId):
+		self.add_query_param('DeviceId',DeviceId)

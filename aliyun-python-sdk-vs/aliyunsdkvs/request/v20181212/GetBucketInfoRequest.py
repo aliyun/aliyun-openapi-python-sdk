@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkvs.endpoint import endpoint_data
 
-class SetPresetRequest(RpcRequest):
+class GetBucketInfoRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'vs', '2018-12-12', 'SetPreset','vs')
+		RpcRequest.__init__(self, 'vs', '2018-12-12', 'GetBucketInfo','vs')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,23 +31,11 @@ class SetPresetRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_SubProtocol(self):
-		return self.get_query_params().get('SubProtocol')
+	def get_BucketName(self):
+		return self.get_query_params().get('BucketName')
 
-	def set_SubProtocol(self,SubProtocol):
-		self.add_query_param('SubProtocol',SubProtocol)
-
-	def get_Id(self):
-		return self.get_query_params().get('Id')
-
-	def set_Id(self,Id):
-		self.add_query_param('Id',Id)
-
-	def get_PresetId(self):
-		return self.get_query_params().get('PresetId')
-
-	def set_PresetId(self,PresetId):
-		self.add_query_param('PresetId',PresetId)
+	def set_BucketName(self,BucketName):
+		self.add_query_param('BucketName',BucketName)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')

@@ -31,6 +31,12 @@ class GotoPresetRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_SubProtocol(self):
+		return self.get_query_params().get('SubProtocol')
+
+	def set_SubProtocol(self,SubProtocol):
+		self.add_query_param('SubProtocol',SubProtocol)
+
 	def get_Id(self):
 		return self.get_query_params().get('Id')
 

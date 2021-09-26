@@ -37,6 +37,12 @@ class StopMoveRequest(RpcRequest):
 	def set_Tilt(self,Tilt):
 		self.add_query_param('Tilt',Tilt)
 
+	def get_SubProtocol(self):
+		return self.get_query_params().get('SubProtocol')
+
+	def set_SubProtocol(self,SubProtocol):
+		self.add_query_param('SubProtocol',SubProtocol)
+
 	def get_Id(self):
 		return self.get_query_params().get('Id')
 

@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkvs.endpoint import endpoint_data
 
-class SetPresetRequest(RpcRequest):
+class ListBucketsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'vs', '2018-12-12', 'SetPreset','vs')
+		RpcRequest.__init__(self, 'vs', '2018-12-12', 'ListBuckets','vs')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,26 +31,38 @@ class SetPresetRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_SubProtocol(self):
-		return self.get_query_params().get('SubProtocol')
+	def get_Prefix(self):
+		return self.get_query_params().get('Prefix')
 
-	def set_SubProtocol(self,SubProtocol):
-		self.add_query_param('SubProtocol',SubProtocol)
+	def set_Prefix(self,Prefix):
+		self.add_query_param('Prefix',Prefix)
 
-	def get_Id(self):
-		return self.get_query_params().get('Id')
+	def get_PageNumber(self):
+		return self.get_query_params().get('PageNumber')
 
-	def set_Id(self,Id):
-		self.add_query_param('Id',Id)
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)
 
-	def get_PresetId(self):
-		return self.get_query_params().get('PresetId')
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
 
-	def set_PresetId(self,PresetId):
-		self.add_query_param('PresetId',PresetId)
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
+
+	def get_Keyword(self):
+		return self.get_query_params().get('Keyword')
+
+	def set_Keyword(self,Keyword):
+		self.add_query_param('Keyword',Keyword)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_Marker(self):
+		return self.get_query_params().get('Marker')
+
+	def set_Marker(self,Marker):
+		self.add_query_param('Marker',Marker)

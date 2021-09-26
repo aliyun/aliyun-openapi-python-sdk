@@ -37,6 +37,12 @@ class StopAdjustRequest(RpcRequest):
 	def set_Focus(self,Focus):
 		self.add_query_param('Focus',Focus)
 
+	def get_SubProtocol(self):
+		return self.get_query_params().get('SubProtocol')
+
+	def set_SubProtocol(self,SubProtocol):
+		self.add_query_param('SubProtocol',SubProtocol)
+
 	def get_Id(self):
 		return self.get_query_params().get('Id')
 

@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkvs.endpoint import endpoint_data
 
-class SetPresetRequest(RpcRequest):
+class CreateDeviceSnapshotRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'vs', '2018-12-12', 'SetPreset','vs')
+		RpcRequest.__init__(self, 'vs', '2018-12-12', 'CreateDeviceSnapshot','vs')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,26 +31,32 @@ class SetPresetRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_SubProtocol(self):
-		return self.get_query_params().get('SubProtocol')
+	def get_SnapshotConfig(self):
+		return self.get_query_params().get('SnapshotConfig')
 
-	def set_SubProtocol(self,SubProtocol):
-		self.add_query_param('SubProtocol',SubProtocol)
+	def set_SnapshotConfig(self,SnapshotConfig):
+		self.add_query_param('SnapshotConfig',SnapshotConfig)
 
-	def get_Id(self):
-		return self.get_query_params().get('Id')
+	def get_Mode(self):
+		return self.get_query_params().get('Mode')
 
-	def set_Id(self,Id):
-		self.add_query_param('Id',Id)
+	def set_Mode(self,Mode):
+		self.add_query_param('Mode',Mode)
 
-	def get_PresetId(self):
-		return self.get_query_params().get('PresetId')
+	def get_StreamId(self):
+		return self.get_query_params().get('StreamId')
 
-	def set_PresetId(self,PresetId):
-		self.add_query_param('PresetId',PresetId)
+	def set_StreamId(self,StreamId):
+		self.add_query_param('StreamId',StreamId)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_DeviceId(self):
+		return self.get_query_params().get('DeviceId')
+
+	def set_DeviceId(self,DeviceId):
+		self.add_query_param('DeviceId',DeviceId)

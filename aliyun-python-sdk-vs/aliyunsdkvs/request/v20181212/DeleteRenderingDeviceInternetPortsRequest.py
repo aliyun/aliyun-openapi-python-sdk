@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkvs.endpoint import endpoint_data
 
-class SetPresetRequest(RpcRequest):
+class DeleteRenderingDeviceInternetPortsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'vs', '2018-12-12', 'SetPreset','vs')
+		RpcRequest.__init__(self, 'vs', '2018-12-12', 'DeleteRenderingDeviceInternetPorts','vs')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,26 +31,32 @@ class SetPresetRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_SubProtocol(self):
-		return self.get_query_params().get('SubProtocol')
+	def get_ISP(self):
+		return self.get_query_params().get('ISP')
 
-	def set_SubProtocol(self,SubProtocol):
-		self.add_query_param('SubProtocol',SubProtocol)
+	def set_ISP(self,ISP):
+		self.add_query_param('ISP',ISP)
 
-	def get_Id(self):
-		return self.get_query_params().get('Id')
+	def get_IpProtocol(self):
+		return self.get_query_params().get('IpProtocol')
 
-	def set_Id(self,Id):
-		self.add_query_param('Id',Id)
-
-	def get_PresetId(self):
-		return self.get_query_params().get('PresetId')
-
-	def set_PresetId(self,PresetId):
-		self.add_query_param('PresetId',PresetId)
+	def set_IpProtocol(self,IpProtocol):
+		self.add_query_param('IpProtocol',IpProtocol)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_InstanceIds(self):
+		return self.get_query_params().get('InstanceIds')
+
+	def set_InstanceIds(self,InstanceIds):
+		self.add_query_param('InstanceIds',InstanceIds)
+
+	def get_InternalPort(self):
+		return self.get_query_params().get('InternalPort')
+
+	def set_InternalPort(self,InternalPort):
+		self.add_query_param('InternalPort',InternalPort)

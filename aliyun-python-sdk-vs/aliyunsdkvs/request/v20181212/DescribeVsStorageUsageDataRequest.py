@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkvs.endpoint import endpoint_data
 
-class SetPresetRequest(RpcRequest):
+class DescribeVsStorageUsageDataRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'vs', '2018-12-12', 'SetPreset','vs')
+		RpcRequest.__init__(self, 'vs', '2018-12-12', 'DescribeVsStorageUsageData','vs')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,26 +31,38 @@ class SetPresetRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_SubProtocol(self):
-		return self.get_query_params().get('SubProtocol')
+	def get_StartTime(self):
+		return self.get_query_params().get('StartTime')
 
-	def set_SubProtocol(self,SubProtocol):
-		self.add_query_param('SubProtocol',SubProtocol)
+	def set_StartTime(self,StartTime):
+		self.add_query_param('StartTime',StartTime)
 
-	def get_Id(self):
-		return self.get_query_params().get('Id')
+	def get_SplitBy(self):
+		return self.get_query_params().get('SplitBy')
 
-	def set_Id(self,Id):
-		self.add_query_param('Id',Id)
+	def set_SplitBy(self,SplitBy):
+		self.add_query_param('SplitBy',SplitBy)
 
-	def get_PresetId(self):
-		return self.get_query_params().get('PresetId')
+	def get_EndTime(self):
+		return self.get_query_params().get('EndTime')
 
-	def set_PresetId(self,PresetId):
-		self.add_query_param('PresetId',PresetId)
+	def set_EndTime(self,EndTime):
+		self.add_query_param('EndTime',EndTime)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_Bucket(self):
+		return self.get_query_params().get('Bucket')
+
+	def set_Bucket(self,Bucket):
+		self.add_query_param('Bucket',Bucket)
+
+	def get_Interval(self):
+		return self.get_query_params().get('Interval')
+
+	def set_Interval(self,Interval):
+		self.add_query_param('Interval',Interval)

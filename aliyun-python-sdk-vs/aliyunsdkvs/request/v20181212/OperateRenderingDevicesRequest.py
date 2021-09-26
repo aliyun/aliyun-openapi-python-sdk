@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkvs.endpoint import endpoint_data
 
-class SetPresetRequest(RpcRequest):
+class OperateRenderingDevicesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'vs', '2018-12-12', 'SetPreset','vs')
+		RpcRequest.__init__(self, 'vs', '2018-12-12', 'OperateRenderingDevices','vs')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,26 +31,26 @@ class SetPresetRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_SubProtocol(self):
-		return self.get_query_params().get('SubProtocol')
+	def get_ForceStop(self):
+		return self.get_query_params().get('ForceStop')
 
-	def set_SubProtocol(self,SubProtocol):
-		self.add_query_param('SubProtocol',SubProtocol)
-
-	def get_Id(self):
-		return self.get_query_params().get('Id')
-
-	def set_Id(self,Id):
-		self.add_query_param('Id',Id)
-
-	def get_PresetId(self):
-		return self.get_query_params().get('PresetId')
-
-	def set_PresetId(self,PresetId):
-		self.add_query_param('PresetId',PresetId)
+	def set_ForceStop(self,ForceStop):
+		self.add_query_param('ForceStop',ForceStop)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_InstanceIds(self):
+		return self.get_query_params().get('InstanceIds')
+
+	def set_InstanceIds(self,InstanceIds):
+		self.add_query_param('InstanceIds',InstanceIds)
+
+	def get_Operation(self):
+		return self.get_query_params().get('Operation')
+
+	def set_Operation(self,Operation):
+		self.add_query_param('Operation',Operation)
