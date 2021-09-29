@@ -23,7 +23,7 @@ from aliyunsdksts.endpoint import endpoint_data
 class AssumeRoleWithSAMLRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sts', '2015-04-01', 'AssumeRoleWithSAML','sts')
+		RpcRequest.__init__(self, 'Sts', '2015-04-01', 'AssumeRoleWithSAML')
 		self.set_protocol_type('https')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
