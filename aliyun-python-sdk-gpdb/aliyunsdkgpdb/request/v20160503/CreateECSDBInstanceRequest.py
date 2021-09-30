@@ -31,53 +31,17 @@ class CreateECSDBInstanceRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_ClientToken(self):
-		return self.get_query_params().get('ClientToken')
-
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
-
-	def get_InstanceSpec(self):
-		return self.get_query_params().get('InstanceSpec')
-
-	def set_InstanceSpec(self,InstanceSpec):
-		self.add_query_param('InstanceSpec',InstanceSpec)
-
-	def get_StorageSize(self):
-		return self.get_query_params().get('StorageSize')
-
-	def set_StorageSize(self,StorageSize):
-		self.add_query_param('StorageSize',StorageSize)
-
-	def get_SegStorageType(self):
-		return self.get_query_params().get('SegStorageType')
-
-	def set_SegStorageType(self,SegStorageType):
-		self.add_query_param('SegStorageType',SegStorageType)
-
-	def get_MasterNodeNum(self):
-		return self.get_query_params().get('MasterNodeNum')
-
-	def set_MasterNodeNum(self,MasterNodeNum):
-		self.add_query_param('MasterNodeNum',MasterNodeNum)
-
 	def get_EngineVersion(self):
 		return self.get_query_params().get('EngineVersion')
 
 	def set_EngineVersion(self,EngineVersion):
 		self.add_query_param('EngineVersion',EngineVersion)
 
-	def get_SegNodeNum(self):
-		return self.get_query_params().get('SegNodeNum')
+	def get_DBInstanceCategory(self):
+		return self.get_query_params().get('DBInstanceCategory')
 
-	def set_SegNodeNum(self,SegNodeNum):
-		self.add_query_param('SegNodeNum',SegNodeNum)
-
-	def get_Engine(self):
-		return self.get_query_params().get('Engine')
-
-	def set_Engine(self,Engine):
-		self.add_query_param('Engine',Engine)
+	def set_DBInstanceCategory(self,DBInstanceCategory):
+		self.add_query_param('DBInstanceCategory',DBInstanceCategory)
 
 	def get_EncryptionType(self):
 		return self.get_query_params().get('EncryptionType')
@@ -115,12 +79,6 @@ class CreateECSDBInstanceRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_UsedTime(self):
-		return self.get_query_params().get('UsedTime')
-
-	def set_UsedTime(self,UsedTime):
-		self.add_query_param('UsedTime',UsedTime)
-
 	def get_SecurityIPList(self):
 		return self.get_query_params().get('SecurityIPList')
 
@@ -139,29 +97,77 @@ class CreateECSDBInstanceRequest(RpcRequest):
 	def set_PrivateIpAddress(self,PrivateIpAddress):
 		self.add_query_param('PrivateIpAddress',PrivateIpAddress)
 
-	def get_VPCId(self):
-		return self.get_query_params().get('VPCId')
-
-	def set_VPCId(self,VPCId):
-		self.add_query_param('VPCId',VPCId)
-
 	def get_ZoneId(self):
 		return self.get_query_params().get('ZoneId')
 
 	def set_ZoneId(self,ZoneId):
 		self.add_query_param('ZoneId',ZoneId)
 
-	def get_PayType(self):
-		return self.get_query_params().get('PayType')
-
-	def set_PayType(self,PayType):
-		self.add_query_param('PayType',PayType)
-
 	def get_InstanceNetworkType(self):
 		return self.get_query_params().get('InstanceNetworkType')
 
 	def set_InstanceNetworkType(self,InstanceNetworkType):
 		self.add_query_param('InstanceNetworkType',InstanceNetworkType)
+
+	def get_ClientToken(self):
+		return self.get_query_params().get('ClientToken')
+
+	def set_ClientToken(self,ClientToken):
+		self.add_query_param('ClientToken',ClientToken)
+
+	def get_InstanceSpec(self):
+		return self.get_query_params().get('InstanceSpec')
+
+	def set_InstanceSpec(self,InstanceSpec):
+		self.add_query_param('InstanceSpec',InstanceSpec)
+
+	def get_StorageSize(self):
+		return self.get_query_params().get('StorageSize')
+
+	def set_StorageSize(self,StorageSize):
+		self.add_query_param('StorageSize',StorageSize)
+
+	def get_SegStorageType(self):
+		return self.get_query_params().get('SegStorageType')
+
+	def set_SegStorageType(self,SegStorageType):
+		self.add_query_param('SegStorageType',SegStorageType)
+
+	def get_MasterNodeNum(self):
+		return self.get_query_params().get('MasterNodeNum')
+
+	def set_MasterNodeNum(self,MasterNodeNum):
+		self.add_query_param('MasterNodeNum',MasterNodeNum)
+
+	def get_SegNodeNum(self):
+		return self.get_query_params().get('SegNodeNum')
+
+	def set_SegNodeNum(self,SegNodeNum):
+		self.add_query_param('SegNodeNum',SegNodeNum)
+
+	def get_Engine(self):
+		return self.get_query_params().get('Engine')
+
+	def set_Engine(self,Engine):
+		self.add_query_param('Engine',Engine)
+
+	def get_UsedTime(self):
+		return self.get_query_params().get('UsedTime')
+
+	def set_UsedTime(self,UsedTime):
+		self.add_query_param('UsedTime',UsedTime)
+
+	def get_VPCId(self):
+		return self.get_query_params().get('VPCId')
+
+	def set_VPCId(self,VPCId):
+		self.add_query_param('VPCId',VPCId)
+
+	def get_PayType(self):
+		return self.get_query_params().get('PayType')
+
+	def set_PayType(self,PayType):
+		self.add_query_param('PayType',PayType)
 
 	def get_SrcDbInstanceName(self):
 		return self.get_query_params().get('SrcDbInstanceName')

@@ -31,6 +31,12 @@ class DescribeDBInstancesRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_DBInstanceStatuses(self):
+		return self.get_query_params().get('DBInstanceStatuses')
+
+	def set_DBInstanceStatuses(self,DBInstanceStatuses):
+		self.add_query_param('DBInstanceStatuses',DBInstanceStatuses)
+
 	def get_PageNumber(self):
 		return self.get_query_params().get('PageNumber')
 
@@ -70,6 +76,18 @@ class DescribeDBInstancesRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_DBInstanceCategories(self):
+		return self.get_query_params().get('DBInstanceCategories')
+
+	def set_DBInstanceCategories(self,DBInstanceCategories):
+		self.add_query_param('DBInstanceCategories',DBInstanceCategories)
+
+	def get_InstanceDeployTypes(self):
+		return self.get_query_params().get('InstanceDeployTypes')
+
+	def set_InstanceDeployTypes(self,InstanceDeployTypes):
+		self.add_query_param('InstanceDeployTypes',InstanceDeployTypes)
 
 	def get_InstanceNetworkType(self):
 		return self.get_query_params().get('InstanceNetworkType')
