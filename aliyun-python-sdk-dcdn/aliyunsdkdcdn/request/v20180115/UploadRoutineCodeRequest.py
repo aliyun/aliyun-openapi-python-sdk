@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdcdn.endpoint import endpoint_data
 
-class CreateDcdnSubTaskRequest(RpcRequest):
+class UploadRoutineCodeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'dcdn', '2018-01-15', 'CreateDcdnSubTask')
+		RpcRequest.__init__(self, 'dcdn', '2018-01-15', 'UploadRoutineCode')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,11 +31,11 @@ class CreateDcdnSubTaskRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_DomainName(self):
-		return self.get_body_params().get('DomainName')
+	def get_CodeDescription(self):
+		return self.get_body_params().get('CodeDescription')
 
-	def set_DomainName(self,DomainName):
-		self.add_body_params('DomainName', DomainName)
+	def set_CodeDescription(self,CodeDescription):
+		self.add_body_params('CodeDescription', CodeDescription)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
@@ -43,8 +43,8 @@ class CreateDcdnSubTaskRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_ReportIds(self):
-		return self.get_body_params().get('ReportIds')
+	def get_Name(self):
+		return self.get_body_params().get('Name')
 
-	def set_ReportIds(self,ReportIds):
-		self.add_body_params('ReportIds', ReportIds)
+	def set_Name(self,Name):
+		self.add_body_params('Name', Name)

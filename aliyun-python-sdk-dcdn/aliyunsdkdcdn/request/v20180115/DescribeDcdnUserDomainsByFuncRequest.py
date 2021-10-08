@@ -49,6 +49,18 @@ class DescribeDcdnUserDomainsByFuncRequest(RpcRequest):
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
 
+	def get_FuncFilter(self):
+		return self.get_query_params().get('FuncFilter')
+
+	def set_FuncFilter(self,FuncFilter):
+		self.add_query_param('FuncFilter',FuncFilter)
+
+	def get_DomainName(self):
+		return self.get_query_params().get('DomainName')
+
+	def set_DomainName(self,DomainName):
+		self.add_query_param('DomainName',DomainName)
+
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 

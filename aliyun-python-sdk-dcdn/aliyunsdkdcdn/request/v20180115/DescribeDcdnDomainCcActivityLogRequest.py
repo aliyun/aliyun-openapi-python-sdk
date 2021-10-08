@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdcdn.endpoint import endpoint_data
 
-class UpdateDcdnSubTaskRequest(RpcRequest):
+class DescribeDcdnDomainCcActivityLogRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'dcdn', '2018-01-15', 'UpdateDcdnSubTask')
+		RpcRequest.__init__(self, 'dcdn', '2018-01-15', 'DescribeDcdnDomainCcActivityLog')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,32 +31,56 @@ class UpdateDcdnSubTaskRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_RuleName(self):
+		return self.get_query_params().get('RuleName')
+
+	def set_RuleName(self,RuleName):
+		self.add_query_param('RuleName',RuleName)
+
 	def get_StartTime(self):
-		return self.get_body_params().get('StartTime')
+		return self.get_query_params().get('StartTime')
 
 	def set_StartTime(self,StartTime):
-		self.add_body_params('StartTime', StartTime)
+		self.add_query_param('StartTime',StartTime)
+
+	def get_TriggerObject(self):
+		return self.get_query_params().get('TriggerObject')
+
+	def set_TriggerObject(self,TriggerObject):
+		self.add_query_param('TriggerObject',TriggerObject)
+
+	def get_PageNumber(self):
+		return self.get_query_params().get('PageNumber')
+
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)
+
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
+
+	def get_Value(self):
+		return self.get_query_params().get('Value')
+
+	def set_Value(self,Value):
+		self.add_query_param('Value',Value)
 
 	def get_DomainName(self):
-		return self.get_body_params().get('DomainName')
+		return self.get_query_params().get('DomainName')
 
 	def set_DomainName(self,DomainName):
-		self.add_body_params('DomainName', DomainName)
+		self.add_query_param('DomainName',DomainName)
 
 	def get_EndTime(self):
-		return self.get_body_params().get('EndTime')
+		return self.get_query_params().get('EndTime')
 
 	def set_EndTime(self,EndTime):
-		self.add_body_params('EndTime', EndTime)
+		self.add_query_param('EndTime',EndTime)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
-
-	def get_ReportIds(self):
-		return self.get_body_params().get('ReportIds')
-
-	def set_ReportIds(self,ReportIds):
-		self.add_body_params('ReportIds', ReportIds)

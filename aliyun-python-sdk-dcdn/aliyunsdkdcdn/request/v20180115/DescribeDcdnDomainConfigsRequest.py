@@ -54,3 +54,9 @@ class DescribeDcdnDomainConfigsRequest(RpcRequest):
 
 	def set_SecurityToken(self,SecurityToken):
 		self.add_query_param('SecurityToken',SecurityToken)
+
+	def get_ConfigId(self):
+		return self.get_query_params().get('ConfigId')
+
+	def set_ConfigId(self,ConfigId):
+		self.add_query_param('ConfigId',ConfigId)

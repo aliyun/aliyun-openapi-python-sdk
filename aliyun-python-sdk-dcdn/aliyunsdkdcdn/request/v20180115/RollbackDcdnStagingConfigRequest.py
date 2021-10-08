@@ -31,12 +31,6 @@ class RollbackDcdnStagingConfigRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_FunctionName(self):
-		return self.get_query_params().get('FunctionName')
-
-	def set_FunctionName(self,FunctionName):
-		self.add_query_param('FunctionName',FunctionName)
-
 	def get_DomainName(self):
 		return self.get_query_params().get('DomainName')
 
