@@ -37,20 +37,8 @@ class DescribeCdnReportListRequest(RpcRequest):
 	def set_ReportId(self,ReportId):
 		self.add_query_param('ReportId',ReportId)
 
-	def get_Permission(self):
-		return self.get_query_params().get('Permission')
-
-	def set_Permission(self,Permission):
-		self.add_query_param('Permission',Permission)
-
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
-
-	def get_Status(self):
-		return self.get_query_params().get('Status')
-
-	def set_Status(self,Status):
-		self.add_query_param('Status',Status)

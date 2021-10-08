@@ -72,9 +72,3 @@ class UpdateCdnDeliverTaskRequest(RpcRequest):
 
 	def set_Name(self,Name):
 		self.add_body_params('Name', Name)
-
-	def get_Status(self):
-		return self.get_body_params().get('Status')
-
-	def set_Status(self,Status):
-		self.add_body_params('Status', Status)

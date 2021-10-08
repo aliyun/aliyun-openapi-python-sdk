@@ -31,6 +31,12 @@ class DescribeUserDomainsRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_Source(self):
+		return self.get_query_params().get('Source')
+
+	def set_Source(self,Source):
+		self.add_query_param('Source',Source)
+
 	def get_PageNumber(self):
 		return self.get_query_params().get('PageNumber')
 

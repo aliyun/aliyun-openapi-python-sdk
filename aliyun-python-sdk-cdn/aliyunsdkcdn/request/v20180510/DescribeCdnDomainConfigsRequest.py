@@ -37,6 +37,12 @@ class DescribeCdnDomainConfigsRequest(RpcRequest):
 	def set_FunctionNames(self,FunctionNames):
 		self.add_query_param('FunctionNames',FunctionNames)
 
+	def get_SecurityToken(self):
+		return self.get_query_params().get('SecurityToken')
+
+	def set_SecurityToken(self,SecurityToken):
+		self.add_query_param('SecurityToken',SecurityToken)
+
 	def get_DomainName(self):
 		return self.get_query_params().get('DomainName')
 
@@ -49,8 +55,8 @@ class DescribeCdnDomainConfigsRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_SecurityToken(self):
-		return self.get_query_params().get('SecurityToken')
+	def get_ConfigId(self):
+		return self.get_query_params().get('ConfigId')
 
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)
+	def set_ConfigId(self,ConfigId):
+		self.add_query_param('ConfigId',ConfigId)

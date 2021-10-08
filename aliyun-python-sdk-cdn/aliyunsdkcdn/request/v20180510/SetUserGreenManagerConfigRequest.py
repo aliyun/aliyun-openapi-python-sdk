@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcdn.endpoint import endpoint_data
 
-class SetDomainGreenManagerConfigRequest(RpcRequest):
+class SetUserGreenManagerConfigRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cdn', '2018-05-10', 'SetDomainGreenManagerConfig')
+		RpcRequest.__init__(self, 'Cdn', '2018-05-10', 'SetUserGreenManagerConfig')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,20 +31,26 @@ class SetDomainGreenManagerConfigRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_Enable(self):
-		return self.get_query_params().get('Enable')
-
-	def set_Enable(self,Enable):
-		self.add_query_param('Enable',Enable)
-
-	def get_DomainName(self):
-		return self.get_query_params().get('DomainName')
-
-	def set_DomainName(self,DomainName):
-		self.add_query_param('DomainName',DomainName)
-
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_SecurityToken(self):
+		return self.get_query_params().get('SecurityToken')
+
+	def set_SecurityToken(self,SecurityToken):
+		self.add_query_param('SecurityToken',SecurityToken)
+
+	def get_Quota(self):
+		return self.get_query_params().get('Quota')
+
+	def set_Quota(self,Quota):
+		self.add_query_param('Quota',Quota)
+
+	def get_Ratio(self):
+		return self.get_query_params().get('Ratio')
+
+	def set_Ratio(self,Ratio):
+		self.add_query_param('Ratio',Ratio)

@@ -60,9 +60,3 @@ class UpdateCdnSubTaskRequest(RpcRequest):
 
 	def set_ReportIds(self,ReportIds):
 		self.add_body_params('ReportIds', ReportIds)
-
-	def get_Status(self):
-		return self.get_body_params().get('Status')
-
-	def set_Status(self,Status):
-		self.add_body_params('Status', Status)

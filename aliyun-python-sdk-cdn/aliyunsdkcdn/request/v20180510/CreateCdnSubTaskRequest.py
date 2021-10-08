@@ -31,23 +31,11 @@ class CreateCdnSubTaskRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_StartTime(self):
-		return self.get_body_params().get('StartTime')
-
-	def set_StartTime(self,StartTime):
-		self.add_body_params('StartTime', StartTime)
-
 	def get_DomainName(self):
 		return self.get_body_params().get('DomainName')
 
 	def set_DomainName(self,DomainName):
 		self.add_body_params('DomainName', DomainName)
-
-	def get_EndTime(self):
-		return self.get_body_params().get('EndTime')
-
-	def set_EndTime(self,EndTime):
-		self.add_body_params('EndTime', EndTime)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
@@ -60,9 +48,3 @@ class CreateCdnSubTaskRequest(RpcRequest):
 
 	def set_ReportIds(self,ReportIds):
 		self.add_body_params('ReportIds', ReportIds)
-
-	def get_Status(self):
-		return self.get_body_params().get('Status')
-
-	def set_Status(self,Status):
-		self.add_body_params('Status', Status)
