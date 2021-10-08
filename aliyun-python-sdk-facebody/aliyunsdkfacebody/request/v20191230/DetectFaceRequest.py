@@ -31,6 +31,30 @@ class DetectFaceRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_MaxFaceNumber(self):
+		return self.get_body_params().get('MaxFaceNumber')
+
+	def set_MaxFaceNumber(self,MaxFaceNumber):
+		self.add_body_params('MaxFaceNumber', MaxFaceNumber)
+
+	def get_Landmark(self):
+		return self.get_body_params().get('Landmark')
+
+	def set_Landmark(self,Landmark):
+		self.add_body_params('Landmark', Landmark)
+
+	def get_Pose(self):
+		return self.get_body_params().get('Pose')
+
+	def set_Pose(self,Pose):
+		self.add_body_params('Pose', Pose)
+
+	def get_Quality(self):
+		return self.get_body_params().get('Quality')
+
+	def set_Quality(self,Quality):
+		self.add_body_params('Quality', Quality)
+
 	def get_ImageURL(self):
 		return self.get_body_params().get('ImageURL')
 

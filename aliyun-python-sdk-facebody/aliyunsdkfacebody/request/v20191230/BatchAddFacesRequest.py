@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkfacebody.endpoint import endpoint_data
 
-class SearchFaceRequest(RpcRequest):
+class BatchAddFacesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'facebody', '2019-12-30', 'SearchFace','facebody')
+		RpcRequest.__init__(self, 'facebody', '2019-12-30', 'BatchAddFaces','facebody')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,11 +31,11 @@ class SearchFaceRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_MaxFaceNum(self):
-		return self.get_body_params().get('MaxFaceNum')
+	def get_EntityId(self):
+		return self.get_body_params().get('EntityId')
 
-	def set_MaxFaceNum(self,MaxFaceNum):
-		self.add_body_params('MaxFaceNum', MaxFaceNum)
+	def set_EntityId(self,EntityId):
+		self.add_body_params('EntityId', EntityId)
 
 	def get_QualityScoreThreshold(self):
 		return self.get_body_params().get('QualityScoreThreshold')
@@ -43,17 +43,17 @@ class SearchFaceRequest(RpcRequest):
 	def set_QualityScoreThreshold(self,QualityScoreThreshold):
 		self.add_body_params('QualityScoreThreshold', QualityScoreThreshold)
 
-	def get_Limit(self):
-		return self.get_body_params().get('Limit')
+	def get_SimilarityScoreThresholdBetweenEntity(self):
+		return self.get_body_params().get('SimilarityScoreThresholdBetweenEntity')
 
-	def set_Limit(self,Limit):
-		self.add_body_params('Limit', Limit)
+	def set_SimilarityScoreThresholdBetweenEntity(self,SimilarityScoreThresholdBetweenEntity):
+		self.add_body_params('SimilarityScoreThresholdBetweenEntity', SimilarityScoreThresholdBetweenEntity)
 
-	def get_DbNames(self):
-		return self.get_body_params().get('DbNames')
+	def get_SimilarityScoreThresholdInEntity(self):
+		return self.get_body_params().get('SimilarityScoreThresholdInEntity')
 
-	def set_DbNames(self,DbNames):
-		self.add_body_params('DbNames', DbNames)
+	def set_SimilarityScoreThresholdInEntity(self,SimilarityScoreThresholdInEntity):
+		self.add_body_params('SimilarityScoreThresholdInEntity', SimilarityScoreThresholdInEntity)
 
 	def get_DbName(self):
 		return self.get_body_params().get('DbName')
@@ -61,8 +61,8 @@ class SearchFaceRequest(RpcRequest):
 	def set_DbName(self,DbName):
 		self.add_body_params('DbName', DbName)
 
-	def get_ImageUrl(self):
-		return self.get_body_params().get('ImageUrl')
+	def get_Faces(self):
+		return self.get_body_params().get('Faces')
 
-	def set_ImageUrl(self,ImageUrl):
-		self.add_body_params('ImageUrl', ImageUrl)
+	def set_Faces(self,Faces):
+		self.add_body_params('Faces', Faces)
