@@ -25,82 +25,70 @@ class InvokeCommandRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'InvokeCommand','ecs')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ResourceOwnerId(self):
+	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_CommandId(self):
+	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
+		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_CommandId(self): # String
 		return self.get_query_params().get('CommandId')
 
-	def set_CommandId(self,CommandId):
-		self.add_query_param('CommandId',CommandId)
-
-	def get_Frequency(self):
+	def set_CommandId(self, CommandId):  # String
+		self.add_query_param('CommandId', CommandId)
+	def get_Frequency(self): # String
 		return self.get_query_params().get('Frequency')
 
-	def set_Frequency(self,Frequency):
-		self.add_query_param('Frequency',Frequency)
-
-	def get_RepeatMode(self):
+	def set_Frequency(self, Frequency):  # String
+		self.add_query_param('Frequency', Frequency)
+	def get_RepeatMode(self): # String
 		return self.get_query_params().get('RepeatMode')
 
-	def set_RepeatMode(self,RepeatMode):
-		self.add_query_param('RepeatMode',RepeatMode)
-
-	def get_WindowsPasswordName(self):
+	def set_RepeatMode(self, RepeatMode):  # String
+		self.add_query_param('RepeatMode', RepeatMode)
+	def get_WindowsPasswordName(self): # String
 		return self.get_query_params().get('WindowsPasswordName')
 
-	def set_WindowsPasswordName(self,WindowsPasswordName):
-		self.add_query_param('WindowsPasswordName',WindowsPasswordName)
-
-	def get_Timed(self):
+	def set_WindowsPasswordName(self, WindowsPasswordName):  # String
+		self.add_query_param('WindowsPasswordName', WindowsPasswordName)
+	def get_Timed(self): # Boolean
 		return self.get_query_params().get('Timed')
 
-	def set_Timed(self,Timed):
-		self.add_query_param('Timed',Timed)
-
-	def get_ResourceOwnerAccount(self):
+	def set_Timed(self, Timed):  # Boolean
+		self.add_query_param('Timed', Timed)
+	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_OwnerAccount(self):
+	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
+		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_OwnerAccount(self): # String
 		return self.get_query_params().get('OwnerAccount')
 
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
-
-	def get_OwnerId(self):
+	def set_OwnerAccount(self, OwnerAccount):  # String
+		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_InstanceIds(self):
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_InstanceIds(self): # RepeatList
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceIds(self, InstanceIds):
-		for depth1 in range(len(InstanceIds)):
-			if InstanceIds[depth1] is not None:
-				self.add_query_param('InstanceId.' + str(depth1 + 1) , InstanceIds[depth1])
+	def set_InstanceIds(self, InstanceId):  # RepeatList
+		for depth1 in range(len(InstanceId)):
+			self.add_query_param('InstanceId.' + str(depth1 + 1), InstanceId)
+		def get_Parameters(self): # Json
+			return self.get_query_params().get('Parameters')
 
-	def get_Parameters(self):
-		return self.get_query_params().get('Parameters')
+		def set_Parameters(self, Parameters):  # Json
+			self.add_query_param('Parameters', Parameters)
+		def get_Username(self): # String
+			return self.get_query_params().get('Username')
 
-	def set_Parameters(self,Parameters):
-		self.add_query_param('Parameters',Parameters)
-
-	def get_Username(self):
-		return self.get_query_params().get('Username')
-
-	def set_Username(self,Username):
-		self.add_query_param('Username',Username)
+		def set_Username(self, Username):  # String
+			self.add_query_param('Username', Username)

@@ -25,52 +25,45 @@ class RemoveBandwidthPackageIpsRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'RemoveBandwidthPackageIps','ecs')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ResourceOwnerId(self):
+	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_ClientToken(self):
+	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
+		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_ClientToken(self): # String
 		return self.get_query_params().get('ClientToken')
 
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
-
-	def get_RemovedIpAddressess(self):
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_query_param('ClientToken', ClientToken)
+	def get_RemovedIpAddressess(self): # RepeatList
 		return self.get_query_params().get('RemovedIpAddresses')
 
-	def set_RemovedIpAddressess(self, RemovedIpAddressess):
-		for depth1 in range(len(RemovedIpAddressess)):
-			if RemovedIpAddressess[depth1] is not None:
-				self.add_query_param('RemovedIpAddresses.' + str(depth1 + 1) , RemovedIpAddressess[depth1])
+	def set_RemovedIpAddressess(self, RemovedIpAddresses):  # RepeatList
+		for depth1 in range(len(RemovedIpAddresses)):
+			self.add_query_param('RemovedIpAddresses.' + str(depth1 + 1), RemovedIpAddresses)
+		def get_BandwidthPackageId(self): # String
+			return self.get_query_params().get('BandwidthPackageId')
 
-	def get_BandwidthPackageId(self):
-		return self.get_query_params().get('BandwidthPackageId')
+		def set_BandwidthPackageId(self, BandwidthPackageId):  # String
+			self.add_query_param('BandwidthPackageId', BandwidthPackageId)
+		def get_ResourceOwnerAccount(self): # String
+			return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_BandwidthPackageId(self,BandwidthPackageId):
-		self.add_query_param('BandwidthPackageId',BandwidthPackageId)
+		def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
+			self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+		def get_OwnerAccount(self): # String
+			return self.get_query_params().get('OwnerAccount')
 
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
+		def set_OwnerAccount(self, OwnerAccount):  # String
+			self.add_query_param('OwnerAccount', OwnerAccount)
+		def get_OwnerId(self): # Long
+			return self.get_query_params().get('OwnerId')
 
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_OwnerAccount(self):
-		return self.get_query_params().get('OwnerAccount')
-
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
-
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
+		def set_OwnerId(self, OwnerId):  # Long
+			self.add_query_param('OwnerId', OwnerId)

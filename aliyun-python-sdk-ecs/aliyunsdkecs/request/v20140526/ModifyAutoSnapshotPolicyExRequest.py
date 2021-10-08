@@ -25,74 +25,64 @@ class ModifyAutoSnapshotPolicyExRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'ModifyAutoSnapshotPolicyEx','ecs')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ResourceOwnerId(self):
+	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_autoSnapshotPolicyId(self):
+	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
+		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_autoSnapshotPolicyId(self): # String
 		return self.get_query_params().get('autoSnapshotPolicyId')
 
-	def set_autoSnapshotPolicyId(self,autoSnapshotPolicyId):
-		self.add_query_param('autoSnapshotPolicyId',autoSnapshotPolicyId)
-
-	def get_CopiedSnapshotsRetentionDays(self):
+	def set_autoSnapshotPolicyId(self, autoSnapshotPolicyId):  # String
+		self.add_query_param('autoSnapshotPolicyId', autoSnapshotPolicyId)
+	def get_CopiedSnapshotsRetentionDays(self): # Integer
 		return self.get_query_params().get('CopiedSnapshotsRetentionDays')
 
-	def set_CopiedSnapshotsRetentionDays(self,CopiedSnapshotsRetentionDays):
-		self.add_query_param('CopiedSnapshotsRetentionDays',CopiedSnapshotsRetentionDays)
-
-	def get_timePoints(self):
+	def set_CopiedSnapshotsRetentionDays(self, CopiedSnapshotsRetentionDays):  # Integer
+		self.add_query_param('CopiedSnapshotsRetentionDays', CopiedSnapshotsRetentionDays)
+	def get_timePoints(self): # String
 		return self.get_query_params().get('timePoints')
 
-	def set_timePoints(self,timePoints):
-		self.add_query_param('timePoints',timePoints)
-
-	def get_repeatWeekdays(self):
+	def set_timePoints(self, timePoints):  # String
+		self.add_query_param('timePoints', timePoints)
+	def get_repeatWeekdays(self): # String
 		return self.get_query_params().get('repeatWeekdays')
 
-	def set_repeatWeekdays(self,repeatWeekdays):
-		self.add_query_param('repeatWeekdays',repeatWeekdays)
-
-	def get_EnableCrossRegionCopy(self):
+	def set_repeatWeekdays(self, repeatWeekdays):  # String
+		self.add_query_param('repeatWeekdays', repeatWeekdays)
+	def get_EnableCrossRegionCopy(self): # Boolean
 		return self.get_query_params().get('EnableCrossRegionCopy')
 
-	def set_EnableCrossRegionCopy(self,EnableCrossRegionCopy):
-		self.add_query_param('EnableCrossRegionCopy',EnableCrossRegionCopy)
-
-	def get_ResourceOwnerAccount(self):
+	def set_EnableCrossRegionCopy(self, EnableCrossRegionCopy):  # Boolean
+		self.add_query_param('EnableCrossRegionCopy', EnableCrossRegionCopy)
+	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_OwnerId(self):
+	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
+		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_autoSnapshotPolicyName(self):
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_autoSnapshotPolicyName(self): # String
 		return self.get_query_params().get('autoSnapshotPolicyName')
 
-	def set_autoSnapshotPolicyName(self,autoSnapshotPolicyName):
-		self.add_query_param('autoSnapshotPolicyName',autoSnapshotPolicyName)
-
-	def get_retentionDays(self):
+	def set_autoSnapshotPolicyName(self, autoSnapshotPolicyName):  # String
+		self.add_query_param('autoSnapshotPolicyName', autoSnapshotPolicyName)
+	def get_retentionDays(self): # Integer
 		return self.get_query_params().get('retentionDays')
 
-	def set_retentionDays(self,retentionDays):
-		self.add_query_param('retentionDays',retentionDays)
-
-	def get_TargetCopyRegions(self):
+	def set_retentionDays(self, retentionDays):  # Integer
+		self.add_query_param('retentionDays', retentionDays)
+	def get_TargetCopyRegions(self): # String
 		return self.get_query_params().get('TargetCopyRegions')
 
-	def set_TargetCopyRegions(self,TargetCopyRegions):
-		self.add_query_param('TargetCopyRegions',TargetCopyRegions)
+	def set_TargetCopyRegions(self, TargetCopyRegions):  # String
+		self.add_query_param('TargetCopyRegions', TargetCopyRegions)

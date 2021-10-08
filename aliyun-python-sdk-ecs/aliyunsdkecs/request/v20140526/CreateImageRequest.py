@@ -25,116 +25,101 @@ class CreateImageRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'CreateImage','ecs')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_DiskDeviceMappings(self):
+	def get_DiskDeviceMappings(self): # RepeatList
 		return self.get_query_params().get('DiskDeviceMapping')
 
-	def set_DiskDeviceMappings(self, DiskDeviceMappings):
-		for depth1 in range(len(DiskDeviceMappings)):
-			if DiskDeviceMappings[depth1].get('SnapshotId') is not None:
-				self.add_query_param('DiskDeviceMapping.' + str(depth1 + 1) + '.SnapshotId', DiskDeviceMappings[depth1].get('SnapshotId'))
-			if DiskDeviceMappings[depth1].get('Size') is not None:
-				self.add_query_param('DiskDeviceMapping.' + str(depth1 + 1) + '.Size', DiskDeviceMappings[depth1].get('Size'))
-			if DiskDeviceMappings[depth1].get('DiskType') is not None:
-				self.add_query_param('DiskDeviceMapping.' + str(depth1 + 1) + '.DiskType', DiskDeviceMappings[depth1].get('DiskType'))
-			if DiskDeviceMappings[depth1].get('Device') is not None:
-				self.add_query_param('DiskDeviceMapping.' + str(depth1 + 1) + '.Device', DiskDeviceMappings[depth1].get('Device'))
-
-	def get_ResourceOwnerId(self):
+	def set_DiskDeviceMappings(self, DiskDeviceMapping):  # RepeatList
+		for depth1 in range(len(DiskDeviceMapping)):
+			if DiskDeviceMapping[depth1].get('SnapshotId') is not None:
+				self.add_query_param('DiskDeviceMapping.' + str(depth1 + 1) + '.SnapshotId', DiskDeviceMapping[depth1].get('SnapshotId'))
+			if DiskDeviceMapping[depth1].get('Size') is not None:
+				self.add_query_param('DiskDeviceMapping.' + str(depth1 + 1) + '.Size', DiskDeviceMapping[depth1].get('Size'))
+			if DiskDeviceMapping[depth1].get('DiskType') is not None:
+				self.add_query_param('DiskDeviceMapping.' + str(depth1 + 1) + '.DiskType', DiskDeviceMapping[depth1].get('DiskType'))
+			if DiskDeviceMapping[depth1].get('Device') is not None:
+				self.add_query_param('DiskDeviceMapping.' + str(depth1 + 1) + '.Device', DiskDeviceMapping[depth1].get('Device'))
+	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_SnapshotId(self):
+	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
+		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_SnapshotId(self): # String
 		return self.get_query_params().get('SnapshotId')
 
-	def set_SnapshotId(self,SnapshotId):
-		self.add_query_param('SnapshotId',SnapshotId)
-
-	def get_ClientToken(self):
+	def set_SnapshotId(self, SnapshotId):  # String
+		self.add_query_param('SnapshotId', SnapshotId)
+	def get_ClientToken(self): # String
 		return self.get_query_params().get('ClientToken')
 
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
-
-	def get_Description(self):
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_query_param('ClientToken', ClientToken)
+	def get_Description(self): # String
 		return self.get_query_params().get('Description')
 
-	def set_Description(self,Description):
-		self.add_query_param('Description',Description)
-
-	def get_Platform(self):
+	def set_Description(self, Description):  # String
+		self.add_query_param('Description', Description)
+	def get_Platform(self): # String
 		return self.get_query_params().get('Platform')
 
-	def set_Platform(self,Platform):
-		self.add_query_param('Platform',Platform)
-
-	def get_ResourceGroupId(self):
+	def set_Platform(self, Platform):  # String
+		self.add_query_param('Platform', Platform)
+	def get_ResourceGroupId(self): # String
 		return self.get_query_params().get('ResourceGroupId')
 
-	def set_ResourceGroupId(self,ResourceGroupId):
-		self.add_query_param('ResourceGroupId',ResourceGroupId)
-
-	def get_ImageName(self):
+	def set_ResourceGroupId(self, ResourceGroupId):  # String
+		self.add_query_param('ResourceGroupId', ResourceGroupId)
+	def get_ImageName(self): # String
 		return self.get_query_params().get('ImageName')
 
-	def set_ImageName(self,ImageName):
-		self.add_query_param('ImageName',ImageName)
-
-	def get_Tags(self):
+	def set_ImageName(self, ImageName):  # String
+		self.add_query_param('ImageName', ImageName)
+	def get_Tags(self): # RepeatList
 		return self.get_query_params().get('Tag')
 
-	def set_Tags(self, Tags):
-		for depth1 in range(len(Tags)):
-			if Tags[depth1].get('value') is not None:
-				self.add_query_param('Tag.' + str(depth1 + 1) + '.value', Tags[depth1].get('value'))
-			if Tags[depth1].get('Key') is not None:
-				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tags[depth1].get('Key'))
-
-	def get_Architecture(self):
+	def set_Tags(self, Tag):  # RepeatList
+		for depth1 in range(len(Tag)):
+			if Tag[depth1].get('value') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.value', Tag[depth1].get('value'))
+			if Tag[depth1].get('Key') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tag[depth1].get('Key'))
+	def get_Architecture(self): # String
 		return self.get_query_params().get('Architecture')
 
-	def set_Architecture(self,Architecture):
-		self.add_query_param('Architecture',Architecture)
-
-	def get_ResourceOwnerAccount(self):
+	def set_Architecture(self, Architecture):  # String
+		self.add_query_param('Architecture', Architecture)
+	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_OwnerAccount(self):
+	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
+		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_OwnerAccount(self): # String
 		return self.get_query_params().get('OwnerAccount')
 
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
-
-	def get_OwnerId(self):
+	def set_OwnerAccount(self, OwnerAccount):  # String
+		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_InstanceId(self):
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
-
-	def get_ImageFamily(self):
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
+	def get_ImageFamily(self): # String
 		return self.get_query_params().get('ImageFamily')
 
-	def set_ImageFamily(self,ImageFamily):
-		self.add_query_param('ImageFamily',ImageFamily)
-
-	def get_ImageVersion(self):
+	def set_ImageFamily(self, ImageFamily):  # String
+		self.add_query_param('ImageFamily', ImageFamily)
+	def get_ImageVersion(self): # String
 		return self.get_query_params().get('ImageVersion')
 
-	def set_ImageVersion(self,ImageVersion):
-		self.add_query_param('ImageVersion',ImageVersion)
+	def set_ImageVersion(self, ImageVersion):  # String
+		self.add_query_param('ImageVersion', ImageVersion)

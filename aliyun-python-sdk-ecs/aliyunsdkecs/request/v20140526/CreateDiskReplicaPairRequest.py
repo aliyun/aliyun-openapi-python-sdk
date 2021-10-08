@@ -25,68 +25,59 @@ class CreateDiskReplicaPairRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'CreateDiskReplicaPair','ecs')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ResourceOwnerId(self):
+	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_PairName(self):
+	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
+		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_PairName(self): # String
 		return self.get_query_params().get('PairName')
 
-	def set_PairName(self,PairName):
-		self.add_query_param('PairName',PairName)
-
-	def get_DestinationRegionId(self):
+	def set_PairName(self, PairName):  # String
+		self.add_query_param('PairName', PairName)
+	def get_DestinationRegionId(self): # String
 		return self.get_query_params().get('DestinationRegionId')
 
-	def set_DestinationRegionId(self,DestinationRegionId):
-		self.add_query_param('DestinationRegionId',DestinationRegionId)
-
-	def get_Description(self):
+	def set_DestinationRegionId(self, DestinationRegionId):  # String
+		self.add_query_param('DestinationRegionId', DestinationRegionId)
+	def get_Description(self): # String
 		return self.get_query_params().get('Description')
 
-	def set_Description(self,Description):
-		self.add_query_param('Description',Description)
-
-	def get_DiskId(self):
+	def set_Description(self, Description):  # String
+		self.add_query_param('Description', Description)
+	def get_DiskId(self): # String
 		return self.get_query_params().get('DiskId')
 
-	def set_DiskId(self,DiskId):
-		self.add_query_param('DiskId',DiskId)
-
-	def get_AsyncCycle(self):
+	def set_DiskId(self, DiskId):  # String
+		self.add_query_param('DiskId', DiskId)
+	def get_AsyncCycle(self): # Integer
 		return self.get_query_params().get('AsyncCycle')
 
-	def set_AsyncCycle(self,AsyncCycle):
-		self.add_query_param('AsyncCycle',AsyncCycle)
-
-	def get_ResourceOwnerAccount(self):
+	def set_AsyncCycle(self, AsyncCycle):  # Integer
+		self.add_query_param('AsyncCycle', AsyncCycle)
+	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_OwnerAccount(self):
+	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
+		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_OwnerAccount(self): # String
 		return self.get_query_params().get('OwnerAccount')
 
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
-
-	def get_OwnerId(self):
+	def set_OwnerAccount(self, OwnerAccount):  # String
+		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_DestinationDiskId(self):
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_DestinationDiskId(self): # String
 		return self.get_query_params().get('DestinationDiskId')
 
-	def set_DestinationDiskId(self,DestinationDiskId):
-		self.add_query_param('DestinationDiskId',DestinationDiskId)
+	def set_DestinationDiskId(self, DestinationDiskId):  # String
+		self.add_query_param('DestinationDiskId', DestinationDiskId)

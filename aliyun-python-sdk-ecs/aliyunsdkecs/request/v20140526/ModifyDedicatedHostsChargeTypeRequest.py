@@ -25,80 +25,69 @@ class ModifyDedicatedHostsChargeTypeRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'ModifyDedicatedHostsChargeType','ecs')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_DedicatedHostIds(self):
+	def get_DedicatedHostIds(self): # String
 		return self.get_query_params().get('DedicatedHostIds')
 
-	def set_DedicatedHostIds(self,DedicatedHostIds):
-		self.add_query_param('DedicatedHostIds',DedicatedHostIds)
-
-	def get_ResourceOwnerId(self):
+	def set_DedicatedHostIds(self, DedicatedHostIds):  # String
+		self.add_query_param('DedicatedHostIds', DedicatedHostIds)
+	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_ClientToken(self):
+	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
+		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_ClientToken(self): # String
 		return self.get_query_params().get('ClientToken')
 
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
-
-	def get_DedicatedHostChargeType(self):
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_query_param('ClientToken', ClientToken)
+	def get_DedicatedHostChargeType(self): # String
 		return self.get_query_params().get('DedicatedHostChargeType')
 
-	def set_DedicatedHostChargeType(self,DedicatedHostChargeType):
-		self.add_query_param('DedicatedHostChargeType',DedicatedHostChargeType)
-
-	def get_Period(self):
+	def set_DedicatedHostChargeType(self, DedicatedHostChargeType):  # String
+		self.add_query_param('DedicatedHostChargeType', DedicatedHostChargeType)
+	def get_Period(self): # Integer
 		return self.get_query_params().get('Period')
 
-	def set_Period(self,Period):
-		self.add_query_param('Period',Period)
-
-	def get_DryRun(self):
+	def set_Period(self, Period):  # Integer
+		self.add_query_param('Period', Period)
+	def get_DryRun(self): # Boolean
 		return self.get_query_params().get('DryRun')
 
-	def set_DryRun(self,DryRun):
-		self.add_query_param('DryRun',DryRun)
-
-	def get_AutoPay(self):
+	def set_DryRun(self, DryRun):  # Boolean
+		self.add_query_param('DryRun', DryRun)
+	def get_AutoPay(self): # Boolean
 		return self.get_query_params().get('AutoPay')
 
-	def set_AutoPay(self,AutoPay):
-		self.add_query_param('AutoPay',AutoPay)
-
-	def get_ResourceOwnerAccount(self):
+	def set_AutoPay(self, AutoPay):  # Boolean
+		self.add_query_param('AutoPay', AutoPay)
+	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_OwnerAccount(self):
+	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
+		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_OwnerAccount(self): # String
 		return self.get_query_params().get('OwnerAccount')
 
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
-
-	def get_OwnerId(self):
+	def set_OwnerAccount(self, OwnerAccount):  # String
+		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_DetailFee(self):
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_DetailFee(self): # Boolean
 		return self.get_query_params().get('DetailFee')
 
-	def set_DetailFee(self,DetailFee):
-		self.add_query_param('DetailFee',DetailFee)
-
-	def get_PeriodUnit(self):
+	def set_DetailFee(self, DetailFee):  # Boolean
+		self.add_query_param('DetailFee', DetailFee)
+	def get_PeriodUnit(self): # String
 		return self.get_query_params().get('PeriodUnit')
 
-	def set_PeriodUnit(self,PeriodUnit):
-		self.add_query_param('PeriodUnit',PeriodUnit)
+	def set_PeriodUnit(self, PeriodUnit):  # String
+		self.add_query_param('PeriodUnit', PeriodUnit)

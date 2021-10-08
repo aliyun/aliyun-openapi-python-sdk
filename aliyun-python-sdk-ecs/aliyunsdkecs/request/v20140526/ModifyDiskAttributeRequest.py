@@ -25,76 +25,65 @@ class ModifyDiskAttributeRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'ModifyDiskAttribute','ecs')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ResourceOwnerId(self):
+	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_Description(self):
+	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
+		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_Description(self): # String
 		return self.get_query_params().get('Description')
 
-	def set_Description(self,Description):
-		self.add_query_param('Description',Description)
-
-	def get_DiskName(self):
+	def set_Description(self, Description):  # String
+		self.add_query_param('Description', Description)
+	def get_DiskName(self): # String
 		return self.get_query_params().get('DiskName')
 
-	def set_DiskName(self,DiskName):
-		self.add_query_param('DiskName',DiskName)
-
-	def get_DeleteAutoSnapshot(self):
+	def set_DiskName(self, DiskName):  # String
+		self.add_query_param('DiskName', DiskName)
+	def get_DeleteAutoSnapshot(self): # Boolean
 		return self.get_query_params().get('DeleteAutoSnapshot')
 
-	def set_DeleteAutoSnapshot(self,DeleteAutoSnapshot):
-		self.add_query_param('DeleteAutoSnapshot',DeleteAutoSnapshot)
-
-	def get_DiskIdss(self):
+	def set_DeleteAutoSnapshot(self, DeleteAutoSnapshot):  # Boolean
+		self.add_query_param('DeleteAutoSnapshot', DeleteAutoSnapshot)
+	def get_DiskIdss(self): # RepeatList
 		return self.get_query_params().get('DiskIds')
 
-	def set_DiskIdss(self, DiskIdss):
-		for depth1 in range(len(DiskIdss)):
-			if DiskIdss[depth1] is not None:
-				self.add_query_param('DiskIds.' + str(depth1 + 1) , DiskIdss[depth1])
+	def set_DiskIdss(self, DiskIds):  # RepeatList
+		for depth1 in range(len(DiskIds)):
+			self.add_query_param('DiskIds.' + str(depth1 + 1), DiskIds)
+		def get_DiskId(self): # String
+			return self.get_query_params().get('DiskId')
 
-	def get_DiskId(self):
-		return self.get_query_params().get('DiskId')
+		def set_DiskId(self, DiskId):  # String
+			self.add_query_param('DiskId', DiskId)
+		def get_DeleteWithInstance(self): # Boolean
+			return self.get_query_params().get('DeleteWithInstance')
 
-	def set_DiskId(self,DiskId):
-		self.add_query_param('DiskId',DiskId)
+		def set_DeleteWithInstance(self, DeleteWithInstance):  # Boolean
+			self.add_query_param('DeleteWithInstance', DeleteWithInstance)
+		def get_EnableAutoSnapshot(self): # Boolean
+			return self.get_query_params().get('EnableAutoSnapshot')
 
-	def get_DeleteWithInstance(self):
-		return self.get_query_params().get('DeleteWithInstance')
+		def set_EnableAutoSnapshot(self, EnableAutoSnapshot):  # Boolean
+			self.add_query_param('EnableAutoSnapshot', EnableAutoSnapshot)
+		def get_ResourceOwnerAccount(self): # String
+			return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_DeleteWithInstance(self,DeleteWithInstance):
-		self.add_query_param('DeleteWithInstance',DeleteWithInstance)
+		def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
+			self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+		def get_OwnerAccount(self): # String
+			return self.get_query_params().get('OwnerAccount')
 
-	def get_EnableAutoSnapshot(self):
-		return self.get_query_params().get('EnableAutoSnapshot')
+		def set_OwnerAccount(self, OwnerAccount):  # String
+			self.add_query_param('OwnerAccount', OwnerAccount)
+		def get_OwnerId(self): # Long
+			return self.get_query_params().get('OwnerId')
 
-	def set_EnableAutoSnapshot(self,EnableAutoSnapshot):
-		self.add_query_param('EnableAutoSnapshot',EnableAutoSnapshot)
-
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
-
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_OwnerAccount(self):
-		return self.get_query_params().get('OwnerAccount')
-
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
-
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
+		def set_OwnerId(self, OwnerId):  # Long
+			self.add_query_param('OwnerId', OwnerId)

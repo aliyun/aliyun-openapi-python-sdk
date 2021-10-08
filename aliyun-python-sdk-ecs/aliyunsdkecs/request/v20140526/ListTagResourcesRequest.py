@@ -25,74 +25,64 @@ class ListTagResourcesRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Ecs', '2014-05-26', 'ListTagResources','ecs')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ResourceOwnerId(self):
+	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_NextToken(self):
+	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
+		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_NextToken(self): # String
 		return self.get_query_params().get('NextToken')
 
-	def set_NextToken(self,NextToken):
-		self.add_query_param('NextToken',NextToken)
-
-	def get_Tags(self):
+	def set_NextToken(self, NextToken):  # String
+		self.add_query_param('NextToken', NextToken)
+	def get_Tags(self): # RepeatList
 		return self.get_query_params().get('Tag')
 
-	def set_Tags(self, Tags):
-		for depth1 in range(len(Tags)):
-			if Tags[depth1].get('Key') is not None:
-				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tags[depth1].get('Key'))
-			if Tags[depth1].get('Value') is not None:
-				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tags[depth1].get('Value'))
-
-	def get_ResourceIds(self):
+	def set_Tags(self, Tag):  # RepeatList
+		for depth1 in range(len(Tag)):
+			if Tag[depth1].get('Key') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tag[depth1].get('Key'))
+			if Tag[depth1].get('Value') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tag[depth1].get('Value'))
+	def get_ResourceIds(self): # RepeatList
 		return self.get_query_params().get('ResourceId')
 
-	def set_ResourceIds(self, ResourceIds):
-		for depth1 in range(len(ResourceIds)):
-			if ResourceIds[depth1] is not None:
-				self.add_query_param('ResourceId.' + str(depth1 + 1) , ResourceIds[depth1])
+	def set_ResourceIds(self, ResourceId):  # RepeatList
+		for depth1 in range(len(ResourceId)):
+			self.add_query_param('ResourceId.' + str(depth1 + 1), ResourceId)
+		def get_ResourceOwnerAccount(self): # String
+			return self.get_query_params().get('ResourceOwnerAccount')
 
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
+		def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
+			self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+		def get_OwnerAccount(self): # String
+			return self.get_query_params().get('OwnerAccount')
 
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+		def set_OwnerAccount(self, OwnerAccount):  # String
+			self.add_query_param('OwnerAccount', OwnerAccount)
+		def get_OwnerId(self): # Long
+			return self.get_query_params().get('OwnerId')
 
-	def get_OwnerAccount(self):
-		return self.get_query_params().get('OwnerAccount')
+		def set_OwnerId(self, OwnerId):  # Long
+			self.add_query_param('OwnerId', OwnerId)
+		def get_TagFilters(self): # RepeatList
+			return self.get_query_params().get('TagFilter')
 
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
+		def set_TagFilters(self, TagFilter):  # RepeatList
+			for depth1 in range(len(TagFilter)):
+				if TagFilter[depth1].get('TagValues') is not None:
+					for depth2 in range(len(TagFilter[depth1].get('TagValues'))):
+						self.add_query_param('TagFilter.' + str(depth1 + 1) + '.TagValues' + str(depth2 + 1), TagFilter[depth1].get('TagValues'))
+					if TagFilter[depth1].get('TagKey') is not None:
+						self.add_query_param('TagFilter.' + str(depth1 + 1) + '.TagKey', TagFilter[depth1].get('TagKey'))
+			def get_ResourceType(self): # String
+				return self.get_query_params().get('ResourceType')
 
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_TagFilters(self):
-		return self.get_query_params().get('TagFilter')
-
-	def set_TagFilters(self, TagFilters):
-		for depth1 in range(len(TagFilters)):
-			if TagFilters[depth1].get('TagValues') is not None:
-				for depth2 in range(len(TagFilters[depth1].get('TagValues'))):
-					if TagFilters[depth1].get('TagValues')[depth2] is not None:
-						self.add_query_param('TagFilter.' + str(depth1 + 1) + '.TagValues.' + str(depth2 + 1) , TagFilters[depth1].get('TagValues')[depth2])
-			if TagFilters[depth1].get('TagKey') is not None:
-				self.add_query_param('TagFilter.' + str(depth1 + 1) + '.TagKey', TagFilters[depth1].get('TagKey'))
-
-	def get_ResourceType(self):
-		return self.get_query_params().get('ResourceType')
-
-	def set_ResourceType(self,ResourceType):
-		self.add_query_param('ResourceType',ResourceType)
+			def set_ResourceType(self, ResourceType):  # String
+				self.add_query_param('ResourceType', ResourceType)
