@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkscdn.endpoint import endpoint_data
 
-class DescribeScdnDomainConfigsRequest(RpcRequest):
+class BatchStartScdnDomainRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'scdn', '2017-11-15', 'DescribeScdnDomainConfigs')
+		RpcRequest.__init__(self, 'scdn', '2017-11-15', 'BatchStartScdnDomain')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,17 +31,11 @@ class DescribeScdnDomainConfigsRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_FunctionNames(self):
-		return self.get_query_params().get('FunctionNames')
+	def get_DomainNames(self):
+		return self.get_query_params().get('DomainNames')
 
-	def set_FunctionNames(self,FunctionNames):
-		self.add_query_param('FunctionNames',FunctionNames)
-
-	def get_DomainName(self):
-		return self.get_query_params().get('DomainName')
-
-	def set_DomainName(self,DomainName):
-		self.add_query_param('DomainName',DomainName)
+	def set_DomainNames(self,DomainNames):
+		self.add_query_param('DomainNames',DomainNames)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
@@ -54,9 +48,3 @@ class DescribeScdnDomainConfigsRequest(RpcRequest):
 
 	def set_SecurityToken(self,SecurityToken):
 		self.add_query_param('SecurityToken',SecurityToken)
-
-	def get_ConfigId(self):
-		return self.get_query_params().get('ConfigId')
-
-	def set_ConfigId(self,ConfigId):
-		self.add_query_param('ConfigId',ConfigId)
