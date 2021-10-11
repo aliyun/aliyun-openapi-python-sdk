@@ -69,5 +69,5 @@ class DescribeAccessPointsRequest(RpcRequest):
 			if Filter[depth1].get('Value') is not None:
 				for depth2 in range(len(Filter[depth1].get('Value'))):
 					self.add_query_param('Filter.' + str(depth1 + 1) + '.Value' + str(depth2 + 1), Filter[depth1].get('Value'))
-				if Filter[depth1].get('Key') is not None:
-					self.add_query_param('Filter.' + str(depth1 + 1) + '.Key', Filter[depth1].get('Key'))
+			if Filter[depth1].get('Key') is not None:
+				self.add_query_param('Filter.' + str(depth1 + 1) + '.Key', Filter[depth1].get('Key'))

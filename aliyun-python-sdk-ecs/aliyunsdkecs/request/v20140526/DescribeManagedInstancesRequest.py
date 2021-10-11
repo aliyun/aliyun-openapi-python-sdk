@@ -77,13 +77,13 @@ class DescribeManagedInstancesRequest(RpcRequest):
 	def set_InstanceIds(self, InstanceId):  # RepeatList
 		for depth1 in range(len(InstanceId)):
 			self.add_query_param('InstanceId.' + str(depth1 + 1), InstanceId)
-		def get_InstanceIp(self): # String
-			return self.get_query_params().get('InstanceIp')
+	def get_InstanceIp(self): # String
+		return self.get_query_params().get('InstanceIp')
 
-		def set_InstanceIp(self, InstanceIp):  # String
-			self.add_query_param('InstanceIp', InstanceIp)
-		def get_ActivationId(self): # String
-			return self.get_query_params().get('ActivationId')
+	def set_InstanceIp(self, InstanceIp):  # String
+		self.add_query_param('InstanceIp', InstanceIp)
+	def get_ActivationId(self): # String
+		return self.get_query_params().get('ActivationId')
 
-		def set_ActivationId(self, ActivationId):  # String
-			self.add_query_param('ActivationId', ActivationId)
+	def set_ActivationId(self, ActivationId):  # String
+		self.add_query_param('ActivationId', ActivationId)

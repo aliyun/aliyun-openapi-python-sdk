@@ -42,33 +42,33 @@ class DescribeInstanceTypesRequest(RpcRequest):
 	def set_InstanceTypess(self, InstanceTypes):  # RepeatList
 		for depth1 in range(len(InstanceTypes)):
 			self.add_query_param('InstanceTypes.' + str(depth1 + 1), InstanceTypes)
-		def get_NextToken(self): # String
-			return self.get_query_params().get('NextToken')
+	def get_NextToken(self): # String
+		return self.get_query_params().get('NextToken')
 
-		def set_NextToken(self, NextToken):  # String
-			self.add_query_param('NextToken', NextToken)
-		def get_ResourceOwnerAccount(self): # String
-			return self.get_query_params().get('ResourceOwnerAccount')
+	def set_NextToken(self, NextToken):  # String
+		self.add_query_param('NextToken', NextToken)
+	def get_ResourceOwnerAccount(self): # String
+		return self.get_query_params().get('ResourceOwnerAccount')
 
-		def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
-			self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
-		def get_OwnerAccount(self): # String
-			return self.get_query_params().get('OwnerAccount')
+	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
+		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_OwnerAccount(self): # String
+		return self.get_query_params().get('OwnerAccount')
 
-		def set_OwnerAccount(self, OwnerAccount):  # String
-			self.add_query_param('OwnerAccount', OwnerAccount)
-		def get_InstanceTypeFamily(self): # String
-			return self.get_query_params().get('InstanceTypeFamily')
+	def set_OwnerAccount(self, OwnerAccount):  # String
+		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_InstanceTypeFamily(self): # String
+		return self.get_query_params().get('InstanceTypeFamily')
 
-		def set_InstanceTypeFamily(self, InstanceTypeFamily):  # String
-			self.add_query_param('InstanceTypeFamily', InstanceTypeFamily)
-		def get_OwnerId(self): # Long
-			return self.get_query_params().get('OwnerId')
+	def set_InstanceTypeFamily(self, InstanceTypeFamily):  # String
+		self.add_query_param('InstanceTypeFamily', InstanceTypeFamily)
+	def get_OwnerId(self): # Long
+		return self.get_query_params().get('OwnerId')
 
-		def set_OwnerId(self, OwnerId):  # Long
-			self.add_query_param('OwnerId', OwnerId)
-		def get_MaxResults(self): # Long
-			return self.get_query_params().get('MaxResults')
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_MaxResults(self): # Long
+		return self.get_query_params().get('MaxResults')
 
-		def set_MaxResults(self, MaxResults):  # Long
-			self.add_query_param('MaxResults', MaxResults)
+	def set_MaxResults(self, MaxResults):  # Long
+		self.add_query_param('MaxResults', MaxResults)

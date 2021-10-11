@@ -52,23 +52,23 @@ class DescribeNetworkInterfacePermissionsRequest(RpcRequest):
 	def set_NetworkInterfacePermissionIds(self, NetworkInterfacePermissionId):  # RepeatList
 		for depth1 in range(len(NetworkInterfacePermissionId)):
 			self.add_query_param('NetworkInterfacePermissionId.' + str(depth1 + 1), NetworkInterfacePermissionId)
-		def get_ResourceOwnerAccount(self): # String
-			return self.get_query_params().get('ResourceOwnerAccount')
+	def get_ResourceOwnerAccount(self): # String
+		return self.get_query_params().get('ResourceOwnerAccount')
 
-		def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
-			self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
-		def get_OwnerAccount(self): # String
-			return self.get_query_params().get('OwnerAccount')
+	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
+		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_OwnerAccount(self): # String
+		return self.get_query_params().get('OwnerAccount')
 
-		def set_OwnerAccount(self, OwnerAccount):  # String
-			self.add_query_param('OwnerAccount', OwnerAccount)
-		def get_OwnerId(self): # Long
-			return self.get_query_params().get('OwnerId')
+	def set_OwnerAccount(self, OwnerAccount):  # String
+		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_OwnerId(self): # Long
+		return self.get_query_params().get('OwnerId')
 
-		def set_OwnerId(self, OwnerId):  # Long
-			self.add_query_param('OwnerId', OwnerId)
-		def get_NetworkInterfaceId(self): # String
-			return self.get_query_params().get('NetworkInterfaceId')
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_NetworkInterfaceId(self): # String
+		return self.get_query_params().get('NetworkInterfaceId')
 
-		def set_NetworkInterfaceId(self, NetworkInterfaceId):  # String
-			self.add_query_param('NetworkInterfaceId', NetworkInterfaceId)
+	def set_NetworkInterfaceId(self, NetworkInterfaceId):  # String
+		self.add_query_param('NetworkInterfaceId', NetworkInterfaceId)

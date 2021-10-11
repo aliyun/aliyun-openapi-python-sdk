@@ -37,64 +37,64 @@ class DescribeDisksFullStatusRequest(RpcRequest):
 	def set_EventIds(self, EventId):  # RepeatList
 		for depth1 in range(len(EventId)):
 			self.add_query_param('EventId.' + str(depth1 + 1), EventId)
-		def get_ResourceOwnerId(self): # Long
-			return self.get_query_params().get('ResourceOwnerId')
+	def get_ResourceOwnerId(self): # Long
+		return self.get_query_params().get('ResourceOwnerId')
 
-		def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
-			self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-		def get_PageNumber(self): # Integer
-			return self.get_query_params().get('PageNumber')
+	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
+		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_PageNumber(self): # Integer
+		return self.get_query_params().get('PageNumber')
 
-		def set_PageNumber(self, PageNumber):  # Integer
-			self.add_query_param('PageNumber', PageNumber)
-		def get_EventTimeStart(self): # String
-			return self.get_query_params().get('EventTime.Start')
+	def set_PageNumber(self, PageNumber):  # Integer
+		self.add_query_param('PageNumber', PageNumber)
+	def get_EventTimeStart(self): # String
+		return self.get_query_params().get('EventTime.Start')
 
-		def set_EventTimeStart(self, EventTimeStart):  # String
-			self.add_query_param('EventTime.Start', EventTimeStart)
-		def get_PageSize(self): # Integer
-			return self.get_query_params().get('PageSize')
+	def set_EventTimeStart(self, EventTimeStart):  # String
+		self.add_query_param('EventTime.Start', EventTimeStart)
+	def get_PageSize(self): # Integer
+		return self.get_query_params().get('PageSize')
 
-		def set_PageSize(self, PageSize):  # Integer
-			self.add_query_param('PageSize', PageSize)
-		def get_DiskIds(self): # RepeatList
-			return self.get_query_params().get('DiskId')
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
+	def get_DiskIds(self): # RepeatList
+		return self.get_query_params().get('DiskId')
 
-		def set_DiskIds(self, DiskId):  # RepeatList
-			for depth1 in range(len(DiskId)):
-				self.add_query_param('DiskId.' + str(depth1 + 1), DiskId)
-			def get_ResourceOwnerAccount(self): # String
-				return self.get_query_params().get('ResourceOwnerAccount')
+	def set_DiskIds(self, DiskId):  # RepeatList
+		for depth1 in range(len(DiskId)):
+			self.add_query_param('DiskId.' + str(depth1 + 1), DiskId)
+	def get_ResourceOwnerAccount(self): # String
+		return self.get_query_params().get('ResourceOwnerAccount')
 
-			def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
-				self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
-			def get_OwnerAccount(self): # String
-				return self.get_query_params().get('OwnerAccount')
+	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
+		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_OwnerAccount(self): # String
+		return self.get_query_params().get('OwnerAccount')
 
-			def set_OwnerAccount(self, OwnerAccount):  # String
-				self.add_query_param('OwnerAccount', OwnerAccount)
-			def get_OwnerId(self): # Long
-				return self.get_query_params().get('OwnerId')
+	def set_OwnerAccount(self, OwnerAccount):  # String
+		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_OwnerId(self): # Long
+		return self.get_query_params().get('OwnerId')
 
-			def set_OwnerId(self, OwnerId):  # Long
-				self.add_query_param('OwnerId', OwnerId)
-			def get_EventTimeEnd(self): # String
-				return self.get_query_params().get('EventTime.End')
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_EventTimeEnd(self): # String
+		return self.get_query_params().get('EventTime.End')
 
-			def set_EventTimeEnd(self, EventTimeEnd):  # String
-				self.add_query_param('EventTime.End', EventTimeEnd)
-			def get_HealthStatus(self): # String
-				return self.get_query_params().get('HealthStatus')
+	def set_EventTimeEnd(self, EventTimeEnd):  # String
+		self.add_query_param('EventTime.End', EventTimeEnd)
+	def get_HealthStatus(self): # String
+		return self.get_query_params().get('HealthStatus')
 
-			def set_HealthStatus(self, HealthStatus):  # String
-				self.add_query_param('HealthStatus', HealthStatus)
-			def get_EventType(self): # String
-				return self.get_query_params().get('EventType')
+	def set_HealthStatus(self, HealthStatus):  # String
+		self.add_query_param('HealthStatus', HealthStatus)
+	def get_EventType(self): # String
+		return self.get_query_params().get('EventType')
 
-			def set_EventType(self, EventType):  # String
-				self.add_query_param('EventType', EventType)
-			def get_Status(self): # String
-				return self.get_query_params().get('Status')
+	def set_EventType(self, EventType):  # String
+		self.add_query_param('EventType', EventType)
+	def get_Status(self): # String
+		return self.get_query_params().get('Status')
 
-			def set_Status(self, Status):  # String
-				self.add_query_param('Status', Status)
+	def set_Status(self, Status):  # String
+		self.add_query_param('Status', Status)

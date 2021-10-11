@@ -71,35 +71,35 @@ class DescribeSnapshotGroupsRequest(RpcRequest):
 	def set_SnapshotGroupIds(self, SnapshotGroupId):  # RepeatList
 		for depth1 in range(len(SnapshotGroupId)):
 			self.add_query_param('SnapshotGroupId.' + str(depth1 + 1), SnapshotGroupId)
-		def get_OwnerId(self): # Long
-			return self.get_query_params().get('OwnerId')
+	def get_OwnerId(self): # Long
+		return self.get_query_params().get('OwnerId')
 
-		def set_OwnerId(self, OwnerId):  # Long
-			self.add_query_param('OwnerId', OwnerId)
-		def get_AdditionalAttributess(self): # RepeatList
-			return self.get_query_params().get('AdditionalAttributes')
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_AdditionalAttributess(self): # RepeatList
+		return self.get_query_params().get('AdditionalAttributes')
 
-		def set_AdditionalAttributess(self, AdditionalAttributes):  # RepeatList
-			for depth1 in range(len(AdditionalAttributes)):
-				self.add_query_param('AdditionalAttributes.' + str(depth1 + 1), AdditionalAttributes)
-			def get_InstanceId(self): # String
-				return self.get_query_params().get('InstanceId')
+	def set_AdditionalAttributess(self, AdditionalAttributes):  # RepeatList
+		for depth1 in range(len(AdditionalAttributes)):
+			self.add_query_param('AdditionalAttributes.' + str(depth1 + 1), AdditionalAttributes)
+	def get_InstanceId(self): # String
+		return self.get_query_params().get('InstanceId')
 
-			def set_InstanceId(self, InstanceId):  # String
-				self.add_query_param('InstanceId', InstanceId)
-			def get_Name(self): # String
-				return self.get_query_params().get('Name')
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
+	def get_Name(self): # String
+		return self.get_query_params().get('Name')
 
-			def set_Name(self, Name):  # String
-				self.add_query_param('Name', Name)
-			def get_MaxResults(self): # Integer
-				return self.get_query_params().get('MaxResults')
+	def set_Name(self, Name):  # String
+		self.add_query_param('Name', Name)
+	def get_MaxResults(self): # Integer
+		return self.get_query_params().get('MaxResults')
 
-			def set_MaxResults(self, MaxResults):  # Integer
-				self.add_query_param('MaxResults', MaxResults)
-			def get_Statuss(self): # RepeatList
-				return self.get_query_params().get('Status')
+	def set_MaxResults(self, MaxResults):  # Integer
+		self.add_query_param('MaxResults', MaxResults)
+	def get_Statuss(self): # RepeatList
+		return self.get_query_params().get('Status')
 
-			def set_Statuss(self, Status):  # RepeatList
-				for depth1 in range(len(Status)):
-					self.add_query_param('Status.' + str(depth1 + 1), Status)
+	def set_Statuss(self, Status):  # RepeatList
+		for depth1 in range(len(Status)):
+			self.add_query_param('Status.' + str(depth1 + 1), Status)

@@ -111,40 +111,40 @@ class DescribeNetworkInterfacesRequest(RpcRequest):
 	def set_PrivateIpAddresss(self, PrivateIpAddress):  # RepeatList
 		for depth1 in range(len(PrivateIpAddress)):
 			self.add_query_param('PrivateIpAddress.' + str(depth1 + 1), PrivateIpAddress)
-		def get_InstanceId(self): # String
-			return self.get_query_params().get('InstanceId')
+	def get_InstanceId(self): # String
+		return self.get_query_params().get('InstanceId')
 
-		def set_InstanceId(self, InstanceId):  # String
-			self.add_query_param('InstanceId', InstanceId)
-		def get_VpcId(self): # String
-			return self.get_query_params().get('VpcId')
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
+	def get_VpcId(self): # String
+		return self.get_query_params().get('VpcId')
 
-		def set_VpcId(self, VpcId):  # String
-			self.add_query_param('VpcId', VpcId)
-		def get_PrimaryIpAddress(self): # String
-			return self.get_query_params().get('PrimaryIpAddress')
+	def set_VpcId(self, VpcId):  # String
+		self.add_query_param('VpcId', VpcId)
+	def get_PrimaryIpAddress(self): # String
+		return self.get_query_params().get('PrimaryIpAddress')
 
-		def set_PrimaryIpAddress(self, PrimaryIpAddress):  # String
-			self.add_query_param('PrimaryIpAddress', PrimaryIpAddress)
-		def get_MaxResults(self): # Integer
-			return self.get_query_params().get('MaxResults')
+	def set_PrimaryIpAddress(self, PrimaryIpAddress):  # String
+		self.add_query_param('PrimaryIpAddress', PrimaryIpAddress)
+	def get_MaxResults(self): # Integer
+		return self.get_query_params().get('MaxResults')
 
-		def set_MaxResults(self, MaxResults):  # Integer
-			self.add_query_param('MaxResults', MaxResults)
-		def get_NetworkInterfaceIds(self): # RepeatList
-			return self.get_query_params().get('NetworkInterfaceId')
+	def set_MaxResults(self, MaxResults):  # Integer
+		self.add_query_param('MaxResults', MaxResults)
+	def get_NetworkInterfaceIds(self): # RepeatList
+		return self.get_query_params().get('NetworkInterfaceId')
 
-		def set_NetworkInterfaceIds(self, NetworkInterfaceId):  # RepeatList
-			for depth1 in range(len(NetworkInterfaceId)):
-				self.add_query_param('NetworkInterfaceId.' + str(depth1 + 1), NetworkInterfaceId)
-			def get_Ipv6Addresss(self): # RepeatList
-				return self.get_query_params().get('Ipv6Address')
+	def set_NetworkInterfaceIds(self, NetworkInterfaceId):  # RepeatList
+		for depth1 in range(len(NetworkInterfaceId)):
+			self.add_query_param('NetworkInterfaceId.' + str(depth1 + 1), NetworkInterfaceId)
+	def get_Ipv6Addresss(self): # RepeatList
+		return self.get_query_params().get('Ipv6Address')
 
-			def set_Ipv6Addresss(self, Ipv6Address):  # RepeatList
-				for depth1 in range(len(Ipv6Address)):
-					self.add_query_param('Ipv6Address.' + str(depth1 + 1), Ipv6Address)
-				def get_Status(self): # String
-					return self.get_query_params().get('Status')
+	def set_Ipv6Addresss(self, Ipv6Address):  # RepeatList
+		for depth1 in range(len(Ipv6Address)):
+			self.add_query_param('Ipv6Address.' + str(depth1 + 1), Ipv6Address)
+	def get_Status(self): # String
+		return self.get_query_params().get('Status')
 
-				def set_Status(self, Status):  # String
-					self.add_query_param('Status', Status)
+	def set_Status(self, Status):  # String
+		self.add_query_param('Status', Status)

@@ -131,149 +131,149 @@ class DescribeInstancesRequest(RpcRequest):
 	def set_AdditionalAttributess(self, AdditionalAttributes):  # RepeatList
 		for depth1 in range(len(AdditionalAttributes)):
 			self.add_query_param('AdditionalAttributes.' + str(depth1 + 1), AdditionalAttributes)
-		def get_InstanceName(self): # String
-			return self.get_query_params().get('InstanceName')
+	def get_InstanceName(self): # String
+		return self.get_query_params().get('InstanceName')
 
-		def set_InstanceName(self, InstanceName):  # String
-			self.add_query_param('InstanceName', InstanceName)
-		def get_InstanceIds(self): # String
-			return self.get_query_params().get('InstanceIds')
+	def set_InstanceName(self, InstanceName):  # String
+		self.add_query_param('InstanceName', InstanceName)
+	def get_InstanceIds(self): # String
+		return self.get_query_params().get('InstanceIds')
 
-		def set_InstanceIds(self, InstanceIds):  # String
-			self.add_query_param('InstanceIds', InstanceIds)
-		def get_InternetChargeType(self): # String
-			return self.get_query_params().get('InternetChargeType')
+	def set_InstanceIds(self, InstanceIds):  # String
+		self.add_query_param('InstanceIds', InstanceIds)
+	def get_InternetChargeType(self): # String
+		return self.get_query_params().get('InternetChargeType')
 
-		def set_InternetChargeType(self, InternetChargeType):  # String
-			self.add_query_param('InternetChargeType', InternetChargeType)
-		def get_ZoneId(self): # String
-			return self.get_query_params().get('ZoneId')
+	def set_InternetChargeType(self, InternetChargeType):  # String
+		self.add_query_param('InternetChargeType', InternetChargeType)
+	def get_ZoneId(self): # String
+		return self.get_query_params().get('ZoneId')
 
-		def set_ZoneId(self, ZoneId):  # String
-			self.add_query_param('ZoneId', ZoneId)
-		def get_MaxResults(self): # Integer
-			return self.get_query_params().get('MaxResults')
+	def set_ZoneId(self, ZoneId):  # String
+		self.add_query_param('ZoneId', ZoneId)
+	def get_MaxResults(self): # Integer
+		return self.get_query_params().get('MaxResults')
 
-		def set_MaxResults(self, MaxResults):  # Integer
-			self.add_query_param('MaxResults', MaxResults)
-		def get_Ipv6Addresss(self): # RepeatList
-			return self.get_query_params().get('Ipv6Address')
+	def set_MaxResults(self, MaxResults):  # Integer
+		self.add_query_param('MaxResults', MaxResults)
+	def get_Ipv6Addresss(self): # RepeatList
+		return self.get_query_params().get('Ipv6Address')
 
-		def set_Ipv6Addresss(self, Ipv6Address):  # RepeatList
-			for depth1 in range(len(Ipv6Address)):
-				self.add_query_param('Ipv6Address.' + str(depth1 + 1), Ipv6Address)
-			def get_InstanceNetworkType(self): # String
-				return self.get_query_params().get('InstanceNetworkType')
+	def set_Ipv6Addresss(self, Ipv6Address):  # RepeatList
+		for depth1 in range(len(Ipv6Address)):
+			self.add_query_param('Ipv6Address.' + str(depth1 + 1), Ipv6Address)
+	def get_InstanceNetworkType(self): # String
+		return self.get_query_params().get('InstanceNetworkType')
 
-			def set_InstanceNetworkType(self, InstanceNetworkType):  # String
-				self.add_query_param('InstanceNetworkType', InstanceNetworkType)
-			def get_Status(self): # String
-				return self.get_query_params().get('Status')
+	def set_InstanceNetworkType(self, InstanceNetworkType):  # String
+		self.add_query_param('InstanceNetworkType', InstanceNetworkType)
+	def get_Status(self): # String
+		return self.get_query_params().get('Status')
 
-			def set_Status(self, Status):  # String
-				self.add_query_param('Status', Status)
-			def get_ImageId(self): # String
-				return self.get_query_params().get('ImageId')
+	def set_Status(self, Status):  # String
+		self.add_query_param('Status', Status)
+	def get_ImageId(self): # String
+		return self.get_query_params().get('ImageId')
 
-			def set_ImageId(self, ImageId):  # String
-				self.add_query_param('ImageId', ImageId)
-			def get_Filter4Value(self): # String
-				return self.get_query_params().get('Filter.4.Value')
+	def set_ImageId(self, ImageId):  # String
+		self.add_query_param('ImageId', ImageId)
+	def get_Filter4Value(self): # String
+		return self.get_query_params().get('Filter.4.Value')
 
-			def set_Filter4Value(self, Filter4Value):  # String
-				self.add_query_param('Filter.4.Value', Filter4Value)
-			def get_IoOptimized(self): # Boolean
-				return self.get_query_params().get('IoOptimized')
+	def set_Filter4Value(self, Filter4Value):  # String
+		self.add_query_param('Filter.4.Value', Filter4Value)
+	def get_IoOptimized(self): # Boolean
+		return self.get_query_params().get('IoOptimized')
 
-			def set_IoOptimized(self, IoOptimized):  # Boolean
-				self.add_query_param('IoOptimized', IoOptimized)
-			def get_SecurityGroupId(self): # String
-				return self.get_query_params().get('SecurityGroupId')
+	def set_IoOptimized(self, IoOptimized):  # Boolean
+		self.add_query_param('IoOptimized', IoOptimized)
+	def get_SecurityGroupId(self): # String
+		return self.get_query_params().get('SecurityGroupId')
 
-			def set_SecurityGroupId(self, SecurityGroupId):  # String
-				self.add_query_param('SecurityGroupId', SecurityGroupId)
-			def get_Filter4Key(self): # String
-				return self.get_query_params().get('Filter.4.Key')
+	def set_SecurityGroupId(self, SecurityGroupId):  # String
+		self.add_query_param('SecurityGroupId', SecurityGroupId)
+	def get_Filter4Key(self): # String
+		return self.get_query_params().get('Filter.4.Key')
 
-			def set_Filter4Key(self, Filter4Key):  # String
-				self.add_query_param('Filter.4.Key', Filter4Key)
-			def get_PageNumber(self): # Integer
-				return self.get_query_params().get('PageNumber')
+	def set_Filter4Key(self, Filter4Key):  # String
+		self.add_query_param('Filter.4.Key', Filter4Key)
+	def get_PageNumber(self): # Integer
+		return self.get_query_params().get('PageNumber')
 
-			def set_PageNumber(self, PageNumber):  # Integer
-				self.add_query_param('PageNumber', PageNumber)
-			def get_NextToken(self): # String
-				return self.get_query_params().get('NextToken')
+	def set_PageNumber(self, PageNumber):  # Integer
+		self.add_query_param('PageNumber', PageNumber)
+	def get_NextToken(self): # String
+		return self.get_query_params().get('NextToken')
 
-			def set_NextToken(self, NextToken):  # String
-				self.add_query_param('NextToken', NextToken)
-			def get_RdmaIpAddresses(self): # String
-				return self.get_query_params().get('RdmaIpAddresses')
+	def set_NextToken(self, NextToken):  # String
+		self.add_query_param('NextToken', NextToken)
+	def get_RdmaIpAddresses(self): # String
+		return self.get_query_params().get('RdmaIpAddresses')
 
-			def set_RdmaIpAddresses(self, RdmaIpAddresses):  # String
-				self.add_query_param('RdmaIpAddresses', RdmaIpAddresses)
-			def get_HttpEndpoint(self): # String
-				return self.get_query_params().get('HttpEndpoint')
+	def set_RdmaIpAddresses(self, RdmaIpAddresses):  # String
+		self.add_query_param('RdmaIpAddresses', RdmaIpAddresses)
+	def get_HttpEndpoint(self): # String
+		return self.get_query_params().get('HttpEndpoint')
 
-			def set_HttpEndpoint(self, HttpEndpoint):  # String
-				self.add_query_param('HttpEndpoint', HttpEndpoint)
-			def get_PageSize(self): # Integer
-				return self.get_query_params().get('PageSize')
+	def set_HttpEndpoint(self, HttpEndpoint):  # String
+		self.add_query_param('HttpEndpoint', HttpEndpoint)
+	def get_PageSize(self): # Integer
+		return self.get_query_params().get('PageSize')
 
-			def set_PageSize(self, PageSize):  # Integer
-				self.add_query_param('PageSize', PageSize)
-			def get_PublicIpAddresses(self): # String
-				return self.get_query_params().get('PublicIpAddresses')
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
+	def get_PublicIpAddresses(self): # String
+		return self.get_query_params().get('PublicIpAddresses')
 
-			def set_PublicIpAddresses(self, PublicIpAddresses):  # String
-				self.add_query_param('PublicIpAddresses', PublicIpAddresses)
-			def get_InstanceType(self): # String
-				return self.get_query_params().get('InstanceType')
+	def set_PublicIpAddresses(self, PublicIpAddresses):  # String
+		self.add_query_param('PublicIpAddresses', PublicIpAddresses)
+	def get_InstanceType(self): # String
+		return self.get_query_params().get('InstanceType')
 
-			def set_InstanceType(self, InstanceType):  # String
-				self.add_query_param('InstanceType', InstanceType)
-			def get_InstanceChargeType(self): # String
-				return self.get_query_params().get('InstanceChargeType')
+	def set_InstanceType(self, InstanceType):  # String
+		self.add_query_param('InstanceType', InstanceType)
+	def get_InstanceChargeType(self): # String
+		return self.get_query_params().get('InstanceChargeType')
 
-			def set_InstanceChargeType(self, InstanceChargeType):  # String
-				self.add_query_param('InstanceChargeType', InstanceChargeType)
-			def get_ResourceOwnerAccount(self): # String
-				return self.get_query_params().get('ResourceOwnerAccount')
+	def set_InstanceChargeType(self, InstanceChargeType):  # String
+		self.add_query_param('InstanceChargeType', InstanceChargeType)
+	def get_ResourceOwnerAccount(self): # String
+		return self.get_query_params().get('ResourceOwnerAccount')
 
-			def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
-				self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
-			def get_OwnerAccount(self): # String
-				return self.get_query_params().get('OwnerAccount')
+	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
+		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_OwnerAccount(self): # String
+		return self.get_query_params().get('OwnerAccount')
 
-			def set_OwnerAccount(self, OwnerAccount):  # String
-				self.add_query_param('OwnerAccount', OwnerAccount)
-			def get_InstanceTypeFamily(self): # String
-				return self.get_query_params().get('InstanceTypeFamily')
+	def set_OwnerAccount(self, OwnerAccount):  # String
+		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_InstanceTypeFamily(self): # String
+		return self.get_query_params().get('InstanceTypeFamily')
 
-			def set_InstanceTypeFamily(self, InstanceTypeFamily):  # String
-				self.add_query_param('InstanceTypeFamily', InstanceTypeFamily)
-			def get_Filter2Key(self): # String
-				return self.get_query_params().get('Filter.2.Key')
+	def set_InstanceTypeFamily(self, InstanceTypeFamily):  # String
+		self.add_query_param('InstanceTypeFamily', InstanceTypeFamily)
+	def get_Filter2Key(self): # String
+		return self.get_query_params().get('Filter.2.Key')
 
-			def set_Filter2Key(self, Filter2Key):  # String
-				self.add_query_param('Filter.2.Key', Filter2Key)
-			def get_EipAddresses(self): # String
-				return self.get_query_params().get('EipAddresses')
+	def set_Filter2Key(self, Filter2Key):  # String
+		self.add_query_param('Filter.2.Key', Filter2Key)
+	def get_EipAddresses(self): # String
+		return self.get_query_params().get('EipAddresses')
 
-			def set_EipAddresses(self, EipAddresses):  # String
-				self.add_query_param('EipAddresses', EipAddresses)
-			def get_VpcId(self): # String
-				return self.get_query_params().get('VpcId')
+	def set_EipAddresses(self, EipAddresses):  # String
+		self.add_query_param('EipAddresses', EipAddresses)
+	def get_VpcId(self): # String
+		return self.get_query_params().get('VpcId')
 
-			def set_VpcId(self, VpcId):  # String
-				self.add_query_param('VpcId', VpcId)
-			def get_HttpTokens(self): # String
-				return self.get_query_params().get('HttpTokens')
+	def set_VpcId(self, VpcId):  # String
+		self.add_query_param('VpcId', VpcId)
+	def get_HttpTokens(self): # String
+		return self.get_query_params().get('HttpTokens')
 
-			def set_HttpTokens(self, HttpTokens):  # String
-				self.add_query_param('HttpTokens', HttpTokens)
-			def get_Filter3Key(self): # String
-				return self.get_query_params().get('Filter.3.Key')
+	def set_HttpTokens(self, HttpTokens):  # String
+		self.add_query_param('HttpTokens', HttpTokens)
+	def get_Filter3Key(self): # String
+		return self.get_query_params().get('Filter.3.Key')
 
-			def set_Filter3Key(self, Filter3Key):  # String
-				self.add_query_param('Filter.3.Key', Filter3Key)
+	def set_Filter3Key(self, Filter3Key):  # String
+		self.add_query_param('Filter.3.Key', Filter3Key)

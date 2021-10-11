@@ -42,38 +42,38 @@ class ModifyInstanceVpcAttributeRequest(RpcRequest):
 	def set_SecurityGroupIds(self, SecurityGroupId):  # RepeatList
 		for depth1 in range(len(SecurityGroupId)):
 			self.add_query_param('SecurityGroupId.' + str(depth1 + 1), SecurityGroupId)
-		def get_ResourceOwnerAccount(self): # String
-			return self.get_query_params().get('ResourceOwnerAccount')
+	def get_ResourceOwnerAccount(self): # String
+		return self.get_query_params().get('ResourceOwnerAccount')
 
-		def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
-			self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
-		def get_OwnerAccount(self): # String
-			return self.get_query_params().get('OwnerAccount')
+	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
+		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_OwnerAccount(self): # String
+		return self.get_query_params().get('OwnerAccount')
 
-		def set_OwnerAccount(self, OwnerAccount):  # String
-			self.add_query_param('OwnerAccount', OwnerAccount)
-		def get_OwnerId(self): # Long
-			return self.get_query_params().get('OwnerId')
+	def set_OwnerAccount(self, OwnerAccount):  # String
+		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_OwnerId(self): # Long
+		return self.get_query_params().get('OwnerId')
 
-		def set_OwnerId(self, OwnerId):  # Long
-			self.add_query_param('OwnerId', OwnerId)
-		def get_VSwitchId(self): # String
-			return self.get_query_params().get('VSwitchId')
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_VSwitchId(self): # String
+		return self.get_query_params().get('VSwitchId')
 
-		def set_VSwitchId(self, VSwitchId):  # String
-			self.add_query_param('VSwitchId', VSwitchId)
-		def get_PrivateIpAddress(self): # String
-			return self.get_query_params().get('PrivateIpAddress')
+	def set_VSwitchId(self, VSwitchId):  # String
+		self.add_query_param('VSwitchId', VSwitchId)
+	def get_PrivateIpAddress(self): # String
+		return self.get_query_params().get('PrivateIpAddress')
 
-		def set_PrivateIpAddress(self, PrivateIpAddress):  # String
-			self.add_query_param('PrivateIpAddress', PrivateIpAddress)
-		def get_InstanceId(self): # String
-			return self.get_query_params().get('InstanceId')
+	def set_PrivateIpAddress(self, PrivateIpAddress):  # String
+		self.add_query_param('PrivateIpAddress', PrivateIpAddress)
+	def get_InstanceId(self): # String
+		return self.get_query_params().get('InstanceId')
 
-		def set_InstanceId(self, InstanceId):  # String
-			self.add_query_param('InstanceId', InstanceId)
-		def get_VpcId(self): # String
-			return self.get_query_params().get('VpcId')
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
+	def get_VpcId(self): # String
+		return self.get_query_params().get('VpcId')
 
-		def set_VpcId(self, VpcId):  # String
-			self.add_query_param('VpcId', VpcId)
+	def set_VpcId(self, VpcId):  # String
+		self.add_query_param('VpcId', VpcId)

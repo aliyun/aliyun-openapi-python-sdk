@@ -233,77 +233,77 @@ class CreateLaunchTemplateVersionRequest(RpcRequest):
 			if NetworkInterface[depth1].get('SecurityGroupIds') is not None:
 				for depth2 in range(len(NetworkInterface[depth1].get('SecurityGroupIds'))):
 					self.add_query_param('NetworkInterface.' + str(depth1 + 1) + '.SecurityGroupIds' + str(depth2 + 1), NetworkInterface[depth1].get('SecurityGroupIds'))
-		def get_ResourceOwnerAccount(self): # String
-			return self.get_query_params().get('ResourceOwnerAccount')
+	def get_ResourceOwnerAccount(self): # String
+		return self.get_query_params().get('ResourceOwnerAccount')
 
-		def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
-			self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
-		def get_OwnerAccount(self): # String
-			return self.get_query_params().get('OwnerAccount')
+	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
+		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_OwnerAccount(self): # String
+		return self.get_query_params().get('OwnerAccount')
 
-		def set_OwnerAccount(self, OwnerAccount):  # String
-			self.add_query_param('OwnerAccount', OwnerAccount)
-		def get_SystemDiskDiskName(self): # String
-			return self.get_query_params().get('SystemDisk.DiskName')
+	def set_OwnerAccount(self, OwnerAccount):  # String
+		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_SystemDiskDiskName(self): # String
+		return self.get_query_params().get('SystemDisk.DiskName')
 
-		def set_SystemDiskDiskName(self, SystemDiskDiskName):  # String
-			self.add_query_param('SystemDisk.DiskName', SystemDiskDiskName)
-		def get_RamRoleName(self): # String
-			return self.get_query_params().get('RamRoleName')
+	def set_SystemDiskDiskName(self, SystemDiskDiskName):  # String
+		self.add_query_param('SystemDisk.DiskName', SystemDiskDiskName)
+	def get_RamRoleName(self): # String
+		return self.get_query_params().get('RamRoleName')
 
-		def set_RamRoleName(self, RamRoleName):  # String
-			self.add_query_param('RamRoleName', RamRoleName)
-		def get_AutoReleaseTime(self): # String
-			return self.get_query_params().get('AutoReleaseTime')
+	def set_RamRoleName(self, RamRoleName):  # String
+		self.add_query_param('RamRoleName', RamRoleName)
+	def get_AutoReleaseTime(self): # String
+		return self.get_query_params().get('AutoReleaseTime')
 
-		def set_AutoReleaseTime(self, AutoReleaseTime):  # String
-			self.add_query_param('AutoReleaseTime', AutoReleaseTime)
-		def get_SpotDuration(self): # Integer
-			return self.get_query_params().get('SpotDuration')
+	def set_AutoReleaseTime(self, AutoReleaseTime):  # String
+		self.add_query_param('AutoReleaseTime', AutoReleaseTime)
+	def get_SpotDuration(self): # Integer
+		return self.get_query_params().get('SpotDuration')
 
-		def set_SpotDuration(self, SpotDuration):  # Integer
-			self.add_query_param('SpotDuration', SpotDuration)
-		def get_SecurityGroupIdss(self): # RepeatList
-			return self.get_query_params().get('SecurityGroupIds')
+	def set_SpotDuration(self, SpotDuration):  # Integer
+		self.add_query_param('SpotDuration', SpotDuration)
+	def get_SecurityGroupIdss(self): # RepeatList
+		return self.get_query_params().get('SecurityGroupIds')
 
-		def set_SecurityGroupIdss(self, SecurityGroupIds):  # RepeatList
-			for depth1 in range(len(SecurityGroupIds)):
-				self.add_query_param('SecurityGroupIds.' + str(depth1 + 1), SecurityGroupIds)
-			def get_DataDisks(self): # RepeatList
-				return self.get_query_params().get('DataDisk')
+	def set_SecurityGroupIdss(self, SecurityGroupIds):  # RepeatList
+		for depth1 in range(len(SecurityGroupIds)):
+			self.add_query_param('SecurityGroupIds.' + str(depth1 + 1), SecurityGroupIds)
+	def get_DataDisks(self): # RepeatList
+		return self.get_query_params().get('DataDisk')
 
-			def set_DataDisks(self, DataDisk):  # RepeatList
-				for depth1 in range(len(DataDisk)):
-					if DataDisk[depth1].get('PerformanceLevel') is not None:
-						self.add_query_param('DataDisk.' + str(depth1 + 1) + '.PerformanceLevel', DataDisk[depth1].get('PerformanceLevel'))
-					if DataDisk[depth1].get('Description') is not None:
-						self.add_query_param('DataDisk.' + str(depth1 + 1) + '.Description', DataDisk[depth1].get('Description'))
-					if DataDisk[depth1].get('SnapshotId') is not None:
-						self.add_query_param('DataDisk.' + str(depth1 + 1) + '.SnapshotId', DataDisk[depth1].get('SnapshotId'))
-					if DataDisk[depth1].get('Size') is not None:
-						self.add_query_param('DataDisk.' + str(depth1 + 1) + '.Size', DataDisk[depth1].get('Size'))
-					if DataDisk[depth1].get('Device') is not None:
-						self.add_query_param('DataDisk.' + str(depth1 + 1) + '.Device', DataDisk[depth1].get('Device'))
-					if DataDisk[depth1].get('DiskName') is not None:
-						self.add_query_param('DataDisk.' + str(depth1 + 1) + '.DiskName', DataDisk[depth1].get('DiskName'))
-					if DataDisk[depth1].get('Category') is not None:
-						self.add_query_param('DataDisk.' + str(depth1 + 1) + '.Category', DataDisk[depth1].get('Category'))
-					if DataDisk[depth1].get('DeleteWithInstance') is not None:
-						self.add_query_param('DataDisk.' + str(depth1 + 1) + '.DeleteWithInstance', DataDisk[depth1].get('DeleteWithInstance'))
-					if DataDisk[depth1].get('Encrypted') is not None:
-						self.add_query_param('DataDisk.' + str(depth1 + 1) + '.Encrypted', DataDisk[depth1].get('Encrypted'))
-			def get_SystemDiskSize(self): # Integer
-				return self.get_query_params().get('SystemDisk.Size')
+	def set_DataDisks(self, DataDisk):  # RepeatList
+		for depth1 in range(len(DataDisk)):
+			if DataDisk[depth1].get('PerformanceLevel') is not None:
+				self.add_query_param('DataDisk.' + str(depth1 + 1) + '.PerformanceLevel', DataDisk[depth1].get('PerformanceLevel'))
+			if DataDisk[depth1].get('Description') is not None:
+				self.add_query_param('DataDisk.' + str(depth1 + 1) + '.Description', DataDisk[depth1].get('Description'))
+			if DataDisk[depth1].get('SnapshotId') is not None:
+				self.add_query_param('DataDisk.' + str(depth1 + 1) + '.SnapshotId', DataDisk[depth1].get('SnapshotId'))
+			if DataDisk[depth1].get('Size') is not None:
+				self.add_query_param('DataDisk.' + str(depth1 + 1) + '.Size', DataDisk[depth1].get('Size'))
+			if DataDisk[depth1].get('Device') is not None:
+				self.add_query_param('DataDisk.' + str(depth1 + 1) + '.Device', DataDisk[depth1].get('Device'))
+			if DataDisk[depth1].get('DiskName') is not None:
+				self.add_query_param('DataDisk.' + str(depth1 + 1) + '.DiskName', DataDisk[depth1].get('DiskName'))
+			if DataDisk[depth1].get('Category') is not None:
+				self.add_query_param('DataDisk.' + str(depth1 + 1) + '.Category', DataDisk[depth1].get('Category'))
+			if DataDisk[depth1].get('DeleteWithInstance') is not None:
+				self.add_query_param('DataDisk.' + str(depth1 + 1) + '.DeleteWithInstance', DataDisk[depth1].get('DeleteWithInstance'))
+			if DataDisk[depth1].get('Encrypted') is not None:
+				self.add_query_param('DataDisk.' + str(depth1 + 1) + '.Encrypted', DataDisk[depth1].get('Encrypted'))
+	def get_SystemDiskSize(self): # Integer
+		return self.get_query_params().get('SystemDisk.Size')
 
-			def set_SystemDiskSize(self, SystemDiskSize):  # Integer
-				self.add_query_param('SystemDisk.Size', SystemDiskSize)
-			def get_VpcId(self): # String
-				return self.get_query_params().get('VpcId')
+	def set_SystemDiskSize(self, SystemDiskSize):  # Integer
+		self.add_query_param('SystemDisk.Size', SystemDiskSize)
+	def get_VpcId(self): # String
+		return self.get_query_params().get('VpcId')
 
-			def set_VpcId(self, VpcId):  # String
-				self.add_query_param('VpcId', VpcId)
-			def get_SystemDiskDescription(self): # String
-				return self.get_query_params().get('SystemDisk.Description')
+	def set_VpcId(self, VpcId):  # String
+		self.add_query_param('VpcId', VpcId)
+	def get_SystemDiskDescription(self): # String
+		return self.get_query_params().get('SystemDisk.Description')
 
-			def set_SystemDiskDescription(self, SystemDiskDescription):  # String
-				self.add_query_param('SystemDisk.Description', SystemDiskDescription)
+	def set_SystemDiskDescription(self, SystemDiskDescription):  # String
+		self.add_query_param('SystemDisk.Description', SystemDiskDescription)

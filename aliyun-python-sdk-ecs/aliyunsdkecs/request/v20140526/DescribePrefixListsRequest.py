@@ -47,33 +47,33 @@ class DescribePrefixListsRequest(RpcRequest):
 	def set_PrefixListIds(self, PrefixListId):  # RepeatList
 		for depth1 in range(len(PrefixListId)):
 			self.add_query_param('PrefixListId.' + str(depth1 + 1), PrefixListId)
-		def get_AddressFamily(self): # String
-			return self.get_query_params().get('AddressFamily')
+	def get_AddressFamily(self): # String
+		return self.get_query_params().get('AddressFamily')
 
-		def set_AddressFamily(self, AddressFamily):  # String
-			self.add_query_param('AddressFamily', AddressFamily)
-		def get_ResourceOwnerAccount(self): # String
-			return self.get_query_params().get('ResourceOwnerAccount')
+	def set_AddressFamily(self, AddressFamily):  # String
+		self.add_query_param('AddressFamily', AddressFamily)
+	def get_ResourceOwnerAccount(self): # String
+		return self.get_query_params().get('ResourceOwnerAccount')
 
-		def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
-			self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
-		def get_OwnerAccount(self): # String
-			return self.get_query_params().get('OwnerAccount')
+	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
+		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_OwnerAccount(self): # String
+		return self.get_query_params().get('OwnerAccount')
 
-		def set_OwnerAccount(self, OwnerAccount):  # String
-			self.add_query_param('OwnerAccount', OwnerAccount)
-		def get_OwnerId(self): # Long
-			return self.get_query_params().get('OwnerId')
+	def set_OwnerAccount(self, OwnerAccount):  # String
+		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_OwnerId(self): # Long
+		return self.get_query_params().get('OwnerId')
 
-		def set_OwnerId(self, OwnerId):  # Long
-			self.add_query_param('OwnerId', OwnerId)
-		def get_PrefixListName(self): # String
-			return self.get_query_params().get('PrefixListName')
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_PrefixListName(self): # String
+		return self.get_query_params().get('PrefixListName')
 
-		def set_PrefixListName(self, PrefixListName):  # String
-			self.add_query_param('PrefixListName', PrefixListName)
-		def get_MaxResults(self): # Integer
-			return self.get_query_params().get('MaxResults')
+	def set_PrefixListName(self, PrefixListName):  # String
+		self.add_query_param('PrefixListName', PrefixListName)
+	def get_MaxResults(self): # Integer
+		return self.get_query_params().get('MaxResults')
 
-		def set_MaxResults(self, MaxResults):  # Integer
-			self.add_query_param('MaxResults', MaxResults)
+	def set_MaxResults(self, MaxResults):  # Integer
+		self.add_query_param('MaxResults', MaxResults)

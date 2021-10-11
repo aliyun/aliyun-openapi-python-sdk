@@ -72,8 +72,8 @@ class DeleteInstancesRequest(RpcRequest):
 	def set_InstanceIds(self, InstanceId):  # RepeatList
 		for depth1 in range(len(InstanceId)):
 			self.add_query_param('InstanceId.' + str(depth1 + 1), InstanceId)
-		def get_Force(self): # Boolean
-			return self.get_query_params().get('Force')
+	def get_Force(self): # Boolean
+		return self.get_query_params().get('Force')
 
-		def set_Force(self, Force):  # Boolean
-			self.add_query_param('Force', Force)
+	def set_Force(self, Force):  # Boolean
+		self.add_query_param('Force', Force)

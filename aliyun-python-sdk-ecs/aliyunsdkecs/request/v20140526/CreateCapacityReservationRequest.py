@@ -116,8 +116,8 @@ class CreateCapacityReservationRequest(RpcRequest):
 	def set_ZoneIds(self, ZoneId):  # RepeatList
 		for depth1 in range(len(ZoneId)):
 			self.add_query_param('ZoneId.' + str(depth1 + 1), ZoneId)
-		def get_InstanceAmount(self): # Integer
-			return self.get_query_params().get('InstanceAmount')
+	def get_InstanceAmount(self): # Integer
+		return self.get_query_params().get('InstanceAmount')
 
-		def set_InstanceAmount(self, InstanceAmount):  # Integer
-			self.add_query_param('InstanceAmount', InstanceAmount)
+	def set_InstanceAmount(self, InstanceAmount):  # Integer
+		self.add_query_param('InstanceAmount', InstanceAmount)

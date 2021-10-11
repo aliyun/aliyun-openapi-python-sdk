@@ -112,23 +112,23 @@ class RunCommandRequest(RpcRequest):
 	def set_InstanceIds(self, InstanceId):  # RepeatList
 		for depth1 in range(len(InstanceId)):
 			self.add_query_param('InstanceId.' + str(depth1 + 1), InstanceId)
-		def get_Name(self): # String
-			return self.get_query_params().get('Name')
+	def get_Name(self): # String
+		return self.get_query_params().get('Name')
 
-		def set_Name(self, Name):  # String
-			self.add_query_param('Name', Name)
-		def get_Parameters(self): # Json
-			return self.get_query_params().get('Parameters')
+	def set_Name(self, Name):  # String
+		self.add_query_param('Name', Name)
+	def get_Parameters(self): # Json
+		return self.get_query_params().get('Parameters')
 
-		def set_Parameters(self, Parameters):  # Json
-			self.add_query_param('Parameters', Parameters)
-		def get_EnableParameter(self): # Boolean
-			return self.get_query_params().get('EnableParameter')
+	def set_Parameters(self, Parameters):  # Json
+		self.add_query_param('Parameters', Parameters)
+	def get_EnableParameter(self): # Boolean
+		return self.get_query_params().get('EnableParameter')
 
-		def set_EnableParameter(self, EnableParameter):  # Boolean
-			self.add_query_param('EnableParameter', EnableParameter)
-		def get_Username(self): # String
-			return self.get_query_params().get('Username')
+	def set_EnableParameter(self, EnableParameter):  # Boolean
+		self.add_query_param('EnableParameter', EnableParameter)
+	def get_Username(self): # String
+		return self.get_query_params().get('Username')
 
-		def set_Username(self, Username):  # String
-			self.add_query_param('Username', Username)
+	def set_Username(self, Username):  # String
+		self.add_query_param('Username', Username)

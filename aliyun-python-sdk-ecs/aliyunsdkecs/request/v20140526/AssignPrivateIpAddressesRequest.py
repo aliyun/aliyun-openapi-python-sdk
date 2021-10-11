@@ -67,8 +67,8 @@ class AssignPrivateIpAddressesRequest(RpcRequest):
 	def set_PrivateIpAddresss(self, PrivateIpAddress):  # RepeatList
 		for depth1 in range(len(PrivateIpAddress)):
 			self.add_query_param('PrivateIpAddress.' + str(depth1 + 1), PrivateIpAddress)
-		def get_NetworkInterfaceId(self): # String
-			return self.get_query_params().get('NetworkInterfaceId')
+	def get_NetworkInterfaceId(self): # String
+		return self.get_query_params().get('NetworkInterfaceId')
 
-		def set_NetworkInterfaceId(self, NetworkInterfaceId):  # String
-			self.add_query_param('NetworkInterfaceId', NetworkInterfaceId)
+	def set_NetworkInterfaceId(self, NetworkInterfaceId):  # String
+		self.add_query_param('NetworkInterfaceId', NetworkInterfaceId)

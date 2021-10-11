@@ -92,18 +92,18 @@ class SendFileRequest(RpcRequest):
 	def set_InstanceIds(self, InstanceId):  # RepeatList
 		for depth1 in range(len(InstanceId)):
 			self.add_query_param('InstanceId.' + str(depth1 + 1), InstanceId)
-		def get_Name(self): # String
-			return self.get_query_params().get('Name')
+	def get_Name(self): # String
+		return self.get_query_params().get('Name')
 
-		def set_Name(self, Name):  # String
-			self.add_query_param('Name', Name)
-		def get_FileGroup(self): # String
-			return self.get_query_params().get('FileGroup')
+	def set_Name(self, Name):  # String
+		self.add_query_param('Name', Name)
+	def get_FileGroup(self): # String
+		return self.get_query_params().get('FileGroup')
 
-		def set_FileGroup(self, FileGroup):  # String
-			self.add_query_param('FileGroup', FileGroup)
-		def get_TargetDir(self): # String
-			return self.get_query_params().get('TargetDir')
+	def set_FileGroup(self, FileGroup):  # String
+		self.add_query_param('FileGroup', FileGroup)
+	def get_TargetDir(self): # String
+		return self.get_query_params().get('TargetDir')
 
-		def set_TargetDir(self, TargetDir):  # String
-			self.add_query_param('TargetDir', TargetDir)
+	def set_TargetDir(self, TargetDir):  # String
+		self.add_query_param('TargetDir', TargetDir)

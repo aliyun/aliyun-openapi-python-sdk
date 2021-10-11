@@ -62,35 +62,35 @@ class ReportInstancesStatusRequest(RpcRequest):
 	def set_DiskIds(self, DiskId):  # RepeatList
 		for depth1 in range(len(DiskId)):
 			self.add_query_param('DiskId.' + str(depth1 + 1), DiskId)
-		def get_ResourceOwnerAccount(self): # String
-			return self.get_query_params().get('ResourceOwnerAccount')
+	def get_ResourceOwnerAccount(self): # String
+		return self.get_query_params().get('ResourceOwnerAccount')
 
-		def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
-			self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
-		def get_OwnerAccount(self): # String
-			return self.get_query_params().get('OwnerAccount')
+	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
+		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_OwnerAccount(self): # String
+		return self.get_query_params().get('OwnerAccount')
 
-		def set_OwnerAccount(self, OwnerAccount):  # String
-			self.add_query_param('OwnerAccount', OwnerAccount)
-		def get_EndTime(self): # String
-			return self.get_query_params().get('EndTime')
+	def set_OwnerAccount(self, OwnerAccount):  # String
+		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_EndTime(self): # String
+		return self.get_query_params().get('EndTime')
 
-		def set_EndTime(self, EndTime):  # String
-			self.add_query_param('EndTime', EndTime)
-		def get_OwnerId(self): # Long
-			return self.get_query_params().get('OwnerId')
+	def set_EndTime(self, EndTime):  # String
+		self.add_query_param('EndTime', EndTime)
+	def get_OwnerId(self): # Long
+		return self.get_query_params().get('OwnerId')
 
-		def set_OwnerId(self, OwnerId):  # Long
-			self.add_query_param('OwnerId', OwnerId)
-		def get_InstanceIds(self): # RepeatList
-			return self.get_query_params().get('InstanceId')
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_InstanceIds(self): # RepeatList
+		return self.get_query_params().get('InstanceId')
 
-		def set_InstanceIds(self, InstanceId):  # RepeatList
-			for depth1 in range(len(InstanceId)):
-				self.add_query_param('InstanceId.' + str(depth1 + 1), InstanceId)
-			def get_Devices(self): # RepeatList
-				return self.get_query_params().get('Device')
+	def set_InstanceIds(self, InstanceId):  # RepeatList
+		for depth1 in range(len(InstanceId)):
+			self.add_query_param('InstanceId.' + str(depth1 + 1), InstanceId)
+	def get_Devices(self): # RepeatList
+		return self.get_query_params().get('Device')
 
-			def set_Devices(self, Device):  # RepeatList
-				for depth1 in range(len(Device)):
-					self.add_query_param('Device.' + str(depth1 + 1), Device)
+	def set_Devices(self, Device):  # RepeatList
+		for depth1 in range(len(Device)):
+			self.add_query_param('Device.' + str(depth1 + 1), Device)

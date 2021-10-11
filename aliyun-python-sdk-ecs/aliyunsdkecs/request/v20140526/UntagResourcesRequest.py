@@ -47,29 +47,29 @@ class UntagResourcesRequest(RpcRequest):
 	def set_ResourceIds(self, ResourceId):  # RepeatList
 		for depth1 in range(len(ResourceId)):
 			self.add_query_param('ResourceId.' + str(depth1 + 1), ResourceId)
-		def get_ResourceOwnerAccount(self): # String
-			return self.get_query_params().get('ResourceOwnerAccount')
+	def get_ResourceOwnerAccount(self): # String
+		return self.get_query_params().get('ResourceOwnerAccount')
 
-		def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
-			self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
-		def get_OwnerAccount(self): # String
-			return self.get_query_params().get('OwnerAccount')
+	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
+		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_OwnerAccount(self): # String
+		return self.get_query_params().get('OwnerAccount')
 
-		def set_OwnerAccount(self, OwnerAccount):  # String
-			self.add_query_param('OwnerAccount', OwnerAccount)
-		def get_OwnerId(self): # Long
-			return self.get_query_params().get('OwnerId')
+	def set_OwnerAccount(self, OwnerAccount):  # String
+		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_OwnerId(self): # Long
+		return self.get_query_params().get('OwnerId')
 
-		def set_OwnerId(self, OwnerId):  # Long
-			self.add_query_param('OwnerId', OwnerId)
-		def get_ResourceType(self): # String
-			return self.get_query_params().get('ResourceType')
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_ResourceType(self): # String
+		return self.get_query_params().get('ResourceType')
 
-		def set_ResourceType(self, ResourceType):  # String
-			self.add_query_param('ResourceType', ResourceType)
-		def get_TagKeys(self): # RepeatList
-			return self.get_query_params().get('TagKey')
+	def set_ResourceType(self, ResourceType):  # String
+		self.add_query_param('ResourceType', ResourceType)
+	def get_TagKeys(self): # RepeatList
+		return self.get_query_params().get('TagKey')
 
-		def set_TagKeys(self, TagKey):  # RepeatList
-			for depth1 in range(len(TagKey)):
-				self.add_query_param('TagKey.' + str(depth1 + 1), TagKey)
+	def set_TagKeys(self, TagKey):  # RepeatList
+		for depth1 in range(len(TagKey)):
+			self.add_query_param('TagKey.' + str(depth1 + 1), TagKey)

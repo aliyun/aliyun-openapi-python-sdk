@@ -234,265 +234,265 @@ class RunInstancesRequest(RpcRequest):
 	def set_SecurityGroupIdss(self, SecurityGroupIds):  # RepeatList
 		for depth1 in range(len(SecurityGroupIds)):
 			self.add_query_param('SecurityGroupIds.' + str(depth1 + 1), SecurityGroupIds)
-		def get_SystemDiskSize(self): # String
-			return self.get_query_params().get('SystemDisk.Size')
+	def get_SystemDiskSize(self): # String
+		return self.get_query_params().get('SystemDisk.Size')
 
-		def set_SystemDiskSize(self, SystemDiskSize):  # String
-			self.add_query_param('SystemDisk.Size', SystemDiskSize)
-		def get_ImageFamily(self): # String
-			return self.get_query_params().get('ImageFamily')
+	def set_SystemDiskSize(self, SystemDiskSize):  # String
+		self.add_query_param('SystemDisk.Size', SystemDiskSize)
+	def get_ImageFamily(self): # String
+		return self.get_query_params().get('ImageFamily')
 
-		def set_ImageFamily(self, ImageFamily):  # String
-			self.add_query_param('ImageFamily', ImageFamily)
-		def get_LaunchTemplateName(self): # String
-			return self.get_query_params().get('LaunchTemplateName')
+	def set_ImageFamily(self, ImageFamily):  # String
+		self.add_query_param('ImageFamily', ImageFamily)
+	def get_LaunchTemplateName(self): # String
+		return self.get_query_params().get('LaunchTemplateName')
 
-		def set_LaunchTemplateName(self, LaunchTemplateName):  # String
-			self.add_query_param('LaunchTemplateName', LaunchTemplateName)
-		def get_ResourceOwnerId(self): # Long
-			return self.get_query_params().get('ResourceOwnerId')
+	def set_LaunchTemplateName(self, LaunchTemplateName):  # String
+		self.add_query_param('LaunchTemplateName', LaunchTemplateName)
+	def get_ResourceOwnerId(self): # Long
+		return self.get_query_params().get('ResourceOwnerId')
 
-		def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
-			self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-		def get_HpcClusterId(self): # String
-			return self.get_query_params().get('HpcClusterId')
+	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
+		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_HpcClusterId(self): # String
+		return self.get_query_params().get('HpcClusterId')
 
-		def set_HpcClusterId(self, HpcClusterId):  # String
-			self.add_query_param('HpcClusterId', HpcClusterId)
-		def get_HttpPutResponseHopLimit(self): # Integer
-			return self.get_query_params().get('HttpPutResponseHopLimit')
+	def set_HpcClusterId(self, HpcClusterId):  # String
+		self.add_query_param('HpcClusterId', HpcClusterId)
+	def get_HttpPutResponseHopLimit(self): # Integer
+		return self.get_query_params().get('HttpPutResponseHopLimit')
 
-		def set_HttpPutResponseHopLimit(self, HttpPutResponseHopLimit):  # Integer
-			self.add_query_param('HttpPutResponseHopLimit', HttpPutResponseHopLimit)
-		def get_Isp(self): # String
-			return self.get_query_params().get('Isp')
+	def set_HttpPutResponseHopLimit(self, HttpPutResponseHopLimit):  # Integer
+		self.add_query_param('HttpPutResponseHopLimit', HttpPutResponseHopLimit)
+	def get_Isp(self): # String
+		return self.get_query_params().get('Isp')
 
-		def set_Isp(self, Isp):  # String
-			self.add_query_param('Isp', Isp)
-		def get_KeyPairName(self): # String
-			return self.get_query_params().get('KeyPairName')
+	def set_Isp(self, Isp):  # String
+		self.add_query_param('Isp', Isp)
+	def get_KeyPairName(self): # String
+		return self.get_query_params().get('KeyPairName')
 
-		def set_KeyPairName(self, KeyPairName):  # String
-			self.add_query_param('KeyPairName', KeyPairName)
-		def get_SpotPriceLimit(self): # Float
-			return self.get_query_params().get('SpotPriceLimit')
+	def set_KeyPairName(self, KeyPairName):  # String
+		self.add_query_param('KeyPairName', KeyPairName)
+	def get_SpotPriceLimit(self): # Float
+		return self.get_query_params().get('SpotPriceLimit')
 
-		def set_SpotPriceLimit(self, SpotPriceLimit):  # Float
-			self.add_query_param('SpotPriceLimit', SpotPriceLimit)
-		def get_StorageSetPartitionNumber(self): # Integer
-			return self.get_query_params().get('StorageSetPartitionNumber')
+	def set_SpotPriceLimit(self, SpotPriceLimit):  # Float
+		self.add_query_param('SpotPriceLimit', SpotPriceLimit)
+	def get_StorageSetPartitionNumber(self): # Integer
+		return self.get_query_params().get('StorageSetPartitionNumber')
 
-		def set_StorageSetPartitionNumber(self, StorageSetPartitionNumber):  # Integer
-			self.add_query_param('StorageSetPartitionNumber', StorageSetPartitionNumber)
-		def get_Tags(self): # RepeatList
-			return self.get_query_params().get('Tag')
+	def set_StorageSetPartitionNumber(self, StorageSetPartitionNumber):  # Integer
+		self.add_query_param('StorageSetPartitionNumber', StorageSetPartitionNumber)
+	def get_Tags(self): # RepeatList
+		return self.get_query_params().get('Tag')
 
-		def set_Tags(self, Tag):  # RepeatList
-			for depth1 in range(len(Tag)):
-				if Tag[depth1].get('Key') is not None:
-					self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tag[depth1].get('Key'))
-				if Tag[depth1].get('Value') is not None:
-					self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tag[depth1].get('Value'))
-		def get_PrivatePoolOptionsId(self): # String
-			return self.get_query_params().get('PrivatePoolOptions.Id')
+	def set_Tags(self, Tag):  # RepeatList
+		for depth1 in range(len(Tag)):
+			if Tag[depth1].get('Key') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tag[depth1].get('Key'))
+			if Tag[depth1].get('Value') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tag[depth1].get('Value'))
+	def get_PrivatePoolOptionsId(self): # String
+		return self.get_query_params().get('PrivatePoolOptions.Id')
 
-		def set_PrivatePoolOptionsId(self, PrivatePoolOptionsId):  # String
-			self.add_query_param('PrivatePoolOptions.Id', PrivatePoolOptionsId)
-		def get_AutoRenewPeriod(self): # Integer
-			return self.get_query_params().get('AutoRenewPeriod')
+	def set_PrivatePoolOptionsId(self, PrivatePoolOptionsId):  # String
+		self.add_query_param('PrivatePoolOptions.Id', PrivatePoolOptionsId)
+	def get_AutoRenewPeriod(self): # Integer
+		return self.get_query_params().get('AutoRenewPeriod')
 
-		def set_AutoRenewPeriod(self, AutoRenewPeriod):  # Integer
-			self.add_query_param('AutoRenewPeriod', AutoRenewPeriod)
-		def get_LaunchTemplateId(self): # String
-			return self.get_query_params().get('LaunchTemplateId')
+	def set_AutoRenewPeriod(self, AutoRenewPeriod):  # Integer
+		self.add_query_param('AutoRenewPeriod', AutoRenewPeriod)
+	def get_LaunchTemplateId(self): # String
+		return self.get_query_params().get('LaunchTemplateId')
 
-		def set_LaunchTemplateId(self, LaunchTemplateId):  # String
-			self.add_query_param('LaunchTemplateId', LaunchTemplateId)
-		def get_Ipv6AddressCount(self): # Integer
-			return self.get_query_params().get('Ipv6AddressCount')
+	def set_LaunchTemplateId(self, LaunchTemplateId):  # String
+		self.add_query_param('LaunchTemplateId', LaunchTemplateId)
+	def get_Ipv6AddressCount(self): # Integer
+		return self.get_query_params().get('Ipv6AddressCount')
 
-		def set_Ipv6AddressCount(self, Ipv6AddressCount):  # Integer
-			self.add_query_param('Ipv6AddressCount', Ipv6AddressCount)
-		def get_HostNamess(self): # RepeatList
-			return self.get_query_params().get('HostNames')
+	def set_Ipv6AddressCount(self, Ipv6AddressCount):  # Integer
+		self.add_query_param('Ipv6AddressCount', Ipv6AddressCount)
+	def get_HostNamess(self): # RepeatList
+		return self.get_query_params().get('HostNames')
 
-		def set_HostNamess(self, HostNames):  # RepeatList
-			for depth1 in range(len(HostNames)):
-				self.add_query_param('HostNames.' + str(depth1 + 1), HostNames)
-			def get_VSwitchId(self): # String
-				return self.get_query_params().get('VSwitchId')
+	def set_HostNamess(self, HostNames):  # RepeatList
+		for depth1 in range(len(HostNames)):
+			self.add_query_param('HostNames.' + str(depth1 + 1), HostNames)
+	def get_VSwitchId(self): # String
+		return self.get_query_params().get('VSwitchId')
 
-			def set_VSwitchId(self, VSwitchId):  # String
-				self.add_query_param('VSwitchId', VSwitchId)
-			def get_InstanceName(self): # String
-				return self.get_query_params().get('InstanceName')
+	def set_VSwitchId(self, VSwitchId):  # String
+		self.add_query_param('VSwitchId', VSwitchId)
+	def get_InstanceName(self): # String
+		return self.get_query_params().get('InstanceName')
 
-			def set_InstanceName(self, InstanceName):  # String
-				self.add_query_param('InstanceName', InstanceName)
-			def get_ZoneId(self): # String
-				return self.get_query_params().get('ZoneId')
+	def set_InstanceName(self, InstanceName):  # String
+		self.add_query_param('InstanceName', InstanceName)
+	def get_ZoneId(self): # String
+		return self.get_query_params().get('ZoneId')
 
-			def set_ZoneId(self, ZoneId):  # String
-				self.add_query_param('ZoneId', ZoneId)
-			def get_Ipv6Addresss(self): # RepeatList
-				return self.get_query_params().get('Ipv6Address')
+	def set_ZoneId(self, ZoneId):  # String
+		self.add_query_param('ZoneId', ZoneId)
+	def get_Ipv6Addresss(self): # RepeatList
+		return self.get_query_params().get('Ipv6Address')
 
-			def set_Ipv6Addresss(self, Ipv6Address):  # RepeatList
-				for depth1 in range(len(Ipv6Address)):
-					self.add_query_param('Ipv6Address.' + str(depth1 + 1), Ipv6Address)
-				def get_SecurityOptionsConfidentialComputingMode(self): # String
-					return self.get_query_params().get('SecurityOptions.ConfidentialComputingMode')
+	def set_Ipv6Addresss(self, Ipv6Address):  # RepeatList
+		for depth1 in range(len(Ipv6Address)):
+			self.add_query_param('Ipv6Address.' + str(depth1 + 1), Ipv6Address)
+	def get_SecurityOptionsConfidentialComputingMode(self): # String
+		return self.get_query_params().get('SecurityOptions.ConfidentialComputingMode')
 
-				def set_SecurityOptionsConfidentialComputingMode(self, SecurityOptionsConfidentialComputingMode):  # String
-					self.add_query_param('SecurityOptions.ConfidentialComputingMode', SecurityOptionsConfidentialComputingMode)
-				def get_ClientToken(self): # String
-					return self.get_query_params().get('ClientToken')
+	def set_SecurityOptionsConfidentialComputingMode(self, SecurityOptionsConfidentialComputingMode):  # String
+		self.add_query_param('SecurityOptions.ConfidentialComputingMode', SecurityOptionsConfidentialComputingMode)
+	def get_ClientToken(self): # String
+		return self.get_query_params().get('ClientToken')
 
-				def set_ClientToken(self, ClientToken):  # String
-					self.add_query_param('ClientToken', ClientToken)
-				def get_InternetMaxBandwidthOut(self): # Integer
-					return self.get_query_params().get('InternetMaxBandwidthOut')
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_query_param('ClientToken', ClientToken)
+	def get_InternetMaxBandwidthOut(self): # Integer
+		return self.get_query_params().get('InternetMaxBandwidthOut')
 
-				def set_InternetMaxBandwidthOut(self, InternetMaxBandwidthOut):  # Integer
-					self.add_query_param('InternetMaxBandwidthOut', InternetMaxBandwidthOut)
-				def get_Description(self): # String
-					return self.get_query_params().get('Description')
+	def set_InternetMaxBandwidthOut(self, InternetMaxBandwidthOut):  # Integer
+		self.add_query_param('InternetMaxBandwidthOut', InternetMaxBandwidthOut)
+	def get_Description(self): # String
+		return self.get_query_params().get('Description')
 
-				def set_Description(self, Description):  # String
-					self.add_query_param('Description', Description)
-				def get_CpuOptionsThreadsPerCore(self): # Integer
-					return self.get_query_params().get('CpuOptions.ThreadsPerCore')
+	def set_Description(self, Description):  # String
+		self.add_query_param('Description', Description)
+	def get_CpuOptionsThreadsPerCore(self): # Integer
+		return self.get_query_params().get('CpuOptions.ThreadsPerCore')
 
-				def set_CpuOptionsThreadsPerCore(self, CpuOptionsThreadsPerCore):  # Integer
-					self.add_query_param('CpuOptions.ThreadsPerCore', CpuOptionsThreadsPerCore)
-				def get_SystemDiskCategory(self): # String
-					return self.get_query_params().get('SystemDisk.Category')
+	def set_CpuOptionsThreadsPerCore(self, CpuOptionsThreadsPerCore):  # Integer
+		self.add_query_param('CpuOptions.ThreadsPerCore', CpuOptionsThreadsPerCore)
+	def get_SystemDiskCategory(self): # String
+		return self.get_query_params().get('SystemDisk.Category')
 
-				def set_SystemDiskCategory(self, SystemDiskCategory):  # String
-					self.add_query_param('SystemDisk.Category', SystemDiskCategory)
-				def get_SecurityOptionsTrustedSystemMode(self): # String
-					return self.get_query_params().get('SecurityOptions.TrustedSystemMode')
+	def set_SystemDiskCategory(self, SystemDiskCategory):  # String
+		self.add_query_param('SystemDisk.Category', SystemDiskCategory)
+	def get_SecurityOptionsTrustedSystemMode(self): # String
+		return self.get_query_params().get('SecurityOptions.TrustedSystemMode')
 
-				def set_SecurityOptionsTrustedSystemMode(self, SecurityOptionsTrustedSystemMode):  # String
-					self.add_query_param('SecurityOptions.TrustedSystemMode', SecurityOptionsTrustedSystemMode)
-				def get_UserData(self): # String
-					return self.get_query_params().get('UserData')
+	def set_SecurityOptionsTrustedSystemMode(self, SecurityOptionsTrustedSystemMode):  # String
+		self.add_query_param('SecurityOptions.TrustedSystemMode', SecurityOptionsTrustedSystemMode)
+	def get_UserData(self): # String
+		return self.get_query_params().get('UserData')
 
-				def set_UserData(self, UserData):  # String
-					self.add_query_param('UserData', UserData)
-				def get_HttpEndpoint(self): # String
-					return self.get_query_params().get('HttpEndpoint')
+	def set_UserData(self, UserData):  # String
+		self.add_query_param('UserData', UserData)
+	def get_HttpEndpoint(self): # String
+		return self.get_query_params().get('HttpEndpoint')
 
-				def set_HttpEndpoint(self, HttpEndpoint):  # String
-					self.add_query_param('HttpEndpoint', HttpEndpoint)
-				def get_InstanceChargeType(self): # String
-					return self.get_query_params().get('InstanceChargeType')
+	def set_HttpEndpoint(self, HttpEndpoint):  # String
+		self.add_query_param('HttpEndpoint', HttpEndpoint)
+	def get_InstanceChargeType(self): # String
+		return self.get_query_params().get('InstanceChargeType')
 
-				def set_InstanceChargeType(self, InstanceChargeType):  # String
-					self.add_query_param('InstanceChargeType', InstanceChargeType)
-				def get_DeploymentSetId(self): # String
-					return self.get_query_params().get('DeploymentSetId')
+	def set_InstanceChargeType(self, InstanceChargeType):  # String
+		self.add_query_param('InstanceChargeType', InstanceChargeType)
+	def get_DeploymentSetId(self): # String
+		return self.get_query_params().get('DeploymentSetId')
 
-				def set_DeploymentSetId(self, DeploymentSetId):  # String
-					self.add_query_param('DeploymentSetId', DeploymentSetId)
-				def get_NetworkInterfaces(self): # RepeatList
-					return self.get_query_params().get('NetworkInterface')
+	def set_DeploymentSetId(self, DeploymentSetId):  # String
+		self.add_query_param('DeploymentSetId', DeploymentSetId)
+	def get_NetworkInterfaces(self): # RepeatList
+		return self.get_query_params().get('NetworkInterface')
 
-				def set_NetworkInterfaces(self, NetworkInterface):  # RepeatList
-					for depth1 in range(len(NetworkInterface)):
-						if NetworkInterface[depth1].get('VSwitchId') is not None:
-							self.add_query_param('NetworkInterface.' + str(depth1 + 1) + '.VSwitchId', NetworkInterface[depth1].get('VSwitchId'))
-						if NetworkInterface[depth1].get('NetworkInterfaceName') is not None:
-							self.add_query_param('NetworkInterface.' + str(depth1 + 1) + '.NetworkInterfaceName', NetworkInterface[depth1].get('NetworkInterfaceName'))
-						if NetworkInterface[depth1].get('Description') is not None:
-							self.add_query_param('NetworkInterface.' + str(depth1 + 1) + '.Description', NetworkInterface[depth1].get('Description'))
-						if NetworkInterface[depth1].get('SecurityGroupId') is not None:
-							self.add_query_param('NetworkInterface.' + str(depth1 + 1) + '.SecurityGroupId', NetworkInterface[depth1].get('SecurityGroupId'))
-						if NetworkInterface[depth1].get('PrimaryIpAddress') is not None:
-							self.add_query_param('NetworkInterface.' + str(depth1 + 1) + '.PrimaryIpAddress', NetworkInterface[depth1].get('PrimaryIpAddress'))
-						if NetworkInterface[depth1].get('QueueNumber') is not None:
-							self.add_query_param('NetworkInterface.' + str(depth1 + 1) + '.QueueNumber', NetworkInterface[depth1].get('QueueNumber'))
-						if NetworkInterface[depth1].get('SecurityGroupIds') is not None:
-							for depth2 in range(len(NetworkInterface[depth1].get('SecurityGroupIds'))):
-								self.add_query_param('NetworkInterface.' + str(depth1 + 1) + '.SecurityGroupIds' + str(depth2 + 1), NetworkInterface[depth1].get('SecurityGroupIds'))
-					def get_Amount(self): # Integer
-						return self.get_query_params().get('Amount')
+	def set_NetworkInterfaces(self, NetworkInterface):  # RepeatList
+		for depth1 in range(len(NetworkInterface)):
+			if NetworkInterface[depth1].get('VSwitchId') is not None:
+				self.add_query_param('NetworkInterface.' + str(depth1 + 1) + '.VSwitchId', NetworkInterface[depth1].get('VSwitchId'))
+			if NetworkInterface[depth1].get('NetworkInterfaceName') is not None:
+				self.add_query_param('NetworkInterface.' + str(depth1 + 1) + '.NetworkInterfaceName', NetworkInterface[depth1].get('NetworkInterfaceName'))
+			if NetworkInterface[depth1].get('Description') is not None:
+				self.add_query_param('NetworkInterface.' + str(depth1 + 1) + '.Description', NetworkInterface[depth1].get('Description'))
+			if NetworkInterface[depth1].get('SecurityGroupId') is not None:
+				self.add_query_param('NetworkInterface.' + str(depth1 + 1) + '.SecurityGroupId', NetworkInterface[depth1].get('SecurityGroupId'))
+			if NetworkInterface[depth1].get('PrimaryIpAddress') is not None:
+				self.add_query_param('NetworkInterface.' + str(depth1 + 1) + '.PrimaryIpAddress', NetworkInterface[depth1].get('PrimaryIpAddress'))
+			if NetworkInterface[depth1].get('QueueNumber') is not None:
+				self.add_query_param('NetworkInterface.' + str(depth1 + 1) + '.QueueNumber', NetworkInterface[depth1].get('QueueNumber'))
+			if NetworkInterface[depth1].get('SecurityGroupIds') is not None:
+				for depth2 in range(len(NetworkInterface[depth1].get('SecurityGroupIds'))):
+					self.add_query_param('NetworkInterface.' + str(depth1 + 1) + '.SecurityGroupIds' + str(depth2 + 1), NetworkInterface[depth1].get('SecurityGroupIds'))
+	def get_Amount(self): # Integer
+		return self.get_query_params().get('Amount')
 
-					def set_Amount(self, Amount):  # Integer
-						self.add_query_param('Amount', Amount)
-					def get_OwnerAccount(self): # String
-						return self.get_query_params().get('OwnerAccount')
+	def set_Amount(self, Amount):  # Integer
+		self.add_query_param('Amount', Amount)
+	def get_OwnerAccount(self): # String
+		return self.get_query_params().get('OwnerAccount')
 
-					def set_OwnerAccount(self, OwnerAccount):  # String
-						self.add_query_param('OwnerAccount', OwnerAccount)
-					def get_Tenancy(self): # String
-						return self.get_query_params().get('Tenancy')
+	def set_OwnerAccount(self, OwnerAccount):  # String
+		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_Tenancy(self): # String
+		return self.get_query_params().get('Tenancy')
 
-					def set_Tenancy(self, Tenancy):  # String
-						self.add_query_param('Tenancy', Tenancy)
-					def get_RamRoleName(self): # String
-						return self.get_query_params().get('RamRoleName')
+	def set_Tenancy(self, Tenancy):  # String
+		self.add_query_param('Tenancy', Tenancy)
+	def get_RamRoleName(self): # String
+		return self.get_query_params().get('RamRoleName')
 
-					def set_RamRoleName(self, RamRoleName):  # String
-						self.add_query_param('RamRoleName', RamRoleName)
-					def get_AutoReleaseTime(self): # String
-						return self.get_query_params().get('AutoReleaseTime')
+	def set_RamRoleName(self, RamRoleName):  # String
+		self.add_query_param('RamRoleName', RamRoleName)
+	def get_AutoReleaseTime(self): # String
+		return self.get_query_params().get('AutoReleaseTime')
 
-					def set_AutoReleaseTime(self, AutoReleaseTime):  # String
-						self.add_query_param('AutoReleaseTime', AutoReleaseTime)
-					def get_CreditSpecification(self): # String
-						return self.get_query_params().get('CreditSpecification')
+	def set_AutoReleaseTime(self, AutoReleaseTime):  # String
+		self.add_query_param('AutoReleaseTime', AutoReleaseTime)
+	def get_CreditSpecification(self): # String
+		return self.get_query_params().get('CreditSpecification')
 
-					def set_CreditSpecification(self, CreditSpecification):  # String
-						self.add_query_param('CreditSpecification', CreditSpecification)
-					def get_LaunchTemplateVersion(self): # Long
-						return self.get_query_params().get('LaunchTemplateVersion')
+	def set_CreditSpecification(self, CreditSpecification):  # String
+		self.add_query_param('CreditSpecification', CreditSpecification)
+	def get_LaunchTemplateVersion(self): # Long
+		return self.get_query_params().get('LaunchTemplateVersion')
 
-					def set_LaunchTemplateVersion(self, LaunchTemplateVersion):  # Long
-						self.add_query_param('LaunchTemplateVersion', LaunchTemplateVersion)
-					def get_DataDisks(self): # RepeatList
-						return self.get_query_params().get('DataDisk')
+	def set_LaunchTemplateVersion(self, LaunchTemplateVersion):  # Long
+		self.add_query_param('LaunchTemplateVersion', LaunchTemplateVersion)
+	def get_DataDisks(self): # RepeatList
+		return self.get_query_params().get('DataDisk')
 
-					def set_DataDisks(self, DataDisk):  # RepeatList
-						for depth1 in range(len(DataDisk)):
-							if DataDisk[depth1].get('PerformanceLevel') is not None:
-								self.add_query_param('DataDisk.' + str(depth1 + 1) + '.PerformanceLevel', DataDisk[depth1].get('PerformanceLevel'))
-							if DataDisk[depth1].get('AutoSnapshotPolicyId') is not None:
-								self.add_query_param('DataDisk.' + str(depth1 + 1) + '.AutoSnapshotPolicyId', DataDisk[depth1].get('AutoSnapshotPolicyId'))
-							if DataDisk[depth1].get('Encrypted') is not None:
-								self.add_query_param('DataDisk.' + str(depth1 + 1) + '.Encrypted', DataDisk[depth1].get('Encrypted'))
-							if DataDisk[depth1].get('Description') is not None:
-								self.add_query_param('DataDisk.' + str(depth1 + 1) + '.Description', DataDisk[depth1].get('Description'))
-							if DataDisk[depth1].get('SnapshotId') is not None:
-								self.add_query_param('DataDisk.' + str(depth1 + 1) + '.SnapshotId', DataDisk[depth1].get('SnapshotId'))
-							if DataDisk[depth1].get('Device') is not None:
-								self.add_query_param('DataDisk.' + str(depth1 + 1) + '.Device', DataDisk[depth1].get('Device'))
-							if DataDisk[depth1].get('Size') is not None:
-								self.add_query_param('DataDisk.' + str(depth1 + 1) + '.Size', DataDisk[depth1].get('Size'))
-							if DataDisk[depth1].get('DiskName') is not None:
-								self.add_query_param('DataDisk.' + str(depth1 + 1) + '.DiskName', DataDisk[depth1].get('DiskName'))
-							if DataDisk[depth1].get('Category') is not None:
-								self.add_query_param('DataDisk.' + str(depth1 + 1) + '.Category', DataDisk[depth1].get('Category'))
-							if DataDisk[depth1].get('EncryptAlgorithm') is not None:
-								self.add_query_param('DataDisk.' + str(depth1 + 1) + '.EncryptAlgorithm', DataDisk[depth1].get('EncryptAlgorithm'))
-							if DataDisk[depth1].get('DeleteWithInstance') is not None:
-								self.add_query_param('DataDisk.' + str(depth1 + 1) + '.DeleteWithInstance', DataDisk[depth1].get('DeleteWithInstance'))
-							if DataDisk[depth1].get('KMSKeyId') is not None:
-								self.add_query_param('DataDisk.' + str(depth1 + 1) + '.KMSKeyId', DataDisk[depth1].get('KMSKeyId'))
-							if DataDisk[depth1].get('StorageClusterId') is not None:
-								self.add_query_param('DataDisk.' + str(depth1 + 1) + '.StorageClusterId', DataDisk[depth1].get('StorageClusterId'))
-					def get_StorageSetId(self): # String
-						return self.get_query_params().get('StorageSetId')
+	def set_DataDisks(self, DataDisk):  # RepeatList
+		for depth1 in range(len(DataDisk)):
+			if DataDisk[depth1].get('PerformanceLevel') is not None:
+				self.add_query_param('DataDisk.' + str(depth1 + 1) + '.PerformanceLevel', DataDisk[depth1].get('PerformanceLevel'))
+			if DataDisk[depth1].get('AutoSnapshotPolicyId') is not None:
+				self.add_query_param('DataDisk.' + str(depth1 + 1) + '.AutoSnapshotPolicyId', DataDisk[depth1].get('AutoSnapshotPolicyId'))
+			if DataDisk[depth1].get('Encrypted') is not None:
+				self.add_query_param('DataDisk.' + str(depth1 + 1) + '.Encrypted', DataDisk[depth1].get('Encrypted'))
+			if DataDisk[depth1].get('Description') is not None:
+				self.add_query_param('DataDisk.' + str(depth1 + 1) + '.Description', DataDisk[depth1].get('Description'))
+			if DataDisk[depth1].get('SnapshotId') is not None:
+				self.add_query_param('DataDisk.' + str(depth1 + 1) + '.SnapshotId', DataDisk[depth1].get('SnapshotId'))
+			if DataDisk[depth1].get('Device') is not None:
+				self.add_query_param('DataDisk.' + str(depth1 + 1) + '.Device', DataDisk[depth1].get('Device'))
+			if DataDisk[depth1].get('Size') is not None:
+				self.add_query_param('DataDisk.' + str(depth1 + 1) + '.Size', DataDisk[depth1].get('Size'))
+			if DataDisk[depth1].get('DiskName') is not None:
+				self.add_query_param('DataDisk.' + str(depth1 + 1) + '.DiskName', DataDisk[depth1].get('DiskName'))
+			if DataDisk[depth1].get('Category') is not None:
+				self.add_query_param('DataDisk.' + str(depth1 + 1) + '.Category', DataDisk[depth1].get('Category'))
+			if DataDisk[depth1].get('EncryptAlgorithm') is not None:
+				self.add_query_param('DataDisk.' + str(depth1 + 1) + '.EncryptAlgorithm', DataDisk[depth1].get('EncryptAlgorithm'))
+			if DataDisk[depth1].get('DeleteWithInstance') is not None:
+				self.add_query_param('DataDisk.' + str(depth1 + 1) + '.DeleteWithInstance', DataDisk[depth1].get('DeleteWithInstance'))
+			if DataDisk[depth1].get('KMSKeyId') is not None:
+				self.add_query_param('DataDisk.' + str(depth1 + 1) + '.KMSKeyId', DataDisk[depth1].get('KMSKeyId'))
+			if DataDisk[depth1].get('StorageClusterId') is not None:
+				self.add_query_param('DataDisk.' + str(depth1 + 1) + '.StorageClusterId', DataDisk[depth1].get('StorageClusterId'))
+	def get_StorageSetId(self): # String
+		return self.get_query_params().get('StorageSetId')
 
-					def set_StorageSetId(self, StorageSetId):  # String
-						self.add_query_param('StorageSetId', StorageSetId)
-					def get_HttpTokens(self): # String
-						return self.get_query_params().get('HttpTokens')
+	def set_StorageSetId(self, StorageSetId):  # String
+		self.add_query_param('StorageSetId', StorageSetId)
+	def get_HttpTokens(self): # String
+		return self.get_query_params().get('HttpTokens')
 
-					def set_HttpTokens(self, HttpTokens):  # String
-						self.add_query_param('HttpTokens', HttpTokens)
-					def get_SystemDiskDescription(self): # String
-						return self.get_query_params().get('SystemDisk.Description')
+	def set_HttpTokens(self, HttpTokens):  # String
+		self.add_query_param('HttpTokens', HttpTokens)
+	def get_SystemDiskDescription(self): # String
+		return self.get_query_params().get('SystemDisk.Description')
 
-					def set_SystemDiskDescription(self, SystemDiskDescription):  # String
-						self.add_query_param('SystemDisk.Description', SystemDiskDescription)
+	def set_SystemDiskDescription(self, SystemDiskDescription):  # String
+		self.add_query_param('SystemDisk.Description', SystemDiskDescription)

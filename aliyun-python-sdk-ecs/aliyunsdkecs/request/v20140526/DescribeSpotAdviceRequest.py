@@ -52,53 +52,53 @@ class DescribeSpotAdviceRequest(RpcRequest):
 	def set_InstanceTypess(self, InstanceTypes):  # RepeatList
 		for depth1 in range(len(InstanceTypes)):
 			self.add_query_param('InstanceTypes.' + str(depth1 + 1), InstanceTypes)
-		def get_MinCores(self): # Integer
-			return self.get_query_params().get('MinCores')
+	def get_MinCores(self): # Integer
+		return self.get_query_params().get('MinCores')
 
-		def set_MinCores(self, MinCores):  # Integer
-			self.add_query_param('MinCores', MinCores)
-		def get_Cores(self): # Integer
-			return self.get_query_params().get('Cores')
+	def set_MinCores(self, MinCores):  # Integer
+		self.add_query_param('MinCores', MinCores)
+	def get_Cores(self): # Integer
+		return self.get_query_params().get('Cores')
 
-		def set_Cores(self, Cores):  # Integer
-			self.add_query_param('Cores', Cores)
-		def get_ResourceOwnerAccount(self): # String
-			return self.get_query_params().get('ResourceOwnerAccount')
+	def set_Cores(self, Cores):  # Integer
+		self.add_query_param('Cores', Cores)
+	def get_ResourceOwnerAccount(self): # String
+		return self.get_query_params().get('ResourceOwnerAccount')
 
-		def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
-			self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
-		def get_OwnerAccount(self): # String
-			return self.get_query_params().get('OwnerAccount')
+	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
+		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_OwnerAccount(self): # String
+		return self.get_query_params().get('OwnerAccount')
 
-		def set_OwnerAccount(self, OwnerAccount):  # String
-			self.add_query_param('OwnerAccount', OwnerAccount)
-		def get_InstanceTypeFamily(self): # String
-			return self.get_query_params().get('InstanceTypeFamily')
+	def set_OwnerAccount(self, OwnerAccount):  # String
+		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_InstanceTypeFamily(self): # String
+		return self.get_query_params().get('InstanceTypeFamily')
 
-		def set_InstanceTypeFamily(self, InstanceTypeFamily):  # String
-			self.add_query_param('InstanceTypeFamily', InstanceTypeFamily)
-		def get_OwnerId(self): # Long
-			return self.get_query_params().get('OwnerId')
+	def set_InstanceTypeFamily(self, InstanceTypeFamily):  # String
+		self.add_query_param('InstanceTypeFamily', InstanceTypeFamily)
+	def get_OwnerId(self): # Long
+		return self.get_query_params().get('OwnerId')
 
-		def set_OwnerId(self, OwnerId):  # Long
-			self.add_query_param('OwnerId', OwnerId)
-		def get_InstanceFamilyLevel(self): # String
-			return self.get_query_params().get('InstanceFamilyLevel')
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_InstanceFamilyLevel(self): # String
+		return self.get_query_params().get('InstanceFamilyLevel')
 
-		def set_InstanceFamilyLevel(self, InstanceFamilyLevel):  # String
-			self.add_query_param('InstanceFamilyLevel', InstanceFamilyLevel)
-		def get_ZoneId(self): # String
-			return self.get_query_params().get('ZoneId')
+	def set_InstanceFamilyLevel(self, InstanceFamilyLevel):  # String
+		self.add_query_param('InstanceFamilyLevel', InstanceFamilyLevel)
+	def get_ZoneId(self): # String
+		return self.get_query_params().get('ZoneId')
 
-		def set_ZoneId(self, ZoneId):  # String
-			self.add_query_param('ZoneId', ZoneId)
-		def get_GpuAmount(self): # Integer
-			return self.get_query_params().get('GpuAmount')
+	def set_ZoneId(self, ZoneId):  # String
+		self.add_query_param('ZoneId', ZoneId)
+	def get_GpuAmount(self): # Integer
+		return self.get_query_params().get('GpuAmount')
 
-		def set_GpuAmount(self, GpuAmount):  # Integer
-			self.add_query_param('GpuAmount', GpuAmount)
-		def get_MinMemory(self): # Float
-			return self.get_query_params().get('MinMemory')
+	def set_GpuAmount(self, GpuAmount):  # Integer
+		self.add_query_param('GpuAmount', GpuAmount)
+	def get_MinMemory(self): # Float
+		return self.get_query_params().get('MinMemory')
 
-		def set_MinMemory(self, MinMemory):  # Float
-			self.add_query_param('MinMemory', MinMemory)
+	def set_MinMemory(self, MinMemory):  # Float
+		self.add_query_param('MinMemory', MinMemory)

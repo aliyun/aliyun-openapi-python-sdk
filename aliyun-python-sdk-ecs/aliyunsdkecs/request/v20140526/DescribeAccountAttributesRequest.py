@@ -42,18 +42,18 @@ class DescribeAccountAttributesRequest(RpcRequest):
 	def set_AttributeNames(self, AttributeName):  # RepeatList
 		for depth1 in range(len(AttributeName)):
 			self.add_query_param('AttributeName.' + str(depth1 + 1), AttributeName)
-		def get_ResourceOwnerAccount(self): # String
-			return self.get_query_params().get('ResourceOwnerAccount')
+	def get_ResourceOwnerAccount(self): # String
+		return self.get_query_params().get('ResourceOwnerAccount')
 
-		def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
-			self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
-		def get_OwnerId(self): # Long
-			return self.get_query_params().get('OwnerId')
+	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
+		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_OwnerId(self): # Long
+		return self.get_query_params().get('OwnerId')
 
-		def set_OwnerId(self, OwnerId):  # Long
-			self.add_query_param('OwnerId', OwnerId)
-		def get_ZoneId(self): # String
-			return self.get_query_params().get('ZoneId')
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_ZoneId(self): # String
+		return self.get_query_params().get('ZoneId')
 
-		def set_ZoneId(self, ZoneId):  # String
-			self.add_query_param('ZoneId', ZoneId)
+	def set_ZoneId(self, ZoneId):  # String
+		self.add_query_param('ZoneId', ZoneId)

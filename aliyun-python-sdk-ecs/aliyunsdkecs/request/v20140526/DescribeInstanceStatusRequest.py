@@ -72,8 +72,8 @@ class DescribeInstanceStatusRequest(RpcRequest):
 	def set_InstanceIds(self, InstanceId):  # RepeatList
 		for depth1 in range(len(InstanceId)):
 			self.add_query_param('InstanceId.' + str(depth1 + 1), InstanceId)
-		def get_ZoneId(self): # String
-			return self.get_query_params().get('ZoneId')
+	def get_ZoneId(self): # String
+		return self.get_query_params().get('ZoneId')
 
-		def set_ZoneId(self, ZoneId):  # String
-			self.add_query_param('ZoneId', ZoneId)
+	def set_ZoneId(self, ZoneId):  # String
+		self.add_query_param('ZoneId', ZoneId)

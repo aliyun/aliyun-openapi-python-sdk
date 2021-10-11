@@ -96,29 +96,29 @@ class DescribeReservedInstancesRequest(RpcRequest):
 	def set_ReservedInstanceIds(self, ReservedInstanceId):  # RepeatList
 		for depth1 in range(len(ReservedInstanceId)):
 			self.add_query_param('ReservedInstanceId.' + str(depth1 + 1), ReservedInstanceId)
-		def get_OfferingType(self): # String
-			return self.get_query_params().get('OfferingType')
+	def get_OfferingType(self): # String
+		return self.get_query_params().get('OfferingType')
 
-		def set_OfferingType(self, OfferingType):  # String
-			self.add_query_param('OfferingType', OfferingType)
-		def get_ZoneId(self): # String
-			return self.get_query_params().get('ZoneId')
+	def set_OfferingType(self, OfferingType):  # String
+		self.add_query_param('OfferingType', OfferingType)
+	def get_ZoneId(self): # String
+		return self.get_query_params().get('ZoneId')
 
-		def set_ZoneId(self, ZoneId):  # String
-			self.add_query_param('ZoneId', ZoneId)
-		def get_ReservedInstanceName(self): # String
-			return self.get_query_params().get('ReservedInstanceName')
+	def set_ZoneId(self, ZoneId):  # String
+		self.add_query_param('ZoneId', ZoneId)
+	def get_ReservedInstanceName(self): # String
+		return self.get_query_params().get('ReservedInstanceName')
 
-		def set_ReservedInstanceName(self, ReservedInstanceName):  # String
-			self.add_query_param('ReservedInstanceName', ReservedInstanceName)
-		def get_AllocationType(self): # String
-			return self.get_query_params().get('AllocationType')
+	def set_ReservedInstanceName(self, ReservedInstanceName):  # String
+		self.add_query_param('ReservedInstanceName', ReservedInstanceName)
+	def get_AllocationType(self): # String
+		return self.get_query_params().get('AllocationType')
 
-		def set_AllocationType(self, AllocationType):  # String
-			self.add_query_param('AllocationType', AllocationType)
-		def get_Statuss(self): # RepeatList
-			return self.get_query_params().get('Status')
+	def set_AllocationType(self, AllocationType):  # String
+		self.add_query_param('AllocationType', AllocationType)
+	def get_Statuss(self): # RepeatList
+		return self.get_query_params().get('Status')
 
-		def set_Statuss(self, Status):  # RepeatList
-			for depth1 in range(len(Status)):
-				self.add_query_param('Status.' + str(depth1 + 1), Status)
+	def set_Statuss(self, Status):  # RepeatList
+		for depth1 in range(len(Status)):
+			self.add_query_param('Status.' + str(depth1 + 1), Status)

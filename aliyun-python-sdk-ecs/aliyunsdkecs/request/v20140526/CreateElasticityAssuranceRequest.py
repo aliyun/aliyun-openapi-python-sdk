@@ -67,63 +67,63 @@ class CreateElasticityAssuranceRequest(RpcRequest):
 	def set_InstanceTypes(self, InstanceType):  # RepeatList
 		for depth1 in range(len(InstanceType)):
 			self.add_query_param('InstanceType.' + str(depth1 + 1), InstanceType)
-		def get_Tags(self): # RepeatList
-			return self.get_query_params().get('Tag')
+	def get_Tags(self): # RepeatList
+		return self.get_query_params().get('Tag')
 
-		def set_Tags(self, Tag):  # RepeatList
-			for depth1 in range(len(Tag)):
-				if Tag[depth1].get('Key') is not None:
-					self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tag[depth1].get('Key'))
-				if Tag[depth1].get('Value') is not None:
-					self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tag[depth1].get('Value'))
-		def get_Period(self): # Integer
-			return self.get_query_params().get('Period')
+	def set_Tags(self, Tag):  # RepeatList
+		for depth1 in range(len(Tag)):
+			if Tag[depth1].get('Key') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tag[depth1].get('Key'))
+			if Tag[depth1].get('Value') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tag[depth1].get('Value'))
+	def get_Period(self): # Integer
+		return self.get_query_params().get('Period')
 
-		def set_Period(self, Period):  # Integer
-			self.add_query_param('Period', Period)
-		def get_ResourceOwnerAccount(self): # String
-			return self.get_query_params().get('ResourceOwnerAccount')
+	def set_Period(self, Period):  # Integer
+		self.add_query_param('Period', Period)
+	def get_ResourceOwnerAccount(self): # String
+		return self.get_query_params().get('ResourceOwnerAccount')
 
-		def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
-			self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
-		def get_PrivatePoolOptionsName(self): # String
-			return self.get_query_params().get('PrivatePoolOptions.Name')
+	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
+		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_PrivatePoolOptionsName(self): # String
+		return self.get_query_params().get('PrivatePoolOptions.Name')
 
-		def set_PrivatePoolOptionsName(self, PrivatePoolOptionsName):  # String
-			self.add_query_param('PrivatePoolOptions.Name', PrivatePoolOptionsName)
-		def get_OwnerAccount(self): # String
-			return self.get_query_params().get('OwnerAccount')
+	def set_PrivatePoolOptionsName(self, PrivatePoolOptionsName):  # String
+		self.add_query_param('PrivatePoolOptions.Name', PrivatePoolOptionsName)
+	def get_OwnerAccount(self): # String
+		return self.get_query_params().get('OwnerAccount')
 
-		def set_OwnerAccount(self, OwnerAccount):  # String
-			self.add_query_param('OwnerAccount', OwnerAccount)
-		def get_AssuranceTimes(self): # String
-			return self.get_query_params().get('AssuranceTimes')
+	def set_OwnerAccount(self, OwnerAccount):  # String
+		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_AssuranceTimes(self): # String
+		return self.get_query_params().get('AssuranceTimes')
 
-		def set_AssuranceTimes(self, AssuranceTimes):  # String
-			self.add_query_param('AssuranceTimes', AssuranceTimes)
-		def get_OwnerId(self): # Long
-			return self.get_query_params().get('OwnerId')
+	def set_AssuranceTimes(self, AssuranceTimes):  # String
+		self.add_query_param('AssuranceTimes', AssuranceTimes)
+	def get_OwnerId(self): # Long
+		return self.get_query_params().get('OwnerId')
 
-		def set_OwnerId(self, OwnerId):  # Long
-			self.add_query_param('OwnerId', OwnerId)
-		def get_InstanceCpuCoreCount(self): # Integer
-			return self.get_query_params().get('InstanceCpuCoreCount')
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_InstanceCpuCoreCount(self): # Integer
+		return self.get_query_params().get('InstanceCpuCoreCount')
 
-		def set_InstanceCpuCoreCount(self, InstanceCpuCoreCount):  # Integer
-			self.add_query_param('InstanceCpuCoreCount', InstanceCpuCoreCount)
-		def get_PeriodUnit(self): # String
-			return self.get_query_params().get('PeriodUnit')
+	def set_InstanceCpuCoreCount(self, InstanceCpuCoreCount):  # Integer
+		self.add_query_param('InstanceCpuCoreCount', InstanceCpuCoreCount)
+	def get_PeriodUnit(self): # String
+		return self.get_query_params().get('PeriodUnit')
 
-		def set_PeriodUnit(self, PeriodUnit):  # String
-			self.add_query_param('PeriodUnit', PeriodUnit)
-		def get_ZoneIds(self): # RepeatList
-			return self.get_query_params().get('ZoneId')
+	def set_PeriodUnit(self, PeriodUnit):  # String
+		self.add_query_param('PeriodUnit', PeriodUnit)
+	def get_ZoneIds(self): # RepeatList
+		return self.get_query_params().get('ZoneId')
 
-		def set_ZoneIds(self, ZoneId):  # RepeatList
-			for depth1 in range(len(ZoneId)):
-				self.add_query_param('ZoneId.' + str(depth1 + 1), ZoneId)
-			def get_InstanceAmount(self): # Integer
-				return self.get_query_params().get('InstanceAmount')
+	def set_ZoneIds(self, ZoneId):  # RepeatList
+		for depth1 in range(len(ZoneId)):
+			self.add_query_param('ZoneId.' + str(depth1 + 1), ZoneId)
+	def get_InstanceAmount(self): # Integer
+		return self.get_query_params().get('InstanceAmount')
 
-			def set_InstanceAmount(self, InstanceAmount):  # Integer
-				self.add_query_param('InstanceAmount', InstanceAmount)
+	def set_InstanceAmount(self, InstanceAmount):  # Integer
+		self.add_query_param('InstanceAmount', InstanceAmount)

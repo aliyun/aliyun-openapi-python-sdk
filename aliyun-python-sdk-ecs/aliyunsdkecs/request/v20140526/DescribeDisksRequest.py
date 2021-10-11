@@ -116,103 +116,103 @@ class DescribeDisksRequest(RpcRequest):
 	def set_AdditionalAttributess(self, AdditionalAttributes):  # RepeatList
 		for depth1 in range(len(AdditionalAttributes)):
 			self.add_query_param('AdditionalAttributes.' + str(depth1 + 1), AdditionalAttributes)
-		def get_InstanceId(self): # String
-			return self.get_query_params().get('InstanceId')
+	def get_InstanceId(self): # String
+		return self.get_query_params().get('InstanceId')
 
-		def set_InstanceId(self, InstanceId):  # String
-			self.add_query_param('InstanceId', InstanceId)
-		def get_ZoneId(self): # String
-			return self.get_query_params().get('ZoneId')
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
+	def get_ZoneId(self): # String
+		return self.get_query_params().get('ZoneId')
 
-		def set_ZoneId(self, ZoneId):  # String
-			self.add_query_param('ZoneId', ZoneId)
-		def get_MaxResults(self): # Integer
-			return self.get_query_params().get('MaxResults')
+	def set_ZoneId(self, ZoneId):  # String
+		self.add_query_param('ZoneId', ZoneId)
+	def get_MaxResults(self): # Integer
+		return self.get_query_params().get('MaxResults')
 
-		def set_MaxResults(self, MaxResults):  # Integer
-			self.add_query_param('MaxResults', MaxResults)
-		def get_Status(self): # String
-			return self.get_query_params().get('Status')
+	def set_MaxResults(self, MaxResults):  # Integer
+		self.add_query_param('MaxResults', MaxResults)
+	def get_Status(self): # String
+		return self.get_query_params().get('Status')
 
-		def set_Status(self, Status):  # String
-			self.add_query_param('Status', Status)
-		def get_SnapshotId(self): # String
-			return self.get_query_params().get('SnapshotId')
+	def set_Status(self, Status):  # String
+		self.add_query_param('Status', Status)
+	def get_SnapshotId(self): # String
+		return self.get_query_params().get('SnapshotId')
 
-		def set_SnapshotId(self, SnapshotId):  # String
-			self.add_query_param('SnapshotId', SnapshotId)
-		def get_PageNumber(self): # Integer
-			return self.get_query_params().get('PageNumber')
+	def set_SnapshotId(self, SnapshotId):  # String
+		self.add_query_param('SnapshotId', SnapshotId)
+	def get_PageNumber(self): # Integer
+		return self.get_query_params().get('PageNumber')
 
-		def set_PageNumber(self, PageNumber):  # Integer
-			self.add_query_param('PageNumber', PageNumber)
-		def get_NextToken(self): # String
-			return self.get_query_params().get('NextToken')
+	def set_PageNumber(self, PageNumber):  # Integer
+		self.add_query_param('PageNumber', PageNumber)
+	def get_NextToken(self): # String
+		return self.get_query_params().get('NextToken')
 
-		def set_NextToken(self, NextToken):  # String
-			self.add_query_param('NextToken', NextToken)
-		def get_PageSize(self): # Integer
-			return self.get_query_params().get('PageSize')
+	def set_NextToken(self, NextToken):  # String
+		self.add_query_param('NextToken', NextToken)
+	def get_PageSize(self): # Integer
+		return self.get_query_params().get('PageSize')
 
-		def set_PageSize(self, PageSize):  # Integer
-			self.add_query_param('PageSize', PageSize)
-		def get_DiskIds(self): # String
-			return self.get_query_params().get('DiskIds')
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
+	def get_DiskIds(self): # String
+		return self.get_query_params().get('DiskIds')
 
-		def set_DiskIds(self, DiskIds):  # String
-			self.add_query_param('DiskIds', DiskIds)
-		def get_MultiAttach(self): # String
-			return self.get_query_params().get('MultiAttach')
+	def set_DiskIds(self, DiskIds):  # String
+		self.add_query_param('DiskIds', DiskIds)
+	def get_MultiAttach(self): # String
+		return self.get_query_params().get('MultiAttach')
 
-		def set_MultiAttach(self, MultiAttach):  # String
-			self.add_query_param('MultiAttach', MultiAttach)
-		def get_DeleteWithInstance(self): # Boolean
-			return self.get_query_params().get('DeleteWithInstance')
+	def set_MultiAttach(self, MultiAttach):  # String
+		self.add_query_param('MultiAttach', MultiAttach)
+	def get_DeleteWithInstance(self): # Boolean
+		return self.get_query_params().get('DeleteWithInstance')
 
-		def set_DeleteWithInstance(self, DeleteWithInstance):  # Boolean
-			self.add_query_param('DeleteWithInstance', DeleteWithInstance)
-		def get_ResourceOwnerAccount(self): # String
-			return self.get_query_params().get('ResourceOwnerAccount')
+	def set_DeleteWithInstance(self, DeleteWithInstance):  # Boolean
+		self.add_query_param('DeleteWithInstance', DeleteWithInstance)
+	def get_ResourceOwnerAccount(self): # String
+		return self.get_query_params().get('ResourceOwnerAccount')
 
-		def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
-			self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
-		def get_OwnerAccount(self): # String
-			return self.get_query_params().get('OwnerAccount')
+	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
+		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_OwnerAccount(self): # String
+		return self.get_query_params().get('OwnerAccount')
 
-		def set_OwnerAccount(self, OwnerAccount):  # String
-			self.add_query_param('OwnerAccount', OwnerAccount)
-		def get_EnableAutomatedSnapshotPolicy(self): # Boolean
-			return self.get_query_params().get('EnableAutomatedSnapshotPolicy')
+	def set_OwnerAccount(self, OwnerAccount):  # String
+		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_EnableAutomatedSnapshotPolicy(self): # Boolean
+		return self.get_query_params().get('EnableAutomatedSnapshotPolicy')
 
-		def set_EnableAutomatedSnapshotPolicy(self, EnableAutomatedSnapshotPolicy):  # Boolean
-			self.add_query_param('EnableAutomatedSnapshotPolicy', EnableAutomatedSnapshotPolicy)
-		def get_Filter2Key(self): # String
-			return self.get_query_params().get('Filter.2.Key')
+	def set_EnableAutomatedSnapshotPolicy(self, EnableAutomatedSnapshotPolicy):  # Boolean
+		self.add_query_param('EnableAutomatedSnapshotPolicy', EnableAutomatedSnapshotPolicy)
+	def get_Filter2Key(self): # String
+		return self.get_query_params().get('Filter.2.Key')
 
-		def set_Filter2Key(self, Filter2Key):  # String
-			self.add_query_param('Filter.2.Key', Filter2Key)
-		def get_DiskType(self): # String
-			return self.get_query_params().get('DiskType')
+	def set_Filter2Key(self, Filter2Key):  # String
+		self.add_query_param('Filter.2.Key', Filter2Key)
+	def get_DiskType(self): # String
+		return self.get_query_params().get('DiskType')
 
-		def set_DiskType(self, DiskType):  # String
-			self.add_query_param('DiskType', DiskType)
-		def get_EnableShared(self): # Boolean
-			return self.get_query_params().get('EnableShared')
+	def set_DiskType(self, DiskType):  # String
+		self.add_query_param('DiskType', DiskType)
+	def get_EnableShared(self): # Boolean
+		return self.get_query_params().get('EnableShared')
 
-		def set_EnableShared(self, EnableShared):  # Boolean
-			self.add_query_param('EnableShared', EnableShared)
-		def get_Encrypted(self): # Boolean
-			return self.get_query_params().get('Encrypted')
+	def set_EnableShared(self, EnableShared):  # Boolean
+		self.add_query_param('EnableShared', EnableShared)
+	def get_Encrypted(self): # Boolean
+		return self.get_query_params().get('Encrypted')
 
-		def set_Encrypted(self, Encrypted):  # Boolean
-			self.add_query_param('Encrypted', Encrypted)
-		def get_Category(self): # String
-			return self.get_query_params().get('Category')
+	def set_Encrypted(self, Encrypted):  # Boolean
+		self.add_query_param('Encrypted', Encrypted)
+	def get_Category(self): # String
+		return self.get_query_params().get('Category')
 
-		def set_Category(self, Category):  # String
-			self.add_query_param('Category', Category)
-		def get_KMSKeyId(self): # String
-			return self.get_query_params().get('KMSKeyId')
+	def set_Category(self, Category):  # String
+		self.add_query_param('Category', Category)
+	def get_KMSKeyId(self): # String
+		return self.get_query_params().get('KMSKeyId')
 
-		def set_KMSKeyId(self, KMSKeyId):  # String
-			self.add_query_param('KMSKeyId', KMSKeyId)
+	def set_KMSKeyId(self, KMSKeyId):  # String
+		self.add_query_param('KMSKeyId', KMSKeyId)

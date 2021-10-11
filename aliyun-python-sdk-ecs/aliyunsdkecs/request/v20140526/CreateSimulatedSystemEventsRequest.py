@@ -62,8 +62,8 @@ class CreateSimulatedSystemEventsRequest(RpcRequest):
 	def set_InstanceIds(self, InstanceId):  # RepeatList
 		for depth1 in range(len(InstanceId)):
 			self.add_query_param('InstanceId.' + str(depth1 + 1), InstanceId)
-		def get_EventType(self): # String
-			return self.get_query_params().get('EventType')
+	def get_EventType(self): # String
+		return self.get_query_params().get('EventType')
 
-		def set_EventType(self, EventType):  # String
-			self.add_query_param('EventType', EventType)
+	def set_EventType(self, EventType):  # String
+		self.add_query_param('EventType', EventType)

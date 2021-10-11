@@ -1,3 +1,6 @@
+2021-10-11 Version: 4.24.10
+- Adjust ecs openapi endpoint.
+
 2021-10-08 Version: 4.24.9
 - Adjust ecs openapi endpoint.
 

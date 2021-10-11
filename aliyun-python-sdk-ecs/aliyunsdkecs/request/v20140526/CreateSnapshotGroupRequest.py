@@ -47,58 +47,58 @@ class CreateSnapshotGroupRequest(RpcRequest):
 	def set_ExcludeDiskIds(self, ExcludeDiskId):  # RepeatList
 		for depth1 in range(len(ExcludeDiskId)):
 			self.add_query_param('ExcludeDiskId.' + str(depth1 + 1), ExcludeDiskId)
-		def get_Description(self): # String
-			return self.get_query_params().get('Description')
+	def get_Description(self): # String
+		return self.get_query_params().get('Description')
 
-		def set_Description(self, Description):  # String
-			self.add_query_param('Description', Description)
-		def get_ResourceGroupId(self): # String
-			return self.get_query_params().get('ResourceGroupId')
+	def set_Description(self, Description):  # String
+		self.add_query_param('Description', Description)
+	def get_ResourceGroupId(self): # String
+		return self.get_query_params().get('ResourceGroupId')
 
-		def set_ResourceGroupId(self, ResourceGroupId):  # String
-			self.add_query_param('ResourceGroupId', ResourceGroupId)
-		def get_InstantAccessRetentionDays(self): # Integer
-			return self.get_query_params().get('InstantAccessRetentionDays')
+	def set_ResourceGroupId(self, ResourceGroupId):  # String
+		self.add_query_param('ResourceGroupId', ResourceGroupId)
+	def get_InstantAccessRetentionDays(self): # Integer
+		return self.get_query_params().get('InstantAccessRetentionDays')
 
-		def set_InstantAccessRetentionDays(self, InstantAccessRetentionDays):  # Integer
-			self.add_query_param('InstantAccessRetentionDays', InstantAccessRetentionDays)
-		def get_DiskIds(self): # RepeatList
-			return self.get_query_params().get('DiskId')
+	def set_InstantAccessRetentionDays(self, InstantAccessRetentionDays):  # Integer
+		self.add_query_param('InstantAccessRetentionDays', InstantAccessRetentionDays)
+	def get_DiskIds(self): # RepeatList
+		return self.get_query_params().get('DiskId')
 
-		def set_DiskIds(self, DiskId):  # RepeatList
-			for depth1 in range(len(DiskId)):
-				self.add_query_param('DiskId.' + str(depth1 + 1), DiskId)
-			def get_Tags(self): # RepeatList
-				return self.get_query_params().get('Tag')
+	def set_DiskIds(self, DiskId):  # RepeatList
+		for depth1 in range(len(DiskId)):
+			self.add_query_param('DiskId.' + str(depth1 + 1), DiskId)
+	def get_Tags(self): # RepeatList
+		return self.get_query_params().get('Tag')
 
-			def set_Tags(self, Tag):  # RepeatList
-				for depth1 in range(len(Tag)):
-					if Tag[depth1].get('Key') is not None:
-						self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tag[depth1].get('Key'))
-					if Tag[depth1].get('Value') is not None:
-						self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tag[depth1].get('Value'))
-			def get_ResourceOwnerAccount(self): # String
-				return self.get_query_params().get('ResourceOwnerAccount')
+	def set_Tags(self, Tag):  # RepeatList
+		for depth1 in range(len(Tag)):
+			if Tag[depth1].get('Key') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tag[depth1].get('Key'))
+			if Tag[depth1].get('Value') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tag[depth1].get('Value'))
+	def get_ResourceOwnerAccount(self): # String
+		return self.get_query_params().get('ResourceOwnerAccount')
 
-			def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
-				self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
-			def get_OwnerAccount(self): # String
-				return self.get_query_params().get('OwnerAccount')
+	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
+		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_OwnerAccount(self): # String
+		return self.get_query_params().get('OwnerAccount')
 
-			def set_OwnerAccount(self, OwnerAccount):  # String
-				self.add_query_param('OwnerAccount', OwnerAccount)
-			def get_OwnerId(self): # Long
-				return self.get_query_params().get('OwnerId')
+	def set_OwnerAccount(self, OwnerAccount):  # String
+		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_OwnerId(self): # Long
+		return self.get_query_params().get('OwnerId')
 
-			def set_OwnerId(self, OwnerId):  # Long
-				self.add_query_param('OwnerId', OwnerId)
-			def get_InstanceId(self): # String
-				return self.get_query_params().get('InstanceId')
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_InstanceId(self): # String
+		return self.get_query_params().get('InstanceId')
 
-			def set_InstanceId(self, InstanceId):  # String
-				self.add_query_param('InstanceId', InstanceId)
-			def get_Name(self): # String
-				return self.get_query_params().get('Name')
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
+	def get_Name(self): # String
+		return self.get_query_params().get('Name')
 
-			def set_Name(self, Name):  # String
-				self.add_query_param('Name', Name)
+	def set_Name(self, Name):  # String
+		self.add_query_param('Name', Name)

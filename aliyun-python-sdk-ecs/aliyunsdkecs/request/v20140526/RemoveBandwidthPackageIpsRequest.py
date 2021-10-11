@@ -47,23 +47,23 @@ class RemoveBandwidthPackageIpsRequest(RpcRequest):
 	def set_RemovedIpAddressess(self, RemovedIpAddresses):  # RepeatList
 		for depth1 in range(len(RemovedIpAddresses)):
 			self.add_query_param('RemovedIpAddresses.' + str(depth1 + 1), RemovedIpAddresses)
-		def get_BandwidthPackageId(self): # String
-			return self.get_query_params().get('BandwidthPackageId')
+	def get_BandwidthPackageId(self): # String
+		return self.get_query_params().get('BandwidthPackageId')
 
-		def set_BandwidthPackageId(self, BandwidthPackageId):  # String
-			self.add_query_param('BandwidthPackageId', BandwidthPackageId)
-		def get_ResourceOwnerAccount(self): # String
-			return self.get_query_params().get('ResourceOwnerAccount')
+	def set_BandwidthPackageId(self, BandwidthPackageId):  # String
+		self.add_query_param('BandwidthPackageId', BandwidthPackageId)
+	def get_ResourceOwnerAccount(self): # String
+		return self.get_query_params().get('ResourceOwnerAccount')
 
-		def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
-			self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
-		def get_OwnerAccount(self): # String
-			return self.get_query_params().get('OwnerAccount')
+	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
+		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_OwnerAccount(self): # String
+		return self.get_query_params().get('OwnerAccount')
 
-		def set_OwnerAccount(self, OwnerAccount):  # String
-			self.add_query_param('OwnerAccount', OwnerAccount)
-		def get_OwnerId(self): # Long
-			return self.get_query_params().get('OwnerId')
+	def set_OwnerAccount(self, OwnerAccount):  # String
+		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_OwnerId(self): # Long
+		return self.get_query_params().get('OwnerId')
 
-		def set_OwnerId(self, OwnerId):  # Long
-			self.add_query_param('OwnerId', OwnerId)
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)

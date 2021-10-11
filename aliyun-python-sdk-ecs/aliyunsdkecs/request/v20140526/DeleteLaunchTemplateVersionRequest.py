@@ -47,23 +47,23 @@ class DeleteLaunchTemplateVersionRequest(RpcRequest):
 	def set_DeleteVersions(self, DeleteVersion):  # RepeatList
 		for depth1 in range(len(DeleteVersion)):
 			self.add_query_param('DeleteVersion.' + str(depth1 + 1), DeleteVersion)
-		def get_LaunchTemplateId(self): # String
-			return self.get_query_params().get('LaunchTemplateId')
+	def get_LaunchTemplateId(self): # String
+		return self.get_query_params().get('LaunchTemplateId')
 
-		def set_LaunchTemplateId(self, LaunchTemplateId):  # String
-			self.add_query_param('LaunchTemplateId', LaunchTemplateId)
-		def get_ResourceOwnerAccount(self): # String
-			return self.get_query_params().get('ResourceOwnerAccount')
+	def set_LaunchTemplateId(self, LaunchTemplateId):  # String
+		self.add_query_param('LaunchTemplateId', LaunchTemplateId)
+	def get_ResourceOwnerAccount(self): # String
+		return self.get_query_params().get('ResourceOwnerAccount')
 
-		def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
-			self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
-		def get_OwnerAccount(self): # String
-			return self.get_query_params().get('OwnerAccount')
+	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
+		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_OwnerAccount(self): # String
+		return self.get_query_params().get('OwnerAccount')
 
-		def set_OwnerAccount(self, OwnerAccount):  # String
-			self.add_query_param('OwnerAccount', OwnerAccount)
-		def get_OwnerId(self): # Long
-			return self.get_query_params().get('OwnerId')
+	def set_OwnerAccount(self, OwnerAccount):  # String
+		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_OwnerId(self): # Long
+		return self.get_query_params().get('OwnerId')
 
-		def set_OwnerId(self, OwnerId):  # Long
-			self.add_query_param('OwnerId', OwnerId)
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)

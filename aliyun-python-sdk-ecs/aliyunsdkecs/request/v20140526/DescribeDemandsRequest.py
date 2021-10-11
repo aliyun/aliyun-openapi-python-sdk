@@ -96,18 +96,18 @@ class DescribeDemandsRequest(RpcRequest):
 	def set_DemandStatuss(self, DemandStatus):  # RepeatList
 		for depth1 in range(len(DemandStatus)):
 			self.add_query_param('DemandStatus.' + str(depth1 + 1), DemandStatus)
-		def get_DemandId(self): # String
-			return self.get_query_params().get('DemandId')
+	def get_DemandId(self): # String
+		return self.get_query_params().get('DemandId')
 
-		def set_DemandId(self, DemandId):  # String
-			self.add_query_param('DemandId', DemandId)
-		def get_ZoneId(self): # String
-			return self.get_query_params().get('ZoneId')
+	def set_DemandId(self, DemandId):  # String
+		self.add_query_param('DemandId', DemandId)
+	def get_ZoneId(self): # String
+		return self.get_query_params().get('ZoneId')
 
-		def set_ZoneId(self, ZoneId):  # String
-			self.add_query_param('ZoneId', ZoneId)
-		def get_DemandType(self): # String
-			return self.get_query_params().get('DemandType')
+	def set_ZoneId(self, ZoneId):  # String
+		self.add_query_param('ZoneId', ZoneId)
+	def get_DemandType(self): # String
+		return self.get_query_params().get('DemandType')
 
-		def set_DemandType(self, DemandType):  # String
-			self.add_query_param('DemandType', DemandType)
+	def set_DemandType(self, DemandType):  # String
+		self.add_query_param('DemandType', DemandType)

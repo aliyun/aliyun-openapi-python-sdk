@@ -102,28 +102,28 @@ class DescribeRecommendInstanceTypeRequest(RpcRequest):
 	def set_InstanceTypeFamilys(self, InstanceTypeFamily):  # RepeatList
 		for depth1 in range(len(InstanceTypeFamily)):
 			self.add_query_param('InstanceTypeFamily.' + str(depth1 + 1), InstanceTypeFamily)
-		def get_OwnerId(self): # Long
-			return self.get_query_params().get('OwnerId')
+	def get_OwnerId(self): # Long
+		return self.get_query_params().get('OwnerId')
 
-		def set_OwnerId(self, OwnerId):  # Long
-			self.add_query_param('OwnerId', OwnerId)
-		def get_SpotStrategy(self): # String
-			return self.get_query_params().get('SpotStrategy')
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_SpotStrategy(self): # String
+		return self.get_query_params().get('SpotStrategy')
 
-		def set_SpotStrategy(self, SpotStrategy):  # String
-			self.add_query_param('SpotStrategy', SpotStrategy)
-		def get_PriorityStrategy(self): # String
-			return self.get_query_params().get('PriorityStrategy')
+	def set_SpotStrategy(self, SpotStrategy):  # String
+		self.add_query_param('SpotStrategy', SpotStrategy)
+	def get_PriorityStrategy(self): # String
+		return self.get_query_params().get('PriorityStrategy')
 
-		def set_PriorityStrategy(self, PriorityStrategy):  # String
-			self.add_query_param('PriorityStrategy', PriorityStrategy)
-		def get_InstanceFamilyLevel(self): # String
-			return self.get_query_params().get('InstanceFamilyLevel')
+	def set_PriorityStrategy(self, PriorityStrategy):  # String
+		self.add_query_param('PriorityStrategy', PriorityStrategy)
+	def get_InstanceFamilyLevel(self): # String
+		return self.get_query_params().get('InstanceFamilyLevel')
 
-		def set_InstanceFamilyLevel(self, InstanceFamilyLevel):  # String
-			self.add_query_param('InstanceFamilyLevel', InstanceFamilyLevel)
-		def get_ZoneId(self): # String
-			return self.get_query_params().get('ZoneId')
+	def set_InstanceFamilyLevel(self, InstanceFamilyLevel):  # String
+		self.add_query_param('InstanceFamilyLevel', InstanceFamilyLevel)
+	def get_ZoneId(self): # String
+		return self.get_query_params().get('ZoneId')
 
-		def set_ZoneId(self, ZoneId):  # String
-			self.add_query_param('ZoneId', ZoneId)
+	def set_ZoneId(self, ZoneId):  # String
+		self.add_query_param('ZoneId', ZoneId)
