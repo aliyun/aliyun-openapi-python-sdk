@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcloudesl.endpoint import endpoint_data
 
-class UpdateStoreRequest(RpcRequest):
+class DescribeEslDeviceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'cloudesl', '2020-02-01', 'UpdateStore','cloudesl')
+		RpcRequest.__init__(self, 'cloudesl', '2020-02-01', 'DescribeEslDevice','cloudesl')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,44 +31,32 @@ class UpdateStoreRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_ExtraParams(self):
-		return self.get_body_params().get('ExtraParams')
-
-	def set_ExtraParams(self,ExtraParams):
-		self.add_body_params('ExtraParams', ExtraParams)
-
-	def get_Timezone(self):
-		return self.get_body_params().get('Timezone')
-
-	def set_Timezone(self,Timezone):
-		self.add_body_params('Timezone', Timezone)
-
-	def get_StoreName(self):
-		return self.get_body_params().get('StoreName')
-
-	def set_StoreName(self,StoreName):
-		self.add_body_params('StoreName', StoreName)
-
 	def get_StoreId(self):
 		return self.get_body_params().get('StoreId')
 
 	def set_StoreId(self,StoreId):
 		self.add_body_params('StoreId', StoreId)
 
-	def get_TemplateVersion(self):
-		return self.get_body_params().get('TemplateVersion')
+	def get_PageNumber(self):
+		return self.get_body_params().get('PageNumber')
 
-	def set_TemplateVersion(self,TemplateVersion):
-		self.add_body_params('TemplateVersion', TemplateVersion)
+	def set_PageNumber(self,PageNumber):
+		self.add_body_params('PageNumber', PageNumber)
 
-	def get_UserStoreCode(self):
-		return self.get_body_params().get('UserStoreCode')
+	def get_FromDate(self):
+		return self.get_body_params().get('FromDate')
 
-	def set_UserStoreCode(self,UserStoreCode):
-		self.add_body_params('UserStoreCode', UserStoreCode)
+	def set_FromDate(self,FromDate):
+		self.add_body_params('FromDate', FromDate)
 
-	def get_Phone(self):
-		return self.get_body_params().get('Phone')
+	def get_ToDate(self):
+		return self.get_body_params().get('ToDate')
 
-	def set_Phone(self,Phone):
-		self.add_body_params('Phone', Phone)
+	def set_ToDate(self,ToDate):
+		self.add_body_params('ToDate', ToDate)
+
+	def get_PageSize(self):
+		return self.get_body_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_body_params('PageSize', PageSize)

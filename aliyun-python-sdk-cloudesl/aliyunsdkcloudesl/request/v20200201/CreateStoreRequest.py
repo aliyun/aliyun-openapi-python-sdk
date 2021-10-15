@@ -43,6 +43,12 @@ class CreateStoreRequest(RpcRequest):
 	def set_ClientToken(self,ClientToken):
 		self.add_body_params('ClientToken', ClientToken)
 
+	def get_TimeZone(self):
+		return self.get_body_params().get('TimeZone')
+
+	def set_TimeZone(self,TimeZone):
+		self.add_body_params('TimeZone', TimeZone)
+
 	def get_StoreName(self):
 		return self.get_body_params().get('StoreName')
 
