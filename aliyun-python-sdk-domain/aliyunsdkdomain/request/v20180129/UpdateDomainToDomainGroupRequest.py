@@ -23,7 +23,7 @@ from aliyunsdkdomain.endpoint import endpoint_data
 class UpdateDomainToDomainGroupRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Domain', '2018-01-29', 'UpdateDomainToDomainGroup','domain')
+		RpcRequest.__init__(self, 'Domain', '2018-01-29', 'UpdateDomainToDomainGroup')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())

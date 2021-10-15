@@ -20,43 +20,19 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdomain.endpoint import endpoint_data
 
-class QueryFailingReasonListForQualificationRequest(RpcRequest):
+class CheckDomainStatusRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Domain', '2018-01-29', 'QueryFailingReasonListForQualification')
-		self.set_method('POST')
+		RpcRequest.__init__(self, 'Domain', '2018-02-08', 'CheckDomainStatus')
+		self.set_method('GET')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_QualificationType(self):
-		return self.get_query_params().get('QualificationType')
+	def get_Domain(self):
+		return self.get_query_params().get('Domain')
 
-	def set_QualificationType(self,QualificationType):
-		self.add_query_param('QualificationType',QualificationType)
-
-	def get_InstanceId(self):
-		return self.get_query_params().get('InstanceId')
-
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
-
-	def get_UserClientIp(self):
-		return self.get_query_params().get('UserClientIp')
-
-	def set_UserClientIp(self,UserClientIp):
-		self.add_query_param('UserClientIp',UserClientIp)
-
-	def get_Limit(self):
-		return self.get_query_params().get('Limit')
-
-	def set_Limit(self,Limit):
-		self.add_query_param('Limit',Limit)
-
-	def get_Lang(self):
-		return self.get_query_params().get('Lang')
-
-	def set_Lang(self,Lang):
-		self.add_query_param('Lang',Lang)
+	def set_Domain(self,Domain):
+		self.add_query_param('Domain',Domain)

@@ -23,7 +23,7 @@ from aliyunsdkdomain.endpoint import endpoint_data
 class ReserveDomainRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Domain', '2018-02-08', 'ReserveDomain','domain')
+		RpcRequest.__init__(self, 'Domain', '2018-02-08', 'ReserveDomain')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())

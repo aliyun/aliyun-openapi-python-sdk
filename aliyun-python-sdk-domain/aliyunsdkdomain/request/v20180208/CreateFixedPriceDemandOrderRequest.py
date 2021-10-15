@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdomain.endpoint import endpoint_data
 
-class QueryFailingReasonListForQualificationRequest(RpcRequest):
+class CreateFixedPriceDemandOrderRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Domain', '2018-01-29', 'QueryFailingReasonListForQualification')
+		RpcRequest.__init__(self, 'Domain', '2018-02-08', 'CreateFixedPriceDemandOrder')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,32 +31,26 @@ class QueryFailingReasonListForQualificationRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_QualificationType(self):
-		return self.get_query_params().get('QualificationType')
+	def get_Code(self):
+		return self.get_query_params().get('Code')
 
-	def set_QualificationType(self,QualificationType):
-		self.add_query_param('QualificationType',QualificationType)
+	def set_Code(self,Code):
+		self.add_query_param('Code',Code)
 
-	def get_InstanceId(self):
-		return self.get_query_params().get('InstanceId')
+	def get_ContactId(self):
+		return self.get_query_params().get('ContactId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
+	def set_ContactId(self,ContactId):
+		self.add_query_param('ContactId',ContactId)
 
-	def get_UserClientIp(self):
-		return self.get_query_params().get('UserClientIp')
+	def get_Domain(self):
+		return self.get_query_params().get('Domain')
 
-	def set_UserClientIp(self,UserClientIp):
-		self.add_query_param('UserClientIp',UserClientIp)
+	def set_Domain(self,Domain):
+		self.add_query_param('Domain',Domain)
 
-	def get_Limit(self):
-		return self.get_query_params().get('Limit')
+	def get_Source(self):
+		return self.get_query_params().get('Source')
 
-	def set_Limit(self,Limit):
-		self.add_query_param('Limit',Limit)
-
-	def get_Lang(self):
-		return self.get_query_params().get('Lang')
-
-	def set_Lang(self,Lang):
-		self.add_query_param('Lang',Lang)
+	def set_Source(self,Source):
+		self.add_query_param('Source',Source)
