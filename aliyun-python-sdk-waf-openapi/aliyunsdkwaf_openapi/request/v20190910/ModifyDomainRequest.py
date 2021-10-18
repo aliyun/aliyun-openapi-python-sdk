@@ -37,6 +37,12 @@ class ModifyDomainRequest(RpcRequest):
 	def set_IpFollowStatus(self,IpFollowStatus):
 		self.add_query_param('IpFollowStatus',IpFollowStatus)
 
+	def get_SniHost(self):
+		return self.get_query_params().get('SniHost')
+
+	def set_SniHost(self,SniHost):
+		self.add_query_param('SniHost',SniHost)
+
 	def get_HttpPort(self):
 		return self.get_query_params().get('HttpPort')
 
@@ -54,6 +60,12 @@ class ModifyDomainRequest(RpcRequest):
 
 	def set_WriteTime(self,WriteTime):
 		self.add_query_param('WriteTime',WriteTime)
+
+	def get_SniStatus(self):
+		return self.get_query_params().get('SniStatus')
+
+	def set_SniStatus(self,SniStatus):
+		self.add_query_param('SniStatus',SniStatus)
 
 	def get_AccessHeaderMode(self):
 		return self.get_query_params().get('AccessHeaderMode')

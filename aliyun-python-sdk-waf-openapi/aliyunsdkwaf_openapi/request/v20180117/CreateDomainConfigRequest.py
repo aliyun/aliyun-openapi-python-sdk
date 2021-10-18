@@ -20,28 +20,17 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkwaf_openapi.endpoint import endpoint_data
 
-class CreateDomainRequest(RpcRequest):
+class CreateDomainConfigRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'waf-openapi', '2019-09-10', 'CreateDomain','waf')
+		RpcRequest.__init__(self, 'waf-openapi', '2018-01-17', 'CreateDomainConfig','waf')
+		self.set_protocol_type('https')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_IpFollowStatus(self):
-		return self.get_query_params().get('IpFollowStatus')
-
-	def set_IpFollowStatus(self,IpFollowStatus):
-		self.add_query_param('IpFollowStatus',IpFollowStatus)
-
-	def get_SniHost(self):
-		return self.get_query_params().get('SniHost')
-
-	def set_SniHost(self,SniHost):
-		self.add_query_param('SniHost',SniHost)
 
 	def get_ResourceGroupId(self):
 		return self.get_query_params().get('ResourceGroupId')
@@ -55,65 +44,17 @@ class CreateDomainRequest(RpcRequest):
 	def set_HttpPort(self,HttpPort):
 		self.add_query_param('HttpPort',HttpPort)
 
-	def get_Http2Port(self):
-		return self.get_query_params().get('Http2Port')
+	def get_Protocols(self):
+		return self.get_query_params().get('Protocols')
 
-	def set_Http2Port(self,Http2Port):
-		self.add_query_param('Http2Port',Http2Port)
+	def set_Protocols(self,Protocols):
+		self.add_query_param('Protocols',Protocols)
 
-	def get_WriteTime(self):
-		return self.get_query_params().get('WriteTime')
+	def get_RsType(self):
+		return self.get_query_params().get('RsType')
 
-	def set_WriteTime(self,WriteTime):
-		self.add_query_param('WriteTime',WriteTime)
-
-	def get_SniStatus(self):
-		return self.get_query_params().get('SniStatus')
-
-	def set_SniStatus(self,SniStatus):
-		self.add_query_param('SniStatus',SniStatus)
-
-	def get_AccessHeaderMode(self):
-		return self.get_query_params().get('AccessHeaderMode')
-
-	def set_AccessHeaderMode(self,AccessHeaderMode):
-		self.add_query_param('AccessHeaderMode',AccessHeaderMode)
-
-	def get_AccessType(self):
-		return self.get_query_params().get('AccessType')
-
-	def set_AccessType(self,AccessType):
-		self.add_query_param('AccessType',AccessType)
-
-	def get_LogHeaders(self):
-		return self.get_query_params().get('LogHeaders')
-
-	def set_LogHeaders(self,LogHeaders):
-		self.add_query_param('LogHeaders',LogHeaders)
-
-	def get_AccessHeaders(self):
-		return self.get_query_params().get('AccessHeaders')
-
-	def set_AccessHeaders(self,AccessHeaders):
-		self.add_query_param('AccessHeaders',AccessHeaders)
-
-	def get_ConnectionTime(self):
-		return self.get_query_params().get('ConnectionTime')
-
-	def set_ConnectionTime(self,ConnectionTime):
-		self.add_query_param('ConnectionTime',ConnectionTime)
-
-	def get_ClusterType(self):
-		return self.get_query_params().get('ClusterType')
-
-	def set_ClusterType(self,ClusterType):
-		self.add_query_param('ClusterType',ClusterType)
-
-	def get_CloudNativeInstances(self):
-		return self.get_query_params().get('CloudNativeInstances')
-
-	def set_CloudNativeInstances(self,CloudNativeInstances):
-		self.add_query_param('CloudNativeInstances',CloudNativeInstances)
+	def set_RsType(self,RsType):
+		self.add_query_param('RsType',RsType)
 
 	def get_HttpsRedirect(self):
 		return self.get_query_params().get('HttpsRedirect')
@@ -145,17 +86,17 @@ class CreateDomainRequest(RpcRequest):
 	def set_IsAccessProduct(self,IsAccessProduct):
 		self.add_query_param('IsAccessProduct',IsAccessProduct)
 
-	def get_ReadTime(self):
-		return self.get_query_params().get('ReadTime')
-
-	def set_ReadTime(self,ReadTime):
-		self.add_query_param('ReadTime',ReadTime)
-
 	def get_HttpsPort(self):
 		return self.get_query_params().get('HttpsPort')
 
 	def set_HttpsPort(self,HttpsPort):
 		self.add_query_param('HttpsPort',HttpsPort)
+
+	def get_Region(self):
+		return self.get_query_params().get('Region')
+
+	def set_Region(self,Region):
+		self.add_query_param('Region',Region)
 
 	def get_LoadBalancing(self):
 		return self.get_query_params().get('LoadBalancing')
