@@ -51,7 +51,7 @@ class CreateImagePipelineRequest(RpcRequest):
 
 	def set_ToRegionIds(self, ToRegionId):  # RepeatList
 		for depth1 in range(len(ToRegionId)):
-			self.add_query_param('ToRegionId.' + str(depth1 + 1), ToRegionId)
+			self.add_query_param('ToRegionId.' + str(depth1 + 1), ToRegionId[depth1])
 	def get_InternetMaxBandwidthOut(self): # Integer
 		return self.get_query_params().get('InternetMaxBandwidthOut')
 
@@ -121,7 +121,7 @@ class CreateImagePipelineRequest(RpcRequest):
 
 	def set_AddAccounts(self, AddAccount):  # RepeatList
 		for depth1 in range(len(AddAccount)):
-			self.add_query_param('AddAccount.' + str(depth1 + 1), AddAccount)
+			self.add_query_param('AddAccount.' + str(depth1 + 1), AddAccount[depth1])
 	def get_DeleteInstanceOnFailure(self): # Boolean
 		return self.get_query_params().get('DeleteInstanceOnFailure')
 

@@ -36,7 +36,7 @@ class DescribeInstancesFullStatusRequest(RpcRequest):
 
 	def set_EventIds(self, EventId):  # RepeatList
 		for depth1 in range(len(EventId)):
-			self.add_query_param('EventId.' + str(depth1 + 1), EventId)
+			self.add_query_param('EventId.' + str(depth1 + 1), EventId[depth1])
 	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
 
@@ -62,7 +62,7 @@ class DescribeInstancesFullStatusRequest(RpcRequest):
 
 	def set_InstanceEventTypes(self, InstanceEventType):  # RepeatList
 		for depth1 in range(len(InstanceEventType)):
-			self.add_query_param('InstanceEventType.' + str(depth1 + 1), InstanceEventType)
+			self.add_query_param('InstanceEventType.' + str(depth1 + 1), InstanceEventType[depth1])
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -93,7 +93,7 @@ class DescribeInstancesFullStatusRequest(RpcRequest):
 
 	def set_InstanceIds(self, InstanceId):  # RepeatList
 		for depth1 in range(len(InstanceId)):
-			self.add_query_param('InstanceId.' + str(depth1 + 1), InstanceId)
+			self.add_query_param('InstanceId.' + str(depth1 + 1), InstanceId[depth1])
 	def get_NotBeforeEnd(self): # String
 		return self.get_query_params().get('NotBefore.End')
 

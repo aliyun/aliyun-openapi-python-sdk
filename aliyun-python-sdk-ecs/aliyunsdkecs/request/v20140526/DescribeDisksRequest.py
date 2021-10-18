@@ -115,7 +115,7 @@ class DescribeDisksRequest(RpcRequest):
 
 	def set_AdditionalAttributess(self, AdditionalAttributes):  # RepeatList
 		for depth1 in range(len(AdditionalAttributes)):
-			self.add_query_param('AdditionalAttributes.' + str(depth1 + 1), AdditionalAttributes)
+			self.add_query_param('AdditionalAttributes.' + str(depth1 + 1), AdditionalAttributes[depth1])
 	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 

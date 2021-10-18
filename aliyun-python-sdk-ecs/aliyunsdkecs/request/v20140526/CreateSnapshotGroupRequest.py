@@ -46,7 +46,7 @@ class CreateSnapshotGroupRequest(RpcRequest):
 
 	def set_ExcludeDiskIds(self, ExcludeDiskId):  # RepeatList
 		for depth1 in range(len(ExcludeDiskId)):
-			self.add_query_param('ExcludeDiskId.' + str(depth1 + 1), ExcludeDiskId)
+			self.add_query_param('ExcludeDiskId.' + str(depth1 + 1), ExcludeDiskId[depth1])
 	def get_Description(self): # String
 		return self.get_query_params().get('Description')
 
@@ -67,7 +67,7 @@ class CreateSnapshotGroupRequest(RpcRequest):
 
 	def set_DiskIds(self, DiskId):  # RepeatList
 		for depth1 in range(len(DiskId)):
-			self.add_query_param('DiskId.' + str(depth1 + 1), DiskId)
+			self.add_query_param('DiskId.' + str(depth1 + 1), DiskId[depth1])
 	def get_Tags(self): # RepeatList
 		return self.get_query_params().get('Tag')
 

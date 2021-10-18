@@ -91,7 +91,7 @@ class DescribeLaunchTemplateVersionsRequest(RpcRequest):
 
 	def set_LaunchTemplateVersions(self, LaunchTemplateVersion):  # RepeatList
 		for depth1 in range(len(LaunchTemplateVersion)):
-			self.add_query_param('LaunchTemplateVersion.' + str(depth1 + 1), LaunchTemplateVersion)
+			self.add_query_param('LaunchTemplateVersion.' + str(depth1 + 1), LaunchTemplateVersion[depth1])
 	def get_DetailFlag(self): # Boolean
 		return self.get_query_params().get('DetailFlag')
 

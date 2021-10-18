@@ -66,7 +66,7 @@ class CreateElasticityAssuranceRequest(RpcRequest):
 
 	def set_InstanceTypes(self, InstanceType):  # RepeatList
 		for depth1 in range(len(InstanceType)):
-			self.add_query_param('InstanceType.' + str(depth1 + 1), InstanceType)
+			self.add_query_param('InstanceType.' + str(depth1 + 1), InstanceType[depth1])
 	def get_Tags(self): # RepeatList
 		return self.get_query_params().get('Tag')
 
@@ -121,7 +121,7 @@ class CreateElasticityAssuranceRequest(RpcRequest):
 
 	def set_ZoneIds(self, ZoneId):  # RepeatList
 		for depth1 in range(len(ZoneId)):
-			self.add_query_param('ZoneId.' + str(depth1 + 1), ZoneId)
+			self.add_query_param('ZoneId.' + str(depth1 + 1), ZoneId[depth1])
 	def get_InstanceAmount(self): # Integer
 		return self.get_query_params().get('InstanceAmount')
 

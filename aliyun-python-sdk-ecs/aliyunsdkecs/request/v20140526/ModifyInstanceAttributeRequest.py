@@ -96,7 +96,7 @@ class ModifyInstanceAttributeRequest(RpcRequest):
 
 	def set_SecurityGroupIdss(self, SecurityGroupIds):  # RepeatList
 		for depth1 in range(len(SecurityGroupIds)):
-			self.add_query_param('SecurityGroupIds.' + str(depth1 + 1), SecurityGroupIds)
+			self.add_query_param('SecurityGroupIds.' + str(depth1 + 1), SecurityGroupIds[depth1])
 	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 

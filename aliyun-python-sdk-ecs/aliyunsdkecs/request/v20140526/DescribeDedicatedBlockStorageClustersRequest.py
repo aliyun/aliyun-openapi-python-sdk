@@ -46,7 +46,7 @@ class DescribeDedicatedBlockStorageClustersRequest(RpcRequest):
 
 	def set_DedicatedBlockStorageClusterIds(self, DedicatedBlockStorageClusterId):  # RepeatList
 		for depth1 in range(len(DedicatedBlockStorageClusterId)):
-			self.add_query_param('DedicatedBlockStorageClusterId.' + str(depth1 + 1), DedicatedBlockStorageClusterId)
+			self.add_query_param('DedicatedBlockStorageClusterId.' + str(depth1 + 1), DedicatedBlockStorageClusterId[depth1])
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -82,4 +82,4 @@ class DescribeDedicatedBlockStorageClustersRequest(RpcRequest):
 
 	def set_Statuss(self, Status):  # RepeatList
 		for depth1 in range(len(Status)):
-			self.add_query_param('Status.' + str(depth1 + 1), Status)
+			self.add_query_param('Status.' + str(depth1 + 1), Status[depth1])

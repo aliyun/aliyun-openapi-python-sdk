@@ -233,7 +233,7 @@ class RunInstancesRequest(RpcRequest):
 
 	def set_SecurityGroupIdss(self, SecurityGroupIds):  # RepeatList
 		for depth1 in range(len(SecurityGroupIds)):
-			self.add_query_param('SecurityGroupIds.' + str(depth1 + 1), SecurityGroupIds)
+			self.add_query_param('SecurityGroupIds.' + str(depth1 + 1), SecurityGroupIds[depth1])
 	def get_SystemDiskSize(self): # String
 		return self.get_query_params().get('SystemDisk.Size')
 
@@ -318,7 +318,7 @@ class RunInstancesRequest(RpcRequest):
 
 	def set_HostNamess(self, HostNames):  # RepeatList
 		for depth1 in range(len(HostNames)):
-			self.add_query_param('HostNames.' + str(depth1 + 1), HostNames)
+			self.add_query_param('HostNames.' + str(depth1 + 1), HostNames[depth1])
 	def get_VSwitchId(self): # String
 		return self.get_query_params().get('VSwitchId')
 
@@ -339,7 +339,7 @@ class RunInstancesRequest(RpcRequest):
 
 	def set_Ipv6Addresss(self, Ipv6Address):  # RepeatList
 		for depth1 in range(len(Ipv6Address)):
-			self.add_query_param('Ipv6Address.' + str(depth1 + 1), Ipv6Address)
+			self.add_query_param('Ipv6Address.' + str(depth1 + 1), Ipv6Address[depth1])
 	def get_SecurityOptionsConfidentialComputingMode(self): # String
 		return self.get_query_params().get('SecurityOptions.ConfidentialComputingMode')
 
@@ -414,7 +414,7 @@ class RunInstancesRequest(RpcRequest):
 				self.add_query_param('NetworkInterface.' + str(depth1 + 1) + '.QueueNumber', NetworkInterface[depth1].get('QueueNumber'))
 			if NetworkInterface[depth1].get('SecurityGroupIds') is not None:
 				for depth2 in range(len(NetworkInterface[depth1].get('SecurityGroupIds'))):
-					self.add_query_param('NetworkInterface.' + str(depth1 + 1) + '.SecurityGroupIds' + str(depth2 + 1), NetworkInterface[depth1].get('SecurityGroupIds'))
+					self.add_query_param('NetworkInterface.' + str(depth1 + 1) + '.SecurityGroupIds' + str(depth2 + 1), NetworkInterface[depth1].get('SecurityGroupIds')[depth2])
 	def get_Amount(self): # Integer
 		return self.get_query_params().get('Amount')
 

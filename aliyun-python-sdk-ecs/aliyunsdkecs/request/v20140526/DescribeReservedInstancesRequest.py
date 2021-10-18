@@ -95,7 +95,7 @@ class DescribeReservedInstancesRequest(RpcRequest):
 
 	def set_ReservedInstanceIds(self, ReservedInstanceId):  # RepeatList
 		for depth1 in range(len(ReservedInstanceId)):
-			self.add_query_param('ReservedInstanceId.' + str(depth1 + 1), ReservedInstanceId)
+			self.add_query_param('ReservedInstanceId.' + str(depth1 + 1), ReservedInstanceId[depth1])
 	def get_OfferingType(self): # String
 		return self.get_query_params().get('OfferingType')
 
@@ -121,4 +121,4 @@ class DescribeReservedInstancesRequest(RpcRequest):
 
 	def set_Statuss(self, Status):  # RepeatList
 		for depth1 in range(len(Status)):
-			self.add_query_param('Status.' + str(depth1 + 1), Status)
+			self.add_query_param('Status.' + str(depth1 + 1), Status[depth1])

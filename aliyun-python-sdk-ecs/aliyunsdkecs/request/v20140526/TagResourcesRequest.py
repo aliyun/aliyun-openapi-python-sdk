@@ -45,7 +45,7 @@ class TagResourcesRequest(RpcRequest):
 
 	def set_ResourceIds(self, ResourceId):  # RepeatList
 		for depth1 in range(len(ResourceId)):
-			self.add_query_param('ResourceId.' + str(depth1 + 1), ResourceId)
+			self.add_query_param('ResourceId.' + str(depth1 + 1), ResourceId[depth1])
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 

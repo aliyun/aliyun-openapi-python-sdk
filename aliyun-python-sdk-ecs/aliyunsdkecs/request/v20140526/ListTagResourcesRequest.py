@@ -55,7 +55,7 @@ class ListTagResourcesRequest(RpcRequest):
 
 	def set_ResourceIds(self, ResourceId):  # RepeatList
 		for depth1 in range(len(ResourceId)):
-			self.add_query_param('ResourceId.' + str(depth1 + 1), ResourceId)
+			self.add_query_param('ResourceId.' + str(depth1 + 1), ResourceId[depth1])
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -78,7 +78,7 @@ class ListTagResourcesRequest(RpcRequest):
 		for depth1 in range(len(TagFilter)):
 			if TagFilter[depth1].get('TagValues') is not None:
 				for depth2 in range(len(TagFilter[depth1].get('TagValues'))):
-					self.add_query_param('TagFilter.' + str(depth1 + 1) + '.TagValues' + str(depth2 + 1), TagFilter[depth1].get('TagValues'))
+					self.add_query_param('TagFilter.' + str(depth1 + 1) + '.TagValues' + str(depth2 + 1), TagFilter[depth1].get('TagValues')[depth2])
 			if TagFilter[depth1].get('TagKey') is not None:
 				self.add_query_param('TagFilter.' + str(depth1 + 1) + '.TagKey', TagFilter[depth1].get('TagKey'))
 	def get_ResourceType(self): # String

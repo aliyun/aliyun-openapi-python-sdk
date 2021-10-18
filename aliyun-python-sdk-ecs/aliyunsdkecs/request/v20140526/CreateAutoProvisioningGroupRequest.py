@@ -81,7 +81,7 @@ class CreateAutoProvisioningGroupRequest(RpcRequest):
 
 	def set_LaunchConfigurationHostNamess(self, LaunchConfigurationHostNames):  # RepeatList
 		for depth1 in range(len(LaunchConfigurationHostNames)):
-			self.add_query_param('LaunchConfiguration.HostNames.' + str(depth1 + 1), LaunchConfigurationHostNames)
+			self.add_query_param('LaunchConfiguration.HostNames.' + str(depth1 + 1), LaunchConfigurationHostNames[depth1])
 	def get_ResourceGroupId(self): # String
 		return self.get_query_params().get('ResourceGroupId')
 

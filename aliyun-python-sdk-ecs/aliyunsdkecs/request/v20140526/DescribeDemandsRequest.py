@@ -95,7 +95,7 @@ class DescribeDemandsRequest(RpcRequest):
 
 	def set_DemandStatuss(self, DemandStatus):  # RepeatList
 		for depth1 in range(len(DemandStatus)):
-			self.add_query_param('DemandStatus.' + str(depth1 + 1), DemandStatus)
+			self.add_query_param('DemandStatus.' + str(depth1 + 1), DemandStatus[depth1])
 	def get_DemandId(self): # String
 		return self.get_query_params().get('DemandId')
 

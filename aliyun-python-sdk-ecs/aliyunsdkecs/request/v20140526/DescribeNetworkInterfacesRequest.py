@@ -110,7 +110,7 @@ class DescribeNetworkInterfacesRequest(RpcRequest):
 
 	def set_PrivateIpAddresss(self, PrivateIpAddress):  # RepeatList
 		for depth1 in range(len(PrivateIpAddress)):
-			self.add_query_param('PrivateIpAddress.' + str(depth1 + 1), PrivateIpAddress)
+			self.add_query_param('PrivateIpAddress.' + str(depth1 + 1), PrivateIpAddress[depth1])
 	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
@@ -136,13 +136,13 @@ class DescribeNetworkInterfacesRequest(RpcRequest):
 
 	def set_NetworkInterfaceIds(self, NetworkInterfaceId):  # RepeatList
 		for depth1 in range(len(NetworkInterfaceId)):
-			self.add_query_param('NetworkInterfaceId.' + str(depth1 + 1), NetworkInterfaceId)
+			self.add_query_param('NetworkInterfaceId.' + str(depth1 + 1), NetworkInterfaceId[depth1])
 	def get_Ipv6Addresss(self): # RepeatList
 		return self.get_query_params().get('Ipv6Address')
 
 	def set_Ipv6Addresss(self, Ipv6Address):  # RepeatList
 		for depth1 in range(len(Ipv6Address)):
-			self.add_query_param('Ipv6Address.' + str(depth1 + 1), Ipv6Address)
+			self.add_query_param('Ipv6Address.' + str(depth1 + 1), Ipv6Address[depth1])
 	def get_Status(self): # String
 		return self.get_query_params().get('Status')
 

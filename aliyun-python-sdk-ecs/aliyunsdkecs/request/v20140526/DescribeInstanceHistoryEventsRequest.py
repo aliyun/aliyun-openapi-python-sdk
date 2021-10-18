@@ -36,7 +36,7 @@ class DescribeInstanceHistoryEventsRequest(RpcRequest):
 
 	def set_EventIds(self, EventId):  # RepeatList
 		for depth1 in range(len(EventId)):
-			self.add_query_param('EventId.' + str(depth1 + 1), EventId)
+			self.add_query_param('EventId.' + str(depth1 + 1), EventId[depth1])
 	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
 
@@ -72,7 +72,7 @@ class DescribeInstanceHistoryEventsRequest(RpcRequest):
 
 	def set_InstanceEventCycleStatuss(self, InstanceEventCycleStatus):  # RepeatList
 		for depth1 in range(len(InstanceEventCycleStatus)):
-			self.add_query_param('InstanceEventCycleStatus.' + str(depth1 + 1), InstanceEventCycleStatus)
+			self.add_query_param('InstanceEventCycleStatus.' + str(depth1 + 1), InstanceEventCycleStatus[depth1])
 	def get_Tags(self): # RepeatList
 		return self.get_query_params().get('Tag')
 
@@ -92,13 +92,13 @@ class DescribeInstanceHistoryEventsRequest(RpcRequest):
 
 	def set_ResourceIds(self, ResourceId):  # RepeatList
 		for depth1 in range(len(ResourceId)):
-			self.add_query_param('ResourceId.' + str(depth1 + 1), ResourceId)
+			self.add_query_param('ResourceId.' + str(depth1 + 1), ResourceId[depth1])
 	def get_InstanceEventTypes(self): # RepeatList
 		return self.get_query_params().get('InstanceEventType')
 
 	def set_InstanceEventTypes(self, InstanceEventType):  # RepeatList
 		for depth1 in range(len(InstanceEventType)):
-			self.add_query_param('InstanceEventType.' + str(depth1 + 1), InstanceEventType)
+			self.add_query_param('InstanceEventType.' + str(depth1 + 1), InstanceEventType[depth1])
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 

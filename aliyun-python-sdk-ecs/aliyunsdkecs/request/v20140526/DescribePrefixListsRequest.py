@@ -46,7 +46,7 @@ class DescribePrefixListsRequest(RpcRequest):
 
 	def set_PrefixListIds(self, PrefixListId):  # RepeatList
 		for depth1 in range(len(PrefixListId)):
-			self.add_query_param('PrefixListId.' + str(depth1 + 1), PrefixListId)
+			self.add_query_param('PrefixListId.' + str(depth1 + 1), PrefixListId[depth1])
 	def get_AddressFamily(self): # String
 		return self.get_query_params().get('AddressFamily')
 

@@ -116,7 +116,7 @@ class DescribePriceRequest(RpcRequest):
 
 	def set_InstanceTypeLists(self, InstanceTypeList):  # RepeatList
 		for depth1 in range(len(InstanceTypeList)):
-			self.add_query_param('InstanceTypeList.' + str(depth1 + 1), InstanceTypeList)
+			self.add_query_param('InstanceTypeList.' + str(depth1 + 1), InstanceTypeList[depth1])
 	def get_DataDisk3PerformanceLevel(self): # String
 		return self.get_query_params().get('DataDisk.3.PerformanceLevel')
 

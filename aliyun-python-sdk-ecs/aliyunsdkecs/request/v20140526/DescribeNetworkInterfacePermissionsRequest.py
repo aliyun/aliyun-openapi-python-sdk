@@ -51,7 +51,7 @@ class DescribeNetworkInterfacePermissionsRequest(RpcRequest):
 
 	def set_NetworkInterfacePermissionIds(self, NetworkInterfacePermissionId):  # RepeatList
 		for depth1 in range(len(NetworkInterfacePermissionId)):
-			self.add_query_param('NetworkInterfacePermissionId.' + str(depth1 + 1), NetworkInterfacePermissionId)
+			self.add_query_param('NetworkInterfacePermissionId.' + str(depth1 + 1), NetworkInterfacePermissionId[depth1])
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 

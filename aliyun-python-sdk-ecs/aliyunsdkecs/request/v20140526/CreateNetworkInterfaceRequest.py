@@ -125,7 +125,7 @@ class CreateNetworkInterfaceRequest(RpcRequest):
 
 	def set_SecurityGroupIdss(self, SecurityGroupIds):  # RepeatList
 		for depth1 in range(len(SecurityGroupIds)):
-			self.add_query_param('SecurityGroupIds.' + str(depth1 + 1), SecurityGroupIds)
+			self.add_query_param('SecurityGroupIds.' + str(depth1 + 1), SecurityGroupIds[depth1])
 	def get_NetworkInterfaceTrafficMode(self): # String
 		return self.get_query_params().get('NetworkInterfaceTrafficMode')
 
@@ -141,7 +141,7 @@ class CreateNetworkInterfaceRequest(RpcRequest):
 
 	def set_PrivateIpAddresss(self, PrivateIpAddress):  # RepeatList
 		for depth1 in range(len(PrivateIpAddress)):
-			self.add_query_param('PrivateIpAddress.' + str(depth1 + 1), PrivateIpAddress)
+			self.add_query_param('PrivateIpAddress.' + str(depth1 + 1), PrivateIpAddress[depth1])
 	def get_PrimaryIpAddress(self): # String
 		return self.get_query_params().get('PrimaryIpAddress')
 
@@ -152,4 +152,4 @@ class CreateNetworkInterfaceRequest(RpcRequest):
 
 	def set_Ipv6Addresss(self, Ipv6Address):  # RepeatList
 		for depth1 in range(len(Ipv6Address)):
-			self.add_query_param('Ipv6Address.' + str(depth1 + 1), Ipv6Address)
+			self.add_query_param('Ipv6Address.' + str(depth1 + 1), Ipv6Address[depth1])

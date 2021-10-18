@@ -36,7 +36,7 @@ class DescribeImagePipelinesRequest(RpcRequest):
 
 	def set_ImagePipelineIds(self, ImagePipelineId):  # RepeatList
 		for depth1 in range(len(ImagePipelineId)):
-			self.add_query_param('ImagePipelineId.' + str(depth1 + 1), ImagePipelineId)
+			self.add_query_param('ImagePipelineId.' + str(depth1 + 1), ImagePipelineId[depth1])
 	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
 

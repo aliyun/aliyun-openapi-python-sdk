@@ -61,7 +61,7 @@ class ReportInstancesStatusRequest(RpcRequest):
 
 	def set_DiskIds(self, DiskId):  # RepeatList
 		for depth1 in range(len(DiskId)):
-			self.add_query_param('DiskId.' + str(depth1 + 1), DiskId)
+			self.add_query_param('DiskId.' + str(depth1 + 1), DiskId[depth1])
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -87,10 +87,10 @@ class ReportInstancesStatusRequest(RpcRequest):
 
 	def set_InstanceIds(self, InstanceId):  # RepeatList
 		for depth1 in range(len(InstanceId)):
-			self.add_query_param('InstanceId.' + str(depth1 + 1), InstanceId)
+			self.add_query_param('InstanceId.' + str(depth1 + 1), InstanceId[depth1])
 	def get_Devices(self): # RepeatList
 		return self.get_query_params().get('Device')
 
 	def set_Devices(self, Device):  # RepeatList
 		for depth1 in range(len(Device)):
-			self.add_query_param('Device.' + str(depth1 + 1), Device)
+			self.add_query_param('Device.' + str(depth1 + 1), Device[depth1])

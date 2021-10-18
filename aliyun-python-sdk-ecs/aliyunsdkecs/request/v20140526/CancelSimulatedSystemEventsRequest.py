@@ -36,7 +36,7 @@ class CancelSimulatedSystemEventsRequest(RpcRequest):
 
 	def set_EventIds(self, EventId):  # RepeatList
 		for depth1 in range(len(EventId)):
-			self.add_query_param('EventId.' + str(depth1 + 1), EventId)
+			self.add_query_param('EventId.' + str(depth1 + 1), EventId[depth1])
 	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
 

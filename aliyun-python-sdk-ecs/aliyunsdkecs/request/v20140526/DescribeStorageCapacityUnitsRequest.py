@@ -51,7 +51,7 @@ class DescribeStorageCapacityUnitsRequest(RpcRequest):
 
 	def set_StorageCapacityUnitIds(self, StorageCapacityUnitId):  # RepeatList
 		for depth1 in range(len(StorageCapacityUnitId)):
-			self.add_query_param('StorageCapacityUnitId.' + str(depth1 + 1), StorageCapacityUnitId)
+			self.add_query_param('StorageCapacityUnitId.' + str(depth1 + 1), StorageCapacityUnitId[depth1])
 	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
@@ -96,4 +96,4 @@ class DescribeStorageCapacityUnitsRequest(RpcRequest):
 
 	def set_Statuss(self, Status):  # RepeatList
 		for depth1 in range(len(Status)):
-			self.add_query_param('Status.' + str(depth1 + 1), Status)
+			self.add_query_param('Status.' + str(depth1 + 1), Status[depth1])

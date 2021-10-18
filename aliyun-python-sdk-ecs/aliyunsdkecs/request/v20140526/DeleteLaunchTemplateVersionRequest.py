@@ -46,7 +46,7 @@ class DeleteLaunchTemplateVersionRequest(RpcRequest):
 
 	def set_DeleteVersions(self, DeleteVersion):  # RepeatList
 		for depth1 in range(len(DeleteVersion)):
-			self.add_query_param('DeleteVersion.' + str(depth1 + 1), DeleteVersion)
+			self.add_query_param('DeleteVersion.' + str(depth1 + 1), DeleteVersion[depth1])
 	def get_LaunchTemplateId(self): # String
 		return self.get_query_params().get('LaunchTemplateId')
 

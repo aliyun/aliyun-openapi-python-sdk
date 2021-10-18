@@ -232,7 +232,7 @@ class CreateLaunchTemplateVersionRequest(RpcRequest):
 				self.add_query_param('NetworkInterface.' + str(depth1 + 1) + '.PrimaryIpAddress', NetworkInterface[depth1].get('PrimaryIpAddress'))
 			if NetworkInterface[depth1].get('SecurityGroupIds') is not None:
 				for depth2 in range(len(NetworkInterface[depth1].get('SecurityGroupIds'))):
-					self.add_query_param('NetworkInterface.' + str(depth1 + 1) + '.SecurityGroupIds' + str(depth2 + 1), NetworkInterface[depth1].get('SecurityGroupIds'))
+					self.add_query_param('NetworkInterface.' + str(depth1 + 1) + '.SecurityGroupIds' + str(depth2 + 1), NetworkInterface[depth1].get('SecurityGroupIds')[depth2])
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -268,7 +268,7 @@ class CreateLaunchTemplateVersionRequest(RpcRequest):
 
 	def set_SecurityGroupIdss(self, SecurityGroupIds):  # RepeatList
 		for depth1 in range(len(SecurityGroupIds)):
-			self.add_query_param('SecurityGroupIds.' + str(depth1 + 1), SecurityGroupIds)
+			self.add_query_param('SecurityGroupIds.' + str(depth1 + 1), SecurityGroupIds[depth1])
 	def get_DataDisks(self): # RepeatList
 		return self.get_query_params().get('DataDisk')
 

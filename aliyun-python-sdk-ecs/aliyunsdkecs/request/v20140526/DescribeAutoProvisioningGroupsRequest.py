@@ -51,7 +51,7 @@ class DescribeAutoProvisioningGroupsRequest(RpcRequest):
 
 	def set_AutoProvisioningGroupStatuss(self, AutoProvisioningGroupStatus):  # RepeatList
 		for depth1 in range(len(AutoProvisioningGroupStatus)):
-			self.add_query_param('AutoProvisioningGroupStatus.' + str(depth1 + 1), AutoProvisioningGroupStatus)
+			self.add_query_param('AutoProvisioningGroupStatus.' + str(depth1 + 1), AutoProvisioningGroupStatus[depth1])
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -72,7 +72,7 @@ class DescribeAutoProvisioningGroupsRequest(RpcRequest):
 
 	def set_AutoProvisioningGroupIds(self, AutoProvisioningGroupId):  # RepeatList
 		for depth1 in range(len(AutoProvisioningGroupId)):
-			self.add_query_param('AutoProvisioningGroupId.' + str(depth1 + 1), AutoProvisioningGroupId)
+			self.add_query_param('AutoProvisioningGroupId.' + str(depth1 + 1), AutoProvisioningGroupId[depth1])
 	def get_AutoProvisioningGroupName(self): # String
 		return self.get_query_params().get('AutoProvisioningGroupName')
 

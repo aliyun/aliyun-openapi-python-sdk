@@ -70,7 +70,7 @@ class DescribeSnapshotGroupsRequest(RpcRequest):
 
 	def set_SnapshotGroupIds(self, SnapshotGroupId):  # RepeatList
 		for depth1 in range(len(SnapshotGroupId)):
-			self.add_query_param('SnapshotGroupId.' + str(depth1 + 1), SnapshotGroupId)
+			self.add_query_param('SnapshotGroupId.' + str(depth1 + 1), SnapshotGroupId[depth1])
 	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
@@ -81,7 +81,7 @@ class DescribeSnapshotGroupsRequest(RpcRequest):
 
 	def set_AdditionalAttributess(self, AdditionalAttributes):  # RepeatList
 		for depth1 in range(len(AdditionalAttributes)):
-			self.add_query_param('AdditionalAttributes.' + str(depth1 + 1), AdditionalAttributes)
+			self.add_query_param('AdditionalAttributes.' + str(depth1 + 1), AdditionalAttributes[depth1])
 	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
@@ -102,4 +102,4 @@ class DescribeSnapshotGroupsRequest(RpcRequest):
 
 	def set_Statuss(self, Status):  # RepeatList
 		for depth1 in range(len(Status)):
-			self.add_query_param('Status.' + str(depth1 + 1), Status)
+			self.add_query_param('Status.' + str(depth1 + 1), Status[depth1])

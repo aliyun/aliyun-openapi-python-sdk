@@ -41,7 +41,7 @@ class DescribeAccountAttributesRequest(RpcRequest):
 
 	def set_AttributeNames(self, AttributeName):  # RepeatList
 		for depth1 in range(len(AttributeName)):
-			self.add_query_param('AttributeName.' + str(depth1 + 1), AttributeName)
+			self.add_query_param('AttributeName.' + str(depth1 + 1), AttributeName[depth1])
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 

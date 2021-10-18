@@ -71,4 +71,4 @@ class ModifyReservedInstancesRequest(RpcRequest):
 
 	def set_ReservedInstanceIds(self, ReservedInstanceId):  # RepeatList
 		for depth1 in range(len(ReservedInstanceId)):
-			self.add_query_param('ReservedInstanceId.' + str(depth1 + 1), ReservedInstanceId)
+			self.add_query_param('ReservedInstanceId.' + str(depth1 + 1), ReservedInstanceId[depth1])

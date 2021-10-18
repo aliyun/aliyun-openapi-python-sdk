@@ -71,4 +71,4 @@ class RebootInstancesRequest(RpcRequest):
 
 	def set_InstanceIds(self, InstanceId):  # RepeatList
 		for depth1 in range(len(InstanceId)):
-			self.add_query_param('InstanceId.' + str(depth1 + 1), InstanceId)
+			self.add_query_param('InstanceId.' + str(depth1 + 1), InstanceId[depth1])

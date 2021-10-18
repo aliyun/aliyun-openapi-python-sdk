@@ -51,7 +51,7 @@ class DescribeSpotAdviceRequest(RpcRequest):
 
 	def set_InstanceTypess(self, InstanceTypes):  # RepeatList
 		for depth1 in range(len(InstanceTypes)):
-			self.add_query_param('InstanceTypes.' + str(depth1 + 1), InstanceTypes)
+			self.add_query_param('InstanceTypes.' + str(depth1 + 1), InstanceTypes[depth1])
 	def get_MinCores(self): # Integer
 		return self.get_query_params().get('MinCores')
 

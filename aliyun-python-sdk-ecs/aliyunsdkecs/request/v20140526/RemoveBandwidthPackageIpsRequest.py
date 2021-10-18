@@ -46,7 +46,7 @@ class RemoveBandwidthPackageIpsRequest(RpcRequest):
 
 	def set_RemovedIpAddressess(self, RemovedIpAddresses):  # RepeatList
 		for depth1 in range(len(RemovedIpAddresses)):
-			self.add_query_param('RemovedIpAddresses.' + str(depth1 + 1), RemovedIpAddresses)
+			self.add_query_param('RemovedIpAddresses.' + str(depth1 + 1), RemovedIpAddresses[depth1])
 	def get_BandwidthPackageId(self): # String
 		return self.get_query_params().get('BandwidthPackageId')
 

@@ -41,7 +41,7 @@ class DescribeImageComponentsRequest(RpcRequest):
 
 	def set_ImageComponentIds(self, ImageComponentId):  # RepeatList
 		for depth1 in range(len(ImageComponentId)):
-			self.add_query_param('ImageComponentId.' + str(depth1 + 1), ImageComponentId)
+			self.add_query_param('ImageComponentId.' + str(depth1 + 1), ImageComponentId[depth1])
 	def get_ResourceGroupId(self): # String
 		return self.get_query_params().get('ResourceGroupId')
 

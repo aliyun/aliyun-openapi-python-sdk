@@ -36,7 +36,7 @@ class DescribeLaunchTemplatesRequest(RpcRequest):
 
 	def set_LaunchTemplateNames(self, LaunchTemplateName):  # RepeatList
 		for depth1 in range(len(LaunchTemplateName)):
-			self.add_query_param('LaunchTemplateName.' + str(depth1 + 1), LaunchTemplateName)
+			self.add_query_param('LaunchTemplateName.' + str(depth1 + 1), LaunchTemplateName[depth1])
 	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
 
@@ -66,7 +66,7 @@ class DescribeLaunchTemplatesRequest(RpcRequest):
 
 	def set_LaunchTemplateIds(self, LaunchTemplateId):  # RepeatList
 		for depth1 in range(len(LaunchTemplateId)):
-			self.add_query_param('LaunchTemplateId.' + str(depth1 + 1), LaunchTemplateId)
+			self.add_query_param('LaunchTemplateId.' + str(depth1 + 1), LaunchTemplateId[depth1])
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 

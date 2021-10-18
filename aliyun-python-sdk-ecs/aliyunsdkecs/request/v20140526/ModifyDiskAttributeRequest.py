@@ -56,7 +56,7 @@ class ModifyDiskAttributeRequest(RpcRequest):
 
 	def set_DiskIdss(self, DiskIds):  # RepeatList
 		for depth1 in range(len(DiskIds)):
-			self.add_query_param('DiskIds.' + str(depth1 + 1), DiskIds)
+			self.add_query_param('DiskIds.' + str(depth1 + 1), DiskIds[depth1])
 	def get_DiskId(self): # String
 		return self.get_query_params().get('DiskId')
 

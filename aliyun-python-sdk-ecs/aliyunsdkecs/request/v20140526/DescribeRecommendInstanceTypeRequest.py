@@ -101,7 +101,7 @@ class DescribeRecommendInstanceTypeRequest(RpcRequest):
 
 	def set_InstanceTypeFamilys(self, InstanceTypeFamily):  # RepeatList
 		for depth1 in range(len(InstanceTypeFamily)):
-			self.add_query_param('InstanceTypeFamily.' + str(depth1 + 1), InstanceTypeFamily)
+			self.add_query_param('InstanceTypeFamily.' + str(depth1 + 1), InstanceTypeFamily[depth1])
 	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 

@@ -36,7 +36,7 @@ class DescribeDisksFullStatusRequest(RpcRequest):
 
 	def set_EventIds(self, EventId):  # RepeatList
 		for depth1 in range(len(EventId)):
-			self.add_query_param('EventId.' + str(depth1 + 1), EventId)
+			self.add_query_param('EventId.' + str(depth1 + 1), EventId[depth1])
 	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
 
@@ -62,7 +62,7 @@ class DescribeDisksFullStatusRequest(RpcRequest):
 
 	def set_DiskIds(self, DiskId):  # RepeatList
 		for depth1 in range(len(DiskId)):
-			self.add_query_param('DiskId.' + str(depth1 + 1), DiskId)
+			self.add_query_param('DiskId.' + str(depth1 + 1), DiskId[depth1])
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 

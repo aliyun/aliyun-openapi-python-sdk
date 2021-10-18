@@ -130,7 +130,7 @@ class DescribeInstancesRequest(RpcRequest):
 
 	def set_AdditionalAttributess(self, AdditionalAttributes):  # RepeatList
 		for depth1 in range(len(AdditionalAttributes)):
-			self.add_query_param('AdditionalAttributes.' + str(depth1 + 1), AdditionalAttributes)
+			self.add_query_param('AdditionalAttributes.' + str(depth1 + 1), AdditionalAttributes[depth1])
 	def get_InstanceName(self): # String
 		return self.get_query_params().get('InstanceName')
 
@@ -161,7 +161,7 @@ class DescribeInstancesRequest(RpcRequest):
 
 	def set_Ipv6Addresss(self, Ipv6Address):  # RepeatList
 		for depth1 in range(len(Ipv6Address)):
-			self.add_query_param('Ipv6Address.' + str(depth1 + 1), Ipv6Address)
+			self.add_query_param('Ipv6Address.' + str(depth1 + 1), Ipv6Address[depth1])
 	def get_InstanceNetworkType(self): # String
 		return self.get_query_params().get('InstanceNetworkType')
 

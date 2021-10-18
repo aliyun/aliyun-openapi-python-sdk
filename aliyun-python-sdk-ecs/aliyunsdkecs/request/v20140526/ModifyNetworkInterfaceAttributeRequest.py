@@ -46,7 +46,7 @@ class ModifyNetworkInterfaceAttributeRequest(RpcRequest):
 
 	def set_SecurityGroupIds(self, SecurityGroupId):  # RepeatList
 		for depth1 in range(len(SecurityGroupId)):
-			self.add_query_param('SecurityGroupId.' + str(depth1 + 1), SecurityGroupId)
+			self.add_query_param('SecurityGroupId.' + str(depth1 + 1), SecurityGroupId[depth1])
 	def get_Description(self): # String
 		return self.get_query_params().get('Description')
 
