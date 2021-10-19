@@ -31,6 +31,12 @@ class ScaleAppRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_TotalPartitions(self):
+		return self.get_query_params().get('TotalPartitions')
+
+	def set_TotalPartitions(self,TotalPartitions):
+		self.add_query_param('TotalPartitions',TotalPartitions)
+
 	def get_Replicas(self):
 		return self.get_query_params().get('Replicas')
 
