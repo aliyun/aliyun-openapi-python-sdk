@@ -31,6 +31,14 @@ class QueryDeviceGroupListRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_GroupTypess(self):
+		return self.get_query_params().get('GroupTypes')
+
+	def set_GroupTypess(self, GroupTypess):
+		for depth1 in range(len(GroupTypess)):
+			if GroupTypess[depth1] is not None:
+				self.add_query_param('GroupTypes.' + str(depth1 + 1) , GroupTypess[depth1])
+
 	def get_SuperGroupId(self):
 		return self.get_query_params().get('SuperGroupId')
 

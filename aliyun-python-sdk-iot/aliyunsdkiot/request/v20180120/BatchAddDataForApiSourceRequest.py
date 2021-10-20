@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkiot.endpoint import endpoint_data
 
-class SetDeviceGroupTagsRequest(RpcRequest):
+class BatchAddDataForApiSourceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'SetDeviceGroupTags','iot')
+		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'BatchAddDataForApiSource','iot')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,11 +31,11 @@ class SetDeviceGroupTagsRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_GroupType(self):
-		return self.get_query_params().get('GroupType')
+	def get_ContentList(self):
+		return self.get_query_params().get('ContentList')
 
-	def set_GroupType(self,GroupType):
-		self.add_query_param('GroupType',GroupType)
+	def set_ContentList(self,ContentList):
+		self.add_query_param('ContentList',ContentList)
 
 	def get_IotInstanceId(self):
 		return self.get_query_params().get('IotInstanceId')
@@ -43,14 +43,8 @@ class SetDeviceGroupTagsRequest(RpcRequest):
 	def set_IotInstanceId(self,IotInstanceId):
 		self.add_query_param('IotInstanceId',IotInstanceId)
 
-	def get_TagString(self):
-		return self.get_query_params().get('TagString')
+	def get_ApiId(self):
+		return self.get_query_params().get('ApiId')
 
-	def set_TagString(self,TagString):
-		self.add_query_param('TagString',TagString)
-
-	def get_GroupId(self):
-		return self.get_query_params().get('GroupId')
-
-	def set_GroupId(self,GroupId):
-		self.add_query_param('GroupId',GroupId)
+	def set_ApiId(self,ApiId):
+		self.add_query_param('ApiId',ApiId)

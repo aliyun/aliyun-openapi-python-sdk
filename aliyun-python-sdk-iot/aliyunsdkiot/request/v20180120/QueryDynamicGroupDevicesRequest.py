@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkiot.endpoint import endpoint_data
 
-class SetDeviceGroupTagsRequest(RpcRequest):
+class QueryDynamicGroupDevicesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'SetDeviceGroupTags','iot')
+		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'QueryDynamicGroupDevices','iot')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,11 +31,11 @@ class SetDeviceGroupTagsRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_GroupType(self):
-		return self.get_query_params().get('GroupType')
+	def get_NextToken(self):
+		return self.get_query_params().get('NextToken')
 
-	def set_GroupType(self,GroupType):
-		self.add_query_param('GroupType',GroupType)
+	def set_NextToken(self,NextToken):
+		self.add_query_param('NextToken',NextToken)
 
 	def get_IotInstanceId(self):
 		return self.get_query_params().get('IotInstanceId')
@@ -43,14 +43,44 @@ class SetDeviceGroupTagsRequest(RpcRequest):
 	def set_IotInstanceId(self,IotInstanceId):
 		self.add_query_param('IotInstanceId',IotInstanceId)
 
-	def get_TagString(self):
-		return self.get_query_params().get('TagString')
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
 
-	def set_TagString(self,TagString):
-		self.add_query_param('TagString',TagString)
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
+
+	def get_FuzzyName(self):
+		return self.get_query_params().get('FuzzyName')
+
+	def set_FuzzyName(self,FuzzyName):
+		self.add_query_param('FuzzyName',FuzzyName)
 
 	def get_GroupId(self):
 		return self.get_query_params().get('GroupId')
 
 	def set_GroupId(self,GroupId):
 		self.add_query_param('GroupId',GroupId)
+
+	def get_CurrentPage(self):
+		return self.get_query_params().get('CurrentPage')
+
+	def set_CurrentPage(self,CurrentPage):
+		self.add_query_param('CurrentPage',CurrentPage)
+
+	def get_ProductKey(self):
+		return self.get_query_params().get('ProductKey')
+
+	def set_ProductKey(self,ProductKey):
+		self.add_query_param('ProductKey',ProductKey)
+
+	def get_DeviceName(self):
+		return self.get_query_params().get('DeviceName')
+
+	def set_DeviceName(self,DeviceName):
+		self.add_query_param('DeviceName',DeviceName)
+
+	def get_Status(self):
+		return self.get_query_params().get('Status')
+
+	def set_Status(self,Status):
+		self.add_query_param('Status',Status)

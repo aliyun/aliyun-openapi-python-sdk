@@ -55,6 +55,12 @@ class CreateOTADynamicUpgradeJobRequest(RpcRequest):
 	def set_NeedConfirm(self,NeedConfirm):
 		self.add_query_param('NeedConfirm',NeedConfirm)
 
+	def get_GroupType(self):
+		return self.get_query_params().get('GroupType')
+
+	def set_GroupType(self,GroupType):
+		self.add_query_param('GroupType',GroupType)
+
 	def get_NeedPush(self):
 		return self.get_query_params().get('NeedPush')
 
@@ -67,6 +73,12 @@ class CreateOTADynamicUpgradeJobRequest(RpcRequest):
 	def set_IotInstanceId(self,IotInstanceId):
 		self.add_query_param('IotInstanceId',IotInstanceId)
 
+	def get_DownloadProtocol(self):
+		return self.get_query_params().get('DownloadProtocol')
+
+	def set_DownloadProtocol(self,DownloadProtocol):
+		self.add_query_param('DownloadProtocol',DownloadProtocol)
+
 	def get_Tags(self):
 		return self.get_query_params().get('Tag')
 
@@ -76,6 +88,12 @@ class CreateOTADynamicUpgradeJobRequest(RpcRequest):
 				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tags[depth1].get('Value'))
 			if Tags[depth1].get('Key') is not None:
 				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tags[depth1].get('Key'))
+
+	def get_GroupId(self):
+		return self.get_query_params().get('GroupId')
+
+	def set_GroupId(self,GroupId):
+		self.add_query_param('GroupId',GroupId)
 
 	def get_FirmwareId(self):
 		return self.get_query_params().get('FirmwareId')

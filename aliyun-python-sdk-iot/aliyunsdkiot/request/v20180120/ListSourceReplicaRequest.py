@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkiot.endpoint import endpoint_data
 
-class SetDeviceGroupTagsRequest(RpcRequest):
+class ListSourceReplicaRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'SetDeviceGroupTags','iot')
+		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'ListSourceReplica','iot')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,26 +31,38 @@ class SetDeviceGroupTagsRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_GroupType(self):
-		return self.get_query_params().get('GroupType')
-
-	def set_GroupType(self,GroupType):
-		self.add_query_param('GroupType',GroupType)
-
 	def get_IotInstanceId(self):
-		return self.get_query_params().get('IotInstanceId')
+		return self.get_body_params().get('IotInstanceId')
 
 	def set_IotInstanceId(self,IotInstanceId):
-		self.add_query_param('IotInstanceId',IotInstanceId)
+		self.add_body_params('IotInstanceId', IotInstanceId)
 
-	def get_TagString(self):
-		return self.get_query_params().get('TagString')
+	def get_Context(self):
+		return self.get_body_params().get('Context')
 
-	def set_TagString(self,TagString):
-		self.add_query_param('TagString',TagString)
+	def set_Context(self,Context):
+		self.add_body_params('Context', Context)
 
-	def get_GroupId(self):
-		return self.get_query_params().get('GroupId')
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
 
-	def set_GroupId(self,GroupId):
-		self.add_query_param('GroupId',GroupId)
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
+
+	def get_SourceType(self):
+		return self.get_query_params().get('SourceType')
+
+	def set_SourceType(self,SourceType):
+		self.add_query_param('SourceType',SourceType)
+
+	def get_PageNo(self):
+		return self.get_query_params().get('PageNo')
+
+	def set_PageNo(self,PageNo):
+		self.add_query_param('PageNo',PageNo)
+
+	def get_LpInstanceId(self):
+		return self.get_query_params().get('LpInstanceId')
+
+	def set_LpInstanceId(self,LpInstanceId):
+		self.add_query_param('LpInstanceId',LpInstanceId)

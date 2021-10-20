@@ -31,6 +31,12 @@ class UpdateDeviceGroupRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_GroupType(self):
+		return self.get_query_params().get('GroupType')
+
+	def set_GroupType(self,GroupType):
+		self.add_query_param('GroupType',GroupType)
+
 	def get_IotInstanceId(self):
 		return self.get_query_params().get('IotInstanceId')
 
