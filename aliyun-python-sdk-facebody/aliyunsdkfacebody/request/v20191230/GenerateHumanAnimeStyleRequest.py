@@ -23,7 +23,7 @@ from aliyunsdkfacebody.endpoint import endpoint_data
 class GenerateHumanAnimeStyleRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'facebody', '2019-12-30', 'GenerateHumanAnimeStyle','facebody')
+		RpcRequest.__init__(self, 'facebody', '2019-12-30', 'GenerateHumanAnimeStyle')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())

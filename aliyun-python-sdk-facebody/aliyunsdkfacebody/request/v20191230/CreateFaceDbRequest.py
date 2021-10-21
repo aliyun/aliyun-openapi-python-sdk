@@ -23,7 +23,7 @@ from aliyunsdkfacebody.endpoint import endpoint_data
 class CreateFaceDbRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'facebody', '2019-12-30', 'CreateFaceDb','facebody')
+		RpcRequest.__init__(self, 'facebody', '2019-12-30', 'CreateFaceDb')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
