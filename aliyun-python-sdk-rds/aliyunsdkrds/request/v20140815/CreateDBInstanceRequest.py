@@ -79,6 +79,16 @@ class CreateDBInstanceRequest(RpcRequest):
 	def set_DBInstanceDescription(self,DBInstanceDescription):
 		self.add_query_param('DBInstanceDescription',DBInstanceDescription)
 
+	def get_Tags(self):
+		return self.get_query_params().get('Tag')
+
+	def set_Tags(self, Tags):
+		for depth1 in range(len(Tags)):
+			if Tags[depth1].get('Value') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tags[depth1].get('Value'))
+			if Tags[depth1].get('Key') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tags[depth1].get('Key'))
+
 	def get_BusinessInfo(self):
 		return self.get_query_params().get('BusinessInfo')
 
@@ -90,6 +100,12 @@ class CreateDBInstanceRequest(RpcRequest):
 
 	def set_Period(self,Period):
 		self.add_query_param('Period',Period)
+
+	def get_DryRun(self):
+		return self.get_query_params().get('DryRun')
+
+	def set_DryRun(self,DryRun):
+		self.add_query_param('DryRun',DryRun)
 
 	def get_EncryptionKey(self):
 		return self.get_query_params().get('EncryptionKey')
@@ -217,11 +233,23 @@ class CreateDBInstanceRequest(RpcRequest):
 	def set_DedicatedHostGroupId(self,DedicatedHostGroupId):
 		self.add_query_param('DedicatedHostGroupId',DedicatedHostGroupId)
 
+	def get_CreateStrategy(self):
+		return self.get_query_params().get('CreateStrategy')
+
+	def set_CreateStrategy(self,CreateStrategy):
+		self.add_query_param('CreateStrategy',CreateStrategy)
+
 	def get_DBInstanceNetType(self):
 		return self.get_query_params().get('DBInstanceNetType')
 
 	def set_DBInstanceNetType(self,DBInstanceNetType):
 		self.add_query_param('DBInstanceNetType',DBInstanceNetType)
+
+	def get_Amount(self):
+		return self.get_query_params().get('Amount')
+
+	def set_Amount(self,Amount):
+		self.add_query_param('Amount',Amount)
 
 	def get_UsedTime(self):
 		return self.get_query_params().get('UsedTime')
@@ -234,6 +262,12 @@ class CreateDBInstanceRequest(RpcRequest):
 
 	def set_TargetMinorVersion(self,TargetMinorVersion):
 		self.add_query_param('TargetMinorVersion',TargetMinorVersion)
+
+	def get_UserBackupId(self):
+		return self.get_query_params().get('UserBackupId')
+
+	def set_UserBackupId(self,UserBackupId):
+		self.add_query_param('UserBackupId',UserBackupId)
 
 	def get_StorageUpperBound(self):
 		return self.get_query_params().get('StorageUpperBound')

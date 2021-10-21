@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkrds.endpoint import endpoint_data
 
-class DescribeAvailableZonesRequest(RpcRequest):
+class UpdateUserBackupFileRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'DescribeAvailableZones','rds')
+		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'UpdateUserBackupFile','rds')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,50 +31,38 @@ class DescribeAvailableZonesRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_DBInstanceName(self):
-		return self.get_query_params().get('DBInstanceName')
-
-	def set_DBInstanceName(self,DBInstanceName):
-		self.add_query_param('DBInstanceName',DBInstanceName)
-
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_EngineVersion(self):
-		return self.get_query_params().get('EngineVersion')
+	def get_Retention(self):
+		return self.get_query_params().get('Retention')
 
-	def set_EngineVersion(self,EngineVersion):
-		self.add_query_param('EngineVersion',EngineVersion)
+	def set_Retention(self,Retention):
+		self.add_query_param('Retention',Retention)
 
-	def get_Engine(self):
-		return self.get_query_params().get('Engine')
+	def get_ResourceOwnerAccount(self):
+		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_Engine(self,Engine):
-		self.add_query_param('Engine',Engine)
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
-	def get_DispenseMode(self):
-		return self.get_query_params().get('DispenseMode')
+	def get_BackupId(self):
+		return self.get_query_params().get('BackupId')
 
-	def set_DispenseMode(self,DispenseMode):
-		self.add_query_param('DispenseMode',DispenseMode)
+	def set_BackupId(self,BackupId):
+		self.add_query_param('BackupId',BackupId)
 
-	def get_CommodityCode(self):
-		return self.get_query_params().get('CommodityCode')
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
 
-	def set_CommodityCode(self,CommodityCode):
-		self.add_query_param('CommodityCode',CommodityCode)
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
 
-	def get_ZoneId(self):
-		return self.get_query_params().get('ZoneId')
+	def get_Comment(self):
+		return self.get_query_params().get('Comment')
 
-	def set_ZoneId(self,ZoneId):
-		self.add_query_param('ZoneId',ZoneId)
-
-	def get_Category(self):
-		return self.get_query_params().get('Category')
-
-	def set_Category(self,Category):
-		self.add_query_param('Category',Category)
+	def set_Comment(self,Comment):
+		self.add_query_param('Comment',Comment)

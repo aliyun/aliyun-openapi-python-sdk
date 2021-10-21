@@ -43,17 +43,71 @@ class ModifyDBInstanceSSLRequest(RpcRequest):
 	def set_ConnectionString(self,ConnectionString):
 		self.add_query_param('ConnectionString',ConnectionString)
 
+	def get_ServerKey(self):
+		return self.get_query_params().get('ServerKey')
+
+	def set_ServerKey(self,ServerKey):
+		self.add_query_param('ServerKey',ServerKey)
+
+	def get_ClientCrlEnabled(self):
+		return self.get_query_params().get('ClientCrlEnabled')
+
+	def set_ClientCrlEnabled(self,ClientCrlEnabled):
+		self.add_query_param('ClientCrlEnabled',ClientCrlEnabled)
+
+	def get_ACL(self):
+		return self.get_query_params().get('ACL')
+
+	def set_ACL(self,ACL):
+		self.add_query_param('ACL',ACL)
+
+	def get_ClientCertRevocationList(self):
+		return self.get_query_params().get('ClientCertRevocationList')
+
+	def set_ClientCertRevocationList(self,ClientCertRevocationList):
+		self.add_query_param('ClientCertRevocationList',ClientCertRevocationList)
+
+	def get_ServerCert(self):
+		return self.get_query_params().get('ServerCert')
+
+	def set_ServerCert(self,ServerCert):
+		self.add_query_param('ServerCert',ServerCert)
+
 	def get_DBInstanceId(self):
 		return self.get_query_params().get('DBInstanceId')
 
 	def set_DBInstanceId(self,DBInstanceId):
 		self.add_query_param('DBInstanceId',DBInstanceId)
 
+	def get_ClientCAEnabled(self):
+		return self.get_query_params().get('ClientCAEnabled')
+
+	def set_ClientCAEnabled(self,ClientCAEnabled):
+		self.add_query_param('ClientCAEnabled',ClientCAEnabled)
+
+	def get_ClientCACert(self):
+		return self.get_query_params().get('ClientCACert')
+
+	def set_ClientCACert(self,ClientCACert):
+		self.add_query_param('ClientCACert',ClientCACert)
+
+	def get_ReplicationACL(self):
+		return self.get_query_params().get('ReplicationACL')
+
+	def set_ReplicationACL(self,ReplicationACL):
+		self.add_query_param('ReplicationACL',ReplicationACL)
+
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
 
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+
+	def get_CAType(self):
+		return self.get_query_params().get('CAType')
+
+	def set_CAType(self,CAType):
+		self.add_query_param('CAType',CAType)
 
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')

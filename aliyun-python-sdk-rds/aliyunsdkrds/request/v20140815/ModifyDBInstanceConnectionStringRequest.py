@@ -43,6 +43,12 @@ class ModifyDBInstanceConnectionStringRequest(RpcRequest):
 	def set_ConnectionStringPrefix(self,ConnectionStringPrefix):
 		self.add_query_param('ConnectionStringPrefix',ConnectionStringPrefix)
 
+	def get_GeneralGroupName(self):
+		return self.get_query_params().get('GeneralGroupName')
+
+	def set_GeneralGroupName(self,GeneralGroupName):
+		self.add_query_param('GeneralGroupName',GeneralGroupName)
+
 	def get_DBInstanceId(self):
 		return self.get_query_params().get('DBInstanceId')
 

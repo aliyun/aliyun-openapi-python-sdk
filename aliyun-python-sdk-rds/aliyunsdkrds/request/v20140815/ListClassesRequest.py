@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkrds.endpoint import endpoint_data
 
-class DescribeAvailableZonesRequest(RpcRequest):
+class ListClassesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'DescribeAvailableZones','rds')
+		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'ListClasses','rds')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,35 +31,29 @@ class DescribeAvailableZonesRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_DBInstanceName(self):
-		return self.get_query_params().get('DBInstanceName')
-
-	def set_DBInstanceName(self,DBInstanceName):
-		self.add_query_param('DBInstanceName',DBInstanceName)
-
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_EngineVersion(self):
-		return self.get_query_params().get('EngineVersion')
+	def get_ClientToken(self):
+		return self.get_query_params().get('ClientToken')
 
-	def set_EngineVersion(self,EngineVersion):
-		self.add_query_param('EngineVersion',EngineVersion)
+	def set_ClientToken(self,ClientToken):
+		self.add_query_param('ClientToken',ClientToken)
 
-	def get_Engine(self):
-		return self.get_query_params().get('Engine')
+	def get_DBInstanceId(self):
+		return self.get_query_params().get('DBInstanceId')
 
-	def set_Engine(self,Engine):
-		self.add_query_param('Engine',Engine)
+	def set_DBInstanceId(self,DBInstanceId):
+		self.add_query_param('DBInstanceId',DBInstanceId)
 
-	def get_DispenseMode(self):
-		return self.get_query_params().get('DispenseMode')
+	def get_ResourceOwnerAccount(self):
+		return self.get_query_params().get('ResourceOwnerAccount')
 
-	def set_DispenseMode(self,DispenseMode):
-		self.add_query_param('DispenseMode',DispenseMode)
+	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
+		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
 	def get_CommodityCode(self):
 		return self.get_query_params().get('CommodityCode')
@@ -67,14 +61,14 @@ class DescribeAvailableZonesRequest(RpcRequest):
 	def set_CommodityCode(self,CommodityCode):
 		self.add_query_param('CommodityCode',CommodityCode)
 
-	def get_ZoneId(self):
-		return self.get_query_params().get('ZoneId')
+	def get_OwnerId(self):
+		return self.get_query_params().get('OwnerId')
 
-	def set_ZoneId(self,ZoneId):
-		self.add_query_param('ZoneId',ZoneId)
+	def set_OwnerId(self,OwnerId):
+		self.add_query_param('OwnerId',OwnerId)
 
-	def get_Category(self):
-		return self.get_query_params().get('Category')
+	def get_OrderType(self):
+		return self.get_query_params().get('OrderType')
 
-	def set_Category(self,Category):
-		self.add_query_param('Category',Category)
+	def set_OrderType(self,OrderType):
+		self.add_query_param('OrderType',OrderType)

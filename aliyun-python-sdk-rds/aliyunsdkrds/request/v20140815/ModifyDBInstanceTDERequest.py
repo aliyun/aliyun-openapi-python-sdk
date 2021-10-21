@@ -37,6 +37,24 @@ class ModifyDBInstanceTDERequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_Certificate(self):
+		return self.get_query_params().get('Certificate')
+
+	def set_Certificate(self,Certificate):
+		self.add_query_param('Certificate',Certificate)
+
+	def get_PrivateKey(self):
+		return self.get_query_params().get('PrivateKey')
+
+	def set_PrivateKey(self,PrivateKey):
+		self.add_query_param('PrivateKey',PrivateKey)
+
+	def get_PassWord(self):
+		return self.get_query_params().get('PassWord')
+
+	def set_PassWord(self,PassWord):
+		self.add_query_param('PassWord',PassWord)
+
 	def get_DBInstanceId(self):
 		return self.get_query_params().get('DBInstanceId')
 

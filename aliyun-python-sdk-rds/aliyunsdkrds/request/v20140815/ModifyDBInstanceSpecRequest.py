@@ -49,6 +49,12 @@ class ModifyDBInstanceSpecRequest(RpcRequest):
 	def set_EngineVersion(self,EngineVersion):
 		self.add_query_param('EngineVersion',EngineVersion)
 
+	def get_ResourceGroupId(self):
+		return self.get_query_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self,ResourceGroupId):
+		self.add_query_param('ResourceGroupId',ResourceGroupId)
+
 	def get_EffectiveTime(self):
 		return self.get_query_params().get('EffectiveTime')
 
@@ -60,6 +66,12 @@ class ModifyDBInstanceSpecRequest(RpcRequest):
 
 	def set_DBInstanceId(self,DBInstanceId):
 		self.add_query_param('DBInstanceId',DBInstanceId)
+
+	def get_SwitchTime(self):
+		return self.get_query_params().get('SwitchTime')
+
+	def set_SwitchTime(self,SwitchTime):
+		self.add_query_param('SwitchTime',SwitchTime)
 
 	def get_DBInstanceStorageType(self):
 		return self.get_query_params().get('DBInstanceStorageType')
@@ -102,6 +114,12 @@ class ModifyDBInstanceSpecRequest(RpcRequest):
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_UsedTime(self):
+		return self.get_query_params().get('UsedTime')
+
+	def set_UsedTime(self,UsedTime):
+		self.add_query_param('UsedTime',UsedTime)
 
 	def get_DBInstanceClass(self):
 		return self.get_query_params().get('DBInstanceClass')

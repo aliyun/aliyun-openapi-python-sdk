@@ -73,6 +73,12 @@ class ModifySecurityIpsRequest(RpcRequest):
 	def set_ModifyMode(self,ModifyMode):
 		self.add_query_param('ModifyMode',ModifyMode)
 
+	def get_FreshWhiteListReadins(self):
+		return self.get_query_params().get('FreshWhiteListReadins')
+
+	def set_FreshWhiteListReadins(self,FreshWhiteListReadins):
+		self.add_query_param('FreshWhiteListReadins',FreshWhiteListReadins)
+
 	def get_DBInstanceIPArrayAttribute(self):
 		return self.get_query_params().get('DBInstanceIPArrayAttribute')
 
