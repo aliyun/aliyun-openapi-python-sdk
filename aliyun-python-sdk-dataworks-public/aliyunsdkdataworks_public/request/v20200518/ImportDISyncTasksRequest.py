@@ -37,17 +37,17 @@ class ImportDISyncTasksRequest(RpcRequest):
 	def set_TaskType(self,TaskType):
 		self.add_query_param('TaskType',TaskType)
 
-	def get_TaskContent(self):
-		return self.get_query_params().get('TaskContent')
-
-	def set_TaskContent(self,TaskContent):
-		self.add_query_param('TaskContent',TaskContent)
-
 	def get_TaskParam(self):
 		return self.get_query_params().get('TaskParam')
 
 	def set_TaskParam(self,TaskParam):
 		self.add_query_param('TaskParam',TaskParam)
+
+	def get_body(self):
+		return self.get_body_params().get('body')
+
+	def set_body(self,body):
+		self.add_body_params('body', body)
 
 	def get_ProjectId(self):
 		return self.get_query_params().get('ProjectId')
