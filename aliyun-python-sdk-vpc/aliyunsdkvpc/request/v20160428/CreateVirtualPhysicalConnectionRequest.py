@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkvpc.endpoint import endpoint_data
 
-class ModifyNatGatewayAttributeRequest(RpcRequest):
+class CreateVirtualPhysicalConnectionRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'ModifyNatGatewayAttribute','vpc')
+		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'CreateVirtualPhysicalConnection','vpc')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,11 +31,23 @@ class ModifyNatGatewayAttributeRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_ResourceOwnerId(self):
-		return self.get_query_params().get('ResourceOwnerId')
+	def get_VpconnAliUid(self):
+		return self.get_query_params().get('VpconnAliUid')
 
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
+	def set_VpconnAliUid(self,VpconnAliUid):
+		self.add_query_param('VpconnAliUid',VpconnAliUid)
+
+	def get_OrderMode(self):
+		return self.get_query_params().get('OrderMode')
+
+	def set_OrderMode(self,OrderMode):
+		self.add_query_param('OrderMode',OrderMode)
+
+	def get_VlanId(self):
+		return self.get_query_params().get('VlanId')
+
+	def set_VlanId(self,VlanId):
+		self.add_query_param('VlanId',VlanId)
 
 	def get_Description(self):
 		return self.get_query_params().get('Description')
@@ -43,35 +55,29 @@ class ModifyNatGatewayAttributeRequest(RpcRequest):
 	def set_Description(self,Description):
 		self.add_query_param('Description',Description)
 
-	def get_IcmpReplyEnabled(self):
-		return self.get_query_params().get('IcmpReplyEnabled')
+	def get_Spec(self):
+		return self.get_query_params().get('Spec')
 
-	def set_IcmpReplyEnabled(self,IcmpReplyEnabled):
-		self.add_query_param('IcmpReplyEnabled',IcmpReplyEnabled)
+	def set_Spec(self,Spec):
+		self.add_query_param('Spec',Spec)
 
-	def get_NatGatewayId(self):
-		return self.get_query_params().get('NatGatewayId')
+	def get_DryRun(self):
+		return self.get_query_params().get('DryRun')
 
-	def set_NatGatewayId(self,NatGatewayId):
-		self.add_query_param('NatGatewayId',NatGatewayId)
+	def set_DryRun(self,DryRun):
+		self.add_query_param('DryRun',DryRun)
 
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
+	def get_Token(self):
+		return self.get_query_params().get('Token')
 
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
+	def set_Token(self,Token):
+		self.add_query_param('Token',Token)
 
-	def get_OwnerAccount(self):
-		return self.get_query_params().get('OwnerAccount')
+	def get_PhysicalConnectionId(self):
+		return self.get_query_params().get('PhysicalConnectionId')
 
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
-
-	def get_OwnerId(self):
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
+	def set_PhysicalConnectionId(self,PhysicalConnectionId):
+		self.add_query_param('PhysicalConnectionId',PhysicalConnectionId)
 
 	def get_Name(self):
 		return self.get_query_params().get('Name')

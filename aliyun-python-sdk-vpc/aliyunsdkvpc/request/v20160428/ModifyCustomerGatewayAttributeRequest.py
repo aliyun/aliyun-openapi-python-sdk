@@ -31,6 +31,12 @@ class ModifyCustomerGatewayAttributeRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_AuthKey(self):
+		return self.get_query_params().get('AuthKey')
+
+	def set_AuthKey(self,AuthKey):
+		self.add_query_param('AuthKey',AuthKey)
+
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 

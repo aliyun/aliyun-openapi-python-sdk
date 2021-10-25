@@ -1,3 +1,7 @@
+2021-10-25 Version: 3.0.15
+- Supported SecurityProtectionTypes for AllocateEipAddress.
+- Supported SecurityProtectionTypes for CreateCommonBandwidthPackage.
+
 2021-06-21 Version: 3.0.14
 - Generated 2016-04-28 for `Vpc`.
 

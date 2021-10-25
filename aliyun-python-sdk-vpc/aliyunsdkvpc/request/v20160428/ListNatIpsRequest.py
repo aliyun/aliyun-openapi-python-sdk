@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkvpc.endpoint import endpoint_data
 
-class DescribeCommonBandwidthPackagesRequest(RpcRequest):
+class ListNatIpsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'DescribeCommonBandwidthPackages','vpc')
+		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'ListNatIps','vpc')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -37,41 +37,45 @@ class DescribeCommonBandwidthPackagesRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_SecurityProtectionEnabled(self):
-		return self.get_query_params().get('SecurityProtectionEnabled')
+	def get_NatIpStatus(self):
+		return self.get_query_params().get('NatIpStatus')
 
-	def set_SecurityProtectionEnabled(self,SecurityProtectionEnabled):
-		self.add_query_param('SecurityProtectionEnabled',SecurityProtectionEnabled)
+	def set_NatIpStatus(self,NatIpStatus):
+		self.add_query_param('NatIpStatus',NatIpStatus)
 
-	def get_IncludeReservationData(self):
-		return self.get_query_params().get('IncludeReservationData')
+	def get_NatIpNames(self):
+		return self.get_query_params().get('NatIpName')
 
-	def set_IncludeReservationData(self,IncludeReservationData):
-		self.add_query_param('IncludeReservationData',IncludeReservationData)
+	def set_NatIpNames(self, NatIpNames):
+		for depth1 in range(len(NatIpNames)):
+			if NatIpNames[depth1] is not None:
+				self.add_query_param('NatIpName.' + str(depth1 + 1) , NatIpNames[depth1])
 
-	def get_PageNumber(self):
-		return self.get_query_params().get('PageNumber')
+	def get_ClientToken(self):
+		return self.get_query_params().get('ClientToken')
 
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
+	def set_ClientToken(self,ClientToken):
+		self.add_query_param('ClientToken',ClientToken)
 
-	def get_ResourceGroupId(self):
-		return self.get_query_params().get('ResourceGroupId')
+	def get_NextToken(self):
+		return self.get_query_params().get('NextToken')
 
-	def set_ResourceGroupId(self,ResourceGroupId):
-		self.add_query_param('ResourceGroupId',ResourceGroupId)
+	def set_NextToken(self,NextToken):
+		self.add_query_param('NextToken',NextToken)
 
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
+	def get_NatGatewayId(self):
+		return self.get_query_params().get('NatGatewayId')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
+	def set_NatGatewayId(self,NatGatewayId):
+		self.add_query_param('NatGatewayId',NatGatewayId)
 
-	def get_BandwidthPackageId(self):
-		return self.get_query_params().get('BandwidthPackageId')
+	def get_NatIpIdss(self):
+		return self.get_query_params().get('NatIpIds')
 
-	def set_BandwidthPackageId(self,BandwidthPackageId):
-		self.add_query_param('BandwidthPackageId',BandwidthPackageId)
+	def set_NatIpIdss(self, NatIpIdss):
+		for depth1 in range(len(NatIpIdss)):
+			if NatIpIdss[depth1] is not None:
+				self.add_query_param('NatIpIds.' + str(depth1 + 1) , NatIpIdss[depth1])
 
 	def get_DryRun(self):
 		return self.get_query_params().get('DryRun')
@@ -97,8 +101,14 @@ class DescribeCommonBandwidthPackagesRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_Name(self):
-		return self.get_query_params().get('Name')
+	def get_NatIpCidr(self):
+		return self.get_query_params().get('NatIpCidr')
 
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)
+	def set_NatIpCidr(self,NatIpCidr):
+		self.add_query_param('NatIpCidr',NatIpCidr)
+
+	def get_MaxResults(self):
+		return self.get_query_params().get('MaxResults')
+
+	def set_MaxResults(self,MaxResults):
+		self.add_query_param('MaxResults',MaxResults)

@@ -43,11 +43,23 @@ class DescribeEipAddressesRequest(RpcRequest):
 	def set_Filter2Value(self,Filter2Value):
 		self.add_query_param('Filter.2.Value',Filter2Value)
 
+	def get_SecurityProtectionEnabled(self):
+		return self.get_query_params().get('SecurityProtectionEnabled')
+
+	def set_SecurityProtectionEnabled(self,SecurityProtectionEnabled):
+		self.add_query_param('SecurityProtectionEnabled',SecurityProtectionEnabled)
+
 	def get_ISP(self):
 		return self.get_query_params().get('ISP')
 
 	def set_ISP(self,ISP):
 		self.add_query_param('ISP',ISP)
+
+	def get_EipName(self):
+		return self.get_query_params().get('EipName')
+
+	def set_EipName(self,EipName):
+		self.add_query_param('EipName',EipName)
 
 	def get_AllocationId(self):
 		return self.get_query_params().get('AllocationId')

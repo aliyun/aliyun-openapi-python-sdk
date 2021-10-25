@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkvpc.endpoint import endpoint_data
 
-class CreateCommonBandwidthPackageRequest(RpcRequest):
+class ListFullNatEntriesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'CreateCommonBandwidthPackage','vpc')
+		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'ListFullNatEntries','vpc')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -43,29 +43,45 @@ class CreateCommonBandwidthPackageRequest(RpcRequest):
 	def set_ClientToken(self,ClientToken):
 		self.add_query_param('ClientToken',ClientToken)
 
-	def get_ISP(self):
-		return self.get_query_params().get('ISP')
+	def get_NetworkInterfaceIdss(self):
+		return self.get_query_params().get('NetworkInterfaceIds')
 
-	def set_ISP(self,ISP):
-		self.add_query_param('ISP',ISP)
+	def set_NetworkInterfaceIdss(self, NetworkInterfaceIdss):
+		for depth1 in range(len(NetworkInterfaceIdss)):
+			if NetworkInterfaceIdss[depth1] is not None:
+				self.add_query_param('NetworkInterfaceIds.' + str(depth1 + 1) , NetworkInterfaceIdss[depth1])
 
-	def get_Description(self):
-		return self.get_query_params().get('Description')
+	def get_FullNatEntryStatus(self):
+		return self.get_query_params().get('FullNatEntryStatus')
 
-	def set_Description(self,Description):
-		self.add_query_param('Description',Description)
+	def set_FullNatEntryStatus(self,FullNatEntryStatus):
+		self.add_query_param('FullNatEntryStatus',FullNatEntryStatus)
 
-	def get_ResourceGroupId(self):
-		return self.get_query_params().get('ResourceGroupId')
+	def get_FullNatEntryId(self):
+		return self.get_query_params().get('FullNatEntryId')
 
-	def set_ResourceGroupId(self,ResourceGroupId):
-		self.add_query_param('ResourceGroupId',ResourceGroupId)
+	def set_FullNatEntryId(self,FullNatEntryId):
+		self.add_query_param('FullNatEntryId',FullNatEntryId)
 
-	def get_Zone(self):
-		return self.get_query_params().get('Zone')
+	def get_FullNatTableId(self):
+		return self.get_query_params().get('FullNatTableId')
 
-	def set_Zone(self,Zone):
-		self.add_query_param('Zone',Zone)
+	def set_FullNatTableId(self,FullNatTableId):
+		self.add_query_param('FullNatTableId',FullNatTableId)
+
+	def get_NextToken(self):
+		return self.get_query_params().get('NextToken')
+
+	def set_NextToken(self,NextToken):
+		self.add_query_param('NextToken',NextToken)
+
+	def get_FullNatEntryNamess(self):
+		return self.get_query_params().get('FullNatEntryNames')
+
+	def set_FullNatEntryNamess(self, FullNatEntryNamess):
+		for depth1 in range(len(FullNatEntryNamess)):
+			if FullNatEntryNamess[depth1] is not None:
+				self.add_query_param('FullNatEntryNames.' + str(depth1 + 1) , FullNatEntryNamess[depth1])
 
 	def get_ResourceOwnerAccount(self):
 		return self.get_query_params().get('ResourceOwnerAccount')
@@ -73,11 +89,11 @@ class CreateCommonBandwidthPackageRequest(RpcRequest):
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
-	def get_Bandwidth(self):
-		return self.get_query_params().get('Bandwidth')
+	def get_IpProtocol(self):
+		return self.get_query_params().get('IpProtocol')
 
-	def set_Bandwidth(self,Bandwidth):
-		self.add_query_param('Bandwidth',Bandwidth)
+	def set_IpProtocol(self,IpProtocol):
+		self.add_query_param('IpProtocol',IpProtocol)
 
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
@@ -91,28 +107,8 @@ class CreateCommonBandwidthPackageRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_InternetChargeType(self):
-		return self.get_query_params().get('InternetChargeType')
+	def get_MaxResults(self):
+		return self.get_query_params().get('MaxResults')
 
-	def set_InternetChargeType(self,InternetChargeType):
-		self.add_query_param('InternetChargeType',InternetChargeType)
-
-	def get_Name(self):
-		return self.get_query_params().get('Name')
-
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)
-
-	def get_SecurityProtectionTypess(self):
-		return self.get_query_params().get('SecurityProtectionTypes')
-
-	def set_SecurityProtectionTypess(self, SecurityProtectionTypess):
-		for depth1 in range(len(SecurityProtectionTypess)):
-			if SecurityProtectionTypess[depth1] is not None:
-				self.add_query_param('SecurityProtectionTypes.' + str(depth1 + 1) , SecurityProtectionTypess[depth1])
-
-	def get_Ratio(self):
-		return self.get_query_params().get('Ratio')
-
-	def set_Ratio(self,Ratio):
-		self.add_query_param('Ratio',Ratio)
+	def set_MaxResults(self,MaxResults):
+		self.add_query_param('MaxResults',MaxResults)

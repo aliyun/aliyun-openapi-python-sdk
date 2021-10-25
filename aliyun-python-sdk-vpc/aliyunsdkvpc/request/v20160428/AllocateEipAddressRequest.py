@@ -127,6 +127,14 @@ class AllocateEipAddressRequest(RpcRequest):
 	def set_Name(self,Name):
 		self.add_query_param('Name',Name)
 
+	def get_SecurityProtectionTypess(self):
+		return self.get_query_params().get('SecurityProtectionTypes')
+
+	def set_SecurityProtectionTypess(self, SecurityProtectionTypess):
+		for depth1 in range(len(SecurityProtectionTypess)):
+			if SecurityProtectionTypess[depth1] is not None:
+				self.add_query_param('SecurityProtectionTypes.' + str(depth1 + 1) , SecurityProtectionTypess[depth1])
+
 	def get_PricingCycle(self):
 		return self.get_query_params().get('PricingCycle')
 

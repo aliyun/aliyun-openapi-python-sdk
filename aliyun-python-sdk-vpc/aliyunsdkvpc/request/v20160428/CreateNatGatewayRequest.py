@@ -43,11 +43,23 @@ class CreateNatGatewayRequest(RpcRequest):
 	def set_ClientToken(self,ClientToken):
 		self.add_query_param('ClientToken',ClientToken)
 
+	def get_SecurityProtectionEnabled(self):
+		return self.get_query_params().get('SecurityProtectionEnabled')
+
+	def set_SecurityProtectionEnabled(self,SecurityProtectionEnabled):
+		self.add_query_param('SecurityProtectionEnabled',SecurityProtectionEnabled)
+
 	def get_Description(self):
 		return self.get_query_params().get('Description')
 
 	def set_Description(self,Description):
 		self.add_query_param('Description',Description)
+
+	def get_NetworkType(self):
+		return self.get_query_params().get('NetworkType')
+
+	def set_NetworkType(self,NetworkType):
+		self.add_query_param('NetworkType',NetworkType)
 
 	def get_Spec(self):
 		return self.get_query_params().get('Spec')
@@ -60,6 +72,12 @@ class CreateNatGatewayRequest(RpcRequest):
 
 	def set_Duration(self,Duration):
 		self.add_query_param('Duration',Duration)
+
+	def get_IcmpReplyEnabled(self):
+		return self.get_query_params().get('IcmpReplyEnabled')
+
+	def set_IcmpReplyEnabled(self,IcmpReplyEnabled):
+		self.add_query_param('IcmpReplyEnabled',IcmpReplyEnabled)
 
 	def get_NatType(self):
 		return self.get_query_params().get('NatType')

@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkvpc.endpoint import endpoint_data
 
-class DescribeCommonBandwidthPackagesRequest(RpcRequest):
+class CreateFullNatEntryRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'DescribeCommonBandwidthPackages','vpc')
+		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'CreateFullNatEntry','vpc')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,47 +31,47 @@ class DescribeCommonBandwidthPackagesRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_FullNatEntryDescription(self):
+		return self.get_query_params().get('FullNatEntryDescription')
+
+	def set_FullNatEntryDescription(self,FullNatEntryDescription):
+		self.add_query_param('FullNatEntryDescription',FullNatEntryDescription)
+
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_SecurityProtectionEnabled(self):
-		return self.get_query_params().get('SecurityProtectionEnabled')
+	def get_AccessIp(self):
+		return self.get_query_params().get('AccessIp')
 
-	def set_SecurityProtectionEnabled(self,SecurityProtectionEnabled):
-		self.add_query_param('SecurityProtectionEnabled',SecurityProtectionEnabled)
+	def set_AccessIp(self,AccessIp):
+		self.add_query_param('AccessIp',AccessIp)
 
-	def get_IncludeReservationData(self):
-		return self.get_query_params().get('IncludeReservationData')
+	def get_ClientToken(self):
+		return self.get_query_params().get('ClientToken')
 
-	def set_IncludeReservationData(self,IncludeReservationData):
-		self.add_query_param('IncludeReservationData',IncludeReservationData)
+	def set_ClientToken(self,ClientToken):
+		self.add_query_param('ClientToken',ClientToken)
 
-	def get_PageNumber(self):
-		return self.get_query_params().get('PageNumber')
+	def get_NatIpPort(self):
+		return self.get_query_params().get('NatIpPort')
 
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
+	def set_NatIpPort(self,NatIpPort):
+		self.add_query_param('NatIpPort',NatIpPort)
 
-	def get_ResourceGroupId(self):
-		return self.get_query_params().get('ResourceGroupId')
+	def get_FullNatTableId(self):
+		return self.get_query_params().get('FullNatTableId')
 
-	def set_ResourceGroupId(self,ResourceGroupId):
-		self.add_query_param('ResourceGroupId',ResourceGroupId)
+	def set_FullNatTableId(self,FullNatTableId):
+		self.add_query_param('FullNatTableId',FullNatTableId)
 
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
+	def get_AccessPort(self):
+		return self.get_query_params().get('AccessPort')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_BandwidthPackageId(self):
-		return self.get_query_params().get('BandwidthPackageId')
-
-	def set_BandwidthPackageId(self,BandwidthPackageId):
-		self.add_query_param('BandwidthPackageId',BandwidthPackageId)
+	def set_AccessPort(self,AccessPort):
+		self.add_query_param('AccessPort',AccessPort)
 
 	def get_DryRun(self):
 		return self.get_query_params().get('DryRun')
@@ -85,6 +85,12 @@ class DescribeCommonBandwidthPackagesRequest(RpcRequest):
 	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
 		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
 
+	def get_IpProtocol(self):
+		return self.get_query_params().get('IpProtocol')
+
+	def set_IpProtocol(self,IpProtocol):
+		self.add_query_param('IpProtocol',IpProtocol)
+
 	def get_OwnerAccount(self):
 		return self.get_query_params().get('OwnerAccount')
 
@@ -97,8 +103,20 @@ class DescribeCommonBandwidthPackagesRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_Name(self):
-		return self.get_query_params().get('Name')
+	def get_FullNatEntryName(self):
+		return self.get_query_params().get('FullNatEntryName')
 
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)
+	def set_FullNatEntryName(self,FullNatEntryName):
+		self.add_query_param('FullNatEntryName',FullNatEntryName)
+
+	def get_NatIp(self):
+		return self.get_query_params().get('NatIp')
+
+	def set_NatIp(self,NatIp):
+		self.add_query_param('NatIp',NatIp)
+
+	def get_NetworkInterfaceId(self):
+		return self.get_query_params().get('NetworkInterfaceId')
+
+	def set_NetworkInterfaceId(self,NetworkInterfaceId):
+		self.add_query_param('NetworkInterfaceId',NetworkInterfaceId)

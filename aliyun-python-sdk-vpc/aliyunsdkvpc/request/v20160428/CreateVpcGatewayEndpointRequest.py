@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkvpc.endpoint import endpoint_data
 
-class DescribeCommonBandwidthPackagesRequest(RpcRequest):
+class CreateVpcGatewayEndpointRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'DescribeCommonBandwidthPackages','vpc')
+		RpcRequest.__init__(self, 'Vpc', '2016-04-28', 'CreateVpcGatewayEndpoint','vpc')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -37,41 +37,17 @@ class DescribeCommonBandwidthPackagesRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_SecurityProtectionEnabled(self):
-		return self.get_query_params().get('SecurityProtectionEnabled')
+	def get_ClientToken(self):
+		return self.get_query_params().get('ClientToken')
 
-	def set_SecurityProtectionEnabled(self,SecurityProtectionEnabled):
-		self.add_query_param('SecurityProtectionEnabled',SecurityProtectionEnabled)
+	def set_ClientToken(self,ClientToken):
+		self.add_query_param('ClientToken',ClientToken)
 
-	def get_IncludeReservationData(self):
-		return self.get_query_params().get('IncludeReservationData')
+	def get_ServiceName(self):
+		return self.get_query_params().get('ServiceName')
 
-	def set_IncludeReservationData(self,IncludeReservationData):
-		self.add_query_param('IncludeReservationData',IncludeReservationData)
-
-	def get_PageNumber(self):
-		return self.get_query_params().get('PageNumber')
-
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
-
-	def get_ResourceGroupId(self):
-		return self.get_query_params().get('ResourceGroupId')
-
-	def set_ResourceGroupId(self,ResourceGroupId):
-		self.add_query_param('ResourceGroupId',ResourceGroupId)
-
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_BandwidthPackageId(self):
-		return self.get_query_params().get('BandwidthPackageId')
-
-	def set_BandwidthPackageId(self,BandwidthPackageId):
-		self.add_query_param('BandwidthPackageId',BandwidthPackageId)
+	def set_ServiceName(self,ServiceName):
+		self.add_query_param('ServiceName',ServiceName)
 
 	def get_DryRun(self):
 		return self.get_query_params().get('DryRun')
@@ -91,14 +67,32 @@ class DescribeCommonBandwidthPackagesRequest(RpcRequest):
 	def set_OwnerAccount(self,OwnerAccount):
 		self.add_query_param('OwnerAccount',OwnerAccount)
 
+	def get_EndpointDescription(self):
+		return self.get_query_params().get('EndpointDescription')
+
+	def set_EndpointDescription(self,EndpointDescription):
+		self.add_query_param('EndpointDescription',EndpointDescription)
+
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
-	def get_Name(self):
-		return self.get_query_params().get('Name')
+	def get_VpcId(self):
+		return self.get_query_params().get('VpcId')
 
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)
+	def set_VpcId(self,VpcId):
+		self.add_query_param('VpcId',VpcId)
+
+	def get_EndpointName(self):
+		return self.get_query_params().get('EndpointName')
+
+	def set_EndpointName(self,EndpointName):
+		self.add_query_param('EndpointName',EndpointName)
+
+	def get_PolicyDocument(self):
+		return self.get_query_params().get('PolicyDocument')
+
+	def set_PolicyDocument(self,PolicyDocument):
+		self.add_query_param('PolicyDocument',PolicyDocument)

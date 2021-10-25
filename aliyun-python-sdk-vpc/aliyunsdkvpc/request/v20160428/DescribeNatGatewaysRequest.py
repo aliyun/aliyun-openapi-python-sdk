@@ -37,6 +37,12 @@ class DescribeNatGatewaysRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
+	def get_NetworkType(self):
+		return self.get_query_params().get('NetworkType')
+
+	def set_NetworkType(self,NetworkType):
+		self.add_query_param('NetworkType',NetworkType)
+
 	def get_Spec(self):
 		return self.get_query_params().get('Spec')
 
@@ -79,6 +85,14 @@ class DescribeNatGatewaysRequest(RpcRequest):
 	def set_InstanceChargeType(self,InstanceChargeType):
 		self.add_query_param('InstanceChargeType',InstanceChargeType)
 
+	def get_NatGatewayIdss(self):
+		return self.get_query_params().get('NatGatewayIds')
+
+	def set_NatGatewayIdss(self, NatGatewayIdss):
+		for depth1 in range(len(NatGatewayIdss)):
+			if NatGatewayIdss[depth1] is not None:
+				self.add_query_param('NatGatewayIds.' + str(depth1 + 1) , NatGatewayIdss[depth1])
+
 	def get_DryRun(self):
 		return self.get_query_params().get('DryRun')
 
@@ -103,6 +117,12 @@ class DescribeNatGatewaysRequest(RpcRequest):
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
 
+	def get_VSwitchId(self):
+		return self.get_query_params().get('VSwitchId')
+
+	def set_VSwitchId(self,VSwitchId):
+		self.add_query_param('VSwitchId',VSwitchId)
+
 	def get_VpcId(self):
 		return self.get_query_params().get('VpcId')
 
@@ -114,6 +134,12 @@ class DescribeNatGatewaysRequest(RpcRequest):
 
 	def set_Name(self,Name):
 		self.add_query_param('Name',Name)
+
+	def get_ZoneId(self):
+		return self.get_query_params().get('ZoneId')
+
+	def set_ZoneId(self,ZoneId):
+		self.add_query_param('ZoneId',ZoneId)
 
 	def get_Status(self):
 		return self.get_query_params().get('Status')
