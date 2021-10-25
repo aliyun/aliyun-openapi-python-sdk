@@ -55,6 +55,12 @@ class ListClusterOperationRequest(RpcRequest):
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
 
+	def get_OperationId(self):
+		return self.get_query_params().get('OperationId')
+
+	def set_OperationId(self,OperationId):
+		self.add_query_param('OperationId',OperationId)
+
 	def get_ServiceName(self):
 		return self.get_query_params().get('ServiceName')
 

@@ -61,6 +61,12 @@ class ListEmrAvailableResourceRequest(RpcRequest):
 	def set_InstanceType(self,InstanceType):
 		self.add_query_param('InstanceType',InstanceType)
 
+	def get_EmrVersion(self):
+		return self.get_query_params().get('EmrVersion')
+
+	def set_EmrVersion(self,EmrVersion):
+		self.add_query_param('EmrVersion',EmrVersion)
+
 	def get_InstanceChargeType(self):
 		return self.get_query_params().get('InstanceChargeType')
 

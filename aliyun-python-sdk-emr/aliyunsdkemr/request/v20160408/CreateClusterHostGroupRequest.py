@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkemr.endpoint import endpoint_data
 
-class DumpMetaDataSourceForOuterRequest(RpcRequest):
+class CreateClusterHostGroupRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'DumpMetaDataSourceForOuter','emr')
+		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'CreateClusterHostGroup','emr')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -37,17 +37,23 @@ class DumpMetaDataSourceForOuterRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_DumpAllDatabase(self):
-		return self.get_query_params().get('DumpAllDatabase')
+	def get_HostGroupParams(self):
+		return self.get_query_params().get('HostGroupParams')
 
-	def set_DumpAllDatabase(self,DumpAllDatabase):
-		self.add_query_param('DumpAllDatabase',DumpAllDatabase)
+	def set_HostGroupParams(self,HostGroupParams):
+		self.add_query_param('HostGroupParams',HostGroupParams)
 
-	def get_DumpLimit(self):
-		return self.get_query_params().get('DumpLimit')
+	def get_SecurityGroupId(self):
+		return self.get_query_params().get('SecurityGroupId')
 
-	def set_DumpLimit(self,DumpLimit):
-		self.add_query_param('DumpLimit',DumpLimit)
+	def set_SecurityGroupId(self,SecurityGroupId):
+		self.add_query_param('SecurityGroupId',SecurityGroupId)
+
+	def get_HostGroupName(self):
+		return self.get_query_params().get('HostGroupName')
+
+	def set_HostGroupName(self,HostGroupName):
+		self.add_query_param('HostGroupName',HostGroupName)
 
 	def get_ClusterId(self):
 		return self.get_query_params().get('ClusterId')
@@ -55,34 +61,26 @@ class DumpMetaDataSourceForOuterRequest(RpcRequest):
 	def set_ClusterId(self,ClusterId):
 		self.add_query_param('ClusterId',ClusterId)
 
-	def get_DumpAllTable(self):
-		return self.get_query_params().get('DumpAllTable')
+	def get_VswitchId(self):
+		return self.get_query_params().get('VswitchId')
 
-	def set_DumpAllTable(self,DumpAllTable):
-		self.add_query_param('DumpAllTable',DumpAllTable)
+	def set_VswitchId(self,VswitchId):
+		self.add_query_param('VswitchId',VswitchId)
 
-	def get_PartitionValuess(self):
-		return self.get_query_params().get('PartitionValues')
+	def get_Comment(self):
+		return self.get_query_params().get('Comment')
 
-	def set_PartitionValuess(self, PartitionValuess):
-		for depth1 in range(len(PartitionValuess)):
-			if PartitionValuess[depth1] is not None:
-				self.add_query_param('PartitionValues.' + str(depth1 + 1) , PartitionValuess[depth1])
+	def set_Comment(self,Comment):
+		self.add_query_param('Comment',Comment)
 
-	def get_TableId(self):
-		return self.get_query_params().get('TableId')
+	def get_PayType(self):
+		return self.get_query_params().get('PayType')
 
-	def set_TableId(self,TableId):
-		self.add_query_param('TableId',TableId)
+	def set_PayType(self,PayType):
+		self.add_query_param('PayType',PayType)
 
-	def get_DatabaseId(self):
-		return self.get_query_params().get('DatabaseId')
+	def get_HostGroupType(self):
+		return self.get_query_params().get('HostGroupType')
 
-	def set_DatabaseId(self,DatabaseId):
-		self.add_query_param('DatabaseId',DatabaseId)
-
-	def get_DumpAllPartition(self):
-		return self.get_query_params().get('DumpAllPartition')
-
-	def set_DumpAllPartition(self,DumpAllPartition):
-		self.add_query_param('DumpAllPartition',DumpAllPartition)
+	def set_HostGroupType(self,HostGroupType):
+		self.add_query_param('HostGroupType',HostGroupType)

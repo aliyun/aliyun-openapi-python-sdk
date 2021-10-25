@@ -69,6 +69,12 @@ class ResizeClusterV2Request(RpcRequest):
 			if HostComponentInfos[depth1].get('ServiceName') is not None:
 				self.add_query_param('HostComponentInfo.' + str(depth1 + 1) + '.ServiceName', HostComponentInfos[depth1].get('ServiceName'))
 
+	def get_ClickhouseConf(self):
+		return self.get_query_params().get('ClickhouseConf')
+
+	def set_ClickhouseConf(self,ClickhouseConf):
+		self.add_query_param('ClickhouseConf',ClickhouseConf)
+
 	def get_HostGroups(self):
 		return self.get_query_params().get('HostGroup')
 
@@ -80,6 +86,8 @@ class ResizeClusterV2Request(RpcRequest):
 				self.add_query_param('HostGroup.' + str(depth1 + 1) + '.SysDiskCapacity', HostGroups[depth1].get('SysDiskCapacity'))
 			if HostGroups[depth1].get('HostKeyPairName') is not None:
 				self.add_query_param('HostGroup.' + str(depth1 + 1) + '.HostKeyPairName', HostGroups[depth1].get('HostKeyPairName'))
+			if HostGroups[depth1].get('PrivatePoolOptionsId') is not None:
+				self.add_query_param('HostGroup.' + str(depth1 + 1) + '.PrivatePoolOptionsId', HostGroups[depth1].get('PrivatePoolOptionsId'))
 			if HostGroups[depth1].get('DiskCapacity') is not None:
 				self.add_query_param('HostGroup.' + str(depth1 + 1) + '.DiskCapacity', HostGroups[depth1].get('DiskCapacity'))
 			if HostGroups[depth1].get('SysDiskType') is not None:
@@ -112,6 +120,8 @@ class ResizeClusterV2Request(RpcRequest):
 				self.add_query_param('HostGroup.' + str(depth1 + 1) + '.HostPassword', HostGroups[depth1].get('HostPassword'))
 			if HostGroups[depth1].get('HostGroupType') is not None:
 				self.add_query_param('HostGroup.' + str(depth1 + 1) + '.HostGroupType', HostGroups[depth1].get('HostGroupType'))
+			if HostGroups[depth1].get('PrivatePoolOptionsMatchCriteria') is not None:
+				self.add_query_param('HostGroup.' + str(depth1 + 1) + '.PrivatePoolOptionsMatchCriteria', HostGroups[depth1].get('PrivatePoolOptionsMatchCriteria'))
 
 	def get_PromotionInfos(self):
 		return self.get_query_params().get('PromotionInfo')

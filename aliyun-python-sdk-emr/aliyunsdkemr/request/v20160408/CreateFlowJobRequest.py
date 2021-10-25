@@ -38,16 +38,16 @@ class CreateFlowJobRequest(RpcRequest):
 		self.add_query_param('RetryPolicy',RetryPolicy)
 
 	def get_RunConf(self):
-		return self.get_query_params().get('RunConf')
+		return self.get_body_params().get('RunConf')
 
 	def set_RunConf(self,RunConf):
-		self.add_query_param('RunConf',RunConf)
+		self.add_body_params('RunConf', RunConf)
 
 	def get_Description(self):
-		return self.get_query_params().get('Description')
+		return self.get_body_params().get('Description')
 
 	def set_Description(self,Description):
-		self.add_query_param('Description',Description)
+		self.add_body_params('Description', Description)
 
 	def get_Type(self):
 		return self.get_query_params().get('Type')
@@ -56,20 +56,20 @@ class CreateFlowJobRequest(RpcRequest):
 		self.add_query_param('Type',Type)
 
 	def get_ParamConf(self):
-		return self.get_query_params().get('ParamConf')
+		return self.get_body_params().get('ParamConf')
 
 	def set_ParamConf(self,ParamConf):
-		self.add_query_param('ParamConf',ParamConf)
+		self.add_body_params('ParamConf', ParamConf)
 
 	def get_ResourceLists(self):
-		return self.get_query_params().get('ResourceList')
+		return self.get_body_params().get('ResourceList')
 
 	def set_ResourceLists(self, ResourceLists):
 		for depth1 in range(len(ResourceLists)):
 			if ResourceLists[depth1].get('Path') is not None:
-				self.add_query_param('ResourceList.' + str(depth1 + 1) + '.Path', ResourceLists[depth1].get('Path'))
+				self.add_body_params('ResourceList.' + str(depth1 + 1) + '.Path', ResourceLists[depth1].get('Path'))
 			if ResourceLists[depth1].get('Alias') is not None:
-				self.add_query_param('ResourceList.' + str(depth1 + 1) + '.Alias', ResourceLists[depth1].get('Alias'))
+				self.add_body_params('ResourceList.' + str(depth1 + 1) + '.Alias', ResourceLists[depth1].get('Alias'))
 
 	def get_FailAct(self):
 		return self.get_query_params().get('FailAct')
@@ -84,10 +84,10 @@ class CreateFlowJobRequest(RpcRequest):
 		self.add_query_param('Mode',Mode)
 
 	def get_MonitorConf(self):
-		return self.get_query_params().get('MonitorConf')
+		return self.get_body_params().get('MonitorConf')
 
 	def set_MonitorConf(self,MonitorConf):
-		self.add_query_param('MonitorConf',MonitorConf)
+		self.add_body_params('MonitorConf', MonitorConf)
 
 	def get_MaxRetry(self):
 		return self.get_query_params().get('MaxRetry')
@@ -108,10 +108,10 @@ class CreateFlowJobRequest(RpcRequest):
 		self.add_query_param('ProjectId',ProjectId)
 
 	def get_EnvConf(self):
-		return self.get_query_params().get('EnvConf')
+		return self.get_body_params().get('EnvConf')
 
 	def set_EnvConf(self,EnvConf):
-		self.add_query_param('EnvConf',EnvConf)
+		self.add_body_params('EnvConf', EnvConf)
 
 	def get_MaxRunningTimeSec(self):
 		return self.get_query_params().get('MaxRunningTimeSec')
@@ -126,16 +126,16 @@ class CreateFlowJobRequest(RpcRequest):
 		self.add_query_param('ClusterId',ClusterId)
 
 	def get_Params(self):
-		return self.get_query_params().get('Params')
+		return self.get_body_params().get('Params')
 
 	def set_Params(self,Params):
-		self.add_query_param('Params',Params)
+		self.add_body_params('Params', Params)
 
 	def get_CustomVariables(self):
-		return self.get_query_params().get('CustomVariables')
+		return self.get_body_params().get('CustomVariables')
 
 	def set_CustomVariables(self,CustomVariables):
-		self.add_query_param('CustomVariables',CustomVariables)
+		self.add_body_params('CustomVariables', CustomVariables)
 
 	def get_RetryInterval(self):
 		return self.get_query_params().get('RetryInterval')

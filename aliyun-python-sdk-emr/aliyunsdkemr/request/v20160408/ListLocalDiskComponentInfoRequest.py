@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkemr.endpoint import endpoint_data
 
-class CommitFlowEntitySnapshotRequest(RpcRequest):
+class ListLocalDiskComponentInfoRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'CommitFlowEntitySnapshot','emr')
+		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'ListLocalDiskComponentInfo','emr')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -37,20 +37,14 @@ class CommitFlowEntitySnapshotRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_EntityType(self):
-		return self.get_query_params().get('EntityType')
+	def get_ClusterId(self):
+		return self.get_query_params().get('ClusterId')
 
-	def set_EntityType(self,EntityType):
-		self.add_query_param('EntityType',EntityType)
+	def set_ClusterId(self,ClusterId):
+		self.add_query_param('ClusterId',ClusterId)
 
-	def get_EntityId(self):
-		return self.get_query_params().get('EntityId')
+	def get_InstanceId(self):
+		return self.get_query_params().get('InstanceId')
 
-	def set_EntityId(self,EntityId):
-		self.add_query_param('EntityId',EntityId)
-
-	def get_Message(self):
-		return self.get_query_params().get('Message')
-
-	def set_Message(self,Message):
-		self.add_query_param('Message',Message)
+	def set_InstanceId(self,InstanceId):
+		self.add_query_param('InstanceId',InstanceId)

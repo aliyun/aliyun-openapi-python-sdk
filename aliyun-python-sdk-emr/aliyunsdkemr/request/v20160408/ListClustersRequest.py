@@ -111,6 +111,12 @@ class ListClustersRequest(RpcRequest):
 	def set_DefaultStatus(self,DefaultStatus):
 		self.add_query_param('DefaultStatus',DefaultStatus)
 
+	def get_VpcId(self):
+		return self.get_query_params().get('VpcId')
+
+	def set_VpcId(self,VpcId):
+		self.add_query_param('VpcId',VpcId)
+
 	def get_Name(self):
 		return self.get_query_params().get('Name')
 

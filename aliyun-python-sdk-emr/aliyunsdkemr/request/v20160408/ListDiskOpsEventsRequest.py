@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkemr.endpoint import endpoint_data
 
-class QueryTrendDataRequest(RpcRequest):
+class ListDiskOpsEventsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'QueryTrendData','emr')
+		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'ListDiskOpsEvents','emr')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -37,8 +37,32 @@ class QueryTrendDataRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_Payload(self):
-		return self.get_query_params().get('Payload')
+	def get_EndTime(self):
+		return self.get_query_params().get('EndTime')
 
-	def set_Payload(self,Payload):
-		self.add_query_param('Payload',Payload)
+	def set_EndTime(self,EndTime):
+		self.add_query_param('EndTime',EndTime)
+
+	def get_ClusterId(self):
+		return self.get_query_params().get('ClusterId')
+
+	def set_ClusterId(self,ClusterId):
+		self.add_query_param('ClusterId',ClusterId)
+
+	def get_StartTime(self):
+		return self.get_query_params().get('StartTime')
+
+	def set_StartTime(self,StartTime):
+		self.add_query_param('StartTime',StartTime)
+
+	def get_PageNumber(self):
+		return self.get_query_params().get('PageNumber')
+
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)
+
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)

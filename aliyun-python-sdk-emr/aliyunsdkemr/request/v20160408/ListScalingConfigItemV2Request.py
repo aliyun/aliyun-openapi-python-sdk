@@ -31,23 +31,17 @@ class ListScalingConfigItemV2Request(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_ConfigItemType(self):
+		return self.get_query_params().get('ConfigItemType')
+
+	def set_ConfigItemType(self,ConfigItemType):
+		self.add_query_param('ConfigItemType',ConfigItemType)
+
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_PageCount(self):
-		return self.get_query_params().get('PageCount')
-
-	def set_PageCount(self,PageCount):
-		self.add_query_param('PageCount',PageCount)
-
-	def get_OrderMode(self):
-		return self.get_query_params().get('OrderMode')
-
-	def set_OrderMode(self,OrderMode):
-		self.add_query_param('OrderMode',OrderMode)
 
 	def get_PageNumber(self):
 		return self.get_query_params().get('PageNumber')
@@ -67,32 +61,8 @@ class ListScalingConfigItemV2Request(RpcRequest):
 	def set_ResourceGroupId(self,ResourceGroupId):
 		self.add_query_param('ResourceGroupId',ResourceGroupId)
 
-	def get_Limit(self):
-		return self.get_query_params().get('Limit')
-
-	def set_Limit(self,Limit):
-		self.add_query_param('Limit',Limit)
-
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
 
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
-
-	def get_CurrentSize(self):
-		return self.get_query_params().get('CurrentSize')
-
-	def set_CurrentSize(self,CurrentSize):
-		self.add_query_param('CurrentSize',CurrentSize)
-
-	def get_OrderField(self):
-		return self.get_query_params().get('OrderField')
-
-	def set_OrderField(self,OrderField):
-		self.add_query_param('OrderField',OrderField)
-
-	def get_ConfigItemType(self):
-		return self.get_query_params().get('ConfigItemType')
-
-	def set_ConfigItemType(self,ConfigItemType):
-		self.add_query_param('ConfigItemType',ConfigItemType)

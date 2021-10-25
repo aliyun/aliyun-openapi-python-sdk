@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkemr.endpoint import endpoint_data
 
-class UntagResourcesSystemTagsRequest(RpcRequest):
+class DescribeDiskOpsActivityRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'UntagResourcesSystemTags','emr')
+		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'DescribeDiskOpsActivity','emr')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,11 +31,11 @@ class UntagResourcesSystemTagsRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_All(self):
-		return self.get_query_params().get('All')
+	def get_EventId(self):
+		return self.get_query_params().get('EventId')
 
-	def set_All(self,All):
-		self.add_query_param('All',All)
+	def set_EventId(self,EventId):
+		self.add_query_param('EventId',EventId)
 
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
@@ -43,30 +43,32 @@ class UntagResourcesSystemTagsRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_ResourceIds(self):
-		return self.get_query_params().get('ResourceId')
+	def get_CurrentStage(self):
+		return self.get_query_params().get('CurrentStage')
 
-	def set_ResourceIds(self, ResourceIds):
-		for depth1 in range(len(ResourceIds)):
-			if ResourceIds[depth1] is not None:
-				self.add_query_param('ResourceId.' + str(depth1 + 1) , ResourceIds[depth1])
+	def set_CurrentStage(self,CurrentStage):
+		self.add_query_param('CurrentStage',CurrentStage)
 
-	def get_TagOwnerUid(self):
-		return self.get_query_params().get('TagOwnerUid')
+	def get_ClusterId(self):
+		return self.get_query_params().get('ClusterId')
 
-	def set_TagOwnerUid(self,TagOwnerUid):
-		self.add_query_param('TagOwnerUid',TagOwnerUid)
+	def set_ClusterId(self,ClusterId):
+		self.add_query_param('ClusterId',ClusterId)
 
-	def get_ResourceType(self):
-		return self.get_query_params().get('ResourceType')
+	def get_InstanceId(self):
+		return self.get_query_params().get('InstanceId')
 
-	def set_ResourceType(self,ResourceType):
-		self.add_query_param('ResourceType',ResourceType)
+	def set_InstanceId(self,InstanceId):
+		self.add_query_param('InstanceId',InstanceId)
 
-	def get_TagKeys(self):
-		return self.get_query_params().get('TagKey')
+	def get_DiskId(self):
+		return self.get_query_params().get('DiskId')
 
-	def set_TagKeys(self, TagKeys):
-		for depth1 in range(len(TagKeys)):
-			if TagKeys[depth1] is not None:
-				self.add_query_param('TagKey.' + str(depth1 + 1) , TagKeys[depth1])
+	def set_DiskId(self,DiskId):
+		self.add_query_param('DiskId',DiskId)
+
+	def get_CurrentState(self):
+		return self.get_query_params().get('CurrentState')
+
+	def set_CurrentState(self,CurrentState):
+		self.add_query_param('CurrentState',CurrentState)

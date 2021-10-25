@@ -243,6 +243,12 @@ class CreateClusterV2Request(RpcRequest):
 	def set_InitCustomHiveMetaDB(self,InitCustomHiveMetaDB):
 		self.add_query_param('InitCustomHiveMetaDB',InitCustomHiveMetaDB)
 
+	def get_ClientToken(self):
+		return self.get_query_params().get('ClientToken')
+
+	def set_ClientToken(self,ClientToken):
+		self.add_query_param('ClientToken',ClientToken)
+
 	def get_IoOptimized(self):
 		return self.get_query_params().get('IoOptimized')
 
@@ -330,6 +336,8 @@ class CreateClusterV2Request(RpcRequest):
 				self.add_query_param('HostGroup.' + str(depth1 + 1) + '.Period', HostGroups[depth1].get('Period'))
 			if HostGroups[depth1].get('SysDiskCapacity') is not None:
 				self.add_query_param('HostGroup.' + str(depth1 + 1) + '.SysDiskCapacity', HostGroups[depth1].get('SysDiskCapacity'))
+			if HostGroups[depth1].get('PrivatePoolOptionsId') is not None:
+				self.add_query_param('HostGroup.' + str(depth1 + 1) + '.PrivatePoolOptionsId', HostGroups[depth1].get('PrivatePoolOptionsId'))
 			if HostGroups[depth1].get('DiskCapacity') is not None:
 				self.add_query_param('HostGroup.' + str(depth1 + 1) + '.DiskCapacity', HostGroups[depth1].get('DiskCapacity'))
 			if HostGroups[depth1].get('SysDiskType') is not None:
@@ -362,6 +370,8 @@ class CreateClusterV2Request(RpcRequest):
 				self.add_query_param('HostGroup.' + str(depth1 + 1) + '.CreateType', HostGroups[depth1].get('CreateType'))
 			if HostGroups[depth1].get('HostGroupType') is not None:
 				self.add_query_param('HostGroup.' + str(depth1 + 1) + '.HostGroupType', HostGroups[depth1].get('HostGroupType'))
+			if HostGroups[depth1].get('PrivatePoolOptionsMatchCriteria') is not None:
+				self.add_query_param('HostGroup.' + str(depth1 + 1) + '.PrivatePoolOptionsMatchCriteria', HostGroups[depth1].get('PrivatePoolOptionsMatchCriteria'))
 
 	def get_ChargeType(self):
 		return self.get_query_params().get('ChargeType')

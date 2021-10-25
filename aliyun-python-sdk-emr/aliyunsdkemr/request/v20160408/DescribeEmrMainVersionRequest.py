@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkemr.endpoint import endpoint_data
 
-class ListMetaClusterRequest(RpcRequest):
+class DescribeEmrMainVersionRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'ListMetaCluster','emr')
+		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'DescribeEmrMainVersion','emr')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -37,20 +37,8 @@ class ListMetaClusterRequest(RpcRequest):
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_PageNumber(self):
-		return self.get_query_params().get('PageNumber')
+	def get_EmrVersion(self):
+		return self.get_query_params().get('EmrVersion')
 
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
-
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_SourceType(self):
-		return self.get_query_params().get('SourceType')
-
-	def set_SourceType(self,SourceType):
-		self.add_query_param('SourceType',SourceType)
+	def set_EmrVersion(self,EmrVersion):
+		self.add_query_param('EmrVersion',EmrVersion)

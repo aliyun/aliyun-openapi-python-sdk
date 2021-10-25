@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkemr.endpoint import endpoint_data
 
-class ListExecutionPlansRequest(RpcRequest):
+class RunDiskOpsActivityRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'ListExecutionPlans','emr')
+		RpcRequest.__init__(self, 'Emr', '2016-04-08', 'RunDiskOpsActivity','emr')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,55 +31,23 @@ class ListExecutionPlansRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_EventId(self):
+		return self.get_query_params().get('EventId')
+
+	def set_EventId(self,EventId):
+		self.add_query_param('EventId',EventId)
+
 	def get_ResourceOwnerId(self):
 		return self.get_query_params().get('ResourceOwnerId')
 
 	def set_ResourceOwnerId(self,ResourceOwnerId):
 		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
 
-	def get_StatusLists(self):
-		return self.get_query_params().get('StatusList')
+	def get_CurrentStage(self):
+		return self.get_query_params().get('CurrentStage')
 
-	def set_StatusLists(self, StatusLists):
-		for depth1 in range(len(StatusLists)):
-			if StatusLists[depth1] is not None:
-				self.add_query_param('StatusList.' + str(depth1 + 1) , StatusLists[depth1])
-
-	def get_IsDesc(self):
-		return self.get_query_params().get('IsDesc')
-
-	def set_IsDesc(self,IsDesc):
-		self.add_query_param('IsDesc',IsDesc)
-
-	def get_PageNumber(self):
-		return self.get_query_params().get('PageNumber')
-
-	def set_PageNumber(self,PageNumber):
-		self.add_query_param('PageNumber',PageNumber)
-
-	def get_JobId(self):
-		return self.get_query_params().get('JobId')
-
-	def set_JobId(self,JobId):
-		self.add_query_param('JobId',JobId)
-
-	def get_PageSize(self):
-		return self.get_query_params().get('PageSize')
-
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_QueryType(self):
-		return self.get_query_params().get('QueryType')
-
-	def set_QueryType(self,QueryType):
-		self.add_query_param('QueryType',QueryType)
-
-	def get_QueryString(self):
-		return self.get_query_params().get('QueryString')
-
-	def set_QueryString(self,QueryString):
-		self.add_query_param('QueryString',QueryString)
+	def set_CurrentStage(self,CurrentStage):
+		self.add_query_param('CurrentStage',CurrentStage)
 
 	def get_ClusterId(self):
 		return self.get_query_params().get('ClusterId')
@@ -87,8 +55,20 @@ class ListExecutionPlansRequest(RpcRequest):
 	def set_ClusterId(self,ClusterId):
 		self.add_query_param('ClusterId',ClusterId)
 
-	def get_Strategy(self):
-		return self.get_query_params().get('Strategy')
+	def get_InstanceId(self):
+		return self.get_query_params().get('InstanceId')
 
-	def set_Strategy(self,Strategy):
-		self.add_query_param('Strategy',Strategy)
+	def set_InstanceId(self,InstanceId):
+		self.add_query_param('InstanceId',InstanceId)
+
+	def get_DiskId(self):
+		return self.get_query_params().get('DiskId')
+
+	def set_DiskId(self,DiskId):
+		self.add_query_param('DiskId',DiskId)
+
+	def get_CurrentState(self):
+		return self.get_query_params().get('CurrentState')
+
+	def set_CurrentState(self,CurrentState):
+		self.add_query_param('CurrentState',CurrentState)
