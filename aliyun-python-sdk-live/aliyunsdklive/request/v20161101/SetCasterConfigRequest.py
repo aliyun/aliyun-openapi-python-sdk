@@ -79,6 +79,12 @@ class SetCasterConfigRequest(RpcRequest):
 	def set_SideOutputUrl(self,SideOutputUrl):
 		self.add_query_param('SideOutputUrl',SideOutputUrl)
 
+	def get_SyncGroupsConfig(self):
+		return self.get_query_params().get('SyncGroupsConfig')
+
+	def set_SyncGroupsConfig(self,SyncGroupsConfig):
+		self.add_query_param('SyncGroupsConfig',SyncGroupsConfig)
+
 	def get_CasterId(self):
 		return self.get_query_params().get('CasterId')
 
