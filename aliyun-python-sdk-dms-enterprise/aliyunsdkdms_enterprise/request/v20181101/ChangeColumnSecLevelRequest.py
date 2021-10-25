@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdms_enterprise.endpoint import endpoint_data
 
-class RevokeUserPermissionRequest(RpcRequest):
+class ChangeColumnSecLevelRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'dms-enterprise', '2018-11-01', 'RevokeUserPermission','dms-enterprise')
+		RpcRequest.__init__(self, 'dms-enterprise', '2018-11-01', 'ChangeColumnSecLevel','dms-enterprise')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,51 +31,36 @@ class RevokeUserPermissionRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_PermTypes(self): # String
-		return self.get_query_params().get('PermTypes')
+	def get_SchemaName(self): # String
+		return self.get_query_params().get('SchemaName')
 
-	def set_PermTypes(self, PermTypes):  # String
-		self.add_query_param('PermTypes', PermTypes)
-	def get_UserAccessId(self): # String
-		return self.get_query_params().get('UserAccessId')
+	def set_SchemaName(self, SchemaName):  # String
+		self.add_query_param('SchemaName', SchemaName)
+	def get_IsLogic(self): # Boolean
+		return self.get_query_params().get('IsLogic')
 
-	def set_UserAccessId(self, UserAccessId):  # String
-		self.add_query_param('UserAccessId', UserAccessId)
-	def get_DsType(self): # String
-		return self.get_query_params().get('DsType')
+	def set_IsLogic(self, IsLogic):  # Boolean
+		self.add_query_param('IsLogic', IsLogic)
+	def get_NewLevel(self): # String
+		return self.get_query_params().get('NewLevel')
 
-	def set_DsType(self, DsType):  # String
-		self.add_query_param('DsType', DsType)
-	def get_UserId(self): # String
-		return self.get_query_params().get('UserId')
+	def set_NewLevel(self, NewLevel):  # String
+		self.add_query_param('NewLevel', NewLevel)
+	def get_ColumnName(self): # String
+		return self.get_query_params().get('ColumnName')
 
-	def set_UserId(self, UserId):  # String
-		self.add_query_param('UserId', UserId)
+	def set_ColumnName(self, ColumnName):  # String
+		self.add_query_param('ColumnName', ColumnName)
 	def get_Tid(self): # Long
 		return self.get_query_params().get('Tid')
 
 	def set_Tid(self, Tid):  # Long
 		self.add_query_param('Tid', Tid)
-	def get_InstanceId(self): # Long
-		return self.get_query_params().get('InstanceId')
-
-	def set_InstanceId(self, InstanceId):  # Long
-		self.add_query_param('InstanceId', InstanceId)
-	def get_DbId(self): # String
+	def get_DbId(self): # Long
 		return self.get_query_params().get('DbId')
 
-	def set_DbId(self, DbId):  # String
+	def set_DbId(self, DbId):  # Long
 		self.add_query_param('DbId', DbId)
-	def get_TableId(self): # String
-		return self.get_query_params().get('TableId')
-
-	def set_TableId(self, TableId):  # String
-		self.add_query_param('TableId', TableId)
-	def get_Logic(self): # Boolean
-		return self.get_query_params().get('Logic')
-
-	def set_Logic(self, Logic):  # Boolean
-		self.add_query_param('Logic', Logic)
 	def get_TableName(self): # String
 		return self.get_query_params().get('TableName')
 

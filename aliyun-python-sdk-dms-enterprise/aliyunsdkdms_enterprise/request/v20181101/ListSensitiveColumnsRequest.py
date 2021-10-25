@@ -56,11 +56,21 @@ class ListSensitiveColumnsRequest(RpcRequest):
 
 	def set_SecurityLevel(self, SecurityLevel):  # String
 		self.add_query_param('SecurityLevel', SecurityLevel)
+	def get_DbId(self): # Long
+		return self.get_query_params().get('DbId')
+
+	def set_DbId(self, DbId):  # Long
+		self.add_query_param('DbId', DbId)
 	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
 	def set_PageSize(self, PageSize):  # Integer
 		self.add_query_param('PageSize', PageSize)
+	def get_Logic(self): # Boolean
+		return self.get_query_params().get('Logic')
+
+	def set_Logic(self, Logic):  # Boolean
+		self.add_query_param('Logic', Logic)
 	def get_TableName(self): # String
 		return self.get_query_params().get('TableName')
 

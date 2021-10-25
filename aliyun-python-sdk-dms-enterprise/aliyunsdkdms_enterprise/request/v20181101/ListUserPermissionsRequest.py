@@ -31,6 +31,11 @@ class ListUserPermissionsRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_SearchKey(self): # String
+		return self.get_query_params().get('SearchKey')
+
+	def set_SearchKey(self, SearchKey):  # String
+		self.add_query_param('SearchKey', SearchKey)
 	def get_UserId(self): # String
 		return self.get_query_params().get('UserId')
 

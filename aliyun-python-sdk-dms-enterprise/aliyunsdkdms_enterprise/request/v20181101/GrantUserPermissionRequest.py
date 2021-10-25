@@ -56,6 +56,11 @@ class GrantUserPermissionRequest(RpcRequest):
 
 	def set_Tid(self, Tid):  # Long
 		self.add_query_param('Tid', Tid)
+	def get_InstanceId(self): # Long
+		return self.get_query_params().get('InstanceId')
+
+	def set_InstanceId(self, InstanceId):  # Long
+		self.add_query_param('InstanceId', InstanceId)
 	def get_DbId(self): # String
 		return self.get_query_params().get('DbId')
 

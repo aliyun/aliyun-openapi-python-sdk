@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdms_enterprise.endpoint import endpoint_data
 
-class ListSensitiveColumnsDetailRequest(RpcRequest):
+class ListInstanceUserPermissionsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'dms-enterprise', '2018-11-01', 'ListSensitiveColumnsDetail','dms-enterprise')
+		RpcRequest.__init__(self, 'dms-enterprise', '2018-11-01', 'ListInstanceUserPermissions','dms-enterprise')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,33 +31,28 @@ class ListSensitiveColumnsDetailRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_SchemaName(self): # String
-		return self.get_query_params().get('SchemaName')
-
-	def set_SchemaName(self, SchemaName):  # String
-		self.add_query_param('SchemaName', SchemaName)
-	def get_ColumnName(self): # String
-		return self.get_query_params().get('ColumnName')
-
-	def set_ColumnName(self, ColumnName):  # String
-		self.add_query_param('ColumnName', ColumnName)
 	def get_Tid(self): # Long
 		return self.get_query_params().get('Tid')
 
 	def set_Tid(self, Tid):  # Long
 		self.add_query_param('Tid', Tid)
-	def get_DbId(self): # Long
-		return self.get_query_params().get('DbId')
+	def get_PageNumber(self): # Integer
+		return self.get_query_params().get('PageNumber')
 
-	def set_DbId(self, DbId):  # Long
-		self.add_query_param('DbId', DbId)
-	def get_Logic(self): # Boolean
-		return self.get_query_params().get('Logic')
+	def set_PageNumber(self, PageNumber):  # Integer
+		self.add_query_param('PageNumber', PageNumber)
+	def get_InstanceId(self): # String
+		return self.get_query_params().get('InstanceId')
 
-	def set_Logic(self, Logic):  # Boolean
-		self.add_query_param('Logic', Logic)
-	def get_TableName(self): # String
-		return self.get_query_params().get('TableName')
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
+	def get_PageSize(self): # Integer
+		return self.get_query_params().get('PageSize')
 
-	def set_TableName(self, TableName):  # String
-		self.add_query_param('TableName', TableName)
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
+	def get_UserName(self): # String
+		return self.get_query_params().get('UserName')
+
+	def set_UserName(self, UserName):  # String
+		self.add_query_param('UserName', UserName)
