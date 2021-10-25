@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdts.endpoint import endpoint_data
 
-class IgnoreJobDetailRequest(RpcRequest):
+class InitDtsRdsInstanceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dts', '2020-01-01', 'IgnoreJobDetail','dts')
+		RpcRequest.__init__(self, 'Dts', '2020-01-01', 'InitDtsRdsInstance','dts')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,32 +31,32 @@ class IgnoreJobDetailRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_JobCode(self):
-		return self.get_query_params().get('JobCode')
+	def get_EndpointInstanceId(self):
+		return self.get_query_params().get('EndpointInstanceId')
 
-	def set_JobCode(self,JobCode):
-		self.add_query_param('JobCode',JobCode)
+	def set_EndpointInstanceId(self,EndpointInstanceId):
+		self.add_query_param('EndpointInstanceId',EndpointInstanceId)
 
-	def get_DtsJobId(self):
-		return self.get_query_params().get('DtsJobId')
+	def get_EndpointRegion(self):
+		return self.get_query_params().get('EndpointRegion')
 
-	def set_DtsJobId(self,DtsJobId):
-		self.add_query_param('DtsJobId',DtsJobId)
+	def set_EndpointRegion(self,EndpointRegion):
+		self.add_query_param('EndpointRegion',EndpointRegion)
 
-	def get_Id(self):
-		return self.get_query_params().get('Id')
+	def get_EndpointCenId(self):
+		return self.get_query_params().get('EndpointCenId')
 
-	def set_Id(self,Id):
-		self.add_query_param('Id',Id)
+	def set_EndpointCenId(self,EndpointCenId):
+		self.add_query_param('EndpointCenId',EndpointCenId)
+
+	def get_EndpointInstanceType(self):
+		return self.get_query_params().get('EndpointInstanceType')
+
+	def set_EndpointInstanceType(self,EndpointInstanceType):
+		self.add_query_param('EndpointInstanceType',EndpointInstanceType)
 
 	def get_DtsInstanceId(self):
 		return self.get_query_params().get('DtsInstanceId')
 
 	def set_DtsInstanceId(self,DtsInstanceId):
 		self.add_query_param('DtsInstanceId',DtsInstanceId)
-
-	def get_SynchronizationDirection(self):
-		return self.get_query_params().get('SynchronizationDirection')
-
-	def set_SynchronizationDirection(self,SynchronizationDirection):
-		self.add_query_param('SynchronizationDirection',SynchronizationDirection)
