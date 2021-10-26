@@ -43,6 +43,12 @@ class AuthorizeMenuRequest(RpcRequest):
 	def set_UserIds(self,UserIds):
 		self.add_query_param('UserIds',UserIds)
 
+	def get_AuthPointsValue(self):
+		return self.get_query_params().get('AuthPointsValue')
+
+	def set_AuthPointsValue(self,AuthPointsValue):
+		self.add_query_param('AuthPointsValue',AuthPointsValue)
+
 	def get_UserGroupIds(self):
 		return self.get_query_params().get('UserGroupIds')
 

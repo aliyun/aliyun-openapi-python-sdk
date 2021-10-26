@@ -42,9 +42,3 @@ class AddUserTagMetaRequest(RpcRequest):
 
 	def set_TagName(self,TagName):
 		self.add_query_param('TagName',TagName)
-
-	def get_TagId(self):
-		return self.get_query_params().get('TagId')
-
-	def set_TagId(self,TagId):
-		self.add_query_param('TagId',TagId)

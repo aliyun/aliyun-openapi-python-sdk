@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkquickbi_public.endpoint import endpoint_data
 
-class AddUserRequest(RpcRequest):
+class CreateEmbedTokenRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'quickbi-public', '2020-08-01', 'AddUser','quickbi')
+		RpcRequest.__init__(self, 'quickbi-public', '2021-03-25', 'CreateEmbedToken','quickbi')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,32 +31,32 @@ class AddUserRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_AdminUser(self):
-		return self.get_query_params().get('AdminUser')
-
-	def set_AdminUser(self,AdminUser):
-		self.add_query_param('AdminUser',AdminUser)
-
-	def get_UserType(self):
-		return self.get_query_params().get('UserType')
-
-	def set_UserType(self,UserType):
-		self.add_query_param('UserType',UserType)
-
 	def get_AccountName(self):
 		return self.get_query_params().get('AccountName')
 
 	def set_AccountName(self,AccountName):
 		self.add_query_param('AccountName',AccountName)
 
-	def get_NickName(self):
-		return self.get_query_params().get('NickName')
+	def get_WorksId(self):
+		return self.get_query_params().get('WorksId')
 
-	def set_NickName(self,NickName):
-		self.add_query_param('NickName',NickName)
+	def set_WorksId(self,WorksId):
+		self.add_query_param('WorksId',WorksId)
 
-	def get_AuthAdminUser(self):
-		return self.get_query_params().get('AuthAdminUser')
+	def get_AccountType(self):
+		return self.get_query_params().get('AccountType')
 
-	def set_AuthAdminUser(self,AuthAdminUser):
-		self.add_query_param('AuthAdminUser',AuthAdminUser)
+	def set_AccountType(self,AccountType):
+		self.add_query_param('AccountType',AccountType)
+
+	def get_ExpireMin(self):
+		return self.get_query_params().get('ExpireMin')
+
+	def set_ExpireMin(self,ExpireMin):
+		self.add_query_param('ExpireMin',ExpireMin)
+
+	def get_UserId(self):
+		return self.get_query_params().get('UserId')
+
+	def set_UserId(self,UserId):
+		self.add_query_param('UserId',UserId)
