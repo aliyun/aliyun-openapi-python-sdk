@@ -49,6 +49,18 @@ class SmartCallRequest(RpcRequest):
 	def set_EarlyMediaAsr(self,EarlyMediaAsr):
 		self.add_query_param('EarlyMediaAsr',EarlyMediaAsr)
 
+	def get_BackgroundSpeed(self):
+		return self.get_query_params().get('BackgroundSpeed')
+
+	def set_BackgroundSpeed(self,BackgroundSpeed):
+		self.add_query_param('BackgroundSpeed',BackgroundSpeed)
+
+	def get_BackgroundVolume(self):
+		return self.get_query_params().get('BackgroundVolume')
+
+	def set_BackgroundVolume(self,BackgroundVolume):
+		self.add_query_param('BackgroundVolume',BackgroundVolume)
+
 	def get_Speed(self):
 		return self.get_query_params().get('Speed')
 
@@ -96,6 +108,12 @@ class SmartCallRequest(RpcRequest):
 
 	def set_CalledShowNumber(self,CalledShowNumber):
 		self.add_query_param('CalledShowNumber',CalledShowNumber)
+
+	def get_EnableITN(self):
+		return self.get_query_params().get('EnableITN')
+
+	def set_EnableITN(self,EnableITN):
+		self.add_query_param('EnableITN',EnableITN)
 
 	def get_ActionCodeTimeBreak(self):
 		return self.get_query_params().get('ActionCodeTimeBreak')
@@ -156,6 +174,12 @@ class SmartCallRequest(RpcRequest):
 
 	def set_MuteTime(self,MuteTime):
 		self.add_query_param('MuteTime',MuteTime)
+
+	def get_BackgroundFileCode(self):
+		return self.get_query_params().get('BackgroundFileCode')
+
+	def set_BackgroundFileCode(self,BackgroundFileCode):
+		self.add_query_param('BackgroundFileCode',BackgroundFileCode)
 
 	def get_OutId(self):
 		return self.get_query_params().get('OutId')
