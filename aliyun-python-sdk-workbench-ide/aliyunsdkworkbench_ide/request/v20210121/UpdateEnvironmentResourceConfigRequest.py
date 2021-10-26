@@ -25,34 +25,31 @@ class UpdateEnvironmentResourceConfigRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Workbench-ide', '2021-01-21', 'UpdateEnvironmentResourceConfig')
 		self.set_method('POST')
 
-	def get_CurrentOrgId(self):
+	def get_CurrentOrgId(self): # String
 		return self.get_query_params().get('CurrentOrgId')
 
-	def set_CurrentOrgId(self,CurrentOrgId):
-		self.add_query_param('CurrentOrgId',CurrentOrgId)
-
-	def get_ConfigLists(self):
+	def set_CurrentOrgId(self, CurrentOrgId):  # String
+		self.add_query_param('CurrentOrgId', CurrentOrgId)
+	def get_ConfigLists(self): # RepeatList
 		return self.get_query_params().get('ConfigList')
 
-	def set_ConfigLists(self, ConfigLists):
-		for depth1 in range(len(ConfigLists)):
-			if ConfigLists[depth1].get('InstanceId') is not None:
-				self.add_query_param('ConfigList.' + str(depth1 + 1) + '.InstanceId', ConfigLists[depth1].get('InstanceId'))
-			if ConfigLists[depth1].get('ConfigName') is not None:
-				self.add_query_param('ConfigList.' + str(depth1 + 1) + '.ConfigName', ConfigLists[depth1].get('ConfigName'))
-			if ConfigLists[depth1].get('ConfigDescription') is not None:
-				self.add_query_param('ConfigList.' + str(depth1 + 1) + '.ConfigDescription', ConfigLists[depth1].get('ConfigDescription'))
-			if ConfigLists[depth1].get('ConfigValue') is not None:
-				self.add_query_param('ConfigList.' + str(depth1 + 1) + '.ConfigValue', ConfigLists[depth1].get('ConfigValue'))
-
-	def get_EnvId(self):
+	def set_ConfigLists(self, ConfigList):  # RepeatList
+		for depth1 in range(len(ConfigList)):
+			if ConfigList[depth1].get('InstanceId') is not None:
+				self.add_query_param('ConfigList.' + str(depth1 + 1) + '.InstanceId', ConfigList[depth1].get('InstanceId'))
+			if ConfigList[depth1].get('ConfigName') is not None:
+				self.add_query_param('ConfigList.' + str(depth1 + 1) + '.ConfigName', ConfigList[depth1].get('ConfigName'))
+			if ConfigList[depth1].get('ConfigDescription') is not None:
+				self.add_query_param('ConfigList.' + str(depth1 + 1) + '.ConfigDescription', ConfigList[depth1].get('ConfigDescription'))
+			if ConfigList[depth1].get('ConfigValue') is not None:
+				self.add_query_param('ConfigList.' + str(depth1 + 1) + '.ConfigValue', ConfigList[depth1].get('ConfigValue'))
+	def get_EnvId(self): # Long
 		return self.get_query_params().get('EnvId')
 
-	def set_EnvId(self,EnvId):
-		self.add_query_param('EnvId',EnvId)
-
-	def get_CloudServiceName(self):
+	def set_EnvId(self, EnvId):  # Long
+		self.add_query_param('EnvId', EnvId)
+	def get_CloudServiceName(self): # String
 		return self.get_query_params().get('CloudServiceName')
 
-	def set_CloudServiceName(self,CloudServiceName):
-		self.add_query_param('CloudServiceName',CloudServiceName)
+	def set_CloudServiceName(self, CloudServiceName):  # String
+		self.add_query_param('CloudServiceName', CloudServiceName)

@@ -25,14 +25,13 @@ class GetSolutionRepoRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Workbench-ide', '2021-01-21', 'GetSolutionRepo')
 		self.set_method('POST')
 
-	def get_CurrentOrgId(self):
+	def get_CurrentOrgId(self): # String
 		return self.get_query_params().get('CurrentOrgId')
 
-	def set_CurrentOrgId(self,CurrentOrgId):
-		self.add_query_param('CurrentOrgId',CurrentOrgId)
-
-	def get_SolutionId(self):
+	def set_CurrentOrgId(self, CurrentOrgId):  # String
+		self.add_query_param('CurrentOrgId', CurrentOrgId)
+	def get_SolutionId(self): # Integer
 		return self.get_query_params().get('SolutionId')
 
-	def set_SolutionId(self,SolutionId):
-		self.add_query_param('SolutionId',SolutionId)
+	def set_SolutionId(self, SolutionId):  # Integer
+		self.add_query_param('SolutionId', SolutionId)

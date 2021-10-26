@@ -25,14 +25,13 @@ class ListComputeRelyServiceRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Workbench-ide', '2021-01-21', 'ListComputeRelyService')
 		self.set_method('POST')
 
-	def get_ComputeTypes(self):
+	def get_ComputeTypes(self): # Json
 		return self.get_query_params().get('ComputeTypes')
 
-	def set_ComputeTypes(self,ComputeTypes):
-		self.add_query_param('ComputeTypes',ComputeTypes)
-
-	def get_CurrentOrgId(self):
+	def set_ComputeTypes(self, ComputeTypes):  # Json
+		self.add_query_param('ComputeTypes', ComputeTypes)
+	def get_CurrentOrgId(self): # String
 		return self.get_query_params().get('CurrentOrgId')
 
-	def set_CurrentOrgId(self,CurrentOrgId):
-		self.add_query_param('CurrentOrgId',CurrentOrgId)
+	def set_CurrentOrgId(self, CurrentOrgId):  # String
+		self.add_query_param('CurrentOrgId', CurrentOrgId)

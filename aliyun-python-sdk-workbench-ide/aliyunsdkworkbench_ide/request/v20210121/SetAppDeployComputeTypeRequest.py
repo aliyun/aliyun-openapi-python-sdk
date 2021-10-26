@@ -25,20 +25,18 @@ class SetAppDeployComputeTypeRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Workbench-ide', '2021-01-21', 'SetAppDeployComputeType')
 		self.set_method('POST')
 
-	def get_ComputeType(self):
+	def get_ComputeType(self): # String
 		return self.get_query_params().get('ComputeType')
 
-	def set_ComputeType(self,ComputeType):
-		self.add_query_param('ComputeType',ComputeType)
-
-	def get_AppId(self):
+	def set_ComputeType(self, ComputeType):  # String
+		self.add_query_param('ComputeType', ComputeType)
+	def get_AppId(self): # Long
 		return self.get_query_params().get('AppId')
 
-	def set_AppId(self,AppId):
-		self.add_query_param('AppId',AppId)
-
-	def get_CurrentOrgId(self):
+	def set_AppId(self, AppId):  # Long
+		self.add_query_param('AppId', AppId)
+	def get_CurrentOrgId(self): # String
 		return self.get_query_params().get('CurrentOrgId')
 
-	def set_CurrentOrgId(self,CurrentOrgId):
-		self.add_query_param('CurrentOrgId',CurrentOrgId)
+	def set_CurrentOrgId(self, CurrentOrgId):  # String
+		self.add_query_param('CurrentOrgId', CurrentOrgId)

@@ -25,26 +25,23 @@ class AddProductRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Workbench-ide', '2021-01-21', 'AddProduct')
 		self.set_method('POST')
 
-	def get_ProductDescription(self):
+	def get_ProductDescription(self): # String
 		return self.get_query_params().get('ProductDescription')
 
-	def set_ProductDescription(self,ProductDescription):
-		self.add_query_param('ProductDescription',ProductDescription)
-
-	def get_CurrentOrgId(self):
+	def set_ProductDescription(self, ProductDescription):  # String
+		self.add_query_param('ProductDescription', ProductDescription)
+	def get_CurrentOrgId(self): # String
 		return self.get_query_params().get('CurrentOrgId')
 
-	def set_CurrentOrgId(self,CurrentOrgId):
-		self.add_query_param('CurrentOrgId',CurrentOrgId)
-
-	def get_ProductName(self):
+	def set_CurrentOrgId(self, CurrentOrgId):  # String
+		self.add_query_param('CurrentOrgId', CurrentOrgId)
+	def get_ProductName(self): # String
 		return self.get_query_params().get('ProductName')
 
-	def set_ProductName(self,ProductName):
-		self.add_query_param('ProductName',ProductName)
-
-	def get_Region(self):
+	def set_ProductName(self, ProductName):  # String
+		self.add_query_param('ProductName', ProductName)
+	def get_Region(self): # String
 		return self.get_query_params().get('Region')
 
-	def set_Region(self,Region):
-		self.add_query_param('Region',Region)
+	def set_Region(self, Region):  # String
+		self.add_query_param('Region', Region)

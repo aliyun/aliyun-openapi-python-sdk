@@ -25,26 +25,23 @@ class SetAppDeployDomainRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Workbench-ide', '2021-01-21', 'SetAppDeployDomain')
 		self.set_method('POST')
 
-	def get_DeployStage(self):
+	def get_DeployStage(self): # String
 		return self.get_query_params().get('DeployStage')
 
-	def set_DeployStage(self,DeployStage):
-		self.add_query_param('DeployStage',DeployStage)
-
-	def get_CustomDomain(self):
+	def set_DeployStage(self, DeployStage):  # String
+		self.add_query_param('DeployStage', DeployStage)
+	def get_CustomDomain(self): # String
 		return self.get_query_params().get('CustomDomain')
 
-	def set_CustomDomain(self,CustomDomain):
-		self.add_query_param('CustomDomain',CustomDomain)
-
-	def get_AppId(self):
+	def set_CustomDomain(self, CustomDomain):  # String
+		self.add_query_param('CustomDomain', CustomDomain)
+	def get_AppId(self): # Long
 		return self.get_query_params().get('AppId')
 
-	def set_AppId(self,AppId):
-		self.add_query_param('AppId',AppId)
-
-	def get_CurrentOrgId(self):
+	def set_AppId(self, AppId):  # Long
+		self.add_query_param('AppId', AppId)
+	def get_CurrentOrgId(self): # String
 		return self.get_query_params().get('CurrentOrgId')
 
-	def set_CurrentOrgId(self,CurrentOrgId):
-		self.add_query_param('CurrentOrgId',CurrentOrgId)
+	def set_CurrentOrgId(self, CurrentOrgId):  # String
+		self.add_query_param('CurrentOrgId', CurrentOrgId)

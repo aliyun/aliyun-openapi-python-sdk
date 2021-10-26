@@ -25,20 +25,18 @@ class GetAppRepositoryRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Workbench-ide', '2021-01-21', 'GetAppRepository')
 		self.set_method('POST')
 
-	def get_AppId(self):
+	def get_AppId(self): # Long
 		return self.get_query_params().get('AppId')
 
-	def set_AppId(self,AppId):
-		self.add_query_param('AppId',AppId)
-
-	def get_CurrentOrgId(self):
+	def set_AppId(self, AppId):  # Long
+		self.add_query_param('AppId', AppId)
+	def get_CurrentOrgId(self): # String
 		return self.get_query_params().get('CurrentOrgId')
 
-	def set_CurrentOrgId(self,CurrentOrgId):
-		self.add_query_param('CurrentOrgId',CurrentOrgId)
-
-	def get_Type(self):
+	def set_CurrentOrgId(self, CurrentOrgId):  # String
+		self.add_query_param('CurrentOrgId', CurrentOrgId)
+	def get_Type(self): # String
 		return self.get_query_params().get('Type')
 
-	def set_Type(self,Type):
-		self.add_query_param('Type',Type)
+	def set_Type(self, Type):  # String
+		self.add_query_param('Type', Type)

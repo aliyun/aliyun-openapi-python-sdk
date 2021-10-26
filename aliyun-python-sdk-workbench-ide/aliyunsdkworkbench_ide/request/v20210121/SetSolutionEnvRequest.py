@@ -25,20 +25,18 @@ class SetSolutionEnvRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Workbench-ide', '2021-01-21', 'SetSolutionEnv')
 		self.set_method('POST')
 
-	def get_CurrentOrgId(self):
+	def get_CurrentOrgId(self): # String
 		return self.get_query_params().get('CurrentOrgId')
 
-	def set_CurrentOrgId(self,CurrentOrgId):
-		self.add_query_param('CurrentOrgId',CurrentOrgId)
-
-	def get_ConfigList(self):
+	def set_CurrentOrgId(self, CurrentOrgId):  # String
+		self.add_query_param('CurrentOrgId', CurrentOrgId)
+	def get_ConfigList(self): # String
 		return self.get_query_params().get('ConfigList')
 
-	def set_ConfigList(self,ConfigList):
-		self.add_query_param('ConfigList',ConfigList)
-
-	def get_SolutionId(self):
+	def set_ConfigList(self, ConfigList):  # String
+		self.add_query_param('ConfigList', ConfigList)
+	def get_SolutionId(self): # String
 		return self.get_query_params().get('SolutionId')
 
-	def set_SolutionId(self,SolutionId):
-		self.add_query_param('SolutionId',SolutionId)
+	def set_SolutionId(self, SolutionId):  # String
+		self.add_query_param('SolutionId', SolutionId)

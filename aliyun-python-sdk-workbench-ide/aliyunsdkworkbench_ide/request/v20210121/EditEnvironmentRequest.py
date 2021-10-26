@@ -25,40 +25,34 @@ class EditEnvironmentRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Workbench-ide', '2021-01-21', 'EditEnvironment')
 		self.set_method('POST')
 
-	def get_SupportComputeTypess(self):
+	def get_SupportComputeTypess(self): # RepeatList
 		return self.get_query_params().get('SupportComputeTypes')
 
-	def set_SupportComputeTypess(self, SupportComputeTypess):
-		for depth1 in range(len(SupportComputeTypess)):
-			if SupportComputeTypess[depth1] is not None:
-				self.add_query_param('SupportComputeTypes.' + str(depth1 + 1) , SupportComputeTypess[depth1])
-
-	def get_EnvName(self):
+	def set_SupportComputeTypess(self, SupportComputeTypes):  # RepeatList
+		for depth1 in range(len(SupportComputeTypes)):
+			self.add_query_param('SupportComputeTypes.' + str(depth1 + 1), SupportComputeTypes[depth1])
+	def get_EnvName(self): # String
 		return self.get_query_params().get('EnvName')
 
-	def set_EnvName(self,EnvName):
-		self.add_query_param('EnvName',EnvName)
-
-	def get_IsOpenNatEip(self):
+	def set_EnvName(self, EnvName):  # String
+		self.add_query_param('EnvName', EnvName)
+	def get_IsOpenNatEip(self): # Boolean
 		return self.get_query_params().get('IsOpenNatEip')
 
-	def set_IsOpenNatEip(self,IsOpenNatEip):
-		self.add_query_param('IsOpenNatEip',IsOpenNatEip)
-
-	def get_CurrentOrgId(self):
+	def set_IsOpenNatEip(self, IsOpenNatEip):  # Boolean
+		self.add_query_param('IsOpenNatEip', IsOpenNatEip)
+	def get_CurrentOrgId(self): # String
 		return self.get_query_params().get('CurrentOrgId')
 
-	def set_CurrentOrgId(self,CurrentOrgId):
-		self.add_query_param('CurrentOrgId',CurrentOrgId)
-
-	def get_EnvDescription(self):
+	def set_CurrentOrgId(self, CurrentOrgId):  # String
+		self.add_query_param('CurrentOrgId', CurrentOrgId)
+	def get_EnvDescription(self): # String
 		return self.get_query_params().get('EnvDescription')
 
-	def set_EnvDescription(self,EnvDescription):
-		self.add_query_param('EnvDescription',EnvDescription)
-
-	def get_EnvId(self):
+	def set_EnvDescription(self, EnvDescription):  # String
+		self.add_query_param('EnvDescription', EnvDescription)
+	def get_EnvId(self): # Long
 		return self.get_query_params().get('EnvId')
 
-	def set_EnvId(self,EnvId):
-		self.add_query_param('EnvId',EnvId)
+	def set_EnvId(self, EnvId):  # Long
+		self.add_query_param('EnvId', EnvId)

@@ -25,20 +25,18 @@ class RemoveOrgMemberRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Workbench-ide', '2021-01-21', 'RemoveOrgMember')
 		self.set_method('POST')
 
-	def get_Uid(self):
+	def get_Uid(self): # String
 		return self.get_query_params().get('Uid')
 
-	def set_Uid(self,Uid):
-		self.add_query_param('Uid',Uid)
-
-	def get_CurrentOrgId(self):
+	def set_Uid(self, Uid):  # String
+		self.add_query_param('Uid', Uid)
+	def get_CurrentOrgId(self): # String
 		return self.get_query_params().get('CurrentOrgId')
 
-	def set_CurrentOrgId(self,CurrentOrgId):
-		self.add_query_param('CurrentOrgId',CurrentOrgId)
-
-	def get_MemberId(self):
+	def set_CurrentOrgId(self, CurrentOrgId):  # String
+		self.add_query_param('CurrentOrgId', CurrentOrgId)
+	def get_MemberId(self): # String
 		return self.get_query_params().get('MemberId')
 
-	def set_MemberId(self,MemberId):
-		self.add_query_param('MemberId',MemberId)
+	def set_MemberId(self, MemberId):  # String
+		self.add_query_param('MemberId', MemberId)

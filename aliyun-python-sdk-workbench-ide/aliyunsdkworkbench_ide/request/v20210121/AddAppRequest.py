@@ -25,50 +25,43 @@ class AddAppRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Workbench-ide', '2021-01-21', 'AddApp')
 		self.set_method('POST')
 
-	def get_RepoUrl(self):
+	def get_RepoUrl(self): # String
 		return self.get_query_params().get('RepoUrl')
 
-	def set_RepoUrl(self,RepoUrl):
-		self.add_query_param('RepoUrl',RepoUrl)
-
-	def get_ProductId(self):
+	def set_RepoUrl(self, RepoUrl):  # String
+		self.add_query_param('RepoUrl', RepoUrl)
+	def get_ProductId(self): # Long
 		return self.get_query_params().get('ProductId')
 
-	def set_ProductId(self,ProductId):
-		self.add_query_param('ProductId',ProductId)
-
-	def get_CurrentOrgId(self):
+	def set_ProductId(self, ProductId):  # Long
+		self.add_query_param('ProductId', ProductId)
+	def get_CurrentOrgId(self): # String
 		return self.get_query_params().get('CurrentOrgId')
 
-	def set_CurrentOrgId(self,CurrentOrgId):
-		self.add_query_param('CurrentOrgId',CurrentOrgId)
-
-	def get_ComputeType(self):
+	def set_CurrentOrgId(self, CurrentOrgId):  # String
+		self.add_query_param('CurrentOrgId', CurrentOrgId)
+	def get_ComputeType(self): # String
 		return self.get_query_params().get('ComputeType')
 
-	def set_ComputeType(self,ComputeType):
-		self.add_query_param('ComputeType',ComputeType)
-
-	def get_AppDescription(self):
+	def set_ComputeType(self, ComputeType):  # String
+		self.add_query_param('ComputeType', ComputeType)
+	def get_AppDescription(self): # String
 		return self.get_query_params().get('AppDescription')
 
-	def set_AppDescription(self,AppDescription):
-		self.add_query_param('AppDescription',AppDescription)
-
-	def get_AppName(self):
+	def set_AppDescription(self, AppDescription):  # String
+		self.add_query_param('AppDescription', AppDescription)
+	def get_AppName(self): # String
 		return self.get_query_params().get('AppName')
 
-	def set_AppName(self,AppName):
-		self.add_query_param('AppName',AppName)
-
-	def get_WbToken(self):
+	def set_AppName(self, AppName):  # String
+		self.add_query_param('AppName', AppName)
+	def get_WbToken(self): # String
 		return self.get_query_params().get('WbToken')
 
-	def set_WbToken(self,WbToken):
-		self.add_query_param('WbToken',WbToken)
-
-	def get_SolutionId(self):
+	def set_WbToken(self, WbToken):  # String
+		self.add_query_param('WbToken', WbToken)
+	def get_SolutionId(self): # Integer
 		return self.get_query_params().get('SolutionId')
 
-	def set_SolutionId(self,SolutionId):
-		self.add_query_param('SolutionId',SolutionId)
+	def set_SolutionId(self, SolutionId):  # Integer
+		self.add_query_param('SolutionId', SolutionId)

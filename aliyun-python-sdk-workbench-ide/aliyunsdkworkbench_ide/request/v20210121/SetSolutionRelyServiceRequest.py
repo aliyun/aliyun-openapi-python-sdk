@@ -25,20 +25,18 @@ class SetSolutionRelyServiceRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Workbench-ide', '2021-01-21', 'SetSolutionRelyService')
 		self.set_method('POST')
 
-	def get_RelyServices(self):
+	def get_RelyServices(self): # String
 		return self.get_query_params().get('RelyServices')
 
-	def set_RelyServices(self,RelyServices):
-		self.add_query_param('RelyServices',RelyServices)
-
-	def get_CurrentOrgId(self):
+	def set_RelyServices(self, RelyServices):  # String
+		self.add_query_param('RelyServices', RelyServices)
+	def get_CurrentOrgId(self): # String
 		return self.get_query_params().get('CurrentOrgId')
 
-	def set_CurrentOrgId(self,CurrentOrgId):
-		self.add_query_param('CurrentOrgId',CurrentOrgId)
-
-	def get_SolutionId(self):
+	def set_CurrentOrgId(self, CurrentOrgId):  # String
+		self.add_query_param('CurrentOrgId', CurrentOrgId)
+	def get_SolutionId(self): # Integer
 		return self.get_query_params().get('SolutionId')
 
-	def set_SolutionId(self,SolutionId):
-		self.add_query_param('SolutionId',SolutionId)
+	def set_SolutionId(self, SolutionId):  # Integer
+		self.add_query_param('SolutionId', SolutionId)

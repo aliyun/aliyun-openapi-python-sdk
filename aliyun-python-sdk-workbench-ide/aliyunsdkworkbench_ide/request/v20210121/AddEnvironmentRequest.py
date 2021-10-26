@@ -25,52 +25,44 @@ class AddEnvironmentRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Workbench-ide', '2021-01-21', 'AddEnvironment')
 		self.set_method('POST')
 
-	def get_ProductId(self):
+	def get_ProductId(self): # Long
 		return self.get_query_params().get('ProductId')
 
-	def set_ProductId(self,ProductId):
-		self.add_query_param('ProductId',ProductId)
-
-	def get_EnvName(self):
+	def set_ProductId(self, ProductId):  # Long
+		self.add_query_param('ProductId', ProductId)
+	def get_EnvName(self): # String
 		return self.get_query_params().get('EnvName')
 
-	def set_EnvName(self,EnvName):
-		self.add_query_param('EnvName',EnvName)
-
-	def get_CurrentOrgId(self):
+	def set_EnvName(self, EnvName):  # String
+		self.add_query_param('EnvName', EnvName)
+	def get_CurrentOrgId(self): # String
 		return self.get_query_params().get('CurrentOrgId')
 
-	def set_CurrentOrgId(self,CurrentOrgId):
-		self.add_query_param('CurrentOrgId',CurrentOrgId)
-
-	def get_SecurityGroupId(self):
+	def set_CurrentOrgId(self, CurrentOrgId):  # String
+		self.add_query_param('CurrentOrgId', CurrentOrgId)
+	def get_SecurityGroupId(self): # String
 		return self.get_query_params().get('SecurityGroupId')
 
-	def set_SecurityGroupId(self,SecurityGroupId):
-		self.add_query_param('SecurityGroupId',SecurityGroupId)
-
-	def get_EnvDescription(self):
+	def set_SecurityGroupId(self, SecurityGroupId):  # String
+		self.add_query_param('SecurityGroupId', SecurityGroupId)
+	def get_EnvDescription(self): # String
 		return self.get_query_params().get('EnvDescription')
 
-	def set_EnvDescription(self,EnvDescription):
-		self.add_query_param('EnvDescription',EnvDescription)
-
-	def get_SupportComputeTypess(self):
+	def set_EnvDescription(self, EnvDescription):  # String
+		self.add_query_param('EnvDescription', EnvDescription)
+	def get_SupportComputeTypess(self): # RepeatList
 		return self.get_query_params().get('SupportComputeTypes')
 
-	def set_SupportComputeTypess(self, SupportComputeTypess):
-		for depth1 in range(len(SupportComputeTypess)):
-			if SupportComputeTypess[depth1] is not None:
-				self.add_query_param('SupportComputeTypes.' + str(depth1 + 1) , SupportComputeTypess[depth1])
-
-	def get_VpcId(self):
+	def set_SupportComputeTypess(self, SupportComputeTypes):  # RepeatList
+		for depth1 in range(len(SupportComputeTypes)):
+			self.add_query_param('SupportComputeTypes.' + str(depth1 + 1), SupportComputeTypes[depth1])
+	def get_VpcId(self): # String
 		return self.get_query_params().get('VpcId')
 
-	def set_VpcId(self,VpcId):
-		self.add_query_param('VpcId',VpcId)
-
-	def get_IsOpenNatEip(self):
+	def set_VpcId(self, VpcId):  # String
+		self.add_query_param('VpcId', VpcId)
+	def get_IsOpenNatEip(self): # Boolean
 		return self.get_query_params().get('IsOpenNatEip')
 
-	def set_IsOpenNatEip(self,IsOpenNatEip):
-		self.add_query_param('IsOpenNatEip',IsOpenNatEip)
+	def set_IsOpenNatEip(self, IsOpenNatEip):  # Boolean
+		self.add_query_param('IsOpenNatEip', IsOpenNatEip)

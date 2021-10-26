@@ -25,26 +25,23 @@ class EditProductRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Workbench-ide', '2021-01-21', 'EditProduct')
 		self.set_method('POST')
 
-	def get_ProductDescription(self):
+	def get_ProductDescription(self): # String
 		return self.get_query_params().get('ProductDescription')
 
-	def set_ProductDescription(self,ProductDescription):
-		self.add_query_param('ProductDescription',ProductDescription)
-
-	def get_ProductId(self):
+	def set_ProductDescription(self, ProductDescription):  # String
+		self.add_query_param('ProductDescription', ProductDescription)
+	def get_ProductId(self): # Long
 		return self.get_query_params().get('ProductId')
 
-	def set_ProductId(self,ProductId):
-		self.add_query_param('ProductId',ProductId)
-
-	def get_CurrentOrgId(self):
+	def set_ProductId(self, ProductId):  # Long
+		self.add_query_param('ProductId', ProductId)
+	def get_CurrentOrgId(self): # String
 		return self.get_query_params().get('CurrentOrgId')
 
-	def set_CurrentOrgId(self,CurrentOrgId):
-		self.add_query_param('CurrentOrgId',CurrentOrgId)
-
-	def get_ProductName(self):
+	def set_CurrentOrgId(self, CurrentOrgId):  # String
+		self.add_query_param('CurrentOrgId', CurrentOrgId)
+	def get_ProductName(self): # String
 		return self.get_query_params().get('ProductName')
 
-	def set_ProductName(self,ProductName):
-		self.add_query_param('ProductName',ProductName)
+	def set_ProductName(self, ProductName):  # String
+		self.add_query_param('ProductName', ProductName)

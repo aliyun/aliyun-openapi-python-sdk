@@ -25,14 +25,13 @@ class ListMoveSolutionRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Workbench-ide', '2021-01-21', 'ListMoveSolution')
 		self.set_method('POST')
 
-	def get_CurrentOrgId(self):
+	def get_CurrentOrgId(self): # String
 		return self.get_query_params().get('CurrentOrgId')
 
-	def set_CurrentOrgId(self,CurrentOrgId):
-		self.add_query_param('CurrentOrgId',CurrentOrgId)
-
-	def get_ProgLang(self):
+	def set_CurrentOrgId(self, CurrentOrgId):  # String
+		self.add_query_param('CurrentOrgId', CurrentOrgId)
+	def get_ProgLang(self): # String
 		return self.get_query_params().get('ProgLang')
 
-	def set_ProgLang(self,ProgLang):
-		self.add_query_param('ProgLang',ProgLang)
+	def set_ProgLang(self, ProgLang):  # String
+		self.add_query_param('ProgLang', ProgLang)

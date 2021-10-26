@@ -25,26 +25,23 @@ class ListEnvironmentResourceConfigRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Workbench-ide', '2021-01-21', 'ListEnvironmentResourceConfig')
 		self.set_method('POST')
 
-	def get_InstanceId(self):
+	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
-
-	def get_CurrentOrgId(self):
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
+	def get_CurrentOrgId(self): # String
 		return self.get_query_params().get('CurrentOrgId')
 
-	def set_CurrentOrgId(self,CurrentOrgId):
-		self.add_query_param('CurrentOrgId',CurrentOrgId)
-
-	def get_EnvId(self):
+	def set_CurrentOrgId(self, CurrentOrgId):  # String
+		self.add_query_param('CurrentOrgId', CurrentOrgId)
+	def get_EnvId(self): # Long
 		return self.get_query_params().get('EnvId')
 
-	def set_EnvId(self,EnvId):
-		self.add_query_param('EnvId',EnvId)
-
-	def get_CloudServiceName(self):
+	def set_EnvId(self, EnvId):  # Long
+		self.add_query_param('EnvId', EnvId)
+	def get_CloudServiceName(self): # String
 		return self.get_query_params().get('CloudServiceName')
 
-	def set_CloudServiceName(self,CloudServiceName):
-		self.add_query_param('CloudServiceName',CloudServiceName)
+	def set_CloudServiceName(self, CloudServiceName):  # String
+		self.add_query_param('CloudServiceName', CloudServiceName)

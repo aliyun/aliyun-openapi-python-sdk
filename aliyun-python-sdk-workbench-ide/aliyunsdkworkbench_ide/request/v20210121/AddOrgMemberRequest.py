@@ -25,26 +25,23 @@ class AddOrgMemberRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Workbench-ide', '2021-01-21', 'AddOrgMember')
 		self.set_method('POST')
 
-	def get_Uid(self):
+	def get_Uid(self): # Long
 		return self.get_query_params().get('Uid')
 
-	def set_Uid(self,Uid):
-		self.add_query_param('Uid',Uid)
-
-	def get_Role(self):
+	def set_Uid(self, Uid):  # Long
+		self.add_query_param('Uid', Uid)
+	def get_Role(self): # String
 		return self.get_query_params().get('Role')
 
-	def set_Role(self,Role):
-		self.add_query_param('Role',Role)
-
-	def get_CurrentOrgId(self):
+	def set_Role(self, Role):  # String
+		self.add_query_param('Role', Role)
+	def get_CurrentOrgId(self): # String
 		return self.get_query_params().get('CurrentOrgId')
 
-	def set_CurrentOrgId(self,CurrentOrgId):
-		self.add_query_param('CurrentOrgId',CurrentOrgId)
-
-	def get_AccountType(self):
+	def set_CurrentOrgId(self, CurrentOrgId):  # String
+		self.add_query_param('CurrentOrgId', CurrentOrgId)
+	def get_AccountType(self): # String
 		return self.get_query_params().get('AccountType')
 
-	def set_AccountType(self,AccountType):
-		self.add_query_param('AccountType',AccountType)
+	def set_AccountType(self, AccountType):  # String
+		self.add_query_param('AccountType', AccountType)

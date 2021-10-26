@@ -25,38 +25,33 @@ class AddSolutionRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Workbench-ide', '2021-01-21', 'AddSolution')
 		self.set_method('POST')
 
-	def get_CurrentOrgId(self):
+	def get_CurrentOrgId(self): # String
 		return self.get_query_params().get('CurrentOrgId')
 
-	def set_CurrentOrgId(self,CurrentOrgId):
-		self.add_query_param('CurrentOrgId',CurrentOrgId)
-
-	def get_ApplyScene(self):
+	def set_CurrentOrgId(self, CurrentOrgId):  # String
+		self.add_query_param('CurrentOrgId', CurrentOrgId)
+	def get_ApplyScene(self): # String
 		return self.get_query_params().get('ApplyScene')
 
-	def set_ApplyScene(self,ApplyScene):
-		self.add_query_param('ApplyScene',ApplyScene)
-
-	def get_ProgLang(self):
+	def set_ApplyScene(self, ApplyScene):  # String
+		self.add_query_param('ApplyScene', ApplyScene)
+	def get_ProgLang(self): # String
 		return self.get_query_params().get('ProgLang')
 
-	def set_ProgLang(self,ProgLang):
-		self.add_query_param('ProgLang',ProgLang)
-
-	def get_PackageType(self):
+	def set_ProgLang(self, ProgLang):  # String
+		self.add_query_param('ProgLang', ProgLang)
+	def get_PackageType(self): # String
 		return self.get_query_params().get('PackageType')
 
-	def set_PackageType(self,PackageType):
-		self.add_query_param('PackageType',PackageType)
-
-	def get_SolutionDescription(self):
+	def set_PackageType(self, PackageType):  # String
+		self.add_query_param('PackageType', PackageType)
+	def get_SolutionDescription(self): # String
 		return self.get_query_params().get('SolutionDescription')
 
-	def set_SolutionDescription(self,SolutionDescription):
-		self.add_query_param('SolutionDescription',SolutionDescription)
-
-	def get_SolutionName(self):
+	def set_SolutionDescription(self, SolutionDescription):  # String
+		self.add_query_param('SolutionDescription', SolutionDescription)
+	def get_SolutionName(self): # String
 		return self.get_query_params().get('SolutionName')
 
-	def set_SolutionName(self,SolutionName):
-		self.add_query_param('SolutionName',SolutionName)
+	def set_SolutionName(self, SolutionName):  # String
+		self.add_query_param('SolutionName', SolutionName)

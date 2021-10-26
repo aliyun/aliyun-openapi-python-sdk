@@ -25,32 +25,28 @@ class SetSolutionRepoRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Workbench-ide', '2021-01-21', 'SetSolutionRepo')
 		self.set_method('POST')
 
-	def get_RepoCloneUrl(self):
+	def get_RepoCloneUrl(self): # String
 		return self.get_query_params().get('RepoCloneUrl')
 
-	def set_RepoCloneUrl(self,RepoCloneUrl):
-		self.add_query_param('RepoCloneUrl',RepoCloneUrl)
-
-	def get_RepoCloneAccount(self):
+	def set_RepoCloneUrl(self, RepoCloneUrl):  # String
+		self.add_query_param('RepoCloneUrl', RepoCloneUrl)
+	def get_RepoCloneAccount(self): # String
 		return self.get_query_params().get('RepoCloneAccount')
 
-	def set_RepoCloneAccount(self,RepoCloneAccount):
-		self.add_query_param('RepoCloneAccount',RepoCloneAccount)
-
-	def get_CurrentOrgId(self):
+	def set_RepoCloneAccount(self, RepoCloneAccount):  # String
+		self.add_query_param('RepoCloneAccount', RepoCloneAccount)
+	def get_CurrentOrgId(self): # String
 		return self.get_query_params().get('CurrentOrgId')
 
-	def set_CurrentOrgId(self,CurrentOrgId):
-		self.add_query_param('CurrentOrgId',CurrentOrgId)
-
-	def get_SolutionId(self):
+	def set_CurrentOrgId(self, CurrentOrgId):  # String
+		self.add_query_param('CurrentOrgId', CurrentOrgId)
+	def get_SolutionId(self): # Integer
 		return self.get_query_params().get('SolutionId')
 
-	def set_SolutionId(self,SolutionId):
-		self.add_query_param('SolutionId',SolutionId)
-
-	def get_RepoAccessToken(self):
+	def set_SolutionId(self, SolutionId):  # Integer
+		self.add_query_param('SolutionId', SolutionId)
+	def get_RepoAccessToken(self): # String
 		return self.get_query_params().get('RepoAccessToken')
 
-	def set_RepoAccessToken(self,RepoAccessToken):
-		self.add_query_param('RepoAccessToken',RepoAccessToken)
+	def set_RepoAccessToken(self, RepoAccessToken):  # String
+		self.add_query_param('RepoAccessToken', RepoAccessToken)

@@ -25,38 +25,33 @@ class ListPlatformSolutionRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Workbench-ide', '2021-01-21', 'ListPlatformSolution')
 		self.set_method('POST')
 
-	def get_CurrentOrgId(self):
+	def get_CurrentOrgId(self): # String
 		return self.get_query_params().get('CurrentOrgId')
 
-	def set_CurrentOrgId(self,CurrentOrgId):
-		self.add_query_param('CurrentOrgId',CurrentOrgId)
-
-	def get_PageSize(self):
+	def set_CurrentOrgId(self, CurrentOrgId):  # String
+		self.add_query_param('CurrentOrgId', CurrentOrgId)
+	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_ProgLang(self):
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
+	def get_ProgLang(self): # String
 		return self.get_query_params().get('ProgLang')
 
-	def set_ProgLang(self,ProgLang):
-		self.add_query_param('ProgLang',ProgLang)
-
-	def get_Page(self):
+	def set_ProgLang(self, ProgLang):  # String
+		self.add_query_param('ProgLang', ProgLang)
+	def get_Page(self): # Integer
 		return self.get_query_params().get('Page')
 
-	def set_Page(self,Page):
-		self.add_query_param('Page',Page)
-
-	def get_PackageType(self):
+	def set_Page(self, Page):  # Integer
+		self.add_query_param('Page', Page)
+	def get_PackageType(self): # String
 		return self.get_query_params().get('PackageType')
 
-	def set_PackageType(self,PackageType):
-		self.add_query_param('PackageType',PackageType)
-
-	def get_Scene(self):
+	def set_PackageType(self, PackageType):  # String
+		self.add_query_param('PackageType', PackageType)
+	def get_Scene(self): # String
 		return self.get_query_params().get('Scene')
 
-	def set_Scene(self,Scene):
-		self.add_query_param('Scene',Scene)
+	def set_Scene(self, Scene):  # String
+		self.add_query_param('Scene', Scene)

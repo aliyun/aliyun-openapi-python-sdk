@@ -25,44 +25,38 @@ class DeployAppRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Workbench-ide', '2021-01-21', 'DeployApp')
 		self.set_method('POST')
 
-	def get_DeployStage(self):
+	def get_DeployStage(self): # String
 		return self.get_query_params().get('DeployStage')
 
-	def set_DeployStage(self,DeployStage):
-		self.add_query_param('DeployStage',DeployStage)
-
-	def get_CurrentOrgId(self):
+	def set_DeployStage(self, DeployStage):  # String
+		self.add_query_param('DeployStage', DeployStage)
+	def get_CurrentOrgId(self): # String
 		return self.get_query_params().get('CurrentOrgId')
 
-	def set_CurrentOrgId(self,CurrentOrgId):
-		self.add_query_param('CurrentOrgId',CurrentOrgId)
-
-	def get_DeployMode(self):
+	def set_CurrentOrgId(self, CurrentOrgId):  # String
+		self.add_query_param('CurrentOrgId', CurrentOrgId)
+	def get_DeployMode(self): # String
 		return self.get_query_params().get('DeployMode')
 
-	def set_DeployMode(self,DeployMode):
-		self.add_query_param('DeployMode',DeployMode)
-
-	def get_PackageUrl(self):
+	def set_DeployMode(self, DeployMode):  # String
+		self.add_query_param('DeployMode', DeployMode)
+	def get_PackageUrl(self): # String
 		return self.get_query_params().get('PackageUrl')
 
-	def set_PackageUrl(self,PackageUrl):
-		self.add_query_param('PackageUrl',PackageUrl)
-
-	def get_AppId(self):
+	def set_PackageUrl(self, PackageUrl):  # String
+		self.add_query_param('PackageUrl', PackageUrl)
+	def get_AppId(self): # Long
 		return self.get_query_params().get('AppId')
 
-	def set_AppId(self,AppId):
-		self.add_query_param('AppId',AppId)
-
-	def get_ImageUrl(self):
+	def set_AppId(self, AppId):  # Long
+		self.add_query_param('AppId', AppId)
+	def get_ImageUrl(self): # String
 		return self.get_query_params().get('ImageUrl')
 
-	def set_ImageUrl(self,ImageUrl):
-		self.add_query_param('ImageUrl',ImageUrl)
-
-	def get_FcRoutes(self):
+	def set_ImageUrl(self, ImageUrl):  # String
+		self.add_query_param('ImageUrl', ImageUrl)
+	def get_FcRoutes(self): # String
 		return self.get_query_params().get('FcRoutes')
 
-	def set_FcRoutes(self,FcRoutes):
-		self.add_query_param('FcRoutes',FcRoutes)
+	def set_FcRoutes(self, FcRoutes):  # String
+		self.add_query_param('FcRoutes', FcRoutes)

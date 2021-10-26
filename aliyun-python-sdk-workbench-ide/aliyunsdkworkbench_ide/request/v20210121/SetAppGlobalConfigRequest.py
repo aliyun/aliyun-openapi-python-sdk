@@ -25,26 +25,23 @@ class SetAppGlobalConfigRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Workbench-ide', '2021-01-21', 'SetAppGlobalConfig')
 		self.set_method('POST')
 
-	def get_DeployStage(self):
+	def get_DeployStage(self): # String
 		return self.get_query_params().get('DeployStage')
 
-	def set_DeployStage(self,DeployStage):
-		self.add_query_param('DeployStage',DeployStage)
-
-	def get_AppId(self):
+	def set_DeployStage(self, DeployStage):  # String
+		self.add_query_param('DeployStage', DeployStage)
+	def get_AppId(self): # Long
 		return self.get_query_params().get('AppId')
 
-	def set_AppId(self,AppId):
-		self.add_query_param('AppId',AppId)
-
-	def get_CurrentOrgId(self):
+	def set_AppId(self, AppId):  # Long
+		self.add_query_param('AppId', AppId)
+	def get_CurrentOrgId(self): # String
 		return self.get_query_params().get('CurrentOrgId')
 
-	def set_CurrentOrgId(self,CurrentOrgId):
-		self.add_query_param('CurrentOrgId',CurrentOrgId)
-
-	def get_GlobalConfigList(self):
+	def set_CurrentOrgId(self, CurrentOrgId):  # String
+		self.add_query_param('CurrentOrgId', CurrentOrgId)
+	def get_GlobalConfigList(self): # String
 		return self.get_query_params().get('GlobalConfigList')
 
-	def set_GlobalConfigList(self,GlobalConfigList):
-		self.add_query_param('GlobalConfigList',GlobalConfigList)
+	def set_GlobalConfigList(self, GlobalConfigList):  # String
+		self.add_query_param('GlobalConfigList', GlobalConfigList)

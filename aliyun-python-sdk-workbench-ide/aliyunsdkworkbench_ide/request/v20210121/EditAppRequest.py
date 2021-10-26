@@ -25,26 +25,23 @@ class EditAppRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Workbench-ide', '2021-01-21', 'EditApp')
 		self.set_method('POST')
 
-	def get_AppDescription(self):
+	def get_AppDescription(self): # String
 		return self.get_query_params().get('AppDescription')
 
-	def set_AppDescription(self,AppDescription):
-		self.add_query_param('AppDescription',AppDescription)
-
-	def get_AppName(self):
+	def set_AppDescription(self, AppDescription):  # String
+		self.add_query_param('AppDescription', AppDescription)
+	def get_AppName(self): # String
 		return self.get_query_params().get('AppName')
 
-	def set_AppName(self,AppName):
-		self.add_query_param('AppName',AppName)
-
-	def get_AppId(self):
+	def set_AppName(self, AppName):  # String
+		self.add_query_param('AppName', AppName)
+	def get_AppId(self): # Long
 		return self.get_query_params().get('AppId')
 
-	def set_AppId(self,AppId):
-		self.add_query_param('AppId',AppId)
-
-	def get_CurrentOrgId(self):
+	def set_AppId(self, AppId):  # Long
+		self.add_query_param('AppId', AppId)
+	def get_CurrentOrgId(self): # String
 		return self.get_query_params().get('CurrentOrgId')
 
-	def set_CurrentOrgId(self,CurrentOrgId):
-		self.add_query_param('CurrentOrgId',CurrentOrgId)
+	def set_CurrentOrgId(self, CurrentOrgId):  # String
+		self.add_query_param('CurrentOrgId', CurrentOrgId)

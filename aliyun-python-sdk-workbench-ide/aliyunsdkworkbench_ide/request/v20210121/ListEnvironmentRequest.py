@@ -25,26 +25,23 @@ class ListEnvironmentRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Workbench-ide', '2021-01-21', 'ListEnvironment')
 		self.set_method('POST')
 
-	def get_ProductId(self):
+	def get_ProductId(self): # Long
 		return self.get_query_params().get('ProductId')
 
-	def set_ProductId(self,ProductId):
-		self.add_query_param('ProductId',ProductId)
-
-	def get_CurrentOrgId(self):
+	def set_ProductId(self, ProductId):  # Long
+		self.add_query_param('ProductId', ProductId)
+	def get_CurrentOrgId(self): # String
 		return self.get_query_params().get('CurrentOrgId')
 
-	def set_CurrentOrgId(self,CurrentOrgId):
-		self.add_query_param('CurrentOrgId',CurrentOrgId)
-
-	def get_PageSize(self):
+	def set_CurrentOrgId(self, CurrentOrgId):  # String
+		self.add_query_param('CurrentOrgId', CurrentOrgId)
+	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_Page(self):
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
+	def get_Page(self): # Integer
 		return self.get_query_params().get('Page')
 
-	def set_Page(self,Page):
-		self.add_query_param('Page',Page)
+	def set_Page(self, Page):  # Integer
+		self.add_query_param('Page', Page)

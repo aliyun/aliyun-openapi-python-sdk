@@ -25,20 +25,23 @@ class ListProductRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Workbench-ide', '2021-01-21', 'ListProduct')
 		self.set_method('POST')
 
-	def get_CurrentOrgId(self):
+	def get_CurrentOrgId(self): # String
 		return self.get_query_params().get('CurrentOrgId')
 
-	def set_CurrentOrgId(self,CurrentOrgId):
-		self.add_query_param('CurrentOrgId',CurrentOrgId)
-
-	def get_PageSize(self):
+	def set_CurrentOrgId(self, CurrentOrgId):  # String
+		self.add_query_param('CurrentOrgId', CurrentOrgId)
+	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
+	def get_ProductName(self): # String
+		return self.get_query_params().get('ProductName')
 
-	def get_Page(self):
+	def set_ProductName(self, ProductName):  # String
+		self.add_query_param('ProductName', ProductName)
+	def get_Page(self): # Integer
 		return self.get_query_params().get('Page')
 
-	def set_Page(self,Page):
-		self.add_query_param('Page',Page)
+	def set_Page(self, Page):  # Integer
+		self.add_query_param('Page', Page)
