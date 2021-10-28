@@ -42,6 +42,8 @@ class PutResourceMetricRulesRequest(RpcRequest):
 				self.add_query_param('Rules.' + str(depth1 + 1) + '.EffectiveInterval', Ruless[depth1].get('EffectiveInterval'))
 			if Ruless[depth1].get('Escalations.Info.ComparisonOperator') is not None:
 				self.add_query_param('Rules.' + str(depth1 + 1) + '.Escalations.Info.ComparisonOperator', Ruless[depth1].get('Escalations.Info.ComparisonOperator'))
+			if Ruless[depth1].get('NoDataPolicy') is not None:
+				self.add_query_param('Rules.' + str(depth1 + 1) + '.NoDataPolicy', Ruless[depth1].get('NoDataPolicy'))
 			if Ruless[depth1].get('NoEffectiveInterval') is not None:
 				self.add_query_param('Rules.' + str(depth1 + 1) + '.NoEffectiveInterval', Ruless[depth1].get('NoEffectiveInterval'))
 			if Ruless[depth1].get('EmailSubject') is not None:
@@ -52,24 +54,28 @@ class PutResourceMetricRulesRequest(RpcRequest):
 				self.add_query_param('Rules.' + str(depth1 + 1) + '.MetricName', Ruless[depth1].get('MetricName'))
 			if Ruless[depth1].get('Escalations.Warn.Times') is not None:
 				self.add_query_param('Rules.' + str(depth1 + 1) + '.Escalations.Warn.Times', Ruless[depth1].get('Escalations.Warn.Times'))
-			if Ruless[depth1].get('Period') is not None:
-				self.add_query_param('Rules.' + str(depth1 + 1) + '.Period', Ruless[depth1].get('Period'))
+			if Ruless[depth1].get('CompositeExpression') is not None:
+				self.add_query_param('Rules.' + str(depth1 + 1) + '.CompositeExpression', Ruless[depth1].get('CompositeExpression'))
 			if Ruless[depth1].get('Escalations.Warn.Threshold') is not None:
 				self.add_query_param('Rules.' + str(depth1 + 1) + '.Escalations.Warn.Threshold', Ruless[depth1].get('Escalations.Warn.Threshold'))
+			if Ruless[depth1].get('Period') is not None:
+				self.add_query_param('Rules.' + str(depth1 + 1) + '.Period', Ruless[depth1].get('Period'))
 			if Ruless[depth1].get('ContactGroups') is not None:
 				self.add_query_param('Rules.' + str(depth1 + 1) + '.ContactGroups', Ruless[depth1].get('ContactGroups'))
 			if Ruless[depth1].get('Escalations.Critical.Statistics') is not None:
 				self.add_query_param('Rules.' + str(depth1 + 1) + '.Escalations.Critical.Statistics', Ruless[depth1].get('Escalations.Critical.Statistics'))
-			if Ruless[depth1].get('Resources') is not None:
-				self.add_query_param('Rules.' + str(depth1 + 1) + '.Resources', Ruless[depth1].get('Resources'))
+			if Ruless[depth1].get('GroupId') is not None:
+				self.add_query_param('Rules.' + str(depth1 + 1) + '.GroupId', Ruless[depth1].get('GroupId'))
 			if Ruless[depth1].get('Escalations.Info.Times') is not None:
 				self.add_query_param('Rules.' + str(depth1 + 1) + '.Escalations.Info.Times', Ruless[depth1].get('Escalations.Info.Times'))
+			if Ruless[depth1].get('Resources') is not None:
+				self.add_query_param('Rules.' + str(depth1 + 1) + '.Resources', Ruless[depth1].get('Resources'))
 			if Ruless[depth1].get('Escalations.Critical.Times') is not None:
 				self.add_query_param('Rules.' + str(depth1 + 1) + '.Escalations.Critical.Times', Ruless[depth1].get('Escalations.Critical.Times'))
-			if Ruless[depth1].get('Escalations.Warn.Statistics') is not None:
-				self.add_query_param('Rules.' + str(depth1 + 1) + '.Escalations.Warn.Statistics', Ruless[depth1].get('Escalations.Warn.Statistics'))
 			if Ruless[depth1].get('Escalations.Info.Threshold') is not None:
 				self.add_query_param('Rules.' + str(depth1 + 1) + '.Escalations.Info.Threshold', Ruless[depth1].get('Escalations.Info.Threshold'))
+			if Ruless[depth1].get('Escalations.Warn.Statistics') is not None:
+				self.add_query_param('Rules.' + str(depth1 + 1) + '.Escalations.Warn.Statistics', Ruless[depth1].get('Escalations.Warn.Statistics'))
 			if Ruless[depth1].get('Namespace') is not None:
 				self.add_query_param('Rules.' + str(depth1 + 1) + '.Namespace', Ruless[depth1].get('Namespace'))
 			if Ruless[depth1].get('Interval') is not None:

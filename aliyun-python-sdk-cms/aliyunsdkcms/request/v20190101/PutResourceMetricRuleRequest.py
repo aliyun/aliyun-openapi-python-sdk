@@ -61,6 +61,12 @@ class PutResourceMetricRuleRequest(RpcRequest):
 	def set_EscalationsInfoComparisonOperator(self,EscalationsInfoComparisonOperator):
 		self.add_query_param('Escalations.Info.ComparisonOperator',EscalationsInfoComparisonOperator)
 
+	def get_NoDataPolicy(self):
+		return self.get_query_params().get('NoDataPolicy')
+
+	def set_NoDataPolicy(self,NoDataPolicy):
+		self.add_query_param('NoDataPolicy',NoDataPolicy)
+
 	def get_NoEffectiveInterval(self):
 		return self.get_query_params().get('NoEffectiveInterval')
 

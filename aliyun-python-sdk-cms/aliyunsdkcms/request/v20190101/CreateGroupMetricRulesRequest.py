@@ -48,6 +48,8 @@ class CreateGroupMetricRulesRequest(RpcRequest):
 				self.add_query_param('GroupMetricRules.' + str(depth1 + 1) + '.EffectiveInterval', GroupMetricRuless[depth1].get('EffectiveInterval'))
 			if GroupMetricRuless[depth1].get('Escalations.Info.ComparisonOperator') is not None:
 				self.add_query_param('GroupMetricRules.' + str(depth1 + 1) + '.Escalations.Info.ComparisonOperator', GroupMetricRuless[depth1].get('Escalations.Info.ComparisonOperator'))
+			if GroupMetricRuless[depth1].get('NoDataPolicy') is not None:
+				self.add_query_param('GroupMetricRules.' + str(depth1 + 1) + '.NoDataPolicy', GroupMetricRuless[depth1].get('NoDataPolicy'))
 			if GroupMetricRuless[depth1].get('NoEffectiveInterval') is not None:
 				self.add_query_param('GroupMetricRules.' + str(depth1 + 1) + '.NoEffectiveInterval', GroupMetricRuless[depth1].get('NoEffectiveInterval'))
 			if GroupMetricRuless[depth1].get('EmailSubject') is not None:
@@ -58,28 +60,30 @@ class CreateGroupMetricRulesRequest(RpcRequest):
 				self.add_query_param('GroupMetricRules.' + str(depth1 + 1) + '.MetricName', GroupMetricRuless[depth1].get('MetricName'))
 			if GroupMetricRuless[depth1].get('Escalations.Warn.Times') is not None:
 				self.add_query_param('GroupMetricRules.' + str(depth1 + 1) + '.Escalations.Warn.Times', GroupMetricRuless[depth1].get('Escalations.Warn.Times'))
-			if GroupMetricRuless[depth1].get('Period') is not None:
-				self.add_query_param('GroupMetricRules.' + str(depth1 + 1) + '.Period', GroupMetricRuless[depth1].get('Period'))
+			if GroupMetricRuless[depth1].get('CompositeExpression') is not None:
+				self.add_query_param('GroupMetricRules.' + str(depth1 + 1) + '.CompositeExpression', GroupMetricRuless[depth1].get('CompositeExpression'))
 			if GroupMetricRuless[depth1].get('Escalations.Warn.Threshold') is not None:
 				self.add_query_param('GroupMetricRules.' + str(depth1 + 1) + '.Escalations.Warn.Threshold', GroupMetricRuless[depth1].get('Escalations.Warn.Threshold'))
+			if GroupMetricRuless[depth1].get('Period') is not None:
+				self.add_query_param('GroupMetricRules.' + str(depth1 + 1) + '.Period', GroupMetricRuless[depth1].get('Period'))
 			if GroupMetricRuless[depth1].get('Escalations.Critical.Statistics') is not None:
 				self.add_query_param('GroupMetricRules.' + str(depth1 + 1) + '.Escalations.Critical.Statistics', GroupMetricRuless[depth1].get('Escalations.Critical.Statistics'))
 			if GroupMetricRuless[depth1].get('Escalations.Info.Times') is not None:
 				self.add_query_param('GroupMetricRules.' + str(depth1 + 1) + '.Escalations.Info.Times', GroupMetricRuless[depth1].get('Escalations.Info.Times'))
 			if GroupMetricRuless[depth1].get('Escalations.Critical.Times') is not None:
 				self.add_query_param('GroupMetricRules.' + str(depth1 + 1) + '.Escalations.Critical.Times', GroupMetricRuless[depth1].get('Escalations.Critical.Times'))
-			if GroupMetricRuless[depth1].get('Escalations.Warn.Statistics') is not None:
-				self.add_query_param('GroupMetricRules.' + str(depth1 + 1) + '.Escalations.Warn.Statistics', GroupMetricRuless[depth1].get('Escalations.Warn.Statistics'))
 			if GroupMetricRuless[depth1].get('Escalations.Info.Threshold') is not None:
 				self.add_query_param('GroupMetricRules.' + str(depth1 + 1) + '.Escalations.Info.Threshold', GroupMetricRuless[depth1].get('Escalations.Info.Threshold'))
+			if GroupMetricRuless[depth1].get('Escalations.Warn.Statistics') is not None:
+				self.add_query_param('GroupMetricRules.' + str(depth1 + 1) + '.Escalations.Warn.Statistics', GroupMetricRuless[depth1].get('Escalations.Warn.Statistics'))
 			if GroupMetricRuless[depth1].get('Namespace') is not None:
 				self.add_query_param('GroupMetricRules.' + str(depth1 + 1) + '.Namespace', GroupMetricRuless[depth1].get('Namespace'))
 			if GroupMetricRuless[depth1].get('Interval') is not None:
 				self.add_query_param('GroupMetricRules.' + str(depth1 + 1) + '.Interval', GroupMetricRuless[depth1].get('Interval'))
-			if GroupMetricRuless[depth1].get('Category') is not None:
-				self.add_query_param('GroupMetricRules.' + str(depth1 + 1) + '.Category', GroupMetricRuless[depth1].get('Category'))
 			if GroupMetricRuless[depth1].get('RuleId') is not None:
 				self.add_query_param('GroupMetricRules.' + str(depth1 + 1) + '.RuleId', GroupMetricRuless[depth1].get('RuleId'))
+			if GroupMetricRuless[depth1].get('Category') is not None:
+				self.add_query_param('GroupMetricRules.' + str(depth1 + 1) + '.Category', GroupMetricRuless[depth1].get('Category'))
 			if GroupMetricRuless[depth1].get('Escalations.Critical.ComparisonOperator') is not None:
 				self.add_query_param('GroupMetricRules.' + str(depth1 + 1) + '.Escalations.Critical.ComparisonOperator', GroupMetricRuless[depth1].get('Escalations.Critical.ComparisonOperator'))
 			if GroupMetricRuless[depth1].get('Escalations.Critical.Threshold') is not None:
