@@ -66,3 +66,9 @@ class ListTagResourcesRequest(RpcRequest):
 				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tags[depth1].get('Value'))
 			if Tags[depth1].get('Key') is not None:
 				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tags[depth1].get('Key'))
+
+	def get_ResourceRegionId(self):
+		return self.get_query_params().get('ResourceRegionId')
+
+	def set_ResourceRegionId(self,ResourceRegionId):
+		self.add_query_param('ResourceRegionId',ResourceRegionId)

@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdksgw.endpoint import endpoint_data
 
-class TagResourcesRequest(RpcRequest):
+class DescribeCSGClientsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'sgw', '2018-05-11', 'TagResources','hcs_sgw')
+		RpcRequest.__init__(self, 'sgw', '2018-05-11', 'DescribeCSGClients','hcs_sgw')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,19 +31,17 @@ class TagResourcesRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_ResourceIds(self):
-		return self.get_query_params().get('ResourceId')
+	def get_PageNumber(self):
+		return self.get_query_params().get('PageNumber')
 
-	def set_ResourceIds(self, ResourceIds):
-		for depth1 in range(len(ResourceIds)):
-			if ResourceIds[depth1] is not None:
-				self.add_query_param('ResourceId.' + str(depth1 + 1) , ResourceIds[depth1])
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)
 
-	def get_ResourceType(self):
-		return self.get_query_params().get('ResourceType')
+	def get_ClientRegionId(self):
+		return self.get_query_params().get('ClientRegionId')
 
-	def set_ResourceType(self,ResourceType):
-		self.add_query_param('ResourceType',ResourceType)
+	def set_ClientRegionId(self,ClientRegionId):
+		self.add_query_param('ClientRegionId',ClientRegionId)
 
 	def get_SecurityToken(self):
 		return self.get_query_params().get('SecurityToken')
@@ -51,18 +49,8 @@ class TagResourcesRequest(RpcRequest):
 	def set_SecurityToken(self,SecurityToken):
 		self.add_query_param('SecurityToken',SecurityToken)
 
-	def get_Tags(self):
-		return self.get_query_params().get('Tag')
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
 
-	def set_Tags(self, Tags):
-		for depth1 in range(len(Tags)):
-			if Tags[depth1].get('Value') is not None:
-				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tags[depth1].get('Value'))
-			if Tags[depth1].get('Key') is not None:
-				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tags[depth1].get('Key'))
-
-	def get_ResourceRegionId(self):
-		return self.get_query_params().get('ResourceRegionId')
-
-	def set_ResourceRegionId(self,ResourceRegionId):
-		self.add_query_param('ResourceRegionId',ResourceRegionId)
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)

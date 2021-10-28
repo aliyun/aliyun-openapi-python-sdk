@@ -64,3 +64,9 @@ class UntagResourcesRequest(RpcRequest):
 		for depth1 in range(len(TagKeys)):
 			if TagKeys[depth1] is not None:
 				self.add_query_param('TagKey.' + str(depth1 + 1) , TagKeys[depth1])
+
+	def get_ResourceRegionId(self):
+		return self.get_query_params().get('ResourceRegionId')
+
+	def set_ResourceRegionId(self,ResourceRegionId):
+		self.add_query_param('ResourceRegionId',ResourceRegionId)
