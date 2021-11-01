@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkobjectdet.endpoint import endpoint_data
 
-class DetectVideoIPCObjectRequest(RpcRequest):
+class DetectKitchenAnimalsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'objectdet', '2019-12-30', 'DetectVideoIPCObject','objectdet')
+		RpcRequest.__init__(self, 'objectdet', '2019-12-30', 'DetectKitchenAnimals','objectdet')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,20 +31,14 @@ class DetectVideoIPCObjectRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_StartTimestamp(self):
-		return self.get_body_params().get('StartTimestamp')
+	def get_ImageURLB(self):
+		return self.get_body_params().get('ImageURLB')
 
-	def set_StartTimestamp(self,StartTimestamp):
-		self.add_body_params('StartTimestamp', StartTimestamp)
+	def set_ImageURLB(self,ImageURLB):
+		self.add_body_params('ImageURLB', ImageURLB)
 
-	def get_CallbackOnlyHasObject(self):
-		return self.get_body_params().get('CallbackOnlyHasObject')
+	def get_ImageURLA(self):
+		return self.get_body_params().get('ImageURLA')
 
-	def set_CallbackOnlyHasObject(self,CallbackOnlyHasObject):
-		self.add_body_params('CallbackOnlyHasObject', CallbackOnlyHasObject)
-
-	def get_VideoURL(self):
-		return self.get_body_params().get('VideoURL')
-
-	def set_VideoURL(self,VideoURL):
-		self.add_body_params('VideoURL', VideoURL)
+	def set_ImageURLA(self,ImageURLA):
+		self.add_body_params('ImageURLA', ImageURLA)

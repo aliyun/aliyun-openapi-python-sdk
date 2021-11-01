@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkobjectdet.endpoint import endpoint_data
 
-class DetectVideoIPCObjectRequest(RpcRequest):
+class DetectWorkwearRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'objectdet', '2019-12-30', 'DetectVideoIPCObject','objectdet')
+		RpcRequest.__init__(self, 'objectdet', '2019-12-30', 'DetectWorkwear','objectdet')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,20 +31,22 @@ class DetectVideoIPCObjectRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_StartTimestamp(self):
-		return self.get_body_params().get('StartTimestamp')
+	def get_Clothes(self):
+		return self.get_body_params().get('Clothes')
 
-	def set_StartTimestamp(self,StartTimestamp):
-		self.add_body_params('StartTimestamp', StartTimestamp)
+	def set_Clothes(self,Clothes):
+		self.add_body_params('Clothes', Clothes)
 
-	def get_CallbackOnlyHasObject(self):
-		return self.get_body_params().get('CallbackOnlyHasObject')
+	def get_Labelss(self):
+		return self.get_body_params().get('Labels')
 
-	def set_CallbackOnlyHasObject(self,CallbackOnlyHasObject):
-		self.add_body_params('CallbackOnlyHasObject', CallbackOnlyHasObject)
+	def set_Labelss(self, Labelss):
+		for depth1 in range(len(Labelss)):
+			if Labelss[depth1] is not None:
+				self.add_body_params('Labels.' + str(depth1 + 1) , Labelss[depth1])
 
-	def get_VideoURL(self):
-		return self.get_body_params().get('VideoURL')
+	def get_ImageUrl(self):
+		return self.get_body_params().get('ImageUrl')
 
-	def set_VideoURL(self,VideoURL):
-		self.add_body_params('VideoURL', VideoURL)
+	def set_ImageUrl(self,ImageUrl):
+		self.add_body_params('ImageUrl', ImageUrl)

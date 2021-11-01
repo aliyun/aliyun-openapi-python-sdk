@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkobjectdet.endpoint import endpoint_data
 
-class DetectVehicleICongestionRequest(RpcRequest):
+class DetectVideoFrameRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'objectdet', '2019-12-30', 'DetectVehicleICongestion','objectdet')
+		RpcRequest.__init__(self, 'objectdet', '2019-12-30', 'DetectVideoFrame','objectdet')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,32 +31,50 @@ class DetectVehicleICongestionRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_RoadRegions(self):
-		return self.get_body_params().get('RoadRegions')
+	def get_Features(self):
+		return self.get_body_params().get('Features')
 
-	def set_RoadRegions(self,RoadRegions):
-		self.add_body_params('RoadRegions', RoadRegions)
+	def set_Features(self,Features):
+		self.add_body_params('Features', Features)
 
-	def get_OriginRequestId(self):
-		return self.get_query_params().get('OriginRequestId')
+	def get_Height(self):
+		return self.get_body_params().get('Height')
 
-	def set_OriginRequestId(self,OriginRequestId):
-		self.add_query_param('OriginRequestId',OriginRequestId)
+	def set_Height(self,Height):
+		self.add_body_params('Height', Height)
 
-	def get_PreRegionIntersectFeatures(self):
-		return self.get_body_params().get('PreRegionIntersectFeatures')
+	def get_CreateTime(self):
+		return self.get_body_params().get('CreateTime')
 
-	def set_PreRegionIntersectFeatures(self,PreRegionIntersectFeatures):
-		self.add_body_params('PreRegionIntersectFeatures', PreRegionIntersectFeatures)
+	def set_CreateTime(self,CreateTime):
+		self.add_body_params('CreateTime', CreateTime)
+
+	def get_FeatureConfig(self):
+		return self.get_body_params().get('FeatureConfig')
+
+	def set_FeatureConfig(self,FeatureConfig):
+		self.add_body_params('FeatureConfig', FeatureConfig)
+
+	def get_OwnerId(self):
+		return self.get_body_params().get('OwnerId')
+
+	def set_OwnerId(self,OwnerId):
+		self.add_body_params('OwnerId', OwnerId)
 
 	def get_StreamArn(self):
-		return self.get_query_params().get('StreamArn')
+		return self.get_body_params().get('StreamArn')
 
 	def set_StreamArn(self,StreamArn):
-		self.add_query_param('StreamArn',StreamArn)
+		self.add_body_params('StreamArn', StreamArn)
 
 	def get_ImageURL(self):
 		return self.get_body_params().get('ImageURL')
 
 	def set_ImageURL(self,ImageURL):
 		self.add_body_params('ImageURL', ImageURL)
+
+	def get_Width(self):
+		return self.get_body_params().get('Width')
+
+	def set_Width(self,Width):
+		self.add_body_params('Width', Width)
