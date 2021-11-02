@@ -37,6 +37,12 @@ class GetVideoPlayAuthRequest(RpcRequest):
 	def set_VideoId(self,VideoId):
 		self.add_query_param('VideoId',VideoId)
 
+	def get_ApiVersion(self):
+		return self.get_query_params().get('ApiVersion')
+
+	def set_ApiVersion(self,ApiVersion):
+		self.add_query_param('ApiVersion',ApiVersion)
+
 	def get_AuthInfoTimeout(self):
 		return self.get_query_params().get('AuthInfoTimeout')
 
