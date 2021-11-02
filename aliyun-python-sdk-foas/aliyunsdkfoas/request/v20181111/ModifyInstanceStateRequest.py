@@ -51,6 +51,12 @@ class ModifyInstanceStateRequest(RoaRequest):
 	def set_instanceId(self,instanceId):
 		self.add_path_param('instanceId',instanceId)
 
+	def get_triggerCheckpoint(self):
+		return self.get_body_params().get('triggerCheckpoint')
+
+	def set_triggerCheckpoint(self,triggerCheckpoint):
+		self.add_body_params('triggerCheckpoint', triggerCheckpoint)
+
 	def get_expectState(self):
 		return self.get_body_params().get('expectState')
 

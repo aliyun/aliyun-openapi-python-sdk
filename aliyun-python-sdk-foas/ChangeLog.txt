@@ -1,3 +1,6 @@
+2021-11-02 Version: 2.11.1
+- Support multi language.
+
 2019-09-05 Version: 2.3.3
 - Generated 2018-11-11 for `foas`.
 

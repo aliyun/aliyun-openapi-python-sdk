@@ -20,13 +20,13 @@
 from aliyunsdkcore.request import RoaRequest
 from aliyunsdkfoas.endpoint import endpoint_data
 
-class GetInstanceVertexTaskManagersRequest(RoaRequest):
+class UpdateProjectRequest(RoaRequest):
 
 	def __init__(self):
-		RoaRequest.__init__(self, 'foas', '2018-11-11', 'GetInstanceVertexTaskManagers','foas')
+		RoaRequest.__init__(self, 'foas', '2018-11-11', 'UpdateProject','foas')
 		self.set_protocol_type('https')
-		self.set_uri_pattern('/api/v2/projects/[projectName]/jobs/[jobName]/instances/[instanceId]/vertices/[vertexId]/taskmanagers')
-		self.set_method('GET')
+		self.set_uri_pattern('/api/v2/projects/[projectName]')
+		self.set_method('PUT')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
@@ -39,20 +39,8 @@ class GetInstanceVertexTaskManagersRequest(RoaRequest):
 	def set_projectName(self,projectName):
 		self.add_path_param('projectName',projectName)
 
-	def get_instanceId(self):
-		return self.get_path_params().get('instanceId')
+	def get_globalJobConfig(self):
+		return self.get_body_params().get('globalJobConfig')
 
-	def set_instanceId(self,instanceId):
-		self.add_path_param('instanceId',instanceId)
-
-	def get_vertexId(self):
-		return self.get_path_params().get('vertexId')
-
-	def set_vertexId(self,vertexId):
-		self.add_path_param('vertexId',vertexId)
-
-	def get_jobName(self):
-		return self.get_path_params().get('jobName')
-
-	def set_jobName(self,jobName):
-		self.add_path_param('jobName',jobName)
+	def set_globalJobConfig(self,globalJobConfig):
+		self.add_body_params('globalJobConfig', globalJobConfig)

@@ -51,6 +51,12 @@ class GetRawPlanJsonRequest(RoaRequest):
 	def set_expectedCore(self,expectedCore):
 		self.add_query_param('expectedCore',expectedCore)
 
+	def get_AdvisorAction(self):
+		return self.get_query_params().get('AdvisorAction')
+
+	def set_AdvisorAction(self,AdvisorAction):
+		self.add_query_param('AdvisorAction',AdvisorAction)
+
 	def get_jobName(self):
 		return self.get_path_params().get('jobName')
 

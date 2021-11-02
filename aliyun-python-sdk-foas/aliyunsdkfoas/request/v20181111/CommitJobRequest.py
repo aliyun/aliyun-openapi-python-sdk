@@ -39,6 +39,18 @@ class CommitJobRequest(RoaRequest):
 	def set_projectName(self,projectName):
 		self.add_path_param('projectName',projectName)
 
+	def get_recommendOnly(self):
+		return self.get_body_params().get('recommendOnly')
+
+	def set_recommendOnly(self,recommendOnly):
+		self.add_body_params('recommendOnly', recommendOnly)
+
+	def get_suspendPeriods(self):
+		return self.get_body_params().get('suspendPeriods')
+
+	def set_suspendPeriods(self,suspendPeriods):
+		self.add_body_params('suspendPeriods', suspendPeriods)
+
 	def get_maxCU(self):
 		return self.get_body_params().get('maxCU')
 
@@ -62,3 +74,17 @@ class CommitJobRequest(RoaRequest):
 
 	def set_jobName(self,jobName):
 		self.add_path_param('jobName',jobName)
+
+	def get_suspendPeriodParams(self):
+		return self.get_body_params().get('suspendPeriodParam')
+
+	def set_suspendPeriodParams(self, suspendPeriodParams):
+		for depth1 in range(len(suspendPeriodParams)):
+			if suspendPeriodParams[depth1].get('endTime') is not None:
+				self.add_body_params('suspendPeriodParam.' + str(depth1 + 1) + '.endTime', suspendPeriodParams[depth1].get('endTime'))
+			if suspendPeriodParams[depth1].get('startTime') is not None:
+				self.add_body_params('suspendPeriodParam.' + str(depth1 + 1) + '.startTime', suspendPeriodParams[depth1].get('startTime'))
+			if suspendPeriodParams[depth1].get('plan') is not None:
+				self.add_body_params('suspendPeriodParam.' + str(depth1 + 1) + '.plan', suspendPeriodParams[depth1].get('plan'))
+			if suspendPeriodParams[depth1].get('policy') is not None:
+				self.add_body_params('suspendPeriodParam.' + str(depth1 + 1) + '.policy', suspendPeriodParams[depth1].get('policy'))
