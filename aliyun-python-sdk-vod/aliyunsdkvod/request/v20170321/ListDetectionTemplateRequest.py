@@ -23,7 +23,7 @@ from aliyunsdkvod.endpoint import endpoint_data
 class ListDetectionTemplateRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'vod', '2017-03-21', 'ListDetectionTemplate','vod')
+		RpcRequest.__init__(self, 'vod', '2017-03-21', 'ListDetectionTemplate')
 		self.set_method('GET')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())

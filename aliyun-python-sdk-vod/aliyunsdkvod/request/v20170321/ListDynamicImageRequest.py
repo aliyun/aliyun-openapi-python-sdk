@@ -23,7 +23,7 @@ from aliyunsdkvod.endpoint import endpoint_data
 class ListDynamicImageRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'vod', '2017-03-21', 'ListDynamicImage','vod')
+		RpcRequest.__init__(self, 'vod', '2017-03-21', 'ListDynamicImage')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
