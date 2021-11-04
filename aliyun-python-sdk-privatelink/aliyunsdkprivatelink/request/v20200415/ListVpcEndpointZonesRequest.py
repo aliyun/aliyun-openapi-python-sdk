@@ -26,26 +26,24 @@ class ListVpcEndpointZonesRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Privatelink', '2020-04-15', 'ListVpcEndpointZones','privatelink')
 		self.set_protocol_type('https')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_EndpointId(self):
+	def get_EndpointId(self): # String
 		return self.get_query_params().get('EndpointId')
 
-	def set_EndpointId(self,EndpointId):
-		self.add_query_param('EndpointId',EndpointId)
-
-	def get_NextToken(self):
+	def set_EndpointId(self, EndpointId):  # String
+		self.add_query_param('EndpointId', EndpointId)
+	def get_NextToken(self): # String
 		return self.get_query_params().get('NextToken')
 
-	def set_NextToken(self,NextToken):
-		self.add_query_param('NextToken',NextToken)
-
-	def get_MaxResults(self):
+	def set_NextToken(self, NextToken):  # String
+		self.add_query_param('NextToken', NextToken)
+	def get_MaxResults(self): # Integer
 		return self.get_query_params().get('MaxResults')
 
-	def set_MaxResults(self,MaxResults):
-		self.add_query_param('MaxResults',MaxResults)
+	def set_MaxResults(self, MaxResults):  # Integer
+		self.add_query_param('MaxResults', MaxResults)

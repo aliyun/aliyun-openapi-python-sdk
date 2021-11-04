@@ -26,56 +26,49 @@ class ListVpcEndpointsRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Privatelink', '2020-04-15', 'ListVpcEndpoints','privatelink')
 		self.set_protocol_type('https')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_EndpointId(self):
+	def get_EndpointId(self): # String
 		return self.get_query_params().get('EndpointId')
 
-	def set_EndpointId(self,EndpointId):
-		self.add_query_param('EndpointId',EndpointId)
-
-	def get_EndpointStatus(self):
+	def set_EndpointId(self, EndpointId):  # String
+		self.add_query_param('EndpointId', EndpointId)
+	def get_EndpointStatus(self): # String
 		return self.get_query_params().get('EndpointStatus')
 
-	def set_EndpointStatus(self,EndpointStatus):
-		self.add_query_param('EndpointStatus',EndpointStatus)
-
-	def get_NextToken(self):
+	def set_EndpointStatus(self, EndpointStatus):  # String
+		self.add_query_param('EndpointStatus', EndpointStatus)
+	def get_NextToken(self): # String
 		return self.get_query_params().get('NextToken')
 
-	def set_NextToken(self,NextToken):
-		self.add_query_param('NextToken',NextToken)
-
-	def get_ServiceName(self):
+	def set_NextToken(self, NextToken):  # String
+		self.add_query_param('NextToken', NextToken)
+	def get_ServiceName(self): # String
 		return self.get_query_params().get('ServiceName')
 
-	def set_ServiceName(self,ServiceName):
-		self.add_query_param('ServiceName',ServiceName)
-
-	def get_ConnectionStatus(self):
+	def set_ServiceName(self, ServiceName):  # String
+		self.add_query_param('ServiceName', ServiceName)
+	def get_ConnectionStatus(self): # String
 		return self.get_query_params().get('ConnectionStatus')
 
-	def set_ConnectionStatus(self,ConnectionStatus):
-		self.add_query_param('ConnectionStatus',ConnectionStatus)
-
-	def get_VpcId(self):
+	def set_ConnectionStatus(self, ConnectionStatus):  # String
+		self.add_query_param('ConnectionStatus', ConnectionStatus)
+	def get_VpcId(self): # String
 		return self.get_query_params().get('VpcId')
 
-	def set_VpcId(self,VpcId):
-		self.add_query_param('VpcId',VpcId)
-
-	def get_EndpointName(self):
+	def set_VpcId(self, VpcId):  # String
+		self.add_query_param('VpcId', VpcId)
+	def get_EndpointName(self): # String
 		return self.get_query_params().get('EndpointName')
 
-	def set_EndpointName(self,EndpointName):
-		self.add_query_param('EndpointName',EndpointName)
-
-	def get_MaxResults(self):
+	def set_EndpointName(self, EndpointName):  # String
+		self.add_query_param('EndpointName', EndpointName)
+	def get_MaxResults(self): # Integer
 		return self.get_query_params().get('MaxResults')
 
-	def set_MaxResults(self,MaxResults):
-		self.add_query_param('MaxResults',MaxResults)
+	def set_MaxResults(self, MaxResults):  # Integer
+		self.add_query_param('MaxResults', MaxResults)

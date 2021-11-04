@@ -26,32 +26,29 @@ class ListVpcEndpointServiceUsersRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Privatelink', '2020-04-15', 'ListVpcEndpointServiceUsers','privatelink')
 		self.set_protocol_type('https')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_UserId(self):
+	def get_UserId(self): # Long
 		return self.get_query_params().get('UserId')
 
-	def set_UserId(self,UserId):
-		self.add_query_param('UserId',UserId)
-
-	def get_NextToken(self):
+	def set_UserId(self, UserId):  # Long
+		self.add_query_param('UserId', UserId)
+	def get_NextToken(self): # String
 		return self.get_query_params().get('NextToken')
 
-	def set_NextToken(self,NextToken):
-		self.add_query_param('NextToken',NextToken)
-
-	def get_MaxResults(self):
+	def set_NextToken(self, NextToken):  # String
+		self.add_query_param('NextToken', NextToken)
+	def get_MaxResults(self): # Integer
 		return self.get_query_params().get('MaxResults')
 
-	def set_MaxResults(self,MaxResults):
-		self.add_query_param('MaxResults',MaxResults)
-
-	def get_ServiceId(self):
+	def set_MaxResults(self, MaxResults):  # Integer
+		self.add_query_param('MaxResults', MaxResults)
+	def get_ServiceId(self): # String
 		return self.get_query_params().get('ServiceId')
 
-	def set_ServiceId(self,ServiceId):
-		self.add_query_param('ServiceId',ServiceId)
+	def set_ServiceId(self, ServiceId):  # String
+		self.add_query_param('ServiceId', ServiceId)

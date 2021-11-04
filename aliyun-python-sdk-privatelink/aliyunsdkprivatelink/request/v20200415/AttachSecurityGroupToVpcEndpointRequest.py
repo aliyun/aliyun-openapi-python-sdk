@@ -25,32 +25,29 @@ class AttachSecurityGroupToVpcEndpointRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'Privatelink', '2020-04-15', 'AttachSecurityGroupToVpcEndpoint','privatelink')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ClientToken(self):
+	def get_ClientToken(self): # String
 		return self.get_query_params().get('ClientToken')
 
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
-
-	def get_EndpointId(self):
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_query_param('ClientToken', ClientToken)
+	def get_EndpointId(self): # String
 		return self.get_query_params().get('EndpointId')
 
-	def set_EndpointId(self,EndpointId):
-		self.add_query_param('EndpointId',EndpointId)
-
-	def get_SecurityGroupId(self):
+	def set_EndpointId(self, EndpointId):  # String
+		self.add_query_param('EndpointId', EndpointId)
+	def get_SecurityGroupId(self): # String
 		return self.get_query_params().get('SecurityGroupId')
 
-	def set_SecurityGroupId(self,SecurityGroupId):
-		self.add_query_param('SecurityGroupId',SecurityGroupId)
-
-	def get_DryRun(self):
+	def set_SecurityGroupId(self, SecurityGroupId):  # String
+		self.add_query_param('SecurityGroupId', SecurityGroupId)
+	def get_DryRun(self): # Boolean
 		return self.get_query_params().get('DryRun')
 
-	def set_DryRun(self,DryRun):
-		self.add_query_param('DryRun',DryRun)
+	def set_DryRun(self, DryRun):  # Boolean
+		self.add_query_param('DryRun', DryRun)

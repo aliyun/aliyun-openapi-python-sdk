@@ -26,14 +26,14 @@ class GetVpcEndpointAttributeRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Privatelink', '2020-04-15', 'GetVpcEndpointAttribute','privatelink')
 		self.set_protocol_type('https')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_EndpointId(self):
+	def get_EndpointId(self): # String
 		return self.get_query_params().get('EndpointId')
 
-	def set_EndpointId(self,EndpointId):
-		self.add_query_param('EndpointId',EndpointId)
+	def set_EndpointId(self, EndpointId):  # String
+		self.add_query_param('EndpointId', EndpointId)

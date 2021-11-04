@@ -26,26 +26,24 @@ class DeleteVpcEndpointRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Privatelink', '2020-04-15', 'DeleteVpcEndpoint','privatelink')
 		self.set_protocol_type('https')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ClientToken(self):
+	def get_ClientToken(self): # String
 		return self.get_query_params().get('ClientToken')
 
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
-
-	def get_EndpointId(self):
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_query_param('ClientToken', ClientToken)
+	def get_EndpointId(self): # String
 		return self.get_query_params().get('EndpointId')
 
-	def set_EndpointId(self,EndpointId):
-		self.add_query_param('EndpointId',EndpointId)
-
-	def get_DryRun(self):
+	def set_EndpointId(self, EndpointId):  # String
+		self.add_query_param('EndpointId', EndpointId)
+	def get_DryRun(self): # Boolean
 		return self.get_query_params().get('DryRun')
 
-	def set_DryRun(self,DryRun):
-		self.add_query_param('DryRun',DryRun)
+	def set_DryRun(self, DryRun):  # Boolean
+		self.add_query_param('DryRun', DryRun)
