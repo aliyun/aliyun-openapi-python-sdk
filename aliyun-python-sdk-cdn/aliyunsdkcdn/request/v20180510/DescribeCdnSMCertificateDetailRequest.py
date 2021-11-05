@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkcdn.endpoint import endpoint_data
 
-class DescribeCdnUserResourcePackageRequest(RpcRequest):
+class DescribeCdnSMCertificateDetailRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cdn', '2018-05-10', 'DescribeCdnUserResourcePackage')
+		RpcRequest.__init__(self, 'Cdn', '2018-05-10', 'DescribeCdnSMCertificateDetail')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -43,8 +43,8 @@ class DescribeCdnUserResourcePackageRequest(RpcRequest):
 	def set_SecurityToken(self,SecurityToken):
 		self.add_query_param('SecurityToken',SecurityToken)
 
-	def get_Status(self):
-		return self.get_query_params().get('Status')
+	def get_CertIdentifier(self):
+		return self.get_query_params().get('CertIdentifier')
 
-	def set_Status(self,Status):
-		self.add_query_param('Status',Status)
+	def set_CertIdentifier(self,CertIdentifier):
+		self.add_query_param('CertIdentifier',CertIdentifier)
