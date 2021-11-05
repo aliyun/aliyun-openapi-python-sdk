@@ -55,6 +55,12 @@ class CreateOTAVerifyJobRequest(RpcRequest):
 	def set_IotInstanceId(self,IotInstanceId):
 		self.add_query_param('IotInstanceId',IotInstanceId)
 
+	def get_DownloadProtocol(self):
+		return self.get_query_params().get('DownloadProtocol')
+
+	def set_DownloadProtocol(self,DownloadProtocol):
+		self.add_query_param('DownloadProtocol',DownloadProtocol)
+
 	def get_Tags(self):
 		return self.get_query_params().get('Tag')
 
