@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkddoscoo.endpoint import endpoint_data
 
-class DescribeDDosAllEventListRequest(RpcRequest):
+class DescribeSystemLogRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'ddoscoo', '2020-01-01', 'DescribeDDosAllEventList')
+		RpcRequest.__init__(self, 'ddoscoo', '2020-01-01', 'DescribeSystemLog')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -55,8 +55,14 @@ class DescribeDDosAllEventListRequest(RpcRequest):
 	def set_EndTime(self,EndTime):
 		self.add_query_param('EndTime',EndTime)
 
-	def get_EventType(self):
-		return self.get_query_params().get('EventType')
+	def get_EntityObject(self):
+		return self.get_query_params().get('EntityObject')
 
-	def set_EventType(self,EventType):
-		self.add_query_param('EventType',EventType)
+	def set_EntityObject(self,EntityObject):
+		self.add_query_param('EntityObject',EntityObject)
+
+	def get_EntityType(self):
+		return self.get_query_params().get('EntityType')
+
+	def set_EntityType(self,EntityType):
+		self.add_query_param('EntityType',EntityType)
