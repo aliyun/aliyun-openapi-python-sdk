@@ -37,23 +37,11 @@ class DetectVehicleICongestionRequest(RpcRequest):
 	def set_RoadRegions(self,RoadRegions):
 		self.add_body_params('RoadRegions', RoadRegions)
 
-	def get_OriginRequestId(self):
-		return self.get_query_params().get('OriginRequestId')
-
-	def set_OriginRequestId(self,OriginRequestId):
-		self.add_query_param('OriginRequestId',OriginRequestId)
-
 	def get_PreRegionIntersectFeatures(self):
 		return self.get_body_params().get('PreRegionIntersectFeatures')
 
 	def set_PreRegionIntersectFeatures(self,PreRegionIntersectFeatures):
 		self.add_body_params('PreRegionIntersectFeatures', PreRegionIntersectFeatures)
-
-	def get_StreamArn(self):
-		return self.get_query_params().get('StreamArn')
-
-	def set_StreamArn(self,StreamArn):
-		self.add_query_param('StreamArn',StreamArn)
 
 	def get_ImageURL(self):
 		return self.get_body_params().get('ImageURL')
