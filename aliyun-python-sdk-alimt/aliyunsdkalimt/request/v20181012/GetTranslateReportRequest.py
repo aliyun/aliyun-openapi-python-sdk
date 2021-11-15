@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkalimt.endpoint import endpoint_data
 
-class GetTitleDiagnoseRequest(RpcRequest):
+class GetTranslateReportRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'alimt', '2018-10-12', 'GetTitleDiagnose')
+		RpcRequest.__init__(self, 'alimt', '2018-10-12', 'GetTranslateReport')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,28 +31,23 @@ class GetTitleDiagnoseRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_Language(self): # String
-		return self.get_body_params().get('Language')
+	def get_EndTime(self): # String
+		return self.get_query_params().get('EndTime')
 
-	def set_Language(self, Language):  # String
-		self.add_body_params('Language', Language)
-	def get_Title(self): # String
-		return self.get_body_params().get('Title')
+	def set_EndTime(self, EndTime):  # String
+		self.add_query_param('EndTime', EndTime)
+	def get_BeginTime(self): # String
+		return self.get_query_params().get('BeginTime')
 
-	def set_Title(self, Title):  # String
-		self.add_body_params('Title', Title)
-	def get_Platform(self): # String
-		return self.get_body_params().get('Platform')
+	def set_BeginTime(self, BeginTime):  # String
+		self.add_query_param('BeginTime', BeginTime)
+	def get_ApiName(self): # String
+		return self.get_query_params().get('ApiName')
 
-	def set_Platform(self, Platform):  # String
-		self.add_body_params('Platform', Platform)
-	def get_Extra(self): # String
-		return self.get_body_params().get('Extra')
+	def set_ApiName(self, ApiName):  # String
+		self.add_query_param('ApiName', ApiName)
+	def get_Group(self): # String
+		return self.get_query_params().get('Group')
 
-	def set_Extra(self, Extra):  # String
-		self.add_body_params('Extra', Extra)
-	def get_CategoryId(self): # String
-		return self.get_body_params().get('CategoryId')
-
-	def set_CategoryId(self, CategoryId):  # String
-		self.add_body_params('CategoryId', CategoryId)
+	def set_Group(self, Group):  # String
+		self.add_query_param('Group', Group)

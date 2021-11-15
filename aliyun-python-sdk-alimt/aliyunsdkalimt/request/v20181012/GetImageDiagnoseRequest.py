@@ -23,22 +23,21 @@ from aliyunsdkalimt.endpoint import endpoint_data
 class GetImageDiagnoseRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'alimt', '2018-10-12', 'GetImageDiagnose','alimt')
+		RpcRequest.__init__(self, 'alimt', '2018-10-12', 'GetImageDiagnose')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Url(self):
+	def get_Url(self): # String
 		return self.get_body_params().get('Url')
 
-	def set_Url(self,Url):
+	def set_Url(self, Url):  # String
 		self.add_body_params('Url', Url)
-
-	def get_Extra(self):
+	def get_Extra(self): # String
 		return self.get_body_params().get('Extra')
 
-	def set_Extra(self,Extra):
+	def set_Extra(self, Extra):  # String
 		self.add_body_params('Extra', Extra)

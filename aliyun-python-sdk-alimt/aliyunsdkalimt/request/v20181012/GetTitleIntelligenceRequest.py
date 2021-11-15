@@ -23,40 +23,36 @@ from aliyunsdkalimt.endpoint import endpoint_data
 class GetTitleIntelligenceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'alimt', '2018-10-12', 'GetTitleIntelligence','alimt')
+		RpcRequest.__init__(self, 'alimt', '2018-10-12', 'GetTitleIntelligence')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_CatLevelThreeId(self):
+	def get_CatLevelThreeId(self): # Long
 		return self.get_body_params().get('CatLevelThreeId')
 
-	def set_CatLevelThreeId(self,CatLevelThreeId):
+	def set_CatLevelThreeId(self, CatLevelThreeId):  # Long
 		self.add_body_params('CatLevelThreeId', CatLevelThreeId)
-
-	def get_CatLevelTwoId(self):
+	def get_CatLevelTwoId(self): # Long
 		return self.get_body_params().get('CatLevelTwoId')
 
-	def set_CatLevelTwoId(self,CatLevelTwoId):
+	def set_CatLevelTwoId(self, CatLevelTwoId):  # Long
 		self.add_body_params('CatLevelTwoId', CatLevelTwoId)
-
-	def get_Keywords(self):
+	def get_Keywords(self): # String
 		return self.get_body_params().get('Keywords')
 
-	def set_Keywords(self,Keywords):
+	def set_Keywords(self, Keywords):  # String
 		self.add_body_params('Keywords', Keywords)
-
-	def get_Platform(self):
+	def get_Platform(self): # String
 		return self.get_body_params().get('Platform')
 
-	def set_Platform(self,Platform):
+	def set_Platform(self, Platform):  # String
 		self.add_body_params('Platform', Platform)
-
-	def get_Extra(self):
+	def get_Extra(self): # String
 		return self.get_body_params().get('Extra')
 
-	def set_Extra(self,Extra):
+	def set_Extra(self, Extra):  # String
 		self.add_body_params('Extra', Extra)

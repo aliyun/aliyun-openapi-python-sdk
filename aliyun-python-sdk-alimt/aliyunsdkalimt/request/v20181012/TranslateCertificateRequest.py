@@ -23,40 +23,36 @@ from aliyunsdkalimt.endpoint import endpoint_data
 class TranslateCertificateRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'alimt', '2018-10-12', 'TranslateCertificate','alimt')
+		RpcRequest.__init__(self, 'alimt', '2018-10-12', 'TranslateCertificate')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_SourceLanguage(self):
+	def get_SourceLanguage(self): # String
 		return self.get_body_params().get('SourceLanguage')
 
-	def set_SourceLanguage(self,SourceLanguage):
+	def set_SourceLanguage(self, SourceLanguage):  # String
 		self.add_body_params('SourceLanguage', SourceLanguage)
-
-	def get_CertificateType(self):
+	def get_CertificateType(self): # String
 		return self.get_body_params().get('CertificateType')
 
-	def set_CertificateType(self,CertificateType):
+	def set_CertificateType(self, CertificateType):  # String
 		self.add_body_params('CertificateType', CertificateType)
-
-	def get_ResultType(self):
+	def get_ResultType(self): # String
 		return self.get_body_params().get('ResultType')
 
-	def set_ResultType(self,ResultType):
+	def set_ResultType(self, ResultType):  # String
 		self.add_body_params('ResultType', ResultType)
-
-	def get_ImageUrl(self):
+	def get_ImageUrl(self): # String
 		return self.get_body_params().get('ImageUrl')
 
-	def set_ImageUrl(self,ImageUrl):
+	def set_ImageUrl(self, ImageUrl):  # String
 		self.add_body_params('ImageUrl', ImageUrl)
-
-	def get_TargetLanguage(self):
+	def get_TargetLanguage(self): # String
 		return self.get_body_params().get('TargetLanguage')
 
-	def set_TargetLanguage(self,TargetLanguage):
+	def set_TargetLanguage(self, TargetLanguage):  # String
 		self.add_body_params('TargetLanguage', TargetLanguage)

@@ -23,40 +23,36 @@ from aliyunsdkalimt.endpoint import endpoint_data
 class CreateImageTranslateTaskRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'alimt', '2018-10-12', 'CreateImageTranslateTask','alimt')
+		RpcRequest.__init__(self, 'alimt', '2018-10-12', 'CreateImageTranslateTask')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_SourceLanguage(self):
+	def get_SourceLanguage(self): # String
 		return self.get_body_params().get('SourceLanguage')
 
-	def set_SourceLanguage(self,SourceLanguage):
+	def set_SourceLanguage(self, SourceLanguage):  # String
 		self.add_body_params('SourceLanguage', SourceLanguage)
-
-	def get_ClientToken(self):
+	def get_ClientToken(self): # String
 		return self.get_body_params().get('ClientToken')
 
-	def set_ClientToken(self,ClientToken):
+	def set_ClientToken(self, ClientToken):  # String
 		self.add_body_params('ClientToken', ClientToken)
-
-	def get_UrlList(self):
+	def get_UrlList(self): # String
 		return self.get_body_params().get('UrlList')
 
-	def set_UrlList(self,UrlList):
+	def set_UrlList(self, UrlList):  # String
 		self.add_body_params('UrlList', UrlList)
-
-	def get_Extra(self):
+	def get_Extra(self): # String
 		return self.get_body_params().get('Extra')
 
-	def set_Extra(self,Extra):
+	def set_Extra(self, Extra):  # String
 		self.add_body_params('Extra', Extra)
-
-	def get_TargetLanguage(self):
+	def get_TargetLanguage(self): # String
 		return self.get_body_params().get('TargetLanguage')
 
-	def set_TargetLanguage(self,TargetLanguage):
+	def set_TargetLanguage(self, TargetLanguage):  # String
 		self.add_body_params('TargetLanguage', TargetLanguage)

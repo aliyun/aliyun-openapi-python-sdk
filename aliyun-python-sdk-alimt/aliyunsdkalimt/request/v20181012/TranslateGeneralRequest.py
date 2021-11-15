@@ -23,40 +23,36 @@ from aliyunsdkalimt.endpoint import endpoint_data
 class TranslateGeneralRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'alimt', '2018-10-12', 'TranslateGeneral','alimt')
+		RpcRequest.__init__(self, 'alimt', '2018-10-12', 'TranslateGeneral')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_SourceLanguage(self):
+	def get_SourceLanguage(self): # String
 		return self.get_body_params().get('SourceLanguage')
 
-	def set_SourceLanguage(self,SourceLanguage):
+	def set_SourceLanguage(self, SourceLanguage):  # String
 		self.add_body_params('SourceLanguage', SourceLanguage)
-
-	def get_SourceText(self):
+	def get_SourceText(self): # String
 		return self.get_body_params().get('SourceText')
 
-	def set_SourceText(self,SourceText):
+	def set_SourceText(self, SourceText):  # String
 		self.add_body_params('SourceText', SourceText)
-
-	def get_FormatType(self):
+	def get_FormatType(self): # String
 		return self.get_body_params().get('FormatType')
 
-	def set_FormatType(self,FormatType):
+	def set_FormatType(self, FormatType):  # String
 		self.add_body_params('FormatType', FormatType)
-
-	def get_Scene(self):
+	def get_Scene(self): # String
 		return self.get_body_params().get('Scene')
 
-	def set_Scene(self,Scene):
+	def set_Scene(self, Scene):  # String
 		self.add_body_params('Scene', Scene)
-
-	def get_TargetLanguage(self):
+	def get_TargetLanguage(self): # String
 		return self.get_body_params().get('TargetLanguage')
 
-	def set_TargetLanguage(self,TargetLanguage):
+	def set_TargetLanguage(self, TargetLanguage):  # String
 		self.add_body_params('TargetLanguage', TargetLanguage)

@@ -23,16 +23,16 @@ from aliyunsdkalimt.endpoint import endpoint_data
 class GetDetectLanguageRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'alimt', '2018-10-12', 'GetDetectLanguage','alimt')
+		RpcRequest.__init__(self, 'alimt', '2018-10-12', 'GetDetectLanguage')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_SourceText(self):
+	def get_SourceText(self): # String
 		return self.get_body_params().get('SourceText')
 
-	def set_SourceText(self,SourceText):
+	def set_SourceText(self, SourceText):  # String
 		self.add_body_params('SourceText', SourceText)

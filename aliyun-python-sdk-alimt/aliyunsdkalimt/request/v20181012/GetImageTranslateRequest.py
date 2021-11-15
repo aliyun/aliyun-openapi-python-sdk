@@ -23,34 +23,31 @@ from aliyunsdkalimt.endpoint import endpoint_data
 class GetImageTranslateRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'alimt', '2018-10-12', 'GetImageTranslate','alimt')
+		RpcRequest.__init__(self, 'alimt', '2018-10-12', 'GetImageTranslate')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_SourceLanguage(self):
+	def get_SourceLanguage(self): # String
 		return self.get_body_params().get('SourceLanguage')
 
-	def set_SourceLanguage(self,SourceLanguage):
+	def set_SourceLanguage(self, SourceLanguage):  # String
 		self.add_body_params('SourceLanguage', SourceLanguage)
-
-	def get_Url(self):
+	def get_Url(self): # String
 		return self.get_body_params().get('Url')
 
-	def set_Url(self,Url):
+	def set_Url(self, Url):  # String
 		self.add_body_params('Url', Url)
-
-	def get_Extra(self):
+	def get_Extra(self): # String
 		return self.get_body_params().get('Extra')
 
-	def set_Extra(self,Extra):
+	def set_Extra(self, Extra):  # String
 		self.add_body_params('Extra', Extra)
-
-	def get_TargetLanguage(self):
+	def get_TargetLanguage(self): # String
 		return self.get_body_params().get('TargetLanguage')
 
-	def set_TargetLanguage(self,TargetLanguage):
+	def set_TargetLanguage(self, TargetLanguage):  # String
 		self.add_body_params('TargetLanguage', TargetLanguage)

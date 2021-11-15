@@ -23,46 +23,41 @@ from aliyunsdkalimt.endpoint import endpoint_data
 class CreateDocTranslateTaskRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'alimt', '2018-10-12', 'CreateDocTranslateTask','alimt')
+		RpcRequest.__init__(self, 'alimt', '2018-10-12', 'CreateDocTranslateTask')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_SourceLanguage(self):
+	def get_SourceLanguage(self): # String
 		return self.get_body_params().get('SourceLanguage')
 
-	def set_SourceLanguage(self,SourceLanguage):
+	def set_SourceLanguage(self, SourceLanguage):  # String
 		self.add_body_params('SourceLanguage', SourceLanguage)
-
-	def get_ClientToken(self):
+	def get_ClientToken(self): # String
 		return self.get_body_params().get('ClientToken')
 
-	def set_ClientToken(self,ClientToken):
+	def set_ClientToken(self, ClientToken):  # String
 		self.add_body_params('ClientToken', ClientToken)
-
-	def get_Scene(self):
+	def get_Scene(self): # String
 		return self.get_body_params().get('Scene')
 
-	def set_Scene(self,Scene):
+	def set_Scene(self, Scene):  # String
 		self.add_body_params('Scene', Scene)
-
-	def get_FileUrl(self):
+	def get_FileUrl(self): # String
 		return self.get_body_params().get('FileUrl')
 
-	def set_FileUrl(self,FileUrl):
+	def set_FileUrl(self, FileUrl):  # String
 		self.add_body_params('FileUrl', FileUrl)
-
-	def get_TargetLanguage(self):
+	def get_TargetLanguage(self): # String
 		return self.get_body_params().get('TargetLanguage')
 
-	def set_TargetLanguage(self,TargetLanguage):
+	def set_TargetLanguage(self, TargetLanguage):  # String
 		self.add_body_params('TargetLanguage', TargetLanguage)
-
-	def get_CallbackUrl(self):
+	def get_CallbackUrl(self): # String
 		return self.get_body_params().get('CallbackUrl')
 
-	def set_CallbackUrl(self,CallbackUrl):
+	def set_CallbackUrl(self, CallbackUrl):  # String
 		self.add_body_params('CallbackUrl', CallbackUrl)

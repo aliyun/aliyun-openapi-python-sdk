@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkalimt.endpoint import endpoint_data
 
-class GetBatchTranslateRequest(RpcRequest):
+class TranslateImageRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'alimt', '2018-10-12', 'GetBatchTranslate')
+		RpcRequest.__init__(self, 'alimt', '2018-10-12', 'TranslateImage')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,33 +31,33 @@ class GetBatchTranslateRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_Ext(self): # String
+		return self.get_body_params().get('Ext')
+
+	def set_Ext(self, Ext):  # String
+		self.add_body_params('Ext', Ext)
 	def get_SourceLanguage(self): # String
 		return self.get_body_params().get('SourceLanguage')
 
 	def set_SourceLanguage(self, SourceLanguage):  # String
 		self.add_body_params('SourceLanguage', SourceLanguage)
-	def get_SourceText(self): # String
-		return self.get_body_params().get('SourceText')
+	def get_Field(self): # String
+		return self.get_body_params().get('Field')
 
-	def set_SourceText(self, SourceText):  # String
-		self.add_body_params('SourceText', SourceText)
-	def get_FormatType(self): # String
-		return self.get_body_params().get('FormatType')
+	def set_Field(self, Field):  # String
+		self.add_body_params('Field', Field)
+	def get_ImageUrl(self): # String
+		return self.get_body_params().get('ImageUrl')
 
-	def set_FormatType(self, FormatType):  # String
-		self.add_body_params('FormatType', FormatType)
-	def get_ApiType(self): # String
-		return self.get_body_params().get('ApiType')
-
-	def set_ApiType(self, ApiType):  # String
-		self.add_body_params('ApiType', ApiType)
-	def get_Scene(self): # String
-		return self.get_body_params().get('Scene')
-
-	def set_Scene(self, Scene):  # String
-		self.add_body_params('Scene', Scene)
+	def set_ImageUrl(self, ImageUrl):  # String
+		self.add_body_params('ImageUrl', ImageUrl)
 	def get_TargetLanguage(self): # String
 		return self.get_body_params().get('TargetLanguage')
 
 	def set_TargetLanguage(self, TargetLanguage):  # String
 		self.add_body_params('TargetLanguage', TargetLanguage)
+	def get_ImageBase64(self): # String
+		return self.get_body_params().get('ImageBase64')
+
+	def set_ImageBase64(self, ImageBase64):  # String
+		self.add_body_params('ImageBase64', ImageBase64)

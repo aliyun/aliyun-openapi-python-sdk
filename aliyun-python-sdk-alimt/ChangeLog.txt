@@ -1,3 +1,6 @@
+2021-11-15 Version: 3.1.1
+- Add Ext parameter to image translation API.
+
 2021-01-27 Version: 3.0.30
 - Add New BatchTranslate API.
 
