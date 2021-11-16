@@ -32,38 +32,14 @@ class UpdateApmRequest(RoaRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_outputES(self):
-		return self.get_query_params().get('outputES')
-
-	def set_outputES(self,outputES):
-		self.add_query_param('outputES',outputES)
-
-	def get_outputESPassword(self):
-		return self.get_query_params().get('outputESPassword')
-
-	def set_outputESPassword(self,outputESPassword):
-		self.add_query_param('outputESPassword',outputESPassword)
-
 	def get_instanceId(self):
 		return self.get_path_params().get('instanceId')
 
 	def set_instanceId(self,instanceId):
 		self.add_path_param('instanceId',instanceId)
 
-	def get_yml(self):
-		return self.get_query_params().get('yml')
+	def get_body(self):
+		return self.get_body_params().get('body')
 
-	def set_yml(self,yml):
-		self.add_query_param('yml',yml)
-
-	def get_outputESUserName(self):
-		return self.get_query_params().get('outputESUserName')
-
-	def set_outputESUserName(self,outputESUserName):
-		self.add_query_param('outputESUserName',outputESUserName)
-
-	def get_token(self):
-		return self.get_query_params().get('token')
-
-	def set_token(self,token):
-		self.add_query_param('token',token)
+	def set_body(self,body):
+		self.add_body_params('body', body)
