@@ -23,7 +23,7 @@ from aliyunsdkvod.endpoint import endpoint_data
 class UpdateVodDomainRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'vod', '2017-03-21', 'UpdateVodDomain')
+		RpcRequest.__init__(self, 'vod', '2017-03-21', 'UpdateVodDomain','vod')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())

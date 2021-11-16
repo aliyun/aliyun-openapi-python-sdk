@@ -23,7 +23,7 @@ from aliyunsdkvod.endpoint import endpoint_data
 class UploadStreamByURLRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'vod', '2017-03-21', 'UploadStreamByURL')
+		RpcRequest.__init__(self, 'vod', '2017-03-21', 'UploadStreamByURL','vod')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -37,17 +37,17 @@ class UploadStreamByURLRequest(RpcRequest):
 	def set_FileExtension(self,FileExtension):
 		self.add_query_param('FileExtension',FileExtension)
 
-	def get_MediaId(self):
-		return self.get_query_params().get('MediaId')
-
-	def set_MediaId(self,MediaId):
-		self.add_query_param('MediaId',MediaId)
-
 	def get_UserData(self):
 		return self.get_query_params().get('UserData')
 
 	def set_UserData(self,UserData):
 		self.add_query_param('UserData',UserData)
+
+	def get_HDRType(self):
+		return self.get_query_params().get('HDRType')
+
+	def set_HDRType(self,HDRType):
+		self.add_query_param('HDRType',HDRType)
 
 	def get_Definition(self):
 		return self.get_query_params().get('Definition')
@@ -60,3 +60,9 @@ class UploadStreamByURLRequest(RpcRequest):
 
 	def set_StreamURL(self,StreamURL):
 		self.add_query_param('StreamURL',StreamURL)
+
+	def get_MediaId(self):
+		return self.get_query_params().get('MediaId')
+
+	def set_MediaId(self,MediaId):
+		self.add_query_param('MediaId',MediaId)

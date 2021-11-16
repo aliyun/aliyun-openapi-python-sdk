@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkvod.endpoint import endpoint_data
 
-class UpdateAITemplateRequest(RpcRequest):
+class UpdateStreamInfoRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'vod', '2017-03-21', 'UpdateAITemplate','vod')
+		RpcRequest.__init__(self, 'vod', '2017-03-21', 'UpdateStreamInfo','vod')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,20 +31,14 @@ class UpdateAITemplateRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_TemplateId(self):
-		return self.get_query_params().get('TemplateId')
+	def get_JobId(self):
+		return self.get_query_params().get('JobId')
 
-	def set_TemplateId(self,TemplateId):
-		self.add_query_param('TemplateId',TemplateId)
+	def set_JobId(self,JobId):
+		self.add_query_param('JobId',JobId)
 
-	def get_TemplateConfig(self):
-		return self.get_query_params().get('TemplateConfig')
+	def get_MediaId(self):
+		return self.get_query_params().get('MediaId')
 
-	def set_TemplateConfig(self,TemplateConfig):
-		self.add_query_param('TemplateConfig',TemplateConfig)
-
-	def get_TemplateName(self):
-		return self.get_query_params().get('TemplateName')
-
-	def set_TemplateName(self,TemplateName):
-		self.add_query_param('TemplateName',TemplateName)
+	def set_MediaId(self,MediaId):
+		self.add_query_param('MediaId',MediaId)

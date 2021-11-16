@@ -23,7 +23,7 @@ from aliyunsdkvod.endpoint import endpoint_data
 class SubmitWorkflowJobRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'vod', '2017-03-21', 'SubmitWorkflowJob')
+		RpcRequest.__init__(self, 'vod', '2017-03-21', 'SubmitWorkflowJob','vod')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
