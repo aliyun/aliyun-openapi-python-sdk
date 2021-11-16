@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdataworks_public.endpoint import endpoint_data
 
-class GetInstanceStatusStatisticRequest(RpcRequest):
+class UpdateIDEEventResultRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'GetInstanceStatusStatistic')
+		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'UpdateIDEEventResult')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,32 +31,26 @@ class GetInstanceStatusStatisticRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_ProjectEnv(self):
-		return self.get_body_params().get('ProjectEnv')
+	def get_CheckResultTip(self):
+		return self.get_body_params().get('CheckResultTip')
 
-	def set_ProjectEnv(self,ProjectEnv):
-		self.add_body_params('ProjectEnv', ProjectEnv)
+	def set_CheckResultTip(self,CheckResultTip):
+		self.add_body_params('CheckResultTip', CheckResultTip)
 
-	def get_DagType(self):
-		return self.get_body_params().get('DagType')
+	def get_CheckResult(self):
+		return self.get_body_params().get('CheckResult')
 
-	def set_DagType(self,DagType):
-		self.add_body_params('DagType', DagType)
+	def set_CheckResult(self,CheckResult):
+		self.add_body_params('CheckResult', CheckResult)
 
-	def get_BizDate(self):
-		return self.get_body_params().get('BizDate')
+	def get_MessageId(self):
+		return self.get_body_params().get('MessageId')
 
-	def set_BizDate(self,BizDate):
-		self.add_body_params('BizDate', BizDate)
+	def set_MessageId(self,MessageId):
+		self.add_body_params('MessageId', MessageId)
 
-	def get_SchedulerType(self):
-		return self.get_body_params().get('SchedulerType')
+	def get_ExtensionCode(self):
+		return self.get_body_params().get('ExtensionCode')
 
-	def set_SchedulerType(self,SchedulerType):
-		self.add_body_params('SchedulerType', SchedulerType)
-
-	def get_ProjectId(self):
-		return self.get_body_params().get('ProjectId')
-
-	def set_ProjectId(self,ProjectId):
-		self.add_body_params('ProjectId', ProjectId)
+	def set_ExtensionCode(self,ExtensionCode):
+		self.add_body_params('ExtensionCode', ExtensionCode)

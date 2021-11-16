@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdataworks_public.endpoint import endpoint_data
 
-class GetInstanceStatusStatisticRequest(RpcRequest):
+class GetIDEEventDetailRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'GetInstanceStatusStatistic')
+		RpcRequest.__init__(self, 'dataworks-public', '2020-05-18', 'GetIDEEventDetail')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,29 +31,11 @@ class GetInstanceStatusStatisticRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_ProjectEnv(self):
-		return self.get_body_params().get('ProjectEnv')
+	def get_MessageId(self):
+		return self.get_body_params().get('MessageId')
 
-	def set_ProjectEnv(self,ProjectEnv):
-		self.add_body_params('ProjectEnv', ProjectEnv)
-
-	def get_DagType(self):
-		return self.get_body_params().get('DagType')
-
-	def set_DagType(self,DagType):
-		self.add_body_params('DagType', DagType)
-
-	def get_BizDate(self):
-		return self.get_body_params().get('BizDate')
-
-	def set_BizDate(self,BizDate):
-		self.add_body_params('BizDate', BizDate)
-
-	def get_SchedulerType(self):
-		return self.get_body_params().get('SchedulerType')
-
-	def set_SchedulerType(self,SchedulerType):
-		self.add_body_params('SchedulerType', SchedulerType)
+	def set_MessageId(self,MessageId):
+		self.add_body_params('MessageId', MessageId)
 
 	def get_ProjectId(self):
 		return self.get_body_params().get('ProjectId')
