@@ -23,7 +23,7 @@ from aliyunsdknas.endpoint import endpoint_data
 class DeleteAutoSnapshotPolicyRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'NAS', '2017-06-26', 'DeleteAutoSnapshotPolicy')
+		RpcRequest.__init__(self, 'NAS', '2017-06-26', 'DeleteAutoSnapshotPolicy','nas')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())

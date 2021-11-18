@@ -23,7 +23,7 @@ from aliyunsdknas.endpoint import endpoint_data
 class DescribeLogAnalysisRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'NAS', '2017-06-26', 'DescribeLogAnalysis')
+		RpcRequest.__init__(self, 'NAS', '2017-06-26', 'DescribeLogAnalysis','nas')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
