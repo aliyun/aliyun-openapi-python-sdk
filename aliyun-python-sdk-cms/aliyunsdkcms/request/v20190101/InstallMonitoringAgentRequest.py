@@ -38,3 +38,9 @@ class InstallMonitoringAgentRequest(RpcRequest):
 
 	def set_Force(self,Force):
 		self.add_query_param('Force',Force)
+
+	def get_InstallCommand(self):
+		return self.get_query_params().get('InstallCommand')
+
+	def set_InstallCommand(self,InstallCommand):
+		self.add_query_param('InstallCommand',InstallCommand)

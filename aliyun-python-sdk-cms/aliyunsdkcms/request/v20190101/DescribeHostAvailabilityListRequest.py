@@ -49,6 +49,12 @@ class DescribeHostAvailabilityListRequest(RpcRequest):
 	def set_PageSize(self,PageSize):
 		self.add_query_param('PageSize',PageSize)
 
+	def get_Ids(self):
+		return self.get_query_params().get('Ids')
+
+	def set_Ids(self,Ids):
+		self.add_query_param('Ids',Ids)
+
 	def get_Id(self):
 		return self.get_query_params().get('Id')
 

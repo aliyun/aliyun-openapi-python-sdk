@@ -61,12 +61,6 @@ class CreateSiteMonitorRequest(RpcRequest):
 	def set_OptionsJson(self,OptionsJson):
 		self.add_query_param('OptionsJson',OptionsJson)
 
-	def get_IntervalUnit(self):
-		return self.get_query_params().get('IntervalUnit')
-
-	def set_IntervalUnit(self,IntervalUnit):
-		self.add_query_param('IntervalUnit',IntervalUnit)
-
 	def get_Interval(self):
 		return self.get_query_params().get('Interval')
 
