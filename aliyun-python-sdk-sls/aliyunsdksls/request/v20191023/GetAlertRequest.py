@@ -23,7 +23,7 @@ from aliyunsdksls.endpoint import endpoint_data
 class GetAlertRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sls', '2019-10-23', 'GetAlert')
+		RpcRequest.__init__(self, 'Sls', '2019-10-23', 'GetAlert','sls')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())

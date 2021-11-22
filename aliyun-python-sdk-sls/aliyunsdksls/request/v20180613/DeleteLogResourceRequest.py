@@ -23,7 +23,7 @@ from aliyunsdksls.endpoint import endpoint_data
 class DeleteLogResourceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sls', '2018-06-13', 'DeleteLogResource')
+		RpcRequest.__init__(self, 'Sls', '2018-06-13', 'DeleteLogResource','sls')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())

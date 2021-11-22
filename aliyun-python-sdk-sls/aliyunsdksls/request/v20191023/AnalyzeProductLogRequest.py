@@ -23,7 +23,7 @@ from aliyunsdksls.endpoint import endpoint_data
 class AnalyzeProductLogRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Sls', '2019-10-23', 'AnalyzeProductLog')
+		RpcRequest.__init__(self, 'Sls', '2019-10-23', 'AnalyzeProductLog','sls')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
