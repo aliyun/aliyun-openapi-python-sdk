@@ -273,6 +273,12 @@ class CreateClusterV2Request(RpcRequest):
 	def set_DepositType(self,DepositType):
 		self.add_query_param('DepositType',DepositType)
 
+	def get_DataDiskKMSKeyId(self):
+		return self.get_query_params().get('DataDiskKMSKeyId')
+
+	def set_DataDiskKMSKeyId(self,DataDiskKMSKeyId):
+		self.add_query_param('DataDiskKMSKeyId',DataDiskKMSKeyId)
+
 	def get_UseLocalMetaDb(self):
 		return self.get_query_params().get('UseLocalMetaDb')
 
@@ -296,6 +302,12 @@ class CreateClusterV2Request(RpcRequest):
 
 	def set_UserDefinedEmrEcsRole(self,UserDefinedEmrEcsRole):
 		self.add_query_param('UserDefinedEmrEcsRole',UserDefinedEmrEcsRole)
+
+	def get_DataDiskEncrypted(self):
+		return self.get_query_params().get('DataDiskEncrypted')
+
+	def set_DataDiskEncrypted(self,DataDiskEncrypted):
+		self.add_query_param('DataDiskEncrypted',DataDiskEncrypted)
 
 	def get_WhiteListType(self):
 		return self.get_query_params().get('WhiteListType')
