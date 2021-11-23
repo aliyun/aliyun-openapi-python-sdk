@@ -25,38 +25,34 @@ class QueryRedeemRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'QueryRedeem')
 		self.set_method('GET')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ExpiryTimeEnd(self):
+	def get_ExpiryTimeEnd(self): # String
 		return self.get_query_params().get('ExpiryTimeEnd')
 
-	def set_ExpiryTimeEnd(self,ExpiryTimeEnd):
-		self.add_query_param('ExpiryTimeEnd',ExpiryTimeEnd)
-
-	def get_ExpiryTimeStart(self):
+	def set_ExpiryTimeEnd(self, ExpiryTimeEnd):  # String
+		self.add_query_param('ExpiryTimeEnd', ExpiryTimeEnd)
+	def get_ExpiryTimeStart(self): # String
 		return self.get_query_params().get('ExpiryTimeStart')
 
-	def set_ExpiryTimeStart(self,ExpiryTimeStart):
-		self.add_query_param('ExpiryTimeStart',ExpiryTimeStart)
-
-	def get_PageNum(self):
+	def set_ExpiryTimeStart(self, ExpiryTimeStart):  # String
+		self.add_query_param('ExpiryTimeStart', ExpiryTimeStart)
+	def get_PageNum(self): # Integer
 		return self.get_query_params().get('PageNum')
 
-	def set_PageNum(self,PageNum):
-		self.add_query_param('PageNum',PageNum)
-
-	def get_EffectiveOrNot(self):
+	def set_PageNum(self, PageNum):  # Integer
+		self.add_query_param('PageNum', PageNum)
+	def get_EffectiveOrNot(self): # Boolean
 		return self.get_query_params().get('EffectiveOrNot')
 
-	def set_EffectiveOrNot(self,EffectiveOrNot):
-		self.add_query_param('EffectiveOrNot',EffectiveOrNot)
-
-	def get_PageSize(self):
+	def set_EffectiveOrNot(self, EffectiveOrNot):  # Boolean
+		self.add_query_param('EffectiveOrNot', EffectiveOrNot)
+	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)

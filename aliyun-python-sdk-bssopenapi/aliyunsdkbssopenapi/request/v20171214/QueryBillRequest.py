@@ -25,74 +25,64 @@ class QueryBillRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'QueryBill')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ProductCode(self):
+	def get_ProductCode(self): # String
 		return self.get_query_params().get('ProductCode')
 
-	def set_ProductCode(self,ProductCode):
-		self.add_query_param('ProductCode',ProductCode)
-
-	def get_IsHideZeroCharge(self):
+	def set_ProductCode(self, ProductCode):  # String
+		self.add_query_param('ProductCode', ProductCode)
+	def get_IsHideZeroCharge(self): # Boolean
 		return self.get_query_params().get('IsHideZeroCharge')
 
-	def set_IsHideZeroCharge(self,IsHideZeroCharge):
-		self.add_query_param('IsHideZeroCharge',IsHideZeroCharge)
-
-	def get_IsDisplayLocalCurrency(self):
+	def set_IsHideZeroCharge(self, IsHideZeroCharge):  # Boolean
+		self.add_query_param('IsHideZeroCharge', IsHideZeroCharge)
+	def get_IsDisplayLocalCurrency(self): # Boolean
 		return self.get_query_params().get('IsDisplayLocalCurrency')
 
-	def set_IsDisplayLocalCurrency(self,IsDisplayLocalCurrency):
-		self.add_query_param('IsDisplayLocalCurrency',IsDisplayLocalCurrency)
-
-	def get_SubscriptionType(self):
+	def set_IsDisplayLocalCurrency(self, IsDisplayLocalCurrency):  # Boolean
+		self.add_query_param('IsDisplayLocalCurrency', IsDisplayLocalCurrency)
+	def get_SubscriptionType(self): # String
 		return self.get_query_params().get('SubscriptionType')
 
-	def set_SubscriptionType(self,SubscriptionType):
-		self.add_query_param('SubscriptionType',SubscriptionType)
-
-	def get_BillingCycle(self):
+	def set_SubscriptionType(self, SubscriptionType):  # String
+		self.add_query_param('SubscriptionType', SubscriptionType)
+	def get_BillingCycle(self): # String
 		return self.get_query_params().get('BillingCycle')
 
-	def set_BillingCycle(self,BillingCycle):
-		self.add_query_param('BillingCycle',BillingCycle)
-
-	def get_Type(self):
+	def set_BillingCycle(self, BillingCycle):  # String
+		self.add_query_param('BillingCycle', BillingCycle)
+	def get_Type(self): # String
 		return self.get_query_params().get('Type')
 
-	def set_Type(self,Type):
-		self.add_query_param('Type',Type)
-
-	def get_OwnerId(self):
+	def set_Type(self, Type):  # String
+		self.add_query_param('Type', Type)
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_PageNum(self):
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_PageNum(self): # Integer
 		return self.get_query_params().get('PageNum')
 
-	def set_PageNum(self,PageNum):
-		self.add_query_param('PageNum',PageNum)
-
-	def get_BillOwnerId(self):
+	def set_PageNum(self, PageNum):  # Integer
+		self.add_query_param('PageNum', PageNum)
+	def get_BillOwnerId(self): # Long
 		return self.get_query_params().get('BillOwnerId')
 
-	def set_BillOwnerId(self,BillOwnerId):
-		self.add_query_param('BillOwnerId',BillOwnerId)
-
-	def get_ProductType(self):
+	def set_BillOwnerId(self, BillOwnerId):  # Long
+		self.add_query_param('BillOwnerId', BillOwnerId)
+	def get_ProductType(self): # String
 		return self.get_query_params().get('ProductType')
 
-	def set_ProductType(self,ProductType):
-		self.add_query_param('ProductType',ProductType)
-
-	def get_PageSize(self):
+	def set_ProductType(self, ProductType):  # String
+		self.add_query_param('ProductType', ProductType)
+	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)

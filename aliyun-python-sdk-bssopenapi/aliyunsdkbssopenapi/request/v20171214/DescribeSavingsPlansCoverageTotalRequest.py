@@ -25,32 +25,29 @@ class DescribeSavingsPlansCoverageTotalRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'DescribeSavingsPlansCoverageTotal')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_PeriodType(self):
+	def get_PeriodType(self): # String
 		return self.get_query_params().get('PeriodType')
 
-	def set_PeriodType(self,PeriodType):
-		self.add_query_param('PeriodType',PeriodType)
-
-	def get_BillOwnerId(self):
+	def set_PeriodType(self, PeriodType):  # String
+		self.add_query_param('PeriodType', PeriodType)
+	def get_BillOwnerId(self): # Long
 		return self.get_query_params().get('BillOwnerId')
 
-	def set_BillOwnerId(self,BillOwnerId):
-		self.add_query_param('BillOwnerId',BillOwnerId)
-
-	def get_StartPeriod(self):
+	def set_BillOwnerId(self, BillOwnerId):  # Long
+		self.add_query_param('BillOwnerId', BillOwnerId)
+	def get_StartPeriod(self): # String
 		return self.get_query_params().get('StartPeriod')
 
-	def set_StartPeriod(self,StartPeriod):
-		self.add_query_param('StartPeriod',StartPeriod)
-
-	def get_EndPeriod(self):
+	def set_StartPeriod(self, StartPeriod):  # String
+		self.add_query_param('StartPeriod', StartPeriod)
+	def get_EndPeriod(self): # String
 		return self.get_query_params().get('EndPeriod')
 
-	def set_EndPeriod(self,EndPeriod):
-		self.add_query_param('EndPeriod',EndPeriod)
+	def set_EndPeriod(self, EndPeriod):  # String
+		self.add_query_param('EndPeriod', EndPeriod)

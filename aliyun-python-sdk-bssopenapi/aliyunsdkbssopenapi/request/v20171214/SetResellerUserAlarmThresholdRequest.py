@@ -25,26 +25,24 @@ class SetResellerUserAlarmThresholdRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'SetResellerUserAlarmThreshold')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_AlarmType(self):
+	def get_AlarmType(self): # String
 		return self.get_query_params().get('AlarmType')
 
-	def set_AlarmType(self,AlarmType):
-		self.add_query_param('AlarmType',AlarmType)
-
-	def get_AlarmThresholds(self):
+	def set_AlarmType(self, AlarmType):  # String
+		self.add_query_param('AlarmType', AlarmType)
+	def get_AlarmThresholds(self): # String
 		return self.get_query_params().get('AlarmThresholds')
 
-	def set_AlarmThresholds(self,AlarmThresholds):
-		self.add_query_param('AlarmThresholds',AlarmThresholds)
-
-	def get_OwnerId(self):
+	def set_AlarmThresholds(self, AlarmThresholds):  # String
+		self.add_query_param('AlarmThresholds', AlarmThresholds)
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)

@@ -25,70 +25,60 @@ class ApplyInvoiceRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'ApplyInvoice')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_InvoicingType(self):
+	def get_InvoicingType(self): # Integer
 		return self.get_query_params().get('InvoicingType')
 
-	def set_InvoicingType(self,InvoicingType):
-		self.add_query_param('InvoicingType',InvoicingType)
-
-	def get_ProcessWay(self):
+	def set_InvoicingType(self, InvoicingType):  # Integer
+		self.add_query_param('InvoicingType', InvoicingType)
+	def get_ProcessWay(self): # Integer
 		return self.get_query_params().get('ProcessWay')
 
-	def set_ProcessWay(self,ProcessWay):
-		self.add_query_param('ProcessWay',ProcessWay)
-
-	def get_OwnerId(self):
+	def set_ProcessWay(self, ProcessWay):  # Integer
+		self.add_query_param('ProcessWay', ProcessWay)
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_InvoiceAmount(self):
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_InvoiceAmount(self): # Long
 		return self.get_query_params().get('InvoiceAmount')
 
-	def set_InvoiceAmount(self,InvoiceAmount):
-		self.add_query_param('InvoiceAmount',InvoiceAmount)
-
-	def get_AddressId(self):
+	def set_InvoiceAmount(self, InvoiceAmount):  # Long
+		self.add_query_param('InvoiceAmount', InvoiceAmount)
+	def get_AddressId(self): # Long
 		return self.get_query_params().get('AddressId')
 
-	def set_AddressId(self,AddressId):
-		self.add_query_param('AddressId',AddressId)
-
-	def get_ApplyUserNick(self):
+	def set_AddressId(self, AddressId):  # Long
+		self.add_query_param('AddressId', AddressId)
+	def get_ApplyUserNick(self): # String
 		return self.get_query_params().get('ApplyUserNick')
 
-	def set_ApplyUserNick(self,ApplyUserNick):
-		self.add_query_param('ApplyUserNick',ApplyUserNick)
-
-	def get_InvoiceByAmount(self):
+	def set_ApplyUserNick(self, ApplyUserNick):  # String
+		self.add_query_param('ApplyUserNick', ApplyUserNick)
+	def get_InvoiceByAmount(self): # Boolean
 		return self.get_query_params().get('InvoiceByAmount')
 
-	def set_InvoiceByAmount(self,InvoiceByAmount):
-		self.add_query_param('InvoiceByAmount',InvoiceByAmount)
-
-	def get_CustomerId(self):
+	def set_InvoiceByAmount(self, InvoiceByAmount):  # Boolean
+		self.add_query_param('InvoiceByAmount', InvoiceByAmount)
+	def get_CustomerId(self): # Long
 		return self.get_query_params().get('CustomerId')
 
-	def set_CustomerId(self,CustomerId):
-		self.add_query_param('CustomerId',CustomerId)
-
-	def get_SelectedIdss(self):
+	def set_CustomerId(self, CustomerId):  # Long
+		self.add_query_param('CustomerId', CustomerId)
+	def get_SelectedIdss(self): # RepeatList
 		return self.get_query_params().get('SelectedIds')
 
-	def set_SelectedIdss(self, SelectedIdss):
-		for depth1 in range(len(SelectedIdss)):
-			if SelectedIdss[depth1] is not None:
-				self.add_query_param('SelectedIds.' + str(depth1 + 1) , SelectedIdss[depth1])
-
-	def get_UserRemark(self):
+	def set_SelectedIdss(self, SelectedIds):  # RepeatList
+		for depth1 in range(len(SelectedIds)):
+			self.add_query_param('SelectedIds.' + str(depth1 + 1), SelectedIds[depth1])
+	def get_UserRemark(self): # String
 		return self.get_query_params().get('UserRemark')
 
-	def set_UserRemark(self,UserRemark):
-		self.add_query_param('UserRemark',UserRemark)
+	def set_UserRemark(self, UserRemark):  # String
+		self.add_query_param('UserRemark', UserRemark)

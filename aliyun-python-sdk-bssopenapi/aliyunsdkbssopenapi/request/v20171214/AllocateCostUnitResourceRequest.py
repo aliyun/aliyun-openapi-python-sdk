@@ -25,46 +25,42 @@ class AllocateCostUnitResourceRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'AllocateCostUnitResource')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ResourceInstanceLists(self):
+	def get_ResourceInstanceLists(self): # RepeatList
 		return self.get_query_params().get('ResourceInstanceList')
 
-	def set_ResourceInstanceLists(self, ResourceInstanceLists):
-		for depth1 in range(len(ResourceInstanceLists)):
-			if ResourceInstanceLists[depth1].get('ResourceId') is not None:
-				self.add_query_param('ResourceInstanceList.' + str(depth1 + 1) + '.ResourceId', ResourceInstanceLists[depth1].get('ResourceId'))
-			if ResourceInstanceLists[depth1].get('CommodityCode') is not None:
-				self.add_query_param('ResourceInstanceList.' + str(depth1 + 1) + '.CommodityCode', ResourceInstanceLists[depth1].get('CommodityCode'))
-			if ResourceInstanceLists[depth1].get('ApportionCode') is not None:
-				self.add_query_param('ResourceInstanceList.' + str(depth1 + 1) + '.ApportionCode', ResourceInstanceLists[depth1].get('ApportionCode'))
-			if ResourceInstanceLists[depth1].get('ResourceUserId') is not None:
-				self.add_query_param('ResourceInstanceList.' + str(depth1 + 1) + '.ResourceUserId', ResourceInstanceLists[depth1].get('ResourceUserId'))
-
-	def get_FromUnitId(self):
+	def set_ResourceInstanceLists(self, ResourceInstanceList):  # RepeatList
+		for depth1 in range(len(ResourceInstanceList)):
+			if ResourceInstanceList[depth1].get('ResourceId') is not None:
+				self.add_query_param('ResourceInstanceList.' + str(depth1 + 1) + '.ResourceId', ResourceInstanceList[depth1].get('ResourceId'))
+			if ResourceInstanceList[depth1].get('CommodityCode') is not None:
+				self.add_query_param('ResourceInstanceList.' + str(depth1 + 1) + '.CommodityCode', ResourceInstanceList[depth1].get('CommodityCode'))
+			if ResourceInstanceList[depth1].get('ApportionCode') is not None:
+				self.add_query_param('ResourceInstanceList.' + str(depth1 + 1) + '.ApportionCode', ResourceInstanceList[depth1].get('ApportionCode'))
+			if ResourceInstanceList[depth1].get('ResourceUserId') is not None:
+				self.add_query_param('ResourceInstanceList.' + str(depth1 + 1) + '.ResourceUserId', ResourceInstanceList[depth1].get('ResourceUserId'))
+	def get_FromUnitId(self): # Long
 		return self.get_query_params().get('FromUnitId')
 
-	def set_FromUnitId(self,FromUnitId):
-		self.add_query_param('FromUnitId',FromUnitId)
-
-	def get_ToUnitId(self):
+	def set_FromUnitId(self, FromUnitId):  # Long
+		self.add_query_param('FromUnitId', FromUnitId)
+	def get_ToUnitId(self): # Long
 		return self.get_query_params().get('ToUnitId')
 
-	def set_ToUnitId(self,ToUnitId):
-		self.add_query_param('ToUnitId',ToUnitId)
-
-	def get_FromUnitUserId(self):
+	def set_ToUnitId(self, ToUnitId):  # Long
+		self.add_query_param('ToUnitId', ToUnitId)
+	def get_FromUnitUserId(self): # Long
 		return self.get_query_params().get('FromUnitUserId')
 
-	def set_FromUnitUserId(self,FromUnitUserId):
-		self.add_query_param('FromUnitUserId',FromUnitUserId)
-
-	def get_ToUnitUserId(self):
+	def set_FromUnitUserId(self, FromUnitUserId):  # Long
+		self.add_query_param('FromUnitUserId', FromUnitUserId)
+	def get_ToUnitUserId(self): # Long
 		return self.get_query_params().get('ToUnitUserId')
 
-	def set_ToUnitUserId(self,ToUnitUserId):
-		self.add_query_param('ToUnitUserId',ToUnitUserId)
+	def set_ToUnitUserId(self, ToUnitUserId):  # Long
+		self.add_query_param('ToUnitUserId', ToUnitUserId)

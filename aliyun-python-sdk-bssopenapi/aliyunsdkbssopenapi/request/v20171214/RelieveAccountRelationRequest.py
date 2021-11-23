@@ -25,32 +25,29 @@ class RelieveAccountRelationRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'RelieveAccountRelation')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_RelationType(self):
+	def get_RelationType(self): # String
 		return self.get_query_params().get('RelationType')
 
-	def set_RelationType(self,RelationType):
-		self.add_query_param('RelationType',RelationType)
-
-	def get_ParentUserId(self):
+	def set_RelationType(self, RelationType):  # String
+		self.add_query_param('RelationType', RelationType)
+	def get_ParentUserId(self): # Long
 		return self.get_query_params().get('ParentUserId')
 
-	def set_ParentUserId(self,ParentUserId):
-		self.add_query_param('ParentUserId',ParentUserId)
-
-	def get_ChildUserId(self):
+	def set_ParentUserId(self, ParentUserId):  # Long
+		self.add_query_param('ParentUserId', ParentUserId)
+	def get_ChildUserId(self): # Long
 		return self.get_query_params().get('ChildUserId')
 
-	def set_ChildUserId(self,ChildUserId):
-		self.add_query_param('ChildUserId',ChildUserId)
-
-	def get_RequestId(self):
+	def set_ChildUserId(self, ChildUserId):  # Long
+		self.add_query_param('ChildUserId', ChildUserId)
+	def get_RequestId(self): # String
 		return self.get_query_params().get('RequestId')
 
-	def set_RequestId(self,RequestId):
-		self.add_query_param('RequestId',RequestId)
+	def set_RequestId(self, RequestId):  # String
+		self.add_query_param('RequestId', RequestId)

@@ -25,94 +25,80 @@ class QueryEvaluateListRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'QueryEvaluateList')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_EndSearchTime(self):
+	def get_EndSearchTime(self): # String
 		return self.get_query_params().get('EndSearchTime')
 
-	def set_EndSearchTime(self,EndSearchTime):
-		self.add_query_param('EndSearchTime',EndSearchTime)
-
-	def get_OutBizId(self):
+	def set_EndSearchTime(self, EndSearchTime):  # String
+		self.add_query_param('EndSearchTime', EndSearchTime)
+	def get_OutBizId(self): # String
 		return self.get_query_params().get('OutBizId')
 
-	def set_OutBizId(self,OutBizId):
-		self.add_query_param('OutBizId',OutBizId)
-
-	def get_SortType(self):
+	def set_OutBizId(self, OutBizId):  # String
+		self.add_query_param('OutBizId', OutBizId)
+	def get_SortType(self): # Integer
 		return self.get_query_params().get('SortType')
 
-	def set_SortType(self,SortType):
-		self.add_query_param('SortType',SortType)
-
-	def get_Type(self):
+	def set_SortType(self, SortType):  # Integer
+		self.add_query_param('SortType', SortType)
+	def get_Type(self): # Integer
 		return self.get_query_params().get('Type')
 
-	def set_Type(self,Type):
-		self.add_query_param('Type',Type)
-
-	def get_PageNum(self):
+	def set_Type(self, Type):  # Integer
+		self.add_query_param('Type', Type)
+	def get_PageNum(self): # Integer
 		return self.get_query_params().get('PageNum')
 
-	def set_PageNum(self,PageNum):
-		self.add_query_param('PageNum',PageNum)
-
-	def get_PageSize(self):
+	def set_PageNum(self, PageNum):  # Integer
+		self.add_query_param('PageNum', PageNum)
+	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_EndAmount(self):
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
+	def get_EndAmount(self): # Long
 		return self.get_query_params().get('EndAmount')
 
-	def set_EndAmount(self,EndAmount):
-		self.add_query_param('EndAmount',EndAmount)
-
-	def get_BillCycle(self):
+	def set_EndAmount(self, EndAmount):  # Long
+		self.add_query_param('EndAmount', EndAmount)
+	def get_BillCycle(self): # String
 		return self.get_query_params().get('BillCycle')
 
-	def set_BillCycle(self,BillCycle):
-		self.add_query_param('BillCycle',BillCycle)
-
-	def get_BizTypeLists(self):
+	def set_BillCycle(self, BillCycle):  # String
+		self.add_query_param('BillCycle', BillCycle)
+	def get_BizTypeLists(self): # RepeatList
 		return self.get_query_params().get('BizTypeList')
 
-	def set_BizTypeLists(self, BizTypeLists):
-		for depth1 in range(len(BizTypeLists)):
-			if BizTypeLists[depth1] is not None:
-				self.add_query_param('BizTypeList.' + str(depth1 + 1) , BizTypeLists[depth1])
-
-	def get_OwnerId(self):
+	def set_BizTypeLists(self, BizTypeList):  # RepeatList
+		for depth1 in range(len(BizTypeList)):
+			self.add_query_param('BizTypeList.' + str(depth1 + 1), BizTypeList[depth1])
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_StartSearchTime(self):
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_StartSearchTime(self): # String
 		return self.get_query_params().get('StartSearchTime')
 
-	def set_StartSearchTime(self,StartSearchTime):
-		self.add_query_param('StartSearchTime',StartSearchTime)
-
-	def get_EndBizTime(self):
+	def set_StartSearchTime(self, StartSearchTime):  # String
+		self.add_query_param('StartSearchTime', StartSearchTime)
+	def get_EndBizTime(self): # String
 		return self.get_query_params().get('EndBizTime')
 
-	def set_EndBizTime(self,EndBizTime):
-		self.add_query_param('EndBizTime',EndBizTime)
-
-	def get_StartAmount(self):
+	def set_EndBizTime(self, EndBizTime):  # String
+		self.add_query_param('EndBizTime', EndBizTime)
+	def get_StartAmount(self): # Long
 		return self.get_query_params().get('StartAmount')
 
-	def set_StartAmount(self,StartAmount):
-		self.add_query_param('StartAmount',StartAmount)
-
-	def get_StartBizTime(self):
+	def set_StartAmount(self, StartAmount):  # Long
+		self.add_query_param('StartAmount', StartAmount)
+	def get_StartBizTime(self): # String
 		return self.get_query_params().get('StartBizTime')
 
-	def set_StartBizTime(self,StartBizTime):
-		self.add_query_param('StartBizTime',StartBizTime)
+	def set_StartBizTime(self, StartBizTime):  # String
+		self.add_query_param('StartBizTime', StartBizTime)

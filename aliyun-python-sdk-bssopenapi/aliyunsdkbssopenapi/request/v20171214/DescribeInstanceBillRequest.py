@@ -25,86 +25,74 @@ class DescribeInstanceBillRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'DescribeInstanceBill')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ProductCode(self):
+	def get_ProductCode(self): # String
 		return self.get_query_params().get('ProductCode')
 
-	def set_ProductCode(self,ProductCode):
-		self.add_query_param('ProductCode',ProductCode)
-
-	def get_IsHideZeroCharge(self):
+	def set_ProductCode(self, ProductCode):  # String
+		self.add_query_param('ProductCode', ProductCode)
+	def get_IsHideZeroCharge(self): # Boolean
 		return self.get_query_params().get('IsHideZeroCharge')
 
-	def set_IsHideZeroCharge(self,IsHideZeroCharge):
-		self.add_query_param('IsHideZeroCharge',IsHideZeroCharge)
-
-	def get_SubscriptionType(self):
+	def set_IsHideZeroCharge(self, IsHideZeroCharge):  # Boolean
+		self.add_query_param('IsHideZeroCharge', IsHideZeroCharge)
+	def get_SubscriptionType(self): # String
 		return self.get_query_params().get('SubscriptionType')
 
-	def set_SubscriptionType(self,SubscriptionType):
-		self.add_query_param('SubscriptionType',SubscriptionType)
-
-	def get_BillOwnerId(self):
+	def set_SubscriptionType(self, SubscriptionType):  # String
+		self.add_query_param('SubscriptionType', SubscriptionType)
+	def get_BillOwnerId(self): # Long
 		return self.get_query_params().get('BillOwnerId')
 
-	def set_BillOwnerId(self,BillOwnerId):
-		self.add_query_param('BillOwnerId',BillOwnerId)
-
-	def get_ProductType(self):
+	def set_BillOwnerId(self, BillOwnerId):  # Long
+		self.add_query_param('BillOwnerId', BillOwnerId)
+	def get_ProductType(self): # String
 		return self.get_query_params().get('ProductType')
 
-	def set_ProductType(self,ProductType):
-		self.add_query_param('ProductType',ProductType)
-
-	def get_NextToken(self):
+	def set_ProductType(self, ProductType):  # String
+		self.add_query_param('ProductType', ProductType)
+	def get_NextToken(self): # String
 		return self.get_query_params().get('NextToken')
 
-	def set_NextToken(self,NextToken):
-		self.add_query_param('NextToken',NextToken)
-
-	def get_BillingCycle(self):
+	def set_NextToken(self, NextToken):  # String
+		self.add_query_param('NextToken', NextToken)
+	def get_BillingCycle(self): # String
 		return self.get_query_params().get('BillingCycle')
 
-	def set_BillingCycle(self,BillingCycle):
-		self.add_query_param('BillingCycle',BillingCycle)
-
-	def get_OwnerId(self):
+	def set_BillingCycle(self, BillingCycle):  # String
+		self.add_query_param('BillingCycle', BillingCycle)
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_BillingDate(self):
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_BillingDate(self): # String
 		return self.get_query_params().get('BillingDate')
 
-	def set_BillingDate(self,BillingDate):
-		self.add_query_param('BillingDate',BillingDate)
-
-	def get_IsBillingItem(self):
+	def set_BillingDate(self, BillingDate):  # String
+		self.add_query_param('BillingDate', BillingDate)
+	def get_IsBillingItem(self): # Boolean
 		return self.get_query_params().get('IsBillingItem')
 
-	def set_IsBillingItem(self,IsBillingItem):
-		self.add_query_param('IsBillingItem',IsBillingItem)
-
-	def get_InstanceID(self):
+	def set_IsBillingItem(self, IsBillingItem):  # Boolean
+		self.add_query_param('IsBillingItem', IsBillingItem)
+	def get_InstanceID(self): # String
 		return self.get_query_params().get('InstanceID')
 
-	def set_InstanceID(self,InstanceID):
-		self.add_query_param('InstanceID',InstanceID)
-
-	def get_Granularity(self):
+	def set_InstanceID(self, InstanceID):  # String
+		self.add_query_param('InstanceID', InstanceID)
+	def get_Granularity(self): # String
 		return self.get_query_params().get('Granularity')
 
-	def set_Granularity(self,Granularity):
-		self.add_query_param('Granularity',Granularity)
-
-	def get_MaxResults(self):
+	def set_Granularity(self, Granularity):  # String
+		self.add_query_param('Granularity', Granularity)
+	def get_MaxResults(self): # Integer
 		return self.get_query_params().get('MaxResults')
 
-	def set_MaxResults(self,MaxResults):
-		self.add_query_param('MaxResults',MaxResults)
+	def set_MaxResults(self, MaxResults):  # Integer
+		self.add_query_param('MaxResults', MaxResults)

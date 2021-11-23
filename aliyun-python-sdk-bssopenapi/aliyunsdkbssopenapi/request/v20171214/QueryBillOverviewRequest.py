@@ -25,38 +25,34 @@ class QueryBillOverviewRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'QueryBillOverview')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ProductCode(self):
+	def get_ProductCode(self): # String
 		return self.get_query_params().get('ProductCode')
 
-	def set_ProductCode(self,ProductCode):
-		self.add_query_param('ProductCode',ProductCode)
-
-	def get_SubscriptionType(self):
+	def set_ProductCode(self, ProductCode):  # String
+		self.add_query_param('ProductCode', ProductCode)
+	def get_SubscriptionType(self): # String
 		return self.get_query_params().get('SubscriptionType')
 
-	def set_SubscriptionType(self,SubscriptionType):
-		self.add_query_param('SubscriptionType',SubscriptionType)
-
-	def get_BillingCycle(self):
+	def set_SubscriptionType(self, SubscriptionType):  # String
+		self.add_query_param('SubscriptionType', SubscriptionType)
+	def get_BillingCycle(self): # String
 		return self.get_query_params().get('BillingCycle')
 
-	def set_BillingCycle(self,BillingCycle):
-		self.add_query_param('BillingCycle',BillingCycle)
-
-	def get_BillOwnerId(self):
+	def set_BillingCycle(self, BillingCycle):  # String
+		self.add_query_param('BillingCycle', BillingCycle)
+	def get_BillOwnerId(self): # Long
 		return self.get_query_params().get('BillOwnerId')
 
-	def set_BillOwnerId(self,BillOwnerId):
-		self.add_query_param('BillOwnerId',BillOwnerId)
-
-	def get_ProductType(self):
+	def set_BillOwnerId(self, BillOwnerId):  # Long
+		self.add_query_param('BillOwnerId', BillOwnerId)
+	def get_ProductType(self): # String
 		return self.get_query_params().get('ProductType')
 
-	def set_ProductType(self,ProductType):
-		self.add_query_param('ProductType',ProductType)
+	def set_ProductType(self, ProductType):  # String
+		self.add_query_param('ProductType', ProductType)

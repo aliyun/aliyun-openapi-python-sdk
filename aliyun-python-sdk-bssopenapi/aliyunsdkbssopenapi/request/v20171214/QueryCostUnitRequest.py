@@ -25,32 +25,29 @@ class QueryCostUnitRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'QueryCostUnit')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ParentUnitId(self):
+	def get_ParentUnitId(self): # Long
 		return self.get_query_params().get('ParentUnitId')
 
-	def set_ParentUnitId(self,ParentUnitId):
-		self.add_query_param('ParentUnitId',ParentUnitId)
-
-	def get_PageNum(self):
+	def set_ParentUnitId(self, ParentUnitId):  # Long
+		self.add_query_param('ParentUnitId', ParentUnitId)
+	def get_PageNum(self): # Integer
 		return self.get_query_params().get('PageNum')
 
-	def set_PageNum(self,PageNum):
-		self.add_query_param('PageNum',PageNum)
-
-	def get_PageSize(self):
+	def set_PageNum(self, PageNum):  # Integer
+		self.add_query_param('PageNum', PageNum)
+	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_OwnerUid(self):
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
+	def get_OwnerUid(self): # Long
 		return self.get_query_params().get('OwnerUid')
 
-	def set_OwnerUid(self,OwnerUid):
-		self.add_query_param('OwnerUid',OwnerUid)
+	def set_OwnerUid(self, OwnerUid):  # Long
+		self.add_query_param('OwnerUid', OwnerUid)

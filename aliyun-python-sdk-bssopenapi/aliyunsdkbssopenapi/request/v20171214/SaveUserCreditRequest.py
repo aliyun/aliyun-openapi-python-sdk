@@ -26,56 +26,49 @@ class SaveUserCreditRequest(RpcRequest):
 		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'SaveUserCredit')
 		self.set_protocol_type('https')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_AvoidExpiration(self):
+	def get_AvoidExpiration(self): # Boolean
 		return self.get_query_params().get('AvoidExpiration')
 
-	def set_AvoidExpiration(self,AvoidExpiration):
-		self.add_query_param('AvoidExpiration',AvoidExpiration)
-
-	def get_Description(self):
+	def set_AvoidExpiration(self, AvoidExpiration):  # Boolean
+		self.add_query_param('AvoidExpiration', AvoidExpiration)
+	def get_Description(self): # String
 		return self.get_query_params().get('Description')
 
-	def set_Description(self,Description):
-		self.add_query_param('Description',Description)
-
-	def get_AvoidPrepaidNotification(self):
+	def set_Description(self, Description):  # String
+		self.add_query_param('Description', Description)
+	def get_AvoidPrepaidNotification(self): # Boolean
 		return self.get_query_params().get('AvoidPrepaidNotification')
 
-	def set_AvoidPrepaidNotification(self,AvoidPrepaidNotification):
-		self.add_query_param('AvoidPrepaidNotification',AvoidPrepaidNotification)
-
-	def get_AvoidPrepaidExpiration(self):
+	def set_AvoidPrepaidNotification(self, AvoidPrepaidNotification):  # Boolean
+		self.add_query_param('AvoidPrepaidNotification', AvoidPrepaidNotification)
+	def get_AvoidPrepaidExpiration(self): # Boolean
 		return self.get_query_params().get('AvoidPrepaidExpiration')
 
-	def set_AvoidPrepaidExpiration(self,AvoidPrepaidExpiration):
-		self.add_query_param('AvoidPrepaidExpiration',AvoidPrepaidExpiration)
-
-	def get_AvoidNotification(self):
+	def set_AvoidPrepaidExpiration(self, AvoidPrepaidExpiration):  # Boolean
+		self.add_query_param('AvoidPrepaidExpiration', AvoidPrepaidExpiration)
+	def get_AvoidNotification(self): # Boolean
 		return self.get_query_params().get('AvoidNotification')
 
-	def set_AvoidNotification(self,AvoidNotification):
-		self.add_query_param('AvoidNotification',AvoidNotification)
-
-	def get_Operator(self):
+	def set_AvoidNotification(self, AvoidNotification):  # Boolean
+		self.add_query_param('AvoidNotification', AvoidNotification)
+	def get_Operator(self): # String
 		return self.get_query_params().get('Operator')
 
-	def set_Operator(self,Operator):
-		self.add_query_param('Operator',Operator)
-
-	def get_CreditValue(self):
+	def set_Operator(self, Operator):  # String
+		self.add_query_param('Operator', Operator)
+	def get_CreditValue(self): # String
 		return self.get_query_params().get('CreditValue')
 
-	def set_CreditValue(self,CreditValue):
-		self.add_query_param('CreditValue',CreditValue)
-
-	def get_CreditType(self):
+	def set_CreditValue(self, CreditValue):  # String
+		self.add_query_param('CreditValue', CreditValue)
+	def get_CreditType(self): # String
 		return self.get_query_params().get('CreditType')
 
-	def set_CreditType(self,CreditType):
-		self.add_query_param('CreditType',CreditType)
+	def set_CreditType(self, CreditType):  # String
+		self.add_query_param('CreditType', CreditType)

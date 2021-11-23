@@ -25,56 +25,49 @@ class QueryRIUtilizationDetailRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'QueryRIUtilizationDetail')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_DeductedInstanceId(self):
+	def get_DeductedInstanceId(self): # String
 		return self.get_query_params().get('DeductedInstanceId')
 
-	def set_DeductedInstanceId(self,DeductedInstanceId):
-		self.add_query_param('DeductedInstanceId',DeductedInstanceId)
-
-	def get_InstanceSpec(self):
+	def set_DeductedInstanceId(self, DeductedInstanceId):  # String
+		self.add_query_param('DeductedInstanceId', DeductedInstanceId)
+	def get_InstanceSpec(self): # String
 		return self.get_query_params().get('InstanceSpec')
 
-	def set_InstanceSpec(self,InstanceSpec):
-		self.add_query_param('InstanceSpec',InstanceSpec)
-
-	def get_EndTime(self):
+	def set_InstanceSpec(self, InstanceSpec):  # String
+		self.add_query_param('InstanceSpec', InstanceSpec)
+	def get_EndTime(self): # String
 		return self.get_query_params().get('EndTime')
 
-	def set_EndTime(self,EndTime):
-		self.add_query_param('EndTime',EndTime)
-
-	def get_RIInstanceId(self):
+	def set_EndTime(self, EndTime):  # String
+		self.add_query_param('EndTime', EndTime)
+	def get_RIInstanceId(self): # String
 		return self.get_query_params().get('RIInstanceId')
 
-	def set_RIInstanceId(self,RIInstanceId):
-		self.add_query_param('RIInstanceId',RIInstanceId)
-
-	def get_StartTime(self):
+	def set_RIInstanceId(self, RIInstanceId):  # String
+		self.add_query_param('RIInstanceId', RIInstanceId)
+	def get_StartTime(self): # String
 		return self.get_query_params().get('StartTime')
 
-	def set_StartTime(self,StartTime):
-		self.add_query_param('StartTime',StartTime)
-
-	def get_PageNum(self):
+	def set_StartTime(self, StartTime):  # String
+		self.add_query_param('StartTime', StartTime)
+	def get_PageNum(self): # Integer
 		return self.get_query_params().get('PageNum')
 
-	def set_PageNum(self,PageNum):
-		self.add_query_param('PageNum',PageNum)
-
-	def get_PageSize(self):
+	def set_PageNum(self, PageNum):  # Integer
+		self.add_query_param('PageNum', PageNum)
+	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_RICommodityCode(self):
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
+	def get_RICommodityCode(self): # String
 		return self.get_query_params().get('RICommodityCode')
 
-	def set_RICommodityCode(self,RICommodityCode):
-		self.add_query_param('RICommodityCode',RICommodityCode)
+	def set_RICommodityCode(self, RICommodityCode):  # String
+		self.add_query_param('RICommodityCode', RICommodityCode)

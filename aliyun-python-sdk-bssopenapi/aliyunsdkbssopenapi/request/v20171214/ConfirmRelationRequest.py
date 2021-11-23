@@ -25,46 +25,40 @@ class ConfirmRelationRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'ConfirmRelation')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_RelationType(self):
+	def get_RelationType(self): # String
 		return self.get_query_params().get('RelationType')
 
-	def set_RelationType(self,RelationType):
-		self.add_query_param('RelationType',RelationType)
-
-	def get_ParentUserId(self):
+	def set_RelationType(self, RelationType):  # String
+		self.add_query_param('RelationType', RelationType)
+	def get_ParentUserId(self): # Long
 		return self.get_query_params().get('ParentUserId')
 
-	def set_ParentUserId(self,ParentUserId):
-		self.add_query_param('ParentUserId',ParentUserId)
-
-	def get_ConfirmCode(self):
+	def set_ParentUserId(self, ParentUserId):  # Long
+		self.add_query_param('ParentUserId', ParentUserId)
+	def get_ConfirmCode(self): # String
 		return self.get_query_params().get('ConfirmCode')
 
-	def set_ConfirmCode(self,ConfirmCode):
-		self.add_query_param('ConfirmCode',ConfirmCode)
-
-	def get_ChildUserId(self):
+	def set_ConfirmCode(self, ConfirmCode):  # String
+		self.add_query_param('ConfirmCode', ConfirmCode)
+	def get_ChildUserId(self): # Long
 		return self.get_query_params().get('ChildUserId')
 
-	def set_ChildUserId(self,ChildUserId):
-		self.add_query_param('ChildUserId',ChildUserId)
-
-	def get_RequestId(self):
+	def set_ChildUserId(self, ChildUserId):  # Long
+		self.add_query_param('ChildUserId', ChildUserId)
+	def get_RequestId(self): # String
 		return self.get_query_params().get('RequestId')
 
-	def set_RequestId(self,RequestId):
-		self.add_query_param('RequestId',RequestId)
-
-	def get_PermissionCodess(self):
+	def set_RequestId(self, RequestId):  # String
+		self.add_query_param('RequestId', RequestId)
+	def get_PermissionCodess(self): # RepeatList
 		return self.get_query_params().get('PermissionCodes')
 
-	def set_PermissionCodess(self, PermissionCodess):
-		for depth1 in range(len(PermissionCodess)):
-			if PermissionCodess[depth1] is not None:
-				self.add_query_param('PermissionCodes.' + str(depth1 + 1) , PermissionCodess[depth1])
+	def set_PermissionCodess(self, PermissionCodes):  # RepeatList
+		for depth1 in range(len(PermissionCodes)):
+			self.add_query_param('PermissionCodes.' + str(depth1 + 1), PermissionCodes[depth1])

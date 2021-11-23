@@ -25,20 +25,20 @@ class ModifyCostUnitRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'ModifyCostUnit')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_UnitEntityLists(self):
+	def get_UnitEntityLists(self): # RepeatList
 		return self.get_query_params().get('UnitEntityList')
 
-	def set_UnitEntityLists(self, UnitEntityLists):
-		for depth1 in range(len(UnitEntityLists)):
-			if UnitEntityLists[depth1].get('NewUnitName') is not None:
-				self.add_query_param('UnitEntityList.' + str(depth1 + 1) + '.NewUnitName', UnitEntityLists[depth1].get('NewUnitName'))
-			if UnitEntityLists[depth1].get('UnitId') is not None:
-				self.add_query_param('UnitEntityList.' + str(depth1 + 1) + '.UnitId', UnitEntityLists[depth1].get('UnitId'))
-			if UnitEntityLists[depth1].get('OwnerUid') is not None:
-				self.add_query_param('UnitEntityList.' + str(depth1 + 1) + '.OwnerUid', UnitEntityLists[depth1].get('OwnerUid'))
+	def set_UnitEntityLists(self, UnitEntityList):  # RepeatList
+		for depth1 in range(len(UnitEntityList)):
+			if UnitEntityList[depth1].get('NewUnitName') is not None:
+				self.add_query_param('UnitEntityList.' + str(depth1 + 1) + '.NewUnitName', UnitEntityList[depth1].get('NewUnitName'))
+			if UnitEntityList[depth1].get('UnitId') is not None:
+				self.add_query_param('UnitEntityList.' + str(depth1 + 1) + '.UnitId', UnitEntityList[depth1].get('UnitId'))
+			if UnitEntityList[depth1].get('OwnerUid') is not None:
+				self.add_query_param('UnitEntityList.' + str(depth1 + 1) + '.OwnerUid', UnitEntityList[depth1].get('OwnerUid'))

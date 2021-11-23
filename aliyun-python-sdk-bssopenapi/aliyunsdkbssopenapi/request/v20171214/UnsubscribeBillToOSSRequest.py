@@ -25,20 +25,19 @@ class UnsubscribeBillToOSSRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'UnsubscribeBillToOSS')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_SubscribeType(self):
+	def get_SubscribeType(self): # String
 		return self.get_query_params().get('SubscribeType')
 
-	def set_SubscribeType(self,SubscribeType):
-		self.add_query_param('SubscribeType',SubscribeType)
-
-	def get_MultAccountRelSubscribe(self):
+	def set_SubscribeType(self, SubscribeType):  # String
+		self.add_query_param('SubscribeType', SubscribeType)
+	def get_MultAccountRelSubscribe(self): # String
 		return self.get_query_params().get('MultAccountRelSubscribe')
 
-	def set_MultAccountRelSubscribe(self,MultAccountRelSubscribe):
-		self.add_query_param('MultAccountRelSubscribe',MultAccountRelSubscribe)
+	def set_MultAccountRelSubscribe(self, MultAccountRelSubscribe):  # String
+		self.add_query_param('MultAccountRelSubscribe', MultAccountRelSubscribe)

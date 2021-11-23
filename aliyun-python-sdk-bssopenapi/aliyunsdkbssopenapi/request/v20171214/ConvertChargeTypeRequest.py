@@ -25,44 +25,39 @@ class ConvertChargeTypeRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'ConvertChargeType')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Period(self):
+	def get_Period(self): # Integer
 		return self.get_query_params().get('Period')
 
-	def set_Period(self,Period):
-		self.add_query_param('Period',Period)
-
-	def get_ProductCode(self):
+	def set_Period(self, Period):  # Integer
+		self.add_query_param('Period', Period)
+	def get_ProductCode(self): # String
 		return self.get_query_params().get('ProductCode')
 
-	def set_ProductCode(self,ProductCode):
-		self.add_query_param('ProductCode',ProductCode)
-
-	def get_SubscriptionType(self):
+	def set_ProductCode(self, ProductCode):  # String
+		self.add_query_param('ProductCode', ProductCode)
+	def get_SubscriptionType(self): # String
 		return self.get_query_params().get('SubscriptionType')
 
-	def set_SubscriptionType(self,SubscriptionType):
-		self.add_query_param('SubscriptionType',SubscriptionType)
-
-	def get_OwnerId(self):
+	def set_SubscriptionType(self, SubscriptionType):  # String
+		self.add_query_param('SubscriptionType', SubscriptionType)
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_ProductType(self):
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_ProductType(self): # String
 		return self.get_query_params().get('ProductType')
 
-	def set_ProductType(self,ProductType):
-		self.add_query_param('ProductType',ProductType)
-
-	def get_InstanceId(self):
+	def set_ProductType(self, ProductType):  # String
+		self.add_query_param('ProductType', ProductType)
+	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)

@@ -25,20 +25,19 @@ class DeleteCostUnitRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'DeleteCostUnit')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_UnitId(self):
+	def get_UnitId(self): # Long
 		return self.get_query_params().get('UnitId')
 
-	def set_UnitId(self,UnitId):
-		self.add_query_param('UnitId',UnitId)
-
-	def get_OwnerUid(self):
+	def set_UnitId(self, UnitId):  # Long
+		self.add_query_param('UnitId', UnitId)
+	def get_OwnerUid(self): # Long
 		return self.get_query_params().get('OwnerUid')
 
-	def set_OwnerUid(self,OwnerUid):
-		self.add_query_param('OwnerUid',OwnerUid)
+	def set_OwnerUid(self, OwnerUid):  # Long
+		self.add_query_param('OwnerUid', OwnerUid)

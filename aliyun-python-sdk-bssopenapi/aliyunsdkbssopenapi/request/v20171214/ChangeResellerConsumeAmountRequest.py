@@ -25,56 +25,49 @@ class ChangeResellerConsumeAmountRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'ChangeResellerConsumeAmount')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Amount(self):
+	def get_Amount(self): # String
 		return self.get_query_params().get('Amount')
 
-	def set_Amount(self,Amount):
-		self.add_query_param('Amount',Amount)
-
-	def get_OutBizId(self):
+	def set_Amount(self, Amount):  # String
+		self.add_query_param('Amount', Amount)
+	def get_OutBizId(self): # String
 		return self.get_query_params().get('OutBizId')
 
-	def set_OutBizId(self,OutBizId):
-		self.add_query_param('OutBizId',OutBizId)
-
-	def get_Source(self):
+	def set_OutBizId(self, OutBizId):  # String
+		self.add_query_param('OutBizId', OutBizId)
+	def get_Source(self): # String
 		return self.get_query_params().get('Source')
 
-	def set_Source(self,Source):
-		self.add_query_param('Source',Source)
-
-	def get_OwnerId(self):
+	def set_Source(self, Source):  # String
+		self.add_query_param('Source', Source)
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_BusinessType(self):
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_BusinessType(self): # String
 		return self.get_query_params().get('BusinessType')
 
-	def set_BusinessType(self,BusinessType):
-		self.add_query_param('BusinessType',BusinessType)
-
-	def get_AdjustType(self):
+	def set_BusinessType(self, BusinessType):  # String
+		self.add_query_param('BusinessType', BusinessType)
+	def get_AdjustType(self): # String
 		return self.get_query_params().get('AdjustType')
 
-	def set_AdjustType(self,AdjustType):
-		self.add_query_param('AdjustType',AdjustType)
-
-	def get_ExtendMap(self):
+	def set_AdjustType(self, AdjustType):  # String
+		self.add_query_param('AdjustType', AdjustType)
+	def get_ExtendMap(self): # String
 		return self.get_query_params().get('ExtendMap')
 
-	def set_ExtendMap(self,ExtendMap):
-		self.add_query_param('ExtendMap',ExtendMap)
-
-	def get_Currency(self):
+	def set_ExtendMap(self, ExtendMap):  # String
+		self.add_query_param('ExtendMap', ExtendMap)
+	def get_Currency(self): # String
 		return self.get_query_params().get('Currency')
 
-	def set_Currency(self,Currency):
-		self.add_query_param('Currency',Currency)
+	def set_Currency(self, Currency):  # String
+		self.add_query_param('Currency', Currency)

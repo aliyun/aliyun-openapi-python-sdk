@@ -25,38 +25,34 @@ class SubscribeBillToOSSRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'SubscribeBillToOSS')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_BucketOwnerId(self):
+	def get_BucketOwnerId(self): # Long
 		return self.get_query_params().get('BucketOwnerId')
 
-	def set_BucketOwnerId(self,BucketOwnerId):
-		self.add_query_param('BucketOwnerId',BucketOwnerId)
-
-	def get_SubscribeType(self):
+	def set_BucketOwnerId(self, BucketOwnerId):  # Long
+		self.add_query_param('BucketOwnerId', BucketOwnerId)
+	def get_SubscribeType(self): # String
 		return self.get_query_params().get('SubscribeType')
 
-	def set_SubscribeType(self,SubscribeType):
-		self.add_query_param('SubscribeType',SubscribeType)
-
-	def get_SubscribeBucket(self):
+	def set_SubscribeType(self, SubscribeType):  # String
+		self.add_query_param('SubscribeType', SubscribeType)
+	def get_SubscribeBucket(self): # String
 		return self.get_query_params().get('SubscribeBucket')
 
-	def set_SubscribeBucket(self,SubscribeBucket):
-		self.add_query_param('SubscribeBucket',SubscribeBucket)
-
-	def get_BeginBillingCycle(self):
+	def set_SubscribeBucket(self, SubscribeBucket):  # String
+		self.add_query_param('SubscribeBucket', SubscribeBucket)
+	def get_BeginBillingCycle(self): # String
 		return self.get_query_params().get('BeginBillingCycle')
 
-	def set_BeginBillingCycle(self,BeginBillingCycle):
-		self.add_query_param('BeginBillingCycle',BeginBillingCycle)
-
-	def get_MultAccountRelSubscribe(self):
+	def set_BeginBillingCycle(self, BeginBillingCycle):  # String
+		self.add_query_param('BeginBillingCycle', BeginBillingCycle)
+	def get_MultAccountRelSubscribe(self): # String
 		return self.get_query_params().get('MultAccountRelSubscribe')
 
-	def set_MultAccountRelSubscribe(self,MultAccountRelSubscribe):
-		self.add_query_param('MultAccountRelSubscribe',MultAccountRelSubscribe)
+	def set_MultAccountRelSubscribe(self, MultAccountRelSubscribe):  # String
+		self.add_query_param('MultAccountRelSubscribe', MultAccountRelSubscribe)

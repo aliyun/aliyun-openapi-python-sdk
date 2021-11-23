@@ -25,50 +25,44 @@ class QueryUserOmsDataRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'QueryUserOmsData')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_EndTime(self):
+	def get_EndTime(self): # String
 		return self.get_query_params().get('EndTime')
 
-	def set_EndTime(self,EndTime):
-		self.add_query_param('EndTime',EndTime)
-
-	def get_StartTime(self):
+	def set_EndTime(self, EndTime):  # String
+		self.add_query_param('EndTime', EndTime)
+	def get_StartTime(self): # String
 		return self.get_query_params().get('StartTime')
 
-	def set_StartTime(self,StartTime):
-		self.add_query_param('StartTime',StartTime)
-
-	def get_OwnerId(self):
+	def set_StartTime(self, StartTime):  # String
+		self.add_query_param('StartTime', StartTime)
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_DataType(self):
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_DataType(self): # String
 		return self.get_query_params().get('DataType')
 
-	def set_DataType(self,DataType):
-		self.add_query_param('DataType',DataType)
-
-	def get_Marker(self):
+	def set_DataType(self, DataType):  # String
+		self.add_query_param('DataType', DataType)
+	def get_Marker(self): # String
 		return self.get_query_params().get('Marker')
 
-	def set_Marker(self,Marker):
-		self.add_query_param('Marker',Marker)
-
-	def get_PageSize(self):
+	def set_Marker(self, Marker):  # String
+		self.add_query_param('Marker', Marker)
+	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_Table(self):
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
+	def get_Table(self): # String
 		return self.get_query_params().get('Table')
 
-	def set_Table(self,Table):
-		self.add_query_param('Table',Table)
+	def set_Table(self, Table):  # String
+		self.add_query_param('Table', Table)

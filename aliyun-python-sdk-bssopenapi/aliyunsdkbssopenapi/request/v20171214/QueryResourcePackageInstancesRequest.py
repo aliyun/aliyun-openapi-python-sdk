@@ -25,44 +25,44 @@ class QueryResourcePackageInstancesRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'BssOpenApi', '2017-12-14', 'QueryResourcePackageInstances')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ExpiryTimeEnd(self):
+	def get_ExpiryTimeEnd(self): # String
 		return self.get_query_params().get('ExpiryTimeEnd')
 
-	def set_ExpiryTimeEnd(self,ExpiryTimeEnd):
-		self.add_query_param('ExpiryTimeEnd',ExpiryTimeEnd)
-
-	def get_ProductCode(self):
+	def set_ExpiryTimeEnd(self, ExpiryTimeEnd):  # String
+		self.add_query_param('ExpiryTimeEnd', ExpiryTimeEnd)
+	def get_ProductCode(self): # String
 		return self.get_query_params().get('ProductCode')
 
-	def set_ProductCode(self,ProductCode):
-		self.add_query_param('ProductCode',ProductCode)
-
-	def get_OwnerId(self):
+	def set_ProductCode(self, ProductCode):  # String
+		self.add_query_param('ProductCode', ProductCode)
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_ExpiryTimeStart(self):
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_ExpiryTimeStart(self): # String
 		return self.get_query_params().get('ExpiryTimeStart')
 
-	def set_ExpiryTimeStart(self,ExpiryTimeStart):
-		self.add_query_param('ExpiryTimeStart',ExpiryTimeStart)
-
-	def get_PageNum(self):
+	def set_ExpiryTimeStart(self, ExpiryTimeStart):  # String
+		self.add_query_param('ExpiryTimeStart', ExpiryTimeStart)
+	def get_PageNum(self): # Integer
 		return self.get_query_params().get('PageNum')
 
-	def set_PageNum(self,PageNum):
-		self.add_query_param('PageNum',PageNum)
+	def set_PageNum(self, PageNum):  # Integer
+		self.add_query_param('PageNum', PageNum)
+	def get_IncludePartner(self): # Boolean
+		return self.get_query_params().get('IncludePartner')
 
-	def get_PageSize(self):
+	def set_IncludePartner(self, IncludePartner):  # Boolean
+		self.add_query_param('IncludePartner', IncludePartner)
+	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
