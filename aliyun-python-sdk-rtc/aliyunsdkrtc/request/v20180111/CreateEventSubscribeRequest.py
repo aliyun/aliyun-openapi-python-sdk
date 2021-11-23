@@ -23,56 +23,48 @@ from aliyunsdkrtc.endpoint import endpoint_data
 class CreateEventSubscribeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'rtc', '2018-01-11', 'CreateEventSubscribe','rtc')
+		RpcRequest.__init__(self, 'rtc', '2018-01-11', 'CreateEventSubscribe')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ClientToken(self):
+	def get_ClientToken(self): # String
 		return self.get_query_params().get('ClientToken')
 
-	def set_ClientToken(self,ClientToken):
-		self.add_query_param('ClientToken',ClientToken)
-
-	def get_Eventss(self):
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_query_param('ClientToken', ClientToken)
+	def get_Eventss(self): # RepeatList
 		return self.get_query_params().get('Events')
 
-	def set_Eventss(self, Eventss):
-		for depth1 in range(len(Eventss)):
-			if Eventss[depth1] is not None:
-				self.add_query_param('Events.' + str(depth1 + 1) , Eventss[depth1])
-
-	def get_OwnerId(self):
+	def set_Eventss(self, Events):  # RepeatList
+		for depth1 in range(len(Events)):
+			self.add_query_param('Events.' + str(depth1 + 1), Events[depth1])
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_Userss(self):
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_Userss(self): # RepeatList
 		return self.get_query_params().get('Users')
 
-	def set_Userss(self, Userss):
-		for depth1 in range(len(Userss)):
-			if Userss[depth1] is not None:
-				self.add_query_param('Users.' + str(depth1 + 1) , Userss[depth1])
-
-	def get_AppId(self):
+	def set_Userss(self, Users):  # RepeatList
+		for depth1 in range(len(Users)):
+			self.add_query_param('Users.' + str(depth1 + 1), Users[depth1])
+	def get_AppId(self): # String
 		return self.get_query_params().get('AppId')
 
-	def set_AppId(self,AppId):
-		self.add_query_param('AppId',AppId)
-
-	def get_CallbackUrl(self):
+	def set_AppId(self, AppId):  # String
+		self.add_query_param('AppId', AppId)
+	def get_CallbackUrl(self): # String
 		return self.get_query_params().get('CallbackUrl')
 
-	def set_CallbackUrl(self,CallbackUrl):
-		self.add_query_param('CallbackUrl',CallbackUrl)
-
-	def get_ChannelId(self):
+	def set_CallbackUrl(self, CallbackUrl):  # String
+		self.add_query_param('CallbackUrl', CallbackUrl)
+	def get_ChannelId(self): # String
 		return self.get_query_params().get('ChannelId')
 
-	def set_ChannelId(self,ChannelId):
-		self.add_query_param('ChannelId',ChannelId)
+	def set_ChannelId(self, ChannelId):  # String
+		self.add_query_param('ChannelId', ChannelId)

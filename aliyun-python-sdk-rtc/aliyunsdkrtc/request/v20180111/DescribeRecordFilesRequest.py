@@ -23,60 +23,52 @@ from aliyunsdkrtc.endpoint import endpoint_data
 class DescribeRecordFilesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'rtc', '2018-01-11', 'DescribeRecordFiles','rtc')
+		RpcRequest.__init__(self, 'rtc', '2018-01-11', 'DescribeRecordFiles')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_StartTime(self):
+	def get_StartTime(self): # String
 		return self.get_query_params().get('StartTime')
 
-	def set_StartTime(self,StartTime):
-		self.add_query_param('StartTime',StartTime)
-
-	def get_PageNum(self):
+	def set_StartTime(self, StartTime):  # String
+		self.add_query_param('StartTime', StartTime)
+	def get_PageNum(self): # Integer
 		return self.get_query_params().get('PageNum')
 
-	def set_PageNum(self,PageNum):
-		self.add_query_param('PageNum',PageNum)
-
-	def get_TaskIdss(self):
+	def set_PageNum(self, PageNum):  # Integer
+		self.add_query_param('PageNum', PageNum)
+	def get_TaskIdss(self): # RepeatList
 		return self.get_query_params().get('TaskIds')
 
-	def set_TaskIdss(self, TaskIdss):
-		for depth1 in range(len(TaskIdss)):
-			if TaskIdss[depth1] is not None:
-				self.add_query_param('TaskIds.' + str(depth1 + 1) , TaskIdss[depth1])
-
-	def get_PageSize(self):
+	def set_TaskIdss(self, TaskIds):  # RepeatList
+		for depth1 in range(len(TaskIds)):
+			self.add_query_param('TaskIds.' + str(depth1 + 1), TaskIds[depth1])
+	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
-
-	def get_EndTime(self):
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
+	def get_EndTime(self): # String
 		return self.get_query_params().get('EndTime')
 
-	def set_EndTime(self,EndTime):
-		self.add_query_param('EndTime',EndTime)
-
-	def get_OwnerId(self):
+	def set_EndTime(self, EndTime):  # String
+		self.add_query_param('EndTime', EndTime)
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_AppId(self):
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_AppId(self): # String
 		return self.get_query_params().get('AppId')
 
-	def set_AppId(self,AppId):
-		self.add_query_param('AppId',AppId)
-
-	def get_ChannelId(self):
+	def set_AppId(self, AppId):  # String
+		self.add_query_param('AppId', AppId)
+	def get_ChannelId(self): # String
 		return self.get_query_params().get('ChannelId')
 
-	def set_ChannelId(self,ChannelId):
-		self.add_query_param('ChannelId',ChannelId)
+	def set_ChannelId(self, ChannelId):  # String
+		self.add_query_param('ChannelId', ChannelId)

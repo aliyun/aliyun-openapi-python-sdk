@@ -23,34 +23,53 @@ from aliyunsdkrtc.endpoint import endpoint_data
 class CreateAutoLiveStreamRuleRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'rtc', '2018-01-11', 'CreateAutoLiveStreamRule','rtc')
+		RpcRequest.__init__(self, 'rtc', '2018-01-11', 'CreateAutoLiveStreamRule')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_RuleName(self): # String
+		return self.get_query_params().get('RuleName')
 
-	def get_PlayDomain(self):
+	def set_RuleName(self, RuleName):  # String
+		self.add_query_param('RuleName', RuleName)
+	def get_ChannelIdPrefixess(self): # RepeatList
+		return self.get_query_params().get('ChannelIdPrefixes')
+
+	def set_ChannelIdPrefixess(self, ChannelIdPrefixes):  # RepeatList
+		for depth1 in range(len(ChannelIdPrefixes)):
+			self.add_query_param('ChannelIdPrefixes.' + str(depth1 + 1), ChannelIdPrefixes[depth1])
+	def get_PlayDomain(self): # String
 		return self.get_query_params().get('PlayDomain')
 
-	def set_PlayDomain(self,PlayDomain):
-		self.add_query_param('PlayDomain',PlayDomain)
-
-	def get_OwnerId(self):
+	def set_PlayDomain(self, PlayDomain):  # String
+		self.add_query_param('PlayDomain', PlayDomain)
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
-
-	def get_AppId(self):
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_AppId(self): # String
 		return self.get_query_params().get('AppId')
 
-	def set_AppId(self,AppId):
-		self.add_query_param('AppId',AppId)
-
-	def get_CallBack(self):
+	def set_AppId(self, AppId):  # String
+		self.add_query_param('AppId', AppId)
+	def get_CallBack(self): # String
 		return self.get_query_params().get('CallBack')
 
-	def set_CallBack(self,CallBack):
-		self.add_query_param('CallBack',CallBack)
+	def set_CallBack(self, CallBack):  # String
+		self.add_query_param('CallBack', CallBack)
+	def get_MediaEncode(self): # Integer
+		return self.get_query_params().get('MediaEncode')
+
+	def set_MediaEncode(self, MediaEncode):  # Integer
+		self.add_query_param('MediaEncode', MediaEncode)
+	def get_ChannelIdss(self): # RepeatList
+		return self.get_query_params().get('ChannelIds')
+
+	def set_ChannelIdss(self, ChannelIds):  # RepeatList
+		for depth1 in range(len(ChannelIds)):
+			self.add_query_param('ChannelIds.' + str(depth1 + 1), ChannelIds[depth1])

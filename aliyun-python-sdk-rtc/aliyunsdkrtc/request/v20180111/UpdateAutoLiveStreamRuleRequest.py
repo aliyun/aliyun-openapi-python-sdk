@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkrtc.endpoint import endpoint_data
 
-class DeleteAutoLiveStreamRuleRequest(RpcRequest):
+class UpdateAutoLiveStreamRuleRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'rtc', '2018-01-11', 'DeleteAutoLiveStreamRule')
+		RpcRequest.__init__(self, 'rtc', '2018-01-11', 'UpdateAutoLiveStreamRule')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,6 +31,22 @@ class DeleteAutoLiveStreamRuleRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_RuleName(self): # String
+		return self.get_query_params().get('RuleName')
+
+	def set_RuleName(self, RuleName):  # String
+		self.add_query_param('RuleName', RuleName)
+	def get_ChannelIdPrefixess(self): # RepeatList
+		return self.get_query_params().get('ChannelIdPrefixes')
+
+	def set_ChannelIdPrefixess(self, ChannelIdPrefixes):  # RepeatList
+		for depth1 in range(len(ChannelIdPrefixes)):
+			self.add_query_param('ChannelIdPrefixes.' + str(depth1 + 1), ChannelIdPrefixes[depth1])
+	def get_PlayDomain(self): # String
+		return self.get_query_params().get('PlayDomain')
+
+	def set_PlayDomain(self, PlayDomain):  # String
+		self.add_query_param('PlayDomain', PlayDomain)
 	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
@@ -41,8 +57,24 @@ class DeleteAutoLiveStreamRuleRequest(RpcRequest):
 
 	def set_AppId(self, AppId):  # String
 		self.add_query_param('AppId', AppId)
-	def get_RuleId(self): # Long
+	def get_CallBack(self): # String
+		return self.get_query_params().get('CallBack')
+
+	def set_CallBack(self, CallBack):  # String
+		self.add_query_param('CallBack', CallBack)
+	def get_MediaEncode(self): # Integer
+		return self.get_query_params().get('MediaEncode')
+
+	def set_MediaEncode(self, MediaEncode):  # Integer
+		self.add_query_param('MediaEncode', MediaEncode)
+	def get_RuleId(self): # Integer
 		return self.get_query_params().get('RuleId')
 
-	def set_RuleId(self, RuleId):  # Long
+	def set_RuleId(self, RuleId):  # Integer
 		self.add_query_param('RuleId', RuleId)
+	def get_ChannelIdss(self): # RepeatList
+		return self.get_query_params().get('ChannelIds')
+
+	def set_ChannelIdss(self, ChannelIds):  # RepeatList
+		for depth1 in range(len(ChannelIds)):
+			self.add_query_param('ChannelIds.' + str(depth1 + 1), ChannelIds[depth1])

@@ -20,49 +20,29 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkrtc.endpoint import endpoint_data
 
-class ReceiveNotifyRequest(RpcRequest):
+class EnableAutoLiveStreamRuleRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'rtc', '2018-01-11', 'ReceiveNotify','rtc')
+		RpcRequest.__init__(self, 'rtc', '2018-01-11', 'EnableAutoLiveStreamRule')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_TraceId(self):
-		return self.get_query_params().get('TraceId')
-
-	def set_TraceId(self,TraceId):
-		self.add_query_param('TraceId',TraceId)
-
-	def get_Content(self):
-		return self.get_query_params().get('Content')
-
-	def set_Content(self,Content):
-		self.add_query_param('Content',Content)
-
-	def get_Event(self):
-		return self.get_query_params().get('Event')
-
-	def set_Event(self,Event):
-		self.add_query_param('Event',Event)
-
-	def get_OwnerId(self):
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_AppId(self): # String
+		return self.get_query_params().get('AppId')
 
-	def get_ContentType(self):
-		return self.get_query_params().get('ContentType')
+	def set_AppId(self, AppId):  # String
+		self.add_query_param('AppId', AppId)
+	def get_RuleId(self): # Long
+		return self.get_query_params().get('RuleId')
 
-	def set_ContentType(self,ContentType):
-		self.add_query_param('ContentType',ContentType)
-
-	def get_BizId(self):
-		return self.get_query_params().get('BizId')
-
-	def set_BizId(self,BizId):
-		self.add_query_param('BizId',BizId)
+	def set_RuleId(self, RuleId):  # Long
+		self.add_query_param('RuleId', RuleId)
