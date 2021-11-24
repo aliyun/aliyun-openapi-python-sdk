@@ -23,40 +23,36 @@ from aliyunsdkmse.endpoint import endpoint_data
 class ScalingClusterRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'mse', '2019-05-31', 'ScalingCluster','mse')
+		RpcRequest.__init__(self, 'mse', '2019-05-31', 'ScalingCluster')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ClusterSpecification(self):
+	def get_ClusterSpecification(self): # String
 		return self.get_query_params().get('ClusterSpecification')
 
-	def set_ClusterSpecification(self,ClusterSpecification):
-		self.add_query_param('ClusterSpecification',ClusterSpecification)
-
-	def get_Cpu(self):
+	def set_ClusterSpecification(self, ClusterSpecification):  # String
+		self.add_query_param('ClusterSpecification', ClusterSpecification)
+	def get_Cpu(self): # Integer
 		return self.get_query_params().get('Cpu')
 
-	def set_Cpu(self,Cpu):
-		self.add_query_param('Cpu',Cpu)
-
-	def get_InstanceId(self):
+	def set_Cpu(self, Cpu):  # Integer
+		self.add_query_param('Cpu', Cpu)
+	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
-
-	def get_MemoryCapacity(self):
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
+	def get_MemoryCapacity(self): # Long
 		return self.get_query_params().get('MemoryCapacity')
 
-	def set_MemoryCapacity(self,MemoryCapacity):
-		self.add_query_param('MemoryCapacity',MemoryCapacity)
-
-	def get_InstanceCount(self):
+	def set_MemoryCapacity(self, MemoryCapacity):  # Long
+		self.add_query_param('MemoryCapacity', MemoryCapacity)
+	def get_InstanceCount(self): # Integer
 		return self.get_query_params().get('InstanceCount')
 
-	def set_InstanceCount(self,InstanceCount):
-		self.add_query_param('InstanceCount',InstanceCount)
+	def set_InstanceCount(self, InstanceCount):  # Integer
+		self.add_query_param('InstanceCount', InstanceCount)

@@ -23,16 +23,16 @@ from aliyunsdkmse.endpoint import endpoint_data
 class ListClusterVersionsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'mse', '2019-05-31', 'ListClusterVersions','mse')
+		RpcRequest.__init__(self, 'mse', '2019-05-31', 'ListClusterVersions')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ClusterType(self):
+	def get_ClusterType(self): # String
 		return self.get_query_params().get('ClusterType')
 
-	def set_ClusterType(self,ClusterType):
-		self.add_query_param('ClusterType',ClusterType)
+	def set_ClusterType(self, ClusterType):  # String
+		self.add_query_param('ClusterType', ClusterType)

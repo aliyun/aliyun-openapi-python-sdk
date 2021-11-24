@@ -23,64 +23,56 @@ from aliyunsdkmse.endpoint import endpoint_data
 class CreateAlarmRuleRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'mse', '2019-05-31', 'CreateAlarmRule','mse')
+		RpcRequest.__init__(self, 'mse', '2019-05-31', 'CreateAlarmRule')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_NValue(self):
+	def get_NValue(self): # Integer
 		return self.get_query_params().get('NValue')
 
-	def set_NValue(self,NValue):
-		self.add_query_param('NValue',NValue)
-
-	def get_AlarmItem(self):
+	def set_NValue(self, NValue):  # Integer
+		self.add_query_param('NValue', NValue)
+	def get_AlarmItem(self): # String
 		return self.get_query_params().get('AlarmItem')
 
-	def set_AlarmItem(self,AlarmItem):
-		self.add_query_param('AlarmItem',AlarmItem)
-
-	def get_Operator(self):
+	def set_AlarmItem(self, AlarmItem):  # String
+		self.add_query_param('AlarmItem', AlarmItem)
+	def get_Operator(self): # String
 		return self.get_query_params().get('Operator')
 
-	def set_Operator(self,Operator):
-		self.add_query_param('Operator',Operator)
-
-	def get_AlarmAliasName(self):
+	def set_Operator(self, Operator):  # String
+		self.add_query_param('Operator', Operator)
+	def get_AlarmAliasName(self): # String
 		return self.get_query_params().get('AlarmAliasName')
 
-	def set_AlarmAliasName(self,AlarmAliasName):
-		self.add_query_param('AlarmAliasName',AlarmAliasName)
-
-	def get_InstanceId(self):
+	def set_AlarmAliasName(self, AlarmAliasName):  # String
+		self.add_query_param('AlarmAliasName', AlarmAliasName)
+	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
-
-	def get_ContactGroupIds(self):
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
+	def get_ContactGroupIds(self): # String
 		return self.get_query_params().get('ContactGroupIds')
 
-	def set_ContactGroupIds(self,ContactGroupIds):
-		self.add_query_param('ContactGroupIds',ContactGroupIds)
-
-	def get_AlertWay(self):
+	def set_ContactGroupIds(self, ContactGroupIds):  # String
+		self.add_query_param('ContactGroupIds', ContactGroupIds)
+	def get_AlertWay(self): # String
 		return self.get_query_params().get('AlertWay')
 
-	def set_AlertWay(self,AlertWay):
-		self.add_query_param('AlertWay',AlertWay)
-
-	def get_Aggregates(self):
+	def set_AlertWay(self, AlertWay):  # String
+		self.add_query_param('AlertWay', AlertWay)
+	def get_Aggregates(self): # String
 		return self.get_query_params().get('Aggregates')
 
-	def set_Aggregates(self,Aggregates):
-		self.add_query_param('Aggregates',Aggregates)
-
-	def get_Value(self):
+	def set_Aggregates(self, Aggregates):  # String
+		self.add_query_param('Aggregates', Aggregates)
+	def get_Value(self): # Float
 		return self.get_query_params().get('Value')
 
-	def set_Value(self,Value):
-		self.add_query_param('Value',Value)
+	def set_Value(self, Value):  # Float
+		self.add_query_param('Value', Value)

@@ -23,106 +23,96 @@ from aliyunsdkmse.endpoint import endpoint_data
 class UpdateConfigRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'mse', '2019-05-31', 'UpdateConfig','mse')
+		RpcRequest.__init__(self, 'mse', '2019-05-31', 'UpdateConfig')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_OpenSuperAcl(self):
+	def get_OpenSuperAcl(self): # String
 		return self.get_body_params().get('OpenSuperAcl')
 
-	def set_OpenSuperAcl(self,OpenSuperAcl):
+	def set_OpenSuperAcl(self, OpenSuperAcl):  # String
 		self.add_body_params('OpenSuperAcl', OpenSuperAcl)
-
-	def get_ConfigAuthEnabled(self):
+	def get_ConfigAuthEnabled(self): # Boolean
 		return self.get_query_params().get('ConfigAuthEnabled')
 
-	def set_ConfigAuthEnabled(self,ConfigAuthEnabled):
-		self.add_query_param('ConfigAuthEnabled',ConfigAuthEnabled)
-
-	def get_PassWord(self):
+	def set_ConfigAuthEnabled(self, ConfigAuthEnabled):  # Boolean
+		self.add_query_param('ConfigAuthEnabled', ConfigAuthEnabled)
+	def get_PassWord(self): # String
 		return self.get_query_params().get('PassWord')
 
-	def set_PassWord(self,PassWord):
-		self.add_query_param('PassWord',PassWord)
-
-	def get_MaxClientCnxns(self):
+	def set_PassWord(self, PassWord):  # String
+		self.add_query_param('PassWord', PassWord)
+	def get_MaxClientCnxns(self): # String
 		return self.get_query_params().get('MaxClientCnxns')
 
-	def set_MaxClientCnxns(self,MaxClientCnxns):
-		self.add_query_param('MaxClientCnxns',MaxClientCnxns)
-
-	def get_RequestPars(self):
+	def set_MaxClientCnxns(self, MaxClientCnxns):  # String
+		self.add_query_param('MaxClientCnxns', MaxClientCnxns)
+	def get_RequestPars(self): # String
 		return self.get_query_params().get('RequestPars')
 
-	def set_RequestPars(self,RequestPars):
-		self.add_query_param('RequestPars',RequestPars)
-
-	def get_JuteMaxbuffer(self):
+	def set_RequestPars(self, RequestPars):  # String
+		self.add_query_param('RequestPars', RequestPars)
+	def get_JuteMaxbuffer(self): # String
 		return self.get_query_params().get('JuteMaxbuffer')
 
-	def set_JuteMaxbuffer(self,JuteMaxbuffer):
-		self.add_query_param('JuteMaxbuffer',JuteMaxbuffer)
-
-	def get_ConfigType(self):
+	def set_JuteMaxbuffer(self, JuteMaxbuffer):  # String
+		self.add_query_param('JuteMaxbuffer', JuteMaxbuffer)
+	def get_ConfigType(self): # String
 		return self.get_query_params().get('ConfigType')
 
-	def set_ConfigType(self,ConfigType):
-		self.add_query_param('ConfigType',ConfigType)
-
-	def get_AutopurgeSnapRetainCount(self):
+	def set_ConfigType(self, ConfigType):  # String
+		self.add_query_param('ConfigType', ConfigType)
+	def get_AutopurgeSnapRetainCount(self): # String
 		return self.get_query_params().get('AutopurgeSnapRetainCount')
 
-	def set_AutopurgeSnapRetainCount(self,AutopurgeSnapRetainCount):
-		self.add_query_param('AutopurgeSnapRetainCount',AutopurgeSnapRetainCount)
+	def set_AutopurgeSnapRetainCount(self, AutopurgeSnapRetainCount):  # String
+		self.add_query_param('AutopurgeSnapRetainCount', AutopurgeSnapRetainCount)
+	def get_ConfigSecretEnabled(self): # Boolean
+		return self.get_query_params().get('ConfigSecretEnabled')
 
-	def get_MCPEnabled(self):
+	def set_ConfigSecretEnabled(self, ConfigSecretEnabled):  # Boolean
+		self.add_query_param('ConfigSecretEnabled', ConfigSecretEnabled)
+	def get_MCPEnabled(self): # Boolean
 		return self.get_query_params().get('MCPEnabled')
 
-	def set_MCPEnabled(self,MCPEnabled):
-		self.add_query_param('MCPEnabled',MCPEnabled)
-
-	def get_TickTime(self):
+	def set_MCPEnabled(self, MCPEnabled):  # Boolean
+		self.add_query_param('MCPEnabled', MCPEnabled)
+	def get_TickTime(self): # String
 		return self.get_query_params().get('TickTime')
 
-	def set_TickTime(self,TickTime):
-		self.add_query_param('TickTime',TickTime)
-
-	def get_ClusterId(self):
+	def set_TickTime(self, TickTime):  # String
+		self.add_query_param('TickTime', TickTime)
+	def get_ClusterId(self): # String
 		return self.get_query_params().get('ClusterId')
 
-	def set_ClusterId(self,ClusterId):
-		self.add_query_param('ClusterId',ClusterId)
-
-	def get_SyncLimit(self):
+	def set_ClusterId(self, ClusterId):  # String
+		self.add_query_param('ClusterId', ClusterId)
+	def get_SyncLimit(self): # String
 		return self.get_query_params().get('SyncLimit')
 
-	def set_SyncLimit(self,SyncLimit):
-		self.add_query_param('SyncLimit',SyncLimit)
-
-	def get_InstanceId(self):
+	def set_SyncLimit(self, SyncLimit):  # String
+		self.add_query_param('SyncLimit', SyncLimit)
+	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
-
-	def get_AutopurgePurgeInterval(self):
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
+	def get_AutopurgePurgeInterval(self): # String
 		return self.get_query_params().get('AutopurgePurgeInterval')
 
-	def set_AutopurgePurgeInterval(self,AutopurgePurgeInterval):
-		self.add_query_param('AutopurgePurgeInterval',AutopurgePurgeInterval)
-
-	def get_InitLimit(self):
+	def set_AutopurgePurgeInterval(self, AutopurgePurgeInterval):  # String
+		self.add_query_param('AutopurgePurgeInterval', AutopurgePurgeInterval)
+	def get_InitLimit(self): # String
 		return self.get_query_params().get('InitLimit')
 
-	def set_InitLimit(self,InitLimit):
-		self.add_query_param('InitLimit',InitLimit)
-
-	def get_UserName(self):
+	def set_InitLimit(self, InitLimit):  # String
+		self.add_query_param('InitLimit', InitLimit)
+	def get_UserName(self): # String
 		return self.get_query_params().get('UserName')
 
-	def set_UserName(self,UserName):
-		self.add_query_param('UserName',UserName)
+	def set_UserName(self, UserName):  # String
+		self.add_query_param('UserName', UserName)

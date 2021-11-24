@@ -23,46 +23,41 @@ from aliyunsdkmse.endpoint import endpoint_data
 class UpdateEngineNamespaceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'mse', '2019-05-31', 'UpdateEngineNamespace','mse')
+		RpcRequest.__init__(self, 'mse', '2019-05-31', 'UpdateEngineNamespace')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ClusterId(self):
+	def get_ClusterId(self): # String
 		return self.get_query_params().get('ClusterId')
 
-	def set_ClusterId(self,ClusterId):
-		self.add_query_param('ClusterId',ClusterId)
-
-	def get_InstanceId(self):
+	def set_ClusterId(self, ClusterId):  # String
+		self.add_query_param('ClusterId', ClusterId)
+	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
-
-	def get_ServiceCount(self):
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
+	def get_ServiceCount(self): # Integer
 		return self.get_query_params().get('ServiceCount')
 
-	def set_ServiceCount(self,ServiceCount):
-		self.add_query_param('ServiceCount',ServiceCount)
-
-	def get_Name(self):
+	def set_ServiceCount(self, ServiceCount):  # Integer
+		self.add_query_param('ServiceCount', ServiceCount)
+	def get_Name(self): # String
 		return self.get_query_params().get('Name')
 
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)
-
-	def get_Id(self):
+	def set_Name(self, Name):  # String
+		self.add_query_param('Name', Name)
+	def get_Id(self): # String
 		return self.get_query_params().get('Id')
 
-	def set_Id(self,Id):
-		self.add_query_param('Id',Id)
-
-	def get_Desc(self):
+	def set_Id(self, Id):  # String
+		self.add_query_param('Id', Id)
+	def get_Desc(self): # String
 		return self.get_query_params().get('Desc')
 
-	def set_Desc(self,Desc):
-		self.add_query_param('Desc',Desc)
+	def set_Desc(self, Desc):  # String
+		self.add_query_param('Desc', Desc)

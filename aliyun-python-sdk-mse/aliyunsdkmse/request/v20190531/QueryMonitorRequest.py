@@ -23,46 +23,41 @@ from aliyunsdkmse.endpoint import endpoint_data
 class QueryMonitorRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'mse', '2019-05-31', 'QueryMonitor','mse')
+		RpcRequest.__init__(self, 'mse', '2019-05-31', 'QueryMonitor')
 		self.set_method('GET')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_MonitorType(self):
+	def get_MonitorType(self): # String
 		return self.get_query_params().get('MonitorType')
 
-	def set_MonitorType(self,MonitorType):
-		self.add_query_param('MonitorType',MonitorType)
-
-	def get_EndTime(self):
+	def set_MonitorType(self, MonitorType):  # String
+		self.add_query_param('MonitorType', MonitorType)
+	def get_EndTime(self): # Long
 		return self.get_query_params().get('EndTime')
 
-	def set_EndTime(self,EndTime):
-		self.add_query_param('EndTime',EndTime)
-
-	def get_StartTime(self):
+	def set_EndTime(self, EndTime):  # Long
+		self.add_query_param('EndTime', EndTime)
+	def get_StartTime(self): # Long
 		return self.get_query_params().get('StartTime')
 
-	def set_StartTime(self,StartTime):
-		self.add_query_param('StartTime',StartTime)
-
-	def get_InstanceId(self):
+	def set_StartTime(self, StartTime):  # Long
+		self.add_query_param('StartTime', StartTime)
+	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
-
-	def get_RequestPars(self):
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
+	def get_RequestPars(self): # String
 		return self.get_query_params().get('RequestPars')
 
-	def set_RequestPars(self,RequestPars):
-		self.add_query_param('RequestPars',RequestPars)
-
-	def get_Step(self):
+	def set_RequestPars(self, RequestPars):  # String
+		self.add_query_param('RequestPars', RequestPars)
+	def get_Step(self): # Long
 		return self.get_query_params().get('Step')
 
-	def set_Step(self,Step):
-		self.add_query_param('Step',Step)
+	def set_Step(self, Step):  # Long
+		self.add_query_param('Step', Step)

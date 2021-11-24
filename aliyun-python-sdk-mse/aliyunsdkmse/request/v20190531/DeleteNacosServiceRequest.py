@@ -23,34 +23,31 @@ from aliyunsdkmse.endpoint import endpoint_data
 class DeleteNacosServiceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'mse', '2019-05-31', 'DeleteNacosService','mse')
+		RpcRequest.__init__(self, 'mse', '2019-05-31', 'DeleteNacosService')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_GroupName(self):
+	def get_GroupName(self): # String
 		return self.get_query_params().get('GroupName')
 
-	def set_GroupName(self,GroupName):
-		self.add_query_param('GroupName',GroupName)
-
-	def get_InstanceId(self):
+	def set_GroupName(self, GroupName):  # String
+		self.add_query_param('GroupName', GroupName)
+	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
-
-	def get_NamespaceId(self):
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
+	def get_NamespaceId(self): # String
 		return self.get_query_params().get('NamespaceId')
 
-	def set_NamespaceId(self,NamespaceId):
-		self.add_query_param('NamespaceId',NamespaceId)
-
-	def get_ServiceName(self):
+	def set_NamespaceId(self, NamespaceId):  # String
+		self.add_query_param('NamespaceId', NamespaceId)
+	def get_ServiceName(self): # String
 		return self.get_query_params().get('ServiceName')
 
-	def set_ServiceName(self,ServiceName):
-		self.add_query_param('ServiceName',ServiceName)
+	def set_ServiceName(self, ServiceName):  # String
+		self.add_query_param('ServiceName', ServiceName)

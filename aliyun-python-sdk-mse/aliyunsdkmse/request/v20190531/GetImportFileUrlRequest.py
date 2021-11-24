@@ -23,28 +23,26 @@ from aliyunsdkmse.endpoint import endpoint_data
 class GetImportFileUrlRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'mse', '2019-05-31', 'GetImportFileUrl','mse')
+		RpcRequest.__init__(self, 'mse', '2019-05-31', 'GetImportFileUrl')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ContentType(self):
+	def get_ContentType(self): # String
 		return self.get_query_params().get('ContentType')
 
-	def set_ContentType(self,ContentType):
-		self.add_query_param('ContentType',ContentType)
-
-	def get_InstanceId(self):
+	def set_ContentType(self, ContentType):  # String
+		self.add_query_param('ContentType', ContentType)
+	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
-
-	def get_NamespaceId(self):
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
+	def get_NamespaceId(self): # String
 		return self.get_query_params().get('NamespaceId')
 
-	def set_NamespaceId(self,NamespaceId):
-		self.add_query_param('NamespaceId',NamespaceId)
+	def set_NamespaceId(self, NamespaceId):  # String
+		self.add_query_param('NamespaceId', NamespaceId)

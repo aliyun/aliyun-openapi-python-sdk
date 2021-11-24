@@ -23,16 +23,16 @@ from aliyunsdkmse.endpoint import endpoint_data
 class ListAlarmItemsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'mse', '2019-05-31', 'ListAlarmItems','mse')
+		RpcRequest.__init__(self, 'mse', '2019-05-31', 'ListAlarmItems')
 		self.set_method('GET')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_RequestPars(self):
+	def get_RequestPars(self): # String
 		return self.get_query_params().get('RequestPars')
 
-	def set_RequestPars(self,RequestPars):
-		self.add_query_param('RequestPars',RequestPars)
+	def set_RequestPars(self, RequestPars):  # String
+		self.add_query_param('RequestPars', RequestPars)

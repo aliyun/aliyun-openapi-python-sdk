@@ -23,40 +23,36 @@ from aliyunsdkmse.endpoint import endpoint_data
 class CloneNacosConfigRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'mse', '2019-05-31', 'CloneNacosConfig','mse')
+		RpcRequest.__init__(self, 'mse', '2019-05-31', 'CloneNacosConfig')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_TargetNamespaceId(self):
+	def get_TargetNamespaceId(self): # String
 		return self.get_query_params().get('TargetNamespaceId')
 
-	def set_TargetNamespaceId(self,TargetNamespaceId):
-		self.add_query_param('TargetNamespaceId',TargetNamespaceId)
-
-	def get_InstanceId(self):
+	def set_TargetNamespaceId(self, TargetNamespaceId):  # String
+		self.add_query_param('TargetNamespaceId', TargetNamespaceId)
+	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
-
-	def get_Ids(self):
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
+	def get_Ids(self): # String
 		return self.get_query_params().get('Ids')
 
-	def set_Ids(self,Ids):
-		self.add_query_param('Ids',Ids)
-
-	def get_OriginNamespaceId(self):
+	def set_Ids(self, Ids):  # String
+		self.add_query_param('Ids', Ids)
+	def get_OriginNamespaceId(self): # String
 		return self.get_query_params().get('OriginNamespaceId')
 
-	def set_OriginNamespaceId(self,OriginNamespaceId):
-		self.add_query_param('OriginNamespaceId',OriginNamespaceId)
-
-	def get_Policy(self):
+	def set_OriginNamespaceId(self, OriginNamespaceId):  # String
+		self.add_query_param('OriginNamespaceId', OriginNamespaceId)
+	def get_Policy(self): # String
 		return self.get_query_params().get('Policy')
 
-	def set_Policy(self,Policy):
-		self.add_query_param('Policy',Policy)
+	def set_Policy(self, Policy):  # String
+		self.add_query_param('Policy', Policy)

@@ -23,40 +23,36 @@ from aliyunsdkmse.endpoint import endpoint_data
 class CreateApplicationRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'mse', '2019-05-31', 'CreateApplication','mse')
+		RpcRequest.__init__(self, 'mse', '2019-05-31', 'CreateApplication')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Language(self):
+	def get_Language(self): # String
 		return self.get_query_params().get('Language')
 
-	def set_Language(self,Language):
-		self.add_query_param('Language',Language)
-
-	def get_Source(self):
+	def set_Language(self, Language):  # String
+		self.add_query_param('Language', Language)
+	def get_Source(self): # String
 		return self.get_query_params().get('Source')
 
-	def set_Source(self,Source):
-		self.add_query_param('Source',Source)
-
-	def get_ExtraInfo(self):
+	def set_Source(self, Source):  # String
+		self.add_query_param('Source', Source)
+	def get_ExtraInfo(self): # String
 		return self.get_query_params().get('ExtraInfo')
 
-	def set_ExtraInfo(self,ExtraInfo):
-		self.add_query_param('ExtraInfo',ExtraInfo)
-
-	def get_AppName(self):
+	def set_ExtraInfo(self, ExtraInfo):  # String
+		self.add_query_param('ExtraInfo', ExtraInfo)
+	def get_AppName(self): # String
 		return self.get_query_params().get('AppName')
 
-	def set_AppName(self,AppName):
-		self.add_query_param('AppName',AppName)
-
-	def get_Region(self):
+	def set_AppName(self, AppName):  # String
+		self.add_query_param('AppName', AppName)
+	def get_Region(self): # String
 		return self.get_query_params().get('Region')
 
-	def set_Region(self,Region):
-		self.add_query_param('Region',Region)
+	def set_Region(self, Region):  # String
+		self.add_query_param('Region', Region)

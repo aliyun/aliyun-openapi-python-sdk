@@ -23,34 +23,31 @@ from aliyunsdkmse.endpoint import endpoint_data
 class ImportNacosConfigRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'mse', '2019-05-31', 'ImportNacosConfig','mse')
+		RpcRequest.__init__(self, 'mse', '2019-05-31', 'ImportNacosConfig')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_InstanceId(self):
+	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
-
-	def get_NamespaceId(self):
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
+	def get_NamespaceId(self): # String
 		return self.get_query_params().get('NamespaceId')
 
-	def set_NamespaceId(self,NamespaceId):
-		self.add_query_param('NamespaceId',NamespaceId)
-
-	def get_FileUrl(self):
+	def set_NamespaceId(self, NamespaceId):  # String
+		self.add_query_param('NamespaceId', NamespaceId)
+	def get_FileUrl(self): # String
 		return self.get_query_params().get('FileUrl')
 
-	def set_FileUrl(self,FileUrl):
-		self.add_query_param('FileUrl',FileUrl)
-
-	def get_Policy(self):
+	def set_FileUrl(self, FileUrl):  # String
+		self.add_query_param('FileUrl', FileUrl)
+	def get_Policy(self): # String
 		return self.get_query_params().get('Policy')
 
-	def set_Policy(self,Policy):
-		self.add_query_param('Policy',Policy)
+	def set_Policy(self, Policy):  # String
+		self.add_query_param('Policy', Policy)

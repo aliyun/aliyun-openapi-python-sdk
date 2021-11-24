@@ -23,22 +23,21 @@ from aliyunsdkmse.endpoint import endpoint_data
 class GetOverviewRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'mse', '2019-05-31', 'GetOverview','mse')
+		RpcRequest.__init__(self, 'mse', '2019-05-31', 'GetOverview')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Period(self):
+	def get_Period(self): # Integer
 		return self.get_query_params().get('Period')
 
-	def set_Period(self,Period):
-		self.add_query_param('Period',Period)
-
-	def get_Region(self):
+	def set_Period(self, Period):  # Integer
+		self.add_query_param('Period', Period)
+	def get_Region(self): # String
 		return self.get_query_params().get('Region')
 
-	def set_Region(self,Region):
-		self.add_query_param('Region',Region)
+	def set_Region(self, Region):  # String
+		self.add_query_param('Region', Region)

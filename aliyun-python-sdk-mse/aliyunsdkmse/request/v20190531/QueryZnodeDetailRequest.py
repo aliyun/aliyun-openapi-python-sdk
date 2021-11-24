@@ -23,28 +23,26 @@ from aliyunsdkmse.endpoint import endpoint_data
 class QueryZnodeDetailRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'mse', '2019-05-31', 'QueryZnodeDetail','mse')
+		RpcRequest.__init__(self, 'mse', '2019-05-31', 'QueryZnodeDetail')
 		self.set_method('GET')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ClusterId(self):
+	def get_ClusterId(self): # String
 		return self.get_query_params().get('ClusterId')
 
-	def set_ClusterId(self,ClusterId):
-		self.add_query_param('ClusterId',ClusterId)
-
-	def get_Path(self):
+	def set_ClusterId(self, ClusterId):  # String
+		self.add_query_param('ClusterId', ClusterId)
+	def get_Path(self): # String
 		return self.get_query_params().get('Path')
 
-	def set_Path(self,Path):
-		self.add_query_param('Path',Path)
-
-	def get_RequestPars(self):
+	def set_Path(self, Path):  # String
+		self.add_query_param('Path', Path)
+	def get_RequestPars(self): # String
 		return self.get_query_params().get('RequestPars')
 
-	def set_RequestPars(self,RequestPars):
-		self.add_query_param('RequestPars',RequestPars)
+	def set_RequestPars(self, RequestPars):  # String
+		self.add_query_param('RequestPars', RequestPars)

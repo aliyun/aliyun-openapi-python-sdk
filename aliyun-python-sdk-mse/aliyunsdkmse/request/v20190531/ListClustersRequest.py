@@ -23,34 +23,31 @@ from aliyunsdkmse.endpoint import endpoint_data
 class ListClustersRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'mse', '2019-05-31', 'ListClusters','mse')
+		RpcRequest.__init__(self, 'mse', '2019-05-31', 'ListClusters')
 		self.set_method('GET')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ClusterAliasName(self):
+	def get_ClusterAliasName(self): # String
 		return self.get_query_params().get('ClusterAliasName')
 
-	def set_ClusterAliasName(self,ClusterAliasName):
-		self.add_query_param('ClusterAliasName',ClusterAliasName)
-
-	def get_PageNum(self):
+	def set_ClusterAliasName(self, ClusterAliasName):  # String
+		self.add_query_param('ClusterAliasName', ClusterAliasName)
+	def get_PageNum(self): # Integer
 		return self.get_query_params().get('PageNum')
 
-	def set_PageNum(self,PageNum):
-		self.add_query_param('PageNum',PageNum)
-
-	def get_RequestPars(self):
+	def set_PageNum(self, PageNum):  # Integer
+		self.add_query_param('PageNum', PageNum)
+	def get_RequestPars(self): # String
 		return self.get_query_params().get('RequestPars')
 
-	def set_RequestPars(self,RequestPars):
-		self.add_query_param('RequestPars',RequestPars)
-
-	def get_PageSize(self):
+	def set_RequestPars(self, RequestPars):  # String
+		self.add_query_param('RequestPars', RequestPars)
+	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
-	def set_PageSize(self,PageSize):
-		self.add_query_param('PageSize',PageSize)
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)

@@ -23,28 +23,26 @@ from aliyunsdkmse.endpoint import endpoint_data
 class DeleteNacosConfigsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'mse', '2019-05-31', 'DeleteNacosConfigs','mse')
+		RpcRequest.__init__(self, 'mse', '2019-05-31', 'DeleteNacosConfigs')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_InstanceId(self):
+	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
-
-	def get_NamespaceId(self):
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
+	def get_NamespaceId(self): # String
 		return self.get_query_params().get('NamespaceId')
 
-	def set_NamespaceId(self,NamespaceId):
-		self.add_query_param('NamespaceId',NamespaceId)
-
-	def get_Ids(self):
+	def set_NamespaceId(self, NamespaceId):  # String
+		self.add_query_param('NamespaceId', NamespaceId)
+	def get_Ids(self): # String
 		return self.get_query_params().get('Ids')
 
-	def set_Ids(self,Ids):
-		self.add_query_param('Ids',Ids)
+	def set_Ids(self, Ids):  # String
+		self.add_query_param('Ids', Ids)

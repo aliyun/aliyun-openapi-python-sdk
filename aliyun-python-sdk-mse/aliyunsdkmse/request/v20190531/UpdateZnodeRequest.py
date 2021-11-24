@@ -23,34 +23,31 @@ from aliyunsdkmse.endpoint import endpoint_data
 class UpdateZnodeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'mse', '2019-05-31', 'UpdateZnode','mse')
+		RpcRequest.__init__(self, 'mse', '2019-05-31', 'UpdateZnode')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Data(self):
+	def get_Data(self): # String
 		return self.get_query_params().get('Data')
 
-	def set_Data(self,Data):
-		self.add_query_param('Data',Data)
-
-	def get_ClusterId(self):
+	def set_Data(self, Data):  # String
+		self.add_query_param('Data', Data)
+	def get_ClusterId(self): # String
 		return self.get_query_params().get('ClusterId')
 
-	def set_ClusterId(self,ClusterId):
-		self.add_query_param('ClusterId',ClusterId)
-
-	def get_Path(self):
+	def set_ClusterId(self, ClusterId):  # String
+		self.add_query_param('ClusterId', ClusterId)
+	def get_Path(self): # String
 		return self.get_query_params().get('Path')
 
-	def set_Path(self,Path):
-		self.add_query_param('Path',Path)
-
-	def get_RequestPars(self):
+	def set_Path(self, Path):  # String
+		self.add_query_param('Path', Path)
+	def get_RequestPars(self): # String
 		return self.get_query_params().get('RequestPars')
 
-	def set_RequestPars(self,RequestPars):
-		self.add_query_param('RequestPars',RequestPars)
+	def set_RequestPars(self, RequestPars):  # String
+		self.add_query_param('RequestPars', RequestPars)

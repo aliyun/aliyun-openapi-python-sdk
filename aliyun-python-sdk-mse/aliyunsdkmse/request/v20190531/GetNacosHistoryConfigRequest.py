@@ -23,40 +23,36 @@ from aliyunsdkmse.endpoint import endpoint_data
 class GetNacosHistoryConfigRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'mse', '2019-05-31', 'GetNacosHistoryConfig','mse')
+		RpcRequest.__init__(self, 'mse', '2019-05-31', 'GetNacosHistoryConfig')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Nid(self):
+	def get_Nid(self): # String
 		return self.get_query_params().get('Nid')
 
-	def set_Nid(self,Nid):
-		self.add_query_param('Nid',Nid)
-
-	def get_InstanceId(self):
+	def set_Nid(self, Nid):  # String
+		self.add_query_param('Nid', Nid)
+	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
-
-	def get_DataId(self):
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
+	def get_DataId(self): # String
 		return self.get_query_params().get('DataId')
 
-	def set_DataId(self,DataId):
-		self.add_query_param('DataId',DataId)
-
-	def get_NamespaceId(self):
+	def set_DataId(self, DataId):  # String
+		self.add_query_param('DataId', DataId)
+	def get_NamespaceId(self): # String
 		return self.get_query_params().get('NamespaceId')
 
-	def set_NamespaceId(self,NamespaceId):
-		self.add_query_param('NamespaceId',NamespaceId)
-
-	def get_Group(self):
+	def set_NamespaceId(self, NamespaceId):  # String
+		self.add_query_param('NamespaceId', NamespaceId)
+	def get_Group(self): # String
 		return self.get_query_params().get('Group')
 
-	def set_Group(self,Group):
-		self.add_query_param('Group',Group)
+	def set_Group(self, Group):  # String
+		self.add_query_param('Group', Group)

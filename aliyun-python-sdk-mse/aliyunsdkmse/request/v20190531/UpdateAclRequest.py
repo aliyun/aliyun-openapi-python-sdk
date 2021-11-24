@@ -23,22 +23,21 @@ from aliyunsdkmse.endpoint import endpoint_data
 class UpdateAclRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'mse', '2019-05-31', 'UpdateAcl','mse')
+		RpcRequest.__init__(self, 'mse', '2019-05-31', 'UpdateAcl')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_AclEntryList(self):
+	def get_AclEntryList(self): # String
 		return self.get_query_params().get('AclEntryList')
 
-	def set_AclEntryList(self,AclEntryList):
-		self.add_query_param('AclEntryList',AclEntryList)
-
-	def get_InstanceId(self):
+	def set_AclEntryList(self, AclEntryList):  # String
+		self.add_query_param('AclEntryList', AclEntryList)
+	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
