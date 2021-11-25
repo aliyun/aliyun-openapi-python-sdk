@@ -36,6 +36,11 @@ class RestartClusterRequest(RpcRequest):
 
 	def set_ClusterId(self, ClusterId):  # String
 		self.add_query_param('ClusterId', ClusterId)
+	def get_PodNameList(self): # String
+		return self.get_query_params().get('PodNameList')
+
+	def set_PodNameList(self, PodNameList):  # String
+		self.add_query_param('PodNameList', PodNameList)
 	def get_InstanceId(self): # String
 		return self.get_query_params().get('InstanceId')
 
