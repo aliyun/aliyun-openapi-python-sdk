@@ -25,20 +25,19 @@ class GetMediaMetaRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'imm', '2017-09-06', 'GetMediaMeta','imm')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_MediaUri(self):
+	def get_MediaUri(self): # String
 		return self.get_query_params().get('MediaUri')
 
-	def set_MediaUri(self,MediaUri):
-		self.add_query_param('MediaUri',MediaUri)
-
-	def get_Project(self):
+	def set_MediaUri(self, MediaUri):  # String
+		self.add_query_param('MediaUri', MediaUri)
+	def get_Project(self): # String
 		return self.get_query_params().get('Project')
 
-	def set_Project(self,Project):
-		self.add_query_param('Project',Project)
+	def set_Project(self, Project):  # String
+		self.add_query_param('Project', Project)

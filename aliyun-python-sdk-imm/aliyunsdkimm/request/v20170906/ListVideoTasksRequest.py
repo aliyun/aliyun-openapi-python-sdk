@@ -25,32 +25,29 @@ class ListVideoTasksRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'imm', '2017-09-06', 'ListVideoTasks','imm')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_MaxKeys(self):
+	def get_MaxKeys(self): # Integer
 		return self.get_query_params().get('MaxKeys')
 
-	def set_MaxKeys(self,MaxKeys):
-		self.add_query_param('MaxKeys',MaxKeys)
-
-	def get_Project(self):
+	def set_MaxKeys(self, MaxKeys):  # Integer
+		self.add_query_param('MaxKeys', MaxKeys)
+	def get_Project(self): # String
 		return self.get_query_params().get('Project')
 
-	def set_Project(self,Project):
-		self.add_query_param('Project',Project)
-
-	def get_TaskType(self):
+	def set_Project(self, Project):  # String
+		self.add_query_param('Project', Project)
+	def get_TaskType(self): # String
 		return self.get_query_params().get('TaskType')
 
-	def set_TaskType(self,TaskType):
-		self.add_query_param('TaskType',TaskType)
-
-	def get_Marker(self):
+	def set_TaskType(self, TaskType):  # String
+		self.add_query_param('TaskType', TaskType)
+	def get_Marker(self): # String
 		return self.get_query_params().get('Marker')
 
-	def set_Marker(self,Marker):
-		self.add_query_param('Marker',Marker)
+	def set_Marker(self, Marker):  # String
+		self.add_query_param('Marker', Marker)

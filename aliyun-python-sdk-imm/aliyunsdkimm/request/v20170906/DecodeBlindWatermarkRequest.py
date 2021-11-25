@@ -25,44 +25,39 @@ class DecodeBlindWatermarkRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'imm', '2017-09-06', 'DecodeBlindWatermark','imm')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ImageQuality(self):
+	def get_ImageQuality(self): # Integer
 		return self.get_query_params().get('ImageQuality')
 
-	def set_ImageQuality(self,ImageQuality):
-		self.add_query_param('ImageQuality',ImageQuality)
-
-	def get_Project(self):
+	def set_ImageQuality(self, ImageQuality):  # Integer
+		self.add_query_param('ImageQuality', ImageQuality)
+	def get_Project(self): # String
 		return self.get_query_params().get('Project')
 
-	def set_Project(self,Project):
-		self.add_query_param('Project',Project)
-
-	def get_TargetUri(self):
+	def set_Project(self, Project):  # String
+		self.add_query_param('Project', Project)
+	def get_TargetUri(self): # String
 		return self.get_query_params().get('TargetUri')
 
-	def set_TargetUri(self,TargetUri):
-		self.add_query_param('TargetUri',TargetUri)
-
-	def get_Model(self):
+	def set_TargetUri(self, TargetUri):  # String
+		self.add_query_param('TargetUri', TargetUri)
+	def get_Model(self): # String
 		return self.get_query_params().get('Model')
 
-	def set_Model(self,Model):
-		self.add_query_param('Model',Model)
-
-	def get_ImageUri(self):
+	def set_Model(self, Model):  # String
+		self.add_query_param('Model', Model)
+	def get_ImageUri(self): # String
 		return self.get_query_params().get('ImageUri')
 
-	def set_ImageUri(self,ImageUri):
-		self.add_query_param('ImageUri',ImageUri)
-
-	def get_OriginalImageUri(self):
+	def set_ImageUri(self, ImageUri):  # String
+		self.add_query_param('ImageUri', ImageUri)
+	def get_OriginalImageUri(self): # String
 		return self.get_query_params().get('OriginalImageUri')
 
-	def set_OriginalImageUri(self,OriginalImageUri):
-		self.add_query_param('OriginalImageUri',OriginalImageUri)
+	def set_OriginalImageUri(self, OriginalImageUri):  # String
+		self.add_query_param('OriginalImageUri', OriginalImageUri)

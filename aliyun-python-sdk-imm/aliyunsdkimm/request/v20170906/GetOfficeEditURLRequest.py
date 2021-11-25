@@ -25,68 +25,59 @@ class GetOfficeEditURLRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'imm', '2017-09-06', 'GetOfficeEditURL','imm')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_SrcType(self):
+	def get_SrcType(self): # String
 		return self.get_query_params().get('SrcType')
 
-	def set_SrcType(self,SrcType):
-		self.add_query_param('SrcType',SrcType)
-
-	def get_Project(self):
+	def set_SrcType(self, SrcType):  # String
+		self.add_query_param('SrcType', SrcType)
+	def get_Project(self): # String
 		return self.get_query_params().get('Project')
 
-	def set_Project(self,Project):
-		self.add_query_param('Project',Project)
-
-	def get_UserID(self):
+	def set_Project(self, Project):  # String
+		self.add_query_param('Project', Project)
+	def get_UserID(self): # String
 		return self.get_query_params().get('UserID')
 
-	def set_UserID(self,UserID):
-		self.add_query_param('UserID',UserID)
-
-	def get_NotifyEndpoint(self):
+	def set_UserID(self, UserID):  # String
+		self.add_query_param('UserID', UserID)
+	def get_NotifyEndpoint(self): # String
 		return self.get_query_params().get('NotifyEndpoint')
 
-	def set_NotifyEndpoint(self,NotifyEndpoint):
-		self.add_query_param('NotifyEndpoint',NotifyEndpoint)
-
-	def get_FileID(self):
+	def set_NotifyEndpoint(self, NotifyEndpoint):  # String
+		self.add_query_param('NotifyEndpoint', NotifyEndpoint)
+	def get_FileID(self): # String
 		return self.get_query_params().get('FileID')
 
-	def set_FileID(self,FileID):
-		self.add_query_param('FileID',FileID)
-
-	def get_NotifyTopicName(self):
+	def set_FileID(self, FileID):  # String
+		self.add_query_param('FileID', FileID)
+	def get_NotifyTopicName(self): # String
 		return self.get_query_params().get('NotifyTopicName')
 
-	def set_NotifyTopicName(self,NotifyTopicName):
-		self.add_query_param('NotifyTopicName',NotifyTopicName)
-
-	def get_FileName(self):
+	def set_NotifyTopicName(self, NotifyTopicName):  # String
+		self.add_query_param('NotifyTopicName', NotifyTopicName)
+	def get_FileName(self): # String
 		return self.get_query_params().get('FileName')
 
-	def set_FileName(self,FileName):
-		self.add_query_param('FileName',FileName)
-
-	def get_SrcUri(self):
+	def set_FileName(self, FileName):  # String
+		self.add_query_param('FileName', FileName)
+	def get_SrcUri(self): # String
 		return self.get_query_params().get('SrcUri')
 
-	def set_SrcUri(self,SrcUri):
-		self.add_query_param('SrcUri',SrcUri)
-
-	def get_TgtUri(self):
+	def set_SrcUri(self, SrcUri):  # String
+		self.add_query_param('SrcUri', SrcUri)
+	def get_TgtUri(self): # String
 		return self.get_query_params().get('TgtUri')
 
-	def set_TgtUri(self,TgtUri):
-		self.add_query_param('TgtUri',TgtUri)
-
-	def get_UserName(self):
+	def set_TgtUri(self, TgtUri):  # String
+		self.add_query_param('TgtUri', TgtUri)
+	def get_UserName(self): # String
 		return self.get_query_params().get('UserName')
 
-	def set_UserName(self,UserName):
-		self.add_query_param('UserName',UserName)
+	def set_UserName(self, UserName):  # String
+		self.add_query_param('UserName', UserName)

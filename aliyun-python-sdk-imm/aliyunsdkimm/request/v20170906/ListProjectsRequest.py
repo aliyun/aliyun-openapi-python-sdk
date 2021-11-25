@@ -25,20 +25,19 @@ class ListProjectsRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'imm', '2017-09-06', 'ListProjects','imm')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_MaxKeys(self):
+	def get_MaxKeys(self): # Integer
 		return self.get_query_params().get('MaxKeys')
 
-	def set_MaxKeys(self,MaxKeys):
-		self.add_query_param('MaxKeys',MaxKeys)
-
-	def get_Marker(self):
+	def set_MaxKeys(self, MaxKeys):  # Integer
+		self.add_query_param('MaxKeys', MaxKeys)
+	def get_Marker(self): # String
 		return self.get_query_params().get('Marker')
 
-	def set_Marker(self,Marker):
-		self.add_query_param('Marker',Marker)
+	def set_Marker(self, Marker):  # String
+		self.add_query_param('Marker', Marker)

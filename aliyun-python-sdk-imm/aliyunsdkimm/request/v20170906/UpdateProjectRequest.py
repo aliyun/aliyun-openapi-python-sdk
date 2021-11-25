@@ -25,26 +25,24 @@ class UpdateProjectRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'imm', '2017-09-06', 'UpdateProject','imm')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Project(self):
+	def get_Project(self): # String
 		return self.get_query_params().get('Project')
 
-	def set_Project(self,Project):
-		self.add_query_param('Project',Project)
-
-	def get_NewServiceRole(self):
+	def set_Project(self, Project):  # String
+		self.add_query_param('Project', Project)
+	def get_NewServiceRole(self): # String
 		return self.get_query_params().get('NewServiceRole')
 
-	def set_NewServiceRole(self,NewServiceRole):
-		self.add_query_param('NewServiceRole',NewServiceRole)
-
-	def get_NewCU(self):
+	def set_NewServiceRole(self, NewServiceRole):  # String
+		self.add_query_param('NewServiceRole', NewServiceRole)
+	def get_NewCU(self): # Integer
 		return self.get_query_params().get('NewCU')
 
-	def set_NewCU(self,NewCU):
-		self.add_query_param('NewCU',NewCU)
+	def set_NewCU(self, NewCU):  # Integer
+		self.add_query_param('NewCU', NewCU)

@@ -25,32 +25,29 @@ class CreateMediaComplexTaskRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'imm', '2017-09-06', 'CreateMediaComplexTask','imm')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Project(self):
+	def get_Project(self): # String
 		return self.get_query_params().get('Project')
 
-	def set_Project(self,Project):
-		self.add_query_param('Project',Project)
-
-	def get_NotifyEndpoint(self):
+	def set_Project(self, Project):  # String
+		self.add_query_param('Project', Project)
+	def get_NotifyEndpoint(self): # String
 		return self.get_query_params().get('NotifyEndpoint')
 
-	def set_NotifyEndpoint(self,NotifyEndpoint):
-		self.add_query_param('NotifyEndpoint',NotifyEndpoint)
-
-	def get_NotifyTopicName(self):
+	def set_NotifyEndpoint(self, NotifyEndpoint):  # String
+		self.add_query_param('NotifyEndpoint', NotifyEndpoint)
+	def get_NotifyTopicName(self): # String
 		return self.get_query_params().get('NotifyTopicName')
 
-	def set_NotifyTopicName(self,NotifyTopicName):
-		self.add_query_param('NotifyTopicName',NotifyTopicName)
-
-	def get_Parameters(self):
+	def set_NotifyTopicName(self, NotifyTopicName):  # String
+		self.add_query_param('NotifyTopicName', NotifyTopicName)
+	def get_Parameters(self): # String
 		return self.get_query_params().get('Parameters')
 
-	def set_Parameters(self,Parameters):
-		self.add_query_param('Parameters',Parameters)
+	def set_Parameters(self, Parameters):  # String
+		self.add_query_param('Parameters', Parameters)

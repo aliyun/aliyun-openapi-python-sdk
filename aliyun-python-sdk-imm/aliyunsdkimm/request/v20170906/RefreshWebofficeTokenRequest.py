@@ -25,26 +25,24 @@ class RefreshWebofficeTokenRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'imm', '2017-09-06', 'RefreshWebofficeToken','imm')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Project(self):
+	def get_Project(self): # String
 		return self.get_query_params().get('Project')
 
-	def set_Project(self,Project):
-		self.add_query_param('Project',Project)
-
-	def get_AccessToken(self):
+	def set_Project(self, Project):  # String
+		self.add_query_param('Project', Project)
+	def get_AccessToken(self): # String
 		return self.get_query_params().get('AccessToken')
 
-	def set_AccessToken(self,AccessToken):
-		self.add_query_param('AccessToken',AccessToken)
-
-	def get_RefreshToken(self):
+	def set_AccessToken(self, AccessToken):  # String
+		self.add_query_param('AccessToken', AccessToken)
+	def get_RefreshToken(self): # String
 		return self.get_query_params().get('RefreshToken')
 
-	def set_RefreshToken(self,RefreshToken):
-		self.add_query_param('RefreshToken',RefreshToken)
+	def set_RefreshToken(self, RefreshToken):  # String
+		self.add_query_param('RefreshToken', RefreshToken)

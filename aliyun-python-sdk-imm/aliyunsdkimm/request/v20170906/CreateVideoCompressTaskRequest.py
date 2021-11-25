@@ -25,56 +25,49 @@ class CreateVideoCompressTaskRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'imm', '2017-09-06', 'CreateVideoCompressTask','imm')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_TargetSubtitle(self): # String
+		return self.get_query_params().get('TargetSubtitle')
 
-	def get_Project(self):
+	def set_TargetSubtitle(self, TargetSubtitle):  # String
+		self.add_query_param('TargetSubtitle', TargetSubtitle)
+	def get_Project(self): # String
 		return self.get_query_params().get('Project')
 
-	def set_Project(self,Project):
-		self.add_query_param('Project',Project)
-
-	def get_NotifyEndpoint(self):
+	def set_Project(self, Project):  # String
+		self.add_query_param('Project', Project)
+	def get_NotifyEndpoint(self): # String
 		return self.get_query_params().get('NotifyEndpoint')
 
-	def set_NotifyEndpoint(self,NotifyEndpoint):
-		self.add_query_param('NotifyEndpoint',NotifyEndpoint)
-
-	def get_TargetContainer(self):
-		return self.get_query_params().get('TargetContainer')
-
-	def set_TargetContainer(self,TargetContainer):
-		self.add_query_param('TargetContainer',TargetContainer)
-
-	def get_CustomMessage(self):
+	def set_NotifyEndpoint(self, NotifyEndpoint):  # String
+		self.add_query_param('NotifyEndpoint', NotifyEndpoint)
+	def get_CustomMessage(self): # String
 		return self.get_query_params().get('CustomMessage')
 
-	def set_CustomMessage(self,CustomMessage):
-		self.add_query_param('CustomMessage',CustomMessage)
-
-	def get_NotifyTopicName(self):
+	def set_CustomMessage(self, CustomMessage):  # String
+		self.add_query_param('CustomMessage', CustomMessage)
+	def get_NotifyTopicName(self): # String
 		return self.get_query_params().get('NotifyTopicName')
 
-	def set_NotifyTopicName(self,NotifyTopicName):
-		self.add_query_param('NotifyTopicName',NotifyTopicName)
-
-	def get_TargetList(self):
+	def set_NotifyTopicName(self, NotifyTopicName):  # String
+		self.add_query_param('NotifyTopicName', NotifyTopicName)
+	def get_TargetList(self): # String
 		return self.get_query_params().get('TargetList')
 
-	def set_TargetList(self,TargetList):
-		self.add_query_param('TargetList',TargetList)
-
-	def get_VideoUri(self):
+	def set_TargetList(self, TargetList):  # String
+		self.add_query_param('TargetList', TargetList)
+	def get_VideoUri(self): # String
 		return self.get_query_params().get('VideoUri')
 
-	def set_VideoUri(self,VideoUri):
-		self.add_query_param('VideoUri',VideoUri)
-
-	def get_TargetSegment(self):
+	def set_VideoUri(self, VideoUri):  # String
+		self.add_query_param('VideoUri', VideoUri)
+	def get_TargetSegment(self): # String
 		return self.get_query_params().get('TargetSegment')
 
-	def set_TargetSegment(self,TargetSegment):
-		self.add_query_param('TargetSegment',TargetSegment)
+	def set_TargetSegment(self, TargetSegment):  # String
+		self.add_query_param('TargetSegment', TargetSegment)

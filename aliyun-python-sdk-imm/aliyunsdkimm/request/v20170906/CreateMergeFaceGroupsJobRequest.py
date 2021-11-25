@@ -25,50 +25,44 @@ class CreateMergeFaceGroupsJobRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'imm', '2017-09-06', 'CreateMergeFaceGroupsJob','imm')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Project(self):
+	def get_Project(self): # String
 		return self.get_query_params().get('Project')
 
-	def set_Project(self,Project):
-		self.add_query_param('Project',Project)
-
-	def get_NotifyEndpoint(self):
+	def set_Project(self, Project):  # String
+		self.add_query_param('Project', Project)
+	def get_NotifyEndpoint(self): # String
 		return self.get_query_params().get('NotifyEndpoint')
 
-	def set_NotifyEndpoint(self,NotifyEndpoint):
-		self.add_query_param('NotifyEndpoint',NotifyEndpoint)
-
-	def get_CustomMessage(self):
+	def set_NotifyEndpoint(self, NotifyEndpoint):  # String
+		self.add_query_param('NotifyEndpoint', NotifyEndpoint)
+	def get_CustomMessage(self): # String
 		return self.get_query_params().get('CustomMessage')
 
-	def set_CustomMessage(self,CustomMessage):
-		self.add_query_param('CustomMessage',CustomMessage)
-
-	def get_GroupIdFrom(self):
+	def set_CustomMessage(self, CustomMessage):  # String
+		self.add_query_param('CustomMessage', CustomMessage)
+	def get_GroupIdFrom(self): # String
 		return self.get_query_params().get('GroupIdFrom')
 
-	def set_GroupIdFrom(self,GroupIdFrom):
-		self.add_query_param('GroupIdFrom',GroupIdFrom)
-
-	def get_NotifyTopicName(self):
+	def set_GroupIdFrom(self, GroupIdFrom):  # String
+		self.add_query_param('GroupIdFrom', GroupIdFrom)
+	def get_NotifyTopicName(self): # String
 		return self.get_query_params().get('NotifyTopicName')
 
-	def set_NotifyTopicName(self,NotifyTopicName):
-		self.add_query_param('NotifyTopicName',NotifyTopicName)
-
-	def get_GroupIdTo(self):
+	def set_NotifyTopicName(self, NotifyTopicName):  # String
+		self.add_query_param('NotifyTopicName', NotifyTopicName)
+	def get_GroupIdTo(self): # String
 		return self.get_query_params().get('GroupIdTo')
 
-	def set_GroupIdTo(self,GroupIdTo):
-		self.add_query_param('GroupIdTo',GroupIdTo)
-
-	def get_SetId(self):
+	def set_GroupIdTo(self, GroupIdTo):  # String
+		self.add_query_param('GroupIdTo', GroupIdTo)
+	def get_SetId(self): # String
 		return self.get_query_params().get('SetId')
 
-	def set_SetId(self,SetId):
-		self.add_query_param('SetId',SetId)
+	def set_SetId(self, SetId):  # String
+		self.add_query_param('SetId', SetId)

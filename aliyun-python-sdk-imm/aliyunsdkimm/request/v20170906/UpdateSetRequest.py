@@ -25,26 +25,24 @@ class UpdateSetRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'imm', '2017-09-06', 'UpdateSet','imm')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Project(self):
+	def get_Project(self): # String
 		return self.get_query_params().get('Project')
 
-	def set_Project(self,Project):
-		self.add_query_param('Project',Project)
-
-	def get_SetName(self):
+	def set_Project(self, Project):  # String
+		self.add_query_param('Project', Project)
+	def get_SetName(self): # String
 		return self.get_query_params().get('SetName')
 
-	def set_SetName(self,SetName):
-		self.add_query_param('SetName',SetName)
-
-	def get_SetId(self):
+	def set_SetName(self, SetName):  # String
+		self.add_query_param('SetName', SetName)
+	def get_SetId(self): # String
 		return self.get_query_params().get('SetId')
 
-	def set_SetId(self,SetId):
-		self.add_query_param('SetId',SetId)
+	def set_SetId(self, SetId):  # String
+		self.add_query_param('SetId', SetId)

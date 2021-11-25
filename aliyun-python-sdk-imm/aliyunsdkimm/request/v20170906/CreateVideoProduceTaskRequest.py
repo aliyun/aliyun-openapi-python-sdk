@@ -25,68 +25,59 @@ class CreateVideoProduceTaskRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'imm', '2017-09-06', 'CreateVideoProduceTask','imm')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Project(self):
+	def get_Project(self): # String
 		return self.get_query_params().get('Project')
 
-	def set_Project(self,Project):
-		self.add_query_param('Project',Project)
-
-	def get_Music(self):
+	def set_Project(self, Project):  # String
+		self.add_query_param('Project', Project)
+	def get_Music(self): # String
 		return self.get_query_params().get('Music')
 
-	def set_Music(self,Music):
-		self.add_query_param('Music',Music)
-
-	def get_NotifyEndpoint(self):
+	def set_Music(self, Music):  # String
+		self.add_query_param('Music', Music)
+	def get_NotifyEndpoint(self): # String
 		return self.get_query_params().get('NotifyEndpoint')
 
-	def set_NotifyEndpoint(self,NotifyEndpoint):
-		self.add_query_param('NotifyEndpoint',NotifyEndpoint)
-
-	def get_TargetUri(self):
+	def set_NotifyEndpoint(self, NotifyEndpoint):  # String
+		self.add_query_param('NotifyEndpoint', NotifyEndpoint)
+	def get_TargetUri(self): # String
 		return self.get_query_params().get('TargetUri')
 
-	def set_TargetUri(self,TargetUri):
-		self.add_query_param('TargetUri',TargetUri)
-
-	def get_TemplateName(self):
+	def set_TargetUri(self, TargetUri):  # String
+		self.add_query_param('TargetUri', TargetUri)
+	def get_TemplateName(self): # String
 		return self.get_query_params().get('TemplateName')
 
-	def set_TemplateName(self,TemplateName):
-		self.add_query_param('TemplateName',TemplateName)
-
-	def get_Height(self):
+	def set_TemplateName(self, TemplateName):  # String
+		self.add_query_param('TemplateName', TemplateName)
+	def get_Height(self): # Integer
 		return self.get_query_params().get('Height')
 
-	def set_Height(self,Height):
-		self.add_query_param('Height',Height)
-
-	def get_CustomMessage(self):
+	def set_Height(self, Height):  # Integer
+		self.add_query_param('Height', Height)
+	def get_CustomMessage(self): # String
 		return self.get_query_params().get('CustomMessage')
 
-	def set_CustomMessage(self,CustomMessage):
-		self.add_query_param('CustomMessage',CustomMessage)
-
-	def get_Images(self):
+	def set_CustomMessage(self, CustomMessage):  # String
+		self.add_query_param('CustomMessage', CustomMessage)
+	def get_Images(self): # String
 		return self.get_query_params().get('Images')
 
-	def set_Images(self,Images):
-		self.add_query_param('Images',Images)
-
-	def get_NotifyTopicName(self):
+	def set_Images(self, Images):  # String
+		self.add_query_param('Images', Images)
+	def get_NotifyTopicName(self): # String
 		return self.get_query_params().get('NotifyTopicName')
 
-	def set_NotifyTopicName(self,NotifyTopicName):
-		self.add_query_param('NotifyTopicName',NotifyTopicName)
-
-	def get_Width(self):
+	def set_NotifyTopicName(self, NotifyTopicName):  # String
+		self.add_query_param('NotifyTopicName', NotifyTopicName)
+	def get_Width(self): # Integer
 		return self.get_query_params().get('Width')
 
-	def set_Width(self,Width):
-		self.add_query_param('Width',Width)
+	def set_Width(self, Width):  # Integer
+		self.add_query_param('Width', Width)

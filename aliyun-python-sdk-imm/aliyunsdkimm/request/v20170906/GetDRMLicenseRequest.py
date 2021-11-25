@@ -25,26 +25,24 @@ class GetDRMLicenseRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'imm', '2017-09-06', 'GetDRMLicense','imm')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Project(self):
+	def get_Project(self): # String
 		return self.get_query_params().get('Project')
 
-	def set_Project(self,Project):
-		self.add_query_param('Project',Project)
-
-	def get_DRMType(self):
+	def set_Project(self, Project):  # String
+		self.add_query_param('Project', Project)
+	def get_DRMType(self): # String
 		return self.get_query_params().get('DRMType')
 
-	def set_DRMType(self,DRMType):
-		self.add_query_param('DRMType',DRMType)
-
-	def get_DRMLicense(self):
+	def set_DRMType(self, DRMType):  # String
+		self.add_query_param('DRMType', DRMType)
+	def get_DRMLicense(self): # String
 		return self.get_query_params().get('DRMLicense')
 
-	def set_DRMLicense(self,DRMLicense):
-		self.add_query_param('DRMLicense',DRMLicense)
+	def set_DRMLicense(self, DRMLicense):  # String
+		self.add_query_param('DRMLicense', DRMLicense)

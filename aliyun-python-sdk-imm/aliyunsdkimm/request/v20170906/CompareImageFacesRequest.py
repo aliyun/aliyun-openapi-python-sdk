@@ -25,44 +25,39 @@ class CompareImageFacesRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'imm', '2017-09-06', 'CompareImageFaces','imm')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_Project(self):
+	def get_Project(self): # String
 		return self.get_query_params().get('Project')
 
-	def set_Project(self,Project):
-		self.add_query_param('Project',Project)
-
-	def get_FaceIdA(self):
+	def set_Project(self, Project):  # String
+		self.add_query_param('Project', Project)
+	def get_FaceIdA(self): # String
 		return self.get_query_params().get('FaceIdA')
 
-	def set_FaceIdA(self,FaceIdA):
-		self.add_query_param('FaceIdA',FaceIdA)
-
-	def get_FaceIdB(self):
+	def set_FaceIdA(self, FaceIdA):  # String
+		self.add_query_param('FaceIdA', FaceIdA)
+	def get_FaceIdB(self): # String
 		return self.get_query_params().get('FaceIdB')
 
-	def set_FaceIdB(self,FaceIdB):
-		self.add_query_param('FaceIdB',FaceIdB)
-
-	def get_ImageUriB(self):
+	def set_FaceIdB(self, FaceIdB):  # String
+		self.add_query_param('FaceIdB', FaceIdB)
+	def get_ImageUriB(self): # String
 		return self.get_query_params().get('ImageUriB')
 
-	def set_ImageUriB(self,ImageUriB):
-		self.add_query_param('ImageUriB',ImageUriB)
-
-	def get_ImageUriA(self):
+	def set_ImageUriB(self, ImageUriB):  # String
+		self.add_query_param('ImageUriB', ImageUriB)
+	def get_ImageUriA(self): # String
 		return self.get_query_params().get('ImageUriA')
 
-	def set_ImageUriA(self,ImageUriA):
-		self.add_query_param('ImageUriA',ImageUriA)
-
-	def get_SetId(self):
+	def set_ImageUriA(self, ImageUriA):  # String
+		self.add_query_param('ImageUriA', ImageUriA)
+	def get_SetId(self): # String
 		return self.get_query_params().get('SetId')
 
-	def set_SetId(self,SetId):
-		self.add_query_param('SetId',SetId)
+	def set_SetId(self, SetId):  # String
+		self.add_query_param('SetId', SetId)

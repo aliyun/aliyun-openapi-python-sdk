@@ -25,68 +25,59 @@ class GetOfficePreviewURLRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'imm', '2017-09-06', 'GetOfficePreviewURL','imm')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_SrcType(self):
+	def get_SrcType(self): # String
 		return self.get_query_params().get('SrcType')
 
-	def set_SrcType(self,SrcType):
-		self.add_query_param('SrcType',SrcType)
-
-	def get_Project(self):
+	def set_SrcType(self, SrcType):  # String
+		self.add_query_param('SrcType', SrcType)
+	def get_Project(self): # String
 		return self.get_query_params().get('Project')
 
-	def set_Project(self,Project):
-		self.add_query_param('Project',Project)
-
-	def get_WatermarkVertical(self):
+	def set_Project(self, Project):  # String
+		self.add_query_param('Project', Project)
+	def get_WatermarkVertical(self): # Integer
 		return self.get_query_params().get('WatermarkVertical')
 
-	def set_WatermarkVertical(self,WatermarkVertical):
-		self.add_query_param('WatermarkVertical',WatermarkVertical)
-
-	def get_WatermarkType(self):
+	def set_WatermarkVertical(self, WatermarkVertical):  # Integer
+		self.add_query_param('WatermarkVertical', WatermarkVertical)
+	def get_WatermarkType(self): # Integer
 		return self.get_query_params().get('WatermarkType')
 
-	def set_WatermarkType(self,WatermarkType):
-		self.add_query_param('WatermarkType',WatermarkType)
-
-	def get_WatermarkRotate(self):
+	def set_WatermarkType(self, WatermarkType):  # Integer
+		self.add_query_param('WatermarkType', WatermarkType)
+	def get_WatermarkRotate(self): # Float
 		return self.get_query_params().get('WatermarkRotate')
 
-	def set_WatermarkRotate(self,WatermarkRotate):
-		self.add_query_param('WatermarkRotate',WatermarkRotate)
-
-	def get_WatermarkValue(self):
+	def set_WatermarkRotate(self, WatermarkRotate):  # Float
+		self.add_query_param('WatermarkRotate', WatermarkRotate)
+	def get_WatermarkValue(self): # String
 		return self.get_query_params().get('WatermarkValue')
 
-	def set_WatermarkValue(self,WatermarkValue):
-		self.add_query_param('WatermarkValue',WatermarkValue)
-
-	def get_WatermarkFont(self):
+	def set_WatermarkValue(self, WatermarkValue):  # String
+		self.add_query_param('WatermarkValue', WatermarkValue)
+	def get_WatermarkFont(self): # String
 		return self.get_query_params().get('WatermarkFont')
 
-	def set_WatermarkFont(self,WatermarkFont):
-		self.add_query_param('WatermarkFont',WatermarkFont)
-
-	def get_WatermarkHorizontal(self):
+	def set_WatermarkFont(self, WatermarkFont):  # String
+		self.add_query_param('WatermarkFont', WatermarkFont)
+	def get_WatermarkHorizontal(self): # Integer
 		return self.get_query_params().get('WatermarkHorizontal')
 
-	def set_WatermarkHorizontal(self,WatermarkHorizontal):
-		self.add_query_param('WatermarkHorizontal',WatermarkHorizontal)
-
-	def get_SrcUri(self):
+	def set_WatermarkHorizontal(self, WatermarkHorizontal):  # Integer
+		self.add_query_param('WatermarkHorizontal', WatermarkHorizontal)
+	def get_SrcUri(self): # String
 		return self.get_query_params().get('SrcUri')
 
-	def set_SrcUri(self,SrcUri):
-		self.add_query_param('SrcUri',SrcUri)
-
-	def get_WatermarkFillStyle(self):
+	def set_SrcUri(self, SrcUri):  # String
+		self.add_query_param('SrcUri', SrcUri)
+	def get_WatermarkFillStyle(self): # String
 		return self.get_query_params().get('WatermarkFillStyle')
 
-	def set_WatermarkFillStyle(self,WatermarkFillStyle):
-		self.add_query_param('WatermarkFillStyle',WatermarkFillStyle)
+	def set_WatermarkFillStyle(self, WatermarkFillStyle):  # String
+		self.add_query_param('WatermarkFillStyle', WatermarkFillStyle)

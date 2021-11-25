@@ -25,128 +25,109 @@ class ConvertOfficeFormatRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'imm', '2017-09-06', 'ConvertOfficeFormat','imm')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_SrcType(self):
+	def get_SrcType(self): # String
 		return self.get_query_params().get('SrcType')
 
-	def set_SrcType(self,SrcType):
-		self.add_query_param('SrcType',SrcType)
-
-	def get_Project(self):
+	def set_SrcType(self, SrcType):  # String
+		self.add_query_param('SrcType', SrcType)
+	def get_Project(self): # String
 		return self.get_query_params().get('Project')
 
-	def set_Project(self,Project):
-		self.add_query_param('Project',Project)
-
-	def get_PdfVector(self):
+	def set_Project(self, Project):  # String
+		self.add_query_param('Project', Project)
+	def get_PdfVector(self): # Boolean
 		return self.get_query_params().get('PdfVector')
 
-	def set_PdfVector(self,PdfVector):
-		self.add_query_param('PdfVector',PdfVector)
-
-	def get_Password(self):
+	def set_PdfVector(self, PdfVector):  # Boolean
+		self.add_query_param('PdfVector', PdfVector)
+	def get_Password(self): # String
 		return self.get_query_params().get('Password')
 
-	def set_Password(self,Password):
-		self.add_query_param('Password',Password)
-
-	def get_StartPage(self):
+	def set_Password(self, Password):  # String
+		self.add_query_param('Password', Password)
+	def get_StartPage(self): # Long
 		return self.get_query_params().get('StartPage')
 
-	def set_StartPage(self,StartPage):
-		self.add_query_param('StartPage',StartPage)
-
-	def get_FitToPagesWide(self):
+	def set_StartPage(self, StartPage):  # Long
+		self.add_query_param('StartPage', StartPage)
+	def get_FitToPagesWide(self): # Boolean
 		return self.get_query_params().get('FitToPagesWide')
 
-	def set_FitToPagesWide(self,FitToPagesWide):
-		self.add_query_param('FitToPagesWide',FitToPagesWide)
-
-	def get_TgtFilePrefix(self):
+	def set_FitToPagesWide(self, FitToPagesWide):  # Boolean
+		self.add_query_param('FitToPagesWide', FitToPagesWide)
+	def get_TgtFilePrefix(self): # String
 		return self.get_query_params().get('TgtFilePrefix')
 
-	def set_TgtFilePrefix(self,TgtFilePrefix):
-		self.add_query_param('TgtFilePrefix',TgtFilePrefix)
-
-	def get_ModelId(self):
+	def set_TgtFilePrefix(self, TgtFilePrefix):  # String
+		self.add_query_param('TgtFilePrefix', TgtFilePrefix)
+	def get_ModelId(self): # String
 		return self.get_query_params().get('ModelId')
 
-	def set_ModelId(self,ModelId):
-		self.add_query_param('ModelId',ModelId)
-
-	def get_MaxSheetRow(self):
+	def set_ModelId(self, ModelId):  # String
+		self.add_query_param('ModelId', ModelId)
+	def get_MaxSheetRow(self): # Long
 		return self.get_query_params().get('MaxSheetRow')
 
-	def set_MaxSheetRow(self,MaxSheetRow):
-		self.add_query_param('MaxSheetRow',MaxSheetRow)
-
-	def get_MaxSheetCount(self):
+	def set_MaxSheetRow(self, MaxSheetRow):  # Long
+		self.add_query_param('MaxSheetRow', MaxSheetRow)
+	def get_MaxSheetCount(self): # Long
 		return self.get_query_params().get('MaxSheetCount')
 
-	def set_MaxSheetCount(self,MaxSheetCount):
-		self.add_query_param('MaxSheetCount',MaxSheetCount)
-
-	def get_EndPage(self):
+	def set_MaxSheetCount(self, MaxSheetCount):  # Long
+		self.add_query_param('MaxSheetCount', MaxSheetCount)
+	def get_EndPage(self): # Long
 		return self.get_query_params().get('EndPage')
 
-	def set_EndPage(self,EndPage):
-		self.add_query_param('EndPage',EndPage)
-
-	def get_TgtFileSuffix(self):
+	def set_EndPage(self, EndPage):  # Long
+		self.add_query_param('EndPage', EndPage)
+	def get_TgtFileSuffix(self): # String
 		return self.get_query_params().get('TgtFileSuffix')
 
-	def set_TgtFileSuffix(self,TgtFileSuffix):
-		self.add_query_param('TgtFileSuffix',TgtFileSuffix)
-
-	def get_SheetOnePage(self):
+	def set_TgtFileSuffix(self, TgtFileSuffix):  # String
+		self.add_query_param('TgtFileSuffix', TgtFileSuffix)
+	def get_SheetOnePage(self): # Boolean
 		return self.get_query_params().get('SheetOnePage')
 
-	def set_SheetOnePage(self,SheetOnePage):
-		self.add_query_param('SheetOnePage',SheetOnePage)
-
-	def get_MaxSheetCol(self):
+	def set_SheetOnePage(self, SheetOnePage):  # Boolean
+		self.add_query_param('SheetOnePage', SheetOnePage)
+	def get_MaxSheetCol(self): # Long
 		return self.get_query_params().get('MaxSheetCol')
 
-	def set_MaxSheetCol(self,MaxSheetCol):
-		self.add_query_param('MaxSheetCol',MaxSheetCol)
-
-	def get_TgtType(self):
+	def set_MaxSheetCol(self, MaxSheetCol):  # Long
+		self.add_query_param('MaxSheetCol', MaxSheetCol)
+	def get_TgtType(self): # String
 		return self.get_query_params().get('TgtType')
 
-	def set_TgtType(self,TgtType):
-		self.add_query_param('TgtType',TgtType)
-
-	def get_Hidecomments(self):
+	def set_TgtType(self, TgtType):  # String
+		self.add_query_param('TgtType', TgtType)
+	def get_Hidecomments(self): # Boolean
 		return self.get_query_params().get('Hidecomments')
 
-	def set_Hidecomments(self,Hidecomments):
-		self.add_query_param('Hidecomments',Hidecomments)
-
-	def get_FitToPagesTall(self):
+	def set_Hidecomments(self, Hidecomments):  # Boolean
+		self.add_query_param('Hidecomments', Hidecomments)
+	def get_FitToPagesTall(self): # Boolean
 		return self.get_query_params().get('FitToPagesTall')
 
-	def set_FitToPagesTall(self,FitToPagesTall):
-		self.add_query_param('FitToPagesTall',FitToPagesTall)
-
-	def get_SrcUri(self):
+	def set_FitToPagesTall(self, FitToPagesTall):  # Boolean
+		self.add_query_param('FitToPagesTall', FitToPagesTall)
+	def get_SrcUri(self): # String
 		return self.get_query_params().get('SrcUri')
 
-	def set_SrcUri(self,SrcUri):
-		self.add_query_param('SrcUri',SrcUri)
-
-	def get_TgtFilePages(self):
+	def set_SrcUri(self, SrcUri):  # String
+		self.add_query_param('SrcUri', SrcUri)
+	def get_TgtFilePages(self): # String
 		return self.get_query_params().get('TgtFilePages')
 
-	def set_TgtFilePages(self,TgtFilePages):
-		self.add_query_param('TgtFilePages',TgtFilePages)
-
-	def get_TgtUri(self):
+	def set_TgtFilePages(self, TgtFilePages):  # String
+		self.add_query_param('TgtFilePages', TgtFilePages)
+	def get_TgtUri(self): # String
 		return self.get_query_params().get('TgtUri')
 
-	def set_TgtUri(self,TgtUri):
-		self.add_query_param('TgtUri',TgtUri)
+	def set_TgtUri(self, TgtUri):  # String
+		self.add_query_param('TgtUri', TgtUri)

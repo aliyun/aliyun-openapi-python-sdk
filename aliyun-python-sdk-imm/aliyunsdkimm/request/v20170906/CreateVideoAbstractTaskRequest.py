@@ -25,50 +25,44 @@ class CreateVideoAbstractTaskRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'imm', '2017-09-06', 'CreateVideoAbstractTask','imm')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_TargetVideoUri(self):
+	def get_TargetVideoUri(self): # String
 		return self.get_query_params().get('TargetVideoUri')
 
-	def set_TargetVideoUri(self,TargetVideoUri):
-		self.add_query_param('TargetVideoUri',TargetVideoUri)
-
-	def get_Project(self):
+	def set_TargetVideoUri(self, TargetVideoUri):  # String
+		self.add_query_param('TargetVideoUri', TargetVideoUri)
+	def get_Project(self): # String
 		return self.get_query_params().get('Project')
 
-	def set_Project(self,Project):
-		self.add_query_param('Project',Project)
-
-	def get_NotifyEndpoint(self):
+	def set_Project(self, Project):  # String
+		self.add_query_param('Project', Project)
+	def get_NotifyEndpoint(self): # String
 		return self.get_query_params().get('NotifyEndpoint')
 
-	def set_NotifyEndpoint(self,NotifyEndpoint):
-		self.add_query_param('NotifyEndpoint',NotifyEndpoint)
-
-	def get_NotifyTopicName(self):
+	def set_NotifyEndpoint(self, NotifyEndpoint):  # String
+		self.add_query_param('NotifyEndpoint', NotifyEndpoint)
+	def get_NotifyTopicName(self): # String
 		return self.get_query_params().get('NotifyTopicName')
 
-	def set_NotifyTopicName(self,NotifyTopicName):
-		self.add_query_param('NotifyTopicName',NotifyTopicName)
-
-	def get_VideoUri(self):
+	def set_NotifyTopicName(self, NotifyTopicName):  # String
+		self.add_query_param('NotifyTopicName', NotifyTopicName)
+	def get_VideoUri(self): # String
 		return self.get_query_params().get('VideoUri')
 
-	def set_VideoUri(self,VideoUri):
-		self.add_query_param('VideoUri',VideoUri)
-
-	def get_AbstractLength(self):
+	def set_VideoUri(self, VideoUri):  # String
+		self.add_query_param('VideoUri', VideoUri)
+	def get_AbstractLength(self): # Integer
 		return self.get_query_params().get('AbstractLength')
 
-	def set_AbstractLength(self,AbstractLength):
-		self.add_query_param('AbstractLength',AbstractLength)
-
-	def get_TargetClipsUri(self):
+	def set_AbstractLength(self, AbstractLength):  # Integer
+		self.add_query_param('AbstractLength', AbstractLength)
+	def get_TargetClipsUri(self): # String
 		return self.get_query_params().get('TargetClipsUri')
 
-	def set_TargetClipsUri(self,TargetClipsUri):
-		self.add_query_param('TargetClipsUri',TargetClipsUri)
+	def set_TargetClipsUri(self, TargetClipsUri):  # String
+		self.add_query_param('TargetClipsUri', TargetClipsUri)
