@@ -31,6 +31,12 @@ class DescribeDBInstancesRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_DBInstanceModes(self):
+		return self.get_query_params().get('DBInstanceModes')
+
+	def set_DBInstanceModes(self,DBInstanceModes):
+		self.add_query_param('DBInstanceModes',DBInstanceModes)
+
 	def get_DBInstanceStatuses(self):
 		return self.get_query_params().get('DBInstanceStatuses')
 
