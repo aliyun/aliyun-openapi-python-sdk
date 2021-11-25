@@ -72,3 +72,9 @@ class RecordFailureRequest(RpcRequest):
 
 	def set_TaskId(self,TaskId):
 		self.add_query_param('TaskId',TaskId)
+
+	def get_ExceptionCodes(self):
+		return self.get_query_params().get('ExceptionCodes')
+
+	def set_ExceptionCodes(self,ExceptionCodes):
+		self.add_query_param('ExceptionCodes',ExceptionCodes)
