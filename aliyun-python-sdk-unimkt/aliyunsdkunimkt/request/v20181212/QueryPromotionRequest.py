@@ -23,7 +23,7 @@ from aliyunsdkunimkt.endpoint import endpoint_data
 class QueryPromotionRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'UniMkt', '2018-12-12', 'QueryPromotion')
+		RpcRequest.__init__(self, 'UniMkt', '2018-12-12', 'QueryPromotion','1.0.0')
 		self.set_protocol_type('https')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
@@ -31,6 +31,12 @@ class QueryPromotionRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+
+	def get_ProxyChannelId(self):
+		return self.get_body_params().get('ProxyChannelId')
+
+	def set_ProxyChannelId(self,ProxyChannelId):
+		self.add_body_params('ProxyChannelId', ProxyChannelId)
 
 	def get_Extra(self):
 		return self.get_body_params().get('Extra')

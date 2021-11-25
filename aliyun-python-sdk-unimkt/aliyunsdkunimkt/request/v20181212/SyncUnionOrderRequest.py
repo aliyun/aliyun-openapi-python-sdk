@@ -23,7 +23,7 @@ from aliyunsdkunimkt.endpoint import endpoint_data
 class SyncUnionOrderRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'UniMkt', '2018-12-12', 'SyncUnionOrder')
+		RpcRequest.__init__(self, 'UniMkt', '2018-12-12', 'SyncUnionOrder','1.0.0')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -120,6 +120,12 @@ class SyncUnionOrderRequest(RpcRequest):
 
 	def set_ApplyPrice(self,ApplyPrice):
 		self.add_query_param('ApplyPrice',ApplyPrice)
+
+	def get_TradeTimeString(self):
+		return self.get_query_params().get('TradeTimeString')
+
+	def set_TradeTimeString(self,TradeTimeString):
+		self.add_query_param('TradeTimeString',TradeTimeString)
 
 	def get_ExtendInfo(self):
 		return self.get_query_params().get('ExtendInfo')
