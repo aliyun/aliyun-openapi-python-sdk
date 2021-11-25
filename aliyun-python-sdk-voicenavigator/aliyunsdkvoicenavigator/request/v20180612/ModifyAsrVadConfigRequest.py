@@ -20,28 +20,16 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkvoicenavigator.endpoint import endpoint_data
 
-class DialogueRequest(RpcRequest):
+class ModifyAsrVadConfigRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'VoiceNavigator', '2018-06-12', 'Dialogue','voicebot')
-		self.set_method('POST')
+		RpcRequest.__init__(self, 'VoiceNavigator', '2018-06-12', 'ModifyAsrVadConfig','voicebot')
+		self.set_method('GET')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ConversationId(self):
-		return self.get_query_params().get('ConversationId')
-
-	def set_ConversationId(self,ConversationId):
-		self.add_query_param('ConversationId',ConversationId)
-
-	def get_CallingNumber(self):
-		return self.get_query_params().get('CallingNumber')
-
-	def set_CallingNumber(self,CallingNumber):
-		self.add_query_param('CallingNumber',CallingNumber)
 
 	def get_InstanceId(self):
 		return self.get_query_params().get('InstanceId')
@@ -49,26 +37,8 @@ class DialogueRequest(RpcRequest):
 	def set_InstanceId(self,InstanceId):
 		self.add_query_param('InstanceId',InstanceId)
 
-	def get_CalledNumber(self):
-		return self.get_query_params().get('CalledNumber')
+	def get_SpeechNoiseThreshold(self):
+		return self.get_query_params().get('SpeechNoiseThreshold')
 
-	def set_CalledNumber(self,CalledNumber):
-		self.add_query_param('CalledNumber',CalledNumber)
-
-	def get_AdditionalContext(self):
-		return self.get_query_params().get('AdditionalContext')
-
-	def set_AdditionalContext(self,AdditionalContext):
-		self.add_query_param('AdditionalContext',AdditionalContext)
-
-	def get_InstanceOwnerId(self):
-		return self.get_query_params().get('InstanceOwnerId')
-
-	def set_InstanceOwnerId(self,InstanceOwnerId):
-		self.add_query_param('InstanceOwnerId',InstanceOwnerId)
-
-	def get_Utterance(self):
-		return self.get_query_params().get('Utterance')
-
-	def set_Utterance(self,Utterance):
-		self.add_query_param('Utterance',Utterance)
+	def set_SpeechNoiseThreshold(self,SpeechNoiseThreshold):
+		self.add_query_param('SpeechNoiseThreshold',SpeechNoiseThreshold)

@@ -60,3 +60,9 @@ class BeginDialogueRequest(RpcRequest):
 
 	def set_CalledNumber(self,CalledNumber):
 		self.add_query_param('CalledNumber',CalledNumber)
+
+	def get_InstanceOwnerId(self):
+		return self.get_query_params().get('InstanceOwnerId')
+
+	def set_InstanceOwnerId(self,InstanceOwnerId):
+		self.add_query_param('InstanceOwnerId',InstanceOwnerId)

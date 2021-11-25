@@ -20,31 +20,25 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkvoicenavigator.endpoint import endpoint_data
 
-class EndDialogueRequest(RpcRequest):
+class ListDownloadTasksRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'VoiceNavigator', '2018-06-12', 'EndDialogue','voicebot')
-		self.set_method('POST')
+		RpcRequest.__init__(self, 'VoiceNavigator', '2018-06-12', 'ListDownloadTasks','voicebot')
+		self.set_method('GET')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_ConversationId(self):
-		return self.get_query_params().get('ConversationId')
+	def get_PageNumber(self):
+		return self.get_query_params().get('PageNumber')
 
-	def set_ConversationId(self,ConversationId):
-		self.add_query_param('ConversationId',ConversationId)
+	def set_PageNumber(self,PageNumber):
+		self.add_query_param('PageNumber',PageNumber)
 
-	def get_InstanceId(self):
-		return self.get_query_params().get('InstanceId')
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
 
-	def set_InstanceId(self,InstanceId):
-		self.add_query_param('InstanceId',InstanceId)
-
-	def get_InstanceOwnerId(self):
-		return self.get_query_params().get('InstanceOwnerId')
-
-	def set_InstanceOwnerId(self,InstanceOwnerId):
-		self.add_query_param('InstanceOwnerId',InstanceOwnerId)
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)

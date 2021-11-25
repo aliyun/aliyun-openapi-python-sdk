@@ -48,3 +48,9 @@ class SilenceTimeoutRequest(RpcRequest):
 
 	def set_InstanceId(self,InstanceId):
 		self.add_query_param('InstanceId',InstanceId)
+
+	def get_InstanceOwnerId(self):
+		return self.get_query_params().get('InstanceOwnerId')
+
+	def set_InstanceOwnerId(self,InstanceOwnerId):
+		self.add_query_param('InstanceOwnerId',InstanceOwnerId)

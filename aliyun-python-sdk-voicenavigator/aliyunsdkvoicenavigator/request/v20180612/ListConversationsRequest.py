@@ -31,17 +31,47 @@ class ListConversationsRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_BeginTimeLeftRange(self):
+		return self.get_query_params().get('BeginTimeLeftRange')
+
+	def set_BeginTimeLeftRange(self,BeginTimeLeftRange):
+		self.add_query_param('BeginTimeLeftRange',BeginTimeLeftRange)
+
+	def get_Query(self):
+		return self.get_query_params().get('Query')
+
+	def set_Query(self,Query):
+		self.add_query_param('Query',Query)
+
 	def get_PageNumber(self):
 		return self.get_query_params().get('PageNumber')
 
 	def set_PageNumber(self,PageNumber):
 		self.add_query_param('PageNumber',PageNumber)
 
+	def get_Result(self):
+		return self.get_query_params().get('Result')
+
+	def set_Result(self,Result):
+		self.add_query_param('Result',Result)
+
+	def get_CallingNumber(self):
+		return self.get_query_params().get('CallingNumber')
+
+	def set_CallingNumber(self,CallingNumber):
+		self.add_query_param('CallingNumber',CallingNumber)
+
 	def get_InstanceId(self):
 		return self.get_query_params().get('InstanceId')
 
 	def set_InstanceId(self,InstanceId):
 		self.add_query_param('InstanceId',InstanceId)
+
+	def get_BeginTimeRightRange(self):
+		return self.get_query_params().get('BeginTimeRightRange')
+
+	def set_BeginTimeRightRange(self,BeginTimeRightRange):
+		self.add_query_param('BeginTimeRightRange',BeginTimeRightRange)
 
 	def get_PageSize(self):
 		return self.get_query_params().get('PageSize')
