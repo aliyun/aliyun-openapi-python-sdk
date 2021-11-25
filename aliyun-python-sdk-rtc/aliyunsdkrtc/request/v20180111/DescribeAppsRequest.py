@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkrtc.endpoint import endpoint_data
 
-class StopChannelUserPublishRequest(RpcRequest):
+class DescribeAppsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'rtc', '2018-01-11', 'StopChannelUserPublish')
+		RpcRequest.__init__(self, 'rtc', '2018-01-11', 'DescribeApps')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,11 +31,21 @@ class StopChannelUserPublishRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_UserId(self): # String
-		return self.get_query_params().get('UserId')
+	def get_PageNum(self): # Integer
+		return self.get_query_params().get('PageNum')
 
-	def set_UserId(self, UserId):  # String
-		self.add_query_param('UserId', UserId)
+	def set_PageNum(self, PageNum):  # Integer
+		self.add_query_param('PageNum', PageNum)
+	def get_PageSize(self): # Integer
+		return self.get_query_params().get('PageSize')
+
+	def set_PageSize(self, PageSize):  # Integer
+		self.add_query_param('PageSize', PageSize)
+	def get_Order(self): # String
+		return self.get_query_params().get('Order')
+
+	def set_Order(self, Order):  # String
+		self.add_query_param('Order', Order)
 	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
@@ -46,8 +56,8 @@ class StopChannelUserPublishRequest(RpcRequest):
 
 	def set_AppId(self, AppId):  # String
 		self.add_query_param('AppId', AppId)
-	def get_ChannelId(self): # String
-		return self.get_query_params().get('ChannelId')
+	def get_Status(self): # String
+		return self.get_query_params().get('Status')
 
-	def set_ChannelId(self, ChannelId):  # String
-		self.add_query_param('ChannelId', ChannelId)
+	def set_Status(self, Status):  # String
+		self.add_query_param('Status', Status)
