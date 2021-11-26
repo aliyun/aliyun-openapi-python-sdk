@@ -25,8 +25,8 @@ class ListUsersRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Qualitycheck', '2019-01-15', 'ListUsers')
 		self.set_method('POST')
 
-	def get_JsonStr(self):
+	def get_JsonStr(self): # String
 		return self.get_query_params().get('JsonStr')
 
-	def set_JsonStr(self,JsonStr):
-		self.add_query_param('JsonStr',JsonStr)
+	def set_JsonStr(self, JsonStr):  # String
+		self.add_query_param('JsonStr', JsonStr)
