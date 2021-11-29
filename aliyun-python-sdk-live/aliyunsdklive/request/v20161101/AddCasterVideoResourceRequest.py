@@ -85,6 +85,12 @@ class AddCasterVideoResourceRequest(RpcRequest):
 	def set_BeginOffset(self,BeginOffset):
 		self.add_query_param('BeginOffset',BeginOffset)
 
+	def get_FixedDelayDuration(self):
+		return self.get_query_params().get('FixedDelayDuration')
+
+	def set_FixedDelayDuration(self,FixedDelayDuration):
+		self.add_query_param('FixedDelayDuration',FixedDelayDuration)
+
 	def get_LiveStreamUrl(self):
 		return self.get_query_params().get('LiveStreamUrl')
 

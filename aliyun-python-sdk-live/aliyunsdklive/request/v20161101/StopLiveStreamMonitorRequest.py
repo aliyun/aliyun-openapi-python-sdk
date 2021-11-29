@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdklive.endpoint import endpoint_data
 
-class DeleteLivePullStreamInfoConfigRequest(RpcRequest):
+class StopLiveStreamMonitorRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'live', '2016-11-01', 'DeleteLivePullStreamInfoConfig','live')
+		RpcRequest.__init__(self, 'live', '2016-11-01', 'StopLiveStreamMonitor','live')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,23 +31,11 @@ class DeleteLivePullStreamInfoConfigRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_AppName(self):
-		return self.get_query_params().get('AppName')
+	def get_MonitorId(self):
+		return self.get_query_params().get('MonitorId')
 
-	def set_AppName(self,AppName):
-		self.add_query_param('AppName',AppName)
-
-	def get_StreamName(self):
-		return self.get_query_params().get('StreamName')
-
-	def set_StreamName(self,StreamName):
-		self.add_query_param('StreamName',StreamName)
-
-	def get_DomainName(self):
-		return self.get_query_params().get('DomainName')
-
-	def set_DomainName(self,DomainName):
-		self.add_query_param('DomainName',DomainName)
+	def set_MonitorId(self,MonitorId):
+		self.add_query_param('MonitorId',MonitorId)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')

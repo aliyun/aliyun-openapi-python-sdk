@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdklive.endpoint import endpoint_data
 
-class DeleteLivePullStreamInfoConfigRequest(RpcRequest):
+class DescribeLiveStreamMonitorListRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'live', '2016-11-01', 'DeleteLivePullStreamInfoConfig','live')
+		RpcRequest.__init__(self, 'live', '2016-11-01', 'DescribeLiveStreamMonitorList','live')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,26 +31,38 @@ class DeleteLivePullStreamInfoConfigRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_AppName(self):
-		return self.get_query_params().get('AppName')
+	def get_MonitorId(self):
+		return self.get_query_params().get('MonitorId')
 
-	def set_AppName(self,AppName):
-		self.add_query_param('AppName',AppName)
+	def set_MonitorId(self,MonitorId):
+		self.add_query_param('MonitorId',MonitorId)
 
-	def get_StreamName(self):
-		return self.get_query_params().get('StreamName')
+	def get_PageNum(self):
+		return self.get_query_params().get('PageNum')
 
-	def set_StreamName(self,StreamName):
-		self.add_query_param('StreamName',StreamName)
+	def set_PageNum(self,PageNum):
+		self.add_query_param('PageNum',PageNum)
 
-	def get_DomainName(self):
-		return self.get_query_params().get('DomainName')
+	def get_PageSize(self):
+		return self.get_query_params().get('PageSize')
 
-	def set_DomainName(self,DomainName):
-		self.add_query_param('DomainName',DomainName)
+	def set_PageSize(self,PageSize):
+		self.add_query_param('PageSize',PageSize)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_OrderRule(self):
+		return self.get_query_params().get('OrderRule')
+
+	def set_OrderRule(self,OrderRule):
+		self.add_query_param('OrderRule',OrderRule)
+
+	def get_Status(self):
+		return self.get_query_params().get('Status')
+
+	def set_Status(self,Status):
+		self.add_query_param('Status',Status)

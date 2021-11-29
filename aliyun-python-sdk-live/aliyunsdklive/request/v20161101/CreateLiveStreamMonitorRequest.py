@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdklive.endpoint import endpoint_data
 
-class DeleteLivePullStreamInfoConfigRequest(RpcRequest):
+class CreateLiveStreamMonitorRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'live', '2016-11-01', 'DeleteLivePullStreamInfoConfig','live')
+		RpcRequest.__init__(self, 'live', '2016-11-01', 'CreateLiveStreamMonitor','live')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,26 +31,44 @@ class DeleteLivePullStreamInfoConfigRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_AppName(self):
-		return self.get_query_params().get('AppName')
+	def get_MonitorName(self):
+		return self.get_query_params().get('MonitorName')
 
-	def set_AppName(self,AppName):
-		self.add_query_param('AppName',AppName)
+	def set_MonitorName(self,MonitorName):
+		self.add_query_param('MonitorName',MonitorName)
 
-	def get_StreamName(self):
-		return self.get_query_params().get('StreamName')
+	def get_Stream(self):
+		return self.get_query_params().get('Stream')
 
-	def set_StreamName(self,StreamName):
-		self.add_query_param('StreamName',StreamName)
+	def set_Stream(self,Stream):
+		self.add_query_param('Stream',Stream)
 
-	def get_DomainName(self):
-		return self.get_query_params().get('DomainName')
+	def get_OutputTemplate(self):
+		return self.get_query_params().get('OutputTemplate')
 
-	def set_DomainName(self,DomainName):
-		self.add_query_param('DomainName',DomainName)
+	def set_OutputTemplate(self,OutputTemplate):
+		self.add_query_param('OutputTemplate',OutputTemplate)
+
+	def get_App(self):
+		return self.get_query_params().get('App')
+
+	def set_App(self,App):
+		self.add_query_param('App',App)
+
+	def get_InputList(self):
+		return self.get_query_params().get('InputList')
+
+	def set_InputList(self,InputList):
+		self.add_query_param('InputList',InputList)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self,OwnerId):
 		self.add_query_param('OwnerId',OwnerId)
+
+	def get_Domain(self):
+		return self.get_query_params().get('Domain')
+
+	def set_Domain(self,Domain):
+		self.add_query_param('Domain',Domain)
