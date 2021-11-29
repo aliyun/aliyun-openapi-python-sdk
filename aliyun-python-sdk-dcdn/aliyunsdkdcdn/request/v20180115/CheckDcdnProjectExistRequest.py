@@ -20,34 +20,22 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdcdn.endpoint import endpoint_data
 
-class DeleteDcdnDomainRequest(RpcRequest):
+class CheckDcdnProjectExistRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'dcdn', '2018-01-15', 'DeleteDcdnDomain')
-		self.set_method('POST')
+		RpcRequest.__init__(self, 'dcdn', '2018-01-15', 'CheckDcdnProjectExist')
+		self.set_method('GET')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_SecurityToken(self):
-		return self.get_query_params().get('SecurityToken')
+	def get_ProjectName(self):
+		return self.get_query_params().get('ProjectName')
 
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)
-
-	def get_OwnerAccount(self):
-		return self.get_query_params().get('OwnerAccount')
-
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
-
-	def get_DomainName(self):
-		return self.get_query_params().get('DomainName')
-
-	def set_DomainName(self,DomainName):
-		self.add_query_param('DomainName',DomainName)
+	def set_ProjectName(self,ProjectName):
+		self.add_query_param('ProjectName',ProjectName)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')

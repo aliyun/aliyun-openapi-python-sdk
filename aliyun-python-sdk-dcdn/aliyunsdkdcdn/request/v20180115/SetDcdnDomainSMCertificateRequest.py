@@ -31,6 +31,12 @@ class SetDcdnDomainSMCertificateRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
+	def get_SSLProtocol(self):
+		return self.get_query_params().get('SSLProtocol')
+
+	def set_SSLProtocol(self,SSLProtocol):
+		self.add_query_param('SSLProtocol',SSLProtocol)
+
 	def get_DomainName(self):
 		return self.get_query_params().get('DomainName')
 

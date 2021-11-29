@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdcdn.endpoint import endpoint_data
 
-class DeleteDcdnDomainRequest(RpcRequest):
+class UpdateDcdnSLSRealtimeLogDeliveryRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'dcdn', '2018-01-15', 'DeleteDcdnDomain')
+		RpcRequest.__init__(self, 'dcdn', '2018-01-15', 'UpdateDcdnSLSRealtimeLogDelivery')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,23 +31,47 @@ class DeleteDcdnDomainRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_SecurityToken(self):
-		return self.get_query_params().get('SecurityToken')
+	def get_SLSLogStore(self):
+		return self.get_body_params().get('SLSLogStore')
 
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)
+	def set_SLSLogStore(self,SLSLogStore):
+		self.add_body_params('SLSLogStore', SLSLogStore)
 
-	def get_OwnerAccount(self):
-		return self.get_query_params().get('OwnerAccount')
+	def get_SLSProject(self):
+		return self.get_body_params().get('SLSProject')
 
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
+	def set_SLSProject(self,SLSProject):
+		self.add_body_params('SLSProject', SLSProject)
+
+	def get_SLSRegion(self):
+		return self.get_body_params().get('SLSRegion')
+
+	def set_SLSRegion(self,SLSRegion):
+		self.add_body_params('SLSRegion', SLSRegion)
+
+	def get_ProjectName(self):
+		return self.get_body_params().get('ProjectName')
+
+	def set_ProjectName(self,ProjectName):
+		self.add_body_params('ProjectName', ProjectName)
 
 	def get_DomainName(self):
-		return self.get_query_params().get('DomainName')
+		return self.get_body_params().get('DomainName')
 
 	def set_DomainName(self,DomainName):
-		self.add_query_param('DomainName',DomainName)
+		self.add_body_params('DomainName', DomainName)
+
+	def get_SamplingRate(self):
+		return self.get_body_params().get('SamplingRate')
+
+	def set_SamplingRate(self,SamplingRate):
+		self.add_body_params('SamplingRate', SamplingRate)
+
+	def get_DataCenter(self):
+		return self.get_body_params().get('DataCenter')
+
+	def set_DataCenter(self,DataCenter):
+		self.add_body_params('DataCenter', DataCenter)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')

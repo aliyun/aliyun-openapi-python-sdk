@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkdcdn.endpoint import endpoint_data
 
-class DeleteDcdnDomainRequest(RpcRequest):
+class SetDcdnFullDomainsBlockIPRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'dcdn', '2018-01-15', 'DeleteDcdnDomain')
+		RpcRequest.__init__(self, 'dcdn', '2018-01-15', 'SetDcdnFullDomainsBlockIP')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,23 +31,23 @@ class DeleteDcdnDomainRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_SecurityToken(self):
-		return self.get_query_params().get('SecurityToken')
+	def get_IPList(self):
+		return self.get_body_params().get('IPList')
 
-	def set_SecurityToken(self,SecurityToken):
-		self.add_query_param('SecurityToken',SecurityToken)
+	def set_IPList(self,IPList):
+		self.add_body_params('IPList', IPList)
 
-	def get_OwnerAccount(self):
-		return self.get_query_params().get('OwnerAccount')
+	def get_BlockInterval(self):
+		return self.get_body_params().get('BlockInterval')
 
-	def set_OwnerAccount(self,OwnerAccount):
-		self.add_query_param('OwnerAccount',OwnerAccount)
+	def set_BlockInterval(self,BlockInterval):
+		self.add_body_params('BlockInterval', BlockInterval)
 
-	def get_DomainName(self):
-		return self.get_query_params().get('DomainName')
+	def get_OperationType(self):
+		return self.get_body_params().get('OperationType')
 
-	def set_DomainName(self,DomainName):
-		self.add_query_param('DomainName',DomainName)
+	def set_OperationType(self,OperationType):
+		self.add_body_params('OperationType', OperationType)
 
 	def get_OwnerId(self):
 		return self.get_query_params().get('OwnerId')
