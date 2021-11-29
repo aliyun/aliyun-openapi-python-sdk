@@ -43,6 +43,12 @@ class StartPredictiveCallRequest(RpcRequest):
 	def set_Callee(self,Callee):
 		self.add_query_param('Callee',Callee)
 
+	def get_MaskedCallee(self):
+		return self.get_query_params().get('MaskedCallee')
+
+	def set_MaskedCallee(self,MaskedCallee):
+		self.add_query_param('MaskedCallee',MaskedCallee)
+
 	def get_ContactFlowVariables(self):
 		return self.get_query_params().get('ContactFlowVariables')
 

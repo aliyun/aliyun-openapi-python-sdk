@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkccc.endpoint import endpoint_data
 
-class MakeCallRequest(RpcRequest):
+class ListSipCallRecordsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'CCC', '2020-07-01', 'MakeCall','CCC')
+		RpcRequest.__init__(self, 'CCC', '2020-07-01', 'ListSipCallRecords','CCC')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -31,50 +31,14 @@ class MakeCallRequest(RpcRequest):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 
-	def get_Callee(self):
-		return self.get_query_params().get('Callee')
-
-	def set_Callee(self,Callee):
-		self.add_query_param('Callee',Callee)
-
-	def get_MaskedCallee(self):
-		return self.get_query_params().get('MaskedCallee')
-
-	def set_MaskedCallee(self,MaskedCallee):
-		self.add_query_param('MaskedCallee',MaskedCallee)
-
-	def get_UserId(self):
-		return self.get_query_params().get('UserId')
-
-	def set_UserId(self,UserId):
-		self.add_query_param('UserId',UserId)
-
-	def get_DeviceId(self):
-		return self.get_query_params().get('DeviceId')
-
-	def set_DeviceId(self,DeviceId):
-		self.add_query_param('DeviceId',DeviceId)
-
-	def get_Tags(self):
-		return self.get_query_params().get('Tags')
-
-	def set_Tags(self,Tags):
-		self.add_query_param('Tags',Tags)
-
-	def get_TimeoutSeconds(self):
-		return self.get_query_params().get('TimeoutSeconds')
-
-	def set_TimeoutSeconds(self,TimeoutSeconds):
-		self.add_query_param('TimeoutSeconds',TimeoutSeconds)
-
-	def get_Caller(self):
-		return self.get_query_params().get('Caller')
-
-	def set_Caller(self,Caller):
-		self.add_query_param('Caller',Caller)
-
 	def get_InstanceId(self):
 		return self.get_query_params().get('InstanceId')
 
 	def set_InstanceId(self,InstanceId):
 		self.add_query_param('InstanceId',InstanceId)
+
+	def get_ContactIdList(self):
+		return self.get_query_params().get('ContactIdList')
+
+	def set_ContactIdList(self,ContactIdList):
+		self.add_query_param('ContactIdList',ContactIdList)
