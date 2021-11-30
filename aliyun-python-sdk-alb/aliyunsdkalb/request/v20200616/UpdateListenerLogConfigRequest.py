@@ -55,7 +55,9 @@ class UpdateListenerLogConfigRequest(RpcRequest):
 		return self.get_query_params().get('AccessLogTracingConfig')
 
 	def set_AccessLogTracingConfig(self, AccessLogTracingConfig):  # Struct
-		for key1, value1 in AccessLogTracingConfig.items():
-			self.add_query_param('AccessLogTracingConfig.' + key1 + '.TracingType', value1)
-			self.add_query_param('AccessLogTracingConfig.' + key1 + '.TracingEnabled', value1)
-			self.add_query_param('AccessLogTracingConfig.' + key1 + '.TracingSample', value1)
+		if AccessLogTracingConfig.get('TracingType') is not None:
+			self.add_query_param('AccessLogTracingConfig.TracingType', AccessLogTracingConfig.get('TracingType'))
+		if AccessLogTracingConfig.get('TracingEnabled') is not None:
+			self.add_query_param('AccessLogTracingConfig.TracingEnabled', AccessLogTracingConfig.get('TracingEnabled'))
+		if AccessLogTracingConfig.get('TracingSample') is not None:
+			self.add_query_param('AccessLogTracingConfig.TracingSample', AccessLogTracingConfig.get('TracingSample'))

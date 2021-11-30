@@ -46,4 +46,4 @@ class DeleteHealthCheckTemplatesRequest(RpcRequest):
 
 	def set_HealthCheckTemplateIds(self, HealthCheckTemplateIds):  # Array
 		for index1, value1 in enumerate(HealthCheckTemplateIds):
-			self.add_query_param('HealthCheckTemplateIds.' + str(index1 + 1) + '.HealthCheckTemplateIds', value1)
+			self.add_query_param('HealthCheckTemplateIds.' + str(index1 + 1), value1)

@@ -45,20 +45,36 @@ class UpdateServerGroupAttributeRequest(RpcRequest):
 		return self.get_query_params().get('HealthCheckConfig')
 
 	def set_HealthCheckConfig(self, HealthCheckConfig):  # Struct
-		for key1, value1 in HealthCheckConfig.items():
-			for index2, value2 in enumerate(value1):
-				self.add_query_param('HealthCheckConfig.' + key1 + '.' + str(index2 + 1) + '.String', value2)
-			self.add_query_param('HealthCheckConfig.' + key1 + '.HealthCheckEnabled', value1)
-			self.add_query_param('HealthCheckConfig.' + key1 + '.HealthCheckTimeout', value1)
-			self.add_query_param('HealthCheckConfig.' + key1 + '.HealthCheckMethod', value1)
-			self.add_query_param('HealthCheckConfig.' + key1 + '.HealthCheckHost', value1)
-			self.add_query_param('HealthCheckConfig.' + key1 + '.HealthCheckProtocol', value1)
-			self.add_query_param('HealthCheckConfig.' + key1 + '.UnhealthyThreshold', value1)
-			self.add_query_param('HealthCheckConfig.' + key1 + '.HealthyThreshold', value1)
-			self.add_query_param('HealthCheckConfig.' + key1 + '.HealthCheckPath', value1)
-			self.add_query_param('HealthCheckConfig.' + key1 + '.HealthCheckInterval', value1)
-			self.add_query_param('HealthCheckConfig.' + key1 + '.HealthCheckHttpVersion', value1)
-			self.add_query_param('HealthCheckConfig.' + key1 + '.HealthCheckConnectPort', value1)
+		if HealthCheckConfig.get('HealthCheckCodes') is not None:
+			for index1, value1 in enumerate(HealthCheckConfig.get('HealthCheckCodes')):
+				self.add_query_param('HealthCheckConfig.HealthCheckCodes' + str(index1 + 1), value1)
+		if HealthCheckConfig.get('HealthCheckEnabled') is not None:
+			self.add_query_param('HealthCheckConfig.HealthCheckEnabled', HealthCheckConfig.get('HealthCheckEnabled'))
+		if HealthCheckConfig.get('HealthCheckTimeout') is not None:
+			self.add_query_param('HealthCheckConfig.HealthCheckTimeout', HealthCheckConfig.get('HealthCheckTimeout'))
+		if HealthCheckConfig.get('HealthCheckMethod') is not None:
+			self.add_query_param('HealthCheckConfig.HealthCheckMethod', HealthCheckConfig.get('HealthCheckMethod'))
+		if HealthCheckConfig.get('HealthCheckHost') is not None:
+			self.add_query_param('HealthCheckConfig.HealthCheckHost', HealthCheckConfig.get('HealthCheckHost'))
+		if HealthCheckConfig.get('HealthCheckProtocol') is not None:
+			self.add_query_param('HealthCheckConfig.HealthCheckProtocol', HealthCheckConfig.get('HealthCheckProtocol'))
+		if HealthCheckConfig.get('UnhealthyThreshold') is not None:
+			self.add_query_param('HealthCheckConfig.UnhealthyThreshold', HealthCheckConfig.get('UnhealthyThreshold'))
+		if HealthCheckConfig.get('HealthyThreshold') is not None:
+			self.add_query_param('HealthCheckConfig.HealthyThreshold', HealthCheckConfig.get('HealthyThreshold'))
+		if HealthCheckConfig.get('HealthCheckTcpFastCloseEnabled') is not None:
+			self.add_query_param('HealthCheckConfig.HealthCheckTcpFastCloseEnabled', HealthCheckConfig.get('HealthCheckTcpFastCloseEnabled'))
+		if HealthCheckConfig.get('HealthCheckPath') is not None:
+			self.add_query_param('HealthCheckConfig.HealthCheckPath', HealthCheckConfig.get('HealthCheckPath'))
+		if HealthCheckConfig.get('HealthCheckInterval') is not None:
+			self.add_query_param('HealthCheckConfig.HealthCheckInterval', HealthCheckConfig.get('HealthCheckInterval'))
+		if HealthCheckConfig.get('HealthCheckHttpCodes') is not None:
+			for index1, value1 in enumerate(HealthCheckConfig.get('HealthCheckHttpCodes')):
+				self.add_query_param('HealthCheckConfig.HealthCheckHttpCodes' + str(index1 + 1), value1)
+		if HealthCheckConfig.get('HealthCheckHttpVersion') is not None:
+			self.add_query_param('HealthCheckConfig.HealthCheckHttpVersion', HealthCheckConfig.get('HealthCheckHttpVersion'))
+		if HealthCheckConfig.get('HealthCheckConnectPort') is not None:
+			self.add_query_param('HealthCheckConfig.HealthCheckConnectPort', HealthCheckConfig.get('HealthCheckConnectPort'))
 	def get_Scheduler(self): # String
 		return self.get_query_params().get('Scheduler')
 
@@ -73,11 +89,14 @@ class UpdateServerGroupAttributeRequest(RpcRequest):
 		return self.get_query_params().get('StickySessionConfig')
 
 	def set_StickySessionConfig(self, StickySessionConfig):  # Struct
-		for key1, value1 in StickySessionConfig.items():
-			self.add_query_param('StickySessionConfig.' + key1 + '.StickySessionEnabled', value1)
-			self.add_query_param('StickySessionConfig.' + key1 + '.Cookie', value1)
-			self.add_query_param('StickySessionConfig.' + key1 + '.CookieTimeout', value1)
-			self.add_query_param('StickySessionConfig.' + key1 + '.StickySessionType', value1)
+		if StickySessionConfig.get('StickySessionEnabled') is not None:
+			self.add_query_param('StickySessionConfig.StickySessionEnabled', StickySessionConfig.get('StickySessionEnabled'))
+		if StickySessionConfig.get('Cookie') is not None:
+			self.add_query_param('StickySessionConfig.Cookie', StickySessionConfig.get('Cookie'))
+		if StickySessionConfig.get('CookieTimeout') is not None:
+			self.add_query_param('StickySessionConfig.CookieTimeout', StickySessionConfig.get('CookieTimeout'))
+		if StickySessionConfig.get('StickySessionType') is not None:
+			self.add_query_param('StickySessionConfig.StickySessionType', StickySessionConfig.get('StickySessionType'))
 	def get_DryRun(self): # Boolean
 		return self.get_query_params().get('DryRun')
 

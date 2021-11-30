@@ -66,7 +66,7 @@ class UpdateHealthCheckTemplateAttributeRequest(RpcRequest):
 
 	def set_HealthCheckCodes(self, HealthCheckCodes):  # Array
 		for index1, value1 in enumerate(HealthCheckCodes):
-			self.add_query_param('HealthCheckCodes.' + str(index1 + 1) + '.HealthCheckCodes', value1)
+			self.add_query_param('HealthCheckCodes.' + str(index1 + 1), value1)
 	def get_DryRun(self): # Boolean
 		return self.get_query_params().get('DryRun')
 

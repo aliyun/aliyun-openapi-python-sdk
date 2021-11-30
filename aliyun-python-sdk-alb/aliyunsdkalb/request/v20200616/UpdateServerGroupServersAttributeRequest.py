@@ -46,13 +46,18 @@ class UpdateServerGroupServersAttributeRequest(RpcRequest):
 
 	def set_Servers(self, Servers):  # Array
 		for index1, value1 in enumerate(Servers):
-			for key2, value2 in value1.items():
-				self.add_query_param('Servers.' + str(index1 + 1) + '.' + key2 + '.ServerType', value2)
-				self.add_query_param('Servers.' + str(index1 + 1) + '.' + key2 + '.Port', value2)
-				self.add_query_param('Servers.' + str(index1 + 1) + '.' + key2 + '.Description', value2)
-				self.add_query_param('Servers.' + str(index1 + 1) + '.' + key2 + '.ServerIp', value2)
-				self.add_query_param('Servers.' + str(index1 + 1) + '.' + key2 + '.Weight', value2)
-				self.add_query_param('Servers.' + str(index1 + 1) + '.' + key2 + '.ServerId', value2)
+			if value1.get('ServerType') is not None:
+				self.add_query_param('Servers.' + str(index1 + 1) + '.ServerType', value1.get('ServerType'))
+			if value1.get('Port') is not None:
+				self.add_query_param('Servers.' + str(index1 + 1) + '.Port', value1.get('Port'))
+			if value1.get('Description') is not None:
+				self.add_query_param('Servers.' + str(index1 + 1) + '.Description', value1.get('Description'))
+			if value1.get('ServerIp') is not None:
+				self.add_query_param('Servers.' + str(index1 + 1) + '.ServerIp', value1.get('ServerIp'))
+			if value1.get('Weight') is not None:
+				self.add_query_param('Servers.' + str(index1 + 1) + '.Weight', value1.get('Weight'))
+			if value1.get('ServerId') is not None:
+				self.add_query_param('Servers.' + str(index1 + 1) + '.ServerId', value1.get('ServerId'))
 	def get_DryRun(self): # Boolean
 		return self.get_query_params().get('DryRun')
 

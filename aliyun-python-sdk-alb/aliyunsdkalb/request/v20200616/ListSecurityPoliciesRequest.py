@@ -36,7 +36,7 @@ class ListSecurityPoliciesRequest(RpcRequest):
 
 	def set_SecurityPolicyNames(self, SecurityPolicyNames):  # Array
 		for index1, value1 in enumerate(SecurityPolicyNames):
-			self.add_query_param('SecurityPolicyNames.' + str(index1 + 1) + '.SecurityPolicyNames', value1)
+			self.add_query_param('SecurityPolicyNames.' + str(index1 + 1), value1)
 	def get_ResourceGroupId(self): # String
 		return self.get_query_params().get('ResourceGroupId')
 
@@ -52,7 +52,7 @@ class ListSecurityPoliciesRequest(RpcRequest):
 
 	def set_SecurityPolicyIds(self, SecurityPolicyIds):  # Array
 		for index1, value1 in enumerate(SecurityPolicyIds):
-			self.add_query_param('SecurityPolicyIds.' + str(index1 + 1) + '.SecurityPolicyIds', value1)
+			self.add_query_param('SecurityPolicyIds.' + str(index1 + 1), value1)
 	def get_MaxResults(self): # Integer
 		return self.get_query_params().get('MaxResults')
 

@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkalb.endpoint import endpoint_data
 
-class DeleteRulesRequest(RpcRequest):
+class UpdateLoadBalancerZonesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Alb', '2020-06-16', 'DeleteRules','alb')
+		RpcRequest.__init__(self, 'Alb', '2020-06-16', 'UpdateLoadBalancerZones','alb')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -41,9 +41,19 @@ class DeleteRulesRequest(RpcRequest):
 
 	def set_DryRun(self, DryRun):  # Boolean
 		self.add_query_param('DryRun', DryRun)
-	def get_RuleIdss(self): # RepeatList
-		return self.get_query_params().get('RuleIds')
+	def get_ZoneMappings(self): # Array
+		return self.get_query_params().get('ZoneMappings')
 
-	def set_RuleIdss(self, RuleIds):  # RepeatList
-		for depth1 in range(len(RuleIds)):
-			self.add_query_param('RuleIds.' + str(depth1 + 1), RuleIds[depth1])
+	def set_ZoneMappings(self, ZoneMappings):  # Array
+		for index1, value1 in enumerate(ZoneMappings):
+			if value1.get('VSwitchId') is not None:
+				self.add_query_param('ZoneMappings.' + str(index1 + 1) + '.VSwitchId', value1.get('VSwitchId'))
+			if value1.get('ZoneId') is not None:
+				self.add_query_param('ZoneMappings.' + str(index1 + 1) + '.ZoneId', value1.get('ZoneId'))
+			if value1.get('AllocationId') is not None:
+				self.add_query_param('ZoneMappings.' + str(index1 + 1) + '.AllocationId', value1.get('AllocationId'))
+	def get_LoadBalancerId(self): # String
+		return self.get_query_params().get('LoadBalancerId')
+
+	def set_LoadBalancerId(self, LoadBalancerId):  # String
+		self.add_query_param('LoadBalancerId', LoadBalancerId)

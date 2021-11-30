@@ -36,15 +36,16 @@ class UnTagResourcesRequest(RpcRequest):
 
 	def set_Tag(self, Tag):  # Array
 		for index1, value1 in enumerate(Tag):
-			for key2, value2 in value1.items():
-				self.add_query_param('Tag.' + str(index1 + 1) + '.' + key2 + '.Value', value2)
-				self.add_query_param('Tag.' + str(index1 + 1) + '.' + key2 + '.Key', value2)
+			if value1.get('Value') is not None:
+				self.add_query_param('Tag.' + str(index1 + 1) + '.Value', value1.get('Value'))
+			if value1.get('Key') is not None:
+				self.add_query_param('Tag.' + str(index1 + 1) + '.Key', value1.get('Key'))
 	def get_ResourceId(self): # Array
 		return self.get_query_params().get('ResourceId')
 
 	def set_ResourceId(self, ResourceId):  # Array
 		for index1, value1 in enumerate(ResourceId):
-			self.add_query_param('ResourceId.' + str(index1 + 1) + '.ResourceId', value1)
+			self.add_query_param('ResourceId.' + str(index1 + 1), value1)
 	def get_ResourceType(self): # String
 		return self.get_query_params().get('ResourceType')
 
@@ -55,4 +56,4 @@ class UnTagResourcesRequest(RpcRequest):
 
 	def set_TagKey(self, TagKey):  # Array
 		for index1, value1 in enumerate(TagKey):
-			self.add_query_param('TagKey.' + str(index1 + 1) + '.TagKey', value1)
+			self.add_query_param('TagKey.' + str(index1 + 1), value1)

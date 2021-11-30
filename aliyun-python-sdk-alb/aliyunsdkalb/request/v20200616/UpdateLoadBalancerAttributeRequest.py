@@ -40,9 +40,10 @@ class UpdateLoadBalancerAttributeRequest(RpcRequest):
 		return self.get_query_params().get('ModificationProtectionConfig')
 
 	def set_ModificationProtectionConfig(self, ModificationProtectionConfig):  # Struct
-		for key1, value1 in ModificationProtectionConfig.items():
-			self.add_query_param('ModificationProtectionConfig.' + key1 + '.Reason', value1)
-			self.add_query_param('ModificationProtectionConfig.' + key1 + '.Status', value1)
+		if ModificationProtectionConfig.get('Reason') is not None:
+			self.add_query_param('ModificationProtectionConfig.Reason', ModificationProtectionConfig.get('Reason'))
+		if ModificationProtectionConfig.get('Status') is not None:
+			self.add_query_param('ModificationProtectionConfig.Status', ModificationProtectionConfig.get('Status'))
 	def get_LoadBalancerName(self): # String
 		return self.get_query_params().get('LoadBalancerName')
 

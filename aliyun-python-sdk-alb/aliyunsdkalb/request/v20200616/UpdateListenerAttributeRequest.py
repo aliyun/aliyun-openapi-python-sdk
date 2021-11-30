@@ -50,9 +50,10 @@ class UpdateListenerAttributeRequest(RpcRequest):
 		return self.get_query_params().get('QuicConfig')
 
 	def set_QuicConfig(self, QuicConfig):  # Struct
-		for key1, value1 in QuicConfig.items():
-			self.add_query_param('QuicConfig.' + key1 + '.QuicUpgradeEnabled', value1)
-			self.add_query_param('QuicConfig.' + key1 + '.QuicListenerId', value1)
+		if QuicConfig.get('QuicUpgradeEnabled') is not None:
+			self.add_query_param('QuicConfig.QuicUpgradeEnabled', QuicConfig.get('QuicUpgradeEnabled'))
+		if QuicConfig.get('QuicListenerId') is not None:
+			self.add_query_param('QuicConfig.QuicListenerId', QuicConfig.get('QuicListenerId'))
 	def get_Http2Enabled(self): # Boolean
 		return self.get_query_params().get('Http2Enabled')
 
@@ -63,12 +64,13 @@ class UpdateListenerAttributeRequest(RpcRequest):
 
 	def set_DefaultActions(self, DefaultActions):  # Array
 		for index1, value1 in enumerate(DefaultActions):
-			for key2, value2 in value1.items():
-				for key3, value3 in value2.items():
-					for index4, value4 in enumerate(value3):
-						for key5, value5 in value4.items():
-							self.add_query_param('DefaultActions.' + str(index1 + 1) + '.' + key2 + '.' + key3 + '.' + str(index4 + 1) + '.' + key5 + '.ServerGroupId', value5)
-				self.add_query_param('DefaultActions.' + str(index1 + 1) + '.' + key2 + '.Type', value2)
+			if value1.get('ForwardGroupConfig') is not None:
+				if value1.get('ForwardGroupConfig').get('ServerGroupTuples') is not None:
+					for index2, value2 in enumerate(value1.get('ForwardGroupConfig').get('ServerGroupTuples')):
+						if value2.get('ServerGroupId') is not None:
+							self.add_query_param('DefaultActions.' + str(index1 + 1) + '.ForwardGroupConfig.ServerGroupTuples' + str(index2 + 1) + '.ServerGroupId', value2.get('ServerGroupId'))
+			if value1.get('Type') is not None:
+				self.add_query_param('DefaultActions.' + str(index1 + 1) + '.Type', value1.get('Type'))
 	def get_DryRun(self): # Boolean
 		return self.get_query_params().get('DryRun')
 
@@ -79,24 +81,43 @@ class UpdateListenerAttributeRequest(RpcRequest):
 
 	def set_RequestTimeout(self, RequestTimeout):  # Integer
 		self.add_query_param('RequestTimeout', RequestTimeout)
+	def get_CaCertificates(self): # Array
+		return self.get_query_params().get('CaCertificates')
+
+	def set_CaCertificates(self, CaCertificates):  # Array
+		for index1, value1 in enumerate(CaCertificates):
+			if value1.get('CertificateId') is not None:
+				self.add_query_param('CaCertificates.' + str(index1 + 1) + '.CertificateId', value1.get('CertificateId'))
 	def get_XForwardedForConfig(self): # Struct
 		return self.get_query_params().get('XForwardedForConfig')
 
 	def set_XForwardedForConfig(self, XForwardedForConfig):  # Struct
-		for key1, value1 in XForwardedForConfig.items():
-			self.add_query_param('XForwardedForConfig.' + key1 + '.XForwardedForClientCertSubjectDNAlias', value1)
-			self.add_query_param('XForwardedForConfig.' + key1 + '.XForwardedForClientCertIssuerDNEnabled', value1)
-			self.add_query_param('XForwardedForConfig.' + key1 + '.XForwardedForClientCertFingerprintEnabled', value1)
-			self.add_query_param('XForwardedForConfig.' + key1 + '.XForwardedForClientCertIssuerDNAlias', value1)
-			self.add_query_param('XForwardedForConfig.' + key1 + '.XForwardedForProtoEnabled', value1)
-			self.add_query_param('XForwardedForConfig.' + key1 + '.XForwardedForClientCertFingerprintAlias', value1)
-			self.add_query_param('XForwardedForConfig.' + key1 + '.XForwardedForClientCertClientVerifyEnabled', value1)
-			self.add_query_param('XForwardedForConfig.' + key1 + '.XForwardedForSLBPortEnabled', value1)
-			self.add_query_param('XForwardedForConfig.' + key1 + '.XForwardedForClientCertSubjectDNEnabled', value1)
-			self.add_query_param('XForwardedForConfig.' + key1 + '.XForwardedForClientCertClientVerifyAlias', value1)
-			self.add_query_param('XForwardedForConfig.' + key1 + '.XForwardedForClientSrcPortEnabled', value1)
-			self.add_query_param('XForwardedForConfig.' + key1 + '.XForwardedForEnabled', value1)
-			self.add_query_param('XForwardedForConfig.' + key1 + '.XForwardedForSLBIdEnabled', value1)
+		if XForwardedForConfig.get('XForwardedForClientCertSubjectDNAlias') is not None:
+			self.add_query_param('XForwardedForConfig.XForwardedForClientCertSubjectDNAlias', XForwardedForConfig.get('XForwardedForClientCertSubjectDNAlias'))
+		if XForwardedForConfig.get('XForwardedForClientCertIssuerDNEnabled') is not None:
+			self.add_query_param('XForwardedForConfig.XForwardedForClientCertIssuerDNEnabled', XForwardedForConfig.get('XForwardedForClientCertIssuerDNEnabled'))
+		if XForwardedForConfig.get('XForwardedForClientCertFingerprintEnabled') is not None:
+			self.add_query_param('XForwardedForConfig.XForwardedForClientCertFingerprintEnabled', XForwardedForConfig.get('XForwardedForClientCertFingerprintEnabled'))
+		if XForwardedForConfig.get('XForwardedForClientCertIssuerDNAlias') is not None:
+			self.add_query_param('XForwardedForConfig.XForwardedForClientCertIssuerDNAlias', XForwardedForConfig.get('XForwardedForClientCertIssuerDNAlias'))
+		if XForwardedForConfig.get('XForwardedForProtoEnabled') is not None:
+			self.add_query_param('XForwardedForConfig.XForwardedForProtoEnabled', XForwardedForConfig.get('XForwardedForProtoEnabled'))
+		if XForwardedForConfig.get('XForwardedForClientCertFingerprintAlias') is not None:
+			self.add_query_param('XForwardedForConfig.XForwardedForClientCertFingerprintAlias', XForwardedForConfig.get('XForwardedForClientCertFingerprintAlias'))
+		if XForwardedForConfig.get('XForwardedForClientCertClientVerifyEnabled') is not None:
+			self.add_query_param('XForwardedForConfig.XForwardedForClientCertClientVerifyEnabled', XForwardedForConfig.get('XForwardedForClientCertClientVerifyEnabled'))
+		if XForwardedForConfig.get('XForwardedForSLBPortEnabled') is not None:
+			self.add_query_param('XForwardedForConfig.XForwardedForSLBPortEnabled', XForwardedForConfig.get('XForwardedForSLBPortEnabled'))
+		if XForwardedForConfig.get('XForwardedForClientCertSubjectDNEnabled') is not None:
+			self.add_query_param('XForwardedForConfig.XForwardedForClientCertSubjectDNEnabled', XForwardedForConfig.get('XForwardedForClientCertSubjectDNEnabled'))
+		if XForwardedForConfig.get('XForwardedForClientCertClientVerifyAlias') is not None:
+			self.add_query_param('XForwardedForConfig.XForwardedForClientCertClientVerifyAlias', XForwardedForConfig.get('XForwardedForClientCertClientVerifyAlias'))
+		if XForwardedForConfig.get('XForwardedForClientSrcPortEnabled') is not None:
+			self.add_query_param('XForwardedForConfig.XForwardedForClientSrcPortEnabled', XForwardedForConfig.get('XForwardedForClientSrcPortEnabled'))
+		if XForwardedForConfig.get('XForwardedForEnabled') is not None:
+			self.add_query_param('XForwardedForConfig.XForwardedForEnabled', XForwardedForConfig.get('XForwardedForEnabled'))
+		if XForwardedForConfig.get('XForwardedForSLBIdEnabled') is not None:
+			self.add_query_param('XForwardedForConfig.XForwardedForSLBIdEnabled', XForwardedForConfig.get('XForwardedForSLBIdEnabled'))
 	def get_SecurityPolicyId(self): # String
 		return self.get_query_params().get('SecurityPolicyId')
 
@@ -112,10 +133,15 @@ class UpdateListenerAttributeRequest(RpcRequest):
 
 	def set_Certificates(self, Certificates):  # Array
 		for index1, value1 in enumerate(Certificates):
-			for key2, value2 in value1.items():
-				self.add_query_param('Certificates.' + str(index1 + 1) + '.' + key2 + '.CertificateId', value2)
+			if value1.get('CertificateId') is not None:
+				self.add_query_param('Certificates.' + str(index1 + 1) + '.CertificateId', value1.get('CertificateId'))
 	def get_ListenerDescription(self): # String
 		return self.get_query_params().get('ListenerDescription')
 
 	def set_ListenerDescription(self, ListenerDescription):  # String
 		self.add_query_param('ListenerDescription', ListenerDescription)
+	def get_CaEnabled(self): # Boolean
+		return self.get_query_params().get('CaEnabled')
+
+	def set_CaEnabled(self, CaEnabled):  # Boolean
+		self.add_query_param('CaEnabled', CaEnabled)

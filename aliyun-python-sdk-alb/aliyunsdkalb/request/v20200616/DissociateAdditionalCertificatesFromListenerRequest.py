@@ -51,5 +51,5 @@ class DissociateAdditionalCertificatesFromListenerRequest(RpcRequest):
 
 	def set_Certificates(self, Certificates):  # Array
 		for index1, value1 in enumerate(Certificates):
-			for key2, value2 in value1.items():
-				self.add_query_param('Certificates.' + str(index1 + 1) + '.' + key2 + '.CertificateId', value2)
+			if value1.get('CertificateId') is not None:
+				self.add_query_param('Certificates.' + str(index1 + 1) + '.CertificateId', value1.get('CertificateId'))

@@ -61,7 +61,7 @@ class ListAsynJobsRequest(RpcRequest):
 
 	def set_JobIds(self, JobIds):  # Array
 		for index1, value1 in enumerate(JobIds):
-			self.add_query_param('JobIds.' + str(index1 + 1) + '.JobIds', value1)
+			self.add_query_param('JobIds.' + str(index1 + 1), value1)
 	def get_MaxResults(self): # Long
 		return self.get_query_params().get('MaxResults')
 
@@ -72,4 +72,4 @@ class ListAsynJobsRequest(RpcRequest):
 
 	def set_ResourceIds(self, ResourceIds):  # Array
 		for index1, value1 in enumerate(ResourceIds):
-			self.add_query_param('ResourceIds.' + str(index1 + 1) + '.ResourceIds', value1)
+			self.add_query_param('ResourceIds.' + str(index1 + 1), value1)

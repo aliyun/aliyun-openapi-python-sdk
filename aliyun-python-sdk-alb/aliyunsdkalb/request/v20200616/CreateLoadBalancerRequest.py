@@ -45,15 +45,22 @@ class CreateLoadBalancerRequest(RpcRequest):
 		return self.get_query_params().get('ModificationProtectionConfig')
 
 	def set_ModificationProtectionConfig(self, ModificationProtectionConfig):  # Struct
-		for key1, value1 in ModificationProtectionConfig.items():
-			self.add_query_param('ModificationProtectionConfig.' + key1 + '.Reason', value1)
-			self.add_query_param('ModificationProtectionConfig.' + key1 + '.Status', value1)
+		if ModificationProtectionConfig.get('Reason') is not None:
+			self.add_query_param('ModificationProtectionConfig.Reason', ModificationProtectionConfig.get('Reason'))
+		if ModificationProtectionConfig.get('Status') is not None:
+			self.add_query_param('ModificationProtectionConfig.Status', ModificationProtectionConfig.get('Status'))
 	def get_LoadBalancerBillingConfig(self): # Struct
 		return self.get_query_params().get('LoadBalancerBillingConfig')
 
 	def set_LoadBalancerBillingConfig(self, LoadBalancerBillingConfig):  # Struct
-		for key1, value1 in LoadBalancerBillingConfig.items():
-			self.add_query_param('LoadBalancerBillingConfig.' + key1 + '.PayType', value1)
+		if LoadBalancerBillingConfig.get('BandwidthPackageId') is not None:
+			self.add_query_param('LoadBalancerBillingConfig.BandwidthPackageId', LoadBalancerBillingConfig.get('BandwidthPackageId'))
+		if LoadBalancerBillingConfig.get('InternetChargeType') is not None:
+			self.add_query_param('LoadBalancerBillingConfig.InternetChargeType', LoadBalancerBillingConfig.get('InternetChargeType'))
+		if LoadBalancerBillingConfig.get('InternetBandwidth') is not None:
+			self.add_query_param('LoadBalancerBillingConfig.InternetBandwidth', LoadBalancerBillingConfig.get('InternetBandwidth'))
+		if LoadBalancerBillingConfig.get('PayType') is not None:
+			self.add_query_param('LoadBalancerBillingConfig.PayType', LoadBalancerBillingConfig.get('PayType'))
 	def get_DeletionProtectionEnabled(self): # Boolean
 		return self.get_query_params().get('DeletionProtectionEnabled')
 
@@ -89,9 +96,12 @@ class CreateLoadBalancerRequest(RpcRequest):
 
 	def set_ZoneMappings(self, ZoneMappings):  # Array
 		for index1, value1 in enumerate(ZoneMappings):
-			for key2, value2 in value1.items():
-				self.add_query_param('ZoneMappings.' + str(index1 + 1) + '.' + key2 + '.VSwitchId', value2)
-				self.add_query_param('ZoneMappings.' + str(index1 + 1) + '.' + key2 + '.ZoneId', value2)
+			if value1.get('VSwitchId') is not None:
+				self.add_query_param('ZoneMappings.' + str(index1 + 1) + '.VSwitchId', value1.get('VSwitchId'))
+			if value1.get('ZoneId') is not None:
+				self.add_query_param('ZoneMappings.' + str(index1 + 1) + '.ZoneId', value1.get('ZoneId'))
+			if value1.get('AllocationId') is not None:
+				self.add_query_param('ZoneMappings.' + str(index1 + 1) + '.AllocationId', value1.get('AllocationId'))
 	def get_VpcId(self): # String
 		return self.get_query_params().get('VpcId')
 

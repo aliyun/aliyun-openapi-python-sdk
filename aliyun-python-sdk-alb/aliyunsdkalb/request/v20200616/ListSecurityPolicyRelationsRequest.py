@@ -36,4 +36,4 @@ class ListSecurityPolicyRelationsRequest(RpcRequest):
 
 	def set_SecurityPolicyIds(self, SecurityPolicyIds):  # Array
 		for index1, value1 in enumerate(SecurityPolicyIds):
-			self.add_query_param('SecurityPolicyIds.' + str(index1 + 1) + '.SecurityPolicyIds', value1)
+			self.add_query_param('SecurityPolicyIds.' + str(index1 + 1), value1)

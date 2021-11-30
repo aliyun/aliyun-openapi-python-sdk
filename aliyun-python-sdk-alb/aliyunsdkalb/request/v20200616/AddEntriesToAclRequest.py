@@ -51,6 +51,7 @@ class AddEntriesToAclRequest(RpcRequest):
 
 	def set_AclEntries(self, AclEntries):  # Array
 		for index1, value1 in enumerate(AclEntries):
-			for key2, value2 in value1.items():
-				self.add_query_param('AclEntries.' + str(index1 + 1) + '.' + key2 + '.Entry', value2)
-				self.add_query_param('AclEntries.' + str(index1 + 1) + '.' + key2 + '.Description', value2)
+			if value1.get('Entry') is not None:
+				self.add_query_param('AclEntries.' + str(index1 + 1) + '.Entry', value1.get('Entry'))
+			if value1.get('Description') is not None:
+				self.add_query_param('AclEntries.' + str(index1 + 1) + '.Description', value1.get('Description'))

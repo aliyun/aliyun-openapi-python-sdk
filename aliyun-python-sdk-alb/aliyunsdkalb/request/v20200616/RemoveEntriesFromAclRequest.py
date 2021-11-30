@@ -51,4 +51,4 @@ class RemoveEntriesFromAclRequest(RpcRequest):
 
 	def set_Entries(self, Entries):  # Array
 		for index1, value1 in enumerate(Entries):
-			self.add_query_param('Entries.' + str(index1 + 1) + '.Entries', value1)
+			self.add_query_param('Entries.' + str(index1 + 1), value1)

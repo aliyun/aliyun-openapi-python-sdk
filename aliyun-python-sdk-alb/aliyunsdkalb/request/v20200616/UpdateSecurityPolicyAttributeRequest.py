@@ -41,13 +41,13 @@ class UpdateSecurityPolicyAttributeRequest(RpcRequest):
 
 	def set_Ciphers(self, Ciphers):  # Array
 		for index1, value1 in enumerate(Ciphers):
-			self.add_query_param('Ciphers.' + str(index1 + 1) + '.Ciphers', value1)
+			self.add_query_param('Ciphers.' + str(index1 + 1), value1)
 	def get_TLSVersions(self): # Array
 		return self.get_query_params().get('TLSVersions')
 
 	def set_TLSVersions(self, TLSVersions):  # Array
 		for index1, value1 in enumerate(TLSVersions):
-			self.add_query_param('TLSVersions.' + str(index1 + 1) + '.TLSVersions', value1)
+			self.add_query_param('TLSVersions.' + str(index1 + 1), value1)
 	def get_SecurityPolicyName(self): # String
 		return self.get_query_params().get('SecurityPolicyName')
 

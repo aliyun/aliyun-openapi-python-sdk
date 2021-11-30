@@ -36,7 +36,7 @@ class ListListenersRequest(RpcRequest):
 
 	def set_LoadBalancerIds(self, LoadBalancerIds):  # Array
 		for index1, value1 in enumerate(LoadBalancerIds):
-			self.add_query_param('LoadBalancerIds.' + str(index1 + 1) + '.LoadBalancerIds', value1)
+			self.add_query_param('LoadBalancerIds.' + str(index1 + 1), value1)
 	def get_NextToken(self): # String
 		return self.get_query_params().get('NextToken')
 
@@ -52,7 +52,7 @@ class ListListenersRequest(RpcRequest):
 
 	def set_ListenerIds(self, ListenerIds):  # Array
 		for index1, value1 in enumerate(ListenerIds):
-			self.add_query_param('ListenerIds.' + str(index1 + 1) + '.ListenerIds', value1)
+			self.add_query_param('ListenerIds.' + str(index1 + 1), value1)
 	def get_MaxResults(self): # Integer
 		return self.get_query_params().get('MaxResults')
 

@@ -36,13 +36,13 @@ class ListLoadBalancersRequest(RpcRequest):
 
 	def set_LoadBalancerNames(self, LoadBalancerNames):  # Array
 		for index1, value1 in enumerate(LoadBalancerNames):
-			self.add_query_param('LoadBalancerNames.' + str(index1 + 1) + '.LoadBalancerNames', value1)
+			self.add_query_param('LoadBalancerNames.' + str(index1 + 1), value1)
 	def get_LoadBalancerIds(self): # Array
 		return self.get_query_params().get('LoadBalancerIds')
 
 	def set_LoadBalancerIds(self, LoadBalancerIds):  # Array
 		for index1, value1 in enumerate(LoadBalancerIds):
-			self.add_query_param('LoadBalancerIds.' + str(index1 + 1) + '.LoadBalancerIds', value1)
+			self.add_query_param('LoadBalancerIds.' + str(index1 + 1), value1)
 	def get_ResourceGroupId(self): # String
 		return self.get_query_params().get('ResourceGroupId')
 
@@ -68,15 +68,16 @@ class ListLoadBalancersRequest(RpcRequest):
 
 	def set_VpcIds(self, VpcIds):  # Array
 		for index1, value1 in enumerate(VpcIds):
-			self.add_query_param('VpcIds.' + str(index1 + 1) + '.VpcIds', value1)
+			self.add_query_param('VpcIds.' + str(index1 + 1), value1)
 	def get_Tag(self): # Array
 		return self.get_query_params().get('Tag')
 
 	def set_Tag(self, Tag):  # Array
 		for index1, value1 in enumerate(Tag):
-			for key2, value2 in value1.items():
-				self.add_query_param('Tag.' + str(index1 + 1) + '.' + key2 + '.Value', value2)
-				self.add_query_param('Tag.' + str(index1 + 1) + '.' + key2 + '.Key', value2)
+			if value1.get('Value') is not None:
+				self.add_query_param('Tag.' + str(index1 + 1) + '.Value', value1.get('Value'))
+			if value1.get('Key') is not None:
+				self.add_query_param('Tag.' + str(index1 + 1) + '.Key', value1.get('Key'))
 	def get_LoadBalancerStatus(self): # String
 		return self.get_query_params().get('LoadBalancerStatus')
 

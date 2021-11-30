@@ -36,4 +36,4 @@ class ListAclRelationsRequest(RpcRequest):
 
 	def set_AclIds(self, AclIds):  # Array
 		for index1, value1 in enumerate(AclIds):
-			self.add_query_param('AclIds.' + str(index1 + 1) + '.AclIds', value1)
+			self.add_query_param('AclIds.' + str(index1 + 1), value1)

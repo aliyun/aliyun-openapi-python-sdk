@@ -46,15 +46,16 @@ class ListServerGroupServersRequest(RpcRequest):
 
 	def set_Tag(self, Tag):  # Array
 		for index1, value1 in enumerate(Tag):
-			for key2, value2 in value1.items():
-				self.add_query_param('Tag.' + str(index1 + 1) + '.' + key2 + '.Value', value2)
-				self.add_query_param('Tag.' + str(index1 + 1) + '.' + key2 + '.Key', value2)
+			if value1.get('Value') is not None:
+				self.add_query_param('Tag.' + str(index1 + 1) + '.Value', value1.get('Value'))
+			if value1.get('Key') is not None:
+				self.add_query_param('Tag.' + str(index1 + 1) + '.Key', value1.get('Key'))
 	def get_ServerIds(self): # Array
 		return self.get_query_params().get('ServerIds')
 
 	def set_ServerIds(self, ServerIds):  # Array
 		for index1, value1 in enumerate(ServerIds):
-			self.add_query_param('ServerIds.' + str(index1 + 1) + '.ServerIds', value1)
+			self.add_query_param('ServerIds.' + str(index1 + 1), value1)
 	def get_MaxResults(self): # Integer
 		return self.get_query_params().get('MaxResults')
 

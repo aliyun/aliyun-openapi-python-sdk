@@ -41,7 +41,7 @@ class ListHealthCheckTemplatesRequest(RpcRequest):
 
 	def set_HealthCheckTemplateNames(self, HealthCheckTemplateNames):  # Array
 		for index1, value1 in enumerate(HealthCheckTemplateNames):
-			self.add_query_param('HealthCheckTemplateNames.' + str(index1 + 1) + '.HealthCheckTemplateNames', value1)
+			self.add_query_param('HealthCheckTemplateNames.' + str(index1 + 1), value1)
 	def get_MaxResults(self): # Integer
 		return self.get_query_params().get('MaxResults')
 
@@ -52,4 +52,4 @@ class ListHealthCheckTemplatesRequest(RpcRequest):
 
 	def set_HealthCheckTemplateIds(self, HealthCheckTemplateIds):  # Array
 		for index1, value1 in enumerate(HealthCheckTemplateIds):
-			self.add_query_param('HealthCheckTemplateIds.' + str(index1 + 1) + '.HealthCheckTemplateIds', value1)
+			self.add_query_param('HealthCheckTemplateIds.' + str(index1 + 1), value1)

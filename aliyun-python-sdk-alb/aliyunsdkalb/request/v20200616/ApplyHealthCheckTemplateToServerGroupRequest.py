@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkalb.endpoint import endpoint_data
 
-class DeleteRulesRequest(RpcRequest):
+class ApplyHealthCheckTemplateToServerGroupRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Alb', '2020-06-16', 'DeleteRules','alb')
+		RpcRequest.__init__(self, 'Alb', '2020-06-16', 'ApplyHealthCheckTemplateToServerGroup','alb')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,14 +36,18 @@ class DeleteRulesRequest(RpcRequest):
 
 	def set_ClientToken(self, ClientToken):  # String
 		self.add_query_param('ClientToken', ClientToken)
+	def get_ServerGroupId(self): # String
+		return self.get_query_params().get('ServerGroupId')
+
+	def set_ServerGroupId(self, ServerGroupId):  # String
+		self.add_query_param('ServerGroupId', ServerGroupId)
 	def get_DryRun(self): # Boolean
 		return self.get_query_params().get('DryRun')
 
 	def set_DryRun(self, DryRun):  # Boolean
 		self.add_query_param('DryRun', DryRun)
-	def get_RuleIdss(self): # RepeatList
-		return self.get_query_params().get('RuleIds')
+	def get_HealthCheckTemplateId(self): # String
+		return self.get_query_params().get('HealthCheckTemplateId')
 
-	def set_RuleIdss(self, RuleIds):  # RepeatList
-		for depth1 in range(len(RuleIds)):
-			self.add_query_param('RuleIds.' + str(depth1 + 1), RuleIds[depth1])
+	def set_HealthCheckTemplateId(self, HealthCheckTemplateId):  # String
+		self.add_query_param('HealthCheckTemplateId', HealthCheckTemplateId)

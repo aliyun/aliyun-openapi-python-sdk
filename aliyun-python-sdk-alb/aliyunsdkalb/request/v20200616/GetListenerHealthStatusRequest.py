@@ -20,10 +20,10 @@
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkalb.endpoint import endpoint_data
 
-class ListAclsRequest(RpcRequest):
+class GetListenerHealthStatusRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Alb', '2020-06-16', 'ListAcls','alb')
+		RpcRequest.__init__(self, 'Alb', '2020-06-16', 'GetListenerHealthStatus','alb')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,30 +31,23 @@ class ListAclsRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_AclIds(self): # Array
-		return self.get_query_params().get('AclIds')
+	def get_IncludeRule(self): # Boolean
+		return self.get_query_params().get('IncludeRule')
 
-	def set_AclIds(self, AclIds):  # Array
-		for index1, value1 in enumerate(AclIds):
-			self.add_query_param('AclIds.' + str(index1 + 1), value1)
-	def get_ResourceGroupId(self): # String
-		return self.get_query_params().get('ResourceGroupId')
+	def set_IncludeRule(self, IncludeRule):  # Boolean
+		self.add_query_param('IncludeRule', IncludeRule)
+	def get_ListenerId(self): # String
+		return self.get_query_params().get('ListenerId')
 
-	def set_ResourceGroupId(self, ResourceGroupId):  # String
-		self.add_query_param('ResourceGroupId', ResourceGroupId)
+	def set_ListenerId(self, ListenerId):  # String
+		self.add_query_param('ListenerId', ListenerId)
 	def get_NextToken(self): # String
 		return self.get_query_params().get('NextToken')
 
 	def set_NextToken(self, NextToken):  # String
 		self.add_query_param('NextToken', NextToken)
-	def get_AclNames(self): # Array
-		return self.get_query_params().get('AclNames')
-
-	def set_AclNames(self, AclNames):  # Array
-		for index1, value1 in enumerate(AclNames):
-			self.add_query_param('AclNames.' + str(index1 + 1), value1)
-	def get_MaxResults(self): # Integer
+	def get_MaxResults(self): # Long
 		return self.get_query_params().get('MaxResults')
 
-	def set_MaxResults(self, MaxResults):  # Integer
+	def set_MaxResults(self, MaxResults):  # Long
 		self.add_query_param('MaxResults', MaxResults)
