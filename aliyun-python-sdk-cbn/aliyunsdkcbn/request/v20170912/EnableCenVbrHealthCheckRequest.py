@@ -61,6 +61,12 @@ class EnableCenVbrHealthCheckRequest(RpcRequest):
 	def set_VbrInstanceOwnerId(self,VbrInstanceOwnerId):
 		self.add_query_param('VbrInstanceOwnerId',VbrInstanceOwnerId)
 
+	def get_HealthCheckOnly(self):
+		return self.get_query_params().get('HealthCheckOnly')
+
+	def set_HealthCheckOnly(self,HealthCheckOnly):
+		self.add_query_param('HealthCheckOnly',HealthCheckOnly)
+
 	def get_VbrInstanceRegionId(self):
 		return self.get_query_params().get('VbrInstanceRegionId')
 
